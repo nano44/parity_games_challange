@@ -2,7 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14: T1-T3 pushed (landed on trunk 9079c01); T4 docs/lit/T4-weak-separators.md: verdict OPEN. Next: Lead feedback; open the
+2026-10-14: T1-T3 pushed (landed on trunk 9079c01); T4 docs/lit/T4-weak-separators.md: verdict OPEN. T5 docs/lit/T5-S2-novelty.md: S2 T1/T2 NEW. Parked. Next: Lead feedback; open the
 not-opened primaries listed below if a lane needs them.
 
 ## Queue
@@ -105,6 +105,9 @@ not-opened primaries listed below if a lane needs them.
 | arXiv 2205.00744 v1 (Dell'Erba-Schewe) | abstract; upper bounds only | 2026-10-14 | T4 |
 | arXiv 1902.07175 v3 (Kozachinskiy-Vyalyi), read by L-LIT | §1.2 p.4-6, §2 definitions, Thm 2, Thm 8 | 2026-10-14 | T4; weak + vertex alphabet |
 | Semantic Scholar citations API for arXiv 1807.10546 (51 records) and 1902.07175 (0) | titles scanned | 2026-10-14 | T4 |
+| Colcombet-Fijalkow FoSSaCS 2019 (author PDF irif.fr/~colcombe/Publications/FOSSACS19-colcombet-fijalkow.pdf) | Def. 8, Example 1-2, Def. 9, Thm 9, Lemma 7, footnote 5 p.14 ("nothing is known about this notion"), Thm 10 | 2026-10-14 | T5; rendered p.14 to read the formula |
+| arXiv 2109.09155 v2 (Göös-Kiefer-Yuan, unambiguous automata) | abstract; parity mention l.85-86 only | 2026-10-14 | T5 |
+| LIPIcs.CSL.2020.32 (Parys) read by L-LIT | Def. 3.2 (PG separator weak, strong variant), intro p.2 sentence on CDFJLP | 2026-10-14 | T5 |
 
 ## Dead ends
 (none)
