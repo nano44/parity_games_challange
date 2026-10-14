@@ -2,6 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
+2026-10-14 21:50Z: docs/struct/L4-proof.md written (Claim R transfer + CDFJLP Thm 5.1 ⇒ S(n) = n^{Ω(lg n)}); sent to the Lead for the two referees. Next: T3 via R2 size argument (no sub-lemma yet).
 2026-10-14 21:30Z: new cells s^V(4,5) = 10, w^V(4,5) ∈ {9,10} (k=8 refuted, k=9 running: equality here is T3's first real test at n=4), w^V(3,10) = 8 (fixed-n growth 6,7,8 at d = 6,8,10), s^S(3,6) landed.
 2026-10-14 ~20:55Z: Lead confirmed L4 first (R1), T3 second (R2). R2 data step done: L5' dead (see Dead ends). Waiting for L-LIT T6 (L4 known or open) before R1. Background (caps): weak/strong V (4,5), weak V (3,10) k=8, strong V (3,8) k=8, weak V (4,6) k=9, weak E (4,6) k=12.
 2026-10-14 21:55Z: S2 T1 dead (DE2). S2 patched per REFEREE (T2 n ≥ c; V barrier conditional on L4; algorithmic
@@ -38,6 +39,7 @@ Any finished results/automata/*.json: make_table.py, then verify.sh && git push.
 | arXiv 2104.05262v8 (CFGO, LMCS 18(3:29) 2022) | §2.1 graphs E ⊆ Q×C×Q, size = vertices, L(A); Def. 3.3 separating automaton (deterministic, Ω|n ⊆ L(A) ⊆ Ω); Thm 3.4; Thm 4.1; §6 colours [0,d], Parity(d), Lemma 6.1, Thm 6.2 (neutral letter 0), §6.2 trees T ⊂ Z^h and G(T), Lemma 6.8, Thm 6.9, Prop. 6.10 (f), Prop. 6.11 (g) | 2026-10-14 | |
 | Colcombet, Fijalkow, FoSSaCS 2019, author PDF www.irif.fr/~colcombe/Publications/FOSSACS19-colcombet-fijalkow.pdf | footnote 5 p.14 ("nothing is known about this notion" = weak separation); Thm 9 / Def. 9 strong only | 2026-10-14 | the arXiv version 1810.05106v2 does not contain the footnote |
 | Parys, CSL 2020, LIPIcs.CSL.2020.32 (drops.dagstuhl.de PDF) | p.2 intro sentence on "quasi-polynomial lower bound for the size of a PG separator"; Def. 3.2 (PG separator = weak, strong PG separator); remark after Def. 3.2 | 2026-10-14 | cited in S2 §1 to pre-empt a misreading |
+| arXiv 2305.00308v1 (Parys-Wiącek) | p.2 vertex-splitting conversion remark (verbatim in L4-proof.md); p.8 §4 "necessity proof does not apply"; Thm 3.1, recursion (1) for f(n,h) | 2026-10-14 | used for L4 attribution |
 | arXiv 1902.07175v3 (Kozachinskiy-Vyalyi) | §1.2-1.3: alphabet {1..n}×{1..d}, separation = reach q_accept, "in time t" definition, qn-time remark (App. A), p.6 "Even super-linear lower bounds ... are not known"; Thm 2 | 2026-10-14 | their intro describes CDFJLP's bound as LimSupEven vs OddCycles (reversed roles); CDFJLP Thm 5.1 is EvenCycles vs LimsupOdd |
 
 ## Dead ends

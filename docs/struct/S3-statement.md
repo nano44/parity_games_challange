@@ -40,9 +40,10 @@ T3-pos (the opposite, M4 route; stated so the refutation of T3 has a name). Ther
   deterministic algorithm that on input n outputs in time p(n) a deterministic weak (n, n)-separator of convention V
   with ≤ p(n) states. Consequence: by §1 an algorithm meeting TARGET §2, then the gauntlet (TARGET §5). A single cell
   with w^V(n,d) < s^V(n,d) and d ≤ n + 1 refutes T3 and is the first evidence for T3-pos.
-L4 (needed for any V-barrier; open): s^V(n, n) is super-polynomial in n. CDFJLP Thm 5.1 covers E only; s^V ≤ s^E and
-  s^V < s^E already at (4,4) (7 vs 8) and (4,6) (10 vs 13). The Parys-Wiącek remark that the necessity proof "does not
-  apply" for vertex priorities (docs/lit/BARRIERS.md B1 fine print) is the obstacle; L-LIT to check for any source.
+L4 (needed for any V-barrier): s^V(n, n) is super-polynomial in n. WRITTEN UP for refereeing in docs/struct/L4-proof.md
+  (transfer lemma = L-LIT's Claim R, T6; S(n) ≥ (√n/(2 lg n))^{⌊½ lg n⌋ − 2} = n^{Ω(lg n)}). L-LIT T6: no vertex-priority
+  lower bound in print; Parys-Wiącek 2305.00308 p.2 state the vertex-splitting conversion as a remark. Lead L7: L4 is a
+  supporting lemma; T3 + L4 count as M3.
 
 Data for T3 (all cells with d ≤ n + 1 computed so far; L-STRUCT unrefereed, L-COMP with LRAT-verified UNSAT at
 value−1, CryptoMiniSat agreement and re-checked witnesses, claude/l-comp 8d9697b experiments/sat-hard/results/cells.md):
@@ -57,10 +58,10 @@ No cell with d ≤ n + 1 violates T3. Decisive next cells: (4,5) V (both), (5,5)
 equality fails: (2,5), (2,6), (2,7..12), (3,5), (3,6), (3,8), (3,10) (w^V(3,10) ≥ 8 > ... s^V(3,10) open).
 
 ## 3. Mechanism: why the gap appears only when d is large against n (structural core; hypotheses, testable)
-Fact M0 (elementary, to be written up with S3's proofs). In a word of OddCycles^X_{n,d}, every window of n + 1
-  consecutive letters contains a factor whose maximum is odd (n + 1 edges visit a repeated vertex, the closed part is a
-  cycle, its maximum is odd); dually every (n+1)-window of a word of EvenCycles^X_{n,d} contains a factor with even
-  maximum. For n = 2 this is "no two consecutive odd letters in even words, no two consecutive even letters in odd
+Fact M0 (elementary, to be written up with S3's proofs). In a word of OddCycles^X_{n,d}, every window of n
+  consecutive letters contains a factor whose maximum is odd (n edges visit n + 1 vertices, so one repeats; the closed
+  part is a cycle, its maximum is odd); dually every n-window of a word of EvenCycles^X_{n,d} contains a factor with even
+  maximum [R7: windows of n letters, not n + 1; only this version gives the n = 2 instance]. For n = 2 this is "no two consecutive odd letters in even words, no two consecutive even letters in odd
   words" (verified on the maximal graphs). These are local constraints, independent of d.
 Fact M1 (refereed lasso condition, S1 Q3). A weak separator may keep a reachable odd simple cycle C exactly when the
   lasso words π(P)·π(C)^ω are unrealisable by odd graphs with ≤ n vertices; the cheap filter is |P| + |C| > n.
