@@ -34,3 +34,10 @@ avoid both A' and U forever.
 Dependence on the ambiguities in notes/L-COMP.md: none of AM2-AM9 is involved (no self-loops; A = V, so
 attractors in G or in A coincide; both players have priorities). AM1 (min-parity) is used as written in the paper.
 Re-run: `python3 experiments/m2/avh.py experiments/m2/counterexamples/ce1_4v.pg --trace`.
+
+## S2: my strategy construction is not always winning (strat_s2_12v.pg); not a claim about the paper
+The paper gives no strategy construction (notes, "Strategies"). On 5 of the 100 corpus games avh's regions were right
+but my S1/S2 strategy failed verify.py. Shrunk instance (12 vertices; Odd wins everywhere): S2 lets Odd's v1 move to
+v9 (a successor in U), which closes the cycle v1 v9 v2 v5 with top priority 2 (even); the winning move is v1 -> v0.
+So "any successor in U" (S2, from Theorem 2's proof, tex:328) is not a winning rule. Reproduce:
+`python3 experiments/m2/shrink.py experiments/m2/counterexamples/strat_s2_12v.pg /tmp/x.pg --kind strategy`.
