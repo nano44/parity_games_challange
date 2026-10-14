@@ -177,6 +177,23 @@ itself); (3) show (W1) is preserved and every odd cycle through τ is destroyed,
 (4) iterate; termination by a potential (number of odd simple cycles). Step (2) is the open core; the next data step
 is to list ALL t = 1 rewires per instance (not just one) and read the rule off them, in the E convention first where
 the strong side has the universal-tree structure.
+Rule data at MINIMUM size (experiments/weak-sep/probe_rules_min.py, results/sl8/rules_min_*.json; every non-strong
+minimal weak separator of the cell, all single-transition rewires to a strong separator): E (2,3) k=3: 3 non-strong, all
+have a single rewire; V (2,3) k=3: 16 non-strong, 12 have one; V (3,3) k=5: 11, 10 have one; V (3,4) k=5: 42, 36 have one.
+Every working single rewire lies on an odd simple cycle of the weak automaton (no exception). In almost all cases the
+rewired transition carries the even letter 2 (twice letter 1, once to ⊥), it is the cycle's "return" edge (the
+transition that, after the odd maximum p has been read, leads back towards the state where p was read), and the new
+target is a state further along the cycle or the source itself (self-loop). The minority with no single rewire need
+exactly two changes (SL8-min bound t = 2 holds on all four cells).
+First proof step to attempt (SL9, hypothesis read off the data): let A be a minimal deterministic weak (n,d)-separator,
+d ≤ n+1, and C a reachable odd simple cycle of A with maximum p (odd); call a transition (q, e, q') of C with e even
+an ascent of C if, in the (yet to be defined) level order induced by p on the states of C, q' lies closer to the
+state where p is read than q does. SL9: redirecting one ascent of C to the state of C that follows q' (or to q) preserves
+(W1) and (W2), destroys C and every odd simple cycle through that transition, creates no new odd simple cycle, and keeps
+determinism and the state set; iterating over the odd cycles terminates. What is missing is the definition of the level
+order without assuming a tree decomposition (which only strong separators have); the candidate is CDFJLP's resistance
+computed in the sub-automaton of letters ≤ p after deleting the ascents themselves, which is finite exactly when the
+ascents are the only transitions closing odd cycles. The statement SL9 is where the proof attempt starts.
 Alternative route if (2) fails: a direct size argument (injective leaf map from a universal-tree-like structure built
 from even-realisable words), S3 §4b R2 as before.
 
