@@ -2,11 +2,29 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14 19:15Z. PARKED by the Lead (19:11Z). M1 accepted; range up to de7ea19 is with the REFEREE before landing on
-trunk. M2 (arXiv 2511.03752v1) closed BROKEN (Lead 18:36Z): CE1 experiments/m2/counterexamples/ce1_4v.pg plus the
-REFEREE's independent counterexample (claude/referee 936d47c). No queued work. Wait for: REFEREE review changes, a new
-claim, or L-STRUCT SAT engineering. Setup in a fresh session: scripts/setup_oink.sh (about 80 s); python3 with
-matplotlib for plots (pip install matplotlib); check with scripts/verify.sh.
+2026-10-14 21:10Z. HANDOVER (context limit). Current task: SAT engineering for L-STRUCT (Lead 19:26Z, time box 6 h to
+~01:30Z), code in experiments/sat-hard/ (README.md: files; results.md: findings; results/cells.md: proved cells).
+Done: reproduction of l-struct 42dbbc2; T1 REFUTED at (2,10): w(2,10)=4 < 5=s(2,8) in E,S,V (and (2,12): w=4 < 6=s(2,10));
+w^E(4,6) >= 8 (proved), >= 9 (k=8 UNSAT, CNF out/w_n4_d6_k8.cnf, LRAT NOT yet produced); w^E(5,4) >= 10 (proved);
+w^V(3,8) >= 7 (proved); diagonal V cells n=2..4 incl. TARGET alphabet {2..n+2}: w = s (2,3,5,5,7; TARGET 2,5,7), proved.
+RUNNING at handover (lanes in experiments/sat-hard/run_diag.sh; logs out/diag_*.log; results out/cells/<cell>.json):
+  C : diag.py 5 5 V weak --klo 8          (w^V(5,5), decisive for L-STRUCT S3)
+  P1: diag.py 5 5 V strong --klo 8        (s^V(5,5), after the finished TARGET n=4 strong cell)
+  P2: diag.py 5 7 V weak --min-letter 2 --klo 8    (TARGET n=5)
+  P3: diag.py 5 7 V strong --min-letter 2 --klo 8
+  If a value comes out = klo, rerun with --klo value-1 to get the lower-bound CNF. Then `python3 prove.py "<cell>"`
+  (CaDiCaL LRAT -> lrat_check.py, plus CryptoMiniSat; appends to results/cells.md) and copy the witness to results/.
+PAUSED (SIGSTOP; pids in /tmp/claude-0/sh/paused.pids, lost with the container): search.py 4 5 9, 4 6 9, 5 4 10 (all E,
+weak, --cnf-out out/...). Re-run from scratch if wanted (each > 40 min; ~20x per k).
+Evidence standard: UNSAT = CaDiCaL 1.7.3 `--lrat=true --binary=false` proof verified by lrat_check.py AND/OR CryptoMiniSat
+(two solvers); SAT = witness re-checked by check.py against the full family (n <= 2: also verify2.py, exhaustive).
+Monotonicity in k (duplicate a state) means one UNSAT at k gives w >= k+1; monotone in d (restriction) too.
+Setup: pip install python-sat networkx; apt-get install cadical cryptominisat; scripts/setup_oink.sh for the bench.
+
+## Queue (for the successor, after the running cells)
+1. Report the four n=5 cells with evidence; LRAT for out/w_n4_d6_k8.cnf (w^E(4,6) >= 9; solve ~1000 s, proof large).
+2. Remaining (Lead's order): (4,5) V weak/strong, (5,6) V, E cells (4,5)/(4,6)/(5,4) k >= 9 (cube.py for 4 cores).
+3. Low: w(2,d) for d >= 14 (E): k=4 UNSAT (CEGAR only) for d=14,16,20,24; row2.py computes the row (slow).
 
 ## How to run the bench on a new claim
 Wrap the claimed algorithm as a command that reads a PGSolver .pg file (max-parity, owner 0 = Even, priorities any
@@ -130,6 +148,13 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 - py-zlk is slow on exponential families (Python recursion); sweep.py skips a solver after its first timeout.
 - Background watchers: `pgrep -f NAME` inside a loop matches its own command line; use a pid file instead.
 - gen.py uses its own splitmix64 so games are identical across Python versions; selftest pins the corpus hash.
+- sat-hard: graphs.family/family_V/family_S are my own generators (progress-measure trees; every graph brute-force
+  checked); counts equal L-STRUCT's maximal families. Families are not reduced to maximal graphs: n=5 V families are
+  ~30k-60k graphs, so each CEGAR round's check is slow-ish.
+- Unary (thermometer) ranks + CEGAR are the best encoding found; binary ranks ~8x slower, pure lasso CEGAR does not
+  converge, clique bounds are always 1 (shared tail -> same limsup parity), annealing / state merging fail.
+- Never `pkill -f PATTERN` where PATTERN occurs in the current shell's own command line: it kills the shell (exit 144).
+  List pids with `ps -eo pid,args | grep ...` first, then kill by pid.
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
@@ -140,6 +165,9 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 | github.com/tcsprojects/pgsolver @ d3cd624 | generators recursiveladder.ml, policyiter/generators/*.ml; paritygame.ml conventions | 2026-10-14 | code, not a paper; papers awaiting source |
 
 ## Dead ends
+- 2026-10-14 sat-hard (L-STRUCT task): pairwise-inconsistent-word clique bound (always 1: u.y and v.y share the tail's
+  limsup parity); simulated annealing (stuck at 16 violations, (3,6) k=7); pure lasso CEGAR (no convergence at (2,6) k=2);
+  binary ranks (~8x slower UNSAT); merging strong separators (fails to recover the known (2,6) weak separator).
 - 2026-10-14 (M2 closed BROKEN by the Lead 18:36Z; REFEREE's independent counterexample breaks readings (a)-(d)): arXiv 2511.03752v1 Algorithm 1 as read in
   "M2 pseudocode" is incorrect. Obstruction: Theorem 2 (A(G,d) is a player(d)-dominion) fails; A'_d only removes
   vertices the opponent can force into lower-priority parts, but player(d) (here Odd) can dodge A' on a
