@@ -1,0 +1,5 @@
+tools/oink/
+__pycache__/
+*.pyc
+experiments/*/out/
+lean/.lake/
