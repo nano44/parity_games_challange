@@ -2,16 +2,14 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14 20:00Z. M2 CLOSED as BROKEN by the Lead (18:36Z): CE1 (mine) plus an independent 4-vertex counterexample by the
-REFEREE (claude/referee 936d47c, docs/referee/scratch/cex1-maxparity.pg) that breaks readings (a)-(d). No 10k run.
-M1: 13 sweeps + READMEs pushed (4c0ae44); re-run with strategy checks in progress (run_all.sh); switch-all SI port
-(pgsolver_si.py) confirms switchallexp blow-up (iterations double per N); run_si.sh sweep in progress.
+2026-10-14 ~21:30Z. M2 closed BROKEN (Lead 18:36Z). M1 complete: 13 families swept with strategy checks, READMEs and
+verdicts in experiments/hard-families/ (12 blow-ups confirmed, counter_qpt jumps at powers of two, class open).
+SI families confirmed via ports pgsolver_si.py (switch-all, switch-best). Bench additions: exhaustive.py, bench/hkp_*.pg.
 
 ## Queue
-1. When the re-runs end: make_readmes.py (+ switchallexp-pgs / switchbestexp-pgs), update verdicts, push, report.
-2. Port PGSolver switch-best SI (stratimpralgs/switch_globally_best.ml) for switchbestexp.
-3. Low priority: add L-LIT's bench list (claude/l-lit a6c530f, docs/lit/2511.03752-position.md: exhaustive tiny
-   games, Huth-Kuo-Piterman Fig. 6/4(a)/4(b) witnesses) as generic test families.
+1. Optional: counter_qpt at N = 29..40 with a longer timeout to see the N = 32 jump.
+2. If the owner allows PGSolver binaries: diff pgsolver_port.py / pgsolver_si.py against the originals.
+3. Next claims from the Lead: run them through compare.py (regions + strategies) and the bench.
 
 ## M2 pseudocode
 Source: arXiv 2511.03752v1, R. van der Heijden, "Attractors Is All You Need: Parity Games In Polynomial Time"

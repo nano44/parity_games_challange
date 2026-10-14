@@ -33,7 +33,7 @@ VERDICTS = {
                     "at N = 10, 132 at N = 64), ssi, zlk, tl are constant: the family does not hurt them.",
     "switchbestexp": "CONFIRMED against the targeted algorithm, run through Python ports: PGSolver's switch-best "
                      "strategy improvement (pgsolver_si.py --switchbest; port of switch_globally_best.ml with the alternating "
-                     "and cheap-escape transformations; bare SI loop) takes 23, 61, 137, 289, 593, 1201 iterations for N = 1..6 "
+                     "and cheap-escape transformations; bare SI loop) takes 23, 61, 137, 289, 593, 1201, 2417, 4849 iterations for N = 1..8 "
                      "(doubling; table switchbestexp-pgsbest below). Oink psi ~linear (390 at N = 64); ssi, zlk, tl constant.",
 }
 VERDICTS = {k: v + NOTE for k, v in VERDICTS.items()}

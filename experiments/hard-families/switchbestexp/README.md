@@ -1,6 +1,6 @@
 # switchbestexp
 
-**Verdict:** CONFIRMED against the targeted algorithm, run through Python ports: PGSolver's switch-best strategy improvement (pgsolver_si.py --switchbest; port of switch_globally_best.ml with the alternating and cheap-escape transformations; bare SI loop) takes 23, 61, 137, 289, 593, 1201 iterations for N = 1..6 (doubling; table switchbestexp-pgsbest below). Oink psi ~linear (390 at N = 64); ssi, zlk, tl constant. Re-run 2026-10-14 with positional-strategy checks (harness/verify.py): every finishing solver's strategies verified, no disagreement.
+**Verdict:** CONFIRMED against the targeted algorithm, run through Python ports: PGSolver's switch-best strategy improvement (pgsolver_si.py --switchbest; port of switch_globally_best.ml with the alternating and cheap-escape transformations; bare SI loop) takes 23, 61, 137, 289, 593, 1201, 2417, 4849 iterations for N = 1..8 (doubling; table switchbestexp-pgsbest below). Oink psi ~linear (390 at N = 64); ssi, zlk, tl constant. Re-run 2026-10-14 with positional-strategy checks (harness/verify.py): every finishing solver's strategies verified, no disagreement.
 
 - Generator source: github.com/tcsprojects/pgsolver @ d3cd624b61cd66739c45aff9554f6bbdcdd05401, src/lib/generators/policyiter/generators/switchbestexp.ml (Python port)
 - Command: `python3 experiments/hard-families/pgsolver_port.py switchbestexp N` (N = family parameter)
@@ -51,3 +51,20 @@ Family switchbestexp-pgs; generator `python3 pgsolver_port.py switchbestexp {N}`
 | 8 | 210 | 490 | 210 | 5102 / 123 | 54 / 0.00156 | 2 / 0.000467 | 253 / 0.0461 |
 
 ![switchbestexp-pgs](switchbestexp-pgs.png)
+
+## Targeted algorithm (ported): switchbestexp-pgsbest
+
+Family switchbestexp-pgsbest; generator `python3 pgsolver_port.py switchbestexp {N}`; timeout 600s per run; cell = iterations / wall seconds (iterations as reported by the solver; '-' if it reports none).
+
+| N | n | m | d | pgs-switchbest (iterations) | py-zlk (iterations) |
+|---|---|---|---|---|---|
+| 1 | 35 | 70 | 34 | 23 / 0.153 | 7 / 0.0853 |
+| 2 | 60 | 130 | 60 | 61 / 0.594 | 18 / 0.036 |
+| 3 | 85 | 190 | 84 | 137 / 2.33 | 28 / 0.0458 |
+| 4 | 110 | 250 | 110 | 289 / 8.15 | 51 / 0.0378 |
+| 5 | 135 | 310 | 134 | 593 / 23.1 | 71 / 0.0433 |
+| 6 | 160 | 370 | 160 | 1201 / 63.9 | 118 / 0.0404 |
+| 7 | 185 | 430 | 184 | 2417 / 168 | 158 / 0.0376 |
+| 8 | 210 | 490 | 210 | 4849 / 423 | 253 / 0.0519 |
+
+![switchbestexp-pgsbest](switchbestexp-pgsbest.png)
