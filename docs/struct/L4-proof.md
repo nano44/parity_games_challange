@@ -38,14 +38,12 @@ A_{n} is a deterministic STRONG separator (every known quasi-polynomial product 
 Fix k, d and an edge-labelled Σ_d-graph H = (V, E), E ⊆ V × Σ_d × V, with |V| ≤ k (convention E; S and V are
 sub-cases). Define the vertex-labelled graph H' (Parys-Wiącek's conversion):
     V' = V × Σ_d,   pr'(v, p) = p,   E' = { ((u, p), (v, q)) : (u, q, v) ∈ E, p ∈ Σ_d }.
-H' is a V-graph (S1 D1: E' ⊆ V' × V', labels on vertices) with |V'| ≤ k·d vertices. (Vertices (v, q) with no edge of
-label q into v in H have no incoming edge; they may be deleted, which only lowers the count.)
+H' is a V-graph (S1 D1: E' ⊆ V' × V', labels on vertices) with |V'| ≤ k·d vertices, which is all the lemma needs.
 (a) Paths. A path v0 -q1-> v1 -q2-> v2 -q3-> ... of H (word q1 q2 q3 ...) lifts, for any p ∈ Σ_d, to the path
     (v0, p) → (v1, q1) → (v2, q2) → ... of H', whose vertex word is p · q1 q2 q3 .... Conversely a path
     (v0, p0) → (v1, p1) → (v2, p2) → ... of H' projects to the path v0 -p1-> v1 -p2-> v2 ... of H (the edge
     ((v_i, p_i), (v_{i+1}, p_{i+1})) ∈ E' means (v_i, p_{i+1}, v_{i+1}) ∈ E), and its word p0 p1 p2 ... is p0 followed by
-    the word of the projected path. So  Words(H') = { p · w : p ∈ Σ_d, w ∈ Words(H) }  (for infinite paths; with the
-    deletion of edgeless vertices nothing changes, since they lie on no infinite path).
+    the word of the projected path. So  Words(H') = { p · w : p ∈ Σ_d, w ∈ Words(H) }  (for infinite paths).
 (b) Cycles. A cycle (v0,p0) → (v1,p1) → ... → (v_{m−1},p_{m−1}) → (v0,p0) of H' projects to a closed walk
     v0 -p1-> v1 -p2-> ... -p_{m−1}-> v_{m−1} -p0-> v0 of H whose multiset of labels {p1, ..., p_{m−1}, p0} equals the
     multiset of vertex labels of the H'-cycle; so the two have the same maximum. A closed walk of H decomposes into
@@ -87,7 +85,7 @@ states, S1 D4; and Thm 5.1 is a theorem about convention E, since its graphs G_t
     s^V(n, n) ≥ s^V(n, d') ≥ s^V(k·d', d') ≥ s^E(k, d') ≥ C(⌊lg k⌋ + d'/2 − 1, ⌊lg k⌋).
 Maximising over d' gives Theorem L4. For the closed form take d' = 2⌊√n/2⌋ (even; √n − 2 ≤ d' ≤ √n). Then
 k = ⌊n/d'⌋ ≥ ⌊√n⌋ ≥ √n − 1, so ⌊lg k⌋ ≥ ⌊lg(√n − 1)⌋ ≥ ⌊½ lg n⌋ − 2 =: a0 for n ≥ 16 (as √n − 1 ≥ √n/2 there), and
-d'/2 − 1 ≥ (√n − 2)/2 − 1 ≥ ⌈√n/2⌉ − 2 =: b0. C(a+b, a) is non-decreasing in a and in b, so the bound is at least
+d'/2 − 1 = ⌊√n/2⌋ − 1 ≥ (⌈√n/2⌉ − 1) − 1 = ⌈√n/2⌉ − 2 =: b0 (REFEREE 1f5e004, fix 2). C(a+b, a) is non-decreasing in a and in b, so the bound is at least
 C(a0 + b0, a0) ≥ ((a0 + b0)/a0)^{a0} ≥ (b0/a0)^{a0}; for n ≥ 64, a0 ≥ 1 and b0 ≥ 2, and b0/a0 ≥ √n/(2 lg n) once
 √n/2 − 2 ≥ √n/4 (n ≥ 64) and a0 ≤ ½ lg n. Hence (b0/a0)^{a0} ≥ (√n/(2 lg n))^{⌊½ lg n⌋ − 2} = 2^{Θ(lg² n)}.  ∎
 Numerical check (experiments/weak-sep/l4_bound.py, exact binomials): the optimised bound of Theorem L4 and the closed
