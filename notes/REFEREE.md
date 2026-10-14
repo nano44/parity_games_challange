@@ -12,6 +12,7 @@ default binary (universal_solve preprocessing); regions match Oink on 150 random
 Theorem numbering: the paper's shared counter (Theorem 2 = dominion, Lemma 3 = minimal dominion, Lemma 4 = progress); my
 first two messages to the Lead were off by one. Idle until the Lead routes the next item.
 
+Harness review (l-comp a3777f1..de7ea19, experiments/): docs/referee/2026-10-14-harness-review.md, CHANGES (2 self-test coverage findings; code correct).
 T4 §3(c) lasso observation checked: docs/referee/2026-10-14-T4-3c-lasso.md (OK; 3 strengthenings, 1 citation nit on §3(b)).
 
 ## Queue
