@@ -23,9 +23,9 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | parked (T9 done 431ffd8) | Source checking and barrier analysis need judgement; Fable reserved for referee; move to Fable when step-3 sign-offs start |
 | L-COMP | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | working (SAT hard cells for L-STRUCT, 6h box; ~380k ctx) | SAT engineering needs care; successor near 600k | Paper-to-code fidelity for M1 generators and the M2 implementation; drop to sonnet-5-5 for routine benchmarks after M2 |
 | L-STRUCT | session_01VH4fd2Fq8XeXtyUfkwLJV1 | claude/l-struct | fable-5-1 | high | parked (handover 729c965; wake on n=5 diagonal gap, new T3 idea, or L4 second referee) | Attack lane (owner: most capable model at high effort); rank 1 approach, weak separators, T4 verdict OPEN |
-| L-ATTR | session_01XDM3HXeuG3mqhQK92eNaru | claude/l-attr | fable-5-1 | high | parked (T-A1 proof d5d6396; answers referee questions) | Attack lane, rank 3 per L-LIT T7 recommendation (M2 counterexample in hand); cheap, near-certain result |
+| L-ATTR | session_01XDM3HXeuG3mqhQK92eNaru | claude/l-attr | fable-5-1 | high | working (T-A1 revision for REFEREE-2 F1/F3/F4/F7) | Attack lane, rank 3 per L-LIT T7 recommendation (M2 counterexample in hand); cheap, near-certain result |
 | L-LOWER | session_01U5n8mgXxgyGzvuUzxHbiKx | claude/l-lower | fable-5-1 | high | working (L1, 24h box to 2026-10-15 23:00Z) | Attack lane, rank 2 (non-adaptive SLP lower bounds), T7-1' first target |
-| REFEREE-2 | session_01C2sxysc8CzJQrNBhp1rKMs | claude/referee-2 | fable-5-1 | high | working (R2-TA1; plant P2) | Independent second referee required for double-refereed results; never downgraded |
+| REFEREE-2 | session_01C2sxysc8CzJQrNBhp1rKMs | claude/referee-2 | fable-5-1 | high | working (L4 second referee; then T-A1 re-check) | Independent second referee required for double-refereed results; never downgraded |
 | WATCHDOG | session_01JQNTX8zT3T3mWMt6ZmYzkn | none (never edits) | haiku-5-5 | high | working (cron :30, trig_019xE43BZ5qaDGwxDkZ5h5ik) | Routine liveness/overage checks; reports to Lead only (deviation from playbook: does not wake lanes, so idle sessions never get messages) |
 
 ## In flight
@@ -43,7 +43,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - PGSolver SI families (switchallexp, switchbestexp) target PGSolver's switch-all/switch-best SI, not Oink psi/ssi; port of stratimpralgs.ml queued in L-COMP.
 
 ## Live approaches
-- A2 attractor/partial solvers (L-ATTR): M3 CANDIDATE T-A1 (l-attr d5d6396): psolB solves G completely iff PA**(G); PA** => psolQ solves; HKP Thm 7/8/Lemma 5 as corollaries; data: all n=3, n=4 samples + 27.3M enumeration. Under double refereeing (REFEREE + REFEREE-2). Reading L9.
+- A2 attractor/partial solvers (L-ATTR): M3 CANDIDATE T-A1 (l-attr d5d6396): psolB solves G completely iff PA**(G); PA** => psolQ solves; HKP Thm 7/8/Lemma 5 as corollaries; data: all n=3, n=4 samples + 27.3M enumeration. REFEREE-2: OK in substance, CHANGES F1-F7 (58b5c72); revision in progress; REFEREE first check queued. Reading L9.
 - A3 non-adaptive SLP lower bounds (L-LOWER): statement l-lower 8fcc0f2; known n-1 <= B_1(n) <= B_2(n) <= n^2; target T-L1 B_1(n)=omega(n); under REFEREE statement check; small-case search running.
 - A1 deterministic weak separators (L-STRUCT, PARKED 22:00Z): outside the strong-separator barrier (T4). Products: DE2 (T1 refuted), L4 (first referee OK), T3 data conjecture (w=s for d<=n+1, all cells to (4,5) V). Algorithmic quantity is the diagonal w^V(n,n) (REFEREE d96b686). Diagonal W=S=1,2,5,7 for n<=4 confirmed by three independent encodings (L-STRUCT, L-COMP LRAT, REFEREE b4a711c); TARGET alphabet n=2,3,4 also w=s; gaps only at d >> n. S3 to be framed as 'w=s on the TARGET alphabet' (barrier direction). Data: w=s on most small cells; w<s at (2,6),(2,10),V(3,6); s(2,2h)=h+1 but w(2,8)=w(2,10)=4. Lower-bound target T1 likely false; now measuring growth of w in d.
 
