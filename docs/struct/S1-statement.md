@@ -82,6 +82,13 @@ Lemma 2 (invariances). (a) w^X(n,d) and s^X(n,d) are non-decreasing in n and in 
   vertices (0-only cycles are even, so odd graphs have none); for an eventually-0 path u·0^ω of an even graph, add a
   self-loop labelled 2 at the vertex where the non-zero part ends, so u is a prefix of the word u·2^ω of an even
   Σ_d-graph with ≤ n vertices and A does not reach ⊥ on u (REFEREE repair, finding 1). (c) Hence F2 applies to Σ_d.
+  (b-V) The same for convention V (needed for S3 D6; REFEREE S3 finding 1, proof theirs): a self-loop labelled 2 is not
+  available in V (a loop at x carries pr(x)). Contract the 0-vertices instead: for every path x → u1 → … → uk → y with
+  all u_i labelled 0 and pr(x), pr(y) ≠ 0, add the edge (x, y); its letter is pr(x), so the graph stays vertex-labelled,
+  has ≤ n vertices, and keeps every cycle maximum except the 0-only cycles (even, absent in odd graphs). For an even
+  path ending in a 0-only cycle (word u·0^ω) at least one 0-vertex was removed, so add a fresh vertex z labelled 2
+  with edges x → z and z → z: no new cycle through x, and u·2^ω is a word of an even V-graph with ≤ n vertices, so a
+  Σ_n-separator does not reach ⊥ on u. Needs n ≥ 2; n = 1 is checked directly (w^V(1,1) = s^V(1,1) = 1).
 Lemma 3 (shift). Replacing every label p by p+1 swaps even and odd graphs; so w^X(n,d) for "accept Odd, reject Even"
   over Σ_d equals w^X(n,d) for "accept Even, reject Odd" over {2..d+1} ⊆ Σ_{d+1}. This is how F5's model is compared
   with ours; a KV-type bound transfers to separators over an alphabet of size d+1 (REFEREE finding 2).
