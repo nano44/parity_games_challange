@@ -2,9 +2,12 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14 23:40Z. Lead's go (23:02Z, 12 h box to 2026-10-15 11:02Z) executed: docs/attr/TA1-proof.md has the theorem
-"psolB solves G completely <=> PA**(G)" with both directions and gaps G1-G8; docs/attr/A1-results.md section 3 rewritten
-(PA ⊊ PA* ⊊ PA** hierarchy, data table, L-LIT's correction). All samples in results/ (last: pa2_n5_s52.txt, holds). Pushed and reported to the Lead at 23:45Z. After that: REFEREE questions on TA1-proof.md.
+2026-10-15 00:00Z. REFEREE-2's report (docs/referee-2/R2-TA1.md, trunk 58b5c72): T-A1 and T-A1' OK in substance, CHANGES
+F1-F7, all applied: TA1-proof.md (G9 soundness sketch, F3 weakened to one PMAttr layer and T-A1' proof rewritten, Corollary 1
+in the consequence direction with gap G10, Remark 3 order independence, Proposition 3 demoted to data Remark 4, G1-G3 marked
+closed by R2) and A1-results.md (n = 2 row: psolB 8/240 canonical, psol 10/240; corollary text). Pushed and reported; parked
+until both referees re-check. Lesson recorded below: my report wording "HKP Thm 7/8/Lemma 5 follow from the only-if direction"
+was reversed (R2 F4); the "psolQ iff" sentence in the routing was not mine but my message should have said "converse false" up front.
 
 ## Queue
 2. Answer referee questions on TA1-proof.md; G3 (F6 equality) and G2 (external target, rank of X-vertices) are the ones I
@@ -13,6 +16,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
    48 of 41,440 n=3 games); exact class of psolQ.
 
 ## Things only I know
+- R2's n = 2 witness of "psolQ-complete does not imply PA**": 0 0 1 0,1; 1 2 0 0 (Even wins both; psolB stuck, psolQ solves at b = 2 via the permissive layer). psolQ's class is strictly larger than PA** already at n = 2.
 - Lead decisions 2026-10-14 23:00Z (quoted): "1. T-A1: before paying for a proof, L-LIT checks novelty and whether PA is decidable
   in polynomial time (T8). Do not start the proof yet. If T8 says NEW and the value holds, I'll give you the go. 2. The 51 MB n=4
   jsonl stays gitignored. Record in experiments/attr/README.md the exact command that regenerates it (27 min), plus a sha256 of

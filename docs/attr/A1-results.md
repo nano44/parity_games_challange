@@ -43,10 +43,10 @@ Canonical enumeration: successor structures up to isomorphism x all owner vector
 order-and-parity equivalence (a1lib.py); both solvers and the Strahler number depend on priorities only through order and parity.
 | n | games | psolQ undecided | psolB undecided | psol undecided | Alg1 WRONG / stuck | Alg1 BADSTRAT (L-COMP strategies S1-S2) | Strahler histogram |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2 | 240 | 0 | 0 | 0 | 0 / 0 | 0 | all 1 |
-| 3 | 41,440 | 44 (all Str 1) | 3,060 | 3,336 | 0 / 0 | 144 | 1: 41,062; 2: 378 |
+| 2 | 240 | 0 | 8 (REFEREE-2: 6 of 324 non-canonical; e.g. 0 0 1 0,1; 1 2 0 0) | 10 | 0 / 0 | 0 | all 1 |
+| 3 | 41,440 | 44 (all Str 1) | 3,060 (REFEREE-2: 7,536 of 175,616 non-canonical) | 3,336 | 0 / 0 | 144 | 1: 41,062; 2: 378 |
 | 4 | 27,331,200 | 75,856 (73,588 at Str 1, 2,268 at Str 2) | - | - | 10,428 / 0 (all Str 1) | 288,294 | 1: 26,632,540; 2: 698,660 |
-(psolB/psol counted at n = 3 by hypotheses.py; n = 4 row filled from summary_n4.txt.)
+(psolB/psol counted at n = 2, 3 by peeling.py --pa2 / hypotheses.py; n = 4 row from summary_n4.txt, which has no psolB/psol column. The n = 2 psolB/psol cells were wrong (0) until REFEREE-2 F7.)
 Inclusions at n = 3 (all 41,440 games): psolQ solves every game that psolB or psol solves (no game is psolQ-undecided and
 psolB- or psol-solved); psolB and psol are incomparable (152 games psol-only, 428 psolB-only), as HKP Example 5 says.
 
@@ -96,8 +96,11 @@ attractor {v0,v1} first and the sub-trap {v2} after, the order PA* forbids.
 
 Theorem T-A1 (statement in TA1-proof.md section 2; proof there, both directions; gaps G1-G8 listed):
   psolB solves G completely  <=>  PA**(G);  and PA**(G) => psolQ solves G completely (strict: HKP Fig. 4(a)).
-Corollaries: HKP Thm 7, Thm 8, Lemma 5 are the special cases where the certificate is found by HKP's own arguments (they
-follow from the "only if" direction); PA**-membership is decidable in O(|V|^2 |E|) by the theorem; PA ⊊ PA* ⊊ PA**.
+Corollaries: HKP's three classes (Thm 7, Thm 8, Lemma 5) are contained in PA** by HKP's theorems plus the "only if" direction
+(a consequence of HKP's results, not a re-derivation: REFEREE-2 F4); PA**-membership is decidable in O(|V|^2 |E|) by the
+theorem; order independence of psolB's completeness (Remark 3). PA ⊊ PA* ⊊ PA** is a data remark, not a claim (Remark 4).
+REFEREE-2 (docs/referee-2/R2-TA1.md, trunk 58b5c72): both directions OK in substance with CHANGES F1-F7, all applied here and in
+TA1-proof.md; its own code agrees with experiments/attr/ on 490,944 games; psolQ-complete does NOT imply PA** (6 of 324 games at n = 2).
 What T-A1 says about the failures: a game is left undecided by psolB exactly when some level of every decomposition of some
 winning region has no piece that can go first: no top set that returns to itself and no closed sub-trap. That is the
 "mutual escape" of the minimal instances, now as a theorem rather than a reading.
