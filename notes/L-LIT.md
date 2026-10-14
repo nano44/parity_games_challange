@@ -30,6 +30,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 | Oink github trolando/oink @ 8fbf0a7 | README "Game generators" table + "Two binary counters"; src/tools/*.cpp headers; CMakeLists | 2026-10-14 | counter_dtl listed, no source |
 | PGSolver github tcsprojects/pgsolver @ d3cd624 | src/lib/generators/*.ml registrations (recursiveladder, modelcheckerladder, jurdzinskigame, ...) | 2026-10-14 | |
 | OpenAlex W4416021911 | cited_by_count 0 | 2026-10-14 | |
+| arXiv 1708.01544 v2 (Allamigeon, Benchimol, Gaubert, Joswig, log-barrier IPMs not strongly polynomial; SIAM J. Appl. Algebra Geom. 2018) | Theorem A (= Thm 25), Theorem B (= Cor. 31): LPs LW_r(t), 2r variables, 3r+1 constraints, Ω(2^r) iterations for any primal-dual log-barrier path-following IPM in the wide neighbourhood | 2026-10-14 | strong-polynomiality barrier, not bit-model |
+| arXiv 2201.02186 v1 (Allamigeon, Gaubert, Vandame, no self-concordant barrier IPM is strongly polynomial) | Theorem 1 (detailed: Thm 25): >= 2^n - 1 iterations on cex_n(t); bitsize L = Ω(u_n log t), u_k = 3·2^(k-2) - 1 | 2026-10-14 | lower bound in dimension, input has exponential bitsize |
+| arXiv 0912.2462 v3 (Akian, Gaubert, Guterman, tropical polyhedra = mean payoff games) | Theorem 3.2: support of tropical cone {Ax <= Bx} = states with nonnegative MPG value | 2026-10-14 | |
+| DOI 10.4204/EPTCS.305.8 (Two Counters), further | §7: n = 3N^2+5N vertices, 7N^2+4N edges; §8: Ω(2^sqrt(n)) for zlk, pp, dp, rr, rrdp, tl, atl "clear from the empirical data"; §9: Lemma 1 proof sketch for ZLK | 2026-10-14 | |
 
 ## Dead ends
 (none)
