@@ -1,0 +1,73 @@
+{
+ "n": 2,
+ "d": 8,
+ "conv": "V",
+ "mode": "strong",
+ "value": 5,
+ "k_start": 1,
+ "eager": false,
+ "solver": "cadical153",
+ "automaton": {
+  "k": 5,
+  "d": 8,
+  "delta": [
+   [
+    1,
+    0,
+    2,
+    0,
+    3,
+    0,
+    2,
+    0
+   ],
+   [
+    null,
+    4,
+    null,
+    4,
+    3,
+    4,
+    null,
+    0
+   ],
+   [
+    4,
+    2,
+    4,
+    2,
+    3,
+    2,
+    null,
+    0
+   ],
+   [
+    null,
+    3,
+    null,
+    3,
+    null,
+    1,
+    null,
+    0
+   ],
+   [
+    1,
+    4,
+    null,
+    2,
+    3,
+    2,
+    null,
+    0
+   ]
+  ]
+ },
+ "graphs": {
+  "evens": 48,
+  "odds": 0,
+  "used_even": 15,
+  "used_odd": 0
+ },
+ "seconds": 0.1
+}

@@ -53,6 +53,10 @@ proof gives.
 - Decisive test cells (L-COMP computing): (2,8), where T1 needs w(2,8) ≥ 4 = s(2,6) although w(2,6) = 3; and V (3,8),
   where T1 needs w^V(3,8) ≥ 7 = s^V(3,6) although w^V(3,6) = 6. A SAT answer below those values refutes T1. The proof
   attempt waits for (2,8) and the REFEREE's statement check.
+- Outcome (L-STRUCT, 2026-10-14 21:10Z, SAT + checker, unrefereed; L-COMP computing independently): w^E(2,8) = 4
+  (k = 3 UNSAT, k = 4 SAT), w^V(2,8) = 4, w^V(3,8) = 7 (k ≤ 6 UNSAT, 7 SAT); s^E(2,8) = s^V(2,8) = 5 = (2,4)-universal
+  tree. T1 survives both decisive cells, with EQUALITY: w(2,8) = s(2,6), w^V(3,8) = s^V(3,6), as also w(2,6) = s(2,4).
+  Pattern to watch: w(n,d) = s(n,d−2) on every cell where weak is below strong, except (3,6) V (6 vs s^V(3,4) = 5).
 - The naive mechanism is FALSE: "a weak (n,d)-separator restricted to Σ_{d−2} is a strong (n,d−2)-separator" fails,
   because weak separators with an odd simple cycle of maximum ≤ d−3 exist, even at minimum size ((3,6) V, 6 states,
   cycle maximum 3; experiments/weak-sep/probe_oddcycles.py). So T1 needs an argument that re-uses states, not a
