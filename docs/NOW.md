@@ -25,10 +25,11 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 ## In flight
 - L-COMP: remaining M1 families (READMEs, sweeps), stratimpralgs port; harness has strategy verification (D2 change 5).
 - REFEREE: R1 full report (short) incl. AM1-AM9 faithfulness verdicts; then PGSolver port checks; then review of L-COMP harness for landing.
-- L-LIT: T1 done (l-lit a6c530f); T2 RANKING.md (gates first attack lane); T3 BARRIERS.md.
+- L-LIT: T1-T3 landed on trunk 9079c01 (docs/lit/RANKING.md, BARRIERS.md). T4: barrier check of rank 1 (deterministic weak separators) vs Colcombet-Fijalkow 2019 et al.; gates the first attack lane (planned: L-STRUCT on weak separators).
 - Watchdog: add when a 4th working session starts (first attack lane).
 
 ## Findings to carry
+- Landscape doc corrections (L-LIT, docs/lit/BARRIERS.md): d = O(log n) poly result is Jurdzinski-Lazic Thm 7 / Fearnley et al., not Calude et al.; upper-bound exponent is Jurdzinski-Lazic's; attractor-decomposition barrier is formally only Arnold-Niwinski-Parys Thm 5.1; Two Counters bound partly empirical; Random-Facet parity lower bound withdrawn (arXiv 1410.7871).
 - Oink mspm at 8fbf0a7 is wrong on some games (crash at mspm.cpp:486; one answer rejected by Oink's verifier); excluded from agreement claims. Instances: experiments/harness/regressions/ (l-comp).
 - PGSolver SI families (switchallexp, switchbestexp) target PGSolver's switch-all/switch-best SI, not Oink psi/ssi; port of stratimpralgs.ml queued in L-COMP.
 
