@@ -21,3 +21,4 @@
 - 2026-10-14 19:24Z: landed l-comp e70a2a9 + referee ae532f6 into trunk; verify PASS locally.
 - P1 committed 2026-10-14 19:25Z: sha256 f6dde00c6e9ef0eae4166c4f89626236b88eb078ab24442ee87092e41b6a1b24 (description held by Lead until the REFEREE's verdict)
 - 2026-10-14 19:26Z: L-STRUCT S1 data (w<s by 1 at small cells). Decided (a)+(b): L-STRUCT lower-bound line; L-COMP woken for SAT hard cells (experiments/sat-hard/); REFEREE checks C1 + Lemmas 1-3 with plant P1.
+- 2026-10-14 19:33Z: CI green on bench landing 6719177 (run 38623181521) and on 6031e01 (run 38623416618).
