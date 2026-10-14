@@ -9,6 +9,6 @@ Full text, verbatim: docs/decisions/D001-launch-brief.md. Key lines:
 > At most 5 working sessions at once unless you justify more to me.
 > On "stop", follow the playbook's stop procedure; restart only on my word. On paid overage, stop the fleet and tell me.
 
-Lead reading L1: "M2 time-boxed to 2 days" runs from the spawn of L-COMP and REFEREE (2026-10-14 ~18Z) to 2026-10-16 18:00Z.
+Lead reading L1: "M2 time-boxed to 2 days" runs from the moment arXiv is reachable and REFEREE and the L-COMP M2 task are both started (arxiv.org was blocked at launch).
 Lead reading L2: the playbook's `main` branch is replaced, until the owner says otherwise, by the Lead branch
 claude/vibrant-johnson-nxvvxo as trunk; lanes merge into it only through the pipeline.

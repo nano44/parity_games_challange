@@ -1,12 +1,12 @@
 # NOW (rewritten, never appended; max 150 lines)
-Updated: 2026-10-14 by Lead. Phase: M0 done pending TARGET approval; M1 + M2 starting.
+Updated: 2026-10-14 by Lead. Phase: M0 done pending TARGET approval; M1 running; M2 BLOCKED on network (paper hosts denied).
 
 ## Milestones
 | M | State | Evidence |
 | --- | --- | --- |
 | M0 Setup | done except owner approval of TARGET.md | this commit; CI .github/workflows/verify.yml; backstop trigger in docs/agents/LEAD-BACKSTOP.md |
 | M1 Reproduce hard families | in flight (L-COMP) | experiments/ |
-| M2 Audit arXiv 2511.03752 | in flight (L-COMP implementation, REFEREE proof read); deadline 2026-10-16 18:00Z | notes/L-COMP.md, docs/referee/ |
+| M2 Audit arXiv 2511.03752 | BLOCKED: arxiv.org denied by environment network policy; 2-day clock starts when reachable | notes/L-COMP.md, docs/referee/ |
 | M3 Partial results | not started; attack lanes wait for TARGET approval and L-LIT ranking | - |
 | M4 Target | not started | - |
 
@@ -18,14 +18,13 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | Role | Session id | Branch | Model | Effort | State | Reason |
 | --- | --- | --- | --- | --- | --- | --- |
 | Lead | session_014FBi6o334DvwT5Uw2kDfoN | claude/vibrant-johnson-nxvvxo | opus-5-5 | high | working | Owner-chosen session; routing judgement; keeps context lean |
-| REFEREE | (spawning) | claude/referee | fable-5-1 | high | working | Most capable model; finding the error in a claimed proof decides M2 and every claim after |
-| L-LIT | (spawning) | claude/l-lit | opus-5-5 | high | working | Source checking and barrier analysis need judgement; Fable reserved for referee; move to Fable when step-3 sign-offs start |
-| L-COMP | (spawning) | claude/l-comp | opus-5-5 | high | working | Paper-to-code fidelity for M1 generators and the M2 implementation; drop to sonnet-5-5 for routine benchmarks after M2 |
+| REFEREE | not spawned (held: needs paper hosts) | claude/referee | fable-5-1 | high | held | Most capable model; finding the error in a claimed proof decides M2 and every claim after |
+| L-LIT | not spawned (held: needs paper hosts) | claude/l-lit | opus-5-5 | high | held | Source checking and barrier analysis need judgement; Fable reserved for referee; move to Fable when step-3 sign-offs start |
+| L-COMP | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | working | Paper-to-code fidelity for M1 generators and the M2 implementation; drop to sonnet-5-5 for routine benchmarks after M2 |
 
 ## In flight
-- L-COMP: M1 hard-family bench + harness; M2 implementation of 2511.03752 (one implementation).
-- REFEREE: M2 proof read of 2511.03752; check L-COMP's pseudocode against the paper.
-- L-LIT: re-verify the literature map against primary sources; barrier note on 2511.03752; rank attack approaches.
+- L-COMP: setup, solver-agnostic harness, M1 hard families (Oink + PGSolver generators from GitHub). M2 implementation waits for arXiv.
+- REFEREE, L-LIT: held, not spawned; a session that cannot open papers would only spend money.
 
 ## Live approaches
 - (none yet)
@@ -37,6 +36,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - None of the fleet's own. Known: quasi-polynomial upper bound (to be source-checked by L-LIT).
 
 ## Owner questions open
+- Q0 (blocker): environment network denies arxiv.org, export.arxiv.org, doi.org, drops.dagstuhl.de, lmcs.episciences.org and other paper hosts (github.com works). Asked owner to allow them.
 - Q1: approve TARGET.md (section 7 lists five choices).
 - Q2: trunk branch: keep claude/vibrant-johnson-nxvvxo as trunk, or create `main`?
 - Q3: environment setup script (Boost dev packages + scripts/setup_oink.sh) to save each session ~1 min of setup.
