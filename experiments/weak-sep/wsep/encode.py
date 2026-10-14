@@ -182,6 +182,19 @@ class Encoder:
             self.add(opts)
         self.add([step[i, pmax - 1] for i in range(L)])
 
+    def require_close_to(self, delta, t):
+        """Add: the automaton differs from the given delta (list of rows, None = bottom) in at most t (state, letter) pairs."""
+        from pysat.card import CardEnc, EncType
+        diffs = []
+        for q in range(self.k):
+            for a in range(self.d):
+                tgt = delta[q][a]; tgt = self.k if tgt is None else tgt
+                diffs.append(-self.t[q][a][tgt])  # literal true iff transition differs
+        cnf = CardEnc.atmost(lits=diffs, bound=t, top_id=self.nv, encoding=EncType.seqcounter)
+        for cl in cnf.clauses:
+            self.add(cl)
+        self.nv = max(self.nv, cnf.nv)
+
     def solve(self):
         if not self.solver.solve():
             return None

@@ -129,6 +129,38 @@ structure into the states of any deterministic weak V-separator with d ≤ n+1, 
 (the quasi-orders of CDFJLP Lemma 5.1 defined through paths that are prefixes of EvenCycles^V_n words) and using the
 tolerated odd cycles' position at W2's edge. No sub-lemma for this is formulated yet; it is the open core of T3.
 
+## 4c. T3's sub-lemma (R2, statement only; Lead's ask 21:35Z) and the probes behind it
+Probe data (experiments/weak-sep/probe_oddcycles.py, probe_rewire.py, probe_rule.py, 2026-10-14):
+- Weak separators WITH a reachable odd simple cycle exist at d ≤ n+1 in both conventions, at minimum size and above:
+  E (2,3) k=3 (= w), (3,3) k=6, (3,4) k=6; V (2,2) k=3, (2,3) k=3 (= w), (3,3) k=5 (= w), (3,4) k=5 (= w), (3,4) k=6,
+  (4,4) k=8. None at E (2,2) k ≤ 3, E (3,3) k=5, E (3,4) k=5, E (4,4) k=8, V (2,2) k=2, V (4,4) k=7. So "weak = strong
+  as objects" fails at d ≤ n+1 in E as well; T3 is a size statement only (dead ends SL1, SL5, SL5' in the notebook).
+- Rewiring (probe_rewire.py: SAT for a STRONG (n,d)-separator with the same k states differing from the weak witness
+  in ≤ t transitions): at d ≤ n+1, t = 1 in all nine instances above (eight times a letter-2 transition, once letter 1;
+  the new target is a self-loop in four cases, another state in five), even when the witness has 2 or 3 odd simple
+  cycles. At the gap cells (2,6) E and (3,6) V no strong separator within t ≤ 6 exists (as w < s there).
+- The naive explicit rule "redirect the smallest-even-letter transition of an odd cycle to a self-loop" is NOT the
+  mechanism: it removes all odd cycles but breaks (W1) in 7 of 8 instances (probe_rule.py); "redirect to the cycle's
+  entry state" loops. The solver's t = 1 rewire is a different transition or target each time. Dead end recorded.
+
+Sub-lemma SL8 (the statement T3 reduces to; to be proved, not assumed). Let X ∈ {E, S, V}, n ≥ 1, 1 ≤ d ≤ n + 1, and
+let A be a deterministic weak (n,d)-separator of convention X with state set Q. Then there is a deterministic strong
+(n,d)-separator of convention X with state set Q (same states, same initial state, transitions possibly changed).
+SL8 ⇒ T3 (w^X(n,d) ≥ s^X(n,d) for d ≤ n+1; the other inequality is S1 F1). Sharpened data-driven form SL8-1: the new
+automaton differs from A in exactly one transition per ... (open: the probes show one transition in total suffices in
+all nine instances; whether that persists is unknown).
+Proof plan (statement-level): (1) from the lasso condition (Q3) and Fact M0 with windows of n letters, characterise
+the tolerated odd simple cycles at d ≤ n+1: their lasso words are unrealisable with n vertices although every letter
+≤ n+1 can occur; identify on such a cycle a transition τ = (q, e, q') with e even whose even-realisable use is
+"replaceable"; (2) define the replacement target as the state the even-realisable continuations of q' are also safe
+from (candidates: a state already reached by the same even-realisable prefixes with a larger pending odd letter, or q
+itself); (3) show (W1) is preserved and every odd cycle through τ is destroyed, and that no new odd cycle appears;
+(4) iterate; termination by a potential (number of odd simple cycles). Step (2) is the open core; the next data step
+is to list ALL t = 1 rewires per instance (not just one) and read the rule off them, in the E convention first where
+the strong side has the universal-tree structure.
+Alternative route if (2) fails: a direct size argument (injective leaf map from a universal-tree-like structure built
+from even-realisable words), S3 §4b R2 as before.
+
 ## 5. Calibration
 - Everything above the diagonal (n = 2, d ≥ 5; n = 3, d ≥ 5) is about letters a TARGET game of that size cannot have.
   The only algorithmically meaningful numbers so far are W(n) = S(n) for n ≤ 4.
