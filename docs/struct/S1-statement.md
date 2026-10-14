@@ -19,10 +19,12 @@ KV = Kozachinskiy, Vyalyi, arXiv 1902.07175v3. Nothing here is a result; §5 lis
   why two conventions are kept below. Lemma 2(c) handles the letter 0 / neutral letter of CFGO.
 
 ## 2. Definitions
-D1 (labelled graphs). An edge-labelled Σ_d-graph is H = (V, E) with E ⊆ V × Σ_d × V (CFGO §2.1 convention: parallel edges
-with distinct labels are allowed; CDFJLP §2.1 give one priority per edge and E a set of edges, which is a sub-case).
-A vertex-labelled Σ_d-graph is H = (V, E, pr) with E ⊆ V × V and pr : V → Σ_d; its edge (u, v) carries the label pr(u).
-A vertex-labelled graph is an edge-labelled graph; the class is strictly smaller.
+D1 (labelled graphs). An edge-labelled Σ_d-graph (convention E) is H = (V, E) with E ⊆ V × Σ_d × V (CFGO §2.1: parallel
+edges with distinct labels are allowed; CDFJLP's text does not fix this, and their §5 construction uses parallel self-loops,
+so E is L-STRUCT's reading of CDFJLP too).
+Convention S: at most one label per ordered pair (L-STRUCT's reading of KV's game graphs; CDFJLP never fix this, see §6).
+A vertex-labelled Σ_d-graph (convention V) is H = (V, E, pr) with E ⊆ V × V and pr : V → Σ_d; its edge (u, v) carries
+the label pr(u). As classes of word languages V ⊆ S ⊆ E, strictly. For a TARGET game the letters are pr + 2.
 Words(H) = { labels of infinite paths of H } ⊆ Σ_d^ω (paths from any vertex; sinks contribute nothing).
 
 D2 (even and odd graphs; CDFJLP §2.1, CFGO Lemma 6.1). A cycle is even if the largest label on it is even, odd otherwise.
@@ -74,11 +76,19 @@ F5. Only known weak lower bound (KV Thm 2): a DFA separating EvenCycles_{n,2} fr
 Lemma 1 (regions). For a TARGET game G, a deterministic weak (n, n+2)-separator A of convention V, and v ∈ V:
   v ∈ W_E(G) iff Even wins the safety game G ⊲ A from (v, q0). Proof sketch: restrict F4's argument to the trap W_E
   (Even's positional strategy on W_E yields an even vertex-labelled subgraph on W_E) and to W_O for Odd.
-Lemma 2 (invariances). (a) w^X(n,d) and s^X(n,d) are non-decreasing in n and in d. (b) Adding the neutral letter 0
-  (CFGO alphabet [0,d]) changes neither w^E nor s^E: extend δ(q,0) = q; contracting 0-edges maps paths of even/odd
-  [0,d]-graphs with ≤ n vertices to paths of even/odd Σ_d-graphs with ≤ n vertices. (c) Hence F2 applies to Σ_d.
+Lemma 2 (invariances). (a) w^X(n,d) and s^X(n,d) are non-decreasing in n and in d. (b) For d ≥ 2, adding the neutral
+  letter 0 (CFGO alphabet [0,d]) changes neither w^E nor s^E: extend δ(q,0) = q; contracting 0-edges maps paths with
+  infinitely many non-zero letters of even/odd [0,d]-graphs with ≤ n vertices to paths of even/odd Σ_d-graphs with ≤ n
+  vertices (0-only cycles are even, so odd graphs have none); for an eventually-0 path u·0^ω of an even graph, add a
+  self-loop labelled 2 at the vertex where the non-zero part ends, so u is a prefix of the word u·2^ω of an even
+  Σ_d-graph with ≤ n vertices and A does not reach ⊥ on u (REFEREE repair, finding 1). (c) Hence F2 applies to Σ_d.
 Lemma 3 (shift). Replacing every label p by p+1 swaps even and odd graphs; so w^X(n,d) for "accept Odd, reject Even"
-  over Σ_d equals w^X(n,d) for "accept Even, reject Odd" over {2..d+1}. This is how F5's model is compared with ours.
+  over Σ_d equals w^X(n,d) for "accept Even, reject Odd" over {2..d+1} ⊆ Σ_{d+1}. This is how F5's model is compared
+  with ours; a KV-type bound transfers to separators over an alphabet of size d+1 (REFEREE finding 2).
+Status 2026-10-14 (docs/referee/2026-10-14-S1-C1-weak-separators.md, referee 762c598): Lemma 1 OK (may be built on),
+  Lemma 2 OK with the repair above, Lemma 3 OK with the alphabet note. C1 (w(2,6) = 3 < 4 = s(2,6) in E, S, V) is
+  REFEREE-checked (762c598); the table is citable inside the fleet as "L-STRUCT data (SAT + checker), unrefereed,
+  l-struct 42dbbc2" (Lead 19:26Z).
 
 ## 5. The questions (each answer is a candidate M3 or M4 item; none is claimed)
 Q1 (separation of the two notions). Is there (n, d) with w^E(n,d) < s^E(n,d)? With w^V(n,d) < s^V(n,d)?

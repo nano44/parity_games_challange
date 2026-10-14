@@ -156,6 +156,32 @@ class Encoder:
                 for q2 in range(k):
                     self.greater(u[v][q], u[v2][q2], N, [-R[v][q], -t[q][p - 1][q2]])
 
+    def require_odd_cycle_max_at_most(self, pmax):
+        """Add: the transition graph has a closed walk (hence a simple cycle) whose letters are <= pmax and whose maximum
+        is odd (some step uses an odd letter p with every letter on the walk <= p; we fix p = pmax, caller loops over odd
+        pmax).  Walk of length k with pauses: positions 0..k (pos k = pos 0), one-hot states; each step pauses or follows
+        a transition with letter <= pmax; at least one step uses letter pmax."""
+        k, t = self.k, self.t
+        L = k
+        x = [[self.new() for _ in range(k)] for _ in range(L + 1)]
+        for i in range(L + 1):
+            self.exactly_one(x[i])
+        for q in range(k):
+            self.add([-x[L][q], x[0][q]]); self.add([x[L][q], -x[0][q]])
+        step = {}
+        for i in range(L):
+            opts = []
+            pause = self.new(); opts.append(pause)
+            for q in range(k):
+                self.add([-pause, -x[i][q], x[i + 1][q]])
+            for a in range(pmax):
+                s = step[i, a] = self.new(); opts.append(s)
+                for q in range(k):
+                    for q2 in range(k):
+                        self.add([-s, -x[i][q], -x[i + 1][q2], t[q][a][q2]])
+            self.add(opts)
+        self.add([step[i, pmax - 1] for i in range(L)])
+
     def solve(self):
         if not self.solver.solve():
             return None
