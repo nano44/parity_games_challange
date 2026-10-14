@@ -140,7 +140,27 @@ Does it change what the blow-up demonstrates? No for the claim M1 is about, with
   numbers are comparable to PGSolver's "solved with K iterations" line under those flags.
 
 ## Execution check (my own, see the note on reproduction below)
-(pending: regions vs Oink on random games and iteration counts on the families are running; numbers follow in the next commit.)
+Run from my session scratchpad on the files at e3e7e4e (`pgsolver_si.py` as a subprocess, `pgsolver_port.py` for the
+games, Oink 8fbf0a7 `--zlk` for the regions); script `docs/referee/scratch/sitest_run.py`.
+
+- Winning regions: 150 random games (n ≤ 9, priorities ≤ 6, converted to max-parity), both policies: 0 mismatches
+  against Oink, 0 errors.
+- Iteration counts (the port's "solved with K iterations", PGSolver's counter semantics), regions all equal to Oink's:
+
+| n | vertices (switchallexp / switchbestexp) | switch-all on switchallexp | switch-best on switchbestexp | switch-best on switchallexp | switch-all on switchbestexp |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 21 / 35 | 11 | 23 | 6 | 22 |
+| 2 | 35 / 60 | 31 | 61 | 9 | 62 |
+| 3 | 49 / 85 | 71 | 137 | 9 | 142 |
+| 4 | 63 / 110 | 151 | 289 | 11 | 302 |
+| 5 | 77 / 135 | 311 | 593 | 13 | 622 |
+| 6 | 91 / 160 | 631 | 1201 | 15 | 1262 |
+
+The two targeted columns fit exactly: switch-all on switchallexp = 10·2^n − 9 and switch-best on switchbestexp =
+19·2^n − 15 for n = 1..6 (switch-all on switchbestexp = 20·2^n − 18 as well). The off-target column (switch-best on
+the switch-all family) grows linearly, as expected for a family built against a different rule. So the bare loop as
+ported exhibits the exponential growth the families were built for. Whether these are the integers PGSolver prints
+(under `-dgo -dsd -dlo -dsg`) remains unverified (gap below).
 
 ## Verdict for Part B: OK (faithful to the bare strategy-improvement loop), with the deviation stated above to be
 carried into any M1 claim verbatim.
