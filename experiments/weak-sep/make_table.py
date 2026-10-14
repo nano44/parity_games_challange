@@ -13,7 +13,7 @@ for f in sorted(glob.glob(str(pathlib.Path(__file__).parent / 'results/automata/
     R[(r['mode'], r['conv'], r['n'], r['d'])] = r
 ns = sorted({k[2] for k in R}); ds = sorted({k[3] for k in R})
 out = ["# w(n,d) and s(n,d): exact values (SAT, verified by the independent checker)", "",
-       "Cell = w / s. '-' = not computed. '*' after w: the minimal weak separator found is not strong (its transition",
+       "Cell = w / s. '-' = not computed. '?' = strongness of the witness not analysed (slow family). '*' after w: the minimal weak separator found is not strong (its transition",
        "graph has a reachable odd cycle). Universal-tree row: least leaves of an (n, d/2)-universal tree for even d",
        "(CFGO Prop. 6.10/6.11 recursions f = g where they agree; brute force in wsep/utrees.py where run); equals s^E by",
        "CFGO Thm 4.1 + Lemma 6.8. Conventions: E = edge-labelled multigraphs (CDFJLP/CFGO), S = at most one label per",
@@ -26,7 +26,8 @@ for conv in ['E', 'S', 'V']:
         row = []
         for d in ds:
             w = R.get(('weak', conv, n, d)); s = R.get(('strong', conv, n, d))
-            ws = '-' if w is None else str(w['value']) + ('*' if w['automaton'] and not analyze(w)['strong'] else '')
+            slow = (conv == 'S' and d >= 5) or (conv == 'V' and d >= 9) or n >= 5 or (n == 4 and d >= 5)
+            ws = '-' if w is None else str(w['value']) + ('*' if w['automaton'] and not slow and not analyze(w)['strong'] else ('?' if w['automaton'] and slow else ''))
             ss = '-' if s is None else str(s['value'])
             row.append(f"{ws} / {ss}")
         out.append(f"| {n} | " + " | ".join(row) + " |")
