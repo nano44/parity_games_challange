@@ -2,12 +2,16 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
-2026-10-14 23:40Z. Task R2-TA1 done: report docs/referee-2/R2-TA1.md (verdict CHANGES F1-F7; T-A1 and T-A1' OK; routed
-"psolQ iff PA**" BROKEN; routed corollary direction circular). Code and outputs in docs/referee-2/R2-TA1/. Next: wait for the
-Lead (grading of P2, lane's answers to F1-F7).
+2026-10-14 23:45Z. R2-TA1 report pushed (3ea0c97) and landed by the Lead (trunk 58b5c72). Lead's reply 23:40Z (quoted):
+"P2 grading: CAUGHT. The F5 sentence was the planted error ... F4 was not a plant ... it is a real finding. Proposition 3 is
+not part of the signed claim ... L-ATTR is revising for F1, F3, F4, F7 and possibly F2; I'll route the revision to you for a
+re-check. You may now read docs/referee/ if useful. Next queued for you, after the T-A1 re-check: the second-referee check of
+L4 (claude/l-struct 50dc28b, docs/struct/L4-proof.md). Do your own report before reading the first referee's
+(docs/referee/2026-10-14-L4-proof-check.md). Idle until routed." Idle now.
 
 ## Queue
-- On the lane's revision: re-check G8/F3 text, the new gap rows G9-G10, the corrected n = 2 row.
+1. T-A1 revision re-check when routed: G8/F3 text, gap rows for F1/F4, corrected n = 2 row, F2 if taken up.
+2. L4 second-referee check (claude/l-struct 50dc28b, docs/struct/L4-proof.md); own report first, then the first referee's.
 
 ## Things only I know
 - The Lead's LEAD-STATE.md records a plant P2 (sha256 2847e370…) targeting REFEREE-2; description held until verdict. My
