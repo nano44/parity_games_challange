@@ -14,8 +14,8 @@ Machine checks (mine, independent of experiments/attr): docs/referee/scratch/ta1
 from HKP Figs. 3/5 in HKP's min-parity colours, fed colour = M − pr; my own PA** in max-parity from §1, exhaustive over X
 and S; Zielonka reference) and ta1probe.py (F2, F6, Lemma 0 on all small games).
 
-## Verdict: CHANGES (T-A1 and T-A1' hold; both directions re-derived step by step; 6 findings, none against the theorem;
-## Proposition 3 is not proved in the document)
+## Verdict: CHANGES (T-A1 and T-A1' hold; both directions re-derived step by step; 6 findings at d5d6396, none against the
+## theorem; at 4478b84 findings 1, 2, 4 and a new nit 7 remain, see the Addendum)
 | item (Lead's list) | verdict |
 | --- | --- |
 | psolB, psolQ definitions against HKP | OK: F4/F5 and psolb.py/psolq.py are HKP Figs. 3/5 under colour = M − pr (order reversed, parity kept); MAttr/PMAttr external target and eligibility match Defs 3/6 (§1) |
@@ -24,6 +24,42 @@ and S; Zielonka reference) and ta1probe.py (F2, F6, Lemma 0 on all small games).
 | corollaries | Cor. 1, 2 OK (HKP Thms 7, 8, Lemma 5 re-derived informally, §6); Prop. 3 unproved (finding 3) |
 | gaps G1–G8 | all closed or benign (§7); unlisted gaps: findings 1, 2, 4 |
 | counterexample search n ≤ 4 | none: psolB-complete ⟺ PA** and PA** ⇒ psolQ-complete on all 175,616 labelled 3-vertex games (priorities 0..3), 30,000 random 4-vertex, 20,000 random one-player 4-vertex, 10,000 + 10,000 random 5-vertex games; Fig. 4(a) and the Prop. 3 witness reproduced (§5) |
+
+## Addendum (re-check at claude/l-attr 4478b84, the Lead's 23:42Z retarget; written after my own derivation above, then
+## REFEREE-2's docs/referee-2/R2-TA1.md was read)
+Diff d5d6396 → 4478b84 touches only docs/attr/TA1-proof.md, docs/attr/A1-results.md and notes/L-ATTR.md (no code), so §5's
+machine checks stand. Status of my findings at 4478b84:
+- Finding 1 (F1 lacks "X ⊆ pr^{-1}(d), d ≡ p"): STILL OPEN. F1's statement is unchanged; the new G9 text ("visits priority d
+  infinitely often") silently uses exactly the omitted hypothesis. Add it to F1 (and to the name "recurrent" if it is to carry
+  HKP's "fatal").
+- Finding 2 (T-A1' needs HKP Thm 4 so that psolQ's removals are F2-removals and L1's Setting applies to psolQ's residual):
+  STILL OPEN. The rewritten T-A1' proof ("contradiction as before") is correct and now uses F3 only for the last layer (my
+  re-derivation: Y_b = X since X ⊆ X_0 ⊆ {pr ≥ d}; the last layer stays at d along the iteration because X' ⊆ X_j has priority d),
+  but the fact that the subgame G_m reached by psolQ is "reached from G by removals as in F2" needs the soundness of layered
+  fatal attractors (HKP Thm 4), which the facts list still does not state. One line (F1') closes it.
+- Finding 3 (Prop. 3 unproved): RESOLVED by Remark 4 (data, outside the claim); PA ⊆ PA* correctly labelled data-only.
+- Finding 4 (Corollary 1's "Büchi" is HKP's class up to recolouring; psolB's invariance under order- and parity-preserving
+  recolourings is used silently): STILL OPEN; the consequence-direction rewording (R2 F4) does not touch it.
+- Finding 5 (F3 / layeredAttr monotonicity): RESOLVED (F3 weakened to MAttr/PMAttr target monotonicity; T-A1' uses one layer).
+- Finding 6 (order-free by-product): RESOLVED by Remark 3.
+New at 4478b84:
+- G9 (HKP Thm 2 written out): correct as a sketch (attractor strategy, ≥ 1 move, priorities ≤ d, X ⊆ MAttr(X) repeats), with the
+  hypothesis of finding 1 understood.
+- G10 (Corollary 1 inherits HKP's proofs of Thm 7, Thm 8, Lemma 5; checked by R2 to go through without Thm 6): agrees with my
+  §6; I signed the same three re-derivations independently.
+- Remark 3's gloss of HKP's "stable" is wrong as a definition: HKP (§5.2, before Thm 6) define psolB(π) as the solver following a
+  fixed finite colour sequence π (repetitions allowed, no restart) and call it stable if appending any colour c1 leaves the
+  input/output behaviour unchanged. That is not "every colour of the current game is tried before returning, with restarts". The
+  remark's content survives under HKP's definition: stability means no colour of the output has a non-empty fatal fixpoint,
+  which is all L1 needs, and the "only if" direction works for any removal sequence. Finding 7 (N): replace the gloss by HKP's
+  definition plus that one-line bridge.
+- A1-results.md n = 2 row: the corrected psolB count agrees with my data (6 of the 324 labelled two-vertex games are
+  psolB-undecided, §5; R2's example `0 0 1 0,1; 1 2 0 0` is one of them). I cannot check the canonical counts (8 of 240)
+  without the lane's enumeration.
+Verdict at 4478b84: CHANGES (findings 1, 2, 4, 7 open; T-A1, T-A1', Corollaries 1–2 and Remark 3 hold). First-referee
+signature on T-A1 and T-A1' is given subject to findings 1 and 2 being applied (statement precision only; no step of either
+proof changes). Plant note: R2's F5 ("psolQ iff", BROKEN) was in the Lead's routing to REFEREE-2 only; my routing text had the
+one-direction form.
 
 ## 1. Definitions against HKP
 HKP colours c with min-parity; the lane's map c = M − pr, M even ≥ max pr, reverses the order and keeps parity, so
@@ -143,3 +179,31 @@ G8: closed (§2), two lines to add. Unlisted: findings 1–4.
 - HKP Thm 2 (F1), Thm 4 (T-A1'), Thm 5(1) (Cor. 2) are black boxes from the paper; Thms 7, 8, Lemma 5 re-derived informally in §6.
 - DJT §2 (trap definition) not opened by me.
 - PA ⊆ PA* (Prop. 3) rests on data only.
+
+## Signature block (first referee) — claim at claude/l-attr 57a1515, docs/attr/TA1-proof.md (blob f58968f)
+Claim signed: Theorem T-A1 (psolB solves G completely ⟺ PA**(G)); Theorem T-A1' (PA**(G) ⟹ psolQ solves G completely;
+converse false, witnesses HKP Fig. 4(a) and the 2-vertex game `0 0 1 0,1; 1 2 0 0`); Corollaries 1–2 as stated in the file;
+Remark 3 (order independence, for HKP's stable sequences). Excluded: Remark 4 (PA, PA*; data only).
+Application check (diff 4478b84..57a1515): finding 1 applied (F1 now has d ≡ p, ∅ ≠ X ⊆ pr^{-1}(d)); finding 2 applied (F1' =
+HKP Thm 4 with gap G11, invoked at the start of the T-A1' proof); finding 4 applied (Corollary 1 states the recolouring
+invariance); finding 5 applied (constant layer count written into the T-A1' proof); finding 6 applied (Remark 3); finding 7
+applied (Remark 3 now uses HKP's definition of a stable sequence plus the bridge "no colour of the output has a non-empty
+fatal fixpoint"); finding 3 applied earlier (Remark 4). The proof text of sections 4–5 is otherwise unchanged from the version
+I re-derived above. No new error found.
+VERDICT: OK. Signed as first referee, 2026-10-14, with the gaps below (CLAUDE.md: a result needs two referees with gaps listed).
+Gap list, status at 57a1515:
+| gap | content | status |
+| --- | --- | --- |
+| G1 | F2 (residual regions after a sound removal) | closed: written out by R2 §2 and by me (§2 above); citable as Zielonka 1998 |
+| G2 | X external in MAttr; rank of X-vertices in L1(ii) | closed (no rank 0; both referees) |
+| G3 | F6 equality MAttr^{G'} = MAttr^{W_p(G')} | closed: re-derived (needs only F1); machine-checked for every X ⊆ W_p on 324 + 40,000 + 1,500 games |
+| G4 | psolB's colour loop | closed: only "every occurring colour examined, restart after removal" is used; subsumed by Remark 3 |
+| G5 | choice of d, Lemma 0 | closed: Lemma 0 re-derived and machine-checked at d_p → d_p+2; converse not needed |
+| G6 | empty members of the list L | closed (skipped by the "first member ⊄ Rem" choice) |
+| G7 | finite games, successors everywhere, self-loops | closed (nothing else is used) |
+| G8 | monotonicity used in T-A1' | closed: one PMAttr layer, target monotonicity only; layer count constant along the iteration |
+| G9 | HKP Thm 2 (F1) proof is a sketch | closed by the written-out argument (with the priority-d hypothesis now in F1) |
+| G10 | Corollary 1 inherits HKP Thm 7, Thm 8, Lemma 5 | open as a dependency on HKP; re-derived informally by both referees (my §6: Büchi ν-fixpoint then safety core; sink SCC; unique play's minimal colour), without HKP Thm 6 |
+| G11 | HKP Thm 4 (F1') proof is a sketch | re-derived by me from HKP's text (tex:1067–1125): the rank-(d,i) strategy keeps the play in A_b (each step goes to X with colour ≤ d or to a smaller rank); every visit to a colour of parity 1−p at rank (d0,i0) has colour > d0 and is followed, by well-founded descent of ranks with d non-increasing, by a visit to X with colour ≤ d0, so if the minimal colour seen infinitely often were of parity 1−p a smaller colour would be seen infinitely often; hence min Inf has parity p. Prose only, no machine check beyond psolq.py's witness strategies passing verify.py |
+Non-machine-checked throughout: Invariant I, L1, O, the "only if" induction, Lemma 0, and G9–G11 are prose re-derivations
+(mine and R2's); machine evidence is the searches of §5 and R2 §4. Not Lean-checked (not required: not M4).

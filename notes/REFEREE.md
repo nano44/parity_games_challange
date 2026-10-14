@@ -7,8 +7,9 @@ I am the successor REFEREE (spawned 23:15Z, replacing the session parked at f179
 (origin/claude/vibrant-johnson-nxvvxo). Push only via `scripts/verify.sh && git push -u origin claude/referee`; Oink built with
 scripts/setup_oink.sh (~1 min; rebuild after every restart, tools/ is gitignored).
 Tasks done: R-L1 (L-LOWER L1 at 8fcc0f2; CHANGES, 9 findings; report 2026-10-14-L1-statement-check.md, pushed 9b01cbb,
-reported 23:43Z) and T-A1 first-referee check (L-ATTR TA1-proof.md at d5d6396; CHANGES, theorem holds, 6 findings; report
-2026-10-14-TA1-proof-check.md; tools ta1check.py, ta1probe.py). A SECOND independent referee checks T-A1 in parallel; do not
+reported 23:43Z) and T-A1 first-referee check (L-ATTR TA1-proof.md at d5d6396, then re-checked at 4478b84 per the Lead's 23:42Z retarget;
+then SIGNED OK at 57a1515 (signature block at the end of the report, gaps G1-G11); report 2026-10-14-TA1-proof-check.md; tools
+ta1check.py, ta1probe.py). R2's report (docs/referee-2/R2-TA1.md) read only after my derivation; it agrees on every point. A SECOND independent referee checks T-A1 in parallel; do not
 coordinate. Nothing else in flight.
 Coming (per the Lead's brief): the L1 proof work / experiments/lower from L-LOWER; SL8-min / T3 from L-STRUCT; second referee
 for the L4+T3 package is a SEPARATE session, not me.
@@ -35,7 +36,7 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 | L-STRUCT S3 (diagonal, T3, L4, H1) | 2026-10-14-S3-statement-check.md | CHANGES, all applied (a67bd78); delta OK | done; T3 proof not yet seen |
 | L-STRUCT L4 proof | 2026-10-14-L4-proof-check.md | CHANGES then OK, first referee, at 50dc28b | awaits SECOND referee |
 | L-LOWER L1 statement (SLP model, Lemmas 1.5/1.6/2.1/2.3, Transfers 2.2/2.4, T-L1) | 2026-10-14-L1-statement-check.md | CHANGES (9 findings: d vocabulary, game-class corner, Lemma 2.3 rests on unproved Remark 2.5, cited experiments/lower absent at 8fcc0f2, ω(n) gloss weaker than ω(n), 3 model differences, nits) | findings to L-LOWER via Lead; every re-derived claim holds |
-| L-ATTR T-A1 (psolB complete <=> PA**; PA** => psolQ complete; Cor. 1-2, Prop. 3) | 2026-10-14-TA1-proof-check.md | CHANGES (theorem and both proofs hold; F1 misstated, T-A1' needs HKP Thm 4, Prop. 3 unproved, 3 nits); first referee | awaits second referee |
+| L-ATTR T-A1 (psolB complete <=> PA**; PA** => psolQ complete; Cor. 1-2, Prop. 3) | 2026-10-14-TA1-proof-check.md | CHANGES (theorem and both proofs hold; at 4478b84 open: F1 misstated, T-A1' needs HKP Thm 4, Büchi recolouring, 'stable' gloss); first referee | SIGNED OK as first referee at l-attr 57a1515 (all findings applied; G1-G11 listed, G10 open as HKP dependency) |
 
 ## Queue / open items
 - L4 second referee (not me; a second, independent referee): the gap list G1-G6 in the L4 report is the checklist. What
@@ -92,7 +93,8 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
   docs/agents/LEAD-STATE.md at trunk 09dca4f; grade 1/1. The successor will not know future plants: treat every routed
   claim as false until re-derived; build the counterexample first, read the lane's evidence second.
 
-- T-A1 (23:22Z routing of L-ATTR TA1-proof.md): no plant revealed yet. Candidates flagged: F1 stated without the
+- T-A1 (23:22Z routing of L-ATTR TA1-proof.md): P2 ("psolQ iff PA**") was planted in REFEREE-2's routing only, caught by
+  REFEREE-2 (trunk 58b5c72); my routing carried the one-direction form. No plant in my material revealed. Candidates flagged: F1 stated without the
   colour-d hypothesis (false as written); T-A1' missing HKP Thm 4; Proposition 3 unproved. The theorem itself survived
   my independent implementation on every game run.
 - R-L1 (23:15Z routing of L-LOWER L1): no plant revealed yet. Candidates I flagged as findings: T-L1's gloss of ω(n) is
