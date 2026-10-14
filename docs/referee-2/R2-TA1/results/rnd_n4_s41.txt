@@ -1,0 +1,14 @@
+== random n=4 K=100000 seed=41 maxpr=4 deg=None: 100000 games in 28s
+   (psolB complete, psolQ complete, PA**) : count : first example
+   (False, False, False)    :      234 : 0 0 1 0,1 | 1 4 1 0,2,3 | 2 3 1 0 | 3 4 1 0,2
+   (False, True, False)     :     8667 : 0 0 1 0,1,2 | 1 4 1 0,1,2,3 | 2 2 0 3 | 3 1 0 1,2,3
+   (True, True, True)       :    91099 : 0 3 1 1 | 1 2 1 3 | 2 1 1 1,2 | 3 1 1 0,1,3
+   T-A1  'if'   PA** => psolB complete : HOLDS
+   T-A1 'only if' psolB complete => PA** : HOLDS
+   T-A1' PA** => psolQ complete : HOLDS
+   'psolQ complete => PA**' (the routed iff) : FAILS (8667)
+   psolB sound: HOLDS
+   psolB_max == psolB_hkp: HOLDS
+   psolB order-independent (reversed): HOLDS
+   psolB order-independent (shuffled): HOLDS
+   psolQ ⊇ psolB (complete): HOLDS
