@@ -12,7 +12,8 @@ ordered pair, V = vertex-labelled (TARGET.md games). The rejecting sink is not c
 (`delta[q][p-1]` = successor of state q on letter p, `null` = sink; state 0 initial).
 
 Headline (2026-10-14): w^E(2,5) = w^E(2,6) = 3 < 4 = s^E(2,5) = s^E(2,6) (the same in conventions S and V), and
-w^V(3,5) = w^V(3,6) = 6 < 7 = s^V(3,5) = s^V(3,6). On every other computed cell w = s. All s^E values at even d equal
+w^V(3,5) = w^V(3,6) = 6 < 7 = s^V(3,5) = s^V(3,6). On every other computed cell w = s. Upper bound only (SAT at k = 12, checker-verified, k <= 11 not refuted):
+w^V(4,6) <= 12, against s^E(4,6) = 13 (s^V(4,6) not yet computed). All s^E values at even d equal
 the least number of leaves of an (n, d/2)-universal tree (CFGO Thm 4.1 + Lemma 6.8), which is the cross-check of the
 encoding against a theorem. The 3-state witness for (2,6):
 ```
