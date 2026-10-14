@@ -12,6 +12,8 @@ default binary (universal_solve preprocessing); regions match Oink on 150 random
 Theorem numbering: the paper's shared counter (Theorem 2 = dominion, Lemma 3 = minimal dominion, Lemma 4 = progress); my
 first two messages to the Lead were off by one. Idle until the Lead routes the next item.
 
+T4 §3(c) lasso observation checked: docs/referee/2026-10-14-T4-3c-lasso.md (OK; 3 strengthenings, 1 citation nit on §3(b)).
+
 ## Queue
 - (empty) Possible follow-up if routed: diff of the ports' games and iteration counts against the real PGSolver binary
   with -dgo -dsd -dlo -dsg (needs owner Q4).
@@ -26,6 +28,7 @@ first two messages to the Lead were off by one. Idle until the Lead routes the n
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
 | --- | --- | --- | --- |
+| arXiv:1807.10546v2 (Czerwiński et al., universal trees inside separating automata) | the-separation-approach.tex (languages of play encodings; safety automata; (n,d)-separators, strong separators); intro.tex 161-166 (separator) | 2026-10-14 | definitions for the T4 §3(c) check; LaTeX source |
 | github.com/tcsprojects/tcslib 6778419 | src/data/tcsgraph.ml 8-226, tcsset.ml 132-166/284-287/426, tcslist.ml 35-42, tcsarray.ml 48-52, tcsbasedata.ml 181-227 | 2026-10-14 | helpers used by stratimpralgs.ml |
 | github.com/tcsprojects/pgsolver d3cd624 | solvers/stratimpralgs.ml 54-199, 441-669, 693-696; solvers/switch_globally_best.ml 1-119; paritygame/transformations.ml 271-320, 338-413; paritygame/univsolve.ml 23-66, 267-780; apps/pgsolver/pgsolver.ml 102-116 | 2026-10-14 | strategy improvement originals of pgsolver_si.py |
 | github.com/tcsprojects/pgsolver d3cd624 | recursiveladder.ml 13-46; policyiter/generators/switchallexp.ml 30-66, switchbestexp.ml 34-74; policyiter/stratimprgenerators.ml 7-47; paritygame.ml 19, 25-40, 128-139, 175, 201-206, 365-387 | 2026-10-14 | OCaml originals of L-COMP's ports; cloned into scratchpad |
