@@ -26,8 +26,8 @@ for (n, d, conv, strong, expect) in [(2, 2, 'E', False, 2), (2, 2, 'E', True, 2)
 fam = {}
 for f in sorted(glob.glob(str(pathlib.Path(__file__).parent / 'results/automata/*.json'))):
     r = json.load(open(f))
-    if r['automaton'] is None or r['n'] >= 5 or (r['n'] == 4 and r['d'] >= 5):
-        continue  # (n>=5 and (4,>=5)) families are slow to enumerate; those automata are checked by compute.py itself
+    if r['automaton'] is None or r['n'] >= 5 or (r['n'] == 4 and r['d'] >= 5) or (r['conv'] == 'S' and r['d'] >= 5) or (r['conv'] == 'V' and r['d'] >= 9):
+        continue  # slow families (n>=5, (4,>=5), S with d>=5, V with d>=9) are checked by compute.py itself
     key = (r['n'], r['d'], r['conv'])
     if key not in fam:
         fam[key] = (maximal_graphs(*key, 0, verify=False), maximal_graphs(*key, 1, verify=False))

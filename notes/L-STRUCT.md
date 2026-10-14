@@ -2,6 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
+2026-10-14 21:30Z: new cells s^V(4,5) = 10, w^V(4,5) ∈ {9,10} (k=8 refuted, k=9 running: equality here is T3's first real test at n=4), w^V(3,10) = 8 (fixed-n growth 6,7,8 at d = 6,8,10), s^S(3,6) landed.
 2026-10-14 ~20:55Z: Lead confirmed L4 first (R1), T3 second (R2). R2 data step done: L5' dead (see Dead ends). Waiting for L-LIT T6 (L4 known or open) before R1. Background (caps): weak/strong V (4,5), weak V (3,10) k=8, strong V (3,8) k=8, weak V (4,6) k=9, weak E (4,6) k=12.
 2026-10-14 21:55Z: S2 T1 dead (DE2). S2 patched per REFEREE (T2 n ≥ c; V barrier conditional on L4; algorithmic
 quantity w^V(n,n); dead-end automaton committed). S3-statement.md written (diagonal W(n) = w^V(n,n) vs S(n) =
