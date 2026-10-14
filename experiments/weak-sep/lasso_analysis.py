@@ -97,34 +97,35 @@ def least_odd_graph(u, c, d, mmax=5):
 assert least_odd_graph((), (9,4,8), 10) == 3 and least_odd_graph((), (5,4,4), 6) == 3 and least_odd_graph((), (1,), 2) == 1
 assert least_odd_graph((2,), (3,2), 4) == 2 and least_odd_graph((), (3,2), 4) == 2
 
-rows = ["# Lasso words of minimal weak V-witnesses: least odd V-graph realising them (R2 data step)", "",
-        "m* = least number of vertices of an odd V-graph realising pi(P)·pi(C)^w (None = more than n+2). W2 forces m* > n.",
-        "P ranges over ALL simple paths from q0 into C (entry point varies); one line per (C, entry, P) up to 6 per cycle.", ""]
-rows += ["| cell | w / s | cycle C (states; letters) | lasso P letters | |P|+|C| | m* |", "| --- | --- | --- | --- | --- | --- |"]
-cells = [(1,1),(1,2),(2,2),(2,3),(3,3),(3,4),(4,4),(2,4),(2,5),(2,6),(3,5),(3,6)]
-S = {}
-for f in glob.glob('results/automata/strong_V_*.json'):
-    r = json.load(open(f))
-    if '_k' not in f and 'eager' not in f: S[(r['n'], r['d'])] = r['value']
-summary = []
-for (n, d) in cells:
-    f = f'results/automata/weak_V_n{n}_d{d}.json'
-    if not pathlib.Path(f).exists(): continue
-    r = json.load(open(f)); aut = r['automaton']
-    cyc, adj = odd_cycles(aut)
-    mins = []
-    for states, labels in cyc:
-        L = len(states)
-        for e in range(L):  # entry point
-            entry = states[e]; cl = labels[e:] + labels[:e]
-            paths = simple_paths_to(adj, entry, aut['k'])
-            for P in sorted(paths, key=len)[:6]:
-                m = least_odd_graph(P, cl, d, mmax=n + 2)
-                mins.append(m if m else 99)
-                rows.append(f"| V ({n},{d}) | {r['value']} / {S.get((n,d),'-')} | {states}; {labels} entry {entry} | {P} | {len(P)+L} | {m} |")
-    summary.append((n, d, r['value'], S.get((n,d),'-'), len(cyc), min(mins) if mins else None, 'gap' if S.get((n,d)) and r['value'] < S[(n,d)] else 'w=s'))
-rows += ["", "## Summary", "", "| cell | w / s | odd simple cycles | min over lassos of m* | gap? |", "| --- | --- | --- | --- | --- |"]
-for n, d, w, s, k, mn, g in summary:
-    rows.append(f"| V ({n},{d}) | {w} / {s} | {k} | {mn} | {g} |")
-pathlib.Path('results/lasso_analysis.md').write_text("\n".join(rows) + "\n")
-print("\n".join(rows[-len(summary)-3:]))
+if __name__ == '__main__':
+    rows = ["# Lasso words of minimal weak V-witnesses: least odd V-graph realising them (R2 data step)", "",
+            "m* = least number of vertices of an odd V-graph realising pi(P)·pi(C)^w (None = more than n+2). W2 forces m* > n.",
+            "P ranges over ALL simple paths from q0 into C (entry point varies); one line per (C, entry, P) up to 6 per cycle.", ""]
+    rows += ["| cell | w / s | cycle C (states; letters) | lasso P letters | |P|+|C| | m* |", "| --- | --- | --- | --- | --- | --- |"]
+    cells = [(1,1),(1,2),(2,2),(2,3),(3,3),(3,4),(4,4),(2,4),(2,5),(2,6),(3,5),(3,6)]
+    S = {}
+    for f in glob.glob('results/automata/strong_V_*.json'):
+        r = json.load(open(f))
+        if '_k' not in f and 'eager' not in f: S[(r['n'], r['d'])] = r['value']
+    summary = []
+    for (n, d) in cells:
+        f = f'results/automata/weak_V_n{n}_d{d}.json'
+        if not pathlib.Path(f).exists(): continue
+        r = json.load(open(f)); aut = r['automaton']
+        cyc, adj = odd_cycles(aut)
+        mins = []
+        for states, labels in cyc:
+            L = len(states)
+            for e in range(L):  # entry point
+                entry = states[e]; cl = labels[e:] + labels[:e]
+                paths = simple_paths_to(adj, entry, aut['k'])
+                for P in sorted(paths, key=len)[:6]:
+                    m = least_odd_graph(P, cl, d, mmax=n + 2)
+                    mins.append(m if m else 99)
+                    rows.append(f"| V ({n},{d}) | {r['value']} / {S.get((n,d),'-')} | {states}; {labels} entry {entry} | {P} | {len(P)+L} | {m} |")
+        summary.append((n, d, r['value'], S.get((n,d),'-'), len(cyc), min(mins) if mins else None, 'gap' if S.get((n,d)) and r['value'] < S[(n,d)] else 'w=s'))
+    rows += ["", "## Summary", "", "| cell | w / s | odd simple cycles | min over lassos of m* | gap? |", "| --- | --- | --- | --- | --- |"]
+    for n, d, w, s, k, mn, g in summary:
+        rows.append(f"| V ({n},{d}) | {w} / {s} | {k} | {mn} | {g} |")
+    pathlib.Path('results/lasso_analysis.md').write_text("\n".join(rows) + "\n")
+    print("\n".join(rows[-len(summary)-3:]))

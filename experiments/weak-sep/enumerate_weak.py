@@ -39,12 +39,12 @@ while count < MAXSOL:
     assert not bad, "enumerated automaton fails the checker: encoding bug"
     count += 1
     t = least_t(aut['delta']); hist[t] = hist.get(t, 0) + 1
-    if t is None or t >= 2: worst.append((t, aut['delta']))
+    if t is None or t >= 3: worst.append((t, aut['delta']))
     # block this exact transition function
     enc.add([-enc.t[q][a][(enc.k if aut['delta'][q][a] is None else aut['delta'][q][a])] for q in range(k) for a in range(d)])
 res = {'n': n, 'd': d, 'conv': conv, 'k': k, 'weak_separators_enumerated': count, 'complete': count < MAXSOL,
        'least_rewiring_histogram': {str(a): b for a, b in sorted(hist.items(), key=lambda x: (x[0] is None, x[0]))},
-       'instances_with_t_ge_2_or_none': worst[:20], 'seconds': round(time.time() - t0, 1)}
+       'instances_with_t_ge_3_or_none': worst, 'seconds': round(time.time() - t0, 1)}
 out = pathlib.Path(f'results/sl8/enum_{conv}_n{n}_d{d}_k{k}.json'); out.parent.mkdir(parents=True, exist_ok=True)
 out.write_text(json.dumps(res, indent=1))
 print(f"SL8 test {conv} ({n},{d}) k={k}: {count} weak separators{'' if res['complete'] else ' (capped)'}; least-t histogram {res['least_rewiring_histogram']}; {res['seconds']}s")

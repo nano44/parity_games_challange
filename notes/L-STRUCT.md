@@ -2,6 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
+2026-10-14 22:45Z: SL8 exhaustive test nearly complete (results/sl8/; S3 §4c table). Finding: at minimum size t ≤ 2 (E: ≤ 1); above minimum t reaches 4. Working statement SL8-min (t = 2 at minimum size). Lead approved the proof attempt 21:40Z; proof not started; next: read the rule off the t = 1 rewires at minimum size (E first).
 2026-10-14 22:20Z: w^V(4,5) = 10 = s^V(4,5): T3 holds at (4,5) V with equality (SAT + checker, unrefereed).
 2026-10-14 22:15Z: S3 §4c written: sub-lemma SL8 (same-states rewiring weak → strong at d ≤ n+1) with probe data (t = 1 rewire in 9/9 instances; naive rule dead). Sent to the Lead; no proof started. Next data step: enumerate ALL t=1 rewires per instance (E first) to read off the rule.
 2026-10-14 21:50Z: docs/struct/L4-proof.md written (Claim R transfer + CDFJLP Thm 5.1 ⇒ S(n) = n^{Ω(lg n)}); sent to the Lead for the two referees. Next: T3 via R2 size argument (no sub-lemma yet).
