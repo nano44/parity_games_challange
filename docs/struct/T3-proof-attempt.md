@@ -63,3 +63,49 @@ stop point. I did not switch to an E-only argument.
   concrete structural hypothesis that the data satisfy (e.g. "A − R is a tree-like automaton whose D-tree is
   (n, ⌈d/2⌉)-universal", which is where CFGO/CDFJLP structure would re-enter and which L-COMP's cells could test);
   (c) park T3 and return to the computational frontier ((5,5), (5,6) V).
+
+## 5. Outcome of the Lead's move (a) (21:53Z, time-boxed): necessary rule found, no sufficient rule → outcome (ii)
+Method (experiments/weak-sep/target_rule.py, target_rule2.py): for each non-strong minimal weak separator with a single
+even-letter deletion R killing all odd cycles (71 of 72; the all-odd case excluded), CDFJLP's resistance quasi-orders
+were computed on A − R exactly as in their Lemma 5.2 (per odd letter p from the top, within each class of the coarser
+order, resistance = maximal number of p-letters on paths of the ≤ p sub-automaton; SCC-based, finite since A − R has no
+odd cycle); rank(s) = the tuple of resistances, lexicographic, smaller = deeper (fewer p's still readable). Every working
+single rewire (q, e, old → new) with e even and new ≠ ⊥ (57 (q,e)-groups, 58 rewires) was located in this order.
+Results:
+- NECESSARY RULE NR (holds on all 57 groups, no exception): rank(q) ≤ rank(new) < rank(old), or new = q. In words: the
+  return edge's target is moved strictly deeper than the old target but never deeper than the source; the rewired edge
+  stops ascending above its source yet still points at or above the source's level. Relative to old, new is deeper in
+  49 of 58 rewires and equal in 8 (the 8 "equal" are exactly the groups with an empty interval, where new = q).
+- NO SUFFICIENT RULE: the interval I(q,e) = {x : rank(old) > rank(x) ≥ rank(q)} contains non-working states in 41 of 49
+  non-empty cases (working ⊇ I in 16 only); the shallowest state of I works in 40 of 49, the deepest in 8 of 41, the
+  source q in 16 of 57. Example where only one interval state works: V (3,3) k=5, δ = [[1,0,1],[2,3,2],[⊥,3,⊥],[4,3,⊥],
+  [2,0,⊥]], return edge (4, 2, 0), ranks 0:(2,0) 1:(1,0) 2:(0,0) 3:(0,2) 4:(0,1); interval {1, 3, 4}; only 3 works.
+- GAP 2a: the rewired transition is the Lemma-B deletion in 29 of 58 rewires only; "one deletion suffices" is not
+  explained by the rewire choice.
+Conclusion: (ii). NR turns GAP 3 into a precise existence statement — C'' : for the return edge τ = (q, e, old) there is
+x with rank(q) ≤ rank(x) < rank(old) or x = q such that redirecting τ to x preserves (W1) — but it does not say which x,
+and the minimality contradiction for "no such x" is still unformulated. Dead end D-C2 (no deterministic target rule
+among: shallowest / deepest interval state, source, successor, predecessor).
+
+## 6. (b) Structural hypothesis replacing minimality, with a test plan (not proved, per the Lead's instruction)
+H-B (precise). Let X ∈ {E, S, V}, d ≤ n+1, and A a minimal deterministic weak (n,d)-separator of convention X. Then:
+ (1) there is a single even-letter transition τ_0 on an odd simple cycle such that A − τ_0 has no reachable odd simple
+     cycle (hence A − τ_0 is tree-like, CDFJLP §5.1, by their Lemma 5.2 argument);
+ (2) with D the tree-decomposition of A − τ_0 by resistance, the D-tree of A − τ_0 is (n, ⌈d/2⌉)-universal in the sense
+     of CDFJLP (every ordered tree with ≤ n leaves and height ⌈d/2⌉ embeds), hence |A| ≥ s^E(n, d) for X = E and, for
+     X = V, |A| ≥ the least size of a tree-like V-separator with a universal D-tree;
+ (3) (the rewiring form) for τ_0 = (q, e, old) some x with rank(q) ≤ rank(x) < rank(old) or x = q makes A with τ_0
+     redirected to x a strong separator.
+H-B(2) is the content: it says minimal weak separators carry the universal-tree structure in their even part despite the
+odd cycle, which is why w = s at d ≤ n+1. If (2) holds, T3 for X = E follows from CDFJLP Lemma 5.3's universality
+argument applied to A − τ_0 (the words α_t used there are even-realisable and their runs avoid τ_0?: GAP 4, to test) and
+for X = V from the V analogue of Lemma 5.1 (open, but L4.1-type transfer gives the n/d-loss form).
+Test plan (cheap, on existing data first, then L-COMP's cells): (T1) for each stored minimal non-strong weak separator,
+compute A − τ_0 for the τ_0 of Lemma B, its D-tree (classes of the resistance orders), and test (n, ⌈d/2⌉)-universality
+by brute-force embedding of all trees with ≤ n leaves (wsep/utrees.py embeds); record failures with instances. (T2) check
+whether the runs of CDFJLP's words α_t (built from the trees with n leaves) avoid τ_0 in A, which is what GAP 4 needs.
+(T3) at (4,5) V and (4,4) V, run T1 on every minimal weak witness the solver returns (enumeration with blocking clauses,
+k = 10 and 7). (T4) at the gap cells (2,6), (3,6) V, run T1: H-B(2) must FAIL there (w < s), which calibrates the test.
+A failure of T1 at any d ≤ n+1 cell kills H-B(2) and with it this route; a pass on all cells makes H-B(2) the statement
+to prove, with the proof route "the even-realisable words of CDFJLP's G_t force the universal tree even in a weak
+separator, because at d ≤ n+1 their runs never use the return edge".
