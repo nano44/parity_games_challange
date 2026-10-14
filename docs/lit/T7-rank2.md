@@ -49,7 +49,8 @@ programs built from the priority classes and the owner sets by Boolean operation
 modal formulas over ◇/□ and the propositions P_i, V_E, V_O. Such programs are automorphism-invariant, so the "learn the
 whole graph" escape of item 5 is unavailable. Item 5's lower bounds DO transfer to them: a straight-line program is a
 symbolic algorithm in that paper's sense, Cpre costs at most 2 Pre, and deciding s ∈ output costs nothing. So the known
-picture is: lower bound Ω(n) (from item 5) and upper bound n^{lg(d/lg n)+O(1)} (from item 1's algorithms; see §2).
+picture is: lower bound Ω(n) (from item 5) and upper bound n^{2·lg(d/lg n)+O(1)} (from item 1's OBLIVIOUS algorithm; see §2, amended
+by T9).
 
 ## (b) Model in TARGET vocabulary, and the first problem
 **Definition (SLP).** Fix n >= 1 and d with 0 <= d <= n. A straight-line symbolic program over (n,d) is a finite sequence
@@ -61,9 +62,12 @@ X_1, ..., X_L. Each X_i is one of:
 vertices and priorities in {0..d}, the value of X_L on G equals W_E(G). Cost c(P) = number of Cpre gates.
 C(n,d) := min over programs solving (n,d). Boolean gates are free, as in item 5.
 Known bounds (L-LIT readings; to be refereed as part of the lane's statement):
-- Upper: C(n,d) <= n^{lg(d/lg n)+O(1)}. ANP's non-adaptive algorithm uses a number of queries proportional to the width of a
-  universal tree (ANP abstract, Lemma 3.2/3.6). Each query to the game-induced f is one Cpre applied to a Boolean combination of
-  the P_i, so it is an SLP. write B(n) for C restricted to Büchi games (priorities in {1,2} only, max-parity: Even wins iff 2 occurs
+- Upper (AMENDED 2026-10-14 by T9, docs/lit/T9-L1.md): C(n,d) <= n^{2·lg(d/lg n)+O(1)}. The OBLIVIOUS algorithm is ANP's
+  symmetric ‖F‖_{U,V} with U = V = S_{n,h}: Lemma 3.2, |U|·|V| queries; p.9:9 gives the cost n^{2·lg(d/lg n)+O(1)}.
+  ANP's n^{lg(d/lg n)+O(1)} bound (Lemma 3.6, Cor. 3.7) uses "a standard worklist algorithm" that "re-evaluate[s] right sides
+  only of those equations in which at least one variable was modified". That is ADAPTIVE, so it is not an SLP. The earlier
+  reading "C(n,d) <= n^{lg(d/lg n)+O(1)}, Lemma 3.2/3.6" was wrong. Each query to the game-induced f is one Cpre applied to a
+  Boolean combination of the P_i, so the symmetric algorithm is an SLP. write B(n) for C restricted to Büchi games (priorities in {1,2} only, max-parity: Even wins iff 2 occurs
   infinitely often). B(n) <= O(n^2) by unfolding νZ.µY.((P_2 ∩ Cpre_E(Z)) ∪ (P_1 ∩ Cpre_E(Y))) with n iterations per
   fixpoint. (Priorities {0,1,2} would be a three-priority condition with three nested fixpoints, not Büchi.)
 - Lower: B(n) = Ω(n), via item 5's Thm 3.10 on one-player games (V_O = ∅, T = P_2). Check before use: their graphs have
@@ -107,6 +111,6 @@ general forms as stretch goals. Rank 4 last: it is highest-value but needs the u
 ## DONE / FINDINGS / NEEDS
 - FINDINGS: rank 2 is uncovered: only ANP (tree-shaped) and the 2018 linear bounds apply. The adaptive symbolic model admits
   O(n) one-step algorithms (CDHL p.2), so the lane must use non-adaptive, vertex-anonymous programs. In that model the
-  known bounds are Ω(n) <= C(n,d) <= n^{lg(d/lg n)+O(1)}, and for Büchi games the gap is n versus n^2.
+  known bounds are Ω(n) <= C(n,d) <= n^{2·lg(d/lg n)+O(1)} (amended by T9), and for Büchi games the gap is n versus n^2.
 - NEEDS: Lead: choose between rank 3 (if M2 has a counterexample) and rank 2 with T7-1'. REFEREE: the SLP definition and the
   two transfer readings (CDHL lower bound and ANP upper bound into SLPs) before a lane relies on them.

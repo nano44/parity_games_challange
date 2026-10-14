@@ -2,7 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14: T1-T3 pushed (landed on trunk 9079c01); T4 docs/lit/T4-weak-separators.md: verdict OPEN. T5 docs/lit/T5-S2-novelty.md: S2 T1/T2 NEW. T6 docs/lit/T6-S3.md: T3, H1 NEW; L4 via Claim R (unrefereed). T7 docs/lit/T7-rank2.md: rank 2 OPEN, SLP model, T7-1/T7-1'. T8 docs/lit/T8-TA1.md: T-A1 NEW, PA not ⊇ Büchi/SCC-constant (3-vertex witness). Parked. Next: Lead feedback; open the
+2026-10-14: T1-T3 pushed (landed on trunk 9079c01); T4 docs/lit/T4-weak-separators.md: verdict OPEN. T5 docs/lit/T5-S2-novelty.md: S2 T1/T2 NEW. T6 docs/lit/T6-S3.md: T3, H1 NEW; L4 via Claim R (unrefereed). T7 docs/lit/T7-rank2.md: rank 2 OPEN, SLP model, T7-1/T7-1'. T8 docs/lit/T8-TA1.md: T-A1 NEW, PA not ⊇ Büchi/SCC-constant (3-vertex witness). T9 docs/lit/T9-L1.md: µ-formula sources; oblivious exponent 2·lg(d/lg n); T7 amended. Parked. Next: Lead feedback; open the
 not-opened primaries listed below if a lane needs them.
 
 ## Queue
@@ -11,6 +11,7 @@ not-opened primaries listed below if a lane needs them.
   (Dagstuhl abstract only); Matoušek 1994; Gärtner 2002; Obdržálek CAV 2003 + CSL 2007 (Springer bot wall); Fearnley-Lachish
   MFCS 2011; Hunter-Kreutzer Kelly-width; Ganardi FoSSaCS 2015; Parys' Ω(n^2/lg n) black-box bound (ANP ref. [24]).
 - Retry Semantic Scholar citations of 2511.03752 (API 429 on 2026-10-14).
+- Arnold-Niwiński, Rudiments of µ-Calculus (Elsevier 2001) §4: not opened (book); needed only if L1 must quote it.
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
@@ -120,6 +121,10 @@ not-opened primaries listed below if a lane needs them.
 | arXiv 1602.01963 v1 (Vester, Winning cores) | abstract; Thm 1-4 headers | 2026-10-14 | T8 |
 | arXiv 1907.06913 v2 (Bruyère, Pérez, Raskin, Tamines) | abstract; Thm 1-3 | 2026-10-14 | T8 |
 | arXiv 2003.08627 v2 (DJT), read by L-LIT | §2 attractor decomposition definition, Prop. 1 | 2026-10-14 | T8 |
+| Bradfield, Walukiewicz, "The mu-calculus and model-checking" (Handbook of Model Checking chapter; labri.fr/perso/igw/Papers/igw-mu.pdf) | Acc def p.13 (max-parity); Theorem 7; formula (1) p.19 (PDF p.18) for Eve's winning positions; refs [43], [46] | 2026-10-14 | T9 |
+| DOI 10.1016/S0304-3975(00)00034-7 (EJS TCS 2001), read by L-LIT | Theorem 3.2, formula p.505, Lemma 3.5 | 2026-10-14 | T9 |
+| LIPIcs.CSL.2021.9 (ANP), further | §1 p.2 ref [1, §4]; Lemma 3.2 proof; Remark 3.3; §3.2; Lemma 3.5, 3.6 (worklist); Cor. 3.7; §3.3 p.9:9 (symmetric n^{2 lg(d/lg n)+O(1)}) | 2026-10-14 | T9 |
+| arXiv 1909.04983 v1 (CDHS) Algorithm 1 | lines 1-16, active list (p.9) | 2026-10-14 | T9 |
 
 ## Dead ends
 (none)
