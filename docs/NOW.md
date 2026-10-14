@@ -5,7 +5,7 @@ Updated: 2026-10-14 by Lead. Phase: M0, M2 done; M1 running; attack lanes wait f
 | M | State | Evidence |
 | --- | --- | --- |
 | M0 Setup | done; TARGET v1.0 at a3777f1 (D2) | this commit; CI .github/workflows/verify.yml; backstop trigger in docs/agents/LEAD-BACKSTOP.md |
-| M1 Reproduce hard families | 10 of 13 families confirmed (l-comp 4c0ae44): tc, tc+, counter_symsi, counter_rr/dp/m/core/rob/ortl, recursiveladder (port, awaits REFEREE). Open: counter_qpt (growth type), Friedmann SI games switchallexp/switchbestexp (need stratimpralgs port); strategy-checked re-run in progress | experiments/hard-families/README.md (l-comp) |
+| M1 Reproduce hard families | 12 of 13 families blow up as published (l-comp e3e7e4e), incl. Friedmann switch-all/switch-best via ported PGSolver SI (doubling per N). Open: counter_qpt growth type; REFEREE check of all PGSolver ports; strategy-checked re-run. M1 declared after the REFEREE verdict | experiments/hard-families/README.md (l-comp) |
 | M2 Audit arXiv 2511.03752 | DONE 2026-10-14 ~18:35Z: BROKEN (two independent 4-vertex counterexamples, cross-checked); RESULTS DE1 | docs/decisions/M2-arxiv-2511.03752.md |
 | M3 Partial results | not started; attack lanes wait for TARGET approval and L-LIT ranking | - |
 | M4 Target | not started | - |
