@@ -39,7 +39,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - PGSolver SI families (switchallexp, switchbestexp) target PGSolver's switch-all/switch-best SI, not Oink psi/ssi; port of stratimpralgs.ml queued in L-COMP.
 
 ## Live approaches
-- A1 deterministic weak separators (L-STRUCT): outside the strong-separator barrier (T4). Data: w=s on most small cells; w<s at (2,6),(2,10),V(3,6); s(2,2h)=h+1 but w(2,8)=w(2,10)=4. Lower-bound target T1 likely false; now measuring growth of w in d.
+- A1 deterministic weak separators (L-STRUCT): outside the strong-separator barrier (T4). Algorithmic quantity is the diagonal w^V(n,n) (REFEREE d96b686); fixed-n growth in d is not algorithmic. Data: w=s on most small cells; w<s at (2,6),(2,10),V(3,6); s(2,2h)=h+1 but w(2,8)=w(2,10)=4. Lower-bound target T1 likely false; now measuring growth of w in d.
 
 ## Dead approaches (with obstruction): see docs/RESULTS.md "Dead ends"
 - (none yet)

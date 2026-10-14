@@ -28,3 +28,4 @@
 - 2026-10-14 20:02Z sweep: no overage; no WATCHDOG exception message; Lead $13.04, 369k ctx. Waiting: REFEREE S2 statement check, L-COMP decisive cell. No action.
 - 2026-10-14 20:04Z: Lead routing miss: sent (4,6)E k<=7 as 'decisive' for T1; L-COMP showed it reduces to w(4,4)=8 (monotone in d). Real T1 tests: (2,8), V(3,8). Lesson: check a 'decisive' cell against monotonicity before routing.
 - 2026-10-14 20:07Z: L-COMP refutes T1 at (2,10) (pending REFEREE). Pivot A1 to growth/construction (S3). REFEREE re-prioritised.
+- 2026-10-14 20:09Z: Lead error corrected: 20:07Z pivot framed growth in d at fixed n; REFEREE d96b686 shows the algorithmic quantity is w^V(n,n). Both lanes re-briefed.
