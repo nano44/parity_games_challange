@@ -5,7 +5,7 @@ Updated: 2026-10-14 by Lead. Phase: M0, M2 done; M1 running; attack lanes wait f
 | M | State | Evidence |
 | --- | --- | --- |
 | M0 Setup | done; TARGET v1.0 at a3777f1 (D2) | this commit; CI .github/workflows/verify.yml; backstop trigger in docs/agents/LEAD-BACKSTOP.md |
-| M1 Reproduce hard families | 12 of 13 families blow up as published (l-comp e3e7e4e), incl. Friedmann switch-all/switch-best via ported PGSolver SI (doubling per N). Open: counter_qpt growth type; REFEREE check of all PGSolver ports; strategy-checked re-run. M1 declared after the REFEREE verdict | experiments/hard-families/README.md (l-comp) |
+| M1 Reproduce hard families | 12 of 13 families blow up (l-comp e3e7e4e). REFEREE OK on all PGSolver ports (referee 8185028): switch-all 10*2^n-9, switch-best 19*2^n-15 iterations, bare SI loop (= PGSolver -dgo -dsd -dlo -dsg). Open: counter_qpt growth type; strategy-checked re-run. Then REFEREE review of the l-comp range for landing | experiments/hard-families/README.md (l-comp) |
 | M2 Audit arXiv 2511.03752 | DONE 2026-10-14 ~18:35Z: BROKEN (two independent 4-vertex counterexamples, cross-checked); RESULTS DE1 | docs/decisions/M2-arxiv-2511.03752.md |
 | M3 Partial results | not started; attack lanes wait for TARGET approval and L-LIT ranking | - |
 | M4 Target | not started | - |
@@ -24,7 +24,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 
 ## In flight
 - L-COMP: remaining M1 families (READMEs, sweeps), stratimpralgs port; harness has strategy verification (D2 change 5).
-- REFEREE: R1 full report (short) incl. AM1-AM9 faithfulness verdicts; then PGSolver port checks; then review of L-COMP harness for landing.
+- REFEREE: idle (R1 and port checks done). Next routed work: review of the l-comp range when M1 completes.
 - L-LIT: T1-T3 landed on trunk 9079c01 (docs/lit/RANKING.md, BARRIERS.md). T4: barrier check of rank 1 (deterministic weak separators) vs Colcombet-Fijalkow 2019 et al.; gates the first attack lane (planned: L-STRUCT on weak separators).
 - Watchdog: add when a 4th working session starts (first attack lane).
 
