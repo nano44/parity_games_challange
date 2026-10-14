@@ -8,7 +8,7 @@ Top three, always:
 ## Hourly sweep (trigger "1 * * * *" into the Lead)
 1. Re-read docs/NOW.md and this file. Do not rely on chat memory.
 2. Overage: get_session on the Lead; if rate_limit_info.isUsingOverage is true, run the Stop procedure now and tell the owner.
-3. For each roster session that is "working": get_session (never list). Flag: idle with work announced but not done,
+3. Read the WATCHDOG's last message, if any. For each roster session that is "working": get_session (never list). Flag: idle with work announced but not done,
    failed status_bucket, context_usage above 600k (plan a handover). Read its branch head (git fetch) and notes/<LANE>.md resume point.
 4. Act on exceptions only: one self-contained message to a stalled session; nothing to idle or parked sessions.
 5. Check CI on lane heads (GitHub MCP actions_list). Red CI on a lane head is that lane's work now; tell it once.

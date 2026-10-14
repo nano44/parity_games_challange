@@ -1,5 +1,5 @@
 # NOW (rewritten, never appended; max 150 lines)
-Updated: 2026-10-14 by Lead. Phase: M0, M2 done; M1 running; attack lanes wait for L-LIT's ranking (T2). Reporting: weekly checkpoint (D1, after M2).
+Updated: 2026-10-14 by Lead. Phase: M0, M2 done; M1 finishing; first attack lane L-STRUCT (weak separators) started 2026-10-14 18:54Z. Reporting: weekly checkpoint (D1, after M2).
 
 ## Milestones
 | M | State | Evidence |
@@ -19,14 +19,17 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | --- | --- | --- | --- | --- | --- | --- |
 | Lead | session_014FBi6o334DvwT5Uw2kDfoN | claude/vibrant-johnson-nxvvxo | opus-5-5 | high | working | Owner-chosen session; routing judgement; keeps context lean |
 | REFEREE | session_01Ki9osXiyYf9heTLNk3FKED | claude/referee | fable-5-1 | high | working | Most capable model; finding the error in a claimed proof decides M2 and every claim after |
-| L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | working | Source checking and barrier analysis need judgement; Fable reserved for referee; move to Fable when step-3 sign-offs start |
+| L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | parked (T1-T4 done; wakes for barrier checks and step-3 sign-offs) | Source checking and barrier analysis need judgement; Fable reserved for referee; move to Fable when step-3 sign-offs start |
 | L-COMP | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | working | Paper-to-code fidelity for M1 generators and the M2 implementation; drop to sonnet-5-5 for routine benchmarks after M2 |
+| L-STRUCT | session_01VH4fd2Fq8XeXtyUfkwLJV1 | claude/l-struct | fable-5-1 | high | working | Attack lane (owner: most capable model at high effort); rank 1 approach, weak separators, T4 verdict OPEN |
+| WATCHDOG | session_01JQNTX8zT3T3mWMt6ZmYzkn | none (never edits) | haiku-5-5 | high | working (cron :30, trig_019xE43BZ5qaDGwxDkZ5h5ik) | Routine liveness/overage checks; reports to Lead only (deviation from playbook: does not wake lanes, so idle sessions never get messages) |
 
 ## In flight
 - L-COMP: remaining M1 families (READMEs, sweeps), stratimpralgs port; harness has strategy verification (D2 change 5).
-- REFEREE: idle (R1 and port checks done). Next routed work: review of the l-comp range when M1 completes.
-- L-LIT: T1-T3 landed on trunk 9079c01 (docs/lit/RANKING.md, BARRIERS.md). T4: barrier check of rank 1 (deterministic weak separators) vs Colcombet-Fijalkow 2019 et al.; gates the first attack lane (planned: L-STRUCT on weak separators).
-- Watchdog: add when a 4th working session starts (first attack lane).
+- L-LIT: parked; T1-T4 on trunk (docs/lit/). T4: weak separators OPEN (Czerwinski et al. 1807.10546 §6).
+- L-STRUCT: S1 statement doc, then exact w(n,d) and s(n,d) by SAT for small n,d.
+- REFEREE: check of L-LIT's lasso observation (T4 §3(c)); then review of the l-comp range when M1 completes.
+- WATCHDOG: hourly at :30.
 
 ## Findings to carry
 - Landscape doc corrections (L-LIT, docs/lit/BARRIERS.md): d = O(log n) poly result is Jurdzinski-Lazic Thm 7 / Fearnley et al., not Calude et al.; upper-bound exponent is Jurdzinski-Lazic's; attractor-decomposition barrier is formally only Arnold-Niwinski-Parys Thm 5.1; Two Counters bound partly empirical; Random-Facet parity lower bound withdrawn (arXiv 1410.7871).
@@ -34,7 +37,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - PGSolver SI families (switchallexp, switchbestexp) target PGSolver's switch-all/switch-best SI, not Oink psi/ssi; port of stratimpralgs.ml queued in L-COMP.
 
 ## Live approaches
-- (none yet)
+- A1 deterministic weak separators (L-STRUCT): outside the strong-separator barrier (T4); target w(n,d) vs s(n,d), then construction or lower bound.
 
 ## Dead approaches (with obstruction): see docs/RESULTS.md "Dead ends"
 - (none yet)
