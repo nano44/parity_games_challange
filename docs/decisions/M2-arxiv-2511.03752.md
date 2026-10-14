@@ -23,5 +23,5 @@ Closed 2026-10-14 ~18:35Z, about 5 hours after the M2 clock started. Verdict: BR
   Huth-Kuo-Piterman "fatal attractors" family (arXiv 1405.0386), polynomial by construction, so it fails on correctness, not on time.
 
 ## Pending (not blocking the verdict)
-- REFEREE full written report; faithfulness verdicts on L-COMP's ambiguities AM1-AM9.
+- REFEREE full report landed: claude/referee 7750fa1, docs/referee/2026-10-14-arxiv-2511.03752.md (10 gaps; second counterexample cex2, solitaire; all 16 readings of 4 ambiguities fail on random games; literal reading wrong on 0.4%-2.2% of random games). Pending: AM1-AM9 verdicts on L-COMP pseudocode.
 - Nothing is sent to the author or posted anywhere (D1: anything external is the owner's decision).
