@@ -10,3 +10,4 @@
 (none)
 - 2026-10-14 17:39Z: L-COMP spawned (session_014bbtNwaVKxFymHpXynjURn, opus-5-5). REFEREE and L-LIT held: paper hosts blocked by network policy. Backstop trig_01U9uZS6Y6A928UV3cPKwxuK (cron 1 * * * *).
 - 2026-10-14 17:59Z: L-COMP DONE harness (l-comp ba0517f). Findings: mspm wrong; PGSolver binaries refused by classifier -> Python ports; recursiveladder blow-up reproduced.
+- 2026-10-14 18:02Z sweep: no overage; L-COMP idle with background family sweeps (review_ready), 214k ctx, $5.24; no action.

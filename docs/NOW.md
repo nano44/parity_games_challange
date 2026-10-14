@@ -47,4 +47,4 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - Q3: environment setup script (Boost dev packages + scripts/setup_oink.sh) to save each session ~1 min of setup.
 
 ## Spend
-- No cost_usd field is visible to the Lead through get_session; spend is estimated from context_usage tokens per session and the prices above.
+- Child sessions report usage.cost_usd in get_session (Lead own record shows none). 2026-10-14 18:02Z: L-COMP $5.24.
