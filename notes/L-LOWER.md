@@ -2,24 +2,27 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14 23:20Z. Task L1 (24h box from 23:01Z). Statement written: docs/lower/L1-statement.md (model Def. 1.3-1.4,
-Lemma 2.1 direct Ω(n), Transfer 2.2 CDHL, Lemma 2.3 n^2 upper bound, Transfer 2.4 ANP with the CAUTION that ANP's
-n^{lg(d/lg n)} bound is adaptive; target T-L1 = B_1(n) = ω(n)). Next: experiments/lower (evaluator, unfolded Büchi SLP,
-ANP SLP vs Zielonka n ≤ 4; exhaustive minimum-cost search on the bisimulation quotient for n ≤ 3, then 4), then the report.
+2026-10-15 ~01:30Z. Task L1 (24h box to 2026-10-15 23:01Z). Statement pushed (8fcc0f2) and messaged to the Lead.
+Step 2 done for n ≤ 4: B_1(1..4) = 0,2,4,6 = 2n-2 exactly (SAT on bisimulation quotient + BFS cross-check), minimal depth
+2n-2, chain programs suffice. Lemma 2.1' (depth ≥ 2n-2, lasso pair) and Theorem B (depth-(2n-1) types determine W) written in
+docs/lower/L1-report.md §2. RUNNING: experiments/lower/cegar5.py 8 1 (n = 5, 8 gates, window-1 chain) -> log
+experiments/lower/cegar5_k8_w1.log; W cache in scratchpad w5/ (32 files, ~13 min to build). If window-1 fails, run
+`cegar5.py 8` (unrestricted), then `cegar5.py 9`. Then fill report §4, message the Lead with DONE/FINDINGS/NEEDS.
 
 ## Queue
-1. experiments/lower/slp.py: SLP evaluator on pg.Game; unfolded Büchi SLP; ANP symmetric SLP with S_{n,h} trees.
-2. check vs zielonka.brute_force on all games n ≤ 4 (Büchi, one- and two-player) and parity {0,1,2} n ≤ 3.
-3. bisimulation quotient Q_n of all one-player Büchi pointed games with ≤ n vertices; exact B_1(n) for n ≤ 3 by search; n = 4 by SAT if feasible.
-4. report: data, statement, proof route / obstruction. DONE/FINDINGS/NEEDS to the Lead.
+1. n = 5: B_1(5) = 8 or > 8 (cegar5.py). 2. If = 8: look for the uniform O(n) construction (report §3 has the n=4 chain).
+3. Report §4-5; message Lead. 4. Later: two-player Büchi B_2(n) at n = 4 (Q_4 two-player ~ 10^5-10^6 classes; not built yet).
 
 ## Things only I know
 - The ANP asymmetric algorithm (Lemma 3.6) is a worklist, hence adaptive; the T7 reading "C(n,d) ≤ n^{lg(d/lg n)+O(1)}"
   for SLPs is not established by ANP's text. The symmetric recursion (Lemma 3.2) IS straight-line: |U|·|V| queries.
+  CDHS 1909.04983 Algorithm 1 is also a worklist (popActiveSet). Both checked in the opened PDFs.
 - With the "successor priority" query f'(x) = Cpre_E(∪_p P_p ∩ x_p) each ANP query is one Cpre gate; with the vertex-priority
-  form g(x) = ∪_p P_p ∩ Cpre_E(x_p) it is d+1 gates. Exponent unchanged. Equivalence of the two nested fixpoints with W_E
-  is standard but no primary source opened yet.
-- Bisimulation invariance (L1 Lemma 1.5) lets the exact search run on the bisimulation quotient of all ≤ n-vertex games.
+  form g(x) = ∪_p P_p ∩ Cpre_E(x_p) it is d+1 gates. Exponent unchanged. Equivalence with W_E: standard, no primary source opened.
+- SAT trick: UNSAT on a successor-closed subset of the quotient is a valid lower bound; the n = 4 UNSAT at k = 5 is on a subset.
+- vec5.py packs sets as k-bit masks per game; the full 5-vertex sweep of a 25-gate program takes ~10 min; W per pattern cached.
+- The two-player quotient for n = 4 was not built (13·10^6 games; memory ~ fine but slow); not needed for L1.
+- Depth theorem's off-by-one: proof gives 2n-1, data says 2n-2 is exact for n ≤ 4.
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |

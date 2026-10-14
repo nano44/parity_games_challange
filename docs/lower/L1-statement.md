@@ -60,6 +60,12 @@ of (v, G) (the tree of paths of length ≤ k from v, labelled by pr and the owne
 (v_1, G^-) coincide (they only see v_1, ..., v_{n−1}). By Lemma 1.6 a program of depth ≤ n − 2 gives v_1 the same
 answer on both, so a solving program has δ ≥ n − 1, hence c ≥ n − 1.
 Hence C(n, d) ≥ B_2(n) ≥ B_1(n) ≥ n − 1 for all d ≥ 2.
+**Lemma 2.1' (sharper, L-LOWER 2026-10-15, unrefereed). B_1(n) ≥ 2n − 2 for n ≥ 2**, and this is the exact minimal DEPTH
+for n ≤ 4 (experiments/lower/depthneeded.py). Proof: G^cyc = the cycle a_1 → a_2 → ... → a_n → a_1 with pr(a_{n−1}) = 2, all
+others 1, root a_1 (winning: W_E = V); G^tail = a_1 → ... → a_{n−1} → z → z with z a fresh vertex of priority 1 (n vertices,
+losing from a_1). Both are deterministic, so their depth-D types are their label words: G^cyc gives P_1^{n−2} P_2 P_1^{n−1} P_2 ...
+with the second P_2 at position 2n − 2; G^tail gives P_1^{n−2} P_2 P_1^ω. They agree up to depth 2n − 3, so by Lemma 1.6 any
+solving program has δ ≥ 2n − 2. (Found by experiments/lower/fooling.py as the deepest fooling pair for n = 2, 3, 4.)
 
 **Transfer 2.2 (CDHL, arXiv 1711.09148 v1).** Model (their §2, verbatim): the graph "can be accessed only by the following
 two types of operations: 1. Basic set operations like ∪, ∩, \, ⊆, and =; 2. One-step operations to obtain the predecessors
@@ -107,7 +113,11 @@ an algorithm that computes ‖F‖_{U,V} using |U|·|V| queries to the function 
   which does not change its limsup), but this needs a source or a proof before use; it does not change any exponent.
   ANP Theorem 5.1 and Remark 5.5 (lower bound) apply only to programs of the shape ‖·‖_{U,V} or ‖·‖_V, not to Def. 1.3.
 
-**Known picture (this model):** n − 1 ≤ B_1(n) ≤ B_2(n) ≤ n^2, and n − 1 ≤ C(n, d) ≤ n^{2·lg(d/lg n)+O(1)}.
+**Known picture (this model):** 2n − 2 ≤ B_1(n) ≤ B_2(n) ≤ n^2, and 2n − 2 ≤ C(n, d) ≤ n^{2·lg(d/lg n)+O(1)}.
+Exact values (experiments/lower, SAT on the bisimulation quotient, cross-checked by BFS for n ≤ 3): B_1(1..4) = 0, 2, 4, 6 = 2n − 2,
+attained by chain programs (each gate reads only P_2 and the previous gate). See docs/lower/L1-report.md for n = 5 and the
+depth theorem (depth-(2n−1) types determine W_E on one-player Büchi games with ≤ n vertices), which caps any lower bound
+argument based on depth at Θ(n).
 
 ## 3. Targets (precise statements; nothing proved)
 
