@@ -5,7 +5,7 @@ Updated: 2026-10-14 by Lead. Phase: M0, M1, M2 done; first attack lane L-STRUCT 
 | M | State | Evidence |
 | --- | --- | --- |
 | M0 Setup | done; TARGET v1.0 at a3777f1 (D2) | this commit; CI .github/workflows/verify.yml; backstop trigger in docs/agents/LEAD-BACKSTOP.md |
-| M1 Reproduce hard families | DONE 2026-10-14 19:10Z (l-comp de7ea19): 12 of 13 families blow up as published, all strategies checked; counter_qpt superpolynomial but class open (targets a quasi-poly algorithm). Friedmann SI via REFEREE-checked PGSolver ports (reading L5). Bench lands on trunk after REFEREE code review | experiments/hard-families/README.md (l-comp) |
+| M1 Reproduce hard families | DONE 2026-10-14 19:10Z (l-comp de7ea19): 12 of 13 families blow up as published, all strategies checked; counter_qpt superpolynomial but class open (targets a quasi-poly algorithm). Friedmann SI via REFEREE-checked PGSolver ports (reading L5). Bench LANDED on trunk (REFEREE OK ae532f6) | experiments/hard-families/README.md (l-comp) |
 | M2 Audit arXiv 2511.03752 | DONE 2026-10-14 ~18:35Z: BROKEN (two independent 4-vertex counterexamples, cross-checked); RESULTS DE1 | docs/decisions/M2-arxiv-2511.03752.md |
 | M3 Partial results | not started; attack lanes wait for TARGET approval and L-LIT ranking | - |
 | M4 Target | not started | - |
@@ -28,8 +28,8 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - L-COMP: parked after notebook handover; wakes for a new claim, review changes, or L-STRUCT SAT engineering.
 - L-LIT: parked; T1-T4 on trunk (docs/lit/). T4: weak separators OPEN (Czerwinski et al. 1807.10546 §6).
 - L-STRUCT: S1 statement doc, then exact w(n,d) and s(n,d) by SAT for small n,d.
-- REFEREE: bench review CHANGES (5251a48): selftest gaps; idle until L-COMP fix SHA for one-line sign-off.
-- L-COMP: woken for the two selftest fixes, then parks.
+- REFEREE: idle (bench signed OK at ae532f6). Next routed work: L-STRUCT claims.
+- L-COMP: parked (bench landed).
 - WATCHDOG: hourly at :30.
 
 ## Findings to carry
