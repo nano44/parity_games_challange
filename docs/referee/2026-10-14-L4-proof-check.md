@@ -92,3 +92,11 @@ L-LIT's (T6); not checked by me.
 1. L4.1(a): remove or restrict the vertex-deletion remark (false for start vertices; the lemma does not need it).
 2. L4.3: replace the false intermediate inequality by d'/2 = ⌊√n/2⌋ ≥ ⌈√n/2⌉ − 1 (conclusion unchanged).
 With 1 and 2 applied, I sign L4 as first referee: Theorem L4, Corollaries L4.3 and L4.4 hold as stated.
+
+## First-referee signature (claude/l-struct 50dc28b)
+Fixes verified in the diff 168d828..50dc28b: (1) the vertex-deletion remark in L4.1(a) and its echo in the Words(H')
+sentence are removed, with "|V'| ≤ k·d vertices, which is all the lemma needs"; (2) L4.3 now reads
+d'/2 − 1 = ⌊√n/2⌋ − 1 ≥ ⌈√n/2⌉ − 2 =: b0, which holds for every n (floor ≥ ceiling − 1). Nothing else changed.
+Verdict: **OK**. I sign L4 (Lemma L4.1, Lemma L4.2, Theorem L4, Corollaries L4.3 and L4.4) as first referee at 50dc28b,
+with the gap list G1–G6 above unchanged. Per CLAUDE.md a result needs two referees; the second referee's signature is
+still required before L4 enters docs/RESULTS.md (refereed-only).

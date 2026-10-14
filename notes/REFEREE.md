@@ -12,8 +12,8 @@ default binary (universal_solve preprocessing); regions match Oink on 150 random
 Theorem numbering: the paper's shared counter (Theorem 2 = dominion, Lemma 3 = minimal dominion, Lemma 4 = progress); my
 first two messages to the Lead were off by one. Idle until the Lead routes the next item.
 
-L4 proof (l-struct 168d828), first referee: docs/referee/2026-10-14-L4-proof-check.md, CHANGES (two sentence fixes;
-Theorem L4, L4.3, L4.4 hold; Thm 5.1 black box legitimate; PW quotes verbatim).
+L4 proof (l-struct 168d828), first referee: docs/referee/2026-10-14-L4-proof-check.md, CHANGES then signed OK as first referee at
+l-struct 50dc28b (both fixes verified); second referee still required.
 S3 delta (l-struct a67bd78): OK; M0 window-length nit; R1 observation: splitting v_i per out-letter gives c = d and with
 monotonicity in d this already yields L4 (s^V(n,n) >= n^{Omega(lg n)}); appended to the S3 report.
 S3 statement (l-struct ef95a93): docs/referee/2026-10-14-S3-statement-check.md, CHANGES (6 findings; diagonal W=S=1,2,5,7 for n<=4 confirmed by my SAT).
