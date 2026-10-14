@@ -27,7 +27,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 ## In flight
 - L-COMP: parked after notebook handover; wakes for a new claim, review changes, or L-STRUCT SAT engineering.
 - L-LIT: parked; T1-T4 on trunk (docs/lit/). T4: weak separators OPEN (Czerwinski et al. 1807.10546 §6).
-- L-STRUCT: S2 target stated (l-struct 616cf77): T1 w(n,d) >= s(n,d-2) [quasi-poly lower bound for weak separators], T2 fallback. Proof waits for REFEREE statement check + L-LIT novelty (T5). Data: w^V(4,6) <= 11 vs s^E(4,6) = 13.
+- L-STRUCT: S2 target stated (l-struct 616cf77): T1 w(n,d) >= s(n,d-2) [quasi-poly lower bound for weak separators], T2 fallback. Proof waits for REFEREE statement check + L-LIT novelty (T5). Data (corrected 19:56Z): s^V(4,6) = 10, w^V(4,6) <= 10; no gap shown at (4,6) V; 9-state weak V search running.
 - REFEREE: statement check of S2 T1/T2 (C1 OK at 762c598; plant P1 caught, score 1/1).
 - L-COMP: reproduction done (all pass); SAT box: first the T1-decisive cell (weak (4,6) E with <= 7 states), then w(4,6), w(5,.). Box ends ~01:30Z.
 - WATCHDOG: hourly at :30.
