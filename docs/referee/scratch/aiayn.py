@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""REFEREE throwaway: faithful implementation of arXiv 2511.03752 v1 (van der Heijden,
+r"""REFEREE throwaway: faithful implementation of arXiv 2511.03752 v1 (van der Heijden,
 "Attractors Is All You Need"), Algorithm 1 with the functions U_d, A*, A', A^k, plus a
 min-parity Zielonka reference, plus a random counterexample search.
 
@@ -8,10 +8,14 @@ infinitely often is even), priorities on vertices, no self-loops, every vertex h
 Game: n vertices 0..n-1; owner[v] in {0 (Even), 1 (Odd)}; pr[v] >= 0; succ[v] non-empty list.
 
 Readings (ambiguities in the paper), chosen by flags:
-  aprime_base = "lt"  : base of A'_d(A) is {v in A \\ (A* u U_d) : pr(v) < d}   (literal, eq. for A')
+  aprime_base = "lt"  : base of A'_d(A) is {v in A minus (A* u U_d) : pr(v) < d}   (literal, eq. for A')
               = "all" : drop the "pr(v) < d" filter (a charitable reading)
   astar_scope = "G"   : A*_d computed with attractors in the whole current game G (literal)
               = "A"   : attractors restricted to the current A^k (charitable reading)
+  aprime_attr = "opp" : A'_d(A) is the OPPONENT's attractor of its base (literal: \notplayerattr)
+              = "own" : the player's own attractor instead
+  peel_attr   = "opp" : U^{k+1} = U^k minus OPPONENT-Attr((V minus A^k) u A') (literal: \notplayerattr)
+              = "own" : the player's own attractor instead
 Usage: python3 -I aiayn.py [--search N] [--seed S] [--pg file.pg] [--trace]
 """
 import sys, random, argparse
@@ -71,11 +75,11 @@ def A_star(G, d, player, succ, pred):
         out |= {v for v in At if G.pr[v] == k}
     return out
 
-def A_prime(G, d, A, Astar, player, succ, pred, aprime_base):
+def A_prime(G, d, A, Astar, player, succ, pred, aprime_base, aprime_attr="opp"):
     base = {v for v in A if v not in Astar and v not in U_d(G, d) and (aprime_base == "all" or G.pr[v] < d)}
-    return attr(G.n, G.owner, succ, pred, 1 - player, base)
+    return attr(G.n, G.owner, succ, pred, 1 - player if aprime_attr == "opp" else player, base)
 
-def A_fun(G, d, aprime_base="lt", astar_scope="G", trace=False):
+def A_fun(G, d, aprime_base="lt", astar_scope="G", trace=False, aprime_attr="opp", peel_attr="opp"):
     """A(G,d) = intersection_k A^k(G,d). Returns the fixed-point set (may be empty)."""
     player = d % 2
     succ, pred = G.succ, G.pred()
@@ -88,9 +92,9 @@ def A_fun(G, d, aprime_base="lt", astar_scope="G", trace=False):
     while True:
         if astar_scope == "A":
             s2, p2 = restricted(G, A); Astar = A_star(G, d, player, s2, p2) & A
-        Ap = A_prime(G, d, A, Astar, player, succ, pred, aprime_base)
+        Ap = A_prime(G, d, A, Astar, player, succ, pred, aprime_base, aprime_attr)
         X = (V - A) | Ap
-        peel = attr(G.n, G.owner, succ, pred, 1 - player, X)
+        peel = attr(G.n, G.owner, succ, pred, 1 - player if peel_attr == "opp" else player, X)
         if trace:
             print(f"  d={d} k={k}: U^k={sorted(U)} A^k={sorted(A)} A*={sorted(Astar)} base(A')={sorted(v for v in A if v not in Astar and v not in U_d(G,d) and (aprime_base=='all' or G.pr[v]<d))} A'={sorted(Ap)} peel={sorted(peel)}")
         Unew = U - peel
@@ -100,7 +104,7 @@ def A_fun(G, d, aprime_base="lt", astar_scope="G", trace=False):
         A = attr(G.n, G.owner, succ, pred, player, U)
         k += 1
 
-def algorithm(G, aprime_base="lt", astar_scope="G", trace=False, max_iter=None):
+def algorithm(G, aprime_base="lt", astar_scope="G", trace=False, max_iter=None, aprime_attr="opp", peel_attr="opp"):
     """Algorithm 1. Returns (W_even, W_odd) as sets of ORIGINAL vertex ids, or raises Stuck."""
     orig = list(range(G.n)); W = [set(), set()]
     H = G
@@ -115,11 +119,11 @@ def algorithm(G, aprime_base="lt", astar_scope="G", trace=False, max_iter=None):
         if trace: print(f"iter {it}: n={H.n} dhat={dh} player={pl} dbar={dbar}")
         rem = set()
         if dbar is not None:
-            rem = A_fun(H, dbar, aprime_base, astar_scope, trace)   # line 8
+            rem = A_fun(H, dbar, aprime_base, astar_scope, trace, aprime_attr, peel_attr)   # line 8
         if rem:                                                     # lines 9-12
             W[1 - pl] |= {orig[v] for v in rem}
         else:
-            rem = A_fun(H, dh, aprime_base, astar_scope, trace)     # line 14
+            rem = A_fun(H, dh, aprime_base, astar_scope, trace, aprime_attr, peel_attr)     # line 14
             if not rem:
                 raise Stuck(f"both A(G,{dbar}) and A(G,{dh}) empty on non-empty G (Lemma 3 fails)")
             W[pl] |= {orig[v] for v in rem}
@@ -196,18 +200,31 @@ def main():
     ap.add_argument("--maxdeg", type=int, default=3)
     ap.add_argument("--aprime", default="lt", choices=["lt", "all"])
     ap.add_argument("--astar", default="G", choices=["G", "A"])
+    ap.add_argument("--aprime-attr", default="opp", choices=["opp", "own"])
+    ap.add_argument("--peel-attr", default="opp", choices=["opp", "own"])
+    ap.add_argument("--all-readings", action="store_true", help="run every combination of readings")
     ap.add_argument("--trace", action="store_true")
     a = ap.parse_args()
+    import itertools
+    combos = [(a.aprime, a.astar, a.aprime_attr, a.peel_attr)]
+    if a.all_readings:
+        combos = list(itertools.product(["lt", "all"], ["G", "A"], ["opp", "own"], ["opp", "own"]))
+    for (a.aprime, a.astar, a.aprime_attr, a.peel_attr) in combos:
+        run(a)
+
+def run(a):
+    rd = dict(aprime_base=a.aprime, astar_scope=a.astar, aprime_attr=a.aprime_attr, peel_attr=a.peel_attr)
+    tag = "readings aprime=%s astar=%s aprime_attr=%s peel_attr=%s" % (a.aprime, a.astar, a.aprime_attr, a.peel_attr)
     if a.pg:
         G = read_pg(a.pg, minparity=not a.maxparity_file)
         print("game (min-parity): owner", G.owner, "pr", G.pr, "succ", G.succ)
         z = zielonka(G); print("Zielonka  : W_even", sorted(z[0]), "W_odd", sorted(z[1]))
         try:
-            r = algorithm(G, a.aprime, a.astar, a.trace, max_iter=10 * G.n + 10)
-            print("Algorithm1: W_even", sorted(r[0]), "W_odd", sorted(r[1]), "(readings aprime=%s astar=%s)" % (a.aprime, a.astar))
+            r = algorithm(G, trace=a.trace, max_iter=10 * G.n + 10, **rd)
+            print("Algorithm1: W_even", sorted(r[0]), "W_odd", sorted(r[1]), "(%s)" % tag)
             print("AGREE" if r == z else "DISAGREE")
         except Stuck as e:
-            print("Algorithm1: STUCK:", e)
+            print("Algorithm1: STUCK (%s):" % tag, e)
     if a.search:
         rng = random.Random(a.seed); bad = 0; stuck = 0; best = None
         for t in range(a.search):
@@ -215,19 +232,19 @@ def main():
             G = random_game(rng, n, a.maxpr, a.maxdeg)
             z = zielonka(G)
             try:
-                r = algorithm(G, a.aprime, a.astar, max_iter=10 * n + 10)
+                r = algorithm(G, max_iter=10 * n + 10, **rd)
                 if r != z:
                     bad += 1
                     if best is None or (G.n, sum(map(len, G.succ))) < (best.n, sum(map(len, best.succ))): best = G
             except (Stuck, RuntimeError):
                 stuck += 1
                 if best is None or (G.n, sum(map(len, G.succ))) < (best.n, sum(map(len, best.succ))): best = G
-        print(f"search: {a.search} games, wrong={bad}, stuck={stuck} (readings aprime={a.aprime} astar={a.astar})")
+        print(f"search: {a.search} games (n<={a.n}, pr<={a.maxpr}, seed {a.seed}), wrong={bad}, stuck={stuck} ({tag})")
         if best is not None:
             print("smallest failing game (min-parity .pg):"); print(to_pg(best), end="")
             z = zielonka(best); print("Zielonka W_even", sorted(z[0]), "W_odd", sorted(z[1]))
             try:
-                r = algorithm(best, a.aprime, a.astar, trace=True); print("Alg1 W_even", sorted(r[0]), "W_odd", sorted(r[1]))
+                r = algorithm(best, trace=True, **rd); print("Alg1 W_even", sorted(r[0]), "W_odd", sorted(r[1]))
             except Stuck as e: print("Alg1 STUCK:", e)
 
 if __name__ == "__main__":

@@ -2,13 +2,13 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-R1 (audit of arXiv 2511.03752 v1) in progress, deadline 2026-10-16 18:30Z. Verdict so far: BROKEN.
-Counterexample found and reported to the Lead (docs/referee/scratch/cex1-minparity.pg, max-parity twin cex1-maxparity.pg).
-Faithful throwaway implementation: docs/referee/scratch/aiayn.py (min-parity, flags for the two ambiguous readings).
-Next: full report docs/referee/2026-10-14-arxiv-2511.03752.md; then wait for the Lead to route L-COMP's pseudocode (R1 step 3).
+R1 (audit of arXiv 2511.03752 v1): report written, verdict BROKEN: docs/referee/2026-10-14-arxiv-2511.03752.md.
+Counterexamples cex1 (4 vertices) and cex2 (4 vertices, solitaire) in docs/referee/scratch/, with max-parity twins for Oink
+and Oink's .sol files. Faithful implementation of Alg. 1 with all 16 readings: docs/referee/scratch/aiayn.py (run with python3 -I).
+Lead informed (interim message 18:40Z, DONE message after the push). Waiting for the Lead to route L-COMP's pseudocode (R1 step 3).
 
 ## Queue
-- R1 step 1: full report (in progress).
+- R1 step 1: done (report pushed).
 - R1 step 3: line-by-line faithfulness check of L-COMP's pseudocode (notes/L-COMP.md, branch claude/l-comp) when routed.
 - Later: PGSolver generator ports (recursiveladder, switchallexp, switchbestexp) vs OCaml source, when routed.
 
