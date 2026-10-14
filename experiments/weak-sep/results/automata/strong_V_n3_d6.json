@@ -1,0 +1,77 @@
+{
+ "n": 3,
+ "d": 6,
+ "conv": "V",
+ "mode": "strong",
+ "value": 7,
+ "k_start": 1,
+ "automaton": {
+  "k": 7,
+  "d": 6,
+  "delta": [
+   [
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   [
+    2,
+    3,
+    4,
+    5,
+    4,
+    0
+   ],
+   [
+    4,
+    2,
+    null,
+    5,
+    null,
+    0
+   ],
+   [
+    2,
+    3,
+    6,
+    5,
+    null,
+    0
+   ],
+   [
+    6,
+    2,
+    null,
+    5,
+    null,
+    0
+   ],
+   [
+    3,
+    3,
+    3,
+    5,
+    null,
+    0
+   ],
+   [
+    null,
+    2,
+    null,
+    5,
+    null,
+    0
+   ]
+  ]
+ },
+ "graphs": {
+  "evens": 113,
+  "odds": 0,
+  "used_even": 29,
+  "used_odd": 0
+ },
+ "seconds": 1.2
+}

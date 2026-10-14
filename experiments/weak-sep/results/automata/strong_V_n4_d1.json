@@ -1,0 +1,33 @@
+{
+ "n": 4,
+ "d": 1,
+ "conv": "V",
+ "mode": "strong",
+ "value": 4,
+ "k_start": 1,
+ "automaton": {
+  "k": 4,
+  "d": 1,
+  "delta": [
+   [
+    1
+   ],
+   [
+    2
+   ],
+   [
+    3
+   ],
+   [
+    null
+   ]
+  ]
+ },
+ "graphs": {
+  "evens": 1,
+  "odds": 0,
+  "used_even": 0,
+  "used_odd": 0
+ },
+ "seconds": 0.0
+}

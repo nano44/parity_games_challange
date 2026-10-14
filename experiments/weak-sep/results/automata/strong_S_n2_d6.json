@@ -1,0 +1,55 @@
+{
+ "n": 2,
+ "d": 6,
+ "conv": "S",
+ "mode": "strong",
+ "value": 4,
+ "k_start": 1,
+ "eager": false,
+ "solver": "cadical153",
+ "automaton": {
+  "k": 4,
+  "d": 6,
+  "delta": [
+   [
+    1,
+    0,
+    1,
+    0,
+    2,
+    0
+   ],
+   [
+    3,
+    2,
+    3,
+    1,
+    null,
+    0
+   ],
+   [
+    1,
+    2,
+    3,
+    2,
+    null,
+    0
+   ],
+   [
+    null,
+    3,
+    null,
+    1,
+    null,
+    0
+   ]
+  ]
+ },
+ "graphs": {
+  "evens": 99,
+  "odds": 0,
+  "used_even": 12,
+  "used_odd": 0
+ },
+ "seconds": 0.0
+}
