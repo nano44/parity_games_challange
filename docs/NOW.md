@@ -18,7 +18,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | Role | Session id | Branch | Model | Effort | State | Reason |
 | --- | --- | --- | --- | --- | --- | --- |
 | Lead | session_014FBi6o334DvwT5Uw2kDfoN | claude/vibrant-johnson-nxvvxo | opus-5-5 | high | working | Owner-chosen session; routing judgement; keeps context lean |
-| REFEREE | session_01Ki9osXiyYf9heTLNk3FKED | claude/referee | fable-5-1 | high | working | Most capable model; finding the error in a claimed proof decides M2 and every claim after |
+| REFEREE | session_01Ki9osXiyYf9heTLNk3FKED | claude/referee | fable-5-1 | high | parked (handover f179ae0 at ~680k ctx; successor spawned on next claim) | Most capable model; finding the error in a claimed proof decides M2 and every claim after |
 | L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | parked (T6 done 74220c6) | Source checking and barrier analysis need judgement; Fable reserved for referee; move to Fable when step-3 sign-offs start |
 | L-COMP | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | working (SAT hard cells for L-STRUCT, 6h box; ~380k ctx) | SAT engineering needs care; successor near 600k | Paper-to-code fidelity for M1 generators and the M2 implementation; drop to sonnet-5-5 for routine benchmarks after M2 |
 | L-STRUCT | session_01VH4fd2Fq8XeXtyUfkwLJV1 | claude/l-struct | fable-5-1 | high | working | Attack lane (owner: most capable model at high effort); rank 1 approach, weak separators, T4 verdict OPEN |
@@ -28,7 +28,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - L-COMP: parked after notebook handover; wakes for a new claim, review changes, or L-STRUCT SAT engineering.
 - L-LIT: parked; T1-T4 on trunk (docs/lit/). T4: weak separators OPEN (Czerwinski et al. 1807.10546 §6).
 - L-STRUCT: T3 sub-lemma SL8-min: every MINIMAL weak (n,d)-sep, d<=n+1, is within 2 transition changes of a strong one on the same states (exhaustive data 6985a5a: E t<=1, V t<=2 at minimum; non-minimal needs up to 4). Proof route next. L4 signed by first referee (9bf5301); second referee pending with T3 package. w^V(4,5)=10=s^V(4,5) (b9f4d78, SAT+checker; LRAT confirmation queued for L-COMP successor). T3 holds on all 8 computed cells with d<=n+1.
-- REFEREE: L4 first check CHANGES (1f5e004, 2 sentence fixes; statements hold; gap list G1-G6 for 2nd referee). Second independent referee to be spawned for the T3+L4 package (GAPS G1).
+- REFEREE: parked after handover (f179ae0). L4 signed as first referee (9bf5301). Next: fresh REFEREE for SL8-min/T3; separate REFEREE-2 for the L4+T3 package. Second independent referee to be spawned for the T3+L4 package (GAPS G1).
 - L-COMP: diagonal V cells (4,5),(5,5),(5,6), TARGET n=4 strong, n=5; LRAT standard. Box ends ~01:30Z.
 - WATCHDOG: hourly at :30.
 
