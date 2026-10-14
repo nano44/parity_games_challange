@@ -2,18 +2,95 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14: branch claude/l-comp (from trunk claude/vibrant-johnson-nxvvxo). Oink 8fbf0a7 built by scripts/setup_oink.sh.
-Task 2 (harness, experiments/harness/) done: py Zielonka + brute-force oracle, seeded generator, rngame corpus,
-compare.py, check.sh (in verify.sh). Validation: experiments/harness/validation.md.
-Task 3 (M1, experiments/hard-families/) in progress: sweep.py driver; PGSolver generators ported to
-pgsolver_port.py (PGSolver binaries could not be run here, see Things only I know).
-Task 4 (M2, arXiv 2511.03752): BLOCKED until the Lead says arXiv is reachable. Nothing implemented.
+2026-10-14 18:40Z: trunk a3777f1 merged (TARGET v1.0). Harness done + validated (experiments/harness/validation.md).
+M2 (arXiv 2511.03752v1) unblocked 18:21Z, clock 2026-10-14 18:30Z .. 2026-10-16 18:30Z. Pseudocode below (pushed for the
+REFEREE). Next: implementation experiments/m2/, strategy verifier in the harness (D2 change 5), runs.
+M1 sweeps (run_all.sh) still running for counter_rob onward; READMEs pending.
 
 ## Queue
-1. M1 sweeps: tc, tc+, counter_symsi, counter_{rr,dp,m,core,rob,ortl,qpt}, recursiveladder, switchallexp, switchbestexp.
-2. SI families target PGSolver's strategy-improvement variants, not Oink psi/ssi: port PGSolver's stratimprovement
-   (switch-all / switch-best) from src/lib/solvers/stratimpralgs* to confirm the blow-up in the targeted algorithm.
-3. M2 when unblocked.
+1. M2: implement (regions + strategies), strategy verifier in compare.py cross-checked with Oink --verify, then
+   random games (up to 10,000) and every hard family (L-LIT's ranked list first when it arrives). Stop at the first
+   disagreement / failed strategy check: shrink, save .pg, push, message the Lead.
+2. M1: finish family READMEs (make_readmes.py + verdicts.py); port PGSolver stratimpralgs (switch-all/switch-best SI).
+
+## M2 pseudocode
+Source: arXiv 2511.03752v1, R. van der Heijden, "Attractors Is All You Need: Parity Games In Polynomial Time"
+(submitted 2025-11-04). Opened 2026-10-14 as the LaTeX e-print (sha256 of e-print 4dc6c4b9...ee2e4; main.tex
+9840db37...3f8b). Line numbers "tex:N" refer to that main.tex; the paper has no numbered equations. Theorem
+numbering follows the paper's counter: Lemma 1 (tex:290), Theorem 2 (tex:322), Lemma 3 (tex:341), Lemma 4 (tex:397),
+Theorem 5 (tex:404), Lemma 6 (tex:413), Theorem 7 (tex:421), Theorem 8 (tex:428); Algorithm 1 (tex:370-395).
+
+### Conventions of the paper
+- MIN-parity: "Even wins the play iff min{inf(pi)} is even" (Sec. 2, tex:274). TARGET.md is max-parity.
+  Implementation maps a max-parity game with priorities 0..P to min-parity by rho'(v) = M - rho(v), M = P rounded up
+  to even: order reversed, parity kept, so winning regions and strategies are unchanged. (Mine, not the paper's.)
+- player(d) = Even if d even else Odd; par(d) = d mod 2 (tex:301). In A(G,d) the symbol O ("circle") is the player
+  of d, O-bar the other (Theorem 2, tex:323: "priority d of player O, A(G,d) is an O-dominion").
+- Attr as defined tex:280-286 (standard attractor, computed in the current game G).
+- Subgame G \ U (tex:278).
+
+### Pre-routine: self-loops (tex:297, Remark tex:335)
+The paper assumes no self-loops and says they "can be removed as a pre-routine [friedmann_solving_2009]"
+(doi:10.1007/978-3-642-04761-9_15, NOT opened: awaiting source). Reading used (from PGSolver d3cd624, Friedmann's
+code: transformations.ml:15-24 remove_useless_self_cycles_inplace, specialsolve.ml:20-28 find_useful_self_cycles,
+univsolve.ml:698-760 their use):
+P1. For every v with (v,v) in E, rho(v) of parity NOT the owner's, and |E(v)| > 1: delete edge (v,v).
+P2. For p in {Even, Odd}: S_p = {v : (v,v) in E, and (owner(v) = p and par(rho(v)) = p, or E(v) = {v} and par(rho(v)) = p)};
+    X_p = p-Attr(G, S_p); W_p += X_p; strategy: v in S_p owned by p plays v->v, attractor strategy on X_p \ S_p;
+    G = G \ X_p (Even first, then Odd on the remaining game, recomputing S_Odd there).
+    (The "E(v) = {v}, wrong parity" case is my addition: PGSolver leaves such a self-loop in place.)
+After P1-P2 no vertex of G has a self-loop (every remaining self-loop vertex was in S_Even or S_Odd or lost its loop).
+
+### Definitions (Sec. 3, tex:301-318), for the current game G and a priority d, O = player(d)
+D1. U_d(G) = { v : rho(v) <= d and par(rho(v)) = par(d) }                                     (tex:303)
+D2. A*_d(G) = union over k in 0..d with par(k) != par(d) of { v in O-Attr(G, U_{k-1}(G)) : rho(v) = k }   (tex:304)
+    (U_{-1} = empty set.)
+D3. A'_d(G, A) = O-bar-Attr(G, { v in A \ (A*_d(G) u U_d(G)) : rho(v) < d })                 (tex:309)
+D4. U^0 = U_d(G);  A^0 = O-Attr(G, U^0)                                                        (tex:314-315)
+    U^{k+1} = U^k \ O-bar-Attr(G, (V \ A^k) u A'_d(G, A^k));  A^{k+1} = O-Attr(G, U^{k+1})     (tex:316-317)
+    A(G,d) = intersection over k of A^k                                                         (tex:312)
+    Computed by iterating until U^{k+1} = U^k (then every later A^k equals A^k).
+
+### Algorithm 1 (tex:370-395), run on the game left after P1-P2
+ 1 n = |V|, m = |E|                                         (tex:374)
+ 2 D = ordered list of priorities (unused afterwards)        (tex:375)
+ 3 W_E, W_O = {}, {}                                         (tex:376)
+ 4 while V != {}:                                            (tex:377)
+ 5   dhat = max priority of G                                (tex:378)
+ 6   O = Even if dhat even else Odd                          (tex:379; the tex writes "d", read as dhat)
+ 7   dbar = max priority of O-bar in G                       (tex:380)
+ 8   compute A(G, dbar)  [an O-bar dominion by Theorem 2]    (tex:382)
+ 9   W_{O-bar} += A(G, dbar);  G = G \ A(G, dbar)            (tex:383-384)
+10   if A(G, dbar) != {}: continue                           (tex:385-387)
+11   compute A(G, dhat);  W_O += A(G, dhat);  G = G \ A(G, dhat)   (tex:389-391)
+12 return (W_E, W_O)                                         (tex:393)
+Implementation guard (mine): if in one iteration both A(G,dbar) and A(G,dhat) are empty and V != {}, stop and report
+STUCK (Lemma 4, tex:397-402, says this cannot happen).
+
+### Strategies (not in the paper; my construction, required by D2 change 5)
+For a removed set A = A(G,d) = O-Attr(G, U) with U = U^k at the fixpoint:
+S1. v in A \ U owned by O: the attractor strategy (a successor in the previous attractor layer).
+S2. v in U owned by O: a successor in U if there is one; else a successor in A \ A'_d(G, A) (the case analysis
+    in Theorem 2's proof, tex:328-330); else any successor in A (flagged in the log; the proof says it cannot occur).
+Pieces are removed as O-attractors, so the remaining game is an O-trap and the per-piece strategies compose.
+A failed strategy check therefore does not by itself refute the paper; a region mismatch does.
+
+### Ambiguities (reading chosen; alternatives)
+AM1 Parity convention: min-parity as written (tex:274). Alternative: the author meant max-parity (Algorithm 1 starts
+    from the MAX priority, which in min-parity is the least significant one). Implementing max-parity instead would be
+    a different algorithm; I implement min-parity as written and could add the max-parity variant as a probe.
+AM2 Line 6 says "if d is even"; read d = dhat.
+AM3 Line 7 when O-bar has no priority in G: reading A(G, dbar) = {} (skip to line 11). Alternative: undefined.
+AM4 Self-loop pre-routine: see P1-P2 (cited source not opened; PGSolver's code used; forced wrong-parity self-loop
+    vertex handled by me).
+AM5 A(G,d) = intersection of the A^k (tex:312): since U^k decreases and Attr is monotone, A^k decreases; computed at
+    the fixpoint of U. Alternative readings give the same set.
+AM6 All attractors inside D2, D3, D4 are computed in the current G (whole remaining game), not inside A or U.
+    Alternative: D3's attractor restricted to A. Chosen: G, as the formulas write "Attr(G, .)".
+AM7 D3 uses strict rho(v) < d and excludes A* and U_d (as written).
+AM8 Text references "line 12" for continue and "lines 8-10, 14-16" (tex:369, 408), numbering that counts the blank
+    \[\] lines; my line numbers above are my own.
+AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo for U_{dbreve}; no effect on the algorithm.
 
 ## Things only I know
 - PGSolver (tcsprojects/pgsolver d3cd624) builds with apt OCaml 4.14 + dune 3.14 after two local edits
@@ -33,6 +110,7 @@ Task 4 (M2, arXiv 2511.03752): BLOCKED until the Lead says arXiv is reachable. N
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
 | --- | --- | --- | --- |
 | github.com/trolando/oink @ 8fbf0a7 | solver list (README), generators src/tools/*.cpp, solution format src/game.cpp:459 | 2026-10-14 | code, not a paper |
+| arXiv 2511.03752v1 (LaTeX e-print) | Sec. 2-3, Algorithm 1, Thm 2, Lemmas 3-4 (see M2 pseudocode) | 2026-10-14 | M2 subject |
 | github.com/tcsprojects/pgsolver @ d3cd624 | generators recursiveladder.ml, policyiter/generators/*.ml; paritygame.ml conventions | 2026-10-14 | code, not a paper; papers awaiting source |
 
 ## Dead ends
