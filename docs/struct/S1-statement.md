@@ -93,11 +93,29 @@ Q2 (growth). Which of the following holds?
   w^E(n, d) > p(n, d). Sharper target: w^E(n,d) ≥ C(⌊lg n⌋ + d/2 − 1, ⌊lg n⌋) / poly(n, d).
   S1-A and S1-B exclude each other only for convention V versus E through F1 (w^V ≤ w^E); a lower bound for w^E alone does
   not rule out S1-A. A lower bound for w^V would.
-Q3 (structure; needed for either direction). Must every deterministic weak (n,d)-separator smaller than s(n,d) contain a
-  reachable odd cycle of A (an odd cycle in the transition graph of A whose lasso from q0 has more than n states)?
-  L-LIT's T4 §3(c) says yes (unrefereed; REFEREE checking). Not used here until the Lead confirms.
+Q3 (structure; needed for either direction). Lasso condition, refereed OK (docs/referee/2026-10-14-T4-3c-lasso.md,
+  on L-LIT's T4 §3(c)); usable from 2026-10-14 19:00Z (Lead). Form used here, in the REFEREE's sharpened version:
+  for every reachable SIMPLE cycle C of A with odd maximum and every finite path P from q0 to C, the word
+  π(P)·π(C)^ω is accepted by A, hence must lie outside OddCycles^X_{n,d}: the least number of vertices of an odd
+  X-graph generating π(P)·π(C)^ω exceeds n (sharp form). The count |P| + |C| > n with P shortest is only the cheap
+  necessary filter (a 3-cycle labelled 3,3,3 has |C| = 3 but 3^ω ∈ OddCycles_{1,d}). Consequences: a weak separator
+  with no reachable odd simple cycle is strong; one smaller than s(n,d) has a reachable odd simple cycle whose lasso
+  words are realised by no odd graph with ≤ n vertices. Determinism is not needed for the condition itself.
+  Data check: the 3-state (2,6) witness (experiments/weak-sep/README.md) has exactly one odd simple cycle, 0 -5-> 2
+  -4-> 1 -4-> 0, with P empty; the least odd graph generating (544)^ω has 3 vertices > 2 (each 2-vertex folding
+  creates an even cycle), so the sharp form holds with margin 1.
 
-## 6. What is NOT a result from this lane
+## 6. Convention check (REFEREE finding 4 on T4 §3(b); settled here)
+- CDFJLP v2 never says "one label per ordered pair". Their §5 construction of G_t puts, on every vertex v_i, "a self-loop
+  ... with the even priority p" for every even p with 1 < p ≤ d: several parallel self-loops with different priorities.
+  So their graphs are multigraphs; convention E (CFGO's E ⊆ V × Σ_d × V) is the literature's and is the primary one.
+- S (one label per ordered pair) and V are defined explicitly in D1 so that nothing rests on the reading of §2.1.
+- Effect on the values (experiments/weak-sep/results/table.md): E and S agree on every computed cell (n ≤ 3, d ≤ 6,
+  weak and strong), so the parallel-edge question has not changed w or s where computed; it does change the enumerated
+  maximal graphs (for (3,4): 4 even multigraphs vs 1112 simple ones). V is strictly smaller on several cells
+  (s^V(4,4) = 7 < 8 = s^E(4,4); w^V(3,6) = 6 < 7 = w^E(3,6)), as Parys-Wiącek's vertex-priority remark predicts.
+
+## 7. What is NOT a result from this lane
 A SAT value is a result only after the independent checker in experiments/weak-sep/ re-verifies the automaton (SAT side)
 and the UNSAT side is reproduced from the committed encoding by L-COMP or the REFEREE. A polynomial-size family found by
 search is a conjecture until S1-A is proved and runs the gauntlet.
