@@ -33,3 +33,4 @@
 - 2026-10-14 21:03Z sweep: no overage; L-COMP 564k ctx $30.72 -> handover after n=5 cells; L-STRUCT running (a67bd78), L4 write-up.
 - 2026-10-14 21:35Z: L4 write-up (168d828) to REFEREE as first referee (write-up uses L-LIT's Claim R, not REFEREE's variant). Second referee deferred to the T3+L4 package to save a Fable spawn.
 - 2026-10-14 21:43Z: Lead routing miss #2: approved SL8 in a form trivially equivalent to T3 (state set is abstract); L-STRUCT caught it; working form is SL8-t (Hamming-bounded). Lesson: check sub-lemmas for vacuity before approving. L4 fixes 50dc28b back to REFEREE for signature.
+- 2026-10-14 21:44Z: WATCHDOG flag REFEREE 680k ctx -> handover after L4 signature. Spend total $135.69.
