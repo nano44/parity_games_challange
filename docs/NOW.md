@@ -27,7 +27,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 ## In flight
 - L-COMP: parked after notebook handover; wakes for a new claim, review changes, or L-STRUCT SAT engineering.
 - L-LIT: parked; T1-T4 on trunk (docs/lit/). T4: weak separators OPEN (Czerwinski et al. 1807.10546 §6).
-- L-STRUCT: T3 sub-lemma SL8-t (Hamming-bounded rewire weak->strong on same states, d<=n+1); SL8-1 false at (2,3)k=4; exhaustive enumeration running, then proof. L4 fixed (50dc28b), awaiting REFEREE signature. w^V(4,5)=10=s^V(4,5) (b9f4d78, SAT+checker; LRAT confirmation queued for L-COMP successor). T3 holds on all 8 computed cells with d<=n+1.
+- L-STRUCT: T3 sub-lemma SL8-t (Hamming-bounded rewire weak->strong on same states, d<=n+1); SL8-1 false at (2,3)k=4; exhaustive enumeration running, then proof. L4 signed by first referee (9bf5301); second referee pending with T3 package. w^V(4,5)=10=s^V(4,5) (b9f4d78, SAT+checker; LRAT confirmation queued for L-COMP successor). T3 holds on all 8 computed cells with d<=n+1.
 - REFEREE: L4 first check CHANGES (1f5e004, 2 sentence fixes; statements hold; gap list G1-G6 for 2nd referee). Second independent referee to be spawned for the T3+L4 package (GAPS G1).
 - L-COMP: diagonal V cells (4,5),(5,5),(5,6), TARGET n=4 strong, n=5; LRAT standard. Box ends ~01:30Z.
 - WATCHDOG: hourly at :30.
