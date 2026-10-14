@@ -43,3 +43,7 @@ Lead reading L7 (2026-10-14, on D1's M3 list): S3 target T3 (w^V(n,d) = s^V(n,d)
 together with L4 (s^V(n,n) ≥ n^Ω(lg n)), counts as M3 "a lower bound for a broader algorithm model" (deterministic weak separators on
 the TARGET alphabet). L4 alone is recorded as a supporting lemma, not claimed as M3: it follows from CDFJLP Thm 5.1 plus a conversion
 Parys-Wiacek state without proof (2305.00308 p.2); L-LIT T6 found no published vertex-priority lower bound. Owner may rule otherwise.
+Lead reading L8 (2026-10-14, on D1's M3 list, "a new polynomial class"): a class counts as a new polynomial class only if its
+membership is decidable in polynomial time or it is given by a natural structural condition checkable in polynomial time. A class on
+which a known polynomial partial solver is merely complete (promise-only; "run it, fall back if residual") is recorded as "a tighter
+analysis of a known algorithm" (D1), with correspondingly lower weight. Owner may rule otherwise.

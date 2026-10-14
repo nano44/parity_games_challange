@@ -2,7 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14: T1-T3 pushed (landed on trunk 9079c01); T4 docs/lit/T4-weak-separators.md: verdict OPEN. T5 docs/lit/T5-S2-novelty.md: S2 T1/T2 NEW. T6 docs/lit/T6-S3.md: T3, H1 NEW; L4 via Claim R (unrefereed). T7 docs/lit/T7-rank2.md: rank 2 OPEN, SLP model, T7-1/T7-1'. Parked. Next: Lead feedback; open the
+2026-10-14: T1-T3 pushed (landed on trunk 9079c01); T4 docs/lit/T4-weak-separators.md: verdict OPEN. T5 docs/lit/T5-S2-novelty.md: S2 T1/T2 NEW. T6 docs/lit/T6-S3.md: T3, H1 NEW; L4 via Claim R (unrefereed). T7 docs/lit/T7-rank2.md: rank 2 OPEN, SLP model, T7-1/T7-1'. T8 docs/lit/T8-TA1.md: T-A1 NEW, PA not ⊇ Büchi/SCC-constant (3-vertex witness). Parked. Next: Lead feedback; open the
 not-opened primaries listed below if a lane needs them.
 
 ## Queue
@@ -115,6 +115,11 @@ not-opened primaries listed below if a lane needs them.
 | arXiv 2001.04333 v2 (JMT), read by L-LIT | "Symbolic algorithms" section p.15-16 | 2026-10-14 | T7 |
 | arXiv 2406.01497 v1 (Jung-Kołodziejski) | abstract, Prop. 3 | 2026-10-14 | T7; adjacent |
 | arXiv 1912.08715 v1 (Hella-Vilander) | abstract, Remark 4.12 | 2026-10-14 | T7; adjacent |
+| arXiv 1405.0386 v2 (HKP), further | Thm 7 (colours 0,1), Lemma 5 (deterministic), Thm 8 (SCC-constant), Lemma 4, Thm 6 | 2026-10-14 | T8 |
+| arXiv 1609.04085 v1 (Ah-Fat, Huth, GandALF 2016) | abstract; Thm 1 (1-player completeness of composed solvers); Conclusions (classes of 2-player games open) | 2026-10-14 | T8 |
+| arXiv 1602.01963 v1 (Vester, Winning cores) | abstract; Thm 1-4 headers | 2026-10-14 | T8 |
+| arXiv 1907.06913 v2 (Bruyère, Pérez, Raskin, Tamines) | abstract; Thm 1-3 | 2026-10-14 | T8 |
+| arXiv 2003.08627 v2 (DJT), read by L-LIT | §2 attractor decomposition definition, Prop. 1 | 2026-10-14 | T8 |
 
 ## Dead ends
 (none)

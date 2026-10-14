@@ -19,9 +19,11 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | --- | --- | --- | --- | --- | --- | --- |
 | Lead | session_014FBi6o334DvwT5Uw2kDfoN | claude/vibrant-johnson-nxvvxo | opus-5-5 | high | working | Owner-chosen session; routing judgement; keeps context lean |
 | REFEREE | session_01Ki9osXiyYf9heTLNk3FKED | claude/referee | fable-5-1 | high | parked (handover f179ae0 at ~680k ctx; successor spawned on next claim) | Most capable model; finding the error in a claimed proof decides M2 and every claim after |
-| L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | working (T7: barrier/novelty + first problem for rank 2, gates 2nd attack lane) | Source checking and barrier analysis need judgement; Fable reserved for referee; move to Fable when step-3 sign-offs start |
+| L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | parked (T8 done bf02a0d) | Source checking and barrier analysis need judgement; Fable reserved for referee; move to Fable when step-3 sign-offs start |
 | L-COMP | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | working (SAT hard cells for L-STRUCT, 6h box; ~380k ctx) | SAT engineering needs care; successor near 600k | Paper-to-code fidelity for M1 generators and the M2 implementation; drop to sonnet-5-5 for routine benchmarks after M2 |
 | L-STRUCT | session_01VH4fd2Fq8XeXtyUfkwLJV1 | claude/l-struct | fable-5-1 | high | parked (handover 729c965; wake on n=5 diagonal gap, new T3 idea, or L4 second referee) | Attack lane (owner: most capable model at high effort); rank 1 approach, weak separators, T4 verdict OPEN |
+| L-ATTR | session_01XDM3HXeuG3mqhQK92eNaru | claude/l-attr | fable-5-1 | high | parking after A1 (fdb5092); T-A1 proof waits on L-LIT T8 | Attack lane, rank 3 per L-LIT T7 recommendation (M2 counterexample in hand); cheap, near-certain result |
+| L-LOWER | session_01U5n8mgXxgyGzvuUzxHbiKx | claude/l-lower | fable-5-1 | high | working (L1, 24h box to 2026-10-15 23:00Z) | Attack lane, rank 2 (non-adaptive SLP lower bounds), T7-1' first target |
 | WATCHDOG | session_01JQNTX8zT3T3mWMt6ZmYzkn | none (never edits) | haiku-5-5 | high | working (cron :30, trig_019xE43BZ5qaDGwxDkZ5h5ik) | Routine liveness/overage checks; reports to Lead only (deviation from playbook: does not wake lanes, so idle sessions never get messages) |
 
 ## In flight
@@ -39,6 +41,8 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - PGSolver SI families (switchallexp, switchbestexp) target PGSolver's switch-all/switch-best SI, not Oink psi/ssi; port of stratimpralgs.ml queued in L-COMP.
 
 ## Live approaches
+- A2 attractor/partial solvers (L-ATTR): no Strahler threshold (k=0 for psolQ and Alg1); minimal failures n=3 (psolQ), n=4 (Alg1); candidate T-A1 (psolQ complete on class PA) pending novelty T8.
+- A3 non-adaptive SLP lower bounds (L-LOWER): first target T7-1' (super-linear Cpre gates, one-player Büchi); 24h box.
 - A1 deterministic weak separators (L-STRUCT, PARKED 22:00Z): outside the strong-separator barrier (T4). Products: DE2 (T1 refuted), L4 (first referee OK), T3 data conjecture (w=s for d<=n+1, all cells to (4,5) V). Algorithmic quantity is the diagonal w^V(n,n) (REFEREE d96b686). Diagonal W=S=1,2,5,7 for n<=4 confirmed by three independent encodings (L-STRUCT, L-COMP LRAT, REFEREE b4a711c); TARGET alphabet n=2,3,4 also w=s; gaps only at d >> n. S3 to be framed as 'w=s on the TARGET alphabet' (barrier direction). Data: w=s on most small cells; w<s at (2,6),(2,10),V(3,6); s(2,2h)=h+1 but w(2,8)=w(2,10)=4. Lower-bound target T1 likely false; now measuring growth of w in d.
 
 ## Dead approaches (with obstruction): see docs/RESULTS.md "Dead ends"
