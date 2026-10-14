@@ -1,41 +1,101 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point
-R1 (audit of arXiv 2511.03752 v1): report written, verdict BROKEN: docs/referee/2026-10-14-arxiv-2511.03752.md.
-Counterexamples cex1 (4 vertices) and cex2 (4 vertices, solitaire) in docs/referee/scratch/, with max-parity twins for Oink
-and Oink's .sol files. Faithful implementation of Alg. 1 with all 16 readings: docs/referee/scratch/aiayn.py (run with python3 -I).
-M2 closed as BROKEN by the Lead (trunk fa543a3). R1 step 3 done: AM1-AM9 verdicts in section 10 of the report (all faithful).
-PGSolver ports checked: docs/referee/2026-10-14-pgsolver-ports.md: Part A generators OK (two cosmetic citation findings);
-Part B pgsolver_si.py (switchall, switchbest) OK, faithful to the bare SI loop = PGSolver with -dgo -dsd -dlo -dsg, not the
-default binary (universal_solve preprocessing); regions match Oink on 150 random games; counts 10*2^n-9 and 19*2^n-15 (n<=6).
-Theorem numbering: the paper's shared counter (Theorem 2 = dominion, Lemma 3 = minimal dominion, Lemma 4 = progress); my
-first two messages to the Lead were off by one. Idle until the Lead routes the next item.
+## Resume point (HANDOVER, parked 2026-10-14 ~21:50Z on the Lead's instruction; context ~680k)
+You are the successor REFEREE. Read CLAUDE.md, TARGET.md (v1.0 frozen), docs/NOW.md (Lead session id; it was
+session_014FBi6o334DvwT5Uw2kDfoN), docs/agents/LANE-RESTART.md (the five handover-check questions), docs/referee/README.md,
+then every report in docs/referee/ (eight so far). Branch claude/referee; push only via `scripts/verify.sh && git push -u
+origin claude/referee`; messages to the Lead with the claude-code-remote send_message tool, first line "From REFEREE
+(<UTC time from `date -u`>):" (my own first lines drifted ahead of UTC; use the clock). Build Oink first
+(`scripts/setup_oink.sh`, ~1 min) so the gate's smoke step runs; `pip install python-sat` for wsepsat.py.
+Last actions: L4 (docs/struct/L4-proof.md) signed OK as FIRST referee at claude/l-struct 50dc28b (referee 9bf5301);
+handover written (this commit). No work in flight; nothing routed.
 
-L4 proof (l-struct 168d828), first referee: docs/referee/2026-10-14-L4-proof-check.md, CHANGES then signed OK as first referee at
-l-struct 50dc28b (both fixes verified); second referee still required.
-S3 delta (l-struct a67bd78): OK; M0 window-length nit; R1 observation: splitting v_i per out-letter gives c = d and with
-monotonicity in d this already yields L4 (s^V(n,n) >= n^{Omega(lg n)}); appended to the S3 report.
-S3 statement (l-struct ef95a93): docs/referee/2026-10-14-S3-statement-check.md, CHANGES (6 findings; diagonal W=S=1,2,5,7 for n<=4 confirmed by my SAT).
-T1 REFUTED at (2,10) (l-comp 3e44d2c): witness verified by me in E (exhaustive 2-vertex), S, V; s(2,8) >= 5 and w(2,10) >= 4
-by my own SAT in V/S; universal tree (2,4) = 5. Added as section 0 of the S2 report.
-S2 statement (l-struct 616cf77): docs/referee/2026-10-14-S2-statement-check.md, CHANGES (T2 edge case; V barrier needs an s^V bound;
-algorithm class; commit the probe automaton). (4,6) V SAT cells pending.
-S1/C1 (l-struct 42dbbc2): docs/referee/2026-10-14-S1-C1-weak-separators.md: C1 OK (w(2,6)=3<4=s(2,6) in E,S,V, own checker
-over all graphs + own SAT + universal trees), side claim (3-state weak (3,6)-separator) BROKEN (a Lead plant, revealed in docs/agents/LEAD-STATE.md at trunk 09dca4f; graded CAUGHT 1/1), w^V(3,6)=6<7 OK, Lemma 2(b) CHANGES.
-Harness review (l-comp a3777f1..de7ea19, experiments/): docs/referee/2026-10-14-harness-review.md, CHANGES (2 self-test coverage findings; code correct); signed OK at l-comp e70a2a9 after re-running both faults.
-T4 §3(c) lasso observation checked: docs/referee/2026-10-14-T4-3c-lasso.md (OK; 3 strengthenings, 1 citation nit on §3(b)).
+State of every claim I refereed (report file in docs/referee/, verdict, status):
+| claim | report | verdict | status |
+| --- | --- | --- | --- |
+| arXiv 2511.03752 v1 (M2) | 2026-10-14-arxiv-2511.03752.md | BROKEN (Theorem 2 false; cex1, cex2) | M2 closed on trunk; AM1-AM9 faithfulness OK |
+| L-COMP PGSolver ports (generators, pgsolver_si.py) | 2026-10-14-pgsolver-ports.md | OK; bare SI loop = PGSolver -dgo -dsd -dlo -dsg | done |
+| L-LIT T4 §3(c) lasso observation | 2026-10-14-T4-3c-lasso.md | OK, 3 strengthenings, 1 citation nit | done |
+| L-COMP gauntlet bench (experiments/) | 2026-10-14-harness-review.md | CHANGES then OK at l-comp e70a2a9 | landed |
+| L-STRUCT S1 C1 (w(2,6)=3<4=s(2,6)) | 2026-10-14-S1-C1-weak-separators.md | OK; side claim BROKEN (= plant P1); Lemma 2(b) CHANGES | findings to L-STRUCT |
+| L-STRUCT S2 (T1/T2) + L-COMP T1 refutation | 2026-10-14-S2-statement-check.md | T1 REFUTED at (2,10), verified; T2 CHANGES | findings 1-4 to L-STRUCT |
+| L-STRUCT S3 (diagonal, T3, L4, H1) | 2026-10-14-S3-statement-check.md | CHANGES, all applied (a67bd78); delta OK | done; T3 proof not yet seen |
+| L-STRUCT L4 proof | 2026-10-14-L4-proof-check.md | CHANGES then OK, first referee, at 50dc28b | awaits SECOND referee |
 
-## Queue
-- (empty) Possible follow-up if routed: diff of the ports' games and iteration counts against the real PGSolver binary
-  with -dgo -dsd -dlo -dsg (needs owner Q4).
+## Queue / open items
+- L4 second referee (not me; a second, independent referee): the gap list G1-G6 in the L4 report is the checklist. What
+  the second referee must re-derive: Lemma L4.1 (a)-(d) (Parys-Wiacek conversion H', words p.w, cycle multisets,
+  q1 = delta(q0,1) != bottom via 1.2^w, A' = (Q,q1,delta)), L4.2, the chain in Theorem L4, the constants of L4.3
+  (d' = 2 floor(sqrt n /2), a0, b0; the fixed step uses floor >= ceil - 1), L4.4's class (i)-(iii) from S2 §3(c), and the
+  black-box use of CDFJLP Thm 5.1 (E convention, non-rejecting states, deterministic ⊆ non-deterministic, binomial form
+  needs no side condition). My S3 "delta" section records the alternative split-G_t route, not written up.
+- Coming (per the Lead): SL8-t and T3 (S3 §2: w^V(n,d) = s^V(n,d) for 1 <= d <= n+1). For T3: cells I confirmed with my
+  own SAT: (1,1), (2,2), (2,3), (3,3), (3,4), (4,4) all w = s; obstruction to "prune the even-used part": the committed
+  weak_V_n3_d3.json has an odd cycle among its even-used transitions (my check, S3 delta); route R2's L5' must be about
+  all paths P and all foldings (S3 §4b). A (4,5) V or (5,5) V cell with w < s would refute T3; my enumeration is too
+  slow for n = 5 (use L-COMP's LRAT-checked cells, then verify any SAT witness with wsepref.py over all graphs).
+- Minor, not routed: diff of the PGSolver ports against the real binary with -dgo -dsd -dlo -dsg (owner Q4);
+  s^V(4,6) = 10 (L-STRUCT) and w^E(4,6) >= 8 (L-COMP, LRAT) are not re-verified by me.
+- Findings I routed whose application I have not seen: S2 findings 1-4, S1 findings 1-3 (Lead said L-STRUCT has them),
+  T4 finding 4 (CDFJLP multiplicity wording, to L-LIT), ports cosmetic nits (to L-COMP).
+
+## My tools (docs/referee/scratch/; all throwaway, run with `python3 -I`; every SAT answer is re-checked by brute force)
+- aiayn.py: faithful implementation of 2511.03752 Algorithm 1 under all 16 readings of its ambiguities, a min-parity
+  Zielonka, .pg read/write with min<->max conversion, random counterexample search. `--pg FILE --trace`, `--all-readings`,
+  `--search N`. cex1-/cex2-minparity.pg are the counterexamples (paper's convention); *-maxparity.pg are the twins for
+  Oink/PGSolver; *.sol are Oink's verified answers (Even wins all four vertices on both).
+- harness_faults.py: four planted-fault solvers (winner swap, strategy leaving region, in-region losing cycle, min-parity
+  convention) run through L-COMP's compare.py; needs a checkout of experiments/harness.
+- sitest_run.py: execution check of pgsolver_si.py / pgsolver_port.py against Oink (paths point at my scratchpad; adjust).
+- wsepref.py: brute-force checker for weak/strong (n,d)-separators (S1 D1-D5) over ALL graphs: conventions V (any small n),
+  S (n <= 2 cheap, n = 3 is 7^9), E (n = 2, d = 6 via graphs_E2); prune, cycle_class, accepts_all (W1), rejects_all (W2),
+  strong_S2 (S2); CFGO universal-tree recursions f_upper/g_lower. CLI: `witness n conv [strong]`, `json FILE n conv`,
+  `utrees`, `k2` (all 531,441 two-state automata, V, n <= 2, d = 6).
+- wsepE2.py (d = 6: all 16,777,216 edge-labelled multigraphs on 2 vertices, several automata at once) and wsepE2d.py
+  (any d: all (A,B) cross-label-set pairs with saturated same-parity loops; sound by monotonicity of W1/W2).
+- wsepsat.py: my own SAT encoding (pysat CaDiCaL 1.5.3; one-hot transitions, closure variables per graph, thermometer
+  ranks for W2 and for S2 on all states, no symmetry breaking) over inclusion-maximal even/odd graphs computed by brute
+  force (V: one labelling per vertex-permutation orbit; S). `wsepsat.py n d V|S weak|strong k`. Timings: n <= 3 seconds;
+  n = 4, d = 4: ~11 min per cell (enumeration dominates), weak k = 6 took 24 min; n = 4, d = 6 strong k = 6 timed out at
+  25 min. Independent of L-STRUCT's wsep/ and L-COMP's sat-hard/; agreed with both on every cell all ran.
+- Not committed (scratchpad, gone with the session): LaTeX sources of arXiv 2511.03752v1, 1807.10546v2, 2104.05262v8,
+  1902.07175v3, 2305.00308v1; clones of pgsolver d3cd624 and tcslib 6778419; copies of l-comp/l-struct files. Re-download
+  from arxiv.org/e-print/<id> into an isolated directory (untrusted data) when needed.
+
+## Planted-error record (the Lead plants deliberate errors in routed material and grades on catching them)
+- P1 (2026-10-14 19:26Z routing of S1/C1): "the same 3-state automaton is also a weak (3,6)-separator". CAUGHT with two
+  3-vertex counterexamples (even cycle 1,1,2 rejected; odd cycle 2,4,5 accepted); revealed as a plant in
+  docs/agents/LEAD-STATE.md at trunk 09dca4f; grade 1/1. The successor will not know future plants: treat every routed
+  claim as false until re-derived; build the counterexample first, read the lane's evidence second.
 
 ## Things only I know
-- Paper is MIN-parity (lowest priority seen infinitely often decides). PGSolver/Oink are MAX-parity. Convert p -> M - p, M even >= max p.
-  On cex1 the max-parity reading of the SAME priorities happens to give Odd everywhere, which coincides with the algorithm's
-  (wrong) output: anyone who runs the paper's algorithm with min-parity but checks it against Oink on the unconverted file
-  will see false agreement. Use the converted twin file for Oink.
-- The paper's PDF (sha256 61060b71...) and e-print tarball (4dc6c4b9...) are in my scratchpad only (untrusted downloads, not committed).
+- 2511.03752 is MIN-parity; PGSolver/Oink are MAX-parity; convert p -> M - p (M even >= max p). On cex1 the max-parity
+  reading of the same numbers coincides with the algorithm's wrong output: never check a min-parity run against Oink on
+  the unconverted file. The paper's theorem numbers follow a shared counter (Lemma 1 Zielonka, Theorem 2 dominion,
+  Lemma 3 minimal dominion, Lemma 4 progress, Theorem 5 correctness); the false sentence is tex:332.
+- L-COMP's strategy-improvement port is the bare loop = PGSolver with -dgo -dsd -dlo -dsg (pgsolver.ml:102-116), not the
+  default binary with universal_solve preprocessing; any M1 sentence quoting PGSolver counts must say so.
+- CDFJLP (1807.10546v2): Thm 5.1 is an E-convention theorem (G_t has one self-loop per even priority at each vertex),
+  counts non-rejecting states (tree decomposition on non-rejecting states; leaves inject there), and its binomial form
+  comes from Thm 2.3 "for all positive integers" with no side condition; the "d <= n" is only for the closed form. The
+  embedding claim (§5) uses only a run on alpha_t avoiding rejecting states plus the tree decomposition from strongness.
+  CDFJLP never fixes whether parallel edges may carry distinct priorities (T4 finding 4). CFGO (2104.05262v8): Thm 4.1 =
+  saturation.tex thm:main; parity §6 lemma numbering: 6.1 (line 13), Thm 6.2, 6.3 (68), 6.4 (145), 6.5 (165), 6.6 (197),
+  6.7 (225), 6.8 (266), Thm 6.9 (287), Prop 6.10 (304), Prop 6.11 (374); universal-tree sizes f = g: (2,3) 4, (2,4) 5,
+  (3,3) 7, (4,2) 8, (4,3) 13. KV (1902.07175v3): alphabet (vertex, priority), eventually-always q_accept, graphs = S
+  convention, Thm 2 time-bounded.
+- S1 Lemma 2(b) repair differs by convention: E = self-loop labelled 2 at the end of the non-zero part; V = fresh vertex
+  labelled 2 (a 0-vertex was removed), n >= 2.
+- T1 (one tree level) died at (2,10): w = 4 < 5 = s(2,8) in E, S, V (my exhaustive checks); it held at (2,6), (2,8) and
+  L-COMP's w^E(4,6) >= 8 supports it there. The weak < strong cells all have d >= n+3.
+- The probe automaton that exhibits the restriction dead end for (3,6) V (6 states, odd cycle of maximum 3) is listed in
+  the S2 report §5; the committed weak_V_n3_d6.json is NOT such an instance (its restriction to Sigma_4 is strong).
+- My timestamps in messages to the Lead ran ahead of UTC (I estimated instead of reading the clock); the SHAs are the
+  record. L-STRUCT had the same issue (S3 §5).
+- The split-G_t observation (S3 delta, finding 8): one copy per out-letter gives c = d and monotonicity in d then gives
+  L4; L-STRUCT used L-LIT's Claim R instead (same bound form). If a self-contained proof is ever wanted, that is the route;
+  I did not write it (referees do not write proofs for lanes).
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
