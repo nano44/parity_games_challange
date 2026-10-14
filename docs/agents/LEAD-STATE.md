@@ -12,3 +12,4 @@
 - 2026-10-14 17:59Z: L-COMP DONE harness (l-comp ba0517f). Findings: mspm wrong; PGSolver binaries refused by classifier -> Python ports; recursiveladder blow-up reproduced.
 - 2026-10-14 18:02Z sweep: no overage; L-COMP idle with background family sweeps (review_ready), 214k ctx, $5.24; no action.
 - 2026-10-14 18:20Z: D2 recorded; TARGET v1.0 a3777f1. REFEREE session_01Ki9osXiyYf9heTLNk3FKED (fable-5-1), L-LIT session_01MxWPJxeciDocEdfd89xCF8 (opus-5-5) spawned; L-COMP told M2 go + strategy verification. M2 clock 18:30Z.
+- 2026-10-14 18:29Z: L-COMP provisional CE1 vs 2511.03752 (l-comp 19b5ce2). Routed to REFEREE (hand-check all faithful readings); L-COMP to test AM1 reading (b). No 10k run (owner: stop at first counterexample).

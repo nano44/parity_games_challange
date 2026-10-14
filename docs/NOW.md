@@ -6,7 +6,7 @@ Updated: 2026-10-14 by Lead. Phase: M0 done (TARGET v1.0 approved, D2); M1 and M
 | --- | --- | --- |
 | M0 Setup | done; TARGET v1.0 at a3777f1 (D2) | this commit; CI .github/workflows/verify.yml; backstop trigger in docs/agents/LEAD-BACKSTOP.md |
 | M1 Reproduce hard families | in flight (L-COMP): harness at l-comp ba0517f; Zielonka bound reproduced on ported recursiveladder (~1.62^N iterations), port awaits line-by-line check | experiments/harness/, experiments/hard-families/ |
-| M2 Audit arXiv 2511.03752 (v1 only, 4 Nov 2025) | running: clock 2026-10-14 18:30Z, deadline 2026-10-16 18:30Z | notes/L-COMP.md, docs/referee/ |
+| M2 Audit arXiv 2511.03752 (v1 only, 4 Nov 2025) | PROVISIONAL counterexample CE1 (4 vertices, l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) under AM1 reading (a); awaiting REFEREE hand-check and reading (b) test. Clock 2026-10-14 18:30Z to 2026-10-16 18:30Z | notes/L-COMP.md, docs/referee/ |
 | M3 Partial results | not started; attack lanes wait for TARGET approval and L-LIT ranking | - |
 | M4 Target | not started | - |
 
