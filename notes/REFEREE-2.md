@@ -13,7 +13,7 @@ L4 (claude/l-struct 50dc28b, docs/struct/L4-proof.md). Do your own report before
 
 ## Queue
 1. T-A1 revision re-check when routed: G8/F3 text, gap rows for F1/F4, corrected n = 2 row, F2 if taken up.
-2. L4: compare with the first referee's report (docs/referee/2026-10-14-L4-proof-check.md) after my push; note disagreements.
+2. (done 23:58Z) L4 comparison with docs/referee/2026-10-14-L4-proof-check.md: no disagreement. Both reports make the same three black-box checks on CDFJLP Thm 5.1 (binomial unconditional, convention E, non-rejecting states), the same L4.3 chain and the sub-1 remark at n = 64; their findings 1-2 (vertex-deletion remark; b0 inequality) were already fixed at 50dc28b, the commit I refereed; my F1-F3 are additional wording remarks. Two independent signatures exist for the mathematics of L4 at 50dc28b.
 
 ## Things only I know
 - The Lead's LEAD-STATE.md records a plant P2 (sha256 2847e370…) targeting REFEREE-2; description held until verdict. My
