@@ -5,7 +5,7 @@ Updated: 2026-10-14 by Lead. Phase: M0 done pending TARGET approval; M1 running;
 | M | State | Evidence |
 | --- | --- | --- |
 | M0 Setup | done except owner approval of TARGET.md | this commit; CI .github/workflows/verify.yml; backstop trigger in docs/agents/LEAD-BACKSTOP.md |
-| M1 Reproduce hard families | in flight (L-COMP) | experiments/ |
+| M1 Reproduce hard families | in flight (L-COMP): harness at l-comp ba0517f; Zielonka bound reproduced on ported recursiveladder (~1.62^N iterations), port awaits line-by-line check | experiments/harness/, experiments/hard-families/ |
 | M2 Audit arXiv 2511.03752 | BLOCKED: arxiv.org denied by environment network policy; 2-day clock starts when reachable | notes/L-COMP.md, docs/referee/ |
 | M3 Partial results | not started; attack lanes wait for TARGET approval and L-LIT ranking | - |
 | M4 Target | not started | - |
@@ -26,6 +26,10 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - L-COMP: setup, solver-agnostic harness, M1 hard families (Oink + PGSolver generators from GitHub). M2 implementation waits for arXiv.
 - REFEREE, L-LIT: held, not spawned; a session that cannot open papers would only spend money.
 
+## Findings to carry
+- Oink mspm at 8fbf0a7 is wrong on some games (crash at mspm.cpp:486; one answer rejected by Oink's verifier); excluded from agreement claims. Instances: experiments/harness/regressions/ (l-comp).
+- PGSolver SI families (switchallexp, switchbestexp) target PGSolver's switch-all/switch-best SI, not Oink psi/ssi; port of stratimpralgs.ml queued in L-COMP.
+
 ## Live approaches
 - (none yet)
 
@@ -36,6 +40,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - None of the fleet's own. Known: quasi-polynomial upper bound (to be source-checked by L-LIT).
 
 ## Owner questions open
+- Q4: L-COMP built PGSolver (tcsprojects/pgsolver d3cd624) but the session's permission classifier refused to run the binaries; generators were ported to Python instead. Owner: allow running them (to diff the port against the original), or keep port + referee check?
 - Q0 (blocker): environment network denies arxiv.org, export.arxiv.org, doi.org, drops.dagstuhl.de, lmcs.episciences.org and other paper hosts (github.com works). Asked owner to allow them.
 - Q1: approve TARGET.md (section 7 lists five choices).
 - Q2: trunk branch: keep claude/vibrant-johnson-nxvvxo as trunk, or create `main`?
