@@ -1,4 +1,4 @@
-# T-A1: the class of parity games that psolB solves completely (L-ATTR; proof draft, revised 2026-10-14 23:55Z after REFEREE-2's report docs/referee-2/R2-TA1.md; first referee pending)
+# T-A1: the class of parity games that psolB solves completely (L-ATTR; proof draft, revised 2026-10-14 23:55Z after REFEREE-2's report docs/referee-2/R2-TA1.md, and 2026-10-15 00:10Z after the first referee's report docs/referee/2026-10-14-TA1-proof-check.md (claude/referee 8ee2d08); both reports: T-A1 and T-A1' hold)
 Vocabulary: TARGET.md section 1 (max-parity; G = (V, V_E, V_O, E, pr)). Solvers: psolB (HKP Fig. 3) and psolQ (HKP Fig. 5),
 HKP = Huth, Kuo, Piterman, arXiv 1405.0386v2, implemented in experiments/attr/psolb.py and psolq.py (pseudocode with line
 numbers in notes/L-ATTR.md). HKP work in min-parity; every HKP notion is restated here in max-parity (colour = M - priority;
@@ -33,14 +33,16 @@ taking the least admissible d. (The converse direction is not needed.)
 Theorem T-A1. For every parity game G: psolB solves G completely if and only if PA**(G).
 Theorem T-A1' (psolQ). If PA**(G) then psolQ solves G completely. The converse fails (HKP Fig. 4(a): psolQ solves it, psolB
 does not, so by T-A1 it is not in PA**).
-Corollary 1 (HKP's classes). Büchi games (HKP Thm 7), games whose SCCs have constant priority (HKP Thm 8) and
-deterministic games (HKP Lemma 5) are contained in PA**: HKP prove that psolB solves them completely, and the "only if"
+Corollary 1 (HKP's classes). Büchi games (HKP Thm 7: colours {0,1}, i.e. in max-parity two consecutive priorities with the
+even one on top; the class used in A1-results.md, "one priority value or two of different parity", is HKP's only up to an
+order- and parity-preserving recolouring, under which psolB is invariant because it only compares colours and reads
+parity), games whose SCCs have constant priority (HKP Thm 8) and deterministic games (HKP Lemma 5) are contained in PA**: HKP prove that psolB solves them completely, and the "only if"
 direction of T-A1 turns that into PA**. This is a consequence of HKP's three theorems, not a derivation of them (REFEREE-2
 F4; the lane's earlier wording "they follow from T-A1" was reversed). A direct proof that these classes are PA** would make
 HKP's three theorems corollaries of the "if" direction; it is not attempted here. See G10.
 Corollary 2 (membership). PA**(G) is decidable in time O(|V|^2 |E|) (HKP Thm 5(1): run psolB and test the residual). This is
 not a solver-free procedure; two natural canonical rules are sound but incomplete (A1-results.md section 3).
-Remark 3 (order independence; REFEREE-2 F2, agreed). Neither direction of the proof uses the order in which psolB visits the
+Remark 3 (order independence; found by both referees: REFEREE-2 F2, first referee finding 6; agreed). Neither direction of the proof uses the order in which psolB visits the
 colours: section 4 shows that in every subgame reached by sound removals with W_p(G') ≠ ∅ some colour of G' has a non-empty
 fatal greatest fixpoint, and section 5 works for any sequence of removals. Hence, for every stable colour order π in the sense
 of HKP Thm 6 (every colour of the current game is tried before the solver returns, and the loop restarts after a removal),
@@ -50,12 +52,20 @@ games searched (R2-TA1.md section 4).
 Remark 4 (hierarchy; data, not part of the claim). A1-results.md section 3 defines two stronger predicates: PA (a DJT
 decomposition all of whose traps are traps for the opponent in the whole subgame of their level) and PA* (traps peeled
 before the level's top set). On all data PA ⊆ PA* ⊆ PA**, with both inclusions strict (instances/llit_witness_buchi_n3.pg is
-PA* and not PA; the game 0 3 0 0; 1 1 0 0; 2 1 0 0,2 is PA** and not PA*); PA* ⊆ PA** was re-derived by REFEREE-2 (F6);
-PA ⊆ PA* is data only. Only T-A1, T-A1', Corollary 1-2 and Remark 3 are claimed.
+PA* and not PA; the game 0 3 0 0; 1 1 0 0; 2 1 0 0,2 is PA** and not PA*); PA* ⊆ PA** was re-derived by both referees (REFEREE-2 F6; first referee section 6: the final piece R_l = Attr_p^{R_l}(pr^{-1}(d) ∩ R_l)
+is an (a)-step with X = pr^{-1}(d) ∩ R_l, recurrent because every vertex of the subgame R_l is attracted to X through
+priorities <= d); PA ⊆ PA* is data only (the first referee notes it is not obvious: Attr_p^R(S_1) and Attr_p^{G_1}(S_1)
+can differ in both directions). Only T-A1, T-A1', Corollary 1-2 and Remark 3 are claimed.
 
 ## 3. Facts used (all standard or HKP's)
-- F1 (soundness, HKP Thm 2 in max-parity): if X ⊆ W = MAttr_p^{G'}(X, d) with X ≠ ∅ then p wins every vertex of W and of
-  Attr_p^{G'}(W) in G'. HKP's proof (tex:575-590) is a sketch; written out in G9.
+- F1 (soundness, HKP Thm 2 / Def. 4 in max-parity): if d ≡ p (mod 2), ∅ ≠ X ⊆ pr^{-1}(d) and X ⊆ W = MAttr_p^{G'}(X, d),
+  then p wins every vertex of W and of Attr_p^{G'}(W) in G'. The hypothesis X ⊆ pr^{-1}(d), d ≡ p, is HKP's (Def. 4: X a set
+  of nodes of colour c, p = c % 2) and was missing in the first version (first referee, finding 1; counterexample without
+  it: p = Even, X = one vertex of odd priority on its own loop). Every use below (F4, section 5, L1) has X ⊆ pr^{-1}(d) with
+  d ≡ p. HKP's proof (tex:575-590) is a sketch; written out in G9.
+- F1' (soundness of psolQ's removals, HKP Thm 4): if X is a set of vertices of parity p and X ⊆ W = layeredAttr(G', p, X),
+  then p wins every vertex of W and of Attr_p^{G'}(W) in G' (HKP's layered attractor strategy, tex:1060-1125). This makes
+  psolQ's removals F2-removals, which T-A1' needs (first referee, finding 2). HKP's proof is a sketch: gap G11.
 - F2 (residual regions): if D = Attr_p^{G'}(Y) with Y ⊆ W_p(G'), then G' \ D is a subgame, W_p(G' \ D) = W_p(G') \ D and
   W_q(G' \ D) = W_q(G'). (Zielonka's standard argument: q's winning strategy on W_q never enters D ⊆ W_p; p's winning strategy
   on W_p \ D restricted to G' \ D still wins, as q's moves in G' \ D are a subset of q's moves in G' and p's vertices outside D
@@ -122,14 +132,16 @@ F = Attr_p^{R^{k-1}}(W) (with W in place of S) gives F ∩ V(G') = ∅, contradi
 Proof of T-A1 "if". Run psolB (F4). Suppose it stops with residual G_m ≠ ∅. Then W_p(G_m) ≠ ∅ for some p. By L1 there is a
 priority d occurring in G_m (the priority of X' ⊆ pr^{-1}(d)) at which some (p,d)-recurrent set X' ⊆ pr^{-1}(d) ∩ V(G_m)
 exists, so by F4 the greatest fixpoint at d is non-empty and psolB would have made a further removal: contradiction. ∎
-Proof of T-A1'. Run psolQ (F5). At the bound b of priority d (which occurs in G_m since X' ≠ ∅), the start set
+Proof of T-A1'. Run psolQ (F5); by F1' and F2 its removals are sound removals, so the setting of section 4 and Lemma L1
+apply to psolQ's residual G_m. At the bound b of priority d (which occurs in G_m since X' ≠ ∅), the start set
 X_0 = {v : pr(v) >= d, pr(v) ≡ p} contains X'; all its vertices have parity p, so Fig. 5's pre-condition holds. The iteration
 X ↦ X ∩ layeredAttr(X) starts from X_0; we show it never drops X'. Let X ⊇ X' be the current set and write the last layer of
 layeredAttr(G_m, p, X) as A_b = PMAttr_p(A_{b-2} ∪ Y_b, d) with Y_b = {v ∈ X : pr(v) >= d} = X ⊇ X' (every vertex of X has
 priority >= d; in HKP's colours, colour <= b). By F3, A_b ⊇ PMAttr_p(X', d) ⊇ MAttr_p^{G_m}(X', d) ⊇ X'. So X' ⊆ layeredAttr(X)
 and X' ⊆ X ∩ layeredAttr(X). Hence the iteration ends in a non-empty fatal set and psolQ makes a further removal:
-contradiction as before. (Only the monotonicity of one PMAttr layer in its target is used; the increase of the layer chain
-A_{d'} ⊆ A_{d'+2} is not needed.) ∎
+contradiction as before. (Only the monotonicity of one PMAttr layer in its target is used: along the iteration every X contains X' of priority d
+and lies in {pr >= d}, so the number of layers b is constant and the last layer is always the layer of d; the increase of
+the layer chain A_{d'} ⊆ A_{d'+2}, which would need A ⊆ PMAttr(A ∪ Y, d'), is not needed.) ∎
 
 ## 5. Proof of "only if" (psolB solves G completely implies PA**)
 Let psolB's run be D_1, ..., D_m with G_m = ∅ (F4). Fix p. We show by downward induction on k that W_p(G_k) is
@@ -149,16 +161,17 @@ Step: assume W_p(G_k) is (p,d_p)-peelable and consider D_k (so G_k = G_{k-1} \ D
   (d_k > d_p is impossible as X ⊆ R has priority d_k <= max pr(V) <= d_p.)
 So W_p(G_0) = W_p(G) is (p,d_p)-peelable for both p, i.e. PA**(G). ∎
 
-## 6. Gaps and what the referee should check (status after REFEREE-2, docs/referee-2/R2-TA1.md)
+## 6. Gaps and what the referee should check (status after both reports: docs/referee-2/R2-TA1.md and docs/referee/2026-10-14-TA1-proof-check.md)
 - G1. F2 is used as "standard". REFEREE-2 wrote it out (R2 section 2: q's winning strategy keeps the play in the trap W_q(G'),
   disjoint from D ⊆ W_p(G'); p's positional strategy on W_p(G') never leaves W_p(G') and never enters D from outside D); may be
-  cited as Zielonka 1998 section 3. Closed by R2's text.
+  cited as Zielonka 1998 section 3. Closed by R2's text; the first referee re-derived it as well (its section 2).
 - G2. The proof of L1(ii) treats X external in MAttr (HKP's convention, tex:532-535): a vertex of X ∩ W has rank >= 1 and
-  witnesses of lower rank or in X; nothing needs rank 0. Closed by R2.
+  witnesses of lower rank or in X; nothing needs rank 0. Closed by both referees.
 - G3. F6's equality "MAttr^{G'} = MAttr^R for R = W_p(G')": R2's cleaner argument: by F1, Z = MAttr_p^{G'}(X,d) ⊆ W_p(G') = R;
   induction on attraction rank gives Z ⊆ MAttr_p^R(X,d) (a p-witness lies in Z ∪ X ⊆ R; a q-vertex of Z has all G'-successors
   in Z ∪ X ⊆ R, so its R-successors are the same set, and it has one). Same for Attr. Closed by R2; section 5 as written uses
-  only W ⊆ R and "witnesses lie in R".
+  only W ⊆ R and "witnesses lie in R". The first referee machine-checked the equality for every X ⊆ W_p(G') on all 324
+  two-vertex, 40,000 three-vertex and 1,500 random four-vertex games (ta1probe.py).
 - G4. psolB's colour loop: the proof needs only that every occurring colour is examined before psolB returns and that psolB
   restarts after each removal (HKP Fig. 3). Covered by Remark 3.
 - G5. Choice of d: Lemma 0 lifts certificates to larger d; the "only if" direction produces certificates at d_p directly. R2's
@@ -171,6 +184,9 @@ So W_p(G_0) = W_p(G) is (p,d_p)-peelable for both p, i.e. PA**(G). ∎
   the attractor strategy on MAttr(X) reaches X in >= 1 move through priorities <= d (colours >= c); X ⊆ MAttr(X) lets it
   repeat; so the play stays in MAttr(X), visits priority d (colour c) infinitely often and sees no priority > d (colour < c);
   the top priority seen infinitely often is d, of p's parity. Closed by this text.
+- G11 (first referee, finding 2). F1' (HKP Thm 4, layered fatal attractors are winning) is used for T-A1' only; HKP's proof
+  (tex:1067-1125, strategy by minimal rank (d,i)) is a sketch. Open until re-derived; psolq.py's witness strategies pass
+  verify.py on every game of validate.py and of the exhaustive runs, which is evidence, not a proof.
 - G10 (R2 F4). Corollary 1 inherits HKP's proofs of Thm 7, Thm 8 and Lemma 5. HKP's proof of Thm 7 invokes Thm 6 (robustness),
   whose proof rests on Lemmas 2-4, given as sketches. R2 checked that Thm 7 goes through without Thm 6 (every colour is tried
   before returning: with W_0(G') ≠ ∅ colour 0 has a non-empty fixpoint, else colour 1 does), and likewise Lemma 5 and Thm 8
