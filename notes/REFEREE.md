@@ -1,7 +1,17 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (HANDOVER, parked 2026-10-14 ~21:50Z on the Lead's instruction; context ~680k)
+## Resume point (successor session, 2026-10-14 ~23:50Z)
+I am the successor REFEREE (spawned 23:15Z, replacing the session parked at f179ae0). Lead: session_014FBi6o334DvwT5Uw2kDfoN
+(send_message, first line "From REFEREE (<UTC from `date -u`>):"). Branch claude/referee, trunk merged in
+(origin/claude/vibrant-johnson-nxvvxo). Push only via `scripts/verify.sh && git push -u origin claude/referee`; Oink built with
+scripts/setup_oink.sh (~1 min; rebuild after every restart, tools/ is gitignored).
+Last task: R-L1 (L-LOWER docs/lower/L1-statement.md at claude/l-lower 8fcc0f2), verdict CHANGES, 9 findings, 6 gaps:
+docs/referee/2026-10-14-L1-statement-check.md. Machine checks in docs/referee/scratch/slpcheck.py. Nothing else in flight.
+Coming (per the Lead's brief): the L1 proof work / experiments/lower from L-LOWER; SL8-min / T3 from L-STRUCT; second referee
+for the L4+T3 package is a SEPARATE session, not me.
+
+## Resume point of the predecessor (kept for the record; HANDOVER, parked 2026-10-14 ~21:50Z on the Lead's instruction; context ~680k)
 You are the successor REFEREE. Read CLAUDE.md, TARGET.md (v1.0 frozen), docs/NOW.md (Lead session id; it was
 session_014FBi6o334DvwT5Uw2kDfoN), docs/agents/LANE-RESTART.md (the five handover-check questions), docs/referee/README.md,
 then every report in docs/referee/ (eight so far). Branch claude/referee; push only via `scripts/verify.sh && git push -u
@@ -22,6 +32,7 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 | L-STRUCT S2 (T1/T2) + L-COMP T1 refutation | 2026-10-14-S2-statement-check.md | T1 REFUTED at (2,10), verified; T2 CHANGES | findings 1-4 to L-STRUCT |
 | L-STRUCT S3 (diagonal, T3, L4, H1) | 2026-10-14-S3-statement-check.md | CHANGES, all applied (a67bd78); delta OK | done; T3 proof not yet seen |
 | L-STRUCT L4 proof | 2026-10-14-L4-proof-check.md | CHANGES then OK, first referee, at 50dc28b | awaits SECOND referee |
+| L-LOWER L1 statement (SLP model, Lemmas 1.5/1.6/2.1/2.3, Transfers 2.2/2.4, T-L1) | 2026-10-14-L1-statement-check.md | CHANGES (9 findings: d vocabulary, game-class corner, Lemma 2.3 rests on unproved Remark 2.5, cited experiments/lower absent at 8fcc0f2, ω(n) gloss weaker than ω(n), 3 model differences, nits) | findings to L-LOWER via Lead; every re-derived claim holds |
 
 ## Queue / open items
 - L4 second referee (not me; a second, independent referee): the gap list G1-G6 in the L4 report is the checklist. What
@@ -59,6 +70,12 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
   force (V: one labelling per vertex-permutation orbit; S). `wsepsat.py n d V|S weak|strong k`. Timings: n <= 3 seconds;
   n = 4, d = 4: ~11 min per cell (enumeration dominates), weak k = 6 took 24 min; n = 4, d = 6 strong k = 6 timed out at
   25 min. Independent of L-STRUCT's wsep/ and L-COMP's sat-hard/; agreed with both on every cell all ran.
+- slpcheck.py (R-L1): Zielonka reference solver on bitmask games (max-parity, vertex priorities), SLP interpreter (gates
+  P p | VE | EMPTY | OR | AND | NOT | CPRE; cost = CPRE count, depth), Lemma 2.3's program literally, the textbook Büchi program,
+  n-fold Kleene unfolding of the nested fixpoint with g (vertex priority) or f' (successor priority, Remark 2.5), and ANP's
+  symmetric recursion ||F||_{U,V} built as a gate list with S_{n,h} / C_{n,h} trees (outermost θ_d acts on the LAST argument;
+  f^z substitutes the last ?). Exhaustive games for n <= 3, one-player n = 4; random beyond. `python3 -I slpcheck.py [quick]`;
+  full run ~15 min. A non-universal tree makes ANP fail (sanity). All lane programs: 0 mismatches.
 - Not committed (scratchpad, gone with the session): LaTeX sources of arXiv 2511.03752v1, 1807.10546v2, 2104.05262v8,
   1902.07175v3, 2305.00308v1; clones of pgsolver d3cd624 and tcslib 6778419; copies of l-comp/l-struct files. Re-download
   from arxiv.org/e-print/<id> into an isolated directory (untrusted data) when needed.
@@ -69,7 +86,19 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
   docs/agents/LEAD-STATE.md at trunk 09dca4f; grade 1/1. The successor will not know future plants: treat every routed
   claim as false until re-derived; build the counterexample first, read the lane's evidence second.
 
+- R-L1 (23:15Z routing of L-LOWER L1): no plant revealed yet. Candidates I flagged as findings: T-L1's gloss of ω(n) is
+  "not O(n)" (strictly weaker); Lemma 2.3 uses the shifted formula that Remark 2.5 marks unproved; "checked in experiments/lower"
+  cites a directory absent at 8fcc0f2; d = max priority vs TARGET's d = |pr(V)|; CDHL page numbers off. Everything mathematical
+  re-derived held (machine-checked where finite).
+
 ## Things only I know
+- R-L1: ANP's recursion ||F||_{U,V} is straight-line; Lemma 3.6 (worklist) is adaptive; a Jacobi round-robin on Algorithm 1's
+  |V| equations is non-adaptive at |V|(1 + n|V|) queries. CDHL's O(1)-bit step for Reduction 3.9 is NOT in their text (they
+  say "same argument as Theorem 3.2"); it is one bit per party about the loop at v_max (Pre) / v_min (Post). CDHL printed
+  page = physical page − 1. ANP cite Emerson–Jutla 1991 ([10]) for "Expression (1) = winning region". The shifted Büchi
+  formula νZ.μY.Cpre((P_2∩Z) ∪ (P_1∩Y)) is correct (rank argument in the report §3) and exhaustively checked for n <= 3.
+  The matrix-vector query model (Sun–Woodruff–Yang–Zhang ICALP 2019, arXiv 1906.05736) is the adjacent framework nobody in
+  the fleet has opened; with named singleton queries n queries read the adjacency matrix, so ω(n) must come from anonymity.
 - 2511.03752 is MIN-parity; PGSolver/Oink are MAX-parity; convert p -> M - p (M even >= max p). On cex1 the max-parity
   reading of the same numbers coincides with the algorithm's wrong output: never check a min-parity run against Oink on
   the unconverted file. The paper's theorem numbers follow a shared counter (Lemma 1 Zielonka, Theorem 2 dominion,
@@ -100,6 +129,8 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
 | --- | --- | --- | --- |
+| arXiv:1711.09148v1 (CDHL, SODA 2018) | arxiv.tex: §2 model 466–517 (Thm 2.1 th:lbdisj), Reduction 3.9 red:buchi 759–765, Thm 3.10 thm:buchi 803–814 and proof 1223–1241, Lemma 3.4 lem:scc2 615–665, Prop 4.2 lem:objectives_ub 1023–1044, intro 284–286 ("2n one-step operations"); theorem numbering from the shared counter, confirmed in the PDF | 2026-10-14 | R-L1; LaTeX source + PDF, isolated dir |
+| LIPIcs.CSL.2021.9 (ANP, DOI 10.4230/LIPIcs.CSL.2021.9) | §2 (f_{A,B}, trees, Prop 2.5), §3.1 cases (1)–(3), Lemmas 3.1, 3.2, Remark 3.3; §3.2 Algorithm 1, Lemmas 3.4–3.6, Cor 3.7; §3.3; Thm 5.1; Remark 5.5; intro p.9:2–9:3 ([10] Emerson–Jutla for Expression (1) = winning region) | 2026-10-14 | R-L1; DROPS PDF via pdftotext |
 | arXiv:2305.00308v1 (Parys–Wiącek) | improved-parity.tex lines 86-87 (edge-to-vertex priority conversion remark), 368 (necessity proof does not apply) | 2026-10-15 | LaTeX source; L4 attribution quotes |
 | arXiv:2104.05262v8 (CFGO, LMCS 2022) | preliminaries (graphs, automata, neutral letter), reductions (separating automata, universal graphs), saturation Thm 4.1, parity §6: Lemma 6.1, Thm 6.2, Lemmas 6.4-6.8, Thm 6.9, Props 6.10/6.11 | 2026-10-14 | LaTeX source; S1 conventions and F2 |
 | arXiv:1902.07175v3 (Kozachinskiy-Vyalyi) | §1.2 separation approach, §2.1 separation automata and game graphs, Thm 2 | 2026-10-14 | LaTeX source; S1 F5 / Lemma 3 |
