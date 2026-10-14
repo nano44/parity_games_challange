@@ -29,6 +29,10 @@ T1 (L-STRUCT, as stated by the Lead): w(n,d) >= s(n,d-2). At n = 2, d = 10:
 - Also w(2,10) >= w(2,8) >= 4 (monotone in d; (2,8) weak k = 3 UNSAT in E, S, V with verified LRAT proofs and
   CryptoMiniSat agreement, results/wX_n2_d8_k3.cnf): so w(2,10) = 4 exactly. And s(2,10) = 6 (k=5 UNSAT, k=6 SAT; no proof yet).
 - (2,8): w(2,8) >= 4 = s(2,6) in E, S, V, consistent with T1 there.
+- **Also at (2,12): w(2,12) = 4** (witness results/weak_E_n2_d12_k4.json, verify2.py exhaustive: no violation) while
+  s(2,10) = 6 (k=5 UNSAT, no proof yet): T1 fails by 2 there. w(2,14) >= 5 (k=4 UNSAT, CEGAR only), likewise d = 16, 20, 24.
+- **(3,8) V: w^V(3,8) >= 7 = s^V(3,6)**, consistent with T1: weak V k = 6 UNSAT (search.py 3 8 6 --conv V; 72 graphs),
+  LRAT proof verified (132829 RUP steps) and CryptoMiniSat UNSAT (results/wV_n3_d8_k6.cnf, sha256 b4bef84bc05af0de...).
 Re-run: `python3 search.py 2 10 4` (SAT, < 1 s), `python3 search.py 2 8 4 --strong --cnf-out F.cnf`, then
 `cadical --lrat=true --binary=false F.cnf F.lrat && python3 lrat_check.py F.cnf F.lrat`; `python3 verify2.py results/weak_E_n2_d10_k4.json`.
 
