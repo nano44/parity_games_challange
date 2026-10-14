@@ -33,7 +33,7 @@ ordered pair, V = vertex-labelled (TARGET.md). Columns: d = largest letter of th
 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 1 / 1 | - / - | - / - |
 | 2 | 2 / 2 | 2 / 2 | 3 / 3 | 3* / 3 | 3* / 4 | 3* / 4 |
 | 3 | 3 / 3 | 3 / 3 | 5* / 5 | 5 / 5 | 6* / 7 | 6* / 7 |
-| 4 | 4 / 4 | 4 / 4 | 7 / 7 | 7 / 7 | - / - | - / - |
+| 4 | 4 / 4 | 4 / 4 | 7 / 7 | 7 / 7 | - / - | - / 10 |
 | 5 | - / - | - / - | - / - | - / - | - / - | - / - |
 
 ## Universal trees (n, h = d/2), least leaves: g(n,h) <= value <= f(n,h) (CFGO Props 6.11 / 6.10)

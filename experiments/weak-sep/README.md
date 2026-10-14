@@ -12,8 +12,9 @@ ordered pair, V = vertex-labelled (TARGET.md games). The rejecting sink is not c
 (`delta[q][p-1]` = successor of state q on letter p, `null` = sink; state 0 initial).
 
 Headline (2026-10-14): w^E(2,5) = w^E(2,6) = 3 < 4 = s^E(2,5) = s^E(2,6) (the same in conventions S and V), and
-w^V(3,5) = w^V(3,6) = 6 < 7 = s^V(3,5) = s^V(3,6). On every other computed cell w = s. Upper bound only (SAT at k = 12, checker-verified, k <= 11 not refuted):
-w^V(4,6) <= 11 (results/automata/weak_V_n4_d6_k11.json), against s^E(4,6) = 13 (s^V(4,6) not yet computed).
+w^V(3,5) = w^V(3,6) = 6 < 7 = s^V(3,5) = s^V(3,6). On every other computed cell w = s. s^V(4,6) = 10 (k = 9 refuted in 1331 s, 10-state strong separator verified), so the vertex convention is well below
+s^E(4,6) = 13; w^V(4,6) <= 10 follows, a 9-state search is open (the 11- and 12-state weak separators in
+results/automata/weak_V_n4_d6_k1*.json are upper bounds that the strong value has since superseded).
 `probe_oddcycles.py n d conv k pmax` asks for a weak separator with k states that has an odd simple cycle with
 maximum <= pmax: such separators exist below the top odd letter (e.g. (3,6) V with k = 6 = w and pmax = 3), so
 'restricting a weak separator to the letters <= d-2 gives a strong one' is FALSE as a lemma. All s^E values at even d equal
