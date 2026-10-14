@@ -28,7 +28,8 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - L-COMP: parked after notebook handover; wakes for a new claim, review changes, or L-STRUCT SAT engineering.
 - L-LIT: parked; T1-T4 on trunk (docs/lit/). T4: weak separators OPEN (Czerwinski et al. 1807.10546 §6).
 - L-STRUCT: S1 statement doc, then exact w(n,d) and s(n,d) by SAT for small n,d.
-- REFEREE: code review of the l-comp bench range (to de7ea19) with planted faults, for landing on trunk.
+- REFEREE: bench review CHANGES (5251a48): selftest gaps; idle until L-COMP fix SHA for one-line sign-off.
+- L-COMP: woken for the two selftest fixes, then parks.
 - WATCHDOG: hourly at :30.
 
 ## Findings to carry
