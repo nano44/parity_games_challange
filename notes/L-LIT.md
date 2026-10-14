@@ -2,7 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14: T1, T2 (docs/lit/RANKING.md), T3 (docs/lit/BARRIERS.md) drafted and pushed. Next: Lead feedback; open the
+2026-10-14: T1-T3 pushed (landed on trunk 9079c01); T4 docs/lit/T4-weak-separators.md: verdict OPEN. Next: Lead feedback; open the
 not-opened primaries listed below if a lane needs them.
 
 ## Queue
@@ -99,6 +99,12 @@ not-opened primaries listed below if a lane needs them.
 | ECCC TR13-092 (Beckmann-Pudlák-Thapen) | Lemma 1.5; Cor. 2.4, 2.5, 2.6; Thm 5.1; Cor. 5.5 | 2026-10-14 | agent C; Cor. 2.6 re-checked |
 | ECCC TR10-197 (Atserias-Maneva) | Thm 1, Cor. 1 | 2026-10-14 | agent C |
 | arXiv 2402.03975 (Loff-Skomra) | Thm 1.1, 1.2 | 2026-10-14 | agent C |
+| arXiv 1810.05106 v2 (Colcombet-Fijalkow, Parity games and universal graphs) | Def. 3 (strong), Thm 1, Lemma 2, Lemma 6 proof | 2026-10-14 | T4; FoSSaCS 2019 Springer PDF not opened (HTML returned) |
+| arXiv 2305.10546 (Games on Graphs book, ch. 2 Parity Games) | Def. 2.1 (PDF p.82, strong), Thm 2.4, Fact 2.5, Thm 2.10 (PDF p.101) | 2026-10-14 | T4 |
+| arXiv 2109.08322 v1 (Anand-Fijalkow-Goubault-Larrecq-Leroux-Ohlmann) | Def. 4 (strong), Thm 2, Thm 3, §8 | 2026-10-14 | T4 |
+| arXiv 2205.00744 v1 (Dell'Erba-Schewe) | abstract; upper bounds only | 2026-10-14 | T4 |
+| arXiv 1902.07175 v3 (Kozachinskiy-Vyalyi), read by L-LIT | §1.2 p.4-6, §2 definitions, Thm 2, Thm 8 | 2026-10-14 | T4; weak + vertex alphabet |
+| Semantic Scholar citations API for arXiv 1807.10546 (51 records) and 1902.07175 (0) | titles scanned | 2026-10-14 | T4 |
 
 ## Dead ends
 (none)

@@ -29,8 +29,8 @@ TARGET.md §4 (it lists only restricted-class and parameterised results): Lead/o
 - First problem (computational + proof, new as far as L-LIT found): for all n <= 5 and even d <= 6, compute exactly
   w(n,d) = minimum number of states of a deterministic safety automaton over the priority alphabet {1..d} that accepts every
   infinite path of every even graph with <= n vertices and priorities <= d (EvenCycles_{n,d}) and rejects every infinite path
-  of every odd graph (OddCycles_{n,d}); compare with s(n,d) = minimum leaves of an (n, d/2)-universal tree (1807.10546 Thm 2.3
-  lower bound, Thm 4.1 upper construction). Deliverable: the table w vs s, a SAT/BDD encoding that L-COMP can rerun, and,
+  of every odd graph (OddCycles_{n,d}); compare with s(n,d) = minimum size of a deterministic STRONG separator (= minimum leaves of an (n, d/2)-universal
+  tree by CFGO Thm 4.1 + Lemma 6.8; no closed form, so compute it with the same encoding; see T4-weak-separators.md §3). Deliverable: the table w vs s, a SAT/BDD encoding that L-COMP can rerun, and,
   if w(n,d) < s(n,d) for some (n,d), the explicit automaton (a new object); if w = s on the whole table, a conjecture with the
   smallest open case. Owner of the encoding: L-COMP; statement: L-LIT/attack lane.
 
