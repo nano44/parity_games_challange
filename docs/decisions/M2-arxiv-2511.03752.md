@@ -33,3 +33,9 @@ Closed 2026-10-14 ~18:35Z, about 5 hours after the M2 clock started. Verdict: BR
   Calibration: L-COMP on opus-5-5 produced a faithful paper-to-code transcription; no redo needed.
 - PGSolver generator ports (recursiveladder, switchallexp, switchbestexp; l-comp 135888c): OK by reading; cosmetic citation offsets only.
   Gap: no execution of the OCaml originals (owner Q4).
+
+## Update 2026-10-14 23:00Z (L-ATTR, claude/l-attr fdb5092, unrefereed data)
+- Exhaustive over all 27,331,200 canonical 4-vertex games: Algorithm 1 is WRONG on 10,428 (all Strahler number 1), never stuck;
+  no failure with n ≤ 3 (41,440 games). Minimal instance experiments/attr/instances/alg1_min_n4_m5.pg (all Even-owned, Odd wins all).
+- Every Algorithm-1 error lies on a game that HKP's psolQ leaves undecided: 2511.03752 behaves as a psolQ-type partial solver that
+  declares a region where psolQ stops. Mechanism: fatal attractors certify forced returns only, not traps of lower top priority.
