@@ -25,3 +25,11 @@ Closed 2026-10-14 ~18:35Z, about 5 hours after the M2 clock started. Verdict: BR
 ## Pending (not blocking the verdict)
 - REFEREE full report landed: claude/referee 7750fa1, docs/referee/2026-10-14-arxiv-2511.03752.md (10 gaps; second counterexample cex2, solitaire; all 16 readings of 4 ambiguities fail on random games; literal reading wrong on 0.4%-2.2% of random games). Pending: AM1-AM9 verdicts on L-COMP pseudocode.
 - Nothing is sent to the author or posted anywhere (D1: anything external is the owner's decision).
+
+## Update 2026-10-14 18:40Z (REFEREE claude/referee 120ee69)
+- Numbering per the paper's shared counter: the false dominion claim is Theorem 2 (tex:322); minimal-dominion lemma is Lemma 3 (tex:341);
+  progress is Lemma 4 (tex:397). The REFEREE's earlier messages were one lower; L-COMP's numbering was right.
+- Faithfulness of L-COMP's pseudocode (51f1d1b): AM1-AM9 all faithful (AM4 faithful to intent and sound; AM8 faithful in effect).
+  Calibration: L-COMP on opus-5-5 produced a faithful paper-to-code transcription; no redo needed.
+- PGSolver generator ports (recursiveladder, switchallexp, switchbestexp; l-comp 135888c): OK by reading; cosmetic citation offsets only.
+  Gap: no execution of the OCaml originals (owner Q4).
