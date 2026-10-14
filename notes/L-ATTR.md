@@ -4,7 +4,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 ## Resume point
 2026-10-14 23:00Z. A1 DONE (n = 5/6 PA samples in experiments/attr/results/pa_n*.txt: PA => psolQ/psolB solved holds).
 Results: docs/attr/A1-results.md (k(psolQ) = k(Alg1) = 0; minimal instances n=3 m=4 and n=4 m=5; theorem candidate T-A1 = PA
-sufficient for psolB/psolQ, holds on all 27.3 M canonical n=4 games). Message to the Lead sent after the final push.
+sufficient for psolB/psolQ, holds on all 27.3 M canonical n=4 games). Message to the Lead sent 23:02Z (delivered) after the push of fdb5092.
 
 ## Queue
 1. Wait for the Lead's reply on T-A1 (novelty via L-LIT, referee).
