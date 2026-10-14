@@ -2,14 +2,33 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14 ~21:30Z. M2 closed BROKEN (Lead 18:36Z). M1 complete: 13 families swept with strategy checks, READMEs and
-verdicts in experiments/hard-families/ (12 blow-ups confirmed, counter_qpt jumps at powers of two, class open).
-SI families confirmed via ports pgsolver_si.py (switch-all, switch-best). Bench additions: exhaustive.py, bench/hkp_*.pg.
+2026-10-14 19:15Z. PARKED by the Lead (19:11Z). M1 accepted; range up to de7ea19 is with the REFEREE before landing on
+trunk. M2 (arXiv 2511.03752v1) closed BROKEN (Lead 18:36Z): CE1 experiments/m2/counterexamples/ce1_4v.pg plus the
+REFEREE's independent counterexample (claude/referee 936d47c). No queued work. Wait for: REFEREE review changes, a new
+claim, or L-STRUCT SAT engineering. Setup in a fresh session: scripts/setup_oink.sh (about 80 s); python3 with
+matplotlib for plots (pip install matplotlib); check with scripts/verify.sh.
 
-## Queue
-1. Optional: counter_qpt at N = 29..40 with a longer timeout to see the N = 32 jump.
-2. If the owner allows PGSolver binaries: diff pgsolver_port.py / pgsolver_si.py against the originals.
-3. Next claims from the Lead: run them through compare.py (regions + strategies) and the bench.
+## How to run the bench on a new claim
+Wrap the claimed algorithm as a command that reads a PGSolver .pg file (max-parity, owner 0 = Even, priorities any
+naturals) and writes a 'paritysol' solution with a positional strategy for every vertex owned by its winner (see
+experiments/harness/README.md; avh.py is a worked example, register it in experiments/harness/solvers.py). Then:
+(1) `python3 experiments/harness/compare.py DIR --solver NEW='CMD {in} {out}' --stop-first` on a seeded corpus
+(`gen.py corpus DIR 10000 SEED --nmax 200`), an rngame corpus (`rngame_corpus.sh`), exhaustive tiny games
+(`exhaustive.py`, or `iter_games` in-process for Python code) and experiments/harness/bench/hkp_*.pg; compare.py
+reports MISMATCH (regions differ from Zielonka) or BADSTRAT (strategy not closed/winning per verify.py).
+(2) every hard family: add the solver to experiments/hard-families/run_all.sh (or `sweep.py FAMILY --gen ... -s NEW`)
+for agreement plus runtime growth tables/plots. (3) On the first failure: `experiments/m2/shrink.py` (adapt the
+solver import) to a minimal game, save the .pg, push, message the Lead with SHA, game, expected and actual result.
+
+## Open items
+- counter_qpt growth class: qpt lifts jump x15 at N = 8 and x31 at N = 16, ~N^3..N^4 in between, timeout at N = 32;
+  run N = 29..40 with a long timeout (sweep.py counter_qpt --timeout 600) to see the N = 32 jump.
+- PGSolver binary diff waiting on owner Q4: if allowed, run the built generator.exe / pgsolver.exe (switchall,
+  switchbest) and diff against pgsolver_port.py and pgsolver_si.py (iteration counts and games byte for byte).
+- counter_dtl is listed in Oink's README (8fbf0a7) but has no source upstream (no src/tools/counter_dtl.cpp, not in
+  CMakeLists); not swept.
+- avh strategy construction S1/S2 is not always winning (experiments/m2/counterexamples/strat_s2_12v.pg); moot since
+  M2 is closed.
 
 ## M2 pseudocode
 Source: arXiv 2511.03752v1, R. van der Heijden, "Attractors Is All You Need: Parity Games In Polynomial Time"
@@ -93,16 +112,24 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 ## Things only I know
 - PGSolver (tcsprojects/pgsolver d3cd624) builds with apt OCaml 4.14 + dune 3.14 after two local edits
   ((lang dune 3.18)->3.14, drop maintenance_intent) in a dune workspace with tcslib 6778419,
-  ocaml-sat-solvers 0264291, c-cube/ocaml-minisat aeb7776 (all cloned under experiments/hard-families/out/pgsolver,
-  gitignored). Running the built generator.exe was refused by this session's permission classifier ("code from
-  external"), so the generators are ported to Python instead; the owner can allow running it, then the port can
-  be diffed against the original output.
+  ocaml-sat-solvers 0264291, c-cube/ocaml-minisat aeb7776 (cloned under experiments/hard-families/out/pgsolver,
+  gitignored; a fresh session must re-clone). Running the built binaries was refused by the permission classifier
+  ("code from external"); the Lead said not to work around it. Hence the Python ports.
+- The ported SI (pgsolver_si.py) runs the bare strategy-improvement loop; PGSolver wraps it in universal_solve
+  (preprocessing, SCC decomposition), so counts may differ from PGSolver's own. Details that matter for fidelity:
+  TreeSet.choose = min_elt, folds ascending, del_edge is a no-op on deleted nodes, iter_by iterates a snapshot.
+- switchbestexp.ml's description string repeats the switch-all text (line 79); its target is switchbest.
 - Oink rngame is seeded from std::random_device: not reproducible; keep the files, not the parameters.
-- Oink mspm (8fbf0a7) is unsound: logic error at mspm.cpp:486 on 3 rngame games, and on one game a wrong answer
+- Oink mspm (8fbf0a7) is unsound: logic error at mspm.cpp:486 on 4 rngame games, and on one game a wrong answer
   that Oink's own verifier rejects ("loser can escape"). Instances: experiments/harness/regressions/mspm_*.pg.
   Exclude mspm from any "all solvers agree" claim.
+- Oink preprocessing (single-parity, winner-controlled cycles) solves counter_qpt and the PGSolver families
+  outright; use the oink-<s>-raw registry entries to make the solver see the game.
 - Oink's work counters are solver-specific (iterations, promotions, lifts, major iterations); compare across sizes
-  of one solver, never across solvers.
+  of one solver, never across solvers. Iteration counts are deterministic with -w 1; wall times are noisy.
+- py-zlk is slow on exponential families (Python recursion); sweep.py skips a solver after its first timeout.
+- Background watchers: `pgrep -f NAME` inside a loop matches its own command line; use a pid file instead.
+- gen.py uses its own splitmix64 so games are identical across Python versions; selftest pins the corpus hash.
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
