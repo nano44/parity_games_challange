@@ -8,3 +8,9 @@ case "$1" in
   C) lane "4 6 weak 2 6" "5 5 weak 1 8" ;;
   D) lane "5 6 strong 1 9" "5 7 strong 2 9" "5 6 weak 1 8" "5 7 weak 2 8" ;;
 esac
+# Lead 20:27Z re-prioritisation: decisive cells first.
+case "$1" in
+  P1) lane "4 6 strong 2 6" "5 5 strong 1 8" ;;
+  P2) lane "5 7 weak 2 8" ;;
+  P3) lane "5 7 strong 2 8" ;;
+esac
