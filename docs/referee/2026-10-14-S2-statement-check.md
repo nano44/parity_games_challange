@@ -1,11 +1,48 @@
-# Referee report: S2 lower-bound statement (targets T1, T2), L-STRUCT 616cf77
+# Referee report: S2 lower-bound statement (targets T1, T2), L-STRUCT 616cf77; T1 refutation (L-COMP 3e44d2c)
 
 Referee: REFEREE. Date: 2026-10-14. Routed by the Lead 2026-10-14 19:51Z. Source: claude/l-struct 616cf77,
 docs/struct/S2-lower-bound-statement.md, with S1 (D1–D5, Lemmas 1–3 as refereed in
 docs/referee/2026-10-14-S1-C1-weak-separators.md). Sources opened: CDFJLP arXiv 1807.10546v2 §5 (Thm 5.1, Lemmas
 5.1–5.3, the construction of G_t) and §2 (Thm 2.3, universal-tree lower bound), from the LaTeX source.
 
-## Verdict: CHANGES (statement sound; two consequences overclaimed; one record to fix)
+## Verdict (updated 2026-10-15 after the Lead's 20:07Z priority change): T1 is REFUTED at (n,d) = (2,10) in E, S and V
+(section 0, checked independently). The S2 statement check below stands for T2 (CHANGES, finding 1) and for the record
+(findings 2–4); the T1-specific items are now moot except as documentation.
+
+## 0. T1 refuted: w(2,10) = 4 < 5 = s(2,8) (L-COMP claude/l-comp 3e44d2c, experiments/sat-hard)
+Witness A (state 0 initial, ⊥ = rejecting sink), from results/weak_E_n2_d10_k4.json:
+δ(0,·) = [1,0,2,0,2,0,2,0,3,0], δ(1,·) = [3,2,3,2,⊥,2,⊥,0,⊥,0], δ(2,·) = [1,2,3,2,3,2,⊥,0,⊥,0], δ(3,·) = [⊥,3,⊥,1,⊥,2,⊥,2,⊥,0].
+1. A is a weak (2,10)-separator, my own tools (docs/referee/scratch/wsepref.py, wsepE2d.py, wsepsat.py):
+   - V: all vertex-labelled graphs with ≤ 2 vertices, d = 10 (10 + 900 graphs; 340 even, 320 odd): (W1), (W2) hold.
+   - S: all one-label-per-pair graphs (11 + 14,641; 2,720 even, 2,360 odd): (W1), (W2) hold.
+   - E: exhaustive over all 2^10 × 2^10 cross-edge label-set pairs (A, B) with saturated same-parity self-loops
+     (sound by monotonicity: every even graph is a subgraph of its saturated version with the same A, B; likewise
+     odd): 11,264 even and 6,144 odd configurations, (W1), (W2) hold; (S2) fails (A is not strong), as expected.
+   - Hand check of L-COMP's verify2.py characterisation (its docstring): on vertices {0,1} the simple cycles are the
+     loops and the 2-cycles 0 →a 1 →b 0, and a closed walk's maximum is the maximum of its simple cycles' maxima, so
+     "even iff every loop label is even and max(a,b) is even for all a ∈ A, b ∈ B" is right; maximal pairs are
+     exactly those with B = Bmax(A) and A = Amax(B), which is what maximal_2 keeps; loops saturated and the
+     one-vertex graph added. Correct and complete for n ≤ 2.
+2. s(2,8) ≥ 5 in E, S, V: my SAT encoding (independent of L-COMP's: no symmetry breaking, (S2) on all states,
+   maximal V/S-graphs by brute force): strong k = 4 UNSAT in V and in S (hence in E, since s^V ≤ s^S ≤ s^E);
+   strong k = 5 SAT in V (re-verified). Universal tree (2,4): f(2,4) = g(2,4) = 5 (CFGO Props 6.10/6.11), so
+   s^E(2,8) = 5 by CFGO Thm 4.1 + Lemma 6.8 + S1 Lemma 2(b); for n = 2 the pattern is h + 1 leaves (one split level
+   per height, as in my 3-leaf argument of the C1 report). L-COMP's add_strong encoding (enc.py docstring) is sound
+   and complete: for odd p, a rank ρ_p non-increasing on letters < p and strictly decreasing on letter p excludes
+   every cycle with odd maximum p; conversely, if all cycles have even maximum, the subgraph of letters ≤ p has no
+   cycle through a p-edge, so "maximum number of p-edges on a path from q in that subgraph" is finite (≤ k−1; p-edges
+   cross SCCs) and satisfies both constraints. Its "all states reachable" requirement (BFS symmetry breaking) loses no
+   generality: an automaton with unreachable states trims to a smaller one, which pads back to k states by
+   duplicating a reachable state and redirecting one incoming transition (language and cycle maxima unchanged).
+   And for a lower bound only necessary constraints matter: the even graphs used must be even (they are: verify2's
+   characterisation), and (W1)'s closure encoding is implied by any separator.
+3. Lower bound w(2,10) ≥ 4: my SAT weak k = 3 UNSAT in V at d = 10 (and at d = 8, confirming L-COMP's w(2,8) ≥ 4 and
+   S1 Lemma 2(a)); with the witness, w^V = w^S = w^E = 4 at (2,10).
+Verdict: w^X(2,10) = 4 < 5 ≤ s^X(2,8) for X ∈ {E, S, V}. T1 ("w^X(n,d) ≥ s^X(n,d−2)") is refuted at n = 2, d = 10, in
+all three conventions. Consistent with the refereed cells (T1 held at (2,6) with equality and at (2,8)). The data now
+say that a weak separator can save more than one tree level; T2 is the live target.
+
+## Verdict on the statement itself (as routed 19:51Z): CHANGES (statement sound; two consequences overclaimed; one record to fix)
 | item | verdict |
 | --- | --- |
 | (1) T1, T2 well-posed in S1's definitions | OK for T1; CHANGES for T2 (⌊n/c⌋ = 0 undefined), see §1 |
@@ -74,7 +111,10 @@ weak barrier would be new for exactly the deterministic weak sub-class. S2 shoul
 A refuting cell is w^X(n,d) < s^X(n,d−2). In convention V the cheapest open cell is (4,6): s^V(4,4) = 7 (table), so a
 weak (4,6) V-separator with ≤ 6 states would refute T1 for X = V. My encoding (maximal V-graphs with 1..4 vertices
 computed by brute force, one labelling per vertex-permutation orbit) ran:
-(pending: the V (4,6) cells, 6 states strong, 6 and 7 states weak, are running in the background with time limits; results follow in the next commit.)
+- V (4,6), 6 states strong: still running after 16 min when the Lead's priority changed (my maximal-graph enumeration
+  for 4 vertices is slow); the weak 6- and 7-state cells did not start. Moot for T1 now (section 0); L-COMP reports
+  w^E(4,6) ≥ 8 with LRAT-checked proofs (3e44d2c), which SUPPORTS T1 at (4,6) E, so the refutation is specific to the
+  high-d cell (2,10). If my job finishes, its line goes into a later commit.
 The E cell (weak (4,6) E with ≤ 7 states) needs the maximal E-multigraphs on 4 vertices, which my brute-force tools
 cannot enumerate (64^16 graphs); I did not run it (L-COMP is). My S1 report's cells are consistent with T1.
 
@@ -96,6 +136,14 @@ automaton (as a JSON next to the others) rather than cite a non-deterministic sc
 Also worth recording in §4: the proof route's Step 1 replaces CDFJLP's "resistance" by counts along even-realisable
 paths; the probe automaton is a concrete test case for whether that quantity is finite and tree-like.
 
+## T2 after the refutation
+T2 ("there is c ≥ 1 with w^X(n,d) ≥ s^X(⌊n/c⌋, d)") is unaffected by (2,10): with c = 2 it asks w(2,10) ≥ s(1,10) = 1.
+Well-posed for n ≥ c (finding 1). Its consequence for X = E: w^E(n,d) ≥ s^E(⌊n/c⌋, d) ≥ C(⌊lg⌊n/c⌋⌋ + d/2 − 1,
+⌊lg⌊n/c⌋⌋) by CDFJLP Thm 5.1 (E-convention, non-rejecting states, as in §2), which is quasi-polynomial in the same
+regime with n replaced by n/c; correct as stated. For X = V the same caveat as §3 applies (no s^V lower bound is cited).
+Note that T2 is also the shape a KV-style argument would produce; L-LIT's novelty check (S2 §5) should compare against
+KV's time-bounded bound rather than against CDFJLP.
+
 ## Findings
 1. T2: restrict to n ≥ c (or define s^X(0,d)); the "trivial for n ≤ c" remark is wrong at n < c.
 2. The X = V barrier does not follow from T1 + CDFJLP Thm 5.1 (which is for E and uses parallel self-loops in G_t);
@@ -106,5 +154,6 @@ paths; the probe automaton is a concrete test case for whether that quantity is 
 4. Commit the probe's obstruction automaton; the committed weak_V_n3_d6.json does not exhibit the dead end.
 
 ## Gaps
-- My (4,6) V run uses my own SAT encoding (no formal proof); the cell is informative, not decisive for X = E.
+- My SAT encoding has no formal proof; its answers agree with L-COMP's LRAT-checked ones on every cell both ran.
+- E was checked exhaustively only through the 2-vertex characterisation (sound by monotonicity); V and S by all graphs.
 - Nothing machine-checked; T1/T2 are statements only, as S2 says.

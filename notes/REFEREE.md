@@ -12,6 +12,8 @@ default binary (universal_solve preprocessing); regions match Oink on 150 random
 Theorem numbering: the paper's shared counter (Theorem 2 = dominion, Lemma 3 = minimal dominion, Lemma 4 = progress); my
 first two messages to the Lead were off by one. Idle until the Lead routes the next item.
 
+T1 REFUTED at (2,10) (l-comp 3e44d2c): witness verified by me in E (exhaustive 2-vertex), S, V; s(2,8) >= 5 and w(2,10) >= 4
+by my own SAT in V/S; universal tree (2,4) = 5. Added as section 0 of the S2 report.
 S2 statement (l-struct 616cf77): docs/referee/2026-10-14-S2-statement-check.md, CHANGES (T2 edge case; V barrier needs an s^V bound;
 algorithm class; commit the probe automaton). (4,6) V SAT cells pending.
 S1/C1 (l-struct 42dbbc2): docs/referee/2026-10-14-S1-C1-weak-separators.md: C1 OK (w(2,6)=3<4=s(2,6) in E,S,V, own checker
