@@ -26,7 +26,7 @@ Playbook: docs/sources/fleet-playbook.md. Literature map (secondary source): doc
 
 ## Files each lane owns
 - notes/<LANE>.md (notebook: resume point, queue, sources opened, dead ends, things only I know).
-- L-COMP: experiments/, scripts/setup_oink.sh. REFEREE: docs/referee/. L-FORMAL: lean/.
+- L-LIT: docs/lit/. L-COMP: experiments/, scripts/setup_oink.sh. REFEREE: docs/referee/. L-FORMAL: lean/.
 - Lead only: CLAUDE.md, TARGET.md (drafts; owner approves), docs/*.md, docs/agents/, scripts/verify.sh, .github/.
 
 ## Commands
