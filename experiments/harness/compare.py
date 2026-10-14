@@ -113,8 +113,9 @@ def main(argv=None):
                     break
             rows.append(dict(base, solver=s, status=st, wall_s=f"{wall:.4f}", solver_s=stime, iterations=it[0] if it else "", unit=it[1] if it else "", mismatches=mm))
     if a.csv:
+        fields = list(rows[0]) if rows else ["game", "n", "m", "d", "solver", "status", "wall_s", "solver_s", "iterations", "unit", "mismatches"]
         with open(a.csv, "w", newline="") as f:
-            w = csv.DictWriter(f, fieldnames=list(rows[0]))
+            w = csv.DictWriter(f, fieldnames=fields)
             w.writeheader(); w.writerows(rows)
     games = len({r["game"] for r in rows})
     if not a.quiet:

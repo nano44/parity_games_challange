@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Sweep a hard family over sizes, run solvers with a timeout, check agreement, write table + plot.
 
-Usage: sweep.py FAMILY --gen 'CMD {N}' --sizes 1 2 3 ... -s SOLVER ... [--timeout SEC] [--budget SEC]
+Usage: sweep.py FAMILY --gen 'CMD {N}' --sizes 1 2 3 ... -s SOLVER ... [--timeout SEC]
                 [--out DIR] [--ref-max-n NVERT]
  - The generator command prints a PGSolver game for size {N} to stdout.
  - Solvers come from experiments/harness/solvers.py. After a solver's first timeout it is skipped for larger sizes.

@@ -22,8 +22,11 @@ passes verify.py (status BADSTRAT otherwise; the reference's own strategies are 
 1. generator determinism: the 200-game corpus (master seed 2026, n in 1..40) hashes to a pinned sha256;
 2. brute force == py Zielonka on 300 tiny games (n <= 7): an oracle with no attractor code;
 3. py Zielonka == Oink `uzlk` == Oink `zlk` on the 200 games (skipped with a NOT RUN line if Oink is not built);
-4. compare.py flags a deliberately wrong solver (flips vertex 0) as MISMATCH;
-5. verify.py agrees with Oink's `verify` on 300 correct/mutated solutions; py Zielonka's strategies pass verify.py.
+4. compare.py reports a region-wrong solver that writes the reference's strategies as exactly MISMATCH on 5/5 games;
+5. verify.py hand-built unit cases, no Oink: 3 accepted; rejected for leaving the region, in-region losing cycle,
+   missing strategy, non-edge strategy, opponent escape;
+6. verify.py agrees with Oink's `verify` on 300 correct/mutated solutions. `mutation_check.sh` shows that steps 4 and 5
+   fail when compare.py's region check or verify.py's cycle test / closure checks are planted out.
 
 ## Re-run the validation
 ```
