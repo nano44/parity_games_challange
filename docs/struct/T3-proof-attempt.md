@@ -109,3 +109,18 @@ k = 10 and 7). (T4) at the gap cells (2,6), (3,6) V, run T1: H-B(2) must FAIL th
 A failure of T1 at any d ≤ n+1 cell kills H-B(2) and with it this route; a pass on all cells makes H-B(2) the statement
 to prove, with the proof route "the even-realisable words of CDFJLP's G_t force the universal tree even in a weak
 separator, because at d ≤ n+1 their runs never use the return edge".
+
+## 7. T1 / T4 (Lead 21:57Z): H-B(2) is FALSE on data → dead end; this route STOPS here
+Test (experiments/weak-sep/test_HB2.py): D-tree of A − τ0 from the resistance quasi-orders, universality by brute-force
+embedding of every ordered tree with ≤ n leaves and height ⌈d/2⌉. Control: the strong E witnesses (2,4), (3,4), (3,6),
+(4,4) have universal D-trees (CDFJLP Lemma 5.3), so the test is right.
+T1 result: H-B(2) FAILS on most minimal non-strong weak separators at d ≤ n+1: E (2,3) k=3: 2 of 3 not universal;
+V (2,3) k=3: 3 of 14 not universal (plus the all-odd and the infinite-resistance cases); V (3,3) k=5: 8 of 11 not
+universal; V (3,4) k=5: 30 of 42 not universal. Instance: E (2,3), δ = [[1,0,1],[⊥,2,⊥],[1,0,⊥]], τ0 = (1, 2); the
+D-tree of A − τ0 has leaves {(0,0), (1,0)}: two leaves under two different root children, so the 2-leaf tree with a
+single root child does not embed; not (2,2)-universal although the automaton has w = s = 3 states.
+T4 result: as predicted, H-B(2) fails at every gap cell tested ((2,5), (2,6) E and V; (3,5), (3,6), (3,8) V; (2,8) E).
+Conclusion: the even part of a minimal weak separator need NOT carry the universal tree; the state count equals s(n,d)
+for a reason that is not "a universal tree hides in A − τ0". Dead end D-HB2 (notebook). Per the Lead's instruction the
+H-B route stops; no proposal for proving H-B(2) is written. Remaining live, unproved statements: T3 itself (data up to
+(4,5) V), SL8-min with t = 2, NR (necessary rule), Lemma B's one-deletion form.
