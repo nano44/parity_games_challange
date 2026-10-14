@@ -21,6 +21,7 @@ def registry():
          # M2 subject, PROVISIONAL (arXiv 2511.03752v1, experiments/m2/avh.py)
          # Python port of PGSolver's switch-all strategy improvement (experiments/hard-families/pgsolver_si.py)
          "pgs-switchall": ["python3", "-I", os.path.join(ROOT, "experiments", "hard-families", "pgsolver_si.py"), "{in}", "{out}"],
+         "pgs-switchbest": ["python3", "-I", os.path.join(ROOT, "experiments", "hard-families", "pgsolver_si.py"), "{in}", "{out}", "--switchbest"],
          "avh": ["python3", "-I", os.path.join(ROOT, "experiments", "m2", "avh.py"), "{in}", "{out}"]}
     for s in OINK_SOLVERS:
         # -w 1: single worker, so iteration counts and times are deterministic and comparable.
