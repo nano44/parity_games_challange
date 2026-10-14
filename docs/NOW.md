@@ -51,4 +51,4 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - Q3: environment setup script (Boost dev packages + scripts/setup_oink.sh) to save each session ~1 min of setup.
 
 ## Spend
-- Child sessions report usage.cost_usd in get_session (Lead own record shows none). 2026-10-14 18:02Z: L-COMP $5.24.
+- Child sessions report usage.cost_usd in get_session (Lead own record shows none). 2026-10-14 19:02Z: L-COMP $14.13 (379k ctx; plan handover near 600k), WATCHDOG $0.01; REFEREE, L-LIT, L-STRUCT not yet reported.

@@ -16,3 +16,4 @@
 - 2026-10-14 18:35Z: M2 DONE, BROKEN. Lead cross-check: avh on referee cex1 and aiayn on l-comp ce1 both give Odd-all; Oink zlk Even-all verified. RESULTS DE1. Owner told at once.
 - 2026-10-14 18:52Z: landed l-lit 6a859ea and referee 120ee69 into trunk (9079c01). L-LIT ranking: 1 weak separators, 2 straight-line symbolic lower bounds, 3 attractor/partial solvers, 4 SI/Random-Facet. T4 barrier check before first lane.
 - 2026-10-14 18:55Z: T4 OPEN landed (bcef882). Spawned L-STRUCT session_01VH4fd2Fq8XeXtyUfkwLJV1 (fable-5-1) and WATCHDOG session_01JQNTX8zT3T3mWMt6ZmYzkn (haiku-5-5, trig_019xE43BZ5qaDGwxDkZ5h5ik cron 30). L-LIT parked. REFEREE: lasso check.
+- 2026-10-14 19:02Z sweep: no overage; L-COMP idle w/ background sweep (6c45f16), 379k ctx, $14.13; L-STRUCT running; WATCHDOG confirmed. No action.
