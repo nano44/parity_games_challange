@@ -10,8 +10,12 @@ import graphs, enc, check
 from pysat.solvers import Solver
 
 
-def run(n, d, k, solver="cadical153", cnf_out=None, assume=(), log=print, init_graphs=None, extra=(), w2="rank", conv="E", strong=False):
+def run(n, d, k, solver="cadical153", cnf_out=None, assume=(), log=print, init_graphs=None, extra=(), w2="rank", conv="E", strong=False, min_letter=1):
     evens, odds = graphs.fam(n, d, 0, conv), graphs.fam(n, d, 1, conv)
+    if min_letter > 1:  # alphabet {min_letter..d}: delete lower-letter edges (subgraphs of covering graphs still cover)
+        cut = lambda fam: sorted({(nn, frozenset(x for x in E if x[1] >= min_letter)) for (nn, E) in fam},
+                                 key=lambda g: sorted(g[1]))
+        evens, odds = cut(evens), cut(odds)
     e = enc.Encoding(n, d, k)
     e.binary = (w2 == "binary")
     if strong:
@@ -76,7 +80,8 @@ if __name__ == "__main__":
     ap.add_argument("--w2", choices=["rank", "lasso", "binary"], default="rank")
     ap.add_argument("--conv", choices=["E", "S", "V"], default="E")
     ap.add_argument("--strong", action="store_true")
+    ap.add_argument("--min-letter", type=int, default=1)
     a = ap.parse_args()
     assume = [tuple(map(int, x.split(":"))) for x in a.assume.split(",") if x]
-    aut, used = run(a.n, a.d, a.k, a.solver, a.cnf_out, assume, w2=a.w2, conv=a.conv, strong=a.strong)
+    aut, used = run(a.n, a.d, a.k, a.solver, a.cnf_out, assume, w2=a.w2, conv=a.conv, strong=a.strong, min_letter=a.min_letter)
     print("GRAPHS", json.dumps(used))
