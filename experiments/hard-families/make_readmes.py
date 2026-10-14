@@ -59,4 +59,10 @@ for fam, meta in F.items():
             f.write(f"| {s} | {n0}..{n1} | {b:.3f} | {k:.2f} | {w} {u} |\n")
         f.write("\n## Sweep table\n\n" + open(res + ".md").read().split("\n", 2)[2] + "\n")
         f.write("![sweep](sweep.png)\n")
+        import glob as _g
+        for extra in sorted(_g.glob(os.path.join(HERE, "results", fam + "-pgs*.md"))):
+            tag = os.path.basename(extra)[:-3]
+            shutil.copy(extra[:-3] + ".png", os.path.join(d, tag + ".png"))
+            shutil.copy(extra[:-3] + ".csv", os.path.join(d, tag + ".csv"))
+            f.write(f"\n## Targeted algorithm (ported): {tag}\n\n" + open(extra).read() + f"\n![{tag}]({tag}.png)\n")
     print("wrote", fam)

@@ -1,103 +1,103 @@
 family,N,n,m,d,solver,status,iterations,unit,solver_s,wall_s
-recursiveladder,2,10,19,8,oink-uzlk-raw,ok,5,iterations,0.000020,0.0052
-recursiveladder,2,10,19,8,oink-zlk-raw,ok,6,iterations,0.000460,0.0070
-recursiveladder,2,10,19,8,oink-zlkpp-std-raw,ok,5,iterations,0.000043,0.0060
-recursiveladder,2,10,19,8,oink-tl-raw,ok,2,iterations,0.000030,0.0045
-recursiveladder,2,10,19,8,oink-psi-raw,ok,4,major iterations,0.000401,0.0047
-recursiveladder,2,10,19,8,py-zlk,ok,9,iterations,,0.0463
-recursiveladder,4,20,41,14,oink-uzlk-raw,ok,20,iterations,0.000060,0.0047
-recursiveladder,4,20,41,14,oink-zlk-raw,ok,21,iterations,0.000639,0.0068
-recursiveladder,4,20,41,14,oink-zlkpp-std-raw,ok,30,iterations,0.000055,0.0098
-recursiveladder,4,20,41,14,oink-tl-raw,ok,4,iterations,0.000030,0.0049
-recursiveladder,4,20,41,14,oink-psi-raw,ok,10,major iterations,0.000747,0.0059
-recursiveladder,4,20,41,14,py-zlk,ok,34,iterations,,0.0503
-recursiveladder,6,30,63,20,oink-uzlk-raw,ok,59,iterations,0.000059,0.0063
-recursiveladder,6,30,63,20,oink-zlk-raw,ok,60,iterations,0.000601,0.0075
-recursiveladder,6,30,63,20,oink-zlkpp-std-raw,ok,94,iterations,0.000139,0.0060
-recursiveladder,6,30,63,20,oink-tl-raw,ok,6,iterations,0.000031,0.0056
-recursiveladder,6,30,63,20,oink-psi-raw,ok,10,major iterations,0.000620,0.0067
-recursiveladder,6,30,63,20,py-zlk,ok,99,iterations,,0.0384
-recursiveladder,8,40,85,26,oink-uzlk-raw,ok,161,iterations,0.000059,0.0066
-recursiveladder,8,40,85,26,oink-zlk-raw,ok,162,iterations,0.000606,0.0054
-recursiveladder,8,40,85,26,oink-zlkpp-std-raw,ok,261,iterations,0.000206,0.0048
-recursiveladder,8,40,85,26,oink-tl-raw,ok,8,iterations,0.000035,0.0048
-recursiveladder,8,40,85,26,oink-psi-raw,ok,10,major iterations,0.001182,0.0086
-recursiveladder,8,40,85,26,py-zlk,ok,269,iterations,,0.0450
-recursiveladder,10,50,107,32,oink-uzlk-raw,ok,428,iterations,0.000179,0.0067
-recursiveladder,10,50,107,32,oink-zlk-raw,ok,429,iterations,0.000561,0.0068
-recursiveladder,10,50,107,32,oink-zlkpp-std-raw,ok,698,iterations,0.000866,0.0069
-recursiveladder,10,50,107,32,oink-tl-raw,ok,10,iterations,0.000040,0.0047
-recursiveladder,10,50,107,32,oink-psi-raw,ok,10,major iterations,0.000652,0.0051
-recursiveladder,10,50,107,32,py-zlk,ok,714,iterations,,0.0438
-recursiveladder,12,60,129,38,oink-uzlk-raw,ok,1127,iterations,0.000248,0.0050
-recursiveladder,12,60,129,38,oink-zlk-raw,ok,1128,iterations,0.000628,0.0055
-recursiveladder,12,60,129,38,oink-zlkpp-std-raw,ok,1842,iterations,0.001411,0.0060
-recursiveladder,12,60,129,38,oink-tl-raw,ok,12,iterations,0.000089,0.0057
-recursiveladder,12,60,129,38,oink-psi-raw,ok,10,major iterations,0.000742,0.0059
-recursiveladder,12,60,129,38,py-zlk,ok,1879,iterations,,0.0452
-recursiveladder,14,70,151,44,oink-uzlk-raw,ok,2957,iterations,0.001007,0.0079
-recursiveladder,14,70,151,44,oink-zlk-raw,ok,2958,iterations,0.001449,0.0101
-recursiveladder,14,70,151,44,oink-zlkpp-std-raw,ok,4837,iterations,0.005696,0.0126
-recursiveladder,14,70,151,44,oink-tl-raw,ok,14,iterations,0.000091,0.0067
-recursiveladder,14,70,151,44,oink-psi-raw,ok,10,major iterations,0.000772,0.0071
-recursiveladder,14,70,151,44,py-zlk,ok,4929,iterations,,0.0722
-recursiveladder,16,80,173,50,oink-uzlk-raw,ok,7748,iterations,0.001755,0.0067
-recursiveladder,16,80,173,50,oink-zlk-raw,ok,7749,iterations,0.001734,0.0084
-recursiveladder,16,80,173,50,oink-zlkpp-std-raw,ok,12678,iterations,0.008784,0.0151
-recursiveladder,16,80,173,50,oink-tl-raw,ok,16,iterations,0.000091,0.0065
-recursiveladder,16,80,173,50,oink-psi-raw,ok,10,major iterations,0.001094,0.0066
-recursiveladder,16,80,173,50,py-zlk,ok,12914,iterations,,0.1570
-recursiveladder,18,90,195,56,oink-uzlk-raw,ok,20291,iterations,0.006377,0.0135
-recursiveladder,18,90,195,56,oink-zlk-raw,ok,20292,iterations,0.005496,0.0102
-recursiveladder,18,90,195,56,oink-zlkpp-std-raw,ok,33206,iterations,0.035416,0.0416
-recursiveladder,18,90,195,56,oink-tl-raw,ok,18,iterations,0.000058,0.0048
-recursiveladder,18,90,195,56,oink-psi-raw,ok,10,major iterations,0.000771,0.0070
-recursiveladder,18,90,195,56,py-zlk,ok,33819,iterations,,0.2240
-recursiveladder,20,100,217,62,oink-uzlk-raw,ok,53129,iterations,0.010217,0.0157
-recursiveladder,20,100,217,62,oink-zlk-raw,ok,53130,iterations,0.013356,0.0183
-recursiveladder,20,100,217,62,oink-zlkpp-std-raw,ok,86949,iterations,0.061800,0.0673
-recursiveladder,20,100,217,62,oink-tl-raw,ok,20,iterations,0.000098,0.0049
-recursiveladder,20,100,217,62,oink-psi-raw,ok,10,major iterations,0.000515,0.0052
-recursiveladder,20,100,217,62,py-zlk,ok,88549,iterations,,0.6192
-recursiveladder,22,110,239,68,oink-uzlk-raw,ok,139100,iterations,0.031309,0.0375
-recursiveladder,22,110,239,68,oink-zlk-raw,ok,139101,iterations,0.037387,0.0441
-recursiveladder,22,110,239,68,oink-zlkpp-std-raw,ok,227650,iterations,0.244615,0.2516
-recursiveladder,22,110,239,68,oink-tl-raw,ok,22,iterations,0.000114,0.0066
-recursiveladder,22,110,239,68,oink-psi-raw,ok,10,major iterations,0.002398,0.0076
-recursiveladder,22,110,239,68,py-zlk,ok,231834,iterations,,1.5194
-recursiveladder,24,120,261,74,oink-uzlk-raw,ok,364175,iterations,0.066579,0.0747
-recursiveladder,24,120,261,74,oink-zlk-raw,ok,364176,iterations,0.060615,0.0657
-recursiveladder,24,120,261,74,oink-zlkpp-std-raw,ok,596010,iterations,0.610620,0.6159
-recursiveladder,24,120,261,74,oink-tl-raw,ok,24,iterations,0.000087,0.0051
-recursiveladder,24,120,261,74,oink-psi-raw,ok,10,major iterations,0.000752,0.0061
-recursiveladder,24,120,261,74,py-zlk,ok,606959,iterations,,3.2099
-recursiveladder,26,130,283,80,oink-uzlk-raw,ok,953429,iterations,0.202450,0.2077
-recursiveladder,26,130,283,80,oink-zlk-raw,ok,953430,iterations,0.190735,0.1966
-recursiveladder,26,130,283,80,oink-zlkpp-std-raw,ok,1560389,iterations,1.129606,1.1350
-recursiveladder,26,130,283,80,oink-tl-raw,ok,26,iterations,0.000101,0.0050
-recursiveladder,26,130,283,80,oink-psi-raw,ok,10,major iterations,0.000791,0.0055
-recursiveladder,26,130,283,80,py-zlk,ok,1589049,iterations,,9.4419
-recursiveladder,28,140,305,86,oink-uzlk-raw,ok,2496116,iterations,0.485430,0.4911
-recursiveladder,28,140,305,86,oink-zlk-raw,ok,2496117,iterations,0.449917,0.4552
-recursiveladder,28,140,305,86,oink-zlkpp-std-raw,ok,4085166,iterations,2.861024,2.8660
-recursiveladder,28,140,305,86,oink-tl-raw,ok,28,iterations,0.000228,0.0066
-recursiveladder,28,140,305,86,oink-psi-raw,ok,10,major iterations,0.000948,0.0057
-recursiveladder,28,140,305,86,py-zlk,timeout,,,,20.0197
-recursiveladder,30,150,327,92,oink-uzlk-raw,ok,6534923,iterations,1.357675,1.3629
-recursiveladder,30,150,327,92,oink-zlk-raw,ok,6534924,iterations,0.987771,0.9937
-recursiveladder,30,150,327,92,oink-zlkpp-std-raw,ok,10695118,iterations,7.921801,7.9267
-recursiveladder,30,150,327,92,oink-tl-raw,ok,30,iterations,0.000114,0.0093
-recursiveladder,30,150,327,92,oink-psi-raw,ok,10,major iterations,0.001144,0.0065
+recursiveladder,2,10,19,8,oink-uzlk-raw,ok,5,iterations,0.000027,0.0057
+recursiveladder,2,10,19,8,oink-zlk-raw,ok,6,iterations,0.000819,0.0061
+recursiveladder,2,10,19,8,oink-zlkpp-std-raw,ok,5,iterations,0.000026,0.0047
+recursiveladder,2,10,19,8,oink-tl-raw,ok,2,iterations,0.000026,0.0054
+recursiveladder,2,10,19,8,oink-psi-raw,ok,4,major iterations,0.000884,0.0059
+recursiveladder,2,10,19,8,py-zlk,ok,9,iterations,,0.0413
+recursiveladder,4,20,41,14,oink-uzlk-raw,ok,20,iterations,0.000043,0.0071
+recursiveladder,4,20,41,14,oink-zlk-raw,ok,21,iterations,0.000498,0.0052
+recursiveladder,4,20,41,14,oink-zlkpp-std-raw,ok,30,iterations,0.000070,0.0067
+recursiveladder,4,20,41,14,oink-tl-raw,ok,4,iterations,0.000031,0.0046
+recursiveladder,4,20,41,14,oink-psi-raw,ok,10,major iterations,0.008722,0.0226
+recursiveladder,4,20,41,14,py-zlk,ok,34,iterations,,0.0517
+recursiveladder,6,30,63,20,oink-uzlk-raw,ok,59,iterations,0.000036,0.0071
+recursiveladder,6,30,63,20,oink-zlk-raw,ok,60,iterations,0.000431,0.0069
+recursiveladder,6,30,63,20,oink-zlkpp-std-raw,ok,94,iterations,0.000122,0.0071
+recursiveladder,6,30,63,20,oink-tl-raw,ok,6,iterations,0.000037,0.0055
+recursiveladder,6,30,63,20,oink-psi-raw,ok,10,major iterations,0.000528,0.0055
+recursiveladder,6,30,63,20,py-zlk,ok,99,iterations,,0.0548
+recursiveladder,8,40,85,26,oink-uzlk-raw,ok,161,iterations,0.000105,0.0073
+recursiveladder,8,40,85,26,oink-zlk-raw,ok,162,iterations,0.000589,0.0067
+recursiveladder,8,40,85,26,oink-zlkpp-std-raw,ok,261,iterations,0.000553,0.0083
+recursiveladder,8,40,85,26,oink-tl-raw,ok,8,iterations,0.000067,0.0072
+recursiveladder,8,40,85,26,oink-psi-raw,ok,10,major iterations,0.000871,0.0058
+recursiveladder,8,40,85,26,py-zlk,ok,269,iterations,,0.0449
+recursiveladder,10,50,107,32,oink-uzlk-raw,ok,428,iterations,0.000099,0.0046
+recursiveladder,10,50,107,32,oink-zlk-raw,ok,429,iterations,0.001186,0.0055
+recursiveladder,10,50,107,32,oink-zlkpp-std-raw,ok,698,iterations,0.000525,0.0051
+recursiveladder,10,50,107,32,oink-tl-raw,ok,10,iterations,0.000056,0.0080
+recursiveladder,10,50,107,32,oink-psi-raw,ok,10,major iterations,0.000724,0.0068
+recursiveladder,10,50,107,32,py-zlk,ok,714,iterations,,0.0379
+recursiveladder,12,60,129,38,oink-uzlk-raw,ok,1127,iterations,0.000318,0.0053
+recursiveladder,12,60,129,38,oink-zlk-raw,ok,1128,iterations,0.000868,0.0074
+recursiveladder,12,60,129,38,oink-zlkpp-std-raw,ok,1842,iterations,0.001678,0.0072
+recursiveladder,12,60,129,38,oink-tl-raw,ok,12,iterations,0.000047,0.0055
+recursiveladder,12,60,129,38,oink-psi-raw,ok,10,major iterations,0.000918,0.0085
+recursiveladder,12,60,129,38,py-zlk,ok,1879,iterations,,0.0632
+recursiveladder,14,70,151,44,oink-uzlk-raw,ok,2957,iterations,0.000891,0.0074
+recursiveladder,14,70,151,44,oink-zlk-raw,ok,2958,iterations,0.001418,0.0066
+recursiveladder,14,70,151,44,oink-zlkpp-std-raw,ok,4837,iterations,0.005448,0.0113
+recursiveladder,14,70,151,44,oink-tl-raw,ok,14,iterations,0.000051,0.0055
+recursiveladder,14,70,151,44,oink-psi-raw,ok,10,major iterations,0.000819,0.0071
+recursiveladder,14,70,151,44,py-zlk,ok,4929,iterations,,0.0708
+recursiveladder,16,80,173,50,oink-uzlk-raw,ok,7748,iterations,0.002933,0.0098
+recursiveladder,16,80,173,50,oink-zlk-raw,ok,7749,iterations,0.002670,0.0079
+recursiveladder,16,80,173,50,oink-zlkpp-std-raw,ok,12678,iterations,0.009007,0.0161
+recursiveladder,16,80,173,50,oink-tl-raw,ok,16,iterations,0.000076,0.0047
+recursiveladder,16,80,173,50,oink-psi-raw,ok,10,major iterations,0.000713,0.0062
+recursiveladder,16,80,173,50,py-zlk,ok,12914,iterations,,0.1251
+recursiveladder,18,90,195,56,oink-uzlk-raw,ok,20291,iterations,0.004586,0.0096
+recursiveladder,18,90,195,56,oink-zlk-raw,ok,20292,iterations,0.004226,0.0101
+recursiveladder,18,90,195,56,oink-zlkpp-std-raw,ok,33206,iterations,0.025110,0.0315
+recursiveladder,18,90,195,56,oink-tl-raw,ok,18,iterations,0.000063,0.0061
+recursiveladder,18,90,195,56,oink-psi-raw,ok,10,major iterations,0.001227,0.0082
+recursiveladder,18,90,195,56,py-zlk,ok,33819,iterations,,0.2531
+recursiveladder,20,100,217,62,oink-uzlk-raw,ok,53129,iterations,0.012530,0.0177
+recursiveladder,20,100,217,62,oink-zlk-raw,ok,53130,iterations,0.008723,0.0159
+recursiveladder,20,100,217,62,oink-zlkpp-std-raw,ok,86949,iterations,0.079740,0.0855
+recursiveladder,20,100,217,62,oink-tl-raw,ok,20,iterations,0.000102,0.0047
+recursiveladder,20,100,217,62,oink-psi-raw,ok,10,major iterations,0.000609,0.0053
+recursiveladder,20,100,217,62,py-zlk,ok,88549,iterations,,0.5624
+recursiveladder,22,110,239,68,oink-uzlk-raw,ok,139100,iterations,0.028888,0.0354
+recursiveladder,22,110,239,68,oink-zlk-raw,ok,139101,iterations,0.025418,0.0306
+recursiveladder,22,110,239,68,oink-zlkpp-std-raw,ok,227650,iterations,0.160078,0.1653
+recursiveladder,22,110,239,68,oink-tl-raw,ok,22,iterations,0.000216,0.0070
+recursiveladder,22,110,239,68,oink-psi-raw,ok,10,major iterations,0.000868,0.0057
+recursiveladder,22,110,239,68,py-zlk,ok,231834,iterations,,1.6117
+recursiveladder,24,120,261,74,oink-uzlk-raw,ok,364175,iterations,0.085948,0.0932
+recursiveladder,24,120,261,74,oink-zlk-raw,ok,364176,iterations,0.063431,0.0713
+recursiveladder,24,120,261,74,oink-zlkpp-std-raw,ok,596010,iterations,0.546088,0.5516
+recursiveladder,24,120,261,74,oink-tl-raw,ok,24,iterations,0.000081,0.0064
+recursiveladder,24,120,261,74,oink-psi-raw,ok,10,major iterations,0.000890,0.0056
+recursiveladder,24,120,261,74,py-zlk,ok,606959,iterations,,3.8603
+recursiveladder,26,130,283,80,oink-uzlk-raw,ok,953429,iterations,0.203750,0.2089
+recursiveladder,26,130,283,80,oink-zlk-raw,ok,953430,iterations,0.145791,0.1526
+recursiveladder,26,130,283,80,oink-zlkpp-std-raw,ok,1560389,iterations,1.259407,1.2645
+recursiveladder,26,130,283,80,oink-tl-raw,ok,26,iterations,0.000093,0.0049
+recursiveladder,26,130,283,80,oink-psi-raw,ok,10,major iterations,0.000708,0.0080
+recursiveladder,26,130,283,80,py-zlk,ok,1589049,iterations,,9.9999
+recursiveladder,28,140,305,86,oink-uzlk-raw,ok,2496116,iterations,0.492162,0.4974
+recursiveladder,28,140,305,86,oink-zlk-raw,ok,2496117,iterations,0.390676,0.3979
+recursiveladder,28,140,305,86,oink-zlkpp-std-raw,ok,4085166,iterations,2.998674,3.0036
+recursiveladder,28,140,305,86,oink-tl-raw,ok,28,iterations,0.000098,0.0050
+recursiveladder,28,140,305,86,oink-psi-raw,ok,10,major iterations,0.000810,0.0061
+recursiveladder,28,140,305,86,py-zlk,timeout,,,,20.0226
+recursiveladder,30,150,327,92,oink-uzlk-raw,ok,6534923,iterations,1.363435,1.3716
+recursiveladder,30,150,327,92,oink-zlk-raw,ok,6534924,iterations,1.005392,1.0102
+recursiveladder,30,150,327,92,oink-zlkpp-std-raw,ok,10695118,iterations,7.606548,7.6115
+recursiveladder,30,150,327,92,oink-tl-raw,ok,30,iterations,0.000215,0.0062
+recursiveladder,30,150,327,92,oink-psi-raw,ok,10,major iterations,0.000819,0.0068
 recursiveladder,30,150,327,92,py-zlk,skipped,,,,
-recursiveladder,34,170,371,104,oink-uzlk-raw,ok,44791052,iterations,9.748540,9.7550
-recursiveladder,34,170,371,104,oink-zlk-raw,ok,44791053,iterations,6.883989,6.8894
-recursiveladder,34,170,371,104,oink-zlkpp-std-raw,timeout,,,,20.0204
-recursiveladder,34,170,371,104,oink-tl-raw,ok,34,iterations,0.000132,0.0057
-recursiveladder,34,170,371,104,oink-psi-raw,ok,10,major iterations,0.001001,0.0076
+recursiveladder,34,170,371,104,oink-uzlk-raw,ok,44791052,iterations,9.862027,9.8682
+recursiveladder,34,170,371,104,oink-zlk-raw,ok,44791053,iterations,7.278358,7.2835
+recursiveladder,34,170,371,104,oink-zlkpp-std-raw,timeout,,,,20.0216
+recursiveladder,34,170,371,104,oink-tl-raw,ok,34,iterations,0.000126,0.0051
+recursiveladder,34,170,371,104,oink-psi-raw,ok,10,major iterations,0.000786,0.0059
 recursiveladder,34,170,371,104,py-zlk,skipped,,,,
-recursiveladder,38,190,415,116,oink-uzlk-raw,timeout,,,,20.0215
-recursiveladder,38,190,415,116,oink-zlk-raw,timeout,,,,20.0022
+recursiveladder,38,190,415,116,oink-uzlk-raw,timeout,,,,20.0209
+recursiveladder,38,190,415,116,oink-zlk-raw,timeout,,,,20.0216
 recursiveladder,38,190,415,116,oink-zlkpp-std-raw,skipped,,,,
-recursiveladder,38,190,415,116,oink-tl-raw,ok,38,iterations,0.000147,0.0061
-recursiveladder,38,190,415,116,oink-psi-raw,ok,10,major iterations,0.000787,0.0056
+recursiveladder,38,190,415,116,oink-tl-raw,ok,38,iterations,0.000160,0.0051
+recursiveladder,38,190,415,116,oink-psi-raw,ok,10,major iterations,0.000836,0.0055
 recursiveladder,38,190,415,116,py-zlk,skipped,,,,

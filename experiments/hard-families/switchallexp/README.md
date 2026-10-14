@@ -1,6 +1,6 @@
 # switchallexp
 
-**Verdict:** NOT CONFIRMED: the targeted algorithm (PGSolver's switch-all strategy improvement) was not run (PGSolver binaries blocked; port of stratimpralgs.ml queued). Oink's psi grows ~linearly (132 major iterations at N = 64) and ssi, zlk, tl are constant: the family does not hurt them. Positional strategies were not checked in this sweep (the check was added to sweep.py during it); a re-run with strategy checks is pending.
+**Verdict:** CONFIRMED against the targeted algorithm, run through Python ports: PGSolver's switch-all strategy improvement (pgsolver_si.py, port of stratimpralgs.ml; bare SI loop, without PGSolver's universal_solve preprocessing) takes 11, 31, 71, 151, 311, 631, 1244, 2487, 4973, 9928 iterations for N = 1..10 (doubling per N; table switchallexp-pgs below). Oink's psi grows ~linearly (24 major iterations at N = 10, 132 at N = 64), ssi, zlk, tl are constant: the family does not hurt them. Re-run 2026-10-14 with positional-strategy checks (harness/verify.py): every finishing solver's strategies verified, no disagreement.
 
 - Generator source: github.com/tcsprojects/pgsolver @ d3cd624b61cd66739c45aff9554f6bbdcdd05401, src/lib/generators/policyiter/generators/switchallexp.ml (Python port)
 - Command: `python3 experiments/hard-families/pgsolver_port.py switchallexp N` (N = family parameter)
@@ -25,12 +25,31 @@ b: fitted base of work ~ b^N; k: fitted exponent of work ~ n^k (n = vertices). A
 
 | N | n | m | d | oink-psi-raw (major iterations) | oink-ssi-raw (major iterations) | oink-zlk-raw (iterations) | oink-tl-raw (iterations) | py-zlk (iterations) |
 |---|---|---|---|---|---|---|---|---|
-| 1 | 21 | 41 | 21 | 6 / 0.00056 | 1 / 6.7e-05 | 2 / 0.000534 | 1 / 2.6e-05 | 7 / 0.0345 |
-| 2 | 35 | 75 | 35 | 8 / 0.000735 | 1 / 5.9e-05 | 2 / 0.000462 | 1 / 2.6e-05 | 7 / 0.0375 |
-| 4 | 63 | 143 | 63 | 12 / 0.000492 | 1 / 7.3e-05 | 2 / 0.000524 | 1 / 2.4e-05 | 7 / 0.0315 |
-| 8 | 119 | 279 | 119 | 20 / 0.00081 | 1 / 0.000106 | 2 / 0.000451 | 1 / 2.6e-05 | 7 / 0.032 |
-| 16 | 231 | 551 | 231 | 36 / 0.00134 | 1 / 0.000236 | 2 / 0.000398 | 1 / 2.7e-05 | 7 / 0.0334 |
-| 32 | 455 | 1095 | 455 | 68 / 0.00431 | 1 / 0.000723 | 2 / 0.00046 | 1 / 4.5e-05 | 7 / 0.0359 |
-| 64 | 903 | 2183 | 903 | 132 / 0.0243 | 1 / 0.00221 | 2 / 0.000566 | 1 / 6.4e-05 | 7 / 0.0722 |
+| 1 | 21 | 41 | 21 | 6 / 0.000691 | 1 / 5e-05 | 2 / 0.000611 | 1 / 3.5e-05 | 7 / 0.0314 |
+| 2 | 35 | 75 | 35 | 8 / 0.000515 | 1 / 6.2e-05 | 2 / 0.000777 | 1 / 2.6e-05 | 7 / 0.0312 |
+| 4 | 63 | 143 | 63 | 12 / 0.000547 | 1 / 6.6e-05 | 2 / 0.00298 | 1 / 3.3e-05 | 7 / 0.0364 |
+| 8 | 119 | 279 | 119 | 20 / 0.00114 | 1 / 0.000123 | 2 / 0.000634 | 1 / 0.000108 | 7 / 0.0325 |
+| 16 | 231 | 551 | 231 | 36 / 0.00168 | 1 / 0.000195 | 2 / 0.000513 | 1 / 2.9e-05 | 7 / 0.0392 |
+| 32 | 455 | 1095 | 455 | 68 / 0.00566 | 1 / 0.000563 | 2 / 0.000509 | 1 / 3.9e-05 | 7 / 0.0415 |
+| 64 | 903 | 2183 | 903 | 132 / 0.0285 | 1 / 0.00199 | 2 / 0.000514 | 1 / 5.6e-05 | 7 / 0.0562 |
 
 ![sweep](sweep.png)
+
+## Targeted algorithm (ported): switchallexp-pgs
+
+Family switchallexp-pgs; generator `python3 pgsolver_port.py switchallexp {N}`; timeout 300s per run; cell = iterations / wall seconds (iterations as reported by the solver; '-' if it reports none).
+
+| N | n | m | d | pgs-switchall (iterations) | oink-psi-raw (major iterations) | oink-zlk-raw (iterations) | py-zlk (iterations) |
+|---|---|---|---|---|---|---|---|
+| 1 | 21 | 41 | 21 | 11 / 0.0375 | 6 / 0.000701 | 2 / 0.00046 | 7 / 0.029 |
+| 2 | 35 | 75 | 35 | 31 / 0.0716 | 8 / 0.000461 | 2 / 0.000423 | 7 / 0.0328 |
+| 3 | 49 | 109 | 49 | 71 / 0.163 | 10 / 0.000577 | 2 / 0.000704 | 7 / 0.0533 |
+| 4 | 63 | 143 | 63 | 151 / 0.452 | 12 / 0.000485 | 2 / 0.000242 | 7 / 0.0302 |
+| 5 | 77 | 177 | 77 | 311 / 1.25 | 14 / 0.000584 | 2 / 0.000507 | 7 / 0.0322 |
+| 6 | 91 | 211 | 91 | 631 / 3.74 | 16 / 0.000603 | 2 / 0.00123 | 7 / 0.0333 |
+| 7 | 105 | 245 | 105 | 1244 / 10.6 | 18 / 0.00041 | 2 / 0.000425 | 7 / 0.0314 |
+| 8 | 119 | 279 | 119 | 2487 / 23.2 | 20 / 0.00047 | 2 / 0.000238 | 7 / 0.0315 |
+| 9 | 133 | 313 | 133 | 4973 / 58.2 | 22 / 0.000703 | 2 / 0.000453 | 7 / 0.0338 |
+| 10 | 147 | 347 | 147 | 9928 / 136 | 24 / 0.000734 | 2 / 0.000744 | 7 / 0.0342 |
+
+![switchallexp-pgs](switchallexp-pgs.png)

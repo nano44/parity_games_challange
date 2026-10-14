@@ -1,0 +1,33 @@
+family,N,n,m,d,solver,status,iterations,unit,solver_s,wall_s
+switchbestexp-pgs,1,35,70,34,pgs-switchall,ok,22,iterations,,0.0604
+switchbestexp-pgs,1,35,70,34,oink-psi-raw,ok,12,major iterations,0.000487,0.0048
+switchbestexp-pgs,1,35,70,34,oink-zlk-raw,ok,2,iterations,0.000349,0.0047
+switchbestexp-pgs,1,35,70,34,py-zlk,ok,7,iterations,,0.0321
+switchbestexp-pgs,2,60,130,60,pgs-switchall,ok,62,iterations,,0.1852
+switchbestexp-pgs,2,60,130,60,oink-psi-raw,ok,18,major iterations,0.000578,0.0056
+switchbestexp-pgs,2,60,130,60,oink-zlk-raw,ok,2,iterations,0.000482,0.0064
+switchbestexp-pgs,2,60,130,60,py-zlk,ok,18,iterations,,0.0329
+switchbestexp-pgs,3,85,190,84,pgs-switchall,ok,142,iterations,,0.6859
+switchbestexp-pgs,3,85,190,84,oink-psi-raw,ok,24,major iterations,0.000570,0.0052
+switchbestexp-pgs,3,85,190,84,oink-zlk-raw,ok,2,iterations,0.000476,0.0048
+switchbestexp-pgs,3,85,190,84,py-zlk,ok,28,iterations,,0.0316
+switchbestexp-pgs,4,110,250,110,pgs-switchall,ok,302,iterations,,2.1220
+switchbestexp-pgs,4,110,250,110,oink-psi-raw,ok,30,major iterations,0.000898,0.0056
+switchbestexp-pgs,4,110,250,110,oink-zlk-raw,ok,2,iterations,0.000450,0.0045
+switchbestexp-pgs,4,110,250,110,py-zlk,ok,51,iterations,,0.0302
+switchbestexp-pgs,5,135,310,134,pgs-switchall,ok,622,iterations,,7.1543
+switchbestexp-pgs,5,135,310,134,oink-psi-raw,ok,36,major iterations,0.001352,0.0077
+switchbestexp-pgs,5,135,310,134,oink-zlk-raw,ok,2,iterations,0.000594,0.0113
+switchbestexp-pgs,5,135,310,134,py-zlk,ok,71,iterations,,0.0390
+switchbestexp-pgs,6,160,370,160,pgs-switchall,ok,1262,iterations,,18.4211
+switchbestexp-pgs,6,160,370,160,oink-psi-raw,ok,42,major iterations,0.000957,0.0069
+switchbestexp-pgs,6,160,370,160,oink-zlk-raw,ok,2,iterations,0.000432,0.0048
+switchbestexp-pgs,6,160,370,160,py-zlk,ok,118,iterations,,0.0356
+switchbestexp-pgs,7,185,430,184,pgs-switchall,ok,2542,iterations,,48.5762
+switchbestexp-pgs,7,185,430,184,oink-psi-raw,ok,48,major iterations,0.001819,0.0073
+switchbestexp-pgs,7,185,430,184,oink-zlk-raw,ok,2,iterations,0.000466,0.0052
+switchbestexp-pgs,7,185,430,184,py-zlk,ok,158,iterations,,0.0446
+switchbestexp-pgs,8,210,490,210,pgs-switchall,ok,5102,iterations,,122.8201
+switchbestexp-pgs,8,210,490,210,oink-psi-raw,ok,54,major iterations,0.001557,0.0061
+switchbestexp-pgs,8,210,490,210,oink-zlk-raw,ok,2,iterations,0.000467,0.0052
+switchbestexp-pgs,8,210,490,210,py-zlk,ok,253,iterations,,0.0461

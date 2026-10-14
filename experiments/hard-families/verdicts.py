@@ -1,7 +1,7 @@
 """Hand-written verdicts per family, from results/*.csv (sweep of 2026-10-14, 20 s timeout per run, one worker).
 b = fitted growth base of the solver's work counter per +1 in N over the last finished sizes (see README tables)."""
-NOTE = (" Positional strategies were not checked in this sweep (the check was added to sweep.py during it); "
-        "a re-run with strategy checks is pending.")
+NOTE = (" Re-run 2026-10-14 with positional-strategy checks (harness/verify.py): every finishing solver's "
+        "strategies verified, no disagreement.")
 VERDICTS = {
     "tc": "CONFIRMED. Exponential for the targets: tl, zlk, uzlk, rr, dp grow by b = 2.00 per +1 in N (fpi 1.92, "
           "tspm 2.74, zlkq 2.23 over shorter ranges; zlkq is claimed quasi-polynomial by Oink, which our range cannot "
@@ -19,17 +19,21 @@ VERDICTS = {
                     "Contrast tl (~linear) and psi (constant) up to N = 40.",
     "counter_rob": "CONFIRMED. As counter_core: uzlk b = 3.67, zlkpp-std 2.90, zlk 2.62, py-zlk 3.74; contrast tl and psi polynomial.",
     "counter_ortl": "CONFIRMED. ortl (the target) grows by b = 2.00 (2048 iterations at N = 12, then timeout); contrast rtl, tl (2 iterations) and psi (6) constant up to N = 40.",
-    "counter_qpt": "BLOW-UP OBSERVED, TYPE OPEN. With preprocessing off, qpt's lifts grow fast (work ~ n^5.2 between "
-                   "N = 2 and 16, 975553 lifts at N = 16; timeout at N = 32), sizes were doubled so the growth type "
-                   "(polynomial of high degree vs super-polynomial) is not determined; needs N = 16..32 step 1. "
-                   "Contrast zlk, tl constant; sspm ~ n^2. Oink with default preprocessing solves the family outright.",
+    "counter_qpt": "SUPER-POLYNOMIAL JUMPS OBSERVED, CLASS OPEN. With preprocessing off, qpt's lifts jump at N = 8 "
+                   "(x15 over N = 6) and N = 16 (x31 over N = 14), growing only ~N^3..N^4 in between (13.8M lifts at N = 28; "
+                   "timeout at N = 32, the next power of two). The jumps at powers of two fit a counter over log N bits, i.e. "
+                   "quasi-polynomial-type growth, but the data cannot fix the class. Contrast zlk, tl constant; sspm ~ n^2. "
+                   "Oink with default preprocessing solves the family outright.",
     "recursiveladder": "CONFIRMED (on the Python port). Zielonka grows by b = 1.618 per +1 in N in Oink uzlk/zlk/zlkpp-std "
                        "and in the independent py-zlk (44.8M iterations at N = 34); contrast tl (~linear) and psi (constant) up to N = 38.",
-    "switchallexp": "NOT CONFIRMED: the targeted algorithm (PGSolver's switch-all strategy improvement) was not run "
-                    "(PGSolver binaries blocked; port of stratimpralgs.ml queued). Oink's psi grows ~linearly (132 major "
-                    "iterations at N = 64) and ssi, zlk, tl are constant: the family does not hurt them.",
-    "switchbestexp": "NOT CONFIRMED: targeted algorithm (PGSolver's switch-best SI) not run, as for switchallexp. "
-                     "Oink psi ~ linear (390 at N = 64); ssi, zlk, tl constant; py-zlk grows mildly (b = 1.47 over N = 2..16, "
-                     "it then timed out on these sizes because of Python recursion cost).",
+    "switchallexp": "CONFIRMED against the targeted algorithm, run through Python ports: PGSolver's switch-all "
+                    "strategy improvement (pgsolver_si.py, port of stratimpralgs.ml; bare SI loop, without PGSolver's "
+                    "universal_solve preprocessing) takes 11, 31, 71, 151, 311, 631, 1244, 2487, 4973, 9928 iterations for "
+                    "N = 1..10 (doubling per N; table switchallexp-pgs below). Oink's psi grows ~linearly (24 major iterations "
+                    "at N = 10, 132 at N = 64), ssi, zlk, tl are constant: the family does not hurt them.",
+    "switchbestexp": "CONFIRMED against the targeted algorithm, run through Python ports: PGSolver's switch-best "
+                     "strategy improvement (pgsolver_si.py --switchbest; port of switch_globally_best.ml with the alternating "
+                     "and cheap-escape transformations; bare SI loop) takes 23, 61, 137, 289, 593, 1201 iterations for N = 1..6 "
+                     "(doubling; table switchbestexp-pgsbest below). Oink psi ~linear (390 at N = 64); ssi, zlk, tl constant.",
 }
 VERDICTS = {k: v + NOTE for k, v in VERDICTS.items()}

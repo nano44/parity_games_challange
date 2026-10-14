@@ -1,85 +1,85 @@
 family,N,n,m,d,solver,status,iterations,unit,solver_s,wall_s
-counter_rr,2,8,16,4,oink-rr,ok,2,promotions,0.000029,0.0057
-counter_rr,2,8,16,4,oink-rrdp,ok,2,promotions,0.000028,0.0044
-counter_rr,2,8,16,4,oink-zlk,ok,3,iterations,0.000492,0.0046
-counter_rr,2,8,16,4,oink-tl,ok,2,iterations,0.000022,0.0041
-counter_rr,2,8,16,4,oink-psi,ok,6,major iterations,0.000486,0.0051
-counter_rr,2,8,16,4,py-zlk,ok,8,iterations,,0.0304
-counter_rr,4,16,32,8,oink-rr,ok,9,promotions,0.000022,0.0045
-counter_rr,4,16,32,8,oink-rrdp,ok,8,promotions,0.000034,0.0058
-counter_rr,4,16,32,8,oink-zlk,ok,13,iterations,0.000533,0.0053
-counter_rr,4,16,32,8,oink-tl,ok,2,iterations,0.000027,0.0052
-counter_rr,4,16,32,8,oink-psi,ok,6,major iterations,0.000653,0.0054
-counter_rr,4,16,32,8,py-zlk,ok,36,iterations,,0.0327
-counter_rr,6,24,48,12,oink-rr,ok,27,promotions,0.000034,0.0041
-counter_rr,6,24,48,12,oink-rrdp,ok,17,promotions,0.000044,0.0055
-counter_rr,6,24,48,12,oink-zlk,ok,41,iterations,0.000484,0.0045
-counter_rr,6,24,48,12,oink-tl,ok,2,iterations,0.000024,0.0045
-counter_rr,6,24,48,12,oink-psi,ok,6,major iterations,0.000402,0.0047
-counter_rr,6,24,48,12,py-zlk,ok,143,iterations,,0.0355
-counter_rr,8,32,64,16,oink-rr,ok,74,promotions,0.000066,0.0054
-counter_rr,8,32,64,16,oink-rrdp,ok,29,promotions,0.000071,0.0068
-counter_rr,8,32,64,16,oink-zlk,ok,116,iterations,0.000631,0.0064
-counter_rr,8,32,64,16,oink-tl,ok,2,iterations,0.000040,0.0061
-counter_rr,8,32,64,16,oink-psi,ok,6,major iterations,0.000557,0.0066
-counter_rr,8,32,64,16,py-zlk,ok,542,iterations,,0.0309
-counter_rr,10,40,80,20,oink-rr,ok,197,promotions,0.000108,0.0055
-counter_rr,10,40,80,20,oink-rrdp,ok,44,promotions,0.000045,0.0042
-counter_rr,10,40,80,20,oink-zlk,ok,314,iterations,0.000494,0.0057
-counter_rr,10,40,80,20,oink-tl,ok,2,iterations,0.000050,0.0052
-counter_rr,10,40,80,20,oink-psi,ok,6,major iterations,0.000589,0.0059
-counter_rr,10,40,80,20,py-zlk,ok,2010,iterations,,0.0554
-counter_rr,12,48,96,24,oink-rr,ok,519,promotions,0.000137,0.0046
-counter_rr,12,48,96,24,oink-rrdp,ok,62,promotions,0.000063,0.0049
-counter_rr,12,48,96,24,oink-zlk,ok,834,iterations,0.000774,0.0054
-counter_rr,12,48,96,24,oink-tl,ok,2,iterations,0.000031,0.0046
-counter_rr,12,48,96,24,oink-psi,ok,6,major iterations,0.000514,0.0054
-counter_rr,12,48,96,24,py-zlk,ok,7376,iterations,,0.0865
-counter_rr,14,56,112,28,oink-rr,ok,1362,promotions,0.000523,0.0068
-counter_rr,14,56,112,28,oink-rrdp,ok,83,promotions,0.000077,0.0046
-counter_rr,14,56,112,28,oink-zlk,ok,2197,iterations,0.000911,0.0053
-counter_rr,14,56,112,28,oink-tl,ok,2,iterations,0.000033,0.0046
-counter_rr,14,56,112,28,oink-psi,ok,6,major iterations,0.000517,0.0045
-counter_rr,14,56,112,28,py-zlk,ok,26927,iterations,,0.1126
-counter_rr,16,64,128,32,oink-rr,ok,3569,promotions,0.000731,0.0047
-counter_rr,16,64,128,32,oink-rrdp,ok,107,promotions,0.000180,0.0062
-counter_rr,16,64,128,32,oink-zlk,ok,5767,iterations,0.001551,0.0067
-counter_rr,16,64,128,32,oink-tl,ok,2,iterations,0.000038,0.0041
-counter_rr,16,64,128,32,oink-psi,ok,6,major iterations,0.000482,0.0051
-counter_rr,16,64,128,32,py-zlk,ok,98039,iterations,,0.3851
-counter_rr,18,72,144,36,oink-rr,ok,9347,promotions,0.001857,0.0076
-counter_rr,18,72,144,36,oink-rrdp,ok,134,promotions,0.000125,0.0043
-counter_rr,18,72,144,36,oink-zlk,ok,15115,iterations,0.003068,0.0074
-counter_rr,18,72,144,36,oink-tl,ok,2,iterations,0.000038,0.0046
-counter_rr,18,72,144,36,oink-psi,ok,6,major iterations,0.000744,0.0054
-counter_rr,18,72,144,36,py-zlk,ok,356449,iterations,,1.2189
-counter_rr,20,80,160,40,oink-rr,ok,24474,promotions,0.007401,0.0133
-counter_rr,20,80,160,40,oink-rrdp,ok,164,promotions,0.000255,0.0050
-counter_rr,20,80,160,40,oink-zlk,ok,39590,iterations,0.008171,0.0130
-counter_rr,20,80,160,40,oink-tl,ok,2,iterations,0.000040,0.0045
-counter_rr,20,80,160,40,oink-psi,ok,6,major iterations,0.000508,0.0051
-counter_rr,20,80,160,40,py-zlk,ok,1294985,iterations,,4.0768
-counter_rr,24,96,192,48,oink-rr,ok,167759,promotions,0.033701,0.0389
-counter_rr,24,96,192,48,oink-rrdp,ok,233,promotions,0.000204,0.0068
-counter_rr,24,96,192,48,oink-zlk,ok,271428,iterations,0.062029,0.0680
-counter_rr,24,96,192,48,oink-tl,ok,2,iterations,0.000066,0.0062
-counter_rr,24,96,192,48,oink-psi,ok,6,major iterations,0.000561,0.0048
-counter_rr,24,96,192,48,py-zlk,timeout,,,,20.0192
-counter_rr,28,112,224,56,oink-rr,ok,1149849,promotions,0.258629,0.2648
-counter_rr,28,112,224,56,oink-rrdp,ok,314,promotions,0.000375,0.0079
-counter_rr,28,112,224,56,oink-zlk,ok,1860481,iterations,0.375192,0.3827
-counter_rr,28,112,224,56,oink-tl,ok,2,iterations,0.000083,0.0045
-counter_rr,28,112,224,56,oink-psi,ok,6,major iterations,0.000465,0.0052
+counter_rr,2,8,16,4,oink-rr,ok,2,promotions,0.000020,0.0041
+counter_rr,2,8,16,4,oink-rrdp,ok,2,promotions,0.000026,0.0038
+counter_rr,2,8,16,4,oink-zlk,ok,3,iterations,0.000335,0.0040
+counter_rr,2,8,16,4,oink-tl,ok,2,iterations,0.000030,0.0041
+counter_rr,2,8,16,4,oink-psi,ok,6,major iterations,0.000369,0.0044
+counter_rr,2,8,16,4,py-zlk,ok,8,iterations,,0.0299
+counter_rr,4,16,32,8,oink-rr,ok,9,promotions,0.000025,0.0041
+counter_rr,4,16,32,8,oink-rrdp,ok,8,promotions,0.000023,0.0038
+counter_rr,4,16,32,8,oink-zlk,ok,13,iterations,0.000426,0.0045
+counter_rr,4,16,32,8,oink-tl,ok,2,iterations,0.000029,0.0039
+counter_rr,4,16,32,8,oink-psi,ok,6,major iterations,0.000403,0.0045
+counter_rr,4,16,32,8,py-zlk,ok,36,iterations,,0.0352
+counter_rr,6,24,48,12,oink-rr,ok,27,promotions,0.000027,0.0042
+counter_rr,6,24,48,12,oink-rrdp,ok,17,promotions,0.000048,0.0042
+counter_rr,6,24,48,12,oink-zlk,ok,41,iterations,0.000390,0.0044
+counter_rr,6,24,48,12,oink-tl,ok,2,iterations,0.000034,0.0041
+counter_rr,6,24,48,12,oink-psi,ok,6,major iterations,0.000651,0.0054
+counter_rr,6,24,48,12,py-zlk,ok,143,iterations,,0.0328
+counter_rr,8,32,64,16,oink-rr,ok,74,promotions,0.000039,0.0042
+counter_rr,8,32,64,16,oink-rrdp,ok,29,promotions,0.000039,0.0040
+counter_rr,8,32,64,16,oink-zlk,ok,116,iterations,0.000443,0.0044
+counter_rr,8,32,64,16,oink-tl,ok,2,iterations,0.000028,0.0040
+counter_rr,8,32,64,16,oink-psi,ok,6,major iterations,0.000416,0.0044
+counter_rr,8,32,64,16,py-zlk,ok,542,iterations,,0.0330
+counter_rr,10,40,80,20,oink-rr,ok,197,promotions,0.000066,0.0047
+counter_rr,10,40,80,20,oink-rrdp,ok,44,promotions,0.000047,0.0042
+counter_rr,10,40,80,20,oink-zlk,ok,314,iterations,0.000439,0.0044
+counter_rr,10,40,80,20,oink-tl,ok,2,iterations,0.000029,0.0040
+counter_rr,10,40,80,20,oink-psi,ok,6,major iterations,0.000403,0.0043
+counter_rr,10,40,80,20,py-zlk,ok,2010,iterations,,0.0361
+counter_rr,12,48,96,24,oink-rr,ok,519,promotions,0.000126,0.0045
+counter_rr,12,48,96,24,oink-rrdp,ok,62,promotions,0.000084,0.0040
+counter_rr,12,48,96,24,oink-zlk,ok,834,iterations,0.000538,0.0042
+counter_rr,12,48,96,24,oink-tl,ok,2,iterations,0.000034,0.0037
+counter_rr,12,48,96,24,oink-psi,ok,6,major iterations,0.000381,0.0043
+counter_rr,12,48,96,24,py-zlk,ok,7376,iterations,,0.0651
+counter_rr,14,56,112,28,oink-rr,ok,1362,promotions,0.000276,0.0050
+counter_rr,14,56,112,28,oink-rrdp,ok,83,promotions,0.000075,0.0045
+counter_rr,14,56,112,28,oink-zlk,ok,2197,iterations,0.001185,0.0053
+counter_rr,14,56,112,28,oink-tl,ok,2,iterations,0.000032,0.0053
+counter_rr,14,56,112,28,oink-psi,ok,6,major iterations,0.000409,0.0049
+counter_rr,14,56,112,28,py-zlk,ok,26927,iterations,,0.1505
+counter_rr,16,64,128,32,oink-rr,ok,3569,promotions,0.001339,0.0058
+counter_rr,16,64,128,32,oink-rrdp,ok,107,promotions,0.000101,0.0043
+counter_rr,16,64,128,32,oink-zlk,ok,5767,iterations,0.001524,0.0058
+counter_rr,16,64,128,32,oink-tl,ok,2,iterations,0.000038,0.0043
+counter_rr,16,64,128,32,oink-psi,ok,6,major iterations,0.000506,0.0060
+counter_rr,16,64,128,32,py-zlk,ok,98039,iterations,,0.3536
+counter_rr,18,72,144,36,oink-rr,ok,9347,promotions,0.001855,0.0062
+counter_rr,18,72,144,36,oink-rrdp,ok,134,promotions,0.000106,0.0041
+counter_rr,18,72,144,36,oink-zlk,ok,15115,iterations,0.003308,0.0073
+counter_rr,18,72,144,36,oink-tl,ok,2,iterations,0.000045,0.0042
+counter_rr,18,72,144,36,oink-psi,ok,6,major iterations,0.000423,0.0044
+counter_rr,18,72,144,36,py-zlk,ok,356449,iterations,,1.2853
+counter_rr,20,80,160,40,oink-rr,ok,24474,promotions,0.008536,0.0148
+counter_rr,20,80,160,40,oink-rrdp,ok,164,promotions,0.000246,0.0067
+counter_rr,20,80,160,40,oink-zlk,ok,39590,iterations,0.009888,0.0162
+counter_rr,20,80,160,40,oink-tl,ok,2,iterations,0.000061,0.0061
+counter_rr,20,80,160,40,oink-psi,ok,6,major iterations,0.000575,0.0065
+counter_rr,20,80,160,40,py-zlk,ok,1294985,iterations,,4.4244
+counter_rr,24,96,192,48,oink-rr,ok,167759,promotions,0.032935,0.0391
+counter_rr,24,96,192,48,oink-rrdp,ok,233,promotions,0.000223,0.0045
+counter_rr,24,96,192,48,oink-zlk,ok,271428,iterations,0.052445,0.0582
+counter_rr,24,96,192,48,oink-tl,ok,2,iterations,0.000056,0.0049
+counter_rr,24,96,192,48,oink-psi,ok,6,major iterations,0.000626,0.0067
+counter_rr,24,96,192,48,py-zlk,timeout,,,,20.0228
+counter_rr,28,112,224,56,oink-rr,ok,1149849,promotions,0.239918,0.2492
+counter_rr,28,112,224,56,oink-rrdp,ok,314,promotions,0.002507,0.0098
+counter_rr,28,112,224,56,oink-zlk,ok,1860481,iterations,0.516518,0.5228
+counter_rr,28,112,224,56,oink-tl,ok,2,iterations,0.000050,0.0050
+counter_rr,28,112,224,56,oink-psi,ok,6,major iterations,0.000686,0.0054
 counter_rr,28,112,224,56,py-zlk,skipped,,,,
-counter_rr,32,128,256,64,oink-rr,ok,7881194,promotions,1.753608,1.7586
-counter_rr,32,128,256,64,oink-rrdp,ok,407,promotions,0.000382,0.0068
-counter_rr,32,128,256,64,oink-zlk,ok,12752024,iterations,3.228561,3.2346
-counter_rr,32,128,256,64,oink-tl,ok,2,iterations,0.000041,0.0046
-counter_rr,32,128,256,64,oink-psi,ok,6,major iterations,0.000590,0.0064
+counter_rr,32,128,256,64,oink-rr,ok,7881194,promotions,1.728443,1.7335
+counter_rr,32,128,256,64,oink-rrdp,ok,407,promotions,0.000384,0.0059
+counter_rr,32,128,256,64,oink-zlk,ok,12752024,iterations,2.714836,2.7212
+counter_rr,32,128,256,64,oink-tl,ok,2,iterations,0.000048,0.0054
+counter_rr,32,128,256,64,oink-psi,ok,6,major iterations,0.000714,0.0054
 counter_rr,32,128,256,64,py-zlk,skipped,,,,
-counter_rr,40,160,320,80,oink-rr,timeout,,,,20.0198
-counter_rr,40,160,320,80,oink-rrdp,ok,629,promotions,0.001476,0.0094
-counter_rr,40,160,320,80,oink-zlk,timeout,,,,20.0165
-counter_rr,40,160,320,80,oink-tl,ok,2,iterations,0.000048,0.0056
-counter_rr,40,160,320,80,oink-psi,ok,6,major iterations,0.000822,0.0061
+counter_rr,40,160,320,80,oink-rr,timeout,,,,20.0088
+counter_rr,40,160,320,80,oink-rrdp,ok,629,promotions,0.000809,0.0057
+counter_rr,40,160,320,80,oink-zlk,timeout,,,,20.0187
+counter_rr,40,160,320,80,oink-tl,ok,2,iterations,0.000052,0.0053
+counter_rr,40,160,320,80,oink-psi,ok,6,major iterations,0.000673,0.0080
 counter_rr,40,160,320,80,py-zlk,skipped,,,,
