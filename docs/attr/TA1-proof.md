@@ -1,0 +1,154 @@
+# T-A1: the class of parity games that psolB solves completely (L-ATTR, 2026-10-15; proof draft, NOT refereed)
+Vocabulary: TARGET.md section 1 (max-parity; G = (V, V_E, V_O, E, pr)). Solvers: psolB (HKP Fig. 3) and psolQ (HKP Fig. 5),
+HKP = Huth, Kuo, Piterman, arXiv 1405.0386v2, implemented in experiments/attr/psolb.py and psolq.py (pseudocode with line
+numbers in notes/L-ATTR.md). HKP work in min-parity; every HKP notion is restated here in max-parity (colour = M - priority;
+"colour >= c" becomes "priority <= d"). Data: docs/attr/A1-results.md section 3. Gaps are listed in section 6.
+
+## 1. Definitions
+Players p, q = the opponent of p. For R ⊆ V, G ∩ R is the structure induced on R; it is a *subgame* if every vertex of R has a
+successor in R. All notions below for a subgame G ∩ R use only edges inside R.
+- Trap. S ⊆ R is a *trap for q in R* if every q-vertex of S has all its R-successors in S and every p-vertex of S has some
+  R-successor in S (DJT, arXiv 2003.08627 v2 section 2). A trap for q is a subgame.
+- Attractor. Attr_p^R(X) = least Z ⊇ X ∩ R such that a p-vertex of R with an R-successor in Z, or a q-vertex of R with all its
+  R-successors in Z, is in Z. Fact A1: R \ Attr_p^R(X) is a trap for p in R, hence a subgame (HKP Thm 1).
+- Monotone attractor (HKP Def. 3, max-parity). For d >= 0 and X ⊆ R: MAttr_p^R(X, d) = least Z ⊆ R such that a vertex v ∈ R
+  with pr(v) <= d is in Z as soon as (v ∈ V_p and some R-successor of v is in Z ∪ X) or (v ∈ V_q and all R-successors of v are
+  in Z ∪ X). X is kept external: x ∈ X is in Z only if attracted to X in >= 1 move.
+- Recurrent set. X ⊆ R is *(p,d)-recurrent in R* if X ≠ ∅ and X ⊆ MAttr_p^R(X, d): from every x ∈ X, p forces a revisit of X
+  while every vertex visited (x included) has priority <= d. (HKP: "MAttr(X) is fatal".)
+- Peelable (the predicate PA** of A1-results.md). Let d >= 0 with d ≡ p (mod 2), and R ⊆ V with G ∩ R a subgame and
+  pr(R) <= d. R is *(p,d)-peelable* if R = ∅, or there is a non-empty F ⊆ R such that R \ F is (p,d)-peelable and
+  (a) F = Attr_p^R(MAttr_p^R(X, d)) for some (p,d)-recurrent X ⊆ pr^{-1}(d) ∩ R, or
+  (b) F = Attr_p^R(S) for some non-empty trap S for q in R with pr(S) <= d-2 that is (p,d-2)-peelable.
+  (R \ F is a subgame by Fact A1; S is a subgame as a trap. Recursion on (d, |R|).)
+- d_p(G) = the least d ≡ p (mod 2) with d >= max pr(V). PA**(G): W_E(G) is (E, d_E)-peelable and W_O(G) is (O, d_O)-peelable.
+  (W_p is a trap for q in G, hence a subgame.)
+- "P solves G completely" (HKP's class Solved, Def. 8): the residual game returned by P is empty.
+
+Lemma 0 (choice of d). If R is (p,d)-peelable then it is (p,d+2)-peelable. Proof: at level d+2 take option (b) with S = R
+(a trap for q in R trivially, pr(R) <= d, (p,d)-peelable); F = Attr_p^R(R) = R; R \ F = ∅. So PA** does not depend on
+taking the least admissible d. (The converse direction is not needed.)
+
+## 2. Statement
+Theorem T-A1. For every parity game G: psolB solves G completely if and only if PA**(G).
+Theorem T-A1' (psolQ). If PA**(G) then psolQ solves G completely. The converse fails (HKP Fig. 4(a): psolQ solves it, psolB
+does not, so by T-A1 it is not in PA**).
+Corollary 1 (HKP's classes). Büchi games (HKP Thm 7), games whose SCCs have constant priority (HKP Thm 8) and
+deterministic games (HKP Lemma 5) are in PA** (by HKP's theorems and the "only if" direction; no new proof needed).
+Corollary 2 (membership). PA**(G) is decidable in time O(|V|^2 |E|) (HKP Thm 5(1): run psolB and test the residual).
+Proposition 3 (hierarchy). PA ⊆ PA* ⊆ PA**, where PA (every trap closed in its whole level) and PA* (traps peeled before the
+level's top set) are the predicates of A1-results.md; both inclusions are strict (instances/llit_witness_buchi_n3.pg is in
+PA* \ PA; the SCC-constant witness "0 3 0 0; 1 1 0 0; 2 1 0 0,2" is in PA** \ PA*).
+
+## 3. Facts used (all standard or HKP's)
+- F1 (soundness, HKP Thm 2 in max-parity): if X ⊆ W = MAttr_p^{G'}(X, d) with X ≠ ∅ then p wins every vertex of W and of
+  Attr_p^{G'}(W) in G'.
+- F2 (residual regions): if D = Attr_p^{G'}(Y) with Y ⊆ W_p(G'), then G' \ D is a subgame, W_p(G' \ D) = W_p(G') \ D and
+  W_q(G' \ D) = W_q(G'). (Zielonka's standard argument: q's winning strategy on W_q never enters D ⊆ W_p; p's winning strategy
+  on W_p \ D restricted to G' \ D still wins, as q's moves in G' \ D are a subset of q's moves in G' and p's vertices outside D
+  have no edge into D.)
+- F3 (monotonicity): X ⊆ X' implies MAttr_p^R(X, d) ⊆ MAttr_p^R(X', d) (least fixpoint of a monotone operator); the same for
+  HKP's permissive attractor PMAttr and for layeredAttr(G, p, X) in X (each layer is a PMAttr with target monotone in X).
+  Also MAttr ⊆ PMAttr for the same target and bound (the permissive eligibility condition is weaker).
+- F4 (psolB's run, HKP Fig. 3): psolB is a sequence of removals D_1, ..., D_m from G_0 = G, G_k = G_{k-1} \ D_k, where
+  D_k = Attr_{p_k}^{G_{k-1}}(W_k), W_k = MAttr_{p_k}^{G_{k-1}}(X_k, d_k), X_k ⊆ pr^{-1}(d_k) ∩ V(G_{k-1}) is the greatest
+  fixpoint of X ↦ X ∩ MAttr(X, d_k) started from all vertices of priority d_k, and X_k ≠ ∅ (p_k = parity of d_k). After each
+  removal the colour loop restarts on G_k. psolB stops when, for every priority d occurring in G_k, the greatest fixpoint is
+  empty; the residual is G_m. By F3 the greatest fixpoint at priority d contains every (p,d)-recurrent subset of
+  pr^{-1}(d) ∩ V(G_k) (the union of recurrent sets is recurrent, and the iteration never drops a recurrent subset).
+- F5 (psolQ's run, HKP Fig. 5): the same with W_k = layeredAttr(G_{k-1}, p_k, X_k), X_k the greatest fixpoint of
+  X ↦ X ∩ layeredAttr(X) started from all vertices of parity p_k and priority >= d_k (colour <= b), and the fatal test X ⊆ W.
+- F6 (restriction): if R is a trap for q in a subgame G' and X ⊆ R, then MAttr_p^{G'}(X, d) ⊇ MAttr_p^R(X, d) and
+  Attr_p^{G'}(X) ⊇ Attr_p^R(X) (p's witnesses inside R are witnesses in G'; q's vertices of R have no G'-successor outside R).
+  If moreover R = W_p(G') then equality holds in both (a vertex of W_q(G') cannot force reaching X ⊆ W_p against q, who can
+  stay in W_q forever), and the witness successors of p-vertices of R lie in R.
+
+## 4. Proof of "if" (PA** implies psolB, and psolQ, solve G completely)
+Fix a player p and a certificate of (p,d_p)-peelability of W_p = W_p(G): a tree of steps. A *level* is a pair (R, d) that is
+peeled: the root level (W_p, d_p), and for each (b)-step with trap S at a level of bound d, the level (S, d-2). The steps
+of a level (R, d) produce pieces F^1, F^2, ..., F^m with R^0 = R, R^k = R^{k-1} \ F^k, R^m = ∅. Define the *list* of a level
+recursively: list(R, d) = seg(F^1) ++ ... ++ seg(F^m), where seg(F) = [F] if F is an (a)-piece, and
+seg(F) = list(S, d-2) ++ [F \ S] if F is a (b)-piece with trap S. Let L = list(W_p, d_p). The members of L are pairwise
+disjoint and their union is W_p (induction on the recursion; empty members allowed). For a member P write Before(P) for the
+union of the members listed before P.
+
+Invariant I. For every level (R, d) and every q-vertex u ∈ R, all successors of u in G lie in R ∪ Before(first member of
+list(R, d)). Proof by induction on depth: for (W_p, d_p), u's successors lie in W_p (a trap for q in G). For a level (S, d-2)
+created by a (b)-step at level (R', d') after pieces F^1..F^{k-1}: S is a trap for q in R'^{k-1} = R' \ (F^1 ∪ ... ∪ F^{k-1}),
+so u ∈ S has all R'^{k-1}-successors in S; its other successors lie in V \ R' (by induction inside R' ∪ Before(list(R')) and
+hence, as u ∈ S ⊆ R' is a q-vertex of R', in Before(list(R'))), or in F^1 ∪ ... ∪ F^{k-1}, all of which are listed before
+list(S, d-2) begins. ∎
+Consequence I'. If F = F^k is a piece of level (R, d) and u is a q-vertex of R^{k-1}, all successors of u lie in R^{k-1} ∪ Before(F)
+(as above, with F^1..F^{k-1} ⊆ Before(F)).
+
+Setting. Let G' be any subgame reached from G by removals as in F2 (by either player, in any order), Rem = V \ V(G'), so
+W_p(G') = W_p \ Rem by F2 applied repeatedly. Note that every vertex of W_p ∩ Rem was removed by a p-removal
+D = Attr_p^{G''}(Y) with Y ⊆ W_p(G'') (q-removals lie in W_q).
+
+Observation O. If v ∈ W_p ∩ V(G') is a p-vertex, no successor of v lies in Rem ∩ W_p: a successor w removed by the p-removal
+D = Attr_p^{G''}(Y) at a time when v ∈ V(G'') would have put v into D (p-vertex with an edge into the attractor). Likewise a
+q-vertex v ∈ V(G') has at least one successor in V(G') (G' is a subgame).
+
+Lemma L1 (the first surviving member is an (a)-piece whose target is still recurrent). Suppose W_p(G') ≠ ∅ and let P be the
+first member of L with P ⊄ Rem. Then P is an (a)-piece F of some level (R, d), step k, with recurrent target X and
+W = MAttr_p^{R^{k-1}}(X, d), and X' = X ∩ V(G') is (p,d)-recurrent in G'.
+Proof. (i) P is not a member of the form F \ S. Suppose it were, with F = Attr_p^{R^{k-1}}(S) at level (R, d) and S ⊆ Rem
+(all members of list(S) precede P). Let v ∈ (F \ S) \ Rem have the least attractor rank r >= 1. If v ∈ V_p, its witness
+successor has rank r-1, so it lies in S ∪ {rank < r} ⊆ Rem ∩ W_p, contradicting O. If v ∈ V_q, all its R^{k-1}-successors have
+rank < r, hence lie in Rem; its other successors lie in Before(F) ⊆ Rem by I'; so v has no successor in G', contradicting O.
+(ii) So P = F is an (a)-piece: F = Attr_p^{R^{k-1}}(W), W = MAttr_p^{R^{k-1}}(X, d). Write W' = W ∩ V(G'), X' = X ∩ V(G').
+Claim: W' ⊆ MAttr_p^{G'}(X', d). Induction on the rank of w ∈ W' in the least-fixpoint computation of W (rank i: added at
+stage i, with witnesses of rank < i or in X). pr(w) <= d. If w ∈ V_p: its witness w' ∈ X ∪ (rank < i) lies in W_p; by O it is
+not in Rem, so w' ∈ X' ∪ (MAttr_p^{G'}(X', d) by induction), and w is eligible. If w ∈ V_q: its R^{k-1}-successors lie in
+X ∪ (rank < i); its other successors lie in Before(F) ⊆ Rem (I'); so all its G'-successors lie in X' ∪ MAttr_p^{G'}(X', d), and
+it has at least one (O). This proves the claim. Since X ⊆ W (X is recurrent in R^{k-1}), X' ⊆ W' ⊆ MAttr_p^{G'}(X', d).
+(iii) X' ≠ ∅. Otherwise MAttr_p^{G'}(∅, d) = ∅ gives W' = ∅, and then the rank argument of (i) applied to the attractor
+F = Attr_p^{R^{k-1}}(W) (with W in place of S) gives F ∩ V(G') = ∅, contradicting P ⊄ Rem. ∎
+
+Proof of T-A1 "if". Run psolB (F4). Suppose it stops with residual G_m ≠ ∅. Then W_p(G_m) ≠ ∅ for some p. By L1 there is a
+priority d occurring in G_m (the priority of X' ⊆ pr^{-1}(d)) at which some (p,d)-recurrent set X' ⊆ pr^{-1}(d) ∩ V(G_m)
+exists, so by F4 the greatest fixpoint at d is non-empty and psolB would have made a further removal: contradiction. ∎
+Proof of T-A1'. Run psolQ (F5). At the bound b of priority d, the start set X_0 = {v : pr(v) >= d, pr(v) ≡ p} contains X', and
+the layer of priority d computes PMAttr_p(A_prev ∪ Y_d, d) with Y_d ⊇ X'; by F3, PMAttr_p(A_prev ∪ Y_d, d) ⊇ MAttr_p^{G_m}(X', d)
+⊇ X', so X' ⊆ layeredAttr(X_0); by F3 again the iteration X ↦ X ∩ layeredAttr(X) never drops X', hence ends in a non-empty
+fatal set and psolQ makes a further removal: contradiction as before. ∎
+
+## 5. Proof of "only if" (psolB solves G completely implies PA**)
+Let psolB's run be D_1, ..., D_m with G_m = ∅ (F4). Fix p. We show by downward induction on k that W_p(G_k) is
+(p, d_p)-peelable (note d_p >= max pr(V) >= max pr(V(G_k)), so d_p is admissible at every stage). Base k = m: ∅.
+Step: assume W_p(G_k) is (p,d_p)-peelable and consider D_k (so G_k = G_{k-1} \ D_k).
+- If D_k is a q-removal: W_p(G_k) = W_p(G_{k-1}) by F2, and the subgame G ∩ W_p(G_{k-1}) is the same in G_{k-1} and G_k (D_k ⊆ W_q
+  and peelability uses only edges inside W_p). Done.
+- If D_k is a p-removal: R = W_p(G_{k-1}), X = X_k ⊆ pr^{-1}(d_k) ∩ V(G_{k-1}), W = MAttr_p^{G_{k-1}}(X, d_k), D_k = Attr_p^{G_{k-1}}(W).
+  By F1, W ⊆ R, so by F6 (with R = W_p(G_{k-1})) W = MAttr_p^R(X, d_k) and D_k = Attr_p^R(W), and R \ D_k = W_p(G_k) is
+  (p,d_p)-peelable by the induction hypothesis. Two cases.
+  (1) d_k = d_p: option (a) with the recurrent set X (X ⊆ W by the fatal test): F = D_k. Done.
+  (2) d_k < d_p (then d_k <= d_p - 2, same parity): option (b) with S = W. S is a trap for q in R (every q-vertex of W has all
+  its successors in W ∪ X = W by the MAttr condition, with X ⊆ W; every p-vertex of W has a witness successor in W),
+  pr(W) <= d_k <= d_p - 2, and S is (p, d_p - 2)-peelable: by Lemma 0 it suffices that W is (p, d_k)-peelable, which holds by
+  option (a) with X: MAttr_p^W(X, d_k) = W (F6 with R = W, a trap for q in G_{k-1}: the witnesses of p-vertices of W lie in
+  W ∪ X = W), so X is recurrent in W and F = Attr_p^W(W) = W, leaving ∅. Finally F = Attr_p^R(S) = D_k. Done.
+  (d_k > d_p is impossible as X ⊆ R has priority d_k <= max pr(V) <= d_p.)
+So W_p(G_0) = W_p(G) is (p,d_p)-peelable for both p, i.e. PA**(G). ∎
+
+## 6. Gaps and what the referee should check
+- G1. F2 is used as "standard"; a referee should either accept it with a citation (Zielonka 1998, or DJT section 2's
+  dominion facts) or ask for the two-line proof written out.
+- G2. The proof of L1(ii) treats X external in MAttr (HKP's convention, tex:532-535) and uses that x ∈ X ∩ W is re-attracted in
+  >= 1 move; the induction on rank includes x ∈ X' as a vertex of W' (rank >= 1). Check that no vertex of X' needs rank 0.
+- G3. F6's equality "MAttr^{G'} = MAttr^R for R = W_p(G')" relies on q being able to stay in W_q forever; it is only needed in
+  section 5, and only the inclusion W ⊆ R (from F1) plus "witnesses lie in R" is used. Check the witness claim for p-vertices
+  of X itself.
+- G4. psolB's colour loop: HKP Fig. 3 iterates "colors d in descending ordering"; the proof needs only that every occurring
+  colour is examined before psolB returns, and that psolB restarts after each removal (the recursive call). Implementation
+  reading D3a-like (colours of the current game) in psolb.py.
+- G5. Lemma 0 and the choice d_p: with the least admissible d the certificate depends on the game's maximal priority; the
+  "only if" direction produces certificates at d_p directly, the "if" direction accepts any admissible d.
+- G6. The partition "members of L are pairwise disjoint with union W_p" needs the remark that a (b)-step's F \ S may be empty
+  and that empty members are harmless.
+- G7. Everything is for finite games with every vertex having a successor (TARGET section 1); self-loops are allowed throughout.
+- G8. T-A1' uses F3 for layeredAttr; the monotonicity of each PMAttr layer in its target set, and of the layer sequence in X,
+  should be written out (two lines).
+Evidence: PA** ⟺ psolB-complete on all 41,440 canonical 3-vertex games and on 20,000 + 20,000 random 4-vertex and 1,500 + 3,000
+random 5-vertex games; PA** false on all 75,856 psolQ failures among the 27,331,200 canonical 4-vertex games
+(experiments/attr/results/pa2_*.txt).

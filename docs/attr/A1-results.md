@@ -55,7 +55,7 @@ psolQ, psolB/psol on Fig. 4 as HKP Example 5 states; Strahler DP = brute force o
 (n <= 6; brute n <= 5), DJT Prop. 3-4 bounds respected, D2a's d versus d+2: identical on all 600; psolQ sound with verified
 strategies on 2,000 seeded random games with n <= 40 (undecided on 9 of them; Alg1 WRONG on 16, BADSTRAT on 94).
 
-## 3. What the failures have in common; a sufficient condition (theorem candidate, proof sketch, not refereed)
+## 3. What the failures have in common; the class psolB solves (T-A1, proof in docs/attr/TA1-proof.md, not refereed)
 Mechanism (read off the minimal instance and HKP Fig. 6). A fatal (layered) attractor certifies a region by "from every
 target the owner forces a return to the target set through colours of the current layer". An attractor decomposition
 (D1) has a second way to win: the opponent is TRAPPED in a sub-dominion S_i of lower top priority and never returns. The
@@ -65,42 +65,52 @@ A = {v1} (top priority 3) with the sub-trap S_1 = {v0} (self-loop, priority 1): 
 crosses priority 2, excluded from that layer). Each piece needs the other: a mutual escape between the top attractor and a
 sub-trap. HKP Fig. 6 is the same shape one level up (A = {v0,v5,v6,v7}, S_1 = {v2,v3,v4}, escapes v0 -> v1 -> ... -> S_1 and
 v4 -> v5 -> A).
-Predicates tested (hypotheses.py; "trap for the opponent in R" = DJT's trap: the opponent's vertices keep all R-edges inside,
-the owner's keep one):
-- PA: both winning regions have a decomposition in which every S_i, at every level, is a trap for the opponent in the
-  level's whole subgame R (not only in the remainder G_i where the definition requires it).
-- PB: as PA with "trap in R \ A". PD: a decomposition whose escape graph between the level's pieces A, A_1..A_l is acyclic.
-| implication | n = 3 (all 41,440) | n = 4 (30,000 random canonical games) | n = 5 (4,500 random games, pa_sample.py, 2,954 PA-true) and n = 6 (600, 368 PA-true) |
+
+Three predicates on the two winning regions, in increasing strength (exact definitions: hypotheses.py, peeling.py, TA1-proof.md
+section 1; "trap for the opponent in R" = DJT's trap: the opponent's vertices keep all R-edges inside, the owner's keep one):
+- PA (closed traps): a DJT decomposition in which every S_i, at every level, is a trap for the opponent in the level's whole
+  subgame R (the definition only asks for a trap in the remainder G_i).
+- PA* (peeling): traps are peeled BEFORE the level's top attractor: S_1 a trap in R, A_1 = Attr(S_1), S_2 a trap in R \ A_1, ...,
+  and finally the rest R_l equals its own attractor to the top priority. S_i may escape into earlier pieces only.
+- PA** (mixed order, "peelable"): at each level, repeatedly remove either a self-returning top set (a non-empty X of top
+  priority d from which the owner forces a revisit of X seeing only priorities <= d, with its monotone attractor and
+  attractor) or the attractor of a closed sub-trap (a trap for the opponent, priorities <= d-2) that is itself peelable.
+Data (hypotheses.py, peeling.py, pastar_fails.py, pa2_fails.py; outputs in experiments/attr/results/):
+| implication | n = 3 (all 41,440) | n = 4 | n = 5 |
 | --- | --- | --- | --- |
-| PA => psolQ solves completely | holds | holds; and PA is false on all 75,856 psolQ failures of the full enumeration, so it holds on all 27.3 M games | holds |
-| PA => psolB solves completely | holds | holds | holds |
-| PA => psol solves completely | fails (400) | fails (243) | - |
-| PB => psolQ solves | fails (44) | fails (85) | - |
-| PD => psolQ solves | fails (8) | fails (11) | - |
-| psolQ solves => PA | fails (6,914) | fails (7,813) | - |
-Theorem candidate T-A1 (sufficient condition; new as far as L-ATTR can tell, to be checked by L-LIT against HKP Thm 7
-(Büchi), Thm 8 (SCC-constant colour), Lemma 5 (deterministic), which it should contain):
-  "psolB, and psolQ, completely solve every parity game G such that each of W_E(G) and W_O(G) admits an attractor
-  decomposition (D1) in which every trap S_i, at every level, is a trap for the opponent in the subgame being decomposed
-  at that level."
-Proof sketch (four lemmas). (L1, leaf) Let S be an innermost piece of such a decomposition for player p (its own
-decomposition has l = 0, so S = Attr_p^S(P_q ∩ S) for its top priority q, pr(S) <= q), and S a trap for 1-p in the game
-(by PA, inductively through the levels: a trap in R that is inside a trap in the parent is a trap in the parent). Then
-X_0 = P_q ∩ S satisfies X_0 ⊆ MAttr_p(X_0, q) (HKP Def. 3; attraction through priorities <= q inside S), i.e. a fatal
-attractor exists. (L2, monotonicity) MAttr and layeredAttr are monotone in the target set, so the greatest fixpoint of
-psolB at colour q (resp. psolQ at the bound of colour q) started from X ⊇ X_0 never drops X_0: the solver decides a
-non-empty set containing S. (L3, preservation) Removing the p-attractor of a p-won set keeps PA: the opponent loses
-edges, p's vertices outside the removed set lose none, so the restricted decomposition stays valid and closed; the
-other player's region is untouched. (L4) Induction on |V|. Gaps to referee: the precise statement of L3 (the restricted
-chain S_i ∩ W' after larger attractors), and that the tree may change (irrelevant for completeness).
-What PA is not: it is sufficient only (thousands of PA-false games are solved: the escape goes into a region decided
-earlier, which the predicate does not see). An exact characterisation of psolQ's class is not attempted; PB and PD are
-dead ends (section 5).
+| PA => psolQ, psolB solve | holds | holds (30,000 random; PA false on all 75,856 psolQ failures of the 27.3 M enumeration) | holds (4,500 random) and n = 6 (600) |
+| PA* => psolQ, psolB solve | holds | holds (20,000 random; PA* false on all 75,856 failures) | - |
+| PA** => psolQ, psolB solve | holds | holds (2 x 20,000 random; PA** false on all 75,856 failures) | holds (1,500 + 3,000 random) |
+| psolB solves => PA** | holds | holds (2 x 20,000) | holds (1,500 + 3,000) |
+| psolQ solves => PA** | fails (3,016) | fails | fails |
+| PA => PA* => PA** | holds | holds | holds |
+| Büchi, deterministic ⊆ PA* | holds (7,840 / 4,144 games) | holds (sample) | - |
+| SCC-constant ⊆ PA* | FAILS (708 of 11,872) | fails | - |
+| Büchi, SCC-constant, deterministic ⊆ PA** | holds | holds | holds |
+| canonical rules decide PA*, PA** | greedy sound, incomplete (4,266 misses) ; greedy2 sound, incomplete (48) | same | same |
+Correction (L-LIT T8, docs/lit/T8-TA1.md): the first version of this section said PA "should contain" HKP's Thm 7 and Thm 8
+classes; it does not. L-LIT's witness instances/llit_witness_buchi_n3.pg (v pr1 -> v; x pr2 Odd -> v; w pr1 Even -> w,x) is
+Büchi and SCC-constant, solved by all three HKP solvers, and PA is false on it (checked; PA* and PA** are true on it).
+The SCC-constant witness against PA* is "0 3 0 0; 1 1 0 0; 2 1 0 0,2" (all Even; Odd wins all): psolB decides the top
+attractor {v0,v1} first and the sub-trap {v2} after, the order PA* forbids.
+
+Theorem T-A1 (statement in TA1-proof.md section 2; proof there, both directions; gaps G1-G8 listed):
+  psolB solves G completely  <=>  PA**(G);  and PA**(G) => psolQ solves G completely (strict: HKP Fig. 4(a)).
+Corollaries: HKP Thm 7, Thm 8, Lemma 5 are the special cases where the certificate is found by HKP's own arguments (they
+follow from the "only if" direction); PA**-membership is decidable in O(|V|^2 |E|) by the theorem; PA ⊊ PA* ⊊ PA**.
+What T-A1 says about the failures: a game is left undecided by psolB exactly when some level of every decomposition of some
+winning region has no piece that can go first: no top set that returns to itself and no closed sub-trap. That is the
+"mutual escape" of the minimal instances, now as a theorem rather than a reading.
+Exact class of psolQ: not attempted (its analogue of PA** with layered attractors in clause (a) would be definitional).
+Dead variants: PB, PD (section 5); the greedy canonical rules for PA* and PA** (sound, not complete; instances in results/).
 
 ## 4. Position (TARGET section 4, L-LIT T7 part (c))
-- Nothing here is M4 or M4-R. T-A1 would be an M3-type "characterisation of a partial solver" (L-LIT: low-medium value);
-  the class PA is not a known parameter class, and its membership is as hard to decide as it looks (it quantifies over
-  decompositions); the value is that it names exactly what fatal attractors cannot do.
+- Nothing here is M4 or M4-R. T-A1 is an exact characterisation of psolB's complete class (HKP's class Solved, Def. 8, which
+  HKP call semantic but do not characterise; Ah-Fat-Huth 2016 name 2-player completeness classes as open, docs/lit/T8-TA1.md).
+  Under ruling L8 (docs/DECISIONS.md): PA** is a structural condition on attractor decompositions, and its membership is
+  decidable in polynomial time, but only via the theorem itself (run psolB); whether that counts as "a new polynomial
+  class" or "a tighter analysis of a known algorithm" is the Lead's/owner's call. The value is that it names exactly what
+  fatal attractors cannot do, and it gives HKP's three classes one common reason.
 - The negative answers are the rank-3 deliverable in its negative form: the Strahler number (branching of attractor
   decompositions, the parameter of the quasi-polynomial bounds, DJT Thm 32) is orthogonal to the failure of the fatal-attractor
   family: the family fails on chains (Strahler 1), on 1-player games (HKP Fig. 6; and the minimal instance is 1-player for Even),

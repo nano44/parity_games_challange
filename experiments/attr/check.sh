@@ -24,6 +24,14 @@ for f, e in exp.items():
     got = (r["psolq"], r["psolb"], r["psol"], r["avh"], r["str"])
     assert got == e, (f, got, e)
     print(f"{f}: psolq/psolb/psol/alg1/Str = {got}")
+import peeling
+for f, (ps, p2) in {"instances/llit_witness_buchi_n3.pg": (True, True), "instances/psolq_min_n3_m4.pg": (False, False),
+                    "instances/alg1_min_n4_m5.pg": (False, False), "../harness/bench/hkp_fig4a.pg": (False, False),
+                    "../harness/bench/hkp_fig4b.pg": (True, True)}.items():
+    g = pg.read(f); r = a1lib.classify(g, others=True)
+    got = (peeling.both(g, r["ref"], peeling.peeling), peeling.both(g, r["ref"], peeling.pa2))
+    assert got == (ps, p2) and (r["psolb"] == "solved") == p2, (f, got, r["psolb"])
+    print(f"{f}: PA* {ps}, PA** {p2} = psolB-complete")
 n2 = 0
 for cfg, m in a1lib.succ_orbits(2):
     for g in a1lib.games_on(cfg, 2):

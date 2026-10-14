@@ -2,19 +2,17 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14 23:10Z. PARKED by the Lead (23:00Z message) until L-LIT's T8 (novelty of T-A1 and whether PA is decidable in
-polynomial time). A1 is complete: docs/attr/A1-statement.md, docs/attr/A1-results.md, experiments/attr/ (README lists every
-file and the regeneration commands). Lead decisions quoted in "Things only I know". On wake: read the Lead's message, then
-docs/attr/A1-results.md section 3 (T-A1 and its proof plan L1-L4) before anything else.
+2026-10-14 23:40Z. Lead's go (23:02Z, 12 h box to 2026-10-15 11:02Z) executed: docs/attr/TA1-proof.md has the theorem
+"psolB solves G completely <=> PA**(G)" with both directions and gaps G1-G8; docs/attr/A1-results.md section 3 rewritten
+(PA ⊊ PA* ⊊ PA** hierarchy, data table, L-LIT's correction). Waiting for: the last n=5 sample (out/pa2_n5_s52.txt), then
+push and message the Lead. After that: REFEREE questions on TA1-proof.md.
 
 ## Queue
-1. If the Lead gives the go on T-A1: write docs/attr/T-A1-proof.md with L1-L4 (L3, preservation of PA under removal of a
-   winner's attractor, is the delicate one: state it for the restricted chain S_i ∩ W' after larger attractors eat parts of
-   later pieces; the tree may change, only completeness matters). Then hand to the REFEREE via the Lead.
-2. If T8 says PA is decidable in polynomial time, say so in A1-results.md section 4 (it changes T-A1 from "a characterisation of
-   a partial solver" to "a polynomial class with a known polynomial solver") and check against TARGET section 4 (M3 only).
-3. Optional, only on request: exact (peeling) characterisation of psolQ's class; psolB vs psolQ inclusion at n = 4 (holds at n = 3,
-   data to compute from out/fail_n4.jsonl would need psolB added to exhaustive.py, 30 min rerun).
+1. Copy out/pa2_n5_s52.txt to results/, push, message the Lead (statement, data, proof status).
+2. Answer referee questions on TA1-proof.md; G3 (F6 equality) and G2 (external target, rank of X-vertices) are the ones I
+   would probe first.
+3. Not done, optional: a solver-free polynomial decision procedure for PA** (the canonical rule greedy2 is sound but misses
+   48 of 41,440 n=3 games); exact class of psolQ.
 
 ## Things only I know
 - Lead decisions 2026-10-14 23:00Z (quoted): "1. T-A1: before paying for a proof, L-LIT checks novelty and whether PA is decidable
@@ -72,6 +70,8 @@ docs/attr/A1-results.md section 3 (T-A1 and its proof plan L1-L4) before anythin
 | arXiv 2511.03752 v1 (AVH, e-print main.tex sha256 9840db37...3f8b) | Algorithm 1 (main.tex:370-395) only, as the object implemented in experiments/m2/avh.py per notes/L-COMP.md "M2 pseudocode" (REFEREE: faithful) | 2026-10-14 | not re-refereed here |
 
 ## Dead ends
+- 2026-10-14 23:25Z. Canonical polynomial rules: greedy (largest admissible trap first) for PA*: sound, misses 4,266 of 41,440 at n=3 (e.g. 0 3 0 0; 1 4 0 0; 2 1 0 0,2: the largest trap {v0,v2} is not PA*-peelable, {v0} then {v2} is). greedy2 (largest self-returning top set, else bottom SCCs of the largest trap) for PA**: sound, misses 48 at n=3 (e.g. results/pa2_n3.txt). Decidability of PA** in polynomial time therefore rests on T-A1 (run psolB), not on a solver-free rule.
+- 2026-10-14 23:20Z. PA as the class containing HKP Thm 7/8: dead (L-LIT witness instances/llit_witness_buchi_n3.pg). PA* as the class containing Thm 8: dead (witness 0 3 0 0; 1 1 0 0; 2 1 0 0,2).
 - 2026-10-14 22:25Z. "Strahler threshold k >= 1 for psolQ / Algorithm 1 of 2511.03752" (L-LIT rank-3 first problem as posed):
   dead, k = 0 for both. Instances: HKP Fig. 6 (Str 1, psolQ untouched; bench/hkp_fig6.pg); experiments/attr/instances/psolq_min_n3_m4.pg
   (n = 3, m = 4, Str 1, psolQ/psolB/psol undecided; exhaustive n <= 2 all solved); experiments/m2/counterexamples/ce1_4v.pg

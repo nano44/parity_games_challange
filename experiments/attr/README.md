@@ -12,6 +12,10 @@ arXiv 1405.0386v2 Fig. 5) and of Algorithm 1 of arXiv 2511.03752 (experiments/m2
 | `validate.py` | statement section 5 step 3: HKP figures, M2 counterexamples, DP vs brute force, psolQ soundness on random games |
 | `exhaustive.py` | statement step 4: every canonical game with n vertices; failures to `out/fail_n{n}.jsonl`, summary to `out/summary_n{n}.txt` (out/ is gitignored; the summaries and sample outputs are copied to `results/`) |
 | `hypotheses.py` | predicates PA/PB/PD on attractor decompositions against the solvers' outcomes (section 3 of the results) |
+| `peeling.py` | PA* (peeling decompositions, exact + greedy) and PA** (mixed order, exact + canonical rule): `peeling.py n` and `peeling.py --pa2 n [--sample K --seed S]` |
+| `pastar_fails.py`, `pa2_fails.py` | PA*/PA** on every psolQ failure of `out/fail_n{n}.jsonl` |
+| `pa_sample.py` | PA alone on random games (PD is slow from n = 5) |
+| `classes_n4.py` | class containment check (superseded by T-A1's corollary; left for reference) |
 | `instances/` | minimal failing games (PGSolver format) named in the results |
 | `check.sh` | the < 1 min regression run by scripts/verify.sh |
 
