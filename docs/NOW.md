@@ -27,9 +27,9 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 ## In flight
 - L-COMP: parked after notebook handover; wakes for a new claim, review changes, or L-STRUCT SAT engineering.
 - L-LIT: parked; T1-T4 on trunk (docs/lit/). T4: weak separators OPEN (Czerwinski et al. 1807.10546 §6).
-- L-STRUCT: S2 target stated (l-struct 616cf77): T1 w(n,d) >= s(n,d-2) [quasi-poly lower bound for weak separators], T2 fallback. Proof waits for REFEREE statement check + L-LIT novelty (T5). Data (corrected 19:56Z): s^V(4,6) = 10, w^V(4,6) <= 10; no gap shown at (4,6) V; 9-state weak V search running.
-- REFEREE: statement check of S2 T1/T2 (C1 OK at 762c598; plant P1 caught, score 1/1).
-- L-COMP: reproduction done (all pass); SAT box: first the T1-decisive cell (weak (4,6) E with <= 7 states), then w(4,6), w(5,.). Box ends ~01:30Z.
+- L-STRUCT: T1 REFUTED (DE2, referee 92846bf). Pivot to (c): structure of minimal weak witnesses; S3 statement (growth of w in d) before any proof.
+- REFEREE: idle (T1 refutation confirmed 92846bf; S2 checks done).
+- L-COMP: T1 refutation found; now growth data: w(2,d) d=12..20, w/s(3,d) d=8,10 V; then (3,8)V, paused runs. Box ends ~01:30Z.
 - WATCHDOG: hourly at :30.
 
 ## Findings to carry
@@ -39,10 +39,10 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - PGSolver SI families (switchallexp, switchbestexp) target PGSolver's switch-all/switch-best SI, not Oink psi/ssi; port of stratimpralgs.ml queued in L-COMP.
 
 ## Live approaches
-- A1 deterministic weak separators (L-STRUCT): outside the strong-separator barrier (T4); target w(n,d) vs s(n,d), then construction or lower bound.
+- A1 deterministic weak separators (L-STRUCT): outside the strong-separator barrier (T4). Algorithmic quantity is the diagonal w^V(n,n) (REFEREE d96b686); fixed-n growth in d is not algorithmic. Data: w=s on most small cells; w<s at (2,6),(2,10),V(3,6); s(2,2h)=h+1 but w(2,8)=w(2,10)=4. Lower-bound target T1 likely false; now measuring growth of w in d.
 
 ## Dead approaches (with obstruction): see docs/RESULTS.md "Dead ends"
-- (none yet)
+- DE1 arXiv 2511.03752 (BROKEN, 4-vertex counterexamples). DE2 T1 weak-separator lower bound (refuted at (2,10)).
 
 ## Best result so far
 - None of the fleet's own. Known: quasi-polynomial upper bound (to be source-checked by L-LIT).
@@ -53,4 +53,4 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - Q3: environment setup script (Boost dev packages + scripts/setup_oink.sh) to save each session ~1 min of setup.
 
 ## Spend
-- Child sessions report usage.cost_usd in get_session (Lead own record shows none). 2026-10-14 19:02Z: L-COMP $14.13 (379k ctx; plan handover near 600k), WATCHDOG $0.01; REFEREE, L-LIT, L-STRUCT not yet reported.
+- Sessions report usage.cost_usd in get_session. 2026-10-14 20:02Z: Lead $13.04 (369k ctx). 2026-10-14 19:02Z: L-COMP $14.13 (379k ctx; plan handover near 600k), WATCHDOG $0.01; REFEREE, L-LIT, L-STRUCT not yet reported.

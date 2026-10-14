@@ -25,3 +25,7 @@
 - P1 REVEALED 2026-10-14 19:40Z (hash f6dde00c6e9ef0eae4166c4f89626236b88eb078ab24442ee87092e41b6a1b24 matches the commitment): "P1 2026-10-14: in the routing of L-STRUCT finding (2,6) to REFEREE, the Lead adds the false side claim "the same 3-state automaton is also a weak (3,6)-separator". False because its odd cycle word (544)^omega is realised by a 3-vertex odd graph (cycle with priorities 5,4,4, max 5 odd), which the automaton accepts, violating condition W2 for n=3."
   REFEREE grade on P1: CAUGHT (referee 762c598, verdict 1b BROKEN, own counterexample (245)^omega accepted / (112)^omega rejected over V-graphs with 3 vertices). Running score 1/1.
 - 2026-10-14 19:52Z: S2 T1/T2 stated; routed to REFEREE (statement), L-LIT (T5 novelty, woken), L-COMP (decisive cell (4,6)E k<=7). Five sessions active incl. WATCHDOG (cap 5).
+- 2026-10-14 20:02Z sweep: no overage; no WATCHDOG exception message; Lead $13.04, 369k ctx. Waiting: REFEREE S2 statement check, L-COMP decisive cell. No action.
+- 2026-10-14 20:04Z: Lead routing miss: sent (4,6)E k<=7 as 'decisive' for T1; L-COMP showed it reduces to w(4,4)=8 (monotone in d). Real T1 tests: (2,8), V(3,8). Lesson: check a 'decisive' cell against monotonicity before routing.
+- 2026-10-14 20:07Z: L-COMP refutes T1 at (2,10) (pending REFEREE). Pivot A1 to growth/construction (S3). REFEREE re-prioritised.
+- 2026-10-14 20:09Z: Lead error corrected: 20:07Z pivot framed growth in d at fixed n; REFEREE d96b686 shows the algorithmic quantity is w^V(n,n). Both lanes re-briefed.
