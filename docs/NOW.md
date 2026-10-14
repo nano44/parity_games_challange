@@ -1,12 +1,12 @@
 # NOW (rewritten, never appended; max 150 lines)
-Updated: 2026-10-14 by Lead. Phase: M0 done (TARGET v1.0 approved, D2); M1 and M2 running; attack lanes wait for L-LIT's ranking (T2).
+Updated: 2026-10-14 by Lead. Phase: M0, M2 done; M1 running; attack lanes wait for L-LIT's ranking (T2). Reporting: weekly checkpoint (D1, after M2).
 
 ## Milestones
 | M | State | Evidence |
 | --- | --- | --- |
 | M0 Setup | done; TARGET v1.0 at a3777f1 (D2) | this commit; CI .github/workflows/verify.yml; backstop trigger in docs/agents/LEAD-BACKSTOP.md |
 | M1 Reproduce hard families | in flight (L-COMP): harness at l-comp ba0517f; Zielonka bound reproduced on ported recursiveladder (~1.62^N iterations), port awaits line-by-line check | experiments/harness/, experiments/hard-families/ |
-| M2 Audit arXiv 2511.03752 (v1 only, 4 Nov 2025) | PROVISIONAL counterexample CE1 (4 vertices, l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) under AM1 reading (a); awaiting REFEREE hand-check and reading (b) test. Clock 2026-10-14 18:30Z to 2026-10-16 18:30Z | notes/L-COMP.md, docs/referee/ |
+| M2 Audit arXiv 2511.03752 | DONE 2026-10-14 ~18:35Z: BROKEN (two independent 4-vertex counterexamples, cross-checked); RESULTS DE1 | docs/decisions/M2-arxiv-2511.03752.md |
 | M3 Partial results | not started; attack lanes wait for TARGET approval and L-LIT ranking | - |
 | M4 Target | not started | - |
 
@@ -23,9 +23,9 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | L-COMP | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | working | Paper-to-code fidelity for M1 generators and the M2 implementation; drop to sonnet-5-5 for routine benchmarks after M2 |
 
 ## In flight
-- L-COMP: M2 pseudocode + implementation of 2511.03752 (regions + strategies), strategy verifier in harness; then remaining M1 families, stratimpralgs port.
-- REFEREE: R1 independent read of 2511.03752; then faithfulness check of L-COMP's pseudocode; later PGSolver port checks.
-- L-LIT: T1 position of 2511.03752 + families to try; T2 RANKING.md (gates first attack lane); T3 BARRIERS.md.
+- L-COMP: remaining M1 families (READMEs, sweeps), stratimpralgs port; harness has strategy verification (D2 change 5).
+- REFEREE: R1 full report (short) incl. AM1-AM9 faithfulness verdicts; then PGSolver port checks; then review of L-COMP harness for landing.
+- L-LIT: T1 done (l-lit a6c530f); T2 RANKING.md (gates first attack lane); T3 BARRIERS.md.
 - Watchdog: add when a 4th working session starts (first attack lane).
 
 ## Findings to carry
