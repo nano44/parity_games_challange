@@ -41,3 +41,4 @@
 - 2026-10-14 22:08Z: L-LIT T7 landed (rank 2 OPEN, model must be non-adaptive). Spawned L-ATTR session_01XDM3HXeuG3mqhQK92eNaru (fable-5-1, rank 3, 24h box). Lead brief error corrected at 22:08Z (false calibration sentence).
 - 2026-10-14 23:01Z: L-ATTR A1 done (fdb5092): no Strahler theorem; T-A1 candidate -> L-LIT T8 novelty. Spawned L-LOWER session_01U5n8mgXxgyGzvuUzxHbiKx (fable-5-1, rank 2, 24h box).
 - 2026-10-14 23:03Z sweep: no overage. Lead 587k ctx $30.91 (compacts in place). L-COMP idle, n=5 V cells at k=8 for ~2h, self check-in 00:30Z, 572k ctx $32.80; handover after it. L-ATTR (T-A1), L-LOWER (L1) working. No action.
+- 2026-10-14 23:16Z: spawned REFEREE successor session_01R4yR8XskSK3ta94ewnN4cM (fable-5-1) for R-L1; L-LIT T9. Working: L-ATTR, L-LOWER, REFEREE, L-LIT(short), L-COMP(waiting), WATCHDOG = 5 working + watchdog; L-LIT parks after T9 (cap 5 respected once it parks).
