@@ -20,7 +20,7 @@ it is not written here. If the second referee wants a self-contained proof, that
 Recall (S1 D5) s^X(n,d), w^X(n,d) for X ∈ {E, S, V} over Σ_d = {1..d}; (S3 D6) S(n) = s^V(n,n), W(n) = w^V(n,n), the
 sizes relevant to TARGET games with n vertices (priorities {0..n}; letter 0 removed by S1 Lemma 2(b-V)).
 
-Lemma L4.1 (transfer; Claim R). For all k ≥ 1 and d ≥ 1:
+Lemma L4.1 (transfer; Claim R). For all k ≥ 1 and d ≥ 2:
     s^E(k, d) ≤ s^V(k·d, d)     and     w^E(k, d) ≤ w^V(k·d, d).
 Lemma L4.2 (monotonicity; S1 Lemma 2(a) made explicit). For all n' ≤ n and d' ≤ d: s^V(n', d') ≤ s^V(n, d) and
     w^V(n', d') ≤ w^V(n, d).
@@ -57,11 +57,9 @@ label q into v in H have no incoming edge; they may be deleted, which only lower
       w ∈ EvenCycles^E_{k,d} ⇒ p·w ∈ EvenCycles^V_{kd,d},      w ∈ OddCycles^E_{k,d} ⇒ p·w ∈ OddCycles^V_{kd,d},
     and limsup(p·w) = limsup(w), so w ∈ LimsupOdd_d ⇔ p·w ∈ LimsupOdd_d.
 (d) The automaton. Let A = (Q, q0, δ) be a deterministic safety automaton over Σ_d that is a strong (resp. weak)
-    (kd, d)-separator in convention V. Put q1 := δ(q0, 1). Then q1 ≠ ⊥: the word 2^ω is in EvenCycles^E_{k,d} (one vertex
-    with a self-loop labelled 2; if d = 1 replace this argument by: EvenCycles^E_{k,1} = ∅ and the lemma is trivial for
-    strong, while for weak with d = 1 take the word 1^ω ∈ OddCycles, which forces nothing on q1, and if q1 = ⊥ the
-    0-state... — to keep it clean we assume d ≥ 2, the only case used), so 1·2^ω ∈ EvenCycles^V_{kd,d} ⊆ L(A), and the
-    run of A on 1·2^ω does not reach ⊥, in particular q1 ≠ ⊥. Define A' = (Q, q1, δ) (same states and transitions, new
+    (kd, d)-separator in convention V. Put q1 := δ(q0, 1). Then q1 ≠ ⊥: the word 2^ω is in EvenCycles^E_{k,d} (one vertex with a self-loop labelled 2;
+    here d ≥ 2 is used), so 1·2^ω ∈ EvenCycles^V_{kd,d} ⊆ L(A), and the run of A on 1·2^ω does not reach ⊥; in particular
+    q1 ≠ ⊥. Define A' = (Q, q1, δ) (same states and transitions, new
     initial state; unreachable states may be dropped). For every w: A' accepts w iff A accepts 1·w.
     - Strong: EvenCycles^E_{k,d} ⊆ L(A') since w ∈ EvenCycles^E ⇒ 1·w ∈ EvenCycles^V_{kd,d} ⊆ L(A); and
       L(A') ⊆ LimsupEven_d since w ∈ L(A') ⇒ 1·w ∈ L(A) ⊆ LimsupEven_d ⇒ w ∈ LimsupEven_d. So A' is a deterministic
