@@ -19,3 +19,5 @@
 - 2026-10-14 19:02Z sweep: no overage; L-COMP idle w/ background sweep (6c45f16), 379k ctx, $14.13; L-STRUCT running; WATCHDOG confirmed. No action.
 - 2026-10-14 19:11Z: M1 DONE (l-comp de7ea19). REFEREE routed to review bench range. L-COMP parked (handover notebook first).
 - 2026-10-14 19:24Z: landed l-comp e70a2a9 + referee ae532f6 into trunk; verify PASS locally.
+- P1 committed 2026-10-14 19:25Z: sha256 f6dde00c6e9ef0eae4166c4f89626236b88eb078ab24442ee87092e41b6a1b24 (description held by Lead until the REFEREE's verdict)
+- 2026-10-14 19:26Z: L-STRUCT S1 data (w<s by 1 at small cells). Decided (a)+(b): L-STRUCT lower-bound line; L-COMP woken for SAT hard cells (experiments/sat-hard/); REFEREE checks C1 + Lemmas 1-3 with plant P1.
