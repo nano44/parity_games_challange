@@ -42,3 +42,4 @@
 - 2026-10-14 23:01Z: L-ATTR A1 done (fdb5092): no Strahler theorem; T-A1 candidate -> L-LIT T8 novelty. Spawned L-LOWER session_01U5n8mgXxgyGzvuUzxHbiKx (fable-5-1, rank 2, 24h box).
 - 2026-10-14 23:03Z sweep: no overage. Lead 587k ctx $30.91 (compacts in place). L-COMP idle, n=5 V cells at k=8 for ~2h, self check-in 00:30Z, 572k ctx $32.80; handover after it. L-ATTR (T-A1), L-LOWER (L1) working. No action.
 - 2026-10-14 23:16Z: spawned REFEREE successor session_01R4yR8XskSK3ta94ewnN4cM (fable-5-1) for R-L1; L-LIT T9. Working: L-ATTR, L-LOWER, REFEREE, L-LIT(short), L-COMP(waiting), WATCHDOG = 5 working + watchdog; L-LIT parks after T9 (cap 5 respected once it parks).
+- P2 committed 2026-10-14 23:21Z: sha256 2847e3707d454be0f0fcacc0cf57aba3573dbc85d2a151b0400ddd5883d8af84 (target: REFEREE-2; description held by Lead until verdict)

@@ -47,3 +47,7 @@ Lead reading L8 (2026-10-14, on D1's M3 list, "a new polynomial class"): a class
 membership is decidable in polynomial time or it is given by a natural structural condition checkable in polynomial time. A class on
 which a known polynomial partial solver is merely complete (promise-only; "run it, fall back if residual") is recorded as "a tighter
 analysis of a known algorithm" (D1), with correspondingly lower weight. Owner may rule otherwise.
+Lead reading L9 (2026-10-14, under L8): L-ATTR's T-A1 ("psolB solves G completely ⟺ PA**(G)"; PA** ⟹ psolQ solves) is recorded,
+if double-refereed, as M3 "a tighter analysis of a known algorithm": an exact structural characterisation of the class HKP call
+"Solved" for psolB. It is not claimed as "a new polynomial class": PA** membership is decidable in polynomial time only by running
+psolB itself (L8). Owner may rule otherwise.
