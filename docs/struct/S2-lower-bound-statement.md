@@ -46,8 +46,13 @@ proof gives.
 - T1 holds with equality at (2,5), (2,6) in E, S, V: w = 3 = s(2,4) = s(2,3). It holds strictly at (2,4) V (3 > 2),
   (3,5), (3,6) V (6 > 5), (3,6) E (7 > 5), (4,6) V (w ≤ 11 vs s^V(4,4) = 7; w^V(4,6) itself is open from k = 10).
   No computed cell violates T1 or T2. REFEREE-checked cell: C1 (762c598).
-- Refuting instance for T1 would be a cell with w^X(n,d) < s^X(n,d−2); the first candidates are the open cells
-  (4,6) E (needs w^E(4,6) < 8) and n = 5 (L-COMP).
+- Monotonicity (Lead, 20:04Z, from L-COMP): a weak (n,d)-separator restricted to Σ_{d−2} is a weak (n,d−2)-separator
+  (S1 Lemma 2(a)), so w^X(n,d) ≥ w^X(n,d−2). Hence T1 is automatic at every cell where w^X(n,d−2) = s^X(n,d−2); in
+  particular w^E(4,6) ≥ w^E(4,4) = 8 = s^E(4,4), which L-COMP also confirmed directly (no weak (4,6) E-separator with
+  ≤ 7 states; LRAT-checked, l-comp d818c50). T1's content sits where weak is already below strong two letters down.
+- Decisive test cells (L-COMP computing): (2,8), where T1 needs w(2,8) ≥ 4 = s(2,6) although w(2,6) = 3; and V (3,8),
+  where T1 needs w^V(3,8) ≥ 7 = s^V(3,6) although w^V(3,6) = 6. A SAT answer below those values refutes T1. The proof
+  attempt waits for (2,8) and the REFEREE's statement check.
 - The naive mechanism is FALSE: "a weak (n,d)-separator restricted to Σ_{d−2} is a strong (n,d−2)-separator" fails,
   because weak separators with an odd simple cycle of maximum ≤ d−3 exist, even at minimum size ((3,6) V, 6 states,
   cycle maximum 3; experiments/weak-sep/probe_oddcycles.py). So T1 needs an argument that re-uses states, not a
