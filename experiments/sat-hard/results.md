@@ -10,9 +10,15 @@
 ## New bounds (convention E, weak)
 | cell | bound | evidence |
 | --- | --- | --- |
+| w(4,6) | >= 8 (no weak (4,6) E-separator with <= 7 states; supports L-STRUCT's T1 at (4,6): w >= s(4,4) = 8) | k=7 UNSAT: search.py 4 6 7 --cnf-out (12 graphs: 9 even + 3 odd; 11809 vars, 127565 clauses, 6 s); CaDiCaL LRAT proof (16 MB) verified by lrat_check.py (91568 RUP steps); CryptoMiniSat 5.11.15 UNSAT on the same CNF (10 s); L-STRUCT's encoder (5e94874) UNSAT at k=7 (11 s). CNF sha256 57c88533ff3b7949... Monotonicity in k covers k < 7. Elementary second route: a weak (4,6)-separator is a weak (4,4)-separator, so w(4,6) >= w(4,4) = 8, and (4,4) k=7 is UNSAT with a verified LRAT proof (this folder). |
 | w(5,4) | >= 10 (so w(5,4) in {10, 11}, as s(5,4) <= 11 by CFGO's f recursion, L-STRUCT table) | k=9 UNSAT: search.py 5 4 9 --cnf-out (CEGAR, 12 even + 3 odd graphs, 18936 vars, 246419 clauses, 57 s); CaDiCaL 1.7.3 LRAT proof (162 MB, 76 s) verified by lrat_check.py (377764 RUP steps, 44 s). CNF sha256 493cd346a13eb259... |
 
 Running: (4,5) k=9, (4,6) k=9 (UNSAT side), (4,6) k=12 (SAT probe), (5,4) k=10.
+
+## Independent check of L-STRUCT's w^V(4,6) <= 11 (claude/l-struct 616cf77, weak_V_n4_d6_k11.json)
+graphs.family_V (own generator: every tree with n leaves x every vertex labelling, brute-force parity check; covers all
+V-graphs on n vertices up to subgraphs) for n = 1..4, d = 6: the 11-state automaton has NO violation (n = 4: 5007 even,
+7752 odd graphs). It is not an E-separator (48 violated (4,6) E-graphs), as expected. Copy: out/ (not committed).
 
 ## Dead ends
 - Pairwise-inconsistent words (clique.py): the inconsistency graph is EMPTY for every (n,d) tried ((2,5), (2,6),

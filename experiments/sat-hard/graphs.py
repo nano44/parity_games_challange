@@ -82,3 +82,30 @@ def family(n, d, win):
     for E in res:
         assert is_parity(n, E, win), "generator produced a graph of the wrong parity"
     return [(n, E) for E in res]
+
+
+def family_V(n, d, win):
+    """Vertex-labelled parity graphs (convention V: edge (u,v) carries pr(u)) with n vertices: for every tree with n
+    leaves (vertices = leaves, injective; non-injective progress measures give subgraphs after splitting a leaf at the
+    lowest level, which only adds edges) and every labelling pr: V -> letters, all edges (u, pr(u), v) satisfying the
+    progress-measure condition. Every graph is re-checked by brute force; duplicates (as labelled edge sets) removed."""
+    out = set()
+    if win == 0:
+        h, letters, shift = (d + 1) // 2, list(range(1, d + 1)), 0
+    else:
+        h, letters, shift = (d + 2) // 2, list(range(2, d + 2)), 1
+    for t in trees(n, h):
+        for pr in itertools.product(letters, repeat=n):
+            E = set()
+            for u in range(n):
+                p = pr[u]
+                keep = sum(1 for i in range(h) if 2 * (h - i) - 1 >= p)
+                for v in range(n):
+                    a, b = t[u][:keep], t[v][:keep]
+                    if (p % 2 == 0 and a >= b) or (p % 2 == 1 and a > b):
+                        E.add((u, p - shift, v))
+            out.add(frozenset(E))
+    res = sorted(out, key=lambda e: sorted(e))
+    for E in res:
+        assert is_parity(n, E, win)
+    return [(n, E) for E in res]
