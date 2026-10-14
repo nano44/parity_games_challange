@@ -12,6 +12,8 @@ default binary (universal_solve preprocessing); regions match Oink on 150 random
 Theorem numbering: the paper's shared counter (Theorem 2 = dominion, Lemma 3 = minimal dominion, Lemma 4 = progress); my
 first two messages to the Lead were off by one. Idle until the Lead routes the next item.
 
+L4 proof (l-struct 168d828), first referee: docs/referee/2026-10-14-L4-proof-check.md, CHANGES (two sentence fixes;
+Theorem L4, L4.3, L4.4 hold; Thm 5.1 black box legitimate; PW quotes verbatim).
 S3 delta (l-struct a67bd78): OK; M0 window-length nit; R1 observation: splitting v_i per out-letter gives c = d and with
 monotonicity in d this already yields L4 (s^V(n,n) >= n^{Omega(lg n)}); appended to the S3 report.
 S3 statement (l-struct ef95a93): docs/referee/2026-10-14-S3-statement-check.md, CHANGES (6 findings; diagonal W=S=1,2,5,7 for n<=4 confirmed by my SAT).
@@ -38,6 +40,7 @@ T4 §3(c) lasso observation checked: docs/referee/2026-10-14-T4-3c-lasso.md (OK;
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
 | --- | --- | --- | --- |
+| arXiv:2305.00308v1 (Parys–Wiącek) | improved-parity.tex lines 86-87 (edge-to-vertex priority conversion remark), 368 (necessity proof does not apply) | 2026-10-15 | LaTeX source; L4 attribution quotes |
 | arXiv:2104.05262v8 (CFGO, LMCS 2022) | preliminaries (graphs, automata, neutral letter), reductions (separating automata, universal graphs), saturation Thm 4.1, parity §6: Lemma 6.1, Thm 6.2, Lemmas 6.4-6.8, Thm 6.9, Props 6.10/6.11 | 2026-10-14 | LaTeX source; S1 conventions and F2 |
 | arXiv:1902.07175v3 (Kozachinskiy-Vyalyi) | §1.2 separation approach, §2.1 separation automata and game graphs, Thm 2 | 2026-10-14 | LaTeX source; S1 F5 / Lemma 3 |
 | arXiv:1807.10546v2 (Czerwiński et al., universal trees inside separating automata) | the-separation-approach.tex (languages of play encodings; safety automata; (n,d)-separators, strong separators); intro.tex 161-166 (separator) | 2026-10-14 | definitions for the T4 §3(c) check; LaTeX source |
