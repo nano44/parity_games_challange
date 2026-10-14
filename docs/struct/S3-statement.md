@@ -52,9 +52,9 @@ value−1, CryptoMiniSat agreement and re-checked witnesses, claude/l-comp 8d969
 | (1,1), (1,2) | 1 | 1 | L-STRUCT |
 | (2,2), (2,3) | 2, 3 | 2, 3 | both |
 | (3,3), (3,4) | 5, 5 | 5, 5 | both |
-| (4,4), (4,5) | 7, open | 7, open | both at (4,4); REFEREE reproduces n ≤ 3 [R6] |
+| (4,4), (4,5) | 7, 10 | 7, 10 | both at (4,4); L-STRUCT at (4,5) (weak k = 9 refuted in 3319 s, k = 10 SAT; strong k = 9 refuted in 1331 s); REFEREE reproduces n ≤ 3 [R6] |
 | TARGET alphabet {2..n+2}, n = 2, 3, 4 | 2, 5, 7 | 2, 5, 7 | L-COMP (LRAT; n = 4 strong confirmed 20:32Z); equals w^V(n,n) as S1 Lemma 2(b-V) predicts |
-No cell with d ≤ n + 1 violates T3. Decisive next cells: (4,5) V (both), (5,5) V, (5,6) V. Above the threshold the
+No cell with d ≤ n + 1 violates T3; (4,5) V, the first non-trivial n = 4 cell, gives equality 10 = 10. Decisive next cells: (5,5) V, (5,6) V. Above the threshold the
 equality fails: (2,5), (2,6), (2,7..12), (3,5), (3,6), (3,8), (3,10) (w^V(3,10) ≥ 8 > ... s^V(3,10) open).
 
 ## 3. Mechanism: why the gap appears only when d is large against n (structural core; hypotheses, testable)

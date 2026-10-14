@@ -2,6 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
+2026-10-14 22:20Z: w^V(4,5) = 10 = s^V(4,5): T3 holds at (4,5) V with equality (SAT + checker, unrefereed).
 2026-10-14 22:15Z: S3 §4c written: sub-lemma SL8 (same-states rewiring weak → strong at d ≤ n+1) with probe data (t = 1 rewire in 9/9 instances; naive rule dead). Sent to the Lead; no proof started. Next data step: enumerate ALL t=1 rewires per instance (E first) to read off the rule.
 2026-10-14 21:50Z: docs/struct/L4-proof.md written (Claim R transfer + CDFJLP Thm 5.1 ⇒ S(n) = n^{Ω(lg n)}); sent to the Lead for the two referees. Next: T3 via R2 size argument (no sub-lemma yet).
 2026-10-14 21:30Z: new cells s^V(4,5) = 10, w^V(4,5) ∈ {9,10} (k=8 refuted, k=9 running: equality here is T3's first real test at n=4), w^V(3,10) = 8 (fixed-n growth 6,7,8 at d = 6,8,10), s^S(3,6) landed.
