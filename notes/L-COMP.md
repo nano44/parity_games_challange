@@ -110,6 +110,7 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
 | --- | --- | --- | --- |
 | github.com/trolando/oink @ 8fbf0a7 | solver list (README), generators src/tools/*.cpp, solution format src/game.cpp:459 | 2026-10-14 | code, not a paper |
+| arXiv 1405.0386v2 (LaTeX e-print, Huth-Kuo-Piterman) | Figs. 4(a), 4(b), 6 tikz source (archiv.tex:815-855, 1164-1194); conventions archiv.tex:225, 342-343 | 2026-10-14 | bench witnesses |
 | arXiv 2511.03752v1 (LaTeX e-print) | Sec. 2-3, Algorithm 1, Thm 2, Lemmas 3-4 (see M2 pseudocode) | 2026-10-14 | M2 subject |
 | github.com/tcsprojects/pgsolver @ d3cd624 | generators recursiveladder.ml, policyiter/generators/*.ml; paritygame.ml conventions | 2026-10-14 | code, not a paper; papers awaiting source |
 

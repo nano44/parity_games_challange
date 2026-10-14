@@ -33,5 +33,13 @@ python3 compare.py out/rn out/own -s py-zlk oink-zlk oink-tl ... --timeout 30 --
 ```
 For the gauntlet's 10,000 games: `python3 gen.py corpus out/g10k 10000 <seed> --nmax 200`, then `compare.py out/g10k --solver NEW='...'`.
 
+## Generic bench families (L-LIT ranked list, claude/l-lit a6c530f docs/lit/2511.03752-position.md)
+- rank 1, `exhaustive.py`: every game with n vertices and priorities 0..P (file corpus with `--stride`, or `iter_games`
+  in-process). Checked: py-zlk == brute force with verified strategies on all 74088 games with n = 3, P = 2;
+  py-zlk == Oink zlk == uzlk on all 324 games with n = 2, P = 2.
+- rank 2, `bench/hkp_fig4a.pg`, `hkp_fig4b.pg`, `hkp_fig6.pg`: Huth-Kuo-Piterman (arXiv 1405.0386v2) incompleteness
+  witnesses, encoded from the figures' tikz source by `bench/make_hkp.py` (min-parity converted to max-parity).
+  Brute force: Even wins every vertex of all three (Fig. 6 agrees with L-LIT's hand check).
+
 ## Results
 See `validation.md`.
