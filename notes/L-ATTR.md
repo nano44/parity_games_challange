@@ -4,11 +4,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 ## Resume point
 2026-10-14 23:40Z. Lead's go (23:02Z, 12 h box to 2026-10-15 11:02Z) executed: docs/attr/TA1-proof.md has the theorem
 "psolB solves G completely <=> PA**(G)" with both directions and gaps G1-G8; docs/attr/A1-results.md section 3 rewritten
-(PA ⊊ PA* ⊊ PA** hierarchy, data table, L-LIT's correction). Waiting for: the last n=5 sample (out/pa2_n5_s52.txt), then
-push and message the Lead. After that: REFEREE questions on TA1-proof.md.
+(PA ⊊ PA* ⊊ PA** hierarchy, data table, L-LIT's correction). All samples in results/ (last: pa2_n5_s52.txt, holds). Pushed and reported to the Lead at 23:45Z. After that: REFEREE questions on TA1-proof.md.
 
 ## Queue
-1. Copy out/pa2_n5_s52.txt to results/, push, message the Lead (statement, data, proof status).
 2. Answer referee questions on TA1-proof.md; G3 (F6 equality) and G2 (external target, rank of X-vertices) are the ones I
    would probe first.
 3. Not done, optional: a solver-free polynomial decision procedure for PA** (the canonical rule greedy2 is sound but misses
