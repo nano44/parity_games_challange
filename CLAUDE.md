@@ -31,6 +31,7 @@ Playbook: docs/sources/fleet-playbook.md. Literature map (secondary source): doc
 - L-ATTR: docs/attr/, experiments/attr/.
 - REFEREE-2: docs/referee-2/ (independent second referee; reads docs/referee/ only after its own report).
 - L-LOWER: docs/lower/, experiments/lower/.
+- CHECKER: docs/checker/ (landing gate: exact-commit re-runs and statement diffs).
 - Lead only: CLAUDE.md, TARGET.md (drafts; owner approves), docs/*.md, docs/agents/, scripts/verify.sh, .github/.
 
 ## Commands
