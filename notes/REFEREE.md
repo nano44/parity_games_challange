@@ -12,6 +12,8 @@ default binary (universal_solve preprocessing); regions match Oink on 150 random
 Theorem numbering: the paper's shared counter (Theorem 2 = dominion, Lemma 3 = minimal dominion, Lemma 4 = progress); my
 first two messages to the Lead were off by one. Idle until the Lead routes the next item.
 
+S2 statement (l-struct 616cf77): docs/referee/2026-10-14-S2-statement-check.md, CHANGES (T2 edge case; V barrier needs an s^V bound;
+algorithm class; commit the probe automaton). (4,6) V SAT cells pending.
 S1/C1 (l-struct 42dbbc2): docs/referee/2026-10-14-S1-C1-weak-separators.md: C1 OK (w(2,6)=3<4=s(2,6) in E,S,V, own checker
 over all graphs + own SAT + universal trees), side claim (3-state weak (3,6)-separator) BROKEN (a Lead plant, revealed in docs/agents/LEAD-STATE.md at trunk 09dca4f; graded CAUGHT 1/1), w^V(3,6)=6<7 OK, Lemma 2(b) CHANGES.
 Harness review (l-comp a3777f1..de7ea19, experiments/): docs/referee/2026-10-14-harness-review.md, CHANGES (2 self-test coverage findings; code correct); signed OK at l-comp e70a2a9 after re-running both faults.

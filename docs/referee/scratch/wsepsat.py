@@ -14,6 +14,10 @@ def maximal_graphs(n, d, conv, cls):
         gen = W.graphs_V(m, d) if conv == 'V' else W.graphs_S(m, d)
         groups = {}
         for e in gen:
+            if conv == 'V':   # vertex symmetry: one representative labelling per orbit (non-decreasing labels); sound and complete
+                lab = [None] * m
+                for (u, p, w) in e: lab[u] = p
+                if any(lab[i] > lab[i + 1] for i in range(m - 1)): continue
             if W.cycle_class(m, e) != cls: continue
             key = tuple(sorted({(u, p) for (u, p, w) in e})) if conv == 'V' else ()
             groups.setdefault(key, []).append(frozenset(e))
