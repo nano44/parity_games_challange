@@ -24,37 +24,61 @@ Data (L-STRUCT, SAT + checker, unrefereed except C1; experiments/weak-sep/result
 On the diagonal weak and strong coincide on every computed cell. The weak < strong cells all lie above the diagonal
 (d ≥ n + 3): (2,5), (2,6), (2,7..12), (3,5), (3,6), (3,8).
 
-## 2. Targets (mutually exclusive; the data cannot yet tell them apart)
-T3-neg (no diagonal gain). For all n ≥ 1: w^V(n, n) = s^V(n, n). Consequence: deterministic weak separators give no
-  algorithmic advantage over strong ones on TARGET games; the product class (i)-(iii) is bounded below by s^V(n,n). A
-  barrier in TARGET terms needs in addition L4 below.
-T3-pos (polynomial diagonal). There are a polynomial p and a deterministic algorithm that on input n outputs in time
-  p(n) a deterministic weak (n, n)-separator of convention V with ≤ p(n) states. Consequence: by §1 an algorithm meeting
-  TARGET §2 (then the gauntlet, TARGET §5). Weaker intermediate: w^V(n,n) ≤ p(n) without a construction (existence only;
-  not an algorithm).
-T3-mid (sub-quasi-polynomial but super-polynomial) is the remaining possibility; a statement there is premature.
+## 2. Target T3 (Lead's framing 20:23Z, option (ii) with the explicit f the data allow; (i) is the case d ≤ n)
+T3. For all n ≥ 1 and all d with 1 ≤ d ≤ n + 1:   w^V(n, d) = s^V(n, d).
+  In words: on and just above the TARGET range, deterministic weak separators of convention V are no smaller than
+  strong ones. The case d ≤ n (TARGET alphabet after S1 Lemma 2(b)) is the Lead's option (i); f(n) = n + 1 is the
+  largest threshold consistent with the data (gaps at (2,5) = n+3 and (3,5) = n+2; equality at (2,4) = n+2 and at
+  every cell with d ≤ n+1). Consequence: W(n) = S(n); the product class (i)-(iii) of S2 §1 gains nothing from
+  weakening, and every known quasi-polynomial product algorithm's size bound is tight for its class exactly where
+  algorithms live. The quasi-polynomial reading needs L4. M3 status if proved and refereed: extends the separation
+  barrier (B1) to deterministic weak separators on the algorithmic range; Lead to rule, L-LIT to check novelty.
+T3-pos (the opposite, M4 route; stated so the refutation of T3 has a name). There are a polynomial p and a
+  deterministic algorithm that on input n outputs in time p(n) a deterministic weak (n, n)-separator of convention V
+  with ≤ p(n) states. Consequence: by §1 an algorithm meeting TARGET §2, then the gauntlet (TARGET §5). A single cell
+  with w^V(n,d) < s^V(n,d) and d ≤ n + 1 refutes T3 and is the first evidence for T3-pos.
 L4 (needed for any V-barrier; open): s^V(n, n) is super-polynomial in n. CDFJLP Thm 5.1 covers E only; s^V ≤ s^E and
-  s^V < s^E already at (4,4). The Parys-Wiącek remark that the necessity proof "does not apply" for vertex priorities
-  (docs/lit/BARRIERS.md B1 fine print) is the obstacle; L-LIT to check whether any source bounds s^V from below.
+  s^V < s^E already at (4,4) (7 vs 8) and (4,6) (10 vs 13). The Parys-Wiącek remark that the necessity proof "does not
+  apply" for vertex priorities (docs/lit/BARRIERS.md B1 fine print) is the obstacle; L-LIT to check for any source.
 
-## 3. The fixed-n mechanism (structural, non-algorithmic), stated so it can be tested and refuted
-H1 (saturation in d). For every n there is D(n) such that w^V(n, d) = w^V(n, D(n)) for all d ≥ D(n); write F(n) for
-  this value. Evidence: w^V(2, d) = 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4 for d = 2..12 (d = 11 not run), so D(2) ≤ 7,
-  F(2) = 4 if H1 holds, while s^V(2, 2h) = h + 1 → ∞ (REFEREE S2 §0). In E: w^E(2,8) = w^E(2,10) = 4.
-  Test: w^V(3, d) for d = 8, 10, 12, 14 (w^V(3,6) = 6, w^V(3,8) = 7; d = 10 running). H1 is refuted at n = 3 if
-  w^V(3,d) keeps growing; L-COMP's w(2,d) up to d = 20 tests it at n = 2.
-Why n = 2 is degenerate (verified on the maximal graphs, experiments/weak-sep): in an even 2-vertex graph no two
-  consecutive letters are odd (two consecutive odd edges form a 2-cycle or a loop with odd maximum), and in an odd
-  2-vertex graph no two consecutive letters are even. Every word of EvenCycles_{2,d} has each odd letter immediately
-  followed by a larger even letter, and dually for OddCycles. The 4-state witnesses (2,8), (2,10) exploit this: their
-  only odd simple cycles have maximum d−1 and lasso words such as (9 4 8)^ω that no 2-vertex odd graph realises. Even
-  if H1 holds for all n, F(n) ≥ W(n), so it says nothing about the diagonal unless F(n) is also computed.
-H1 is NOT an algorithmic statement: for TARGET games d ≤ n + 1 < D(n) is the expected regime.
+Data for T3 (all cells with d ≤ n + 1 computed so far; L-STRUCT unrefereed, L-COMP with LRAT-verified UNSAT at
+value−1, CryptoMiniSat agreement and re-checked witnesses, claude/l-comp 8d9697b experiments/sat-hard/results/cells.md):
+| cell (V) | w | s | source |
+| --- | --- | --- | --- |
+| (1,1), (1,2) | 1 | 1 | L-STRUCT |
+| (2,2), (2,3) | 2, 3 | 2, 3 | both |
+| (3,3), (3,4) | 5, 5 | 5, 5 | both |
+| (4,4), (4,5) | 7, open | 7, open | both at (4,4) |
+| TARGET alphabet {2..n+2}, n = 2, 3, 4 | 2, 5, 7 | 2, 5, 7 | L-COMP; equals w^V(n,n) as S1 Lemma 2(b) predicts |
+No cell with d ≤ n + 1 violates T3. Decisive next cells: (4,5) V (both), (5,5) V, (5,6) V. Above the threshold the
+equality fails: (2,5), (2,6), (2,7..12), (3,5), (3,6), (3,8), (3,10) (w^V(3,10) ≥ 8 > ... s^V(3,10) open).
+
+## 3. Mechanism: why the gap appears only when d is large against n (structural core; hypotheses, testable)
+Fact M0 (elementary, to be written up with S3's proofs). In a word of OddCycles^X_{n,d}, every window of n + 1
+  consecutive letters contains a factor whose maximum is odd (n + 1 edges visit a repeated vertex, the closed part is a
+  cycle, its maximum is odd); dually every (n+1)-window of a word of EvenCycles^X_{n,d} contains a factor with even
+  maximum. For n = 2 this is "no two consecutive odd letters in even words, no two consecutive even letters in odd
+  words" (verified on the maximal graphs). These are local constraints, independent of d.
+Fact M1 (refereed lasso condition, S1 Q3). A weak separator may keep a reachable odd simple cycle C exactly when the
+  lasso words π(P)·π(C)^ω are unrealisable by odd graphs with ≤ n vertices; the cheap filter is |P| + |C| > n.
+Hypothesis H2 (where the saving comes from). The strong minimum pays one universal-tree level per odd letter
+  (s(2,2h) = h + 1; in general the (n, d/2)-universal tree). A weak separator can merge the levels of the odd letters
+  that an n-vertex graph cannot "count" against each other: with ≤ n vertices a graph realises at most n distinct
+  letters per cycle structure (V: at most n letters in the whole word), so for d ≫ n most letters are, for every
+  single graph, either absent or interchangeable, and the separator exploits this with odd cycles of the kind M1
+  allows (all witnesses: cycles through high even letters, e.g. (5 4 4)^ω, (9 4 8)^ω, (7 2 4 2)^ω). For d ≤ n + 1 every
+  letter can occur with every other inside one n-vertex graph, so nothing can be merged: this is T3's content.
+  Test of H2: minimal weak witnesses at gap cells should have odd simple cycles only through letters ≥ some threshold
+  that grows with n; refuted if a gap cell has a minimal witness whose odd cycles all lie below n + 1.
+Hypothesis H1 (saturation in d; non-algorithmic). For every n there is D(n) with w^V(n, d) = w^V(n, D(n)) for all
+  d ≥ D(n). Evidence: w^V(2, d) = 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4 for d = 2..12 (11 not run); E: w^E(2, 8) = w^E(2,10) =
+  w^E(2,12) = 4. At n = 3: w^V(3,6) = 6, w^V(3,8) = 7, w^V(3,10) ≥ 8 (k = 7 refuted), so H1 is not yet visible at n = 3;
+  L-COMP's w(2,d) to d = 20 and my w^V(3,d) for d = 10..14 test it. H1 says nothing about the diagonal.
 
 ## 4. Decisive data (L-COMP's cells, in order of value)
-1. W(5) and S(5): a strict inequality refutes T3-neg; equality extends the diagonal pattern to n = 5.
-2. w^V(3, d), d = 10, 12, 14: tests H1 at n = 3 (my cheap runs, caps).
-3. W(6), S(6) if feasible.
+1. (4,5) V, then (5,5) V and (5,6) V: any strict inequality refutes T3 (and names the first algorithmic gap).
+2. w^V(3, d), d = 10, 12, 14 (mine, cheap, capped): tests H1 and, with the odd-cycle probe, H2.
+3. (6,6) V if feasible.
 A refutation of T3-pos is not available from finite data; its support can only come from a construction.
 
 ## 5. Calibration
@@ -63,3 +87,5 @@ A refutation of T3-pos is not available from finite data; its support can only c
 - A polynomial W(n) would contradict nothing known (S1 F3, F5 are strong or time-bounded), but no mechanism for it is
   visible in the data: the weak savings so far come from odd cycles whose lasso words need more than n vertices, and
   on the diagonal the solver found none.
+- Timestamps in L-STRUCT's earlier messages of this day ran ahead of UTC by up to 90 minutes (clock not consulted);
+  the SHAs are authoritative.
