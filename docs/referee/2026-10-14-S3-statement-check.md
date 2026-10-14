@@ -89,3 +89,37 @@ Matches S3's W = S = 1, 2, 5 for n ≤ 3. ✓
 ## Gaps
 - My SAT encoding is unproven; its answers agree with L-STRUCT's and L-COMP's on every cell all have run.
 - Nothing machine-checked; statements only, as S3 says.
+
+## Delta check, L-STRUCT a67bd78 (routed 2026-10-14 20:38Z): OK for R1–R5 as applied; one new finding on §3 M0; one observation on §4b
+- S1 Lemma 2(b-V): the contraction-with-predecessor-label proof and the fresh-vertex repair are stated as in my finding 1,
+  with n ≥ 2 and n = 1 direct. OK.
+- S3 §1 strategies [R2], §2 exclusivity under L4 [R3], §3 H1 evidence [R4] (h ≤ 4 in V by SAT, all h in E by universal
+  trees; d-list now consistent), the false n = 2 sentence removed [R5]. OK.
+- T3 as restated ("w^V(n,d) = s^V(n,d) for 1 ≤ d ≤ n+1"): well-posed; my cells agree on every (n,d) with d ≤ n+1 that I
+  ran: (1,1): 1/1; (2,2): 2/2; (2,3): 3/3 (weak and strong k=2 UNSAT, k=3 SAT); (3,3): 5/5; (3,4): 5/5 (k=4 UNSAT, k=5 SAT
+  both); (4,4) strong ≥ 7 (k=6 UNSAT, 683 s), weak and the k=7 cells still running.
+- §3 Fact M0: true as written, but loose: n consecutive edges already visit n+1 vertices, so every window of n letters
+  (not n+1) of a word of OddCycles_{n,d} contains a factor with odd maximum; the n = 2 instance quoted ("no two
+  consecutive odd letters") is the n-letter version, which the n+1 statement does not give. Finding 7 (one word).
+- §4b (b): confirmed with my tools: results/automata/weak_V_n3_d3.json is a weak (3,3)-separator (all V-graphs with
+  ≤ 3 vertices) and the transitions it traverses on words of even graphs contain an odd cycle (states 1 →3 4 →2 2 →2 3
+  →1 1, maximum 3), so "prune the even-used part" cannot be the proof of T3. OK.
+- §4b Route R1 (L4): plausible as stated, and the fallback already suffices. Checked against CDFJLP §5 (source): the
+  embedding claim uses only (a) a run of A on α_t avoiding rejecting states, which holds whenever α_t is the word of an
+  even graph the separator must accept, and (b) the tree decomposition, which comes from strongness alone (Lemma 5.2).
+  G_t's vertex v_i emits several distinct out-letters along α_t (the odd letters 2k−1 at every level where ℓ_i is the
+  last leaf of a non-first child, the even 2k where it is the first leaf, and the loop 2), so a vertex-labelled
+  realisation needs copies. Splitting every v_i into one copy per out-letter (at most d copies), each copy keeping all
+  in-edges of v_i and the out-edges of its letter, gives a vertex-labelled graph G'_t with ≤ n·d vertices; it is even
+  (every cycle projects to a closed walk of G_t with the same labels) and realises α_t (the path picks the copy whose
+  letter comes next). So c ≤ d with no further work, and Lemma 5.1 re-run verbatim gives s^V(n·d, d) ≥
+  C(⌊lg n⌋ + d/2 − 1, ⌊lg n⌋), i.e. the bound form S3 writes with c = d (floors and non-divisible n handled by
+  monotonicity in n). S3 says this fallback "still yields a super-polynomial bound at d = Θ(n/lg n) but not at d = n":
+  that misses S1 Lemma 2(a). s^V is monotone in d, so for the diagonal s^V(n,n) ≥ s^V(n,d) for every even d ≤ n, and
+  choosing d = 2⌊√n/2⌋ gives s^V(n,n) ≥ C(⌊lg(n/d)⌋ + d/2 − 1, ⌊lg(n/d)⌋) ≥ ((n/d)/lg(n/d))^{⌊lg(n/d)⌋} = n^{Ω(lg n)}.
+  So L4 (s^V(n,n) super-polynomial) follows from the fallback plus monotonicity, with no need for c = O(1); the only
+  remaining task is to write the re-run of Lemma 5.1 for V-graphs in full (the referee has not re-derived the claim's
+  induction line by line; it is CDFJLP's and depends on α_t only). The exact bound form asked by the Lead: yes, it is
+  what Lemma 5.1 gives, with c = d available immediately. Observation 8 (for L-STRUCT; a proof is theirs to write).
+- Route R2 (T3): a plan, not checked beyond its stated obstruction, which I confirmed above.
+Findings from this delta: 7 (M0 window length). Observation 8 (R1: c = d suffices for L4 via monotonicity in d).
