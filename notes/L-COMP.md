@@ -2,17 +2,16 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14 19:35Z. Harness done + validated; strategy verifier (verify.py) in compare.py/sweep.py.
-M2: pseudocode pushed (51f1d1b); provisional implementation experiments/m2/avh.py; COUNTEREXAMPLE CE1
-(experiments/m2/counterexamples/ce1_4v.pg, 4 vertices) reported to the Lead at 19b5ce2. M2 runs paused per the
-Lead's stop rule; waiting for REFEREE confirmation / Lead instruction.
-M1: 13 family sweeps + READMEs pushed (4c0ae44); re-run with strategy checks running (run_all.sh -> /tmp log).
+2026-10-14 20:00Z. M2 CLOSED as BROKEN by the Lead (18:36Z): CE1 (mine) plus an independent 4-vertex counterexample by the
+REFEREE (claude/referee 936d47c, docs/referee/scratch/cex1-maxparity.pg) that breaks readings (a)-(d). No 10k run.
+M1: 13 sweeps + READMEs pushed (4c0ae44); re-run with strategy checks in progress (run_all.sh); switch-all SI port
+(pgsolver_si.py) confirms switchallexp blow-up (iterations double per N); run_si.sh sweep in progress.
 
 ## Queue
-1. When the re-run ends: make_readmes.py, drop the "strategies not checked" note in verdicts.py if all pass, push.
-2. Port PGSolver stratimpralgs (switch-all, switch-best) to confirm switchallexp/switchbestexp.
-3. M2 on instruction: 10,000-game run and family runs for avh (failure rate), L-LIT's ranked families.
-4. avh strategy failures (BADSTRAT on 5/100 games with correct regions): shrink one, decide if S1/S2 is wrong.
+1. When the re-runs end: make_readmes.py (+ switchallexp-pgs / switchbestexp-pgs), update verdicts, push, report.
+2. Port PGSolver switch-best SI (stratimpralgs/switch_globally_best.ml) for switchbestexp.
+3. Low priority: add L-LIT's bench list (claude/l-lit a6c530f, docs/lit/2511.03752-position.md: exhaustive tiny
+   games, Huth-Kuo-Piterman Fig. 6/4(a)/4(b) witnesses) as generic test families.
 
 ## M2 pseudocode
 Source: arXiv 2511.03752v1, R. van der Heijden, "Attractors Is All You Need: Parity Games In Polynomial Time"
@@ -115,7 +114,7 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 | github.com/tcsprojects/pgsolver @ d3cd624 | generators recursiveladder.ml, policyiter/generators/*.ml; paritygame.ml conventions | 2026-10-14 | code, not a paper; papers awaiting source |
 
 ## Dead ends
-- 2026-10-14 (PROVISIONAL until the REFEREE confirms the pseudocode): arXiv 2511.03752v1 Algorithm 1 as read in
+- 2026-10-14 (M2 closed BROKEN by the Lead 18:36Z; REFEREE's independent counterexample breaks readings (a)-(d)): arXiv 2511.03752v1 Algorithm 1 as read in
   "M2 pseudocode" is incorrect. Obstruction: Theorem 2 (A(G,d) is a player(d)-dominion) fails; A'_d only removes
   vertices the opponent can force into lower-priority parts, but player(d) (here Odd) can dodge A' on a
   cycle that never returns to U^k, and that cycle can be won by the opponent. Instance: experiments/m2/counterexamples/ce1_4v.pg
