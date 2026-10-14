@@ -35,3 +35,4 @@
 - 2026-10-14 21:43Z: Lead routing miss #2: approved SL8 in a form trivially equivalent to T3 (state set is abstract); L-STRUCT caught it; working form is SL8-t (Hamming-bounded). Lesson: check sub-lemmas for vacuity before approving. L4 fixes 50dc28b back to REFEREE for signature.
 - 2026-10-14 21:44Z: WATCHDOG flag REFEREE 680k ctx -> handover after L4 signature. Spend total $135.69.
 - 2026-10-14 21:47Z: REFEREE parked (handover f179ae0). Calibration: P1 caught 1/1.
+- 2026-10-14 21:53Z: T3 attempt obstructed at Lemma C (283ebbc). Chose (a) rule extraction, 2h box; (b) fallback; (c) n=5 cells to L-COMP successor.
