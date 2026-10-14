@@ -1,0 +1,44 @@
+n=4, 30000 games
+  PA = False  psolQ psol solved :    4776   e.g. parity 3; | 0 3 0 0,1; | 1 6 0 2; | 2 1 0 0,1,2,3; | 3 4 1 0,1,3; | 
+  PA = True   psolQ psol solved :   21858   e.g. parity 3; | 0 0 0 0; | 1 0 1 0,1; | 2 4 1 1,2,3; | 3 3 0 2,3; | 
+  PA = False  psolQ psol undecided :    3123   e.g. parity 3; | 0 4 0 1; | 1 2 1 0,2; | 2 1 1 1,3; | 3 4 0 0,1,2; | 
+  PA = True   psolQ psol undecided :     243   e.g. parity 3; | 0 4 1 0,1; | 1 4 1 0,1,2,3; | 2 0 0 0,1,2,3; | 3 3 0 0,2,3; | 
+  PA = False  psolQ psolb solved :    4636   e.g. parity 3; | 0 3 0 0,1; | 1 6 0 2; | 2 1 0 0,1,2,3; | 3 4 1 0,1,3; | 
+  PA = True   psolQ psolb solved :   22101   e.g. parity 3; | 0 0 0 0; | 1 0 1 0,1; | 2 4 1 1,2,3; | 3 3 0 2,3; | 
+  PA = False  psolQ psolb undecided :    3263   e.g. parity 3; | 0 4 0 1; | 1 2 1 0,2; | 2 1 1 1,3; | 3 4 0 0,1,2; | 
+  PA = False  psolQ psolq solved :    7813   e.g. parity 3; | 0 4 0 1; | 1 2 1 0,2; | 2 1 1 1,3; | 3 4 0 0,1,2; | 
+  PA = True   psolQ psolq solved :   22101   e.g. parity 3; | 0 0 0 0; | 1 0 1 0,1; | 2 4 1 1,2,3; | 3 3 0 2,3; | 
+  PA = False  psolQ psolq undecided :      86   e.g. parity 3; | 0 3 0 0,1; | 1 7 0 0,2; | 2 0 0 0,3; | 3 4 0 0; | 
+  PB = False  psolQ psol solved :     690   e.g. parity 3; | 0 2 1 0,1,2; | 1 2 0 0,1,2,3; | 2 5 0 1,2,3; | 3 0 0 0,1; | 
+  PB = True   psolQ psol solved :   25944   e.g. parity 3; | 0 0 0 0; | 1 0 1 0,1; | 2 4 1 1,2,3; | 3 3 0 2,3; | 
+  PB = False  psolQ psol undecided :      39   e.g. parity 3; | 0 2 0 0,1,2; | 1 7 0 0; | 2 0 1 1,2,3; | 3 4 1 2; | 
+  PB = True   psolQ psol undecided :    3327   e.g. parity 3; | 0 4 0 1; | 1 2 1 0,2; | 2 1 1 1,3; | 3 4 0 0,1,2; | 
+  PB = False  psolQ psolb solved :     697   e.g. parity 3; | 0 2 1 0,1,2; | 1 2 0 0,1,2,3; | 2 5 0 1,2,3; | 3 0 0 0,1; | 
+  PB = True   psolQ psolb solved :   26040   e.g. parity 3; | 0 0 0 0; | 1 0 1 0,1; | 2 4 1 1,2,3; | 3 3 0 2,3; | 
+  PB = False  psolQ psolb undecided :      32   e.g. parity 3; | 0 2 0 0,1,2; | 1 7 0 0; | 2 0 1 1,2,3; | 3 4 1 2; | 
+  PB = True   psolQ psolb undecided :    3231   e.g. parity 3; | 0 4 0 1; | 1 2 1 0,2; | 2 1 1 1,3; | 3 4 0 0,1,2; | 
+  PB = False  psolQ psolq solved :     728   e.g. parity 3; | 0 2 1 0,1,2; | 1 2 0 0,1,2,3; | 2 5 0 1,2,3; | 3 0 0 0,1; | 
+  PB = True   psolQ psolq solved :   29186   e.g. parity 3; | 0 4 0 1; | 1 2 1 0,2; | 2 1 1 1,3; | 3 4 0 0,1,2; | 
+  PB = False  psolQ psolq undecided :       1   e.g. parity 3; | 0 1 0 0,1; | 1 7 0 2; | 2 4 0 0; | 3 3 0 1,2,3; | 
+  PB = True   psolQ psolq undecided :      85   e.g. parity 3; | 0 3 0 0,1; | 1 7 0 0,2; | 2 0 0 0,3; | 3 4 0 0; | 
+  PD = False  psolQ psol solved :     683   e.g. parity 3; | 0 1 0 0,1; | 1 2 1 0,2; | 2 6 1 0,3; | 3 5 1 2; | 
+  PD = True   psolQ psol solved :   25951   e.g. parity 3; | 0 0 0 0; | 1 0 1 0,1; | 2 4 1 1,2,3; | 3 3 0 2,3; | 
+  PD = False  psolQ psol undecided :    2504   e.g. parity 3; | 0 4 0 0,1; | 1 0 1 1,2; | 2 4 1 0,3; | 3 2 1 0,2,3; | 
+  PD = True   psolQ psol undecided :     862   e.g. parity 3; | 0 4 0 1; | 1 2 1 0,2; | 2 1 1 1,3; | 3 4 0 0,1,2; | 
+  PD = False  psolQ psolb solved :     542   e.g. parity 3; | 0 3 0 0; | 1 1 0 0,1,2; | 2 1 1 2,3; | 3 5 0 1,3; | 
+  PD = True   psolQ psolb solved :   26195   e.g. parity 3; | 0 0 0 0; | 1 0 1 0,1; | 2 4 1 1,2,3; | 3 3 0 2,3; | 
+  PD = False  psolQ psolb undecided :    2645   e.g. parity 3; | 0 4 0 0,1; | 1 0 1 1,2; | 2 4 1 0,3; | 3 2 1 0,2,3; | 
+  PD = True   psolQ psolb undecided :     618   e.g. parity 3; | 0 4 0 1; | 1 2 1 0,2; | 2 1 1 1,3; | 3 4 0 0,1,2; | 
+  PD = False  psolQ psolq solved :    3112   e.g. parity 3; | 0 4 0 0,1; | 1 0 1 1,2; | 2 4 1 0,3; | 3 2 1 0,2,3; | 
+  PD = True   psolQ psolq solved :   26802   e.g. parity 3; | 0 4 0 1; | 1 2 1 0,2; | 2 1 1 1,3; | 3 4 0 0,1,2; | 
+  PD = False  psolQ psolq undecided :      75   e.g. parity 3; | 0 3 0 0,1; | 1 7 0 0,2; | 2 0 0 0,3; | 3 4 0 0; | 
+  PD = True   psolQ psolq undecided :      11   e.g. parity 3; | 0 4 1 0,1; | 1 1 0 1,2; | 2 2 1 0,3; | 3 7 1 0; | 
+PA => psolq solved: HOLDS;  psolq solved => PA: FAILS (7813)
+PA => psolb solved: HOLDS;  psolb solved => PA: FAILS (4636)
+PA => psol solved: FAILS (243);  psol solved => PA: FAILS (4776)
+PB => psolq solved: FAILS (85);  psolq solved => PB: FAILS (728)
+PB => psolb solved: FAILS (3231);  psolb solved => PB: FAILS (697)
+PB => psol solved: FAILS (3327);  psol solved => PB: FAILS (690)
+PD => psolq solved: FAILS (11);  psolq solved => PD: FAILS (3112)
+PD => psolb solved: FAILS (618);  psolb solved => PD: FAILS (542)
+PD => psol solved: FAILS (862);  psol solved => PD: FAILS (683)

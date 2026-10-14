@@ -11,7 +11,9 @@ import sys; sys.path.insert(0, "."); sys.path.insert(0, "../harness")
 import pg, a1lib
 exp = {  # file: (psolq, psolb, psol, avh, Strahler)
     "instances/psolq_min_n3_m4.pg": ("undecided", "undecided", "undecided", "solved", 1),
-    "instances/alg1_min_n4_m5.pg": ("undecided", "undecided", "undecided", "WRONG", 1),
+    "instances/alg1_min_n4_m5.pg": ("undecided", "undecided", "solved", "WRONG", 1),
+    "instances/psolq_str2_n4_m6.pg": ("undecided", "undecided", "undecided", "solved", 2),
+    "instances/psolq_pd_n3_m4.pg": ("undecided", "undecided", "undecided", "solved", 1),
     "instances/avh_badstrat_n3_m4.pg": ("solved", "solved", "solved", "BADSTRAT", 1),
 }
 import os

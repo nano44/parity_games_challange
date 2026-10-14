@@ -2,17 +2,14 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14 22:42Z (machine clock; trunk commit 22:05Z). A1 answered: k(psolQ) = k(Alg1) = 0 (docs/attr/A1-results.md). Exhaustive n <= 3 done; n = 4 full
-enumeration (27.3 M canonical games, experiments/attr/exhaustive.py 4 --all-strahler) and PA sampling at n = 5 were running
-when this was written; their numbers go into A1-results.md section 2-3 (placeholders N4, Q4, W4, S4, B4, H4, N5Q, N5B if
-still present means they did not finish). Then: instances/alg1_min_n4_m5.pg from out/fail_n4.jsonl, scripts/verify.sh, push,
-message to the Lead (Q1-Q3, T-A1 judgement, NEEDS: L-LIT novelty of T-A1, REFEREE for L1-L4 if the Lead wants it).
+2026-10-14 23:00Z. A1 DONE (n = 5/6 PA samples in experiments/attr/results/pa_n*.txt: PA => psolQ/psolB solved holds).
+Results: docs/attr/A1-results.md (k(psolQ) = k(Alg1) = 0; minimal instances n=3 m=4 and n=4 m=5; theorem candidate T-A1 = PA
+sufficient for psolB/psolQ, holds on all 27.3 M canonical n=4 games). Message to the Lead sent after the final push.
 
 ## Queue
-1. Fill the n = 4 and n = 5 numbers; write instances/alg1_min_n4_m5.pg (minimal m for Alg1 WRONG/stuck at n = 4).
-2. verify.sh && push; message the Lead.
-3. If the Lead wants T-A1 refereed: write the full proof of L1-L4 (docs/attr/T-A1-proof.md), with L3 stated carefully.
-4. Optional: exact class of psolQ (dynamic/peeling version of PA); psolB vs psolQ inclusion on the n = 4 data.
+1. Wait for the Lead's reply on T-A1 (novelty via L-LIT, referee).
+2. If the Lead wants T-A1 refereed: full proof of L1-L4 in docs/attr/T-A1-proof.md (L3 is the delicate lemma).
+3. Optional: exact (peeling) characterisation of psolQ's class; psolB vs psolQ inclusion at n = 4 (holds at n = 3).
 
 ## Things only I know
 - Lead correction (22:08Z, read 22:42Z): the brief's sentence "polynomial partial solvers cannot be complete unless ... collapse" is withdrawn; a complete polynomial partial solver would put parity games in P (open, would be an M4 claim). Nothing in docs/attr/ relied on the withdrawn sentence.

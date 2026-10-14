@@ -1,0 +1,46 @@
+n=3 games=41440 time=3s
+m, psolq, avh : count
+(3, 'solved', 'solved') : 4144
+(4, 'solved', 'BADSTRAT') : 16
+(4, 'solved', 'solved') : 8856
+(4, 'undecided', 'solved') : 8
+(5, 'solved', 'BADSTRAT') : 32
+(5, 'solved', 'solved') : 12384
+(5, 'undecided', 'solved') : 16
+(6, 'solved', 'BADSTRAT') : 48
+(6, 'solved', 'solved') : 9408
+(6, 'undecided', 'solved') : 16
+(7, 'solved', 'BADSTRAT') : 30
+(7, 'solved', 'solved') : 4702
+(7, 'undecided', 'solved') : 4
+(8, 'solved', 'BADSTRAT') : 12
+(8, 'solved', 'solved') : 1172
+(9, 'solved', 'BADSTRAT') : 6
+(9, 'solved', 'solved') : 586
+m, Strahler, psolq, avh : count
+(3, 1, 'solved', 'solved') : 4144
+(4, 1, 'solved', 'BADSTRAT') : 16
+(4, 1, 'solved', 'solved') : 8832
+(4, 1, 'undecided', 'solved') : 8
+(4, 2, 'solved', 'solved') : 24
+(5, 1, 'solved', 'BADSTRAT') : 32
+(5, 1, 'solved', 'solved') : 12312
+(5, 1, 'undecided', 'solved') : 16
+(5, 2, 'solved', 'solved') : 72
+(6, 1, 'solved', 'BADSTRAT') : 48
+(6, 1, 'solved', 'solved') : 9294
+(6, 1, 'undecided', 'solved') : 16
+(6, 2, 'solved', 'solved') : 114
+(7, 1, 'solved', 'BADSTRAT') : 30
+(7, 1, 'solved', 'solved') : 4606
+(7, 1, 'undecided', 'solved') : 4
+(7, 2, 'solved', 'solved') : 96
+(8, 1, 'solved', 'BADSTRAT') : 12
+(8, 1, 'solved', 'solved') : 1136
+(8, 2, 'solved', 'solved') : 36
+(9, 1, 'solved', 'BADSTRAT') : 6
+(9, 1, 'solved', 'solved') : 550
+(9, 2, 'solved', 'solved') : 36
+minimal failures (solver, Strahler) -> smallest m:
+  ('avh', 1): n=3 m=4 prio=[0, 3, 4] owner=[0, 0, 0] succ=[[1], [0, 2], [0]] ref=[0, 0, 0] psolq=solved avh=BADSTRAT trees E() O()
+  ('psolq', 1): n=3 m=4 prio=[1, 5, 2] owner=[0, 0, 0] succ=[[0, 1], [2], [0]] ref=[1, 1, 1] psolq=undecided avh=solved trees E() O(((),),)

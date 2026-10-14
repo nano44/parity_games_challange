@@ -1,0 +1,19 @@
+ok   hkp_fig6.pg: psolQ undecided (undecided 8), expected undecided
+ok   hkp_fig6.pg: Strahler 1 (brute 1), expected 1; trees E ((),) O ()
+ok   hkp_fig4a.pg: psolQ solved (undecided 0), expected solved
+ok   hkp_fig4a.pg: Strahler 1 (brute 1), expected 1; trees E ((),) O ()
+ok   hkp_fig4b.pg: psolQ solved (undecided 0), expected solved
+ok   hkp_fig4b.pg: Strahler 1 (brute 1), expected 1; trees E () O ()
+ok   ce1_4v.pg: psolQ undecided (undecided 4), expected undecided
+ok   ce1_4v.pg: Alg1 WRONG, expected WRONG
+ok   ce1_4v.pg: Strahler 1 (brute 1), expected 1; trees E ((),) O ()
+ok   cex1-maxparity.pg: psolQ undecided (undecided 4), expected undecided
+ok   cex1-maxparity.pg: Alg1 WRONG, expected WRONG
+ok   cex1-maxparity.pg: Strahler 1 (brute 1), expected 1; trees E ((),) O ()
+ok   cex2-maxparity.pg: psolQ undecided (undecided 4), expected undecided
+ok   cex2-maxparity.pg: Alg1 WRONG, expected WRONG
+ok   cex2-maxparity.pg: Strahler 1 (brute 1), expected 1; trees E ((),) O ()
+ok   Strahler DP vs brute force on 600 random games (n<=6, brute n<=5), 0.1s; histogram {1: 597, 2: 3}
+ok   D2a sensitivity: Str with d+2 differs from Str with minimal d on 0 of 600 games
+ok   psolQ sound with verified strategies on 2000 random games (n<=40), 1.0s; outcomes {('avh', 'BADSTRAT'): 94, ('avh', 'WRONG'): 16, ('avh', 'solved'): 1890, ('psolq', 'solved'): 1991, ('psolq', 'undecided'): 9}
+VALIDATE PASS

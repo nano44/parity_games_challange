@@ -19,7 +19,22 @@ Status: data + one theorem candidate with a proof sketch; NOT a result (no refer
   Odd wins every vertex (both cycles, v0v0 and v0v1v2, have odd top priority); Str = 1 (Odd tree <<>>: A = Attr_O({v1}) = {v1},
   S_1 = {v0}, A_1 = {v0, v2}). psolQ, psolB and psol decide nothing (HKP's three solvers); Algorithm 1 solves it.
 - Q3, Alg1 (regions): no failure with n <= 3 (exhaustive, 41,440 canonical games, Zielonka-equal regions on all of them);
-  minimal failure at n = 4 with m = 5: see section 2 (the M2 counterexample ce1_4v.pg has n = 4, m = 5 and Str = 1).
+  minimal failure at n = 4 with m = 5 (exhaustive n = 4: every game with m = 4 is solved; 160 canonical games with m = 5 are
+  WRONG, one successor shape with all 16 owner vectors and 10 priority patterns, all Str 1; the algorithm never gets STUCK
+  on any n <= 4 game, its failures are always wrong regions). experiments/attr/instances/alg1_min_n4_m5.pg (TARGET priorities):
+  ```
+  0 1 0 1;      v0: priority 1, Even, edge to v1
+  1 1 0 0,2;    v1: priority 1, Even, edges to v0 and v2
+  2 3 0 3;      v2: priority 3, Even, edge to v3
+  3 2 0 0;      v3: priority 2, Even, edge to v0
+  ```
+  Odd wins every vertex (cycles v0v1 and v0v1v2v3 both have odd top priority); Algorithm 1 gives all four to Even in one
+  round (A(G,2) = V as an Even dominion: the Theorem 2 obstruction of M2); Str = 1 (Odd tree <<>>: A = {v2}, S_1 = {v0, v1}).
+  psolQ and psolB leave it undecided; psol solves it (edge removal, HKP Lemma 1). The M2 counterexample ce1_4v.pg is another
+  member of the m = 5 class.
+- Alg1 versus psolQ at n = 4: all 10,428 wrong answers of Algorithm 1 are on games psolQ leaves undecided (no game is
+  psolQ-solved and Alg1-WRONG), and all are at Strahler number 1. L-ATTR reading: Algorithm 1 is a psolQ-type solver that,
+  where psolQ stops, declares a region instead of stopping.
 - Reference games: HKP Fig. 6 (n = 8, "modified by neither psol, psolB nor psolQ") has Str = 1 (Even tree <<>>); the three
   M2 counterexamples (ce1, cex1, cex2; Alg1 WRONG) have Str = 1 and are left entirely undecided by psolQ, psolB and psol.
 
@@ -30,7 +45,7 @@ order-and-parity equivalence (a1lib.py); both solvers and the Strahler number de
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2 | 240 | 0 | 0 | 0 | 0 / 0 | 0 | all 1 |
 | 3 | 41,440 | 44 (all Str 1) | 3,060 | 3,336 | 0 / 0 | 144 | 1: 41,062; 2: 378 |
-| 4 | N4 | Q4 | - | - | W4 / S4 | B4 | H4 |
+| 4 | 27,331,200 | 75,856 (73,588 at Str 1, 2,268 at Str 2) | - | - | 10,428 / 0 (all Str 1) | 288,294 | 1: 26,632,540; 2: 698,660 |
 (psolB/psol counted at n = 3 by hypotheses.py; n = 4 row filled from summary_n4.txt.)
 Inclusions at n = 3 (all 41,440 games): psolQ solves every game that psolB or psol solves (no game is psolQ-undecided and
 psolB- or psol-solved); psolB and psol are incomparable (152 games psol-only, 428 psolB-only), as HKP Example 5 says.
@@ -55,10 +70,10 @@ the owner's keep one):
 - PA: both winning regions have a decomposition in which every S_i, at every level, is a trap for the opponent in the
   level's whole subgame R (not only in the remainder G_i where the definition requires it).
 - PB: as PA with "trap in R \ A". PD: a decomposition whose escape graph between the level's pieces A, A_1..A_l is acyclic.
-| implication | n = 3 (all 41,440) | n = 4 (30,000 random canonical games) | n = 5 (sample) |
+| implication | n = 3 (all 41,440) | n = 4 (30,000 random canonical games) | n = 5 (4,500 random games, pa_sample.py, 2,954 PA-true) and n = 6 (600, 368 PA-true) |
 | --- | --- | --- | --- |
-| PA => psolQ solves completely | holds | holds | N5Q |
-| PA => psolB solves completely | holds | holds | N5B |
+| PA => psolQ solves completely | holds | holds; and PA is false on all 75,856 psolQ failures of the full enumeration, so it holds on all 27.3 M games | holds |
+| PA => psolB solves completely | holds | holds | holds |
 | PA => psol solves completely | fails (400) | fails (243) | - |
 | PB => psolQ solves | fails (44) | fails (85) | - |
 | PD => psolQ solves | fails (8) | fails (11) | - |
@@ -99,8 +114,10 @@ dead ends (section 5).
 
 ## 5. Dead ends (notes/L-ATTR.md has the instances)
 - "Strahler threshold k >= 1" for psolQ or Alg1: dead (k = 0; instances section 1).
-- PB and PD as the completeness condition: dead (counterexamples at n = 3: instances/psolq_min_n3_m4.pg violates PA but a
-  variant with v1 owned by Odd satisfies PD and is still undecided).
+- PB and PD as the completeness condition: dead (counterexamples at n = 3: instances/psolq_min_n3_m4.pg satisfies PB and is
+  undecided; instances/psolq_pd_n3_m4.pg (v1 owned by Odd) satisfies PD and is undecided).
+- Strahler-2 failures exist from n = 4 on (2,268 of them); smallest: instances/psolq_str2_n4_m6.pg (Odd tree <<>,<>>: the minimal
+  Strahler-1 instance with a second self-loop trap v3). They add nothing to the mechanism.
 
 ## 6. Gauntlet position (TARGET section 5)
 Not an algorithm claim. For T-A1: step 1 (pseudocode of psolB/psolQ in notes/L-ATTR.md, implementation here) done; step 2
