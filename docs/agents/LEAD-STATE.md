@@ -40,3 +40,4 @@
 - 2026-10-14 22:02Z sweep: no overage; L-COMP idle waiting on n=5 cells (watcher armed), 569k ctx, $32.05; L-LIT on T7; L-STRUCT and REFEREE parked. No action.
 - 2026-10-14 22:08Z: L-LIT T7 landed (rank 2 OPEN, model must be non-adaptive). Spawned L-ATTR session_01XDM3HXeuG3mqhQK92eNaru (fable-5-1, rank 3, 24h box). Lead brief error corrected at 22:08Z (false calibration sentence).
 - 2026-10-14 23:01Z: L-ATTR A1 done (fdb5092): no Strahler theorem; T-A1 candidate -> L-LIT T8 novelty. Spawned L-LOWER session_01U5n8mgXxgyGzvuUzxHbiKx (fable-5-1, rank 2, 24h box).
+- 2026-10-14 23:03Z sweep: no overage. Lead 587k ctx $30.91 (compacts in place). L-COMP idle, n=5 V cells at k=8 for ~2h, self check-in 00:30Z, 572k ctx $32.80; handover after it. L-ATTR (T-A1), L-LOWER (L1) working. No action.
