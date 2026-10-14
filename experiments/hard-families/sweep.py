@@ -5,6 +5,7 @@ Usage: sweep.py FAMILY --gen 'CMD {N}' --sizes 1 2 3 ... -s SOLVER ... [--timeou
                 [--out DIR] [--ref-max-n NVERT]
  - The generator command prints a PGSolver game for size {N} to stdout.
  - Solvers come from experiments/harness/solvers.py. After a solver's first timeout it is skipped for larger sizes.
+ - Strategies: every finishing solver's positional strategies are checked by harness/verify.py (BADSTRAT if not).
  - Agreement: every solver that finishes on an instance must give the same winner for every vertex; in addition the
    independent Python Zielonka (py-zlk) is run on instances with at most --ref-max-n vertices. Any disagreement
    fails the sweep (exit 1).
@@ -43,14 +44,15 @@ def main():
                     rows.append(dict(base, solver=s, status="skipped", iterations="", unit="", solver_s="", wall_s="")); continue
                 st, text, wall, stime, it, log = compare.run(reg[s], gp, a.timeout)
                 if st == "ok":
-                    try:
+                    st, _, det = compare.judge(g, text, None)  # strategy check (D2 change 5); regions compared below
+                    if st == "ok":
                         wins[s] = pg.read_sol(text, g.n)
-                    except ValueError as e:
-                        st = "error"; log = str(e)
+                    else:
+                        log = det
                 if st == "timeout":
                     dead.add(s)
-                if st == "error":
-                    bad += 1; print(f"ERROR {s} N={N}: {log[-300:]}", file=sys.stderr)
+                if st in ("error", "BADSTRAT"):
+                    bad += 1; print(f"{st} {s} N={N}: {log[-300:]}", file=sys.stderr)
                 rows.append(dict(base, solver=s, status=st, iterations=it[0] if it else "", unit=it[1] if it else "",
                                  solver_s=f"{stime:.6f}" if stime is not None else "", wall_s=f"{wall:.4f}"))
             if wins:

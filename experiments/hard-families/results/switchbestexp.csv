@@ -1,0 +1,36 @@
+family,N,n,m,d,solver,status,iterations,unit,solver_s,wall_s
+switchbestexp,1,35,70,34,oink-psi-raw,ok,12,major iterations,0.000628,0.0059
+switchbestexp,1,35,70,34,oink-ssi-raw,ok,1,major iterations,0.000048,0.0041
+switchbestexp,1,35,70,34,oink-zlk-raw,ok,2,iterations,0.000494,0.0062
+switchbestexp,1,35,70,34,oink-tl-raw,ok,1,iterations,0.000028,0.0057
+switchbestexp,1,35,70,34,py-zlk,ok,7,iterations,,0.0321
+switchbestexp,2,60,130,60,oink-psi-raw,ok,18,major iterations,0.000443,0.0054
+switchbestexp,2,60,130,60,oink-ssi-raw,ok,1,major iterations,0.000068,0.0048
+switchbestexp,2,60,130,60,oink-zlk-raw,ok,2,iterations,0.000803,0.0070
+switchbestexp,2,60,130,60,oink-tl-raw,ok,1,iterations,0.000022,0.0049
+switchbestexp,2,60,130,60,py-zlk,ok,18,iterations,,0.0337
+switchbestexp,4,110,250,110,oink-psi-raw,ok,30,major iterations,0.000601,0.0051
+switchbestexp,4,110,250,110,oink-ssi-raw,ok,1,major iterations,0.000124,0.0042
+switchbestexp,4,110,250,110,oink-zlk-raw,ok,2,iterations,0.000427,0.0045
+switchbestexp,4,110,250,110,oink-tl-raw,ok,1,iterations,0.000034,0.0051
+switchbestexp,4,110,250,110,py-zlk,ok,51,iterations,,0.0327
+switchbestexp,8,210,490,210,oink-psi-raw,ok,54,major iterations,0.001559,0.0060
+switchbestexp,8,210,490,210,oink-ssi-raw,ok,1,major iterations,0.000188,0.0044
+switchbestexp,8,210,490,210,oink-zlk-raw,ok,2,iterations,0.000511,0.0099
+switchbestexp,8,210,490,210,oink-tl-raw,ok,1,iterations,0.000026,0.0047
+switchbestexp,8,210,490,210,py-zlk,ok,253,iterations,,0.0524
+switchbestexp,16,410,970,410,oink-psi-raw,ok,102,major iterations,0.006082,0.0116
+switchbestexp,16,410,970,410,oink-ssi-raw,ok,1,major iterations,0.000590,0.0054
+switchbestexp,16,410,970,410,oink-zlk-raw,ok,2,iterations,0.000492,0.0053
+switchbestexp,16,410,970,410,oink-tl-raw,ok,1,iterations,0.000045,0.0068
+switchbestexp,16,410,970,410,py-zlk,ok,4329,iterations,,0.4733
+switchbestexp,32,810,1930,810,oink-psi-raw,ok,198,major iterations,0.063384,0.0701
+switchbestexp,32,810,1930,810,oink-ssi-raw,ok,1,major iterations,0.002744,0.0108
+switchbestexp,32,810,1930,810,oink-zlk-raw,ok,2,iterations,0.000704,0.0074
+switchbestexp,32,810,1930,810,oink-tl-raw,ok,1,iterations,0.000043,0.0060
+switchbestexp,32,810,1930,810,py-zlk,timeout,,,,20.0188
+switchbestexp,64,1610,3850,1610,oink-psi-raw,ok,390,major iterations,0.483875,0.4932
+switchbestexp,64,1610,3850,1610,oink-ssi-raw,ok,1,major iterations,0.017059,0.0287
+switchbestexp,64,1610,3850,1610,oink-zlk-raw,ok,2,iterations,0.001078,0.0120
+switchbestexp,64,1610,3850,1610,oink-tl-raw,ok,1,iterations,0.000090,0.0099
+switchbestexp,64,1610,3850,1610,py-zlk,skipped,,,,

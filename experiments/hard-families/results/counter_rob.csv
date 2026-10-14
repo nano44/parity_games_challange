@@ -1,0 +1,78 @@
+family,N,n,m,d,solver,status,iterations,unit,solver_s,wall_s
+counter_rob,2,31,80,10,oink-uzlk,ok,65,iterations,0.000040,0.0043
+counter_rob,2,31,80,10,oink-zlk,ok,40,iterations,0.001325,0.0144
+counter_rob,2,31,80,10,oink-zlkpp-std,ok,78,iterations,0.000139,0.0068
+counter_rob,2,31,80,10,oink-tl,ok,6,iterations,0.000065,0.0065
+counter_rob,2,31,80,10,oink-psi,ok,9,major iterations,0.000513,0.0051
+counter_rob,2,31,80,10,py-zlk,ok,93,iterations,,0.0451
+counter_rob,4,83,236,18,oink-uzlk,ok,1010,iterations,0.000513,0.0055
+counter_rob,4,83,236,18,oink-zlk,ok,308,iterations,0.000724,0.0054
+counter_rob,4,83,236,18,oink-zlkpp-std,ok,924,iterations,0.001098,0.0062
+counter_rob,4,83,236,18,oink-tl,ok,10,iterations,0.000131,0.0066
+counter_rob,4,83,236,18,oink-psi,ok,9,major iterations,0.000560,0.0067
+counter_rob,4,83,236,18,py-zlk,ok,1408,iterations,,0.0474
+counter_rob,6,159,472,26,oink-uzlk,ok,13981,iterations,0.008106,0.0153
+counter_rob,6,159,472,26,oink-zlk,ok,2146,iterations,0.001946,0.0095
+counter_rob,6,159,472,26,oink-zlkpp-std,ok,8876,iterations,0.016068,0.0244
+counter_rob,6,159,472,26,oink-tl,ok,14,iterations,0.000172,0.0067
+counter_rob,6,159,472,26,oink-psi,ok,9,major iterations,0.000860,0.0073
+counter_rob,6,159,472,26,py-zlk,ok,19328,iterations,,0.3072
+counter_rob,8,259,788,34,oink-uzlk,ok,187274,iterations,0.107780,0.1128
+counter_rob,8,259,788,34,oink-zlk,ok,14744,iterations,0.012302,0.0193
+counter_rob,8,259,788,34,oink-zlkpp-std,ok,77938,iterations,0.114447,0.1230
+counter_rob,8,259,788,34,oink-tl,ok,18,iterations,0.000209,0.0054
+counter_rob,8,259,788,34,oink-psi,ok,9,major iterations,0.001425,0.0064
+counter_rob,8,259,788,34,py-zlk,ok,258136,iterations,,4.4460
+counter_rob,10,383,1184,42,oink-uzlk,ok,2481198,iterations,1.641571,1.6467
+counter_rob,10,383,1184,42,oink-zlk,ok,101092,iterations,0.123506,0.1290
+counter_rob,10,383,1184,42,oink-zlkpp-std,ok,650296,iterations,1.175454,1.1813
+counter_rob,10,383,1184,42,oink-tl,ok,22,iterations,0.000376,0.0060
+counter_rob,10,383,1184,42,oink-psi,ok,9,major iterations,0.001417,0.0071
+counter_rob,10,383,1184,42,py-zlk,timeout,,,,20.0202
+counter_rob,12,531,1660,50,oink-uzlk,timeout,,,,20.0216
+counter_rob,12,531,1660,50,oink-zlk,ok,692930,iterations,0.883701,0.8893
+counter_rob,12,531,1660,50,oink-zlkpp-std,ok,5248724,iterations,10.259034,10.2644
+counter_rob,12,531,1660,50,oink-tl,ok,26,iterations,0.000493,0.0055
+counter_rob,12,531,1660,50,oink-psi,ok,9,major iterations,0.001261,0.0060
+counter_rob,12,531,1660,50,py-zlk,skipped,,,,
+counter_rob,14,703,2216,58,oink-uzlk,skipped,,,,
+counter_rob,14,703,2216,58,oink-zlk,ok,4749448,iterations,6.437089,6.4423
+counter_rob,14,703,2216,58,oink-zlkpp-std,timeout,,,,20.0200
+counter_rob,14,703,2216,58,oink-tl,ok,30,iterations,0.001143,0.0086
+counter_rob,14,703,2216,58,oink-psi,ok,9,major iterations,0.001574,0.0069
+counter_rob,14,703,2216,58,py-zlk,skipped,,,,
+counter_rob,16,899,2852,66,oink-uzlk,skipped,,,,
+counter_rob,16,899,2852,66,oink-zlk,timeout,,,,20.0205
+counter_rob,16,899,2852,66,oink-zlkpp-std,skipped,,,,
+counter_rob,16,899,2852,66,oink-tl,ok,34,iterations,0.001779,0.0112
+counter_rob,16,899,2852,66,oink-psi,ok,9,major iterations,0.003443,0.0093
+counter_rob,16,899,2852,66,py-zlk,skipped,,,,
+counter_rob,18,1119,3568,74,oink-uzlk,skipped,,,,
+counter_rob,18,1119,3568,74,oink-zlk,skipped,,,,
+counter_rob,18,1119,3568,74,oink-zlkpp-std,skipped,,,,
+counter_rob,18,1119,3568,74,oink-tl,ok,38,iterations,0.002857,0.0119
+counter_rob,18,1119,3568,74,oink-psi,ok,9,major iterations,0.003251,0.0116
+counter_rob,18,1119,3568,74,py-zlk,skipped,,,,
+counter_rob,20,1363,4364,82,oink-uzlk,skipped,,,,
+counter_rob,20,1363,4364,82,oink-zlk,skipped,,,,
+counter_rob,20,1363,4364,82,oink-zlkpp-std,skipped,,,,
+counter_rob,20,1363,4364,82,oink-tl,ok,42,iterations,0.003202,0.0140
+counter_rob,20,1363,4364,82,oink-psi,ok,9,major iterations,0.005794,0.0137
+counter_rob,20,1363,4364,82,py-zlk,skipped,,,,
+counter_rob,24,1923,6196,98,oink-uzlk,skipped,,,,
+counter_rob,24,1923,6196,98,oink-zlk,skipped,,,,
+counter_rob,24,1923,6196,98,oink-zlkpp-std,skipped,,,,
+counter_rob,24,1923,6196,98,oink-tl,ok,50,iterations,0.004598,0.0152
+counter_rob,24,1923,6196,98,oink-psi,ok,9,major iterations,0.005339,0.0158
+counter_rob,24,1923,6196,98,py-zlk,skipped,,,,
+counter_rob,28,2579,8348,114,oink-uzlk,skipped,,,,
+counter_rob,28,2579,8348,114,oink-zlk,skipped,,,,
+counter_rob,28,2579,8348,114,oink-zlkpp-std,skipped,,,,
+counter_rob,28,2579,8348,114,oink-tl,ok,58,iterations,0.004998,0.0155
+counter_rob,28,2579,8348,114,oink-psi,ok,9,major iterations,0.008340,0.0190
+counter_rob,28,2579,8348,114,py-zlk,skipped,,,,
+counter_rob,32,3331,10820,130,oink-uzlk,skipped,,,,
+counter_rob,32,3331,10820,130,oink-zlk,skipped,,,,
+counter_rob,32,3331,10820,130,oink-zlkpp-std,skipped,,,,
+counter_rob,32,3331,10820,130,oink-tl,ok,66,iterations,0.006406,0.0159
+counter_rob,32,3331,10820,130,oink-psi,ok,9,major iterations,0.012231,0.0215
