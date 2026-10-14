@@ -28,7 +28,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - L-COMP: parked after notebook handover; wakes for a new claim, review changes, or L-STRUCT SAT engineering.
 - L-LIT: parked; T1-T4 on trunk (docs/lit/). T4: weak separators OPEN (Czerwinski et al. 1807.10546 §6).
 - L-STRUCT: S3 written (ef95a93): T3-neg W(n)=S(n) on diagonal, T3-pos, L4 (s^V lower bound), H1 (fixed-n saturation). Under REFEREE + L-LIT (T6) check; no proof work until both OK.
-- REFEREE: S3 CHANGES (5b99f2f, 5 precision fixes); appending its own n=4 diagonal value.
+- REFEREE: S3 delta OK (fc3d28f); proposed the L4 route (so cannot be L4's sole signer: second referee needed, GAPS G1).
 - L-COMP: diagonal V cells (4,5),(5,5),(5,6), TARGET n=4 strong, n=5; LRAT standard. Box ends ~01:30Z.
 - WATCHDOG: hourly at :30.
 
