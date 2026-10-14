@@ -16,6 +16,21 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
 - Status: supporting lemma, not claimed as M3 (Lead reading L7). Credit: conversion remark Parys-Wiacek 2305.00308 p.2;
   Claim R by L-LIT; sharpening by REFEREE; write-up L-STRUCT.
 
+### R2 [refereed-only] T-A1: exact characterisation of psolB's completely-solved games (2026-10-15) — M3 (L9), CHECKER pending
+- Signed claim (both referees, at l-attr 57a1515; docs/attr/TA1-proof.md copied to trunk): Theorem T-A1: for every finite parity
+  game G (TARGET §1), Huth-Kuo-Piterman's partial solver psolB (arXiv 1405.0386) solves G completely iff PA**(G).
+  T-A1': PA**(G) ⟹ psolQ solves G completely; the converse is false (HKP Fig. 4(a); n=2 game `0 0 1 0,1; 1 2 0 0`).
+  Corollaries 1-2 as stated in the file (HKP's Büchi, SCC-constant and deterministic classes ⊆ PA**, via HKP's theorems);
+  Remark 3 (holds for every stable colour order). Excluded: Remark 4 (PA ⊊ PA* ⊊ PA**, data only).
+- Referees: REFEREE OK, docs/referee/2026-10-14-TA1-proof-check.md signature (referee d1e065b); REFEREE-2 OK,
+  docs/referee-2/R2-TA1.md §8 (referee-2 2eb1a2d). Machine evidence: all 3-vertex games (both referees, own code), 490,944 games
+  (REFEREE-2), random n=4,5; lane: all 27.3M canonical 4-vertex games for the psolQ-failure side.
+- Gaps: G1-G9 closed; G10 open (dependency on HKP's proofs of Thm 7, Thm 8, Lemma 5; re-derived informally by both referees);
+  G11 (HKP Thm 4) closed at referee level by re-derivation. Side finding: HKP Thm 4's proof defines an unsound minimal-rank
+  strategy (REFEREE-2 counterexample docs/referee-2/R2-TA1/hkp_thm4_strategy.py; repair: witness successor); theorem unaffected.
+- Status: M3 "a tighter analysis of a known algorithm" (Lead reading L9). Novelty: L-LIT T8 (docs/lit/T8-TA1.md): Ah-Fat-Huth 2016
+  name 2-player completeness classes as open. Also explains DE1 (2511.03752): its errors lie where no PA** piece can go first.
+
 
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
