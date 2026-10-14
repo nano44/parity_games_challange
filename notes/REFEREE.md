@@ -14,7 +14,7 @@ first two messages to the Lead were off by one. Idle until the Lead routes the n
 
 S3 delta (l-struct a67bd78): OK; M0 window-length nit; R1 observation: splitting v_i per out-letter gives c = d and with
 monotonicity in d this already yields L4 (s^V(n,n) >= n^{Omega(lg n)}); appended to the S3 report.
-S3 statement (l-struct ef95a93): docs/referee/2026-10-14-S3-statement-check.md, CHANGES (6 findings; diagonal n<=3 confirmed, n=4 pending).
+S3 statement (l-struct ef95a93): docs/referee/2026-10-14-S3-statement-check.md, CHANGES (6 findings; diagonal W=S=1,2,5,7 for n<=4 confirmed by my SAT).
 T1 REFUTED at (2,10) (l-comp 3e44d2c): witness verified by me in E (exhaustive 2-vertex), S, V; s(2,8) >= 5 and w(2,10) >= 4
 by my own SAT in V/S; universal tree (2,4) = 5. Added as section 0 of the S2 report.
 S2 statement (l-struct 616cf77): docs/referee/2026-10-14-S2-statement-check.md, CHANGES (T2 edge case; V barrier needs an s^V bound;
