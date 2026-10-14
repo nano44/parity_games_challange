@@ -51,6 +51,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - DE1 arXiv 2511.03752 (BROKEN, 4-vertex counterexamples). DE2 T1 weak-separator lower bound (refuted at (2,10)).
 
 ## Best result so far
+- RESULTS R1 [refereed-only]: L4, s^V(n,n) >= n^Omega(lg n) (supporting lemma, not M3 per L7).
 - None of the fleet's own. Known: quasi-polynomial upper bound (to be source-checked by L-LIT).
 
 ## Owner questions open
