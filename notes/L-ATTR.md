@@ -15,6 +15,7 @@ message to the Lead (Q1-Q3, T-A1 judgement, NEEDS: L-LIT novelty of T-A1, REFERE
 4. Optional: exact class of psolQ (dynamic/peeling version of PA); psolB vs psolQ inclusion on the n = 4 data.
 
 ## Things only I know
+- Lead correction (22:08Z, read 22:42Z): the brief's sentence "polynomial partial solvers cannot be complete unless ... collapse" is withdrawn; a complete polynomial partial solver would put parity games in P (open, would be an M4 claim). Nothing in docs/attr/ relied on the withdrawn sentence.
 - Hand computation BEFORE running code (recorded 22:15Z, statement section 4):
   HKP Fig. 6 in max-parity (bench/hkp_fig6.pg: v0:4 v1:3 v2:1 v3:1 v4:2 v5:3 v6:3 v7:4, all Odd): Even wins all; d = 4:
   A = Attr_E({v0,v7}) = {v0,v5,v6,v7}; G_1 = {v1,v2,v3,v4}; S_1 = {v2,v3,v4} (trap for Odd in G_1, pr <= 2); its
