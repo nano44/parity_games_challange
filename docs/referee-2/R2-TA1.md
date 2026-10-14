@@ -134,3 +134,30 @@ No error found in the proof file beyond the gap-list findings F1, F3 and the dat
 Nothing is Lean-checked (not required: not M4). Machine evidence: the searches above. Everything in sections 2-3 is my
 hand re-derivation and is a gap in the fleet's sense until a second signature or Lean. Under CLAUDE.md the claim becomes a
 result only with the first referee's independent report; I have not read it.
+
+## 7. Re-check of the revision (claude/l-attr 4478b84, TA1-proof.md blob b1e1118, A1-results.md blob c0d62df; 2026-10-15 00:05Z)
+Only the changed parts were re-checked (diff d5d6396..4478b84), as routed by the Lead.
+| changed item | verdict |
+| --- | --- |
+| Corollary 1 (direction: HKP's classes ⊆ PA** by HKP's theorems + "only if"; not a derivation of HKP) | **OK** (F4 applied) |
+| Corollary 2 (note "not a solver-free procedure") | **OK** |
+| F3 weakened to MAttr/PMAttr monotone in the set variable and the target, MAttr ⊆ PMAttr; nothing on layeredAttr | **OK** (F3 applied) |
+| Proof of T-A1' rewritten: last layer A_b = PMAttr_p(A_{b-2} ∪ X, d) with X ⊇ X', since X ⊆ X_0 has colours ≤ b and X' has colour b so max c(X) = b; A_b ⊇ PMAttr(X',d) ⊇ MAttr(X',d) ⊇ X' | **OK**: re-derived; uses only one layer's target monotonicity, as F3 asked; pre-condition of Fig. 5 noted |
+| G9 (F1 soundness of fatal attractors written out) | **OK**: matches my derivation |
+| G10 (Corollary 1 inherits HKP's proofs; Thm 7/8/Lemma 5 without Thm 6) | **OK** as a gap row; "open until a second signature" is the right status |
+| G1-G8 status lines | **OK**: G1-G3 closed by the quoted text, G4 by Remark 3, G5-G8 restated correctly |
+| Remark 3 (order independence; F2) | **OK** in substance; one wording nit, N1 below |
+| Remark 4 (former Proposition 3, now data; PA ⊆ PA* data only) | **OK** |
+| A1-results.md section 2: n = 2 psolB 8 / psol 10 of 240 canonical, n = 3 psolB 3,060 with my 7,536 of 175,616 noted | **OK**: the n = 2 figures equal the output of the lane's peeling.py --pa2 2 that I ran; my counts quoted correctly; psol not checked by me (not implemented) |
+| Evidence line (490,944 games, 6 of 324 at n = 2) | **OK**: quotes my section 4 correctly |
+- N1 (wording, Remark 3). The parenthetical "stable colour order π in the sense of HKP Thm 6 (every colour of the current game
+  is tried before the solver returns, and the loop restarts after a removal)" is not HKP's definition: HKP call π stable when
+  psolB(π) and psolB(π·c) have the same input/output behaviour for every colour c, with π a fixed sequence (repetitions
+  allowed, no restart). The remark is true for HKP's notion as well, and more simply: stability of π means that no colour of
+  the output game has a non-empty fatal fixpoint, which is all the "if" direction uses, and the "only if" direction works for
+  any removal sequence. Suggest replacing the parenthetical by "(HKP: appending any colour to π does not change the output;
+  equivalently no colour of the output game has a non-empty fatal fixpoint)".
+Verdict on the revision: **OK** (N1 is wording). Second-referee position on T-A1 at l-attr 4478b84: T-A1 and T-A1' as
+stated in section 2, Corollaries 1-2 and Remark 3 are correct, with gaps G1-G10 as listed there (G1-G3, G9 closed by
+written text; G10 open until a second signature; nothing Lean-checked). The first referee's independent report is still
+required for this to become a result (CLAUDE.md).
