@@ -28,7 +28,7 @@ fam counter_rob   --gen "$O/counter_rob {N}"   --sizes 2 4 6 8 10 12 14 16 18 20
 fam counter_ortl  --gen "$O/counter_ortl {N}"  --sizes 2 4 6 8 10 12 14 16 18 20 24 28 32 40 \
   -s oink-ortl oink-rtl oink-tl oink-psi
 # counter_qpt is solved by Oink's preprocessing; the -raw variants switch it off so the solver sees the game.
-fam counter_qpt   --gen "$O/counter_qpt {N}"   --sizes 2 4 8 16 32 64 128 256 512 \
+fam counter_qpt   --gen "$O/counter_qpt {N}"   --sizes 2 4 6 8 10 12 14 16 18 20 22 24 26 28 32 64 128 \
   -s oink-qpt-raw oink-sspm-raw oink-zlk-raw oink-tl-raw
 # PGSolver generators, Python port (pgsolver_port.py; github.com/tcsprojects/pgsolver @ d3cd624); -raw as above.
 fam recursiveladder --gen "python3 pgsolver_port.py recursiveladder {N}" --sizes 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 34 38 \

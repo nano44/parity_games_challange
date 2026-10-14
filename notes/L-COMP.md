@@ -2,16 +2,17 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14 18:40Z: trunk a3777f1 merged (TARGET v1.0). Harness done + validated (experiments/harness/validation.md).
-M2 (arXiv 2511.03752v1) unblocked 18:21Z, clock 2026-10-14 18:30Z .. 2026-10-16 18:30Z. Pseudocode below (pushed for the
-REFEREE). Next: implementation experiments/m2/, strategy verifier in the harness (D2 change 5), runs.
-M1 sweeps (run_all.sh) still running for counter_rob onward; READMEs pending.
+2026-10-14 19:35Z. Harness done + validated; strategy verifier (verify.py) in compare.py/sweep.py.
+M2: pseudocode pushed (51f1d1b); provisional implementation experiments/m2/avh.py; COUNTEREXAMPLE CE1
+(experiments/m2/counterexamples/ce1_4v.pg, 4 vertices) reported to the Lead at 19b5ce2. M2 runs paused per the
+Lead's stop rule; waiting for REFEREE confirmation / Lead instruction.
+M1: 13 family sweeps + READMEs pushed (4c0ae44); re-run with strategy checks running (run_all.sh -> /tmp log).
 
 ## Queue
-1. M2: implement (regions + strategies), strategy verifier in compare.py cross-checked with Oink --verify, then
-   random games (up to 10,000) and every hard family (L-LIT's ranked list first when it arrives). Stop at the first
-   disagreement / failed strategy check: shrink, save .pg, push, message the Lead.
-2. M1: finish family READMEs (make_readmes.py + verdicts.py); port PGSolver stratimpralgs (switch-all/switch-best SI).
+1. When the re-run ends: make_readmes.py, drop the "strategies not checked" note in verdicts.py if all pass, push.
+2. Port PGSolver stratimpralgs (switch-all, switch-best) to confirm switchallexp/switchbestexp.
+3. M2 on instruction: 10,000-game run and family runs for avh (failure rate), L-LIT's ranked families.
+4. avh strategy failures (BADSTRAT on 5/100 games with correct regions): shrink one, decide if S1/S2 is wrong.
 
 ## M2 pseudocode
 Source: arXiv 2511.03752v1, R. van der Heijden, "Attractors Is All You Need: Parity Games In Polynomial Time"
