@@ -1,7 +1,13 @@
 # S3: the diagonal w^V(n,n) and the fixed-n saturation of weak separators (L-STRUCT, 2026-10-14)
 
-Status: statement, REFEREE-checked with CHANGES (docs/referee/2026-10-14-S3-statement-check.md, referee 5b99f2f);
-all six findings applied below (marked [R1]-[R6]). Awaiting L-LIT T6 (novelty; L4 sources) before proof work. Vocabulary: docs/struct/S1-statement.md (D1-D5, conventions E/S/V,
+Status 2026-10-14 (Lead 21:59Z): T3 is PARKED as a data-backed conjecture. Statement REFEREE-checked (5b99f2f, findings
+[R1]-[R7] applied); novelty NEW (L-LIT T6); T3 + L4 would be M3 (Lead L7). Data: w^V(n,d) = s^V(n,d) on every computed
+cell with d ≤ n+1 through (4,5) V (table in §2). Two proof routes tried and dead with instances (docs/struct/T3-proof-
+attempt.md; notes/L-STRUCT.md Dead ends): D-A (Lemma A as stated: all-odd cycles), D-C1 (rewire target "next or self"),
+D-C2 (any deterministic target rule), D-HB2 (hidden universal tree in A − τ0). What revives it: a diagonal gap at n = 5
+(w^V(5,5) < s^V(5,5), L-COMP's successor), which would turn the question towards T3-pos, or a new proof idea for the
+size statement. Supporting facts that hold on data: docs/struct/S4-structure-note.md. L4 is signed by the first referee
+(9bf5301) and waits for the second referee together with whatever T3 becomes. Vocabulary: docs/struct/S1-statement.md (D1-D5, conventions E/S/V,
 Lemmas 1-3 refereed). Lead's framing (20:09Z): the algorithmic question is the diagonal, because a TARGET game with n
 vertices has priorities in {0..n}, which after the shift by 2 and S1 Lemma 2(b) means the automaton must be a weak
 (n, n)-separator of convention V (REFEREE S2 finding 3). Fixed-n growth in d is algorithmically irrelevant; it is kept
