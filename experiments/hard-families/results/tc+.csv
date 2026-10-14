@@ -1,0 +1,72 @@
+family,N,n,m,d,solver,status,iterations,unit,solver_s,wall_s
+tc+,2,24,38,15,oink-rtl,ok,5,iterations,0.000039,0.0043
+tc+,2,24,38,15,oink-tl,ok,5,iterations,0.000031,0.0041
+tc+,2,24,38,15,oink-zlk,ok,32,iterations,0.000468,0.0045
+tc+,2,24,38,15,oink-ortl,ok,8,iterations,0.000042,0.0039
+tc+,2,24,38,15,oink-psi,ok,6,major iterations,0.000461,0.0045
+tc+,2,24,38,15,py-zlk,ok,85,iterations,,0.0321
+tc+,4,104,196,27,oink-rtl,ok,17,iterations,0.000284,0.0042
+tc+,4,104,196,27,oink-tl,ok,17,iterations,0.000129,0.0042
+tc+,4,104,196,27,oink-zlk,ok,156,iterations,0.000450,0.0042
+tc+,4,104,196,27,oink-ortl,ok,15,iterations,0.000177,0.0039
+tc+,4,104,196,27,oink-psi,ok,12,major iterations,0.000545,0.0048
+tc+,4,104,196,27,py-zlk,ok,455,iterations,,0.0350
+tc+,6,288,570,39,oink-rtl,ok,65,iterations,0.003413,0.0080
+tc+,6,288,570,39,oink-tl,ok,65,iterations,0.001200,0.0056
+tc+,6,288,570,39,oink-zlk,ok,640,iterations,0.001532,0.0058
+tc+,6,288,570,39,oink-ortl,ok,24,iterations,0.000984,0.0052
+tc+,6,288,570,39,oink-psi,ok,18,major iterations,0.001305,0.0056
+tc+,6,288,570,39,py-zlk,ok,1777,iterations,,0.0670
+tc+,8,624,1256,51,oink-rtl,ok,257,iterations,0.067905,0.0733
+tc+,8,624,1256,51,oink-tl,ok,257,iterations,0.017426,0.0229
+tc+,8,624,1256,51,oink-zlk,ok,2564,iterations,0.003546,0.0089
+tc+,8,624,1256,51,oink-ortl,ok,35,iterations,0.004669,0.0099
+tc+,8,624,1256,51,oink-psi,ok,27,major iterations,0.003374,0.0085
+tc+,8,624,1256,51,py-zlk,ok,6565,iterations,,0.2402
+tc+,10,1160,2350,63,oink-rtl,ok,1025,iterations,1.620673,1.6288
+tc+,10,1160,2350,63,oink-tl,ok,1025,iterations,0.443157,0.4502
+tc+,10,1160,2350,63,oink-zlk,ok,10248,iterations,0.017211,0.0236
+tc+,10,1160,2350,63,oink-ortl,ok,48,iterations,0.020197,0.0279
+tc+,10,1160,2350,63,oink-psi,ok,36,major iterations,0.012436,0.0197
+tc+,10,1160,2350,63,py-zlk,ok,24731,iterations,,0.9149
+tc+,12,1944,3948,75,oink-rtl,timeout,,,,20.0227
+tc+,12,1944,3948,75,oink-tl,timeout,,,,20.0267
+tc+,12,1944,3948,75,oink-zlk,ok,40972,iterations,0.088801,0.0982
+tc+,12,1944,3948,75,oink-ortl,ok,63,iterations,0.073785,0.0842
+tc+,12,1944,3948,75,oink-psi,ok,50,major iterations,0.027372,0.0371
+tc+,12,1944,3948,75,py-zlk,ok,95779,iterations,,5.1438
+tc+,14,3024,6146,87,oink-rtl,skipped,,,,
+tc+,14,3024,6146,87,oink-tl,skipped,,,,
+tc+,14,3024,6146,87,oink-zlk,ok,163856,iterations,0.522876,0.5348
+tc+,14,3024,6146,87,oink-ortl,ok,80,iterations,0.227235,0.2391
+tc+,14,3024,6146,87,oink-psi,ok,69,major iterations,0.089516,0.1085
+tc+,16,4448,9040,99,oink-rtl,skipped,,,,
+tc+,16,4448,9040,99,oink-tl,skipped,,,,
+tc+,16,4448,9040,99,oink-zlk,ok,655380,iterations,3.004392,3.0205
+tc+,16,4448,9040,99,oink-ortl,ok,99,iterations,0.798635,0.8141
+tc+,16,4448,9040,99,oink-psi,ok,96,major iterations,0.165098,0.1804
+tc+,18,6264,12726,111,oink-rtl,skipped,,,,
+tc+,18,6264,12726,111,oink-tl,skipped,,,,
+tc+,18,6264,12726,111,oink-zlk,ok,2621464,iterations,12.475709,12.4921
+tc+,18,6264,12726,111,oink-ortl,ok,120,iterations,1.885498,1.9052
+tc+,18,6264,12726,111,oink-psi,ok,112,major iterations,0.299321,0.3199
+tc+,20,8520,17300,123,oink-rtl,skipped,,,,
+tc+,20,8520,17300,123,oink-tl,skipped,,,,
+tc+,20,8520,17300,123,oink-zlk,timeout,,,,20.0204
+tc+,20,8520,17300,123,oink-ortl,ok,143,iterations,4.464313,4.4845
+tc+,20,8520,17300,123,oink-psi,ok,141,major iterations,0.589263,0.6139
+tc+,24,14544,29496,147,oink-rtl,skipped,,,,
+tc+,24,14544,29496,147,oink-tl,skipped,,,,
+tc+,24,14544,29496,147,oink-zlk,skipped,,,,
+tc+,24,14544,29496,147,oink-ortl,timeout,,,,20.0241
+tc+,24,14544,29496,147,oink-psi,ok,200,major iterations,3.980355,4.0326
+tc+,28,22904,46396,171,oink-rtl,skipped,,,,
+tc+,28,22904,46396,171,oink-tl,skipped,,,,
+tc+,28,22904,46396,171,oink-zlk,skipped,,,,
+tc+,28,22904,46396,171,oink-ortl,skipped,,,,
+tc+,28,22904,46396,171,oink-psi,ok,251,major iterations,11.183520,11.2446
+tc+,32,33984,68768,195,oink-rtl,skipped,,,,
+tc+,32,33984,68768,195,oink-tl,skipped,,,,
+tc+,32,33984,68768,195,oink-zlk,skipped,,,,
+tc+,32,33984,68768,195,oink-ortl,skipped,,,,
+tc+,32,33984,68768,195,oink-psi,timeout,,,,20.0151
