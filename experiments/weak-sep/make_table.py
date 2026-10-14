@@ -6,7 +6,7 @@ from wsep.utrees import f_upper, g_lower
 from wsep.analyze import analyze
 
 R = {}
-for f in sorted(glob.glob('results/automata/*.json')):
+for f in sorted(glob.glob(str(pathlib.Path(__file__).parent / 'results/automata/*.json'))):
     r = json.load(open(f))
     if '_k' in f or 'eager' in f:
         continue
@@ -42,5 +42,5 @@ for n in ns:
         cells.append(str(g) if g == f else f"[{g},{f}]")
     out.append(f"| {n} | " + " | ".join(cells) + " |")
 out.append("")
-pathlib.Path('results/table.md').write_text("\n".join(out) + "\n")
+(pathlib.Path(__file__).parent / 'results/table.md').write_text("\n".join(out) + "\n")
 print("\n".join(out))
