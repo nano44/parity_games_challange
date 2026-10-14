@@ -15,6 +15,13 @@ Referee: REFEREE. Date: 2026-10-14. Routed by the Lead 2026-10-14 19:11Z (pipeli
 
 ## Verdict: CHANGES (2 findings on the self-test's coverage; the solver, verifier and comparison code are correct)
 
+**Sign-off 2026-10-14 (claude/l-comp e70a2a9): OK.** Re-run on a worktree of e70a2a9 with Oink linked: scripts/verify.sh
+clean (self-test steps 1–6 pass, VERIFY PASS); fault A (compare.py region comparison disabled) → step 4 FAIL
+("statuses ['BADSTRAT' ×5]"), SELFTEST FAIL; fault B (verify.py cycle test removed) → step 5 FAIL ("does not reject
+in-region losing cycle"), SELFTEST FAIL; A+B together with Oink hidden → both FAIL lines, SELFTEST FAIL; L-COMP's
+mutation_check.sh: 6 faults caught, no-Oink baseline PASS, exit 0. Findings 1–2 closed; finding 3's `rows[0]` crash
+also fixed; the step-2 summary line now reports failures. Hand-built truths of cases A, B, C re-derived by me.
+
 Findings 1 and 2 are small additions to selftest.py; nothing in zielonka.py, verify.py, compare.py, sweep.py, gen.py
 or exhaustive.py needs to change. With 1 and 2 done I would sign OK for landing.
 
