@@ -2,16 +2,35 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14 23:00Z. A1 DONE (n = 5/6 PA samples in experiments/attr/results/pa_n*.txt: PA => psolQ/psolB solved holds).
-Results: docs/attr/A1-results.md (k(psolQ) = k(Alg1) = 0; minimal instances n=3 m=4 and n=4 m=5; theorem candidate T-A1 = PA
-sufficient for psolB/psolQ, holds on all 27.3 M canonical n=4 games). Message to the Lead sent 23:02Z (delivered) after the push of fdb5092.
+2026-10-14 23:10Z. PARKED by the Lead (23:00Z message) until L-LIT's T8 (novelty of T-A1 and whether PA is decidable in
+polynomial time). A1 is complete: docs/attr/A1-statement.md, docs/attr/A1-results.md, experiments/attr/ (README lists every
+file and the regeneration commands). Lead decisions quoted in "Things only I know". On wake: read the Lead's message, then
+docs/attr/A1-results.md section 3 (T-A1 and its proof plan L1-L4) before anything else.
 
 ## Queue
-1. Wait for the Lead's reply on T-A1 (novelty via L-LIT, referee).
-2. If the Lead wants T-A1 refereed: full proof of L1-L4 in docs/attr/T-A1-proof.md (L3 is the delicate lemma).
-3. Optional: exact (peeling) characterisation of psolQ's class; psolB vs psolQ inclusion at n = 4 (holds at n = 3).
+1. If the Lead gives the go on T-A1: write docs/attr/T-A1-proof.md with L1-L4 (L3, preservation of PA under removal of a
+   winner's attractor, is the delicate one: state it for the restricted chain S_i ∩ W' after larger attractors eat parts of
+   later pieces; the tree may change, only completeness matters). Then hand to the REFEREE via the Lead.
+2. If T8 says PA is decidable in polynomial time, say so in A1-results.md section 4 (it changes T-A1 from "a characterisation of
+   a partial solver" to "a polynomial class with a known polynomial solver") and check against TARGET section 4 (M3 only).
+3. Optional, only on request: exact (peeling) characterisation of psolQ's class; psolB vs psolQ inclusion at n = 4 (holds at n = 3,
+   data to compute from out/fail_n4.jsonl would need psolB added to exhaustive.py, 30 min rerun).
 
 ## Things only I know
+- Lead decisions 2026-10-14 23:00Z (quoted): "1. T-A1: before paying for a proof, L-LIT checks novelty and whether PA is decidable
+  in polynomial time (T8). Do not start the proof yet. If T8 says NEW and the value holds, I'll give you the go. 2. The 51 MB n=4
+  jsonl stays gitignored. Record in experiments/attr/README.md the exact command that regenerates it (27 min), plus a sha256 of
+  the file. 3. I've added your Alg1-vs-psolQ data to docs/decisions/M2-arxiv-2511.03752.md. The avh.py strategy finding goes to
+  L-COMP's successor. 4. Until T8 lands, make notes/L-ATTR.md handover-grade, push, message me the SHA, and park."
+- How to rerun everything (all from experiments/attr/): validate.py (2 min, full), exhaustive.py 3 --all-strahler (3 s),
+  exhaustive.py 4 --workers 3 --all-strahler (27 min, 3 cores), hypotheses.py 3 (8 s; PD is slow from n = 5 on, use pa_sample.py
+  for PA alone), pa_sample.py n K seed. Oink is needed only by scripts/verify.sh (setup_oink.sh, ~1 min).
+- Conventions that bit me: HKP are MIN-parity, DJT and TARGET MAX-parity; all my code converts at the boundary (colour = M - pr).
+  PMAttr's target is external (a target node is in the attractor only if attracted in >= 1 step); in the worklist implementation
+  every node of Z ∪ T is popped exactly once, so opponent counters count all alive successors. DJT's trap: the opponent's
+  vertices keep ALL edges inside, the owner's keep ONE (direction matters in is_trap_for_opponent).
+- The machine clock was ~1 h behind what the Lead's message times suggested at first; all my timestamps are machine clock
+  (trunk commit 209865a = 22:05Z).
 - Lead correction (22:08Z, read 22:42Z): the brief's sentence "polynomial partial solvers cannot be complete unless ... collapse" is withdrawn; a complete polynomial partial solver would put parity games in P (open, would be an M4 claim). Nothing in docs/attr/ relied on the withdrawn sentence.
 - Hand computation BEFORE running code (recorded 22:15Z, statement section 4):
   HKP Fig. 6 in max-parity (bench/hkp_fig6.pg: v0:4 v1:3 v2:1 v3:1 v4:2 v5:3 v6:3 v7:4, all Odd): Even wins all; d = 4:

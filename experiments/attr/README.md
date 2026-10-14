@@ -17,3 +17,12 @@ arXiv 1405.0386v2 Fig. 5) and of Algorithm 1 of arXiv 2511.03752 (experiments/m2
 
 Reproduce: `python3 validate.py` (2 min), `python3 exhaustive.py 3 --all-strahler` (seconds), `python3 exhaustive.py 4 --all-strahler --workers 3`
 (about 30 min, 27.3 M games), `python3 hypotheses.py 3`, `python3 hypotheses.py 4 --sample 30000 --seed 4`.
+
+## Regenerating the n = 4 data (not committed: 51 MB)
+```
+cd experiments/attr && python3 exhaustive.py 4 --workers 3 --all-strahler     # 27,331,200 games, 1632 s on 3 workers
+```
+Deterministic output (orbit, owner and pattern order are fixed): `out/fail_n4.jsonl` has 361,420 lines, sha256
+728e7cda1757ff598db74c7b3c980c8fa23efb7de9fa383f894a8d2c907fb63c; `out/summary_n4.txt` sha256
+c1e29137c7104280983f9cbc3d600be38c20d452f5125dc03169941fc2f6283f (committed copy: results/summary_n4.txt).
+Note: the summary's time line differs between runs, so its hash is for the 2026-10-14 run only; compare the count lines.
