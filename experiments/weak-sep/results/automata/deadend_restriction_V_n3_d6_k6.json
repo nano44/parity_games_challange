@@ -1,0 +1,62 @@
+{
+ "n": 3,
+ "d": 6,
+ "conv": "V",
+ "mode": "weak",
+ "value": 6,
+ "automaton": {
+  "k": 6,
+  "d": 6,
+  "delta": [
+   [
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   [
+    2,
+    1,
+    3,
+    4,
+    3,
+    0
+   ],
+   [
+    5,
+    4,
+    3,
+    4,
+    null,
+    0
+   ],
+   [
+    null,
+    3,
+    null,
+    4,
+    null,
+    0
+   ],
+   [
+    2,
+    4,
+    5,
+    4,
+    null,
+    0
+   ],
+   [
+    3,
+    1,
+    3,
+    4,
+    null,
+    0
+   ]
+  ]
+ },
+ "note": "dead-end obstruction: weak (3,6) V-separator with 6 states and an odd simple cycle of maximum 3; its restriction to Sigma_4 is not strong (probe_oddcycles.py 3 6 V 6 3)"
+}

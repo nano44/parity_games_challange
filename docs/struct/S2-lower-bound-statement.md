@@ -1,5 +1,13 @@
 # S2: lower bound for deterministic weak separators, exact statement (L-STRUCT, 2026-10-14)
 
+**STATUS 2026-10-14 21:50Z: T1 is DEAD (docs/RESULTS.md DE2; REFEREE 92846bf).** Refuting instance: the 4-state weak
+(2,10)-separator found by L-COMP (l-comp 3e44d2c, experiments/sat-hard/results/weak_E_n2_d10_k4.json; copy with my
+checker's verdict in experiments/weak-sep/results/external/lcomp_weak_E_n2_d10_k4.json): w(2,10) = 4 < 5 = s(2,8) in
+E, S and V, while T1 demanded w(2,10) ≥ s(2,8). Obstruction: for n = 2, s(2,2h) = h + 1 grows with d while w(2,d)
+stays at 4 for 7 ≤ d ≤ 12 (my cells, V) and at d = 8, 10 (E). T2 stays open and parked (see §2). The algorithmic
+framing moves to docs/struct/S3-statement.md (the diagonal w^V(n,n)). The rest of this file is kept as the record,
+with the REFEREE's statement-check fixes (docs/referee/2026-10-14-S2-statement-check.md) applied below.
+
 Status: statement only (TARGET.md §7e), written before proof work, after the Lead's direction (a) of 19:26Z. Vocabulary
 and conventions: docs/struct/S1-statement.md (D1-D5; E = edge-labelled multigraphs, S = one label per pair, V = vertex
 labels; for a TARGET game the letters are pr + 2 ∈ {2..n+2} ⊆ Σ_{n+2}). s^E(n,d) for even d is the least number of
@@ -28,9 +36,14 @@ with "strong PG separator" for the additional rejection of LimsupOdd_{n,d}. The 
 Thm 5.1 is stated and proved for strong separators only (CDFJLP §3.3, §6); Parys himself notes right after Def. 3.2
 that the quasi-polynomial-time separators "are actually strong PG separators (cf. [9, Section 4])". So no weak-separator
 lower bound is asserted there, and T1 is not pre-empted by it.
-For X = V it is a barrier for every algorithm of the form "solve the safety game G ⊲ A for a fixed deterministic
-automaton family A_{n,d} reading priorities" on TARGET games, by S1 Lemma 1 (refereed). M3 status: Lead reading L6
-(docs/DECISIONS.md) on D1, based on L-LIT's T5 verdict NEW.
+For X = V the barrier reading is CONDITIONAL (REFEREE finding 2): T1 + CDFJLP Thm 5.1 bound s^E only, and s^V < s^E
+already at (4,4) (7 vs 8); a V-barrier needs a super-polynomial lower bound on s^V(n,n), which no opened source gives.
+The algorithmic quantity is w^V(n, n), not w^V(n, n+2) (REFEREE finding 3): TARGET priorities lie in {0..n}; shifting
+by 2 gives letters {2..n+2} with 0 neutral, and S1 Lemma 2(b) removes it. Exact class covered by such a barrier:
+deterministic algorithms that (i) build a deterministic safety automaton A_{n,d} over priority letters depending only on
+(n, d), (ii) decide v ∈ W_E by solving the safety game G ⊲ A from (v, q0) (S1 Lemma 1), and (iii) spend at least the
+product size n·|A|. Not covered: non-deterministic or good-for-games automata, automata built from G, symbolic
+solving of the product below its size, and every non-product algorithm. M3 status: Lead reading L6 (docs/DECISIONS.md).
 
 Scope of T1 (what it does not cover). Automata over alphabets carrying vertex names or edges (KV's (vertex, priority)
 letters; Parys's Σ_{n,d}) are outside: with vertex names, non-deterministic weak separation is easy (KV p.5), so any
@@ -38,9 +51,11 @@ proof of T1 must use determinism or the priority-only alphabet, or both. Non-det
 At d = 4, T1 reads w(n,4) ≥ s(n,2) = n, the trivial level; T1 has content only from d = 6 on.
 
 ## 2. Fallback theorem T2 (constant-factor loss in n)
-There is a constant c ≥ 1 such that for all n ≥ c, even d ≥ 2 and X ∈ {E, S, V}: w^X(n, d) ≥ s^X(⌊n/c⌋, d).
-Same consequence with n replaced by n/c. Weaker than T1 in the data (it is trivial for n ≤ c) but may be what the
-proof gives.
+There is a constant c ≥ 1 such that for all n ≥ c, even d ≥ 2 and X ∈ {E, S, V}: w^X(n, d) ≥ s^X(⌊n/c⌋, d)
+(quantified over n ≥ c only; s^X(0,d) is undefined; REFEREE finding 1). Same consequence with n replaced by n/c.
+Status: open, parked. At n = 2 it is vacuous for c ≥ 2, so the (2,10) instance does not touch it. If revived, its
+novelty must be checked against KV's time-bounded bound (REFEREE): KV's alphabet carries vertex names, so a KV-type
+bound would imply one for priority letters, but KV's is time-bounded and does not transfer; L-LIT to confirm.
 
 ## 3. What the data say (experiments/weak-sep/results/table.md, L-STRUCT data, unrefereed, l-struct 42dbbc2 and later)
 - T1 holds with equality at (2,5), (2,6) in E, S, V: w = 3 = s(2,4) = s(2,3). It holds strictly at (2,4) V (3 > 2),
@@ -73,8 +88,10 @@ proof gives.
   condition is what controls when an even graph can.
 - Step 2: show the extracted ordered tree embeds every tree with n leaves and height d/2 − 1 (T1) or every tree with
   n/c leaves and height d/2 (T2). The loss (one level, or a factor in n) is where the odd cycles enter.
-- Dead-end record: the restriction lemma (§3) is a dead end by the probe; obstruction instance: the 6-state weak
-  (3,6)-separator of convention V with an odd 3-cycle (probe_oddcycles.py 3 6 V 6 3).
+- Dead-end record: the restriction lemma (§3) is a dead end by the probe; obstruction instance committed as
+  experiments/weak-sep/results/automata/deadend_restriction_V_n3_d6_k6.json (6-state weak (3,6) V-separator with an
+  odd simple cycle of maximum 3; its restriction to Σ_4 fails (S2)). The table's weak_V_n3_d6.json is NOT an instance
+  (its restriction to Σ_4 is strong), as the REFEREE noted (finding 4).
 
 ## 5. Novelty (for L-LIT) and refereeing (for the REFEREE)
 - L-LIT: check T1/T2 against the map. Known: strong bounds only (B1, B2); KV time-bounded (B16); CDFJLP §6 open.

@@ -2,18 +2,15 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14 20:10Z: S1 done and refereed (C1 OK, Lemmas 1-3 OK after patches). Lead direction (19:26Z): (a) lower-bound
-line is mine, (b) hard SAT cells go to L-COMP, (c) constructions only if the gap at (4,6) or n=5 exceeds 1.
-- docs/struct/S2-lower-bound-statement.md: T1 w^X(n,d) ≥ s^X(n,d−2), T2 w^X(n,d) ≥ s^X(⌊n/c⌋,d); sent to the Lead
-  20:05Z for L-LIT novelty + REFEREE statement check. Proof work on T1 starts only after the Lead's go.
-- Latest data: w^V(4,6) ≤ 11 (checker-verified); s^V(4,6) computing (background: compute.py 4 6 V strong, log
-  experiments/weak-sep/out/strong_V_n4_d6.log); weak V (4,6) k=10 search and weak E (4,6) k=12 search under caps.
-  Any finished results/automata/*.json must be committed (make_table.py, then verify.sh && git push).
-- Probe result: weak separators can have odd simple cycles below the top odd letter (probe_oddcycles.py).
+2026-10-14 21:55Z: S2 T1 dead (DE2). S2 patched per REFEREE (T2 n ≥ c; V barrier conditional on L4; algorithmic
+quantity w^V(n,n); dead-end automaton committed). S3-statement.md written (diagonal W(n) = w^V(n,n) vs S(n) =
+s^V(n,n); T3-neg / T3-pos / L4 / H1) and sent to the Lead for L-LIT + REFEREE. No proof or construction work until
+their verdicts. Background (caps): weak V (3,10); weak E (2,12); strong V (3,8); weak V (4,6) k=9; weak E (4,6) k=12.
+Any finished results/automata/*.json: make_table.py, then verify.sh && git push.
 
 ## Queue
-1. Lead's go on T1 (after L-LIT/REFEREE); then proof attempt along S2 §4 (even-realisable resistance).
-2. L-COMP has the hard cells; cheapest decisive one for T1: weak E (4,6) with ≤ 7 states (SAT refutes T1).
+1. Lead's go on S3 (after L-LIT/REFEREE); then: if T3-neg is the line, study why the diagonal shows no gain; if T3-pos, try to generalise the fixed-n witnesses to the diagonal (unlikely per S3 §5).
+2. H1 tests at n = 3 (d = 10, 12, 14) are mine (cheap); W(5), S(5) are L-COMP's.
 3. Structural study of minimal weak separators that beat s: which odd lassos they tolerate (Q3); try to generalise the
    (2,6) 3-state automaton and the (3,6) V 6-state automaton to a family and compute its size against s.
 4. Write proofs of Lemmas 1-3 of S1-statement.md (S1-notes) and send to the REFEREE through the Lead.
@@ -44,4 +41,5 @@ line is mine, (b) hard SAT cells go to L-COMP, (c) constructions only if the gap
 ## Dead ends
 | date | idea | obstruction (exact) | instance |
 | --- | --- | --- | --- |
+| 2026-10-14 | S2 target T1: w^X(n,d) ≥ s^X(n,d−2) (one tree level is all a weak separator saves) | REFUTED (DE2, REFEREE 92846bf): w(2,10) = 4 < 5 = s(2,8) in E, S, V; s(2,2h) = h+1 grows while w(2,d) = 4 for 7 ≤ d ≤ 12 (V) and d = 8, 10 (E) | L-COMP's 4-state weak (2,10)-separator, l-comp 3e44d2c experiments/sat-hard/results/weak_E_n2_d10_k4.json; my re-check experiments/weak-sep/results/external/lcomp_weak_E_n2_d10_k4.json (checker: no violation in E, S, V; not strong) |
 | 2026-10-14 | Restriction lemma: "a deterministic weak (n,d)-separator restricted to Σ_{d−2} is a strong (n,d−2)-separator" (would give T1 at once) | weak separators with an odd simple cycle whose maximum is ≤ d−3 exist, even at minimum size, so the restriction keeps an odd cycle and is not strong | (3,6) convention V, k = 6 = w^V(3,6): `experiments/weak-sep/probe_oddcycles.py 3 6 V 6 3` returns a 6-state weak separator with an odd cycle of maximum 3; also (2,6) E with k = 4 and (2,4) V with k = 3 |
