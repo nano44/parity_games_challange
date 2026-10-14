@@ -162,7 +162,7 @@ Exhaustive test (Lead 21:40Z; results/sl8/, every weak separator with k reachabl
 | V (2,2), k = 2 / 3 / 4 | 1 / 24 / 609 | all / 22 / 507 | - / 2 / 99 | - / - / 3 | | |
 | V (2,3), k = 3 / 4 | 28 / 4550 | 12 / 1075 | 12 / 2272 | 4 / 1059 | - / 139 | - / 5 (all t = 4) |
 | V (3,3), k = 5 / 6 | 76 / ≥ 5000 (capped) | 65 / 3432 | 10 / 1356 | 1 / 172 | - / 39 | - / 1 (t > 3, exact value pending) |
-| V (3,4), k = 5 / 6 | 407 / running | 365 | 36 | 6 | | |
+| V (3,4), k = 5 / 6 | 407 / ≥ 5000 (capped) | 365 / 3384 | 36 / 994 | 6 / 622 | | |
 Reading: at MINIMUM size (k = w, the only case T3 needs) every weak separator is within t ≤ 2 of a strong one (E: t ≤ 1;
 V: t ≤ 2), and most are strong outright. Above minimum size the distance grows (t = 4 at V (2,3) k = 4), so a universal
 small t is the wrong form; the T3-relevant statement is SL8-min: for every MINIMAL deterministic weak (n,d)-separator at
