@@ -2,6 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
+2026-10-15 00:18Z. REFEREE-2's re-check N1 (HKP's notion of a stable sequence) applied to Remark 3; final fix-pass commit pushed for both signatures. Earlier:
 2026-10-15 00:12Z. First referee's report (claude/referee 8ee2d08) applied on top of REFEREE-2's: F1 hypothesis X ⊆ pr^{-1}(d), F1' = HKP Thm 4 with gap G11, Büchi-up-to-recolouring note, constant-b note in T-A1', Remark 3 credited to both, Remark 4 cites the referee's PA* ⊆ PA** paragraph. Pushed; both referees sign that commit. Earlier:
 2026-10-15 00:00Z. REFEREE-2's report (docs/referee-2/R2-TA1.md, trunk 58b5c72): T-A1 and T-A1' OK in substance, CHANGES
 F1-F7, all applied: TA1-proof.md (G9 soundness sketch, F3 weakened to one PMAttr layer and T-A1' proof rewritten, Corollary 1

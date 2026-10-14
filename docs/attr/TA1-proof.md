@@ -1,4 +1,4 @@
-# T-A1: the class of parity games that psolB solves completely (L-ATTR; proof draft, revised 2026-10-14 23:55Z after REFEREE-2's report docs/referee-2/R2-TA1.md, and 2026-10-15 00:10Z after the first referee's report docs/referee/2026-10-14-TA1-proof-check.md (claude/referee 8ee2d08); both reports: T-A1 and T-A1' hold)
+# T-A1: the class of parity games that psolB solves completely (L-ATTR; proof draft, revised 2026-10-14 23:55Z after REFEREE-2's report docs/referee-2/R2-TA1.md, and 2026-10-15 00:10Z after the first referee's report docs/referee/2026-10-14-TA1-proof-check.md (claude/referee 8ee2d08) and REFEREE-2's re-check N1 (claude/referee-2 1e4cfd5, R2-TA1.md section 7); both reports: T-A1 and T-A1' hold)
 Vocabulary: TARGET.md section 1 (max-parity; G = (V, V_E, V_O, E, pr)). Solvers: psolB (HKP Fig. 3) and psolQ (HKP Fig. 5),
 HKP = Huth, Kuo, Piterman, arXiv 1405.0386v2, implemented in experiments/attr/psolb.py and psolq.py (pseudocode with line
 numbers in notes/L-ATTR.md). HKP work in min-parity; every HKP notion is restated here in max-parity (colour = M - priority;
@@ -44,9 +44,10 @@ Corollary 2 (membership). PA**(G) is decidable in time O(|V|^2 |E|) (HKP Thm 5(1
 not a solver-free procedure; two natural canonical rules are sound but incomplete (A1-results.md section 3).
 Remark 3 (order independence; found by both referees: REFEREE-2 F2, first referee finding 6; agreed). Neither direction of the proof uses the order in which psolB visits the
 colours: section 4 shows that in every subgame reached by sound removals with W_p(G') ≠ ∅ some colour of G' has a non-empty
-fatal greatest fixpoint, and section 5 works for any sequence of removals. Hence, for every stable colour order π in the sense
-of HKP Thm 6 (every colour of the current game is tried before the solver returns, and the loop restarts after a removal),
-psolB(π) solves G completely iff PA**(G). This re-proves the completeness half of HKP Thm 6 without HKP's Lemmas 2-4.
+fatal greatest fixpoint, and section 5 works for any sequence of removals. Hence, for every stable colour sequence π in the sense
+of HKP Thm 6 (HKP: appending any colour to π does not change the output; equivalently no colour of the output game has a
+non-empty fatal fixpoint, which is all the "if" direction uses, while the "only if" direction works for any removal
+sequence), psolB(π) solves G completely iff PA**(G). (Wording per REFEREE-2's re-check, R2-TA1.md section 7, N1.) This re-proves the completeness half of HKP Thm 6 without HKP's Lemmas 2-4.
 REFEREE-2's empirical check: psolB's residual is identical for descending, ascending and random colour orders on all 490,944
 games searched (R2-TA1.md section 4).
 Remark 4 (hierarchy; data, not part of the claim). A1-results.md section 3 defines two stronger predicates: PA (a DJT
