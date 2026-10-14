@@ -2,7 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14: T1-T3 pushed (landed on trunk 9079c01); T4 docs/lit/T4-weak-separators.md: verdict OPEN. T5 docs/lit/T5-S2-novelty.md: S2 T1/T2 NEW. T6 docs/lit/T6-S3.md: T3, H1 NEW; L4 via Claim R (unrefereed). Parked. Next: Lead feedback; open the
+2026-10-14: T1-T3 pushed (landed on trunk 9079c01); T4 docs/lit/T4-weak-separators.md: verdict OPEN. T5 docs/lit/T5-S2-novelty.md: S2 T1/T2 NEW. T6 docs/lit/T6-S3.md: T3, H1 NEW; L4 via Claim R (unrefereed). T7 docs/lit/T7-rank2.md: rank 2 OPEN, SLP model, T7-1/T7-1'. Parked. Next: Lead feedback; open the
 not-opened primaries listed below if a lane needs them.
 
 ## Queue
@@ -108,6 +108,13 @@ not-opened primaries listed below if a lane needs them.
 | Colcombet-Fijalkow FoSSaCS 2019 (author PDF irif.fr/~colcombe/Publications/FOSSACS19-colcombet-fijalkow.pdf) | Def. 8, Example 1-2, Def. 9, Thm 9, Lemma 7, footnote 5 p.14 ("nothing is known about this notion"), Thm 10 | 2026-10-14 | T5; rendered p.14 to read the formula |
 | arXiv 2109.09155 v2 (Göös-Kiefer-Yuan, unambiguous automata) | abstract; parity mention l.85-86 only | 2026-10-14 | T5 |
 | LIPIcs.CSL.2020.32 (Parys) read by L-LIT | Def. 3.2 (PG separator weak, strong variant), intro p.2 sentence on CDFJLP | 2026-10-14 | T5 |
+| Parys RAIRO-TIA 47(1) 2013, DOI 10.1051/ita/2012030 (author copy mimuw.edu.pl/~parys 2010fixpoints_final.pdf) | abstract; Thm 1.1; Thm 1.3 num(2,{0,1}^n) = Ω(n^2/log n); Lemma 4.2 | 2026-10-14 | T7; adaptive black-box, arbitrary monotone f |
+| arXiv 1711.09148 v1 (Chatterjee-Dvořák-Henzinger-Loitzenbauer, SODA 2018) | §1 model + p.2 "2n symbolic one-step operations" remark; §2 Preliminaries; Thm 3.2, 3.8, 3.10, 3.11 | 2026-10-14 | T7; only symbolic lower bounds, linear |
+| arXiv 1706.04889 v1 (Chatterjee-Dvořák-Henzinger-Loitzenbauer, CSL 2017) | abstract (symbolic parity bounds O(n^{c/3+1})) | 2026-10-14 | T7 |
+| arXiv 1909.04983 v1 (CDHS), read by L-LIT | model definition p.2; p.19 open problem | 2026-10-14 | T7 |
+| arXiv 2001.04333 v2 (JMT), read by L-LIT | "Symbolic algorithms" section p.15-16 | 2026-10-14 | T7 |
+| arXiv 2406.01497 v1 (Jung-Kołodziejski) | abstract, Prop. 3 | 2026-10-14 | T7; adjacent |
+| arXiv 1912.08715 v1 (Hella-Vilander) | abstract, Remark 4.12 | 2026-10-14 | T7; adjacent |
 
 ## Dead ends
 (none)
