@@ -32,3 +32,10 @@ Lead reading L3: change 5 applies to every implementation that enters the gauntl
 claims such as 2511.03752); the target statement itself still requires only the regions (7d as written).
 Lead reading L4: "Attack lanes may start" lifts D1's hold; lanes are still added one at a time in L-LIT's ranked order (D1).
 Lead reading L1 (amended): the M2 clock starts 2026-10-14 18:30Z (paper hosts reachable, REFEREE spawned); deadline 2026-10-16 18:30Z.
+Lead reading L5 (M1 wording, D1 "confirms their blow-up in Oink"): Oink has no implementation of the switch-all/switch-best rules that
+Friedmann's SI games target, so those two families are confirmed with REFEREE-checked Python ports of PGSolver's SI loop, quoted as
+"the strategy-improvement loop (= PGSolver with -dgo -dsd -dlo -dsg)"; the other families are confirmed in Oink itself.
+Lead reading L6 (2026-10-14, on D1's M3 list): L-STRUCT's S2 target T1 (w^X(n,d) ≥ s^X(n,d−2) for deterministic weak separators over
+the priority alphabet), if proved and passed through refereeing, counts as M3 "a lower bound for a broader algorithm model": each
+deterministic weak separator is an algorithm via Czerwiński et al. Prop. 3.2, and weak separators strictly contain strong ones (C1).
+Basis: L-LIT T5 verdict NEW (docs/lit/T5-S2-novelty.md). Scope excludes vertex-name alphabets and non-deterministic weak separators.
