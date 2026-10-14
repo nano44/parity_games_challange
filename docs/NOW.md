@@ -28,11 +28,12 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - L-COMP: parked after notebook handover; wakes for a new claim, review changes, or L-STRUCT SAT engineering.
 - L-LIT: parked; T1-T4 on trunk (docs/lit/). T4: weak separators OPEN (Czerwinski et al. 1807.10546 §6).
 - L-STRUCT: S1 data (l-struct 42dbbc2, unrefereed): w=s on most cells, w<s at (2,5),(2,6) [3<4] and V(3,5),(3,6) [6<7]. Now (a): structural Q3 toward a weak-separator lower bound; statement first.
-- REFEREE: checking L-STRUCT C1 (w(2,6)=3<4=s(2,6)), Lemmas 1-3, conventions (l-struct 42dbbc2). Plant P1 inside this routing (LEAD-STATE).
+- REFEREE: idle. C1 OK in E/S/V (762c598); Lemma 1 OK, Lemma 2 CHANGES (repair given), Lemma 3 OK; plant P1 caught (score 1/1).
 - L-COMP: reproduce L-STRUCT check + SAT hard cells w(4,6), w(5,4), w(5,6) in experiments/sat-hard/ (6h box).
 - WATCHDOG: hourly at :30.
 
 ## Findings to carry
+- C1 (REFEREE-checked, a data point, not M3): w(2,6)=3 < 4=s(2,6) in E, S, V; w^V(3,6)=6 < 7=s^V(3,6). Weak separators can be strictly smaller than strong ones.
 - Landscape doc corrections (L-LIT, docs/lit/BARRIERS.md): d = O(log n) poly result is Jurdzinski-Lazic Thm 7 / Fearnley et al., not Calude et al.; upper-bound exponent is Jurdzinski-Lazic's; attractor-decomposition barrier is formally only Arnold-Niwinski-Parys Thm 5.1; Two Counters bound partly empirical; Random-Facet parity lower bound withdrawn (arXiv 1410.7871).
 - Oink mspm at 8fbf0a7 is wrong on some games (crash at mspm.cpp:486; one answer rejected by Oink's verifier); excluded from agreement claims. Instances: experiments/harness/regressions/ (l-comp).
 - PGSolver SI families (switchallexp, switchbestexp) target PGSolver's switch-all/switch-best SI, not Oink psi/ssi; port of stratimpralgs.ml queued in L-COMP.
