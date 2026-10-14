@@ -116,3 +116,17 @@ def accepts_lasso(aut, u, v):
         if q is None:
             return False
     return True
+
+
+def strong_ok(aut):
+    """(S2) independently: every cycle of the reachable transition graph has even maximum letter (brute force)."""
+    import graphs
+    delta = aut["delta"]; seen, st = {0}, [0]
+    while st:
+        q = st.pop()
+        for x in delta[q]:
+            if x is not None and x not in seen:
+                seen.add(x); st.append(x)
+    edges = {(q, p + 1, delta[q][p]) for q in seen for p in range(aut["d"]) if delta[q][p] is not None}
+    idx = {q: i for i, q in enumerate(sorted(seen))}
+    return graphs.is_parity(len(seen), {(idx[a], p, idx[b]) for (a, p, b) in edges}, 0)

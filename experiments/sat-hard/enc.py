@@ -250,3 +250,31 @@ def add_odd_binary(self, g):
 
 
 Encoding.add_odd_binary = add_odd_binary
+
+
+def add_strong(e):
+    """Strong condition (S2): every cycle of A (all states are reachable under BFS symmetry breaking) has even maximum
+    letter. For every odd letter p: a rank rho_p on states (thermometer, range [0, k]) that is non-increasing along
+    transitions with letters < p and strictly decreasing along transitions with letter p. A cycle with odd max p would
+    have to decrease strictly and never increase: impossible; conversely, if every cycle has even max, the subgraph of
+    transitions with letters <= p has no cycle through a p-edge, and rho_p = max number of p-edges on a path works."""
+    k, d, t = e.k, e.d, e.t
+    N = k + 1
+    for p in range(1, d + 1, 2):
+        u = []
+        for q in range(k):
+            uq = [None] + [e.new() for _ in range(N - 1)]  # uq[j] = rho(q) >= j, j = 1..N-1
+            for j in range(1, N - 1):
+                e.add([-uq[j + 1], uq[j]])
+            u.append(uq)
+        for q in range(k):
+            for q2 in range(k):
+                for a in range(1, p + 1):
+                    x = t[q][a - 1][q2]
+                    if a < p:   # rho(q) >= rho(q2)
+                        for j in range(1, N):
+                            e.add([-x, -u[q2][j], u[q][j]])
+                    else:       # rho(q) > rho(q2)
+                        e.add([-x, u[q][1]])
+                        for j in range(1, N):
+                            e.add([-x, -u[q2][j]] + ([u[q][j + 1]] if j + 1 < N else []))

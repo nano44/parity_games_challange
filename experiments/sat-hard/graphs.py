@@ -109,3 +109,25 @@ def family_V(n, d, win):
     for E in res:
         assert is_parity(n, E, win)
     return [(n, E) for E in res]
+
+
+def family_S(n, d, win):
+    """Convention S (at most one label per ordered pair): every even/odd S-graph is a subgraph of an E-graph of the
+    E family; take, for each E family member, every choice of exactly one present label per ordered pair (dropping a
+    pair gives a subgraph). Feasible for n <= 2. Re-checked by brute force; duplicates removed."""
+    out = set()
+    for (nn, E) in family(n, d, win):
+        pairs = {}
+        for (u, p, v) in E:
+            pairs.setdefault((u, v), []).append(p)
+        keys = sorted(pairs)
+        for choice in itertools.product(*[pairs[k] for k in keys]):
+            out.add(frozenset((u, p, v) for (u, v), p in zip(keys, choice)))
+    res = sorted(out, key=lambda e: sorted(e))
+    for E in res:
+        assert is_parity(n, E, win)
+    return [(n, E) for E in res]
+
+
+def fam(n, d, win, conv="E"):
+    return {"E": family, "V": family_V, "S": family_S}[conv](n, d, win)

@@ -7,6 +7,31 @@
 - Own encoder + checker (this folder) reproduce w(2,6)=3, w(3,6)=7, w(4,4)=8, and (4,4) k=7 UNSAT with a verified LRAT
   proof; (4,5) k=8 UNSAT in 84 s (L-STRUCT: 118 s).
 
+## T1 REFUTED at (2,10): w(2,10) = 4 < 5 = s(2,8), in conventions E, S and V (2026-10-14 ~20:30Z)
+T1 (L-STRUCT, as stated by the Lead): w(n,d) >= s(n,d-2). At n = 2, d = 10:
+- **w(2,10) <= 4**: the 4-state weak (2,10)-separator `results/weak_E_n2_d10_k4.json` (found by search.py 2 10 4,
+  delta[q][p-1], None = bottom, state 0 initial):
+  ```
+  delta(0,.) = [1, 0, 2, 0, 2, 0, 2, 0, 3, 0]
+  delta(1,.) = [3, 2, 3, 2, _, 2, _, 0, _, 0]
+  delta(2,.) = [1, 2, 3, 2, 3, 2, _, 0, _, 0]
+  delta(3,.) = [_, 3, _, 1, _, 2, _, 2, _, 0]
+  ```
+  Verified three ways: (1) verify2.py, exhaustive and progress-measure-free: ALL inclusion-maximal even / odd E-graphs
+  on <= 2 vertices (a 2-vertex graph is even iff all loops are even and max(a,b) is even for every 0->1 label a and
+  1->0 label b), 11 even + 12 odd, no violation; (2) check.py against graphs.family(2,10) (5 even, 6 odd); (3)
+  L-STRUCT's own checker (5e94874 wsep.automata.check_separator on its maximal_graphs for n = 1, 2): no violation.
+  As S- and V-graphs are E-graphs, it is also an S and a V separator (checked: graphs.family_S / family_V, n = 1, 2).
+- **s(2,8) >= 5** in E, S and V: strong k = 4 UNSAT (search.py 2 8 4 --strong [--conv S|V]); CaDiCaL LRAT proofs
+  verified by lrat_check.py (2257 / 2441 / 3681 RUP steps) and CryptoMiniSat UNSAT on each CNF
+  (results/sX_n2_d8_k4.cnf; E sha256 f453e181bdde3fe9...). k = 5 is SAT, so s(2,8) = 5 (E: = least leaves of a
+  (2,4)-universal tree, CFGO, per L-STRUCT's table pattern h+1 for n = 2).
+- Also w(2,10) >= w(2,8) >= 4 (monotone in d; (2,8) weak k = 3 UNSAT in E, S, V with verified LRAT proofs and
+  CryptoMiniSat agreement, results/wX_n2_d8_k3.cnf): so w(2,10) = 4 exactly. And s(2,10) = 6 (k=5 UNSAT, k=6 SAT; no proof yet).
+- (2,8): w(2,8) >= 4 = s(2,6) in E, S, V, consistent with T1 there.
+Re-run: `python3 search.py 2 10 4` (SAT, < 1 s), `python3 search.py 2 8 4 --strong --cnf-out F.cnf`, then
+`cadical --lrat=true --binary=false F.cnf F.lrat && python3 lrat_check.py F.cnf F.lrat`; `python3 verify2.py results/weak_E_n2_d10_k4.json`.
+
 ## New bounds (convention E, weak)
 | cell | bound | evidence |
 | --- | --- | --- |

@@ -10,10 +10,13 @@ import graphs, enc, check
 from pysat.solvers import Solver
 
 
-def run(n, d, k, solver="cadical153", cnf_out=None, assume=(), log=print, init_graphs=None, extra=(), w2="rank"):
-    evens, odds = graphs.family(n, d, 0), graphs.family(n, d, 1)
+def run(n, d, k, solver="cadical153", cnf_out=None, assume=(), log=print, init_graphs=None, extra=(), w2="rank", conv="E", strong=False):
+    evens, odds = graphs.fam(n, d, 0, conv), graphs.fam(n, d, 1, conv)
     e = enc.Encoding(n, d, k)
     e.binary = (w2 == "binary")
+    if strong:
+        enc.add_strong(e)
+        odds = []  # strong separators: W1 + S2 (S2 implies W2)
     for (q, a, x) in assume:
         e.add([e.t[q][a - 1][x]])
     for cl in extra:  # clauses over transition literals ('t', q, a, x)
@@ -28,7 +31,7 @@ def run(n, d, k, solver="cadical153", cnf_out=None, assume=(), log=print, init_g
     while True:
         rounds += 1
         if not S.solve():
-            log(f"UNSAT n={n} d={d} k={k} w2={w2} assume={list(assume)} rounds={rounds} graphs={len(used)} lassos={len(lassos)} vars={e.nv} "
+            log(f"UNSAT {'strong' if strong else 'weak'} conv={conv} n={n} d={d} k={k} w2={w2} assume={list(assume)} rounds={rounds} graphs={len(used)} lassos={len(lassos)} vars={e.nv} "
                 f"clauses={len(e.clauses)} {time.time()-t0:.1f}s")
             if cnf_out:
                 e.dimacs(cnf_out)
@@ -36,8 +39,10 @@ def run(n, d, k, solver="cadical153", cnf_out=None, assume=(), log=print, init_g
             return None, sorted(used)
         aut = e.decode(S.get_model())
         bad = check.violations(aut, evens, odds)
+        if strong:
+            assert check.strong_ok(aut), "S2 encoded but violated: encoding bug"
         if not bad:
-            log(f"SAT n={n} d={d} k={k} w2={w2} {time.time()-t0:.1f}s rounds={rounds} lassos={len(lassos)} {json.dumps(aut)}")
+            log(f"SAT {'strong' if strong else 'weak'} conv={conv} n={n} d={d} k={k} w2={w2} {time.time()-t0:.1f}s rounds={rounds} lassos={len(lassos)} {json.dumps(aut)}")
             S.delete()
             return aut, sorted(used)
         if w2 == "lasso":  # noqa (binary uses the graph branch below)
@@ -69,7 +74,9 @@ if __name__ == "__main__":
     ap.add_argument("--solver", default="cadical153"); ap.add_argument("--cnf-out")
     ap.add_argument("--assume", default="")
     ap.add_argument("--w2", choices=["rank", "lasso", "binary"], default="rank")
+    ap.add_argument("--conv", choices=["E", "S", "V"], default="E")
+    ap.add_argument("--strong", action="store_true")
     a = ap.parse_args()
     assume = [tuple(map(int, x.split(":"))) for x in a.assume.split(",") if x]
-    aut, used = run(a.n, a.d, a.k, a.solver, a.cnf_out, assume, w2=a.w2)
+    aut, used = run(a.n, a.d, a.k, a.solver, a.cnf_out, assume, w2=a.w2, conv=a.conv, strong=a.strong)
     print("GRAPHS", json.dumps(used))
