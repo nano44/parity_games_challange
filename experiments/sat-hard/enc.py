@@ -129,6 +129,8 @@ class Encoding(CNF):
                 self.add([-R[v][q], -self.t[q][p - 1][self.k]])
 
     def add_odd(self, g):
+        if getattr(self, "binary", False):
+            return self.add_odd_binary(g)
         n, E = g
         k, t = self.k, self.t
         R = self._reach(g)
@@ -173,3 +175,78 @@ class Encoding(CNF):
                 row.append(None if xs[0] == self.k else xs[0])
             delta.append(row)
         return {"k": self.k, "d": self.d, "delta": delta}
+
+
+def add_reject_lasso(e, u, v):
+    """Constraint: the automaton rejects u.v^w, i.e. its run on u.v^k hits bottom (k = number of states: if the run
+    survives |u| + k|v| letters, two v-boundary states repeat and the run never rejects)."""
+    k, t = e.k, e.t
+    word = list(u) + list(v) * k
+    x = [e.new() for _ in range(k + 1)]
+    e.add([x[0]])
+    for p in word:
+        y = [e.new() for _ in range(k + 1)]
+        for q in range(k):
+            for q2 in range(k + 1):
+                e.add([-x[q], -t[q][p - 1][q2], y[q2]])
+        e.add([-x[k], y[k]])
+        x = y
+    e.add([x[k]])
+
+
+def _bits(N):
+    b = 1
+    while (1 << b) < N:
+        b += 1
+    return b
+
+
+def add_odd_binary(self, g):
+    """Odd graph with BINARY ranks: r(v,q) in [0, 2^B), B = bits(|SCC|*k); successor rank bits z[v2,p,q] are tied to
+    r(v2, delta(q,p)) by t[q][p][q2] -> (z = r(v2,q2)); then R[v][q] & (successor non-bottom) -> r(v,q) > z via a
+    lexicographic comparator (MSB first) with auxiliary 'equal so far' variables."""
+    n, E = g
+    k, t = self.k, self.t
+    R = self._reach(g)
+    comp = sccs(n, E)
+    size = {c: comp.count(c) for c in set(comp)}
+    inner = [(v, p, v2) for (v, p, v2) in E if comp[v] == comp[v2]]
+    r = {}
+    for v in range(n):
+        B = _bits(size[comp[v]] * k)
+        for q in range(k):
+            r[v, q] = [self.new() for _ in range(B)]  # r[..][0] = MSB
+    z = {}
+    for (v, p, v2) in inner:
+        B = len(r[v, 0])
+        for q in range(k):
+            key = (v2, p, q)
+            if key not in z:
+                zz = [self.new() for _ in range(B)]
+                for q2 in range(k):
+                    for b in range(B):
+                        self.add([-t[q][p - 1][q2], -r[v2, q2][b], zz[b]])
+                        self.add([-t[q][p - 1][q2], r[v2, q2][b], -zz[b]])
+                z[key] = zz
+            zz, a = z[key], r[v, q]
+            # cond = R[v][q] & not t[q][p][bottom];  cond -> a > zz (lexicographic, MSB first)
+            cond = [-R[v][q], t[q][p - 1][k]]
+            eq = []  # eq[i]: a and zz agree on bits 0..i-1 (eq[0] = true)
+            gt = []  # gt_i: first difference at bit i with a=1, zz=0
+            prev_eq = None
+            for b in range(B):
+                gb = self.new()  # gb -> prefix equal and a_b=1 and zz_b=0
+                self.add([-gb, a[b]]); self.add([-gb, -zz[b]])
+                if prev_eq is not None:
+                    self.add([-gb, prev_eq])
+                gt.append(gb)
+                if b < B - 1:
+                    e2 = self.new()  # e2 -> prefix equal through bit b
+                    if prev_eq is not None:
+                        self.add([-e2, prev_eq])
+                    self.add([-e2, -a[b], zz[b]]); self.add([-e2, a[b], -zz[b]])
+                    prev_eq = e2
+            self.add(cond + gt)
+
+
+Encoding.add_odd_binary = add_odd_binary

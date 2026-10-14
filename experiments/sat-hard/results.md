@@ -7,6 +7,13 @@
 - Own encoder + checker (this folder) reproduce w(2,6)=3, w(3,6)=7, w(4,4)=8, and (4,4) k=7 UNSAT with a verified LRAT
   proof; (4,5) k=8 UNSAT in 84 s (L-STRUCT: 118 s).
 
+## New bounds (convention E, weak)
+| cell | bound | evidence |
+| --- | --- | --- |
+| w(5,4) | >= 10 (so w(5,4) in {10, 11}, as s(5,4) <= 11 by CFGO's f recursion, L-STRUCT table) | k=9 UNSAT: search.py 5 4 9 --cnf-out (CEGAR, 12 even + 3 odd graphs, 18936 vars, 246419 clauses, 57 s); CaDiCaL 1.7.3 LRAT proof (162 MB, 76 s) verified by lrat_check.py (377764 RUP steps, 44 s). CNF sha256 493cd346a13eb259... |
+
+Running: (4,5) k=9, (4,6) k=9 (UNSAT side), (4,6) k=12 (SAT probe), (5,4) k=10.
+
 ## Dead ends
 - Pairwise-inconsistent words (clique.py): the inconsistency graph is EMPTY for every (n,d) tried ((2,5), (2,6),
   (3,5), (3,6), (4,3), (4,4)). Obstruction: u.y and v.y share the tail y, so their limsup parities agree; y cannot be an
@@ -14,3 +21,11 @@
   separate states of a weak separator; lower bounds need joint (multi-word / n-bounded) reasoning.
 - Simulated annealing (anneal.py) on the violated-graph count: stuck at 16 violations for (3,6), k = 7 (a 7-state
   separator exists). The landscape is too rugged; not usable for upper bounds.
+- Pure lasso CEGAR (search.py --w2 lasso): instead of product ranks, each violated odd graph contributes only the
+  constraint "A rejects u.v^w" for one lasso of the product (run simulated |u| + k|v| letters, must end in bottom).
+  Valid, but each constraint removes few automata: no convergence within 120 s even for (2,6), k = 2.
+- Binary ranks (search.py --w2 binary, lexicographic comparator, shared successor-rank bits): correct (reproduces
+  w(2,6), w(3,6), w(4,4)) but UNSAT ~8x slower than unary: (3,6) k=6 13.7 s vs 1.7 s; (4,4) k=7 13.7 s vs 2.3 s.
+  Unary (thermometer) ranks propagate a product cycle into a conflict directly; binary comparators do not.
+- State merging (merge.py): no 2-state merge of the 4-state strong (2,6) separator is a weak separator although a
+  3-state weak one exists, so the small weak separators are not quotients of strong ones; dropped.

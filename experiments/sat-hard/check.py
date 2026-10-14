@@ -53,3 +53,66 @@ def violations(aut, evens, odds, first=False):
             bad.append(("odd", gi))
             if first: return bad
     return bad
+
+
+def odd_lasso(aut, g):
+    """For an odd graph g whose reachable product with aut has a cycle: a lasso (u, v) of letters such that the run of
+    aut on u.v^w never hits bottom and u.v^w labels an infinite path of g. Returns None if the product is acyclic."""
+    n, E = g
+    delta = aut["delta"]
+    out = [[] for _ in range(n)]
+    for (a, p, b) in E:
+        out[a].append((p, b))
+    starts = [(v, 0) for v in range(n)]
+    parent = {s: None for s in starts}
+    order, st = [], list(starts)
+    while st:  # BFS tree of the reachable product
+        x = st.pop(0); order.append(x)
+        v, q = x
+        for (p, v2) in out[v]:
+            q2 = delta[q][p - 1]
+            if q2 is not None and (v2, q2) not in parent:
+                parent[(v2, q2)] = (x, p); st.append((v2, q2))
+    adj = {x: [] for x in parent}
+    for x in parent:
+        v, q = x
+        for (p, v2) in out[v]:
+            q2 = delta[q][p - 1]
+            if q2 is not None:
+                adj[x].append((p, (v2, q2)))
+    # DFS for a cycle
+    col = {x: 0 for x in parent}
+    for s in parent:
+        if col[s]:
+            continue
+        stack = [(s, iter(adj[s]))]; col[s] = 1; path = [(s, None)]
+        while stack:
+            x, it = stack[-1]
+            nxt = None
+            for (p, y) in it:
+                if col[y] == 1:
+                    # cycle: y ... x -p-> y along path
+                    idx = next(i for i, (z, _) in enumerate(path) if z == y)
+                    loop = [lab for (_, lab) in path[idx + 1:]] + [p]
+                    # prefix: BFS-tree path from a start to y
+                    pre, z = [], y
+                    while parent[z] is not None:
+                        z, lab = parent[z]; pre.append(lab)
+                    return list(reversed(pre)), loop
+                if col[y] == 0:
+                    nxt = (p, y); break
+            if nxt:
+                p, y = nxt; col[y] = 1; stack.append((y, iter(adj[y]))); path.append((y, p))
+            else:
+                col[x] = 2; stack.pop(); path.pop()
+    return None
+
+
+def accepts_lasso(aut, u, v):
+    """Does aut accept u.v^w (never hits bottom)? Simulates |u| + k|v| letters (pigeonhole on v-boundary states)."""
+    q = 0
+    for p in u + v * (aut["k"] + 1):
+        q = aut["delta"][q][p - 1]
+        if q is None:
+            return False
+    return True
