@@ -19,7 +19,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | --- | --- | --- | --- | --- | --- | --- |
 | Lead | session_014FBi6o334DvwT5Uw2kDfoN | claude/vibrant-johnson-nxvvxo | opus-5-5 | high | working | Owner-chosen session; routing judgement; keeps context lean |
 | REFEREE | session_01Ki9osXiyYf9heTLNk3FKED | claude/referee | fable-5-1 | high | working | Most capable model; finding the error in a claimed proof decides M2 and every claim after |
-| L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | parked (T5: S2 NEW, e911037) | Source checking and barrier analysis need judgement; Fable reserved for referee; move to Fable when step-3 sign-offs start |
+| L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | working (T6: S3 novelty + s^V lower bound; then parks) | Source checking and barrier analysis need judgement; Fable reserved for referee; move to Fable when step-3 sign-offs start |
 | L-COMP | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | working (SAT hard cells for L-STRUCT, 6h box; ~380k ctx) | SAT engineering needs care; successor near 600k | Paper-to-code fidelity for M1 generators and the M2 implementation; drop to sonnet-5-5 for routine benchmarks after M2 |
 | L-STRUCT | session_01VH4fd2Fq8XeXtyUfkwLJV1 | claude/l-struct | fable-5-1 | high | working | Attack lane (owner: most capable model at high effort); rank 1 approach, weak separators, T4 verdict OPEN |
 | WATCHDOG | session_01JQNTX8zT3T3mWMt6ZmYzkn | none (never edits) | haiku-5-5 | high | working (cron :30, trig_019xE43BZ5qaDGwxDkZ5h5ik) | Routine liveness/overage checks; reports to Lead only (deviation from playbook: does not wake lanes, so idle sessions never get messages) |
@@ -27,9 +27,9 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 ## In flight
 - L-COMP: parked after notebook handover; wakes for a new claim, review changes, or L-STRUCT SAT engineering.
 - L-LIT: parked; T1-T4 on trunk (docs/lit/). T4: weak separators OPEN (Czerwinski et al. 1807.10546 §6).
-- L-STRUCT: T1 REFUTED (DE2, referee 92846bf). Pivot to (c): structure of minimal weak witnesses; S3 statement (growth of w in d) before any proof.
-- REFEREE: idle (T1 refutation confirmed 92846bf; S2 checks done).
-- L-COMP: T1 refutation found; now growth data: w(2,d) d=12..20, w/s(3,d) d=8,10 V; then (3,8)V, paused runs. Box ends ~01:30Z.
+- L-STRUCT: S3 written (ef95a93): T3-neg W(n)=S(n) on diagonal, T3-pos, L4 (s^V lower bound), H1 (fixed-n saturation). Under REFEREE + L-LIT (T6) check; no proof work until both OK.
+- REFEREE: S3 CHANGES (5b99f2f, 5 precision fixes); appending its own n=4 diagonal value.
+- L-COMP: diagonal V cells (4,5),(5,5),(5,6), TARGET n=4 strong, n=5; LRAT standard. Box ends ~01:30Z.
 - WATCHDOG: hourly at :30.
 
 ## Findings to carry
@@ -39,7 +39,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - PGSolver SI families (switchallexp, switchbestexp) target PGSolver's switch-all/switch-best SI, not Oink psi/ssi; port of stratimpralgs.ml queued in L-COMP.
 
 ## Live approaches
-- A1 deterministic weak separators (L-STRUCT): outside the strong-separator barrier (T4). Algorithmic quantity is the diagonal w^V(n,n) (REFEREE d96b686); fixed-n growth in d is not algorithmic. Data: w=s on most small cells; w<s at (2,6),(2,10),V(3,6); s(2,2h)=h+1 but w(2,8)=w(2,10)=4. Lower-bound target T1 likely false; now measuring growth of w in d.
+- A1 deterministic weak separators (L-STRUCT): outside the strong-separator barrier (T4). Algorithmic quantity is the diagonal w^V(n,n) (REFEREE d96b686). Diagonal data (l-comp 8d9697b, LRAT): w=s at V (2,2),(2,3),(3,3),(3,4),(4,4) and on TARGET alphabet n=2,3; gaps only at d >> n. S3 to be framed as 'w=s on the TARGET alphabet' (barrier direction). Data: w=s on most small cells; w<s at (2,6),(2,10),V(3,6); s(2,2h)=h+1 but w(2,8)=w(2,10)=4. Lower-bound target T1 likely false; now measuring growth of w in d.
 
 ## Dead approaches (with obstruction): see docs/RESULTS.md "Dead ends"
 - DE1 arXiv 2511.03752 (BROKEN, 4-vertex counterexamples). DE2 T1 weak-separator lower bound (refuted at (2,10)).
