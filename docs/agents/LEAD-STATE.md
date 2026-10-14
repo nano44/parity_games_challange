@@ -31,3 +31,4 @@
 - 2026-10-14 20:09Z: Lead error corrected: 20:07Z pivot framed growth in d at fixed n; REFEREE d96b686 shows the algorithmic quantity is w^V(n,n). Both lanes re-briefed.
 - 2026-10-14 20:46Z: REFEREE proposed L4 route (split vertices + Lemma 5.1 + monotone in d). Independence rule: REFEREE not sole signer for L4; second referee to be spawned when L4 write-up lands. GAPS G1 opened.
 - 2026-10-14 21:03Z sweep: no overage; L-COMP 564k ctx $30.72 -> handover after n=5 cells; L-STRUCT running (a67bd78), L4 write-up.
+- 2026-10-14 21:35Z: L4 write-up (168d828) to REFEREE as first referee (write-up uses L-LIT's Claim R, not REFEREE's variant). Second referee deferred to the T3+L4 package to save a Fable spawn.
