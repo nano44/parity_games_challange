@@ -114,4 +114,8 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 | github.com/tcsprojects/pgsolver @ d3cd624 | generators recursiveladder.ml, policyiter/generators/*.ml; paritygame.ml conventions | 2026-10-14 | code, not a paper; papers awaiting source |
 
 ## Dead ends
-(none)
+- 2026-10-14 (PROVISIONAL until the REFEREE confirms the pseudocode): arXiv 2511.03752v1 Algorithm 1 as read in
+  "M2 pseudocode" is incorrect. Obstruction: Theorem 2 (A(G,d) is a player(d)-dominion) fails; A'_d only removes
+  vertices the opponent can force into lower-priority parts, but player(d) (here Odd) can dodge A' on a
+  cycle that never returns to U^k, and that cycle can be won by the opponent. Instance: experiments/m2/counterexamples/ce1_4v.pg
+  (4 vertices, all Odd's; Even wins all; the algorithm gives all to Odd via A(G,1) = V). Trace in that folder's README.

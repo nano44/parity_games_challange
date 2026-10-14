@@ -2,7 +2,9 @@
 
 Solver-agnostic. A **solver** is any command that reads a PGSolver `.pg` file and writes a solution in
 `paritysol` format (`v winner [strategy];`, winner 0 = Even, 1 = Odd) to `{out}` (or to stdout).
-Convention: max-parity, owner 0 = Even (TARGET.md section 1; same as Oink and PGSolver).
+Convention: max-parity, owner 0 = Even, priorities any naturals (TARGET.md v1.0 allows 0..n; same as Oink and PGSolver).
+compare.py checks, for every solver and game: regions equal the reference's, and every winner's positional strategy
+passes verify.py (status BADSTRAT otherwise; the reference's own strategies are checked too).
 
 | file | what |
 | --- | --- |
@@ -12,13 +14,16 @@ Convention: max-parity, owner 0 = Even (TARGET.md section 1; same as Oink and PG
 | `rngame_corpus.sh` | Oink `rngame` corpus. rngame seeds from `std::random_device`: not reproducible, so the files are the record (manifest has sha256 prefixes) |
 | `solvers.py` | registry: `py-zlk`, `oink-<s>` for every Oink solver (`-w 1`), `oink-<s>-raw` (no single-parity / winner-controlled-cycle preprocessing) |
 | `compare.py` | run solvers on a corpus, check winning regions against the reference (default `oink-uzlk`), CSV of status/time/iterations; extra solvers via `--solver NAME='CMD {in} {out}'` |
+| `verify.py` | independent positional-strategy verifier (D2 change 5): closure of each winner's strategy in its region, and no opponent-parity dominant cycle in the one-player graph (recursive SCC decomposition) |
+| `xverify.py` | cross-checks verify.py against Oink's `verify` tool on correct and mutated solutions |
 | `selftest.py`, `check.sh` | the <2 min deterministic self-test run by `scripts/verify.sh` |
 
 ## Self-test (check.sh)
 1. generator determinism: the 200-game corpus (master seed 2026, n in 1..40) hashes to a pinned sha256;
 2. brute force == py Zielonka on 300 tiny games (n <= 7): an oracle with no attractor code;
 3. py Zielonka == Oink `uzlk` == Oink `zlk` on the 200 games (skipped with a NOT RUN line if Oink is not built);
-4. compare.py flags a deliberately wrong solver (flips vertex 0) as MISMATCH.
+4. compare.py flags a deliberately wrong solver (flips vertex 0) as MISMATCH;
+5. verify.py agrees with Oink's `verify` on 300 correct/mutated solutions; py Zielonka's strategies pass verify.py.
 
 ## Re-run the validation
 ```

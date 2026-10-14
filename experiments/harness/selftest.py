@@ -3,10 +3,12 @@
  1. generator determinism: the 200-game seeded corpus hashes to the pinned value;
  2. brute force (positional-strategy enumeration) == py Zielonka on 300 tiny games;
  3. py Zielonka == Oink uzlk == Oink zlk on the 200-game corpus (if Oink is built);
- 4. compare.py flags a deliberately wrong solver (flips vertex 0) as MISMATCH."""
+ 4. compare.py flags a deliberately wrong solver (flips vertex 0) as MISMATCH;
+ 5. strategy verifier verify.py agrees with Oink's `verify` on 300 correct and mutated solutions (if Oink is built);
+    py Zielonka's strategies pass verify.py on all 300 tiny games of step 2 and the 200 games of step 3."""
 import sys, os, hashlib, tempfile, glob
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import pg, gen, zielonka, compare, solvers
+import pg, gen, zielonka, compare, solvers, verify, xverify
 
 PINNED = "b4bb9261967d293e50320041acbedb0e511ea4cc2290079cdcd44997f6119353"  # sha256 of the corpus below; update only with a recorded reason in notes/L-COMP.md
 ok = True
@@ -37,8 +39,11 @@ with tempfile.TemporaryDirectory() as td:
     for i in range(300):
         n = rnd.randint(1, 7)
         g = gen.random_game(n, rnd.randint(1, n + 1), 1, rnd.randint(1, 3), i, rnd.choice([0.3, 0.5, 0.7]), rnd.random() < 0.6 or n == 1)
-        if zielonka.brute_force(g) != zielonka.solve(g):
+        w, st = zielonka.solve_with_strategy(g)
+        if zielonka.brute_force(g) != w:
             fail(f"brute force != py Zielonka on tiny game {i}:\n{pg.dumps(g)}")
+        if verify.check(g, w, st):
+            fail(f"py Zielonka strategy fails verify.py on tiny game {i}")
         bf += 1
     print(f"2. brute force == py Zielonka on {bf} tiny games")
 
@@ -63,6 +68,14 @@ with tempfile.TemporaryDirectory() as td:
         fail("compare.py did not flag the wrong solver")
     else:
         print("4. compare.py flags a wrong solver as MISMATCH")
+
+if os.path.exists(xverify.VERIFY):
+    if xverify.main(300, 2026):
+        fail("verify.py and Oink verify disagree")
+    else:
+        print("5. verify.py == Oink verify on 300 solutions")
+else:
+    print("5. NOT RUN: Oink not built")
 
 print("SELFTEST", "PASS" if ok else "FAIL")
 sys.exit(0 if ok else 1)

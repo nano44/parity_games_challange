@@ -12,8 +12,9 @@ from collections import deque
 sys.setrecursionlimit(100000)
 
 
-def attractor(g, alive, target, player):
-    """Vertices in `alive` from which `player` forces a visit to `target` (subset of alive), within the subgame."""
+def attractor(g, alive, target, player, strat=None):
+    """Vertices in `alive` from which `player` forces a visit to `target` (subset of alive), within the subgame.
+    If `strat` (dict) is given, the attracting successor of every added vertex owned by `player` is stored in it."""
     attr = set(target)
     cnt = {}
     q = deque(attr)
@@ -24,6 +25,8 @@ def attractor(g, alive, target, player):
                 continue
             if g.owner[v] == player:
                 attr.add(v); q.append(v)
+                if strat is not None:
+                    strat[v] = w
             else:
                 if v not in cnt:
                     cnt[v] = sum(1 for x in set(g.succ[v]) if x in alive)
@@ -33,33 +36,47 @@ def attractor(g, alive, target, player):
     return attr
 
 
-def solve_sub(g, alive, stats):
-    """Return (W0, W1) for the subgame induced by `alive` (assumed a trap-closed subgame: every vertex has a successor in alive)."""
+def solve_sub(g, alive, stats, strat):
+    """Return (W0, W1) for the subgame induced by `alive` (a valid subgame: every vertex has a successor in alive).
+    Writes winning positional strategies into `strat` for the winner's vertices (standard Zielonka construction)."""
     stats[0] += 1
     if not alive:
         return set(), set()
     d = max(g.prio[v] for v in alive)
     p = d % 2
     top = {v for v in alive if g.prio[v] == d}
-    A = attractor(g, alive, top, p)
-    W = solve_sub(g, alive - A, stats)
+    sA = {}
+    A = attractor(g, alive, top, p, sA)
+    W = solve_sub(g, alive - A, stats, strat)
     if not W[1 - p]:
+        strat.update(sA)
+        for v in top:
+            if g.owner[v] == p:
+                strat[v] = next(w for w in g.succ[v] if w in alive)
         res = [None, None]
         res[p] = set(alive); res[1 - p] = set()
         return tuple(res)
-    B = attractor(g, alive, W[1 - p], 1 - p)
-    W2 = solve_sub(g, alive - B, stats)
+    sB = {}
+    B = attractor(g, alive, W[1 - p], 1 - p, sB)
+    strat.update(sB)  # W[1-p] keeps the sub-solution's strategies (written by the recursive call)
+    W2 = solve_sub(g, alive - B, stats, strat)
     res = [None, None]
     res[p] = W2[p]
     res[1 - p] = W2[1 - p] | B
     return tuple(res)
 
 
-def solve(g, stats=None):
+def solve_with_strategy(g, stats=None):
     stats = stats if stats is not None else [0]
-    W0, W1 = solve_sub(g, set(range(g.n)), stats)
+    strat = {}
+    W0, W1 = solve_sub(g, set(range(g.n)), stats, strat)
     assert W0 | W1 == set(range(g.n)) and not (W0 & W1)
-    return [0 if v in W0 else 1 for v in range(g.n)]
+    win = [0 if v in W0 else 1 for v in range(g.n)]
+    return win, [strat.get(v) if g.owner[v] == win[v] else None for v in range(g.n)]
+
+
+def solve(g, stats=None):
+    return solve_with_strategy(g, stats)[0]
 
 
 def _odd_wins_one_player(n, succ, prio):
@@ -113,9 +130,10 @@ def brute_force(g):
 if __name__ == "__main__":
     g = pg.read(sys.argv[1])
     stats = [0]
-    win = solve(g, stats)
+    win, strat = solve_with_strategy(g, stats)
     print(f"solved with {stats[0]} iterations.", file=sys.stderr)
     if len(sys.argv) > 2:
-        pg.write_sol(win, sys.argv[2])
+        pg.write_sol(win, sys.argv[2], strat)
     else:
-        sys.stdout.write(f"paritysol {g.n};\n" + "".join(f"{v} {w};\n" for v, w in enumerate(win)))
+        sys.stdout.write(f"paritysol {g.n};\n" + "".join(
+            f"{v} {w}{'' if strat[v] is None else ' ' + str(strat[v])};\n" for v, w in enumerate(win)))
