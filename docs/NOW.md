@@ -19,7 +19,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | --- | --- | --- | --- | --- | --- | --- |
 | Lead | session_014FBi6o334DvwT5Uw2kDfoN | claude/vibrant-johnson-nxvvxo | opus-5-5 | high | working | Owner-chosen session; routing judgement; keeps context lean |
 | REFEREE | session_01Ki9osXiyYf9heTLNk3FKED | claude/referee | fable-5-1 | high | working | Most capable model; finding the error in a claimed proof decides M2 and every claim after |
-| L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | parked (T1-T4 done; wakes for barrier checks and step-3 sign-offs) | Source checking and barrier analysis need judgement; Fable reserved for referee; move to Fable when step-3 sign-offs start |
+| L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | working (T5 novelty of S2; then parks) | Source checking and barrier analysis need judgement; Fable reserved for referee; move to Fable when step-3 sign-offs start |
 | L-COMP | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | working (SAT hard cells for L-STRUCT, 6h box; ~380k ctx) | SAT engineering needs care; successor near 600k | Paper-to-code fidelity for M1 generators and the M2 implementation; drop to sonnet-5-5 for routine benchmarks after M2 |
 | L-STRUCT | session_01VH4fd2Fq8XeXtyUfkwLJV1 | claude/l-struct | fable-5-1 | high | working | Attack lane (owner: most capable model at high effort); rank 1 approach, weak separators, T4 verdict OPEN |
 | WATCHDOG | session_01JQNTX8zT3T3mWMt6ZmYzkn | none (never edits) | haiku-5-5 | high | working (cron :30, trig_019xE43BZ5qaDGwxDkZ5h5ik) | Routine liveness/overage checks; reports to Lead only (deviation from playbook: does not wake lanes, so idle sessions never get messages) |
@@ -27,9 +27,9 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 ## In flight
 - L-COMP: parked after notebook handover; wakes for a new claim, review changes, or L-STRUCT SAT engineering.
 - L-LIT: parked; T1-T4 on trunk (docs/lit/). T4: weak separators OPEN (Czerwinski et al. 1807.10546 §6).
-- L-STRUCT: S1 data (l-struct 42dbbc2, unrefereed): w=s on most cells, w<s at (2,5),(2,6) [3<4] and V(3,5),(3,6) [6<7]. Now (a): structural Q3 toward a weak-separator lower bound; statement first.
-- REFEREE: idle. C1 OK in E/S/V (762c598); Lemma 1 OK, Lemma 2 CHANGES (repair given), Lemma 3 OK; plant P1 caught (score 1/1).
-- L-COMP: reproduce L-STRUCT check + SAT hard cells w(4,6), w(5,4), w(5,6) in experiments/sat-hard/ (6h box).
+- L-STRUCT: S2 target stated (l-struct 616cf77): T1 w(n,d) >= s(n,d-2) [quasi-poly lower bound for weak separators], T2 fallback. Proof waits for REFEREE statement check + L-LIT novelty (T5). Data: w^V(4,6) <= 11 vs s^E(4,6) = 13.
+- REFEREE: statement check of S2 T1/T2 (C1 OK at 762c598; plant P1 caught, score 1/1).
+- L-COMP: reproduction done (all pass); SAT box: first the T1-decisive cell (weak (4,6) E with <= 7 states), then w(4,6), w(5,.). Box ends ~01:30Z.
 - WATCHDOG: hourly at :30.
 
 ## Findings to carry
