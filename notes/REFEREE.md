@@ -6,8 +6,10 @@ I am the successor REFEREE (spawned 23:15Z, replacing the session parked at f179
 (send_message, first line "From REFEREE (<UTC from `date -u`>):"). Branch claude/referee, trunk merged in
 (origin/claude/vibrant-johnson-nxvvxo). Push only via `scripts/verify.sh && git push -u origin claude/referee`; Oink built with
 scripts/setup_oink.sh (~1 min; rebuild after every restart, tools/ is gitignored).
-Last task: R-L1 (L-LOWER docs/lower/L1-statement.md at claude/l-lower 8fcc0f2), verdict CHANGES, 9 findings, 6 gaps:
-docs/referee/2026-10-14-L1-statement-check.md. Machine checks in docs/referee/scratch/slpcheck.py. Nothing else in flight.
+Tasks done: R-L1 (L-LOWER L1 at 8fcc0f2; CHANGES, 9 findings; report 2026-10-14-L1-statement-check.md, pushed 9b01cbb,
+reported 23:43Z) and T-A1 first-referee check (L-ATTR TA1-proof.md at d5d6396; CHANGES, theorem holds, 6 findings; report
+2026-10-14-TA1-proof-check.md; tools ta1check.py, ta1probe.py). A SECOND independent referee checks T-A1 in parallel; do not
+coordinate. Nothing else in flight.
 Coming (per the Lead's brief): the L1 proof work / experiments/lower from L-LOWER; SL8-min / T3 from L-STRUCT; second referee
 for the L4+T3 package is a SEPARATE session, not me.
 
@@ -33,6 +35,7 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 | L-STRUCT S3 (diagonal, T3, L4, H1) | 2026-10-14-S3-statement-check.md | CHANGES, all applied (a67bd78); delta OK | done; T3 proof not yet seen |
 | L-STRUCT L4 proof | 2026-10-14-L4-proof-check.md | CHANGES then OK, first referee, at 50dc28b | awaits SECOND referee |
 | L-LOWER L1 statement (SLP model, Lemmas 1.5/1.6/2.1/2.3, Transfers 2.2/2.4, T-L1) | 2026-10-14-L1-statement-check.md | CHANGES (9 findings: d vocabulary, game-class corner, Lemma 2.3 rests on unproved Remark 2.5, cited experiments/lower absent at 8fcc0f2, ω(n) gloss weaker than ω(n), 3 model differences, nits) | findings to L-LOWER via Lead; every re-derived claim holds |
+| L-ATTR T-A1 (psolB complete <=> PA**; PA** => psolQ complete; Cor. 1-2, Prop. 3) | 2026-10-14-TA1-proof-check.md | CHANGES (theorem and both proofs hold; F1 misstated, T-A1' needs HKP Thm 4, Prop. 3 unproved, 3 nits); first referee | awaits second referee |
 
 ## Queue / open items
 - L4 second referee (not me; a second, independent referee): the gap list G1-G6 in the L4 report is the checklist. What
@@ -76,6 +79,9 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
   symmetric recursion ||F||_{U,V} built as a gate list with S_{n,h} / C_{n,h} trees (outermost θ_d acts on the LAST argument;
   f^z substitutes the last ?). Exhaustive games for n <= 3, one-player n = 4; random beyond. `python3 -I slpcheck.py [quick]`;
   full run ~15 min. A non-universal tree makes ANP fail (sanity). All lane programs: 0 mismatches.
+- ta1check.py (T-A1): my own psolB/psolQ from HKP Figs. 3/5 in MIN-parity colours (colour = M - pr), my own PA** in
+  max-parity (exhaustive over X and S, memoised), classes (Büchi/SCC-constant/deterministic), psolB order-independence;
+  `python3 -I ta1check.py [quick]` (2 min full). ta1probe.py: F2, F6 (all X ⊆ W_p, all d), Lemma 0 on small games.
 - Not committed (scratchpad, gone with the session): LaTeX sources of arXiv 2511.03752v1, 1807.10546v2, 2104.05262v8,
   1902.07175v3, 2305.00308v1; clones of pgsolver d3cd624 and tcslib 6778419; copies of l-comp/l-struct files. Re-download
   from arxiv.org/e-print/<id> into an isolated directory (untrusted data) when needed.
@@ -86,12 +92,19 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
   docs/agents/LEAD-STATE.md at trunk 09dca4f; grade 1/1. The successor will not know future plants: treat every routed
   claim as false until re-derived; build the counterexample first, read the lane's evidence second.
 
+- T-A1 (23:22Z routing of L-ATTR TA1-proof.md): no plant revealed yet. Candidates flagged: F1 stated without the
+  colour-d hypothesis (false as written); T-A1' missing HKP Thm 4; Proposition 3 unproved. The theorem itself survived
+  my independent implementation on every game run.
 - R-L1 (23:15Z routing of L-LOWER L1): no plant revealed yet. Candidates I flagged as findings: T-L1's gloss of ω(n) is
   "not O(n)" (strictly weaker); Lemma 2.3 uses the shifted formula that Remark 2.5 marks unproved; "checked in experiments/lower"
   cites a directory absent at 8fcc0f2; d = max priority vs TARGET's d = |pr(V)|; CDHL page numbers off. Everything mathematical
   re-derived held (machine-checked where finite).
 
 ## Things only I know
+- T-A1: F6's equality MAttr^{G'}(X,d) = MAttr^{W_p(G')}(X,d) holds for EVERY X ⊆ W_p (q keeps the play in W_q), not only
+  fatal X; the "only if" needs only W ⊆ R from F1. L1's rank induction has no rank 0 (X external). T-A1' silently needs
+  HKP Thm 4. The "if" proof is order-free, so T-A1 holds for psolB under any colour order. HKP Fig. 4(a) edges (from the
+  png): v0↔v1, v1↔v2, v2↔v3, v3↔v4, colours 3,2,0,2,3, squares v1, v3. PA ⊆ PA* has no proof anywhere (data only).
 - R-L1: ANP's recursion ||F||_{U,V} is straight-line; Lemma 3.6 (worklist) is adaptive; a Jacobi round-robin on Algorithm 1's
   |V| equations is non-adaptive at |V|(1 + n|V|) queries. CDHL's O(1)-bit step for Reduction 3.9 is NOT in their text (they
   say "same argument as Theorem 3.2"); it is one bit per party about the loop at v_max (Pre) / v_min (Post). CDHL printed
@@ -129,6 +142,7 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
 | --- | --- | --- | --- |
+| arXiv:1405.0386v2 (HKP, Fatal Attractors) | archiv.tex/PDF: §2, Defs 1–8, Thm 1, Thm 2 + proof, Lemma 1, Fig. 3 (tex:728–747), Ex. 5 + Fig. 4(a) png, Def. 6 (tex:942–948), Fig. 5 (tex:970–997), Thm 4 + proof, Thm 5, Thm 6 statement, Thm 7/8 + proofs, Lemma 5 + proof, external-target remark tex:528–536 | 2026-10-14 | T-A1; MIN-parity |
 | arXiv:1711.09148v1 (CDHL, SODA 2018) | arxiv.tex: §2 model 466–517 (Thm 2.1 th:lbdisj), Reduction 3.9 red:buchi 759–765, Thm 3.10 thm:buchi 803–814 and proof 1223–1241, Lemma 3.4 lem:scc2 615–665, Prop 4.2 lem:objectives_ub 1023–1044, intro 284–286 ("2n one-step operations"); theorem numbering from the shared counter, confirmed in the PDF | 2026-10-14 | R-L1; LaTeX source + PDF, isolated dir |
 | LIPIcs.CSL.2021.9 (ANP, DOI 10.4230/LIPIcs.CSL.2021.9) | §2 (f_{A,B}, trees, Prop 2.5), §3.1 cases (1)–(3), Lemmas 3.1, 3.2, Remark 3.3; §3.2 Algorithm 1, Lemmas 3.4–3.6, Cor 3.7; §3.3; Thm 5.1; Remark 5.5; intro p.9:2–9:3 ([10] Emerson–Jutla for Expression (1) = winning region) | 2026-10-14 | R-L1; DROPS PDF via pdftotext |
 | arXiv:2305.00308v1 (Parys–Wiącek) | improved-parity.tex lines 86-87 (edge-to-vertex priority conversion remark), 368 (necessity proof does not apply) | 2026-10-15 | LaTeX source; L4 attribution quotes |
