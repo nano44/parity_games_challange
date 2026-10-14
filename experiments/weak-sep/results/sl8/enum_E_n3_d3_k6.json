@@ -1,0 +1,14 @@
+{
+ "n": 3,
+ "d": 3,
+ "conv": "E",
+ "k": 6,
+ "weak_separators_enumerated": 4072,
+ "complete": true,
+ "least_rewiring_histogram": {
+  "0": 4020,
+  "1": 52
+ },
+ "instances_with_t_ge_2_or_none": [],
+ "seconds": 20.9
+}

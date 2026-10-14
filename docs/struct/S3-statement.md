@@ -143,12 +143,15 @@ Probe data (experiments/weak-sep/probe_oddcycles.py, probe_rewire.py, probe_rule
   mechanism: it removes all odd cycles but breaks (W1) in 7 of 8 instances (probe_rule.py); "redirect to the cycle's
   entry state" loops. The solver's t = 1 rewire is a different transition or target each time. Dead end recorded.
 
-Sub-lemma SL8 (the statement T3 reduces to; to be proved, not assumed). Let X ∈ {E, S, V}, n ≥ 1, 1 ≤ d ≤ n + 1, and
-let A be a deterministic weak (n,d)-separator of convention X with state set Q. Then there is a deterministic strong
-(n,d)-separator of convention X with state set Q (same states, same initial state, transitions possibly changed).
-SL8 ⇒ T3 (w^X(n,d) ≥ s^X(n,d) for d ≤ n+1; the other inequality is S1 F1). Sharpened data-driven form SL8-1: the new
-automaton differs from A in exactly one transition per ... (open: the probes show one transition in total suffices in
-all nine instances; whether that persists is unknown).
+Sub-lemma SL8-t (Hamming form; the working statement, Lead 21:40Z approved SL8, L-STRUCT corrected the form). Let
+X ∈ {E, S, V}, n ≥ 1, 1 ≤ d ≤ n + 1, and let A be a deterministic weak (n,d)-separator of convention X with state set Q
+and initial state q0. Then there is a deterministic strong (n,d)-separator of convention X with the same Q and q0 whose
+transition function differs from A's in at most t(n,d) pairs (state, letter), for a bound t(n,d) to be determined
+(data: t ≤ 3 on every enumerated instance so far, experiments/weak-sep/results/sl8/).
+SL8-t ⇒ T3 (w^X(n,d) ≥ s^X(n,d) for d ≤ n+1; the other inequality is S1 F1). Without the Hamming bound the statement
+("some strong separator on the same abstract state set") is trivially equivalent to T3 and carries no proof idea; the
+bound is what the local-rewiring proof would establish. SL8-1 (t = 1) is FALSE above minimum size: at E (2,3) with k = 4,
+one of 1026 weak separators needs 3 changes (enumerate_weak.py).
 Proof plan (statement-level): (1) from the lasso condition (Q3) and Fact M0 with windows of n letters, characterise
 the tolerated odd simple cycles at d ≤ n+1: their lasso words are unrealisable with n vertices although every letter
 ≤ n+1 can occur; identify on such a cycle a transition τ = (q, e, q') with e even whose even-realisable use is
