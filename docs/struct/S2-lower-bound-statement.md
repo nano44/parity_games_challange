@@ -14,10 +14,28 @@ every word of OddCycles^X_{n,d} has at least as many states as the smallest dete
 Consequence (with CDFJLP 1807.10546 Thm 5.1 for X = E, which bounds non-deterministic strong separators and hence s^E):
     w^E(n, d) ≥ C(⌊lg n⌋ + d/2 − 2, ⌊lg n⌋),
 quasi-polynomial in the same regime as the strong bound (n^{lg(d/lg n) − O(1)} for d = ω(lg n)). It would answer the
-question left open in CDFJLP §6 for deterministic automata, and give the first super-linear bound for unrestricted
-(not time-bounded) weak separators (KV 1902.07175 p.6: "Even super-linear lower bounds for unrestricted separation
-automata are not known"). For X = V it is a barrier for every algorithm of the form "solve the safety game G ⊲ A for a
-fixed deterministic automaton family A_{n,d}" on TARGET games, by S1 Lemma 1 (refereed).
+question left open in CDFJLP §6 for deterministic automata, and give the first super-linear lower bound for unrestricted
+deterministic weak separators over the priority alphabet; the vertex-alphabet question of KV p.6 stays open (KV's
+sentence concerns automata over (vertex, priority) letters, which can simulate priority-only automata, not conversely).
+Second source stating the question open: Colcombet, Fijalkow, FoSSaCS 2019 (author PDF, irif.fr), footnote 5, p.14,
+verbatim: "Note that there is a natural, more symetric, notion of (W, n)-separating automata in which the requested
+inclusions are W|n ⊆ L(A) ⊆ ((W^∁)|n)^∁. However, nothing is known about this notion." That symmetric notion is weak
+separation (D5) for W = Parity.
+Pre-empting a misreading: Parys, CSL 2020 (LIPIcs.CSL.2020.32), p.2, writes "Czerwiński et al. [9] show a
+quasi-polynomial lower bound for the size of a PG separator", and his Def. 3.2 defines a PG separator as one that
+"accepts all words from PosEven_{n,d}, and rejects all words from PosOdd_{n,d}" (weak form, over his alphabet Σ_{n,d}),
+with "strong PG separator" for the additional rejection of LimsupOdd_{n,d}. The sentence is a summary of CDFJLP, whose
+Thm 5.1 is stated and proved for strong separators only (CDFJLP §3.3, §6); Parys himself notes right after Def. 3.2
+that the quasi-polynomial-time separators "are actually strong PG separators (cf. [9, Section 4])". So no weak-separator
+lower bound is asserted there, and T1 is not pre-empted by it.
+For X = V it is a barrier for every algorithm of the form "solve the safety game G ⊲ A for a fixed deterministic
+automaton family A_{n,d} reading priorities" on TARGET games, by S1 Lemma 1 (refereed). M3 status: Lead reading L6
+(docs/DECISIONS.md) on D1, based on L-LIT's T5 verdict NEW.
+
+Scope of T1 (what it does not cover). Automata over alphabets carrying vertex names or edges (KV's (vertex, priority)
+letters; Parys's Σ_{n,d}) are outside: with vertex names, non-deterministic weak separation is easy (KV p.5), so any
+proof of T1 must use determinism or the priority-only alphabet, or both. Non-deterministic weak separators are outside.
+At d = 4, T1 reads w(n,4) ≥ s(n,2) = n, the trivial level; T1 has content only from d = 6 on.
 
 ## 2. Fallback theorem T2 (constant-factor loss in n)
 There is a constant c ≥ 1 such that for all n ≥ c, even d ≥ 2 and X ∈ {E, S, V}: w^X(n, d) ≥ s^X(⌊n/c⌋, d).
