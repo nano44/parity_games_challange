@@ -14,7 +14,7 @@ Top three, always:
 5. Check CI on lane heads (GitHub MCP actions_list). Red CI on a lane head is that lane's work now; tell it once.
 6. Daily owner line (until M2 is done): if the last line in docs/agents/LEAD-STATE.md "Owner lines" is older than 24h,
    send one line: landed, running, spend estimate, needs. Log it there.
-7. M2 deadline 2026-10-16 18:00Z: at the deadline, collect state and report to the owner.
+7. M2 deadline: 2 days after the M2 clock starts (DECISIONS Lead reading L1; date recorded in NOW): at the deadline, collect state and report to the owner.
 8. If nothing needs action, end the turn with no output beyond a one-line log.
 
 ## Landing a claim or a lane range
