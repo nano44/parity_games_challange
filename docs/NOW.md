@@ -1,11 +1,11 @@
 # NOW (rewritten, never appended; max 150 lines)
-Updated: 2026-10-14 by Lead. Phase: M0, M2 done; M1 finishing; first attack lane L-STRUCT (weak separators) started 2026-10-14 18:54Z. Reporting: weekly checkpoint (D1, after M2).
+Updated: 2026-10-14 by Lead. Phase: M0, M1, M2 done; first attack lane L-STRUCT (weak separators) started 2026-10-14 18:54Z. Reporting: weekly checkpoint (D1, after M2).
 
 ## Milestones
 | M | State | Evidence |
 | --- | --- | --- |
 | M0 Setup | done; TARGET v1.0 at a3777f1 (D2) | this commit; CI .github/workflows/verify.yml; backstop trigger in docs/agents/LEAD-BACKSTOP.md |
-| M1 Reproduce hard families | 12 of 13 families blow up (l-comp e3e7e4e). REFEREE OK on all PGSolver ports (referee 8185028): switch-all 10*2^n-9, switch-best 19*2^n-15 iterations, bare SI loop (= PGSolver -dgo -dsd -dlo -dsg). Open: counter_qpt growth type; strategy-checked re-run. Then REFEREE review of the l-comp range for landing | experiments/hard-families/README.md (l-comp) |
+| M1 Reproduce hard families | DONE 2026-10-14 19:10Z (l-comp de7ea19): 12 of 13 families blow up as published, all strategies checked; counter_qpt superpolynomial but class open (targets a quasi-poly algorithm). Friedmann SI via REFEREE-checked PGSolver ports (reading L5). Bench lands on trunk after REFEREE code review | experiments/hard-families/README.md (l-comp) |
 | M2 Audit arXiv 2511.03752 | DONE 2026-10-14 ~18:35Z: BROKEN (two independent 4-vertex counterexamples, cross-checked); RESULTS DE1 | docs/decisions/M2-arxiv-2511.03752.md |
 | M3 Partial results | not started; attack lanes wait for TARGET approval and L-LIT ranking | - |
 | M4 Target | not started | - |
@@ -20,15 +20,15 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | Lead | session_014FBi6o334DvwT5Uw2kDfoN | claude/vibrant-johnson-nxvvxo | opus-5-5 | high | working | Owner-chosen session; routing judgement; keeps context lean |
 | REFEREE | session_01Ki9osXiyYf9heTLNk3FKED | claude/referee | fable-5-1 | high | working | Most capable model; finding the error in a claimed proof decides M2 and every claim after |
 | L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | parked (T1-T4 done; wakes for barrier checks and step-3 sign-offs) | Source checking and barrier analysis need judgement; Fable reserved for referee; move to Fable when step-3 sign-offs start |
-| L-COMP | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | working | Paper-to-code fidelity for M1 generators and the M2 implementation; drop to sonnet-5-5 for routine benchmarks after M2 |
+| L-COMP | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | parked (M1 done; 379k ctx: next spawn is a successor, consider sonnet-5-5 for routine runs) | Paper-to-code fidelity for M1 generators and the M2 implementation; drop to sonnet-5-5 for routine benchmarks after M2 |
 | L-STRUCT | session_01VH4fd2Fq8XeXtyUfkwLJV1 | claude/l-struct | fable-5-1 | high | working | Attack lane (owner: most capable model at high effort); rank 1 approach, weak separators, T4 verdict OPEN |
 | WATCHDOG | session_01JQNTX8zT3T3mWMt6ZmYzkn | none (never edits) | haiku-5-5 | high | working (cron :30, trig_019xE43BZ5qaDGwxDkZ5h5ik) | Routine liveness/overage checks; reports to Lead only (deviation from playbook: does not wake lanes, so idle sessions never get messages) |
 
 ## In flight
-- L-COMP: remaining M1 families (READMEs, sweeps), stratimpralgs port; harness has strategy verification (D2 change 5).
+- L-COMP: parked after notebook handover; wakes for a new claim, review changes, or L-STRUCT SAT engineering.
 - L-LIT: parked; T1-T4 on trunk (docs/lit/). T4: weak separators OPEN (Czerwinski et al. 1807.10546 §6).
 - L-STRUCT: S1 statement doc, then exact w(n,d) and s(n,d) by SAT for small n,d.
-- REFEREE: check of L-LIT's lasso observation (T4 §3(c)); then review of the l-comp range when M1 completes.
+- REFEREE: code review of the l-comp bench range (to de7ea19) with planted faults, for landing on trunk.
 - WATCHDOG: hourly at :30.
 
 ## Findings to carry
