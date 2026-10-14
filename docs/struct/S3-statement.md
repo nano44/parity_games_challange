@@ -116,10 +116,17 @@ word realisable by an odd V-graph with ≤ n vertices after folding (the folding
 where d ≤ n+1 should enter, since a V-graph on ≤ n vertices with ≥ n+1... letters cannot exist, the folding is forced
 to reuse vertices with equal labels). If that sub-lemma (call it L5') holds, Lemma 5.2 goes through and Lemma 5.1
 gives the universal tree, hence w^V(n,d) ≥ s^E-type bound; the equality with s^V then needs the V version of Lemma
-5.1 from R1 anyway. Known obstruction to the naive form: the (3,3) V witness above has odd cycles with |P| + |C| > 3
-whose lasso words are nevertheless not realisable with 3 vertices; so L5' must be about ALL paths P and foldings, not
-the shortest lasso. Data step before proof: list, for each computed cell with d ≤ n+1 and each minimal weak witness
-the solver returns, its odd simple cycles and the least odd V-graph realising each lasso word (brute force, n ≤ 4).
+5.1 from R1 anyway. DATA STEP DONE (experiments/weak-sep/lasso_analysis.py, results/lasso_analysis.md): for every committed minimal
+weak V-witness with n ≤ 3 (d ≤ 6) and (4,4), all reachable odd simple cycles, all simple paths P from q0 into them,
+and the least odd V-graph realising each lasso word (exact DFS). Result: L5' is FALSE. At (3,3) V (d = n) the minimal
+5-state weak witness has one reachable odd simple cycle whose lasso words need 4 > 3 vertices, so it is weak, not
+strong, with w = s = 5; at d ≤ n+1 weak separators therefore need not be strong, and R2 cannot go through Lemma 5.2
+"no odd cycle". Across all witnesses the least odd graph for a tolerated lasso word has exactly n+1 vertices except
+(3,6) V (n+2): the tolerated cycles sit exactly at W2's edge. Dead end recorded in notes/L-STRUCT.md.
+What remains of R2: a pure size argument, i.e. an injective map from the leaves of an (n, ·)-universal-tree-like
+structure into the states of any deterministic weak V-separator with d ≤ n+1, built from even-realisable words only
+(the quasi-orders of CDFJLP Lemma 5.1 defined through paths that are prefixes of EvenCycles^V_n words) and using the
+tolerated odd cycles' position at W2's edge. No sub-lemma for this is formulated yet; it is the open core of T3.
 
 ## 5. Calibration
 - Everything above the diagonal (n = 2, d ≥ 5; n = 3, d ≥ 5) is about letters a TARGET game of that size cannot have.

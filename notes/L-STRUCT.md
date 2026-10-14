@@ -2,6 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
+2026-10-14 ~20:55Z: Lead confirmed L4 first (R1), T3 second (R2). R2 data step done: L5' dead (see Dead ends). Waiting for L-LIT T6 (L4 known or open) before R1. Background (caps): weak/strong V (4,5), weak V (3,10) k=8, strong V (3,8) k=8, weak V (4,6) k=9, weak E (4,6) k=12.
 2026-10-14 21:55Z: S2 T1 dead (DE2). S2 patched per REFEREE (T2 n ≥ c; V barrier conditional on L4; algorithmic
 quantity w^V(n,n); dead-end automaton committed). S3-statement.md written (diagonal W(n) = w^V(n,n) vs S(n) =
 s^V(n,n); T3-neg / T3-pos / L4 / H1) and sent to the Lead for L-LIT + REFEREE. No proof or construction work until
@@ -42,5 +43,6 @@ Any finished results/automata/*.json: make_table.py, then verify.sh && git push.
 | date | idea | obstruction (exact) | instance |
 | --- | --- | --- | --- |
 | 2026-10-14 | S2 target T1: w^X(n,d) ≥ s^X(n,d−2) (one tree level is all a weak separator saves) | REFUTED (DE2, REFEREE 92846bf): w(2,10) = 4 < 5 = s(2,8) in E, S, V; s(2,2h) = h+1 grows while w(2,d) = 4 for 7 ≤ d ≤ 12 (V) and d = 8, 10 (E) | L-COMP's 4-state weak (2,10)-separator, l-comp 3e44d2c experiments/sat-hard/results/weak_E_n2_d10_k4.json; my re-check experiments/weak-sep/results/external/lcomp_weak_E_n2_d10_k4.json (checker: no violation in E, S, V; not strong) |
+| 2026-10-14 | L5' for T3 (R2): "for d ≤ n+1 every lasso word of a reachable odd cycle of a deterministic weak V-separator folds into an odd V-graph with ≤ n vertices" (would make every weak separator at d ≤ n+1 strong) | false at (3,3) V, d = n: the minimal 5-state weak witness has a reachable odd simple cycle whose lasso words need 4 vertices (exact DFS, lasso_analysis.py); weak ≠ strong as objects even when w = s | experiments/weak-sep/results/automata/weak_V_n3_d3.json; table experiments/weak-sep/results/lasso_analysis.md |
 | 2026-10-14 | Pruning lemma for T3 at d ≤ n+1: "the even-used transitions of a deterministic weak V-separator contain no odd cycle, so it prunes to a strong one of the same size" | false already at (3,3) V, d = n: a minimal 5-state weak witness has an odd cycle inside its even-used part (wsep/analyze.py live_has_no_odd_cycle = False) although w^V(3,3) = s^V(3,3) = 5; T3 cannot be proved by pruning | experiments/weak-sep/results/automata/weak_V_n3_d3.json |
 | 2026-10-14 | Restriction lemma: "a deterministic weak (n,d)-separator restricted to Σ_{d−2} is a strong (n,d−2)-separator" (would give T1 at once) | weak separators with an odd simple cycle whose maximum is ≤ d−3 exist, even at minimum size, so the restriction keeps an odd cycle and is not strong | (3,6) convention V, k = 6 = w^V(3,6): `experiments/weak-sep/probe_oddcycles.py 3 6 V 6 3` returns a 6-state weak separator with an odd cycle of maximum 3; also (2,6) E with k = 4 and (2,4) V with k = 3 |
