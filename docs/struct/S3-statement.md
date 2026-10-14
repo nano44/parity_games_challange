@@ -143,11 +143,14 @@ Probe data (experiments/weak-sep/probe_oddcycles.py, probe_rewire.py, probe_rule
   mechanism: it removes all odd cycles but breaks (W1) in 7 of 8 instances (probe_rule.py); "redirect to the cycle's
   entry state" loops. The solver's t = 1 rewire is a different transition or target each time. Dead end recorded.
 
-Sub-lemma SL8-t (Hamming form; the working statement, Lead 21:40Z approved SL8, L-STRUCT corrected the form). Let
+Sub-lemma SL8-t (Hamming form; the working statement, confirmed by the Lead 21:43Z after L-STRUCT's correction). Let
 X ∈ {E, S, V}, n ≥ 1, 1 ≤ d ≤ n + 1, and let A be a deterministic weak (n,d)-separator of convention X with state set Q
 and initial state q0. Then there is a deterministic strong (n,d)-separator of convention X with the same Q and q0 whose
-transition function differs from A's in at most t(n,d) pairs (state, letter), for a bound t(n,d) to be determined
-(data: t ≤ 3 on every enumerated instance so far, experiments/weak-sep/results/sl8/).
+transition function differs from A's in at most t(n,d) pairs (state, letter), for a bound t(n,d) to be determined;
+a constant t is a hypothesis to test, not an assumption (Lead 21:43Z). Observed t_max per cell over ALL enumerated weak
+separators (results/sl8/): E (2,2): 1 (k ≤ 4); E (2,3): 3 (k = 4); E (3,3): 1 (k ≤ 6, capped); E (3,4): 1 (k ≤ 6,
+capped); V (2,2): 2 (k = 4); V (2,3): 4 (k = 4); V (3,3): 4 (k = 6, capped); V (3,4): 2 (k ≤ 6, capped). At minimum
+size k = w: t_max = 1 in E and 2 in V on these cells.
 SL8-t ⇒ T3 (w^X(n,d) ≥ s^X(n,d) for d ≤ n+1; the other inequality is S1 F1). Without the Hamming bound the statement
 ("some strong separator on the same abstract state set") is trivially equivalent to T3 and carries no proof idea; the
 bound is what the local-rewiring proof would establish. SL8-1 (t = 1) is FALSE above minimum size: at E (2,3) with k = 4,
@@ -161,7 +164,7 @@ Exhaustive test (Lead 21:40Z; results/sl8/, every weak separator with k reachabl
 | E (3,4), k = 5 / 6 | 20 / ≥ 5000 (capped) | all / 4991 | - / 9 | | | |
 | V (2,2), k = 2 / 3 / 4 | 1 / 24 / 609 | all / 22 / 507 | - / 2 / 99 | - / - / 3 | | |
 | V (2,3), k = 3 / 4 | 28 / 4550 | 12 / 1075 | 12 / 2272 | 4 / 1059 | - / 139 | - / 5 (all t = 4) |
-| V (3,3), k = 5 / 6 | 76 / ≥ 5000 (capped) | 65 / 3432 | 10 / 1356 | 1 / 172 | - / 39 | - / 1 (t > 3, exact value pending) |
+| V (3,3), k = 5 / 6 | 76 / ≥ 5000 (capped) | 65 / 3432 | 10 / 1356 | 1 / 172 | - / 39 | - / 1 (t_max 4) |
 | V (3,4), k = 5 / 6 | 407 / ≥ 5000 (capped) | 365 / 3384 | 36 / 994 | 6 / 622 | | |
 Reading: at MINIMUM size (k = w, the only case T3 needs) every weak separator is within t ≤ 2 of a strong one (E: t ≤ 1;
 V: t ≤ 2), and most are strong outright. Above minimum size the distance grows (t = 4 at V (2,3) k = 4), so a universal
@@ -193,7 +196,11 @@ state where p is read than q does. SL9: redirecting one ascent of C to the state
 determinism and the state set; iterating over the odd cycles terminates. What is missing is the definition of the level
 order without assuming a tree decomposition (which only strong separators have); the candidate is CDFJLP's resistance
 computed in the sub-automaton of letters ≤ p after deleting the ascents themselves, which is finite exactly when the
-ascents are the only transitions closing odd cycles. The statement SL9 is where the proof attempt starts.
+ascents are the only transitions closing odd cycles. The statement SL9 is where the proof attempt starts. Lead's caution (21:46Z) for the proof: minimality is global, so a
+local rewiring argument must use it through a contrapositive of the form "if no strong rewire exists within t changes
+at some odd cycle, then two states can be merged or one removed without breaking (W1)/(W2)", contradicting k = w; if the
+argument needs only a weaker hypothesis than minimality (e.g. "no two states are equivalent on even-realisable
+words"), that weaker form is to be stated instead. L4 is signed by the first referee (referee 9bf5301).
 Alternative route if (2) fails: a direct size argument (injective leaf map from a universal-tree-like structure built
 from even-realisable words), S3 §4b R2 as before.
 
