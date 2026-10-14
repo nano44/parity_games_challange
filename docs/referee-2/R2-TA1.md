@@ -161,3 +161,31 @@ Verdict on the revision: **OK** (N1 is wording). Second-referee position on T-A1
 stated in section 2, Corollaries 1-2 and Remark 3 are correct, with gaps G1-G10 as listed there (G1-G3, G9 closed by
 written text; G10 open until a second signature; nothing Lean-checked). The first referee's independent report is still
 required for this to become a result (CLAUDE.md).
+
+## 8. Second-referee signature (claude/l-attr 57a1515, TA1-proof.md blob f58968f; 2026-10-15 00:25Z)
+Diff 4478b84..57a1515 checked (first referee's six items plus my N1):
+- F1 now carries HKP Def. 4's hypothesis (∅ ≠ X ⊆ pr^{-1}(d), d ≡ p): correct and necessary; every use (F4, L1, section 5) has
+  it. OK.
+- F1' (HKP Thm 4) added for psolQ's removals, with gap G11: correct; my first report used "removals as in F2" for psolQ
+  without naming this dependency, so G11 is a genuine addition by the first referee. See the G11 status below.
+- Büchi class up to order- and parity-preserving recolouring: correct (psolB reads colours only through ≥, = and parity).
+- T-A1': the layer count b is constant along the iteration (every X contains X' of priority d and lies in {pr ≥ d}): correct.
+- Remark 3 wording (N1) applied as suggested; Remark 4 credits: fine, Remark 4 is excluded from the claim.
+Signed claim (Lead's wording, 23:51Z) at l-attr 57a1515: Theorem T-A1; Theorem T-A1' (with "the converse fails");
+Corollaries 1-2 as stated; Remark 3. Remark 4 excluded. Verdict as second referee: **OK**.
+Gap list G1-G11 with status:
+| gap | status |
+| --- | --- |
+| G1 (F2 standard) | closed: written out by both referees; citable as Zielonka 1998 §3 |
+| G2 (external target, rank of X-vertices in L1(ii)) | closed by both referees |
+| G3 (F6 equality) | closed: R2's soundness-based derivation; first referee machine-checked it on all n ≤ 3 games |
+| G4 (colour loop order) | closed by Remark 3 (proof uses only "every colour tried before returning" and the restart) |
+| G5 (choice of d; Lemma 0) | closed: not needed; converse of Lemma 0 unproved, unused (R2 side check on 4,000 games) |
+| G6 (empty list members) | closed (the "first member ⊄ Rem" choice skips them) |
+| G7 (scope: finite games, successors, self-loops) | closed |
+| G8 (layeredAttr monotonicity) | closed: F3 weakened, T-A1' uses one PMAttr layer; layer-chain inclusion not claimed |
+| G9 (HKP Thm 2 sketch) | closed by written text (R2, agreed by the lane) |
+| G10 (Corollary 1 inherits HKP Thm 7/8/Lemma 5) | open as a dependency on published proofs; R2 re-derived Lemma 5 and Thm 8 in full and checked that Thm 7's proof needs no Thm 6; HKP Thm 7's Büchi fixpoint correspondence itself is taken from the source |
+| G11 (HKP Thm 4, F1') | closed at referee level by R2's re-derivation below, WITH A CORRECTION to HKP's proof: as written (tex:1085-1088) the strategy "select the successor with minimal rank r" is unsound. Instance (R2-TA1/hkp_thm4_strategy.py): X = {w}, c(w) = 0; v, u of colour 1 owned by player 0, v → {w,u}, u → {w,v}, w → v. Layer 0 adds v, u at stage 1 and w at stage 2, so r(v) = r(u) = (0,1) < r(w) = (0,2); the minimal-rank strategy plays v u v u ... and loses, although X ⊆ layeredAttr is fatal. Repair: choose a WITNESS successor (one in X_{d} ∪ A_{d-2} ∪ A_{d,i-1} for r(v) = (d,i)); psolq.py records exactly this witness. With the witness strategy HKP's induction goes through: from v with r(v) = (d,i) and c(v) odd (so c(v) > d, since v ∉ X and v ∉ A_{d-2} by minimality), the next vertex is in X_d (even colour ≤ d < c(v)) or has smaller rank, and the play stays in ∪_d A_d = A_b (the layer chain A_d ⊆ A_{d+2} holds by one lfp step: a vertex of A_d is eligible in layer d+2 as a member of the target, with witnesses in A_d ∪ Y_d); ranks decrease until X_d is hit, so every odd colour is followed by a smaller even colour and min Inf is even. V_1-vertices have all successors in the witness set. T-A1' is unaffected (it uses only the statement of Thm 4). |
+Nothing is Lean-checked (not required at M3). The claim becomes a result with the first referee's signature on the same
+commit; my signature is for 57a1515 only.
