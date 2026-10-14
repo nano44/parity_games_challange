@@ -27,9 +27,9 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 ## In flight
 - L-COMP: parked after notebook handover; wakes for a new claim, review changes, or L-STRUCT SAT engineering.
 - L-LIT: parked; T1-T4 on trunk (docs/lit/). T4: weak separators OPEN (Czerwinski et al. 1807.10546 §6).
-- L-STRUCT: S2 target stated (l-struct 616cf77): T1 w(n,d) >= s(n,d-2) [quasi-poly lower bound for weak separators], T2 fallback. Proof waits for REFEREE statement check + L-LIT novelty (T5). Data (corrected 19:56Z): s^V(4,6) = 10, w^V(4,6) <= 10; no gap shown at (4,6) V; 9-state weak V search running.
-- REFEREE: statement check of S2 T1/T2 (C1 OK at 762c598; plant P1 caught, score 1/1).
-- L-COMP: (4,6)E k<=7 UNSAT (LRAT, l-comp d818c50) but trivial (= w(4,4)=8; Lead mis-pick). Now the real T1 test cells: w(2,8) vs 4, w^V(3,8) vs 7, w(2,10); then (5,4) k=10. Box ends ~01:30Z.
+- L-STRUCT: T1 likely FALSE (L-COMP: w(2,10)=4 < 5=s(2,8), l-comp 3e44d2c; REFEREE checking). Pivot to (c): structure of minimal weak witnesses; S3 statement (growth of w in d) before any proof.
+- REFEREE: check T1 refutation (witness + s(2,8)=5 strong encoding), then S2 T2 statement.
+- L-COMP: T1 refutation found; now growth data: w(2,d) d=12..20, w/s(3,d) d=8,10 V; then (3,8)V, paused runs. Box ends ~01:30Z.
 - WATCHDOG: hourly at :30.
 
 ## Findings to carry
@@ -39,7 +39,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - PGSolver SI families (switchallexp, switchbestexp) target PGSolver's switch-all/switch-best SI, not Oink psi/ssi; port of stratimpralgs.ml queued in L-COMP.
 
 ## Live approaches
-- A1 deterministic weak separators (L-STRUCT): outside the strong-separator barrier (T4); target w(n,d) vs s(n,d), then construction or lower bound.
+- A1 deterministic weak separators (L-STRUCT): outside the strong-separator barrier (T4). Data: w=s on most small cells; w<s at (2,6),(2,10),V(3,6); s(2,2h)=h+1 but w(2,8)=w(2,10)=4. Lower-bound target T1 likely false; now measuring growth of w in d.
 
 ## Dead approaches (with obstruction): see docs/RESULTS.md "Dead ends"
 - (none yet)
