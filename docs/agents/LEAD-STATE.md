@@ -88,3 +88,4 @@
 - 12:14Z L-SI fixed Claim F (F'), X-bound empty (X ~ iteration count). L-RED told: target iteration count directly.
 - 12:24Z L-RED KILLED MSF (2^N-1, gated Bland, two engines). L-RED retargeted to S1 RAR (original Random-Facet). L-SI told: immune-to-gate-relabelling requirement. DE4 after L-RED push.
 - 12:35Z l-red merged (e1e9402); DE4 recorded (MSF). L-RED retargeted to RAR (resent).
+- 12:40Z L-ALG C3 ZP dead (T_R explicit, ~30x/tile); DE5 recorded (C1-C3).
