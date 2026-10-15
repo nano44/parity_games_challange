@@ -372,7 +372,10 @@ Oracle: a DEBUG build of the pinned 8fbf0a7 (scratchpad oink-debug; NDEBUG check
 no throw (dtl and idtl).
 Fuzz on the debug build (dtl_fuzz.py, random games n = 8..28, out-degree 1..3, 30% self-loops, seed 5): dtl 6,000
 games, idtl 6,000 games, 0 bad runs (every run verified, no throw; max 11 tangles). Hill-climbs with fitness = verifier
-failure / error / unsolved vertex, self-loop and renumbering mutations: SEARCHC-PLACEHOLDER
+failure / error / unsolved vertex, self-loop and renumbering mutations: release build, dtl n = 20, 28 and idtl n = 16, 24 (40,000 mutations each);
+debug build, dtl n = 12, 20 and idtl n = 16 (30,000 each): best fitness stayed 0 in all seven runs (no verifier failure,
+no throw, no unsolved vertex, no "solver stuck"). Together with sections 2 and 8: no completeness or correctness
+failure of the release path or the debug path found by any adversarial method used here.
 Lead reading on why no counterexample was found, in the proof lane's terms. Every open sptl region is open because an
 opponent vertex of its would-be cycle escapes to a vertex e in CurR \ Z (unconsumed, unattracted). Either e belongs to a
 structure Odd wins from (then the region's head is rightly not productive: Even does not win there through that cycle),
@@ -420,5 +423,8 @@ distraction"; not proved here.
   order is a lexicographic order on tuples, where a proof must count descents (universal-tree-shaped counting), and
   (d) upward-only influence is what should bound it; (8) with --no-loops, self-loops and renumbering: no wrong answer,
   no unsolved vertex, tangle counts unchanged within noise.
+- DONE (16:50Z-, GAP-C): section 11: debug-build oracle, proof lane's c1-c3 re-run, 12,000 fuzz games and seven
+  adversarial climbs clean, the unblocking argument for (C-a) and the "maximum of a p-won cycle is never a distraction"
+  expectation for (C-b), both Lead readings.
 - NEEDS: Lead: the proof lane should treat section 1(c)+(d) (pusher-chain descents bounded through upward-only
   influence) as the statement to prove or refute; a refutation there is the only killer shape left that I can name.
