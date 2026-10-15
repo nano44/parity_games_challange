@@ -95,3 +95,4 @@
 - 12:16Z REFEREE-2 R2-TL OK with fixes (995cfd3, merged). DE6 recorded (S1 RAR). Second referee, L-LIT novelty, L-RED F1 fix deferred pending Q9.
 - 12:36Z D7 owner chose Q9 (a): continue. Freeze lifted (L20). L-RED resumed (F1, S7, S5/S6); REFEREE second read of transfer lemma.
 - 12:48Z L-ALG: C4 dead; DTL survives everything (lead); L-ALG redirected to DTL provenance/pseudocode/data. tc+ beats PTL/SPPTL (bench note).
+- 12:54Z REFEREE R-TL2 signed (6d5d9ad, merged); confirming coverage of l-red 8bb9d22. L-LIT T13 novelty started. L-RED nits queued.
