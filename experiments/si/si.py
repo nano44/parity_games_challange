@@ -12,6 +12,7 @@ Rules (improvement policies, Friedmann Def. section 3: pick edges in the arena A
   random-edge  one uniformly random improving edge (baseline, B10)
   msf / lsf    single switch: the improving edge whose valuation difference sits at the most / least relevant position
   steepest     single switch maximizing the re-evaluated valuation of the switched vertex
+  zadeh        least-entered improving edge (Zadeh), ties by index (S5); cunningham  round-robin over edges by index (S6)
   switch-all-start-sub   S4: start from the optimum of the subgame V minus Attr(top priority), then switch-all
 Output: regions and positional strategies for both players (Odd's = the optimal counterstrategy), checked by harness/verify.py.
 Usage: si.py RULE game.pg [out.sol] [--seed S] [--start best|last|random]   (prints 'solved with K iterations.' to stderr)"""
@@ -48,6 +49,7 @@ class Engine:
         self.evals = 0
         self.cache = {}
         self.wcache = {0: 0}
+        self.mem = {}
 
     def weight(self, mask):
         """Signed weight of a path set: +2^r for even ranks, -2^r for odd ranks. M < N in Friedmann's set order iff
@@ -327,6 +329,26 @@ class Engine:
                 best, arg = k, s
         return arg
 
+    # ---- memory rules (S5, S6): rank by history, never by valuation content --------------------------------------
+    def rule_zadeh(self, strat, val, imp, rng):
+        """Zadeh's least-entered rule with the canonical tie-break: among improving edges, the one switched to the fewest
+        times so far (count kept per edge (v, w) over the run); ties: smallest v, then smallest w."""
+        cnt = self.mem.setdefault("entered", {})
+        v, w = min(imp, key=lambda e: (cnt.get(e, 0), e))
+        cnt[(v, w)] = cnt.get((v, w), 0) + 1
+        new = list(strat); new[v] = w
+        return tuple(new)
+
+    def rule_cunningham(self, strat, val, imp, rng):
+        """Cunningham's round-robin rule with the index order: Even's edges in the fixed cyclic order (v, w) ascending;
+        switch the first improving edge after the previously switched one."""
+        last = self.mem.get("last", (-1, -1))
+        after = [e for e in imp if e > last]
+        v, w = min(after) if after else min(imp)
+        self.mem["last"] = (v, w)
+        new = list(strat); new[v] = w
+        return tuple(new)
+
     # ---- generic driver ---------------------------------------------------------------------------------------
     def run(self, rule, start, rng=None, max_iter=None):
         strat = start
@@ -416,6 +438,8 @@ RULES = {
     "lsf": lambda e: (lambda s, v, i, r: e.rule_single_level(s, v, i, r, False)),
     "msfa": lambda e: e.rule_msfa,
     "msfc": lambda e: e.rule_msfc,
+    "zadeh": lambda e: e.rule_zadeh,
+    "cunningham": lambda e: e.rule_cunningham,
     "steepest": lambda e: e.rule_steepest,
     "most-improved": lambda e: e.rule_most_improved,
 }

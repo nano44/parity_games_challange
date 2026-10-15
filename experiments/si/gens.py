@@ -126,6 +126,47 @@ def dlmm_ML(L):
     return f"parity {3 * L + 3};\n" + "\n".join(rows) + "\n% start " + " ".join(f"{v}:{w}" for v, w in start) + "\n"
 
 
-GENS = {"randomfacetsubexp": randomfacetsubexp, "zadehexp": zadehexp, "dlmm_bland": dlmm_bland, "dlmm_ML": dlmm_ML}
+def cunninghamexp(n):
+    """cunninghamexp.ml:38-92, "Binary-Case Exponential Lower Bound for Cunningham's rule" (line 101), default options
+    (-tiefree off: auso_compat = false, so no AusoHelper nodes and PacerEntry 0 -> PacerNode (n-1); -indexone off).
+    Lines 53-71 pre-touch nodes (SymbolicParityGame.touch_node) to fix their indices, i.e. the edge ordering the family is
+    built for: UpperSelector 1..n-1, CycleSelector 1..n-1, PacerNode 0..n-1, CycleNodeLaned 1..n-1, CycleNodePaced 0..n-1."""
+    lab = {"CycleCenter": "x", "CycleNodePaced": "e", "CycleNodeLaned": "d", "PacerNode": "c", "CycleExit": "y", "CycleEntry": "q",
+           "CycleSelector": "b", "UpperSelector": "a", "FinalCycle": "t", "PacerEntry": "p", "AusoHelper": "z"}   # symb_to_str 25-36
+    g = SymbolicPG()
+    add = lambda sy, pr, pl, li: g.add_node(sy, pr, pl, li, lab[sy[0]] + (str(sy[1]) if len(sy) > 1 else ""))
+    touch = lambda sy: g._internal_add(sy, -1, 0, None, False)                  # stratimprgenerators.ml touch_node
+    S = lambda name: (lambda i: (name, i))
+    FinalCycle = ("FinalCycle",)
+    CE, US, CS, CC, CNP, CNL, CEn, PN, PE = S("CycleExit"), S("UpperSelector"), S("CycleSelector"), S("CycleCenter"), S("CycleNodePaced"), S("CycleNodeLaned"), S("CycleEntry"), S("PacerNode"), S("PacerEntry")
+    for i in range(n):                                                           # lines 56-70
+        if i > 0: touch(US(i))
+    for i in range(n):
+        if i > 0: touch(CS(i))
+    for i in range(n):
+        touch(PN(i))
+    for i in range(n):
+        if i > 0: touch(CNL(i))
+    for i in range(n):
+        touch(CNP(i))
+    add(FinalCycle, 1, ODD, [FinalCycle])                                         # line 73
+    add(US(n), 3, ODD, [FinalCycle])                                              # line 74
+    add(PE(0), 8, ODD, [PN(n - 1)])                                               # line 75 (auso_compat false)
+    add(PE(1), 3, ODD, [PE(0)])                                                   # line 76
+    for i in range(n):                                                            # lines 78-90
+        add(CE(i), 2 * i + 10, ODD, [US(i + 1)])
+        add(CEn(i), 2 * i + 9, ODD, [CC(i)])
+        add(CC(i), 6, ODD, [CNP(i), CNL(i), CE(i)] if i > 0 else [CNP(i), CE(i)])
+        add(CC(i + n), 5, ODD, [CC(i)])
+        if i < n - 1: add(US(i + 1), 3, EVEN, [US(i + 2), CEn(i + 1)])
+        if i < n - 1: add(CS(i + 1), 3, EVEN, [CS(i), CEn(i)] if i > 0 else [CEn(0)])
+        add(PN(i), 3, EVEN, [CEn(0)] if i == 0 else [PN(i - 1), CEn(i)])
+        add(CNP(i), 5, EVEN, [PE(1) if i == 0 else PE(0), CC(i)])
+        if i > 0: add(CNL(i), 5, EVEN, [CS(i), CC(i + n)])
+    return g.dumps()
+
+
+GENS = {"randomfacetsubexp": randomfacetsubexp, "zadehexp": zadehexp, "dlmm_bland": dlmm_bland, "dlmm_ML": dlmm_ML,
+        "cunninghamexp": cunninghamexp}
 if __name__ == "__main__":
     sys.stdout.write(GENS[sys.argv[1]](int(sys.argv[2])))

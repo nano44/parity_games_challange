@@ -89,7 +89,7 @@ for N_ in ([1, 2] if quick else [1, 2, 3, 4]):
     if k != k_p - 1:
         fails += 1
 # 3. every rule: regions and strategies
-rules = ["switch-all", "random-edge", "msf", "lsf", "steepest", "most-improved", "rar", "S4", "S4:msf"]
+rules = ["switch-all", "random-edge", "msf", "msfa", "lsf", "steepest", "most-improved", "zadeh", "cunningham", "rar", "S4", "S4:msf"]
 for rule in rules:
     bad = 0; its = 0
     for g in gs:
