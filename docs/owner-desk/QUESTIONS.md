@@ -20,11 +20,12 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - What changes: (a) L-LIT/referees compare the chapter with arXiv v2; G10 can close and the novelty caveat on R2 can be lifted (or
   revised if the chapter differs). (b) nothing changes now; R2 keeps its caveat and no external step is possible.
 - Urgency: low while no external step is planned; it blocks Q6's natural next step.
-- Status: answered, verdict pending L-LIT T11 (Lead, 2026-10-15 07:55Z). The owner supplied Imperial DTR 2015/4, public at
-  https://www.doc.ic.ac.uk/research/technicalreports/2015/DTR15-4.pdf (Lead re-verified sha256). Desk reading (pointer only):
-  docs/owner-desk/HKP-DTR15-4-reading.md. Lead reading (to be logged in DECISIONS.md): if T11 finds DTR15-4 matches the chapter,
-  R2's caveat becomes "checked against arXiv 1405.0386v2 and the pre-publication chapter text DTR15-4; Springer pages not opened"
-  and Q5 closes; it reopens only on a discrepancy. G10 is not an owner question (it concerns HKP's arXiv proofs).
+- Status: closed, Lead reading L17 (trunk 4fb2884). L-LIT T11 (docs/lit/T11-HKP-DTR15-4.md, l-lit 933dc12; trunk 16943fa) read
+  DTR15-4 in full: very likely the chapter's text up to copy-editing (its 29 references match the chapter's Crossref record entry for
+  entry); agrees with the desk's points (1)-(4). T-A1 stays NEW. R2's caveat now records the chapter as read through its
+  pre-publication text; the Springer pages matter only for a "first" claim leaving the fleet (owner's call). G10 is not an owner
+  question. Side product: psolC, a new candidate (not started); PA** is strictly inside psolC's completely-solved class
+  (L-LIT derivation from T-A1, T-A1' and DTR Thm 4; not refereed; T-A1' rests on G11's referee-level repair).
 
 ## Q6: whether, and to whom, docs/HUMAN-REVIEW.md goes
 - id: Q6

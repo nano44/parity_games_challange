@@ -27,3 +27,7 @@ as an owner action; Q5 answered, verdict pending L-LIT T11. Standing reading L12
 ## 2026-10-15 07:53Z owner (Q3)
 > I did Q3
 Relayed verbatim to the Lead. Q3 marked done (owner set the setup script; takes effect in new sessions; not verifiable from this session).
+
+## 2026-10-15 08:07Z Lead (relayed to owner)
+Q5 closed (Lead reading L17, trunk 4fb2884), on L-LIT T11 (l-lit 933dc12): DTR15-4 very likely the chapter text; T-A1 stays NEW;
+psolC noted as a new candidate, not started.
