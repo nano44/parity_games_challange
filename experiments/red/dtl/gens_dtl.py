@@ -68,5 +68,18 @@ def ladder(m):
     return f"parity {len(V)};\n" + "".join(f'{i} {pr} {ow} {",".join(map(str, succ[i]))} "{lab}";\n' for i, (lab, pr, ow) in enumerate(V))
 
 
+def n5(_=0):
+    """The proof lane's NOTE N5 straddle shape (DTL-proof.md 1.6) as a game, for a trace: t' = {a, c, d} with a -> c -> d,
+    d (Odd) -> c, a, e; a -> tnew (a top only later); tau's region holds e. Dominion-free closure is not attempted: the
+    purpose is to watch whether the pruning is non-monotone across searches (section 12)."""
+    V = [("tnew", 14, 0), ("tau", 12, 0), ("a", 10, 0), ("c", 6, 0), ("d", 5, 1), ("e", 3, 1), ("g", 1, 1), ("h", 8, 0), ("q", 15, 1)]
+    ix = {lab: i for i, (lab, _, _) in enumerate(V)}
+    E = [("a", "c"), ("c", "d"), ("d", "c"), ("d", "a"), ("d", "e"), ("a", "tnew"), ("e", "tau"), ("tau", "e"), ("tau", "g"), ("g", "tau"), ("g", "q"),
+         ("tnew", "h"), ("h", "tnew"), ("h", "d"), ("q", "q"), ("q", "h")]
+    succ = [[] for _ in V]
+    for x, y in E: succ[ix[x]].append(ix[y])
+    return f"parity {len(V)};\n" + "".join(f'{i} {pr} {ow} {",".join(map(str, succ[i]))} "{lab}";\n' for i, (lab, pr, ow) in enumerate(V))
+
+
 if __name__ == "__main__":
-    sys.stdout.write({"chain": chain, "counter_dftl": counter_dftl, "counter_odftl": counter_odftl, "ladder": ladder}[sys.argv[1]](int(sys.argv[2])))
+    sys.stdout.write({"chain": chain, "counter_dftl": counter_dftl, "counter_odftl": counter_odftl, "ladder": ladder, "n5": n5}[sys.argv[1]](int(sys.argv[2])))
