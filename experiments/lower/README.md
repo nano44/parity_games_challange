@@ -23,7 +23,21 @@ Needs numpy and python-sat (`pip install python-sat`); the harness (../harness) 
 | `depth2.py` | two-player minimal modal depth for n ≤ 4 (partition refinement over all (game, vertex) pairs) |
 | `bits.py` | which gate outputs of a chain program determine W (minimal determining subsets) |
 | `min_*.json`, `result_*.log`, `cegar5_*.json`, `b2_*.json` | witnesses, UNSAT cores and logs of the runs reported in docs/lower/L1-report.md and docs/lower/L2-data.md |
+| `coremin.py`, `coremin2.py`, `coremin3.py`, `coremin_class.py` | T-L2 (docs/lower/L2-theory.md): UNSAT-core minimisation (greedy; assumption-based over Q_3 classes + games; over whole games under several deletion orders; for class cores) |
+| `levels.py` | depth-j types of a core's vertices, W-mixed type pairs first separated at depth j (M_j), last-gate constraint |
+| `tower.py` | depth-j types of ALL ≤ 4-vertex two-player games (as depth2.py), the M_j type pairs on the full class, SAT on the games realising M_jmin..M_6 (~16 min, 6 GB) |
+| `prooftree.py`, `prooftree2.py`, `prooftree3.py`, `chainbfs.py` | case-tree enumerations of realisable profile partitions (general gates / window-1 chains) with refinement or exact pruning; used to measure the size of an enumerated proof |
+| `towerproof.py` | type-form SAT (over-approximation: a set per type, not per profile) and DRUP proof-size measurement |
+| `cegar_owner.py`, `sat_shape.py` | 4-vertex owner/priority/degree classes (`FILTER` env): CEGAR against all games of the class; exact SAT on a whole class with a prescribed gate reading shape |
+| `cegar5two.py`, `verify_core.py` | n = 5 two-player: CEGAR at k gates against random 5-vertex games (an UNSAT core is a proof, a SAT candidate is not); re-solve a core with other solvers |
+| `cegar_class5.py` | n = 5 localised class K_5 (one Even vertex of priority 1, Odd vertices, two priority patterns, out-degree 2): exact CEGAR against all 200 000 games of the class |
+| `b2_n4_k6_core3.json` (68 games), `core_exact_k6.json` (28 games), `core_oneEven_k6.json`, `core_oneOdd_k6.json`, `core_d2221_k6.json`, `core_p13_k6.json`, `b2_n5_k8.json` (414 games, n = 5) | the UNSAT cores of L2-theory |
 
 Reproduce: `python3 -I check_vs_zielonka.py`; `python3 -I satsearch.py 4`; `python3 -I restricted.py 4 8`;
 `python3 -I depthneeded.py`; `python3 -I fooling.py`; `python3 -I cegar5b.py 8 0 12` (hours; caches W per priority pattern in $W5_CACHE);
 `python3 -I sat2.py exact 3 8`; `python3 -I sat2.py cegar4 7 400` (minutes); `python3 -I depth2.py 4` (~15 min, ~6 GB).
+T-L2: `python3 -I coremin2.py 6 b2_n4_k6_core_min.json x.json && python3 -I coremin3.py 6 x.json y.json 12` (< 10 min; 68 games);
+`python3 -I cegar_owner.py 6 8 200 1,3` (one Even vertex, P_2 = {v0} or {v0, v1}: UNSAT); with
+`FILTER="(deg(3)==2)&(deg(0)==2)&(deg(1)==2)&(deg(2)==2)"` the 2 592-game class whose 28-game core is core_exact_k6.json
+(`python3 -I coremin_class.py 6 b2_n4_k6_ve8_p21-3_all2_exact.json core_exact_k6.json 8`); `python3 -I cegar5two.py 8 2000000 200 0`
+(B_2(5) ≥ 9, ~35 min); `python3 -I verify_core.py b2_n5_k8.json 8 Glucose4`.

@@ -1,71 +1,60 @@
-# L-LOWER notebook (handover, 2026-10-15 09:00Z; LANE-RESTART step 1; successor runs the 12 h T-L2 theory box)
+# L-LOWER notebook (T-L2 theory box, successor session; updated 2026-10-15 ~10:45Z, box ends 20:36Z)
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-Parked at claude/l-lower (SHA in the Lead's message). No runs active, no timed wakes. Successor: read DONE, "Things only I know",
-"T-L2 plan" below, then docs/lower/L1-statement.md (model), docs/lower/L1-report.md (one-player data and lemmas),
-docs/lower/L2-data.md (two-player data). Start from the 100-game core experiments/lower/b2_n4_k6_core_min.json.
+Branch claude/l-lower. Read docs/lower/L2-theory.md first (the box's product), then L1-statement.md (model), L1-report.md,
+L2-data.md. Running at the time of writing (logs in experiments/lower/, detached with setsid): result_b2_n5_k9.log
+(general n = 5 at 9 gates, seeded with the 414-game k = 8 core; one SAT call may take hours), result_k5_deg2_k8.log and
+result_k5_deg2_k9.log (family K_5, exact CEGAR). If they finished: a RESULT line ends each log; UNSAT at k = 9 means
+B_2(5) ≥ 10 (gap grows); write it into L2-theory §4/§6.
 
-## DONE
-- docs/lower/L1-statement.md v2 (refereed OK: R-L1, R-L1b at claude/referee); Lemma 2.1' (B_1(n) >= 2n-2, lasso pair) and
-  Theorem B (depth-(2n-1) types determine W_E, one-player) in docs/lower/L1-report.md §2, both R-L1b: OK.
-- Exact data, every witness verified on all games of its size: B_1(1..5) = 0,2,4,6,8 = 2n-2 (n=5 on all 916e6 five-vertex games);
-  B_2(1..4) = 0,2,4,7; minimal depth = 2n-2 for both players (n<=4 two-player, n<=5 one-player... one-player n=5 depth not
-  computed, cost 8 = Lemma 2.1' bound). Window-1 chains need >= 12 at n=5 (one-player), window-2 >= 9.
-- Finding adopted by the fleet: ANP's n^{lg(d/lg n)} bound is adaptive; non-adaptive best is 2·lg(d/lg n)+O(1) (T7 amended).
-- Tooling in experiments/lower (README there; check.sh in verify.sh, < 3 s, needs numpy + python-sat).
+## DONE (this box)
+- B_2(4) ≥ 7 certificate minimised: 68 whole games / 217 vertices (b2_n4_k6_core3.json), UNSAT by 4 solvers; localised
+  to the class K (one Even vertex e of priority 1, Odd a (P_2), b (P_2 or P_1), c (P_1), all out-degrees 2): 28 games
+  (core_exact_k6.json), 97 bisimulation classes (qcore_exact_k6.json), 53-pair kernel. Table of classes in L2-theory §3.
+- B_2(5) ≥ 9: 414-game core b2_n5_k8.json, UNSAT by CaDiCaL (29 min) and Glucose (50 min).
+- Lemmas 2.1 (one bit per gate), 2.2 (tower) in L2-theory §2.
+- Goal (a) (human-readable proof): NOT achieved; obstruction measured (DRUP 63k lemmas; chain-only enumeration 8 561
+  partitions at level 4; last gate has > 1000 admissible sets). Goal (b): family K_n defined; growth unproved; data gap ≥ 1
+  at n = 4, 5.
 
 ## IN FLIGHT
-(none)
+- The three n = 5 runs above.
 
 ## NEEDS
-- Lead: successor session for the T-L2 theory box (12 h). REFEREE: nothing until a claim is to be recorded (B_1(5)=8, B_2(4)=7
-  are data points). L-LIT: novelty check of T-L1/T-L2 parked.
+- Lead: decision on parking (L2-theory §5b: recommendation = park the theory goal; keep the two cheap n = 5 experiments).
+- Owner/Lead: an independent DRAT/LRAT checker is not available in this container (the platform classifier refused
+  `curl` + `gcc` of drat-trim); the standard applied is "UNSAT by ≥ 2 independent solvers" (4 at n = 4, 2 at n = 5).
 
 ## Things only I know
-Tooling quirks:
-- All SAT searches encode "program with k Cpre gates" by truth tables: gate i reads (P_2, [V_E,] s_1..s_{i-1}); the output is a
-  truth table too. UNSAT on any successor-closed subset of games is a valid lower bound (projection argument). Witness programs
-  are decoded as DNFs (thousands of Boolean gates); show.py prints them, bits.py finds which gate bits determine W.
-- One-player: satsearch.py (exact on Q_n), cegar5b.py (n=5; W per priority pattern cached in $W5_CACHE, default scratchpad w5/,
-  13 min to rebuild; a sweep over all 916e6 games is ~7 min; SAT instances of 20e6 clauses reach 8 GB and get OOM-killed by the
-  cgroup (~16 GB total); keep <= 2 runs). cegar5.py is the slow gate-level variant (kept only for the independent final sweep).
-- Two-player: vec2.py (all 4-vertex games as arrays: S successor masks, ve Even-owner mask, p2 priority mask; ref_W = Lemma 2.3
-  unfolding, checked vs Zielonka on all n<=3 and 300k random n=4), sat2.py (`exact n kmax`: SAT on the two-player quotient Q_n,
-  built by quotient.build(n, owners_set=(0,1)); `cegar4 k per_round`: CEGAR against all 12 960 000 four-vertex games, sweep 5-7 s,
-  SAT rounds 15-100 s; checkpoints b2_n4_k<k>.subset.json are resumed automatically), depth2.py (minimal depth, ~15 min, ~6 GB).
-- Running detached: `setsid nohup bash -c '... > log 2>&1' &`; never `pkill -f` with a pattern that matches your own shell.
-- The 400-game UNSAT core for k=6, n=4 two-player: experiments/lower/b2_n4_k6.json key "subset_games", each game as
-  (prio tuple, owner tuple (0 = Even), successor tuples); Q_3 (all two-player types with <= 3 vertices) is always part of the
-  SAT subset (sat2.Sub). Chunked minimisation (drop 50 at a time) leaves 100 games, b2_n4_k6_core_min.json, still UNSAT with Q_3:
-  by #Odd vertices {0: 2, 1: 20, 2: 43, 3: 28, 4: 7}; the full core by #P2 {1: 105, 2: 210, 3: 81, 4: 4}. The core WITHOUT any
-  Odd vertex (12 games) is not enough (one-player B_1(4)=6), and even the 302 games with >= 2 Odd vertices are UNSAT alone.
-  To load: `core = json.load(open("b2_n4_k6_core_min.json"))`; to test a sub-core: sat2.Sub(build(3, owners_set=(0,1))),
-  sub.games = ..., S, W = sub.struct(); sat2.encode2(S, W, range(S.N), 6).
-- What I suspect about the core: nothing verified. Hypothesis to test first: Odd vertices force "for all successors" information
-  and a 6-gate program cannot carry both the one-player distance/two-visit bits (which already need 6 at n=4) and the
-  Odd-side bits; i.e. the extra gate is an alternation (◇ vs □) cost, not a depth cost (depth is 6 for both).
-- One-player n=4 structure (report §3): the 6-gate chain uses s2 = "P_2 at distance <= 2", s4 = "at 3..4", s5 = "P_2 at
-  positions 1 and 4..5", s6 = s5 shifted; W is a function of (s2, s4, s5, s6) only (bits.py). These are pigeonhole witnesses
-  (fresh-segment argument: in a losing graph, vertices after a P_2 position are distinct from those before it).
+Tooling quirks (in addition to the previous session's list, kept below):
+- `pkill -f PATTERN` kills your own shell when PATTERN occurs in the command line you typed (it did, twice). Use
+  `pgrep -f "^python3 -I script.py"` (anchored) and kill the PIDs.
+- `cmd | tail -N` shows nothing until cmd ends; for long runs write to a log file and `tail -n` it.
+- coremin2/coremin3/qmin minimise with ONE solver instance and assumptions (seconds per call); coremin.py (plain) costs one
+  full solve per call (20 s at n = 4, 30 min at n = 5). Minimal cores are not unique; several orders, keep the smallest.
+- The depth-type machinery (levels.py on a core, tower.py on all 51.9M (game, vertex) pairs, 16 min, 6 GB) shows the core
+  needs modal depth 4 only; the 90 mixed depth-5 types of the full class live in other games (tower.py's M_6 list).
+- cegar_owner.py classes: owner mask + P_2 masks + `FILTER` (numpy expression over deg(v), loop(v)); runs take seconds to
+  minutes; the class table in L2-theory §3 is exactly these runs (logs result_*.log).
+- sat_shape.py 'chain+j' shapes are NOT restrictive as written (they let all gates read all earlier gates): ignore those
+  results; 'full' and 'chain' are correct.
+- cegar5two.py samples random 5-vertex games (no full sweep): an UNSAT core is a proof, a SAT candidate is not an upper bound.
+- Memory: a k = 9 instance with ~7 000 nodes is ~11M clauses (~4 GB); keep ≤ 2 such solves at once (16 GB cgroup).
+Previous session's list (still valid):
+- All SAT searches encode "program with k Cpre gates" by truth tables: gate i reads (P_2, V_E, s_1..s_{i-1}); the output is
+  a truth table too. UNSAT on any successor-closed subset of games is a valid lower bound (projection argument).
+- One-player: satsearch.py (exact on Q_n), cegar5b.py (n=5; W per priority pattern cached in $W5_CACHE); OOM at ~20e6 clauses.
+- Two-player: vec2.py, sat2.py (`exact n kmax`, `cegar4 k per_round`), depth2.py (minimal depth, ~15 min, ~6 GB).
+- Running detached: `setsid nohup python3 -I x.py > log 2>&1 &` (inside parentheses).
+- One-player n=4 structure (L1-report §3): the 6-gate chain uses distance and two-visit bits (pigeonhole witnesses).
 
-## T-L2 plan (12 h box, as I would run it)
-1. (2 h) Minimise the core further: greedy single-game deletion from the 100-game core (100 SAT calls, ~15 s each); then try
-   dropping Q_3 games by size (does the core need all 3-vertex types?). Print the minimal core with show-style pictures.
-2. (3 h) Human proof of "no 6-gate program at n=4, two-player": for the minimal core, the depth-6 argument gives that each of
-   the 6 gates must sit at a distinct depth level (cost = depth = 6 forces a chain-like DAG: gate i has depth exactly i); then
-   show the core contains two games whose roots have equal values on every such chain but different W. Use bits.py-style
-   enumeration of chain values on the core to find the fooling pair mechanically, then explain it (owner/priority pattern).
-3. (4 h) Generalise: does the mechanism give, for each n, a family forcing cost >= depth + f(n) with f growing? Candidates: one
-   Odd vertex choosing between two one-player gadgets of the lasso type (Lemma 2.1'); nested Odd choices. Test by SAT on
-   small hand-built families at n=5 (sat2-style encoding on raw games is cheap: no sweep needed for LOWER bounds).
-4. (2 h) Write docs/lower/L2-theory.md: the proof for n=4, the family, the measured bounds, status lines; DONE/FINDINGS/NEEDS.
-Kill criterion: if by hour 6 the n=4 argument is not written (step 2) or the family at n=5 gives no bound above 2n-2 = 8 for
-two-player (i.e. SAT finds 8-gate programs for every hand-built family), stop, record the dead end with the instances, and
-recommend parking the lane.
-
-## Queue
-(see T-L2 plan)
+## Queue (if the lane continues)
+1. Read the three n = 5 results; if k = 9 UNSAT: B_2(5) ≥ 10, update L2-theory §4, §5, §6 and L2-data table.
+2. If k = 9 SAT with a candidate passing 2·10^6 random games: full sweep by (owner, priority) pattern (1024 × 28.6M games,
+   ~1 h) before claiming B_2(5) = 9.
+3. K_6 (cegar_class5.py generalised to n = 6; 2 × 15^6 = 22.8M games, sweep feasible) at k = 10, 11: growth of the gap on
+   the family.
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
@@ -89,3 +78,6 @@ recommend parking the lane.
   L+1 distinct vertices on a pattern path of length L): sound, but incomplete — the greedy path may run into a losing P_2 vertex
   (instance: v -> u_1 (P_2, u_1 -> z loop) and v -> long cycle with P_2); not pursued further.
 - T-L1 itself: data against (B_1 = 2n-2 for n <= 5); parked by the Lead 07:50Z.
+- T-L2 (a), human-readable proof of B_2(4) = 7 (2026-10-15): no short proof; instances b2_n4_k6_core3.json (68 games),
+  core_exact_k6.json (28 games of class K), qcore_exact_k6.json (97 classes), qcore_exact_k6_pairs_k6.json (53 pairs);
+  obstruction: DRUP 63 298 lemmas, chain-only case tree 8 561 live partitions at level 4 (docs/lower/L2-theory.md §3b).

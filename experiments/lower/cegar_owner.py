@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """B_2 restricted to an owner class at n = 4: CEGAR (as sat2.cegar4) against all 4-vertex games whose Even-owner mask lies
-in a given set. Usage: cegar_owner.py k mask1,mask2,... [per_round]   (mask = bits of V_E; 0 = all vertices Odd)"""
+in a given set. Usage: cegar_owner.py k mask1,mask2,... [per_round] [p2mask1,p2mask2,...]   (mask = bits of V_E; 0 = all vertices Odd;
+optional p2 masks = bits of P_2 to restrict the class further)"""
 import sys, os, time, json
 import numpy as np
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "harness"))
@@ -11,8 +12,15 @@ import vec2
 
 if __name__ == "__main__":
     k = int(sys.argv[1]); masks = [int(m) for m in sys.argv[2].split(",")]; per_round = int(sys.argv[3]) if len(sys.argv) > 3 else 200
-    tag = f"b2_n4_k{k}_ve{'-'.join(map(str, masks))}"
-    S4, ve4, p24 = vec2.all_games(4); keep = np.isin(ve4, masks); S4, ve4, p24 = S4[keep], ve4[keep], p24[keep]
+    p2masks = [int(m) for m in sys.argv[4].split(",")] if len(sys.argv) > 4 else None
+    tag = f"b2_n4_k{k}_ve{'-'.join(map(str, masks))}" + (f"_p2{'-'.join(map(str, p2masks))}" if p2masks else "")
+    S4, ve4, p24 = vec2.all_games(4); keep = np.isin(ve4, masks)
+    if p2masks: keep &= np.isin(p24, p2masks)
+    if os.environ.get("FILTER"):   # extra numpy filter on (S4, ve4, p24), e.g. "deg(3)==2" with deg(v) = out-degree of v
+        deg = lambda v: np.array([bin(int(x)).count("1") for x in S4[:, v]])
+        loop = lambda v: ((S4[:, v] >> v) & 1).astype(bool)
+        keep &= eval(os.environ["FILTER"]); tag += "_" + os.environ.get("FTAG", "f")
+    S4, ve4, p24 = S4[keep], ve4[keep], p24[keep]
     W4 = vec2.ref_W(S4, ve4, p24, 4); print(f"games with V_E in {masks}: {len(S4)}", flush=True)
     # small games of the same owner class (<= 3 vertices): all owner patterns whose vertices are all in the class are NOT a
     # subclass in general; use only the 4-vertex games themselves (lower bounds on a subclass are weaker, which is the point)
