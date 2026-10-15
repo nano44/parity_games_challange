@@ -1,0 +1,1 @@
+n=5 K=1500 seed=53: {(False, 'solved', 'solved'): 315, (False, 'solved', 'undecided'): 209, (False, 'undecided', 'undecided'): 3, (True, 'solved', 'solved'): 973}

@@ -1,0 +1,27 @@
+n=3, 41440 games
+  PA      False      PA* = False :     5594   e.g. parity 2; | 0 3 0 0; | 1 1 0 0; | 2 1 0 0,2; | 
+  PA      False      PA* = True  :     1364   e.g. parity 2; | 0 3 0 0; | 1 4 0 0; | 2 1 0 0,2; | 
+  PA      True       PA* = True  :    34482   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+  buchi   True       PA* = True  :     7840   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+  det     True       PA* = True  :     4144   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+  greedy  False      PA* = False :     5594   e.g. parity 2; | 0 3 0 0; | 1 1 0 0; | 2 1 0 0,2; | 
+  greedy  False      PA* = True  :     4266   e.g. parity 2; | 0 3 0 0; | 1 4 0 0; | 2 1 0 0,2; | 
+  greedy  True       PA* = True  :    31580   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+  psol    solved     PA* = False :     2658   e.g. parity 2; | 0 3 0 0; | 1 1 0 0; | 2 1 0 0,2; | 
+  psol    solved     PA* = True  :    35446   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+  psol    undecided  PA* = False :     2936   e.g. parity 2; | 0 1 0 0; | 1 1 0 1,2; | 2 3 0 1; | 
+  psol    undecided  PA* = True  :      400   e.g. parity 2; | 0 1 0 0; | 1 1 0 1,2; | 2 1 0 1,2; | 
+  psolb   solved     PA* = False :     2534   e.g. parity 2; | 0 3 0 0; | 1 1 0 0; | 2 1 0 0,2; | 
+  psolb   solved     PA* = True  :    35846   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+  psolb   undecided  PA* = False :     3060   e.g. parity 2; | 0 1 0 0; | 1 1 0 1,2; | 2 3 0 1; | 
+  psolq   solved     PA* = False :     5550   e.g. parity 2; | 0 3 0 0; | 1 1 0 0; | 2 1 0 0,2; | 
+  psolq   solved     PA* = True  :    35846   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+  psolq   undecided  PA* = False :       44   e.g. parity 2; | 0 1 0 0,1; | 1 5 0 2; | 2 2 0 0; | 
+  scc     True       PA* = False :      708   e.g. parity 2; | 0 3 0 0; | 1 1 0 0; | 2 1 0 0,2; | 
+  scc     True       PA* = True  :    11164   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+PA* => psolQ solves: HOLDS ; PA* => psolB solves: HOLDS ; PA* => psol solves: FAILS (400)
+PA => PA*: HOLDS ; greedy => PA*: HOLDS ; PA* => greedy: FAILS (4266)
+buchi => PA*: HOLDS (class size 7840)
+scc => PA*: FAILS (708) (class size 11872)
+det => PA*: HOLDS (class size 4144)
+psolQ solves => PA*: FAILS (5550)
