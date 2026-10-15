@@ -78,3 +78,35 @@ Growth (results/growth.md, plots results/plots/<family>.png; exponent k of y ~ n
 tangle count ~1.24 N^2 (L-ALG's ~1.2N^2 reproduced); dtl wall time local exponent in n ~3.2 (N=14 -> 16). idtl is 3-4x slower
 than dtl on tc+ and is the only pinned run that did not finish at N = 16 within 1800 s. All finished runs: verified strategies,
 regions equal to uzlk.
+
+## Second independent implementation (gauntlet step 2, Lead 21:20Z)
+`dtl_py.py`: DTL and IDTL in Python, written from docs/alg/candidates/C5-DTL.md @ ccff864 ONLY (dtl.cpp not read while
+writing). Output: regions + positional strategies; prints Oink-style counters. `xcheck.py` compares it with Oink's pinned
+dtl / idtl per game: regions, strategies (harness/verify.py), tangles, dominions, iterations. `shrink_count.py` shrinks a
+count or region divergence. Choices C5 leaves open are listed in dtl_py.py's docstring (CH1-CH6).
+
+Two modes:
+- default = C5-literal choices (equal priorities stable by input position; ins ascending; SCC vertices in Tarjan pop order).
+- `--order oink` = the four orders Oink actually uses, each identified from a shrunk divergence and only then read in
+  Oink's source: CH1' step-0 std::sort (game.cpp:478-505; `stdsort.py` emulates libstdc++ introsort incl. heap fallback),
+  CH2' in-edge lists in decreasing index (game.cpp:868-906), CH3' tangle vertex lists sorted ascending (dtl.cpp ~385),
+  CH3'' SCC vertex order = Pearce emission order (root first) and dominion queue only for vertices not yet in S
+  (dtl.cpp 222-299, ~370). Plus CH6: the idtl iteration counter (dtl.cpp run() 1123-1138; C5 does not define it).
+
+### Divergences found (all reported to the Lead at once; shrunk instances in failures/)
+| # | what | shrunk instance | classification |
+| --- | --- | --- | --- |
+| 1 | idtl iteration count (one per search call vs one per round + 1) | idtl_itercount_n2.pg (2 vertices) | C5 omission (counter not defined); computation identical |
+| 2 | tangle/dominion/iteration counts on 878/10,000 seeded games | count_r06005_min.pg (17 vertices) | C5 omissions: equal-priority order (C5 allows any), in-edge order, stored tangle vertex order |
+| 3 | dominion/iteration counts on 3 games after #2 | count3_min.pg (23 vertices, sorted input) | C5 omission: SCC vertex order = dominion solve-queue order; the dominion-extension attractor deletes tangles as vertices are solved, so its result depends on queue order |
+No region or strategy divergence in either mode, on any game. No pseudocode error and no Oink deviation from C5 found.
+
+### Results
+| corpus | games | `--order oink`: all five equal (regions, strategies, tangles, dominions, iterations) | C5-literal: regions + strategies equal | C5-literal: count differences |
+| --- | --- | --- | --- | --- |
+| exhaustive n<=3 (priorities 0..n) | 175,944 | 175,944 x {dtl, idtl} | all | 0 (n <= 16: step-0 sort is stable) |
+| seeded g10k (n <= 200) | 10,000 | 10,000 x 2 | all | 878 games (tangles differ by up to 8, iterations by up to 2) |
+| rngame | 2,000 | 2,000 x 2 | all | 296 games |
+| seeded small50k (n 4..10) | 50,000 | 50,000 x 2 | all | 72 games |
+| family instances (Oink idtl <= 5 s) | 127 | see results/xcheck_families.csv | - | - |
+CSV: results/xcheck_*.csv(.gz); `_orderstable` = C5-literal mode.
