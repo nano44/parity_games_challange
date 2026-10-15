@@ -152,3 +152,68 @@ RESULTS: "G1-G9 closed; G10 open ...; G11 (HKP Thm 4) closed at referee level by
 5. R2: first referee's written answer on G11 (G2-2).
 After 1-5, CHECKER re-checks the RESULTS text only (the blobs, re-runs and signatures above stay valid while the signed
 commits and trunk files are unchanged).
+
+## C1-recheck (CHECKER, 2026-10-15 ~00:10Z): RESULTS.md text at trunk 4b9cb6e
+Scope as asked: the RESULTS text, the blobs of the newly copied files, and the first referee's G11 answer. The signed
+commits are unchanged, so the re-runs of section 4 stay valid and were not repeated.
+
+### Blob identity (git rev-parse 4b9cb6e:<path> vs <signed sha>:<path>)
+| file | signed | trunk blob | |
+| --- | --- | --- | --- |
+| docs/struct/S2-lower-bound-statement.md (new) | l-struct 50dc28b | 3347517 | MATCH |
+| docs/struct/S3-statement.md (new) | l-struct 50dc28b | f4f4705 | MATCH |
+| L4-proof.md, S1-statement.md | l-struct 50dc28b | 5f75ea9, 768a730 | MATCH (unchanged) |
+| TA1-proof.md, A1-results.md | l-attr 57a1515 | f58968f, c0d62df | MATCH (unchanged) |
+| docs/referee/2026-10-14-TA1-proof-check.md | referee 5ff8edb | 04246ee | MATCH |
+| R2-L4.md, R2-TA1.md, L4 first-referee report | d76c9e1, 2eb1a2d, 9bf5301 | unchanged | MATCH |
+| docs/checker/C1-report.md | checker e8a2a8d | ba342a6 | MATCH |
+The first referee's 5ff8edb change is append-only (`git diff d1e065b 5ff8edb`: 28 insertions, 0 deletions). The
+signature block and gap table signed at d1e065b are untouched.
+
+### R1 (L4): fix items
+- D1-1: "max over even d' with 2 ≤ d' ≤ n": FIXED, matches L4-proof.md §1 and R2-L4 §1.
+- D1-2: "Lemma L4.1, for k ≥ 1 and d ≥ 2, on infinite words: s^E(k,d) ≤ s^V(kd,d) and w^E(k,d) ≤ w^V(kd,d)": FIXED.
+  It matches the file's hypotheses. "On infinite words" is the signed restriction of (a)-(b).
+- V1-1: S2 §1 (class (i)-(iii)) and S3 D6 (S(n), letters = TARGET priorities with 0 removed) are cited and landed
+  (blobs above): FIXED. I checked that S2 §1 lines 42-45 define the class (i)-(iii) and S3 D6 defines S(n) and the letter set.
+- V1-2: the convention note ("d is the largest letter of Σ_d = {1..d}, not TARGET's d = |pr(V)|") is added: FIXED.
+- Notes (non-blocking):
+  - (n1) The phrase "TARGET alphabet" is used in S3 in two senses: Σ_n after removing 0 (line 33, D6) and {2..n+2} after
+    the +2 shift (line 56 table). RESULTS points to D6. Per R2-L4 §1/§7, L4.4's theorem part holds for either encoding, so
+    the ambiguity does not change the claim.
+  - (n2) S2 §1's class (i)-(iii) sits inside the statement of target T1, which is refuted (dead end DE2). The class
+    definition does not depend on T1; a reader should not take the citation as reviving T1.
+- Other R1 text: unchanged from the first check and matching.
+**R1 overall: PASS.**
+
+### R2 (T-A1): fix items
+- D2-1: "arXiv 1405.0386v2": FIXED.
+- D2-3: Remark 4 is now "inclusions among the predicates PA, PA*, PA**; data only, not signed", still excluded: FIXED
+  (neutral wording; nothing excluded is claimed).
+- G2-1: "Corollary 2 uses HKP Thm 5(1) as a black box (first referee's list); all steps are prose, nothing machine-checked
+  beyond the data searches": FIXED.
+  - Residual note (non-blocking): the first referee's line "DJT §2 (trap definition) not opened by me" is not in RESULTS.
+  - Why non-blocking: it discloses which source a referee did not open for a definition. TA1-proof.md §1 states that
+    definition in full and both referees checked it. It is not a gap in any step of the proof.
+  - The Lead may add it for completeness.
+- G2-2: the first referee answered (b) in writing at referee 5ff8edb.
+  - They agree that HKP's minimal-rank strategy as written is unsound, and reproduced REFEREE-2's instance with their own code.
+  - They state that their G11 sentence was the witness step, named imprecisely.
+  - They re-derive Thm 4 with the witness successor, close G11 on that basis, and reconfirm the 57a1515 signature.
+  - RESULTS now says G11 is closed "ONLY with REFEREE-2's witness-successor repair ... (both referees: REFEREE answer (b),
+    referee 5ff8edb ...)". This matches both reports. RESOLVED.
+  - I record the referee's answer as given; I do not judge its mathematics.
+- Note (non-blocking): the R2 "Referees" bullet still cites the first referee's signature at d1e065b. The reconfirmation is
+  at 5ff8edb, which the Gaps bullet cites. Both SHAs are correct for what they name.
+- The R2 heading still reads "CHECKER re-check pending". The Lead should update it to this re-check.
+**R2 overall: PASS.**
+
+### Re-check verdict
+| entry | 1 blobs | 2 statement | 3 vocabulary | 4 re-runs | 5 gaps | overall |
+| --- | --- | --- | --- | --- | --- | --- |
+| R1 (L4) | PASS | PASS | PASS | PASS (section 4) | PASS | **PASS** |
+| R2 (T-A1) | PASS | PASS | PASS | PASS (section 4) | PASS | **PASS** |
+Validity:
+- Both verdicts hold for trunk 4b9cb6e's RESULTS text and the signed commits l-struct 50dc28b, l-attr 57a1515, referee
+  9bf5301 / 5ff8edb and referee-2 d76c9e1 / 2eb1a2d.
+- Any later change to one of those files or to the RESULTS entries needs a new CHECKER pass.
