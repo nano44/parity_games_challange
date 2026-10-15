@@ -66,3 +66,22 @@ for N = 3), so the index-order rule is not killed by relabelling this instance. 
 At these sizes Random-Facet* and Random-Action-Removal behave alike on the family (the published 2^Ω~(√m) bound for
 Random-Facet* is for the paper's initial strategy and is invisible at N ≤ 8); the family does not discriminate between
 the two variants at reachable sizes.
+
+### S5 Zadeh+index and S6 Cunningham+index: searches (Python engine)
+Adversarial hill-climb maxima (n = 4..10; 100 restarts x 2000 steps or 700 s per n):
+| rule | n=4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|---|---|---|---|---|---|---|---|
+| zadeh | 7 | 16 | 28 | 43 | 63 | 71 | 100 |
+| cunningham | 8 | 16 | 29 | 49 | 58 | 69 | 84 |
+
+Gadget-chain family search (G = 4, K = 7; best template swept over k = 2..11):
+| rule | iterations k = 2..11 | growth |
+|---|---|---|
+| zadeh | 16, 61, 148, 275, 442, 649, 896, 1183, 1510, 1877 | second differences 40: quadratic |
+| cunningham | 7, 27, 72, 142, 237, 357, 502, 672, 867, 1087 | second differences 25..30: quadratic |
+
+No super-polynomial growth found for either (the searches are weak evidence; see S5.md / S6.md: "not covered, not defended").
+
+### C++ engine validation (xcheck_fast.py): 1,500 random games, n ≤ 16: valuations identical to si.py on 4,500 (game, strategy)
+pairs; iteration counts identical for switch-all, msf, lsf, zadeh, cunningham; regions = py-zlk with verified strategies for
+all rules incl. rar and random-edge. XCHECK-FAST PASS.
