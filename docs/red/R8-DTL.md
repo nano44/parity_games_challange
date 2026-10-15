@@ -364,6 +364,31 @@ absorption event) or a region change can supply, and the absorption moves that t
 must therefore make one head see super-polynomially many such events, i.e. refute the "<= n per kind" counts; the per-
 head counts observed (<= 9 at one head over 19 searches, section 9) are all event-driven.
 
+## 11. GAP-C, completeness (Lead 16:50Z; proof lane claude/l-alg 11fbb49 docs/alg/DTL-proof.md 2.3 and 6, read)
+Lemma K (if the player still wins somewhere, search(p) learns a new tangle or a dominion) is the whole of completeness;
+its open cases are (C-a) every region open yet none productive, (C-b) pieces removed by Dom(prevV, R) treated as safe.
+Oracle: a DEBUG build of the pinned 8fbf0a7 (scratchpad oink-debug; NDEBUG checks on, "search was incomplete!"), flags
+--no-single --no-wcwc --no-loops -v -t. The proof lane's hand instances dtl_proof_c1/c2/c3: 2, 1, 2 tangles, verified,
+no throw (dtl and idtl).
+Searches and fuzz (experiments/red/dtl/dtl_search.py --fitness wrong, dtl_fuzz.py): GAPC-PLACEHOLDER
+Lead reading on why no counterexample was found, in the proof lane's terms. Every open sptl region is open because an
+opponent vertex of its would-be cycle escapes to a vertex e in CurR \ Z (unconsumed, unattracted). Either e belongs to a
+structure Odd wins from (then the region's head is rightly not productive: Even does not win there through that cycle),
+or e is Even-winning, in which case the Even-winning cycle through e has an even maximum at some vertex v' with every
+other vertex of the cycle below pr(v'), so v' is a best vertex (its good path runs below its priority through that very
+cycle) and heads a region; the LOWEST such head has nothing lower to escape to but Odd-won junk, so its region is closed
+and learns a tangle (K1-K3), and that tangle fires into the blocked region at its escape's pop in the next search ("known
+tangles fire upward", the proof lane's c3). A straddling tangle t' (a vertex in a higher region) fires into THAT higher
+region (its vertex there is in Z, the rest in R), so it unblocks upward too; its lower part Y, if it has an escape into
+CurR \ Z, repeats the same case one level down. The chain of blockers is finite and strictly descends in the sptl order,
+so it ends at a closed productive region unless it ends in Odd-won junk, which means Even does not win the blocked part.
+What this does not cover: the (C-b) pieces (Dom(prevV, R) with Q empty, 961-991) treated as safe; the argument above is
+about X = empty. For the later pieces the same descent applies inside R_rem with X forgiven: a p-dominion D inside R_rem
+whose p-priority vertices are all pruned would need every one of them to lack a good path below its own priority INSIDE
+D, which contradicts D being a p-dominion with p-parity maxima on its cycles (the maximum vertex of any cycle of D is a
+p-vertex whose good path is that cycle). So I expect (C-b) to close by "the maximum of a p-won cycle is never a
+distraction"; not proved here.
+
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.
 - No Python port of dtl (Oink's trace sufficed: every tangle, strategy, escape and pruning round is printed).
