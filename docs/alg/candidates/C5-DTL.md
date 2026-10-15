@@ -1,5 +1,11 @@
 # C5-DTL: Distance Tangle Learning as written in Oink (transcribed by L-ALG, 2026-10-15 13:20Z)
 
+Corrections 2026-10-15 16:30Z (L-ALG successor, found while writing docs/alg/DTL-proof.md against the code): (1) `Q` is a stack
+(LIFO), not a FIFO queue; (2) best_vertices computes its regions top-down with ONE copy CurR per pruning round, consumed across
+tops (line 690 precedes the loop 691), so the regions are disjoint and vertices of lower regions are attracted only from what
+higher tops left; the earlier text said "fresh copy per top, regions overlap". Both change strategy/region details, not set
+membership of attractors. Everything else re-read against dtl.cpp @ 8fbf0a7 and found exact.
+
 Status: CANDIDATE by the Lead's redirect (12:47Z): "the one complete solver nothing in the fleet's bench can hurt".
 This is NOT the fleet's design: it is Tom van Dijk's unpublished research solver `dtl` in Oink, commit 8fbf0a7
 (github.com/trolando/oink, src/solvers/dtl.cpp, 1163 lines; history and the author's own statements in notes/L-ALG.md
@@ -13,7 +19,8 @@ called only under NDEBUG/trace and is NOT part of the algorithm). Written so tha
 Max-parity; player 0 = Even, 1 = Odd; vertices are indexed in non-decreasing priority order (oink.cpp:35
 `game.ensure_sorted()`), so "for top from high index down" = from high priority down, and priority(n-1) = max priority.
 `G` = bitset of unsolved vertices; `R`, `Z`, `X`, `V`, `W`, `S`, `CurR`, `CurZ`: bitsets; `str[v]` = current strategy
-successor of v (-1 = none); `Q` a FIFO queue. owner(v) ∈ {0,1}; outs(v), ins(v) the edge lists. Tangles: for each tangle t,
+successor of v (-1 = none); `Q` a STACK (uintqueue.hpp: `pop()` returns `queue[--pointer]`, LIFO; CORRECTED 2026-10-15 16:30Z, it was
+written as a FIFO queue before: every attractor below is depth-first in the order of Oink's edge lists). owner(v) ∈ {0,1}; outs(v), ins(v) the edge lists. Tangles: for each tangle t,
 tv[t] = its (vertex, strategy) pairs, tout[t] = its escape vertices, tpr[t] = its priority (-1 = deleted), tin[v] = tangles
 having v as an escape. Counters: tangles, dominions, iterations.
 
@@ -59,11 +66,11 @@ best_vertices(V, R, p) [643-776] (V is output; returns 0 / 1 / -1):
   curdist := 0
   loop:
     curdist++; prevV := V
-    Z := ∅
+    Z := ∅; CurR := R                                                      # line 690: ONE copy per round, consumed across tops
     for top from n-1 down to 0 with top ∈ V and top ∉ Z:          # "the current p region"
-      CurR := R; CurZ := {top}; Q := [top]
+      CurZ := {top}; Q := [top]                                             # (CORRECTED 16:30Z: not a fresh CurR per top)
       while Q: v := Q.pop(); CurR := CurR \ {v}; attractVertices(p, v, CurR, CurZ, CurR, pr(top)); attractTangles(p, v, CurR, CurZ, CurR, pr(top))
-      Z := Z ∪ CurZ
+      Z := Z ∪ CurZ                                                         # regions are DISJOINT (top-down decomposition of R by V)
     Candidates := [v ∈ V, descending, with not attracts(p, v, Z, R)]      # no "good path" yet
     if Candidates = []: return 1                                           # stable
     for t := 0 .. pr(n-1):                                                 # attract R to Z "slowly", threshold t
