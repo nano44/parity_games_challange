@@ -1,6 +1,6 @@
 # T13: novelty of L-RED's lower bound for original Random-Facet on parity games (L-LIT, 2026-10-15)
 
-Asked by the Lead at 12:52Z. The candidate is claude/l-red 8bb9d22, docs/red/R2-RAR.md, signed by REFEREE-2 (995cfd3) and REFEREE (6d5d9ad). It claims that **original** Random-Facet (Matoušek–Sharir–Welzl / Kalai) needs e^{Ω(√n)} expected improving switches on sink parity games of size Θ(n^{3/2} log^3 n). The proof transfers FHZ 1410.7530 Thm 6.3 from shortest paths through a level-lexicographic priority encoding.
+Asked by the Lead at 12:52Z. The candidate is claude/l-red 8bb9d22, docs/red/R2-RAR.md, signed by REFEREE-2 (first read 995cfd3, signature 94dde7b, R2-TL §6) and REFEREE (signed at 42f11c6/5ed56c5). This record was corrected per the Lead at 15:07Z; the earlier text gave "REFEREE-2 (995cfd3)" and "REFEREE (6d5d9ad)". It claims that **original** Random-Facet (Matoušek–Sharir–Welzl / Kalai) needs e^{Ω(√n)} expected improving switches on sink parity games of size Θ(n^{3/2} log^3 n). The proof transfers FHZ 1410.7530 Thm 6.3 from shortest paths through a level-lexicographic priority encoding.
 
 All sources below were opened by L-LIT and are logged in notes/L-LIT.md. "p." is the PDF page.
 
