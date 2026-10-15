@@ -156,3 +156,7 @@ each level of NE' adds one register. This is the exact obstruction of the whole 
     The pruning is a greatest fixpoint ("p-vertices with a good path, through priorities below their own, to the regions of the
     surviving p-vertices"), computed in <= n rounds: a single weak condition, like psolC's, with tangle learning handling siblings.
 - 14:20 growth-fitness template GA seed 13: best family quadratic (11..183 at N = 2..10, ~1.8 N^2); seeds 11/12 pending.
+- 14:30-14:55 tc+ port validated (tl/dtl/rtl identical at N = 2..6); tc+ knobs: DTL 8, 17, 30, 43, 58, 75, 94, 115 on every variant
+  (~1.4 N^2). Template GA with growth fitness: tc base seeds 12/13 quadratic (~1.6-1.8 N^2), tc+ base seeds 21/22 quadratic
+  (~2.7 N^2). Verdict in REPORT: no super-polynomial tc variant for DTL found; mechanisms and why recorded.
+
