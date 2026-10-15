@@ -138,3 +138,12 @@ docs/alg/DTL-proof.md §0 at claude/l-alg ccff864 is frozen as the statement for
 A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, trace 0, every equal-priority order; analysed object
 C5-DTL.md; the C++ correspondence §7 to be signed separately, C3b N-1). Changes to §0 go through the Lead and CHECKER.
 This is not a TARGET.md change and not a result; GAP-C and GAP-A remain open.
+
+## L25 (Lead reading, 2026-10-15 19:26Z): T-L2 theory goal parked
+Fleet judgement under L12. L-LOWER's T-L2 theory box (claude/l-lower aa8995e, docs/lower/L2-theory.md) met the first
+clause of its kill criterion: B_2(4) >= 7 is certified (68-game core, UNSAT by four solvers) and localised (28-game core in
+class K), but no human-readable proof was found (DRUP 63,298 lemmas; case tree 8,561 partitions at level 4); obstruction in
+§3b. Parked. Data kept: B_2(5) >= 9 (UNSAT by CaDiCaL and Glucose); |P_2| = 1 costs exactly 2n-2 at n = 5; the extra gate
+is a width cost from serving priority-2 counts {1,2} together. Three k = 9 runs (B_2(5) >= 10?) continue detached in the
+parked session at no extra spend; their RESULT lines are read later if the container survives. Standard for SAT data
+points: UNSAT by >= 2 independent solvers; no LRAT for now.
