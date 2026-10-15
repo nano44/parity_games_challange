@@ -160,3 +160,4 @@
 - 17:52Z R8 §12 final 6d92d3e merged ((alpha) containment climbs 0; GAP-A 0). L-RED parked 17:52Z; my 17:53Z (M-cross)/deletion targets crossed with its park -- it will see them on its next turn; not resending.
 - 17:58Z L-ALG 216103f: R-mono proved for vertex-rule entries; open = nested older tangle. L-ALG: fix §1.0 then park. L-RED: 2h box (nested-tangle shape, deletion ratio) to 20:05Z.
 - 18:00Z L-RED a44030f: M-cross fails at X nonempty (tc+); Lemma S route covers few tangles. L-RED redirected to (D) distinct sets per top all pieces (to 20:05Z). L-ALG: §1.0 fix then determinacy for arbitrary X or park.
+- 18:09Z hourly sweep: no overage (seven_day warning). Lead 323k. L-LOWER 371k idle (SAT runs; write-up 19:20Z). L-RED 602k (>600k: handover after the 20:05Z box). L-ALG 548k (handover at next pause if >600k). L-ALG e916b24 (§1.0 fixes) merged; CHECKER C3c started.
