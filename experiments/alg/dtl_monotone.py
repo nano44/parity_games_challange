@@ -6,7 +6,7 @@ Prints violations (game saved to OUTDIR) and a summary. A violation is a candida
 import sys, os, re, subprocess, random
 oink, rngame, N, seed = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4])
 extra = sys.argv[5:]
-outdir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "out", "dtl_monotone"); os.makedirs(outdir, exist_ok=True)
+outdir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out", "dtl_monotone"); os.makedirs(outdir, exist_ok=True)
 rng = random.Random(seed)
 def analyse(path):
     r = subprocess.run([oink, "--dtl", "-t", "-t", "--no-single", "--no-wcwc", path], capture_output=True, text=True, timeout=300)
