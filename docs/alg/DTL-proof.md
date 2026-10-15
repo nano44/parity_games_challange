@@ -6,65 +6,95 @@ file src/solvers/dtl.cpp (line numbers below are of that file, release build: co
 is not part of the algorithm). Pseudocode: docs/alg/candidates/C5-DTL.md. Independent adversary: L-RED R8
 (docs/red/R8-DTL.md, claude/l-red d6496f3); its Lemma M is unrefereed and is re-proved here where used, never cited.
 
-## 0. Statement (written first, diffed against TARGET.md v1.0 sections 1-3)
+## 0. Statement (written first; revised 17:45Z after CHECKER C3, docs/checker/C3-DTL-statement.md, claude/checker 5b924e7)
 
 ### 0.1 The algorithm A_DTL (what is claimed about)
-Input: a parity game G = (V, V_E, V_O, E, pr) exactly as TARGET section 1: V finite, every vertex has a successor,
-pr : V -> {0, ..., n}, max-parity, n = |V|, m = |E|, input length Theta((n + m) log n).
-Step 0 (Oink, oink.cpp:35 `game.ensure_sorted()`): sort the vertices by priority, non-decreasing, and reindex them
-0..n-1 in that order; keep the owner, priority and edge lists. Cost O((n + m) log n) word operations.
-Step 1 (dtl.cpp 1072-1161 `DTLSolver::run()` with `interleaved = false`, all vertices enabled, G := V): the loops of
-lines 1109-1121: `while G != {}: if not search(0) break` then `while G != {}: if not search(1) break`.
-Output: for every vertex v solved by `Solver::solve(v, player, str[v])` (line 1034): v is put in W_player, and if
-owner(v) = player the positional strategy sigma_player(v) := str[v]. Vertices never solved are output as unsolved.
-A_IDTL is the same with `interleaved = true` (lines 1125-1138).
-Preprocessing switched off (as in every fleet run: `oink --dtl --no-single --no-wcwc`): no single-parity solving, no
-winner-controlled-cycle removal, no self-loop removal, no priority compression/inflation/renumbering. The claim is
-about the solver alone.
+Input: a parity game G = (V, V_E, V_O, E, pr) in TARGET section 1's encoding: n, the owner bit of each vertex, pr(v) in
+binary with pr : V -> {0, ..., n}, and the edge list; V finite, every vertex has a successor (self-loops allowed, losing
+ones included), max-parity; n = |V|, m = |E|, input length Θ((n + m) log n). If priorities outside {0..n} are given,
+TARGET's compression (sort, keep order and parity) is applied first, on the encoding, before anything else (C-1).
+Step 0 (input construction, charged): write the game in PGSolver text and run Oink's parser
+`PGParser::parse_pgsolver_renumber` with bad-loop removal OFF (`--no-loops`, src/tools/solve.cpp:263), which builds the
+out- and in-edge arrays (O((n + m) log n) word operations); then `game.ensure_sorted()` (oink.cpp:35; game.cpp:495
+`std::sort` on priorities), i.e. reindex the vertices in SOME order that is non-decreasing in priority. Equal-priority
+vertices may come out in any order (D-4): Theorems D1 and D2 are claimed for EVERY such order.
+Step 1: `DTLSolver::run()` (dtl.cpp 1072-1161) with `interleaved = false`, all vertices enabled, G := V, as reached by
+the command `oink --dtl --no-single --no-wcwc --no-loops` (the pinned A_DTL; Lead decision D-1 option (i), 16:02Z):
+no single-parity solving, no winner-controlled-cycle removal, no self-loop removal by the parser or by
+`Oink::solveSelfloops`, no inflate/compress/renumber, no bottom-SCC loop, release build (`NDEBUG`, scripts/setup_oink.sh:19),
+`trace = 0` (D-3: with trace ≥ 1 a dominion at recursion depth ≠ 0 would call exit(-1) at dtl.cpp 349-354; with trace = 0 it
+is accepted). The duplicate-tangle block dtl.cpp 385-424 IS part of the algorithm (`#define CHECK_UNIQUE (1 or !NDEBUG)`,
+line 23): a new SCC whose sorted vertex set equals a stored tangle's (strategies not compared) is discarded and does
+not count as a change (D-2). The loops 1109-1121 run Even's search to exhaustion, then Odd's (the comment at 1107 says
+the opposite; the code is followed, A-2). Output: for every vertex v solved by `Solver::solve(v, player, str[v])` (1034): v
+is put in W_player and, if owner(v) = player, sigma_player(v) := str[v]. Vertices never solved are output as unsolved
+(Oink::solveLoop, oink.cpp:405-420, returns after run()). A_IDTL is the same with `interleaved = true` (1125-1138).
+The ANALYSED OBJECT (E-2) is the pseudocode docs/alg/candidates/C5-DTL.md, updated to this pinned A_DTL (stack,
+consumption, CHECK_UNIQUE, trace = 0, self-loops as given). Every proof below is about that pseudocode; the line numbers
+of dtl.cpp are given so that the correspondence can be checked. The C++ ↔ pseudocode correspondence is a separate
+itemised section (section 7) to be signed on its own (TARGET section 6, D2 change 2).
 
 ### 0.2 Theorem D1 (correctness and completeness)
-For every parity game G as in 0.1, A_DTL halts, solves every vertex exactly once, and the output satisfies
-  W_Even = W_E(G) and W_Odd = W_O(G)
-(TARGET section 1 definitions: W_E(G) = vertices from which Even has a strategy, general = history-dependent,
-winning every consistent play under max-parity; W_O likewise; W_E ⊔ W_O = V by determinacy). Moreover sigma_Even is
-a positional strategy on W_Even ∩ V_E such that every play starting in W_Even, consistent with sigma_Even, against
-every (general) Odd strategy, stays in W_Even and is won by Even; symmetrically sigma_Odd on W_Odd ∩ V_O.
-Same statement for A_IDTL, with "the exception `solver stuck` (line 1136) is never thrown" added.
+For every parity game G as in 0.1 and every order of equal-priority vertices in step 0, A_DTL halts, solves every vertex
+exactly once, and the output satisfies W_Even = W_E(G) and W_Odd = W_O(G) (TARGET section 1: W_E(G) = vertices from which
+Even has a strategy, general = history-dependent, winning every consistent play under max-parity; W_O likewise;
+W_E ⊔ W_O = V by determinacy). Moreover sigma_Even is a positional strategy on W_Even ∩ V_E such that every play starting in
+W_Even, consistent with sigma_Even, against every (general) Odd strategy, stays in W_Even and is won by Even;
+symmetrically sigma_Odd on W_Odd ∩ V_O. Same statement for A_IDTL, with "the exception `solver stuck` (line 1136) is never
+thrown" added.
 
 ### 0.3 Theorem D2 (running time, word RAM of TARGET section 3)
-Let tangles(G) be the final value of the counter `tangles` (line 463) and dominions(G) of `dominions` (line 375)
-on input G. There are polynomials p_a, ..., p_e such that for every G as in 0.1:
-  (a) tangles(G) ≤ p_a(n + m) (the tangle count);
-  (b) every call of best_vertices (643-776) executes at most p_b(n + m) pruning rounds (iterations of the loop 674-773);
+Let tangles(G) be the final value of the counter `tangles` (line 463; it counts tangles KEPT after the duplicate check)
+and dominions(G) of `dominions` (line 375). A_DTL is read as a RAM program whose C++ `int` and `unsigned int` are words
+of TARGET section 3's RAM (B-2): the claim is about that RAM program, not about 32-bit overflow behaviour. There are
+polynomials p_a, ..., p_e such that for every G as in 0.1 and every tie order:
+  (a) tangles(G) ≤ p_a(n + m);
+  (b) every call of best_vertices (643-776) executes at most p_b(n + m) pruning rounds (iterations of 674-773);
   (c) every call of search_rec (834-994), with its recursive calls, executes at most p_c(n + m) iterations of its loop
       850-993, at recursion depth ≤ d ≤ n + 1;
   (d) the number of calls of search (997-1069), i.e. the counter `iterations` (1111, 1119), is at most p_d(n + m);
-  (e) the total number of word operations of A_DTL, step 0 included, is at most p_e(n + m), on a word RAM with words
-      of O(log(n + m)) bits. Every number the algorithm manipulates is a vertex index (< n), a priority (≤ n), a
-      tangle index (≤ tangles(G)), a queue/stack position (≤ n) or a bit of a bitset of n bits (lines 837-840, 651-654:
-      bitset copies and resets cost O(n / log n) words each). No number has more than one word, so the unit-cost
-      count equals the bit-cost count up to the constant of the word size (TARGET section 3, second bullet, is met by
-      construction, not by assumption).
+  (e) the total number of word operations of A_DTL, measured from TARGET's encoding and including step 0 (compression
+      if needed, parsing, edge arrays, sorting), the duplicate-tangle checks (385-424: O(tangles(G) · n) per extracted
+      SCC), the tangle storage (443-458: O(n) per kept tangle, `tin` back-links included) and the dominion removal
+      (1023-1040), is at most p_e(n + m), on a word RAM with words of O(log(n + m)) bits. Every number the program
+      manipulates is a vertex index (< n), a priority or threshold (≤ n + 1 after compression; the sentinels -1 at
+      lines 74, 117, 1036 and the initial thresholds 0 at 585/898 are constants), a queue/stack position (≤ n), a bit of
+      an n-bit bitset (copies and resets cost O(n / w) words), or one of `tangles`, `dominions`, `iterations`, a tangle
+      index: these are at most the number of steps executed, so they have O(log(n + m)) bits once (e) holds (B-1; not
+      "by construction"). The unit-cost count therefore equals the bit-cost count up to the word-size constant.
 Same for A_IDTL.
 
 ### 0.4 Diff against TARGET.md v1.0
-- Section 1, objects: identical (finite V, successor-closed, pr into {0..n}, max-parity, general strategies in the
-  definition of W_E, W_O). DTL also accepts larger priorities; the bound (e) uses pr ≤ n only in the threshold loop
-  `for t = 0..priority(nodecount()-1)` (722) and in the recursion-depth bound (c). For an input with priorities not in
-  {0..n}, TARGET's compression step (O(n log n), charged to the algorithm) is applied before step 0; it preserves order
-  and parity, and DTL's behaviour depends on priorities only through their order and parity (every comparison in
-  dtl.cpp is `priority(u) <= t`, `priority(v) > t`, `priority(u) == t`, or `priority & 1`: lines 74, 140, 594, 613,
-  663, 714 via attracts, 737, 901, 904, 937, 938, 1008), so A_DTL on the compressed game makes the same choices.
+- Section 1, objects: identical (finite V, successor-closed, self-loops allowed, pr into {0..n}, max-parity, general
+  strategies in the definition of W_E, W_O). Priorities are used by dtl.cpp as follows (C-1, complete list): comparisons
+  with a threshold `priority(u) <= t`, `priority(v) > t`, `priority(u) == t` (74, 140, 594, 613, 737, 901, 904, 937, 938)
+  and through attracts (714, 738, 906); parity `& 1` (118, 215, 663, 1008, 1088); the loop `for (t = 0; t <= max_prio; t++)`
+  with `max_prio = priority(nodecount()-1)` (721-722); initial thresholds `t = 0` at 585 (NDEBUG only) and 898 and
+  `t = priority(v)` at 904; the sentinel `max_prio < 0` with -1 (74, 1036-1037) and `tpr[t] == -1` for deleted tangles
+  (117, 134, 461 stores a priority); `std::sort` by priority (game.cpp:495). Commutation with TARGET's compression
+  (applied before parsing, so Oink's int priorities never overflow): compression preserves order and parity, so every
+  threshold comparison and parity test gives the same result on both games provided thresholds are mapped along;
+  (i) an iteration of 721-722 at a threshold t such that no priority lies in (t', t] (t' the largest occurring
+  priority ≤ t) attracts nothing new (every rule compares `priority ≤ t`, and the sets reached at t' and t coincide)
+  and clears no candidate (737-738 test the same set), so the sequence of visited states is the same and only the
+  number of empty iterations differs; (ii) the initial `t = 0` at 898 is compared only with occurring priorities and
+  then replaced by `priority(v)` (904), so it acts as "below the least occurring priority" in both games (and a
+  vertex of priority 0 attracts to X at level 0 in both). Hence A_DTL makes the same choices on G and on its
+  compression, and the bound (e) is stated for the compressed game, whose n and m are the input's.
 - Section 2, target statement: TARGET asks for (W_E(G), W_O(G)); D1 gives these as (W_Even, W_Odd) plus strategies.
-  "Halts within p(n + m) steps": D2(e). Deterministic: yes (no randomness in dtl.cpp; the FIFO queue `Q` (uintqueue)
-  and Oink's edge-list order fix every choice).
-- Section 3, model: word RAM, O(log(n + m))-bit words: D2(e) counts word operations and names every number's size.
-  No arithmetic on long numbers anywhere in dtl.cpp (no weights, no counters beyond `tangles`, `dominions`,
-  `iterations`, `steps`, `curdist`, each ≤ p_e(n + m)).
-- D2 change 5 (strategies): D1 outputs positional strategies and states they win; the fleet's L-COMP check (step 2)
-  verifies them on every test game; the proof obligation is D1's last sentence.
-- Not claimed: anything about Oink's preprocessing, `--inflate/--compress`, parallel solvers, or games with
-  disabled vertices.
+  "Halts within p(n + m) steps": D2(e), measured from TARGET's encoding (E-3). Deterministic: for a fixed tie order yes
+  (no randomness; the stack `Q` and Oink's edge-list order fix every choice); the theorems are claimed for every tie
+  order, so the choice made by `std::sort` does not matter (D-4).
+- Section 3, model: word RAM, O(log(n + m))-bit words: D2(e) as stated.
+- D2 change 5 (strategies): D1 outputs positional strategies and states they win; the fleet's L-COMP check (step 2,
+  to be re-run on the pinned command with `--no-loops`) verifies them on every test game.
+- Section 5 step 4 / section 6 (E-1): D1 and D2 with their proofs are the refereed-only part of step 4; the Lean
+  formalisation of correctness (TARGET section 6) is still owed and is L-FORMAL's; D2 change 2's correspondence item is
+  section 7.
+- Not claimed: anything about Oink's preprocessing, `--inflate/--compress`, parallel solvers, or games with disabled
+  vertices. Evidence gathered before 16:02Z used the command without `--no-loops` (parser bad-loop removal and
+  solveSelfloops on) and is therefore about a different algorithm on games with losing self-loops; the re-runs with
+  `--no-loops` are listed in section 6.
 
 ### 0.5 What a GAP looks like here
 If a step below is a GAP, the deliverable is the exact failing claim and a candidate instance shape (section 5).
@@ -81,6 +111,27 @@ attractTangles(p, v, R, Z, Gx, t)" (sptl 488-496, best_vertices 697-702 and 727-
 967-975, search 1032-1038). Q is a STACK: uintqueue.hpp `pop()` returns `queue[--pointer]` (LIFO). The brief's phrase
 "FIFO attractor order" does not describe the code; nothing below depends on FIFO.
 
+### 1.0 Tie order and self-loops — PROVED (reading)
+Tie order (D-4). Every argument below uses the index order only through "descending index = non-increasing priority"
+(the loops 481, 691, 713, 878, 936, 962 and the ascending scan 899); no argument compares the indices of two vertices of
+equal priority, and every set computed (attractors, regions, A, V) is the same for every tie order (Lemma 1.2: closures
+are order-independent; the region decomposition processes equal-priority tops in index order, and the proofs only use
+that a top processed earlier has priority ≥ a top processed later). The strategies str and the extracted SCCs DO depend
+on the order; the theorems are claimed for each order and every proof below holds for each order.
+Self-loops (D-1). A self-loop v → v is in outs(v) and ins(v). Effects, each covered where used: (s1) at the pop of a
+region's top τ, τ ∈ ins(τ) with τ ∈ Z and str[τ] = -1, so a p-owned top with a self-loop gets str[τ] := τ (73) and the
+region is closed at once; the SCC {τ} is nontrivial by 316 (`str[n] == n`), and its cycle has priority pr(τ) of parity p:
+TS(ii) holds. (s2) An opponent-owned vertex u with a self-loop is never attracted by rule (V): at 78-85 its loop is a
+successor in Gx \ Z while u ∉ Z. It can enter an attractor only through rule (T) or as the start vertex; as an
+opponent-owned top of p-parity priority (u ∈ V), its region is closed iff all its other successors are outside R
+(519-525; the loop target u itself is removed from R at 490), and then {u} is extracted by 317 (`str[n] == -1 and
+has_edge(n, n)`) with escapes = u's other G'-successors outside {u}: a dominion iff it has none. (s3) attracts (40-57) for a
+p-owned v with a self-loop: the loop counts iff v ∈ Z; for an opponent-owned v the loop is a successor in R \ Z unless
+v ∈ Z, so an opponent-owned candidate with a self-loop never attracts (714, 738) and is pruned; it is solved, if p-won,
+as a top (s2) or through a tangle. (s4) A p-vertex u ≠ top with a losing self-loop (opponent parity) never has str[u] = u:
+str is set at 89 to the popped vertex v ≠ u (u ∉ Z at that time, so u is not being popped) or at 171 to a tangle
+strategy, and tangle strategies at u are set by 89/73 in an earlier region; the only self-assignment is (s1) at a top,
+whose priority has parity p. So every cycle used in TS is as analysed in 1.3, with the loop case (s1) included.
 ### 1.1 attracts (40-57) — PROVED (reading)
 attracts(p, v, Z, R) = [owner(v) = p and v has a successor in Z] or [owner(v) != p and v has a successor in Z and no
 successor in R \ Z]. Edges to vertices outside R ∪ Z are ignored (lines 52-55). This is the "escapes to outside R are
@@ -495,6 +546,14 @@ Lemma M part (c) and §5(a) assume FIFO/BFS and are void as written; (M1)-(M3) r
 | 3 (e) | PROVED conditional on (a) | 3 |
 | 3 (a) tangle count | GAP-A | 3 |
 | 4 idtl | PROVED (same) | 4 |
+Re-runs on the PINNED command (`--no-loops`, after CHECKER C3 D-1): experiments/alg/dtl_check.py --no-loops, dtl and
+idtl, regions against harness Zielonka and positional strategies verified by harness verify.py: instance library 126
+games ok, every canonical game n = 1, 2, 3 (4 + 240 + 41,440) ok, each solver; the n = 4 sections need
+experiments/alg/out/psolc_fail_n4.jsonl (518 s to regenerate, not re-run here). experiments/alg/dtl_debug_fuzz.py with
+DTL_NO_LOOPS=1 (NDEBUG checks on, -t): seed 21, 20,000 random games with self-loops (rngame), dtl and idtl: 0 failures,
+every run "solution verified". So no correctness failure appeared on the pinned algorithm.
+Changelog after the 17:25Z park point (the Lead asked for §1-2.1 to stay stable): 17:45Z §0 rewritten per CHECKER C3;
+§1.0 (tie order, self-loops) ADDED to §1; §7 (correspondence table) added; nothing in 1.1-2.1 changed.
 Debug-build oracle (experiments/alg/dtl_debug_fuzz.py, NDEBUG checks on, dtl and idtl, -t so that a dominion at depth > 0
 exits): seed 7, 30,000 random games (n 4..12, priorities ≤ n, out-degree 1..3): 0 failures, every run "solution verified";
 seed 11, 20,000 games: 0 failures. Hand-built candidates (experiments/alg/instances/dtl_proof_c1.pg, c2, c3; all three are
@@ -509,3 +568,19 @@ extraction, no unsolved vertex, ever); tc+ N = 6 (58 tangles, 14 searches) has 0
 configuration (a duplicate at a closed region) was never observed. This is the mechanism that defeated every
 hand-built completeness counterexample: a stored tangle with an escape in a higher region is pulled into that region at
 the escape's pop, and the region continues through the tangle's vertices.
+
+## 7. Correspondence dtl.cpp @ 8fbf0a7 ↔ C5-DTL.md (itemised; to be signed separately, TARGET section 6 / D2 change 2)
+| C5-DTL.md item | dtl.cpp lines | status |
+| --- | --- | --- |
+| conventions: sorted indices, stack Q, bitsets, str, tangles tv/tout/tpr/tin | oink.cpp:35; uintqueue.hpp pop = `queue[--pointer]`; dtl.hpp | re-read 2026-10-15, stack corrected |
+| attracts | 40-57 | exact |
+| attractVertices (incl. str at 73/89, escape test 78-85, threshold 74) | 65-101 | exact |
+| attractTangle (deleted/parity 117-118, G' 132-135, R 138, maxpr 140, new 143-146, escapes 152-158, push 163-182) | 109-185 | exact |
+| attractTangles = for t in tin[v] | 197-202 | exact |
+| extractTangles: Pearce from top, is_tangle 315-317, escapes vs G' 327-341, dominion 347-379, duplicate check 385-424, store 439-466 | 210-471 | exact; CHECK_UNIQUE named |
+| sptl: regions on the consumed copy, closed test, W, extraction | 476-546 | exact |
+| best_vertices: V init, rounds, ONE CurR per round, candidates, threshold loop, prune, returns | 643-776 | exact after the 16:30Z correction |
+| search_rec: result 0/1/-1 branches, Dom(V,R), lowest level, Z, t-level to X, opponent attractor, recursion | 834-994 | exact |
+| search: copy of G', search_rec, W reset, dominion extension and removal, return value | 997-1069 | exact |
+| run: dtl loops (Even then Odd), idtl loop and `solver stuck`, NDEBUG-only completeness check | 1071-1161 | exact |
+| omitted as not part of A_DTL: computeDistanceValues 553-639 (NDEBUG/trace only), new_algorithm 778-831 (commented out), all `trace` output, `steps` (never incremented) | | |

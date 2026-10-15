@@ -1,7 +1,7 @@
 # L-ALG notebook — successor session (session_012cQPWcEm23KMdMQSvWrULr), 2026-10-15
 
 ## Resume point
-- Task: DTL gauntlet step 4 (Lead go 15:50Z, box to 23:50Z). Deliverable docs/alg/DTL-proof.md (statement §0; §1 primitives
+- PARKED 17:50Z by the Lead (resume with L-RED's ~19:30Z findings). Task: DTL gauntlet step 4 (Lead go 15:50Z, box to 23:50Z). §0 revised after CHECKER C3 (A_DTL pinned with --no-loops, every tie order, CHECK_UNIQUE, trace 0); dtl_check.py and dtl_debug_fuzz.py take --no-loops; results in DTL-proof.md §6. Deliverable docs/alg/DTL-proof.md (statement §0; §1 primitives
   PROVED; §2.1 soundness PROVED; §2.2 halting PROVED; §2.3 completeness SKETCH with GAP-C; §3 running time (b)(c)(d) PROVED,
   (e) conditional on (a), (a) GAP-A; §4 idtl; §5 gaps; §6 status + evidence). Last push: see git log (claude/l-alg).
 - Lead session for messages: session_014FBi6o334DvwT5Uw2kDfoN. Push: scripts/verify.sh && git push -u origin claude/l-alg.
@@ -12,6 +12,31 @@
   (S) stable regions, (Z) level-t attractor to X, (P) Dom(prevV) with Q empty must be handled; K5 settles the lowest region
   at X = ∅ except for straddling tangles. (2) GAP-A: bound the number of distinct SCCs extracted at one top; data says ≤ n.
 - Handover (docs/agents/LANE-RESTART.md step 1) still to be written if the session is replaced; this file is the draft.
+
+## Two most promising untried ideas for GAP-A (the tangle bound), for a fresh mind
+- Idea 1 (count SCCs per top by DFS-parent changes, LIFO-exact). In a closed region, the SCC at top τ = the closure of
+  str[τ] under "p-vertex → its DFS parent, opponent vertex → all its Z-successors" (parents form a tree toward τ, so every
+  vertex of Z reaches τ and the SCC is exactly what τ reaches). A p-vertex changes its parent only if the depth-first
+  discovery order changes before it is reached, and under LIFO a tangle fired at a pop is explored before that pop's
+  vertex predecessors. Conjecture to prove: with the region's vertex set fixed, each p-vertex's parent changes at most
+  once per tangle that fires in the region for the first time (a first firing is permanent in a fixed context by M4),
+  and the SCC at τ changes only when the parent of a vertex on the current cycle through τ changes; so tangles at τ in a
+  fixed context ≤ 1 + (first firings in Z_τ) + (vertex joins ≤ n). Then sum over contexts (≤ n(d+1) per search by D2(c)).
+  The gap this leaves: first firings of tangles learned at τ itself in LATER contexts (same top, different R), which is
+  L-RED's "lower tangles already absorbed by an earlier one and firing later" case (R8 §10). Test on tc+ with the debug
+  trace: per top, log (vertex, parent) at each extraction and count parent flips vs first firings.
+- Idea 2 (potential on escapes). A stored tangle's escapes are fixed at creation; a tangle fires in a region iff all its
+  escapes are covered (in Z or forgiven) and one is popped. Over one player's phase, G' only shrinks, so the set of
+  "coverable" escape configurations is monotone except through thefts (M3, ≤ n per vertex per level). Conjecture: the
+  number of distinct (region vertex set, set of fired tangles) pairs at a top is O(n) per context because fired sets are
+  monotone in the context and change only when a NEW tangle appears, each new tangle being charged to the top where it
+  was learned; a counter would need the same new tangle to change the fired set at many tops, i.e. one tangle with
+  escapes in many regions — bound that by |tout| ≤ n per tangle, giving tangles ≤ n · (first firings) and first firings
+  ≤ Σ_t |tout(t)| · (contexts) ... circular unless contexts are bounded independently of |T| (they are: D2(c)); so the
+  real obstruction is whether one tangle can fire "for the first time" in the same region more than once across
+  searches (it can: after a theft of one of its vertices it stops firing, and after the vertex returns — impossible,
+  heads move up — it cannot restart; so first firings per (tangle, region) ≤ 1 + thefts). Write this out; it may close
+  (a) for the non-recursive part and leave only the search_rec −1 pieces.
 
 ## DONE (this session; all on claude/l-alg, verify PASS at every push)
 - docs/agents/handover-checks/L-ALG.md (b720b0b; Lead re-measured 5/5).
