@@ -154,18 +154,26 @@ int main(int argc, char** argv) {
         const auto& val = e.evaluate(s).first;
         for (int v = 0; v < g.n; v++) { printf("%d %d", v, val[v].c); vector<int> rs; for (int r = 0; r < g.n; r++) if ((val[v].path[r / 64] >> (r % 64)) & 1) rs.push_back(r); printf(" ["); for (size_t i = 0; i < rs.size(); i++) printf("%s%d", i ? "," : "", rs[i]); printf("] %d\n", val[v].len); }
         return 0; }
-    vector<int> strat = e.initial(start, rng); long it = 0;
+    vector<int> strat = e.initial(start, rng); long it = 0; long ties_idx_global = 0;
     if (start.rfind("spec:", 0) == 0) { stringstream ss(start.substr(5)); string tok; while (ss >> tok) { int c = tok.find(':'); strat[stoi(tok.substr(0, c))] = stoi(tok.substr(c + 1)); } }
     if (rule == "rfstar") { vector<vector<int>> F(g.n); for (int v = 0; v < g.n; v++) if (g.owner[v] == 0) { F[v] = g.succ[v]; for (int w : g.succ[v]) e.perm.push_back({v, w}); }
         shuffle(e.perm.begin(), e.perm.end(), rng); strat = e.rfstar(strat, F); it = e.rar_switches; }
     else if (rule == "rar") { vector<vector<int>> F(g.n); for (int v = 0; v < g.n; v++) if (g.owner[v] == 0) F[v] = g.succ[v]; strat = e.rar(strat, F, rng); it = e.rar_switches; }
     else {
-        map<pair<int,int>, long> entered; pair<int,int> last = {-1, -1};
+        map<pair<int,int>, long> entered; pair<int,int> last = {-1, -1}; long ties_idx = 0;
         while (true) { const auto& val = e.evaluate(strat).first; auto imp = e.improving(strat, val); if (imp.empty()) break; it++;
             if (rule == "switch-all") { vector<int> nw = strat; for (int v = 0; v < g.n; v++) if (g.owner[v] == 0) { int b = g.succ[v][0]; for (int w : g.succ[v]) { int c = e.cmp(val[w], val[b]); if (c > 0 || (c == 0 && w > b)) b = w; } if (e.cmp(val[b], val[strat[v]]) > 0) nw[v] = b; } strat = nw; }
             else if (rule == "random-edge") { auto [v, w] = imp[rng() % imp.size()]; strat[v] = w; }
             else if (rule == "zadeh") { auto best = imp[0]; long bc = entered[best]; for (auto& ed : imp) { long c = entered[ed]; if (c < bc || (c == bc && ed < best)) { best = ed; bc = c; } } entered[best]++; strat[best.first] = best.second; }
             else if (rule == "cunningham") { pair<int,int> pick = {-1,-1}; for (auto& ed : imp) if (ed > last && (pick.first < 0 || ed < pick)) pick = ed; if (pick.first < 0) pick = *min_element(imp.begin(), imp.end()); last = pick; strat[pick.first] = pick.second; }
+            else if (rule == "most-improved") { // S7: switch maximising the number of vertices whose valuation strictly improves;
+                // ties: best new valuation at v (cmp), then smallest (v, w) (index; non-invariant last resort, counted in ties_idx)
+                pair<int,int> best = {-1,-1}; long bc = -1; Val bv; vector<int> bs;
+                for (auto& ed : imp) { vector<int> s2 = strat; s2[ed.first] = ed.second; const auto& v2 = e.evaluate(s2).first;
+                    long c = 0; for (int x = 0; x < g.n; x++) if (e.cmp(v2[x], val[x]) > 0) c++;
+                    int better = 0; if (best.first < 0 || c > bc) better = 1; else if (c == bc) { int d = e.cmp(v2[ed.first], bv); if (d > 0) better = 1; else if (d == 0) { ties_idx++; if (ed < best) better = 1; } }
+                    if (better) { best = ed; bc = c; bv = v2[ed.first]; bs = s2; } }
+                strat = bs; ties_idx_global = ties_idx; }
             else if (rule == "msf" || rule == "lsf") { auto best = imp[0]; int bl = e.level3(val[strat[best.first]], val[best.second]);
                 for (auto& ed : imp) { int l = e.level3(val[strat[ed.first]], val[ed.second]); bool better = rule == "msf" ? (l > bl || (l == bl && ed < best)) : (l < bl || (l == bl && ed < best)); if (better) { best = ed; bl = l; } }
                 strat[best.first] = best.second; }
@@ -173,6 +181,7 @@ int main(int argc, char** argv) {
     }
     const auto& ev = e.evaluate(strat); const auto& val = ev.first; const auto& tau = ev.second;
     fprintf(stderr, "solved with %ld iterations, %ld evaluations.\n", it, e.evals);
+    if (rule == "most-improved") fprintf(stderr, "index tie-breaks used: %ld\n", ties_idx_global);
     FILE* out = stdout; if (argc > 3 && string(argv[3]).rfind("--", 0) != 0) out = fopen(argv[3], "w");
     fprintf(out, "paritysol %d;\n", g.n);
     for (int v = 0; v < g.n; v++) { int win = e.par[val[v].c];
