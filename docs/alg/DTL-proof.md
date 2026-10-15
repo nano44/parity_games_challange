@@ -306,6 +306,25 @@ level up; the ladder must close at the top with a vertex whose cover does not ex
 here collapsed (the top of the ladder is attracted). A counterexample needs the ladder to close through X (a piece
 removed by Dom(prevV, R) earlier in the same search), i.e. two such dominion-like structures in one game, the first
 removed as "distractions" with Q empty, the second using escapes into the first.
+What a proof of Lemma K has to look like (for whoever continues). Any induction over the iterations of search_rec needs a
+hypothesis of the form "if the iterations from state (R, X) on learn nothing, then R contains no structure of kind Φ".
+Two natural choices fail: Φ = "p-dominion of R with exits into X forgiven" is refuted by a stored tangle t with all
+escapes in X (it is such a structure, its SCC is a duplicate by K2, nothing is learned: consistent with the code), and
+Φ = "p-dominion of R closed in G'" is what is wanted at depth 0 but is not preserved by the pieces: the −1 branch with Q
+empty (961-991) removes Dom(prevV, R), which can contain vertices of such a dominion (c3: m and r), after which the
+dominion is no longer inside R. The hypothesis must therefore carry the removed pieces along, e.g. Φ = "p-dominion D
+closed in G' such that D ∩ R ≠ ∅ and every escape of every stored tangle inside D ∩ R lies in D ∩ X only if that
+tangle is ...", and the step for a type-P piece must show that the regions of pruned tops never separate a closed
+dominion from the tangle that would be learned in it. K5 (lowest region closed unless straddling) is the step for
+type-S pieces at X = ∅; its extension to X ≠ ∅ holds verbatim (X is forgiven in both the threshold loop and the sptl
+region), so after type-P/Z pieces the first stable set's lowest region is closed and its bottom SCC is new or has all
+escapes in those pieces (K2). A failing search is therefore of one of two shapes: (α) straddling at the lowest top of
+every stable set, or (β) the first stable set's lowest SCC is a stored tangle whose escapes lie in the type-P/Z pieces
+removed before it in the same search. Shape (β) is the one to try first (it needs only two generations: the tangle is
+learned in search s1 while its escape vertices are still "best"; in search s2 those escape vertices are pruned and removed
+by the −1 branch before the tangle's region is reached). In c3 shape (β) is avoided because the stored tangle fires in the
+threshold loop and rescues the higher top; (β) needs the escape vertices to be unreachable by any rescue path, i.e. of
+priority above every surviving top's threshold.
 Evidence (not proof): L-ALG 67,000+ games and L-RED's 120,000-mutation hill-climb for unsolved vertices found none; a
 new oracle run on a DEBUG build (NDEBUG checks on: "search was incomplete!" and the depth-0 dominion check 349-355)
 is experiments/alg/dtl_debug_fuzz.py (results in section 6).
