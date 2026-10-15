@@ -59,3 +59,22 @@ write docs/si/RESULTS.md and DEAD.md, plots, check.sh, verify, push, message the
 
 ## Dead ends
 (see docs/si/DEAD.md once a candidate is killed; each entry here repeats the killer in one line)
+
+## Freezing observation for MSF (2026-10-15 11:00Z; data + proof sketch, UNREFEREED, not a result)
+Setting: VJ valuations, lexicographic order (cycle node first, then path set by rank, then length). Level of an improving edge
+(v, w) = rank of the first difference between Ξσ(w) and Ξσ(σ(v)) (docs/si/candidates/S2.md). Call the switch cycle-creating
+if v lies on the path set of Ξσ(w).
+Claim F: a NON-cycle-creating single improving switch at level r changes no vertex's cycle node and no path bit of rank > r.
+Data: experiments/si/freeze_test.py: 0 violations over ~6000 MSF switches on 6000 random games and ~6000 on 6000 1-sink
+games (n ≤ 9), same for msfa and msfc; every observed violation is a cycle-creating switch (2-3 per 6000 games) or a
+cycle-node change (all of them cycle-creating switches, to be re-checked).
+Proof sketch: let τ be Odd's optimal counterstrategy for σ. Under (σ', τ) with σ' = σ[v→w], the play from any u either avoids v
+(value unchanged) or runs P·v·(τ-path from w); the τ-path from w cannot re-enter P∪{v} (it would then reach v, contradicting
+v ∉ path(w)), so its value is P ∪ {v} ∪ path(w) with the old cycle node, which agrees with the old value P ∪ {v} ∪ path(σ(v))
+above rank r. Ξσ'(u) lies between Ξσ(u) (Friedmann Thm 3.2) and this value; two valuations agreeing above r sandwich only
+valuations agreeing above r. Gap: the "cannot re-enter" step needs the τ-path from w under σ' to equal the one under σ,
+true because the only changed edge is at v and the path avoids v.
+Consequence (if F holds): in a run with no cycle-creating switches, MSF makes ≤ n switches at the top level, and level r is
+revisited only after a higher-level switch; this gives only an exponential bound by itself (S_r ≤ n(1 + S_{>r})). The
+adversary's tool is a high-level improving edge that is cycle-creating until low-level switches change the paths; then it
+fires late and unfreezes everything below. Variants: msfa (prefer non-cycle-creating edges), msfc (prefer cycle-creating).

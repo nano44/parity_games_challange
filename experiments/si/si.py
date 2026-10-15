@@ -276,6 +276,17 @@ class Engine:
         new = list(strat); new[arg[0]] = arg[1]
         return tuple(new)
 
+    def rule_msfa(self, strat, val, imp, rng):
+        """MSF-A: most significant first among the improving edges (v, w) whose target path does not pass through v
+        (v not in the path set of w, i.e. the switch creates no new cycle through v); if there is none, plain MSF."""
+        acyc = [(v, w) for v, w in imp if not (val[w][1] >> self.rank[v]) & 1]
+        return self.rule_single_level(strat, val, acyc if acyc else imp, rng, True)
+
+    def rule_msfc(self, strat, val, imp, rng):
+        """MSF-C: the opposite preference: cycle-creating improving edges first (highest level), else plain MSF."""
+        cyc = [(v, w) for v, w in imp if (val[w][1] >> self.rank[v]) & 1]
+        return self.rule_single_level(strat, val, cyc if cyc else imp, rng, True)
+
     def rule_steepest(self, strat, val, imp, rng):
         best, arg = None, None
         for v, w in imp:
@@ -384,6 +395,8 @@ RULES = {
     "random-edge": lambda e: e.rule_random_edge,
     "msf": lambda e: (lambda s, v, i, r: e.rule_single_level(s, v, i, r, True)),
     "lsf": lambda e: (lambda s, v, i, r: e.rule_single_level(s, v, i, r, False)),
+    "msfa": lambda e: e.rule_msfa,
+    "msfc": lambda e: e.rule_msfc,
     "steepest": lambda e: e.rule_steepest,
     "most-improved": lambda e: e.rule_most_improved,
 }

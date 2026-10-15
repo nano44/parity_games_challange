@@ -88,6 +88,21 @@ def zadehexp(n):
     return g.dumps()
 
 
-GENS = {"randomfacetsubexp": randomfacetsubexp, "zadehexp": zadehexp}
+def dlmm_bland(n):
+    """Disser-Loho-Maat-Mosis arXiv 2512.16684 v2, Fig. 4.1 / proof of Lemma 4.4: the binary-counter sink parity game G_n for
+    Bland's rule.  Levels i = 1..n: a_i (Even, priority 2i+1) -> b_{i+1} (Bland number 2i), a_{i+1} (Bland number 2i-1);
+    b_i (Odd, priority 2i+2) -> b_{i+1}, a_{i+1}; b_{n+1} (Odd, 2n+4) -> sink; a_{n+1} = sink (Odd, priority 1, self-loop).
+    Vertex ids: sink 0; a_i = 2i-1, b_i = 2i (i = 1..n), b_{n+1} = 2n+1.  The initial strategy sigma_0(a_i) = a_{i+1} is the
+    engine's "first" start (smallest successor index), which check.sh uses; Bland numbers are not used by L-SI's rules."""
+    sink = 0; A = lambda i: sink if i == n + 1 else 2 * i - 1; B = lambda i: 2 * n + 1 if i == n + 1 else 2 * i
+    rows = [f"{sink} 1 1 {sink} \"sink\";"]
+    for i in range(1, n + 1):
+        rows.append(f"{A(i)} {2 * i + 1} 0 {A(i + 1)},{B(i + 1)} \"a{i}\";")
+        rows.append(f"{B(i)} {2 * i + 2} 1 {A(i + 1)},{B(i + 1)} \"b{i}\";")
+    rows.append(f"{B(n + 1)} {2 * n + 4} 1 {sink} \"b{n + 1}\";")
+    return f"parity {2 * n + 1};\n" + "\n".join(rows) + "\n"
+
+
+GENS = {"randomfacetsubexp": randomfacetsubexp, "zadehexp": zadehexp, "dlmm_bland": dlmm_bland}
 if __name__ == "__main__":
     sys.stdout.write(GENS[sys.argv[1]](int(sys.argv[2])))
