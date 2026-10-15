@@ -219,3 +219,14 @@ Verdict at 8bb9d22: OK with fixes, signed subject to the one-token fix in case (
 by this signature: the Transfer Lemma as stated at 8bb9d22 and the consequence "Random-Action-Removal (S1) from any zero-edge
 start on P_{n,r,s,t} has the run distribution of Random-Facet on G_{n,r,s,t} from B_0, hence FHZ Thm 6.3's e^{Ω(√n)} expected
 switches", with FHZ Thm 6.3 as a black box.
+
+## 8. Appendix: the larger runs (completed after the pushes above; same tool, same three-way verdict)
+| (n, r, s, t) | trees | tests | ties in G | mismatches mine | mismatches, lane's objects |
+| --- | --- | --- | --- | --- | --- |
+| (2,2,1,2) | 3,779,136 | 120,932,352 | 40,870,656 | 0 | 0 |
+| (5,1,1,1) | 1,048,576 | 20,971,520 | 0 | 0 | not run |
+| (2,2,2,1) | 2,359,296 | 51,904,512 | 1,179,648 | 0 | not run |
+| (3,1,1,2) | 2,985,984 | 89,579,520 | 29,859,840 | 0 | not run |
+Lockstep (my Random-Facet on G vs my Rand-Act-Rem on P, same random stream): (5,2,2,2) seeds 0–1: 131 and 190 switches,
+identical sequences and final trees; (6,1,3,2) seeds 0–1: 198 and 142, identical. Totals over §5 and §8: 11,420,544 trees and
+307,785,000-odd tests with 0 disagreements, including every tie.
