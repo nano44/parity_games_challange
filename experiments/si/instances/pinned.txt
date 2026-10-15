@@ -1,0 +1,4 @@
+lsf zadehexp_N5.pg 441
+switch-all switchallexp_N3.pg 70
+S4 switchallexp_N3.pg 70
+msf zadehexp_N5.pg 51
