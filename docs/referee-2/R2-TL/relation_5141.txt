@@ -1,0 +1,1 @@
+relation n=5 r=1 s=4 t=1: 400 random (F, B) pairs, improving sets differ in 0
