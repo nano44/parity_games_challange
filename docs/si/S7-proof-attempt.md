@@ -167,6 +167,30 @@ Gap W (sink games WLOG?): no reduction known to L-SI. Friedmann 1106.0778 sectio
   In general games the cycle component changes at most n² times (notes 11:35Z, S9), so a bound for sink-seeking stretches
   would give a bound for general games only with an argument that stretches between cycle changes behave like sink games.
 
+## 4d. DEAD ROUTE: "every downstream-first run is polynomial" (refuted by L-RED, Lead 14:10Z; pending L-RED's push; credited to L-RED)
+L-RED computed, by dynamic programming over all trees, the exact longest downstream-first run on FHZ's one-player counter
+G_{n,1,1,1} (arXiv 1410.7530 Fig. 3) encoded as a sink parity game by the R2 encoding: 5, 20, 53, 124 for n = 1..4
+(unrestricted longest runs 7, 30, 85, 204); the df run is the counter's own increment sequence (lower bits reset through the
+higher level while that level is quiet). So the statement of 4c is FALSE already for one-player acyclic sink games: Gap
+DAG-1 is closed in the negative, and the df-filtered data of 4c only say that the ported counters' intended runs are not df,
+not that df runs are short. Unpadded S7 on P_{n,1,1,1}: 8, 14, 22, 32, 44 (n = 1..5, quadratic; L-RED).
+
+## 4e. Reformulation (the question S7 rests on at the end of the box)
+S7's order is the COUNT order (traffic, Lemma T) with the steepest-edge tie-break, not merely downstream-first. The question:
+can count-ranking be steered along an exponential downstream-first run on a polynomial-size game? Precisely: is there a
+polynomial family with a downstream-first run of super-polynomial length such that, at every step, the vertex the run switches
+is route-maximal among the improving vertices with a strictly larger count than every route-incomparable improving vertex
+(pads may add any non-negative constant to the traffic of any vertex, and the same constant to everything downstream of it),
+and its switched edge is the steepest? L-RED tests this as a linear program in pad values along FHZ's df run.
+For a proof of S7's polynomiality the contrapositive is what must be shown: along ANY exponential df run, the count order is
+violated at a constant fraction of steps for every pad assignment. The proof material available: Lemma T (count = traffic),
+Lemma D (downstream dominance), and the fact (PROVED, section 2) that a switch at v changes exactly up(v). What a proof would
+need beyond these: a lower bound on the traffic of the "correction" vertices that the counter must switch before a reopened
+bit, in terms of the traffic of the bit vertex, independent of pads. In FHZ's counter the corrections are the lower bits'
+own re-closings, which route through the higher level while it is quiet; whether their traffic can be padded above the
+reopened bit's traffic at every step is exactly the LP. Nothing in this box settles it; the attempt stops here.
+
 ## 5. Status
 Not a proof; not a disproof. Named gaps: T1 (genericity), D1-D2 (cycles in plays), P1 (re-openings by incomparable
-switches), P2 (no fixed progress order). The data on which 3.1 and 3.3 rely: experiments/si/out traces (vjfast --trace).
+switches), P2 (no fixed progress order), O (observation through Odd), W (sink games WLOG); DAG-1 closed negatively (4d);
+the live question is 4e (count-steering along a df run). The data on which 3.1 and 3.3 rely: experiments/si/out traces (vjfast --trace).
