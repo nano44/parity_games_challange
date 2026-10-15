@@ -193,12 +193,14 @@ leave V (752). Return 1 if nothing left or no candidates (716, 767), -1 with V :
 empty (768-771), else next round.
 NOTE N5 (the pruning is an iteration, not a greatest fixpoint of a monotone operator). Write F(V) for the set of
 survivors of one round started from V. R8 (M2) calls V* "the largest V such that ..."; that presumes F monotone (V ⊆ V'
-⇒ F(V) ⊆ F(V')). F is monotone when no stored tangle straddles, but not in general: let t' = {a, b, ...} be stored with
-strategy b → a, pr(b) > pr(τ_new) ≥ pr(a), a having an edge to τ_new, and let τ (lower than τ_new, pr(τ) ≥ pr(b))
-attract t' as a unit through an escape in Z_τ when V ∌ τ_new. With V' = V ∪ {τ_new}: a is consumed by Z_τ_new (rule V),
-t' no longer fires in Z_τ (138), b is not attracted by rule (V) (its only edge goes to the consumed a) and not by τ_new
-(priority), so b ∈ R_rem(V') although b ∈ Reg(V); a top whose rescue path ran through b can then be a candidate in V'
-and survive in V. What the code computes is the specific descending iteration V_0 ⊇ V_1 ⊇ ... from V_0 = R ∩ P_p, and
+⇒ F(V) ⊆ F(V')). F is monotone when no stored tangle straddles, but not in general: let t' = {a, c, d} be stored with
+strategy a → c, c → d, where d (opponent-owned) has edges to c, a and to an escape e, pr(a) = max (p-parity) and
+pr(c) > pr(d) so that c-d-c is a p-cycle; let a have an edge to a top τ_new with pr(τ_new) ≥ pr(τ) ≥ pr(a), where τ
+is a top whose region contains e. With V ∌ τ_new: at the pop of e in Z_τ, t' fires (all
+vertices in R), so c, d ∈ Reg(V). With V' = V ∪ {τ_new}: Z_τ_new is computed first and takes a by rule (V) (a → τ_new,
+pr(a) ≤ pr(τ_new)); c and d are not taken (d escapes to the unattracted c, c's only edge goes to d); in Z_τ, t' no longer
+fires (138: a is consumed), d escapes to c, c is not attracted: so {c, d} ⊆ R_rem(V'). A top whose rescue path ran through
+c or d can then be a candidate in V' and a survivor in V. What the code computes is the specific descending iteration V_0 ⊇ V_1 ⊇ ... from V_0 = R ∩ P_p, and
 every statement in this file is about that iteration.
 Lemma 1.6 (structure of R_rem). Let y ∈ R_rem. If owner(y) = p: no successor of y lies in a region Z_τ with
 pr(τ) ≥ pr(y). If owner(y) != p: y has a successor in R_rem, or every successor of y lies in Reg ∪ X ∪ (outside R) and
