@@ -532,6 +532,39 @@ Consequence (a5). Under (M-cross), the SCC extracted at τ is a function of (τ,
 number of tangles learned at first-piece tops is at most the number of distinct (τ, S) pairs that occur there. The
 Lead's (D) ("the region sets at a fixed top change only by join/theft/deletion/covering events and are monotone
 between thefts, so O(n) distinct sets per top per level") would then give O(n²) tangles from first pieces per phase.
+Towards (M-cross), region part (Lemma R-mono; SKETCH with the vertex cases PROVED, added 18:35Z). Setting: searches s < s'
+of one phase, no tangle deleted in between, T ⊆ T', G'' := G'_{s'} ⊆ G'_s, and (induction hypothesis on tops, descending)
+every first-piece top of s above τ that is unsolved is a first-piece top of s' and its s-region ∩ G'' lies in the union
+of the s'-regions of tops at or above it. Claim: for τ a first-piece top of s and s', Z_τ(s) ∩ G'' ⊆ ∪_{τ' ≥ τ} Z_τ'(s').
+Proof by induction over the push order of Z_τ(s).
+ (V, p-owned) y pushed at the pop of v (y → v): by IH v ∈ Z_{τ_v}(s') with τ_v ≥ τ; at τ_v's computation in s', y is
+   already consumed (done) or in R with pr(y) ≤ pr(τ) ≤ pr(τ_v) and an edge into Z: attracted (closure). PROVED.
+ (V, opponent) y: every successor of y in G'_s lies in Z_τ(s)-then, in a higher s-region, or is solved; by IH each
+   unsolved one is in an s'-region at or above τ; let τ* be the lowest of these; at τ*'s computation y is consumed or
+   unconsumed with all successors in Z_τ* ∪ consumed ∪ solved and pr(y) ≤ pr(τ*): attracted. PROVED.
+ (T) y pushed by a tangle t' at the pop of an escape e ∈ Z_τ(s)-then. By IH e and every other escape of t' are in
+   s'-regions ≥ τ or forgiven/solved; let τ* be the lowest escape region. If no vertex of U_t' is consumed above τ* in
+   s', t' fires at τ* (all vertices in R, priorities ≤ pr(τ) ≤ pr(τ*)) and y ∈ Z_τ*. Otherwise t' straddles; let Y be the
+   vertices of U_t' not in any s'-region above τ* when τ* is computed. Every p-vertex of Y has its stored strategy
+   s_t'(y) ∈ U_t' (TS(i)); if s_t'(y) were consumed above τ*, y would have been attracted into that region (its priority
+   fits), so s_t'(y) ∈ Y; every opponent vertex of Y has an exit in Y (otherwise all its exits are in Z_τ*, consumed, escapes
+   of t' — all handled — and it is attracted). Now look at the search s_0 ≤ s in which t' was created, at top a, where
+   U_t' ⊆ Z_a(s_0), and at the FIRST push event in Z_a(s_0) that pushed a vertex of Y. If it was rule (V) for a p-vertex y_1,
+   its target was s_t'(y_1) ∈ Y (73/89 set the stored strategy to the target), pushed earlier: contradiction. If it was
+   rule (V) for an opponent y_1, all its exits were in Z_a(s_0)-then, including its exit inside Y, pushed earlier:
+   contradiction. So the first Y-vertices entered Z_a(s_0) through an EARLIER tangle t_2 (creation order), with
+   Y ∩ U_t2 ≠ ∅. The open step (why this is a SKETCH): to conclude, apply the claim to t_2 — but t_2 need not lie inside t'
+   and need not have fired in s; what is needed is the stronger invariant "for every stored tangle t and every search in
+   which t fired in a first-piece region at or above τ, U_t ∩ G'' lies in s'-regions at or above τ", proved by induction on
+   creation order; the base case (a tangle all of whose vertices entered by rule (V) at creation) is the argument above, and
+   the step needs t_2's firing region in s to be at or above τ, which holds if t_2 fired inside Z_τ(s) or above (it did
+   in s_0 inside Z_a, but s_0 ≠ s in general). Everything measured (0 violations on 1,005 games with straddles present)
+   is consistent with the claim; the theft-orphan shape NOTE N5 describes requires exactly a Y whose first entry at
+   creation was a vertex rule, which the argument above excludes, so N5's F-non-monotonicity cannot be realised by a
+   single straddle: it needs nested tangles.
+ (V-tops) The top part of (M-cross) (first-piece tops only grow) then follows from R-mono plus the survival condition:
+   a top τ of s is a non-candidate or rescued through sets (Reg, A_t) that only grow by R-mono and 1.2b, except through the
+   same nested-tangle case. SKETCH.
 Caveat on (M-cross) (18:15Z). One mechanism provably breaks region monotonicity across searches: tangle DELETION. When a
 dominion is solved, every vertex v of it leaves G' and every tangle containing v is deleted at its next use (132-135). A
 region that in s1 attracted such a tangle t as a unit may, in s2, fail to attract the unsolved remainder Y' of U_t by
@@ -545,7 +578,10 @@ proof (a remainder could be split into several new tangles). (M-cross) is theref
 tangle set restricted to non-deleted tangles, between consecutive searches with no deletion in between, plus the
 deletion charge. Thefts are not a problem for Lemma S (a stolen vertex changes the set S).
 What remains open for (a): (M-cross) itself (evidence: 0 violations of first-stable-set monotonicity on 4,006 games;
-L-RED's 0 strategy differences), (D), and the same statements for later pieces (X ≠ ∅) and the recursion, where the
+region part tested with experiments/alg/dtl_regions_monotone.py on the debug trace — for consecutive same-player searches
+whose first best_vertices call is stable, every first-piece top stays a top and its region minus solved vertices lies in
+the union of its own and the higher tops' later regions: 0 violations on 1,000 random games and tc+ N = 4, 6, 8 (which
+contain straddling tangles) and c3, c4; L-RED's 0 strategy differences), (D), and the same statements for later pieces (X ≠ ∅) and the recursion, where the
 consumed set includes X and the argument of (3) needs X to be monotone across searches as well.
 Data for the shape of (a) (experiments/alg/dtl_pertop.py on the debug trace; a tangle's top = its maximum-index vertex):
 | tc+ N | tangles | iterations | distinct tops | max tangles at one top | tops with 1 tangle |
