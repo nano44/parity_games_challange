@@ -64,3 +64,5 @@ D1 cap of 5 working sessions; no spend ceiling.
 ## 2026-10-15 11:09Z Lead (relayed to owner)
 Correction: D1's cap counts lanes only; fleet runs 4 of 5 (L-ALG, L-SI, L-LOWER, L-LIT check). Progress: L-SI rule S2a MSF not yet
 killed; linear iterations on all 15 bench families; adversarial search only to n=9; a lead, not a result (l-si c73f69e).
+
+## 2026-10-15 12:05Z Lead -> owner: Q9 (spend) added to QUESTIONS.md, put to the owner at once.

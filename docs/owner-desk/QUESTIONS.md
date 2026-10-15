@@ -113,3 +113,18 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
   algorithm lane, a strategy-improvement design lane, a spend ceiling.
   Owner answer 2026-10-15: "a". CLOSED: D6 / Lead reading L19 (trunk 62388b3): L-LOWER continues; second algorithm lane
   L-SI (strategy-improvement rule design) added beside L-ALG; at the D1 5-session cap (owner can raise it); no spend ceiling (D1 policy).
+
+## Q9: spend pace until the weekly allowance resets (TIME-SENSITIVE)
+- id: Q9 (from the Lead, 2026-10-15 12:05Z)
+- Background: at 12:02Z every fleet session reports the seven-day rate-limit window at status "allowed_warning" (not overage).
+  The weekly allowance resets 2026-10-21 21:00Z (~6.4 days). D1: on paid overage, stop the fleet and tell the owner. At today's burn
+  the weekly cap or overage could come well before the reset. Burn (Lead's figures): Fable lanes L-ALG $24.8, L-SI $29.1, L-LOWER
+  successor $21.1, L-RED (new, not yet reported); Lead $69.1. D1 requires Fable for attack lanes and referees.
+- Options: (a) continue at the current rate; accept a pause at the weekly cap until 10-21 21:00Z; stop at once on overage (D1).
+  (b) throttle: current boxes finish (L-RED ~19:20Z, L-LOWER 20:36Z, L-ALG 21:55Z, L-SI ~22:10Z); then at most 2 working lanes
+  until the reset, prioritised by live M4 candidates. (c) pause now: lanes write handovers and park; the Lead keeps hourly checks only.
+- Lead recommendation: (b).
+- Interim default until the owner answers: no new sessions or boxes; running lanes finish their boxes; one exception, a single
+  referee check of L-RED's Random-Facet transfer lemma.
+- Urgency: high (spend).
+- Status: open
