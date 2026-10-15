@@ -176,3 +176,4 @@
 - 21:02Z hourly sweep: no overage (seven_day warning). Lead 439k. L-COMP 218k idle with tc+ extension running; end-of-box ~23:40Z. No exceptions.
 - 21:13Z L-COMP end of box 011fec0 merged: step 2 first implementation clean. Next: second independent implementation from C5-DTL.md (TARGET §5 step 2), 4h.
 - 21:19Z L-COMP divergence #1 (289f145): idtl iteration counter not defined in C5-DTL.md; same computation. Queue for L-ALG resume: add C5 line; proof must hold for C5 open choices CH1-CH5 (edge order, tangle vertex order, Q push order, dominion recording).
+- 21:39Z OWNER-DESK relayed owner Q 'is DTL exactly Oink's?' and its answer; corrected: step 4 = proof attempt in progress (statement frozen L24, soundness/halting proved unrefereed, GAP-A/GAP-C open), not 'nothing'. Stale L-ALG line fixed.
