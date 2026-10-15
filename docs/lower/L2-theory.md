@@ -126,8 +126,15 @@ is a proof whatever the origin of its games (projection, R6). The core is not mi
 **Claim C2' (the count mechanism persists at n = 5; machine-checked, one solver).** Restricted to games with |P_2| ∈ {1, 2}
 (any owners, ≤ 5 vertices), 8 gates still do not suffice: cegar5two.py with P2SIZES=1,2 (subset: Q_1, the four-vertex core
 games with |P_2| ∈ {1, 2}, and 5-vertex games with |P_2| ∈ {1, 2} sampled at random), UNSAT at round 4 on 612 games
-(3 052 nodes, 2 422 688 clauses, 2 036 s; result_b2_n5_k8_p2sz1-2.log, b2_n5_k8_p2sz1-2.json). The single-count class
-|P_2| = 1 at k = 8 is in §6 (a SAT candidate there needs the restricted full sweep, sweep_p2.py, before it counts).
+(3 052 nodes, 2 422 688 clauses, 2 036 s; result_b2_n5_k8_p2sz1-2.log, b2_n5_k8_p2sz1-2.json).
+**Claim C3 (single count costs exactly 2n − 2 at n = 5; machine-checked).** The class of two-player Büchi games with ≤ 5
+vertices and exactly ONE priority-2 vertex is solved by 8 Cpre gates: the CEGAR candidate b2_n5_k8_p2sz1_candidate.json
+(19 rounds, 3 415 games) was verified on ALL 4 580 664 160 five-vertex games of the class (sweep_p2.py: 5 priority masks ×
+32 owner masks × 31^5 successor assignments, 0 failing, 5 738 s, result_sweep_p2sz1_k8.log), on all 3 248 306 games of the
+class with ≤ 4 vertices (0 failing), and gate by gate against the harness Zielonka on 20 000 random 5-vertex games of the
+class (0 mismatches; decoded program: cost 8, depth 8, 13 815 Boolean gates). The lower bound 8 is Lemma 2.1' (its lasso pair
+has one priority-2 vertex). So at n = 5, as at n = 4: one count of priority-2 vertices costs 2n − 2, the two counts {1, 2}
+together cost ≥ 2n − 1.
 So B_2(5) − (2·5 − 2) ≥ 1, as at n = 4: the gap does not close. Whether it GROWS (B_2(5) ≥ 10) is the k = 9 run (§6).
 
 ## 5. Goal (b): a family, and what is and is not known about growth
@@ -137,7 +144,9 @@ successors. |K_4| = 2 592 and K_4 needs 7 gates (§3). |K_5| = 200 000 and **K_5
 CEGAR against the whole class, no sampling), UNSAT at k = 8 on 1 000 games of K_5 (5 000 nodes, 3 950 000 clauses, 1 625 s;
 result_k5_deg2_k8.log, k5_deg2_k8.json; one solver). So the family's cost exceeds 2n − 2 at n = 4 and n = 5 (by ≥ 1
 each); K_5 at k = 9 is in §6. Lower bounds on K_n are lower bounds on B_2(n) (R6).
-**What is known.** B_2(n) − (2n − 2) ≥ 1 for n = 4 (exact: = 1) and n = 5 (C2). The depth lower bound 2n − 2 (Lemma
+**What is known.** B_2(n) − (2n − 2) ≥ 1 for n = 4 (exact: = 1) and n = 5 (C2). The mechanism is the same at both sizes
+(§3 count table at n = 4; C2', C3 at n = 5): a single count of priority-2 vertices costs exactly 2n − 2, the counts 1 and 2
+together cost ≥ 2n − 1. Programs are vertex-anonymous (R2) and cannot count; the extra gate pays for not knowing |P_2|. The depth lower bound 2n − 2 (Lemma
 2.1') is attained by the modal depth on the full class for n ≤ 4; on the hard classes of §3 the depth needed is only 4, so
 the extra gate is a WIDTH cost: one Cpre gate carries one bit about the set of successor profiles (Lemma 2.1), and the
 games of K force two incompatible one-bit tests at the same level (data: a single priority pattern is solved by 6 gates,
@@ -168,7 +177,6 @@ the dead end with the instances, and recommend parking the lane") and recommenda
 - C2 (B_2(5) ≥ 9; 414-game certificate): data, two solvers (CaDiCaL, Glucose); not refereed.
 - k = 9 at n = 5 (would give B_2(5) ≥ 10): RUNNING at the time of writing (result_b2_n5_k9.log; seeded with the k = 8 core).
 - K_5 at k = 8: UNSAT (K_5 needs ≥ 9; §5). K_5 at k = 9: RUNNING at the time of writing (result_k5_deg2_k9.log).
-- |P_2| = 1 at n = 5, k = 8: a candidate passes 2·10^6 random games (b2_n5_k8_p2sz1_candidate.json); full restricted sweep
-  (sweep_p2.py, 160 patterns × 28.6·10^6 games) RUNNING at the time of writing (result_sweep_p2sz1_k8.log).
+- C3 (|P_2| = 1 at n = 5 costs exactly 8): data, full sweep of the class (4.58·10^9 games) plus all smaller games; not refereed.
 - Lemma 2.1, 2.2: proved above (short); not refereed.
 - Goal (a) human-readable proof: NOT achieved; obstruction in §3b. Goal (b) growth argument: NOT achieved; §5.
