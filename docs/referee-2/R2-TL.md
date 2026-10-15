@@ -113,3 +113,39 @@ Proof steps.
 - Gaps for the record: G-TL-1 FHZ Thm 6.3 taken as a black box; G-TL-2 the lemma's proof is prose (re-derived here, F1 to be
   applied); G-TL-3 run equivalence relies on si.py's `rar` matching Zwick's pseudocode (checked by reading; L-RED's
   si.py-vs-driver means 19.1/26.3 against 18.9/29.9 are consistent but not a proof).
+
+## 6. SIGNATURE (second referee; claude/l-red 49ae306, docs/red/R2-RAR.md; 2026-10-15 13:50Z)
+Revision checked (diff 0d50d4a..49ae306, docs/red/R2-RAR.md): F1's missing sub-case added to case (2) with the correct
+offset argument; F2(a) "≥ 4^j"; F2(b) the lemma now quantifies over all trees B ⊆ E(G) and e ∉ B, with the strictness of
+si.py's test named; F2(c) the last-copy / first-copy B_0 remark; the first referee's fix in (3) ("cheaper at j* by at least
+4^{j*} > (sum below j*, < 4^{j*} − 2) + (offset difference, < 2)") is the inequality I re-derived in section 2. fhz.py changed
+only in its docstring (now matching the code's band layout). Read after my first read: docs/referee/R-TL2.md (first referee,
+"OK with fixes"); its case analysis (§3, Steps 1-3) is the same as mine and its findings 1-2 are my F1/F2(a) and the (3) fix.
+Signed statement (exactly): "Transfer Lemma (R2-RAR.md, l-red 49ae306): for every tree B ⊆ E(G_{n,r,s,t}) and every
+e ∈ E(G) \ B, e is a strictly improving switch for B in G_{n,r,s,t} (FHZ arXiv 1410.7530 Table 1) iff the relay edge of e is a
+strictly improving edge for σ_B in P_{n,r,s,t} (fhz.py build(), VJ valuation of Friedmann 1106.0778 §3 with priorities made
+injective by rank); ties in G are ties in P. Consequently Random-Facet on G from any zero-edge tree B_0 and Random-Action-
+Removal with the strict VJ test (si.py `rar`) on P from σ_{B_0} are the same random process, switch for switch, and FHZ
+Theorem 6.3 gives e^{Ω(√n)} expected switches of S1 on P_{n,r,s,t} with r = Θ(log n), s = Θ(√n log n), t = Θ(log n), a sink
+parity game with Θ(n^{3/2} log^3 n) vertices and priorities compressible to TARGET's range: S1 is not polynomial expected
+time (not M4-R)." Verdict: **OK**, signed as second referee at l-red 49ae306.
+Gap list (for GAPS.md / RESULTS.md):
+- G-TL-1. FHZ Thm 6.3 is a black box (published, errata-surviving; opened source; not re-derived by the fleet). Its
+  parameters are asymptotic (r, s, t = Θ(·)); the measured growth tables are consistency data only.
+- G-TL-2. The lemma's proof is prose, re-derived independently by both referees; machine-checked exhaustively only for small
+  parameters ((2,1,1,1), (1,2,1,1), (1,1,2,2), (2,1,1,2): 435,584 (tree, edge) tests by REFEREE-2; the first referee's own
+  cases) and by random sampling beyond.
+- G-TL-3. S1's conventions are read from si.py at l-si 95d37d3: the improving test is strict (`key(val[r]) > key(val[b[v]])`),
+  and the best-reward start (`initial("best")`) is the last relay of each vertex, a zero-edge tree. The signature is for
+  that rule; a non-strict test, or a start that is not a zero-edge tree, is outside FHZ Thm 6.3's hypothesis.
+- G-TL-4 (AUSO vs ties). Zwick's RAR is defined on AUSOs, where every edge of the hypercube is oriented; on P equal
+  valuations occur (copies of a multi-edge, and the tie sub-cases of case (2)), so P's strategy space with the VJ order is
+  not an AUSO as given. The run equivalence does not need it: the lemma makes the strict test agree with FHZ's strict
+  "shorter" (ties are non-improving in both), which is what the recursion reads. The strict convention must be stated as
+  part of S1's definition (it is, in R2-RAR.md and S1.md), and Zwick's upper-bound analysis is not invoked.
+- G-TL-5. The lemma is specific to G_{n,r,s,t}'s lexicographic costs; it is not a reduction from shortest paths to sink parity
+  games (R2-RAR.md says so). Novelty of the parity-game statement is L-LIT's to check.
+- G-TL-6. Priority compression to {0..|V|} (TARGET §1) is order- and parity-preserving and the valuation reads only order and
+  parity; stated, not formalised. Nothing is Lean-checked (not required at M3).
+- G-TL-7. Supporting code: fhz.py's three models and vj.py (changed by 18 lines in this revision, not re-reviewed) are
+  evidence, not part of the signed statement.
