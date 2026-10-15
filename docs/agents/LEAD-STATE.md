@@ -89,3 +89,4 @@
 - 12:24Z L-RED KILLED MSF (2^N-1, gated Bland, two engines). L-RED retargeted to S1 RAR (original Random-Facet). L-SI told: immune-to-gate-relabelling requirement. DE4 after L-RED push.
 - 12:35Z l-red merged (e1e9402); DE4 recorded (MSF). L-RED retargeted to RAR (resent).
 - 12:40Z L-ALG C3 ZP dead (T_R explicit, ~30x/tile); DE5 recorded (C1-C3).
+- 12:08Z L-RED: S1 RAR killed via FHZ transfer lemma (unrefereed). Asked for push + 'why didn't FHZ say so' check; retargeted L-RED to S5/S6. L-SI told to stop RAR runs. Next: referee on transfer lemma, L-LIT novelty.
