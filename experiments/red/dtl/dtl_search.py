@@ -2,7 +2,7 @@
 """Free-form hill-climb over small parity games maximising Oink DTL's learned-tangle count (L-RED, DTL box).
 Fitness = tangles found by `oink --dtl --no-single --no-wcwc --no-loops` (raw solver, no preprocessing, self-loops kept;
 before 16:02Z the runs used --no-single --no-wcwc only). Mutations: add/remove an edge,
-change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--out best.pg]"""
+change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--out best.pg]"""
 import sys, os, random, subprocess, tempfile, time, re
 oink, n = sys.argv[1], int(sys.argv[2]); arg = lambda k, d: type(d)(sys.argv[sys.argv.index(k) + 1]) if k in sys.argv else d
 steps, seed, maxpr = arg("--steps", 20000), arg("--seed", 0), arg("--maxpr", 2 * int(sys.argv[2])); rng = random.Random(seed)
@@ -23,7 +23,7 @@ def dumps(g):
 def score(g):
     open(tmp, "w").write(dumps(g))
     try:
-        r = subprocess.run([oink, SOLVER] + OINKFLAGS + (["-t", "-t"] if fitness.startswith("per") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
+        r = subprocess.run([oink, SOLVER] + OINKFLAGS + (["-t", "-t"] if fitness.startswith("per") or fitness in ("prunemono", "dups") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
     except subprocess.TimeoutExpired:
         return 10 ** 6          # a timeout is interesting in itself
     if fitness in ("unsolved", "wrong"):
@@ -34,6 +34,20 @@ def score(g):
             out = r.stdout + r.stderr
             bad = 1000 if ("error" in out.lower() or "verified" not in out) else 0
         return n - solved + bad
+    if fitness in ("prunemono", "dups"):
+        # prunemono: vertices pruned by the first best_vertices call of a search but not by that of the previous search of
+        # the same player (a non-monotone pruning, R8 section 12 / proof lane (r1)); dups: "duplicate tangle" lines
+        out = re.sub(r"\x1b\[[0-9;]*m", "", r.stdout + r.stderr)
+        if fitness == "dups": return out.count("duplicate tangle")
+        searches = []; cur = None
+        for line in out.splitlines():
+            line = re.sub(r"^\[\s*[0-9.]+\]\s*", "", line)
+            m2 = re.match(r"iteration (\d+)-(even|odd)", line)
+            if m2: cur = {"player": m2.group(2), "pruned": set(), "done": False}; searches.append(cur); continue
+            if cur is None or cur["done"]: continue
+            if line.startswith("distance "): cur["pruned"].update(re.findall(r"(\S+?)/\d+", line.split(":", 1)[1]))
+            if line.startswith("best vertices:"): cur["done"] = True
+        return sum(len(b["pruned"] - a["pruned"]) for a, b in zip(searches, searches[1:]) if a["player"] == b["player"])
     if fitness in ("perhead", "perheadsearch", "persearch"):
         import collections
         c = collections.Counter(); it = 0

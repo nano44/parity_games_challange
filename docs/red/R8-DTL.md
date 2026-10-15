@@ -32,7 +32,11 @@ shrinks when an Even dominion is solved). Write A_T(Z, R, t) for the tangle attr
 - (M1) A_T(Z, R, t) subset of A_T'(Z, R, t) for all Z, R, t: attractTangle only adds vertices and never blocks a vertex
   attraction (attractVertices runs first on every pop; a tangle is attracted iff all its escapes are in Z or outside R,
   and more tangles never un-satisfy that).
-- (M2) The pruning of best_vertices is a greatest fixpoint: V* = the largest V such that every v in V can step into
+- (M2) [Corrected 17:30Z per the proof lane's NOTE N5 (claude/l-alg 6bb5d43, DTL-proof.md section 1.6): the one-round
+  operator is NOT monotone in general (a straddling stored tangle whose top is taken by a new top's region can un-attract
+  its lower part), so "greatest fixpoint" is wrong; what the code computes is the descending iteration of that operator
+  from V = all p-priority vertices, and monotonicity in T across searches is exactly the proof lane's open step (r1),
+  tested empirically in section 12.] The pruning of best_vertices is a greatest fixpoint: V* = the largest V such that every v in V can step into
   A_T(Reg_T(V), R, t) for some t < pr(v) (lines 711-741), where Reg_T(V) = the union of the DISJOINT regions of the tops
   of V, computed top-down from one copy CurR = R (line 690) that each top's attraction consumes (lines 691-706; restated
   16:15Z after the Lead's check; the union is still monotone in T because a vertex that a lower top loses is held by the
@@ -394,6 +398,33 @@ D, which contradicts D being a p-dominion with p-parity maxima on its cycles (th
 p-vertex whose good path is that cycle). So I expect (C-b) to close by "the maximum of a p-won cycle is never a
 distraction"; not proved here.
 
+## 12. Second DTL box (Lead 17:25Z, 2 h): the proof lane's shapes (α), (β'), (r1), (r2) and GAP-A
+Read: claude/l-alg 6bb5d43 docs/alg/DTL-proof.md sections 1.6 (NOTE N5), 2.3 (K5, K6, shapes (α)/(β'), the exclusion
+route with (r1), (r2)), 5 and 6 (c3, c4, dupclimb). Corrections folded into R8: (M2) above; 1(c)/5(a) were already
+withdrawn.
+(r1) probe. experiments/red/dtl/dtl_vstar.py: from the -t -t trace, the set of vertices pruned by the FIRST
+best_vertices call of each search (X empty, the "distance k" lines) and whether any vertex is pruned in search s+1 that
+was not pruned in search s of the same player (the non-monotonicity (r1) must exclude without a straddle). On every
+many-tangle game of this report (evolved n = 24, 20, 18, 14, 10; perturbed counter_dftl 6, counter_odftl 6, tc+ 3;
+tc 4, tc+ 3, counter_odftl 6; the first five with priorities made injective): 0 newly pruned vertices across 60 same-player
+search pairs. (Comparing the printed best-vertex SETS instead is not the right test: with result -1 the printed set is
+the previous round's V, and 1-14 vertices "lost" that way all turn out to be rounds, not prunings.) Hill-climbs with
+fitness = number of newly pruned vertices across consecutive searches (self-loop and renumbering mutations, n = 12, 16,
+20, 30,000 mutations each): best fitness 0 in all three runs: no game with a non-monotone first pruning across consecutive
+searches was found, with or without straddles, so no (r1) counterexample.
+(β') probe. The debug build prints "duplicate tangle" at extraction; hill-climbs with fitness = duplicate extractions
+(n = 14, 20, 30,000 mutations): best fitness 0 in both runs: no duplicate extraction ever, so no (β') configuration. The proof lane's c3/c4: 0 duplicates here as well.
+(α), (β') by hand: the NOTE N5 shape was built literally (gens_dtl.py n5: t' = {a, c, d}, a -> tnew, tau's region
+holding e, h as tnew's return): DTL solves it in 3 iterations with 3 dominions and 1 tangle, {tnew, h} and {tau, e} are
+dominions in search 1, so the straddle never forms (the higher regions must stay open AND unpruned for three searches,
+the two walls of section 10). No instance of (α) or (β') was reached in this box; the proof lane's c3/c4 and my ladders
+all end in the same collapse (an open higher region is pruned or closes into a dominion whose attractor absorbs the
+straddling candidate). Status: (α)/(β') unrealised, consistent with (r1) holding empirically.
+GAP-A str-change count at a fixed region vertex set: not measured directly (needs per-region strategy dumps, which
+only the debug build's -t -t -t attraction events give; not parsed in this box). The proxies of sections 2 and 9 stand:
+0 strategy changes between tangles containing the same Even vertex in 19,000 games except thefts, and at most one
+tangle per head per search by W.
+
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.
 - No Python port of dtl (Oink's trace sufficed: every tangle, strategy, escape and pruning round is printed).
@@ -426,5 +457,8 @@ distraction"; not proved here.
 - DONE (16:50Z-, GAP-C): section 11: debug-build oracle, proof lane's c1-c3 re-run, 12,000 fuzz games and seven
   adversarial climbs clean, the unblocking argument for (C-a) and the "maximum of a p-won cycle is never a distraction"
   expectation for (C-b), both Lead readings.
+- DONE (17:25Z-, second DTL box): section 12: N5 folded into (M2); (r1) trace probe (dtl_vstar.py: 0 non-monotone first
+  prunings on 9 games, 60 search pairs) and climbs (0 at n = 12, 16, 20); duplicate-extraction climbs on the debug build
+  (0 at n = 14, 20); the N5 shape built (collapses into dominions); (α)/(β') unrealised; GAP-A count not measured.
 - NEEDS: Lead: the proof lane should treat section 1(c)+(d) (pusher-chain descents bounded through upward-only
   influence) as the statement to prove or refute; a refutation there is the only killer shape left that I can name.
