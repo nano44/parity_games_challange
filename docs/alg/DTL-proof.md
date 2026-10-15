@@ -354,6 +354,24 @@ not a stored tangle with all escapes in X_2 — unless its escapes leave Y only 
 tangles inside Y — so it is new. The step that is not closed: the lowest top of iteration 2 may lie outside Y, and the
 pieces removed before Y's turn (type P/Z inside iteration 2) may cut Y; a proof must show that cutting Y by the -1
 branch leaves a p-closed remainder whose SCCs are still not stored. This is the same (C-b) obligation.
+Route for excluding (α) (SKETCH, the most promising one found). Let t' straddle in search s3 with top a ∈ L_τnew and
+lower part Y, and let s2 be the search that learned t' at top a. In s2, Y ⊆ Z_a: p forced the play from Y to a inside
+R minus the regions of the tops above a (then), the opponent's exits into those regions being forgiven. In s3 the same
+edges exist; a and the vertices of t' with a p-edge to a lie in L_τnew; a vertex of Y escapes L_τnew only through an
+opponent exit into a region strictly between τ_new and a's former position or through a p-step to such a region; at
+the computation of the LAST such region the exits above it are consumed and the forcing of s2 applies again (every
+vertex of Y has priority ≤ pr(a) ≤ that region's top), so Y is absorbed there — unless a top that was above a in s2 is
+no longer a top in s3 (its former region is now unattracted R_rem) or a sub-tangle used by the forcing in s2 straddles
+itself in s3. The first case is a non-monotone change of the pruning between s2 and s3; by NOTE N5 and 1.2b (attractors
+monotone in T, dominion removal only forgives more) such a change itself requires a straddling tangle in s3 whose top
+was learned EARLIER than t' (creation order). Iterating, the straddling tangle with the earliest creation order has no
+such cause, so it cannot straddle: contradiction. The two unproved steps in this regress: (r1) that the ONLY source of
+non-monotonicity of the pruning across searches is a straddle (NOTE N5 shows straddles cause it; that nothing else
+does needs a proof that V*_s ⊆ V*_{s+1} and Reg_s ⊆ Reg_{s+1} hold whenever no stored tangle straddles in s+1, with G'
+shrinking by solved dominions in between); (r2) that the regress is well-founded (the straddling tangle causing the
+pruning change must have been created strictly before t', not merely be different). If (r1) and (r2) hold, (α) never
+occurs and, with K6 and the (β') analysis, every search's first stable set is productive; (C-b) would then remain only
+for searches that start with the -1 branch.
 For (β') (SKETCH). The stored tangle t = bottom SCC of L_k has escapes only in X. By K4, if all pieces in X are of type S
 or Z, X is p-won and so is t ∪ Attr(X) — a p-won set that DTL never solves unless some later piece or search is
 productive; then the search's remaining iterations must produce something new: the obligation is again (C-b). If some
