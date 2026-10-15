@@ -33,6 +33,8 @@ exactly this command (no `-w`). A_IDTL = the same with `--idtl`. Every result ro
 | every game, n=3, priorities 0..3 (TARGET class: priorities 0..n) | 175,616 | brute force = py-zlk | 175,616 | 175,616 | results/exhaustive_n3_P3.csv.gz |
 | seeded corpus `gen.py corpus out/g10k 10000 20261015 --nmin 1 --nmax 200` | 10,000 | uzlk and py-zlk (both ok on all) | 10,000 | 10,000 | results/g10k.csv |
 
+| extra: seeded small games `gen.py corpus out/small50k 50000 20261016 --nmin 4 --nmax 10` | 50,000 | uzlk and py-zlk (both ok on all) | 50,000 | 50,000 | results/small50k.csv.gz |
+
 Exhaustive games include self-loops (every non-empty successor set), so `--no-loops` is exercised.
 g10k: n up to 200, up to 137 distinct priorities; max 186 tangles, max 5 iterations (dtl) / 4 (idtl), max 0.2 s.
 
@@ -61,5 +63,18 @@ Growth (results/growth.md, plots results/plots/<family>.png; exponent k of y ~ n
   measurable. So the cost per tangle grows like n^2..n^3 on these families: data for the running-time side (DTL-proof.md
   section 3 bounds the work by O(|T|^2 n^6 + |T| n^7 + n^8 + ...), far above what is measured).
 - Largest finished n: counter_rob 50,179; counter_dp 8,196; counter_rr 8,192; red_ladder 6,150; counter_core 6,147; counter_ortl
-  5,121; tc 3,232; red_counter_odftl 3,080; red_counter_dftl 2,056; red_chain 2,048; tc+ 1,944 (extension running); switchbestexp
+  5,121; tc+ 4,448 (dtl; extension below); tc 3,232; red_counter_odftl 3,080; red_counter_dftl 2,056; red_chain 2,048; switchbestexp
   1,610; counter_m 1,539; counter_symsi 1,282; recursiveladder 1,280; switchallexp 903; counter_qpt 512 (all sizes solved < 0.1 s).
+
+### tc+ extension (solo run, timeout 1800 s; results/fam_tc+_ext.csv)
+`sweep.py tc+_ext --gen "tools/oink/build/tc+ {N}" --sizes 14 16 18 20 24 --timeout 1800 --tmax 1500 --ref-timeout 300`.
+| N | n | uzlk | dtl wall s | dtl tangles | dtl iterations | idtl wall s | idtl tangles | idtl iterations |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 8 | 624 | agree | 1.6 | 94 | 18 | 4.1 | 118 | 17 |
+| 12 | 1944 | agree | 42.5 | 190 | 26 | 137.6 | 239 | 25 |
+| 14 | 3024 | agree | 168.4 | 250 | 30 | 556.8 | 317 | 29 |
+| 16 | 4448 | agree | 565.2 | 318 | 34 | timeout (1800) | - | - |
+(N = 8, 12 from fam_tc+.csv, run with 3 sweeps in parallel.) On tc+ the dtl iteration count is 2N+2 for N = 8..16 and the
+tangle count ~1.24 N^2 (L-ALG's ~1.2N^2 reproduced); dtl wall time local exponent in n ~3.2 (N=14 -> 16). idtl is 3-4x slower
+than dtl on tc+ and is the only pinned run that did not finish at N = 16 within 1800 s. All finished runs: verified strategies,
+regions equal to uzlk.

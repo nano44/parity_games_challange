@@ -22,6 +22,7 @@ k = least-squares exponent of y ~ n^k over the largest 4 finished sizes; (last) 
 | switchallexp | 8 | 8 | 8 | 7/7 | 0 |
 | switchbestexp | 7 | 7 | 5 | 7/7 | 0 |
 | tc+ | 5 | 5 | 4 | 4/4 | 0 |
+| tc+_ext | 2 | 2 | 0 | 2/1 | 0 |
 | tc | 8 | 6 | 5 | 8/8 | 0 |
 
 ## Growth
@@ -61,6 +62,8 @@ k = least-squares exponent of y ~ n^k over the largest 4 finished sizes; (last) 
 | switchbestexp | idtl-pin | 7 (1610) | ok | 0.00 (0.00) | 0.00 (0.00) | 3.60 (3.90) | power |
 | tc+ | dtl-pin | 4 (1944) | timeout | 0.71 (0.62) | 0.37 (0.32) | 2.19 (2.91) | power |
 | tc+ | idtl-pin | 4 (1944) | timeout | 0.76 (0.62) | 0.48 (0.34) | 2.41 (3.08) | power |
+| tc+_ext | dtl-pin | 2 (4448) | ok | - | - | - | - |
+| tc+_ext | idtl-pin | 1 (3024) | timeout | - | - | - | - |
 | tc | dtl-pin | 8 (3232) | ok | 0.51 (0.51) | 0.00 (0.00) | 2.96 (3.04) | power |
 | tc | idtl-pin | 8 (3232) | ok | 0.51 (0.51) | 0.00 (0.00) | 2.90 (3.03) | power |
 
@@ -101,5 +104,7 @@ k = least-squares exponent of y ~ n^k over the largest 4 finished sizes; (last) 
 | switchbestexp | idtl-pin | 1610 | 1 | 2 | 239.1 |
 | tc+ | dtl-pin | 1944 | 190 | 26 | 42.5 |
 | tc+ | idtl-pin | 1944 | 239 | 25 | 137.6 |
+| tc+_ext | dtl-pin | 4448 | 318 | 34 | 565.2 |
+| tc+_ext | idtl-pin | 3024 | 317 | 29 | 556.8 |
 | tc | dtl-pin | 3232 | 65 | 6 | 180.0 |
 | tc | idtl-pin | 3232 | 65 | 3 | 232.5 |

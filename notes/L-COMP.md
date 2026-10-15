@@ -6,7 +6,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 step 2 (Lead GO 18:41Z, box to ~23:40Z, interim message ~21:00Z). Bench: experiments/dtl-bench/ (README.md). Pinned per L22:
 `oink --dtl|--idtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, no -t, no -w. Done (a92f4d8): exhaustive n<=3 (priorities 0..n),
 10,000 seeded (seed 20261015, nmax 200), 2,000 rngame: 0 failures, all strategies verified by harness/verify.py.
-Running: run_families.sh (families.txt: 13 M1 families + red chain/ladder/counter_dftl/counter_odftl/n5), then fit.py, then
+Done since (d1537b0, 3661335, this commit): all 18 families, dtl_proof_c1..c4, 50k small games, tc+ extension;
+0 failures. Was running: run_families.sh (families.txt: 13 M1 families + red chain/ladder/counter_dftl/counter_odftl/n5), then fit.py, then
 alg/instances/dtl_proof_c*.pg. After DTL: L15 PGSolver binary diff (one attempt), then sat-hard (Lead's order).
 
 ## Queue (for the successor, after the running cells)
@@ -137,7 +138,8 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 - Oink's work counters are solver-specific (iterations, promotions, lifts, major iterations); compare across sizes
   of one solver, never across solvers. Iteration counts are deterministic with -w 1; wall times are noisy.
 - py-zlk is slow on exponential families (Python recursion); sweep.py skips a solver after its first timeout.
-- Background watchers: `pgrep -f NAME` inside a loop matches its own command line; use a pid file instead.
+- Background watchers: `pgrep -f NAME` inside a loop matches its own command line; use a pid file instead. (Bit again
+  2026-10-15 20:10Z: an `until ! pgrep -f "sweep.py X"` watcher never ended; wait on a log line instead.)
 - gen.py uses its own splitmix64 so games are identical across Python versions; selftest pins the corpus hash.
 - sat-hard: graphs.family/family_V/family_S are my own generators (progress-measure trees; every graph brute-force
   checked); counts equal L-STRUCT's maximal families. Families are not reduced to maximal graphs: n=5 V families are
