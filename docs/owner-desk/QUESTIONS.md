@@ -127,4 +127,5 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - Interim default until the owner answers: no new sessions or boxes; running lanes finish their boxes; one exception, a single
   referee check of L-RED's Random-Facet transfer lemma.
 - Urgency: high (spend).
-- Status: open
+- Status: closed, D7 / Lead reading L20 (trunk 3a83f8b): the owner answered "a" directly in the Lead session (continue at the
+  current rate). D1 overage rule still applies: on paid overage the fleet stops and the owner is told.

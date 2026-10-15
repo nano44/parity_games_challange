@@ -66,3 +66,7 @@ Correction: D1's cap counts lanes only; fleet runs 4 of 5 (L-ALG, L-SI, L-LOWER,
 killed; linear iterations on all 15 bench families; adversarial search only to n=9; a lead, not a result (l-si c73f69e).
 
 ## 2026-10-15 12:05Z Lead -> owner: Q9 (spend) added to QUESTIONS.md, put to the owner at once.
+
+## 2026-10-15 12:39Z Lead (relayed to owner)
+Owner answered Q9 "a" directly in the Lead session; recorded as D7 (trunk 3a83f8b), L20. Q9 closed. Fleet at 5-lane cap (L-ALG, L-SI,
+L-LOWER, L-RED, REFEREE).
