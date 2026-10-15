@@ -13,6 +13,8 @@ ap = argparse.ArgumentParser()
 ap.add_argument("rule"); ap.add_argument("--n", default="4,5,6,7,8"); ap.add_argument("--restarts", type=int, default=20)
 ap.add_argument("--steps", type=int, default=400); ap.add_argument("--samples", type=int, default=1); ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--start", default="best"); ap.add_argument("--budget", type=float, default=1e9, help="seconds per n")
+ap.add_argument("--sink", action="store_true", help="1-sink games (Friedmann 1106.0778 sec. 5): vertex 0 = Odd sink of priority 1 with a self-loop, reachable from every vertex, every other priority >= 2")
+ap.add_argument("--tag", default="")
 a = ap.parse_args()
 
 
@@ -23,27 +25,53 @@ def score(g):
     return tot / a.samples
 
 
+def sink_ok(g):
+    """every vertex reaches vertex 0 (the sink)"""
+    seen = {0}; st = [0]
+    while st:
+        x = st.pop()
+        for y in g.pred[x]:
+            if y not in seen:
+                seen.add(y); st.append(y)
+    return len(seen) == g.n
+
+
 def mutate(g, rng, n):
-    prio, owner, succ = list(g.prio), list(g.owner), [list(s) for s in g.succ]
-    k = rng.randrange(4)
-    v = rng.randrange(n)
-    if k == 0:
-        prio[v] = rng.randrange(n + 1)
-    elif k == 1:
-        owner[v] ^= 1
-    elif k == 2:
-        w = rng.randrange(n)
-        if w not in succ[v]:
-            succ[v].append(w)
-    else:
-        if len(succ[v]) > 1:
-            succ[v].remove(rng.choice(succ[v]))
-    return pg.Game(prio, owner, succ)
+    while True:
+        prio, owner, succ = list(g.prio), list(g.owner), [list(s) for s in g.succ]
+        k = rng.randrange(5)
+        v = rng.randrange(1 if a.sink else 0, n)
+        if k == 0:
+            prio[v] = rng.randrange(2 if a.sink else 0, n + 2)
+        elif k == 1:
+            owner[v] ^= 1
+        elif k == 2:
+            w = rng.randrange(n)
+            if w not in succ[v]:
+                succ[v].append(w)
+        elif k == 3:
+            if len(succ[v]) > 1:
+                succ[v].remove(rng.choice(succ[v]))
+        else:
+            u = rng.randrange(1 if a.sink else 0, n)
+            prio[u], prio[v] = prio[v], prio[u]
+        g2 = pg.Game(prio, owner, succ)
+        if not a.sink or sink_ok(g2):
+            return g2
 
 
 def rand_game(rng, n):
-    return pg.Game([rng.randrange(n + 1) for _ in range(n)], [rng.randrange(2) for _ in range(n)],
-                   [sorted(rng.sample(range(n), rng.randint(1, min(n, 3)))) for _ in range(n)])
+    while True:
+        g = pg.Game([rng.randrange(n + 2) for _ in range(n)], [rng.randrange(2) for _ in range(n)],
+                    [sorted(rng.sample(range(n), rng.randint(1, min(n, 3)))) for _ in range(n)])
+        if a.sink:
+            g.prio[0], g.owner[0], g.succ[0] = 1, 1, [0]
+            for v in range(1, n):
+                g.prio[v] = max(2, g.prio[v])
+            g = pg.Game(g.prio, g.owner, g.succ)
+            if not sink_ok(g):
+                continue
+        return g
 
 
 os.makedirs(os.path.join(HERE, "out"), exist_ok=True)
@@ -60,5 +88,5 @@ for n in [int(x) for x in a.n.split(",")]:
                 g, s = g2, s2
         if s > best_s:
             best_g, best_s = g, s
-    path = os.path.join(HERE, "out", f"adv_{a.rule}_n{n}.pg"); pg.write(best_g, path)
-    print(f"{a.rule} n={n}: max iterations {best_s} (m={best_g.m}, restarts {r + 1}, {time.time() - t0:.0f}s) -> {path}", flush=True)
+    path = os.path.join(HERE, "out", f"adv_{a.rule}{a.tag}_n{n}.pg"); pg.write(best_g, path)
+    print(f"{a.rule}{a.tag} n={n}: max iterations {best_s} (m={best_g.m}, restarts {r + 1}, {time.time() - t0:.0f}s) -> {path}", flush=True)
