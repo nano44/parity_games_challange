@@ -2,15 +2,14 @@
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead.
 
 ## Resume point
-2026-10-15 ~12:55Z (pushed 85a83bf + gate.py commit). Candidate S2a MSF KILLED (docs/red/R1-MSF.md): gated_bland N takes 2^N - 1 MSF iterations on both engines;
-Claim F FLAW reported 11:45Z, kill reported 12:20Z (send_message to the Lead). Remaining in the box: push, then (optional) a
-generic gate-relabelling transform (any sink game + edge order -> gated game) and a check that the same gadget kills LSF-ranked
-variants; wait for the Lead's instructions.
+2026-10-15 ~14:30Z. R1 (MSF killed, 7a7ed5e) done. R2 (S1 Random-Action-Removal killed by FHZ 1410.7530 Thm 6.3 + transfer lemma,
+docs/red/R2-RAR.md, experiments/red/fhz.py) written, kill messaged 14:05Z; pushing now. Larger relation checks done: (8,2,3,2) 400, (10,1,1,1) 1500,
+(6,3,3,3) 300 samples, 0 differences (recorded in R2).
+Box ends ~19:20Z; idle after the push unless the Lead sends more.
 
 ## Queue
-1. scripts/verify.sh && git push -u origin claude/l-red (report, engine, family, instances, check.sh).
-2. (done) gate.py: generic transform; MSF (reversed labels) and LSF (Bland labels) both 2^N - 1 on G_N.
-3. End-of-box message: DONE / FINDINGS / NEEDS.
+1. Push R2; message the SHA. 2. Optional: a growth run with FHZ's parameter
+scaling (r = t = ceil(log2 n), s = ceil(sqrt(n) log2 n)) for n up to ~16 to show the mean leaving the n^2 trend (slow).
 
 ## Things only I know
 - L-SI's branch is read through a detached worktree in the scratchpad (git worktree add <scratch>/lsi origin/claude/l-si);
@@ -23,7 +22,30 @@ variants; wait for the Lead's instructions.
 - Oink is built (scripts/setup_oink.sh, ~3 min); MSF on tc/tc+/counter_* via si.py was linear or near-linear (sweep in
   the scratchpad, not pinned: tc N=8 275, tc+ N=10 595; all PGSolver families linear in N).
 
+## Things only I know (R2)
+- fhz.py: FHZ's "zero-edges" are the bit-0 edges a0, b0, u0, w0 = the COSTLY ones (B0 is made of them); "one-edges" are the
+  0-cost chain edges (the optimum). I first read it the other way and got 0 switches.
+- The parity encoding must share class vertices across entries into a level (class B = nothing, class A = shared even g_i,
+  class C = shared odd o_{i,d}); separate cost vertices per source with equal priority break the lexicographic tie by index and
+  the models disagree (first attempt, caught by the lockstep assert at n=3).
+- fhz.py export prints the start as 'spec:v:w ...' for si.py; for t=1 it equals the best-reward start; for t>1 best-reward
+  takes the last copy, also a zero-edge tree.
+- Speed: my RF driver re-evaluates the whole tree per test (O(|V|)): (7,2,3,3) with 72k tests takes ~1 min; si.py rar on
+  fhz_n5_r2s2t2 (256 vertices) takes minutes per seed.
+
 ## Sources opened (arXiv id or DOI, theorem/section)
+- Friedmann-Hansen-Zwick, "Random-Facet and Random-Bland require subexponential time even for shortest paths", arXiv 1410.7530
+  (PDF opened 2026-10-15 ~13:25Z): section 3 p.7 (how Random-Facet finds shortest-path trees), section 4 pp.7-9 (randomized
+  counter, Fig. 3 one level with r=s=t=1, "zero-edges"/"one-edges", gadgets: t copies, paths of length s, r copies), section 5
+  Table 1 p.14 (edges, costs 2^{2i+1}+(k-1)eps, 2^{2i+1}+1+(j-1)eps, 2^{2i}; eps = 1/(rs)), p.14 B0 "composed entirely of
+  zero-edges", Def. 5.2 (functional), Def. 5.4 (B_F), Lemma 5.5 (optimal edges = B_F), Claims 5.6-5.7, Lemma 5.10, section 6
+  p.22 (parameters r = Theta(log n), s = Theta(sqrt n log n), t = Theta(log n); N = Theta(nrs), M = Theta(nrst)), Theorem 6.3.
+- Friedmann-Hansen-Zwick, errata arXiv 1410.7871 v1: abstract, section 1 ("The main result of [1] is thus flawed"; "the lower
+  bound for Random-Facet* remains correct"; [5] = Hansen's thesis 2^Omega~(m^{1/3}) for Random-Facet on MDPs; [3] = 1410.7530
+  transfers it to shortest paths), section 2 (Random-Facet pseudocode on shortest paths: pick e in F \ B, recurse on F \ {e},
+  improve-and-pivot, recurse on F).
+- Zwick, arXiv 2607.06334 v1: Appendix D Fig. 1 (Rand-Act-Rem pseudocode: B = actions not in a; r random; b = recurse on H \ r;
+  c = b[r]; if (c -> b) in H return b else recurse on (H, c)), section 3 (VAL_sigma, orientation a -> b iff VAL_a prec VAL_b).
 - Friedmann, "An exponential lower bound for the latest deterministic strategy iteration algorithms", LMCS 7(3:19) 2011,
   arXiv 1106.0778 (PDF opened 2026-10-15 ~11:50Z). Section 3 pp.4-6: play decomposition v1..vk (w1..wl)^omega, node
   valuation (w1, {v_i > w1 : 1 <= i <= k}, k), set order M < N iff max(M delta N) in (N cap V_even) cup (M cap V_odd),
