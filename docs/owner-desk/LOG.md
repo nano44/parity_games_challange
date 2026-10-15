@@ -87,3 +87,8 @@ seven-day "allowed_warning" since 12:02Z, no overage, resets 2026-10-21 21:00Z. 
 ## 2026-10-15 21:38Z owner (progress question)
 > Is the DTL we are investigating now the exact same as in Oink or we have changed it?
 Answered from docs/alg/candidates/C5-DTL.md (l-alg), REPORT-2026-10-15.md, NOW.md (trunk 6387629), l-comp 289f145. Relayed verbatim to the Lead.
+
+## 2026-10-15 21:43Z Lead (correction relayed to owner)
+DTL gauntlet: step 2 first implementation done (l-comp 011fec0, 237,948 games + 18 families, 0 errors; second implementation running,
+matches so far); step 3 signed with 4 caveats; step 4 proof attempt in progress (statement frozen, L24): soundness, strategies, halting
+proved but unrefereed; open GAP-C (completeness) and GAP-A (polynomial tangle bound). Nothing sent to referees.
