@@ -32,13 +32,10 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | WATCHDOG | session_01JQNTX8zT3T3mWMt6ZmYzkn | none (never edits) | haiku-5-5 | high | working (cron :30, trig_019xE43BZ5qaDGwxDkZ5h5ik) | Routine liveness/overage checks; reports to Lead only (deviation from playbook: does not wake lanes, so idle sessions never get messages) |
 | OWNER-DESK | session_01Eq99qsTJBiTh6xLzwCPtqv | claude/owner-desk | opus-5-5 | high | starting | Owner D3: owner Q&A and open questions; accuracy in plain explanation, no proofs; idle between owner messages |
 
-## In flight
-- L-COMP: parked after notebook handover; wakes for a new claim, review changes, or L-STRUCT SAT engineering.
-- L-LIT: parked; T1-T4 on trunk (docs/lit/). T4: weak separators OPEN (Czerwinski et al. 1807.10546 §6).
-- L-STRUCT: T3 sub-lemma SL8-min: every MINIMAL weak (n,d)-sep, d<=n+1, is within 2 transition changes of a strong one on the same states (exhaustive data 6985a5a: E t<=1, V t<=2 at minimum; non-minimal needs up to 4). Proof attempt OBSTRUCTED at Lemma C (l-struct 283ebbc; Lemma A false as stated, C target rule false on data, minimality step unformulated). Now (a): extract target rule from 64 rewires, 2h box to ~23:55Z; else (b) structural hypothesis. L4 signed by first referee (9bf5301); second referee pending with T3 package. w^V(4,5)=10=s^V(4,5) (b9f4d78, SAT+checker; LRAT confirmation queued for L-COMP successor). T3 holds on all 8 computed cells with d<=n+1.
-- REFEREE: parked after handover (f179ae0). L4 signed as first referee (9bf5301). Next: fresh REFEREE for SL8-min/T3; separate REFEREE-2 for the L4+T3 package. Second independent referee to be spawned for the T3+L4 package (GAPS G1).
-- L-COMP: diagonal V cells (4,5),(5,5),(5,6), TARGET n=4 strong, n=5; LRAT standard. Box ends ~01:30Z.
-- WATCHDOG: hourly at :30.
+## In flight (as of 2026-10-15 09:50Z)
+- L-LOWER (successor): T-L2 theory box to 20:36Z: human proof of B_2(4) >= 7 from the 100-game UNSAT core; test for a gap growing with n.
+- Everyone else parked or idle: L-ATTR (psolC done, DE3), REFEREE (R-psolC done), REFEREE-2, L-LIT (T11 done), L-STRUCT, L-COMP,
+  CHECKER, HUMAN-DESK. OWNER-DESK idle between owner messages. WATCHDOG hourly at :30.
 
 ## Findings to carry
 - C1 (REFEREE-checked, a data point, not M3): w(2,6)=3 < 4=s(2,6) in E, S, V; w^V(3,6)=6 < 7=s^V(3,6). Weak separators can be strictly smaller than strong ones.

@@ -75,3 +75,4 @@
 - 08:46Z L-ATTR A3-psolC done (02174e2): psolC not complete (n=4 instance, tc N=2); L-ATTR parked. REFEREE R-psolC fidelity check before DE3.
 - 08:50Z REFEREE R-psolC FAITHFUL (1600917); DE3 recorded (psolC not complete; instance psolc_min_n4_m6.pg); l-attr and referee merged to trunk.
 - 09:03Z sweep: overage false; Lead $59.0 ctx 326k. L-LOWER (new) RUNNING T-L2 box, ctx 125k, $2.7. REFEREE/L-ATTR idle after DE3. No action.
+- 09:50Z NOW 'In flight' rewritten (stale since 10-14; OWNER-DESK told owner L-ATTR still on psolC). Lead miss: In flight not maintained with roster.
