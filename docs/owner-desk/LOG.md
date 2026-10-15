@@ -43,3 +43,7 @@ Answered from D1 milestones, docs/NOW.md roster/live approaches, RESULTS. Relaye
 ## 2026-10-15 09:51Z Lead (correction relayed to owner)
 L-ATTR's psolC work is finished, not in progress: RESULTS DE3 (trunk a538be2) psolC not complete (4-vertex game; tc from 22 vertices);
 REFEREE R-psolC (referee 1600917) implementation faithful. L-ATTR parked. Only L-LOWER is advancing (T-L2 box to 20:36Z).
+
+## 2026-10-15 09:47Z owner (stance on feasibility)
+> I want you to believe in yourself and just loo kat the decade old mathematical open questions that has been cracked this year with AI. There are hundreads of examples so dont tell me it is highly unlikely to solve the parity game problem, because it is not
+Relayed verbatim to the Lead. Desk: drops "unlikely" framing; asks the owner whether effort should shift toward algorithm (upper-bound) lanes (scope question, owner's call).
