@@ -121,7 +121,10 @@ def main():
     best_c, best_g = scored[0]
     g = decode(best_g, K); ref = zielonka.solve(g); z = zp.ZP(g); win = z.run()
     assert win == ref
-    pg.write(g, os.path.join(HERE, "instances", f"{'oink_' + SOLVER if SOLVER else 'zp'}_ga_K{K}_n{g.n}_calls{best_c}.pg"))
+    # Oink-fitness instances go to out/oink_instances/ (gitignored); notable ones are copied to instances/ by hand
+    dest = os.path.join(HERE, "out", "oink_instances") if SOLVER else os.path.join(HERE, "instances")
+    os.makedirs(dest, exist_ok=True)
+    pg.write(g, os.path.join(dest, f"{'oink_' + SOLVER if SOLVER else 'zp'}_ga_K{K}_n{g.n}_calls{best_c}.pg"))
     with open(os.path.join(HERE, "out", f"zp_ga_{tag}.jsonl"), "w") as f:
         f.write(json.dumps(alglib.game_record(g, ref, calls=best_c, K=K, genome=[best_g[0], best_g[1], best_g[2], best_g[3] if len(best_g) > 3 else [0] * K])) + "\n")
     print(f"K={K}: best {'oink ' + SOLVER + ' work' if SOLVER else 'ZP calls'} {best_c} (n={g.n}); plain Zielonka calls {(lambda z: (z.run(), z.calls)[1])(zp.ZP(g, False)) if g.n <= 40 else '-'}")
