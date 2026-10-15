@@ -323,7 +323,7 @@ loop 691-706, so best_vertices builds a disjoint top-down decomposition (as sptl
   search; mutations with self-loops and renumbering; from the n = 24 optimum and the perturbed counters): the per-top-within-one-search fitness is fooled by equal priorities (its optimum from the n = 24 game is 23 vertices
 all at priority 10, 23 tops, one chain tangle each, one search: tops are only identifiable by priority in the trace), so
 only the injective-priority runs count: n = 12, 16, 20 at most 3 per top within a search (section 5(a)); with --loops
-and injective priorities, max tangles in one search at n = 16: PS16-PLACEHOLDER. No alternation at a single top
+and injective priorities, max tangles in one search at n = 16: 7 (40,000 mutations; the chain family alone gives n - 2 = 14 in one search, so the climb is weak evidence). No alternation at a single top
 within a search was ever seen, as (W) predicts; across searches the self-firing chains grow monotonically (section 2:
 the chain tangles are nested), as (P) predicts.
 
