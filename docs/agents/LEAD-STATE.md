@@ -143,3 +143,4 @@
 - 15:59Z CHECKER C3 FAIL (text) 5b924e7 merged. L22: DTL pinned with --no-loops, trace 0, all tie orders, object = C5-DTL.md; sent fix list to L-ALG, --no-loops re-probe to L-RED. CHECKER parked.
 - 16:05Z hourly sweep: no overage (seven_day warning). Lead ctx 159k; L-SI 708k (>600k: asked to end box by ~18:00Z with obstruction map + handover, then park); L-LOWER 368k idle with waiter; L-RED 396k idle, 7 searches under monitors; L-ALG new 117k working. CI green on all lane heads (latest runs 449-460). M2 done so no daily owner line.
 - 16:08Z L-ALG code facts verified by Lead: uintqueue is a stack (LIFO attractors), CurR consumed per round (dtl.cpp:690). Voids R8's FIFO-layer step; routed to L-RED as attack angle (renewable str[] flips via DFS order).
+- 16:16Z R8 §9 4a659d9 merged: set-based Lemma M parts survive LIFO; W/P/E outline forwarded to L-ALG; no hit.
