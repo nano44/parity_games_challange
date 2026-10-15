@@ -599,6 +599,13 @@ R-mono do not transfer as stated. This is the sharpened GAP-A: bound the tangles
 natural extension is to treat each later piece as a first piece of the subgame R_i^♭ (exits to X forgiven) and to prove
 R-mono for the sequence of (R_i, X_i) pairs across searches; what is unknown is whether the pieces of search s+1 refine
 those of search s (they did in c3: search 1 had pieces {m,r}, {w,x}, then stable; search 2 was stable at once).
+Tested (experiments/alg/dtl_pieces_monotone.py on a patched debug build that prints R at every depth-0 iteration): the
+naive refinement "every unsolved vertex leaves R at an iteration index no later than in the previous same-player
+search" holds on 800 random games and on c3, c4, but FAILS on tc+ N = 4, 6, 8 from the first pair of searches on (e.g.
+tc+ 4: Odd-3-S-0 removed at iteration 3 of search 0 and at iteration 6 of search 1; tc+ 8: Even-7-B-2 at 4 then 10). So on
+tc+ the later-piece structure is not a refinement; the pieces are re-cut each search, and that re-cutting is where the
+≈ 1.2 N² tangles are learned. The invariant that replaces refinement is the open question of GAP-A; a candidate is
+"the set removed before a vertex only grows" (X-before-v monotone, with the iteration count free), untested.
 Caveat on (M-cross) (18:15Z). One mechanism provably breaks region monotonicity across searches: tangle DELETION. When a
 dominion is solved, every vertex v of it leaves G' and every tangle containing v is deleted at its next use (132-135). A
 region that in s1 attracted such a tangle t as a unit may, in s2, fail to attract the unsolved remainder Y' of U_t by
