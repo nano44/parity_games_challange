@@ -19,7 +19,7 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
 - Status: supporting lemma, not claimed as M3 (Lead reading L7). Credit: conversion remark Parys-Wiacek 2305.00308 p.2;
   Claim R by L-LIT; sharpening by REFEREE; write-up L-STRUCT.
 
-### R2 [refereed-only] T-A1: exact characterisation of psolB's completely-solved games (2026-10-15) — M3 (L9) pending novelty T10, CHECKER PASS (docs/checker/C1-report.md, checker 62cf1c4)
+### R2 [refereed-only] T-A1: exact characterisation of psolB's completely-solved games (2026-10-15) — M3 (L9), novelty T10 NEW, CHECKER PASS (docs/checker/C1-report.md, checker 62cf1c4)
 - Signed claim (both referees, at l-attr 57a1515; docs/attr/TA1-proof.md copied to trunk): Theorem T-A1: for every finite parity
   game G (TARGET §1), Huth-Kuo-Piterman's partial solver psolB (arXiv 1405.0386v2) solves G completely iff PA**(G).
   T-A1': PA**(G) ⟹ psolQ solves G completely; the converse is false (HKP Fig. 4(a); n=2 game `0 0 1 0,1; 1 2 0 0`).
@@ -34,9 +34,10 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   nothing machine-checked beyond the data searches. Source note: the first referee did not open DJT (arXiv 2003.08627) §2; the trap
   definition used is stated in full in TA1-proof §1 and matches HKP Def. 2. Side finding: HKP Thm 4's proof defines an unsound minimal-rank
   strategy (REFEREE-2 counterexample docs/referee-2/R2-TA1/hkp_thm4_strategy.py; repair: witness successor); theorem unaffected.
-- Status: M3 "a tighter analysis of a known algorithm" (Lead reading L9), PENDING a novelty check of PA** and the iff itself:
-  L-LIT T8 (docs/lit/T8-TA1.md) checked the earlier predicate PA (l-attr fdb5092), not PA**; Ah-Fat-Huth 2016 name 2-player
-  completeness classes as open. PA**-specific check: L-LIT T10. Also explains DE1 (2511.03752): its errors lie where no PA** piece can go first.
+- Status: M3 "a tighter analysis of a known algorithm" (Lead reading L9). Novelty: L-LIT T10 (docs/lit/T10-PAstarstar.md, l-lit 1f9e9f8):
+  exact class NEW (HKP give sufficient classes only; Ah-Fat-Huth 2016 leave it open); PA** NEW as a condition (ingredients known:
+  HKP fatal attractors, DJT traps); HKP Thm 4 proof flaw NEW (v1 = v2, no erratum). CAVEAT: HKP's LNCS 9560 (2016) chapter not
+  opened; required before any external 'first' claim (owner). Also explains DE1 (2511.03752): its errors lie where no PA** piece can go first.
 
 
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)

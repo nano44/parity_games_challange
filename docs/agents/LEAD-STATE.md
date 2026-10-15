@@ -51,3 +51,4 @@
 - 2026-10-15 00:04Z: CHECKER C1 FAIL on RESULTS text (R1 d' range/hypotheses/uncited defs; R2 missing Thm 5(1) gap, G11 closure divergence). RESULTS fixed 0f54b15; asked REFEREE for written G11 answer. M3 not final until CHECKER passes.
 - 2026-10-15 00:08Z: M3 DONE. CHECKER recheck PASS (62cf1c4) on R1, R2. RESULTS heading updated. Owner told at once. HUMAN-DESK to be spawned per D1 ('when a claim reaches M3').
 - 2026-10-15 00:11Z: Lead over-claim corrected: reported M3 final at 00:08Z, but novelty (D1: 'new against the literature map') was checked only for PA, not PA** (HUMAN-DESK flag). M3 back to pending; L-LIT T10.
+- 2026-10-15 00:17Z: L-LIT T10: T-A1 exact class NEW, PA** NEW as condition, HKP Thm 4 flaw NEW; caveat LNCS 9560 unopened. M3 DONE (internal); owner told; access request Q5.
