@@ -1,5 +1,5 @@
 # NOW (rewritten, never appended; max 150 lines)
-Updated: 2026-10-14 by Lead. Phase: M0, M1, M2 done; first attack lane L-STRUCT (weak separators) started 2026-10-14 18:54Z. Reporting: weekly checkpoint (D1, after M2).
+Updated: 2026-10-14 by Lead. Phase: M0, M1, M2, M3 done; first attack lane L-STRUCT (weak separators) started 2026-10-14 18:54Z. Reporting: weekly checkpoint (D1, after M2).
 
 ## Milestones
 | M | State | Evidence |
@@ -7,7 +7,7 @@ Updated: 2026-10-14 by Lead. Phase: M0, M1, M2 done; first attack lane L-STRUCT 
 | M0 Setup | done; TARGET v1.0 at a3777f1 (D2) | this commit; CI .github/workflows/verify.yml; backstop trigger in docs/agents/LEAD-BACKSTOP.md |
 | M1 Reproduce hard families | DONE 2026-10-14 19:10Z (l-comp de7ea19): 12 of 13 families blow up as published, all strategies checked; counter_qpt superpolynomial but class open (targets a quasi-poly algorithm). Friedmann SI via REFEREE-checked PGSolver ports (reading L5). Bench LANDED on trunk (REFEREE OK ae532f6) | experiments/hard-families/README.md (l-comp) |
 | M2 Audit arXiv 2511.03752 | DONE 2026-10-14 ~18:35Z: BROKEN (two independent 4-vertex counterexamples, cross-checked); RESULTS DE1 | docs/decisions/M2-arxiv-2511.03752.md |
-| M3 Partial results | PENDING CHECKER re-check (C1 failed on RESULTS text, fixed; awaiting REFEREE G11 confirmation): RESULTS R2 T-A1 (exact characterisation of psolB's solved class), two referee signatures at l-attr 57a1515. Also R1 L4 (lemma). | docs/RESULTS.md |
+| M3 Partial results | DONE 2026-10-15 00:06Z: RESULTS R2 T-A1 [refereed-only] (psolB solves G completely iff PA**(G)); two referee signatures at l-attr 57a1515, CHECKER PASS 62cf1c4. Also R1 L4 (lemma) | docs/RESULTS.md |
 | M4 Target | not started | - |
 
 ## Roster (model, effort, one-line reason; revisit at each restart)
@@ -26,7 +26,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | L-ATTR | session_01XDM3HXeuG3mqhQK92eNaru | claude/l-attr | fable-5-1 | high | parked (T-A1 final 57a1515, signed) | Attack lane, rank 3 per L-LIT T7 recommendation (M2 counterexample in hand); cheap, near-certain result |
 | L-LOWER | session_01U5n8mgXxgyGzvuUzxHbiKx | claude/l-lower | fable-5-1 | high | working (L1, 24h box to 2026-10-15 23:00Z) | Attack lane, rank 2 (non-adaptive SLP lower bounds), T7-1' first target |
 | REFEREE-2 | session_01C2sxysc8CzJQrNBhp1rKMs | claude/referee-2 | fable-5-1 | high | idle (L4 d76c9e1, T-A1 2eb1a2d signed; P2 caught) | Independent second referee required for double-refereed results; never downgraded |
-| CHECKER | session_01JptdoF6eLabJzBHG28nWSS | claude/checker | opus-5-5 | high | parked (C1 e8a2a8d: R1, R2 FAIL on RESULTS text; fixed 0f54b15; re-check after REFEREE G11 answer) | Landing gate: mechanical re-runs and statement diffs; Opus suffices |
+| CHECKER | session_01JptdoF6eLabJzBHG28nWSS | claude/checker | opus-5-5 | high | parked (C1 + recheck: R1, R2 PASS 62cf1c4) | Landing gate: mechanical re-runs and statement diffs; Opus suffices |
 | WATCHDOG | session_01JQNTX8zT3T3mWMt6ZmYzkn | none (never edits) | haiku-5-5 | high | working (cron :30, trig_019xE43BZ5qaDGwxDkZ5h5ik) | Routine liveness/overage checks; reports to Lead only (deviation from playbook: does not wake lanes, so idle sessions never get messages) |
 
 ## In flight
@@ -52,7 +52,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - DE1 arXiv 2511.03752 (BROKEN, 4-vertex counterexamples). DE2 T1 weak-separator lower bound (refuted at (2,10)).
 
 ## Best result so far
-- M3 (subject to CHECKER): RESULTS R2 [refereed-only] T-A1, psolB solves G completely iff PA**(G) (L-ATTR; both referees signed 57a1515).
+- M3: RESULTS R2 [refereed-only] T-A1, psolB solves G completely iff PA**(G) (L-ATTR; both referees signed 57a1515).
 - RESULTS R1 [refereed-only]: L4, s^V(n,n) >= n^Omega(lg n) (supporting lemma, not M3 per L7).
 - None of the fleet's own. Known: quasi-polynomial upper bound (to be source-checked by L-LIT).
 

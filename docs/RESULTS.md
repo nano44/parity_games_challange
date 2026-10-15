@@ -14,12 +14,12 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   so S(n) = n^{Ω(lg n)}; Corollary L4.4 (theorem part only): any algorithm of class (i)-(iii) using a deterministic strong separator
   of the TARGET alphabet takes ≥ n·S(n) steps. Excluded: the literature sentence in L4.4.
 - Referees: REFEREE (first) OK at 50dc28b, docs/referee/2026-10-14-L4-proof-check.md (referee 9bf5301); REFEREE-2 OK,
-  docs/referee-2/R2-L4.md §7 (referee-2 d76c9e1). CHECKER: docs/checker/C1-report.md.
+  docs/referee-2/R2-L4.md §7 (referee-2 d76c9e1). CHECKER PASS: docs/checker/C1-report.md (checker 62cf1c4).
 - Gaps (union, see R2-L4.md §7): CDFJLP Thm 5.1 (arXiv 1807.10546) used as a black box (G-L4-1); first referee G1-G6.
 - Status: supporting lemma, not claimed as M3 (Lead reading L7). Credit: conversion remark Parys-Wiacek 2305.00308 p.2;
   Claim R by L-LIT; sharpening by REFEREE; write-up L-STRUCT.
 
-### R2 [refereed-only] T-A1: exact characterisation of psolB's completely-solved games (2026-10-15) — M3 (L9), CHECKER re-check pending
+### R2 [refereed-only] T-A1: exact characterisation of psolB's completely-solved games (2026-10-15) — M3 (L9), CHECKER PASS (docs/checker/C1-report.md, checker 62cf1c4)
 - Signed claim (both referees, at l-attr 57a1515; docs/attr/TA1-proof.md copied to trunk): Theorem T-A1: for every finite parity
   game G (TARGET §1), Huth-Kuo-Piterman's partial solver psolB (arXiv 1405.0386v2) solves G completely iff PA**(G).
   T-A1': PA**(G) ⟹ psolQ solves G completely; the converse is false (HKP Fig. 4(a); n=2 game `0 0 1 0,1; 1 2 0 0`).
@@ -31,7 +31,8 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
 - Gaps: G1-G9 closed; G10 open (dependency on HKP's proofs of Thm 7, Thm 8, Lemma 5; re-derived informally by both referees);
   G11 (HKP Thm 4, used by T-A1') closed at referee level ONLY with REFEREE-2's witness-successor repair of HKP's strategy
   (both referees: REFEREE answer (b), referee 5ff8edb, re-derived with the witness successor); Corollary 2 uses HKP Thm 5(1) as a black box (first referee's list); all steps are prose,
-  nothing machine-checked beyond the data searches. Side finding: HKP Thm 4's proof defines an unsound minimal-rank
+  nothing machine-checked beyond the data searches. Source note: the first referee did not open DJT (arXiv 2003.08627) §2; the trap
+  definition used is stated in full in TA1-proof §1 and matches HKP Def. 2. Side finding: HKP Thm 4's proof defines an unsound minimal-rank
   strategy (REFEREE-2 counterexample docs/referee-2/R2-TA1/hkp_thm4_strategy.py; repair: witness successor); theorem unaffected.
 - Status: M3 "a tighter analysis of a known algorithm" (Lead reading L9). Novelty: L-LIT T8 (docs/lit/T8-TA1.md): Ah-Fat-Huth 2016
   name 2-player completeness classes as open. Also explains DE1 (2511.03752): its errors lie where no PA** piece can go first.
