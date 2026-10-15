@@ -169,3 +169,4 @@
 - 18:30Z L-RED 58f4f27 merged: (D) linear per top all pieces; removal-order invariant false; earlier 'new tangles at recurring pair = 0' was vacuous, corrected (1 and 7, all W-blocked first occurrences). L-RED handover requested (>600k). L-COMP successor session_01Nd4XCMfDaYHsh1P6XTtRGz created for DTL step 2.
 - 18:33Z L-COMP successor 5/5; merged l-comp (incl. 12 old sat-hard commits); GO for DTL step 2.
 - 18:35Z L-RED handover 5a30e98 merged; L-RED parked. Process slip (L-RED self-reported): 7e2efb8 pushed with verify FAILED via a pipe instead of &&; fixed in 5a30e98. Rule reminder goes into every new brief.
+- 19:02Z hourly sweep: no overage (seven_day warning). Lead 390k. L-LOWER 373k idle, finalising after 19:20Z. L-COMP 115k working (175k exhaustive + 10k seeded clean so far, families running). No exceptions.
