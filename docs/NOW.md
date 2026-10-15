@@ -20,7 +20,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | Lead | session_014FBi6o334DvwT5Uw2kDfoN | claude/vibrant-johnson-nxvvxo | opus-5-5 | high | working | Owner-chosen session; routing judgement; keeps context lean |
 | REFEREE (old) | session_01Ki9osXiyYf9heTLNk3FKED | claude/referee | fable-5-1 | high | parked (handover f179ae0); keep 1 week |
 | REFEREE | session_01R4yR8XskSK3ta94ewnN4cM | claude/referee | fable-5-1 | high | idle (R-L1b done 8c8bc72) | Successor; never downgrade the referee | Most capable model; finding the error in a claimed proof decides M2 and every claim after |
-| L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | parked (T10 done 1f9e9f8) | Source checking and barrier analysis need judgement; Fable reserved for referee; move to Fable when step-3 sign-offs start |
+| L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | working (T11: HKP DTR15-4 vs T10/G10/Thm 4, psolC; 2h box from 07:55Z) | Source checking and barrier analysis need judgement; Fable reserved for referee |
 | L-COMP | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | parked (handover 25a6e21; successor only when T3 revives or a new claim needs the bench) | n=5 diagonal cells cost 1-2 h/k; low value while T3 is parked |
 | L-STRUCT | session_01VH4fd2Fq8XeXtyUfkwLJV1 | claude/l-struct | fable-5-1 | high | parked (handover 729c965; wake on n=5 diagonal gap, new T3 idea, or L4 second referee) | Attack lane (owner: most capable model at high effort); rank 1 approach, weak separators, T4 verdict OPEN |
 | L-ATTR | session_01XDM3HXeuG3mqhQK92eNaru | claude/l-attr | fable-5-1 | high | parked (T-A1 final 57a1515, signed) | Attack lane, rank 3 per L-LIT T7 recommendation (M2 counterexample in hand); cheap, near-certain result |
@@ -59,7 +59,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - None of the fleet's own. Known: quasi-polynomial upper bound (to be source-checked by L-LIT).
 
 ## Owner questions open (held by OWNER-DESK since 2026-10-15, D3; docs/owner-desk/QUESTIONS.md)
-- Q5: library/Springer access to HKP, LNCS 9560 (2016) pp. 159-177, needed before any external novelty claim for T-A1.
+- Q5: ANSWERED by owner 07:50Z (upload: HKP Imperial DTR15-4, 2015, sha256 a7b61fe3..., public copy verified by Lead); verdict pending L-LIT T11 (L11).
 - Q6: whether and to whom docs/HUMAN-REVIEW.md goes (owner only).
 - Q7: second-referee/L4 as M3? (Lead reading L7: lemma only.)
 - Q4: L-COMP built PGSolver (tcsprojects/pgsolver d3cd624) but the session's permission classifier refused to run the binaries; generators were ported to Python instead. Owner: allow running them (to diff the port against the original), or keep port + referee check?

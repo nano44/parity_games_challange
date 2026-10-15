@@ -59,3 +59,8 @@ Verbatim:
 Lead reading L10: the session is OWNER-DESK (title "Owner questions", brief docs/agents/OWNER-DESK.md). It holds the open owner
 questions and answers the owner's questions about progress from the repository. It relays every owner answer or instruction to the
 Lead verbatim; rulings are recorded here by the Lead as before. It has no authority over lanes and messages only the Lead.
+
+Lead reading L11 (2026-10-15 07:55Z, on Q5): the owner answered Q5 with a file, HKP "Static analysis of parity games: alternating
+reachability under parity", Imperial DoC DTR15-4 (2015); public copy sha256 a7b61fe3a72926a94a3019e34620339f38aa653fe8aeed9ab4210187763e9cd6.
+If L-LIT T11 finds it is the text of LNCS 9560 pp. 159-177, R2's caveat reads "checked against arXiv 1405.0386v2 and the
+pre-publication chapter text DTR15-4; Springer pages not opened" and Q5 closes. G10 is not an owner question and is not closed by it.

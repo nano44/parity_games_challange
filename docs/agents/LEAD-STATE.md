@@ -64,3 +64,4 @@
 - 07:04Z sweep: overage false; Lead $52.5. L-LOWER 2h fallback fired 06:16Z and cost $8.5 (cache expired, +406k cache_write); told it to drop timed fallback, wake only on verdict/process exit. Lead miss: 04:03Z advice ignored cache TTL. Lesson: idle-wait wakes cost ~context x write price once cache expires; prefer no timed wakes.
 - 07:27Z D3: OWNER-DESK spawned session_01Eq99qsTJBiTh6xLzwCPtqv (opus-5-5, branch claude/owner-desk), Q2-Q7 handed over with Lead recommendations.
 - 07:50Z L-LOWER n=5 verdict B_1(5)=8=2n-2 (90f6928). Lead decision: not (a) uniform construction (positive result, removes T-L1, no barrier value) nor (b); L2-data in current box: CDHL two-player statement + B_2(n) n<=4 exact/bounds; refereeing and L-LIT novelty deferred until a RESULTS candidate exists.
+- 07:55Z Q5 answered by owner (DTR15-4 upload via OWNER-DESK); sha256 verified; L-LIT woken for T11 (2h); reading L11.
