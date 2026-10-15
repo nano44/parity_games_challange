@@ -41,3 +41,16 @@ Trivial for every SI rule (the games are built to blow up a Zielonka+psolC hybri
 | G=4, K=7, descending relevance | 26, 53, 83, 116, 152, 191, 233, 278, 326, 377 | second difference 3..6: quadratic |
 
 No search found super-polynomial growth in k (n = Gk + 1).
+
+### PGSolver cunninghamexp (gens.py port; "Binary-Case Exponential Lower Bound for Cunningham's rule"; n = 9N + 1)
+| N | cunningham-lb (PGSolver's lower-bound edge ordering, switch_cunningham.ml:104-148) | cunningham (index order, S6) | zadeh (S5) | msf | lsf | switch-all |
+|---|---|---|---|---|---|---|
+| 2 | 7 | 3 | 3 | 3 | 3 | 4 |
+| 4 | 121 | 9 | 9 | 9 | 9 | 4 |
+| 6 | 799 | 15 | 15 | 15 | 15 | 4 |
+| 8 | 4309 | 21 | 21 | 21 | 21 | 4 |
+| 10 | 21451 | 27 | 27 | 27 | 27 | 4 |
+
+Best-reward start. The family blows up Cunningham's rule under the ordering it was built for (×2.2 per N) and is linear under the
+index order: the lower-bound ordering is not lexicographic in any vertex numbering (edges of e0 sit at positions 1 and 16 of 22
+for N = 3), so the index-order rule is not killed by relabelling this instance. Zadeh with the index tie-break is linear here.

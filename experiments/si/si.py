@@ -341,13 +341,54 @@ class Engine:
 
     def rule_cunningham(self, strat, val, imp, rng):
         """Cunningham's round-robin rule with the index order: Even's edges in the fixed cyclic order (v, w) ascending;
-        switch the first improving edge after the previously switched one."""
-        last = self.mem.get("last", (-1, -1))
-        after = [e for e in imp if e > last]
-        v, w = min(after) if after else min(imp)
-        self.mem["last"] = (v, w)
+        switch the first improving edge after the previously switched one.  With self.edge_order set (a list of Even's
+        edges), that list is the cyclic order instead (PGSolver switch_cunningham.ml:12-25, 44-48: start at the first edge
+        of the order, continue after the last switched edge)."""
+        if getattr(self, "edge_order", None):
+            pos = self.edge_pos
+            last = self.mem.get("lastpos", -1)
+            after = [pos[e] for e in imp if pos[e] > last]
+            p = min(after) if after else min(pos[e] for e in imp)
+            v, w = self.edge_order[p]; self.mem["lastpos"] = p
+        else:
+            last = self.mem.get("last", (-1, -1))
+            after = [e for e in imp if e > last]
+            v, w = min(after) if after else min(imp)
+            self.mem["last"] = (v, w)
         new = list(strat); new[v] = w
         return tuple(new)
+
+    def set_lower_bound_order(self):
+        """PGSolver switch_cunningham.ml:104-148 lower_bound_construction_round_robin_compare_exp (the ordering the
+        cunninghamexp family is built for; chosen when a node labelled 'e0' exists, line 174), applied to Even's edges
+        listed as pg_iterate prepends them (line 52-57: reverse vertex order, successors ascending) and sorted (stable here;
+        OCaml's Array.sort is not stable, which only affects classes the source marks 'ordering irrelevant')."""
+        import functools
+        labels = self.g.labels or [None] * self.n
+        def f(i):
+            s = labels[i]
+            if not s: return ('!', 0, 0)
+            if len(s) == 1: return (s[0], -1, -1)
+            if s[1] == '(':
+                t = s[2:].split(','); return (s[0], int(t[0]), int(t[1].split(')')[0]))
+            return (s[0], int(s[1:]), -1)
+        def gcls(a, b):
+            return {('e', 'x'): 1, ('d', 'b'): 1, ('e', 'p'): 3, ('d', 'x'): 4}.get((a, b), 1 if a == 'b' else 2 if a == 'c' else 5 if a == 'a' else -1)
+        def h(a):
+            return {'e': 2, 'b': 0, 'd': 1}.get(a, -1)
+        def cmp(e1, e2):
+            (v, w), (v2, w2) = e1, e2
+            vv, vi, vij = f(v); ww = f(w)[0]; vv2, vi2, vij2 = f(v2); ww2 = f(w2)[0]
+            vx, vx2 = gcls(vv, ww), gcls(vv2, ww2)
+            c = (vx > vx2) - (vx < vx2); ci = (vi > vi2) - (vi < vi2)
+            hc = (h(vv) > h(vv2)) - (h(vv) < h(vv2))
+            if c: return c
+            if vx == 5: return -ci
+            if vx == 1: return ci if ci else hc
+            return 0
+        edges = [(v, w) for v in reversed(range(self.n)) if self.owner[v] == EVEN for w in self.succ[v]]
+        self.edge_order = sorted(edges, key=functools.cmp_to_key(cmp))
+        self.edge_pos = {e: i for i, e in enumerate(self.edge_order)}
 
     # ---- generic driver ---------------------------------------------------------------------------------------
     def run(self, rule, start, rng=None, max_iter=None):
@@ -440,6 +481,7 @@ RULES = {
     "msfc": lambda e: e.rule_msfc,
     "zadeh": lambda e: e.rule_zadeh,
     "cunningham": lambda e: e.rule_cunningham,
+    "cunningham-lb": lambda e: (e.set_lower_bound_order(), e.rule_cunningham)[1],
     "steepest": lambda e: e.rule_steepest,
     "most-improved": lambda e: e.rule_most_improved,
 }
