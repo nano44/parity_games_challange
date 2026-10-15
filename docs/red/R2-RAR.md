@@ -3,7 +3,7 @@
 L-RED, 2026-10-15 (Lead brief 12:22Z). Target: docs/si/candidates/S1.md at claude/l-si 95d37d3 (rule `rar`, Zwick arXiv
 2607.06334 Appendix D Fig. 1, fresh randomness at every call; valuations VJ; start best-reward). Code: experiments/red/fhz.py.
 
-## Verdict: KILLED, by transfer of a published theorem (needs a referee for the transfer lemma)
+## Verdict: KILLED, by transfer of a published theorem (transfer lemma refereed: REFEREE R-TL2 section 9, REFEREE-2 R2-TL section 6, at 49ae306; RESULTS R3)
 Friedmann-Hansen-Zwick, "Random-Facet and Random-Bland require subexponential time even for shortest paths", arXiv 1410.7530,
 Theorem 6.3 (p.22): on the weighted acyclic graphs G_{n,r,s,t} with r = Theta(log n), s = Theta(sqrt(n) log n), t = Theta(log n),
 from the initial tree B0, the expected number of switches of the ORIGINAL Random-Facet algorithm is at least
@@ -44,7 +44,7 @@ from F \ B; B' = RF(F \ {e}, B); if e is a strictly improving switch for B' then
   (REFEREE-2 F2(c).)
 Size: |V(P)| = |V(G)| + |E(G)| + n(2rs + 1), |E(P)| = 2|E(G)| + n(2rs + 1): Theta(nrst) = Theta(M).
 
-### Transfer Lemma (L-RED, unrefereed)
+### Transfer Lemma (L-RED; refereed: REFEREE R-TL2 section 9, REFEREE-2 R2-TL section 6, at 49ae306; RESULTS R3)
 For every tree B subseteq E(G) and every e in E(G) \ B: e is a strictly improving switch for B in G iff the relay edge of e is
 an improving edge for sigma_B in P (VJ valuation, Friedmann 1106.0778 section 3; si.py's test is strict: Engine.improving keeps
 (v, w) iff key(val[w]) > key(val[sigma(v)]), and vjfast's cmp(...) > 0 likewise, matching FHZ's strict "shorter"). (The test depends on (B, e) only, so no
@@ -151,12 +151,12 @@ its independent exhaustive check (every tree and every edge for four small param
 ## What this does not say
 - The bound is e^Omega(sqrt n) in the number of bits, 2^Omega~(M^{1/3}) in the size; it rules out polynomial expected time, not
   the subexponential upper bound of Zwick Thm 8.2.
-- The transfer lemma is unrefereed. The weakest step is (3), the entry argument; the random-relation checks on arbitrary
-  trees are its empirical cover.
+- The transfer lemma is refereed: REFEREE R-TL2 section 9, REFEREE-2 R2-TL section 6, at 49ae306; RESULTS R3. Its weakest step is (3), the entry argument; the random-relation checks on
+  arbitrary trees and REFEREE-2's exhaustive check are its cover.
 - The lemma is specific to G_{n,r,s,t}'s cost structure (one class per level, offsets below 2, class gaps >= 4^j). It does not
   claim that every shortest-path instance is a sink parity game.
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this report; experiments/red/fhz.py (+ instances/fhz_*.pg); notebook; check.sh pins lockstep3 (3,1,1,1) and relation (4,2,2,2).
 - FINDINGS: S1 killed by FHZ Thm 6.3 + transfer lemma; measured growth tables; si.py rar consistent with an independent driver.
-- NEEDS: REFEREE on the transfer lemma (section "Transfer Lemma"); Lead: record in docs/si/DEAD.md and RANKING section 4.
+- NEEDS: none (lemma refereed: REFEREE R-TL2 section 9, REFEREE-2 R2-TL section 6, at 49ae306; RESULTS R3).

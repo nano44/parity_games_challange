@@ -234,6 +234,8 @@ class VJModel:
 def relation_check(n, r, s, t, samples, seed=0):
     """Random functional F (every multi-edge keeps >= 1 copy, every vertex keeps an out-edge) and random tree B in F:
     the sets of improving edges of B within F must coincide in G and P."""
+    import os
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))     # python3 -I drops the script directory
     import vj
     G, P, B0, B0P, names, ename, pid = build(n, r, s, t); rng = random.Random(seed); bad = 0; tot = 0
     groups = {}
