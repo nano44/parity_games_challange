@@ -57,3 +57,18 @@
 - 2026-10-15 01:15Z: L-COMP parked (25a6e21). n=5 diagonal: w^V(5,5)>=10, s^V(5,5)>=10 (LRAT), TARGET n=5 weak>=9; no upper bounds, W(5) vs S(5) open. No successor now (cost/value).
 - 02:04Z sweep: Lead overage false; L-LOWER idle between n=5 rounds (c737c00, k>11 w1, k>8 w2), ctx 426k. l-lower CI red since 12cf510: experiments/lower/check.sh needs numpy, CI lacked it; Lead fix: pin numpy==2.5.3 in verify.yml (Lead-owned), no lane message.
 - 03:0xZ sweep: overage false; Lead ctx 99k after compaction. L-LOWER idle between rounds (9ece275; k=8,9 unrestricted running), ctx 440k. l-lower CI still red after cff959c: pip fell back to user site (not writable system site), which check.sh's python3 -I ignores. Fix: actions/setup-python 3.12 + isolated-import assert in CI. Lead miss: cff959c was pushed without reproducing the CI failure mode.
+- 03:07Z l-lower CI green at 1d4c7d2 (run 224) after trunk fe676d9 merge; CI exception closed.
+- 04:03Z sweep: overage false; Lead $51.6 ctx 142k. L-LOWER idle between rounds (1d4c7d2, CI green), $41.5 (+$7 in 2h waiting on runs), ctx 447k; one cost message: wake on verdict/crash, fallback <=60 min.
+- 05:02Z sweep: overage false; Lead $52.0. L-LOWER idle waiting on k=8 run (last activity 04:16Z, $42.8, +$1.3/h after monitor change), ctx 451k. No action.
+- 06:02Z sweep: overage false; Lead $52.2. L-LOWER idle since 04:16Z waiting on k=8 run ($42.8 flat), 2h fallback due ~06:16Z; check at 07:01Z that it fired. No action.
+- 07:04Z sweep: overage false; Lead $52.5. L-LOWER 2h fallback fired 06:16Z and cost $8.5 (cache expired, +406k cache_write); told it to drop timed fallback, wake only on verdict/process exit. Lead miss: 04:03Z advice ignored cache TTL. Lesson: idle-wait wakes cost ~context x write price once cache expires; prefer no timed wakes.
+- 07:27Z D3: OWNER-DESK spawned session_01Eq99qsTJBiTh6xLzwCPtqv (opus-5-5, branch claude/owner-desk), Q2-Q7 handed over with Lead recommendations.
+- 07:50Z L-LOWER n=5 verdict B_1(5)=8=2n-2 (90f6928). Lead decision: not (a) uniform construction (positive result, removes T-L1, no barrier value) nor (b); L2-data in current box: CDHL two-player statement + B_2(n) n<=4 exact/bounds; refereeing and L-LIT novelty deferred until a RESULTS candidate exists.
+- 07:55Z Q5 answered by owner (DTR15-4 upload via OWNER-DESK); sha256 verified; L-LIT woken for T11 (2h); reading L11.
+- 08:00Z D4 recorded (owner answers Q2-Q7 via OWNER-DESK); readings L12-L16; Q2/Q4/Q6/Q7 closed; Q3 owner action; Q5 pending T11.
+- 08:05Z L-LIT T11 done (933dc12, merged); Q5 closed (L17); R2 caveat updated; psolC candidate recorded; L-LIT parked.
+- 08:09Z Q3 done by owner (setup script). No owner questions open. Next new session: confirm python3 -I imports pysat, numpy without install.
+- 08:00Z owner asked why no session runs. Answer: L-LOWER idle-waiting on solver (B_2(1..3)=0,2,4, B_2(4)>=7, cfb8c3c); others parked. Lead decision: wake L-ATTR for A3-psolC (implement + measure psolC on n<=4 and M1 families), 6h box.
+- 08:03Z sweep: overage false; Lead $56.6 ctx 274k. L-ATTR RUNNING on A3-psolC (reading DTR15-4 figures, M1 corpus). L-LOWER idle-waiting on B_2(4) (cfb8c3c, $56.8). No action.
+- 08:50Z L-LOWER L2-data done (d00349a): B_2(1..4)=0,2,4,7, cost>depth at n=4. Decision: one 12h T-L2 theory box via successor (cost: 492k ctx); old session writes handover and parks.
+- 08:31Z L-LOWER handover f0e5e8f; successor session_0153E4mCB2wqi65xdfpxozfK spawned (fable, claude/l-lower), five questions first.

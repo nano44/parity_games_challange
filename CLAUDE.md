@@ -33,6 +33,7 @@ Playbook: docs/sources/fleet-playbook.md. Literature map (secondary source): doc
 - L-LOWER: docs/lower/, experiments/lower/.
 - CHECKER: docs/checker/ (landing gate: exact-commit re-runs and statement diffs).
 - HUMAN-DESK: docs/HUMAN-REVIEW.md (packet for a human expert; owner decides any contact).
+- OWNER-DESK: docs/owner-desk/ (owner Q&A; open owner questions; relays owner words to the Lead verbatim).
 - Lead only: CLAUDE.md, TARGET.md (drafts; owner approves), docs/*.md, docs/agents/, scripts/verify.sh, .github/.
 
 ## Commands

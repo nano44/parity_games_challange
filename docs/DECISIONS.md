@@ -51,3 +51,37 @@ Lead reading L9 (2026-10-14, under L8): L-ATTR's T-A1 ("psolB solves G completel
 if double-refereed, as M3 "a tighter analysis of a known algorithm": an exact structural characterisation of the class HKP call
 "Solved" for psolB. It is not claimed as "a new polynomial class": PA** membership is decidable in polynomial time only by running
 psolB itself (L8). Owner may rule otherwise.
+
+## D3 (2026-10-15 ~07:26Z): owner-questions session
+Verbatim:
+> Lets start a subsession called owner questions where you can delegate your questions and I can ask questions about the research progress
+
+Lead reading L10: the session is OWNER-DESK (title "Owner questions", brief docs/agents/OWNER-DESK.md). It holds the open owner
+questions and answers the owner's questions about progress from the repository. It relays every owner answer or instruction to the
+Lead verbatim; rulings are recorded here by the Lead as before. It has no authority over lanes and messages only the Lead.
+
+Lead reading L11 (2026-10-15 07:55Z, on Q5): the owner answered Q5 with a file, HKP "Static analysis of parity games: alternating
+reachability under parity", Imperial DoC DTR15-4 (2015); public copy sha256 a7b61fe3a72926a94a3019e34620339f38aa653fe8aeed9ab4210187763e9cd6.
+If L-LIT T11 finds it is the text of LNCS 9560 pp. 159-177, R2's caveat reads "checked against arXiv 1405.0386v2 and the
+pre-publication chapter text DTR15-4; Springer pages not opened" and Q5 closes. G10 is not an owner question and is not closed by it.
+
+## D4 (2026-10-15 ~07:55Z, via OWNER-DESK owner-desk 7b5e7ef): answers to Q6, Q7, Q4, Q2, Q3
+Verbatim:
+> Q6. I am the only human reader, so if there is something concerining me, show it in this session. Q7. You are intelligent enough to reason about this Q4. Again, you are smart about to reason for these type of question, you are aware of the whole process, you must reason about these. Q2. What is your recommendation? Q3. Walk met hrough it
+
+Lead reading L12 (standing): judgement calls on process, method and result classification are the fleet's to make, with reasoning
+recorded here; the owner is asked only about scope, spend, anything external, and TARGET.md (CLAUDE.md line 3). Questions for the
+owner go to OWNER-DESK; anything concerning the owner is shown there.
+Lead reading L13 (Q6, closed): no external distribution of docs/HUMAN-REVIEW.md. The owner is its only reader, via OWNER-DESK.
+Lead reading L14 (Q7, closed, delegated): L7 stands. L4 (RESULTS R1) is a supporting lemma, not M3: it is a convention variant of the
+known strong-separator lower bound (CDFJLP 1807.10546 Thm 5.1) in the same algorithm model. The M3 credit is T-A1 (R2).
+Lead reading L15 (Q4, closed, delegated): no session is spawned for it. When an L-COMP successor is next spawned for other work, it
+runs the original PGSolver binaries once (d3cd624) to diff the hard-family ports; if the platform classifier still refuses, the
+ported generators plus the REFEREE check stand (L5). M1 does not depend on it.
+Lead reading L16 (Q2, closed unless the owner objects): keep claude/vibrant-johnson-nxvvxo as trunk. No pull requests are opened,
+so a `main` branch would add a second name without changing any work.
+Q3: OWNER-DESK walked the owner through the setup script (cloud environment menu in the title bar > Edit > Setup script). Setting it
+is the owner's action; it stays listed until the owner says it is done or declines.
+Lead reading L17 (2026-10-15 08:05Z, Q5 closed): L-LIT T11 (l-lit 933dc12) finds DTR15-4 very likely the chapter text (identical
+29-entry reference list against Crossref; the only open-access copy of the chapter DOI is this report). Under L11, Q5 closes;
+RESULTS R2 caveat updated. psolC (PA** strictly inside Solved(psolC), conditional on DTR Thm 4) is recorded as a candidate, not started.
