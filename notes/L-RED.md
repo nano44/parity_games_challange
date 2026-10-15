@@ -5,8 +5,8 @@ Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edi
 2026-10-15 ~17:10Z (my clock). Box on Question DF (Lead 14:00Z): S7 KILLED (docs/red/R5-S7-kill.md): fhz_padded(n) =
 R2's parity encoding of FHZ's one-player counter G_{n,1,1,1} with linear pads W (n+1-i), W = (3,4,3,1): S7 iterations
 16, 44, 104, 228, 480, 988, 2008, 4052 (n = 2..9), |V| = 64..632, i(n) = 2 i(n-1) + 4n; vj.py agrees (n = 2..4), regions =
-Zielonka, strategies verified. Question DF: longest DF run on G_{n,1,1,1} exact 5, 20, 53, 124, 269 (n = 1..5). Reported
-16:50Z. Pending: n = 10 vjfast run in the scratchpad (fp_big.log). Next if asked: a proof of the recurrence (FHZ-style
+Zielonka, strategies verified. Question DF: longest DF run on G_{n,1,1,1} exact 5, 20, 53, 124, 269 (n = 1..5). Reported 16:50Z. Then S5/S6 on the FHZ encoding: HELD (docs/red/R6-S5S6-fhz.md): numbering searches quadratic;
+index-fair rules must take the improving higher bit that the counter keeps live during the lower count. Next if asked: a proof of the recurrence (FHZ-style
 phase analysis for the S7 order), or the "DF + pads" reduction as a general theorem.
 ## Queue
 1. If asked: proof of i(n) = 2 i(n-1) + 4n for fhz_padded under S7. 2. S5/S6 (paragraph below). 3. Optional: FHZ-scaled growth run for R2 (b).

@@ -183,12 +183,25 @@ class RF:
         return trees2
 
 
-def export_pg(P, B0P, names, path):
+def export_pg(P, B0P, names, path, labels=None):
+    """labels: optional dict parity-id -> label (G vertices get their G name, relays 'm<edge>', class vertices 'g<i>'/'o<i>_<d>')"""
     with open(path, "w") as f:
         f.write(f"parity {P.N - 1};\n")
         for v in range(P.N):
-            f.write(f"{v} {P.prio[v]} {1 if v == 0 else 0} {','.join(map(str, P.succ[v]))};\n")
+            lab = f' "{labels[v]}"' if labels and v in labels else ""
+            f.write(f"{v} {P.prio[v]} {1 if v == 0 else 0} {','.join(map(str, P.succ[v]))}{lab};\n")
     return "spec:" + " ".join(f"{v}:{P.edge_head[e]}" for v, e in sorted(B0P.items()))
+
+
+def labels_of(pid, names, ename):
+    """parity id -> label for export_pg"""
+    lab = {0: "t"}
+    for key, v in pid.items():
+        if key[0] == "v": lab[v] = names[key[1] + 1]
+        elif key[0] == "m": lab[v] = "m" + ename[key[1]][0].replace(",", "_")
+        elif key[0] == "g": lab[v] = f"g{key[1]}"
+        elif key[0] == "o": lab[v] = f"o{key[1]}_{key[2]}"
+    return lab
 
 
 if __name__ == "__main__":
