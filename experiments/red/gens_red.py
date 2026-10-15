@@ -174,7 +174,16 @@ def fhz_padded(n, W=(3, 4, 3, 1), k=1):
     return f"parity {nx - 1};\n" + "\n".join(lines) + "\n% start " + start[5:] + "\n"
 
 
-FAMILIES = {"gated_bland": gated_bland, "fhz_padded": fhz_padded, "friedmann_Gn": friedmann_Gn, "padded_Gn": padded_Gn, "padded2_Gn": padded2_Gn,
+def fhz_P(n):
+    """the labelled sink-parity encoding P_{n,1,1,1} of FHZ's counter without pads (S5/S6 numbering experiments, R6)."""
+    import fhz, tempfile, os as _os
+    G, P, B0, B0P, names, ename, pid = fhz.build(n, 1, 1, 1)
+    with tempfile.NamedTemporaryFile("w", suffix=".pg", delete=False) as f:
+        start = fhz.export_pg(P, B0P, names, f.name, labels=fhz.labels_of(pid, names, ename)); txt = open(f.name).read(); _os.unlink(f.name)
+    return txt + "% start " + start[5:] + "\n"
+
+
+FAMILIES = {"gated_bland": gated_bland, "fhz_padded": fhz_padded, "fhz_P": fhz_P, "friedmann_Gn": friedmann_Gn, "padded_Gn": padded_Gn, "padded2_Gn": padded2_Gn,
             "padded3_Gn": padded3_Gn, "padded4_Gn": padded4_Gn, "padded5_Gn": padded5_Gn, "padded6_Gn": padded6_Gn}
 if __name__ == "__main__":
     sys.stdout.write(FAMILIES[sys.argv[1]](int(sys.argv[2])))

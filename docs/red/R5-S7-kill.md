@@ -5,13 +5,13 @@ valuation strictly improves; ties by the largest new valuation at v, then by ind
 my experiments/red/vj.py most-improved (validated against vjfast in R3). Family: experiments/red/gens_red.py fhz_padded.
 
 ## Verdict: KILLED (instances experiments/red/instances/fhz_padded_n4.pg, fhz_padded_n6.pg)
-| n | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| vertices | 64 | 112 | 171 | 241 | 322 | 414 | 518 | 632 |
-| S7 iterations (vjfast) | 16 | 44 | 104 | 228 | 480 | 988 | 2008 | 4052 |
-| S7 iterations (vj.py) | 16 | 44 | 104 | | | | | |
-| unpadded P_{n,1,1,1} (vjfast) | 8 | 14 | 22 | 32 | 44 | 58 | | |
-i(n) = 2 i(n-1) + 4n exactly on the table, so i(n) = 8 * 2^n - 4n - 8: exponential in n on a family of size Theta(n^2).
+| n | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| vertices | 64 | 112 | 171 | 241 | 322 | 414 | 518 | 632 | 757 |
+| S7 iterations (vjfast) | 16 | 44 | 104 | 228 | 480 | 988 | 2008 | 4052 | 8144 |
+| S7 iterations (vj.py) | 16 | 44 | 104 | | | | | | |
+| unpadded P_{n,1,1,1} (vjfast) | 8 | 14 | 22 | 32 | 44 | 58 | | | |
+i(n) = 2 i(n-1) + 4n exactly on the table (n <= 10), so i(n) = 8 * 2^n - 4n - 8: exponential in n on a family of size Theta(n^2).
 Start: best-reward (= FHZ's zero-edge tree B0; every Even choice leads to a priority-0 relay and the costly relay is the
 last). Final regions equal Zielonka's and the strategies pass harness/verify.py (n = 3, 4 checked with vj.py). No index
 tie-break fired. Every switch is non-cycle-creating (one-player acyclic game).
