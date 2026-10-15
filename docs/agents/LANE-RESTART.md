@@ -15,3 +15,4 @@ Five questions:
 
 | date | lane | old session | new session | score (of 5) | misses fixed |
 | --- | --- | --- | --- | --- | --- |
+| 2026-10-15 | L-LOWER | session_01U5n8mgXxgyGzvuUzxHbiKx | session_0153E4mCB2wqi65xdfpxozfK | 5 | none (answers re-measured: 29/18 vs trunk, merge-base fe676d9, no GAPS rows, core 100 games) |
