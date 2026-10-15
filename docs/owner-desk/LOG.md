@@ -56,3 +56,7 @@ from ~10:00Z); L-LOWER finishes its box; gauntlet unchanged. Q8 answered by this
 > a
 Desk reading: Q8 option (a), "add one or more algorithm lanes now; L-LOWER continues as well" (the last lettered options shown).
 Consistent with L18 (L-ALG). Relayed verbatim to the Lead, priority now (scope).
+
+## 2026-10-15 10:07Z Lead (relayed to owner)
+"a" recorded as D6 (trunk 62388b3), L19: Q8 closed; L-SI started (strategy-improvement design); two algorithm lanes + L-LOWER; at the
+D1 cap of 5 working sessions; no spend ceiling.
