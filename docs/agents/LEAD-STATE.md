@@ -131,3 +131,4 @@
 - 15:03Z sweep: no overage (seven_day warning; D7). Lead $87.7 ctx 758k. L-ALG 549bb34: DTL survives all tc/tc+ variants (report pending). L-SI 71c5c97 obstruction map. L-RED 7dd83d3 Zadeh climb. L-LOWER b2eb965 runs. No action.
 - 15:08Z L-RED R7: S5 held (cyclic tie constraints). L-RED -> DTL attack (6h). L-LIT T15 (fixed-tie-break Zadeh novelty + T13 fix).
 - 15:12Z L-ALG DTL attack no kill (473c7c8, merged); L-ALG parked; recommendation to L-RED.
+- 15:08Z merged l-lit e895ddd (T15 OPEN, T13 cite fix); L-LIT parked; NOW updated. Waiting on L-RED (DTL, ~21:06Z), L-SI (~22:10Z), L-LOWER (~20:36Z).
