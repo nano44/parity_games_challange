@@ -68,3 +68,4 @@
 - 08:00Z D4 recorded (owner answers Q2-Q7 via OWNER-DESK); readings L12-L16; Q2/Q4/Q6/Q7 closed; Q3 owner action; Q5 pending T11.
 - 08:05Z L-LIT T11 done (933dc12, merged); Q5 closed (L17); R2 caveat updated; psolC candidate recorded; L-LIT parked.
 - 08:09Z Q3 done by owner (setup script). No owner questions open. Next new session: confirm python3 -I imports pysat, numpy without install.
+- 08:00Z owner asked why no session runs. Answer: L-LOWER idle-waiting on solver (B_2(1..3)=0,2,4, B_2(4)>=7, cfb8c3c); others parked. Lead decision: wake L-ATTR for A3-psolC (implement + measure psolC on n<=4 and M1 families), 6h box.
