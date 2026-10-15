@@ -150,3 +150,4 @@
 - 17:01Z R8 §11 926d7ba merged: GAP-C no hit (debug fuzz 12k, 7 climbs, all 0). L-RED parked. C-a/C-b readings + §10 requirement forwarded to L-ALG.
 - 17:03Z hourly sweep: no overage (seven_day warning). L-SI 714k idle, handover pushed, final report pending (wrap-up by 18:00Z); L-LOWER 370k idle, report ~19:30Z; L-ALG working. No exceptions.
 - 17:10Z L-SI end of box 0d48da2 merged; DE8 (S2b/S3/S4) added to RESULTS; L-SI parked; L23: no successor while DTL leads. Working: L-LOWER, L-ALG.
+- 17:21Z L-ALG 6bb5d43 merged. L-RED unparked 2h for (alpha)/(beta'), (r1), GAP-A. REFEREE read deferred to end of proof box (23:50Z). T-ALG1(a) stays deferred.
