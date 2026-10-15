@@ -102,3 +102,4 @@
 - 13:28Z L-RED box2 end: S5/S6 HELD (R4 0203590); one-token R2 fix still missing (re-asked, messages crossing). S7: L-SI step 2 + proof attempt; L-LIT T14 barrier; L-RED box 3 kill. Cap 5.
 - 13:31Z L-RED R2 fix 49ae306 (case 3: 4^{j*}); both signatures cover it; merged. CHECKER queued for next slot.
 - 13:35Z L-LIT T14 S7 NOT COVERED (8dd2e55, merged); attack hint to L-RED. CHECKER C2 on RF result started.
+- 13:41Z CHECKER C2 FAIL (ce07713): one signature only. LEAD MISS: counted REFEREE-2's first read (which I asked to be 'not a signature') as a signature in L21 and in the C2 brief; also said referee 42f11c6/5ed56c5 were on trunk when they were not. Fixed: referee + checker merged (db46c2c, 4b19501), L21 correction, REFEREE-2 asked to sign. Lesson: before a CHECKER brief, grep each referee file for its signature block and check ancestry on trunk.
