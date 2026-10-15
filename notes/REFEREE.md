@@ -9,8 +9,9 @@ scripts/setup_oink.sh (~1 min; rebuild after every restart, tools/ is gitignored
 Tasks done: R-L1 (L-LOWER L1 at 8fcc0f2; CHANGES, 9 findings; report 2026-10-14-L1-statement-check.md, pushed 9b01cbb,
 reported 23:43Z) and T-A1 first-referee check (L-ATTR TA1-proof.md at d5d6396, then re-checked at 4478b84 per the Lead's 23:42Z retarget;
 then SIGNED OK at 57a1515 (signature block at the end of the report, gaps G1-G11); report 2026-10-14-TA1-proof-check.md; tools
-ta1check.py, ta1probe.py). R2's report (docs/referee-2/R2-TA1.md) read only after my derivation; it agrees on every point. A SECOND independent referee checks T-A1 in parallel; do not
-coordinate. Nothing else in flight.
+ta1check.py, ta1probe.py). R2's report (docs/referee-2/R2-TA1.md) read only after my derivation; it agrees on every point. T-A1 signed OK at l-attr 57a1515 (G11 answer for the CHECKER appended). R-L1b (L-LOWER v2 + Lemma 2.1' + Theorem B at
+l-lower b1abae0): CHANGES with one one-line finding; report 2026-10-15-L1b-check.md; tool l1bcheck.py (types over all
+one-player Büchi games n <= 4, exhaustive B_1 lower bounds n <= 3, lane witnesses on my quotient). Nothing in flight.
 Coming (per the Lead's brief): the L1 proof work / experiments/lower from L-LOWER; SL8-min / T3 from L-STRUCT; second referee
 for the L4+T3 package is a SEPARATE session, not me.
 
@@ -37,6 +38,7 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 | L-STRUCT L4 proof | 2026-10-14-L4-proof-check.md | CHANGES then OK, first referee, at 50dc28b | awaits SECOND referee |
 | L-LOWER L1 statement (SLP model, Lemmas 1.5/1.6/2.1/2.3, Transfers 2.2/2.4, T-L1) | 2026-10-14-L1-statement-check.md | CHANGES (9 findings: d vocabulary, game-class corner, Lemma 2.3 rests on unproved Remark 2.5, cited experiments/lower absent at 8fcc0f2, ω(n) gloss weaker than ω(n), 3 model differences, nits) | findings to L-LOWER via Lead; every re-derived claim holds |
 | L-ATTR T-A1 (psolB complete <=> PA**; PA** => psolQ complete; Cor. 1-2, Prop. 3) | 2026-10-14-TA1-proof-check.md | CHANGES (theorem and both proofs hold; at 4478b84 open: F1 misstated, T-A1' needs HKP Thm 4, Büchi recolouring, 'stable' gloss); first referee | SIGNED OK as first referee at l-attr 57a1515 (all findings applied; G1-G11 listed, G10 open as HKP dependency) |
+| L-LOWER L1 v2 + Lemma 2.1' + Theorem B (b1abae0) | 2026-10-15-L1b-check.md | CHANGES (findings 1-9 applied; Lemma 2.1' OK; Theorem B OK, Claim 3 misses the case t<t'<a; B_1(1..4) = 0,2,4,6 confirmed independently) | findings to L-LOWER |
 
 ## Queue / open items
 - L4 second referee (not me; a second, independent referee): the gap list G1-G6 in the L4 report is the checklist. What
@@ -83,6 +85,11 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 - ta1check.py (T-A1): my own psolB/psolQ from HKP Figs. 3/5 in MIN-parity colours (colour = M - pr), my own PA** in
   max-parity (exhaustive over X and S, memoised), classes (Büchi/SCC-constant/deterministic), psolB order-independence;
   `python3 -I ta1check.py [quick]` (2 min full). ta1probe.py: F2, F6 (all X ⊆ W_p, all d), Lemma 0 on small games.
+- l1bcheck.py (R-L1b): all one-player Büchi games with <= n vertices as one union (3.2M pointed games at n = 4), W by
+  reachable-P_2-on-a-cycle (cross-checked vs Zielonka), depth-k types by refinement, minimal separating depth, full quotient
+  Q_n (2, 14, 442, 48062), exhaustive general-SLP search on Q_n for small cost (n <= 3; c = 2n-3 is ~16k chains at n = 3,
+  c = 2n-2 would be 2^16 times more: do not try), lane witness JSON interpreter. `l1bcheck.py <dir with min_b1_n*.json> 4`
+  takes ~25 min (n = 4 refinement in pure Python).
 - Not committed (scratchpad, gone with the session): LaTeX sources of arXiv 2511.03752v1, 1807.10546v2, 2104.05262v8,
   1902.07175v3, 2305.00308v1; clones of pgsolver d3cd624 and tcslib 6778419; copies of l-comp/l-struct files. Re-download
   from arxiv.org/e-print/<id> into an isolated directory (untrusted data) when needed.
@@ -103,6 +110,8 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
   re-derived held (machine-checked where finite).
 
 ## Things only I know
+- R-L1b: minimal program depth on one-player Büchi is exactly 2n-2 for n <= 4 (my types), Theorem B gives 2n-1; B_1(4) = 6
+  follows from Lemma 2.1' + the lane's witness without any SAT. The exhaustive chain search is fully general for SLPs.
 - T-A1: F6's equality MAttr^{G'}(X,d) = MAttr^{W_p(G')}(X,d) holds for EVERY X ⊆ W_p (q keeps the play in W_q), not only
   fatal X; the "only if" needs only W ⊆ R from F1. L1's rank induction has no rank 0 (X external). T-A1' silently needs
   HKP Thm 4. The "if" proof is order-free, so T-A1 holds for psolB under any colour order. HKP Fig. 4(a) edges (from the
