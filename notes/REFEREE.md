@@ -11,7 +11,8 @@ reported 23:43Z) and T-A1 first-referee check (L-ATTR TA1-proof.md at d5d6396, t
 then SIGNED OK at 57a1515 (signature block at the end of the report, gaps G1-G11); report 2026-10-14-TA1-proof-check.md; tools
 ta1check.py, ta1probe.py). R2's report (docs/referee-2/R2-TA1.md) read only after my derivation; it agrees on every point. T-A1 signed OK at l-attr 57a1515 (G11 answer for the CHECKER appended). R-L1b (L-LOWER v2 + Lemma 2.1' + Theorem B at
 l-lower b1abae0): CHANGES with one one-line finding; report 2026-10-15-L1b-check.md; tool l1bcheck.py (types over all
-one-player Büchi games n <= 4, exhaustive B_1 lower bounds n <= 3, lane witnesses on my quotient). Nothing in flight.
+one-player Büchi games n <= 4, exhaustive B_1 lower bounds n <= 3, lane witnesses on my quotient). R-psolC (L-ATTR psolC fidelity, l-attr 02174e2): FAITHFUL, DE3 recordable; report docs/referee/R-psolC.md; tool
+psolccheck.py (my own psolC from DTR15-4 Defs 1-2/Thm 1/Fig. 5, full product, both A1 readings). Nothing in flight.
 Coming (per the Lead's brief): the L1 proof work / experiments/lower from L-LOWER; SL8-min / T3 from L-STRUCT; second referee
 for the L4+T3 package is a SEPARATE session, not me.
 
@@ -39,6 +40,7 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 | L-LOWER L1 statement (SLP model, Lemmas 1.5/1.6/2.1/2.3, Transfers 2.2/2.4, T-L1) | 2026-10-14-L1-statement-check.md | CHANGES (9 findings: d vocabulary, game-class corner, Lemma 2.3 rests on unproved Remark 2.5, cited experiments/lower absent at 8fcc0f2, ω(n) gloss weaker than ω(n), 3 model differences, nits) | findings to L-LOWER via Lead; every re-derived claim holds |
 | L-ATTR T-A1 (psolB complete <=> PA**; PA** => psolQ complete; Cor. 1-2, Prop. 3) | 2026-10-14-TA1-proof-check.md | CHANGES (theorem and both proofs hold; at 4478b84 open: F1 misstated, T-A1' needs HKP Thm 4, Büchi recolouring, 'stable' gloss); first referee | SIGNED OK as first referee at l-attr 57a1515 (all findings applied; G1-G11 listed, G10 open as HKP dependency) |
 | L-LOWER L1 v2 + Lemma 2.1' + Theorem B (b1abae0) | 2026-10-15-L1b-check.md | CHANGES (findings 1-9 applied; Lemma 2.1' OK; Theorem B OK, Claim 3 misses the case t<t'<a; B_1(1..4) = 0,2,4,6 confirmed independently) | findings to L-LOWER |
+| L-ATTR psolC fidelity (DTR15-4; 02174e2) | R-psolC.md | FAITHFUL (A1: literal reading is the chapter's; Example 3 (ii) is a slip; instance and tc N=2 undecided under both readings; 3 nits) | DE3 can be recorded |
 
 ## Queue / open items
 - L4 second referee (not me; a second, independent referee): the gap list G1-G6 in the L4 report is the checklist. What
@@ -90,6 +92,9 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
   Q_n (2, 14, 442, 48062), exhaustive general-SLP search on Q_n for small cost (n <= 3; c = 2n-3 is ~16k chains at n = 3,
   c = 2n-2 would be 2^16 times more: do not try), lane witness JSON interpreter. `l1bcheck.py <dir with min_b1_n*.json> 4`
   takes ~25 min (n = 4 refinement in pure Python).
+- psolccheck.py (R-psolC): psolC from DTR15-4 on the FULL product V x C_bot (no reachability restriction), both readings of
+  A1 (start colour in/out of the minimum); `psolccheck.py FILE.pg [--x]` with trace; `--exhaustive <lane attr dir>` compares
+  with the lane's psolc.py on all n <= 3 games (~15 min).
 - Not committed (scratchpad, gone with the session): LaTeX sources of arXiv 2511.03752v1, 1807.10546v2, 2104.05262v8,
   1902.07175v3, 2305.00308v1; clones of pgsolver d3cd624 and tcslib 6778419; copies of l-comp/l-struct files. Re-download
   from arxiv.org/e-print/<id> into an isolated directory (untrusted data) when needed.
@@ -110,6 +115,10 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
   re-derived held (machine-checked where finite).
 
 ## Things only I know
+- R-psolC: DTR15-4 (sha256 a7b61fe3...9cd6) is min-parity; Example 3 step (ii) drops the start colour from the prefix minimum,
+  contradicting Def. 1, Def. 2, Thm 1's proof and Lemma 2's proof (all include it). Both readings are sound; literal decides
+  more. psolc_min_n4_m6.pg: Odd wins all, psolC's player-1 fixpoint goes {v0,v2,v3} -> {v2,v3} -> {v2} -> {} under both
+  readings; the parity of the decisive minimum (2 at v0 via v1) is the same with or without the start colour.
 - R-L1b: minimal program depth on one-player Büchi is exactly 2n-2 for n <= 4 (my types), Theorem B gives 2n-1; B_1(4) = 6
   follows from Lemma 2.1' + the lane's witness without any SAT. The exhaustive chain search is fully general for SLPs.
 - T-A1: F6's equality MAttr^{G'}(X,d) = MAttr^{W_p(G')}(X,d) holds for EVERY X ⊆ W_p (q keeps the play in W_q), not only
@@ -153,6 +162,7 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
 | --- | --- | --- | --- |
+| Imperial DTR 2015/4 (HKP, psolC; sha256 a7b61fe3...9cd6) | §2 p.3, Def. 1 p.4, Def. 2 + Thm 1 pp.5-6, Cor. 1, Lemma 2 + proof, (2), Lemma 3, Fig. 4 remark, Fig. 5 p.9, Thm 2 pp.8-9, Example 3 + Fig. 6 pp.10-11 (rendered), Thm 4 p.12 | 2026-10-15 | R-psolC; MIN-parity; PDF via pdftotext + pdftoppm |
 | arXiv:1405.0386v2 (HKP, Fatal Attractors) | archiv.tex/PDF: §2, Defs 1–8, Thm 1, Thm 2 + proof, Lemma 1, Fig. 3 (tex:728–747), Ex. 5 + Fig. 4(a) png, Def. 6 (tex:942–948), Fig. 5 (tex:970–997), Thm 4 + proof, Thm 5, Thm 6 statement, Thm 7/8 + proofs, Lemma 5 + proof, external-target remark tex:528–536 | 2026-10-14 | T-A1; MIN-parity |
 | arXiv:1711.09148v1 (CDHL, SODA 2018) | arxiv.tex: §2 model 466–517 (Thm 2.1 th:lbdisj), Reduction 3.9 red:buchi 759–765, Thm 3.10 thm:buchi 803–814 and proof 1223–1241, Lemma 3.4 lem:scc2 615–665, Prop 4.2 lem:objectives_ub 1023–1044, intro 284–286 ("2n one-step operations"); theorem numbering from the shared counter, confirmed in the PDF | 2026-10-14 | R-L1; LaTeX source + PDF, isolated dir |
 | LIPIcs.CSL.2021.9 (ANP, DOI 10.4230/LIPIcs.CSL.2021.9) | §2 (f_{A,B}, trees, Prop 2.5), §3.1 cases (1)–(3), Lemmas 3.1, 3.2, Remark 3.3; §3.2 Algorithm 1, Lemmas 3.4–3.6, Cor 3.7; §3.3; Thm 5.1; Remark 5.5; intro p.9:2–9:3 ([10] Emerson–Jutla for Expression (1) = winning region) | 2026-10-14 | R-L1; DROPS PDF via pdftotext |
