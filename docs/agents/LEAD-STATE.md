@@ -93,3 +93,4 @@
 - 12:06Z SWEEP EXCEPTION: seven_day rate limit allowed_warning on all sessions (not overage; resets 10-21 21:00Z). Q9 to owner via OWNER-DESK (a/b/c, rec b). Interim: no new sessions except RAR-lemma referee. Spend: Lead 69.1, L-ALG 24.8, L-SI 29.1, L-LOWER2 21.1, L-RED n/a. CI green.
 - 12:15Z l-red R2 merged (0d50d4a). REFEREE-2 R2-TL (transfer lemma + why-FHZ-silent check). L-RED parked (spend; S5/S6 cancelled). L-SI to record S1 conditional.
 - 12:16Z REFEREE-2 R2-TL OK with fixes (995cfd3, merged). DE6 recorded (S1 RAR). Second referee, L-LIT novelty, L-RED F1 fix deferred pending Q9.
+- 12:36Z D7 owner chose Q9 (a): continue. Freeze lifted (L20). L-RED resumed (F1, S7, S5/S6); REFEREE second read of transfer lemma.

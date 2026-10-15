@@ -100,3 +100,10 @@ Verbatim: > a
 to put the budget there. (c) No change.")
 Lead reading L19: confirms L18; L-LOWER continues. The number of algorithm lanes is the Lead's call: a second lane L-SI (strategy
 improvement design loop toward M4/M4-R; L-LIT RANKING rank 4) starts now, alongside L-ALG. No spend ceiling set; D1 cost policy applies.
+
+## D7 (2026-10-15 ~12:35Z, owner in the Lead session, answering Q9): spend
+Verbatim: > a
+(Q9 option (a): "Continue at the current rate. We pause automatically if the cap is hit and stop at once on overage.")
+Lead reading L20: the interim freeze of 12:05Z is lifted; the D1 cap (5 working lanes) and the D1 overage rule (stop the fleet
+and tell the owner) still apply. Deferred items resume: L-RED (F1 fix, then S7, S5/S6), second referee on the RAR transfer lemma
+(REFEREE), then L-LIT novelty check.
