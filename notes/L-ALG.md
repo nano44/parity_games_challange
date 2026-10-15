@@ -155,4 +155,4 @@ each level of NE' adds one register. This is the exact obstruction of the whole 
     then gates/selectors, leaving {Even-1-T, Even-0-H} stable after 5 rounds; one tangle per search; 2 dominions in 5 iterations.
     The pruning is a greatest fixpoint ("p-vertices with a good path, through priorities below their own, to the regions of the
     surviving p-vertices"), computed in <= n rounds: a single weak condition, like psolC's, with tangle learning handling siblings.
-
+- 14:20 growth-fitness template GA seed 13: best family quadratic (11..183 at N = 2..10, ~1.8 N^2); seeds 11/12 pending.
