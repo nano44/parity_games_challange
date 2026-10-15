@@ -68,3 +68,49 @@ if __name__ == "__main__":
            gates=int(opt("--gates", 1)), zshift=int(opt("--zshift", 0)))
     if "--write" in sys.argv: pg.write(g, opt("--write", ""))
     else: sys.stdout.write(pg.dumps(g))
+
+
+def tcplus(n, lane=0, lane_pr=0, gates=1, zshift=0, zk_shift=0, dd=False):
+    """Port of tc+.cpp (8fbf0a7): per bit (pl, i): H (hipr), I (inpr, 1-pl), T (lopr, 1-pl); I -> T -> H; H -> own I of bit i-1;
+    main chain T -> S_0..S_{i-1} (A_j -> own I_j, B_j -> opponent I_j) -> Z (lopr+2, pl) -> T; and for every k > i a further
+    chain T -> S..(j < i) -> Z_k (lopr + 2(k-i+1), pl) with Z_k -> T and Z_k -> opponent I_k. Knobs as tc()."""
+    prio, owner, succ, names = [], [], [], []
+    def new(p, o, nm): prio.append(p); owner.append(o); succ.append([]); names.append(nm); return len(prio) - 1
+    def edge(a, b):
+        if b not in succ[a]: succ[a].append(b)
+    inp = [[None] * n, [None] * n]; bits = []
+    toppo = (n + 3) * n + 6 * n
+    for i in range(n):
+        for pl, hipr, inpr, lopr in ((0, toppo, toppo - 2 * n - 1, 2), (1, toppo - 1, toppo - 2 * n - 2, 3)):
+            tag = f"{'Odd' if pl else 'Even'}-{i}"
+            h = new(hipr, pl, tag + "-H")
+            gs = [new(inpr, 1 - pl, f"{tag}-I{k}") for k in range(gates)]
+            if dd: gs.append(new(inpr, 1 - pl, tag + "-II"))
+            t = new(lopr, 1 - pl, tag + "-T")
+            for a, b in zip(gs, gs[1:]): edge(a, b)
+            edge(gs[-1], t); edge(t, h)
+            inp[pl][i] = gs[0]; bits.append((pl, i, h, t, lopr))
+        toppo -= 2
+    for (pl, i, h, t, lopr) in bits:
+        tag = f"{'Odd' if pl else 'Even'}-{i}"
+        edge(h, inp[pl][(i + n - 1) % n])
+        def chain(label, zpr, extra_target):
+            prev = (t,)
+            for j in range(i):
+                s = new(lopr - 1, pl, f"{tag}-{label}S-{j}"); a = new(lopr - 1, 1 - pl, f"{tag}-{label}A-{j}"); b = new(lopr - 1, 1 - pl, f"{tag}-{label}B-{j}")
+                for p_ in prev: edge(p_, s)
+                edge(s, a); edge(s, b)
+                for src, dst in ((a, inp[pl][j]), (b, inp[1 - pl][j])):
+                    cur = src
+                    for k in range(lane):
+                        x = new(lane_pr, 1 - pl, f"{tag}-{label}lane-{j}-{k}"); edge(cur, x); cur = x
+                    edge(cur, dst)
+                prev = (a, b)
+            z = new(zpr, pl, f"{tag}-{label}Z")
+            for p_ in prev: edge(p_, z)
+            edge(z, t)
+            if extra_target is not None: edge(z, extra_target)
+        chain("", lopr + 2 + zshift, None)
+        for k in range(i + 1, n):
+            chain(f"{k}-", lopr + 2 * (k - i + 1) + zk_shift, inp[1 - pl][k])
+    return pg.Game(prio, owner, [sorted(s) for s in succ], names)
