@@ -145,3 +145,4 @@
 - 16:08Z L-ALG code facts verified by Lead: uintqueue is a stack (LIFO attractors), CurR consumed per round (dtl.cpp:690). Voids R8's FIFO-layer step; routed to L-RED as attack angle (renewable str[] flips via DFS order).
 - 16:16Z R8 §9 4a659d9 merged: set-based Lemma M parts survive LIFO; W/P/E outline forwarded to L-ALG; no hit.
 - 16:37Z R8 final 8e03198 merged (HELD; no wrong answer, no super-poly count). L-RED kept on hand construction vs (E)/(P) to 21:06Z.
+- 16:47Z L-ALG interim 11fbb49: soundness/halting/(b)-(e) proved, completeness GAP-C, tangle count GAP-A. GAP-C candidate shape routed to L-RED.
