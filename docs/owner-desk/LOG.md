@@ -70,3 +70,7 @@ killed; linear iterations on all 15 bench families; adversarial search only to n
 ## 2026-10-15 12:39Z Lead (relayed to owner)
 Owner answered Q9 "a" directly in the Lead session; recorded as D7 (trunk 3a83f8b), L20. Q9 closed. Fleet at 5-lane cap (L-ALG, L-SI,
 L-LOWER, L-RED, REFEREE).
+
+## 2026-10-15 13:54Z Lead (relayed to owner)
+Second result RESULTS R3 [refereed-only] (trunk c688729; CHECKER PASS checker 068f9de): original Random-Facet needs e^{Omega(sqrt n)}
+expected switches on a parity-game family (e^{Omega(N^{1/3}/log N)} in game size). Live candidate: L-SI S7 "most-improved".
