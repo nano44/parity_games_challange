@@ -27,6 +27,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | L-LOWER (old) | session_01U5n8mgXxgyGzvuUzxHbiKx | claude/l-lower | fable-5-1 | high | parked (handover f0e5e8f) | Replaced for cost (492k context) |
 | L-LOWER | session_0153E4mCB2wqi65xdfpxozfK | claude/l-lower | fable-5-1 | high | working (T-L2 theory box, go 08:36Z, to 20:36Z) | Attack lane, rank 2; theory needs the most capable model (D1) |
 | L-ALG | session_01WN44zjFXZSqaL5SwsoDn7d | claude/l-alg | fable-5-1 | high | working (design loop C1.., 12h box from ~10:00Z) | D5/L18: M4 primary aim; attack lane, most capable model (D1) |
+| L-SI | session_01HnGDSEHG3NHszV1y8ND6BF | claude/l-si | fable-5-1 | high | working (SI rule design loop, 12h box from ~10:10Z) | D6/L19: second algorithm lane, RANKING rank 4; attack lane, most capable model (D1) |
 | REFEREE-2 | session_01C2sxysc8CzJQrNBhp1rKMs | claude/referee-2 | fable-5-1 | high | idle (L4 d76c9e1, T-A1 2eb1a2d signed; P2 caught) | Independent second referee required for double-refereed results; never downgraded |
 | CHECKER | session_01JptdoF6eLabJzBHG28nWSS | claude/checker | opus-5-5 | high | parked (C1 + recheck: R1, R2 PASS 62cf1c4) | Landing gate: mechanical re-runs and statement diffs; Opus suffices |
 | HUMAN-DESK | session_01URpUgDVczmLPHmidyo4Jr6 | claude/human-desk | opus-5-5 | high | parked (packet 3b3bdde; owner decides distribution) | Owner D1: spawned when a claim reaches M3; writing quality matters, no deep math |
@@ -34,6 +35,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | OWNER-DESK | session_01Eq99qsTJBiTh6xLzwCPtqv | claude/owner-desk | opus-5-5 | high | starting | Owner D3: owner Q&A and open questions; accuracy in plain explanation, no proofs; idle between owner messages |
 
 ## In flight (as of 2026-10-15 09:50Z)
+- L-SI: strategy-improvement rule design loop toward M4/M4-R (D6, L19), 12h box from ~10:10Z.
 - L-ALG: falsification-driven algorithm design loop toward M4 (D5, L18), 12h box from ~10:00Z.
 - L-LOWER (successor): T-L2 theory box to 20:36Z: human proof of B_2(4) >= 7 from the 100-game UNSAT core; test for a gap growing with n.
 - Everyone else parked or idle: L-ATTR (psolC done, DE3), REFEREE (R-psolC done), REFEREE-2, L-LIT (T11 done), L-STRUCT, L-COMP,

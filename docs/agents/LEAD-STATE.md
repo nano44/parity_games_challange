@@ -78,3 +78,4 @@
 - 09:50Z NOW 'In flight' rewritten (stale since 10-14; OWNER-DESK told owner L-ATTR still on psolC). Lead miss: In flight not maintained with roster.
 - 09:50Z D5 (owner: do not call M4 unlikely). L18: M4 primary; L-ALG spawned session_01WN44zjFXZSqaL5SwsoDn7d (fable, claude/l-alg), design loop 12h.
 - 10:03Z sweep: overage false; Lead $60.6. L-ALG running (Oink build, n=4 corpus regen, C1 spec). L-LOWER running ('recreating killed BFS tool'; usage meta stale at $2.7 since 09:02; no push since c7ce9d1) - recheck 11:01Z, stall if no push by then.
+- 10:06Z D6 recorded (owner Q8 a); L-SI spawned session_01HnGDSEHG3NHszV1y8ND6BF (fable, claude/l-si). Working: Lead, L-ALG, L-SI, L-LOWER, WATCHDOG = 5 (cap).
