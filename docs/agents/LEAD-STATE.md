@@ -159,3 +159,4 @@
 - 17:50Z L-ALG 0533890: Lemma S (strategies a function of (top,set)) proved modulo (M-cross); deletion caveat (factor charge unproved). (M-cross) failure shape + deletion route sent to L-RED.
 - 17:52Z R8 §12 final 6d92d3e merged ((alpha) containment climbs 0; GAP-A 0). L-RED parked 17:52Z; my 17:53Z (M-cross)/deletion targets crossed with its park -- it will see them on its next turn; not resending.
 - 17:58Z L-ALG 216103f: R-mono proved for vertex-rule entries; open = nested older tangle. L-ALG: fix §1.0 then park. L-RED: 2h box (nested-tangle shape, deletion ratio) to 20:05Z.
+- 18:00Z L-RED a44030f: M-cross fails at X nonempty (tc+); Lemma S route covers few tangles. L-RED redirected to (D) distinct sets per top all pieces (to 20:05Z). L-ALG: §1.0 fix then determinacy for arbitrary X or park.
