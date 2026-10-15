@@ -73,3 +73,4 @@
 - 08:50Z L-LOWER L2-data done (d00349a): B_2(1..4)=0,2,4,7, cost>depth at n=4. Decision: one 12h T-L2 theory box via successor (cost: 492k ctx); old session writes handover and parks.
 - 08:31Z L-LOWER handover f0e5e8f; successor session_0153E4mCB2wqi65xdfpxozfK spawned (fable, claude/l-lower), five questions first.
 - 08:46Z L-ATTR A3-psolC done (02174e2): psolC not complete (n=4 instance, tc N=2); L-ATTR parked. REFEREE R-psolC fidelity check before DE3.
+- 08:50Z REFEREE R-psolC FAITHFUL (1600917); DE3 recorded (psolC not complete; instance psolc_min_n4_m6.pg); l-attr and referee merged to trunk.
