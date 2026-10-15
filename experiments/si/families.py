@@ -12,8 +12,8 @@ GEN = {f: f"{ROOT}/tools/oink/build/{f} {{N}}" for f in
        ["tc", "tc+", "counter_symsi", "counter_rr", "counter_dp", "counter_m", "counter_core", "counter_rob", "counter_ortl", "counter_qpt"]}
 for f in ["recursiveladder", "switchallexp", "switchbestexp"]:
     GEN[f] = f"python3 {ROOT}/experiments/hard-families/pgsolver_port.py {f} {{N}}"
-for f in ["randomfacetsubexp", "zadehexp"]:                       # L-SI ports (gens.py), N >= 2
-    GEN[f] = f"python3 {HERE}/gens.py {f} {{N}}"
+for f in ["randomfacetsubexp", "zadehexp", "dlmm_bland", "dlmm_ML", "cunninghamexp"]:   # L-SI ports (gens.py), N >= 2 (dlmm_ML: start best, not sigma_0)
+    GEN[f] = f"python3 {HERE}/gens.py {f} {{N}} | grep -v '^%'"
 GEN["gated_bland"] = f"python3 {ROOT}/experiments/red/gens_red.py gated_bland {{N}}"      # L-RED (read-only use)
 for f in ["zadehexp", "switchallexp", "switchbestexp"]:                      # gate.py-relabelled bench (randomfacetsubexp has no unique sink)
     GEN[f"gated_{f}"] = f"python3 {HERE}/gated.py {f} {{N}}"
@@ -24,6 +24,7 @@ ap.add_argument("--rules", required=True); ap.add_argument("--families", default
 ap.add_argument("--sizes", default="1,2,3,4,5,6,7,8"); ap.add_argument("--timeout", type=float, default=120)
 ap.add_argument("--seeds", type=int, default=1); ap.add_argument("--seed-offset", type=int, default=0); ap.add_argument("--tag", default="run"); ap.add_argument("--start", default="best")
 ap.add_argument("--skip-after-timeout", action="store_true", default=True)
+ap.add_argument("--engine", default="py", choices=["py", "fast"], help="fast = the C++ engine vjfast (cross-checked by xcheck_fast.py)")
 a = ap.parse_args()
 rules = a.rules.split(","); fams = a.families.split(","); sizes = [int(x) for x in a.sizes.split(",")]
 os.makedirs(os.path.join(HERE, "out"), exist_ok=True)
@@ -43,7 +44,8 @@ for fam in fams:
                 sp = gp.name + f".{rule}.{seed}.sol"
                 t0 = time.time()
                 try:
-                    r = subprocess.run(["python3", "-I", os.path.join(HERE, "si.py"), rule, gp.name, sp, "--seed", str(seed), "--start", a.start],
+                    cmd = ([os.path.join(HERE, "vjfast"), rule, gp.name, sp] if a.engine == "fast" else ["python3", "-I", os.path.join(HERE, "si.py"), rule, gp.name, sp])
+                    r = subprocess.run(cmd + ["--seed", str(seed), "--start", a.start],
                                        capture_output=True, text=True, timeout=a.timeout)
                     secs = time.time() - t0
                     if r.returncode != 0:

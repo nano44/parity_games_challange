@@ -6,6 +6,11 @@ set -euo pipefail
 cd "$(dirname "$0")"
 python3 -I xcheck.py --tiny | tail -1 | grep -q "XCHECK PASS"
 echo "xcheck --tiny: PASS"
+if command -v g++ >/dev/null; then
+  g++ -O2 -std=c++17 -o vjfast vjfast.cpp && python3 -I xcheck_fast.py --games 40 --nmax 10 | tail -1 | grep -q "XCHECK-FAST PASS" && echo "vjfast vs si.py (40 games): PASS"
+else
+  echo "g++ not found: vjfast cross-check skipped"
+fi
 if [ -f instances/pinned.txt ]; then
   while read -r rule file iters startflag; do
     [ -z "$rule" ] && continue
