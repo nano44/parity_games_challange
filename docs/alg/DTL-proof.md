@@ -372,6 +372,11 @@ shrinking by solved dominions in between); (r2) that the regress is well-founded
 pruning change must have been created strictly before t', not merely be different). If (r1) and (r2) hold, (α) never
 occurs and, with K6 and the (β') analysis, every search's first stable set is productive; (C-b) would then remain only
 for searches that start with the -1 branch.
+Evidence for (r1) (experiments/alg/dtl_monotone.py): on 4,000 random games (n 5..14) plus tc+ N = 4..10 and c3, c4, the
+stable set of the first best_vertices call of a search (∅ when that call returns -1) is contained in that of the next
+search of the same player, restricted to still-unsolved vertices, in every case (0 violations); the first stable set of a
+search after -1 pieces is NOT comparable (c3: {s, y, z} on a reduced region in search 1 vs {m, z} on the full region in
+search 2), which is why (r1) must be stated per call on the same region.
 For (β') (SKETCH). The stored tangle t = bottom SCC of L_k has escapes only in X. By K4, if all pieces in X are of type S
 or Z, X is p-won and so is t ∪ Attr(X) — a p-won set that DTL never solves unless some later piece or search is
 productive; then the search's remaining iterations must produce something new: the obligation is again (C-b). If some
