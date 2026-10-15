@@ -2,13 +2,11 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-15 ~19:00Z. Successor session_01Nd4XCMfDaYHsh1P6XTtRGz (handover check 5/5, Lead 18:41Z). Current task: DTL gauntlet
-step 2 (Lead GO 18:41Z, box to ~23:40Z, interim message ~21:00Z). Bench: experiments/dtl-bench/ (README.md). Pinned per L22:
-`oink --dtl|--idtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, no -t, no -w. Done (a92f4d8): exhaustive n<=3 (priorities 0..n),
-10,000 seeded (seed 20261015, nmax 200), 2,000 rngame: 0 failures, all strategies verified by harness/verify.py.
-Done since (d1537b0, 3661335, this commit): all 18 families, dtl_proof_c1..c4, 50k small games, tc+ extension;
-0 failures. Was running: run_families.sh (families.txt: 13 M1 families + red chain/ladder/counter_dftl/counter_odftl/n5), then fit.py, then
-alg/instances/dtl_proof_c*.pg. After DTL: L15 PGSolver binary diff (one attempt), then sat-hard (Lead's order).
+2026-10-15 23:05Z. DTL gauntlet step 2 DONE: (i) bench (Oink pinned dtl/idtl vs Zielonka, verified strategies, families +
+growth: experiments/dtl-bench/README.md, d1537b0/011fec0); (ii) second implementation dtl_py.py from C5-DTL.md only,
+cross-checked against Oink on 238,071 games (all five quantities equal with --order oink; regions/strategies equal with
+C5-literal orders); 3 divergences, all C5 order/counter omissions (README table; reported to Lead 21:19Z, 21:56Z, 22:14Z).
+Next (Lead's order): L15 PGSolver binary diff (one attempt, stop at the first classifier refusal), then sat-hard. Waiting for go.
 
 ## Queue (for the successor, after the running cells)
 0. sat-hard state (from the 2026-10-14 resume point): CEGAR-only s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT; CNFs lost
@@ -158,6 +156,9 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 | github.com/tcsprojects/pgsolver @ d3cd624 | generators recursiveladder.ml, policyiter/generators/*.ml; paritygame.ml conventions | 2026-10-14 | code, not a paper; papers awaiting source |
 
 ## Dead ends
+- 2026-10-15 (not a dead end of an idea; a method note): a C5-literal reimplementation cannot reproduce Oink's
+  tangle counts: four orders (step-0 std::sort, in-edge order, stored tangle order, Pearce SCC order) change counts.
+  Use dtl_py.py --order oink for exact counts; stdsort.py emulates libstdc++ introsort incl. heap fallback.
 - 2026-10-14 sat-hard (L-STRUCT task): pairwise-inconsistent-word clique bound (always 1: u.y and v.y share the tail's
   limsup parity); simulated annealing (stuck at 16 violations, (3,6) k=7); pure lasso CEGAR (no convergence at (2,6) k=2);
   binary ranks (~8x slower UNSAT); merging strong separators (fails to recover the known (2,6) weak separator).
