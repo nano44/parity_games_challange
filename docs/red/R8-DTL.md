@@ -370,7 +370,9 @@ its open cases are (C-a) every region open yet none productive, (C-b) pieces rem
 Oracle: a DEBUG build of the pinned 8fbf0a7 (scratchpad oink-debug; NDEBUG checks on, "search was incomplete!"), flags
 --no-single --no-wcwc --no-loops -v -t. The proof lane's hand instances dtl_proof_c1/c2/c3: 2, 1, 2 tangles, verified,
 no throw (dtl and idtl).
-Searches and fuzz (experiments/red/dtl/dtl_search.py --fitness wrong, dtl_fuzz.py): GAPC-PLACEHOLDER
+Fuzz on the debug build (dtl_fuzz.py, random games n = 8..28, out-degree 1..3, 30% self-loops, seed 5): dtl 6,000
+games, idtl 6,000 games, 0 bad runs (every run verified, no throw; max 11 tangles). Hill-climbs with fitness = verifier
+failure / error / unsolved vertex, self-loop and renumbering mutations: SEARCHC-PLACEHOLDER
 Lead reading on why no counterexample was found, in the proof lane's terms. Every open sptl region is open because an
 opponent vertex of its would-be cycle escapes to a vertex e in CurR \ Z (unconsumed, unattracted). Either e belongs to a
 structure Odd wins from (then the region's head is rightly not productive: Even does not win there through that cycle),
