@@ -2,7 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14: T1-T3 pushed (landed on trunk 9079c01); T4 docs/lit/T4-weak-separators.md: verdict OPEN. T5 docs/lit/T5-S2-novelty.md: S2 T1/T2 NEW. T6 docs/lit/T6-S3.md: T3, H1 NEW; L4 via Claim R (unrefereed). T7 docs/lit/T7-rank2.md: rank 2 OPEN, SLP model, T7-1/T7-1'. T8 docs/lit/T8-TA1.md: T-A1 NEW, PA not ⊇ Büchi/SCC-constant (3-vertex witness). T9 docs/lit/T9-L1.md: µ-formula sources; oblivious exponent 2·lg(d/lg n); T7 amended. T10 docs/lit/T10-PAstarstar.md (2026-10-15): Q1-Q3 NEW; HKP LNCS 9560 chapter not opened. Parked. Next: Lead feedback; open the
+2026-10-14: T1-T3 pushed (landed on trunk 9079c01); T4 docs/lit/T4-weak-separators.md: verdict OPEN. T5 docs/lit/T5-S2-novelty.md: S2 T1/T2 NEW. T6 docs/lit/T6-S3.md: T3, H1 NEW; L4 via Claim R (unrefereed). T7 docs/lit/T7-rank2.md: rank 2 OPEN, SLP model, T7-1/T7-1'. T8 docs/lit/T8-TA1.md: T-A1 NEW, PA not ⊇ Büchi/SCC-constant (3-vertex witness). T9 docs/lit/T9-L1.md: µ-formula sources; oblivious exponent 2·lg(d/lg n); T7 amended. T10 docs/lit/T10-PAstarstar.md (2026-10-15): Q1-Q3 NEW; HKP LNCS 9560 chapter not opened. T11 docs/lit/T11-HKP-DTR15-4.md: DTR15-4 opened (sha256 a7b61fe3...); T10 verdicts unchanged; psolC stated. Parked. Next: Lead feedback; open the
 not-opened primaries listed below if a lane needs them.
 
 ## Queue
@@ -130,6 +130,9 @@ not-opened primaries listed below if a lane needs them.
 | arXiv 1603.06422 v1 (Cranen, Keiren, Willemse, Parity game reductions) | bibliography [30] HKP FoSSaCS'13, [31] HKP Static analysis, LNCS 9560 pp. 159-177 | 2026-10-15 | T10; citation only |
 | arXiv 1602.01963 v1 (Vester), further | Prop. 7 (fatal attractor ⊆ winning core), text before Lemma 4 on Fig. 7 | 2026-10-15 | T10 |
 | Semantic Scholar API citations of arXiv 1405.0386 (8) and DOI 10.1007/978-3-642-37075-5_3 (12) | citer lists | 2026-10-15 | T10; NOT opened: HKP Static analysis chapter (Springer no PDF, Spiral 404), Vester thesis (DTU Orbit 403), "Effective partial solvers for parity games", "Reachability games revisited" |
+| Imperial DoC Tech. Rep. 2015/4 (DTR15-4), Huth, Kuo, Piterman, "Static analysis of parity games: alternating reachability under parity", 9 Aug 2015, sha256 a7b61fe3a72926a94a3019e34620339f38aa653fe8aeed9ab4210187763e9cd6 | whole text: Def 1-2, Lemma 1-3, Thm 1-4, Cor 1, eq. (2)-(3), Fig. 5-9, Ex. 2-3, Question 1, §5-8, refs | 2026-10-15 | T11; min-parity; Spiral record hdl 10044/1/94990 = same file |
+| Crossref works/10.1007/978-3-319-27810-0_8 (LNCS 9560 chapter metadata) | title, pages 159-177, 29 references (match DTR15-4 in order); no abstract | 2026-10-15 | T11; Springer landing page and dblp.org: bot challenge, NOT opened |
+| arXiv 1405.0386 v2 (HKP), further | Def. 10 (Soundness, Idempotency, Locality item 3), Thm 9 (lift), theorem numbering Thm 1-9 | 2026-10-15 | T11 |
 
 ## Dead ends
 (none)
