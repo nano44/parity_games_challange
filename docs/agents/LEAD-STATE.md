@@ -96,3 +96,4 @@
 - 12:36Z D7 owner chose Q9 (a): continue. Freeze lifted (L20). L-RED resumed (F1, S7, S5/S6); REFEREE second read of transfer lemma.
 - 12:48Z L-ALG: C4 dead; DTL survives everything (lead); L-ALG redirected to DTL provenance/pseudocode/data. tc+ beats PTL/SPPTL (bench note).
 - 12:54Z REFEREE R-TL2 signed (6d5d9ad, merged); confirming coverage of l-red 8bb9d22. L-LIT T13 novelty started. L-RED nits queued.
+- 12:58Z L-LIT T13 NEW-as-statement (c962d80, merged); L21 classification; CHECKER after L-RED fix.

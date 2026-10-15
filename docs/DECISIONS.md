@@ -107,3 +107,9 @@ Verbatim: > a
 Lead reading L20: the interim freeze of 12:05Z is lifted; the D1 cap (5 working lanes) and the D1 overage rule (stop the fleet
 and tell the owner) still apply. Deferred items resume: L-RED (F1 fix, then S7, S5/S6), second referee on the RAR transfer lemma
 (REFEREE), then L-LIT novelty check.
+Lead reading L21 (2026-10-15 12:58Z): L-RED's Random-Facet transfer (docs/red/R2-RAR.md; both referees signed, REFEREE-2 995cfd3,
+REFEREE 42f11c6, subject to a one-token fix in case (3)) is recorded, once the CHECKER passes, as M3-type "a tighter analysis of a
+known algorithm" (as L9): original Random-Facet needs e^Omega(sqrt n) expected switches on parity games of size
+Theta(n^{3/2} log^3 n). L-LIT T13 (l-lit c962d80): NEW as a published statement, low technical novelty (a faithful transfer of
+FHZ 1410.7530 Thm 6.3; the encoding is the contribution; Thm 6.3 credited). Hansen's 2012 thesis unopened: matters only for an
+external "first" claim (owner).
