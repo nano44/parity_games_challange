@@ -86,3 +86,4 @@
 - 11:32Z L-SI: S3 dead (M_L), MSF 3L-2; refined bound via X. L-RED spawned session_017WLo5xfMxRZ4f6n2Su6274 (fable, claude/l-red), independent adversary vs MSF, 8h. Lanes: 4/5.
 - 11:48Z L-RED FLAW in L-SI Claim F (definition of cycle-creating); forwarded to L-SI with 4 actions. MSF not killed.
 - 12:14Z L-SI fixed Claim F (F'), X-bound empty (X ~ iteration count). L-RED told: target iteration count directly.
+- 12:24Z L-RED KILLED MSF (2^N-1, gated Bland, two engines). L-RED retargeted to S1 RAR (original Random-Facet). L-SI told: immune-to-gate-relabelling requirement. DE4 after L-RED push.
