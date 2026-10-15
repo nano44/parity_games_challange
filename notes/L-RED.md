@@ -8,10 +8,23 @@ R2's parity encoding of FHZ's one-player counter G_{n,1,1,1} with linear pads W 
 Zielonka, strategies verified. Question DF: longest DF run on G_{n,1,1,1} exact 5, 20, 53, 124, 269 (n = 1..5). Reported 16:50Z. Then S5/S6 on the FHZ encoding: HELD (docs/red/R6-S5S6-fhz.md): numbering searches quadratic;
 index-fair rules must take the improving higher bit that the counter keeps live during the lower count. Next if asked: a proof of the recurrence (FHZ-style
 phase analysis for the S7 order), or the "DF + pads" reduction as a general theorem.
+## Resume point (R7, S5 tie-break box, Lead 14:18Z, 5 h)
+docs/red/R7-S5-zadeh-ties.md. zadeh_lb.py = faithful port of PGSolver's lower-bound Zadeh tie-break; on zadehexp N = 2..6:
+43, 159, 467, 1227, 3019 switches, 38/142/408/1046 tie steps, 'chosen before competitor' constraints cyclic at every N
+(no fixed total order reproduces the run); direct reversals 10/79/212/390 (--rev lists them with the bit state). Two
+strategy predicates do it: h (partner gate node closed) and state' (bit i+1 decides E_i vs X_i first). Search tools:
+zadeh_anyorder.py (exhaustive DFS over tie decisions consistent with a growing partial order, any fixed total order;
+N = 2: >= 45 > 43), zadeh_order_climb.py (hill-climb over numberings with the exp start, in-process vj.py; N = 2: 47,
+N = 3 first restart 167 > 159). Logs: scratchpad anyorder.log, climb_{3,4,5}_s{1,2}.log, zbest_N_sS.pg (best numbering).
 ## Queue
 1. If asked: proof of i(n) = 2 i(n-1) + 4n for fhz_padded under S7. 2. S5/S6 (paragraph below). 3. Optional: FHZ-scaled growth run for R2 (b).
 
 ## Things only I know
+- TRAP (hit twice): `pgrep -f PATTERN | xargs kill` and `pkill -f PATTERN` kill my own shell when the pattern occurs in the
+  shell's command line. Use `ps aux | grep "[z]adeh"` style or kill by a PID read in a separate call.
+- zadeh_lb.py's exp-game start follows initial_strategy_for_exp_game (a -> o_j, b -> p_j, v -> r_j, w -> q_j, escapes -> m1,
+  d -> E_j, g -> c_j, s -> m0, m_j -> m_{j+1}, m_{N-1} -> Y). Under this start the index tie-break gives 41 at N = 2 (not 19,
+  which is the best-reward start of vjfast / L-SI).
 - L-SI's branch is read through a detached worktree in the scratchpad (git worktree add <scratch>/lsi origin/claude/l-si);
   experiments/red/xcheck.py --lsi <that path> compares switch sequences with si.py. The worktree is not in the repo.
 - vj.py classifies "cycle-creating" by Odd's play (on_play), not by the path bit; its stats line prints cycle-creating /
@@ -92,6 +105,21 @@ phase analysis for the S7 order), or the "DF + pads" reduction as a general theo
 - Fleet files: TARGET.md v1.0 sections 2, 3, 5; docs/NOW.md; claude/l-si 95d37d3: docs/si/candidates/S1.md, S2.md,
   docs/si/RESULTS.md, DEAD.md, README.md, experiments/si/si.py, gens.py, families.py, freeze_test.py, adversarial.py,
   notes/L-SI.md; docs/lit/T12-MSF-barriers.md; experiments/harness/pg.py, verify.py, zielonka.py.
+
+- Disser-Friedmann-Hopp 1911.01074 section 6.2 "The Tie-Breaking Rule", pp.14-15 (opened 14:25Z): the sets G, E^0, E^1
+  (escape vertices whose cycle vertices do / do not point to the cycle centre), D^0, D^1, B, S; pre-orders on E^0 (higher
+  level first, PG: F_{i,0} first; MDP: F_{i,beta_{i+1}} first), S (higher level first), E^1 (criteria 1-4: level, exactly one
+  closed, exactly one halfopen escaping to t->, then F_{i,0} / F_{i,beta_{i+1}}), D^1 (criteria 1-5: open cycles first,
+  bit beta_i = 0 first, lower level first, active cycle centre, last index); Definition 6.4 (p.15): G < D^0 < E^1 < B < S < E^0
+  < D^1, "extend the pre-order to an arbitrary but fixed total ordering", exception "if phi(b1,b2) = phi(s_{1,1},h_{1,1}) = 0
+  apply (s_{1,1},h_{1,1}) instead of (b1,b2)"; Lemma 6.5 (polynomial-time evaluable); p.14 "The tie-breaking rule is in
+  principle implemented as an ordering of the set E_0 and depends on the current strategy sigma as well as the occurrence
+  records"; p.3 "it cannot be avoided to fix a tie-breaking rule ... for every MDP of size n, a tie-breaking rule tailored
+  to this instance exists such that the policy iteration algorithm takes at most n steps [Fri11b, Sec. 5.4]".
+- PGSolver (github tcsprojects/pgsolver, clone at d3cd624 in the scratchpad) src/lib/solvers/stratimpralgs/switch_zadeh.ml:
+  improvement_policy_optimize_fair lines 1407-1457; improvement_policy_optimize_fair_sub_exp_tie_break lines 1462-1591
+  (state, state', idxmap, f, g, h, mp); initial_strategy_for_exp_game lines 1612-1650; src/generators/zadehexp.ml lines
+  50-90 (the family), line 100 (its name string).
 
 ## Dead ends
 - None yet for the attack. Not pursued: a non-sink killer (the sink-game gate suffices); porting Disser-Mosis D_n with Odd

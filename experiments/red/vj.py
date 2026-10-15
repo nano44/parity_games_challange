@@ -253,6 +253,19 @@ class VJ:
                 best = (k, (v, w), tie or (best[2] if best else False))
         return best[1][0], best[1][1], best[0][0], best[2]
 
+    def pick_zadeh(self, sigma, val, imp, mem, tie="index"):
+        """Zadeh's least-entered rule: among improving edges with the minimal occurrence record, tie by
+        'index' (smallest (v, w); L-SI's S5) or 'val' (the best target valuation, then index: PGSolver's
+        improvement_policy_optimize_fair_default_tie_break, switch_zadeh.ml:1400-1403)."""
+        occ = mem.setdefault("occ", {})
+        m = min(occ.get(e, 0) for e in imp); cands = [e for e in imp if occ.get(e, 0) == m]
+        if tie == "val":
+            v, w = max(cands, key=lambda e: (self.key(val[e[1]]), -e[0], -e[1]))
+        else:
+            v, w = min(cands)
+        occ[(v, w)] = m + 1
+        return v, w
+
     def initial(self, kind):
         n = self.n
         if kind == "best":          # PGSolver best-reward start as L-SI uses it (stratimpralgs.ml:85-87 via si.py)
@@ -286,7 +299,9 @@ class VJ:
             val, tau = self.evaluate(sigma); imp = self.improving(sigma, val)
             if not imp:
                 return sigma, it, stats
-            if rule == "most-improved":
+            if rule in ("zadeh", "zadeh-val"):
+                v, w = self.pick_zadeh(sigma, val, imp, stats.setdefault("mem", {}), "val" if rule == "zadeh-val" else "index"); lv = ("occ", 0)
+            elif rule == "most-improved":
                 v, w, cnt, tie = self.pick_most_improved(sigma, val, imp); lv = ("count", cnt); stats["index_ties"] = stats.get("index_ties", 0) + tie
             else:
                 v, w, lv = self.pick(sigma, val, imp, most=(rule == "msf"))
