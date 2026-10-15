@@ -6,7 +6,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 growth: experiments/dtl-bench/README.md, d1537b0/011fec0); (ii) second implementation dtl_py.py from C5-DTL.md only,
 cross-checked against Oink on 238,071 games (all five quantities equal with --order oink; regions/strategies equal with
 C5-literal orders); 3 divergences, all C5 order/counter omissions (README table; reported to Lead 21:19Z, 21:56Z, 22:14Z).
-Next (Lead's order): L15 PGSolver binary diff (one attempt, stop at the first classifier refusal), then sat-hard. Waiting for go.
+L15 DONE 23:30Z (experiments/hard-families/pgsolver-binary-diff.md): binaries ran (no classifier refusal); generators
+byte-identical, switchall/switchbest iteration counts and solutions identical. PARKED after this (Lead 23:08Z); sat-hard
+parked with the T-L2 line (L25).
 
 ## Queue (for the successor, after the running cells)
 0. sat-hard state (from the 2026-10-14 resume point): CEGAR-only s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT; CNFs lost
@@ -31,8 +33,7 @@ solver import) to a minimal game, save the .pg, push, message the Lead with SHA,
 ## Open items
 - counter_qpt growth class: qpt lifts jump x15 at N = 8 and x31 at N = 16, ~N^3..N^4 in between, timeout at N = 32;
   run N = 29..40 with a long timeout (sweep.py counter_qpt --timeout 600) to see the N = 32 jump.
-- PGSolver binary diff waiting on owner Q4: if allowed, run the built generator.exe / pgsolver.exe (switchall,
-  switchbest) and diff against pgsolver_port.py and pgsolver_si.py (iteration counts and games byte for byte).
+- PGSolver binary diff: DONE 2026-10-15 (pgsolver-binary-diff.md), all identical.
 - counter_dtl is listed in Oink's README (8fbf0a7) but has no source upstream (no src/tools/counter_dtl.cpp, not in
   CMakeLists); not swept.
 - avh strategy construction S1/S2 is not always winning (experiments/m2/counterexamples/strat_s2_12v.pg); moot since
@@ -122,7 +123,8 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
   ((lang dune 3.18)->3.14, drop maintenance_intent) in a dune workspace with tcslib 6778419,
   ocaml-sat-solvers 0264291, c-cube/ocaml-minisat aeb7776 (cloned under experiments/hard-families/out/pgsolver,
   gitignored; a fresh session must re-clone). Running the built binaries was refused by the permission classifier
-  ("code from external"); the Lead said not to work around it. Hence the Python ports.
+  on 2026-10-14 ("code from external"); on 2026-10-15 (L15 attempt) it ran. Build also needs apt libextlib-ocaml-dev,
+  libnum-ocaml-dev. switchall/switchbest: `pgsolver.exe -global policyiter -x "-sa"|"-sb" -dgo -dsd -dlo -dsg -v 3`.
 - The ported SI (pgsolver_si.py) runs the bare strategy-improvement loop; PGSolver wraps it in universal_solve
   (preprocessing, SCC decomposition), so counts may differ from PGSolver's own. Details that matter for fidelity:
   TreeSet.choose = min_elt, folds ascending, del_edge is a no-op on deleted nodes, iter_by iterates a snapshot.
