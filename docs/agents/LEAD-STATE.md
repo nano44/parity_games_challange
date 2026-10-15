@@ -182,3 +182,4 @@
 - 22:13Z L-COMP divergence #3: Dom extension attractor order-dependent (tangle deleted when a vertex is solved mid-attraction); C5 omits SCC queue order. Queue for L-ALG resume: check §1 'dominion removal' lemmas for order independence.
 - 22:45Z L-COMP 31503b8 merged: dtl_py == Oink (regions, strategies, tangles, dominions, iterations) on 237,944 games under Oink's orders; C5-literal decides regions/strategies, not counts. 3 divergences = C5 order omissions.
 - 23:02Z L-COMP 0d7dc7c merged: DTL gauntlet step 2 DONE (two implementations agree exactly on 238,071 games). L-COMP: L15 1h then park.
+- 23:10Z hourly sweep: no overage (seven_day warning). Lead 514k. L-COMP on 1h L15 then park. No exceptions.
