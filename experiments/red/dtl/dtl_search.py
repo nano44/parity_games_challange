@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """Free-form hill-climb over small parity games maximising Oink DTL's learned-tangle count (L-RED, DTL box).
-Fitness = tangles found by `oink --dtl --no-single --no-wcwc` (raw solver, no preprocessing). Mutations: add/remove an edge,
-change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch] [--injective] [--from game.pg] [--out best.pg]"""
+Fitness = tangles found by `oink --dtl --no-single --no-wcwc --no-loops` (raw solver, no preprocessing, self-loops kept;
+before 16:02Z the runs used --no-single --no-wcwc only). Mutations: add/remove an edge,
+change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch] [--injective] [--loops] [--from game.pg] [--out best.pg]"""
 import sys, os, random, subprocess, tempfile, time, re
 oink, n = sys.argv[1], int(sys.argv[2]); arg = lambda k, d: type(d)(sys.argv[sys.argv.index(k) + 1]) if k in sys.argv else d
 steps, seed, maxpr = arg("--steps", 20000), arg("--seed", 0), arg("--maxpr", 2 * int(sys.argv[2])); rng = random.Random(seed)
 evenmin = arg("--even-min", 0.0)
+OINKFLAGS = ["--no-single", "--no-wcwc", "--no-loops"]   # the pinned algorithm (CHECKER C3): no preprocessing, self-loops kept
+loops = "--loops" in sys.argv                  # bias mutations toward self-loops and toward renumbering equal-priority vertices
 fitness = arg("--fitness", "tangles")   # tangles | unsolved (vertices DTL leaves unsolved) | perhead (max tangles learned at one top priority; use --injective)
 injective = "--injective" in sys.argv    # priorities = a permutation of 0..n-1, so a tangle's priority names its top      # reject games with fewer than this fraction of Even-owned vertices (two-player search)
 tmp = tempfile.NamedTemporaryFile("w", suffix=".pg", delete=False).name
@@ -19,7 +22,7 @@ def dumps(g):
 def score(g):
     open(tmp, "w").write(dumps(g))
     try:
-        r = subprocess.run([oink, "--dtl", "--no-single", "--no-wcwc"] + (["-t", "-t"] if fitness.startswith("perhead") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
+        r = subprocess.run([oink, "--dtl"] + OINKFLAGS + (["-t", "-t"] if fitness.startswith("perhead") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
     except subprocess.TimeoutExpired:
         return 10 ** 6          # a timeout is interesting in itself
     if fitness in ("unsolved", "wrong"):
@@ -51,6 +54,18 @@ def random_game():
 def mutate(g):
     pr, ow, succ = list(g[0]), list(g[1]), [set(s) for s in g[2]]
     v = rng.randrange(n); k = rng.random()
+    if loops and k < 0.3:                      # self-loop on/off (never removed as the only edge)
+        if v in succ[v] and len(succ[v]) > 1: succ[v].discard(v)
+        else: succ[v].add(v)
+        return pr, ow, succ
+    if loops and k < 0.45:                     # swap the ids of two vertices of equal priority (tie order of the sort)
+        same = [w for w in range(n) if pr[w] == pr[v] and w != v]
+        if same:
+            w = rng.choice(same)
+            def sw(x): return w if x == v else v if x == w else x
+            pr[v], pr[w] = pr[w], pr[v]; ow[v], ow[w] = ow[w], ow[v]
+            succ = [set(map(sw, succ[sw(x)])) for x in range(n)]
+        return pr, ow, succ
     if k < 0.4:
         w = rng.randrange(n)
         if w in succ[v] and len(succ[v]) > 1: succ[v].discard(w)

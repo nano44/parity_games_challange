@@ -9,6 +9,12 @@ search_rec 834-994, search/run 997-1161; attractVertices 65-101, attractTangle 1
 the release build still prints "best vertices", "distance k" and "new tangle ... with k escape vertices" at -t -t, enough
 to see every tangle (vertex set, Even's strategy, escapes) and every pruning round.
 
+Flags. Every Oink run in this report before 16:02Z used `--dtl --no-single --no-wcwc` (no single-parity / winner-controlled
+preprocessing) but NOT `--no-loops`, so Oink's parser dropped losing self-loops that are not a vertex's only edge and
+solveSelfloops ran before DTL (CHECKER C3, Lead 16:02Z: the pinned algorithm is now `oink --dtl --no-single --no-wcwc
+--no-loops`). Section 8 re-runs the probes with --no-loops; the families of sections 2 and 6 have no self-loops except
+where stated, so their counts are unaffected (spot checks in section 8).
+
 ## Verdict: HELD. No killer built; the invariant says DTL has no reset, and the one non-monotone ingredient (theft of a tangle's vertex by a higher region) is spent once per vertex per level
 Every tangle DTL learns is a new bottom SCC of a region; across Even's searches the tangle set only grows and every
 attractor, the pruning's surviving set, every region head and every tangle's usability (except by theft) are monotone in
@@ -251,6 +257,9 @@ length d over [n] decrease lexicographically when each decrease is caused by one
 events can be chained, the count could be n^{O(log n)} rather than polynomial, which would make DTL quasi-polynomial
 in the tangle count without being a universal-tree walker in the separating-automaton sense. (a)-answer: no family was
 built that forces DTL along a tree; the search for self-firing chains at one head (section 5(a)) is the attempt.
+
+## 8. Re-runs with --no-loops and self-loop-biased mutations (Lead 16:02Z)
+NOLOOPS-PLACEHOLDER
 
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.
