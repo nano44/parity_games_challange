@@ -91,3 +91,4 @@
 - 12:40Z L-ALG C3 ZP dead (T_R explicit, ~30x/tile); DE5 recorded (C1-C3).
 - 12:08Z L-RED: S1 RAR killed via FHZ transfer lemma (unrefereed). Asked for push + 'why didn't FHZ say so' check; retargeted L-RED to S5/S6. L-SI told to stop RAR runs. Next: referee on transfer lemma, L-LIT novelty.
 - 12:06Z SWEEP EXCEPTION: seven_day rate limit allowed_warning on all sessions (not overage; resets 10-21 21:00Z). Q9 to owner via OWNER-DESK (a/b/c, rec b). Interim: no new sessions except RAR-lemma referee. Spend: Lead 69.1, L-ALG 24.8, L-SI 29.1, L-LOWER2 21.1, L-RED n/a. CI green.
+- 12:15Z l-red R2 merged (0d50d4a). REFEREE-2 R2-TL (transfer lemma + why-FHZ-silent check). L-RED parked (spend; S5/S6 cancelled). L-SI to record S1 conditional.
