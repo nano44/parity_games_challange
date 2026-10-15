@@ -2,19 +2,16 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
 ## Resume point
-2026-10-15 12:55Z (box to 22:10Z). Dead: S4 (switchallexp), S2b LSF (zadehexp, M_L, Bland), S3 steepest (M_L), S2a MSF and
-msfa/msfc (L-RED's gated Bland counter, 2^N - 1; reproduction pending their push). Live: S1 RAR (M4-R; randomfacetsubexp
-N=10 one seed 4649 switches, N=10 seeds 2-4 and N=12 seeds 0-1 running with 1-1.5 h timeouts; adversarial mean-of-16 at
-n=6..12 running), S5 Zadeh+index tie-break and S6 Cunningham+index order (family sweep out/fam_mem.log, adversarial and
-gadget-chain searches running; cunninghamexp blows up only under PGSolver's lower-bound ordering). Next: read those
-sweeps, write DEAD.md/RESULTS entries, regenerate report.py, end-of-box message (DONE/FINDINGS/NEEDS + candidate list
-with killers). Open from the Lead: gated_bland file (claude/l-red not on origin at 12:30Z); L-RED attacks RAR independently.
+2026-10-15 14:20Z (Lead clock; machine clock is ~1h14m behind). End-of-box wrap-up: fast sweep of zadeh/cunningham/rar/
+most-improved over all families running (out/fam_mem_fast.log), then report.py, final push, DONE/FINDINGS/NEEDS message.
+Verdicts: S1 killed conditional (L-RED transfer lemma, REFEREE-2 checking); S2a, S2b, S3, S4 killed; S5, S6, S7 not killed,
+not defended (docs/si/README.md table). Next lane (if any): S5/S6/S7 are L-RED's to attack; a deterministic candidate must
+state its defence against gate relabelling, adversarial numbering and padding before testing.
 
 ## Queue
-1. fam_mem sweep -> S5/S6 verdicts on families; adversarial/famsearch for zadeh, cunningham.
-2. gated_bland: reproduce 2^N - 1 with si.py, add to families.py, run RAR/zadeh/cunningham on it.
-3. RAR: collect N=10/12 randomfacetsubexp seeds; growth fit; adversarial mean-of-16.
-4. report.py regenerate; DEAD.md final; notes; verify; push; end-of-box message.
+1. (done when fam_mem_fast finishes) regenerate docs/si/RESULTS.md, push, send the end-of-box message.
+2. Open for a successor: a proof or refutation of Claim F' (notes, 11:35Z argument, gaps G1 closed by the play notion,
+   G2 length-only switches sketched); padding attack on S7; relabelling attack on S5 (DFH pre-order vs fixed order).
 
 ## Things only I know
 - Engine conventions: priorities made injective by rank (p' = 2·rank + parity, rank by (pr, index)); path component a bitmask
@@ -59,8 +56,15 @@ with killers). Open from the Lead: gated_bland file (claude/l-red not on origin 
 - Fleet docs: TARGET.md v1.0; docs/DECISIONS.md D1-D6, L18-L19; docs/RESULTS.md DE1-DE3; docs/lit/RANKING.md §4;
   docs/lit/BARRIERS.md B8-B14; experiments/hard-families/README.md and pgsolver_si.py (port, stratimpralgs.ml line map).
 
-## Dead ends
-(see docs/si/DEAD.md once a candidate is killed; each entry here repeats the killer in one line)
+## Dead ends (details in docs/si/DEAD.md)
+- S4 subgame-optimal start: switchallexp, counts identical to switch-all (2486 at N=8, doubling).
+- S2b LSF: zadehexp 33..15301 (N=2..10, doubling); DLMM Bland counter 2^n - 1; M_L port 2^(L+1) - L - 2.
+- S3 steepest: M_L port, identical run to LSF, 2^(L+1) - L - 2.
+- S2a MSF (+ msfa, msfc): L-RED's gated Bland counter, 2^N - 1 exactly (reproduced on si.py); the gate decouples level from
+  effect through an escaped cycle-creating switch; my obstruction (b) was wrong.
+- S1 Random-Action-Removal: FHZ 1410.7530 Thm 6.3 transferred by L-RED (conditional on the transfer lemma).
+- Obstruction (a) still stands: Disser-Mosis B_n does not port faithfully to lexicographic valuations (arithmetic rewards).
+- Claim F as first stated (bit notion) was false (L-RED's cf1, cf2); F' (play notion, cycle included) holds in the data.
 
 ## Freezing observation for MSF (2026-10-15 11:00Z; data + proof sketch, UNREFEREED, not a result)
 Setting: VJ valuations, lexicographic order (cycle node first, then path set by rank, then length). Level of an improving edge
