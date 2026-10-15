@@ -39,7 +39,8 @@ Claim 1 (freshness; losing G'): if p is a P_2 position of π' then x'_s ≠ x'_t
 infinitely many P_2, contradicting that v' is losing.
 Claim 2: if t < t' ≤ D − n + 1 and x'_t = x'_{t'} then π(t) = π(t'). Indeed both x'_t and x'_{t'} are ≡_{D−t'} to π(t) and π(t')
 respectively, so π(t) ≡_{D−t'} π(t') with D − t' ≥ n − 1, and by (*) π(t) = π(t').
-Claim 3: if t < t' and π(t) = π(t') then π has a P_2 position in (t, t']. Either both t, t' ≥ a, so t' − t is a positive multiple
+Claim 3: if t < t' and π(t) = π(t') then π has a P_2 position in (t, t']. The case t < t' < a is impossible (the stem is a
+shortest path, so its vertices are distinct). Either both t, t' ≥ a, so t' − t is a positive multiple
 of ℓ and the window (t, t'] contains a position ≡ a (mod ℓ), i.e. a visit to u; or t < a ≤ t' (a stem vertex equal to a cycle
 vertex), and position a ∈ (t, t'] is the visit to u.
 Claims 1-3 give: x'_0, ..., x'_{D−n+1} are pairwise distinct vertices of G', so D − n + 2 ≤ n, i.e. D ≤ 2n − 2. ∎

@@ -118,7 +118,7 @@ Every consistent play from Z* stays in Z*, and while it visits P_1 vertices thei
 visited within n steps from every position: priority 2 occurs infinitely often and Even wins. So Z* ⊆ W_E.
 (⊇) Let σ be a positional winning strategy for Even on W_E (positional determinacy, TARGET §1). For u ∈ W_E let r(u) be the
 largest number of steps a σ-consistent play from u can make before its first visit to a P_2 vertex (the first step counts 1).
-r(u) ≤ n: a σ-consistent path of n steps inside P_1 repeats a vertex, and the repeated segment is a σ-consistent cycle inside
+r(u) ≤ n (finite: u ∈ W_E forces P_2 ≠ ∅ and a first P_2 visit on every σ-consistent play): a σ-consistent path of n steps inside P_1 repeats a vertex, and the repeated segment is a σ-consistent cycle inside
 P_1 that Odd can follow forever, a play consistent with σ with maximal priority 1, contradicting that σ wins from u ∈ W_E.
 Claim: u ∈ Y_{r(u)} for the approximants of Φ(W_E). Induction on r(u): every σ-move from u (if u ∈ V_E) or every move (if
 u ∈ V_O) leads to a vertex w ∈ W_E (σ-consistent plays stay in W_E) with w ∈ P_2, or w ∈ P_1 and r(w) ≤ r(u) − 1, so w ∈ (P_2 ∩
