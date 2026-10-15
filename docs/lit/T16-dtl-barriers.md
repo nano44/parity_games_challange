@@ -80,6 +80,29 @@ Caveats (each could flip the verdict):
 
 Also: no published definition exists, so every statement here refers to dtl.cpp @ 8fbf0a7 as transcribed by L-ALG.
 
+## 5. Addenda (Lead 15:38Z and 15:45Z)
+**(a) The GandALF 2019 "VULNERABLE" slide.** Found: tvandijk.nl/pdf/2019gandalf_talk.pdf, slide 42 (p.62), quoted in §1.
+- **Which variants it means.** The slide names "'Recursive tangle learning' and 'progressive tangle learning' (unpublished)", i.e. RTL and PTL. The talk PDF was created 2019-09-02 (pdfinfo). Oink commit afb589c (2019-09-05) is "New experimental solvers recursive tangle learning and progressive tangle learning". DTL's first commit, e67cb4c, is 2019-09-14, after the talk. **So DTL is not one of the variants the slide means.**
+- **The "different version of the TC game"** is **tc+**:
+  - afb589c (2019-09-05) adds src/tools/tc+.cpp together with rtl and ptl.
+  - README: "tc+ | TC modified to defeat the RTL solver".
+  - 3327c54 (2021-07-10): "New TC+ implementation to defeat the improved RTL implementation".
+  - It was **published** as ISoLA 2024 Fig. 7 (p.18), "Bit 2 of a 4-bit Two Counters game that delays rtl exponentially". The paper also says (p.18): "The rtl algorithm solves both exponential lower bounds of Figure 4 and Figure 6 in polynomial time. To delay rtl exponentially often, we need to …".
+  - Nothing in the slide, the repo or the paper claims tc+ against PTL or DTL. The README lists DTL among algorithms solving tc (not tc+) in polynomial time. L-ALG measured ~1.4 N^2 DTL tangles on tc+ (fleet data).
+
+**(b) Which solver each counterexample commit targets.**
+| commit | date | message / README text | solver targeted |
+| --- | --- | --- | --- |
+| 39254fe | 2021-06-25 | "Updated README.md"; adds "counter\_dtl \| Counterexample to the DTL solver" while the row reads "DTL \| Distraction-free Tangle Learning (research variant)" | **the pre-rename distraction-free TL = today's dtl.cpp**. dtl.cpp changed by only 6 lines between 39254fe and 8fbf0a7 (2024 refactors: fc79aee, 0c7ee84, 1f7ecb8, 38d654e, 77c6992). No source was ever committed |
+| 1ba8b0a | 2021-07-02 | "Rename the DTL solver": README row becomes "Distance Tangle Learning (research variant based on 'good path length')"; touches only README.md and solvers.cpp | rename only, same algorithm |
+| a028e62 (branch dftl) | 2021-07-04 | "Added solver DFTL and counterexample"; README adds "counter\_dftl \| Counterexample to the DFTL solver" | **DFTL**, a new 744-line solver distinct from dtl.cpp |
+| 5502912, d1a923d (dftl) | 2024-06-18/19 | "Prepare for making DFTL two-player and keeping the original one-player version"; "Improved DFTL version with better two-player interaction" | DFTL |
+| d54dfad (dftl) | 2024-06-19 | "Fix counter_odftl to have a tiny tangle of the opponent after the distraction" | (O)DFTL |
+
+Consequence: caveat (i) is stronger than first stated. The README's counter_dtl targets **the same algorithm as current DTL**, and it is the only author claim against DTL. Its content is unknown: correctness or running time, and no file exists.
+
+**(c) What ISoLA 2024 presents.** Neither DTL nor DFTL. It presents rtl and ortl (with tl, pp, zlk, fpi, fpj in the evaluation). DFTL appears only in the talk's "Ongoing work … (DF*TL)" (p.91).
+
 ## DONE / FINDINGS / NEEDS
 - FINDINGS:
   - No published family is claimed exponential for DTL. The ISoLA 2024 paper does not mention DTL; its conclusion calls polynomiality open.
