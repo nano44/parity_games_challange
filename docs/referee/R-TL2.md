@@ -182,3 +182,23 @@ tie.
 - S1's tie convention and start tree in si.py: not read by me (finding 3).
 - Zwick's Rand-Act-Rem is stated for AUSOs (no ties); its use on a game with ties is L-SI's rule S1, whose definition I take
   from the lane's report.
+
+## 7. Comparison with REFEREE-2's report (docs/referee-2/R2-TL.md at claude/referee-2 995cfd3; read after §1–6 were pushed as claude/referee d1128ec)
+No disagreement on any point. Item by item:
+- Verdict: both "OK with fixes", both find the lemma true and FHZ Thm 6.3 transferring to P.
+- Prior plausibility: same reading (downward direction of FHZ's papers, no obstruction named, status of original Random-Facet
+  on parity games left open by the errata); R2 adds Conclude.tex's open problem (binary out-degree instances), which I did not
+  quote; I add Zwick 2026's related-work paragraph, which names no lower bound for Rand-Act-Rem on games.
+- Missing sub-case in (2): R2's F1 is my finding 1, the same sub-case (chain vertex: chain edge vs escape copy with the chain
+  path escaping later at the same level), with the same resolution.
+- Constants in (1)/(3): R2's F2(a) is my finding 2 (gap ≥ 4^j, not 4^j − 2).
+- F-independence of the lemma: R2's F2(b) is my finding 5.
+- S1's conditions (my finding 3): R2 read si.py and reports `_rar` with the strict VJ test and the best-reward start = the LAST
+  copy of each zero-edge (fhz.py's driver uses the first); both are zero-edge trees and FHZ admit any. This closes my
+  finding 3 at referee level; the lane should still cite the si.py lines.
+- Machine evidence: R2's exhaustive sets (2,1,1,1), (1,2,1,1), (1,1,2,2), (2,1,1,2) plus random relation/lockstep runs; mine
+  (§5) covers (2,1,1,1), (3,1,1,1), (2,2,1,1), (2,1,2,1), (2,1,1,2), (4,1,1,1), (3,2,1,1), (3,1,2,1) exhaustively (every tree,
+  three-way verdict including ties) on both my encoding and the lane's objects, plus RF-vs-RAR lockstep with my own
+  implementations of both algorithms. Disjoint tool chains, identical conclusion.
+- R2's gap list G-TL-1..3 coincides with my Gaps section (Thm 6.3 black box; prose proof; si.py correspondence by reading).
+Signature: with the second independent read agreeing, I sign the lemma OK subject to findings 1–2 (text fixes only).
