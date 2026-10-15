@@ -131,3 +131,10 @@ Fleet judgement under L12. L-SI ended its box early (context 720k) with an obstr
 single-switch rule tried ranks by a quantity that gates, pads, priorities or numbering steer. No L-SI successor now: fleet
 spend goes to DTL (gauntlet step 4) while it is the lead candidate. Queued: S5/S6 under adversarial numbering (L-RED, after
 DTL); R2 transfer lemma (REFEREE-2). Revisit when DTL is settled either way.
+
+## L24 (Lead reading, 2026-10-15 17:50Z): DTL step-4 statement frozen
+Fleet judgement under L12. After CHECKER C3b (claude/checker cf3e0d2: §0 PASS, all C3 items fixed or explicitly deferred),
+docs/alg/DTL-proof.md §0 at claude/l-alg ccff864 is frozen as the statement for DTL's gauntlet step 4 (Theorems D1, D2 on
+A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, trace 0, every equal-priority order; analysed object
+C5-DTL.md; the C++ correspondence §7 to be signed separately, C3b N-1). Changes to §0 go through the Lead and CHECKER.
+This is not a TARGET.md change and not a result; GAP-C and GAP-A remain open.
