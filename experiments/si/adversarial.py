@@ -15,14 +15,33 @@ ap.add_argument("--steps", type=int, default=400); ap.add_argument("--samples", 
 ap.add_argument("--start", default="best"); ap.add_argument("--budget", type=float, default=1e9, help="seconds per n")
 ap.add_argument("--sink", action="store_true", help="1-sink games (Friedmann 1106.0778 sec. 5): vertex 0 = Odd sink of priority 1 with a self-loop, reachable from every vertex, every other priority >= 2")
 ap.add_argument("--tag", default="")
+ap.add_argument("--objective", default="iters", choices=["iters", "escapes"], help="escapes = cycle-creating switches after which no cycle node changes (msf-type rules only)")
 a = ap.parse_args()
 
 
 def score(g):
+    if a.objective == "escapes":
+        return escapes(g)
     tot = 0
     for s in range(a.samples):
         tot += si.solve(g, a.rule, seed=s, start=a.start)[2]
     return tot / a.samples
+
+
+def escapes(g):
+    """number of cycle-creating switches (v on the path of w) after which every cycle node is unchanged"""
+    e = si.Engine(g); strat = e.initial(a.start); x = 0
+    while True:
+        val, _ = e.evaluate(strat); imp = e.improving(strat, val)
+        if not imp: break
+        new = si.RULES[a.rule](e)(strat, val, imp, None)
+        v = [i for i in range(g.n) if new[i] != strat[i]][0]
+        if (val[new[v]][1] >> e.rank[v]) & 1:
+            val2, _ = e.evaluate(new)
+            if all(val[u][0] == val2[u][0] for u in range(g.n)):
+                x += 1
+        strat = new
+    return x
 
 
 def sink_ok(g):
@@ -89,4 +108,4 @@ for n in [int(x) for x in a.n.split(",")]:
         if s > best_s:
             best_g, best_s = g, s
     path = os.path.join(HERE, "out", f"adv_{a.rule}{a.tag}_n{n}.pg"); pg.write(best_g, path)
-    print(f"{a.rule}{a.tag} n={n}: max iterations {best_s} (m={best_g.m}, restarts {r + 1}, {time.time() - t0:.0f}s) -> {path}", flush=True)
+    print(f"{a.rule}{a.tag} n={n}: max {a.objective} {best_s} (m={best_g.m}, restarts {r + 1}, {time.time() - t0:.0f}s) -> {path}", flush=True)

@@ -78,3 +78,15 @@ Consequence (if F holds): in a run with no cycle-creating switches, MSF makes �
 revisited only after a higher-level switch; this gives only an exponential bound by itself (S_r ≤ n(1 + S_{>r})). The
 adversary's tool is a high-level improving edge that is cycle-creating until low-level switches change the paths; then it
 fires late and unfreezes everything below. Variants: msfa (prefer non-cycle-creating edges), msfc (prefer cycle-creating).
+
+## Refinement (11:20Z, unrefereed): where MSF's iteration count can hide
+Under Claim F and Friedmann Thm 3.2, in a stretch of an MSF run with no cycle-creating switch: a level-r switch at v makes
+bit r of Ξ(v) good and bits above r never change (F) while Ξ(v) only improves, so bit r of v stays good until a switch at a
+level > r; MSF takes the highest level available, and lower switches never create higher-level improving edges (F), so once
+level k is exhausted it never recurs; hence at most n switches per level: ≤ n(n+1) switches in the stretch (sketch only; the
+DLMM Bland counter shows the mechanism: MSF needs 1 switch, Bland/LSF 2^n - 1).
+A cycle-creating switch (v on the path of w; the new cycle through v is even-dominated, level = rank of its dominator) either
+changes some cycle node (at most n^2 such events in a run: each vertex's cycle node improves ≤ n times) or is "escaped" (Odd
+reroutes, cycle nodes unchanged, high bits may change arbitrarily). So: MSF switches ≤ (n^2 + 1)·(n^2 + X + 1) with X = the
+number of escaped cycle-creating switches. MSF is polynomial iff X is (modulo the sketch). The adversarial search now has an
+objective "escapes" (adversarial.py --objective escapes) to maximise X directly.

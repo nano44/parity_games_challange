@@ -14,6 +14,7 @@ ap.add_argument("rule"); ap.add_argument("--G", type=int, default=4); ap.add_arg
 ap.add_argument("--kmax", type=int, default=10); ap.add_argument("--restarts", type=int, default=30); ap.add_argument("--steps", type=int, default=2000)
 ap.add_argument("--samples", type=int, default=1); ap.add_argument("--seed", type=int, default=0); ap.add_argument("--desc", action="store_true")
 ap.add_argument("--budget", type=float, default=1e9); ap.add_argument("--tag", default="")
+ap.add_argument("--seed-template", default="", help="dlmm: start every restart from the DLMM Bland counter level (a Even, b Odd) plus random extra vertices")
 a = ap.parse_args()
 G = a.G
 
@@ -44,6 +45,14 @@ def score(t, k=None):
 
 
 def rand_template(rng):
+    t = _rand_template(rng)
+    if a.seed_template == "dlmm" and G >= 2:
+        t["owner"][0], t["owner"][1] = 0, 1; t["off"][0], t["off"][1] = 3, 4
+        t["intra"][0], t["intra"][1] = [], []; t["nxt"][0], t["nxt"][1] = [0, 1], [0, 1]; t["sink"][0] = t["sink"][1] = False
+    return t
+
+
+def _rand_template(rng):
     return {"owner": [rng.randrange(2) for _ in range(G)], "off": [rng.randrange(2, 2 * G + 2) for _ in range(G)],
             "intra": [sorted(rng.sample(range(G), rng.randint(0, 2))) for _ in range(G)],
             "nxt": [sorted(rng.sample(range(G), rng.randint(0, 1))) for _ in range(G)],
