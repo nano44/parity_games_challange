@@ -103,4 +103,10 @@ each level of NE' adds one register. This is the exact obstruction of the whole 
   psi 36/59, rtl 71/146 at K = 6/8/12(/16): no blow-up found for the tangle-learning family in the S_2/S_3/tc-core gadget
   space. Calibration run started: pool = whole tc N=2 game as a block (can the GA rediscover tc's hardness for tl?).
   Oink README lists counter_dtl, but no such generator source exists at commit 8fbf0a7.
+- 12:30 GA calibration (pool = whole tc N=2 games as blocks, fitness = Oink tl tangles): best 25/38/54/77 at n = 66/88/132/176,
+  while tc itself gives tl 126 at n=138 and 510 at n=232: the GA cannot rediscover the two-counter hardness; its silence on
+  ptl/spptl/dtl is NOT evidence. The GA is validated only against Zielonka-type recursion (ZP, Oink zlk: it finds x30/tile).
+  ptl/spptl on tc: 6/12/20/42/72 and 5/9/14/27/44 tangles at N = 2/3/4/6/8 (polynomial-looking, as Oink's README says).
+  Upstream Oink master == pinned 8fbf0a7; no counter_dtl source anywhere (README mention only). ptl_sweep.py running:
+  ptl/spptl/tl/dtl on all 13 families, S_s, T_R.
 
