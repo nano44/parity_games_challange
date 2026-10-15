@@ -46,7 +46,10 @@ Iteration tables: docs/si/RESULTS.md (generated); raw logs experiments/si/out/ (
   bounds get from probability scaling is obtained here by an escaped cycle-creating switch. General lesson (L-RED, lemma in
   preparation): gate relabelling re-assigns the level of any switch, so every rule ranking improving edges by
   first-difference position inherits the index-based lower bounds (DLMM 2512.16684 Thm 4.3 class).
-- L-SI reproduction: PENDING the push of claude/l-red (not on origin at 12:30Z); L-SI's own gate variants built from the
-  description did not reproduce (both-gates and enter-only gates with q_i above the counter give 0 or N iterations).
-  The 2^N - 1 table is to be added from si.py when the generator arrives, and gated_bland joins the standard falsification
-  set (experiments/si/families.py) then.
+- L-SI reproduction (12:58Z, trunk b5fd882 experiments/red/gens_red.py gated_bland, run on si.py): MSF iterations for
+  N = 2..12: 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095 = 2^N - 1 exactly (n = 5N + 2); msfa identical; lsf 1,
+  switch-all N, zadeh 2N - 1, cunningham ~4N, Random-Action-Removal 1.8 .. 13.4 (mean of 10 seeds). L-SI's own gate
+  variants built from the description before the push did not reproduce (wrong gate placement: the gates must sit on a
+  relay d_i after a_i with the underlying priorities shifted above the gate priorities, gens_red.py docstring).
+  Regression instance: experiments/si/instances/gated_bland_N6.pg (msf: 63). gated_bland and gate.py transforms are in
+  experiments/si/families.py as standard falsification families from now on.

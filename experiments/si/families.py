@@ -14,6 +14,9 @@ for f in ["recursiveladder", "switchallexp", "switchbestexp"]:
     GEN[f] = f"python3 {ROOT}/experiments/hard-families/pgsolver_port.py {f} {{N}}"
 for f in ["randomfacetsubexp", "zadehexp"]:                       # L-SI ports (gens.py), N >= 2
     GEN[f] = f"python3 {HERE}/gens.py {f} {{N}}"
+GEN["gated_bland"] = f"python3 {ROOT}/experiments/red/gens_red.py gated_bland {{N}}"      # L-RED (read-only use)
+for f in ["zadehexp", "switchallexp", "switchbestexp", "randomfacetsubexp"]:                   # gate.py-relabelled bench
+    GEN[f"gated_{f}"] = f"python3 {HERE}/gated.py {f} {{N}}"
 ALL = list(GEN)
 
 ap = argparse.ArgumentParser()
