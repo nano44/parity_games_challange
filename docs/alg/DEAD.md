@@ -30,9 +30,15 @@
   Strahler number s (DP-checked for s <= 3; by construction the Odd decomposition tree is the perfect binary tree of height s).
   Measured: NE'(k) solves S_s iff k >= s - 1, for s = 1..4 (S_4: 22 vertices, NE'(2) decides nothing, NE'(3) solves in 13 s);
   S_5 (46 vertices) running at the time of writing (notes/L-ALG.md Log).
-- Obstruction (exact): the nesting depth needed is the Strahler number minus one (T-ALG1 (c), docs/alg/T-ALG1.md), i.e. the
-  register number (DJT Thm 8); the family S_s has Strahler number log_2(n) + O(1), so every fixed k is incomplete and
-  k = Theta(log n) costs n^{O(log n)}: the quasi-polynomial territory of universal trees / register games, not M4.
+- Obstruction (exact, citable): on the family S_s (Strahler number s, |S_s| = 3*2^(s-1)-2), NE'(k) decides every vertex iff
+  k >= s-1, measured for s = 1, 2, 3, 4 (S_1..S_4; NE'(3) on S_5 did not finish in 1700 s of Python, so s = 5 is unmeasured).
+  Every psolC (= NE'(0)) failure found (1,389 games) has Strahler number 2 and every NE'(1) failure found (45 games) has
+  Strahler number 3 (experiments/attr/strahler.py). Reading: the nesting depth of prefix-maximum memories that the family
+  needs equals the Strahler number minus one, and by Daviaud-Jurdzinski-Thejaswini, arXiv 2003.08627v2, Lemma 7 + Theorem 8
+  the Strahler number equals Lehtinen's (defensive) register number; so each nesting level is one register, the hierarchy
+  NE'(k) is the register hierarchy, and since S_s has Strahler number log_2((n+2)/3) + 1, no fixed k is complete and
+  k = Theta(log n) costs n^{O(log n)} (DJT Prop. 3 bounds the Strahler number by floor(lg n) + 1): the quasi-polynomial
+  territory of universal trees / register games (DJT Thm 32), not M4. Conjectured exact statement: T-ALG1 (c).
 - Idea killed: ANY fixed-depth nesting of weak (reachability-under-prefix-maximum) conditions, i.e. the whole fatal-attractor
   family (psol, psolB, psolQ, psolC, C1, C2): depth = registers. What survives as a (non-M4) by-product: T-ALG1 (a), psolC is
   complete exactly on Strahler-1 games (proof in docs/alg/T-ALG1.md, unrefereed).
