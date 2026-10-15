@@ -33,9 +33,9 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | CHECKER | session_01JptdoF6eLabJzBHG28nWSS | claude/checker | opus-5-5 | high | parked (C2 PASS 068f9de, R3 landed) | Landing gate: mechanical re-runs and statement diffs; Opus suffices |
 | HUMAN-DESK | session_01URpUgDVczmLPHmidyo4Jr6 | claude/human-desk | opus-5-5 | high | parked (packet 3b3bdde; owner decides distribution) | Owner D1: spawned when a claim reaches M3; writing quality matters, no deep math |
 | WATCHDOG | session_01JQNTX8zT3T3mWMt6ZmYzkn | none (never edits) | haiku-5-5 | high | working (cron :30, trig_019xE43BZ5qaDGwxDkZ5h5ik) | Routine liveness/overage checks; reports to Lead only (deviation from playbook: does not wake lanes, so idle sessions never get messages) |
-| OWNER-DESK | session_01Eq99qsTJBiTh6xLzwCPtqv | claude/owner-desk | opus-5-5 | high | starting | Owner D3: owner Q&A and open questions; accuracy in plain explanation, no proofs; idle between owner messages |
+| OWNER-DESK | session_01Eq99qsTJBiTh6xLzwCPtqv | claude/owner-desk | opus-5-5 | high | idle between owner messages | Owner D3: owner Q&A and open questions; accuracy in plain explanation, no proofs; idle between owner messages |
 
-## In flight (as of 2026-10-15 09:50Z)
+## In flight (as of 2026-10-15 14:58Z)
 - L-SI: strategy-improvement rule design loop toward M4/M4-R (D6, L19), box to ~22:10Z. Dead: S2a MSF (DE4), S1 RAR (DE6), S2b, S3, S4. S5/S6 'not covered, not defended'; HELD again by L-RED R6 (f5e6ea0) on the FHZ counter with adversarial numbering (index-fair rules switch the next higher bit promptly); L-RED box 4: Zadeh lower bound with fixed index tie-break. LIVE: S7 most-improved (single switch maximising #vertices whose valuation strictly improves): linear/low-degree on all families incl. gated ones (gated_switchbestexp 80,203,314,658,974 for N=2..6); L-RED R3 (l-red 7edf1c8) HELD: faithful; unrefereed Lemmas T/D (count = traffic; upstream count > downstream) defeat padding; Friedmann G_n with pads degenerates after 2 increments (selector chain ordered wrong for S7). S7 KILLED (RESULTS DE7, l-red bf0922f): FHZ one-player RF counter P_{n,1,1,1} + linear pads, Theta(n^2) size, S7 iterations 16,44,104,228,480,988 (doubling); Earlier: S7 KEY QUESTION DF (L-RED R3 §3c adbfb40, unrefereed): every S7 switch is downstream-first; every published exponential single-switch run is not; so S7 is polynomial (sink games) iff every downstream-first run has poly length. L-RED: construct (6h); L-SI: prove. S7 gauntlet: step 2 data + proof attempt (L-SI), step 3 barrier check DONE (L-LIT T14 8dd2e55: NOT COVERED; outside B1-B17 with B9 caveat on index last-resort firings), kill box 3 (L-RED). S5/S6 HELD by L-RED R4 (0203590): no published bad order is a block order; numbering lifts counts (Cunningham 6->24 at N=3) but class-structured schemes stay linear.
 - Working-session count (D1 cap 5 counts lanes, not Lead/WATCHDOG): L-ALG, L-SI, L-LOWER, L-RED, L-LIT = 5 (cap).
 - MSF status 11:25Z: S3 DEAD (DLMM M_L port, 2^(L+1)); MSF 3L-2 there. L-SI unrefereed bound: MSF iterations <= (n^2+1)(n^2+X+1), X = escaped cycle-creating switches (max X 2..14 for n=5..10). L-SI argues Disser-Mosis D_n cannot port to lexicographic valuations. L-RED attacks all of it independently. 11:45Z L-RED FLAW: Claim F's 'cycle-creating' bit test is wrong (misses less-relevant cycle vertices; cf1/cf2 counterexamples; 2,649/11,795 switches misclassified); corrected play-notion F' holds on data; all measured X are undercounts; msfa/msfc mis-implemented. MSF not killed. 12:12Z L-SI fixed both (play notion incl. final cycle), F' 0 violations on 16k games; but cycle-creating switches are ~1/3 of all MSF switches, so the X-bound is empty until X is bounded: no proof route yet, MSF stands on data only.
@@ -62,10 +62,13 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - M3: RESULTS R2 [refereed-only] T-A1, psolB solves G completely iff PA**(G) (L-ATTR; both referees signed 57a1515).
 - M3-type: RESULTS R3 [refereed-only] original Random-Facet on parity games, e^Omega(sqrt n) expected switches (L-RED; CHECKER 068f9de).
 - RESULTS R1 [refereed-only]: L4, s^V(n,n) >= n^Omega(lg n) (supporting lemma, not M3 per L7).
-- None of the fleet's own. Known: quasi-polynomial upper bound (to be source-checked by L-LIT).
+- Algorithmic: no polynomial algorithm (M4) yet. Best results are R2 (T-A1) and R3 (Random-Facet lower bound). Known: quasi-polynomial upper bounds.
 
 ## Owner questions open
 - Q3: DONE by owner 07:53Z (setup script set; applies to sessions started after it; verify on the next new session). Q2, Q4, Q5, Q6, Q7 closed (D4, L13-L17). No owner questions open.
 
 ## Spend
-- Spend: 21:43Z total $135.69 (Lead 22.79, REFEREE-old 47.61, L-COMP 31.82, L-STRUCT 33.42, WATCHDOG 0.06). 23:43Z: Lead 35.26, L-COMP 32.80, REFEREE-2 8.58; Fable sessions L-ATTR/L-LOWER/REFEREE report no cost field yet.
+- 14:55Z last readings (cost_usd): Lead 86.2, L-LIT 93.5, L-RED 66.8, L-SI 58.6, REFEREE 55.0, L-ALG 53.6, REFEREE-2 39.6,
+  L-LOWER (succ.) 30.1; earlier/parked: L-LOWER (old) 56.8, REFEREE (old) 47.6, L-COMP 38.1, L-STRUCT 33.4, L-ATTR ~31, WATCHDOG 1.3.
+  Sum of readings about $692 (CHECKER, HUMAN-DESK, OWNER-DESK not read). Rate limit: seven_day "allowed_warning" since 12:02Z,
+  no overage; resets 2026-10-21 21:00Z; owner D7: continue, stop on overage.

@@ -127,3 +127,4 @@
 - 14:12Z DE7 recorded (S7, l-red bf0922f merged).
 - 14:19Z L-RED R6 S5/S6 held; box 4 (5h) Zadeh fixed-tie-break lower bound. DE7 updated to n=10.
 - 14:45Z WATCHDOG: roster stale for REFEREE-2/REFEREE/CHECKER (fixed). Lead ctx 731k, $86.2.
+- 14:58Z NOW cleanup per OWNER-DESK notes; spend table refreshed (~$692 readings).
