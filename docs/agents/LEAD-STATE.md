@@ -141,3 +141,4 @@
 - 15:47Z L-ALG successor handover 5/5; GO for DTL proof attempt (8h box, statement first within 1h, GAPs reported at once).
 - 15:53Z L-ALG statement (Thm D1 correctness, D2 poly bounds) at l-alg 5175454 -> CHECKER C3 statement diff (45 min). Forwarded L-ALG's completeness observation (no incomplete-search check in release path; sptl W) to L-RED as a correctness target.
 - 15:59Z CHECKER C3 FAIL (text) 5b924e7 merged. L22: DTL pinned with --no-loops, trace 0, all tie orders, object = C5-DTL.md; sent fix list to L-ALG, --no-loops re-probe to L-RED. CHECKER parked.
+- 16:05Z hourly sweep: no overage (seven_day warning). Lead ctx 159k; L-SI 708k (>600k: asked to end box by ~18:00Z with obstruction map + handover, then park); L-LOWER 368k idle with waiter; L-RED 396k idle, 7 searches under monitors; L-ALG new 117k working. CI green on all lane heads (latest runs 449-460). M2 done so no daily owner line.
