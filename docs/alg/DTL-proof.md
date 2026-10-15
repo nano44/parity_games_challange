@@ -361,6 +361,18 @@ top flips the parents of polynomially many u's in a way that encodes a counter. 
 "no reset" statement as R8 §1, and the budget of (a3) is n per top per (R, V)-context, but the number of contexts
 (search_rec iterations × recursion levels × pruning rounds) is itself only bounded by (c) and (b), i.e. polynomially,
 so the open quantity is exactly the number of str-changes per context.
+Data for the shape of (a) (experiments/alg/dtl_pertop.py on the debug trace; a tangle's top = its maximum-index vertex):
+| tc+ N | tangles | iterations | distinct tops | max tangles at one top | tops with 1 tangle |
+| --- | --- | --- | --- | --- | --- |
+| 2 | 8 | 5 | 8 | 1 | 8 |
+| 4 | 30 | 10 | 26 | 3 | 24 |
+| 6 | 58 | 14 | 49 | 5 | 46 |
+| 8 | 94 | 18 | 80 | 7 | 76 |
+| 10 | 138 | 22 | 116 | 9 | 108 |
+tc N = 8, 12, 16: 17, 25, 33 tangles (2N+1), 6 iterations each, every top has exactly 1 tangle.
+So on tc+ the ~1.4 N^2 total is ~1.2 N^2 tops with one tangle each plus two tops with N-1 tangles: no top cycles. The
+conjecture that (a) needs is "at most n distinct SCCs are ever extracted at one top", and the open mechanism is the
+str-change at a fixed region vertex set.
 Status of 3: (b), (c), (d) PROVED; (e) PROVED conditional on (a); (a) GAP-A.
 
 ## 4. idtl vs dtl — PROVED (same proofs), one difference stated
