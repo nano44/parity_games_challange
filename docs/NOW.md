@@ -60,11 +60,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 
 ## Owner questions open (held by OWNER-DESK since 2026-10-15, D3; docs/owner-desk/QUESTIONS.md)
 - Q5: ANSWERED by owner 07:50Z (upload: HKP Imperial DTR15-4, 2015, sha256 a7b61fe3..., public copy verified by Lead); verdict pending L-LIT T11 (L11).
-- Q6: whether and to whom docs/HUMAN-REVIEW.md goes (owner only).
-- Q7: second-referee/L4 as M3? (Lead reading L7: lemma only.)
-- Q4: L-COMP built PGSolver (tcsprojects/pgsolver d3cd624) but the session's permission classifier refused to run the binaries; generators were ported to Python instead. Owner: allow running them (to diff the port against the original), or keep port + referee check?
-- Q2: trunk branch: keep claude/vibrant-johnson-nxvvxo as trunk, or create `main`?
-- Q3: environment setup script (Boost dev packages + scripts/setup_oink.sh) to save each session ~1 min of setup.
+- Q3: setup script, owner action (walkthrough given by OWNER-DESK). Q2, Q4, Q6, Q7 closed by D4 (readings L13-L16); L12: fleet decides judgement calls itself.
 
 ## Spend
 - Spend: 21:43Z total $135.69 (Lead 22.79, REFEREE-old 47.61, L-COMP 31.82, L-STRUCT 33.42, WATCHDOG 0.06). 23:43Z: Lead 35.26, L-COMP 32.80, REFEREE-2 8.58; Fable sessions L-ATTR/L-LOWER/REFEREE report no cost field yet.

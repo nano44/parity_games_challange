@@ -65,3 +65,4 @@
 - 07:27Z D3: OWNER-DESK spawned session_01Eq99qsTJBiTh6xLzwCPtqv (opus-5-5, branch claude/owner-desk), Q2-Q7 handed over with Lead recommendations.
 - 07:50Z L-LOWER n=5 verdict B_1(5)=8=2n-2 (90f6928). Lead decision: not (a) uniform construction (positive result, removes T-L1, no barrier value) nor (b); L2-data in current box: CDHL two-player statement + B_2(n) n<=4 exact/bounds; refereeing and L-LIT novelty deferred until a RESULTS candidate exists.
 - 07:55Z Q5 answered by owner (DTR15-4 upload via OWNER-DESK); sha256 verified; L-LIT woken for T11 (2h); reading L11.
+- 08:00Z D4 recorded (owner answers Q2-Q7 via OWNER-DESK); readings L12-L16; Q2/Q4/Q6/Q7 closed; Q3 owner action; Q5 pending T11.
