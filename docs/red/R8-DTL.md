@@ -33,8 +33,10 @@ shrinks when an Even dominion is solved). Write A_T(Z, R, t) for the tangle attr
   attraction (attractVertices runs first on every pop; a tangle is attracted iff all its escapes are in Z or outside R,
   and more tangles never un-satisfy that).
 - (M2) The pruning of best_vertices is a greatest fixpoint: V* = the largest V such that every v in V can step into
-  A_T(Reg_T(V), R, t) for some t < pr(v) (lines 711-741), where Reg_T(V) = union of the attractors of the tops of V with
-  threshold pr(top). The operator is monotone in V and, by (M1), pointwise increasing in T; so V*_T subset of V*_T'.
+  A_T(Reg_T(V), R, t) for some t < pr(v) (lines 711-741), where Reg_T(V) = the union of the DISJOINT regions of the tops
+  of V, computed top-down from one copy CurR = R (line 690) that each top's attraction consumes (lines 691-706; restated
+  16:15Z after the Lead's check; the union is still monotone in T because a vertex that a lower top loses is held by the
+  higher top that took it). The operator is monotone in V and, by (M1), pointwise increasing in T; so V*_T subset of V*_T'.
   Pruned vertices ("distractions") are never heads of regions and no tangle is ever learned from them.
 - (M3) Region heads move only upward: the head of a vertex (the top whose region takes it, tops processed in descending
   priority with R consumed) is a monotone function of T: a higher top's region can only grow (M1), so a vertex can be
@@ -61,7 +63,9 @@ levels) are X (grows within a search), V* (M2) and thefts (M3), all monotone. In
 opponent's tangle at a higher priority, renewable because the opponent learns between the player's searches; dtl has no
 opponent during a phase, and idtl's opponent tangles are never attracted for the player (parity check, attractTangle 113),
 so they act only through G.
-(c) Even's strategy str[u] is set by the FIFO attractor: str[u] := the first popped successor of u (attractVertices 80), or
+(c) [WITHDRAWN 16:15Z, see section 9: Oink's uintqueue is a STACK (uintqueue.hpp:72-74 pop returns queue[--pointer]),
+so every attractor in dtl.cpp is depth-first, not breadth-first; the layer argument below does not apply. Kept as
+written for the record.] Even's strategy str[u] is set by the FIFO attractor: str[u] := the first popped successor of u (attractVertices 80), or
 the strategy of the first tangle that attracts u (attractTangle 170-180; vertices are popped in insertion order, and in one
 pop the predecessors of the popped vertex come first, in Oink's edge-list order, then the tangles of tin[v] in creation
 order). So str[u] changes only when the relative order of two attraction events changes. Under (M1)-(M4) the BFS layer
@@ -240,7 +244,7 @@ a greatest fixpoint, monotone across searches (M2), never reset. The author's ow
 the ingredient DTL replaced, and in Lemma M's terms it is (M2) that makes it harmless: on these families dtl's V* is
 stable after one pruning and the 2N + 3 tangles are the Odd tangles' per-level copies learned once each.
 Perturbation searches under dtl (fitness = tangles, single mutations: edges, priorities, owners; flags --no-single
---no-wcwc): from counter_dftl N = 6 (32 vertices): PERT_DFTL tangles (from 15); from counter_odftl N = 6 (44 vertices):
+--no-wcwc): from counter_dftl N = 6 (32 vertices): 100 tangles (from 15); from counter_odftl N = 6 (44 vertices):
 PERT_ODFTL (from 15); from tc+ N = 3 (54 vertices): 92 (from 17). Two to three tangles per vertex, the chain shape again
 (the perturbed counters: 14-21 searches, at most 3 tangles at one top priority within a search, at most 16 at one top
 across searches; tangle sizes up to 41-49 of the vertices: nested chains). Fitness = unsolved vertices from
@@ -276,6 +280,52 @@ remove a self-loop, never leaving a vertex without successors) and toward swappi
   a winning self-loop is a one-vertex tangle learned once, a losing one is an escape.
 - Renumbering within a priority class as an attack dimension (unstable std::sort): the swap mutation above was part of
   every run of this section; no effect beyond the noise of the climb was seen. Not searched systematically.
+
+## 9. Corrections after the Lead's code check (16:10Z): LIFO attractor, consumed CurR
+Verified in 8fbf0a7: include/oink/uintqueue.hpp lines 72-74 (pop returns queue[--pointer]) and 82-84 (push stores at
+queue[pointer++]): Q is a stack, every attractor in dtl.cpp is depth-first; dtl.cpp line 690 `CurR = R` precedes the top
+loop 691-706, so best_vertices builds a disjoint top-down decomposition (as sptl does). Consequences for this report:
+- Survive unchanged: everything set-based. (M1) attraction sets do not depend on the pop order; (M2) with the restated
+  disjoint decomposition; (M3) heads monotone; (M4) tangle usability; consequence (d) (upward-only influence); sections
+  2, 5(b)-(d), 6, 7, 8 (data and the opponent-free argument); the "no reset" statement.
+- Withdrawn: section 1(c) and section 5(a) (BFS layers, FIFO pusher chains, "older tangle pushes first"). Under LIFO the
+  order is reversed in the one place that matters: at the pop of a vertex, its predecessors are pushed in edge-list order
+  and the usable tangles of tin[v] after them in creation order, and the stack pops the LAST push first, so the NEWEST
+  tangle fired at that pop is explored first and sets the strategies of its vertices before anything older. A new
+  tangle therefore reorders the depth-first discovery immediately, with no permanent event paying for it. This is the
+  renewable-looking mechanism the Lead asks about.
+- What bounds it instead (Lead reading, to be proved or refuted by the proof lane):
+  (W) one extraction per top per search (sptl 514-519, W reset in search 1016): within a search a top yields one
+  extractTangles call, so a strategy alternation at one head needs one search per step; tangles per search <= n.
+  (P, prefix lemma) Let t be the tangle learned at head k in search s from the region's depth-first run D_s, and let
+  search s+1 differ from s only by t (same vertices in the region, same other tangles). The run D_{s+1} coincides with
+  D_s up to the pop at which t fires (t did not exist in s and nothing else changed), t then pushes its vertices not yet
+  discovered with the strategies they had in D_s (that is what t recorded), and every vertex discovered before that pop
+  keeps its D_s strategy. So every member of SCC_s keeps its strategy and SCC_{s+1} contains SCC_s: the only change is
+  that vertices outside t, now discovered from t's vertices (LIFO), may switch into it. Self-firing at one head is a
+  monotone growth of the bottom SCC, at most n steps, not an alternation.
+  (E, events) The prefix lemma fails exactly when something else changed at head k between the two searches: a vertex
+  joined region k (at most n times per level), a vertex was stolen upward (at most n), a tangle was deleted (solved
+  vertex, at most once per tangle), or a tangle from a LOWER head fired in region k for the first time. The last kind is
+  the cascade the Lead names (T_k <= n + sum of lower T_j would be exponential); but a lower tangle fires at k only when
+  its escapes are in Z_k, and its first firing absorbs its vertices into region k (they were in the lower region when it
+  was learned, so they are new to k, (M3)): at most n first firings per head per level, and tangles that fire at the same
+  pop as a consequence of the same Z_k growth form one event. Between two events the SCC sequence at head k is the
+  monotone self-growth of (P). So tangles at head k per level = O(n) events x O(n) growth = O(n^2), polynomial overall.
+  The step a proof must nail down is now (P)+(E): that nothing but these events changes a depth-first prefix at a head.
+- Revised requirement for a killer: an Even vertex whose strategy alternates across searches needs, at each
+  alternation, an event of (E) at its head: a new vertex, a theft, a deletion, or the first firing of a lower tangle; a
+  construction has to make exponentially many such events happen at one head with a bounded vertex supply, which (E)
+  says it cannot unless the first-firing count is not bounded by absorption (the case to try: lower tangles whose
+  vertices were already absorbed by an earlier lower tangle fire later, when a further escape is covered: that firing
+  is still tied to a Z_k growth event, which is what (E) counts).
+- Searches aimed there (fitness = max tangles learned at one top priority within one search, and = max tangles in one
+  search; mutations with self-loops and renumbering; from the n = 24 optimum and the perturbed counters): the per-top-within-one-search fitness is fooled by equal priorities (its optimum from the n = 24 game is 23 vertices
+all at priority 10, 23 tops, one chain tangle each, one search: tops are only identifiable by priority in the trace), so
+only the injective-priority runs count: n = 12, 16, 20 at most 3 per top within a search (section 5(a)); with --loops
+and injective priorities, max tangles in one search at n = 16: PS16-PLACEHOLDER. No alternation at a single top
+within a search was ever seen, as (W) predicts; across searches the self-firing chains grow monotonically (section 2:
+the chain tangles are nested), as (P) predicts.
 
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.

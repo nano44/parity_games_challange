@@ -2,7 +2,7 @@
 """Free-form hill-climb over small parity games maximising Oink DTL's learned-tangle count (L-RED, DTL box).
 Fitness = tangles found by `oink --dtl --no-single --no-wcwc --no-loops` (raw solver, no preprocessing, self-loops kept;
 before 16:02Z the runs used --no-single --no-wcwc only). Mutations: add/remove an edge,
-change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch] [--injective] [--loops] [--from game.pg] [--out best.pg]"""
+change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch] [--injective] [--loops] [--from game.pg] [--out best.pg]"""
 import sys, os, random, subprocess, tempfile, time, re
 oink, n = sys.argv[1], int(sys.argv[2]); arg = lambda k, d: type(d)(sys.argv[sys.argv.index(k) + 1]) if k in sys.argv else d
 steps, seed, maxpr = arg("--steps", 20000), arg("--seed", 0), arg("--maxpr", 2 * int(sys.argv[2])); rng = random.Random(seed)
@@ -22,7 +22,7 @@ def dumps(g):
 def score(g):
     open(tmp, "w").write(dumps(g))
     try:
-        r = subprocess.run([oink, "--dtl"] + OINKFLAGS + (["-t", "-t"] if fitness.startswith("perhead") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
+        r = subprocess.run([oink, "--dtl"] + OINKFLAGS + (["-t", "-t"] if fitness.startswith("per") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
     except subprocess.TimeoutExpired:
         return 10 ** 6          # a timeout is interesting in itself
     if fitness in ("unsolved", "wrong"):
@@ -33,13 +33,13 @@ def score(g):
             out = r.stdout + r.stderr
             bad = 1000 if ("error" in out.lower() or "verified" not in out) else 0
         return n - solved + bad
-    if fitness in ("perhead", "perheadsearch"):
+    if fitness in ("perhead", "perheadsearch", "persearch"):
         import collections
         c = collections.Counter(); it = 0
         for line in re.sub(r"\x1b\[[0-9;]*m", "", r.stdout + r.stderr).splitlines():
             if "iteration" in line: it += 1
             m2 = re.search(r"new tangle (\d+) \(", line)
-            if m2: c[(m2.group(1), it if fitness == "perheadsearch" else 0)] += 1
+            if m2: c[("*" if fitness == "persearch" else m2.group(1), 0 if fitness == "perhead" else it)] += 1
         return max(c.values(), default=0)
     m = re.search(r"found (\d+) dominions and (\d+) tangles", r.stdout + r.stderr)
     return int(m.group(2)) if m else -1
