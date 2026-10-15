@@ -39,7 +39,7 @@ def gated_bland(N):
     return f"parity {5 * N + 1};\n" + "\n".join(rows) + "\n"
 
 
-def friedmann_Gn(n, pads=None, padprio=0):
+def friedmann_Gn(n, pads=None, padprio=0, split=False, strip=False):
     """Friedmann's lower-bound game G_n for the locally optimizing policy (switch-all), arXiv 1106.0778 section 6.4, Table 4
     (10n+4 nodes), with the initial strategy iota_{G_n} (p.16) printed as a '% start v:w ...' line (the PGSolver best-reward
     start is not iota).  Optional pads: pads(i) dangling Even vertices of priority padprio with the single edge -> d_i, for
@@ -67,6 +67,17 @@ def friedmann_Gn(n, pads=None, padprio=0):
         rows[F(i)] = (8 * n + 4 * i + 9, 1, [E(i)], f"f{i}")
         rows[H(i)] = (8 * n + 4 * i + 10, 1, [K(i)], f"h{i}")
     nxt = 10 * n + 4
+    if split:
+        # R3 redesign: entries from above (g_i -> f_i) go to a second Odd decider e'_i -> {m_i -> s, h_i} instead of e_i, so
+        # that traffic of lower selectors never passes d_i; e'_i makes e_i's choice whenever sigma(d_i) = s.
+        for i in range(1, n + 1):
+            ep, m = nxt, nxt + 1; nxt += 2
+            rows[ep] = (4 * i + 2, 1, [m, H(i)], f"e'{i}"); rows[m] = (4 * i + 1, 0, [S], f"m{i}"); start[m] = S
+            pr, pl, su, lab = rows[F(i)]; rows[F(i)] = (pr, pl, [ep], lab)
+    if strip:
+        # R3 redesign: gates choose only between closing and the root s (no lane, no r): d_i -> {e_i, s}
+        for i in range(1, n + 1):
+            pr, pl, su, lab = rows[D(i)]; rows[D(i)] = (pr, pl, [S, E(i)], lab); start[D(i)] = S
     if pads:
         if callable(pads):                       # pads(i) dangling vertices on d_i
             plan = {D(i): pads(i) for i in range(1, n + 1)}
@@ -119,6 +130,18 @@ def padded4_Gn(n, C=None):
     return friedmann_Gn(n, pads=pads)
 
 
+def padded6_Gn(n, C=None, split=True, strip=False, K=None, P=None, gpads="below"):
+    """R3 redesign test: friedmann_Gn(split, strip) with pads s: P, k_i: K (> every gate), d_i: C (n+1-i), g_i: C(n+1-i)-1."""
+    if C is None: C = 4 * n + 3
+    if K is None: K = C * n + C
+    if P is None: P = 10 * C * n
+    pads = {"s": P}
+    for i in range(1, n + 1):
+        pads[f"d{i}"] = C * (n + 1 - i); pads[f"k{i}"] = K
+        if gpads == "below": pads[f"g{i}"] = C * (n + 1 - i) - 1
+    return friedmann_Gn(n, pads=pads, split=split, strip=strip)
+
+
 def padded5_Gn(n, C=None, rpads=0, gmode="below"):
     """padded4 with NO pads on r (r's pads were entering reopened gates through g_j -> f_j -> e_j -> d_j and inflating their
     closings above the selectors k_{j-1}; Lemma D then forces the gate to close before the selector updates)."""
@@ -133,6 +156,6 @@ def padded5_Gn(n, C=None, rpads=0, gmode="below"):
 
 
 FAMILIES = {"gated_bland": gated_bland, "friedmann_Gn": friedmann_Gn, "padded_Gn": padded_Gn, "padded2_Gn": padded2_Gn,
-            "padded3_Gn": padded3_Gn, "padded4_Gn": padded4_Gn, "padded5_Gn": padded5_Gn}
+            "padded3_Gn": padded3_Gn, "padded4_Gn": padded4_Gn, "padded5_Gn": padded5_Gn, "padded6_Gn": padded6_Gn}
 if __name__ == "__main__":
     sys.stdout.write(FAMILIES[sys.argv[1]](int(sys.argv[2])))
