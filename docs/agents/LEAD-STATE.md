@@ -125,3 +125,4 @@
 - 14:03Z sweep: no overage (seven_day warning; D7). Lead $83.1 ctx 694k. L-ALG 02de72d (DTL attack table), L-SI 5564dfc (DF route dead recorded), L-LOWER b2eb965 (9-gate runs), L-RED 3bcb4d9 (DF pad LP running). No action.
 - 14:10Z L-RED KILLED S7 (fhz_padded, doubling). DE7 on R5 push. L-RED next: FHZ counter vs S5/S6. L-SI: reproduce, stop proof, obstruction map.
 - 14:12Z DE7 recorded (S7, l-red bf0922f merged).
+- 14:19Z L-RED R6 S5/S6 held; box 4 (5h) Zadeh fixed-tie-break lower bound. DE7 updated to n=10.
