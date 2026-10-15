@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 experiments/*/out/
 lean/.lake/
+experiments/si/vjfast
+experiments/si/vjfast_check

@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys
 import pg, si, verify, zielonka
 games = int(sys.argv[sys.argv.index("--games") + 1]) if "--games" in sys.argv else 400
 nmax = int(sys.argv[sys.argv.index("--nmax") + 1]) if "--nmax" in sys.argv else 14
-rng = random.Random(11); bad = 0; FAST = os.path.join(HERE, "vjfast")
+rng = random.Random(11); bad = 0; FAST = os.environ.get("FAST_BIN", os.path.join(HERE, "vjfast"))
 for gi in range(games):
     n = rng.randint(1, nmax); d = rng.randint(1, n + 1)
     g = pg.Game([rng.randrange(d) for _ in range(n)], [rng.randrange(2) for _ in range(n)],
