@@ -133,8 +133,10 @@ So B_2(5) − (2·5 − 2) ≥ 1, as at n = 4: the gap does not close. Whether i
 ## 5. Goal (b): a family, and what is and is not known about growth
 **The family K_n (parametrised; from the localisation of §3).** Vertices e, a, b, c_1, ..., c_{n−3}; e ∈ V_E with
 priority 1, all other vertices Odd; pr(a) = 2, pr(b) ∈ {1, 2} (two patterns), pr(c_i) = 1; every vertex has exactly two
-successors. |K_4| = 2 592 and K_4 needs 7 gates (§3); K_5 has 200 000 games (cegar_class5.py, exact CEGAR against the
-whole class, no sampling): results in §6. Lower bounds on K_n are lower bounds on B_2(n) (R6).
+successors. |K_4| = 2 592 and K_4 needs 7 gates (§3). |K_5| = 200 000 and **K_5 needs ≥ 9 gates**: cegar_class5.py (exact
+CEGAR against the whole class, no sampling), UNSAT at k = 8 on 1 000 games of K_5 (5 000 nodes, 3 950 000 clauses, 1 625 s;
+result_k5_deg2_k8.log, k5_deg2_k8.json; one solver). So the family's cost exceeds 2n − 2 at n = 4 and n = 5 (by ≥ 1
+each); K_5 at k = 9 is in §6. Lower bounds on K_n are lower bounds on B_2(n) (R6).
 **What is known.** B_2(n) − (2n − 2) ≥ 1 for n = 4 (exact: = 1) and n = 5 (C2). The depth lower bound 2n − 2 (Lemma
 2.1') is attained by the modal depth on the full class for n ≤ 4; on the hard classes of §3 the depth needed is only 4, so
 the extra gate is a WIDTH cost: one Cpre gate carries one bit about the set of successor profiles (Lemma 2.1), and the
@@ -165,6 +167,8 @@ the dead end with the instances, and recommend parking the lane") and recommenda
 - C1 (B_2(4) = 7; 68-game certificate, 28-game class certificate): data, four solvers; not refereed.
 - C2 (B_2(5) ≥ 9; 414-game certificate): data, two solvers (CaDiCaL, Glucose); not refereed.
 - k = 9 at n = 5 (would give B_2(5) ≥ 10): RUNNING at the time of writing (result_b2_n5_k9.log; seeded with the k = 8 core).
-- K_5 at k = 8 and k = 9 (cegar_class5.py): RUNNING at the time of writing (result_k5_deg2_k8.log, result_k5_deg2_k9.log).
+- K_5 at k = 8: UNSAT (K_5 needs ≥ 9; §5). K_5 at k = 9: RUNNING at the time of writing (result_k5_deg2_k9.log).
+- |P_2| = 1 at n = 5, k = 8: a candidate passes 2·10^6 random games (b2_n5_k8_p2sz1_candidate.json); full restricted sweep
+  (sweep_p2.py, 160 patterns × 28.6·10^6 games) RUNNING at the time of writing (result_sweep_p2sz1_k8.log).
 - Lemma 2.1, 2.2: proved above (short); not refereed.
 - Goal (a) human-readable proof: NOT achieved; obstruction in §3b. Goal (b) growth argument: NOT achieved; §5.

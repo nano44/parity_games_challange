@@ -6,7 +6,6 @@ b2_*.subset.json
 depth2_*.log
 k5_*.subset.json
 # live logs of runs in progress (un-ignored and committed when they finish)
-result_k5_deg2_k8.log
 result_k5_deg2_k9.log
 result_b2_n5_k9.log
 result_sweep_p2sz1_k8.log
