@@ -107,5 +107,8 @@ if adv:
         ax.plot([p[0] for p in pts], [max(p[1], 0.5) for p in pts], marker="o", label=r)
     ax.set_xscale("log"); ax.set_yscale("log"); ax.set_xlabel("n"); ax.set_ylabel("max iterations found"); ax.set_title("adversarial search")
     ax.legend(fontsize=7); fig.tight_layout(); fig.savefig(os.path.join(PLOTS, "adversarial.png"), dpi=110); plt.close(fig)
+extra = os.path.join(DOC, "RESULTS-extra.md")
+if os.path.exists(extra):
+    out.append(open(extra).read())
 open(os.path.join(DOC, "RESULTS.md"), "w").write("\n".join(out) + "\n")
 print("wrote", os.path.join(DOC, "RESULTS.md"), "and", len(fams), "plots")
