@@ -101,3 +101,4 @@
 - 13:19Z L-RED R3: S7 HELD (7edf1c8). One-token R2 fix still missing -> asked first; then L-RED continues on S7 reset redesign (not S5).
 - 13:28Z L-RED box2 end: S5/S6 HELD (R4 0203590); one-token R2 fix still missing (re-asked, messages crossing). S7: L-SI step 2 + proof attempt; L-LIT T14 barrier; L-RED box 3 kill. Cap 5.
 - 13:31Z L-RED R2 fix 49ae306 (case 3: 4^{j*}); both signatures cover it; merged. CHECKER queued for next slot.
+- 13:35Z L-LIT T14 S7 NOT COVERED (8dd2e55, merged); attack hint to L-RED. CHECKER C2 on RF result started.
