@@ -98,3 +98,4 @@
 - 12:54Z REFEREE R-TL2 signed (6d5d9ad, merged); confirming coverage of l-red 8bb9d22. L-LIT T13 novelty started. L-RED nits queued.
 - 12:58Z L-LIT T13 NEW-as-statement (c962d80, merged); L21 classification; CHECKER after L-RED fix.
 - 13:03Z sweep: no overage (seven_day allowed_warning, D7 continue). Lead $74.5, ctx 596k (state in NOW/LEAD-STATE; compaction expected). Lanes: L-ALG 396e354 (DTL sweep), L-SI 3ff7cf7, L-LOWER ae85eca (K_5 >= 9 gates, 3 jobs), L-RED 8bb9d22 (S7 + one-token fix pending). No action.
+- 13:19Z L-RED R3: S7 HELD (7edf1c8). One-token R2 fix still missing -> asked first; then L-RED continues on S7 reset redesign (not S5).
