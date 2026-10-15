@@ -137,3 +137,4 @@
 - 15:32Z L-ALG handover 1017502 merged; L-ALG parked; successor spawn held until L-RED reports on counter_dftl/odftl.
 - 15:34Z T16 merged (3874a1e): step 3 SIGNED w/ 4 caveats; L-LIT parked; optional owner Q10 (2024 chapter copy) listed in NOW.
 - 15:35Z T16 addenda 4f61b4c merged: VULNERABLE slide = RTL/PTL (tc+); counter_dtl (2021) targets current DTL, never committed; dftl-branch generators target DFTL. Told L-RED counter_dftl may descend from counter_dtl.
+- 15:42Z L-RED R8 §6 d6496f3: counter_dftl/odftl harmless to dtl (2N+3). Spawned L-ALG successor session_012cQPWcEm23KMdMQSvWrULr (Fable) for five questions then DTL proof. L-COMP successor deferred to ~20:36Z (cap headroom, spend warning).
