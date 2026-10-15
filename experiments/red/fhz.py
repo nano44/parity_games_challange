@@ -13,10 +13,12 @@ Fig. 1): RF(F, B): pick a uniformly random e in F \ B, B' = RF(F \ {e}, B); if e
 
 Parity encoding P (one player, sink 0 of priority 1, Odd, self-loop; every other vertex Even):
   structural vertices a, b, u, w: priority 0 (below the sink: never in a path set; they only count in the length);
-  every edge copy x -> y of cost c becomes x -> m (priority 0, one per copy) -> [c_x (odd priority, one per distinct cost
-  of x, if c > 0) ->] y.  Priorities: level i band base_i = 2 + (i-1)(4rs+4); cost rs*2^{2i} -> base_i + 1;
-  cost rs*2^{2i+1} + d (d in [0, 2rs)) -> base_i + 3 + 2d.  So path-set order = lexicographic by level on the class
-  {0, 2^{2i}, 2^{2i+1}+delta}, then by delta within a level, which is exactly how path costs of G compare (docs/red/R2).
+  every edge copy x -> y becomes x -> m (priority 0, one relay per copy) -> [class vertex] -> y, with the class vertices
+  SHARED by every entry into the level (see build()): class A (the 0-cost chain exit b_{i,rs} -> w_{i+1}) -> even g_i of
+  priority base_i + 4rs; class B (u0_i, w0_i, cost 2^{2i}) -> no class vertex; class C (escape with offset d in [0, 2rs))
+  -> odd o_{i,d} of priority base_i + 1 + 2d; base_i = 2 + (i-1)(4rs+2).  Level-i sets A {g_i} > B {} > C {o_{i,d}} for Even,
+  so the path-set order is lexicographic by level on the class {0, 2^{2i}, 2^{2i+1}+delta}, then by delta within a level,
+  which is exactly how the path costs of G compare (docs/red/R2-RAR.md, Transfer Lemma).
 Usage: fhz.py lockstep n r s t seeds   |   fhz.py table n_list r s t seeds   |   fhz.py export n r s t out.pg (prints start)"""
 import sys, random
 sys.setrecursionlimit(1 << 20)

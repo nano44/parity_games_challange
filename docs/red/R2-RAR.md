@@ -17,6 +17,8 @@ This closes the gap docs/lit/RANKING.md section 4 names ("construct sink parity 
 needs 2^(N^Omega(1)) expected iterations"): the answer is FHZ's own construction, re-encoded.
 
 ## The transfer
+Start strategy: si.py `initial("best")` on P takes, at every vertex of G, the highest-index relay (all relays have priority 0, reward
+0); fhz.py adds the costly copies last, so this is a tree of FHZ zero-edges (bit-0 edges a0, b0, u0, w0), a valid B0. (R-TL2 nit a.)
 ### G_{n,r,s,t} (1410.7530 section 5, Table 1 p.14; eps = 1/(rs))
 Levels i = 1..n with vertices u_i, w_i, chains a_{i,j,k} (j in [r], k in [s]) and b_{i,j} (j in [rs]); target t = u_{n+1} = w_{n+1}.
 Edges: a_{i,j,k} -> a_{i,j,k+1} (cost 0; a_{i,j,s} -> b_{i,1}) and -> u_{i+1} (2^{2i+1} + (k-1) eps, t copies); b_{i,j} -> b_{i,j+1}
@@ -44,7 +46,8 @@ Size: |V(P)| = |V(G)| + |E(G)| + n(2rs + 1), |E(P)| = 2|E(G)| + n(2rs + 1): Thet
 
 ### Transfer Lemma (L-RED, unrefereed)
 For every tree B subseteq E(G) and every e in E(G) \ B: e is a strictly improving switch for B in G iff the relay edge of e is
-an improving edge for sigma_B in P (VJ valuation, Friedmann 1106.0778 section 3). (The test depends on (B, e) only, so no
+an improving edge for sigma_B in P (VJ valuation, Friedmann 1106.0778 section 3; si.py's test is strict: Engine.improving keeps
+(v, w) iff key(val[w]) > key(val[sigma(v)]), and vjfast's cmp(...) > 0 likewise, matching FHZ's strict "shorter"). (The test depends on (B, e) only, so no
 restriction to FHZ's functional F (Def. 5.2) is needed; Random-Facet's recursion also visits non-functional F. REFEREE-2 F2(b).) Consequently RF on G from B0 and RAR on P from
 sigma_{B0} are the same random process (same random choices, same tests, same pivots), and FHZ Theorem 6.3 holds for P.
 
@@ -77,7 +80,7 @@ because entering at the same vertex would mean an earlier merge, and a w_j path 
 Now walk down from j to j*: at each level between, the classes agree, and the path that entered level j at w_j entered level j'
 at w_{j'} as well (class A leads to w, class B from w leads to w), while the other stayed on the u side (class B from u, or C);
 at j* the w-side path has class A or B and the u-side path has class B or C, with a strict difference, so the w-side path is
-cheaper at j* by at least 4^{j*} - 2 > (the sum below j*) + (the offset difference at j, < 2). So in G the w-side path wins. In
+cheaper at j* by at least 4^{j*} > (the sum below j*, < 4^{j*} - 2 by (1)) + (the offset difference at j, < 2). (REFEREE R-TL2 section 9.) So in G the w-side path wins. In
 P the maximum of the symmetric difference is the pair o_{j,.} at level j (band j is the highest differing band), and the u-side
 path holds the larger offset, i.e. the larger odd priority: the w-side path wins. If no such j exists, the symmetric difference
 tops at level j* where A carries the even g_{j*} and C the odd o_{j*,.} and B nothing, ordered A > B > C in P exactly as the costs
