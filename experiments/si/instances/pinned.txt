@@ -2,3 +2,6 @@ lsf zadehexp_N5.pg 441
 switch-all switchallexp_N3.pg 70
 S4 switchallexp_N3.pg 70
 msf zadehexp_N5.pg 51
+lsf dlmm_ML_L6.pg 120 start
+steepest dlmm_ML_L6.pg 120 start
+msf dlmm_ML_L6.pg 16 start

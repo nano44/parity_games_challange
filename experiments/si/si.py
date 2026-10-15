@@ -228,6 +228,11 @@ class Engine:
             return tuple(-1 if self.owner[v] == ODD else min(self.succ[v]) for v in range(n))
         if kind == "random":
             return tuple(-1 if self.owner[v] == ODD else rng.choice(self.succ[v]) for v in range(n))
+        if kind.startswith("spec:"):      # "spec:v:w v:w ..." explicit start for Even's vertices (others: first successor)
+            st = [-1 if self.owner[v] == ODD else self.succ[v][0] for v in range(n)]
+            for tok in kind[5:].split():
+                v, w = map(int, tok.split(":")); st[v] = w
+            return tuple(st)
         raise ValueError(kind)
 
     def regions(self, strat):

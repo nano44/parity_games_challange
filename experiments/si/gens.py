@@ -103,6 +103,29 @@ def dlmm_bland(n):
     return f"parity {2 * n + 1};\n" + "\n".join(rows) + "\n"
 
 
-GENS = {"randomfacetsubexp": randomfacetsubexp, "zadehexp": zadehexp, "dlmm_bland": dlmm_bland}
+def dlmm_ML(L):
+    """Sink-parity-game port of DLMM 2512.16684 Lemma 5.4's MDP M_L (Fig. 5.1), as proposed by L-LIT T12 section 4:
+    levels l = 1..L+1 with Even vertices alpha_l, beta_l; for l <= L both have the actions -> alpha_{l+1} (no reward) and
+    -> beta_{l+1} with reward L^l, realised as a fresh reward vertex R_l of even priority 2l+2 (increasing in l, so the
+    lexicographic set order equals the arithmetic order of the rewards L^l); alpha_{L+1} -> R_{L+1} (priority 2L+4) -> sink;
+    beta_{L+1} -> sink. alpha, beta have priority 0 (below the sink's 1, so they never enter a path set); the sink is Odd's
+    with a self-loop and priority 1. Ids: sink 0; alpha_l = 3l-2, beta_l = 3l-1, R_l = 3l (l = 1..L+1).
+    The initial strategy sigma_0 (alpha_l -> alpha_{l+1}, beta_l -> beta_{l+1}) is printed after the game as a line
+    '% start v:w ...' (strip it before parsing; instances/*.start keep it separately)."""
+    A = lambda l: 3 * l - 2; B = lambda l: 3 * l - 1; R = lambda l: 3 * l
+    rows = ["0 1 1 0 \"sink\";"]; start = []
+    for l in range(1, L + 2):
+        if l <= L:
+            rows.append(f"{A(l)} 0 0 {A(l + 1)},{R(l)} \"alpha{l}\";"); start.append((A(l), A(l + 1)))
+            rows.append(f"{B(l)} 0 0 {A(l + 1)},{R(l)} \"beta{l}\";"); start.append((B(l), R(l)))
+            rows.append(f"{R(l)} {2 * l + 2} 1 {B(l + 1)} \"R{l}\";")
+        else:
+            rows.append(f"{A(l)} 0 0 {R(l)} \"alpha{l}\";")
+            rows.append(f"{B(l)} 0 0 0 \"beta{l}\";")
+            rows.append(f"{R(l)} {2 * l + 2} 1 0 \"R{l}\";")
+    return f"parity {3 * L + 3};\n" + "\n".join(rows) + "\n% start " + " ".join(f"{v}:{w}" for v, w in start) + "\n"
+
+
+GENS = {"randomfacetsubexp": randomfacetsubexp, "zadehexp": zadehexp, "dlmm_bland": dlmm_bland, "dlmm_ML": dlmm_ML}
 if __name__ == "__main__":
     sys.stdout.write(GENS[sys.argv[1]](int(sys.argv[2])))

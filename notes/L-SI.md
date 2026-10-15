@@ -90,3 +90,17 @@ changes some cycle node (at most n^2 such events in a run: each vertex's cycle n
 reroutes, cycle nodes unchanged, high bits may change arbitrarily). So: MSF switches ≤ (n^2 + 1)·(n^2 + X + 1) with X = the
 number of escaped cycle-creating switches. MSF is polynomial iff X is (modulo the sketch). The adversarial search now has an
 objective "escapes" (adversarial.py --objective escapes) to maximise X directly.
+
+## T12 section 4 follow-up (11:25Z): D_n with Odd gates, why not built as a port
+Sources opened: Disser-Mosis arXiv 2309.14034 (ISAAC 2023): section 3 B_n (Table 1: travel/enter/skip/board/stay/leave,
+rewards 2^l for enter, 0.75 for stay, -2^l+1.25 for board), Definition 6 (canonical policies), section 4 D_n (Fig. 4: every
+edge (v,w) replaced by v -> x_{v,w} -> y_{v,w} (randomisation, p_v to z_{v,w} -> w, 1-p_v back to v)), Thm 28
+(p_v = 2^{-N_V(v)(n+5)}; Dantzig prefers small vertex numbers). DLMM 2512.16684 Lemma 5.4 and M_L (Fig. 5.1).
+(a) B_n's reward bookkeeping is arithmetic (three 0.75-stays beat one enter(1) = 2); the VJ set order is lexicographic, so
+B_n does not port faithfully for n >= 3; M_L does (rewards L^l, see gens.py dlmm_ML) and its port behaves as Lemma 5.4
+predicts for the least-preferred rule (LSF 2^(L+1)-(L+2)); the same run kills steepest (S3).
+(b) The D_n trick decouples a switch's reduced-cost magnitude (scaled by p_v) from its effect. In the VJ order the sign
+and the level of an improving edge are both read at the first-difference position, so I found no gate that gives
+"level decreasing in l while the sign follows B_n": an even designer vertex on one route makes the edge always improving,
+an odd one never, and a loop back to v makes it cycle-creating with the dominator's parity deciding. Not built; the
+gadget-chain search (famsearch.py --seed-template dlmm) and the escapes objective stand in for it.
