@@ -85,3 +85,11 @@ is the owner's action; it stays listed until the owner says it is done or declin
 Lead reading L17 (2026-10-15 08:05Z, Q5 closed): L-LIT T11 (l-lit 933dc12) finds DTR15-4 very likely the chapter text (identical
 29-entry reference list against Crossref; the only open-access copy of the chapter DOI is this report). Under L11, Q5 closes;
 RESULTS R2 caveat updated. psolC (PA** strictly inside Solved(psolC), conditional on DTR Thm 4) is recorded as a candidate, not started.
+
+## D5 (2026-10-15 ~09:47Z, via OWNER-DESK owner-desk 0a17fb5): aim
+Verbatim:
+> I want you to believe in yourself and just loo kat the decade old mathematical open questions that has been cracked this year with AI. There are hundreads of examples so dont tell me it is highly unlikely to solve the parity game problem, because it is not
+
+Lead reading L18: M4 (and M4-R) is the fleet's primary aim, and fleet documents and reports drop the "M4 unlikely" framing. Effort shifts
+toward algorithm design: a new lane L-ALG runs a falsification-driven design loop. Lower-bound work (L-LOWER) finishes its current box.
+Unchanged (D1): every algorithm claim, the fleet's own included, is treated as wrong until it passes the TARGET.md section 5 gauntlet.
