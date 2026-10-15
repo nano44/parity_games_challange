@@ -17,7 +17,8 @@ gated_bland N   "Gate relabelling" of the Disser-Loho-Maat-Mosis Bland counter G
                 Lemma 4.4 (d_i -> e_i^a, the higher even priority).
                 Ids: sink 0; a_i = 5i-4, b_i = 5i-3, d_i = 5i-2, e_i^a = 5i-1, e_i^b = 5i (i = 1..N); b_{N+1} = 5N+1.
 Usage: gens_red.py FAMILY N"""
-import sys
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 
 def gated_bland(N):
@@ -155,7 +156,25 @@ def padded5_Gn(n, C=None, rpads=0, gmode="below"):
     return friedmann_Gn(n, pads=pads)
 
 
-FAMILIES = {"gated_bland": gated_bland, "friedmann_Gn": friedmann_Gn, "padded_Gn": padded_Gn, "padded2_Gn": padded2_Gn,
+def fhz_padded(n, W=(3, 4, 3, 1), k=1):
+    """S7 killer (R5): the sink-parity encoding P_{n,1,1,1} of FHZ's one-player Random-Facet counter (fhz.py build, r = s =
+    t = 1) with pads(x_i) = W[x] * (n + 1 - i)^k dangling priority-0 Even vertices on the level-i vertices x in (u, w, a, b).
+    Size Theta(n^2) for k = 1; S7 (most-improved) takes 16, 44, 104, 228, 480, 988 iterations for n = 2..7 (i(n) = 2 i(n-1)
+    + 4n).  Start: the best-reward start = FHZ's zero-edge tree B0 (every choice leads to priority-0 relays; the costly
+    relay is the last).  Ids as in fhz.export_pg, pads appended."""
+    import fhz, tempfile, os as _os
+    G, P, B0, B0P, names, ename, pid = fhz.build(n, 1, 1, 1)
+    with tempfile.NamedTemporaryFile("w", suffix=".pg", delete=False) as f:
+        start = fhz.export_pg(P, B0P, names, f.name); base = open(f.name).read().splitlines(); _os.unlink(f.name)
+    lines = list(base[1:]); nx = P.N; Wd = dict(zip("uwab", W))
+    for x in range(G.N - 1):
+        lab = names[x + 1]; typ = lab[0]; lvl = int(lab[1:].split(",")[0])
+        for _ in range(int(round(Wd[typ] * (n + 1 - lvl) ** k))):
+            lines.append(f"{nx} 0 0 {pid[('v', x)]};"); nx += 1
+    return f"parity {nx - 1};\n" + "\n".join(lines) + "\n% start " + start[5:] + "\n"
+
+
+FAMILIES = {"gated_bland": gated_bland, "fhz_padded": fhz_padded, "friedmann_Gn": friedmann_Gn, "padded_Gn": padded_Gn, "padded2_Gn": padded2_Gn,
             "padded3_Gn": padded3_Gn, "padded4_Gn": padded4_Gn, "padded5_Gn": padded5_Gn, "padded6_Gn": padded6_Gn}
 if __name__ == "__main__":
     sys.stdout.write(FAMILIES[sys.argv[1]](int(sys.argv[2])))

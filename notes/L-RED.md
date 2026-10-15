@@ -2,20 +2,14 @@
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead.
 
 ## Resume point
-2026-10-15 ~15:00Z (my clock; the Lead's stamps run ~30 min ahead). Box 2 (un-parked 12:37Z Lead time, 6 h): R2 F1/F2
-applied (8bb9d22); S7 most-improved attacked: docs/red/R3-S7.md = HELD with Lemmas T and D (count = traffic; downstream
-dominance), the Friedmann G_n port + five pad schemes with traces, the exact obstruction (selector chain upstream-ordered),
-fidelity check vjfast = vj.py, watch item gated_switchbestexp N=6 = 974 (N=7 was still running in the scratchpad, gsb.log).
-S7 box 3 (Lead 13:25Z): redesigns dead (R3 3b); impossibility statement R3 3c: S7 is downstream-first (Lemma D); every ported
-exponential single-switch run (Bland G_N, LSF M_L, Zadeh, Cunningham both orders, MSF gated) is not (antichain_check.py);
-Friedmann-spine gate counters cannot be. Open: does a downstream-first exponential single-switch run exist at all?
-If re-woken on S7: a selector whose improvability depends on the lower bits' state (R3 3b) is the only opening I see; test with
-gens_red.friedmann_Gn(pads=dict, split=, strip=) and the scratchpad tracer (vjtrace.cpp = vjfast.cpp + TRACE env, tracefmt.py).
-S5/S6: last hour spent on numbering searches, docs/red/R4-S5S6.md (HELD; AF ordering (1) splits e_i and d_i across
-phases so no renumbering realises it; permutation search: Cunningham 24, 51, 74 at N = 3, 4, 5 vs designer order 38, 121, 324;
-class-structured schemes linear). Tools: search_numbering.py, search_classnum.py. Next if re-woken: a block-order counter.
+2026-10-15 ~17:10Z (my clock). Box on Question DF (Lead 14:00Z): S7 KILLED (docs/red/R5-S7-kill.md): fhz_padded(n) =
+R2's parity encoding of FHZ's one-player counter G_{n,1,1,1} with linear pads W (n+1-i), W = (3,4,3,1): S7 iterations
+16, 44, 104, 228, 480, 988, 2008, 4052 (n = 2..9), |V| = 64..632, i(n) = 2 i(n-1) + 4n; vj.py agrees (n = 2..4), regions =
+Zielonka, strategies verified. Question DF: longest DF run on G_{n,1,1,1} exact 5, 20, 53, 124, 269 (n = 1..5). Reported
+16:50Z. Pending: n = 10 vjfast run in the scratchpad (fp_big.log). Next if asked: a proof of the recurrence (FHZ-style
+phase analysis for the S7 order), or the "DF + pads" reduction as a general theorem.
 ## Queue
-1. If re-woken: S7 reset-mechanism redesign (resume point) or S5/S6 (paragraph below). 2. Optional: FHZ-scaled growth run for R2 (b).
+1. If asked: proof of i(n) = 2 i(n-1) + 4n for fhz_padded under S7. 2. S5/S6 (paragraph below). 3. Optional: FHZ-scaled growth run for R2 (b).
 
 ## Things only I know
 - L-SI's branch is read through a detached worktree in the scratchpad (git worktree add <scratch>/lsi origin/claude/l-si);
@@ -27,6 +21,14 @@ class-structured schemes linear). Tools: search_numbering.py, search_classnum.py
 - Runtime of vj.py msf on gated_bland: N=10 1.3 s, N=12 6.9 s, N=13 17 s (one valuation per switch, no incremental update).
 - Oink is built (scripts/setup_oink.sh, ~3 min); MSF on tc/tc+/counter_* via si.py was linear or near-linear (sweep in
   the scratchpad, not pinned: tc N=8 275, tc+ N=10 595; all PGSolver families linear in N).
+
+## Things only I know (R5)
+- df_fhz.py / df_lp.py / df_search.py / df_fast.py: exact longest DF runs by memoised DFS over all strategies (acyclic
+  improvement graph). df_lp.py needs scipy (pip install scipy worked through the proxy); its printed names are G labels.
+- pad_scheme.py: g > 0 geometric g^(n-i), g <= 0 polynomial (n+1-i)^|g|; the kill scheme is g = -1, W = (3,4,3,1).
+- The DP's longest DF runs are NOT S7 runs (LP infeasible at n = 3); the S7 run is a different DF run. The LP at n = 2 is
+  feasible and vjfast reproduces the 20-switch run with the LP's pads (scaled by 1000, +1).
+- Scratchpad logs: fp_big.log (n = 8..10), scheme*.log (schemes), padfhz*.log (pad hill-climbs), df_*.log (random searches).
 
 ## Things only I know (R3, S7)
 - experiments/red/gens_red.py friedmann_Gn(n, pads=...) is my own port of Table 4 (ids documented in the docstring); pads =
@@ -49,6 +51,8 @@ class-structured schemes linear). Tools: search_numbering.py, search_classnum.py
   fhz_n5_r2s2t2 (256 vertices) takes minutes per seed.
 
 ## Sources opened (arXiv id or DOI, theorem/section)
+- FHZ 1410.7530 again (R5): Fig. 3 p.9 (the i-th level with r = s = t = 1), section 4 p.8 (randomized counter, bit
+  interpretation (b_i, w_{i+1}) in B), Table 1 p.14 (edges and costs) as encoded in fhz.py build.
 - Avis-Friedmann, "An exponential lower bound for Cunningham's rule", arXiv 1305.3944 (PDF opened ~16:20Z): section 3 p.10-11
   (succ_prec, Algorithm 2 RoundRobin, "highly depends on the ordering used", Theorem 3), p.13-14 (phases 1-5 of the counter and
   the ordering (1): {b, d^0, e^1} < {c} < {e^0} < {d^1} < {a}, phase-1 order e_1^1 < d_2^0 < e_2^1 < b_2^1 < b_2^0 < ...),
