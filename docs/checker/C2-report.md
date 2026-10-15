@@ -160,3 +160,68 @@ must name it):
   - G-TL-3: the start and tie conventions of S1 are taken from si.py by reading.
   - Zwick's RAR is defined for AUSOs; on games with ties, the strict convention is part of the algorithm's definition.
 - Status: M3-type (L21). Novelty NEW as a published statement, low technical novelty (T13); Hansen 2012 thesis unopened."
+
+## C2 addendum: re-check of text and signatures (CHECKER, 2026-10-15 ~13:40Z), trunk 015f3a6
+Scope (Lead 13:47Z): (1) the signed statements cover the entry text; (2) gaps carried; (3) D3-1..4. Re-runs not repeated
+(l-red 49ae306 unchanged on trunk: R2-RAR.md blob dd4f1e9 MATCH).
+
+### Blobs
+| file | commit | trunk 015f3a6 |
+| --- | --- | --- |
+| docs/referee-2/R2-TL.md | referee-2 94dde7b (on trunk) | MATCH 27ef8f8 |
+| docs/referee/R-TL2.md | referee 5ed56c5 (§8-9; 42f11c6 included) | MATCH 1d4cca6 (S-0 resolved) |
+| docs/red/R2-RAR.md | l-red 49ae306 | MATCH dd4f1e9 |
+| docs/checker/C2-report.md | checker ce07713 | MATCH 3dcaf82 |
+`git diff 995cfd3 94dde7b -- docs/referee-2/R2-TL.md` only appends §6; nothing earlier in R2-TL.md changed.
+
+### (1) Signature coverage, phrase by phrase (entry = docs/agents/R3-candidate.md at 015f3a6)
+- S-1 resolved. REFEREE-2 §6 "SIGNATURE (second referee; claude/l-red 49ae306)", verdict OK.
+- Both signatures now name the same lemma.
+  - REFEREE signs it "as stated at 8bb9d22"; the 8bb9d22..49ae306 diff is exactly the condition plus two nits (C2 §2).
+  - REFEREE-2 signs it at 49ae306.
+
+| entry phrase | covered by |
+| --- | --- |
+| "= Zwick ... Random-Action-Removal with VJ valuations and the STRICT improvement test, ties not switched" | R2-TL §6 "Random-Action-Removal with the strict VJ test (si.py `rar`)"; R-TL2 §9 "Random-Action-Removal (S1)" |
+| "started from σ_{B_0}, B_0 any tree of FHZ zero-edges" | R2-TL §6 "from any zero-edge tree B_0 ... from σ_{B_0}"; R-TL2 §9 "from any zero-edge start" |
+| "e^{Ω(√n)} expected improving switches on the one-sink parity games P_{n,r,s,t}, ... r = Θ(log n), s = Θ(√n log n), t = Θ(log n)" | R2-TL §6, word for word in substance; R-TL2 §9 "hence FHZ Thm 6.3's e^{Ω(√n)} expected switches" |
+| "N = Θ(n^{3/2} log^3 n) vertices and edges" | R2-TL §6 signs "Θ(n^{3/2} log^3 n) vertices". Edges: R2-RAR "Size" (\|E(P)\| = 2\|E(G)\| + n(2rs+1) = Θ(M)), checked by REFEREE-2 §2 ("Sizes and priorities ... Correct"). Not in the signature sentence (note N-1). |
+| "so the bound is e^{Ω(N^{1/3}/log N)} in the game size" | Not in either signature sentence. It is FHZ Thm 6.3's own verbatim equality "e^{Ω(√n)} = e^{Ω(M^{1/3}/log M)}" (opened, C2 §3) with N = Θ(M). REFEREE R-TL2 §4 states it ("e^{Ω(\|V\|^{1/3}/log \|V\|)}"). A restatement of the signed bound, not a new claim (note N-2). |
+| "Priorities O(nrs), compressible to {0..\|V\|}" | R2-TL §6 "priorities compressible to TARGET's range"; O(nrs) is R2-RAR text, checked in R2-TL §2 |
+| "for every tree B and edge e not in B, e is strictly improving in G iff its image is improving in P, ties included; hence the run distributions coincide" | R2-TL §6 (all trees B ⊆ E(G), ties in G are ties in P, "same random process, switch for switch"); R-TL2 §9 ("run distribution") |
+| "Also kills L-SI candidate S1 (DE6)" | R2-TL §6 "S1 is not polynomial expected time (not M4-R)" |
+
+No word in the entry's claim goes beyond what is signed, except N-1 and N-2. Both follow from signed or cited text by the
+size identity.
+
+### (2) Gaps
+| referee-named gap | entry |
+| --- | --- |
+| REFEREE-2 G-TL-1 .. G-TL-7 (§6) | all seven carried; G-TL-2's REFEREE count "~308M tests" matches R-TL2 §8 ("307,785,000-odd") |
+| REFEREE "Gaps": Thm 6.3 black box; prose proof; si.py tie/start by reading; Zwick RAR for AUSOs (ties) | = G-TL-1, G-TL-2, G-TL-3, G-TL-4 |
+| L-LIT T13: Hansen 2012 thesis unopened | carried (Status) |
+PASS.
+
+### (3) D3-1 .. D3-4
+- D3-1 (r, s, t scaling): RESOLVED.
+- D3-2 (σ_{B_0}, zero-edge start): RESOLVED.
+- D3-3 (FHZ's n vs TARGET's n): RESOLVED ("n is FHZ's bit parameter"; size form in N).
+- D3-4 (strict test, ties not switched): RESOLVED (algorithm line and G-TL-4).
+
+### Notes (non-blocking)
+- N-1. "vertices and edges": the signature sentence says vertices; edges follow from R2-RAR's size line (refereed). Fine as is.
+- N-2. The N-form of the bound is a restatement via FHZ's own equality and N = Θ(M). If the Lead wants zero distance from
+  the signed sentences, change "so the bound is" to "equivalently (FHZ Thm 6.3's own form, N = Θ(M))".
+- N-3. "iff its image is improving in P": both signatures say "strictly improving edge"; suggest "strictly improving" for
+  symmetry. Same meaning, since the VJ improving test is strict.
+- N-4. Still open from C2, outside the entry:
+  - R2-RAR.md at 49ae306 calls its lemma "unrefereed" in three places (L-RED's file).
+  - T13's "signed by REFEREE-2 (995cfd3)" is uncorrected (L-LIT file; the Lead's L21 correction records it).
+  - fhz.py relation does not run under `python3 -I`.
+- N-5. G-TL-7 notes vj.py was "not re-reviewed" by REFEREE-2. I checked in C2 §1 that the 8bb9d22..49ae306 change to vj.py
+  adds only the unused rule most-improved.
+
+**Re-check verdict: PASS.**
+- Valid for docs/agents/R3-candidate.md as it stands at trunk 015f3a6, with the signed commits l-red 49ae306, referee
+  42f11c6/5ed56c5 and referee-2 94dde7b.
+- Landing it in RESULTS.md with any change of wording beyond N-2/N-3 needs a new CHECKER pass.
