@@ -14,3 +14,8 @@ Relayed to the Lead with URL and hash (the Lead cannot open this session's uploa
 Lead verified the public copy's sha256; L-LIT task T11 (2 h box) confirms the desk reading and whether DTR15-4 is the LNCS 9560
 text. Q5 marked "answered, verdict pending L-LIT T11". Lead to the owner: thank you; the file is with the literature lane; the Lead
 will report the verdict.
+
+## 2026-10-15 07:52Z owner (answers to Q6, Q7, Q4, Q2, Q3)
+> Q6. I am the only human reader, so if there is something concerining me, show it in this session. Q7. You are intelligent enough to reason about this Q4. Again, you are smart about to reason for these type of question, you are aware of the whole process, you must reason about these. Q2. What is your recommendation? Q3. Walk met hrough it
+Relayed verbatim to the Lead. Desk shows the HUMAN-REVIEW packet's owner-relevant points in session (Q6), gives reasoning on Q7/Q4
+(owner delegates judgement; recording a ruling is the Lead's), recommends on Q2, walks through Q3.
