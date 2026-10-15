@@ -15,6 +15,10 @@ BS = 4             # block size (vertices per block); vertices beyond a gadget's
 
 def set_pool(name):
     global POOL, BS
+    if name == "tc":       # calibration pool: the whole tc N=2 game (22 vertices) and S_2
+        import subprocess
+        O = os.path.join(HERE, "..", "..", "tools", "oink", "build")
+        POOL = [pg.parse(subprocess.run([f"{O}/tc", "2"], capture_output=True, text=True).stdout), S2]
     if name == "rich":
         POOL = [S2, strfam.S(3), pg.read(os.path.join(HERE, "..", "attr", "instances", "tc2_psolc_nothing_n9_m11.pg"))]
         POOL += [alglib.from_record(json.loads(l)) for l in list(open(os.path.join(HERE, "out", "c2k1_small_seeds.jsonl")))[:2]]

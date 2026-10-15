@@ -11,3 +11,22 @@ Files: out/zp_families_c3_{a,b,c}.csv (per family and size: ZP calls, pruned ver
 Soundness: no wrong decision by any candidate on any game run (every decided vertex agrees with Zielonka).
 Strategies: oracle extraction (the candidate itself) succeeded and verified on every completely solved game where it was run.
 Time (Python, 1 core): NE(1) on tc n = 22/42/68/100/138: 0.0/0.2/1.9/7.6/26.9 s; N = 8 (n = 232) > 120 s (growth run pending).
+
+## Oink solvers on the ZP killer family T_R (experiments/alg/out/oink_sweep_tile8.log; work counters at R = 1/2/3/4, n = 32/64/96/128)
+| solver | R=1 | R=2 | R=3 | R=4 | reading |
+| --- | --- | --- | --- | --- | --- |
+| uzlk (plain Zielonka) | 166 | 4,891 | 157,447 | 5,077,039 | x32 per tile (= ZP's growth) |
+| fpi | 171 | 4,045 | 104,469 | 2,715,493 | x26 per tile; tc already beats fpi |
+| zlkq | 1,803 | 21,174 | 114,154 | 1,182,605 | x6-10; quasi-polynomial by its theorem |
+| qpt | 30,323 | 22.9M | 289.6M | timeout 120 s | counter_qpt already beats qpt |
+| tspm | 642 | 117,821 | 643,355 | 1,168,960 | tc already beats tspm |
+| zlk (Oink, optimised) | 44 | 257 | 1,247 | 5,846 | ~x4.7, polynomial-looking |
+| tl / ortl | 1 | 1 | 1 | 1 | one tangle |
+| rtl | 1 | 5 | 9 | 14 | linear |
+| ptl | 3 | 8 | 13 | 18 | linear |
+| dtl, idtl | 4 | 8 | 12 | 16 | linear |
+| spptl | 3 | 5 | 7 | 9 | linear |
+| psi (major iterations) | 10 | 13 | 16 | 19 | linear |
+| pp, dp, rr (promotions) | 3 | 5 | 7 | 9 | linear |
+Reading: T_R is hard only for solvers already beaten by published families; tangle learning and priority promotion see through
+the sibling-trap compositions that blind psolC.

@@ -93,4 +93,14 @@ each level of NE' adds one register. This is the exact obstruction of the whole 
 - 11:45 explicit ZP killer: tiling the GA K=8 unit (zp_ladder2.py template search, zp_curve.py): 247 / 7,273 / 234,133 calls at
   R = 1/2/3 tiles (n = 32/64/96), x30 per tile; second unit (K=10) 659 / 10,795 / 132,507. GA table to n=64: 12,255 calls.
   C3 recorded DEAD. R=4 (n=128) running.
+- 12:00-12:20 C4 = tangle learning (Oink tl) on the prefix-max product with the C2 outer fixpoint (c4_product.py): correct on
+  all 33 library games, S_2..5, T_1..3 (0-244 tangles), but tc: 131 / 3,070 / 37,372 / 333,132 / 2,493,190 tangles at
+  N = 2..10: DEAD (DEAD.md C4). First version without the outer loop was WRONG on 7/30 games: the fixpoint is needed even
+  with a complete inner solver (good visits must land on vertices p wins from).
+- Oink T_R table (RESULTS.md): T_R hard only for uzlk/fpi/zlkq/qpt/tspm (all already beaten by published families);
+  tl/ptl/dtl/spptl/psi/pp linear. Oink-fitness GA (rich pool, 80 gens, pop 40): Oink zlk explodes (308 / 968 / 10,587 at
+  n = 66/88/132: Zielonka's known exponential behaviour rediscovered); tl 21/26/77, ptl 29/30/49, spptl 32/35/54, dtl 89/110/92,
+  psi 36/59, rtl 71/146 at K = 6/8/12(/16): no blow-up found for the tangle-learning family in the S_2/S_3/tc-core gadget
+  space. Calibration run started: pool = whole tc N=2 game as a block (can the GA rediscover tc's hardness for tl?).
+  Oink README lists counter_dtl, but no such generator source exists at commit 8fbf0a7.
 
