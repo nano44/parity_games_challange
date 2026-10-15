@@ -18,7 +18,7 @@ steps 2-5 are not run by L-SI.
 | S4 | subgame-optimal start + switch-all | KILLED | switchallexp: counts identical to switch-all (doubling) |
 | S5 | Zadeh's least-entered rule, index tie-break | not killed, not defended | no bound covers it (DFH's tie-break is σ-dependent); adversary controls the numbering |
 | S6 | Cunningham's round-robin, index order | not killed, not defended | contiguity of a vertex's edges blocks PGSolver's ordering; DLMM-style families for m-memory rules not excluded |
-| S7 | most-improved single switch, invariant tie-break | KILLED (L-RED) | FHZ's one-player Random-Facet counter with linear pads (fhz_padded): i(n) = 2 i(n-1) + 4n |
+| S7 | most-improved single switch, invariant tie-break | KILLED (L-RED; also L-SI's bench) | fhz_padded (FHZ counter + linear pads): i(n) = 2 i(n-1) + 4n; and randomfacetsubexp: 1103, 2254, 4557 at N = 5..7 (doubling) |
 
 ## Obstruction map (end of box): which rule classes die to which construction
 | rule class (single switch unless stated) | what the rule ranks by | killed by | source |

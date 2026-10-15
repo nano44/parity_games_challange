@@ -137,7 +137,10 @@ unfiltered rules (best-reward start; M_L from σ_0; G_n from σ_0):
 Unfiltered on the same games: lsf 2^(L+1) on M_L, Bland 2^n - 1 on G_n, msf 2^N - 1 on gated_bland, zadeh ~16N² on
 zadehexp. The df restriction alone collapses every counter in the bench to linear or quadratic growth, whichever base rule
 is applied inside it (OBSERVED). Adversarial searches for the worst df run (df-index and df-lsf, one-player acyclic sink games
-and two-player sink games, n ≤ 14, fast engine): results appended below when finished.
+and two-player sink games, fast engine, 60 restarts x 2000 steps): df-index on one-player DAGs n = 6, 8, 10, 12, 14: 6, 15,
+28, 45, 64 (~n^2.8); df-index on two-player sink games n = 6..12: 17, 42, 66, 101; df-lsf on sink games: 19, 42, 63, 83.
+Hill-climbing finds only polynomial-looking df runs at these sizes; L-RED's exact DP on FHZ's counter (4d) shows the
+longest df runs are nevertheless exponential, so the search was too weak, as it was for MSF and S7 before their kills.
 
 Proof attempt for the df statement, one-player acyclic sink games first (all vertices Even, edges toward the sink, so the
 play is the σ-path and "downstream" is "later on the σ-path"):

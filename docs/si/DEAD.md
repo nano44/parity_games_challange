@@ -81,5 +81,10 @@ Iteration tables: docs/si/RESULTS.md (generated); raw logs experiments/si/out/ (
   true for DLMM G_N, false for FHZ's counter, whose bits are route-isolated). Lemma D (L-RED) was the right structural
   statement; its consequence is that any family with route-isolated bits and a downstream-first counting run is steerable
   by linear pads. docs/si/S7-proof-attempt.md is left in place with the kill noted at its top.
-- L-SI reproduction: PENDING gens_red.py fhz_padded on claude/l-red (not present at 15:20Z); the numbers above are L-RED's,
+- L-SI reproduction: PENDING gens_red.py fhz_padded on claude/l-red (not present at 16:20Z); the numbers above are L-RED's,
   on L-SI's own engine. fhz_padded and its pad variants join the standard falsification set when the generator lands.
+- INDEPENDENT KILL from L-SI's own bench (fast sweep, 16:30Z): on PGSolver's randomfacetsubexp (gens.py port, best-reward
+  start) S7 takes 4, 106, 233, 1103, 2254, 4557 iterations for N = 2..7 (n = 20, 68, 90, 207, 248, 289): doubling per N from
+  N = 5 (ratios 2.04, 2.02); N = 8 exceeded the 900 s limit (> 10^6 evaluations). The run coincides with steepest's
+  (S3: 106, 233, 1103 at N = 3..5), i.e. on this family the count order and the steepest-gain order agree. Unconditional,
+  no pads needed; regression numbers pinned: instances/randomfacetsubexp_N5.pg, most-improved 1103 (check.sh).

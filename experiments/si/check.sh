@@ -17,7 +17,12 @@ if [ -f instances/pinned.txt ]; then
     [ -z "$rule" ] && continue
     start=best
     [ "$startflag" = "start" ] && start="spec:$(cat "instances/${file%.pg}.start")"
-    got=$(python3 -I si.py "$rule" "instances/$file" /dev/null --start "$start" 2>&1 | grep -o "with [0-9]* iterations" | grep -o "[0-9]*")
+    if [ "$rule" = "most-improved" ]; then
+      [ -x ./vjfast_check ] || { echo "pinned $rule $file: needs vjfast_check (g++), skipped"; continue; }
+      got=$(./vjfast_check "$rule" "instances/$file" /dev/null --start "$start" 2>&1 | grep -o "with [0-9]* iterations" | grep -o "[0-9]*")
+    else
+      got=$(python3 -I si.py "$rule" "instances/$file" /dev/null --start "$start" 2>&1 | grep -o "with [0-9]* iterations" | grep -o "[0-9]*")
+    fi
     [ "$got" = "$iters" ] || { echo "pinned $rule $file: expected $iters got $got"; exit 1; }
   done < instances/pinned.txt
   echo "pinned instances: PASS"
