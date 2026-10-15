@@ -44,6 +44,18 @@ Re-run: `python3 search.py 2 10 4` (SAT, < 1 s), `python3 search.py 2 8 4 --stro
 
 Running: (4,5) k=9, (4,6) k=9 (UNSAT side), (4,6) k=12 (SAT probe), (5,4) k=10.
 
+## n = 5 diagonal (V), lower bounds only (runs ended by a container restart at ~00:30Z, before any SAT k was reached)
+Each line: k UNSAT on the CNF in results/ (search.py CEGAR via diag.py), CaDiCaL LRAT proof VERIFIED by lrat_check.py
+and CryptoMiniSat UNSAT. By monotonicity in k each gives value >= k+1.
+| cell | proved bound | evidence |
+| --- | --- | --- |
+| w^V(5,5) | >= 10 | k=9 UNSAT, 1010789 RUP steps, CNF sha256 842f739124cb8467 (k=8: 206644 steps, fcbc3f91d374c84f) |
+| s^V(5,5) | >= 10 (k=10 UNSAT found by CEGAR, proof pending: results/../out/cells/strong_V_n5_d5_m1_k10.cnf) | k=9 UNSAT, 812963 RUP steps, ac2802ccafe77db0 (k=8: 89835, e02e682628ca1565) |
+| TARGET n=5 weak (letters 2..7) | >= 9 | k=8 UNSAT, 2130838 RUP steps, 09e132ad7398524b |
+| TARGET n=5 strong (letters 2..7) | >= 9 by CEGAR (proof pending: out/cells/strong_V_n5_d7_m2_k8.cnf) | - |
+| s^V(5,6) | >= 10 | k=9 UNSAT, 639512 RUP steps, afa359eda8b70cde |
+No n = 5 upper bound was found in this session (no SAT k reached), so W(5) vs S(5) is undecided.
+
 ## Independent check of L-STRUCT's w^V(4,6) <= 11 (claude/l-struct 616cf77, weak_V_n4_d6_k11.json)
 graphs.family_V (own generator: every tree with n leaves x every vertex labelling, brute-force parity check; covers all
 V-graphs on n vertices up to subgraphs) for n = 1..4, d = 6: the 11-state automaton has NO violation (n = 4: 5007 even,
