@@ -63,7 +63,8 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - RESULTS R1 [refereed-only]: L4, s^V(n,n) >= n^Omega(lg n) (supporting lemma, not M3 per L7).
 - None of the fleet's own. Known: quasi-polynomial upper bound (to be source-checked by L-LIT).
 
-## Owner questions open (held by OWNER-DESK since 2026-10-15, D3; docs/owner-desk/QUESTIONS.md)
+## Owner questions open
+- Q9 (12:05Z, via OWNER-DESK): SPEND. All sessions report seven_day rate limit 'allowed_warning' (not overage); resets 2026-10-21 21:00Z. Options (a) continue, (b) throttle after current boxes to <= 2 lanes [Lead rec.], (c) pause now. Interim: no new sessions/boxes except one referee check of L-RED's RAR transfer lemma. (held by OWNER-DESK since 2026-10-15, D3; docs/owner-desk/QUESTIONS.md)
 - Q3: DONE by owner 07:53Z (setup script set; applies to sessions started after it; verify on the next new session). Q2, Q4, Q5, Q6, Q7 closed (D4, L13-L17). No owner questions open.
 
 ## Spend
