@@ -24,6 +24,10 @@ Status: PARKED. No background runs, no monitors, no timed wakes. Last commit on 
   tc+, pairs ~n^0.6, later pieces hold most pairs but multiply nothing), removal-order invariant VIOLATED everywhere,
   newrecur correction (1 and 7 cases, W-suppressed first extractions, not determinacy breaks).
 
+## Resume point
+PARKED after the LANE-RESTART handoff (18:40Z my clock). Nothing in flight. A successor starts from "Open targets for a
+successor" above after reading docs/NOW.md and the Lead's brief; every R-file is listed in the DONE section.
+
 ## IN FLIGHT
 None.
 
@@ -180,6 +184,97 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
 - L-ALG claude/l-alg 898d02d docs/alg/candidates/C5-DTL.md (sections 0-6) and 549bb34 docs/alg/REPORT-2026-10-15.md
   "DTL attack" table and verdict (read 15:05Z).
 
+- DTL staggered gadgets (R8 section 10): escapes to an Odd sink prune the head; closed Even towers are solved at once by
+  the dominion attractor; open-by-design levels need an escape above the next top, which the pruning rejects. Rescue
+  chains (priority-0 Odd-owned rescue vertices pointing at each other) are all rescued in round 1 because a candidate
+  of minimal priority is never cleared by the threshold loop and Z already contains every best vertex's region.
+- DTL killer by free-form search (R8): hill-climbs at n = 10..30 converge to one-player chain games (O(n^2) tangles);
+  two-player-constrained searches give the same chains. A GA/template search was L-ALG's (quadratic). The theft-driven
+  flip (R8 section 3) is a one-shot event, not a counter: thefts are not renewable (region heads only move up).
+- None yet for the attack. Not pursued: a non-sink killer (the sink-game gate suffices); porting Disser-Mosis D_n with Odd
+  gates (T12 section 4) is unnecessary, the Bland counter plus gates is smaller.
+
+## Sources opened (arXiv id or DOI, theorem/section)
+- FHZ 1410.7530 again (R5): Fig. 3 p.9 (the i-th level with r = s = t = 1), section 4 p.8 (randomized counter, bit
+  interpretation (b_i, w_{i+1}) in B), Table 1 p.14 (edges and costs) as encoded in fhz.py build.
+- Avis-Friedmann, "An exponential lower bound for Cunningham's rule", arXiv 1305.3944 (PDF opened ~16:20Z): section 3 p.10-11
+  (succ_prec, Algorithm 2 RoundRobin, "highly depends on the ordering used", Theorem 3), p.13-14 (phases 1-5 of the counter and
+  the ordering (1): {b, d^0, e^1} < {c} < {e^0} < {d^1} < {a}, phase-1 order e_1^1 < d_2^0 < e_2^1 < b_2^1 < b_2^0 < ...),
+  Theorem 4 statement (p.14).
+- Disser-Friedmann-Hopp, "An exponential lower bound for Zadeh's pivot rule", arXiv 1911.01074 v2 (PDF opened ~16:20Z):
+  p.3 (tie-breaking quotes: "cannot be avoided to fix a tie-breaking rule", "not based on exploiting the tie-breaking rule",
+  Friedmann's thesis Cor. 4.79 on instance-tailored tie-breaks); Table 3.1 / Fig. 3.2 located, not read; Thm 6.18 and
+  Definition 6.4 taken from L-SI's S5.md reading, not re-derived.
+- Friedmann 1106.0778 (again, for R3): section 6.4 Table 4 (G_n: players, priorities, successors; iota_{G_n} p.16), Fact 6.1,
+  section 6.5 phases 1-4 (pp.17-21: definitions of b-phase 1..4 strategies, Lemmas 6.8-6.12 statements; proofs skimmed),
+  Lemma 6.3-6.4 (deceleration lane), Lemma 6.5-6.6 (cycle gate states), Thm 6.14 (switch-all >= 2^n on G_n; my port: 26, 62,
+  134, 278, 566 for n = 2..6).
+- Friedmann-Hansen-Zwick, "Random-Facet and Random-Bland require subexponential time even for shortest paths", arXiv 1410.7530
+  (PDF opened 2026-10-15 ~13:25Z): section 3 p.7 (how Random-Facet finds shortest-path trees), section 4 pp.7-9 (randomized
+  counter, Fig. 3 one level with r=s=t=1, "zero-edges"/"one-edges", gadgets: t copies, paths of length s, r copies), section 5
+  Table 1 p.14 (edges, costs 2^{2i+1}+(k-1)eps, 2^{2i+1}+1+(j-1)eps, 2^{2i}; eps = 1/(rs)), p.14 B0 "composed entirely of
+  zero-edges", Def. 5.2 (functional), Def. 5.4 (B_F), Lemma 5.5 (optimal edges = B_F), Claims 5.6-5.7, Lemma 5.10, section 6
+  p.22 (parameters r = Theta(log n), s = Theta(sqrt n log n), t = Theta(log n); N = Theta(nrs), M = Theta(nrst)), Theorem 6.3.
+- Friedmann-Hansen-Zwick, errata arXiv 1410.7871 v1: abstract, section 1 ("The main result of [1] is thus flawed"; "the lower
+  bound for Random-Facet* remains correct"; [5] = Hansen's thesis 2^Omega~(m^{1/3}) for Random-Facet on MDPs; [3] = 1410.7530
+  transfers it to shortest paths), section 2 (Random-Facet pseudocode on shortest paths: pick e in F \ B, recurse on F \ {e},
+  improve-and-pivot, recurse on F).
+- Zwick, arXiv 2607.06334 v1: Appendix D Fig. 1 (Rand-Act-Rem pseudocode: B = actions not in a; r random; b = recurse on H \ r;
+  c = b[r]; if (c -> b) in H return b else recurse on (H, c)), section 3 (VAL_sigma, orientation a -> b iff VAL_a prec VAL_b).
+- Friedmann, "An exponential lower bound for the latest deterministic strategy iteration algorithms", LMCS 7(3:19) 2011,
+  arXiv 1106.0778 (PDF opened 2026-10-15 ~11:50Z). Section 3 pp.4-6: play decomposition v1..vk (w1..wl)^omega, node
+  valuation (w1, {v_i > w1 : 1 <= i <= k}, k), set order M < N iff max(M delta N) in (N cap V_even) cup (M cap V_odd),
+  valuation order (length: e < f worse when u odd, e > f worse when u even), improving edge, Thm 3.2, Thm 3.3.
+  Section 5 p.8: 1-sink games, "the path-length component equals the cardinality of the path component". Section 6.1
+  pp.9-10: simple cycle (Table 1: d_i Even p_i, e_i Odd p_i+1, h_i exit), Lemma 6.1 (tau(e_i) = h_i when closed; = d_i when
+  open and sigma(d_i) prec h_i), Lemma 6.2 (open cycle closes when sigma(d_i) = max D_i prec h_i; "the player 1 node hides
+  the fact that there is a highly profitable node on the other side"). Section 6.4 Table 4 (G_n), 6.5 phases (skimmed).
+- Disser-Loho-Maat-Mosis, "Lower bounds for ranking-based pivot rules", arXiv 2512.16684 v2 (PDF opened ~12:25Z): Thm 4.3
+  (p.13: l-index-based rules need m^omega(1) on sink parity games), Fig. 4.1 (p.14: G_n, priorities a_i 2i+1, b_i 2i+2,
+  b_{n+1} 2n+4, Bland numbers 2i / 2i-1, sigma_0 in bold), Lemma 4.4 (p.13: "Strategy improvement with Bland's rule takes
+  2^n - 1 iterations to solve the sink parity game G_n with initial strategy sigma_0"; proof by induction, p.14).
+- Fleet files: TARGET.md v1.0 sections 2, 3, 5; docs/NOW.md; claude/l-si 95d37d3: docs/si/candidates/S1.md, S2.md,
+  docs/si/RESULTS.md, DEAD.md, README.md, experiments/si/si.py, gens.py, families.py, freeze_test.py, adversarial.py,
+  notes/L-SI.md; docs/lit/T12-MSF-barriers.md; experiments/harness/pg.py, verify.py, zielonka.py.
+
+- Disser-Friedmann-Hopp 1911.01074 section 6.2 "The Tie-Breaking Rule", pp.14-15 (opened 14:25Z): the sets G, E^0, E^1
+  (escape vertices whose cycle vertices do / do not point to the cycle centre), D^0, D^1, B, S; pre-orders on E^0 (higher
+  level first, PG: F_{i,0} first; MDP: F_{i,beta_{i+1}} first), S (higher level first), E^1 (criteria 1-4: level, exactly one
+  closed, exactly one halfopen escaping to t->, then F_{i,0} / F_{i,beta_{i+1}}), D^1 (criteria 1-5: open cycles first,
+  bit beta_i = 0 first, lower level first, active cycle centre, last index); Definition 6.4 (p.15): G < D^0 < E^1 < B < S < E^0
+  < D^1, "extend the pre-order to an arbitrary but fixed total ordering", exception "if phi(b1,b2) = phi(s_{1,1},h_{1,1}) = 0
+  apply (s_{1,1},h_{1,1}) instead of (b1,b2)"; Lemma 6.5 (polynomial-time evaluable); p.14 "The tie-breaking rule is in
+  principle implemented as an ordering of the set E_0 and depends on the current strategy sigma as well as the occurrence
+  records"; p.3 "it cannot be avoided to fix a tie-breaking rule ... for every MDP of size n, a tie-breaking rule tailored
+  to this instance exists such that the policy iteration algorithm takes at most n steps [Fri11b, Sec. 5.4]".
+- PGSolver (github tcsprojects/pgsolver, clone at d3cd624 in the scratchpad) src/lib/solvers/stratimpralgs/switch_zadeh.ml:
+  improvement_policy_optimize_fair lines 1407-1457; improvement_policy_optimize_fair_sub_exp_tie_break lines 1462-1591
+  (state, state', idxmap, f, g, h, mp); initial_strategy_for_exp_game lines 1612-1650; src/generators/zadehexp.ml lines
+  50-90 (the family), line 100 (its name string).
+
+- Oink @ 8fbf0a7 (tools/oink/src, opened 15:10Z-15:40Z): src/solvers/dtl.cpp lines 40-57 attracts, 65-101
+  attractVertices (predecessors in edge-list order; Odd vertex skipped if an edge into Gx \ Z), 109-185 attractTangle
+  (parity check, delete if a vertex is solved, fail if a vertex is outside R or above maxpr or an escape is in Gx \ Z),
+  197-202 attractTangles (tin[v] in creation order), 210-471 extractTangles (Pearce SCC, dominion if no escapes, skip if
+  the vertex set equals an existing tangle's, 385-424), 476-546 sptl (one extraction per top per search via W), 643-776
+  best_vertices (pruning rounds, "distance", threshold loop 743-760), 834-994 search_rec (stable -> sptl loop + Dom(V,R)
+  -> X; -1 -> lowest threshold attractor to X, opponent attractor to the threshold vertices, recursion on Z), 997-1069
+  search, 1071-1161 run (Even to exhaustion then Odd; "search was incomplete!" only under NDEBUG); src/tools/tc.cpp
+  (makeBit: H, T, L, selectors S/A/B, Z; all T at priority 2/1, connectors 1/0, H and L high, bit 0 highest).
+- Oink branch dftl (github trolando/oink, fetched 15:38Z; worktrees in the scratchpad: oink-dftl @ ea51834 tip,
+  oink-a028 @ a028e62; builds oink-dftl-build, oink-a028-build): a028e62 "Added solver DFTL and counterexample"
+  (src/solvers/dftl.cpp, src/tools/counter_dftl.cpp, 8 + 4N vertices), 5502912, d1a923d, d54dfad "Fix counter_odftl to
+  have a tiny tangle of the opponent after the distraction" (counter_odftl.cpp, 8 + 6N), ea51834; counter_dftl.cpp is
+  deleted at the tip. dftl.cpp tip header lines 19-48: the algorithm (V = all p-vertices, regions top-down, closed regions
+  -> tangles, else remove the lowest top from V; executions A-D; "For executions A (and B), the counter_dftl generator is
+  an exponential lower bound. For execution D, the tc+ generator is an exponential lower bound. For execution C, no lower
+  bound is yet known."). README diff: DFTL/ODFTL rows, "counter_dftl | Counterexample to the DFTL solver".
+- L-LIT docs/lit/T16-dtl-barriers.md (trunk, l-lit 3874a1e / 4f61b4c) as relayed by the Lead 15:45Z-15:55Z (not opened
+  myself): provenance of counter_dtl (README 39254fe 2021-06-25, no source on any ref), dftl branch commits.
+- L-ALG claude/l-alg 898d02d docs/alg/candidates/C5-DTL.md (sections 0-6) and 549bb34 docs/alg/REPORT-2026-10-15.md
+  "DTL attack" table and verdict (read 15:05Z).
+
+## Dead ends
 - DTL staggered gadgets (R8 section 10): escapes to an Odd sink prune the head; closed Even towers are solved at once by
   the dominion attractor; open-by-design levels need an escape above the next top, which the pruning rejects. Rescue
   chains (priority-0 Odd-owned rescue vertices pointing at each other) are all rescued in round 1 because a candidate
