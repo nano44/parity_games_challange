@@ -1,0 +1,16 @@
+games with V_E in [8]: 6000
+round 1: 0 games, 808 clauses -> SAT [0.0s]
+   5919 failing
+round 2: 200 games, 165750 clauses -> SAT [0.8s]
+   637 failing
+round 3: 400 games, 330794 clauses -> SAT [11.8s]
+   40 failing
+round 4: 440 games, 363918 clauses -> SAT [12.7s]
+   4 failing
+round 5: 444 games, 367186 clauses -> SAT [5.6s]
+   60 failing
+round 6: 504 games, 416758 clauses -> SAT [8.6s]
+   114 failing
+round 7: 618 games, 510730 clauses -> SAT [9.3s]
+   0 failing
+RESULT: 6 gates solve all 4-vertex games with V_E in [8]

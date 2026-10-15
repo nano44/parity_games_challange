@@ -1,0 +1,6 @@
+Q_4 prios=[1, 2] owners=[0]: 812782 games, 3248306 nodes -> 48062 classes (W true on 47946); max split round 6 [77.5s]
+n=4 window1: min cost 6 (depth 6) [2.3s]
+n=4 window2: min cost 6 (depth 6) [3.5s]
+n=4 monotone: min cost 8 (depth 8) [13.2s]
+n=4 window2+monotone: min cost 8 (depth 8) [21.1s]
+EXIT 0
