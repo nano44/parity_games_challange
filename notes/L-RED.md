@@ -6,7 +6,9 @@ Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edi
 applied (8bb9d22); S7 most-improved attacked: docs/red/R3-S7.md = HELD with Lemmas T and D (count = traffic; downstream
 dominance), the Friedmann G_n port + five pad schemes with traces, the exact obstruction (selector chain upstream-ordered),
 fidelity check vjfast = vj.py, watch item gated_switchbestexp N=6 = 974 (N=7 was still running in the scratchpad, gsb.log).
-S7 redesigns tried and dead (R3 section 3b): split entries (root cycles), downward chains (no reset), stripped gates (same).
+S7 box 3 (Lead 13:25Z): redesigns dead (R3 3b); impossibility statement R3 3c: S7 is downstream-first (Lemma D); every ported
+exponential single-switch run (Bland G_N, LSF M_L, Zadeh, Cunningham both orders, MSF gated) is not (antichain_check.py);
+Friedmann-spine gate counters cannot be. Open: does a downstream-first exponential single-switch run exist at all?
 If re-woken on S7: a selector whose improvability depends on the lower bits' state (R3 3b) is the only opening I see; test with
 gens_red.friedmann_Gn(pads=dict, split=, strip=) and the scratchpad tracer (vjtrace.cpp = vjfast.cpp + TRACE env, tracefmt.py).
 S5/S6: last hour spent on numbering searches, docs/red/R4-S5S6.md (HELD; AF ordering (1) splits e_i and d_i across
