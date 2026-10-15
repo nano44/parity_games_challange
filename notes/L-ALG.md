@@ -82,3 +82,11 @@ each level of NE' adds one register. This is the exact obstruction of the whole 
 - 10:40 C3 = ZP (Zielonka + psolC pruning at every call; zp.py, C3.md): == Zielonka with verified strategies on 107 library/instance
   games and the 1,380 n=4 games. Families: tc N=2..14: 5 calls at every size (plain Zielonka 65 -> 140,699); counter_dp/m/core:
   1 call (psolC solves the whole game). Hill-climb for call growth at n <= 12: best calls ~ n-1 (linear). Larger searches running.
+- 10:45-11:05 C3 ZP on families: tc N<=14, tc+ N<=12: 5 calls at every size; counter_dp/m/core/rob: 1 call (psolC solves);
+  plain Zielonka exponential on all of them. ZP call-count searches: hill-climb at n<=12 and n<=60: ~linear (weak);
+  block-structured random games (K copies of S_2, shifted priorities, random inter-block edges): max calls 248 at K=13,
+  936 at K=23; GA over block genomes (zp_ga.py): best calls 129/247/659/1485+ at K=6/8/10/12 (n=4K), and 6248+ at K=16
+  when seeded with two tiled copies of the K=8 best (zp_ga.py --double). Exponent between successive points rises
+  (~2.3 -> ~4.8): superpolynomial-looking, not a proof; no explicit family extracted yet (genomes look unstructured).
+- 11:00 S_5 (n=46): NE'(3) did not finish in 1700 s (Python); the S_4 point stands as the measured limit for C2.
+

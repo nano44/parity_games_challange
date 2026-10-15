@@ -65,6 +65,11 @@ def main():
     pop_n = int(opt("--pop", 60)); tag = opt("--tag", f"K{K}_s{seed}")
     rnd = random.Random(seed)
     pop = [rand_genome(K, rnd) for _ in range(pop_n)]
+    if "--double" in sys.argv:        # seed with two tiled copies of a K/2 genome (self-similar families), plus mutants
+        rec = json.loads(open(opt("--double", "")).readline()); sw, sh, ed = rec["genome"]; k2 = len(sw)
+        assert 2 * k2 == K
+        base = (sw + sw, sh + [s + k2 for s in sh], sorted(set([tuple(e) for e in ed] + [(v + 4 * k2, w + 4 * k2) for v, w in ed])))
+        pop = [base] + [mutate(base, K, rnd) for _ in range(pop_n // 2 - 1)] + pop[: pop_n - pop_n // 2]
     scored = sorted(((fitness(g, K), g) for g in pop), key=lambda x: -x[0])
     t0 = time.time()
     for gen in range(gens):
@@ -85,7 +90,7 @@ def main():
     pg.write(g, os.path.join(HERE, "instances", f"zp_ga_K{K}_n{g.n}_calls{best_c}.pg"))
     with open(os.path.join(HERE, "out", f"zp_ga_{tag}.jsonl"), "w") as f:
         f.write(json.dumps(alglib.game_record(g, ref, calls=best_c, K=K, genome=[best_g[0], best_g[1], best_g[2]])) + "\n")
-    print(f"K={K}: best ZP calls {best_c} (n={g.n}); plain Zielonka calls {zp.ZP(g, False).run() and zp.ZP(g, False).calls}")
+    print(f"K={K}: best ZP calls {best_c} (n={g.n}); plain Zielonka calls {(lambda z: (z.run(), z.calls)[1])(zp.ZP(g, False)) if g.n <= 40 else '-'}")
 
 
 if __name__ == "__main__":
