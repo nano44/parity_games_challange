@@ -7,15 +7,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 Done: reproduction of l-struct 42dbbc2; T1 REFUTED at (2,10): w(2,10)=4 < 5=s(2,8) in E,S,V (and (2,12): w=4 < 6=s(2,10));
 w^E(4,6) >= 8 (proved), >= 9 (k=8 UNSAT, CNF out/w_n4_d6_k8.cnf, LRAT NOT yet produced); w^E(5,4) >= 10 (proved);
 w^V(3,8) >= 7 (proved); diagonal V cells n=2..4 incl. TARGET alphabet {2..n+2}: w = s (2,3,5,5,7; TARGET 2,5,7), proved.
-RUNNING at handover (lanes in experiments/sat-hard/run_diag.sh; logs out/diag_*.log; results out/cells/<cell>.json):
-  C : diag.py 5 5 V weak --klo 8          (w^V(5,5), decisive for L-STRUCT S3)
-  P1: diag.py 5 5 V strong --klo 8        (s^V(5,5), after the finished TARGET n=4 strong cell)
-  P2: diag.py 5 7 V weak --min-letter 2 --klo 8    (TARGET n=5)
-  P3: diag.py 5 7 V strong --min-letter 2 --klo 8
-  If a value comes out = klo, rerun with --klo value-1 to get the lower-bound CNF. Then `python3 prove.py "<cell>"`
-  (CaDiCaL LRAT -> lrat_check.py, plus CryptoMiniSat; appends to results/cells.md) and copy the witness to results/.
-PAUSED (SIGSTOP; pids in /tmp/claude-0/sh/paused.pids, lost with the container): search.py 4 5 9, 4 6 9, 5 4 10 (all E,
-weak, --cnf-out out/...). Re-run from scratch if wanted (each > 40 min; ~20x per k).
+STATE at 01:15Z: a container restart (~00:30Z) killed all runs; all paused runs are gone. Proved from the saved CNFs:
+w^V(5,5) >= 10, s^V(5,5) >= 10, TARGET n=5 weak >= 9, s^V(5,6) >= 10 (results.md "n = 5 diagonal"). CEGAR-only (proof
+was running at handover, /tmp/claude-0/prove_rest.log): s^V(5,5) k=10 UNSAT (>= 11), TARGET n=5 strong k=8 UNSAT (>= 9);
+CNFs in experiments/sat-hard/out/cells/ (gitignored: regenerate with `diag.py 5 5 V strong --klo 10` /
+`diag.py 5 7 V strong --min-letter 2 --klo 8`). No n=5 SAT k reached: W(5) vs S(5) undecided. Next k: w^V(5,5) at k=10,
+s^V(5,5) at k=11, TARGET n=5 at k=9 (each run took 1-2 h per k on one core; use cube.py on 4 cores).
 Evidence standard: UNSAT = CaDiCaL 1.7.3 `--lrat=true --binary=false` proof verified by lrat_check.py AND/OR CryptoMiniSat
 (two solvers); SAT = witness re-checked by check.py against the full family (n <= 2: also verify2.py, exhaustive).
 Monotonicity in k (duplicate a state) means one UNSAT at k gives w >= k+1; monotone in d (restriction) too.
