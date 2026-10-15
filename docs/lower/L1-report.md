@@ -57,8 +57,17 @@ s_6 = the same one step later. The output combines distance-profile bits with tw
 vertices every path visits P_2 vertices in pairwise fresh segments (Claim 1), so "P_2 at positions 1 and 4..5" forces 5
 vertices. These are pigeonhole witnesses tuned to n = 4; L-LOWER has NOT found a uniform family of O(n)-gate programs.
 
-## 4. n = 5 (filled in when the run ends)
-(pending)
+## 4. n = 5 (in progress; exact statements only)
+Method: experiments/lower/cegar5.py and cegar5b.py. SAT candidates on Q_3 plus counterexample games, verified on Q_4 and on
+ALL 916·10^6 one-player Büchi games with 5 vertices (vec5.py reference, itself equal to Zielonka on all games with ≤ 4
+vertices). UNSAT on a successor-closed subset is a proof of impossibility; a candidate counts only after the full sweep passes.
+| program class | k = 8 | k = 9 | k = 10 | k = 11 |
+| --- | --- | --- | --- | --- |
+| window-1 chains (gate i reads P_2, s_{i−1}) | UNSAT (136 games, cegar5_k8_w1.json) | UNSAT (154 games) | UNSAT (562 games) | running |
+| window-2 chains | running | | | |
+| unrestricted | running | | | |
+So chain programs, which attain the minimum 2n − 2 for n ≤ 4, need ≥ 11 gates at n = 5 (2n − 2 = 8): the chain family does
+not extend linearly. B_1(5) itself (≥ 8 by Lemma A) is open until the unrestricted run ends.
 
 ## 5. State of T-L1 and proof routes
 - The hoped-for lower bound T-L1 (B_1(n) = ω(n)) is NOT supported by the data: B_1(n) = 2n − 2 exactly for n ≤ 4, attained by

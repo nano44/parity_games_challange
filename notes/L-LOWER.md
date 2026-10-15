@@ -5,9 +5,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 2026-10-15 ~01:30Z. Task L1 (24h box to 2026-10-15 23:01Z). Statement v1 8fcc0f2 refereed (R-L1 CHANGES); v2 written 2026-10-15 ~00:30Z addressing findings 1-9 (see statement header).
 Step 2 done for n ≤ 4: B_1(1..4) = 0,2,4,6 = 2n-2 exactly (SAT on bisimulation quotient + BFS cross-check), minimal depth
 2n-2, chain programs suffice. Lemma 2.1' (depth ≥ 2n-2, lasso pair) and Theorem B (depth-(2n-1) types determine W) written in
-docs/lower/L1-report.md §2. RUNNING: experiments/lower/cegar5.py 8 1 (n = 5, 8 gates, window-1 chain) -> log
-experiments/lower/cegar5_k8_w1.log; W cache in scratchpad w5/ (32 files, ~13 min to build). If window-1 fails, run
-`cegar5.py 8` (unrestricted), then `cegar5.py 9`. Then fill report §4, message the Lead with DONE/FINDINGS/NEEDS.
+docs/lower/L1-report.md §2. n = 5 (2026-10-15 ~02:00Z): window-1 chains UNSAT at k = 8, 9, 10 (result_cegar5_*.log, cegar5_*.json cores). RUNNING via
+cegar5b.py (table-level sweep, ~7 min/round, checkpoints cegar5_<tag>.subset.json, resumable): unrestricted k=8 (cegar5_k8_b.log),
+window-2 k=8 (cegar5_k8_w2_b.log), window-1 k=11 (cegar5_k11_w1_b.log). W cache: scratchpad w5/ (rebuilt in ~13 min if lost).
+Next: fill report §4 with the outcome, message the Lead with DONE/FINDINGS/NEEDS before 23:01Z.
 
 ## Queue
 1. n = 5: B_1(5) = 8 or > 8 (cegar5.py). 2. If = 8: look for the uniform O(n) construction (report §3 has the n=4 chain).
