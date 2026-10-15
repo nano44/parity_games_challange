@@ -34,5 +34,7 @@ Open: uniform O(n) construction (would refute T-L1), or a proof of super-lineari
 | Chatterjee-Dvořák-Henzinger-Svozil, arXiv 1909.04983 v1 | Algorithm 1 (black-box set-based progress measure), lines 3-16: worklist (popActiveSet) | 2026-10-14 | adaptive; used only for the CAUTION in Transfer 2.4 |
 | REFEREE report R-L1 (claude/referee 9b01cbb, docs/referee/2026-10-14-L1-statement-check.md) and L-LIT T9 (trunk 735a4c7, docs/lit/T9-L1.md) | findings 1-9, gaps G1-G6; T9 (a), (b) | 2026-10-15 | fleet documents, not sources; drove v2 of the statement |
 
+| Chatterjee-Dvořák-Henzinger-Loitzenbauer, arXiv 1706.04889 v1 (CSL 2017), "Improved Set-based Symbolic Algorithms for Parity Games" | §1 p.3 (classical set-based algorithm O(n^c) symbolic operations, O(c) sets); Theorem 20 (App. D.1: ClassicParity, O(n^c) symbolic one-step and set operations); Lemma 27 (App. D, "Simplified Analysis"): "O(n^2) symbolic one-step and set operations for c = 2", i.e. two-player Büchi; Theorems 8, 9 (c ≥ 3) | 2026-10-15 | adaptive model (attractors, repeat-until loops); no lower bound for games beyond the one-player Ω(n) of SODA'18; SODA'18 (1711.09148) itself contains no two-player statement (the word "game" occurs only in the grant line) |
+
 ## Dead ends
 (none)

@@ -82,4 +82,5 @@ Zielonka. So B_1(1..5) = 0, 2, 4, 6, 8 = 2n − 2, but at n = 5 the minimum is N
   reach for the present method; a lower bound there needs a proof, not a search.
 - Obstructions for the two standard methods remain: (i) depth/locality is capped at 2n − 1 by Theorem B; (ii) two-party
   communication (CDHL) is capped at Θ(n) bits on the Reduction 3.9 graphs (L1 §4).
-- Structural data still to collect (running at the end of the box): window-3 chains at k = 8, window-2 at k = 9.
+- Structural runs STOPPED on the Lead's L2-data decision (07:50Z), not concluded: window-3 chains k = 8 reached round 4 (298
+  games, SAT so far); window-2 k = 9 was resumed and stopped before its first sweep. Neither gives a bound.
