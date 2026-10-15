@@ -54,3 +54,4 @@
 - 2026-10-15 00:17Z: L-LIT T10: T-A1 exact class NEW, PA** NEW as condition, HKP Thm 4 flaw NEW; caveat LNCS 9560 unopened. M3 DONE (internal); owner told; access request Q5.
 - 2026-10-15 00:43Z: WATCHDOG: Lead 746k ctx (auto-compaction near; resume from NOW.md + this log). Lead $47.30, L-COMP $38.12. Open owner items: Q5 (LNCS 9560 access), Q6 (HUMAN-REVIEW distribution), Q7 (L4 as M3?), PGSolver binaries, trunk/main, setup script. Waiting: L-LOWER n=5 result; L-COMP handover after its check-in.
 - 2026-10-15 01:02Z sweep: no overage. L-COMP idle, n=5 CNF proofs running after container restart, 584k ctx $38.12 (handover pending per 21:03Z instruction). L-LOWER idle waiting on three n=5 runs, 406k ctx $28.35. No action.
+- 2026-10-15 01:15Z: L-COMP parked (25a6e21). n=5 diagonal: w^V(5,5)>=10, s^V(5,5)>=10 (LRAT), TARGET n=5 weak>=9; no upper bounds, W(5) vs S(5) open. No successor now (cost/value).
