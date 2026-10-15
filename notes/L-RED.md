@@ -1,112 +1,106 @@
-# L-RED notebook (independent adversary; Lead brief 2026-10-15 11:30Z, 8 h box)
-Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead.
+# L-RED notebook (independent adversary). LANE-RESTART handoff written 2026-10-15 18:35Z (my clock; Lead stamps run ~30 min ahead)
+Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
+(session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/verify.sh && git push -u origin claude/l-red`.
+Status: PARKED. No background runs, no monitors, no timed wakes. Last commit on claude/l-red before this file: 58f4f27.
 
-## Resume point
-2026-10-15 ~17:10Z (my clock). Box on Question DF (Lead 14:00Z): S7 KILLED (docs/red/R5-S7-kill.md): fhz_padded(n) =
-R2's parity encoding of FHZ's one-player counter G_{n,1,1,1} with linear pads W (n+1-i), W = (3,4,3,1): S7 iterations
-16, 44, 104, 228, 480, 988, 2008, 4052 (n = 2..9), |V| = 64..632, i(n) = 2 i(n-1) + 4n; vj.py agrees (n = 2..4), regions =
-Zielonka, strategies verified. Question DF: longest DF run on G_{n,1,1,1} exact 5, 20, 53, 124, 269 (n = 1..5). Reported 16:50Z. Then S5/S6 on the FHZ encoding: HELD (docs/red/R6-S5S6-fhz.md): numbering searches quadratic;
-index-fair rules must take the improving higher bit that the counter keeps live during the lower count. Next if asked: a proof of the recurrence (FHZ-style
-phase analysis for the S7 order), or the "DF + pads" reduction as a general theorem.
-## Resume point: PARKED (fourth DTL box ended ~19:00Z my clock; R8 section 12 complete)
-Tools added: dtl_pieces.py (removal-order invariant: violated everywhere), dtl_strchanges.py later-piece split and
-newrecur (corrected: 1 and 7 cases, all W-suppressed first occurrences, 0 strategy changes), fitnesses maxsets/pairs/
-newrecur. The -t -t -t debug trace is too slow for tc+ 12.
-## Resume point: PARKED (last end-of-box 18:00Z my clock, R8 at a44030f)
-Latest tools: dtl_strchanges.py (GAP-A: 0 strategy changes at a recurring (top, region set), all pieces), dtl_mcross.py
-((M-cross): holds at X-empty first pieces, which are rare; regions of the same top differ at X nonempty on tc+ without
-deletions; deletions never pay for a new SCC). Detector build prints: STRADDLE, REGION ... pr ... closed, SPTL top,
-DOM top, SOLVE attractor, DELETE tangle. Lead's open ask not done: an X-empty (M-cross) failure without deletion
-(a straddle hitting a top).
-## Resume point: PARKED after the bounded items of the second DTL box (Lead 17:36Z; end-of-box ~17:55Z my clock)
-Detector build (scratchpad oink-det-src / oink-det, pinned source + prints STRADDLE / REGION / SPTL top / DOM top /
-SOLVE attractor): dtl_strchanges.py measures GAP-A (0 everywhere); dtl_search.py fitnesses straddles/alpha/strch. The
-binary must not be rebuilt while climbs use it (PermissionError killed three climbs once).
-## Resume point: PARKED again after the second DTL box (Lead 17:25Z, 2 h; end-of-box sent 17:30Z)
-Last state: docs/red/R8-DTL.md final at 73da06b (sections 1-12); no background runs, no monitors. Section 12: (r1)
-holds empirically (dtl_vstar.py, climbs with fitness prunemono), no duplicate extraction ever (fitness dups on the debug
-build), N5 shape collapses into dominions, (α)/(β') unrealised, GAP-A str-change count not measured (would need the
-debug build's -t -t -t attraction events parsed per region).
-Next likely task per the Lead: attack on the DTL proof's GAP-A argument once L-ALG writes it, or a referee-style
-adversarial read. Tools ready: experiments/red/dtl/ (dtl_search.py, dtl_flips.py, dtl_fuzz.py, gens_dtl.py), scratchpad
-builds oink-dftl-build (branch dftl), oink-a028-build (a028e62), oink-debug (pinned 8fbf0a7, NDEBUG checks on).
+## DONE (all merged by the Lead unless noted)
+- R1 docs/red/R1-MSF.md: S2a MSF KILLED (gated Bland counter 2^N - 1; Gate Lemma: gates relabel the first-difference level).
+- R2 docs/red/R2-RAR.md: S1 Random-Action-Removal KILLED via the FHZ transfer lemma (refereed; RESULTS R3).
+- R3 docs/red/R3-S7.md + R5 docs/red/R5-S7-kill.md: S7 most-improved KILLED (fhz_padded(n): 8*2^n - 4n - 8 iterations on
+  Theta(n^2) vertices; Question DF answered: exponential downstream-first runs exist).
+- R4 docs/red/R4-S5S6.md + R6 docs/red/R6-S5S6-fhz.md: S5/S6 HELD (numbering searches quadratic; index-fair rules must take
+  the live higher bit).
+- R7 docs/red/R7-S5-zadeh-ties.md: S5 HELD with the exact result that no fixed edge order reproduces the published Zadeh
+  lower-bound run at any N (cyclic tie constraints; predicates h and state'); open statement sent to L-LIT.
+- R8 docs/red/R8-DTL.md (sections 1-12): DTL HELD. Section map: 1 Lemma M (set-based monotonicity; (M2) corrected per
+  NOTE N5; 1(c) withdrawn: the attractor is LIFO); 2 evidence (chain mechanism, flip census); 3 requirement; 5 the Lead's
+  four weak points + the TC-variant question; 6 Oink's dftl branch (counter_dftl/odftl linear for dtl, Fibonacci for the
+  a028e62 DFTL / ODFTL); 7 universal-tree angle; 8 --no-loops re-runs and correctness probes; 9 LIFO corrections, (W)
+  one extraction per top per search, (P) prefix lemma, (E) events; 10 hand gadgets (ladder v1 pruned, v2 collapsed by
+  the dominion attractor, tower variants) and the sharpened requirement; 11 GAP-C (debug oracle, fuzz, unblocking
+  argument); 12 the proof lane's shapes: (r1) pruning monotone (dtl_vstar), no duplicates, straddle detector (straddles
+  common on tc+, lowest region always closes), GAP-A measured (0 strategy changes at a recurring (top, region set), all
+  pieces), (M-cross) holds only at the rare X-empty first pieces, deletion ratio 0, (D) counts (2N+1 sets per top on
+  tc+, pairs ~n^0.6, later pieces hold most pairs but multiply nothing), removal-order invariant VIOLATED everywhere,
+  newrecur correction (1 and 7 cases, W-suppressed first extractions, not determinacy breaks).
 
-## Resume point (R8, DTL box, Lead 15:06Z, 6 h; box to ~21:06Z)
-docs/red/R8-DTL.md: HELD. Section 6: van Dijk's counter_dftl / counter_odftl (dftl branch) are linear for dtl (2N + 3
-tangles, verified); counter_odftl is exponential for ODFTL (Fibonacci-like iterations), i.e. the author's counterexample
-hits the "remove the lowest top" heuristic that DTL replaced by the good-path pruning (M2). Sections 5, 7: the Lead's
-four weak points, the TC-variant question, the universal-tree angle. Section 8: --no-loops pin (CHECKER C3, 16:02Z),
-self-loop/renumbering mutations, correctness probes clean. Perturbation climbs from the counters: ~3 tangles per vertex,
-chains. Section 9 (Lead's code check: uintqueue is a STACK, CurR consumed): 1(c)/5(a) withdrawn; (W) one extraction per top
-per search, (P) prefix lemma (a head's own tangle reproduces its recorded strategies; self-firing = monotone growth),
-(E) events (joins, thefts, deletions, first firings of lower tangles = absorptions) bound tangles per head by 1 + events.
-Section 10: hand gadgets (gens_dtl.py ladder m): v1 pruned (escape to Odd's sink kills the good path), v2 collapsed by
-the dominion attractor in one search (2m + 2 tangles); the two walls for any staggered gadget: a head's good path must
-run through priorities below its own (threshold loop stops at pr(u)), and any closed Even-winning structure is a
-dominion whose attractor absorbs every tangle escaping into it. The evolved games stagger through pruning rescues
-(distractions rescued when X grows), each rescue re-creating the chain tangles above it: that is the O(n^2) mechanism.
-The one killer shape left: super-polynomially many (E) events at one head.
-Oink flags for every run from 16:02Z on: --dtl --no-single --no-wcwc --no-loops. Lemma M (monotone in the tangle set; theft the only non-monotone event), chain mechanism
-(gens_dtl.py chain n: n - 2 tangles), free-search optima (8, 11, 35, 56, 27 at n = 10..30; two-player 26, 31 at n = 16,
-20), flip census (random 0; walks 6 games, all thefts), completeness probe clean. Oink's release build prints "best
-vertices", "distance k", "new tangle ... v->w ... with k escape vertices" at -t -t (enough to see everything but the
-attractor order). Scratchpad dtl/: best_*.pg, best2p_*.pg, *.trace, flip_walktcp.pg (the theft flip), flips.py.
-## Resume point (R7, S5 tie-break box, Lead 14:18Z, 5 h)
-docs/red/R7-S5-zadeh-ties.md (HELD, pushed). zadeh_lb.py = faithful port of PGSolver's lower-bound Zadeh tie-break; on zadehexp N = 2..6:
-43, 159, 467, 1227, 3019 switches, 38/142/408/1046 tie steps, 'chosen before competitor' constraints cyclic at every N
-(no fixed total order reproduces the run); direct reversals 10/79/212/390 (--rev lists them with the bit state). Two
-strategy predicates do it: h (partner gate node closed) and state' (bit i+1 decides E_i vs X_i first). Search tools:
-zadeh_anyorder.py (exhaustive DFS over tie decisions consistent with a growing partial order, any fixed total order;
-N = 2: >= 45 > 43), zadeh_order_climb.py (hill-climb over numberings with the exp start, in-process vj.py; N = 2: 47,
-N = 3 first restart 167 > 159). Logs: scratchpad anyorder.log, climb_{3,4,5}_s{1,2}.log, zbest_N_sS.pg (best numbering).
-## Queue
-1. If asked: proof of i(n) = 2 i(n-1) + 4n for fhz_padded under S7. 2. S5/S6 (paragraph below). 3. Optional: FHZ-scaled growth run for R2 (b).
+## IN FLIGHT
+None.
+
+## NEEDS
+None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-order invariant).
+
+## Open targets for a successor
+- S5/S6 under adversarial numbering (queued by the Lead, L23): R4/R6/R7 tools search_numbering.py, search_classnum.py,
+  zadeh_climb_fast.py (vjfast-scored, exp start), zadeh_anyorder.py (exhaustive over fixed total orders). Best known:
+  47, 169, 317, 501, 925, 963 switches at N = 2..7 on zadehexp vs the designer's 43..7131; any index order is a fixed
+  total order, so zadeh_lb.py's cyclic constraints bound what a numbering can reproduce.
+- DTL later-piece (top, region set) multiplication: a super-polynomial family must make later-piece pairs multiply
+  (Lead 18:12Z); measured counts stay within 2N+1 per top on tc+ and below n elsewhere. The one place not yet counted:
+  the Lead's 18:22Z event (a top cut narrower than its region by a -1 piece, a tangle learned at a top inside the
+  remainder, then the (top, set) pair recurs). Determinacy (same top and set => same strategies) has 0 exceptions anywhere.
+- GAP-C: (alpha) (straddling tangle leaving the lowest region open) never produced; proxy fitness "alpha" in dtl_search.py.
 
 ## Things only I know
-- TRAP (hit three times): `pgrep -f PATTERN | xargs kill`, `pkill -f PATTERN` and `ps aux | grep "[p]attern" | xargs kill` kill my own shell when the pattern occurs ANYWHERE in the same shell command (e.g. in a later nohup line of the same call). Kill in a call of its own, or by PID.
-  shell's command line. Use `ps aux | grep "[z]adeh"` style or kill by a PID read in a separate call.
-- zadeh_lb.py's exp-game start follows initial_strategy_for_exp_game (a -> o_j, b -> p_j, v -> r_j, w -> q_j, escapes -> m1,
-  d -> E_j, g -> c_j, s -> m0, m_j -> m_{j+1}, m_{N-1} -> Y). Under this start the index tie-break gives 41 at N = 2 (not 19,
-  which is the best-reward start of vjfast / L-SI).
-- L-SI's branch is read through a detached worktree in the scratchpad (git worktree add <scratch>/lsi origin/claude/l-si);
-  experiments/red/xcheck.py --lsi <that path> compares switch sequences with si.py. The worktree is not in the repo.
-- vj.py classifies "cycle-creating" by Odd's play (on_play), not by the path bit; its stats line prints cycle-creating /
-  escapes / cycle-node changes per run. In a sink game every switch that closes an even 2-cycle is an escape.
-- gated_bland: ids sink 0; a_i = 5i-4, b_i = 5i-3, d_i = 5i-2, e_i^a = 5i-1, e_i^b = 5i; b_{N+1} = 5N+1. Gate priorities
-  4..4N+2 (even), d_i = 3, underlying shifted by 4N+4. Best-reward start = sigma_0 (e_i^a has the higher even priority).
-- Runtime of vj.py msf on gated_bland: N=10 1.3 s, N=12 6.9 s, N=13 17 s (one valuation per switch, no incremental update).
-- Oink is built (scripts/setup_oink.sh, ~3 min); MSF on tc/tc+/counter_* via si.py was linear or near-linear (sweep in
-  the scratchpad, not pinned: tc N=8 275, tc+ N=10 595; all PGSolver families linear in N).
+- Clocks: my `date -u` runs ~30 min behind the Lead's stamps. Boxes are quoted in the Lead's clock.
+- TRAP (hit three times): `pkill -f PATTERN`, `pgrep -f PATTERN | xargs kill` and `ps aux | grep "[p]at" | xargs kill`
+  kill my own shell when the pattern occurs ANYWHERE in the same shell command (e.g. in a later nohup line). Kill in a
+  call of its own by PID.
+- TRAP: rebuilding an Oink binary while climbs use it kills them (PermissionError on the replaced file).
+- The debug -t -t -t trace of the detector build is too slow for tc+ 12 (n = 1944); tc+ 10 takes minutes.
+- Oink release build prints at -t -t: "best vertices: ... (stable)", "distance k: v ...", "new tangle P (i) (depth d)
+  v->w ... with k escape vertices", "dominion P (depth d) ..."; "REGION"/"SPTL"/"DOM"/"SOLVE"/"DELETE"/"STRADDLE" lines
+  exist only in the detector build. Tangle priority P in "new tangle P" is the top's priority: with injective priorities
+  it names the top (scratchpad dtl/injective.py makes a game's priorities injective, order and parity preserved).
+- zadeh_lb.py's exp-game start follows initial_strategy_for_exp_game; under it the index tie-break gives 41 at N = 2
+  (vjfast/L-SI's best-reward start gives 19).
+- L-SI's branch is read through a detached worktree in the scratchpad (git worktree add <scratch>/lsi origin/claude/l-si).
+- Scratchpad (not in the repo, lost with the container): /tmp/claude-0/-home-user-parity-games-challange/e0836d53-363a-523b-ac4d-a55aa921c6e9/scratchpad:
+  vjfast (L-SI's C++ engine compiled), pgs/ (PGSolver clone d3cd624), dl/ (papers as txt), z_N.pg (zadehexp), dtl/ and
+  dftl/ (all DTL games, traces, climb outputs), oink-dftl-src/build (branch dftl @ ea51834 with counter_dftl restored),
+  oink-a028-build (a028e62), oink-debug (pinned 8fbf0a7 Debug), oink-det-src/oink-det (detector build, recipe below).
 
-## Things only I know (R5)
-- df_fhz.py / df_lp.py / df_search.py / df_fast.py: exact longest DF runs by memoised DFS over all strategies (acyclic
-  improvement graph). df_lp.py needs scipy (pip install scipy worked through the proxy); its printed names are G labels.
-- pad_scheme.py: g > 0 geometric g^(n-i), g <= 0 polynomial (n+1-i)^|g|; the kill scheme is g = -1, W = (3,4,3,1).
-- The DP's longest DF runs are NOT S7 runs (LP infeasible at n = 3); the S7 run is a different DF run. The LP at n = 2 is
-  feasible and vjfast reproduces the 20-switch run with the LP's pads (scaled by 1000, +1).
-- Scratchpad logs: fp_big.log (n = 8..10), scheme*.log (schemes), padfhz*.log (pad hill-climbs), df_*.log (random searches).
+## Detector build recipe (oink-det): copy tools/oink/src, edit src/solvers/dtl.cpp, cmake -DCMAKE_BUILD_TYPE=Debug
+1. best_vertices: after the region loop (`Z |= CurZ; CurZ.reset();` loop, ~line 706) add `bitset RegCopy(Z);`; before
+   `Z.reset();` (~763), when `!changed_V and trace >= 1`, loop over tangles t with tpr[t] != -1 of the player's parity and
+   print "STRADDLE tangle t: v(reg|orphan|out) ..." if some vertex is in RegCopy and another in Z but not RegCopy.
+2. sptl: before `if (closed_region and !W[top])` print "REGION top <label> pr <priority> closed 0/1"; after
+   `if (!V[top] or !R[top]) continue;` print "SPTL top <label>" at trace >= 3.
+3. search_rec, both Dom(V,R) loops: before `X[top] = true;` print "DOM top <label>" at trace >= 3.
+4. search(): before the solve loop (`Solver::solve(v, player, str[v])`) print "SOLVE attractor" at trace >= 3.
+5. attractTangle: before `tpr[t] = -1; // delete the tangle` print "DELETE tangle t" at trace >= 3.
+   Debug build also prints "attracted v by p (via w | forced | via tangle t)" at trace >= 3 and "duplicate tangle" at >= 1.
 
-## Things only I know (R3, S7)
-- experiments/red/gens_red.py friedmann_Gn(n, pads=...) is my own port of Table 4 (ids documented in the docstring); pads =
-  dangling priority-0 Even vertices labelled p_<label>. padded_Gn .. padded5_Gn are the schemes of R3 section 3.
-- Tracing: trace_mi.py (vj.py, slow beyond ~300 vertices); for big instances a scratchpad copy of L-SI's vjfast with a TRACE
-  env var printed every improving edge with its count (vjtrace.cpp, tracefmt.py maps ids to labels and gate states). Not in
-  the repo (it is L-SI's file with four added lines).
-- Lemma D in one line: pads cannot reorder a vertex against anything downstream of it; only route-incomparable vertices can be
-  ordered by pads. The gate closings are route-isolated, the selector chain is not.
+## Tools in experiments/red/dtl/ (what each measures, caveats)
+- dtl_search.py OINK n: hill-climb over games; fitness tangles | unsolved | wrong (verifier failure/error/unsolved;
+  use the debug or detector build for throws) | perhead | perheadsearch | persearch (fooled by equal priorities: use
+  --injective) | prunemono (newly pruned vertices across searches) | dups (needs a debug build) | straddles | alpha
+  (straddle present and lowest region open; detector build) | strch (strategy changes at a recurring (top, set)) |
+  newrecur (new tangle at a recurring pair; counts W-suppressed first extractions too) | maxsets | pairs. Options
+  --loops (self-loop and equal-priority renumbering mutations), --injective, --from game.pg, --eval game.pg, --solver idtl,
+  --out. Flags used: --dtl --no-single --no-wcwc --no-loops (the CHECKER C3 pin).
+- dtl_flips.py: strategy-flip census over random games or random walks from a game (release trace).
+- dtl_fuzz.py: random games on a debug build with -v -t; reports runs without "solution verified" or with throws.
+- dtl_vstar.py: pruned set of the FIRST best_vertices call per search; newly pruned vertices across same-player searches.
+- dtl_strchanges.py DETOINK game: every sptl region (top + attracted) with Even strategies; strategy changes at recurring
+  (top, set); new tangles at recurring pairs; deletions; later-piece split. Needs the detector build at -t -t -t.
+- dtl_mcross.py: (M-cross) on first pieces (restricted to searches whose first pruning result is stable); unrestricted
+  variant shows region changes at X nonempty.
+- dtl_pieces.py: removal order of vertices per search (DOM blocks and -1 cuts, first occurrence); "removed-before set
+  only grows" test. Caveat: the -1 cut lists Z before the recursion processes it, so the order inside Z is coarse.
+- gens_dtl.py: chain n (n - 2 tangles, one search), counter_dftl n / counter_odftl n (van Dijk's generators transcribed,
+  row-identical to the built ones), ladder m (R8 section 10 gadget), n5 (NOTE N5 shape).
+- Other lane tools: vj.py (own VJ engine), zadeh_lb.py (PGSolver lower-bound Zadeh tie-break port, --rev), zadeh_anyorder.py,
+  zadeh_order_climb.py, zadeh_climb_fast.py, search_numbering.py, search_classnum.py, fhz.py, gens_red.py, df_*.py,
+  pad_*.py, antichain_check.py, correspond.py, xcheck.py; check.sh pins (fhz_padded 2 = 16 S7, zadeh_lb N2 = 43 no fixed
+  order, chain 10 = 8 and counter_odftl 3 = 9 tangles when Oink is built, and the older pins). README.md lists them.
 
-## Things only I know (R2)
-- fhz.py: FHZ's "zero-edges" are the bit-0 edges a0, b0, u0, w0 = the COSTLY ones (B0 is made of them); "one-edges" are the
-  0-cost chain edges (the optimum). I first read it the other way and got 0 switches.
-- The parity encoding must share class vertices across entries into a level (class B = nothing, class A = shared even g_i,
-  class C = shared odd o_{i,d}); separate cost vertices per source with equal priority break the lexicographic tie by index and
-  the models disagree (first attempt, caught by the lockstep assert at n=3).
-- fhz.py export prints the start as 'spec:v:w ...' for si.py; for t=1 it equals the best-reward start; for t>1 best-reward
-  takes the last copy, also a zero-edge tree.
-- Speed: my RF driver re-evaluates the whole tree per test (O(|V|)): (7,2,3,3) with 72k tests takes ~1 min; si.py rar on
-  fhz_n5_r2s2t2 (256 vertices) takes minutes per seed.
+## Traps and conventions
+- Oink's parser drops losing self-loops unless --no-loops; every DTL number before 16:02Z was without it (R8 states flags).
+- uintqueue is a STACK: Oink's attractors are depth-first; the newest tangle fired at a pop is explored first.
+- W: one extractTangles per top per search; the "perheadsearch" fitness therefore measures equal-priority tops.
+- A "new tangle at a recurring (top, set)" is not a determinacy break by itself (W-suppressed first occurrence).
 
-## Sources opened (arXiv id or DOI, theorem/section)
 - FHZ 1410.7530 again (R5): Fig. 3 p.9 (the i-th level with r = s = t = 1), section 4 p.8 (randomized counter, bit
   interpretation (b_i, w_{i+1}) in B), Table 1 p.14 (edges and costs) as encoded in fhz.py build.
 - Avis-Friedmann, "An exponential lower bound for Cunningham's rule", arXiv 1305.3944 (PDF opened ~16:20Z): section 3 p.10-11
@@ -186,7 +180,6 @@ N = 3 first restart 167 > 159). Logs: scratchpad anyorder.log, climb_{3,4,5}_s{1
 - L-ALG claude/l-alg 898d02d docs/alg/candidates/C5-DTL.md (sections 0-6) and 549bb34 docs/alg/REPORT-2026-10-15.md
   "DTL attack" table and verdict (read 15:05Z).
 
-## Dead ends
 - DTL staggered gadgets (R8 section 10): escapes to an Odd sink prune the head; closed Even towers are solved at once by
   the dominion attractor; open-by-design levels need an escape above the next top, which the pruning rejects. Rescue
   chains (priority-0 Odd-owned rescue vertices pointing at each other) are all rescued in round 1 because a candidate
