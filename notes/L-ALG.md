@@ -5,9 +5,9 @@
   PROVED; §2.1 soundness PROVED; §2.2 halting PROVED; §2.3 completeness SKETCH with GAP-C; §3 running time (b)(c)(d) PROVED,
   (e) conditional on (a), (a) GAP-A; §4 idtl; §5 gaps; §6 status + evidence). Last push: see git log (claude/l-alg).
 - Lead session for messages: session_014FBi6o334DvwT5Uw2kDfoN. Push: scripts/verify.sh && git push -u origin claude/l-alg.
-- If resumed: (0) The most promising completeness route is DTL-proof.md §2.3 "Route for excluding (α)": prove (r1) the
-  pruning is monotone across searches when no stored tangle straddles, and (r2) the straddle regress is well-founded; then
-  only searches starting with the -1 branch remain for (C-b). (1) GAP-C: try to prove Lemma K by induction over search_rec iterations with the hypothesis Claim F
+- If resumed: (0) Completeness: straddling tangles DO occur (tc+, measured), so (α) cannot be excluded by the regress of
+  DTL-proof.md §2.3; the open step is "an orphan never contains the lowest top's successor" (never observed). (r1)
+  monotonicity of the first pruning across searches holds on all 4,006 games tested and is still worth proving. (1) GAP-C: try to prove Lemma K by induction over search_rec iterations with the hypothesis Claim F
   "nothing learned in iterations ≥ i ⇒ W_p(R_i^#) = ∅" (R^# = R with all edges leaving R deleted); the three piece types
   (S) stable regions, (Z) level-t attractor to X, (P) Dom(prevV) with Q empty must be handled; K5 settles the lowest region
   at X = ∅ except for straddling tangles. (2) GAP-A: bound the number of distinct SCCs extracted at one top; data says ≤ n.
@@ -62,6 +62,11 @@
   opponent's exits to higher regions; the opponent's deviation vertex x is attracted into the region of its LOWEST cover
   unless pr(x) exceeds that cover, which breaks the covering. The only escape from this is a straddling tangle (top absorbed
   elsewhere, lower part opponent-closed), which needs three generations of tangles (§2.3).
+9. Straddle detector (not in the repo; rebuild from this recipe): copy tools/oink/src to a scratch dir, in dtl.cpp add after
+   the region loop of best_vertices (line 706) `bitset RegCopy(Z);` and before `Z.reset();` at 763, when `!changed_V and
+   trace >= 1`, loop over tangles t with tpr[t] != -1 of the player's parity and print "STRADDLE-A tangle t" if some vertex
+   is in RegCopy and another in Z but not RegCopy; build Debug as in item 6; run with -t. tc+ shows ≈ 2N-1 such tangles per
+   run, random games none.
 ### Scripts
 - `python3 -I experiments/alg/dtl_debug_fuzz.py <debug-oink> tools/oink/build/rngame <outdir> N [seed]`.
 - `python3 -I experiments/alg/dtl_pertop.py <debug-oink> game.pg`.

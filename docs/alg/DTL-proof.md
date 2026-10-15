@@ -377,6 +377,14 @@ stable set of the first best_vertices call of a search (∅ when that call retur
 search of the same player, restricted to still-unsolved vertices, in every case (0 violations); the first stable set of a
 search after -1 pieces is NOT comparable (c3: {s, y, z} on a reduced region in search 1 vs {m, z} on the full region in
 search 2), which is why (r1) must be stated per call on the same region.
+Measurement of the (α) precondition (patched debug build, notebook item 9: at every stable pruning round, list the stored
+tangles with vertices both in the regions and in the threshold-loop set outside the regions): tc+ N = 4, 6, 8: 16, 36, 64
+such events over 7, 11, 15 distinct tangles (≈ 2N − 1), every run verified complete; 400 random games (n 6..14): 0 events;
+c3, c4: 0. In the first tc+ event (search 2 of N = 4) the lowest region (priority 4, top Even-3-T) was still closed — its
+top's successor lay inside its own region, not in the straddling tangle's lower part — and the pass learned two new
+tangles. So straddling tangles exist in practice; (α) additionally needs the lowest top's successor inside the orphan,
+which was never observed. The regress route above is therefore not available as stated (straddles do occur); what it
+would have to show is that an orphan never contains the lowest top's successor.
 For (β') (SKETCH). The stored tangle t = bottom SCC of L_k has escapes only in X. By K4, if all pieces in X are of type S
 or Z, X is p-won and so is t ∪ Attr(X) — a p-won set that DTL never solves unless some later piece or search is
 productive; then the search's remaining iterations must produce something new: the obligation is again (C-b). If some
