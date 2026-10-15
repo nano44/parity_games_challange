@@ -532,6 +532,18 @@ Consequence (a5). Under (M-cross), the SCC extracted at τ is a function of (τ,
 number of tangles learned at first-piece tops is at most the number of distinct (τ, S) pairs that occur there. The
 Lead's (D) ("the region sets at a fixed top change only by join/theft/deletion/covering events and are monotone
 between thefts, so O(n) distinct sets per top per level") would then give O(n²) tangles from first pieces per phase.
+Caveat on (M-cross) (18:15Z). One mechanism provably breaks region monotonicity across searches: tangle DELETION. When a
+dominion is solved, every vertex v of it leaves G' and every tangle containing v is deleted at its next use (132-135). A
+region that in s1 attracted such a tangle t as a unit may, in s2, fail to attract the unsolved remainder Y' of U_t by
+vertex rules (Y' is opponent-closed with exits only to the solved set, forgiven, and to escapes in Z), so Y' falls to
+R_rem and the region shrinks; Y' is then learned as its own tangle t' at a lower top (new, since Y' ≠ U_t), and in a later
+search τ's region is S again with t' firing — a new SCC at (τ, S) that Lemma S's step (3) does not exclude (t' was created
+between the occurrences, inside S, at a lower top, in a search where τ's region did NOT contain Y'). The count then
+charges one tangle at (τ, S) to each deleted tangle whose remainder lies in S; a deletion happens once per tangle, so this
+adds at most |T_deleted| ≤ |T| tangles overall — a factor 2 at worst if the charging is injective, which still needs
+proof (a remainder could be split into several new tangles). (M-cross) is therefore to be stated and proved for the
+tangle set restricted to non-deleted tangles, between consecutive searches with no deletion in between, plus the
+deletion charge. Thefts are not a problem for Lemma S (a stolen vertex changes the set S).
 What remains open for (a): (M-cross) itself (evidence: 0 violations of first-stable-set monotonicity on 4,006 games;
 L-RED's 0 strategy differences), (D), and the same statements for later pieces (X ≠ ∅) and the recursion, where the
 consumed set includes X and the argument of (3) needs X to be monotone across searches as well.
