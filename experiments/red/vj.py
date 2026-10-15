@@ -240,6 +240,19 @@ class VJ:
                 best = (k, v, w, lv)
         return best[1], best[2], best[3]
 
+    def pick_most_improved(self, sigma, val, imp):
+        """S7 (docs/si/candidates/S7.md): switch the improving edge maximising |{x : Xi_{sigma[e]}(x) > Xi_sigma(x)}|; ties: the
+        largest new valuation at v; then the smallest (v, w). Returns (v, w, count, index_tie_used)."""
+        best = None
+        for v, w in imp:
+            s2 = list(sigma); s2[v] = w; val2, _ = self.evaluate(tuple(s2))
+            cnt = sum(1 for x in range(self.n) if self.key(val2[x]) > self.key(val[x]))
+            k = (cnt, self.key(val2[v]))
+            if best is None or k > best[0] or (k == best[0] and (v, w) < best[1]):
+                tie = best is not None and k == best[0]
+                best = (k, (v, w), tie or (best[2] if best else False))
+        return best[1][0], best[1][1], best[0][0], best[2]
+
     def initial(self, kind):
         n = self.n
         if kind == "best":          # PGSolver best-reward start as L-SI uses it (stratimpralgs.ml:85-87 via si.py)
@@ -273,7 +286,10 @@ class VJ:
             val, tau = self.evaluate(sigma); imp = self.improving(sigma, val)
             if not imp:
                 return sigma, it, stats
-            v, w, lv = self.pick(sigma, val, imp, most=(rule == "msf"))
+            if rule == "most-improved":
+                v, w, cnt, tie = self.pick_most_improved(sigma, val, imp); lv = ("count", cnt); stats["index_ties"] = stats.get("index_ties", 0) + tie
+            else:
+                v, w, lv = self.pick(sigma, val, imp, most=(rule == "msf"))
             new = list(sigma); new[v] = w; new = tuple(new)
             cyc = self.on_play(sigma, tau, val, v, w)
             val2, _ = self.evaluate(new)

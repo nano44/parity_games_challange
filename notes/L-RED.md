@@ -2,14 +2,18 @@
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead.
 
 ## Resume point
-2026-10-15 ~14:30Z. R1 (MSF killed, 7a7ed5e) done. R2 (S1 Random-Action-Removal killed by FHZ 1410.7530 Thm 6.3 + transfer lemma,
-docs/red/R2-RAR.md, experiments/red/fhz.py) written, kill messaged 14:05Z; pushing now. Larger relation checks done: (8,2,3,2) 400, (10,1,1,1) 1500,
-(6,3,3,3) 300 samples, 0 differences (recorded in R2).
-Box ends ~19:20Z; idle after the push unless the Lead sends more.
-
+2026-10-15 ~15:00Z (my clock; the Lead's stamps run ~30 min ahead). Box 2 (un-parked 12:37Z Lead time, 6 h): R2 F1/F2
+applied (8bb9d22); S7 most-improved attacked: docs/red/R3-S7.md = HELD with Lemmas T and D (count = traffic; downstream
+dominance), the Friedmann G_n port + five pad schemes with traces, the exact obstruction (selector chain upstream-ordered),
+fidelity check vjfast = vj.py, watch item gated_switchbestexp N=6 = 974 (N=7 was still running in the scratchpad, gsb.log).
+If re-woken on S7: design a reset mechanism without Friedmann's selector chain (lower selectors must not route through the
+higher reopened gates): e.g. each gate's exit points to a private copy of the spine above it, or the reset is done by s/r
+only; test with gens_red.friedmann_Gn pads=dict and the scratchpad tracer (vjtrace.cpp = vjfast.cpp + TRACE env, tracefmt.py).
+S5/S6: last hour spent on numbering searches, docs/red/R4-S5S6.md (HELD; AF ordering (1) splits e_i and d_i across
+phases so no renumbering realises it; permutation search: Cunningham 24, 51, 74 at N = 3, 4, 5 vs designer order 38, 121, 324;
+class-structured schemes linear). Tools: search_numbering.py, search_classnum.py. Next if re-woken: a block-order counter.
 ## Queue
-1. Push R2; message the SHA. 2. Optional: a growth run with FHZ's parameter
-scaling (r = t = ceil(log2 n), s = ceil(sqrt(n) log2 n)) for n up to ~16 to show the mean leaving the n^2 trend (slow).
+1. If re-woken: S7 reset-mechanism redesign (resume point) or S5/S6 (paragraph below). 2. Optional: FHZ-scaled growth run for R2 (b).
 
 ## Things only I know
 - L-SI's branch is read through a detached worktree in the scratchpad (git worktree add <scratch>/lsi origin/claude/l-si);
@@ -21,6 +25,15 @@ scaling (r = t = ceil(log2 n), s = ceil(sqrt(n) log2 n)) for n up to ~16 to show
 - Runtime of vj.py msf on gated_bland: N=10 1.3 s, N=12 6.9 s, N=13 17 s (one valuation per switch, no incremental update).
 - Oink is built (scripts/setup_oink.sh, ~3 min); MSF on tc/tc+/counter_* via si.py was linear or near-linear (sweep in
   the scratchpad, not pinned: tc N=8 275, tc+ N=10 595; all PGSolver families linear in N).
+
+## Things only I know (R3, S7)
+- experiments/red/gens_red.py friedmann_Gn(n, pads=...) is my own port of Table 4 (ids documented in the docstring); pads =
+  dangling priority-0 Even vertices labelled p_<label>. padded_Gn .. padded5_Gn are the schemes of R3 section 3.
+- Tracing: trace_mi.py (vj.py, slow beyond ~300 vertices); for big instances a scratchpad copy of L-SI's vjfast with a TRACE
+  env var printed every improving edge with its count (vjtrace.cpp, tracefmt.py maps ids to labels and gate states). Not in
+  the repo (it is L-SI's file with four added lines).
+- Lemma D in one line: pads cannot reorder a vertex against anything downstream of it; only route-incomparable vertices can be
+  ordered by pads. The gate closings are route-isolated, the selector chain is not.
 
 ## Things only I know (R2)
 - fhz.py: FHZ's "zero-edges" are the bit-0 edges a0, b0, u0, w0 = the COSTLY ones (B0 is made of them); "one-edges" are the
@@ -34,6 +47,18 @@ scaling (r = t = ceil(log2 n), s = ceil(sqrt(n) log2 n)) for n up to ~16 to show
   fhz_n5_r2s2t2 (256 vertices) takes minutes per seed.
 
 ## Sources opened (arXiv id or DOI, theorem/section)
+- Avis-Friedmann, "An exponential lower bound for Cunningham's rule", arXiv 1305.3944 (PDF opened ~16:20Z): section 3 p.10-11
+  (succ_prec, Algorithm 2 RoundRobin, "highly depends on the ordering used", Theorem 3), p.13-14 (phases 1-5 of the counter and
+  the ordering (1): {b, d^0, e^1} < {c} < {e^0} < {d^1} < {a}, phase-1 order e_1^1 < d_2^0 < e_2^1 < b_2^1 < b_2^0 < ...),
+  Theorem 4 statement (p.14).
+- Disser-Friedmann-Hopp, "An exponential lower bound for Zadeh's pivot rule", arXiv 1911.01074 v2 (PDF opened ~16:20Z):
+  p.3 (tie-breaking quotes: "cannot be avoided to fix a tie-breaking rule", "not based on exploiting the tie-breaking rule",
+  Friedmann's thesis Cor. 4.79 on instance-tailored tie-breaks); Table 3.1 / Fig. 3.2 located, not read; Thm 6.18 and
+  Definition 6.4 taken from L-SI's S5.md reading, not re-derived.
+- Friedmann 1106.0778 (again, for R3): section 6.4 Table 4 (G_n: players, priorities, successors; iota_{G_n} p.16), Fact 6.1,
+  section 6.5 phases 1-4 (pp.17-21: definitions of b-phase 1..4 strategies, Lemmas 6.8-6.12 statements; proofs skimmed),
+  Lemma 6.3-6.4 (deceleration lane), Lemma 6.5-6.6 (cycle gate states), Thm 6.14 (switch-all >= 2^n on G_n; my port: 26, 62,
+  134, 278, 566 for n = 2..6).
 - Friedmann-Hansen-Zwick, "Random-Facet and Random-Bland require subexponential time even for shortest paths", arXiv 1410.7530
   (PDF opened 2026-10-15 ~13:25Z): section 3 p.7 (how Random-Facet finds shortest-path trees), section 4 pp.7-9 (randomized
   counter, Fig. 3 one level with r=s=t=1, "zero-edges"/"one-edges", gadgets: t copies, paths of length s, r copies), section 5
