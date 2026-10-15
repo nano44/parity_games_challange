@@ -3,7 +3,6 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
 2026-10-15 ~08:05Z. D4 recorded (trunk 1f34679): Q6, Q7, Q4 closed; Q2 closed unless owner objects; Q3 open (owner action); Q5 pending L-LIT T11. Waiting for the owner.
-and docs/owner-desk/LOG.md. First reply to the owner sent: orientation, status, open questions. Waiting for the owner; no timed wakes.
 
 ## Queue
 1. On each owner reply: log verbatim in docs/owner-desk/LOG.md, relay verbatim to the Lead (session_014FBi6o334DvwT5Uw2kDfoN).
