@@ -106,3 +106,19 @@
 - 13:52Z RESULTS R3 LANDED (original Random-Facet lower bound on parity games), CHECKER C2 PASS 068f9de, entry with N-2/N-3 wording only. Follow-ups: L-RED remove 'unrefereed' lines in R2-RAR.md; L-LIT fix T13 citation; fhz.py relation under python3 -I.
 - 13:57Z L-ALG end-of-box (898d02d, merged): DTL survives all; van Dijk slides say path-based variants vulnerable to a TC variant -> L-ALG redirected to rebuild it.
 - 14:02Z L-RED box3: S7 not killed; reduction to question DF (downstream-first runs). L-RED construct box (6h), L-SI proof direction.
+
+## Pre-compaction snapshot 2026-10-15 14:05Z (Lead ctx 680k)
+- Owner rulings today: D3 OWNER-DESK (session_01Eq99qsTJBiTh6xLzwCPtqv), D4 Q2-Q7, D5 aim M4 (no "unlikely"), D6 Q8(a) algorithm lanes,
+  D7 Q9(a) continue spend despite weekly warning (seven_day allowed_warning; resets 2026-10-21 21:00Z; stop on overage per D1).
+- Results: R1 L4, R2 T-A1, R3 original Random-Facet lower bound (landed 13:52Z, CHECKER C2 PASS 068f9de). Dead ends DE1-DE6.
+- Working lanes (cap 5 counts lanes): L-ALG (session_01WN44zjFXZSqaL5SwsoDn7d, box to 21:55Z: attack DTL via van Dijk's
+  "VULNERABLE to a different version of the TC game" hint), L-SI (session_01HnGDSEHG3NHszV1y8ND6BF, box to ~22:10Z: S7 step-2 data,
+  proof attempt on question DF), L-RED (session_017WLo5xfMxRZ4f6n2Su6274, 6h DF construction box from 14:00Z), L-LOWER
+  (session_0153E4mCB2wqi65xdfpxozfK, T-L2 box to 20:36Z).
+- Idle/parked: REFEREE, REFEREE-2, CHECKER, L-LIT, L-ATTR, L-STRUCT, L-COMP, HUMAN-DESK, OWNER-DESK (idle between owner messages).
+- Live algorithm leads: S7 most-improved (question DF: exponential downstream-first run exists? L-RED constructs, L-SI proves);
+  DTL (Oink van Dijk variant; C5-DTL.md). S5/S6 held, not defended.
+- Pending small items: merge l-red 3bcb4d9 (R2 wording, fhz.py -I fix); L-LIT to correct T13 REFEREE-2 citation on next task;
+  T-ALG1 (psolC complete on Strahler-1) deferred for refereeing.
+- Lead misses today: CI numpy/user-site (02:10Z); cache-TTL wake advice (04:03Z); stale NOW In-flight (09:50Z); cap count (11:08Z);
+  first read counted as signature in L21 / C2 brief (13:41Z).
