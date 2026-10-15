@@ -6,6 +6,7 @@
 | gate.py | generic gate relabelling of any sink game with designer labels per Even edge; demo: MSF and LSF both take 2^N - 1 on G_N with suitable labels |
 | fhz.py | FHZ 1410.7530 G_{n,r,s,t} (weighted) + its sink-parity encoding + lockstep Random-Facet driver; `lockstep`, `lockstep3`, `relation`, `table`, `export` (report docs/red/R2-RAR.md) |
 | xcheck_mi.py, trace_mi.py, search_pads.py | S7 (most-improved): fidelity check against vjfast and si.py; labelled trace with counts; random/hill-climb search over pad schemes (report docs/red/R3-S7.md) |
+| search_numbering.py, search_classnum.py | S5/S6: hill-climb over vertex permutations / class-structured numberings, scored by vjfast zadeh or cunningham (report docs/red/R4-S5S6.md) |
 | correspond.py | MSF on gated_bland N == Bland's rule on DLMM's G_N, switch for switch |
 | xcheck.py | validation of vj.py: brute force over Odd's counterstrategies, Zielonka, verify.py, and (with --lsi DIR) si.py |
 | check.sh | self-check run by scripts/verify.sh (pins the counts and the instances) |

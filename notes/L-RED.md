@@ -9,7 +9,9 @@ fidelity check vjfast = vj.py, watch item gated_switchbestexp N=6 = 974 (N=7 was
 If re-woken on S7: design a reset mechanism without Friedmann's selector chain (lower selectors must not route through the
 higher reopened gates): e.g. each gate's exit points to a private copy of the spine above it, or the reset is done by s/r
 only; test with gens_red.friedmann_Gn pads=dict and the scratchpad tracer (vjtrace.cpp = vjfast.cpp + TRACE env, tracefmt.py).
-S5/S6 untouched (the Lead's item 3); first tries are in the S5/S6 paragraph below.
+S5/S6: last hour spent on numbering searches, docs/red/R4-S5S6.md (HELD; AF ordering (1) splits e_i and d_i across
+phases so no renumbering realises it; permutation search: Cunningham 24, 51, 74 at N = 3, 4, 5 vs designer order 38, 121, 324;
+class-structured schemes linear). Tools: search_numbering.py, search_classnum.py. Next if re-woken: a block-order counter.
 ## Queue
 1. If re-woken: S7 reset-mechanism redesign (resume point) or S5/S6 (paragraph below). 2. Optional: FHZ-scaled growth run for R2 (b).
 
@@ -45,6 +47,14 @@ S5/S6 untouched (the Lead's item 3); first tries are in the S5/S6 paragraph belo
   fhz_n5_r2s2t2 (256 vertices) takes minutes per seed.
 
 ## Sources opened (arXiv id or DOI, theorem/section)
+- Avis-Friedmann, "An exponential lower bound for Cunningham's rule", arXiv 1305.3944 (PDF opened ~16:20Z): section 3 p.10-11
+  (succ_prec, Algorithm 2 RoundRobin, "highly depends on the ordering used", Theorem 3), p.13-14 (phases 1-5 of the counter and
+  the ordering (1): {b, d^0, e^1} < {c} < {e^0} < {d^1} < {a}, phase-1 order e_1^1 < d_2^0 < e_2^1 < b_2^1 < b_2^0 < ...),
+  Theorem 4 statement (p.14).
+- Disser-Friedmann-Hopp, "An exponential lower bound for Zadeh's pivot rule", arXiv 1911.01074 v2 (PDF opened ~16:20Z):
+  p.3 (tie-breaking quotes: "cannot be avoided to fix a tie-breaking rule", "not based on exploiting the tie-breaking rule",
+  Friedmann's thesis Cor. 4.79 on instance-tailored tie-breaks); Table 3.1 / Fig. 3.2 located, not read; Thm 6.18 and
+  Definition 6.4 taken from L-SI's S5.md reading, not re-derived.
 - Friedmann 1106.0778 (again, for R3): section 6.4 Table 4 (G_n: players, priorities, successors; iota_{G_n} p.16), Fact 6.1,
   section 6.5 phases 1-4 (pp.17-21: definitions of b-phase 1..4 strategies, Lemmas 6.8-6.12 statements; proofs skimmed),
   Lemma 6.3-6.4 (deceleration lane), Lemma 6.5-6.6 (cycle gate states), Thm 6.14 (switch-all >= 2^n on G_n; my port: 26, 62,
