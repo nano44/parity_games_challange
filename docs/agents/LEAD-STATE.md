@@ -164,3 +164,4 @@
 - 18:04Z L-ALG 28d8c00 (Lemma D first pieces; later pieces carry the quadratic growth) + L-RED d9f695e (deletion ratio 0) merged. Battleground: later pieces X nonempty. Sent to L-RED.
 - 18:06Z C3c a72db07 merged: §1.0 PASS. N-1..N-4 to L-ALG with next interim reply (N-3 before referees).
 - 18:08Z L-ALG 272b303: piece refinement fails on tc+; GAP-A frontier = re-cut later pieces. Candidate invariant to L-RED. L-ALG: apply C3c notes then park.
+- 18:09Z L-ALG parked 8f2cb45: determinacy any X = step (3) only; break event to L-RED. C3c N-notes still to apply at resume.
