@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Free-form hill-climb over small parity games maximising Oink DTL's learned-tangle count (L-RED, DTL box).
 Fitness = tangles found by `oink --dtl --no-single --no-wcwc` (raw solver, no preprocessing). Mutations: add/remove an edge,
-change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|perhead|perheadsearch] [--injective] [--out best.pg]"""
+change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|perhead|perheadsearch] [--injective] [--from game.pg] [--out best.pg]"""
 import sys, os, random, subprocess, tempfile, time, re
 oink, n = sys.argv[1], int(sys.argv[2]); arg = lambda k, d: type(d)(sys.argv[sys.argv.index(k) + 1]) if k in sys.argv else d
 steps, seed, maxpr = arg("--steps", 20000), arg("--seed", 0), arg("--maxpr", 2 * int(sys.argv[2])); rng = random.Random(seed)
@@ -59,6 +59,12 @@ def mutate(g):
 
 
 t0 = time.time(); g = random_game()
+if "--from" in sys.argv:      # start from a given game (perturbation search); n is taken from the file
+    pr, ow, succ = [], [], []
+    for line in open(sys.argv[sys.argv.index("--from") + 1]):
+        m = re.match(r"^(\d+)\s+(\d+)\s+([01])\s+([\d,]+)", line.strip())
+        if m: pr.append(int(m.group(2))); ow.append(int(m.group(3))); succ.append({int(x) for x in m.group(4).split(",")})
+    n = len(pr); maxpr = max(maxpr, max(pr)); g = (pr, ow, succ)
 while evenmin and g[1].count(0) < evenmin * n: g = random_game()
 cur = score(g); best = (cur, g)
 for i in range(steps):

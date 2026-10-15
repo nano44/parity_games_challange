@@ -186,6 +186,65 @@ gives DTL a renewable theft: the part of Lemma M that rules it out is (M1)+(M3),
 absent during a phase. The "different version of the TC game" van Dijk's slides mention would have to attack ptl/rtl's
 two-sided decompositions, not dtl's; for dtl the only opponent action is the dominion removal, at most n events.
 
+## 6. Oink's dftl branch: counter_dftl and counter_odftl (Lead 15:45Z, L-LIT T16)
+Built from github trolando/oink branch dftl (tip ea51834, 2024-06; worktree + cmake in the scratchpad, same flags as
+scripts/setup_oink.sh) with src/tools/counter_dftl.cpp restored from a028e62 (it is deleted at the tip) and the branch's
+counter_odftl.cpp (d54dfad). Both generators transcribed to experiments/red/dtl/gens_dtl.py (counter_dftl n,
+counter_odftl n; row-identical to the built generators' output at N = 3, 6; only the "parity K;" header differs). Pinned
+8fbf0a7 --dtl / --idtl with -v (Oink verifies the solution) on N = 1..20, and the branch build's --dftl, --odftl, --dtl on
+N = 1..12:
+| N | counter_dftl: dtl = idtl tangles (iterations) | dftl (tip) | odftl | counter_odftl: dtl = idtl | dftl (tip) | odftl tangles (iterations) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 5 (2) | 4 | 4 | 5 (2) | 5 | 6 (2) |
+| 2 | 7 (2) | 6 | 6 | 7 (2) | 8 | 14 (4) |
+| 3 | 9 (2) | 8 | 8 | 9 (2) | 11 | 28 (7) |
+| 4 | 11 (2) | 10 | 10 | 11 (2) | 14 | 52 (11) |
+| 6 | 15 (2) | 14 | 14 | 15 (2) | 20 | 158 (26) |
+| 8 | 19 (2) | 18 | 18 | 19 (2) | 26 | 470 (62) |
+| 10 | 23 (2) | 22 | 22 | 23 (2) | 32 | 1352 (146) |
+| 12 | 27 (2) | 26 | 26 | 27 (2) | 38 | 3770 (349), 2.2 s |
+| 16, 20 | 35, 43 (2) | | | 35, 43 (2) | | |
+Every run "solution verified", all vertices solved, dtl wall time below 10 ms at N = 20. DTL learns exactly 2N + 3
+tangles in 2 iterations on both families (idtl the same); it is neither wrong nor super-polynomial here. ODFTL
+(one-player distraction-free TL, the a028e62 algorithm kept under that name at the tip) is exponential on counter_odftl
+(iterations 2, 4, 7, 11, 17, 26, 41, 62, 97, 146, ..., 349 at N = 12: ratio ~1.5-1.6, Fibonacci-like) and linear on
+counter_dftl; the tip's two-player DFTL is linear on both (1 iteration). So the branch's counterexample is the pair
+(ODFTL, counter_odftl), as the fix commit d54dfad says ("Fix counter_odftl to have a tiny tangle of the opponent after
+the distraction").
+What the generators are built to break (dftl.cpp header, branch tip lines 19-48, read): DFTL's loop takes V = all
+p-priority vertices, decomposes into regions headed by V top-down, learns tangles in closed regions, and "if no region is
+closed, we assume that 'surely' the lowest top vertex is distracting, so we remove that vertex from V"; V is reset at
+every iteration. The generator (comments in counter_odftl.cpp): an Odd dominion (top 0, "first [distracted] tangle" 1,
+barrier 2, second tangle 3/4), Even's "distracted vertex" 5 / "distraction" 6 / "dominant" 7, and per level i two
+Even-owned distracted vertices of even priority piv - 2i (edges to the two Odd tangles and to the level's distraction),
+a distraction of even priority piv + 8 + 2i whose only way on is the level's dominant vertex of odd priority one higher,
+behind a tiny Odd tangle of priority 1 (d54dfad). The high even distractions head the top regions and are never closed;
+DFTL therefore removes the LOWEST tops (the distracted vertices) one at a time, the regions re-form with one vertex less,
+and V is reset at the next iteration: the removals are relearned in every iteration with a different vertex set, the
+Fibonacci-like growth. DTL's pruning is the opposite design: a distraction is a p-vertex with no good path (the high
+distractions here, whose only continuation is a higher Odd priority, are pruned at the first round), the surviving set is
+a greatest fixpoint, monotone across searches (M2), never reset. The author's own counterexample thus attacks exactly
+the ingredient DTL replaced, and in Lemma M's terms it is (M2) that makes it harmless: on these families dtl's V* is
+stable after one pruning and the 2N + 3 tangles are the Odd tangles' per-level copies learned once each.
+Perturbation search from counter_dftl N = 6 (32 vertices) under dtl (fitness = tangles, 40,000 single mutations):
+PERT-PLACEHOLDER
+Other games on the branch: none (the branch's diff against 8fbf0a7 is the solver, the two generators, CMake and README).
+
+## 7. The universal-tree angle (Lead 15:50Z: van Dijk's ISoLA 2024 closing slide, "learning tangles moves vertices along the universal tree")
+(b)-answer, Lead reading. DTL's state is a set of tangles (vertex sets with a strategy), not a labelling of vertices by
+positions in a tree, and nothing in dtl.cpp compares or lifts per-vertex values: regions are attractors over the whole
+subgame, a tangle is used as a unit, and the dedup is by vertex set. So the quasi-polynomial universal-tree lower bounds
+(Czerwinski et al. 2019, for separating automata / per-vertex monotone labellings read along paths) do not transfer by
+any reduction I can state: a bottom SCC is not a tree position, and DTL solves tc, which the progress-measure solvers
+in Oink treat as quasi-polynomial, with 2N + 1 tangles. Where a tuple order DOES appear in DTL is section 5(a): the pop
+order of a region is the lexicographic order of pusher chains, tuples of (layer, slot) of length up to n, and every
+strategy change at a vertex is a lexicographic descent of such a tuple. A proof of the tangle bound will have to count
+those descents, and that count has exactly the shape of a universal-tree argument (how many times can a tuple of
+length d over [n] decrease lexicographically when each decrease is caused by one of polynomially many events?); if the
+events can be chained, the count could be n^{O(log n)} rather than polynomial, which would make DTL quasi-polynomial
+in the tangle count without being a universal-tree walker in the separating-automaton sense. (a)-answer: no family was
+built that forces DTL along a tree; the search for self-firing chains at one head (section 5(a)) is the attempt.
+
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.
 - No Python port of dtl (Oink's trace sufficed: every tangle, strategy, escape and pruning round is printed).
