@@ -474,6 +474,21 @@ pruning result and the first DOM removal, last pass per top) and compares consec
   route through (M-cross) at X empty proves it only for the rare X-empty first pieces; the statement to prove is the
   one measured: same (top, vertex set) implies same strategies whatever X was.
 
+Third DTL box (Lead 18:02Z, 2 h): the nested-tangle shape and the deletion ratio. End state of the Lead's item 1 = a new
+tangle learned at a (top, region set) pair that occurred before. dtl_strchanges.py now counts that over ALL sptl regions
+(the "new tangle" line that follows a block's REGION line is charged to that block) together with DELETE events:
+| game | new tangles at a recurring (top, set) | deletions | ratio |
+| --- | --- | --- | --- |
+| tc+ 4, 6, 8 | 0, 0, 0 | 24, 48, 80 | 0 |
+| evolved n = 24 (injective) | 0 | 57 | 0 |
+| perturbed counter_dftl 6 / counter_odftl 6 / tc+ 3 (injective) | 0 / 0 / 0 | 9 / 58 / 82 | 0 |
+So no deletion ever produced a new SCC at a recurring pair and the deletion route's counter seed (ratio > 1) is absent.
+Note on the nested-tangle end state as stated (theft of a t'-vertex v, later τ's region again S ⊇ U_t): with U_t' ⊆ S and v
+stolen by a higher top, S cannot recur at τ while heads only move up (M3); it can recur only in pieces with X nonempty,
+where regions are not monotone across searches (the (M-cross) paragraph above). Climbs with fitness = new tangles at a
+recurring pair (detector build, self-loop and renumbering mutations; free n = 12, 16; from tc+ 4 and the perturbed
+counter_odftl 6): NEWRECUR-PLACEHOLDER
+
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.
 - No Python port of dtl (Oink's trace sufficed: every tangle, strategy, escape and pruning round is printed).
