@@ -148,3 +148,4 @@
 - 16:47Z L-ALG interim 11fbb49: soundness/halting/(b)-(e) proved, completeness GAP-C, tangle count GAP-A. GAP-C candidate shape routed to L-RED.
 - 16:50Z R8 §9-10 1a9ac0f merged: ladders v1/v2 no hit (walls: pruning below head priority; dominion attractor with tangles). L-RED closed the (E)/(P) phase; GAP-C message likely crossed -- waiting for its reply, not resending.
 - 17:01Z R8 §11 926d7ba merged: GAP-C no hit (debug fuzz 12k, 7 climbs, all 0). L-RED parked. C-a/C-b readings + §10 requirement forwarded to L-ALG.
+- 17:03Z hourly sweep: no overage (seven_day warning). L-SI 714k idle, handover pushed, final report pending (wrap-up by 18:00Z); L-LOWER 370k idle, report ~19:30Z; L-ALG working. No exceptions.
