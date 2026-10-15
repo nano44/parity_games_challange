@@ -153,3 +153,4 @@
 - 17:21Z L-ALG 6bb5d43 merged. L-RED unparked 2h for (alpha)/(beta'), (r1), GAP-A. REFEREE read deferred to end of proof box (23:50Z). T-ALG1(a) stays deferred.
 - 17:29Z L-ALG 8cc7fee: straddles occur on tc+ (~2N-1), (alpha) needs containment of lowest top's successor in orphaned part; (r1) data 4,006 games monotone. L-ALG out of ideas -> parked mid-box; straddle lead sent to L-RED. Owner asked 'promising?': answered (best lead, not a result; GAP-A decisive).
 - 17:31Z R8 §12 73da06b merged (no hit). L-RED redirected to GAP-A str-change measurement + (alpha) containment to 19:30Z.
+- 17:40Z L-ALG ccff864: C3 fixes to §0, --no-loops re-runs clean (41,684 canonical games + 20,000 debug fuzz with self-loops). Late by 90 min: L-ALG had not read notifications during proof work (Lead miss to prevent: ask lanes to read notifications at each push). CHECKER C3b re-check started.
