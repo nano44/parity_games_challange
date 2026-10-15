@@ -545,7 +545,10 @@ proof (a remainder could be split into several new tangles). (M-cross) is theref
 tangle set restricted to non-deleted tangles, between consecutive searches with no deletion in between, plus the
 deletion charge. Thefts are not a problem for Lemma S (a stolen vertex changes the set S).
 What remains open for (a): (M-cross) itself (evidence: 0 violations of first-stable-set monotonicity on 4,006 games;
-L-RED's 0 strategy differences), (D), and the same statements for later pieces (X ≠ ∅) and the recursion, where the
+region part tested with experiments/alg/dtl_regions_monotone.py on the debug trace — for consecutive same-player searches
+whose first best_vertices call is stable, every first-piece top stays a top and its region minus solved vertices lies in
+the union of its own and the higher tops' later regions: 0 violations on 1,000 random games and tc+ N = 4, 6, 8 (which
+contain straddling tangles) and c3, c4; L-RED's 0 strategy differences), (D), and the same statements for later pieces (X ≠ ∅) and the recursion, where the
 consumed set includes X and the argument of (3) needs X to be monotone across searches as well.
 Data for the shape of (a) (experiments/alg/dtl_pertop.py on the debug trace; a tangle's top = its maximum-index vertex):
 | tc+ N | tangles | iterations | distinct tops | max tangles at one top | tops with 1 tangle |
