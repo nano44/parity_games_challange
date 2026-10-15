@@ -8,6 +8,10 @@ R2's parity encoding of FHZ's one-player counter G_{n,1,1,1} with linear pads W 
 Zielonka, strategies verified. Question DF: longest DF run on G_{n,1,1,1} exact 5, 20, 53, 124, 269 (n = 1..5). Reported 16:50Z. Then S5/S6 on the FHZ encoding: HELD (docs/red/R6-S5S6-fhz.md): numbering searches quadratic;
 index-fair rules must take the improving higher bit that the counter keeps live during the lower count. Next if asked: a proof of the recurrence (FHZ-style
 phase analysis for the S7 order), or the "DF + pads" reduction as a general theorem.
+## Resume point: PARKED (fourth DTL box ended ~19:00Z my clock; R8 section 12 complete)
+Tools added: dtl_pieces.py (removal-order invariant: violated everywhere), dtl_strchanges.py later-piece split and
+newrecur (corrected: 1 and 7 cases, all W-suppressed first occurrences, 0 strategy changes), fitnesses maxsets/pairs/
+newrecur. The -t -t -t debug trace is too slow for tc+ 12.
 ## Resume point: PARKED (last end-of-box 18:00Z my clock, R8 at a44030f)
 Latest tools: dtl_strchanges.py (GAP-A: 0 strategy changes at a recurring (top, region set), all pieces), dtl_mcross.py
 ((M-cross): holds at X-empty first pieces, which are rare; regions of the same top differ at X nonempty on tc+ without
