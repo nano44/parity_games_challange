@@ -28,5 +28,11 @@ for f, kf in exp.items():
     ne.MODE = "h"; k2, undec2, verd2 = alglib.k_needed(g, ref, 1, with_strat=True)
     assert k2 == 1 and not verd2["verify"], (f, k2, undec2)
     print(f"{f}: C1 undecided at k={kf} ({undec[kf]}/{g.n}), solved at k={kf+1}; C2 solves at k=1; strategies verified")
+import strfam
+for s_, kf in ((2, 1), (3, 2), (4, 3)):
+    g = strfam.S(s_); ref = zielonka.solve(g)
+    ne.MODE = "h"; k, undec, _ = alglib.k_needed(g, ref, kf)
+    assert k == kf and all(u == g.n for u in undec[:kf]), (s_, k, undec)
+    print(f"sibling-trap family S_{s_} (n={g.n}): C2 decides nothing for k < {kf}, solves at k = {kf}")
 print("ALG-CHECK PASS")
 PY
