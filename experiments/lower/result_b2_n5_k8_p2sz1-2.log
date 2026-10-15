@@ -5,3 +5,5 @@ round 2: subset 1052 nodes (212 games), 835736 clauses -> SAT [6.9s]
    sample of 2000000 random 5-vertex games: 632989 failing (in the chunks seen) [3.8s]
 round 3: subset 2052 nodes (412 games), 1629480 clauses -> SAT [35.5s]
    sample of 2000000 random 5-vertex games: 217600 failing (in the chunks seen) [4.1s]
+round 4: subset 3052 nodes (612 games), 2422688 clauses -> UNSAT [2035.5s]
+RESULT: no program with 8 Cpre gates solves all two-player Büchi games with <= 5 vertices (UNSAT on a successor-closed subset): B_2(5) >= 9

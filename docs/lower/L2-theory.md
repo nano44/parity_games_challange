@@ -123,6 +123,11 @@ games found by CEGAR against random 5-vertex games (2·10^6 per round, 200 added
 5 708 440 clauses; UNSAT by CaDiCaL 1.5.3 in 1 733 s (result_b2_n5_k8.log) and by Glucose 4 in 3 009 s
 (result_verify_n5_k8.log; `python3 -I verify_core.py b2_n5_k8.json 8 Glucose4`). No full sweep is involved: an UNSAT core
 is a proof whatever the origin of its games (projection, R6). The core is not minimised (one UNSAT call costs ~30 min).
+**Claim C2' (the count mechanism persists at n = 5; machine-checked, one solver).** Restricted to games with |P_2| ∈ {1, 2}
+(any owners, ≤ 5 vertices), 8 gates still do not suffice: cegar5two.py with P2SIZES=1,2 (subset: Q_1, the four-vertex core
+games with |P_2| ∈ {1, 2}, and 5-vertex games with |P_2| ∈ {1, 2} sampled at random), UNSAT at round 4 on 612 games
+(3 052 nodes, 2 422 688 clauses, 2 036 s; result_b2_n5_k8_p2sz1-2.log, b2_n5_k8_p2sz1-2.json). The single-count class
+|P_2| = 1 at k = 8 is in §6 (a SAT candidate there needs the restricted full sweep, sweep_p2.py, before it counts).
 So B_2(5) − (2·5 − 2) ≥ 1, as at n = 4: the gap does not close. Whether it GROWS (B_2(5) ≥ 10) is the k = 9 run (§6).
 
 ## 5. Goal (b): a family, and what is and is not known about growth
