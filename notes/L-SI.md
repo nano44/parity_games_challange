@@ -104,3 +104,62 @@ and the level of an improving edge are both read at the first-difference positio
 "level decreasing in l while the sign follows B_n": an even designer vertex on one route makes the edge always improving,
 an odd one never, and a loop back to v makes it cycle-creating with the dominator's parity deciding. Not built; the
 gadget-chain search (famsearch.py --seed-template dlmm) and the escapes objective stand in for it.
+
+## MSF bound argument, step by step (for L-RED and referees; 11:35Z). Each step is marked PROVED (here), CITED, or OBSERVED.
+Setting. G a parity game, priorities made injective by rank (p' = 2·rank + parity; the game's winner on every cycle is
+unchanged: PROVED, since the max-priority vertex of a cycle keeps its parity and order). VJ valuations Ξσ(v) = (c, P, ℓ):
+cycle node c (the most relevant vertex on the cycle Odd's optimal counterstrategy τσ reaches from v), path set P (vertices
+on the path more relevant than c), length ℓ. Order ≺ as Friedmann 1106.0778 section 3 (CITED). Sink game: Friedmann
+Definition 5 (1-sink, sink-seeking) (CITED); in a sink-seeking run every cycle node is the sink.
+S1 (CITED, Friedmann Thm 3.2 = [VJ00]): if σ' = I(σ) for an improvement policy I (in particular a single improving switch),
+    then Ξσ(u) ⪯ Ξσ'(u) for every u, with strict inequality somewhere.
+S2 (definition). An improving edge (v, w) of σ has level r = the rank of the first difference between Ξσ(w) and Ξσ(σ(v)):
+    if the cycle nodes differ, the level class is (3, max rank of the two cycle nodes); else (2, max rank in P(w) Δ P(σ(v)));
+    else (1, 0). MSF switches one improving edge of maximal level (ties: smallest v, then w). The switch is cycle-creating
+    if v ∈ P(w).
+S3 (Claim F, OBSERVED, proof sketch): let (v, w) be a non-cycle-creating improving edge of level (2, r) (same cycle node c
+    for w and σ(v); path sets agree above r), σ' = σ[v→w]. Then for every u: Ξσ'(u) has cycle node c(u) unchanged and
+    P'(u) agrees with P(u) on all ranks > r.
+    Sketch. (i) Let τ = τσ (optimal counter for σ). Under (σ', τ) the play from u is either the old play (if it never
+    visits v: value unchanged) or P_u · v · (play from w under (σ, τ)) where P_u is the old play prefix from u to v; the
+    play from w under (σ, τ) does not visit v (v ∉ P(w) and v is more relevant than ... [GAP G1: v ∉ P(w) says v is not on
+    w's path AMONG THE VERTICES MORE RELEVANT THAN c; if rank(v) < rank(c) the vertex v could lie on w's path without
+    appearing in P(w). In a sink game every non-sink vertex is more relevant than the sink, so G1 is void there; in general
+    the claim must be stated with "v not on w's play" instead of v ∉ P(w)]; and it does not re-enter P_u (else it would
+    reach v along P_u). So the (σ', τ)-value of u is P_u ∪ {v} ∪ P(w) with cycle node c: it agrees with the old value
+    P_u ∪ {v} ∪ P(σ(v)) above r. (ii) Odd's optimum for σ' is ≤ this value (τ is one Odd strategy; needs: the (σ',τ) play
+    value is ≥ Ξσ'(u) by optimality of τσ' [PROVED by definition of the optimal counterstrategy]). (iii) Ξσ'(u) ≥ Ξσ(u) by S1.
+    (iv) In a lexicographic order, a value between two values that agree above r (same cycle node, same bits above r)
+    agrees with them above r [PROVED: the first difference of the bounds, if any, is at rank ≤ r]. Lengths are below all
+    path bits in the order [CITED, definition of ≺]. Data: 0 violations in ~24,000 non-cycle-creating MSF switches
+    (freeze_test.py; random and 1-sink games, n ≤ 9).
+S4 (PROVED from S1, S3): in a stretch of a run with no cycle-creating switch, no cycle node changes (S3 with the cycle
+    component), and a switch at level (2, r) changes no bit above r of any vertex.
+S5 (PROVED from S3, S4, S1): in such a stretch, after a level-(2, r) switch at v, bit r of Ξ(v) is the good value (the
+    first difference of Ξσ(w) over Ξσ(σ(v)) is at r in Even's favour; Ξσ'(v) = ext_v(Ξσ'(w)) with Ξσ'(w) ⪰ Ξσ(w) agreeing
+    above r, so its bit r is at least as good; v itself has rank ≠ r [PROVED in sink games: rank(v) = r would put v on
+    one of the two paths, i.e. on its own play, a cycle through v other than the sink, contradicting sink-seeking;
+    OBSERVED only in general]) and it stays good until a switch at a level > (2, r): lower switches do not touch bit r
+    (S4); same-level switches elsewhere change Ξ(v) only upward (S1) with bits above r fixed (S4), so bit r cannot
+    worsen.
+S6 (PROVED from S4): a switch at a level < (2, r) never creates a level-(2, r) improving edge: the improving status at
+    level (2, r) of (v, w) depends only on bits ≥ r of Ξ(w) and Ξ(σ(v)) [PROVED: by S2, with agreement above r required
+    and the comparison at r], which lower switches do not change (S4); σ(v) changes by a lower-level switch at v only to a
+    w'' agreeing with σ(v) at all ranks ≥ r [PROVED: that is what level < (2, r) means].
+S7 (PROVED from S5, S6 and the MSF order): in a stretch with no cycle-creating switch, MSF exhausts level (2, R) (R the
+    top rank) with at most n switches (each vertex at most once, S5), never returns to it (S6), then exhausts (2, R-1)
+    with at most n switches, and so on: at most n per level, at most n(n+1) + (level-(1,0) switches) in the stretch.
+    [GAP G2: level (1, 0) switches (length only). OBSERVED small; PROVED bound: none written. Sketch: with all path sets
+    frozen (S4 with r = -1), a length-only switch at v strictly improves ℓ(v) in Even's direction, ℓ ∈ [0, n], and other
+    vertices' lengths move monotonically by S1 with path sets fixed, so ≤ n per vertex, ≤ n² in the stretch.]
+S8 (PROVED): a cycle-creating switch at v is improving iff the most relevant vertex d of (P(w) \ P(σ(v))) ∪ {v} ... more
+    precisely of the cycle C through v and w under (σ', τσ), is even [sketch: P(w) = C-part ∪ P(v)-part disjointly, the
+    comparison with P(σ(v)) is decided at the max of the cycle part]. After it either some vertex's cycle node changes
+    (CYCLE EVENT) or none does (ESCAPE).
+S9 (PROVED): cycle events ≤ n·(number of distinct cycle nodes) ≤ n²: a vertex's cycle node strictly improves in the
+    reward order at each change (S1).
+S10 (PROVED from S7-S9, modulo G1, G2): #switches ≤ (n(n+1) + n² + 1) · (n² + X + 1), X = number of escapes.
+    [Lead/REFEREE wording: MSF is polynomial iff X is polynomially bounded.]
+OBSERVED about X: hill-climb maxima of X: 2, 5, 5, 7, 10, 14 (n = 5..10, small search), 14 at n = 8 with a larger search;
+one vertex escaped 7 times in an 8-vertex game (out/adv_msf-esc2_n8.pg), so repeated escapes at one vertex are possible.
+No argument bounds X. This is the open point.
