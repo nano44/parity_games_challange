@@ -136,3 +136,4 @@
 - 15:31Z L-LIT T16 interim: Oink branch origin/dftl has counter_dftl (a028e62, 2021) and counter_odftl (2024); DTL was 'distraction-free TL' before 1ba8b0a rename; README counter_dtl predates rename, no source. Forwarded to L-RED as top priority (build vs 8fbf0a7, run dtl/idtl N=1..20 with verify).
 - 15:32Z L-ALG handover 1017502 merged; L-ALG parked; successor spawn held until L-RED reports on counter_dftl/odftl.
 - 15:34Z T16 merged (3874a1e): step 3 SIGNED w/ 4 caveats; L-LIT parked; optional owner Q10 (2024 chapter copy) listed in NOW.
+- 15:35Z T16 addenda 4f61b4c merged: VULNERABLE slide = RTL/PTL (tc+); counter_dtl (2021) targets current DTL, never committed; dftl-branch generators target DFTL. Told L-RED counter_dftl may descend from counter_dtl.
