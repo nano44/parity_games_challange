@@ -92,6 +92,11 @@
    trace >= 1`, loop over tangles t with tpr[t] != -1 of the player's parity and print "STRADDLE-A tangle t" if some vertex
    is in RegCopy and another in Z but not RegCopy; build Debug as in item 6; run with -t. tc+ shows ≈ 2N-1 such tangles per
    run, random games none.
+10. Piece printer (patched build, same scratch copy as item 9): at the top of search_rec's `while (true)` (dtl.cpp 850) add
+    `if (trace >= 1) { logger << "ITER depth " << depth << " R:"; for (v in R) logger << " " << label_vertex(v); logger << std::endl; }`.
+    experiments/alg/dtl_pieces_monotone.py reads it. Result: piece indices are NOT monotone across searches on tc+ (they are
+    on 800 random games): the later pieces are re-cut each search. Untested replacement invariant: "the set removed before
+    v only grows across searches".
 ### Scripts
 - `python3 -I experiments/alg/dtl_debug_fuzz.py <debug-oink> tools/oink/build/rngame <outdir> N [seed]`.
 - `python3 -I experiments/alg/dtl_pertop.py <debug-oink> game.pg`.
