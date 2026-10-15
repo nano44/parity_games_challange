@@ -325,6 +325,34 @@ learned in search s1 while its escape vertices are still "best"; in search s2 th
 by the −1 branch before the tangle's region is reached). In c3 shape (β) is avoided because the stored tangle fires in the
 threshold loop and rescues the higher top; (β) needs the escape vertices to be unreachable by any rescue path, i.e. of
 priority above every surviving top's threshold.
+K6 (where a search can lose its last chance; PROVED as stated, with X arbitrary). Let V* be stable at some iteration with
+removed set X, τ_k the lowest top with a region, L_k its sptl region. K5(i)-(iii) hold verbatim with X ≠ ∅ (X is
+forgiven in the threshold loop and in every region). Hence L_k is closed unless (α) τ_k's successor lies in the lower
+part of a straddling tangle; and if L_k is closed it is productive (an opponent-owned τ_k with all successors in X ∪
+consumed regions is impossible: with a successor in a consumed region it would have been consumed, with all successors
+in X it would have been pruned), and its bottom SCC reachable from τ_k is new, a dominion, or (β') a stored tangle all of
+whose escapes lie in X (K2 with X). So a search that learns nothing at its first stable set is of shape (α) or (β').
+Orphan analysis for (α) (SKETCH, the chain a proof would follow). Let t' straddle with lower part Y ⊆ A \ Reg (the
+opponent's safe set inside t' ∩ R_rem: p follows the tangle strategy inside Y, every opponent vertex of Y keeps a
+successor in Y). (1) No stored tangle contained in Y has all its escapes in Reg ∪ X: it would fire into the last region
+holding an escape (its vertices are unconsumed), contradicting Y ⊆ A \ Reg; so every stored tangle inside Y has an
+escape in R_rem \ (itself). (2) After Dom(V*, R) → X, Y ⊆ R_2 and Y is p-closed in R_2 with exits only to X (forgiven).
+(3) In iteration 2, Y's p-priority vertices start in V; the first stable set of iteration 2 has a lowest top; if it lies in
+Y its region is closed (K6 again, unless a further straddle inside Y) and its bottom SCC is inside Y; by (1) that SCC is
+not a stored tangle with all escapes in X_2 — unless its escapes leave Y only into X_2, which (1) excludes for stored
+tangles inside Y — so it is new. The step that is not closed: the lowest top of iteration 2 may lie outside Y, and the
+pieces removed before Y's turn (type P/Z inside iteration 2) may cut Y; a proof must show that cutting Y by the -1
+branch leaves a p-closed remainder whose SCCs are still not stored. This is the same (C-b) obligation.
+For (β') (SKETCH). The stored tangle t = bottom SCC of L_k has escapes only in X. By K4, if all pieces in X are of type S
+or Z, X is p-won and so is t ∪ Attr(X) — a p-won set that DTL never solves unless some later piece or search is
+productive; then the search's remaining iterations must produce something new: the obligation is again (C-b). If some
+piece in X is of type P, t's escapes may lead into opponent-won vertices, t is then not p-won and nothing is lost.
+Attempts to realise (β') by hand (c4, section 6) fail for a reason that may be the key to (C-b): a stored tangle's
+escape path to a surviving top passes only through priorities below that top's rescue threshold (the top is the cover
+of the path's cycle), so the tangle fires in the threshold loop and rescues the top whenever the path's end is in Reg;
+for the end to leave Reg, the top at its end must be pruned first, which needs a deviation structure of its own, and each
+such structure is itself rescued by the tangles learned below it in the previous search (c4: {q, o} and {y, s} in search
+1 rescue m and z in search 2).
 Evidence (not proof): L-ALG 67,000+ games and L-RED's 120,000-mutation hill-climb for unsolved vertices found none; a
 new oracle run on a DEBUG build (NDEBUG checks on: "search was incomplete!" and the depth-0 dominion check 349-355)
 is experiments/alg/dtl_debug_fuzz.py (results in section 6).
@@ -408,7 +436,7 @@ which only shrinks T (never affects TS, 1.3).
 ## 5. Gaps and candidate instance shapes
 | id | claim that is open | status | candidate instance shape |
 | --- | --- | --- | --- |
-| GAP-C | Lemma K (completeness): W_p(G') ≠ ∅ ⇒ search(p) learns a new tangle or a dominion | SKETCH (K1-K4 proved) | section 2.3 (C-b): two pruned dominion-like structures, the first removed with Q empty, the second escaping into it |
+| GAP-C | Lemma K (completeness): W_p(G') ≠ ∅ ⇒ search(p) learns a new tangle or a dominion | SKETCH (K1-K6 proved; failing shapes (α), (β') characterised) | section 2.3 (C-b): two pruned dominion-like structures, the first removed with Q empty, the second escaping into it |
 | GAP-A | D2(a): polynomial bound on tangles(G) | open | section 3(a): a region whose DFS parents flip under a toggle at a higher top; counter over DFS reorderings |
 Corrections to inputs found while proving: C5-DTL.md (LIFO stack; consumption in best_vertices), see its header; R8's
 Lemma M part (c) and §5(a) assume FIFO/BFS and are void as written; (M1)-(M3) re-proved here (1.2b, 1.6, 3(a2)-(a3)).
@@ -432,6 +460,10 @@ won entirely by Even): c1, c2 solved in 1 iteration each (the c1 trace exposed t
 c3 is the worked "ladder" of section 2.3 (z 6 → y 2 → s 0 → {y, w 1} → x 3 → r 1 → m 2 → n 1 → {z, m}): search 1 prunes s, y, z,
 m in that order (best_vertices returns -1 twice: Dom(prevV = {m}) is removed with Q empty, then {w, x} is attracted to X at
 threshold 3), the residual {z, y, s, n} is stable and learns the tangle {y, s}; search 2 learns {m, n} at the closed lowest
-region; the tangles then fire upward into z's region and close it: dominion. This is the mechanism that defeated every
+region; the tangles then fire upward into z's region and close it: dominion. c4 (11 vertices, three stored-tangle candidates: {q, o}, {y, s} learned in search 1, {m, n} in search 2, then the dominion)
+was built for shape (β') and is solved in 2 iterations. Duplicate-tangle hill-climb (experiments/alg/dtl_dupclimb.py,
+fitness = 1000 × unsolved + duplicate extractions, n = 12, 3 seeds × 20,000 mutations): best fitness 0 (no duplicate
+extraction, no unsolved vertex, ever); tc+ N = 6 (58 tangles, 14 searches) has 0 duplicate extractions. So the (β')
+configuration (a duplicate at a closed region) was never observed. This is the mechanism that defeated every
 hand-built completeness counterexample: a stored tangle with an escape in a higher region is pulled into that region at
 the escape's pop, and the region continues through the tangle's vertices.
