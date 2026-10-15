@@ -2,7 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14: T1-T3 pushed (landed on trunk 9079c01); T4 docs/lit/T4-weak-separators.md: verdict OPEN. T5 docs/lit/T5-S2-novelty.md: S2 T1/T2 NEW. T6 docs/lit/T6-S3.md: T3, H1 NEW; L4 via Claim R (unrefereed). T7 docs/lit/T7-rank2.md: rank 2 OPEN, SLP model, T7-1/T7-1'. T8 docs/lit/T8-TA1.md: T-A1 NEW, PA not ⊇ Büchi/SCC-constant (3-vertex witness). T9 docs/lit/T9-L1.md: µ-formula sources; oblivious exponent 2·lg(d/lg n); T7 amended. T10 docs/lit/T10-PAstarstar.md (2026-10-15): Q1-Q3 NEW; HKP LNCS 9560 chapter not opened. T11 docs/lit/T11-HKP-DTR15-4.md: DTR15-4 opened (sha256 a7b61fe3...); T10 verdicts unchanged; psolC stated. T12 docs/lit/T12-MSF-barriers.md: no published bound covers MSF; killer candidates for L-SI. T13 docs/lit/T13-RF-parity.md: original Random-Facet on parity games NEW as statement (Hansen thesis unopened). Parked. Next: Lead feedback; open the
+2026-10-14: T1-T3 pushed (landed on trunk 9079c01); T4 docs/lit/T4-weak-separators.md: verdict OPEN. T5 docs/lit/T5-S2-novelty.md: S2 T1/T2 NEW. T6 docs/lit/T6-S3.md: T3, H1 NEW; L4 via Claim R (unrefereed). T7 docs/lit/T7-rank2.md: rank 2 OPEN, SLP model, T7-1/T7-1'. T8 docs/lit/T8-TA1.md: T-A1 NEW, PA not ⊇ Büchi/SCC-constant (3-vertex witness). T9 docs/lit/T9-L1.md: µ-formula sources; oblivious exponent 2·lg(d/lg n); T7 amended. T10 docs/lit/T10-PAstarstar.md (2026-10-15): Q1-Q3 NEW; HKP LNCS 9560 chapter not opened. T11 docs/lit/T11-HKP-DTR15-4.md: DTR15-4 opened (sha256 a7b61fe3...); T10 verdicts unchanged; psolC stated. T12 docs/lit/T12-MSF-barriers.md: no published bound covers MSF; killer candidates for L-SI. T13 docs/lit/T13-RF-parity.md: original Random-Facet on parity games NEW as statement (Hansen thesis unopened). T14 docs/lit/T14-S7-barriers.md: S7 most-improved not covered; outside B1-B17. Parked. Next: Lead feedback; open the
 not-opened primaries listed below if a lane needs them.
 
 ## Queue
@@ -145,6 +145,9 @@ not-opened primaries listed below if a lane needs them.
 | arXiv 2109.03666 v1; arXiv 2410.02634 v3 | p.1 abstracts/intro (Random Facet on AUSOs / VCSP landscapes) | 2026-10-15 | T13; not games |
 | arXiv 1911.01074 v2, further | p.2 Random-Facet citations [FHZ11b, Han12, FHZ14] / [Kal92 ... FHZ11a, FHZ14] | 2026-10-15 | T13 |
 | NOT opened (T13) | Hansen PhD 2012 at www.cs.au.dk/~tdh/papers/dissertation.pdf: 404; Wayback API 429 x2; web.archive.org snapshot: connection reset; Semantic Scholar 429 | 2026-10-15 | T13 |
+| Friedmann PhD (author copy), further | §4.2 printed pp.93-95 (Tables 4.1-4.2), §4.6.2 printed pp.139-140 (SWITCH-BEST definition, Thm 4.45) | 2026-10-15 | T14 |
+| arXiv 1210.2459 v1 (Canavoi, Grädel, Rabinovich) | abstract p.1 (catalogue of rules with lower bounds), §2 rule list | 2026-10-15 | T14 |
+| arXiv 2512.16684 v2, further | Def. 3.4-3.5, Obs. 3.6 (p.10), p.11 "Every deterministic memoryless pivot rule ... ranking-based", Fig. 4.2 controller/filler gadgets (p.16) | 2026-10-15 | T14 |
 
 ## Dead ends
 (none)
