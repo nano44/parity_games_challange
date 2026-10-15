@@ -1,9 +1,8 @@
 # L-ALG notebook (algorithm design loop; lane started 2026-10-15 09:55Z, 12 h box)
 
 ## Resume point
-- C1, C2 DEAD (DEAD.md; depth = Strahler number, family strfam.py). T-ALG1 written (docs/alg/T-ALG1.md: psolC complete iff
-  Strahler 1, proof of the k=0 case). Live: C3 = ZP (candidates/C3.md, zp.py): Zielonka + psolC pruning; call counts on
-  families (out/zp_families_c3_*.log) and hill-climb for call growth (zp_search.py, out/zp_search_*.log). See "Log".
+- C1, C2, C3 DEAD (DEAD.md). T-ALG1 deferred by the Lead (11:20Z). Next: design C4 against the two obstructions (register depth;
+  partial-solver blindness composes). Lead rulings 11:20Z: ZP no gauntlet; T-ALG1 deferred; GA instances go to L-SI (keep pushing them).
 - Lead session for messages: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/l-alg. Push: scripts/verify.sh && git push -u origin claude/l-alg.
 
 ## Brief (Lead, 2026-10-15 09:55Z, quoted in substance)
@@ -89,4 +88,9 @@ each level of NE' adds one register. This is the exact obstruction of the whole 
   when seeded with two tiled copies of the K=8 best (zp_ga.py --double). Exponent between successive points rises
   (~2.3 -> ~4.8): superpolynomial-looking, not a proof; no explicit family extracted yet (genomes look unstructured).
 - 11:00 S_5 (n=46): NE'(3) did not finish in 1700 s (Python); the S_4 point stands as the measured limit for C2.
+- 11:17 interim message to the Lead (a5164a4): ZP passes (a)-(d) as data, running time unproven, GA growth. Lead 11:20Z: wait, no
+  gauntlet; T-ALG1 deferred; state the register obstruction citably (done, DEAD.md); GA instances to L-SI.
+- 11:45 explicit ZP killer: tiling the GA K=8 unit (zp_ladder2.py template search, zp_curve.py): 247 / 7,273 / 234,133 calls at
+  R = 1/2/3 tiles (n = 32/64/96), x30 per tile; second unit (K=10) 659 / 10,795 / 132,507. GA table to n=64: 12,255 calls.
+  C3 recorded DEAD. R=4 (n=128) running.
 

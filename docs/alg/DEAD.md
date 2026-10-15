@@ -42,3 +42,28 @@
 - Idea killed: ANY fixed-depth nesting of weak (reachability-under-prefix-maximum) conditions, i.e. the whole fatal-attractor
   family (psol, psolB, psolQ, psolC, C1, C2): depth = registers. What survives as a (non-M4) by-product: T-ALG1 (a), psolC is
   complete exactly on Strahler-1 games (proof in docs/alg/T-ALG1.md, unrefereed).
+
+## C3 ZP, Zielonka's recursion with psolC pruning at every call (docs/alg/candidates/C3.md) — DEAD (2026-10-15 11:50Z)
+- Data: complete and sound by construction; == Zielonka with verified strategies on 107 library/instance games, all 1,380
+  psolC-partial n = 4 games, 8,000 random games (n = 5..12); on all 13 M1 families at every size run it makes <= 5 recursive
+  calls (tc N <= 14, tc+ N <= 12, counter_symsi N <= 12, counter_rr N <= 20; the other 9 families 1-2 calls), where plain
+  Zielonka grows exponentially on 9 of them (experiments/alg/out/zp_families_c3_{a,b,c}.csv). So the published hard families
+  are not its killers: psolC solves their recursion nodes.
+- Killer family (explicit, exponential): T_R = R tiles of the 32-vertex unit U8 = experiments/alg/instances/zp_ga_K8_n32_calls247.pg
+  (itself 8 copies of the psolC-blind gadget S_2 with owner swaps, priority shifts and 13 inter-block edges, found by the
+  genetic search zp_ga.py), tile i with priorities shifted by 36 i, plus at every tile the two cross edges
+  (vertex 0 of tile i -> vertex 7 of tile i-1) and (vertex 21 of tile i -> vertex 4 of tile i+1) (zp_ladder2.build with
+  template (18, [(0,-1,7), (21,1,4)]); instances/zp_tile8_R{1,2,3,4,5}_n*.pg; curve tool zp_curve.py).
+  Measured ZP recursive calls: R = 1: 247 (n = 32), R = 2: 7,273 (n = 64), R = 3: 234,133 (n = 96): a factor of ~30 per tile of
+  32 vertices, i.e. calls >= 30^(n/32) ~ 2^(n/6.5), while the unit alone is tiny. (R = 4, n = 128, running at the time of
+  writing: out/zp_curve_tile8_R4.log.) A second unit (U10 = zp_ga_K10_n40_calls659.pg, template (11, 8 edges)) gives
+  659 / 10,795 / 132,507 at R = 1/2/3 (n = 40/80/120). GA table without tiling: 129 / 247 / 659 / 1,943 / 4,173 / 12,255
+  calls at n = 24/32/40/48/56/64 (instances/zp_ga_K*.pg): a constant factor ~2.5 per 8 vertices.
+- Obstruction (exact): psolC prunes a recursion node only if the node's game has a Strahler-1-certifiable dominion for some
+  player (T-ALG1); the gadget S_2 and its compositions are psolC-blind at every node that Zielonka's recursion visits, and then
+  the recursion is plain Zielonka's: the second call (re-solving the game after removing the attractor of the opponent's
+  dominion found by the first call) re-solves almost everything. Nothing in the pruning addresses that re-solve.
+- Idea killed: "partial solver + complete exponential fallback" as a polynomial algorithm: the fallback inherits its
+  exponential families as soon as the partial solver is blind on them, and Strahler-2 gadgets make psolC blind everywhere.
+  Idea kept: the published 13 families are weak tests for hybrids; the GA/tiling search (zp_ga.py, zp_ladder2.py,
+  zp_curve.py) is the right falsifier for complete-but-unproven candidates.
