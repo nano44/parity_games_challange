@@ -253,6 +253,33 @@ or ≤ pr(τ') (inside Z_τ'), so the maximum priority seen infinitely often is 
 Hence the first removed piece is p-won; by the same argument every later piece of type "stable regions" or type
 "attractor to X" (the -1 branch with Q nonempty) is p-won PROVIDED X is p-won; pieces of type Dom(prevV, R) (the -1
 branch with Q empty, 961-991) need not be p-won.
+K5 (the lowest region at X = ∅; PROVED). Let V* be stable at X = ∅, τ_k the lowest top that has a region, A the final
+threshold-loop set, Z_k the sptl region of τ_k (computed with all higher regions consumed). Then:
+ (i) no p-vertex of A \ Reg has an edge into a higher region (it would have been attracted there: its priority is ≤ its
+     rescue threshold < the top's priority, and it was never consumed);
+ (ii) NOTE N3 cannot occur: an opponent-owned top with all successors in higher regions would have been attracted into
+     the last of those regions (its priority is ≤ that top's), so it has no region of its own;
+ (iii) A \ Reg ⊆ Z_k ∪ Str, where Str := the vertices pushed into A by rule (T) for a tangle t' that STRADDLES, i.e. has
+     a vertex in a higher region (such a t' is not attracted into Z_k: 138-139). Proof: induction over the attraction
+     order of A. A p-vertex y ∈ A \ Reg has str[y] in Z_k or in A \ Reg (by (i)), so it is attracted into Z_k. An
+     opponent y ∈ A \ Reg has all its R-successors in A (it was attracted with Gx = R): those in higher regions are
+     forgiven in Z_k's computation (outside Gx), the others are in Z_k by induction. A tangle t' fired into A has all
+     escapes in A (forgiven or in Z_k by induction) and all vertices in R ∪ A; it is attracted into Z_k unless a vertex
+     of it lies in a higher region (138) — the straddling case. □
+ Consequence: Z_k is closed unless τ_k's successor (p-owned τ_k) or some successor (opponent-owned τ_k, which then has
+ no successor outside A by stability) lies in Str \ Z_k. So at X = ∅ the lowest region is closed and productive
+ (K1-K3) unless a stored tangle straddles a higher region and the opponent can stay forever inside its lower part
+ (the lower part is then a p-winning sub-tangle Y that no vertex rule enters, because its opponent vertices keep a
+ successor inside Y and its p-vertices follow the tangle strategy inside Y).
+ Three generations are therefore needed for a failure of Lemma K at the first piece: a search s1 that learns the
+ sub-tangle Y (so that Y is later a duplicate), a search s2 that learns t' ⊋ Y with top a ∈ t' (the top of t' is the
+ only vertex of t' whose region-strategy can point into t' while a is attracted elsewhere later: 73), and a search s3
+ in which a is absorbed into a higher region via an edge a → J (J a top only now: its rescue path must use t'), the
+ region of every higher top is open, Y sits in R_rem, and after Dom(V*, R) → X the region of Y's top extracts only
+ the duplicate Y. Every attempt to build s3 in the box collapsed at "every higher region is open": the first region
+ (highest top, nothing consumed, X = ∅) is open only if the opponent can avoid that top forever from its successor
+ inside A, and every attempted avoidance structure was itself attracted by the next tangle firing (an escape of a
+ stored tangle popped in the highest region pulls the tangle in, then the attractor continues through its vertices).
 The OPEN claims (GAP-C, two parts; neither refuted, neither proved):
 (C-a) At X = ∅ with V* stable: some sptl region is closed with a nontrivial reachable SCC. What is known: an open region
 Z_k of the lowest top τ_k forces τ_k "upward": by induction over the attraction order of A, A \ Reg ⊆ Z_k ∪ Up_k, where
@@ -270,7 +297,8 @@ cycles ends in a top whose region is closed; no well-founded measure was found i
 not be p-won, and pieces removed by the -1 branch send every vertex of priority t to X without searching for p-tangles
 of priority t (936-942). A failure of Lemma K would have to come from one of these two: a p-dominion D ⊆ R all of
 whose p-priority vertices are pruned (so that D's vertices are removed through the -1 branch) while no closed region
-elsewhere produces anything. Candidate instance shape (for L-RED): a p-dominion D whose every p-priority vertex v has an
+elsewhere produces anything. Candidate instance shape (for L-RED), sharpened by K5: the three-generation straddling-tangle construction above
+(first piece), or, for later pieces, a p-dominion D whose every p-priority vertex v has an
 opponent "deviation" vertex of priority > pr(v) that is not attracted to any top because its two exits lead to two
 different tops of equal priority smaller than its own (consumption cannot help when the deviation vertex's priority
 exceeds both tops), covered on every cycle by a p-priority vertex that is itself pruned by the same mechanism one
@@ -320,7 +348,12 @@ a fixed region vertex set. With the LIFO correction, str[u] for a (V)-pushed ver
 pushed, i.e. the DFS parent of u in the depth-first traversal from top along reversed edges in Oink's `ins` order
 (with tangle expansions interleaved). The DFS parent of u changes whenever the set of vertices or tangles present
 changes the traversal order before u is reached. R8's potential argument ("BFS layers are non-increasing") assumed a
-FIFO queue and does not apply; no replacement potential was found in the box. Candidate instance shape (for L-RED): a
+FIFO queue and does not apply; no replacement potential was found in the box. Concrete LIFO mechanism: at the pop of v, attractVertices pushes v's predecessors (in `ins` order, 69) and THEN
+attractTangles pushes the vertices of every tangle in tin[v] (200-201, 164-172, in stored = sorted-index order); the stack
+pops the tangle vertices first, so a newly learned tangle with escape v makes the whole DFS below v explore the tangle's
+vertices (and everything reachable backwards from them) BEFORE v's vertex-predecessors; every parent assignment in that
+subtree can change, and a later theft of one tangle vertex (a3) switches the tangle rule off again in that region,
+restoring the old order for that tangle but not for the others learned meanwhile. Candidate instance shape (for L-RED): a
 region whose DFS tree from top visits an Even vertex u via two different parents a, b depending on whether a vertex
 (or tangle) x is already in Z when u's branch is explored; x's presence is toggled by thefts/growth at a higher top
 (a3 budget n per top) — the question is whether the DFS reordering can be made to cascade so that one toggle at the
@@ -361,4 +394,13 @@ Lemma M part (c) and §5(a) assume FIFO/BFS and are void as written; (M1)-(M3) r
 | 3 (e) | PROVED conditional on (a) | 3 |
 | 3 (a) tangle count | GAP-A | 3 |
 | 4 idtl | PROVED (same) | 4 |
-Debug-build oracle (experiments/alg/dtl_debug_fuzz.py): FUZZ-PLACEHOLDER
+Debug-build oracle (experiments/alg/dtl_debug_fuzz.py, NDEBUG checks on, dtl and idtl, -t so that a dominion at depth > 0
+exits): seed 7, 30,000 random games (n 4..12, priorities ≤ n, out-degree 1..3): 0 failures, every run "solution verified";
+seed 11, 20,000 games: 0 failures. Hand-built candidates (experiments/alg/instances/dtl_proof_c1.pg, c2, c3; all three are
+won entirely by Even): c1, c2 solved in 1 iteration each (the c1 trace exposed the two transcription errors of C5-DTL.md);
+c3 is the worked "ladder" of section 2.3 (z 6 → y 2 → s 0 → {y, w 1} → x 3 → r 1 → m 2 → n 1 → {z, m}): search 1 prunes s, y, z,
+m in that order (best_vertices returns -1 twice: Dom(prevV = {m}) is removed with Q empty, then {w, x} is attracted to X at
+threshold 3), the residual {z, y, s, n} is stable and learns the tangle {y, s}; search 2 learns {m, n} at the closed lowest
+region; the tangles then fire upward into z's region and close it: dominion. This is the mechanism that defeated every
+hand-built completeness counterexample: a stored tangle with an escape in a higher region is pulled into that region at
+the escape's pop, and the region continues through the tangle's vertices.
