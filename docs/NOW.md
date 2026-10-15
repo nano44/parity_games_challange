@@ -28,6 +28,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | L-LOWER | session_0153E4mCB2wqi65xdfpxozfK | claude/l-lower | fable-5-1 | high | working (T-L2 theory box, go 08:36Z, to 20:36Z) | Attack lane, rank 2; theory needs the most capable model (D1) |
 | L-ALG | session_01WN44zjFXZSqaL5SwsoDn7d | claude/l-alg | fable-5-1 | high | working (design loop C1.., 12h box from ~10:00Z) | D5/L18: M4 primary aim; attack lane, most capable model (D1) |
 | L-SI | session_01HnGDSEHG3NHszV1y8ND6BF | claude/l-si | fable-5-1 | high | working (SI rule design loop, 12h box from ~10:10Z) | D6/L19: second algorithm lane, RANKING rank 4; attack lane, most capable model (D1) |
+| L-RED | session_017WLo5xfMxRZ4f6n2Su6274 | claude/l-red | fable-5-1 | high | working (adversary vs MSF: bound check, killer construction, independent re-implementation; 8h from 11:20Z) | Designer and falsifier must differ (D1 'treat as wrong'); referees kept clean for step 4; most capable model |
 | REFEREE-2 | session_01C2sxysc8CzJQrNBhp1rKMs | claude/referee-2 | fable-5-1 | high | idle (L4 d76c9e1, T-A1 2eb1a2d signed; P2 caught) | Independent second referee required for double-refereed results; never downgraded |
 | CHECKER | session_01JptdoF6eLabJzBHG28nWSS | claude/checker | opus-5-5 | high | parked (C1 + recheck: R1, R2 PASS 62cf1c4) | Landing gate: mechanical re-runs and statement diffs; Opus suffices |
 | HUMAN-DESK | session_01URpUgDVczmLPHmidyo4Jr6 | claude/human-desk | opus-5-5 | high | parked (packet 3b3bdde; owner decides distribution) | Owner D1: spawned when a claim reaches M3; writing quality matters, no deep math |
@@ -36,7 +37,8 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 
 ## In flight (as of 2026-10-15 09:50Z)
 - L-SI: strategy-improvement rule design loop toward M4/M4-R (D6, L19), 12h box from ~10:10Z. Candidate S2a MSF (most-significant-first single switch) NOT KILLED so far (l-si c73f69e): linear on all 15 families incl. switchallexp, zadehexp, Random-Facet*, DLMM Bland; adversarial n<=9 maxima ~n^2.5-3. Unrefereed data, far from a claim. L-LIT T12 (706d5e1): no published lower bound covers MSF; killer must be two-player with mixed-owner cycles; candidate D_n-with-Odd-gates sent to L-SI.
-- Working-session count (D1 cap 5 counts lanes, not Lead/WATCHDOG): L-ALG, L-SI, L-LOWER = 3.
+- Working-session count (D1 cap 5 counts lanes, not Lead/WATCHDOG): L-ALG, L-SI, L-LOWER, L-RED = 4.
+- MSF status 11:25Z: S3 DEAD (DLMM M_L port, 2^(L+1)); MSF 3L-2 there. L-SI unrefereed bound: MSF iterations <= (n^2+1)(n^2+X+1), X = escaped cycle-creating switches (max X 2..14 for n=5..10). L-SI argues Disser-Mosis D_n cannot port to lexicographic valuations. L-RED attacks all of it independently.
 - L-ALG: falsification-driven algorithm design loop toward M4 (D5, L18), box to 21:55Z. l-alg a5164a4: C1/C2 nested fatal attractors DEAD (family S_s; nesting depth = Strahler-1 = register hierarchy, quasi-poly at best). C3 ZP (Zielonka + psolC pruning): complete; <=5 recursive calls on all 13 families, but GA instances grow superpolynomially (129..7,096+ calls, n=24..64); explicit-family attempt running; no gauntlet. T-ALG1 (psolC complete on Strahler-1 games, unrefereed): deferred behind M4 candidates.
 - L-LOWER (successor): T-L2 theory box to 20:36Z: human proof of B_2(4) >= 7 from the 100-game UNSAT core; test for a gap growing with n.
 - Everyone else parked or idle: L-ATTR (psolC done, DE3), REFEREE (R-psolC done), REFEREE-2, L-LIT (T11 done), L-STRUCT, L-COMP,

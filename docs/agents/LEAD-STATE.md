@@ -83,3 +83,4 @@
 - 11:12Z sweep: overage false; Lead $62.5. CI green on lane heads (l-si c73f69e, l-lower 0fb10a9, l-alg 0138b03; 336b1b8 in progress). L-ALG: C1, C2 dead; claims T-ALG1 (psolC complete iff Strahler 1, proof) - route to referees at box end; C3 running. L-LOWER: B_2(5)>=9 (Glucose). No action.
 - 11:16Z L-LIT T12 done (706d5e1, merged): no published bound covers MSF; killer candidate (Disser-Mosis D_n with Odd gates) sent to L-SI. L-LIT disclosed a subagent apt-installed ghostscript in its own container (no repo effect). L-LIT parked.
 - 11:22Z L-ALG interim (a5164a4): C1/C2 dead (register hierarchy), C3 ZP no gauntlet (GA superpoly), T-ALG1 deferred. Cross-test: ZP GA instances sent to L-SI for MSF.
+- 11:32Z L-SI: S3 dead (M_L), MSF 3L-2; refined bound via X. L-RED spawned session_017WLo5xfMxRZ4f6n2Su6274 (fable, claude/l-red), independent adversary vs MSF, 8h. Lanes: 4/5.
