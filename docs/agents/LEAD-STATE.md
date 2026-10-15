@@ -179,3 +179,4 @@
 - 21:39Z OWNER-DESK relayed owner Q 'is DTL exactly Oink's?' and its answer; corrected: step 4 = proof attempt in progress (statement frozen L24, soundness/halting proved unrefereed, GAP-A/GAP-C open), not 'nothing'. Stale L-ALG line fixed.
 - 21:54Z L-COMP divergence #2 15eef6a: C5 under-specifies ins order (Oink: decreasing index) and tv order (sorted ascending); counts depend on them, regions never. Queue for L-ALG resume + CHECKER: §0/C5 must cover these orders.
 - 22:02Z hourly sweep: no overage (seven_day warning). Lead 486k. L-COMP 314k idle with cross-check runs (n<=3 pending). No exceptions.
+- 22:13Z L-COMP divergence #3: Dom extension attractor order-dependent (tangle deleted when a vertex is solved mid-attraction); C5 omits SCC queue order. Queue for L-ALG resume: check §1 'dominion removal' lemmas for order independence.
