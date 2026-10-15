@@ -77,3 +77,4 @@
 - 09:03Z sweep: overage false; Lead $59.0 ctx 326k. L-LOWER (new) RUNNING T-L2 box, ctx 125k, $2.7. REFEREE/L-ATTR idle after DE3. No action.
 - 09:50Z NOW 'In flight' rewritten (stale since 10-14; OWNER-DESK told owner L-ATTR still on psolC). Lead miss: In flight not maintained with roster.
 - 09:50Z D5 (owner: do not call M4 unlikely). L18: M4 primary; L-ALG spawned session_01WN44zjFXZSqaL5SwsoDn7d (fable, claude/l-alg), design loop 12h.
+- 10:03Z sweep: overage false; Lead $60.6. L-ALG running (Oink build, n=4 corpus regen, C1 spec). L-LOWER running ('recreating killed BFS tool'; usage meta stale at $2.7 since 09:02; no push since c7ce9d1) - recheck 11:01Z, stall if no push by then.
