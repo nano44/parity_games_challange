@@ -122,16 +122,27 @@ Self-loops (D-1). A self-loop v → v is in outs(v) and ins(v). Effects, each co
 region's top τ, τ ∈ ins(τ) with τ ∈ Z and str[τ] = -1, so a p-owned top with a self-loop gets str[τ] := τ (73) and the
 region is closed at once; the SCC {τ} is nontrivial by 316 (`str[n] == n`), and its cycle has priority pr(τ) of parity p:
 TS(ii) holds. (s2) An opponent-owned vertex u with a self-loop is never attracted by rule (V): at 78-85 its loop is a
-successor in Gx \ Z while u ∉ Z. It can enter an attractor only through rule (T) or as the start vertex; as an
-opponent-owned top of p-parity priority (u ∈ V), its region is closed iff all its other successors are outside R
-(519-525; the loop target u itself is removed from R at 490), and then {u} is extracted by 317 (`str[n] == -1 and
-has_edge(n, n)`) with escapes = u's other G'-successors outside {u}: a dominion iff it has none. (s3) attracts (40-57) for a
-p-owned v with a self-loop: the loop counts iff v ∈ Z; for an opponent-owned v the loop is a successor in R \ Z unless
-v ∈ Z, so an opponent-owned candidate with a self-loop never attracts (714, 738) and is pruned; it is solved, if p-won,
-as a top (s2) or through a tangle. (s4) A p-vertex u ≠ top with a losing self-loop (opponent parity) never has str[u] = u:
-str is set at 89 to the popped vertex v ≠ u (u ∉ Z at that time, so u is not being popped) or at 171 to a tangle
-strategy, and tangle strategies at u are set by 89/73 in an earlier region; the only self-assignment is (s1) at a top,
-whose priority has parity p. So every cycle used in TS is as analysed in 1.3, with the loop case (s1) included.
+successor in Gx \ Z while u ∉ Z. It can enter an attractor only through rule (T) or as the start vertex. As an
+opponent-owned top of p-parity priority (u ∈ V) its region is closed iff all its other successors are outside R
+(519-525; u itself leaves R at 490). If it has no successor in Z other than itself, Pearce's restricted graph from u has
+only the loop and {u} is extracted by 317 (`str[n] == -1 and has_edge(n, n)`), with escapes = u's other G'-successors
+(all outside Z): a dominion iff there are none. If u does have a successor in Z (its region is then larger), the SCC
+containing u in the restricted graph (234-266) contains that successor's reachable part and is extracted as usual (R-3).
+(s3) Candidates (714, 738) are vertices of V, and every vertex of V lies in Reg ⊆ A_t (691-705: a top gets its own region
+or is already inside a higher one), so in attracts (40-57) a self-loop of a candidate IS a successor in Z. Hence a
+p-owned vertex of V with a self-loop is never a candidate (it survives every round), and an opponent-owned vertex of V
+with a self-loop is a candidate iff it has a successor in R \ Z, and is cleared at threshold t iff it has no successor in
+R \ A_t (R-1). This replaces the earlier text, which wrongly treated the loop as a successor outside Z.
+(s4) Where str[v] = v can arise. Inside an sptl region (481-496, the only place extraction reads str) a vertex u ≠ top
+receives str at its push: 89 (the popped vertex v, and v ≠ u since u ∉ Z when pushed) or 171 (a stored strategy, itself
+set by 89/73 in an earlier sptl region); the top receives str := itself at its own pop iff it has a self-loop (73), and
+its priority has parity p. So within sptl regions, str[u] = u occurs only at tops with p-parity loops. OUTSIDE sptl, the
+-1 branch of search_rec (899-911) pushes non-top vertices of either owner with priority ≤ t and str := -1 (908), and at
+their pop (918-922) line 73 sets str[u] := u for every p-owned u with a self-loop of either parity (R-2); the same happens
+at 881/965 and 694 for tops of Dom(V, R) and of best_vertices' regions. These assignments are never read by extractTangles
+(sptl resets str for every vertex of its region before extracting) and never output (solved vertices get str at 1027 and
+89 on the removal attractor), so they do not affect TS or the output; they are listed so that §1.2's start sites are
+complete. Every cycle used in TS is therefore as analysed in 1.3, with the top-loop case (s1) included.
 ### 1.1 attracts (40-57) — PROVED (reading)
 attracts(p, v, Z, R) = [owner(v) = p and v has a successor in Z] or [owner(v) != p and v has a successor in Z and no
 successor in R \ Z]. Edges to vertices outside R ∪ Z are ignored (lines 52-55). This is the "escapes to outside R are
@@ -159,8 +170,9 @@ attracted as a unit; its vertices enter Z, if at all, by (V). (Relevant to compl
 Consequence 1.2b (monotonicity in T). With T ⊆ T' (same Z_0, R, Gx, t) the closure under T' contains the closure under
 T: rule (T) for an old tangle has the same premise and (V) is unchanged. (This is R8's (M1), re-proved.)
 Strategy assignment (73, 89, 171): a p-vertex u pushed by (V) at the pop of v gets str[u] := v; a p-vertex pushed by (T)
-gets its tangle strategy; a p-vertex already in Z with str = -1 (only the start vertex of a region, 485/694/881/965/908)
-gets str := v at the first pop of a successor v (73). Membership of Z is order-independent (Lemma 1.2); str is not.
+gets its tangle strategy; a p-vertex already in Z with str = -1 (the start vertex of a region, 485/694/881/965, or, in search_rec's -1
+branch, every vertex attracting to X at the lowest level, 908, of either owner) gets str := v at the first pop of a
+successor v (73), which is u itself when u has a self-loop (see 1.0 (s4)). Membership of Z is order-independent (Lemma 1.2); str is not.
 
 ### 1.3 Every stored tangle is a p-tangle — PROVED
 Definition. A stored tangle t = (U, s, O) with U = its vertex set (tv), s = its strategy on U ∩ V_p, O = tout. Property
@@ -236,7 +248,8 @@ trivial unless it has a self-loop, 317).
 Round: regions Z_τ for the tops τ ∈ V in descending index, computed in ONE copy CurR of R that is consumed across tops
 (690, 699): a top already inside a higher region gets no region (692). Hence Reg(V) := ∪ Z_τ is a disjoint top-down
 decomposition; R_rem := R \ Reg(V). Candidates (712-716): v ∈ V with ¬attracts(p, v, Reg, R) (opponent-owned v: it
-needs a successor in Reg and none in R \ Reg; note R here is the UNconsumed search_rec region). Threshold loop
+needs a successor in Reg and none in R \ Reg; note R here is the UNconsumed search_rec region; a self-loop of v counts as
+a successor in Reg because v ∈ Reg, 1.0 (s3)). Threshold loop
 (721-741): A_t := attractor to Reg within R (not consumed) with threshold t, cumulatively for t = 0..max priority; a
 candidate u is cleared iff attracts(p, u, A_t, R) for some t < pr(u) (737: the scan over the descending candidate list
 stops at the first candidate with pr(u) ≤ t, so clearing happens only for t strictly below pr(u)). Remaining candidates
@@ -320,7 +333,8 @@ threshold-loop set, Z_k the sptl region of τ_k (computed with all higher region
  (i) no p-vertex of A \ Reg has an edge into a higher region (it would have been attracted there: its priority is ≤ its
      rescue threshold < the top's priority, and it was never consumed);
  (ii) NOTE N3 cannot occur: an opponent-owned top with all successors in higher regions would have been attracted into
-     the last of those regions (its priority is ≤ that top's), so it has no region of its own;
+     the last of those regions (its priority is ≤ that top's), so it has no region of its own; with a self-loop it is
+     not attracted (1.0 (s2)) but then its closed region {τ} is extracted by 317 (1.0 (s2)), so it is productive;
  (iii) A \ Reg ⊆ Z_k ∪ Str, where Str := the vertices pushed into A by rule (T) for a tangle t' that STRADDLES, i.e. has
      a vertex in a higher region (such a t' is not attracted into Z_k: 138-139). Proof: induction over the attraction
      order of A. A p-vertex y ∈ A \ Reg has str[y] in Z_k or in A \ Reg (by (i)), so it is attracted into Z_k. An
@@ -391,8 +405,9 @@ K6 (where a search can lose its last chance; PROVED as stated, with X arbitrary)
 removed set X, τ_k the lowest top with a region, L_k its sptl region. K5(i)-(iii) hold verbatim with X ≠ ∅ (X is
 forgiven in the threshold loop and in every region). Hence L_k is closed unless (α) τ_k's successor lies in the lower
 part of a straddling tangle; and if L_k is closed it is productive (an opponent-owned τ_k with all successors in X ∪
-consumed regions is impossible: with a successor in a consumed region it would have been consumed, with all successors
-in X it would have been pruned), and its bottom SCC reachable from τ_k is new, a dominion, or (β') a stored tangle all of
+consumed regions: with a successor in a consumed region it would have been consumed; with all other successors in X it
+is pruned unless it has a self-loop (1.0 (s3)), and then {τ_k} is extracted by 317 with escapes in X — covered by (β')
+below or new), and its bottom SCC reachable from τ_k is new, a dominion, or (β') a stored tangle all of
 whose escapes lie in X (K2 with X). So a search that learns nothing at its first stable set is of shape (α) or (β').
 Orphan analysis for (α) (SKETCH, the chain a proof would follow). Let t' straddle with lower part Y ⊆ A \ Reg (the
 opponent's safe set inside t' ∩ R_rem: p follows the tangle strategy inside Y, every opponent vertex of Y keeps a
@@ -636,6 +651,10 @@ DTL_NO_LOOPS=1 (NDEBUG checks on, -t): seed 21, 20,000 random games with self-lo
 every run "solution verified". So no correctness failure appeared on the pinned algorithm.
 Changelog after the 17:25Z park point (the Lead asked for §1-2.1 to stay stable): 17:45Z §0 rewritten per CHECKER C3;
 §1.0 (tie order, self-loops) ADDED to §1; §7 (correspondence table) added; nothing in 1.1-2.1 changed.
+18:10Z: CHECKER C3b R-1..R-3 applied: §1.0 (s2) narrowed (317 extracts {u} alone only without another Z-successor), (s3)
+rewritten (candidates lie in Z, a loop counts as a Z-successor), (s4) rewritten (str[v] = v also arises at 908/73 in the
+-1 branch, never read by extraction); §1.2 start-site list completed (908); §1.6 candidate note; §2.3 K5(ii) and K6
+worded for looped opponent-owned tops. §0 frozen at ccff864 (L24), untouched.
 Debug-build oracle (experiments/alg/dtl_debug_fuzz.py, NDEBUG checks on, dtl and idtl, -t so that a dominion at depth > 0
 exits): seed 7, 30,000 random games (n 4..12, priorities ≤ n, out-degree 1..3): 0 failures, every run "solution verified";
 seed 11, 20,000 games: 0 failures. Hand-built candidates (experiments/alg/instances/dtl_proof_c1.pg, c2, c3; all three are
