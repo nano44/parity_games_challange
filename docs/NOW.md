@@ -7,7 +7,7 @@ Updated: 2026-10-14 by Lead. Phase: M0, M1, M2, M3 done; first attack lane L-STR
 | M0 Setup | done; TARGET v1.0 at a3777f1 (D2) | this commit; CI .github/workflows/verify.yml; backstop trigger in docs/agents/LEAD-BACKSTOP.md |
 | M1 Reproduce hard families | DONE 2026-10-14 19:10Z (l-comp de7ea19): 12 of 13 families blow up as published, all strategies checked; counter_qpt superpolynomial but class open (targets a quasi-poly algorithm). Friedmann SI via REFEREE-checked PGSolver ports (reading L5). Bench LANDED on trunk (REFEREE OK ae532f6) | experiments/hard-families/README.md (l-comp) |
 | M2 Audit arXiv 2511.03752 | DONE 2026-10-14 ~18:35Z: BROKEN (two independent 4-vertex counterexamples, cross-checked); RESULTS DE1 | docs/decisions/M2-arxiv-2511.03752.md |
-| M3 Partial results | DONE 2026-10-15 00:17Z (novelty T10 NEW, rechecked T11 against the chapter text DTR15-4: still NEW): RESULTS R2 T-A1 [refereed-only] (psolB solves G completely iff PA**(G)); two referee signatures at l-attr 57a1515, CHECKER PASS 62cf1c4. Also R1 L4 (lemma) | docs/RESULTS.md |
+| M3 Partial results | DONE 2026-10-15 00:17Z (novelty T10 NEW, rechecked T11 against the chapter text DTR15-4: still NEW): RESULTS R2 T-A1 [refereed-only] (psolB solves G completely iff PA**(G)); two referee signatures at l-attr 57a1515, CHECKER PASS 62cf1c4. Also R1 L4 (lemma). 2026-10-15 13:50Z: RESULTS R3 [refereed-only] original Random-Facet needs e^Omega(sqrt n) expected switches on parity games (FHZ Thm 6.3 + L-RED transfer lemma; REFEREE + REFEREE-2 signed at l-red 49ae306; CHECKER PASS 068f9de; T13 NEW as statement) | docs/RESULTS.md |
 | M4 Target | not started | - |
 
 ## Roster (model, effort, one-line reason; revisit at each restart)
@@ -60,6 +60,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 
 ## Best result so far
 - M3: RESULTS R2 [refereed-only] T-A1, psolB solves G completely iff PA**(G) (L-ATTR; both referees signed 57a1515).
+- M3-type: RESULTS R3 [refereed-only] original Random-Facet on parity games, e^Omega(sqrt n) expected switches (L-RED; CHECKER 068f9de).
 - RESULTS R1 [refereed-only]: L4, s^V(n,n) >= n^Omega(lg n) (supporting lemma, not M3 per L7).
 - None of the fleet's own. Known: quasi-polynomial upper bound (to be source-checked by L-LIT).
 
