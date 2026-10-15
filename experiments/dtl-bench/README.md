@@ -108,5 +108,5 @@ No region or strategy divergence in either mode, on any game. No pseudocode erro
 | seeded g10k (n <= 200) | 10,000 | 10,000 x 2 | all | 878 games (tangles differ by up to 8, iterations by up to 2) |
 | rngame | 2,000 | 2,000 x 2 | all | 296 games |
 | seeded small50k (n 4..10) | 50,000 | 50,000 x 2 | all | 72 games |
-| family instances (Oink idtl <= 5 s) | 127 | see results/xcheck_families.csv | - | - |
+| family instances, all 18 families, sizes with Oink idtl <= 5 s (max n: counter_rob 12,803, counter_dp 2,052, counter_core 1,539, red_ladder 1,542, tc 848, tc+ 624) | 127 | 127 x 2 | (not run) | - |
 CSV: results/xcheck_*.csv(.gz); `_orderstable` = C5-literal mode.
