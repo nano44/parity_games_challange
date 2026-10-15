@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Hill-climb for games that make ZP (C3) recurse a lot: mutation walk (walk.mutate) at n <= NMAX, objective = number of
 ZP recursive calls (ties: fewer vertices pruned). Seeds: psolC failures (pruning fails at the root). Reports the best
-call count per n and writes the best games to out/zp_best_<tag>.jsonl and instances/. Usage: zp_search.py STEPS SEED [--nmax 12] [--tag T]"""
+call count per n and writes the best games to out/zp_best_<tag>.jsonl and instances/. Usage: zp_search.py STEPS SEED [--nmax 12] [--tag T] [--seeds F.jsonl]"""
 import sys, os, json, random, time
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -19,7 +19,7 @@ def main():
     opt = lambda k, d: sys.argv[sys.argv.index(k) + 1] if k in sys.argv else d
     nmax = int(opt("--nmax", 12)); tag = opt("--tag", f"s{seed}")
     rnd = random.Random(seed)
-    seeds = [alglib.from_record(json.loads(l)) for l in open(os.path.join(HERE, "out", "psolc_fail_n4.jsonl"))]
+    seeds = [alglib.from_record(json.loads(l)) for l in open(opt("--seeds", os.path.join(HERE, "out", "psolc_fail_n4.jsonl")))]
     g = rnd.choice(seeds); sc = score(g)
     best = {}  # n -> (calls, game)
     t0 = time.time()
