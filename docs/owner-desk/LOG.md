@@ -83,3 +83,7 @@ l-lit 8dd2e55). Relayed verbatim to the Lead.
 ## 2026-10-15 14:59Z Lead (relayed to owner)
 Spend as read 14:55Z: ~$692 total across read sessions (CHECKER, HUMAN-DESK, OWNER-DESK not read); ~$450 since 07:00Z; rate limit
 seven-day "allowed_warning" since 12:02Z, no overage, resets 2026-10-21 21:00Z. NOW.md notes fixed.
+
+## 2026-10-15 21:38Z owner (progress question)
+> Is the DTL we are investigating now the exact same as in Oink or we have changed it?
+Answered from docs/alg/candidates/C5-DTL.md (l-alg), REPORT-2026-10-15.md, NOW.md (trunk 6387629), l-comp 289f145. Relayed verbatim to the Lead.
