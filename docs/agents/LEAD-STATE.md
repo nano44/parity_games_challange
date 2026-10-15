@@ -132,3 +132,4 @@
 - 15:08Z L-RED R7: S5 held (cyclic tie constraints). L-RED -> DTL attack (6h). L-LIT T15 (fixed-tie-break Zadeh novelty + T13 fix).
 - 15:12Z L-ALG DTL attack no kill (473c7c8, merged); L-ALG parked; recommendation to L-RED.
 - 15:08Z merged l-lit e895ddd (T15 OPEN, T13 cite fix); L-LIT parked; NOW updated. Waiting on L-RED (DTL, ~21:06Z), L-SI (~22:10Z), L-LOWER (~20:36Z).
+- 15:29Z R8 (DTL HELD, Lemma M) merged. Decision (fleet judgement, L12): run DTL through the gauntlet: L-LIT T16 (step 3 + GandALF 'VULNERABLE' source), L-ALG successor for proof (step 4 attempt) after handover, L-RED keeps attacking (FIFO order, phase alternation, cross-iteration monotonicity, per-tangle work). Cap: 5 with successor. Rate: seven_day warning, no overage.
