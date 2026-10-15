@@ -68,3 +68,18 @@ Iteration tables: docs/si/RESULTS.md (generated); raw logs experiments/si/out/ (
   randomfacetsubexp N ≤ 10 (n ≤ 662) grew like ~n^1.8, adversarial means ≤ 24 at n = 8. Consistent with, and not evidence
   against, the theorem. L-SI's S1.md assumption A1 was expected to be false for exactly this reason (FHZ's construction).
 - Closes docs/lit/RANKING.md section 4's "first problem" (Random-Facet on parity games) in the negative, if the lemma holds.
+
+## S7 most-improved (count of improved vertices, steepest-edge tie-break): KILLED 2026-10-15 14:09Z (Lead) by L-RED
+- Killer (L-RED, report R5 on claude/l-red, pending push): fhz_padded(n) = the sink-parity encoding P_{n,1,1,1} of
+  Friedmann-Hansen-Zwick's one-player Random-Facet counter (arXiv 1410.7530 Fig. 3) with LINEAR pads: W_x·(n+1-i) dangling
+  priority-0 Even vertices on each level-i vertex x ∈ {u, w, a, b}, W = (3, 4, 3, 1); size Θ(n²). On vjfast: 16, 44, 104,
+  228, 480, 988 iterations for n = 2..7, i.e. i(n) = 2 i(n-1) + 4n (exponential).
+- Mechanism (Lead's summary of L-RED): in FHZ's graph the level-i bit vertices take no traffic from the other levels, so pads
+  make "lower level first" the count order, and the resets go through a quiet higher level; the run is downstream-first
+  (L-RED's exact longest df runs on the same counter: 5, 20, 53, 124 for n = 1..4).
+- What it refutes in S7.md: assumption A1 (no polynomial padding scheme) and defence (iii) (padding fails on chain counters:
+  true for DLMM G_N, false for FHZ's counter, whose bits are route-isolated). Lemma D (L-RED) was the right structural
+  statement; its consequence is that any family with route-isolated bits and a downstream-first counting run is steerable
+  by linear pads. docs/si/S7-proof-attempt.md is left in place with the kill noted at its top.
+- L-SI reproduction: PENDING gens_red.py fhz_padded on claude/l-red (not present at 15:20Z); the numbers above are L-RED's,
+  on L-SI's own engine. fhz_padded and its pad variants join the standard falsification set when the generator lands.

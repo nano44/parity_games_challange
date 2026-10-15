@@ -1,5 +1,10 @@
 # S7 (most-improved single switch): running-time proof attempt, with the gaps named (L-SI, 2026-10-15, UNREFEREED)
 
+**KILLED 14:09Z (Lead): L-RED's fhz_padded family (FHZ's one-player Random-Facet counter with linear pads) gives
+16, 44, 104, 228, 480, 988 iterations for n = 2..7, i(n) = 2 i(n-1) + 4n. The attempt below is left as written; it stopped at
+section 4e, whose question L-RED answered in the affirmative (count-ranking CAN be steered along a downstream-first run).
+See docs/si/DEAD.md.**
+
 Lead brief 13:26Z: "can Lemma D ('downstream first') plus a potential function bound the number of iterations polynomially?
 State every gap as a named gap." Answer in one line: no bound is proved; the attempt below isolates two named gaps (P1, P2)
 and refutes the two simplest potentials by data. Everything marked PROVED is proved here from the cited statements; marked
