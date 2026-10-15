@@ -74,3 +74,8 @@ L-LOWER, L-RED, REFEREE).
 ## 2026-10-15 13:54Z Lead (relayed to owner)
 Second result RESULTS R3 [refereed-only] (trunk c688729; CHECKER PASS checker 068f9de): original Random-Facet needs e^{Omega(sqrt n)}
 expected switches on a parity-game family (e^{Omega(N^{1/3}/log N)} in game size). Live candidate: L-SI S7 "most-improved".
+
+## 2026-10-15 14:54Z owner (progress question)
+> Give me a status update of the process
+Answered from trunk ba9886b (NOW.md, RESULTS.md) and lane branches (l-alg 549bb34, l-si 71c5c97, l-red 7dd83d3, l-lower b2eb965,
+l-lit 8dd2e55). Relayed verbatim to the Lead.
