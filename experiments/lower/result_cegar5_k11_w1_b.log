@@ -1,0 +1,13 @@
+== CEGAR-b n=5, k11_w1_b, per_pat=12
+Q_4 prios=[1, 2] owners=[0]: 812782 games, 3248306 nodes -> 48062 classes (W true on 47946); max split round 6 [70.8s]
+round 1: subset 492 nodes (10 games), 3069688 clauses -> SAT [11.1s]
+   Q_4: 278 failing classes; added 96 games
+round 2: subset 876 nodes (106 games), 5439799 clauses -> SAT [28.9s]
+   Q_4: 17 failing classes; added 17 games
+round 3: subset 944 nodes (123 games), 5859160 clauses -> SAT [29.8s]
+   5-vertex sweep (all 32 patterns): 184320 failing games; added 360 [344.2s]
+round 4: subset 2744 nodes (483 games), 16969430 clauses -> SAT [602.8s]
+   Q_4: 29 failing classes; added 29 games
+round 5: subset 2860 nodes (512 games), 17685026 clauses -> UNSAT [1516.7s]
+RESULT: no program with 11 Cpre gates (k11_w1_b) solves all one-player Büchi games with <= 5 vertices (UNSAT on a successor-closed subset).
+EXIT 1
