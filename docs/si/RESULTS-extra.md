@@ -100,3 +100,14 @@ all rules incl. rar and random-edge. XCHECK-FAST PASS.
 | gated_switchallexp N = 2..6 | 31, 30, 39, 48, 57 |
 | gated_switchbestexp N = 2..6 | 80, 203, 314, 658, 974 |
 Adversarial maxima n = 5..10: 9, 14, 21, 26, 29, 38. Gadget chains (G = 4): quadratic (see S7.md).
+
+### L-RED's fhz_padded (FHZ one-player Random-Facet counter + linear pads; claude/l-red ffa4e15), vjfast, best-reward start
+| n | V | most-improved (S7) | lsf | zadeh (S5) | cunningham (S6) | msf | switch-all | rar (5 seeds) |
+|---|---|---|---|---|---|---|---|---|
+| 2 | 64 | 16 | 16 | 16 | 16 | 8 | 6 | 10 8 8 8 14 |
+| 3 | 112 | 44 | 44 | 36 | 32 | 12 | 9 | 14 12 18 18 12 |
+| 4 | 171 | 104 | 104 | 64 | 48 | 16 | 12 | 24 32 22 26 38 |
+| 5 | 241 | 228 | 228 | 100 | 64 | 20 | 15 | 58 26 42 28 68 |
+| 6 | 322 | 480 | 480 | 144 | 80 | 24 | 18 | 48 52 40 42 74 |
+| 7 | 414 | 988 | 988 | 196 | 96 | 28 | 21 | 64 86 64 32 72 |
+S7 and LSF: i(n) = 2 i(n-1) + 4n (exponential; L-RED's numbers reproduced exactly). Zadeh+index: 4n²; Cunningham+index: 16n.

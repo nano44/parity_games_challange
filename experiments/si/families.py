@@ -15,6 +15,8 @@ for f in ["recursiveladder", "switchallexp", "switchbestexp"]:
 for f in ["randomfacetsubexp", "zadehexp", "dlmm_bland", "dlmm_ML", "cunninghamexp"]:   # L-SI ports (gens.py), N >= 2 (dlmm_ML: start best, not sigma_0)
     GEN[f] = f"python3 {HERE}/gens.py {f} {{N}} | grep -v '^%'"
 GEN["gated_bland"] = f"python3 {ROOT}/experiments/red/gens_red.py gated_bland {{N}}"      # L-RED (read-only use)
+if os.path.exists(os.path.join(ROOT, "experiments", "red", "gens_red.py")) and "fhz_padded" in open(os.path.join(ROOT, "experiments", "red", "gens_red.py")).read():
+    GEN["fhz_padded"] = f"python3 {ROOT}/experiments/red/gens_red.py fhz_padded {{N}}"    # L-RED's S7 killer (read-only use)
 for f in ["zadehexp", "switchallexp", "switchbestexp"]:                      # gate.py-relabelled bench (randomfacetsubexp has no unique sink)
     GEN[f"gated_{f}"] = f"python3 {HERE}/gated.py {f} {{N}}"
 ALL = list(GEN)
