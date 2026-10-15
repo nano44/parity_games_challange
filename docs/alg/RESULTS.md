@@ -30,3 +30,14 @@ Time (Python, 1 core): NE(1) on tc n = 22/42/68/100/138: 0.0/0.2/1.9/7.6/26.9 s;
 | pp, dp, rr (promotions) | 3 | 5 | 7 | 9 | linear |
 Reading: T_R is hard only for solvers already beaten by published families; tangle learning and priority promotion see through
 the sibling-trap compositions that blind psolC.
+
+## C5-DTL (Oink dtl, van Dijk; docs/alg/candidates/C5-DTL.md) correctness and strategies (experiments/alg/dtl_check.py, 13:05Z)
+| set | games | dtl | idtl |
+| --- | --- | --- | --- |
+| library + lane instances | 122 | all regions == reference, strategies verified | same |
+| all canonical n = 1, 2, 3 | 4 + 240 + 41,440 | all ok | all ok |
+| psolC-partial canonical n = 4 | 1,380 | all ok | all ok |
+| random canonical n = 4 | 20,000 (idtl 5,000) | all ok | all ok |
+| random n = 5..12 (gen.py mix) | 4,000 | all ok | all ok |
+Reference: harness Zielonka (n <= 30) or Oink tl (larger); strategies by harness verify.py (D2 change 5). No wrong region, no
+bad strategy, no incomplete answer (dtl's run() can in principle stop with unsolved vertices; never observed).
