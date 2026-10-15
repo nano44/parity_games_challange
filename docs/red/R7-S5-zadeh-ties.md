@@ -84,7 +84,7 @@ fixed total order, index orders included) and zadeh_climb_fast.py (hill-climb ov
 | 3 | 159 | 75 | | 169 (all 3 restarts) |
 | 4 | 467 | 101 | | 317 (restarts 303, 305, 317); 321 lifted from the N = 3 numbering, 8000 swaps |
 | 5 | 1227 | 197 | | 501 (459, 501, 447); 595 lifted from the N = 4 numbering, 8000 swaps |
-| 6 | 3019 | 343 | | 925 (925, 913, 777); lifted from N = 5: see scratchpad zlift_6.log |
+| 6 | 3019 | 343 | | 925 (925, 913, 777); 837 lifted from the N = 5 numbering, 6000 swaps |
 | 7 | 7131 | 495 | | 963 (907, 963) |
 "Lifted": restart 0 starts from the best numbering of the next smaller N, matched by vertex label (--init), the new
 level's vertices appended; it is the nearest thing to a scheme the search produces. Ratios found / published: 1.09, 1.06,

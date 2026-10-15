@@ -9,6 +9,7 @@
 | zadeh_lb.py | Zadeh with PGSolver's lower-bound tie-break (switch_zadeh.ml port) on labelled zadehexp instances; `--tie lb|index|val`, `--trace` (bit state at every tie), `--rev` (pairs chosen in both orders); checks whether a fixed total order of the edges reproduces the run (R7) |
 | zadeh_anyorder.py | exhaustive DFS over the tie decisions of Zadeh under ANY fixed total order (upper bound on every index order), `--prefer` follows a given run while allowed (R7) |
 | zadeh_order_climb.py, zadeh_climb_fast.py | hill-climb over vertex numberings for S5 with the exp-game start (in-process vj.py / vjfast-scored, `--out` writes the best numbering) (R7) |
+| dtl/dtl_search.py, dtl/dtl_flips.py, dtl/gens_dtl.py | DTL box (R8): hill-climb over small games for Oink DTL's tangle count or unsolved vertices; strategy-flip census over random games or random walks from a game; `chain n` family (n - 2 tangles in one search) |
 | search_numbering.py, search_classnum.py | S5/S6: hill-climb over vertex permutations / class-structured numberings, scored by vjfast zadeh or cunningham (report docs/red/R4-S5S6.md) |
 | antichain_check.py | downstream-first diagnostic (R3 3c): along a rule's run, how often the chosen vertex is upstream of another improving vertex; S7 never is (Lemma D) |
 | df_fhz.py, df_lp.py, df_search.py, df_fast.py, pad_scheme.py, pad_fhz.py | Question DF (R5): exact longest downstream-first runs on FHZ's graph and on random small games; pad-feasibility LP; structured pad schemes and pad hill-climbs for S7 |

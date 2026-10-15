@@ -8,6 +8,12 @@ R2's parity encoding of FHZ's one-player counter G_{n,1,1,1} with linear pads W 
 Zielonka, strategies verified. Question DF: longest DF run on G_{n,1,1,1} exact 5, 20, 53, 124, 269 (n = 1..5). Reported 16:50Z. Then S5/S6 on the FHZ encoding: HELD (docs/red/R6-S5S6-fhz.md): numbering searches quadratic;
 index-fair rules must take the improving higher bit that the counter keeps live during the lower count. Next if asked: a proof of the recurrence (FHZ-style
 phase analysis for the S7 order), or the "DF + pads" reduction as a general theorem.
+## Resume point (R8, DTL box, Lead 15:06Z, 6 h)
+docs/red/R8-DTL.md: HELD. Lemma M (monotone in the tangle set; theft the only non-monotone event), chain mechanism
+(gens_dtl.py chain n: n - 2 tangles), free-search optima (8, 11, 35, 56, 27 at n = 10..30; two-player 26, 31 at n = 16,
+20), flip census (random 0; walks 6 games, all thefts), completeness probe clean. Oink's release build prints "best
+vertices", "distance k", "new tangle ... v->w ... with k escape vertices" at -t -t (enough to see everything but the
+attractor order). Scratchpad dtl/: best_*.pg, best2p_*.pg, *.trace, flip_walktcp.pg (the theft flip), flips.py.
 ## Resume point (R7, S5 tie-break box, Lead 14:18Z, 5 h)
 docs/red/R7-S5-zadeh-ties.md (HELD, pushed). zadeh_lb.py = faithful port of PGSolver's lower-bound Zadeh tie-break; on zadehexp N = 2..6:
 43, 159, 467, 1227, 3019 switches, 38/142/408/1046 tie steps, 'chosen before competitor' constraints cyclic at every N
@@ -121,6 +127,21 @@ N = 3 first restart 167 > 159). Logs: scratchpad anyorder.log, climb_{3,4,5}_s{1
   (state, state', idxmap, f, g, h, mp); initial_strategy_for_exp_game lines 1612-1650; src/generators/zadehexp.ml lines
   50-90 (the family), line 100 (its name string).
 
+- Oink @ 8fbf0a7 (tools/oink/src, opened 15:10Z-15:40Z): src/solvers/dtl.cpp lines 40-57 attracts, 65-101
+  attractVertices (predecessors in edge-list order; Odd vertex skipped if an edge into Gx \ Z), 109-185 attractTangle
+  (parity check, delete if a vertex is solved, fail if a vertex is outside R or above maxpr or an escape is in Gx \ Z),
+  197-202 attractTangles (tin[v] in creation order), 210-471 extractTangles (Pearce SCC, dominion if no escapes, skip if
+  the vertex set equals an existing tangle's, 385-424), 476-546 sptl (one extraction per top per search via W), 643-776
+  best_vertices (pruning rounds, "distance", threshold loop 743-760), 834-994 search_rec (stable -> sptl loop + Dom(V,R)
+  -> X; -1 -> lowest threshold attractor to X, opponent attractor to the threshold vertices, recursion on Z), 997-1069
+  search, 1071-1161 run (Even to exhaustion then Odd; "search was incomplete!" only under NDEBUG); src/tools/tc.cpp
+  (makeBit: H, T, L, selectors S/A/B, Z; all T at priority 2/1, connectors 1/0, H and L high, bit 0 highest).
+- L-ALG claude/l-alg 898d02d docs/alg/candidates/C5-DTL.md (sections 0-6) and 549bb34 docs/alg/REPORT-2026-10-15.md
+  "DTL attack" table and verdict (read 15:05Z).
+
 ## Dead ends
+- DTL killer by free-form search (R8): hill-climbs at n = 10..30 converge to one-player chain games (O(n^2) tangles);
+  two-player-constrained searches give the same chains. A GA/template search was L-ALG's (quadratic). The theft-driven
+  flip (R8 section 3) is a one-shot event, not a counter: thefts are not renewable (region heads only move up).
 - None yet for the attack. Not pursued: a non-sink killer (the sink-game gate suffices); porting Disser-Mosis D_n with Odd
   gates (T12 section 4) is unnecessary, the Bland counter plus gates is smaller.
