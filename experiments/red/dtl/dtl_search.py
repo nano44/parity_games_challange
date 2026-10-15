@@ -2,7 +2,7 @@
 """Free-form hill-climb over small parity games maximising Oink DTL's learned-tangle count (L-RED, DTL box).
 Fitness = tangles found by `oink --dtl --no-single --no-wcwc --no-loops` (raw solver, no preprocessing, self-loops kept;
 before 16:02Z the runs used --no-single --no-wcwc only). Mutations: add/remove an edge,
-change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--out best.pg]"""
+change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
 import sys, os, random, subprocess, tempfile, time, re
 oink, n = sys.argv[1], int(sys.argv[2]); arg = lambda k, d: type(d)(sys.argv[sys.argv.index(k) + 1]) if k in sys.argv else d
 steps, seed, maxpr = arg("--steps", 20000), arg("--seed", 0), arg("--maxpr", 2 * int(sys.argv[2])); rng = random.Random(seed)
@@ -23,7 +23,7 @@ def dumps(g):
 def score(g):
     open(tmp, "w").write(dumps(g))
     try:
-        r = subprocess.run([oink, SOLVER] + OINKFLAGS + (["-t", "-t"] if fitness.startswith("per") or fitness in ("prunemono", "dups") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
+        r = subprocess.run([oink, SOLVER] + OINKFLAGS + (["-t", "-t"] if fitness.startswith("per") or fitness in ("prunemono", "dups", "alpha", "straddles") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
     except subprocess.TimeoutExpired:
         return 10 ** 6          # a timeout is interesting in itself
     if fitness in ("unsolved", "wrong"):
@@ -34,6 +34,35 @@ def score(g):
             out = r.stdout + r.stderr
             bad = 1000 if ("error" in out.lower() or "verified" not in out) else 0
         return n - solved + bad
+    if fitness in ("alpha", "straddles"):
+        # with the L-RED detector build (scratchpad oink-det): "STRADDLE tangle ..." lines at every stable pruning result,
+        # "REGION top X closed 0/1" lines from sptl. straddles: count of STRADDLE lines. alpha: stable sets that have a
+        # STRADDLE line and whose first sptl pass has its LOWEST top's region open (the (alpha) precondition + containment proxy)
+        out = re.sub(r"\x1b\[[0-9;]*m", "", r.stdout + r.stderr)
+        if fitness == "straddles": return out.count("STRADDLE tangle")
+        score, straddle, regions, instable = 0, False, [], False
+        def close_set():
+            nonlocal score, straddle, regions, instable
+            if instable and regions and straddle:
+                # first sptl pass = the REGION lines until the top priority rises again; its last line is the lowest top
+                first = [regions[0]]
+                for prv, cur in zip(regions, regions[1:]):
+                    if cur[0] > prv[0]: break
+                    first.append(cur)
+                if not first[-1][1]: score += 1
+            instable = False; straddle = False; regions = []
+        for line in out.splitlines():
+            line = re.sub(r"^\[\s*[0-9.]+\]\s*", "", line)
+            if line.startswith("STRADDLE tangle"): straddle = True
+            if line.startswith("best vertices:"):
+                close_set()
+                if "(stable)" in line: instable = True
+                continue
+            if line.startswith("iteration") or line.startswith("current region"): close_set(); continue
+            if instable and line.startswith("REGION top"):
+                w = line.split(); regions.append((int(w[w.index("pr") + 1]), w[-1] == "1"))
+        close_set()
+        return score
     if fitness in ("prunemono", "dups"):
         # prunemono: vertices pruned by the first best_vertices call of a search but not by that of the previous search of
         # the same player (a non-monotone pruning, R8 section 12 / proof lane (r1)); dups: "duplicate tangle" lines
@@ -92,6 +121,12 @@ def mutate(g):
     return pr, ow, succ
 
 
+if "--eval" in sys.argv:          # print the fitness of one game and exit
+    pr, ow, succ = [], [], []
+    for line in open(sys.argv[sys.argv.index("--eval") + 1]):
+        m = re.match(r"^(\d+)\s+(\d+)\s+([01])\s+([\d,]+)", line.strip())
+        if m: pr.append(int(m.group(2))); ow.append(int(m.group(3))); succ.append({int(x) for x in m.group(4).split(",")})
+    n = len(pr); print(f"{sys.argv[sys.argv.index('--eval') + 1].split('/')[-1]} {fitness}: {score((pr, ow, succ))}"); os.unlink(tmp); sys.exit(0)
 t0 = time.time(); g = random_game()
 if "--from" in sys.argv:      # start from a given game (perturbation search); n is taken from the file
     pr, ow, succ = [], [], []

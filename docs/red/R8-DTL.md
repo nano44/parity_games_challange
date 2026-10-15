@@ -414,6 +414,15 @@ fitness = number of newly pruned vertices across consecutive searches (self-loop
 searches was found, with or without straddles, so no (r1) counterexample.
 (β') probe. The debug build prints "duplicate tangle" at extraction; hill-climbs with fitness = duplicate extractions
 (n = 14, 20, 30,000 mutations): best fitness 0 in both runs: no duplicate extraction ever, so no (β') configuration. The proof lane's c3/c4: 0 duplicates here as well.
+Straddle detector (Lead 17:32Z, the proof lane's recipe from notes/L-ALG.md item 9): a copy of the pinned source in
+the scratchpad (oink-det-src, Debug build oink-det) with two prints added to dtl.cpp: after each stable pruning result,
+"STRADDLE tangle t: v(reg|orphan|out) ..." for every stored tangle of the player's parity with a vertex in a region of
+that round and another vertex attracted by the threshold loop but in no region; and in sptl "REGION top X pr P closed
+0/1" for every region computed. Counts on tc+ N = 4, 5, 6 (STRADDLE lines over the run): 16, 25, 36 (the proof lane
+reports about 2N - 1 distinct tangles); on the perturbed tc+ 3 of section 6: 83. The (α) proxy (dtl_search.py --fitness
+alpha: stable sets with a straddle whose first sptl pass leaves the LOWEST top's region open) is 0 on all of them: the
+lowest region closes every time, as the proof lane saw in its inspected case. Climbs from tc+ 4, tc+ 5 and the perturbed
+tc+ 3 with that fitness (detector build, self-loop and renumbering mutations, 15,000 each): ALPHACLIMB-PLACEHOLDER
 (α), (β') by hand: the NOTE N5 shape was built literally (gens_dtl.py n5: t' = {a, c, d}, a -> tnew, tau's region
 holding e, h as tnew's return): DTL solves it in 3 iterations with 3 dominions and 1 tangle, {tnew, h} and {tau, e} are
 dominions in search 1, so the straddle never forms (the higher regions must stay open AND unpruned for three searches,
