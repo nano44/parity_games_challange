@@ -8,6 +8,10 @@ R2's parity encoding of FHZ's one-player counter G_{n,1,1,1} with linear pads W 
 Zielonka, strategies verified. Question DF: longest DF run on G_{n,1,1,1} exact 5, 20, 53, 124, 269 (n = 1..5). Reported 16:50Z. Then S5/S6 on the FHZ encoding: HELD (docs/red/R6-S5S6-fhz.md): numbering searches quadratic;
 index-fair rules must take the improving higher bit that the counter keeps live during the lower count. Next if asked: a proof of the recurrence (FHZ-style
 phase analysis for the S7 order), or the "DF + pads" reduction as a general theorem.
+## Resume point: PARKED after the bounded items of the second DTL box (Lead 17:36Z; end-of-box ~17:55Z my clock)
+Detector build (scratchpad oink-det-src / oink-det, pinned source + prints STRADDLE / REGION / SPTL top / DOM top /
+SOLVE attractor): dtl_strchanges.py measures GAP-A (0 everywhere); dtl_search.py fitnesses straddles/alpha/strch. The
+binary must not be rebuilt while climbs use it (PermissionError killed three climbs once).
 ## Resume point: PARKED again after the second DTL box (Lead 17:25Z, 2 h; end-of-box sent 17:30Z)
 Last state: docs/red/R8-DTL.md final at 73da06b (sections 1-12); no background runs, no monitors. Section 12: (r1)
 holds empirically (dtl_vstar.py, climbs with fitness prunemono), no duplicate extraction ever (fitness dups on the debug

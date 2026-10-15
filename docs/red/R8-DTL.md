@@ -422,7 +422,8 @@ that round and another vertex attracted by the threshold loop but in no region; 
 reports about 2N - 1 distinct tangles); on the perturbed tc+ 3 of section 6: 83. The (α) proxy (dtl_search.py --fitness
 alpha: stable sets with a straddle whose first sptl pass leaves the LOWEST top's region open) is 0 on all of them: the
 lowest region closes every time, as the proof lane saw in its inspected case. Climbs from tc+ 4, tc+ 5 and the perturbed
-tc+ 3 with that fitness (detector build, self-loop and renumbering mutations, 15,000 each): ALPHACLIMB-PLACEHOLDER
+tc+ 3 with that fitness (detector build, self-loop and renumbering mutations, 12,000 each): best 0 in all three (104, 180 and 54
+vertices): no mutation made a straddle leave the lowest region open.
 (α), (β') by hand: the NOTE N5 shape was built literally (gens_dtl.py n5: t' = {a, c, d}, a -> tnew, tau's region
 holding e, h as tnew's return): DTL solves it in 3 iterations with 3 dominions and 1 tangle, {tnew, h} and {tau, e} are
 dominions in search 1, so the straddle never forms (the higher regions must stay open AND unpruned for three searches,
@@ -444,7 +445,7 @@ than once in the run, how often an Even vertex's strategy differs from its previ
 So the open quantity of GAP-A is ZERO on every game measured: a region with the same top and the same vertex set
 always gets the same Even strategies, even when the pair recurs 68 times; what grows is the number of distinct vertex
 sets at one top, and that grows linearly (2N + 1 on tc+, at most 11 elsewhere). Climbs with fitness = strategy changes
-at a fixed pair (detector build, self-loop and renumbering mutations, n = 12, 16): STRCH-PLACEHOLDER
+at a fixed pair (detector build, self-loop and renumbering mutations, n = 12, 16, 12,000 each): best 0 in both.
 
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.
@@ -478,6 +479,9 @@ at a fixed pair (detector build, self-loop and renumbering mutations, n = 12, 16
 - DONE (16:50Z-, GAP-C): section 11: debug-build oracle, proof lane's c1-c3 re-run, 12,000 fuzz games and seven
   adversarial climbs clean, the unblocking argument for (C-a) and the "maximum of a p-won cycle is never a distraction"
   expectation for (C-b), both Lead readings.
+- DONE (17:36Z-, bounded items): GAP-A measured (0 strategy changes at a fixed (top, region set) on tc+ 4..10 and every
+  many-tangle game, distinct sets per top linear); the straddle detector rebuilt from the proof lane's recipe; (α)
+  containment climbs from tc+ 4, 5 and the perturbed tc+ 3: proxy stayed 0.
 - DONE (17:25Z-, second DTL box): section 12: N5 folded into (M2); (r1) trace probe (dtl_vstar.py: 0 non-monotone first
   prunings on 9 games, 60 search pairs) and climbs (0 at n = 12, 16, 20); duplicate-extraction climbs on the debug build
   (0 at n = 14, 20); the N5 shape built (collapses into dominions); (α)/(β') unrealised; GAP-A count not measured.
