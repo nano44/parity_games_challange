@@ -60,3 +60,4 @@
 - 03:07Z l-lower CI green at 1d4c7d2 (run 224) after trunk fe676d9 merge; CI exception closed.
 - 04:03Z sweep: overage false; Lead $51.6 ctx 142k. L-LOWER idle between rounds (1d4c7d2, CI green), $41.5 (+$7 in 2h waiting on runs), ctx 447k; one cost message: wake on verdict/crash, fallback <=60 min.
 - 05:02Z sweep: overage false; Lead $52.0. L-LOWER idle waiting on k=8 run (last activity 04:16Z, $42.8, +$1.3/h after monitor change), ctx 451k. No action.
+- 06:02Z sweep: overage false; Lead $52.2. L-LOWER idle since 04:16Z waiting on k=8 run ($42.8 flat), 2h fallback due ~06:16Z; check at 07:01Z that it fired. No action.
