@@ -2,7 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-15 ~07:50Z. Session started 07:3xZ (D3, L10). Q5 partly answered: owner supplied DTR 2015/4 (reading in docs/owner-desk/HKP-DTR15-4-reading.md), relayed to the Lead.
+2026-10-15 ~08:05Z. D4 recorded (trunk 1f34679): Q6, Q7, Q4 closed; Q2 closed unless owner objects; Q3 open (owner action); Q5 pending L-LIT T11. Waiting for the owner.
 and docs/owner-desk/LOG.md. First reply to the owner sent: orientation, status, open questions. Waiting for the owner; no timed wakes.
 
 ## Queue

@@ -1,4 +1,6 @@
-# Open owner questions (OWNER-DESK; most decision-relevant first)
+# Owner questions (OWNER-DESK; most decision-relevant first)
+Standing Lead reading L12 (D4): the fleet decides process, method and result classification itself; the owner is asked only about
+scope, spend, anything external, and TARGET.md.
 Source: docs/NOW.md "Owner questions open" (trunk d580fcd) and the Lead's brief to OWNER-DESK (2026-10-15).
 Each question is answerable in a word or a line. Owner answers are logged verbatim in docs/owner-desk/LOG.md and relayed
 verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md and then this file marks the question closed.
@@ -34,7 +36,9 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - What changes: (a) the owner contacts the recipient personally; the fleet only revises the packet on request. (b)/(c) nothing
   external happens; HUMAN-DESK stays parked.
 - Urgency: low; owner's timing.
-- Status: open
+- Status: closed, D4 / Lead reading L13 (trunk 1f34679): no external distribution; the owner is the packet's only reader, via
+  OWNER-DESK. Owner-relevant points shown in session 2026-10-15 ~07:55Z.
+
 
 ## Q7: does L4 count as an M3 result?
 - id: Q7
@@ -46,7 +50,8 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - Lead recommendation: (a), confirm L7.
 - What changes: (a) the ledger stays as is. (b) R1 is relabelled M3; reporting lists two M3 results.
 - Urgency: low; labelling only, no work depends on it.
-- Status: open
+- Status: closed, D4 / Lead reading L14 (delegated by the owner; trunk 1f34679): L7 stands; L4 is a supporting lemma, not M3.
+
 
 ## Q4: run the original PGSolver binaries once?
 - id: Q4
@@ -59,7 +64,9 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - What changes: (a) a successor L-COMP session (or the Lead) is permitted to run PGSolver binaries; one diff run; caveat removed
   or a port bug found. (b) M1 stands on the referee check; caveat stays.
 - Urgency: low.
-- Status: open
+- Status: closed, D4 / Lead reading L15 (delegated by the owner; trunk 1f34679): no spawn for it; the next L-COMP successor runs
+  the PGSolver binaries once to diff the ports; if the classifier refuses, ports plus REFEREE check stand (L5).
+
 
 ## Q2: trunk branch name
 - id: Q2
@@ -69,7 +76,8 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - Lead recommendation: (a), unless the owner wants `main` for readers.
 - What changes: (a) nothing. (b) the Lead creates `main` from trunk and updates CLAUDE.md/NOW.md references; lanes merge there.
 - Urgency: none.
-- Status: open
+- Status: closed unless the owner objects, D4 / Lead reading L16 (trunk 1f34679): keep claude/vibrant-johnson-nxvvxo.
+
 
 ## Q3: environment setup script
 - id: Q3
@@ -91,4 +99,7 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
   experiments/*/check.sh) ignores the user site; if pip installs to the user site, add `--break-system-packages` and run as root.
 - What changes: (a) sessions start with dependencies present; fewer install steps and permission prompts. (b) nothing.
 - Urgency: low; convenience.
-- Status: open
+- Status: open, owner action. Walkthrough given 2026-10-15 ~07:55Z (title bar > cloud environment menu > Edit > Setup script);
+  script checked against this container (root, python 3.13, no EXTERNALLY-MANAGED). Oink build stays in-session; no SessionStart
+  hook for now (Lead). Mark done when the owner says it is set, or closed if declined.
+
