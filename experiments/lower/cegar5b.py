@@ -13,19 +13,19 @@ from slp import eval_struct, cost, depth
 
 
 def eval_tables(tables, k, S, pm, kv=5):
-    """Return the output mask per game for the program given by truth tables (tables[i-1] for gate i, tables[k] = output)."""
-    full = (1 << kv) - 1
-    s_masks = []
+    """Output mask per game for the program given by truth tables (tables[i-1] for gate i, tables[k] = output).
+    Per vertex v a uint16 state holds the input bits (P_2 at bit 0, s_j at bit j), updated incrementally."""
+    M = len(S)
+    state = [np.full(M, (pm >> v) & 1, dtype=np.uint16) for v in range(kv)]
     for i in range(1, k + 2):
         tab = np.array(tables[i - 1], dtype=np.uint8)
-        y = np.zeros(len(S), dtype=np.uint8)
+        y = np.zeros(M, dtype=np.uint8)
         for v in range(kv):
-            idx = np.full(len(S), (pm >> v) & 1, dtype=np.int64)
-            for j in range(1, i):
-                idx |= ((s_masks[j - 1] >> v) & 1).astype(np.int64) << j
-            y |= (tab[idx] << v).astype(np.uint8)
+            y |= (np.take(tab, state[v]) << v).astype(np.uint8)
         if i <= k:
-            s_masks.append(vec5.cpre(y, S, kv))
+            s_i = vec5.cpre(y, S, kv)
+            for v in range(kv):
+                state[v] |= (((s_i >> v) & 1).astype(np.uint16) << i)
         else:
             return y
 
@@ -55,6 +55,10 @@ def main():
     q3 = build(3); q4 = build(4, verbose=True)
     S5, Ws = cegar5.cached_W(5)
     sub = cegar5.Sub(q3)
+    ckpt = f"cegar5_{tag}.subset.json"
+    if os.path.exists(ckpt):
+        sub.games = [tuple((tuple(g[0]), tuple(g[1]), tuple(tuple(x) for x in g[2]))) for g in json.load(open(ckpt))]
+        print(f"resumed {len(sub.games)} games from {ckpt}", flush=True)
     n5 = 5; cyc = tuple((v + 1) % n5 for v in range(n5))
     for pos in range(n5):
         prio = tuple(2 if v == pos else 1 for v in range(n5))
@@ -63,6 +67,7 @@ def main():
     rnd = 0
     while True:
         rnd += 1
+        json.dump(sub.games, open(ckpt, "w"))
         q = sub.struct(); t0 = time.time()
         if window:
             solver, decode, ncl = restricted.encode_restricted(q, list(range(q.N)), k, window=window)
