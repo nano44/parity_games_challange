@@ -133,6 +133,59 @@ answer in this box: no construction found and the potential argument of section 
 proof must nail down is the pusher-chain order (section 1(c), last item), which is where an index-dependent tie order
 hides, exactly as in R7's S5.
 
+## 5. The Lead's four weak points of Lemma M (15:35Z) and the TC-variant question (15:38Z)
+(a) FIFO pusher-chain order at one Even vertex. The pop order of a region is the lexicographic order of pusher chains,
+where a vertex event's chain is (chain of the pusher, slot of the vertex in the pusher's predecessor list) and a tangle
+event's chain is (chain of the escape popped last, slot of the tangle in tin[escape] = creation order, slot of the vertex
+in the tangle's stored list). A new tangle is appended after all older tangles of the same escape, so at the SAME pop an
+older usable tangle always pushes first; a newer tangle can only push earlier by firing at an EARLIER pop (its last escape
+popped earlier). Across passes every firing moves earlier or dies (M4) and every vertex event moves earlier (M1), so the
+pair order (a before b, b before a) at a choice vertex u can reverse only when the later event overtakes, i.e. the
+lexicographic minimum of the two chains strictly decreases. Lexicographic descents over tuples of length up to n are NOT
+polynomially bounded in general; what bounds them here is that every chain change is caused by an event: a vertex joins
+the region (once per vertex per level), a lower tangle is absorbed (its vertices change head, once per vertex per level,
+M3), or a tangle of the same head fires before its own vertices are reached (then it pushes them with the strategy it was
+learned with, which is the strategy of this very region at the time, so by itself it reproduces the SCC it came from; it
+changes the SCC only through vertices OUTSIDE it whose earliest successor is now inside it, a change that is one-way:
+nothing pushes those successors later again). The one open step for a proof: the same-head self-firing chain (a tangle
+pushed earlier changes outside vertices' choices, which makes a new SCC, which is a new tangle, which fires at a different
+escape ...); I argue it is short because each round only moves events earlier and the within-tangle push order is fixed
+at learning time, but it is the step to nail. Targeted search for it: fitness = max number of tangles learned at ONE top
+(injective priorities so the tangle priority names the top), PERHEAD-PLACEHOLDER
+(b) Phase alternation. dtl never returns to a player's phase (run 1123-1136: Even until search(0) fails, then Odd until
+search(1) fails, then stop); so Even's tangle set is frozen when Odd starts, and nothing of Even's is renewed. idtl
+alternates, but the opponent's tangles are never attracted for the player (attractTangle 113 checks tpr mod 2 = player),
+so between two Even searches the only change caused by Odd is G shrinking by Odd's dominion (at most n vertices in
+total) and the deletion of Even tangles that contain a solved vertex (at most |T| events, each the death of a tangle,
+never a rebirth). Removal of a solved vertex makes attraction EASIER elsewhere (edges to solved vertices are ignored,
+attractVertices 84-86), so for the surviving vertices (M1)-(M3) continue to hold across the removal except for the deleted
+tangles, whose loss is a one-time event. Nothing becomes renewable: a renewable theft would need a region to shrink
+repeatedly, and a region shrinks only when R shrinks (solved vertices, at most n times) or a rule dies (tangle deletion,
+at most once per tangle). Theft "once per vertex per level" holds across phases because heads move only up within a
+phase and a phase change only removes vertices.
+(c) Subgame removal between iterations within a phase (Even dominion found by search(0), G shrinks, next search(0)):
+same as (b): attraction on the remaining G is monotone in T and in the removal, the deleted tangles are the only loss,
+and each loss is final. "No reset" survives: a vertex set learned before cannot be learned again (dedup is global and
+tangles are deleted only when a vertex is solved, i.e. gone from G for good).
+(d) Work per tangle. Measured on Oink (release, --no-single --no-wcwc): chain n = 50, 100, 200, 400, 800: 48..798
+tangles, 0.0006, 0.002, 0.021, 0.10, 0.81 s (~n^2.6 total, ~n^1.6 per tangle); tc N = 4..20 (n = 68..1300): 9..41
+tangles, pruning rounds that removed something 669, 4195, 12889, 29055, 54997 (~n^1.5), 0.003 .. 13.7 s (~n^2.9 total).
+By the code: one best_vertices call is at most n rounds, each a region computation plus d threshold attractors, each
+attractor O(m + sum of tangle sizes); one search_rec call runs at most n + (recursion depth) iterations; searches are at
+most tangles + dominions. So total work is polynomial in n times the number of tangles, and the tangle count is the
+whole question. Nothing in the measurements grows faster than n^3.
+TC-variant question (15:38Z): "how would a TC game have to change to give DTL a renewable theft". In tc the renewable
+event is the opponent's tangle learned at a high priority between the player's iterations: in tl's two-sided
+decomposition that tangle's attractor removes the player's lower regions, their vertices fall out, and the player relearns
+them with new vertex sets. A theft in DTL is a vertex moving to a higher head of the SAME player (M3); for it to be
+renewable the vertex would have to move down again, i.e. the higher region would have to lose it, which needs a rule to
+disappear or R to shrink; the opponent has no rule inside search(player) (attractVertices/attractTangles are called with
+the player only, best_vertices 643-776 and sptl 476-546 never run the opponent's attractor; the only opponent attractor is
+the one-step removal of the threshold vertices in search_rec 946-950, inside Z, before the recursion). So no TC variant
+gives DTL a renewable theft: the part of Lemma M that rules it out is (M1)+(M3), one-sided attraction with the opponent
+absent during a phase. The "different version of the TC game" van Dijk's slides mention would have to attack ptl/rtl's
+two-sided decompositions, not dtl's; for dtl the only opponent action is the dominion removal, at most n events.
+
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.
 - No Python port of dtl (Oink's trace sufficed: every tangle, strategy, escape and pruning round is printed).
