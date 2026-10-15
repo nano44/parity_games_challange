@@ -487,7 +487,24 @@ Note on the nested-tangle end state as stated (theft of a t'-vertex v, later τ'
 stolen by a higher top, S cannot recur at τ while heads only move up (M3); it can recur only in pieces with X nonempty,
 where regions are not monotone across searches (the (M-cross) paragraph above). Climbs with fitness = new tangles at a
 recurring pair (detector build, self-loop and renumbering mutations; free n = 12, 16; from tc+ 4 and the perturbed
-counter_odftl 6): NEWRECUR-PLACEHOLDER
+counter_odftl 6; 8,000-10,000 mutations each): best 0 in all four: no mutation produced a new tangle at a recurring pair.
+
+(D) distinct region sets per top over ALL pieces (Lead 18:06Z): dtl_strchanges.py's "max distinct sets at one top" and
+"distinct (top, set) pairs" are taken over every sptl region of the run (all pieces, all X), so the 17:45Z table already
+is the all-pieces number. With vertex counts:
+| tc+ N | n | distinct (top, set) pairs | max distinct sets at one top |
+| --- | --- | --- | --- |
+| 4 | 104 | 57 | 9 |
+| 5 | 180 | 82 | 11 |
+| 6 | 288 | 111 | 13 |
+| 7 | 434 | 144 | 15 |
+| 8 | 624 | 181 | 17 |
+| 10 | 1160 | 267 | 21 |
+| 12 | 1944 | TCP12-PLACEHOLDER |
+Max per top = 2N + 1 with n ~ 13.5 N^2, i.e. about 0.55 sqrt(n); distinct pairs grow like n^0.6 (57 -> 267 while n grows
+11x). Evolved and perturbed games (section 12 table): max per top 4-11 on 20-54 vertices, pairs 48-159. Nothing grows as
+fast as n per top. Climbs with fitness = max distinct sets at one top (n = 16, 24, 30) and = distinct pairs (n = 20), detector
+build, self-loop and renumbering mutations: DCLIMB-PLACEHOLDER
 
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.
