@@ -13,11 +13,16 @@ def measure(out):
     """returns (regions, seen, changes, occ, sets_per_top) from a cleaned -t -t -t trace of the detector build"""
     tangles = {}          # tangle id -> {even vertex: strategy}
     block = None; regions = []   # (top, frozenset(vertices), {even vertex: str})
+    newat = []                   # index into regions of the block that learned a new tangle (the line follows REGION)
+    deletes = 0; lastreg = None
     for line in out.splitlines():
         line = re.sub(r"^\[\s*[0-9.]+\]\s*", "", line)
         m = re.match(r"new tangle \d+ \((\d+)\) \(depth \d+\) (.*) with \d+ escape", line)
         if m:
-            tangles[int(m.group(1))] = {a: b for a, b in re.findall(r"(\S+)->(\S+)", m.group(2))}; continue
+            tangles[int(m.group(1))] = {a: b for a, b in re.findall(r"(\S+)->(\S+)", m.group(2))}
+            if lastreg is not None: newat.append(lastreg)
+            continue
+        if line.startswith("DELETE tangle"): deletes += 1; continue
         if line.startswith("SPTL top "):
             block = {"top": line.split()[2], "vs": {line.split()[2]}, "str": {}}; continue
         if line.startswith("DOM top") or line.startswith("SOLVE attractor") or line.startswith("best vertices") or line.startswith("iteration") or line.startswith("current region"):
@@ -41,6 +46,14 @@ def measure(out):
                 if v in seen[key] and seen[key][v] != w: changes[(key, v)] += 1
             seen[key] = {**seen[key], **st}
         else: seen[key] = dict(st)
+    # new tangles learned at a (top, set) pair that had occurred before
+    firstocc = {}; newrecur = 0
+    for i, (top, vs, st) in enumerate(regions):
+        if (top, vs) not in firstocc: firstocc[(top, vs)] = i
+    for i in newat:
+        top, vs, _ = regions[i]
+        if firstocc[(top, vs)] < i: newrecur += 1
+    changes["__newrecur__"] = newrecur; changes["__deletes__"] = deletes
     return regions, seen, changes, occ, sets_per_top
 
 
@@ -50,8 +63,9 @@ if __name__ == "__main__":
     out = re.sub(r"\x1b\[[0-9;]*m", "", r.stdout + r.stderr)
     regions, seen, changes, occ, sets_per_top = measure(out)
     n = len(set(v for _, vs, _ in regions for v in vs))
+    newrecur = changes.pop("__newrecur__", 0); deletes = changes.pop("__deletes__", 0)
     mx = max(changes.values(), default=0)
     worst = max(changes, key=changes.get) if changes else None
     print(f"{path.split('/')[-1]} {solver}: {len(regions)} sptl regions, {len(seen)} distinct (top, set) pairs, repeated pairs {sum(1 for k in occ if occ[k] > 1)}, "
           f"max repeats of one pair {max(occ.values(), default=0)}, max distinct sets at one top {max((len(v) for v in sets_per_top.values()), default=0)}, "
-          f"strategy changes at a fixed (top, set): total {sum(changes.values())}, max per vertex {mx}" + (f" (top {worst[0][0]}, vertex {worst[1]}, set size {len(worst[0][1])})" if worst else ""))
+          f"strategy changes at a fixed (top, set): total {sum(changes.values())}, max per vertex {mx}; new tangles at a recurring (top, set): {newrecur}; deletions {deletes}" + (f" (top {worst[0][0]}, vertex {worst[1]}, set size {len(worst[0][1])})" if worst else ""))
