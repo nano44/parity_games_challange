@@ -16,6 +16,11 @@ arXiv 1405.0386v2 Fig. 5) and of Algorithm 1 of arXiv 2511.03752 (experiments/m2
 | `pastar_fails.py`, `pa2_fails.py` | PA*/PA** on every psolQ failure of `out/fail_n{n}.jsonl` |
 | `pa_sample.py` | PA alone on random games (PD is slow from n = 5) |
 | `classes_n4.py` | class containment check (superseded by T-A1's corollary; left for reference) |
+| `psolc.py` | psolC (HKP DTR15-4 Fig. 5, product-graph reachability under parity of Def. 2/Thm 1); line map docs/attr/psolC-impl.md; `--exclude-start` = the worked example's reading (A1); positional strategies by solving the decided subgame (`--oink`, `--no-strat`) |
+| `a3_validate.py` | DTR Examples 1-3, Fig. 8, random soundness/strategies/Thm 4 (part of check.sh) |
+| `a3_exhaustive.py` | psolB/psolQ/psolC(/psolC-x) on every canonical n-vertex game, Thm 4 per node; `out/a3_summary_n{n}.txt`, `out/a3_fail_n{n}.jsonl` |
+| `a3_random.py` | the same on random games beyond n = 4, with shrinking of psolC-partial games |
+| `a3_families.py` | psolC on the M1 hard families (experiments/hard-families generators), reference Oink, `out/a3_families.csv` |
 | `instances/` | minimal failing games (PGSolver format) named in the results |
 | `check.sh` | the < 1 min regression run by scripts/verify.sh |
 

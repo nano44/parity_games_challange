@@ -6,6 +6,8 @@ set -euo pipefail
 cd "$(dirname "$0")"
 python3 -I validate.py --quick | tail -1 | grep -q "VALIDATE PASS"
 echo "validate --quick: PASS"
+python3 -I a3_validate.py --quick | tail -1 | grep -q "A3-VALIDATE PASS"
+echo "a3_validate --quick: PASS"
 python3 -I - <<'PY'
 import sys; sys.path.insert(0, "."); sys.path.insert(0, "../harness")
 import pg, a1lib

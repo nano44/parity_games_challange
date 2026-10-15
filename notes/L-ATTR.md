@@ -2,14 +2,13 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-15 00:18Z. REFEREE-2's re-check N1 (HKP's notion of a stable sequence) applied to Remark 3; final fix-pass commit pushed for both signatures. Earlier:
-2026-10-15 00:12Z. First referee's report (claude/referee 8ee2d08) applied on top of REFEREE-2's: F1 hypothesis X ⊆ pr^{-1}(d), F1' = HKP Thm 4 with gap G11, Büchi-up-to-recolouring note, constant-b note in T-A1', Remark 3 credited to both, Remark 4 cites the referee's PA* ⊆ PA** paragraph. Pushed; both referees sign that commit. Earlier:
-2026-10-15 00:00Z. REFEREE-2's report (docs/referee-2/R2-TA1.md, trunk 58b5c72): T-A1 and T-A1' OK in substance, CHANGES
-F1-F7, all applied: TA1-proof.md (G9 soundness sketch, F3 weakened to one PMAttr layer and T-A1' proof rewritten, Corollary 1
-in the consequence direction with gap G10, Remark 3 order independence, Proposition 3 demoted to data Remark 4, G1-G3 marked
-closed by R2) and A1-results.md (n = 2 row: psolB 8/240 canonical, psol 10/240; corollary text). Pushed and reported; parked
-until both referees re-check. Lesson recorded below: my report wording "HKP Thm 7/8/Lemma 5 follow from the only-if direction"
-was reversed (R2 F4); the "psolQ iff" sentence in the routing was not mine but my message should have said "converse false" up front.
+2026-10-15 08:20Z. Task A3-psolC (Lead 08:00Z, 6 h box to 14:00Z): psolC (HKP DTR15-4 Fig. 5) implemented in
+experiments/attr/psolc.py, line map docs/attr/psolC-impl.md (ambiguity A1: start colour, literal reading used), validation
+a3_validate.py PASS (DTR Ex. 1-3, Fig. 8). Running: a3_exhaustive.py 4 (out/a3_log_n4.txt, ~35 min), a3_families.py
+(out/a3_families_log.txt), random runs done (out/a3_random_*.txt). Then: docs/attr/A3-psolC-results.md, push, message.
+Findings so far: psolC solves ALL canonical n <= 3 games (psolQ misses 44); Thm 4 per node holds everywhere; smallest
+psolC-partial game n = 4, m = 6 (prio [1,2,1,5], all Even, v0->v0,v1; v1->v2; v2->v2,v3; v3->v0; Odd wins all): the
+weak-parity prefix minimum is spoiled by the even colour at v1 before Even parks on the v2 loop. tc: 0 % decided at all sizes.
 
 ## Queue
 2. Answer referee questions on TA1-proof.md; G3 (F6 equality) and G2 (external target, rank of X-vertices) are the ones I
@@ -71,6 +70,7 @@ was reversed (R2 F4); the "psolQ iff" sentence in the routing was not mine but m
 | --- | --- | --- | --- |
 | arXiv 2003.08627 v2 (DJT, e-print LaTeX; tuning.tex, coda.tex, prelude.tex, ballade.tex) | section 2 definitions (attractor decomposition, tree, Strahler number of tree/decomposition/game); Prop. 1, Thm 2, Prop. 3, Prop. 4; Lemma 7, Thm 8 (Strahler = Lehtinen number); Thm 32 (n^{O(1)} (d/2k)^k), Remark 33 | 2026-10-14 | max-parity ("even cycle" = highest priority even); shared counter, numbering checked against the source order |
 | arXiv 1405.0386 v2 (HKP, e-print LaTeX archiv.tex) | Defs 1-7, Fig. 2 (psol), Fig. 3 (psolB), Fig. 5 (layeredAttr, psolQ), Thm 2 (fatal attractor winning), Thm 4 (layered fatal attractor winning, strategy by rank (d,i)), Thm 5 (complexity), Thm 6 (psolB order-independence), Thm 7 (Büchi), Thm 8 (SCC-constant colour), Lemma 5 (deterministic games), Ex. 5-6, Fig. 4(a)(b), Fig. 6 | 2026-10-14 | MIN-parity (tex:366-367); title "Fatal Attractors in Parity Games: Building Blocks for Partial Solvers" |
+| Imperial DTR 2015/4 (HKP, "Static analysis of parity games: alternating reachability under parity"; DTR15-4.pdf sha256 a7b61fe3...9cd6; = LNCS 9560 pp. 159-177 per L-LIT T11, unverified) | Def. 1 (reachability under parity, p.4), Def. 2 (G^p_X, p.5), Thm 1 (p.6), Cor. 1, Lemma 2-3 (p.7), Fig. 5 psolC (p.9), Thm 2 (p.8), Thm 3 (p.9), Ex. 2-3 and Fig. 4, 6 (pp.8-11), Fig. 7-8 and Thm 4 (p.12), section 6 experiments | 2026-10-15 | min-parity; figures read from rendered pages; Example 3 step (ii) contradicts Def. 1's inclusion of the start colour (psolC-impl.md A1) |
 | arXiv 2511.03752 v1 (AVH, e-print main.tex sha256 9840db37...3f8b) | Algorithm 1 (main.tex:370-395) only, as the object implemented in experiments/m2/avh.py per notes/L-COMP.md "M2 pseudocode" (REFEREE: faithful) | 2026-10-14 | not re-refereed here |
 
 ## Dead ends
