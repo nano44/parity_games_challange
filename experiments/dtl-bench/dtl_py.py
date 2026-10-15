@@ -15,6 +15,8 @@ Choices the pseudocode leaves open (each listed in README "dtl_py choices"; they
  CH2 outs(v): in input order; ins(v): predecessors in increasing new index, each once per edge.
  CH3 tangle vertex order tv[t]: the order in which the SCC algorithm pops C off its stack.
  CH3' (--order oink only): tv[t] sorted ascending, as dtl.cpp stores it (read after shrinking divergence #2).
+ CH3'' (--order oink only): SCC vertex order = Pearce's (root first, then its post-order stack), as dtl.cpp emits it;
+     it fixes the order dominion vertices are queued for solving (read after shrinking divergence #3).
  CH4 "Q := all of Z" in best_vertices' threshold loop: pushed in increasing index (so popped from the highest).
  CH6 idtl iteration counter: see run() (convention read from dtl.cpp run() after the first divergence).
  CH5 dominion vertices are put in S at extraction; a vertex is solved once (a second solve of the same vertex is counted
@@ -25,6 +27,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 import pg
 
 TV_SORTED = False   # CH3 switch (see docstring)
+PEARCE = False      # CH3'' switch
 
 
 class DTL:
@@ -111,30 +114,33 @@ class DTL:
                 return [s] if s != -1 and s in R else []
             return [w for w in self.outs[v] if w in R]
 
-        index, low, on, stack, cnt, sccs = {}, {}, set(), [], 0, []
-        index[top] = low[top] = 0; cnt = 1; stack.append(top); on.add(top)
-        work = [(top, iter(succ(top)))]
-        while work:
-            v, it = work[-1]
-            pushed = False
-            for w in it:
-                if w not in index:
-                    index[w] = low[w] = cnt; cnt += 1; stack.append(w); on.add(w)
-                    work.append((w, iter(succ(w)))); pushed = True; break
-                elif w in on:
-                    low[v] = min(low[v], index[w])
-            if pushed:
-                continue
-            work.pop()
-            if work:
-                low[work[-1][0]] = min(low[work[-1][0]], low[v])
-            if low[v] == index[v]:
-                C = []
-                while True:
-                    w = stack.pop(); on.discard(w); C.append(w)
-                    if w == v:
-                        break
-                sccs.append(C)
+        if PEARCE:
+            sccs = self.pearce(top, succ)
+        else:
+            index, low, on, stack, cnt, sccs = {}, {}, set(), [], 0, []
+            index[top] = low[top] = 0; cnt = 1; stack.append(top); on.add(top)
+            work = [(top, iter(succ(top)))]
+            while work:
+                v, it = work[-1]
+                pushed = False
+                for w in it:
+                    if w not in index:
+                        index[w] = low[w] = cnt; cnt += 1; stack.append(w); on.add(w)
+                        work.append((w, iter(succ(w)))); pushed = True; break
+                    elif w in on:
+                        low[v] = min(low[v], index[w])
+                if pushed:
+                    continue
+                work.pop()
+                if work:
+                    low[work[-1][0]] = min(low[work[-1][0]], low[v])
+                if low[v] == index[v]:
+                    C = []
+                    while True:
+                        w = stack.pop(); on.discard(w); C.append(w)
+                        if w == v:
+                            break
+                    sccs.append(C)
         made = False
         for C in sccs:
             if len(C) == 1:
@@ -145,6 +151,8 @@ class DTL:
             esc = sorted({w for v in C if ow[v] != p for w in self.outs[v] if w in self.G and w not in Cs})
             if not esc:
                 for v in C:
+                    if PEARCE and v in self.S:    # CH5' (--order oink): dtl.cpp queues a vertex only if not yet in S
+                        continue
                     self.S.add(v); self.dom_vector.append((v, st[v]))
                 self.dominions += 1; made = True
                 continue
@@ -158,6 +166,31 @@ class DTL:
                 self.tin[e].append(t)
             self.tangles += 1; made = True
         return made
+
+    @staticmethod
+    def pearce(root, succ):
+        """CH3'' (--order oink): Pearce's SCC algorithm (IPL 2016, PEA_FIND_SCC2), with an SCC's vertices listed as Oink's
+        dtl.cpp 222-299 lists them: the root first, then the non-root vertices popped off Pearce's stack (pushed at finish
+        time). Same SCCs as Tarjan; only the vertex order inside an SCC differs (it fixes the order dominion vertices are
+        queued for solving in search())."""
+        INF = float("inf")
+        rindex, S, sccs, idx = {}, [], [], [1]
+        def visit(v):
+            rindex[v] = idx[0]; idx[0] += 1; isroot = True
+            for w in succ(v):
+                if w not in rindex:
+                    visit(w)
+                if rindex[w] < rindex[v]:
+                    rindex[v] = rindex[w]; isroot = False
+            if isroot:
+                idx[0] -= 1; C = [v]
+                while S and rindex[v] <= rindex[S[-1]]:
+                    w = S.pop(); rindex[w] = INF; idx[0] -= 1; C.append(w)
+                rindex[v] = INF; sccs.append(C)
+            else:
+                S.append(v)
+        visit(root)
+        return sccs
 
     def tattr(self, p, Z, R, Gx, maxpr, consume):
         """Tangle attractor loop of C5 §1 with the shared stack Q (already filled by the caller)."""
@@ -323,14 +356,15 @@ def solve_game(g, interleaved=False, order="stable"):
     new = {v: i for i, v in enumerate(idx)}
     d = DTL([g.prio[v] for v in idx], [g.owner[v] for v in idx], [[new[w] for w in g.succ[v]] for v in idx], interleaved,
             ins_desc=(order == "oink"))
-    global TV_SORTED
-    saved = TV_SORTED
+    global TV_SORTED, PEARCE
+    saved = TV_SORTED, PEARCE
     if order == "oink":
         TV_SORTED = True                  # CH3': Oink sorts a new tangle's vertices ascending before storing it (dtl.cpp 385-424)
+        PEARCE = True                     # CH3'': SCC vertex order as Oink's Pearce loop emits it (dominion queue order)
     try:
         win, st = d.run()
     finally:
-        TV_SORTED = saved
+        TV_SORTED, PEARCE = saved
     W = [None] * g.n; S = [None] * g.n
     for i, v in enumerate(idx):
         W[v] = win[i]
