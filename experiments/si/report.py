@@ -16,9 +16,9 @@ for f in files:
 data = collections.defaultdict(dict)
 for r in rows:
     key = (r["family"], r["rule"]); N = int(r["N"])
-    d = data[key].setdefault(N, [int(r["n"]), int(r["m"]), [], r["status"]])
+    d = data[key].setdefault(N, [int(r["n"]), int(r["m"]), [], r["status"], []])
     if r["status"] == "ok":
-        d[2].append(int(r["iters"]))
+        d[2].append(int(r["iters"])); d[4].append(float(r["secs"]))
     else:
         d[3] = r["status"]
 fams = sorted({k[0] for k in data}, key=lambda f: (f not in ("switchallexp", "switchbestexp"), f))
@@ -80,8 +80,10 @@ for fam in fams:
     for r in frules:
         pts = [(N, d[0], mean(d[2])) for N, d in sorted(data[(fam, r)].items()) if d[2]]
         k, b = fit(pts)
-        fits.append(f"{r}: k={k:.2f} b={b:.2f}" if k is not None else f"{r}: -")
-    out.append(""); out.append("Growth (last 3 sizes): " + "; ".join(fits)); out.append("")
+        tpts = [(N, d[0], mean(d[4])) for N, d in sorted(data[(fam, r)].items()) if d[4] and mean(d[4]) > 0]
+        kt, _ = fit(tpts)
+        fits.append((f"{r}: k={k:.2f} b={b:.2f}" if k is not None else f"{r}: -") + (f" time~n^{kt:.2f}" if kt is not None else ""))
+    out.append(""); out.append("Growth (last 3 sizes; k: iterations ~ n^k, b per +1 in N, time: wall-clock ~ n^kt, engine-dependent): " + "; ".join(fits)); out.append("")
     ax.set_xscale("log"); ax.set_yscale("log"); ax.set_xlabel("n (vertices)"); ax.set_ylabel("iterations"); ax.set_title(fam)
     ax.legend(fontsize=7); fig.tight_layout(); fig.savefig(os.path.join(PLOTS, f"{fam}.png"), dpi=110); plt.close(fig)
 # adversarial logs
