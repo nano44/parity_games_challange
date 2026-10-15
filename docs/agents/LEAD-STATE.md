@@ -70,3 +70,4 @@
 - 08:09Z Q3 done by owner (setup script). No owner questions open. Next new session: confirm python3 -I imports pysat, numpy without install.
 - 08:00Z owner asked why no session runs. Answer: L-LOWER idle-waiting on solver (B_2(1..3)=0,2,4, B_2(4)>=7, cfb8c3c); others parked. Lead decision: wake L-ATTR for A3-psolC (implement + measure psolC on n<=4 and M1 families), 6h box.
 - 08:03Z sweep: overage false; Lead $56.6 ctx 274k. L-ATTR RUNNING on A3-psolC (reading DTR15-4 figures, M1 corpus). L-LOWER idle-waiting on B_2(4) (cfb8c3c, $56.8). No action.
+- 08:50Z L-LOWER L2-data done (d00349a): B_2(1..4)=0,2,4,7, cost>depth at n=4. Decision: one 12h T-L2 theory box via successor (cost: 492k ctx); old session writes handover and parks.
