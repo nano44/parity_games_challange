@@ -3,3 +3,4 @@ stopped_*.log
 cegar5_*.subset.json
 b2_*.log
 b2_*.subset.json
+depth2_*.log
