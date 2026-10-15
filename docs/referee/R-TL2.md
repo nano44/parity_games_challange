@@ -202,3 +202,20 @@ No disagreement on any point. Item by item:
   implementations of both algorithms. Disjoint tool chains, identical conclusion.
 - R2's gap list G-TL-1..3 coincides with my Gaps section (Thm 6.3 black box; prose proof; si.py correspondence by reading).
 Signature: with the second independent read agreeing, I sign the lemma OK subject to findings 1–2 (text fixes only).
+
+## 9. Verdict at claude/l-red 8bb9d22 (the Lead's 12:40Z retarget; diff 0d50d4a..8bb9d22 read)
+Changes: the lemma is now stated for every tree B ⊆ E(G) and e ∉ B (my finding 5 / R2 F2(b)); case (2) carries the chain-vertex
+sub-case with the right offset inequalities k − 1 < k'' − 1, rs + j − 1 < rs + j'' − 1, a-offset < s ≤ rs ≤ b-offset (my finding 1 /
+R2 F1: applied correctly, and it says what happens when the chain path exits instead, class A, case (3)); case (1) now says the
+class gap is ≥ 4^j (half of my finding 2 / R2 F2(a)); the best-reward start is explained as the last copy of each zero-edge,
+a valid B_0 (R2 F2(c), closes the start half of my finding 3); the FHZ-omission section is in. fhz.py unchanged.
+Still open at 8bb9d22:
+- finding 2, second half: case (3) still reads "cheaper at j* by at least 4^{j*} − 2 > (the sum below j*) + (the offset
+  difference at j, < 2)"; the right-hand side can be as large as 4^{j*} − ε, so the inequality as written is unjustified; with
+  the gap ≥ 4^{j*} just established in (1) it holds. One-token fix: "4^{j*}" for "4^{j*} − 2".
+- finding 3, tie half: the strict improvement test of si.py's `rar` is not cited (R2 read it; a line with the si.py location).
+- finding 4: fhz.py's module docstring still describes the old band layout.
+Verdict at 8bb9d22: OK with fixes, signed subject to the one-token fix in case (3) (the other two are nits). The claim named
+by this signature: the Transfer Lemma as stated at 8bb9d22 and the consequence "Random-Action-Removal (S1) from any zero-edge
+start on P_{n,r,s,t} has the run distribution of Random-Facet on G_{n,r,s,t} from B_0, hence FHZ Thm 6.3's e^{Ω(√n)} expected
+switches", with FHZ Thm 6.3 as a black box.
