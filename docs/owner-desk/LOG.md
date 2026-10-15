@@ -35,3 +35,7 @@ psolC noted as a new candidate, not started.
 ## 2026-10-15 07:55Z owner (progress question)
 > So my question is, did we find alredy some novelty?
 Answered from docs/RESULTS.md (trunk 3888882), docs/lit/T10, T11. Relayed verbatim to the Lead.
+
+## 2026-10-15 09:44Z owner (progress question)
+> I feel like we are covering and cheking the frontier of the research now and then once we have done that we will look for advance it? Am I feeling it right?
+Answered from D1 milestones, docs/NOW.md roster/live approaches, RESULTS. Relayed verbatim to the Lead.
