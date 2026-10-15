@@ -46,6 +46,15 @@ makes their tangles be re-learned with a new vertex set; in dtl the opponent has
 by thefts and growth (M3), a new SCC at the same top needs either a region change (at most n per level per top, since
 each vertex enters or leaves a top's region at most once per level) or a change of Even's strategy str inside the region
 with the same vertex set.
+(d) Influence runs upward only (the analogue of R3's Lemma D). A tangle learned at head v consists of vertices of v's
+region; by (M3) those vertices belong, in every later pass and search, to the region of v or of a higher head, so the
+tangle can be attracted only in regions of heads at or above v (a lower head never sees its vertices in R), in the
+pruning's attractors, and in later levels (the remainder after Dom(V,R) -> X and the recursion). So a tangle never
+changes the regions below its own head: the downward influences that a counter needs (a higher event resetting lower
+levels) are X (grows within a search), V* (M2) and thefts (M3), all monotone. In tc the downward influence is the
+opponent's tangle at a higher priority, renewable because the opponent learns between the player's searches; dtl has no
+opponent during a phase, and idtl's opponent tangles are never attracted for the player (parity check, attractTangle 113),
+so they act only through G.
 (c) Even's strategy str[u] is set by the FIFO attractor: str[u] := the first popped successor of u (attractVertices 80), or
 the strategy of the first tangle that attracts u (attractTangle 170-180; vertices are popped in insertion order, and in one
 pop the predecessors of the popped vertex come first, in Oink's edge-list order, then the tangles of tin[v] in creation
@@ -56,9 +65,16 @@ obligations) and a tangle event moves earlier or dies (M4); a flip of str[u] the
 tangle event; at most once per vertex per level), or a reorder inside one layer with the same pushers (impossible: the
 within-layer order is the lexicographic order of the pusher chains, fixed by Oink's edge lists and tangle creation order,
 and changes only when a pusher changes, which is again a layer or theft event).
-Lead reading of (c): every strategy flip spends a unit of a potential of size O(n^2) per vertex, so the number of distinct
-(region, strategy) pairs, hence of tangles, is polynomial. Not proved line by line (the pusher-chain argument is where a
-proof would have to be careful; see section 4), but it is the shape of the obstruction.
+Lead reading of (c): every strategy flip spends a theft or a layer crossing, or a lexicographic decrease of the pusher
+chain. Thefts and crossings have polynomial budgets. The pusher chain is a tuple of (layer, slot) entries of length up to
+n, and a lexicographically descending sequence of such tuples can be exponentially long, so (c) alone does NOT give a
+polynomial bound; what closes it is (d): a chain changes only when a new vertex or tangle enters the region earlier, and
+by (d) a new tangle enters only regions above its head, so the chain changes at a fixed head are driven by events below
+it that are themselves monotone (vertices entering once per level, tangles learned below). A counter would need the
+chain at one head to descend exponentially often, fed by exponentially many new tangles below it, which is the same
+question one level down: the recursion bottoms out at the lowest head, whose region changes only by vertices entering
+(polynomial). Not a proof (the induction over heads has to handle tangles whose vertices are all lower than their head
+and the remainder levels), but the shape of the obstruction.
 
 ## 2. Evidence
 - Strategy flips are thefts, once per vertex and top. Census (experiments/red/dtl/dtl_flips.py: every learned tangle's
