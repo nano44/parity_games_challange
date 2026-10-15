@@ -171,3 +171,4 @@
 - 18:35Z L-RED handover 5a30e98 merged; L-RED parked. Process slip (L-RED self-reported): 7e2efb8 pushed with verify FAILED via a pipe instead of &&; fixed in 5a30e98. Rule reminder goes into every new brief.
 - 19:02Z hourly sweep: no overage (seven_day warning). Lead 390k. L-LOWER 373k idle, finalising after 19:20Z. L-COMP 115k working (175k exhaustive + 10k seeded clean so far, families running). No exceptions.
 - 19:22Z L-LOWER box done aa8995e merged; L25: T-L2 theory parked (no human-readable proof). k=9 runs left detached. Working: L-COMP only.
+- 20:02Z hourly sweep: no overage (seven_day warning). Lead 418k. L-COMP 193k idle-with-runs (9/18 family sweeps clean, 4 running; interim due ~21:00Z). No exceptions.
