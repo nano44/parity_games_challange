@@ -146,8 +146,8 @@ struct Engine {
 };
 int main(int argc, char** argv) {
     if (argc < 3) { fprintf(stderr, "usage\n"); return 1; }
-    string rule = argv[1], path = argv[2], start = "best", stratspec; long seed = 0; bool dump = false;
-    for (int i = 3; i < argc; i++) { string a = argv[i]; if (a.rfind("--", 0) != 0) continue; if (a == "--seed") seed = atol(argv[++i]); else if (a == "--start") start = argv[++i]; else if (a == "--strat") stratspec = argv[++i]; else if (a == "--dump") dump = true; }
+    string rule = argv[1], path = argv[2], start = "best", stratspec; long seed = 0; bool dump = false; bool trace = false;
+    for (int i = 3; i < argc; i++) { string a = argv[i]; if (a.rfind("--", 0) != 0) continue; if (a == "--seed") seed = atol(argv[++i]); else if (a == "--start") start = argv[++i]; else if (a == "--strat") stratspec = argv[++i]; else if (a == "--dump") dump = true; else if (a == "--trace") trace = true; }
     Game g = readpg(path); Engine e(g); e.init(); mt19937_64 rng(seed);
     if (rule == "valu") { vector<int> s = e.initial("first", rng); stringstream ss(stratspec); string tok;
         while (ss >> tok) { int c = tok.find(':'); s[stoi(tok.substr(0, c))] = stoi(tok.substr(c + 1)); }
@@ -161,7 +161,7 @@ int main(int argc, char** argv) {
     else if (rule == "rar") { vector<vector<int>> F(g.n); for (int v = 0; v < g.n; v++) if (g.owner[v] == 0) F[v] = g.succ[v]; strat = e.rar(strat, F, rng); it = e.rar_switches; }
     else {
         map<pair<int,int>, long> entered; pair<int,int> last = {-1, -1}; long ties_idx = 0;
-        while (true) { const auto& val = e.evaluate(strat).first; auto imp = e.improving(strat, val); if (imp.empty()) break; it++;
+        while (true) { e.cache.clear(); const auto& val = e.evaluate(strat).first; auto imp = e.improving(strat, val); if (imp.empty()) break; it++;
             if (rule == "switch-all") { vector<int> nw = strat; for (int v = 0; v < g.n; v++) if (g.owner[v] == 0) { int b = g.succ[v][0]; for (int w : g.succ[v]) { int c = e.cmp(val[w], val[b]); if (c > 0 || (c == 0 && w > b)) b = w; } if (e.cmp(val[b], val[strat[v]]) > 0) nw[v] = b; } strat = nw; }
             else if (rule == "random-edge") { auto [v, w] = imp[rng() % imp.size()]; strat[v] = w; }
             else if (rule == "zadeh") { auto best = imp[0]; long bc = entered[best]; for (auto& ed : imp) { long c = entered[ed]; if (c < bc || (c == bc && ed < best)) { best = ed; bc = c; } } entered[best]++; strat[best.first] = best.second; }
@@ -173,6 +173,7 @@ int main(int argc, char** argv) {
                     long c = 0; for (int x = 0; x < g.n; x++) if (e.cmp(v2[x], val[x]) > 0) c++;
                     int better = 0; if (best.first < 0 || c > bc) better = 1; else if (c == bc) { int d = e.cmp(v2[ed.first], bv); if (d > 0) better = 1; else if (d == 0) { ties_idx++; if (ed < best) better = 1; } }
                     if (better) { best = ed; bc = c; bv = v2[ed.first]; bs = s2; } }
+                if (trace) { long tot = 0; for (int x = 0; x < g.n; x++) tot += val[x].len; fprintf(stderr, "T it=%ld v=%d w=%d count=%ld improving=%zu sumlen=%ld\n", it, best.first, best.second, bc, imp.size(), tot); }
                 strat = bs; ties_idx_global = ties_idx; }
             else if (rule == "msf" || rule == "lsf") { auto best = imp[0]; int bl = e.level3(val[strat[best.first]], val[best.second]);
                 for (auto& ed : imp) { int l = e.level3(val[strat[ed.first]], val[ed.second]); bool better = rule == "msf" ? (l > bl || (l == bl && ed < best)) : (l < bl || (l == bl && ed < best)); if (better) { best = ed; bl = l; } }
