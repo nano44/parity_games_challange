@@ -67,3 +67,4 @@
 - 07:55Z Q5 answered by owner (DTR15-4 upload via OWNER-DESK); sha256 verified; L-LIT woken for T11 (2h); reading L11.
 - 08:00Z D4 recorded (owner answers Q2-Q7 via OWNER-DESK); readings L12-L16; Q2/Q4/Q6/Q7 closed; Q3 owner action; Q5 pending T11.
 - 08:05Z L-LIT T11 done (933dc12, merged); Q5 closed (L17); R2 caveat updated; psolC candidate recorded; L-LIT parked.
+- 08:09Z Q3 done by owner (setup script). No owner questions open. Next new session: confirm python3 -I imports pysat, numpy without install.
