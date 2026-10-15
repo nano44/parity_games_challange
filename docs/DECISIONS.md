@@ -100,3 +100,21 @@ Verbatim: > a
 to put the budget there. (c) No change.")
 Lead reading L19: confirms L18; L-LOWER continues. The number of algorithm lanes is the Lead's call: a second lane L-SI (strategy
 improvement design loop toward M4/M4-R; L-LIT RANKING rank 4) starts now, alongside L-ALG. No spend ceiling set; D1 cost policy applies.
+
+## D7 (2026-10-15 ~12:35Z, owner in the Lead session, answering Q9): spend
+Verbatim: > a
+(Q9 option (a): "Continue at the current rate. We pause automatically if the cap is hit and stop at once on overage.")
+Lead reading L20: the interim freeze of 12:05Z is lifted; the D1 cap (5 working lanes) and the D1 overage rule (stop the fleet
+and tell the owner) still apply. Deferred items resume: L-RED (F1 fix, then S7, S5/S6), second referee on the RAR transfer lemma
+(REFEREE), then L-LIT novelty check.
+Lead reading L21 (2026-10-15 12:58Z): L-RED's Random-Facet transfer (docs/red/R2-RAR.md; both referees signed, REFEREE-2 995cfd3,
+REFEREE 42f11c6, subject to a one-token fix in case (3)) is recorded, once the CHECKER passes, as M3-type "a tighter analysis of a
+known algorithm" (as L9): original Random-Facet needs e^Omega(sqrt n) expected switches on parity games of size
+Theta(n^{3/2} log^3 n). L-LIT T13 (l-lit c962d80): NEW as a published statement, low technical novelty (a faithful transfer of
+FHZ 1410.7530 Thm 6.3; the encoding is the contribution; Thm 6.3 credited). Hansen's 2012 thesis unopened: matters only for an
+external "first" claim (owner).
+Correction to L21 (2026-10-15 13:40Z, after CHECKER C2 FAIL, checker ce07713): "both referees signed" was wrong. REFEREE-2's
+R2-TL (995cfd3) is a first-referee read, not a signature (as the Lead's own 12:12Z brief asked). Signatures at 13:40Z: REFEREE
+only (42f11c6/5ed56c5, condition met at l-red 49ae306). REFEREE-2 asked to sign at 49ae306 with gap list. The entry text follows
+CHECKER C2's suggested wording (scaling, start sigma_{B_0}, N = |V|+|E| form, strict tie convention, gaps G-TL-1..3 + AUSO/ties).
+L-LIT T13's line "signed by REFEREE-2 (995cfd3)" carries the same error (L-LIT file; corrected on its next task).

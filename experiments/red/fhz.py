@@ -13,10 +13,12 @@ Fig. 1): RF(F, B): pick a uniformly random e in F \ B, B' = RF(F \ {e}, B); if e
 
 Parity encoding P (one player, sink 0 of priority 1, Odd, self-loop; every other vertex Even):
   structural vertices a, b, u, w: priority 0 (below the sink: never in a path set; they only count in the length);
-  every edge copy x -> y of cost c becomes x -> m (priority 0, one per copy) -> [c_x (odd priority, one per distinct cost
-  of x, if c > 0) ->] y.  Priorities: level i band base_i = 2 + (i-1)(4rs+4); cost rs*2^{2i} -> base_i + 1;
-  cost rs*2^{2i+1} + d (d in [0, 2rs)) -> base_i + 3 + 2d.  So path-set order = lexicographic by level on the class
-  {0, 2^{2i}, 2^{2i+1}+delta}, then by delta within a level, which is exactly how path costs of G compare (docs/red/R2).
+  every edge copy x -> y becomes x -> m (priority 0, one relay per copy) -> [class vertex] -> y, with the class vertices
+  SHARED by every entry into the level (see build()): class A (the 0-cost chain exit b_{i,rs} -> w_{i+1}) -> even g_i of
+  priority base_i + 4rs; class B (u0_i, w0_i, cost 2^{2i}) -> no class vertex; class C (escape with offset d in [0, 2rs))
+  -> odd o_{i,d} of priority base_i + 1 + 2d; base_i = 2 + (i-1)(4rs+2).  Level-i sets A {g_i} > B {} > C {o_{i,d}} for Even,
+  so the path-set order is lexicographic by level on the class {0, 2^{2i}, 2^{2i+1}+delta}, then by delta within a level,
+  which is exactly how the path costs of G compare (docs/red/R2-RAR.md, Transfer Lemma).
 Usage: fhz.py lockstep n r s t seeds   |   fhz.py table n_list r s t seeds   |   fhz.py export n r s t out.pg (prints start)"""
 import sys, random
 sys.setrecursionlimit(1 << 20)
@@ -181,12 +183,25 @@ class RF:
         return trees2
 
 
-def export_pg(P, B0P, names, path):
+def export_pg(P, B0P, names, path, labels=None):
+    """labels: optional dict parity-id -> label (G vertices get their G name, relays 'm<edge>', class vertices 'g<i>'/'o<i>_<d>')"""
     with open(path, "w") as f:
         f.write(f"parity {P.N - 1};\n")
         for v in range(P.N):
-            f.write(f"{v} {P.prio[v]} {1 if v == 0 else 0} {','.join(map(str, P.succ[v]))};\n")
+            lab = f' "{labels[v]}"' if labels and v in labels else ""
+            f.write(f"{v} {P.prio[v]} {1 if v == 0 else 0} {','.join(map(str, P.succ[v]))}{lab};\n")
     return "spec:" + " ".join(f"{v}:{P.edge_head[e]}" for v, e in sorted(B0P.items()))
+
+
+def labels_of(pid, names, ename):
+    """parity id -> label for export_pg"""
+    lab = {0: "t"}
+    for key, v in pid.items():
+        if key[0] == "v": lab[v] = names[key[1] + 1]
+        elif key[0] == "m": lab[v] = "m" + ename[key[1]][0].replace(",", "_")
+        elif key[0] == "g": lab[v] = f"g{key[1]}"
+        elif key[0] == "o": lab[v] = f"o{key[1]}_{key[2]}"
+    return lab
 
 
 if __name__ == "__main__":
@@ -232,6 +247,8 @@ class VJModel:
 def relation_check(n, r, s, t, samples, seed=0):
     """Random functional F (every multi-edge keeps >= 1 copy, every vertex keeps an out-edge) and random tree B in F:
     the sets of improving edges of B within F must coincide in G and P."""
+    import os
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))     # python3 -I drops the script directory
     import vj
     G, P, B0, B0P, names, ename, pid = build(n, r, s, t); rng = random.Random(seed); bad = 0; tot = 0
     groups = {}

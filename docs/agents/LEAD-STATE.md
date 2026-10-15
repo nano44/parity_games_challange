@@ -92,3 +92,50 @@
 - 12:08Z L-RED: S1 RAR killed via FHZ transfer lemma (unrefereed). Asked for push + 'why didn't FHZ say so' check; retargeted L-RED to S5/S6. L-SI told to stop RAR runs. Next: referee on transfer lemma, L-LIT novelty.
 - 12:06Z SWEEP EXCEPTION: seven_day rate limit allowed_warning on all sessions (not overage; resets 10-21 21:00Z). Q9 to owner via OWNER-DESK (a/b/c, rec b). Interim: no new sessions except RAR-lemma referee. Spend: Lead 69.1, L-ALG 24.8, L-SI 29.1, L-LOWER2 21.1, L-RED n/a. CI green.
 - 12:15Z l-red R2 merged (0d50d4a). REFEREE-2 R2-TL (transfer lemma + why-FHZ-silent check). L-RED parked (spend; S5/S6 cancelled). L-SI to record S1 conditional.
+- 12:16Z REFEREE-2 R2-TL OK with fixes (995cfd3, merged). DE6 recorded (S1 RAR). Second referee, L-LIT novelty, L-RED F1 fix deferred pending Q9.
+- 12:36Z D7 owner chose Q9 (a): continue. Freeze lifted (L20). L-RED resumed (F1, S7, S5/S6); REFEREE second read of transfer lemma.
+- 12:48Z L-ALG: C4 dead; DTL survives everything (lead); L-ALG redirected to DTL provenance/pseudocode/data. tc+ beats PTL/SPPTL (bench note).
+- 12:54Z REFEREE R-TL2 signed (6d5d9ad, merged); confirming coverage of l-red 8bb9d22. L-LIT T13 novelty started. L-RED nits queued.
+- 12:58Z L-LIT T13 NEW-as-statement (c962d80, merged); L21 classification; CHECKER after L-RED fix.
+- 13:03Z sweep: no overage (seven_day allowed_warning, D7 continue). Lead $74.5, ctx 596k (state in NOW/LEAD-STATE; compaction expected). Lanes: L-ALG 396e354 (DTL sweep), L-SI 3ff7cf7, L-LOWER ae85eca (K_5 >= 9 gates, 3 jobs), L-RED 8bb9d22 (S7 + one-token fix pending). No action.
+- 13:19Z L-RED R3: S7 HELD (7edf1c8). One-token R2 fix still missing -> asked first; then L-RED continues on S7 reset redesign (not S5).
+- 13:28Z L-RED box2 end: S5/S6 HELD (R4 0203590); one-token R2 fix still missing (re-asked, messages crossing). S7: L-SI step 2 + proof attempt; L-LIT T14 barrier; L-RED box 3 kill. Cap 5.
+- 13:31Z L-RED R2 fix 49ae306 (case 3: 4^{j*}); both signatures cover it; merged. CHECKER queued for next slot.
+- 13:35Z L-LIT T14 S7 NOT COVERED (8dd2e55, merged); attack hint to L-RED. CHECKER C2 on RF result started.
+- 13:41Z CHECKER C2 FAIL (ce07713): one signature only. LEAD MISS: counted REFEREE-2's first read (which I asked to be 'not a signature') as a signature in L21 and in the C2 brief; also said referee 42f11c6/5ed56c5 were on trunk when they were not. Fixed: referee + checker merged (db46c2c, 4b19501), L21 correction, REFEREE-2 asked to sign. Lesson: before a CHECKER brief, grep each referee file for its signature block and check ancestry on trunk.
+- 13:52Z RESULTS R3 LANDED (original Random-Facet lower bound on parity games), CHECKER C2 PASS 068f9de, entry with N-2/N-3 wording only. Follow-ups: L-RED remove 'unrefereed' lines in R2-RAR.md; L-LIT fix T13 citation; fhz.py relation under python3 -I.
+- 13:57Z L-ALG end-of-box (898d02d, merged): DTL survives all; van Dijk slides say path-based variants vulnerable to a TC variant -> L-ALG redirected to rebuild it.
+- 14:02Z L-RED box3: S7 not killed; reduction to question DF (downstream-first runs). L-RED construct box (6h), L-SI proof direction.
+
+## Pre-compaction snapshot 2026-10-15 14:05Z (Lead ctx 680k)
+- Owner rulings today: D3 OWNER-DESK (session_01Eq99qsTJBiTh6xLzwCPtqv), D4 Q2-Q7, D5 aim M4 (no "unlikely"), D6 Q8(a) algorithm lanes,
+  D7 Q9(a) continue spend despite weekly warning (seven_day allowed_warning; resets 2026-10-21 21:00Z; stop on overage per D1).
+- Results: R1 L4, R2 T-A1, R3 original Random-Facet lower bound (landed 13:52Z, CHECKER C2 PASS 068f9de). Dead ends DE1-DE6.
+- Working lanes (cap 5 counts lanes): L-ALG (session_01WN44zjFXZSqaL5SwsoDn7d, box to 21:55Z: attack DTL via van Dijk's
+  "VULNERABLE to a different version of the TC game" hint), L-SI (session_01HnGDSEHG3NHszV1y8ND6BF, box to ~22:10Z: S7 step-2 data,
+  proof attempt on question DF), L-RED (session_017WLo5xfMxRZ4f6n2Su6274, 6h DF construction box from 14:00Z), L-LOWER
+  (session_0153E4mCB2wqi65xdfpxozfK, T-L2 box to 20:36Z).
+- Idle/parked: REFEREE, REFEREE-2, CHECKER, L-LIT, L-ATTR, L-STRUCT, L-COMP, HUMAN-DESK, OWNER-DESK (idle between owner messages).
+- Live algorithm leads: S7 most-improved (question DF: exponential downstream-first run exists? L-RED constructs, L-SI proves);
+  DTL (Oink van Dijk variant; C5-DTL.md). S5/S6 held, not defended.
+- Pending small items: merge l-red 3bcb4d9 (R2 wording, fhz.py -I fix); L-LIT to correct T13 REFEREE-2 citation on next task;
+  T-ALG1 (psolC complete on Strahler-1) deferred for refereeing.
+- Lead misses today: CI numpy/user-site (02:10Z); cache-TTL wake advice (04:03Z); stale NOW In-flight (09:50Z); cap count (11:08Z);
+  first read counted as signature in L21 / C2 brief (13:41Z).
+- 14:03Z sweep: no overage (seven_day warning; D7). Lead $83.1 ctx 694k. L-ALG 02de72d (DTL attack table), L-SI 5564dfc (DF route dead recorded), L-LOWER b2eb965 (9-gate runs), L-RED 3bcb4d9 (DF pad LP running). No action.
+- 14:10Z L-RED KILLED S7 (fhz_padded, doubling). DE7 on R5 push. L-RED next: FHZ counter vs S5/S6. L-SI: reproduce, stop proof, obstruction map.
+- 14:12Z DE7 recorded (S7, l-red bf0922f merged).
+- 14:19Z L-RED R6 S5/S6 held; box 4 (5h) Zadeh fixed-tie-break lower bound. DE7 updated to n=10.
+- 14:45Z WATCHDOG: roster stale for REFEREE-2/REFEREE/CHECKER (fixed). Lead ctx 731k, $86.2.
+- 14:58Z NOW cleanup per OWNER-DESK notes; spend table refreshed (~$692 readings).
+- 15:03Z sweep: no overage (seven_day warning; D7). Lead $87.7 ctx 758k. L-ALG 549bb34: DTL survives all tc/tc+ variants (report pending). L-SI 71c5c97 obstruction map. L-RED 7dd83d3 Zadeh climb. L-LOWER b2eb965 runs. No action.
+- 15:08Z L-RED R7: S5 held (cyclic tie constraints). L-RED -> DTL attack (6h). L-LIT T15 (fixed-tie-break Zadeh novelty + T13 fix).
+- 15:12Z L-ALG DTL attack no kill (473c7c8, merged); L-ALG parked; recommendation to L-RED.
+- 15:08Z merged l-lit e895ddd (T15 OPEN, T13 cite fix); L-LIT parked; NOW updated. Waiting on L-RED (DTL, ~21:06Z), L-SI (~22:10Z), L-LOWER (~20:36Z).
+- 15:29Z R8 (DTL HELD, Lemma M) merged. Decision (fleet judgement, L12): run DTL through the gauntlet: L-LIT T16 (step 3 + GandALF 'VULNERABLE' source), L-ALG successor for proof (step 4 attempt) after handover, L-RED keeps attacking (FIFO order, phase alternation, cross-iteration monotonicity, per-tangle work). Cap: 5 with successor. Rate: seven_day warning, no overage.
+- 15:31Z L-LIT T16 interim: Oink branch origin/dftl has counter_dftl (a028e62, 2021) and counter_odftl (2024); DTL was 'distraction-free TL' before 1ba8b0a rename; README counter_dtl predates rename, no source. Forwarded to L-RED as top priority (build vs 8fbf0a7, run dtl/idtl N=1..20 with verify).
+- 15:32Z L-ALG handover 1017502 merged; L-ALG parked; successor spawn held until L-RED reports on counter_dftl/odftl.
+- 15:34Z T16 merged (3874a1e): step 3 SIGNED w/ 4 caveats; L-LIT parked; optional owner Q10 (2024 chapter copy) listed in NOW.
+- 15:35Z T16 addenda 4f61b4c merged: VULNERABLE slide = RTL/PTL (tc+); counter_dtl (2021) targets current DTL, never committed; dftl-branch generators target DFTL. Told L-RED counter_dftl may descend from counter_dtl.
+- 15:42Z L-RED R8 §6 d6496f3: counter_dftl/odftl harmless to dtl (2N+3). Spawned L-ALG successor session_012cQPWcEm23KMdMQSvWrULr (Fable) for five questions then DTL proof. L-COMP successor deferred to ~20:36Z (cap headroom, spend warning).
+- 15:47Z L-ALG successor handover 5/5; GO for DTL proof attempt (8h box, statement first within 1h, GAPs reported at once).

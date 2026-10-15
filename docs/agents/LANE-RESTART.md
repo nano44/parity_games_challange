@@ -16,3 +16,4 @@ Five questions:
 | date | lane | old session | new session | score (of 5) | misses fixed |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-15 | L-LOWER | session_01U5n8mgXxgyGzvuUzxHbiKx | session_0153E4mCB2wqi65xdfpxozfK | 5 | none (answers re-measured: 29/18 vs trunk, merge-base fe676d9, no GAPS rows, core 100 games) |
+| 2026-10-15 | L-ALG | session_01WN44zjFXZSqaL5SwsoDn7d | session_012cQPWcEm23KMdMQSvWrULr | 5 | none (re-measured: merge-base 1017502, 0 ahead; 107 behind at its fetch, 112 now after Lead commits; no GAPS rows; T-ALG1 unrouted is correct: deferred by Lead) |
