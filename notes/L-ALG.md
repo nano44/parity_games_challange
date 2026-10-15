@@ -140,4 +140,23 @@ each level of NE' adds one register. This is the exact obstruction of the whole 
 - 12:47-13:50 Lead redirect to DTL: provenance (git + GandALF 2019 slides + ISoLA 2024 paper), C5-DTL.md transcription,
   dtl_check.py (all ok on 67,000+ games with verified strategies), growth sweeps (tangles linear on every family; tc wall
   time ~n^2.5; tc+ N=16 exceeded 900 s). Report finalised; end-of-box message sent.
+- 13:56Z Lead: attack DTL with tc variants (rest of box). 14:00-14:40Z:
+  - tcvar.py: Python port of tc.cpp, validated (identical tl/dtl/uzlk work at N = 2..6). Knobs tried (tcvar_sweep.py, N = 2..10):
+    DOUBLEDISTRACTION (the author's own compile-time variant), lanes of 1-3 extra vertices on the A/B -> input edges (prio 0 or 1),
+    2-3 gates in series, Z priority +2/+4 (destroys the counter: tl becomes linear too), T priority 3, high-priority gap 4,
+    combinations: DTL stays at exactly 2N+1 tangles on every one (idtl identical); tl stays 2^(N+1)-2 except with zshift.
+  - tc_local.py (hill-climb from tc N=3/4, mutations on edges/priorities/owners/splits, fitness = dtl tangles): best 26 (N=3,
+    n=70) and 28 (N=4, n=100) vs 7 and 9: a 3x constant, then stalls.
+  - tc_template_ga.py (uniform per-bit templates with two extra vertices per bit and a 17-edge menu, fitness = dtl at N=5):
+    all three seeds converge to the same family (T<->E1, E2->T, A->E1 with prZ = lopr+2): dtl = 10, 18, 32, 41, 52, 62, 74, 85
+    at N = 2..9, i.e. ~10N, LINEAR. Lesson: single-size fitness rewards constants, not growth. Relaunched with a 27-edge menu
+    (cross-counter couplings) and growth fitness (work at N=7, tie-break N=7/N=4 ratio): out/tc_template_ga_growth_s1{1,2,3}.log.
+  - DTL trace reading (oink --dtl -t -t on tc 2): pruning removes the priority-0 vertices of the odd counter first ("distance 1"),
+    then gates/selectors, leaving {Even-1-T, Even-0-H} stable after 5 rounds; one tangle per search; 2 dominions in 5 iterations.
+    The pruning is a greatest fixpoint ("p-vertices with a good path, through priorities below their own, to the regions of the
+    surviving p-vertices"), computed in <= n rounds: a single weak condition, like psolC's, with tangle learning handling siblings.
+- 14:20 growth-fitness template GA seed 13: best family quadratic (11..183 at N = 2..10, ~1.8 N^2); seeds 11/12 pending.
+- 14:30-14:55 tc+ port validated (tl/dtl/rtl identical at N = 2..6); tc+ knobs: DTL 8, 17, 30, 43, 58, 75, 94, 115 on every variant
+  (~1.4 N^2). Template GA with growth fitness: tc base seeds 12/13 quadratic (~1.6-1.8 N^2), tc+ base seeds 21/22 quadratic
+  (~2.7 N^2). Verdict in REPORT: no super-polynomial tc variant for DTL found; mechanisms and why recorded.
 
