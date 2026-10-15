@@ -144,3 +144,4 @@
 - 16:05Z hourly sweep: no overage (seven_day warning). Lead ctx 159k; L-SI 708k (>600k: asked to end box by ~18:00Z with obstruction map + handover, then park); L-LOWER 368k idle with waiter; L-RED 396k idle, 7 searches under monitors; L-ALG new 117k working. CI green on all lane heads (latest runs 449-460). M2 done so no daily owner line.
 - 16:08Z L-ALG code facts verified by Lead: uintqueue is a stack (LIFO attractors), CurR consumed per round (dtl.cpp:690). Voids R8's FIFO-layer step; routed to L-RED as attack angle (renewable str[] flips via DFS order).
 - 16:16Z R8 §9 4a659d9 merged: set-based Lemma M parts survive LIFO; W/P/E outline forwarded to L-ALG; no hit.
+- 16:37Z R8 final 8e03198 merged (HELD; no wrong answer, no super-poly count). L-RED kept on hand construction vs (E)/(P) to 21:06Z.
