@@ -14,7 +14,7 @@ ap.add_argument("rule"); ap.add_argument("--G", type=int, default=4); ap.add_arg
 ap.add_argument("--kmax", type=int, default=10); ap.add_argument("--restarts", type=int, default=30); ap.add_argument("--steps", type=int, default=2000)
 ap.add_argument("--samples", type=int, default=1); ap.add_argument("--seed", type=int, default=0); ap.add_argument("--desc", action="store_true")
 ap.add_argument("--budget", type=float, default=1e9); ap.add_argument("--tag", default="")
-ap.add_argument("--seed-template", default="", help="dlmm: start every restart from the DLMM Bland counter level (a Even, b Odd) plus random extra vertices")
+ap.add_argument("--objective", default="iters", choices=["iters", "escapes"]); ap.add_argument("--seed-template", default="", help="dlmm: start every restart from the DLMM Bland counter level (a Even, b Odd) plus random extra vertices")
 a = ap.parse_args()
 G = a.G
 
@@ -35,9 +35,26 @@ def instantiate(t, k):
     return pg.Game(prio, owner, succ)
 
 
+def escapes(g):
+    e = si.Engine(g); strat = e.initial("best"); x = 0
+    while True:
+        val, _ = e.evaluate(strat); imp = e.improving(strat, val)
+        if not imp: break
+        new = si.RULES[a.rule](e)(strat, val, imp, None)
+        v = [i for i in range(g.n) if new[i] != strat[i]][0]
+        if e.cycle_creating(strat, v, new[v]):
+            val2, _ = e.evaluate(new)
+            if all(val[u][0] == val2[u][0] for u in range(g.n)):
+                x += 1
+        strat = new
+    return x
+
+
 def score(t, k=None):
     k = k or a.K
     g = instantiate(t, k)
+    if a.objective == "escapes":
+        return escapes(g)
     tot = 0
     for s in range(a.samples):
         tot += si.solve(g, a.rule, seed=s)[2]

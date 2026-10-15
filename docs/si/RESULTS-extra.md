@@ -31,3 +31,13 @@ lsf = steepest = 2^(L+1) - (L+2) (exponential); msf = 3L - 2.
 | zp_ga_K12_n48_calls1943 | 48 | 12 | 12 | 13 | 11 | 4 |
 
 Trivial for every SI rule (the games are built to blow up a Zielonka+psolC hybrid, not SI).
+
+### Gadget-chain family search for MSF (famsearch.py: hill-climb over G-vertex gadget templates chained k times plus a sink; score = iterations at k = K; then the best template swept over k)
+| search | iterations for k = 2..11 | growth |
+|---|---|---|
+| G=4, K=7, ascending relevance | 29, 66, 117, 186, 273, 382, 513, 670, 853, 1066 | second differences 14..30: between k^2 and k^3 |
+| G=5, K=6, ascending | 24, 71, 143, 245, 379, 545, 743, 973, 1235 (k ≤ 10) | second difference constant 32: quadratic |
+| G=4, K=7, seeded with the DLMM Bland level | 18, 47, 90, 149, 224, 315, 422, 545, 684, 839 | second difference constant 16: quadratic |
+| G=4, K=7, descending relevance | 26, 53, 83, 116, 152, 191, 233, 278, 326, 377 | second difference 3..6: quadratic |
+
+No search found super-polynomial growth in k (n = Gk + 1).
