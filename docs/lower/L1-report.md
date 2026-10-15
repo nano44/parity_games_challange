@@ -63,11 +63,11 @@ ALL 916·10^6 one-player Büchi games with 5 vertices (vec5.py reference, itself
 vertices). UNSAT on a successor-closed subset is a proof of impossibility; a candidate counts only after the full sweep passes.
 | program class | k = 8 | k = 9 | k = 10 | k = 11 |
 | --- | --- | --- | --- | --- |
-| window-1 chains (gate i reads P_2, s_{i−1}) | UNSAT (136 games, cegar5_k8_w1.json) | UNSAT (154 games) | UNSAT (562 games) | running |
-| window-2 chains | running | | | |
+| window-1 chains (gate i reads P_2, s_{i−1}) | UNSAT (136 games, cegar5_k8_w1.json) | UNSAT (154 games) | UNSAT (562 games) | UNSAT (512 games) |
+| window-2 chains | UNSAT (1264 games) | undecided (run OOM-killed at 2483 games, 19·10^6 clauses) | | |
 | unrestricted | running | | | |
-So chain programs, which attain the minimum 2n − 2 for n ≤ 4, need ≥ 11 gates at n = 5 (2n − 2 = 8): the chain family does
-not extend linearly. B_1(5) itself (≥ 8 by Lemma A) is open until the unrestricted run ends.
+So window-1 chain programs, which attain the minimum 2n − 2 for n ≤ 4, need ≥ 12 gates at n = 5 (2n − 2 = 8), and
+window-2 chains ≥ 9: the chain family does not extend linearly. B_1(5) itself (≥ 8 by Lemma A) is open until the unrestricted run ends.
 
 ## 5. State of T-L1 and proof routes
 - The hoped-for lower bound T-L1 (B_1(n) = ω(n)) is NOT supported by the data: B_1(n) = 2n − 2 exactly for n ≤ 4, attained by
