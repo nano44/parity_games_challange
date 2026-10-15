@@ -26,14 +26,16 @@ compare with B_1(n) = 2n − 2 (n ≤ 5, docs/lower/L1-report.md). Code: experim
 | 1 | 0 | 0 | 0 | SAT on Q_1 (4 classes) |
 | 2 | 2 | 2 | 2 | SAT on Q_2 (76 classes): UNSAT at 1 |
 | 3 | 4 | 4 | 4 | SAT on Q_3 (5164 classes): UNSAT at 3; witness verified on Q_3 |
-| 4 | 6 | **7** | see depth2_n4 (below) | CEGAR: UNSAT at k = 6 on 400 games (result_b2_n4_k6.log); k = 7 SAT, verified on ALL 12 960 000 four-vertex games (vec2 reference = Lemma 2.3's unfolding, checked against Zielonka on all games with ≤ 3 vertices and 300 000 random 4-vertex games) and re-checked gate by gate against the harness Zielonka on 100 000 random games (result_b2_n4_k7.log, b2_n4_k7.json) |
+| 4 | 6 | **7** | **6** (depth2.py on all 51 906 148 (game, vertex) pairs with ≤ 4 vertices: 1 120 780 depth-6 types, W constant on each; 90 mixed depth-5 types) | CEGAR: UNSAT at k = 6 on 400 games (result_b2_n4_k6.log); k = 7 SAT, verified on ALL 12 960 000 four-vertex games (vec2 reference = Lemma 2.3's unfolding, checked against Zielonka on all games with ≤ 3 vertices and 300 000 random 4-vertex games) and re-checked gate by gate against the harness Zielonka on 100 000 random games (result_b2_n4_k7.log, b2_n4_k7.json) |
 | 5 | 8 | ≥ 8 (Lemma 2.1') | | not attempted (6.9·10^9 games; a sweep is ~ 1 h per candidate) |
-Reading: two-player Büchi first exceeds the one-player minimum at n = 4, by one gate (7 versus 6 = 2n − 2). B_2(4) = 7 is the
-first exact data point where the Büchi SLP cost is NOT the depth lower bound 2n − 2 ... provided the two-player minimal depth at
-n = 4 is 6 (depth2.py; the one-player depth is 6, and depth is monotone in the class of games, so the two-player depth is ≥ 6).
-If depth2 reports 6, cost strictly exceeds depth for the first time; if it reports 7, the gap is again a depth phenomenon.
+Reading: two-player Büchi first exceeds the one-player minimum at n = 4, by one gate (7 versus 6 = 2n − 2), and this is NOT a
+depth phenomenon: the minimal depth is 6 for two players as for one, so B_2(4) = 7 is the first exact data point where the
+Büchi SLP cost strictly exceeds the depth lower bound. The obstruction family is the UNSAT core of k = 6: 400 four-vertex games
+(b2_n4_k6.json) on which no 6-gate program is correct. Caveat on the pair B_1 = 2n − 2 (n ≤ 5) versus B_2(4) = 7: a single
+point above the line; whether B_2(n) − B_1(n) grows is exactly T-L2's question, and n = 5 is out of reach for the present
+sweep method (2.9·10^10 five-vertex two-player games; the one-player 9.2·10^8 took 7 min per sweep).
 
 ## 3. Status lines
 - T-L1 (one-player, B_1(n) = ω(n)): data AGAINST (B_1 = 2n − 2 for n ≤ 5, exact), open, PARKED (Lead, 07:50Z).
-- T-L2 (two-player, B_2(n) = Ω(n^2/polylog n)): data: B_2(1..4) = 0, 2, 4, 7; B_2(4) > B_1(4); open. One data point above the
-  linear line is not a trend; n = 5 (≥ 8) is the next measurement and costs ~ 1 h per CEGAR round with the present tooling.
+- T-L2 (two-player, B_2(n) = Ω(n^2/polylog n)): data: B_2(1..4) = 0, 2, 4, 7 with minimal depth 0, 2, 4, 6; B_2(4) = 7 > depth = 6 =
+  B_1(4); open. One point above the line is not a trend; n = 5 (B_2(5) ≥ 8) is not measurable by sweeping (2.9·10^10 games).

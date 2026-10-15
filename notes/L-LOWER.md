@@ -2,12 +2,11 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-15 07:40Z. L1 box ends 23:01Z. RESULT: B_1(5) = 8 = 2n-2 (cegar5_k8_b.json, verified on all 916e6 five-vertex games +
-independent checks); window-1 chains need >= 12, window-2 >= 9 at n = 5. Report docs/lower/L1-report.md §1, §4, §5 updated;
-statement §2 known picture updated. Lead messaged with DONE/FINDINGS/NEEDS at ~07:45Z. RUNNING (cegar5b.py, checkpoints
-cegar5_<tag>.subset.json): window-3 k=8 (cegar5_k8_w3_b.log), window-2 k=9 resumed (cegar5_k9_w2_b.log). Memory: keep <= 2
-runs (cgroup ~16 GB; a run with 20e6 clauses reaches 8 GB). If both finish, add them to report §4 and push.
-Open: uniform O(n) construction (would refute T-L1), or a proof of super-linearity for n >= 6 (no search possible there).
+2026-10-15 08:40Z. L1 box ends 23:01Z. L2-data done: B_2(1..4) = 0,2,4,7 (exact; docs/lower/L2-data.md), two-player minimal
+depth at n=4 is 6 (depth2.py), so B_2(4) = 7 > depth; UNSAT core b2_n4_k6.json (400 games). B_1(1..5) = 0,2,4,6,8 (L1-report).
+Lead messaged with DONE/FINDINGS/NEEDS and recommendation (~08:45Z). No runs active. Waiting for the Lead's decision.
+If continuing T-L2: analyse the k=6 UNSAT core by hand (why no 6-gate program at n=4 two-player); B_2(5) is NOT measurable by
+sweeping (2.9e10 games); a two-player 5-vertex bisimulation quotient would be needed (not built; one-player Q_5 was never built either).
 
 ## Queue
 1. n = 5: B_1(5) = 8 or > 8 (cegar5.py). 2. If = 8: look for the uniform O(n) construction (report §3 has the n=4 chain).
