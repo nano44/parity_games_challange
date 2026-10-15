@@ -23,3 +23,11 @@ switchallexp,32,python3 experiments/hard-families/pgsolver_port.py switchallexp 
 switchallexp,32,python3 experiments/hard-families/pgsolver_port.py switchallexp 32,switchallexp_32.pg,455,1095,455,py-zlk,ok,0.0348,,,,,,,python3 -I experiments/harness/zielonka.py
 switchallexp,32,python3 experiments/hard-families/pgsolver_port.py switchallexp 32,switchallexp_32.pg,455,1095,455,dtl-pin,ok,5.9886,5.985027,1,1,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
 switchallexp,32,python3 experiments/hard-families/pgsolver_port.py switchallexp 32,switchallexp_32.pg,455,1095,455,idtl-pin,ok,5.9354,5.931076,1,1,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+switchallexp,64,python3 experiments/hard-families/pgsolver_port.py switchallexp 64,switchallexp_64.pg,903,2183,903,oink-uzlk,ok,0.0059,2.4e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+switchallexp,64,python3 experiments/hard-families/pgsolver_port.py switchallexp 64,switchallexp_64.pg,903,2183,903,py-zlk,ok,0.0258,,,,,,,python3 -I experiments/harness/zielonka.py
+switchallexp,64,python3 experiments/hard-families/pgsolver_port.py switchallexp 64,switchallexp_64.pg,903,2183,903,dtl-pin,ok,87.0652,87.059304,1,1,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+switchallexp,64,python3 experiments/hard-families/pgsolver_port.py switchallexp 64,switchallexp_64.pg,903,2183,903,idtl-pin,ok,87.0990,87.091537,1,1,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+switchallexp,128,python3 experiments/hard-families/pgsolver_port.py switchallexp 128,switchallexp_128.pg,1799,4359,1799,oink-uzlk,ok,0.0055,4.1e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+switchallexp,128,python3 experiments/hard-families/pgsolver_port.py switchallexp 128,switchallexp_128.pg,1799,4359,1799,py-zlk,ok,0.0362,,,,,,,python3 -I experiments/harness/zielonka.py
+switchallexp,128,python3 experiments/hard-families/pgsolver_port.py switchallexp 128,switchallexp_128.pg,1799,4359,1799,dtl-pin,timeout,400.0999,,,,,,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+switchallexp,128,python3 experiments/hard-families/pgsolver_port.py switchallexp 128,switchallexp_128.pg,1799,4359,1799,idtl-pin,timeout,400.0987,,,,,,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}

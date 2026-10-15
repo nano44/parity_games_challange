@@ -3,3 +3,43 @@ red_chain,2,python3 experiments/red/dtl/gens_dtl.py chain 2,red_chain_2.pg,2,4,2
 red_chain,2,python3 experiments/red/dtl/gens_dtl.py chain 2,red_chain_2.pg,2,4,2,py-zlk,ok,0.0351,,,,,,,python3 -I experiments/harness/zielonka.py
 red_chain,2,python3 experiments/red/dtl/gens_dtl.py chain 2,red_chain_2.pg,2,4,2,dtl-pin,ok,0.0041,4e-05,1,1,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
 red_chain,2,python3 experiments/red/dtl/gens_dtl.py chain 2,red_chain_2.pg,2,4,2,idtl-pin,ok,0.0038,3.3e-05,1,1,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,4,python3 experiments/red/dtl/gens_dtl.py chain 4,red_chain_4.pg,4,13,4,oink-uzlk,ok,0.0101,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_chain,4,python3 experiments/red/dtl/gens_dtl.py chain 4,red_chain_4.pg,4,13,4,py-zlk,ok,0.0236,,,,,,,python3 -I experiments/harness/zielonka.py
+red_chain,4,python3 experiments/red/dtl/gens_dtl.py chain 4,red_chain_4.pg,4,13,4,dtl-pin,ok,0.0030,2.9e-05,1,3,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,4,python3 experiments/red/dtl/gens_dtl.py chain 4,red_chain_4.pg,4,13,4,idtl-pin,ok,0.0029,2.8e-05,1,3,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,8,python3 experiments/red/dtl/gens_dtl.py chain 8,red_chain_8.pg,8,43,8,oink-uzlk,ok,0.0035,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_chain,8,python3 experiments/red/dtl/gens_dtl.py chain 8,red_chain_8.pg,8,43,8,py-zlk,ok,0.0312,,,,,,,python3 -I experiments/harness/zielonka.py
+red_chain,8,python3 experiments/red/dtl/gens_dtl.py chain 8,red_chain_8.pg,8,43,8,dtl-pin,ok,0.0055,4.9e-05,1,7,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,8,python3 experiments/red/dtl/gens_dtl.py chain 8,red_chain_8.pg,8,43,8,idtl-pin,ok,0.0047,3.5e-05,1,7,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,16,python3 experiments/red/dtl/gens_dtl.py chain 16,red_chain_16.pg,16,151,16,oink-uzlk,ok,0.0042,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_chain,16,python3 experiments/red/dtl/gens_dtl.py chain 16,red_chain_16.pg,16,151,16,py-zlk,ok,0.0314,,,,,,,python3 -I experiments/harness/zielonka.py
+red_chain,16,python3 experiments/red/dtl/gens_dtl.py chain 16,red_chain_16.pg,16,151,16,dtl-pin,ok,0.0040,5.2e-05,1,15,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,16,python3 experiments/red/dtl/gens_dtl.py chain 16,red_chain_16.pg,16,151,16,idtl-pin,ok,0.0030,5e-05,1,15,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,32,python3 experiments/red/dtl/gens_dtl.py chain 32,red_chain_32.pg,32,559,32,oink-uzlk,ok,0.0030,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_chain,32,python3 experiments/red/dtl/gens_dtl.py chain 32,red_chain_32.pg,32,559,32,py-zlk,ok,0.0304,,,,,,,python3 -I experiments/harness/zielonka.py
+red_chain,32,python3 experiments/red/dtl/gens_dtl.py chain 32,red_chain_32.pg,32,559,32,dtl-pin,ok,0.0042,0.000196,1,31,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,32,python3 experiments/red/dtl/gens_dtl.py chain 32,red_chain_32.pg,32,559,32,idtl-pin,ok,0.0049,0.000169,1,31,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,64,python3 experiments/red/dtl/gens_dtl.py chain 64,red_chain_64.pg,64,2143,64,oink-uzlk,ok,0.0053,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_chain,64,python3 experiments/red/dtl/gens_dtl.py chain 64,red_chain_64.pg,64,2143,64,py-zlk,ok,0.0344,,,,,,,python3 -I experiments/harness/zielonka.py
+red_chain,64,python3 experiments/red/dtl/gens_dtl.py chain 64,red_chain_64.pg,64,2143,64,dtl-pin,ok,0.0074,0.000969,1,63,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,64,python3 experiments/red/dtl/gens_dtl.py chain 64,red_chain_64.pg,64,2143,64,idtl-pin,ok,0.0054,0.000976,1,63,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,128,python3 experiments/red/dtl/gens_dtl.py chain 128,red_chain_128.pg,128,8383,128,oink-uzlk,ok,0.0058,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_chain,128,python3 experiments/red/dtl/gens_dtl.py chain 128,red_chain_128.pg,128,8383,128,py-zlk,ok,0.0321,,,,,,,python3 -I experiments/harness/zielonka.py
+red_chain,128,python3 experiments/red/dtl/gens_dtl.py chain 128,red_chain_128.pg,128,8383,128,dtl-pin,ok,0.0085,0.003383,1,127,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,128,python3 experiments/red/dtl/gens_dtl.py chain 128,red_chain_128.pg,128,8383,128,idtl-pin,ok,0.0091,0.004125,1,127,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,256,python3 experiments/red/dtl/gens_dtl.py chain 256,red_chain_256.pg,256,33151,256,oink-uzlk,ok,0.0058,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_chain,256,python3 experiments/red/dtl/gens_dtl.py chain 256,red_chain_256.pg,256,33151,256,py-zlk,ok,0.0734,,,,,,,python3 -I experiments/harness/zielonka.py
+red_chain,256,python3 experiments/red/dtl/gens_dtl.py chain 256,red_chain_256.pg,256,33151,256,dtl-pin,ok,0.0278,0.022914,1,255,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,256,python3 experiments/red/dtl/gens_dtl.py chain 256,red_chain_256.pg,256,33151,256,idtl-pin,ok,0.0269,0.022143,1,255,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,512,python3 experiments/red/dtl/gens_dtl.py chain 512,red_chain_512.pg,512,131839,512,oink-uzlk,ok,0.0122,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_chain,512,python3 experiments/red/dtl/gens_dtl.py chain 512,red_chain_512.pg,512,131839,512,py-zlk,ok,0.1089,,,,,,,python3 -I experiments/harness/zielonka.py
+red_chain,512,python3 experiments/red/dtl/gens_dtl.py chain 512,red_chain_512.pg,512,131839,512,dtl-pin,ok,0.2228,0.212189,1,511,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,512,python3 experiments/red/dtl/gens_dtl.py chain 512,red_chain_512.pg,512,131839,512,idtl-pin,ok,0.2399,0.232283,1,511,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,1024,python3 experiments/red/dtl/gens_dtl.py chain 1024,red_chain_1024.pg,1024,525823,1024,oink-uzlk,ok,0.0232,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_chain,1024,python3 experiments/red/dtl/gens_dtl.py chain 1024,red_chain_1024.pg,1024,525823,1024,py-zlk,ok,0.4184,,,,,,,python3 -I experiments/harness/zielonka.py
+red_chain,1024,python3 experiments/red/dtl/gens_dtl.py chain 1024,red_chain_1024.pg,1024,525823,1024,dtl-pin,ok,1.5214,1.502189,1,1023,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,1024,python3 experiments/red/dtl/gens_dtl.py chain 1024,red_chain_1024.pg,1024,525823,1024,idtl-pin,ok,1.7656,1.745326,1,1023,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,2048,python3 experiments/red/dtl/gens_dtl.py chain 2048,red_chain_2048.pg,2048,2100223,2048,oink-uzlk,ok,0.0695,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_chain,2048,python3 experiments/red/dtl/gens_dtl.py chain 2048,red_chain_2048.pg,2048,2100223,2048,py-zlk,ok,1.9256,,,,,,,python3 -I experiments/harness/zielonka.py
+red_chain,2048,python3 experiments/red/dtl/gens_dtl.py chain 2048,red_chain_2048.pg,2048,2100223,2048,dtl-pin,ok,11.7892,11.700376,1,2047,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_chain,2048,python3 experiments/red/dtl/gens_dtl.py chain 2048,red_chain_2048.pg,2048,2100223,2048,idtl-pin,ok,12.1201,12.033669,1,2047,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
