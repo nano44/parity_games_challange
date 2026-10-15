@@ -1,6 +1,8 @@
 # L-ALG notebook (algorithm design loop; lane started 2026-10-15 09:55Z, 12 h box)
 
 ## Resume point
+- 13:50Z: box deliverables complete (DEAD.md C1-C4, T-ALG1, C5-DTL.md, REPORT-2026-10-15.md); lane idle unless the
+  Lead redirects. Everything on claude/l-alg; out/ logs are gitignored (regenerable by the scripts named in the report).
 - C1, C2, C3 DEAD (DEAD.md). T-ALG1 deferred by the Lead (11:20Z). Next: design C4 against the two obstructions (register depth;
   partial-solver blindness composes). Lead rulings 11:20Z: ZP no gauntlet; T-ALG1 deferred; GA instances go to L-SI (keep pushing them).
 - Lead session for messages: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/l-alg. Push: scripts/verify.sh && git push -u origin claude/l-alg.
@@ -135,4 +137,7 @@ each level of NE' adds one register. This is the exact obstruction of the whole 
   ptl/spptl on tc: 6/12/20/42/72 and 5/9/14/27/44 tangles at N = 2/3/4/6/8 (polynomial-looking, as Oink's README says).
   Upstream Oink master == pinned 8fbf0a7; no counter_dtl source anywhere (README mention only). ptl_sweep.py running:
   ptl/spptl/tl/dtl on all 13 families, S_s, T_R.
+- 12:47-13:50 Lead redirect to DTL: provenance (git + GandALF 2019 slides + ISoLA 2024 paper), C5-DTL.md transcription,
+  dtl_check.py (all ok on 67,000+ games with verified strategies), growth sweeps (tangles linear on every family; tc wall
+  time ~n^2.5; tc+ N=16 exceeded 900 s). Report finalised; end-of-box message sent.
 
