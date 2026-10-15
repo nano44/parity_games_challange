@@ -5,7 +5,9 @@
   PROVED; §2.1 soundness PROVED; §2.2 halting PROVED; §2.3 completeness SKETCH with GAP-C; §3 running time (b)(c)(d) PROVED,
   (e) conditional on (a), (a) GAP-A; §4 idtl; §5 gaps; §6 status + evidence). Last push: see git log (claude/l-alg).
 - Lead session for messages: session_014FBi6o334DvwT5Uw2kDfoN. Push: scripts/verify.sh && git push -u origin claude/l-alg.
-- If resumed: (1) GAP-C: try to prove Lemma K by induction over search_rec iterations with the hypothesis Claim F
+- If resumed: (0) The most promising completeness route is DTL-proof.md §2.3 "Route for excluding (α)": prove (r1) the
+  pruning is monotone across searches when no stored tangle straddles, and (r2) the straddle regress is well-founded; then
+  only searches starting with the -1 branch remain for (C-b). (1) GAP-C: try to prove Lemma K by induction over search_rec iterations with the hypothesis Claim F
   "nothing learned in iterations ≥ i ⇒ W_p(R_i^#) = ∅" (R^# = R with all edges leaving R deleted); the three piece types
   (S) stable regions, (Z) level-t attractor to X, (P) Dom(prevV) with Q empty must be handled; K5 settles the lowest region
   at X = ∅ except for straddling tangles. (2) GAP-A: bound the number of distinct SCCs extracted at one top; data says ≤ n.
