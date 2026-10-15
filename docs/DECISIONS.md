@@ -125,3 +125,9 @@ Fleet judgement under L12 (no owner question). After C3 (claude/checker 5b924e7)
 - The theorem must hold for every order of equal-priority vertices (removes the unstable std::sort dependency, C3 D-4).
 - The analysed object is the pseudocode docs/alg/candidates/C5-DTL.md, updated to the pinned run (CHECK_UNIQUE on, trace 0). The C++ correspondence is a separate signed item (C3 E-2).
 - Prose proofs are step-4 input. An M4 claim still needs Lean (TARGET §5.4, C3 E-1).
+
+## L23 (Lead reading, 2026-10-15 17:12Z): SI line parked after the obstruction map
+Fleet judgement under L12. L-SI ended its box early (context 720k) with an obstruction map (l-si 0d48da2). Every memoryless
+single-switch rule tried ranks by a quantity that gates, pads, priorities or numbering steer. No L-SI successor now: fleet
+spend goes to DTL (gauntlet step 4) while it is the lead candidate. Queued: S5/S6 under adversarial numbering (L-RED, after
+DTL); R2 transfer lemma (REFEREE-2). Revisit when DTL is settled either way.
