@@ -85,3 +85,18 @@ No super-polynomial growth found for either (the searches are weak evidence; see
 ### C++ engine validation (xcheck_fast.py): 1,500 random games, n ≤ 16: valuations identical to si.py on 4,500 (game, strategy)
 pairs; iteration counts identical for switch-all, msf, lsf, zadeh, cunningham; regions = py-zlk with verified strategies for
 all rules incl. rar and random-edge. XCHECK-FAST PASS.
+
+### S7 most-improved (vjfast; invariant tie-break, index last resort never used on these)
+| family | iterations |
+|---|---|
+| gated_bland N = 4..12 | 1, 1, 1, 1, 1 |
+| dlmm_bland N = 4..12 | 3, 5, 7, 9, 11 |
+| dlmm_ML L = 4..12 (sigma_0) | 4, 6, 8, 10, 12 |
+| zadehexp N = 4..12 | 27, 43, 59, 75, 91 |
+| cunninghamexp N = 4..12 | 9, 15, 21, 27, 33 |
+| switchallexp N = 2, 4, 6, 8 | 34, 90, 202, 354 |
+| switchbestexp N = 2, 4, 6, 8 | 76, 142, 210, 278 |
+| gated_zadehexp N = 2..6 | 6, 13, 16, 21, 24 |
+| gated_switchallexp N = 2..6 | 31, 30, 39, 48, 57 |
+| gated_switchbestexp N = 2..6 | 80, 203, 314, 658, 974 |
+Adversarial maxima n = 5..10: 9, 14, 21, 26, 29, 38. Gadget chains (G = 4): quadratic (see S7.md).
