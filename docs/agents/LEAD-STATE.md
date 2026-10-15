@@ -157,3 +157,4 @@
 - 17:44Z L-RED 7b4c086: GAP-A open quantity measured = 0 everywhere; distinct region sets per top linear. L-ALG resumed with route (S)+(D)+(W)+(a1) => O(n^2) per level.
 - 17:46Z C3b merged: §0 PASS -> frozen (L24); §1.0 FAIL R-1..R-3 sent to L-ALG (fix first).
 - 17:50Z L-ALG 0533890: Lemma S (strategies a function of (top,set)) proved modulo (M-cross); deletion caveat (factor charge unproved). (M-cross) failure shape + deletion route sent to L-RED.
+- 17:52Z R8 §12 final 6d92d3e merged ((alpha) containment climbs 0; GAP-A 0). L-RED parked 17:52Z; my 17:53Z (M-cross)/deletion targets crossed with its park -- it will see them on its next turn; not resending.
