@@ -191,6 +191,15 @@ candidate u is cleared iff attracts(p, u, A_t, R) for some t < pr(u) (737: the s
 stops at the first candidate with pr(u) ≤ t, so clearing happens only for t strictly below pr(u)). Remaining candidates
 leave V (752). Return 1 if nothing left or no candidates (716, 767), -1 with V := the previous round's V if V became
 empty (768-771), else next round.
+NOTE N5 (the pruning is an iteration, not a greatest fixpoint of a monotone operator). Write F(V) for the set of
+survivors of one round started from V. R8 (M2) calls V* "the largest V such that ..."; that presumes F monotone (V ⊆ V'
+⇒ F(V) ⊆ F(V')). F is monotone when no stored tangle straddles, but not in general: let t' = {a, b, ...} be stored with
+strategy b → a, pr(b) > pr(τ_new) ≥ pr(a), a having an edge to τ_new, and let τ (lower than τ_new, pr(τ) ≥ pr(b))
+attract t' as a unit through an escape in Z_τ when V ∌ τ_new. With V' = V ∪ {τ_new}: a is consumed by Z_τ_new (rule V),
+t' no longer fires in Z_τ (138), b is not attracted by rule (V) (its only edge goes to the consumed a) and not by τ_new
+(priority), so b ∈ R_rem(V') although b ∈ Reg(V); a top whose rescue path ran through b can then be a candidate in V'
+and survive in V. What the code computes is the specific descending iteration V_0 ⊇ V_1 ⊇ ... from V_0 = R ∩ P_p, and
+every statement in this file is about that iteration.
 Lemma 1.6 (structure of R_rem). Let y ∈ R_rem. If owner(y) = p: no successor of y lies in a region Z_τ with
 pr(τ) ≥ pr(y). If owner(y) != p: y has a successor in R_rem, or every successor of y lies in Reg ∪ X ∪ (outside R) and
 the lowest region (last computed) containing a successor has top priority < pr(y). Proof: when Z_τ is computed, all
