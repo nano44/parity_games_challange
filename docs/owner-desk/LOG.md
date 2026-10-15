@@ -23,3 +23,7 @@ Relayed verbatim to the Lead. Desk shows the HUMAN-REVIEW packet's owner-relevan
 ## 2026-10-15 08:00Z Lead (relayed to owner)
 Owner answers recorded as D4 (trunk 1f34679), Lead readings L12-L16. Q6, Q7, Q4 closed; Q2 closed unless the owner objects; Q3 open
 as an owner action; Q5 answered, verdict pending L-LIT T11. Standing reading L12 told to the owner.
+
+## 2026-10-15 07:53Z owner (Q3)
+> I did Q3
+Relayed verbatim to the Lead. Q3 marked done (owner set the setup script; takes effect in new sessions; not verifiable from this session).

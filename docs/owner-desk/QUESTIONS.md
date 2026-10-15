@@ -99,7 +99,6 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
   experiments/*/check.sh) ignores the user site; if pip installs to the user site, add `--break-system-packages` and run as root.
 - What changes: (a) sessions start with dependencies present; fewer install steps and permission prompts. (b) nothing.
 - Urgency: low; convenience.
-- Status: open, owner action. Walkthrough given 2026-10-15 ~07:55Z (title bar > cloud environment menu > Edit > Setup script);
-  script checked against this container (root, python 3.13, no EXTERNALLY-MANAGED). Oink build stays in-session; no SessionStart
-  hook for now (Lead). Mark done when the owner says it is set, or closed if declined.
+- Status: done 2026-10-15 (owner: "I did Q3"). Applies to sessions started after it was saved; the first new session's
+  setup log is the confirmation. Oink build stays in-session (Lead).
 
