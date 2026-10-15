@@ -2,23 +2,17 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14 21:10Z. HANDOVER (context limit). Current task: SAT engineering for L-STRUCT (Lead 19:26Z, time box 6 h to
-~01:30Z), code in experiments/sat-hard/ (README.md: files; results.md: findings; results/cells.md: proved cells).
-Done: reproduction of l-struct 42dbbc2; T1 REFUTED at (2,10): w(2,10)=4 < 5=s(2,8) in E,S,V (and (2,12): w=4 < 6=s(2,10));
-w^E(4,6) >= 8 (proved), >= 9 (k=8 UNSAT, CNF out/w_n4_d6_k8.cnf, LRAT NOT yet produced); w^E(5,4) >= 10 (proved);
-w^V(3,8) >= 7 (proved); diagonal V cells n=2..4 incl. TARGET alphabet {2..n+2}: w = s (2,3,5,5,7; TARGET 2,5,7), proved.
-STATE at 01:15Z: a container restart (~00:30Z) killed all runs; all paused runs are gone. Proved from the saved CNFs:
-w^V(5,5) >= 10, s^V(5,5) >= 10, TARGET n=5 weak >= 9, s^V(5,6) >= 10 (results.md "n = 5 diagonal"). CEGAR-only (proof
-was running at handover, /tmp/claude-0/prove_rest.log): s^V(5,5) k=10 UNSAT (>= 11), TARGET n=5 strong k=8 UNSAT (>= 9);
-CNFs in experiments/sat-hard/out/cells/ (gitignored: regenerate with `diag.py 5 5 V strong --klo 10` /
-`diag.py 5 7 V strong --min-letter 2 --klo 8`). No n=5 SAT k reached: W(5) vs S(5) undecided. Next k: w^V(5,5) at k=10,
-s^V(5,5) at k=11, TARGET n=5 at k=9 (each run took 1-2 h per k on one core; use cube.py on 4 cores).
-Evidence standard: UNSAT = CaDiCaL 1.7.3 `--lrat=true --binary=false` proof verified by lrat_check.py AND/OR CryptoMiniSat
-(two solvers); SAT = witness re-checked by check.py against the full family (n <= 2: also verify2.py, exhaustive).
-Monotonicity in k (duplicate a state) means one UNSAT at k gives w >= k+1; monotone in d (restriction) too.
-Setup: pip install python-sat networkx; apt-get install cadical cryptominisat; scripts/setup_oink.sh for the bench.
+2026-10-15 ~19:00Z. Successor session_01Nd4XCMfDaYHsh1P6XTtRGz (handover check 5/5, Lead 18:41Z). Current task: DTL gauntlet
+step 2 (Lead GO 18:41Z, box to ~23:40Z, interim message ~21:00Z). Bench: experiments/dtl-bench/ (README.md). Pinned per L22:
+`oink --dtl|--idtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, no -t, no -w. Done (a92f4d8): exhaustive n<=3 (priorities 0..n),
+10,000 seeded (seed 20261015, nmax 200), 2,000 rngame: 0 failures, all strategies verified by harness/verify.py.
+Running: run_families.sh (families.txt: 13 M1 families + red chain/ladder/counter_dftl/counter_odftl/n5), then fit.py, then
+alg/instances/dtl_proof_c*.pg. After DTL: L15 PGSolver binary diff (one attempt), then sat-hard (Lead's order).
 
 ## Queue (for the successor, after the running cells)
+0. sat-hard state (from the 2026-10-14 resume point): CEGAR-only s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT; CNFs lost
+   with the container; regenerate with `diag.py 5 5 V strong --klo 10` / `diag.py 5 7 V strong --min-letter 2 --klo 8`.
+   Next k: w^V(5,5) k=10, s^V(5,5) k=11, TARGET n=5 k=9 (1-2 h per k per core; cube.py on 4 cores). Needs cadical (apt).
 1. Report the four n=5 cells with evidence; LRAT for out/w_n4_d6_k8.cnf (w^E(4,6) >= 9; solve ~1000 s, proof large).
 2. Remaining (Lead's order): (4,5) V weak/strong, (5,6) V, E cells (4,5)/(4,6)/(5,4) k >= 9 (cube.py for 4 cores).
 3. Low: w(2,d) for d >= 14 (E): k=4 UNSAT (CEGAR only) for d=14,16,20,24; row2.py computes the row (slow).
