@@ -207,3 +207,31 @@ Gap list, status at 57a1515:
 | G11 | HKP Thm 4 (F1') proof is a sketch | re-derived by me from HKP's text (tex:1067–1125): the rank-(d,i) strategy keeps the play in A_b (each step goes to X with colour ≤ d or to a smaller rank); every visit to a colour of parity 1−p at rank (d0,i0) has colour > d0 and is followed, by well-founded descent of ranks with d non-increasing, by a visit to X with colour ≤ d0, so if the minimal colour seen infinitely often were of parity 1−p a smaller colour would be seen infinitely often; hence min Inf has parity p. Prose only, no machine check beyond psolq.py's witness strategies passing verify.py |
 Non-machine-checked throughout: Invariant I, L1, O, the "only if" induction, Lemma 0, and G9–G11 are prose re-derivations
 (mine and R2's); machine evidence is the searches of §5 and R2 §4. Not Lean-checked (not required: not M4).
+
+### G11 clarification for the CHECKER (docs/checker/C1-report.md item G2-2; Lead's 00:04Z request) — answer (b)
+I agree that HKP's strategy AS WRITTEN (Thm 4 proof, tex:1085–1088: "the strategy that selects the successor with minimal r")
+is unsound. I ran REFEREE-2's script docs/referee-2/R2-TA1/hkp_thm4_strategy.py (trunk 0f54b15, with its r2lib.py, in an
+isolated directory) and reproduced it with my own code (docs/referee/scratch/ta1check.py functions): min-parity X = {w},
+c(w) = 0; v, u of colour 1 owned by player 0; v → {w, u}, u → {w, v}, w → v. PMAttr_0({w}, 0) adds v, u at stage 1 and w at
+stage 2, so r(v) = r(u) = (0, 1) < r(w) = (0, 2); the minimal-rank rule sends v to u and u to v, the play v u v u … has
+min Inf = 1 and player 0 loses, although X ⊆ layeredAttr(G, 0, X) is fatal (player 0 wins all three vertices; psolB and psolQ
+both solve the game). The witness rule (v → w, u → w) wins.
+My signature's G11 sentence "each step goes to X with colour ≤ d or to a smaller rank" IS the witness step (HKP's own
+invariant, tex: "all successors of v (if v ∈ V_{1−p}) or some successor of v (if v ∈ V_p) are/is either in X, or in A_{d',i'}
+for some (d',i') < r(v)"), but I named it "the rank-(d,i) strategy" after HKP's wording without flagging that HKP's literal
+selection rule differs from, and does not guarantee, that step: the minimal-rank successor need not be a witness (here w,
+the witness, has the LARGEST rank). That was an imprecision in my signature; the correction is R2's.
+Re-derivation with the witness successor. Let A_b = layeredAttr(G', p, X) with X ⊆ A_b, layers A_d = PMAttr_p(A_{d−2} ∪ X_d, d)
+(X_d = vertices of X of colour ≤ d), ranks r(v) = (d, i) minimal with v ∈ A_{d,i} (stage i of layer d). Strategy for p: from v
+with r(v) = (d, i), move to a WITNESS successor, i.e. one in X_d ∪ A_{d−2} ∪ A_{d,i−1} (exists by the definition of stage i;
+for v ∈ V_{1−p} every successor is such). (1) The play stays in A_b: X_d ⊆ X ⊆ A_b, A_{d−2} ⊆ A_d ⊆ A_b (A_{d−2} ⊆ A_d by one
+lfp step: a vertex of A_{d−2} is eligible in layer d as a member of the target and its witnesses lie in A_{d−2} ∪ X_{d−2} ⊆
+A_{d−2} ∪ X_d), A_{d,i−1} ⊆ A_b. (2) Winning: a vertex v of parity 1−p on the play has v ∉ X and, if r(v) = (d, i), v ∉ A_{d−2}
+(minimality of d), so v was eligible by colour: c(v) ≥ d, hence c(v) > d by parity. Its successor is in X_d (colour ≤ d < c(v),
+parity p) or has rank < (d, i) with layer ≤ d; iterating, ranks strictly decrease in the lexicographic (well-founded) order
+until X_{d''} with d'' ≤ d is hit, so every visit to a colour of parity 1−p is followed by a visit to a smaller colour of parity
+p. If min Inf had parity 1−p, a smaller colour would occur infinitely often: contradiction. So min Inf has parity p: p wins
+every vertex of A_b, and of Attr_p^{G'}(A_b) by the attractor strategy. This is F1' (HKP Thm 4 with the corrected strategy).
+G11: CLOSED at referee level by this re-derivation, with the correction to HKP's proof text recorded; T-A1' uses only the
+statement of Thm 4, and psolq.py records witness successors (not minimal-rank ones), so the lane's code is unaffected.
+Signature of 2026-10-14 (claim at l-attr 57a1515) reconfirmed: OK.
