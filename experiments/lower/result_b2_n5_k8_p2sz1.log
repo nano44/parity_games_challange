@@ -1,5 +1,0 @@
-seeded with 6 four-vertex core games
-round 1: subset 28 nodes (6 games), 22120 clauses -> SAT [0.1s]
-   sample of 2000000 random 5-vertex games: 1851216 failing (in the chunks seen) [3.9s]
-round 2: subset 1028 nodes (206 games), 816608 clauses -> SAT [20.0s]
-   sample of 2000000 random 5-vertex games: 499233 failing (in the chunks seen) [3.3s]

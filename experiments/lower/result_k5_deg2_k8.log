@@ -1,6 +1,0 @@
-class K_5: 200000 games
-   200000 failing
-round 2: 200 games, 790000 clauses -> SAT [8.6s]
-   40891 failing
-round 3: 400 games, 1580000 clauses -> SAT [1217.6s]
-   13069 failing
