@@ -70,6 +70,41 @@ Write sigma for a strategy of G_N (choice c_i in {a, b} per level) and sigma' fo
 In a sink game every cycle node is the sink and the length equals the size of the path set (Friedmann p.8), so levels (3, .)
 and (1, 0) never arise; MSF's tie-break (smallest v, then w) is never used.
 
+### Gate Lemma (L-RED, unrefereed; the reusable obstruction)
+Setting. G is a 1-sink parity game (Friedmann section 5: Odd sink of priority 1 with a self-loop, reachable from everywhere,
+every other priority >= 2); V_E^2 = Even vertices with at least two successors; lab : {(v, w) : v in V_E^2, w in vE} -> positive
+integers, injective. The gated game gate(G, lab) is: every priority of G shifted by C = 2 max(lab) + 4; for each v in V_E^2 a
+hub d_v (Even, priority 3) and, for each successor w of v, a gate e_{v,w} (Odd, priority 2 lab(v,w) + 2) with edges
+e_{v,w} -> d_v and e_{v,w} -> w; v keeps the single edge v -> d_v; d_v -> e_{v,w} for every w. (vertices + 2 edges per gated
+edge, one hub per gated vertex.) Strategies correspond: sigma of G <-> sigma' of gate(G, lab) with sigma'(d_v) = e_{v,sigma(v)}.
+Claim. For every strategy sigma of G, writing t for the sink and restricting to strategies reachable by improvements from a
+sigma_0 whose plays all reach t (sink-seeking, Friedmann Lemma 5.1): (i) Xi'_{sigma'}(u) cap V(G) = Xi_sigma(u) for every u in
+V(G), and Odd's optimal choices at the Odd vertices of G are the same in both games; (ii) the improving edges of sigma' are
+exactly the edges (d_v, e_{v,w}) for the improving edges (v, w) of sigma; (iii) the MSF level of (d_v, e_{v,w}) at sigma' is
+(2, rank(e_{v,w})), so the first-difference position of the gated switch is a strictly increasing function of lab(v, w) alone;
+(iv) the strategy obtained from sigma' by switching (d_v, e_{v,w}) corresponds to sigma[v -> w].
+Hence, for every single-switch rule R on gate(G, lab) whose choice among the improving edges is a function of their
+first-difference positions (MSF: maximal, LSF: minimal, any fixed order of positions), the run of R on gate(G, lab) from sigma_0'
+is, switch for switch, the run on G from sigma_0 of the index-based rule that ranks the edges of G by lab in the corresponding
+order (DLMM 2512.16684 Def. 3.7 and Thm 4.3: index-based rules need m^omega(1) iterations on sink parity games). In particular
+MSF with lab = (reversed Bland numbers) and LSF with lab = (Bland numbers) on gate(G_N, lab) make exactly 2^N - 1 switches
+(DLMM Lemma 4.4), with every switch an escaped cycle-creating switch.
+Proof. (i) Under sigma', the 2-cycle d_v e_{v,sigma(v)} has the even dominator e_{v,sigma(v)}, and t is reachable from w = sigma(v),
+so Odd at e_{v,sigma(v)} exits (an even cycle node is worse for Odd than t; Lemma 6.1(1)); thus Xi'(d_v) = {d_v, e_{v,sigma(v)}} cup
+Xi'(sigma(v)) and Xi'(v) = {v} cup Xi'(d_v); a gate e_{v,w'} with w' != sigma(v) has d_v as its only predecessor and lies on no play.
+By induction along the plays (all end in t), Xi'(u) = Xi(u) cup (gate junk below C) for every u of G; every Odd comparison of
+G compares two sets whose symmetric difference is non-empty (different successors give different plays, and the play from a
+vertex contains it) and whose maximum is therefore a shifted vertex, so Odd's choices agree. (ii) Let e* = e_{v,w},
+w != sigma(v), e = e_{v,sigma(v)}. Odd at e* compares {d_v, e} cup Xi'(sigma(v)) with Xi'(w); the maximum of the symmetric
+difference is a shifted vertex (w's play contains w, sigma(v)'s play does not contain w unless w's play ... in a sink game
+plays are simple paths, and w lies on sigma(v)'s play only if w's play is a suffix of it, in which case the difference contains
+sigma(v)'s own vertex), so Odd loops to d_v iff Xi(w) succ Xi(sigma(v)). If so, Xi'(e*) = {e*, d_v, e} cup Xi'(sigma(v)) differs
+from Xi'(e) = {e} cup Xi'(sigma(v)) exactly in {e*, d_v}, whose maximum e* is even: improving at level (2, rank(e*)). If not,
+Xi'(e*) = {e*} cup Xi'(w) against {e} cup Xi'(sigma(v)) is decided by a shifted vertex in favour of sigma(v): not improving.
+(iii) is the level just computed and rank(e*) is increasing in lab. (iv) After the switch Odd escapes at e* (as in (i)), so the
+new gated strategy is the gate of sigma[v -> w]. The rule statement follows by induction over the run, and the 2^N - 1 figure is
+DLMM Lemma 4.4 (checked switch for switch by experiments/red/correspond.py for N <= 10 and by gate.py for LSF).
+
 ### What the gadget shows in general (Lead reading of the mechanism, for the next candidates)
 The simple cycle decouples the three quantities L-SI's obstruction (b) assumed to be read "at the same first-difference
 position": the SIGN of the switch (d, e) is Odd's current choice at e, i.e. the underlying comparison (Lemma 6.1(3)); the
