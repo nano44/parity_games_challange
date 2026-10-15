@@ -79,3 +79,7 @@ expected switches on a parity-game family (e^{Omega(N^{1/3}/log N)} in game size
 > Give me a status update of the process
 Answered from trunk ba9886b (NOW.md, RESULTS.md) and lane branches (l-alg 549bb34, l-si 71c5c97, l-red 7dd83d3, l-lower b2eb965,
 l-lit 8dd2e55). Relayed verbatim to the Lead.
+
+## 2026-10-15 14:59Z Lead (relayed to owner)
+Spend as read 14:55Z: ~$692 total across read sessions (CHECKER, HUMAN-DESK, OWNER-DESK not read); ~$450 since 07:00Z; rate limit
+seven-day "allowed_warning" since 12:02Z, no overage, resets 2026-10-21 21:00Z. NOW.md notes fixed.
