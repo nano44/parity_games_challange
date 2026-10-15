@@ -25,7 +25,7 @@ a = ap.parse_args()
 rules = a.rules.split(","); fams = a.families.split(","); sizes = [int(x) for x in a.sizes.split(",")]
 os.makedirs(os.path.join(HERE, "out"), exist_ok=True)
 outp = os.path.join(HERE, "out", f"fam_{a.tag}.csv")
-w = csv.writer(open(outp, "w")); w.writerow(["family", "N", "n", "m", "rule", "seed", "iters", "evals", "secs", "status"])
+fh = open(outp, "w"); w = csv.writer(fh); w.writerow(["family", "N", "n", "m", "rule", "seed", "iters", "evals", "secs", "status"])
 for fam in fams:
     dead = set()
     for N in sizes:
@@ -56,7 +56,7 @@ for fam in fams:
                 except subprocess.TimeoutExpired:
                     secs = time.time() - t0; status, iters, evals = "timeout", "", ""
                     dead.add(rule)
-                w.writerow([fam, N, g.n, g.m, rule, seed, iters, evals, f"{secs:.3f}", status])
+                w.writerow([fam, N, g.n, g.m, rule, seed, iters, evals, f"{secs:.3f}", status]); fh.flush()
                 print(f"{fam} N={N} n={g.n} m={g.m} {rule} seed={seed}: {iters} iters {evals} evals {secs:.2f}s {status}", flush=True)
                 if os.path.exists(sp): os.unlink(sp)
         os.unlink(gp.name)
