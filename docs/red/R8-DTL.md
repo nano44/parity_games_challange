@@ -327,6 +327,43 @@ and injective priorities, max tangles in one search at n = 16: 7 (40,000 mutatio
 within a search was ever seen, as (W) predicts; across searches the self-firing chains grow monotonically (section 2:
 the chain tangles are nested), as (P) predicts.
 
+## 10. Hand constructions against (E) and (P) (Lead 16:40Z), what each did and why it stopped
+Flags `--dtl --no-single --no-wcwc --no-loops`, generator experiments/red/dtl/gens_dtl.py ladder m (12 + 6m vertices).
+- Ladder v1 (escapes of every lower tangle to an unclosed higher head H whose Odd vertex escapes to Odd's sink q): DTL
+  learns 0 tangles, Odd wins all (2 iterations, verified). Why: a head is a best vertex only if its good path runs through
+  priorities below its own and through Even's attractor; an escape to a sink Odd wins blocks the attraction of the
+  escaping vertex, so H and then J are pruned, and pruned vertices stay in R, which blocks everything below. Lesson:
+  every escape target of a usable tangle must itself be Even-winning through lower priorities.
+- Ladder v2 (tower K_1 < ... < K_{m+2} of Even tops, each {K_i, w_i} escaping to K_{i+1}, the top a dominion; rungs u_s
+  -> a_s with a_s escaping to K_1 and to x_s, X_s = {x_s, x_s'} escaping to a_{s-1}): 4, 6, 8, 10, 14, 18 tangles for
+  m = 1, 2, 3, 4, 6, 8 (= 2m + 2), ONE iteration, J learns {J, b0} once. Why: the top dominion is found in pass 1 and the
+  dominion attractor (search 1021-1030, attractTangles with maxpr -1) absorbs every tangle whose escapes are solved,
+  i.e. the whole tower and then the ladder, in the same search. The rungs never staggered anyway: u_s is itself a top
+  (even priority), its region consumes a_s, so every X_s is closed in pass 1, and in pass 2 all X_s fire in one cascade
+  (X_s at the pop of a_{s-1}); W then caps J at one extraction per search, so the staggering "one rung per pass" is
+  invisible: one tangle at J per search at most, and the search ends.
+- Tower variants thought through and rejected before building (each kills the gadget): escapes cycling around the tower
+  (no dominion in the tower) -> the lowest tangle's escape is covered by the chain of tangle firings and the whole tower
+  closes as one dominion in pass 2; levels kept open by an escape to an Odd-priority vertex d_{i+1} above the next top
+  (so that one level dissolves per search) -> the good path of each top would run through d_{i+1}, whose priority is
+  above the top's own, and the pruning (threshold loop stops at pr(u), lines 752-758) removes the top.
+- Shared-vertex lower tangles for (E)(1): a second tangle at head L containing a vertex of a first one must be learned
+  while that vertex is in L's region, i.e. before the first fires at the higher head (the firing absorbs it, M3); its
+  own firing then needs a further escape covered, which is a Z_k growth event, so the count of first firings is bounded
+  by growth events even where it exceeds the absorbed vertices. Not built: every attempt to stagger escape coverings
+  across searches ran into the two walls above (pruning below-own-priority, dominion attractor).
+- (P) across non-events for (E)(2): a tangle fired at k reproduces the strategies it recorded on its own vertices; it
+  cannot be "inconsistent" because tangle strategies stay inside the tangle and attractTangle refuses a tangle with a
+  vertex outside R (line 128); the vertices it pushes change only the discovery of OUTSIDE vertices, which is the growth
+  of (P). A shrunken lower region or a deletion changes which tangles fire, which is an (E) event by definition.
+Sharpened requirement (replacing section 3): tangles at one head <= 1 + the number of (E) events at it, where events are
+vertex joins (<= n), thefts (<= n), tangle deletions (<= |T|, each once) and Z_k growth events that cover a lower
+tangle's last escape (<= n joins + absorptions); a flip of an Even vertex into or out of the head's SCC needs a push
+from a tangle NEWER than the head's own newest, which only a lower head's tangle learned later in the same search (an
+absorption event) or a region change can supply, and the absorption moves that tangle's vertices up for good. A killer
+must therefore make one head see super-polynomially many such events, i.e. refute the "<= n per kind" counts; the per-
+head counts observed (<= 9 at one head over 19 searches, section 9) are all event-driven.
+
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.
 - No Python port of dtl (Oink's trace sufficed: every tangle, strategy, escape and pruning round is printed).

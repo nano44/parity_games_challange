@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Families for the DTL box (L-RED). `chain n`: one-player (all Odd-owned) game with even priorities 2..2n, vertex i has
 edges to every j <= i+1 (dense downward, one step up): DTL's sptl loop learns a chain of tangles, one more top per pass.
-Usage: gens_dtl.py chain|counter_dftl|counter_odftl n"""
+Usage: gens_dtl.py chain|counter_dftl|counter_odftl|ladder n"""
 import sys
 
 
@@ -41,5 +41,32 @@ def counter_dftl(n, two=False):
 def counter_odftl(n): return counter_dftl(n, True)
 
 
+def ladder(m):
+    """Absorption ladder against R8 (E)/(P). Higher open tops K_1 < ... < K_{m+2} (each K_i -> w_i -> K_i, w_i escapes to
+    K_{i+1}; the top one is a dominion solved first, then one K per search dissolves top-down). Head J (Even, priority
+    200) with base cycle {J, b0} (b0 Odd, escape K_1). Rungs: u_s Even -> a_s (Odd: returns to J, escapes to K_1 and to
+    x_s); X_s = {x_s, x_s'} is a 2-cycle (escapes K_1 and a_{s-1}) learned at head x_s; the chain J -> u_1 -> u_2 ... is
+    Even-owned (u_s -> u_{s+1}, u_s -> a_s), so the SCC at J grows by one rung whenever X_s fires. What Oink does (R8
+    section 10): the top of the tower is a dominion in pass 1 and the dominion attractor (with tangles) solves the whole
+    tower and the ladder in one search: 2m + 2 tangles, 1 iteration, J learns {J, b0} once."""
+    V = []; E = []
+    def add(lab, pr, ow): V.append((lab, pr, ow)); return len(V) - 1
+    L = m + 2; K = []; W = []
+    for i in range(1, L + 1):
+        K.append(add(f"K{i}", 300 + 2 * i, 0)); W.append(add(f"w{i}", 299 + 2 * i, 1))
+    for i in range(L):
+        E += [(K[i], W[i]), (W[i], K[i])]
+        if i + 1 < L: E.append((W[i], K[i + 1]))
+    J = add("J", 200, 0); b0 = add("b0", 1, 1); E += [(J, b0), (b0, J), (b0, K[0])]
+    a_prev = b0; u_prev = J
+    for s in range(1, m + 1):
+        us = add(f"u{s}", 2 * s, 0); as_ = add(f"a{s}", 2 * s + 1, 1); xs = add(f"x{s}", 100 + 2 * s, 1); xps = add(f"x{s}p", 99 + 2 * s, 1)
+        E += [(u_prev, us), (us, as_), (as_, J), (as_, K[0]), (as_, xs), (xs, xps), (xs, K[0]), (xps, xs), (xps, a_prev)]
+        a_prev = as_; u_prev = us
+    succ = [[] for _ in V]
+    for p_, q_ in E: succ[p_].append(q_)
+    return f"parity {len(V)};\n" + "".join(f'{i} {pr} {ow} {",".join(map(str, succ[i]))} "{lab}";\n' for i, (lab, pr, ow) in enumerate(V))
+
+
 if __name__ == "__main__":
-    sys.stdout.write({"chain": chain, "counter_dftl": counter_dftl, "counter_odftl": counter_odftl}[sys.argv[1]](int(sys.argv[2])))
+    sys.stdout.write({"chain": chain, "counter_dftl": counter_dftl, "counter_odftl": counter_odftl, "ladder": ladder}[sys.argv[1]](int(sys.argv[2])))
