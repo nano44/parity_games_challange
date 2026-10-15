@@ -36,13 +36,16 @@ from F \ B; B' = RF(F \ {e}, B); if e is a strictly improving switch for B' then
   o_{i,d}, priority base_i + 1 + 2d. All other 0-cost edges: relay only.
 - edge ids are shared between G and P; a tree B of G is the strategy sigma_B of P that takes the relay of B's edge at every
   vertex of G. The best-reward start of si.py/vj.py on P is a zero-edge tree (all successors of a vertex of G are priority-0
-  relays, reward 0; the tie-break takes the highest index, and the costly copies are added last), hence a valid B0.
+  relays, reward 0; the tie-break takes the highest index, and the costly copies are added last), hence a valid B0: it takes
+  the LAST copy of each zero-edge, while fhz.py's own driver starts from the FIRST copy; FHZ allow any zero-edge tree and the
+  copies of a multi-edge are interchangeable (equal cost, equal set and length), so the two runs have the same distribution.
+  (REFEREE-2 F2(c).)
 Size: |V(P)| = |V(G)| + |E(G)| + n(2rs + 1), |E(P)| = 2|E(G)| + n(2rs + 1): Theta(nrst) = Theta(M).
 
 ### Transfer Lemma (L-RED, unrefereed)
-For every F subseteq E(G) that is functional (FHZ Def. 5.2: at least one copy of every multi-edge, hence every vertex keeps an
-out-edge), every tree B subseteq F and every e in F \ B: e is a strictly improving switch for B in G iff the relay edge of e is
-an improving edge for sigma_B in P (VJ valuation, Friedmann 1106.0778 section 3). Consequently RF on G from B0 and RAR on P from
+For every tree B subseteq E(G) and every e in E(G) \ B: e is a strictly improving switch for B in G iff the relay edge of e is
+an improving edge for sigma_B in P (VJ valuation, Friedmann 1106.0778 section 3). (The test depends on (B, e) only, so no
+restriction to FHZ's functional F (Def. 5.2) is needed; Random-Facet's recursion also visits non-functional F. REFEREE-2 F2(b).) Consequently RF on G from B0 and RAR on P from
 sigma_{B0} are the same random process (same random choices, same tests, same pivots), and FHZ Theorem 6.3 holds for P.
 
 Proof. Write y_B(x) for the tree distance in G. For e = (x, y): e improves B iff c(e) + y_B(y) < y_B(x); in P, Xi(relay of e)
@@ -51,11 +54,15 @@ order first, then longer is better). Both paths run from x to t; they differ on 
 (1) Level accounting. A path from level i visits levels i, i+1, ..., n and pays at each level j exactly one class cost: A = 0
 (reaching w_{j+1} through the chains), B = 2^{2j} (u0_j or w0_j), or C = 2^{2j+1} + delta (an escape to u_{j+1}), with
 0 <= delta < 2. The sum of the costs below level j is < 2^{2j+1}(1/3) + 2(j-1)... precisely <= sum_{j'<j}(2^{2j'+1} + 2) =
-(2/3)(4^j - 4) + 2(j-1) < 4^j - 2, while two different classes at level j differ by at least 4^j - 2 (B - A = 4^j, C - B >= 4^j).
+(2/3)(4^j - 4) + 2(j-1) < 4^j - 2, while two different classes at level j differ by at least 4^j (B - A = 4^j, C - B = 4^j + delta). (REFEREE-2 F2(a).)
 Hence for two paths pi, pi' from x whose class sequences differ, the cost order is decided by the class at the highest level j*
 where the classes differ, EXCEPT that the levels above j* may contribute one within-level difference (see (3)).
-(2) Equal class sequences. The two paths leave x by different edges. If x is a chain vertex, both are escapes (the chain edge
-is unique): different copies of the same offset, equal cost; in P equal set and equal length. If x = u_i: both u1 copies or both
+(2) Equal class sequences. The two paths leave x by different edges. If x is a chain vertex a_{i,j,k} or b_{i,j}, either both
+edges are escape copies (the chain edge is unique): same offset, equal cost, and in P equal set and equal length; or one is the
+chain edge and the other an escape copy, and the chain path escapes later at the same level (class C on both; if the chain
+path reached w_{i+1} the classes would differ and case (3) applies): the offsets are k-1 < k''-1 (or rs+j-1 < rs+j''-1, or an
+a-chain offset < s <= rs <= a b-chain offset), G orders by the offset, and in P the only difference is the later escape's
+o_{i,.} with the larger odd priority on the chain path, so both prefer the immediate escape. (Sub-case added for REFEREE-2 F1.) If x = u_i: both u1 copies or both
 u0 copies: equal cost, equal set, equal length. If x = w_i: both w0 copies (equal), or both chain entries w_i -> a_{i,j,1},
 a_{i,j',1}: class A on both (merge at b_{i,1}: equal cost; in P no class vertex before the merge and equal lengths s + s relays),
 or class C on both with offsets k-1 and k'-1 (merge at u_{i+1}): the cost order is the offset order and in P the only
@@ -134,6 +141,9 @@ needed. The step back to parity games needs the observation of the Transfer Lemm
 set order, so the VJ valuation of a sink game reproduces every improving test, ties included); it is not a general reduction from
 shortest paths to parity games, which does not exist for arbitrary additive costs (the Lead reading of this report). So: no
 remark found; the omission is explained by direction and audience, not by an obstacle they name.
+
+Referee status: REFEREE-2 first read docs/referee-2/R2-TL.md (referee-2 995cfd3): "OK with fixes", F1 and F2 applied above;
+its independent exhaustive check (every tree and every edge for four small parameter settings, 435,584 tests) found 0 disagreements.
 
 ## What this does not say
 - The bound is e^Omega(sqrt n) in the number of bits, 2^Omega~(M^{1/3}) in the size; it rules out polynomial expected time, not
