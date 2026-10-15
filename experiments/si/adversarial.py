@@ -15,13 +15,24 @@ ap.add_argument("--steps", type=int, default=400); ap.add_argument("--samples", 
 ap.add_argument("--start", default="best"); ap.add_argument("--budget", type=float, default=1e9, help="seconds per n")
 ap.add_argument("--sink", action="store_true", help="1-sink games (Friedmann 1106.0778 sec. 5): vertex 0 = Odd sink of priority 1 with a self-loop, reachable from every vertex, every other priority >= 2")
 ap.add_argument("--tag", default="")
+ap.add_argument("--engine", default="py", choices=["py", "fast"], help="fast: vjfast per sample (subprocess)")
 ap.add_argument("--objective", default="iters", choices=["iters", "escapes"], help="escapes = cycle-creating switches (play notion) after which no cycle node changes (msf-type rules only)")
 a = ap.parse_args()
+
+
+import subprocess, tempfile
+FAST = os.path.join(HERE, "vjfast")
 
 
 def score(g):
     if a.objective == "escapes":
         return escapes(g)
+    if a.engine == "fast":
+        f = tempfile.NamedTemporaryFile("w", suffix=".pg", delete=False); f.write(pg.dumps(g)); f.close(); tot = 0
+        for s in range(a.samples):
+            r = subprocess.run([FAST, a.rule, f.name, "/dev/null", "--seed", str(s), "--start", a.start], capture_output=True, text=True)
+            tot += int(r.stderr.split()[2])
+        os.unlink(f.name); return tot / a.samples
     tot = 0
     for s in range(a.samples):
         tot += si.solve(g, a.rule, seed=s, start=a.start)[2]

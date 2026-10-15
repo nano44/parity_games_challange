@@ -119,6 +119,20 @@ struct Engine {
         return 100000; }
     // rules
     long rar_switches = 0;
+    // Random-Facet* (one random permutation of Even's edges fixed at the start; always remove the first available edge in
+    // that order: Friedmann-Hansen-Zwick SODA 2011 / errata 1410.7871 section 2): the variant whose lower bound stands.
+    vector<pair<int,int>> perm;
+    vector<int> rfstar(vector<int> a, vector<vector<int>> F) {
+        vector<pair<int,int>> B; for (int v = 0; v < n; v++) if (g.owner[v] == 0) for (int w : F[v]) if (w != a[v]) B.push_back({v, w});
+        if (B.empty()) return a;
+        pair<int,int> pick = {-1,-1}; for (auto& e : perm) { if (find(B.begin(), B.end(), e) != B.end()) { pick = e; break; } }
+        auto [v, r] = pick;
+        auto& Fv = F[v]; Fv.erase(find(Fv.begin(), Fv.end(), r));
+        vector<int> b = rfstar(a, F);
+        F[v].push_back(r);
+        const auto& val = evaluate(b).first;
+        if (cmp(val[r], val[b[v]]) > 0) { b[v] = r; rar_switches++; return rfstar(b, F); }
+        return b; }
     vector<int> rar(vector<int> a, vector<vector<int>> F, mt19937_64& rng) {
         vector<pair<int,int>> B; for (int v = 0; v < n; v++) if (g.owner[v] == 0) for (int w : F[v]) if (w != a[v]) B.push_back({v, w});
         if (B.empty()) return a;
@@ -142,7 +156,9 @@ int main(int argc, char** argv) {
         return 0; }
     vector<int> strat = e.initial(start, rng); long it = 0;
     if (start.rfind("spec:", 0) == 0) { stringstream ss(start.substr(5)); string tok; while (ss >> tok) { int c = tok.find(':'); strat[stoi(tok.substr(0, c))] = stoi(tok.substr(c + 1)); } }
-    if (rule == "rar") { vector<vector<int>> F(g.n); for (int v = 0; v < g.n; v++) if (g.owner[v] == 0) F[v] = g.succ[v]; strat = e.rar(strat, F, rng); it = e.rar_switches; }
+    if (rule == "rfstar") { vector<vector<int>> F(g.n); for (int v = 0; v < g.n; v++) if (g.owner[v] == 0) { F[v] = g.succ[v]; for (int w : g.succ[v]) e.perm.push_back({v, w}); }
+        shuffle(e.perm.begin(), e.perm.end(), rng); strat = e.rfstar(strat, F); it = e.rar_switches; }
+    else if (rule == "rar") { vector<vector<int>> F(g.n); for (int v = 0; v < g.n; v++) if (g.owner[v] == 0) F[v] = g.succ[v]; strat = e.rar(strat, F, rng); it = e.rar_switches; }
     else {
         map<pair<int,int>, long> entered; pair<int,int> last = {-1, -1};
         while (true) { const auto& val = e.evaluate(strat).first; auto imp = e.improving(strat, val); if (imp.empty()) break; it++;

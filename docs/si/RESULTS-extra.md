@@ -54,3 +54,15 @@ No search found super-polynomial growth in k (n = Gk + 1).
 Best-reward start. The family blows up Cunningham's rule under the ordering it was built for (×2.2 per N) and is linear under the
 index order: the lower-bound ordering is not lexicographic in any vertex numbering (edges of e0 sit at positions 1 and 16 of 22
 for N = 3), so the index-order rule is not killed by relabelling this instance. Zadeh with the index tie-break is linear here.
+
+### Random-Facet* (fixed random permutation; the variant whose lower bound stands) on the randomfacetsubexp port (vjfast rfstar, best-reward start, 8 seeds)
+| N | n | switches (8 seeds) |
+|---|---|---|
+| 3 | 68 | 76 84 69 68 100 70 86 69 |
+| 5 | 207 | 417 614 608 646 608 531 622 460 |
+| 7 | 289 | 1369 593 1568 1005 1210 942 1828 1101 |
+| 8 | 330 | 904 995 1101 1117 875 1434 1525 1453 |
+
+At these sizes Random-Facet* and Random-Action-Removal behave alike on the family (the published 2^Ω~(√m) bound for
+Random-Facet* is for the paper's initial strategy and is invisible at N ≤ 8); the family does not discriminate between
+the two variants at reachable sizes.
