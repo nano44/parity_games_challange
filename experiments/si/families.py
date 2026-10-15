@@ -19,7 +19,7 @@ ALL = list(GEN)
 ap = argparse.ArgumentParser()
 ap.add_argument("--rules", required=True); ap.add_argument("--families", default=",".join(ALL))
 ap.add_argument("--sizes", default="1,2,3,4,5,6,7,8"); ap.add_argument("--timeout", type=float, default=120)
-ap.add_argument("--seeds", type=int, default=1); ap.add_argument("--tag", default="run"); ap.add_argument("--start", default="best")
+ap.add_argument("--seeds", type=int, default=1); ap.add_argument("--seed-offset", type=int, default=0); ap.add_argument("--tag", default="run"); ap.add_argument("--start", default="best")
 ap.add_argument("--skip-after-timeout", action="store_true", default=True)
 a = ap.parse_args()
 rules = a.rules.split(","); fams = a.families.split(","); sizes = [int(x) for x in a.sizes.split(",")]
@@ -36,7 +36,7 @@ for fam in fams:
         for rule in rules:
             if rule in dead:
                 w.writerow([fam, N, g.n, g.m, rule, "", "", "", "", "skipped"]); continue
-            for seed in range(a.seeds):
+            for seed in range(a.seed_offset, a.seed_offset + a.seeds):
                 sp = gp.name + f".{rule}.{seed}.sol"
                 t0 = time.time()
                 try:

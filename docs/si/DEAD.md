@@ -32,3 +32,21 @@ Iteration tables: docs/si/RESULTS.md (generated); raw logs experiments/si/out/ (
 - The most-improved variant (count of vertices whose valuation improves) is linear here and remains open but is subsumed
   by the cost argument (O(n^2 m^2) per iteration) and is not pursued further.
 - Regression instance: experiments/si/instances/dlmm_ML_L6.pg (lsf and steepest: 120 iterations from the start in dlmm_ML_L6.start).
+
+## S2a MSF (most-significant-first single switch) and its variants msfa/msfc: DEAD 2026-10-15 12:23Z (killed by L-RED)
+- Killer (L-RED, reported by the Lead 12:23Z; files claude/l-red experiments/red/gens_red.py gated_bland, instances
+  gated_bland_N6/_N8.pg): the DLMM Bland counter with each a_i choice routed through a Friedmann simple cycle
+  (1106.0778 section 6.1, Lemma 6.1) whose two Odd gate vertices carry even priorities decreasing in i. Exactly 2^N - 1
+  iterations, n = 5N + 2, from the best-reward start; si.py and L-RED's independent vj.py agree on every row up to N = 13;
+  msfa and msfc give identical counts.
+- Mechanism (Lead's summary of L-RED): the 2-cycle through the gate sets the switch's LEVEL (the gate's even priority,
+  decreasing in i, so MSF processes levels in Bland's order), Odd's current choice at the gate sets its SIGN (Odd goes back
+  to a_i exactly when the counter's edge is improving), and the gate's exit sets its EFFECT (as in the plain counter).
+  This refutes L-SI's obstruction (b) (notes/L-SI.md 11:25Z): the decoupling of level from effect that Dantzig lower
+  bounds get from probability scaling is obtained here by an escaped cycle-creating switch. General lesson (L-RED, lemma in
+  preparation): gate relabelling re-assigns the level of any switch, so every rule ranking improving edges by
+  first-difference position inherits the index-based lower bounds (DLMM 2512.16684 Thm 4.3 class).
+- L-SI reproduction: PENDING the push of claude/l-red (not on origin at 12:30Z); L-SI's own gate variants built from the
+  description did not reproduce (both-gates and enter-only gates with q_i above the counter give 0 or N iterations).
+  The 2^N - 1 table is to be added from si.py when the generator arrives, and gated_bland joins the standard falsification
+  set (experiments/si/families.py) then.
