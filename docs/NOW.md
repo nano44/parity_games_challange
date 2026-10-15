@@ -20,7 +20,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | Lead | session_014FBi6o334DvwT5Uw2kDfoN | claude/vibrant-johnson-nxvvxo | opus-5-5 | high | working | Owner-chosen session; routing judgement; keeps context lean |
 | REFEREE (old) | session_01Ki9osXiyYf9heTLNk3FKED | claude/referee | fable-5-1 | high | parked (handover f179ae0); keep 1 week |
 | REFEREE | session_01R4yR8XskSK3ta94ewnN4cM | claude/referee | fable-5-1 | high | idle (R-psolC FAITHFUL 1600917) | Never downgrade the referee; most capable model |
-| L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | parked (T11 done 933dc12) | Source checking and barrier analysis need judgement; Fable reserved for referee |
+| L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | parked (T12 done 706d5e1) | Source checking and barrier analysis need judgement; Fable reserved for referee |
 | L-COMP | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | parked (handover 25a6e21; successor only when T3 revives or a new claim needs the bench) | n=5 diagonal cells cost 1-2 h/k; low value while T3 is parked |
 | L-STRUCT | session_01VH4fd2Fq8XeXtyUfkwLJV1 | claude/l-struct | fable-5-1 | high | parked (handover 729c965; wake on n=5 diagonal gap, new T3 idea, or L4 second referee) | Attack lane (owner: most capable model at high effort); rank 1 approach, weak separators, T4 verdict OPEN |
 | L-ATTR | session_01XDM3HXeuG3mqhQK92eNaru | claude/l-attr | fable-5-1 | high | parked (A3-psolC done 02174e2) | Attack lane, rank 3 |
@@ -35,7 +35,8 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | OWNER-DESK | session_01Eq99qsTJBiTh6xLzwCPtqv | claude/owner-desk | opus-5-5 | high | starting | Owner D3: owner Q&A and open questions; accuracy in plain explanation, no proofs; idle between owner messages |
 
 ## In flight (as of 2026-10-15 09:50Z)
-- L-SI: strategy-improvement rule design loop toward M4/M4-R (D6, L19), 12h box from ~10:10Z.
+- L-SI: strategy-improvement rule design loop toward M4/M4-R (D6, L19), 12h box from ~10:10Z. Candidate S2a MSF (most-significant-first single switch) NOT KILLED so far (l-si c73f69e): linear on all 15 families incl. switchallexp, zadehexp, Random-Facet*, DLMM Bland; adversarial n<=9 maxima ~n^2.5-3. Unrefereed data, far from a claim. L-LIT T12 (706d5e1): no published lower bound covers MSF; killer must be two-player with mixed-owner cycles; candidate D_n-with-Odd-gates sent to L-SI.
+- Working-session count (D1 cap 5 counts lanes, not Lead/WATCHDOG): L-ALG, L-SI, L-LOWER = 3.
 - L-ALG: falsification-driven algorithm design loop toward M4 (D5, L18), 12h box from ~10:00Z.
 - L-LOWER (successor): T-L2 theory box to 20:36Z: human proof of B_2(4) >= 7 from the 100-game UNSAT core; test for a gap growing with n.
 - Everyone else parked or idle: L-ATTR (psolC done, DE3), REFEREE (R-psolC done), REFEREE-2, L-LIT (T11 done), L-STRUCT, L-COMP,
