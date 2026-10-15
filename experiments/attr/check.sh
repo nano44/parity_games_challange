@@ -34,6 +34,15 @@ for f, (ps, p2) in {"instances/llit_witness_buchi_n3.pg": (True, True), "instanc
     got = (peeling.both(g, r["ref"], peeling.peeling), peeling.both(g, r["ref"], peeling.pa2))
     assert got == (ps, p2) and (r["psolb"] == "solved") == p2, (f, got, r["psolb"])
     print(f"{f}: PA* {ps}, PA** {p2} = psolB-complete")
+from psolc import PsolC
+for f, (undec, b, q) in {"instances/psolc_min_n4_m6.pg": (4, "undecided", "undecided"),
+                         "instances/tc2_psolc_nothing_n9_m11.pg": (9, "undecided", "undecided"),
+                         "instances/dtr_fig4.pg": (0, "undecided", "solved"),
+                         "../harness/bench/hkp_fig6.pg": (0, "undecided", "undecided")}.items():
+    g = pg.read(f); r = a1lib.classify(g, others=True)
+    w, st, res, _ = PsolC(g).run()
+    assert len(res) == undec and (r["psolb"], r["psolq"]) == (b, q), (f, len(res), r["psolb"], r["psolq"])
+    print(f"{f}: psolC undecided {len(res)}, psolB {b}, psolQ {q}")
 n2 = 0
 for cfg, m in a1lib.succ_orbits(2):
     for g in a1lib.games_on(cfg, 2):

@@ -25,6 +25,7 @@ class PsolC:
     def __init__(self, g, trace=False, strat="zlk", exclude_start=False):
         self.g, self.trace, self.strat_mode = g, trace, strat
         self.exclude_start = exclude_start   # variant A1 (docs/attr/psolC-impl.md): minimum without c(v_0); NOT DTR Def. 1
+        self.first_return = False            # variant FR (A3 results section 5): the FIRST visit to X decides (DTR Fig. 4's condition)
         P = max(g.prio)
         M = P if P % 2 == 0 else P + 1
         self.c = [M - p for p in g.prio]                       # DTR colours (min-parity)
@@ -74,6 +75,9 @@ class PsolC:
             if l is not BOT and v in X and l % 2 == p:
                 out[(v, l)] = []                                # target: dead end in G^p_X
                 continue
+            if self.first_return and l is not BOT and v in X:
+                out[(v, l)] = []                                # variant FR: a bad first visit ends the play (lost for p)
+                continue
             succs = []
             for w in self.succ[v]:
                 if w not in alive:
@@ -107,7 +111,7 @@ class PsolC:
                     cnt[n] -= 1
                     if cnt[n] == 0:
                         A.add(n); q.append(n)
-        return {x for x in X if (x, BOT) in A}
+        return {x for x in X if (x, BOT) in A}   # (FR dead ends have no successors and are never predecessors of A members)
 
     # fixedpoint(G, X, p) of Fig. 5: W = V; repeat { X = X ∩ W; W = X ∩ Wr_p(G, X) } until X ⊆ W; return X.
     def fixedpoint(self, alive, X, p):

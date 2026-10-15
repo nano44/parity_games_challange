@@ -8,7 +8,9 @@ a3_validate.py PASS (DTR Ex. 1-3, Fig. 8). Running: a3_exhaustive.py 4 (out/a3_l
 (out/a3_families_log.txt), random runs done (out/a3_random_*.txt). Then: docs/attr/A3-psolC-results.md, push, message.
 Findings so far: psolC solves ALL canonical n <= 3 games (psolQ misses 44); Thm 4 per node holds everywhere; smallest
 psolC-partial game n = 4, m = 6 (prio [1,2,1,5], all Even, v0->v0,v1; v1->v2; v2->v2,v3; v3->v0; Odd wins all): the
-weak-parity prefix minimum is spoiled by the even colour at v1 before Even parks on the v2 loop. tc: 0 % decided at all sizes.
+weak-parity prefix minimum is spoiled by the even colour at v1 before Even parks on the v2 loop. tc, tc+, counter_symsi, counter_rr (N >= 4): 0 % decided at every size; the other 9 families solved completely at every size run.
+tc N=2 shrinks to a 9-vertex game with the same trap-after-better-colour shape (instances/tc2_psolc_nothing_n9_m11.pg).
+Repairs tried and dead: reset-at-X-visit (unsound), first-return (sound, DTR Fig. 4's non-monotone condition; implemented as psolc.py first_return; complete on n=3, fails the n=4 instance and loses DTR Fig. 4), closed-trap recursion (adds nothing).
 
 ## Queue
 2. Answer referee questions on TA1-proof.md; G3 (F6 equality) and G2 (external target, rank of X-vertices) are the ones I
