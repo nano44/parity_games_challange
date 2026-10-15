@@ -9,6 +9,12 @@ search_rec 834-994, search/run 997-1161; attractVertices 65-101, attractTangle 1
 the release build still prints "best vertices", "distance k" and "new tangle ... with k escape vertices" at -t -t, enough
 to see every tangle (vertex set, Even's strategy, escapes) and every pruning round.
 
+Flags. Every Oink run in this report before 16:02Z used `--dtl --no-single --no-wcwc` (no single-parity / winner-controlled
+preprocessing) but NOT `--no-loops`, so Oink's parser dropped losing self-loops that are not a vertex's only edge and
+solveSelfloops ran before DTL (CHECKER C3, Lead 16:02Z: the pinned algorithm is now `oink --dtl --no-single --no-wcwc
+--no-loops`). Section 8 re-runs the probes with --no-loops; the families of sections 2 and 6 have no self-loops except
+where stated, so their counts are unaffected (spot checks in section 8).
+
 ## Verdict: HELD. No killer built; the invariant says DTL has no reset, and the one non-monotone ingredient (theft of a tangle's vertex by a higher region) is spent once per vertex per level
 Every tangle DTL learns is a new bottom SCC of a region; across Even's searches the tangle set only grows and every
 attractor, the pruning's surviving set, every region head and every tangle's usability (except by theft) are monotone in
@@ -27,8 +33,10 @@ shrinks when an Even dominion is solved). Write A_T(Z, R, t) for the tangle attr
   attraction (attractVertices runs first on every pop; a tangle is attracted iff all its escapes are in Z or outside R,
   and more tangles never un-satisfy that).
 - (M2) The pruning of best_vertices is a greatest fixpoint: V* = the largest V such that every v in V can step into
-  A_T(Reg_T(V), R, t) for some t < pr(v) (lines 711-741), where Reg_T(V) = union of the attractors of the tops of V with
-  threshold pr(top). The operator is monotone in V and, by (M1), pointwise increasing in T; so V*_T subset of V*_T'.
+  A_T(Reg_T(V), R, t) for some t < pr(v) (lines 711-741), where Reg_T(V) = the union of the DISJOINT regions of the tops
+  of V, computed top-down from one copy CurR = R (line 690) that each top's attraction consumes (lines 691-706; restated
+  16:15Z after the Lead's check; the union is still monotone in T because a vertex that a lower top loses is held by the
+  higher top that took it). The operator is monotone in V and, by (M1), pointwise increasing in T; so V*_T subset of V*_T'.
   Pruned vertices ("distractions") are never heads of regions and no tangle is ever learned from them.
 - (M3) Region heads move only upward: the head of a vertex (the top whose region takes it, tops processed in descending
   priority with R consumed) is a monotone function of T: a higher top's region can only grow (M1), so a vertex can be
@@ -55,7 +63,9 @@ levels) are X (grows within a search), V* (M2) and thefts (M3), all monotone. In
 opponent's tangle at a higher priority, renewable because the opponent learns between the player's searches; dtl has no
 opponent during a phase, and idtl's opponent tangles are never attracted for the player (parity check, attractTangle 113),
 so they act only through G.
-(c) Even's strategy str[u] is set by the FIFO attractor: str[u] := the first popped successor of u (attractVertices 80), or
+(c) [WITHDRAWN 16:15Z, see section 9: Oink's uintqueue is a STACK (uintqueue.hpp:72-74 pop returns queue[--pointer]),
+so every attractor in dtl.cpp is depth-first, not breadth-first; the layer argument below does not apply. Kept as
+written for the record.] Even's strategy str[u] is set by the FIFO attractor: str[u] := the first popped successor of u (attractVertices 80), or
 the strategy of the first tangle that attracts u (attractTangle 170-180; vertices are popped in insertion order, and in one
 pop the predecessors of the popped vertex come first, in Oink's edge-list order, then the tangles of tin[v] in creation
 order). So str[u] changes only when the relative order of two attraction events changes. Under (M1)-(M4) the BFS layer
@@ -151,7 +161,11 @@ nothing pushes those successors later again). The one open step for a proof: the
 pushed earlier changes outside vertices' choices, which makes a new SCC, which is a new tangle, which fires at a different
 escape ...); I argue it is short because each round only moves events earlier and the within-tangle push order is fixed
 at learning time, but it is the step to nail. Targeted search for it: fitness = max number of tangles learned at ONE top
-(injective priorities so the tangle priority names the top), PERHEAD-PLACEHOLDER
+(injective priorities so the tangle priority names the top), hill-climbs at n = 12, 16, 20 (40,000 mutations each; fitness = max tangles at one top, and = max at one top
+within one search) stayed at 1-3. On the many-tangle games of sections 2 and 6 (traces, top identified by the tangle's
+priority, so several tops of equal priority may be merged): max tangles at one top priority within ONE search is 1-3
+everywhere (chain 40: 1; evolved n = 24: 2; tc+ 3: 1; the three perturbed counters: 3), and across searches at most
+18 (pert_dftl6, 13 searches): one new SCC per top per search, never a self-firing chain within a search.
 (b) Phase alternation. dtl never returns to a player's phase (run 1123-1136: Even until search(0) fails, then Odd until
 search(1) fails, then stop); so Even's tangle set is frozen when Odd starts, and nothing of Even's is renewed. idtl
 alternates, but the opponent's tangles are never attracted for the player (attractTangle 113 checks tpr mod 2 = player),
@@ -208,9 +222,12 @@ Every run "solution verified", all vertices solved, dtl wall time below 10 ms at
 tangles in 2 iterations on both families (idtl the same); it is neither wrong nor super-polynomial here. ODFTL
 (one-player distraction-free TL, the a028e62 algorithm kept under that name at the tip) is exponential on counter_odftl
 (iterations 2, 4, 7, 11, 17, 26, 41, 62, 97, 146, ..., 349 at N = 12: ratio ~1.5-1.6, Fibonacci-like) and linear on
-counter_dftl; the tip's two-player DFTL is linear on both (1 iteration). So the branch's counterexample is the pair
-(ODFTL, counter_odftl), as the fix commit d54dfad says ("Fix counter_odftl to have a tiny tangle of the opponent after
-the distraction").
+counter_dftl; the tip's two-player DFTL is linear on both (1 iteration). The ORIGINAL solver at a028e62 (built separately: worktree oink-a028, its own CMake) on counter_dftl: tangles
+6, 14, 28, 52, 92, 158, 266, 442, 728, 1192, 3162 and iterations 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 610 for
+N = 1..10, 12: the iteration counts are exactly the Fibonacci numbers F_{N+3}, so the 2021 counterexample is a
+Fibonacci counter (growth 1.618^N), verified at every N. So the branch's counterexamples are the pairs (a028e62 DFTL,
+counter_dftl) and (ODFTL at the tip, counter_odftl), as the fix commit d54dfad says ("Fix counter_odftl to have a tiny
+tangle of the opponent after the distraction"); the tip's two-player DFTL is linear on both.
 What the generators are built to break (dftl.cpp header, branch tip lines 19-48, read): DFTL's loop takes V = all
 p-priority vertices, decomposes into regions headed by V top-down, learns tangles in closed regions, and "if no region is
 closed, we assume that 'surely' the lowest top vertex is distracting, so we remove that vertex from V"; V is reset at
@@ -226,8 +243,12 @@ distractions here, whose only continuation is a higher Odd priority, are pruned 
 a greatest fixpoint, monotone across searches (M2), never reset. The author's own counterexample thus attacks exactly
 the ingredient DTL replaced, and in Lemma M's terms it is (M2) that makes it harmless: on these families dtl's V* is
 stable after one pruning and the 2N + 3 tangles are the Odd tangles' per-level copies learned once each.
-Perturbation search from counter_dftl N = 6 (32 vertices) under dtl (fitness = tangles, 40,000 single mutations):
-PERT-PLACEHOLDER
+Perturbation searches under dtl (fitness = tangles, single mutations: edges, priorities, owners; flags --no-single
+--no-wcwc): from counter_dftl N = 6 (32 vertices): 100 tangles (from 15); from counter_odftl N = 6 (44 vertices):
+PERT_ODFTL (from 15); from tc+ N = 3 (54 vertices): 92 (from 17). Two to three tangles per vertex, the chain shape again
+(the perturbed counters: 14-21 searches, at most 3 tangles at one top priority within a search, at most 16 at one top
+across searches; tangle sizes up to 41-49 of the vertices: nested chains). Fitness = unsolved vertices from
+counter_odftl N = 6 (40,000 mutations): nothing unsolved.
 Other games on the branch: none (the branch's diff against 8fbf0a7 is the solver, the two generators, CMake and README).
 
 ## 7. The universal-tree angle (Lead 15:50Z: van Dijk's ISoLA 2024 closing slide, "learning tangles moves vertices along the universal tree")
@@ -244,6 +265,67 @@ length d over [n] decrease lexicographically when each decrease is caused by one
 events can be chained, the count could be n^{O(log n)} rather than polynomial, which would make DTL quasi-polynomial
 in the tangle count without being a universal-tree walker in the separating-automaton sense. (a)-answer: no family was
 built that forces DTL along a tree; the search for self-firing chains at one head (section 5(a)) is the attempt.
+
+## 8. Re-runs with --no-loops and self-loop-biased mutations (Lead 16:02Z)
+Flags `--dtl --no-single --no-wcwc --no-loops` (the pinned algorithm), mutations biased toward self-loops (30%: add or
+remove a self-loop, never leaving a vertex without successors) and toward swapping the ids of two equal-priority vertices
+(15%: the tie order of Oink's sort), the rest as before.
+- Spot checks of earlier counts with --no-loops: chain 40: 39 tangles (38 before: the chain family has self-loops), tc 4: 9,
+  tc+ 3: 17, evolved n = 24 (12 self-loops): 57 (56 before), counter_odftl 4, 8: 11, 19; all "solution verified".
+- Correctness (fitness = Oink's verifier failing, a solver error, or an unsolved vertex; 40,000 mutations each): n = 12,
+  16, 24: best fitness stayed 0 in all three runs: no wrong answer, no unsolved vertex, no error, with self-loops and
+  renumbering in play. (Earlier probes without --no-loops: n = 8, 12 free and from counter_odftl N = 6: also 0.)
+- Tangle count with the same mutations: free search n = 18: 21 tangles (30,000 mutations; 35 without the loop bias and
+  without --no-loops); perturbation from counter_odftl N = 6: 47 (20,000 mutations). Self-loops do not open anything:
+  a winning self-loop is a one-vertex tangle learned once, a losing one is an escape.
+- Renumbering within a priority class as an attack dimension (unstable std::sort): the swap mutation above was part of
+  every run of this section; no effect beyond the noise of the climb was seen. Not searched systematically.
+
+## 9. Corrections after the Lead's code check (16:10Z): LIFO attractor, consumed CurR
+Verified in 8fbf0a7: include/oink/uintqueue.hpp lines 72-74 (pop returns queue[--pointer]) and 82-84 (push stores at
+queue[pointer++]): Q is a stack, every attractor in dtl.cpp is depth-first; dtl.cpp line 690 `CurR = R` precedes the top
+loop 691-706, so best_vertices builds a disjoint top-down decomposition (as sptl does). Consequences for this report:
+- Survive unchanged: everything set-based. (M1) attraction sets do not depend on the pop order; (M2) with the restated
+  disjoint decomposition; (M3) heads monotone; (M4) tangle usability; consequence (d) (upward-only influence); sections
+  2, 5(b)-(d), 6, 7, 8 (data and the opponent-free argument); the "no reset" statement.
+- Withdrawn: section 1(c) and section 5(a) (BFS layers, FIFO pusher chains, "older tangle pushes first"). Under LIFO the
+  order is reversed in the one place that matters: at the pop of a vertex, its predecessors are pushed in edge-list order
+  and the usable tangles of tin[v] after them in creation order, and the stack pops the LAST push first, so the NEWEST
+  tangle fired at that pop is explored first and sets the strategies of its vertices before anything older. A new
+  tangle therefore reorders the depth-first discovery immediately, with no permanent event paying for it. This is the
+  renewable-looking mechanism the Lead asks about.
+- What bounds it instead (Lead reading, to be proved or refuted by the proof lane):
+  (W) one extraction per top per search (sptl 514-519, W reset in search 1016): within a search a top yields one
+  extractTangles call, so a strategy alternation at one head needs one search per step; tangles per search <= n.
+  (P, prefix lemma) Let t be the tangle learned at head k in search s from the region's depth-first run D_s, and let
+  search s+1 differ from s only by t (same vertices in the region, same other tangles). The run D_{s+1} coincides with
+  D_s up to the pop at which t fires (t did not exist in s and nothing else changed), t then pushes its vertices not yet
+  discovered with the strategies they had in D_s (that is what t recorded), and every vertex discovered before that pop
+  keeps its D_s strategy. So every member of SCC_s keeps its strategy and SCC_{s+1} contains SCC_s: the only change is
+  that vertices outside t, now discovered from t's vertices (LIFO), may switch into it. Self-firing at one head is a
+  monotone growth of the bottom SCC, at most n steps, not an alternation.
+  (E, events) The prefix lemma fails exactly when something else changed at head k between the two searches: a vertex
+  joined region k (at most n times per level), a vertex was stolen upward (at most n), a tangle was deleted (solved
+  vertex, at most once per tangle), or a tangle from a LOWER head fired in region k for the first time. The last kind is
+  the cascade the Lead names (T_k <= n + sum of lower T_j would be exponential); but a lower tangle fires at k only when
+  its escapes are in Z_k, and its first firing absorbs its vertices into region k (they were in the lower region when it
+  was learned, so they are new to k, (M3)): at most n first firings per head per level, and tangles that fire at the same
+  pop as a consequence of the same Z_k growth form one event. Between two events the SCC sequence at head k is the
+  monotone self-growth of (P). So tangles at head k per level = O(n) events x O(n) growth = O(n^2), polynomial overall.
+  The step a proof must nail down is now (P)+(E): that nothing but these events changes a depth-first prefix at a head.
+- Revised requirement for a killer: an Even vertex whose strategy alternates across searches needs, at each
+  alternation, an event of (E) at its head: a new vertex, a theft, a deletion, or the first firing of a lower tangle; a
+  construction has to make exponentially many such events happen at one head with a bounded vertex supply, which (E)
+  says it cannot unless the first-firing count is not bounded by absorption (the case to try: lower tangles whose
+  vertices were already absorbed by an earlier lower tangle fire later, when a further escape is covered: that firing
+  is still tied to a Z_k growth event, which is what (E) counts).
+- Searches aimed there (fitness = max tangles learned at one top priority within one search, and = max tangles in one
+  search; mutations with self-loops and renumbering; from the n = 24 optimum and the perturbed counters): the per-top-within-one-search fitness is fooled by equal priorities (its optimum from the n = 24 game is 23 vertices
+all at priority 10, 23 tops, one chain tangle each, one search: tops are only identifiable by priority in the trace), so
+only the injective-priority runs count: n = 12, 16, 20 at most 3 per top within a search (section 5(a)); with --loops
+and injective priorities, max tangles in one search at n = 16: PS16-PLACEHOLDER. No alternation at a single top
+within a search was ever seen, as (W) predicts; across searches the self-firing chains grow monotonically (section 2:
+the chain tangles are nested), as (P) predicts.
 
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.
@@ -263,5 +345,16 @@ built that forces DTL along a tree; the search for self-firing chains at one hea
   attraction-event order at one Even vertex that reverses super-polynomially often under those monotonicities, which
   reduces to the pusher-chain (FIFO) order fixed by Oink's edge lists and tangle creation order; not found, and the
   potential argument says it does not exist (Lead reading, gap named).
-- NEEDS: Lead: whether a written proof of the polynomial bound (section 1(c) made rigorous) is wanted from L-ALG or
-  REFEREE, since it would turn DTL from "survives the bench" into a candidate with a running-time argument.
+- DONE (second half of the box, 15:35Z-): section 5 (the four weak points: FIFO order, phase alternation, subgame
+  removal, work per tangle; the TC-variant question), section 6 (Oink's dftl branch built, both generators transcribed,
+  dtl linear and verified on both, the original a028e62 DFTL a Fibonacci counter on counter_dftl, ODFTL on
+  counter_odftl), section 7 (universal-tree angle), section 8 (--no-loops re-runs, self-loop and renumbering mutations,
+  correctness probes clean), perturbation searches from the counters and tc+.
+- FINDINGS (second half): (5) the author's own DTL-era counterexample attacks the "remove the lowest top" heuristic
+  that DTL replaced by the good-path greatest fixpoint, and DTL learns 2N + 3 tangles on it; (6) no TC variant can give
+  dtl a renewable theft, by (M1)+(M3) (one-sided attraction, no opponent during a phase); (7) the FIFO pusher-chain
+  order is a lexicographic order on tuples, where a proof must count descents (universal-tree-shaped counting), and
+  (d) upward-only influence is what should bound it; (8) with --no-loops, self-loops and renumbering: no wrong answer,
+  no unsolved vertex, tangle counts unchanged within noise.
+- NEEDS: Lead: the proof lane should treat section 1(c)+(d) (pusher-chain descents bounded through upward-only
+  influence) as the statement to prove or refute; a refutation there is the only killer shape left that I can name.

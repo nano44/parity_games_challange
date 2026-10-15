@@ -12,7 +12,10 @@ phase analysis for the S7 order), or the "DF + pads" reduction as a general theo
 docs/red/R8-DTL.md: HELD. Section 6: van Dijk's counter_dftl / counter_odftl (dftl branch) are linear for dtl (2N + 3
 tangles, verified); counter_odftl is exponential for ODFTL (Fibonacci-like iterations), i.e. the author's counterexample
 hits the "remove the lowest top" heuristic that DTL replaced by the good-path pruning (M2). Sections 5, 7: the Lead's
-four weak points, the TC-variant question, the universal-tree angle. Open: perturbation searches from the counters. Lemma M (monotone in the tangle set; theft the only non-monotone event), chain mechanism
+four weak points, the TC-variant question, the universal-tree angle. Section 8: --no-loops pin (CHECKER C3, 16:02Z),
+self-loop/renumbering mutations, correctness probes clean. Perturbation climbs from the counters: ~3 tangles per vertex,
+chains. The one killer shape left: a refutation of 1(c)+(d) (exponentially many pusher-chain descents at one head).
+Oink flags for every run from 16:02Z on: --dtl --no-single --no-wcwc --no-loops. Lemma M (monotone in the tangle set; theft the only non-monotone event), chain mechanism
 (gens_dtl.py chain n: n - 2 tangles), free-search optima (8, 11, 35, 56, 27 at n = 10..30; two-player 26, 31 at n = 16,
 20), flip census (random 0; walks 6 games, all thefts), completeness probe clean. Oink's release build prints "best
 vertices", "distance k", "new tangle ... v->w ... with k escape vertices" at -t -t (enough to see everything but the
@@ -29,7 +32,7 @@ N = 3 first restart 167 > 159). Logs: scratchpad anyorder.log, climb_{3,4,5}_s{1
 1. If asked: proof of i(n) = 2 i(n-1) + 4n for fhz_padded under S7. 2. S5/S6 (paragraph below). 3. Optional: FHZ-scaled growth run for R2 (b).
 
 ## Things only I know
-- TRAP (hit twice): `pgrep -f PATTERN | xargs kill` and `pkill -f PATTERN` kill my own shell when the pattern occurs in the
+- TRAP (hit three times): `pgrep -f PATTERN | xargs kill`, `pkill -f PATTERN` and `ps aux | grep "[p]attern" | xargs kill` kill my own shell when the pattern occurs ANYWHERE in the same shell command (e.g. in a later nohup line of the same call). Kill in a call of its own, or by PID.
   shell's command line. Use `ps aux | grep "[z]adeh"` style or kill by a PID read in a separate call.
 - zadeh_lb.py's exp-game start follows initial_strategy_for_exp_game (a -> o_j, b -> p_j, v -> r_j, w -> q_j, escapes -> m1,
   d -> E_j, g -> c_j, s -> m0, m_j -> m_{j+1}, m_{N-1} -> Y). Under this start the index tie-break gives 41 at N = 2 (not 19,
