@@ -2,17 +2,19 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
 ## Resume point
-2026-10-15 10:20Z. Engine experiments/si/si.py validated (xcheck.py full: valuations equal to the PGSolver port on 1800
-(game, strategy) pairs; switch-all counts equal the port's on 600 random games and switchallexp N=1..4; all 9 rules give
-py-zlk's regions with verified strategies on 600 games). Candidates S1-S4 documented (docs/si/candidates/). Running:
-families.py sweeps (out/fam_det.log, out/fam_rand.log), adversarial.py msf and rar (out/adv_*.log). Next: read the results,
-write docs/si/RESULTS.md and DEAD.md, plots, check.sh, verify, push, message the Lead.
+2026-10-15 12:55Z (box to 22:10Z). Dead: S4 (switchallexp), S2b LSF (zadehexp, M_L, Bland), S3 steepest (M_L), S2a MSF and
+msfa/msfc (L-RED's gated Bland counter, 2^N - 1; reproduction pending their push). Live: S1 RAR (M4-R; randomfacetsubexp
+N=10 one seed 4649 switches, N=10 seeds 2-4 and N=12 seeds 0-1 running with 1-1.5 h timeouts; adversarial mean-of-16 at
+n=6..12 running), S5 Zadeh+index tie-break and S6 Cunningham+index order (family sweep out/fam_mem.log, adversarial and
+gadget-chain searches running; cunninghamexp blows up only under PGSolver's lower-bound ordering). Next: read those
+sweeps, write DEAD.md/RESULTS entries, regenerate report.py, end-of-box message (DONE/FINDINGS/NEEDS + candidate list
+with killers). Open from the Lead: gated_bland file (claude/l-red not on origin at 12:30Z); L-RED attacks RAR independently.
 
 ## Queue
-1. Read sweeps; growth fits; DEAD.md entries with killer instances.
-2. Adversarial searches for lsf, steepest, S4 (CPU-bound; 4 cores).
-3. If any candidate shows polynomial growth everywhere: STOP and message the Lead.
-4. End-of-box message: DONE / FINDINGS / NEEDS + candidate list with killers.
+1. fam_mem sweep -> S5/S6 verdicts on families; adversarial/famsearch for zadeh, cunningham.
+2. gated_bland: reproduce 2^N - 1 with si.py, add to families.py, run RAR/zadeh/cunningham on it.
+3. RAR: collect N=10/12 randomfacetsubexp seeds; growth fit; adversarial mean-of-16.
+4. report.py regenerate; DEAD.md final; notes; verify; push; end-of-box message.
 
 ## Things only I know
 - Engine conventions: priorities made injective by rank (p' = 2·rank + parity, rank by (pr, index)); path component a bitmask
