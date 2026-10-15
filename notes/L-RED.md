@@ -14,7 +14,15 @@ tangles, verified); counter_odftl is exponential for ODFTL (Fibonacci-like itera
 hits the "remove the lowest top" heuristic that DTL replaced by the good-path pruning (M2). Sections 5, 7: the Lead's
 four weak points, the TC-variant question, the universal-tree angle. Section 8: --no-loops pin (CHECKER C3, 16:02Z),
 self-loop/renumbering mutations, correctness probes clean. Perturbation climbs from the counters: ~3 tangles per vertex,
-chains. The one killer shape left: a refutation of 1(c)+(d) (exponentially many pusher-chain descents at one head).
+chains. Section 9 (Lead's code check: uintqueue is a STACK, CurR consumed): 1(c)/5(a) withdrawn; (W) one extraction per top
+per search, (P) prefix lemma (a head's own tangle reproduces its recorded strategies; self-firing = monotone growth),
+(E) events (joins, thefts, deletions, first firings of lower tangles = absorptions) bound tangles per head by 1 + events.
+Section 10: hand gadgets (gens_dtl.py ladder m): v1 pruned (escape to Odd's sink kills the good path), v2 collapsed by
+the dominion attractor in one search (2m + 2 tangles); the two walls for any staggered gadget: a head's good path must
+run through priorities below its own (threshold loop stops at pr(u)), and any closed Even-winning structure is a
+dominion whose attractor absorbs every tangle escaping into it. The evolved games stagger through pruning rescues
+(distractions rescued when X grows), each rescue re-creating the chain tangles above it: that is the O(n^2) mechanism.
+The one killer shape left: super-polynomially many (E) events at one head.
 Oink flags for every run from 16:02Z on: --dtl --no-single --no-wcwc --no-loops. Lemma M (monotone in the tangle set; theft the only non-monotone event), chain mechanism
 (gens_dtl.py chain n: n - 2 tangles), free-search optima (8, 11, 35, 56, 27 at n = 10..30; two-player 26, 31 at n = 16,
 20), flip census (random 0; walks 6 games, all thefts), completeness probe clean. Oink's release build prints "best
@@ -156,6 +164,10 @@ N = 3 first restart 167 > 159). Logs: scratchpad anyorder.log, climb_{3,4,5}_s{1
   "DTL attack" table and verdict (read 15:05Z).
 
 ## Dead ends
+- DTL staggered gadgets (R8 section 10): escapes to an Odd sink prune the head; closed Even towers are solved at once by
+  the dominion attractor; open-by-design levels need an escape above the next top, which the pruning rejects. Rescue
+  chains (priority-0 Odd-owned rescue vertices pointing at each other) are all rescued in round 1 because a candidate
+  of minimal priority is never cleared by the threshold loop and Z already contains every best vertex's region.
 - DTL killer by free-form search (R8): hill-climbs at n = 10..30 converge to one-player chain games (O(n^2) tangles);
   two-player-constrained searches give the same chains. A GA/template search was L-ALG's (quadratic). The theft-driven
   flip (R8 section 3) is a one-shot event, not a counter: thefts are not renewable (region heads only move up).
