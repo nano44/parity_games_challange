@@ -11,7 +11,8 @@ import sys, os, json, random, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import pg, oink_fit, zielonka
 
-EDGES = ["T>E1", "E1>T", "E1>Lown-1", "E2>T", "L>E2", "E2>H", "Z>Lown-1", "H>Lopp", "T>Lopp-1", "E1>Z", "A>E1", "Z>E2", "H>E2", "E2>Lopp+1", "E1>E2", "E2>E1", "E1>H"]
+EDGES = ["T>E1", "E1>T", "E1>Lown-1", "E2>T", "L>E2", "E2>H", "Z>Lown-1", "H>Lopp", "T>Lopp-1", "E1>Z", "A>E1", "Z>E2", "H>E2", "E2>Lopp+1", "E1>E2", "E2>E1", "E1>H",
+         "E1>Topp", "E1>Zopp", "E2>Zown-1", "T>Zopp", "Z>Topp", "L>Lopp", "B>E2", "E2>Lown", "Z>Zopp-1", "E1>Lopp+1"]
 
 
 def build(tpl, n):
@@ -33,11 +34,11 @@ def build(tpl, n):
         toppo -= 2
     for (pl, i), d in V.items():
         tag = f"{'Odd' if pl else 'Even'}-{i}"; lopr = d["lopr"]
-        prev = (d["T"],); chainA = []
+        prev = (d["T"],); chainA = []; chainB = []
         for j in range(i):
             s = new(lopr - 1, pl, f"{tag}-S-{j}"); a = new(lopr - 1, 1 - pl, f"{tag}-A-{j}"); b = new(lopr - 1, 1 - pl, f"{tag}-B-{j}")
             for p_ in prev: edge(p_, s)
-            edge(s, a); edge(s, b); edge(a, V[(pl, j)]["L"]); edge(b, V[(1 - pl, j)]["L"]); prev = (a, b); chainA.append(a)
+            edge(s, a); edge(s, b); edge(a, V[(pl, j)]["L"]); edge(b, V[(1 - pl, j)]["L"]); prev = (a, b); chainA.append(a); chainB.append(b)
         for p_ in prev: edge(p_, d["Z"])
         for j in range(i + 1 - pl, n): edge(d["Z"], V[(1 - pl, j)]["L"])
         edge(d["H"], V[(pl, (i + n - 1) % n)]["L"])
@@ -61,6 +62,17 @@ def build(tpl, n):
         if E["E1>E2"]: edge(d["E1"], d["E2"])
         if E["E2>E1"]: edge(d["E2"], d["E1"])
         if E["E1>H"]: edge(d["E1"], d["H"])
+        if E["E1>Topp"]: edge(d["E1"], opp["T"])
+        if E["E1>Zopp"]: edge(d["E1"], opp["Z"])
+        if E["E2>Zown-1"]: edge(d["E2"], own_prev["Z"])
+        if E["T>Zopp"]: edge(d["T"], opp["Z"])
+        if E["Z>Topp"]: edge(d["Z"], opp["T"])
+        if E["L>Lopp"]: edge(d["L"], opp["L"])
+        if E["B>E2"]:
+            for b_ in chainB: edge(b_, d["E2"])
+        if E["E2>Lown"]: edge(d["E2"], d["L"])
+        if E["Z>Zopp-1"]: edge(d["Z"], opp_prev["Z"])
+        if E["E1>Lopp+1"]: edge(d["E1"], opp_next["L"])
         # every vertex needs a successor: give isolated extras a self-loop (owner's opponent parity makes it harmless? no: a
         # self-loop is a cycle of the vertex's own priority; E1 has pl's parity (winning for pl), E2 has 1-pl's parity)
         for x in (d["E1"], d["E2"]):
@@ -85,8 +97,11 @@ def mutate(t, rnd):
 
 
 def fit(t, n, solver="dtl"):
-    g = build(t, n)
-    return oink_fit.work(g, solver, raw=True, timeout=60)
+    w = oink_fit.work(build(t, n), solver, raw=True, timeout=60)
+    if "--growth" in sys.argv and w > 0:
+        w0 = max(1, oink_fit.work(build(t, max(2, n - 3)), solver, raw=True, timeout=60))
+        return w * 1000 + min(999, int(1000 * w / w0 / 50))   # primary: work at N; secondary: growth ratio
+    return w
 
 
 def main():
@@ -101,7 +116,7 @@ def main():
         kids = [mutate(rnd.choice(elite)[1], rnd) for _ in range(pop_n - len(elite))]
         pop = sorted(elite + [(fit(t, nfit, solver), t) for t in kids], key=lambda x: -x[0])
         if g % 10 == 0 or g == gens - 1:
-            print(f"gen {g}: best {solver} work at N={nfit}: {pop[0][0]} (plain tc: {2*nfit+1}); {time.time()-t0:.0f}s", flush=True)
+            print(f"gen {g}: best fitness at N={nfit}: {pop[0][0]} (plain tc work {2*nfit+1}); {time.time()-t0:.0f}s", flush=True)
     seen = set()
     for (f_, t) in pop[:5]:
         if str(t) in seen: continue
