@@ -201,6 +201,20 @@ class Engine:
         return res
 
     # ---- helpers ----------------------------------------------------------------------------------------------
+    def cycle_creating(self, strat, v, w):
+        """True iff v lies on Odd's (sigma, tau)-play from w, INCLUDING the cycle the play ends in (play notion; the switch
+        v -> w would then close a cycle through v under the current counterstrategy).  Correction by L-RED (2026-10-15):
+        the earlier test looked only at the path SET of Xi(w), which omits vertices less relevant than the cycle node; a
+        second slip (stopping at the cycle node) missed v on the final cycle after the cycle node."""
+        _, tau = self.evaluate(strat)
+        x = w; seen = set()
+        while x not in seen:
+            if x == v:
+                return True
+            seen.add(x)
+            x = strat[x] if self.owner[x] == EVEN else tau[x]
+        return False
+
     def improving(self, strat, val):
         out = []
         for v in range(self.n):
@@ -283,13 +297,13 @@ class Engine:
 
     def rule_msfa(self, strat, val, imp, rng):
         """MSF-A: most significant first among the improving edges (v, w) whose target path does not pass through v
-        (v not in the path set of w, i.e. the switch creates no new cycle through v); if there is none, plain MSF."""
-        acyc = [(v, w) for v, w in imp if not (val[w][1] >> self.rank[v]) & 1]
+        (v not on Odd's play from w before its cycle node: the switch closes no cycle through v; play notion); if there is none, plain MSF."""
+        acyc = [(v, w) for v, w in imp if not self.cycle_creating(strat, v, w)]
         return self.rule_single_level(strat, val, acyc if acyc else imp, rng, True)
 
     def rule_msfc(self, strat, val, imp, rng):
         """MSF-C: the opposite preference: cycle-creating improving edges first (highest level), else plain MSF."""
-        cyc = [(v, w) for v, w in imp if (val[w][1] >> self.rank[v]) & 1]
+        cyc = [(v, w) for v, w in imp if self.cycle_creating(strat, v, w)]
         return self.rule_single_level(strat, val, cyc if cyc else imp, rng, True)
 
     def rule_steepest(self, strat, val, imp, rng):

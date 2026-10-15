@@ -163,3 +163,37 @@ S10 (PROVED from S7-S9, modulo G1, G2): #switches ≤ (n(n+1) + n² + 1) · (n²
 OBSERVED about X: hill-climb maxima of X: 2, 5, 5, 7, 10, 14 (n = 5..10, small search), 14 at n = 8 with a larger search;
 one vertex escaped 7 times in an 8-vertex game (out/adv_msf-esc2_n8.pg), so repeated escapes at one vertex are possible.
 No argument bounds X. This is the open point.
+
+## CORRECTION (2026-10-15 11:50Z, credit L-RED via the Lead 11:47Z): "cycle-creating" must be the play notion
+L-RED found that si.py's test "(val[w][1] >> rank[v]) & 1" checks membership of v in the path SET of Ξ(w), which holds
+only vertices more relevant than w's cycle node; a v on Odd's play from w but less relevant than the cycle node was
+wrongly classed non-cycle-creating, and Claim F fails for such switches (L-RED: 6 violations in 11,795 switches on 20,000
+random games under the bit notion, 0 under the play notion; 2,649 of 3,563 cycle-creating switches were misclassified).
+Counterexamples reproduced with si.py (instances/red_cf1.pg, red_cf2.pg, start sigma(2)=1): cf1's edge (2,3) has level
+(1,0), bit-notion 0, play-notion 1, and changes the cycle nodes of 2 and 3; cf2's edge (2,3) has level (2,5), bit-notion 0,
+play-notion 1, and changes 2, 3, 6. This is exactly gap G1 of the step-by-step argument above.
+Fix (si.py Engine.cycle_creating): v is cycle-creating for (v, w) iff v lies on Odd's (σ, τσ)-play from w before that
+play first reaches w's cycle node. msfa / msfc now use it (their docstrings were wrong before; the earlier msfa/msfc sweep
+numbers measured the bit-notion rules and are withdrawn). freeze_test.py now also checks level-(1,0) switches (must
+change no cycle node and no path bit at all) and reports cycle-node changes by non-cycle-creating switches separately.
+Claim F' (restated): a NON-cycle-creating (play notion) single improving switch at level (2, r) or (1, 0) changes no
+vertex's cycle node and no path bit of rank > r (all path bits, for level (1, 0)). Data after the fix: 0 violations of
+either kind over 8,000 random and 8,000 1-sink games (n ≤ 9), msf; 0 for msfa on 4,000.
+Second slip (12:05Z, found by freeze_test after the first fix: 34 of 4,154 random-game switches and 13 of 4,015
+sink-game switches classed non-cycle-creating still changed a cycle node): the play from w must be followed INTO its final
+cycle, not stopped at the cycle node; v on that cycle after the cycle node also closes a cycle. cycle_creating now walks the
+(σ, τ)-play from w until a vertex repeats and reports whether v was visited.
+Sandwich argument with the play notion (closes G1): the (σ, τ)-play from w never visits v (definition, cycle included), so
+after the switch the (σ', τ)-play from any u is either the old play (never visits v) or P_u · v · (the old play from w),
+which does not re-enter P_u ∪ {v} (it would reach v): its value is P_u ∪ {v} ∪ P(w) with cycle node c(w) = c(σ(v)); the
+rest is S3 (ii)-(iv). Data after both fixes: see the freeze_test lines below.
+Every X measured before this correction (escapes objective) is an undercount; re-measured with the play notion in
+out/adv_msf_esc3.log.
+freeze_test.py after both fixes (12:10Z): msf, 8,000 random games n ≤ 9, 4,154 switches: cycle-node changes by
+cycle-creating switches 1,447, by non-cycle-creating 0; path bits above the level changed (cycle nodes fixed) by
+cycle-creating 6, by non-cycle-creating 0; level-(1,0) switches included. Same on 8,000 1-sink games (4,015 switches:
+1,130 / 0 / 7 / 0) and for msfa on 4,000 random games (2,065 switches: 717 / 0 / 2 / 0). F' holds in the data.
+Consequence for the bound S10: X now counts play-notion escapes, and cycle-creating switches are about a third of all MSF
+switches on random small games (1,447 of 4,154), so X is of the order of the iteration count itself there; the bound
+(n(n+1) + n² + 1)(n² + X + 1) is correct but says nothing until X is bounded. Re-measured X: out/adv_msf_esc3.log.
+The msfa/msfc family sweep (out/fam_msfvar.log, bit notion) is withdrawn; rerun with the play notion: out/fam_msfvar2.log.

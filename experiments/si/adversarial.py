@@ -15,7 +15,7 @@ ap.add_argument("--steps", type=int, default=400); ap.add_argument("--samples", 
 ap.add_argument("--start", default="best"); ap.add_argument("--budget", type=float, default=1e9, help="seconds per n")
 ap.add_argument("--sink", action="store_true", help="1-sink games (Friedmann 1106.0778 sec. 5): vertex 0 = Odd sink of priority 1 with a self-loop, reachable from every vertex, every other priority >= 2")
 ap.add_argument("--tag", default="")
-ap.add_argument("--objective", default="iters", choices=["iters", "escapes"], help="escapes = cycle-creating switches after which no cycle node changes (msf-type rules only)")
+ap.add_argument("--objective", default="iters", choices=["iters", "escapes"], help="escapes = cycle-creating switches (play notion) after which no cycle node changes (msf-type rules only)")
 a = ap.parse_args()
 
 
@@ -36,7 +36,7 @@ def escapes(g):
         if not imp: break
         new = si.RULES[a.rule](e)(strat, val, imp, None)
         v = [i for i in range(g.n) if new[i] != strat[i]][0]
-        if (val[new[v]][1] >> e.rank[v]) & 1:
+        if e.cycle_creating(strat, v, new[v]):
             val2, _ = e.evaluate(new)
             if all(val[u][0] == val2[u][0] for u in range(g.n)):
                 x += 1

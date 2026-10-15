@@ -34,7 +34,7 @@ def above(e, val, r):
     return (w, path >> (r + 1))
 
 
-viol = 0; cyc = 0; cyclic_viol = 0; total = 0; smallest = None; viol_games = 0
+viol = 0; cyc = 0; cyc_nc = 0; cyclic_viol = 0; total = 0; smallest = None; viol_games = 0
 for gi in range(a.games):
     n = rng.randint(2, a.nmax); g = rand_game(n); e = si.Engine(g)
     strat = e.initial("best"); bad = False
@@ -43,15 +43,17 @@ for gi in range(a.games):
         if not imp: break
         new = si.RULES[a.rule](e)(strat, val, imp, None)
         v = [i for i in range(n) if new[i] != strat[i]][0]
-        cyclic = (val[new[v]][1] >> e.rank[v]) & 1
+        cyclic = e.cycle_creating(strat, v, new[v])
         lv = e._level(val[strat[v]], val[new[v]])
         total += 1
         val2, _ = e.evaluate(new)
-        if lv[0] == 2:          # path-level switch at rank lv[1]: nothing above may change
-            r = lv[1]
+        if lv[0] in (1, 2):     # path-level switch at rank r (level (1,0): r = -1, nothing in any path set may change)
+            r = lv[1] if lv[0] == 2 else -1
             ch = [u for u in range(n) if above(e, val[u], r) != above(e, val2[u], r)]
             if ch and any(val[u][0] != val2[u][0] for u in range(n)):
-                cyc += 1; ch = []          # a cycle node changed somewhere: counted separately
+                if cyclic: cyc += 1
+                else: cyc_nc += 1
+                ch = []          # a cycle node changed somewhere: counted separately (cycle-creating / not)
             if ch and cyclic:
                 cyclic_viol += 1; ch = []  # the switched edge's target path passed through v: counted separately
             if ch:
@@ -60,7 +62,7 @@ for gi in range(a.games):
                     smallest = (g, strat, v, new[v], r, ch, val, val2)
         strat = new
     viol_games += bad
-print(f"{'sink' if a.sink else 'random'} games: {a.games}, msf switches {total}, path-level switches that changed a cycle node: {cyc}; with all cycle nodes fixed, changed a path bit above their level: cycle-creating switch {cyclic_viol}, non-cycle-creating switch {viol} (in {viol_games} games)")
+print(f"{'sink' if a.sink else 'random'} games: {a.games}, msf switches {total}, switches that changed a cycle node: cycle-creating {cyc}, non-cycle-creating {cyc_nc}; with all cycle nodes fixed, changed a path bit above their level: cycle-creating switch {cyclic_viol}, non-cycle-creating switch {viol} (in {viol_games} games)")
 if smallest:
     g, strat, v, w, r, ch, val, val2 = smallest
     print("smallest violating game:"); print(pg.dumps(g)); print("strategy", strat, "switch", v, "->", w, "level rank", r, "changed", ch)
