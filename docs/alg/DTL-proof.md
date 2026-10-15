@@ -501,6 +501,52 @@ top flips the parents of polynomially many u's in a way that encodes a counter. 
 "no reset" statement as R8 §1, and the budget of (a3) is n per top per (R, V)-context, but the number of contexts
 (search_rec iterations × recursion levels × pruning rounds) is itself only bounded by (c) and (b), i.e. polynomially,
 so the open quantity is exactly the number of str-changes per context.
+Lemma S (strategy determinacy at a recurring region set; added 18:05Z on the Lead's (S)/(D) route, L-RED R8 §12 measured
+zero strategy differences at recurring (top, region set) pairs). Setting: two sptl computations of the region of the same
+top τ, in two searches s1 < s2 of the same player's phase, ending with the same vertex set S, in the FIRST piece of each
+search (X = ∅; the consumed set is the regions of the higher tops). Claim: if (M-cross) holds — across same-player
+searches, the stable top set of the first piece only grows, every top's first-piece region contains its earlier
+region intersected with G', and a vertex taken by a higher top is never returned to a lower one — then the two
+computations push the same vertices at the same pops and assign the same str on S. PROVED modulo (M-cross).
+Proof. (1) Successors outside S. Every v ∈ S entered by rule (V) or (T). By (V) an opponent v has all non-forgiven
+successors in S; by (T) its successors are in its tangle (⊆ S, all pushed) or in the tangle's escapes (in S or forgiven)
+or solved. A p-vertex's edges do not matter for pushes. So in both computations every successor of an S-vertex that lies
+outside S is forgiven (consumed or solved); hence the (V)-premises inside S depend only on S and the edge lists.
+(2) Tangles that can fire. A tangle t fires in S only with U_t ⊆ S ∪ (not yet pushed vertices of S) — if it pushed a vertex
+outside S the final set would not be S — so U_t ⊆ S; its escapes are in S (popped) or forgiven; by (1) the forgiven status
+of each escape outside S is the same in both computations (an escape outside S is a successor of an opponent vertex of
+U_t ⊆ S). So t fires in computation i iff t exists at search s_i and has an escape in S. The counter-shape "t ⊆ S with an
+escape e ∉ S unforgiven in s1 and stolen (forgiven) in s2" is impossible: the opponent vertex of t with the exit to e
+could not have entered S in s1 (its exit e was neither in S nor forgiven).
+(3) No tangle created between s1 and s2 lies inside S. Let t be created in a search s' with s1 ≤ s' < s2 at a top τ'
+(any piece, any depth) with U_t ⊆ S. By (M-cross), τ is a top of the first piece of s' and Z_τ^{s'} ⊇ S ∩ G'_{s'} = S
+(S ⊆ G'_{s2} ⊆ G'_{s'}). If τ' is processed after τ in s' (lower top, or any later piece or deeper recursion), U_t ⊆ S
+is consumed before τ' is reached (first piece) or already in X: contradiction. If τ' is processed before τ (higher top),
+U_t ⊆ Z_{τ'}^{s'}, and by (M-cross) these vertices stay in regions at or above τ' in s2, so U_t ⊄ Z_τ^{s2} = S:
+contradiction. Hence the set of tangles with U_t ⊆ S is the same at s1 and s2, so by (2) the same tangles fire.
+(4) Same pushes. Both computations start with Q = [τ], str[τ] = -1, and at every pop examine the same predecessor list
+(69) and the same tin list in the same order (443: tin is appended in creation order, and the tangles that exist and
+fire are the same; tangles that exist but do not fire are skipped in both), with the same (V)-premises by (1); by
+induction on the pop sequence the pushes, the pop order and the assignments 73/89/171 coincide. □
+Consequence (a5). Under (M-cross), the SCC extracted at τ is a function of (τ, S) in the first piece, so by (a1) the
+number of tangles learned at first-piece tops is at most the number of distinct (τ, S) pairs that occur there. The
+Lead's (D) ("the region sets at a fixed top change only by join/theft/deletion/covering events and are monotone
+between thefts, so O(n) distinct sets per top per level") would then give O(n²) tangles from first pieces per phase.
+Caveat on (M-cross) (18:15Z). One mechanism provably breaks region monotonicity across searches: tangle DELETION. When a
+dominion is solved, every vertex v of it leaves G' and every tangle containing v is deleted at its next use (132-135). A
+region that in s1 attracted such a tangle t as a unit may, in s2, fail to attract the unsolved remainder Y' of U_t by
+vertex rules (Y' is opponent-closed with exits only to the solved set, forgiven, and to escapes in Z), so Y' falls to
+R_rem and the region shrinks; Y' is then learned as its own tangle t' at a lower top (new, since Y' ≠ U_t), and in a later
+search τ's region is S again with t' firing — a new SCC at (τ, S) that Lemma S's step (3) does not exclude (t' was created
+between the occurrences, inside S, at a lower top, in a search where τ's region did NOT contain Y'). The count then
+charges one tangle at (τ, S) to each deleted tangle whose remainder lies in S; a deletion happens once per tangle, so this
+adds at most |T_deleted| ≤ |T| tangles overall — a factor 2 at worst if the charging is injective, which still needs
+proof (a remainder could be split into several new tangles). (M-cross) is therefore to be stated and proved for the
+tangle set restricted to non-deleted tangles, between consecutive searches with no deletion in between, plus the
+deletion charge. Thefts are not a problem for Lemma S (a stolen vertex changes the set S).
+What remains open for (a): (M-cross) itself (evidence: 0 violations of first-stable-set monotonicity on 4,006 games;
+L-RED's 0 strategy differences), (D), and the same statements for later pieces (X ≠ ∅) and the recursion, where the
+consumed set includes X and the argument of (3) needs X to be monotone across searches as well.
 Data for the shape of (a) (experiments/alg/dtl_pertop.py on the debug trace; a tangle's top = its maximum-index vertex):
 | tc+ N | tangles | iterations | distinct tops | max tangles at one top | tops with 1 tangle |
 | --- | --- | --- | --- | --- | --- |
@@ -530,7 +576,7 @@ which only shrinks T (never affects TS, 1.3).
 | id | claim that is open | status | candidate instance shape |
 | --- | --- | --- | --- |
 | GAP-C | Lemma K (completeness): W_p(G') ≠ ∅ ⇒ search(p) learns a new tangle or a dominion | SKETCH (K1-K6 proved; failing shapes (α), (β') characterised) | section 2.3 (C-b): two pruned dominion-like structures, the first removed with Q empty, the second escaping into it |
-| GAP-A | D2(a): polynomial bound on tangles(G) | open | section 3(a): a region whose DFS parents flip under a toggle at a higher top; counter over DFS reorderings |
+| GAP-A | D2(a): polynomial bound on tangles(G) | open; Lemma S reduces first-piece tangles to distinct (top, region set) pairs given (M-cross) | section 3(a): a region whose DFS parents flip under a toggle at a higher top; counter over DFS reorderings |
 Corrections to inputs found while proving: C5-DTL.md (LIFO stack; consumption in best_vertices), see its header; R8's
 Lemma M part (c) and §5(a) assume FIFO/BFS and are void as written; (M1)-(M3) re-proved here (1.2b, 1.6, 3(a2)-(a3)).
 
