@@ -12,7 +12,10 @@ phase analysis for the S7 order), or the "DF + pads" reduction as a general theo
 docs/red/R8-DTL.md: HELD. Section 6: van Dijk's counter_dftl / counter_odftl (dftl branch) are linear for dtl (2N + 3
 tangles, verified); counter_odftl is exponential for ODFTL (Fibonacci-like iterations), i.e. the author's counterexample
 hits the "remove the lowest top" heuristic that DTL replaced by the good-path pruning (M2). Sections 5, 7: the Lead's
-four weak points, the TC-variant question, the universal-tree angle. Open: perturbation searches from the counters. Lemma M (monotone in the tangle set; theft the only non-monotone event), chain mechanism
+four weak points, the TC-variant question, the universal-tree angle. Section 8: --no-loops pin (CHECKER C3, 16:02Z),
+self-loop/renumbering mutations, correctness probes clean. Perturbation climbs from the counters: ~3 tangles per vertex,
+chains. The one killer shape left: a refutation of 1(c)+(d) (exponentially many pusher-chain descents at one head).
+Oink flags for every run from 16:02Z on: --dtl --no-single --no-wcwc --no-loops. Lemma M (monotone in the tangle set; theft the only non-monotone event), chain mechanism
 (gens_dtl.py chain n: n - 2 tangles), free-search optima (8, 11, 35, 56, 27 at n = 10..30; two-player 26, 31 at n = 16,
 20), flip census (random 0; walks 6 games, all thefts), completeness probe clean. Oink's release build prints "best
 vertices", "distance k", "new tangle ... v->w ... with k escape vertices" at -t -t (enough to see everything but the

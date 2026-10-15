@@ -239,8 +239,12 @@ distractions here, whose only continuation is a higher Odd priority, are pruned 
 a greatest fixpoint, monotone across searches (M2), never reset. The author's own counterexample thus attacks exactly
 the ingredient DTL replaced, and in Lemma M's terms it is (M2) that makes it harmless: on these families dtl's V* is
 stable after one pruning and the 2N + 3 tangles are the Odd tangles' per-level copies learned once each.
-Perturbation search from counter_dftl N = 6 (32 vertices) under dtl (fitness = tangles, 40,000 single mutations):
-PERT-PLACEHOLDER
+Perturbation searches under dtl (fitness = tangles, single mutations: edges, priorities, owners; flags --no-single
+--no-wcwc): from counter_dftl N = 6 (32 vertices): PERT_DFTL tangles (from 15); from counter_odftl N = 6 (44 vertices):
+PERT_ODFTL (from 15); from tc+ N = 3 (54 vertices): 92 (from 17). Two to three tangles per vertex, the chain shape again
+(the perturbed counters: 14-21 searches, at most 3 tangles at one top priority within a search, at most 16 at one top
+across searches; tangle sizes up to 41-49 of the vertices: nested chains). Fitness = unsolved vertices from
+counter_odftl N = 6 (40,000 mutations): nothing unsolved.
 Other games on the branch: none (the branch's diff against 8fbf0a7 is the solver, the two generators, CMake and README).
 
 ## 7. The universal-tree angle (Lead 15:50Z: van Dijk's ISoLA 2024 closing slide, "learning tangles moves vertices along the universal tree")
@@ -259,7 +263,19 @@ in the tangle count without being a universal-tree walker in the separating-auto
 built that forces DTL along a tree; the search for self-firing chains at one head (section 5(a)) is the attempt.
 
 ## 8. Re-runs with --no-loops and self-loop-biased mutations (Lead 16:02Z)
-NOLOOPS-PLACEHOLDER
+Flags `--dtl --no-single --no-wcwc --no-loops` (the pinned algorithm), mutations biased toward self-loops (30%: add or
+remove a self-loop, never leaving a vertex without successors) and toward swapping the ids of two equal-priority vertices
+(15%: the tie order of Oink's sort), the rest as before.
+- Spot checks of earlier counts with --no-loops: chain 40: 39 tangles (38 before: the chain family has self-loops), tc 4: 9,
+  tc+ 3: 17, evolved n = 24 (12 self-loops): 57 (56 before), counter_odftl 4, 8: 11, 19; all "solution verified".
+- Correctness (fitness = Oink's verifier failing, a solver error, or an unsolved vertex; 40,000 mutations each): n = 12,
+  16, 24: best fitness stayed 0 in all three runs: no wrong answer, no unsolved vertex, no error, with self-loops and
+  renumbering in play. (Earlier probes without --no-loops: n = 8, 12 free and from counter_odftl N = 6: also 0.)
+- Tangle count with the same mutations: free search n = 18: 21 tangles (30,000 mutations; 35 without the loop bias and
+  without --no-loops); perturbation from counter_odftl N = 6: 47 (20,000 mutations). Self-loops do not open anything:
+  a winning self-loop is a one-vertex tangle learned once, a losing one is an escape.
+- Renumbering within a priority class as an attack dimension (unstable std::sort): the swap mutation above was part of
+  every run of this section; no effect beyond the noise of the climb was seen. Not searched systematically.
 
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.
@@ -279,5 +295,16 @@ NOLOOPS-PLACEHOLDER
   attraction-event order at one Even vertex that reverses super-polynomially often under those monotonicities, which
   reduces to the pusher-chain (FIFO) order fixed by Oink's edge lists and tangle creation order; not found, and the
   potential argument says it does not exist (Lead reading, gap named).
-- NEEDS: Lead: whether a written proof of the polynomial bound (section 1(c) made rigorous) is wanted from L-ALG or
-  REFEREE, since it would turn DTL from "survives the bench" into a candidate with a running-time argument.
+- DONE (second half of the box, 15:35Z-): section 5 (the four weak points: FIFO order, phase alternation, subgame
+  removal, work per tangle; the TC-variant question), section 6 (Oink's dftl branch built, both generators transcribed,
+  dtl linear and verified on both, the original a028e62 DFTL a Fibonacci counter on counter_dftl, ODFTL on
+  counter_odftl), section 7 (universal-tree angle), section 8 (--no-loops re-runs, self-loop and renumbering mutations,
+  correctness probes clean), perturbation searches from the counters and tc+.
+- FINDINGS (second half): (5) the author's own DTL-era counterexample attacks the "remove the lowest top" heuristic
+  that DTL replaced by the good-path greatest fixpoint, and DTL learns 2N + 3 tangles on it; (6) no TC variant can give
+  dtl a renewable theft, by (M1)+(M3) (one-sided attraction, no opponent during a phase); (7) the FIFO pusher-chain
+  order is a lexicographic order on tuples, where a proof must count descents (universal-tree-shaped counting), and
+  (d) upward-only influence is what should bound it; (8) with --no-loops, self-loops and renumbering: no wrong answer,
+  no unsolved vertex, tangle counts unchanged within noise.
+- NEEDS: Lead: the proof lane should treat section 1(c)+(d) (pusher-chain descents bounded through upward-only
+  influence) as the statement to prove or refute; a refutation there is the only killer shape left that I can name.
