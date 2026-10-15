@@ -8,6 +8,12 @@ R2's parity encoding of FHZ's one-player counter G_{n,1,1,1} with linear pads W 
 Zielonka, strategies verified. Question DF: longest DF run on G_{n,1,1,1} exact 5, 20, 53, 124, 269 (n = 1..5). Reported 16:50Z. Then S5/S6 on the FHZ encoding: HELD (docs/red/R6-S5S6-fhz.md): numbering searches quadratic;
 index-fair rules must take the improving higher bit that the counter keeps live during the lower count. Next if asked: a proof of the recurrence (FHZ-style
 phase analysis for the S7 order), or the "DF + pads" reduction as a general theorem.
+## Resume point: PARKED (Lead 17:04Z: "Box closed. Please park now: no new runs and no timed wakes.")
+Last state: docs/red/R8-DTL.md final at 926d7ba (sections 1-11), merged by the Lead; no background runs, no monitors.
+Next likely task per the Lead: attack on the DTL proof's GAP-A argument once L-ALG writes it, or a referee-style
+adversarial read. Tools ready: experiments/red/dtl/ (dtl_search.py, dtl_flips.py, dtl_fuzz.py, gens_dtl.py), scratchpad
+builds oink-dftl-build (branch dftl), oink-a028-build (a028e62), oink-debug (pinned 8fbf0a7, NDEBUG checks on).
+
 ## Resume point (R8, DTL box, Lead 15:06Z, 6 h; box to ~21:06Z)
 docs/red/R8-DTL.md: HELD. Section 6: van Dijk's counter_dftl / counter_odftl (dftl branch) are linear for dtl (2N + 3
 tangles, verified); counter_odftl is exponential for ODFTL (Fibonacci-like iterations), i.e. the author's counterexample
