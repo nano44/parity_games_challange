@@ -1,0 +1,29 @@
+family,N,gen,game,n,m,d,solver,status,wall_s,solver_s,dominions,tangles,iterations,pruning,detail,cmd
+counter_rob,2,tools/oink/build/counter_rob 2,counter_rob_2.pg,31,80,10,oink-uzlk,ok,0.0033,6.2e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_rob,2,tools/oink/build/counter_rob 2,counter_rob_2.pg,31,80,10,py-zlk,ok,0.0230,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_rob,2,tools/oink/build/counter_rob 2,counter_rob_2.pg,31,80,10,dtl-pin,ok,0.0030,0.000127,1,8,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,2,tools/oink/build/counter_rob 2,counter_rob_2.pg,31,80,10,idtl-pin,ok,0.0031,0.00012,1,8,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,4,tools/oink/build/counter_rob 4,counter_rob_4.pg,83,236,18,oink-uzlk,ok,0.0033,0.000358,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_rob,4,tools/oink/build/counter_rob 4,counter_rob_4.pg,83,236,18,py-zlk,ok,0.0365,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_rob,4,tools/oink/build/counter_rob 4,counter_rob_4.pg,83,236,18,dtl-pin,ok,0.0033,0.000378,2,14,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,4,tools/oink/build/counter_rob 4,counter_rob_4.pg,83,236,18,idtl-pin,ok,0.0050,0.000568,2,14,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,8,tools/oink/build/counter_rob 8,counter_rob_8.pg,259,788,34,oink-uzlk,ok,0.0926,0.088194,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_rob,8,tools/oink/build/counter_rob 8,counter_rob_8.pg,259,788,34,py-zlk,ok,3.4324,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_rob,8,tools/oink/build/counter_rob 8,counter_rob_8.pg,259,788,34,dtl-pin,ok,0.0056,0.002101,2,49,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,8,tools/oink/build/counter_rob 8,counter_rob_8.pg,259,788,34,idtl-pin,ok,0.0050,0.002162,2,49,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,16,tools/oink/build/counter_rob 16,counter_rob_16.pg,899,2852,66,oink-uzlk,timeout,120.1039,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_rob,16,tools/oink/build/counter_rob 16,counter_rob_16.pg,899,2852,66,py-zlk,timeout,120.0999,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_rob,16,tools/oink/build/counter_rob 16,counter_rob_16.pg,899,2852,66,dtl-pin,ok,0.0239,0.019636,2,157,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,16,tools/oink/build/counter_rob 16,counter_rob_16.pg,899,2852,66,idtl-pin,ok,0.0264,0.022292,2,157,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,32,tools/oink/build/counter_rob 32,counter_rob_32.pg,3331,10820,130,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_rob,32,tools/oink/build/counter_rob 32,counter_rob_32.pg,3331,10820,130,dtl-pin,ok,0.2529,0.24752,2,567,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,32,tools/oink/build/counter_rob 32,counter_rob_32.pg,3331,10820,130,idtl-pin,ok,0.2908,0.284259,2,567,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,64,tools/oink/build/counter_rob 64,counter_rob_64.pg,12803,42116,258,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_rob,64,tools/oink/build/counter_rob 64,counter_rob_64.pg,12803,42116,258,dtl-pin,ok,3.7912,3.777308,2,2162,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,64,tools/oink/build/counter_rob 64,counter_rob_64.pg,12803,42116,258,idtl-pin,ok,3.9847,3.964004,2,2162,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,128,tools/oink/build/counter_rob 128,counter_rob_128.pg,50179,166148,514,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_rob,128,tools/oink/build/counter_rob 128,counter_rob_128.pg,50179,166148,514,dtl-pin,ok,67.2724,67.220439,2,8409,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,128,tools/oink/build/counter_rob 128,counter_rob_128.pg,50179,166148,514,idtl-pin,ok,66.1414,66.10119,2,8409,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,256,tools/oink/build/counter_rob 256,counter_rob_256.pg,198659,659972,1026,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_rob,256,tools/oink/build/counter_rob 256,counter_rob_256.pg,198659,659972,1026,dtl-pin,timeout,400.1056,,,,,,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_rob,256,tools/oink/build/counter_rob 256,counter_rob_256.pg,198659,659972,1026,idtl-pin,timeout,400.1029,,,,,,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}

@@ -1,0 +1,21 @@
+family,N,gen,game,n,m,d,solver,status,wall_s,solver_s,dominions,tangles,iterations,pruning,detail,cmd
+switchbestexp,1,python3 experiments/hard-families/pgsolver_port.py switchbestexp 1,switchbestexp_1.pg,35,70,34,oink-uzlk,ok,0.0043,1.7e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+switchbestexp,1,python3 experiments/hard-families/pgsolver_port.py switchbestexp 1,switchbestexp_1.pg,35,70,34,py-zlk,ok,0.0298,,,,,,,python3 -I experiments/harness/zielonka.py
+switchbestexp,1,python3 experiments/hard-families/pgsolver_port.py switchbestexp 1,switchbestexp_1.pg,35,70,34,dtl-pin,ok,0.0040,0.0005,1,1,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+switchbestexp,1,python3 experiments/hard-families/pgsolver_port.py switchbestexp 1,switchbestexp_1.pg,35,70,34,idtl-pin,ok,0.0041,0.000522,1,1,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+switchbestexp,2,python3 experiments/hard-families/pgsolver_port.py switchbestexp 2,switchbestexp_2.pg,60,130,60,oink-uzlk,ok,0.0031,1.4e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+switchbestexp,2,python3 experiments/hard-families/pgsolver_port.py switchbestexp 2,switchbestexp_2.pg,60,130,60,py-zlk,ok,0.0248,,,,,,,python3 -I experiments/harness/zielonka.py
+switchbestexp,2,python3 experiments/hard-families/pgsolver_port.py switchbestexp 2,switchbestexp_2.pg,60,130,60,dtl-pin,ok,0.0068,0.002648,1,1,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+switchbestexp,2,python3 experiments/hard-families/pgsolver_port.py switchbestexp 2,switchbestexp_2.pg,60,130,60,idtl-pin,ok,0.0068,0.002226,1,1,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+switchbestexp,4,python3 experiments/hard-families/pgsolver_port.py switchbestexp 4,switchbestexp_4.pg,110,250,110,oink-uzlk,ok,0.0034,2e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+switchbestexp,4,python3 experiments/hard-families/pgsolver_port.py switchbestexp 4,switchbestexp_4.pg,110,250,110,py-zlk,ok,0.0236,,,,,,,python3 -I experiments/harness/zielonka.py
+switchbestexp,4,python3 experiments/hard-families/pgsolver_port.py switchbestexp 4,switchbestexp_4.pg,110,250,110,dtl-pin,ok,0.0175,0.014093,1,1,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+switchbestexp,4,python3 experiments/hard-families/pgsolver_port.py switchbestexp 4,switchbestexp_4.pg,110,250,110,idtl-pin,ok,0.0135,0.011003,1,1,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+switchbestexp,8,python3 experiments/hard-families/pgsolver_port.py switchbestexp 8,switchbestexp_8.pg,210,490,210,oink-uzlk,ok,0.0060,2.4e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+switchbestexp,8,python3 experiments/hard-families/pgsolver_port.py switchbestexp 8,switchbestexp_8.pg,210,490,210,py-zlk,ok,0.0303,,,,,,,python3 -I experiments/harness/zielonka.py
+switchbestexp,8,python3 experiments/hard-families/pgsolver_port.py switchbestexp 8,switchbestexp_8.pg,210,490,210,dtl-pin,ok,0.1684,0.164427,1,1,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+switchbestexp,8,python3 experiments/hard-families/pgsolver_port.py switchbestexp 8,switchbestexp_8.pg,210,490,210,idtl-pin,ok,0.1521,0.147637,1,1,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+switchbestexp,16,python3 experiments/hard-families/pgsolver_port.py switchbestexp 16,switchbestexp_16.pg,410,970,410,oink-uzlk,ok,0.0046,2.4e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+switchbestexp,16,python3 experiments/hard-families/pgsolver_port.py switchbestexp 16,switchbestexp_16.pg,410,970,410,py-zlk,ok,0.3691,,,,,,,python3 -I experiments/harness/zielonka.py
+switchbestexp,16,python3 experiments/hard-families/pgsolver_port.py switchbestexp 16,switchbestexp_16.pg,410,970,410,dtl-pin,ok,1.3010,1.295986,1,1,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+switchbestexp,16,python3 experiments/hard-families/pgsolver_port.py switchbestexp 16,switchbestexp_16.pg,410,970,410,idtl-pin,ok,1.5974,1.59187,1,1,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}

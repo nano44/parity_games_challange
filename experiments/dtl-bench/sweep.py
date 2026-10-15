@@ -2,7 +2,7 @@
 """DTL bench, step (3)/(4): sweep a family over sizes with bench.one (pinned dtl/idtl + Oink uzlk + py-zlk, every strategy
 checked by harness/verify.py), stop after the first size where a pinned solver times out or exceeds --tmax seconds.
 Usage: sweep.py FAMILY --gen 'CMD {N}' --sizes N1 N2 ... [--timeout 600] [--tmax 300] [--ref-timeout 120] [--pyzlk-max 3000]
-Writes results/fam_FAMILY.csv (one row per (size, solver), with N and the exact command lines) and keeps each game in
+Writes out/fam_FAMILY.csv.partial while running, results/fam_FAMILY.csv at the end (one row per (size, solver), with N and the exact command lines) and keeps each game in
 out/fam/FAMILY/ (gitignored; regenerable from --gen)."""
 import sys, os, csv, argparse, subprocess, shlex
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -23,7 +23,8 @@ def main():
     ap.add_argument("--pyzlk-max", type=int, default=3000)
     a = ap.parse_args()
     od = os.path.join(HERE, "out", "fam", a.family); os.makedirs(od, exist_ok=True)
-    out = os.path.join(HERE, "results", f"fam_{a.family}.csv")
+    final = os.path.join(HERE, "results", f"fam_{a.family}.csv")
+    out = os.path.join(HERE, "out", f"fam_{a.family}.csv.partial")  # moved to results/ when the sweep ends
     rows, bad, skip = [], 0, set()
     for N in a.sizes:
         gp = os.path.join(od, f"{a.family}_{N}.pg")
@@ -48,7 +49,8 @@ def main():
             w.writeheader(); w.writerows(rows)
         if stop:
             break
-    print(f"sweep {a.family}: {len(rows)} rows, {bad} bad -> {out}")
+    os.replace(out, final)
+    print(f"sweep {a.family}: {len(rows)} rows, {bad} bad -> {final}")
     sys.exit(1 if bad else 0)
 
 
