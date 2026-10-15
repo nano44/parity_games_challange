@@ -174,3 +174,4 @@
 - 20:02Z hourly sweep: no overage (seven_day warning). Lead 418k. L-COMP 193k idle-with-runs (9/18 family sweeps clean, 4 running; interim due ~21:00Z). No exceptions.
 - 20:21Z L-COMP interim d1537b0 merged: step 2 clean on all corpora/families (dtl, idtl); tc+ only family with growing iterations; wall time up to n^4.
 - 21:02Z hourly sweep: no overage (seven_day warning). Lead 439k. L-COMP 218k idle with tc+ extension running; end-of-box ~23:40Z. No exceptions.
+- 21:13Z L-COMP end of box 011fec0 merged: step 2 first implementation clean. Next: second independent implementation from C5-DTL.md (TARGET §5 step 2), 4h.
