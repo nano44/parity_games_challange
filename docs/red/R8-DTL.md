@@ -46,6 +46,15 @@ makes their tangles be re-learned with a new vertex set; in dtl the opponent has
 by thefts and growth (M3), a new SCC at the same top needs either a region change (at most n per level per top, since
 each vertex enters or leaves a top's region at most once per level) or a change of Even's strategy str inside the region
 with the same vertex set.
+(d) Influence runs upward only (the analogue of R3's Lemma D). A tangle learned at head v consists of vertices of v's
+region; by (M3) those vertices belong, in every later pass and search, to the region of v or of a higher head, so the
+tangle can be attracted only in regions of heads at or above v (a lower head never sees its vertices in R), in the
+pruning's attractors, and in later levels (the remainder after Dom(V,R) -> X and the recursion). So a tangle never
+changes the regions below its own head: the downward influences that a counter needs (a higher event resetting lower
+levels) are X (grows within a search), V* (M2) and thefts (M3), all monotone. In tc the downward influence is the
+opponent's tangle at a higher priority, renewable because the opponent learns between the player's searches; dtl has no
+opponent during a phase, and idtl's opponent tangles are never attracted for the player (parity check, attractTangle 113),
+so they act only through G.
 (c) Even's strategy str[u] is set by the FIFO attractor: str[u] := the first popped successor of u (attractVertices 80), or
 the strategy of the first tangle that attracts u (attractTangle 170-180; vertices are popped in insertion order, and in one
 pop the predecessors of the popped vertex come first, in Oink's edge-list order, then the tangles of tin[v] in creation
@@ -56,9 +65,16 @@ obligations) and a tangle event moves earlier or dies (M4); a flip of str[u] the
 tangle event; at most once per vertex per level), or a reorder inside one layer with the same pushers (impossible: the
 within-layer order is the lexicographic order of the pusher chains, fixed by Oink's edge lists and tangle creation order,
 and changes only when a pusher changes, which is again a layer or theft event).
-Lead reading of (c): every strategy flip spends a unit of a potential of size O(n^2) per vertex, so the number of distinct
-(region, strategy) pairs, hence of tangles, is polynomial. Not proved line by line (the pusher-chain argument is where a
-proof would have to be careful; see section 4), but it is the shape of the obstruction.
+Lead reading of (c): every strategy flip spends a theft or a layer crossing, or a lexicographic decrease of the pusher
+chain. Thefts and crossings have polynomial budgets. The pusher chain is a tuple of (layer, slot) entries of length up to
+n, and a lexicographically descending sequence of such tuples can be exponentially long, so (c) alone does NOT give a
+polynomial bound; what closes it is (d): a chain changes only when a new vertex or tangle enters the region earlier, and
+by (d) a new tangle enters only regions above its head, so the chain changes at a fixed head are driven by events below
+it that are themselves monotone (vertices entering once per level, tangles learned below). A counter would need the
+chain at one head to descend exponentially often, fed by exponentially many new tangles below it, which is the same
+question one level down: the recursion bottoms out at the lowest head, whose region changes only by vertices entering
+(polynomial). Not a proof (the induction over heads has to handle tangles whose vertices are all lower than their head
+and the remainder levels), but the shape of the obstruction.
 
 ## 2. Evidence
 - Strategy flips are thefts, once per vertex and top. Census (experiments/red/dtl/dtl_flips.py: every learned tangle's
@@ -116,6 +132,118 @@ often across searches although every attraction rule is monotone in the tangle s
 answer in this box: no construction found and the potential argument of section 1(c) says none exists; the step that a
 proof must nail down is the pusher-chain order (section 1(c), last item), which is where an index-dependent tie order
 hides, exactly as in R7's S5.
+
+## 5. The Lead's four weak points of Lemma M (15:35Z) and the TC-variant question (15:38Z)
+(a) FIFO pusher-chain order at one Even vertex. The pop order of a region is the lexicographic order of pusher chains,
+where a vertex event's chain is (chain of the pusher, slot of the vertex in the pusher's predecessor list) and a tangle
+event's chain is (chain of the escape popped last, slot of the tangle in tin[escape] = creation order, slot of the vertex
+in the tangle's stored list). A new tangle is appended after all older tangles of the same escape, so at the SAME pop an
+older usable tangle always pushes first; a newer tangle can only push earlier by firing at an EARLIER pop (its last escape
+popped earlier). Across passes every firing moves earlier or dies (M4) and every vertex event moves earlier (M1), so the
+pair order (a before b, b before a) at a choice vertex u can reverse only when the later event overtakes, i.e. the
+lexicographic minimum of the two chains strictly decreases. Lexicographic descents over tuples of length up to n are NOT
+polynomially bounded in general; what bounds them here is that every chain change is caused by an event: a vertex joins
+the region (once per vertex per level), a lower tangle is absorbed (its vertices change head, once per vertex per level,
+M3), or a tangle of the same head fires before its own vertices are reached (then it pushes them with the strategy it was
+learned with, which is the strategy of this very region at the time, so by itself it reproduces the SCC it came from; it
+changes the SCC only through vertices OUTSIDE it whose earliest successor is now inside it, a change that is one-way:
+nothing pushes those successors later again). The one open step for a proof: the same-head self-firing chain (a tangle
+pushed earlier changes outside vertices' choices, which makes a new SCC, which is a new tangle, which fires at a different
+escape ...); I argue it is short because each round only moves events earlier and the within-tangle push order is fixed
+at learning time, but it is the step to nail. Targeted search for it: fitness = max number of tangles learned at ONE top
+(injective priorities so the tangle priority names the top), PERHEAD-PLACEHOLDER
+(b) Phase alternation. dtl never returns to a player's phase (run 1123-1136: Even until search(0) fails, then Odd until
+search(1) fails, then stop); so Even's tangle set is frozen when Odd starts, and nothing of Even's is renewed. idtl
+alternates, but the opponent's tangles are never attracted for the player (attractTangle 113 checks tpr mod 2 = player),
+so between two Even searches the only change caused by Odd is G shrinking by Odd's dominion (at most n vertices in
+total) and the deletion of Even tangles that contain a solved vertex (at most |T| events, each the death of a tangle,
+never a rebirth). Removal of a solved vertex makes attraction EASIER elsewhere (edges to solved vertices are ignored,
+attractVertices 84-86), so for the surviving vertices (M1)-(M3) continue to hold across the removal except for the deleted
+tangles, whose loss is a one-time event. Nothing becomes renewable: a renewable theft would need a region to shrink
+repeatedly, and a region shrinks only when R shrinks (solved vertices, at most n times) or a rule dies (tangle deletion,
+at most once per tangle). Theft "once per vertex per level" holds across phases because heads move only up within a
+phase and a phase change only removes vertices.
+(c) Subgame removal between iterations within a phase (Even dominion found by search(0), G shrinks, next search(0)):
+same as (b): attraction on the remaining G is monotone in T and in the removal, the deleted tangles are the only loss,
+and each loss is final. "No reset" survives: a vertex set learned before cannot be learned again (dedup is global and
+tangles are deleted only when a vertex is solved, i.e. gone from G for good).
+(d) Work per tangle. Measured on Oink (release, --no-single --no-wcwc): chain n = 50, 100, 200, 400, 800: 48..798
+tangles, 0.0006, 0.002, 0.021, 0.10, 0.81 s (~n^2.6 total, ~n^1.6 per tangle); tc N = 4..20 (n = 68..1300): 9..41
+tangles, pruning rounds that removed something 669, 4195, 12889, 29055, 54997 (~n^1.5), 0.003 .. 13.7 s (~n^2.9 total).
+By the code: one best_vertices call is at most n rounds, each a region computation plus d threshold attractors, each
+attractor O(m + sum of tangle sizes); one search_rec call runs at most n + (recursion depth) iterations; searches are at
+most tangles + dominions. So total work is polynomial in n times the number of tangles, and the tangle count is the
+whole question. Nothing in the measurements grows faster than n^3.
+TC-variant question (15:38Z): "how would a TC game have to change to give DTL a renewable theft". In tc the renewable
+event is the opponent's tangle learned at a high priority between the player's iterations: in tl's two-sided
+decomposition that tangle's attractor removes the player's lower regions, their vertices fall out, and the player relearns
+them with new vertex sets. A theft in DTL is a vertex moving to a higher head of the SAME player (M3); for it to be
+renewable the vertex would have to move down again, i.e. the higher region would have to lose it, which needs a rule to
+disappear or R to shrink; the opponent has no rule inside search(player) (attractVertices/attractTangles are called with
+the player only, best_vertices 643-776 and sptl 476-546 never run the opponent's attractor; the only opponent attractor is
+the one-step removal of the threshold vertices in search_rec 946-950, inside Z, before the recursion). So no TC variant
+gives DTL a renewable theft: the part of Lemma M that rules it out is (M1)+(M3), one-sided attraction with the opponent
+absent during a phase. The "different version of the TC game" van Dijk's slides mention would have to attack ptl/rtl's
+two-sided decompositions, not dtl's; for dtl the only opponent action is the dominion removal, at most n events.
+
+## 6. Oink's dftl branch: counter_dftl and counter_odftl (Lead 15:45Z, L-LIT T16)
+Built from github trolando/oink branch dftl (tip ea51834, 2024-06; worktree + cmake in the scratchpad, same flags as
+scripts/setup_oink.sh) with src/tools/counter_dftl.cpp restored from a028e62 (it is deleted at the tip) and the branch's
+counter_odftl.cpp (d54dfad). Both generators transcribed to experiments/red/dtl/gens_dtl.py (counter_dftl n,
+counter_odftl n; row-identical to the built generators' output at N = 3, 6; only the "parity K;" header differs). Pinned
+8fbf0a7 --dtl / --idtl with -v (Oink verifies the solution) on N = 1..20, and the branch build's --dftl, --odftl, --dtl on
+N = 1..12:
+| N | counter_dftl: dtl = idtl tangles (iterations) | dftl (tip) | odftl | counter_odftl: dtl = idtl | dftl (tip) | odftl tangles (iterations) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 5 (2) | 4 | 4 | 5 (2) | 5 | 6 (2) |
+| 2 | 7 (2) | 6 | 6 | 7 (2) | 8 | 14 (4) |
+| 3 | 9 (2) | 8 | 8 | 9 (2) | 11 | 28 (7) |
+| 4 | 11 (2) | 10 | 10 | 11 (2) | 14 | 52 (11) |
+| 6 | 15 (2) | 14 | 14 | 15 (2) | 20 | 158 (26) |
+| 8 | 19 (2) | 18 | 18 | 19 (2) | 26 | 470 (62) |
+| 10 | 23 (2) | 22 | 22 | 23 (2) | 32 | 1352 (146) |
+| 12 | 27 (2) | 26 | 26 | 27 (2) | 38 | 3770 (349), 2.2 s |
+| 16, 20 | 35, 43 (2) | | | 35, 43 (2) | | |
+Every run "solution verified", all vertices solved, dtl wall time below 10 ms at N = 20. DTL learns exactly 2N + 3
+tangles in 2 iterations on both families (idtl the same); it is neither wrong nor super-polynomial here. ODFTL
+(one-player distraction-free TL, the a028e62 algorithm kept under that name at the tip) is exponential on counter_odftl
+(iterations 2, 4, 7, 11, 17, 26, 41, 62, 97, 146, ..., 349 at N = 12: ratio ~1.5-1.6, Fibonacci-like) and linear on
+counter_dftl; the tip's two-player DFTL is linear on both (1 iteration). So the branch's counterexample is the pair
+(ODFTL, counter_odftl), as the fix commit d54dfad says ("Fix counter_odftl to have a tiny tangle of the opponent after
+the distraction").
+What the generators are built to break (dftl.cpp header, branch tip lines 19-48, read): DFTL's loop takes V = all
+p-priority vertices, decomposes into regions headed by V top-down, learns tangles in closed regions, and "if no region is
+closed, we assume that 'surely' the lowest top vertex is distracting, so we remove that vertex from V"; V is reset at
+every iteration. The generator (comments in counter_odftl.cpp): an Odd dominion (top 0, "first [distracted] tangle" 1,
+barrier 2, second tangle 3/4), Even's "distracted vertex" 5 / "distraction" 6 / "dominant" 7, and per level i two
+Even-owned distracted vertices of even priority piv - 2i (edges to the two Odd tangles and to the level's distraction),
+a distraction of even priority piv + 8 + 2i whose only way on is the level's dominant vertex of odd priority one higher,
+behind a tiny Odd tangle of priority 1 (d54dfad). The high even distractions head the top regions and are never closed;
+DFTL therefore removes the LOWEST tops (the distracted vertices) one at a time, the regions re-form with one vertex less,
+and V is reset at the next iteration: the removals are relearned in every iteration with a different vertex set, the
+Fibonacci-like growth. DTL's pruning is the opposite design: a distraction is a p-vertex with no good path (the high
+distractions here, whose only continuation is a higher Odd priority, are pruned at the first round), the surviving set is
+a greatest fixpoint, monotone across searches (M2), never reset. The author's own counterexample thus attacks exactly
+the ingredient DTL replaced, and in Lemma M's terms it is (M2) that makes it harmless: on these families dtl's V* is
+stable after one pruning and the 2N + 3 tangles are the Odd tangles' per-level copies learned once each.
+Perturbation search from counter_dftl N = 6 (32 vertices) under dtl (fitness = tangles, 40,000 single mutations):
+PERT-PLACEHOLDER
+Other games on the branch: none (the branch's diff against 8fbf0a7 is the solver, the two generators, CMake and README).
+
+## 7. The universal-tree angle (Lead 15:50Z: van Dijk's ISoLA 2024 closing slide, "learning tangles moves vertices along the universal tree")
+(b)-answer, Lead reading. DTL's state is a set of tangles (vertex sets with a strategy), not a labelling of vertices by
+positions in a tree, and nothing in dtl.cpp compares or lifts per-vertex values: regions are attractors over the whole
+subgame, a tangle is used as a unit, and the dedup is by vertex set. So the quasi-polynomial universal-tree lower bounds
+(Czerwinski et al. 2019, for separating automata / per-vertex monotone labellings read along paths) do not transfer by
+any reduction I can state: a bottom SCC is not a tree position, and DTL solves tc, which the progress-measure solvers
+in Oink treat as quasi-polynomial, with 2N + 1 tangles. Where a tuple order DOES appear in DTL is section 5(a): the pop
+order of a region is the lexicographic order of pusher chains, tuples of (layer, slot) of length up to n, and every
+strategy change at a vertex is a lexicographic descent of such a tuple. A proof of the tangle bound will have to count
+those descents, and that count has exactly the shape of a universal-tree argument (how many times can a tuple of
+length d over [n] decrease lexicographically when each decrease is caused by one of polynomially many events?); if the
+events can be chained, the count could be n^{O(log n)} rather than polynomial, which would make DTL quasi-polynomial
+in the tangle count without being a universal-tree walker in the separating-automaton sense. (a)-answer: no family was
+built that forces DTL along a tree; the search for self-firing chains at one head (section 5(a)) is the attempt.
 
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.

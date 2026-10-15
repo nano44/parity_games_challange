@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Free-form hill-climb over small parity games maximising Oink DTL's learned-tangle count (L-RED, DTL box).
 Fitness = tangles found by `oink --dtl --no-single --no-wcwc` (raw solver, no preprocessing). Mutations: add/remove an edge,
-change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved] [--out best.pg]"""
+change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|perhead|perheadsearch] [--injective] [--from game.pg] [--out best.pg]"""
 import sys, os, random, subprocess, tempfile, time, re
 oink, n = sys.argv[1], int(sys.argv[2]); arg = lambda k, d: type(d)(sys.argv[sys.argv.index(k) + 1]) if k in sys.argv else d
 steps, seed, maxpr = arg("--steps", 20000), arg("--seed", 0), arg("--maxpr", 2 * int(sys.argv[2])); rng = random.Random(seed)
 evenmin = arg("--even-min", 0.0)
-fitness = arg("--fitness", "tangles")   # tangles | unsolved (vertices DTL leaves unsolved: a completeness failure)      # reject games with fewer than this fraction of Even-owned vertices (two-player search)
+fitness = arg("--fitness", "tangles")   # tangles | unsolved (vertices DTL leaves unsolved) | perhead (max tangles learned at one top priority; use --injective)
+injective = "--injective" in sys.argv    # priorities = a permutation of 0..n-1, so a tangle's priority names its top      # reject games with fewer than this fraction of Even-owned vertices (two-player search)
 tmp = tempfile.NamedTemporaryFile("w", suffix=".pg", delete=False).name
 
 
@@ -18,19 +19,27 @@ def dumps(g):
 def score(g):
     open(tmp, "w").write(dumps(g))
     try:
-        r = subprocess.run([oink, "--dtl", "--no-single", "--no-wcwc", tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
+        r = subprocess.run([oink, "--dtl", "--no-single", "--no-wcwc"] + (["-t", "-t"] if fitness.startswith("perhead") else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
     except subprocess.TimeoutExpired:
         return 10 ** 6          # a timeout is interesting in itself
     if fitness == "unsolved":
         try: solved = sum(1 for l in open(tmp + ".sol") if l.strip() and not l.startswith("paritysol"))
         except FileNotFoundError: solved = n
         return n - solved
+    if fitness in ("perhead", "perheadsearch"):
+        import collections
+        c = collections.Counter(); it = 0
+        for line in re.sub(r"\x1b\[[0-9;]*m", "", r.stdout + r.stderr).splitlines():
+            if "iteration" in line: it += 1
+            m2 = re.search(r"new tangle (\d+) \(", line)
+            if m2: c[(m2.group(1), it if fitness == "perheadsearch" else 0)] += 1
+        return max(c.values(), default=0)
     m = re.search(r"found (\d+) dominions and (\d+) tangles", r.stdout + r.stderr)
     return int(m.group(2)) if m else -1
 
 
 def random_game():
-    pr = [rng.randrange(maxpr + 1) for _ in range(n)]; ow = [rng.randrange(2) for _ in range(n)]
+    pr = rng.sample(range(n), n) if injective else [rng.randrange(maxpr + 1) for _ in range(n)]; ow = [rng.randrange(2) for _ in range(n)]
     succ = [{rng.randrange(n)} | {rng.randrange(n) for _ in range(rng.randrange(3))} for _ in range(n)]
     return pr, ow, succ
 
@@ -42,12 +51,20 @@ def mutate(g):
         w = rng.randrange(n)
         if w in succ[v] and len(succ[v]) > 1: succ[v].discard(w)
         else: succ[v].add(w)
-    elif k < 0.75: pr[v] = rng.randrange(maxpr + 1)
+    elif k < 0.75:
+        if injective: w = rng.randrange(n); pr[v], pr[w] = pr[w], pr[v]
+        else: pr[v] = rng.randrange(maxpr + 1)
     else: ow[v] ^= 1
     return pr, ow, succ
 
 
 t0 = time.time(); g = random_game()
+if "--from" in sys.argv:      # start from a given game (perturbation search); n is taken from the file
+    pr, ow, succ = [], [], []
+    for line in open(sys.argv[sys.argv.index("--from") + 1]):
+        m = re.match(r"^(\d+)\s+(\d+)\s+([01])\s+([\d,]+)", line.strip())
+        if m: pr.append(int(m.group(2))); ow.append(int(m.group(3))); succ.append({int(x) for x in m.group(4).split(",")})
+    n = len(pr); maxpr = max(maxpr, max(pr)); g = (pr, ow, succ)
 while evenmin and g[1].count(0) < evenmin * n: g = random_game()
 cur = score(g); best = (cur, g)
 for i in range(steps):
