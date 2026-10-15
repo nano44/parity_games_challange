@@ -11,7 +11,7 @@ jobs:
       - name: Boost
         run: sudo apt-get update -q && sudo apt-get install -y -q libboost-filesystem-dev libboost-iostreams-dev libboost-regex-dev libboost-random-dev
       - name: Python packages
-        run: pip install python-sat==1.9.dev15
+        run: pip install python-sat==1.9.dev15 numpy==2.5.3
       - name: Cache Oink build
         uses: actions/cache@v4
         with:
