@@ -67,3 +67,12 @@
   exponential families as soon as the partial solver is blind on them, and Strahler-2 gadgets make psolC blind everywhere.
   Idea kept: the published 13 families are weak tests for hybrids; the GA/tiling search (zp_ga.py, zp_ladder2.py,
   zp_curve.py) is the right falsifier for complete-but-unproven candidates.
+
+## C4 TL×H, tangle learning on the prefix-maximum product (docs/alg/candidates/C4.md) — DEAD (2026-10-15 12:10Z)
+- Killer: the Two Counters family tc (Oink's own generator), the same family that beats tangle learning on G itself.
+  Oink tl's tangle count summed over the inner calls on H: 131 / 3,070 / 37,372 / 333,132 at N = 2/4/6/8 (n = 22/68/138/232),
+  factors x23, x12, x9 (experiments/alg/c4_product.py tl --tc 2,4,6,8). Answers correct on every game run (tc, S_s, T_R, library).
+- Obstruction (exact): the prefix-maximum memory changes what a reachability condition can certify (NE'(1) solves tc in
+  5 fixpoint rounds) but not the tangle structure: the counter states of tc give the same exponentially many tangles in H as
+  in G. Idea killed: "give tangle learning the register memory". The complementarity of the two obstructions (registers vs
+  tangle proliferation) is not resolved by composing the two mechanisms.
