@@ -40,6 +40,7 @@ even priority e_i^a, which is sigma_0 of Lemma 4.4.
 | m | 20 | 29 | 38 | 47 | 56 | 65 | 74 | 83 | 92 | 101 | 110 | 119 |
 | MSF | 3 | 7 | 15 | 31 | 63 | 127 | 255 | 511 | 1023 | 2047 | 4095 | 8191 |
 
+vj.py alone continues: N = 14 (n = 73): 16383 in 38 s; N = 15 (n = 78): 32767 in 91 s.
 MSF iterations = 2^N - 1 = 2^((n-2)/5) - 1. Every switch is cycle-creating and escaped (Odd reroutes, no cycle node changes),
 so X = 2^N - 1 in L-SI's bound. L-SI's variants msfa and msfc (si.py): identical counts for N = 3..8. The other rules on the
 same games are fast (N = 3..8, si.py): lsf 1, steepest 1, switch-all N, random-edge 1-9, rar 3-13: the family is built for
@@ -76,7 +77,9 @@ LEVEL is the priority of e, chosen by the designer; the EFFECT after the switch 
 every Even edge of any sink game with any priority assignment to the gates, it turns MSF into an arbitrary index-based rule in
 DLMM's sense (Def. 3.7, Thm 4.3), so MSF inherits every index-based lower bound, and the same holds for every rule that ranks
 improving edges by the position of the first difference (LSF: give the gates increasing priorities; any fixed ranking of
-levels). The gate costs 3 vertices and 4 edges per underlying edge.
+levels). The gate costs 3 vertices and 4 edges per underlying edge. experiments/red/gate.py implements the transform for any
+sink game with any distinct labels: on G_N with labels = reversed Bland numbers MSF takes 2^N - 1, with labels = Bland numbers
+LSF takes 2^N - 1 (N = 4, 6, 8, 10 run; the same games, only the gate priorities differ).
 
 ## (A) FLAW in the bound: Claim F is false as stated; the corrected claim holds
 L-SI's definition (notes/L-SI.md, si.py rule_msfa/msfc, freeze_test.py, adversarial.py --objective escapes): the switch (v, w)
@@ -126,7 +129,7 @@ L-SI's engine on the same instances (read-only worktree of claude/l-si): `python
 "solved with 255 iterations".
 
 ## DONE / FINDINGS / NEEDS
-- DONE: this report; experiments/red/{vj.py, gens_red.py, correspond.py, xcheck.py, check.sh, instances/}; notes/L-RED.md.
+- DONE: this report; experiments/red/{vj.py, gens_red.py, gate.py, correspond.py, xcheck.py, check.sh, instances/}; pushed at claude/l-red 85a83bf and the follow-up commit; notes/L-RED.md.
 - FINDINGS: (1) MSF killed: 2^N - 1 iterations on gated_bland N, n = 5N+2, both engines, X = 2^N - 1. (2) Claim F false as
   stated (wrong notion of cycle-creating); corrected F' holds; L-SI's X measurements undercount. (3) si.py faithful.
   (4) The gate gadget makes any first-difference-ranked single-switch rule an arbitrary index-based rule (DLMM Thm 4.3 class).

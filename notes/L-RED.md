@@ -2,15 +2,14 @@
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead.
 
 ## Resume point
-2026-10-15 ~12:40Z. Candidate S2a MSF KILLED (docs/red/R1-MSF.md): gated_bland N takes 2^N - 1 MSF iterations on both engines;
+2026-10-15 ~12:55Z (pushed 85a83bf + gate.py commit). Candidate S2a MSF KILLED (docs/red/R1-MSF.md): gated_bland N takes 2^N - 1 MSF iterations on both engines;
 Claim F FLAW reported 11:45Z, kill reported 12:20Z (send_message to the Lead). Remaining in the box: push, then (optional) a
 generic gate-relabelling transform (any sink game + edge order -> gated game) and a check that the same gadget kills LSF-ranked
 variants; wait for the Lead's instructions.
 
 ## Queue
 1. scripts/verify.sh && git push -u origin claude/l-red (report, engine, family, instances, check.sh).
-2. Optional: experiments/red/gate.py: generic transform of a sink game with a designer level per Even edge; demonstrate on
-   DLMM G_N with the reversed order (kills LSF via gates) to show rule-independence.
+2. (done) gate.py: generic transform; MSF (reversed labels) and LSF (Bland labels) both 2^N - 1 on G_N.
 3. End-of-box message: DONE / FINDINGS / NEEDS.
 
 ## Things only I know
