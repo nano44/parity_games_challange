@@ -18,7 +18,9 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - What changes: (a) L-LIT/referees compare the chapter with arXiv v2; G10 can close and the novelty caveat on R2 can be lifted (or
   revised if the chapter differs). (b) nothing changes now; R2 keeps its caveat and no external step is possible.
 - Urgency: low while no external step is planned; it blocks Q6's natural next step.
-- Status: open
+- Status: open (partly answered 2026-10-15 ~07:40Z: the owner supplied Imperial tech report DTR 2015/4, the August 2015 text of
+  the chapter, public at https://www.doc.ic.ac.uk/research/technicalreports/2015/DTR15-4.pdf; desk reading in
+  docs/owner-desk/HKP-DTR15-4-reading.md. The Springer pages themselves remain unopened. Closure is the Lead's call.)
 
 ## Q6: whether, and to whom, docs/HUMAN-REVIEW.md goes
 - id: Q6

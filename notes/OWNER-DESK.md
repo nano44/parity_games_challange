@@ -2,7 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-15 ~07:40Z. Session started (D3, Lead reading L10). Created docs/owner-desk/QUESTIONS.md (Q5, Q6, Q7, Q4, Q2, Q3, all open)
+2026-10-15 ~07:50Z. Session started 07:3xZ (D3, L10). Q5 partly answered: owner supplied DTR 2015/4 (reading in docs/owner-desk/HKP-DTR15-4-reading.md), relayed to the Lead.
 and docs/owner-desk/LOG.md. First reply to the owner sent: orientation, status, open questions. Waiting for the owner; no timed wakes.
 
 ## Queue
@@ -14,6 +14,7 @@ and docs/owner-desk/LOG.md. First reply to the owner sent: orientation, status, 
 | source | used for | opened on | note |
 | --- | --- | --- | --- |
 | fleet files only (TARGET.md, docs/NOW.md, DECISIONS, GAPS, RESULTS at d580fcd; l-lower 9ece275 docs/lower/L1-report.md §4) | status reply | 2026-10-15 | no external sources; the desk cites fleet files, not literature |
+| Huth-Kuo-Piterman, Imperial DTR 2015/4 (9 Aug 2015), www.doc.ic.ac.uk/research/technicalreports/2015/DTR15-4.pdf (owner upload, same sha256) | Q5: §5 Fig. 7 (psolB), Thm 4 p.12 (psolC ⊇ psolB), §7-8; full-text search for psolB completeness | 2026-10-15 | pre-publication text of LNCS 9560 chapter; Springer version still unopened |
 
 ## Dead ends
 (none)
