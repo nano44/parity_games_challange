@@ -37,7 +37,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 ## In flight (as of 2026-10-15 09:50Z)
 - L-SI: strategy-improvement rule design loop toward M4/M4-R (D6, L19), 12h box from ~10:10Z. Candidate S2a MSF (most-significant-first single switch) NOT KILLED so far (l-si c73f69e): linear on all 15 families incl. switchallexp, zadehexp, Random-Facet*, DLMM Bland; adversarial n<=9 maxima ~n^2.5-3. Unrefereed data, far from a claim. L-LIT T12 (706d5e1): no published lower bound covers MSF; killer must be two-player with mixed-owner cycles; candidate D_n-with-Odd-gates sent to L-SI.
 - Working-session count (D1 cap 5 counts lanes, not Lead/WATCHDOG): L-ALG, L-SI, L-LOWER = 3.
-- L-ALG: falsification-driven algorithm design loop toward M4 (D5, L18), 12h box from ~10:00Z.
+- L-ALG: falsification-driven algorithm design loop toward M4 (D5, L18), box to 21:55Z. l-alg a5164a4: C1/C2 nested fatal attractors DEAD (family S_s; nesting depth = Strahler-1 = register hierarchy, quasi-poly at best). C3 ZP (Zielonka + psolC pruning): complete; <=5 recursive calls on all 13 families, but GA instances grow superpolynomially (129..7,096+ calls, n=24..64); explicit-family attempt running; no gauntlet. T-ALG1 (psolC complete on Strahler-1 games, unrefereed): deferred behind M4 candidates.
 - L-LOWER (successor): T-L2 theory box to 20:36Z: human proof of B_2(4) >= 7 from the 100-game UNSAT core; test for a gap growing with n.
 - Everyone else parked or idle: L-ATTR (psolC done, DE3), REFEREE (R-psolC done), REFEREE-2, L-LIT (T11 done), L-STRUCT, L-COMP,
   CHECKER, HUMAN-DESK. OWNER-DESK idle between owner messages. WATCHDOG hourly at :30.
