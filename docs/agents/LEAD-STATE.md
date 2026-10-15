@@ -146,3 +146,4 @@
 - 16:16Z R8 §9 4a659d9 merged: set-based Lemma M parts survive LIFO; W/P/E outline forwarded to L-ALG; no hit.
 - 16:37Z R8 final 8e03198 merged (HELD; no wrong answer, no super-poly count). L-RED kept on hand construction vs (E)/(P) to 21:06Z.
 - 16:47Z L-ALG interim 11fbb49: soundness/halting/(b)-(e) proved, completeness GAP-C, tangle count GAP-A. GAP-C candidate shape routed to L-RED.
+- 16:50Z R8 §9-10 1a9ac0f merged: ladders v1/v2 no hit (walls: pruning below head priority; dominion attractor with tangles). L-RED closed the (E)/(P) phase; GAP-C message likely crossed -- waiting for its reply, not resending.
