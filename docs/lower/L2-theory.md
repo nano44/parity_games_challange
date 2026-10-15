@@ -175,8 +175,11 @@ the dead end with the instances, and recommend parking the lane") and recommenda
 ## 6. Status lines
 - C1 (B_2(4) = 7; 68-game certificate, 28-game class certificate): data, four solvers; not refereed.
 - C2 (B_2(5) ≥ 9; 414-game certificate): data, two solvers (CaDiCaL, Glucose); not refereed.
-- k = 9 at n = 5 (would give B_2(5) ≥ 10): RUNNING at the time of writing (result_b2_n5_k9.log; seeded with the k = 8 core).
-- K_5 at k = 8: UNSAT (K_5 needs ≥ 9; §5). K_5 at k = 9: RUNNING at the time of writing (result_k5_deg2_k9.log).
+- k = 9 at n = 5 (would give B_2(5) ≥ 10): NOT DECIDED in the box. At 19:21Z three runs were still inside SAT calls, left
+  running detached (logs are snapshots at that time): general class result_b2_n5_k9.log (round 3, 814 games; rounds 1-2 SAT,
+  ~2 h each), family K_5 result_k5_deg2_k9.log (round 7, 1 200 games; rounds 1-6 SAT), |P_2| ∈ {1, 2, 3} result_b2_n5_k9_p2sz1-2-3.log
+  (round 2, 912 games). A RESULT line in any log decides it: UNSAT ⇒ B_2(5) ≥ 10 (gap ≥ 2); a candidate ⇒ full sweep needed.
+- K_5 at k = 8: UNSAT (K_5 needs ≥ 9; §5). K_5 at k = 9: not decided (above).
 - C3 (|P_2| = 1 at n = 5 costs exactly 8): data, full sweep of the class (4.58·10^9 games) plus all smaller games; not refereed.
 - Lemma 2.1, 2.2: proved above (short); not refereed.
 - Goal (a) human-readable proof: NOT achieved; obstruction in §3b. Goal (b) growth argument: NOT achieved; §5.

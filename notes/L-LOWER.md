@@ -1,12 +1,16 @@
-# L-LOWER notebook (T-L2 theory box, successor session; updated 2026-10-15 ~10:45Z, box ends 20:36Z)
+# L-LOWER notebook (T-L2 theory box ended 2026-10-15 19:30Z; handover for the Lead / a successor)
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
 Branch claude/l-lower. Read docs/lower/L2-theory.md first (the box's product), then L1-statement.md (model), L1-report.md,
-L2-data.md. Running at the time of writing (logs in experiments/lower/, detached with setsid): result_b2_n5_k9.log
-(general n = 5 at 9 gates, seeded with the 414-game k = 8 core; one SAT call may take hours), result_k5_deg2_k8.log and
-result_k5_deg2_k9.log (family K_5, exact CEGAR). If they finished: a RESULT line ends each log; UNSAT at k = 9 means
-B_2(5) ≥ 10 (gap grows); write it into L2-theory §4/§6.
+L2-data.md. Left RUNNING detached at 19:21Z in this container (they die with it; logs in experiments/lower/ are snapshots):
+result_b2_n5_k9.log (general n = 5, k = 9; round 3), result_k5_deg2_k9.log (K_5, k = 9; round 7),
+result_b2_n5_k9_p2sz1-2-3.log (|P_2| ∈ {1,2,3}, k = 9; round 2). To resume in a new container: the checkpoints
+b2_n5_k9.subset.json, k5_deg2_k9.subset.json, b2_n5_k9_p2sz1-2-3.subset.json are gitignored (lost with the container);
+restart from the committed k = 8 cores: `cp b2_n5_k8.subset.json b2_n5_k9.subset.json` is not possible either (ignored), so
+seed from b2_n5_k8.json's "subset_games" (write it to b2_n5_k9.subset.json) and run `python3 -I cegar5two.py 9 2000000 200 1`;
+likewise P2SIZES=1,2,3 from b2_n5_k8_p2sz1-2.json, and `python3 -I cegar_class5.py 9 200` for K_5 (seeds itself).
+Each k = 9 SAT round with 600-1200 five-vertex games took 1-3 h on this machine; budget a day.
 
 ## DONE (this box; see docs/lower/L2-theory.md for everything, with SHAs and commands)
 - MECHANISM (the box's main finding, data): the gate above 2n − 2 is the price of serving two COUNTS of priority-2 vertices
@@ -23,8 +27,7 @@ B_2(5) ≥ 10 (gap grows); write it into L2-theory §4/§6.
   at n = 4, 5.
 
 ## IN FLIGHT
-- result_b2_n5_k9.log (general, k = 9; round 2 with 614 games started ~13:30Z), result_k5_deg2_k9.log (K_5, k = 9),
-  result_b2_n5_k9_p2sz1-2-3.log (|P_2| ∈ {1,2,3}, k = 9, seeded with the 612-game {1,2} core). UNSAT in any = B_2(5) ≥ 10.
+- The three k = 9 runs above (undecided at the end of the box). UNSAT in any = B_2(5) ≥ 10 (gap grows).
 
 ## NEEDS
 - Lead: decision on parking (L2-theory §5b: recommendation = park the theory goal; keep the two cheap n = 5 experiments).
