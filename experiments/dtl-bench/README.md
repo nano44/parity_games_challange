@@ -33,6 +33,8 @@ exactly this command (no `-w`). A_IDTL = the same with `--idtl`. Every result ro
 | every game, n=3, priorities 0..3 (TARGET class: priorities 0..n) | 175,616 | brute force = py-zlk | 175,616 | 175,616 | results/exhaustive_n3_P3.csv.gz |
 | seeded corpus `gen.py corpus out/g10k 10000 20261015 --nmin 1 --nmax 200` | 10,000 | uzlk and py-zlk (both ok on all) | 10,000 | 10,000 | results/g10k.csv |
 
+| extra: seeded small games `gen.py corpus out/small50k 50000 20261016 --nmin 4 --nmax 10` | 50,000 | uzlk and py-zlk (both ok on all) | 50,000 | 50,000 | results/small50k.csv.gz |
+
 Exhaustive games include self-loops (every non-empty successor set), so `--no-loops` is exercised.
 g10k: n up to 200, up to 137 distinct priorities; max 186 tangles, max 5 iterations (dtl) / 4 (idtl), max 0.2 s.
 
