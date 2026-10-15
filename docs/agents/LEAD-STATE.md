@@ -61,3 +61,4 @@
 - 04:03Z sweep: overage false; Lead $51.6 ctx 142k. L-LOWER idle between rounds (1d4c7d2, CI green), $41.5 (+$7 in 2h waiting on runs), ctx 447k; one cost message: wake on verdict/crash, fallback <=60 min.
 - 05:02Z sweep: overage false; Lead $52.0. L-LOWER idle waiting on k=8 run (last activity 04:16Z, $42.8, +$1.3/h after monitor change), ctx 451k. No action.
 - 06:02Z sweep: overage false; Lead $52.2. L-LOWER idle since 04:16Z waiting on k=8 run ($42.8 flat), 2h fallback due ~06:16Z; check at 07:01Z that it fired. No action.
+- 07:04Z sweep: overage false; Lead $52.5. L-LOWER 2h fallback fired 06:16Z and cost $8.5 (cache expired, +406k cache_write); told it to drop timed fallback, wake only on verdict/process exit. Lead miss: 04:03Z advice ignored cache TTL. Lesson: idle-wait wakes cost ~context x write price once cache expires; prefer no timed wakes.
