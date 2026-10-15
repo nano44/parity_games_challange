@@ -5,3 +5,7 @@ experiments/*/out/
 lean/.lake/
 experiments/si/vjfast
 experiments/si/vjfast_check
+experiments/si/vjfast_df
+experiments/si/vjfast_dfbin
+experiments/si/vjfast_trace
+experiments/si/vjfast2
