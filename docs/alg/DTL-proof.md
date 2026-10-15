@@ -543,6 +543,27 @@ contradiction. Hence the set of tangles with U_t ⊆ S is the same at s1 and s2,
 (69) and the same tin list in the same order (443: tin is appended in creation order, and the tangles that exist and
 fire are the same; tangles that exist but do not fire are skipped in both), with the same (V)-premises by (1); by
 induction on the pop sequence the pushes, the pop order and the assignments 73/89/171 coincide. □
+Lemma S for ARBITRARY X (attempt, 18:45Z; L-RED measures determinacy over all pieces with 0 exceptions, R8 §12).
+Re-reading the proof: steps (1), (2) and (4) use no monotonicity and no assumption on X. (1): in each occurrence
+separately, S is the final set, so every opponent vertex of S has all its unforgiven successors in S, i.e. every successor
+outside S of an S-vertex is forgiven in that occurrence — whatever the forgiven set (X ∪ consumed regions) is. (2): a
+tangle t with U_t ⊆ S has escapes that are successors of opponent vertices of U_t ⊆ S, so its escapes outside S are
+forgiven in both occurrences by (1); it fires in an occurrence iff it exists then and has an escape in S. (4) is
+unchanged. So, with X arbitrary, Lemma S reduces to step (3) alone: no tangle created between the two occurrences has
+U_t ⊆ S and an escape in S — OR every such tangle, when it fires in occurrence 2, pushes its not-yet-pushed vertices
+with stored strategies equal to the DFS parents those vertices receive in occurrence 1 (then the pushes differ in
+timing but not in str, and the SCC is the same). Exact event that would break determinacy: a tangle t created in a
+search s' with s1 ≤ s' < s2 at a top a ∈ U_t ⊆ S, in a piece of s' in which τ's region did not contain U_t — which
+requires τ to have left R in s' through a piece whose consumed set is smaller than occurrence 1's (so that the
+attractor to τ, or to the X-level containing τ, misses U_t; if the consumed sets agree, τ's region or the Z-piece around
+τ contains S ⊇ U_t and takes U_t with it) — and some p-vertex x ∈ U_t with two successors inside S whose parent toward
+a (stored in t) differs from its parent toward τ (occurrence 1). The order of operations at a pop (attractVertices 69-100
+before attractTangles 200-201) makes the first U_t-vertex pushed in occurrence 1 be pushed identically in occurrence 2
+(a p-vertex via its edge to a non-U_t vertex w, which is not an escape unless it is also an opponent exit; an opponent
+vertex at its last escape's pop), so the difference can only be in the vertices t pushes afterwards. Status: SKETCH;
+step (3) for arbitrary X is the open claim, and the event above is the shape to look for (for L-RED: a top that leaves R
+in a -1 piece cut narrower than its own region, leaving a sub-tangle behind to be learned at a lower top with different
+parents, then re-entering at τ). No route to prove (3) without monotonicity was found in the box.
 Consequence (a5). Under (M-cross), the SCC extracted at τ is a function of (τ, S) in the first piece, so by (a1) the
 number of tangles learned at first-piece tops is at most the number of distinct (τ, S) pairs that occur there. The
 Lead's (D) ("the region sets at a fixed top change only by join/theft/deletion/covering events and are monotone
