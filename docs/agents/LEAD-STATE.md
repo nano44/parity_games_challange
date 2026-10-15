@@ -185,3 +185,4 @@
 - 23:10Z hourly sweep: no overage (seven_day warning). Lead 514k. L-COMP on 1h L15 then park. No exceptions.
 - 23:29Z L15 DONE 70cc344 (PGSolver binaries = ports). All lanes parked. Fleet idle overnight except hourly sweeps; next: resume L-ALG with C5 order lines + GAP-A when a new idea or fresh successor is warranted.
 - 23:31Z Spawned L-ALG successor 2 session_01Aoj1NEAPu4ibQ3VbNXaXVY (Fable): five questions, then C5 orders decision draft + GAP-A fresh attack.
+- 23:42Z L-ALG d54c445 C5-orders.md: 8 unstated choices O1-O8; recommends option (ii) claim D1/D2 for every order datum. Lead accepted (ii); L-ALG to apply §0 wording + C5 Order data paragraph, then CHECKER C3d diff, then re-freeze L26.
