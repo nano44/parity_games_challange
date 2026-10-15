@@ -94,3 +94,4 @@
 - 12:15Z l-red R2 merged (0d50d4a). REFEREE-2 R2-TL (transfer lemma + why-FHZ-silent check). L-RED parked (spend; S5/S6 cancelled). L-SI to record S1 conditional.
 - 12:16Z REFEREE-2 R2-TL OK with fixes (995cfd3, merged). DE6 recorded (S1 RAR). Second referee, L-LIT novelty, L-RED F1 fix deferred pending Q9.
 - 12:36Z D7 owner chose Q9 (a): continue. Freeze lifted (L20). L-RED resumed (F1, S7, S5/S6); REFEREE second read of transfer lemma.
+- 12:48Z L-ALG: C4 dead; DTL survives everything (lead); L-ALG redirected to DTL provenance/pseudocode/data. tc+ beats PTL/SPPTL (bench note).
