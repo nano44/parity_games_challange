@@ -28,6 +28,32 @@ the fixed-k candidates C1, C2 are incomplete for every k (games of Strahler k+2 
 decompositions). Reading: the nesting depth of prefix-maximum memories IS the register number (DJT Thm 8 = Lehtinen 2018):
 each level of NE' adds one register. This is the exact obstruction of the whole fatal-attractor nesting family.
 
+## C5-DTL provenance (Lead 12:47Z item 1; recorded 13:05Z)
+- Oink clone (tools/oink/src, pinned 8fbf0a7 = upstream master, 322 commits): `git log -- src/solvers/dtl.cpp src/dtl.cpp`:
+  e67cb4c 2019-09-14 Tom van Dijk "New experimental solver distraction-free tangle learning"; 7798285 2019-10-27 "New version
+  of distraction-free tangle learning."; 2d12471 2019-11-05 "Fix bugs in Distraction-free Tangle Learning"; 0c2fab6 2020-03-27
+  "Major update to Oink" (dtl.cpp 891 lines changed); 2024 refactors only. README: 39254fe 2021-06-25 "Updated README.md"
+  renames the row to "Distraction-free Tangle Learning (research variant)" and ADDS the line "counter_dtl | Counterexample to
+  the DTL solver"; 1ba8b0a 2021-07-02 "Rename the DTL solver": README row becomes "Distance Tangle Learning (research variant
+  based on 'good path length')", solvers.cpp registers "distance tangle learning". `git log --all -S counter_dtl` and a search
+  of every added file name: NO commit ever contained a counter_dtl source; the README line is the only trace. All commits by
+  Tom van Dijk.
+- Web (opened 13:00Z): (a) van Dijk, GandALF 2019 talk slides "Fixed-points, Tangles, Distractions in Parity Games"
+  (tvandijk.nl/pdf/2019gandalf_talk.pdf, scratchpad dtl/gandalf2019.txt), slide 42: "'Recursive tangle learning' and
+  'progressive tangle learning' (unpublished) use this method [play to the best path, not just the best endpoint] to identify
+  distractions ... BUT VULNERABLE! (to a different version of the TC game)!"; slide 43: quasi-polynomial algorithms look at
+  "how many times alpha dominates beyond this vertex", "Similar to 'distance to opponent region'", "Also a path-progressive
+  measure, but stronger". (b) van Dijk, "Avoiding Distractions in Parity Games", ISoLA 2024, LNCS 15221 pp. 330-352, DOI
+  10.1007/978-3-031-75380-0_19 (author PDF tvandijk.nl/pdf/2024isola_rtl.pdf, scratchpad dtl/isola2024.txt): defines and
+  evaluates rtl and ortl, gives exponential lower bounds for both (its Fig. 6 = counter_ortl, Fig. 7 = tc+), section 4 explains
+  the "good path" / progress-measure view of distractions; it does not mention dtl, distance tangle learning or counter_dtl;
+  its evaluation runs tl, pp, zlk, fpi, fpj. (c) "Solving Parity Games, Very Slowly" (van Dijk, 2024, Springer chapter
+  10.1007/978-3-031-75778-5_21): not opened (paywall); search snippet says the author's work "focused on designing various
+  variations of tangle learning and subsequently exploring examples that maximally distract and delay these ... variations".
+  Reading: DTL is an unpublished 2019-2021 research variant of van Dijk's; the author's own README asserts a counterexample
+  exists; no published definition, no running-time claim, and the author's slides say the path-based variants are vulnerable to
+  a modified Two Counters game. The fleet has no published source for DTL beyond the C++; C5-DTL.md transcribes the code.
+
 ## Sources opened (this session)
 - Daviaud, Jurdzinski, Thejaswini, "The Strahler number of a parity game", arXiv 2003.08627v2 (ICALP 2020), opened 10:23Z
   (pdftotext of the arXiv PDF, scratchpad djt/djt.txt): p.4-5 definitions (attractor decomposition, tree, Strahler number of
