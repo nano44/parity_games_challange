@@ -161,12 +161,21 @@ int main(int argc, char** argv) {
     else if (rule == "rar") { vector<vector<int>> F(g.n); for (int v = 0; v < g.n; v++) if (g.owner[v] == 0) F[v] = g.succ[v]; strat = e.rar(strat, F, rng); it = e.rar_switches; }
     else {
         map<pair<int,int>, long> entered; pair<int,int> last = {-1, -1}; long ties_idx = 0;
-        while (true) { e.cache.clear(); const auto& val = e.evaluate(strat).first; auto imp = e.improving(strat, val); if (imp.empty()) break; it++;
-            if (rule == "switch-all") { vector<int> nw = strat; for (int v = 0; v < g.n; v++) if (g.owner[v] == 0) { int b = g.succ[v][0]; for (int w : g.succ[v]) { int c = e.cmp(val[w], val[b]); if (c > 0 || (c == 0 && w > b)) b = w; } if (e.cmp(val[b], val[strat[v]]) > 0) nw[v] = b; } strat = nw; }
-            else if (rule == "random-edge") { auto [v, w] = imp[rng() % imp.size()]; strat[v] = w; }
-            else if (rule == "zadeh") { auto best = imp[0]; long bc = entered[best]; for (auto& ed : imp) { long c = entered[ed]; if (c < bc || (c == bc && ed < best)) { best = ed; bc = c; } } entered[best]++; strat[best.first] = best.second; }
-            else if (rule == "cunningham") { pair<int,int> pick = {-1,-1}; for (auto& ed : imp) if (ed > last && (pick.first < 0 || ed < pick)) pick = ed; if (pick.first < 0) pick = *min_element(imp.begin(), imp.end()); last = pick; strat[pick.first] = pick.second; }
-            else if (rule == "most-improved") { // S7: switch maximising the number of vertices whose valuation strictly improves;
+        while (true) { e.cache.clear(); const auto& ev0 = e.evaluate(strat); const auto& val = ev0.first; const auto& tau0 = ev0.second; auto imp = e.improving(strat, val); if (imp.empty()) break; it++;
+            if (rule.rfind("df-", 0) == 0) {   // downstream-first filter: keep edges at vertices v with no OTHER improving vertex on v's play
+                vector<char> isimp(g.n, 0); for (auto& ed : imp) isimp[ed.first] = 1;
+                vector<pair<int,int>> keep;
+                for (auto& ed : imp) { int v = ed.first; int x = (g.owner[v] == 0) ? strat[v] : tau0[v]; vector<char> seen(g.n, 0); bool ok = true;
+                    while (!seen[x]) { if (x != v && isimp[x]) { ok = false; break; } seen[x] = 1; x = (g.owner[x] == 0) ? strat[x] : tau0[x]; }
+                    if (ok) keep.push_back(ed); }
+                imp = keep; }
+            string base = rule.rfind("df-", 0) == 0 ? rule.substr(3) : rule;
+            if (base == "switch-all") { vector<int> nw = strat; for (int v = 0; v < g.n; v++) if (g.owner[v] == 0) { int b = g.succ[v][0]; for (int w : g.succ[v]) { int c = e.cmp(val[w], val[b]); if (c > 0 || (c == 0 && w > b)) b = w; } if (e.cmp(val[b], val[strat[v]]) > 0) nw[v] = b; } strat = nw; }
+            else if (base == "random-edge") { auto [v, w] = imp[rng() % imp.size()]; strat[v] = w; }
+            else if (base == "zadeh") { auto best = imp[0]; long bc = entered[best]; for (auto& ed : imp) { long c = entered[ed]; if (c < bc || (c == bc && ed < best)) { best = ed; bc = c; } } entered[best]++; strat[best.first] = best.second; }
+            else if (base == "cunningham") { pair<int,int> pick = {-1,-1}; for (auto& ed : imp) if (ed > last && (pick.first < 0 || ed < pick)) pick = ed; if (pick.first < 0) pick = *min_element(imp.begin(), imp.end()); last = pick; strat[pick.first] = pick.second; }
+            else if (base == "index") { auto best = *min_element(imp.begin(), imp.end()); strat[best.first] = best.second; }
+            else if (base == "most-improved") { // S7: switch maximising the number of vertices whose valuation strictly improves;
                 // ties: best new valuation at v (cmp), then smallest (v, w) (index; non-invariant last resort, counted in ties_idx)
                 pair<int,int> best = {-1,-1}; long bc = -1; Val bv; vector<int> bs;
                 for (auto& ed : imp) { vector<int> s2 = strat; s2[ed.first] = ed.second; const auto& v2 = e.evaluate(s2).first;
@@ -175,8 +184,8 @@ int main(int argc, char** argv) {
                     if (better) { best = ed; bc = c; bv = v2[ed.first]; bs = s2; } }
                 if (trace) { long tot = 0; for (int x = 0; x < g.n; x++) tot += val[x].len; fprintf(stderr, "T it=%ld v=%d w=%d count=%ld improving=%zu sumlen=%ld\n", it, best.first, best.second, bc, imp.size(), tot); }
                 strat = bs; ties_idx_global = ties_idx; }
-            else if (rule == "msf" || rule == "lsf") { auto best = imp[0]; int bl = e.level3(val[strat[best.first]], val[best.second]);
-                for (auto& ed : imp) { int l = e.level3(val[strat[ed.first]], val[ed.second]); bool better = rule == "msf" ? (l > bl || (l == bl && ed < best)) : (l < bl || (l == bl && ed < best)); if (better) { best = ed; bl = l; } }
+            else if (base == "msf" || base == "lsf") { auto best = imp[0]; int bl = e.level3(val[strat[best.first]], val[best.second]);
+                for (auto& ed : imp) { int l = e.level3(val[strat[ed.first]], val[ed.second]); bool better = base == "msf" ? (l > bl || (l == bl && ed < best)) : (l < bl || (l == bl && ed < best)); if (better) { best = ed; bl = l; } }
                 strat[best.first] = best.second; }
             else { fprintf(stderr, "unknown rule\n"); return 1; } }
     }

@@ -15,13 +15,16 @@ ap.add_argument("--steps", type=int, default=400); ap.add_argument("--samples", 
 ap.add_argument("--start", default="best"); ap.add_argument("--budget", type=float, default=1e9, help="seconds per n")
 ap.add_argument("--sink", action="store_true", help="1-sink games (Friedmann 1106.0778 sec. 5): vertex 0 = Odd sink of priority 1 with a self-loop, reachable from every vertex, every other priority >= 2")
 ap.add_argument("--tag", default="")
+ap.add_argument("--dag", action="store_true", help="one-player acyclic sink games: all vertices Even, edges only to lower indices, sink 0 (implies --sink)")
+ap.add_argument("--bin", default="vjfast", help="fast engine binary name (in the lane dir)")
 ap.add_argument("--engine", default="py", choices=["py", "fast"], help="fast: vjfast per sample (subprocess)")
 ap.add_argument("--objective", default="iters", choices=["iters", "escapes"], help="escapes = cycle-creating switches (play notion) after which no cycle node changes (msf-type rules only)")
 a = ap.parse_args()
+if a.dag: a.sink = True
 
 
 import subprocess, tempfile
-FAST = os.path.join(HERE, "vjfast")
+FAST = os.path.join(HERE, a.bin)
 
 
 def score(g):
@@ -74,9 +77,10 @@ def mutate(g, rng, n):
         if k == 0:
             prio[v] = rng.randrange(2 if a.sink else 0, n + 2)
         elif k == 1:
-            owner[v] ^= 1
+            if not a.dag: owner[v] ^= 1
         elif k == 2:
-            w = rng.randrange(n)
+            w = rng.randrange(v) if a.dag else rng.randrange(n)
+            if a.dag and v == 0: continue
             if w not in succ[v]:
                 succ[v].append(w)
         elif k == 3:
@@ -92,8 +96,12 @@ def mutate(g, rng, n):
 
 def rand_game(rng, n):
     while True:
-        g = pg.Game([rng.randrange(n + 2) for _ in range(n)], [rng.randrange(2) for _ in range(n)],
-                    [sorted(rng.sample(range(n), rng.randint(1, min(n, 3)))) for _ in range(n)])
+        if a.dag:
+            g = pg.Game([rng.randrange(n + 2) for _ in range(n)], [0] * n,
+                        [[0]] + [sorted(rng.sample(range(v), rng.randint(1, min(v, 3)))) for v in range(1, n)])
+        else:
+            g = pg.Game([rng.randrange(n + 2) for _ in range(n)], [rng.randrange(2) for _ in range(n)],
+                        [sorted(rng.sample(range(n), rng.randint(1, min(n, 3)))) for _ in range(n)])
         if a.sink:
             g.prio[0], g.owner[0], g.succ[0] = 1, 1, [0]
             for v in range(1, n):
