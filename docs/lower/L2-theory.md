@@ -64,12 +64,24 @@ Notation: e = the Even vertex, a, b, c = the Odd vertices; "pattern {a}" means P
 | one Even vertex e, ONE priority pattern (each of {a}, {e}, {a,b}, {a,e}, {a,b,c}, {a,b,e}, {a,b,c,e} separately) | 50 625 each | SAT | every single pattern is solved by 6 |
 | one Even vertex, all patterns with |P_2| = 1; all with |P_2| = 2 | 202 500; 303 750 | SAT; SAT | |
 | one Even vertex, patterns {a} and {a,b} (e ∉ P_2) | 101 250 | UNSAT | two patterns suffice; also {a} and {b,c} |
-| one Even vertex, patterns {e} and {a,b}; {a} and {a,e} | 101 250 each | SAT | e ∈ P_2 in one of the two patterns: 6 suffice |
+| one Even vertex, patterns {e}, {a,b}, {a,c}, {b,c}; patterns {a}, {b}, {c}, {a,e}, {b,e}, {c,e} | 202 500; 303 750 | SAT; SAT | e ∈ P_2 in some of the patterns: 6 suffice |
 | patterns {a}, {a,b}; every out-degree ≤ 2, e of out-degree 2 | 12 000 | UNSAT | |
-| the same with no self-loop anywhere; no loop at e; no loop at a; no loops at b, c | 4 802; 6 000; 7 200; 4 320 | SAT | loops at e, at a and at b or c are all needed |
+| patterns {a}, {a,b}, any out-degrees, no self-loop anywhere | 4 802 | SAT | loops are needed |
+| the bounded-degree class above with no loop at e; no loop at a; no loops at b, c | 6 000; 7 200; 4 320 | SAT | loops at e, at a and at b or c are all needed |
 | **K**: patterns {a}, {a,b}; EVERY vertex has out-degree exactly 2 | 2 592 | UNSAT | core_exact_k6.json: 28 games, 112 vertices |
 | K with out-degree of c = 1 instead (a, b, e of out-degree 2) | 1 728 | UNSAT | core_d2221_k6.json: 32 games |
 | out-degrees (e, a, b, c) = (2, 2, 1, 1); K with a loop at e in every game | 1 152; 1 296 | SAT | |
+**The count of priority-2 vertices (all 16 owner patterns allowed; cegar_owner.py with all masks; result_all_*.log).**
+| 4-vertex games by |P_2| (any owners, any edges) | games | 6 gates |
+| --- | --- | --- |
+| |P_2| = 1 | 3 240 000 | SAT (5: UNSAT) |
+| |P_2| = 2 | 4 860 000 | SAT |
+| |P_2| = 3; |P_2| ≤ 1; |P_2| ∈ {0, 3} | 3 240 000; 4 050 000; 4 050 000 | SAT |
+| |P_2| ∈ {1, 3}; {2, 3}; {1, 4}; {2, 4}; {3, 4} | 6 480 000; 8 100 000; 4 050 000; 5 670 000; 4 050 000 | SAT |
+| |P_2| ∈ {1, 2} | 8 100 000 | UNSAT (contains K) |
+Reading: of all pairs of counts, ONLY {1, 2} forces the 7th gate. A vertex-anonymous program cannot count P_2 (R2); for
+every class with a single count, or with any pair of counts other than {1, 2}, 6 gates suffice; serving |P_2| = 1 and
+|P_2| = 2 by one program costs the 7th. (Why {1, 2} and not {2, 3} is not understood.)
 Reading (data, no theorem): both pure classes cost 6 = 2n − 2; the 7th gate is a cost of MIXING ◇-vertices and
 □-vertices, one minority vertex is enough, and it needs two priority patterns at once (a program for a fixed pattern exists
 with 6 gates, but no single 6-gate program serves {a} and {a,b} together), self-loops, and branching (out-degree 2) at
