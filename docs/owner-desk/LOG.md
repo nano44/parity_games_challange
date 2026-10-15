@@ -31,3 +31,7 @@ Relayed verbatim to the Lead. Q3 marked done (owner set the setup script; takes 
 ## 2026-10-15 08:07Z Lead (relayed to owner)
 Q5 closed (Lead reading L17, trunk 4fb2884), on L-LIT T11 (l-lit 933dc12): DTR15-4 very likely the chapter text; T-A1 stays NEW;
 psolC noted as a new candidate, not started.
+
+## 2026-10-15 07:55Z owner (progress question)
+> So my question is, did we find alredy some novelty?
+Answered from docs/RESULTS.md (trunk 3888882), docs/lit/T10, T11. Relayed verbatim to the Lead.
