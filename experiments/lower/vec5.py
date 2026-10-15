@@ -55,7 +55,13 @@ def ref_W(S, p2mask, k):
 
 
 def eval_prog(prog, S, p2mask, k):
+    """Gate values are freed after their last use (a decoded SAT program has thousands of Boolean gates)."""
     full = (1 << k) - 1
+    last = [i for i in range(len(prog))]
+    for i, g in enumerate(prog):
+        if g[0] != "P":
+            for j in g[1:]:
+                last[j] = i
     val = [None] * len(prog)
     for i, g in enumerate(prog):
         t = g[0]
@@ -75,7 +81,10 @@ def eval_prog(prog, S, p2mask, k):
             val[i] = cpre(val[g[1]], S, k)
         else:
             raise ValueError(g)
-        # free intermediate memory of gates no longer needed: keep simple (k small)
+        if g[0] != "P":
+            for j in g[1:]:
+                if last[j] == i and j != len(prog) - 1:
+                    val[j] = None
     return val[-1]
 
 
