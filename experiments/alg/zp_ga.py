@@ -53,8 +53,15 @@ def crossover(a, b, K, rnd):
     return (swap, shift, edges)
 
 
+SOLVER = None   # None: ZP calls; else an Oink solver name, fitness = Oink's work counter (oink_fit.work)
+
+
 def fitness(gn, K):
-    z = zp.ZP(decode(gn, K)); z.run()
+    g = decode(gn, K)
+    if SOLVER:
+        import oink_fit
+        return oink_fit.work(g, SOLVER)
+    z = zp.ZP(g); z.run()
     return z.calls
 
 
@@ -63,6 +70,10 @@ def main():
     K, gens, seed = int(args[0]), int(args[1]), int(args[2])
     opt = lambda k, d: sys.argv[sys.argv.index(k) + 1] if k in sys.argv else d
     pop_n = int(opt("--pop", 60)); tag = opt("--tag", f"K{K}_s{seed}")
+    global SOLVER
+    SOLVER = opt("--oink", None)
+    if SOLVER:
+        tag = f"{SOLVER}_" + tag
     rnd = random.Random(seed)
     pop = [rand_genome(K, rnd) for _ in range(pop_n)]
     if "--double" in sys.argv:        # seed with two tiled copies of a K/2 genome (self-similar families), plus mutants
@@ -87,10 +98,10 @@ def main():
     best_c, best_g = scored[0]
     g = decode(best_g, K); ref = zielonka.solve(g); z = zp.ZP(g); win = z.run()
     assert win == ref
-    pg.write(g, os.path.join(HERE, "instances", f"zp_ga_K{K}_n{g.n}_calls{best_c}.pg"))
+    pg.write(g, os.path.join(HERE, "instances", f"{'oink_' + SOLVER if SOLVER else 'zp'}_ga_K{K}_n{g.n}_calls{best_c}.pg"))
     with open(os.path.join(HERE, "out", f"zp_ga_{tag}.jsonl"), "w") as f:
         f.write(json.dumps(alglib.game_record(g, ref, calls=best_c, K=K, genome=[best_g[0], best_g[1], best_g[2]])) + "\n")
-    print(f"K={K}: best ZP calls {best_c} (n={g.n}); plain Zielonka calls {(lambda z: (z.run(), z.calls)[1])(zp.ZP(g, False)) if g.n <= 40 else '-'}")
+    print(f"K={K}: best {'oink ' + SOLVER + ' work' if SOLVER else 'ZP calls'} {best_c} (n={g.n}); plain Zielonka calls {(lambda z: (z.run(), z.calls)[1])(zp.ZP(g, False)) if g.n <= 40 else '-'}")
 
 
 if __name__ == "__main__":
