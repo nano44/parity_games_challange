@@ -165,3 +165,4 @@
 - 18:06Z C3c a72db07 merged: §1.0 PASS. N-1..N-4 to L-ALG with next interim reply (N-3 before referees).
 - 18:08Z L-ALG 272b303: piece refinement fails on tc+; GAP-A frontier = re-cut later pieces. Candidate invariant to L-RED. L-ALG: apply C3c notes then park.
 - 18:09Z L-ALG parked 8f2cb45: determinacy any X = step (3) only; break event to L-RED. C3c N-notes still to apply at resume.
+- 18:11Z L-ALG ed9b87e: C3c N-1..N-4 applied (K5(ii) duplicate routed to beta'). Parked.
