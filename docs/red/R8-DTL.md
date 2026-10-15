@@ -429,10 +429,22 @@ dominions in search 1, so the straddle never forms (the higher regions must stay
 the two walls of section 10). No instance of (α) or (β') was reached in this box; the proof lane's c3/c4 and my ladders
 all end in the same collapse (an open higher region is pruned or closes into a dominion whose attractor absorbs the
 straddling candidate). Status: (α)/(β') unrealised, consistent with (r1) holding empirically.
-GAP-A str-change count at a fixed region vertex set: not measured directly (needs per-region strategy dumps, which
-only the debug build's -t -t -t attraction events give; not parsed in this box). The proxies of sections 2 and 9 stand:
-0 strategy changes between tangles containing the same Even vertex in 19,000 games except thefts, and at most one
-tangle per head per search by W.
+GAP-A str-change count at a fixed region vertex set (Lead 17:36Z item 1): MEASURED. The detector build also prints
+"SPTL top X" before each sptl region's attractor, "DOM top X" and "SOLVE attractor" before the removal attractors; at
+-t -t -t every attraction event is printed ("attracted v by p (via w | forced | via tangle t)"). experiments/red/dtl/
+dtl_strchanges.py rebuilds every sptl region (top + attracted vertices) with the strategy of each Even vertex (w, or the
+strategy stored in tangle t from its "new tangle" line) and counts, for every (top, region vertex set) that occurs more
+than once in the run, how often an Even vertex's strategy differs from its previous occurrence at the same pair:
+| game | sptl regions | distinct (top, set) | pairs seen more than once | max repeats of one pair | max distinct sets at one top | strategy changes at a fixed (top, set) |
+| --- | --- | --- | --- | --- | --- | --- |
+| tc+ N = 4, 5, 6, 7, 8, 10 | 118, 202, 320, 478, 682, 1252 | 57, 82, 111, 144, 181, 267 | 26, 38, 52, 68, 86, 128 | 9, 14, 20, 27, 35, 54 | 9, 11, 13, 15, 17, 21 (= 2N + 1) | 0, 0, 0, 0, 0, 0 |
+| evolved n = 24 / two-player n = 20 (injective) | 594 / 155 | 78 / 48 | 22 / 20 | 55 / 15 | 5 / 4 | 0 / 0 |
+| perturbed counter_dftl 6 / counter_odftl 6 / tc+ 3 (injective) | 600 / 680 / 513 | 133 / 159 / 134 | 37 / 47 / 50 | 68 / 53 / 29 | 11 / 10 / 9 | 0 / 0 / 0 |
+| tc 4 / counter_odftl 8 / chain 40 | 40 / 112 / 821 | 20 / 38 / 79 | 14 / 18 / 39 | 3 / 9 / 39 | 4 / 4 / 2 | 0 / 0 / 0 |
+So the open quantity of GAP-A is ZERO on every game measured: a region with the same top and the same vertex set
+always gets the same Even strategies, even when the pair recurs 68 times; what grows is the number of distinct vertex
+sets at one top, and that grows linearly (2N + 1 on tc+, at most 11 elsewhere). Climbs with fitness = strategy changes
+at a fixed pair (detector build, self-loop and renumbering mutations, n = 12, 16): STRCH-PLACEHOLDER
 
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.

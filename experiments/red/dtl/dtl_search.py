@@ -2,7 +2,7 @@
 """Free-form hill-climb over small parity games maximising Oink DTL's learned-tangle count (L-RED, DTL box).
 Fitness = tangles found by `oink --dtl --no-single --no-wcwc --no-loops` (raw solver, no preprocessing, self-loops kept;
 before 16:02Z the runs used --no-single --no-wcwc only). Mutations: add/remove an edge,
-change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
+change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha|strch] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
 import sys, os, random, subprocess, tempfile, time, re
 oink, n = sys.argv[1], int(sys.argv[2]); arg = lambda k, d: type(d)(sys.argv[sys.argv.index(k) + 1]) if k in sys.argv else d
 steps, seed, maxpr = arg("--steps", 20000), arg("--seed", 0), arg("--maxpr", 2 * int(sys.argv[2])); rng = random.Random(seed)
@@ -23,7 +23,7 @@ def dumps(g):
 def score(g):
     open(tmp, "w").write(dumps(g))
     try:
-        r = subprocess.run([oink, SOLVER] + OINKFLAGS + (["-t", "-t"] if fitness.startswith("per") or fitness in ("prunemono", "dups", "alpha", "straddles") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
+        r = subprocess.run([oink, SOLVER] + OINKFLAGS + (["-t", "-t", "-t"] if fitness == "strch" else ["-t", "-t"] if fitness.startswith("per") or fitness in ("prunemono", "dups", "alpha", "straddles") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
     except subprocess.TimeoutExpired:
         return 10 ** 6          # a timeout is interesting in itself
     if fitness in ("unsolved", "wrong"):
@@ -34,6 +34,12 @@ def score(g):
             out = r.stdout + r.stderr
             bad = 1000 if ("error" in out.lower() or "verified" not in out) else 0
         return n - solved + bad
+    if fitness == "strch":          # GAP-A: strategy changes at a fixed (top, region set), detector build at -t -t -t
+        import importlib.util, os as _os
+        spec = importlib.util.spec_from_file_location("sc", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "dtl_strchanges.py"))
+        sc = importlib.util.module_from_spec(spec); spec.loader.exec_module(sc)
+        out = re.sub(r"\x1b\[[0-9;]*m", "", r.stdout + r.stderr)
+        return sum(sc.measure(out)[2].values())
     if fitness in ("alpha", "straddles"):
         # with the L-RED detector build (scratchpad oink-det): "STRADDLE tangle ..." lines at every stable pruning result,
         # "REGION top X closed 0/1" lines from sptl. straddles: count of STRADDLE lines. alpha: stable sets that have a
