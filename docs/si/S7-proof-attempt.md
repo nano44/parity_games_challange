@@ -86,6 +86,29 @@ plus steepest-edge choice limits re-openings to poly(n) is exactly what L-RED's 
 would have to exploit the second criterion (steepest edge: Ξ_e(v) maximal), which the attempt above never used beyond
 tie-breaking; nothing here shows it is needed or sufficient.
 
+## 4b. Input from L-RED (R3 section 3b, claude/l-red 7da31f7; UNREFEREED, credited to L-RED), and what it does to Gap P1
+Two ingredients, both unrefereed:
+(1) Lemma D ("downstream first"), as in section 1.
+(2) "Closable gates absorb their entries": in a Friedmann cycle gate (1106.0778 section 6), while the gate is closable (Odd at
+    e_i prefers d_i's default route to the exit), every play entering the gate passes its decision vertex d_i; by Lemma D the
+    closing switch at d_i then outranks every switch at a vertex whose play enters the gate, so a reopened gate re-closes
+    before anything upstream of its entries moves. L-RED's statement of what a counter would need: a selector whose
+    improvability depends on the lower bits' state while its traffic (Lemma D) does not outrank theirs; its three redesigns
+    (split entries, downward exit chains, stripped gates) all fail for stated reasons (R3 section 3b).
+Reading for the proof. (2) is a sufficient condition for a vertex to be re-closed "immediately": a vertex d whose every entry
+passes d while it is improving cannot be out-waited by its entries' corrections. Turned into a potential claim it reads:
+  Claim R (not proved): if every vertex x that can make v improving again (section 2: x upstream of v's successors) has its
+  play through v whenever v is improving, then between two switches at v some vertex NOT upstream of v must switch, and such
+  a switch never changes v's successors' valuations ... [this last step is FALSE in general: a switch at a route-incomparable
+  vertex y changes exactly up(y), which may contain v's alternative successors without containing v; that is the precise
+  shape of Gap P1 and of L-RED's "selector whose improvability depends on the lower bits' state while its traffic does not
+  outrank theirs": y = the selector, v = the reopened gate.]
+So (2) narrows Gap P1 to: vertices y that are route-incomparable to v but upstream of a successor of v (y reaches v's
+alternative w without passing v), i.e. the "entries from above" of a gate that avoid its decision vertex. L-RED shows
+Friedmann's entries cannot avoid d_i (split entries create Odd-won cycles). A proof of polynomiality would need the
+general statement: the number of times a vertex v is re-opened by switches at vertices upstream of its alternative
+successors but not of v is polynomial. Nothing here proves it; it is the sharpest form of Gap P1 at the end of the box.
+
 ## 5. Status
 Not a proof; not a disproof. Named gaps: T1 (genericity), D1-D2 (cycles in plays), P1 (re-openings by incomparable
 switches), P2 (no fixed progress order). The data on which 3.1 and 3.3 rely: experiments/si/out traces (vjfast --trace).
