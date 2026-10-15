@@ -58,3 +58,4 @@
 - 02:04Z sweep: Lead overage false; L-LOWER idle between n=5 rounds (c737c00, k>11 w1, k>8 w2), ctx 426k. l-lower CI red since 12cf510: experiments/lower/check.sh needs numpy, CI lacked it; Lead fix: pin numpy==2.5.3 in verify.yml (Lead-owned), no lane message.
 - 03:0xZ sweep: overage false; Lead ctx 99k after compaction. L-LOWER idle between rounds (9ece275; k=8,9 unrestricted running), ctx 440k. l-lower CI still red after cff959c: pip fell back to user site (not writable system site), which check.sh's python3 -I ignores. Fix: actions/setup-python 3.12 + isolated-import assert in CI. Lead miss: cff959c was pushed without reproducing the CI failure mode.
 - 03:07Z l-lower CI green at 1d4c7d2 (run 224) after trunk fe676d9 merge; CI exception closed.
+- 04:03Z sweep: overage false; Lead $51.6 ctx 142k. L-LOWER idle between rounds (1d4c7d2, CI green), $41.5 (+$7 in 2h waiting on runs), ctx 447k; one cost message: wake on verdict/crash, fallback <=60 min.
