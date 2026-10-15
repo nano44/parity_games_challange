@@ -109,6 +109,64 @@ Friedmann's entries cannot avoid d_i (split entries create Odd-won cycles). A pr
 general statement: the number of times a vertex v is re-opened by switches at vertices upstream of its alternative
 successors but not of v is polynomial. Nothing here proves it; it is the sharpest form of Gap P1 at the end of the box.
 
+## 4c. Refocus (Lead 14:01Z; L-RED R3 section 3c, claude/l-red 3bcb4d9, UNREFEREED, credited to L-RED): downstream-first runs
+Definitions (L-RED). For generic σ, u is downstream of v if v's (σ, τ)-play visits u. A single switch at v is
+downstream-first (df) if no other improving vertex is downstream of v; a run is df if all its switches are.
+Claim 1 (L-RED, from Lemma D): every S7 switch is df. Claim 2 (L-RED, antichain_check.py): every published exponential
+single-switch run the fleet ported is NOT df at a constant fraction of its steps (Bland on G_N: 4/7, 11/15, 26/31; LSF on
+M_L: 4/11, 11/26; Zadeh+index on zadehexp: 26/71, 72/155; Cunningham with PGSolver's ordering: 19/38 ... 516/799; MSF on
+gated_bland: 26/31). Claim 3 (L-RED): Friedmann-spine gate counters cannot have a df exponential run.
+THE STATEMENT S7 NOW RESTS ON (Lead's formulation): "every downstream-first single-switch improvement run in a sink game has
+length poly(n)". If true, S7 is polynomial in iterations on sink games (Claim 1), with Gap W for general games; if some
+polynomial family has an exponential df run that pads can make route-maximal, S7 dies.
+
+Data, df-filtered rules (L-SI, vjfast df-*: the base rule restricted to df switches; 15:05Z), on the counters that kill the
+unfiltered rules (best-reward start; M_L from σ_0; G_n from σ_0):
+| rule (df-filtered) | zadehexp N = 4, 6, 8, 10 | M_L L = 4..10 | DLMM G_n n = 4..12 | gated_bland N = 4..10 | switchallexp N = 2, 4, 6 |
+|---|---|---|---|---|---|
+| df-lsf | 45, 87, 137, 195 | 4, 6, 8, 10 | 1 | 1 | 43, 98, 152 |
+| df-index (Bland) | 63, 171, 351, 619 | 4, 6, 8, 10 | 1 | 1 | 43, 125, 237 |
+| df-zadeh | 83, 133, 183, 233 | 4, 6, 8, 10 | 1 | 1 | 60, 124, 190 |
+| df-cunningham | 27, 47, 73, 93 | 4, 6, 8, 10 | 1 | 1 | 36, 62, 90 |
+| df-msf | 43, 61, 79, 97 | 4, 6, 8, 10 | 1 | 1 | 33, 67, 101 |
+Unfiltered on the same games: lsf 2^(L+1) on M_L, Bland 2^n - 1 on G_n, msf 2^N - 1 on gated_bland, zadeh ~16N² on
+zadehexp. The df restriction alone collapses every counter in the bench to linear or quadratic growth, whichever base rule
+is applied inside it (OBSERVED). Adversarial searches for the worst df run (df-index and df-lsf, one-player acyclic sink games
+and two-player sink games, n ≤ 14, fast engine): results appended below when finished.
+
+Proof attempt for the df statement, one-player acyclic sink games first (all vertices Even, edges toward the sink, so the
+play is the σ-path and "downstream" is "later on the σ-path"):
+  Setting: val(x) = the set of vertices on x's σ-path (above the sink), ordered lexicographically by rank (length as a last
+  component). x is settled if val(x) = val*(x), the optimum. The sink is settled. x is improving iff some successor w has
+  val(w) ≻ val(σ(x)).
+  Lemma A (PROVED): on a σ-path with no improving vertex, let u be the last unsettled vertex (closest to the sink). Then
+  σ(u) is settled, u has an unsettled alternative successor w* (an optimal successor) with val(w*) ≺ val*(w*), and
+  val(w*) ⪯ val(σ(u)) = val*(σ(u)) ⪯ val*(w*). (From non-improving at u and settledness after u.)
+  Consequence: a df switch at v happens only while the vertices after v on its path are either settled or "blocked" (their
+  optimal successor is itself unsettled). The switch at v moves σ(v) to its best current successor w.
+  Gap DAG-1 (the gap): no potential proved. The candidates tried: (i) number of settled vertices (non-decreasing, PROVED;
+  not shown to increase within poly many df switches: a df switch at v settles v only if its best current successor is
+  settled AND optimal, which fails when the optimal successor is blocked); (ii) number of (x, w) pairs with val(w) = val*(w)
+  (non-decreasing; same problem); (iii) depth-ordered lexicographic value vector (progress only if df switches were taken
+  deepest-first, which df does not require: df allows switching a shallow vertex while deep improving vertices exist OFF its
+  path, e.g. under its alternative successors, and that is exactly how a lower bit could be "counted up" while a higher one
+  waits; Claim 2 shows the known counters still needed non-df steps, which is evidence, not a proof).
+  Observation (OBSERVED, antichain data of L-RED): in a one-player game a vertex's improvability depends on bits of its own
+  path only, so a counter's "bit 1 observes bit 2" forces bit 2 downstream of bit 1 and the df condition then orders the
+  switches deepest-first on that path; whether a one-player DAG can encode a counter without this (bits observing each
+  other through disjoint paths that merge below) is the open content of Gap DAG-1.
+Two-player sink games: Gap O (observation through Odd). An Odd vertex y on v's play with an alternative route through a
+  vertex z not on v's play lets a switch at z (not downstream of v, possibly df) change v's valuation by rerouting y. So
+  "dependence = downstream" fails, and the df condition no longer forces deepest-first processing of dependent switches.
+  L-RED's Claim 3 covers Friedmann-spine gates (where the entries pass the decision vertex); a general argument is missing.
+  This is where L-SI expects a construction, if one exists.
+Gap W (sink games WLOG?): no reduction known to L-SI. Friedmann 1106.0778 section 5 introduces sink games as a construction
+  device, not as a normal form; PGSolver's cheap-escape transformation (transformations.ml:271-320, ported in
+  experiments/hard-families/pgsolver_si.py for switch-best) adds to every vertex an escape to a losing cycle of the lowest
+  priorities, preserving winners, but L-SI has not shown that every run from the best-reward start is then sink-seeking.
+  In general games the cycle component changes at most n² times (notes 11:35Z, S9), so a bound for sink-seeking stretches
+  would give a bound for general games only with an argument that stretches between cycle changes behave like sink games.
+
 ## 5. Status
 Not a proof; not a disproof. Named gaps: T1 (genericity), D1-D2 (cycles in plays), P1 (re-openings by incomparable
 switches), P2 (no fixed progress order). The data on which 3.1 and 3.3 rely: experiments/si/out traces (vjfast --trace).
