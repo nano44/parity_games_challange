@@ -29,7 +29,10 @@ Playbook: docs/sources/fleet-playbook.md. Literature map (secondary source): doc
 - L-LIT: docs/lit/. L-COMP: experiments/ (except experiments/weak-sep/, experiments/attr/, experiments/lower/), scripts/setup_oink.sh. REFEREE: docs/referee/. L-FORMAL: lean/.
 - L-STRUCT: docs/struct/, experiments/weak-sep/.
 - L-ATTR: docs/attr/, experiments/attr/.
+- REFEREE-2: docs/referee-2/ (independent second referee; reads docs/referee/ only after its own report).
 - L-LOWER: docs/lower/, experiments/lower/.
+- CHECKER: docs/checker/ (landing gate: exact-commit re-runs and statement diffs).
+- HUMAN-DESK: docs/HUMAN-REVIEW.md (packet for a human expert; owner decides any contact).
 - Lead only: CLAUDE.md, TARGET.md (drafts; owner approves), docs/*.md, docs/agents/, scripts/verify.sh, .github/.
 
 ## Commands
