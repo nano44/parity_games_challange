@@ -2,6 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
+2026-10-15 09:00Z. A3-psolC DONE: docs/attr/A3-psolC-results.md final (n=4: psolC partial on 1,380 of 27.3M, Thm 4 holds on all, psolQ-decided ⊆ psolC-decided on all); reported to the Lead; parked. Earlier:
 2026-10-15 08:20Z. Task A3-psolC (Lead 08:00Z, 6 h box to 14:00Z): psolC (HKP DTR15-4 Fig. 5) implemented in
 experiments/attr/psolc.py, line map docs/attr/psolC-impl.md (ambiguity A1: start colour, literal reading used), validation
 a3_validate.py PASS (DTR Ex. 1-3, Fig. 8). Running: a3_exhaustive.py 4 (out/a3_log_n4.txt, ~35 min), a3_families.py

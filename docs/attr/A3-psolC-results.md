@@ -25,7 +25,7 @@ strategies verified, Thm 4 per node holds.
 | --- | --- | --- | --- | --- | --- |
 | n = 2, all 240 canonical | 232 | 240 | 240 | 240 | holds |
 | n = 3, all 41,440 canonical | 38,380 | 41,396 | 41,440 (all) | 41,414 | holds |
-| n = 4, all 27,331,200 canonical | N4B | N4Q | N4C | N4X | N4T |
+| n = 4, all 27,331,200 canonical (2,014 s, 3 workers) | 24,363,696 | 27,255,344 | 27,329,820 (1,380 partial, all with every vertex undecided) | 27,282,492 | holds |
 | n = 5-8, 60,000 random canonical (15,000 per n) | - | - | 59,990 (10 partial: 2/3/1/4 at n = 5/6/7/8) | - | holds |
 | n = 8-40, 4,000 gen.py corpus games | - | - | 3,999 | - | holds |
 Inclusions (per node): psolB-decided ⊆ psolC-decided (Thm 4) on every game run; psolQ-decided ⊆ psolC-decided on every
@@ -33,6 +33,9 @@ game run (not a theorem of DTR; a data fact; DTR Fig. 8 shows the converse fails
 PA** (= psolB complete by T-A1) ⊊ Solved(psolC): the strict inclusion L-LIT derived is visible at n = 3 (3,060 games
 psolB leaves partial, all solved by psolC) and in Fig. 8.
 
+At n = 4 the 1,380 psolC-partial games are all psolB- and psolQ-partial too, all have every vertex undecided, and by edge
+count they are 48 / 120 / 300 / 360 / 318 / 174 / 54 / 6 games at m = 6 .. 13. The literal reading beats the example's reading
+(psolC-x) on 47,328 games and never loses to it.
 Smallest games psolC leaves partly unsolved: n = 4, m = 6 (exhaustive n <= 3: none). One shape (up to owners of the
 irrelevant vertices and the player swap): experiments/attr/instances/psolc_min_n4_m6.pg
 ```
