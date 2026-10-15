@@ -580,6 +580,25 @@ Proof by induction over the push order of Z_τ(s).
  (V-tops) The top part of (M-cross) (first-piece tops only grow) then follows from R-mono plus the survival condition:
    a top τ of s is a non-candidate or rescued through sets (Reg, A_t) that only grow by R-mono and 1.2b, except through the
    same nested-tangle case. SKETCH.
+Lemma D (distinct region sets per top; PROVED given Lemma R-mono for all first-piece tops, deletion-free phase). Fix a
+phase and a vertex v. Over the searches of the phase, consider the first-piece region containing v (or "none"). By
+R-mono applied to the top τ_v of that region, in every later search v is in the region of τ_v or of a higher top, or is
+solved; so the sequence of tops holding v is non-decreasing in sptl order and ends when v is solved. Hence for a fixed
+top τ, v's membership in Z_τ changes at most twice (enters from below or from "none", later leaves upward or is solved,
+never returns), and the sequence of sets Z_τ over the phase has at most 2n + 1 distinct values. With Lemma S and (a1),
+the tangles extracted at τ in first pieces over the phase are at most 2n + 1, and over all tops at most n(2n + 1) per
+phase, plus one per deleted tangle (caveat below). □ (modulo R-mono). What this leaves for D2(a): the tangles learned in
+later pieces of a search (after Dom(V*, R) → X or a -1 branch) and inside the recursion, where the consumed set
+includes X and R-mono/Lemma S were not proved; the measurement below shows where the tangles come from.
+Measurement (experiments/alg/dtl_firstpiece.py, release trace: tangles between the first (stable) and second "best vertices"
+line of a search = first piece): tc+ N = 4, 6, 8, 10, 12: first-piece 7, 11, 15, 19, 23 (= 2N − 1), later pieces/recursion 23,
+47, 79, 119, 167 (≈ 1.2 N²); tc N = 8, 16: first-piece 2, 2, later 15, 31; 2,000 random games: first-piece 577, later 106.
+So Lemma D covers exactly the linear part of tc+; the quadratic bulk is learned in LATER pieces (after Dom(V*, R) → X or
+a -1 branch) — the regions there are computed with X forgiven and X differs between searches, so Lemma S's step (3) and
+R-mono do not transfer as stated. This is the sharpened GAP-A: bound the tangles learned in pieces with X ≠ ∅. The
+natural extension is to treat each later piece as a first piece of the subgame R_i^♭ (exits to X forgiven) and to prove
+R-mono for the sequence of (R_i, X_i) pairs across searches; what is unknown is whether the pieces of search s+1 refine
+those of search s (they did in c3: search 1 had pieces {m,r}, {w,x}, then stable; search 2 was stable at once).
 Caveat on (M-cross) (18:15Z). One mechanism provably breaks region monotonicity across searches: tangle DELETION. When a
 dominion is solved, every vertex v of it leaves G' and every tangle containing v is deleted at its next use (132-135). A
 region that in s1 attracted such a tangle t as a unit may, in s2, fail to attract the unsolved remainder Y' of U_t by
