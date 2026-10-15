@@ -167,3 +167,4 @@
 - 18:09Z L-ALG parked 8f2cb45: determinacy any X = step (3) only; break event to L-RED. C3c N-notes still to apply at resume.
 - 18:11Z L-ALG ed9b87e: C3c N-1..N-4 applied (K5(ii) duplicate routed to beta'). Parked.
 - 18:30Z L-RED 58f4f27 merged: (D) linear per top all pieces; removal-order invariant false; earlier 'new tangles at recurring pair = 0' was vacuous, corrected (1 and 7, all W-blocked first occurrences). L-RED handover requested (>600k). L-COMP successor session_01Nd4XCMfDaYHsh1P6XTtRGz created for DTL step 2.
+- 18:33Z L-COMP successor 5/5; merged l-comp (incl. 12 old sat-hard commits); GO for DTL step 2.

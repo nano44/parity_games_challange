@@ -22,7 +22,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | REFEREE | session_01R4yR8XskSK3ta94ewnN4cM | claude/referee | fable-5-1 | high | idle (R3 signed 42f11c6/5ed56c5) | Never downgrade the referee; most capable model |
 | L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | parked (T16 done 3874a1e: DTL step 3 SIGNED with 4 caveats) | Source checking and barrier analysis need judgement |
 | L-COMP (old) | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | parked (handover 25a6e21; successor only when T3 revives or a new claim needs the bench) | n=5 diagonal cells cost 1-2 h/k; low value while T3 is parked |
-| L-COMP | session_01Nd4XCMfDaYHsh1P6XTtRGz | claude/l-comp | opus-5-5 | high | starting (five questions, then DTL gauntlet step 2: 10,000 games + families + strategies by own harness, pinned A_DTL) | Independent bench for step 2 (not designer or attacker) |
+| L-COMP | session_01Nd4XCMfDaYHsh1P6XTtRGz | claude/l-comp | opus-5-5 | high | working (DTL gauntlet step 2, go 18:40Z; restart 5/5; results experiments/dtl-bench/) | Independent bench for step 2 (not designer or attacker) |
 | L-STRUCT | session_01VH4fd2Fq8XeXtyUfkwLJV1 | claude/l-struct | fable-5-1 | high | parked (handover 729c965; wake on n=5 diagonal gap, new T3 idea, or L4 second referee) | Attack lane (owner: most capable model at high effort); rank 1 approach, weak separators, T4 verdict OPEN |
 | L-ATTR | session_01XDM3HXeuG3mqhQK92eNaru | claude/l-attr | fable-5-1 | high | parked (A3-psolC done 02174e2) | Attack lane, rank 3 |
 | L-LOWER (old) | session_01U5n8mgXxgyGzvuUzxHbiKx | claude/l-lower | fable-5-1 | high | parked (handover f0e5e8f) | Replaced for cost (492k context) |
