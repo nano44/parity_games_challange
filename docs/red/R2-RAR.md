@@ -108,6 +108,33 @@ these sizes, like L-SI's n^1.8 on randomfacetsubexp. This is expected: Theorem 6
 with n (the gadgets make the random counter's bit order hold with high probability only for large n); the tables are
 consistency data, not the kill. The kill is the theorem plus the lemma.
 
+## Why FHZ did not state the parity-game consequence themselves (the Lead's referee question)
+Both texts were searched for every mention of parity games, MDPs and the reason for the shortest-path setting.
+- 1410.7530 abstract (p.1): "We previously showed that Random-Facet performs an expected number of 2^Omega~(m^{1/3}) pivoting
+  steps on some LPs with m inequalities that correspond to m-action Markov Decision Processes (MDPs). ... Here we show that the
+  same results can be obtained using LPs that correspond to instances of the classical shortest paths problem. This shows that
+  the stochasticity of the MDPs, which is essential for obtaining lower bounds for Random-Edge, is not needed in order to obtain
+  lower bounds for Random-Facet."
+- 1410.7530 section 1 (p.2): "The lower bound given in [17] is for parity games, a class of deterministic 2-player games. The lower
+  bounds given in [18, 23] are for LPs that correspond to Markov Decision Processes (MDPs), a class of stochastic 1-player games.
+  ... Here, we obtain subexponential lower bounds for the running times of Random-Facet, Random-Facet1P and Random-Bland on LPs
+  that correspond to standard acyclic shortest paths problems, the simplest form of deterministic 1-player games." and "It is
+  interesting, and perhaps surprising, that Random-Facet, the fastest known pivoting rule for general linear programs, requires a
+  subexponential number of pivoting steps even for acyclic shortest paths problems which can be easily solved in linear time."
+- 1410.7530 section 3 (p.7): "we show that such lower bounds ... can be obtained using linear programs that correspond to the purely
+  combinatorial problem of finding shortest paths in directed graphs. The graphs we use are even acyclic and all their edge weights
+  are non-negative."
+- errata 1410.7871 (p.2): "The proof in [5] was presented for Markov decision processes. In [3] we transfer the lower bound
+  construction to the setting of shortest paths"; and, about the RF versus RF* examples only: "It is not difficult to obtain
+  similar examples for parity games."
+Nothing in either text says that the shortest-path instances cannot be, or are not, parity games, and nothing restricts the
+result to LPs for a stated reason. The papers move in one direction only, from games to ever simpler LPs ("the simplest form of
+deterministic 1-player games"), because their audience is the simplex/LP one and the point made is that stochasticity is not
+needed. The step back to parity games needs the observation of the Transfer Lemma (the costs of G_{n,r,s,t} are a lexicographic
+set order, so the VJ valuation of a sink game reproduces every improving test, ties included); it is not a general reduction from
+shortest paths to parity games, which does not exist for arbitrary additive costs (the Lead reading of this report). So: no
+remark found; the omission is explained by direction and audience, not by an obstacle they name.
+
 ## What this does not say
 - The bound is e^Omega(sqrt n) in the number of bits, 2^Omega~(M^{1/3}) in the size; it rules out polynomial expected time, not
   the subexponential upper bound of Zwick Thm 8.2.

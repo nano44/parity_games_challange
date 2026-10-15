@@ -2,14 +2,28 @@
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead.
 
 ## Resume point
-2026-10-15 ~14:30Z. R1 (MSF killed, 7a7ed5e) done. R2 (S1 Random-Action-Removal killed by FHZ 1410.7530 Thm 6.3 + transfer lemma,
-docs/red/R2-RAR.md, experiments/red/fhz.py) written, kill messaged 14:05Z; pushing now. Larger relation checks done: (8,2,3,2) 400, (10,1,1,1) 1500,
-(6,3,3,3) 300 samples, 0 differences (recorded in R2).
-Box ends ~19:20Z; idle after the push unless the Lead sends more.
-
+2026-10-15 ~15:10Z: PARKED by the Lead (weekly-limit warning; S5/S6 retarget cancelled). State: R1 (MSF killed) and R2 (S1
+Random-Action-Removal killed) pushed; the transfer lemma is with REFEREE-2. R2 now also answers the referee question "why did
+FHZ not say so" with quotes (no remark in 1410.7530 or the errata; direction and audience).
+FHZ-scaled growth run (r = t = ceil(log2 n), s = ceil(sqrt n log2 n), 12 seeds, my RF driver, scratchpad scaled.log, NOT in the
+repo): only n = 4 finished: r=2, s=4, t=2, |E| = 232, |V_P| = 357, mean 183.3, max 318. n = 6..12 were still running when parked
+(each size takes minutes to an hour); the process dies with the container. To redo: experiments/red/fhz.py `table` with those
+parameters, or the inline loop in the notebook's "Things only I know (R2)".
+If re-woken for S5 (Zadeh, index tie-break) / S6 (Cunningham, index order) on claude/l-si, what I would try first:
+- S5: Disser-Friedmann-Hopp 1911.01074 fix a designer tie-breaking rule for Zadeh's least-entered rule (T12 table: "it cannot be
+  avoided to fix a tie-breaking rule", p.3). Read their tie-break (which improving edge among the least-entered ones) and check
+  whether it is a fixed total order on edges; if so, renumber the vertices (and pad with relays, as in fhz.py, to split ties
+  that the index order cannot express) so that L-SI's "smallest v, then smallest w" reproduces it; run L-SI's zadehexp port
+  (gens.py) and the 1911.01074 game under si.py's S5 rule from the paper's initial strategy. If the paper's tie-break depends on
+  history, the gate trick (R1) can still relabel the LEVEL of each edge but not its history, so a kill needs the memory-free part.
+- S6: Avis-Friedmann 1305.3944 Thm 4 gives Cunningham's rule with a designer-chosen ordering of the edges: an index order IS an
+  ordering, so renumber the edges of their construction by the ordering (edges of one vertex are ordered by target index; if two
+  edges of the same vertex must be ordered against the index, insert a relay vertex with a chosen index). Then S6 should reproduce
+  Thm 4's run exactly; verify switch for switch as correspond.py does for Bland.
+- Either way, first read docs/si/candidates/S5.md, S6.md for the exact rule and start strategy; the adversary owns the vertex
+  numbering (TARGET.md section 1 gives no canonical order).
 ## Queue
-1. Push R2; message the SHA. 2. Optional: a growth run with FHZ's parameter
-scaling (r = t = ceil(log2 n), s = ceil(sqrt(n) log2 n)) for n up to ~16 to show the mean leaving the n^2 trend (slow).
+(parked) 1. If re-woken: S5/S6 per the resume point. 2. Optional: finish the FHZ-scaled growth run and append it to R2 (b).
 
 ## Things only I know
 - L-SI's branch is read through a detached worktree in the scratchpad (git worktree add <scratch>/lsi origin/claude/l-si);
