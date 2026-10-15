@@ -2,12 +2,20 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
-2026-10-14 23:40Z. Task R2-TA1 done: report docs/referee-2/R2-TA1.md (verdict CHANGES F1-F7; T-A1 and T-A1' OK; routed
-"psolQ iff PA**" BROKEN; routed corollary direction circular). Code and outputs in docs/referee-2/R2-TA1/. Next: wait for the
-Lead (grading of P2, lane's answers to F1-F7).
+2026-10-15 00:27Z. T-A1 signed as second referee at l-attr 57a1515 (R2-TA1.md section 8); G11 closed with a correction to HKP Thm 4's proof (minimal-rank strategy unsound; witness strategy repairs it; instance hkp_thm4_strategy.py). Idle until routed.
+Earlier 00:08Z. T-A1 revision (l-attr 4478b84) re-checked: OK, wording nit N1 (R2-TA1.md section 7). L4 signed as second referee (R2-L4.md section 7, d76c9e1). Idle until routed.
+Earlier: R2-L4 report docs/referee-2/R2-L4.md written (verdict OK with minor CHANGES F1-F3; CDFJLP Thm 5.1
+hypotheses checked; PW quote verified). Pushed; Lead messaged. May now read docs/referee/ (Lead 23:40Z) once this is pushed.
+Earlier: R2-TA1 report pushed (3ea0c97) and landed by the Lead (trunk 58b5c72). Lead's reply 23:40Z (quoted):
+"P2 grading: CAUGHT. The F5 sentence was the planted error ... F4 was not a plant ... it is a real finding. Proposition 3 is
+not part of the signed claim ... L-ATTR is revising for F1, F3, F4, F7 and possibly F2; I'll route the revision to you for a
+re-check. You may now read docs/referee/ if useful. Next queued for you, after the T-A1 re-check: the second-referee check of
+L4 (claude/l-struct 50dc28b, docs/struct/L4-proof.md). Do your own report before reading the first referee's
+(docs/referee/2026-10-14-L4-proof-check.md). Idle until routed." Idle now.
 
 ## Queue
-- On the lane's revision: re-check G8/F3 text, the new gap rows G9-G10, the corrected n = 2 row.
+1. (done) T-A1 revision re-check at 4478b84. Next: nothing routed.
+2. (done 23:58Z) L4 comparison with docs/referee/2026-10-14-L4-proof-check.md: no disagreement. Both reports make the same three black-box checks on CDFJLP Thm 5.1 (binomial unconditional, convention E, non-rejecting states), the same L4.3 chain and the sub-1 remark at n = 64; their findings 1-2 (vertex-deletion remark; b0 inequality) were already fixed at 50dc28b, the commit I refereed; my F1-F3 are additional wording remarks. Two independent signatures exist for the mathematics of L4 at 50dc28b.
 
 ## Things only I know
 - The Lead's LEAD-STATE.md records a plant P2 (sha256 2847e370…) targeting REFEREE-2; description held until verdict. My
@@ -21,7 +29,13 @@ Lead (grading of P2, lane's answers to F1-F7).
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
 | --- | --- | --- | --- |
 | arXiv 1405.0386 v2 (HKP, e-print archiv.tex, 2014-05-20) | Defs 1-8, Thm 1-8, Lemmas 1-5, Figs 1-6, Examples 1-5 (tex lines in the report) | 2026-10-14 | min-parity (tex:366-367); Fig. 3 = psolB, Fig. 5 = psolQ; Thm 6 proof is a sketch |
+| arXiv 1807.10546 v2 (CDFJLP, e-print tex) | §3.1 languages, §3.2 safety automata, §3.3 (strong) separators; §5 Thm 5.1 (binomial only), Lemma 5.1 (injection into non-rejecting states), Lemma 5.2 proof (resistance), Lemma 5.3 structure (G_t with parallel self-loops, α_t); §4 universal-tree lower bound theorem (binomial unconditional; 2h ≤ ℓ only for the closed form) | 2026-10-14 | the "because d ≤ n" remark concerns only the n^{lg(d/lg n)-2} form |
+| arXiv 2305.00308 v1 (Parys-Wiącek, e-print tex) | p.2 vertex-splitting remark (lines 85-87), §4 "necessity proof does not apply" (lines 367-368) | 2026-10-14 | quotes in L4-proof.md verified verbatim |
 | TARGET.md v1.0 | section 1 vocabulary (max-parity, successor condition, priorities 0..n) | 2026-10-14 | T-A1 uses nothing about the priority range |
 
+## Things only I know (cont.)
+- HKP Thm 4's proof text (tex:1085-1088, 'successor with minimal r') is unsound on a 3-vertex instance; the theorem holds with the witness strategy. Worth telling L-LIT for the landscape doc (B7 row) if the Lead agrees.
+
 ## Dead ends
-- None yet (no counterexample to T-A1 / T-A1' in 490,944 games; the search code is kept for the next revision).
+- R2-L4: my first brute-force test of L4.1(a) on finite prefixes "failed" on 90 graphs; cause was my test (sinks make finite prefixes of dead-end paths), not the lemma, which is about infinite paths; fixed by pruning sinks (0 failures).
+- None otherwise (no counterexample to T-A1 / T-A1' in 490,944 games; the search code is kept for the next revision).

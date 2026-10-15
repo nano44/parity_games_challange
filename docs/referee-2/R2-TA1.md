@@ -134,3 +134,58 @@ No error found in the proof file beyond the gap-list findings F1, F3 and the dat
 Nothing is Lean-checked (not required: not M4). Machine evidence: the searches above. Everything in sections 2-3 is my
 hand re-derivation and is a gap in the fleet's sense until a second signature or Lean. Under CLAUDE.md the claim becomes a
 result only with the first referee's independent report; I have not read it.
+
+## 7. Re-check of the revision (claude/l-attr 4478b84, TA1-proof.md blob b1e1118, A1-results.md blob c0d62df; 2026-10-15 00:05Z)
+Only the changed parts were re-checked (diff d5d6396..4478b84), as routed by the Lead.
+| changed item | verdict |
+| --- | --- |
+| Corollary 1 (direction: HKP's classes ⊆ PA** by HKP's theorems + "only if"; not a derivation of HKP) | **OK** (F4 applied) |
+| Corollary 2 (note "not a solver-free procedure") | **OK** |
+| F3 weakened to MAttr/PMAttr monotone in the set variable and the target, MAttr ⊆ PMAttr; nothing on layeredAttr | **OK** (F3 applied) |
+| Proof of T-A1' rewritten: last layer A_b = PMAttr_p(A_{b-2} ∪ X, d) with X ⊇ X', since X ⊆ X_0 has colours ≤ b and X' has colour b so max c(X) = b; A_b ⊇ PMAttr(X',d) ⊇ MAttr(X',d) ⊇ X' | **OK**: re-derived; uses only one layer's target monotonicity, as F3 asked; pre-condition of Fig. 5 noted |
+| G9 (F1 soundness of fatal attractors written out) | **OK**: matches my derivation |
+| G10 (Corollary 1 inherits HKP's proofs; Thm 7/8/Lemma 5 without Thm 6) | **OK** as a gap row; "open until a second signature" is the right status |
+| G1-G8 status lines | **OK**: G1-G3 closed by the quoted text, G4 by Remark 3, G5-G8 restated correctly |
+| Remark 3 (order independence; F2) | **OK** in substance; one wording nit, N1 below |
+| Remark 4 (former Proposition 3, now data; PA ⊆ PA* data only) | **OK** |
+| A1-results.md section 2: n = 2 psolB 8 / psol 10 of 240 canonical, n = 3 psolB 3,060 with my 7,536 of 175,616 noted | **OK**: the n = 2 figures equal the output of the lane's peeling.py --pa2 2 that I ran; my counts quoted correctly; psol not checked by me (not implemented) |
+| Evidence line (490,944 games, 6 of 324 at n = 2) | **OK**: quotes my section 4 correctly |
+- N1 (wording, Remark 3). The parenthetical "stable colour order π in the sense of HKP Thm 6 (every colour of the current game
+  is tried before the solver returns, and the loop restarts after a removal)" is not HKP's definition: HKP call π stable when
+  psolB(π) and psolB(π·c) have the same input/output behaviour for every colour c, with π a fixed sequence (repetitions
+  allowed, no restart). The remark is true for HKP's notion as well, and more simply: stability of π means that no colour of
+  the output game has a non-empty fatal fixpoint, which is all the "if" direction uses, and the "only if" direction works for
+  any removal sequence. Suggest replacing the parenthetical by "(HKP: appending any colour to π does not change the output;
+  equivalently no colour of the output game has a non-empty fatal fixpoint)".
+Verdict on the revision: **OK** (N1 is wording). Second-referee position on T-A1 at l-attr 4478b84: T-A1 and T-A1' as
+stated in section 2, Corollaries 1-2 and Remark 3 are correct, with gaps G1-G10 as listed there (G1-G3, G9 closed by
+written text; G10 open until a second signature; nothing Lean-checked). The first referee's independent report is still
+required for this to become a result (CLAUDE.md).
+
+## 8. Second-referee signature (claude/l-attr 57a1515, TA1-proof.md blob f58968f; 2026-10-15 00:25Z)
+Diff 4478b84..57a1515 checked (first referee's six items plus my N1):
+- F1 now carries HKP Def. 4's hypothesis (∅ ≠ X ⊆ pr^{-1}(d), d ≡ p): correct and necessary; every use (F4, L1, section 5) has
+  it. OK.
+- F1' (HKP Thm 4) added for psolQ's removals, with gap G11: correct; my first report used "removals as in F2" for psolQ
+  without naming this dependency, so G11 is a genuine addition by the first referee. See the G11 status below.
+- Büchi class up to order- and parity-preserving recolouring: correct (psolB reads colours only through ≥, = and parity).
+- T-A1': the layer count b is constant along the iteration (every X contains X' of priority d and lies in {pr ≥ d}): correct.
+- Remark 3 wording (N1) applied as suggested; Remark 4 credits: fine, Remark 4 is excluded from the claim.
+Signed claim (Lead's wording, 23:51Z) at l-attr 57a1515: Theorem T-A1; Theorem T-A1' (with "the converse fails");
+Corollaries 1-2 as stated; Remark 3. Remark 4 excluded. Verdict as second referee: **OK**.
+Gap list G1-G11 with status:
+| gap | status |
+| --- | --- |
+| G1 (F2 standard) | closed: written out by both referees; citable as Zielonka 1998 §3 |
+| G2 (external target, rank of X-vertices in L1(ii)) | closed by both referees |
+| G3 (F6 equality) | closed: R2's soundness-based derivation; first referee machine-checked it on all n ≤ 3 games |
+| G4 (colour loop order) | closed by Remark 3 (proof uses only "every colour tried before returning" and the restart) |
+| G5 (choice of d; Lemma 0) | closed: not needed; converse of Lemma 0 unproved, unused (R2 side check on 4,000 games) |
+| G6 (empty list members) | closed (the "first member ⊄ Rem" choice skips them) |
+| G7 (scope: finite games, successors, self-loops) | closed |
+| G8 (layeredAttr monotonicity) | closed: F3 weakened, T-A1' uses one PMAttr layer; layer-chain inclusion not claimed |
+| G9 (HKP Thm 2 sketch) | closed by written text (R2, agreed by the lane) |
+| G10 (Corollary 1 inherits HKP Thm 7/8/Lemma 5) | open as a dependency on published proofs; R2 re-derived Lemma 5 and Thm 8 in full and checked that Thm 7's proof needs no Thm 6; HKP Thm 7's Büchi fixpoint correspondence itself is taken from the source |
+| G11 (HKP Thm 4, F1') | closed at referee level by R2's re-derivation below, WITH A CORRECTION to HKP's proof: as written (tex:1085-1088) the strategy "select the successor with minimal rank r" is unsound. Instance (R2-TA1/hkp_thm4_strategy.py): X = {w}, c(w) = 0; v, u of colour 1 owned by player 0, v → {w,u}, u → {w,v}, w → v. Layer 0 adds v, u at stage 1 and w at stage 2, so r(v) = r(u) = (0,1) < r(w) = (0,2); the minimal-rank strategy plays v u v u ... and loses, although X ⊆ layeredAttr is fatal. Repair: choose a WITNESS successor (one in X_{d} ∪ A_{d-2} ∪ A_{d,i-1} for r(v) = (d,i)); psolq.py records exactly this witness. With the witness strategy HKP's induction goes through: from v with r(v) = (d,i) and c(v) odd (so c(v) > d, since v ∉ X and v ∉ A_{d-2} by minimality), the next vertex is in X_d (even colour ≤ d < c(v)) or has smaller rank, and the play stays in ∪_d A_d = A_b (the layer chain A_d ⊆ A_{d+2} holds by one lfp step: a vertex of A_d is eligible in layer d+2 as a member of the target, with witnesses in A_d ∪ Y_d); ranks decrease until X_d is hit, so every odd colour is followed by a smaller even colour and min Inf is even. V_1-vertices have all successors in the witness set. T-A1' is unaffected (it uses only the statement of Thm 4). |
+Nothing is Lean-checked (not required at M3). The claim becomes a result with the first referee's signature on the same
+commit; my signature is for 57a1515 only.
