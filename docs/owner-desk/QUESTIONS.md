@@ -111,3 +111,4 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - Status: answered by the Lead's reading of D5 (L18, trunk dc8e41b): M4/M4-R is the primary aim; new lane L-ALG (falsification-driven
   design loop, 12 h box from ~10:00Z); L-LOWER finishes its box to 20:36Z. Open follow-ups for the owner, only if wanted: a second
   algorithm lane, a strategy-improvement design lane, a spend ceiling.
+  Owner answer 2026-10-15: "a" (option (a)); relayed to the Lead; awaiting the Lead's D-number.

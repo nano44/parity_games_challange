@@ -51,3 +51,8 @@ Relayed verbatim to the Lead. Desk: drops "unlikely" framing; asks the owner whe
 ## 2026-10-15 09:53Z Lead (relayed to owner)
 Owner's message recorded as D5 (trunk dc8e41b), Lead reading L18: M4/M4-R primary aim; "M4 unlikely" dropped; new lane L-ALG (12 h box
 from ~10:00Z); L-LOWER finishes its box; gauntlet unchanged. Q8 answered by this unless the owner wants more.
+
+## 2026-10-15 10:04Z owner (Q8)
+> a
+Desk reading: Q8 option (a), "add one or more algorithm lanes now; L-LOWER continues as well" (the last lettered options shown).
+Consistent with L18 (L-ALG). Relayed verbatim to the Lead, priority now (scope).
