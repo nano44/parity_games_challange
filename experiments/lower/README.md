@@ -17,7 +17,13 @@ Needs numpy and python-sat (`pip install python-sat`); the harness (../harness) 
 | `show.py` | prints a program as a chain of modal formulas with minimised Boolean arguments |
 | `vec5.py` | vectorized evaluation on ALL k-vertex one-player Büchi games (packed masks); independent reference W by transitive closure, checked against Zielonka for k ≤ 4 |
 | `cegar5.py` | n = 5: SAT candidates on Q_3 + counterexample games, verified on Q_4 and on all 916·10^6 five-vertex games |
-| `min_*.json`, `*.log` | witnesses and logs of the runs reported in docs/lower/L1-report.md |
+| `cegar5b.py` | faster n = 5 variant: truth tables evaluated directly on all 5-vertex games (one lookup per gate), all 32 patterns per round, checkpoints `cegar5_<tag>.subset.json` (resumable) |
+| `vec2.py` | two-player Büchi: all k-vertex games (k ≤ 4) vectorized, reference W = Lemma 2.3 unfolding (checked against Zielonka), table evaluation with inputs (P_2, V_E, s_j) |
+| `sat2.py` | two-player: `exact n kmax` (SAT on Q_n) and `cegar4 k` (CEGAR against all 12 960 000 four-vertex games) |
+| `depth2.py` | two-player minimal modal depth for n ≤ 4 (partition refinement over all (game, vertex) pairs) |
+| `bits.py` | which gate outputs of a chain program determine W (minimal determining subsets) |
+| `min_*.json`, `result_*.log`, `cegar5_*.json`, `b2_*.json` | witnesses, UNSAT cores and logs of the runs reported in docs/lower/L1-report.md and docs/lower/L2-data.md |
 
 Reproduce: `python3 -I check_vs_zielonka.py`; `python3 -I satsearch.py 4`; `python3 -I restricted.py 4 8`;
-`python3 -I depthneeded.py`; `python3 -I fooling.py`; `python3 -I cegar5.py 8 1` (hours; caches W per priority pattern).
+`python3 -I depthneeded.py`; `python3 -I fooling.py`; `python3 -I cegar5b.py 8 0 12` (hours; caches W per priority pattern in $W5_CACHE);
+`python3 -I sat2.py exact 3 8`; `python3 -I sat2.py cegar4 7 400` (minutes); `python3 -I depth2.py 4` (~15 min, ~6 GB).
