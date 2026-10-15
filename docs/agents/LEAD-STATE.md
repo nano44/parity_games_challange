@@ -151,3 +151,4 @@
 - 17:03Z hourly sweep: no overage (seven_day warning). L-SI 714k idle, handover pushed, final report pending (wrap-up by 18:00Z); L-LOWER 370k idle, report ~19:30Z; L-ALG working. No exceptions.
 - 17:10Z L-SI end of box 0d48da2 merged; DE8 (S2b/S3/S4) added to RESULTS; L-SI parked; L23: no successor while DTL leads. Working: L-LOWER, L-ALG.
 - 17:21Z L-ALG 6bb5d43 merged. L-RED unparked 2h for (alpha)/(beta'), (r1), GAP-A. REFEREE read deferred to end of proof box (23:50Z). T-ALG1(a) stays deferred.
+- 17:29Z L-ALG 8cc7fee: straddles occur on tc+ (~2N-1), (alpha) needs containment of lowest top's successor in orphaned part; (r1) data 4,006 games monotone. L-ALG out of ideas -> parked mid-box; straddle lead sent to L-RED. Owner asked 'promising?': answered (best lead, not a result; GAP-A decisive).
