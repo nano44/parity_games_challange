@@ -1,11 +1,21 @@
 # L-ALG notebook (algorithm design loop; lane started 2026-10-15 09:55Z, 12 h box)
 
-## Resume point
-- 13:50Z: box deliverables complete (DEAD.md C1-C4, T-ALG1, C5-DTL.md, REPORT-2026-10-15.md); lane idle unless the
-  Lead redirects. Everything on claude/l-alg; out/ logs are gitignored (regenerable by the scripts named in the report).
-- C1, C2, C3 DEAD (DEAD.md). T-ALG1 deferred by the Lead (11:20Z). Next: design C4 against the two obstructions (register depth;
-  partial-solver blindness composes). Lead rulings 11:20Z: ZP no gauntlet; T-ALG1 deferred; GA instances go to L-SI (keep pushing them).
-- Lead session for messages: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/l-alg. Push: scripts/verify.sh && git push -u origin claude/l-alg.
+## Resume point (PARKED 2026-10-15 15:15Z on the Lead's word; no timed wakes)
+- State: all box deliverables on claude/l-alg (last 473c7c8 + this commit), verify PASS. Report: docs/alg/REPORT-2026-10-15.md.
+  Dead: C1-C4 (docs/alg/DEAD.md). Candidate-by-redirect C5-DTL (docs/alg/candidates/C5-DTL.md): no killer found; L-RED attacks it.
+- Open items for a successor (in priority order):
+  1. T-ALG1 (a) refereeing: psolC complete iff Strahler 1 (docs/alg/T-ALG1.md section 2; gaps G1-G3 listed in section 4). Goes
+     to L-LIT (novelty against DJT/HKP) and two referees when the Lead frees them (deferred 11:20Z).
+  2. T-ALG1 (c) k = 1 proof: NE'(1) complete on Strahler <= 2 games. Plan: induct as in (a); the sibling exit lands in the first
+     child's subtree where the escaper stays, and NE'(0) = psolC certifies that subtree by (a) inside H (its parity condition is
+     G's; Good sinks only add wins). Data: 84,571 Strahler-2 games solved, 45 Strahler-3 killers (out/c2k1_fail_seeds.jsonl).
+  3. DTL search_rec angle: the only Zielonka-like branching in DTL is search_rec on Z (C5-DTL.md section 2, dtl.cpp 895-955),
+     entered when every best vertex is a distraction (best_vertices returns -1). A family that triggers result -1 at every level
+     with a large Z and re-enters after each learned tangle is the untried attack. Tools: tcvar.py (tc, tc+ ports with knobs),
+     tc_template_ga.py / tcplus_template_ga.py (27-edge menus; build(template, N)), oink_fit.py (Oink work counters), ptl_sweep.py.
+  4. Regenerable data (out/ is gitignored): psolc_fail_n4.py (518 s, 3 workers) -> out/psolc_fail_n4.jsonl, needed by n4_test.py,
+     walk.py, strtest.py, zp_ga.py --pool rich (c2k1_small_seeds.jsonl from cross.py). Oink: scripts/setup_oink.sh.
+- Lead session for messages: session_014FBi6o334DvwT5Uw2kDfoN. Push: scripts/verify.sh && git push -u origin claude/l-alg.
 
 ## Brief (Lead, 2026-10-15 09:55Z, quoted in substance)
 Aim M4 / M4-R (TARGET.md section 2 / 4b). Falsification-driven loop: exact pseudocode + running-time argument before any
@@ -159,4 +169,4 @@ each level of NE' adds one register. This is the exact obstruction of the whole 
 - 14:30-14:55 tc+ port validated (tl/dtl/rtl identical at N = 2..6); tc+ knobs: DTL 8, 17, 30, 43, 58, 75, 94, 115 on every variant
   (~1.4 N^2). Template GA with growth fitness: tc base seeds 12/13 quadratic (~1.6-1.8 N^2), tc+ base seeds 21/22 quadratic
   (~2.7 N^2). Verdict in REPORT: no super-polynomial tc variant for DTL found; mechanisms and why recorded.
-
+- 15:11 Lead: PARK. Resume point written; pushed; stopped. No timed wakes.
