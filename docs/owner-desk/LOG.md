@@ -9,3 +9,8 @@ Answered from docs/lit/T10-PAstarstar.md (l-lit 1f9e9f8) and QUESTIONS.md Q5. Re
 (The message was the upload alone, no text.) File: Imperial DTR 2015/4, sha256 a7b61fe3...9cd6, identical to the public copy at
 https://www.doc.ic.ac.uk/research/technicalreports/2015/DTR15-4.pdf. Desk reading: docs/owner-desk/HKP-DTR15-4-reading.md.
 Relayed to the Lead with URL and hash (the Lead cannot open this session's uploads).
+
+## 2026-10-15 07:55Z Lead (relayed to owner)
+Lead verified the public copy's sha256; L-LIT task T11 (2 h box) confirms the desk reading and whether DTR15-4 is the LNCS 9560
+text. Q5 marked "answered, verdict pending L-LIT T11". Lead to the owner: thank you; the file is with the literature lane; the Lead
+will report the verdict.

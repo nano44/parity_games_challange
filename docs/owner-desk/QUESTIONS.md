@@ -18,9 +18,11 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - What changes: (a) L-LIT/referees compare the chapter with arXiv v2; G10 can close and the novelty caveat on R2 can be lifted (or
   revised if the chapter differs). (b) nothing changes now; R2 keeps its caveat and no external step is possible.
 - Urgency: low while no external step is planned; it blocks Q6's natural next step.
-- Status: open (partly answered 2026-10-15 ~07:40Z: the owner supplied Imperial tech report DTR 2015/4, the August 2015 text of
-  the chapter, public at https://www.doc.ic.ac.uk/research/technicalreports/2015/DTR15-4.pdf; desk reading in
-  docs/owner-desk/HKP-DTR15-4-reading.md. The Springer pages themselves remain unopened. Closure is the Lead's call.)
+- Status: answered, verdict pending L-LIT T11 (Lead, 2026-10-15 07:55Z). The owner supplied Imperial DTR 2015/4, public at
+  https://www.doc.ic.ac.uk/research/technicalreports/2015/DTR15-4.pdf (Lead re-verified sha256). Desk reading (pointer only):
+  docs/owner-desk/HKP-DTR15-4-reading.md. Lead reading (to be logged in DECISIONS.md): if T11 finds DTR15-4 matches the chapter,
+  R2's caveat becomes "checked against arXiv 1405.0386v2 and the pre-publication chapter text DTR15-4; Springer pages not opened"
+  and Q5 closes; it reopens only on a discrepancy. G10 is not an owner question (it concerns HKP's arXiv proofs).
 
 ## Q6: whether, and to whom, docs/HUMAN-REVIEW.md goes
 - id: Q6
