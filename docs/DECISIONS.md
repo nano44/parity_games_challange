@@ -82,3 +82,6 @@ Lead reading L16 (Q2, closed unless the owner objects): keep claude/vibrant-john
 so a `main` branch would add a second name without changing any work.
 Q3: OWNER-DESK walked the owner through the setup script (cloud environment menu in the title bar > Edit > Setup script). Setting it
 is the owner's action; it stays listed until the owner says it is done or declines.
+Lead reading L17 (2026-10-15 08:05Z, Q5 closed): L-LIT T11 (l-lit 933dc12) finds DTR15-4 very likely the chapter text (identical
+29-entry reference list against Crossref; the only open-access copy of the chapter DOI is this report). Under L11, Q5 closes;
+RESULTS R2 caveat updated. psolC (PA** strictly inside Solved(psolC), conditional on DTR Thm 4) is recorded as a candidate, not started.

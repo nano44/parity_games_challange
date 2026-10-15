@@ -7,7 +7,7 @@ Updated: 2026-10-14 by Lead. Phase: M0, M1, M2, M3 done; first attack lane L-STR
 | M0 Setup | done; TARGET v1.0 at a3777f1 (D2) | this commit; CI .github/workflows/verify.yml; backstop trigger in docs/agents/LEAD-BACKSTOP.md |
 | M1 Reproduce hard families | DONE 2026-10-14 19:10Z (l-comp de7ea19): 12 of 13 families blow up as published, all strategies checked; counter_qpt superpolynomial but class open (targets a quasi-poly algorithm). Friedmann SI via REFEREE-checked PGSolver ports (reading L5). Bench LANDED on trunk (REFEREE OK ae532f6) | experiments/hard-families/README.md (l-comp) |
 | M2 Audit arXiv 2511.03752 | DONE 2026-10-14 ~18:35Z: BROKEN (two independent 4-vertex counterexamples, cross-checked); RESULTS DE1 | docs/decisions/M2-arxiv-2511.03752.md |
-| M3 Partial results | DONE 2026-10-15 00:17Z (novelty T10 NEW; caveat: HKP LNCS 9560 chapter unopened): RESULTS R2 T-A1 [refereed-only] (psolB solves G completely iff PA**(G)); two referee signatures at l-attr 57a1515, CHECKER PASS 62cf1c4. Also R1 L4 (lemma) | docs/RESULTS.md |
+| M3 Partial results | DONE 2026-10-15 00:17Z (novelty T10 NEW, rechecked T11 against the chapter text DTR15-4: still NEW): RESULTS R2 T-A1 [refereed-only] (psolB solves G completely iff PA**(G)); two referee signatures at l-attr 57a1515, CHECKER PASS 62cf1c4. Also R1 L4 (lemma) | docs/RESULTS.md |
 | M4 Target | not started | - |
 
 ## Roster (model, effort, one-line reason; revisit at each restart)
@@ -20,7 +20,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | Lead | session_014FBi6o334DvwT5Uw2kDfoN | claude/vibrant-johnson-nxvvxo | opus-5-5 | high | working | Owner-chosen session; routing judgement; keeps context lean |
 | REFEREE (old) | session_01Ki9osXiyYf9heTLNk3FKED | claude/referee | fable-5-1 | high | parked (handover f179ae0); keep 1 week |
 | REFEREE | session_01R4yR8XskSK3ta94ewnN4cM | claude/referee | fable-5-1 | high | idle (R-L1b done 8c8bc72) | Successor; never downgrade the referee | Most capable model; finding the error in a claimed proof decides M2 and every claim after |
-| L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | working (T11: HKP DTR15-4 vs T10/G10/Thm 4, psolC; 2h box from 07:55Z) | Source checking and barrier analysis need judgement; Fable reserved for referee |
+| L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | parked (T11 done 933dc12) | Source checking and barrier analysis need judgement; Fable reserved for referee |
 | L-COMP | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | parked (handover 25a6e21; successor only when T3 revives or a new claim needs the bench) | n=5 diagonal cells cost 1-2 h/k; low value while T3 is parked |
 | L-STRUCT | session_01VH4fd2Fq8XeXtyUfkwLJV1 | claude/l-struct | fable-5-1 | high | parked (handover 729c965; wake on n=5 diagonal gap, new T3 idea, or L4 second referee) | Attack lane (owner: most capable model at high effort); rank 1 approach, weak separators, T4 verdict OPEN |
 | L-ATTR | session_01XDM3HXeuG3mqhQK92eNaru | claude/l-attr | fable-5-1 | high | parked (T-A1 final 57a1515, signed) | Attack lane, rank 3 per L-LIT T7 recommendation (M2 counterexample in hand); cheap, near-certain result |
@@ -46,7 +46,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - PGSolver SI families (switchallexp, switchbestexp) target PGSolver's switch-all/switch-best SI, not Oink psi/ssi; port of stratimpralgs.ml queued in L-COMP.
 
 ## Live approaches
-- A2 attractor/partial solvers (L-ATTR, PARKED): done; T-A1 is M3 (RESULTS R2, both referees signed 57a1515, CHECKER PASS; caveat LNCS 9560 unopened, owner Q5).
+- A2 attractor/partial solvers (L-ATTR, PARKED): done; T-A1 is M3 (RESULTS R2, both referees signed 57a1515, CHECKER PASS; T11: chapter text DTR15-4 checked, still NEW). Candidate, not started: psolC (HKP DTR15-4 Fig. 5) has PA** strictly inside Solved(psolC), conditional on DTR Thm 4 (L-LIT T11); referee DTR Thm 4's multi-round step before any use..
 - A3 non-adaptive SLP lower bounds (L-LOWER): statement v2 OK (REFEREE 8c8bc72). B_1(n) = 2n-2 exactly for n <= 5 (l-lower 90f6928; n=5 witness 8 Cpre gates, verified on all 916M 5-vertex games; unrefereed data). Chains fail at n=5 (window-1 >= 12). T-L1 (super-linear B_1): data against, open, PARKED. Lead decision 07:50Z: no uniform-construction box; measure B_2(n) (two-player) for n <= 4 and quote CDHL's two-player bounds, then decide T-L2 / T-L3 / park.
 - A1 deterministic weak separators (L-STRUCT, PARKED 22:00Z): outside the strong-separator barrier (T4). Products: DE2 (T1 refuted), L4 (first referee OK), T3 data conjecture (w=s for d<=n+1, all cells to (4,5) V). Algorithmic quantity is the diagonal w^V(n,n) (REFEREE d96b686). Diagonal W=S=1,2,5,7 for n<=4 confirmed by three independent encodings (L-STRUCT, L-COMP LRAT, REFEREE b4a711c); TARGET alphabet n=2,3,4 also w=s; gaps only at d >> n. S3 to be framed as 'w=s on the TARGET alphabet' (barrier direction). Data: w=s on most small cells; w<s at (2,6),(2,10),V(3,6); s(2,2h)=h+1 but w(2,8)=w(2,10)=4. Lower-bound target T1 likely false; now measuring growth of w in d.
 
@@ -59,7 +59,6 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - None of the fleet's own. Known: quasi-polynomial upper bound (to be source-checked by L-LIT).
 
 ## Owner questions open (held by OWNER-DESK since 2026-10-15, D3; docs/owner-desk/QUESTIONS.md)
-- Q5: ANSWERED by owner 07:50Z (upload: HKP Imperial DTR15-4, 2015, sha256 a7b61fe3..., public copy verified by Lead); verdict pending L-LIT T11 (L11).
 - Q3: setup script, owner action (walkthrough given by OWNER-DESK). Q2, Q4, Q6, Q7 closed by D4 (readings L13-L16); L12: fleet decides judgement calls itself.
 
 ## Spend
