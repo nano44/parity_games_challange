@@ -39,6 +39,100 @@ def gated_bland(N):
     return f"parity {5 * N + 1};\n" + "\n".join(rows) + "\n"
 
 
-FAMILIES = {"gated_bland": gated_bland}
+def friedmann_Gn(n, pads=None, padprio=0):
+    """Friedmann's lower-bound game G_n for the locally optimizing policy (switch-all), arXiv 1106.0778 section 6.4, Table 4
+    (10n+4 nodes), with the initial strategy iota_{G_n} (p.16) printed as a '% start v:w ...' line (the PGSolver best-reward
+    start is not iota).  Optional pads: pads(i) dangling Even vertices of priority padprio with the single edge -> d_i, for
+    i = 1..n (the vertices whose valuation changes exactly when d_i's does; they count for d_i's switches only).
+    Ids: x 0, s 1, r 2, c 3; t_i = 3 + i, a_i = 3 + 2n + i (i = 1..2n); for i = 1..n: d_i, e_i, g_i, k_i, f_i, h_i =
+    4n + 4 + 6(i-1) + 0..5; pads follow."""
+    X, S, R, C = 0, 1, 2, 3
+    T = lambda i: 3 + i; A = lambda i: 3 + 2 * n + i
+    base = 4 * n + 4
+    D = lambda i: base + 6 * (i - 1); E = lambda i: D(i) + 1; G = lambda i: D(i) + 2; K = lambda i: D(i) + 3; F = lambda i: D(i) + 4; H = lambda i: D(i) + 5
+    rows = {}; start = {}
+    rows[X] = (1, 1, [X], "x")
+    rows[S] = (8 * n + 6, 0, [F(j) for j in range(1, n + 1)] + [X], "s"); start[S] = X
+    rows[R] = (8 * n + 8, 0, [G(j) for j in range(1, n + 1)] + [X], "r"); start[R] = X
+    rows[C] = (8 * n + 4, 0, [S, R], "c"); start[C] = R
+    for i in range(1, 2 * n + 1):
+        rows[T(i)] = (4 * n + 3 if i == 1 else 4 * n + 2 * i + 1, 0, [S, R, C] if i == 1 else [S, R, T(i - 1)], f"t{i}")
+        start[T(i)] = C if i == 1 else R
+        rows[A(i)] = (4 * n + 2 * i + 2, 1, [T(i)], f"a{i}")
+    for i in range(1, n + 1):
+        rows[D(i)] = (4 * i + 1, 0, [S, E(i), R] + [A(j) for j in range(1, 2 * i + 1)], f"d{i}"); start[D(i)] = R
+        rows[E(i)] = (4 * i + 2, 1, [D(i), H(i)], f"e{i}")
+        rows[G(i)] = (4 * i + 4, 0, [F(i), K(i)], f"g{i}"); start[G(i)] = K(i)
+        rows[K(i)] = (8 * n + 4 * i + 7, 0, [X] + [G(j) for j in range(i + 1, n + 1)], f"k{i}"); start[K(i)] = X
+        rows[F(i)] = (8 * n + 4 * i + 9, 1, [E(i)], f"f{i}")
+        rows[H(i)] = (8 * n + 4 * i + 10, 1, [K(i)], f"h{i}")
+    nxt = 10 * n + 4
+    if pads:
+        if callable(pads):                       # pads(i) dangling vertices on d_i
+            plan = {D(i): pads(i) for i in range(1, n + 1)}
+        else:                                    # dict label -> number of pads (labels as in rows)
+            byl = {rows[v][3]: v for v in rows}; plan = {byl[l]: k for l, k in pads.items()}
+        for v0, k in plan.items():
+            for _ in range(k):
+                rows[nxt] = (padprio, 0, [v0], f"p_{rows[v0][3]}"); start[nxt] = v0; nxt += 1
+    out = [f"parity {nxt - 1};"]
+    for v in range(nxt):
+        pr, pl, su, lab = rows[v]
+        out.append(f"{v} {pr} {pl} {','.join(map(str, sorted(set(su))))} \"{lab}\";")
+    return "\n".join(out) + "\n% start " + " ".join(f"{v}:{w}" for v, w in sorted(start.items())) + "\n"
+
+
+def padded_Gn(n, C=1):
+    """friedmann_Gn with pads(i) = C (n + 1 - i): the lowest open gate has the most dangling traffic (S7 attack, R3)."""
+    return friedmann_Gn(n, pads=lambda i: C * (n + 1 - i))
+
+
+def padded2_Gn(n, C=1, P=None):
+    """friedmann_Gn with pads(d_i) = C (n + 1 - i) and P pads on every correction vertex (s, r, c, t_i, g_i, k_i), P > C n,
+    so that corrections always precede the next gate closing and lower gates precede higher ones (S7 attack, R3)."""
+    if P is None: P = C * n + 1
+    pads = {f"d{i}": C * (n + 1 - i) for i in range(1, n + 1)}
+    for l in ["s", "r", "c"] + [f"t{i}" for i in range(1, 2 * n + 1)] + [f"g{i}" for i in range(1, n + 1)] + [f"k{i}" for i in range(1, n + 1)]:
+        pads[l] = P
+    return friedmann_Gn(n, pads=pads)
+
+
+def padded3_Gn(n, C=None, P=None, lane=0):
+    """friedmann_Gn with pads only on s, r (P) and on the gates d_i (C (n + 1 - i)); none on g, k (so that g_mu's access and
+    the selector updates come after the lower gates reopen) and `lane` pads on each t_i (S7 attack, R3)."""
+    if C is None: C = 4 * n + 3
+    if P is None: P = 10 * C * n
+    pads = {f"d{i}": C * (n + 1 - i) for i in range(1, n + 1)}; pads["s"] = P; pads["r"] = P
+    if lane:
+        for i in range(1, 2 * n + 1): pads[f"t{i}"] = lane
+    return friedmann_Gn(n, pads=pads)
+
+
+def padded4_Gn(n, C=None):
+    """friedmann_Gn with pads encoding the single-switch order the counter needs under S7 (R3): s, r (10Cn) > selectors k_i
+    (Cn + C) > gates d_i (C (n+1-i), lowest gate first) > access g_i (C (n+1-i) - 1, just below its own gate) > lane (0)."""
+    if C is None: C = 4 * n + 3
+    pads = {}
+    for i in range(1, n + 1):
+        pads[f"d{i}"] = C * (n + 1 - i); pads[f"g{i}"] = C * (n + 1 - i) - 1; pads[f"k{i}"] = C * n + C
+    pads["s"] = pads["r"] = 10 * C * n
+    return friedmann_Gn(n, pads=pads)
+
+
+def padded5_Gn(n, C=None, rpads=0, gmode="below"):
+    """padded4 with NO pads on r (r's pads were entering reopened gates through g_j -> f_j -> e_j -> d_j and inflating their
+    closings above the selectors k_{j-1}; Lemma D then forces the gate to close before the selector updates)."""
+    if C is None: C = 4 * n + 3
+    pads = {}
+    for i in range(1, n + 1):
+        pads[f"d{i}"] = C * (n + 1 - i); pads[f"k{i}"] = C * n + C
+        if gmode == "below": pads[f"g{i}"] = C * (n + 1 - i) - 1
+    pads["s"] = 10 * C * n
+    if rpads: pads["r"] = rpads
+    return friedmann_Gn(n, pads=pads)
+
+
+FAMILIES = {"gated_bland": gated_bland, "friedmann_Gn": friedmann_Gn, "padded_Gn": padded_Gn, "padded2_Gn": padded2_Gn,
+            "padded3_Gn": padded3_Gn, "padded4_Gn": padded4_Gn, "padded5_Gn": padded5_Gn}
 if __name__ == "__main__":
     sys.stdout.write(FAMILIES[sys.argv[1]](int(sys.argv[2])))

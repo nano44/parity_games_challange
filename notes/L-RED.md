@@ -2,28 +2,16 @@
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead.
 
 ## Resume point
-2026-10-15 ~15:10Z: PARKED by the Lead (weekly-limit warning; S5/S6 retarget cancelled). State: R1 (MSF killed) and R2 (S1
-Random-Action-Removal killed) pushed; the transfer lemma is with REFEREE-2. R2 now also answers the referee question "why did
-FHZ not say so" with quotes (no remark in 1410.7530 or the errata; direction and audience).
-FHZ-scaled growth run (r = t = ceil(log2 n), s = ceil(sqrt n log2 n), 12 seeds, my RF driver, scratchpad scaled.log, NOT in the
-repo): only n = 4 finished: r=2, s=4, t=2, |E| = 232, |V_P| = 357, mean 183.3, max 318. n = 6..12 were still running when parked
-(each size takes minutes to an hour); the process dies with the container. To redo: experiments/red/fhz.py `table` with those
-parameters, or the inline loop in the notebook's "Things only I know (R2)".
-If re-woken for S5 (Zadeh, index tie-break) / S6 (Cunningham, index order) on claude/l-si, what I would try first:
-- S5: Disser-Friedmann-Hopp 1911.01074 fix a designer tie-breaking rule for Zadeh's least-entered rule (T12 table: "it cannot be
-  avoided to fix a tie-breaking rule", p.3). Read their tie-break (which improving edge among the least-entered ones) and check
-  whether it is a fixed total order on edges; if so, renumber the vertices (and pad with relays, as in fhz.py, to split ties
-  that the index order cannot express) so that L-SI's "smallest v, then smallest w" reproduces it; run L-SI's zadehexp port
-  (gens.py) and the 1911.01074 game under si.py's S5 rule from the paper's initial strategy. If the paper's tie-break depends on
-  history, the gate trick (R1) can still relabel the LEVEL of each edge but not its history, so a kill needs the memory-free part.
-- S6: Avis-Friedmann 1305.3944 Thm 4 gives Cunningham's rule with a designer-chosen ordering of the edges: an index order IS an
-  ordering, so renumber the edges of their construction by the ordering (edges of one vertex are ordered by target index; if two
-  edges of the same vertex must be ordered against the index, insert a relay vertex with a chosen index). Then S6 should reproduce
-  Thm 4's run exactly; verify switch for switch as correspond.py does for Bland.
-- Either way, first read docs/si/candidates/S5.md, S6.md for the exact rule and start strategy; the adversary owns the vertex
-  numbering (TARGET.md section 1 gives no canonical order).
+2026-10-15 ~15:00Z (my clock; the Lead's stamps run ~30 min ahead). Box 2 (un-parked 12:37Z Lead time, 6 h): R2 F1/F2
+applied (8bb9d22); S7 most-improved attacked: docs/red/R3-S7.md = HELD with Lemmas T and D (count = traffic; downstream
+dominance), the Friedmann G_n port + five pad schemes with traces, the exact obstruction (selector chain upstream-ordered),
+fidelity check vjfast = vj.py, watch item gated_switchbestexp N=6 = 974 (N=7 was still running in the scratchpad, gsb.log).
+If re-woken on S7: design a reset mechanism without Friedmann's selector chain (lower selectors must not route through the
+higher reopened gates): e.g. each gate's exit points to a private copy of the spine above it, or the reset is done by s/r
+only; test with gens_red.friedmann_Gn pads=dict and the scratchpad tracer (vjtrace.cpp = vjfast.cpp + TRACE env, tracefmt.py).
+S5/S6 untouched (the Lead's item 3); first tries are in the S5/S6 paragraph below.
 ## Queue
-(parked) 1. If re-woken: S5/S6 per the resume point. 2. Optional: finish the FHZ-scaled growth run and append it to R2 (b).
+1. If re-woken: S7 reset-mechanism redesign (resume point) or S5/S6 (paragraph below). 2. Optional: FHZ-scaled growth run for R2 (b).
 
 ## Things only I know
 - L-SI's branch is read through a detached worktree in the scratchpad (git worktree add <scratch>/lsi origin/claude/l-si);
@@ -35,6 +23,15 @@ If re-woken for S5 (Zadeh, index tie-break) / S6 (Cunningham, index order) on cl
 - Runtime of vj.py msf on gated_bland: N=10 1.3 s, N=12 6.9 s, N=13 17 s (one valuation per switch, no incremental update).
 - Oink is built (scripts/setup_oink.sh, ~3 min); MSF on tc/tc+/counter_* via si.py was linear or near-linear (sweep in
   the scratchpad, not pinned: tc N=8 275, tc+ N=10 595; all PGSolver families linear in N).
+
+## Things only I know (R3, S7)
+- experiments/red/gens_red.py friedmann_Gn(n, pads=...) is my own port of Table 4 (ids documented in the docstring); pads =
+  dangling priority-0 Even vertices labelled p_<label>. padded_Gn .. padded5_Gn are the schemes of R3 section 3.
+- Tracing: trace_mi.py (vj.py, slow beyond ~300 vertices); for big instances a scratchpad copy of L-SI's vjfast with a TRACE
+  env var printed every improving edge with its count (vjtrace.cpp, tracefmt.py maps ids to labels and gate states). Not in
+  the repo (it is L-SI's file with four added lines).
+- Lemma D in one line: pads cannot reorder a vertex against anything downstream of it; only route-incomparable vertices can be
+  ordered by pads. The gate closings are route-isolated, the selector chain is not.
 
 ## Things only I know (R2)
 - fhz.py: FHZ's "zero-edges" are the bit-0 edges a0, b0, u0, w0 = the COSTLY ones (B0 is made of them); "one-edges" are the
@@ -48,6 +45,10 @@ If re-woken for S5 (Zadeh, index tie-break) / S6 (Cunningham, index order) on cl
   fhz_n5_r2s2t2 (256 vertices) takes minutes per seed.
 
 ## Sources opened (arXiv id or DOI, theorem/section)
+- Friedmann 1106.0778 (again, for R3): section 6.4 Table 4 (G_n: players, priorities, successors; iota_{G_n} p.16), Fact 6.1,
+  section 6.5 phases 1-4 (pp.17-21: definitions of b-phase 1..4 strategies, Lemmas 6.8-6.12 statements; proofs skimmed),
+  Lemma 6.3-6.4 (deceleration lane), Lemma 6.5-6.6 (cycle gate states), Thm 6.14 (switch-all >= 2^n on G_n; my port: 26, 62,
+  134, 278, 566 for n = 2..6).
 - Friedmann-Hansen-Zwick, "Random-Facet and Random-Bland require subexponential time even for shortest paths", arXiv 1410.7530
   (PDF opened 2026-10-15 ~13:25Z): section 3 p.7 (how Random-Facet finds shortest-path trees), section 4 pp.7-9 (randomized
   counter, Fig. 3 one level with r=s=t=1, "zero-edges"/"one-edges", gadgets: t copies, paths of length s, r copies), section 5
