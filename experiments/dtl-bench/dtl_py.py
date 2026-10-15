@@ -3,14 +3,18 @@
 Written ONLY from docs/alg/candidates/C5-DTL.md @ ccff864 (the pinned pseudocode, L22/L24); Oink's dtl.cpp was not read.
 Section / line references "C5 §n" are to that file. Plain Python ints (every number is an index or a priority).
 
-Usage: dtl_py.py IN.pg OUT.sol [--idtl] [--order stable|reverse] [--stats]
+Usage: dtl_py.py IN.pg OUT.sol [--idtl] [--order stable|reverse|oink] [--stats]
 Writes a paritysol solution ("v winner [strategy];") in the input's vertex ids and prints
 "found D dominions and T tangles." / "solved in I iterations" like Oink, so harness/compare.py-style parsing works.
 
 Choices the pseudocode leaves open (each listed in README "dtl_py choices"; they can change counts, not correctness):
- CH1 index order of equal-priority vertices (C5 §0 "any order"): stable by input position (--order reverse: reversed).
+ CH1 index order of equal-priority vertices (C5 §0 "any order"): stable by input position (--order reverse: reversed;
+     --order oink: Oink's step-0 std::sort order, emulated in stdsort.py from game.cpp:478-505, read after the first
+     count divergences to tell order effects from algorithm differences). --order oink also sets CH2': ins(v) in
+     DECREASING new index, as Oink's Game::build_in_array (game.cpp:868-906) fills each in-list from its end.
  CH2 outs(v): in input order; ins(v): predecessors in increasing new index, each once per edge.
  CH3 tangle vertex order tv[t]: the order in which the SCC algorithm pops C off its stack.
+ CH3' (--order oink only): tv[t] sorted ascending, as dtl.cpp stores it (read after shrinking divergence #2).
  CH4 "Q := all of Z" in best_vertices' threshold loop: pushed in increasing index (so popped from the highest).
  CH6 idtl iteration counter: see run() (convention read from dtl.cpp run() after the first divergence).
  CH5 dominion vertices are put in S at extraction; a vertex is solved once (a second solve of the same vertex is counted
@@ -20,16 +24,18 @@ import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "harness"))
 import pg
 
+TV_SORTED = False   # CH3 switch (see docstring)
+
 
 class DTL:
-    def __init__(self, prio, owner, succ, interleaved=False):
+    def __init__(self, prio, owner, succ, interleaved=False, ins_desc=False):
         self.n = len(prio)
         self.pr, self.ow, self.outs = prio, owner, succ
         ins = [[] for _ in range(self.n)]
         for v in range(self.n):                      # CH2
             for w in succ[v]:
                 ins[w].append(v)
-        self.ins = ins
+        self.ins = [x[::-1] for x in ins] if ins_desc else ins   # CH2': Oink game.cpp:868-906 fills ins from the end
         self.interleaved = interleaved
         self.str = [-1] * self.n
         self.G = set(range(self.n))
@@ -146,7 +152,7 @@ class DTL:
             if key in self.tkeys:
                 continue
             t = len(self.tv)
-            self.tv.append([(v, st[v]) for v in C]); self.tout.append(esc); self.tpr.append(self.pr[top])
+            self.tv.append([(v, st[v]) for v in (sorted(C) if TV_SORTED else C)]); self.tout.append(esc); self.tpr.append(self.pr[top])
             self.tkeys.append(key)
             for e in esc:
                 self.tin[e].append(t)
@@ -309,10 +315,22 @@ class DTL:
 
 def solve_game(g, interleaved=False, order="stable"):
     """Reindex by priority (C5 §0; CH1), run, map back. Returns (win, strategy, solver)."""
-    idx = sorted(range(g.n), key=lambda v: (g.prio[v], v if order == "stable" else -v))
+    if order == "oink":                   # CH1': Oink's own step-0 order (stdsort.py, emulating game.cpp:495's std::sort)
+        from stdsort import oink_order
+        idx = oink_order(g.prio)
+    else:
+        idx = sorted(range(g.n), key=lambda v: (g.prio[v], v if order == "stable" else -v))
     new = {v: i for i, v in enumerate(idx)}
-    d = DTL([g.prio[v] for v in idx], [g.owner[v] for v in idx], [[new[w] for w in g.succ[v]] for v in idx], interleaved)
-    win, st = d.run()
+    d = DTL([g.prio[v] for v in idx], [g.owner[v] for v in idx], [[new[w] for w in g.succ[v]] for v in idx], interleaved,
+            ins_desc=(order == "oink"))
+    global TV_SORTED
+    saved = TV_SORTED
+    if order == "oink":
+        TV_SORTED = True                  # CH3': Oink sorts a new tangle's vertices ascending before storing it (dtl.cpp 385-424)
+    try:
+        win, st = d.run()
+    finally:
+        TV_SORTED = saved
     W = [None] * g.n; S = [None] * g.n
     for i, v in enumerate(idx):
         W[v] = win[i]

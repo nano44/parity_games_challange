@@ -28,7 +28,7 @@ exactly this command (no `-w`). A_IDTL = the same with `--idtl`. Every result ro
 ### (1) Exhaustive tiny games and 10,000 seeded random games: 0 MISMATCH, 0 BADSTRAT, 0 error, 0 timeout
 | corpus | games | reference | dtl-pin ok | idtl-pin ok | csv |
 | --- | --- | --- | --- | --- | --- |
-| every game, n=1, priorities 0..1 | 8 | brute force = py-zlk | 8 | 8 | results/exhaustive_n1_P1.csv |
+| every game, n=1, priorities 0..1 | 4 | brute force = py-zlk | 4 | 4 | results/exhaustive_n1_P1.csv |
 | every game, n=2, priorities 0..2 | 324 | brute force = py-zlk | 324 | 324 | results/exhaustive_n2_P2.csv |
 | every game, n=3, priorities 0..3 (TARGET class: priorities 0..n) | 175,616 | brute force = py-zlk | 175,616 | 175,616 | results/exhaustive_n3_P3.csv.gz |
 | seeded corpus `gen.py corpus out/g10k 10000 20261015 --nmin 1 --nmax 200` | 10,000 | uzlk and py-zlk (both ok on all) | 10,000 | 10,000 | results/g10k.csv |
