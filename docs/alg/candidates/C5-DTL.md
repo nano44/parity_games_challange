@@ -5,6 +5,11 @@ Corrections 2026-10-15 16:30Z (L-ALG successor, found while writing docs/alg/DTL
 tops (line 690 precedes the loop 691), so the regions are disjoint and vertices of lower regions are attracted only from what
 higher tops left; the earlier text said "fresh copy per top, regions overlap". Both change strategy/region details, not set
 membership of attractors. Everything else re-read against dtl.cpp @ 8fbf0a7 and found exact.
+Pinning (17:45Z, after CHECKER C3): the object described here is A_DTL = `oink --dtl --no-single --no-wcwc --no-loops`
+(release build, trace = 0): the parser's bad-self-loop removal and Oink::solveSelfloops are OFF, so self-loops reach the
+solver as given; the duplicate-tangle check (dtl.cpp 385-424, `CHECK_UNIQUE (1 or !NDEBUG)` = always on) is part of the
+algorithm and is the "duplicate check" in extractTangles below; equal-priority vertices may be indexed in any order
+(std::sort is unstable), and every claim about this pseudocode is made for every such order.
 
 Status: CANDIDATE by the Lead's redirect (12:47Z): "the one complete solver nothing in the fleet's bench can hurt".
 This is NOT the fleet's design: it is Tom van Dijk's unpublished research solver `dtl` in Oink, commit 8fbf0a7
