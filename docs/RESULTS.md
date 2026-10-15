@@ -30,7 +30,7 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   (REFEREE-2), random n=4,5; lane: all 27.3M canonical 4-vertex games for the psolQ-failure side.
 - Gaps: G1-G9 closed; G10 open (dependency on HKP's proofs of Thm 7, Thm 8, Lemma 5; re-derived informally by both referees);
   G11 (HKP Thm 4, used by T-A1') closed at referee level ONLY with REFEREE-2's witness-successor repair of HKP's strategy
-  (first referee's confirmation pending); Corollary 2 uses HKP Thm 5(1) as a black box (first referee's list); all steps are prose,
+  (both referees: REFEREE answer (b), referee 5ff8edb, re-derived with the witness successor); Corollary 2 uses HKP Thm 5(1) as a black box (first referee's list); all steps are prose,
   nothing machine-checked beyond the data searches. Side finding: HKP Thm 4's proof defines an unsound minimal-rank
   strategy (REFEREE-2 counterexample docs/referee-2/R2-TA1/hkp_thm4_strategy.py; repair: witness successor); theorem unaffected.
 - Status: M3 "a tighter analysis of a known algorithm" (Lead reading L9). Novelty: L-LIT T8 (docs/lit/T8-TA1.md): Ah-Fat-Huth 2016
