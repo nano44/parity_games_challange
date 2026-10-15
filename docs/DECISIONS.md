@@ -118,3 +118,10 @@ R2-TL (995cfd3) is a first-referee read, not a signature (as the Lead's own 12:1
 only (42f11c6/5ed56c5, condition met at l-red 49ae306). REFEREE-2 asked to sign at 49ae306 with gap list. The entry text follows
 CHECKER C2's suggested wording (scaling, start sigma_{B_0}, N = |V|+|E| form, strict tie convention, gaps G-TL-1..3 + AUSO/ties).
 L-LIT T13's line "signed by REFEREE-2 (995cfd3)" carries the same error (L-LIT file; corrected on its next task).
+
+## L22 (Lead reading, 2026-10-15 16:02Z): DTL pinning after CHECKER C3
+Fleet judgement under L12 (no owner question). After C3 (claude/checker 5b924e7):
+- The DTL candidate is pinned as `oink --dtl --no-single --no-wcwc --no-loops` at Oink 8fbf0a7, trace = 0 (C3 option (i) for D-1). DTL itself must handle self-loops; all step-2 evidence is re-run with --no-loops.
+- The theorem must hold for every order of equal-priority vertices (removes the unstable std::sort dependency, C3 D-4).
+- The analysed object is the pseudocode docs/alg/candidates/C5-DTL.md, updated to the pinned run (CHECK_UNIQUE on, trace 0). The C++ correspondence is a separate signed item (C3 E-2).
+- Prose proofs are step-4 input. An M4 claim still needs Lean (TARGET §5.4, C3 E-1).

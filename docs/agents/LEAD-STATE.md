@@ -140,3 +140,4 @@
 - 15:42Z L-RED R8 §6 d6496f3: counter_dftl/odftl harmless to dtl (2N+3). Spawned L-ALG successor session_012cQPWcEm23KMdMQSvWrULr (Fable) for five questions then DTL proof. L-COMP successor deferred to ~20:36Z (cap headroom, spend warning).
 - 15:47Z L-ALG successor handover 5/5; GO for DTL proof attempt (8h box, statement first within 1h, GAPs reported at once).
 - 15:53Z L-ALG statement (Thm D1 correctness, D2 poly bounds) at l-alg 5175454 -> CHECKER C3 statement diff (45 min). Forwarded L-ALG's completeness observation (no incomplete-search check in release path; sptl W) to L-RED as a correctness target.
+- 15:59Z CHECKER C3 FAIL (text) 5b924e7 merged. L22: DTL pinned with --no-loops, trace 0, all tie orders, object = C5-DTL.md; sent fix list to L-ALG, --no-loops re-probe to L-RED. CHECKER parked.
