@@ -19,7 +19,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | --- | --- | --- | --- | --- | --- | --- |
 | Lead | session_014FBi6o334DvwT5Uw2kDfoN | claude/vibrant-johnson-nxvvxo | opus-5-5 | high | working | Owner-chosen session; routing judgement; keeps context lean |
 | REFEREE (old) | session_01Ki9osXiyYf9heTLNk3FKED | claude/referee | fable-5-1 | high | parked (handover f179ae0); keep 1 week |
-| REFEREE | session_01R4yR8XskSK3ta94ewnN4cM | claude/referee | fable-5-1 | high | idle (R-TL2 signed OK with text fixes 6d5d9ad; confirming 8bb9d22) | Never downgrade the referee; most capable model |
+| REFEREE | session_01R4yR8XskSK3ta94ewnN4cM | claude/referee | fable-5-1 | high | idle (R3 signed 42f11c6/5ed56c5) | Never downgrade the referee; most capable model |
 | L-LIT | session_01MxWPJxeciDocEdfd89xCF8 | claude/l-lit | opus-5-5 | high | parked (T14 done 8dd2e55: S7 NOT COVERED, outside B1-B17) | Source checking and barrier analysis need judgement |
 | L-COMP | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | parked (handover 25a6e21; successor only when T3 revives or a new claim needs the bench) | n=5 diagonal cells cost 1-2 h/k; low value while T3 is parked |
 | L-STRUCT | session_01VH4fd2Fq8XeXtyUfkwLJV1 | claude/l-struct | fable-5-1 | high | parked (handover 729c965; wake on n=5 diagonal gap, new T3 idea, or L4 second referee) | Attack lane (owner: most capable model at high effort); rank 1 approach, weak separators, T4 verdict OPEN |
@@ -29,8 +29,8 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | L-ALG | session_01WN44zjFXZSqaL5SwsoDn7d | claude/l-alg | fable-5-1 | high | working (design loop C1.., 12h box from ~10:00Z) | D5/L18: M4 primary aim; attack lane, most capable model (D1) |
 | L-SI | session_01HnGDSEHG3NHszV1y8ND6BF | claude/l-si | fable-5-1 | high | working (SI rule design loop, 12h box from ~10:10Z) | D6/L19: second algorithm lane, RANKING rank 4; attack lane, most capable model (D1) |
 | L-RED | session_017WLo5xfMxRZ4f6n2Su6274 | claude/l-red | fable-5-1 | high | working (R2 one-token fix; then box 3: kill S7 via reset gadget, 6h) | Designer and falsifier must differ (D1); referees kept clean for step 4 |
-| REFEREE-2 | session_01C2sxysc8CzJQrNBhp1rKMs | claude/referee-2 | fable-5-1 | high | working (R2-TL-sign: formal signature at l-red 49ae306, 1h from 13:38Z) | Independent second referee; never downgraded |
-| CHECKER | session_01JptdoF6eLabJzBHG28nWSS | claude/checker | opus-5-5 | high | parked (C2 FAIL ce07713; re-check text+signatures when fixed) | Landing gate: mechanical re-runs and statement diffs; Opus suffices |
+| REFEREE-2 | session_01C2sxysc8CzJQrNBhp1rKMs | claude/referee-2 | fable-5-1 | high | idle (R3 signed 94dde7b; context 495k) | Independent second referee; never downgraded |
+| CHECKER | session_01JptdoF6eLabJzBHG28nWSS | claude/checker | opus-5-5 | high | parked (C2 PASS 068f9de, R3 landed) | Landing gate: mechanical re-runs and statement diffs; Opus suffices |
 | HUMAN-DESK | session_01URpUgDVczmLPHmidyo4Jr6 | claude/human-desk | opus-5-5 | high | parked (packet 3b3bdde; owner decides distribution) | Owner D1: spawned when a claim reaches M3; writing quality matters, no deep math |
 | WATCHDOG | session_01JQNTX8zT3T3mWMt6ZmYzkn | none (never edits) | haiku-5-5 | high | working (cron :30, trig_019xE43BZ5qaDGwxDkZ5h5ik) | Routine liveness/overage checks; reports to Lead only (deviation from playbook: does not wake lanes, so idle sessions never get messages) |
 | OWNER-DESK | session_01Eq99qsTJBiTh6xLzwCPtqv | claude/owner-desk | opus-5-5 | high | starting | Owner D3: owner Q&A and open questions; accuracy in plain explanation, no proofs; idle between owner messages |
