@@ -135,3 +135,4 @@
 - 15:29Z R8 (DTL HELD, Lemma M) merged. Decision (fleet judgement, L12): run DTL through the gauntlet: L-LIT T16 (step 3 + GandALF 'VULNERABLE' source), L-ALG successor for proof (step 4 attempt) after handover, L-RED keeps attacking (FIFO order, phase alternation, cross-iteration monotonicity, per-tangle work). Cap: 5 with successor. Rate: seven_day warning, no overage.
 - 15:31Z L-LIT T16 interim: Oink branch origin/dftl has counter_dftl (a028e62, 2021) and counter_odftl (2024); DTL was 'distraction-free TL' before 1ba8b0a rename; README counter_dtl predates rename, no source. Forwarded to L-RED as top priority (build vs 8fbf0a7, run dtl/idtl N=1..20 with verify).
 - 15:32Z L-ALG handover 1017502 merged; L-ALG parked; successor spawn held until L-RED reports on counter_dftl/odftl.
+- 15:34Z T16 merged (3874a1e): step 3 SIGNED w/ 4 caveats; L-LIT parked; optional owner Q10 (2024 chapter copy) listed in NOW.
