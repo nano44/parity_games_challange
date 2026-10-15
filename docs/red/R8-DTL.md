@@ -151,7 +151,11 @@ nothing pushes those successors later again). The one open step for a proof: the
 pushed earlier changes outside vertices' choices, which makes a new SCC, which is a new tangle, which fires at a different
 escape ...); I argue it is short because each round only moves events earlier and the within-tangle push order is fixed
 at learning time, but it is the step to nail. Targeted search for it: fitness = max number of tangles learned at ONE top
-(injective priorities so the tangle priority names the top), PERHEAD-PLACEHOLDER
+(injective priorities so the tangle priority names the top), hill-climbs at n = 12, 16, 20 (40,000 mutations each; fitness = max tangles at one top, and = max at one top
+within one search) stayed at 1-3. On the many-tangle games of sections 2 and 6 (traces, top identified by the tangle's
+priority, so several tops of equal priority may be merged): max tangles at one top priority within ONE search is 1-3
+everywhere (chain 40: 1; evolved n = 24: 2; tc+ 3: 1; the three perturbed counters: 3), and across searches at most
+18 (pert_dftl6, 13 searches): one new SCC per top per search, never a self-firing chain within a search.
 (b) Phase alternation. dtl never returns to a player's phase (run 1123-1136: Even until search(0) fails, then Odd until
 search(1) fails, then stop); so Even's tangle set is frozen when Odd starts, and nothing of Even's is renewed. idtl
 alternates, but the opponent's tangles are never attracted for the player (attractTangle 113 checks tpr mod 2 = player),
@@ -208,9 +212,12 @@ Every run "solution verified", all vertices solved, dtl wall time below 10 ms at
 tangles in 2 iterations on both families (idtl the same); it is neither wrong nor super-polynomial here. ODFTL
 (one-player distraction-free TL, the a028e62 algorithm kept under that name at the tip) is exponential on counter_odftl
 (iterations 2, 4, 7, 11, 17, 26, 41, 62, 97, 146, ..., 349 at N = 12: ratio ~1.5-1.6, Fibonacci-like) and linear on
-counter_dftl; the tip's two-player DFTL is linear on both (1 iteration). So the branch's counterexample is the pair
-(ODFTL, counter_odftl), as the fix commit d54dfad says ("Fix counter_odftl to have a tiny tangle of the opponent after
-the distraction").
+counter_dftl; the tip's two-player DFTL is linear on both (1 iteration). The ORIGINAL solver at a028e62 (built separately: worktree oink-a028, its own CMake) on counter_dftl: tangles
+6, 14, 28, 52, 92, 158, 266, 442, 728, 1192, 3162 and iterations 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 610 for
+N = 1..10, 12: the iteration counts are exactly the Fibonacci numbers F_{N+3}, so the 2021 counterexample is a
+Fibonacci counter (growth 1.618^N), verified at every N. So the branch's counterexamples are the pairs (a028e62 DFTL,
+counter_dftl) and (ODFTL at the tip, counter_odftl), as the fix commit d54dfad says ("Fix counter_odftl to have a tiny
+tangle of the opponent after the distraction"); the tip's two-player DFTL is linear on both.
 What the generators are built to break (dftl.cpp header, branch tip lines 19-48, read): DFTL's loop takes V = all
 p-priority vertices, decomposes into regions headed by V top-down, learns tangles in closed regions, and "if no region is
 closed, we assume that 'surely' the lowest top vertex is distracting, so we remove that vertex from V"; V is reset at
