@@ -103,3 +103,11 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - Status: done 2026-10-15 (owner: "I did Q3"). Applies to sessions started after it was saved; the first new session's
   setup log is the confirmation. Oink build stays in-session (Lead).
 
+
+## Q8: shift effort toward algorithm (upper-bound) lanes?
+- id: Q8 (raised by OWNER-DESK 2026-10-15 09:47Z after the owner's D5 message)
+- Background: after D5 the only active attack lane was L-LOWER (lower bounds); no lane was building an algorithm.
+- Options: (a) add algorithm lanes, L-LOWER continues; (b) add them and pause L-LOWER; (c) no change.
+- Status: answered by the Lead's reading of D5 (L18, trunk dc8e41b): M4/M4-R is the primary aim; new lane L-ALG (falsification-driven
+  design loop, 12 h box from ~10:00Z); L-LOWER finishes its box to 20:36Z. Open follow-ups for the owner, only if wanted: a second
+  algorithm lane, a strategy-improvement design lane, a spend ceiling.

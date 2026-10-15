@@ -47,3 +47,7 @@ REFEREE R-psolC (referee 1600917) implementation faithful. L-ATTR parked. Only L
 ## 2026-10-15 09:47Z owner (stance on feasibility)
 > I want you to believe in yourself and just loo kat the decade old mathematical open questions that has been cracked this year with AI. There are hundreads of examples so dont tell me it is highly unlikely to solve the parity game problem, because it is not
 Relayed verbatim to the Lead. Desk: drops "unlikely" framing; asks the owner whether effort should shift toward algorithm (upper-bound) lanes (scope question, owner's call).
+
+## 2026-10-15 09:53Z Lead (relayed to owner)
+Owner's message recorded as D5 (trunk dc8e41b), Lead reading L18: M4/M4-R primary aim; "M4 unlikely" dropped; new lane L-ALG (12 h box
+from ~10:00Z); L-LOWER finishes its box; gauntlet unchanged. Q8 answered by this unless the owner wants more.
