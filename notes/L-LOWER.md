@@ -2,13 +2,12 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-15 ~01:30Z. Task L1 (24h box to 2026-10-15 23:01Z). Statement v1 8fcc0f2 refereed (R-L1 CHANGES); v2 written 2026-10-15 ~00:30Z addressing findings 1-9 (see statement header).
-Step 2 done for n ≤ 4: B_1(1..4) = 0,2,4,6 = 2n-2 exactly (SAT on bisimulation quotient + BFS cross-check), minimal depth
-2n-2, chain programs suffice. Lemma 2.1' (depth ≥ 2n-2, lasso pair) and Theorem B (depth-(2n-1) types determine W) written in
-docs/lower/L1-report.md §2. n = 5 (2026-10-15 ~02:00Z): window-1 chains UNSAT at k = 8, 9, 10 (result_cegar5_*.log, cegar5_*.json cores). RUNNING via
-cegar5b.py (table-level sweep, ~7 min/round, checkpoints cegar5_<tag>.subset.json, resumable): unrestricted k=8 (cegar5_k8_b.log),
-window-2 k=8 (cegar5_k8_w2_b.log), window-1 k=11 (cegar5_k11_w1_b.log). W cache: scratchpad w5/ (rebuilt in ~13 min if lost).
-Next: fill report §4 with the outcome, message the Lead with DONE/FINDINGS/NEEDS before 23:01Z.
+2026-10-15 07:40Z. L1 box ends 23:01Z. RESULT: B_1(5) = 8 = 2n-2 (cegar5_k8_b.json, verified on all 916e6 five-vertex games +
+independent checks); window-1 chains need >= 12, window-2 >= 9 at n = 5. Report docs/lower/L1-report.md §1, §4, §5 updated;
+statement §2 known picture updated. Lead messaged with DONE/FINDINGS/NEEDS at ~07:45Z. RUNNING (cegar5b.py, checkpoints
+cegar5_<tag>.subset.json): window-3 k=8 (cegar5_k8_w3_b.log), window-2 k=9 resumed (cegar5_k9_w2_b.log). Memory: keep <= 2
+runs (cgroup ~16 GB; a run with 20e6 clauses reaches 8 GB). If both finish, add them to report §4 and push.
+Open: uniform O(n) construction (would refute T-L1), or a proof of super-linearity for n >= 6 (no search possible there).
 
 ## Queue
 1. n = 5: B_1(5) = 8 or > 8 (cegar5.py). 2. If = 8: look for the uniform O(n) construction (report §3 has the n=4 chain).

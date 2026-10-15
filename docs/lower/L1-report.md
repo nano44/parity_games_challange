@@ -10,7 +10,7 @@ Everything below is L-LOWER's own work unless a source is named; nothing is a re
 | 2 | 2 | 2 | 2 | 4 | SAT on Q_2; BFS over partitions agrees |
 | 3 | 4 | 4 | 4 | 9 | SAT on Q_3 (UNSAT at 3 on the full quotient); BFS finds no program of depth ≤ 3 |
 | 4 | 6 | 6 | 6 | 16 | SAT with CEGAR on Q_4 (48062 classes); UNSAT at 5 on a successor-closed subset; witness verified on all of Q_4 |
-| 5 | see §4 | ≥ 8 (Lemma 2.1') | 8 | 25 | CEGAR against all 916·10^6 five-vertex games (experiments/lower/cegar5.py) |
+| 5 | 8 | 8 (= cost; Lemma A gives ≥ 8) | 8 | 25 | CEGAR against ALL 916·10^6 five-vertex games (cegar5b.py); witness cegar5_k8_b.json, 8 gates, 70 rounds, 7103 counterexample games |
 Q_n = bisimulation quotient of all pointed one-player Büchi games with ≤ n vertices (L1 Lemma 1.5 makes this sound):
 |Q_1..4| = 2, 14, 442, 48062. Two-player Büchi: minimal depth 2n−2 for n ≤ 3 as well (|Q| = 4, 76, 5164).
 Restricted minima at n = 4: chain programs reading only (P_2, previous gate): 6; reading the two previous gates: 6;
@@ -57,24 +57,29 @@ s_6 = the same one step later. The output combines distance-profile bits with tw
 vertices every path visits P_2 vertices in pairwise fresh segments (Claim 1), so "P_2 at positions 1 and 4..5" forces 5
 vertices. These are pigeonhole witnesses tuned to n = 4; L-LOWER has NOT found a uniform family of O(n)-gate programs.
 
-## 4. n = 5 (in progress; exact statements only)
-Method: experiments/lower/cegar5.py and cegar5b.py. SAT candidates on Q_3 plus counterexample games, verified on Q_4 and on
-ALL 916·10^6 one-player Büchi games with 5 vertices (vec5.py reference, itself equal to Zielonka on all games with ≤ 4
-vertices). UNSAT on a successor-closed subset is a proof of impossibility; a candidate counts only after the full sweep passes.
+## 4. n = 5: B_1(5) = 8 = 2n − 2 (exact)
+Method: experiments/lower/cegar5b.py. SAT candidates on Q_3 plus counterexample games, verified on Q_4 and on ALL 916·10^6
+one-player Büchi games with 5 vertices (vec5.py reference, itself equal to Zielonka on all games with ≤ 4 vertices; the final
+sweep was repeated with the independent gate-level evaluator). UNSAT on a successor-closed subset is a proof of impossibility.
 | program class | k = 8 | k = 9 | k = 10 | k = 11 |
 | --- | --- | --- | --- | --- |
-| window-1 chains (gate i reads P_2, s_{i−1}) | UNSAT (136 games, cegar5_k8_w1.json) | UNSAT (154 games) | UNSAT (562 games) | UNSAT (512 games) |
-| window-2 chains | UNSAT (1264 games) | undecided (run OOM-killed at 2483 games, 19·10^6 clauses) | | |
-| unrestricted | running | | | |
-So window-1 chain programs, which attain the minimum 2n − 2 for n ≤ 4, need ≥ 12 gates at n = 5 (2n − 2 = 8), and
-window-2 chains ≥ 9: the chain family does not extend linearly. B_1(5) itself (≥ 8 by Lemma A) is open until the unrestricted run ends.
+| unrestricted (any gate reads all earlier gates) | SAT, VERIFIED on all 5-vertex games (round 70, 7103 games, 26.9·10^6 clauses) | — | — | — |
+| window-1 chains (gate i reads P_2, s_{i−1}) | UNSAT (136 games) | UNSAT (154 games) | UNSAT (562 games) | UNSAT (512 games) |
+| window-2 chains (gate i reads P_2, s_{i−2}, s_{i−1}) | UNSAT (1264 games) | undecided (run OOM-killed at 2483 games) | | |
+Lower bound: Lemma A (B_1(5) ≥ 8). Upper bound: the witness program (cost 8, depth 8, 2593 gates as decoded; printed by
+show.py; each gate reads most earlier gates). Re-verification independent of the sweep: 0 mismatches on Q_4 (48062 classes, W
+from the harness Zielonka), on all one-player games with ≤ 3 vertices, and on 200 000 random 5-vertex games against the harness
+Zielonka. So B_1(1..5) = 0, 2, 4, 6, 8 = 2n − 2, but at n = 5 the minimum is NOT attained by chains any more (window-1 needs
+≥ 12 gates, window-2 ≥ 9): the extra information has to flow through gates that read several earlier gates, at the same depth.
 
 ## 5. State of T-L1 and proof routes
-- The hoped-for lower bound T-L1 (B_1(n) = ω(n)) is NOT supported by the data: B_1(n) = 2n − 2 exactly for n ≤ 4, attained by
-  chain programs. If B_1(5) = 8 the conjecture B_1(n) = 2n − 2 (linear; T-L1 false) becomes the working hypothesis and the
-  lane's job turns into constructing the uniform O(n) program (which would be a positive separation result in the opposite
-  direction: non-adaptive anonymous programs solve one-player Büchi with O(n) Cpre gates, matching the adaptive O(n)).
-- If B_1(5) > 8, the first super-linear step appears at n = 5 and the witness subset (UNSAT core games) is the place to look
-  for the obstruction family.
-- Obstruction for the two standard methods: (i) depth/locality is capped at 2n − 1 by Theorem B; (ii) two-party
+- The data now stands against T-L1: B_1(n) = 2n − 2 exactly for n ≤ 5, equal to the depth lower bound of Lemma A. Working
+  hypothesis (L-LOWER, unproved): B_1(n) = 2n − 2 for all n, i.e. B_1(n) = Θ(n) and T-L1 (both forms) is FALSE. What is missing
+  is a uniform construction: the n = 5 witness is a SAT artefact (2593 gates after decoding, no visible pattern), and the natural
+  families (chains, pigeonhole witnesses) provably do not extend. Proving the hypothesis means finding, for every n, 2n − 2 modal
+  formulas of nested depth ≤ 2n − 2 whose values at a vertex determine W_E on all ≤ n-vertex one-player Büchi games.
+- If instead a super-linear bound holds, the first deviation is at n ≥ 6, where the full verification (4·10^12 games) is out of
+  reach for the present method; a lower bound there needs a proof, not a search.
+- Obstructions for the two standard methods remain: (i) depth/locality is capped at 2n − 1 by Theorem B; (ii) two-party
   communication (CDHL) is capped at Θ(n) bits on the Reduction 3.9 graphs (L1 §4).
+- Structural data still to collect (running at the end of the box): window-3 chains at k = 8, window-2 at k = 9.

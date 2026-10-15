@@ -157,8 +157,9 @@ leaves. p.9:2 and p.9:9 state the resulting symmetric bound n^{2·lg(d/lg n)+O(1
   non-adaptively is open. ANP Theorem 5.1 / Remark 5.5 apply only to programs of the shapes ‖·‖_{U,V}, ‖·‖_V, not to Def. 1.3.
 
 **Known picture (this model), p ≥ 2:** 2n − 2 ≤ B_1(n) ≤ B_2(n) ≤ n^2 and 2n − 2 ≤ C(n, p) ≤ n^{2·lg(p/lg n)+O(1)}.
-Exact values (docs/lower/L1-report.md): B_1(1..4) = 0, 2, 4, 6 = 2n − 2, attained by chain programs, and the depth-(2n − 1)
-bisimulation type determines W_E on one-player Büchi games with ≤ n vertices (report, Theorem B).
+Exact values (docs/lower/L1-report.md): B_1(1..5) = 0, 2, 4, 6, 8 = 2n − 2 (n ≤ 4 by chain programs, n = 5 by a non-chain
+witness verified on all 916·10^6 five-vertex games), and the depth-(2n − 1) bisimulation type determines W_E on one-player Büchi
+games with ≤ n vertices (report, Theorem B).
 
 ## 3. Targets (precise statements; nothing proved)
 
@@ -167,7 +168,8 @@ In words: every straight-line symbolic program (Def. 1.3, R1-R6) that outputs Ev
 game with at most n vertices uses at least n^{1+ε} Cpre gates.
 Weak form T-L1w: B_1(n) ≠ O(n), i.e. limsup B_1(n)/n = ∞ (strictly weaker than ω(n), which would be lim B_1(n)/n = ∞).
 Consistency: 2n − 2 ≤ B_1(n) ≤ n^2, so ε ≤ 1 and nothing in §2 excludes either form. The data of docs/lower/L1-report.md
-(B_1(n) = 2n − 2 for n ≤ 4, n = 5 pending) does not support T-L1; the target is kept as the statement to prove or refute.
+(B_1(n) = 2n − 2 for n ≤ 5) stands against T-L1; the target is kept as the statement to prove or refute, and the report's
+working hypothesis is the opposite: B_1(n) = 2n − 2 for all n.
 
 **Why it would matter (finding 6).** Def. 1.3 differs from CDHL's model in three ways at once: (a) non-adaptive, (b) vertex-
 anonymous (CDHL allow singleton sets; their p.2 remark reads the whole graph with 2n one-step operations), (c) no Post. In
