@@ -8,7 +8,11 @@ L2-data.md. Running at the time of writing (logs in experiments/lower/, detached
 result_k5_deg2_k9.log (family K_5, exact CEGAR). If they finished: a RESULT line ends each log; UNSAT at k = 9 means
 B_2(5) ≥ 10 (gap grows); write it into L2-theory §4/§6.
 
-## DONE (this box)
+## DONE (this box; see docs/lower/L2-theory.md for everything, with SHAs and commands)
+- MECHANISM (the box's main finding, data): the gate above 2n − 2 is the price of serving two COUNTS of priority-2 vertices
+  with one vertex-anonymous program. n = 4: every single count costs 6, every pair of counts except {1, 2} costs 6, {1, 2}
+  costs 7 (class table, L2-theory §3). n = 5: |P_2| = 1 costs exactly 8 (C3, full sweep of 4.58e9 games), |P_2| ∈ {1, 2}
+  costs ≥ 9 (C2'), the general class ≥ 9 (C2, two solvers), the family K_5 ≥ 9.
 - B_2(4) ≥ 7 certificate minimised: 68 whole games / 217 vertices (b2_n4_k6_core3.json), UNSAT by 4 solvers; localised
   to the class K (one Even vertex e of priority 1, Odd a (P_2), b (P_2 or P_1), c (P_1), all out-degrees 2): 28 games
   (core_exact_k6.json), 97 bisimulation classes (qcore_exact_k6.json), 53-pair kernel. Table of classes in L2-theory §3.
@@ -19,7 +23,8 @@ B_2(5) ≥ 10 (gap grows); write it into L2-theory §4/§6.
   at n = 4, 5.
 
 ## IN FLIGHT
-- The three n = 5 runs above.
+- result_b2_n5_k9.log (general, k = 9; round 2 with 614 games started ~13:30Z), result_k5_deg2_k9.log (K_5, k = 9),
+  result_b2_n5_k9_p2sz1-2-3.log (|P_2| ∈ {1,2,3}, k = 9, seeded with the 612-game {1,2} core). UNSAT in any = B_2(5) ≥ 10.
 
 ## NEEDS
 - Lead: decision on parking (L2-theory §5b: recommendation = park the theory goal; keep the two cheap n = 5 experiments).

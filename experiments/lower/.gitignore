@@ -8,3 +8,4 @@ k5_*.subset.json
 # live logs of runs in progress (un-ignored and committed when they finish)
 result_k5_deg2_k9.log
 result_b2_n5_k9.log
+result_b2_n5_k9_p2sz1-2-3.log
