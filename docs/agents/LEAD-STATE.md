@@ -156,3 +156,4 @@
 - 17:40Z L-ALG ccff864: C3 fixes to §0, --no-loops re-runs clean (41,684 canonical games + 20,000 debug fuzz with self-loops). Late by 90 min: L-ALG had not read notifications during proof work (Lead miss to prevent: ask lanes to read notifications at each push). CHECKER C3b re-check started.
 - 17:44Z L-RED 7b4c086: GAP-A open quantity measured = 0 everywhere; distinct region sets per top linear. L-ALG resumed with route (S)+(D)+(W)+(a1) => O(n^2) per level.
 - 17:46Z C3b merged: §0 PASS -> frozen (L24); §1.0 FAIL R-1..R-3 sent to L-ALG (fix first).
+- 17:50Z L-ALG 0533890: Lemma S (strategies a function of (top,set)) proved modulo (M-cross); deletion caveat (factor charge unproved). (M-cross) failure shape + deletion route sent to L-RED.
