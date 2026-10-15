@@ -2,7 +2,7 @@
 """Free-form hill-climb over small parity games maximising Oink DTL's learned-tangle count (L-RED, DTL box).
 Fitness = tangles found by `oink --dtl --no-single --no-wcwc --no-loops` (raw solver, no preprocessing, self-loops kept;
 before 16:02Z the runs used --no-single --no-wcwc only). Mutations: add/remove an edge,
-change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha|strch|newrecur] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
+change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha|strch|newrecur|maxsets|pairs] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
 import sys, os, random, subprocess, tempfile, time, re
 oink, n = sys.argv[1], int(sys.argv[2]); arg = lambda k, d: type(d)(sys.argv[sys.argv.index(k) + 1]) if k in sys.argv else d
 steps, seed, maxpr = arg("--steps", 20000), arg("--seed", 0), arg("--maxpr", 2 * int(sys.argv[2])); rng = random.Random(seed)
@@ -23,7 +23,7 @@ def dumps(g):
 def score(g):
     open(tmp, "w").write(dumps(g))
     try:
-        r = subprocess.run([oink, SOLVER] + OINKFLAGS + (["-t", "-t", "-t"] if fitness in ("strch", "newrecur") else ["-t", "-t"] if fitness.startswith("per") or fitness in ("prunemono", "dups", "alpha", "straddles") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
+        r = subprocess.run([oink, SOLVER] + OINKFLAGS + (["-t", "-t", "-t"] if fitness in ("strch", "newrecur", "maxsets", "pairs") else ["-t", "-t"] if fitness.startswith("per") or fitness in ("prunemono", "dups", "alpha", "straddles") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
     except subprocess.TimeoutExpired:
         return 10 ** 6          # a timeout is interesting in itself
     if fitness in ("unsolved", "wrong"):
@@ -34,6 +34,13 @@ def score(g):
             out = r.stdout + r.stderr
             bad = 1000 if ("error" in out.lower() or "verified" not in out) else 0
         return n - solved + bad
+    if fitness in ("maxsets", "pairs"):   # (D): max distinct region vertex sets at one top / total distinct (top, set) pairs, all pieces
+        import importlib.util, os as _os
+        spec = importlib.util.spec_from_file_location("sc", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "dtl_strchanges.py"))
+        sc = importlib.util.module_from_spec(spec); spec.loader.exec_module(sc)
+        out = re.sub(r"\x1b\[[0-9;]*m", "", r.stdout + r.stderr)
+        regions, seen, changes, occ, sets_per_top = sc.measure(out)
+        return max((len(v) for v in sets_per_top.values()), default=0) if fitness == "maxsets" else len(seen)
     if fitness == "newrecur":        # new tangles learned at a (top, region set) seen before (the end state of the Lead's 18:02Z item 1)
         import importlib.util, os as _os
         spec = importlib.util.spec_from_file_location("sc", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "dtl_strchanges.py"))
