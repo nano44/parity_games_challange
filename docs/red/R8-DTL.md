@@ -447,6 +447,33 @@ always gets the same Even strategies, even when the pair recurs 68 times; what g
 sets at one top, and that grows linearly (2N + 1 on tc+, at most 11 elsewhere). Climbs with fitness = strategy changes
 at a fixed pair (detector build, self-loop and renumbering mutations, n = 12, 16, 12,000 each): best 0 in both.
 
+(M-cross) and the deletion route (Lead 17:53Z; proof lane Lemma S, DTL-proof.md 3(a)). Tool: experiments/red/dtl/
+dtl_mcross.py on the detector build (which now also prints "DELETE tangle t" when attractTangle deletes a tangle with a
+solved vertex). It rebuilds every sptl region of the FIRST PIECE of each search (the sptl blocks between the first stable
+pruning result and the first DOM removal, last pass per top) and compares consecutive same-player searches: tops lost
+(not solved), regions shrunk (minus solved vertices), heads moved down.
+- Restricted to the proof's setting (X empty: searches whose FIRST pruning result is stable): 0 violations of all three on
+  tc+ 4, 6, 8, the evolved and perturbed games, tc 4, counter_odftl 8, chain 40. But such searches are RARE: 2 of 10, 2
+  of 14, 2 of 18 on tc+ 4, 6, 8; 1 of 3, 1 of 6, 1 of 11, 1 of 16, 3 of 10 on the others. On tc+ every other search starts
+  with result -1 (the -1 branch removes a threshold attractor before any stable set), so Lemma S's hypothesis covers almost
+  none of the tangles learned there.
+- Unrestricted (first stable set of each search, whatever X is at that point): regions of the same top differ between
+  searches with NO dominion and NO deletion in between: tc+ 4, Even-0-H (the highest top) has first-piece region 52 in
+  search 0, 40 in search 1, 43 in search 2 (searches 0-2 learn no dominion; the first DELETE lines come after the
+  dominion of search 4); search 1's region lacks Even-1-H, Even-2-H, Even-3-H, the Even-k-B-j and the Odd-*-Z/S vertices
+  of search 0 and has the Even-*-S and Odd-*-B vertices instead. The pruning itself is monotone there (dtl_vstar.py: 0
+  newly pruned vertices on tc+ 4, 6, 8), so the difference comes from X: the pieces removed by the -1 branch before the
+  stable set differ between searches as the tangle set grows. So region monotonicity across searches holds at X empty
+  and fails at X nonempty on tc+, without deletions. Heads also move down there (tc+ 4: Even-3-A-k from Even-0-H to
+  Even-3-Z; counts 37, 135, 329 on tc+ 4, 6, 8).
+- Deletions: 24, 48, 80 on tc+ 4, 6, 8; 57 on the evolved n = 24; 82 on the perturbed tc+ 3; all after dominions, as the
+  code says. Recurring (top, set) pairs at first pieces: 0 after a deletion in every game; and section 12's measurement
+  over ALL sptl regions (all pieces, all X) found 0 strategy changes at a recurring (top, set), so no deletion ever paid
+  for a new SCC at a recurring pair: tangles-per-deletion is 0 here, not > 1.
+- What this says for Lemma S: the determinacy "SCC = f(top, region set)" is what holds empirically, over all pieces; the
+  route through (M-cross) at X empty proves it only for the rare X-empty first pieces; the statement to prove is the
+  one measured: same (top, vertex set) implies same strategies whatever X was.
+
 ## 4. What was not done
 - No Lean or refereed proof of the polynomial bound; section 1 is a Lead reading with the gap named.
 - No Python port of dtl (Oink's trace sufficed: every tangle, strategy, escape and pruning round is printed).

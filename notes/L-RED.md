@@ -8,6 +8,12 @@ R2's parity encoding of FHZ's one-player counter G_{n,1,1,1} with linear pads W 
 Zielonka, strategies verified. Question DF: longest DF run on G_{n,1,1,1} exact 5, 20, 53, 124, 269 (n = 1..5). Reported 16:50Z. Then S5/S6 on the FHZ encoding: HELD (docs/red/R6-S5S6-fhz.md): numbering searches quadratic;
 index-fair rules must take the improving higher bit that the counter keeps live during the lower count. Next if asked: a proof of the recurrence (FHZ-style
 phase analysis for the S7 order), or the "DF + pads" reduction as a general theorem.
+## Resume point: PARKED (last end-of-box 18:00Z my clock, R8 at a44030f)
+Latest tools: dtl_strchanges.py (GAP-A: 0 strategy changes at a recurring (top, region set), all pieces), dtl_mcross.py
+((M-cross): holds at X-empty first pieces, which are rare; regions of the same top differ at X nonempty on tc+ without
+deletions; deletions never pay for a new SCC). Detector build prints: STRADDLE, REGION ... pr ... closed, SPTL top,
+DOM top, SOLVE attractor, DELETE tangle. Lead's open ask not done: an X-empty (M-cross) failure without deletion
+(a straddle hitting a top).
 ## Resume point: PARKED after the bounded items of the second DTL box (Lead 17:36Z; end-of-box ~17:55Z my clock)
 Detector build (scratchpad oink-det-src / oink-det, pinned source + prints STRADDLE / REGION / SPTL top / DOM top /
 SOLVE attractor): dtl_strchanges.py measures GAP-A (0 everywhere); dtl_search.py fitnesses straddles/alpha/strch. The
