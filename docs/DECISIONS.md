@@ -51,3 +51,11 @@ Lead reading L9 (2026-10-14, under L8): L-ATTR's T-A1 ("psolB solves G completel
 if double-refereed, as M3 "a tighter analysis of a known algorithm": an exact structural characterisation of the class HKP call
 "Solved" for psolB. It is not claimed as "a new polynomial class": PA** membership is decidable in polynomial time only by running
 psolB itself (L8). Owner may rule otherwise.
+
+## D3 (2026-10-15 ~07:26Z): owner-questions session
+Verbatim:
+> Lets start a subsession called owner questions where you can delegate your questions and I can ask questions about the research progress
+
+Lead reading L10: the session is OWNER-DESK (title "Owner questions", brief docs/agents/OWNER-DESK.md). It holds the open owner
+questions and answers the owner's questions about progress from the repository. It relays every owner answer or instruction to the
+Lead verbatim; rulings are recorded here by the Lead as before. It has no authority over lanes and messages only the Lead.
