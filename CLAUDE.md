@@ -32,6 +32,7 @@ Playbook: docs/sources/fleet-playbook.md. Literature map (secondary source): doc
 - REFEREE-2: docs/referee-2/ (independent second referee; reads docs/referee/ only after its own report).
 - L-LOWER: docs/lower/, experiments/lower/.
 - L-ALG: docs/alg/, experiments/alg/ (algorithm design loop; reads experiments/attr/ and experiments/harness/, does not edit them).
+- L-SI: docs/si/, experiments/si/ (strategy-improvement design loop; reads other experiments/ dirs, does not edit them).
 - CHECKER: docs/checker/ (landing gate: exact-commit re-runs and statement diffs).
 - HUMAN-DESK: docs/HUMAN-REVIEW.md (packet for a human expert; owner decides any contact).
 - OWNER-DESK: docs/owner-desk/ (owner Q&A; open owner questions; relays owner words to the Lead verbatim).

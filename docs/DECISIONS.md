@@ -93,3 +93,10 @@ Verbatim:
 Lead reading L18: M4 (and M4-R) is the fleet's primary aim, and fleet documents and reports drop the "M4 unlikely" framing. Effort shifts
 toward algorithm design: a new lane L-ALG runs a falsification-driven design loop. Lower-bound work (L-LOWER) finishes its current box.
 Unchanged (D1): every algorithm claim, the fleet's own included, is treated as wrong until it passes the TARGET.md section 5 gauntlet.
+
+## D6 (2026-10-15 ~10:04Z, via OWNER-DESK owner-desk d09734b): Q8
+Verbatim: > a
+(Q8 as shown by OWNER-DESK: "(a) Yes: start one or more algorithm lanes now; L-LOWER continues as well. (b) Yes, and pause L-LOWER
+to put the budget there. (c) No change.")
+Lead reading L19: confirms L18; L-LOWER continues. The number of algorithm lanes is the Lead's call: a second lane L-SI (strategy
+improvement design loop toward M4/M4-R; L-LIT RANKING rank 4) starts now, alongside L-ALG. No spend ceiling set; D1 cost policy applies.
