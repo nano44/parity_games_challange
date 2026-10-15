@@ -139,3 +139,4 @@
 - 15:35Z T16 addenda 4f61b4c merged: VULNERABLE slide = RTL/PTL (tc+); counter_dtl (2021) targets current DTL, never committed; dftl-branch generators target DFTL. Told L-RED counter_dftl may descend from counter_dtl.
 - 15:42Z L-RED R8 §6 d6496f3: counter_dftl/odftl harmless to dtl (2N+3). Spawned L-ALG successor session_012cQPWcEm23KMdMQSvWrULr (Fable) for five questions then DTL proof. L-COMP successor deferred to ~20:36Z (cap headroom, spend warning).
 - 15:47Z L-ALG successor handover 5/5; GO for DTL proof attempt (8h box, statement first within 1h, GAPs reported at once).
+- 15:53Z L-ALG statement (Thm D1 correctness, D2 poly bounds) at l-alg 5175454 -> CHECKER C3 statement diff (45 min). Forwarded L-ALG's completeness observation (no incomplete-search check in release path; sptl W) to L-RED as a correctness target.
