@@ -4,12 +4,12 @@ Lead's ask (14:18Z): take DFH's (arXiv 1911.01074) or Friedmann's (IPCO'11, PGSo
 exactly where the strategy-dependent tie-break is used, and either make those steps tie-free so that ANY fixed index order
 gives the same run (then test under S5), or state precisely which step needs a strategy-dependent tie-break.
 
-## Verdict: HELD so far (search still running at N >= 4; this file is updated when it ends)
+## Verdict: HELD. The published tie-break cannot be replaced by any fixed order; fixed orders found by search fall behind it from N = 4 on
 No fixed total order of the edges, hence no numbering, reproduces the published Zadeh run at any N >= 2: the run's tie
 decisions contain reversals (the same pair chosen in both orders) in every level and every class, driven by two predicates
 of the current strategy (section 2). The tie steps cannot be made tie-free from inside the game (section 3). Fixed orders
-can still run long on the same game: at N = 2, 3 the best numbering found (47, 169) beats the published tie-break
-(43, 159); the growth beyond N = 3 is the open question of section 4.
+can still run long on the same game at small N: the best numbering found beats the published tie-break at N = 2, 3
+(47, 169 vs 43, 159), then falls behind, 321, 595, 925, 963 vs 467, 1227, 3019, 7131 at N = 4..7 (section 4).
 
 ## 1. The published run and its tie steps (Friedmann's construction, PGSolver's tie-break, ported faithfully)
 Code: experiments/red/zadeh_lb.py = Zadeh's rule with PGSolver's lower-bound tie-break, ported line by line from
@@ -82,10 +82,16 @@ fixed total order, index orders included) and zadeh_climb_fast.py (hill-climb ov
 | --- | --- | --- | --- | --- |
 | 2 | 43 | 41 | 47 | 47 |
 | 3 | 159 | 75 | | 169 (all 3 restarts) |
-| 4 | 467 | 101 | | RUNNING |
-| 5 | 1227 | 197 | | RUNNING |
-| 6 | 3019 | 343 | | RUNNING |
-| 7 | 7131 | 495 | | RUNNING |
+| 4 | 467 | 101 | | 317 (restarts 303, 305, 317); 321 lifted from the N = 3 numbering, 8000 swaps |
+| 5 | 1227 | 197 | | 501 (459, 501, 447); 595 lifted from the N = 4 numbering, 8000 swaps |
+| 6 | 3019 | 343 | | 925 (925, 913, 777); lifted from N = 5: see scratchpad zlift_6.log |
+| 7 | 7131 | 495 | | 963 (907, 963) |
+"Lifted": restart 0 starts from the best numbering of the next smaller N, matched by vertex label (--init), the new
+level's vertices appended; it is the nearest thing to a scheme the search produces. Ratios found / published: 1.09, 1.06,
+0.69, 0.48, 0.31, 0.14 for N = 2..7; the found runs grow by a factor 1.5-1.9 per level, the published ones by 2.4-2.9
+(Theta(N 2^N)). A hill-climb over 96! numberings is weak evidence of a maximum, so section 4 is a lower bound on what index
+orders can do and no bound at all on what they cannot; the exact statement of section 1 (the published run itself is
+unreachable) is the hard part of this report.
 Identity numbering for N = 8: 595. The best numbering found at N = 3 (scratchpad zfast_3.pg) has no readable class
 structure (Even vertices in index order: a1 g1 d0 b0 w0 o0 s1 a0 w1 q1 d1 p0 a2 v1 r1 b1 o1 m2 q0 v0 s0 g0 p1 r0 o2 m0 b2
 m1 p2 g2); R4's class-structured schemes stay polynomial.
@@ -116,6 +122,8 @@ either way at small N.
 - DONE: zadeh_lb.py (port + constraint analysis), zadeh_anyorder.py, zadeh_order_climb.py, zadeh_climb_fast.py; tables of
   sections 1, 2, 4; check.sh pins zadeh_lb N = 2 (43 switches, no fixed order; index 41).
 - FINDINGS: (1) the published Zadeh runs are unreachable by any fixed order at every N (reversals in every class, two
-  strategy predicates); (2) the tie steps cannot be made tie-free by records, pads or relays; (3) fixed orders can beat the
-  published tie-break at N = 2, 3 on the same game; growth beyond N = 3 pending.
-- NEEDS: none yet.
+  strategy predicates h and state'); (2) the tie steps cannot be made tie-free by initial records, pads or relays, and edge
+  copies are excluded by injective priorities; (3) the best numberings found beat the published tie-break at N = 2, 3 and
+  fall to 13% of it by N = 7; (4) the precise open problem is section 5 (a counter with one cycle per level, or a fixed
+  cycle order, and escape records that separate closed from open levels at every tie).
+- NEEDS: none.

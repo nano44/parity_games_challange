@@ -9,7 +9,7 @@ Zielonka, strategies verified. Question DF: longest DF run on G_{n,1,1,1} exact 
 index-fair rules must take the improving higher bit that the counter keeps live during the lower count. Next if asked: a proof of the recurrence (FHZ-style
 phase analysis for the S7 order), or the "DF + pads" reduction as a general theorem.
 ## Resume point (R7, S5 tie-break box, Lead 14:18Z, 5 h)
-docs/red/R7-S5-zadeh-ties.md. zadeh_lb.py = faithful port of PGSolver's lower-bound Zadeh tie-break; on zadehexp N = 2..6:
+docs/red/R7-S5-zadeh-ties.md (HELD, pushed). zadeh_lb.py = faithful port of PGSolver's lower-bound Zadeh tie-break; on zadehexp N = 2..6:
 43, 159, 467, 1227, 3019 switches, 38/142/408/1046 tie steps, 'chosen before competitor' constraints cyclic at every N
 (no fixed total order reproduces the run); direct reversals 10/79/212/390 (--rev lists them with the bit state). Two
 strategy predicates do it: h (partner gate node closed) and state' (bit i+1 decides E_i vs X_i first). Search tools:
