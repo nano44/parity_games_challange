@@ -39,3 +39,7 @@ Answered from docs/RESULTS.md (trunk 3888882), docs/lit/T10, T11. Relayed verbat
 ## 2026-10-15 09:44Z owner (progress question)
 > I feel like we are covering and cheking the frontier of the research now and then once we have done that we will look for advance it? Am I feeling it right?
 Answered from D1 milestones, docs/NOW.md roster/live approaches, RESULTS. Relayed verbatim to the Lead.
+
+## 2026-10-15 09:51Z Lead (correction relayed to owner)
+L-ATTR's psolC work is finished, not in progress: RESULTS DE3 (trunk a538be2) psolC not complete (4-vertex game; tc from 22 vertices);
+REFEREE R-psolC (referee 1600917) implementation faithful. L-ATTR parked. Only L-LOWER is advancing (T-L2 box to 20:36Z).
