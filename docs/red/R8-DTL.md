@@ -410,9 +410,10 @@ tc 4, tc+ 3, counter_odftl 6; the first five with priorities made injective): 0 
 search pairs. (Comparing the printed best-vertex SETS instead is not the right test: with result -1 the printed set is
 the previous round's V, and 1-14 vertices "lost" that way all turn out to be rounds, not prunings.) Hill-climbs with
 fitness = number of newly pruned vertices across consecutive searches (self-loop and renumbering mutations, n = 12, 16,
-20, 30,000 mutations each): PRUNEMONO-PLACEHOLDER
+20, 30,000 mutations each): best fitness 0 in all three runs: no game with a non-monotone first pruning across consecutive
+searches was found, with or without straddles, so no (r1) counterexample.
 (β') probe. The debug build prints "duplicate tangle" at extraction; hill-climbs with fitness = duplicate extractions
-(n = 14, 20, 30,000 mutations): DUPS-PLACEHOLDER. The proof lane's c3/c4: 0 duplicates here as well.
+(n = 14, 20, 30,000 mutations): best fitness 0 in both runs: no duplicate extraction ever, so no (β') configuration. The proof lane's c3/c4: 0 duplicates here as well.
 (α), (β') by hand: the NOTE N5 shape was built literally (gens_dtl.py n5: t' = {a, c, d}, a -> tnew, tau's region
 holding e, h as tnew's return): DTL solves it in 3 iterations with 3 dominions and 1 tangle, {tnew, h} and {tau, e} are
 dominions in search 1, so the straddle never forms (the higher regions must stay open AND unpruned for three searches,
@@ -456,5 +457,8 @@ tangle per head per search by W.
 - DONE (16:50Z-, GAP-C): section 11: debug-build oracle, proof lane's c1-c3 re-run, 12,000 fuzz games and seven
   adversarial climbs clean, the unblocking argument for (C-a) and the "maximum of a p-won cycle is never a distraction"
   expectation for (C-b), both Lead readings.
+- DONE (17:25Z-, second DTL box): section 12: N5 folded into (M2); (r1) trace probe (dtl_vstar.py: 0 non-monotone first
+  prunings on 9 games, 60 search pairs) and climbs (0 at n = 12, 16, 20); duplicate-extraction climbs on the debug build
+  (0 at n = 14, 20); the N5 shape built (collapses into dominions); (α)/(β') unrealised; GAP-A count not measured.
 - NEEDS: Lead: the proof lane should treat section 1(c)+(d) (pusher-chain descents bounded through upward-only
   influence) as the statement to prove or refute; a refutation there is the only killer shape left that I can name.
