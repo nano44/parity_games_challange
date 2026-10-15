@@ -245,7 +245,7 @@ the ingredient DTL replaced, and in Lemma M's terms it is (M2) that makes it har
 stable after one pruning and the 2N + 3 tangles are the Odd tangles' per-level copies learned once each.
 Perturbation searches under dtl (fitness = tangles, single mutations: edges, priorities, owners; flags --no-single
 --no-wcwc): from counter_dftl N = 6 (32 vertices): 100 tangles (from 15); from counter_odftl N = 6 (44 vertices):
-PERT_ODFTL (from 15); from tc+ N = 3 (54 vertices): 92 (from 17). Two to three tangles per vertex, the chain shape again
+154 (from 15; the largest ratio seen, 3.5 per vertex, 21 searches); from tc+ N = 3 (54 vertices): 92 (from 17). Two to three tangles per vertex, the chain shape again
 (the perturbed counters: 14-21 searches, at most 3 tangles at one top priority within a search, at most 16 at one top
 across searches; tangle sizes up to 41-49 of the vertices: nested chains). Fitness = unsolved vertices from
 counter_odftl N = 6 (40,000 mutations): nothing unsolved.
@@ -322,8 +322,8 @@ loop 691-706, so best_vertices builds a disjoint top-down decomposition (as sptl
 - Searches aimed there (fitness = max tangles learned at one top priority within one search, and = max tangles in one
   search; mutations with self-loops and renumbering; from the n = 24 optimum and the perturbed counters): the per-top-within-one-search fitness is fooled by equal priorities (its optimum from the n = 24 game is 23 vertices
 all at priority 10, 23 tops, one chain tangle each, one search: tops are only identifiable by priority in the trace), so
-only the injective-priority runs count: n = 12, 16, 20 at most 3 per top within a search (section 5(a)); with --loops
-and injective priorities, max tangles in one search at n = 16: PS16-PLACEHOLDER. No alternation at a single top
+only the injective-priority runs count: n = 12, 16, 20 at most 3 per top within a search (section 5(a); the same fitness from the perturbed counter_odftl, whose priorities repeat, reached 24: equal-priority tops again); with --loops
+and injective priorities, max tangles in one search at n = 16: 7 (40,000 mutations; the chain family alone gives n - 2 = 14 in one search, so the climb is weak evidence). No alternation at a single top
 within a search was ever seen, as (W) predicts; across searches the self-firing chains grow monotonically (section 2:
 the chain tangles are nested), as (P) predicts.
 
