@@ -30,10 +30,17 @@
   same-region form); (r2) open. Instances: dtl_replay4_n32, dtl_replay2deep_n32 (revisit structure). Climbs on
   fresh contexts (dtl_pieces.fresh_contexts) running from scratchpad nestclimb.py, logs nest/log8*.txt.
 
+- 09:48Z state: queue done except background climbs. GAP-A-M §8 (R10 reply), §9 (Lemma D3 Dom monotone, Lemma L-epoch
+  (a) V* growth (b) lift (c) catch-up, (CU) FALSE, lift-gate constraints). Lemma D2 closed the driver lemma. GAP-C:
+  (r1) PROVED (§7), (r2) FAILS (L-RED R11), status in DTL-proof §2.3. Next if the Lead agrees: abstract-model statement
+  for (2), or C6 completeness (K5).
+
 ## Dead ends (third successor)
 - (M) / Claims P, Q / F5 at a fixed context: DEAD for A_DTL. Obstruction: straddle-deficit (GAP-A-M.md Lemma E); killing
   instance experiments/alg/instances/dtl_mviol_n20.pg (Oink iterations 3-odd → 4-odd, distance 8 → 7); synthetic
   version dtl_m_synth.py (9 vertices).
+- (CU) "a W-blocked top's closed-region SCC is stored or a dominion": DEAD (instances/dtl_cu_viol_n24.pg, search 1
+  passes 3-5, top 19, SCC {3,5,6,10,11,12,16,19} merging two stored tangles; GAP-A-M §9).
 - Invariant of DTL-reachable tangle sets excluding the straddle-with-lower-pickup shape: DEAD (deficits with changed
   survival occur in actual runs, instances/dtl_deficit_n20.pg).
 
