@@ -322,3 +322,4 @@
 - 19:07Z merged l-red R20 §3: replay depth is padding-sensitive; headline measure changed to searches per phase. Told L-ALG.
 
 - 19:08Z Lead: merged l-alg d54a4ac (36624ae). Its §17/§18k list (F1-DEF) as surviving DATA; stale (written before R20 f1_twodef_n48, which kills it on trunk since 6ba3587). Routed to L-ALG to correct.
+- 19:15Z Lead: merged l-alg c615c2b ((F1-DEF) dead in §17/DEAD; §18l: searches per phase headline, nest products final 4/6/2/6 at n=20/28/36/44; climb at n=20 reaches 11 searches in a phase).
