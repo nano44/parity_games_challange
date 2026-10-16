@@ -56,4 +56,17 @@ for key, L in by_ctx.items():
         if a[3] == "S" and b[3] == "S":
             v_lost += len(a[4] - b[4]); v_gain += len(b[4] - a[4])
         if a[3] == "m" and b[3] == "m" and a[4] != b[4]: mset_change += 1
+# nested contexts: a later same-player call with R' a strict subset of an earlier call's R (any searches, not only consecutive)
+nd_up = nd_down = nd_pairs = nd_revert = nd_lost = 0
+for i, a in enumerate(calls):
+    for b in calls[i + 1:]:
+        if b[1] != a[1] or b[0] == a[0] or not (b[2] < a[2]): continue
+        nd_pairs += 1
+        for v in b[2]:
+            x = a[5].get(v, INF); y = b[5].get(v, INF)
+            if y < x: nd_down += 1
+            elif y > x: nd_up += 1
+        if a[3] == "S" and b[3] == "m": nd_revert += 1
+        if a[3] == "S" and b[3] == "S": nd_lost += len((a[4] & b[2]) - b[4])
+print(f"  nested contexts R' ⊂ R (later search): pairs {nd_pairs} | distances on R': up {nd_up}, DOWN {nd_down} | stable→−1 {nd_revert} | stable V* ∩ R' lost {nd_lost}")
 print(f"{game}: depth-0 calls {len(calls)}, distinct (player, R) contexts {len(by_ctx)}, recurring {recur}, consecutive pairs {pairs} | distances: up {d_up}, DOWN {d_down} | stable->-1 reverts {revert}, -1->stable {m_to_s}, -1 set changed {mset_change} | stable V*: gained {v_gain}, LOST {v_lost}")

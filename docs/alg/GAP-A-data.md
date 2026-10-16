@@ -155,6 +155,12 @@ EPOCHS: an epoch of piece k is a maximal run of searches with the same results a
 O(n²) times; when piece k changes, piece k+1's context is a NEW set (the −1 return set changed arbitrarily, F7) and its
 counter restarts. The bound this gives is Π_k O(n²) over the pieces, exponential; a polynomial bound needs a budget that a
 change at piece k+1 consumes GLOBALLY (independent of the epoch of piece k); none of the measured quantities is one (§5).
+NESTED contexts are NOT monotone (01:30Z, dtl_contexts.py second line): comparing a later same-player call whose remaining set
+R' is a strict subset of an earlier call's R (more removed, more forgiven, more tangles): distances on R' go DOWN (tc+ N = 6:
+0 of 17,337; dtl_searches20_n32: 54 of 3,270; r2_n32 best: 134 of 3,590; dtl_cnew14_n20: 39 of 144) and a stable call
+reverts to −1 at the smaller context (42 pairs on tc+ N = 6, 9 on dtl_cnew14_n20; stable V* ∩ R' is never lost). Reason: the
+removed vertices can be the witnesses of the good paths (lower regions, rescue paths). So the predecessor's hope "R-mono for
+later pieces" is false as a statement about the pruning, and monotonicity lives ONLY at identical contexts.
 What a counter must do (the shape for L-RED): K "digits" = K nested pieces, each able to cycle through ≥ 2 results inside a
 fixed epoch of the pieces above it, each cycle step learning a new tangle, and a change at piece k resetting piece k+1's
 context to one where its cycle restarts with NEW sets (because T grew). dtl_searches20_n32.pg is a one-digit instance:
@@ -174,3 +180,4 @@ and 32 and do not stack digits by themselves; a construction is needed.
 | first-call distance profile as a potential | tc+ N = 6: constant over searches 1–5 |
 | P1: every learning search adds a new (top, vertex) coverage pair (searches ≤ n²) | dtl_cnew14_n20.pg search 3; dtl_searches20_n32.pg (8 searches) |
 | per-top escape count or SCC size monotone across searches | dtl_searches20_n32.pg top v19 |
+| pruning monotone across NESTED contexts (R' ⊂ R, more T) | tc+ N = 6: 42 stable→−1 reverts; r2_n32 best: 134 distance decreases |
