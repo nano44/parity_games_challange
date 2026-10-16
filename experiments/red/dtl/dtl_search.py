@@ -65,8 +65,11 @@ def score_py(g):
         import dtl_deficit as DD
         try:
             gg = DD.pg.read(tmp)
-            idx = sorted(range(gg.n), key=lambda v: (gg.prio[v], v)); new = {v: i for i, v in enumerate(idx)}
-            dd = DD.T([gg.prio[v] for v in idx], [gg.owner[v] for v in idx], [[new[w] for w in gg.succ[v]] for v in idx]); dd.run()
+            if hasattr(DD, "build"):                  # l-alg >= 08bf2b5: order datum from DTL_ORDER (stable default, or oink)
+                dd = DD.build(gg); dd.run()
+            else:
+                idx = sorted(range(gg.n), key=lambda v: (gg.prio[v], v)); new = {v: i for i, v in enumerate(idx)}
+                dd = DD.T([gg.prio[v] for v in idx], [gg.owner[v] for v in idx], [[new[w] for w in gg.succ[v]] for v in idx]); dd.run()
             st = dict(calls=0, calls_def=0, weaker=0, NOT_weaker=0, DEF=0, LRN=0, LRN_lag=0, ctx_changed=0, max_def_per_ctx=0,
                       max_def_phase=(0, 0, None), n_max_def_phase=None, ex_def=[], ex_nw=[], ex_DEF_down=[], ex_DEF_other=[])
             DD.analyse(dd, st, "x")
