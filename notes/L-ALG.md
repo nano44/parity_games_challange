@@ -1,6 +1,19 @@
-# L-ALG notebook — successor session (session_012cQPWcEm23KMdMQSvWrULr), 2026-10-15
+# L-ALG notebook — second successor (session_01Aoj1NEAPu4ibQ3VbNXaXVY), 2026-10-16; predecessor's notes kept below
 
-## Resume point
+## Resume point (second successor)
+- Box 2026-10-16 00:00Z–07:40Z (Lead go 23:42Z): (A) docs/alg/C5-orders.md pushed d54c445, recommendation (ii) sent to the Lead
+  (awaiting Lead/CHECKER; C5 §0 "Order data" paragraph is mine to add on the go). (B) GAP-A: data file docs/alg/GAP-A-data.md
+  (findings F1–F8, reduction, dead ends), DTL-proof.md §3(a) end paragraph + §5 row updated. Nothing proved; no GAP closed.
+- Key facts: per-top ≤ n FALSE (dtl_pertop31_n18.pg); in-search tangles at a top form a strictly growing chain (F3, 0 breaks,
+  climb --chainbreak running at the time of writing); vertex membership in a top's SCC oscillates across searches (F8,
+  dtl_restart8_n20.pg, mechanism = rescue un-forgives a cut); GAP-A ⇔ polynomially many searches per phase.
+- Open: PROVE F3 (chain) — needs: a tangle learned at a lower top in pass i never steals a vertex of τ's SCC into a higher top
+  in pass i+1 (see GAP-A-data.md §4); find the potential for searches or the counter (climbs: --searches fitness reaches
+  11–15 searches at n = 24–32 after ~10k steps; seeded from dtl_restart8_n20: 11 at n = 20).
+- Builds in this container's scratchpad (lost with the container): release tools/oink/build (setup_oink.sh), Debug oink-debug/,
+  PATCHED Debug oink-dbgpatch/ (recipe in GAP-A-data.md §1). Climb logs in scratchpad/climb/.
+
+## Resume point (predecessor, kept)
 - PARKED 18:50Z (Lead 18:06Z: park with the attempt recorded). Determinacy for arbitrary X: steps (1),(2),(4) of Lemma S hold without monotonicity; only step (3) is open, with the exact breaking event written in DTL-proof.md §3(a). Earlier: RESUMED 17:48Z on the Lead's (S)/(D) route: Lemma S (DTL-proof.md §3(a)) proves strategy determinacy at a recurring (top, region set) given (M-cross) cross-search monotonicity; open: (M-cross), (D), later pieces. (M-cross) region part: 0 violations on 1,005 games (dtl_regions_monotone.py, debug build). Lemma D (PROVED given R-mono): ≤ 2n+1 region sets per top in first pieces ⇒ O(n²) first-piece tangles. BUT tc+'s quadratic bulk is learned in LATER pieces (dtl_firstpiece.py: first-piece 2N−1, later ≈ 1.2N²): GAP-A now = Lemma S/R-mono for pieces with X ≠ ∅. Task: DTL gauntlet step 4 (Lead go 15:50Z, box to 23:50Z). §0 revised after CHECKER C3 (A_DTL pinned with --no-loops, every tie order, CHECK_UNIQUE, trace 0); dtl_check.py and dtl_debug_fuzz.py take --no-loops; results in DTL-proof.md §6. Deliverable docs/alg/DTL-proof.md (statement §0; §1 primitives
   PROVED; §2.1 soundness PROVED; §2.2 halting PROVED; §2.3 completeness SKETCH with GAP-C; §3 running time (b)(c)(d) PROVED,
   (e) conditional on (a), (a) GAP-A; §4 idtl; §5 gaps; §6 status + evidence). Last push: see git log (claude/l-alg).

@@ -660,7 +660,19 @@ tc N = 8, 12, 16: 17, 25, 33 tangles (2N+1), 6 iterations each, every top has ex
 So on tc+ the ~1.4 N^2 total is ~1.2 N^2 tops with one tangle each plus two tops with N-1 tangles: no top cycles. The
 conjecture that (a) needs is "at most n distinct SCCs are ever extracted at one top", and the open mechanism is the
 str-change at a fixed region vertex set.
-Status of 3: (b), (c), (d) PROVED; (e) PROVED conditional on (a); (a) GAP-A.
+Box 2026-10-16 00:00Z–07:40Z (second successor; data file docs/alg/GAP-A-data.md, scripts dtl_tangle_family.py, dtl_heads.py,
+dtl_distance.py, dtl_crossclimb.py). What the data adds to (a): (i) "at most n tangles per top" is FALSE (dtl_pertop31_n18.pg: one
+top learns 31 tangles in an 18-vertex game); the count at a top is a PRODUCT: within one search the SCC of a top grows pass by
+pass as its own fresh tangles fire and change str at a fixed region set (a nested chain, the (a4) mechanism; 0 chain breaks on
+every game and climb tested, F3), and the chain restarts in later searches from recombined bases ((C-new) FALSE, F4). (ii) Across
+searches the membership of a vertex in a top's SCC OSCILLATES without a dominion in between (dtl_restart8_n20.pg, F8): a rescued
+distraction removes a cut, un-forgives exits, and turns another top into a distraction; the reverse happens one search later.
+So neither heads nor first-stable-piece contexts are monotone across searches (F6, F7), and Lemma D cannot be applied across
+searches in any piece. (iii) The first-call pruning distance is monotone in T (F5, 0 violations) but constant across progressing
+searches. Reduction (reading): tangles ≤ n · #(top, search) restarts, so GAP-A ⇔ polynomially many searches per phase (each
+search without a dominion restarts a top). Candidate counter shape for L-RED: the rescue/regress flip-flop of F8 driven by a
+lower counter so that every configuration gives new sets.
+Status of 3: (b), (c), (d) PROVED; (e) PROVED conditional on (a); (a) GAP-A (sharpened above: the number of searches).
 
 ## 4. idtl vs dtl — PROVED (same proofs), one difference stated
 Interleaved run (1125-1138) alternates search(0), search(1). Sections 1-3 never use that the phase is fixed: soundness
@@ -677,7 +689,7 @@ which only shrinks T (never affects TS, 1.3).
 | id | claim that is open | status | candidate instance shape |
 | --- | --- | --- | --- |
 | GAP-C | Lemma K (completeness): W_p(G') ≠ ∅ ⇒ search(p) learns a new tangle or a dominion | SKETCH (K1-K6 proved; failing shapes (α), (β') characterised) | section 2.3 (C-b): two pruned dominion-like structures, the first removed with Q empty, the second escaping into it |
-| GAP-A | D2(a): polynomial bound on tangles(G) | open; Lemma S reduces first-piece tangles to distinct (top, region set) pairs given (M-cross) | section 3(a): a region whose DFS parents flip under a toggle at a higher top; counter over DFS reorderings |
+| GAP-A | D2(a): polynomial bound on tangles(G) | open; tangles ≤ n · (top, search) restarts if the in-search chain (F3, data) holds, so GAP-A ⇔ polynomially many searches per phase; per-top ≤ n FALSE (31 at n = 18) | docs/alg/GAP-A-data.md F8: rescue/regress flip-flop of distraction status (a rescued top removes a cut, un-forgives exits, regresses another top; reverse next search), driven by a lower counter so that each configuration yields new sets |
 Corrections to inputs found while proving: C5-DTL.md (LIFO stack; consumption in best_vertices), see its header; R8's
 Lemma M part (c) and §5(a) assume FIFO/BFS and are void as written; (M1)-(M3) re-proved here (1.2b, 1.6, 3(a2)-(a3)).
 
