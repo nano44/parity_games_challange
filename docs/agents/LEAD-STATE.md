@@ -259,3 +259,4 @@
 - 11:52Z merged l-alg 024260c (reconciliation; DE9 updated with single driver t9).
 - 11:56Z merged l-red 6b053c5 (cidx climbs started; both lanes now on c_i, from designer and adversary sides).
 - 11:59Z merged l-alg ded46a5 (c_i circular). Told L-RED its cidx fitness is circular; retarget to resets / fresh-with-change.
+- 12:03Z merged l-alg 8707f2c (§15 child resets common).
