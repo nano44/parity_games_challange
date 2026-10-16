@@ -69,7 +69,7 @@ Text that would be added to C5-DTL.md §0 ("Order data"):
 > O6 = increasing index (the list of §3 above).
 Statement changes (for the Lead and CHECKER; DTL-proof.md §0 untouched here): §0.1 "every such order" → "every order datum
 (C5 §0 Order data)"; §0.3 "tangles(G)" → "tangles(G, ω), the final value of `tangles` under order datum ω; (a) tangles(G, ω) ≤
-p_a(n + m) for every ω" and the same for (b)-(e); §0.3 (d) for A_IDTL: "the counter `iterations` is ⌊calls/2⌋ + 1 (1125), so
+p_a(n + m) for every ω" and the same for (b)-(e); §0.3 (d) for A_IDTL: "the counter `iterations` is ⌊calls/2⌋ + 1 (1126), so
 a bound on calls bounds it" (a wording fix: at present (d) identifies the counter with the number of calls, which is exact
 for dtl only); §0.4 "the stack Q and Oink's edge-list order fix every choice" → "for a fixed order datum, deterministic".
 Cost to the proof: zero for everything PROVED (§2: all arguments hold for fixed arbitrary order data). For GAP-A: whatever

@@ -64,7 +64,7 @@ polynomials p_a, ..., p_e such that for every G as in 0.1 and every order datum 
   (c) every call of search_rec (834-994), with its recursive calls, executes at most p_c(n + m) iterations of its loop
       850-993, at recursion depth ≤ d ≤ n + 1;
   (d) the number of calls of search (997-1069) is at most p_d(n + m); for A_DTL this number is the counter `iterations`
-      (1111, 1119), for A_IDTL the counter is ⌊calls/2⌋ + 1 (1125, incremented once per round before the emptiness test), so
+      (1111, 1119), for A_IDTL the counter is ⌊calls/2⌋ + 1 (1126, incremented once per round before the emptiness test), so
       a bound on calls bounds the counter in both cases;
   (e) the total number of word operations of A_DTL, measured from TARGET's encoding and including step 0 (compression
       if needed, parsing, Oink's priority renumbering, edge arrays, sorting), the duplicate-tangle checks (385-424: O(tangles(G) · n) per extracted
