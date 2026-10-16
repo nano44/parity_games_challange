@@ -11,6 +11,17 @@
 - Tools: dtl_ideal.py (set-level rounds, U vs Û, Ctx recorder + pq_violations), dtl_pyref.py (copy of L-COMP's dtl_py.py),
   dtl_mclimb.py, dtl_m_synth.py. Python, no Oink build needed (Oink built by setup_oink.sh for cross-checks).
 - Trap avoided: never `pkill -f PATTERN` (kills the calling shell); kill by PID.
+- 10:20Z: (M) FAILS in an actual A_DTL run (instances/dtl_mviol_n20.pg; Oink trace 3-odd → 4-odd, first-call distances
+  orig1/orig16 8 → 7, orig19 9 → 8 at R = G'); dtl_mviol_check.py in check.sh. Lead told 10:25Z. Climbs stopped.
+- SLIP 09:45Z: pushed b93114a with `verify.sh | tail && git push` (piped; output showed VERIFY PASS). Reported to the Lead.
+  Push ONLY as the bare `scripts/verify.sh && git push -u origin claude/l-alg`.
+
+## Dead ends (third successor)
+- (M) / Claims P, Q / F5 at a fixed context: DEAD for A_DTL. Obstruction: straddle-deficit (GAP-A-M.md Lemma E); killing
+  instance experiments/alg/instances/dtl_mviol_n20.pg (Oink iterations 3-odd → 4-odd, distance 8 → 7); synthetic
+  version dtl_m_synth.py (9 vertices).
+- Invariant of DTL-reachable tangle sets excluding the straddle-with-lower-pickup shape: DEAD (deficits with changed
+  survival occur in actual runs, instances/dtl_deficit_n20.pg).
 
 # L-ALG notebook — second successor (session_01Aoj1NEAPu4ibQ3VbNXaXVY), 2026-10-16; predecessor's notes kept below
 

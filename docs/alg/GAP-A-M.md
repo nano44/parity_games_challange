@@ -6,9 +6,12 @@ shrink. Status words: PROVED (argument written out here, unrefereed) / SKETCH / 
 in the sense of CLAUDE.md (no referee, no Lean).
 
 ## Summary
-- (M) is FALSE as a statement about best_vertices with arbitrary stored p-tangle sets T ⊆ T' (section 4: a 9-vertex game
-  and two valid tangles; the stable V* loses a vertex when one tangle is added). So the old Lemma P/Q sketch
-  (DTL-proof.md §3(a)) cannot be completed as stated: its open case is a real counter shape.
+- (M) is FALSE for A_DTL (section 4b, 10:25Z): in an actual run of the pinned Oink binary (20 vertices,
+  experiments/alg/instances/dtl_mviol_n20.pg) the first best_vertices call of two consecutive Odd searches has the SAME
+  context R = G' (no dominion, no deletion in between, Odd's tangle set grows by 3) and three pruning distances DECREASE
+  (orig1, orig16: 8 → 7; orig19: 9 → 8), read off Oink's own `-t -t` trace. So Claim P, GAP-A-data F5 and (M) are DEAD.
+  Before that, section 4 gave the shape at synthetic level (9 vertices, two hand-placed tangles, the stable V* loses a
+  vertex); the old Lemma P/Q sketch (DTL-proof.md §3(a)) cannot be completed: its open case is real.
 - PROVED: the pruning is governed by an IDEAL layered union Û that is monotone in (V, T) by construction (section 2), the
   code's union U is always ⊆ Û, and (M) holds for every context whose LATER run has no "deficit round" (U ≠ Û)
   (Theorem M-cond, section 3).
@@ -23,7 +26,7 @@ in the sense of CLAUDE.md (no referee, no Lean).
   runs with deficit rounds in which the code prunes a vertex the ideal keeps, including from a random seed
   (experiments/alg/instances/dtl_deficit_n20.pg: Odd's phase, R = all 20 vertices, vertex 10 pruned by the code and kept by
   the ideal; stable order ω; Oink solves it, verified, 21 tangles, 5 iterations); seeded continuations reach 10 such rounds per
-  run. A violation of (M) needs the same context visited EARLIER without the stealing tangle; none found yet (climbs running).
+  run. A violation of (M) needs the same context visited EARLIER without the stealing tangle: found 10:20Z (section 4b).
 
 ## 1. Set semantics of one pruning round (PROVED, reading of dtl.cpp 643-776)
 Fix p, R, the alive p-tangles T (tpr ≠ −1, parity p, all vertices unsolved; a tangle with a solved vertex never fires,
@@ -114,10 +117,37 @@ forgiven (removed earlier in that search, or consumed), t' learned at w in a con
 later search than t, and the context R visited in a search between the two learnings and again after t'. Lemma E says no
 other mechanism breaks (M).
 
+## 4b. (M) fails in an actual A_DTL run (DATA, reproduced by Oink's trace and by the independent Python implementation)
+Instance experiments/alg/instances/dtl_mviol_n20.pg (20 vertices; found by experiments/alg/dtl_mclimb.py seed 33 from
+dtl_deficit_n20.pg, then relabelled so that Oink's std::sort is the identity; labels origK). Pinned command
+`oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7: 17 tangles, 1 dominion (at the end of iteration 5), 6 iterations,
+`-v`: solution verified. Even's phase: iterations 0, 1 (tangles 0-3, Even's, irrelevant to Odd's pruning). Odd's phase:
+iterations 2, 3, 4, 5, all with G' = all 20 vertices until the dominion at the end of iteration 5. First best_vertices call
+(context R = G'), Oink's "distance k:" lines:
+| iteration | Odd tangles before it | orig1 | orig16 | orig19 | orig3 | orig17 | orig11 | orig0 | orig10 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2-odd | 0 | 5 | 6 | 7 | 3 | 4 | 4 | 8 | 9 (last) |
+| 3-odd | 5 | 8 | 8 | 9 | 7 | 6 | 8 | 10 | 11 (last) |
+| 4-odd | 8 | 7 | 7 | 8 | 9 | 9 | 10 | 11 | 12 (last) |
+From 3-odd to 4-odd the tangle set only grows (tangles 9, 10, 11 learned in 3-odd; nothing solved, nothing deleted) and
+three distances go DOWN while others go up. experiments/alg/dtl_mviol_check.py reproduces both readings (Python: L-COMP's
+dtl_py with Oink's order data, same counts; Oink: trace parse) and is in experiments/alg/check.sh.
+Mechanism (dtl_ideal.Anatomy): as Theorem M-cond requires, the later visit has a deficit, from round 1 on: Odd tangles
+learned in 3-odd at tops orig7, orig3, orig17 (a chain at increasing priority) straddle the regions of orig7 and orig1 (both
+priority 15; descending index order processes orig7 first), orig3 (19) and orig17 (21); the ideal union contains orig5
+(priority 16), which the code's union misses, and the ideal keeps orig6 at round 1, where the code prunes it. The
+distance decreases at round 7 follow from the smaller code union in the rounds before.
+Consequence: no invariant of DTL-reachable tangle sets excludes the shape (the Lead's split (b), 08:22Z): the shape is
+reached. Lemma E and Theorem M-cond stand as PROVED statements; (M) itself is DEAD for A_DTL.
+
 ## 5. Consequences for GAP-A (reading)
 - The nested-epoch argument of GAP-A-data.md §4c used (M) at every fixed context. It is now PROVED only for contexts whose
-  later run has no deficit round (Theorem M-cond), so "the result at piece 0 changes at most n(n+1)+1 times per phase" holds
-  under that proviso; with a deficit, piece 0 itself can move backwards.
+  later run has no deficit round (Theorem M-cond); section 4b shows piece 0 (the first call, R = G') moving backwards in an
+  actual run, so even "the result at piece 0 changes at most n(n+1)+1 times per phase" is unproved for A_DTL.
+- For the counter (L-RED): the deficit is a FIXED-context reset device. A tangle learned at a higher top steals a vertex of
+  a lower structure's tangle in an earlier region; the rest is re-absorbed only by a lower-priority top, so vertices of
+  higher priority that hung on it fall out of the union and distances at the same context go down. R9 §4(1) needed a
+  reset and could only get one from a fresh context.
 - A variant of DTL whose best_vertices uses Û for its candidate test (same sptl, same tangles) satisfies (M)
   unconditionally (Lemma 2.1). It is a different algorithm from the frozen A_DTL; noted as a design option only (Lead/owner
   decide; §0 is frozen, L26).

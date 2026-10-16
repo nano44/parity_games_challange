@@ -37,4 +37,6 @@ for s_, kf in ((2, 1), (3, 2), (4, 3)):
 PY
 # GAP-A-M.md §4: the synthetic counter to fixed-context monotonicity (M) must keep reproducing
 python3 -I dtl_m_synth.py | tail -1
+# GAP-A-M.md §4b: the same failure in an actual A_DTL run (Python always; Oink trace when Oink is built)
+python3 -I dtl_mviol_check.py | tail -1
 echo "ALG-CHECK PASS"
