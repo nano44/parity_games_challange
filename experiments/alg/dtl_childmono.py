@@ -34,6 +34,13 @@ for base, nm in ((D.DTL, "DTL"), (C6, "C6")):
                         rel = "same" if Ra == Rb else ("shrank" if Rb < Ra else ("grew" if Ra < Rb else "incomparable"))
                         par = "cut" if j in a.get("att", {}) else ("res_flip" if pa[j][1] != pb[j][1] else ("V_grew" if pa[j][2] < pb[j][2] else ("V_shrank" if pb[j][2] < pa[j][2] else "V_incomparable")))
                         k = "reset_ctx_" + rel + "_parent_" + par; tot[k] = tot.get(k, 0) + 1
+                        # coarse cause (DATA): shrink -> a tangle meeting the removed part (Ra - Rb) and a dropped vertex's
+                        # side is lost; grow -> some vertex of Rb has a successor in the new part (Rb - Ra) (new escape)
+                        lost = Ra - Rb; gained = Rb - Ra
+                        tl_lost = any(any(w in lost for w, _ in d.tv[t]) and all(w in Ra for w, _ in d.tv[t]) for t in range(len(d.tv)))
+                        esc_new = any(any(w in gained for w in d.outs[v]) for v in Rb if v not in gained)
+                        c = ("lost_tangle" if tl_lost else "") + ("+" if tl_lost and esc_new else "") + ("new_escape" if esc_new else "")
+                        tot["cause_" + (c or "neither")] = tot.get("cause_" + (c or "neither"), 0) + 1
                 else:
                     tot["deeper_cmp"] += 1; tot["deeper_down"] += bool(down)
     print(nm, tot, ex)

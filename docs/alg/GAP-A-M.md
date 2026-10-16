@@ -740,3 +740,10 @@ piece j+1 (and deeper) are compared on vertices present in both contexts.
 - Status: DATA. This is the shape every exponential run needs (APP's fresh child context), and it occurs in 21% of
   parent changes in this corpus. Whether resets can compound across levels is the open question (§6.3b). The
   fixed-tracer fresh-context climbs (scratchpad nestclimb.py seeds 111, 112) measure it.
+- Coarse cause of the resets (12:03Z, DATA, dtl_childmono.py "cause_"). The check uses the END-of-run tangle set, not the
+  set at the time, so it only shows correlation. DTL: shrink resets (14) meet a tangle that lies in the old child context
+  and touches the removed part in 13 cases (+1 neither). Grow resets: a vertex of the new context has a successor in the
+  added part (a new escape) in all 12. Incomparable ones show both (5). C6 is the same. Reading: a shrink resets through
+  LOST tangles (tangles need all their vertices in R), and a grow resets through NEW escapes. No monotonicity lemma in R
+  follows: the removed part D_j always contains the parent's return set, i.e. candidates whose layer seeds the ideal
+  union, so even without lost tangles removing D_j can lower deaths. Not proved either way.
