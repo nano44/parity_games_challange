@@ -701,12 +701,12 @@ top's fresh tangle), consistent with Lemma W. Reduction (PROVED via Lemma W): GA
 counter-like data (F9): dtl_searches20_n32.pg, 20 searches at n = 32, a top whose SCC takes 12 values with four vertices
 changing membership five times each, most learning inside the recursion. Candidate counter shape for L-RED: the rescue/regress flip-flop of F8 driven by a
 lower counter so that every configuration gives new sets.
-STATUS UPDATE 2026-10-16 09:40Z (third successor, produced on Opus 5.5): the open case below is a REAL counter shape. Lemma P/Q is
+STATUS UPDATE 2026-10-16 08:25Z (third successor, produced on Opus 5.5): the open case below is a REAL counter shape. Lemma P/Q is
 FALSE for arbitrary stored tangle sets T ⊆ T' (9-vertex instance, docs/alg/GAP-A-M.md §4). What is PROVED instead (GAP-A-M.md §2-3):
 the pruning is dominated by an ideal layered union Û, monotone in (V, T); Theorem M-cond: (M) holds whenever the run with the larger
 tangle set has no deficit round (U = Û); Lemma E: a deficit is exactly a straddling tangle whose unconsumed rest has a cycle maximum
 that is a surviving top of LOWER priority. Deficit rounds, with survival changed, occur in actual DTL runs (climbs,
-experiments/alg/instances/dtl_deficit_n20.pg). 10:20Z: (M) FAILS in an actual A_DTL run (instances/dtl_mviol_n20.pg,
+experiments/alg/instances/dtl_deficit_n20.pg). 08:29Z: (M) FAILS in an actual A_DTL run (instances/dtl_mviol_n20.pg,
 Oink's trace: first-call distances 8 → 7 at an identical context, GAP-A-M.md §4b). Lemma P/Q is DEAD; the sketch is kept as history.
 Lemma P/Q (fixed-context monotonicity of the pruning; SKETCH, 2026-10-16 01:50Z; = L-RED's Claims P, Q at claude/l-red 30af303
 and GAP-A-data.md §4c (M); 0 violations on every measurement). Setting: one player p, one context R (forgiven = outside R), two
