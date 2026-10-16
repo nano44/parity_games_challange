@@ -187,6 +187,14 @@ first j where (R_j, res_j, V_j) differ, or ∗ if all depth-0 pieces agree (prog
   the vertices removed by earlier pieces, and attractTangle counts tangle vertices in X as already attracted, so a tangle
   partly removed earlier can fire there but not in best_vertices' regions); Dom can grow through deficits and through
   such tangles.
+- Refinement (PROVED for C6, 09:10Z; for A_DTL only under Theorem M-cond): (M) holds for ANY T ⊆ T', so also between
+  non-consecutive visits of the same context: if a level-j context recurs in a later epoch, piece j resumes at a state at
+  least as advanced. Hence N_j ≤ K·C_j with C_j := the number of DISTINCT level-j contexts in the phase (≤ E_j). DATA:
+  dtl_replay4_n32 revisits a level-1 context (piece 1's context in searches 10-12 equals that of searches 5-7, piece 1's
+  maximum distance 5 there and 7 on the revisit): 5 level-1 epochs, 4 distinct contexts; the root's −1 return set
+  oscillates {5} → {5, 27} → {5} while its maximum distance rises 7 → 7 → 8, one bit of state.
+  Mechanism (reading): two vertices' distances leapfrog (27 reaches the maximum 7, then 5 moves to 8); each flip raises a
+  distance, so such a bit flips O(n) times per context, and the −1 return set (hence the next context) follows it.
 6.2 The precise obstruction. The product comes only from REPLAYS: transitions of level j in an epoch other than the first
 level-j epoch in which level j changed (some level i < j changed in between). With replays bounded, N_j ≤ K + (replays at
 level j) and the phase has O(L·K + replays) transitions. Nothing proved bounds replays, for a concrete reason: when a level
