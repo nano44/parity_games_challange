@@ -175,3 +175,13 @@ docs/lit/T17-counter-dtl-search.md. It does not contact anyone, post, file issue
 Lead at once with URL, commit or archive id and date; running it against DTL goes to L-RED. Working sessions: 3 of 5. Given the
 narrow, read-only task, the successor answers the five LANE-RESTART questions and then proceeds without waiting for "go";
 the Lead re-measures the answers afterwards.
+
+## D10 (2026-10-16 ~16:39Z, owner via OWNER-DESK, answering Q13): repository visibility
+> I dont mind the repistory is public
+
+Lead reading L29: Q13 option (a), the repository nano44/parity_games_challange stays public. Pushing fleet work to this
+repository is not "publishing" in the sense of D1; D1 still forbids every other outward act (posting, emailing, submitting,
+contacting anyone, announcing or linking the repository anywhere). Consequences: (1) "No secrets in any session" now also
+means nothing sensitive is ever committed, since every push is public; (2) docs/HUMAN-REVIEW.md being readable in the repo is
+accepted under D10; the Q6 ruling (no external distribution by the fleet) is unchanged; (3) nothing in the repo is a claim to
+anyone outside: results stay labelled as unrefereed where they are.

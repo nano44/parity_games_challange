@@ -306,3 +306,4 @@
 - 16:17Z L-ALG candidates (LEX), (NR) routed to L-RED as priority attack (ahead of K_child scaling).
 - 16:30Z merged l-red 32798af: (LEX), (NR) false (Lead re-ran Oink). Tool caveat (r0 padding for stable calls) routed to L-ALG.
 - 16:40Z OWNER-DESK relayed owner: "Give me a status update" (answered from trunk e927f20; Q13 and Q12 shown; owner-desk b665477 merged).
+- 16:43Z owner D10 (Q13): keep repo public; recorded verbatim with Lead reading L29; Q13 closed. Q12 still open.
