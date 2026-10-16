@@ -1,4 +1,8 @@
 # C6: DTL with ideal pruning ("DTL-hat") — design option, L-ALG 2026-10-16 (produced on Opus 5.5, D8/L27)
+STATUS 10:09Z: PARKED (Lead 10:07Z, reading of D5): C6's completeness reduces to A_DTL's GAP-C shapes (K5 sketch below),
+so C6 adds nothing on completeness; its value rests on fixed-context monotonicity (M), which it has by construction and
+A_DTL lacks. Last data: completeness climbs on the prototype (fitness = unsolved + wrong + bad strategies, n = 16 and 22,
+~19k steps in total): no failure. Revisit only if a GAP-A proof needs (M) at fixed contexts.
 Status: CANDIDATE (design option; Lead reading 08:36Z: "M4 needs a polynomial algorithm, not DTL specifically"). Not a
 claim. Not built out (Lead: not before target (2) of GAP-A is clear); a measurement prototype exists: experiments/alg/dtl_c6proto.py.
 Origin: docs/alg/GAP-A-M.md. A_DTL's pruning can move backwards at a fixed context because its regions are computed
