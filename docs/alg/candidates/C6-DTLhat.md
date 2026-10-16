@@ -34,10 +34,14 @@ unchanged.
   in the −1 case)"; best_vertices_hat has the same loop exit structure, so both hold. str values written inside
   best_vertices are never read by extraction or output (§1.0 (s4): sptl resets str on its region; solved vertices get str
   from the dominion or the removal attractor), so the change cannot affect TS or the output strategies.
-- Completeness (GAP-C analogue): OPEN. The DTL sketch (§2.3) reasons about which tops are stable; with the ideal test a top
-  can be stable while its consumed sptl region is not closed. DATA: prototype (experiments/alg/dtl_c6proto.py), 1,530 games (random n ≤ 20, every instance in
-  experiments/alg/instances, tc and tc+ N ≤ 6, counter_* families): every game solved, regions equal Zielonka, strategies
-  verified by experiments/harness/verify.py.
+- Completeness (GAP-C analogue): OPEN, and not identical to A_DTL's GAP-C (reading, 08:55Z). DTL-proof.md §2.3 K4
+  ("a stable V* is p-won at X = ∅") carries over: Û is a layered attractor (each level's non-top vertices have priority
+  ≤ the level, rescue paths stay below the top's priority, tangles are p-won by TS), so the same play argument applies.
+  K5 ("the lowest region at X = ∅ is closed") does NOT carry over as written: it uses that every top of V* attracts into
+  the CONSUMED union, which sptl recomputes, while C6's V* only guarantees attraction into Û; a C6-stable top can head an
+  open sptl region when its good successor lies in a deficit part (Û minus U). DATA: prototype (experiments/alg/dtl_c6proto.py),
+  1,530 games (random n ≤ 20, every instance in experiments/alg/instances, tc and tc+ N ≤ 6, counter_* families): every
+  game solved, regions equal Zielonka, strategies verified by experiments/harness/verify.py.
 - Cost of one round: one attractor per priority level of V (≤ d + 1) plus the unchanged threshold loop: O((d + n)·W_A),
   the same order as C5's round (DTL-proof.md §3(b)).
 - Relation to A_DTL: identical runs whenever no deficit round occurs (U = Û). Counts equal on all 1,530 games except the
