@@ -9,3 +9,4 @@
 | D5 | 2026-10-15 | Aim: do not call M4 unlikely; pursue it (Lead reading L18: algorithm-design lane L-ALG; gauntlet unchanged) | active | docs/DECISIONS.md#d5 |
 | D6 | 2026-10-15 | Q8 (a): start algorithm lanes now, L-LOWER continues (L19: L-ALG + L-SI) | active | docs/DECISIONS.md#d6 |
 | D7 | 2026-10-15 | Q9 (a): continue at current spend rate despite weekly-limit warning; stop on overage (D1) | active | docs/DECISIONS.md#d7 |
+| D8 | 2026-10-16 | Q11 (b): switch paused Fable lanes to Opus 5.5 until the Fable weekly reset (L27: referees wait unless owner asked) | active | docs/DECISIONS.md#d8 |

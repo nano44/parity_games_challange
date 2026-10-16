@@ -156,3 +156,12 @@ parser's order- and parity-preserving renumbering of priorities named in step 0 
 L-ALG C5-orders.md): consistent with L22's equal-priority clause, no cost to the proved parts, keeps the tangle bound from
 depending on an order accident; L-COMP's second implementation showed counts depend on omega and regions/strategies do not.
 Changes to §0 go through the Lead and CHECKER. Not a result: GAP-C and GAP-A remain open.
+
+## D8 (2026-10-16 ~06:50Z, owner in the Lead session, answering Q11): Fable cap
+> I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
+
+Lead reading L27: Q11 option (b). Until the Fable weekly limit resets (2026-10-21 21:00Z), the paused attack lanes (L-ALG,
+L-RED) continue on Opus 5.5 at high effort, as fresh successor sessions under LANE-RESTART. Work produced on Opus is labelled
+as such in the lane notebooks. The referees are not engaged before the reset (no complete claim is ready); if one is needed
+earlier, the Lead asks the owner first, because D1 says "Never downgrade the referee to save money". The Opus weekly limit is
+also at "allowed_warning": if Opus hits its cap, the fleet pauses again (D7) and the owner is told. Sweeps return to hourly.

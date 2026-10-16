@@ -206,3 +206,4 @@
 - 02:03Z FABLE LIMIT: L-ALG and L-RED sessions failed 'You've reached your Fable limit' (rate_limit status rejected, seven_day_overage_included, resets 2026-10-21 21:00Z). Not paid overage (isUsingOverage false). Per D7 ('We pause automatically if the cap is hit'): Fable lanes paused; referees (Fable) also unavailable until reset. Merged last heads fe22c7f (L-ALG, incl. handover b27211a) and 0bedda5 (L-RED R9 v4). Owner told at once with options.
 - 02:43Z Fleet paused (Fable cap): Lead backstop and WATCHDOG sweeps slowed from hourly to every 6 h (43 */6, next 06:43Z) to save spend while nothing runs. Restore hourly when lanes restart (after Q11 or 2026-10-21 21:00Z).
 - 06:44Z 6-hourly sweep: no overage (seven_day warning). Fleet paused (Fable cap); Q11 unanswered, default (a) wait for 2026-10-21 21:00Z. No exceptions.
+- 08:00Z D8 (owner): switch to Opus 5.5 until Fable reset. L27 recorded. Next: spawn Opus successors for L-ALG and L-RED; restore hourly sweeps.
