@@ -843,6 +843,25 @@ Tools: experiments/alg/dtl_straddle.py (CHAIN lines) and dtl_regvec.py, with the
   show it is not. Candidate (DATA only): "r0 increases except after a change of M", to be checked against M before it
   is stated as a lemma.
 
+### 13g. Candidate (H4) potential: the pair (deciding round r0, actual round count M) (13:53Z, DATA only)
+For each DEF change at one ideal-stable context: r0 is the first round where the actual sets differ, and M is the
+number of actual rounds after the change (Oink order, dtl_regvec.py). As (r0, M):
+- h4_def4_oink_n20: (3,9) (6,9) (8,11) (10,10).
+- h4_def6_oink_n28: (4,9) (6,9) (8,9) (7,10) (9,12) (11,11).
+- h4_def7_oink_n44: (5,10) (7,10) (9,11) (8,12) (10,14) (12,12), then the final step to stable (1,1).
+- h4_def8_oink_n44: (5,11) (7,11) (9,11) (8,13) (10,16) (13,17) (15,19) (17,18).
+- lemmaS_viol_n20: (4,9) (6,7). lemmaS_Mdrop_n20: (5,9) (7,8).
+Observations, 28 steps in 6 runs:
+(a) r0 strictly increases between consecutive DEF changes, except at steps where M RISES (3 dips, each with M up)
+    and at the final step where the actual reaches the ideal.
+(b) When M DROPS (the Lemma S failures), r0 still increases.
+(c) No pair (r0, M) repeats at one context.
+Candidate (C-rM), DATA only: at one ideal-stable context, the pairs (r0, M) of successive DEF changes are pairwise
+distinct. Since 1 ≤ r0 ≤ M ≤ n + 1, (C-rM) would give ≤ (n+1)² DEF changes per context: a POLYNOMIAL per-context (H4).
+Not proved. The proof gap is what makes r0 climb at fixed M. A DEF change at round r0 leaves rounds < r0 unchanged and
+grows a threshold closure at r0 (§13f). The changed rounds ≥ r0 then need a DIFFERENT, later first-differing round next
+time, unless M grows. Routed to L-RED as an attack target: find a context where (r0, M) repeats.
+
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
 depth-0 index i in a phase. By §11e, carries at index i ≤ n(n+2) · c_i.
