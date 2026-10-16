@@ -148,3 +148,27 @@ carry unless an extra (cut) piece is inserted below it. Such a cut is a cut-eate
 its driver is learned in the stable piece right after the cut, before any deeper level runs.
 Status: a reading, under the same no-deficit premise as MIRROR. It is the precise shape a realisation must take. It is
 not a proof that APP is unrealisable, because the inserted cut's own constraints are not worked out here.
+
+## 10. Section 9 restated after L-ALG's data (l-alg 145204d, GAP-A-M 11c, C6; via the Lead 11:13Z) (11:36Z by date -u; produced on Opus 5.5)
+Two steps of section 9 fail on data. The conclusion "APP's least significant digit needs an extra cut" is WITHDRAWN. It
+is now an open question.
+- (C-a) is FALSE as stated. In 12 dead-top carries no escape in R has priority above pr(h). Smallest: dtl_proof_c3,
+  search 1, piece 0. Tangle {y, s} (top y, pr 2) has its only escape w at pr 1, but covering w needs threshold 3, because
+  of a vertex x on w's attraction path.
+  Corrected form (L-ALG's): some escape e of C is covered only at a threshold theta > pr(h), witnessed by a vertex x with
+  pr(x) = theta on e's attraction path, and pr(h) < theta < pr(u).
+- (C-b) survives with x in place of e (READING). If x lay in a region at piece i while h is alive, that region's top has
+  priority >= pr(x) > pr(h) and is computed before h's. With the cap at least theta, the same attraction path then
+  covers e in the region phase. Lower regions have caps below pr(h) < pr(x). So x lies in no region at piece i while h
+  is alive, and e is covered only in the threshold phase.
+- (C-c), first step, is REFUTED. "Dom(M_i) is contained in piece i's final-round region, which is contained in the union
+  of the regions at every earlier round" fails in 17 cases: a high escape left R at piece i itself, in the learning
+  search, with P > i. Example: cross_h_k1_n10_m16_27, search 1, piece 0, tangle 0 (top 2, high escapes 4 and 9).
+  Lead/L-ALG reading: the inclusion runs opposite to Lemma D3's. My reading: with more tops, a vertex whose successors
+  are split over two regions is attracted into neither (the straddle of Lemma E), so the region union is not monotone
+  in V and the second inclusion has no basis. In the other cases P > i held throughout: 225 where the escape left
+  between i and P, 36 where it was consumed at P.
+- What remains: a dead-top cap carry at piece i needs its high-threshold witness x to be in no region while h is alive
+  at i, and covered in the threshold phase. Whether the deepest APP level can host one without an inserted cut is open.
+  L-ALG's phi_idx_flat_n20 (R13, last section) is a single-level instance at a domfirst index 2, whose driver is learned
+  in piece 3's cut recursion (P = 3 > i = 2). The k=2 build starts from it.
