@@ -12,7 +12,8 @@ Every timestamp comes from `date -u` (2026-10-16, 10:39–11:05Z). Sources are l
 2. **RELATED (new to the fleet): an open author preprint of "Solving parity games, very slowly".**
    - It is the 2024 chapter, DOI 10.1007/978-3-031-75778-5_21 (Q10), at https://www.tvandijk.nl/pdf/2024festschrift.pdf.
    - 20 pp., created 2024-08-15, sha256 8e36c3732f61feb78972fec1ea1e0aff5b737f9b1288a138f32ff491f31bee3c.
-   - It is not linked from the home page; we found it through the Wayback CDX index. It has not been diffed against the paywalled Springer text.
+   - Retrieved 2026-10-16 ~10:50Z by the subagent; re-fetched by L-LIT at 11:01Z (HTTP 200), md5 afcf42b031d4e1c3127766dc172c9f09.
+   - It is an author PREPRINT, not linked from the home page; we found it through the Wayback CDX index. It has NOT been diffed against the paywalled Springer text.
    - p.15, §6, requirement 7, verbatim: "There are also variations that prefer “good paths” where player Even (or Odd) dominates the path often, and in that case we simply have a distractingly nice long path that eventually leads to a difficult to untangle higher region of the opponent, while the dominion is small and uninteresting, and always the last choice of the algorithm."
    - Oink's DTL is "Distance Tangle Learning (research variant based on 'good path length')" (README after 1ba8b0a). So this sentence is, on its face, the author's design recipe against DTL-type solvers. It is prose only: no instance, figure or generator. It targets running time.
    - p.19, §7, verbatim: "We also have an alternative method to ignore distractions when the lowest region of a player is open, and are studying a method to delay this algorithm. It currently solves all known difficult parity games in polynomial time." L-LIT reading: this matches the DFTL docstring, not DTL (see 3).
@@ -76,3 +77,7 @@ Every timestamp comes from `date -u` (2026-10-16, 10:39–11:05Z). Sources are l
 - The p.19 sentence says that in Aug 2024 the author's newest variant (L-LIT reading: DFTL) "currently solves all known difficult parity games in polynomial time". That is consistent with the fleet having no public killer for the DFTL/DTL line.
 - Q10 can be answered from the preprint for anything except a Springer-page check.
 - The only remaining route to counter_dtl is to ask the author. That is external, and it is the owner's decision (D1).
+
+## (e) Process record
+- Rule breach (subagent, web search): it ran GitHub MCP code search and issue search outside this session's repo scope (nano44/parity_games_challange). L-LIT had not asked for this. It found nothing beyond what git clone showed; the rows that depend on it are row 6 (issue search) and row 22. Lead ruling (11:05Z): no GitHub MCP calls outside nano44/parity_games_challange; use git clone, ls-remote and WebFetch for public repos, and tell every subagent this explicitly.
+- Side observation from that search: the fleet repository appears in GitHub code search. The Lead verified at 11:05Z that the GitHub API reports it as public and is raising it with the owner. L-LIT takes no action.
