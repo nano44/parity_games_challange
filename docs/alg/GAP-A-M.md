@@ -872,6 +872,15 @@ time, unless M grows. Routed to L-RED as an attack target: find a context where 
   - Stable order: 111 runs, 3 repeats, 19 such dips.
   These runs include contexts whose fixed ideal result is −1, not only ideal-stable ones; the ideal-stable restriction is
   untested. (C-rM) is DEAD as stated; (H4) per-context stays OPEN, with data growth 4 → 8 for n = 20 → 44.
+- (C-rM-stable), 14:09Z, CANDIDATE, DATA only. Restricted to IDEAL-STABLE contexts (CRM_IDEAL_STABLE=1, same files):
+  - Oink order: 38 runs, 147 steps, 0 repeats of (r0, M);
+  - stable order: 36 runs, 135 steps, 0 repeats.
+  All 3 repeats above were at contexts whose fixed ideal result is −1. Observation (a) still fails there (5 and 3 dips
+  without an M rise), so r0 alone does not climb; the PAIR does not repeat.
+  Statement: at a context whose ideal (C6) result stays STABLE, the pairs (r0, M) of successive deficit-triggered
+  changes are pairwise distinct. With 1 ≤ r0 ≤ M ≤ n + 1, this gives ≤ (n+1)² DEF changes per ideal-stable context,
+  which would make the per-context (H4) polynomial there. Not proved. Routed as an attack target: find an ideal-stable
+  context where (r0, M) repeats.
 
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
