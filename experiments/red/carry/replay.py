@@ -25,7 +25,11 @@ def run(path, c6=False):
     new = {v: i for i, v in enumerate(idx)}
     d = P.mk(base)([g.prio[v] for v in idx], [g.owner[v] for v in idx], [[new[w] for w in g.succ[v]] for v in idx], **kw)
     d.run(); rep, dep = P.replays2(d); ph = P.level_seqs(d)
-    return dict(depth=dep, replays=rep, longest=max((len(x) for x in ph), default=0), searches=d.iterations, n=g.n,
+    spp, run_ = 0, 0                     # searches per phase: consecutive searches, same player, no dominion between
+    for k, t in enumerate(d.trace):
+        run_ = run_ + 1 if k and t["p"] == d.trace[k - 1]["p"] and t["dom"] == d.trace[k - 1]["dom"] else 1
+        spp = max(spp, run_)
+    return dict(spp=spp, depth=dep, replays=rep, longest=max((len(x) for x in ph), default=0), searches=d.iterations, n=g.n,
                 phases=[x for x in ph if x])
 
 def score(path):
@@ -37,9 +41,9 @@ if __name__ == "__main__":
     c6 = "--c6" in sys.argv
     for f in [a for a in sys.argv[1:] if a != "--c6"]:
         r = run(f, c6)
-        print(f"== {os.path.basename(f)} {'C6' if c6 else 'A_DTL'} order={'stable' if c6 else os.environ.get('DTL_ORDER', 'stable')} n={r['n']} searches={r['searches']} depth={r['depth']} replays={r['replays']} longest={r['longest']} levels={r['phases']}")
+        print(f"== {os.path.basename(f)} {'C6' if c6 else 'A_DTL'} order={'stable' if c6 else os.environ.get('DTL_ORDER', 'stable')} n={r['n']} searches={r['searches']} depth={r['depth']} replays={r['replays']} longest={r['longest']} spp={r['spp']} levels={r['phases']}")
 
 def score_phase(path):
     """successor 3: longest phase (transitions within one phase, A_DTL) first, then searches."""
     r = run(path)
-    return 100 * r["longest"] + r["searches"] + r["depth"] / 10.0
+    return 100 * r["spp"] + 10 * r["longest"] + r["searches"] / 100.0
