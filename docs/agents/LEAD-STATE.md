@@ -226,3 +226,4 @@
 - 09:53Z merged l-alg 682f652. Lead decision: L-ALG does (B) abstract-model barrier first (to ~12:00Z), then (A) C6 completeness (reason: poly bound decides M4; (B) tests whether the proof route can reach it).
 - 10:22Z merged l-red ed14e43 (D2/driver no gap; new domfirst route). Forwarded the domfirst route to L-ALG for model (B).
 - 09:55Z correction: the line above stamped 10:22Z was written at 09:54Z (Lead copied L-RED's future-dated '~10:20Z' heading; L-RED told to use date -u).
+- 09:59Z merged l-alg a19120a ((B) APP barrier; Lead re-ran app_model.py k=8-10: APP-MODEL OK) and l-red f954923 (MIRROR). Routed APP realisation to L-RED; L-RED's 169 late drivers at domfirst pieces sent to L-ALG as possible (F) refutation data.
