@@ -71,3 +71,25 @@ not join z_i's region; the deeper ones' escapes of section 3 remain) is OPEN. Se
 
 ## Stamp correction (10:13Z by date -u)
 Section 5's heading says "10:27Z by date -u". That is wrong: the `date -u` reading taken in the same command was 10:10Z (commit e7cf65d). From now on headings are generated from `date -u` inside the command that writes them.
+
+## 6. (M2) loops are impossible for LIFT-based rescues, so APP via lifts is blocked by MIRROR (READING, 10:20Z by date -u)
+R10's (M2) says that a working pruning-driven carry t must be self-reinforcing: from some round on, an escape of t is
+covered only by vertices that t keeps alive. For a rescue by LIFT (t fires in the region of a host H above t's top and
+carries a vertex y with pr(t's top) < pr(y) <= pr(H) into Z) this cannot happen:
+ (i) the lift covers only vertices of priority <= pr(H) (cap), and every vertex rescued through y has priority < pr(y)
+     (else the threshold phase forgives it anyway). So everything t keeps alive lies BELOW H;
+ (ii) t fires in H's region only if its escapes are covered at H's turn, i.e. lie in regions computed before H's or
+     already in H's region before t fires (t's own products cannot count: firing needs the escapes first);
+ (iii) vertices below H are processed after H, so they cannot provide (ii) in the same round;
+ (iv) a vertex w ABOVE H that points into the lifted part (w -> y) is, in the earlier search, forgiven by the threshold
+     phase at pr(y) < pr(w) for as long as y's successor (a vertex of t, e.g. its top) is in Z. That holds exactly while
+     t's top is alive, i.e. (redundancy) exactly while t's escapes are covered: the same condition under which t fires
+     in the later search. So w's survival does not distinguish the two searches and cannot reinforce anything.
+So a lift-based carry is never self-reinforcing, and by (M1) it cannot move a domfirst piece's return set to the rescued
+vertex. Its top survives with the rescued vertex, and Dom removes it before the carry can be learned. Since redundancy
+leaves only lifts and straddles as ways for a stored tangle to change a pruning round, APP's level digits in A_DTL would
+need the straddle (a deficit), not a lift. That matches the 2CE result, where the (S) gate also reduced to a triggered
+deficit.
+Caveats: equal priorities (the cap test is <=, and processing order among equal priorities is by index) are not
+analysed; the redundancy reading itself is unrefereed; "coverage only shrinks over the rounds of one call" is used and is
+false in general (deficits). So this is a statement about deficit-free calls.
