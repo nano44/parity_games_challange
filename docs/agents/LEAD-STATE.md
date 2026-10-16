@@ -214,3 +214,4 @@
 - 08:32Z L-ALG: real (M) violation in pinned A_DTL (20 vertices; distances 8->7, 9->8 at identical context). Claims P/Q/F5 dead for A_DTL. Reset device routed to L-RED (counter). L-ALG -> budget in ideal quantities; C6 (ideal-pruning DTL) suggested as design option.
 - 08:34Z Merged l-alg 1563bc7: dtl_mviol_n20.pg + dtl_mviol_check.py (in check.sh); F5/Lemma P/Q DEAD; L-ALG now on push.sh.
 - 08:37Z L-RED e12ffb8: independently confirms (M) violation (15 Claim P violations, 0 Q, Oink match); R10-carry: fast level works alone, first 2-level wiring failed on design error; rebuilding slow level on fixed-context straddle reset.
+- 08:59Z L-ALG c2ac3d5: GAP-A obstruction = replays (1 in 718 games); C6 DTL-hat (ideal pruning) written: (M) proved, completeness open; prototype correct on 1,530 games. C6 enters gauntlet step 1 only; step 2 (L-COMP) after completeness.
