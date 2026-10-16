@@ -55,6 +55,15 @@
   Rule: paste the stamp only from a `date -u` printed in the same tool call.
 - TRAP: a single-removal driver test misses REDUNDANT drivers (nest_nest_s84). Use removal plus sufficient-alone.
 
+- 13:29Z state (produced on Opus 5.5): main slot (H4) (Lead 13:10Z). §13 corrected (only per-round V_i ⊆ V̂_i proved;
+  return-set form FALSE, h4_notweaker_n20). §13b Lemma R (regions lex-monotone in T: carries reset lower regions;
+  (H4) = GAP-A shape one level down). Pinned A_DTL (Oink order, dtl_deficit DTL_ORDER=oink): DEF changes at ONE
+  ideal-stable context: n=20 4 (h4_def4_oink_n20), n=28 6 (h4_def6_oink_n28), n=36 5+; climbs 128/136/144 running.
+  §13c: each DEF change has a new straddling tangle, straddling sets monotone (20/20); bound circular. §16 Lemma S
+  (C6 PROVED; A_DTL fails with deficits, L-RED lemmaS_viol / lemmaS_Mdrop). Fresh-context climb seed 112 (n=32):
+  fresh 7. ORDER CAVEAT: my tracers default to order ω = stable; Oink-exact needs DTL_ORDER=oink / --order oink with
+  PYTHONPATH=experiments/dtl-bench (stdsort). Last push 4045bc4.
+
 ## Dead ends (third successor)
 - (M) / Claims P, Q / F5 at a fixed context: DEAD for A_DTL. Obstruction: straddle-deficit (GAP-A-M.md Lemma E); killing
   instance experiments/alg/instances/dtl_mviol_n20.pg (Oink iterations 3-odd → 4-odd, distance 8 → 7); synthetic
