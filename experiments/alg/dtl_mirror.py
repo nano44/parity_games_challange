@@ -59,7 +59,26 @@ def tl_at(d, p, n, G):
     return [t for t in range(n) if d.born[t][3] % 2 == p and all(w in G for w, _ in d.tv[t])]
 
 
+def maxdeath_monotone(d, out):
+    """(b): for each phase and depth-0 piece index i, the maximum death round of piece i's ideal pruning (stable = inf)
+    over consecutive searches: count decreases."""
+    for k, (a, b) in enumerate(zip(d.trace, d.trace[1:])):
+        if a["p"] != b["p"] or b["dom"] != a["dom"]: continue
+        for i in range(min(len(a["pieces"]), len(b["pieces"]))):
+            def md(tr):
+                RR, rs, VV, nt = tr["pieces"][i]
+                if rs != -1: return 10 ** 6
+                rr = rounds(d, tr["p"], RR, tl_at(d, tr["p"], nt, tr["G"]))
+                return len(rr) - 1
+            x, y = md(a), md(b)
+            out["maxdeath_pairs"] = out.get("maxdeath_pairs", 0) + 1
+            if y < x:
+                out["maxdeath_DECREASES"] = out.get("maxdeath_DECREASES", 0) + 1
+                if len(out.setdefault("md_ex", [])) < 3: out["md_ex"].append((k + 1, i, x, y))
+
+
 def analyse(d, out, name):
+    maxdeath_monotone(d, out)
     for k, (a, b) in enumerate(zip(d.trace, d.trace[1:])):
         if a["p"] != b["p"] or b["dom"] != a["dom"]: continue
         pa, pb = a["pieces"], b["pieces"]; i = 0
@@ -131,6 +150,11 @@ def analyse(d, out, name):
             raised_i = any(dnew[u] > reci.get(u, 0) for u in resc)
             key3 = st.split("_")[0] + ("_raises_piecerecord" if raised_i else "_NO_piecerecord_raise")
             bk[key3] = bk.get(key3, 0) + 1
+            # (a) does a rescued vertex reach the new return set (or the piece turn stable)?
+            Mb = rb[-2] if len(rb) > 1 and not rb[-1] else rb[-1]
+            to_max = (pb_res != -1) or any(u in Mb for u in resc)
+            ka = st.split("_")[0] + ("_lifts_to_max" if to_max else "_NOT_to_max")
+            bk[ka] = bk.get(ka, 0) + 1
             key4 = st.split("_")[0] + ("_to_stable" if pb_res != -1 else "_stays_minus1") + ("_raises_piecerecord" if raised_i else "_NO_piecerecord")
             bk[key4] = bk.get(key4, 0) + 1
             if (not raised_i) and st.startswith("dead") and len(out.setdefault("nopr_ex", [])) < 3:
