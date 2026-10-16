@@ -748,7 +748,7 @@ piece j+1 (and deeper) are compared on vertices present in both contexts.
   follows: the removed part D_j always contains the parent's return set, i.e. candidates whose layer seeds the ideal
   union, so even without lost tangles removing D_j can lower deaths. Not proved either way.
 
-## 16. The staircase: what a depth-j staircase needs in order to give depth j+1 FRESH contexts (12:14Z; Lead 11:48Z)
+## 16. The staircase: what a depth-j staircase needs in order to give depth j+1 FRESH contexts (12:11Z; Lead 11:48Z)
 Setting: C6, one phase, a depth-0 Dom(prevV) piece j at a FIXED context R returning −1 in consecutive searches; T only
 grows. Notation: V_r(T) = the ideal rounds; M(T) = the number of rounds (so V_{M−1} is the −1 return set and every
 vertex of it dies at M).
@@ -758,9 +758,9 @@ vertex of it dies at M).
   forces V_{M−1}(T') ≠ ∅, giving M' ≥ M. If M' = M, the return sets are V_{M−1}(T) ⊆ V_{M−1}(T'). (iii) is the
   definition. □
 - Consequence (PROVED, C6). At a fixed context, piece j has at most (n+1) · n distinct return sets per phase: ≤ n + 1
-  values of M, and within one value a growing chain of length ≤ n. With Dom(V) monotone in T (Lemma D3), ≤ n more
-  Dom-growth steps per return set. So the next index sees at most n(n+1) + n² new contexts per context of piece j:
-  the per-level factor K of §6.
+  values of M, and within one value a growing chain of length ≤ n. With Dom(V) monotone in T (Lemma D3), each return set
+  has ≤ n + 1 distinct Dom values. So the next index sees at most n(n+1)·(n+1) contexts per context of piece j: a
+  per-level factor of the same polynomial kind as K in §6.
 - Criterion (fresh vs recurrence; PROVED as a case split, C6). A step of the staircase moves index j+1 to
   R \ Dom_T'(V'). This is a RECURRENCE (an earlier context at j+1 again) only if V' repeats an earlier return set V of
   this staircase and Dom_T'(V') = Dom_T(V), i.e. Dom of that set has not grown. By (ii), a repeat can only happen across
@@ -772,7 +772,7 @@ vertex of it dies at M).
   recurrent), equal-M growth 44 (39 fresh, 5 recurrent), Dom-only 0. ("Fresh" is relative to all contexts at j+1 in
   the phase, so an equal-M step can still land on a context seen under a different j-context: the 5.)
 - What this gives a counter builder (for L-RED). A level-j digit is a staircase at a fixed context. It offers at most
-  n(n+1) + n² child contexts. To make each child context FRESH, the leaders must change at every M-rise. To make the
+  n(n+1)(n+1) child contexts. To make each child context FRESH, the leaders must change at every M-rise. To make the
   child RE-CLIMB in each fresh context, the child context change must reset child deaths: a lost tangle (shrink) or a
   new escape (grow), §15. Nothing proved prevents both from repeating at every level, so the product K^L stands.
   A polynomial bound needs a reason why fresh child contexts that also reset cannot recur per parent step. That is the
