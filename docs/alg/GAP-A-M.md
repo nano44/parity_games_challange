@@ -499,7 +499,7 @@ that the proved facts allow 2^Θ(n) searches. Status: GAP-A OPEN; the route is (
 
 ## 11b. (H2b): a candidate potential for dead-top cap carries (10:34Z; Lead 10:22Z/10:25Z: statement and data before proof)
 Data set for this section (experiments/alg/dtl_mirror.py, MIRROR_NMAX=30): every file in experiments/alg/instances, the
-climbed games of this session (scratchpad, not kept), tc+ N ≤ 6, counter_* families, 800 random games n ≤ 30; ideal (C6)
+climbed games of this session (copied to experiments/alg/instances/climbs_1016/, 22 files), tc+ N ≤ 6, counter_* families, 800 random games n ≤ 30; ideal (C6)
 runs; 449 changes at −1 pieces (347 at Dom(prevV) pieces, 102 at cut pieces).
 - Φ (DEAD). R(u) := the maximum death round of u in the ideal pruning of any depth-0 −1 piece of the phase so far. "Every
   dead-top cap carry at a Dom(prevV) piece raises R(u) for some rescued u" fails 15 times in 258
