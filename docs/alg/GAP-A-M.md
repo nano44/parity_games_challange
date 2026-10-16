@@ -748,7 +748,7 @@ Tool: experiments/alg/dtl_straddle.py (Oink order, exact). At every depth-0 call
 the rounds where the actual and ideal survivors differ. For consecutive calls at one context it splits those of the
 later call into NEW (learned after the earlier call) and OLD.
 - DATA, three pinned-A_DTL instances: h4_def4_oink_n20 (4 DEF at piece 0), lemmaS_Mdrop_n20 and lemmaS_viol_n20
-  (both on trunk, experiments/red/carry/instances). At EVERY consecutive pair of calls at a deficit context (19 pairs
+  (both on trunk, experiments/red/carry/instances). At EVERY consecutive pair of calls at a deficit context (20 pairs
   over contexts |R| = 20, 19, 18, 14):
   - the later call has ≥ 1 NEW straddling tangle (1 to 3 of them);
   - every tangle that straddled in the earlier call still straddles: the straddling set only GROWS at a fixed context.
@@ -759,7 +759,7 @@ later call into NEW (learned after the earlier call) and OLD.
   learning, not by n.
 - What a non-circular (H4) bound would need: a per-context cap on straddlers. The straddling set is monotone in the
   data, and each straddler is a tangle with vertices in ≥ 2 regions of one round. Nothing proved caps how many distinct
-  tangles can straddle at one context; tangles are subsets, so there can be many. Not proved; DATA only (19/19).
+  tangles can straddle at one context; tangles are subsets, so there can be many. Not proved; DATA only (20/20).
 - Not tested: whether the NEW straddler is the one that prunes the leader (L-RED's M-drop mechanism). Its region
   bookkeeping per round is in dtl_straddle.py and can be extended.
 
