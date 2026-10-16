@@ -93,6 +93,53 @@ def analyse(d, out, name):
             S1 = I.survivors(d, p, set(prev), R, I.ideal_union(d, p, set(prev), R, Tb), Tb)
             S0 = I.survivors(d, p, set(prev), R, I.ideal_union(d, p, set(prev), R, tl0), tl0)
             resc = S1 - S0
+            # Candidate potential (H2b): RECORD death round of a vertex over all depth-0 pieces of the phase so far
+            # (searches up to and including s). Does the carry lift some rescued u above its record?
+            rec = {}
+            ph0 = k
+            while ph0 > 0 and d.trace[ph0 - 1]["p"] == p and d.trace[ph0 - 1]["dom"] == a["dom"]:
+                ph0 -= 1
+            for kk in range(ph0, k + 1):
+                tr = d.trace[kk]
+                for (RR, rs, VV, nt) in tr["pieces"]:
+                    if rs != -1:
+                        continue                                     # record over -1 pieces only (finite deaths)
+                    rr = rounds(d, p, RR, tl_at(d, p, nt, tr["G"]))
+                    for r_ in range(1, len(rr)):
+                        for v in rr[r_ - 1] - rr[r_]:
+                            rec[v] = max(rec.get(v, 0), r_)
+                    for v in (rr[-1] if rr[-1] else set()):
+                        rec[v] = max(rec.get(v, 0), 10 ** 6)        # survives the call: infinite death round
+            def death_in(rr, v):
+                for r_ in range(1, len(rr)):
+                    if v in rr[r_ - 1] and v not in rr[r_]:
+                        return r_
+                return 10 ** 6
+            pb_res = pb[i][1]
+            dnew = {u: (death_in(rb, u) if pb_res == -1 else 10 ** 6) for u in resc}
+            raised = any(dnew[u] > rec.get(u, 0) for u in resc)
+            # refinement: record per depth-0 piece INDEX (same index i only)
+            reci = {}
+            for kk in range(ph0, k + 1):
+                tr = d.trace[kk]
+                if i < len(tr["pieces"]) and tr["pieces"][i][1] == -1:
+                    RR, rs, VV, nt = tr["pieces"][i]
+                    rr = rounds(d, p, RR, tl_at(d, p, nt, tr["G"]))
+                    for r_ in range(1, len(rr)):
+                        for v in rr[r_ - 1] - rr[r_]:
+                            reci[v] = max(reci.get(v, 0), r_)
+            raised_i = any(dnew[u] > reci.get(u, 0) for u in resc)
+            key3 = st.split("_")[0] + ("_raises_piecerecord" if raised_i else "_NO_piecerecord_raise")
+            bk[key3] = bk.get(key3, 0) + 1
+            key4 = st.split("_")[0] + ("_to_stable" if pb_res != -1 else "_stays_minus1") + ("_raises_piecerecord" if raised_i else "_NO_piecerecord")
+            bk[key4] = bk.get(key4, 0) + 1
+            if (not raised_i) and st.startswith("dead") and len(out.setdefault("nopr_ex", [])) < 3:
+                out["nopr_ex"].append((name, k + 1, i, kind, pb_res, [(u, dnew[u], reci.get(u, 0)) for u in resc]))
+            key2 = st.split("_")[0] + ("_raises_record" if raised else "_NO_record_raise")
+            out[key2] = out.get(key2, 0) + 1
+            bk[key2] = bk.get(key2, 0) + 1
+            if not raised and st.startswith("dead") and len(out.setdefault("norec_ex", [])) < 3:
+                out["norec_ex"].append((name, k + 1, i, kind, pb_res, [(u, dnew[u], rec.get(u, 0)) for u in resc]))
             rel = "all_higher" if resc and all(d.pr[u] > d.pr[h] for u in resc) else ("some_lower_or_equal" if resc else "none")
             key = st.split("_")[0] + "_rescued_" + rel
             out[key] = out.get(key, 0) + 1
@@ -139,7 +186,7 @@ def main():
     out = {"changes": 0, "with_insearch_subtangle": 0, "ex": []}
     rnd = gen.Rng("mirror"); games = [(f.split("/")[-1], pg.read(f)) for f in files]
     for i in range(nrand):
-        n = rnd.randint(8, 22); games.append((f"r{i}", gen.random_game(n, rnd.randint(2, n + 1), 1, rnd.randint(1, 3), rnd.next64())))
+        n = rnd.randint(8, int(os.environ.get("MIRROR_NMAX", "22"))); games.append((f"r{i}", gen.random_game(n, rnd.randint(2, n + 1), 1, rnd.randint(1, 3), rnd.next64())))
     sys.setrecursionlimit(100000)
     for name, g in games:
         idx = sorted(range(g.n), key=lambda v: (g.prio[v], v)); new = {v: i for i, v in enumerate(idx)}

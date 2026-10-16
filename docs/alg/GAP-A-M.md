@@ -303,7 +303,7 @@ it.
   fire inside a_{c+1}'s region in search s+1 only if that region's vertex SET has grown to contain T_last. A pure order gate
   at a fixed region set is then impossible for T_last; any T_last-gate at P1 is a set-level lift (R10's open case (iv)).
 
-## 9. C6 at a fixed stable context: Dom is monotone, and the piece learns in O(n) searches per epoch (09:34Z)
+## 9. C6 at a fixed stable context: Dom is monotone; what makes a stable piece learn again within an epoch (09:34Z)
 Lemma D3 (Dom is a layered closure; PROVED, reading of dtl.cpp 876-889). Fix a context R and the set X_before removed
 earlier in the same search_rec call. Dom(V, R) (the removal after a stable result) equals the layered closure D̂: for q
 descending over the priorities of V, D̂_{≥q} := the least superset of D̂_{>q} ∪ V_q closed under the threshold-q rules in R
@@ -439,6 +439,10 @@ Dom(prevV) piece must be SELF-REINFORCING (from some round on, an escape of the 
 driver keeps alive), else its top survives at that piece in the learning search, is removed by that piece's Dom, and is
 never learned deeper. APP does not model escapes, so this is no contradiction; it is the shape APP's level drivers must
 have, and if (M1) is proved it becomes an axiom APP must carry (then APP needs a self-reinforcing driver at every level).
+(5) (10:23Z, from section 11) In APP as written, t(c) contains the vertex x_{i*}^1 it rescues, so the rescued vertex has
+priority ≤ the driver's top. In the data, a carry whose top is already pruned rescues only candidates ABOVE its top
+(17/17). A realisation should therefore either keep the rescued top outside the driver with the driver's top below it (a
+cap carry), or make the rescued vertex the driver's own alive top (a self-reinforcing carry, MIRROR (M2)).
 
 ## 11. Pruning-driven carries: MIRROR tested, and the class it misses (10:17Z; Lead 10:07Z retarget)
 Question (Lead): a bound on PRUNING-driven carries at −1 pieces, starting from L-RED's MIRROR reading (l-red f954923, R10
@@ -472,7 +476,7 @@ Reading.
 - So the class a bound must handle is: self-reinforcing alive-top carries, PLUS dead-top cap carries. MIRROR handles
   neither as a bound; it only shows that non-self-reinforcing alive-top carries do not occur.
 
-## 12. Where the GAP-A route stands: the hypotheses still needed (10:22Z)
+## 12. Where the GAP-A route stands: the hypotheses still needed (10:20Z)
 Child resets are real (DATA, experiments/alg/dtl_childmono.py; 400 random games n ≤ 24, every dtl_* instance, tc+ N ≤ 5):
 after a change at depth-0 piece j between consecutive searches, the death rounds at piece j+1 DROP for some vertex present in
 both child contexts in 4 of 38 comparisons (A_DTL and C6 alike; dtl_replay4_n32 after a root change: 3 → 1, 4 → 2,
@@ -492,3 +496,27 @@ With (H1)-(H4) the counting of section 6 collapses: every transition is a prunin
 (H1: driver learned at a prefix-determined piece, so the carry needs a gate there, R10), a catch-up/recursion step (H3), or
 a deficit (H4), and APP(k) is excluded because its every level is a pruning-driven carry (H2). Without them, APP(k) shows
 that the proved facts allow 2^Θ(n) searches. Status: GAP-A OPEN; the route is (H1)-(H4).
+
+## 11b. (H2b): a candidate potential for dead-top cap carries (10:34Z; Lead 10:22Z/10:25Z: statement and data before proof)
+Data set for this section (experiments/alg/dtl_mirror.py, MIRROR_NMAX=30): every file in experiments/alg/instances, the
+climbed games of this session (scratchpad, not kept), tc+ N ≤ 6, counter_* families, 800 random games n ≤ 30; ideal (C6)
+runs; 449 changes at −1 pieces (347 at Dom(prevV) pieces, 102 at cut pieces).
+- Φ (DEAD). R(u) := the maximum death round of u in the ideal pruning of any depth-0 −1 piece of the phase so far. "Every
+  dead-top cap carry at a Dom(prevV) piece raises R(u) for some rescued u" fails 15 times in 258
+  (experiments/alg/instances/cross_h_k1_n11_m17_37.pg, n = 11, search 1, piece 0: the rescued vertex reaches death 3,
+  equal to its record from another −1 piece of the same search; siblings cross_h_k1_n12_m18_13 / _18). The record over ALL
+  pieces is dead outright (rescued vertices already survive some stable piece).
+- Φ_idx (CANDIDATE, 0 counterexamples). R_i(u) := the maximum death round of u in the ideal pruning of depth-0 piece INDEX i
+  over the searches of the phase so far whose piece i returned −1 (a stable result counts as ∞). Values lie in
+  {0, …, n+1, ∞} and there are ≤ n indices, so the R_i admit at most n²(n+2) raises per phase. Φ_idx: every dead-top cap
+  carry at piece i raises R_i(u) for some vertex u it rescues. Data: dead-top carries whose piece stays −1: 142/142 raise
+  R_i (103 at Dom(prevV) pieces, 39 at cut pieces, including the replays of dtl_replay4_n32 and dtl_replay2deep_n32); 157
+  more turn the piece stable (a trivial raise). If Φ_idx holds, dead-top cap carries number ≤ n²(n+2) per phase, which is
+  (H2b). Shifting a level to another index does not escape the bound.
+- Φ_idx does NOT hold for alive-top carries: at cut pieces 23 of 38 that stay −1 raise no R_i (at Dom(prevV) pieces 1 of
+  8). These are the self-reinforcing carries of section 11, MIRROR's (M2), and the class where the real replays live; (H2a)
+  stays open.
+- APP(k) violates Φ_idx at the second flip of any level (x_i^1 goes 1 → 3 at index i in every fresh context). An APP made
+  of dead-top cap carries would have to raise the rescued vertex's death at that index every time.
+- Status: CANDIDATE, DATA only, routed to L-RED as an attack target (10:33Z). No mechanism known: deaths at one index in
+  different contexts are not comparable in general.
