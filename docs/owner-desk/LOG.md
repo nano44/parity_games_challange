@@ -116,3 +116,7 @@ Q13 closed as D10 / L29. Lead's message crossed the owner's Q12 answer (relayed 
 
 ## 2026-10-16 16:47Z Lead (relayed to owner)
 Q12 closed as D11 / L30. p.15 recipe already built (L-RED R14, d70e99a): no slowdown on A_DTL. No owner questions open.
+
+## 2026-10-16 21:07Z owner (progress question)
+> Give me a status update
+Answered from trunk 9e1ae89 (NOW.md, RESULTS DE9-DE11, DECISIONS L31), l-alg 7c2f3f1, l-red c09aef2. Relayed verbatim to the Lead.
