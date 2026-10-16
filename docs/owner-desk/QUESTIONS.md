@@ -129,3 +129,18 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - Urgency: high (spend).
 - Status: closed, D7 / Lead reading L20 (trunk 3a83f8b): the owner answered "a" directly in the Lead session (continue at the
   current rate). D1 overage rule still applies: on paid overage the fleet stops and the owner is told.
+
+## Q10: van Dijk's 2024 chapter "Solving Parity Games, Very Slowly" (optional, not blocking)
+- id: Q10 (raised by the Lead via L-LIT T16; listed in docs/NOW.md, not routed through this desk)
+- Background: DTL (candidate C5) is van Dijk's unpublished solver; his 2024 chapter may describe it or its counterexample.
+- Options: owner provides a copy if they have access; otherwise the fleet proceeds without it.
+- Status: open (optional).
+
+## Q11: Fable weekly limit reached (2026-10-16 02:10Z)
+- id: Q11 (asked and answered in the Lead session, not via this desk)
+- Status: closed, D8 / Lead reading L27 (owner, ~06:50Z): option (b), L-ALG and L-RED continue on Opus 5.5 until the Fable reset
+  2026-10-21 21:00Z; referees not engaged before the reset without asking the owner (D1 "Never downgrade the referee").
+
+## Note on Q4 (closed under D4/L15)
+- Done 2026-10-15 23:28Z (l-comp 70cc344): PGSolver d3cd624 binaries ran once; 27/27 generators byte-identical to the ports;
+  switch-all/switch-best iteration counts and solutions identical. The M1 fidelity caveat is removed.

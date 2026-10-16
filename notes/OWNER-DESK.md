@@ -2,7 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-15 ~09:55Z. D4, D5 recorded. All owner questions closed or answered; Q8 answered by L18 (L-ALG lane). Optional follow-ups offered to the owner: second algorithm lane, SI design lane, spend ceiling. Waiting for the owner.
+2026-10-16 ~10:30Z. D4-D8 recorded. Q10 optional open (van Dijk 2024 chapter); all others closed. Owner talks to the Lead directly too (Q9, Q11): sync QUESTIONS.md from NOW.md on each wake. Waiting for the owner.
 
 ## Queue
 1. On each owner reply: log verbatim in docs/owner-desk/LOG.md, relay verbatim to the Lead (session_014FBi6o334DvwT5Uw2kDfoN).
