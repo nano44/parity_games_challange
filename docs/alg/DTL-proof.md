@@ -17,7 +17,10 @@ Step 0 (input construction, charged): write the game in PGSolver text and run Oi
 `PGParser::parse_pgsolver_renumber` with bad-loop removal OFF (`--no-loops`, src/tools/solve.cpp:263), which builds the
 out- and in-edge arrays (O((n + m) log n) word operations); then `game.ensure_sorted()` (oink.cpp:35; game.cpp:495
 `std::sort` on priorities), i.e. reindex the vertices in SOME order that is non-decreasing in priority. Equal-priority
-vertices may come out in any order (D-4): Theorems D1 and D2 are claimed for EVERY such order.
+vertices may come out in any order (D-4): Theorems D1 and D2 are claimed for EVERY order datum ω (C5-DTL.md §0 "Order
+data": the equal-priority indexing O1, the in-edge lists O2, the out-edge lists O3, the SCC emission order O3', the dominion
+queue order O5 and the push order O6; the tangle vertex order O4 and the counters O8 are fixed by the code). Oink @ 8fbf0a7
+realises one such datum, recorded there; docs/alg/C5-orders.md has the inventory (Lead decision 23:52Z, option (ii)).
 Step 1: `DTLSolver::run()` (dtl.cpp 1072-1161) with `interleaved = false`, all vertices enabled, G := V, as reached by
 the command `oink --dtl --no-single --no-wcwc --no-loops` (the pinned A_DTL; Lead decision D-1 option (i), 16:02Z):
 no single-parity solving, no winner-controlled-cycle removal, no self-loop removal by the parser or by
@@ -44,15 +47,18 @@ symmetrically sigma_Odd on W_Odd ∩ V_O. Same statement for A_IDTL, with "the e
 thrown" added.
 
 ### 0.3 Theorem D2 (running time, word RAM of TARGET section 3)
-Let tangles(G) be the final value of the counter `tangles` (line 463; it counts tangles KEPT after the duplicate check)
-and dominions(G) of `dominions` (line 375). A_DTL is read as a RAM program whose C++ `int` and `unsigned int` are words
+Let tangles(G, ω) be the final value of the counter `tangles` (line 463; it counts tangles KEPT after the duplicate check)
+under order datum ω, and dominions(G, ω) of `dominions` (line 375); tangles(G) and dominions(G) below abbreviate these for the
+ω under consideration, and every bound (a)-(e) is claimed for every ω. A_DTL is read as a RAM program whose C++ `int` and `unsigned int` are words
 of TARGET section 3's RAM (B-2): the claim is about that RAM program, not about 32-bit overflow behaviour. There are
-polynomials p_a, ..., p_e such that for every G as in 0.1 and every tie order:
-  (a) tangles(G) ≤ p_a(n + m);
+polynomials p_a, ..., p_e such that for every G as in 0.1 and every order datum ω:
+  (a) tangles(G, ω) ≤ p_a(n + m);
   (b) every call of best_vertices (643-776) executes at most p_b(n + m) pruning rounds (iterations of 674-773);
   (c) every call of search_rec (834-994), with its recursive calls, executes at most p_c(n + m) iterations of its loop
       850-993, at recursion depth ≤ d ≤ n + 1;
-  (d) the number of calls of search (997-1069), i.e. the counter `iterations` (1111, 1119), is at most p_d(n + m);
+  (d) the number of calls of search (997-1069) is at most p_d(n + m); for A_DTL this number is the counter `iterations`
+      (1111, 1119), for A_IDTL the counter is ⌊calls/2⌋ + 1 (1125, incremented once per round before the emptiness test), so
+      a bound on calls bounds the counter in both cases;
   (e) the total number of word operations of A_DTL, measured from TARGET's encoding and including step 0 (compression
       if needed, parsing, edge arrays, sorting), the duplicate-tangle checks (385-424: O(tangles(G) · n) per extracted
       SCC), the tangle storage (443-458: O(n) per kept tangle, `tin` back-links included) and the dominion removal
@@ -82,9 +88,9 @@ Same for A_IDTL.
   vertex of priority 0 attracts to X at level 0 in both). Hence A_DTL makes the same choices on G and on its
   compression, and the bound (e) is stated for the compressed game, whose n and m are the input's.
 - Section 2, target statement: TARGET asks for (W_E(G), W_O(G)); D1 gives these as (W_Even, W_Odd) plus strategies.
-  "Halts within p(n + m) steps": D2(e), measured from TARGET's encoding (E-3). Deterministic: for a fixed tie order yes
-  (no randomness; the stack `Q` and Oink's edge-list order fix every choice); the theorems are claimed for every tie
-  order, so the choice made by `std::sort` does not matter (D-4).
+  "Halts within p(n + m) steps": D2(e), measured from TARGET's encoding (E-3). Deterministic: for a fixed order datum ω yes
+  (no randomness; the stack `Q` and the lists of ω fix every choice); the theorems are claimed for every order datum, so
+  neither the choice made by `std::sort` (D-4) nor Oink's other list orders matter.
 - Section 3, model: word RAM, O(log(n + m))-bit words: D2(e) as stated.
 - D2 change 5 (strategies): D1 outputs positional strategies and states they win; the fleet's L-COMP check (step 2,
   to be re-run on the pinned command with `--no-loops`) verifies them on every test game.
@@ -711,6 +717,10 @@ games ok, every canonical game n = 1, 2, 3 (4 + 240 + 41,440) ok, each solver; t
 experiments/alg/out/psolc_fail_n4.jsonl (518 s to regenerate, not re-run here). experiments/alg/dtl_debug_fuzz.py with
 DTL_NO_LOOPS=1 (NDEBUG checks on, -t): seed 21, 20,000 random games with self-loops (rngame), dtl and idtl: 0 failures,
 every run "solution verified". So no correctness failure appeared on the pinned algorithm.
+2026-10-16 00:20Z: §0 order data (Lead go 23:52Z, option (ii) of docs/alg/C5-orders.md): 0.1 "every such order" → "every order
+datum ω"; 0.3 tangles(G, ω), (a)-(e) for every ω; 0.3(d) A_IDTL counter = ⌊calls/2⌋ + 1; 0.4 determinism per ω. C5-DTL.md §0 gets
+the "Order data" paragraph with Oink's instance O1-O8. Status: L24 (frozen at ccff864) → pending CHECKER diff of §0 against
+ccff864 and TARGET; the re-freeze (L26) follows its PASS. Nothing in §1-§5 changed by this edit.
 Changelog after the 17:25Z park point (the Lead asked for §1-2.1 to stay stable): 17:45Z §0 rewritten per CHECKER C3;
 §1.0 (tie order, self-loops) ADDED to §1; §7 (correspondence table) added; nothing in 1.1-2.1 changed.
 18:55Z: CHECKER C3c N-1..N-4 folded in: (s3) clearing needs t < pr(u); (s4) lists 171 among output str sources; K5(ii)
