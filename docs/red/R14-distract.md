@@ -1,10 +1,5 @@
 # R14: van Dijk's "distractingly nice long path" recipe against A_DTL (L-RED, 11:19Z by date -u; produced on Opus 5.5)
-Source (Lead 11:05Z, opened by L-LIT 11:01Z under D9; I have not opened it myself, so this file cites it only as the
-Lead's verbatim quote): T. van Dijk, "Solving parity games, very slowly", DOI 10.1007/978-3-031-75778-5_21, p.15,
-section 6 item 7: "There are also variations that prefer “good paths” where player Even (or Odd) dominates the path
-often, and in that case we simply have a distractingly nice long path that eventually leads to a difficult to untangle
-higher region of the opponent, while the dominion is small and uninteresting, and always the last choice of the
-algorithm." It is prose only, with no game. Solver: pinned A_DTL (`oink --dtl --no-single --no-wcwc --no-loops`, 8fbf0a7).
+Source trail: quote from van Dijk preprint 2024festschrift.pdf p.15 §6 item 7, opened by L-LIT, docs/lit/T17-counter-dtl-search.md (a)2, sha256 8e36c373… (T. van Dijk, "Solving parity games, very slowly", DOI 10.1007/978-3-031-75778-5_21). L-RED has NOT opened it; the quote is as relayed by the Lead (11:05Z): "There are also variations that prefer “good paths” where player Even (or Odd) dominates the path often, and in that case we simply have a distractingly nice long path that eventually leads to a difficult to untangle higher region of the opponent, while the dominion is small and uninteresting, and always the last choice of the algorithm." It is prose only, with no game. Solver: pinned A_DTL (`oink --dtl --no-single --no-wcwc --no-loops`, 8fbf0a7).
 Status words: DATA / READING. Verdict: no slow-down found. Every reading I built is either neutral or makes DTL FASTER.
 
 ## 1. What a "good path" is in A_DTL (code reading, dtl.cpp best_vertices 652-786)

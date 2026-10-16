@@ -71,3 +71,17 @@ contexts of the phase. A hit is therefore a real cross-context counterexample. I
 record") was stricter than Phi_idx ("no rescued vertex raises one"); new runs use the rescued-only test. Seeds 111-117
 ran with an alive-top logging bug between about 10:50Z and 10:55Z, when phi_full.py raised and the fitness returned -1,
 so candidates with alive-top drivers were rejected in that window.
+
+## INDEPENDENT CHECK: L-ALG's phi_idx_flat_n20 (l-alg ae36f2b, GAP-A-M 11d) is a Phi_idx counterexample on A_DTL (11:32Z by date -u; produced on Opus 5.5)
+CONFIRMED with this lane's tracer. File sha1 aab0c73e…, taken from origin/claude/l-alg 4ddc90f. Pinned Oink: 1 dominion,
+11 tangles, 5 iterations, solution verified. phi_full.py flags it as COUNTEREXAMPLE and CROSS-FLAT at Even searches
+2 -> 3 (0-based; the Lead's s3 -> s4), depth-0 index 2, a domfirst (Dom(prevV)) piece, in the same context (|R| = 17).
+Ids below are original ids.
+- Rescued vertex 14 dies at round 6, 5, 5, 6 in searches 0-3 at index 2; vertex 19 dies at 7, 6, 6, 7.
+- So the change only regains the search-0 record (context |R| = 16), and no vertex raises a record. The any-vertex test
+  and the rescued-only test both flag it.
+- phi_drivers.py GAME 3 2: r0 = round 6 (0-based list index 5). The round-6 set goes {17,19} -> {14,17,19}; the -1 return
+  set (the last nonempty V) goes {17,19} -> {19}.
+- The undo test finds ONE individual driver, t9 (top 5, pr 16), dead at round 2 in search 2, rescuing 14 (pr 20 > 16):
+  a dead-top cap carry. L-ALG names tangles 7-9; t7 and t8 are not individual drivers under the undo test.
+- This is the only cross-flat change among the 6 cap-only changes in this game. On the 134-file corpus it was 0 of 50.
