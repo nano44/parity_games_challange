@@ -191,6 +191,20 @@ def report(d, player=None, quiet=False):
             print(f"  v{L(v):>4} pr{pr(v):>3} {'E' if d.ow[v]==0 else 'O'}: {' '.join(f'{x:>2}' for x in row)}   flips {flips}")
         print("  first-call result per search: " + " ".join(f"{s['bv'][0]['result']:>2}" for s in ss))
         print("  pieces per search:            " + " ".join(f"{len(s['pieces']):>2}" for s in ss))
+    if "--diff" in sys.argv:
+        # epoch structure: for consecutive same-player searches, the first depth-0 piece index at which the piece sequence
+        # differs (kind, removed set, recursed set); "=" if the whole depth-0 sequence is equal (progress only inside a recursion)
+        print("\n== piece-sequence diff between consecutive same-player searches (level = first differing depth-0 piece)")
+        for p in (0, 1):
+            ss = [s for s in d.searches if s["player"] == p]
+            out = []
+            for a, b in zip(ss, ss[1:]):
+                pa = [(x["kind"], x.get("removed", frozenset()), x.get("recursed", frozenset())) for x in a["pieces"] if x["depth"] == 0]
+                pb = [(x["kind"], x.get("removed", frozenset()), x.get("recursed", frozenset())) for x in b["pieces"] if x["depth"] == 0]
+                lvl = next((i for i, (x, y) in enumerate(zip(pa, pb)) if x != y), None)
+                if lvl is None: lvl = "=" if len(pa) == len(pb) else min(len(pa), len(pb))
+                out.append(f"{a['index']}->{b['index']}:{lvl}")
+            if out: print(f"  player {p}: " + " ".join(out))
     if "--tangles" in sys.argv:
         print("\n== tangles: id learned(search/piece) top set escapes | fired at (search:piece/phase) ...")
         born = {}

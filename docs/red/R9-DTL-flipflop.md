@@ -49,6 +49,18 @@ never fire after the sptl pass that learned them (T14-T17, T20-T23, T27-T30: the
 R and uncovered in every later context); the drivers are the top-level tangles T18, T25, T32 (top v2), which fire in the
 pruning of pieces 0-2 of the next searches.
 
+## 2b. The 16-search Even phase of L-ALG's dtl_searches20_n32.pg (claude/l-alg f2704d7; DATA)
+My tracer: 124 tangles, 1 dominion, 20 iterations (MATCH with Oink); Claim P/Q: 62 contexts, 74 recurring pairs, 0
+violations, 20 argmax changes. The first best_vertices call returns -1 in all 16 Even searches; its profile advances at
+searches 2, 5, 9/10, 13/14 (Claim P: only upward). `--diff` (first depth-0 piece that differs between consecutive
+searches): 0->1:5 1->2:0 2->3:3 3->4:0 4->5:0 5->6:2 6->7:= 7->8:= 8->9:0 9->10:= 10->11:= 11->12:= 12->13:0 13->14:2
+14->15:0. So depth-0 piece 0 (a domfirst) moves 6 times; inside each epoch the progress is in later pieces or inside the
+recursion of the big cut (t=31, 23 vertices): a two-level cascade with epochs of 1-4 searches, not a counter. The readout
+tops v23/v19 (pr 28) learn 12 tangles each, restarting 6 and 5 times: v23's sets wander through 12 configurations
+({18,19,23,28,29}, then 16, 15, 19, 20, 19, 13, 16, 10, 10, 11, 20 vertices; v17, v7, v13, v16, v27, v24, v4, v12, v20,
+v22, v30, v10 flip in and out), each new. Per top vertex: 12 at n = 32 (so far the largest per-vertex count I have seen; still
+below n). Climbs seeded with it (fitness iters, Oink): 22 searches at n = 32 and at n = 40 (--grow 8) after ~5k steps.
+
 ## 3. Two claims that hold on all data, and the two sources of non-monotonicity (DATA + READING)
 Claim P (context monotonicity). For a fixed player and a fixed subgame R (the whole context of best_vertices), the round in
 which a vertex is pruned never decreases from a search to a later search of the same player (survivors = infinity).
@@ -86,13 +98,56 @@ Consequences if P and Q are proved (READING):
     R_i fresh again, and nothing else. tc+ is this structure with ONE level: every search drops one gadget's Z-vertex out of
     the argmax of piece 0 (tc+ 3 search 1 -> 2: survivors {3,4,5,12,22} -> {3,4,5,12}; 22 is then stable in piece 1), and the
     rescues are permanent because the driving tangle (top H's, escapes = the surviving Z's) fires at R = G.
-Every one of (1)-(4) is realised somewhere in dtl_restart8_n20 for one step; none is realised repeatedly. Free-form
+Every one of (1)-(4) is realised somewhere in dtl_restart8_n20 for one step; none is realised repeatedly.
+Lemma W (Lead 00:52Z, proof lane): each top extracts at most once per search (sptl 528-529, W.reset 1016), so
+tangles <= n * searches and GAP-A is exactly the number of search calls per phase. (My per-top-vertex counts agree: the
+in-search "chain of 8" at one priority is 8 tops.)
+
+## 4b. Blueprint of a two-level reset+replay gadget (READING; the construction I tried to assemble, with the facts that
+decide each step; not built within the box)
+Facts used (dtl.cpp, read): (f1) attractTangle fires only if every tangle vertex not yet in Z is in R and has priority <=
+the threshold, and every escape is in Z or outside the subgame (109-185): a stored tangle with a vertex in X is DEAD in that
+context, whatever its escapes. (f2) In piece 0 (R = G) nothing is forgiven: a driver that is to move level 0 must have all
+its escapes inside the regions of tops that still survive at that round (tc+: the Z vertices). (f3) Coverage is monotone in
+X: "covered iff state = j exactly" cannot be expressed through escapes; selectivity therefore comes from (f1), not from
+escapes. (f4) In piece 0 a stable top needs a closed region; without an existing tangle that means an Even-closable cycle,
+which is a dominion unless it has an escape, and an escape in piece 0 must be a surviving top (f2): so the first stable
+vertex of a phase needs a driver learned under forgiveness in an earlier search. (f5) A vertex whose only good successors
+have moved into X becomes a cut seed at its own priority (R2) and lands in a piece before the stable one.
+Level H (monotone, tc+-like): tops a_1..a_m whose driver tangles T_j = {a_j, u_j, w_j} (a_j -> w_j, w_j Odd -> {a_j, u_j,
+o_j}, u_j -> w_j and u_j -> a_j so that T_j can be learned in a stable piece where o_j is forgiven) make a_j a permanent
+member of V* once T_j exists and o_j is covered in piece 0; by (f2) o_j must be a surviving top, so T_j's permanence rests on
+a top that is itself never pruned, which is the circularity (f4): tc+ resolves it by letting the H-drivers fire only while
+the Z tops survive and making the argmax, not a stable set, carry the state. State j = {a_1..a_j} in P1 = Dom(V*) (or in the
+argmax); P1 grows (or moves) so R_2 is fresh at every step.
+Level L (replayed): bits b_1..b_k, b_i -> y_i (Odd, pr 1) -> {b_i, b_{i-1}} with b_1's y_1 -> p where p is a cut seed in
+every state (p -> g, g in P1 always), so at level L's piece the bits form a pruning chain (rounds 1..k) and bit b_i is
+rescued at round <= its own only when a driver D_{i-1} containing b_{i-1} fires at that round (y_i is then attracted at
+threshold 1). D_{i-1} is the readout SCC of the previous search: it contains the ON bits, the witness vertices g_{j'} (Even,
+pr 1, g_{j'} -> a_{j'} and -> the readout top) of all states j' > j, and the hub; by (f1) every state-j driver DIES in state
+j+1 because g_{j+1} moves into P1 = Dom(V*_{j+1}) (reset), and the state-(j+1) drivers are fresh sets because they lack
+g_{j+1} (freshness). The carry (advance H exactly when L is exhausted) is the step I could not close on paper: the driver
+that moves a_{j+1} into V* must fire in piece 0 with no forgiveness (f2), so its escapes must be surviving tops, while the
+L-drivers must not do the same; and the full-count readout tangle, the only fresh tangle available at that moment, carries
+the L-bits' Odd exits (to p and the chain) as escapes, which are uncovered in piece 0. I did not find a wiring that
+satisfies (f2) for the carry driver and keeps the L-drivers off piece 0 at the same time; this is the one concrete
+obstacle met, stated as a property to prove or refute:
+  (CARRY) In piece 0 of a search without dominions, a stored tangle fires only if all its escapes are in the regions of the
+  tops still alive at that round; a tangle learned in a stable piece deeper in the previous search has as escapes the
+  Odd exits of its SCC into that piece's context, so it fires in piece 0 only if every such exit leads to a vertex that is
+  attracted to a top alive at that round. A counter needs, at every carry, a fresh tangle with this property whose
+  firing changes the argmax (or V*) of piece 0; tc+ provides exactly N of them (one per gadget, the Z's as escapes) and
+  then stops. Whether the number of such carries can exceed poly(n) is the open core; nothing in my data shows more than
+  6 argmax changes of piece 0 in a phase (dtl_searches20_n32). Free-form
 climbs do not find the composition: fitness iters (searches) converges to chains of self-loop singletons (13 searches at
 n = 20, 11 at n = 16, each search one new singleton, linear); fitness rep (repeated learning per top) and perhead are
 gamed by equal-priority towers (section 1); fitness excess = searches - distinct learning tops is the measure of
 restart-driven searches: chain 2, tc+ 3: -6, dtl_restart8: -9; climbs on it are running at the time of writing.
 
 ## 5. Not done / open
-- No hand-built two-level gadget yet (reset + replay); section 4 is its specification.
+- No hand-built two-level gadget (reset + replay); sections 4/4b are its specification and the obstacle (CARRY).
 - Claims P, Q unproved; a proof of P would make section 3(c) a theorem and move GAP-A to "polynomially many argmax changes
   per context", which is the open combinatorial core.
+- Searches per phase: best known 16 (Even phase of dtl_searches20_n32, L-ALG), 22 total at n = 32/40 by my seeded climbs; the
+  singleton chain gives n/2 + O(1) trivially; tc+ gives 2N+2 at n ~ 17N^2. No family with searches growing faster than
+  linearly in n is known to me.
