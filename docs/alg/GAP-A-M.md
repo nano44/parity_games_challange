@@ -1470,3 +1470,5 @@ child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set
   phase length.
 - Searches per phase, A_DTL, Oink order (dtl_searchclimb.py, fitness = max searches in one phase, then iterations;
   random-game starts, equal step budgets; scratchpad search/, started 19:09Z): numbers in the box-end ledger.
+- ctx_fallsteps on f1_twodef_n48.pg (dtl_plateau.py, ideal-stable DEF pairs, both order data): 5 contexts with 2 fall
+  steps, 2 with 1 (Lead 19:13Z asked for the re-run).
