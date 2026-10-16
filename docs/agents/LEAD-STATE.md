@@ -274,3 +274,4 @@
 - 13:18Z merged l-alg 08bf2b5 (Lemma R; 5 DEF at one context under stable order; order caveat recorded).
 - 13:22Z merged l-alg 0a1b1b5 (4 DEF at one context on pinned Oink; Lead re-ran Oink).
 - 13:25Z merged l-red c933605.
+- 13:30Z merged l-alg 4045bc4: 6 deficit changes at one ideal-stable context on pinned Oink (Lead re-ran Oink: 9 iterations, verified). Told owner.
