@@ -34,5 +34,23 @@ for s_, kf in ((2, 1), (3, 2), (4, 3)):
     ne.MODE = "h"; k, undec, _ = alglib.k_needed(g, ref, kf)
     assert k == kf and all(u == g.n for u in undec[:kf]), (s_, k, undec)
     print(f"sibling-trap family S_{s_} (n={g.n}): C2 decides nothing for k < {kf}, solves at k = {kf}")
-print("ALG-CHECK PASS")
 PY
+# every lane script must at least compile (a broken dtl_pieces.py once passed verify)
+python3 -I -c "import ast, glob; [ast.parse(open(f).read(), f) for f in glob.glob('*.py')]; print('scripts compile')"
+# GAP-A-M.md §4: the synthetic counter to fixed-context monotonicity (M) must keep reproducing
+python3 -I dtl_m_synth.py | tail -1
+# GAP-A-M.md §4b: the same failure in an actual A_DTL run (Python always; Oink trace when Oink is built)
+python3 -I dtl_mviol_check.py | tail -1
+# GAP-A-M.md §18: the synthetic genuine-tangle counter to candidate (LEX) must keep reproducing (exit 0 iff it does)
+python3 -I dtl_lexcounter.py | tail -1
+# GAP-A-M.md §18f: the synthetic pure DEF cycle (state revisit at an ideal-stable context) must keep reproducing
+python3 -I dtl_staterevisit.py | tail -1
+# GAP-A-M.md §18h: (LEX) fails in an actual A_DTL run (both order data)
+python3 -I dtl_lexviol_check.py | tail -1
+# GAP-A-M.md §18i: (CM) fails in an actual A_DTL run (both order data)
+python3 -I dtl_cmviol_check.py | tail -1
+# GAP-A-M.md §18k: synthetic two-fall context (L-RED's (F1) is not structural)
+python3 -I dtl_twofall.py | tail -1
+# GAP-A-M.md §10: the abstract barrier model APP(k) must keep satisfying its checkable axioms
+python3 -I app_model.py 1 2 3 4 5 6 | tail -1
+echo "ALG-CHECK PASS"

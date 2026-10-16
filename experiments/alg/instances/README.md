@@ -1,0 +1,17 @@
+# Notes on instances kept from L-ALG climbs (2026-10-16, produced on Opus 5.5)
+One line each; "stable" = order datum (priority, id) of dtl_pyref; "oink" = Oink's own order (exact against pinned Oink).
+- flat_dead_carries_n20.pg: C6, stable order; 11 of 12 dead-top cap carries in one phase raise no Φ_idx record (GAP-A-M §11d-§11e); Oink 5 iterations, verified.
+- flat_dead_carries_n32.pg: C6, stable order; 9 of 11 flat dead-top cap carries in one phase; Oink 6 iterations, verified.
+- fresh_fixed_n24.pg: A_DTL stable order, fixed tracer; 4 fresh contexts (dtl_pieces.fresh_contexts), 15 searches; Oink 15 iterations, verified.
+- fresh_fixed_n32.pg: A_DTL stable order, fixed tracer, from nest_nest_s81 (climb seed 112, final): fresh 10, maxF 7, 21 searches; Oink-verified.
+- h4_def4_oink_n20.pg: A_DTL OINK order (exact; Oink 8 iterations, verified); 4 deficit-triggered changes at one context (piece 0, R = G') with the ideal result stable throughout (GAP-A-M §13b).
+- h4_def5_stable_n20.pg: A_DTL stable order only; 5 deficit-triggered changes at one context with the ideal stable; in Oink order 0 deficits (§13b).
+- phi_idx_flat_n20.pg, phi_idx_cutrec_n20.pg: Φ_idx counterexamples (GAP-A-M §11d, docs/alg/DEAD.md).
+- h4_def6_oink_n28.pg: A_DTL OINK order (exact; Oink 9 iterations, verified); 6 deficit-triggered changes at one context (piece 0, |R| 26, after the first dominion) with the ideal stable throughout (GAP-A-M §13b).
+- h4_def7_oink_n44.pg: A_DTL OINK order (exact; Oink 11 iterations, verified); 7 deficit-triggered changes at one context (piece 0, R = G, |R| 44) with the ideal stable (26 vertices) throughout (GAP-A-M §13b).
+- h4_def8_oink_n44.pg: A_DTL OINK order (exact; Oink 11 iterations, verified); 8 deficit-triggered changes at one context (piece 0, R = G, |R| 44) with the ideal stable (27 vertices) in searches 3-11 (GAP-A-M §13b).
+- h4_def9_oink_n28.pg: A_DTL OINK order (exact; Oink 13 iterations, verified); 9 deficit-triggered changes at one ideal-stable context (|R| 28); kills (C-rM-stable): (r0, M) = (3, 8) and (9, 12) each repeat (GAP-A-M §13g).
+- h4_def10_oink_n28.pg: A_DTL OINK order (exact; Oink 14 iterations, verified); 10 deficit-triggered changes at one ideal-stable context (piece 0, R = G, |R| 28); actual return sets REVISIT ({23, 27} twice, {20} twice) (GAP-A-M §13g).
+- h4_deep_oink_n44.pg: A_DTL OINK order (Oink 13 iterations, verified); deficit calls at pieces 0-3 in every search 4-12 of one phase; pieces 0, 1, 2 each at ONE fixed context (parallel deficit staircases, not nested fresh children); piece 3 visits 4 contexts (GAP-A-M §13g).
+- h4_def11_oink_n28.pg: A_DTL OINK order (exact; Oink 15 iterations, verified); 11 deficit-triggered changes at one ideal-stable context (piece 0, R = G, |R| 28); return sets revisit (GAP-A-M §13g).
+- h4_nested7_oink_n44.pg: A_DTL OINK order (Oink 12 iterations, verified); climbed from L-RED's h4_compound_n44; player 1 phase s3-s11, deficit calls at pieces 0-4 with ideal stable; distinct contexts per piece 1/1/2/5/8 (+9 at piece 5, ideal -1): nested deficit contexts multiplying with depth (GAP-A-M §13h).

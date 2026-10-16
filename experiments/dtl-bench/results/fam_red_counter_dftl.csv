@@ -1,0 +1,44 @@
+family,N,gen,game,n,m,d,solver,status,wall_s,solver_s,dominions,tangles,iterations,pruning,detail,cmd
+red_counter_dftl,1,python3 experiments/red/dtl/gens_dtl.py counter_dftl 1,red_counter_dftl_1.pg,12,19,9,oink-uzlk,ok,0.0067,1.6e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_counter_dftl,1,python3 experiments/red/dtl/gens_dtl.py counter_dftl 1,red_counter_dftl_1.pg,12,19,9,py-zlk,ok,0.0393,,,,,,,python3 -I experiments/harness/zielonka.py
+red_counter_dftl,1,python3 experiments/red/dtl/gens_dtl.py counter_dftl 1,red_counter_dftl_1.pg,12,19,9,dtl-pin,ok,0.0028,5.2e-05,1,5,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,1,python3 experiments/red/dtl/gens_dtl.py counter_dftl 1,red_counter_dftl_1.pg,12,19,9,idtl-pin,ok,0.0025,8.4e-05,1,5,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,2,python3 experiments/red/dtl/gens_dtl.py counter_dftl 2,red_counter_dftl_2.pg,16,27,12,oink-uzlk,ok,0.0027,2.4e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_counter_dftl,2,python3 experiments/red/dtl/gens_dtl.py counter_dftl 2,red_counter_dftl_2.pg,16,27,12,py-zlk,ok,0.0191,,,,,,,python3 -I experiments/harness/zielonka.py
+red_counter_dftl,2,python3 experiments/red/dtl/gens_dtl.py counter_dftl 2,red_counter_dftl_2.pg,16,27,12,dtl-pin,ok,0.0025,6.5e-05,1,7,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,2,python3 experiments/red/dtl/gens_dtl.py counter_dftl 2,red_counter_dftl_2.pg,16,27,12,idtl-pin,ok,0.0028,7.6e-05,1,7,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,4,python3 experiments/red/dtl/gens_dtl.py counter_dftl 4,red_counter_dftl_4.pg,24,43,18,oink-uzlk,ok,0.0031,1.5e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_counter_dftl,4,python3 experiments/red/dtl/gens_dtl.py counter_dftl 4,red_counter_dftl_4.pg,24,43,18,py-zlk,ok,0.0227,,,,,,,python3 -I experiments/harness/zielonka.py
+red_counter_dftl,4,python3 experiments/red/dtl/gens_dtl.py counter_dftl 4,red_counter_dftl_4.pg,24,43,18,dtl-pin,ok,0.0029,0.000123,1,11,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,4,python3 experiments/red/dtl/gens_dtl.py counter_dftl 4,red_counter_dftl_4.pg,24,43,18,idtl-pin,ok,0.0038,0.000189,1,11,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,8,python3 experiments/red/dtl/gens_dtl.py counter_dftl 8,red_counter_dftl_8.pg,40,75,30,oink-uzlk,ok,0.0031,1.8e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_counter_dftl,8,python3 experiments/red/dtl/gens_dtl.py counter_dftl 8,red_counter_dftl_8.pg,40,75,30,py-zlk,ok,0.0222,,,,,,,python3 -I experiments/harness/zielonka.py
+red_counter_dftl,8,python3 experiments/red/dtl/gens_dtl.py counter_dftl 8,red_counter_dftl_8.pg,40,75,30,dtl-pin,ok,0.0032,0.000272,1,19,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,8,python3 experiments/red/dtl/gens_dtl.py counter_dftl 8,red_counter_dftl_8.pg,40,75,30,idtl-pin,ok,0.0036,0.000447,1,19,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,16,python3 experiments/red/dtl/gens_dtl.py counter_dftl 16,red_counter_dftl_16.pg,72,139,54,oink-uzlk,ok,0.0044,3.5e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_counter_dftl,16,python3 experiments/red/dtl/gens_dtl.py counter_dftl 16,red_counter_dftl_16.pg,72,139,54,py-zlk,ok,0.0343,,,,,,,python3 -I experiments/harness/zielonka.py
+red_counter_dftl,16,python3 experiments/red/dtl/gens_dtl.py counter_dftl 16,red_counter_dftl_16.pg,72,139,54,dtl-pin,ok,0.0057,0.001585,1,35,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,16,python3 experiments/red/dtl/gens_dtl.py counter_dftl 16,red_counter_dftl_16.pg,72,139,54,idtl-pin,ok,0.0056,0.001778,1,35,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,32,python3 experiments/red/dtl/gens_dtl.py counter_dftl 32,red_counter_dftl_32.pg,136,267,102,oink-uzlk,ok,0.0061,4.1e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_counter_dftl,32,python3 experiments/red/dtl/gens_dtl.py counter_dftl 32,red_counter_dftl_32.pg,136,267,102,py-zlk,ok,0.0281,,,,,,,python3 -I experiments/harness/zielonka.py
+red_counter_dftl,32,python3 experiments/red/dtl/gens_dtl.py counter_dftl 32,red_counter_dftl_32.pg,136,267,102,dtl-pin,ok,0.0116,0.008291,1,67,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,32,python3 experiments/red/dtl/gens_dtl.py counter_dftl 32,red_counter_dftl_32.pg,136,267,102,idtl-pin,ok,0.0113,0.008214,1,67,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,64,python3 experiments/red/dtl/gens_dtl.py counter_dftl 64,red_counter_dftl_64.pg,264,523,198,oink-uzlk,ok,0.0039,4.7e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_counter_dftl,64,python3 experiments/red/dtl/gens_dtl.py counter_dftl 64,red_counter_dftl_64.pg,264,523,198,py-zlk,ok,0.0330,,,,,,,python3 -I experiments/harness/zielonka.py
+red_counter_dftl,64,python3 experiments/red/dtl/gens_dtl.py counter_dftl 64,red_counter_dftl_64.pg,264,523,198,dtl-pin,ok,0.0730,0.069874,1,131,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,64,python3 experiments/red/dtl/gens_dtl.py counter_dftl 64,red_counter_dftl_64.pg,264,523,198,idtl-pin,ok,0.0770,0.073392,1,131,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,128,python3 experiments/red/dtl/gens_dtl.py counter_dftl 128,red_counter_dftl_128.pg,520,1035,390,oink-uzlk,ok,0.0042,6.2e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_counter_dftl,128,python3 experiments/red/dtl/gens_dtl.py counter_dftl 128,red_counter_dftl_128.pg,520,1035,390,py-zlk,ok,0.0440,,,,,,,python3 -I experiments/harness/zielonka.py
+red_counter_dftl,128,python3 experiments/red/dtl/gens_dtl.py counter_dftl 128,red_counter_dftl_128.pg,520,1035,390,dtl-pin,ok,0.8372,0.832935,1,259,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,128,python3 experiments/red/dtl/gens_dtl.py counter_dftl 128,red_counter_dftl_128.pg,520,1035,390,idtl-pin,ok,1.0179,1.012771,1,259,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,256,python3 experiments/red/dtl/gens_dtl.py counter_dftl 256,red_counter_dftl_256.pg,1032,2059,774,oink-uzlk,ok,0.0047,9.6e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_counter_dftl,256,python3 experiments/red/dtl/gens_dtl.py counter_dftl 256,red_counter_dftl_256.pg,1032,2059,774,py-zlk,ok,0.1072,,,,,,,python3 -I experiments/harness/zielonka.py
+red_counter_dftl,256,python3 experiments/red/dtl/gens_dtl.py counter_dftl 256,red_counter_dftl_256.pg,1032,2059,774,dtl-pin,ok,10.2860,10.281221,1,515,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,256,python3 experiments/red/dtl/gens_dtl.py counter_dftl 256,red_counter_dftl_256.pg,1032,2059,774,idtl-pin,ok,10.7157,10.710761,1,515,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,512,python3 experiments/red/dtl/gens_dtl.py counter_dftl 512,red_counter_dftl_512.pg,2056,4107,1542,oink-uzlk,ok,0.0054,0.000196,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_counter_dftl,512,python3 experiments/red/dtl/gens_dtl.py counter_dftl 512,red_counter_dftl_512.pg,2056,4107,1542,py-zlk,ok,0.3129,,,,,,,python3 -I experiments/harness/zielonka.py
+red_counter_dftl,512,python3 experiments/red/dtl/gens_dtl.py counter_dftl 512,red_counter_dftl_512.pg,2056,4107,1542,dtl-pin,ok,154.3052,154.298675,1,1027,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,512,python3 experiments/red/dtl/gens_dtl.py counter_dftl 512,red_counter_dftl_512.pg,2056,4107,1542,idtl-pin,ok,156.2851,156.278748,1,1027,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,1024,python3 experiments/red/dtl/gens_dtl.py counter_dftl 1024,red_counter_dftl_1024.pg,4104,8203,3078,oink-uzlk,ok,0.0077,0.000417,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_counter_dftl,1024,python3 experiments/red/dtl/gens_dtl.py counter_dftl 1024,red_counter_dftl_1024.pg,4104,8203,3078,dtl-pin,timeout,400.1016,,,,,,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_counter_dftl,1024,python3 experiments/red/dtl/gens_dtl.py counter_dftl 1024,red_counter_dftl_1024.pg,4104,8203,3078,idtl-pin,timeout,400.0923,,,,,,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
