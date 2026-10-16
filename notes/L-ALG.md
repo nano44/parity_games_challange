@@ -4,12 +4,14 @@
 - Box 2026-10-16 00:00Z–07:40Z (Lead go 23:42Z): (A) docs/alg/C5-orders.md pushed d54c445, recommendation (ii) sent to the Lead
   (awaiting Lead/CHECKER; C5 §0 "Order data" paragraph is mine to add on the go). (B) GAP-A: data file docs/alg/GAP-A-data.md
   (findings F1–F8, reduction, dead ends), DTL-proof.md §3(a) end paragraph + §5 row updated. Nothing proved; no GAP closed.
-- Key facts: per-top ≤ n FALSE (dtl_pertop31_n18.pg); in-search tangles at a top form a strictly growing chain (F3, 0 breaks,
-  climb --chainbreak running at the time of writing); vertex membership in a top's SCC oscillates across searches (F8,
-  dtl_restart8_n20.pg, mechanism = rescue un-forgives a cut); GAP-A ⇔ polynomially many searches per phase.
-- Open: PROVE F3 (chain) — needs: a tangle learned at a lower top in pass i never steals a vertex of τ's SCC into a higher top
-  in pass i+1 (see GAP-A-data.md §4); find the potential for searches or the counter (climbs: --searches fitness reaches
-  11–15 searches at n = 24–32 after ~10k steps; seeded from dtl_restart8_n20: 11 at n = 20).
+- Key facts: Lemma W (PROVED: each top extracts ≤ once per search, dtl.cpp 528-529/1016) ⇒ tangles ≤ n · searches, so GAP-A ⇔
+  the number of searches; "31 tangles at one top" was 31 at one priority LEVEL (8 tops; use dtl_tops.py with a Debug trace for
+  true tops, never dtl_tangle_family.py's max-(pr,id) rule); SCC membership at a top oscillates across searches with depth 5
+  (F9, dtl_searches20_n32.pg: 20 searches at n = 32, learning inside the recursion); mechanism of a single flip = rescue
+  un-forgives a cut (F8, dtl_restart8_n20.pg). Dead potentials for searches: first-call distance, coverage pairs, escapes, R/V*
+  of the first stable piece, heads.
+- Open: a potential for the number of searches per phase, or the counter (climbs --searches: 9 at n = 16, 16 at n = 24, 20 at
+  n = 32; seeded climbs from dtl_searches20_n32 running at the time of writing, logs scratchpad/climb/log_seedS_*.txt).
 - Builds in this container's scratchpad (lost with the container): release tools/oink/build (setup_oink.sh), Debug oink-debug/,
   PATCHED Debug oink-dbgpatch/ (recipe in GAP-A-data.md §1). Climb logs in scratchpad/climb/.
 
