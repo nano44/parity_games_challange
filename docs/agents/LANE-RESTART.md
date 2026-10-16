@@ -22,3 +22,4 @@ Five questions:
 | 2026-10-16 | L-RED | session_017WLo5xfMxRZ4f6n2Su6274 | session_0117Yy21tGGz9s1zzLfBdUKC | 5 | none (re-measured: merge-base 5a30e98, 0 ahead before its commit; no GAPS rows; trap = piped verify, prevented by literal chain) |
 | 2026-10-16 | L-ALG | session_01Aoj1NEAPu4ibQ3VbNXaXVY (Fable cap) | session_01BDELabbGbT2QYY2NoRCY8A (Opus, D8) | 5 | none (re-measured: merge-base fe22c7f; no GAPS rows; §5 per-level label fix noted) |
 | 2026-10-16 | L-RED | session_0117Yy21tGGz9s1zzLfBdUKC (Fable cap) | session_01PxvcUhsSEhfjURzmBDBeoN (Opus, D8) | 5 | none (re-measured: merge-base 0bedda5; stale WORKING status noted, fixed at first push) |
+| 2026-10-16 | L-LIT | session_01MxWPJxeciDocEdfd89xCF8 (539k context, parked) | session_01Sb99VhYmwmCzi8aeKybxzj (Opus, D8/D9) | pending (proceeds without 'go' per L28; Lead re-measures) | - |
