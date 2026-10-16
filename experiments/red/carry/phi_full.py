@@ -278,6 +278,22 @@ def r0_runs(d):
     return out
 
 
+def child_m_drops(d):
+    """L-ALG GAP-A-M 13h next-box candidate: child M non-decreasing across parent DEF steps into fresh child contexts.
+    Approximation (the ideal-stable and DEF filters need dtl_deficit): per phase and depth-0 index j >= 1, the -1 calls
+    in CONSECUTIVE searches whose context R differs from the previous search's; count those where M (the round count)
+    DROPS. Returns (drops, list of (phase, j, search, M_before, M_after, |R| before, |R| after))."""
+    out = []; ph0 = 0
+    for si in range(1, len(d.searches)):
+        if d.searches[si - 1]["player"] != d.searches[si]["player"] or d.searches[si - 1]["dominions"]: ph0 = si; continue
+        for j in range(1, 12):
+            ca, cb = d.calls.get((si - 1, j)), d.calls.get((si, j))
+            if not ca or not cb or ca[3] != -1 or cb[3] != -1 or ca[0] == cb[0]: continue
+            Ma, Mb = len(ca[2]) - 1, len(cb[2]) - 1
+            if Mb < Ma: out.append((ph0, j, si, Ma, Mb, len(ca[0]), len(cb[0])))
+    return len(out), out
+
+
 def run(path):
     g = rd.ff.pg.read(path)
     from stdsort import oink_order
