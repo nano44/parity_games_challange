@@ -62,6 +62,15 @@ v22, v30, v10 flip in and out), each new. Per top vertex: 12 at n = 32 (so far t
 below n). Climbs seeded with it (fitness iters, Oink): 22 searches at n = 32 and at n = 40 (--grow 8) after ~5k steps.
 
 ## 3. Two claims that hold on all data, and the two sources of non-monotonicity (DATA + READING)
+CORRECTION (2026-10-16 ~08:50Z, L-RED successor, produced on Opus 5.5): Claim P is FALSE for A_DTL itself. L-ALG's
+instance experiments/alg/instances/dtl_mviol_n20.pg (claude/l-alg 6f19541, sha1 4cb3335f) has the same context R = G' at
+iterations 3-odd and 4-odd with a growing tangle set and three first-call distances going DOWN (L-ALG docs/alg/GAP-A-M.md
+section 4b, read off Oink's own trace). Independent re-check with this lane's tools: `dtl_ctxmono.py` on that file reports
+21 contexts, 17 recurring pairs, 15 Claim P violations, 0 Claim Q violations; `dtl_flipflop.py --oink` MATCH (1 dominion,
+17 tangles, 6 iterations). The "0 violations" lines below stay as DATA for the games they name. They were never a proof:
+the adversarial climbs of v3 used Even-only fitness and did not reach the straddle shape (L-ALG Lemma E). Consequence (c)
+(the tree bound) and every "monotone in a fixed context" step below are therefore unproved for A_DTL. Claim Q has 0
+violations on this instance; L-ALG's synthetic shape (GAP-A-M.md section 4) breaks it for injected tangle sets only.
 Claim P (context monotonicity). For a fixed player and a fixed subgame R (the whole context of best_vertices), the round in
 which a vertex is pruned never decreases from a search to a later search of the same player (survivors = infinity).
 Claim Q. For fixed (player, R), a stable result's V* never shrinks.
