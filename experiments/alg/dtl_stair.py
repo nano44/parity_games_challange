@@ -29,6 +29,16 @@ def run(d, st, name):
                 kind = "M_up" if Mb > Ma else ("same_M_grow" if pa[2] != pb[2] else "dom_only")
                 fr = "FRESH" if Cb not in seen else "RECUR"
                 st[kind + "_" + fr] = st.get(kind + "_" + fr, 0) + 1
+                # reset at j+1: some vertex common to both child contexts dies earlier in b than in a
+                qa, qb = a["pieces"][j + 1], b["pieces"][j + 1]
+                ra_ = M.rounds(d, a["p"], qa[0], M.tl_at(d, a["p"], qa[3], a["G"])); rb_ = M.rounds(d, b["p"], qb[0], M.tl_at(d, b["p"], qb[3], b["G"]))
+                def dd(rr, v):
+                    for r in range(1, len(rr)):
+                        if v in rr[r - 1] and v not in rr[r]: return r
+                    return 10 ** 6
+                common = rb_[0] & ra_[0]
+                reset = any(dd(rb_, v) < dd(ra_, v) for v in common)
+                st[kind + "_" + fr + ("_RESET" if reset else "_noreset")] = st.get(kind + "_" + fr + ("_RESET" if reset else "_noreset"), 0) + 1
             seen.clear()
     for tr in d.trace:
         if phase and (tr["p"] != phase[-1]["p"] or tr["dom"] != phase[-1]["dom"]): flush(); phase = []
