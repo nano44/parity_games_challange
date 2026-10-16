@@ -1,8 +1,9 @@
-# L-RED notebook (independent adversary). Successor session_0117Yy21tGGz9s1zzLfBdUKC from 2026-10-16 00:05Z (my clock; the Lead's stamps run ~8 min ahead of `date -u` in this container)
+# L-RED notebook (independent adversary). Successor session_01PxvcUhsSEhfjURzmBDBeoN from 2026-10-16 08:05Z (my clock), produced on Opus 5.5 (owner D8, Lead reading L27)
+Previous: session_0117Yy21tGGz9s1zzLfBdUKC (Fable; paused by the weekly limit ~01:23Z, last push 0bedda5 R9 v4).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/verify.sh && git push -u origin claude/l-red`.
-Status: WORKING (DTL flip-flop box, Lead go 00:25Z, box to ~06:25Z Lead clock). Background: dtl_search.py climbs in the
-scratchpad (climb/*.log; fitness excess) — scratchpad only, lost with the container.
+Status: WORKING (CARRY box: Lead go 08:12Z, box 8 h to ~16:10Z Lead clock; interim every ~2 h). The predecessor's
+"WORKING (DTL flip-flop box)" status and its scratchpad climbs were stale at handover (scratchpad lost with its container).
 
 ## DONE (all merged by the Lead unless noted)
 - R1 docs/red/R1-MSF.md: S2a MSF KILLED (gated Bland counter 2^N - 1; Gate Lemma: gates relabel the first-difference level).
