@@ -34,23 +34,25 @@ Status: WORKING (CARRY box: Lead go 08:12Z, box 8 h to ~16:10Z Lead clock; inter
 - R12 docs/red/R12-APP-realisation.md: APP(k) realisation analysis: partial design, WALL 1 (region coverage only; L-ALG
   right that it does not generalise), WALL 2 tie for alive-top carries, (M2) impossible for alive-top lifts, redundancy
   DATA (all survival changes by top-alive tangles are lifts), dead-top cap carry anatomy (C-a)-(C-c).
-- R13 docs/red/R13-phi-idx.md: Phi_idx holds on A_DTL data (131/131 cap-only changes raise a record); near miss
-  phi_flat_alive_n32 (alive-top driver).
+- R13 docs/red/R13-phi-idx.md: Phi_idx data; near miss phi_flat_alive_n32 (alive-top); cut-piece V changes are phantoms;
+  0/175 alive-top domfirst drivers have their top in M_s (MIRROR M1); equal-context counts are Lemma F instances
+  (cross-context 50/50); INDEPENDENT CHECK CONFIRMS L-ALG's phi_idx_flat_n20 as a Phi_idx counterexample (driver t9).
+- R14 docs/red/R14-distract.md: van Dijk section 6 item 7 ("distractingly nice long path"; quote via L-LIT T17 (a)2, NOT
+  opened by me) built 5 ways on tc+ N plus a lure on tc N: neutral, collapse, or faster. Reading: stable V is p-closed
+  in R, so a good path only moves death rounds.
+- R12 section 10: section 9 restated after L-ALG C6 data; (C-c) first step refuted; "digit needs a cut" withdrawn.
 
 ## Resume point
-2026-10-16 CARRY box (Opus 5.5 successor; go 08:12Z Lead clock, box to ~16:10Z). Products so far: R10 (docs/red/R10-carry.md):
-bsolo fast level working; 2CE class analysis: gate dichotomy (E)/(S)/(O); frontier self-sustain (F) => carry learned in
-the stable piece P1 right after the slow cut; (S) needs a triggered fixed-context deficit (L-ALG M-cond); support
-obstruction for the P1 gate module (forgiven-type case OPEN); order gate (O) fails (O1-O3). R11 (docs/red/R11-r2-regress.md):
-(r2) of L-ALG's (alpha) regress fails on dtl_mviol_n20 (reproducer carry/r2_check.py in check.sh). R9 section 3: Claim P
-FALSE for A_DTL (L-ALG instance, re-checked). Next if resumed: (O) census (carry/dtl_ogate.py; random corpus + ogate climbs
-running in the scratchpad), then the forgiven-type support case or route (ii) (fast level inside the slow cut's recursion).
-- Previous resume text (R9 box, predecessor): mechanism read off the instrumented tracer, Claims P/Q, F2 correction, the
-  tree bound and the four-part counter requirement (R9 section 4).
+2026-10-16 CARRY box (Opus 5.5; go 08:12Z, box to ~16:10Z). State at 11:45Z: Phi_idx is FALSE (L-ALG 11d, confirmed in R13).
+(H2b) reduces by Lemma F (L-ALG 11e) to bounding c_i, the number of distinct -1 Dom(prevV) contexts per phase and index.
+Tool: phi_full.ctx_counts, dtl_search --fitness cidx. Corpus max c_i = 4 (nest_nest_s44, n = 54). Next: cidx climbs, then a
+k=2 build from phi_idx_flat_n20 (single-level cross-context double flip) aimed at c_i growing with n. Queue behind it: (H4)
+re-target driving (Lead 10:54Z, low priority).
 
 ## IN FLIGHT
-- Scratchpad (this container, lost with it): dtl_ogate --random 3000 16 7, tc+ 5 census; dtl_search climbs (fitness ogate,
-  resets, iters) under .../909dbf12-.../scratchpad/climb/. L-ALG branch read through a detached worktree <scratch>/lalg.
+- Scratchpad (this container, lost with it): phicap climbs pc_s111-117 (end ~11:57Z, no hit by 11:36Z); cidx climbs next,
+  under .../909dbf12-.../scratchpad/climb/. L-ALG branch read through a detached worktree <scratch>/lalg (stale; fetch
+  single files with git show origin/claude/l-alg:PATH).
 
 ## NEEDS
 None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-order invariant).
