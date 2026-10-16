@@ -735,8 +735,11 @@ pieces 0..j-1; measured ctx_changed = 0.
     {17} → {7} → stable {5, 7, 17}. All 5 transitions of the phase are DEF changes at this one context. The
     stable-order pyref takes 10 iterations here; in Oink order it takes 4 iterations and has 0 deficit calls
     (dtl_pyref --order oink and Oink both report 4, Oink verified). So this is a tie-breaking phenomenon of ω = stable.
-  - Order ω = oink (DTL_ORDER=oink, exact against pinned Oink): seed 123 from lemmaS_viol_n20 reached 3 DEF changes at
-    one context within 378 steps (running).
+  - Order ω = oink (DTL_ORDER=oink, exact against pinned Oink; Oink and dtl_pyref --order oink both 8 iterations,
+    verified): experiments/alg/instances/h4_def4_oink_n20.pg (seed 123 from lemmaS_viol_n20). Player 1, piece 0, R = G'
+    (|R| = 20). The ideal (C6) result is STABLE with the same 14-vertex V̂* in searches 4-8, while the actual is −1 in
+    searches 4-7, return sets (original ids) {0, 4} → {4} → {4, 7, 8} → {7, 8} → stable {7, 8, 18}. That is 4 DEF
+    changes at one ideal-stable context on pinned A_DTL (running).
   - Key earlier instances agree in both orders and with Oink (iterations): phi_idx_flat_n20 5, nest_nest_s84 19,
     lemmaS_viol_n20 8.
 
