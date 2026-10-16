@@ -727,8 +727,18 @@ pieces 0..j-1; measured ctx_changed = 0.
 - Reading: (H4) is the same carry/reset question as GAP-A, one level down: inside one best_vertices round instead of
   across depth-0 pieces. C6 removes it by construction (Û has no consumption). For A_DTL a bound on DEF per context
   would need a reason why region carries with resets cannot repeat. Not proved.
-- DATA (running, scratchpad defclimb.py seed 121 from lemmaS_viol_n20, n = 20): 4 DEF changes at ONE (index,
-  context), 5 in the phase, all with the ideal result unchanged, after 12,928 steps. The corpus max was 1.
+- DATA (scratchpad defclimb.py, fitness = DEF changes at one (index, context), n = 20). The corpus max was 1.
+  - Order datum ω = stable (dtl_pyref default, (priority, id); L26 freezes DTL for every ω, so this counts for the
+    proof but is NOT pinned-Oink behaviour). experiments/alg/instances/h4_def5_stable_n20.pg: player 1, phase after
+    the first dominion, piece 0 (|R| = 18). The ideal (C6) result is STABLE with an 11-vertex V̂* in all 6 searches,
+    while the actual result is −1 five times in a row, return sets (original ids) {13} → {13, 17} → {7, 13, 17} →
+    {17} → {7} → stable {5, 7, 17}. All 5 transitions of the phase are DEF changes at this one context. The
+    stable-order pyref takes 10 iterations here; in Oink order it takes 4 iterations and has 0 deficit calls
+    (dtl_pyref --order oink and Oink both report 4, Oink verified). So this is a tie-breaking phenomenon of ω = stable.
+  - Order ω = oink (DTL_ORDER=oink, exact against pinned Oink): seed 123 from lemmaS_viol_n20 reached 3 DEF changes at
+    one context within 378 steps (running).
+  - Key earlier instances agree in both orders and with Oink (iterations): phi_idx_flat_n20 5, nest_nest_s84 19,
+    lemmaS_viol_n20 8.
 
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
