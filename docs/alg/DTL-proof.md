@@ -20,7 +20,7 @@ whatever the flags): the distinct priorities are mapped in increasing order to c
 at 1 or 2 by parity, each keeping its parity (a step of 2 where two consecutive distinct priorities have the same parity), so every priority is
 ≤ 2d ≤ 2n + 2 afterwards; this is an order- and parity-preserving renumbering (into {0..2n+2}, not TARGET's {0..n}), it costs
 O(n log n) (a flat map over the n priorities) and is charged in D2(e); 0.4 shows A_DTL makes the same choices on a game and
-on any such compression of it. Then `game.ensure_sorted()` (oink.cpp:35; game.cpp:495
+on any such renumbering of it. Then `game.ensure_sorted()` (oink.cpp:35; game.cpp:495
 `std::sort` on priorities), i.e. reindex the vertices in SOME order that is non-decreasing in priority. Equal-priority
 vertices may come out in any order (D-4): Theorems D1 and D2 are claimed for EVERY order datum ω (C5-DTL.md §0 "Order
 data": the equal-priority indexing O1, the in-edge lists O2, the out-edge lists O3, the SCC emission order O3', the dominion
@@ -740,6 +740,8 @@ games ok, every canonical game n = 1, 2, 3 (4 + 240 + 41,440) ok, each solver; t
 experiments/alg/out/psolc_fail_n4.jsonl (518 s to regenerate, not re-run here). experiments/alg/dtl_debug_fuzz.py with
 DTL_NO_LOOPS=1 (NDEBUG checks on, -t): seed 21, 20,000 random games with self-loops (rngame), dtl and idtl: 0 failures,
 every run "solution verified". So no correctness failure appeared on the pinned algorithm.
+2026-10-16 01:40Z: after CHECKER C3f PASS and the re-freeze L26 (§0 at e144992): the leftover word "any such compression of it" in
+step 0 → "any such renumbering of it" (Lead 01:20Z, optional; wording only).
 2026-10-16 01:00Z: CHECKER C3e: E-1 (renumbering starts at 0 if 0 occurs) as its own commit; N-1 "order- and parity-preserving
 renumbering" (step 0, 0.4); N-3 Lemma 1.5a (one reachable SCC in a closed region, PROVED) reconciles §1.5 with NOTE N2 (amended).
 2026-10-16 00:45Z: CHECKER C3d (claude/checker 70c263e) fixes, §0 only plus §1.5 N-2: F-1 Theorem D1 for every order datum ω
