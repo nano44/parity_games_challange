@@ -222,3 +222,4 @@
 - 09:27Z merged l-red da3bdd9+5dc5707 (R11: (r2) fails on dtl_mviol_n20; Lead re-ran r2_check.py on the sha1-identical instance: PASS). Routed to L-ALG. L-RED next: (O) gate test (approved).
 - 09:34Z merged l-alg 8c46a98 (Lemma D2; (r2) dead-route status). Routed D2(b) to L-RED: (O) at fixed set impossible for T_last; target = set-level lift.
 - 09:40Z merged l-red d97188c ((O) fails in 2CE; independent agreement with D2(b)).
+- 09:45Z merged l-red f8bc9fe (all 2CE gates fail, reading+data). Lead routing: L-RED attacks D2/driver lemma briefly, then fresh contexts adversarially (separate from L-ALG's designer climbs).
