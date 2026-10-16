@@ -881,6 +881,12 @@ time, unless M grows. Routed to L-RED as an attack target: find a context where 
   changes are pairwise distinct. With 1 ≤ r0 ≤ M ≤ n + 1, this gives ≤ (n+1)² DEF changes per ideal-stable context,
   which would make the per-context (H4) polynomial there. Not proved. Routed as an attack target: find an ideal-stable
   context where (r0, M) repeats.
+- (C-rM-stable) is DEAD (14:13Z). experiments/alg/instances/h4_def9_oink_n28.pg, from defclimb seed 128 (Oink order;
+  Oink and dtl_pyref --order oink both 13 iterations, verified) has 9 DEF changes at one IDEAL-STABLE context
+  (|R| = 28). The steps (r0, rounds before → after) are: (3, 7→8), (3, 8→8), (6, 8→9), (8, 9→10), (7, 10→10),
+  (9, 10→12), (9, 12→12), (11, 12→14), (11, 14→11). So (r0, M) = (3, 8) and (9, 12) each occur twice. No pair-based
+  potential of this kind survives; (H4) per ideal-stable context stays OPEN. Max DEF at one ideal-stable context, Oink
+  order: n = 20: 4, n = 28: 9, n = 44: 8 (climbs; the n = 28 climb ran longest).
 
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
