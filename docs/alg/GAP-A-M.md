@@ -549,8 +549,9 @@ runs; 449 changes at −1 pieces (347 at Dom(prevV) pieces, 102 at cut pieces).
 ## 11c. Φ_idx with the corrected piece state, and a data check of R12 §9 (11:01Z; Lead 10:59Z)
 Same data set as §11b (experiments/alg/dtl_mirror.py at this commit, C6, MIRROR_NMAX=30, 800 random games). LEVEL now uses
 the corrected state of §6 (cut piece: R, −1, attractor; STATE_V=1 gives the old count).
-- Transitions at a −1 piece at an equal context: 347 (was 449). 329 of them are at Dom(prevV) pieces (was 347): removing
-  phantom V changes at cuts uncovered 12 more real Dom(prevV) changes behind them. 18 are at cut pieces whose result type
+- Transitions at a −1 piece at an equal context: 347 (was 449). 329 of them are at Dom(prevV) pieces (was 347). The level moves in
+  both directions: some old Dom(prevV) levels now sit behind an earlier cut-attractor change, and some real Dom(prevV)
+  changes were hidden behind a phantom V change at a cut (dead-top carries there: 273, was 258). 18 are at cut pieces whose result type
   changes, and 56 are CUT-ATTRACTOR changes (same R, attractor grown), now counted separately as (H1)/(F) territory. Example:
   dtl_cu_viol_n24 search 3, piece 1, attractor 2 → 17 vertices.
 - Φ_idx restated for Dom(prevV) pieces only (V is real state there). Every dead-top cap carry raises R_i(u) for some
