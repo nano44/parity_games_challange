@@ -16,3 +16,66 @@ Candidate: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7. Stat
   First run (carry2 2 3): FAILS for a design reason. sigma's high cap pulls almost the whole game into its region at
   piece 0, so piece 0 is stable and nothing is counted. Next step: confine the stealer so its region holds only the
   p1's (lower its cap, or block the Even back-paths a_k -> p1_k).
+
+## The CARRY obstruction for two cut-eating levels (READING, unrefereed; L-RED ~09:10Z)
+Class 2CE. Within one search_rec call, the slow level A is a chain a_1..a_mA eaten one per A-step by a cut C_A (threshold
+tA). The fast level B is a chain b_1..b_mB eaten one per search by a LATER cut C_B (threshold tB). The fast tangles carry
+witnesses W_j, which C_A eats together with a_j, so every fast tangle of an older state dies (f1). The carry tangle at
+a_{c+1} must be learned in the stable piece P after C_B only once B is exhausted (b_mB eaten), and must fire in C_A of the
+next search. Its escapes must therefore be in C_A's attractor or outside R there.
+(C1) Gate dichotomy. What unblocks a_{c+1}'s region in P when B is exhausted is one of:
+  (E) an Odd vertex of the would-be tangle loses a successor from R_P. That successor is an escape of the tangle. It is
+      eaten only by C_B or later (else it would be outside R_P in every state and gate nothing), so it lies in R and outside
+      C_A's attractor in the next search. The carry cannot fire in C_A.
+  (S) an Even vertex y on every cycle through a_{c+1} is no longer taken by a region that sptl computes earlier, i.e. a
+      "stealer" top s in V*_P while B is unfinished leaves V*_P when B is done.
+  Priorities are static and V*-membership of a_{c+1} reduces to (E)/(S) applied to its pruning. So the gate is (S).
+(C2) What (S) forces:
+  (s1) pr(s) > pr(a_{c+1}) (its region is computed first).
+  (s2) a_{c+1} lies in s's region whenever y does. Every successor of a_{c+1} that sits in its region depends on y (a
+       successor that does not would give a cycle avoiding y), so an Even a_{c+1} is attracted through it and an Odd
+       a_{c+1} has all its edges there; caps allow it since pr(a) < pr(s). Hence every vertex that C_A eats with a_{c+1}
+       through attraction of priority <= pr(s) lies in s's region in P (or in an earlier region). That includes the
+       witnesses W_{c+1}, unless they are protected by caps.
+  (s3) W_{c+1} must sit in the fast tops' regions in P. So either every b_i is processed before s (pr(b_i) > pr(s)), or
+       the witnesses hang on a_{c+1} through a vertex of priority > pr(s). C_A can eat such a vertex only if tA > pr(s).
+  (s4) s must leave V*_P when C_B eats b_mB, without being eaten itself (if C_B eats s, it eats y: pr(y) <= pr(a) <= tA
+       < tB by (s5)). Removing vertices from R never uncovers an Odd link, and an Even link that loses its support is
+       eaten if its priority is <= tB. So the support chain from s to the eaten part passes a vertex of priority > tB:
+       pr(s) > tB (also when s is kept alive through a forgiving threshold).
+  (s5) C_A precedes C_B. If C_B's seed reaches X only through C_A's attractor, C_A attracts the seed itself unless
+       tB > tA. So tB > tA.
+  Combining: if pr(b_i) > pr(s) for all i, then (s4) gives pr(s) > tB >= pr(b_mB) > pr(s). Otherwise (s3) gives
+  tA > pr(s) > tB > tA. Both are contradictions. So no 2CE wiring has a carry. This is the failing step of R9 section 4b,
+  stated for this class.
+Routes the statement does NOT cover (open): (i) a non-cut piece between C_A and C_B that supplies C_B's seed target, so
+(s5) need not hold. My first paper attempt fails because that piece's context contains the uneaten a's with the fast level
+pruned, so the gate is open there and the carry is learned too early. (ii) The fast level inside the recursion of C_A's
+remainder (fresh context). (iii) Levels living in pruning rounds instead of cuts, where L-ALG's straddle reset (Lemma E,
+GAP-A-M.md) acts at a FIXED context. A straddle is a region phenomenon, so it cannot act inside a cut attractor.
+
+## Sharper form: in 2CE the CARRY reduces to a fixed-context deficit (READING, unrefereed; L-RED ~09:35Z)
+This corrects the layout that (C2) assumed. (C2)'s (s4) and (s5) treat the carry as learned in a stable piece after C_B.
+That piece does not exist in the needed form.
+(F) Frontier self-sustain. Fix a search s inside one A-state, with the pieces before C_A the same in s and s+1. Let D_0 be
+    the first tangle learned in s that fires in C_A of s+1 (first in C_A's attraction order). Its escapes are covered there
+    without help from other tangles learned in s, so they lie in C_A's attractor of s or in X before it. Hence, in s, after
+    C_A every escape of D_0 is outside R. D_0's vertices are still in R (otherwise the old tangles would already eat its
+    top). Its cycle is then rebuilt by plain attraction in every later pruning round, so its top is never a candidate. The
+    first best_vertices call after C_A therefore returns STABLE (a -1 result needs an empty V). That call is the stable
+    piece P1, and D_0's top is in V*_{P1}. sptl processes it there, and Dom(V*_{P1}) then removes it. So D_0 is learned in
+    P1 or not in s at all.
+(G) Consequently the gate is evaluated in P1, BEFORE C_B runs, and can depend only on the tangle set. Between two
+    consecutive searches of one A-state, P1's context is the same, and exactly one thing changes: the fast level's newest
+    tangle. The carry needs P1's sptl to learn D_0 when that newest tangle is the LAST fast tangle, and not before. Gate
+    types at P1 (with (E) excluded by (F)):
+    (S) A stealer top s is in V*_{P1}(T) but not in V*_{P1}(T + T_last). By L-ALG's Theorem M-cond (GAP-A-M.md
+        section 3), this requires a DEFICIT round in P1's pruning under T + T_last. By Lemma E, that is an alive tangle that
+        straddles and whose unconsumed rest has a lower-priority cycle maximum. A stealer that stays in V* keeps y: y is
+        attracted whenever s is popped, by whichever region holds s, and every such region has cap >= pr(s) > pr(y).
+    (O) Order gate: T_last changes the attraction order or strategies inside sptl regions (LIFO pops), so a_{c+1}'s SCC
+        changes from one whose escapes are not covered in C_A to one whose escapes are. Not excluded; untested.
+Statement for the proof lane: in the class 2CE, a counter with mA >= 2 carries needs, once per A-state, a fixed-context
+deficit (or an order-gate switch) at P1 that the fast level's last tangle triggers and that none of its earlier tangles
+trigger. A bound on such triggered deficits per context would damp every 2CE counter. L-ALG's dtl_mviol_n20 shows that
+deficits happen in real runs. Whether they can be triggered on demand, repeatedly, at one context is OPEN.
