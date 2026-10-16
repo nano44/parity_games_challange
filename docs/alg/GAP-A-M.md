@@ -1473,3 +1473,17 @@ child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set
   random-game starts, equal step budgets; scratchpad search/, started 19:09Z): numbers in the box-end ledger.
 - ctx_fallsteps on f1_twodef_n48.pg (dtl_plateau.py, ideal-stable DEF pairs, both order data): 5 contexts with 2 fall
   steps, 2 with 1 (Lead 19:13Z asked for the re-run).
+- Searches per phase, checkpoint 20:38Z (dtl_searchclimb.py, A_DTL, Oink order, random starts gen.random_game(n, n, 1, 3,
+  seed 7n), climbs started 19:09Z, so equal WALL TIME; steps per second fall with n). Best per phase at equal STEP budgets
+  (the logs record improvements only, so the n = 60 column is its value at its last improvement, step 8,729):
+  | steps | n = 20 | n = 30 | n = 40 | n = 60 |
+  |---|---|---|---|---|
+  | 5,000 | 7 | 11 | 6 | 9 |
+  | 8,729 | 9 | 13 | 6 | 14 |
+  | 20,000 | 12 | 15 | 10 | (14 at ≥ 8,729) |
+  | 38,000 | 14 | 17 | 11 | |
+  | 54,000 | 16 | 18 | | |
+  Snapshots committed as experiments/alg/instances/spp_n20.pg (phases 16/2/1 searches, 19 iterations), spp_n30.pg
+  (18/1/1/1, 21), spp_n40.pg (7/11/1, 19), spp_n60.pg (14/2, 16); pinned Oink gives the same iteration counts, verified.
+  Reading: the per-phase maximum keeps rising with the step budget at every n (the climbs have not converged), and at
+  equal budget it is not monotone in n (n = 40 is a slow seed). Nothing here is above linear in n.
