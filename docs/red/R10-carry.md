@@ -109,3 +109,28 @@ Write H for the highest such top and E_0 = X before C_A (piece 0's Dom), E_A = C
      which closes H's region. I could only push the closure up one intermediate top per search (the lift cascade), so a
      module with d intermediate tops seems to last about d searches. If that held in general, a persistent gate would
      cost about one vertex per search it survives, which damps the 2CE counter to linear. Unproved.
+
+## The order gate (O) fails the same way (READING, unrefereed; L-RED ~10:05Z)
+L-ALG's test (Lead 09:23Z): T_last fires INSIDE a_{c+1}'s sptl region in P1 and changes the DFS parents on every cycle
+through a_{c+1}, so that the SCC's escapes move into C_A's attractor. Facts used (dtl.cpp 476-546, 65-185): sptl's
+attractor is a stack; str[v] is the first popped vertex that attracts v; str[a] is the first popped successor of a;
+a tangle fires at the pop of one of its escapes and pushes its vertices on top of the stack.
+(O1) Firing T_last only PUSHES vertices above everything already on the stack, so it can only DELAY earlier-pushed
+     vertices. A successor u of a that pops first only because T_last exists is therefore pushed during the exploration of
+     T_last's vertices. Then either u is an Even vertex whose str enters T_last's subtree, or u is an Odd vertex with an
+     edge into it.
+(O2) Even u: the cycle a -> u -> ... -> a runs through T_last's vertices. For T_last to fire in a's region, its escapes
+     (b_{mB-1}, down to the chain's anchor) must lie in that region (or be consumed above). If they lie in the region, they
+     reach a, and the new SCC contains T_last and every region vertex it reaches, i.e. the whole fast chain with its
+     anchor. C_A eats that SCC in the next search, which destroys the fast level. (If the escapes are consumed above,
+     T_last does not reach a and there is no cycle through u.)
+(O3) Odd u: the SCC can avoid T_last (u -> c1 -> a closes the cycle), but u's edge into T_last's vertex t* becomes an
+     ESCAPE of the carry tangle. t* lies in R at C_A and is not eaten by it: a vertex of T_last that C_A ate in every
+     state would not be in R_{P1}, and one that C_A eats only together with a_{c+1} deadlocks, since the carry must fire
+     before a_{c+1} is eaten. So the carry never fires in C_A.
+Conclusion for the class 2CE: all three gate types fail. (E) by (C1). (S) needs a triggered deficit at P1 whose supporting
+module the slow cut eats (support obstruction, with the forgiven-type case open). (O) by (O1)-(O3). The (O) argument
+leaves one escape: a fast level duplicated per slow state, so that a carry eating one fast copy is harmless. That makes
+searches ~ (fast length) x (slow states) with n of the same order, i.e. linear. Remaining routes for a counter: fresh
+contexts through cut recursion ((ii) above; L-ALG's replay instances dtl_replay4_n32 and dtl_replay2deep_n32 are the
+current data), and the forgiven-type support case.
