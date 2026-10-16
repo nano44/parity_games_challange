@@ -54,3 +54,17 @@ deficit. I see no way to get (i): reaching a leftover from the hub needs an edge
 the copy that is removed in the current state is an escape. An Even hub vertex reaches one successor only. Sections 1-3
 are readings on this wiring, not a proof for all wirings. They say where APP's abstraction hides a cost: it lets t(c) fire
 at piece i* "for free", while in DTL its escapes into deeper levels must be kept covered there.
+
+## 5. Correction to section 2: the carry's top TIES into the return set (READING, 10:27Z by date -u)
+Section 2 handles the pieces above i*, but at piece i* itself there is a second problem, the APP form of R10's MIRROR.
+While t(c)'s top z is alive, z survives a round exactly when t(c)'s escapes are covered in that round (redundancy: plain
+attraction rebuilds the tangle). The rescued x_{i*}^1 survives a round exactly when the lift happens, i.e. when t(c)
+fires, i.e. when the same escapes are covered. So at piece i* in search s+1, z and x_{i*}^1 lose their support in the SAME
+round. The return set (the V of the last round) then contains both. A delay that keeps x_{i*}^1 one round longer would
+need a support that is covered in a later round but not earlier. Coverage only shrinks over the rounds of one call
+(without deficits), so that support would also cover x_{i*}^1 in search s, where nothing is rescued.
+Consequence: with ONE bottom top z shared by all t(c) (as in section 1), Dom of piece i*'s return set removes z whenever
+level i* holds a 1, and the bottom loses the top of every future tangle. What survives: one bottom top PER LEVEL, z_i, as
+the top of every t(c) whose deepest zero is i. z_i is then removed at piece i exactly in states with b_i = 1, which are the
+states that need no new deepest-zero-i tangle. Whether the rest of the wiring survives this change (other levels' z_j must
+not join z_i's region; the deeper ones' escapes of section 3 remain) is OPEN. Section 3's wall is untouched by this change.
