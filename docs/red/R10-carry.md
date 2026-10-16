@@ -79,3 +79,8 @@ Statement for the proof lane: in the class 2CE, a counter with mA >= 2 carries n
 deficit (or an order-gate switch) at P1 that the fast level's last tangle triggers and that none of its earlier tangles
 trigger. A bound on such triggered deficits per context would damp every 2CE counter. L-ALG's dtl_mviol_n20 shows that
 deficits happen in real runs. Whether they can be triggered on demand, repeatedly, at one context is OPEN.
+DATA for (F): experiments/red/carry/instances/nosig_2_3.pg (carry2 2 3 without the stealer's edges from p1; generated with
+a stripped copy of carry2.py, file kept). `python3 experiments/red/carry/show.py <file>`: in every Even search the slow cut
+(piece 2, seed sA) is followed at once by a STABLE piece whose V* holds the frontier slow top. That piece learns the slow
+tangle ({a1,p1_1,p2_1} in search 0, {a2,p1_2,p2_2} in search 1) BEFORE the fast cut (piece 4, seed sB) runs. With no gate,
+both levels advance together: 4 iterations, Oink-consistent (the tracer is exact against Oink, R9).

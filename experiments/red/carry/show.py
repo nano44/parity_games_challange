@@ -22,7 +22,7 @@ for s in d.searches:
     bvs = iter(s["bv"])
     for i, pc in enumerate(s["pieces"]):
         kind = pc["kind"]
-        extra = {k: v for k, v in pc.items() if k not in ("kind", "depth", "rounds", "tangles")}
+        extra = {k: v for k, v in pc.items() if k not in ("kind", "depth", "rounds", "tangles", "bv")}
         ex = " ".join(f"{k}={S(v) if isinstance(v, (set, frozenset, list)) else v}" for k, v in extra.items())
         print(f"  piece {i} d{pc['depth']} {kind} {ex}")
         if rounds:
