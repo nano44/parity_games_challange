@@ -144,3 +144,15 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   potential survives. Kept: Lemma R (regions lexicographic in T, A_DTL), per-round inclusion, Lemma S for C6 and for A_DTL
   under M-cond.
 
+- DE11 (2026-10-16): further per-context (H4) candidates on A_DTL; NOT dead ends for DTL itself (docs/alg/GAP-A-M.md §18c-§18k,
+  §17 ledger; docs/alg/DEAD.md; docs/red/R17-R20; unrefereed). Each killed by an Oink-verified instance, in both order data
+  (Lead re-ran Oink on each): (LEX) per-context death vector lexicographically increasing FALSE:
+  experiments/alg/instances/lex_viol_oink_n20.pg and experiments/red/carry/instances/lex_viol_inj_n28.pg; (NR) a fallen
+  vertex never again the top changed vertex FALSE: lex_viol_inj_n28.pg; (CM) child M never drops across a parent DEF step
+  into an ideal-stable child context FALSE: experiments/alg/instances/cm_viol_oink_n28.pg and
+  experiments/red/carry/instances/cm_mdrop_both_n28.pg; (F1) at most one fall step per context FALSE:
+  experiments/red/carry/instances/f1_twofall_n48.pg (one DEF and one LRN fall); (F1-DEF) at most one DEF fall step per
+  context FALSE: experiments/red/carry/instances/f1_twodef_n48.pg (two DEF falls, disjoint components).
+  Obstruction: a rising vertex or new tangle can steal a vertex of a straddling tangle into a higher region; the loss
+  propagates over later rounds, and independent steal gadgets add fall steps at one context. Kept as DATA only:
+  (U-MONO_DTL), (LEX-R), "no DEF-down step at an ideal-stable context"; PROVED on C6: Lemma P (GAP-A-M §20).
