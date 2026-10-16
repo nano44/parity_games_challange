@@ -92,3 +92,8 @@ Answered from docs/alg/candidates/C5-DTL.md (l-alg), REPORT-2026-10-15.md, NOW.m
 DTL gauntlet: step 2 first implementation done (l-comp 011fec0, 237,948 games + 18 families, 0 errors; second implementation running,
 matches so far); step 3 signed with 4 caveats; step 4 proof attempt in progress (statement frozen, L24): soundness, strategies, halting
 proved but unrefereed; open GAP-C (completeness) and GAP-A (polynomial tangle bound). Nothing sent to referees.
+
+## 2026-10-16 10:29Z owner (progress question)
+> Give me a status update
+Answered from trunk 3b31814 (NOW.md, DECISIONS D8, RESULTS), l-alg c915fba, l-red 5311b17, l-comp 70cc344. QUESTIONS.md synced with
+Q10/Q11 (handled in the Lead session) and the Q4 outcome. Relayed verbatim to the Lead.
