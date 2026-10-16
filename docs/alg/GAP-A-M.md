@@ -526,7 +526,7 @@ runs; 449 changes at −1 pieces (347 at Dom(prevV) pieces, 102 at cut pieces).
   at a fixed piece index never decreases across the searches of a phase": decreases in 201 of 2540 consecutive pairs (first:
   search 1, piece 2, ∞ → 3, i.e. a stable piece turns −1 with max death 3). So Φ_idx is not the shadow of a monotone
   per-index depth; its raise is per vertex, and no mechanism is known. Status unchanged: CANDIDATE, DATA only.
-- Refinement (d), DATA (10:55Z, same data set, dtl_mirror.py 6312d50): in every dead-top cap carry whose piece stays −1,
+- Refinement (d), DATA (10:51Z, same data set, dtl_mirror.py 6312d50): in every dead-top cap carry whose piece stays −1,
   the HIGHEST rescued vertex (by priority, then index) is one that raises R_i: 142/142 (103 Dom(prevV), 39 cut). A proof
   may therefore follow the top rescued vertex u*. pr(u*) > θ ≥ pr(an escape above h) (R12 §8). (c), "every rescued vertex
   dies later than in the previous search", also holds 142/142. It is close to the definition of "rescued" (pruned at r0
