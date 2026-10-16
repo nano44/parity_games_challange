@@ -861,7 +861,7 @@ distinct. Since 1 ≤ r0 ≤ M ≤ n + 1, (C-rM) would give ≤ (n+1)² DEF chan
 Not proved. The proof gap is what makes r0 climb at fixed M. A DEF change at round r0 leaves rounds < r0 unchanged and
 grows a threshold closure at r0 (§13f). The changed rounds ≥ r0 then need a DIFFERENT, later first-differing round next
 time, unless M grows. Routed to L-RED as an attack target: find a context where (r0, M) repeats.
-- (C-rM) and (a) FAIL on the wider data (13:58Z; scratchpad crm.py, every instance n ≤ 64, climbs_1016, the defclimb and
+- (C-rM) and (a) FAIL on the wider data (14:01Z; experiments/alg/dtl_crm.py, every instance n ≤ 64, climbs_1016, the defclimb and
   deep-climb snapshots and the trunk instances; DEF runs = ≥ 1 DEF change at one context with the ideal unchanged).
   - Oink order: 117 runs, 290 steps. (C-rM) fails in 3 runs, each with a repeated (r0, M):
     - climbs_1016/a_best_s32.pg, |R| 20: (1, 9) twice;
