@@ -1,64 +1,66 @@
-# Handover check: L-ALG (successor 4, written 2026-10-16T15:57Z; LANE-RESTART step 3; produced on Opus 5.5, D8/L27)
+# Handover check: L-ALG (successor 5, written 2026-10-16T23:20Z by date -u; LANE-RESTART step 3; produced on Opus 5.5, D8/L27)
 Every answer measured from the repository in this container (commands given), not recalled from notes/L-ALG.md.
-Predecessor: session_01BDELabbGbT2QYY2NoRCY8A (parked 15:50Z, last lane push c18eaad). Previous check (5143cc2 era) overwritten.
+Predecessor: session_01KESFSwLyyKvwe3mzqN2Bzr (box 16:01Z-~00:00Z; last lane push b9b3b2b, 23:14Z). Previous check overwritten.
 
 ## 1. Branch, head, distance to trunk
-- Branch `claude/l-alg`, tracking origin. At container start local = origin/claude/l-alg = c18eaad ("L-ALG: notebook stamp
-  from date -u; produced on Opus 5.5"). Trunk origin/claude/vibrant-johnson-nxvvxo = b16716d ("RESULTS DE10; NOW: L-ALG end
-  of box, parked").
-- Before step 0: `git merge-base origin/claude/l-alg origin/claude/vibrant-johnson-nxvvxo` = c18eaad (lane head is on trunk);
-  `git rev-list --left-right --count origin/claude/l-alg...origin/claude/vibrant-johnson-nxvvxo` = 0 ahead, 278 behind.
-- Step 0 merge `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` = 35e7d4f; then HEAD...trunk = 1 ahead, 0 behind,
-  merge-base b16716d. This file's commit makes it 2 ahead, 0 behind (SHA in the message to the Lead).
-- tools/oink/build is absent in this container; scripts/setup_oink.sh is needed before any Oink-order measurement or Oink
-  verification (dtl_pyref --order oink / DTL_ORDER=oink run without it).
+- Branch `claude/l-alg`. At container start the LOCAL branch was 1017502 (an old handover commit) and claimed to be "up to
+  date" only because origin had not been fetched yet. After `git fetch origin`: origin/claude/l-alg = b9b3b2b ("L-ALG box 4
+  end: §18m searches-per-phase table ..."), trunk origin/claude/vibrant-johnson-nxvvxo = 26417b3 ("NOW/LEAD-STATE: L-RED box
+  end (R21, spp19 at n=30)").
+- Before step 0: `git rev-list --left-right --count origin/claude/l-alg...origin/claude/vibrant-johnson-nxvvxo` = 1 ahead
+  (b9b3b2b), 27 behind; merge-base 6652cd7.
+- Step 0: `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` = 71b2f4a (made on the stale local 1017502, so it lacked
+  b9b3b2b); then `git merge --no-ff origin/claude/l-alg` = 723496d (brings b9b3b2b in; no history rewritten). Now HEAD...trunk
+  = 3 ahead, 0 behind, merge-base 26417b3; HEAD...origin/claude/l-alg = 29 ahead, 0 behind. This file's commit makes it 4
+  ahead of trunk (SHA in the message to the Lead).
+- tools/oink/build absent at start; scripts/setup_oink.sh started in the background (needed for Oink-order measurements).
 
 ## 2. Open work and the next step of each
-- DTL gauntlet step 4 (docs/alg/DTL-proof.md, §0 frozen for every order datum ω, L26). GAP-C open, not routed. GAP-A OPEN;
-  route (H1)-(H4), GAP-A-M §12; barrier APP(k) §10; ledger §17 (PROVED items with scope C6 / A_DTL / A_DTL under M-cond;
-  KILLED items with instances; DE9, DE10 on trunk).
-- (H4) on A_DTL, the Lead's next-box queue (after "go", 8 h box):
-  (1) a quantity bounding DEF changes at a FIXED (context, M), via the threshold phase (§13e: in 18/19 DEF pairs the region
-      vector at r0−1 is identical and some W_t = lfp(U, R, t, T) grows), or the exact reason none exists. Known dead: per-
-      context constant (up to 11 at n=28, Oink order, h4_def11_oink_n28), straddler chains, (C-rM), (C-rM-stable)
-      (h4_def9_oink_n28: (3,8) and (9,12) repeat), injectivity of the actual return set in time (h4_def10_oink_n28 revisits).
-      Next step: per DEF step at fixed (context, M), record (r0, which W_t grew, U at r0) with dtl_regvec.py on the h4_def*
-      instances, state a candidate with its data first (to L-RED via the Lead), then prove or kill.
-  (2) prove (CM) (child round count M never drops across a parent DEF step into an ideal-stable child context; DATA
-      0/123 in GAP-A-M §13h at 14:55Z; the Lead's brief and NOW say 0/129: I take the larger count as including later
-      cases and will re-measure with dtl_childM.py and write the number with its order datum) or a weaker form, from
-      Lemma R (§13b) and the per-round inclusion V_i ⊆ V̂_i (§13). Next step: identify which step of the C6 Lemma S proof
-      fails for the child after a parent DEF step, and whether the child's context change (Dom(prevV) of the parent
-      return set) can only remove candidates whose removal cannot shorten the child's run.
-  (3) measure K_parent × K_child vs n on existing instances and climbs (h4_compound_n44, h4_compound2x2_n44,
-      h4_nested7_oink_n44, h4_deep_oink_n44, h4_def*), Oink order, labelled.
-  Rule: any super-polynomial family goes to the Lead at once; each candidate lemma is stated with data before a proof.
-- T-ALG1: deferred by the Lead, no step. C1-C4: DEAD (DEAD.md), regressions in experiments/alg/check.sh. IN FLIGHT: none
-  (the predecessor's climbs died with its container; best games committed under experiments/alg/instances/).
+- DTL gauntlet step 4 (docs/alg/DTL-proof.md, §0 frozen for every order datum ω, L26). GAP-C open, not routed. GAP-A OPEN,
+  route (H1)-(H4) (GAP-A-M §12); ledger §17. Every per-context (H4) potential is dead (§17 KILLED rows; RESULTS DE10, DE11;
+  DEAD.md last section). DATA left: (U-MONO_DTL), (LEX-R), no full-state revisit (§18j). PROVED (unrefereed): §18a, §18h,
+  Lemma P on C6 (§20).
+- Next-box queue (Lead brief, after "go", 8 h box):
+  (1) State (SPP) precisely ("searches in one phase of A_DTL ≤ |G'|", or the sharpest form the data supports; "≤ p-parity
+      vertices + c" is already broken by spp_final_n20: 19 > 14), with data for both order data, and send it to the Lead at
+      once for L-RED. Next step: run dtl_phasestats.py (and L-RED's replay.py convention) on spp_final_n{20,30,40,60},
+      spp19_{oink,stable}_n30 and the R17-R21 instances in Oink order and stable order; tabulate searches per phase vs |G'|,
+      p-parity count, and number of distinct priorities.
+  (2) A PER-PHASE (global) potential that every search of a phase strictly moves, using DTL's learning order (candidate shape:
+      "each search but the last permanently settles a vertex of G'"). Next step: per search of the long phases, record what
+      is new and permanent (vertices first entering a stored tangle, first entering the final dominion's attractor, the
+      top-level piece structure), test each candidate on the corpus before any proof; mark PROVED/SKETCH/GAP.
+  (3) Bound the number of phases (or cite where proved, DTL-proof.md) so that (SPP) closes GAP-A, and write what (SPP) plus
+      the phase bound gives in the TARGET.md §3 cost model. Next step: read DTL-proof.md for the phase/dominion count.
+  Rule: a phase with more searches than |G'|, or any super-polynomial family, goes to the Lead at once.
+- T-ALG1: deferred by the Lead, no step. C1-C4 DEAD. IN FLIGHT: none (the predecessor's climbs stopped 23:14Z; best games
+  committed as experiments/alg/instances/spp_final_n*.pg).
 
 ## 3. docs/GAPS.md rows owned by L-ALG
-None. docs/GAPS.md at b16716d: the open table is empty; the closed table holds only G1 (owner L-STRUCT). GAP-A and GAP-C are
+None. docs/GAPS.md at 26417b3: the open table is empty; the closed table holds only G1 (owner L-STRUCT). GAP-A and GAP-C are
 proof gaps inside the lane file docs/alg/DTL-proof.md §5, not GAPS.md rows.
 
 ## 4. Three owner rulings that most constrain this lane (verbatim from docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md)
-1. D1 (active):
+1. D1 (active; DECISIONS.md line 7):
    > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
-   Constraint: DTL stays "wrong" until TARGET.md §5 passes; every lemma in GAP-A-M.md is unrefereed and not a result.
+   Constraint: DTL stays "wrong" until TARGET.md §5 passes; (SPP) and every lemma in GAP-A-M.md are unrefereed, not results.
 2. D5 (active):
    > I want you to believe in yourself and just loo kat the decade old mathematical open questions that has been cracked this year with AI. There are hundreads of examples so dont tell me it is highly unlikely to solve the parity game problem, because it is not
-   Lead reading L18: M4 is the primary aim; no "M4 unlikely" framing; D1 unchanged. Constraint: GAP-A is pursued as a proof
-   target; a negative outcome must name the mechanism and the instance.
+   Lead reading L18: M4 is the primary aim; gauntlet unchanged. Constraint: GAP-A is pursued as a proof target; a negative
+   outcome must name the mechanism and the instance.
 3. D8 (active):
    > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
-   Lead reading L27: Opus 5.5 until the Fable reset 2026-10-21 21:00Z; work labelled "produced on Opus 5.5"; referees not
-   engaged before the reset. Constraint: every notebook/doc entry of this session carries that label; no referee request.
-Also binding (Lead readings, not owner rulings): L22 (A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7) and
-L26 (§0 frozen for every ω; changes only through the Lead and CHECKER).
+   Lead reading L27: Opus 5.5 until the Fable reset 2026-10-21 21:00Z; work labelled "produced on Opus 5.5"; referees wait.
+   Constraint: every notebook/doc entry of this session carries that label; no referee request.
+Also binding (Lead readings, not owner rulings): L22 (A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7), L26
+(§0 frozen for every ω), L31 (C6 is the model for the core, not a gauntlet candidate).
 
 ## 5. One trap that bit this lane, and the check that now prevents it
-Trap (08:26Z, 2026-10-16, notebook "SLIP"): the predecessor pushed b93114a with `scripts/verify.sh | tail && git push`; the pipe
-replaced verify's exit status with tail's, so the push did not actually depend on the gate. Check now: scripts/push.sh (on
-trunk) runs verify with output to a log and pushes only if it exits 0; I call it bare as
+Trap (bit me at this restart): the container's local claude/l-alg was the old 1017502, and `git status` said "up to date"
+before any fetch. Merging trunk alone (71b2f4a) silently left out the predecessor's last push b9b3b2b (§18m, spp_final_*,
+final resume point), which trunk does not contain. Check now: after `git fetch origin`, run
+`git rev-list --left-right --count HEAD...origin/claude/l-alg` and require "N 0" (0 behind the lane head) before writing
+anything; here it read 0 behind only after the second merge 723496d.
+Older trap kept: never pipe verify (b93114a, 08:26Z on 2026-10-16); push only as
 `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?` and read "VERIFY PASS" and exit 0 in the log before reporting a SHA.
-Second trap kept in mind: counts in stable order ω are valid for the proof (L26) but not pinned-Oink behaviour
-(h4_def5_stable_n20 has 5 DEF in stable order, 0 deficit calls in Oink order); every count I report names its order datum.
+And: every count names its order datum (spp_n20: 18 searches Oink order vs 11 stable).
