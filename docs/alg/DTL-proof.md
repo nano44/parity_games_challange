@@ -15,12 +15,19 @@ ones included), max-parity; n = |V|, m = |E|, input length Θ((n + m) log n). If
 TARGET's compression (sort, keep order and parity) is applied first, on the encoding, before anything else (C-1).
 Step 0 (input construction, charged): write the game in PGSolver text and run Oink's parser
 `PGParser::parse_pgsolver_renumber` with bad-loop removal OFF (`--no-loops`, src/tools/solve.cpp:263), which builds the
-out- and in-edge arrays (O((n + m) log n) word operations); then `game.ensure_sorted()` (oink.cpp:35; game.cpp:495
+out- and in-edge arrays (O((n + m) log n) word operations) and ALWAYS renumbers the priorities (pgparser.cpp 492-511,
+whatever the flags): the distinct priorities are mapped in increasing order to consecutive integers starting at 1 or 2,
+each keeping its parity (a step of 2 where two consecutive distinct priorities have the same parity), so every priority is
+≤ 2d ≤ 2n + 2 afterwards; this is a compression in the sense of TARGET section 1 (order and parity preserved), it costs
+O(n log n) (a flat map over the n priorities) and is charged in D2(e); 0.4 shows A_DTL makes the same choices on a game and
+on any such compression of it. Then `game.ensure_sorted()` (oink.cpp:35; game.cpp:495
 `std::sort` on priorities), i.e. reindex the vertices in SOME order that is non-decreasing in priority. Equal-priority
 vertices may come out in any order (D-4): Theorems D1 and D2 are claimed for EVERY order datum ω (C5-DTL.md §0 "Order
 data": the equal-priority indexing O1, the in-edge lists O2, the out-edge lists O3, the SCC emission order O3', the dominion
-queue order O5 and the push order O6; the tangle vertex order O4 and the counters O8 are fixed by the code). Oink @ 8fbf0a7
-realises one such datum, recorded there; docs/alg/C5-orders.md has the inventory (Lead decision 23:52Z, option (ii)).
+queue order O5, the push order O6 and the tin iteration order O7; the tangle vertex order O4 (sorted, dtl.cpp 389) and the
+counters O8 (1111, 1119; idtl 1126) are fixed by the code). Oink @ 8fbf0a7 realises one such datum, recorded there (O3 = the
+edge loop of `parse_pgsolver_renumber`, pgparser.cpp 441-457, the parser the pinned command uses, solve.cpp:263);
+docs/alg/C5-orders.md has the inventory (Lead decision 23:52Z, option (ii)).
 Step 1: `DTLSolver::run()` (dtl.cpp 1072-1161) with `interleaved = false`, all vertices enabled, G := V, as reached by
 the command `oink --dtl --no-single --no-wcwc --no-loops` (the pinned A_DTL; Lead decision D-1 option (i), 16:02Z):
 no single-parity solving, no winner-controlled-cycle removal, no self-loop removal by the parser or by
@@ -38,13 +45,13 @@ of dtl.cpp are given so that the correspondence can be checked. The C++ ↔ pseu
 itemised section (section 7) to be signed on its own (TARGET section 6, D2 change 2).
 
 ### 0.2 Theorem D1 (correctness and completeness)
-For every parity game G as in 0.1 and every order of equal-priority vertices in step 0, A_DTL halts, solves every vertex
+For every parity game G as in 0.1 and every order datum ω (0.1), A_DTL halts, solves every vertex
 exactly once, and the output satisfies W_Even = W_E(G) and W_Odd = W_O(G) (TARGET section 1: W_E(G) = vertices from which
 Even has a strategy, general = history-dependent, winning every consistent play under max-parity; W_O likewise;
 W_E ⊔ W_O = V by determinacy). Moreover sigma_Even is a positional strategy on W_Even ∩ V_E such that every play starting in
 W_Even, consistent with sigma_Even, against every (general) Odd strategy, stays in W_Even and is won by Even;
-symmetrically sigma_Odd on W_Odd ∩ V_O. Same statement for A_IDTL, with "the exception `solver stuck` (line 1136) is never
-thrown" added.
+symmetrically sigma_Odd on W_Odd ∩ V_O. Same statement for A_IDTL, for every order datum ω, with "the exception `solver
+stuck` (line 1136) is never thrown" added.
 
 ### 0.3 Theorem D2 (running time, word RAM of TARGET section 3)
 Let tangles(G, ω) be the final value of the counter `tangles` (line 463; it counts tangles KEPT after the duplicate check)
@@ -60,10 +67,10 @@ polynomials p_a, ..., p_e such that for every G as in 0.1 and every order datum 
       (1111, 1119), for A_IDTL the counter is ⌊calls/2⌋ + 1 (1125, incremented once per round before the emptiness test), so
       a bound on calls bounds the counter in both cases;
   (e) the total number of word operations of A_DTL, measured from TARGET's encoding and including step 0 (compression
-      if needed, parsing, edge arrays, sorting), the duplicate-tangle checks (385-424: O(tangles(G) · n) per extracted
+      if needed, parsing, Oink's priority renumbering, edge arrays, sorting), the duplicate-tangle checks (385-424: O(tangles(G) · n) per extracted
       SCC), the tangle storage (443-458: O(n) per kept tangle, `tin` back-links included) and the dominion removal
       (1023-1040), is at most p_e(n + m), on a word RAM with words of O(log(n + m)) bits. Every number the program
-      manipulates is a vertex index (< n), a priority or threshold (≤ n + 1 after compression; the sentinels -1 at
+      manipulates is a vertex index (< n), a priority or threshold (≤ 2n + 2 after step 0's renumbering; the sentinels -1 at
       lines 74, 117, 1036 and the initial thresholds 0 at 585/898 are constants), a queue/stack position (≤ n), a bit of
       an n-bit bitset (copies and resets cost O(n / w) words), or one of `tangles`, `dominions`, `iterations`, a tangle
       index: these are at most the number of steps executed, so they have O(log(n + m)) bits once (e) holds (B-1; not
@@ -86,7 +93,9 @@ Same for A_IDTL.
   number of empty iterations differs; (ii) the initial `t = 0` at 898 is compared only with occurring priorities and
   then replaced by `priority(v)` (904), so it acts as "below the least occurring priority" in both games (and a
   vertex of priority 0 attracts to X at level 0 in both). Hence A_DTL makes the same choices on G and on its
-  compression, and the bound (e) is stated for the compressed game, whose n and m are the input's.
+  compression, and the bound (e) is stated for the compressed game, whose n and m are the input's. Oink's own renumbering
+  in step 0 (pgparser.cpp 492-511) is such a compression (order and parity preserved, priorities ≤ 2n + 2), so the same
+  argument applies to it, and the two compressions compose to a compression.
 - Section 2, target statement: TARGET asks for (W_E(G), W_O(G)); D1 gives these as (W_Even, W_Odd) plus strategies.
   "Halts within p(n + m) steps": D2(e), measured from TARGET's encoding (E-3). Deterministic: for a fixed order datum ω yes
   (no randomness; the stack `Q` and the lists of ω fix every choice); the theorems are claimed for every order datum, so
@@ -245,7 +254,9 @@ using it (Lemma 1.4b(1)). All of dtl.cpp's attraction ignores edges leaving G' (
 ### 1.5 extractTangles — PROVED (reading)
 On a closed region Z with its str, Pearce's algorithm from top (223-305) enumerates every SCC of the restricted graph
 (p-vertices: the edge str[n] (268-285); opponent vertices: all edges into Z (234-266)) that is reachable from top, in
-reverse topological order. Each nontrivial SCC (315-317) is a dominion if it has no escapes (347-379), else skipped if
+the order O3' of the order datum (for Oink's instance, Pearce's emission order, which is reverse topological; no argument
+in this file uses the order in which the SCCs are processed, and in a closed region every vertex reaches top, so the
+reachable SCCs are exactly one, the SCC of top, see §3(a) remark). Each nontrivial SCC (315-317) is a dominion if it has no escapes (347-379), else skipped if
 its sorted vertex set equals a stored tangle's (385-424, CHECK_UNIQUE is `(1 or !NDEBUG)` = on), else stored (439-466)
 with tin back-links (443) and tpr := pr(top) (461). NOTE N2: non-bottom SCCs are extracted too (their escapes may lie in
 Z); NOTE N3: a closed region whose top is opponent-owned with all successors outside Z extracts nothing ({top} is
@@ -722,6 +733,11 @@ games ok, every canonical game n = 1, 2, 3 (4 + 240 + 41,440) ok, each solver; t
 experiments/alg/out/psolc_fail_n4.jsonl (518 s to regenerate, not re-run here). experiments/alg/dtl_debug_fuzz.py with
 DTL_NO_LOOPS=1 (NDEBUG checks on, -t): seed 21, 20,000 random games with self-loops (rngame), dtl and idtl: 0 failures,
 every run "solution verified". So no correctness failure appeared on the pinned algorithm.
+2026-10-16 00:45Z: CHECKER C3d (claude/checker 70c263e) fixes, §0 only plus §1.5 N-2: F-1 Theorem D1 for every order datum ω
+(both A_DTL and A_IDTL); citations O3 → parse_pgsolver_renumber edge loop pgparser.cpp 441-457, O4 → dtl.cpp 389, O8 → 1126, O7
+added to 0.1's list; NF-1 Oink's unconditional priority renumbering (pgparser.cpp 492-511) named in step 0, priorities ≤ 2n + 2,
+O(n log n) charged in (e), covered by 0.4's commutation argument; N-2 §1.5 "reverse topological order" → the O3' order (Oink:
+Pearce's), unused by any argument.
 2026-10-16 00:20Z: §0 order data (Lead go 23:52Z, option (ii) of docs/alg/C5-orders.md): 0.1 "every such order" → "every order
 datum ω"; 0.3 tangles(G, ω), (a)-(e) for every ω; 0.3(d) A_IDTL counter = ⌊calls/2⌋ + 1; 0.4 determinism per ω. C5-DTL.md §0 gets
 the "Order data" paragraph with Oink's instance O1-O8. Status: L24 (frozen at ccff864) → pending CHECKER diff of §0 against

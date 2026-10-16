@@ -2,7 +2,9 @@
 L-ALG, 2026-10-15 23:40Z. DRAFT for the Lead and CHECKER (L24: changes to DTL-proof.md §0 go through them). DTL-proof.md §0
 is untouched by this file. Inputs: L-COMP's second implementation (trunk experiments/dtl-bench/README.md "Second independent
 implementation", dtl_py.py docstring CH1-CH6, divergences #1-#3, failures/*.pg); dtl.cpp @ 8fbf0a7; game.cpp; oink.cpp.
-Every line number below was re-read in tools/oink/src for this draft.
+Every line number below was re-read in tools/oink/src for this draft. Corrections 2026-10-16 00:45Z after CHECKER C3d: O3's edge
+loop is pgparser.cpp 441-457 (parse_pgsolver_renumber, the pinned parser), O4's sort is dtl.cpp 389, O8's increment is 1126; the
+parser always renumbers priorities (pgparser.cpp 492-511), now named in DTL-proof.md §0 step 0.
 
 ## 1. Inventory: every choice the computation makes that C5-DTL.md does not state
 "Counts" = `tangles`, `dominions`, `iterations` and the stored tangle set; "regions" = the output W_Even/W_Odd;
@@ -13,13 +15,13 @@ Every line number below was re-read in tools/oink/src for this draft.
 | --- | --- | --- | --- | --- | --- |
 | O1 | index order of equal-priority vertices | step 0 `std::sort` on priorities (game.cpp 478-505; introsort, unstable above 16 elements) | every descending/ascending sweep; `ins`/`outs` contents after renaming | counts (via O2-O5); strategies in principle | counts differ (#2, n > 16); regions, strategies equal |
 | O2 | order of ins(v) | `build_in_array` after `ensure_sorted` (oink.cpp 35, 37; game.cpp 868-906 fills each in-list from its end): predecessors in DECREASING index, one entry per edge | dtl.cpp 69: the push order at a pop, hence the DFS parents `str[u] = v` (73), hence the SCCs and the tangles | counts; strategies in principle (str = DFS parent) | counts differ (#2); regions, strategies equal |
-| O3 | order of outs(v) | the vertex's edge line in input order, targets renamed by the sort permutation (pgparser.cpp 144-190; game.cpp 534-575 `unsafe_permute` keeps each out-list's order) | 83-90, 714, 738 (boolean tests: order-free); 329-337 (escape list `tout`, used only as a set at 143-146: order-free); Pearce 234-262 (traversal order) | only through O3' | - |
+| O3 | order of outs(v) | the vertex's edge line in input order, targets renamed by the sort permutation (parse_pgsolver_renumber's edge loop, pgparser.cpp 441-457, the parser of the pinned command; game.cpp 534-575 `unsafe_permute` keeps each out-list's order) | 83-90, 714, 738 (boolean tests: order-free); 329-337 (escape list `tout`, used only as a set at 143-146: order-free); Pearce 234-262 (traversal order) | only through O3' | - |
 | O3' | order in which extractTangles emits the SCCs reachable from top, and the vertex order inside one SCC | Pearce's order: an SCC is emitted when its root finishes (283-299), root first then the stack pops; depends on O3 and on `str` | (a) new tangles' indices (433) and the append order of `tin` (437), hence the iteration order of attractTangles (200-201): when two firing tangles share a vertex, the earlier one sets its `str` (164-172); (b) `dom_vector` order (366-373) → O5 | counts; strategies in principle | not separated from O5 by L-COMP; (#3 attributes 3 games to the queue order) |
-| O4 | vertex order stored in tv[t] | sorted ascending by index (386, `CHECK_UNIQUE` always on) | 125-141: the per-vertex checks run in this order and "solved ⇒ delete t" (132-135) precedes "not in R ⇒ return false" (137), so WHETHER a tangle is deleted at a given call depends on which of its vertices comes first; 164-172: push order of the tangle's vertices (DFS order below them) | counts | counts differ (#2) |
+| O4 | vertex order stored in tv[t] | sorted ascending by index (389, `CHECK_UNIQUE` always on) | 125-141: the per-vertex checks run in this order and "solved ⇒ delete t" (132-135) precedes "not in R ⇒ return false" (137), so WHETHER a tangle is deleted at a given call depends on which of its vertices comes first; 164-172: push order of the tangle's vertices (DFS order below them) | counts | counts differ (#2) |
 | O5 | the dominion solve queue | `dom_vector` = dominion SCCs in O3' order, each vertex once (366-373); all pushed in that order (1025-1029) and popped LIFO (1031-1037); every pop solves v, removes it from G and runs the attractor to S with tangles, which deletes (132-135) every tangle it examines that already has a solved vertex | which tangles are deleted during the extension and whether a tangle is absorbed as a unit or its remainder left in G: the next searches' tangle and dominion counts | counts (#3: dominions, iterations) | counts differ on 3 games (#3); regions, strategies equal |
 | O6 | "Q := all of Z" in the threshold loop | `find_first/find_next`: pushed in increasing index, popped from the highest (723) | DFS order of the threshold attractor, hence `str` on R \ Z there (never read by extraction: those str are overwritten at the next region computation; read by attracts? no: attracts reads edges only) | nothing observable (str set here is overwritten before any extraction: 1.0 (s4) list) | dtl_py CH4 chose the same |
 | O7 | iteration order of tin[v] | creation order (437 appends; 200-201 iterates) | same as O3'(a) | strategies in principle | - |
-| O8 | the idtl `iterations` counter | 1125: incremented once per loop entry BEFORE the emptiness test; so iterations_idtl = ⌊c/2⌋ + 1 where c = number of search calls made; dtl: iterations = c (1111, 1119) | a counter only; no effect on the computation | the reported number | #1 (2-vertex instance) |
+| O8 | the idtl `iterations` counter | 1126: incremented once per loop entry BEFORE the emptiness test; so iterations_idtl = ⌊c/2⌋ + 1 where c = number of search calls made; dtl: iterations = c (1111, 1119) | a counter only; no effect on the computation | the reported number | #1 (2-vertex instance) |
 
 Not choices (already fixed by C5): LIFO stack (C5 §0); tops in descending index (sptl, best_vertices, Dom); candidates in
 descending index; the −1 branch's ascending scan and descending threshold sweep; the duplicate test compares SORTED sets
@@ -43,7 +45,7 @@ The one place where an order is used as a fact is §1.0 (s4)'s list of str sourc
 Text that would be added to C5-DTL.md §0 (and mirrored in DTL-proof.md §0.1 step 0 and §7):
 > Orders (pinned, dtl.cpp @ 8fbf0a7): ins(v) lists the predecessors of v in decreasing index, one entry per edge (game.cpp
 > 868-906, built after the sort); outs(v) is the input edge line of v in input order with targets renamed; tv[t] is sorted
-> ascending (dtl.cpp 386); extractTangles emits SCCs in Pearce's order (root first, then its post-order stack, 283-299) and
+> ascending (dtl.cpp 389); extractTangles emits SCCs in Pearce's order (root first, then its post-order stack, 283-299) and
 > dom_vector lists dominion vertices in that order, each once; tin[v] is iterated in creation order; "Q := all of Z" pushes
 > in increasing index; iterations_idtl = ⌊(search calls)/2⌋ + 1.
 Cost to the proof: no lemma is re-proved (§2 above). §7 gains seven rows, each a code fact. The step-2 evidence (`--order
@@ -61,7 +63,7 @@ Text that would be added to C5-DTL.md §0 ("Order data"):
 > (O2) for each v a list ins(v) containing each predecessor once per edge; (O3) for each v a list outs(v) of its successors;
 > (O3') for each extractTangles call, an order in which the nontrivial SCCs reachable from top are processed and, for each
 > SCC, an order of its vertices (used only for dom_vector); (O4) tv[t] sorted ascending by index (this one is the code,
-> dtl.cpp 386, not a free choice); (O5) dom_vector in O3' order, LIFO pops; (O6) "Q := all of Z" pushes in any order;
+> dtl.cpp 389, not a free choice); (O5) dom_vector in O3' order, LIFO pops; (O6) "Q := all of Z" pushes in any order;
 > (O7) tin[v] iterated in creation order; (O8) iterations_dtl = number of search calls, iterations_idtl = ⌊calls/2⌋ + 1.
 > Oink @ 8fbf0a7 is the instance: O1 = std::sort, O2 = decreasing index, O3 = input order renamed, O3' = Pearce order,
 > O6 = increasing index (the list of §3 above).
