@@ -47,4 +47,6 @@ So on A_DTL the good-path preference has no "long path" cost that survives the g
 the Dom(prevV) piece of a long-lived head to remove a set from H that makes the SAME search learn useless tangles, and
 to do so again in later searches. That is the reset-and-replay requirement of R9/R10 (CARRY) again, not a new
 mechanism. Lead reading (11:05Z): the item is about DTL-type solvers in general. A_DTL's (i) is a property of this
-implementation, so the item may target other "good path" variants. Not checked: Oink's other good-path solvers.
+implementation, so the item may target other "good path" variants. Oink's interleaved variant --idtl (same flags), p=0,
+N=4/8: chain is identical to its tc+ baseline (36/118 tangles, 8/17 iterations); the qwin rows are faster (5/9 tangles).
+Other variants are not checked.
