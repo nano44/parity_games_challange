@@ -678,8 +678,17 @@ result on the same tangle set and context. A change between consecutive searches
 when the ideal (result, V) at its first-difference piece is the same in both searches and the actual one differs. It is
 LRN when the ideal result moved too. The first-difference piece always has the same context, because R_j is fixed by
 pieces 0..j-1; measured ctx_changed = 0.
-- PROVED (Lemmas 2.1, 2.2, line-105 induction). At one call, A_DTL is never stronger than the ideal rule: V_actual ⊆ V̂,
-  and an ideal −1 forces an actual −1. Data: 13/13 deficit calls are weaker, 0 are not.
+- CORRECTED 12:21Z (L-RED l-red 2bb9d89, R15 §1; reproduced here with this file's unmodified dtl_deficit.py on
+  experiments/red/carry/instances/h4_notweaker_n20.pg: NOT_weaker = 1). The 10:47Z claim "V_actual ⊆ V̂, and an
+  ideal −1 forces an actual −1" was too strong. What is PROVED (Lemmas 2.1, 2.2, line-105 induction) is the PER-ROUND
+  inclusion V_i ⊆ V̂_i for every round i, with V_i = ∅ after the actual run has emptied. Consequences that ARE proved:
+  an actual stable V* ⊆ V̂*; an ideal −1 forces an actual −1 (if V̂_i = ∅ then V_i = ∅); and the actual run empties no
+  later than the ideal one. NOT proved, and FALSE: the −1 RETURN set (the last nonempty round) satisfies
+  V_actual ⊆ V̂_return. The actual run can empty a round EARLIER (round 6 vs 7 there), so its return set is an earlier
+  round's set. In h4_notweaker_n20: actual −1 with {8, 9} (internal ids), ideal −1 with {8}. L-RED's second climb has
+  disjoint return sets.
+- [MARKED 12:21Z: the "13/13 weaker" line tested the false return-set form (the dtl_deficit.py 'weaker' test compares
+  return sets). It is not evidence for anything proved.]
 - DATA (every file in experiments/alg/instances, climbs_1016, 1,500 random games n ≤ 28; 1,629 games). Deficit calls: 13 of
   9,858 depth-0 calls. Changes: 365, of which 5 are DEF and 360 LRN. At most 1 DEF per (piece, context), and at most 2 per
   phase (dtl_mviol_n20.pg). Directions: 3 up (−1 → 1, or V grows); 0 down; 2 are −1 → −1 with a different prevV
@@ -689,6 +698,17 @@ pieces 0..j-1; measured ctx_changed = 0.
 - Status of (H4): GAP. Not proved: a bound on DEF per context, and that a DEF change never goes down. The data supports
   "deficits are rare and never the engine of a replay". (H4) stays a separate hypothesis only for A_DTL; it is void for C6.
   The open shape is the −1 → −1 prevV move, which re-targets Dom without any change in the ideal result.
+- Addendum 12:21Z: the h4_notweaker_n20 call is also a DEF change, −1 {8} → −1 {8, 9}, at a fixed ideal result
+  (−1 {8}). So a DEF re-target can leave the ideal return set altogether. A bound on re-targets cannot lean on the ideal
+  target.
+- Audit (12:21Z): which lemmas used "V_actual ⊆ V̂" for −1 RETURN sets? None:
+  - Theorem M-cond (§3) uses per-round sets and stable V* only.
+  - Lemmas D2 and D3 concern Dom at stable pieces (the actual code).
+  - Lemma N, Lemma L-epoch (including the Reg_s ⊆ Û(V*_s) step, stable V*), Lemma F, Lemma S and the n(n+2)·c_i
+    reduction are stated for C6, where actual = ideal, so the inclusion is vacuous there.
+  - §8's (O) refinement and §10 (APP) use no such inclusion.
+  - The §13 DEF classification (up / down / other) compares actual return sets directly and uses no inclusion.
+  So the error is confined to the struck §13 line.
 
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at

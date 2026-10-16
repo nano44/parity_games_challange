@@ -37,7 +37,7 @@
 
 - 11:12Z state (produced on Opus 5.5): push only with scripts/push.sh (Lead rule; no pipe). Since 10:07Z: −1-piece carries.
   GAP-A-M §10 APP barrier, §11 MIRROR test, §11b Φ dead / Φ_idx, §12 hypotheses (H1)-(H4) = THE route (Lead), §13 (H4)
-  deficits (5 DEF of 365 changes; actual ≤ ideal PROVED; (H4) GAP, open shape −1 → −1 prevV move), §6 CORRECTION (cut
+  deficits (5 DEF of 365 changes; actual ≤ ideal PER ROUND only (return-set form FALSE, L-RED h4_notweaker_n20, §13 corrected 12:21Z); (H4) GAP, open shape −1 → −1 prevV move), §6 CORRECTION (cut
   piece state = attractor, V phantom; L-RED 6a98d48), §11c corrected counts + R12 §9 (C-a)/(C-c) fail on data, §11c.1
   Lemma F (fixed-context raise, C6) PROVED and Φ_idx data NEVER exercises the cross-context case (113/115 no other
   context at index i). So Φ_idx's real content is UNTESTED. Running: scratchpad xclimb.py (x/log91, log92), reward the
