@@ -192,3 +192,4 @@
 - 00:23Z C3d FAIL (text): F-1 D1 wording, O3/O4/O8 citations, O7 missing, NF-1 parser always compresses priorities. Sent to L-ALG.
 - 00:30Z L-ALG deec040 (C3d fixes) + f2704d7 (Lemma W: tangles <= n*searches; GAP-A = searches per phase; 31-at-one-top was 31 at one level over 8 tops). CHECKER C3e re-diff. L-RED told target = searches per phase.
 - 00:33Z C3e: one-phrase FAIL (priority 0 maps to 0); N-3 §1.5 vs NOTE N2 contradiction. Sent to L-ALG.
+- 00:41Z L-ALG 9870b96 (E-1) + e144992 (N-1; Lemma 1.5a: one SCC reachable in a closed region; NOTE N2 amended). CHECKER C3f confirm. GAP-A data F10 + §4b obstacle (lexicographic potential only exponential).
