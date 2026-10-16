@@ -161,6 +161,12 @@ R' is a strict subset of an earlier call's R (more removed, more forgiven, more 
 reverts to −1 at the smaller context (42 pairs on tc+ N = 6, 9 on dtl_cnew14_n20; stable V* ∩ R' is never lost). Reason: the
 removed vertices can be the witnesses of the good paths (lower regions, rescue paths). So the predecessor's hope "R-mono for
 later pieces" is false as a statement about the pruning, and monotonicity lives ONLY at identical contexts.
+Proof status of (M) = Claims P, Q (DTL-proof.md §3(a) Lemma P/Q, SKETCH): the induction over rounds goes through except for one
+case: a p-priority vertex pruned in an early round and later re-absorbed through a tangle that straddles under the larger
+tangle set, stranding a deadlocked remainder whose p-parity maximum is no longer a top. Everything else (vertex rules,
+non-straddling tangles, candidates, rescues, and the pickup of a stranded remainder by its own p-parity maximum when that is a
+top) is written out. The climb dtl_pclimb.py targets exactly this violation (patched build; fitness = P violations at
+identical contexts).
 What a counter must do (the shape for L-RED): K "digits" = K nested pieces, each able to cycle through ≥ 2 results inside a
 fixed epoch of the pieces above it, each cycle step learning a new tangle, and a change at piece k resetting piece k+1's
 context to one where its cycle restarts with NEW sets (because T grew). dtl_searches20_n32.pg is a one-digit instance:
