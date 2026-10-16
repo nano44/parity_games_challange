@@ -417,6 +417,10 @@ differences are upward changes at equal contexts driven by the previous search's
 | Termination, D2(c) (pieces per search ≤ n) | k + 1 pieces per search |
 
 10.3 What APP violates that DTL might satisfy: the FRONTIER property (F).
+[NOTE 11:59Z: the data below (experiments/alg/dtl_frontier.py) finds the change level with the OLD piece state (V read
+at cut pieces, §6 CORRECTION). Its tracer restores depth correctly, so it does not have the dtl_pieces bug. Phantom V
+changes at cuts may be counted among the cut-piece changes. Not re-run (Lead 11:13Z: re-run only if an argument depends
+on it).]
 (F) "A tangle that changes the result of a −1 or cut piece i between consecutive searches (pieces < i unchanged) is
 learned in the first STABLE piece after piece i, i.e. in a context determined by the results of pieces ≤ i."
 L-RED's R10 (F) argues it for cut-eaten levels (READING): the driver's escapes are covered in the cut of search s+1
