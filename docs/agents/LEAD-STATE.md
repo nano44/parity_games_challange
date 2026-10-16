@@ -309,3 +309,4 @@
 - 16:43Z owner D10 (Q13): keep repo public; recorded verbatim with Lead reading L29; Q13 closed. Q12 still open.
 - 16:46Z owner D11 (Q12): no contact with van Dijk; recorded verbatim + L30. No owner questions open. Merged l-alg 1173ec6 (§18 synthetic gadgets).
 - 16:58Z merged l-alg 670a762 ((LEX) fails in L-ALG's own actual run; (U-MONO_DTL) routed to L-RED).
+- 17:05Z hourly sweep: no overage (seven_day allowed_warning). Lead 674k $173.4; L-ALG succ. 4 running; L-RED succ. 3 running (234k). No owner questions open (D10, D11). No exceptions.
