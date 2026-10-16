@@ -12,7 +12,9 @@ then SIGNED OK at 57a1515 (signature block at the end of the report, gaps G1-G11
 ta1check.py, ta1probe.py). R2's report (docs/referee-2/R2-TA1.md) read only after my derivation; it agrees on every point. T-A1 signed OK at l-attr 57a1515 (G11 answer for the CHECKER appended). R-L1b (L-LOWER v2 + Lemma 2.1' + Theorem B at
 l-lower b1abae0): CHANGES with one one-line finding; report 2026-10-15-L1b-check.md; tool l1bcheck.py (types over all
 one-player Büchi games n <= 4, exhaustive B_1 lower bounds n <= 3, lane witnesses on my quotient). R-psolC (L-ATTR psolC fidelity, l-attr 02174e2): FAITHFUL, DE3 recordable; report docs/referee/R-psolC.md; tool
-psolccheck.py (my own psolC from DTR15-4 Defs 1-2/Thm 1/Fig. 5, full product, both A1 readings). Nothing in flight.
+psolccheck.py (my own psolC from DTR15-4 Defs 1-2/Thm 1/Fig. 5, full product, both A1 readings). R-TL2 (second referee read of L-RED's transfer lemma, l-red 0d50d4a): OK with fixes; report docs/referee/R-TL2.md; tool
+tl2check.py (my own G from FHZ Table 1, my own P, Friedmann valuation, exhaustive over all trees, RF vs RAR lockstep).
+Nothing in flight.
 Coming (per the Lead's brief): the L1 proof work / experiments/lower from L-LOWER; SL8-min / T3 from L-STRUCT; second referee
 for the L4+T3 package is a SEPARATE session, not me.
 
@@ -41,6 +43,7 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 | L-ATTR T-A1 (psolB complete <=> PA**; PA** => psolQ complete; Cor. 1-2, Prop. 3) | 2026-10-14-TA1-proof-check.md | CHANGES (theorem and both proofs hold; at 4478b84 open: F1 misstated, T-A1' needs HKP Thm 4, Büchi recolouring, 'stable' gloss); first referee | SIGNED OK as first referee at l-attr 57a1515 (all findings applied; G1-G11 listed, G10 open as HKP dependency) |
 | L-LOWER L1 v2 + Lemma 2.1' + Theorem B (b1abae0) | 2026-10-15-L1b-check.md | CHANGES (findings 1-9 applied; Lemma 2.1' OK; Theorem B OK, Claim 3 misses the case t<t'<a; B_1(1..4) = 0,2,4,6 confirmed independently) | findings to L-LOWER |
 | L-ATTR psolC fidelity (DTR15-4; 02174e2) | R-psolC.md | FAITHFUL (A1: literal reading is the chapter's; Example 3 (ii) is a slip; instance and tc N=2 undecided under both readings; 3 nits) | DE3 can be recorded |
+| L-RED transfer lemma (FHZ G_{n,r,s,t} RF = RAR on sink parity P; 0d50d4a) | R-TL2.md | OK with fixes (lemma true; case (2) misses the chain-vertex sub-case; loose constant in (1)/(3); S1 tie/start conditions to cite); second referee | RESULTS candidate if R2 agrees; L-LIT novelty + CHECKER |
 
 ## Queue / open items
 - L4 second referee (not me; a second, independent referee): the gap list G1-G6 in the L4 report is the checklist. What
@@ -95,6 +98,10 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 - psolccheck.py (R-psolC): psolC from DTR15-4 on the FULL product V x C_bot (no reachability restriction), both readings of
   A1 (start colour in/out of the minimum); `psolccheck.py FILE.pg [--x]` with trace; `--exhaustive <lane attr dir>` compares
   with the lane's psolc.py on all n <= 3 games (~15 min).
+- tl2check.py (R-TL2): G_{n,r,s,t} from FHZ Table 1 (costs x rs), the sink-parity encoding P of R2-RAR.md, Friedmann's
+  valuation; `exhaustive n r s t [lane experiments/red dir]` checks every tree and every non-tree edge, three-way verdict,
+  on my objects and (optionally) on the lane's fhz.py objects; `lockstep n r s t seeds` runs my Random-Facet (errata Fig. 1)
+  and my Rand-Act-Rem (Zwick Fig. 1) on one random stream. Trees = product of out-degrees: (2,2,2,1) is 2.4M, (3,1,1,2) 3M.
 - Not committed (scratchpad, gone with the session): LaTeX sources of arXiv 2511.03752v1, 1807.10546v2, 2104.05262v8,
   1902.07175v3, 2305.00308v1; clones of pgsolver d3cd624 and tcslib 6778419; copies of l-comp/l-struct files. Re-download
   from arxiv.org/e-print/<id> into an isolated directory (untrusted data) when needed.
@@ -115,6 +122,12 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
   re-derived held (machine-checked where finite).
 
 ## Things only I know
+- R-TL2: FHZ's "zero-edges" are the COSTLY edges (superscript 0 = counter bit 0); B_0 = any tree of them. The transfer lemma
+  needs only B and e, not F. The one real structural fact: before merging, the two prefixes sit at u_i and w_i (the only
+  entry points) at every level; equal classes from one vertex land on one vertex (merge), so a tie at the divergence level
+  ends the comparison, and the (C_u, C_w) small-offset difference can occur only at the merge level. P has priority-0
+  vertices below the sink, so Friedmann's 1-sink identity "length = |path set|" does NOT hold in P; lengths are compared
+  separately and ties need the relay-per-copy design.
 - R-psolC: DTR15-4 (sha256 a7b61fe3...9cd6) is min-parity; Example 3 step (ii) drops the start colour from the prefix minimum,
   contradicting Def. 1, Def. 2, Thm 1's proof and Lemma 2's proof (all include it). Both readings are sound; literal decides
   more. psolc_min_n4_m6.pg: Odd wins all, psolC's player-1 fixpoint goes {v0,v2,v3} -> {v2,v3} -> {v2} -> {} under both
@@ -162,6 +175,10 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
 | --- | --- | --- | --- |
+| arXiv:1410.7530 (FHZ, Random-Facet shortest paths; LaTeX source + PDF) | Table 1 + zero/one-edge convention (Actual-Construction.tex 28-66, 101-104), B_0 (144-152), Def. functional (156), Def. B_F (234), RF pseudocode and shortest-path reading (RandomFacet.tex 47-50, 70-86, 181-195), Thm 6.3 = thm:main (Lower-RandomFacet.tex 118-142), parameters (706, 760-763), introduction.tex 24-26, abstract | 2026-10-15 | R-TL2 |
+| arXiv:1410.7871 (FHZ errata) | §1 (RF vs RF*, "main result of [1] flawed", RF* bound stands), §2 Fig. 1 pseudocode, p.4 "similar examples for parity games" | 2026-10-15 | R-TL2 |
+| arXiv:2607.06334 (Zwick, Rand-Act-Rem) | §2 AUSO and orientation, §3 VAL and improving switch, Appendix D Fig. 1, related work p.~1040 | 2026-10-15 | R-TL2; PDF |
+| arXiv:1106.0778 (Friedmann, LMCS 2011) | §3 node valuations (set order by max of symmetric difference; length order by cycle-node parity), §5 1-sink games and Lemma 5.1 | 2026-10-15 | R-TL2; PDF |
 | Imperial DTR 2015/4 (HKP, psolC; sha256 a7b61fe3...9cd6) | §2 p.3, Def. 1 p.4, Def. 2 + Thm 1 pp.5-6, Cor. 1, Lemma 2 + proof, (2), Lemma 3, Fig. 4 remark, Fig. 5 p.9, Thm 2 pp.8-9, Example 3 + Fig. 6 pp.10-11 (rendered), Thm 4 p.12 | 2026-10-15 | R-psolC; MIN-parity; PDF via pdftotext + pdftoppm |
 | arXiv:1405.0386v2 (HKP, Fatal Attractors) | archiv.tex/PDF: §2, Defs 1–8, Thm 1, Thm 2 + proof, Lemma 1, Fig. 3 (tex:728–747), Ex. 5 + Fig. 4(a) png, Def. 6 (tex:942–948), Fig. 5 (tex:970–997), Thm 4 + proof, Thm 5, Thm 6 statement, Thm 7/8 + proofs, Lemma 5 + proof, external-target remark tex:528–536 | 2026-10-14 | T-A1; MIN-parity |
 | arXiv:1711.09148v1 (CDHL, SODA 2018) | arxiv.tex: §2 model 466–517 (Thm 2.1 th:lbdisj), Reduction 3.9 red:buchi 759–765, Thm 3.10 thm:buchi 803–814 and proof 1223–1241, Lemma 3.4 lem:scc2 615–665, Prop 4.2 lem:objectives_ub 1023–1044, intro 284–286 ("2n one-step operations"); theorem numbering from the shared counter, confirmed in the PDF | 2026-10-14 | R-L1; LaTeX source + PDF, isolated dir |

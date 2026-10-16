@@ -1,0 +1,11 @@
+games with V_E in [7, 11, 13, 14]: 3240000
+round 1: 0 games, 808 clauses -> SAT [0.0s]
+   2597404 failing
+round 2: 200 games, 167958 clauses -> SAT [0.4s]
+   286324 failing
+round 3: 400 games, 334838 clauses -> SAT [1.2s]
+   96316 failing
+round 4: 600 games, 500824 clauses -> SAT [3.7s]
+   10608 failing
+round 5: 800 games, 665028 clauses -> UNSAT [3.8s]
+RESULT: no 6-gate program solves all 4-vertex games with V_E in [7, 11, 13, 14] (UNSAT core of 800 games)

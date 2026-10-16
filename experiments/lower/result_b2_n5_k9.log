@@ -1,0 +1,6 @@
+Q_3 prios=[1, 2] owners=[0, 1]: 22100 games, 66148 nodes -> 5164 classes (W true on 3298); max split round 4 [0.6s]
+resumed 414 games
+round 1: subset 7220 nodes (414 games), 11275640 clauses -> SAT [12694.6s]
+   sample of 2000000 random 5-vertex games: 124738 failing (in the chunks seen) [3.1s]
+round 2: subset 8220 nodes (614 games), 12841491 clauses -> SAT [4098.2s]
+   sample of 2000000 random 5-vertex games: 80124 failing (in the chunks seen) [2.9s]

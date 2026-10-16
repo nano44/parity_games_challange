@@ -1,0 +1,4 @@
+core: 68 games, 217 vertices; k = 6
+level 0: solvable with 6 gates: False [3.2s]
+level 1: 16 realisable choices from 1 partitions -> 0 live, 15 dead (distinct partitions) [4.8s]
+RESULT: no 6-gate program solves the core (tree exhausted at level 1)
