@@ -239,3 +239,4 @@
 - 10:39Z owner D9 (verbatim in DECISIONS): counter_dtl online search. Started L-LIT successor session_01Sb99VhYmwmCzi8aeKybxzj (Opus, claude/l-lit, box ~13:45Z, read-only, no contact). Working sessions 3/5. WATCHDOG told.
 - 10:41Z merged l-red cdbece1, l-alg (Phi false, Phi_idx). L-RED k=2 dead-top build tests Phi_idx.
 - 10:44Z merged l-alg cb72d30 (Phi_idx mechanisms false; L-ALG to (H4)).
+- 10:50Z merged l-red 976cf2b (R13). Near miss routed to L-ALG for (H2a).
