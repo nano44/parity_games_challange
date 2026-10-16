@@ -97,3 +97,8 @@ proved but unrefereed; open GAP-C (completeness) and GAP-A (polynomial tangle bo
 > Give me a status update
 Answered from trunk 3b31814 (NOW.md, DECISIONS D8, RESULTS), l-alg c915fba, l-red 5311b17, l-comp 70cc344. QUESTIONS.md synced with
 Q10/Q11 (handled in the Lead session) and the Q4 outcome. Relayed verbatim to the Lead.
+
+## 2026-10-16 16:38Z owner (progress question)
+> Give me a status update
+Answered from trunk e927f20, l-alg b4d7862, l-red f5a8aee, l-lit 3d9d98d; desk re-verified the repo is public. Q10 closed, Q12 and
+Q13 (public repo) added. Relayed verbatim to the Lead.
