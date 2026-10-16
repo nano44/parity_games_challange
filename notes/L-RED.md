@@ -1,10 +1,9 @@
-# L-RED notebook (independent adversary). Successor session_01PxvcUhsSEhfjURzmBDBeoN from 2026-10-16 08:05Z (my clock), produced on Opus 5.5 (owner D8, Lead reading L27)
-Previous: session_0117Yy21tGGz9s1zzLfBdUKC (Fable; paused by the weekly limit ~01:23Z, last push 0bedda5 R9 v4).
+# L-RED notebook (independent adversary). Successor 3 (Opus 5.5, owner D8) from 2026-10-16 15:56Z (date -u)
+Previous: session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, parked 15:20Z); before it session_0117Yy21tGGz9s1zzLfBdUKC (Fable).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
-(session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh` (CLAUDE.md; never pipe verify).
-Status: PARKED (CARRY box 08:12Z-16:10Z ended; DONE sent 15:20Z, merged fe8cb18; all climbs stopped 15:17Z; next box is
-a fresh successor under LANE-RESTART). Next-box first target:
-L-ALG GAP-A-M 13h child-M candidate (see Resume point).
+(session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh > file 2>&1; echo $?`.
+Status: WORKING (box: Lead "go" 16:03Z Lead clock, to ~00:05Z). Queue: (1) (CM) filtered attack -> R17 (KILLED 16:05Z);
+(2) K_child scaling + third level from h4_compound2x2_n44; (3) r0 dips with a DEF filter.
 
 ## DONE (all merged by the Lead unless noted)
 - R1 docs/red/R1-MSF.md: S2a MSF KILLED (gated Bland counter 2^N - 1; Gate Lemma: gates relabel the first-difference level).
@@ -52,6 +51,9 @@ L-ALG GAP-A-M 13h child-M candidate (see Resume point).
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-16 successor 3: R17 docs/red/R17-CM.md: (CM) FALSE in both orders (cm_mdrop_both_n28, M 8->7, clean parent -1 -> -1;
+cm_mdrop_oink_n28, M 13->1, parent finishes). Tools: carry/cmf.py (L-ALG dtl_childM premise + clean tag), carry/cmf_detail.py,
+dtl_search --fitness cmf. LALG_DIR = <scratch>/lalg (git worktree, detached origin/claude/l-alg d2ae597). Next: queue (2).
 2026-10-16 CARRY box ended ~16:10Z (Opus 5.5). State: Phi_idx FALSE (L-ALG 11d, confirmed R13); c_i circular; target =
 chained resets / COMPOUNDING (Lead 13:46Z): a deficit (or reset) sequence at one context that makes a deeper piece or the
 next context run its own sequence again. Tool: dtl_search --fitness h4prod (block form, Oink order via DTL_ORDER=oink,
