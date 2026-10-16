@@ -148,3 +148,7 @@ with q1 -> {Y_1, Y_2..Y_d, sA}. For d = 2, 3, 4: all d tops learn in the FIRST s
 piece. In search 1 the slow cut eats the whole module (attracted = every Y_i, l_i, v_i, q1). The lifetime is ONE search,
 independent of d. So the lift cascade is faster than the "one level per search" of my reading: it runs inside one stable
 piece. With this, every gate-module shape I could build in the 2CE class is eaten by the slow cut within two searches.
+DATA, L-ALG Lemma D2 (GAP-A-M.md section 6: every sptl region at a stable piece lies in Dom(V*, R) and X before it),
+independent check in dtl_ogate.py: 646 stable pieces over the 116 files above, 0 violations. READING: Dom's attraction
+rules are pointwise more permissive than sptl's region rules (cumulative X instead of a per-region Z, same caps, same top
+order, the same tangles after the last sptl pass), so D2 holds by an induction over the tops in descending order.
