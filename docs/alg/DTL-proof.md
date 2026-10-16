@@ -20,7 +20,7 @@ whatever the flags): the distinct priorities are mapped in increasing order to c
 at 1 or 2 by parity, each keeping its parity (a step of 2 where two consecutive distinct priorities have the same parity), so every priority is
 ≤ 2d ≤ 2n + 2 afterwards; this is an order- and parity-preserving renumbering (into {0..2n+2}, not TARGET's {0..n}), it costs
 O(n log n) (a flat map over the n priorities) and is charged in D2(e); 0.4 shows A_DTL makes the same choices on a game and
-on any such compression of it. Then `game.ensure_sorted()` (oink.cpp:35; game.cpp:495
+on any such renumbering of it. Then `game.ensure_sorted()` (oink.cpp:35; game.cpp:495
 `std::sort` on priorities), i.e. reindex the vertices in SOME order that is non-decreasing in priority. Equal-priority
 vertices may come out in any order (D-4): Theorems D1 and D2 are claimed for EVERY order datum ω (C5-DTL.md §0 "Order
 data": the equal-priority indexing O1, the in-edge lists O2, the out-edge lists O3, the SCC emission order O3', the dominion
@@ -701,7 +701,56 @@ top's fresh tangle), consistent with Lemma W. Reduction (PROVED via Lemma W): GA
 counter-like data (F9): dtl_searches20_n32.pg, 20 searches at n = 32, a top whose SCC takes 12 values with four vertices
 changing membership five times each, most learning inside the recursion. Candidate counter shape for L-RED: the rescue/regress flip-flop of F8 driven by a
 lower counter so that every configuration gives new sets.
-Status of 3: (b), (c), (d) PROVED; (e) PROVED conditional on (a); (a) GAP-A (sharpened above: the number of searches).
+Lemma P/Q (fixed-context monotonicity of the pruning; SKETCH, 2026-10-16 01:50Z; = L-RED's Claims P, Q at claude/l-red 30af303
+and GAP-A-data.md §4c (M); 0 violations on every measurement). Setting: one player p, one context R (forgiven = outside R), two
+tangle sets T ⊆ T' (no deletions between). Rounds V_0 = P_p ∩ R, V_{i+1} = F_T(V_i). Claim: V_i(T) ⊆ V_i(T') for every i; hence
+(P) the round in which a vertex is pruned never decreases, (Q) a stable call stays stable with V*(T) ⊆ V*(T'), and a −1 result
+cannot become −1 with a smaller last-survivor set without a distance increase.
+Proof structure (induction on i; V_0 equal). Given V := V_i(T) ⊆ V' := V_i(T'):
+ (1) Regions: Reg(V, T) ⊆ Reg(V', T'). Induction over the push order of the regions under T, top-down. A (V)-pushed p-vertex x
+     has its str successor earlier in the order, hence (IH) in Reg(V', T'), in a region of some top τ'; x has priority ≤ its own
+     top ≤ ... and is attracted to τ' or to a higher top when that successor is popped, unless already consumed: x ∈ Reg(V', T').
+     A (V)-pushed opponent vertex has all its R-successors earlier in the order or in higher regions: all in Reg(V', T') (IH) or
+     consumed: attracted likewise. A (T)-pushed vertex x (tangle t fired in Z_τ(T)): if under T' no vertex of U_t is consumed
+     above the region where t's escapes are covered, t fires there (escapes in Reg(V', T') by IH or forgiven): x ∈ Reg. Else
+     (straddle) let Y := U_t minus the vertices consumed higher under T'. Every p-vertex of Y has its stored strategy in Y (a
+     stored strategy into a consumed region would have attracted it there, its priority fits); every opponent vertex of Y has
+     its exits in Y, in consumed regions (forgiven) or in escapes (covered). PICKUP: if some vertex of Y is attracted by a vertex
+     rule into a region, the rest follows? Not in general (a deadlock: an opponent vertex with an exit to a p-vertex of Y whose
+     only Z-successor is its stored strategy, itself not in Z). But a deadlocked Y contains a cycle of H_t (every vertex of Y
+     has a successor in Y under the stored strategies / unforced exits), whose maximum m has p-parity (TS(ii)) and priority ≤
+     pr(τ); m is a p-priority vertex of R. IF m ∈ V' then m is itself a top under T' and, when its region is computed (all higher
+     regions consumed, so Y's exits into them are forgiven), the pickup at m succeeds for the part of Y that reaches m under
+     the stored strategies; iterating over the remaining cycles' maxima (all in V' by the same argument) covers Y. So (1) holds
+     whenever every p-priority vertex of Reg(V, T) that heads a deadlocked remainder lies in V'.
+ (2) Candidates: a top τ ∈ V with attracts(p, τ, Reg(V, T), R) has attracts(p, τ, Reg(V', T'), R) (a p-top keeps a successor in
+     the bigger union; an opponent top keeps "no successor in R \ Reg" since Reg grew). Rescue sets A_t grow with Reg and T
+     (1.2b). So every survivor under T survives under T': V_{i+1}(T) ⊆ V_{i+1}(T'). □ (modulo the IF in (1))
+ The IF: a p-priority vertex m inside Reg(V_i, T) is never a candidate at round i (a p-owned vertex of a region has its str
+ successor in the region; an opponent-owned one has all R-successors in Reg: 1.1, 1.6), so if m ∈ V_i(T) then m ∈ V_{i+1}(T),
+ and by the IH V_i(T) ⊆ V_i(T') gives m ∈ V_i(T'). The OPEN CASE is a vertex m ∉ V_i(T): pruned at an earlier round j < i under
+ T (then not inside Reg(V_j, T), so the tangle t containing m did not fire at round j) and absorbed at round i through t (which
+ fires at round i because fewer tops leave more room), while under T' t straddles and strands m's cycle: then m is a top under
+ neither T nor T' at round i and the remainder is lost from Reg(V', T'), which can un-rescue a top and decrease its distance.
+ Shape of a Claim-P violation (for L-RED and the climb experiments/alg/dtl_pclimb.py): a stored tangle t with vertices a, m, ...;
+ a has a second successor w outside t; a top above τ attracts w only under T' (a new tangle brings w); so a is stolen under T';
+ m's cycle in t is deadlocked without a; and m was pruned in an early round under both T and T' — OR (second flavour) the
+ remainder's cycles are picked up by their maxima but a transient vertex m* of the remainder (on a cycle of t only through a)
+ has priority above the cycle maxima, is reachable from no region by its threshold, and was the rescue witness of a top x with
+ pr(x) ≤ pr(m*) (x → m*, rescued under T because m* ∈ Reg, not under T' because m* is in no region and above every rescue
+ threshold t < pr(x)). Two constraints found while trying to build it by hand (01:40Z–02:20Z): (i) at the FIRST call nothing is
+ forgiven above the highest top, so the steal at the highest top needs a new tangle whose escapes all lie inside that top's
+ region as computed without new tangles (a chain of absorptions ending at the top), and the top's closed region there is a
+ dominion (no escapes possible), so the stealing top must stay unclosed (its strategy edges lead to lower regions); (ii) a
+ chain of absorptions completes within ONE search's sptl passes (each pass one more top absorbs the previous one's fresh
+ tangle), so the steal happens in the same search as t's own creation unless the chain is delayed by the pruning: a link whose
+ top is a distraction until a tangle of the previous link exists (tc+'s one-bit-per-search device, makeBit in tc+.cpp). So a
+ P-violation needs at least three interacting gadgets (the straddling tangle t with its cycle structure, the stealing chain
+ into the highest top, and a pruning delay of ≥ 1 search between t's creation and the steal); random climbs at n ≤ 32 cannot
+ be expected to find one. Not observed (0 violations in 1,154 + 211 recurring contexts and targeted climbs, 10k–15k steps at
+ n = 12, 16, 20 and seeded at n = 32, running).
+Status of 3: (b), (c), (d) PROVED; (e) PROVED conditional on (a); (a) GAP-A (sharpened above: the number of searches; Lemma P/Q
+SKETCH with one open case).
 
 ## 4. idtl vs dtl — PROVED (same proofs), one difference stated
 Interleaved run (1125-1138) alternates search(0), search(1). Sections 1-3 never use that the phase is fixed: soundness
@@ -740,6 +789,8 @@ games ok, every canonical game n = 1, 2, 3 (4 + 240 + 41,440) ok, each solver; t
 experiments/alg/out/psolc_fail_n4.jsonl (518 s to regenerate, not re-run here). experiments/alg/dtl_debug_fuzz.py with
 DTL_NO_LOOPS=1 (NDEBUG checks on, -t): seed 21, 20,000 random games with self-loops (rngame), dtl and idtl: 0 failures,
 every run "solution verified". So no correctness failure appeared on the pinned algorithm.
+2026-10-16 01:40Z: after CHECKER C3f PASS and the re-freeze L26 (§0 at e144992): the leftover word "any such compression of it" in
+step 0 → "any such renumbering of it" (Lead 01:20Z, optional; wording only).
 2026-10-16 01:00Z: CHECKER C3e: E-1 (renumbering starts at 0 if 0 occurs) as its own commit; N-1 "order- and parity-preserving
 renumbering" (step 0, 0.4); N-3 Lemma 1.5a (one reachable SCC in a closed region, PROVED) reconciles §1.5 with NOTE N2 (amended).
 2026-10-16 00:45Z: CHECKER C3d (claude/checker 70c263e) fixes, §0 only plus §1.5 N-2: F-1 Theorem D1 for every order datum ω

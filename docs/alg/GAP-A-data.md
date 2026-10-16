@@ -161,12 +161,54 @@ R' is a strict subset of an earlier call's R (more removed, more forgiven, more 
 reverts to −1 at the smaller context (42 pairs on tc+ N = 6, 9 on dtl_cnew14_n20; stable V* ∩ R' is never lost). Reason: the
 removed vertices can be the witnesses of the good paths (lower regions, rescue paths). So the predecessor's hope "R-mono for
 later pieces" is false as a statement about the pruning, and monotonicity lives ONLY at identical contexts.
+Proof status of (M) = Claims P, Q (DTL-proof.md §3(a) Lemma P/Q, SKETCH): the induction over rounds goes through except for one
+case: a p-priority vertex pruned in an early round and later re-absorbed through a tangle that straddles under the larger
+tangle set, stranding a deadlocked remainder whose p-parity maximum is no longer a top. Everything else (vertex rules,
+non-straddling tangles, candidates, rescues, and the pickup of a stranded remainder by its own p-parity maximum when that is a
+top) is written out. The climb dtl_pclimb.py targets exactly this violation (patched build; fitness = P violations at
+identical contexts).
+Hand attempt at a Claim-P violation (02:20Z–03:00Z, experiments/alg/instances/dtl_pviol_attempt1.pg, 26 vertices, labels
+t1/t2/tau/a/mstar/o/c/x/w/o2/r0-r3/o_k/y_k): a straddling tangle t = {tau, a, mstar, o, c} (cycles tau-a-mstar-o, a-mstar-o,
+c-o; escape h into t2's region), a stealing chain g_0..g_3 of two-vertex tangles {r_k, o_k} whose escapes y_{k-1} (Even-owned,
+priority just above r_k so that r_k's own region cannot take them) enter t1's region only after g_{k-1} fires there, the
+witness w with tangle {w, o2} (escape r_3) that pulls a into t1's region, and x (priority 6) → mstar (7) as the rescue
+witness to be stranded. Designed timeline: g_k learned one search after g_{k-1}; a stolen in search 4; x survives round 1 in
+searches 1-3 and is pruned at round 1 in search 4. What A_DTL did: (i) t1 → c and t2 → r_0 (added so that t1, t2 are not
+candidates) let t1's region absorb c → o → tau → ... and t2 via r_0, closing t1 into a DOMINION in search 0; (ii) the ladder
+collapsed inside search 0: once a level is learned and removed by Dom, the next level's y is "the lowest level attracting to
+X" and the −1 cut forgives it, the following level closes in the next piece, and so on — every level is learned in search 0.
+Lesson (reading): within one search every piece sees all tangles learned in earlier pieces, so a cross-search delay exists
+only when the enabling tangle is needed in an EARLIER piece than the one where it is learned; concretely, the top to be
+rescued must have been REMOVED in a −1 (dis) piece before the stable piece that learns the enabling tangle. That is tc+'s
+order (dis(gadget N) ... dis(gadget k), STABLE): the distractions with the highest pruning distance are removed first, one
+dis piece each, and only then the stable piece learns. A P-violation (and a counter) must reproduce this removal order for
+its delay stage; the pruned-but-not-removed vertices of a stable first call do not delay anything.
 What a counter must do (the shape for L-RED): K "digits" = K nested pieces, each able to cycle through ≥ 2 results inside a
 fixed epoch of the pieces above it, each cycle step learning a new tangle, and a change at piece k resetting piece k+1's
 context to one where its cycle restarts with NEW sets (because T grew). dtl_searches20_n32.pg is a one-digit instance:
 searches 6–12 keep the depth-0 results fixed (dis 3, cut@21/1, cut@27/25–26) while the depth-1 cut flips 2, 2, 18, 3, 5, 6,
 17 (F10); searches 13–15 are a second epoch. The climbs (random mutations, fitness = searches) reach 0.7n searches at n = 16
 and 32 and do not stack digits by themselves; a construction is needed.
+
+## 4d. The Lead's budget candidates and L-RED's (CARRY), measured (03:45Z, experiments/alg/dtl_firing.py)
+F11 (DATA). Per search, F_s = the tangles that fire during the FIRST best_vertices call (R = G'). On dtl_searches20_n32,
+dtl_searches15_n24, the 23-search climb instance, dtl_restart8_n20 and counter_symsi 12: every change of the first call's
+result (−1 set, stable set or distances; 7, 4, 7, 2, 2 changes) comes with a NEW tangle in F_s (7/7, 4/4, 7/7, 2/2, 2/2; tc+
+N = 6: 3 of 4, the fourth is the search after a dominion, where tangles are deleted). F_s grows monotonically inside a phase
+(the non-monotone steps are at dominion boundaries). The union of F_s over a run is small: 18, 18, 19, 24, 8, 26 tangles (of
+58, 124, 61, 144, 36, 38), i.e. ≤ n. Distinct depth-0 (context, result) pairs: 28, 45, 34, 50, 16, 32 for 14, 20, 16, 23, 5, 3
+searches (about two per search), so the trivial bound searches ≤ #pairs has no slack to give.
+(CARRY) reading. "A piece-0 change requires a new tangle that fires at R = G'" is PROVED by the first-difference argument (the
+vertex rules are the same under T and T'; the first difference in the attractor computations at a fixed context is a (T)-rule
+event of a tangle in T' \ T, or a (T)-event whose premise changed, which needs an earlier difference). Such a tangle keeps
+firing at R = G' afterwards (by (M)), so each drives at most one piece-0 change; but piece-0 changes are bounded by n(n+1)
+already (every change raises a distance, F5), so this does not add a bound, and it says nothing global: at piece k the same
+argument gives "a new tangle fires in context C_k", and the contexts C_k vary. The product over pieces stands.
+Candidate (a), tangles that ever fire inside a context: monotone per context (by (M)); summed over the distinct contexts of
+a run it is bounded only by |T| × #contexts. Candidate (b), (vertex, deepest piece removed): "piece index" is not stable
+under re-cutting (F6, F7), so the pair is not monotone. Candidate (c), Σ over distinct stable contexts of |V*|: each search
+without a change at an old context visits a new context, so searches ≤ #distinct (context, result) pairs; the data above
+(about 2 pairs per search) shows the count is the thing to bound, which is GAP-A again.
 
 ## 5. Dead ends this box (with the instance)
 | conjecture | killed by |
@@ -181,3 +223,10 @@ and 32 and do not stack digits by themselves; a construction is needed.
 | P1: every learning search adds a new (top, vertex) coverage pair (searches ≤ n²) | dtl_cnew14_n20.pg search 3; dtl_searches20_n32.pg (8 searches) |
 | per-top escape count or SCC size monotone across searches | dtl_searches20_n32.pg top v19 |
 | pruning monotone across NESTED contexts (R' ⊂ R, more T) | tc+ N = 6: 42 stable→−1 reverts; r2_n32 best: 134 distance decreases |
+
+## 6. Box summary (03:30Z)
+PROVED: Lemma W (tangles ≤ n · searches); Lemma 1.5a (one reachable SCC). SKETCH: Lemma P/Q, one open case. DATA: F0–F10, (M)
+at identical contexts (0 violations), nested contexts not monotone, oscillation depth 5 at n = 32, 20–23 searches at n = 32
+(climbs), composition 2/3/4 copies → 30/30/35 searches. DEAD: §5 table. OPEN: a global budget for piece changes, or the
+counter (removal-order delay device; L-RED R9 builds the two-level version). The box produced no result in the sense of
+CLAUDE.md (nothing refereed), and GAP-A stays open with a sharper statement: the number of search calls per phase.
