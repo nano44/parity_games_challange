@@ -113,3 +113,6 @@ Desk reading: Q12 option (a). Relayed verbatim to the Lead.
 
 ## 2026-10-16 16:44Z Lead (relayed to owner)
 Q13 closed as D10 / L29. Lead's message crossed the owner's Q12 answer (relayed 16:40Z); Q12 awaits its D-number.
+
+## 2026-10-16 16:47Z Lead (relayed to owner)
+Q12 closed as D11 / L30. p.15 recipe already built (L-RED R14, d70e99a): no slowdown on A_DTL. No owner questions open.

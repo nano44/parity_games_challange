@@ -167,4 +167,5 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
   2021 but never committed). The only remaining route is to ask the author: outside contact, the owner's decision (D1).
 - Options: (a) no contact for now; (b) owner contacts the author; (c) owner authorises a fleet-drafted message for the owner to send.
 - Lead recommendation: (a): L-RED first builds the author's own recipe (preprint p.15).
-- Status: answered 2026-10-16: "No contact for now" (option (a)); relayed; awaiting the Lead's D-number.
+- Status: closed, D11 / Lead reading L30: no contact with the author; the fleet works from the public record and its own
+  constructions. Note: the p.15 recipe was already built (L-RED R14, l-red d70e99a): no slowdown on A_DTL.
