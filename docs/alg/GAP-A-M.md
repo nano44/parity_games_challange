@@ -1306,3 +1306,9 @@ child context grows (parent return set shrinks: the §14 staircase), M rose in 2
   shrink resets: lost tangles (a tangle needs all its vertices in the context).
 - Consequence: (CM) is DEAD. Queue item (2) closes negatively: the child of a deficit parent can re-climb (its M drops)
   in an ideal-stable context, so nested deficit runs are not stopped by any monotone child round count.
+- Anatomy of cm_viol_oink_n28 (Oink order, original ids; Odd's phase). Piece 0 (|R| 28, ideal stable both times): actual
+  −1 return set {23} → {1, 2, 23, 27}. Piece 1's context loses {1, 2, 27} (Dom of the larger return set), nothing added;
+  no stored tangle loses a vertex (so this reset is NOT §15's lost-tangle shape). The three removed vertices are p-parity
+  TOPS of the old child context (priorities 19, 5, 17). New tangles between the searches: {5, 6, 17, 18}, {8}, {21}. Child
+  deaths drop for 7 vertices (e.g. 14: 7 → 4, 9: 6 → 3, 4: 6 → 3); child M 7 → 6. The climb (seed 301) reached 3 M-drops
+  in one run by step 3,155 (scratchpad, not committed).
