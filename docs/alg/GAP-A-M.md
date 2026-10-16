@@ -284,3 +284,43 @@ it.
   so T_last is disjoint from a_{c+1}'s region S_s, so T_last can
   fire inside a_{c+1}'s region in search s+1 only if that region's vertex SET has grown to contain T_last. A pure order gate
   at a fixed region set is then impossible for T_last; any T_last-gate at P1 is a set-level lift (R10's open case (iv)).
+
+## 9. C6 at a fixed stable context: Dom is monotone, and the piece learns in O(n) searches per epoch (09:34Z)
+Lemma D3 (Dom is a layered closure; PROVED, reading of dtl.cpp 876-889). Fix a context R and the set X_before removed
+earlier in the same search_rec call. Dom(V, R) (the removal after a stable result) equals the layered closure D̂: for q
+descending over the priorities of V, D̂_{≥q} := the least superset of D̂_{>q} ∪ V_q closed under the threshold-q rules in R
+where X_before counts as forgiven for escapes and as already attracted for tangle vertices (attractTangle's `Z[v]` with
+Z = X), and a tangle needs one escape in D̂ itself (N1: X_before is never popped). Proof: as Lemma E, level by level; the
+vertex cases are Lemma E's; the tangle case cannot fail, because at the last Dom pop among the tangle's escapes every
+vertex is in X (consumed or X_before) or in the remaining R. Hence Dom(V, R) is monotone in V and in T at fixed
+(R, X_before). (Contrast: best_vertices' and sptl's regions treat consumed vertices as outside, which is where Lemma E's
+straddles come from.)
+Lemma L-epoch (what can make a stable piece learn again within an epoch, C6; PROVED, reading; corrected 09:35Z before
+push: a first draft claimed a 2|R_j| + 1 bound and missed case (c)). Let piece j have the same context R_j, the same
+X_before and a stable result in consecutive searches s_1 < s_2 < ... of one phase (an epoch of piece j; no dominion).
+Then V*_j(s_i) and D_j(s_i) = Dom(V*_j, R_j) are non-decreasing (C6's Lemma 2.1 by induction over rounds; Lemma D3), and
+every search s_{i+1} in which piece j learns a new tangle is of one of three kinds:
+ (a) V*_j grew (at most |R_j| times);
+ (b) a LIFT: a tangle t learned in s_i after piece j (a later piece or a recursion below it; its learning context excludes
+     D_j(s_i)) fires in a piece-j sptl region of s_{i+1}; then t ⊆ D_j(s_{i+1}) (Lemma D2) and t ∩ D_j(s_i) = ∅, so D_j grew
+     strictly (at most |R_j| times);
+ (c) a CATCH-UP: the first pass of s_{i+1} repeats the final pass of s_i (Lemma S step (4): same V*, same firing tangles,
+     same pushes and str; tangles learned in s_{i+1} before piece j lie in D_k, k < j, outside R_j), yet a top τ that had
+     extracted in an EARLIER pass of s_i, and was then blocked by W (dtl.cpp 528, reset only per search), now extracts its
+     final-pass SCC, which differs from the one it extracted. Catch-ups can chain, one step per search, entirely inside the
+     fixed set D_j (a catch-up tangle lies in its region ⊆ D_j): NOT bounded by anything proved. This is the cross-search
+     form of the in-search chain (GAP-A-data F3/F4).
+So a stable piece learns in at most 2|R_j| searches of an epoch PLUS its catch-ups. GAP: a bound on catch-up chains at a
+fixed region family.
+Conjecture (CU) (09:38Z; DATA, 0 counterexamples): in every sptl pass, a top blocked by W whose region is closed has as its
+SCC either a STORED tangle or a set without escapes (a dominion). experiments/alg/dtl_wblock.py: 4,027 sptl passes, 1,923
+closed regions at blocked tops (600 random games n ≤ 26, every file in experiments/alg/instances, tc+ N ≤ 6): 1,412 of
+their SCCs are new DOMINIONS (found one search late), 0 are new tangles. And no catch-up was seen in practice: in 115
+(A_DTL) / 110 (C6) consecutive same-piece pairs at depth 0 with equal context, V* and Dom, the second search learned
+nothing there. Under (CU) a catch-up yields only a dominion, and a stable piece learns a tangle in at most 2|R_j| searches
+of an epoch (C6).
+Consequence for gate (O) in C6 (R10's 2CE). The carry must be learned at P1 within one A-state (R10 (F), (G)). By Lemma
+L-epoch the search that learns it is (a) a growth of V*_{P1}, (b) a lift of a tangle learned after P1 in the previous search
+(for a gate tied to the fast level: its LAST tangle, and no earlier one), or (c) a catch-up at P1. Kind (c) needs no
+input from the fast level at all: a catch-up chain at P1 is a self-running DELAY, one step per search, which a counter
+could use as a timer if its length can be made to match the fast level's. None of (a)-(c) is excluded by proof; (c) is excluded for tangles by (CU) if (CU) holds (DATA only). OPEN.
