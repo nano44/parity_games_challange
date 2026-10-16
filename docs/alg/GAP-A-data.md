@@ -190,6 +190,26 @@ searches 6–12 keep the depth-0 results fixed (dis 3, cut@21/1, cut@27/25–26)
 17 (F10); searches 13–15 are a second epoch. The climbs (random mutations, fitness = searches) reach 0.7n searches at n = 16
 and 32 and do not stack digits by themselves; a construction is needed.
 
+## 4d. The Lead's budget candidates and L-RED's (CARRY), measured (03:45Z, experiments/alg/dtl_firing.py)
+F11 (DATA). Per search, F_s = the tangles that fire during the FIRST best_vertices call (R = G'). On dtl_searches20_n32,
+dtl_searches15_n24, the 23-search climb instance, dtl_restart8_n20 and counter_symsi 12: every change of the first call's
+result (−1 set, stable set or distances; 7, 4, 7, 2, 2 changes) comes with a NEW tangle in F_s (7/7, 4/4, 7/7, 2/2, 2/2; tc+
+N = 6: 3 of 4, the fourth is the search after a dominion, where tangles are deleted). F_s grows monotonically inside a phase
+(the non-monotone steps are at dominion boundaries). The union of F_s over a run is small: 18, 18, 19, 24, 8, 26 tangles (of
+58, 124, 61, 144, 36, 38), i.e. ≤ n. Distinct depth-0 (context, result) pairs: 28, 45, 34, 50, 16, 32 for 14, 20, 16, 23, 5, 3
+searches (about two per search), so the trivial bound searches ≤ #pairs has no slack to give.
+(CARRY) reading. "A piece-0 change requires a new tangle that fires at R = G'" is PROVED by the first-difference argument (the
+vertex rules are the same under T and T'; the first difference in the attractor computations at a fixed context is a (T)-rule
+event of a tangle in T' \ T, or a (T)-event whose premise changed, which needs an earlier difference). Such a tangle keeps
+firing at R = G' afterwards (by (M)), so each drives at most one piece-0 change; but piece-0 changes are bounded by n(n+1)
+already (every change raises a distance, F5), so this does not add a bound, and it says nothing global: at piece k the same
+argument gives "a new tangle fires in context C_k", and the contexts C_k vary. The product over pieces stands.
+Candidate (a), tangles that ever fire inside a context: monotone per context (by (M)); summed over the distinct contexts of
+a run it is bounded only by |T| × #contexts. Candidate (b), (vertex, deepest piece removed): "piece index" is not stable
+under re-cutting (F6, F7), so the pair is not monotone. Candidate (c), Σ over distinct stable contexts of |V*|: each search
+without a change at an old context visits a new context, so searches ≤ #distinct (context, result) pairs; the data above
+(about 2 pairs per search) shows the count is the thing to bound, which is GAP-A again.
+
 ## 5. Dead ends this box (with the instance)
 | conjecture | killed by |
 | --- | --- |
