@@ -16,9 +16,9 @@ TARGET's compression (sort, keep order and parity) is applied first, on the enco
 Step 0 (input construction, charged): write the game in PGSolver text and run Oink's parser
 `PGParser::parse_pgsolver_renumber` with bad-loop removal OFF (`--no-loops`, src/tools/solve.cpp:263), which builds the
 out- and in-edge arrays (O((n + m) log n) word operations) and ALWAYS renumbers the priorities (pgparser.cpp 492-511,
-whatever the flags): the distinct priorities are mapped in increasing order to consecutive integers starting at 1 or 2,
-each keeping its parity (a step of 2 where two consecutive distinct priorities have the same parity), so every priority is
-≤ 2d ≤ 2n + 2 afterwards; this is a compression in the sense of TARGET section 1 (order and parity preserved), it costs
+whatever the flags): the distinct priorities are mapped in increasing order to consecutive integers starting at 0 if 0 occurs, else
+at 1 or 2 by parity, each keeping its parity (a step of 2 where two consecutive distinct priorities have the same parity), so every priority is
+≤ 2d ≤ 2n + 2 afterwards; this is an order- and parity-preserving renumbering (into {0..2n+2}, not TARGET's {0..n}), it costs
 O(n log n) (a flat map over the n priorities) and is charged in D2(e); 0.4 shows A_DTL makes the same choices on a game and
 on any such compression of it. Then `game.ensure_sorted()` (oink.cpp:35; game.cpp:495
 `std::sort` on priorities), i.e. reindex the vertices in SOME order that is non-decreasing in priority. Equal-priority
@@ -94,8 +94,8 @@ Same for A_IDTL.
   then replaced by `priority(v)` (904), so it acts as "below the least occurring priority" in both games (and a
   vertex of priority 0 attracts to X at level 0 in both). Hence A_DTL makes the same choices on G and on its
   compression, and the bound (e) is stated for the compressed game, whose n and m are the input's. Oink's own renumbering
-  in step 0 (pgparser.cpp 492-511) is such a compression (order and parity preserved, priorities ≤ 2n + 2), so the same
-  argument applies to it, and the two compressions compose to a compression.
+  in step 0 (pgparser.cpp 492-511) is an order- and parity-preserving renumbering (priorities ≤ 2n + 2), which is all the
+  argument uses, so it applies to it as well, and to the composition of TARGET's compression with it.
 - Section 2, target statement: TARGET asks for (W_E(G), W_O(G)); D1 gives these as (W_Even, W_Odd) plus strategies.
   "Halts within p(n + m) steps": D2(e), measured from TARGET's encoding (E-3). Deterministic: for a fixed order datum ω yes
   (no randomness; the stack `Q` and the lists of ω fix every choice); the theorems are claimed for every order datum, so
@@ -255,11 +255,18 @@ using it (Lemma 1.4b(1)). All of dtl.cpp's attraction ignores edges leaving G' (
 On a closed region Z with its str, Pearce's algorithm from top (223-305) enumerates every SCC of the restricted graph
 (p-vertices: the edge str[n] (268-285); opponent vertices: all edges into Z (234-266)) that is reachable from top, in
 the order O3' of the order datum (for Oink's instance, Pearce's emission order, which is reverse topological; no argument
-in this file uses the order in which the SCCs are processed, and in a closed region every vertex reaches top, so the
-reachable SCCs are exactly one, the SCC of top, see §3(a) remark). Each nontrivial SCC (315-317) is a dominion if it has no escapes (347-379), else skipped if
+in this file uses the order in which the SCCs are processed). Lemma 1.5a (one SCC; PROVED, 2026-10-16): in a closed sptl
+region Z, every vertex reaches top in the restricted graph H, so exactly one SCC is reachable from top, namely top's. Proof by
+induction on the push order π: a (V)-pushed p-vertex u has str[u] = v with π(v) < π(u) (F2); a (V)-pushed opponent vertex has a
+successor in Z_then (F3), of lower π; the vertices pushed by a firing tangle t' (F4) carry t''s stored strategies, under which
+U_{t'} is strongly connected (it was an SCC of the restricted graph at its creation, with the same strategies), so from each
+of them H reaches the opponent vertex of U_{t'} that has the popped escape e as a successor (an escape is a successor of an
+opponent vertex of the tangle, 329-337, and attractTangle is evaluated only at the pop of an escape, 200-201), and e ∈ Z_then
+has lower π than the firing event; top has π = 0. A stored tangle has an opponent vertex with an escape, else it would have
+been a dominion at creation (347-379). □ Each nontrivial SCC (315-317) is a dominion if it has no escapes (347-379), else skipped if
 its sorted vertex set equals a stored tangle's (385-424, CHECK_UNIQUE is `(1 or !NDEBUG)` = on), else stored (439-466)
-with tin back-links (443) and tpr := pr(top) (461). NOTE N2: non-bottom SCCs are extracted too (their escapes may lie in
-Z); NOTE N3: a closed region whose top is opponent-owned with all successors outside Z extracts nothing ({top} is
+with tin back-links (443) and tpr := pr(top) (461). NOTE N2 (amended 2026-10-16): Pearce's loop would extract non-bottom SCCs too (their escapes may lie in Z), but by Lemma
+1.5a a closed region has exactly one SCC reachable from top, so every extraction is of top's SCC; NOTE N3: a closed region whose top is opponent-owned with all successors outside Z extracts nothing ({top} is
 trivial unless it has a self-loop, 317).
 
 ### 1.6 The pruning round (643-776) — PROVED (reading, corrected against C5-DTL.md)
@@ -733,6 +740,8 @@ games ok, every canonical game n = 1, 2, 3 (4 + 240 + 41,440) ok, each solver; t
 experiments/alg/out/psolc_fail_n4.jsonl (518 s to regenerate, not re-run here). experiments/alg/dtl_debug_fuzz.py with
 DTL_NO_LOOPS=1 (NDEBUG checks on, -t): seed 21, 20,000 random games with self-loops (rngame), dtl and idtl: 0 failures,
 every run "solution verified". So no correctness failure appeared on the pinned algorithm.
+2026-10-16 01:00Z: CHECKER C3e: E-1 (renumbering starts at 0 if 0 occurs) as its own commit; N-1 "order- and parity-preserving
+renumbering" (step 0, 0.4); N-3 Lemma 1.5a (one reachable SCC in a closed region, PROVED) reconciles §1.5 with NOTE N2 (amended).
 2026-10-16 00:45Z: CHECKER C3d (claude/checker 70c263e) fixes, §0 only plus §1.5 N-2: F-1 Theorem D1 for every order datum ω
 (both A_DTL and A_IDTL); citations O3 → parse_pgsolver_renumber edge loop pgparser.cpp 441-457, O4 → dtl.cpp 389, O8 → 1126, O7
 added to 0.1's list; NF-1 Oink's unconditional priority renumbering (pgparser.cpp 492-511) named in step 0, priorities ≤ 2n + 2,

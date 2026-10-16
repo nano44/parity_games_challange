@@ -94,6 +94,18 @@ F9 (DATA; the strongest counter-like behaviour found) dtl_searches20_n32.pg (cli
    shrinks from {7, 14, 15} to {7, 15} with no dominion in between).
    Searches vs n in the --searches climbs after 10k–25k steps: n = 16: 9; 24: 16; 32: 20; 48: 12 (7k steps); 64: 12 (3k steps).
 
+F10 (DATA; the flip-flop made visible) Full event sequence of dtl_searches20_n32.pg (patched trace; dKmJ = best_vertices at depth
+   K returned −1 with J tops, dKSJ = stable with J tops, cut@t/x = the −1 cut at threshold t of x vertices, TP:k = a tangle of
+   priority P with k vertices). Searches 6–12 (Even, no dominion) have an IDENTICAL depth-0 prefix: dis 3 tops, cut@21 of 1
+   vertex, cut@27 of 25–26 vertices, recursion on that cut. Inside (depth 1): dis 4–5 tops, cut@21 of 1, then the cut@25 whose
+   size FLIPS: 2, 2, 18, 3, 5, 6, 17 (searches 6–12). Small cut ⇒ the depth-1 stable piece is large and learns a chain of 7–9
+   tangles up to priority 24; large cut ⇒ a further recursion (depth 2, even 3) learns a different chain there. So the context in
+   which the priority-24 top (v19) learns alternates between depth 1 (sets of size 15–19) and depth 2 (sizes 9–12), which is
+   F9's oscillation. The flip is driven by the depth-1 −1 return set (4, 4, 5, 2, 2, 4, 4 tops) and the tangles, through the
+   lowest level attracting to X and the size of its attractor. Every flip learns NEW sets because the tangle set has grown in
+   between; the climbs could not push this beyond 20 searches at n = 32 (seeded continuation: 20 after 6k more steps), 21 at
+   n = 40, 19 at n = 48, 17 at n = 64 (early).
+
 ## 4. Reduction of GAP-A (reading of the data; F0 proved)
 tangles = Σ_τ Σ_searches (chain length of τ in that search) ≤ n · #(τ, search) pairs with a restart.
 - (F3 to PROVE) chain length ≤ n: needs "within one search at one top the SCC only grows": within a piece the region set is
@@ -103,6 +115,19 @@ tangles = Σ_τ Σ_searches (chain length of τ in that search) ≤ n · #(τ, s
   monotone. So GAP-A ⇔ polynomially many searches per phase (each search without a dominion restarts ≥ 1 top).
 - Searches per phase: tc+ 2N+2; climbs for searches (fitness --searches, n = 24, 32) reach 7–8 after 1k steps; the oscillation
   instance has 5. No family with superlinear searches is known (L-LIT T16; L-RED R8).
+
+## 4b. The proof obstacle, stated (reading)
+A search is a tree of best_vertices calls (contexts (R, X), depth ≤ d). For a fixed context, more tangles give monotone
+regions (predecessor's (a3), R-mono for the vertex cases) and, by F5's data, monotone pruning distances. Two consecutive
+searches of a phase agree on a prefix of this tree and diverge at the first call whose result differs (−1 set, stable set or
+regions); on tc+ the divergence point moves one piece earlier per search, on dtl_searches20_n32 it stays at depth 1 while the
+depth-1 cut flips. A lexicographic potential (distances at context 0, then at context 1, ...) is therefore monotone in the
+sense "the first differing component increases", but lower components reset, and such a potential bounds the number of
+searches only by the PRODUCT of the per-component ranges, exponential in the number of pieces. What is needed is a GLOBAL
+budget that every divergence consumes (as thefts per vertex per level do within one context), or the counter that shows no
+such budget exists. The author's own progress check (computeDistanceValues, dtl.cpp 553-639, run at trace ≥ 3 before and
+after each search, with the `throw "nothing changed!"` commented out at 1061) is exactly the first-call distance of F5, and
+it does not change on tc+ searches 1–5: the author met the same obstacle.
 
 ## 5. Dead ends this box (with the instance)
 | conjecture | killed by |
