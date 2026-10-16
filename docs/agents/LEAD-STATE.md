@@ -294,3 +294,4 @@
 - 15:04Z merged l-alg be27f5d ((CM) 0/123).
 - 15:06Z hourly sweep: no overage (seven_day allowed_warning). Lead ctx 569k, $164.4. Lanes per WATCHDOG 15:04Z measurement: L-ALG 555k $73.6, L-RED 471k $59.4, both running; L-ALG near 600k but its box ends ~16:10Z with notebook handover. No exceptions.
 - 15:12Z merged l-alg h4_nested7_oink_n44 (Lead re-ran Oink).
+- 15:23Z L-RED box ended (DONE fe8cb18, idle, climbs stopped). Merged; roster updated to PARKED. Next-box queue in its notebook.
