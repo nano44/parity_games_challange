@@ -894,6 +894,12 @@ time, unless M grows. Routed to L-RED as an attack target: find a context where 
   ideal-stable context, and the actual return set REVISITS earlier sets ({23, 27} and {20} twice each) while the ideal
   stays fixed. So the actual state at a fixed ideal-stable context is not even injective in time. Max per context,
   Oink order: n = 20: 4, n = 28: 10, n = 44: 8.
+- Compounding check (14:34Z; deep-climb seed 201, fitness = deeper contexts with ≥ 2 DEF changes, from
+  h4_def8_oink_n44). experiments/alg/instances/h4_deep_oink_n44.pg (Oink 13 iterations, verified). In every search 4-12
+  of player 1's phase, the depth-0 calls of pieces 0-3 are ALL deficit calls (ideal stable). Pieces 0, 1 and 2 each stay
+  at ONE context throughout; piece 3 visits 4 contexts. So the deeper deficits are PARALLEL staircases at fixed
+  contexts, not fresh children reset by the piece-0 staircase. Their total is ≤ (searches) × (pieces) anyway. No
+  NESTED deficit compounding observed (the shape that would be exponential). Not excluded either.
 
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
