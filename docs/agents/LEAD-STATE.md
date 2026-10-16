@@ -251,3 +251,4 @@
 - 11:24Z merged l-alg ae36f2b: Phi_idx FALSE (phi_idx_flat_n20; Lead re-ran Oink: 5 iterations, verified). dtl_pieces.py bug: §6 counts pending re-run. Routed instance to L-RED for independent check.
 - 11:27Z merged l-red d70e99a (R14: author recipe gives no slowdown on A_DTL).
 - 11:29Z merged l-alg 4f489cf (§6 re-measured).
+- 11:34Z merged l-alg 4ddc90f ((H2b) reduces to c_i). Asked L-ALG for a C7 (potential-enforcing variant) feasibility note vs attacking c_i.
