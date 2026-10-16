@@ -33,8 +33,8 @@ DFTL + counter_dftl a028e62 two days later). T16 earlier work unchanged. Parked 
 - T17 (2026-10-16): mirrors in scratchpad dl/oink.git (all 18 refs incl. refs/pull/*), dl/repos/*.git (author experiment
   repos), forks/all.git (13 forks + 2 experiment repos, refs/forks/<name>/*), swh/*.json (24 snapshots), web/ (subagent
   downloads incl. web/tvd/2024festschrift.pdf). Not committed. Subagent lists: scratchpad swh_lsr.txt, swh_roots.txt.
-- T17 slip: the web subagent used GitHub MCP code search beyond the session's repo scope (not asked; reported to Lead).
-  Brief future subagents explicitly: no mcp__github__ tools.
+- T17 TRAP (rule breach): the web subagent used GitHub MCP code and issue search beyond the session's repo scope (not asked; reported to Lead). Lead ruling 11:05Z: no GitHub MCP calls outside nano44/parity_games_challange; use git clone, ls-remote and WebFetch; tell every subagent so explicitly.
+- Repo visibility: the Lead verified (11:05Z) that nano44/parity_games_challange is public and is raising it with the owner; not mine to act on.
 - Two Counters lower bound is partly empirical: van Dijk 2019 says exponential behaviour "is clear from the empirical data"
   and only "sketch[es] out an inductive proof" (§ near line 440 of the text). Matters for BARRIERS.md.
 
@@ -176,11 +176,12 @@ DFTL + counter_dftl a028e62 two days later). T16 earlier work unchanged. Parked 
 | Wayback CDX github.com/trolando/ (2051 rows), tvandijk.nl/* (484 rows); captures 20201029042417 network/members, 20201029042414 releases, issues 1-7, 20241218064741 tree/ISOLA24 | fork names, no releases, no dtl in issues | 2026-10-16 | T17 |
 | trolando/{tl,rtl,oink,knor,dfi}-experiments, parallel-si, SPGSolver, hoa2pg, knor (git clone --mirror; rtl-experiments 5168e8b) | grep dtl/counter: none relevant | 2026-10-16 | T17 |
 | 13 forks of trolando/oink (subagent, one bare repo; grep re-run by L-LIT) | see T17 (c) | 2026-10-16 | T17 |
-| van Dijk, "Solving parity games, very slowly" author preprint, tvandijk.nl/pdf/2024festschrift.pdf, 20 pp., created 2024-08-15, sha256 8e36c3732f61feb78972fec1ea1e0aff5b737f9b1288a138f32ff491f31bee3c | §6 requirement 7 (p.15, "good paths" recipe), §7 (p.19, distraction method "solves all known difficult parity games in polynomial time"), Fig. 4, Fig. 6 | 2026-10-16 | T17; not diffed against Springer pages |
+| van Dijk, "Solving parity games, very slowly" author preprint, tvandijk.nl/pdf/2024festschrift.pdf, 20 pp., created 2024-08-15, sha256 8e36c3732f61feb78972fec1ea1e0aff5b737f9b1288a138f32ff491f31bee3c | §6 requirement 7 (p.15, "good paths" recipe), §7 (p.19, distraction method "solves all known difficult parity games in polynomial time"), Fig. 4, Fig. 6 | 2026-10-16 | T17; PREPRINT, retrieved 10:50Z, re-fetched 11:01Z HTTP 200; not diffed against Springer pages |
 | tvandijk.nl PDFs 2018-2024, Google Scholar profile bzOQ-aQAAAAJ, arXiv export API, FMCAD 2026 programme, Highlights 2019-2026, essay.utwente.nl files 98019/92054/98665, Zenodo 10558316/11265650/10932291/14740019, pgsolver, jkeiren/paritygame-generator, SYNTCOMP/benchmarks, mCRL2 (web subagent) | grep for dtl/distance/good path/counter: no DTL counterexample | 2026-10-16 | T17 |
 
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
+- T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
 
 ## Corrections log
 - 2026-10-14: first draft cited priority promotion as arXiv 1608.04548; that id is an astrophysics paper (opened, wrong). Replaced by the CAV 2016 paper before push.
