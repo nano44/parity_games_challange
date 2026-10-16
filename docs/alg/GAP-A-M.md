@@ -1125,11 +1125,13 @@ KILLED (FALSE / DEAD), each with its instance
 | (C-rM): (r0, M) pairs never repeat at a context | climbs_1016/a_best_s32 (ideal −1 contexts) | §13g |
 | (C-rM-stable): same at ideal-stable contexts | h4_def9_oink_n28 | §13g |
 | §6/§12 counts from the buggy tracer (superseded, conclusions kept or corrected) | tracer fix e41ccfb | §6, §12, §15 |
-| (LEX) per-context death vector lexicographically increasing, and (NR) ⇒ n(n+3) route (box 4) | lex_viol_oink_n20.pg (A_DTL, Oink-verified, both orders); synthetic genuine: dtl_lexcounter.py | §18c, §18h |
+| (LEX) per-context death vector lexicographically increasing, and (NR) ⇒ n(n+3) route (box 4) | lex_viol_oink_n20.pg (L-ALG) and red/carry/instances/lex_viol_inj_n28.pg (L-RED R18), A_DTL, Oink-verified, both orders; synthetic genuine: dtl_lexcounter.py | §18c, §18h, DEAD.md |
+| (NR): a fallen vertex is never again the top changed vertex at that context | red/carry/instances/lex_viol_inj_n28.pg (L-RED R18) | §18j, DEAD.md |
+| A per-context potential over the actual state for (H4) | A_DTL: both lex_viol instances (no lexicographic potential over deaths); synthetic: dtl_staterevisit.py (state returns) | §18f, §18j |
 | Per-round monotonicity in T at a fixed input, genuine tangles (synthetic) | dtl_lexcounter.py | §18c |
 | Any potential on the actual per-context state for DEF changes (synthetic, genuine tangles) | dtl_staterevisit.py (pure DEF cycle) | §18f |
 | "Fallers are strictly below the top riser in priority" (box 4 DATA pattern) | lex_viol_oink_n20.pg | §18h |
-| (CM): child M never drops across a parent DEF step into an ideal-stable child context | cm_viol_oink_n28.pg (A_DTL, Oink-verified, both orders) | §18i |
+| (CM): child M never drops across a parent DEF step into an ideal-stable child context | cm_viol_oink_n28.pg (L-ALG) and red/carry/instances/cm_mdrop_both_n28.pg (L-RED R17), A_DTL, Oink-verified, both orders | §18i, DEAD.md |
 
 DATA candidates left after box 4 (A_DTL): (U-MONO_DTL) same-input union monotone in T (701/701 Oink, 661/661 stable,
 §18h); (LEX-R) first differing round grows (775/775, 755/755); "no DEF-down step at an ideal-stable context" (0/181).
@@ -1312,3 +1314,66 @@ child context grows (parent return set shrinks: the §14 staircase), M rose in 2
   TOPS of the old child context (priorities 19, 5, 17). New tangles between the searches: {5, 6, 17, 18}, {8}, {21}. Child
   deaths drop for 7 vertices (e.g. 14: 7 → 4, 9: 6 → 3, 4: 6 → 3); child M 7 → 6. The climb (seed 301) reached 3 M-drops
   in one run by step 3,155 (scratchpad, not committed).
+
+### 18j. L-RED's box-4 instances under these tools; the r0 padding fix; state revisits on DTL (17:20Z)
+- lex_viol_inj_n28 and lex_viol_tie_n28 (red/carry/instances, R18) under dtl_plateau.py, both order data: at s5 → s6
+  (ideal-stable DEF step, U equal at r0 = 3, so LEX-R holds: V_3 grows) the top changed vertex 2 (priority 43) falls 8 → 7
+  while 20 (priority 41), 18 and 7 rise; M 13 → 12; at six contexts of the same searches (|R| 28 … 23). The rise of the
+  LOWER vertex 20 at round 3 propagates up over the later rounds (18a) until 2 dies a round earlier. Same mechanism as
+  lex_viol_oink_n20 (an extra top, here of lower priority, then upward propagation), and as dtl_lexcounter.py with a riser
+  in place of the new tangle. "DEF-down" in the result sense of §18f (stable result shrinks, or stable → −1) is still
+  0 on DTL runs; in the death-vector sense the R18 step goes down. The distinction carries no weight once (LEX) is dead.
+- Padding fix (L-RED caveat, Lead 16:30Z): dtl_regvec.py and dtl_crm.py padded the shorter round list with ∅, which is
+  wrong past the last round of a STABLE call (its set stays at the fixpoint). Fixed (r[min(i, len − 1)]; a −1 run ends with
+  ∅ explicitly). Re-run on the current corpus (experiments/alg/instances, climbs_1016, red/carry/instances): dtl_crm.py
+  output is byte-identical before and after in all four settings (Oink/stable × all/ideal-stable: 372/237/345/208 steps,
+  repeats 4/2/4/2, dips 18/5/19/4); dtl_regvec.py's class counts are unchanged (one detail line and one label change, a
+  stable final step at r0 = 1). dtl_plateau.py (the LEX/LEX-R counts of §18b) always used the fixpoint rule. So §13g's
+  (C-rM) verdicts and §16 stand.
+- Full-state revisits on ACTUAL runs (experiments/alg/dtl_revisit.py; corpus C plus the R17/R18 files; maximal runs of
+  consecutive searches of one phase at one context with T growing, ≥ 3 calls): Oink order 0 full-state revisits in 296
+  runs (return-set-only revisits: 20 with the ideal fixed, e.g. h4_def10_oink_n28, 164 with the ideal moving); stable order
+  0 in 301 (13 / 165). So on DTL data the per-context state is injective, as (LEX-R) implies; only synthetic genuine
+  tangles (dtl_staterevisit.py) make it return.
+
+## 19. Scoping note: C6 (ideal pruning) as the GAP-A target (Lead 17:08Z; at most one page)
+C6 = docs/alg/candidates/C6-DTLhat.md: C5-DTL with best_vertices' consumed union U replaced by the ideal layered union Û;
+sptl, Dom, cut, recursion, extraction unchanged. Prototype only: experiments/alg/dtl_c6proto.py (reuses dtl_pyref).
+(a) Hypotheses of §12 on C6, per today's data. (H4) is VOID: Lemma F and Lemma S are PROVED for C6 (the actual run is the
+    ideal run, monotone in T at a fixed context). The others are unchanged by the switch, and several kills were on
+    deficit-free runs (A_DTL = C6 there):
+    - (H1) cut-attractor carries obey the frontier property (F): READING (R10) plus DATA 67/67 (L-RED); not proved.
+    - (H2a) alive-top self-reinforcing carries: OPEN; (F) FAILS for pruning-driven changes (8 of 136 drivers, §10, measured
+      on A_DTL runs; C6 is identical on runs without a deficit round). APP(k) (§10) satisfies every C6 fact proved so far.
+    - (H2b) dead-top cap carries: Φ, Φ_idx DEAD on C6 too (phi_idx_flat_n20 has 0 deficit calls); what remains is PROVED
+      for C6: carries at index i ≤ n(n+2)·c_i (Lemma F), but c_i ≤ searches makes it circular (§14).
+    - (H3) catch-ups: (CU) DEAD on C6 too (dtl_cu_viol_n24: 0 deficit calls in both order data); Lemma L-epoch PROVED (C6).
+    - Child resets (§15): C6 31 of 153 child comparisons drop (A_DTL 33 of 157); the shape APP needs occurs in C6.
+(b) What C6's GAP-A reduces to. With (H4) void, §6's counting is PROVED for C6: per context ≤ K = O(n²) changes, so
+    N_j ≤ K·C_j over DISTINCT level-j contexts (revisits are free). Hence GAP-A for C6 ⇔ a polynomial bound on the number
+    of distinct child contexts that a parent piece hands out AND in which the child still has work (fresh, resetting child
+    contexts, §6.3b/§16). That is exactly the open core today; APP(k) shows the proved facts allow 2^k. C6 removes one
+    obstruction (fixed-context resets, which today killed (LEX), (NR), (CM) on A_DTL); it does not touch the core.
+(c) Completeness. CONFIRMED: no gain. K4 carries over; K5 for C6 reduces to A_DTL's GAP-C shapes ((α) with the straddle
+    set enlarged by the deficit, (β'), (C-b)); C6-DTLhat.md K5 sketch. DATA: prototype correct with verified strategies on
+    1,530 games; completeness climbs (~19k steps, n = 16, 22) found no failure.
+(d) Running time per search. One pruning round: one tangle attractor per priority level of V (≤ d + 1 levels) plus the
+    unchanged threshold loop: O((d + n)·W_A), W_A = one tangle-attractor pass = O(m + Σ_{t ∈ T} (|t| + |esc(t)|)), the same
+    order as C5's round (DTL-proof.md §3(b)). Rounds per call ≤ n; calls per search as in C5. So a search is polynomial in
+    n, m and |T|, and |T| ≤ n·(searches so far) by Lemma W (extraction is unchanged). Only indices and priorities are
+    stored: no large numbers (TARGET.md §3). The running-time bound of C6 is therefore polynomial iff searches per phase
+    are, exactly as for A_DTL.
+(e) Gauntlet steps 1-3 for C6 (TARGET.md §5):
+    1. Exact pseudocode frozen in the lane notebook (C6-DTLhat.md already gives it as a one-function diff to C5-DTL.md; it
+       needs the order datum ω and a freeze like L26) and ONE implementation. The prototype reuses L-ALG's dtl_pyref; a
+       clean implementation (or a patched Oink best_vertices) is needed.
+    2. Agreement with Zielonka on 10,000 random games and every hard family, strategies output and verified (L-COMP),
+       runtime growth plotted; then a second independent implementation.
+    3. Barrier statement and literature check (L-LIT): whether ideal layered pruning appears in van Dijk's DTL variants or
+       elsewhere, and which lower-bound frameworks (e.g. attractor-decomposition) C6 lies outside. DTL's step-3 caveats
+       (T16) carry over since only the pruning changes.
+    Step 4 then starts from DTL-proof.md: soundness, strategies, halting carry over (reading in C6-DTLhat.md); GAP-C as
+    A_DTL; GAP-A as in (b).
+Reading (L-ALG): C6 is the cleaner target for a GAP-A proof (one fewer reset device, and every per-context lemma PROVED),
+but the core question, fresh resetting child contexts, is identical. The switch is worth its gauntlet cost only if the
+fleet commits to the GAP-A core proof on C6. It does not by itself move GAP-A.

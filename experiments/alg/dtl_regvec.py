@@ -40,7 +40,7 @@ if __name__ == "__main__":
             for (s1, r1, v1, h1, *_), (s2, r2, v2, h2, *_) in zip(occ, occ[1:]):
                 if h1 != h2 or r1 == r2: continue                     # DEF pairs only: ideal unchanged, actual changed
                 L = max(len(r1), len(r2))
-                pick = lambda r, i: r[i] if i < len(r) else frozenset()
+                pick = lambda r, i: r[min(i, len(r) - 1)]   # fixed box 4 (L-RED caveat): a stable run stays at its fixpoint; a -1 run ends with the empty set
                 r0 = next((i for i in range(1, L + 1) if pick(r1, i) != pick(r2, i)), None)
                 if r0 is None or r0 - 1 >= len(v1) or r0 - 1 >= len(v2): continue
                 A, B = v1[r0 - 1], v2[r0 - 1]
