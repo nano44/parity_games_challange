@@ -743,6 +743,26 @@ pieces 0..j-1; measured ctx_changed = 0.
   - Key earlier instances agree in both orders and with Oink (iterations): phi_idx_flat_n20 5, nest_nest_s84 19,
     lemmaS_viol_n20 8.
 
+### 13c. L-RED's question: one deficit-driven change per NEW straddling tangle? (13:21Z; Lead 13:13Z)
+Tool: experiments/alg/dtl_straddle.py (Oink order, exact). At every depth-0 call it records the straddling tangles of
+the rounds where the actual and ideal survivors differ. For consecutive calls at one context it splits those of the
+later call into NEW (learned after the earlier call) and OLD.
+- DATA, three pinned-A_DTL instances: h4_def4_oink_n20 (4 DEF at piece 0), lemmaS_Mdrop_n20 and lemmaS_viol_n20
+  (both on trunk, experiments/red/carry/instances). At EVERY consecutive pair of calls at a deficit context (19 pairs
+  over contexts |R| = 20, 19, 18, 14):
+  - the later call has ≥ 1 NEW straddling tangle (1 to 3 of them);
+  - every tangle that straddled in the earlier call still straddles: the straddling set only GROWS at a fixed context.
+  Example, h4_def4_oink_n20, piece 0: straddlers {1} → {1, 3, 4} → {1, 3, 4, 5, 6} → {…, 7, 8, 9} → {…, 10, 11, 12}.
+- So the data supports "each deficit-driven change at a context comes with ≥ 1 new straddling tangle there". The
+  resulting bound is DEF changes per context ≤ (straddling tangles learned while the context is visited). But tangles
+  are ≤ n · (searches) by Lemma W, so as a GLOBAL bound this is CIRCULAR, like c_i in §14. It bounds deficits by
+  learning, not by n.
+- What a non-circular (H4) bound would need: a per-context cap on straddlers. The straddling set is monotone in the
+  data, and each straddler is a tangle with vertices in ≥ 2 regions of one round. Nothing proved caps how many distinct
+  tangles can straddle at one context; tangles are subsets, so there can be many. Not proved; DATA only (19/19).
+- Not tested: whether the NEW straddler is the one that prunes the leader (L-RED's M-drop mechanism). Its region
+  bookkeeping per round is in dtl_straddle.py and can be extended.
+
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
 depth-0 index i in a phase. By §11e, carries at index i ≤ n(n+2) · c_i.
