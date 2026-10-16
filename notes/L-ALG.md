@@ -45,6 +45,16 @@
   app_model.py, dtl_childmono.py. Last push 155362c.
 - TRAP: the Lead's message stamps run ~4 min ahead of `date -u` here; stamp my own text from `date -u` only.
 
+- 12:07Z state (produced on Opus 5.5): Φ_idx DEAD (§11d, phi_idx_flat_n20 in ORIGINAL ids, single driver t9, r0 = 5;
+  nest_nest_s84 second killer, redundant drivers; DEAD.md 38f10e4; RESULTS DE9 by Lead). Lemma F PROVED (C6). §14 c_i:
+  the reduction is circular (c_i ≤ searches). §15: child resets are common with the fixed tracer (33/157), anatomy by
+  parent return-set move, coarse causes lost tangle / new escape. dtl_pieces depth bug FIXED e41ccfb; §6 re-measured,
+  §12 and §10.3 marked. C7 parked (Lead). Running in scratchpad: xclimb seeds 93 (n = 20, 10 flat carries), 94 (n = 32);
+  nestclimb (fixed tracer) seeds 111 (n = 24), 112 (n = 40, from nest_nest_s81). Last push 72a6d89.
+- TRAP (again, 3 times today): writing a doc stamp from memory instead of the `date -u` output of the same command.
+  Rule: paste the stamp only from a `date -u` printed in the same tool call.
+- TRAP: a single-removal driver test misses REDUNDANT drivers (nest_nest_s84). Use removal plus sufficient-alone.
+
 ## Dead ends (third successor)
 - (M) / Claims P, Q / F5 at a fixed context: DEAD for A_DTL. Obstruction: straddle-deficit (GAP-A-M.md Lemma E); killing
   instance experiments/alg/instances/dtl_mviol_n20.pg (Oink iterations 3-odd → 4-odd, distance 8 → 7); synthetic
