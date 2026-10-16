@@ -134,3 +134,9 @@ leaves one escape: a fast level duplicated per slow state, so that a carry eatin
 searches ~ (fast length) x (slow states) with n of the same order, i.e. linear. Remaining routes for a counter: fresh
 contexts through cut recursion ((ii) above; L-ALG's replay instances dtl_replay4_n32 and dtl_replay2deep_n32 are the
 current data), and the forgiven-type support case.
+DATA for (O) (experiments/red/carry/dtl_ogate.py, exact against Oink via the tracer's order recipe): an order-gate event is
+an sptl region computed twice with the SAME (player, top, vertex set) but a different SCC of the top. Census, 0 events in
+every case: tc+ N = 2, 3, 4, 5; dtl_mviol_n20; L-ALG's dtl_replay4_n32 and dtl_replay2deep_n32; this lane's R9 and R10
+instances (278 distinct region keys over 11 files); 3,000 random games with n <= 16 (`--random 3000 16 7`, 7,383 keys).
+Adversarial hill-climbs (dtl_search.py fitness `ogate`: events, with OTHER events weighted 100) are running at the time of
+writing. So no run has shown L-ALG's (O) mechanism even once, and (O1)-(O3) say that a successful one would not carry anyway.
