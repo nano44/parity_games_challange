@@ -68,3 +68,6 @@ level i* holds a 1, and the bottom loses the top of every future tangle. What su
 the top of every t(c) whose deepest zero is i. z_i is then removed at piece i exactly in states with b_i = 1, which are the
 states that need no new deepest-zero-i tangle. Whether the rest of the wiring survives this change (other levels' z_j must
 not join z_i's region; the deeper ones' escapes of section 3 remain) is OPEN. Section 3's wall is untouched by this change.
+
+## Stamp correction (10:13Z by date -u)
+Section 5's heading says "10:27Z by date -u". That is wrong: the `date -u` reading taken in the same command was 10:10Z (commit e7cf65d). From now on headings are generated from `date -u` inside the command that writes them.
