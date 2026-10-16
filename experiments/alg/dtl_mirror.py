@@ -162,6 +162,19 @@ def analyse(d, out, name):
                 bk["dead_m1_top_rescued_raises_Ri"] = bk.get("dead_m1_top_rescued_raises_Ri", 0) + (dnew[ut] > reci.get(ut, 0))
                 if not some_up and len(out.setdefault("c_ex", [])) < 3:
                     out["c_ex"].append((name, k + 1, i, kind, [(u, dprev[u], dnew[u], reci.get(u, 0)) for u in resc]))
+            # (e) R12 §9 (C-c): where is C's high escape e (e in R, pr(h) < pr(e)) at the learning piece P of search s?
+            if st.startswith("dead"):
+                bs, bP, bdep, _ = d.born[C]
+                hi = [e for e in d.tout[C] if e in R and d.pr[e] > d.pr[h]]
+                RP = a["pieces"][bP][0] if bs == k + 1 and bP < len(a["pieces"]) else None
+                if not hi: cat = "no_high_escape_in_R"
+                elif RP is None: cat = "P_unknown"
+                elif bP <= i: cat = "P_le_i_" + ("all_e_outside_RP" if all(e not in RP for e in hi) else "some_e_in_RP")
+                else: cat = "P_deeper_" + ("all_e_outside_RP" if all(e not in RP for e in hi) else "some_e_in_RP")
+                cat += "_d%d" % min(bdep, 1)
+                bk["e_" + cat] = bk.get("e_" + cat, 0) + 1
+                if cat.startswith("P_le_i") and len(out.setdefault("e_ex", [])) < 4:
+                    out["e_ex"].append((name, k + 1, i, kind, C, h, hi, bP, bdep))
             # (a) does a rescued vertex reach the new return set (or the piece turn stable)?
             Mb = rb[-2] if len(rb) > 1 and not rb[-1] else rb[-1]
             to_max = (pb_res != -1) or any(u in Mb for u in resc)
