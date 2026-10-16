@@ -546,6 +546,31 @@ runs; 449 changes at −1 pieces (347 at Dom(prevV) pieces, 102 at cut pieces).
   class (H2a), which Φ_idx does not cover (23/38 at cut pieces above). The near miss confirms the gap is in (H2a): it is
   not a Φ_idx counterexample.
 
+## 11c. Φ_idx with the corrected piece state, and a data check of R12 §9 (11:01Z; Lead 10:59Z)
+Same data set as §11b (experiments/alg/dtl_mirror.py at this commit, C6, MIRROR_NMAX=30, 800 random games). LEVEL now uses
+the corrected state of §6 (cut piece: R, −1, attractor; STATE_V=1 gives the old count).
+- Transitions at a −1 piece at an equal context: 347 (was 449). 329 of them are at Dom(prevV) pieces (was 347): removing
+  phantom V changes at cuts uncovered 12 more real Dom(prevV) changes behind them. 18 are at cut pieces whose result type
+  changes, and 56 are CUT-ATTRACTOR changes (same R, attractor grown), now counted separately as (H1)/(F) territory. Example:
+  dtl_cu_viol_n24 search 3, piece 1, attractor 2 → 17 vertices.
+- Φ_idx restated for Dom(prevV) pieces only (V is real state there). Every dead-top cap carry raises R_i(u) for some
+  rescued u: 273/273. 115 stay −1, and in each of them the HIGHEST rescued vertex raises R_i (115/115). 158 turn the
+  piece stable. Alive-top carries at Dom(prevV) pieces: 1 of 9 that stay −1 raises no R_i (unchanged class, (H2a)).
+  Status: CANDIDATE, DATA only.
+- R12 §9 (C-a) as stated is FALSE on data. "The carry fires at a threshold θ ≥ pr(e) for an escape e with pr(e) > pr(h)":
+  12 dead-top carries (7 + 5 at Dom(prevV) pieces) have NO escape in R above pr(h). Smallest: dtl_proof_c3.pg, search 1,
+  piece 0. The tangle {y, s} (top y, pr 2) has one escape in R, w (pr 1). The rescued vertex is z (pr 6). Covering w needs
+  the threshold of x (pr 3) on its attraction path. The correct form is: covering some escape needs a threshold
+  θ > pr(h), and that threshold may come from a vertex on the escape's attraction path rather than from the escape itself.
+  This is a statement, not checked beyond this case.
+- R12 §9 (C-c), first bullet ("piece i's own Dom cannot remove e"), FAILS on data in 17 cases (15 Dom(prevV), 2 cut). In
+  search s, a high escape of C left R at piece i itself (e ∈ R_i, e ∉ R_{i+1}) and is outside R_P at C's learning piece
+  P > i. Example: cross_h_k1_n10_m16_27.pg, search 1, piece 0, tangle 0 (top 2, high escapes 4 and 9). A likely reason
+  is that §9's step "Dom(M_i) ⊆ piece i's final-round region" needs the reverse of Lemma D3's inclusion (Dom ⊇ regions;
+  Dom's target X admits partly removed tangles, §9). Not checked further. In every other dead-top carry with a high escape,
+  P > i and the escape left between i and P or lies in R_P (consumed at P): 224 + 1 all outside R_P, 36 with some in R_P.
+  P ≤ i never occurs at Dom(prevV) pieces.
+
 ## 13. (H4): deficit-triggered changes at fixed contexts, A_DTL (10:47Z; Lead 10:22Z "then (3) deficits")
 Tool: experiments/alg/dtl_deficit.py (61fb52c). At every depth-0 piece of an A_DTL run it also computes the ideal (C6 rule)
 result on the same tangle set and context. A change between consecutive searches of a phase is DEF (deficit-triggered)
