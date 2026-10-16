@@ -56,6 +56,7 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
 - GAP-C: (alpha) (straddling tangle leaving the lowest region open) never produced; proxy fitness "alpha" in dtl_search.py.
 
 ## Things only I know
+- Stamps: write `date -u` readings in headings, never guesses (Lead 09:55Z caught R10/R11 headings 15-45 min late; correction appended to R10).
 - Clocks: my `date -u` runs ~30 min behind the Lead's stamps. Boxes are quoted in the Lead's clock.
 - TRAP (hit three times): `pkill -f PATTERN`, `pgrep -f PATTERN | xargs kill` and `ps aux | grep "[p]at" | xargs kill`
   kill my own shell when the pattern occurs ANYWHERE in the same shell command (e.g. in a later nohup line). Kill in a

@@ -196,3 +196,12 @@ candidate at r0 in s, so death_s(h) >= r0 + 1. Two consequences:
 Status: (M1) is a reading with the same premises as M-cond (no deficit in piece 0). (M2) is the precise shape a
 domfirst-driven counter digit needs. I have not built it within the box; tc+'s Z/H drivers are the only known instance of
 pruning-driven carries, and tc+ is a sweep (L-ALG section 6.3), i.e. each carry is used once.
+
+## Timestamp correction (appended 09:57Z by `date -u`; Lead 09:55Z)
+The "~HH:MMZ" stamps in this file's section headings (and "~09:55Z" in R11's title) were guesses, not `date -u` readings,
+and run 15-45 minutes late. The commit times (`git log --date=format-local:%H:%MZ`) are the record:
+"Interim 1" 08:30Z (5f72d39); "CARRY obstruction for two cut-eating levels" 08:47Z (69bcebd, heading says ~09:10Z);
+"Sharper form" 08:54Z (de8a431, heading ~09:35Z); its DATA 08:57Z (bb50e90); "support obstruction" 09:12Z (da3bdd9,
+heading ~09:40Z); R11 09:20Z (5dc5707, title ~09:55Z); "order gate (O)" 09:25Z (d97188c, heading ~10:05Z); census 09:30Z
+(47ccbe0); case (iv) DATA 09:34Z (f8bc9fe); D2 check 09:39Z (02b932b); "Adversarial pass" 09:47Z (ed14e43, heading
+~10:20Z); "Outside 2CE" 09:54Z (f954923, heading ~10:40Z). From here on headings carry `date -u` readings.
