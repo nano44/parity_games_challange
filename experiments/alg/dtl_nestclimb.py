@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """L-ALG (produced on Opus 5.5, 2026-10-16 box 4), queue item (3): hill-climb for NESTED deficit runs on A_DTL.
 Fitness (lexicographic): F1 = max over phases and child pieces j >= 1 with >= 2 distinct DEF contexts of N_j (total DEF
-changes at piece j over its contexts; dtl_nestK's k(j, C)), then total DEF in that phase. Order datum from DTL_ORDER
+changes at piece j over its contexts; dtl_nestK's k(j, C)), or with NEST_FIT=prod of c_j * min_C k(j, C) (contexts with
+DEF times the fewest DEF changes in one of them: a nested product), then total DEF in that phase. Order datum from DTL_ORDER
 (oink = exact pinned order). Padding: --pad K adds K source-only vertices (no in-edges) to the seed game.
 Usage: DTL_ORDER=oink dtl_nestclimb.py OUTDIR SEED STEPS --seed-game G.pg [--pad K]"""
 import sys, os, argparse, random, signal
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import pg, dtl_deficit as X, dtl_nestK as NK
+FIT = os.environ.get("NEST_FIT", "sum")   # sum: N_j over >= 2 child contexts; prod: c_j * min_C k(j, C)
 from dtl_mclimb import mutate, TO
 
 def measure(g, limit=20):
@@ -32,7 +34,10 @@ def measure(g, limit=20):
         K = [max([c for (jj, _), c in k.items() if jj == j] or [0]) for j in range(J)]
         N = [sum(c for (jj, _), c in k.items() if jj == j) for j in range(J)]
         C = [sum(1 for (jj, _) in k if jj == j) for j in range(J)]
-        f1 = max([N[j] for j in range(1, J) if C[j] >= 2] or [0])
+        if FIT == "prod":   # nested product: child contexts with >= 1 DEF times the fewest DEF changes among them
+            f1 = max([C[j] * min(c for (jj, _), c in k.items() if jj == j) for j in range(1, J) if C[j] >= 2] or [0])
+        else:
+            f1 = max([N[j] for j in range(1, J) if C[j] >= 2] or [0])
         f = (f1, sum(N))
         if f > best: best, info = f, (K, N, C, len(ph), d.iterations)
     return best, info
