@@ -229,3 +229,4 @@
 - 09:59Z merged l-alg a19120a ((B) APP barrier; Lead re-ran app_model.py k=8-10: APP-MODEL OK) and l-red f954923 (MIRROR). Routed APP realisation to L-RED; L-RED's 169 late drivers at domfirst pieces sent to L-ALG as possible (F) refutation data.
 - 10:06Z merged l-alg 9cdf366. Lead decision: C6 completeness gives nothing beyond GAP-C, so L-ALG retargets to the crux: a bound on pruning-driven carries at -1 pieces (prove L-RED's MIRROR (M1); constrain self-reinforcing carries (M2)). L-RED stays on realising APP: designer and adversary on the same crux, separate.
 - 10:08Z merged l-red 62261a5 (L-RED corrected its heading stamps in an appended note).
+- 10:11Z hourly sweep: no overage (seven_day allowed_warning). Lead ctx 161k (post-compaction); L-ALG 125k working; L-RED 123k working. CI: all completed runs green (679-687); 688-690 in progress. M2 done, no daily owner line. No exceptions.
