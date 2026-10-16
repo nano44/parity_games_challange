@@ -8,9 +8,9 @@ Each function cites the OCaml file and line numbers it transcribes. Conventions 
   src/lib/paritygame/paritygame.ml:365-386  output: 'parity <n-1>;' then 'i pr pl succs "desc";'
   src/lib/generators/policyiter/stratimprgenerators.ml:11-50  SymbolicParityGame: a symbol gets the next index
       the first time it is mentioned (as a node or as an edge target); add_node overrides the data of a touched symbol.
-Usage: pgsolver_port.py GENERATOR N   (GENERATOR in: recursiveladder switchallexp switchbestexp friedmannsubexp fearnleysubexp)
-Running the PGSolver binaries themselves was not possible in this session (see README); the port is to be
-checked line by line against the cited source by the referee."""
+Usage: pgsolver_port.py GENERATOR N   (GENERATOR in: recursiveladder switchallexp switchbestexp)
+Checked 2026-10-15 against the original binaries at d3cd624: byte-identical output for N = 1..6, 8, 10, 16
+(pgsolver-binary-diff.md)."""
 import sys
 
 

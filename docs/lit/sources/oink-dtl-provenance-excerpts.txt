@@ -1,0 +1,104 @@
+# Excerpts from github.com/trolando/oink (Apache-2.0, (c) Tom van Dijk), saved by L-LIT for T17 on 2026-10-16
+# 1. README.md at 39254fe977ded875ec218cdd7ae5be444345132b (2021-06-25), algorithm rows and counter rows
+36:DTL             | Distraction-free Tangle Learning (research variant)
+37:IDTL            | Interleaved Distraction-free Tangle Learning (research variant)
+104:counter\_rr    | Counterexample to the RR solver
+105:counter\_dp    | Counterexample to the DP solver
+106:counter\_m     | Counterexample of Maciej Gazda, PhD Thesis, Sec. 3.5
+107:counter\_qpt   | Counterexample of Fearnley et al, An ordered approach to solving parity games in quasi polynomial time and quasi linear space, SPIN 2017
+108:counter\_core  | Counterexample of Benerecetti et al, Robust Exponential Worst Cases for Divide-et-Impera Algorithms for Parity Games, GandALF 2017
+109:counter\_rob   | SCC version of counter\_core.
+110:counter\_dtl   | Counterexample to the DTL solver
+
+# 2. git show 1ba8b0a1b40b3eb84777a747a3b463bd94a17360 (2021-07-02, 'Rename the DTL solver')
+diff --git a/README.md b/README.md
+index 54666e3..698a4d5 100644
+--- a/README.md
++++ b/README.md
+@@ -31,10 +31,11 @@ Algorithm       | Description
+ :-------------- | :-------------------------------------------------------------------------------------------------
+ TL              | Tangle learning (standard variant)
+ RTL             | Recursive Tangle Learning (research variant)
++ORTL            | One-sided Recursive Tangle Learning (research variant)
+ PTL             | Progressive Tangle Learning (research variant)
+ SPPTL           | Single-player Progressive Tangle Learning (research variant)
+-DTL             | Distraction-free Tangle Learning (research variant)
+-IDTL            | Interleaved Distraction-free Tangle Learning (research variant)
++DTL             | Distance Tangle Learning (research variant based on 'good path length')
++IDTL            | Interleaved Distance Tangle Learning (interleaved variant of DTL)
+ FPI             | (parallel) Distraction Fixpoint Iteration (similar to APT algorithm and to Bruse/Falk/Lange)
+ FPJ             | Fixpoint Iteration using Justifications
+ FPJG            | Fixpoint Iteration using Justifications, greedy variant
+diff --git a/src/solvers.cpp b/src/solvers.cpp
+index 21c4930..c218130 100644
+--- a/src/solvers.cpp
++++ b/src/solvers.cpp
+@@ -67,8 +67,8 @@ Solvers::Solvers()
+     add("bqpt", "bounded quasi-polynomial time progress measures", 0, [] (Oink* oink, Game* game) { return new BoundedQPTSolver(oink, game); });
+     add("ptl", "progressive tangle learning", 0, [] (Oink* oink, Game* game) { return new PTLSolver(oink, game); });
+     add("spptl", "single-player progressive tangle learning", 0, [] (Oink* oink, Game* game) { return new SPPTLSolver(oink, game); });
+-    add("dtl", "distraction-free tangle learning", 0, [] (Oink* oink, Game* game) { return new DTLSolver(oink, game); });
+-    add("idtl", "interleaved distraction-free tangle learning", 0, [] (Oink* oink, Game* game) { return new IDTLSolver(oink, game); });
++    add("dtl", "distance tangle learning", 0, [] (Oink* oink, Game* game) { return new DTLSolver(oink, game); });
++    add("idtl", "interleaved distance tangle learning", 0, [] (Oink* oink, Game* game) { return new IDTLSolver(oink, game); });
+     add("rtl", "recursive tangle learning", 0, [] (Oink* oink, Game* game) { return new RTLSolver(oink, game); });
+     add("ortl", "one-sided recursive tangle learning", 0, [] (Oink* oink, Game* game) { return new ORTLSolver(oink, game); });
+     add("tl", "tangle learning", 0, [] (Oink* oink, Game* game) { return new TLSolver(oink, game); });
+
+# 3. git show --stat a028e62e5fc5a6b283d806c49afd8ee53617cfde (2021-07-04, 'Added solver DFTL and counterexample')
+a028e62e5fc5a6b283d806c49afd8ee53617cfde Sun Jul 4 16:28:06 2021 +0200 Tom van Dijk
+Added solver DFTL and counterexample
+
+ CMakeLists.txt             |   6 +
+ README.md                  |   5 +-
+ src/solvers.cpp            |   3 +
+ src/solvers/dftl.cpp       | 744 +++++++++++++++++++++++++++++++++++++++++++++
+ src/solvers/dftl.hpp       |  95 ++++++
+ src/tools/counter_dftl.cpp |  84 +++++
+ 6 files changed, 936 insertions(+), 1 deletion(-)
+
+# 4. src/solvers/dftl.cpp @ a028e62, header comment (lines 17-60)
+#include "dftl.hpp"
+
+namespace pg {
+
+/**
+ * The "distraction-free" tangle learning algorithm.
+ *
+ * PROCEDURE iteration(player)
+ * 1. Take <player>-priority vertices V as targets
+ * 2. Tangle-attract to V from top to bottom.
+ * 3. Closed regions become tangles
+ * 4. Repeat 2-3 until no more closed regions
+ * 5. Remove lowest region top from V
+ * 6. Repeat 2-5 until V is empty
+ *
+ * Possible executions:
+ * A. Run iteration(even) until no new tangles found; then iteration(odd) until game is solved
+ * B. Run iteration(odd) until no new tangles found; then iteration(even) until game is solved
+ * C. Run iteration(even) once then iteration(odd) once; repeat until game is solved
+ *
+ * Each iteration of this algorithm runs in polynomial time and consists of O(n²) many "steps".
+ * Each "step" (2-3) is simply one iteration of single-player tangle learning.
+ * After each step, either there are fewer regions, or V is smaller.
+ *
+ * Each DFTL iteration starts with V set to all even-priority (or odd-priority) vertices.
+ * Each step then decomposes the game into regions dominated by the vertices in V.
+ * That is, starting with the highest v in V, attract all vertices+tangles with priority <= pr(v).
+ * Each highest vertex in v (the target of the attractor) is called the top vertex of its region.
+ * Every *closed* region is then analysed to find new tangles, as in standard tangle learning.
+ * If however no region is closed, then we assume that at least one vertex in V is a distraction.
+ * We assume that "surely" the lowest top vertex is distracting, so we remove that vertex from V.
+ *
+ * Every step thus either removes a vertex from V, or learns new tangles (removing a region).
+ * Hence each iteration has at most O(n²) steps and resuilts in at most O(n²) new tangles.
+ * 
+ * For the possible executiong A, B, C, the counter_dftl generator is a lower bound that requires
+ * exponentially many steps.
+ *
+ * When the ``prepartition'' flag is set to True, this lower bound does not work anymore. It is
+ * yet unclear whether the counterexample can be adapted to deal with the prepartition variation.
+ * The prepartition variation modifies step 1 of iteration, by first computing a partition of the
+ * game into even regions and odd regions, and only considering all even/odd vertices in even/odd
+ * regions. In a way, this combines the "standard" mechanism of distraction removal (attract to
+ * opponent) with the remove-lowest-open-top mechanism.

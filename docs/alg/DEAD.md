@@ -76,3 +76,26 @@
   5 fixpoint rounds) but not the tangle structure: the counter states of tc give the same exponentially many tangles in H as
   in G. Idea killed: "give tangle learning the register memory". The complementarity of the two obstructions (registers vs
   tangle proliferation) is not resolved by composing the two mechanisms.
+
+## Proof-route dead ends for DTL GAP-A (not candidates): potentials Φ and Φ_idx for dead-top cap carries — DEAD (2026-10-16 11:36Z; produced on Opus 5.5)
+Context: docs/alg/GAP-A-M.md §11b-§11e, hypothesis (H2b) of §12. A "dead-top cap carry" is a change between consecutive
+searches at a depth-0 −1 piece with an equal context, driven by a tangle whose top was pruned before the first changed
+round, rescuing only higher candidates.
+- Φ (every such carry raises a vertex's death round above its record over ALL −1 pieces of the phase): DEAD. Killer:
+  experiments/alg/instances/cross_h_k1_n11_m17_37.pg (n = 11), search 1, piece 0. The rescued vertex reaches death 3,
+  equal to its record from another −1 piece of the same search (§11b).
+- Φ_idx (per piece INDEX i: every such carry raises R_i(u), the record of a rescued u over the phase's −1 results at
+  index i; original and Dom(prevV)-only restatement): DEAD.
+  Killer: experiments/alg/instances/phi_idx_flat_n20.pg (n = 20; Oink A_DTL 11 tangles, 5 iterations, verified; 0
+  deficit calls; A_DTL = C6 there). At piece 2 (original vertex ids), s3 → s4 has the same context and first differing set
+  V_5 {17, 19} → {14, 17, 19}. The single driver is tangle 9 (top 5, pr 16, dead), and the rescued vertex 14 reaches death
+  6, equal to its record from s1 (another context); vertex 19 reaches 7, equal to its s1 record (§11d). L-RED confirmed
+  this independently on A_DTL (l-red 17db195). Second
+  killer: climbs_1016/nest_nest_s84.pg, s13 → s14, piece 1; vertex 30 reaches 6 = its record from s9-s12 (another
+  context), driven by redundant drivers including dead-top tangle 26 (§11d.1). The original definition is also killed by
+  phi_idx_cutrec_n20.pg (records from cut pieces).
+- Exact obstruction: CROSS-CONTEXT records. Within one context every carry raises the same-context record (Lemma F,
+  PROVED for C6, §11c.1). An earlier visit to a DIFFERENT context at the same index can set a higher death that a later
+  carry only reaches. The earlier "support" (142/142, 273/273) never exercised this case (0/115 binding).
+- Idea killed: a per-index record potential bounding dead-top cap carries without bounding contexts. Idea kept: Lemma F,
+  so carries at index i ≤ n(n+2) · c_i (c_i = distinct Dom(prevV) contexts at index i), and (H2b) reduces to c_i.

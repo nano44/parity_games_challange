@@ -77,3 +77,223 @@
 - 09:03Z sweep: overage false; Lead $59.0 ctx 326k. L-LOWER (new) RUNNING T-L2 box, ctx 125k, $2.7. REFEREE/L-ATTR idle after DE3. No action.
 - 09:50Z NOW 'In flight' rewritten (stale since 10-14; OWNER-DESK told owner L-ATTR still on psolC). Lead miss: In flight not maintained with roster.
 - 09:50Z D5 (owner: do not call M4 unlikely). L18: M4 primary; L-ALG spawned session_01WN44zjFXZSqaL5SwsoDn7d (fable, claude/l-alg), design loop 12h.
+- 10:03Z sweep: overage false; Lead $60.6. L-ALG running (Oink build, n=4 corpus regen, C1 spec). L-LOWER running ('recreating killed BFS tool'; usage meta stale at $2.7 since 09:02; no push since c7ce9d1) - recheck 11:01Z, stall if no push by then.
+- 10:06Z D6 recorded (owner Q8 a); L-SI spawned session_01HnGDSEHG3NHszV1y8ND6BF (fable, claude/l-si). Working: Lead, L-ALG, L-SI, L-LOWER, WATCHDOG = 5 (cap).
+- 11:08Z L-SI interim: S2a MSF survives all families (c73f69e); told to keep falsifying (killer search, 10k random, runtime growth). L-LIT woken T12 (barrier check). L-LOWER not stalled (0fb10a9). Lead miss: earlier cap count included Lead+WATCHDOG; D1 counts lanes (L-LIT, L-COMP, REFEREE = 3 at start). Now 4 of 5.
+- 11:12Z sweep: overage false; Lead $62.5. CI green on lane heads (l-si c73f69e, l-lower 0fb10a9, l-alg 0138b03; 336b1b8 in progress). L-ALG: C1, C2 dead; claims T-ALG1 (psolC complete iff Strahler 1, proof) - route to referees at box end; C3 running. L-LOWER: B_2(5)>=9 (Glucose). No action.
+- 11:16Z L-LIT T12 done (706d5e1, merged): no published bound covers MSF; killer candidate (Disser-Mosis D_n with Odd gates) sent to L-SI. L-LIT disclosed a subagent apt-installed ghostscript in its own container (no repo effect). L-LIT parked.
+- 11:22Z L-ALG interim (a5164a4): C1/C2 dead (register hierarchy), C3 ZP no gauntlet (GA superpoly), T-ALG1 deferred. Cross-test: ZP GA instances sent to L-SI for MSF.
+- 11:32Z L-SI: S3 dead (M_L), MSF 3L-2; refined bound via X. L-RED spawned session_017WLo5xfMxRZ4f6n2Su6274 (fable, claude/l-red), independent adversary vs MSF, 8h. Lanes: 4/5.
+- 11:48Z L-RED FLAW in L-SI Claim F (definition of cycle-creating); forwarded to L-SI with 4 actions. MSF not killed.
+- 12:14Z L-SI fixed Claim F (F'), X-bound empty (X ~ iteration count). L-RED told: target iteration count directly.
+- 12:24Z L-RED KILLED MSF (2^N-1, gated Bland, two engines). L-RED retargeted to S1 RAR (original Random-Facet). L-SI told: immune-to-gate-relabelling requirement. DE4 after L-RED push.
+- 12:35Z l-red merged (e1e9402); DE4 recorded (MSF). L-RED retargeted to RAR (resent).
+- 12:40Z L-ALG C3 ZP dead (T_R explicit, ~30x/tile); DE5 recorded (C1-C3).
+- 12:08Z L-RED: S1 RAR killed via FHZ transfer lemma (unrefereed). Asked for push + 'why didn't FHZ say so' check; retargeted L-RED to S5/S6. L-SI told to stop RAR runs. Next: referee on transfer lemma, L-LIT novelty.
+- 12:06Z SWEEP EXCEPTION: seven_day rate limit allowed_warning on all sessions (not overage; resets 10-21 21:00Z). Q9 to owner via OWNER-DESK (a/b/c, rec b). Interim: no new sessions except RAR-lemma referee. Spend: Lead 69.1, L-ALG 24.8, L-SI 29.1, L-LOWER2 21.1, L-RED n/a. CI green.
+- 12:15Z l-red R2 merged (0d50d4a). REFEREE-2 R2-TL (transfer lemma + why-FHZ-silent check). L-RED parked (spend; S5/S6 cancelled). L-SI to record S1 conditional.
+- 12:16Z REFEREE-2 R2-TL OK with fixes (995cfd3, merged). DE6 recorded (S1 RAR). Second referee, L-LIT novelty, L-RED F1 fix deferred pending Q9.
+- 12:36Z D7 owner chose Q9 (a): continue. Freeze lifted (L20). L-RED resumed (F1, S7, S5/S6); REFEREE second read of transfer lemma.
+- 12:48Z L-ALG: C4 dead; DTL survives everything (lead); L-ALG redirected to DTL provenance/pseudocode/data. tc+ beats PTL/SPPTL (bench note).
+- 12:54Z REFEREE R-TL2 signed (6d5d9ad, merged); confirming coverage of l-red 8bb9d22. L-LIT T13 novelty started. L-RED nits queued.
+- 12:58Z L-LIT T13 NEW-as-statement (c962d80, merged); L21 classification; CHECKER after L-RED fix.
+- 13:03Z sweep: no overage (seven_day allowed_warning, D7 continue). Lead $74.5, ctx 596k (state in NOW/LEAD-STATE; compaction expected). Lanes: L-ALG 396e354 (DTL sweep), L-SI 3ff7cf7, L-LOWER ae85eca (K_5 >= 9 gates, 3 jobs), L-RED 8bb9d22 (S7 + one-token fix pending). No action.
+- 13:19Z L-RED R3: S7 HELD (7edf1c8). One-token R2 fix still missing -> asked first; then L-RED continues on S7 reset redesign (not S5).
+- 13:28Z L-RED box2 end: S5/S6 HELD (R4 0203590); one-token R2 fix still missing (re-asked, messages crossing). S7: L-SI step 2 + proof attempt; L-LIT T14 barrier; L-RED box 3 kill. Cap 5.
+- 13:31Z L-RED R2 fix 49ae306 (case 3: 4^{j*}); both signatures cover it; merged. CHECKER queued for next slot.
+- 13:35Z L-LIT T14 S7 NOT COVERED (8dd2e55, merged); attack hint to L-RED. CHECKER C2 on RF result started.
+- 13:41Z CHECKER C2 FAIL (ce07713): one signature only. LEAD MISS: counted REFEREE-2's first read (which I asked to be 'not a signature') as a signature in L21 and in the C2 brief; also said referee 42f11c6/5ed56c5 were on trunk when they were not. Fixed: referee + checker merged (db46c2c, 4b19501), L21 correction, REFEREE-2 asked to sign. Lesson: before a CHECKER brief, grep each referee file for its signature block and check ancestry on trunk.
+- 13:52Z RESULTS R3 LANDED (original Random-Facet lower bound on parity games), CHECKER C2 PASS 068f9de, entry with N-2/N-3 wording only. Follow-ups: L-RED remove 'unrefereed' lines in R2-RAR.md; L-LIT fix T13 citation; fhz.py relation under python3 -I.
+- 13:57Z L-ALG end-of-box (898d02d, merged): DTL survives all; van Dijk slides say path-based variants vulnerable to a TC variant -> L-ALG redirected to rebuild it.
+- 14:02Z L-RED box3: S7 not killed; reduction to question DF (downstream-first runs). L-RED construct box (6h), L-SI proof direction.
+
+## Pre-compaction snapshot 2026-10-15 14:05Z (Lead ctx 680k)
+- Owner rulings today: D3 OWNER-DESK (session_01Eq99qsTJBiTh6xLzwCPtqv), D4 Q2-Q7, D5 aim M4 (no "unlikely"), D6 Q8(a) algorithm lanes,
+  D7 Q9(a) continue spend despite weekly warning (seven_day allowed_warning; resets 2026-10-21 21:00Z; stop on overage per D1).
+- Results: R1 L4, R2 T-A1, R3 original Random-Facet lower bound (landed 13:52Z, CHECKER C2 PASS 068f9de). Dead ends DE1-DE6.
+- Working lanes (cap 5 counts lanes): L-ALG (session_01WN44zjFXZSqaL5SwsoDn7d, box to 21:55Z: attack DTL via van Dijk's
+  "VULNERABLE to a different version of the TC game" hint), L-SI (session_01HnGDSEHG3NHszV1y8ND6BF, box to ~22:10Z: S7 step-2 data,
+  proof attempt on question DF), L-RED (session_017WLo5xfMxRZ4f6n2Su6274, 6h DF construction box from 14:00Z), L-LOWER
+  (session_0153E4mCB2wqi65xdfpxozfK, T-L2 box to 20:36Z).
+- Idle/parked: REFEREE, REFEREE-2, CHECKER, L-LIT, L-ATTR, L-STRUCT, L-COMP, HUMAN-DESK, OWNER-DESK (idle between owner messages).
+- Live algorithm leads: S7 most-improved (question DF: exponential downstream-first run exists? L-RED constructs, L-SI proves);
+  DTL (Oink van Dijk variant; C5-DTL.md). S5/S6 held, not defended.
+- Pending small items: merge l-red 3bcb4d9 (R2 wording, fhz.py -I fix); L-LIT to correct T13 REFEREE-2 citation on next task;
+  T-ALG1 (psolC complete on Strahler-1) deferred for refereeing.
+- Lead misses today: CI numpy/user-site (02:10Z); cache-TTL wake advice (04:03Z); stale NOW In-flight (09:50Z); cap count (11:08Z);
+  first read counted as signature in L21 / C2 brief (13:41Z).
+- 14:03Z sweep: no overage (seven_day warning; D7). Lead $83.1 ctx 694k. L-ALG 02de72d (DTL attack table), L-SI 5564dfc (DF route dead recorded), L-LOWER b2eb965 (9-gate runs), L-RED 3bcb4d9 (DF pad LP running). No action.
+- 14:10Z L-RED KILLED S7 (fhz_padded, doubling). DE7 on R5 push. L-RED next: FHZ counter vs S5/S6. L-SI: reproduce, stop proof, obstruction map.
+- 14:12Z DE7 recorded (S7, l-red bf0922f merged).
+- 14:19Z L-RED R6 S5/S6 held; box 4 (5h) Zadeh fixed-tie-break lower bound. DE7 updated to n=10.
+- 14:45Z WATCHDOG: roster stale for REFEREE-2/REFEREE/CHECKER (fixed). Lead ctx 731k, $86.2.
+- 14:58Z NOW cleanup per OWNER-DESK notes; spend table refreshed (~$692 readings).
+- 15:03Z sweep: no overage (seven_day warning; D7). Lead $87.7 ctx 758k. L-ALG 549bb34: DTL survives all tc/tc+ variants (report pending). L-SI 71c5c97 obstruction map. L-RED 7dd83d3 Zadeh climb. L-LOWER b2eb965 runs. No action.
+- 15:08Z L-RED R7: S5 held (cyclic tie constraints). L-RED -> DTL attack (6h). L-LIT T15 (fixed-tie-break Zadeh novelty + T13 fix).
+- 15:12Z L-ALG DTL attack no kill (473c7c8, merged); L-ALG parked; recommendation to L-RED.
+- 15:08Z merged l-lit e895ddd (T15 OPEN, T13 cite fix); L-LIT parked; NOW updated. Waiting on L-RED (DTL, ~21:06Z), L-SI (~22:10Z), L-LOWER (~20:36Z).
+- 15:29Z R8 (DTL HELD, Lemma M) merged. Decision (fleet judgement, L12): run DTL through the gauntlet: L-LIT T16 (step 3 + GandALF 'VULNERABLE' source), L-ALG successor for proof (step 4 attempt) after handover, L-RED keeps attacking (FIFO order, phase alternation, cross-iteration monotonicity, per-tangle work). Cap: 5 with successor. Rate: seven_day warning, no overage.
+- 15:31Z L-LIT T16 interim: Oink branch origin/dftl has counter_dftl (a028e62, 2021) and counter_odftl (2024); DTL was 'distraction-free TL' before 1ba8b0a rename; README counter_dtl predates rename, no source. Forwarded to L-RED as top priority (build vs 8fbf0a7, run dtl/idtl N=1..20 with verify).
+- 15:32Z L-ALG handover 1017502 merged; L-ALG parked; successor spawn held until L-RED reports on counter_dftl/odftl.
+- 15:34Z T16 merged (3874a1e): step 3 SIGNED w/ 4 caveats; L-LIT parked; optional owner Q10 (2024 chapter copy) listed in NOW.
+- 15:35Z T16 addenda 4f61b4c merged: VULNERABLE slide = RTL/PTL (tc+); counter_dtl (2021) targets current DTL, never committed; dftl-branch generators target DFTL. Told L-RED counter_dftl may descend from counter_dtl.
+- 15:42Z L-RED R8 §6 d6496f3: counter_dftl/odftl harmless to dtl (2N+3). Spawned L-ALG successor session_012cQPWcEm23KMdMQSvWrULr (Fable) for five questions then DTL proof. L-COMP successor deferred to ~20:36Z (cap headroom, spend warning).
+- 15:47Z L-ALG successor handover 5/5; GO for DTL proof attempt (8h box, statement first within 1h, GAPs reported at once).
+- 15:53Z L-ALG statement (Thm D1 correctness, D2 poly bounds) at l-alg 5175454 -> CHECKER C3 statement diff (45 min). Forwarded L-ALG's completeness observation (no incomplete-search check in release path; sptl W) to L-RED as a correctness target.
+- 15:59Z CHECKER C3 FAIL (text) 5b924e7 merged. L22: DTL pinned with --no-loops, trace 0, all tie orders, object = C5-DTL.md; sent fix list to L-ALG, --no-loops re-probe to L-RED. CHECKER parked.
+- 16:05Z hourly sweep: no overage (seven_day warning). Lead ctx 159k; L-SI 708k (>600k: asked to end box by ~18:00Z with obstruction map + handover, then park); L-LOWER 368k idle with waiter; L-RED 396k idle, 7 searches under monitors; L-ALG new 117k working. CI green on all lane heads (latest runs 449-460). M2 done so no daily owner line.
+- 16:08Z L-ALG code facts verified by Lead: uintqueue is a stack (LIFO attractors), CurR consumed per round (dtl.cpp:690). Voids R8's FIFO-layer step; routed to L-RED as attack angle (renewable str[] flips via DFS order).
+- 16:16Z R8 §9 4a659d9 merged: set-based Lemma M parts survive LIFO; W/P/E outline forwarded to L-ALG; no hit.
+- 16:37Z R8 final 8e03198 merged (HELD; no wrong answer, no super-poly count). L-RED kept on hand construction vs (E)/(P) to 21:06Z.
+- 16:47Z L-ALG interim 11fbb49: soundness/halting/(b)-(e) proved, completeness GAP-C, tangle count GAP-A. GAP-C candidate shape routed to L-RED.
+- 16:50Z R8 §9-10 1a9ac0f merged: ladders v1/v2 no hit (walls: pruning below head priority; dominion attractor with tangles). L-RED closed the (E)/(P) phase; GAP-C message likely crossed -- waiting for its reply, not resending.
+- 17:01Z R8 §11 926d7ba merged: GAP-C no hit (debug fuzz 12k, 7 climbs, all 0). L-RED parked. C-a/C-b readings + §10 requirement forwarded to L-ALG.
+- 17:03Z hourly sweep: no overage (seven_day warning). L-SI 714k idle, handover pushed, final report pending (wrap-up by 18:00Z); L-LOWER 370k idle, report ~19:30Z; L-ALG working. No exceptions.
+- 17:10Z L-SI end of box 0d48da2 merged; DE8 (S2b/S3/S4) added to RESULTS; L-SI parked; L23: no successor while DTL leads. Working: L-LOWER, L-ALG.
+- 17:21Z L-ALG 6bb5d43 merged. L-RED unparked 2h for (alpha)/(beta'), (r1), GAP-A. REFEREE read deferred to end of proof box (23:50Z). T-ALG1(a) stays deferred.
+- 17:29Z L-ALG 8cc7fee: straddles occur on tc+ (~2N-1), (alpha) needs containment of lowest top's successor in orphaned part; (r1) data 4,006 games monotone. L-ALG out of ideas -> parked mid-box; straddle lead sent to L-RED. Owner asked 'promising?': answered (best lead, not a result; GAP-A decisive).
+- 17:31Z R8 §12 73da06b merged (no hit). L-RED redirected to GAP-A str-change measurement + (alpha) containment to 19:30Z.
+- 17:40Z L-ALG ccff864: C3 fixes to §0, --no-loops re-runs clean (41,684 canonical games + 20,000 debug fuzz with self-loops). Late by 90 min: L-ALG had not read notifications during proof work (Lead miss to prevent: ask lanes to read notifications at each push). CHECKER C3b re-check started.
+- 17:44Z L-RED 7b4c086: GAP-A open quantity measured = 0 everywhere; distinct region sets per top linear. L-ALG resumed with route (S)+(D)+(W)+(a1) => O(n^2) per level.
+- 17:46Z C3b merged: §0 PASS -> frozen (L24); §1.0 FAIL R-1..R-3 sent to L-ALG (fix first).
+- 17:50Z L-ALG 0533890: Lemma S (strategies a function of (top,set)) proved modulo (M-cross); deletion caveat (factor charge unproved). (M-cross) failure shape + deletion route sent to L-RED.
+- 17:52Z R8 §12 final 6d92d3e merged ((alpha) containment climbs 0; GAP-A 0). L-RED parked 17:52Z; my 17:53Z (M-cross)/deletion targets crossed with its park -- it will see them on its next turn; not resending.
+- 17:58Z L-ALG 216103f: R-mono proved for vertex-rule entries; open = nested older tangle. L-ALG: fix §1.0 then park. L-RED: 2h box (nested-tangle shape, deletion ratio) to 20:05Z.
+- 18:00Z L-RED a44030f: M-cross fails at X nonempty (tc+); Lemma S route covers few tangles. L-RED redirected to (D) distinct sets per top all pieces (to 20:05Z). L-ALG: §1.0 fix then determinacy for arbitrary X or park.
+- 18:09Z hourly sweep: no overage (seven_day warning). Lead 323k. L-LOWER 371k idle (SAT runs; write-up 19:20Z). L-RED 602k (>600k: handover after the 20:05Z box). L-ALG 548k (handover at next pause if >600k). L-ALG e916b24 (§1.0 fixes) merged; CHECKER C3c started.
+- 18:04Z L-ALG 28d8c00 (Lemma D first pieces; later pieces carry the quadratic growth) + L-RED d9f695e (deletion ratio 0) merged. Battleground: later pieces X nonempty. Sent to L-RED.
+- 18:06Z C3c a72db07 merged: §1.0 PASS. N-1..N-4 to L-ALG with next interim reply (N-3 before referees).
+- 18:08Z L-ALG 272b303: piece refinement fails on tc+; GAP-A frontier = re-cut later pieces. Candidate invariant to L-RED. L-ALG: apply C3c notes then park.
+- 18:09Z L-ALG parked 8f2cb45: determinacy any X = step (3) only; break event to L-RED. C3c N-notes still to apply at resume.
+- 18:11Z L-ALG ed9b87e: C3c N-1..N-4 applied (K5(ii) duplicate routed to beta'). Parked.
+- 18:30Z L-RED 58f4f27 merged: (D) linear per top all pieces; removal-order invariant false; earlier 'new tangles at recurring pair = 0' was vacuous, corrected (1 and 7, all W-blocked first occurrences). L-RED handover requested (>600k). L-COMP successor session_01Nd4XCMfDaYHsh1P6XTtRGz created for DTL step 2.
+- 18:33Z L-COMP successor 5/5; merged l-comp (incl. 12 old sat-hard commits); GO for DTL step 2.
+- 18:35Z L-RED handover 5a30e98 merged; L-RED parked. Process slip (L-RED self-reported): 7e2efb8 pushed with verify FAILED via a pipe instead of &&; fixed in 5a30e98. Rule reminder goes into every new brief.
+- 19:02Z hourly sweep: no overage (seven_day warning). Lead 390k. L-LOWER 373k idle, finalising after 19:20Z. L-COMP 115k working (175k exhaustive + 10k seeded clean so far, families running). No exceptions.
+- 19:22Z L-LOWER box done aa8995e merged; L25: T-L2 theory parked (no human-readable proof). k=9 runs left detached. Working: L-COMP only.
+- 20:02Z hourly sweep: no overage (seven_day warning). Lead 418k. L-COMP 193k idle-with-runs (9/18 family sweeps clean, 4 running; interim due ~21:00Z). No exceptions.
+- 20:21Z L-COMP interim d1537b0 merged: step 2 clean on all corpora/families (dtl, idtl); tc+ only family with growing iterations; wall time up to n^4.
+- 21:02Z hourly sweep: no overage (seven_day warning). Lead 439k. L-COMP 218k idle with tc+ extension running; end-of-box ~23:40Z. No exceptions.
+- 21:13Z L-COMP end of box 011fec0 merged: step 2 first implementation clean. Next: second independent implementation from C5-DTL.md (TARGET §5 step 2), 4h.
+- 21:19Z L-COMP divergence #1 (289f145): idtl iteration counter not defined in C5-DTL.md; same computation. Queue for L-ALG resume: add C5 line; proof must hold for C5 open choices CH1-CH5 (edge order, tangle vertex order, Q push order, dominion recording).
+- 21:39Z OWNER-DESK relayed owner Q 'is DTL exactly Oink's?' and its answer; corrected: step 4 = proof attempt in progress (statement frozen L24, soundness/halting proved unrefereed, GAP-A/GAP-C open), not 'nothing'. Stale L-ALG line fixed.
+- 21:54Z L-COMP divergence #2 15eef6a: C5 under-specifies ins order (Oink: decreasing index) and tv order (sorted ascending); counts depend on them, regions never. Queue for L-ALG resume + CHECKER: §0/C5 must cover these orders.
+- 22:02Z hourly sweep: no overage (seven_day warning). Lead 486k. L-COMP 314k idle with cross-check runs (n<=3 pending). No exceptions.
+- 22:13Z L-COMP divergence #3: Dom extension attractor order-dependent (tangle deleted when a vertex is solved mid-attraction); C5 omits SCC queue order. Queue for L-ALG resume: check §1 'dominion removal' lemmas for order independence.
+- 22:45Z L-COMP 31503b8 merged: dtl_py == Oink (regions, strategies, tangles, dominions, iterations) on 237,944 games under Oink's orders; C5-literal decides regions/strategies, not counts. 3 divergences = C5 order omissions.
+- 23:02Z L-COMP 0d7dc7c merged: DTL gauntlet step 2 DONE (two implementations agree exactly on 238,071 games). L-COMP: L15 1h then park.
+- 23:10Z hourly sweep: no overage (seven_day warning). Lead 514k. L-COMP on 1h L15 then park. No exceptions.
+- 23:29Z L15 DONE 70cc344 (PGSolver binaries = ports). All lanes parked. Fleet idle overnight except hourly sweeps; next: resume L-ALG with C5 order lines + GAP-A when a new idea or fresh successor is warranted.
+- 23:31Z Spawned L-ALG successor 2 session_01Aoj1NEAPu4ibQ3VbNXaXVY (Fable): five questions, then C5 orders decision draft + GAP-A fresh attack.
+- 23:42Z L-ALG d54c445 C5-orders.md: 8 unstated choices O1-O8; recommends option (ii) claim D1/D2 for every order datum. Lead accepted (ii); L-ALG to apply §0 wording + C5 Order data paragraph, then CHECKER C3d diff, then re-freeze L26.
+- 00:02Z hourly sweep: no overage (seven_day warning). Lead 554k. L-ALG succ.2 118k working (laminarity ruled out on tc+; GAP-A). No exceptions.
+- 00:11Z L-ALG GAP-A interim: per-top tangles can exceed n (31 at n=18) via in-search chain x restarts; distraction-status flip-flop observed (candidate counter shape). Spawned L-RED successor session_0117Yy21tGGz9s1zzLfBdUKC to attack it.
+- 00:18Z L-ALG 37bbe2f (§0 for every order datum) + d6129e3 (GAP-A data F1-F8; F3 in-search chain strongest conjecture) merged. CHECKER C3d started. L-RED pointed at searches-per-phase.
+- 00:23Z C3d FAIL (text): F-1 D1 wording, O3/O4/O8 citations, O7 missing, NF-1 parser always compresses priorities. Sent to L-ALG.
+- 00:30Z L-ALG deec040 (C3d fixes) + f2704d7 (Lemma W: tangles <= n*searches; GAP-A = searches per phase; 31-at-one-top was 31 at one level over 8 tops). CHECKER C3e re-diff. L-RED told target = searches per phase.
+- 00:33Z C3e: one-phrase FAIL (priority 0 maps to 0); N-3 §1.5 vs NOTE N2 contradiction. Sent to L-ALG.
+- 00:41Z L-ALG 9870b96 (E-1) + e144992 (N-1; Lemma 1.5a: one SCC reachable in a closed region; NOTE N2 amended). CHECKER C3f confirm. GAP-A data F10 + §4b obstacle (lexicographic potential only exponential).
+- 01:15Z PRE-COMPACTION SNAPSHOT (Lead ctx ~605k, WATCHDOG flag). State:
+  * DTL gauntlet: step1 done (C5 + order data O1-O8); step2 DONE (L-COMP 011fec0 + second impl 0d7dc7c, 238,071 games exact under Oink orders); step3 SIGNED w/4 caveats (T16); step4 IN PROGRESS: §0 statement frozen L24 at ccff864, amended for every order datum (option ii) at l-alg e144992 -> CHECKER C3f confirming (session_01JptdoF6eLabJzBHG28nWSS); on PASS record L26 in DECISIONS.md and NOW. Proved (unrefereed): soundness, strategies, halting, Lemma W (tangles <= n*searches), Lemma 1.5a. Open: GAP-C (shapes alpha, beta'), GAP-A = searches per phase (seed dtl_searches20_n32; lexicographic potential only exponential).
+  * Running: L-ALG succ.2 session_01Aoj1NEAPu4ibQ3VbNXaXVY (box to ~07:40Z; potential for searches; next interim ~02:30Z). L-RED succ. session_0117Yy21tGGz9s1zzLfBdUKC (box to ~06:25Z; counter for searches per phase from distraction flip-flop). Parked: L-COMP succ. session_01Nd4XCMfDaYHsh1P6XTtRGz, L-LOWER (k=9 runs detached; read RESULT later), L-SI, L-LIT, REFEREE(s), CHECKER after C3f.
+  * Rules in force: D7 continue, stop on overage; L23 SI parked; L25 T-L2 parked; referees get DTL only on a complete claim; messages between sessions delayed up to ~30 min.
+- 00:45Z C3f PASS -> L26: DTL §0 re-frozen at e144992 for every order datum.
+- 00:51Z L-RED R9 interim 30af303: flip-flop runs through the domfirst piece (argmax change); Claims P/Q (pruning round and stable V* monotone at fixed R) 0 violations; tree bound (n^2+1)^k needs multiplicative multi-level counter (4 requirements, each realised once). Forwarded P/Q + R1/R2 to L-ALG as proof route.
+- 00:53Z L-ALG 65826c8: monotone only at identical contexts (M); nested contexts not; nested-epoch product bound; counter = stacked digits; composition climbs additive so far. L-ALG redirected to proof side (global budget; prove M); L-RED keeps the 2-digit gadget.
+- 01:03Z hourly sweep: no overage (seven_day warning). Lead 631k (auto-summary will handle; snapshot at 01:15Z entry). L-ALG 408k working (container rebooted, climbs relaunched). L-RED 136k working. No exceptions.
+- 01:12Z L-RED 3493f8f: CARRY = candidate damping statement (piece-0 driver must fire at R=G); Claim P/Q 0 violations adversarially + 4,500 games; forwarded to L-ALG. PROCESS: L-RED successor piped verify once (6a60655; output showed PASS); second occurrence across L-RED sessions -> add to every brief, and consider a pre-push guard in scripts/ (Lead-owned) if it recurs.
+- 01:13Z LEAD MISS (self-found): my own pushes all day used 'scripts/verify.sh 2>&1 | tail -1 && git push' -- the same pipe that masks verify's exit code. Every printed summary was VERIFY PASS (and CI green), so nothing bad landed, but the gate was not enforced. Fixed from now on: 'set -o pipefail; scripts/verify.sh > $SCRATCH/verify.log 2>&1 && tail -1 $SCRATCH/verify.log && git push'. Rule to add to every brief: never pipe verify's output in the push chain.
+- 02:03Z FABLE LIMIT: L-ALG and L-RED sessions failed 'You've reached your Fable limit' (rate_limit status rejected, seven_day_overage_included, resets 2026-10-21 21:00Z). Not paid overage (isUsingOverage false). Per D7 ('We pause automatically if the cap is hit'): Fable lanes paused; referees (Fable) also unavailable until reset. Merged last heads fe22c7f (L-ALG, incl. handover b27211a) and 0bedda5 (L-RED R9 v4). Owner told at once with options.
+- 02:43Z Fleet paused (Fable cap): Lead backstop and WATCHDOG sweeps slowed from hourly to every 6 h (43 */6, next 06:43Z) to save spend while nothing runs. Restore hourly when lanes restart (after Q11 or 2026-10-21 21:00Z).
+- 06:44Z 6-hourly sweep: no overage (seven_day warning). Fleet paused (Fable cap); Q11 unanswered, default (a) wait for 2026-10-21 21:00Z. No exceptions.
+- 08:00Z D8 (owner): switch to Opus 5.5 until Fable reset. L27 recorded. Next: spawn Opus successors for L-ALG and L-RED; restore hourly sweeps.
+- 08:02Z Spawned Opus successors L-ALG session_01BDELabbGbT2QYY2NoRCY8A and L-RED session_01PxvcUhsSEhfjURzmBDBeoN (D8). Sweeps back to hourly (:02).
+- 08:19Z L-ALG: Claim P/Q FALSE for arbitrary tangle sets (9-vertex synthetic shape: straddled remainder re-absorbed at lower level); real runs U = ideal union on 53k rounds. Split: L-RED realise the shape in a DTL run (priority); L-ALG find the DTL-reachability invariant excluding it.
+- 08:27Z Third pipe slip (L-ALG b93114a, after L-RED twice and the Lead). Mechanical fix: scripts/push.sh (verify then push current branch, no pipe); CLAUDE.md rule changed to 'Push only with scripts/push.sh'. Lanes told.
+- 08:29Z L-ALG b93114a merged: (M) synthetic counter reproduced in check.sh; survival-changing deficit reachable in real DTL (dtl_deficit_n20); missing for real (M) violation = recurrence. Routed to L-RED.
+- 08:32Z L-ALG: real (M) violation in pinned A_DTL (20 vertices; distances 8->7, 9->8 at identical context). Claims P/Q/F5 dead for A_DTL. Reset device routed to L-RED (counter). L-ALG -> budget in ideal quantities; C6 (ideal-pruning DTL) suggested as design option.
+- 08:34Z Merged l-alg 1563bc7: dtl_mviol_n20.pg + dtl_mviol_check.py (in check.sh); F5/Lemma P/Q DEAD; L-ALG now on push.sh.
+- 08:37Z L-RED e12ffb8: independently confirms (M) violation (15 Claim P violations, 0 Q, Oink match); R10-carry: fast level works alone, first 2-level wiring failed on design error; rebuilding slow level on fixed-context straddle reset.
+- 08:59Z L-ALG c2ac3d5: GAP-A obstruction = replays (1 in 718 games); C6 DTL-hat (ideal pruning) written: (M) proved, completeness open; prototype correct on 1,530 games. C6 enters gauntlet step 1 only; step 2 (L-COMP) after completeness.
+- 09:03Z hourly sweep: no overage (seven_day warning). Lead 778k (snapshot in place). L-ALG 125k working; L-RED 123k working (climb 18 searches n=30; carry2 variant). No exceptions.
+- 09:40Z merged l-alg c8ae9fc (Lemma N sketch), l-red de8a431 (R10 2CE CARRY reduction), owner-desk d49f545 (log; never merged before, all questions closed). Routed: L-RED's "bounded triggered deficits per context damps every 2CE counter" to L-ALG; Lemma N's uncovered cases (cut pieces; Dom > consumed union) to L-RED as attack surface.
+- 09:12Z merged l-alg 121a4b4 (GAP-C (r1) proved in per-call form), l-red 9455c8f (R10 data, carry3 attempt). WATCHDOG 09:03Z: Lead context 778k (over 600k threshold; auto-compaction handles it), no overage, total $140.28 (Lead+WATCHDOG).
+- 09:22Z merged l-alg 7e25f03. Lead decision: L-ALG next = fresh-context climbs, then (O) for C6 (agreed). Routed (O) test to L-RED.
+- 09:27Z merged l-red da3bdd9+5dc5707 (R11: (r2) fails on dtl_mviol_n20; Lead re-ran r2_check.py on the sha1-identical instance: PASS). Routed to L-ALG. L-RED next: (O) gate test (approved).
+- 09:34Z merged l-alg 8c46a98 (Lemma D2; (r2) dead-route status). Routed D2(b) to L-RED: (O) at fixed set impossible for T_last; target = set-level lift.
+- 09:40Z merged l-red d97188c ((O) fails in 2CE; independent agreement with D2(b)).
+- 09:45Z merged l-red f8bc9fe (all 2CE gates fail, reading+data). Lead routing: L-RED attacks D2/driver lemma briefly, then fresh contexts adversarially (separate from L-ALG's designer climbs).
+- 09:53Z merged l-alg 682f652. Lead decision: L-ALG does (B) abstract-model barrier first (to ~12:00Z), then (A) C6 completeness (reason: poly bound decides M4; (B) tests whether the proof route can reach it).
+- 10:22Z merged l-red ed14e43 (D2/driver no gap; new domfirst route). Forwarded the domfirst route to L-ALG for model (B).
+- 09:55Z correction: the line above stamped 10:22Z was written at 09:54Z (Lead copied L-RED's future-dated '~10:20Z' heading; L-RED told to use date -u).
+- 09:59Z merged l-alg a19120a ((B) APP barrier; Lead re-ran app_model.py k=8-10: APP-MODEL OK) and l-red f954923 (MIRROR). Routed APP realisation to L-RED; L-RED's 169 late drivers at domfirst pieces sent to L-ALG as possible (F) refutation data.
+- 10:06Z merged l-alg 9cdf366. Lead decision: C6 completeness gives nothing beyond GAP-C, so L-ALG retargets to the crux: a bound on pruning-driven carries at -1 pieces (prove L-RED's MIRROR (M1); constrain self-reinforcing carries (M2)). L-RED stays on realising APP: designer and adversary on the same crux, separate.
+- 10:08Z merged l-red 62261a5 (L-RED corrected its heading stamps in an appended note).
+- 10:11Z hourly sweep: no overage (seven_day allowed_warning). Lead ctx 161k (post-compaction); L-ALG 125k working; L-RED 123k working. CI: all completed runs green (679-687); 688-690 in progress. M2 done, no daily owner line. No exceptions.
+- 10:18Z merged l-red 56c4f46 (R12 APP walls), l-alg summary. Routed WALL 1/2 to L-ALG as candidate proof handles for the pruning-carry bound.
+- 10:21Z merged l-alg 9942f9a (MIRROR data; C6 parked). L-ALG next: cap-carry potential (agreed).
+- 10:24Z merged l-alg 2dc8f08 (route (H1)-(H4)). Agreed (H2b) next; routed constraint + child-reset data to L-RED.
+- 10:27Z merged l-red 5311b17. Flagged to L-RED: reconcile R12 §6 with L-ALG's dead-top cap carries; flagged to L-ALG: (H4) deficits now the common bottleneck per L-RED.
+- 10:32Z L-ALG sent Φ (-1-record potential for (H2b) at Dom(prevV) pieces; data 12/12, thin) and: WALL 1 does not generalise (threshold closure covers). Routed Φ to L-RED as attack target. Write-up push pending from L-ALG.
+- 10:35Z OWNER-DESK relayed owner: "Give me a status update" (answered by OWNER-DESK from trunk 3b31814; logged owner-desk 1aea28e). Fixed four stale NOW lines it flagged (header date, M4 row, In-flight stamp, L-COMP planned line). Lead miss: header/M4 row not maintained since 10-14.
+- 10:39Z owner D9 (verbatim in DECISIONS): counter_dtl online search. Started L-LIT successor session_01Sb99VhYmwmCzi8aeKybxzj (Opus, claude/l-lit, box ~13:45Z, read-only, no contact). Working sessions 3/5. WATCHDOG told.
+- 10:41Z merged l-red cdbece1, l-alg (Phi false, Phi_idx). L-RED k=2 dead-top build tests Phi_idx.
+- 10:44Z merged l-alg cb72d30 (Phi_idx mechanisms false; L-ALG to (H4)).
+- 10:50Z merged l-red 976cf2b (R13). Near miss routed to L-ALG for (H2a).
+- 10:53Z merged l-alg db9ed5e (H4 data).
+- 10:58Z merged l-red 6a98d48 (cut-piece V phantoms; Lead verified the branch structure in dtl.cpp @8fbf0a7). Routed to L-ALG: restate §6 state and Phi_idx at cuts with the attractor.
+- 11:01Z merged l-alg 5981473/0e87a34 (Phi_idx refinement (d)).
+- 11:06Z L-LIT D9 early report (counter_dtl not found; author 'good paths' recipe found, routed to L-RED). Lead verified via GitHub API: the fleet repo is PUBLIC; never recorded before; raised with the owner (owner decision, not changed). L-LIT subagent out-of-scope GitHub code search logged as a process breach.
+- 11:08Z hourly sweep: no overage (seven_day allowed_warning). Lead ctx 271k; L-ALG, L-RED, L-LIT working (L-LIT 180k). Merged l-red 08599bf. No exceptions beyond the repo-visibility flag raised to the owner at 11:06Z.
+- 11:12Z merged l-lit 634c66f (T17 DONE; L-LIT parked) and l-alg (§6 state corrected, §11c). L-LIT handover re-measured 5/5. Q10 closed (preprint). New owner questions Q12 (contact van Dijk?) and Q13 (repo public) in NOW.
+- 11:15Z merged l-lit 3d9d98d (T17 quotes/hashes; breach recorded). L-LIT parked.
+- 11:16Z merged l-alg 155362c: Phi_idx evidence withdrawn by L-ALG (all cases same-context, covered by trivial Lemma F). Routed to L-RED.
+- 11:24Z merged l-alg ae36f2b: Phi_idx FALSE (phi_idx_flat_n20; Lead re-ran Oink: 5 iterations, verified). dtl_pieces.py bug: §6 counts pending re-run. Routed instance to L-RED for independent check.
+- 11:27Z merged l-red d70e99a (R14: author recipe gives no slowdown on A_DTL).
+- 11:29Z merged l-alg 4f489cf (§6 re-measured).
+- 11:34Z merged l-alg 4ddc90f ((H2b) reduces to c_i). Asked L-ALG for a C7 (potential-enforcing variant) feasibility note vs attacking c_i.
+- 11:39Z merged l-red 17db195 (independent confirmation of the Phi_idx counterexample).
+- 11:42Z merged l-alg 38f10e4; RESULTS DE9 (Phi, Phi_idx proof-route potentials dead). L-ALG main slot = c_i. Tool note (sufficient-singleton driver test) routed to L-RED.
+- 11:47Z merged l-alg 5388581 (§14 c_i).
+- 11:48Z merged l-red 18af127 (R12 §9 conclusion withdrawn).
+- 11:52Z merged l-alg 024260c (reconciliation; DE9 updated with single driver t9).
+- 11:56Z merged l-red 6b053c5 (cidx climbs started; both lanes now on c_i, from designer and adversary sides).
+- 11:59Z merged l-alg ded46a5 (c_i circular). Told L-RED its cidx fitness is circular; retarget to resets / fresh-with-change.
+- 12:03Z merged l-alg 8707f2c (§15 child resets common).
+- 12:06Z hourly sweep: no overage (seven_day allowed_warning). Lead ctx 367k; L-ALG, L-RED working; L-LIT parked. Owner Q12/Q13 open. No exceptions.
+- 12:08Z WATCHDOG 12:05Z: its own context 615k (>600k, grows ~22k/h; auto-compaction handles it; no restart now). Its $157.69 total understates spend: L-ALG/L-RED cost_usd (1.36/1.08) look per-epoch, not cumulative (measurement caveat, not an overage signal; isUsingOverage false).
+- 12:18Z merged l-alg 29448eb (§16 staircase); routed digit requirements (a)+(b) to L-RED.
+- 12:20Z L-RED R15: §13 'V_actual ⊆ V̂' fails for -1 return sets (h4_notweaker_n20; Lead re-ran Oink). Routed to L-ALG to restate §13.
+- 12:24Z merged l-alg b41ee5a, l-red replay_blocks.
+- 12:27Z merged l-alg df6d01a (§13 restated; error confined).
+- 12:42Z merged l-red 677e5d7.
+- 12:46Z merged l-alg c0aaa02.
+- 13:06Z hourly sweep: no overage (seven_day allowed_warning). Lead ctx 416k; L-ALG idle since 12:45 (climbs under watch; woken by message), L-RED working; cost readings now L-ALG $56.8, L-RED $45.2, Lead $152.7. Merged l-red d0b2400 (Lemma S fails on A_DTL with a deficit; Lead re-ran Oink).
+- 13:10Z merged l-alg 7c653e9. Routed defclimb (3 DEF at one context) to L-RED.
+- 13:13Z merged l-red 37542bd (M drops under deficit). Forwarded to L-ALG.
+- 13:18Z merged l-alg 08bf2b5 (Lemma R; 5 DEF at one context under stable order; order caveat recorded).
+- 13:22Z merged l-alg 0a1b1b5 (4 DEF at one context on pinned Oink; Lead re-ran Oink).
+- 13:25Z merged l-red c933605.
+- 13:30Z merged l-alg 4045bc4: 6 deficit changes at one ideal-stable context on pinned Oink (Lead re-ran Oink: 9 iterations, verified). Told owner.
+- 13:36Z merged l-alg 57cc201 (DEF per context plateau at 6 for n=28..44 so far).
+- 13:42Z merged l-red c5137c3 (nested-chain reading). Routed chain test to L-ALG.
+- 13:45Z merged l-alg 9632b44: DEF per context 8 at n=44 (Lead re-ran Oink on both n=44 instances).
+- 13:48Z merged l-red e00dcbe (7 DEF at n=28, nested chain).
+- 13:55Z merged l-alg 955411c (chain route dead; antichain instance to L-RED).
+- 13:57Z merged l-red 7b6cd53.
+- 14:05Z hourly sweep: no overage (seven_day allowed_warning). Lead ctx 488k, $157.8; L-ALG working (362k, $56.8), L-RED working (384k, $50.9). Both boxes end ~16:10Z; DONE reports due ~15:45/16:00Z. No exceptions.
+- 14:08Z merged l-alg 30d5348 ((C-rM) dead).
+- 14:13Z merged l-alg 217c2a7 ((C-rM-stable) candidate); routed to L-RED.
+- 14:25Z merged l-alg (C-rM-stable) dead; h4_def9_oink_n28 (Lead re-ran Oink). Told L-RED to stop that attack.
+- 14:36Z merged l-alg b92883e (10 DEF at one context; Lead re-ran Oink). Lane slip: L-ALG ran 'scripts/push.sh | tail -0' at 14:27Z (piped gate output); no push resulted; reported by the lane; re-run bare, PASS.
+- 14:47Z l-red c204679 NOT merged: it breaks experiments/red/check.sh (line 69 'python | head -1' under pipefail -> exit 120, 3/3 runs), so trunk's gate fails. Local unpushed merge dropped (never pushed); L-RED asked to fix. CLAUDE.md no-pipe rule now names push.sh (two lane slips today: L-ALG 14:27Z, L-RED c204679). h4_compound_n44 (first compounding instance, Oink 13 iterations verified by Lead) lands with L-RED's fix.
+- 14:50Z merged l-alg (h4_deep_oink_n44: parallel, not nested).
+- 14:55Z merged l-red 8b84425 (check.sh fixed: Lead ran it 2/2 PASS; both compounding instances re-run in Oink: 13 iterations each, verified).
+- 14:59Z merged l-alg 2307e8f (nested confirmed independently).
+- 15:01Z merged l-alg 5e4db8e (child no reset in h4_compound2x2; 11 DEF at one context).
+- 15:04Z merged l-alg be27f5d ((CM) 0/123).
+- 15:06Z hourly sweep: no overage (seven_day allowed_warning). Lead ctx 569k, $164.4. Lanes per WATCHDOG 15:04Z measurement: L-ALG 555k $73.6, L-RED 471k $59.4, both running; L-ALG near 600k but its box ends ~16:10Z with notebook handover. No exceptions.
+- 15:12Z merged l-alg h4_nested7_oink_n44 (Lead re-ran Oink).
+- 15:23Z L-RED box ended (DONE fe8cb18, idle, climbs stopped). Merged; roster updated to PARKED. Next-box queue in its notebook.
+- 15:27Z merged l-red 6b52858 (handover notebook ready for successor).
+- 15:56Z L-ALG box ended (DONE c18eaad). Merged; roster PARKED; RESULTS DE10 records today's killed (H4) candidates and A_DTL extensions with instances.

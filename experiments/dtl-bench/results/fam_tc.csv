@@ -1,0 +1,31 @@
+family,N,gen,game,n,m,d,solver,status,wall_s,solver_s,dominions,tangles,iterations,pruning,detail,cmd
+tc,2,tools/oink/build/tc 2,tc_2.pg,22,36,11,oink-uzlk,ok,0.0038,3.2e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc,2,tools/oink/build/tc 2,tc_2.pg,22,36,11,py-zlk,ok,0.0264,,,,,,,python3 -I experiments/harness/zielonka.py
+tc,2,tools/oink/build/tc 2,tc_2.pg,22,36,11,dtl-pin,ok,0.0035,0.000215,2,4,5,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc,2,tools/oink/build/tc 2,tc_2.pg,22,36,11,idtl-pin,ok,0.0044,0.00032,2,4,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+tc,4,tools/oink/build/tc 4,tc_4.pg,68,128,19,oink-uzlk,ok,0.0040,8.4e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc,4,tools/oink/build/tc 4,tc_4.pg,68,128,19,py-zlk,ok,0.0426,,,,,,,python3 -I experiments/harness/zielonka.py
+tc,4,tools/oink/build/tc 4,tc_4.pg,68,128,19,dtl-pin,ok,0.0075,0.003288,2,9,6,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc,4,tools/oink/build/tc 4,tc_4.pg,68,128,19,idtl-pin,ok,0.0077,0.00458,2,9,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+tc,8,tools/oink/build/tc 8,tc_8.pg,232,480,35,oink-uzlk,ok,0.0063,0.001058,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc,8,tools/oink/build/tc 8,tc_8.pg,232,480,35,py-zlk,ok,0.0809,,,,,,,python3 -I experiments/harness/zielonka.py
+tc,8,tools/oink/build/tc 8,tc_8.pg,232,480,35,dtl-pin,ok,0.0968,0.092713,2,17,6,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc,8,tools/oink/build/tc 8,tc_8.pg,232,480,35,idtl-pin,ok,0.1295,0.124777,2,17,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+tc,12,tools/oink/build/tc 12,tc_12.pg,492,1056,51,oink-uzlk,ok,0.0249,0.020549,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc,12,tools/oink/build/tc 12,tc_12.pg,492,1056,51,py-zlk,ok,0.9285,,,,,,,python3 -I experiments/harness/zielonka.py
+tc,12,tools/oink/build/tc 12,tc_12.pg,492,1056,51,dtl-pin,ok,0.7100,0.704711,2,25,6,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc,12,tools/oink/build/tc 12,tc_12.pg,492,1056,51,idtl-pin,ok,1.0357,1.030264,2,25,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+tc,16,tools/oink/build/tc 16,tc_16.pg,848,1856,67,oink-uzlk,ok,0.3347,0.329229,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc,16,tools/oink/build/tc 16,tc_16.pg,848,1856,67,py-zlk,ok,18.8972,,,,,,,python3 -I experiments/harness/zielonka.py
+tc,16,tools/oink/build/tc 16,tc_16.pg,848,1856,67,dtl-pin,ok,3.3983,3.391763,2,33,6,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc,16,tools/oink/build/tc 16,tc_16.pg,848,1856,67,idtl-pin,ok,4.9072,4.901553,2,33,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+tc,20,tools/oink/build/tc 20,tc_20.pg,1300,2880,83,oink-uzlk,ok,6.6801,6.674493,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc,20,tools/oink/build/tc 20,tc_20.pg,1300,2880,83,py-zlk,timeout,120.0991,,,,,,,python3 -I experiments/harness/zielonka.py
+tc,20,tools/oink/build/tc 20,tc_20.pg,1300,2880,83,dtl-pin,ok,11.9426,11.936477,2,41,6,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc,20,tools/oink/build/tc 20,tc_20.pg,1300,2880,83,idtl-pin,ok,14.7712,14.765519,2,41,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+tc,24,tools/oink/build/tc 24,tc_24.pg,1848,4128,99,oink-uzlk,timeout,120.0981,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc,24,tools/oink/build/tc 24,tc_24.pg,1848,4128,99,dtl-pin,ok,32.8913,32.883954,2,49,6,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc,24,tools/oink/build/tc 24,tc_24.pg,1848,4128,99,idtl-pin,ok,42.7450,42.738924,2,49,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+tc,32,tools/oink/build/tc 32,tc_32.pg,3232,7296,131,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc,32,tools/oink/build/tc 32,tc_32.pg,3232,7296,131,dtl-pin,ok,179.9563,179.943594,2,65,6,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc,32,tools/oink/build/tc 32,tc_32.pg,3232,7296,131,idtl-pin,ok,232.5088,232.499948,2,65,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}

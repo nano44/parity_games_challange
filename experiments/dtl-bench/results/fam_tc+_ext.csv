@@ -1,0 +1,7 @@
+family,N,gen,game,n,m,d,solver,status,wall_s,solver_s,dominions,tangles,iterations,pruning,detail,cmd
+tc+_ext,14,tools/oink/build/tc+ 14,tc+_ext_14.pg,3024,6146,87,oink-uzlk,ok,0.3434,0.332787,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc+_ext,14,tools/oink/build/tc+ 14,tc+_ext_14.pg,3024,6146,87,dtl-pin,ok,168.3915,168.383898,2,250,30,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc+_ext,14,tools/oink/build/tc+ 14,tc+_ext_14.pg,3024,6146,87,idtl-pin,ok,556.8245,556.817446,2,317,29,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+tc+_ext,16,tools/oink/build/tc+ 16,tc+_ext_16.pg,4448,9040,99,oink-uzlk,ok,1.6465,1.636757,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc+_ext,16,tools/oink/build/tc+ 16,tc+_ext_16.pg,4448,9040,99,dtl-pin,ok,565.1824,565.173488,2,318,34,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc+_ext,16,tools/oink/build/tc+ 16,tc+_ext_16.pg,4448,9040,99,idtl-pin,timeout,1800.1026,,,,,,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}

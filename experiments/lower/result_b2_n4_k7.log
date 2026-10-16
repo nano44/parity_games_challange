@@ -1,0 +1,11 @@
+Q_3 prios=[1, 2] owners=[0, 1]: 22100 games, 66148 nodes -> 5164 classes (W true on 3298); max split round 4 [0.6s]
+all 4-vertex two-player games: 12960000
+resumed 2800 games
+round 1: subset 16364 nodes (2800 games), 6597800 clauses -> SAT [148.2s]
+   sweep over all 4-vertex games: 5328 failing [5.7s]
+round 2: subset 17964 nodes (3200 games), 7238722 clauses -> SAT [132.8s]
+   sweep over all 4-vertex games: 105312 failing [5.8s]
+round 3: subset 19564 nodes (3600 games), 7887722 clauses -> SAT [139.2s]
+   sweep over all 4-vertex games: 0 failing [6.9s]
+RESULT: program with 7 Cpre gates solves ALL two-player Büchi games with <= 4 vertices (12960000 games; gate-level re-check vs Zielonka on 100000 random games: 0 mismatches). cost=7 depth=7
+EXIT 0

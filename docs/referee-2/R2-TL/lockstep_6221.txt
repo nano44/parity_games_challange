@@ -1,0 +1,2 @@
+n=6 r=2 s=2 t=1 seed=0: 147 switches, 4038 improving tests, models agree (|V|=61, |E|=126, parity |V|=229)
+n=6 r=2 s=2 t=1 seed=1: 94 switches, 2674 improving tests, models agree (|V|=61, |E|=126, parity |V|=229)

@@ -2,7 +2,8 @@
 """C5-DTL data (Lead 12:47Z item 3): Oink --dtl (raw, no preprocessing) with strategy output, regions checked against
 harness Zielonka and positional strategies verified with harness verify.py (D2 change 5), on: the counterexample
 library, every canonical game with n <= 3 (a1lib enumeration), the 1,380 psolC-partial canonical n=4 games, K random
-canonical n=4 games, and random games n = 5..12. Also --idtl. Usage: dtl_check.py [--n4-random K] [--solver dtl]"""
+canonical n=4 games, and random games n = 5..12. Also --idtl. Usage: dtl_check.py [--n4-random K] [--solver dtl] [--no-loops]
+(--no-loops = the pinned A_DTL of docs/alg/DTL-proof.md §0: no parser bad-loop removal, no solveSelfloops; added 2026-10-15 after CHECKER C3 D-1)"""
 import sys, os, json, glob, subprocess, tempfile, time, random
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness")); sys.path.insert(0, os.path.join(HERE, "..", "attr"))
@@ -17,7 +18,7 @@ def run(g):
         f.write(pg.dumps(g)); path = f.name
     sp = path + ".sol"
     try:
-        r = subprocess.run([OINK, f"--{solver}", "--no-single", "--no-wcwc", path, sp], capture_output=True, text=True, timeout=120)
+        r = subprocess.run([OINK, f"--{solver}", "--no-single", "--no-wcwc"] + (["--no-loops"] if "--no-loops" in sys.argv else []) + [path, sp], capture_output=True, text=True, timeout=120)
         if r.returncode != 0 or not os.path.exists(sp):
             return None, None, "oink rc=%d %s" % (r.returncode, (r.stderr or r.stdout)[-200:])
         text = open(sp).read()
