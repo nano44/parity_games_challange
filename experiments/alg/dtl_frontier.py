@@ -13,7 +13,9 @@ def mk(base):
             s.ns += 1; s.piece = -1; s.trace.append({"p": p, "pieces": [], "dom": s.dominions}); return super().search(p)
         def search_rec(s, R, p, depth):
             od, orp = s.depth, s.recpiece
-            if depth == 1: s.recpiece = s.piece
+            if depth == 1:
+                s.recpiece = s.piece
+                s.trace[-1].setdefault("cuts", set()).add(s.piece)     # a recursion follows only a cut (-1, Q nonempty)
             s.depth = depth; r = super().search_rec(R, p, depth); s.depth = od; s.recpiece = orp; return r
         def best_vertices(s, V, R, p):
             if s.depth == 0:
@@ -43,10 +45,15 @@ def analyse(d, out, name=''):
         if pa[i][1] != -1: continue                      # (F) is about -1 / cut pieces
         sa = k + 1                                        # search number of a (trace entries can be equal dicts)
         drivers = [t for t in pb[i][3] if d.born.get(t, (None,))[0] == sa]
+        kind = "cut" if i in a.get("cuts", set()) else "domfirst"
+        out.setdefault(kind + "_changes", 0); out[kind + "_changes"] += 1
         f = next((j for j in range(i + 1, len(pa)) if pa[j][1] == 1), None)
         for t in drivers:
             where = d.born[t][1]
             out["drivers"] += 1
+            out.setdefault(kind + "_drivers", 0); out[kind + "_drivers"] += 1
+            if where != f and not isinstance(where, tuple):
+                out.setdefault(kind + "_later", 0); out[kind + "_later"] += 1
             if where == f: out["at_first_stable"] += 1
             elif isinstance(where, tuple):
                 out["in_recursion"] += 1
