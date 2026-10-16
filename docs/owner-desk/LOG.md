@@ -106,3 +106,7 @@ Q13 (public repo) added. Relayed verbatim to the Lead.
 ## 2026-10-16 16:39Z owner (Q13)
 > I dont mind the repistory is public
 Desk reading: Q13 option (a), keep public. Relayed verbatim to the Lead. Q12 still open.
+
+## 2026-10-16 16:39Z owner (Q12)
+> No contact for now
+Desk reading: Q12 option (a). Relayed verbatim to the Lead.
