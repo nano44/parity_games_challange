@@ -739,9 +739,37 @@ pieces 0..j-1; measured ctx_changed = 0.
     verified): experiments/alg/instances/h4_def4_oink_n20.pg (seed 123 from lemmaS_viol_n20). Player 1, piece 0, R = G'
     (|R| = 20). The ideal (C6) result is STABLE with the same 14-vertex V̂* in searches 4-8, while the actual is −1 in
     searches 4-7, return sets (original ids) {0, 4} → {4} → {4, 7, 8} → {7, 8} → stable {7, 8, 18}. That is 4 DEF
-    changes at one ideal-stable context on pinned A_DTL (running).
+    changes at one ideal-stable context on pinned A_DTL.
+  - Scaling (13:26Z; Oink order, h4_def4_oink_n20 padded with source-only vertices and climbed): n = 28:
+    experiments/alg/instances/h4_def6_oink_n28.pg (Oink and dtl_pyref --order oink both 9 iterations, verified).
+    Player 1, piece 0 after the first dominion (|R| = 26). The ideal is STABLE with the same 17-vertex V̂* in searches
+    3-9; the actual is −1 in searches 3-8, return sets (original ids) {5, 6, 15} → {6} → {6, 11, 20} →
+    {6, 11, 15, 20} → {7, 8, 11, 15, 20} → {7, 8, 15} → stable {7, 8, 15, 18}. That is 6 DEF changes at one
+    ideal-stable context, and the whole phase after the dominion is spent there. n = 36 (seed 136): 5 at one context, 6
+    in the phase, so far. Maximum per context so far: n = 20: 4, n = 28: 6, n = 36: 5 (climbs running). Too few points
+    for a growth law; consistent with growth.
   - Key earlier instances agree in both orders and with Oink (iterations): phi_idx_flat_n20 5, nest_nest_s84 19,
     lemmaS_viol_n20 8.
+
+### 13c. L-RED's question: one deficit-driven change per NEW straddling tangle? (13:21Z; Lead 13:13Z)
+Tool: experiments/alg/dtl_straddle.py (Oink order, exact). At every depth-0 call it records the straddling tangles of
+the rounds where the actual and ideal survivors differ. For consecutive calls at one context it splits those of the
+later call into NEW (learned after the earlier call) and OLD.
+- DATA, three pinned-A_DTL instances: h4_def4_oink_n20 (4 DEF at piece 0), lemmaS_Mdrop_n20 and lemmaS_viol_n20
+  (both on trunk, experiments/red/carry/instances). At EVERY consecutive pair of calls at a deficit context (20 pairs
+  over contexts |R| = 20, 19, 18, 14):
+  - the later call has ≥ 1 NEW straddling tangle (1 to 3 of them);
+  - every tangle that straddled in the earlier call still straddles: the straddling set only GROWS at a fixed context.
+  Example, h4_def4_oink_n20, piece 0: straddlers {1} → {1, 3, 4} → {1, 3, 4, 5, 6} → {…, 7, 8, 9} → {…, 10, 11, 12}.
+- So the data supports "each deficit-driven change at a context comes with ≥ 1 new straddling tangle there". The
+  resulting bound is DEF changes per context ≤ (straddling tangles learned while the context is visited). But tangles
+  are ≤ n · (searches) by Lemma W, so as a GLOBAL bound this is CIRCULAR, like c_i in §14. It bounds deficits by
+  learning, not by n.
+- What a non-circular (H4) bound would need: a per-context cap on straddlers. The straddling set is monotone in the
+  data, and each straddler is a tangle with vertices in ≥ 2 regions of one round. Nothing proved caps how many distinct
+  tangles can straddle at one context; tangles are subsets, so there can be many. Not proved; DATA only (20/20).
+- Not tested: whether the NEW straddler is the one that prunes the leader (L-RED's M-drop mechanism). Its region
+  bookkeeping per round is in dtl_straddle.py and can be extended.
 
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
