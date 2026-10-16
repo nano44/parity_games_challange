@@ -300,3 +300,4 @@
 - 15:58Z next boxes: created L-ALG succ. 4 session_01KESFSwLyyKvwe3mzqN2Bzr and L-RED succ. 3 session_0187PESrNsHy3BTdjyzwyaLy (Opus, D7 continue at current rate, D8 Opus); STEP 0 handover checks pending. WATCHDOG to be told.
 - 16:02Z L-ALG succ. 4 handover 5/5, GO.
 - 16:04Z L-RED succ. 3 handover 5/5, GO.
+- 16:06Z WATCHDOG 16:03Z: Lead ctx 610k (>600k; automatic compaction handles the Lead, state lives in NOW/LEAD-STATE); new lanes 130k/133k. Its $176.75 omits the parked sessions (L-ALG old $73.6, L-RED old $59.4, L-LIT succ.), so day total is roughly $310+.
