@@ -106,6 +106,22 @@ class P(rd.RD):
         return res
 
 
+def ctx_counts(d):
+    """L-ALG GAP-A-M 11e reduction: per phase (consecutive same-player searches, no dominion in between) and depth-0 index
+    i, c_i = number of DISTINCT contexts R of Dom(prevV) (domfirst) pieces at index i that returned -1. Returns a list of
+    (first search of phase, i, c_i)."""
+    out = []; phase = None; C = {}
+    for si, sr in enumerate(d.searches):
+        if phase is None or d.searches[si - 1]["player"] != sr["player"] or d.searches[si - 1]["dominions"]:
+            out += [(phase, i, len(cs)) for i, cs in C.items()]; phase = si; C = {}
+        d0 = [pc for pc in sr["pieces"] if pc["depth"] == 0]
+        for j, pc in enumerate(d0):
+            c = d.calls.get((si, j))
+            if c and pc["kind"] == "domfirst" and c[3] == -1: C.setdefault(j, set()).add(c[0])
+    out += [(phase, i, len(cs)) for i, cs in C.items()]
+    return out
+
+
 def run(path):
     g = rd.ff.pg.read(path)
     from stdsort import oink_order
