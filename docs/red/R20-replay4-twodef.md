@@ -25,3 +25,11 @@ player 1, context R = G (|R| 48), steps (top changed vertex, before -> after; fa
 So (F1) restricted to DEF steps is FALSE as well, in both orders. Both falls are below the top changed vertex ((LEX) holds
 at these steps) and the fallers of the two steps are in the two different components of the union (ids < 20 and >= 20),
 so there is no nesting ((NR) level 0).
+
+## 3. Caveat on the replay-depth measure (padding test, Oink order)
+replay4_n32 padded with k source vertices (priority p, random owner, one edge into the game; 4 seeds each), A_DTL Oink
+order: searches stay 13 in EVERY padded copy, but the replay depth varies with the pad: p = 0: depth 1, 2, 3 or 4 by
+seed; p = 1: depth 4 for all 8 copies (k = 16, 32); p random: 2, 3, 4. Inert sources do not change the work (searches),
+so the depth also depends on how the pieces are indexed (a priority-0 source becomes its own piece in the even phase
+and shifts levels). Replay depth is therefore a noisy signal; the quantity that matters is searches per phase. Climbs
+from the depth-4 padded copies p_16_1_1 (n = 48) and p_32_1_1 (n = 64) are running (seeds 911, 912).
