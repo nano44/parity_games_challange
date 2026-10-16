@@ -191,3 +191,4 @@
 - 00:18Z L-ALG 37bbe2f (§0 for every order datum) + d6129e3 (GAP-A data F1-F8; F3 in-search chain strongest conjecture) merged. CHECKER C3d started. L-RED pointed at searches-per-phase.
 - 00:23Z C3d FAIL (text): F-1 D1 wording, O3/O4/O8 citations, O7 missing, NF-1 parser always compresses priorities. Sent to L-ALG.
 - 00:30Z L-ALG deec040 (C3d fixes) + f2704d7 (Lemma W: tangles <= n*searches; GAP-A = searches per phase; 31-at-one-top was 31 at one level over 8 tops). CHECKER C3e re-diff. L-RED told target = searches per phase.
+- 00:33Z C3e: one-phrase FAIL (priority 0 maps to 0); N-3 §1.5 vs NOTE N2 contradiction. Sent to L-ALG.
