@@ -334,3 +334,68 @@ after C_B is lifted into P1 only if none of its escapes lies in C_B's attractor 
 (escapes there are in R and uncovered at P1). So a lift gate tied to the fast level's LAST tangle needs that tangle to have
 no escape in C_B's attractor while every earlier fast tangle keeps one there (else it is lifted early, by (ii) eating
 vertices of the fast level). This is a constraint on the attack, not an obstruction; OPEN.
+
+## 10. Barrier for this proof route: an abstract piece process with exponentially many searches (09:53Z; Lead go 09:52Z)
+Label: a BARRIER for proving GAP-A from the properties proved so far. NOT a lower bound for DTL: nothing here is a game.
+Status: the model and the table are PROVED (by inspection of the definitions); "(F) is what it violates" is a READING.
+
+10.1 The model APP(k). Vertices z and x_i^0, x_i^1 for i = 0..k−1 (n = 2k + 1), all of p-parity priority. Possible tangles
+t(c) := {z} ∪ {x_i^{1−c_i} : i < k} for c ∈ {0,1}^k (2^k distinct vertex sets). A state is a set T of such tangles. For a
+prefix c ∈ {0,1}^i define the digit r(c, T) := 1 iff t(c·0·1^{k−i−1}) ∈ T.
+One search under T (depth 0 only; there is no recursion):
+- for i = 0..k−1 (the LEVEL pieces): with c_0 := ε, b_i := r(c_i, T), c_{i+1} := c_i·b_i, piece i has context
+  R_i := {z} ∪ {x_j^{1−b_j} : j < i} ∪ {x_j^0, x_j^1 : j ≥ i}; its pruning result is −1 with return set {x_i^{b_i}}, from the
+  profile d(x_i^0) = 2, d(x_i^1) = 1 + 2·b_i, every other p-vertex of R_i at distance 1 (so the maximum leapfrogs from x_i^0
+  to x_i^1 when b_i turns 1); its removed set is D_i := Dom({x_i^{b_i}}) := {x_i^{b_i}};
+- piece k (the BOTTOM piece): context R_k = t(c_k) (the leftovers), result stable with V* = R_k, removed set D_k := R_k; its
+  sptl learns the tangle t(c_k) if it is new.
+The phase starts with T = ∅ and runs searches until one learns nothing. Learning t(c) with c = p·0·1^m flips the digit of
+level i = |p| in context p (r(p, T) becomes 1); every deeper level gets a fresh context p·1·… whose digit is 0. This is a
+binary counter with level k−1 as the least significant digit: the states 0^k, …, 1^k are visited once each, so the phase
+has 2^k + 1 searches and 2^k tangles on n = 2k + 1 vertices.
+Checked by simulation: experiments/alg/app_model.py (in check.sh for k ≤ 6; k = 10: n = 21, 1,025 searches) asserts the
+trace-checkable axioms of 10.2 (counts, one tangle per search, at most one upward profile change per context, first
+differences are upward changes at equal contexts driven by the previous search's bottom tangle, bottom contexts never recur).
+
+10.2 Every proved property next to the axiom of APP(k) that satisfies it (for a referee to check the encoding).
+| proved property (where) | how APP(k) satisfies it |
+| --- | --- |
+| Lemma W, DTL-proof.md §3(a): one extraction per top per search, so ≤ n tangles per search | one tangle per search, at one top of piece k |
+| D2(d), §3(d): a search that learns nothing (and finds no dominion) ends the phase | the phase ends at the first search without a new t(c) |
+| R_{j+1} = R_j \ D_j; D_j a function of (R_j, X_before, result, T) (C5-DTL.md §2) | R_{i+1} = R_i \ D_i with D_i = {x_i^{b_i}} |
+| Fixed-context monotonicity: C6 Lemma 2.1 (A_DTL under Theorem M-cond, §3) | at context R_i (i.e. prefix c_i) the profile changes once, upward: d(x_i^1) 1 → 3 |
+| −1 result = last survivors; argmax re-cut when the maximum moves (GAP-A-data F7; leapfrog, §6) | return set {x_i^0} → {x_i^1} when d(x_i^1) passes d(x_i^0) |
+| Contexts change only through results (DATA, §6.1) | each R_i is a function of the earlier results |
+| First-difference argument (§4d CARRY half; §6 driver lemma): a result at an equal context changes only if a NEW tangle fires there | b_i changes only when t(c_i·0·1^{…}) is added |
+| Driver lemma (§6, PROVED with D2): the driver of a level-j change is learned at a piece ≥ j in the previous search | the driver of every level change is learned at piece k ≥ i |
+| Lemma D2 (§6): learned tangles lie in Dom(V*, R) ∪ X_before | t(c_k) = R_k = D_k |
+| Lemma D3 (§9): Dom monotone in V*, T at fixed (R, X_before) | D_i is constant while b_i is; D_k's contexts never recur |
+| Lemma L-epoch (§9): within an epoch of a stable piece, learning needs V* growth, a lift or a catch-up | every epoch of piece k is a single search (2^k distinct contexts, each visited once) |
+| N_j ≤ K·C_j (§6 refinement) | C_i = 2^i distinct level-i contexts, K = 1 change per context |
+| Lemmas 2.2, E, P*-inv, M-cond, N; (r1) §7 | no deficits: the actual and the ideal pruning coincide (U = Û) |
+| Termination, D2(c) (pieces per search ≤ n) | k + 1 pieces per search |
+
+10.3 What APP violates that DTL might satisfy: the FRONTIER property (F).
+(F) "A tangle that changes the result of a −1 or cut piece i between consecutive searches (pieces < i unchanged) is
+learned in the first STABLE piece after piece i, i.e. in a context determined by the results of pieces ≤ i."
+L-RED's R10 (F) argues it for cut-eaten levels (READING): the driver's escapes are covered in the cut of search s+1
+without other new tangles, so in search s they are already outside R after the cut, its top is never a candidate, and the
+first call after the cut is stable and learns it. APP violates (F) maximally: every driver is learned at the bottom piece,
+whose context encodes every digit, and there is no stable piece between levels. If (F) held for every piece type, the
+driver of level i would be learned in a context that does not see the deeper digits, so the carry from level i+1 to level
+i would need a GATE at that stable piece that opens exactly when the deeper levels are exhausted: R10's (S)/(O)/lift
+analysis, where C6 excludes (S) (§8) and R10 finds (O) failing in 2CE. That is where a polynomial bound could come from.
+Status of (F) for −1 pieces with Q empty (Dom(prevV)), the level type APP uses: NOT implied by R10's argument (READING). The
+driver's escapes are covered in piece i's pruning in search s+1 by regions of tops at some round r; with the old tangles
+those regions are the same in search s, but only the return set's Dom is removed after piece i, so escapes in the regions
+of the OTHER tops stay in R_{i+1} and the driver can be learned deeper, as in APP. So (F) for Dom(prevV) pieces is the
+open property; proving it would rule out APP-like counters, and refuting it means building APP.
+
+10.4 For L-RED (realising APP(k) as a game; the model fixes what each piece must do, not the gadgets):
+(1) level i: two p-priority tops whose pruning distances at piece i leapfrog exactly when the deepest-zero tangle arrives,
+and a −1 result with Q empty (no vertex of R_i may attract into X, else it is a cut and R10's (F) applies);
+(2) the bottom piece learns, in every state, a NEW tangle whose vertex set encodes the state (the leftovers);
+(3) that tangle must fire at piece i* (the deepest zero) in the next search and change nothing at pieces < i*: its vertices
+are present there too, so some escape must be uncovered at every piece < i* and covered (or forgiven) at piece i*. A
+removed top is always in the union of regions while it survives, so the escape forgiven at i* should be a NON-top vertex
+of D_{i*−1} = Dom({x_{i*−1}^{b}}), and it must lie outside every region at the pieces above.

@@ -41,4 +41,6 @@ python3 -I -c "import ast, glob; [ast.parse(open(f).read(), f) for f in glob.glo
 python3 -I dtl_m_synth.py | tail -1
 # GAP-A-M.md §4b: the same failure in an actual A_DTL run (Python always; Oink trace when Oink is built)
 python3 -I dtl_mviol_check.py | tail -1
+# GAP-A-M.md §10: the abstract barrier model APP(k) must keep satisfying its checkable axioms
+python3 -I app_model.py 1 2 3 4 5 6 | tail -1
 echo "ALG-CHECK PASS"
