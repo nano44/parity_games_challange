@@ -165,3 +165,13 @@ L-RED) continue on Opus 5.5 at high effort, as fresh successor sessions under LA
 as such in the lane notebooks. The referees are not engaged before the reset (no complete claim is ready); if one is needed
 earlier, the Lead asks the owner first, because D1 says "Never downgrade the referee to save money". The Opus weekly limit is
 also at "allowed_warning": if Opus hits its cap, the fleet pauses again (D7) and the owner is told. Sweeps return to hourly.
+
+## D9 (2026-10-16 ~10:38Z, owner in the Lead session): search for van Dijk's DTL counterexample
+> Can you start a subsession that tries to look up if van dijk's DLT counter example is anywhere online available or posted
+
+Lead reading L28: "DLT" means DTL. The target is the author's counter_dtl ("Counterexample to the DTL solver", Oink README
+39254fe, 2021-06-25, never committed; T16 caveat (i)). A fresh L-LIT successor (Opus, D8) runs a read-only search; it owns
+docs/lit/T17-counter-dtl-search.md. It does not contact anyone, post, file issues or log in (D1). Any find is reported to the
+Lead at once with URL, commit or archive id and date; running it against DTL goes to L-RED. Working sessions: 3 of 5. Given the
+narrow, read-only task, the successor answers the five LANE-RESTART questions and then proceeds without waiting for "go";
+the Lead re-measures the answers afterwards.
