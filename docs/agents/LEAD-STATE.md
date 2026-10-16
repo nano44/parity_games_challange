@@ -315,3 +315,4 @@
 - 18:05Z hourly sweep: no overage (seven_day allowed_warning). Lead 707k $175.1; L-ALG succ. 4 idle with climb monitors armed (451k, $17.2; watch for 600k before box end), L-RED succ. 3 idle with climbs running (267k, $7.4; no depth-2 (NR) yet). No exceptions.
 - 18:29Z merged l-alg c7fc7cb (Lemma P on C6; replay depth 3). Routed replay-depth-vs-n to L-RED.
 - 18:33Z merged l-red 78469a8; (F1) '<=1 fall step per context' candidate routed to L-ALG.
+- 18:45Z merged l-alg a56af6a ((F1) not structural; attack recipe to L-RED).
