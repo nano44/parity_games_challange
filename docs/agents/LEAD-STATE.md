@@ -244,3 +244,4 @@
 - 10:58Z merged l-red 6a98d48 (cut-piece V phantoms; Lead verified the branch structure in dtl.cpp @8fbf0a7). Routed to L-ALG: restate §6 state and Phi_idx at cuts with the attractor.
 - 11:01Z merged l-alg 5981473/0e87a34 (Phi_idx refinement (d)).
 - 11:06Z L-LIT D9 early report (counter_dtl not found; author 'good paths' recipe found, routed to L-RED). Lead verified via GitHub API: the fleet repo is PUBLIC; never recorded before; raised with the owner (owner decision, not changed). L-LIT subagent out-of-scope GitHub code search logged as a process breach.
+- 11:08Z hourly sweep: no overage (seven_day allowed_warning). Lead ctx 271k; L-ALG, L-RED, L-LIT working (L-LIT 180k). Merged l-red 08599bf. No exceptions beyond the repo-visibility flag raised to the owner at 11:06Z.
