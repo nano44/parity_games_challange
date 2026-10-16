@@ -27,6 +27,19 @@ class T(D.DTL):
             s.trace[-1]["pieces"].append((Rin, res, frozenset(V), rh, frozenset(Vh)))
         return res
 
+def build(g):
+    """T on game g in the order given by DTL_ORDER: 'stable' (default; order datum omega = (priority, id)) or 'oink'
+    (Oink's own order, exact against pinned Oink: stdsort.oink_order, ins_desc, TV_SORTED, PEARCE)."""
+    if os.environ.get("DTL_ORDER") == "oink":
+        sys.path.insert(0, os.path.join(HERE, "..", "dtl-bench")); from stdsort import oink_order
+        idx = oink_order(g.prio); D.TV_SORTED = True; D.PEARCE = True; kw = {"ins_desc": True}
+    else:
+        idx = sorted(range(g.n), key=lambda v: (g.prio[v], v)); kw = {}
+    new = {v: i for i, v in enumerate(idx)}
+    d = T([g.prio[v] for v in idx], [g.owner[v] for v in idx], [[new[w] for w in g.succ[v]] for v in idx], **kw)
+    d.idx = idx
+    return d
+
 def analyse(d, st, name):
     for tr in d.trace:
         for (R, ra, Va, rh, Vh) in tr["pieces"]:
@@ -78,7 +91,6 @@ if __name__ == "__main__":
     st = dict(calls=0, calls_def=0, weaker=0, NOT_weaker=0, DEF=0, LRN=0, LRN_lag=0, ctx_changed=0, max_def_per_ctx=0,
               max_def_phase=(0, 0, None), n_max_def_phase=None, ex_def=[], ex_nw=[], ex_DEF_down=[], ex_DEF_other=[])
     for name, g in games:
-        idx = sorted(range(g.n), key=lambda v: (g.prio[v], v)); new = {v: i for i, v in enumerate(idx)}
-        d = T([g.prio[v] for v in idx], [g.owner[v] for v in idx], [[new[w] for w in g.succ[v]] for v in idx]); d.run()
+        d = build(g); d.run()
         analyse(d, st, name)
     print("games", len(games)); print(st)

@@ -710,6 +710,36 @@ pieces 0..j-1; measured ctx_changed = 0.
   - The §13 DEF classification (up / down / other) compares actual return sets directly and uses no inclusion.
   So the error is confined to the struck §13 line.
 
+### 13b. Why (H4) has the same shape as GAP-A: regions are LEXICOGRAPHICALLY monotone (13:09Z)
+- Lemma R (PROVED, A_DTL code, actual_union). Fix (p, R) and ONE candidate set V, and let T ⊆ T'. List V's tops in
+  descending order t_1, t_2, …. The region of t_k is Z_k = lfp({t_k}, CurR_k, pr(t_k), T), where
+  CurR_k = R \ (Z_1 ∪ … ∪ Z_{k−1}), with Z_k = ∅ when t_k is already in an earlier region. Then either the region
+  vectors are equal, or at the first index k where they differ, Z_k(T) ⊊ Z_k(T'). In the second case the later regions
+  Z_{k+1}, … are unconstrained and can SHRINK.
+  Proof. The lfp is monotone in the tangle set and in the base. If Z_1..Z_{k−1} agree, CurR_k agrees, so
+  Z_k(T) ⊆ Z_k(T'). If Z_k(T) = Z_k(T'), continue to k+1. A top swallowed by a grown earlier region gets Z = ∅ under
+  T'. That is covered by "the first differing region grew". □
+- Consequence. Within one pruning round, the actual union is driven by a vector of regions that evolves like a
+  counter: a carry (the first differing region grows) can reset every lower region. This is exactly what produces a
+  deficit (Lemma E: a straddling tangle consumed by a higher region that grew). The per-call bound this yields is the
+  number of lexicographically increasing steps of disjoint region vectors. That number is not polynomial in general
+  (≤ n components, each a chain), so Lemma R gives NO polynomial bound on DEF changes per context, by itself.
+- Reading: (H4) is the same carry/reset question as GAP-A, one level down: inside one best_vertices round instead of
+  across depth-0 pieces. C6 removes it by construction (Û has no consumption). For A_DTL a bound on DEF per context
+  would need a reason why region carries with resets cannot repeat. Not proved.
+- DATA (scratchpad defclimb.py, fitness = DEF changes at one (index, context), n = 20). The corpus max was 1.
+  - Order datum ω = stable (dtl_pyref default, (priority, id); L26 freezes DTL for every ω, so this counts for the
+    proof but is NOT pinned-Oink behaviour). experiments/alg/instances/h4_def5_stable_n20.pg: player 1, phase after
+    the first dominion, piece 0 (|R| = 18). The ideal (C6) result is STABLE with an 11-vertex V̂* in all 6 searches,
+    while the actual result is −1 five times in a row, return sets (original ids) {13} → {13, 17} → {7, 13, 17} →
+    {17} → {7} → stable {5, 7, 17}. All 5 transitions of the phase are DEF changes at this one context. The
+    stable-order pyref takes 10 iterations here; in Oink order it takes 4 iterations and has 0 deficit calls
+    (dtl_pyref --order oink and Oink both report 4, Oink verified). So this is a tie-breaking phenomenon of ω = stable.
+  - Order ω = oink (DTL_ORDER=oink, exact against pinned Oink): seed 123 from lemmaS_viol_n20 reached 3 DEF changes at
+    one context within 378 steps (running).
+  - Key earlier instances agree in both orders and with Oink (iterations): phi_idx_flat_n20 5, nest_nest_s84 19,
+    lemmaS_viol_n20 8.
+
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
 depth-0 index i in a phase. By §11e, carries at index i ≤ n(n+2) · c_i.
