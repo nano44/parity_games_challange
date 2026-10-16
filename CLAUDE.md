@@ -14,7 +14,7 @@ Playbook: docs/sources/fleet-playbook.md. Literature map (secondary source): doc
 - Every cited result has an opened source (arXiv id or DOI, theorem/section number) in your notebook. The landscape doc is never a source by itself.
 - Record every dead end with the exact obstruction and the instance that killed it.
 - Edit only your lane's files. Never rewrite pushed history (no rebase, amend, force-push). No pull requests.
-- Push only with `scripts/push.sh` (runs scripts/verify.sh, pushes the current branch only on PASS). Never pipe verify's output into anything before a push: a pipe hides its exit code.
+- Push only with `scripts/push.sh` (runs scripts/verify.sh, pushes the current branch only on PASS). Never pipe the output of verify.sh or push.sh into anything: a pipe hides the exit code. Redirect to a file and print `$?`.
 - Quote the owner's rulings verbatim (docs/DECISIONS.md). A reading is labelled "Lead reading".
 - Never publish, post, email, submit or contact anyone outside the fleet. No secrets in any session.
 - Report outcomes faithfully: failures with their output, skipped steps named as skipped.
