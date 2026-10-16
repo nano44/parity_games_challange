@@ -11,7 +11,8 @@ release build reads tangles from `-t -t`; the Debug build and a PATCHED Debug bu
 | dtl_distance.py G.pg TRACE | any `-t` trace | pruning distance of every vertex at the FIRST best_vertices call of each search; monotonicity across same-player searches |
 | dtl_crossclimb.py OINK OUT n seed steps [--cnew / --pertop / --restart / --searches] [--seedgame G] | release | hill-climb on random games (n vertices, priorities ≤ n, out-degree 1–3, 1–3 mutations per step) for crossing tangles at one top / (C-new) violations / tangles at one top / restart violations / searches |
 Instances kept (experiments/alg/instances/): dtl_cross3_n14.pg, dtl_pertop31_n18.pg, dtl_pertop28_n24.pg, dtl_cnew14_n20.pg,
-dtl_restart7_n16.pg, dtl_restart8_n20.pg. All solved by A_DTL with verified strategies (`oink -v`).
+dtl_restart7_n16.pg, dtl_restart8_n20.pg, dtl_searches15_n24.pg, dtl_searches20_n32.pg. dtl_tops.py G.pg DEBUG-TRACE gives the
+TRUE top of every tangle (the `region` line preceding it) and the membership-oscillation histogram. All solved by A_DTL with verified strategies (`oink -v`).
 PATCHED build: copy tools/oink/src to a scratch dir; in dtl.cpp search_rec add `ENTER depth d` after the bitset declarations,
 `EXIT depth d` before the `result == 0` return, and in the stable branch's Dom(V,R) loop (876-889, untraced in Oink) print
 `X ∪= DomStable(V)` once and, per top, `domregion <pr> <top> <vertices newly added to X>`; build Debug as in notes item 6.
@@ -31,18 +32,30 @@ PATCHED build: copy tools/oink/src to a scratch dir; in dtl.cpp search_rec add `
 - So tangles(tc+ N) ≈ N (gadgets) × N (chain) + 2N (top) and searches = 2N + 2: the quadratic count in N is sublinear in n ≈ 17N².
 
 ## 3. Findings (DATA unless marked)
+F0 (PROVED, reading). Lemma W: within one call of search(), every vertex extracts tangles as a top at most once. sptl (dtl.cpp
+   528-529) runs extractTangles only `if (closed_region and !W[top])` and sets W[top]; W is reset only at the end of search()
+   (1016, "already did tangle this iteration", dtl.hpp 75); extractTangles is called nowhere else (§1.5). Hence the tangles
+   created in one search ≤ |{tops that extract}| ≤ |P_p ∩ G'| ≤ n, and tangles(G) ≤ n · (number of search calls). With D2(d)
+   (calls ≤ tangles + dominions + 2) this is circular, but it makes the reduction exact: GAP-A ⇔ polynomially many searches.
+   It also means "max tangles per (top, search)" = 1 (dtl_tops.py, true tops from the Debug trace: 1 on every game tested).
 F1 (DEAD) Laminarity. The family of stored tangle sets is far from laminar: tc+ N = 6: 166 nested, 205 crossing, 1,282 disjoint
    pairs. So |T| ≤ 2n by laminarity is out.
-F2 (DEAD) "≤ n tangles per top". dtl_pertop31_n18.pg: n = 18, one top learns 31 tangles (44 tangles, 6 searches, 1 dominion).
-   Also 23 at n = 20, 28 at n = 24, 24 at n = 30 (climbs --pertop, 100k steps).
-F3 (DATA, 0 exceptions) In-search chain. Within ONE search, the tangles learned at one top form a strictly growing chain
+F2 (CORRECTED 00:50Z) "tangles per top". dtl_tangle_family.py identifies a tangle's top as its max-(priority, id) vertex, which
+   merges equal-priority tops: the "31 tangles at one top" of dtl_pertop31_n18.pg are 31 tangles at the priority-17 LEVEL, which
+   has 8 tops; with true tops (dtl_tops.py, Debug trace) the maximum per top is 4 there and ≤ searches everywhere (Lemma W).
+   Per-level counts: 31 (n = 18), 23 (n = 20), 28 (n = 24), 30 (n = 30), 30 (n = 40) from the --pertop climbs.
+F3 (EXPLAINED by F0; the chain is across equal-priority tops) In-search chain. Within ONE search, the tangles learned at one
+   LEVEL (as identified by dtl_tangle_family.py) form a strictly growing chain
    (each later one a strict superset of the previous). Checked on tc+, 13 families, L-RED's chain/ladder/counter_dftl, 3 random
    batches, and every climbed instance including the ones optimised against it (fitness --restart's second component counts
    chain breaks: 0 in 12 climbs of 3k–30k steps). Mechanism (dtl_pertop31_n18, top v17 with 8 equal-priority tops): the region
    set is fixed, the fresh tangle fires in the next sptl pass and brings its stored strategies, the DFS parents of the other
    vertices change, and the SCC of the top grows by ≥ 1 vertex per pass (escapes 13, 12, 10, 9, 8, 7, 5, 4). This is the
-   predecessor's (a4) "str change at a fixed region set", observed as a chain of length 8 at n = 18.
-   Consequence (if F3 is PROVED): ≤ n tangles per top per search, so |T| ≤ n · Σ_τ (searches in which τ learns) ≤ n² · searches.
+   predecessor's (a4) "str change at a fixed region set" — with the correction that each step is a DIFFERENT top of the same
+   priority (8 tops of priority 17 at n = 18): pass 1 the highest learns t1; pass 2 the next top's region absorbs t1 (fires)
+   plus itself and learns t2 ⊃ t1; and so on; each top extracts once (W). A climb with fitness = chain breaks found 0 in 12k–25k
+   steps at n = 12, 16, 20, consistent with: a top's region in a later pass contains the previous top's tangle as a unit.
+   Consequence: nothing beyond F0 (≤ 1 per top per search).
 F4 (DEAD) (C-new): "every new tangle at a top contains a vertex that no earlier tangle at that top contains" (would give ≤ n per
    top). FALSE: 20 violations in dtl_pertop31_n18 (the chain restarts each search from a base inside the previous chain's union),
    and even the RESTART (first tangle of a top in a search) can be covered: dtl_restart8_n20 (11 restart violations, 1 strict
@@ -70,7 +83,18 @@ F8 (DATA; the counter-shape candidate) Oscillation of a vertex's membership in a
    A flip-flop is possible in principle; it ends unless each configuration produces NEW tangle sets (duplicate check), i.e. it
    must be driven by a lower counter (TL's tc idea applied to distraction status instead of region membership).
 
-## 4. Reduction of GAP-A (reading of the data; nothing proved)
+F9 (DATA; the strongest counter-like behaviour found) dtl_searches20_n32.pg (climb --searches, n = 32): 20 searches, 124
+   tangles, Even's phase 16 searches with ONE dominion at the very end; searches 6–12 and 14–15 learn nothing at depth 0 and
+   everything in the RECURSION (the −1 cut of 25–26 vertices at depth 0 is searched recursively and learns there). Top v19
+   (priority 28, Odd-owned) learns 12 tangles over 12 searches with sizes 3, 15, 14, 17, 19, 18, 12, 15, 9, 9, 10, 18 and
+   escapes 24, 14, 15, 12, 10, 11, 17, 14, 20, 20, 19, 11: four vertices change membership FIVE times each (in, out, in, out,
+   in, out; v17 pr 2, v16 pr 26, v13 pr 14, v4 pr 26, all Odd-owned). So neither the SCC, its size nor its escape count is
+   monotone at a top across searches, and the oscillation is not a 2-cycle. P1 "every learning search adds a new (top, vertex)
+   coverage pair" (would give ≤ n² searches) is DEAD here (8 violating searches) and in dtl_cnew14_n20 (search 3: v7's SCC
+   shrinks from {7, 14, 15} to {7, 15} with no dominion in between).
+   Searches vs n in the --searches climbs after 10k–25k steps: n = 16: 9; 24: 16; 32: 20; 48: 12 (7k steps); 64: 12 (3k steps).
+
+## 4. Reduction of GAP-A (reading of the data; F0 proved)
 tangles = Σ_τ Σ_searches (chain length of τ in that search) ≤ n · #(τ, search) pairs with a restart.
 - (F3 to PROVE) chain length ≤ n: needs "within one search at one top the SCC only grows": within a piece the region set is
   fixed except for thefts by higher tops (a3) and fresh tangles only add str; the open point is the str change (a4).
@@ -90,3 +114,5 @@ tangles = Σ_τ Σ_searches (chain length of τ in that search) ≤ n · #(τ, s
 | first stable piece's R non-decreasing | counter_symsi 12 (search 0 → 1: +1 −58) |
 | −1 return set monotone in T | tc+ N = 4 search 0 → 1 |
 | first-call distance profile as a potential | tc+ N = 6: constant over searches 1–5 |
+| P1: every learning search adds a new (top, vertex) coverage pair (searches ≤ n²) | dtl_cnew14_n20.pg search 3; dtl_searches20_n32.pg (8 searches) |
+| per-top escape count or SCC size monotone across searches | dtl_searches20_n32.pg top v19 |

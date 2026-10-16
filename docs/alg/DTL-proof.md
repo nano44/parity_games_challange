@@ -675,8 +675,13 @@ searches the membership of a vertex in a top's SCC OSCILLATES without a dominion
 distraction removes a cut, un-forgives exits, and turns another top into a distraction; the reverse happens one search later.
 So neither heads nor first-stable-piece contexts are monotone across searches (F6, F7), and Lemma D cannot be applied across
 searches in any piece. (iii) The first-call pruning distance is monotone in T (F5, 0 violations) but constant across progressing
-searches. Reduction (reading): tangles ≤ n · #(top, search) restarts, so GAP-A ⇔ polynomially many searches per phase (each
-search without a dominion restarts a top). Candidate counter shape for L-RED: the rescue/regress flip-flop of F8 driven by a
+searches. Lemma W (PROVED, reading, 00:50Z): sptl extracts at a top only `if (closed_region and !W[top])` and sets W[top] (528-529); W is
+reset only in search() (1016); extractTangles is called nowhere else. So every vertex extracts at most once per search and
+tangles(G) ≤ n · (number of search calls). CORRECTION to (i): the 31 tangles are at one priority LEVEL (8 tops; true tops via
+the Debug trace give ≤ 4 per top there), and the in-search chain is across the equal-priority tops (each absorbs the previous
+top's fresh tangle), consistent with Lemma W. Reduction (PROVED via Lemma W): GAP-A ⇔ polynomially many search calls. Strongest
+counter-like data (F9): dtl_searches20_n32.pg, 20 searches at n = 32, a top whose SCC takes 12 values with four vertices
+changing membership five times each, most learning inside the recursion. Candidate counter shape for L-RED: the rescue/regress flip-flop of F8 driven by a
 lower counter so that every configuration gives new sets.
 Status of 3: (b), (c), (d) PROVED; (e) PROVED conditional on (a); (a) GAP-A (sharpened above: the number of searches).
 
