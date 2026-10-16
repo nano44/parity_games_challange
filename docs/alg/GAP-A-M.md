@@ -186,7 +186,7 @@ the attractor into X, so equal child sets can come with different D_j. The 10:58
 a PHANTOM, and attractor growth at an unchanged V is a real change. The LEVEL of a transition is the first j whose
 corrected state differs. Counts in this file measured with (R, res, V) at cut pieces carry that error; the corrected
 counts are in §11c. The counting argument above is unchanged in form; only the state it counts changes.
-RE-MEASURED (11:25Z; experiments/alg/dtl_pieces.py e41ccfb + this commit). The old tracer had a bug: it never
+RE-MEASURED (11:24Z; experiments/alg/dtl_pieces.py e41ccfb + this commit). The old tracer had a bug: it never
 restored the depth after a cut's recursion, so every depth-0 piece after the first cut went unrecorded. On every
 experiments/alg/instances/dtl_*.pg, climbs_1016 and 600 random games n ≤ 24 (tc+ not re-run; no generator call in this
 script), there are 640 games:
