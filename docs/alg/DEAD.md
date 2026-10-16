@@ -121,8 +121,11 @@ fixed depth-0 context of A_DTL.
   no stored tangle loses a vertex).
 - "Fallers lie strictly below the top riser in priority" (box-4 DATA pattern): DEAD, both lex_viol instances.
 - (F1) (L-RED: at most one fall step per context): DEAD, experiments/red/carry/instances/f1_twofall_n48.pg (L-RED R19;
-  one DEF fall and one LRN fall at one context); synthetic: experiments/alg/dtl_twofall.py. Surviving DATA candidate:
-  (F1-DEF), at most one DEF fall step per context (GAP-A-M §18k).
+  one DEF fall and one LRN fall at one context); synthetic: experiments/alg/dtl_twofall.py.
+- (F1-DEF) (at most one DEF fall step per context): DEAD, experiments/red/carry/instances/f1_twodef_n48.pg (L-RED R20,
+  l-red 289931e; Oink 11 iterations, verified: two DEF fall steps at one context, in the two disjoint components);
+  synthetic: dtl_twofall.py (both falls are DEF steps). With it, every per-context (H4) candidate stated on 2026-10-16
+  is dead.
 - Exact obstruction: a vertex that rises (or a new tangle) can steal a vertex of a straddling tangle into a HIGHER
   region. The tangle's rest is re-absorbed only at the lower level of its own cycle maximum, so whatever followed the
   tangle at the higher threshold is lost (Lemma R carry + Lemma E rest). The loss then propagates UP over the later rounds
