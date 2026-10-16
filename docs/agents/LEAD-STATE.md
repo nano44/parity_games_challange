@@ -317,3 +317,4 @@
 - 18:33Z merged l-red 78469a8; (F1) '<=1 fall step per context' candidate routed to L-ALG.
 - 18:45Z merged l-alg a56af6a ((F1) not structural; attack recipe to L-RED).
 - 18:57Z merged l-red 6b384b2 ((F1) false as stated; DEF-only (F1) open). Lead re-ran Oink.
+- 19:01Z merged l-red 289931e (replay depth 4 at n=32; (F1-DEF) false). Lead re-ran Oink on both.
