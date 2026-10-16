@@ -707,3 +707,10 @@ depth-0 index i in a phase. By §11e, carries at index i ≤ n(n+2) · c_i.
   (max c_i = 4 at n ≤ 54) shows no growth, but the climbs that reward fresh contexts plateau at 5-6 (§6.3b, notebook).
 - Status: (H2b) reduces to c_i; c_i is bounded by K^i and by nothing better that is proved. GAP-A OPEN at the same place
   as §6.3b: fresh child contexts per parent state.
+- ADDENDUM (11:49Z): the reduction is CIRCULAR. Trivially c_i ≤ (number of searches in the phase), since each search
+  visits index i at most once. Conversely, a phase with many searches changes some depth-0 piece at every transition
+  (or progresses at depth ≥ 1), which creates new contexts at later indices. The c_i climbs show this: scratchpad
+  ciclimb.py seed 102, n = 24, reaches Σ_i (c_i − 1) = 40 with only 5 searches, because a change at piece 0 moves every
+  later index to a new context. So "(H2b) follows from a bound on c_i" says no more than "(H2b) follows from GAP-A". The
+  non-circular content is the growth of c_{i+1} relative to c_i, i.e. whether piece i's states RESET in a fresh context
+  (§12 child resets: real, 4/38). That is §6.3b's open question and is unchanged by this section.
