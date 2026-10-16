@@ -1492,3 +1492,24 @@ child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set
   The same game in stable order has 11 searches in that phase (order datum matters a lot). spp_n40.pg replaced by the
   step-27,334 game: 14 searches in one phase (Oink; 21 iterations, verified). n = 30 last improved at step 38,146 (20:23Z,
   18) and n = 60 at step 8,729 (20:19Z, 14).
+
+### 18m. Box-end headline: searches per phase vs n (A_DTL, Oink order; climbs 19:09Z-23:14Z, stopped)
+experiments/alg/dtl_searchclimb.py, fitness = (max searches in one phase, iterations), random starts gen.random_game(n, n,
+1, 3, seed 7n), mutate() of dtl_mclimb, 4 climbs in parallel (equal wall time ≈ 4 h 05 min). Steps reached (rate measured
+under the same load, 22:33Z): n = 20 about 7.6 steps/s, n = 30 6.2, n = 40 1.0, n = 60 0.7. Final instances
+experiments/alg/instances/spp_final_n{20,30,40,60}.pg (pinned Oink: 22 / 22 / 26 / 16 iterations, all verified).
+| n | best searches in one phase | last improvement (step, time) | flat afterwards (≈ steps) | iterations | max/n | iterations/n |
+|---|---|---|---|---|---|---|
+| 20 | 19 (|G'| 20, 14 p-parity) | 111,532, 21:52Z | ≈ 37,000 (81 min) | 22 | 0.95 | 1.10 |
+| 30 | 19 (|G'| 30, 20 p-parity) | 81,234, 22:07Z | ≈ 25,000 (67 min) | 22 | 0.63 | 0.73 |
+| 40 | 19 (|G'| 40, 26 p-parity) | 31,568, 22:44Z | ≈ 1,800 (30 min) | 26 | 0.48 | 0.65 |
+| 60 | 14 (|G'| 60, 34 p-parity) | 8,729, 20:19Z | ≈ 7,000 (3 h) | 16 | 0.23 | 0.27 |
+At one common STEP budget (Lead 21:46Z; from the improvement logs): at 8,729 steps max/n = 0.45, 0.43, 0.15, 0.23
+(9, 13, 6, 14 searches); at 20,000 steps (n = 60 never got there) 0.60, 0.50, 0.25; at 30,000 steps 0.60, 0.50, 0.40.
+(c) of the Lead's 20:45Z: no phase has more searches than |G'|; spp_final_n20's long phase (player 0) has MORE searches
+(19) than p-parity vertices (14); every long phase exceeds its top priority's vertex count (1-2). Order datum: the same
+spp_n20 checkpoint game has 11 searches in that phase in stable order versus 18 in Oink order.
+Reading: no super-polynomial signal. The best phase length is about 19 at n = 20, 30 and 40 alike, so at equal effort it
+does not grow with n here; n = 20 and 30 have flattened, n = 40 and 60 were still slow. These are hill-climb lower bounds
+on what DTL can be made to do, not upper bounds; the next box should rerun with equal STEP budgets, several seeds per n,
+and seeds from L-RED's phase climbs.
