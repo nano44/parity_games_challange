@@ -264,3 +264,4 @@
 - 12:08Z WATCHDOG 12:05Z: its own context 615k (>600k, grows ~22k/h; auto-compaction handles it; no restart now). Its $157.69 total understates spend: L-ALG/L-RED cost_usd (1.36/1.08) look per-epoch, not cumulative (measurement caveat, not an overage signal; isUsingOverage false).
 - 12:18Z merged l-alg 29448eb (§16 staircase); routed digit requirements (a)+(b) to L-RED.
 - 12:20Z L-RED R15: §13 'V_actual ⊆ V̂' fails for -1 return sets (h4_notweaker_n20; Lead re-ran Oink). Routed to L-ALG to restate §13.
+- 12:24Z merged l-alg b41ee5a, l-red replay_blocks.
