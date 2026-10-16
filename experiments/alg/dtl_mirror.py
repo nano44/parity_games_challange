@@ -25,6 +25,7 @@ class Tr(C6):
     def search_rec(s, R, p, depth):
         if depth == 1:
             s.trace[-1].setdefault("cuts", set()).add(s.piece)    # a recursion follows only a cut (-1, Q nonempty)
+            s.trace[-1].setdefault("att", {})[s.piece] = frozenset(R)   # the cut's attractor Z (R of the child call)
         od = s.depth; s.depth = depth; r = super().search_rec(R, p, depth); s.depth = od; return r
 
     def best_vertices(s, V, R, p):
@@ -82,7 +83,17 @@ def analyse(d, out, name):
     for k, (a, b) in enumerate(zip(d.trace, d.trace[1:])):
         if a["p"] != b["p"] or b["dom"] != a["dom"]: continue
         pa, pb = a["pieces"], b["pieces"]; i = 0
-        while i < min(len(pa), len(pb)) and pa[i][:3] == pb[i][:3]: i += 1
+        # state of a depth-0 piece (Lead 10:59Z, L-RED 6a98d48): at a cut piece V is never read (phantom); its state is
+        # (R, result, attractor Z). At a Dom(prevV) / stable piece: (R, result, V). STATE_V=1 restores the old (R, result, V).
+        def sig(tr, j):
+            P = tr["pieces"][j]
+            if os.environ.get("STATE_V") != "1" and j in tr.get("cuts", set()): return (P[0], P[1], "cut", tr["att"][j])
+            return P[:3]
+        while i < min(len(pa), len(pb)) and sig(a, i) == sig(b, i): i += 1
+        if i < min(len(pa), len(pb)) and i in a.get("cuts", set()) and i in b.get("cuts", set()):
+            out["cut_attractor_changes"] = out.get("cut_attractor_changes", 0) + 1
+            if len(out.setdefault("cutatt_ex", [])) < 3: out["cutatt_ex"].append((name, k + 1, i, len(a["att"][i]), len(b["att"][i])))
+            continue                                                     # (H1) territory, not a V change
         if i >= min(len(pa), len(pb)) or pa[i][0] != pb[i][0] or pa[i][1] != -1: continue
         p, R, G = a["p"], pa[i][0], a["G"]
         kind = "cut" if i in a.get("cuts", set()) else "dom"            # MIRROR concerns Dom(prevV) pieces only
@@ -162,6 +173,26 @@ def analyse(d, out, name):
                 bk["dead_m1_top_rescued_raises_Ri"] = bk.get("dead_m1_top_rescued_raises_Ri", 0) + (dnew[ut] > reci.get(ut, 0))
                 if not some_up and len(out.setdefault("c_ex", [])) < 3:
                     out["c_ex"].append((name, k + 1, i, kind, [(u, dprev[u], dnew[u], reci.get(u, 0)) for u in resc]))
+            # (e) R12 §9 (C-c): where is C's high escape e (e in R, pr(h) < pr(e)) at the learning piece P of search s?
+            if st.startswith("dead"):
+                bs, bP, bdep, _ = d.born[C]
+                hi = [e for e in d.tout[C] if e in R and d.pr[e] > d.pr[h]]
+                RP = a["pieces"][bP][0] if bs == k + 1 and bP < len(a["pieces"]) else None
+                if not hi: cat = "no_high_escape_in_R"
+                elif RP is None: cat = "P_unknown"
+                elif bP <= i: cat = "P_le_i_" + ("all_e_outside_RP" if all(e not in RP for e in hi) else "some_e_in_RP")
+                else: cat = "P_deeper_" + ("all_e_outside_RP" if all(e not in RP for e in hi) else "some_e_in_RP")
+                cat += "_d%d" % min(bdep, 1)
+                if hi and RP is not None and bP > i:
+                    Rn = a["pieces"][i + 1][0] if i + 1 < len(a["pieces"]) else frozenset()
+                    own = any(e not in Rn and e not in RP for e in hi)        # a high escape left at piece i itself
+                    bk["e_removed_by_piece_i_itself"] = bk.get("e_removed_by_piece_i_itself", 0) + own
+                    if own and len(out.setdefault("e_own_ex", [])) < 3: out["e_own_ex"].append((name, k + 1, i, kind, C, h, hi))
+                if not hi and len(out.setdefault("e_nohi_ex", [])) < 3:
+                    out["e_nohi_ex"].append((name, k + 1, i, kind, C, h, d.pr[h], sorted((e, d.pr[e]) for e in d.tout[C] if e in R), sorted((u, d.pr[u]) for u in resc)))
+                bk["e_" + cat] = bk.get("e_" + cat, 0) + 1
+                if cat.startswith("P_le_i") and len(out.setdefault("e_ex", [])) < 4:
+                    out["e_ex"].append((name, k + 1, i, kind, C, h, hi, bP, bdep))
             # (a) does a rescued vertex reach the new return set (or the piece turn stable)?
             Mb = rb[-2] if len(rb) > 1 and not rb[-1] else rb[-1]
             to_max = (pb_res != -1) or any(u in Mb for u in resc)
