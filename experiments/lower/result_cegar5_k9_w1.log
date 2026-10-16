@@ -1,0 +1,12 @@
+== CEGAR n=5, k9_w1
+Q_4 prios=[1, 2] owners=[0]: 812782 games, 3248306 nodes -> 48062 classes (W true on 47946); max split round 6 [72.6s]
+W cache ready
+round 1: subset 492 nodes (10 games), 773192 clauses -> SAT [2.3s]
+   Q_4: 420 failing classes; added 48 games
+round 2: subset 684 nodes (58 games), 1072517 clauses -> SAT [4.9s]
+   Q_4: 222 failing classes; added 48 games
+round 3: subset 876 nodes (106 games), 1371554 clauses -> SAT [5.1s]
+   5-vertex sweep: 21504 failing games in the patterns checked; added 48 [551.4s]
+round 4: subset 1116 nodes (154 games), 1745735 clauses -> UNSAT [25.3s]
+RESULT: no program with 9 Cpre gates (k9_w1) solves all one-player Büchi games with <= 5 vertices (UNSAT on a successor-closed subset).
+EXIT 1

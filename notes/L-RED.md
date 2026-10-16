@@ -1,7 +1,10 @@
-# L-RED notebook (independent adversary). LANE-RESTART handoff written 2026-10-15 18:35Z (my clock; Lead stamps run ~30 min ahead)
+# L-RED notebook (independent adversary). Successor session_01PxvcUhsSEhfjURzmBDBeoN from 2026-10-16 08:05Z (my clock), produced on Opus 5.5 (owner D8, Lead reading L27)
+Previous: session_0117Yy21tGGz9s1zzLfBdUKC (Fable; paused by the weekly limit ~01:23Z, last push 0bedda5 R9 v4).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
-(session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/verify.sh && git push -u origin claude/l-red`.
-Status: PARKED. No background runs, no monitors, no timed wakes. Last commit on claude/l-red before this file: 58f4f27.
+(session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh` (CLAUDE.md; never pipe verify).
+Status: PARKED (CARRY box 08:12Z-16:10Z ended; DONE sent 15:20Z, merged fe8cb18; all climbs stopped 15:17Z; next box is
+a fresh successor under LANE-RESTART). Next-box first target:
+L-ALG GAP-A-M 13h child-M candidate (see Resume point).
 
 ## DONE (all merged by the Lead unless noted)
 - R1 docs/red/R1-MSF.md: S2a MSF KILLED (gated Bland counter 2^N - 1; Gate Lemma: gates relabel the first-difference level).
@@ -24,12 +27,45 @@ Status: PARKED. No background runs, no monitors, no timed wakes. Last commit on 
   tc+, pairs ~n^0.6, later pieces hold most pairs but multiply nothing), removal-order invariant VIOLATED everywhere,
   newrecur correction (1 and 7 cases, W-suppressed first extractions, not determinacy breaks).
 
+- R10 docs/red/R10-carry.md (CARRY box, Opus 5.5): bsolo fast level; 2CE class: gate dichotomy, frontier self-sustain (F),
+  (S) needs a triggered deficit, support obstruction (module eaten within 2 searches; liftmod data), order gate (O) fails
+  (O1-O3; census 0 events); D2 and driver lemma adversarial pass (no gap); driver locality: strong form FALSE, (F) holds;
+  argmax MIRROR (M1)/(M2) for domfirst digits. Timestamp correction appended.
+- R11 docs/red/R11-r2-regress.md: (r2) of L-ALG's (alpha) regress fails on dtl_mviol_n20 (accepted by L-ALG).
+- R12 docs/red/R12-APP-realisation.md: APP(k) realisation analysis: partial design, WALL 1 (region coverage only; L-ALG
+  right that it does not generalise), WALL 2 tie for alive-top carries, (M2) impossible for alive-top lifts, redundancy
+  DATA (all survival changes by top-alive tangles are lifts), dead-top cap carry anatomy (C-a)-(C-c).
+- R13 docs/red/R13-phi-idx.md: Phi_idx data; near miss phi_flat_alive_n32 (alive-top); cut-piece V changes are phantoms;
+  0/175 alive-top domfirst drivers have their top in M_s (MIRROR M1); equal-context counts are Lemma F instances
+  (cross-context 50/50); INDEPENDENT CHECK CONFIRMS L-ALG's phi_idx_flat_n20 as a Phi_idx counterexample (driver t9).
+- R14 docs/red/R14-distract.md: van Dijk section 6 item 7 ("distractingly nice long path"; quote via L-LIT T17 (a)2, NOT
+  opened by me) built 5 ways on tc+ N plus a lure on tc N: neutral, collapse, or faster. Reading: stable V is p-closed
+  in R, so a good path only moves death rounds.
+- R12 section 10: section 9 restated after L-ALG C6 data; (C-c) first step refuted; "digit needs a cut" withdrawn.
+- R15 docs/red/R15-H4.md: (H4) attack. FINDING: "V_actual ⊆ V̂" (GAP-A-M 13 data line) fails for -1 return sets
+  (h4_notweaker_n20; per-round inclusion holds, actual empties a round earlier); h4_disjoint_n20 (disjoint targets).
+- R16 docs/red/R16-chained-resets.md: replay_blocks / staircases / nest2deep / lemma_s; dtl_searches15_n24 is context
+  toggling; dtl_searches20_n32 is a k=2 skeleton (4 x 4, K_child = 1); Lemma S 604/604 without deficit; section 5:
+  Lemma S FAILS on A_DTL under deficit (lemmaS_viol_n20: return set shrinks at equal M; lemmaS_Mdrop_n20: M drops).
+- R15 sections 4-10: 2 then 7 DEF at one ideal-stable context (h4_def2ctx_n20, h4_def7_n28); order labels (all my
+  instances identical in stable and Oink order); nested-chain reading dead at n = 44; compounding fitness (block form);
+  scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
+
 ## Resume point
-PARKED after the LANE-RESTART handoff (18:40Z my clock). Nothing in flight. A successor starts from "Open targets for a
-successor" above after reading docs/NOW.md and the Lead's brief; every R-file is listed in the DONE section.
+2026-10-16 CARRY box ended ~16:10Z (Opus 5.5). State: Phi_idx FALSE (L-ALG 11d, confirmed R13); c_i circular; target =
+chained resets / COMPOUNDING (Lead 13:46Z): a deficit (or reset) sequence at one context that makes a deeper piece or the
+next context run its own sequence again. Tool: dtl_search --fitness h4prod (block form, Oink order via DTL_ORDER=oink,
+LALG_DIR = a checkout of claude/l-alg). Per-context DEF counts grow slowly (Oink order, L-ALG + mine: n = 20: 4,
+28: 9, 36: 6, 44: 8), so (H4) has no constant per-context bound, and (C-rM-stable) is dead (L-ALG h4_def9_oink_n28).
+Next if resumed (in order): (1) (CM) filtered attack on L-ALG 13h candidate "child M non-decreasing across parent DEF steps into IDEAL-STABLE
+child contexts": a compounding instance where child M drops into an ideal-stable fresh context kills it (my unfiltered
+child_m_drops finds drops only into ideal -1 contexts; a filtered climb needs dtl_regvec M per index). (2) Scale the
+compounding: h4_compound2x2_n44 (block score 4, K_parent >= 3 x K_child = 2) -> does K_child grow with n; a third level.
+(3) r0 dips at one ideal-stable context WITH a DEF filter (the current r0dips fitness lacks it).
 
 ## IN FLIGHT
-None.
+- None. All climbs stopped 15:17Z. Final scores: h4prod block 4 (seed 262), 3 (seed 261); h4ctx 7 at n = 28.
+  L-ALG branch read through a detached worktree <scratch>/lalg (git -C <scratch>/lalg checkout --detach origin/claude/l-alg).
 
 ## NEEDS
 None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-order invariant).
@@ -46,8 +82,10 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
 - GAP-C: (alpha) (straddling tangle leaving the lowest region open) never produced; proxy fitness "alpha" in dtl_search.py.
 
 ## Things only I know
+- Stamps: write `date -u` readings in headings, never guesses (Lead 09:55Z caught R10/R11 headings 15-45 min late; correction appended to R10).
 - Clocks: my `date -u` runs ~30 min behind the Lead's stamps. Boxes are quoted in the Lead's clock.
-- TRAP (hit three times): `pkill -f PATTERN`, `pgrep -f PATTERN | xargs kill` and `ps aux | grep "[p]at" | xargs kill`
+- TRAP (hit three times, and a FOURTH time 2026-10-16 10:24Z by this Opus successor: `for p in $(pgrep -f 'fitness fresh')` killed
+  my shell, exit 144): `pkill -f PATTERN`, `pgrep -f PATTERN | xargs kill` and `ps aux | grep "[p]at" | xargs kill`
   kill my own shell when the pattern occurs ANYWHERE in the same shell command (e.g. in a later nohup line). Kill in a
   call of its own by PID.
 - TRAP: rebuilding an Oink binary while climbs use it kills them (PermissionError on the replaced file).
@@ -59,6 +97,26 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
 - zadeh_lb.py's exp-game start follows initial_strategy_for_exp_game; under it the index tie-break gives 41 at N = 2
   (vjfast/L-SI's best-reward start gives 19).
 - L-SI's branch is read through a detached worktree in the scratchpad (git worktree add <scratch>/lsi origin/claude/l-si).
+- (2026-10-16 CARRY box, Opus 5.5) Tracer facts for a successor:
+  * experiments/red/carry/phi_full.py runs A_DTL EXACTLY in Oink's order (oink_order, ins_desc, TV_SORTED, PEARCE) and
+    prints ORIGINAL ids. Its depth-0 call index j counts best_vertices calls, so it can differ from dtl_pyref's piece
+    index (lemmaS_viol_n20: my j = 4 at |R| 16 is pyref piece 2 at |R| 18; dtl_pyref records R at call entry). Match
+    calls across tools by return sets, not by index.
+  * L-ALG's dtl_pyref / dtl_deficit search list SKIPS Oink iterations that learn nothing, so pyref "search k" can be
+    Oink iteration k+1 (h4_notweaker_n20). Oink's -t -t labels "id/priority" use REINDEXED ids = L-ALG internal ids
+    (sorted by (priority, id)).
+  * dtl_deficit.py defaults to the STABLE order ω = (priority, id); DTL_ORDER=oink gives Oink's order (l-alg >= 08bf2b5).
+    Label every count with its order (L26). Use dtl_deficit.build(g), not a hand-made sort.
+  * My h4 / h4ctx / h4prod / crm fitnesses import L-ALG modules read-only through LALG_DIR = a detached checkout of
+    origin/claude/l-alg (git -C <scratch>/lalg checkout -q --detach origin/claude/l-alg after a fetch). crm must run
+    with cwd = that checkout (dtl_regvec uses relative paths).
+  * Every phi_full-based fitness reloads phi_full.py at EACH evaluation. Editing it changes running climbs at once (a bug
+    there makes the fitness return -1, so those candidates are rejected). Formula changes inside dtl_search.py need a
+    restart.
+  * The instance index for today is in docs/red/R15-H4.md sections 1-12 and R16 section 5. Every instance is pinned in
+    experiments/red/check.sh (dtl_flipflop counts).
+  * Random source-only padding (experiments/red/union/pad.py) often destroys deficit structure: try several pad seeds
+    and keep the ones that preserve the count.
 - Scratchpad (not in the repo, lost with the container): /tmp/claude-0/-home-user-parity-games-challange/e0836d53-363a-523b-ac4d-a55aa921c6e9/scratchpad:
   vjfast (L-SI's C++ engine compiled), pgs/ (PGSolver clone d3cd624), dl/ (papers as txt), z_N.pg (zadehexp), dtl/ and
   dftl/ (all DTL games, traces, climb outputs), oink-dftl-src/build (branch dftl @ ea51834 with counter_dftl restored),
@@ -76,6 +134,17 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
    Debug build also prints "attracted v by p (via w | forced | via tangle t)" at trace >= 3 and "duplicate tangle" at >= 1.
 
 ## Tools in experiments/red/dtl/ (what each measures, caveats)
+- dtl_flipflop.py GAME [--quiet] [--player p] [--tangles] [--oink OINK] [--order oink|stable]: instrumented DTL run on
+  L-COMP's dtl_py.py (imported; best_vertices/search_rec bodies repeated with log lines): per search the pieces (domfirst /
+  cut t seeds toX recursed / stable V* removed), every pruning round (V, candidates, forgiven@threshold, distractions),
+  new tangles per piece with the top VERTEX, the status table (round of pruning per own-parity vertex per search),
+  --tangles: birth, escapes and every firing (search:piece/phase) of each tangle. Exact (MATCH with Oink on all instances).
+- dtl_ctxmono.py GAMES | --random N nmax seed: Claim P (pruning round non-decreasing in T for a fixed context R) and
+  Claim Q (stable V* non-shrinking), plus -1-set (argmax) changes.
+- gens_ff.py hdelay m K: the failed one-search-delay ladder (R9 4c), kept as the worked example of (f8).
+- dtl_search.py new fitnesses: iters (searches; gamed by singleton chains), evens (+ --maxeven K), restarts/maxrestarts/osc
+  (release trace keyed on priority: gamed by equal-priority tops), rep/excess (Python-scored, exact top vertex; excess =
+  searches - dominions - distinct learning (player, top) pairs). --grow k appends k random vertices to a --from seed.
 - dtl_search.py OINK n: hill-climb over games; fitness tangles | unsolved | wrong (verifier failure/error/unsolved;
   use the debug or detector build for throws) | perhead | perheadsearch | persearch (fooled by equal priorities: use
   --injective) | prunemono (newly pruned vertices across searches) | dups (needs a debug build) | straddles | alpha
@@ -100,6 +169,19 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
   order, chain 10 = 8 and counter_odftl 3 = 9 tangles when Oink is built, and the older pins). README.md lists them.
 
 ## Traps and conventions
+- SLIP 2026-10-16 14:33Z (Opus 5.5): ran `scripts/push.sh 2>&1 | tail -8` for c204679. push.sh gates internally, and its
+  output showed VERIFY PASS before the push, so the gate held. But no pipe on a push call, ever: push.sh as its own
+  call, then read the summary.
+- Verify FAILED transiently in experiments/red/check.sh (14:30Z, 14:42Z). ROOT CAUSE (found 14:45Z): check.sh runs under
+  set -euo pipefail, and the pins used `out=$(python3 ... | head -1)`. When the tracer prints more than one line, head
+  exits, Python's later write gets EPIPE, Python exits 120, and pipefail plus set -e kill the check. Timing-dependent,
+  so it is worse under load. Fixed by using `| sed -n 1p` (it reads all of its input) in all 15 pins. Never `| head` in
+  a pipefail script.
+- SLIP (2026-10-16 ~01:00Z my clock, this session): the push of 6a60655 was issued as `scripts/verify.sh 2>&1 | tail -6 &&
+  git push`, a PIPE: the gate's exit code was replaced by tail's. The printed summary was VERIFY PASS (all steps), so the
+  pushed commit did pass, but the chain was wrong, exactly the predecessor's slip. Rule restated: the push command is the
+  literal `scripts/verify.sh && git push -u origin claude/l-red`, nothing between, no pipe, no tail; read the output after.
+  Reported to the Lead in the next message.
 - Oink's parser drops losing self-loops unless --no-loops; every DTL number before 16:02Z was without it (R8 states flags).
 - uintqueue is a STACK: Oink's attractors are depth-first; the newest tangle fired at a pop is explored first.
 - W: one extractTangles per top per search; the "perheadsearch" fitness therefore measures equal-priority tops.
@@ -184,6 +266,7 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
 - L-ALG claude/l-alg 898d02d docs/alg/candidates/C5-DTL.md (sections 0-6) and 549bb34 docs/alg/REPORT-2026-10-15.md
   "DTL attack" table and verdict (read 15:05Z).
 
+- 2026-10-16 hand ladder hdelay (gens_ff.py): dead on (f8) shared-Z rescue by an alive low top and on the Odd sink (R9 4c).
 - DTL staggered gadgets (R8 section 10): escapes to an Odd sink prune the head; closed Even towers are solved at once by
   the dominion attractor; open-by-design levels need an escape above the next top, which the pruning rejects. Rescue
   chains (priority-0 Odd-owned rescue vertices pointing at each other) are all rescued in round 1 because a candidate
@@ -195,6 +278,20 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
   gates (T12 section 4) is unnecessary, the Bland counter plus gates is smaller.
 
 ## Sources opened (arXiv id or DOI, theorem/section)
+- 2026-10-16 (Opus 5.5 successor): Oink @ 8fbf0a7 src/solvers/dtl.cpp 36-210 (attracts, attractVertices: player vertex
+  attracted by one edge into Z, opponent only if no edge into Gx \ Z; attractTangle: deleted if a vertex left G, fails if a
+  vertex is outside Z+R or above max_prio, fails if an escape is in Gx \ Z; attractTangles via tin[v] = tangles having v as
+  ESCAPE, so a tangle is tried only when one of its escapes is popped), 210-470 (extractTangles: Pearce SCC on R with str for
+  player vertices; escapes = opponent successors in G outside the SCC; no escapes = dominion; duplicate vertex sets skipped),
+  476-546 (sptl), 600-776 (best_vertices), 834-994 (search_rec), 997-1160 (search, run). src/tools/tc+.cpp makeBit.
+  L-ALG claude/l-alg 6f19541..e87fefb docs/alg/GAP-A-M.md sections 1-7 (Lemma E, Theorem M-cond, section 4b instance),
+  docs/alg/DTL-proof.md section 2.3 (K5, K6, the (alpha) regress, (r1)/(r2)), experiments/alg/dtl_ideal.py (Anatomy),
+  dtl_mviol_check.py (order recipe). L-COMP experiments/dtl-bench/dtl_py.py (attractors, sptl, best_vertices, pearce).
+- 2026-10-16: Oink @ 8fbf0a7 src/solvers/dtl.cpp 36-110 (attracts, attractVertices), 109-185 (attractTangle: vertices not in Z
+  must be in R and <= max_prio; escapes in Z or outside the subgame), 476-546 (sptl), 643-776 (best_vertices), 834-994
+  (search_rec), 997-1160 (search, run: Even to exhaustion then Odd, no return to Even); src/tools/tc.cpp makeBit (H, T, L,
+  S/A/B connectors, Z). L-ALG claude/l-alg d6129e3 docs/alg/GAP-A-data.md (all sections), notes/L-ALG.md (successor 1
+  version at ed9b87e); L-COMP experiments/dtl-bench/dtl_py.py (trunk) all of it; docs/DECISIONS.md D1-D7, L22-L25.
 - FHZ 1410.7530 again (R5): Fig. 3 p.9 (the i-th level with r = s = t = 1), section 4 p.8 (randomized counter, bit
   interpretation (b_i, w_{i+1}) in B), Table 1 p.14 (edges and costs) as encoded in fhz.py build.
 - Avis-Friedmann, "An exponential lower bound for Cunningham's rule", arXiv 1305.3944 (PDF opened ~16:20Z): section 3 p.10-11
@@ -275,6 +372,21 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
   "DTL attack" table and verdict (read 15:05Z).
 
 ## Dead ends
+- 2026-10-16 (Opus 5.5) van Dijk section 6 item 7 recipe against A_DTL (R14): neutral, collapse, or faster in every one of 5
+  readings on tc+ N (N = 2..8) plus a lure on tc N. Obstruction: a stable V is p-closed in R, so a good path only moves
+  death rounds; a reachable small dominion is never pruned (found in iteration 1). Instances: experiments/red/distract/.
+- 2026-10-16 nested-straddler-chain reading (R15 sections 6, 8): DEAD. h4_def8_oink_n44's phase tangles have 43
+  incomparable and 20 crossing pairs (not laminar); L-ALG 13f: straddlers never a chain beyond 2.
+- 2026-10-16 fitness artefacts: cidx (c_i <= searches, circular; L-ALG 14); product compounding (2 then 3 sequential DEF
+  scored 6; replaced by blocks, R15 section 9); disjoint unions do not inflate c_i (R16 section 4).
+- 2026-10-16 (C-rM-stable) (L-ALG 13g): killed by L-ALG itself (h4_def9_oink_n28, (r0, M) repeats); my crm climbs stopped.
+- 2026-10-16 CARRY (Opus 5.5): carry2 (stealer sig above the cuts) DEAD: sig's high cap pulls piece 0 into one region, piece 0
+  stable, 1 search (carry2 2 3). carry3 (deficit gate, L-ALG synthetic shape) DEAD as built: tau2's support closes into
+  {k,m,o,q2,tau2} with only escape sA and the slow cut eats the module from search 1 (carry/instances/carry3_2_2.pg). Climbs
+  from carry2/carry3/mviol (iters, excess, resets): linear or dominion-per-search games, no structure.
+- 2026-10-16 climbs for a DTL counter: fitness iters -> singleton self-loop chains (13 searches at n = 20, linear);
+  perhead/restarts/maxrestarts/osc (priority-keyed) -> equal-priority towers (19 tops at one priority x 4); rep -> towers;
+  excess v1 -> dominion-per-search games (0 tangles, 8 searches). Instances in the scratchpad climb/ only.
 - DTL staggered gadgets (R8 section 10): escapes to an Odd sink prune the head; closed Even towers are solved at once by
   the dominion attractor; open-by-design levels need an escape above the next top, which the pruning rejects. Rescue
   chains (priority-0 Odd-owned rescue vertices pointing at each other) are all rescued in round 1 because a candidate

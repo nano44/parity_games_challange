@@ -1,0 +1,12 @@
+class K_5: 200000 games
+   200000 failing
+round 2: 200 games, 790000 clauses -> SAT [8.6s]
+   40891 failing
+round 3: 400 games, 1580000 clauses -> SAT [1217.6s]
+   13069 failing
+round 4: 600 games, 2370000 clauses -> SAT [2268.1s]
+   7812 failing
+round 5: 800 games, 3160000 clauses -> SAT [992.9s]
+   1624 failing
+round 6: 1000 games, 3950000 clauses -> UNSAT [1625.0s]
+RESULT: no 8-gate program solves K_5 (UNSAT core of 1000 games)
