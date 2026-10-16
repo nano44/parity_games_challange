@@ -234,3 +234,4 @@
 - 10:21Z merged l-alg 9942f9a (MIRROR data; C6 parked). L-ALG next: cap-carry potential (agreed).
 - 10:24Z merged l-alg 2dc8f08 (route (H1)-(H4)). Agreed (H2b) next; routed constraint + child-reset data to L-RED.
 - 10:27Z merged l-red 5311b17. Flagged to L-RED: reconcile R12 §6 with L-ALG's dead-top cap carries; flagged to L-ALG: (H4) deficits now the common bottleneck per L-RED.
+- 10:32Z L-ALG sent Φ (-1-record potential for (H2b) at Dom(prevV) pieces; data 12/12, thin) and: WALL 1 does not generalise (threshold closure covers). Routed Φ to L-RED as attack target. Write-up push pending from L-ALG.
