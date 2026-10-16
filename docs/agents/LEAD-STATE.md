@@ -225,3 +225,4 @@
 - 09:45Z merged l-red f8bc9fe (all 2CE gates fail, reading+data). Lead routing: L-RED attacks D2/driver lemma briefly, then fresh contexts adversarially (separate from L-ALG's designer climbs).
 - 09:53Z merged l-alg 682f652. Lead decision: L-ALG does (B) abstract-model barrier first (to ~12:00Z), then (A) C6 completeness (reason: poly bound decides M4; (B) tests whether the proof route can reach it).
 - 10:22Z merged l-red ed14e43 (D2/driver no gap; new domfirst route). Forwarded the domfirst route to L-ALG for model (B).
+- 09:55Z correction: the line above stamped 10:22Z was written at 09:54Z (Lead copied L-RED's future-dated '~10:20Z' heading; L-RED told to use date -u).
