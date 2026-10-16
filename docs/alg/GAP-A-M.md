@@ -1284,3 +1284,15 @@ child context grows (parent return set shrinks: the §14 staircase), M rose in 2
   failures (lex_viol_oink_n20 on DTL; dtl_staterevisit.py synthetically) show why: a steal by a higher region (a riser or a
   new tangle) hurts the rest of a straddler only at the higher threshold, and the loss then propagates UP through the
   V^{<q} dependence of 18a.
+
+### 18i. (CM) FAILS in an actual A_DTL run (17:00Z)
+- experiments/alg/instances/cm_viol_oink_n28.pg (dtl_cmclimb.py seed 301 from h4_def9_oink_n28.pg, 126 climb steps;
+  pinned Oink: 1 dominion, 18 tangles, 9 iterations, verified; dtl_pyref --order oink agrees). Searches 5 → 6 of one phase:
+  depth-0 piece 0 makes a DEF change (same context, ideal result unchanged, actual −1 return set GROWS), so piece 1's
+  context SHRINKS from 27 to 24 vertices; piece 1's ideal (C6) result is stable in both searches; the child's actual round
+  count M DROPS 7 → 6 and 7 common child vertices die earlier. dtl_cmviol_check.py (in check.sh) reproduces it in both
+  order data. The corpus count (§18d, 51/0) missed it because no committed instance had the shape; 126 climb steps found it.
+- Type: the SHRINK row of §18g (parent return set grows, Dom(prevV) grows, the child loses vertices). §15's reading for
+  shrink resets: lost tangles (a tangle needs all its vertices in the context).
+- Consequence: (CM) is DEAD. Queue item (2) closes negatively: the child of a deficit parent can re-climb (its M drops)
+  in an ideal-stable context, so nested deficit runs are not stopped by any monotone child round count.
