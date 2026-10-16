@@ -2,7 +2,8 @@
 Previous: session_0117Yy21tGGz9s1zzLfBdUKC (Fable; paused by the weekly limit ~01:23Z, last push 0bedda5 R9 v4).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh` (CLAUDE.md; never pipe verify).
-Status: IDLE (CARRY box 08:12Z-16:10Z ended; DONE report sent ~15:25Z; all climbs stopped 15:17Z). Next-box first target:
+Status: PARKED (CARRY box 08:12Z-16:10Z ended; DONE sent 15:20Z, merged fe8cb18; all climbs stopped 15:17Z; next box is
+a fresh successor under LANE-RESTART). Next-box first target:
 L-ALG GAP-A-M 13h child-M candidate (see Resume point).
 
 ## DONE (all merged by the Lead unless noted)
@@ -56,11 +57,11 @@ chained resets / COMPOUNDING (Lead 13:46Z): a deficit (or reset) sequence at one
 next context run its own sequence again. Tool: dtl_search --fitness h4prod (block form, Oink order via DTL_ORDER=oink,
 LALG_DIR = a checkout of claude/l-alg). Per-context DEF counts grow slowly (Oink order, L-ALG + mine: n = 20: 4,
 28: 9, 36: 6, 44: 8), so (H4) has no constant per-context bound, and (C-rM-stable) is dead (L-ALG h4_def9_oink_n28).
-Next if resumed (in order): (1) L-ALG 13h candidate "child M non-decreasing across parent DEF steps into IDEAL-STABLE
+Next if resumed (in order): (1) (CM) filtered attack on L-ALG 13h candidate "child M non-decreasing across parent DEF steps into IDEAL-STABLE
 child contexts": a compounding instance where child M drops into an ideal-stable fresh context kills it (my unfiltered
 child_m_drops finds drops only into ideal -1 contexts; a filtered climb needs dtl_regvec M per index). (2) Scale the
 compounding: h4_compound2x2_n44 (block score 4, K_parent >= 3 x K_child = 2) -> does K_child grow with n; a third level.
-(3) r0 dips at one ideal-stable context (r0dips fitness lacks the DEF filter).
+(3) r0 dips at one ideal-stable context WITH a DEF filter (the current r0dips fitness lacks it).
 
 ## IN FLIGHT
 - None. All climbs stopped 15:17Z. Final scores: h4prod block 4 (seed 262), 3 (seed 261); h4ctx 7 at n = 28.
@@ -96,6 +97,26 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
 - zadeh_lb.py's exp-game start follows initial_strategy_for_exp_game; under it the index tie-break gives 41 at N = 2
   (vjfast/L-SI's best-reward start gives 19).
 - L-SI's branch is read through a detached worktree in the scratchpad (git worktree add <scratch>/lsi origin/claude/l-si).
+- (2026-10-16 CARRY box, Opus 5.5) Tracer facts for a successor:
+  * experiments/red/carry/phi_full.py runs A_DTL EXACTLY in Oink's order (oink_order, ins_desc, TV_SORTED, PEARCE) and
+    prints ORIGINAL ids. Its depth-0 call index j counts best_vertices calls, so it can differ from dtl_pyref's piece
+    index (lemmaS_viol_n20: my j = 4 at |R| 16 is pyref piece 2 at |R| 18; dtl_pyref records R at call entry). Match
+    calls across tools by return sets, not by index.
+  * L-ALG's dtl_pyref / dtl_deficit search list SKIPS Oink iterations that learn nothing, so pyref "search k" can be
+    Oink iteration k+1 (h4_notweaker_n20). Oink's -t -t labels "id/priority" use REINDEXED ids = L-ALG internal ids
+    (sorted by (priority, id)).
+  * dtl_deficit.py defaults to the STABLE order ω = (priority, id); DTL_ORDER=oink gives Oink's order (l-alg >= 08bf2b5).
+    Label every count with its order (L26). Use dtl_deficit.build(g), not a hand-made sort.
+  * My h4 / h4ctx / h4prod / crm fitnesses import L-ALG modules read-only through LALG_DIR = a detached checkout of
+    origin/claude/l-alg (git -C <scratch>/lalg checkout -q --detach origin/claude/l-alg after a fetch). crm must run
+    with cwd = that checkout (dtl_regvec uses relative paths).
+  * Every phi_full-based fitness reloads phi_full.py at EACH evaluation. Editing it changes running climbs at once (a bug
+    there makes the fitness return -1, so those candidates are rejected). Formula changes inside dtl_search.py need a
+    restart.
+  * The instance index for today is in docs/red/R15-H4.md sections 1-12 and R16 section 5. Every instance is pinned in
+    experiments/red/check.sh (dtl_flipflop counts).
+  * Random source-only padding (experiments/red/union/pad.py) often destroys deficit structure: try several pad seeds
+    and keep the ones that preserve the count.
 - Scratchpad (not in the repo, lost with the container): /tmp/claude-0/-home-user-parity-games-challange/e0836d53-363a-523b-ac4d-a55aa921c6e9/scratchpad:
   vjfast (L-SI's C++ engine compiled), pgs/ (PGSolver clone d3cd624), dl/ (papers as txt), z_N.pg (zadehexp), dtl/ and
   dftl/ (all DTL games, traces, climb outputs), oink-dftl-src/build (branch dftl @ ea51834 with counter_dftl restored),
