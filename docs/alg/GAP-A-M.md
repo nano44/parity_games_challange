@@ -572,6 +572,26 @@ the corrected state of §6 (cut piece: R, −1, attractor; STATE_V=1 gives the o
   P > i and the escape left between i and P or lies in R_P (consumed at P): 224 + 1 all outside R_P, 36 with some in R_P.
   P ≤ i never occurs at Dom(prevV) pieces.
 
+### 11c.1 What the Φ_idx data actually tests (11:09Z)
+- Lemma F (fixed-context raise, C6; PROVED). Take one phase and depth-0 piece index i. Let s → s+1 be a transition with
+  level i at a Dom(prevV) piece with the same context R, first differing round r0, and a driver C learned in s after
+  piece i ran (so C ∉ T_s(i)). Then every vertex u that C rescues has d_s(u) = r0 < d_{s+1}(u). Also d_{s0}(u) ≤ d_s(u)
+  for every earlier search s0 of the phase whose piece i has context R. So u raises its record over the SAME-CONTEXT
+  searches at index i, whatever the driver's top status.
+  Proof. Within a phase G is fixed, so the alive tangle set only grows: T_{s0}(i) ⊆ T_s(i) ⊆ T_{s+1}(i) \ {C}. By
+  Lemma 2.1 and induction over rounds (the line-105 argument), V̂_r(R, T) is monotone in T for every r. Hence
+  d_{s0}(u) ≤ d_s(u). The rounds of s and s+1 agree before r0, so u ∈ V̂_{r0−1}. Since u ∉ Ŝ(V̂_{r0−1}, T_{s+1} \ {C})
+  ⊇ Ŝ(V̂_{r0−1}, T_s) = V̂_{r0}(T_s), d_s(u) = r0. And u ∈ V̂_{r0}(T_{s+1}), so d_{s+1}(u) > r0. □
+- So the whole content of Φ_idx beyond Lemma F is the CROSS-CONTEXT case: the record to beat comes from a search whose
+  piece i had a different context. DATA (same data set, dtl_mirror.py (f)), for the 115 dead-top cap carries at Dom(prevV)
+  pieces that stay −1: in 113, NO earlier search of the phase has a −1 Dom(prevV) piece at index i in another context. In
+  the other 2, u*'s other-context record is ≤ its same-context record. So the cross-context case is never exercised: 0 of
+  115 have a binding other-context record. The 115/115 and 273/273 figures are evidence for Lemma F, which is proved, and
+  NOT for Φ_idx's cross-context claim. That claim is exactly what an APP double flip needs (the same index, a new context,
+  the same death round), and it is untested by this data set.
+- Status of Φ_idx: same-context part PROVED (Lemma F, C6). Cross-context part UNTESTED. I withdraw "142/142 support" as
+  support for the cross-context claim. Lemma F alone gives only the known per-context bound, so it gives no global bound.
+
 ## 13. (H4): deficit-triggered changes at fixed contexts, A_DTL (10:47Z; Lead 10:22Z "then (3) deficits")
 Tool: experiments/alg/dtl_deficit.py (61fb52c). At every depth-0 piece of an A_DTL run it also computes the ideal (C6 rule)
 result on the same tangle set and context. A change between consecutive searches of a phase is DEF (deficit-triggered)
