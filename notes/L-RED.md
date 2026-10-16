@@ -92,6 +92,7 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
   --tangles: birth, escapes and every firing (search:piece/phase) of each tangle. Exact (MATCH with Oink on all instances).
 - dtl_ctxmono.py GAMES | --random N nmax seed: Claim P (pruning round non-decreasing in T for a fixed context R) and
   Claim Q (stable V* non-shrinking), plus -1-set (argmax) changes.
+- gens_ff.py hdelay m K: the failed one-search-delay ladder (R9 4c), kept as the worked example of (f8).
 - dtl_search.py new fitnesses: iters (searches; gamed by singleton chains), evens (+ --maxeven K), restarts/maxrestarts/osc
   (release trace keyed on priority: gamed by equal-priority tops), rep/excess (Python-scored, exact top vertex; excess =
   searches - dominions - distinct learning (player, top) pairs). --grow k appends k random vertices to a --from seed.
@@ -208,6 +209,7 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
 - L-ALG claude/l-alg 898d02d docs/alg/candidates/C5-DTL.md (sections 0-6) and 549bb34 docs/alg/REPORT-2026-10-15.md
   "DTL attack" table and verdict (read 15:05Z).
 
+- 2026-10-16 hand ladder hdelay (gens_ff.py): dead on (f8) shared-Z rescue by an alive low top and on the Odd sink (R9 4c).
 - DTL staggered gadgets (R8 section 10): escapes to an Odd sink prune the head; closed Even towers are solved at once by
   the dominion attractor; open-by-design levels need an escape above the next top, which the pruning rejects. Rescue
   chains (priority-0 Odd-owned rescue vertices pointing at each other) are all rescued in round 1 because a candidate

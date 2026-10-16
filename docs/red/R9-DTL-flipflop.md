@@ -126,7 +126,19 @@ X: "covered iff state = j exactly" cannot be expressed through escapes; selectiv
 escapes. (f4) In piece 0 a stable top needs a closed region; without an existing tangle that means an Even-closable cycle,
 which is a dominion unless it has an escape, and an escape in piece 0 must be a surviving top (f2): so the first stable
 vertex of a phase needs a driver learned under forgiveness in an earlier search. (f5) A vertex whose only good successors
-have moved into X becomes a cut seed at its own priority (R2) and lands in a piece before the stable one.
+have moved into X becomes a cut seed at its own priority (R2) and lands in a piece before the stable one. (f6, the LIFT; the
+source of "covered in a later piece, not in an earlier one", read off tc+ 3 search 2: Z=22 pruned at piece 0 round 5,
+stable at piece 1) An Odd-owned vertex v with an exit into a LOWER alive region is attracted only into a region computed
+after that one (exits into higher, already consumed regions are forgiven, dtl.cpp 85-93; exits into lower, not yet
+computed regions are escapes), so v lands in a low region and a higher-priority vertex w -> v cannot follow (max_prio,
+line 73). When the lower region's top is removed with its piece, v is attracted into the high region and w follows: in
+tc+, 2 (Even-0-T, exits to the Z tops 3,4,5) joins the low region of Z=3 at piece 0, blocking 1 (pr 15), so T2's escape 1
+is uncovered and Z=22 is pruned; at piece 1 the Z's are gone, 2 joins H=0's region, 1 follows, T2 fires, 22 is stable.
+(f7, zombies) An Odd-owned vertex all of whose successors are in X is never attracted in a stable piece (attraction runs
+over predecessors of popped vertices) and is never covered; it is removed only by a cut. (f8, shared Z) A top is a
+candidate only if it has no successor in the UNION of all alive regions; a low alive top whose region absorbs the
+deadlock cycle rescues every higher top pointing into it, so a delay gadget must keep its low top dead at the piece where
+the delay is needed.
 Level H (monotone, tc+-like): tops a_1..a_m whose driver tangles T_j = {a_j, u_j, w_j} (a_j -> w_j, w_j Odd -> {a_j, u_j,
 o_j}, u_j -> w_j and u_j -> a_j so that T_j can be learned in a stable piece where o_j is forgiven) make a_j a permanent
 member of V* once T_j exists and o_j is covered in piece 0; by (f2) o_j must be a surviving top, so T_j's permanence rests on
@@ -156,6 +168,21 @@ climbs do not find the composition: fitness iters (searches) converges to chains
 n = 20, 11 at n = 16, each search one new singleton, linear); fitness rep (repeated learning per top) and perhead are
 gamed by equal-priority towers (section 1); fitness excess = searches - distinct learning tops is the measure of
 restart-driven searches: chain 2, tc+ 3: -6, dtl_restart8: -9; climbs on it are running at the time of writing.
+
+## 4c. Hand-built attempts (DEAD, with the instance; generator experiments/red/dtl/gens_ff.py)
+- hdelay m K (`gens_ff.py hdelay 3 2`, 29 vertices): ladder h_j -> q_j -> r_j -> {e_j, x_j, g_{j-1}}, x_j -> r_j, meant to
+  give a one-search delay per step via the tangle {x_j, r_j}. Result: 0 tangles, 2 iterations, Even wins nothing (every
+  Odd vertex reaches the sink through the timer chain), and before that the h's outlive the timer top in piece 0 (their
+  pruning cascades from z0's uncovering: h_0 round 4, h_j round 4+j) so the argmax is {x_3, h_3}, not c_K. Two design
+  errors, both general: (f8) x_j is an alive low top at round 0 and its region {x_j, r_j, q_j} puts q_j into the shared Z,
+  so h_j is never a candidate (no delay); and a counted player must be able to win something, so the timer chain cannot
+  end in the opponent's sink.
+- Second design (paper only, not run): witness r_j -> h_{j-1} directly (covered iff h_{j-1} alive or in X), priorities of
+  the h's decreasing so the witness is consumed before h_j's region, e_j -> tau for coverage at the learning piece. It fails
+  on (f8) again: the learning top b_j must be alive at the learning piece and dead at piece 1, which needs an exit covered
+  at piece 2 and not at piece 1; the only such source is the LIFT (f6), which needs a high top alive at piece 2 that is not
+  in P2, i.e. a top pruned at piece 1 and stable at piece 2, the thing being built. The regress is not infinite (tc+
+  realises one level of it with the Z tops and the T/I pair) but I did not close it in the box.
 
 ## 5. Not done / open
 - No hand-built two-level gadget (reset + replay); sections 4/4b are its specification and the obstacle (CARRY).

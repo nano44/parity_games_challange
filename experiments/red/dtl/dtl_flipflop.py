@@ -205,6 +205,21 @@ def report(d, player=None, quiet=False):
                 if lvl is None: lvl = "=" if len(pa) == len(pb) else min(len(pa), len(pb))
                 out.append(f"{a['index']}->{b['index']}:{lvl}")
             if out: print(f"  player {p}: " + " ".join(out))
+    if "--revisits" in sys.argv:
+        # replay in the loose sense: at depth-0 piece index i, a state (kind, removed, recursed) that occurred in an EARLIER
+        # non-adjacent same-player search (the piece came back to an old value after being different)
+        print("\n== revisits of depth-0 piece states (index: count of returns to an earlier non-adjacent state / distinct states)")
+        for p in (0, 1):
+            ss = [s for s in d.searches if s["player"] == p]
+            cols = {}
+            for s in ss:
+                for i, x in enumerate([x for x in s["pieces"] if x["depth"] == 0]):
+                    cols.setdefault(i, []).append((x["kind"], x.get("removed", frozenset()), x.get("recursed", frozenset())))
+            out = []
+            for i, seq in sorted(cols.items()):
+                rev = sum(1 for k in range(1, len(seq)) if seq[k] != seq[k-1] and seq[k] in seq[:k-1])
+                out.append(f"{i}:{rev}/{len(set(seq))}")
+            if out: print(f"  player {p}: " + " ".join(out))
     if "--tangles" in sys.argv:
         print("\n== tangles: id learned(search/piece) top set escapes | fired at (search:piece/phase) ...")
         born = {}
