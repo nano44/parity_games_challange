@@ -15,9 +15,19 @@ ones included), max-parity; n = |V|, m = |E|, input length Θ((n + m) log n). If
 TARGET's compression (sort, keep order and parity) is applied first, on the encoding, before anything else (C-1).
 Step 0 (input construction, charged): write the game in PGSolver text and run Oink's parser
 `PGParser::parse_pgsolver_renumber` with bad-loop removal OFF (`--no-loops`, src/tools/solve.cpp:263), which builds the
-out- and in-edge arrays (O((n + m) log n) word operations); then `game.ensure_sorted()` (oink.cpp:35; game.cpp:495
+out- and in-edge arrays (O((n + m) log n) word operations) and ALWAYS renumbers the priorities (pgparser.cpp 492-511,
+whatever the flags): the distinct priorities are mapped in increasing order to consecutive integers starting at 0 if 0 occurs, else
+at 1 or 2 by parity, each keeping its parity (a step of 2 where two consecutive distinct priorities have the same parity), so every priority is
+≤ 2d ≤ 2n + 2 afterwards; this is an order- and parity-preserving renumbering (into {0..2n+2}, not TARGET's {0..n}), it costs
+O(n log n) (a flat map over the n priorities) and is charged in D2(e); 0.4 shows A_DTL makes the same choices on a game and
+on any such renumbering of it. Then `game.ensure_sorted()` (oink.cpp:35; game.cpp:495
 `std::sort` on priorities), i.e. reindex the vertices in SOME order that is non-decreasing in priority. Equal-priority
-vertices may come out in any order (D-4): Theorems D1 and D2 are claimed for EVERY such order.
+vertices may come out in any order (D-4): Theorems D1 and D2 are claimed for EVERY order datum ω (C5-DTL.md §0 "Order
+data": the equal-priority indexing O1, the in-edge lists O2, the out-edge lists O3, the SCC emission order O3', the dominion
+queue order O5, the push order O6 and the tin iteration order O7; the tangle vertex order O4 (sorted, dtl.cpp 389) and the
+counters O8 (1111, 1119; idtl 1126) are fixed by the code). Oink @ 8fbf0a7 realises one such datum, recorded there (O3 = the
+edge loop of `parse_pgsolver_renumber`, pgparser.cpp 441-457, the parser the pinned command uses, solve.cpp:263);
+docs/alg/C5-orders.md has the inventory (Lead decision 23:52Z, option (ii)).
 Step 1: `DTLSolver::run()` (dtl.cpp 1072-1161) with `interleaved = false`, all vertices enabled, G := V, as reached by
 the command `oink --dtl --no-single --no-wcwc --no-loops` (the pinned A_DTL; Lead decision D-1 option (i), 16:02Z):
 no single-parity solving, no winner-controlled-cycle removal, no self-loop removal by the parser or by
@@ -35,29 +45,32 @@ of dtl.cpp are given so that the correspondence can be checked. The C++ ↔ pseu
 itemised section (section 7) to be signed on its own (TARGET section 6, D2 change 2).
 
 ### 0.2 Theorem D1 (correctness and completeness)
-For every parity game G as in 0.1 and every order of equal-priority vertices in step 0, A_DTL halts, solves every vertex
+For every parity game G as in 0.1 and every order datum ω (0.1), A_DTL halts, solves every vertex
 exactly once, and the output satisfies W_Even = W_E(G) and W_Odd = W_O(G) (TARGET section 1: W_E(G) = vertices from which
 Even has a strategy, general = history-dependent, winning every consistent play under max-parity; W_O likewise;
 W_E ⊔ W_O = V by determinacy). Moreover sigma_Even is a positional strategy on W_Even ∩ V_E such that every play starting in
 W_Even, consistent with sigma_Even, against every (general) Odd strategy, stays in W_Even and is won by Even;
-symmetrically sigma_Odd on W_Odd ∩ V_O. Same statement for A_IDTL, with "the exception `solver stuck` (line 1136) is never
-thrown" added.
+symmetrically sigma_Odd on W_Odd ∩ V_O. Same statement for A_IDTL, for every order datum ω, with "the exception `solver
+stuck` (line 1136) is never thrown" added.
 
 ### 0.3 Theorem D2 (running time, word RAM of TARGET section 3)
-Let tangles(G) be the final value of the counter `tangles` (line 463; it counts tangles KEPT after the duplicate check)
-and dominions(G) of `dominions` (line 375). A_DTL is read as a RAM program whose C++ `int` and `unsigned int` are words
+Let tangles(G, ω) be the final value of the counter `tangles` (line 463; it counts tangles KEPT after the duplicate check)
+under order datum ω, and dominions(G, ω) of `dominions` (line 375); tangles(G) and dominions(G) below abbreviate these for the
+ω under consideration, and every bound (a)-(e) is claimed for every ω. A_DTL is read as a RAM program whose C++ `int` and `unsigned int` are words
 of TARGET section 3's RAM (B-2): the claim is about that RAM program, not about 32-bit overflow behaviour. There are
-polynomials p_a, ..., p_e such that for every G as in 0.1 and every tie order:
-  (a) tangles(G) ≤ p_a(n + m);
+polynomials p_a, ..., p_e such that for every G as in 0.1 and every order datum ω:
+  (a) tangles(G, ω) ≤ p_a(n + m);
   (b) every call of best_vertices (643-776) executes at most p_b(n + m) pruning rounds (iterations of 674-773);
   (c) every call of search_rec (834-994), with its recursive calls, executes at most p_c(n + m) iterations of its loop
       850-993, at recursion depth ≤ d ≤ n + 1;
-  (d) the number of calls of search (997-1069), i.e. the counter `iterations` (1111, 1119), is at most p_d(n + m);
+  (d) the number of calls of search (997-1069) is at most p_d(n + m); for A_DTL this number is the counter `iterations`
+      (1111, 1119), for A_IDTL the counter is ⌊calls/2⌋ + 1 (1126, incremented once per round before the emptiness test), so
+      a bound on calls bounds the counter in both cases;
   (e) the total number of word operations of A_DTL, measured from TARGET's encoding and including step 0 (compression
-      if needed, parsing, edge arrays, sorting), the duplicate-tangle checks (385-424: O(tangles(G) · n) per extracted
+      if needed, parsing, Oink's priority renumbering, edge arrays, sorting), the duplicate-tangle checks (385-424: O(tangles(G) · n) per extracted
       SCC), the tangle storage (443-458: O(n) per kept tangle, `tin` back-links included) and the dominion removal
       (1023-1040), is at most p_e(n + m), on a word RAM with words of O(log(n + m)) bits. Every number the program
-      manipulates is a vertex index (< n), a priority or threshold (≤ n + 1 after compression; the sentinels -1 at
+      manipulates is a vertex index (< n), a priority or threshold (≤ 2n + 2 after step 0's renumbering; the sentinels -1 at
       lines 74, 117, 1036 and the initial thresholds 0 at 585/898 are constants), a queue/stack position (≤ n), a bit of
       an n-bit bitset (copies and resets cost O(n / w) words), or one of `tangles`, `dominions`, `iterations`, a tangle
       index: these are at most the number of steps executed, so they have O(log(n + m)) bits once (e) holds (B-1; not
@@ -80,11 +93,13 @@ Same for A_IDTL.
   number of empty iterations differs; (ii) the initial `t = 0` at 898 is compared only with occurring priorities and
   then replaced by `priority(v)` (904), so it acts as "below the least occurring priority" in both games (and a
   vertex of priority 0 attracts to X at level 0 in both). Hence A_DTL makes the same choices on G and on its
-  compression, and the bound (e) is stated for the compressed game, whose n and m are the input's.
+  compression, and the bound (e) is stated for the compressed game, whose n and m are the input's. Oink's own renumbering
+  in step 0 (pgparser.cpp 492-511) is an order- and parity-preserving renumbering (priorities ≤ 2n + 2), which is all the
+  argument uses, so it applies to it as well, and to the composition of TARGET's compression with it.
 - Section 2, target statement: TARGET asks for (W_E(G), W_O(G)); D1 gives these as (W_Even, W_Odd) plus strategies.
-  "Halts within p(n + m) steps": D2(e), measured from TARGET's encoding (E-3). Deterministic: for a fixed tie order yes
-  (no randomness; the stack `Q` and Oink's edge-list order fix every choice); the theorems are claimed for every tie
-  order, so the choice made by `std::sort` does not matter (D-4).
+  "Halts within p(n + m) steps": D2(e), measured from TARGET's encoding (E-3). Deterministic: for a fixed order datum ω yes
+  (no randomness; the stack `Q` and the lists of ω fix every choice); the theorems are claimed for every order datum, so
+  neither the choice made by `std::sort` (D-4) nor Oink's other list orders matter.
 - Section 3, model: word RAM, O(log(n + m))-bit words: D2(e) as stated.
 - D2 change 5 (strategies): D1 outputs positional strategies and states they win; the fleet's L-COMP check (step 2,
   to be re-run on the pinned command with `--no-loops`) verifies them on every test game.
@@ -239,10 +254,19 @@ using it (Lemma 1.4b(1)). All of dtl.cpp's attraction ignores edges leaving G' (
 ### 1.5 extractTangles — PROVED (reading)
 On a closed region Z with its str, Pearce's algorithm from top (223-305) enumerates every SCC of the restricted graph
 (p-vertices: the edge str[n] (268-285); opponent vertices: all edges into Z (234-266)) that is reachable from top, in
-reverse topological order. Each nontrivial SCC (315-317) is a dominion if it has no escapes (347-379), else skipped if
+the order O3' of the order datum (for Oink's instance, Pearce's emission order, which is reverse topological; no argument
+in this file uses the order in which the SCCs are processed). Lemma 1.5a (one SCC; PROVED, 2026-10-16): in a closed sptl
+region Z, every vertex reaches top in the restricted graph H, so exactly one SCC is reachable from top, namely top's. Proof by
+induction on the push order π: a (V)-pushed p-vertex u has str[u] = v with π(v) < π(u) (F2); a (V)-pushed opponent vertex has a
+successor in Z_then (F3), of lower π; the vertices pushed by a firing tangle t' (F4) carry t''s stored strategies, under which
+U_{t'} is strongly connected (it was an SCC of the restricted graph at its creation, with the same strategies), so from each
+of them H reaches the opponent vertex of U_{t'} that has the popped escape e as a successor (an escape is a successor of an
+opponent vertex of the tangle, 329-337, and attractTangle is evaluated only at the pop of an escape, 200-201), and e ∈ Z_then
+has lower π than the firing event; top has π = 0. A stored tangle has an opponent vertex with an escape, else it would have
+been a dominion at creation (347-379). □ Each nontrivial SCC (315-317) is a dominion if it has no escapes (347-379), else skipped if
 its sorted vertex set equals a stored tangle's (385-424, CHECK_UNIQUE is `(1 or !NDEBUG)` = on), else stored (439-466)
-with tin back-links (443) and tpr := pr(top) (461). NOTE N2: non-bottom SCCs are extracted too (their escapes may lie in
-Z); NOTE N3: a closed region whose top is opponent-owned with all successors outside Z extracts nothing ({top} is
+with tin back-links (443) and tpr := pr(top) (461). NOTE N2 (amended 2026-10-16): Pearce's loop would extract non-bottom SCCs too (their escapes may lie in Z), but by Lemma
+1.5a a closed region has exactly one SCC reachable from top, so every extraction is of top's SCC; NOTE N3: a closed region whose top is opponent-owned with all successors outside Z extracts nothing ({top} is
 trivial unless it has a self-loop, 317).
 
 ### 1.6 The pruning round (643-776) — PROVED (reading, corrected against C5-DTL.md)
@@ -660,7 +684,79 @@ tc N = 8, 12, 16: 17, 25, 33 tangles (2N+1), 6 iterations each, every top has ex
 So on tc+ the ~1.4 N^2 total is ~1.2 N^2 tops with one tangle each plus two tops with N-1 tangles: no top cycles. The
 conjecture that (a) needs is "at most n distinct SCCs are ever extracted at one top", and the open mechanism is the
 str-change at a fixed region vertex set.
-Status of 3: (b), (c), (d) PROVED; (e) PROVED conditional on (a); (a) GAP-A.
+Box 2026-10-16 00:00Z–07:40Z (second successor; data file docs/alg/GAP-A-data.md, scripts dtl_tangle_family.py, dtl_heads.py,
+dtl_distance.py, dtl_crossclimb.py). What the data adds to (a): (i) "at most n tangles per top" is FALSE (dtl_pertop31_n18.pg: one
+top learns 31 tangles in an 18-vertex game); the count at a top is a PRODUCT: within one search the SCC of a top grows pass by
+pass as its own fresh tangles fire and change str at a fixed region set (a nested chain, the (a4) mechanism; 0 chain breaks on
+every game and climb tested, F3), and the chain restarts in later searches from recombined bases ((C-new) FALSE, F4). (ii) Across
+searches the membership of a vertex in a top's SCC OSCILLATES without a dominion in between (dtl_restart8_n20.pg, F8): a rescued
+distraction removes a cut, un-forgives exits, and turns another top into a distraction; the reverse happens one search later.
+So neither heads nor first-stable-piece contexts are monotone across searches (F6, F7), and Lemma D cannot be applied across
+searches in any piece. (iii) The first-call pruning distance is monotone in T (F5, 0 violations) but constant across progressing
+searches. Lemma W (PROVED, reading, 00:50Z): sptl extracts at a top only `if (closed_region and !W[top])` and sets W[top] (528-529); W is
+reset only in search() (1016); extractTangles is called nowhere else. So every vertex extracts at most once per search and
+tangles(G) ≤ n · (number of search calls). CORRECTION to (i): the 31 tangles are at one priority LEVEL (8 tops; true tops via
+the Debug trace give ≤ 4 per top there), and the in-search chain is across the equal-priority tops (each absorbs the previous
+top's fresh tangle), consistent with Lemma W. Reduction (PROVED via Lemma W): GAP-A ⇔ polynomially many search calls. Strongest
+counter-like data (F9): dtl_searches20_n32.pg, 20 searches at n = 32, a top whose SCC takes 12 values with four vertices
+changing membership five times each, most learning inside the recursion. Candidate counter shape for L-RED: the rescue/regress flip-flop of F8 driven by a
+lower counter so that every configuration gives new sets.
+STATUS UPDATE 2026-10-16 09:40Z (third successor, produced on Opus 5.5): the open case below is a REAL counter shape. Lemma P/Q is
+FALSE for arbitrary stored tangle sets T ⊆ T' (9-vertex instance, docs/alg/GAP-A-M.md §4). What is PROVED instead (GAP-A-M.md §2-3):
+the pruning is dominated by an ideal layered union Û, monotone in (V, T); Theorem M-cond: (M) holds whenever the run with the larger
+tangle set has no deficit round (U = Û); Lemma E: a deficit is exactly a straddling tangle whose unconsumed rest has a cycle maximum
+that is a surviving top of LOWER priority. Deficit rounds, with survival changed, occur in actual DTL runs (climbs,
+experiments/alg/instances/dtl_deficit_n20.pg); a violation of (M) in an actual run is not yet found. The sketch is kept as history.
+Lemma P/Q (fixed-context monotonicity of the pruning; SKETCH, 2026-10-16 01:50Z; = L-RED's Claims P, Q at claude/l-red 30af303
+and GAP-A-data.md §4c (M); 0 violations on every measurement). Setting: one player p, one context R (forgiven = outside R), two
+tangle sets T ⊆ T' (no deletions between). Rounds V_0 = P_p ∩ R, V_{i+1} = F_T(V_i). Claim: V_i(T) ⊆ V_i(T') for every i; hence
+(P) the round in which a vertex is pruned never decreases, (Q) a stable call stays stable with V*(T) ⊆ V*(T'), and a −1 result
+cannot become −1 with a smaller last-survivor set without a distance increase.
+Proof structure (induction on i; V_0 equal). Given V := V_i(T) ⊆ V' := V_i(T'):
+ (1) Regions: Reg(V, T) ⊆ Reg(V', T'). Induction over the push order of the regions under T, top-down. A (V)-pushed p-vertex x
+     has its str successor earlier in the order, hence (IH) in Reg(V', T'), in a region of some top τ'; x has priority ≤ its own
+     top ≤ ... and is attracted to τ' or to a higher top when that successor is popped, unless already consumed: x ∈ Reg(V', T').
+     A (V)-pushed opponent vertex has all its R-successors earlier in the order or in higher regions: all in Reg(V', T') (IH) or
+     consumed: attracted likewise. A (T)-pushed vertex x (tangle t fired in Z_τ(T)): if under T' no vertex of U_t is consumed
+     above the region where t's escapes are covered, t fires there (escapes in Reg(V', T') by IH or forgiven): x ∈ Reg. Else
+     (straddle) let Y := U_t minus the vertices consumed higher under T'. Every p-vertex of Y has its stored strategy in Y (a
+     stored strategy into a consumed region would have attracted it there, its priority fits); every opponent vertex of Y has
+     its exits in Y, in consumed regions (forgiven) or in escapes (covered). PICKUP: if some vertex of Y is attracted by a vertex
+     rule into a region, the rest follows? Not in general (a deadlock: an opponent vertex with an exit to a p-vertex of Y whose
+     only Z-successor is its stored strategy, itself not in Z). But a deadlocked Y contains a cycle of H_t (every vertex of Y
+     has a successor in Y under the stored strategies / unforced exits), whose maximum m has p-parity (TS(ii)) and priority ≤
+     pr(τ); m is a p-priority vertex of R. IF m ∈ V' then m is itself a top under T' and, when its region is computed (all higher
+     regions consumed, so Y's exits into them are forgiven), the pickup at m succeeds for the part of Y that reaches m under
+     the stored strategies; iterating over the remaining cycles' maxima (all in V' by the same argument) covers Y. So (1) holds
+     whenever every p-priority vertex of Reg(V, T) that heads a deadlocked remainder lies in V'.
+ (2) Candidates: a top τ ∈ V with attracts(p, τ, Reg(V, T), R) has attracts(p, τ, Reg(V', T'), R) (a p-top keeps a successor in
+     the bigger union; an opponent top keeps "no successor in R \ Reg" since Reg grew). Rescue sets A_t grow with Reg and T
+     (1.2b). So every survivor under T survives under T': V_{i+1}(T) ⊆ V_{i+1}(T'). □ (modulo the IF in (1))
+ The IF: a p-priority vertex m inside Reg(V_i, T) is never a candidate at round i (a p-owned vertex of a region has its str
+ successor in the region; an opponent-owned one has all R-successors in Reg: 1.1, 1.6), so if m ∈ V_i(T) then m ∈ V_{i+1}(T),
+ and by the IH V_i(T) ⊆ V_i(T') gives m ∈ V_i(T'). The OPEN CASE is a vertex m ∉ V_i(T): pruned at an earlier round j < i under
+ T (then not inside Reg(V_j, T), so the tangle t containing m did not fire at round j) and absorbed at round i through t (which
+ fires at round i because fewer tops leave more room), while under T' t straddles and strands m's cycle: then m is a top under
+ neither T nor T' at round i and the remainder is lost from Reg(V', T'), which can un-rescue a top and decrease its distance.
+ Shape of a Claim-P violation (for L-RED and the climb experiments/alg/dtl_pclimb.py): a stored tangle t with vertices a, m, ...;
+ a has a second successor w outside t; a top above τ attracts w only under T' (a new tangle brings w); so a is stolen under T';
+ m's cycle in t is deadlocked without a; and m was pruned in an early round under both T and T' — OR (second flavour) the
+ remainder's cycles are picked up by their maxima but a transient vertex m* of the remainder (on a cycle of t only through a)
+ has priority above the cycle maxima, is reachable from no region by its threshold, and was the rescue witness of a top x with
+ pr(x) ≤ pr(m*) (x → m*, rescued under T because m* ∈ Reg, not under T' because m* is in no region and above every rescue
+ threshold t < pr(x)). Two constraints found while trying to build it by hand (01:40Z–02:20Z): (i) at the FIRST call nothing is
+ forgiven above the highest top, so the steal at the highest top needs a new tangle whose escapes all lie inside that top's
+ region as computed without new tangles (a chain of absorptions ending at the top), and the top's closed region there is a
+ dominion (no escapes possible), so the stealing top must stay unclosed (its strategy edges lead to lower regions); (ii) a
+ chain of absorptions completes within ONE search's sptl passes (each pass one more top absorbs the previous one's fresh
+ tangle), so the steal happens in the same search as t's own creation unless the chain is delayed by the pruning: a link whose
+ top is a distraction until a tangle of the previous link exists (tc+'s one-bit-per-search device, makeBit in tc+.cpp). So a
+ P-violation needs at least three interacting gadgets (the straddling tangle t with its cycle structure, the stealing chain
+ into the highest top, and a pruning delay of ≥ 1 search between t's creation and the steal); random climbs at n ≤ 32 cannot
+ be expected to find one. Not observed (0 violations in 1,154 + 211 recurring contexts and targeted climbs, 10k–15k steps at
+ n = 12, 16, 20 and seeded at n = 32, running).
+Status of 3: (b), (c), (d) PROVED; (e) PROVED conditional on (a); (a) GAP-A (sharpened above: the number of searches; Lemma P/Q
+SKETCH with one open case).
 
 ## 4. idtl vs dtl — PROVED (same proofs), one difference stated
 Interleaved run (1125-1138) alternates search(0), search(1). Sections 1-3 never use that the phase is fixed: soundness
@@ -677,7 +773,7 @@ which only shrinks T (never affects TS, 1.3).
 | id | claim that is open | status | candidate instance shape |
 | --- | --- | --- | --- |
 | GAP-C | Lemma K (completeness): W_p(G') ≠ ∅ ⇒ search(p) learns a new tangle or a dominion | SKETCH (K1-K6 proved; failing shapes (α), (β') characterised) | section 2.3 (C-b): two pruned dominion-like structures, the first removed with Q empty, the second escaping into it |
-| GAP-A | D2(a): polynomial bound on tangles(G) | open; Lemma S reduces first-piece tangles to distinct (top, region set) pairs given (M-cross) | section 3(a): a region whose DFS parents flip under a toggle at a higher top; counter over DFS reorderings |
+| GAP-A | D2(a): polynomial bound on tangles(G) | open; tangles ≤ n · (top, search) restarts if the in-search chain (F3, data) holds, so GAP-A ⇔ polynomially many searches per phase; per-LEVEL ≤ n FALSE (31 at one priority level, n = 18; ≤ 4 per true top, GAP-A-data.md F2 corrected; relabelled 2026-10-16) | docs/alg/GAP-A-data.md F8: rescue/regress flip-flop of distraction status (a rescued top removes a cut, un-forgives exits, regresses another top; reverse next search), driven by a lower counter so that each configuration yields new sets |
 Corrections to inputs found while proving: C5-DTL.md (LIFO stack; consumption in best_vertices), see its header; R8's
 Lemma M part (c) and §5(a) assume FIFO/BFS and are void as written; (M1)-(M3) re-proved here (1.2b, 1.6, 3(a2)-(a3)).
 
@@ -699,6 +795,19 @@ games ok, every canonical game n = 1, 2, 3 (4 + 240 + 41,440) ok, each solver; t
 experiments/alg/out/psolc_fail_n4.jsonl (518 s to regenerate, not re-run here). experiments/alg/dtl_debug_fuzz.py with
 DTL_NO_LOOPS=1 (NDEBUG checks on, -t): seed 21, 20,000 random games with self-loops (rngame), dtl and idtl: 0 failures,
 every run "solution verified". So no correctness failure appeared on the pinned algorithm.
+2026-10-16 01:40Z: after CHECKER C3f PASS and the re-freeze L26 (§0 at e144992): the leftover word "any such compression of it" in
+step 0 → "any such renumbering of it" (Lead 01:20Z, optional; wording only).
+2026-10-16 01:00Z: CHECKER C3e: E-1 (renumbering starts at 0 if 0 occurs) as its own commit; N-1 "order- and parity-preserving
+renumbering" (step 0, 0.4); N-3 Lemma 1.5a (one reachable SCC in a closed region, PROVED) reconciles §1.5 with NOTE N2 (amended).
+2026-10-16 00:45Z: CHECKER C3d (claude/checker 70c263e) fixes, §0 only plus §1.5 N-2: F-1 Theorem D1 for every order datum ω
+(both A_DTL and A_IDTL); citations O3 → parse_pgsolver_renumber edge loop pgparser.cpp 441-457, O4 → dtl.cpp 389, O8 → 1126, O7
+added to 0.1's list; NF-1 Oink's unconditional priority renumbering (pgparser.cpp 492-511) named in step 0, priorities ≤ 2n + 2,
+O(n log n) charged in (e), covered by 0.4's commutation argument; N-2 §1.5 "reverse topological order" → the O3' order (Oink:
+Pearce's), unused by any argument.
+2026-10-16 00:20Z: §0 order data (Lead go 23:52Z, option (ii) of docs/alg/C5-orders.md): 0.1 "every such order" → "every order
+datum ω"; 0.3 tangles(G, ω), (a)-(e) for every ω; 0.3(d) A_IDTL counter = ⌊calls/2⌋ + 1; 0.4 determinism per ω. C5-DTL.md §0 gets
+the "Order data" paragraph with Oink's instance O1-O8. Status: L24 (frozen at ccff864) → pending CHECKER diff of §0 against
+ccff864 and TARGET; the re-freeze (L26) follows its PASS. Nothing in §1-§5 changed by this edit.
 Changelog after the 17:25Z park point (the Lead asked for §1-2.1 to stay stable): 17:45Z §0 rewritten per CHECKER C3;
 §1.0 (tie order, self-loops) ADDED to §1; §7 (correspondence table) added; nothing in 1.1-2.1 changed.
 18:55Z: CHECKER C3c N-1..N-4 folded in: (s3) clearing needs t < pr(u); (s4) lists 171 among output str sources; K5(ii)

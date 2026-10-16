@@ -147,3 +147,21 @@ class K), but no human-readable proof was found (DRUP 63,298 lemmas; case tree 8
 is a width cost from serving priority-2 counts {1,2} together. Three k = 9 runs (B_2(5) >= 10?) continue detached in the
 parked session at no extra spend; their RESULT lines are read later if the container survives. Standard for SAT data
 points: UNSAT by >= 2 independent solvers; no LRAT for now.
+
+## L26 (Lead reading, 2026-10-16 01:20Z): DTL step-4 statement re-frozen for every order datum
+Fleet judgement under L12. After CHECKER C3d/C3e/C3f (claude/checker 4b15364: PASS), docs/alg/DTL-proof.md §0 at
+claude/l-alg e144992 replaces the L24 freeze (ccff864). Theorems D1 and D2 are claimed for EVERY order datum omega (the eight
+implementation choices O1-O8 of docs/alg/C5-orders.md; Oink 8fbf0a7's instance recorded in C5-DTL.md §0), with the pinned
+parser's order- and parity-preserving renumbering of priorities named in step 0 (cost charged in D2(e)). Reason (option ii,
+L-ALG C5-orders.md): consistent with L22's equal-priority clause, no cost to the proved parts, keeps the tangle bound from
+depending on an order accident; L-COMP's second implementation showed counts depend on omega and regions/strategies do not.
+Changes to §0 go through the Lead and CHECKER. Not a result: GAP-C and GAP-A remain open.
+
+## D8 (2026-10-16 ~06:50Z, owner in the Lead session, answering Q11): Fable cap
+> I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
+
+Lead reading L27: Q11 option (b). Until the Fable weekly limit resets (2026-10-21 21:00Z), the paused attack lanes (L-ALG,
+L-RED) continue on Opus 5.5 at high effort, as fresh successor sessions under LANE-RESTART. Work produced on Opus is labelled
+as such in the lane notebooks. The referees are not engaged before the reset (no complete claim is ready); if one is needed
+earlier, the Lead asks the owner first, because D1 says "Never downgrade the referee to save money". The Opus weekly limit is
+also at "allowed_warning": if Opus hits its cap, the fleet pauses again (D7) and the owner is told. Sweeps return to hourly.
