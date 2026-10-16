@@ -26,3 +26,17 @@ Status words: DATA / READING.
   cap-carry counterexample would need.
 - Climbs on fitness `phicap` (1000 x counterexamples + 10 x cap-only changes) from dtl_replay4_n32 (110.16 at the
   start: 11 cap-only changes), dtl_replay2deep_n32 and dtl_mviol_n20 are running at the time of writing.
+
+## READING + DATA: -1 return-set changes at CUT pieces are phantoms (10:49Z by date -u)
+In search_rec (dtl.cpp 834-994), a -1 result goes on with the threshold scan "lowest priority t at which a vertex of R
+attracts into X", and makes a cut if that scan finds something. The return set V is used only in the other branch
+(Dom(V) when the scan is empty). So at a CUT piece, V influences nothing: not the cut's attractor, not its recursion, not
+any later context. A change of V there changes no later piece. It is a symptom of new tangles, not a carrier of state.
+DATA: in phi_flat_alive_n32 (Even searches 4 -> 5), piece 1's cut is identical (seed 2, attracted {2}) and only V
+changes ({17,27} -> {7,12,17,27}). The search's real progress is the growth of piece 2's cut attractor ({10,15,19,24,26}
+-> 25 vertices, same V = {14}) and the new recursion below it (`show.py ... --search 4` and `--search 5`).
+Consequences (READING): (1) the transition counting of GAP-A-M section 6 (first piece whose (R, result, V) differs) also
+counts such phantom V changes at cut pieces. For cuts, the state that matters is the attractor (the removed set), and that
+can grow at an unchanged (R, result, V), which is L-ALG's "cut pieces not covered" case. (2) Phi_idx at cut pieces also
+counts phantoms. A counter digit cannot live in a cut piece's V, only in its attractor (R10's 2CE class) or in a
+domfirst piece's V (R10 MIRROR / R12).
