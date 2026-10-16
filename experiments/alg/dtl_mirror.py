@@ -118,6 +118,23 @@ def analyse(d, out, name):
             pb_res = pb[i][1]
             dnew = {u: (death_in(rb, u) if pb_res == -1 else 10 ** 6) for u in resc}
             raised = any(dnew[u] > rec.get(u, 0) for u in resc)
+            # refinement: record per depth-0 piece INDEX (same index i only)
+            reci = {}
+            for kk in range(ph0, k + 1):
+                tr = d.trace[kk]
+                if i < len(tr["pieces"]) and tr["pieces"][i][1] == -1:
+                    RR, rs, VV, nt = tr["pieces"][i]
+                    rr = rounds(d, p, RR, tl_at(d, p, nt, tr["G"]))
+                    for r_ in range(1, len(rr)):
+                        for v in rr[r_ - 1] - rr[r_]:
+                            reci[v] = max(reci.get(v, 0), r_)
+            raised_i = any(dnew[u] > reci.get(u, 0) for u in resc)
+            key3 = st.split("_")[0] + ("_raises_piecerecord" if raised_i else "_NO_piecerecord_raise")
+            bk[key3] = bk.get(key3, 0) + 1
+            key4 = st.split("_")[0] + ("_to_stable" if pb_res != -1 else "_stays_minus1") + ("_raises_piecerecord" if raised_i else "_NO_piecerecord")
+            bk[key4] = bk.get(key4, 0) + 1
+            if (not raised_i) and st.startswith("dead") and len(out.setdefault("nopr_ex", [])) < 3:
+                out["nopr_ex"].append((name, k + 1, i, kind, pb_res, [(u, dnew[u], reci.get(u, 0)) for u in resc]))
             key2 = st.split("_")[0] + ("_raises_record" if raised else "_NO_record_raise")
             out[key2] = out.get(key2, 0) + 1
             bk[key2] = bk.get(key2, 0) + 1
