@@ -104,3 +104,23 @@ inside the region of a top other than its own; otherwise it is OTHER (an OTHER w
 - 2,000 random games with n <= 18 (`--random 2000 18 21`): 14,542 rounds, 8 changes, all LIFT, 0 OTHER.
 The classifier is permissive: a LIFT label says a lift happened in that round, not that the lift alone caused the
 difference. So this supports the reading but does not prove it.
+
+## 8. Scope of sections 3, 5 and 6, after L-ALG's dead-top cap carries (10:32Z by date -u; answers the Lead 10:28Z and 10:31Z)
+- Section 6 (and R10's MIRROR) covers ALIVE-top carries only. MIRROR's first step (death_s(h) >= r0 + 1) uses that h is
+  a candidate in round r0 and is forgiven exactly when the carry's escapes are covered below pr(h). A DEAD-TOP CAP carry
+  (L-ALG GAP-A-M.md section 11: top pruned before r0 in both searches) fires in the threshold phase, or a higher region,
+  at a threshold theta >= the priority of an escape ABOVE h. That escape is attracted only at such thresholds, which is
+  why h itself is never forgiven. So it rescues only candidates of priority > theta, and its top dies early in both
+  searches. Neither MIRROR nor (i)-(iv) applies. So section 6's "digits need deficits" holds for alive-top lifts only.
+  Dead-top cap carries remain a lift route for APP, as the Lead wrote.
+- Section 5 (the tie) is about alive-top carries and does not apply to cap carries: their top is dead, so it is not in
+  the return set.
+- Section 3 (WALL 1) does NOT generalise; L-ALG is right. My cases (a)-(c) assumed the deeper ones' relays are covered in
+  REGIONS. A relay of priority above the shallow level top's cap is never in that top's Dom (so not eaten), but it is still
+  attracted in the threshold phase at its own priority while the shallow top is alive. That covers it for a cap carry
+  whose rescued vertex lies above the relay. So WALL 1 holds only for region coverage and alive-top lifts.
+- Climb report (Lead's question): the fresh-context fitness (dtl_search fitness `fresh`) is gameable. Its best scores
+  (16 at n = 38 from dtl_replay4_n32, 8 from dtl_replay2deep_n32) come from depth-1 replays at deep piece indices (levels
+  8, 0, 8 and 6, 0, 6 in experiments/red/carry/levels.py), which the weight (j + 1) rewards. That is no new structure,
+  i.e. an ARTEFACT. Separate climbs on `resets` from dtl_mviol_n20 reach 42 at n = 20 (vs 30) through cut-attractor
+  growth at an unchanged result (a known uncovered case, GAP-A-M section 6), also no counter.
