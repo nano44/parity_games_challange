@@ -327,3 +327,4 @@
 - 20:06Z WATCHDOG report: own context 755k (>600k; auto-compacts at 1M, routine cheap, no handover planned); fleet total $227.43; lanes under idle and context limits. No action.
 - 20:41Z Lead: merged l-alg 113fe90 (spp_n20/30/40/60); pinned Oink re-run: 19/21/19/16 iterations, phase max 16/18/11/14, all verified. Below n, rising with budget, not monotone in n: no owner report.
 - 21:04Z sweep: no overage (seven_day allowed_warning); Lead $182.4; L-ALG idle on timer (526k, $27.6), L-RED idle on timer (341k, $12.9); merged l-alg 7c2f3f1, l-red c09aef2 (L-RED tool reproduces spp_n20 16 / spp_n30 18). No action.
+- 21:42Z Lead: merged l-alg 6652cd7; Oink re-run spp_n20 (21 it., 18 searches in one phase = 0.9n) and spp_n40 (21 it.), verified. Watching for a phase > n.
