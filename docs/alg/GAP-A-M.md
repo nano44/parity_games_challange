@@ -266,3 +266,8 @@ it.
   here are about vertex sets and say nothing about str. (O) is DTL-proof.md Lemma S step (3): a tangle created between two
   occurrences and lying inside the region. DATA so far: L-RED R8 §12 measured zero strategy differences at recurring
   (top, region set) pairs; a pure order gate has never been observed.
+- Refinement of (O) (SKETCH, 09:22Z): the gate tangle T_last is learned in search s AFTER P1, in a piece whose context
+  excludes D_{P1} = Dom(V*_{P1}, R_{P1}); if every sptl region of V*_{P1} lies in D_{P1} (the driver lemma's open step;
+  it can fail through a straddle in Dom, like Lemma E), then T_last is disjoint from a_{c+1}'s region S_s, so T_last can
+  fire inside a_{c+1}'s region in search s+1 only if that region's vertex SET has grown to contain T_last. A pure order gate
+  at a fixed region set is then impossible for T_last; any T_last-gate at P1 is a set-level lift (R10's open case (iv)).
