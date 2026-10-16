@@ -26,6 +26,17 @@ Status: WORKING (CARRY box: Lead go 08:12Z, box 8 h to ~16:10Z Lead clock; inter
   tc+, pairs ~n^0.6, later pieces hold most pairs but multiply nothing), removal-order invariant VIOLATED everywhere,
   newrecur correction (1 and 7 cases, W-suppressed first extractions, not determinacy breaks).
 
+- R10 docs/red/R10-carry.md (CARRY box, Opus 5.5): bsolo fast level; 2CE class: gate dichotomy, frontier self-sustain (F),
+  (S) needs a triggered deficit, support obstruction (module eaten within 2 searches; liftmod data), order gate (O) fails
+  (O1-O3; census 0 events); D2 and driver lemma adversarial pass (no gap); driver locality: strong form FALSE, (F) holds;
+  argmax MIRROR (M1)/(M2) for domfirst digits. Timestamp correction appended.
+- R11 docs/red/R11-r2-regress.md: (r2) of L-ALG's (alpha) regress fails on dtl_mviol_n20 (accepted by L-ALG).
+- R12 docs/red/R12-APP-realisation.md: APP(k) realisation analysis: partial design, WALL 1 (region coverage only; L-ALG
+  right that it does not generalise), WALL 2 tie for alive-top carries, (M2) impossible for alive-top lifts, redundancy
+  DATA (all survival changes by top-alive tangles are lifts), dead-top cap carry anatomy (C-a)-(C-c).
+- R13 docs/red/R13-phi-idx.md: Phi_idx holds on A_DTL data (131/131 cap-only changes raise a record); near miss
+  phi_flat_alive_n32 (alive-top driver).
+
 ## Resume point
 2026-10-16 CARRY box (Opus 5.5 successor; go 08:12Z Lead clock, box to ~16:10Z). Products so far: R10 (docs/red/R10-carry.md):
 bsolo fast level working; 2CE class analysis: gate dichotomy (E)/(S)/(O); frontier self-sustain (F) => carry learned in
