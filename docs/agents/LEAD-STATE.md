@@ -285,3 +285,4 @@
 - 14:08Z merged l-alg 30d5348 ((C-rM) dead).
 - 14:13Z merged l-alg 217c2a7 ((C-rM-stable) candidate); routed to L-RED.
 - 14:25Z merged l-alg (C-rM-stable) dead; h4_def9_oink_n28 (Lead re-ran Oink). Told L-RED to stop that attack.
+- 14:36Z merged l-alg b92883e (10 DEF at one context; Lead re-ran Oink). Lane slip: L-ALG ran 'scripts/push.sh | tail -0' at 14:27Z (piped gate output); no push resulted; reported by the lane; re-run bare, PASS.
