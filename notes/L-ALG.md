@@ -10,7 +10,11 @@
   (F9, dtl_searches20_n32.pg: 20 searches at n = 32, learning inside the recursion); mechanism of a single flip = rescue
   un-forgives a cut (F8, dtl_restart8_n20.pg). Dead potentials for searches: first-call distance, coverage pairs, escapes, R/V*
   of the first stable piece, heads.
-- Open: a potential for the number of searches per phase, or the counter (climbs --searches: 9 at n = 16, 16 at n = 24, 20 at
+- 01:15Z: fixed-context monotonicity (M) holds on all data (dtl_contexts.py: 648 distance increases, 0 decreases, 0 reverts);
+  the phase is a tree of nested epochs (GAP-A-data.md §4c); the bound it gives is exponential in the number of pieces; the
+  counter needs stacked digits (one-digit instance: dtl_searches20_n32 searches 6-12). CHECKER C3d/C3e fixes pushed
+  (4cd8ca4, deec040, 9870b96, e144992; Lemma 1.5a one reachable SCC PROVED).
+- Open: a GLOBAL budget for piece changes (none found), or the counter (climbs --searches: 9 at n = 16, 16 at n = 24, 20 at
   n = 32; seeded climbs from dtl_searches20_n32 running at the time of writing, logs scratchpad/climb/log_seedS_*.txt).
 - Builds in this container's scratchpad (lost with the container): release tools/oink/build (setup_oink.sh), Debug oink-debug/,
   PATCHED Debug oink-dbgpatch/ (recipe in GAP-A-data.md §1). Climb logs in scratchpad/climb/.

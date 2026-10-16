@@ -9,6 +9,9 @@ release build reads tangles from `-t -t`; the Debug build and a PATCHED Debug bu
 | dtl_tangle_family.py OINK G.pg [--sets] | release `-t -t` | tangle sets; laminarity (nested / crossing / disjoint pairs); per-top counts; (C-new) violations split into restart violations and in-search chain breaks; strict shrinks |
 | dtl_heads.py G.pg TRACE | PATCHED debug trace | per-vertex removal head per search ('dom' top / 'cut' level / 'dis' top) and its transitions across same-player searches; depth-0 piece sequence per search; first stable piece's R and V* vs the previous search |
 | dtl_distance.py G.pg TRACE | any `-t` trace | pruning distance of every vertex at the FIRST best_vertices call of each search; monotonicity across same-player searches |
+| dtl_contexts.py G.pg PATCHED-TRACE | patched debug trace with distance lines | fixed-context monotonicity: for recurring depth-0 contexts, distance up/down counts, stable→−1 reverts, V* gains/losses |
+| dtl_tops.py G.pg DEBUG-TRACE | debug trace | true tops (the `region` line before each tangle), per-top and per-(top, search) counts, coverage potential P1, membership-oscillation histogram |
+| dtl_oscclimb.py DEBUG_OINK OUT n seed steps | debug | hill-climb for membership oscillation at small n (found depth 1 only at n ≤ 12 in 40k steps) |
 | dtl_crossclimb.py OINK OUT n seed steps [--cnew / --pertop / --restart / --searches] [--seedgame G] | release | hill-climb on random games (n vertices, priorities ≤ n, out-degree 1–3, 1–3 mutations per step) for crossing tangles at one top / (C-new) violations / tangles at one top / restart violations / searches |
 Instances kept (experiments/alg/instances/): dtl_cross3_n14.pg, dtl_pertop31_n18.pg, dtl_pertop28_n24.pg, dtl_cnew14_n20.pg,
 dtl_restart7_n16.pg, dtl_restart8_n20.pg, dtl_searches15_n24.pg, dtl_searches20_n32.pg. dtl_tops.py G.pg DEBUG-TRACE gives the
@@ -129,6 +132,42 @@ such budget exists. The author's own progress check (computeDistanceValues, dtl.
 after each search, with the `throw "nothing changed!"` commented out at 1061) is exactly the first-call distance of F5, and
 it does not change on tc+ searches 1–5: the author met the same obstacle.
 
+## 4c. Fixed-context monotonicity (M) and the nested-epoch structure (DATA + reading, 01:15Z)
+dtl_contexts.py (patched trace with distance lines): every depth-0 best_vertices call is recorded with its context R (unsolved
+minus removed so far in the search); calls with the same (player, R) in different searches are compared in search order.
+| game | depth-0 calls | recurring contexts | consecutive pairs | distance up / DOWN | stable→−1 | −1→stable | −1 set changed | stable V* gained / LOST |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| tc+ N = 6 | 60 | 12 | 43 | 329 / 0 | 0 | 10 | 1 | 0 / 0 |
+| dtl_searches20_n32 | 75 | 19 | 47 | 120 / 0 | 0 | 4 | 14 | 0 / 0 |
+| dtl_searches15_n24 | 63 | 12 | 38 | 58 / 0 | 0 | 3 | 7 | 0 / 0 |
+| r2_n32 best (23 searches) | 85 | 18 | 53 | 83 / 0 | 0 | 4 | 10 | 0 / 0 |
+| dtl_cnew14_n20, dtl_restart8_n20, counter_symsi 12 | 37, 20, 32 | 12, 3, 1 | 20, 8, 2 | 40, 13, 5 / 0 | 0 | 5, 1, 1 | 1, 3, 1 | 0 / 0 |
+(M) at a FIXED context, as T grows: pruning distances never decrease, a stable result never reverts to −1, a stable V* is the
+same set every time the context recurs; a −1 return set changes only together with a distance increase. This is the
+fixed-context monotonicity the predecessor's (a3)/R-mono give for regions, extended to the pruning; the vertex cases follow
+the same R-mono induction (more tangles ⇒ bigger regions and A_t ⇒ more rescues at every round, given V-monotonicity of one
+round, which N5 shows can fail with straddling tangles; measured never).
+Consequence (reading). Two consecutive same-player searches share the context C_0 = G' (no dominion between). By (M) the
+result at C_0 changes at most n(n+1) + 1 times in the phase (each change raises a distance; ≤ n+1 rounds). While it is
+fixed, the next context C_1 = C_0 \ Dom(V_0) shrinks monotonically in T (Dom grows: ≤ n times) and its result changes
+≤ n² times per fixed C_1; and so on down the depth-0 pieces and into the recursion. So the searches of a phase form NESTED
+EPOCHS: an epoch of piece k is a maximal run of searches with the same results at pieces 0..k; inside it piece k+1 can change
+O(n²) times; when piece k changes, piece k+1's context is a NEW set (the −1 return set changed arbitrarily, F7) and its
+counter restarts. The bound this gives is Π_k O(n²) over the pieces, exponential; a polynomial bound needs a budget that a
+change at piece k+1 consumes GLOBALLY (independent of the epoch of piece k); none of the measured quantities is one (§5).
+NESTED contexts are NOT monotone (01:30Z, dtl_contexts.py second line): comparing a later same-player call whose remaining set
+R' is a strict subset of an earlier call's R (more removed, more forgiven, more tangles): distances on R' go DOWN (tc+ N = 6:
+0 of 17,337; dtl_searches20_n32: 54 of 3,270; r2_n32 best: 134 of 3,590; dtl_cnew14_n20: 39 of 144) and a stable call
+reverts to −1 at the smaller context (42 pairs on tc+ N = 6, 9 on dtl_cnew14_n20; stable V* ∩ R' is never lost). Reason: the
+removed vertices can be the witnesses of the good paths (lower regions, rescue paths). So the predecessor's hope "R-mono for
+later pieces" is false as a statement about the pruning, and monotonicity lives ONLY at identical contexts.
+What a counter must do (the shape for L-RED): K "digits" = K nested pieces, each able to cycle through ≥ 2 results inside a
+fixed epoch of the pieces above it, each cycle step learning a new tangle, and a change at piece k resetting piece k+1's
+context to one where its cycle restarts with NEW sets (because T grew). dtl_searches20_n32.pg is a one-digit instance:
+searches 6–12 keep the depth-0 results fixed (dis 3, cut@21/1, cut@27/25–26) while the depth-1 cut flips 2, 2, 18, 3, 5, 6,
+17 (F10); searches 13–15 are a second epoch. The climbs (random mutations, fitness = searches) reach 0.7n searches at n = 16
+and 32 and do not stack digits by themselves; a construction is needed.
+
 ## 5. Dead ends this box (with the instance)
 | conjecture | killed by |
 | --- | --- |
@@ -141,3 +180,4 @@ it does not change on tc+ searches 1–5: the author met the same obstacle.
 | first-call distance profile as a potential | tc+ N = 6: constant over searches 1–5 |
 | P1: every learning search adds a new (top, vertex) coverage pair (searches ≤ n²) | dtl_cnew14_n20.pg search 3; dtl_searches20_n32.pg (8 searches) |
 | per-top escape count or SCC size monotone across searches | dtl_searches20_n32.pg top v19 |
+| pruning monotone across NESTED contexts (R' ⊂ R, more T) | tc+ N = 6: 42 stable→−1 reverts; r2_n32 best: 134 distance decreases |
