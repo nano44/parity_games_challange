@@ -701,6 +701,12 @@ top's fresh tangle), consistent with Lemma W. Reduction (PROVED via Lemma W): GA
 counter-like data (F9): dtl_searches20_n32.pg, 20 searches at n = 32, a top whose SCC takes 12 values with four vertices
 changing membership five times each, most learning inside the recursion. Candidate counter shape for L-RED: the rescue/regress flip-flop of F8 driven by a
 lower counter so that every configuration gives new sets.
+STATUS UPDATE 2026-10-16 09:40Z (third successor, produced on Opus 5.5): the open case below is a REAL counter shape. Lemma P/Q is
+FALSE for arbitrary stored tangle sets T ⊆ T' (9-vertex instance, docs/alg/GAP-A-M.md §4). What is PROVED instead (GAP-A-M.md §2-3):
+the pruning is dominated by an ideal layered union Û, monotone in (V, T); Theorem M-cond: (M) holds whenever the run with the larger
+tangle set has no deficit round (U = Û); Lemma E: a deficit is exactly a straddling tangle whose unconsumed rest has a cycle maximum
+that is a surviving top of LOWER priority. Deficit rounds, with survival changed, occur in actual DTL runs (climbs,
+experiments/alg/instances/dtl_deficit_n20.pg); a violation of (M) in an actual run is not yet found. The sketch is kept as history.
 Lemma P/Q (fixed-context monotonicity of the pruning; SKETCH, 2026-10-16 01:50Z; = L-RED's Claims P, Q at claude/l-red 30af303
 and GAP-A-data.md §4c (M); 0 violations on every measurement). Setting: one player p, one context R (forgiven = outside R), two
 tangle sets T ⊆ T' (no deletions between). Rounds V_0 = P_p ∩ R, V_{i+1} = F_T(V_i). Claim: V_i(T) ⊆ V_i(T') for every i; hence
@@ -767,7 +773,7 @@ which only shrinks T (never affects TS, 1.3).
 | id | claim that is open | status | candidate instance shape |
 | --- | --- | --- | --- |
 | GAP-C | Lemma K (completeness): W_p(G') ≠ ∅ ⇒ search(p) learns a new tangle or a dominion | SKETCH (K1-K6 proved; failing shapes (α), (β') characterised) | section 2.3 (C-b): two pruned dominion-like structures, the first removed with Q empty, the second escaping into it |
-| GAP-A | D2(a): polynomial bound on tangles(G) | open; tangles ≤ n · (top, search) restarts if the in-search chain (F3, data) holds, so GAP-A ⇔ polynomially many searches per phase; per-top ≤ n FALSE (31 at n = 18) | docs/alg/GAP-A-data.md F8: rescue/regress flip-flop of distraction status (a rescued top removes a cut, un-forgives exits, regresses another top; reverse next search), driven by a lower counter so that each configuration yields new sets |
+| GAP-A | D2(a): polynomial bound on tangles(G) | open; tangles ≤ n · (top, search) restarts if the in-search chain (F3, data) holds, so GAP-A ⇔ polynomially many searches per phase; per-LEVEL ≤ n FALSE (31 at one priority level, n = 18; ≤ 4 per true top, GAP-A-data.md F2 corrected; relabelled 2026-10-16) | docs/alg/GAP-A-data.md F8: rescue/regress flip-flop of distraction status (a rescued top removes a cut, un-forgives exits, regresses another top; reverse next search), driven by a lower counter so that each configuration yields new sets |
 Corrections to inputs found while proving: C5-DTL.md (LIFO stack; consumption in best_vertices), see its header; R8's
 Lemma M part (c) and §5(a) assume FIFO/BFS and are void as written; (M1)-(M3) re-proved here (1.2b, 1.6, 3(a2)-(a3)).
 

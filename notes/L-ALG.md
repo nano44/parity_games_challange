@@ -1,3 +1,17 @@
+# L-ALG notebook — third successor (session_01BDELabbGbT2QYY2NoRCY8A), 2026-10-16, produced on Opus 5.5 (D8/L27); older notes below
+
+## Resume point (third successor; Lead go 08:10Z, box 8 h to ~16:10Z)
+- Lead session: session_014FBi6o334DvwT5Uw2kDfoN. Push: scripts/verify.sh && git push -u origin claude/l-alg (one call, no pipe).
+- Handover check 5143cc2 (Lead 5/5). Task: GAP-A (1) prove (M) = Claims P/Q; (2) global piece-k budget or why none.
+- (1) state, docs/alg/GAP-A-M.md: (M) FALSE for arbitrary tangle sets (synthetic 9-vertex counter, dtl_m_synth.py, in
+  check.sh); PROVED: ideal union Û monotone, U ⊆ Û, Theorem M-cond ((M) holds when the later run has no deficit round),
+  Lemma E (the only deficit = straddling tangle whose rest has a LOWER surviving cycle maximum). Deficits with changed
+  survival occur in actual DTL runs (climbs; instances/dtl_deficit_n20.pg). OPEN: an actual (M) violation (climbs
+  dtl_mclimb.py running in the scratchpad, logs mc2/log_*.txt) or a DTL invariant excluding it. Lead messaged 08:55Z.
+- Tools: dtl_ideal.py (set-level rounds, U vs Û, Ctx recorder + pq_violations), dtl_pyref.py (copy of L-COMP's dtl_py.py),
+  dtl_mclimb.py, dtl_m_synth.py. Python, no Oink build needed (Oink built by setup_oink.sh for cross-checks).
+- Trap avoided: never `pkill -f PATTERN` (kills the calling shell); kill by PID.
+
 # L-ALG notebook — second successor (session_01Aoj1NEAPu4ibQ3VbNXaXVY), 2026-10-16; predecessor's notes kept below
 
 ## Resume point (second successor; box 2026-10-16 00:00Z–07:40Z Lead time, written 03:30Z)
