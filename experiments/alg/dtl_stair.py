@@ -39,6 +39,12 @@ def run(d, st, name):
                 common = rb_[0] & ra_[0]
                 reset = any(dd(rb_, v) < dd(ra_, v) for v in common)
                 st[kind + "_" + fr + ("_RESET" if reset else "_noreset")] = st.get(kind + "_" + fr + ("_RESET" if reset else "_noreset"), 0) + 1
+                # box 4 (GAP-A-M §20): child context relation and child round-count drop (both child calls -1)
+                rel = "SHRINK" if Cb < Ca else "GROW" if Ca < Cb else "X"
+                k2 = f"child_{kind}_{rel}"
+                st[k2] = st.get(k2, 0) + 1
+                if qa[1] == -1 and qb[1] == -1 and len(rb_) < len(ra_): st[k2 + "_childMdrop"] = st.get(k2 + "_childMdrop", 0) + 1
+                if reset: st[k2 + "_RESET"] = st.get(k2 + "_RESET", 0) + 1
             seen.clear()
     for tr in d.trace:
         if phase and (tr["p"] != phase[-1]["p"] or tr["dom"] != phase[-1]["dom"]): flush(); phase = []
