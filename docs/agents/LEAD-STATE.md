@@ -316,3 +316,4 @@
 - 18:29Z merged l-alg c7fc7cb (Lemma P on C6; replay depth 3). Routed replay-depth-vs-n to L-RED.
 - 18:33Z merged l-red 78469a8; (F1) '<=1 fall step per context' candidate routed to L-ALG.
 - 18:45Z merged l-alg a56af6a ((F1) not structural; attack recipe to L-RED).
+- 18:57Z merged l-red 6b384b2 ((F1) false as stated; DEF-only (F1) open). Lead re-ran Oink.
