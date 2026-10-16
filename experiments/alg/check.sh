@@ -53,4 +53,6 @@ python3 -I dtl_cmviol_check.py | tail -1
 python3 -I dtl_twofall.py | tail -1
 # GAP-A-M.md §10: the abstract barrier model APP(k) must keep satisfying its checkable axioms
 python3 -I app_model.py 1 2 3 4 5 6 | tail -1
+# GAP-A-M.md §21: the chain family keeps S = |G'| - 1 searches in one phase (tightness of (SPP-sharp)), both order data
+python3 -I dtl_chainfam.py --check | tail -1
 echo "ALG-CHECK PASS"
