@@ -1,6 +1,6 @@
 # L-ALG notebook — third successor (session_01BDELabbGbT2QYY2NoRCY8A), 2026-10-16, produced on Opus 5.5 (D8/L27); older notes below
 
-## FINAL RESUME POINT (box end ~16:10Z; written 15:00Z, climbs updated at the DONE report) — read this first
+## FINAL RESUME POINT (box end ~16:10Z; drafted 14:58Z, finalised 15:48Z) — read this first
 All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push ONLY with `scripts/push.sh` as a bare call, or
 `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?` (never pipe). Branch claude/l-alg.
 - Where the truth is: docs/alg/GAP-A-M.md. §17 is the LEDGER (every PROVED item with scope C6 / A_DTL / under M-cond;
@@ -11,7 +11,9 @@ All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push ONLY
   - (H2b): reduces via Lemma F to contexts per index, which is circular.
   - (H4), A_DTL only: the deficit count at one ideal-stable context grows under climbing: 4 (n=20), 11 (n=28),
     8 (n=44), Oink order. A constant bound is false; a polynomial per-context bound is open.
-  - Nesting EXISTS (L-RED h4_compound_n44, h4_compound2x2_n44; my classification §13h). In 2x2 the child's deaths do
+  - Nesting EXISTS (L-RED h4_compound_n44, h4_compound2x2_n44; my classification §13h). Climbed:
+    instances/h4_nested7_oink_n44.pg has distinct contexts per piece 1/1/2/5/8/9, growing with depth, and no child
+    resets ((CM) 6/6). In 2x2 the child's deaths do
     NOT reset across the fresh contexts. Candidate (CM), DATA only: a child's actual round count never drops across a
     parent DEF step into an ideal-stable child context (0/123).
 - NEXT-BOX QUEUE (Lead 14:56Z / 14:51Z):
@@ -28,6 +30,11 @@ All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push ONLY
   (c) A −1 return set is the last NONEMPTY round. Rounds lists end with ∅ for −1 in dtl_mirror/dtl_regvec.
   (d) Padding seeds for scaling: source-only extra vertices keep deficits (seeds 128/136/144 started from them).
   (e) Scratchpad climbs die with the container; best games are committed under instances/.
+  (f) Final climb readings (15:48Z), all stopped at the DONE report:
+      - defclimb n=28 seed 128: 11 DEF at one ideal-stable context (h4_def11_oink_n28);
+      - nested seed 203: nested_ctx 9, but spread over many pieces (measure gamed; not committed);
+      - nested seed 202: 7;
+      - fresh-context seed 112 (stable order): fresh 10 (fresh_fixed_n32).
 
 ## Resume point (third successor; Lead go 08:10Z, box 8 h to ~16:10Z)
 - Lead session: session_014FBi6o334DvwT5Uw2kDfoN. Push: scripts/verify.sh && git push -u origin claude/l-alg (one call, no pipe).

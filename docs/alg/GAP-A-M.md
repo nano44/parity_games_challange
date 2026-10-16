@@ -948,7 +948,8 @@ origin/claude/l-red @ c204679, experiments/red/carry/instances/h4_compound_n44.p
   the 9 searches: piece 0: 1, piece 1: 1, piece 2: 2, piece 3: 5, piece 4: 8, piece 5: 9. The number of fresh contexts
   GROWS with depth: each deficit change at piece j moves piece j+1 to a context it has not seen. That is the nested,
   multiplying shape, capped here by the 9 searches of the phase. Not yet measured: whether the per-level DEF counts
-  multiply (K_parent × K_child) as n grows.
+  multiply (K_parent × K_child) as n grows. (CM) on this game: 6 cases, 0 M drops and 0 child-death drops. The
+  multiplying contexts come WITHOUT child resets.
 - Child-M check (14:55Z, experiments/alg/dtl_childM.py, Oink order). Cases: a depth-0 piece j ≥ 1 whose context
   changes while piece j−1 makes a DEF change, with piece j's ideal result stable in both searches. Data:
   h4_compound_n44, h4_compound2x2_n44, every instances/h4_*.pg, the defclimb snapshots and lemmaS_*.
