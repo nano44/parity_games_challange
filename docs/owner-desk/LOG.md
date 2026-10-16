@@ -110,3 +110,6 @@ Desk reading: Q13 option (a), keep public. Relayed verbatim to the Lead. Q12 sti
 ## 2026-10-16 16:39Z owner (Q12)
 > No contact for now
 Desk reading: Q12 option (a). Relayed verbatim to the Lead.
+
+## 2026-10-16 16:44Z Lead (relayed to owner)
+Q13 closed as D10 / L29. Lead's message crossed the owner's Q12 answer (relayed 16:40Z); Q12 awaits its D-number.
