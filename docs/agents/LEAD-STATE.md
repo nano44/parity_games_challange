@@ -242,3 +242,4 @@
 - 10:50Z merged l-red 976cf2b (R13). Near miss routed to L-ALG for (H2a).
 - 10:53Z merged l-alg db9ed5e (H4 data).
 - 10:58Z merged l-red 6a98d48 (cut-piece V phantoms; Lead verified the branch structure in dtl.cpp @8fbf0a7). Routed to L-ALG: restate §6 state and Phi_idx at cuts with the attractor.
+- 11:01Z merged l-alg 5981473/0e87a34 (Phi_idx refinement (d)).
