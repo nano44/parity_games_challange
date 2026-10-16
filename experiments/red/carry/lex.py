@@ -90,3 +90,15 @@ def score_falls_def(path):
     mf = max((sum(1 for st in c["steps"] if st["fell"] and st["ideal_same"]) for c in ctxs), default=0)
     ma = max((sum(1 for st in c["steps"] if st["fell"]) for c in ctxs), default=0)
     return 100000 * mf + 10000 * ma + 10 * o["maxsteps"] + len(d.trace) / 1000.0
+
+def score_refall(path):
+    """successor 3: a vertex whose death FALLS in >= 2 different steps at one (phase, context) (renewable reset).
+    Score: 100000 x max falls of one vertex at one context + 10000 x max fall steps at a context + steps."""
+    o, ctxs, d = measure(path)
+    best = 0; mf = 0
+    for c in ctxs:
+        cnt = {}
+        for st in c["steps"]:
+            for v in st["fell"]: cnt[v] = cnt.get(v, 0) + 1
+        best = max(best, max(cnt.values(), default=0)); mf = max(mf, sum(1 for st in c["steps"] if st["fell"]))
+    return 100000 * best + 10000 * mf + 10 * o["maxsteps"] + len(d.trace) / 1000.0

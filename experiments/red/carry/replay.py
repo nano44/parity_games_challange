@@ -38,3 +38,8 @@ if __name__ == "__main__":
     for f in [a for a in sys.argv[1:] if a != "--c6"]:
         r = run(f, c6)
         print(f"== {os.path.basename(f)} {'C6' if c6 else 'A_DTL'} order={'stable' if c6 else os.environ.get('DTL_ORDER', 'stable')} n={r['n']} searches={r['searches']} depth={r['depth']} replays={r['replays']} longest={r['longest']} levels={r['phases']}")
+
+def score_phase(path):
+    """successor 3: longest phase (transitions within one phase, A_DTL) first, then searches."""
+    r = run(path)
+    return 100 * r["longest"] + r["searches"] + r["depth"] / 10.0
