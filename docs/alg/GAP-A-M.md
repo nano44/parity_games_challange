@@ -526,6 +526,17 @@ runs; 449 changes at −1 pieces (347 at Dom(prevV) pieces, 102 at cut pieces).
   at a fixed piece index never decreases across the searches of a phase": decreases in 201 of 2540 consecutive pairs (first:
   search 1, piece 2, ∞ → 3, i.e. a stable piece turns −1 with max death 3). So Φ_idx is not the shadow of a monotone
   per-index depth; its raise is per vertex, and no mechanism is known. Status unchanged: CANDIDATE, DATA only.
+- Refinement (d), DATA (10:51Z, same data set, dtl_mirror.py 6312d50): in every dead-top cap carry whose piece stays −1,
+  the HIGHEST rescued vertex (by priority, then index) is one that raises R_i: 142/142 (103 Dom(prevV), 39 cut). A proof
+  may therefore follow the top rescued vertex u*. pr(u*) > θ ≥ pr(an escape above h) (R12 §8). (c), "every rescued vertex
+  dies later than in the previous search", also holds 142/142. It is close to the definition of "rescued" (pruned at r0
+  in s), so it carries no information about other contexts and is not evidence for Φ_idx.
+- L-RED R13 near miss (experiments/red/carry/instances/phi_flat_alive_n32.pg, trunk 976cf2b), reproduced here.
+  phi_drivers.py 5 1 on trunk: r0 = 1, same context, one driver t16 (top 7, pr 22) alive_survives_r0, rescues vertex 6
+  (pr 20), not a cap carry. dtl_mirror.py (C6) on the same game: 10 changes at −1 pieces. The 4 dead-top carries all
+  raise R_i, and the top rescued vertex raises it in each. 1 alive-top cut carry raises no R_i. That is the alive-top
+  class (H2a), which Φ_idx does not cover (23/38 at cut pieces above). The near miss confirms the gap is in (H2a): it is
+  not a Φ_idx counterexample.
 
 ## 13. (H4): deficit-triggered changes at fixed contexts, A_DTL (10:47Z; Lead 10:22Z "then (3) deficits")
 Tool: experiments/alg/dtl_deficit.py (61fb52c). At every depth-0 piece of an A_DTL run it also computes the ideal (C6 rule)

@@ -150,6 +150,18 @@ def analyse(d, out, name):
             raised_i = any(dnew[u] > reci.get(u, 0) for u in resc)
             key3 = st.split("_")[0] + ("_raises_piecerecord" if raised_i else "_NO_piecerecord_raise")
             bk[key3] = bk.get(key3, 0) + 1
+            # (c) vs the immediately previous search (s, piece i is -1 there): some / all rescued vertices die later in s+1
+            # (d) the highest rescued vertex (priority, index) raises R_i
+            if st.startswith("dead") and pb_res == -1 and resc:
+                dprev = {u: death_in(ra, u) for u in resc}
+                some_up = any(dnew[u] > dprev[u] for u in resc); all_up = all(dnew[u] > dprev[u] for u in resc)
+                bk["dead_m1_prev_some_up"] = bk.get("dead_m1_prev_some_up", 0) + some_up
+                bk["dead_m1_prev_all_up"] = bk.get("dead_m1_prev_all_up", 0) + all_up
+                bk["dead_m1_n"] = bk.get("dead_m1_n", 0) + 1
+                ut = max(resc, key=lambda v: (d.pr[v], v))
+                bk["dead_m1_top_rescued_raises_Ri"] = bk.get("dead_m1_top_rescued_raises_Ri", 0) + (dnew[ut] > reci.get(ut, 0))
+                if not some_up and len(out.setdefault("c_ex", [])) < 3:
+                    out["c_ex"].append((name, k + 1, i, kind, [(u, dprev[u], dnew[u], reci.get(u, 0)) for u in resc]))
             # (a) does a rescued vertex reach the new return set (or the piece turn stable)?
             Mb = rb[-2] if len(rb) > 1 and not rb[-1] else rb[-1]
             to_max = (pb_res != -1) or any(u in Mb for u in resc)
