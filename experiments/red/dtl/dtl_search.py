@@ -53,10 +53,10 @@ def score_py(g):
         spec3 = importlib.util.spec_from_file_location("og", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "carry", "dtl_ogate.py"))
         og = importlib.util.module_from_spec(spec3); spec3.loader.exec_module(og)
         try:
-            e = og.run(tmp).events
+            dd = og.run(tmp); e = dd.events
         except Exception:
             return -1
-        return sum(100 if x["cls"] == "OTHER" else 1 for x in e) + d.iterations / 1000.0
+        return 1000 * len(dd.d2) + sum(100 if x["cls"] == "OTHER" else 1 for x in e) + d.iterations / 1000.0
     if fitness == "resets":    # CARRY box (Opus 5.5): (searches - dominions) * (1 + visits of a recurring (player, R) at which some
         spec2 = importlib.util.spec_from_file_location("cm", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "dtl_ctxmono.py"))
         cm = importlib.util.module_from_spec(spec2); spec2.loader.exec_module(cm)   # pruning round DROPS, i.e. fixed-context resets)
