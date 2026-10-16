@@ -1377,3 +1377,45 @@ sptl, Dom, cut, recursion, extraction unchanged. Prototype only: experiments/alg
 Reading (L-ALG): C6 is the cleaner target for a GAP-A proof (one fewer reset device, and every per-context lemma PROVED),
 but the core question, fresh resetting child contexts, is identical. The switch is worth its gauntlet cost only if the
 fleet commits to the GAP-A core proof on C6. It does not by itself move GAP-A.
+
+## 20. The core on C6 (Lead L31, 17:27Z: C6 is the model for "fresh, resetting child contexts"): what is proved, what the data says, the missing lemma (17:35Z)
+Setting: C6, one phase, a depth-0 Dom(prevV) piece j at a FIXED context R_j returning −1 in consecutive searches, its
+child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set).
+- Lemma P (plateau chain; PROVED for C6 from Lemma S (ii) and Lemma D3). While piece j's round count M stays equal, its
+  return set only grows (Lemma S (ii)) and T only grows, so Dom_T(V_j) only grows (D3: monotone in V and T) and the child
+  contexts form a DECREASING chain R_{j+1}(s) ⊋ R_{j+1}(s') ⊋ … (length ≤ n). Every new child context inside a parent
+  plateau is therefore a strict shrink; new vertices enter the child context only at a parent M-rise (≤ n + 1 per parent
+  context). DATA agrees: dtl_stair.py (C6, stable order; corpus experiments/alg/instances + climbs_1016 +
+  red/carry/instances + 400 random games n ≤ 26): all 55 child-context changes caused by equal-M growth are SHRINKs.
+- Child resets on C6, by parent step type (same run; reset = a vertex common to both child contexts dies earlier):
+  | parent step | child context | changes | child resets | child M drops (both −1) |
+  |---|---|---|---|---|
+  | equal-M growth (plateau) | SHRINK | 55 | 15 | 3 |
+  | M-rise | GROW | 86 | 15 | 2 |
+  | M-rise | SHRINK | 7 | 0 | 0 |
+  | M-rise | incomparable | 45 | 7 | 1 |
+  So on C6 the child re-climbs (its M drops) after both kinds of parent step, including inside a parent plateau where
+  its context only shrinks. Shrinking the context is not monotone for the child (§15: lost tangles; also lost p-tops,
+  §18i's anatomy on A_DTL).
+- Counting this gives (PROVED for C6): per parent context, the child sees ≤ (n+1) plateaus × ≤ n contexts (Lemma P) and
+  does ≤ K = O(n²) changes per context (Lemma S), so ≤ n(n+1)·K child changes per parent context, and c_{j+1} ≤
+  n(n+1)(n+1)·c_j (§16). The product over the depth is the only remaining obstruction, and it needs resets at every level.
+- The missing lemma, stated precisely (a target; no proof; no data yet beyond the table). Call a child reset NESTED if,
+  in the same transition s → s+1, piece j+1's reset is followed by a reset of piece j+2 in its new context, and so on.
+  A polynomial bound on searches per phase follows if (and, against APP(k), essentially only if) resets do not nest to
+  depth growing with n, i.e. if "a reset of piece j+1 caused by a parent step leaves piece j+2 in a context where it does
+  not need to re-climb" holds up to bounded depth. Measurement for the next box (cheap, dtl_stair.py extended): the depth
+  of nested resets per transition on C6, on the corpus and on climbs whose fitness is that depth. Attack for L-RED: a C6
+  instance with nested resets of depth ≥ 3. Note that a depth-2 nested reset already exists implicitly in
+  h4_nested7_oink_n44 on A_DTL (fresh contexts at pieces 2-5 grow with depth), but there the children did not reset; the
+  C6 question is whether fresh AND resetting contexts compound.
+- Measured at once (17:33Z), experiments/alg/dtl_nestreset.py (C6, stable order): over the corpus (experiments/alg/
+  instances, climbs_1016, red/carry/instances; 518 transitions) the nested-reset depth per transition is 0 in 480, 1 in
+  15, 2 in 12, 3 in 11 (16 games, all climbed: dtl_replay2deep_n32, dtl_replay4_n32, flat_dead_carries_*, nest_nest_*,
+  nest_seed*, phi_flat_alive_n32); 400 random games add no depth ≥ 2. But the measure is CHEAP to game: a climb on it
+  (dtl_resetclimb.py seed 401 from dtl_replay2deep_n32; scratchpad, stopped) reached depth 13 at n = 32 within 617 steps,
+  with 3-4 iterations in total: one transition shifts every later piece's context and nudges a death down, and no child
+  then does any further work. So the depth of resets in ONE transition is not the obstruction. What the core needs is a
+  reset FOLLOWED BY re-climbing work (further changes of the child in its new context before the parent moves again),
+  i.e. §6's replays. Corrected target: replay depth (§6.3: max depth 2, 5 replays, nest_nest_s81 / dtl_replay2deep_n32),
+  whose growth with n is the question; on C6 the climbs of §6.3 plateaued (notebook, successor 3).
