@@ -16,8 +16,7 @@ for base, nm in ((D.DTL, "DTL"), (C6, "C6")):
         d = mk(base)([g.prio[v] for v in idx], [g.owner[v] for v in idx], [[new[w] for w in g.succ[v]] for v in idx]); d.run()
         for a, b in zip(d.trace, d.trace[1:]):
             if a["p"] != b["p"] or b["dom"] != a["dom"]: continue
-            pa, pb = a["pieces"], b["pieces"]; j = 0
-            while j < min(len(pa), len(pb)) and pa[j][:3] == pb[j][:3]: j += 1
+            pa, pb = a["pieces"], b["pieces"]; j = first_diff(a, b)     # corrected piece state (GAP-A-M §6)
             if j >= min(len(pa), len(pb)) or pa[j][0] != pb[j][0]: continue
             tot["parent_changes"] += 1
             for lv in range(j + 1, min(len(pa), len(pb))):
@@ -29,6 +28,12 @@ for base, nm in ((D.DTL, "DTL"), (C6, "C6")):
                 if key == "child":
                     tot["child_compared"] += 1; tot["child_down"] += bool(down); tot["child_up"] += any(B[v] > A[v] for v in common)
                     if down and len(ex) < 3: ex.append((name, j, [(idx[v], A[v], B[v]) for v in down][:4]))
+                    if down:
+                        # reset anatomy: how did the child context change, and how did the parent piece change?
+                        Ra, Rb = pa[lv][0], pb[lv][0]
+                        rel = "same" if Ra == Rb else ("shrank" if Rb < Ra else ("grew" if Ra < Rb else "incomparable"))
+                        par = "cut" if j in a.get("att", {}) else ("res_flip" if pa[j][1] != pb[j][1] else ("V_grew" if pa[j][2] < pb[j][2] else ("V_shrank" if pb[j][2] < pa[j][2] else "V_incomparable")))
+                        k = "reset_ctx_" + rel + "_parent_" + par; tot[k] = tot.get(k, 0) + 1
                 else:
                     tot["deeper_cmp"] += 1; tot["deeper_down"] += bool(down)
     print(nm, tot, ex)

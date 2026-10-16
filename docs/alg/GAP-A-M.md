@@ -500,7 +500,8 @@ Reading.
   neither as a bound; it only shows that non-self-reinforcing alive-top carries do not occur.
 
 ## 12. Where the GAP-A route stands: the hypotheses still needed (10:20Z)
-Child resets are real (DATA, experiments/alg/dtl_childmono.py; 400 random games n ≤ 24, every dtl_* instance, tc+ N ≤ 5):
+[SUPERSEDED counts: the first paragraph below used the buggy tracer (pieces after the first cut unrecorded); corrected
+counts in §15.] Child resets are real (DATA, experiments/alg/dtl_childmono.py; 400 random games n ≤ 24, every dtl_* instance, tc+ N ≤ 5):
 after a change at depth-0 piece j between consecutive searches, the death rounds at piece j+1 DROP for some vertex present in
 both child contexts in 4 of 38 comparisons (A_DTL and C6 alike; dtl_replay4_n32 after a root change: 3 → 1, 4 → 2,
 4 → 3), rise in 21; at deeper pieces 0 drops in 14 comparisons. So "a vertex's death round at a level never decreases" is
@@ -714,3 +715,24 @@ depth-0 index i in a phase. By §11e, carries at index i ≤ n(n+2) · c_i.
   later index to a new context. So "(H2b) follows from a bound on c_i" says no more than "(H2b) follows from GAP-A". The
   non-circular content is the growth of c_{i+1} relative to c_i, i.e. whether piece i's states RESET in a fresh context
   (§12 child resets: real, 4/38). That is §6.3b's open question and is unchanged by this section.
+
+## 15. Child resets with the fixed tracer, and their anatomy (11:57Z)
+Tool: experiments/alg/dtl_childmono.py at this commit (fixed tracer, corrected piece state). Data: dtl_*, phi_idx_*,
+climbs_1016 and 400 random games n ≤ 24. After a change at depth-0 piece j between consecutive searches, the deaths at
+piece j+1 (and deeper) are compared on vertices present in both contexts.
+- DTL: 282 parent changes. At the child (j+1), 157 comparisons: deaths DROP for some vertex in 33 and rise in 73.
+  Deeper (j+2 and below): drops in 55 of 215. C6: 277 parent changes, child drops in 31/153, deeper drops in 55/211.
+  The §12 figures (4/38, deeper 0/14) were an artefact of the tracer bug. Resets are COMMON, not rare.
+- Anatomy of the 33 DTL child resets:
+  - 14: parent return set GREW (V ⊂ V'), so the child context SHRANK (more removed by Dom(prevV));
+  - 12: parent return set SHRANK (V' ⊂ V, the staircase of §14), so the child context GREW;
+  - 6: incomparable parent V and child context;
+  - 1: parent was a cut.
+  C6 is the same, with 4 incomparable cases. So resets come from both directions of the parent's return-set move. A
+  potential that ignores context composition cannot be monotone across a parent change. An argument has to say which
+  child-context changes can lower deaths and charge them to something.
+- Examples (original ids, (vertex, death before, after)): dtl_replay2deep_n32 parent piece 1: (0, 3→1), (6, 4→2),
+  (4, 4→3); dtl_pertop28_n24 parent piece 0: (0, 3→2), (5, 3→2), (10, 3→2), (15, 3→1).
+- Status: DATA. This is the shape every exponential run needs (APP's fresh child context), and it occurs in 21% of
+  parent changes in this corpus. Whether resets can compound across levels is the open question (§6.3b). The
+  fixed-tracer fresh-context climbs (scratchpad nestclimb.py seeds 111, 112) measure it.
