@@ -942,6 +942,13 @@ origin/claude/l-red @ c204679, experiments/red/carry/instances/h4_compound_n44.p
   - Reading: in this instance the nesting is bounded by the child's rising round count (M 6 → 10 → 12 → 16). A
     potential "child M non-decreasing across parent DEF steps into ideal-stable child contexts" is suggested by this
     one instance only. NOT checked more widely; it is the first thing to test next box.
+- Nested climb (15:05Z; seed 203 from L-RED's h4_compound_n44, Oink order, fitness = distinct deeper contexts with DEF):
+  experiments/alg/instances/h4_nested7_oink_n44.pg (Oink 12 iterations, verified). Player 1, searches 3-11: every
+  depth-0 call at pieces 0-4 is a deficit call with the ideal stable (piece 5 ideal −1). Distinct contexts per piece over
+  the 9 searches: piece 0: 1, piece 1: 1, piece 2: 2, piece 3: 5, piece 4: 8, piece 5: 9. The number of fresh contexts
+  GROWS with depth: each deficit change at piece j moves piece j+1 to a context it has not seen. That is the nested,
+  multiplying shape, capped here by the 9 searches of the phase. Not yet measured: whether the per-level DEF counts
+  multiply (K_parent × K_child) as n grows.
 - Child-M check (14:55Z, experiments/alg/dtl_childM.py, Oink order). Cases: a depth-0 piece j ≥ 1 whose context
   changes while piece j−1 makes a DEF change, with piece j's ideal result stable in both searches. Data:
   h4_compound_n44, h4_compound2x2_n44, every instances/h4_*.pg, the defclimb snapshots and lemmaS_*.
