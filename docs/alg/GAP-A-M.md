@@ -169,12 +169,24 @@ first j where (R_j, res_j, V_j) differ, or ∗ if all depth-0 pieces agree (prog
 - Counting (PROVED from the two lines above): with N_j := number of transitions of level j in the phase and E_j := number of
   level-j epochs = 1 + Σ_{i<j} N_i, N_j ≤ K·E_j, so N_j ≤ K(K+1)^j and the phase has at most (K+1)^L depth-0 transitions,
   L = the number of depth-0 pieces (≤ n), with the same structure recursively inside every cut (∗ transitions).
-- Driver lemma (SKETCH, 08:52Z). A transition of level j is driven by a tangle that is NEW (learned in search s) and fires
-  in piece j's computation in search s+1 (first-difference argument: with the old tangle set the computation at an equal
-  context is identical). Such a tangle was learned at a piece k ≥ j of search s, or inside the recursion of a cut piece
-  k ≥ j: a tangle learned at a piece k < j lies inside D_k(s) (an SCC of an sptl region of V*, or inside a cut's Z), and
-  D_k(s) = D_k(s+1) is outside R_j by the equal contexts. Open step: "every sptl region of the last pass lies in Dom(V*, R)"
-  (both are top-down consumed attractors from V*; not written out). So carries come from deeper learning (R9's CARRY).
+- Lemma D2 (sptl regions lie in Dom; PROVED, 09:25Z). At a stable piece with context R, removed set X_before and V*, every
+  region of every sptl pass (computed with a tangle set T_pass ⊆ T, T = the set when Dom(V*, R) runs) lies in
+  Dom(V*, R) ∪ X_before, in fact in the Dom regions of tops processed no later. Proof (claim per prefix of tops, in
+  descending order; inside a region over the push order). A p-vertex u pushed at the pop
+  of v: v lies in R, hence in a Dom region of a top at least as high (induction), and was popped there; u was then still
+  in R or already in X, with pr(u) ≤ pr(τ) ≤ that top's priority: attracted. An opponent vertex: its R-successors are in
+  Dom regions (induction) or outside R (forgiven in Dom too), and one is in R (the one popped in sptl); at the last Dom pop
+  among them it is attracted. A tangle t fired in sptl: its vertices are in R, its escapes in Dom regions (induction) or
+  outside R, one in R; at the last Dom pop among its escapes every vertex of t is in X or in the remaining R (popped
+  vertices are in X), and attractTangle counts vertices already in X as attracted (dtl.cpp 136-137 with Z = X): t fires.
+  Dom therefore has no straddle failure; that is the difference to the regions of best_vertices and sptl. DATA: 0 violations
+  in 1,890 stable pieces (800 random games n ≤ 28, every instance, tc+ N ≤ 5).
+- Driver lemma (PROVED for transitions whose level-j contexts are equal, i.e. every observed transition, 09:25Z). A
+  transition of level j is driven by a tangle that is NEW (learned in search s) and fires in piece j's computation in
+  search s+1 (first-difference argument: with the old tangle set the computation at an equal context is identical). Such a
+  tangle was learned at a piece k ≥ j of search s, or inside the recursion of a cut piece k ≥ j: a tangle learned at a
+  piece k < j lies in D_k(s) (an SCC of an sptl region, inside Dom by Lemma D2, or inside a cut's Z), and D_k(s) is
+  disjoint from R_{k+1}(s) ⊇ R_j(s) = R_j(s+1). So carries come from deeper learning (R9's CARRY).
 - Lemma N (towards "contexts change only through results"; SKETCH, 09:01Z, for C6 with Dom also computed as Û). Fix
   R; T ⊆ T'; suppose the ideal pruning gives the same result and the same V (stable V*, or the −1 return set A) under T and
   T'. Then Û(V, T) = Û(V, T') unless at the highest level q where they differ the new tangle's unconsumed part has its
@@ -266,8 +278,8 @@ it.
   here are about vertex sets and say nothing about str. (O) is DTL-proof.md Lemma S step (3): a tangle created between two
   occurrences and lying inside the region. DATA so far: L-RED R8 §12 measured zero strategy differences at recurring
   (top, region set) pairs; a pure order gate has never been observed.
-- Refinement of (O) (SKETCH, 09:22Z): the gate tangle T_last is learned in search s AFTER P1, in a piece whose context
-  excludes D_{P1} = Dom(V*_{P1}, R_{P1}); if every sptl region of V*_{P1} lies in D_{P1} (the driver lemma's open step;
-  it can fail through a straddle in Dom, like Lemma E), then T_last is disjoint from a_{c+1}'s region S_s, so T_last can
+- Refinement of (O) (PROVED with Lemma D2, 09:25Z): the gate tangle T_last is learned in search s AFTER P1, in a piece
+  whose context excludes D_{P1} = Dom(V*_{P1}, R_{P1}); every sptl region of V*_{P1} lies in D_{P1} ∪ X_before (Lemma D2),
+  so T_last is disjoint from a_{c+1}'s region S_s, so T_last can
   fire inside a_{c+1}'s region in search s+1 only if that region's vertex SET has grown to contain T_last. A pure order gate
   at a fixed region set is then impossible for T_last; any T_last-gate at P1 is a set-level lift (R10's open case (iv)).
