@@ -176,6 +176,14 @@ Setting: one phase (player p, no dominion, so G' and the alive tangle set only g
 search s is a sequence of pieces j = 0, 1, ... with context R_j(s), result res_j(s) ∈ {stable, −1, cut} with its V
 (stable V* or the −1 return set), and removed set D_j(s); R_{j+1} = R_j \ D_j. For a transition s → s+1, its LEVEL is the
 first j where (R_j, res_j, V_j) differ, or ∗ if all depth-0 pieces agree (progress inside a cut's recursion or in sptl).
+CORRECTION (10:58Z; L-RED l-red 6a98d48, R13 last section; Lead 10:59Z, checked in dtl.cpp @8fbf0a7 lines 897-915; checked
+here in experiments/alg/dtl_pyref.py search_rec). The −1 branch's threshold scan ("does R attract into X") never reads V.
+When it finds a vertex, the piece CUTS: attractor Z at threshold t, X ∪= Z, R loses Z (tattr consumes from R), and the
+recursion runs on Z. V is read only in the other branch, Dom(prevV). So the state of a depth-0 piece is
+(R_j, res_j, V_j) at a stable or Dom(prevV) piece and (R_j, −1, t, Z_j) at a cut piece. A −1 → −1 V change at a cut is
+a PHANTOM, and attractor growth at an unchanged V is a real change. The LEVEL of a transition is the first j whose
+corrected state differs. Counts in this file measured with (R, res, V) at cut pieces carry that error; the corrected
+counts are in §11c. The counting argument above is unchanged in form; only the state it counts changes.
 6.1 Facts.
 - (DATA, 0 exceptions) Contexts change only through results: at the level of every transition the two contexts are EQUAL
   (DTL 57 and C6 55 transitions with a depth-0 level on 600 random games n ≤ 24, every instance in experiments/alg/instances
