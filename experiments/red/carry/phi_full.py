@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """L-RED (Opus 5.5): Phi_idx test restricted to its claim. For every depth-0 piece index j and consecutive same-player
 searches (no dominion) where piece j has the SAME context, returned -1 in the earlier search, and its pruning rounds differ:
-drivers = tangles born in the earlier search whose disabling undoes the first differing round r0 (as phi_drivers.py);
+drivers = tangles born in the earlier search whose disabling undoes the first differing round r0, or which ALONE (every
+other new tangle disabled) reproduce it (sufficient singletons, L-ALG 38f10e4) (as phi_drivers.py);
 the change is CAP-ONLY if it has >= 1 driver and every driver is dead before r0 (in the earlier search) and rescues only
 vertices of priority above its top. A CAP-ONLY change that raises no death-round record at index j (records from -1
 results of that phase; a new stable result counts as infinity) is a Phi_idx COUNTEREXAMPLE.
@@ -54,10 +55,15 @@ class P(rd.RD):
             r0 = next(r for r in range(1, max(len(ra), len(rb)) + 1) if pick(ra, r) != pick(rb, r))
             prev = rb[r0 - 1]; target = pick(rb, r0)
             drivers = []; rescu = set()
-            for C in range(len(self.tv)):
-                if self.born[C] != si - 1 or self.tpr[C] == -1 or self.tpr[C] % 2 != p: continue
+            newT = {C for C in range(len(self.tv)) if self.born[C] == si - 1 and self.tpr[C] != -1 and self.tpr[C] % 2 == p}
+            none, _ = self.one_round(set(prev), R, p, set(newT))
+            self.nsuf = getattr(self, "nsuf", 0)
+            for C in sorted(newT):
                 without, _ = self.one_round(set(prev), R, p, {C})
-                if without == target: continue
+                alone, _ = self.one_round(set(prev), R, p, newT - {C})
+                nec, suf = without != target, alone == target and none != target
+                if not (nec or suf): continue
+                if not nec: without = none; self.nsuf += 1    # sufficient singleton only (L-ALG 38f10e4)
                 vs = [w for w, _ in self.tv[C]]; h = max(vs, key=lambda v: (self.pr[v], v))
                 death = next((r for r in range(1, len(ra)) if h not in ra[r]), None)
                 resc = set(target) - set(without); rescu |= resc
@@ -165,5 +171,6 @@ if __name__ == "__main__":
                 tot.setdefault("alive_domfirst_top_in_prev_return", 0); tot["alive_domfirst_top_in_prev_return"] += a["h_in_prev_return"]
                 print(f"ALIVE-TOP at DOMFIRST {os.path.basename(f)}: search {a['s']-1}->{a['s']} index {a['j']} driver t{a['C']} top {a['h']} "
                       f"(death in earlier search {a['h_death_prev']} of {a['rounds_prev']} rounds; in its return set: {a['h_in_prev_return']}) rescues {a['resc']}")
+        tot["sufficient_only_drivers"] = tot.get("sufficient_only_drivers", 0) + getattr(d, "nsuf", 0)
         if sys.argv[1] == "--random": os.unlink(f)
     print(f"games {len(files)}; {tot}")

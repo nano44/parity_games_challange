@@ -4,7 +4,9 @@ dtl_mirror.py does on C6. Args: GAME.pg SEARCH PIECE. For the change between sea
 PIECE (same context): r0 = first pruning round whose survivor set differs; a driver is a tangle born in SEARCH-1 whose
 disabling (all else equal, from the same round-(r0-1) set) undoes the round-r0 survivor set; for each driver: its top h
 (max priority, then index), h's death round at that piece in SEARCH-1 (dead before r0 / alive), the rescued vertices
-(survive r0 with the driver, not without) and whether all rescued vertices have priority > pr(h) (a CAP carry)."""
+(survive r0 with the driver, not without) and whether all rescued vertices have priority > pr(h) (a CAP carry).
+Also counted (L-ALG 38f10e4): a SUFFICIENT singleton, i.e. C alone (every other new tangle disabled) reproduces round r0,
+when the round without any new tangle differs; its rescued set is taken against the no-new-tangle round."""
 import sys, os, importlib.util
 HERE = os.path.dirname(os.path.abspath(__file__))
 spec = importlib.util.spec_from_file_location("rd", os.path.join(HERE, "redundancy.py"))
@@ -51,15 +53,20 @@ class B(rd.RD):
                     r0 = next(r for r in range(1, max(len(ra), len(rb)) + 1) if pick(ra, r) != pick(rb, r))
                     prev = rb[r0 - 1]; target = pick(rb, r0)
                     out = []
+                    none, _ = self.one_round(set(prev), R, p, set(new))   # every new tangle disabled
                     for C in sorted(new):
                         without, _ = self.one_round(set(prev), R, p, {C})
-                        if without == target: continue
+                        alone, _ = self.one_round(set(prev), R, p, set(new) - {C})
+                        nec, suf = without != target, alone == target and none != target
+                        if not (nec or suf): continue
+                        if not nec: without = none                        # sufficient singleton (L-ALG 38f10e4): rescued vs no new tangle
                         vs = [w for w, _ in self.tv[C]]; h = max(vs, key=lambda v: (self.pr[v], v))
                         death = next((r for r in range(1, len(ra)) if h not in ra[r]), None)
                         st = "dead_before_r0" if death is not None and death < r0 else ("alive_pruned_at_r0" if death == r0 else "alive_survives_r0")
                         resc = set(target) - set(without)
                         cap = bool(resc) and all(self.pr[u] > self.pr[h] for u in resc)
-                        out.append((C, self.idx[h], self.pr[h], st, sorted(self.idx[u] for u in resc), sorted(self.pr[u] for u in resc), cap))
+                        out.append((C, self.idx[h], self.pr[h], st, sorted(self.idx[u] for u in resc), sorted(self.pr[u] for u in resc), cap,
+                                    "necessary" if nec else "sufficient_only"))
                     self.rep = dict(r0=r0, same_context=self.calls[SR - 1][0] == R, drivers=out,
                                     deaths_prev={self.idx[v]: next((r for r in range(1, len(ra)) if v not in ra[r]), "end") for v in ra[0]},
                                     deaths_now={self.idx[v]: next((r for r in range(1, len(rb)) if v not in rb[r]), "end") for v in rb[0]})

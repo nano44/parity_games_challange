@@ -85,3 +85,20 @@ Ids below are original ids.
 - The undo test finds ONE individual driver, t9 (top 5, pr 16), dead at round 2 in search 2, rescuing 14 (pr 20 > 16):
   a dead-top cap carry. L-ALG names tangles 7-9; t7 and t8 are not individual drivers under the undo test.
 - This is the only cross-flat change among the 6 cap-only changes in this game. On the 134-file corpus it was 0 of 50.
+
+## Sufficient-singleton drivers (L-ALG 38f10e4, GAP-A-M 11d.1; 11:49Z by date -u; produced on Opus 5.5)
+phi_drivers.py and phi_full.py now also count a SUFFICIENT singleton as a driver. That is a tangle C which ALONE (every
+other new tangle disabled) reproduces round r0, when the round without any new tangle differs. Its rescued set is taken
+against that no-new-tangle round.
+- nest_nest_s84, searches 12 -> 13 (0-based), index 1: L-ALG is right. The change I called "driverless" has three
+  sufficient-only drivers:
+  * t26: top 4, pr 26, dead before r0, cap;
+  * t27: top 23, pr 28, alive at r0, cap;
+  * t28: top 14, pr 30, alive.
+  Each rescues vertex 14 (pr 30). Under "SOME sufficient driver is a dead-top cap carry" it is a second cross-context flat
+  change. Under my stricter "EVERY driver is dead-top cap" rule it is not cap-only.
+- phi_idx_flat_n20: still exactly one driver, t9 (necessary). t7 and t8 are neither necessary nor sufficient alone, so
+  the t9 / t7-t9 difference is not this redundancy.
+- Corpus re-run (135 files, with phi_idx_flat_n20 added): 422 sufficient-only drivers; 284 cap-only changes, 283 raise a
+  record, 1 counterexample (phi_idx_flat_n20). The alive-at-r0 domfirst drivers rise to 372, and still 0 of them have
+  their top in M_s.
