@@ -249,3 +249,4 @@
 - 11:15Z merged l-lit 3d9d98d (T17 quotes/hashes; breach recorded). L-LIT parked.
 - 11:16Z merged l-alg 155362c: Phi_idx evidence withdrawn by L-ALG (all cases same-context, covered by trivial Lemma F). Routed to L-RED.
 - 11:24Z merged l-alg ae36f2b: Phi_idx FALSE (phi_idx_flat_n20; Lead re-ran Oink: 5 iterations, verified). dtl_pieces.py bug: §6 counts pending re-run. Routed instance to L-RED for independent check.
+- 11:27Z merged l-red d70e99a (R14: author recipe gives no slowdown on A_DTL).
