@@ -1205,3 +1205,22 @@ nested product is capped by the phase length (≤ 13 here). Genuinely nested pro
 contexts): 1 × 1 at n = 20, 4 × 2 at n = 44 (h4_compound2x2_n44, L-RED's construction). Stable order: the same rows.
 Climbs (dtl_nestclimb.py, fitness = DEF over ≥ 2 child contexts, then total DEF; Oink order; scratchpad, running) are
 recorded in 18f at box end.
+
+### 18f. The state at a fixed ideal-stable context can RETURN: a pure DEF cycle (synthetic, genuine tangles, 16:45Z)
+experiments/alg/dtl_staterevisit.py (11 vertices, p = 0, R = all; in check.sh). Genuine tangles s = {y1, y2, y3, y4}
+(escape b), σ = {y1, z} (escape a), τ = {y3, y4} (escape y1). Actual results: T = {}: e1 dies at round 1 (state s0);
+{s}: stable on all 6 even vertices (s1); {s, σ}: s0 again; {s, σ, τ}: s1 again. The ideal (C6) result is the same stable
+set (all 6 even vertices) at {s}, {s, σ} and {s, σ, τ}. So s1 → s0 → s1 is a pure DEF cycle at an ideal-stable context: a
+DEF-DOWN step (never seen in DTL runs: 0 of 181 ideal-stable DEF pairs, §18b) followed by a DEF-up step back to an
+earlier state. Mechanism of the repair: τ's only escape y1 sits in a's region (stolen there by σ), so τ fires inside a's
+region and carries y3, y4 and then v, e0 (opponent, edges v, y3) up to threshold 6.
+- A random search around the gadget (scratchpad gadrev.py, not committed) finds state revisits in 750 of about 390k
+  variants.
+- Answer to queue item (1), at the level of per-context set algebra (READING from 18c, 18f; synthetic, not DTL runs):
+  there is NO function of the actual state at a fixed context (deaths, rounds, return set, (r0, M)) that a DEF change must
+  increase, because the state can revisit with the ideal fixed. What IS monotone at a fixed context is only the round-1
+  region vector (Lemma R, V_0 fixed), and that is lexicographic (counter-shaped). So any polynomial bound on DEF changes at
+  a fixed (context, M) must use WHEN DTL learns the steal tangle (σ: a tangle of a lower top tied, via its escape, to a
+  higher top's region, learned at a context without that higher top, e.g. a later piece where it was removed by Dom) and
+  the repair tangle (τ). That is cross-context information, the same core as GAP-A (§6.3b, §16). On actual DTL runs
+  neither DEF-down steps nor (LEX) violations have been seen (0/181, 0/775). Routed to L-RED with 18c.
