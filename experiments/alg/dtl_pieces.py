@@ -134,7 +134,7 @@ if __name__ == "__main__":
             idx = sorted(range(g.n), key=lambda v: (g.prio[v], v)); new = {v: i for i, v in enumerate(idx)}
             d = mk(base)([g.prio[v] for v in idx], [g.owner[v] for v in idx], [[new[w] for w in g.succ[v]] for v in idx]); d.run()
             r, dep = replays2(d)
-        for k, v in analyse(d).items(): cls[k] = cls.get(k, 0) + v
+            for k, v in analyse(d).items(): cls[k] = cls.get(k, 0) + v
             hist[(min(r, 9), dep)] = hist.get((min(r, 9), dep), 0) + 1
             if (dep, r) > mx[:2]: mx = (dep, r, name)
         print(nm, "games", len(games), "histogram (replays capped 9, depth): count", sorted(hist.items()), "max", mx, "transition classes", cls)
