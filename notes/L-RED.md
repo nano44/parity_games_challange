@@ -148,9 +148,11 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
 - SLIP 2026-10-16 14:33Z (Opus 5.5): ran `scripts/push.sh 2>&1 | tail -8` for c204679. push.sh gates internally, and its
   output showed VERIFY PASS before the push, so the gate held. But no pipe on a push call, ever: push.sh as its own
   call, then read the summary.
-- Verify can FAIL transiently in experiments/red/check.sh while climbs run (14:30Z: failed, then passed alone and on
-  retry). A temp-file race with the climbs' tracer calls is suspected, not confirmed. If it repeats, stop the climbs
-  before pushing.
+- Verify FAILED transiently in experiments/red/check.sh (14:30Z, 14:42Z). ROOT CAUSE (found 14:45Z): check.sh runs under
+  set -euo pipefail, and the pins used `out=$(python3 ... | head -1)`. When the tracer prints more than one line, head
+  exits, Python's later write gets EPIPE, Python exits 120, and pipefail plus set -e kill the check. Timing-dependent,
+  so it is worse under load. Fixed by using `| sed -n 1p` (it reads all of its input) in all 15 pins. Never `| head` in
+  a pipefail script.
 - SLIP (2026-10-16 ~01:00Z my clock, this session): the push of 6a60655 was issued as `scripts/verify.sh 2>&1 | tail -6 &&
   git push`, a PIPE: the gate's exit code was replaced by tail's. The printed summary was VERIFY PASS (all steps), so the
   pushed commit did pass, but the chain was wrong, exactly the predecessor's slip. Rule restated: the push command is the
