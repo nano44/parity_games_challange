@@ -887,6 +887,13 @@ time, unless M grows. Routed to L-RED as an attack target: find a context where 
   (9, 10→12), (9, 12→12), (11, 12→14), (11, 14→11). So (r0, M) = (3, 8) and (9, 12) each occur twice. No pair-based
   potential of this kind survives; (H4) per ideal-stable context stays OPEN. Max DEF at one ideal-stable context, Oink
   order: n = 20: 4, n = 28: 9, n = 44: 8 (climbs; the n = 28 climb ran longest).
+- 14:26Z, n = 28, same climb: experiments/alg/instances/h4_def10_oink_n28.pg (Oink and dtl_pyref --order oink both 14
+  iterations, verified). Player 1, piece 0, R = G (|R| = 28). The ideal is STABLE (23 vertices) in searches 4-14. The
+  actual is −1 in searches 4-13, return sets (original ids) {14, 23} → {14, 23, 27} → {23, 27} → {23} → {23, 27} →
+  {12, 20, 23, 27} → {7, 23, 27} → {20} → {7} → {20}, then stable {7, 12, 18, 20}. That is 10 DEF changes at one
+  ideal-stable context, and the actual return set REVISITS earlier sets ({23, 27} and {20} twice each) while the ideal
+  stays fixed. So the actual state at a fixed ideal-stable context is not even injective in time. Max per context,
+  Oink order: n = 20: 4, n = 28: 10, n = 44: 8.
 
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
