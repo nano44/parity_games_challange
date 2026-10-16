@@ -851,7 +851,7 @@ number of actual rounds after the change (Oink order, dtl_regvec.py). As (r0, M)
 - h4_def7_oink_n44: (5,10) (7,10) (9,11) (8,12) (10,14) (12,12), then the final step to stable (1,1).
 - h4_def8_oink_n44: (5,11) (7,11) (9,11) (8,13) (10,16) (13,17) (15,19) (17,18).
 - lemmaS_viol_n20: (4,9) (6,7). lemmaS_Mdrop_n20: (5,9) (7,8).
-Observations, 28 steps in 6 runs:
+Observations, 29 steps in 6 runs (including the final step of h4_def7):
 (a) r0 strictly increases between consecutive DEF changes, except at steps where M RISES (3 dips, each with M up)
     and at the final step where the actual reaches the ideal.
 (b) When M DROPS (the Lemma S failures), r0 still increases.
@@ -861,6 +861,17 @@ distinct. Since 1 ≤ r0 ≤ M ≤ n + 1, (C-rM) would give ≤ (n+1)² DEF chan
 Not proved. The proof gap is what makes r0 climb at fixed M. A DEF change at round r0 leaves rounds < r0 unchanged and
 grows a threshold closure at r0 (§13f). The changed rounds ≥ r0 then need a DIFFERENT, later first-differing round next
 time, unless M grows. Routed to L-RED as an attack target: find a context where (r0, M) repeats.
+- (C-rM) and (a) FAIL on the wider data (14:01Z; experiments/alg/dtl_crm.py, every instance n ≤ 64, climbs_1016, the defclimb and
+  deep-climb snapshots and the trunk instances; DEF runs = ≥ 1 DEF change at one context with the ideal unchanged).
+  - Oink order: 117 runs, 290 steps. (C-rM) fails in 3 runs, each with a repeated (r0, M):
+    - climbs_1016/a_best_s32.pg, |R| 20: (1, 9) twice;
+    - fresh_fixed_n32.pg, |R| 32: (2, 6) twice;
+    - phi_idx_cutrec_n20.pg, |R| 20: (4, 7) twice.
+  - Observation (a) fails at 17 dips of r0 without a rise of M (e.g. deep-climb snapshot from h4_def8_oink_n44, |R| 42:
+    r0 = 7, 5, 8, 9, 7, 10, 11, 9, 11).
+  - Stable order: 111 runs, 3 repeats, 19 such dips.
+  These runs include contexts whose fixed ideal result is −1, not only ideal-stable ones; the ideal-stable restriction is
+  untested. (C-rM) is DEAD as stated; (H4) per-context stays OPEN, with data growth 4 → 8 for n = 20 → 44.
 
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
