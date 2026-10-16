@@ -1409,3 +1409,13 @@ child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set
   instance with nested resets of depth ≥ 3. Note that a depth-2 nested reset already exists implicitly in
   h4_nested7_oink_n44 on A_DTL (fresh contexts at pieces 2-5 grow with depth), but there the children did not reset; the
   C6 question is whether fresh AND resetting contexts compound.
+- Measured at once (17:40Z), experiments/alg/dtl_nestreset.py (C6, stable order): over the corpus (experiments/alg/
+  instances, climbs_1016, red/carry/instances; 518 transitions) the nested-reset depth per transition is 0 in 480, 1 in
+  15, 2 in 12, 3 in 11 (16 games, all climbed: dtl_replay2deep_n32, dtl_replay4_n32, flat_dead_carries_*, nest_nest_*,
+  nest_seed*, phi_flat_alive_n32); 400 random games add no depth ≥ 2. But the measure is CHEAP to game: a climb on it
+  (dtl_resetclimb.py seed 401 from dtl_replay2deep_n32; scratchpad, stopped) reached depth 13 at n = 32 within 617 steps,
+  with 3-4 iterations in total: one transition shifts every later piece's context and nudges a death down, and no child
+  then does any further work. So the depth of resets in ONE transition is not the obstruction. What the core needs is a
+  reset FOLLOWED BY re-climbing work (further changes of the child in its new context before the parent moves again),
+  i.e. §6's replays. Corrected target: replay depth (§6.3: max depth 2, 5 replays, nest_nest_s81 / dtl_replay2deep_n32),
+  whose growth with n is the question; on C6 the climbs of §6.3 plateaued (notebook, successor 3).
