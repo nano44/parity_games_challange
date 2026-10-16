@@ -223,3 +223,4 @@
 - 09:34Z merged l-alg 8c46a98 (Lemma D2; (r2) dead-route status). Routed D2(b) to L-RED: (O) at fixed set impossible for T_last; target = set-level lift.
 - 09:40Z merged l-red d97188c ((O) fails in 2CE; independent agreement with D2(b)).
 - 09:45Z merged l-red f8bc9fe (all 2CE gates fail, reading+data). Lead routing: L-RED attacks D2/driver lemma briefly, then fresh contexts adversarially (separate from L-ALG's designer climbs).
+- 09:53Z merged l-alg 682f652. Lead decision: L-ALG does (B) abstract-model barrier first (to ~12:00Z), then (A) C6 completeness (reason: poly bound decides M4; (B) tests whether the proof route can reach it).
