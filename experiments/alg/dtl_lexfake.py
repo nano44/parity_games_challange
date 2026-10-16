@@ -37,6 +37,8 @@ if __name__ == "__main__":
             for k in range(4):
                 prng.shuffle(tl)
                 seq = [rounds(d, p, R, tl[:j]) for j in range(len(tl) + 1)]; Ds = [deaths(r) for r in seq]
+                nf = sum(1 for j in range(len(Ds) - 1) if any(Ds[j + 1][v] < Ds[j][v] for v in Ds[j]))
+                inc(f"chains_with_{min(nf, 3)}_fall_steps")    # L-RED (F1): at most one fall step per context
                 for j in range(len(seq) - 1):
                     c, top = lexcmp(Ds[j], Ds[j + 1])
                     if c == "EQ": continue
