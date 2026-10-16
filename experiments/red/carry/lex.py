@@ -74,3 +74,11 @@ if __name__ == "__main__":
                 for st in c["steps"]:
                     print(f"    s{st['s']} top {d.idx[st['top']]} {nm(st['Da'][st['top']])}->{nm(st['Db'][st['top']])} level {st['level']}"
                           f" fell {[(d.idx[v], nm(st['Da'][v]), nm(st['Db'][v])) for v in st['fell']]} ideal_same={st['ideal_same']}")
+
+def score_falls(path):
+    """successor 3: target = >= 2 FALL steps (some death decreases) at one (phase, context); (NR) depth >= 2 needs it.
+    Score: 100000 x max fall steps at one context + 1000 x max steps at a context having a fall + steps."""
+    o, ctxs, d = measure(path)
+    mf = max((sum(1 for st in c["steps"] if st["fell"]) for c in ctxs), default=0)
+    ms = max((len(c["steps"]) for c in ctxs if any(st["fell"] for st in c["steps"])), default=0)
+    return 100000 * mf + 1000 * ms + 10 * o["maxsteps"] + len(d.trace) / 1000.0
