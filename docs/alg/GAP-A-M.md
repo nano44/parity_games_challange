@@ -472,7 +472,7 @@ Reading.
 - So the class a bound must handle is: self-reinforcing alive-top carries, PLUS dead-top cap carries. MIRROR handles
   neither as a bound; it only shows that non-self-reinforcing alive-top carries do not occur.
 
-## 12. Where the GAP-A route stands: the hypotheses still needed (10:22Z)
+## 12. Where the GAP-A route stands: the hypotheses still needed (10:20Z)
 Child resets are real (DATA, experiments/alg/dtl_childmono.py; 400 random games n ≤ 24, every dtl_* instance, tc+ N ≤ 5):
 after a change at depth-0 piece j between consecutive searches, the death rounds at piece j+1 DROP for some vertex present in
 both child contexts in 4 of 38 comparisons (A_DTL and C6 alike; dtl_replay4_n32 after a root change: 3 → 1, 4 → 2,
