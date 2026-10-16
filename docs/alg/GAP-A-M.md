@@ -303,7 +303,7 @@ it.
   fire inside a_{c+1}'s region in search s+1 only if that region's vertex SET has grown to contain T_last. A pure order gate
   at a fixed region set is then impossible for T_last; any T_last-gate at P1 is a set-level lift (R10's open case (iv)).
 
-## 9. C6 at a fixed stable context: Dom is monotone, and the piece learns in O(n) searches per epoch (09:34Z)
+## 9. C6 at a fixed stable context: Dom is monotone; what makes a stable piece learn again within an epoch (09:34Z)
 Lemma D3 (Dom is a layered closure; PROVED, reading of dtl.cpp 876-889). Fix a context R and the set X_before removed
 earlier in the same search_rec call. Dom(V, R) (the removal after a stable result) equals the layered closure D̂: for q
 descending over the priorities of V, D̂_{≥q} := the least superset of D̂_{>q} ∪ V_q closed under the threshold-q rules in R
@@ -439,6 +439,10 @@ Dom(prevV) piece must be SELF-REINFORCING (from some round on, an escape of the 
 driver keeps alive), else its top survives at that piece in the learning search, is removed by that piece's Dom, and is
 never learned deeper. APP does not model escapes, so this is no contradiction; it is the shape APP's level drivers must
 have, and if (M1) is proved it becomes an axiom APP must carry (then APP needs a self-reinforcing driver at every level).
+(5) (10:23Z, from section 11) In APP as written, t(c) contains the vertex x_{i*}^1 it rescues, so the rescued vertex has
+priority ≤ the driver's top. In the data, a carry whose top is already pruned rescues only candidates ABOVE its top
+(17/17). A realisation should therefore either keep the rescued top outside the driver with the driver's top below it (a
+cap carry), or make the rescued vertex the driver's own alive top (a self-reinforcing carry, MIRROR (M2)).
 
 ## 11. Pruning-driven carries: MIRROR tested, and the class it misses (10:17Z; Lead 10:07Z retarget)
 Question (Lead): a bound on PRUNING-driven carries at −1 pieces, starting from L-RED's MIRROR reading (l-red f954923, R10
