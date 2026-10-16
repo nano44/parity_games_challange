@@ -526,3 +526,21 @@ runs; 449 changes at −1 pieces (347 at Dom(prevV) pieces, 102 at cut pieces).
   at a fixed piece index never decreases across the searches of a phase": decreases in 201 of 2540 consecutive pairs (first:
   search 1, piece 2, ∞ → 3, i.e. a stable piece turns −1 with max death 3). So Φ_idx is not the shadow of a monotone
   per-index depth; its raise is per vertex, and no mechanism is known. Status unchanged: CANDIDATE, DATA only.
+
+## 13. (H4): deficit-triggered changes at fixed contexts, A_DTL (10:47Z; Lead 10:22Z "then (3) deficits")
+Tool: experiments/alg/dtl_deficit.py (61fb52c). At every depth-0 piece of an A_DTL run it also computes the ideal (C6 rule)
+result on the same tangle set and context. A change between consecutive searches of a phase is DEF (deficit-triggered)
+when the ideal (result, V) at its first-difference piece is the same in both searches and the actual one differs. It is
+LRN when the ideal result moved too. The first-difference piece always has the same context, because R_j is fixed by
+pieces 0..j-1; measured ctx_changed = 0.
+- PROVED (Lemmas 2.1, 2.2, line-105 induction). At one call, A_DTL is never stronger than the ideal rule: V_actual ⊆ V̂,
+  and an ideal −1 forces an actual −1. Data: 13/13 deficit calls are weaker, 0 are not.
+- DATA (every file in experiments/alg/instances, climbs_1016, 1,500 random games n ≤ 28; 1,629 games). Deficit calls: 13 of
+  9,858 depth-0 calls. Changes: 365, of which 5 are DEF and 360 LRN. At most 1 DEF per (piece, context), and at most 2 per
+  phase (dtl_mviol_n20.pg). Directions: 3 up (−1 → 1, or V grows); 0 down; 2 are −1 → −1 with a different prevV
+  (dtl_mviol_n20 search 4, piece 2, prevV {15} → {7}; climbs_1016/b_best_s33 search 5, piece 1, {14} → {9}). These two
+  matter because the Dom(prevV) target changes. The climbed games that maximise replays and fresh contexts are not
+  deficit-driven: their changes are LRN.
+- Status of (H4): GAP. Not proved: a bound on DEF per context, and that a DEF change never goes down. The data supports
+  "deficits are rare and never the engine of a replay". (H4) stays a separate hypothesis only for A_DTL; it is void for C6.
+  The open shape is the −1 → −1 prevV move, which re-targets Dom without any change in the ideal result.
