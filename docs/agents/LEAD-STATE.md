@@ -296,3 +296,4 @@
 - 15:12Z merged l-alg h4_nested7_oink_n44 (Lead re-ran Oink).
 - 15:23Z L-RED box ended (DONE fe8cb18, idle, climbs stopped). Merged; roster updated to PARKED. Next-box queue in its notebook.
 - 15:27Z merged l-red 6b52858 (handover notebook ready for successor).
+- 15:56Z L-ALG box ended (DONE c18eaad). Merged; roster PARKED; RESULTS DE10 records today's killed (H4) candidates and A_DTL extensions with instances.
