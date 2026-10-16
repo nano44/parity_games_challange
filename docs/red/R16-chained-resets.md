@@ -74,3 +74,12 @@ seed 183, from dtl_mviol_n20, with the fitness rewarding leader drops (L-ALG c0a
   under deficits. A deficit drops leaders, as L-ALG predicted. So the n(n+1)(n+1) child-context bound per fixed context
   needs (H4), a bound on deficit steps, before it applies to A_DTL. Here the deficit staircase sits where the ideal rule
   would already be stable.
+- Second instance, with the round count DROPPING (13:06Z by date -u): experiments/red/carry/instances/lemmaS_Mdrop_n20.pg
+  (n = 20, sha1 4793c740…; the same climb, 1,809 steps on). Pinned Oink: 1 dominion, 15 tangles, 7 iterations, solution
+  verified. Pinned in check.sh. Odd searches 4 -> 5, both pieces in the same context and -1:
+  * piece 0 (the full context, |R| = 20): M drops 10 -> 9, with the return set {9} unchanged (an S1 violation);
+  * piece 1 (|R| = 19): M drops 9 -> 8, and the return set RE-TARGETS {0} -> {13} (S1 again; a DEF -1 -> -1 re-target
+    with M going down).
+  dtl_deficit.py, unmodified: all four calls are DEFICIT calls, and the ideal result is stable throughout. So under
+  deficits A_DTL's round count M is not monotone at a fixed context either, and (H4)'s re-targets can come with
+  decreasing M.
