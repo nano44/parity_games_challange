@@ -21,6 +21,21 @@ dtl.cpp (release build: code under `#ifndef NDEBUG` and `trace` is omitted; `com
 called only under NDEBUG/trace and is NOT part of the algorithm). Written so that an adversary (L-RED) can target it.
 
 ## 0. Conventions (Oink)
+Order data (added 2026-10-16 00:20Z on the Lead's go, option (ii) of docs/alg/C5-orders.md; D1/D2 are claimed for every datum).
+The pseudocode is parametrised by order data ω fixed before the run: (O1) a vertex indexing non-decreasing in priority;
+(O2) for each v a list ins(v) containing each predecessor once per edge; (O3) for each v a list outs(v) of its successors;
+(O3') for each extractTangles call, an order in which the nontrivial SCCs reachable from top are processed and, for each
+SCC, an order of its vertices (used only for dom_vector); (O4) tv[t] sorted ascending by index (this one is the code,
+dtl.cpp 386, not a free choice); (O5) dom_vector in O3' order, LIFO pops; (O6) "Q := all of Z" in best_vertices' threshold
+loop pushes in any order; (O7) tin[v] iterated in creation order; (O8) iterations_dtl = number of search calls,
+iterations_idtl = ⌊calls/2⌋ + 1 (dtl.cpp 1125). Oink @ 8fbf0a7 is the instance: O1 = std::sort on priorities (game.cpp
+478-505, introsort, unstable above 16 elements); O2 = predecessors in DECREASING index, one entry per edge (build_in_array
+after ensure_sorted, oink.cpp 35, 37; game.cpp 868-906 fills each in-list from its end); O3 = the vertex's input edge line in
+input order with targets renamed by the sort permutation (pgparser.cpp 144-190, game.cpp 534-575); O3' = Pearce's emission
+order (root first, then its post-order stack, dtl.cpp 283-299); O6 = increasing index (find_first/find_next, 723). Regions
+and the winning property of the output strategies do not depend on ω (every proof in DTL-proof.md is for a fixed arbitrary ω);
+the counters and the stored tangle set do (L-COMP divergences #1-#3, trunk experiments/dtl-bench/README.md).
+
 Max-parity; player 0 = Even, 1 = Odd; vertices are indexed in non-decreasing priority order (oink.cpp:35
 `game.ensure_sorted()`), so "for top from high index down" = from high priority down, and priority(n-1) = max priority.
 `G` = bitset of unsolved vertices; `R`, `Z`, `X`, `V`, `W`, `S`, `CurR`, `CurZ`: bitsets; `str[v]` = current strategy
