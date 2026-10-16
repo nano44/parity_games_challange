@@ -16,11 +16,11 @@ INF = 10 ** 9
 class P(rd.RD):
     def __init__(self, *a, **k):
         super().__init__(*a, **k); self.calls = {}; self.d0 = 0; self.born = []; self.events = []; self.rec = {}; self._depth = 0
-        self.alive = []
+        self.alive = []; self.recx = {}           # recx[j][context R] = per-context record at index j (cross-context split)
         self.lastp = None
 
     def search(self, p):
-        if self.searches and (self.searches[-1]["player"] != p or self.searches[-1]["dominions"]): self.rec = {}
+        if self.searches and (self.searches[-1]["player"] != p or self.searches[-1]["dominions"]): self.rec = {}; self.recx = {}
         self.d0 = 0
         return super().search(p)
 
@@ -53,14 +53,14 @@ class P(rd.RD):
             pick = lambda L, r: L[r] if r < len(L) else frozenset()
             r0 = next(r for r in range(1, max(len(ra), len(rb)) + 1) if pick(ra, r) != pick(rb, r))
             prev = rb[r0 - 1]; target = pick(rb, r0)
-            drivers = []
+            drivers = []; rescu = set()
             for C in range(len(self.tv)):
                 if self.born[C] != si - 1 or self.tpr[C] == -1 or self.tpr[C] % 2 != p: continue
                 without, _ = self.one_round(set(prev), R, p, {C})
                 if without == target: continue
                 vs = [w for w, _ in self.tv[C]]; h = max(vs, key=lambda v: (self.pr[v], v))
                 death = next((r for r in range(1, len(ra)) if h not in ra[r]), None)
-                resc = set(target) - set(without)
+                resc = set(target) - set(without); rescu |= resc
                 drivers.append((death is not None and death < r0) and bool(resc) and all(self.pr[u] > self.pr[h] for u in resc))
                 if not (death is not None and death < r0):
                     # alive-top driver: record where its top ends up in the EARLIER search (MIRROR (M1): in the return set?)
@@ -79,10 +79,25 @@ class P(rd.RD):
                 for v in rb[-1]: dn[v] = len(rb)
             rec = self.rec.get(j, {})
             raised = any(x > rec.get(u, 0) for u, x in dn.items())
+            cross = {}
+            for c, rc in self.recx.get(j, {}).items():
+                if c == frozenset(R): continue
+                for u, x in rc.items(): cross[u] = max(cross.get(u, 0), x)
+            same = self.recx.get(j, {}).get(frozenset(R), {})
+            raised_same = any(x > same.get(u, 0) for u, x in dn.items())
+            raised_cross = any(x > cross.get(u, 0) for u, x in dn.items())
+            rc_resc = any(dn.get(u, 0) > cross.get(u, 0) for u in rescu)      # Phi_idx proper: a RESCUED vertex beats the cross record
+            rs_resc = any(dn.get(u, 0) > rec.get(u, 0) for u in rescu)
             d0p = [pc for pc in self.searches[si - 1]["pieces"] if pc["depth"] == 0]
-            self.events.append(dict(s=si, j=j, cap_only=capo, raised=raised, nd=len(drivers),
+            self.events.append(dict(s=si, j=j, cap_only=capo, raised=raised, nd=len(drivers), has_cross=bool(cross),
+                                    raised_same=raised_same, raised_cross=raised_cross, rc_resc=rc_resc, rs_resc=rs_resc,
                                     kind=d0p[j]["kind"] if j < len(d0p) else "?", file=None))
         self.calls[(si, j)] = (frozenset(R), None, rb, res)
+        if res == -1 and self._depth == 0:
+            rx = self.recx.setdefault(j, {}).setdefault(frozenset(R), {})
+            for k in range(1, len(rb)):
+                for v in rb[k - 1] - rb[k]: rx[v] = max(rx.get(v, 0), k)
+            for v in (rb[-1] if rb and rb[-1] else []): rx[v] = max(rx.get(v, 0), len(rb))
         if res == -1:
             r = self.rec.setdefault(j, {})
             for k in range(1, len(rb)):
@@ -115,6 +130,13 @@ if __name__ == "__main__":
             tot["changes"] += 1
             if e["cap_only"]:
                 tot["cap_only"] += 1
+                if e["has_cross"]:
+                    for k in ("rc_resc",): tot.setdefault("cap_only_has_cross_" + k, 0); tot["cap_only_has_cross_" + k] += e[k]
+                for k in ("has_cross", "raised_same", "raised_cross", "rs_resc"):
+                    tot.setdefault("cap_only_" + k, 0); tot["cap_only_" + k] += e[k]
+                if e["has_cross"] and not e["raised_cross"]:
+                    tot.setdefault("cap_only_cross_flat", 0); tot["cap_only_cross_flat"] += 1
+                    print(f"CROSS-FLAT (raises only its same-context record) {os.path.basename(f)}: search {e['s']-1}->{e['s']} index {e['j']}")
                 if e["raised"]: tot["cap_only_raised"] += 1
                 else:
                     tot["COUNTEREXAMPLE"] += 1; print(f"COUNTEREXAMPLE {os.path.basename(f)}: search {e['s']-1}->{e['s']} piece index {e['j']}")

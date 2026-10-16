@@ -54,3 +54,20 @@ Corpus: 134 files (dtl_mviol_n20, L-ALG experiments/alg/instances/*.pg and climb
   piece 0 of s, so C could not be learned later in s.
 READING: (H2a) narrows to that single driverless domfirst flat change, plus whatever the alive-top drivers do through
 pruning (the (M2) self-reinforcing shape). The 17 cut-piece flats carry no state.
+
+## NOTE: the equal-context counts are Lemma F instances; the cross-context data (11:28Z by date -u; produced on Opus 5.5)
+Per L-ALG's correction (l-alg 155362c, GAP-A-M section 11c.1, via the Lead 11:16Z): L-ALG's Lemma F (proved under C6)
+says that at an EQUAL context every vertex a new driver rescues beats its same-context record at that index. My
+131/131 and 277/277 "cap-only changes raise a record" counts are all equal-context changes. So they are Lemma F
+instances, not evidence for Phi_idx's real content (the CROSS-context record). The ALL-cap-only count of the data
+section above is withdrawn as evidence for Phi_idx in the same way.
+Cross-context split (phi_full.py now keeps per-context records at each index within a phase; same corpus of 134 files):
+- In 50 of the 277 cap-only changes, index j already held a -1 record from a DIFFERENT context in the phase.
+- In 50 of those 50, some RESCUED vertex beats the cross-context record (the merge over the other contexts) at j.
+- 0 cap-only changes fail when the test is restricted to rescued vertices (rs_resc 277/277).
+So the cross-context content of Phi_idx holds on these 50 cases. That is DATA on a small corpus, not a proof.
+Climbs: dtl_search.py --fitness phicap reloads phi_full.py at every evaluation, and its record self.rec spans all
+contexts of the phase. A hit is therefore a real cross-context counterexample. Its old test ("no vertex raises a
+record") was stricter than Phi_idx ("no rescued vertex raises one"); new runs use the rescued-only test. Seeds 111-117
+ran with an alive-top logging bug between about 10:50Z and 10:55Z, when phi_full.py raised and the fitness returned -1,
+so candidates with alive-top drivers were rejected in that window.

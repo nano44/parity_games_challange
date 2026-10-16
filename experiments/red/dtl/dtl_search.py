@@ -64,7 +64,7 @@ def score_py(g):
             e = pf.run(tmp).events
         except Exception:
             return -1
-        return 1000 * sum(1 for x in e if x["cap_only"] and not x["raised"]) + 10 * sum(1 for x in e if x["cap_only"]) + d.iterations / 100.0
+        return 1000 * sum(1 for x in e if x["cap_only"] and not x.get("rs_resc", x["raised"])) + 10 * sum(1 for x in e if x["cap_only"]) + d.iterations / 100.0
     if fitness == "fresh":     # CARRY box (Opus 5.5): L-ALG's F_j (GAP-A-M.md section 6.3b) on this lane's tracer: per phase and depth-0
         tot = 0                # level j >= 1, the number of DISTINCT contexts R_j in which piece j changed (first difference at an
         prev = None; F = {}    # equal context). Score = sum_j (F_j - 1)^+ * (j + 1) + searches/1000.
