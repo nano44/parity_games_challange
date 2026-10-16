@@ -201,7 +201,8 @@ script), there are 640 games:
 - (DATA, 0 exceptions) Contexts change only through results: at the level of every transition the two contexts are EQUAL
   (DTL 57 and C6 55 transitions with a depth-0 level on 600 random games n ≤ 24, every instance in experiments/alg/instances
   and tc+ N ≤ 5; experiments/alg/dtl_pieces.py). Equal (R_{j−1}, res, V) with a grown D_{j−1} (Dom or cut attractor grown by new
-  tangles) would break this; it never happened. Not proved.
+  tangles) would break this; it never happened. Not proved. [SUPERSEDED: these counts came from the buggy tracer and
+  the old state (V at cuts). Corrected counts: RE-MEASURED paragraph above, which shows the same conclusion.]
 - (PROVED for C6 by Lemma 2.1; for A_DTL only under Theorem M-cond) At the level j of a transition the context is the same
   (by the DATA line), so the profile of piece j does not decrease and changes raise Σ distances ≤ n(n+1): at most
   K := n(n+1) + 1 transitions of level j while pieces < j keep their results (one EPOCH of level j).
@@ -256,7 +257,8 @@ new context, so they do not fire there (R9 §4(1)): piece j restarts with the st
 context, and how many level-j changes remain is not controlled by anything monotone. In A_DTL there is a second reset device
 on top of this, at a fixed context (section 4b). Every global quantity tried so far is dead (GAP-A-data §5, F11 candidates
 (a)-(c), P1; and here (M)/F5).
-6.3 Measured replay structure (experiments/alg/dtl_pieces.py; replay depth = 1 + depth of the opening change when
+6.3 [SUPERSEDED: old state (V at cuts) and the buggy tracer; corrected replay counts in the RE-MEASURED paragraph above]
+Measured replay structure (experiments/alg/dtl_pieces.py; replay depth = 1 + depth of the opening change when
 that change is itself a replay; a k-digit counter has depth k − 1).
 | run | transition levels per phase (∗ = deeper) | replays | replay depth |
 | --- | --- | --- | --- |
@@ -627,6 +629,23 @@ original 19 and internal 14 is original 14.
 - What this does NOT show: an exponential run, or a failure of a weaker potential (e.g. record raised within two carries,
   or a lexicographic record over (index, context class)). One flat change costs nothing asymptotically. The n²(n+2)
   bound needs every carry to raise, so (H2b) is again OPEN with no candidate potential.
+
+### 11d.1 Second cross-context counterexample: nest_nest_s84 (11:34Z; L-RED R13 08599bf case, Lead 11:09Z)
+experiments/alg/instances/climbs_1016/nest_nest_s84.pg, transition s13 → s14 (1-based searches), depth-0 piece index 1,
+Dom(prevV) −1 piece with the same context (|R| 29). r0 = 5, and the return set grows {2, 27} → {2, 27, 30}. A_DTL and
+C6 have the same trace here, and dtl_deficit finds 0 deficit calls. So it is not a deficit. It is not a catch-up either:
+the drivers are learned in s13.
+- Why "no driver": tangles 26, 27, 28 (all learned in s13 at piece 5) are REDUNDANT drivers. Each ALONE, added to the
+  s13 set, gives the s14 round; removing any one leaves the others to do it, and only removing all three undoes the
+  change. The single-removal driver test (dtl_mirror.py, L-RED's phi_drivers.py) reports no driver. That is an artefact
+  of the test, not a new mechanism.
+- Classification by sufficient singletons: tangle 26 (top 24, pr 26) is DEAD at r0 (24 ∉ V_4) and rescues 30 (pr 30):
+  a dead-top cap carry. Tangle 27 (top 28) and tangle 28 (top 30) have alive tops.
+- Φ_idx: vertex 30's index-1 death at Dom(prevV) pieces is 6 in s9-s12 (context |R| 31), 5 in s13 and 6 in s14
+  (context |R| 29). The carry only reaches the record from another context: a second cross-context counterexample, of
+  the same shape as §11d. It was in the §11b-§11e data set but went uncounted, because single-removal found no driver.
+- Tool consequence: the driver counts of §11-§11e undercount redundant driver sets. A sufficient-singleton test is
+  needed; not yet re-run.
 
 ### 11e. Re-run with the removed-set cut state, and what (H2b) reduces to (11:29Z)
 - dtl_mirror.py with the cut state D_j = R_j \ R_{j+1} (§6), on the §11b data set plus the two new phi_idx instances:
