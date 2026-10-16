@@ -2,7 +2,7 @@
 """Free-form hill-climb over small parity games maximising Oink DTL's learned-tangle count (L-RED, DTL box).
 Fitness = tangles found by `oink --dtl --no-single --no-wcwc --no-loops` (raw solver, no preprocessing, self-loops kept;
 before 16:02Z the runs used --no-single --no-wcwc only). Mutations: add/remove an edge,
-change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha|strch|newrecur|maxsets|pairs|iters|restarts|maxrestarts|osc|rep|excess|carries|pviol|evens] [--maxeven K] [--grow k] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
+change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha|strch|newrecur|maxsets|pairs|iters|restarts|maxrestarts|osc|rep|excess|carries|pviol|resets|evens] [--maxeven K] [--grow k] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
 import sys, os, random, subprocess, tempfile, time, re
 oink, n = sys.argv[1], int(sys.argv[2]); arg = lambda k, d: type(d)(sys.argv[sys.argv.index(k) + 1]) if k in sys.argv else d
 steps, seed, maxpr = arg("--steps", 20000), arg("--seed", 0), arg("--maxpr", 2 * int(sys.argv[2])); rng = random.Random(seed)
@@ -49,6 +49,17 @@ def score_py(g):
                 x, y = a["pieces"][0], b["pieces"][0]
                 if (x["kind"], x.get("removed")) != (y["kind"], y.get("removed")): c += 1
         return c + d.iterations / 1000.0
+    if fitness == "resets":    # CARRY box (Opus 5.5): (searches - dominions) * (1 + visits of a recurring (player, R) at which some
+        spec2 = importlib.util.spec_from_file_location("cm", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "dtl_ctxmono.py"))
+        cm = importlib.util.module_from_spec(spec2); spec2.loader.exec_module(cm)   # pruning round DROPS, i.e. fixed-context resets)
+        seen, rv = {}, 0
+        for sr in d.searches:
+            for bv in sr["bv"]:
+                if not bv["rounds"]: continue
+                key = (sr["player"], bv["R"]); prof = cm.profile(bv)
+                if key in seen and any(v in seen[key] and prof[v] < seen[key][v] for v in prof): rv += 1
+                seen[key] = prof
+        return (d.iterations - d.dominions) * (1 + rv)
     if fitness == "excess":    # searches minus distinct (player, top vertex) pairs that learn: a chain of singletons scores ~0,
         return d.iterations - d.dominions - len(per)   # a counter (few tops, many searches) scores high; dominion searches do not count
     return sum(len(x) - 1 for x in per.values()) + d.iterations
@@ -56,7 +67,7 @@ def score_py(g):
 
 def score(g):
     open(tmp, "w").write(dumps(g))
-    if fitness in ("rep", "excess", "carries", "pviol"): return score_py(g)
+    if fitness in ("rep", "excess", "carries", "pviol", "resets"): return score_py(g)
     try:
         r = subprocess.run([oink, SOLVER] + OINKFLAGS + (["-t", "-t", "-t"] if fitness in ("strch", "newrecur", "maxsets", "pairs") else ["-t", "-t"] if fitness.startswith("per") or fitness in ("prunemono", "dups", "alpha", "straddles", "restarts", "maxrestarts", "osc") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
     except subprocess.TimeoutExpired:

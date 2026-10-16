@@ -53,3 +53,29 @@ Routes the statement does NOT cover (open): (i) a non-cut piece between C_A and 
 pruned, so the gate is open there and the carry is learned too early. (ii) The fast level inside the recursion of C_A's
 remainder (fresh context). (iii) Levels living in pruning rounds instead of cuts, where L-ALG's straddle reset (Lemma E,
 GAP-A-M.md) acts at a FIXED context. A straddle is a region phenomenon, so it cannot act inside a cut attractor.
+
+## Sharper form: in 2CE the CARRY reduces to a fixed-context deficit (READING, unrefereed; L-RED ~09:35Z)
+This corrects the layout that (C2) assumed. (C2)'s (s4) and (s5) treat the carry as learned in a stable piece after C_B.
+That piece does not exist in the needed form.
+(F) Frontier self-sustain. Fix a search s inside one A-state, with the pieces before C_A the same in s and s+1. Let D_0 be
+    the first tangle learned in s that fires in C_A of s+1 (first in C_A's attraction order). Its escapes are covered there
+    without help from other tangles learned in s, so they lie in C_A's attractor of s or in X before it. Hence, in s, after
+    C_A every escape of D_0 is outside R. D_0's vertices are still in R (otherwise the old tangles would already eat its
+    top). Its cycle is then rebuilt by plain attraction in every later pruning round, so its top is never a candidate. The
+    first best_vertices call after C_A therefore returns STABLE (a -1 result needs an empty V). That call is the stable
+    piece P1, and D_0's top is in V*_{P1}. sptl processes it there, and Dom(V*_{P1}) then removes it. So D_0 is learned in
+    P1 or not in s at all.
+(G) Consequently the gate is evaluated in P1, BEFORE C_B runs, and can depend only on the tangle set. Between two
+    consecutive searches of one A-state, P1's context is the same, and exactly one thing changes: the fast level's newest
+    tangle. The carry needs P1's sptl to learn D_0 when that newest tangle is the LAST fast tangle, and not before. Gate
+    types at P1 (with (E) excluded by (F)):
+    (S) A stealer top s is in V*_{P1}(T) but not in V*_{P1}(T + T_last). By L-ALG's Theorem M-cond (GAP-A-M.md
+        section 3), this requires a DEFICIT round in P1's pruning under T + T_last. By Lemma E, that is an alive tangle that
+        straddles and whose unconsumed rest has a lower-priority cycle maximum. A stealer that stays in V* keeps y: y is
+        attracted whenever s is popped, by whichever region holds s, and every such region has cap >= pr(s) > pr(y).
+    (O) Order gate: T_last changes the attraction order or strategies inside sptl regions (LIFO pops), so a_{c+1}'s SCC
+        changes from one whose escapes are not covered in C_A to one whose escapes are. Not excluded; untested.
+Statement for the proof lane: in the class 2CE, a counter with mA >= 2 carries needs, once per A-state, a fixed-context
+deficit (or an order-gate switch) at P1 that the fast level's last tangle triggers and that none of its earlier tangles
+trigger. A bound on such triggered deficits per context would damp every 2CE counter. L-ALG's dtl_mviol_n20 shows that
+deficits happen in real runs. Whether they can be triggered on demand, repeatedly, at one context is OPEN.
