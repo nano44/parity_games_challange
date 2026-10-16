@@ -816,6 +816,33 @@ computed on the common V_{r0−1}.
   monotone in T". It is DATA-consistent (the wandering return sets in §13b come with region changes at later rounds)
   but NOT checked; stated here only as a target.
 
+### 13f. The chain test (L-RED R15 §6 reading) is NEGATIVE; the deciding round mostly climbs (13:50Z; Lead 13:42Z, 13:46Z)
+Tools: experiments/alg/dtl_straddle.py (CHAIN lines) and dtl_regvec.py, with the tangle set AT the call.
+- All straddlers at one context, both orders. Never a chain once there are more than 2: h4_def4_oink_n20 (|R| 20) has
+  11 straddlers with 28 incomparable pairs (Oink order); h4_def6_oink_n28 has 7 / 6; h4_def7_oink_n44 9 / 14;
+  h4_def8_oink_n44 15 / 33; lemmaS_viol_n20, lemmaS_Mdrop_n20, h4_notweaker_n20, dtl_mviol_n20 and dtl_deficit_n20
+  have 3 to 10 incomparable pairs each. In stable order: the same, except h4_def5_stable_n20, whose 3 NEW straddlers
+  are a chain.
+- DRIVERS only, i.e. new tangles necessary for the deciding round, or sufficient alone, at the call-time tangle set.
+  Also not a chain. h4_def8_oink_n44 (Oink order), piece 0: the necessary non-singleton drivers of the DEF changes
+  s3→s4, s4→s5 and s6→s7 are {4, 13, 14, 35}, {21, 24, 40} and {10, 31, 32, 33} (original ids): PAIRWISE DISJOINT.
+  This is the first ANTICHAIN instance (for L-RED). In h4_def6_oink_n28 the non-singleton necessary drivers ARE nested,
+  {4, 13, 14} ⊂ {1, 2, 4, 12, 13, 14, 24} ⊂ {+5} ⊂ {+0, 6, 9, 10, 11}, as L-RED saw, but a singleton driver {10}
+  (s6→s7) and two sufficient-alone pairs break the chain. So "DEF per context ≤ n via a chain of new straddlers" is FALSE
+  on data.
+- Threshold-phase statement (Lead 13:46Z (2)). PROVED, trivially: at a DEF change with identical V_{r0−1} and identical
+  region vector (18 of 19 cases, §13e), some threshold closure W_t = lfp(U, R, t, T) must be strictly larger in the
+  later search. Survivors are a function of (V, U, (W_t)_t), and each W_t is monotone in T for fixed U. This does NOT
+  give "≤ n per context": W_t is per round, and U at later rounds can change, so the potential is lexicographic over
+  rounds, with resets below the deciding round, as in Lemma R.
+- DATA: the deciding round r0 of successive DEF changes at one context climbs:
+  - h4_def4_oink_n20: 1, 3, 6, 8, 10;
+  - h4_def6_oink_n28: 4, 6, 8, 7, 9, 11;
+  - h4_def8_oink_n44: 5, 7, 9, 8, 10, 13, 15, 17.
+  At most one dip per run. If r0 were strictly increasing, DEF per context would be ≤ (number of rounds) ≤ n. The dips
+  show it is not. Candidate (DATA only): "r0 increases except after a change of M", to be checked against M before it
+  is stated as a lemma.
+
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
 depth-0 index i in a phase. By §11e, carries at index i ≤ n(n+2) · c_i.
@@ -930,3 +957,50 @@ vertex of it dies at M).
   child-context bound per context of §16 holds only with a bound on deficit steps, so (H4) moves toward the centre
   for A_DTL. Running (scratchpad defclimb.py, fitness = DEF changes at one (index, context)): seeded from
   lemmaS_viol_n20, 3 DEF changes at one context within 863 steps.
+
+## 17. Ledger for a referee brief (13:42Z; Lead 13:31Z (c); every item unrefereed, produced on Opus 5.5)
+"PROVED" = argument written out in this file by L-ALG, not refereed. Scope: C6 (ideal pruning, actual = ideal), A_DTL
+(the frozen DTL for every order datum ω, L26), or A_DTL under Theorem M-cond (the later run has no deficit round).
+
+PROVED
+| Item | Scope | Where |
+|---|---|---|
+| Set semantics of one pruning round | A_DTL | §1 |
+| Lemma 2.1: Û monotone in (V, T); Lemma 2.2: U ⊆ Û (per round) | A_DTL | §2 |
+| Lemma E: the only deficit is a straddling tangle with a lower surviving cycle maximum | A_DTL | §3 |
+| Lemma P*-inv; Theorem M-cond: no deficit in the later run ⇒ per-round monotone | A_DTL | §3 |
+| Per-round inclusion V_i ⊆ V̂_i; actual empties no later; ideal −1 ⇒ actual −1 (NOT for −1 return sets) | A_DTL | §13 (corrected) |
+| Lemma D2: sptl regions ⊆ Dom(V*, R) ∪ X_before | A_DTL | §6 |
+| Lemma D3: Dom is a layered closure, monotone in V and T | A_DTL | §9 |
+| Driver lemma: a level-j change is driven by a tangle learned at a piece ≥ j | A_DTL (equal level contexts) | §6 |
+| Counting N_j ≤ K·E_j (product bound) | C6; A_DTL under M-cond; given the "contexts at the level are equal" DATA line | §6 |
+| GAP-C step (r1) | A_DTL (same region, no dominion between) | §7 |
+| (O) refinement; C6 excludes gate (S) | C6 / A_DTL with D2 | §8 |
+| Lemma L-epoch (V* growth, lift or catch-up) | C6 | §9 |
+| LIFT gate constraint | C6 | §9 |
+| APP(k) barrier model and its property table | model | §10 |
+| Lemma F: same-context raise of every rescued vertex | C6 | §11c.1 |
+| Reduction: carries at index i ≤ n(n+2) · c_i; revisits harmless | C6 | §11e, §14 |
+| c_i ≤ searches, so the reduction is circular | trivial | §14 |
+| Lemma S: M non-decreasing; equal-M return set grows; fresh-vs-recurrence criterion; ≤ n(n+1)(n+1) child contexts per staircase | C6; A_DTL under M-cond | §16 |
+| Lemma R: region vector lexicographically monotone in T (carries reset lower regions) | A_DTL | §13b |
+
+KILLED (FALSE / DEAD), each with its instance
+| Claim | Instance (experiments/alg/instances unless noted) | Where |
+|---|---|---|
+| (M) / Claims P, Q / F5 at a fixed context, A_DTL | dtl_mviol_n20.pg (Oink-verified); synthetic dtl_m_synth.py | §4, §4b |
+| (CU) W-blocked top's SCC is stored or a dominion | dtl_cu_viol_n24.pg | §9 |
+| Invariant excluding the straddle-with-lower-pickup shape | dtl_deficit_n20.pg | §4 |
+| Φ: global −1 death record raised by every dead-top cap carry | cross_h_k1_n11_m17_37.pg | §11b, DEAD.md |
+| Φ_idx: per-index record (original and restated) | phi_idx_flat_n20.pg; climbs_1016/nest_nest_s84.pg; phi_idx_cutrec_n20.pg (original only) | §11d, DEAD.md |
+| Φ_idx sub-mechanisms: lift-to-max; per-index max death monotone | data (80/258; 201/2540) | §11b |
+| "V_actual ⊆ V̂ for −1 return sets" (my §13 claim) | red/carry/instances/h4_notweaker_n20.pg (L-RED) | §13 |
+| Lemma S on A_DTL with a later-run deficit | red/carry/instances/lemmaS_viol_n20.pg, lemmaS_Mdrop_n20.pg (L-RED) | §16 |
+| R12 §9 (C-a) as stated; (C-c) first step (L-RED reading) | dtl_proof_c3.pg; cross_h_k1_n10_m16_27.pg | §11c |
+| "Deficit-triggered changes per ideal-stable context ≤ a constant", A_DTL Oink order | h4_def4_oink_n20 (4), h4_def6_oink_n28 (6), h4_def8_oink_n44 (8) | §13b |
+| §6/§12 counts from the buggy tracer (superseded, conclusions kept or corrected) | tracer fix e41ccfb | §6, §12, §15 |
+
+OPEN: GAP-A via (H1) cut carries, (H2a) alive-top self-reinforcing carries, (H2b) dead-top cap carries (reduces to
+c_i, circular), (H3) catch-ups and recursion, (H4) deficits on A_DTL (per context: 4 → 8 over n = 20 → 44, Oink
+order). Core: whether fresh, resetting child contexts (§15, §16) or deficit staircases (§13b) can compound across
+levels.

@@ -53,6 +53,8 @@ def analyse(d, st, name):
     def flush():
         nonlocal percx, phase_def, phase_all
         if percx: st["max_def_per_ctx"] = max(st["max_def_per_ctx"], max(percx.values()))
+        # compounding check: deeper (index >= 1) contexts with >= 2 DEF changes in this phase
+        st["deep_ctx_def2"] = st.get("deep_ctx_def2", 0) + sum(1 for (j, _), c in percx.items() if j >= 1 and c >= 2)
         if phase_def > st["max_def_phase"][0]: st["max_def_phase"] = (phase_def, phase_all, name); st["n_max_def_phase"] = d.n
         percx, phase_def, phase_all = {}, 0, 0
     for a, b in zip(d.trace, d.trace[1:]):

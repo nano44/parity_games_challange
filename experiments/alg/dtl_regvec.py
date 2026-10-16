@@ -21,7 +21,7 @@ class Rv(X.T):
                 if nx == cur: break
                 cur = nx; rounds.append(frozenset(cur))
             Vh = set(); rh = X.C6.best_vertices(s, Vh, set(R), p)
-            s.calls.setdefault((p, frozenset(R)), []).append((s.ns, rounds, regv, (rh, frozenset(Vh))))
+            s.calls.setdefault((p, frozenset(R)), []).append((s.ns, rounds, regv, (rh, frozenset(Vh)), list(tl)))
         return super().best_vertices(V, R, p)
 
 def build(g):
@@ -37,7 +37,7 @@ if __name__ == "__main__":
         g = pg.read(f); d = build(g); d.run(); o = lambda S: sorted(d.idx[v] for v in S)
         print("==", f.split("/")[-1])
         for key, occ in d.calls.items():
-            for (s1, r1, v1, h1), (s2, r2, v2, h2) in zip(occ, occ[1:]):
+            for (s1, r1, v1, h1, *_), (s2, r2, v2, h2, *_) in zip(occ, occ[1:]):
                 if h1 != h2 or r1 == r2: continue                     # DEF pairs only: ideal unchanged, actual changed
                 L = max(len(r1), len(r2))
                 pick = lambda r, i: r[i] if i < len(r) else frozenset()
