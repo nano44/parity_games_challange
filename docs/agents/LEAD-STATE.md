@@ -231,3 +231,4 @@
 - 10:08Z merged l-red 62261a5 (L-RED corrected its heading stamps in an appended note).
 - 10:11Z hourly sweep: no overage (seven_day allowed_warning). Lead ctx 161k (post-compaction); L-ALG 125k working; L-RED 123k working. CI: all completed runs green (679-687); 688-690 in progress. M2 done, no daily owner line. No exceptions.
 - 10:18Z merged l-red 56c4f46 (R12 APP walls), l-alg summary. Routed WALL 1/2 to L-ALG as candidate proof handles for the pruning-carry bound.
+- 10:21Z merged l-alg 9942f9a (MIRROR data; C6 parked). L-ALG next: cap-carry potential (agreed).
