@@ -297,3 +297,4 @@
 - 15:23Z L-RED box ended (DONE fe8cb18, idle, climbs stopped). Merged; roster updated to PARKED. Next-box queue in its notebook.
 - 15:27Z merged l-red 6b52858 (handover notebook ready for successor).
 - 15:56Z L-ALG box ended (DONE c18eaad). Merged; roster PARKED; RESULTS DE10 records today's killed (H4) candidates and A_DTL extensions with instances.
+- 15:58Z next boxes: created L-ALG succ. 4 session_01KESFSwLyyKvwe3mzqN2Bzr and L-RED succ. 3 session_0187PESrNsHy3BTdjyzwyaLy (Opus, D7 continue at current rate, D8 Opus); STEP 0 handover checks pending. WATCHDOG to be told.
