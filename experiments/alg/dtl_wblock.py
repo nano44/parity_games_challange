@@ -1,6 +1,6 @@
-"""L-ALG (produced on Opus 5.5, 2026-10-16): DATA for conjecture (CU), GAP-A-M.md §9: in every sptl pass, a top blocked by W
+"""L-ALG (produced on Opus 5.5, 2026-10-16): counter for conjecture (CU), GAP-A-M.md §9 ((CU) is FALSE: instances/dtl_cu_viol_n24.pg). (CU) said: in every sptl pass, a top blocked by W
 (it extracted earlier in the same search) whose region is closed has, as its SCC, a stored tangle or a set with no escapes
-(a dominion). Usage: dtl_wblock.py [G.pg ...] (+ 600 seeded random games)."""
+(a dominion), as long as the search has found no dominion yet. Usage: dtl_wblock.py [G.pg ...] (+ 600 seeded random games)."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import dtl_pyref as D, pg, gen
@@ -38,6 +38,10 @@ def sccs_from(d, top, Z):
         res.append(sorted(C))
     return res
 class WB(D.DTL):
+    def search(self, p):
+        self._dom_at_search = self.dominions
+        return super().search(p)
+
     def sptl(self, V, R, p):
         changes = False; blocked_new = 0
         for top in range(self.n - 1, -1, -1):
@@ -45,7 +49,9 @@ class WB(D.DTL):
             Z = {top}; self.str[top] = -1; self.Q = [top]
             self.tattr(p, Z, R, R, self.pr[top], R)
             closed = (self.str[top] != -1) if self.ow[top] == p else not any(w in R for w in self.outs[top])
-            if closed and top in self.W:
+            if closed and top in self.W and self.dominions == self._dom_at_search:
+                # (CU) is claimed only while the search has found no dominion: after a dominion everything learned in the
+                # search is solved or deleted at its end (search(), 1023-1040).
                 cnt["blocked_closed"] += 1
                 for C in sccs_from(self, top, Z):
                     Cs = set(C)

@@ -34,6 +34,8 @@
 - (M) / Claims P, Q / F5 at a fixed context: DEAD for A_DTL. Obstruction: straddle-deficit (GAP-A-M.md Lemma E); killing
   instance experiments/alg/instances/dtl_mviol_n20.pg (Oink iterations 3-odd → 4-odd, distance 8 → 7); synthetic
   version dtl_m_synth.py (9 vertices).
+- (CU) "a W-blocked top's closed-region SCC is stored or a dominion": DEAD (instances/dtl_cu_viol_n24.pg, search 1
+  passes 3-5, top 19, SCC {3,5,6,10,11,12,16,19} merging two stored tangles; GAP-A-M §9).
 - Invariant of DTL-reachable tangle sets excluding the straddle-with-lower-pickup shape: DEAD (deficits with changed
   survival occur in actual runs, instances/dtl_deficit_n20.pg).
 

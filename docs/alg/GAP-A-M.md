@@ -312,15 +312,17 @@ every search s_{i+1} in which piece j learns a new tangle is of one of three kin
      form of the in-search chain (GAP-A-data F3/F4).
 So a stable piece learns in at most 2|R_j| searches of an epoch PLUS its catch-ups. GAP: a bound on catch-up chains at a
 fixed region family.
-Conjecture (CU) (09:38Z; DATA, 0 counterexamples): in every sptl pass, a top blocked by W whose region is closed has as its
-SCC either a STORED tangle or a set without escapes (a dominion). experiments/alg/dtl_wblock.py: 4,027 sptl passes, 1,923
-closed regions at blocked tops (600 random games n ≤ 26, every file in experiments/alg/instances, tc+ N ≤ 6): 1,412 of
-their SCCs are new DOMINIONS (found one search late), 0 are new tangles. And no catch-up was seen in practice: in 115
-(A_DTL) / 110 (C6) consecutive same-piece pairs at depth 0 with equal context, V* and Dom, the second search learned
-nothing there. Under (CU) a catch-up yields only a dominion, and a stable piece learns a tangle in at most 2|R_j| searches
-of an epoch (C6).
+Conjecture (CU) — FALSE (09:43Z): "a W-blocked top with a closed region has a stored tangle or a dominion as its SCC".
+First data looked clean (experiments/alg/dtl_wblock.py, restricted to searches that have found no dominion yet: 441
+blocked closed regions, 0 new SCCs; unrestricted, all 1,412 new ones were dominions inside searches that had already found
+a dominion). A climb on the count found counterexamples within minutes: experiments/alg/instances/dtl_cu_viol_n24.pg
+(dtl_pyref stable order; Oink solves it, verified), search 1 (no dominion yet), passes 3-5: the blocked top 19 has the new
+SCC {3, 5, 6, 10, 11, 12, 16, 19}, with escapes, merging the stored tangles {5, 10, 11, 16, 19} (learned at 19 in pass 2)
+and {3, 6, 12} (learned at 12 in pass 2). It is never extracted: in search 2 the piece's context has changed (|R| 17 → 13).
+So case (c) of Lemma L-epoch is real at the level of sptl; what remains DATA only is that a catch-up has never been LEARNED
+at an unchanged context (115 / 110 same-piece pairs above).
 Consequence for gate (O) in C6 (R10's 2CE). The carry must be learned at P1 within one A-state (R10 (F), (G)). By Lemma
 L-epoch the search that learns it is (a) a growth of V*_{P1}, (b) a lift of a tangle learned after P1 in the previous search
 (for a gate tied to the fast level: its LAST tangle, and no earlier one), or (c) a catch-up at P1. Kind (c) needs no
 input from the fast level at all: a catch-up chain at P1 is a self-running DELAY, one step per search, which a counter
-could use as a timer if its length can be made to match the fast level's. None of (a)-(c) is excluded by proof; (c) is excluded for tangles by (CU) if (CU) holds (DATA only). OPEN.
+could use as a timer if its length can be made to match the fast level's. None of (a)-(c) is excluded by proof ((CU), which would have excluded (c), is false). OPEN.
