@@ -188,6 +188,44 @@ def lemma_s(d):
     return out
 
 
+def staircases(d):
+    """L-ALG GAP-A-M 16 (a)+(b) measure on A_DTL. A staircase = the -1 Dom(prevV) calls at one (phase, index j, context R)
+    over consecutive searches. For each, the M sequence, the M-rises bringing NEW leaders (return set never seen before in
+    this staircase), and for each such rise the number of changes at index j+1 (first difference j+1 or deeper) before
+    the next change at <= j. Returns a list of dicts."""
+    out = []; ph0 = 0
+    for si in range(len(d.searches)):
+        if si and (d.searches[si - 1]["player"] != d.searches[si]["player"] or d.searches[si - 1]["dominions"]): ph0 = si
+        d.searches[si]["_ph"] = ph0
+    st = {}
+    for (si, j), c in sorted(d.calls.items()):
+        d0 = [pc for pc in d.searches[si]["pieces"] if pc["depth"] == 0]
+        if j < len(d0) and d0[j]["kind"] == "domfirst" and c[3] == -1:
+            st.setdefault((d.searches[si]["_ph"], j, c[0]), []).append((si, len(c[2]) - 1, frozenset(c[2][-2])))
+    for (ph, j, R), seq in st.items():
+        if len(seq) < 2: continue
+        seen = {seq[0][2]}; rises = []
+        for (sa, Ma, Va), (sb, Mb, Vb) in zip(seq, seq[1:]):
+            if sb != sa + 1: continue
+            if Mb > Ma and Vb not in seen: rises.append(sb)
+            seen.add(Vb)
+        out.append(dict(phase=ph, j=j, nR=len(R), M=[m for _, m, _ in seq], searches=[s for s, _, _ in seq], new_rises=rises))
+    return out
+
+
+def nest2(d):
+    """k=2 counter score (Lead 12:21Z target): max over parent staircases P (phase, j) of
+    (#new-leader M-rises of P) x (#child staircases in the same phase at an index > j, each in its own context, with >= 1
+    new-leader M-rise). A K x K two-level staircase counter scores about K^2."""
+    sts = staircases(d); best = (0, None)
+    for P in sts:
+        if len(P["new_rises"]) < 1: continue
+        kids = [C for C in sts if C["phase"] == P["phase"] and C["j"] > P["j"] and C["new_rises"]]
+        sc = len(P["new_rises"]) * len(kids)
+        if sc > best[0]: best = (sc, (P["j"], P["M"], P["new_rises"], [(C["j"], C["nR"], C["M"], C["new_rises"]) for C in kids]))
+    return best
+
+
 def run(path):
     g = rd.ff.pg.read(path)
     from stdsort import oink_order
