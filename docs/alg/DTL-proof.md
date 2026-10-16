@@ -16,8 +16,8 @@ TARGET's compression (sort, keep order and parity) is applied first, on the enco
 Step 0 (input construction, charged): write the game in PGSolver text and run Oink's parser
 `PGParser::parse_pgsolver_renumber` with bad-loop removal OFF (`--no-loops`, src/tools/solve.cpp:263), which builds the
 out- and in-edge arrays (O((n + m) log n) word operations) and ALWAYS renumbers the priorities (pgparser.cpp 492-511,
-whatever the flags): the distinct priorities are mapped in increasing order to consecutive integers starting at 1 or 2,
-each keeping its parity (a step of 2 where two consecutive distinct priorities have the same parity), so every priority is
+whatever the flags): the distinct priorities are mapped in increasing order to consecutive integers starting at 0 if 0 occurs, else
+at 1 or 2 by parity, each keeping its parity (a step of 2 where two consecutive distinct priorities have the same parity), so every priority is
 ≤ 2d ≤ 2n + 2 afterwards; this is a compression in the sense of TARGET section 1 (order and parity preserved), it costs
 O(n log n) (a flat map over the n priorities) and is charged in D2(e); 0.4 shows A_DTL makes the same choices on a game and
 on any such compression of it. Then `game.ensure_sorted()` (oink.cpp:35; game.cpp:495
