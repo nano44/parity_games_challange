@@ -187,6 +187,14 @@ first j where (R_j, res_j, V_j) differ, or ∗ if all depth-0 pieces agree (prog
   the vertices removed by earlier pieces, and attractTangle counts tangle vertices in X as already attracted, so a tangle
   partly removed earlier can fire there but not in best_vertices' regions); Dom can grow through deficits and through
   such tangles.
+- Refinement (PROVED for C6, 09:10Z; for A_DTL only under Theorem M-cond): (M) holds for ANY T ⊆ T', so also between
+  non-consecutive visits of the same context: if a level-j context recurs in a later epoch, piece j resumes at a state at
+  least as advanced. Hence N_j ≤ K·C_j with C_j := the number of DISTINCT level-j contexts in the phase (≤ E_j). DATA:
+  dtl_replay4_n32 revisits a level-1 context (piece 1's context in searches 10-12 equals that of searches 5-7, piece 1's
+  maximum distance 5 there and 7 on the revisit): 5 level-1 epochs, 4 distinct contexts; the root's −1 return set
+  oscillates {5} → {5, 27} → {5} while its maximum distance rises 7 → 7 → 8, one bit of state.
+  Mechanism (reading): two vertices' distances leapfrog (27 reaches the maximum 7, then 5 moves to 8); each flip raises a
+  distance, so such a bit flips O(n) times per context, and the −1 return set (hence the next context) follows it.
 6.2 The precise obstruction. The product comes only from REPLAYS: transitions of level j in an epoch other than the first
 level-j epoch in which level j changed (some level i < j changed in between). With replays bounded, N_j ≤ K + (replays at
 level j) and the phase has O(L·K + replays) transitions. Nothing proved bounds replays, for a concrete reason: when a level
@@ -202,14 +210,31 @@ that change is itself a replay; a k-digit counter has depth k − 1).
 | --- | --- | --- | --- |
 | tc+ N = 4, 5, 6 | 0 2 1 0 / 0 3 2 1 0 / 0 4 3 2 1 0 (and the same after the phase break) | 0 | 0 |
 | dtl_searches20_n32 | ∗ 0 1 0 0 1 ∗ ∗ 0 ∗ ∗ 0 ∗ 0, then ∗ ∗ 0 | 1 | 1 |
+| dtl_replay4_n32 (climb on replay depth, 09:07Z; Oink: 42 tangles, 16 iterations, verified) | 1 0 1 0 1 0 1 0 1, then 1 0 | 4 | 1 |
+| dtl_replay2deep_n32 (climb, 09:11Z; Oink: 35 tangles, 16 iterations, verified) | 1 0 2 1 2 1 1 2, then 1 0 | 3 | 2 |
 | the other 717 games: 600 random (n ≤ 24), every file in experiments/alg/instances, tc N ≤ 6, tc+ N ≤ 5, counter_* | — | 0 | 0 |
 tc+ is a one-pass SWEEP (each piece changes once, deepest first) and has no replay at all; its 2N + 2 searches are the
 sweep, not a counter. Over these 718 games (A_DTL and C6 give the same histogram) exactly ONE replay occurs, of depth 1 (level 1 re-advancing
 after the root moved, in a climbed instance).
+The two climbed instances add no fresh structure: dtl_replay2deep_n32's depth-2 replay (piece 2 re-advancing after a
+piece-1 replay) runs on only 3 distinct level-2 contexts; the context of searches 10-12 is that of searches 5-7 (piece 2's
+maximum distance 5 there, 7 on the revisit), driven by a leapfrog bit at level 1 (return set {5} / {5, 22}). Counted over
+distinct contexts (N_j ≤ K·C_j) neither instance shows a product.
+6.3b Answer to target (2) (reading, 09:15Z). No global budget follows from what is proved, and the reason is precise:
+every proved fact is compatible with a k-level counter. Per context, piece j changes at most K = O(n²) times (fixed-context
+monotonicity, C6; A_DTL under M-cond); a parent context with its O(n²) results can hand the child up to O(n²) DISTINCT
+contexts (the −1 return set is re-cut at each result change, GAP-A-data F7; a leapfrog of two distances is one bit), and a
+child needs only O(1) changes per context to carry a counter digit; revisited contexts resume (refinement above) and cost
+the counter nothing it needs. So the proved facts give C_j ≤ (K+1)^j and searches ≤ n^{O(k)} for k nested pieces, and no
+more. Whether DTL can make every parent state a FRESH child context in which the child still has work is exactly the
+open question; in all data the child contexts REVISIT (C_1 ≤ 4, C_2 ≤ 3 on the climbed instances, 1 elsewhere).
 6.4 What would close GAP-A along this route (open; for the proof lane): a lemma charging every replay at level j to a
 global resource, e.g. "a level-j replay needs a tangle usable in the new context that was usable in NO earlier level-j
 context of the phase", with that resource bounded polynomially. What would kill it (for L-RED): a family whose replay depth
-grows with n. Climbs on C6 with fitness = replay depth ≫ replays ≫ searches are running (started 08:43Z).
+grows with n. Building block (DATA): experiments/alg/instances/dtl_replay4_n32.pg is a clean two-level alternation (piece 1
+re-advances once after every root change, same under A_DTL and C6). Depth 2 would need a copy of this behaviour INSIDE
+piece 1's context, reset by every root change: the root's change must return to piece 1's context vertices whose removal
+the inner copy's learned tangles relied on for escape coverage, so that the inner alternation restarts with new sets. Climbs on C6 with fitness = replay depth ≫ replays ≫ searches are running (started 08:43Z).
 
 ## 7. Consequence for GAP-C: step (r1) of the (α)-exclusion route (PROVED, 09:04Z)
 DTL-proof.md §2.3's route for excluding the straddling-tangle shape (α) needs (r1): "the only source of non-monotonicity of
