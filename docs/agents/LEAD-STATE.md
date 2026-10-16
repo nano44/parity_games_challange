@@ -311,3 +311,9 @@
 - 16:58Z merged l-alg 670a762 ((LEX) fails in L-ALG's own actual run; (U-MONO_DTL) routed to L-RED).
 - 17:05Z hourly sweep: no overage (seven_day allowed_warning). Lead 674k $173.4; L-ALG succ. 4 running; L-RED succ. 3 running (234k). No owner questions open (D10, D11). No exceptions.
 - 17:08Z merged l-alg 46cd0a2 ((CM) fails in actual run). L-ALG proposes C6 as GAP-A proof target; Lead asked for a scoping note before deciding (C6 = new candidate, needs its own gauntlet steps 1-3; completeness reduces to GAP-C as for A_DTL).
+- 17:26Z merged l-alg 16fd55b; Lead reading L31 recorded (C6 not promoted; simpler model for the core).
+- 18:05Z hourly sweep: no overage (seven_day allowed_warning). Lead 707k $175.1; L-ALG succ. 4 idle with climb monitors armed (451k, $17.2; watch for 600k before box end), L-RED succ. 3 idle with climbs running (267k, $7.4; no depth-2 (NR) yet). No exceptions.
+- 18:29Z merged l-alg c7fc7cb (Lemma P on C6; replay depth 3). Routed replay-depth-vs-n to L-RED.
+- 18:33Z merged l-red 78469a8; (F1) '<=1 fall step per context' candidate routed to L-ALG.
+- 18:45Z merged l-alg a56af6a ((F1) not structural; attack recipe to L-RED).
+- 18:57Z merged l-red 6b384b2 ((F1) false as stated; DEF-only (F1) open). Lead re-ran Oink.

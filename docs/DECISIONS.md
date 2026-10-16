@@ -192,3 +192,12 @@ anyone outside: results stay labelled as unrefereed where they are.
 Lead reading L30: Q12 option (a). No contact with the author about counter_dtl or anything else; the fleet works from the
 public record (T17) and its own constructions. The p.15 recipe was already built (L-RED R14, d70e99a: no slowdown on A_DTL).
 The question may be put to the owner again only if a later finding makes the author's counterexample decisive.
+
+## L31 (Lead reading, 2026-10-16 17:25Z): C6 is not promoted to a gauntlet candidate
+Basis: L-ALG's C6 scoping note (docs/alg/GAP-A-M.md §19, l-alg 16fd55b). C6 (DTL with ideal pruning) removes (H4) by
+construction and has every per-context lemma proved (F, S), but its GAP-A reduces to the same core as A_DTL (a polynomial
+bound on fresh, resetting child contexts per parent piece), its completeness reduces to A_DTL's GAP-C, and (H1)-(H3) are
+open or dead on C6 as on A_DTL. Promoting it would add gauntlet steps 1-3 without shortening the open core. Reading:
+A_DTL stays the gauntlet candidate (step-4 statement L24/L26 unchanged). C6 is used as the SIMPLER MODEL for the core: a
+proof of the core on C6 is the first target, then its transfer to A_DTL (where (H4) adds deficits). Revisit if the core is
+proved on C6 and the transfer fails, or if the owner decides otherwise.
