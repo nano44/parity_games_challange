@@ -28,6 +28,24 @@ in the sense of CLAUDE.md (no referee, no Lean).
   the ideal; stable order ω; Oink solves it, verified, 21 tangles, 5 iterations); seeded continuations reach 10 such rounds per
   run. A violation of (M) needs the same context visited EARLIER without the stealing tangle: found 08:29Z (section 4b).
 
+Summary of sections 5-10 (added 10:06Z; target (2) and the follow-ups; every item unrefereed):
+- Target (2), section 6: no global budget follows from what is proved. Counting (PROVED given the DATA line "contexts change
+  only through results"): N_j ≤ K·C_j over DISTINCT level-j contexts, a product over nested pieces; the obstruction is
+  fresh child contexts per parent state (replays). Driver lemma PROVED (with Lemma D2): a level-j change is driven by a
+  tangle learned at a piece ≥ j in the previous search. DATA: 1 replay in 718 games; climbed instances show only
+  revisits (dtl_replay4_n32, dtl_replay2deep_n32).
+- Lemma D2 (PROVED): every sptl region lies in Dom(V*, R) ∪ X_before. Lemma D3 (PROVED): Dom is a layered closure,
+  monotone in V and T. Lemma L-epoch (C6, PROVED reading): a stable piece learns again within an epoch only through V*
+  growth, a lift (Dom grows) or a catch-up; conjecture (CU) excluding catch-ups is FALSE (dtl_cu_viol_n24.pg).
+- Section 7: GAP-C step (r1) PROVED (per call, same region, no dominion in between); (r2) FAILS (L-RED R11).
+- Section 8: reply to L-RED R10: C6 excludes the stealer gate (S); order gates are not covered by order data; a pure
+  order gate by the last fast tangle at a fixed region set is impossible (PROVED with D2).
+- Section 10: BARRIER for this proof route (not a DTL lower bound): APP(k), an abstract piece process satisfying every
+  proved property, has 2^k + 1 searches on 2k + 1 vertices (experiments/alg/app_model.py). It violates the frontier
+  property (F); (F) holds for cut-attractor carries (L-RED) and FAILS for pruning-driven changes in real A_DTL runs (8 of
+  136 drivers at Dom(prevV) pieces learned at a later stable piece), which is APP's level type. What a polynomial proof
+  needs: a bound on pruning-driven carries at −1 pieces (L-RED's MIRROR reading says they must be self-reinforcing).
+
 ## 1. Set semantics of one pruning round (PROVED, reading of dtl.cpp 643-776)
 Fix p, R, the alive p-tangles T (tpr ≠ −1, parity p, all vertices unsolved; a tangle with a solved vertex never fires,
 DTL-proof.md 1.2 (T)). For B ⊆ R and a threshold h, Attr_h(B) is the least superset of B closed under DTL-proof.md
