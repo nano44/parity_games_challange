@@ -87,12 +87,14 @@ def analyse(d, out, name):
         # (R, result, attractor Z). At a Dom(prevV) / stable piece: (R, result, V). STATE_V=1 restores the old (R, result, V).
         def sig(tr, j):
             P = tr["pieces"][j]
-            if os.environ.get("STATE_V") != "1" and j in tr.get("cuts", set()): return (P[0], P[1], "cut", tr["att"][j])
+            if os.environ.get("STATE_V") != "1" and j in tr.get("cuts", set()):
+                Rn = tr["pieces"][j + 1][0] if j + 1 < len(tr["pieces"]) else frozenset()
+                return (P[0], P[1], "cut", P[0] - Rn)                   # removed set R_j \ R_{j+1}, not the child's R
             return P[:3]
         while i < min(len(pa), len(pb)) and sig(a, i) == sig(b, i): i += 1
         if i < min(len(pa), len(pb)) and i in a.get("cuts", set()) and i in b.get("cuts", set()):
             out["cut_attractor_changes"] = out.get("cut_attractor_changes", 0) + 1
-            if len(out.setdefault("cutatt_ex", [])) < 3: out["cutatt_ex"].append((name, k + 1, i, len(a["att"][i]), len(b["att"][i])))
+            if len(out.setdefault("cutatt_ex", [])) < 3: out["cutatt_ex"].append((name, k + 1, i, len(sig(a, i)[3]), len(sig(b, i)[3])))
             continue                                                     # (H1) territory, not a V change
         if i >= min(len(pa), len(pb)) or pa[i][0] != pb[i][0] or pa[i][1] != -1: continue
         p, R, G = a["p"], pa[i][0], a["G"]

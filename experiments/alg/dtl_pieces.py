@@ -43,7 +43,10 @@ def mk(base):
 def sig(tr, j):
     """Corrected depth-0 piece state (GAP-A-M §6 CORRECTION): at a cut piece V is never read; its state is the attractor."""
     P = tr["pieces"][j]
-    if os.environ.get("STATE_V") != "1" and j in tr.get("att", {}): return (P[0], P[1], "cut", tr["att"][j])
+    if os.environ.get("STATE_V") != "1" and j in tr.get("att", {}):
+        # the cut removes R_j \ R_{j+1} from R (tattr attractor; the child gets only part of it, the rest goes to X)
+        Rn = tr["pieces"][j + 1][0] if j + 1 < len(tr["pieces"]) else frozenset()
+        return (P[0], P[1], "cut", P[0] - Rn)
     return P[:3]
 
 def first_diff(a, b):

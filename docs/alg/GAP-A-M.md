@@ -180,10 +180,23 @@ CORRECTION (10:58Z; L-RED l-red 6a98d48, R13 last section; Lead 10:59Z, checked 
 here in experiments/alg/dtl_pyref.py search_rec). The −1 branch's threshold scan ("does R attract into X") never reads V.
 When it finds a vertex, the piece CUTS: attractor Z at threshold t, X ∪= Z, R loses Z (tattr consumes from R), and the
 recursion runs on Z. V is read only in the other branch, Dom(prevV). So the state of a depth-0 piece is
-(R_j, res_j, V_j) at a stable or Dom(prevV) piece and (R_j, −1, t, Z_j) at a cut piece. A −1 → −1 V change at a cut is
+(R_j, res_j, V_j) at a stable or Dom(prevV) piece and (R_j, −1, D_j) at a cut piece, where D_j = R_j \ R_{j+1} is
+the full set the cut removes. (11:23Z: the child call's R is NOT enough. The cut moves the threshold-priority part of
+the attractor into X, so equal child sets can come with different D_j. The 10:58Z version used the child's R.) A −1 → −1 V change at a cut is
 a PHANTOM, and attractor growth at an unchanged V is a real change. The LEVEL of a transition is the first j whose
 corrected state differs. Counts in this file measured with (R, res, V) at cut pieces carry that error; the corrected
 counts are in §11c. The counting argument above is unchanged in form; only the state it counts changes.
+RE-MEASURED (11:25Z; experiments/alg/dtl_pieces.py e41ccfb + this commit). The old tracer had a bug: it never
+restored the depth after a cut's recursion, so every depth-0 piece after the first cut went unrecorded. On every
+experiments/alg/instances/dtl_*.pg, climbs_1016 and 600 random games n ≤ 24 (tc+ not re-run; no generator call in this
+script), there are 640 games:
+- old tracer: DTL 211 transitions with a depth-0 level (+116 "same"), C6 208 (+113); replay histogram max (depth 2,
+  3 replays, dtl_replay2deep_n32); 17 games with a replay.
+- fixed tracer, child-R cut state (10:58Z definition): 25 NEST transitions (context at the level shrank with an equal
+  previous piece), all right after a cut. That is an artefact of the child-R state.
+- fixed tracer, removed-set cut state (definition above): DTL 275 (+52 same), C6 270 (+51), NEST 0, FRESH 0. The
+  6.1 DATA line ("contexts at the level are equal") HOLDS on the corrected count. Replays: 19 games, max (depth 2,
+  5 replays) at climbs_1016/nest_nest_s81.pg.
 6.1 Facts.
 - (DATA, 0 exceptions) Contexts change only through results: at the level of every transition the two contexts are EQUAL
   (DTL 57 and C6 55 transitions with a depth-0 level on 600 random games n ≤ 24, every instance in experiments/alg/instances
