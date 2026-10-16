@@ -330,3 +330,4 @@
 - 21:42Z Lead: merged l-alg 6652cd7; Oink re-run spp_n20 (21 it., 18 searches in one phase = 0.9n) and spp_n40 (21 it.), verified. Watching for a phase > n.
 - 22:05Z sweep: no overage (seven_day allowed_warning); Lead $183.2; L-ALG idle on ledger run (532k, $28.6), L-RED idle on climbs (347k, $13.6); no new lane commits. No action.
 - 23:04Z sweep: no overage (seven_day allowed_warning); Lead $183.4; L-ALG idle waiting on ledger run (536k, $29.6), L-RED idle on final climb cycle, summary says peak 19 searches in one phase (n not stated, not pushed yet) (350k, $14.1); no new lane commits. No action; box ends ~00:00Z/00:05Z.
+- 23:06Z Lead: L-RED END OF BOX (38f4e04, merged); spp19_oink_n30 21 it. and spp19_stable_n30 23 it., 19 searches in one phase, Oink verified. max/n 0.9 (L-ALG n=20) and 0.63 (n=30). Next boxes after L-ALG ledger.
