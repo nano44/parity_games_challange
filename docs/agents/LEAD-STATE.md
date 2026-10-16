@@ -198,3 +198,4 @@
   * Running: L-ALG succ.2 session_01Aoj1NEAPu4ibQ3VbNXaXVY (box to ~07:40Z; potential for searches; next interim ~02:30Z). L-RED succ. session_0117Yy21tGGz9s1zzLfBdUKC (box to ~06:25Z; counter for searches per phase from distraction flip-flop). Parked: L-COMP succ. session_01Nd4XCMfDaYHsh1P6XTtRGz, L-LOWER (k=9 runs detached; read RESULT later), L-SI, L-LIT, REFEREE(s), CHECKER after C3f.
   * Rules in force: D7 continue, stop on overage; L23 SI parked; L25 T-L2 parked; referees get DTL only on a complete claim; messages between sessions delayed up to ~30 min.
 - 00:45Z C3f PASS -> L26: DTL §0 re-frozen at e144992 for every order datum.
+- 00:51Z L-RED R9 interim 30af303: flip-flop runs through the domfirst piece (argmax change); Claims P/Q (pruning round and stable V* monotone at fixed R) 0 violations; tree bound (n^2+1)^k needs multiplicative multi-level counter (4 requirements, each realised once). Forwarded P/Q + R1/R2 to L-ALG as proof route.
