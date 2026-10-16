@@ -170,6 +170,22 @@ def analyse(d, out, name):
                 bk["dead_m1_prev_all_up"] = bk.get("dead_m1_prev_all_up", 0) + all_up
                 bk["dead_m1_n"] = bk.get("dead_m1_n", 0) + 1
                 ut = max(resc, key=lambda v: (d.pr[v], v))
+                # (f) is the cross-context case exercised? u*'s record at index i split by context (same R as now / other)
+                if kind == "dom":
+                    same_rec, oth_rec = 0, 0
+                    for kk in range(ph0, k + 1):
+                        tr = d.trace[kk]
+                        if i < len(tr["pieces"]) and tr["pieces"][i][1] == -1 and i not in tr.get("cuts", set()):
+                            RR, rs, VV, nt = tr["pieces"][i]
+                            dd = death_in(rounds(d, p, RR, tl_at(d, p, nt, tr["G"])), ut) if ut in RR else 0
+                            if RR == R: same_rec = max(same_rec, dd)
+                            else: oth_rec = max(oth_rec, dd)
+                    if oth_rec == 0: fk = "f_no_other_context_record"
+                    elif oth_rec <= same_rec: fk = "f_other_record_le_same"
+                    else: fk = "f_other_context_record_binding"
+                    bk[fk] = bk.get(fk, 0) + 1
+                    if fk == "f_other_context_record_binding" and len(out.setdefault("f_ex", [])) < 4:
+                        out["f_ex"].append((name, k + 1, i, ut, same_rec, oth_rec, dnew[ut]))
                 bk["dead_m1_top_rescued_raises_Ri"] = bk.get("dead_m1_top_rescued_raises_Ri", 0) + (dnew[ut] > reci.get(ut, 0))
                 if not some_up and len(out.setdefault("c_ex", [])) < 3:
                     out["c_ex"].append((name, k + 1, i, kind, [(u, dprev[u], dnew[u], reci.get(u, 0)) for u in resc]))
