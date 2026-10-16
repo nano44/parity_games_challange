@@ -1,6 +1,6 @@
 # L-ALG notebook — third successor (session_01BDELabbGbT2QYY2NoRCY8A), 2026-10-16, produced on Opus 5.5 (D8/L27); older notes below
 
-## FINAL RESUME POINT (box end ~16:10Z; drafted 14:58Z, finalised 15:49Z) — read this first
+## FINAL RESUME POINT (box end ~16:10Z; drafted 14:58Z, finalised 15:48Z) — read this first
 All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push ONLY with `scripts/push.sh` as a bare call, or
 `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?` (never pipe). Branch claude/l-alg.
 - Where the truth is: docs/alg/GAP-A-M.md. §17 is the LEDGER (every PROVED item with scope C6 / A_DTL / under M-cond;
