@@ -75,23 +75,35 @@ def score_py(g):
             DD.analyse(dd, st, "x")
         except Exception:
             return -1
-        if fitness == "h4prod":  # compounding (Lead 13:46Z): per phase, DEF counts per (index, context) as in DD.analyse; score =
-            best_p, best_1 = 0, 0  # 1000 x max over phases of (top count x second count at another (index, context)) + 100 x max single
-            def flushp(pc):
-                nonlocal best_p, best_1
-                c = sorted(pc.values(), reverse=True)
-                if c: best_1 = max(best_1, c[0])
-                if len(c) >= 2: best_p = max(best_p, c[0] * c[1])
-            pc = {}
+        if fitness == "h4prod":  # compounding (Lead 13:46Z), BLOCK form (the product of totals was gameable: 2 then 3 sequential DEF
+            best_b, best_1 = 0, 0  # at two contexts scored 6). Per phase, sequence of (first-difference index j, DEF?) over consecutive
+            def flushp(seq):       # same-context changes; a block at level i = a DEF at i followed by the DEF changes at indices > i up
+                nonlocal best_b, best_1    # to the next change at <= i. Score = 1000 x max over levels with >= 2 blocks of the sum of
+                cnt = {}                   # (child DEF in the block); + 100 x max DEF per (index, context)
+                for j, de, ctx in seq:
+                    if de: cnt[(j, ctx)] = cnt.get((j, ctx), 0) + 1
+                if cnt: best_1 = max(best_1, max(cnt.values()))
+                for i in {j for j, de, _ in seq if de}:
+                    blocks = []; k = 0
+                    while k < len(seq):
+                        if seq[k][0] == i and seq[k][1]:
+                            c = 0; k += 1
+                            while k < len(seq) and seq[k][0] > i:
+                                c += seq[k][1]; k += 1
+                            blocks.append(c)
+                        elif seq[k][0] <= i: k += 1
+                        else: k += 1
+                    if len(blocks) >= 2 and sum(1 for c in blocks if c) >= 2: best_b = max(best_b, sum(blocks))
+            seq = []
             for a, b in zip(dd.trace, dd.trace[1:]):
                 if a["p"] != b["p"] or b["dom"] != a["dom"]:
-                    flushp(pc); pc = {}; continue
+                    flushp(seq); seq = []; continue
                 pa, pb = a["pieces"], b["pieces"]; j = 0
                 while j < min(len(pa), len(pb)) and pa[j][:3] == pb[j][:3]: j += 1
-                if j >= min(len(pa), len(pb)) or pa[j][0] != pb[j][0]: continue
-                if pa[j][3:] == pb[j][3:]: pc[(j, pa[j][0])] = pc.get((j, pa[j][0]), 0) + 1
-            flushp(pc)
-            return 1000 * best_p + 100 * best_1 + d.iterations / 1000.0
+                if j >= min(len(pa), len(pb)): continue
+                seq.append((j, pa[j][0] == pb[j][0] and pa[j][3:] == pb[j][3:], pa[j][0]))
+            flushp(seq)
+            return 1000 * best_b + 100 * best_1 + d.iterations / 1000.0
         if fitness == "h4ctx":  # weight on the per-context bound itself: 1000 x max DEF per (piece, context) + 100 x per phase + re-targets
             return 1000 * st["max_def_per_ctx"] + 100 * st["max_def_phase"][0] + 10 * st.get("DEF_m1m1", 0) + st["NOT_weaker"] + d.iterations / 1000.0
         return 100 * st["max_def_per_ctx"] + 10 * st["max_def_phase"][0] + st.get("DEF_m1m1", 0) + 1000 * st["NOT_weaker"] + d.iterations / 1000.0
