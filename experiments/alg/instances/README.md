@@ -8,3 +8,4 @@ One line each; "stable" = order datum (priority, id) of dtl_pyref; "oink" = Oink
 - h4_def5_stable_n20.pg: A_DTL stable order only; 5 deficit-triggered changes at one context with the ideal stable; in Oink order 0 deficits (§13b).
 - phi_idx_flat_n20.pg, phi_idx_cutrec_n20.pg: Φ_idx counterexamples (GAP-A-M §11d, docs/alg/DEAD.md).
 - h4_def6_oink_n28.pg: A_DTL OINK order (exact; Oink 9 iterations, verified); 6 deficit-triggered changes at one context (piece 0, |R| 26, after the first dominion) with the ideal stable throughout (GAP-A-M §13b).
+- h4_def7_oink_n44.pg: A_DTL OINK order (exact; Oink 11 iterations, verified); 7 deficit-triggered changes at one context (piece 0, R = G, |R| 44) with the ideal stable (26 vertices) throughout (GAP-A-M §13b).

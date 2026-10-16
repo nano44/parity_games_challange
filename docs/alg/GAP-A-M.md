@@ -748,6 +748,11 @@ pieces 0..j-1; measured ctx_changed = 0.
     ideal-stable context, and the whole phase after the dominion is spent there. n = 36 (seed 136): 5 at one context, 6
     in the phase, so far. Maximum per context so far: n = 20: 4, n = 28: 6, n = 36: 5 (climbs running). Too few points
     for a growth law; consistent with growth.
+  - 13:39Z, n = 44: experiments/alg/instances/h4_def7_oink_n44.pg (Oink and dtl_pyref --order oink both 11 iterations,
+    verified). Player 1, piece 0, R = G (|R| = 44). The ideal is STABLE with the same 26-vertex V̂* in searches 4-11.
+    The actual, in original ids: −1 {36, 43} → {9, 20, 43} → {9, 20, 34, 36, 38, 43} → {43} → {34, 36, 38} →
+    {34, 38} → stable (10 vertices) → stable (the 26 of the ideal). That is 7 DEF changes at one ideal-stable context.
+    Max per context, Oink order: n = 20: 4, 28: 6, 36: 6, 44: 7.
   - Key earlier instances agree in both orders and with Oink (iterations): phi_idx_flat_n20 5, nest_nest_s84 19,
     lemmaS_viol_n20 8.
 
