@@ -592,6 +592,29 @@ the corrected state of §6 (cut piece: R, −1, attractor; STATE_V=1 gives the o
 - Status of Φ_idx: same-context part PROVED (Lemma F, C6). Cross-context part UNTESTED. I withdraw "142/142 support" as
   support for the cross-context claim. Lemma F alone gives only the known per-context bound, so it gives no global bound.
 
+### 11d. Φ_idx is FALSE: a cross-context counterexample (11:19Z)
+Instance: experiments/alg/instances/phi_idx_flat_n20.pg (n = 20). A climb (scratchpad xclimb.py, fitness = violations of
+the restated Φ_idx) found it in 190 steps from phi_idx_cutrec_n20.pg. Oink A_DTL: 11 tangles, 5 iterations, 1 dominion,
+solution verified. dtl_pyref (A_DTL) and C6 give the same counts (5 / 11), and dtl_deficit.py finds 0 deficit calls, so
+A_DTL and C6 coincide at depth 0 here. Vertex names below are internal indices (sorted by (priority, id)); internal 10 is
+original 19 and internal 14 is original 14.
+- Phase of player 0, depth-0 piece index 2, every listed piece a Dom(prevV) −1 piece. Contexts: s1 |R| = 16; s2 |R| = 18;
+  s3 and s4 equal, |R| = 17, with three different contexts in all.
+- Death rounds at index 2: vertex 14 dies at 6 (s1), 5 (s2), 5 (s3), 6 (s4); vertex 10 at 7, 6, 6, 7.
+- Transition s3 → s4: same context, first differing round r0 = 6. The return set grows from {3, 10} to {3, 10, 14}.
+  Drivers are tangles 7, 8, 9, learned in s3 inside the cut recursion of piece 3. Dead-top cap carry: the vertex rescued
+  at r0 is 14, which dies at 6 and so only EQUALS its record 6 from s1 (another context). Vertex 10 rises to 7, which
+  equals its record 7 from s1. No vertex raises its index-2 record, whether records come from Dom(prevV) pieces or from
+  all −1 pieces. The same flat change is a counterexample to L-RED's "flat" (any vertex) as well.
+- Status: Φ_idx (original and restated) FALSE. The obstruction is exactly the untested cross-context case of §11c.1: a
+  context visited earlier at the same index set a record that a later context's carry only reaches. Lemma F still holds:
+  14 rises 5 → 6 against its same-context record. Earlier instance: phi_idx_cutrec_n20.pg. It breaks only the original
+  definition: its records come from cut pieces at index 1 (deaths 6 and 5), and two consecutive Dom(prevV) carries at a
+  new context reach 5 and 5.
+- What this does NOT show: an exponential run, or a failure of a weaker potential (e.g. record raised within two carries,
+  or a lexicographic record over (index, context class)). One flat change costs nothing asymptotically. The n²(n+2)
+  bound needs every carry to raise, so (H2b) is again OPEN with no candidate potential.
+
 ## 13. (H4): deficit-triggered changes at fixed contexts, A_DTL (10:47Z; Lead 10:22Z "then (3) deficits")
 Tool: experiments/alg/dtl_deficit.py (61fb52c). At every depth-0 piece of an A_DTL run it also computes the ideal (C6 rule)
 result on the same tangle set and context. A change between consecutive searches of a phase is DEF (deficit-triggered)

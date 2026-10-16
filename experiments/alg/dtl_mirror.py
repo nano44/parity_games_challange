@@ -159,6 +159,19 @@ def analyse(d, out, name):
                         for v in rr[r_ - 1] - rr[r_]:
                             reci[v] = max(reci.get(v, 0), r_)
             raised_i = any(dnew[u] > reci.get(u, 0) for u in resc)
+            # restated Phi_idx (Lead 10:59Z): records from -1 Dom(prevV) pieces only (cut pieces excluded)
+            recd = {}
+            for kk in range(ph0, k + 1):
+                tr = d.trace[kk]
+                if i < len(tr["pieces"]) and tr["pieces"][i][1] == -1 and i not in tr.get("cuts", set()):
+                    RR, rs, VV, nt = tr["pieces"][i]
+                    rr = rounds(d, p, RR, tl_at(d, p, nt, tr["G"]))
+                    for r_ in range(1, len(rr)):
+                        for v in rr[r_ - 1] - rr[r_]:
+                            recd[v] = max(recd.get(v, 0), r_)
+            if st.startswith("dead") and kind == "dom":
+                kd = "dead_dom_" + ("to_stable" if pb_res != -1 else "stays_minus1") + ("_raises_domrecord" if pb_res != -1 or any(dnew[u] > recd.get(u, 0) for u in resc) else "_NO_domrecord")
+                bk[kd] = bk.get(kd, 0) + 1
             key3 = st.split("_")[0] + ("_raises_piecerecord" if raised_i else "_NO_piecerecord_raise")
             bk[key3] = bk.get(key3, 0) + 1
             # (c) vs the immediately previous search (s, piece i is -1 there): some / all rescued vertices die later in s+1

@@ -35,6 +35,16 @@
   (r1) PROVED (§7), (r2) FAILS (L-RED R11), status in DTL-proof §2.3. Next if the Lead agrees: abstract-model statement
   for (2), or C6 completeness (K5).
 
+- 11:12Z state (produced on Opus 5.5): push only with scripts/push.sh (Lead rule; no pipe). Since 10:07Z: −1-piece carries.
+  GAP-A-M §10 APP barrier, §11 MIRROR test, §11b Φ dead / Φ_idx, §12 hypotheses (H1)-(H4) = THE route (Lead), §13 (H4)
+  deficits (5 DEF of 365 changes; actual ≤ ideal PROVED; (H4) GAP, open shape −1 → −1 prevV move), §6 CORRECTION (cut
+  piece state = attractor, V phantom; L-RED 6a98d48), §11c corrected counts + R12 §9 (C-a)/(C-c) fail on data, §11c.1
+  Lemma F (fixed-context raise, C6) PROVED and Φ_idx data NEVER exercises the cross-context case (113/115 no other
+  context at index i). So Φ_idx's real content is UNTESTED. Running: scratchpad xclimb.py (x/log91, log92), reward the
+  cross-context case; nestclimb 81/84 (plateau fresh 5-6). Scripts added: dtl_mirror.py, dtl_deficit.py, dtl_frontier.py,
+  app_model.py, dtl_childmono.py. Last push 155362c.
+- TRAP: the Lead's message stamps run ~4 min ahead of `date -u` here; stamp my own text from `date -u` only.
+
 ## Dead ends (third successor)
 - (M) / Claims P, Q / F5 at a fixed context: DEAD for A_DTL. Obstruction: straddle-deficit (GAP-A-M.md Lemma E); killing
   instance experiments/alg/instances/dtl_mviol_n20.pg (Oink iterations 3-odd → 4-odd, distance 8 → 7); synthetic
