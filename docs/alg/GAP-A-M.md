@@ -1438,8 +1438,9 @@ child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set
 - Random synthetic data says little either way: 2 chains with one fall and 0 with two in about 122k random chains
   (dtl_lexfake.py, genuine and fake tangles, n ≤ 12), and 63 one-fall / 0 two-fall chains in 34,980 chains around the
   gadget (scratchpad gadfall2.py).
-- Reading: (F1) can hold for A_DTL only through WHEN DTL learns the steal tangles: in the disjoint union, DTL would learn
-  σ and σ' in the SAME search (independent components progress in parallel), giving one fall step. A counter to (F1) on
+- Reading: (F1) can hold for A_DTL only through WHEN DTL learns the steal tangles. [CORRECTED 19:16Z: the guess that
+  DTL learns the steals of independent components in the SAME search is FALSE in general: L-RED R20's f1_twodef_n48 has
+  two DEF falls at one context in two disjoint components.] A counter to (F1) on
   DTL needs a second steal tangle that becomes learnable only AFTER the first fall, i.e. a dependency from the first
   gadget's fall (or its repair) to the second gadget's steal. That is the attack recipe for L-RED. A proof of (F1) must
   show that DTL learns all steals that can bite at one context in one search, which is again cross-context information.
