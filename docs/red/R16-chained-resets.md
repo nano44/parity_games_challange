@@ -55,3 +55,22 @@ experiments/red/union/union.py builds disjoint unions with stacked, interleaved 
 phi_idx_flat_n20 gives max c_i = 3 for k = 1..6 (5 searches throughout). Stacking k copies of nest_nest_s81 gives
 3, 3, 5, 5 for k = 1..4. Unions of three different games give 7, not the product 27. The copies' pieces synchronise. This
 is moot since c_i is circular (L-ALG 14), but it shows that unions are not a cheap way to inflate depth-0 contexts.
+
+## 5. FINDING: Lemma S fails on A_DTL when the later run has a deficit (12:59Z by date -u)
+Instance: experiments/red/carry/instances/lemmaS_viol_n20.pg (n = 20, sha1 5abc51bd…). It came from the lemmas climb,
+seed 183, from dtl_mviol_n20, with the fitness rewarding leader drops (L-ALG c0aaa02's hint). Pinned Oink: 1 dominion,
+18 tangles, 8 iterations, solution verified. Pinned in check.sh.
+- Odd phase, searches 5 -> 6. It is a Dom(prevV) piece in the SAME context: my tracer's depth-0 call 4 (|R| = 16);
+  dtl_pyref numbers it search 5 -> 6, piece 2 (|R| = 18, recorded at call entry). Both results are -1.
+- M = 7 both times. The return set SHRINKS from {7, 14, 15} to {7} (original ids). Rounds (original ids):
+  * s5: {1,5,6,7,8,12,13,14,15,18,19}, {1,5,6,7,13,14,15,18,19}, {5,6,7,13,14,15,18,19}, {5,6,7,14,15,18,19},
+    {5,7,14,15,18}, {7,14,15,18}, {7,14,15}, {}
+  * s6: the same through round 3, then {5,7,14,15,18,19}, {7,14,18,19}, {7}, {}
+  Leaders 15 and 14 die at rounds 5 and 6 instead of 7. That is S2 ("at equal M the return set only grows") violated.
+- L-ALG's dtl_deficit.py, unmodified: both calls are DEFICIT calls. The ideal (C6) result is STABLE in both searches
+  (V = {1,5,6,7,8,12,13,14,15,18,19}). Pieces 0 and 1 of the same searches are deficit calls too.
+- READING: this is consistent with L-ALG's statement that Lemma S is proved for A_DTL only under Theorem M-cond (no
+  deficit in the later run). It is not a hole in the C6 proof. It does show that A_DTL's own staircases are NOT monotone
+  under deficits. A deficit drops leaders, as L-ALG predicted. So the n(n+1)(n+1) child-context bound per fixed context
+  needs (H4), a bound on deficit steps, before it applies to A_DTL. Here the deficit staircase sits where the ideal rule
+  would already be stable.
