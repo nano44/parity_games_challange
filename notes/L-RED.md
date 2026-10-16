@@ -27,19 +27,19 @@ Status: WORKING (CARRY box: Lead go 08:12Z, box 8 h to ~16:10Z Lead clock; inter
   newrecur correction (1 and 7 cases, W-suppressed first extractions, not determinacy breaks).
 
 ## Resume point
-2026-10-16 DTL flip-flop box (R9, docs/red/R9-DTL-flipflop.md): mechanism read off the instrumented tracer, Claims P/Q
-(0 violations everywhere), F2 correction (per top VERTEX <= 6 on every instance; "31" was per priority), the tree bound and
-the four-part counter requirement (R9 section 4). Next step if resumed: build the two-level reset+replay gadget of R9
-section 4 by hand with dtl_flipflop.py (a .pg file, trace, iterate), or prove Claim P. Climb lessons: every fitness keyed
-on the trace priority (perhead, restarts, maxrestarts, osc) is gamed by equal-priority towers; iters by singleton
-self-loop chains; excess (first version) by dominion searches; use the Python-scored fitnesses (rep, excess) which key on
-the top VERTEX and subtract dominions.
-- R8 (previous box) resume text: PARKED after the LANE-RESTART handoff (18:40Z my clock). Every R-file is listed in DONE.
+2026-10-16 CARRY box (Opus 5.5 successor; go 08:12Z Lead clock, box to ~16:10Z). Products so far: R10 (docs/red/R10-carry.md):
+bsolo fast level working; 2CE class analysis: gate dichotomy (E)/(S)/(O); frontier self-sustain (F) => carry learned in
+the stable piece P1 right after the slow cut; (S) needs a triggered fixed-context deficit (L-ALG M-cond); support
+obstruction for the P1 gate module (forgiven-type case OPEN); order gate (O) fails (O1-O3). R11 (docs/red/R11-r2-regress.md):
+(r2) of L-ALG's (alpha) regress fails on dtl_mviol_n20 (reproducer carry/r2_check.py in check.sh). R9 section 3: Claim P
+FALSE for A_DTL (L-ALG instance, re-checked). Next if resumed: (O) census (carry/dtl_ogate.py; random corpus + ogate climbs
+running in the scratchpad), then the forgiven-type support case or route (ii) (fast level inside the slow cut's recursion).
+- Previous resume text (R9 box, predecessor): mechanism read off the instrumented tracer, Claims P/Q, F2 correction, the
+  tree bound and the four-part counter requirement (R9 section 4).
 
 ## IN FLIGHT
-- Scratchpad climbs (lost with the container): pviol (adversarial Claim P/Q) n=12/16/16-loops, from dtl_restart8, from
-  dtl_searches20; carries (piece-0 argmax changes) from dtl_searches20; iters from dtl_searches20 (best 25 searches at
-  n = 32, climb/it_s20_s91.pg; copy into experiments/red/dtl/instances/ if it matters at the end of the box).
+- Scratchpad (this container, lost with it): dtl_ogate --random 3000 16 7, tc+ 5 census; dtl_search climbs (fitness ogate,
+  resets, iters) under .../909dbf12-.../scratchpad/climb/. L-ALG branch read through a detached worktree <scratch>/lalg.
 
 ## NEEDS
 None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-order invariant).
@@ -222,6 +222,15 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
   gates (T12 section 4) is unnecessary, the Bland counter plus gates is smaller.
 
 ## Sources opened (arXiv id or DOI, theorem/section)
+- 2026-10-16 (Opus 5.5 successor): Oink @ 8fbf0a7 src/solvers/dtl.cpp 36-210 (attracts, attractVertices: player vertex
+  attracted by one edge into Z, opponent only if no edge into Gx \ Z; attractTangle: deleted if a vertex left G, fails if a
+  vertex is outside Z+R or above max_prio, fails if an escape is in Gx \ Z; attractTangles via tin[v] = tangles having v as
+  ESCAPE, so a tangle is tried only when one of its escapes is popped), 210-470 (extractTangles: Pearce SCC on R with str for
+  player vertices; escapes = opponent successors in G outside the SCC; no escapes = dominion; duplicate vertex sets skipped),
+  476-546 (sptl), 600-776 (best_vertices), 834-994 (search_rec), 997-1160 (search, run). src/tools/tc+.cpp makeBit.
+  L-ALG claude/l-alg 6f19541..e87fefb docs/alg/GAP-A-M.md sections 1-7 (Lemma E, Theorem M-cond, section 4b instance),
+  docs/alg/DTL-proof.md section 2.3 (K5, K6, the (alpha) regress, (r1)/(r2)), experiments/alg/dtl_ideal.py (Anatomy),
+  dtl_mviol_check.py (order recipe). L-COMP experiments/dtl-bench/dtl_py.py (attractors, sptl, best_vertices, pearce).
 - 2026-10-16: Oink @ 8fbf0a7 src/solvers/dtl.cpp 36-110 (attracts, attractVertices), 109-185 (attractTangle: vertices not in Z
   must be in R and <= max_prio; escapes in Z or outside the subgame), 476-546 (sptl), 643-776 (best_vertices), 834-994
   (search_rec), 997-1160 (search, run: Even to exhaustion then Odd, no return to Even); src/tools/tc.cpp makeBit (H, T, L,
@@ -307,6 +316,10 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
   "DTL attack" table and verdict (read 15:05Z).
 
 ## Dead ends
+- 2026-10-16 CARRY (Opus 5.5): carry2 (stealer sig above the cuts) DEAD: sig's high cap pulls piece 0 into one region, piece 0
+  stable, 1 search (carry2 2 3). carry3 (deficit gate, L-ALG synthetic shape) DEAD as built: tau2's support closes into
+  {k,m,o,q2,tau2} with only escape sA and the slow cut eats the module from search 1 (carry/instances/carry3_2_2.pg). Climbs
+  from carry2/carry3/mviol (iters, excess, resets): linear or dominion-per-search games, no structure.
 - 2026-10-16 climbs for a DTL counter: fitness iters -> singleton self-loop chains (13 searches at n = 20, linear);
   perhead/restarts/maxrestarts/osc (priority-keyed) -> equal-priority towers (19 tops at one priority x 4); rep -> towers;
   excess v1 -> dominion-per-search games (0 tangles, 8 searches). Instances in the scratchpad climb/ only.

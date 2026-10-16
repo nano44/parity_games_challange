@@ -103,7 +103,7 @@ Write H for the highest such top and E_0 = X before C_A (piece 0's Dom), E_A = C
      consumed). They are in E_0 or E_A, and one of them (the blocker e) is in E_A. In the next search, e is popped in
      C_A, every escape is covered, and the vertices have priority <= pr(H) <= tA. C_A eats H's tangle, so the module loses
      its top after one search. That is what carry3 does.
- (iv) OPEN case: H is forgiven-type in P1 (its successor is threshold-attracted through a lower region with a low cap,
+ (iv) (was OPEN; see the DATA below, now closed for the built shape) H is forgiven-type in P1 (its successor is threshold-attracted through a lower region with a low cap,
      never in a region). Then the support passes to lower tops L whose tangles escape into H (inert in C_A). Each such
      tangle is LIFTED into H's region in the next search's pruning (its escape H is popped there with the rest covered),
      which closes H's region. I could only push the closure up one intermediate top per search (the lift cascade), so a
@@ -134,3 +134,17 @@ leaves one escape: a fast level duplicated per slow state, so that a carry eatin
 searches ~ (fast length) x (slow states) with n of the same order, i.e. linear. Remaining routes for a counter: fresh
 contexts through cut recursion ((ii) above; L-ALG's replay instances dtl_replay4_n32 and dtl_replay2deep_n32 are the
 current data), and the forgiven-type support case.
+DATA for (O) (experiments/red/carry/dtl_ogate.py, exact against Oink via the tracer's order recipe): an order-gate event is
+an sptl region computed twice with the SAME (player, top, vertex set) but a different SCC of the top. Census, 0 events in
+every case: tc+ N = 2, 3, 4, 5; dtl_mviol_n20; L-ALG's dtl_replay4_n32 and dtl_replay2deep_n32; this lane's R9 and R10
+instances (278 distinct region keys over 11 files); 3,000 random games with n <= 16 (`--random 3000 16 7`, 7,383 keys).
+Adversarial hill-climbs (dtl_search.py fitness `ogate`: events, with OTHER events weighted 100) are running at the time of
+writing. So no run has shown L-ALG's (O) mechanism even once, and (O1)-(O3) say that a successful one would not carry anyway.
+
+DATA for case (iv) (experiments/red/carry/liftmod.py d; `show.py` on the output): a module of d tops Y_d > ... > Y_1 behind the
+slow cut. Each Y_{i+1} is forgiven through l_{i+1} -> v_i (v_i in Y_i's region, l_{i+1} above Y_i's cap), and Y_1 closes
+with q1 -> {Y_1, Y_2..Y_d, sA}. For d = 2, 3, 4: all d tops learn in the FIRST search's P1 ({Y1,q1}, then
+{Y1,Y2,l2,q1,v1}, ...). sptl's re-run loop (`while more`) lifts each new tangle into the next region up within the same
+piece. In search 1 the slow cut eats the whole module (attracted = every Y_i, l_i, v_i, q1). The lifetime is ONE search,
+independent of d. So the lift cascade is faster than the "one level per search" of my reading: it runs inside one stable
+piece. With this, every gate-module shape I could build in the 2CE class is eaten by the slow cut within two searches.
