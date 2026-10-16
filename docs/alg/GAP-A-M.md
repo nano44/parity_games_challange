@@ -390,6 +390,23 @@ driver's escapes are covered in piece i's pruning in search s+1 by regions of to
 those regions are the same in search s, but only the return set's Dom is removed after piece i, so escapes in the regions
 of the OTHER tops stay in R_{i+1} and the driver can be learned deeper, as in APP. So (F) for Dom(prevV) pieces is the
 open property; proving it would rule out APP-like counters, and refuting it means building APP.
+DATA (09:58Z; counts corrected 09:59Z after an analysis bug: the first run took the search number from list.index, which
+returns the first EQUAL trace entry; fixed in experiments/alg/dtl_frontier.py; A_DTL, stable order; 500 random games n ≤ 24,
+every dtl_* instance, tc+ N ≤ 5): drivers of changes at −1 pieces between consecutive searches: 169 (every change has one);
+learned at the first stable piece after the changed piece 144; inside the recursion of a cut BEFORE that stable piece 15;
+at a LATER stable piece 10 (dtl_deficit_n20: change at piece 0, a Dom(prevV) piece, drivers learned at piece 3, the second
+stable piece; dtl_mviol_n20: change at piece 5, first stable piece 7, drivers learned at piece 9). So (F) is FALSE for A_DTL
+as stated: drivers learned beyond the frontier occur in real runs, one step deep, not as a counter. The property a proof
+would need is therefore weaker than (F) and quantitative (how deep, how often), or a different one.
+Split by piece type and reconciled with L-RED (10:02Z; Lead 10:00Z; l-red ed14e43 R10 "Driver LOCALITY",
+experiments/red/carry/drivers.py). My drivers are tangles that fire in the changed piece's PRUNING. At Dom(prevV) pieces
+(−1, Q empty): 71 changes, 136 drivers, 8 learned at a later stable piece; at cut pieces (−1, Q nonempty), pruning-driven
+changes: 21, 33 drivers, 2 learned later. L-RED's (F) 67/67 concerns drivers that fire in the CUT's attractor
+(cut-driven carries), a different event; its 169 "later" drivers (116 files) are pruning-driven at domfirst pieces, as
+here. Consistent reading: (F) holds for cut-attractor carries (L-RED's data and R10's argument) and FAILS for
+pruning-driven changes, which is exactly the level type APP(k) uses (its digit lives in a Dom(prevV) piece's return set and
+is advanced by a tangle learned after the deeper levels have run). So the property a polynomial proof needs is not (F) but
+a bound on pruning-driven carries at −1 pieces.
 
 10.4 For L-RED (realising APP(k) as a game; the model fixes what each piece must do, not the gadgets):
 (1) level i: two p-priority tops whose pruning distances at piece i leapfrog exactly when the deepest-zero tangle arrives,
@@ -399,3 +416,8 @@ and a −1 result with Q empty (no vertex of R_i may attract into X, else it is 
 are present there too, so some escape must be uncovered at every piece < i* and covered (or forgiven) at piece i*. A
 removed top is always in the union of regions while it survives, so the escape forgiven at i* should be a NON-top vertex
 of D_{i*−1} = Dom({x_{i*−1}^{b}}), and it must lie outside every region at the pieces above.
+(4) L-RED's MIRROR reading (l-red f954923, R10 "Outside 2CE"; READING): without a deficit, a pruning-driven carry at a
+Dom(prevV) piece must be SELF-REINFORCING (from some round on, an escape of the driver is covered only by vertices the
+driver keeps alive), else its top survives at that piece in the learning search, is removed by that piece's Dom, and is
+never learned deeper. APP does not model escapes, so this is no contradiction; it is the shape APP's level drivers must
+have, and if (M1) is proved it becomes an axiom APP must carry (then APP needs a self-reinforcing driver at every level).
