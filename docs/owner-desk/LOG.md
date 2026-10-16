@@ -102,3 +102,7 @@ Q10/Q11 (handled in the Lead session) and the Q4 outcome. Relayed verbatim to th
 > Give me a status update
 Answered from trunk e927f20, l-alg b4d7862, l-red f5a8aee, l-lit 3d9d98d; desk re-verified the repo is public. Q10 closed, Q12 and
 Q13 (public repo) added. Relayed verbatim to the Lead.
+
+## 2026-10-16 16:39Z owner (Q13)
+> I dont mind the repistory is public
+Desk reading: Q13 option (a), keep public. Relayed verbatim to the Lead. Q12 still open.

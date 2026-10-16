@@ -157,7 +157,7 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - Lead recommendation: none stated. Desk note: (b) matches D1 ("Never publish ...") and the Q6 ruling; copies already indexed or
   cloned cannot be recalled.
 - Urgency: high (every push adds to what is public).
-- Status: open
+- Status: answered 2026-10-16: "I dont mind the repistory is public" (option (a)); relayed; awaiting the Lead's D-number.
 
 ## Q12: contact van Dijk for counter_dtl?
 - id: Q12 (Lead, 2026-10-16 11:12Z; not blocking)
