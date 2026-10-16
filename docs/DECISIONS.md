@@ -175,3 +175,29 @@ docs/lit/T17-counter-dtl-search.md. It does not contact anyone, post, file issue
 Lead at once with URL, commit or archive id and date; running it against DTL goes to L-RED. Working sessions: 3 of 5. Given the
 narrow, read-only task, the successor answers the five LANE-RESTART questions and then proceeds without waiting for "go";
 the Lead re-measures the answers afterwards.
+
+## D10 (2026-10-16 ~16:39Z, owner via OWNER-DESK, answering Q13): repository visibility
+> I dont mind the repistory is public
+
+Lead reading L29: Q13 option (a), the repository nano44/parity_games_challange stays public. Pushing fleet work to this
+repository is not "publishing" in the sense of D1; D1 still forbids every other outward act (posting, emailing, submitting,
+contacting anyone, announcing or linking the repository anywhere). Consequences: (1) "No secrets in any session" now also
+means nothing sensitive is ever committed, since every push is public; (2) docs/HUMAN-REVIEW.md being readable in the repo is
+accepted under D10; the Q6 ruling (no external distribution by the fleet) is unchanged; (3) nothing in the repo is a claim to
+anyone outside: results stay labelled as unrefereed where they are.
+
+## D11 (2026-10-16 ~16:40Z, owner via OWNER-DESK, answering Q12): contact with van Dijk
+> No contact for now
+
+Lead reading L30: Q12 option (a). No contact with the author about counter_dtl or anything else; the fleet works from the
+public record (T17) and its own constructions. The p.15 recipe was already built (L-RED R14, d70e99a: no slowdown on A_DTL).
+The question may be put to the owner again only if a later finding makes the author's counterexample decisive.
+
+## L31 (Lead reading, 2026-10-16 17:25Z): C6 is not promoted to a gauntlet candidate
+Basis: L-ALG's C6 scoping note (docs/alg/GAP-A-M.md §19, l-alg 16fd55b). C6 (DTL with ideal pruning) removes (H4) by
+construction and has every per-context lemma proved (F, S), but its GAP-A reduces to the same core as A_DTL (a polynomial
+bound on fresh, resetting child contexts per parent piece), its completeness reduces to A_DTL's GAP-C, and (H1)-(H3) are
+open or dead on C6 as on A_DTL. Promoting it would add gauntlet steps 1-3 without shortening the open core. Reading:
+A_DTL stays the gauntlet candidate (step-4 statement L24/L26 unchanged). C6 is used as the SIMPLER MODEL for the core: a
+proof of the core on C6 is the first target, then its transfer to A_DTL (where (H4) adds deficits). Revisit if the core is
+proved on C6 and the transfer fails, or if the owner decides otherwise.

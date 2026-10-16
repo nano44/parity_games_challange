@@ -15,7 +15,7 @@ for f in files:
         for (s1,r1,v1,h1,tl1),(s2,r2,v2,h2,tl2) in zip(occ,occ[1:]):
             if h1!=h2 or r1==r2: continue
             if os.environ.get("CRM_IDEAL_STABLE") == "1" and h1[0] != 1: continue      # ideal-stable contexts only
-            pick=lambda r,i: r[i] if i<len(r) else frozenset()
+            pick=lambda r,i: r[min(i,len(r)-1)]   # fixed box 4 (L-RED caveat): stable run stays at its fixpoint
             r0=next(i for i in range(1,max(len(r1),len(r2))+1) if pick(r1,i)!=pick(r2,i))
             M1=len([x for x in r1 if x]); M2=len([x for x in r2 if x])
             final = (h2[0]==1 and r2[-1] and not (len(r2)>1 and not r2[-1]) and frozenset(r2[-1])==h2[1])

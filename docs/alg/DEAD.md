@@ -99,3 +99,38 @@ round, rescuing only higher candidates.
   carry only reaches. The earlier "support" (142/142, 273/273) never exercised this case (0/115 binding).
 - Idea killed: a per-index record potential bounding dead-top cap carries without bounding contexts. Idea kept: Lemma F,
   so carries at index i ≤ n(n+2) · c_i (c_i = distinct Dom(prevV) contexts at index i), and (H2b) reduces to c_i.
+
+## Proof-route dead ends for DTL GAP-A, (H4): per-context potentials (LEX), (NR) and the child round count (CM) — DEAD (2026-10-16 box 4; produced on Opus 5.5)
+Context: docs/alg/GAP-A-M.md §18 (and §13h for (CM)). (H4) = a polynomial bound on deficit-triggered (DEF) changes at a
+fixed depth-0 context of A_DTL.
+- (LEX) (the actual death vector at a fixed context, read in index order, rises lexicographically when the tangle set
+  grows) and the route (LEX)+(NR) ⇒ ≤ n(n+3) changes per context: DEAD.
+  Killers on actual A_DTL runs (Oink-verified, both order data):
+  - experiments/alg/instances/lex_viol_oink_n20.pg (L-ALG, §18h): searches 3 → 4, ideal stable and unchanged; vertex 19
+    (priority 21) dies at 11 instead of 12 while the only higher-ranked riser, 17, has the same priority and a lower
+    index. Mechanism: the riser 17, as an extra top, steals 18 from top 3's region, the tangle {11, 18} straddles, and
+    vertex 5 drops out of the union.
+  - experiments/red/carry/instances/lex_viol_inj_n28.pg (L-RED R18, l-red 32798af; injective priorities): s5 → s6, the
+    top changed vertex 2 (priority 43) falls 8 → 7 while 20 (priority 41) rises; it is also an (NR) violation (2 is the
+    top riser again at s6 → s7), nesting level 1.
+  Synthetic, genuine tangles: experiments/alg/dtl_lexcounter.py (9 vertices; a new tangle steals instead of a riser).
+- (NR) (a vertex that fell at a context is never again the top changed vertex there): DEAD, lex_viol_inj_n28.pg.
+- (CM) (a child's actual round count never drops across a parent DEF step into an ideal-stable child context): DEAD.
+  Killers: experiments/red/carry/instances/cm_mdrop_both_n28.pg (L-RED R17, l-red 8af6eb3; M 8 → 7, both orders) and
+  experiments/alg/instances/cm_viol_oink_n28.pg (L-ALG, §18i; M 7 → 6, both orders; the child loses three p-parity tops,
+  no stored tangle loses a vertex).
+- "Fallers lie strictly below the top riser in priority" (box-4 DATA pattern): DEAD, both lex_viol instances.
+- (F1) (L-RED: at most one fall step per context): DEAD, experiments/red/carry/instances/f1_twofall_n48.pg (L-RED R19;
+  one DEF fall and one LRN fall at one context); synthetic: experiments/alg/dtl_twofall.py.
+- (F1-DEF) (at most one DEF fall step per context): DEAD, experiments/red/carry/instances/f1_twodef_n48.pg (L-RED R20,
+  l-red 289931e; Oink 11 iterations, verified: two DEF fall steps at one context, in the two disjoint components);
+  synthetic: dtl_twofall.py (both falls are DEF steps). With it, every per-context (H4) candidate stated on 2026-10-16
+  is dead.
+- Exact obstruction: a vertex that rises (or a new tangle) can steal a vertex of a straddling tangle into a HIGHER
+  region. The tangle's rest is re-absorbed only at the lower level of its own cycle maximum, so whatever followed the
+  tangle at the higher threshold is lost (Lemma R carry + Lemma E rest). The loss then propagates UP over the later rounds
+  through the dependence of level-q survival on V^{<q} (§18a). So no lexicographic potential over deaths survives.
+- Idea killed: a per-context potential over the actual state for (H4). Synthetically even the full state can return
+  (dtl_staterevisit.py, a pure DEF cycle). On actual DTL runs no full-state revisit has been seen (dtl_revisit.py §18j:
+  0 in 296 / 301 context runs), and (LEX-R) and (U-MONO_DTL) stand as DATA. Both are lexicographic only, and a proof of
+  either must use DTL's learning order.

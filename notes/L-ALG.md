@@ -1,6 +1,28 @@
 # L-ALG notebook — third successor (session_01BDELabbGbT2QYY2NoRCY8A), 2026-10-16, produced on Opus 5.5 (D8/L27); older notes below
 
-## FINAL RESUME POINT (box end ~16:10Z; drafted 14:58Z, finalised 15:48Z) — read this first
+## Resume point (successor 4, session_01KESFSwLyyKvwe3mzqN2Bzr; Lead go 16:01Z, box to ~00:00Z; updated 17:04Z) — read this first
+All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?`.
+- Truth: docs/alg/GAP-A-M.md §18 (this box) and the §17 ledger rows marked "box 4". Oink built here (tools/oink/build).
+- Queue (Lead brief): all three items answered NEGATIVELY, each with an instance:
+  (1) no per-context potential: (LEX) dead on A_DTL (instances/lex_viol_oink_n20.pg, riser steal, §18h) and synthetically
+      (dtl_lexcounter.py); pure DEF cycle synthetic (dtl_staterevisit.py, §18f). DATA left: (U-MONO_DTL), (LEX-R), no
+      DEF-down at ideal-stable contexts.
+  (2) (CM) dead on A_DTL (instances/cm_viol_oink_n28.pg, §18i).
+  (3) nested product capped by phase length; climbs (scratchpad nest/, Oink order) reach 2 × 6 (n=28), 2 × 5 (n=44), two
+      child contexts only. Final numbers go into §18e/§18f at box end.
+- Climbs running (scratchpad, die with the container): down2/ (DOWN_MODE=down: U-shrink, DEF-down; seed 202 from
+  lex_viol), cm/ (seed 301, more M-drops), nest/n44_104 (sum fitness), nest/p44 (NEST_FIT=prod).
+- Lead told: 16:14Z (LEX), 16:33Z (LEX synthetic), 16:42Z (DEF cycle), 16:54Z (LEX on DTL), 17:01Z (CM on DTL + C6 reading).
+- Tools this box: dtl_plateau, dtl_lexsynth, dtl_lexfake, dtl_gentangle, dtl_carrytest, dtl_lexcounter, dtl_staterevisit,
+  dtl_steal, dtl_nestK, dtl_nestclimb, dtl_downclimb, dtl_cmclimb, dtl_childM2, dtl_lexviol_check, dtl_cmviol_check.
+- Trap hit again 16:33Z: `pkill -f gadsearch.py` inside a command killed the calling shell (exit 144) and a heredoc after it
+  was never written. Kill by PID in a separate call.
+- Things only I know: (a) dtl_regvec's calls dict is keyed by (p, R) over the WHOLE run; compare only consecutive searches
+  of one phase and check T ⊆ T' (the box-4 tools do: plateau via consecutive occurrences, downclimb/steal via t1 ⊆ t2).
+  (b) python3 -I scripts must insert their own directory into sys.path (they do). (c) The 64k/103k carry counts are
+  dtl_carrytest.py CARRY_GENUINE=0/1, seeds 1-3 × 6,000 / 15,000 games.
+
+## FINAL RESUME POINT of successor 3 (box end ~16:10Z; drafted 14:58Z, finalised 15:48Z) — read this first
 All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push ONLY with `scripts/push.sh` as a bare call, or
 `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?` (never pipe). Branch claude/l-alg.
 - Where the truth is: docs/alg/GAP-A-M.md. §17 is the LEDGER (every PROVED item with scope C6 / A_DTL / under M-cond;

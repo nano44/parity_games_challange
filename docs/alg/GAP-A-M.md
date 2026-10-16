@@ -1104,6 +1104,9 @@ PROVED
 | Lemma S: M non-decreasing; equal-M return set grows; fresh-vs-recurrence criterion; ≤ n(n+1)(n+1) child contexts per staircase | C6; A_DTL under M-cond | §16 |
 | Lemma R: region vector lexicographically monotone in T (carries reset lower regions) | A_DTL | §13b |
 | Threshold statement: a DEF change with equal V_{r0−1} and regions strictly grows some W_t (trivial; lexicographic only) | A_DTL | §13f |
+| Region split: Attr_{q−1}(U) = Attr_{q−1}(A_q ∪ V^{<q}); level-q survival depends on lower levels only through the set V^{<q}, monotonically (box 4) | A_DTL | §18a |
+| U equal at r0 ⇒ V_r0 grows (LEX-R in that case) | A_DTL | §18b |
+| Extra tops X ⊆ Y (same T) hurt only vertices of their own priority or lower (box 4) | A_DTL | §18h |
 
 KILLED (FALSE / DEAD), each with its instance
 | Claim | Instance (experiments/alg/instances unless noted) | Where |
@@ -1122,8 +1125,365 @@ KILLED (FALSE / DEAD), each with its instance
 | (C-rM): (r0, M) pairs never repeat at a context | climbs_1016/a_best_s32 (ideal −1 contexts) | §13g |
 | (C-rM-stable): same at ideal-stable contexts | h4_def9_oink_n28 | §13g |
 | §6/§12 counts from the buggy tracer (superseded, conclusions kept or corrected) | tracer fix e41ccfb | §6, §12, §15 |
+| (LEX) per-context death vector lexicographically increasing, and (NR) ⇒ n(n+3) route (box 4) | lex_viol_oink_n20.pg (L-ALG) and red/carry/instances/lex_viol_inj_n28.pg (L-RED R18), A_DTL, Oink-verified, both orders; synthetic genuine: dtl_lexcounter.py | §18c, §18h, DEAD.md |
+| (NR): a fallen vertex is never again the top changed vertex at that context | red/carry/instances/lex_viol_inj_n28.pg (L-RED R18) | §18j, DEAD.md |
+| (F1) (L-RED): at most one fall step per context | red/carry/instances/f1_twofall_n48.pg (L-RED R19, A_DTL, Oink-verified); synthetic: dtl_twofall.py | §18k, DEAD.md |
+| (F1-DEF): at most one DEF fall step per context | red/carry/instances/f1_twodef_n48.pg (L-RED R20, A_DTL, Oink-verified); synthetic: dtl_twofall.py | §18k, DEAD.md |
+| A per-context potential over the actual state for (H4) | A_DTL: both lex_viol instances (no lexicographic potential over deaths); synthetic: dtl_staterevisit.py (state returns) | §18f, §18j |
+| Per-round monotonicity in T at a fixed input, genuine tangles (synthetic) | dtl_lexcounter.py | §18c |
+| Any potential on the actual per-context state for DEF changes (synthetic, genuine tangles) | dtl_staterevisit.py (pure DEF cycle) | §18f |
+| "Fallers are strictly below the top riser in priority" (box 4 DATA pattern) | lex_viol_oink_n20.pg | §18h |
+| (CM): child M never drops across a parent DEF step into an ideal-stable child context | cm_viol_oink_n28.pg (L-ALG) and red/carry/instances/cm_mdrop_both_n28.pg (L-RED R17), A_DTL, Oink-verified, both orders | §18i, DEAD.md |
 
+DATA candidates left after box 4 (A_DTL; every per-context (H4) POTENTIAL candidate is dead):
+(U-MONO_DTL) same-input union monotone in T (701/701 Oink, 661/661 stable, §18h); (LEX-R) first differing round grows (775/775, 755/755); "no DEF-down step at an ideal-stable context" (0/181).
 OPEN: GAP-A via (H1) cut carries, (H2a) alive-top self-reinforcing carries, (H2b) dead-top cap carries (reduces to
 c_i, circular), (H3) catch-ups and recursion, (H4) deficits on A_DTL (per context: 4 → 8 over n = 20 → 44, Oink
 order). Core: whether fresh, resetting child contexts (§15, §16) or deficit staircases (§13b) can compound across
 levels.
+
+## 18. Box 4 (Lead "go" 16:01Z; produced on Opus 5.5): a lexicographic candidate for (H4), and its synthetic death (16:05-16:35Z)
+Tools (experiments/alg): dtl_plateau.py (consecutive calls at one context: r0, direction, deaths, lex tests),
+dtl_lexsynth.py (DTL's own tangles in random orders), dtl_lexfake.py (random vertex sets as tangles, or with
+LEXF_GENUINE=1 generated genuine tangles, dtl_gentangle.py), dtl_lexcounter.py (the counterexample, in check.sh),
+dtl_nestK.py and dtl_nestclimb.py (queue item 3). Corpus "C" below = experiments/alg/instances/*.pg and climbs_1016/*.pg
+(145 files) plus every experiments/red/**/*.pg on trunk (25 files).
+
+### 18a. Region split (PROVED, A_DTL, any T)
+For a round input V and a vertex v ∈ V of priority q: Attr_{q−1}(U) = Attr_{q−1}(A_q ∪ V^{<q}), where A_q = the union of the
+regions of tops of priority ≥ q and V^{<q} = the tops of priority < q. Proof: ⊇ since A_q ⊆ U and V ⊆ U. ⊆: a region Z_τ of a
+top τ with pr(τ) < q is derived inside CurR_τ with threshold pr(τ) ≤ q − 1; every rule application inside CurR_τ is an
+application in R with the earlier regions in the base (exits into earlier regions are forgiven in CurR_τ and are covered by
+the base in R; the same argument as Lemma 2.2), so Z_τ ⊆ Attr_{q−1}(earlier regions ∪ {τ}); induction over the regions. □
+Consequence: v survives iff attracts(v, Attr_{q−1}(A_q ∪ V^{<q}), R). A_q depends only on V^{≥q} and T. So survival of a
+level-q vertex depends on the higher and equal levels through their regions, and on lower levels only through the SET
+V^{<q}, monotonically.
+
+### 18b. Candidate (LEX), stated 16:14Z with data (Lead message 16:14Z)
+(LEX): at a fixed context (p, R), consecutive calls with T ⊆ T': if the actual death vector d (d(v) = first round without v,
+INF for the stable result) changes, then at the highest-index vertex v* whose death changes, d_{T'}(v*) > d_T(v*).
+Companion (LEX-R): at the first round r0 where the round sets differ, V_r0 grows.
+- DATA, actual DTL runs, corpus C, every consecutive pair at a fixed context (dtl_plateau.py, PLATEAU_ALL=1):
+  Oink order 775/775 (LEX) and 775/775 (LEX-R); stable order 755/755 and 755/755. The DEF pairs at ideal-stable contexts
+  are 181/181 (Oink) and 159/159 (stable). 1,500 random games n ≤ 28 per order: 5/5 (contexts rarely recur).
+- Deaths do fall: 16 steps (Oink order), e.g. lemmaS_viol_n20, lemmaS_Mdrop_n20, dtl_mviol_n20, b_best_s33. In all 16,
+  every fallen vertex has strictly LOWER priority than the top riser. Σ_v d(v) falls in 6 steps: dead as a potential.
+- Reset nesting (a riser that fell earlier at the same context): level 0 in all 343 contexts with changes (Oink order).
+- PROVED part: if the region union U at round r0 is the same in both calls (617 of 775 Oink pairs), survivors at r0 are
+  monotone in T (18a with A_q fixed, Attr and attracts monotone in T), so V_r0 grows: (LEX-R) in that case.
+- Reading (what LEX would give): the state at a fixed context is a COUNTER whose digits are deaths in priority order; a
+  higher digit's rise may reset lower digits. Injective in time, but only an exponential count. With the second candidate
+  (NR) "a vertex that fell at a context is never again the top changed vertex there" (DATA only, 343/343 at level 0),
+  each vertex is the top changed vertex ≤ n + 3 times, so ≤ n(n+3) changes per context: a polynomial per-context (H4).
+
+### 18c. (LEX) is FALSE for genuine tangles in arbitrary learning order (synthetic, 16:30Z)
+- Per round, monotonicity in T at a fixed input fails for random vertex sets used as tangles (experiments/alg/
+  dtl_carrytest.py with CARRY_GENUINE=0, seeds 1-3 × 6,000 games: 4 failures in 63,787 region carries), and it does not
+  fail with randomly generated GENUINE tangles (CARRY_GENUINE=1, seeds 1-3 × 15,000 games: 0 in 103,497 carries; there
+  even the union U never shrank). A hand construction then broke it with genuine tangles.
+- experiments/alg/dtl_lexcounter.py (9 vertices, p = 0, R = all, in check.sh): genuine tangles s = {y1, y2, y3, y4}
+  (escape b) and σ = {y1, z} (escape a). Under {s} the pruning is stable on {a, b, e0, y1, y3}; under {s, σ} the only change
+  is that e0, the LOWEST vertex, dies at round 1. So (LEX), (LEX-R) and per-round monotonicity in T all fail, at round 1
+  with V_0 = all p-vertices ((P*) holds vacuously, as Lemma E requires).
+  Mechanism: σ grows a's region by y1 (Lemma R carry); s straddles; its rest {y2, y3, y4} has the cycle y3 ↔ y4 with
+  maximum y3 ∈ V, pr 2 < 4 (exactly Lemma E (b)); y3's own region re-absorbs the rest at threshold 2, but e2 (priority 3),
+  which followed s into b's region at threshold 4, is in no region now; e0 (priority 0, opponent-owned) needs e2.
+- A random search around this gadget (genuine extra tangles, random learning orders; scratchpad gadsearch.py, not
+  committed) gives full-run (LEX) violations in 655 of about 350k variants.
+- Status: (LEX) DEAD for arbitrary chains of genuine tangles; OPEN for A_DTL (0/775 on actual runs; 0/145 with DTL's own
+  tangles reordered at R = all). A proof for A_DTL must use WHEN DTL learns a tangle (here: σ, which ties y1 to a higher
+  top, learned after s). Not per-round set algebra. Routed to L-RED (Lead 16:33Z): realise the shape in a DTL run.
+- What this means for queue item (1). The threshold-phase mechanism (§13e) is the U-equal case, where everything is
+  monotone. The non-monotone part is the carry case, and its loss is exactly Lemma E's rest: vertices that followed the
+  straddler at the HIGHER threshold and are re-absorbed only at the LOWER level of the rest's cycle maximum. A bound at a
+  fixed (context, M) would have to charge each such loss; the counterexample shows the loss can hit a vertex of the lowest
+  priority with nothing rising, so no lexicographic potential over deaths survives without DTL's learning order.
+
+### 18d. (CM) recount (Lead 16:01Z: corpus and order datum with the count)
+dtl_childM.py on experiments/alg/instances/*.pg, climbs_1016/*.pg and experiments/red/carry/instances/*.pg (157 files;
+the 13 other red files not included): Oink order 51 cases, 0 M-drops, 2 with a child death drop (h4_def9_oink_n28,
+h4_def10_oink_n28, search 5, piece 1); stable order 42 cases, 0 M-drops, 2 death drops. The earlier 0/123 and 0/129
+counted uncommitted climb snapshots (and duplicates).
+
+### 18e. Queue item (3): per-level DEF counts in one phase (dtl_nestK.py; k(j, C) = DEF changes at context C of piece j)
+Corpus C (zp_* and strfam_S5 excluded: no DEF), Oink order. Phases with DEF at ≥ 2 levels:
+| instance | n | searches | K_j = max_C k(j, C) | N_j = Σ_C k(j, C) | contexts c_j |
+|---|---|---|---|---|---|
+| h4_compound2x2_n44 | 44 | 9 | [4, 2] | [4, 4] | [1, 2] |
+| h4_compound_n44 | 44 | 9 | [1, 3, 1, 1] | [1, 3, 2, 2] | [1, 1, 2, 2] |
+| h4_nested7_oink_n44 | 44 | 11 | [1, 1, 2, 1, 1] | [1, 1, 3, 2, 2] | [1, 1, 2, 2, 2] |
+| h4_deep_oink_n44 | 44 | 11 | [1, 2, 4, 0, 2] | [1, 2, 4, 0, 2] | [1, 1, 1, 0, 1] (parallel) |
+| b_best_s33, lemmaS_Mdrop_n20 | 20 | 4 | [1, 1] | [1, 1] | [1, 1] |
+Single-level maxima: n = 20: 4; n = 28: 11; n = 44: 8. In every phase the total DEF count is ≤ searches − 1, so the
+nested product is capped by the phase length (≤ 13 here). Genuinely nested products (K_parent × K_child with fresh child
+contexts): 1 × 1 at n = 20, 4 × 2 at n = 44 (h4_compound2x2_n44, L-RED's construction). Stable order: the same rows.
+Climbs (dtl_nestclimb.py, fitness = DEF over ≥ 2 child contexts, then total DEF; Oink order; scratchpad, running) are
+recorded in 18f at box end.
+
+### 18f. The state at a fixed ideal-stable context can RETURN: a pure DEF cycle (synthetic, genuine tangles, 16:40Z)
+experiments/alg/dtl_staterevisit.py (11 vertices, p = 0, R = all; in check.sh). Genuine tangles s = {y1, y2, y3, y4}
+(escape b), σ = {y1, z} (escape a), τ = {y3, y4} (escape y1). Actual results: T = {}: e1 dies at round 1 (state s0);
+{s}: stable on all 6 even vertices (s1); {s, σ}: s0 again; {s, σ, τ}: s1 again. The ideal (C6) result is the same stable
+set (all 6 even vertices) at {s}, {s, σ} and {s, σ, τ}. So s1 → s0 → s1 is a pure DEF cycle at an ideal-stable context: a
+DEF-DOWN step (never seen in DTL runs: 0 of 181 ideal-stable DEF pairs, §18b) followed by a DEF-up step back to an
+earlier state. Mechanism of the repair: τ's only escape y1 sits in a's region (stolen there by σ), so τ fires inside a's
+region and carries y3, y4 and then v, e0 (opponent, edges v, y3) up to threshold 6.
+- A random search around the gadget (scratchpad gadrev.py, not committed) finds state revisits in 750 of about 390k
+  variants.
+- Answer to queue item (1), at the level of per-context set algebra (READING from 18c, 18f; synthetic, not DTL runs):
+  there is NO function of the actual state at a fixed context (deaths, rounds, return set, (r0, M)) that a DEF change must
+  increase, because the state can revisit with the ideal fixed. What IS monotone at a fixed context is only the round-1
+  region vector (Lemma R, V_0 fixed), and that is lexicographic (counter-shaped). So any polynomial bound on DEF changes at
+  a fixed (context, M) must use WHEN DTL learns the steal tangle (σ: a tangle of a lower top tied, via its escape, to a
+  higher top's region, learned at a context without that higher top, e.g. a later piece where it was removed by Dom) and
+  the repair tangle (τ). That is cross-context information, the same core as GAP-A (§6.3b, §16). On actual DTL runs
+  neither DEF-down steps nor (LEX) violations have been seen (0/181, 0/775). Routed to L-RED with 18c.
+
+### 18g. Queue item (2), (CM): anatomy of the cases, and why Lemma R + per-round inclusion cannot prove it (16:45Z)
+experiments/alg/dtl_childM2.py, Oink order, the 157 files of 18d; all 51 (CM) cases:
+| parent step (actual, piece j−1) | child context (piece j) | child actual result | child M | cases |
+|---|---|---|---|---|
+| −1 → −1, return set grows | SHRINKS | −1 → −1 | equal | 15 |
+| −1 → −1, return set grows | SHRINKS | −1 → −1 | up | 4 |
+| −1 → −1, return set shrinks | GROWS | −1 → −1 | up | 24 |
+| −1 → −1, return sets incomparable | incomparable | −1 → −1 | up | 8 |
+So every case is a deficit child (actual −1, ideal stable) under a deficit parent whose Dom(prevV) target moves. When the
+child context grows (parent return set shrinks: the §14 staircase), M rose in 24/24.
+- Why the PROVED tools do not reach (CM) (READING). Lemma R and the per-round inclusion V_i ⊆ V̂_i are statements at ONE
+  context with growing T. (CM) compares two DIFFERENT child contexts R \ Dom(V) and R \ Dom(V'). The inclusion only gives
+  "actual empties no later than ideal", and the ideal never empties here (stable), so it bounds nothing. Child deaths do
+  drop across these steps (2 of 51) and across parent changes in general (§15: 33 of 157), so (CM) is a claim about the
+  MAXIMUM death only. A proof would need a reason why the last-dying child vertex is never hurt by the context change.
+- The synthetic shapes of 18c/18f give a plausible attack (for L-RED): a GROW step that adds a high top to the child
+  context (it was in the parent's Dom before) whose region steals a straddler supporting the child's last-dying vertex,
+  as σ steals y1 in dtl_lexcounter.py. No proof attempted beyond this reading; (CM) stays DATA (51/0 Oink, 42/0 stable).
+
+### 18h. (LEX) FAILS in an actual A_DTL run (16:52Z); steals in DTL never shrink the union (DATA)
+- experiments/alg/instances/lex_viol_oink_n20.pg (dtl_downclimb.py seed 201 from climbs_1016/b_best_s33.pg, fitness =
+  (LEX) violations, DEF-down steps, fall steps; pinned Oink: 5 iterations, verified; dtl_pyref --order oink agrees:
+  1 dominion, 9 tangles, 5 iterations). Odd's phase before any dominion, searches 3 → 4, alive tangles 2 → 3 (superset),
+  context R = all 20 vertices (and the 8 smaller contexts of the same searches), ideal (C6) result the same stable 17-vertex
+  set in both. Actual (−1 both times): the first differing round is r0 = 2, where vertex 17 (priority 21) now survives
+  (LEX-R holds there: V_2 grows); at round 3 vertex 10 dies instead; vertex 17 dies at 4 instead of 2, and vertex 19
+  (priority 21, HIGHER index than 17 in both order data) dies at 11 instead of 12; M 15 → 14. So the highest changed vertex
+  FALLS, and the fall is at the top changed priority level (the "fallers strictly below the riser" pattern of 18b fails).
+  dtl_lexviol_check.py (in check.sh) reproduces it in both order data (oink and stable).
+- Consequence: (LEX) is DEAD for A_DTL (both order data), so the counter reading of 18b and the (LEX)+(NR) ⇒ n(n+3) route
+  are dead. Status of (1): no per-context potential over the actual state; the state can even return (18f, synthetic).
+- DATA that survives (experiments/alg/dtl_steal.py, corpus C; for every round whose input is the same in two consecutive
+  calls at a context): every Lemma R carry STEALS (some later region loses vertices or a top is swallowed): Oink order
+  701/701 carry rounds, stable 661/661. Yet the union U never shrinks (701/701, 661/661) and the survivors never shrink
+  (701/701, 661/661). Candidate (U-MONO_DTL), DATA only: at a fixed context and a fixed round input V, U(V, T) ⊆ U(V, T')
+  for the tangle sets T ⊆ T' of consecutive DTL calls. Synthetic genuine tangles break it (dtl_lexcounter.py), so a proof
+  needs DTL's learning order. It would give per-round monotonicity in T (so every DEF change starts with V_r0 growing, as
+  LEX-R), but nothing across rounds: lex_viol_oink_n20's fall comes from the input difference after r0 (17 alive as a top
+  in later rounds), not from a carry.
+- PROVED (from 18a): for inputs X ⊆ Y at the same T, every vertex of X whose priority is ABOVE every vertex of Y \ X
+  survives in Y if it survives in X (A_q is unchanged, V^{<q} grows). So an extra top can only hurt vertices of its own
+  priority or lower; lex_viol_oink_n20 is the same-priority case.
+- Anatomy of lex_viol_oink_n20 (Oink order; regions per round, original ids; stored tangles at search 3: {11, 18} escape
+  2, {6} escapes 1, 10; the new tangle at search 4: {13} escapes 0, 5, 6). Rounds 1-2: same inputs and same regions.
+  Round 2 survivors differ (17 survives under the new tangle: the threshold phase, U equal). Round 3: in search 3, 17 is
+  dead, so top 3 (priority 21) gets the region {2, 3, 5, 6, 10, 11, 18} (through the tangle {11, 18}). In search 4, 17 is
+  alive and is processed before 3 (same priority, higher index); its region {17, 18} takes 18, the tangle {11, 18}
+  straddles, and 3's region is only {2, 3}. Vertex 5 (priority 16) is then in no region, and vertex 10 dies at round 3.
+  The lower deaths then propagate upward through the V^{<q} and same-level-region dependence of 18a, until 19 dies one
+  round earlier. Same mechanism as dtl_lexcounter.py, with an extra same-priority TOP (a riser) as the stealer instead of
+  a new tangle.
+- What survives at a fixed context. (LEX-R) (the first differing round set grows) holds on lex_viol_oink_n20 and on all
+  775/755 corpus pairs; it follows from per-round monotonicity at r0 (same input), i.e. from (U-MONO_DTL) at r0. It makes
+  the round vector injective in time, but the number of ⊆-lexicographically increasing round vectors is exponential, so
+  it gives no polynomial bound. Answer to queue item (1): no quantity of the per-context state is known to bound DEF changes
+  at a fixed (context, M); the per-context facts that are true (Lemma R; LEX-R as DATA) are lexicographic, and the
+  failures (lex_viol_oink_n20 on DTL; dtl_staterevisit.py synthetically) show why: a steal by a higher region (a riser or a
+  new tangle) hurts the rest of a straddler only at the higher threshold, and the loss then propagates UP through the
+  V^{<q} dependence of 18a.
+
+### 18i. (CM) FAILS in an actual A_DTL run (17:00Z)
+- experiments/alg/instances/cm_viol_oink_n28.pg (dtl_cmclimb.py seed 301 from h4_def9_oink_n28.pg, 126 climb steps;
+  pinned Oink: 1 dominion, 18 tangles, 9 iterations, verified; dtl_pyref --order oink agrees). Searches 5 → 6 of one phase:
+  depth-0 piece 0 makes a DEF change (same context, ideal result unchanged, actual −1 return set GROWS), so piece 1's
+  context SHRINKS from 27 to 24 vertices; piece 1's ideal (C6) result is stable in both searches; the child's actual round
+  count M DROPS 7 → 6 and 7 common child vertices die earlier. dtl_cmviol_check.py (in check.sh) reproduces it in both
+  order data. The corpus count (§18d, 51/0) missed it because no committed instance had the shape; 126 climb steps found it.
+- Type: the SHRINK row of §18g (parent return set grows, Dom(prevV) grows, the child loses vertices). §15's reading for
+  shrink resets: lost tangles (a tangle needs all its vertices in the context).
+- Consequence: (CM) is DEAD. Queue item (2) closes negatively: the child of a deficit parent can re-climb (its M drops)
+  in an ideal-stable context, so nested deficit runs are not stopped by any monotone child round count.
+- Anatomy of cm_viol_oink_n28 (Oink order, original ids; Odd's phase). Piece 0 (|R| 28, ideal stable both times): actual
+  −1 return set {23} → {1, 2, 23, 27}. Piece 1's context loses {1, 2, 27} (Dom of the larger return set), nothing added;
+  no stored tangle loses a vertex (so this reset is NOT §15's lost-tangle shape). The three removed vertices are p-parity
+  TOPS of the old child context (priorities 19, 5, 17). New tangles between the searches: {5, 6, 17, 18}, {8}, {21}. Child
+  deaths drop for 7 vertices (e.g. 14: 7 → 4, 9: 6 → 3, 4: 6 → 3); child M 7 → 6. The climb (seed 301) reached 3 M-drops
+  in one run by step 3,155 (scratchpad, not committed).
+
+### 18j. L-RED's box-4 instances under these tools; the r0 padding fix; state revisits on DTL (17:20Z)
+- lex_viol_inj_n28 and lex_viol_tie_n28 (red/carry/instances, R18) under dtl_plateau.py, both order data: at s5 → s6
+  (ideal-stable DEF step, U equal at r0 = 3, so LEX-R holds: V_3 grows) the top changed vertex 2 (priority 43) falls 8 → 7
+  while 20 (priority 41), 18 and 7 rise; M 13 → 12; at six contexts of the same searches (|R| 28 … 23). The rise of the
+  LOWER vertex 20 at round 3 propagates up over the later rounds (18a) until 2 dies a round earlier. Same mechanism as
+  lex_viol_oink_n20 (an extra top, here of lower priority, then upward propagation), and as dtl_lexcounter.py with a riser
+  in place of the new tangle. "DEF-down" in the result sense of §18f (stable result shrinks, or stable → −1) is still
+  0 on DTL runs; in the death-vector sense the R18 step goes down. The distinction carries no weight once (LEX) is dead.
+- Padding fix (L-RED caveat, Lead 16:30Z): dtl_regvec.py and dtl_crm.py padded the shorter round list with ∅, which is
+  wrong past the last round of a STABLE call (its set stays at the fixpoint). Fixed (r[min(i, len − 1)]; a −1 run ends with
+  ∅ explicitly). Re-run on the current corpus (experiments/alg/instances, climbs_1016, red/carry/instances): dtl_crm.py
+  output is byte-identical before and after in all four settings (Oink/stable × all/ideal-stable: 372/237/345/208 steps,
+  repeats 4/2/4/2, dips 18/5/19/4); dtl_regvec.py's class counts are unchanged (one detail line and one label change, a
+  stable final step at r0 = 1). dtl_plateau.py (the LEX/LEX-R counts of §18b) always used the fixpoint rule. So §13g's
+  (C-rM) verdicts and §16 stand.
+- Full-state revisits on ACTUAL runs (experiments/alg/dtl_revisit.py; corpus C plus the R17/R18 files; maximal runs of
+  consecutive searches of one phase at one context with T growing, ≥ 3 calls): Oink order 0 full-state revisits in 296
+  runs (return-set-only revisits: 20 with the ideal fixed, e.g. h4_def10_oink_n28, 164 with the ideal moving); stable order
+  0 in 301 (13 / 165). So on DTL data the per-context state is injective, as (LEX-R) implies; only synthetic genuine
+  tangles (dtl_staterevisit.py) make it return.
+
+## 19. Scoping note: C6 (ideal pruning) as the GAP-A target (Lead 17:08Z; at most one page)
+C6 = docs/alg/candidates/C6-DTLhat.md: C5-DTL with best_vertices' consumed union U replaced by the ideal layered union Û;
+sptl, Dom, cut, recursion, extraction unchanged. Prototype only: experiments/alg/dtl_c6proto.py (reuses dtl_pyref).
+(a) Hypotheses of §12 on C6, per today's data. (H4) is VOID: Lemma F and Lemma S are PROVED for C6 (the actual run is the
+    ideal run, monotone in T at a fixed context). The others are unchanged by the switch, and several kills were on
+    deficit-free runs (A_DTL = C6 there):
+    - (H1) cut-attractor carries obey the frontier property (F): READING (R10) plus DATA 67/67 (L-RED); not proved.
+    - (H2a) alive-top self-reinforcing carries: OPEN; (F) FAILS for pruning-driven changes (8 of 136 drivers, §10, measured
+      on A_DTL runs; C6 is identical on runs without a deficit round). APP(k) (§10) satisfies every C6 fact proved so far.
+    - (H2b) dead-top cap carries: Φ, Φ_idx DEAD on C6 too (phi_idx_flat_n20 has 0 deficit calls); what remains is PROVED
+      for C6: carries at index i ≤ n(n+2)·c_i (Lemma F), but c_i ≤ searches makes it circular (§14).
+    - (H3) catch-ups: (CU) DEAD on C6 too (dtl_cu_viol_n24: 0 deficit calls in both order data); Lemma L-epoch PROVED (C6).
+    - Child resets (§15): C6 31 of 153 child comparisons drop (A_DTL 33 of 157); the shape APP needs occurs in C6.
+(b) What C6's GAP-A reduces to. With (H4) void, §6's counting is PROVED for C6: per context ≤ K = O(n²) changes, so
+    N_j ≤ K·C_j over DISTINCT level-j contexts (revisits are free). Hence GAP-A for C6 ⇔ a polynomial bound on the number
+    of distinct child contexts that a parent piece hands out AND in which the child still has work (fresh, resetting child
+    contexts, §6.3b/§16). That is exactly the open core today; APP(k) shows the proved facts allow 2^k. C6 removes one
+    obstruction (fixed-context resets, which today killed (LEX), (NR), (CM) on A_DTL); it does not touch the core.
+(c) Completeness. CONFIRMED: no gain. K4 carries over; K5 for C6 reduces to A_DTL's GAP-C shapes ((α) with the straddle
+    set enlarged by the deficit, (β'), (C-b)); C6-DTLhat.md K5 sketch. DATA: prototype correct with verified strategies on
+    1,530 games; completeness climbs (~19k steps, n = 16, 22) found no failure.
+(d) Running time per search. One pruning round: one tangle attractor per priority level of V (≤ d + 1 levels) plus the
+    unchanged threshold loop: O((d + n)·W_A), W_A = one tangle-attractor pass = O(m + Σ_{t ∈ T} (|t| + |esc(t)|)), the same
+    order as C5's round (DTL-proof.md §3(b)). Rounds per call ≤ n; calls per search as in C5. So a search is polynomial in
+    n, m and |T|, and |T| ≤ n·(searches so far) by Lemma W (extraction is unchanged). Only indices and priorities are
+    stored: no large numbers (TARGET.md §3). The running-time bound of C6 is therefore polynomial iff searches per phase
+    are, exactly as for A_DTL.
+(e) Gauntlet steps 1-3 for C6 (TARGET.md §5):
+    1. Exact pseudocode frozen in the lane notebook (C6-DTLhat.md already gives it as a one-function diff to C5-DTL.md; it
+       needs the order datum ω and a freeze like L26) and ONE implementation. The prototype reuses L-ALG's dtl_pyref; a
+       clean implementation (or a patched Oink best_vertices) is needed.
+    2. Agreement with Zielonka on 10,000 random games and every hard family, strategies output and verified (L-COMP),
+       runtime growth plotted; then a second independent implementation.
+    3. Barrier statement and literature check (L-LIT): whether ideal layered pruning appears in van Dijk's DTL variants or
+       elsewhere, and which lower-bound frameworks (e.g. attractor-decomposition) C6 lies outside. DTL's step-3 caveats
+       (T16) carry over since only the pruning changes.
+    Step 4 then starts from DTL-proof.md: soundness, strategies, halting carry over (reading in C6-DTLhat.md); GAP-C as
+    A_DTL; GAP-A as in (b).
+Reading (L-ALG): C6 is the cleaner target for a GAP-A proof (one fewer reset device, and every per-context lemma PROVED),
+but the core question, fresh resetting child contexts, is identical. The switch is worth its gauntlet cost only if the
+fleet commits to the GAP-A core proof on C6. It does not by itself move GAP-A.
+
+## 20. The core on C6 (Lead L31, 17:27Z: C6 is the model for "fresh, resetting child contexts"): what is proved, what the data says, the missing lemma (17:35Z)
+Setting: C6, one phase, a depth-0 Dom(prevV) piece j at a FIXED context R_j returning −1 in consecutive searches, its
+child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set).
+- Lemma P (plateau chain; PROVED for C6 from Lemma S (ii) and Lemma D3). While piece j's round count M stays equal, its
+  return set only grows (Lemma S (ii)) and T only grows, so Dom_T(V_j) only grows (D3: monotone in V and T) and the child
+  contexts form a DECREASING chain R_{j+1}(s) ⊋ R_{j+1}(s') ⊋ … (length ≤ n). Every new child context inside a parent
+  plateau is therefore a strict shrink; new vertices enter the child context only at a parent M-rise (≤ n + 1 per parent
+  context). DATA agrees: dtl_stair.py (C6, stable order; corpus experiments/alg/instances + climbs_1016 +
+  red/carry/instances + 400 random games n ≤ 26): all 55 child-context changes caused by equal-M growth are SHRINKs.
+- Child resets on C6, by parent step type (same run; reset = a vertex common to both child contexts dies earlier):
+  | parent step | child context | changes | child resets | child M drops (both −1) |
+  |---|---|---|---|---|
+  | equal-M growth (plateau) | SHRINK | 55 | 15 | 3 |
+  | M-rise | GROW | 86 | 15 | 2 |
+  | M-rise | SHRINK | 7 | 0 | 0 |
+  | M-rise | incomparable | 45 | 7 | 1 |
+  So on C6 the child re-climbs (its M drops) after both kinds of parent step, including inside a parent plateau where
+  its context only shrinks. Shrinking the context is not monotone for the child (§15: lost tangles; also lost p-tops,
+  §18i's anatomy on A_DTL).
+- Counting this gives (PROVED for C6): per parent context, the child sees ≤ (n+1) plateaus × ≤ n contexts (Lemma P) and
+  does ≤ K = O(n²) changes per context (Lemma S), so ≤ n(n+1)·K child changes per parent context, and c_{j+1} ≤
+  n(n+1)(n+1)·c_j (§16). The product over the depth is the only remaining obstruction, and it needs resets at every level.
+- The missing lemma, stated precisely (a target; no proof; no data yet beyond the table). Call a child reset NESTED if,
+  in the same transition s → s+1, piece j+1's reset is followed by a reset of piece j+2 in its new context, and so on.
+  A polynomial bound on searches per phase follows if (and, against APP(k), essentially only if) resets do not nest to
+  depth growing with n, i.e. if "a reset of piece j+1 caused by a parent step leaves piece j+2 in a context where it does
+  not need to re-climb" holds up to bounded depth. Measurement for the next box (cheap, dtl_stair.py extended): the depth
+  of nested resets per transition on C6, on the corpus and on climbs whose fitness is that depth. Attack for L-RED: a C6
+  instance with nested resets of depth ≥ 3. Note that a depth-2 nested reset already exists implicitly in
+  h4_nested7_oink_n44 on A_DTL (fresh contexts at pieces 2-5 grow with depth), but there the children did not reset; the
+  C6 question is whether fresh AND resetting contexts compound.
+- Measured at once (17:33Z), experiments/alg/dtl_nestreset.py (C6, stable order): over the corpus (experiments/alg/
+  instances, climbs_1016, red/carry/instances; 518 transitions) the nested-reset depth per transition is 0 in 480, 1 in
+  15, 2 in 12, 3 in 11 (16 games, all climbed: dtl_replay2deep_n32, dtl_replay4_n32, flat_dead_carries_*, nest_nest_*,
+  nest_seed*, phi_flat_alive_n32); 400 random games add no depth ≥ 2. But the measure is CHEAP to game: a climb on it
+  (dtl_resetclimb.py seed 401 from dtl_replay2deep_n32; scratchpad, stopped) reached depth 13 at n = 32 within 617 steps,
+  with 3-4 iterations in total: one transition shifts every later piece's context and nudges a death down, and no child
+  then does any further work. So the depth of resets in ONE transition is not the obstruction. What the core needs is a
+  reset FOLLOWED BY re-climbing work (further changes of the child in its new context before the parent moves again),
+  i.e. §6's replays. Corrected target: replay depth (§6.3: max depth 2, 5 replays, nest_nest_s81 / dtl_replay2deep_n32),
+  whose growth with n is the question; on C6 the climbs of §6.3 plateaued (notebook, successor 3).
+- Replay-depth climbs on C6 (experiments/alg/dtl_replayclimb.py, fitness = replay depth ≫ replays ≫ longest phase;
+  stable order; seeds from dtl_replay2deep_n32, which scores depth 1 under the corrected tracer): replay depth 3 reached
+  at n = 32 (seed 601, step 2,671) and at n = 48 (seed 602, dtl_replay2deep_n32 padded by 16 priority-0 source vertices,
+  step 330). Committed: experiments/alg/instances/c6_replay3_n32.pg (C6: 11 iterations, 26 tangles, 4 replays, depth 3,
+  correct with verified strategies against Zielonka; A_DTL in stable order has the same (4, 3); pinned Oink 11 iterations,
+  verified) and c6_replay3_n48.pg (C6: 13 iterations, 34 tangles, (3, 3); Oink 13 iterations, verified). Before this box
+  the maximum anywhere was depth 2 (§6.3). Level sequence of the n = 32 phase: 3 1 1 2 0 1 3 2 3 0. Whether the depth
+  keeps growing with n is the open measurement; climbs continue.
+
+### 18k. L-RED's (F1) ("at most one fall step per context"; l-red 78469a8, Lead 18:34Z) is not structural (18:40Z)
+- experiments/alg/dtl_twofall.py (in check.sh): two DISJOINT copies of the dtl_lexcounter.py gadget in one context
+  (18 vertices, genuine tangles). Chain {s, s'} → {s, s', σ} → {s, s', σ, σ'}: e0 falls (INF → 1) at the first step, e0'
+  at the second. Two fall steps at one context. Since disjoint components do not interact, the same holds for any number
+  of copies: k fall steps on 9k vertices, with k steal tangles learned one per step.
+- Random synthetic data says little either way: 2 chains with one fall and 0 with two in about 122k random chains
+  (dtl_lexfake.py, genuine and fake tangles, n ≤ 12), and 63 one-fall / 0 two-fall chains in 34,980 chains around the
+  gadget (scratchpad gadfall2.py).
+- Reading: (F1) can hold for A_DTL only through WHEN DTL learns the steal tangles. [CORRECTED 19:16Z: the guess that
+  DTL learns the steals of independent components in the SAME search is FALSE in general: L-RED R20's f1_twodef_n48 has
+  two DEF falls at one context in two disjoint components.] A counter to (F1) on
+  DTL needs a second steal tangle that becomes learnable only AFTER the first fall, i.e. a dependency from the first
+  gadget's fall (or its repair) to the second gadget's steal. That is the attack recipe for L-RED. A proof of (F1) must
+  show that DTL learns all steals that can bite at one context in one search, which is again cross-context information.
+- (F1) DEAD on actual A_DTL (Lead 18:58Z): experiments/red/carry/instances/f1_twofall_n48.pg (L-RED R19, l-red 6b384b2; the
+  disjoint union of lex_viol_oink_n20 and lex_viol_inj_n28 with injective priorities; Oink 8 iterations, verified): two
+  fall steps at one context in both order data; one is a DEF step (ideal unchanged), the other an LRN step (ideal moved).
+- (F1-DEF), the surviving DATA candidate: "at a fixed context, at most ONE DEF step (ideal unchanged) lowers any death".
+  dtl_plateau.py (ctx_fallsteps; corpus C plus R17-R19 files), ideal-stable DEF pairs: Oink order 43 contexts with 0 fall
+  steps, 47 with 1, 0 with ≥ 2; stable order 39 / 46 / 0. All pairs (ideal may move): Oink 352 / 47 / 1 (the R19
+  instance), stable 348 / 46 / 1. Value if true: at a fixed context, DEF changes other than one are pointwise rises, so
+  ≤ about 2n(n+2) + 1 DEF changes per context. Same caveat as 18k: in dtl_twofall.py BOTH falls are DEF steps (checked: the ideal
+  (C6) result is the same stable 10-vertex set in all three states), so (F1-DEF) fails synthetically and a proof must use
+  DTL's learning order.
+- (F1-DEF) DEAD (Lead 19:02Z): experiments/red/carry/instances/f1_twodef_n48.pg (L-RED R20; Oink 11 iterations,
+  verified), two DEF fall steps at one context in the two components of a union. Every per-context (H4) candidate stated
+  in this box is dead; what remains at a fixed context is DATA only ((U-MONO_DTL), (LEX-R), no full-state revisit).
+
+### 18l. Measurements for the next box: searches per phase is the headline; replay depth is weak (19:10Z)
+- Replay depth (§6's replays2) is NOT padding-invariant (L-RED R20 §3, Lead 19:08Z): padding replay4_n32 with inert
+  priority-0 sources keeps 13 searches but moves the depth between 1 and 4, because a priority-0 source becomes its own
+  depth-0 piece and shifts the indexing. My c6_replay3_n48.pg was climbed from a priority-0-padded seed, so its depth 3 is
+  suspect for the same reason; c6_replay3_n32.pg (unpadded) has depth 3, L-RED's replay4_n32.pg depth 4 (searches: 11 and
+  13 iterations in total). A padding-invariant variant would count levels only over pieces that change at least once in
+  the phase (trivial, never-changing pieces skipped); not implemented.
+- Nest products (dtl_nestclimb.py NEST_FIT=prod, Oink order; final, all stopped 19:09Z): n = 20: 4 (K = [3, 2],
+  3 child contexts, 9 searches in the phase); n = 28: 6 (K = [3, 3], 3 child contexts, 12 searches); n = 36: 2 (weak
+  padded seed, stopped early); n = 44: 6 (K = [2, 3, 1], 11 searches). No growth with n; every product is capped by the
+  phase length.
+- Searches per phase, A_DTL, Oink order (dtl_searchclimb.py, fitness = max searches in one phase, then iterations;
+  random-game starts, equal step budgets; scratchpad search/, started 19:09Z): numbers in the box-end ledger.
+- ctx_fallsteps on f1_twodef_n48.pg (dtl_plateau.py, ideal-stable DEF pairs, both order data): 5 contexts with 2 fall
+  steps, 2 with 1 (Lead 19:13Z asked for the re-run).
+- Searches per phase, checkpoint 20:38Z (dtl_searchclimb.py, A_DTL, Oink order, random starts gen.random_game(n, n, 1, 3,
+  seed 7n), climbs started 19:09Z, so equal WALL TIME; steps per second fall with n). Best per phase at equal STEP budgets
+  (the logs record improvements only, so the n = 60 column is its value at its last improvement, step 8,729):
+  | steps | n = 20 | n = 30 | n = 40 | n = 60 |
+  |---|---|---|---|---|
+  | 5,000 | 7 | 11 | 6 | 9 |
+  | 8,729 | 9 | 13 | 6 | 14 |
+  | 20,000 | 12 | 15 | 10 | (14 at ≥ 8,729) |
+  | 38,000 | 14 | 17 | 11 | |
+  | 54,000 | 16 | 18 | | |
+  Snapshots committed as experiments/alg/instances/spp_n20.pg (phases 16/2/1 searches, 19 iterations), spp_n30.pg
+  (18/1/1/1, 21), spp_n40.pg (7/11/1, 19), spp_n60.pg (14/2, 16); pinned Oink gives the same iteration counts, verified.
+  Reading: the per-phase maximum keeps rising with the step budget at every n (the climbs have not converged), and at
+  equal budget it is not monotone in n (n = 40 is a slow seed). Nothing here is above linear in n.

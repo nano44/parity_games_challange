@@ -134,7 +134,8 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - id: Q10 (raised by the Lead via L-LIT T16; listed in docs/NOW.md, not routed through this desk)
 - Background: DTL (candidate C5) is van Dijk's unpublished solver; his 2024 chapter may describe it or its counterexample.
 - Options: owner provides a copy if they have access; otherwise the fleet proceeds without it.
-- Status: open (optional).
+- Status: closed 2026-10-16 11:12Z (Lead reading): L-LIT T17 opened the author's preprint (tvandijk.nl/pdf/2024festschrift.pdf);
+  not diffed against the Springer version.
 
 ## Q11: Fable weekly limit reached (2026-10-16 02:10Z)
 - id: Q11 (asked and answered in the Lead session, not via this desk)
@@ -144,3 +145,26 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 ## Note on Q4 (closed under D4/L15)
 - Done 2026-10-15 23:28Z (l-comp 70cc344): PGSolver d3cd624 binaries ran once; 27/27 generators byte-identical to the ports;
   switch-all/switch-best iteration counts and solutions identical. The M1 fidelity caveat is removed.
+
+## Q13: the repository is PUBLIC (owner attention)
+- id: Q13 (Lead, 2026-10-16 11:12Z; desk re-verified 16:3xZ: github.com page HTTP 200 without login, API "private": false,
+  "visibility": "public")
+- Background: nano44/parity_games_challange is publicly readable, so everything pushed since 2026-10-14 is public: results,
+  unrefereed drafts, docs/HUMAN-REVIEW.md (Q6 ruled no external distribution), and the owner's rulings quoted verbatim in
+  docs/DECISIONS.md and docs/owner-desk/LOG.md. It also appears in GitHub code search (L-LIT T17). Visibility is the owner's
+  decision; the fleet changes nothing.
+- Options: (a) keep public; (b) owner makes it private (GitHub > repository Settings > General > Danger Zone > Change visibility).
+- Lead recommendation: none stated. Desk note: (b) matches D1 ("Never publish ...") and the Q6 ruling; copies already indexed or
+  cloned cannot be recalled.
+- Urgency: high (every push adds to what is public).
+- Status: closed, D10 / Lead reading L29: repo stays public; pushing is not "publishing" under D1; every other outward act
+  (posting, emailing, submitting, contacting, announcing or linking the repo) still forbidden; nothing sensitive is ever committed;
+  HUMAN-REVIEW.md readable in the repo is accepted; Q6 (no external distribution by the fleet) unchanged.
+
+## Q12: contact van Dijk for counter_dtl?
+- id: Q12 (Lead, 2026-10-16 11:12Z; not blocking)
+- Background: L-LIT T17 found no copy of the author's DTL counterexample anywhere online (it was announced in Oink's README in
+  2021 but never committed). The only remaining route is to ask the author: outside contact, the owner's decision (D1).
+- Options: (a) no contact for now; (b) owner contacts the author; (c) owner authorises a fleet-drafted message for the owner to send.
+- Lead recommendation: (a): L-RED first builds the author's own recipe (preprint p.15).
+- Status: answered 2026-10-16: "No contact for now" (option (a)); relayed; awaiting the Lead's D-number.
