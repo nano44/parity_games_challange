@@ -53,6 +53,21 @@
   passes 3-5, top 19, SCC {3,5,6,10,11,12,16,19} merging two stored tangles; GAP-A-M §9).
 - Invariant of DTL-reachable tangle sets excluding the straddle-with-lower-pickup shape: DEAD (deficits with changed
   survival occur in actual runs, instances/dtl_deficit_n20.pg).
+- Φ (global −1 death record raised by every dead-top cap carry): DEAD (produced on Opus 5.5). Killing instance:
+  experiments/alg/instances/cross_h_k1_n11_m17_37.pg, search 1, piece 0; the rescued vertex reaches death 3, equal to its
+  record from another −1 piece of the same search (GAP-A-M §11b).
+- Φ_idx (per-piece-index record R_i raised by every dead-top cap carry; original and Dom-only restated): DEAD. Obstruction:
+  cross-context record. A context visited earlier at the same index set a death that a later context's carry only
+  reaches. Killing instance: experiments/alg/instances/phi_idx_flat_n20.pg (Oink 11 tangles / 5 iterations, verified, no
+  deficits). Piece 2: s3 → s4 has the same context, r0 = 6, rescued 14 reaches 6 = its s1 record and 10 reaches 7 = its
+  s1 record (GAP-A-M §11d). The earlier phi_idx_cutrec_n20.pg kills the original definition only (records from cut
+  pieces). The 142/142, 273/273 and 115/115 "support" was evidence for Lemma F only: 0/115 cases had a binding
+  other-context record (§11c.1).
+- Sub-mechanisms for Φ_idx: (a) lift-to-max FALSE (80/258), (b) per-index max death monotone FALSE (201/2540; §11b).
+- R12 §9 (L-RED READING): (C-a) as stated FALSE on data (12 dead-top carries with no escape in R above pr(h);
+  dtl_proof_c3.pg s1 piece 0). (C-c) bullet 1 FALSE on data (17 cases; cross_h_k1_n10_m16_27.pg s1 piece 0). §11c.
+- TRACER BUG (fixed e41ccfb): dtl_pieces.mk never restored depth after a cut's recursion, so pieces after the first cut
+  went unrecorded. §6 data re-measured 11:24Z; conclusions unchanged (NEST 0 with the removed-set cut state).
 
 # L-ALG notebook — second successor (session_01Aoj1NEAPu4ibQ3VbNXaXVY), 2026-10-16; predecessor's notes kept below
 
