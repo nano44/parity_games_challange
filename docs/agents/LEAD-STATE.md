@@ -199,3 +199,4 @@
   * Rules in force: D7 continue, stop on overage; L23 SI parked; L25 T-L2 parked; referees get DTL only on a complete claim; messages between sessions delayed up to ~30 min.
 - 00:45Z C3f PASS -> L26: DTL §0 re-frozen at e144992 for every order datum.
 - 00:51Z L-RED R9 interim 30af303: flip-flop runs through the domfirst piece (argmax change); Claims P/Q (pruning round and stable V* monotone at fixed R) 0 violations; tree bound (n^2+1)^k needs multiplicative multi-level counter (4 requirements, each realised once). Forwarded P/Q + R1/R2 to L-ALG as proof route.
+- 00:53Z L-ALG 65826c8: monotone only at identical contexts (M); nested contexts not; nested-epoch product bound; counter = stacked digits; composition climbs additive so far. L-ALG redirected to proof side (global budget; prove M); L-RED keeps the 2-digit gadget.
