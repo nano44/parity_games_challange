@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 """L-ALG (produced on Opus 5.5, 2026-10-16 box 4): hill-climb on ACTUAL A_DTL runs for a (LEX) violation or a DEF-down step at
-a fixed context (GAP-A-M §18c/§18f realised by DTL itself). Fitness (lexicographic): LEX violations (top changed vertex
-falls), DEF-down steps at ideal-stable contexts (actual stable result shrinks or stable -> -1 with the ideal fixed), fall
+a fixed context (GAP-A-M §18c/§18f realised by DTL itself). Fitness (lexicographic, DOWN_MODE=down): (U-MONO_DTL) violations (same round input, union
+shrinks), DEF-down steps, LEX violations, fall steps; DOWN_MODE=lex (found lex_viol_oink_n20): LEX violations (top changed
+vertex falls), DEF-down steps at ideal-stable contexts (actual stable result shrinks or stable -> -1 with the ideal fixed), fall
 steps (some death drops), max falls in one step. Order datum from DTL_ORDER.
 Usage: DTL_ORDER=oink dtl_downclimb.py OUTDIR SEED STEPS --seed-game G.pg"""
 import sys, os, argparse, random, signal
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
-import pg, dtl_regvec as RV
+import pg, dtl_regvec as RV, dtl_ideal as I
 from dtl_mclimb import mutate, TO
 from dtl_nestclimb import write
 
 INF = 10 ** 6
+MODE = os.environ.get("DOWN_MODE", "down")   # down: U-shrinks, DEF-down, LEX, falls; lex: the box-4 order (LEX first)
 
 def deaths(rounds):
     V0 = rounds[0]
@@ -26,9 +28,14 @@ def measure(g, limit=20):
         return (-1,), None
     finally:
         signal.alarm(0)
-    lexv = defdown = fallsteps = maxfall = 0; ex = None
+    lexv = defdown = fallsteps = maxfall = ushrink = 0; ex = None
     for key, occ in d.calls.items():
-        for (s1, r1, v1, h1, *_), (s2, r2, v2, h2, *_) in zip(occ, occ[1:]):
+        for (s1, r1, v1, h1, t1), (s2, r2, v2, h2, t2) in zip(occ, occ[1:]):
+            if not set(t1) <= set(t2): continue
+            for r in range(min(len(r1), len(r2), len(v1), len(v2))):     # (U-MONO_DTL): same round input, union shrinks?
+                if r1[r] == r2[r] and r1[r] and v1[r] != v2[r]:
+                    UA = set().union(*[z for _, z in v1[r]]); UB = set().union(*[z for _, z in v2[r]])
+                    if not UA <= UB: ushrink += 1; ex = ("USHRINK", len(key[1]), s1, s2, r)
             if r1 == r2: continue
             D1, D2 = deaths(r1), deaths(r2)
             ch = [v for v in sorted(D1, reverse=True) if D1[v] != D2[v]]
@@ -41,7 +48,7 @@ def measure(g, limit=20):
                 stab1 = not r1[-1] == frozenset(); stab2 = not r2[-1] == frozenset()
                 if (stab1 and not stab2) or (stab1 and stab2 and r2[-1] < r1[-1]):
                     defdown += 1; ex = ex or ("DEFDOWN", len(key[1]), s1, s2)
-    return (lexv, defdown, fallsteps, maxfall), (ex, d.iterations)
+    return ((ushrink, defdown, lexv, fallsteps, maxfall) if MODE == "down" else (lexv, defdown, fallsteps, maxfall)), (ex, d.iterations)
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

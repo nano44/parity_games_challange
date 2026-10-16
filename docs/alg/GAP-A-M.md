@@ -1244,7 +1244,7 @@ child context grows (parent return set shrinks: the §14 staircase), M rose in 2
   context (it was in the parent's Dom before) whose region steals a straddler supporting the child's last-dying vertex,
   as σ steals y1 in dtl_lexcounter.py. No proof attempted beyond this reading; (CM) stays DATA (51/0 Oink, 42/0 stable).
 
-### 18h. (LEX) FAILS in an actual A_DTL run (16:55Z); steals in DTL never shrink the union (DATA)
+### 18h. (LEX) FAILS in an actual A_DTL run (16:52Z); steals in DTL never shrink the union (DATA)
 - experiments/alg/instances/lex_viol_oink_n20.pg (dtl_downclimb.py seed 201 from climbs_1016/b_best_s33.pg, fitness =
   (LEX) violations, DEF-down steps, fall steps; pinned Oink: 5 iterations, verified; dtl_pyref --order oink agrees:
   1 dominion, 9 tangles, 5 iterations). Odd's phase before any dominion, searches 3 → 4, alive tangles 2 → 3 (superset),
@@ -1267,3 +1267,32 @@ child context grows (parent return set shrinks: the §14 staircase), M rose in 2
 - PROVED (from 18a): for inputs X ⊆ Y at the same T, every vertex of X whose priority is ABOVE every vertex of Y \ X
   survives in Y if it survives in X (A_q is unchanged, V^{<q} grows). So an extra top can only hurt vertices of its own
   priority or lower; lex_viol_oink_n20 is the same-priority case.
+- Anatomy of lex_viol_oink_n20 (Oink order; regions per round, original ids; stored tangles at search 3: {11, 18} escape
+  2, {6} escapes 1, 10; the new tangle at search 4: {13} escapes 0, 5, 6). Rounds 1-2: same inputs and same regions.
+  Round 2 survivors differ (17 survives under the new tangle: the threshold phase, U equal). Round 3: in search 3, 17 is
+  dead, so top 3 (priority 21) gets the region {2, 3, 5, 6, 10, 11, 18} (through the tangle {11, 18}). In search 4, 17 is
+  alive and is processed before 3 (same priority, higher index); its region {17, 18} takes 18, the tangle {11, 18}
+  straddles, and 3's region is only {2, 3}. Vertex 5 (priority 16) is then in no region, and vertex 10 dies at round 3.
+  The lower deaths then propagate upward through the V^{<q} and same-level-region dependence of 18a, until 19 dies one
+  round earlier. Same mechanism as dtl_lexcounter.py, with an extra same-priority TOP (a riser) as the stealer instead of
+  a new tangle.
+- What survives at a fixed context. (LEX-R) (the first differing round set grows) holds on lex_viol_oink_n20 and on all
+  775/755 corpus pairs; it follows from per-round monotonicity at r0 (same input), i.e. from (U-MONO_DTL) at r0. It makes
+  the round vector injective in time, but the number of ⊆-lexicographically increasing round vectors is exponential, so
+  it gives no polynomial bound. Answer to queue item (1): no quantity of the per-context state is known to bound DEF changes
+  at a fixed (context, M); the per-context facts that are true (Lemma R; LEX-R as DATA) are lexicographic, and the
+  failures (lex_viol_oink_n20 on DTL; dtl_staterevisit.py synthetically) show why: a steal by a higher region (a riser or a
+  new tangle) hurts the rest of a straddler only at the higher threshold, and the loss then propagates UP through the
+  V^{<q} dependence of 18a.
+
+### 18i. (CM) FAILS in an actual A_DTL run (17:00Z)
+- experiments/alg/instances/cm_viol_oink_n28.pg (dtl_cmclimb.py seed 301 from h4_def9_oink_n28.pg, 126 climb steps;
+  pinned Oink: 1 dominion, 18 tangles, 9 iterations, verified; dtl_pyref --order oink agrees). Searches 5 → 6 of one phase:
+  depth-0 piece 0 makes a DEF change (same context, ideal result unchanged, actual −1 return set GROWS), so piece 1's
+  context SHRINKS from 27 to 24 vertices; piece 1's ideal (C6) result is stable in both searches; the child's actual round
+  count M DROPS 7 → 6 and 7 common child vertices die earlier. dtl_cmviol_check.py (in check.sh) reproduces it in both
+  order data. The corpus count (§18d, 51/0) missed it because no committed instance had the shape; 126 climb steps found it.
+- Type: the SHRINK row of §18g (parent return set grows, Dom(prevV) grows, the child loses vertices). §15's reading for
+  shrink resets: lost tangles (a tangle needs all its vertices in the context).
+- Consequence: (CM) is DEAD. Queue item (2) closes negatively: the child of a deficit parent can re-climb (its M drops)
+  in an ideal-stable context, so nested deficit runs are not stopped by any monotone child round count.
