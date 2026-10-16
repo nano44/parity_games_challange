@@ -93,3 +93,14 @@ deficit.
 Caveats: equal priorities (the cap test is <=, and processing order among equal priorities is by index) are not
 analysed; the redundancy reading itself is unrefereed; "coverage only shrinks over the rounds of one call" is used and is
 false in general (deficits). So this is a statement about deficit-free calls.
+
+## 7. DATA for the redundancy reading used in R10 (MIRROR) and section 6 (10:28Z by date -u)
+experiments/red/carry/redundancy.py replays every pruning round of every best_vertices call twice from the same V: with
+all tangles, and with every tangle whose top is in V disabled. It strategy-saves, and its full replay reproduces the actual
+call (0 mismatches). A round where the survivor sets differ is a LIFT if some disabled tangle fired, in the full replay,
+inside the region of a top other than its own; otherwise it is OTHER (an OTHER would contradict the reading).
+- 116 files (tc+ 2-4, dtl_mviol_n20, every L-ALG instance, this lane's R9/R10 instances): 11,895 rounds, 452 survival
+  changes by top-alive tangles, all 452 LIFT, 0 OTHER.
+- 2,000 random games with n <= 18 (`--random 2000 18 21`): 14,542 rounds, 8 changes, all LIFT, 0 OTHER.
+The classifier is permissive: a LIFT label says a lift happened in that round, not that the lift alone caused the
+difference. So this supports the reading but does not prove it.
