@@ -281,3 +281,4 @@
 - 13:48Z merged l-red e00dcbe (7 DEF at n=28, nested chain).
 - 13:55Z merged l-alg 955411c (chain route dead; antichain instance to L-RED).
 - 13:57Z merged l-red 7b6cd53.
+- 14:05Z hourly sweep: no overage (seven_day allowed_warning). Lead ctx 488k, $157.8; L-ALG working (362k, $56.8), L-RED working (384k, $50.9). Both boxes end ~16:10Z; DONE reports due ~15:45/16:00Z. No exceptions.
