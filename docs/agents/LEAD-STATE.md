@@ -323,3 +323,4 @@
 
 - 19:08Z Lead: merged l-alg d54a4ac (36624ae). Its §17/§18k list (F1-DEF) as surviving DATA; stale (written before R20 f1_twodef_n48, which kills it on trunk since 6ba3587). Routed to L-ALG to correct.
 - 19:15Z Lead: merged l-alg c615c2b ((F1-DEF) dead in §17/DEAD; §18l: searches per phase headline, nest products final 4/6/2/6 at n=20/28/36/44; climb at n=20 reaches 11 searches in a phase).
+- 20:05Z sweep: no overage (seven_day allowed_warning); Lead $182; L-ALG idle between checkpoints (516k ctx, $26), L-RED idle between checks (330k ctx, $12; longest phase 12 searches at n=64 in refall climbs); CI green on all heads; merged l-alg af5abaa, l-red 3c1f993; M2 done so no daily owner line due.
