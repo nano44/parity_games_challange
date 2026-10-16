@@ -271,3 +271,4 @@
 - 13:06Z hourly sweep: no overage (seven_day allowed_warning). Lead ctx 416k; L-ALG idle since 12:45 (climbs under watch; woken by message), L-RED working; cost readings now L-ALG $56.8, L-RED $45.2, Lead $152.7. Merged l-red d0b2400 (Lemma S fails on A_DTL with a deficit; Lead re-ran Oink).
 - 13:10Z merged l-alg 7c653e9. Routed defclimb (3 DEF at one context) to L-RED.
 - 13:13Z merged l-red 37542bd (M drops under deficit). Forwarded to L-ALG.
+- 13:18Z merged l-alg 08bf2b5 (Lemma R; 5 DEF at one context under stable order; order caveat recorded).
