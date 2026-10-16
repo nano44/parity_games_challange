@@ -16,6 +16,7 @@ INF = 10 ** 9
 class P(rd.RD):
     def __init__(self, *a, **k):
         super().__init__(*a, **k); self.calls = {}; self.d0 = 0; self.born = []; self.events = []; self.rec = {}; self._depth = 0
+        self.alive = []
         self.lastp = None
 
     def search(self, p):
@@ -61,6 +62,13 @@ class P(rd.RD):
                 death = next((r for r in range(1, len(ra)) if h not in ra[r]), None)
                 resc = set(target) - set(without)
                 drivers.append((death is not None and death < r0) and bool(resc) and all(self.pr[u] > self.pr[h] for u in resc))
+                if not (death is not None and death < r0):
+                    # alive-top driver: record where its top ends up in the EARLIER search (MIRROR (M1): in the return set?)
+                    M = ra[-2] if len(ra) > 1 and not ra[-1] else ra[-1]          # the -1 return set of the earlier call
+                    d0p = [pc for pc in self.searches[si - 1]["pieces"] if pc["depth"] == 0]
+                    kind = d0p[j]["kind"] if j < len(d0p) else "?"
+                    self.alive.append(dict(s=si, j=j, C=C, h=self.idx[h], kind=kind, h_in_prev_return=(h in M),
+                                           h_death_prev=death, rounds_prev=len(ra) - 1, resc=sorted(self.idx[u] for u in resc)))
             capo = bool(drivers) and all(drivers)
             dn = {}
             for r in range(1, len(rb)):
@@ -71,7 +79,9 @@ class P(rd.RD):
                 for v in rb[-1]: dn[v] = len(rb)
             rec = self.rec.get(j, {})
             raised = any(x > rec.get(u, 0) for u, x in dn.items())
-            self.events.append(dict(s=si, j=j, cap_only=capo, raised=raised, nd=len(drivers)))
+            d0p = [pc for pc in self.searches[si - 1]["pieces"] if pc["depth"] == 0]
+            self.events.append(dict(s=si, j=j, cap_only=capo, raised=raised, nd=len(drivers),
+                                    kind=d0p[j]["kind"] if j < len(d0p) else "?", file=None))
         self.calls[(si, j)] = (frozenset(R), None, rb, res)
         if res == -1:
             r = self.rec.setdefault(j, {})
@@ -87,7 +97,7 @@ def run(path):
     idx = oink_order(g.prio); newi = {v: i for i, v in enumerate(idx)}
     d = P([g.prio[v] for v in idx], [g.owner[v] for v in idx], [[newi[w] for w in g.succ[v]] for v in idx], False, ins_desc=True)
     rd.dtl_py.TV_SORTED = True; rd.dtl_py.PEARCE = True
-    sys.setrecursionlimit(100000); d.run(); d.idx = idx
+    sys.setrecursionlimit(100000); d.idx = idx; d.run()
     return d
 
 
@@ -108,6 +118,14 @@ if __name__ == "__main__":
                 if e["raised"]: tot["cap_only_raised"] += 1
                 else:
                     tot["COUNTEREXAMPLE"] += 1; print(f"COUNTEREXAMPLE {os.path.basename(f)}: search {e['s']-1}->{e['s']} piece index {e['j']}")
-            elif not e["raised"]: tot["other_flat"] += 1
+            elif not e["raised"]:
+                tot["other_flat"] += 1; k = "other_flat_" + e["kind"]; tot[k] = tot.get(k, 0) + 1
+                if e["kind"] == "domfirst": print(f"FLAT DOMFIRST (not cap-only) {os.path.basename(f)}: search {e['s']-1}->{e['s']} index {e['j']} drivers {e['nd']}")
+        for a in d.alive:
+            tot.setdefault("alive_" + a["kind"], 0); tot["alive_" + a["kind"]] += 1
+            if a["kind"] == "domfirst":
+                tot.setdefault("alive_domfirst_top_in_prev_return", 0); tot["alive_domfirst_top_in_prev_return"] += a["h_in_prev_return"]
+                print(f"ALIVE-TOP at DOMFIRST {os.path.basename(f)}: search {a['s']-1}->{a['s']} index {a['j']} driver t{a['C']} top {a['h']} "
+                      f"(death in earlier search {a['h_death_prev']} of {a['rounds_prev']} rounds; in its return set: {a['h_in_prev_return']}) rescues {a['resc']}")
         if sys.argv[1] == "--random": os.unlink(f)
     print(f"games {len(files)}; {tot}")

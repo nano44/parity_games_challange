@@ -40,3 +40,17 @@ counts such phantom V changes at cut pieces. For cuts, the state that matters is
 can grow at an unchanged (R, result, V), which is L-ALG's "cut pieces not covered" case. (2) Phi_idx at cut pieces also
 counts phantoms. A counter digit cannot live in a cut piece's V, only in its attractor (R10's 2CE class) or in a
 domfirst piece's V (R10 MIRROR / R12).
+
+## DATA: alive-top drivers at Dom(prevV) pieces versus MIRROR (M1) (11:00Z by date -u; produced on Opus 5.5)
+phi_full.py now logs every driver that is alive at r0 (top not dead before the first changed round) together with the
+earlier search's piece kind, and, at domfirst pieces, whether the driver's top h lies in that piece's -1 return set M_s.
+Corpus: 134 files (dtl_mviol_n20, L-ALG experiments/alg/instances/*.pg and climbs_1016/*.pg, this lane's instances).
+- 699 changes at equal context; 277 cap-only, all 277 raise a record: 0 Phi_idx COUNTEREXAMPLES.
+- 18 flat (record-neutral) changes that are not cap-only: 17 at CUT pieces (phantoms, previous section), 1 at a domfirst
+  piece (nest_nest_s84.pg, search 12->13, index 1), and it has NO driver born in the earlier search (the undo test
+  finds none), so it is not a carry by a new tangle at all.
+- 175 alive-at-r0 drivers at domfirst pieces: in 0 of 175 is the top h in M_s. Every one dies inside the earlier
+  search's pruning (death rounds 2..9 of 4..12). That matches MIRROR (M1): h in M_s would mean Dom(M_s) removes h in
+  piece 0 of s, so C could not be learned later in s.
+READING: (H2a) narrows to that single driverless domfirst flat change, plus whatever the alive-top drivers do through
+pruning (the (M2) self-reinforcing shape). The 17 cut-piece flats carry no state.
