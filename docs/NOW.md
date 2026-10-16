@@ -69,6 +69,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - Algorithmic: no polynomial algorithm (M4) yet. Best results are R2 (T-A1) and R3 (Random-Facet lower bound). Known: quasi-polynomial upper bounds.
 
 ## Owner questions open
+- Q11 (2026-10-16 02:10Z, OPEN): Fable weekly limit reached; L-ALG and L-RED (DTL proof and attack) paused until 2026-10-21 21:00Z; referees (Fable) also unavailable. Options: (a) wait for the reset (default under D7, Lead recommendation); (b) continue L-ALG/L-RED on Opus 5.5 now (attack lanes below most-capable model, D1; referees still wait); (c) owner adds usage credits (spend, owner only).
 - Q3: DONE by owner 07:53Z (setup script set; applies to sessions started after it; verify on the next new session). Q2, Q4, Q5, Q6, Q7 closed (D4, L13-L17). No blocking owner questions open. Optional Q10 (not blocking; L-LIT T16): a copy of van Dijk's 2024 chapter "Solving Parity Games, Very Slowly", if the owner has access; the fleet proceeds without it.
 
 ## Spend
