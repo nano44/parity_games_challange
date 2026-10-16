@@ -734,8 +734,21 @@ Proof structure (induction on i; V_0 equal). Given V := V_i(T) ⊆ V' := V_i(T')
  neither T nor T' at round i and the remainder is lost from Reg(V', T'), which can un-rescue a top and decrease its distance.
  Shape of a Claim-P violation (for L-RED and the climb experiments/alg/dtl_pclimb.py): a stored tangle t with vertices a, m, ...;
  a has a second successor w outside t; a top above τ attracts w only under T' (a new tangle brings w); so a is stolen under T';
- m's cycle in t is deadlocked without a; and m was pruned in an early round under both T and T'. Not observed (0 violations in
- 1,154 + 211 recurring contexts and 30k-step targeted climbs at n = 12..32, running).
+ m's cycle in t is deadlocked without a; and m was pruned in an early round under both T and T' — OR (second flavour) the
+ remainder's cycles are picked up by their maxima but a transient vertex m* of the remainder (on a cycle of t only through a)
+ has priority above the cycle maxima, is reachable from no region by its threshold, and was the rescue witness of a top x with
+ pr(x) ≤ pr(m*) (x → m*, rescued under T because m* ∈ Reg, not under T' because m* is in no region and above every rescue
+ threshold t < pr(x)). Two constraints found while trying to build it by hand (01:40Z–02:20Z): (i) at the FIRST call nothing is
+ forgiven above the highest top, so the steal at the highest top needs a new tangle whose escapes all lie inside that top's
+ region as computed without new tangles (a chain of absorptions ending at the top), and the top's closed region there is a
+ dominion (no escapes possible), so the stealing top must stay unclosed (its strategy edges lead to lower regions); (ii) a
+ chain of absorptions completes within ONE search's sptl passes (each pass one more top absorbs the previous one's fresh
+ tangle), so the steal happens in the same search as t's own creation unless the chain is delayed by the pruning: a link whose
+ top is a distraction until a tangle of the previous link exists (tc+'s one-bit-per-search device, makeBit in tc+.cpp). So a
+ P-violation needs at least three interacting gadgets (the straddling tangle t with its cycle structure, the stealing chain
+ into the highest top, and a pruning delay of ≥ 1 search between t's creation and the steal); random climbs at n ≤ 32 cannot
+ be expected to find one. Not observed (0 violations in 1,154 + 211 recurring contexts and targeted climbs, 10k–15k steps at
+ n = 12, 16, 20 and seeded at n = 32, running).
 Status of 3: (b), (c), (d) PROVED; (e) PROVED conditional on (a); (a) GAP-A (sharpened above: the number of searches; Lemma P/Q
 SKETCH with one open case).
 
