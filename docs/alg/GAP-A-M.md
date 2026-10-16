@@ -202,6 +202,7 @@ that change is itself a replay; a k-digit counter has depth k − 1).
 | --- | --- | --- | --- |
 | tc+ N = 4, 5, 6 | 0 2 1 0 / 0 3 2 1 0 / 0 4 3 2 1 0 (and the same after the phase break) | 0 | 0 |
 | dtl_searches20_n32 | ∗ 0 1 0 0 1 ∗ ∗ 0 ∗ ∗ 0 ∗ 0, then ∗ ∗ 0 | 1 | 1 |
+| dtl_replay4_n32 (climb on replay depth, 09:07Z; Oink: 42 tangles, 16 iterations, verified) | 1 0 1 0 1 0 1 0 1, then 1 0 | 4 | 1 |
 | the other 717 games: 600 random (n ≤ 24), every file in experiments/alg/instances, tc N ≤ 6, tc+ N ≤ 5, counter_* | — | 0 | 0 |
 tc+ is a one-pass SWEEP (each piece changes once, deepest first) and has no replay at all; its 2N + 2 searches are the
 sweep, not a counter. Over these 718 games (A_DTL and C6 give the same histogram) exactly ONE replay occurs, of depth 1 (level 1 re-advancing
@@ -209,7 +210,10 @@ after the root moved, in a climbed instance).
 6.4 What would close GAP-A along this route (open; for the proof lane): a lemma charging every replay at level j to a
 global resource, e.g. "a level-j replay needs a tangle usable in the new context that was usable in NO earlier level-j
 context of the phase", with that resource bounded polynomially. What would kill it (for L-RED): a family whose replay depth
-grows with n. Climbs on C6 with fitness = replay depth ≫ replays ≫ searches are running (started 08:43Z).
+grows with n. Building block (DATA): experiments/alg/instances/dtl_replay4_n32.pg is a clean two-level alternation (piece 1
+re-advances once after every root change, same under A_DTL and C6). Depth 2 would need a copy of this behaviour INSIDE
+piece 1's context, reset by every root change: the root's change must return to piece 1's context vertices whose removal
+the inner copy's learned tangles relied on for escape coverage, so that the inner alternation restarts with new sets. Climbs on C6 with fitness = replay depth ≫ replays ≫ searches are running (started 08:43Z).
 
 ## 7. Consequence for GAP-C: step (r1) of the (α)-exclusion route (PROVED, 09:04Z)
 DTL-proof.md §2.3's route for excluding the straddling-tangle shape (α) needs (r1): "the only source of non-monotonicity of
