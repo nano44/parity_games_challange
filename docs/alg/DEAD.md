@@ -87,8 +87,10 @@ round, rescuing only higher candidates.
 - Φ_idx (per piece INDEX i: every such carry raises R_i(u), the record of a rescued u over the phase's −1 results at
   index i; original and Dom(prevV)-only restatement): DEAD.
   Killer: experiments/alg/instances/phi_idx_flat_n20.pg (n = 20; Oink A_DTL 11 tangles, 5 iterations, verified; 0
-  deficit calls; A_DTL = C6 there). At piece 2, s3 → s4 has the same context and r0 = 6: rescued vertex 14 reaches
-  death 6, equal to its record from s1 (another context); vertex 10 reaches 7, equal to its s1 record (§11d). Second
+  deficit calls; A_DTL = C6 there). At piece 2 (original vertex ids), s3 → s4 has the same context and first differing set
+  V_5 {17, 19} → {14, 17, 19}. The single driver is tangle 9 (top 5, pr 16, dead), and the rescued vertex 14 reaches death
+  6, equal to its record from s1 (another context); vertex 19 reaches 7, equal to its s1 record (§11d). L-RED confirmed
+  this independently on A_DTL (l-red 17db195). Second
   killer: climbs_1016/nest_nest_s84.pg, s13 → s14, piece 1; vertex 30 reaches 6 = its record from s9-s12 (another
   context), driven by redundant drivers including dead-top tangle 26 (§11d.1). The original definition is also killed by
   phi_idx_cutrec_n20.pg (records from cut pieces).
