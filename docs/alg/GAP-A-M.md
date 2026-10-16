@@ -942,6 +942,17 @@ origin/claude/l-red @ c204679, experiments/red/carry/instances/h4_compound_n44.p
   - Reading: in this instance the nesting is bounded by the child's rising round count (M 6 → 10 → 12 → 16). A
     potential "child M non-decreasing across parent DEF steps into ideal-stable child contexts" is suggested by this
     one instance only. NOT checked more widely; it is the first thing to test next box.
+- Child-M check (14:55Z, experiments/alg/dtl_childM.py, Oink order). Cases: a depth-0 piece j ≥ 1 whose context
+  changes while piece j−1 makes a DEF change, with piece j's ideal result stable in both searches. Data:
+  h4_compound_n44, h4_compound2x2_n44, every instances/h4_*.pg, the defclimb snapshots and lemmaS_*.
+  - 123 cases, counting duplicates from snapshots that repeat committed instances.
+  - The child's actual round count M NEVER drops: 0/123.
+  - Individual child deaths DO drop in 4 cases (2 distinct games, h4_def9_oink_n28 and h4_def10_oink_n28, search 5,
+    piece 1).
+  Candidate (CM), DATA only: "across a parent DEF step, an ideal-stable child's actual round count does not decrease".
+  With M ≤ n + 1, (CM) bounds the number of M-RISES of a child across its parent's DEF steps. It does NOT bound child
+  DEF changes at equal M (§13g shows those repeat). So (CM) alone does not stop nesting, but it removes the "child
+  re-climbs from scratch" shape at ideal-stable contexts. Not proved.
 
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
