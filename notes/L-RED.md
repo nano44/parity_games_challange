@@ -41,16 +41,22 @@ Status: WORKING (CARRY box: Lead go 08:12Z, box 8 h to ~16:10Z Lead clock; inter
   opened by me) built 5 ways on tc+ N plus a lure on tc N: neutral, collapse, or faster. Reading: stable V is p-closed
   in R, so a good path only moves death rounds.
 - R12 section 10: section 9 restated after L-ALG C6 data; (C-c) first step refuted; "digit needs a cut" withdrawn.
+- R15 docs/red/R15-H4.md: (H4) attack. FINDING: "V_actual ⊆ V̂" (GAP-A-M 13 data line) fails for -1 return sets
+  (h4_notweaker_n20; per-round inclusion holds, actual empties a round earlier); h4_disjoint_n20 (disjoint targets).
+- R16 docs/red/R16-chained-resets.md: replay_blocks / staircases / nest2deep / lemma_s; dtl_searches15_n24 is context
+  toggling; dtl_searches20_n32 is a k=2 skeleton (4 x 4, K_child = 1); Lemma S 604/604 on A_DTL.
 
 ## Resume point
-2026-10-16 CARRY box (Opus 5.5; go 08:12Z, box to ~16:10Z). State at 11:45Z: Phi_idx is FALSE (L-ALG 11d, confirmed in R13).
-(H2b) reduces by Lemma F (L-ALG 11e) to bounding c_i, the number of distinct -1 Dom(prevV) contexts per phase and index.
-Tool: phi_full.ctx_counts, dtl_search --fitness cidx. Corpus max c_i = 4 (nest_nest_s44, n = 54). Next: cidx climbs, then a
-k=2 build from phi_idx_flat_n20 (single-level cross-context double flip) aimed at c_i growing with n. Queue behind it: (H4)
-re-target driving (Lead 10:54Z, low priority).
+2026-10-16 CARRY box (Opus 5.5; box to ~16:10Z). State 12:50Z: Phi_idx FALSE (L-ALG 11d, confirmed R13). c_i is circular
+(L-ALG 14), so the target is chained resets (Lead 12:04Z / 12:21Z): a depth-0 staircase whose new-leader M-rises each move
+a child (at depth >= 1, inside a cut) to a fresh context where it runs its own staircase. Measures: phi_full.staircases,
+nest2deep (dtl_searches20_n32 = 16, the only nonzero beyond 1). Lemma S on A_DTL: 0/604; a violation needs a deficit that
+drops a LEADER (L-ALG c0aaa02); lemmas fitness rewards leader drops. Next: read the climbs (nest2deep 171-174, lemmas
+181-183, h4 132), then the final report (DONE/FINDINGS/NEEDS) before ~16:10Z.
 
 ## IN FLIGHT
-- Scratchpad (this container, lost with it): phicap climbs pc_s111-117 (end ~11:57Z, no hit by 11:36Z); cidx climbs next,
+- Scratchpad (this container, lost with it): climbs nd_s171-174 (nest2deep, to ~14:05Z), ls_s181-183 (lemmas, to ~14:00Z),
+  h4_s132 (to ~12:57Z). Finished: pc_s111-117 phicap (no hit), cx_s121-124 cidx (stopped, circular), rp/n2 (stopped);
   under .../909dbf12-.../scratchpad/climb/. L-ALG branch read through a detached worktree <scratch>/lalg (stale; fetch
   single files with git show origin/claude/l-alg:PATH).
 
