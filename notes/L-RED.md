@@ -2,8 +2,8 @@
 Previous: session_0117Yy21tGGz9s1zzLfBdUKC (Fable; paused by the weekly limit ~01:23Z, last push 0bedda5 R9 v4).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh` (CLAUDE.md; never pipe verify).
-Status: WORKING (CARRY box: Lead go 08:12Z, box 8 h to ~16:10Z Lead clock; interim every ~2 h). The predecessor's
-"WORKING (DTL flip-flop box)" status and its scratchpad climbs were stale at handover (scratchpad lost with its container).
+Status: IDLE (CARRY box 08:12Z-16:10Z ended; DONE report sent ~15:25Z; all climbs stopped 15:17Z). Next-box first target:
+L-ALG GAP-A-M 13h child-M candidate (see Resume point).
 
 ## DONE (all merged by the Lead unless noted)
 - R1 docs/red/R1-MSF.md: S2a MSF KILLED (gated Bland counter 2^N - 1; Gate Lemma: gates relabel the first-difference level).
@@ -56,11 +56,14 @@ chained resets / COMPOUNDING (Lead 13:46Z): a deficit (or reset) sequence at one
 next context run its own sequence again. Tool: dtl_search --fitness h4prod (block form, Oink order via DTL_ORDER=oink,
 LALG_DIR = a checkout of claude/l-alg). Per-context DEF counts grow slowly (Oink order, L-ALG + mine: n = 20: 4,
 28: 9, 36: 6, 44: 8), so (H4) has no constant per-context bound, and (C-rM-stable) is dead (L-ALG h4_def9_oink_n28).
-Next if resumed: compounding climbs from h4_def9_oink_n28 / h4_def8_oink_n44 (best block score so far 0), then r0-dip
-runs (2+ dips at one ideal-stable context; r0dips fitness counts all same-context changes, DEF filter not applied).
+Next if resumed (in order): (1) L-ALG 13h candidate "child M non-decreasing across parent DEF steps into IDEAL-STABLE
+child contexts": a compounding instance where child M drops into an ideal-stable fresh context kills it (my unfiltered
+child_m_drops finds drops only into ideal -1 contexts; a filtered climb needs dtl_regvec M per index). (2) Scale the
+compounding: h4_compound2x2_n44 (block score 4, K_parent >= 3 x K_child = 2) -> does K_child grow with n; a third level.
+(3) r0 dips at one ideal-stable context (r0dips fitness lacks the DEF filter).
 
 ## IN FLIGHT
-- None after this box (scratchpad climbs die with the container). Last climbs: hb_s231/232/261/262 (h4prod).
+- None. All climbs stopped 15:17Z. Final scores: h4prod block 4 (seed 262), 3 (seed 261); h4ctx 7 at n = 28.
   L-ALG branch read through a detached worktree <scratch>/lalg (git -C <scratch>/lalg checkout --detach origin/claude/l-alg).
 
 ## NEEDS
