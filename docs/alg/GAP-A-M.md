@@ -471,3 +471,24 @@ Reading.
   pr(h) < pr(u); a lift into a higher level's Û could in principle rescue a lower candidate, which the data never shows.
 - So the class a bound must handle is: self-reinforcing alive-top carries, PLUS dead-top cap carries. MIRROR handles
   neither as a bound; it only shows that non-self-reinforcing alive-top carries do not occur.
+
+## 12. Where the GAP-A route stands: the hypotheses still needed (10:22Z)
+Child resets are real (DATA, experiments/alg/dtl_childmono.py; 400 random games n ≤ 24, every dtl_* instance, tc+ N ≤ 5):
+after a change at depth-0 piece j between consecutive searches, the death rounds at piece j+1 DROP for some vertex present in
+both child contexts in 4 of 38 comparisons (A_DTL and C6 alike; dtl_replay4_n32 after a root change: 3 → 1, 4 → 2,
+4 → 3), rise in 21; at deeper pieces 0 drops in 14 comparisons. So "a vertex's death round at a level never decreases" is
+DEAD as a cross-context potential, and the reset that APP(k) needs at a fresh child context does occur in real runs.
+A polynomial bound on searches per phase along the route of sections 6, 10, 11 needs ALL of the following; none is proved:
+(H1) cut-attractor carries obey the frontier property (F) (R10's argument, READING; data 67/67, L-RED);
+(H2) a polynomial bound, across contexts, on PRUNING-driven carries at −1 pieces, in both classes of section 11:
+     (a) self-reinforcing carries whose top is alive (MIRROR's (M2) shape; MIRROR's (M1) excludes the others modulo the
+         unproved redundancy step), and
+     (b) dead-top cap carries (a tangle acting after its top was pruned, lifted to rescue higher candidates);
+(H3) a polynomial bound on catch-ups (Lemma L-epoch (c); (CU) is false) and on learning inside cut recursions (the same
+     piece-tree structure one level down);
+(H4) for A_DTL only: a polynomial bound on deficit-triggered changes at fixed contexts (Lemma E's straddle with lower pickup,
+     real: dtl_mviol_n20); for C6 this item is void.
+With (H1)-(H4) the counting of section 6 collapses: every transition is a pruning-driven change (H2), a cut-driven change
+(H1: driver learned at a prefix-determined piece, so the carry needs a gate there, R10), a catch-up/recursion step (H3), or
+a deficit (H4), and APP(k) is excluded because its every level is a pruning-driven carry (H2). Without them, APP(k) shows
+that the proved facts allow 2^Θ(n) searches. Status: GAP-A OPEN; the route is (H1)-(H4).
