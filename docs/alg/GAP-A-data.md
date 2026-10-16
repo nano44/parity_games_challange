@@ -167,6 +167,22 @@ tangle set, stranding a deadlocked remainder whose p-parity maximum is no longer
 non-straddling tangles, candidates, rescues, and the pickup of a stranded remainder by its own p-parity maximum when that is a
 top) is written out. The climb dtl_pclimb.py targets exactly this violation (patched build; fitness = P violations at
 identical contexts).
+Hand attempt at a Claim-P violation (02:20Z–03:00Z, experiments/alg/instances/dtl_pviol_attempt1.pg, 26 vertices, labels
+t1/t2/tau/a/mstar/o/c/x/w/o2/r0-r3/o_k/y_k): a straddling tangle t = {tau, a, mstar, o, c} (cycles tau-a-mstar-o, a-mstar-o,
+c-o; escape h into t2's region), a stealing chain g_0..g_3 of two-vertex tangles {r_k, o_k} whose escapes y_{k-1} (Even-owned,
+priority just above r_k so that r_k's own region cannot take them) enter t1's region only after g_{k-1} fires there, the
+witness w with tangle {w, o2} (escape r_3) that pulls a into t1's region, and x (priority 6) → mstar (7) as the rescue
+witness to be stranded. Designed timeline: g_k learned one search after g_{k-1}; a stolen in search 4; x survives round 1 in
+searches 1-3 and is pruned at round 1 in search 4. What A_DTL did: (i) t1 → c and t2 → r_0 (added so that t1, t2 are not
+candidates) let t1's region absorb c → o → tau → ... and t2 via r_0, closing t1 into a DOMINION in search 0; (ii) the ladder
+collapsed inside search 0: once a level is learned and removed by Dom, the next level's y is "the lowest level attracting to
+X" and the −1 cut forgives it, the following level closes in the next piece, and so on — every level is learned in search 0.
+Lesson (reading): within one search every piece sees all tangles learned in earlier pieces, so a cross-search delay exists
+only when the enabling tangle is needed in an EARLIER piece than the one where it is learned; concretely, the top to be
+rescued must have been REMOVED in a −1 (dis) piece before the stable piece that learns the enabling tangle. That is tc+'s
+order (dis(gadget N) ... dis(gadget k), STABLE): the distractions with the highest pruning distance are removed first, one
+dis piece each, and only then the stable piece learns. A P-violation (and a counter) must reproduce this removal order for
+its delay stage; the pruned-but-not-removed vertices of a stable first call do not delay anything.
 What a counter must do (the shape for L-RED): K "digits" = K nested pieces, each able to cycle through ≥ 2 results inside a
 fixed epoch of the pieces above it, each cycle step learning a new tangle, and a change at piece k resetting piece k+1's
 context to one where its cycle restarts with NEW sets (because T grew). dtl_searches20_n32.pg is a one-digit instance:
