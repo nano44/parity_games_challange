@@ -308,3 +308,4 @@
 - 16:40Z OWNER-DESK relayed owner: "Give me a status update" (answered from trunk e927f20; Q13 and Q12 shown; owner-desk b665477 merged).
 - 16:43Z owner D10 (Q13): keep repo public; recorded verbatim with Lead reading L29; Q13 closed. Q12 still open.
 - 16:46Z owner D11 (Q12): no contact with van Dijk; recorded verbatim + L30. No owner questions open. Merged l-alg 1173ec6 (§18 synthetic gadgets).
+- 16:58Z merged l-alg 670a762 ((LEX) fails in L-ALG's own actual run; (U-MONO_DTL) routed to L-RED).
