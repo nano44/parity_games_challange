@@ -739,7 +739,15 @@ pieces 0..j-1; measured ctx_changed = 0.
     verified): experiments/alg/instances/h4_def4_oink_n20.pg (seed 123 from lemmaS_viol_n20). Player 1, piece 0, R = G'
     (|R| = 20). The ideal (C6) result is STABLE with the same 14-vertex V̂* in searches 4-8, while the actual is −1 in
     searches 4-7, return sets (original ids) {0, 4} → {4} → {4, 7, 8} → {7, 8} → stable {7, 8, 18}. That is 4 DEF
-    changes at one ideal-stable context on pinned A_DTL (running).
+    changes at one ideal-stable context on pinned A_DTL.
+  - Scaling (13:26Z; Oink order, h4_def4_oink_n20 padded with source-only vertices and climbed): n = 28:
+    experiments/alg/instances/h4_def6_oink_n28.pg (Oink and dtl_pyref --order oink both 9 iterations, verified).
+    Player 1, piece 0 after the first dominion (|R| = 26). The ideal is STABLE with the same 17-vertex V̂* in searches
+    3-9; the actual is −1 in searches 3-8, return sets (original ids) {5, 6, 15} → {6} → {6, 11, 20} →
+    {6, 11, 15, 20} → {7, 8, 11, 15, 20} → {7, 8, 15} → stable {7, 8, 15, 18}. That is 6 DEF changes at one
+    ideal-stable context, and the whole phase after the dominion is spent there. n = 36 (seed 136): 5 at one context, 6
+    in the phase, so far. Maximum per context so far: n = 20: 4, n = 28: 6, n = 36: 5 (climbs running). Too few points
+    for a growth law; consistent with growth.
   - Key earlier instances agree in both orders and with Oink (iterations): phi_idx_flat_n20 5, nest_nest_s84 19,
     lemmaS_viol_n20 8.
 
