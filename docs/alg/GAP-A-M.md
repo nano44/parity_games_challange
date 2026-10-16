@@ -894,6 +894,12 @@ time, unless M grows. Routed to L-RED as an attack target: find a context where 
   ideal-stable context, and the actual return set REVISITS earlier sets ({23, 27} and {20} twice each) while the ideal
   stays fixed. So the actual state at a fixed ideal-stable context is not even injective in time. Max per context,
   Oink order: n = 20: 4, n = 28: 10, n = 44: 8.
+- 14:51Z, n = 28, same climb: experiments/alg/instances/h4_def11_oink_n28.pg (Oink and dtl_pyref --order oink both 15
+  iterations, verified). Piece 0, R = G (|R| = 28). The ideal is STABLE (22 vertices) in searches 4-15. The actual is
+  −1 in searches 4-14, return sets (original ids) {10, 14, 23} → {1, 10, 23} → {10, 23} → {1, 10, 23} →
+  {1, 21, 23} → {21, 23} → {20, 21, 23} → {7, 21, 23} → {20} → {7} → {20}, then stable. That is 11 DEF changes at one
+  ideal-stable context. Max per context, Oink order: n = 20: 4, n = 28: 11, n = 44: 8 (longest climb at n = 28; the
+  count tracks search effort more than n so far).
 - Compounding check (14:34Z; deep-climb seed 201, fitness = deeper contexts with ≥ 2 DEF changes, from
   h4_def8_oink_n44). experiments/alg/instances/h4_deep_oink_n44.pg (Oink 13 iterations, verified). In every search 4-12
   of player 1's phase, the depth-0 calls of pieces 0-3 are ALL deficit calls (ideal stable). Pieces 0, 1 and 2 each stay
@@ -1092,7 +1098,7 @@ KILLED (FALSE / DEAD), each with its instance
 | "V_actual ⊆ V̂ for −1 return sets" (my §13 claim) | red/carry/instances/h4_notweaker_n20.pg (L-RED) | §13 |
 | Lemma S on A_DTL with a later-run deficit | red/carry/instances/lemmaS_viol_n20.pg, lemmaS_Mdrop_n20.pg (L-RED) | §16 |
 | R12 §9 (C-a) as stated; (C-c) first step (L-RED reading) | dtl_proof_c3.pg; cross_h_k1_n10_m16_27.pg | §11c |
-| "Deficit-triggered changes per ideal-stable context ≤ a constant", A_DTL Oink order | h4_def4_oink_n20 (4), h4_def6_oink_n28 (6), h4_def8_oink_n44 (8), h4_def10_oink_n28 (10) | §13b, §13g |
+| "Deficit-triggered changes per ideal-stable context ≤ a constant", A_DTL Oink order | h4_def4_oink_n20 (4), h4_def6_oink_n28 (6), h4_def8_oink_n44 (8), h4_def10_oink_n28 (10), h4_def11_oink_n28 (11) | §13b, §13g |
 | Chain of new straddlers / drivers at a context (L-RED reading R15 §6) | h4_def8_oink_n44 (disjoint drivers) | §13f |
 | (C-rM): (r0, M) pairs never repeat at a context | climbs_1016/a_best_s32 (ideal −1 contexts) | §13g |
 | (C-rM-stable): same at ideal-stable contexts | h4_def9_oink_n28 | §13g |
