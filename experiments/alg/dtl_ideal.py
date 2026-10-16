@@ -238,3 +238,51 @@ def pq_violations(d):
                 if b < a:
                     viol.append((key[0], s1, s2, v, a, b))
     return viol
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Deficit anatomy (GAP-A-M.md §6): for every round whose U != U_hat changes survival, name the straddling tangle(s),
+# the region that consumed part of it, the lower top that re-absorbed the rest, the lost vertices and the pruned ones,
+# and whether the same context was visited before (and how the pruned vertex fared there).
+class Anatomy(Ctx):
+    def __init__(self, *a, **k):
+        super().__init__(*a, **k)
+        self.born = {}          # tangle id -> (search#, top)
+        self.events = []
+
+    def extractTangles(self, top, R):
+        before = len(self.tv)
+        r = super().extractTangles(top, R)
+        for t in range(before, len(self.tv)):
+            self.born[t] = (self.nsearch, top)
+        return r
+
+    def best_vertices(self, V, R, p):
+        key = (p, frozenset(R))
+        prev = list(self.calls.get(key, []))
+        Vin = {v for v in R if self.pr[v] % 2 == p}
+        tl = [t for t in range(len(self.tv)) if alive(self, t, p)]
+        cur, rnd = set(Vin), 0
+        while cur:
+            rnd += 1
+            Ua, regs = actual_union(self, p, cur, R, tl)
+            Uh = ideal_union(self, p, cur, R, tl)
+            sa = survivors(self, p, cur, R, Ua, tl); sh = survivors(self, p, cur, R, Uh, tl)
+            if sa != sh:
+                where = {x: top for top, z in regs for x in z}
+                strad = []
+                for t in tl:
+                    U_t = {w for w, _ in self.tv[t]}
+                    tops = {where.get(w) for w in U_t}
+                    if len(tops) > 1 or (None in tops and tops != {None}):
+                        strad.append((t, self.born.get(t), sorted((w, where.get(w)) for w in U_t)))
+                pruned = sorted(sh - sa)
+                hist = []
+                for (s1, n1, r1, res1) in prev:
+                    hist.append((s1, n1, [i for i, Vr in enumerate(r1) for _ in [0] if all(v in Vr for v in pruned)][-1:]))
+                self.events.append(dict(search=self.nsearch, p=p, R=len(R), round=rnd, pruned=pruned,
+                                        lost=sorted(Uh - Ua), straddles=strad, earlier_visits=hist))
+            if sa == cur:
+                break
+            cur = sa
+        return Ctx.best_vertices(self, V, R, p)
