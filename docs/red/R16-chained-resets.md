@@ -49,3 +49,9 @@ piece-0 staircase. Each parent rise moves the depth-1 recursion under piece 1's 
 makes one new-leader rise (K_child = 1-2) before the next parent rise. A counter needs K_child to grow with n AND a third
 level. The climbs nest2deep seeds 171-174 (two from dtl_searches20_n32, one from nest_nest_s83, one from
 phi_flat_alive_n32) aim at K_child at n = 32. Results will follow in the next section.
+
+## 4. Side datum: disjoint unions do not inflate c_i (12:54Z by date -u)
+experiments/red/union/union.py builds disjoint unions with stacked, interleaved or equal priorities. Stacking k copies of
+phi_idx_flat_n20 gives max c_i = 3 for k = 1..6 (5 searches throughout). Stacking k copies of nest_nest_s81 gives
+3, 3, 5, 5 for k = 1..4. Unions of three different games give 7, not the product 27. The copies' pieces synchronise. This
+is moot since c_i is circular (L-ALG 14), but it shows that unions are not a cheap way to inflate depth-0 contexts.
