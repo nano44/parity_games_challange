@@ -4,7 +4,10 @@ session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, PARKED 15:20Z end of CARRY box, note
 The previous version of this file (successor 2's check) is replaced.
 
 ## 1. Branch, head, distance to trunk
-- Branch `claude/l-red`. Container head before step 0: 5a30e98 = origin/claude/l-red (clean tree).
+- Branch `claude/l-red`. Container head before step 0: 5a30e98 (stale local ref, clean tree); after the fetch,
+  origin/claude/l-red = 6b52858 (predecessor's PARKED notebook), already on trunk, so the trunk merge contains it
+  (`git merge-base --is-ancestor 6b52858 origin/claude/vibrant-johnson-nxvvxo` true). This file pushed as 053255c
+  (fast-forward 6b52858..053255c, VERIFY PASS; Oink smoke NOT RUN: Oink not built yet in this container).
 - Step 0: `git fetch origin && git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` -> merge commit e11de1d
   (trunk at b16716d "RESULTS DE10; NOW: L-ALG end of box, parked").
 - `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 1 ahead (the merge commit), 0
