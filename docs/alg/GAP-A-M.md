@@ -901,6 +901,24 @@ time, unless M grows. Routed to L-RED as an attack target: find a context where 
   contexts, not fresh children reset by the piece-0 staircase. Their total is ≤ (searches) × (pieces) anyway. No
   NESTED deficit compounding observed (the shape that would be exponential). Not excluded either.
 
+### 13h. Parallel vs NESTED deficit runs: L-RED's h4_compound_n44 is nested (14:45Z; Lead 14:51Z by its clock)
+Classification by context identity per piece (Oink order; dtl_deficit.build, read-only on L-RED's file from
+origin/claude/l-red @ c204679, experiments/red/carry/instances/h4_compound_n44.pg; Oink 13 iterations, verified).
+- Player 1's phase after the 2nd dominion, searches 5-13. EVERY depth-0 call at pieces 0-4 is a deficit call while the
+  ideal stays stable (only the deepest pieces turn ideal −1 at the end).
+  - Pieces 0 and 1 stay at ONE context each.
+  - Piece 2 is moved to FRESH contexts by piece 1's DEF changes: C0 (s5-6) → C1 (s7-9) → C2 (s10-11) → C3 (s12).
+  - Inside those, piece 3 visits fresh contexts C0, C1 (s7), C2 (s9), C3 (s10), C4 (s11), and piece 4 visits
+    C0 … C5, all fresh.
+  So a deficit staircase at a fixed parent sets off fresh child contexts that themselves carry deficit changes, three
+  levels deep: NESTED, at small counts. L-RED's parent count is 3, with child runs 2, 1, 0.
+- Contrast: h4_deep_oink_n44 (§13g) is PARALLEL: pieces 0-2 at fixed contexts, each with its own deficit staircase.
+- My measure nested_ctx (distinct deeper contexts with ≥ 1 DEF change, in a phase whose piece 0 has DEF) is 5 on
+  h4_compound_n44 and 4 on my own nested climb (seed 202). Climbs running: seed 203 from h4_compound_n44, seed 202 from
+  h4_deep_oink_n44, both Oink order, n = 44.
+- Status: the nested deficit shape EXISTS on pinned A_DTL (first evidence: L-RED). Whether K_parent × K_child grows
+  with n is the next box's question; at n = 44 the products are tiny (3 × ≤ 2).
+
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
 depth-0 index i in a phase. By §11e, carries at index i ≤ n(n+2) · c_i.
@@ -1042,6 +1060,7 @@ PROVED
 | c_i ≤ searches, so the reduction is circular | trivial | §14 |
 | Lemma S: M non-decreasing; equal-M return set grows; fresh-vs-recurrence criterion; ≤ n(n+1)(n+1) child contexts per staircase | C6; A_DTL under M-cond | §16 |
 | Lemma R: region vector lexicographically monotone in T (carries reset lower regions) | A_DTL | §13b |
+| Threshold statement: a DEF change with equal V_{r0−1} and regions strictly grows some W_t (trivial; lexicographic only) | A_DTL | §13f |
 
 KILLED (FALSE / DEAD), each with its instance
 | Claim | Instance (experiments/alg/instances unless noted) | Where |
@@ -1055,7 +1074,10 @@ KILLED (FALSE / DEAD), each with its instance
 | "V_actual ⊆ V̂ for −1 return sets" (my §13 claim) | red/carry/instances/h4_notweaker_n20.pg (L-RED) | §13 |
 | Lemma S on A_DTL with a later-run deficit | red/carry/instances/lemmaS_viol_n20.pg, lemmaS_Mdrop_n20.pg (L-RED) | §16 |
 | R12 §9 (C-a) as stated; (C-c) first step (L-RED reading) | dtl_proof_c3.pg; cross_h_k1_n10_m16_27.pg | §11c |
-| "Deficit-triggered changes per ideal-stable context ≤ a constant", A_DTL Oink order | h4_def4_oink_n20 (4), h4_def6_oink_n28 (6), h4_def8_oink_n44 (8) | §13b |
+| "Deficit-triggered changes per ideal-stable context ≤ a constant", A_DTL Oink order | h4_def4_oink_n20 (4), h4_def6_oink_n28 (6), h4_def8_oink_n44 (8), h4_def10_oink_n28 (10) | §13b, §13g |
+| Chain of new straddlers / drivers at a context (L-RED reading R15 §6) | h4_def8_oink_n44 (disjoint drivers) | §13f |
+| (C-rM): (r0, M) pairs never repeat at a context | climbs_1016/a_best_s32 (ideal −1 contexts) | §13g |
+| (C-rM-stable): same at ideal-stable contexts | h4_def9_oink_n28 | §13g |
 | §6/§12 counts from the buggy tracer (superseded, conclusions kept or corrected) | tracer fix e41ccfb | §6, §12, §15 |
 
 OPEN: GAP-A via (H1) cut carries, (H2a) alive-top self-reinforcing carries, (H2b) dead-top cap carries (reduces to
