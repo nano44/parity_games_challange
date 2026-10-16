@@ -290,3 +290,4 @@
 - 14:50Z merged l-alg (h4_deep_oink_n44: parallel, not nested).
 - 14:55Z merged l-red 8b84425 (check.sh fixed: Lead ran it 2/2 PASS; both compounding instances re-run in Oink: 13 iterations each, verified).
 - 14:59Z merged l-alg 2307e8f (nested confirmed independently).
+- 15:01Z merged l-alg 5e4db8e (child no reset in h4_compound2x2; 11 DEF at one context).
