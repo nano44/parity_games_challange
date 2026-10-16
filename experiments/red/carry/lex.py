@@ -82,3 +82,11 @@ def score_falls(path):
     mf = max((sum(1 for st in c["steps"] if st["fell"]) for c in ctxs), default=0)
     ms = max((len(c["steps"]) for c in ctxs if any(st["fell"] for st in c["steps"])), default=0)
     return 100000 * mf + 1000 * ms + 10 * o["maxsteps"] + len(d.trace) / 1000.0
+
+
+def score_falls_def(path):
+    """successor 3: >= 2 FALL steps that are DEF steps (ideal unchanged) at one context."""
+    o, ctxs, d = measure(path)
+    mf = max((sum(1 for st in c["steps"] if st["fell"] and st["ideal_same"]) for c in ctxs), default=0)
+    ma = max((sum(1 for st in c["steps"] if st["fell"]) for c in ctxs), default=0)
+    return 100000 * mf + 10000 * ma + 10 * o["maxsteps"] + len(d.trace) / 1000.0
