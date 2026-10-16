@@ -77,7 +77,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 ## Owner questions open
 - Q11 (2026-10-16 02:10Z, CLOSED by D8 06:50Z: option (b), Opus 5.5 until the Fable reset): Fable weekly limit reached; L-ALG and L-RED (DTL proof and attack) paused until 2026-10-21 21:00Z; referees (Fable) also unavailable. Options: (a) wait for the reset (default under D7, Lead recommendation); (b) continue L-ALG/L-RED on Opus 5.5 now (attack lanes below most-capable model, D1; referees still wait); (c) owner adds usage credits (spend, owner only).
 - Q3: DONE by owner 07:53Z (setup script set; applies to sessions started after it; verify on the next new session). Q2, Q4, Q5, Q6, Q7 closed (D4, L13-L17). No blocking owner questions open. Q10 CLOSED 11:12Z (Lead reading): author preprint of "Solving Parity Games, Very Slowly" opened by L-LIT (T17, tvandijk.nl/pdf/2024festschrift.pdf, sha256 8e36c373..); not diffed against the Springer version.
-- Q12 (11:12Z, owner, not blocking): the only remaining route to van Dijk's counter_dtl is to ask the author (outside contact, D1: owner's decision). Options: (a) no contact for now (Lead recommendation: build the author's own p.15 recipe first, L-RED); (b) owner contacts the author; (c) owner authorises a fleet-drafted message for the owner to send.
+- Q12 CLOSED 16:40Z by D11 (owner: "No contact for now"); L30: no contact with the author.
 - Q13 CLOSED 16:39Z by D10 (owner: "I dont mind the repistory is public"); L29: repository stays public.
 
 ## Spend

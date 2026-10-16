@@ -307,3 +307,4 @@
 - 16:30Z merged l-red 32798af: (LEX), (NR) false (Lead re-ran Oink). Tool caveat (r0 padding for stable calls) routed to L-ALG.
 - 16:40Z OWNER-DESK relayed owner: "Give me a status update" (answered from trunk e927f20; Q13 and Q12 shown; owner-desk b665477 merged).
 - 16:43Z owner D10 (Q13): keep repo public; recorded verbatim with Lead reading L29; Q13 closed. Q12 still open.
+- 16:46Z owner D11 (Q12): no contact with van Dijk; recorded verbatim + L30. No owner questions open. Merged l-alg 1173ec6 (§18 synthetic gadgets).

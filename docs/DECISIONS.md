@@ -185,3 +185,10 @@ contacting anyone, announcing or linking the repository anywhere). Consequences:
 means nothing sensitive is ever committed, since every push is public; (2) docs/HUMAN-REVIEW.md being readable in the repo is
 accepted under D10; the Q6 ruling (no external distribution by the fleet) is unchanged; (3) nothing in the repo is a claim to
 anyone outside: results stay labelled as unrefereed where they are.
+
+## D11 (2026-10-16 ~16:40Z, owner via OWNER-DESK, answering Q12): contact with van Dijk
+> No contact for now
+
+Lead reading L30: Q12 option (a). No contact with the author about counter_dtl or anything else; the fleet works from the
+public record (T17) and its own constructions. The p.15 recipe was already built (L-RED R14, d70e99a: no slowdown on A_DTL).
+The question may be put to the owner again only if a later finding makes the author's counterexample decisive.
