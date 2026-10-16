@@ -147,3 +147,12 @@ class K), but no human-readable proof was found (DRUP 63,298 lemmas; case tree 8
 is a width cost from serving priority-2 counts {1,2} together. Three k = 9 runs (B_2(5) >= 10?) continue detached in the
 parked session at no extra spend; their RESULT lines are read later if the container survives. Standard for SAT data
 points: UNSAT by >= 2 independent solvers; no LRAT for now.
+
+## L26 (Lead reading, 2026-10-16 01:20Z): DTL step-4 statement re-frozen for every order datum
+Fleet judgement under L12. After CHECKER C3d/C3e/C3f (claude/checker 4b15364: PASS), docs/alg/DTL-proof.md §0 at
+claude/l-alg e144992 replaces the L24 freeze (ccff864). Theorems D1 and D2 are claimed for EVERY order datum omega (the eight
+implementation choices O1-O8 of docs/alg/C5-orders.md; Oink 8fbf0a7's instance recorded in C5-DTL.md §0), with the pinned
+parser's order- and parity-preserving renumbering of priorities named in step 0 (cost charged in D2(e)). Reason (option ii,
+L-ALG C5-orders.md): consistent with L22's equal-priority clause, no cost to the proved parts, keeps the tangle bound from
+depending on an order accident; L-COMP's second implementation showed counts depend on omega and regions/strategies do not.
+Changes to §0 go through the Lead and CHECKER. Not a result: GAP-C and GAP-A remain open.
