@@ -261,3 +261,4 @@
 - 11:59Z merged l-alg ded46a5 (c_i circular). Told L-RED its cidx fitness is circular; retarget to resets / fresh-with-change.
 - 12:03Z merged l-alg 8707f2c (§15 child resets common).
 - 12:06Z hourly sweep: no overage (seven_day allowed_warning). Lead ctx 367k; L-ALG, L-RED working; L-LIT parked. Owner Q12/Q13 open. No exceptions.
+- 12:08Z WATCHDOG 12:05Z: its own context 615k (>600k, grows ~22k/h; auto-compaction handles it; no restart now). Its $157.69 total understates spend: L-ALG/L-RED cost_usd (1.36/1.08) look per-epoch, not cumulative (measurement caveat, not an overage signal; isUsingOverage false).
