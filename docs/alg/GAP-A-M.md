@@ -806,3 +806,12 @@ vertex of it dies at M).
   So both step types reset children, and an equal-M growth step (a "cheap" step that does not raise M) does so as
   often as an M-rise. For a counter builder: a digit need not spend an M-rise per child reset. For a bound: charging
   resets to M-rises (≤ n + 1 per context) is NOT available.
+- Lemma S on A_DTL (12:43Z; Lead 12:43Z relaying L-RED l-red 677e5d7: 0 violations in 604 fixed-context pairs, 139
+  games). Own check: the actual rounds recorded by dtl_ideal.Ctx (every dtl_* instance plus h4_notweaker_n20), 308
+  consecutive same-context −1 pairs: 0 M-drops and 0 equal-M return sets that fail to grow. That includes dtl_mviol_n20,
+  where (M) itself fails: its drops hit non-leader vertices and leave M and the return set intact. Provability for
+  A_DTL: PROVED only under Theorem M-cond, i.e. when the LATER run has no deficit round (then rounds are monotone and the
+  C6 proof applies verbatim). With a deficit in the later run nothing proved prevents M from dropping. The per-round
+  inclusion V_i ⊆ V̂_i only bounds the actual M by the ideal M, which says nothing about M across runs. So for A_DTL,
+  Lemma S is DATA (0/308 here, 0/604 L-RED) plus PROVED-under-M-cond. A violation would need a deficit (Lemma E's
+  straddle) that prunes a LEADER early, not just a lower vertex.
