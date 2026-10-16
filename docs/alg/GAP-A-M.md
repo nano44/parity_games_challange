@@ -1427,3 +1427,17 @@ child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set
   verified) and c6_replay3_n48.pg (C6: 13 iterations, 34 tangles, (3, 3); Oink 13 iterations, verified). Before this box
   the maximum anywhere was depth 2 (§6.3). Level sequence of the n = 32 phase: 3 1 1 2 0 1 3 2 3 0. Whether the depth
   keeps growing with n is the open measurement; climbs continue.
+
+### 18k. L-RED's (F1) ("at most one fall step per context"; l-red 78469a8, Lead 18:34Z) is not structural (18:55Z)
+- experiments/alg/dtl_twofall.py (in check.sh): two DISJOINT copies of the dtl_lexcounter.py gadget in one context
+  (18 vertices, genuine tangles). Chain {s, s'} → {s, s', σ} → {s, s', σ, σ'}: e0 falls (INF → 1) at the first step, e0'
+  at the second. Two fall steps at one context. Since disjoint components do not interact, the same holds for any number
+  of copies: k fall steps on 9k vertices, with k steal tangles learned one per step.
+- Random synthetic data says little either way: 2 chains with one fall and 0 with two in about 122k random chains
+  (dtl_lexfake.py, genuine and fake tangles, n ≤ 12), and 63 one-fall / 0 two-fall chains in 34,980 chains around the
+  gadget (scratchpad gadfall2.py).
+- Reading: (F1) can hold for A_DTL only through WHEN DTL learns the steal tangles: in the disjoint union, DTL would learn
+  σ and σ' in the SAME search (independent components progress in parallel), giving one fall step. A counter to (F1) on
+  DTL needs a second steal tangle that becomes learnable only AFTER the first fall, i.e. a dependency from the first
+  gadget's fall (or its repair) to the second gadget's steal. That is the attack recipe for L-RED. A proof of (F1) must
+  show that DTL learns all steals that can bite at one context in one search, which is again cross-context information.
