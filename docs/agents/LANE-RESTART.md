@@ -19,3 +19,4 @@ Five questions:
 | 2026-10-15 | L-ALG | session_01WN44zjFXZSqaL5SwsoDn7d | session_012cQPWcEm23KMdMQSvWrULr | 5 | none (re-measured: merge-base 1017502, 0 ahead; 107 behind at its fetch, 112 now after Lead commits; no GAPS rows; T-ALG1 unrouted is correct: deferred by Lead) |
 | 2026-10-15 | L-COMP | session_014bbtNwaVKxFymHpXynjURn | session_01Nd4XCMfDaYHsh1P6XTtRGz | 5 | none (re-measured: merge-base 5ba5d8b; 12 ahead before its 2 commits = 14 now; behind grew with Lead commits; GAPS open table empty) |
 | 2026-10-15 | L-ALG | session_012cQPWcEm23KMdMQSvWrULr | session_01Aoj1NEAPu4ibQ3VbNXaXVY | 5 | none (re-measured: merge-base ed9b87e, 0 ahead before its commit; no GAPS rows; T-ALG1 deferred by Lead) |
+| 2026-10-16 | L-RED | session_017WLo5xfMxRZ4f6n2Su6274 | session_0117Yy21tGGz9s1zzLfBdUKC | 5 | none (re-measured: merge-base 5a30e98, 0 ahead before its commit; no GAPS rows; trap = piped verify, prevented by literal chain) |
