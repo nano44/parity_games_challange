@@ -280,3 +280,4 @@
 - 13:45Z merged l-alg 9632b44: DEF per context 8 at n=44 (Lead re-ran Oink on both n=44 instances).
 - 13:48Z merged l-red e00dcbe (7 DEF at n=28, nested chain).
 - 13:55Z merged l-alg 955411c (chain route dead; antichain instance to L-RED).
+- 13:57Z merged l-red 7b6cd53.
