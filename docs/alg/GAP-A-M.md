@@ -186,7 +186,7 @@ the attractor into X, so equal child sets can come with different D_j. The 10:58
 a PHANTOM, and attractor growth at an unchanged V is a real change. The LEVEL of a transition is the first j whose
 corrected state differs. Counts in this file measured with (R, res, V) at cut pieces carry that error; the corrected
 counts are in §11c. The counting argument above is unchanged in form; only the state it counts changes.
-RE-MEASURED (11:25Z; experiments/alg/dtl_pieces.py e41ccfb + this commit). The old tracer had a bug: it never
+RE-MEASURED (11:24Z; experiments/alg/dtl_pieces.py e41ccfb + this commit). The old tracer had a bug: it never
 restored the depth after a cut's recursion, so every depth-0 piece after the first cut went unrecorded. On every
 experiments/alg/instances/dtl_*.pg, climbs_1016 and 600 random games n ≤ 24 (tc+ not re-run; no generator call in this
 script), there are 640 games:
@@ -627,6 +627,21 @@ original 19 and internal 14 is original 14.
 - What this does NOT show: an exponential run, or a failure of a weaker potential (e.g. record raised within two carries,
   or a lexicographic record over (index, context class)). One flat change costs nothing asymptotically. The n²(n+2)
   bound needs every carry to raise, so (H2b) is again OPEN with no candidate potential.
+
+### 11e. Re-run with the removed-set cut state, and what (H2b) reduces to (11:29Z)
+- dtl_mirror.py with the cut state D_j = R_j \ R_{j+1} (§6), on the §11b data set plus the two new phi_idx instances:
+  354 changes at −1 pieces with an equal context (336 at Dom(prevV) pieces, 18 at cut pieces), and 89 cut removed-set
+  changes counted apart (was 56 with the child-R state). Dead-top cap carries at Dom(prevV) pieces: 286, of which 128
+  stay −1. 127/128 raise the restated (Dom-only) record; the 1 exception is phi_idx_flat_n20 (§11d). Cross-context:
+  124 have no other context at the index, 3 dominated, 1 binding (that same instance). Every §11b/§11c qualitative
+  statement stands.
+- Climb (scratchpad xclimb.py seed 93, n = 20, fitness = restated-Φ_idx violations): 5 flat dead-top carries in one
+  phase out of 6 that stay −1, within 7,804 steps. Flat carries are not rare once the climb selects for them.
+- Reduction (PROVED from Lemma F). In a phase, the number of dead-top (indeed all) carries at Dom(prevV) pieces of index
+  i is ≤ n(n+2) · c_i, where c_i is the number of distinct Dom(prevV) contexts at index i in the phase. Each carry raises
+  the same-context death of a rescued vertex, and deaths lie in {1, …, n+1} ∪ {∞}. So (H2b) follows from a polynomial
+  bound on c_i (the converse is not claimed). That is §6's fresh-context question again. Φ_idx was the attempt to avoid
+  it, and §11d shows it cannot be avoided this way. No new route; (H2b) OPEN.
 
 ## 13. (H4): deficit-triggered changes at fixed contexts, A_DTL (10:47Z; Lead 10:22Z "then (3) deficits")
 Tool: experiments/alg/dtl_deficit.py (61fb52c). At every depth-0 piece of an A_DTL run it also computes the ideal (C6 rule)
