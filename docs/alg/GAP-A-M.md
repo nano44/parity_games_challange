@@ -439,3 +439,35 @@ Dom(prevV) piece must be SELF-REINFORCING (from some round on, an escape of the 
 driver keeps alive), else its top survives at that piece in the learning search, is removed by that piece's Dom, and is
 never learned deeper. APP does not model escapes, so this is no contradiction; it is the shape APP's level drivers must
 have, and if (M1) is proved it becomes an axiom APP must carry (then APP needs a self-reinforcing driver at every level).
+
+## 11. Pruning-driven carries: MIRROR tested, and the class it misses (10:17Z; Lead 10:07Z retarget)
+Question (Lead): a bound on PRUNING-driven carries at −1 pieces, starting from L-RED's MIRROR reading (l-red f954923, R10
+"Outside 2CE"): with no deficit, a carry C (top h, learned in search s after piece i) that changes piece i's pruning in
+s+1 is either impossible (M1) or self-reinforcing (M2). Tool: experiments/alg/dtl_mirror.py, on the IDEAL pruning (C6
+prototype), where MIRROR's no-deficit premise holds by construction. For every change at a −1 piece i between consecutive
+same-player searches (no dominion, equal context): r0 = the first round whose ideal survivors differ; DRIVERS = tangles
+learned in s whose removal undoes the change of round r0 (from the same round-(r0−1) set); h = top(C) (maximum priority).
+DATA (300 random games n ≤ 22, every dtl_* instance, tc+ N ≤ 5; tangle parity taken at birth, see the script):
+| | cut pieces (−1, Q nonempty) | Dom(prevV) pieces (−1, Q empty) |
+| --- | --- | --- |
+| changes | 20 | 69 |
+| drivers with h ALIVE at r0 in s | 7 | 7 |
+| of which h survives round r0 in s (MIRROR's "redundancy" step) | 7 | 7 |
+| of which self-reinforcing (coverage of C's escapes in s's sets below pr(h) fails before h's death in s) | 7 | 7 |
+| drivers with h already PRUNED before r0 (in s and s+1) | 7 | 10 |
+| of which every rescued candidate has priority > pr(h) | 7 | 10 |
+Changes with no single-tangle driver (several new tangles needed together) are not classified here.
+Reading.
+- Alive-top drivers: MIRROR's chain holds on all 14: redundancy (h alive and C's escapes covered ⇒ h survives) never
+  fails, and every such carry is self-reinforcing (M2). MIRROR's (M1) argument is complete for this class modulo the
+  redundancy step, which is a reading: for a singleton tangle {h} it is immediate (h's successors are h and C's escapes);
+  for a larger C it needs C's cycles that avoid h to be rebuilt from tangles that exist at piece i in s, and sub-tangles
+  learned in s itself (11 drivers contain one) are not there yet. Not proved.
+- Dead-top drivers: 17 of the 31 identified drivers act AFTER their top was pruned (R10 interim 1, case (i)); MIRROR's
+  first step ("h is not a candidate at r0 in s, so death_s(h) ≥ r0 + 1") does not apply to them, and nothing in MIRROR
+  constrains them. In the data each of them rescues only candidates of priority above pr(h): the CAP effect (C is lifted
+  into a set of a higher level or into a threshold attractor at t ≥ pr(h), where its vertices let higher candidates through).
+  Partly forced: a carry that acts through the threshold loop below pr(u) and whose top is not yet in the set must have
+  pr(h) < pr(u); a lift into a higher level's Û could in principle rescue a lower candidate, which the data never shows.
+- So the class a bound must handle is: self-reinforcing alive-top carries, PLUS dead-top cap carries. MIRROR handles
+  neither as a bound; it only shows that non-self-reinforcing alive-top carries do not occur.
