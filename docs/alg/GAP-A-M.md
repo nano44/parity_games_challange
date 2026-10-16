@@ -771,6 +771,23 @@ later call into NEW (learned after the earlier call) and OLD.
 - Not tested: whether the NEW straddler is the one that prunes the leader (L-RED's M-drop mechanism). Its region
   bookkeeping per round is in dtl_straddle.py and can be extended.
 
+### 13d. Per-context cap on straddlers: none from tangle combinatorics (13:32Z; Lead 13:31Z (b))
+- DATA, Oink order (dtl_straddle.py; max straddling tangles in one call at one context / max DEF changes at one
+  ideal-stable context): n = 20 (h4_def4_oink_n20): 11 / 4; n = 28 (h4_def6_oink_n28): 7 / 6; n = 36 (climb seed
+  136, |R| = 35): 24 / 6; n = 44 (seed 144, |R| = 38): 9 / 6. So the number of straddlers is NOT what limits the DEF
+  count: 24 straddlers produced only 6 changes. DEF max per context so far: 4, 6, 6, 6 at n = 20, 28, 36, 44 (Oink
+  order; climbs running). The 4 → 6 step is real; whether it keeps growing is open.
+- Reason there is no cap from combinatorics alone (READING, construction-free). A straddler is a tangle with vertices in
+  ≥ 2 regions of one round. Tangles are distinct (vertex set, strategy) pairs. Two regions joined by a layered gadget
+  with two parallel vertices per layer carry 2^k distinct p-dominated cycles, each a candidate tangle meeting both
+  regions. So the POOL of possible straddlers at one context is exponential. Any per-context cap has to come from WHICH
+  tangles DTL extracts: Lemma W gives ≤ 1 per top per search, i.e. ≤ n · (searches visiting the context), which is
+  circular as in §13c. A non-circular (H4) bound must therefore count DEF changes by something other than straddlers:
+  the data says DEF ≪ straddlers.
+- Candidate quantity (DATA only, not yet tested): the region VECTOR at the deficit round. By Lemma R it moves
+  lexicographically, and a DEF change needs a carry that changes a LEADER's survival. A bound would follow from "each
+  carry at a fixed context raises the region of a top that is a current leader". Not stated as a lemma until checked.
+
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
 depth-0 index i in a phase. By §11e, carries at index i ≤ n(n+2) · c_i.
