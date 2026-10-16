@@ -1128,13 +1128,14 @@ KILLED (FALSE / DEAD), each with its instance
 | (LEX) per-context death vector lexicographically increasing, and (NR) ⇒ n(n+3) route (box 4) | lex_viol_oink_n20.pg (L-ALG) and red/carry/instances/lex_viol_inj_n28.pg (L-RED R18), A_DTL, Oink-verified, both orders; synthetic genuine: dtl_lexcounter.py | §18c, §18h, DEAD.md |
 | (NR): a fallen vertex is never again the top changed vertex at that context | red/carry/instances/lex_viol_inj_n28.pg (L-RED R18) | §18j, DEAD.md |
 | (F1) (L-RED): at most one fall step per context | red/carry/instances/f1_twofall_n48.pg (L-RED R19, A_DTL, Oink-verified); synthetic: dtl_twofall.py | §18k, DEAD.md |
+| (F1-DEF): at most one DEF fall step per context | red/carry/instances/f1_twodef_n48.pg (L-RED R20, A_DTL, Oink-verified); synthetic: dtl_twofall.py | §18k, DEAD.md |
 | A per-context potential over the actual state for (H4) | A_DTL: both lex_viol instances (no lexicographic potential over deaths); synthetic: dtl_staterevisit.py (state returns) | §18f, §18j |
 | Per-round monotonicity in T at a fixed input, genuine tangles (synthetic) | dtl_lexcounter.py | §18c |
 | Any potential on the actual per-context state for DEF changes (synthetic, genuine tangles) | dtl_staterevisit.py (pure DEF cycle) | §18f |
 | "Fallers are strictly below the top riser in priority" (box 4 DATA pattern) | lex_viol_oink_n20.pg | §18h |
 | (CM): child M never drops across a parent DEF step into an ideal-stable child context | cm_viol_oink_n28.pg (L-ALG) and red/carry/instances/cm_mdrop_both_n28.pg (L-RED R17), A_DTL, Oink-verified, both orders | §18i, DEAD.md |
 
-DATA candidates left after box 4 (A_DTL): (F1-DEF) at most one DEF fall step per context (§18k: 0 contexts with ≥ 2);
+DATA candidates left after box 4 (A_DTL; every per-context (H4) POTENTIAL candidate is dead):
 (U-MONO_DTL) same-input union monotone in T (701/701 Oink, 661/661 stable, §18h); (LEX-R) first differing round grows (775/775, 755/755); "no DEF-down step at an ideal-stable context" (0/181).
 OPEN: GAP-A via (H1) cut carries, (H2a) alive-top self-reinforcing carries, (H2b) dead-top cap carries (reduces to
 c_i, circular), (H3) catch-ups and recursion, (H4) deficits on A_DTL (per context: 4 → 8 over n = 20 → 44, Oink
@@ -1452,3 +1453,20 @@ child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set
   ≤ about 2n(n+2) + 1 DEF changes per context. Same caveat as 18k: in dtl_twofall.py BOTH falls are DEF steps (checked: the ideal
   (C6) result is the same stable 10-vertex set in all three states), so (F1-DEF) fails synthetically and a proof must use
   DTL's learning order.
+- (F1-DEF) DEAD (Lead 19:02Z): experiments/red/carry/instances/f1_twodef_n48.pg (L-RED R20; Oink 11 iterations,
+  verified), two DEF fall steps at one context in the two components of a union. Every per-context (H4) candidate stated
+  in this box is dead; what remains at a fixed context is DATA only ((U-MONO_DTL), (LEX-R), no full-state revisit).
+
+### 18l. Measurements for the next box: searches per phase is the headline; replay depth is weak (19:10Z)
+- Replay depth (§6's replays2) is NOT padding-invariant (L-RED R20 §3, Lead 19:08Z): padding replay4_n32 with inert
+  priority-0 sources keeps 13 searches but moves the depth between 1 and 4, because a priority-0 source becomes its own
+  depth-0 piece and shifts the indexing. My c6_replay3_n48.pg was climbed from a priority-0-padded seed, so its depth 3 is
+  suspect for the same reason; c6_replay3_n32.pg (unpadded) has depth 3, L-RED's replay4_n32.pg depth 4 (searches: 11 and
+  13 iterations in total). A padding-invariant variant would count levels only over pieces that change at least once in
+  the phase (trivial, never-changing pieces skipped); not implemented.
+- Nest products (dtl_nestclimb.py NEST_FIT=prod, Oink order; final, all stopped 19:09Z): n = 20: 4 (K = [3, 2],
+  3 child contexts, 9 searches in the phase); n = 28: 6 (K = [3, 3], 3 child contexts, 12 searches); n = 36: 2 (weak
+  padded seed, stopped early); n = 44: 6 (K = [2, 3, 1], 11 searches). No growth with n; every product is capped by the
+  phase length.
+- Searches per phase, A_DTL, Oink order (dtl_searchclimb.py, fitness = max searches in one phase, then iterations;
+  random-game starts, equal step budgets; scratchpad search/, started 19:09Z): numbers in the box-end ledger.
