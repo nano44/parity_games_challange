@@ -218,3 +218,4 @@
 - 09:03Z hourly sweep: no overage (seven_day warning). Lead 778k (snapshot in place). L-ALG 125k working; L-RED 123k working (climb 18 searches n=30; carry2 variant). No exceptions.
 - 09:40Z merged l-alg c8ae9fc (Lemma N sketch), l-red de8a431 (R10 2CE CARRY reduction), owner-desk d49f545 (log; never merged before, all questions closed). Routed: L-RED's "bounded triggered deficits per context damps every 2CE counter" to L-ALG; Lemma N's uncovered cases (cut pieces; Dom > consumed union) to L-RED as attack surface.
 - 09:12Z merged l-alg 121a4b4 (GAP-C (r1) proved in per-call form), l-red 9455c8f (R10 data, carry3 attempt). WATCHDOG 09:03Z: Lead context 778k (over 600k threshold; auto-compaction handles it), no overage, total $140.28 (Lead+WATCHDOG).
+- 09:22Z merged l-alg 7e25f03. Lead decision: L-ALG next = fresh-context climbs, then (O) for C6 (agreed). Routed (O) test to L-RED.
