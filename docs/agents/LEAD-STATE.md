@@ -220,3 +220,4 @@
 - 09:12Z merged l-alg 121a4b4 (GAP-C (r1) proved in per-call form), l-red 9455c8f (R10 data, carry3 attempt). WATCHDOG 09:03Z: Lead context 778k (over 600k threshold; auto-compaction handles it), no overage, total $140.28 (Lead+WATCHDOG).
 - 09:22Z merged l-alg 7e25f03. Lead decision: L-ALG next = fresh-context climbs, then (O) for C6 (agreed). Routed (O) test to L-RED.
 - 09:27Z merged l-red da3bdd9+5dc5707 (R11: (r2) fails on dtl_mviol_n20; Lead re-ran r2_check.py on the sha1-identical instance: PASS). Routed to L-ALG. L-RED next: (O) gate test (approved).
+- 09:34Z merged l-alg 8c46a98 (Lemma D2; (r2) dead-route status). Routed D2(b) to L-RED: (O) at fixed set impossible for T_last; target = set-level lift.
