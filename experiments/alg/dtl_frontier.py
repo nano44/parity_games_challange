@@ -34,14 +34,14 @@ def mk(base):
             return r
     return F
 def analyse(d, out, name=''):
-    for a, b in zip(d.trace, d.trace[1:]):
+    for k, (a, b) in enumerate(zip(d.trace, d.trace[1:])):
         if a["p"] != b["p"] or b["dom"] != a["dom"]: continue
         pa, pb = a["pieces"], b["pieces"]
         i = 0
         while i < min(len(pa), len(pb)) and pa[i][:3] == pb[i][:3]: i += 1
         if i >= min(len(pa), len(pb)) or pa[i][0] != pb[i][0]: continue
         if pa[i][1] != -1: continue                      # (F) is about -1 / cut pieces
-        sa = d.trace.index(a) + 1
+        sa = k + 1                                        # search number of a (trace entries can be equal dicts)
         drivers = [t for t in pb[i][3] if d.born.get(t, (None,))[0] == sa]
         f = next((j for j in range(i + 1, len(pa)) if pa[j][1] == 1), None)
         for t in drivers:
