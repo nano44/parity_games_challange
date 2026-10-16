@@ -210,3 +210,19 @@ after the root moved, in a climbed instance).
 global resource, e.g. "a level-j replay needs a tangle usable in the new context that was usable in NO earlier level-j
 context of the phase", with that resource bounded polynomially. What would kill it (for L-RED): a family whose replay depth
 grows with n. Climbs on C6 with fitness = replay depth ≫ replays ≫ searches are running (started 08:43Z).
+
+## 7. Consequence for GAP-C: step (r1) of the (α)-exclusion route (PROVED, 09:04Z)
+DTL-proof.md §2.3's route for excluding the straddling-tangle shape (α) needs (r1): "the only source of non-monotonicity of
+the pruning across searches is a straddle", per call on the same region. Statement proved here: let s, s+1 be consecutive
+searches of the same player with no dominion solved in s (so the same G', T_s ⊆ T_{s+1}, no deletion), and consider the
+first best_vertices call of each (context R = G'). If in no round of the call in s+1 a stored tangle has the shape of
+Lemma E ((a) and (b)), then V_i(s) ⊆ V_i(s+1) for every round i, the call in s+1 is stable whenever the call in s is, with
+V*_s ⊆ V*_{s+1}, and the regions satisfy Reg_s ⊆ Reg_{s+1}.
+Proof. Induction over the rounds of the call in s+1. V_0 satisfies (P*). If round i has (P*) and U ≠ Û, Lemma E produces a
+tangle of the excluded shape; so U = Û at round i, the round is ideal, and (P*) passes to round i+1 (Lemma P*-inv). So no
+round of s+1 has a deficit, and Theorem M-cond gives V_i(s) ⊆ V_i(s+1). If the call in s is stable, V_i(s+1) ⊇ V*_s ≠ ∅ for
+every i, so the call in s+1 is stable and V*_{s+1} ⊇ V*_s. Regions: Reg_s = U(V*_s, T_s) ⊆ Û(V*_s, T_s) (Lemma 2.2) ⊆
+Û(V*_{s+1}, T_{s+1}) (Lemma 2.1) = U(V*_{s+1}, T_{s+1}) = Reg_{s+1} (no deficit). □
+Not covered: a dominion solved in between (R shrinks and tangles are deleted); the regress step (r2); and the fact that the
+excluded shape DOES occur in actual runs (§4b), so the route needs (r2) to show that the earliest such tangle cannot have
+it.

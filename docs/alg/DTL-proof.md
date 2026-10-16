@@ -465,6 +465,13 @@ shrinking by solved dominions in between); (r2) that the regress is well-founded
 pruning change must have been created strictly before t', not merely be different). If (r1) and (r2) hold, (α) never
 occurs and, with K6 and the (β') analysis, every search's first stable set is productive; (C-b) would then remain only
 for searches that start with the -1 branch.
+STATUS (r1), 2026-10-16 09:04Z (third successor, produced on Opus 5.5): PROVED in the per-call, same-region form, for
+consecutive same-player searches with NO dominion in between (docs/alg/GAP-A-M.md §7): if in no round of the later call a
+stored tangle has the shape of Lemma E there ((a) one of its vertices consumed by a region computed before the region of
+its last escape, (b) the unconsumed rest has a cycle whose maximum is a surviving top of lower priority), then
+V*_s ⊆ V*_{s+1} and Reg_s ⊆ Reg_{s+1}. The hypothesis is narrower than "no tangle straddles", so the statement is
+stronger than (r1) asked. Still open: the case with solved dominions in between (R shrinks, tangles deleted), and (r2).
+The PLAIN monotonicity that (r1) was meant to support is FALSE (GAP-A-M.md §4b): Lemma E's shape occurs.
 Evidence for (r1) (experiments/alg/dtl_monotone.py): on 4,000 random games (n 5..14) plus tc+ N = 4..10 and c3, c4, the
 stable set of the first best_vertices call of a search (∅ when that call returns -1) is contained in that of the next
 search of the same player, restricted to still-unsolved vertices, in every case (0 violations); the first stable set of a
