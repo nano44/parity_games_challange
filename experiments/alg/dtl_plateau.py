@@ -72,6 +72,8 @@ if __name__ == "__main__":
                     print(f"{name} |R|={len(key[1])} s{s1}->s{s2} r0={r0} M {M1}->{M2} dir={dirn} U{'=' if Ueq else '!='} "
                           f"sumd {sd:+d} lexdesc {lexd} priolex {plex}  rose {[(v, d.pr[d.idx.index(v)], D1[d.idx.index(v)], D2[d.idx.index(v)]) for v in rose]} "
                           f"fell {[(v, d.pr[d.idx.index(v)], D1[d.idx.index(v)], D2[d.idx.index(v)]) for v in fell]}")
+            nfall = sum(1 for r in runs if r[9])   # (F1)/(F1-DEF): steps of this context with some death falling
+            if runs: tot[f"ctx_fallsteps_{min(nfall, 3)}"] = tot.get(f"ctx_fallsteps_{min(nfall, 3)}", 0) + 1
             if runs: tot[f"reset_level_{lvl_max}"] = tot.get(f"reset_level_{lvl_max}", 0) + 1
             if runs: inc("ctx_with_def"); tot["max_def_ctx"] = max(tot.get("max_def_ctx", 0), len(runs))
     print(os.environ.get("DTL_ORDER", "stable"), dict(sorted(tot.items(), key=lambda kv: str(kv[0]))))

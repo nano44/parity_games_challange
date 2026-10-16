@@ -1127,14 +1127,15 @@ KILLED (FALSE / DEAD), each with its instance
 | §6/§12 counts from the buggy tracer (superseded, conclusions kept or corrected) | tracer fix e41ccfb | §6, §12, §15 |
 | (LEX) per-context death vector lexicographically increasing, and (NR) ⇒ n(n+3) route (box 4) | lex_viol_oink_n20.pg (L-ALG) and red/carry/instances/lex_viol_inj_n28.pg (L-RED R18), A_DTL, Oink-verified, both orders; synthetic genuine: dtl_lexcounter.py | §18c, §18h, DEAD.md |
 | (NR): a fallen vertex is never again the top changed vertex at that context | red/carry/instances/lex_viol_inj_n28.pg (L-RED R18) | §18j, DEAD.md |
+| (F1) (L-RED): at most one fall step per context | red/carry/instances/f1_twofall_n48.pg (L-RED R19, A_DTL, Oink-verified); synthetic: dtl_twofall.py | §18k, DEAD.md |
 | A per-context potential over the actual state for (H4) | A_DTL: both lex_viol instances (no lexicographic potential over deaths); synthetic: dtl_staterevisit.py (state returns) | §18f, §18j |
 | Per-round monotonicity in T at a fixed input, genuine tangles (synthetic) | dtl_lexcounter.py | §18c |
 | Any potential on the actual per-context state for DEF changes (synthetic, genuine tangles) | dtl_staterevisit.py (pure DEF cycle) | §18f |
 | "Fallers are strictly below the top riser in priority" (box 4 DATA pattern) | lex_viol_oink_n20.pg | §18h |
 | (CM): child M never drops across a parent DEF step into an ideal-stable child context | cm_viol_oink_n28.pg (L-ALG) and red/carry/instances/cm_mdrop_both_n28.pg (L-RED R17), A_DTL, Oink-verified, both orders | §18i, DEAD.md |
 
-DATA candidates left after box 4 (A_DTL): (U-MONO_DTL) same-input union monotone in T (701/701 Oink, 661/661 stable,
-§18h); (LEX-R) first differing round grows (775/775, 755/755); "no DEF-down step at an ideal-stable context" (0/181).
+DATA candidates left after box 4 (A_DTL): (F1-DEF) at most one DEF fall step per context (§18k: 0 contexts with ≥ 2);
+(U-MONO_DTL) same-input union monotone in T (701/701 Oink, 661/661 stable, §18h); (LEX-R) first differing round grows (775/775, 755/755); "no DEF-down step at an ideal-stable context" (0/181).
 OPEN: GAP-A via (H1) cut carries, (H2a) alive-top self-reinforcing carries, (H2b) dead-top cap carries (reduces to
 c_i, circular), (H3) catch-ups and recursion, (H4) deficits on A_DTL (per context: 4 → 8 over n = 20 → 44, Oink
 order). Core: whether fresh, resetting child contexts (§15, §16) or deficit staircases (§13b) can compound across
@@ -1441,3 +1442,13 @@ child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set
   DTL needs a second steal tangle that becomes learnable only AFTER the first fall, i.e. a dependency from the first
   gadget's fall (or its repair) to the second gadget's steal. That is the attack recipe for L-RED. A proof of (F1) must
   show that DTL learns all steals that can bite at one context in one search, which is again cross-context information.
+- (F1) DEAD on actual A_DTL (Lead 18:58Z): experiments/red/carry/instances/f1_twofall_n48.pg (L-RED R19, l-red 6b384b2; the
+  disjoint union of lex_viol_oink_n20 and lex_viol_inj_n28 with injective priorities; Oink 8 iterations, verified): two
+  fall steps at one context in both order data; one is a DEF step (ideal unchanged), the other an LRN step (ideal moved).
+- (F1-DEF), the surviving DATA candidate: "at a fixed context, at most ONE DEF step (ideal unchanged) lowers any death".
+  dtl_plateau.py (ctx_fallsteps; corpus C plus R17-R19 files), ideal-stable DEF pairs: Oink order 43 contexts with 0 fall
+  steps, 47 with 1, 0 with ≥ 2; stable order 39 / 46 / 0. All pairs (ideal may move): Oink 352 / 47 / 1 (the R19
+  instance), stable 348 / 46 / 1. Value if true: at a fixed context, DEF changes other than one are pointwise rises, so
+  ≤ about 2n(n+2) + 1 DEF changes per context. Same caveat as 18k: in dtl_twofall.py BOTH falls are DEF steps (checked: the ideal
+  (C6) result is the same stable 10-vertex set in all three states), so (F1-DEF) fails synthetically and a proof must use
+  DTL's learning order.
