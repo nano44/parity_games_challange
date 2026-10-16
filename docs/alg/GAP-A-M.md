@@ -1449,5 +1449,6 @@ child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set
   dtl_plateau.py (ctx_fallsteps; corpus C plus R17-R19 files), ideal-stable DEF pairs: Oink order 43 contexts with 0 fall
   steps, 47 with 1, 0 with ≥ 2; stable order 39 / 46 / 0. All pairs (ideal may move): Oink 352 / 47 / 1 (the R19
   instance), stable 348 / 46 / 1. Value if true: at a fixed context, DEF changes other than one are pointwise rises, so
-  ≤ about 2n(n+2) + 1 DEF changes per context. Same caveat as 18k: dtl_twofall.py makes two DEF-type falls synthetically
-  (the ideal there is unchanged on the copy that falls), so a proof must use DTL's learning order.
+  ≤ about 2n(n+2) + 1 DEF changes per context. Same caveat as 18k: in dtl_twofall.py BOTH falls are DEF steps (checked: the ideal
+  (C6) result is the same stable 10-vertex set in all three states), so (F1-DEF) fails synthetically and a proof must use
+  DTL's learning order.
