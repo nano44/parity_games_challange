@@ -1409,7 +1409,7 @@ child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set
   instance with nested resets of depth ≥ 3. Note that a depth-2 nested reset already exists implicitly in
   h4_nested7_oink_n44 on A_DTL (fresh contexts at pieces 2-5 grow with depth), but there the children did not reset; the
   C6 question is whether fresh AND resetting contexts compound.
-- Measured at once (17:40Z), experiments/alg/dtl_nestreset.py (C6, stable order): over the corpus (experiments/alg/
+- Measured at once (17:33Z), experiments/alg/dtl_nestreset.py (C6, stable order): over the corpus (experiments/alg/
   instances, climbs_1016, red/carry/instances; 518 transitions) the nested-reset depth per transition is 0 in 480, 1 in
   15, 2 in 12, 3 in 11 (16 games, all climbed: dtl_replay2deep_n32, dtl_replay4_n32, flat_dead_carries_*, nest_nest_*,
   nest_seed*, phi_flat_alive_n32); 400 random games add no depth ≥ 2. But the measure is CHEAP to game: a climb on it
