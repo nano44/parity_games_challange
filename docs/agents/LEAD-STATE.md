@@ -289,3 +289,4 @@
 - 14:47Z l-red c204679 NOT merged: it breaks experiments/red/check.sh (line 69 'python | head -1' under pipefail -> exit 120, 3/3 runs), so trunk's gate fails. Local unpushed merge dropped (never pushed); L-RED asked to fix. CLAUDE.md no-pipe rule now names push.sh (two lane slips today: L-ALG 14:27Z, L-RED c204679). h4_compound_n44 (first compounding instance, Oink 13 iterations verified by Lead) lands with L-RED's fix.
 - 14:50Z merged l-alg (h4_deep_oink_n44: parallel, not nested).
 - 14:55Z merged l-red 8b84425 (check.sh fixed: Lead ran it 2/2 PASS; both compounding instances re-run in Oink: 13 iterations each, verified).
+- 14:59Z merged l-alg 2307e8f (nested confirmed independently).
