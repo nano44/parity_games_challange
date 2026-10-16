@@ -240,3 +240,4 @@
 - 10:41Z merged l-red cdbece1, l-alg (Phi false, Phi_idx). L-RED k=2 dead-top build tests Phi_idx.
 - 10:44Z merged l-alg cb72d30 (Phi_idx mechanisms false; L-ALG to (H4)).
 - 10:50Z merged l-red 976cf2b (R13). Near miss routed to L-ALG for (H2a).
+- 10:53Z merged l-alg db9ed5e (H4 data).
