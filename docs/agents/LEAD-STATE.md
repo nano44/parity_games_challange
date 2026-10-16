@@ -253,3 +253,4 @@
 - 11:29Z merged l-alg 4f489cf (§6 re-measured).
 - 11:34Z merged l-alg 4ddc90f ((H2b) reduces to c_i). Asked L-ALG for a C7 (potential-enforcing variant) feasibility note vs attacking c_i.
 - 11:39Z merged l-red 17db195 (independent confirmation of the Phi_idx counterexample).
+- 11:42Z merged l-alg 38f10e4; RESULTS DE9 (Phi, Phi_idx proof-route potentials dead). L-ALG main slot = c_i. Tool note (sufficient-singleton driver test) routed to L-RED.
