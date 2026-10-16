@@ -1104,6 +1104,9 @@ PROVED
 | Lemma S: M non-decreasing; equal-M return set grows; fresh-vs-recurrence criterion; ≤ n(n+1)(n+1) child contexts per staircase | C6; A_DTL under M-cond | §16 |
 | Lemma R: region vector lexicographically monotone in T (carries reset lower regions) | A_DTL | §13b |
 | Threshold statement: a DEF change with equal V_{r0−1} and regions strictly grows some W_t (trivial; lexicographic only) | A_DTL | §13f |
+| Region split: Attr_{q−1}(U) = Attr_{q−1}(A_q ∪ V^{<q}); level-q survival depends on lower levels only through the set V^{<q}, monotonically (box 4) | A_DTL | §18a |
+| U equal at r0 ⇒ V_r0 grows (LEX-R in that case) | A_DTL | §18b |
+| Extra tops X ⊆ Y (same T) hurt only vertices of their own priority or lower (box 4) | A_DTL | §18h |
 
 KILLED (FALSE / DEAD), each with its instance
 | Claim | Instance (experiments/alg/instances unless noted) | Where |
@@ -1122,7 +1125,14 @@ KILLED (FALSE / DEAD), each with its instance
 | (C-rM): (r0, M) pairs never repeat at a context | climbs_1016/a_best_s32 (ideal −1 contexts) | §13g |
 | (C-rM-stable): same at ideal-stable contexts | h4_def9_oink_n28 | §13g |
 | §6/§12 counts from the buggy tracer (superseded, conclusions kept or corrected) | tracer fix e41ccfb | §6, §12, §15 |
+| (LEX) per-context death vector lexicographically increasing, and (NR) ⇒ n(n+3) route (box 4) | lex_viol_oink_n20.pg (A_DTL, Oink-verified, both orders); synthetic genuine: dtl_lexcounter.py | §18c, §18h |
+| Per-round monotonicity in T at a fixed input, genuine tangles (synthetic) | dtl_lexcounter.py | §18c |
+| Any potential on the actual per-context state for DEF changes (synthetic, genuine tangles) | dtl_staterevisit.py (pure DEF cycle) | §18f |
+| "Fallers are strictly below the top riser in priority" (box 4 DATA pattern) | lex_viol_oink_n20.pg | §18h |
+| (CM): child M never drops across a parent DEF step into an ideal-stable child context | cm_viol_oink_n28.pg (A_DTL, Oink-verified, both orders) | §18i |
 
+DATA candidates left after box 4 (A_DTL): (U-MONO_DTL) same-input union monotone in T (701/701 Oink, 661/661 stable,
+§18h); (LEX-R) first differing round grows (775/775, 755/755); "no DEF-down step at an ideal-stable context" (0/181).
 OPEN: GAP-A via (H1) cut carries, (H2a) alive-top self-reinforcing carries, (H2b) dead-top cap carries (reduces to
 c_i, circular), (H3) catch-ups and recursion, (H4) deficits on A_DTL (per context: 4 → 8 over n = 20 → 44, Oink
 order). Core: whether fresh, resetting child contexts (§15, §16) or deficit staircases (§13b) can compound across
