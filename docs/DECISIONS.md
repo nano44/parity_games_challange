@@ -100,3 +100,50 @@ Verbatim: > a
 to put the budget there. (c) No change.")
 Lead reading L19: confirms L18; L-LOWER continues. The number of algorithm lanes is the Lead's call: a second lane L-SI (strategy
 improvement design loop toward M4/M4-R; L-LIT RANKING rank 4) starts now, alongside L-ALG. No spend ceiling set; D1 cost policy applies.
+
+## D7 (2026-10-15 ~12:35Z, owner in the Lead session, answering Q9): spend
+Verbatim: > a
+(Q9 option (a): "Continue at the current rate. We pause automatically if the cap is hit and stop at once on overage.")
+Lead reading L20: the interim freeze of 12:05Z is lifted; the D1 cap (5 working lanes) and the D1 overage rule (stop the fleet
+and tell the owner) still apply. Deferred items resume: L-RED (F1 fix, then S7, S5/S6), second referee on the RAR transfer lemma
+(REFEREE), then L-LIT novelty check.
+Lead reading L21 (2026-10-15 12:58Z): L-RED's Random-Facet transfer (docs/red/R2-RAR.md; both referees signed, REFEREE-2 995cfd3,
+REFEREE 42f11c6, subject to a one-token fix in case (3)) is recorded, once the CHECKER passes, as M3-type "a tighter analysis of a
+known algorithm" (as L9): original Random-Facet needs e^Omega(sqrt n) expected switches on parity games of size
+Theta(n^{3/2} log^3 n). L-LIT T13 (l-lit c962d80): NEW as a published statement, low technical novelty (a faithful transfer of
+FHZ 1410.7530 Thm 6.3; the encoding is the contribution; Thm 6.3 credited). Hansen's 2012 thesis unopened: matters only for an
+external "first" claim (owner).
+Correction to L21 (2026-10-15 13:40Z, after CHECKER C2 FAIL, checker ce07713): "both referees signed" was wrong. REFEREE-2's
+R2-TL (995cfd3) is a first-referee read, not a signature (as the Lead's own 12:12Z brief asked). Signatures at 13:40Z: REFEREE
+only (42f11c6/5ed56c5, condition met at l-red 49ae306). REFEREE-2 asked to sign at 49ae306 with gap list. The entry text follows
+CHECKER C2's suggested wording (scaling, start sigma_{B_0}, N = |V|+|E| form, strict tie convention, gaps G-TL-1..3 + AUSO/ties).
+L-LIT T13's line "signed by REFEREE-2 (995cfd3)" carries the same error (L-LIT file; corrected on its next task).
+
+## L22 (Lead reading, 2026-10-15 16:02Z): DTL pinning after CHECKER C3
+Fleet judgement under L12 (no owner question). After C3 (claude/checker 5b924e7):
+- The DTL candidate is pinned as `oink --dtl --no-single --no-wcwc --no-loops` at Oink 8fbf0a7, trace = 0 (C3 option (i) for D-1). DTL itself must handle self-loops; all step-2 evidence is re-run with --no-loops.
+- The theorem must hold for every order of equal-priority vertices (removes the unstable std::sort dependency, C3 D-4).
+- The analysed object is the pseudocode docs/alg/candidates/C5-DTL.md, updated to the pinned run (CHECK_UNIQUE on, trace 0). The C++ correspondence is a separate signed item (C3 E-2).
+- Prose proofs are step-4 input. An M4 claim still needs Lean (TARGET §5.4, C3 E-1).
+
+## L23 (Lead reading, 2026-10-15 17:12Z): SI line parked after the obstruction map
+Fleet judgement under L12. L-SI ended its box early (context 720k) with an obstruction map (l-si 0d48da2). Every memoryless
+single-switch rule tried ranks by a quantity that gates, pads, priorities or numbering steer. No L-SI successor now: fleet
+spend goes to DTL (gauntlet step 4) while it is the lead candidate. Queued: S5/S6 under adversarial numbering (L-RED, after
+DTL); R2 transfer lemma (REFEREE-2). Revisit when DTL is settled either way.
+
+## L24 (Lead reading, 2026-10-15 17:50Z): DTL step-4 statement frozen
+Fleet judgement under L12. After CHECKER C3b (claude/checker cf3e0d2: §0 PASS, all C3 items fixed or explicitly deferred),
+docs/alg/DTL-proof.md §0 at claude/l-alg ccff864 is frozen as the statement for DTL's gauntlet step 4 (Theorems D1, D2 on
+A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, trace 0, every equal-priority order; analysed object
+C5-DTL.md; the C++ correspondence §7 to be signed separately, C3b N-1). Changes to §0 go through the Lead and CHECKER.
+This is not a TARGET.md change and not a result; GAP-C and GAP-A remain open.
+
+## L25 (Lead reading, 2026-10-15 19:26Z): T-L2 theory goal parked
+Fleet judgement under L12. L-LOWER's T-L2 theory box (claude/l-lower aa8995e, docs/lower/L2-theory.md) met the first
+clause of its kill criterion: B_2(4) >= 7 is certified (68-game core, UNSAT by four solvers) and localised (28-game core in
+class K), but no human-readable proof was found (DRUP 63,298 lemmas; case tree 8,561 partitions at level 4); obstruction in
+§3b. Parked. Data kept: B_2(5) >= 9 (UNSAT by CaDiCaL and Glucose); |P_2| = 1 costs exactly 2n-2 at n = 5; the extra gate
+is a width cost from serving priority-2 counts {1,2} together. Three k = 9 runs (B_2(5) >= 10?) continue detached in the
+parked session at no extra spend; their RESULT lines are read later if the container survives. Standard for SAT data
+points: UNSAT by >= 2 independent solvers; no LRAT for now.
