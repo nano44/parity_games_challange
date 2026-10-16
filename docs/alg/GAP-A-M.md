@@ -1419,3 +1419,11 @@ child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set
   reset FOLLOWED BY re-climbing work (further changes of the child in its new context before the parent moves again),
   i.e. §6's replays. Corrected target: replay depth (§6.3: max depth 2, 5 replays, nest_nest_s81 / dtl_replay2deep_n32),
   whose growth with n is the question; on C6 the climbs of §6.3 plateaued (notebook, successor 3).
+- Replay-depth climbs on C6 (experiments/alg/dtl_replayclimb.py, fitness = replay depth ≫ replays ≫ longest phase;
+  stable order; seeds from dtl_replay2deep_n32, which scores depth 1 under the corrected tracer): replay depth 3 reached
+  at n = 32 (seed 601, step 2,671) and at n = 48 (seed 602, dtl_replay2deep_n32 padded by 16 priority-0 source vertices,
+  step 330). Committed: experiments/alg/instances/c6_replay3_n32.pg (C6: 11 iterations, 26 tangles, 4 replays, depth 3,
+  correct with verified strategies against Zielonka; A_DTL in stable order has the same (4, 3); pinned Oink 11 iterations,
+  verified) and c6_replay3_n48.pg (C6: 13 iterations, 34 tangles, (3, 3); Oink 13 iterations, verified). Before this box
+  the maximum anywhere was depth 2 (§6.3). Level sequence of the n = 32 phase: 3 1 1 2 0 1 3 2 3 0. Whether the depth
+  keeps growing with n is the open measurement; climbs continue.
