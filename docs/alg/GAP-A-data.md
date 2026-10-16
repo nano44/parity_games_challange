@@ -64,7 +64,7 @@ F4 (DEAD) (C-new): "every new tangle at a top contains a vertex that no earlier 
    and even the RESTART (first tangle of a top in a search) can be covered: dtl_restart8_n20 (11 restart violations, 1 strict
    shrink), dtl_restart7_n16 (9, all caused by a dominion: the search-2 tangles are the search-1 tangles minus the solved
    vertex; the deletion charge of DTL-proof.md §3(a) covers these).
-F5 (DEAD 2026-10-16 10:20Z, third successor on Opus 5.5: instances/dtl_mviol_n20.pg, Oink trace, distances 8 → 7 at R = G'; docs/alg/GAP-A-M.md §4b) First-call distance monotone. At the first best_vertices call of a search (R = G', the same across
+F5 (DEAD 2026-10-16 08:29Z, third successor on Opus 5.5: instances/dtl_mviol_n20.pg, Oink trace, distances 8 → 7 at R = G'; docs/alg/GAP-A-M.md §4b) First-call distance monotone. At the first best_vertices call of a search (R = G', the same across
    same-player searches without a dominion) the pruning round in which a vertex is pruned never decreases as T grows (tc+ N = 6:
    105 increases, 0 decreases over 12 pairs). But it is NOT a potential: on tc+ N = 6 searches 1–5 have identical distance
    profiles while each learns new tangles (the progress is in the later pieces).

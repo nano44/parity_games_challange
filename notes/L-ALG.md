@@ -7,14 +7,23 @@
   check.sh); PROVED: ideal union Û monotone, U ⊆ Û, Theorem M-cond ((M) holds when the later run has no deficit round),
   Lemma E (the only deficit = straddling tangle whose rest has a LOWER surviving cycle maximum). Deficits with changed
   survival occur in actual DTL runs (climbs; instances/dtl_deficit_n20.pg). OPEN: an actual (M) violation (climbs
-  dtl_mclimb.py running in the scratchpad, logs mc2/log_*.txt) or a DTL invariant excluding it. Lead messaged 08:55Z.
+  dtl_mclimb.py running in the scratchpad, logs mc2/log_*.txt) or a DTL invariant excluding it. Lead messaged ~08:16Z.
 - Tools: dtl_ideal.py (set-level rounds, U vs Û, Ctx recorder + pq_violations), dtl_pyref.py (copy of L-COMP's dtl_py.py),
   dtl_mclimb.py, dtl_m_synth.py. Python, no Oink build needed (Oink built by setup_oink.sh for cross-checks).
 - Trap avoided: never `pkill -f PATTERN` (kills the calling shell); kill by PID.
-- 10:20Z: (M) FAILS in an actual A_DTL run (instances/dtl_mviol_n20.pg; Oink trace 3-odd → 4-odd, first-call distances
-  orig1/orig16 8 → 7, orig19 9 → 8 at R = G'); dtl_mviol_check.py in check.sh. Lead told 10:25Z. Climbs stopped.
-- SLIP 09:45Z: pushed b93114a with `verify.sh | tail && git push` (piped; output showed VERIFY PASS). Reported to the Lead.
+- 08:29Z: (M) FAILS in an actual A_DTL run (instances/dtl_mviol_n20.pg; Oink trace 3-odd → 4-odd, first-call distances
+  orig1/orig16 8 → 7, orig19 9 → 8 at R = G'); dtl_mviol_check.py in check.sh. Lead told ~08:30Z. Climbs stopped.
+- SLIP 08:26Z: pushed b93114a with `verify.sh | tail && git push` (piped; output showed VERIFY PASS). Reported to the Lead.
   Push ONLY as the bare `scripts/verify.sh && git push -u origin claude/l-alg`.
+
+- (2) state (08:50Z): GAP-A-M.md §6. PROVED counting N_j ≤ K·E_j (product) given DATA "contexts change only through
+  results" (0 NEST/FRESH); obstruction = REPLAYS (level j re-advancing in a new epoch); measured: 1 replay (depth 1) in
+  718 games, tc+ is a sweep (0 replays). C6 (ideal pruning) written: docs/alg/candidates/C6-DTLhat.md, prototype
+  dtl_c6proto.py correct on 1,530 games. Climbs on C6 replay depth: scratchpad nestclimb.py, logs nest/log4*.txt.
+- Scripts this session: dtl_ideal.py, dtl_mclimb.py, dtl_m_synth.py, dtl_mviol_check.py, dtl_c6proto.py, dtl_pieces.py.
+- TRAP (bit me 08:41Z): `ps | grep [x]yz | xargs kill` in a command whose text contains xyz kills the calling shell (exit
+  144), same as pkill -f. List PIDs in one call, `kill PID...` in a separate call.
+- TRAP (08:40Z): wrote message/doc timestamps without reading the clock (10:25Z for 08:30Z). Always `date -u` first.
 
 ## Dead ends (third successor)
 - (M) / Claims P, Q / F5 at a fixed context: DEAD for A_DTL. Obstruction: straddle-deficit (GAP-A-M.md Lemma E); killing

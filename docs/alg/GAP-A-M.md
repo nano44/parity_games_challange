@@ -6,7 +6,7 @@ shrink. Status words: PROVED (argument written out here, unrefereed) / SKETCH / 
 in the sense of CLAUDE.md (no referee, no Lean).
 
 ## Summary
-- (M) is FALSE for A_DTL (section 4b, 10:25Z): in an actual run of the pinned Oink binary (20 vertices,
+- (M) is FALSE for A_DTL (section 4b, 08:29Z): in an actual run of the pinned Oink binary (20 vertices,
   experiments/alg/instances/dtl_mviol_n20.pg) the first best_vertices call of two consecutive Odd searches has the SAME
   context R = G' (no dominion, no deletion in between, Odd's tangle set grows by 3) and three pruning distances DECREASE
   (orig1, orig16: 8 → 7; orig19: 9 → 8), read off Oink's own `-t -t` trace. So Claim P, GAP-A-data F5 and (M) are DEAD.
@@ -26,7 +26,7 @@ in the sense of CLAUDE.md (no referee, no Lean).
   runs with deficit rounds in which the code prunes a vertex the ideal keeps, including from a random seed
   (experiments/alg/instances/dtl_deficit_n20.pg: Odd's phase, R = all 20 vertices, vertex 10 pruned by the code and kept by
   the ideal; stable order ω; Oink solves it, verified, 21 tangles, 5 iterations); seeded continuations reach 10 such rounds per
-  run. A violation of (M) needs the same context visited EARLIER without the stealing tangle: found 10:20Z (section 4b).
+  run. A violation of (M) needs the same context visited EARLIER without the stealing tangle: found 08:29Z (section 4b).
 
 ## 1. Set semantics of one pruning round (PROVED, reading of dtl.cpp 643-776)
 Fix p, R, the alive p-tangles T (tpr ≠ −1, parity p, all vertices unsolved; a tangle with a solved vertex never fires,
@@ -152,3 +152,43 @@ reached. Lemma E and Theorem M-cond stand as PROVED statements; (M) itself is DE
   unconditionally (Lemma 2.1). It is a different algorithm from the frozen A_DTL; noted as a design option only (Lead/owner
   decide; §0 is frozen, L26).
 - No budget for piece-k changes follows from (M) alone; target (2) is unaffected by the repair above.
+
+## 6. Target (2): a global budget for piece changes, or why none follows (from 08:40Z)
+Setting: one phase (player p, no dominion, so G' and the alive tangle set only grow), searches s = 1, 2, ...; at depth 0,
+search s is a sequence of pieces j = 0, 1, ... with context R_j(s), result res_j(s) ∈ {stable, −1, cut} with its V
+(stable V* or the −1 return set), and removed set D_j(s); R_{j+1} = R_j \ D_j. For a transition s → s+1, its LEVEL is the
+first j where (R_j, res_j, V_j) differ, or ∗ if all depth-0 pieces agree (progress inside a cut's recursion or in sptl).
+6.1 Facts.
+- (DATA, 0 exceptions) Contexts change only through results: at the level of every transition the two contexts are EQUAL
+  (DTL 57 and C6 55 transitions with a depth-0 level on 600 random games n ≤ 24, every instance in experiments/alg/instances
+  and tc+ N ≤ 5; experiments/alg/dtl_pieces.py). Equal (R_{j−1}, res, V) with a grown D_{j−1} (Dom or cut attractor grown by new
+  tangles) would break this; it never happened. Not proved.
+- (PROVED for C6 by Lemma 2.1; for A_DTL only under Theorem M-cond) At the level j of a transition the context is the same
+  (by the DATA line), so the profile of piece j does not decrease and changes raise Σ distances ≤ n(n+1): at most
+  K := n(n+1) + 1 transitions of level j while pieces < j keep their results (one EPOCH of level j).
+- Counting (PROVED from the two lines above): with N_j := number of transitions of level j in the phase and E_j := number of
+  level-j epochs = 1 + Σ_{i<j} N_i, N_j ≤ K·E_j, so N_j ≤ K(K+1)^j and the phase has at most (K+1)^L depth-0 transitions,
+  L = the number of depth-0 pieces (≤ n), with the same structure recursively inside every cut (∗ transitions).
+6.2 The precise obstruction. The product comes only from REPLAYS: transitions of level j in an epoch other than the first
+level-j epoch in which level j changed (some level i < j changed in between). With replays bounded, N_j ≤ K + (replays at
+level j) and the phase has O(L·K + replays) transitions. Nothing proved bounds replays, for a concrete reason: when a level
+i < j changes, R_j becomes a context not comparable to the old one (the −1 return set is re-cut, GAP-A-data F6/F7), and the
+tangles learned in the old level-j epoch have escapes that were forgiven there (in the old D_{<j}) and are uncovered in the
+new context, so they do not fire there (R9 §4(1)): piece j restarts with the stored tangles that ARE usable in the new
+context, and how many level-j changes remain is not controlled by anything monotone. In A_DTL there is a second reset device
+on top of this, at a fixed context (section 4b). Every global quantity tried so far is dead (GAP-A-data §5, F11 candidates
+(a)-(c), P1; and here (M)/F5).
+6.3 Measured replay structure (experiments/alg/dtl_pieces.py; replay depth = 1 + depth of the opening change when
+that change is itself a replay; a k-digit counter has depth k − 1).
+| run | transition levels per phase (∗ = deeper) | replays | replay depth |
+| --- | --- | --- | --- |
+| tc+ N = 4, 5, 6 | 0 2 1 0 / 0 3 2 1 0 / 0 4 3 2 1 0 (and the same after the phase break) | 0 | 0 |
+| dtl_searches20_n32 | ∗ 0 1 0 0 1 ∗ ∗ 0 ∗ ∗ 0 ∗ 0, then ∗ ∗ 0 | 1 | 1 |
+| the other 717 games: 600 random (n ≤ 24), every file in experiments/alg/instances, tc N ≤ 6, tc+ N ≤ 5, counter_* | — | 0 | 0 |
+tc+ is a one-pass SWEEP (each piece changes once, deepest first) and has no replay at all; its 2N + 2 searches are the
+sweep, not a counter. Over these 718 games (A_DTL and C6 give the same histogram) exactly ONE replay occurs, of depth 1 (level 1 re-advancing
+after the root moved, in a climbed instance).
+6.4 What would close GAP-A along this route (open; for the proof lane): a lemma charging every replay at level j to a
+global resource, e.g. "a level-j replay needs a tangle usable in the new context that was usable in NO earlier level-j
+context of the phase", with that resource bounded polynomially. What would kill it (for L-RED): a family whose replay depth
+grows with n. Climbs on C6 with fitness = replay depth ≫ replays ≫ searches are running (started 08:43Z).
