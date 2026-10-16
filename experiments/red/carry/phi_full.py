@@ -128,6 +128,104 @@ def ctx_counts(d):
     return out
 
 
+def replay_blocks(d):
+    """Lead 12:04Z / L-ALG GAP-A-M 14-15 target: chained resets. Per phase, F = first-difference depth-0 index of each
+    consecutive search pair (pieces compared by (context, kind, V); context = the call's R; identical depth-0 pieces =
+    a change deeper than every depth-0 index, never a level of its own). A BLOCK at level i = a
+    transition with first difference i followed by the transitions with first difference > i, up to the next one <= i.
+    Returns (score, longest phase, detail): score = max over (phase, i) with >= 2 blocks at i of sum over blocks of
+    (deeper changes in the block - 1)^+. A K x K two-level counter scores about K(K - 1)."""
+    best, longest, det = 0, 0, None
+    phases = []; cur = []
+    for si, sr in enumerate(d.searches):
+        if cur and (d.searches[si - 1]["player"] != sr["player"] or d.searches[si - 1]["dominions"]):
+            phases.append(cur); cur = []
+        cur.append(si)
+    if cur: phases.append(cur)
+    def sig(si):
+        d0 = [pc for pc in d.searches[si]["pieces"] if pc["depth"] == 0]
+        return [(d.calls.get((si, j), (None,))[0], pc["kind"], frozenset(pc.get("V") or ())) for j, pc in enumerate(d0)]
+    for ph in phases:
+        longest = max(longest, len(ph))
+        F = []
+        for a, b in zip(ph, ph[1:]):
+            A, B = sig(a), sig(b); j = 0
+            while j < min(len(A), len(B)) and A[j] == B[j]: j += 1
+            if A == B: j = 10 ** 6          # depth-0 pieces identical: the change is deeper (inside a cut's recursion)
+            F.append(j)
+        for i in set(F) - {10 ** 6}:
+            blocks = []; k = 0
+            while k < len(F):
+                if F[k] == i:
+                    c = 0; k += 1
+                    while k < len(F) and F[k] > i: c += 1; k += 1
+                    blocks.append(c)
+                else: k += 1
+            if len(blocks) >= 2:
+                sc = sum(max(0, c - 1) for c in blocks)
+                if sc > best: best, det = sc, (ph[0], i, blocks, F)
+    return best, longest, det
+
+
+def lemma_s(d):
+    """L-ALG GAP-A-M 16 Lemma S (PROVED for C6), tested on A_DTL: at a fixed context R, Dom(prevV) piece index j, -1 in
+    consecutive searches of one phase: (S1) the round count M (rounds until empty) never decreases; (S2) at equal M the
+    return set only grows; (S3) when M rises, the return set equals the round-(M'-1) survivors (the new leaders; automatic
+    for -1, kept as a consistency check). Returns a list of violations (search pair, j, kind, details)."""
+    out = []; d.lemma_s_pairs = 0
+    for si in range(1, len(d.searches)):
+        a, b = d.searches[si - 1], d.searches[si]
+        if a["player"] != b["player"] or a["dominions"]: continue
+        da = [pc for pc in a["pieces"] if pc["depth"] == 0]; db = [pc for pc in b["pieces"] if pc["depth"] == 0]
+        for j in range(min(len(da), len(db))):
+            ca, cb = d.calls.get((si - 1, j)), d.calls.get((si, j))
+            if not ca or not cb or ca[0] != cb[0] or ca[3] != -1 or cb[3] != -1: continue
+            if da[j]["kind"] != "domfirst" or db[j]["kind"] != "domfirst": continue
+            Ma, Mb = len(ca[2]) - 1, len(cb[2]) - 1; d.lemma_s_pairs += 1
+            Va, Vb = ca[2][-2], cb[2][-2]
+            if Mb < Ma: out.append((si - 1, si, j, "S1_M_decreases", Ma, Mb, sorted(d.idx[v] for v in Va), sorted(d.idx[v] for v in Vb)))
+            elif Mb == Ma and not Va <= Vb: out.append((si - 1, si, j, "S2_return_set_not_growing", Ma, Mb, sorted(d.idx[v] for v in Va), sorted(d.idx[v] for v in Vb)))
+    return out
+
+
+def staircases(d):
+    """L-ALG GAP-A-M 16 (a)+(b) measure on A_DTL. A staircase = the -1 Dom(prevV) calls at one (phase, index j, context R)
+    over consecutive searches. For each, the M sequence, the M-rises bringing NEW leaders (return set never seen before in
+    this staircase), and for each such rise the number of changes at index j+1 (first difference j+1 or deeper) before
+    the next change at <= j. Returns a list of dicts."""
+    out = []; ph0 = 0
+    for si in range(len(d.searches)):
+        if si and (d.searches[si - 1]["player"] != d.searches[si]["player"] or d.searches[si - 1]["dominions"]): ph0 = si
+        d.searches[si]["_ph"] = ph0
+    st = {}
+    for (si, j), c in sorted(d.calls.items()):
+        d0 = [pc for pc in d.searches[si]["pieces"] if pc["depth"] == 0]
+        if j < len(d0) and d0[j]["kind"] == "domfirst" and c[3] == -1:
+            st.setdefault((d.searches[si]["_ph"], j, c[0]), []).append((si, len(c[2]) - 1, frozenset(c[2][-2])))
+    for (ph, j, R), seq in st.items():
+        if len(seq) < 2: continue
+        seen = {seq[0][2]}; rises = []
+        for (sa, Ma, Va), (sb, Mb, Vb) in zip(seq, seq[1:]):
+            if sb != sa + 1: continue
+            if Mb > Ma and Vb not in seen: rises.append(sb)
+            seen.add(Vb)
+        out.append(dict(phase=ph, j=j, nR=len(R), M=[m for _, m, _ in seq], searches=[s for s, _, _ in seq], new_rises=rises))
+    return out
+
+
+def nest2(d):
+    """k=2 counter score (Lead 12:21Z target): max over parent staircases P (phase, j) of
+    (#new-leader M-rises of P) x (#child staircases in the same phase at an index > j, each in its own context, with >= 1
+    new-leader M-rise). A K x K two-level staircase counter scores about K^2."""
+    sts = staircases(d); best = (0, None)
+    for P in sts:
+        if len(P["new_rises"]) < 1: continue
+        kids = [C for C in sts if C["phase"] == P["phase"] and C["j"] > P["j"] and C["new_rises"]]
+        sc = len(P["new_rises"]) * len(kids)
+        if sc > best[0]: best = (sc, (P["j"], P["M"], P["new_rises"], [(C["j"], C["nR"], C["M"], C["new_rises"]) for C in kids]))
+    return best
+
+
 def run(path):
     g = rd.ff.pg.read(path)
     from stdsort import oink_order
