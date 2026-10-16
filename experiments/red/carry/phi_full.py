@@ -130,7 +130,8 @@ def ctx_counts(d):
 
 def replay_blocks(d):
     """Lead 12:04Z / L-ALG GAP-A-M 14-15 target: chained resets. Per phase, F = first-difference depth-0 index of each
-    consecutive search pair (pieces compared by (context, kind, V); context = the call's R). A BLOCK at level i = a
+    consecutive search pair (pieces compared by (context, kind, V); context = the call's R; identical depth-0 pieces =
+    a change deeper than every depth-0 index, never a level of its own). A BLOCK at level i = a
     transition with first difference i followed by the transitions with first difference > i, up to the next one <= i.
     Returns (score, longest phase, detail): score = max over (phase, i) with >= 2 blocks at i of sum over blocks of
     (deeper changes in the block - 1)^+. A K x K two-level counter scores about K(K - 1)."""
@@ -150,8 +151,9 @@ def replay_blocks(d):
         for a, b in zip(ph, ph[1:]):
             A, B = sig(a), sig(b); j = 0
             while j < min(len(A), len(B)) and A[j] == B[j]: j += 1
+            if A == B: j = 10 ** 6          # depth-0 pieces identical: the change is deeper (inside a cut's recursion)
             F.append(j)
-        for i in set(F):
+        for i in set(F) - {10 ** 6}:
             blocks = []; k = 0
             while k < len(F):
                 if F[k] == i:
