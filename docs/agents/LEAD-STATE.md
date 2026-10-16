@@ -301,3 +301,4 @@
 - 16:02Z L-ALG succ. 4 handover 5/5, GO.
 - 16:04Z L-RED succ. 3 handover 5/5, GO.
 - 16:06Z WATCHDOG 16:03Z: Lead ctx 610k (>600k; automatic compaction handles the Lead, state lives in NOW/LEAD-STATE); new lanes 130k/133k. Its $176.75 omits the parked sessions (L-ALG old $73.6, L-RED old $59.4, L-LIT succ.), so day total is roughly $310+.
+- 16:07Z hourly sweep: no overage (seven_day allowed_warning). Lead 610k $167.3; new lanes measured by WATCHDOG 16:03Z (running, ~130k). Both got GO 16:01/16:03Z. No exceptions.
