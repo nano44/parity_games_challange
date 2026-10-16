@@ -84,3 +84,28 @@ a stripped copy of carry2.py, file kept). `python3 experiments/red/carry/show.py
 (piece 2, seed sA) is followed at once by a STABLE piece whose V* holds the frontier slow top. That piece learns the slow
 tangle ({a1,p1_1,p2_1} in search 0, {a2,p1_2,p2_2} in search 1) BEFORE the fast cut (piece 4, seed sB) runs. With no gate,
 both levels advance together: 4 iterations, Oink-consistent (the tracer is exact against Oink, R9).
+
+## Why the gate module dies: the support obstruction at P1 (READING, unrefereed; L-RED ~09:40Z; one case OPEN)
+DATA: carry3 2 2 (instances/carry3_2_2.pg). In search 0, P1 learns {k,m,o,q2,tau2} at tau2. Its only escape is sA (q2 ->
+sA keeps tau2 dead in piece 0). In search 1, C_A eats the whole module through it (show.py search 1, piece 1). A climb
+seeded with this instance (iters fitness, 15k steps) reaches 9 Even searches at n = 47 with no structure; discarded.
+General shape. Every gate (stealer, lifting tangle, their supports) is a set of tops that are ALIVE in P1 in every search
+of a slow state and PRUNED in piece 0 (piece 0 is a -1 piece; a top in its V* or argmax is removed by its Dom).
+Write H for the highest such top and E_0 = X before C_A (piece 0's Dom), E_A = C_A's attractor. Steps:
+ (i) What revives H between piece 0 and P1 is forgiveness of a vertex of E_0 or E_A, or a change of region partition. When
+     piece 0's argmax top has the lowest priority, E_0 lies in every piece-0 round's union, so E_0 forgives nothing new.
+     A partition change (the LIFT, R9 f6) cannot revive the HIGHEST top: its own support is threshold-attracted at its
+     own priority level, which forgives it in piece 0 as well. So H's piece-0 blocker e is in E_A.
+ (ii) Every vertex of E_A is attracted in piece 0's threshold attractor by threshold tA: C_A's attractor, tangles
+     included, is reproduced in R_0 once its seed is (E_0 lies in Z). So H survives piece 0 if pr(H) > tA. Hence
+     pr(H) <= tA.
+ (iii) If H's region closes in P1, its tangle's escapes are outside R_{P1} (H is the highest top, so nothing above it is
+     consumed). They are in E_0 or E_A, and one of them (the blocker e) is in E_A. In the next search, e is popped in
+     C_A, every escape is covered, and the vertices have priority <= pr(H) <= tA. C_A eats H's tangle, so the module loses
+     its top after one search. That is what carry3 does.
+ (iv) OPEN case: H is forgiven-type in P1 (its successor is threshold-attracted through a lower region with a low cap,
+     never in a region). Then the support passes to lower tops L whose tangles escape into H (inert in C_A). Each such
+     tangle is LIFTED into H's region in the next search's pruning (its escape H is popped there with the rest covered),
+     which closes H's region. I could only push the closure up one intermediate top per search (the lift cascade), so a
+     module with d intermediate tops seems to last about d searches. If that held in general, a persistent gate would
+     cost about one vertex per search it survives, which damps the 2CE counter to linear. Unproved.
