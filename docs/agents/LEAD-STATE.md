@@ -267,3 +267,4 @@
 - 12:24Z merged l-alg b41ee5a, l-red replay_blocks.
 - 12:27Z merged l-alg df6d01a (§13 restated; error confined).
 - 12:42Z merged l-red 677e5d7.
+- 12:46Z merged l-alg c0aaa02.
