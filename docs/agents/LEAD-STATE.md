@@ -209,3 +209,4 @@
 - 08:00Z D8 (owner): switch to Opus 5.5 until Fable reset. L27 recorded. Next: spawn Opus successors for L-ALG and L-RED; restore hourly sweeps.
 - 08:02Z Spawned Opus successors L-ALG session_01BDELabbGbT2QYY2NoRCY8A and L-RED session_01PxvcUhsSEhfjURzmBDBeoN (D8). Sweeps back to hourly (:02).
 - 08:19Z L-ALG: Claim P/Q FALSE for arbitrary tangle sets (9-vertex synthetic shape: straddled remainder re-absorbed at lower level); real runs U = ideal union on 53k rounds. Split: L-RED realise the shape in a DTL run (priority); L-ALG find the DTL-reachability invariant excluding it.
+- 08:27Z Third pipe slip (L-ALG b93114a, after L-RED twice and the Lead). Mechanical fix: scripts/push.sh (verify then push current branch, no pipe); CLAUDE.md rule changed to 'Push only with scripts/push.sh'. Lanes told.
