@@ -1,7 +1,7 @@
 # L-RED notebook (independent adversary). Successor session_01PxvcUhsSEhfjURzmBDBeoN from 2026-10-16 08:05Z (my clock), produced on Opus 5.5 (owner D8, Lead reading L27)
 Previous: session_0117Yy21tGGz9s1zzLfBdUKC (Fable; paused by the weekly limit ~01:23Z, last push 0bedda5 R9 v4).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
-(session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/verify.sh && git push -u origin claude/l-red`.
+(session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh` (CLAUDE.md; never pipe verify).
 Status: WORKING (CARRY box: Lead go 08:12Z, box 8 h to ~16:10Z Lead clock; interim every ~2 h). The predecessor's
 "WORKING (DTL flip-flop box)" status and its scratchpad climbs were stale at handover (scratchpad lost with its container).
 
@@ -44,21 +44,24 @@ Status: WORKING (CARRY box: Lead go 08:12Z, box 8 h to ~16:10Z Lead clock; inter
 - R15 docs/red/R15-H4.md: (H4) attack. FINDING: "V_actual ⊆ V̂" (GAP-A-M 13 data line) fails for -1 return sets
   (h4_notweaker_n20; per-round inclusion holds, actual empties a round earlier); h4_disjoint_n20 (disjoint targets).
 - R16 docs/red/R16-chained-resets.md: replay_blocks / staircases / nest2deep / lemma_s; dtl_searches15_n24 is context
-  toggling; dtl_searches20_n32 is a k=2 skeleton (4 x 4, K_child = 1); Lemma S 604/604 on A_DTL.
+  toggling; dtl_searches20_n32 is a k=2 skeleton (4 x 4, K_child = 1); Lemma S 604/604 without deficit; section 5:
+  Lemma S FAILS on A_DTL under deficit (lemmaS_viol_n20: return set shrinks at equal M; lemmaS_Mdrop_n20: M drops).
+- R15 sections 4-10: 2 then 7 DEF at one ideal-stable context (h4_def2ctx_n20, h4_def7_n28); order labels (all my
+  instances identical in stable and Oink order); nested-chain reading dead at n = 44; compounding fitness (block form);
+  scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
-2026-10-16 CARRY box (Opus 5.5; box to ~16:10Z). State 12:50Z: Phi_idx FALSE (L-ALG 11d, confirmed R13). c_i is circular
-(L-ALG 14), so the target is chained resets (Lead 12:04Z / 12:21Z): a depth-0 staircase whose new-leader M-rises each move
-a child (at depth >= 1, inside a cut) to a fresh context where it runs its own staircase. Measures: phi_full.staircases,
-nest2deep (dtl_searches20_n32 = 16, the only nonzero beyond 1). Lemma S on A_DTL: 0/604; a violation needs a deficit that
-drops a LEADER (L-ALG c0aaa02); lemmas fitness rewards leader drops. Next: read the climbs (nest2deep 171-174, lemmas
-181-183, h4 132), then the final report (DONE/FINDINGS/NEEDS) before ~16:10Z.
+2026-10-16 CARRY box ended ~16:10Z (Opus 5.5). State: Phi_idx FALSE (L-ALG 11d, confirmed R13); c_i circular; target =
+chained resets / COMPOUNDING (Lead 13:46Z): a deficit (or reset) sequence at one context that makes a deeper piece or the
+next context run its own sequence again. Tool: dtl_search --fitness h4prod (block form, Oink order via DTL_ORDER=oink,
+LALG_DIR = a checkout of claude/l-alg). Per-context DEF counts grow slowly (Oink order, L-ALG + mine: n = 20: 4,
+28: 9, 36: 6, 44: 8), so (H4) has no constant per-context bound, and (C-rM-stable) is dead (L-ALG h4_def9_oink_n28).
+Next if resumed: compounding climbs from h4_def9_oink_n28 / h4_def8_oink_n44 (best block score so far 0), then r0-dip
+runs (2+ dips at one ideal-stable context; r0dips fitness counts all same-context changes, DEF filter not applied).
 
 ## IN FLIGHT
-- Scratchpad (this container, lost with it): climbs nd_s171-174 (nest2deep, to ~14:05Z), ls_s181-183 (lemmas, to ~14:00Z),
-  h4_s132 (to ~12:57Z). Finished: pc_s111-117 phicap (no hit), cx_s121-124 cidx (stopped, circular), rp/n2 (stopped);
-  under .../909dbf12-.../scratchpad/climb/. L-ALG branch read through a detached worktree <scratch>/lalg (stale; fetch
-  single files with git show origin/claude/l-alg:PATH).
+- None after this box (scratchpad climbs die with the container). Last climbs: hb_s231/232/261/262 (h4prod).
+  L-ALG branch read through a detached worktree <scratch>/lalg (git -C <scratch>/lalg checkout --detach origin/claude/l-alg).
 
 ## NEEDS
 None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-order invariant).
@@ -142,6 +145,14 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
   order, chain 10 = 8 and counter_odftl 3 = 9 tangles when Oink is built, and the older pins). README.md lists them.
 
 ## Traps and conventions
+- SLIP 2026-10-16 14:33Z (Opus 5.5): ran `scripts/push.sh 2>&1 | tail -8` for c204679. push.sh gates internally, and its
+  output showed VERIFY PASS before the push, so the gate held. But no pipe on a push call, ever: push.sh as its own
+  call, then read the summary.
+- Verify FAILED transiently in experiments/red/check.sh (14:30Z, 14:42Z). ROOT CAUSE (found 14:45Z): check.sh runs under
+  set -euo pipefail, and the pins used `out=$(python3 ... | head -1)`. When the tracer prints more than one line, head
+  exits, Python's later write gets EPIPE, Python exits 120, and pipefail plus set -e kill the check. Timing-dependent,
+  so it is worse under load. Fixed by using `| sed -n 1p` (it reads all of its input) in all 15 pins. Never `| head` in
+  a pipefail script.
 - SLIP (2026-10-16 ~01:00Z my clock, this session): the push of 6a60655 was issued as `scripts/verify.sh 2>&1 | tail -6 &&
   git push`, a PIPE: the gate's exit code was replaced by tail's. The printed summary was VERIFY PASS (all steps), so the
   pushed commit did pass, but the chain was wrong, exactly the predecessor's slip. Rule restated: the push command is the
@@ -337,6 +348,14 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
   "DTL attack" table and verdict (read 15:05Z).
 
 ## Dead ends
+- 2026-10-16 (Opus 5.5) van Dijk section 6 item 7 recipe against A_DTL (R14): neutral, collapse, or faster in every one of 5
+  readings on tc+ N (N = 2..8) plus a lure on tc N. Obstruction: a stable V is p-closed in R, so a good path only moves
+  death rounds; a reachable small dominion is never pruned (found in iteration 1). Instances: experiments/red/distract/.
+- 2026-10-16 nested-straddler-chain reading (R15 sections 6, 8): DEAD. h4_def8_oink_n44's phase tangles have 43
+  incomparable and 20 crossing pairs (not laminar); L-ALG 13f: straddlers never a chain beyond 2.
+- 2026-10-16 fitness artefacts: cidx (c_i <= searches, circular; L-ALG 14); product compounding (2 then 3 sequential DEF
+  scored 6; replaced by blocks, R15 section 9); disjoint unions do not inflate c_i (R16 section 4).
+- 2026-10-16 (C-rM-stable) (L-ALG 13g): killed by L-ALG itself (h4_def9_oink_n28, (r0, M) repeats); my crm climbs stopped.
 - 2026-10-16 CARRY (Opus 5.5): carry2 (stealer sig above the cuts) DEAD: sig's high cap pulls piece 0 into one region, piece 0
   stable, 1 search (carry2 2 3). carry3 (deficit gate, L-ALG synthetic shape) DEAD as built: tau2's support closes into
   {k,m,o,q2,tau2} with only escape sA and the slow cut eats the module from search 1 (carry/instances/carry3_2_2.pg). Climbs

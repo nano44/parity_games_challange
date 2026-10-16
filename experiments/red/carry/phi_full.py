@@ -257,6 +257,27 @@ def nest2deep(d):
     return best
 
 
+def r0_runs(d):
+    """L-ALG GAP-A-M 13f candidate (r0 of successive DEF changes at one context climbs, at most one dip per run), measured
+    over ALL same-context changes at a depth-0 index (DEF and LRN; the DEF filter needs the ideal rule, see dtl_deficit).
+    Per (phase, index j, context R) with consecutive searches whose rounds differ: r0 = first differing round (1-based).
+    Returns a list of (phase, j, |R|, searches, r0 sequence, #dips)."""
+    out = []; ph0 = 0; st = {}
+    for si in range(len(d.searches)):
+        if si and (d.searches[si - 1]["player"] != d.searches[si]["player"] or d.searches[si - 1]["dominions"]): ph0 = si
+        for (s2, j), c in d.calls.items():
+            if s2 == si: st.setdefault((ph0, j, c[0]), []).append((si, c[2]))
+    for (ph, j, R), seq in st.items():
+        seq.sort(key=lambda x: x[0]); r0s = []; ss = []
+        for (sa, ra), (sb, rb) in zip(seq, seq[1:]):
+            if sb != sa + 1 or ra == rb: continue
+            pick = lambda L, r: L[r] if r < len(L) else frozenset()
+            r0s.append(next(r for r in range(1, max(len(ra), len(rb)) + 1) if pick(ra, r) != pick(rb, r))); ss.append(sb)
+        if len(r0s) >= 2:
+            out.append((ph, j, len(R), ss, r0s, sum(1 for a, b in zip(r0s, r0s[1:]) if b < a)))
+    return out
+
+
 def run(path):
     g = rd.ff.pg.read(path)
     from stdsort import oink_order
