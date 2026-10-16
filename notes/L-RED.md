@@ -1,7 +1,8 @@
-# L-RED notebook (independent adversary). LANE-RESTART handoff written 2026-10-15 18:35Z (my clock; Lead stamps run ~30 min ahead)
+# L-RED notebook (independent adversary). Successor session_0117Yy21tGGz9s1zzLfBdUKC from 2026-10-16 00:05Z (my clock; the Lead's stamps run ~8 min ahead of `date -u` in this container)
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/verify.sh && git push -u origin claude/l-red`.
-Status: PARKED. No background runs, no monitors, no timed wakes. Last commit on claude/l-red before this file: 58f4f27.
+Status: WORKING (DTL flip-flop box, Lead go 00:25Z, box to ~06:25Z Lead clock). Background: dtl_search.py climbs in the
+scratchpad (climb/*.log; fitness excess) — scratchpad only, lost with the container.
 
 ## DONE (all merged by the Lead unless noted)
 - R1 docs/red/R1-MSF.md: S2a MSF KILLED (gated Bland counter 2^N - 1; Gate Lemma: gates relabel the first-difference level).
@@ -25,8 +26,14 @@ Status: PARKED. No background runs, no monitors, no timed wakes. Last commit on 
   newrecur correction (1 and 7 cases, W-suppressed first extractions, not determinacy breaks).
 
 ## Resume point
-PARKED after the LANE-RESTART handoff (18:40Z my clock). Nothing in flight. A successor starts from "Open targets for a
-successor" above after reading docs/NOW.md and the Lead's brief; every R-file is listed in the DONE section.
+2026-10-16 DTL flip-flop box (R9, docs/red/R9-DTL-flipflop.md): mechanism read off the instrumented tracer, Claims P/Q
+(0 violations everywhere), F2 correction (per top VERTEX <= 6 on every instance; "31" was per priority), the tree bound and
+the four-part counter requirement (R9 section 4). Next step if resumed: build the two-level reset+replay gadget of R9
+section 4 by hand with dtl_flipflop.py (a .pg file, trace, iterate), or prove Claim P. Climb lessons: every fitness keyed
+on the trace priority (perhead, restarts, maxrestarts, osc) is gamed by equal-priority towers; iters by singleton
+self-loop chains; excess (first version) by dominion searches; use the Python-scored fitnesses (rep, excess) which key on
+the top VERTEX and subtract dominions.
+- R8 (previous box) resume text: PARKED after the LANE-RESTART handoff (18:40Z my clock). Every R-file is listed in DONE.
 
 ## IN FLIGHT
 None.
@@ -76,6 +83,16 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
    Debug build also prints "attracted v by p (via w | forced | via tangle t)" at trace >= 3 and "duplicate tangle" at >= 1.
 
 ## Tools in experiments/red/dtl/ (what each measures, caveats)
+- dtl_flipflop.py GAME [--quiet] [--player p] [--tangles] [--oink OINK] [--order oink|stable]: instrumented DTL run on
+  L-COMP's dtl_py.py (imported; best_vertices/search_rec bodies repeated with log lines): per search the pieces (domfirst /
+  cut t seeds toX recursed / stable V* removed), every pruning round (V, candidates, forgiven@threshold, distractions),
+  new tangles per piece with the top VERTEX, the status table (round of pruning per own-parity vertex per search),
+  --tangles: birth, escapes and every firing (search:piece/phase) of each tangle. Exact (MATCH with Oink on all instances).
+- dtl_ctxmono.py GAMES | --random N nmax seed: Claim P (pruning round non-decreasing in T for a fixed context R) and
+  Claim Q (stable V* non-shrinking), plus -1-set (argmax) changes.
+- dtl_search.py new fitnesses: iters (searches; gamed by singleton chains), evens (+ --maxeven K), restarts/maxrestarts/osc
+  (release trace keyed on priority: gamed by equal-priority tops), rep/excess (Python-scored, exact top vertex; excess =
+  searches - dominions - distinct learning (player, top) pairs). --grow k appends k random vertices to a --from seed.
 - dtl_search.py OINK n: hill-climb over games; fitness tangles | unsolved | wrong (verifier failure/error/unsolved;
   use the debug or detector build for throws) | perhead | perheadsearch | persearch (fooled by equal priorities: use
   --injective) | prunemono (newly pruned vertices across searches) | dups (needs a debug build) | straddles | alpha
@@ -195,6 +212,11 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
   gates (T12 section 4) is unnecessary, the Bland counter plus gates is smaller.
 
 ## Sources opened (arXiv id or DOI, theorem/section)
+- 2026-10-16: Oink @ 8fbf0a7 src/solvers/dtl.cpp 36-110 (attracts, attractVertices), 109-185 (attractTangle: vertices not in Z
+  must be in R and <= max_prio; escapes in Z or outside the subgame), 476-546 (sptl), 643-776 (best_vertices), 834-994
+  (search_rec), 997-1160 (search, run: Even to exhaustion then Odd, no return to Even); src/tools/tc.cpp makeBit (H, T, L,
+  S/A/B connectors, Z). L-ALG claude/l-alg d6129e3 docs/alg/GAP-A-data.md (all sections), notes/L-ALG.md (successor 1
+  version at ed9b87e); L-COMP experiments/dtl-bench/dtl_py.py (trunk) all of it; docs/DECISIONS.md D1-D7, L22-L25.
 - FHZ 1410.7530 again (R5): Fig. 3 p.9 (the i-th level with r = s = t = 1), section 4 p.8 (randomized counter, bit
   interpretation (b_i, w_{i+1}) in B), Table 1 p.14 (edges and costs) as encoded in fhz.py build.
 - Avis-Friedmann, "An exponential lower bound for Cunningham's rule", arXiv 1305.3944 (PDF opened ~16:20Z): section 3 p.10-11
@@ -275,6 +297,9 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
   "DTL attack" table and verdict (read 15:05Z).
 
 ## Dead ends
+- 2026-10-16 climbs for a DTL counter: fitness iters -> singleton self-loop chains (13 searches at n = 20, linear);
+  perhead/restarts/maxrestarts/osc (priority-keyed) -> equal-priority towers (19 tops at one priority x 4); rep -> towers;
+  excess v1 -> dominion-per-search games (0 tangles, 8 searches). Instances in the scratchpad climb/ only.
 - DTL staggered gadgets (R8 section 10): escapes to an Odd sink prune the head; closed Even towers are solved at once by
   the dominion attractor; open-by-design levels need an escape above the next top, which the pruning rejects. Rescue
   chains (priority-0 Odd-owned rescue vertices pointing at each other) are all rescued in round 1 because a candidate
