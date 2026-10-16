@@ -304,3 +304,4 @@
 - 16:07Z hourly sweep: no overage (seven_day allowed_warning). Lead 610k $167.3; new lanes measured by WATCHDOG 16:03Z (running, ~130k). Both got GO 16:01/16:03Z. No exceptions.
 - 16:10Z merged l-red 8af6eb3: (CM) false (Lead re-ran Oink on both instances). Routed to L-ALG.
 - 16:17Z L-ALG candidates (LEX), (NR) routed to L-RED as priority attack (ahead of K_child scaling).
+- 16:30Z merged l-red 32798af: (LEX), (NR) false (Lead re-ran Oink). Tool caveat (r0 padding for stable calls) routed to L-ALG.
