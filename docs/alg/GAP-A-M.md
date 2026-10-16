@@ -777,3 +777,12 @@ vertex of it dies at M).
   new escape (grow), §15. Nothing proved prevents both from repeating at every level, so the product K^L stands.
   A polynomial bound needs a reason why fresh child contexts that also reset cannot recur per parent step. That is the
   open core (§6.3b).
+- Resets by staircase step type (12:17Z, DATA, dtl_stair.py "_RESET"; same 442 games). Among the context changes at
+  j+1 caused by a staircase step at j, the child deaths DROP for some common vertex:
+  - M-rise to a fresh context: 16 of 65;
+  - equal-M growth to a fresh context: 13 of 39;
+  - M-rise to a recurrent context: 0 of 15;
+  - equal-M growth to a recurrent context: 1 of 5.
+  So both step types reset children, and an equal-M growth step (a "cheap" step that does not raise M) does so as
+  often as an M-rise. For a counter builder: a digit need not spend an M-rise per child reset. For a bound: charging
+  resets to M-rises (≤ n + 1 per context) is NOT available.
