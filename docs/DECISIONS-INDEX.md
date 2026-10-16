@@ -11,3 +11,5 @@
 | D7 | 2026-10-15 | Q9 (a): continue at current spend rate despite weekly-limit warning; stop on overage (D1) | active | docs/DECISIONS.md#d7 |
 | D8 | 2026-10-16 | Q11 (b): switch paused Fable lanes to Opus 5.5 until the Fable weekly reset (L27: referees wait unless owner asked) | active | docs/DECISIONS.md#d8 |
 | D9 | 2026-10-16 | Search online for van Dijk's DTL counterexample (counter_dtl); L28: fresh L-LIT successor, read-only, no contact | active | docs/DECISIONS.md#d9 |
+| D10 | 2026-10-16 | Q13 (a): repository stays public (L29: pushes are not D1 publishing; no sensitive content ever committed; no announcing or linking) | active | docs/DECISIONS.md#d10 |
+| D11 | 2026-10-16 | Q12 (a): no contact with van Dijk for now (L30) | active | docs/DECISIONS.md#d11 |

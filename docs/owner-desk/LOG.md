@@ -97,3 +97,19 @@ proved but unrefereed; open GAP-C (completeness) and GAP-A (polynomial tangle bo
 > Give me a status update
 Answered from trunk 3b31814 (NOW.md, DECISIONS D8, RESULTS), l-alg c915fba, l-red 5311b17, l-comp 70cc344. QUESTIONS.md synced with
 Q10/Q11 (handled in the Lead session) and the Q4 outcome. Relayed verbatim to the Lead.
+
+## 2026-10-16 16:38Z owner (progress question)
+> Give me a status update
+Answered from trunk e927f20, l-alg b4d7862, l-red f5a8aee, l-lit 3d9d98d; desk re-verified the repo is public. Q10 closed, Q12 and
+Q13 (public repo) added. Relayed verbatim to the Lead.
+
+## 2026-10-16 16:39Z owner (Q13)
+> I dont mind the repistory is public
+Desk reading: Q13 option (a), keep public. Relayed verbatim to the Lead. Q12 still open.
+
+## 2026-10-16 16:39Z owner (Q12)
+> No contact for now
+Desk reading: Q12 option (a). Relayed verbatim to the Lead.
+
+## 2026-10-16 16:44Z Lead (relayed to owner)
+Q13 closed as D10 / L29. Lead's message crossed the owner's Q12 answer (relayed 16:40Z); Q12 awaits its D-number.

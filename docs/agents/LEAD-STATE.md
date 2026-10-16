@@ -297,3 +297,17 @@
 - 15:23Z L-RED box ended (DONE fe8cb18, idle, climbs stopped). Merged; roster updated to PARKED. Next-box queue in its notebook.
 - 15:27Z merged l-red 6b52858 (handover notebook ready for successor).
 - 15:56Z L-ALG box ended (DONE c18eaad). Merged; roster PARKED; RESULTS DE10 records today's killed (H4) candidates and A_DTL extensions with instances.
+- 15:58Z next boxes: created L-ALG succ. 4 session_01KESFSwLyyKvwe3mzqN2Bzr and L-RED succ. 3 session_0187PESrNsHy3BTdjyzwyaLy (Opus, D7 continue at current rate, D8 Opus); STEP 0 handover checks pending. WATCHDOG to be told.
+- 16:02Z L-ALG succ. 4 handover 5/5, GO.
+- 16:04Z L-RED succ. 3 handover 5/5, GO.
+- 16:06Z WATCHDOG 16:03Z: Lead ctx 610k (>600k; automatic compaction handles the Lead, state lives in NOW/LEAD-STATE); new lanes 130k/133k. Its $176.75 omits the parked sessions (L-ALG old $73.6, L-RED old $59.4, L-LIT succ.), so day total is roughly $310+.
+- 16:07Z hourly sweep: no overage (seven_day allowed_warning). Lead 610k $167.3; new lanes measured by WATCHDOG 16:03Z (running, ~130k). Both got GO 16:01/16:03Z. No exceptions.
+- 16:10Z merged l-red 8af6eb3: (CM) false (Lead re-ran Oink on both instances). Routed to L-ALG.
+- 16:17Z L-ALG candidates (LEX), (NR) routed to L-RED as priority attack (ahead of K_child scaling).
+- 16:30Z merged l-red 32798af: (LEX), (NR) false (Lead re-ran Oink). Tool caveat (r0 padding for stable calls) routed to L-ALG.
+- 16:40Z OWNER-DESK relayed owner: "Give me a status update" (answered from trunk e927f20; Q13 and Q12 shown; owner-desk b665477 merged).
+- 16:43Z owner D10 (Q13): keep repo public; recorded verbatim with Lead reading L29; Q13 closed. Q12 still open.
+- 16:46Z owner D11 (Q12): no contact with van Dijk; recorded verbatim + L30. No owner questions open. Merged l-alg 1173ec6 (§18 synthetic gadgets).
+- 16:58Z merged l-alg 670a762 ((LEX) fails in L-ALG's own actual run; (U-MONO_DTL) routed to L-RED).
+- 17:05Z hourly sweep: no overage (seven_day allowed_warning). Lead 674k $173.4; L-ALG succ. 4 running; L-RED succ. 3 running (234k). No owner questions open (D10, D11). No exceptions.
+- 17:08Z merged l-alg 46cd0a2 ((CM) fails in actual run). L-ALG proposes C6 as GAP-A proof target; Lead asked for a scoping note before deciding (C6 = new candidate, needs its own gauntlet steps 1-3; completeness reduces to GAP-C as for A_DTL).

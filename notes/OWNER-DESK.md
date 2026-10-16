@@ -17,3 +17,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Dead ends
 (none)
+
+## Things only I know
+- For DTL status questions, the crux is docs/alg/GAP-A-M.md §12 on l-alg: polynomial bound needs (H1)-(H4), none proved; APP(k) (§10)
+  shows proved facts allow 2^Theta(n) searches. L-RED tries to realise APP; L-ALG tests a potential for (H2b). (Lead, 2026-10-16 10:36Z.)
+- The owner also answers questions in the Lead session (Q9, Q11): re-sync QUESTIONS.md from docs/NOW.md "Owner questions open".
