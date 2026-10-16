@@ -1,6 +1,19 @@
 # L-ALG notebook — third successor (session_01BDELabbGbT2QYY2NoRCY8A), 2026-10-16, produced on Opus 5.5 (D8/L27); older notes below
 
-## FINAL RESUME POINT (box end ~16:10Z; drafted 14:58Z, finalised 15:48Z) — read this first
+## Resume point (successor 4, session_01KESFSwLyyKvwe3mzqN2Bzr; Lead go 16:01Z, box to ~00:00Z; written 16:35Z) — read this first
+All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?`.
+- Truth: docs/alg/GAP-A-M.md §18 (this box). Oink built here (tools/oink/build, 8fbf0a7) at 16:10Z.
+- (1) Candidate (LEX) (death vector lex-increasing at a fixed context) + (NR): DATA 775/775 Oink, 755/755 stable on actual
+  runs; Lead told 16:14Z. FALSE synthetically with genuine tangles (dtl_lexcounter.py, 9 vertices, in check.sh); Lead told
+  16:33Z, routed to L-RED (realise in a DTL run). A proof for A_DTL must use DTL's learning order.
+- (2) (CM): recount 51/0 Oink, 42/0 stable (committed files only, §18d). No proof attempt yet.
+- (3) K-products: §18e table; climbs scratchpad nest/ (n20 seed 101, n28 seed 102; dtl_nestclimb.py, Oink order).
+- Tools this box: dtl_plateau.py, dtl_lexsynth.py, dtl_lexfake.py (LEXF_GENUINE, LEXF_SEED), dtl_gentangle.py,
+  dtl_carrytest.py, dtl_lexcounter.py, dtl_nestK.py, dtl_nestclimb.py.
+- Trap hit again 16:33Z: `pkill -f gadsearch.py` inside a command killed the calling shell (exit 144) and a heredoc after it
+  was never written. Kill by PID in a separate call.
+
+## FINAL RESUME POINT of successor 3 (box end ~16:10Z; drafted 14:58Z, finalised 15:48Z) — read this first
 All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push ONLY with `scripts/push.sh` as a bare call, or
 `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?` (never pipe). Branch claude/l-alg.
 - Where the truth is: docs/alg/GAP-A-M.md. §17 is the LEDGER (every PROVED item with scope C6 / A_DTL / under M-cond;
