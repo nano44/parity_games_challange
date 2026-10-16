@@ -748,6 +748,16 @@ pieces 0..j-1; measured ctx_changed = 0.
     ideal-stable context, and the whole phase after the dominion is spent there. n = 36 (seed 136): 5 at one context, 6
     in the phase, so far. Maximum per context so far: n = 20: 4, n = 28: 6, n = 36: 5 (climbs running). Too few points
     for a growth law; consistent with growth.
+  - 13:35Z, n = 44: experiments/alg/instances/h4_def7_oink_n44.pg (Oink and dtl_pyref --order oink both 11 iterations,
+    verified). Player 1, piece 0, R = G (|R| = 44). The ideal is STABLE with the same 26-vertex V̂* in searches 4-11.
+    The actual, in original ids: −1 {36, 43} → {9, 20, 43} → {9, 20, 34, 36, 38, 43} → {43} → {34, 36, 38} →
+    {34, 38} → stable (10 vertices) → stable (the 26 of the ideal). That is 7 DEF changes at one ideal-stable context.
+    Max per context, Oink order: n = 20: 4, 28: 6, 36: 6, 44: 7.
+  - 13:39Z, n = 44, same climb: experiments/alg/instances/h4_def8_oink_n44.pg (Oink and dtl_pyref --order oink both 11
+    iterations, verified). Piece 0, R = G, ideal STABLE (27 vertices) in searches 3-11; actual −1 in searches 3-10,
+    return sets (original ids) {5, 34} → {5} → {5, 6, 30} → {5, 6, 30, 34} → {6, 30} → {30} → {30, 34} → {34} →
+    stable. That is 8 DEF changes at one ideal-stable context, the whole phase. Max per context, Oink order:
+    n = 20: 4, 28: 6, 36: 6, 44: 8 (climbs running).
   - Key earlier instances agree in both orders and with Oink (iterations): phi_idx_flat_n20 5, nest_nest_s84 19,
     lemmaS_viol_n20 8.
 
@@ -787,6 +797,24 @@ later call into NEW (learned after the earlier call) and OLD.
 - Candidate quantity (DATA only, not yet tested): the region VECTOR at the deficit round. By Lemma R it moves
   lexicographically, and a DEF change needs a carry that changes a LEADER's survival. A bound would follow from "each
   carry at a fixed context raises the region of a top that is a current leader". Not stated as a lemma until checked.
+
+### 13e. Deficit changes come through the THRESHOLD phase, not through region carries (13:37Z, DATA)
+Tool: experiments/alg/dtl_regvec.py (Oink order). For every DEF pair (consecutive calls at one context, ideal (result,
+V) unchanged, actual changed), take the first round r0 where the actual sets differ. Compare the actual region vectors
+computed on the common V_{r0−1}.
+- h4_def4_oink_n20, h4_def6_oink_n28, lemmaS_Mdrop_n20, lemmaS_viol_n20, h4_notweaker_n20: 19 DEF pairs. In 18 the
+  region vectors at r0 − 1 are IDENTICAL. In 1 the first differing region grew, as Lemma R says (h4_def4_oink_n20,
+  s1 → s2, top 17).
+- So in 18 of 19 DEF changes the deficit (consumed regions) is the SAME in both searches. What changes is the threshold
+  phase: survivors(V, U) with W_t = lfp(U, R, t, T), which gains the new tangles. The deficit fixes which vertices are
+  in U; new tangles then attract differently from that fixed U, while the ideal Û already attracted everything.
+- Consequence for (H4): Lemma R (region carries) is not the engine. The engine is "fixed deficient U plus a growing
+  tangle set in the threshold closure". At a fixed ideal-stable context, a DEF change is a change of the threshold
+  closure of a FIXED deficient union under new tangles. That closure is monotone in T for fixed U (lfp monotone).
+  Monotone in T plus a fixed U gives survivors that grow round by round, but the ROUNDS (V_r) change, which changes U
+  at later rounds. A candidate lemma is "at fixed context and fixed deficient region vector, the actual rounds are
+  monotone in T". It is DATA-consistent (the wandering return sets in §13b come with region changes at later rounds)
+  but NOT checked; stated here only as a target.
 
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
