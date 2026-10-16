@@ -390,6 +390,14 @@ driver's escapes are covered in piece i's pruning in search s+1 by regions of to
 those regions are the same in search s, but only the return set's Dom is removed after piece i, so escapes in the regions
 of the OTHER tops stay in R_{i+1} and the driver can be learned deeper, as in APP. So (F) for Dom(prevV) pieces is the
 open property; proving it would rule out APP-like counters, and refuting it means building APP.
+DATA (09:58Z, experiments/alg/dtl_frontier.py, A_DTL, stable order; 500 random games n ≤ 24, every dtl_* instance, tc+
+N ≤ 5): drivers of changes at −1 pieces between consecutive searches: 163; learned at the first stable piece after the
+changed piece 144; inside the recursion of a cut BEFORE that stable piece 9; at a LATER stable piece 10 (dtl_deficit_n20:
+change at piece 0, a Dom(prevV) piece, drivers learned at piece 3, the second stable piece; dtl_mviol_n20: change at piece
+5, first stable piece 7, drivers learned at piece 9); 4 changes with no new tangle seen firing (not yet explained; the
+first-difference argument says one must fire, so the instrumentation may miss a case). So (F) is FALSE for A_DTL as
+stated: drivers learned beyond the frontier occur in real runs, one step deep, not as a counter. The property a proof
+would need is therefore weaker than (F) and quantitative (how deep, how often), or a different one.
 
 10.4 For L-RED (realising APP(k) as a game; the model fixes what each piece must do, not the gadgets):
 (1) level i: two p-priority tops whose pruning distances at piece i leapfrog exactly when the deepest-zero tangle arrives,
