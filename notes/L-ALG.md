@@ -25,6 +25,11 @@
   144), same as pkill -f. List PIDs in one call, `kill PID...` in a separate call.
 - TRAP (08:40Z): wrote message/doc timestamps without reading the clock (10:25Z for 08:30Z). Always `date -u` first.
 
+- 09:15Z state of (2): GAP-A-M §6.3b = the answer (no budget follows; every proved fact allows a k-level counter;
+  bound n^{O(k)}; open = fresh child contexts per parent state; data: revisits). §7: GAP-C (r1) PROVED (no-dominion,
+  same-region form); (r2) open. Instances: dtl_replay4_n32, dtl_replay2deep_n32 (revisit structure). Climbs on
+  fresh contexts (dtl_pieces.fresh_contexts) running from scratchpad nestclimb.py, logs nest/log8*.txt.
+
 ## Dead ends (third successor)
 - (M) / Claims P, Q / F5 at a fixed context: DEAD for A_DTL. Obstruction: straddle-deficit (GAP-A-M.md Lemma E); killing
   instance experiments/alg/instances/dtl_mviol_n20.pg (Oink iterations 3-odd → 4-odd, distance 8 → 7); synthetic

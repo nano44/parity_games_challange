@@ -220,6 +220,14 @@ The two climbed instances add no fresh structure: dtl_replay2deep_n32's depth-2 
 piece-1 replay) runs on only 3 distinct level-2 contexts; the context of searches 10-12 is that of searches 5-7 (piece 2's
 maximum distance 5 there, 7 on the revisit), driven by a leapfrog bit at level 1 (return set {5} / {5, 22}). Counted over
 distinct contexts (N_j ≤ K·C_j) neither instance shows a product.
+6.3b Answer to target (2) (reading, 09:15Z). No global budget follows from what is proved, and the reason is precise:
+every proved fact is compatible with a k-level counter. Per context, piece j changes at most K = O(n²) times (fixed-context
+monotonicity, C6; A_DTL under M-cond); a parent context with its O(n²) results can hand the child up to O(n²) DISTINCT
+contexts (the −1 return set is re-cut at each result change, GAP-A-data F7; a leapfrog of two distances is one bit), and a
+child needs only O(1) changes per context to carry a counter digit; revisited contexts resume (refinement above) and cost
+the counter nothing it needs. So the proved facts give C_j ≤ (K+1)^j and searches ≤ n^{O(k)} for k nested pieces, and no
+more. Whether DTL can make every parent state a FRESH child context in which the child still has work is exactly the
+open question; in all data the child contexts REVISIT (C_1 ≤ 4, C_2 ≤ 3 on the climbed instances, 1 elsewhere).
 6.4 What would close GAP-A along this route (open; for the proof lane): a lemma charging every replay at level j to a
 global resource, e.g. "a level-j replay needs a tangle usable in the new context that was usable in NO earlier level-j
 context of the phase", with that resource bounded polynomially. What would kill it (for L-RED): a family whose replay depth

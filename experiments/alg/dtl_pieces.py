@@ -121,6 +121,29 @@ def replays2(d):
     return rep, best
 
 
+def fresh_contexts(d):
+    """Per phase and level j >= 1: F_j = number of DISTINCT level-j contexts in which piece j changed at least once
+    (GAP-A-M.md §6: N_j <= K * C_j, so a product needs F_j to grow with j). Returns (sum_j (F_j - 1)^+, max_j F_j)."""
+    tot, mx = 0, 0
+    phase, F = [], {}
+    def flush():
+        nonlocal tot, mx
+        for j, cs in F.items():
+            if j >= 1:
+                tot += max(0, len(cs) - 1); mx = max(mx, len(cs))
+    for a, b in zip(d.trace, d.trace[1:]):
+        if a["p"] != b["p"] or b["dom"] != a["dom"]:
+            flush(); F = {}; continue
+        pa, pb = a["pieces"], b["pieces"]
+        j = 0
+        while j < min(len(pa), len(pb)) and pa[j][:3] == pb[j][:3]:
+            j += 1
+        if j < min(len(pa), len(pb)) and pa[j][0] == pb[j][0]:
+            F.setdefault(j, set()).add(pa[j][0])
+    flush()
+    return tot, mx
+
+
 if __name__ == "__main__":
     # usage: dtl_pieces.py [G.pg ...]: transition-level classification (RES/NEST/FRESH) and replay histogram, DTL and C6
     sys.setrecursionlimit(100000)
