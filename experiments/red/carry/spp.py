@@ -19,15 +19,21 @@ def measure(path):
         if cur and (t["p"] != cur[-1]["p"] or t["dom"] != cur[-1]["dom"]): rows.append(cur); cur = []
         cur.append(t)
     if cur: rows.append(cur)
-    best = dict(spp=0, G=0, excess=-10 ** 9, ratio=0.0, iters=d.iterations, n=g.n, ppar=0)
+    best = dict(spp=0, G=0, excess=-10 ** 9, ratio=0.0, iters=d.iterations, n=g.n, ppar=0, sharp=-10 ** 9, sharpG=0)
     for ph in rows:
         G0, p = ph[0]["G"], ph[0]["p"]
         if not G0: continue
         k = len(ph); par = sum(1 for v in G0 if d.pr[v] % 2 == p)
         if k > best["spp"] or (k == best["spp"] and len(G0) < best["G"]): best.update(spp=k, G=len(G0), ppar=par)
+        if len(G0) >= 2 and k - len(G0) + 1 > best["sharp"]:   # (SPP-sharp) S <= max(1, |G'| - 1): violated iff sharp > 0
+            best["sharp"] = k - len(G0) + 1; best["sharpG"] = len(G0)
         if k >= 3:                                    # trivial 1-2 search phases on tiny G' would game the ratio
             best["excess"] = max(best["excess"], k - len(G0)); best["ratio"] = max(best["ratio"], k / len(G0))
     return best
+
+def score_sharp(path):
+    b = measure(path)
+    return 1000 * b["sharp"] + 10 * b["spp"] + b["iters"] / 1000.0
 
 def score(path):
     b = measure(path)
@@ -39,4 +45,5 @@ if __name__ == "__main__":
         b = measure(f)
         print(f"== {os.path.basename(f)} order={os.environ.get('DTL_ORDER', 'stable')} n={b['n']} iterations={b['iters']} "
               f"max spp={b['spp']} at |G'|={b['G']} (p-parity {b['ppar']}) max ratio={b['ratio']:.3f} max excess={b['excess']}"
-              + ("  ** PHASE > |G'| **" if b["excess"] > 0 else ""))
+              + f" sharp(S-|G'|+1, |G'|>=2)={b['sharp']} at |G'|={b['sharpG']}"
+              + ("  ** PHASE > |G'| **" if b["excess"] > 0 else "") + ("  ** SPP-SHARP VIOLATED **" if b["sharp"] > 0 else ""))
