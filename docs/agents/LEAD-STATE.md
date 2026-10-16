@@ -257,3 +257,4 @@
 - 11:47Z merged l-alg 5388581 (§14 c_i).
 - 11:48Z merged l-red 18af127 (R12 §9 conclusion withdrawn).
 - 11:52Z merged l-alg 024260c (reconciliation; DE9 updated with single driver t9).
+- 11:56Z merged l-red 6b053c5 (cidx climbs started; both lanes now on c_i, from designer and adversary sides).
