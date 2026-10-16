@@ -1,5 +1,34 @@
 # L-ALG notebook — third successor (session_01BDELabbGbT2QYY2NoRCY8A), 2026-10-16, produced on Opus 5.5 (D8/L27); older notes below
 
+## FINAL RESUME POINT (box end ~16:10Z; written 15:00Z, climbs updated at the DONE report) — read this first
+All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push ONLY with `scripts/push.sh` as a bare call, or
+`scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?` (never pipe). Branch claude/l-alg.
+- Where the truth is: docs/alg/GAP-A-M.md. §17 is the LEDGER (every PROVED item with scope C6 / A_DTL / under M-cond;
+  every killed claim with its instance). docs/alg/DEAD.md has Φ/Φ_idx. experiments/alg/instances/README.md has the
+  climbed instances. Key sections: §6 (corrected piece state: cut = removed set D_j), §11-§11e (carries, Φ_idx dead,
+  Lemma F), §13-§13h ((H4) deficits), §14 (c_i circular), §15 (child resets), §16 (Lemma S staircase).
+- State of GAP-A: OPEN. Route = §12 (H1)-(H4). No candidate potential is left standing for (H2b) or for (H4).
+  - (H2b): reduces via Lemma F to contexts per index, which is circular.
+  - (H4), A_DTL only: the deficit count at one ideal-stable context grows under climbing: 4 (n=20), 11 (n=28),
+    8 (n=44), Oink order. A constant bound is false; a polynomial per-context bound is open.
+  - Nesting EXISTS (L-RED h4_compound_n44, h4_compound2x2_n44; my classification §13h). In 2x2 the child's deaths do
+    NOT reset across the fresh contexts. Candidate (CM), DATA only: a child's actual round count never drops across a
+    parent DEF step into an ideal-stable child context (0/123).
+- NEXT-BOX QUEUE (Lead 14:56Z / 14:51Z):
+  1. Does K_parent × K_child grow with n? Can a third level stack?
+  2. Test (CM) widely and attack it: a child M-drop at an ideal-stable child context.
+  3. Find a quantity that bounds DEF changes at fixed (context, M); §13g shows (r0, M) repeats.
+- Tools (experiments/alg): dtl_deficit.py (DTL_ORDER=oink exact; DEF, nested_ctx, deep_ctx_def2), dtl_straddle.py
+  (straddlers, CHAIN test), dtl_regvec.py (region vectors, drivers), dtl_crm.py ((r0, M)), dtl_childM.py, dtl_stair.py,
+  dtl_ctx.py, dtl_childmono.py, dtl_mirror.py (C6 carries), dtl_pieces.py (FIXED tracer, corrected state).
+  Oink order needs PYTHONPATH=experiments/dtl-bench (stdsort) or DTL_ORDER=oink.
+- Things only I know:
+  (a) Default tracers run order ω = stable. Valid for the proof (L26) but not pinned-Oink; label every count.
+  (b) Single-removal driver tests miss redundant drivers; use sufficient-alone too.
+  (c) A −1 return set is the last NONEMPTY round. Rounds lists end with ∅ for −1 in dtl_mirror/dtl_regvec.
+  (d) Padding seeds for scaling: source-only extra vertices keep deficits (seeds 128/136/144 started from them).
+  (e) Scratchpad climbs die with the container; best games are committed under instances/.
+
 ## Resume point (third successor; Lead go 08:10Z, box 8 h to ~16:10Z)
 - Lead session: session_014FBi6o334DvwT5Uw2kDfoN. Push: scripts/verify.sh && git push -u origin claude/l-alg (one call, no pipe).
 - Handover check 5143cc2 (Lead 5/5). Task: GAP-A (1) prove (M) = Claims P/Q; (2) global piece-k budget or why none.
@@ -72,6 +101,12 @@
   passes 3-5, top 19, SCC {3,5,6,10,11,12,16,19} merging two stored tangles; GAP-A-M §9).
 - Invariant of DTL-reachable tangle sets excluding the straddle-with-lower-pickup shape: DEAD (deficits with changed
   survival occur in actual runs, instances/dtl_deficit_n20.pg).
+- Chain of new straddlers / drivers at one context (L-RED R15 §6 reading): DEAD, h4_def8_oink_n44 (disjoint necessary
+  drivers {4,13,14,35}, {21,24,40}, {10,31,32,33}; GAP-A-M §13f).
+- (C-rM) "(deciding round, round count) never repeats at a context": DEAD (climbs_1016/a_best_s32, ideal −1 context);
+  (C-rM-stable), the same at ideal-stable contexts: DEAD (instances/h4_def9_oink_n28.pg, (3,8) and (9,12) repeat; §13g).
+- "Deficit changes per ideal-stable context ≤ a constant": FALSE (h4_def4/6/8/10/11, up to 11; §13b, §13g).
+- My §13 claim "V_actual ⊆ V̂ for −1 return sets": FALSE (L-RED h4_notweaker_n20); only the per-round form is proved.
 - Φ (global −1 death record raised by every dead-top cap carry): DEAD (produced on Opus 5.5). Killing instance:
   experiments/alg/instances/cross_h_k1_n11_m17_37.pg, search 1, piece 0; the rescued vertex reaches death 3, equal to its
   record from another −1 piece of the same search (GAP-A-M §11b).
