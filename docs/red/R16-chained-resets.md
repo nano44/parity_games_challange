@@ -26,3 +26,26 @@ Lemma F (same-context deaths only rise between carries) each context's changes a
 is counted by the per-context bound. A counter needs a child context to be FRESH at each parent change (a parent state
 not seen before), and the child must replay a full cycle there, rather than finish at once with the tangles it already
 learned. L-ALG's section 15 resets (child deaths drop at a new context) give the first half; the replay is the open half.
+
+## 3. Staircases (L-ALG GAP-A-M 16 (a)) and their nesting, on A_DTL (12:46Z by date -u)
+Tools in phi_full.py:
+- staircases: the -1 Dom(prevV) calls at one (phase, depth-0 index, context) over consecutive searches, with their round
+  counts M and the M-rises that bring NEW leaders (a return set not seen before in that staircase).
+- nest2: (parent rises) x (child staircases at deeper depth-0 indices).
+- nest2deep: the same, but with the children INSIDE cut recursions (depth >= 1). Approximation: the piece kind is not
+  checked at depth >= 1.
+- lemma_s: L-ALG's Lemma S on A_DTL.
+DATA (134-139 files: the corpus, both h4 instances, tc+ 3-5):
+- Lemma S on A_DTL: 604 fixed-context Dom(prevV) -1 pairs, 0 violations. This includes h4_disjoint_n20 and
+  h4_notweaker_n20, whose later searches have deficits. In those games M rises (6 -> 8) or stays equal with the return
+  set growing or unchanged. So R15's freedom changes WHICH set is returned, but not Lemma S on this data.
+- New-leader M-rises per depth-0 staircase: histogram 0:129, 1:103, 2:8, 3:1, 4:1. The max is dtl_searches20_n32,
+  piece 0: M = 4,4,4,4,5,6,6,6,6,7,7,7,7,8,8,8, with rises at s4, s5, s9, s13.
+- nest2 (children at depth-0 indices): corpus max 3.
+- nest2deep: 137 files score 0, 4 score 1, and dtl_searches20_n32 scores 16. That is 4 parent rises x 4 depth-1 child
+  staircases, in contexts |R| = 19, 18, 18' and 17, each with ONE new-leader rise.
+READING: dtl_searches20_n32 (L-ALG's F9/F10, "a one-digit instance") is a k=2 skeleton. The parent digit is the depth-0
+piece-0 staircase. Each parent rise moves the depth-1 recursion under piece 1's cut to a fresh context. There the child
+makes one new-leader rise (K_child = 1-2) before the next parent rise. A counter needs K_child to grow with n AND a third
+level. The climbs nest2deep seeds 171-174 (two from dtl_searches20_n32, one from nest_nest_s83, one from
+phi_flat_alive_n32) aim at K_child at n = 32. Results will follow in the next section.
