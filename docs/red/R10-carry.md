@@ -152,3 +152,27 @@ DATA, L-ALG Lemma D2 (GAP-A-M.md section 6: every sptl region at a stable piece 
 independent check in dtl_ogate.py: 646 stable pieces over the 116 files above, 0 violations. READING: Dom's attraction
 rules are pointwise more permissive than sptl's region rules (cumulative X instead of a per-region Z, same caps, same top
 order, the same tangles after the last sptl pass), so D2 holds by an induction over the tops in descending order.
+
+## Adversarial pass on L-ALG's D2 and driver lemma (Lead 09:46Z; L-RED ~10:20Z)
+- D2 (GAP-A-M.md section 6, l-alg 8c46a98). I checked each step against dtl.cpp. Player vertex: pushed at the pop of v.
+  v lies in the Dom region of a top processed no later, so the cap is >= pr(tau) >= pr(u), and u is still in R or already
+  in X. Opponent vertex: it is examined at the last Dom pop among its R-successors (one exists), within a cap >= its
+  priority, and its other successors are in X or outside R. Fired tangle: it is examined at the last escape pop. X
+  vertices count as attracted (136-137), escapes outside R pass the `G[v]` test with G = R, and no deletion can happen
+  inside a search. I found no gap. DATA (dtl_ogate.py, independent of L-ALG's code): 646 stable pieces over the 116 files,
+  4,725 stable pieces over 3,000 random games n <= 18, 0 violations. Climbs on fitness `ogate` (D2 violations weighted
+  1000) stayed at 0.
+- Driver lemma. The first-difference argument needs piece j's computation to be determined by (context, tangle set).
+  The only other per-search state is the extraction set W, which changes what sptl extracts, not (R, result, V, D) of
+  piece j. Tangles learned at a piece k < j lie in D_k (D2, or inside a cut's Z) and so can attract nothing new in piece
+  j: attractTangle needs at least one vertex outside X. No gap found.
+- Driver LOCALITY, DATA (experiments/red/carry/drivers.py). Where are the drivers of a level-j transition learned?
+  * The strong form (every driver is learned in the first stable depth-0 piece after j) is FALSE. On the 116 files, 169
+    drivers are learned LATER. Most drive a domfirst piece's pruning; example: dtl_mviol_n20 Odd search 2, level 5, drivers
+    t5-t8 learned at piece 9 (the next stable piece is 7). One cut case: carry3_2_2 search 0, level 1, where t3 fires in
+    C_A only because sB was eaten first, through a tangle that P1 learned in the same search.
+  * (F) as stated (the FIRST new tangle to fire in a cut's attractor is learned in the first stable piece after that cut)
+    holds in all 18 such events on the 116 files and in all 49 on 2,000 random games n <= 18 (`--random 2000 18 5`).
+  So the locality that kills 2CE is specific to cut-driven carries. Carries that drive a domfirst piece's PRUNING can come
+  from later pieces. That is one more open route outside 2CE: a slow level stored in a domfirst piece's return set
+  (argmax), advanced by tangles learned after the fast level has run.
