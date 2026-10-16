@@ -918,6 +918,24 @@ origin/claude/l-red @ c204679, experiments/red/carry/instances/h4_compound_n44.p
   h4_deep_oink_n44, both Oink order, n = 44.
 - Status: the nested deficit shape EXISTS on pinned A_DTL (first evidence: L-RED). Whether K_parent × K_child grows
   with n is the next box's question; at n = 44 the products are tiny (3 × ≤ 2).
+- h4_compound2x2_n44 (L-RED R15 §12, trunk; Oink 13 iterations, verified), classified with my tools (Oink order, 14:48Z).
+  - Player 1's phase after the 1st dominion. Parent piece 0 stays at ONE context (|R| 43) with ideal stable. Its
+    actual return set goes {15, 21, 41} → {21, 41} (s6) → {21} (s9) → {15, 34, 39} (s12) → stable (s13).
+  - Child piece 1 gets FRESH contexts C1 (|R| 41, s6-8) and C2 (|R| 42, s9-11).
+    - In C1 it runs {10, 11} → {7, 10, 11} → {2, 7, 10, 11};
+    - in C2, {7, 10} → {7} → {7, 15, 34, 39}.
+    Each is a 2-step DEF run with the ideal stable: genuinely fresh child contexts with deficit runs. NESTED, as
+    L-RED says.
+  - Does the child RESET? Deaths at piece 1 on common vertices, actual rounds:
+    - s5 (|R| 40) → s6 (C1): 0 drop, 22 rise, M 6 → 10;
+    - s8 (C1) → s9 (C2): 0 drop, 10 rise, M 10 → 12;
+    - only s11 (C2) → s12 (C3, ideal −1, |R| 38) drops (8 vertices, e.g. 41: 11 → 7; M 16 → 7).
+    So across the fresh-context changes that carry the nested runs, the child's deaths do NOT reset; they keep rising.
+    The child's second run comes from its deficit return set wandering on top of rising deaths, not from re-climbing.
+    A reset happens only on the move into an ideal −1 context.
+  - Reading: in this instance the nesting is bounded by the child's rising round count (M 6 → 10 → 12 → 16). A
+    potential "child M non-decreasing across parent DEF steps into ideal-stable child contexts" is suggested by this
+    one instance only. NOT checked more widely; it is the first thing to test next box.
 
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
