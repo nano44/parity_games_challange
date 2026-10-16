@@ -124,3 +124,27 @@ difference. So this supports the reading but does not prove it.
   8, 0, 8 and 6, 0, 6 in experiments/red/carry/levels.py), which the weight (j + 1) rewards. That is no new structure,
   i.e. an ARTEFACT. Separate climbs on `resets` from dtl_mviol_n20 reach 42 at n = 20 (vs 30) through cut-attractor
   growth at an unchanged result (a known uncovered case, GAP-A-M section 6), also no counter.
+
+## 9. Anatomy of a dead-top cap carry, and where APP's deepest level gets stuck (READING, 10:39Z by date -u)
+Let C (top h) rescue a candidate u at a -1 piece i through the threshold phase, with h dead (L-ALG's type (b)).
+ (C-a) C fires at a threshold theta >= pr(e) for some escape e with pr(h) < pr(e), and u is forgiven only if
+       pr(u) > theta. So pr(h) < pr(e) < pr(u).
+ (C-b) While h is alive at piece i, e lies in NO region: any region holding e has a top of priority >= pr(e) > pr(h), is
+       computed before h's, and consumes e, so (with C's other escapes covered) h's own region closes and C is an alive-top
+       carry. So e is covered at piece i only in the threshold phase.
+ (C-c) At the learning piece P (where C is extracted), e is outside R_P or consumed by a region of P computed before h's.
+   - If piece i's own Dom removed e, then e lies in Dom(M_i), which is contained in piece i's final-round region, which
+     (without deficits; coverage only shrinks over the rounds of one call) lies in the union of regions at every earlier
+     round. That contradicts (C-b). So e is removed by a piece DEEPER than i (a later level piece, its Dom or a cut), or
+     consumed at P.
+   - Consumed at P by a top zeta of P with pr(zeta) >= pr(e): zeta must not hold e in a region at piece i while h is
+     alive (C-b), so zeta is pruned at piece i by then. Yet zeta is alive at P. What revives zeta is forgiven only between
+     piece i and P, i.e. removed by a deeper piece again (removal by piece i's Dom puts it in every region of piece i, as
+     above).
+For APP this means: the carry that flips level i needs, between level i and the bottom, a piece that removes its high
+escape (or what keeps that escape's consumer alive). For the DEEPEST level k-1, the only pieces between it and the bottom
+are cuts or pieces outside APP's level structure. So APP's least significant digit cannot be driven by a dead-top cap
+carry unless an extra (cut) piece is inserted below it. Such a cut is a cut-eaten level, where R10's (F) applies again:
+its driver is learned in the stable piece right after the cut, before any deeper level runs.
+Status: a reading, under the same no-deficit premise as MIRROR. It is the precise shape a realisation must take. It is
+not a proof that APP is unrealisable, because the inserted cut's own constraints are not worked out here.
