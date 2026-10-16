@@ -277,3 +277,4 @@
 - 13:30Z merged l-alg 4045bc4: 6 deficit changes at one ideal-stable context on pinned Oink (Lead re-ran Oink: 9 iterations, verified). Told owner.
 - 13:36Z merged l-alg 57cc201 (DEF per context plateau at 6 for n=28..44 so far).
 - 13:42Z merged l-red c5137c3 (nested-chain reading). Routed chain test to L-ALG.
+- 13:45Z merged l-alg 9632b44: DEF per context 8 at n=44 (Lead re-ran Oink on both n=44 instances).
