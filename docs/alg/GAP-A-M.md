@@ -611,15 +611,20 @@ the corrected state of §6 (cut piece: R, −1, attractor; STATE_V=1 gives the o
 Instance: experiments/alg/instances/phi_idx_flat_n20.pg (n = 20). A climb (scratchpad xclimb.py, fitness = violations of
 the restated Φ_idx) found it in 190 steps from phi_idx_cutrec_n20.pg. Oink A_DTL: 11 tangles, 5 iterations, 1 dominion,
 solution verified. dtl_pyref (A_DTL) and C6 give the same counts (5 / 11), and dtl_deficit.py finds 0 deficit calls, so
-A_DTL and C6 coincide at depth 0 here. Vertex names below are internal indices (sorted by (priority, id)); internal 10 is
-original 19 and internal 14 is original 14.
+A_DTL and C6 coincide at depth 0 here. Vertex names below are ORIGINAL ids of the .pg file (corrected 11:46Z;
+the 11:19Z text used internal indices, where internal 3 = original 17, internal 10 = original 19, internal 14 = original 14).
+Conventions: V_0 is the initial candidate set and V_r the set after r pruning rounds; a vertex has death d when it is in
+V_{d−1} and not in V_d. The −1 return set is the last nonempty V_r. L-RED's "round-6 set" is V_5 here.
 - Phase of player 0, depth-0 piece index 2, every listed piece a Dom(prevV) −1 piece. Contexts: s1 |R| = 16; s2 |R| = 18;
   s3 and s4 equal, |R| = 17, with three different contexts in all.
-- Death rounds at index 2: vertex 14 dies at 6 (s1), 5 (s2), 5 (s3), 6 (s4); vertex 10 at 7, 6, 6, 7.
-- Transition s3 → s4: same context, first differing round r0 = 6. The return set grows from {3, 10} to {3, 10, 14}.
-  Drivers are tangles 7, 8, 9, learned in s3 inside the cut recursion of piece 3. Dead-top cap carry: the vertex rescued
-  at r0 is 14, which dies at 6 and so only EQUALS its record 6 from s1 (another context). Vertex 10 rises to 7, which
-  equals its record 7 from s1. No vertex raises its index-2 record, whether records come from Dom(prevV) pieces or from
+- Death rounds at index 2: vertex 14 dies at 6 (s1), 5 (s2), 5 (s3), 6 (s4); vertex 19 at 7, 6, 6, 7.
+- Transition s3 → s4: same context, first differing set V_5 (r0 = 5): {17, 19} → {14, 17, 19}. Then V_6 = ∅ in s3
+  and {19} in s4, so the −1 return set goes {17, 19} → {19}. Tangles 7, 8, 9 are new since piece 2 of s3; all were
+  learned in s3 inside the cut recursion of piece 3. Driver test at r0 = 5: only tangle 9 (vertices {1, 2, 5, 9, 10, 16},
+  top 5, priority 16, top dead at round 2 in s3) is a driver. Removing it undoes V_5 and adding it alone suffices;
+  tangles 7 and 8 are neither. This agrees with L-RED's independent A_DTL check (l-red 17db195: one driver t9 rescuing
+  14). Dead-top cap carry: the rescued vertex 14 (pr 20) dies at 6 and so only EQUALS its record 6 from s1 (another
+  context). Vertex 19 rises to 7, which equals its record 7 from s1. No vertex raises its index-2 record, whether records come from Dom(prevV) pieces or from
   all −1 pieces. The same flat change is a counterexample to L-RED's "flat" (any vertex) as well.
 - Status: Φ_idx (original and restated) FALSE. The obstruction is exactly the untested cross-context case of §11c.1: a
   context visited earlier at the same index set a record that a later context's carry only reaches. Lemma F still holds:
