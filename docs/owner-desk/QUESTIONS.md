@@ -157,7 +157,9 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - Lead recommendation: none stated. Desk note: (b) matches D1 ("Never publish ...") and the Q6 ruling; copies already indexed or
   cloned cannot be recalled.
 - Urgency: high (every push adds to what is public).
-- Status: answered 2026-10-16: "I dont mind the repistory is public" (option (a)); relayed; awaiting the Lead's D-number.
+- Status: closed, D10 / Lead reading L29: repo stays public; pushing is not "publishing" under D1; every other outward act
+  (posting, emailing, submitting, contacting, announcing or linking the repo) still forbidden; nothing sensitive is ever committed;
+  HUMAN-REVIEW.md readable in the repo is accepted; Q6 (no external distribution by the fleet) unchanged.
 
 ## Q12: contact van Dijk for counter_dtl?
 - id: Q12 (Lead, 2026-10-16 11:12Z; not blocking)
