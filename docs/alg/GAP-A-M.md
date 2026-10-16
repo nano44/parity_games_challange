@@ -930,3 +930,50 @@ vertex of it dies at M).
   child-context bound per context of §16 holds only with a bound on deficit steps, so (H4) moves toward the centre
   for A_DTL. Running (scratchpad defclimb.py, fitness = DEF changes at one (index, context)): seeded from
   lemmaS_viol_n20, 3 DEF changes at one context within 863 steps.
+
+## 17. Ledger for a referee brief (13:42Z; Lead 13:31Z (c); every item unrefereed, produced on Opus 5.5)
+"PROVED" = argument written out in this file by L-ALG, not refereed. Scope: C6 (ideal pruning, actual = ideal), A_DTL
+(the frozen DTL for every order datum ω, L26), or A_DTL under Theorem M-cond (the later run has no deficit round).
+
+PROVED
+| Item | Scope | Where |
+|---|---|---|
+| Set semantics of one pruning round | A_DTL | §1 |
+| Lemma 2.1: Û monotone in (V, T); Lemma 2.2: U ⊆ Û (per round) | A_DTL | §2 |
+| Lemma E: the only deficit is a straddling tangle with a lower surviving cycle maximum | A_DTL | §3 |
+| Lemma P*-inv; Theorem M-cond: no deficit in the later run ⇒ per-round monotone | A_DTL | §3 |
+| Per-round inclusion V_i ⊆ V̂_i; actual empties no later; ideal −1 ⇒ actual −1 (NOT for −1 return sets) | A_DTL | §13 (corrected) |
+| Lemma D2: sptl regions ⊆ Dom(V*, R) ∪ X_before | A_DTL | §6 |
+| Lemma D3: Dom is a layered closure, monotone in V and T | A_DTL | §9 |
+| Driver lemma: a level-j change is driven by a tangle learned at a piece ≥ j | A_DTL (equal level contexts) | §6 |
+| Counting N_j ≤ K·E_j (product bound) | C6; A_DTL under M-cond; given the "contexts at the level are equal" DATA line | §6 |
+| GAP-C step (r1) | A_DTL (same region, no dominion between) | §7 |
+| (O) refinement; C6 excludes gate (S) | C6 / A_DTL with D2 | §8 |
+| Lemma L-epoch (V* growth, lift or catch-up) | C6 | §9 |
+| LIFT gate constraint | C6 | §9 |
+| APP(k) barrier model and its property table | model | §10 |
+| Lemma F: same-context raise of every rescued vertex | C6 | §11c.1 |
+| Reduction: carries at index i ≤ n(n+2) · c_i; revisits harmless | C6 | §11e, §14 |
+| c_i ≤ searches, so the reduction is circular | trivial | §14 |
+| Lemma S: M non-decreasing; equal-M return set grows; fresh-vs-recurrence criterion; ≤ n(n+1)(n+1) child contexts per staircase | C6; A_DTL under M-cond | §16 |
+| Lemma R: region vector lexicographically monotone in T (carries reset lower regions) | A_DTL | §13b |
+
+KILLED (FALSE / DEAD), each with its instance
+| Claim | Instance (experiments/alg/instances unless noted) | Where |
+|---|---|---|
+| (M) / Claims P, Q / F5 at a fixed context, A_DTL | dtl_mviol_n20.pg (Oink-verified); synthetic dtl_m_synth.py | §4, §4b |
+| (CU) W-blocked top's SCC is stored or a dominion | dtl_cu_viol_n24.pg | §9 |
+| Invariant excluding the straddle-with-lower-pickup shape | dtl_deficit_n20.pg | §4 |
+| Φ: global −1 death record raised by every dead-top cap carry | cross_h_k1_n11_m17_37.pg | §11b, DEAD.md |
+| Φ_idx: per-index record (original and restated) | phi_idx_flat_n20.pg; climbs_1016/nest_nest_s84.pg; phi_idx_cutrec_n20.pg (original only) | §11d, DEAD.md |
+| Φ_idx sub-mechanisms: lift-to-max; per-index max death monotone | data (80/258; 201/2540) | §11b |
+| "V_actual ⊆ V̂ for −1 return sets" (my §13 claim) | red/carry/instances/h4_notweaker_n20.pg (L-RED) | §13 |
+| Lemma S on A_DTL with a later-run deficit | red/carry/instances/lemmaS_viol_n20.pg, lemmaS_Mdrop_n20.pg (L-RED) | §16 |
+| R12 §9 (C-a) as stated; (C-c) first step (L-RED reading) | dtl_proof_c3.pg; cross_h_k1_n10_m16_27.pg | §11c |
+| "Deficit-triggered changes per ideal-stable context ≤ a constant", A_DTL Oink order | h4_def4_oink_n20 (4), h4_def6_oink_n28 (6), h4_def8_oink_n44 (8) | §13b |
+| §6/§12 counts from the buggy tracer (superseded, conclusions kept or corrected) | tracer fix e41ccfb | §6, §12, §15 |
+
+OPEN: GAP-A via (H1) cut carries, (H2a) alive-top self-reinforcing carries, (H2b) dead-top cap carries (reduces to
+c_i, circular), (H3) catch-ups and recursion, (H4) deficits on A_DTL (per context: 4 → 8 over n = 20 → 44, Oink
+order). Core: whether fresh, resetting child contexts (§15, §16) or deficit staircases (§13b) can compound across
+levels.
