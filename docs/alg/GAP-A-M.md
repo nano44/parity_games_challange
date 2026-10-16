@@ -1428,7 +1428,7 @@ child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set
   the maximum anywhere was depth 2 (§6.3). Level sequence of the n = 32 phase: 3 1 1 2 0 1 3 2 3 0. Whether the depth
   keeps growing with n is the open measurement; climbs continue.
 
-### 18k. L-RED's (F1) ("at most one fall step per context"; l-red 78469a8, Lead 18:34Z) is not structural (18:55Z)
+### 18k. L-RED's (F1) ("at most one fall step per context"; l-red 78469a8, Lead 18:34Z) is not structural (18:40Z)
 - experiments/alg/dtl_twofall.py (in check.sh): two DISJOINT copies of the dtl_lexcounter.py gadget in one context
   (18 vertices, genuine tangles). Chain {s, s'} → {s, s', σ} → {s, s', σ, σ'}: e0 falls (INF → 1) at the first step, e0'
   at the second. Two fall steps at one context. Since disjoint components do not interact, the same holds for any number
