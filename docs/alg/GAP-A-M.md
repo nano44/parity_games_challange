@@ -815,3 +815,12 @@ vertex of it dies at M).
   inclusion V_i ⊆ V̂_i only bounds the actual M by the ideal M, which says nothing about M across runs. So for A_DTL,
   Lemma S is DATA (0/308 here, 0/604 L-RED) plus PROVED-under-M-cond. A violation would need a deficit (Lemma E's
   straddle) that prunes a LEADER early, not just a lower vertex.
+- Lemma S FAILS on A_DTL when the later run has a deficit (13:06Z; L-RED l-red d0b2400, R16 §5; Lead re-ran Oink:
+  8 iterations, verified). Instance: experiments/red/carry/instances/lemmaS_viol_n20.pg (n = 20, on trunk). Odd
+  searches 5 → 6, Dom(prevV) piece 2 (|R| 18), same context, −1 both times, M = 7 both times. The return set SHRINKS
+  {7, 14, 15} → {7} in original ids: leaders 15 and 14 now die at rounds 5 and 6. Reproduced here with dtl_deficit.py
+  (internal ids {5, 11, 12} → {11}): both calls are deficit calls, and the ideal (C6) result is STABLE in both
+  searches. This realises the c0aaa02 caveat; the C6 proof is untouched. Consequence: on A_DTL the n(n+1)(n+1)
+  child-context bound per context of §16 holds only with a bound on deficit steps, so (H4) moves toward the centre
+  for A_DTL. Running (scratchpad defclimb.py, fitness = DEF changes at one (index, context)): seeded from
+  lemmaS_viol_n20, 3 DEF changes at one context within 863 steps.
