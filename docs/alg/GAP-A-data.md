@@ -203,3 +203,10 @@ and 32 and do not stack digits by themselves; a construction is needed.
 | P1: every learning search adds a new (top, vertex) coverage pair (searches ≤ n²) | dtl_cnew14_n20.pg search 3; dtl_searches20_n32.pg (8 searches) |
 | per-top escape count or SCC size monotone across searches | dtl_searches20_n32.pg top v19 |
 | pruning monotone across NESTED contexts (R' ⊂ R, more T) | tc+ N = 6: 42 stable→−1 reverts; r2_n32 best: 134 distance decreases |
+
+## 6. Box summary (03:30Z)
+PROVED: Lemma W (tangles ≤ n · searches); Lemma 1.5a (one reachable SCC). SKETCH: Lemma P/Q, one open case. DATA: F0–F10, (M)
+at identical contexts (0 violations), nested contexts not monotone, oscillation depth 5 at n = 32, 20–23 searches at n = 32
+(climbs), composition 2/3/4 copies → 30/30/35 searches. DEAD: §5 table. OPEN: a global budget for piece changes, or the
+counter (removal-order delay device; L-RED R9 builds the two-level version). The box produced no result in the sense of
+CLAUDE.md (nothing refereed), and GAP-A stays open with a sharper statement: the number of search calls per phase.
