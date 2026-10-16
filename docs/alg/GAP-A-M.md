@@ -942,7 +942,7 @@ origin/claude/l-red @ c204679, experiments/red/carry/instances/h4_compound_n44.p
   - Reading: in this instance the nesting is bounded by the child's rising round count (M 6 → 10 → 12 → 16). A
     potential "child M non-decreasing across parent DEF steps into ideal-stable child contexts" is suggested by this
     one instance only. NOT checked more widely; it is the first thing to test next box.
-- Nested climb (15:00Z; seed 203 from L-RED's h4_compound_n44, Oink order, fitness = distinct deeper contexts with DEF):
+- Nested climb (15:05Z; seed 203 from L-RED's h4_compound_n44, Oink order, fitness = distinct deeper contexts with DEF):
   experiments/alg/instances/h4_nested7_oink_n44.pg (Oink 12 iterations, verified). Player 1, searches 3-11: every
   depth-0 call at pieces 0-4 is a deficit call with the ideal stable (piece 5 ideal −1). Distinct contexts per piece over
   the 9 searches: piece 0: 1, piece 1: 1, piece 2: 2, piece 3: 5, piece 4: 8, piece 5: 9. The number of fresh contexts
