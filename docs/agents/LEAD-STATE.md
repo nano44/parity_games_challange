@@ -188,3 +188,4 @@
 - 23:42Z L-ALG d54c445 C5-orders.md: 8 unstated choices O1-O8; recommends option (ii) claim D1/D2 for every order datum. Lead accepted (ii); L-ALG to apply §0 wording + C5 Order data paragraph, then CHECKER C3d diff, then re-freeze L26.
 - 00:02Z hourly sweep: no overage (seven_day warning). Lead 554k. L-ALG succ.2 118k working (laminarity ruled out on tc+; GAP-A). No exceptions.
 - 00:11Z L-ALG GAP-A interim: per-top tangles can exceed n (31 at n=18) via in-search chain x restarts; distraction-status flip-flop observed (candidate counter shape). Spawned L-RED successor session_0117Yy21tGGz9s1zzLfBdUKC to attack it.
+- 00:18Z L-ALG 37bbe2f (§0 for every order datum) + d6129e3 (GAP-A data F1-F8; F3 in-search chain strongest conjecture) merged. CHECKER C3d started. L-RED pointed at searches-per-phase.
