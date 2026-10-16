@@ -175,6 +175,18 @@ first j where (R_j, res_j, V_j) differ, or ∗ if all depth-0 pieces agree (prog
   k ≥ j: a tangle learned at a piece k < j lies inside D_k(s) (an SCC of an sptl region of V*, or inside a cut's Z), and
   D_k(s) = D_k(s+1) is outside R_j by the equal contexts. Open step: "every sptl region of the last pass lies in Dom(V*, R)"
   (both are top-down consumed attractors from V*; not written out). So carries come from deeper learning (R9's CARRY).
+- Lemma N (towards "contexts change only through results"; SKETCH, 09:01Z, for C6 with Dom also computed as Û). Fix
+  R; T ⊆ T'; suppose the ideal pruning gives the same result and the same V (stable V*, or the −1 return set A) under T and
+  T'. Then Û(V, T) = Û(V, T') unless at the highest level q where they differ the new tangle's unconsumed part has its
+  cycle maximum m in V with pr(m) < q (the Lemma E (b) shape again). Proof of the other case: at that level some t ∈ T' \ T
+  applies to the T-closure; as in Lemma E its new part Y has a cycle of H_t with p-parity maximum m ∉ Û_{≥q}(V, T); if
+  m ∉ V, m was pruned at some round i' under T', but m ∈ Y ⊆ Û(V, T') ⊆ Û(V_{i'−1}(T'), T') and all its R-successors lie
+  in U_t ∪ esc(t) ⊆ Û(V, T'), so m attracts into it and survives round i': contradiction. Cut pieces are not covered
+  (their attractor at threshold t can grow with T at an unchanged result). A_DTL and C6 as written remove Dom(V*, R),
+  which contains the last round's consumed union U(V*, T) and can be larger (dtl.cpp 876-889: its target set X also holds
+  the vertices removed by earlier pieces, and attractTangle counts tangle vertices in X as already attracted, so a tangle
+  partly removed earlier can fire there but not in best_vertices' regions); Dom can grow through deficits and through
+  such tangles.
 6.2 The precise obstruction. The product comes only from REPLAYS: transitions of level j in an epoch other than the first
 level-j epoch in which level j changed (some level i < j changed in between). With replays bounded, N_j ≤ K + (replays at
 level j) and the phase has O(L·K + replays) transitions. Nothing proved bounds replays, for a concrete reason: when a level
