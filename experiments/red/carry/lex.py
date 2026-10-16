@@ -60,7 +60,7 @@ def measure(path):
 
 def score(path):
     o, _, d = measure(path)
-    return 100000 * o["lex_viol"] + 10000 * o["maxlevel"] + 1000 * o["nr_viol"] + 10 * o["maxsteps"] + len(d.trace) / 1000.0
+    return 100000 * o["maxlevel"] + 1000 * o["nr_viol"] + 100 * o["lex_viol"] + 10 * o["maxsteps"] + len(d.trace) / 1000.0
 
 if __name__ == "__main__":
     sys.setrecursionlimit(100000)
