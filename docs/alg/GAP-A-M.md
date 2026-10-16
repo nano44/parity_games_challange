@@ -1487,3 +1487,8 @@ child piece j+1 with context R_{j+1} = R_j \ Dom_T(V_j) (V_j the −1 return set
   (18/1/1/1, 21), spp_n40.pg (7/11/1, 19), spp_n60.pg (14/2, 16); pinned Oink gives the same iteration counts, verified.
   Reading: the per-phase maximum keeps rising with the step budget at every n (the climbs have not converged), and at
   equal budget it is not monotone in n (n = 40 is a slow seed). Nothing here is above linear in n.
+- Checkpoint 21:39Z: spp_n20.pg replaced by the climb's step-91,101 game: one phase with 18 searches at n = 20 (0.9 n;
+  13 p-parity vertices, so more searches than p-parity vertices; Oink order; 21 iterations, pinned Oink same, verified).
+  The same game in stable order has 11 searches in that phase (order datum matters a lot). spp_n40.pg replaced by the
+  step-27,334 game: 14 searches in one phase (Oink; 21 iterations, verified). n = 30 last improved at step 38,146 (20:23Z,
+  18) and n = 60 at step 8,729 (20:19Z, 14).
