@@ -679,3 +679,26 @@ pieces 0..j-1; measured ctx_changed = 0.
 - Status of (H4): GAP. Not proved: a bound on DEF per context, and that a DEF change never goes down. The data supports
   "deficits are rare and never the engine of a replay". (H4) stays a separate hypothesis only for A_DTL; it is void for C6.
   The open shape is the −1 → −1 prevV move, which re-targets Dom without any change in the ideal result.
+
+## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
+Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
+depth-0 index i in a phase. By §11e, carries at index i ≤ n(n+2) · c_i.
+- DATA (dtl_* instances, phi_idx_* instances, climbs_1016, 600 random games n ≤ 26; 642 games):
+  - max c_i = 4 (climbs_1016/nest_nest_s44.pg, n = 54, index 2), with 1,780 contexts on 1,756 (phase, index) pairs.
+  - New contexts at index i come from a level-j change (j < i): 42 from a Dom(prevV) piece whose V changed, 7 from a
+    cut whose removed set changed, 0 from a result-type flip.
+  - Contexts RECUR: 3 returns to a context seen earlier at the same index, all in nest_nest_s81, index 1.
+- Mechanism of the recurrence (DATA, nest_nest_s81, piece 0, fixed context G'). Every death round at piece 0 only
+  rises (Lemma F; e.g. 31: 6, 7, 7, 8, 9, 10 and 17: 6, 6, 7, 8, 8). They rise in a STAIRCASE: one vertex at a time
+  steps above the others, so the return set (the last nonempty round) alternates {31} → {17, 31} → {31} → {17, 31} →
+  {31} (s5, s8, s10, s11, s13). Dom(prevV) of piece 0 alternates with it, so the context at index 1 alternates R4 / R6.
+  The return set is not monotone as a set although every death is.
+- PROVED for C6 (from Lemma F, which needs only that T grows): revisits are harmless for the per-context bound. At a revisited
+  context the same-context records from the earlier visit still bind, because T only grew in between. So carries at
+  index i ≤ n(n+2) · (distinct contexts), not visits.
+- PROVED for C6 (counting; for A_DTL only under Theorem M-cond, deficits break Lemma F): by Lemma F, piece 0 (fixed context G') changes state at most n(n+2) times per phase: each change
+  raises a death, or grows Dom / a cut's removed set at an unchanged V (≤ n). So c_1 ≤ n(n+2) + n + 1. In general
+  c_{i+1} ≤ c_i · (n(n+2) + n + 1): the §6 product again, c_i ≤ K^i. Nothing proved bounds the product. The data
+  (max c_i = 4 at n ≤ 54) shows no growth, but the climbs that reward fresh contexts plateau at 5-6 (§6.3b, notebook).
+- Status: (H2b) reduces to c_i; c_i is bounded by K^i and by nothing better that is proved. GAP-A OPEN at the same place
+  as §6.3b: fresh child contexts per parent state.
