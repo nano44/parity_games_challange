@@ -10,3 +10,4 @@ One line each; "stable" = order datum (priority, id) of dtl_pyref; "oink" = Oink
 - h4_def6_oink_n28.pg: A_DTL OINK order (exact; Oink 9 iterations, verified); 6 deficit-triggered changes at one context (piece 0, |R| 26, after the first dominion) with the ideal stable throughout (GAP-A-M §13b).
 - h4_def7_oink_n44.pg: A_DTL OINK order (exact; Oink 11 iterations, verified); 7 deficit-triggered changes at one context (piece 0, R = G, |R| 44) with the ideal stable (26 vertices) throughout (GAP-A-M §13b).
 - h4_def8_oink_n44.pg: A_DTL OINK order (exact; Oink 11 iterations, verified); 8 deficit-triggered changes at one context (piece 0, R = G, |R| 44) with the ideal stable (27 vertices) in searches 3-11 (GAP-A-M §13b).
+- h4_def9_oink_n28.pg: A_DTL OINK order (exact; Oink 13 iterations, verified); 9 deficit-triggered changes at one ideal-stable context (|R| 28); kills (C-rM-stable): (r0, M) = (3, 8) and (9, 12) each repeat (GAP-A-M §13g).
