@@ -255,3 +255,4 @@
 - 11:39Z merged l-red 17db195 (independent confirmation of the Phi_idx counterexample).
 - 11:42Z merged l-alg 38f10e4; RESULTS DE9 (Phi, Phi_idx proof-route potentials dead). L-ALG main slot = c_i. Tool note (sufficient-singleton driver test) routed to L-RED.
 - 11:47Z merged l-alg 5388581 (§14 c_i).
+- 11:48Z merged l-red 18af127 (R12 §9 conclusion withdrawn).
