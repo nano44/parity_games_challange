@@ -680,7 +680,7 @@ pieces 0..j-1; measured ctx_changed = 0.
   "deficits are rare and never the engine of a replay". (H4) stays a separate hypothesis only for A_DTL; it is void for C6.
   The open shape is the −1 → −1 prevV move, which re-targets Dom without any change in the ideal result.
 
-## 14. (H2b) via c_i: contexts per index (11:46Z; Lead 11:33Z, main slot)
+## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
 depth-0 index i in a phase. By §11e, carries at index i ≤ n(n+2) · c_i.
 - DATA (dtl_* instances, phi_idx_* instances, climbs_1016, 600 random games n ≤ 26; 642 games):
@@ -693,10 +693,10 @@ depth-0 index i in a phase. By §11e, carries at index i ≤ n(n+2) · c_i.
   steps above the others, so the return set (the last nonempty round) alternates {31} → {17, 31} → {31} → {17, 31} →
   {31} (s5, s8, s10, s11, s13). Dom(prevV) of piece 0 alternates with it, so the context at index 1 alternates R4 / R6.
   The return set is not monotone as a set although every death is.
-- PROVED (from Lemma F, which needs only that T grows): revisits are harmless for the per-context bound. At a revisited
+- PROVED for C6 (from Lemma F, which needs only that T grows): revisits are harmless for the per-context bound. At a revisited
   context the same-context records from the earlier visit still bind, because T only grew in between. So carries at
   index i ≤ n(n+2) · (distinct contexts), not visits.
-- PROVED (counting): by Lemma F, piece 0 (fixed context G') changes state at most n(n+2) times per phase: each change
+- PROVED for C6 (counting; for A_DTL only under Theorem M-cond, deficits break Lemma F): by Lemma F, piece 0 (fixed context G') changes state at most n(n+2) times per phase: each change
   raises a death, or grows Dom / a cut's removed set at an unchanged V (≤ n). So c_1 ≤ n(n+2) + n + 1. In general
   c_{i+1} ≤ c_i · (n(n+2) + n + 1): the §6 product again, c_i ≤ K^i. Nothing proved bounds the product. The data
   (max c_i = 4 at n ≤ 54) shows no growth, but the climbs that reward fresh contexts plateau at 5-6 (§6.3b, notebook).
