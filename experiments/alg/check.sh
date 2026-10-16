@@ -34,5 +34,7 @@ for s_, kf in ((2, 1), (3, 2), (4, 3)):
     ne.MODE = "h"; k, undec, _ = alglib.k_needed(g, ref, kf)
     assert k == kf and all(u == g.n for u in undec[:kf]), (s_, k, undec)
     print(f"sibling-trap family S_{s_} (n={g.n}): C2 decides nothing for k < {kf}, solves at k = {kf}")
-print("ALG-CHECK PASS")
 PY
+# GAP-A-M.md §4: the synthetic counter to fixed-context monotonicity (M) must keep reproducing
+python3 -I dtl_m_synth.py | tail -1
+echo "ALG-CHECK PASS"
