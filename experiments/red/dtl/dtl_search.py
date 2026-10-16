@@ -2,7 +2,7 @@
 """Free-form hill-climb over small parity games maximising Oink DTL's learned-tangle count (L-RED, DTL box).
 Fitness = tangles found by `oink --dtl --no-single --no-wcwc --no-loops` (raw solver, no preprocessing, self-loops kept;
 before 16:02Z the runs used --no-single --no-wcwc only). Mutations: add/remove an edge,
-change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha|strch|newrecur|maxsets|pairs|iters|restarts|maxrestarts|osc|rep|excess|carries|pviol|resets|ogate|fresh|phiflat|phicap|cidx|h4|evens] [--maxeven K] [--grow k] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
+change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha|strch|newrecur|maxsets|pairs|iters|restarts|maxrestarts|osc|rep|excess|carries|pviol|resets|ogate|fresh|phiflat|phicap|cidx|h4|replay2|phaselen|evens] [--maxeven K] [--grow k] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
 import sys, os, random, subprocess, tempfile, time, re
 oink, n = sys.argv[1], int(sys.argv[2]); arg = lambda k, d: type(d)(sys.argv[sys.argv.index(k) + 1]) if k in sys.argv else d
 steps, seed, maxpr = arg("--steps", 20000), arg("--seed", 0), arg("--maxpr", 2 * int(sys.argv[2])); rng = random.Random(seed)
@@ -73,6 +73,14 @@ def score_py(g):
         except Exception:
             return -1
         return 100 * st["max_def_per_ctx"] + 10 * st["max_def_phase"][0] + st.get("DEF_m1m1", 0) + 1000 * st["NOT_weaker"] + d.iterations / 1000.0
+    if fitness in ("replay2", "phaselen"):   # CARRY box (Opus 5.5), Lead 12:04Z: chained resets (phi_full.replay_blocks): replay2 =
+        spec7 = importlib.util.spec_from_file_location("pf", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "carry", "phi_full.py"))
+        pf = importlib.util.module_from_spec(spec7); spec7.loader.exec_module(pf)   # block score + longest phase/100; phaselen = longest
+        try:                                                                         # phase (searches) + block score/100
+            sc, lp, _ = pf.replay_blocks(pf.run(tmp))
+        except Exception:
+            return -1
+        return sc + lp / 100.0 if fitness == "replay2" else lp + sc / 100.0
     if fitness == "cidx":      # CARRY box (Opus 5.5): L-ALG's (H2b) reduction (GAP-A-M 11e): max over (phase, index i) of the number
         spec6 = importlib.util.spec_from_file_location("pf", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "carry", "phi_full.py"))
         pf = importlib.util.module_from_spec(spec6); spec6.loader.exec_module(pf)   # of distinct -1 Dom(prevV) contexts c_i; + sum/100
@@ -136,7 +144,7 @@ def score_py(g):
 
 def score(g):
     open(tmp, "w").write(dumps(g))
-    if fitness in ("rep", "excess", "carries", "pviol", "resets", "ogate", "fresh", "phiflat", "phicap", "cidx", "h4"): return score_py(g)
+    if fitness in ("rep", "excess", "carries", "pviol", "resets", "ogate", "fresh", "phiflat", "phicap", "cidx", "h4", "replay2", "phaselen"): return score_py(g)
     try:
         r = subprocess.run([oink, SOLVER] + OINKFLAGS + (["-t", "-t", "-t"] if fitness in ("strch", "newrecur", "maxsets", "pairs") else ["-t", "-t"] if fitness.startswith("per") or fitness in ("prunemono", "dups", "alpha", "straddles", "restarts", "maxrestarts", "osc") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
     except subprocess.TimeoutExpired:

@@ -128,6 +128,43 @@ def ctx_counts(d):
     return out
 
 
+def replay_blocks(d):
+    """Lead 12:04Z / L-ALG GAP-A-M 14-15 target: chained resets. Per phase, F = first-difference depth-0 index of each
+    consecutive search pair (pieces compared by (context, kind, V); context = the call's R). A BLOCK at level i = a
+    transition with first difference i followed by the transitions with first difference > i, up to the next one <= i.
+    Returns (score, longest phase, detail): score = max over (phase, i) with >= 2 blocks at i of sum over blocks of
+    (deeper changes in the block - 1)^+. A K x K two-level counter scores about K(K - 1)."""
+    best, longest, det = 0, 0, None
+    phases = []; cur = []
+    for si, sr in enumerate(d.searches):
+        if cur and (d.searches[si - 1]["player"] != sr["player"] or d.searches[si - 1]["dominions"]):
+            phases.append(cur); cur = []
+        cur.append(si)
+    if cur: phases.append(cur)
+    def sig(si):
+        d0 = [pc for pc in d.searches[si]["pieces"] if pc["depth"] == 0]
+        return [(d.calls.get((si, j), (None,))[0], pc["kind"], frozenset(pc.get("V") or ())) for j, pc in enumerate(d0)]
+    for ph in phases:
+        longest = max(longest, len(ph))
+        F = []
+        for a, b in zip(ph, ph[1:]):
+            A, B = sig(a), sig(b); j = 0
+            while j < min(len(A), len(B)) and A[j] == B[j]: j += 1
+            F.append(j)
+        for i in set(F):
+            blocks = []; k = 0
+            while k < len(F):
+                if F[k] == i:
+                    c = 0; k += 1
+                    while k < len(F) and F[k] > i: c += 1; k += 1
+                    blocks.append(c)
+                else: k += 1
+            if len(blocks) >= 2:
+                sc = sum(max(0, c - 1) for c in blocks)
+                if sc > best: best, det = sc, (ph[0], i, blocks, F)
+    return best, longest, det
+
+
 def run(path):
     g = rd.ff.pg.read(path)
     from stdsort import oink_order
