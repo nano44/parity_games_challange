@@ -172,15 +172,16 @@ def analyse(d, out, name):
                 ut = max(resc, key=lambda v: (d.pr[v], v))
                 # (f) is the cross-context case exercised? u*'s record at index i split by context (same R as now / other)
                 if kind == "dom":
-                    same_rec, oth_rec = 0, 0
+                    same_rec, oth_rec, n_oth = 0, 0, 0
                     for kk in range(ph0, k + 1):
                         tr = d.trace[kk]
                         if i < len(tr["pieces"]) and tr["pieces"][i][1] == -1 and i not in tr.get("cuts", set()):
                             RR, rs, VV, nt = tr["pieces"][i]
                             dd = death_in(rounds(d, p, RR, tl_at(d, p, nt, tr["G"])), ut) if ut in RR else 0
                             if RR == R: same_rec = max(same_rec, dd)
-                            else: oth_rec = max(oth_rec, dd)
-                    if oth_rec == 0: fk = "f_no_other_context_record"
+                            else: oth_rec = max(oth_rec, dd); n_oth += 1
+                    if n_oth == 0: fk = "f_no_other_context_at_i"
+                    elif oth_rec == 0: fk = "f_ustar_absent_from_other_contexts"
                     elif oth_rec <= same_rec: fk = "f_other_record_le_same"
                     else: fk = "f_other_context_record_binding"
                     bk[fk] = bk.get(fk, 0) + 1
