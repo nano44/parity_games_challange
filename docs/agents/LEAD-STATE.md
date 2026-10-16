@@ -252,3 +252,4 @@
 - 11:27Z merged l-red d70e99a (R14: author recipe gives no slowdown on A_DTL).
 - 11:29Z merged l-alg 4f489cf (§6 re-measured).
 - 11:34Z merged l-alg 4ddc90f ((H2b) reduces to c_i). Asked L-ALG for a C7 (potential-enforcing variant) feasibility note vs attacking c_i.
+- 11:39Z merged l-red 17db195 (independent confirmation of the Phi_idx counterexample).
