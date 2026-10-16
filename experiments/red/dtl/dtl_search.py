@@ -88,7 +88,7 @@ def score_py(g):
             dd = pf.run(tmp); v = pf.lemma_s(dd)
         except Exception:
             return -1
-        return 1000 * len(v) + dd.lemma_s_pairs + d.iterations / 100.0
+        return 1000 * len(v) + 50 * dd.leader_drops + dd.lemma_s_pairs + d.iterations / 100.0   # leader drops: L-ALG c0aaa02
     if fitness in ("replay2", "phaselen"):   # CARRY box (Opus 5.5), Lead 12:04Z: chained resets (phi_full.replay_blocks): replay2 =
         spec7 = importlib.util.spec_from_file_location("pf", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "carry", "phi_full.py"))
         pf = importlib.util.module_from_spec(spec7); spec7.loader.exec_module(pf)   # block score + longest phase/100; phaselen = longest

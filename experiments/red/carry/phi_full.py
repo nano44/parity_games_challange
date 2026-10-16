@@ -176,7 +176,7 @@ def lemma_s(d):
     consecutive searches of one phase: (S1) the round count M (rounds until empty) never decreases; (S2) at equal M the
     return set only grows; (S3) when M rises, the return set equals the round-(M'-1) survivors (the new leaders; automatic
     for -1, kept as a consistency check). Returns a list of violations (search pair, j, kind, details)."""
-    out = []; d.lemma_s_pairs = 0
+    out = []; d.lemma_s_pairs = 0; d.leader_drops = 0
     for si in range(1, len(d.searches)):
         a, b = d.searches[si - 1], d.searches[si]
         if a["player"] != b["player"] or a["dominions"]: continue
@@ -187,6 +187,8 @@ def lemma_s(d):
             if da[j]["kind"] != "domfirst" or db[j]["kind"] != "domfirst": continue
             Ma, Mb = len(ca[2]) - 1, len(cb[2]) - 1; d.lemma_s_pairs += 1
             Va, Vb = ca[2][-2], cb[2][-2]
+            death_b = lambda v: next((r for r in range(1, len(cb[2])) if v not in cb[2][r]), len(cb[2]))
+            d.leader_drops += sum(1 for v in Va if death_b(v) < Ma)        # L-ALG c0aaa02: a leader of the earlier run dies earlier
             if Mb < Ma: out.append((si - 1, si, j, "S1_M_decreases", Ma, Mb, sorted(d.idx[v] for v in Va), sorted(d.idx[v] for v in Vb)))
             elif Mb == Ma and not Va <= Vb: out.append((si - 1, si, j, "S2_return_set_not_growing", Ma, Mb, sorted(d.idx[v] for v in Va), sorted(d.idx[v] for v in Vb)))
     return out
