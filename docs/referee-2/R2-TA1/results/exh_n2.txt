@@ -1,0 +1,13 @@
+== exhaustive n=2, priorities 0..2: 324 games in 0s
+   (psolB complete, psolQ complete, PA**) : count : first example
+   (False, True, False)     :        6 : 0 0 1 0,1 | 1 2 0 0
+   (True, True, True)       :      318 : 0 0 0 0 | 1 0 0 0
+   T-A1  'if'   PA** => psolB complete : HOLDS
+   T-A1 'only if' psolB complete => PA** : HOLDS
+   T-A1' PA** => psolQ complete : HOLDS
+   'psolQ complete => PA**' (the routed iff) : FAILS (6)
+   psolB sound: HOLDS
+   psolB_max == psolB_hkp: HOLDS
+   psolB order-independent (reversed): HOLDS
+   psolB order-independent (shuffled): HOLDS
+   psolQ ⊇ psolB (complete): HOLDS

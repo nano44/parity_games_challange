@@ -1,0 +1,144 @@
+== CEGAR-b n=5, k8_b, per_pat=12
+Q_4 prios=[1, 2] owners=[0]: 812782 games, 3248306 nodes -> 48062 classes (W true on 47946); max split round 6 [73.2s]
+round 1: subset 492 nodes (10 games), 387816 clauses -> SAT [0.9s]
+   Q_4: 1931 failing classes; added 96 games
+round 2: subset 876 nodes (106 games), 691472 clauses -> SAT [1.9s]
+   Q_4: 785 failing classes; added 96 games
+round 3: subset 1260 nodes (202 games), 995280 clauses -> SAT [2.7s]
+   Q_4: 1006 failing classes; added 96 games
+round 4: subset 1644 nodes (298 games), 1298864 clauses -> SAT [3.7s]
+   Q_4: 1026 failing classes; added 96 games
+round 5: subset 2028 nodes (394 games), 1602648 clauses -> SAT [4.6s]
+   Q_4: 233 failing classes; added 96 games
+round 6: subset 2412 nodes (490 games), 1905496 clauses -> SAT [6.0s]
+   Q_4: 1285 failing classes; added 96 games
+round 7: subset 2796 nodes (586 games), 2208736 clauses -> SAT [9.1s]
+   Q_4: 534 failing classes; added 96 games
+round 8: subset 3180 nodes (682 games), 2512232 clauses -> SAT [7.7s]
+   Q_4: 503 failing classes; added 96 games
+round 9: subset 3564 nodes (778 games), 2816104 clauses -> SAT [13.9s]
+   Q_4: 39 failing classes; added 39 games
+round 10: subset 3720 nodes (817 games), 2938928 clauses -> SAT [12.7s]
+   Q_4: 33 failing classes; added 33 games
+round 11: subset 3852 nodes (850 games), 3042904 clauses -> SAT [15.2s]
+   5-vertex sweep (all 32 patterns): 567840 failing games; added 360 [397.9s]
+round 12: subset 5652 nodes (1210 games), 4463040 clauses -> SAT [57.0s]
+   Q_4: 40 failing classes; added 40 games
+round 13: subset 5812 nodes (1250 games), 4589168 clauses -> SAT [101.5s]
+   Q_4: 48 failing classes; added 48 games
+round 14: subset 6004 nodes (1298 games), 4740376 clauses -> SAT [87.3s]
+   Q_4: 138 failing classes; added 96 games
+round 15: subset 6388 nodes (1394 games), 5043088 clauses -> SAT [103.2s]
+   Q_4: 34 failing classes; added 34 games
+round 16: subset 6524 nodes (1428 games), 5150352 clauses -> SAT [30.6s]
+   5-vertex sweep (all 32 patterns): 93120 failing games; added 300 [354.9s]
+round 17: subset 8024 nodes (1728 games), 6331360 clauses -> SAT [126.8s]
+   Q_4: 117 failing classes; added 96 games
+round 18: subset 8408 nodes (1824 games), 6634840 clauses -> SAT [102.4s]
+   Q_4: 9 failing classes; added 9 games
+round 19: subset 8444 nodes (1833 games), 6663136 clauses -> SAT [152.7s]
+   Q_4: 12 failing classes; added 12 games
+round 20: subset 8492 nodes (1845 games), 6700944 clauses -> SAT [68.8s]
+   Q_4: 3 failing classes; added 3 games
+round 21: subset 8504 nodes (1848 games), 6710384 clauses -> SAT [145.6s]
+   Q_4: 8 failing classes; added 8 games
+round 22: subset 8536 nodes (1856 games), 6735664 clauses -> SAT [66.6s]
+   Q_4: 93 failing classes; added 93 games
+round 23: subset 8908 nodes (1949 games), 7029504 clauses -> SAT [114.8s]
+   Q_4: 3 failing classes; added 3 games
+round 24: subset 8920 nodes (1952 games), 7038936 clauses -> SAT [69.4s]
+   Q_4: 81 failing classes; added 81 games
+round 25: subset 9244 nodes (2033 games), 7295384 clauses -> SAT [155.2s]
+   Q_4: 33 failing classes; added 33 games
+round 26: subset 9376 nodes (2066 games), 7400048 clauses -> SAT [116.7s]
+   Q_4: 52 failing classes; added 52 games
+round 27: subset 9584 nodes (2118 games), 7564208 clauses -> SAT [170.5s]
+   Q_4: 2 failing classes; added 2 games
+round 28: subset 9592 nodes (2120 games), 7570472 clauses -> SAT [156.1s]
+   Q_4: 17 failing classes; added 17 games
+round 29: subset 9660 nodes (2137 games), 7624080 clauses -> SAT [179.4s]
+   Q_4: 62 failing classes; added 62 games
+round 30: subset 9908 nodes (2199 games), 7819768 clauses -> SAT [112.4s]
+   Q_4: 18 failing classes; added 18 games
+round 31: subset 9980 nodes (2217 games), 7876368 clauses -> SAT [76.0s]
+   Q_4: 5 failing classes; added 5 games
+round 32: subset 10000 nodes (2222 games), 7892072 clauses -> SAT [80.1s]
+   Q_4: 9 failing classes; added 9 games
+round 33: subset 10036 nodes (2231 games), 7920336 clauses -> SAT [175.4s]
+   Q_4: 15 failing classes; added 15 games
+round 34: subset 10096 nodes (2246 games), 7967776 clauses -> SAT [174.3s]
+   Q_4: 20 failing classes; added 20 games
+round 35: subset 10176 nodes (2266 games), 8030688 clauses -> SAT [176.4s]
+   5-vertex sweep (all 32 patterns): 200040 failing games; added 300 [365.5s]
+round 36: subset 11676 nodes (2566 games), 9211672 clauses -> SAT [134.4s]
+   Q_4: 56 failing classes; added 56 games
+round 37: subset 11900 nodes (2622 games), 9388120 clauses -> SAT [206.7s]
+   5-vertex sweep (all 32 patterns): 6656400 failing games; added 300 [372.2s]
+round 38: subset 13400 nodes (2922 games), 10575632 clauses -> SAT [211.6s]
+   5-vertex sweep (all 32 patterns): 871320 failing games; added 300 [379.1s]
+round 39: subset 14900 nodes (3222 games), 11758048 clauses -> SAT [304.9s]
+   5-vertex sweep (all 32 patterns): 442320 failing games; added 300 [364.9s]
+round 40: subset 16400 nodes (3522 games), 12944584 clauses -> SAT [261.4s]
+   Q_4: 16 failing classes; added 16 games
+round 41: subset 16464 nodes (3538 games), 12995048 clauses -> SAT [128.3s]
+   Q_4: 2 failing classes; added 2 games
+round 42: subset 16472 nodes (3540 games), 13001360 clauses -> SAT [140.4s]
+   Q_4: 89 failing classes; added 89 games
+round 43: subset 16828 nodes (3629 games), 13282616 clauses -> SAT [282.6s]
+   Q_4: 14 failing classes; added 14 games
+round 44: subset 16884 nodes (3643 games), 13326992 clauses -> SAT [181.7s]
+   5-vertex sweep (all 32 patterns): 309600 failing games; added 360 [387.3s]
+round 45: subset 18684 nodes (4003 games), 14747376 clauses -> SAT [280.4s]
+   5-vertex sweep (all 32 patterns): 170640 failing games; added 300 [401.3s]
+round 46: subset 20184 nodes (4303 games), 15931344 clauses -> SAT [299.1s]
+   5-vertex sweep (all 32 patterns): 358080 failing games; added 180 [394.5s]
+round 47: subset 21084 nodes (4483 games), 16643032 clauses -> SAT [420.6s]
+   Q_4: 1 failing classes; added 1 games
+round 48: subset 21088 nodes (4484 games), 16646176 clauses -> SAT [173.0s]
+   Q_4: 1 failing classes; added 1 games
+round 49: subset 21092 nodes (4485 games), 16649336 clauses -> SAT [257.6s]
+   Q_4: 1 failing classes; added 1 games
+round 50: subset 21096 nodes (4486 games), 16652472 clauses -> SAT [371.6s]
+   Q_4: 2 failing classes; added 2 games
+round 51: subset 21104 nodes (4488 games), 16658744 clauses -> SAT [217.8s]
+   5-vertex sweep (all 32 patterns): 265800 failing games; added 300 [364.6s]
+round 52: subset 22604 nodes (4788 games), 17843312 clauses -> SAT [267.7s]
+   Q_4: 55 failing classes; added 55 games
+round 53: subset 22824 nodes (4843 games), 18017624 clauses -> SAT [265.7s]
+   Q_4: 4 failing classes; added 4 games
+round 54: subset 22840 nodes (4847 games), 18030200 clauses -> SAT [327.4s]
+   Q_4: 2 failing classes; added 2 games
+round 55: subset 22848 nodes (4849 games), 18036480 clauses -> SAT [184.6s]
+   Q_4: 10 failing classes; added 10 games
+round 56: subset 22888 nodes (4859 games), 18068184 clauses -> SAT [276.5s]
+   5-vertex sweep (all 32 patterns): 190080 failing games; added 300 [333.3s]
+round 57: subset 24388 nodes (5159 games), 19253968 clauses -> SAT [288.9s]
+   5-vertex sweep (all 32 patterns): 466080 failing games; added 300 [367.2s]
+round 58: subset 25888 nodes (5459 games), 20439488 clauses -> SAT [333.1s]
+   5-vertex sweep (all 32 patterns): 2495040 failing games; added 300 [387.6s]
+round 59: subset 27388 nodes (5759 games), 21630224 clauses -> SAT [366.7s]
+   Q_4: 4 failing classes; added 4 games
+round 60: subset 27404 nodes (5763 games), 21642832 clauses -> SAT [536.3s]
+   Q_4: 16 failing classes; added 16 games
+round 61: subset 27468 nodes (5779 games), 21693392 clauses -> SAT [240.2s]
+   Q_4: 4 failing classes; added 4 games
+round 62: subset 27484 nodes (5783 games), 21706000 clauses -> SAT [558.0s]
+   5-vertex sweep (all 32 patterns): 21480 failing games; added 60 [414.3s]
+round 63: subset 27784 nodes (5843 games), 21943024 clauses -> SAT [271.4s]
+   5-vertex sweep (all 32 patterns): 27360 failing games; added 60 [440.7s]
+round 64: subset 28084 nodes (5903 games), 22180208 clauses -> SAT [581.6s]
+   5-vertex sweep (all 32 patterns): 421440 failing games; added 180 [420.2s]
+round 65: subset 28984 nodes (6083 games), 22893144 clauses -> SAT [273.5s]
+   5-vertex sweep (all 32 patterns): 159840 failing games; added 300 [430.4s]
+round 66: subset 30484 nodes (6383 games), 24075992 clauses -> SAT [125.4s]
+   5-vertex sweep (all 32 patterns): 23040 failing games; added 60 [462.1s]
+round 67: subset 30784 nodes (6443 games), 24313088 clauses -> SAT [572.7s]
+   5-vertex sweep (all 32 patterns): 150720 failing games; added 300 [434.7s]
+round 68: subset 32284 nodes (6743 games), 25495400 clauses -> SAT [498.0s]
+   5-vertex sweep (all 32 patterns): 1237440 failing games; added 180 [458.5s]
+round 69: subset 33184 nodes (6923 games), 26208592 clauses -> SAT [349.2s]
+   5-vertex sweep (all 32 patterns): 28320 failing games; added 180 [443.8s]
+round 70: subset 34084 nodes (7103 games), 26918512 clauses -> SAT [517.3s]
+   5-vertex sweep (all 32 patterns): 0 failing games; added 0 [465.7s]
+RESULT: program with 8 Cpre gates (k8_b) solves ALL one-player Büchi games with <= 5 vertices. cost=8 depth=8
+EXIT 0

@@ -1,0 +1,23 @@
+n=5, 1500 games
+  PA*     False      PA** = False :      204   e.g. parity 4; | 0 5 0 0,1,4; | 1 7 0 0,1,2,3,4; | 2 1 0 3,4; | 3 2 1 1,3,4; | 4 7 1 1,2,4; | 
+  PA*     False      PA** = True  :      126   e.g. parity 4; | 0 3 0 1,2,3,4; | 1 6 1 1; | 2 4 0 3; | 3 3 1 0,1,2,4; | 4 0 0 0,1,2,3; | 
+  PA*     True       PA** = True  :     1170   e.g. parity 4; | 0 8 1 1,2,4; | 1 7 1 0; | 2 4 1 0,1,3,4; | 3 3 1 3; | 4 0 1 0; | 
+  buchi   True       PA** = True  :       10   e.g. parity 4; | 0 3 1 0,2; | 1 3 0 1; | 2 0 1 0,2,3,4; | 3 3 1 1,2,3,4; | 4 0 1 4; | 
+  greedy2 False      PA** = False :      204   e.g. parity 4; | 0 5 0 0,1,4; | 1 7 0 0,1,2,3,4; | 2 1 0 3,4; | 3 2 1 1,3,4; | 4 7 1 1,2,4; | 
+  greedy2 False      PA** = True  :       15   e.g. parity 4; | 0 1 1 0,3; | 1 9 0 0,4; | 2 2 1 0,1; | 3 7 0 1,3; | 4 4 0 1,3,4; | 
+  greedy2 True       PA** = True  :     1281   e.g. parity 4; | 0 8 1 1,2,4; | 1 7 1 0; | 2 4 1 0,1,3,4; | 3 3 1 3; | 4 0 1 0; | 
+  psol    solved     PA** = False :       11   e.g. parity 4; | 0 2 1 0,3; | 1 1 1 1,3,4; | 2 9 0 0,2,3; | 3 5 0 0,1,2; | 4 6 0 0,1,2; | 
+  psol    solved     PA** = True  :     1284   e.g. parity 4; | 0 8 1 1,2,4; | 1 7 1 0; | 2 4 1 0,1,3,4; | 3 3 1 3; | 4 0 1 0; | 
+  psol    undecided  PA** = False :      193   e.g. parity 4; | 0 5 0 0,1,4; | 1 7 0 0,1,2,3,4; | 2 1 0 3,4; | 3 2 1 1,3,4; | 4 7 1 1,2,4; | 
+  psol    undecided  PA** = True  :       12   e.g. parity 4; | 0 6 1 0,3,4; | 1 3 1 0; | 2 5 1 1,3; | 3 1 1 0,1,4; | 4 6 1 0,1,2; | 
+  psolb   solved     PA** = True  :     1296   e.g. parity 4; | 0 8 1 1,2,4; | 1 7 1 0; | 2 4 1 0,1,3,4; | 3 3 1 3; | 4 0 1 0; | 
+  psolb   undecided  PA** = False :      204   e.g. parity 4; | 0 5 0 0,1,4; | 1 7 0 0,1,2,3,4; | 2 1 0 3,4; | 3 2 1 1,3,4; | 4 7 1 1,2,4; | 
+  psolq   solved     PA** = False :      200   e.g. parity 4; | 0 5 0 0,1,4; | 1 7 0 0,1,2,3,4; | 2 1 0 3,4; | 3 2 1 1,3,4; | 4 7 1 1,2,4; | 
+  psolq   solved     PA** = True  :     1296   e.g. parity 4; | 0 8 1 1,2,4; | 1 7 1 0; | 2 4 1 0,1,3,4; | 3 3 1 3; | 4 0 1 0; | 
+  psolq   undecided  PA** = False :        4   e.g. parity 4; | 0 2 1 0,1,2; | 1 5 0 2; | 2 6 1 0,3,4; | 3 0 1 0,1,2,3; | 4 5 1 2,3; | 
+  scc     True       PA** = True  :       32   e.g. parity 4; | 0 2 0 0,2; | 1 1 1 1; | 2 4 0 2; | 3 8 0 0,1,2,3; | 4 7 0 0,1,2; | 
+PA** => psolQ solves: HOLDS ; PA** => psolB solves: HOLDS ; psolB solves => PA**: HOLDS ; psolQ solves => PA**: FAILS (200)
+PA* => PA**: HOLDS ; greedy2 => PA**: HOLDS ; PA** => greedy2: FAILS (15)
+buchi => PA**: HOLDS
+scc => PA**: HOLDS
+det => PA**: HOLDS

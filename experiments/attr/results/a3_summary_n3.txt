@@ -1,0 +1,35 @@
+n=3 games=41440 time=2s variant=True
+('B,C', 'solved', 'solved') : 38380
+('B,C', 'undecided', 'solved') : 3060
+('C,Cx', 'solved', 'solved') : 41414
+('C,Cx', 'solved', 'undecided') : 26
+('Q,C', 'solved', 'solved') : 41396
+('Q,C', 'undecided', 'solved') : 44
+('psolB', 'solved') : 38380
+('psolB', 'undecided') : 3060
+('psolC', 'solved') : 41440
+('psolCx', 'solved') : 41414
+('psolCx', 'undecided') : 26
+('psolQ', 'solved') : 41396
+('psolQ', 'undecided') : 44
+('thm4', True) : 41440
+by m, psolB, psolQ, psolC, thm4, psolCx : count
+(3, 'solved', 'solved', 'solved', True, 'solved') : 4144
+(4, 'solved', 'solved', 'solved', True, 'solved') : 8480
+(4, 'undecided', 'solved', 'solved', True, 'solved') : 392
+(4, 'undecided', 'undecided', 'solved', True, 'solved') : 8
+(5, 'solved', 'solved', 'solved', True, 'solved') : 11540
+(5, 'undecided', 'solved', 'solved', True, 'solved') : 876
+(5, 'undecided', 'undecided', 'solved', True, 'solved') : 8
+(5, 'undecided', 'undecided', 'solved', True, 'undecided') : 8
+(6, 'solved', 'solved', 'solved', True, 'solved') : 8518
+(6, 'undecided', 'solved', 'solved', True, 'solved') : 938
+(6, 'undecided', 'undecided', 'solved', True, 'solved') : 2
+(6, 'undecided', 'undecided', 'solved', True, 'undecided') : 14
+(7, 'solved', 'solved', 'solved', True, 'solved') : 4194
+(7, 'undecided', 'solved', 'solved', True, 'solved') : 538
+(7, 'undecided', 'undecided', 'solved', True, 'undecided') : 4
+(8, 'solved', 'solved', 'solved', True, 'solved') : 1020
+(8, 'undecided', 'solved', 'solved', True, 'solved') : 164
+(9, 'solved', 'solved', 'solved', True, 'solved') : 484
+(9, 'undecided', 'solved', 'solved', True, 'solved') : 108

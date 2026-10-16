@@ -1,0 +1,78 @@
+n=4 games=27331200 time=2014s variant=True
+('B,C', 'solved', 'solved') : 24363696
+('B,C', 'undecided', 'solved') : 2966124
+('B,C', 'undecided', 'undecided') : 1380
+('C,Cx', 'solved', 'solved') : 27282492
+('C,Cx', 'solved', 'undecided') : 47328
+('C,Cx', 'undecided', 'undecided') : 1380
+('Q,C', 'solved', 'solved') : 27255344
+('Q,C', 'undecided', 'solved') : 74476
+('Q,C', 'undecided', 'undecided') : 1380
+('psolB', 'solved') : 24363696
+('psolB', 'undecided') : 2967504
+('psolC', 'solved') : 27329820
+('psolC', 'undecided') : 1380
+('psolCx', 'solved') : 27282492
+('psolCx', 'undecided') : 48708
+('psolQ', 'solved') : 27255344
+('psolQ', 'undecided') : 75856
+('thm4', True) : 27331200
+by m, psolB, psolQ, psolC, thm4, psolCx : count
+(10, 'solved', 'solved', 'solved', True, 'solved') : 3657014
+(10, 'undecided', 'solved', 'solved', True, 'solved') : 524374
+(10, 'undecided', 'undecided', 'solved', True, 'solved') : 1858
+(10, 'undecided', 'undecided', 'solved', True, 'undecided') : 9556
+(10, 'undecided', 'undecided', 'undecided', True, 'undecided') : 318
+(11, 'solved', 'solved', 'solved', True, 'solved') : 2012062
+(11, 'undecided', 'solved', 'solved', True, 'solved') : 318760
+(11, 'undecided', 'undecided', 'solved', True, 'solved') : 478
+(11, 'undecided', 'undecided', 'solved', True, 'undecided') : 4526
+(11, 'undecided', 'undecided', 'undecided', True, 'undecided') : 174
+(12, 'solved', 'solved', 'solved', True, 'solved') : 931504
+(12, 'undecided', 'solved', 'solved', True, 'solved') : 164674
+(12, 'undecided', 'undecided', 'solved', True, 'solved') : 48
+(12, 'undecided', 'undecided', 'solved', True, 'undecided') : 1640
+(12, 'undecided', 'undecided', 'undecided', True, 'undecided') : 54
+(13, 'solved', 'solved', 'solved', True, 'solved') : 311856
+(13, 'undecided', 'solved', 'solved', True, 'solved') : 61576
+(13, 'undecided', 'undecided', 'solved', True, 'undecided') : 322
+(13, 'undecided', 'undecided', 'undecided', True, 'undecided') : 6
+(14, 'solved', 'solved', 'solved', True, 'solved') : 85582
+(14, 'undecided', 'solved', 'solved', True, 'solved') : 19492
+(14, 'undecided', 'undecided', 'solved', True, 'undecided') : 46
+(15, 'solved', 'solved', 'solved', True, 'solved') : 18560
+(15, 'undecided', 'solved', 'solved', True, 'solved') : 4800
+(16, 'solved', 'solved', 'solved', True, 'solved') : 8916
+(16, 'undecided', 'solved', 'solved', True, 'solved') : 2764
+(4, 'solved', 'solved', 'solved', True, 'solved') : 221920
+(5, 'solved', 'solved', 'solved', True, 'solved') : 805424
+(5, 'undecided', 'solved', 'solved', True, 'solved') : 34336
+(5, 'undecided', 'undecided', 'solved', True, 'solved') : 1184
+(5, 'undecided', 'undecided', 'solved', True, 'undecided') : 16
+(6, 'solved', 'solved', 'solved', True, 'solved') : 2307640
+(6, 'undecided', 'solved', 'solved', True, 'solved') : 162440
+(6, 'undecided', 'undecided', 'solved', True, 'solved') : 4432
+(6, 'undecided', 'undecided', 'solved', True, 'undecided') : 1600
+(6, 'undecided', 'undecided', 'undecided', True, 'undecided') : 48
+(7, 'solved', 'solved', 'solved', True, 'solved') : 3975820
+(7, 'undecided', 'solved', 'solved', True, 'solved') : 379200
+(7, 'undecided', 'undecided', 'solved', True, 'solved') : 7256
+(7, 'undecided', 'undecided', 'solved', True, 'undecided') : 5924
+(7, 'undecided', 'undecided', 'undecided', True, 'undecided') : 120
+(8, 'solved', 'solved', 'solved', True, 'solved') : 5161478
+(8, 'undecided', 'solved', 'solved', True, 'solved') : 589550
+(8, 'undecided', 'undecided', 'solved', True, 'solved') : 7260
+(8, 'undecided', 'undecided', 'solved', True, 'undecided') : 11332
+(8, 'undecided', 'undecided', 'undecided', True, 'undecided') : 300
+(9, 'solved', 'solved', 'solved', True, 'solved') : 4865920
+(9, 'undecided', 'solved', 'solved', True, 'solved') : 629682
+(9, 'undecided', 'undecided', 'solved', True, 'solved') : 4632
+(9, 'undecided', 'undecided', 'solved', True, 'undecided') : 12366
+(9, 'undecided', 'undecided', 'undecided', True, 'undecided') : 360
+smallest psolC-partial games: m=6, count 48
+  prio=[1, 2, 1, 5] owner=[0, 0, 0, 0] succ=[[0, 1], [2], [2, 3], [0]] ref=[1, 1, 1, 1] psolB=undecided psolQ=undecided c_undec=4
+  prio=[1, 5, 1, 2] owner=[0, 0, 0, 0] succ=[[0, 1], [2], [2, 3], [0]] ref=[1, 1, 1, 1] psolB=undecided psolQ=undecided c_undec=4
+  prio=[1, 4, 3, 7] owner=[0, 0, 0, 0] succ=[[0, 1], [2], [2, 3], [0]] ref=[1, 1, 1, 1] psolB=undecided psolQ=undecided c_undec=4
+  prio=[1, 7, 3, 4] owner=[0, 0, 0, 0] succ=[[0, 1], [2], [2, 3], [0]] ref=[1, 1, 1, 1] psolB=undecided psolQ=undecided c_undec=4
+  prio=[3, 4, 1, 7] owner=[0, 0, 0, 0] succ=[[0, 1], [2], [2, 3], [0]] ref=[1, 1, 1, 1] psolB=undecided psolQ=undecided c_undec=4
+  prio=[3, 7, 1, 4] owner=[0, 0, 0, 0] succ=[[0, 1], [2], [2, 3], [0]] ref=[1, 1, 1, 1] psolB=undecided psolQ=undecided c_undec=4

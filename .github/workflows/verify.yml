@@ -10,6 +10,15 @@ jobs:
       - uses: actions/checkout@v4
       - name: Boost
         run: sudo apt-get update -q && sudo apt-get install -y -q libboost-filesystem-dev libboost-iostreams-dev libboost-regex-dev libboost-random-dev
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Python packages
+        # setup-python's site-packages is writable, so pip does not fall back to the user site,
+        # which `python3 -I` (used by experiments/*/check.sh) ignores.
+        run: |
+          python3 -m pip install python-sat==1.9.dev15 numpy==2.5.3
+          python3 -I -c "import numpy, pysat; print('isolated imports ok', numpy.__version__)"
       - name: Cache Oink build
         uses: actions/cache@v4
         with:

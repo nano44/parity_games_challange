@@ -1,0 +1,17 @@
+family,N,n,m,d,solver,status,iterations,unit,solver_s,wall_s
+switchbestexp-pgsbest,1,35,70,34,pgs-switchbest,ok,23,iterations,,0.1528
+switchbestexp-pgsbest,1,35,70,34,py-zlk,ok,7,iterations,,0.0853
+switchbestexp-pgsbest,2,60,130,60,pgs-switchbest,ok,61,iterations,,0.5944
+switchbestexp-pgsbest,2,60,130,60,py-zlk,ok,18,iterations,,0.0360
+switchbestexp-pgsbest,3,85,190,84,pgs-switchbest,ok,137,iterations,,2.3318
+switchbestexp-pgsbest,3,85,190,84,py-zlk,ok,28,iterations,,0.0458
+switchbestexp-pgsbest,4,110,250,110,pgs-switchbest,ok,289,iterations,,8.1482
+switchbestexp-pgsbest,4,110,250,110,py-zlk,ok,51,iterations,,0.0378
+switchbestexp-pgsbest,5,135,310,134,pgs-switchbest,ok,593,iterations,,23.0510
+switchbestexp-pgsbest,5,135,310,134,py-zlk,ok,71,iterations,,0.0433
+switchbestexp-pgsbest,6,160,370,160,pgs-switchbest,ok,1201,iterations,,63.8970
+switchbestexp-pgsbest,6,160,370,160,py-zlk,ok,118,iterations,,0.0404
+switchbestexp-pgsbest,7,185,430,184,pgs-switchbest,ok,2417,iterations,,167.6564
+switchbestexp-pgsbest,7,185,430,184,py-zlk,ok,158,iterations,,0.0376
+switchbestexp-pgsbest,8,210,490,210,pgs-switchbest,ok,4849,iterations,,423.0282
+switchbestexp-pgsbest,8,210,490,210,py-zlk,ok,253,iterations,,0.0519

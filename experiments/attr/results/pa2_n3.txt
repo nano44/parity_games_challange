@@ -1,0 +1,24 @@
+n=3, 41440 games
+  PA*     False      PA** = False :     3060   e.g. parity 2; | 0 1 0 0; | 1 1 0 1,2; | 2 3 0 1; | 
+  PA*     False      PA** = True  :     2534   e.g. parity 2; | 0 3 0 0; | 1 1 0 0; | 2 1 0 0,2; | 
+  PA*     True       PA** = True  :    35846   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+  buchi   True       PA** = True  :     7840   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+  det     True       PA** = True  :     4144   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+  greedy2 False      PA** = False :     3060   e.g. parity 2; | 0 1 0 0; | 1 1 0 1,2; | 2 3 0 1; | 
+  greedy2 False      PA** = True  :       48   e.g. parity 2; | 0 0 0 0,1; | 1 3 0 1,2; | 2 5 0 0; | 
+  greedy2 True       PA** = True  :    38332   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+  psol    solved     PA** = False :      152   e.g. parity 2; | 0 1 0 1; | 1 1 0 0,2; | 2 3 0 0; | 
+  psol    solved     PA** = True  :    37952   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+  psol    undecided  PA** = False :     2908   e.g. parity 2; | 0 1 0 0; | 1 1 0 1,2; | 2 3 0 1; | 
+  psol    undecided  PA** = True  :      428   e.g. parity 2; | 0 1 0 0; | 1 1 0 1,2; | 2 1 0 1,2; | 
+  psolb   solved     PA** = True  :    38380   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+  psolb   undecided  PA** = False :     3060   e.g. parity 2; | 0 1 0 0; | 1 1 0 1,2; | 2 3 0 1; | 
+  psolq   solved     PA** = False :     3016   e.g. parity 2; | 0 1 0 0; | 1 1 0 1,2; | 2 3 0 1; | 
+  psolq   solved     PA** = True  :    38380   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+  psolq   undecided  PA** = False :       44   e.g. parity 2; | 0 1 0 0,1; | 1 5 0 2; | 2 2 0 0; | 
+  scc     True       PA** = True  :    11872   e.g. parity 2; | 0 0 0 0; | 1 0 0 0; | 2 0 0 0; | 
+PA** => psolQ solves: HOLDS ; PA** => psolB solves: HOLDS ; psolB solves => PA**: HOLDS ; psolQ solves => PA**: FAILS (3016)
+PA* => PA**: HOLDS ; greedy2 => PA**: HOLDS ; PA** => greedy2: FAILS (48)
+buchi => PA**: HOLDS
+scc => PA**: HOLDS
+det => PA**: HOLDS
