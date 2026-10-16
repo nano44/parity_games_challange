@@ -13,3 +13,4 @@
 | D9 | 2026-10-16 | Search online for van Dijk's DTL counterexample (counter_dtl); L28: fresh L-LIT successor, read-only, no contact | active | docs/DECISIONS.md#d9 |
 | D10 | 2026-10-16 | Q13 (a): repository stays public (L29: pushes are not D1 publishing; no sensitive content ever committed; no announcing or linking) | active | docs/DECISIONS.md#d10 |
 | D11 | 2026-10-16 | Q12 (a): no contact with van Dijk for now (L30) | active | docs/DECISIONS.md#d11 |
+| L31 | 2026-10-16 | Lead reading: C6 not promoted; A_DTL stays the gauntlet candidate; C6 is the simpler model for the core proof | active | docs/DECISIONS.md#l31 |
