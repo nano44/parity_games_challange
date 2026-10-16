@@ -284,3 +284,4 @@
 - 14:05Z hourly sweep: no overage (seven_day allowed_warning). Lead ctx 488k, $157.8; L-ALG working (362k, $56.8), L-RED working (384k, $50.9). Both boxes end ~16:10Z; DONE reports due ~15:45/16:00Z. No exceptions.
 - 14:08Z merged l-alg 30d5348 ((C-rM) dead).
 - 14:13Z merged l-alg 217c2a7 ((C-rM-stable) candidate); routed to L-RED.
+- 14:25Z merged l-alg (C-rM-stable) dead; h4_def9_oink_n28 (Lead re-ran Oink). Told L-RED to stop that attack.
