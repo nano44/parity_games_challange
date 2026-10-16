@@ -35,3 +35,8 @@ searches, so it is a noisy signal.
 (a) a phase with more than n searches (from spp19_*_n30 and L-ALG spp_*); (b) one vertex falling twice at one context
 (renewable reset); (c) a U-shrink in an actual DTL run: needs a split-tangle remainder whose tops were never stable best
 vertices before the steal (L-RED reading, R18/§3 above).
+
+## 5. Correction (23:08Z by date -u; Lead 23:12Z)
+Section 1's ratio "spp/n at most 0.8 (L-ALG n = 20)" used the spp_n20.pg I measured (16 searches in one phase, l-alg
+c7fc7cb trunk copy). The Lead reports L-ALG's spp_n20 at l-alg 6652cd7 has 18 searches in one phase at n = 20, i.e. 0.9 n.
+Not re-measured by me. Still no phase with more than n searches.
