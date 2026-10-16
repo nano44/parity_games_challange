@@ -15,8 +15,12 @@ def mk(base):
             s.ns += 1; s.trace.append({"p": p, "pieces": [], "dom": s.dominions})
             return super().search(p)
         def search_rec(s, R, p, depth):
-            s.depth = depth
-            return super().search_rec(R, p, depth)
+            # 11:20Z fix: restore the depth on return (before, every depth-0 piece after the first cut was unrecorded);
+            # record the cut attractor (R of the depth-1 child) on the cutting depth-0 piece
+            if depth == 1 and s.trace[-1]["pieces"]:
+                s.trace[-1].setdefault("att", {})[len(s.trace[-1]["pieces"]) - 1] = frozenset(R)
+            od = s.depth; s.depth = depth
+            r = super().search_rec(R, p, depth); s.depth = od; return r
         def best_vertices(s, V, R, p):
             Rin = frozenset(R)
             res = super().best_vertices(V, R, p)
@@ -36,6 +40,17 @@ def mk(base):
             return res
     return P
 
+def sig(tr, j):
+    """Corrected depth-0 piece state (GAP-A-M §6 CORRECTION): at a cut piece V is never read; its state is the attractor."""
+    P = tr["pieces"][j]
+    if os.environ.get("STATE_V") != "1" and j in tr.get("att", {}): return (P[0], P[1], "cut", tr["att"][j])
+    return P[:3]
+
+def first_diff(a, b):
+    pa, pb = a["pieces"], b["pieces"]; j = 0
+    while j < min(len(pa), len(pb)) and sig(a, j) == sig(b, j): j += 1
+    return j
+
 def analyse(d):
     out = {"RES": 0, "NEST": 0, "FRESH": 0, "NESTdown": 0, "same": 0}
     for a, b in zip(d.trace, d.trace[1:]):
@@ -43,7 +58,7 @@ def analyse(d):
         if b["dom"] != a["dom"]: continue   # a dominion was found in search a: G' changes
         pa, pb = a["pieces"], b["pieces"]
         j = 0
-        while j < min(len(pa), len(pb)) and pa[j][0] == pb[j][0] and pa[j][1] == pb[j][1] and pa[j][2] == pb[j][2]:
+        while j < min(len(pa), len(pb)) and sig(a, j) == sig(b, j):
             j += 1
         if j >= min(len(pa), len(pb)): out["same"] += 1; continue
         Ra, Rb = pa[j][0], pb[j][0]
@@ -63,7 +78,7 @@ def seq(d):
             out.append("|"); continue
         pa, pb = a["pieces"], b["pieces"]
         j = 0
-        while j < min(len(pa), len(pb)) and pa[j][:3] == pb[j][:3]:
+        while j < min(len(pa), len(pb)) and sig(a, j) == sig(b, j):
             j += 1
         out.append(str(j) if j < min(len(pa), len(pb)) else "*")
     return " ".join(out)
@@ -78,7 +93,7 @@ def replays(d):
             cur_min, chain = None, []; continue
         pa, pb = a["pieces"], b["pieces"]
         j = 0
-        while j < min(len(pa), len(pb)) and pa[j][:3] == pb[j][:3]:
+        while j < min(len(pa), len(pb)) and sig(a, j) == sig(b, j):
             j += 1
         if j >= min(len(pa), len(pb)):
             continue
@@ -97,7 +112,7 @@ def level_seqs(d):
             phases.append(cur); cur = []; continue
         pa, pb = a["pieces"], b["pieces"]
         j = 0
-        while j < min(len(pa), len(pb)) and pa[j][:3] == pb[j][:3]:
+        while j < min(len(pa), len(pb)) and sig(a, j) == sig(b, j):
             j += 1
         if j < min(len(pa), len(pb)):
             cur.append(j)
@@ -136,7 +151,7 @@ def fresh_contexts(d):
             flush(); F = {}; continue
         pa, pb = a["pieces"], b["pieces"]
         j = 0
-        while j < min(len(pa), len(pb)) and pa[j][:3] == pb[j][:3]:
+        while j < min(len(pa), len(pb)) and sig(a, j) == sig(b, j):
             j += 1
         if j < min(len(pa), len(pb)) and pa[j][0] == pb[j][0]:
             F.setdefault(j, set()).add(pa[j][0])
