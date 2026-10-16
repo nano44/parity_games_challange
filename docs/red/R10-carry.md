@@ -176,3 +176,23 @@ order, the same tangles after the last sptl pass), so D2 holds by an induction o
   So the locality that kills 2CE is specific to cut-driven carries. Carries that drive a domfirst piece's PRUNING can come
   from later pieces. That is one more open route outside 2CE: a slow level stored in a domfirst piece's return set
   (argmax), advanced by tangles learned after the fast level has run.
+
+## Outside 2CE: a slow digit held in piece 0's -1 return set (READING, unrefereed; L-RED ~10:40Z)
+Setting. Piece 0 is a domfirst piece with return set M_s (the argmax) in search s. A carry C (top h, learned in s at a
+later piece) fires in piece 0's PRUNING in s+1 and makes a top u' outside M_s survive to the last round. Unlike a cut, a
+pruning-driven carry can use an (E) gate whose escape is a fast-level TOP: it is covered while that top is alive in piece
+0 (it is consumed by a higher region or popped), although C_B eats it before C is learned. That is tc+'s driver shape.
+(MIRROR) Let r0 be the first round of piece 0 in s+1 where C's firing changes something. Rounds before r0 are identical in
+s and s+1, so at r0 in s the escapes of C are covered by the same regions. By redundancy (R10, interim 1) h is not a
+candidate at r0 in s, so death_s(h) >= r0 + 1. Two consequences:
+ (M1) If C's escape coverage at every later round r in s+1 also holds in s (it does not depend on what C itself rescued),
+      then death_s(h) >= death_{s+1}(u'). Without a deficit (M-cond), death_{s+1}(v) >= death_s(v) for v in M_s, so u' can
+      only TIE with M_s. Moreover h is in M_s (its death round is the maximum D_s), so Dom(M_s) removes h in piece 0 of s
+      and C cannot be learned later in s. A contradiction: such a carry does not exist.
+ (M2) So every working pruning-driven carry is SELF-REINFORCING: from some round on, some escape of C is covered only by
+      vertices that C keeps alive (for example an escape in the region of the rescued u' itself), while another escape
+      ends the rescue at the right round (staircase or clock) and a third gates the learning (state marker). Its top h
+      dies early in s because the "starter" escape is covered there only at r0.
+Status: (M1) is a reading with the same premises as M-cond (no deficit in piece 0). (M2) is the precise shape a
+domfirst-driven counter digit needs. I have not built it within the box; tc+'s Z/H drivers are the only known instance of
+pruning-driven carries, and tc+ is a sweep (L-ALG section 6.3), i.e. each carry is used once.
