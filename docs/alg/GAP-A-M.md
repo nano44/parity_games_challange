@@ -180,7 +180,8 @@ first j where (R_j, res_j, V_j) differ, or ∗ if all depth-0 pieces agree (prog
   outside R, one in R; at the last Dom pop among its escapes every vertex of t is in X or in the remaining R (popped
   vertices are in X), and attractTangle counts vertices already in X as attracted (dtl.cpp 136-137 with Z = X): t fires.
   Dom therefore has no straddle failure; that is the difference to the regions of best_vertices and sptl. DATA: 0 violations
-  in 1,890 stable pieces (800 random games n ≤ 28, every instance, tc+ N ≤ 5).
+  in 1,890 stable pieces (800 random games n ≤ 28, every instance, tc+ N ≤ 5; experiments/alg/dtl_sptldom.py; it checks the
+  last pass).
 - Driver lemma (PROVED for transitions whose level-j contexts are equal, i.e. every observed transition, 09:25Z). A
   transition of level j is driven by a tangle that is NEW (learned in search s) and fires in piece j's computation in
   search s+1 (first-difference argument: with the old tangle set the computation at an equal context is identical). Such a
