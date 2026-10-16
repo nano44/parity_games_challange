@@ -816,6 +816,33 @@ computed on the common V_{r0−1}.
   monotone in T". It is DATA-consistent (the wandering return sets in §13b come with region changes at later rounds)
   but NOT checked; stated here only as a target.
 
+### 13f. The chain test (L-RED R15 §6 reading) is NEGATIVE; the deciding round mostly climbs (13:50Z; Lead 13:42Z, 13:46Z)
+Tools: experiments/alg/dtl_straddle.py (CHAIN lines) and dtl_regvec.py, with the tangle set AT the call.
+- All straddlers at one context, both orders. Never a chain once there are more than 2: h4_def4_oink_n20 (|R| 20) has
+  11 straddlers with 28 incomparable pairs (Oink order); h4_def6_oink_n28 has 7 / 6; h4_def7_oink_n44 9 / 14;
+  h4_def8_oink_n44 15 / 33; lemmaS_viol_n20, lemmaS_Mdrop_n20, h4_notweaker_n20, dtl_mviol_n20 and dtl_deficit_n20
+  have 3 to 10 incomparable pairs each. In stable order: the same, except h4_def5_stable_n20, whose 3 NEW straddlers
+  are a chain.
+- DRIVERS only, i.e. new tangles necessary for the deciding round, or sufficient alone, at the call-time tangle set.
+  Also not a chain. h4_def8_oink_n44 (Oink order), piece 0: the necessary non-singleton drivers of the DEF changes
+  s3→s4, s4→s5 and s6→s7 are {4, 13, 14, 35}, {21, 24, 40} and {10, 31, 32, 33} (original ids): PAIRWISE DISJOINT.
+  This is the first ANTICHAIN instance (for L-RED). In h4_def6_oink_n28 the non-singleton necessary drivers ARE nested,
+  {4, 13, 14} ⊂ {1, 2, 4, 12, 13, 14, 24} ⊂ {+5} ⊂ {+0, 6, 9, 10, 11}, as L-RED saw, but a singleton driver {10}
+  (s6→s7) and two sufficient-alone pairs break the chain. So "DEF per context ≤ n via a chain of new straddlers" is FALSE
+  on data.
+- Threshold-phase statement (Lead 13:46Z (2)). PROVED, trivially: at a DEF change with identical V_{r0−1} and identical
+  region vector (18 of 19 cases, §13e), some threshold closure W_t = lfp(U, R, t, T) must be strictly larger in the
+  later search. Survivors are a function of (V, U, (W_t)_t), and each W_t is monotone in T for fixed U. This does NOT
+  give "≤ n per context": W_t is per round, and U at later rounds can change, so the potential is lexicographic over
+  rounds, with resets below the deciding round, as in Lemma R.
+- DATA: the deciding round r0 of successive DEF changes at one context climbs:
+  - h4_def4_oink_n20: 1, 3, 6, 8, 10;
+  - h4_def6_oink_n28: 4, 6, 8, 7, 9, 11;
+  - h4_def8_oink_n44: 5, 7, 9, 8, 10, 13, 15, 17.
+  At most one dip per run. If r0 were strictly increasing, DEF per context would be ≤ (number of rounds) ≤ n. The dips
+  show it is not. Candidate (DATA only): "r0 increases except after a change of M", to be checked against M before it
+  is stated as a lemma.
+
 ## 14. (H2b) via c_i: contexts per index (11:40Z; Lead 11:33Z, main slot)
 Tool: experiments/alg/dtl_ctx.py (A_DTL, corrected state of §6). c_i is the number of distinct Dom(prevV) −1 contexts at
 depth-0 index i in a phase. By §11e, carries at index i ≤ n(n+2) · c_i.

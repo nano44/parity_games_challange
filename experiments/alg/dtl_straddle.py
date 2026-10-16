@@ -48,6 +48,23 @@ if __name__ == "__main__":
                   max_def_phase=(0, 0, None), n_max_def_phase=None, ex_def=[], ex_nw=[], ex_DEF_down=[], ex_DEF_other=[])
         X.analyse(d, st, f)
         print("==", f.split("/")[-1], "iterations", d.iterations, "DEF", st["DEF"], "maxctx", st["max_def_per_ctx"])
+        # chain test (Lead 13:42Z / L-RED R15 §6): per context, are the straddlers' vertex sets totally ordered by inclusion?
+        vs = lambda t: frozenset(w for w, _ in d.tv[t])
+        for key, occ in d.calls.items():
+            allst = set().union(*[o_[1] for o_ in occ]) if occ else set()
+            if len(occ) < 2 or not allst: continue
+            newst = set()
+            for (s1, st1, n1), (s2, st2, n2) in zip(occ, occ[1:]):
+                newst |= {t for t in st2 if t >= n1}
+            def anti(ts):
+                ts = sorted(ts); bad = []
+                for i in range(len(ts)):
+                    for j in range(i + 1, len(ts)):
+                        a, b = vs(ts[i]), vs(ts[j])
+                        if not (a <= b or b <= a): bad.append((ts[i], ts[j]))
+                return bad
+            ba, bn = anti(allst), anti(newst)
+            print(f"  CHAIN ctx|R|={len(key[1])} p={key[0]} visits={len(occ)}: all straddlers {len(allst)} incomparable pairs {len(ba)}; new straddlers {len(newst)} incomparable pairs {len(bn)}" + (f" e.g. {[(t, sorted(d.idx[w] for w in vs(t))) for t in bn[0]]}" if bn else ""))
         for key, occ in d.calls.items():
             for (s1, st1, n1), (s2, st2, n2) in zip(occ, occ[1:]):
                 if not st2 and not st1: continue
