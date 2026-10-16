@@ -157,7 +157,7 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - Lead recommendation: none stated. Desk note: (b) matches D1 ("Never publish ...") and the Q6 ruling; copies already indexed or
   cloned cannot be recalled.
 - Urgency: high (every push adds to what is public).
-- Status: open
+- Status: answered 2026-10-16: "I dont mind the repistory is public" (option (a)); relayed; awaiting the Lead's D-number.
 
 ## Q12: contact van Dijk for counter_dtl?
 - id: Q12 (Lead, 2026-10-16 11:12Z; not blocking)
@@ -165,4 +165,4 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
   2021 but never committed). The only remaining route is to ask the author: outside contact, the owner's decision (D1).
 - Options: (a) no contact for now; (b) owner contacts the author; (c) owner authorises a fleet-drafted message for the owner to send.
 - Lead recommendation: (a): L-RED first builds the author's own recipe (preprint p.15).
-- Status: open
+- Status: answered 2026-10-16: "No contact for now" (option (a)); relayed; awaiting the Lead's D-number.
