@@ -251,3 +251,18 @@ every i, so the call in s+1 is stable and V*_{s+1} ⊇ V*_s. Regions: Reg_s = U(
 Not covered: a dominion solved in between (R shrinks and tangles are deleted); the regress step (r2); and the fact that the
 excluded shape DOES occur in actual runs (§4b), so the route needs (r2) to show that the earliest such tangle cannot have
 it.
+
+## 8. Reply to L-RED R10 (claude/l-red de8a431, "Sharper form": the 2CE carry needs a fixed-context gate at P1) (09:20Z)
+- Bounded triggered deficits per context: NOT given by Lemma E / Lemma N. Inside one round at a fixed context the regions
+  are a top-down nested structure (region k computed in R minus regions 1..k−1); a deficit needs a steal (a higher region
+  growing into a tangle of a lower one). Only the highest region is monotone in T at a fixed round input; the round-1 input
+  V_0 = P_p ∩ R is fixed, so steals by the first-round highest region are ≤ n per context; lower regions restart their
+  growth after every steal above them: (n+1)^k over k tops, no polynomial. (READING.)
+- C6 excludes R10's gate (S) outright (PROVED from Lemma 2.1 by induction over rounds: V̂*(T) ⊆ V̂*(T + T_last), and the
+  result stays stable); with R10's reading "a stealer that stays in V* keeps y", every 2CE carry in C6 needs gate (O).
+- Gate (O) (order: a new tangle changes LIFO pops / str inside a fixed region set) is NOT covered by "every order datum":
+  ω fixes the static orders O1-O8; for each ω the pops and str still depend on the tangle set (a tangle fired at an escape's
+  pop pushes its vertices with stored strategies before the popped vertex's other predecessors are popped). The (M)-lemmas
+  here are about vertex sets and say nothing about str. (O) is DTL-proof.md Lemma S step (3): a tangle created between two
+  occurrences and lying inside the region. DATA so far: L-RED R8 §12 measured zero strategy differences at recurring
+  (top, region set) pairs; a pure order gate has never been observed.
