@@ -1,26 +1,27 @@
 # L-ALG notebook — third successor (session_01BDELabbGbT2QYY2NoRCY8A), 2026-10-16, produced on Opus 5.5 (D8/L27); older notes below
 
-## Resume point (successor 4, session_01KESFSwLyyKvwe3mzqN2Bzr; Lead go 16:01Z, box to ~00:00Z; updated 17:04Z) — read this first
+## FINAL RESUME POINT (successor 4, session_01KESFSwLyyKvwe3mzqN2Bzr; box 16:01Z-~00:00Z; written 23:14Z) — read this first
 All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?`.
-- Truth: docs/alg/GAP-A-M.md §18 (this box) and the §17 ledger rows marked "box 4". Oink built here (tools/oink/build).
-- Queue (Lead brief): all three items answered NEGATIVELY, each with an instance:
-  (1) no per-context potential: (LEX) dead on A_DTL (instances/lex_viol_oink_n20.pg, riser steal, §18h) and synthetically
-      (dtl_lexcounter.py); pure DEF cycle synthetic (dtl_staterevisit.py, §18f). DATA left: (U-MONO_DTL), (LEX-R), no
-      DEF-down at ideal-stable contexts.
-  (2) (CM) dead on A_DTL (instances/cm_viol_oink_n28.pg, §18i).
-  (3) nested product capped by phase length; climbs (scratchpad nest/, Oink order) reach 2 × 6 (n=28), 2 × 5 (n=44), two
-      child contexts only. Final numbers go into §18e/§18f at box end.
-- Climbs running (scratchpad, die with the container): down2/ (DOWN_MODE=down: U-shrink, DEF-down; seed 202 from
-  lex_viol), cm/ (seed 301, more M-drops), nest/n44_104 (sum fitness), nest/p44 (NEST_FIT=prod).
-- Lead told: 16:14Z (LEX), 16:33Z (LEX synthetic), 16:42Z (DEF cycle), 16:54Z (LEX on DTL), 17:01Z (CM on DTL + C6 reading).
+- Truth: docs/alg/GAP-A-M.md §18-§20 (this box), §17 ledger rows marked box 4, docs/alg/DEAD.md last section.
+- Headline for the next box (Lead 19:08Z): SEARCHES PER PHASE vs n. Final table §18m: best 19 / 19 / 19 / 14 at
+  n = 20 / 30 / 40 / 60 (instances/spp_final_n*.pg, Oink-verified); no growth with n at equal effort. Next: equal STEP
+  budgets, several seeds per n (dtl_searchclimb.py has no step heartbeat; add one).
+- Dead this box (each with an Oink-verified A_DTL instance): (LEX), (NR), (CM), (F1), (F1-DEF), "fallers below the
+  riser". Synthetic genuine-tangle counters: dtl_lexcounter, dtl_staterevisit, dtl_twofall (in check.sh).
+- DATA left (A_DTL): (U-MONO_DTL), (LEX-R), no full-state revisit on DTL runs (dtl_revisit), no result-level DEF-down.
+- PROVED this box: region split (§18a); extra tops hurt only their own priority or lower (§18h); Lemma P on C6 (child
+  contexts shrink inside a parent plateau, §20).
+- C6: Lead L31, not a gauntlet candidate; it is the model for the core (fresh resetting child contexts). Scoping note §19.
+- Replay depth is padding-sensitive (R20 §3); c6_replay3_n48 is padded, suspect; L-RED has replay4_n32.
 - Tools this box: dtl_plateau, dtl_lexsynth, dtl_lexfake, dtl_gentangle, dtl_carrytest, dtl_lexcounter, dtl_staterevisit,
-  dtl_steal, dtl_nestK, dtl_nestclimb, dtl_downclimb, dtl_cmclimb, dtl_childM2, dtl_lexviol_check, dtl_cmviol_check.
-- Trap hit again 16:33Z: `pkill -f gadsearch.py` inside a command killed the calling shell (exit 144) and a heredoc after it
-  was never written. Kill by PID in a separate call.
-- Things only I know: (a) dtl_regvec's calls dict is keyed by (p, R) over the WHOLE run; compare only consecutive searches
-  of one phase and check T ⊆ T' (the box-4 tools do: plateau via consecutive occurrences, downclimb/steal via t1 ⊆ t2).
-  (b) python3 -I scripts must insert their own directory into sys.path (they do). (c) The 64k/103k carry counts are
-  dtl_carrytest.py CARRY_GENUINE=0/1, seeds 1-3 × 6,000 / 15,000 games.
+  dtl_steal, dtl_revisit, dtl_twofall, dtl_nestK, dtl_nestclimb, dtl_downclimb, dtl_cmclimb, dtl_childM2, dtl_nestreset,
+  dtl_resetclimb, dtl_replayclimb, dtl_searchclimb, dtl_phasestats, dtl_lexviol_check, dtl_cmviol_check.
+- All climbs stopped at 23:14Z; scratchpad logs die with the container; the best games are committed.
+- Things only I know: (a) dtl_regvec's calls dict is keyed by (p, R) over the whole run; compare only consecutive
+  searches of one phase with T ⊆ T' (plateau, steal, revisit, downclimb do). (b) dtl_regvec/dtl_crm r0 padding fixed
+  (stable runs stay at the fixpoint); counts unchanged. (c) Padding with priority-0 sources changes piece structure;
+  do not pad for replay or phase measurements. (d) Trap: pkill -f / ps|grep|kill inside one command kills the shell;
+  kill by PID in a separate call.
 
 ## FINAL RESUME POINT of successor 3 (box end ~16:10Z; drafted 14:58Z, finalised 15:48Z) — read this first
 All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push ONLY with `scripts/push.sh` as a bare call, or
