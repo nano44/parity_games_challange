@@ -326,3 +326,11 @@ L-epoch the search that learns it is (a) a growth of V*_{P1}, (b) a lift of a ta
 (for a gate tied to the fast level: its LAST tangle, and no earlier one), or (c) a catch-up at P1. Kind (c) needs no
 input from the fast level at all: a catch-up chain at P1 is a self-running DELAY, one step per search, which a counter
 could use as a timer if its length can be made to match the fast level's. None of (a)-(c) is excluded by proof ((CU), which would have excluded (c), is false). OPEN.
+The LIFT gate in C6 (09:45Z, PROVED from Lemmas D2, D3, L-epoch; the Lead routed the lift to L-RED as an attack on
+A_DTL, and sptl is the same in C6, so this applies to both once V*_{P1} is fixed): (i) within one A-state, P1 admits at
+most |R_{P1}| lifts, each growing Dom(P1) strictly; (ii) a lifted tangle's vertices stay in Dom(P1) for the rest of the
+A-state (Lemma D3), so they leave the context of every later piece, the fast level's included; (iii) a tangle learned
+after C_B is lifted into P1 only if none of its escapes lies in C_B's attractor or elsewhere in R_{P1} outside P1's regions
+(escapes there are in R and uncovered at P1). So a lift gate tied to the fast level's LAST tangle needs that tangle to have
+no escape in C_B's attractor while every earlier fast tangle keeps one there (else it is lifted early, by (ii) eating
+vertices of the fast level). This is a constraint on the attack, not an obstruction; OPEN.
