@@ -499,7 +499,7 @@ that the proved facts allow 2^Θ(n) searches. Status: GAP-A OPEN; the route is (
 
 ## 11b. (H2b): a candidate potential for dead-top cap carries (10:34Z; Lead 10:22Z/10:25Z: statement and data before proof)
 Data set for this section (experiments/alg/dtl_mirror.py, MIRROR_NMAX=30): every file in experiments/alg/instances, the
-climbed games of this session (scratchpad, not kept), tc+ N ≤ 6, counter_* families, 800 random games n ≤ 30; ideal (C6)
+climbed games of this session (copied to experiments/alg/instances/climbs_1016/, 22 files), tc+ N ≤ 6, counter_* families, 800 random games n ≤ 30; ideal (C6)
 runs; 449 changes at −1 pieces (347 at Dom(prevV) pieces, 102 at cut pieces).
 - Φ (DEAD). R(u) := the maximum death round of u in the ideal pruning of any depth-0 −1 piece of the phase so far. "Every
   dead-top cap carry at a Dom(prevV) piece raises R(u) for some rescued u" fails 15 times in 258
@@ -520,3 +520,9 @@ runs; 449 changes at −1 pieces (347 at Dom(prevV) pieces, 102 at cut pieces).
   of dead-top cap carries would have to raise the rescued vertex's death at that index every time.
 - Status: CANDIDATE, DATA only, routed to L-RED as an attack target (10:33Z). No mechanism known: deaths at one index in
   different contexts are not comparable in general.
+- Two candidate mechanisms for Φ_idx, both FALSE (10:40Z, same data set, dtl_mirror.py "lifts_to_max" / "maxdeath_monotone"):
+  (a) "a dead-top cap carry lifts some rescued vertex to the current maximum death of its piece, or makes the piece stable":
+  fails 80 of 258 at Dom(prevV) pieces and 22 of 41 at cut pieces (alive-top: 8/52 and 38/39 fail). (b) "the maximum death
+  at a fixed piece index never decreases across the searches of a phase": decreases in 201 of 2540 consecutive pairs (first:
+  search 1, piece 2, ∞ → 3, i.e. a stable piece turns −1 with max death 3). So Φ_idx is not the shadow of a monotone
+  per-index depth; its raise is per vertex, and no mechanism is known. Status unchanged: CANDIDATE, DATA only.
