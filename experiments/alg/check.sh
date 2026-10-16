@@ -49,6 +49,8 @@ python3 -I dtl_staterevisit.py | tail -1
 python3 -I dtl_lexviol_check.py | tail -1
 # GAP-A-M.md §18i: (CM) fails in an actual A_DTL run (both order data)
 python3 -I dtl_cmviol_check.py | tail -1
+# GAP-A-M.md §18k: synthetic two-fall context (L-RED's (F1) is not structural)
+python3 -I dtl_twofall.py | tail -1
 # GAP-A-M.md §10: the abstract barrier model APP(k) must keep satisfying its checkable axioms
 python3 -I app_model.py 1 2 3 4 5 6 | tail -1
 echo "ALG-CHECK PASS"
