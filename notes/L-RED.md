@@ -36,7 +36,9 @@ the top VERTEX and subtract dominions.
 - R8 (previous box) resume text: PARKED after the LANE-RESTART handoff (18:40Z my clock). Every R-file is listed in DONE.
 
 ## IN FLIGHT
-None.
+- Scratchpad climbs (lost with the container): pviol (adversarial Claim P/Q) n=12/16/16-loops, from dtl_restart8, from
+  dtl_searches20; carries (piece-0 argmax changes) from dtl_searches20; iters from dtl_searches20 (best 25 searches at
+  n = 32, climb/it_s20_s91.pg; copy into experiments/red/dtl/instances/ if it matters at the end of the box).
 
 ## NEEDS
 None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-order invariant).
@@ -117,6 +119,11 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
   order, chain 10 = 8 and counter_odftl 3 = 9 tangles when Oink is built, and the older pins). README.md lists them.
 
 ## Traps and conventions
+- SLIP (2026-10-16 ~01:00Z my clock, this session): the push of 6a60655 was issued as `scripts/verify.sh 2>&1 | tail -6 &&
+  git push`, a PIPE: the gate's exit code was replaced by tail's. The printed summary was VERIFY PASS (all steps), so the
+  pushed commit did pass, but the chain was wrong, exactly the predecessor's slip. Rule restated: the push command is the
+  literal `scripts/verify.sh && git push -u origin claude/l-red`, nothing between, no pipe, no tail; read the output after.
+  Reported to the Lead in the next message.
 - Oink's parser drops losing self-loops unless --no-loops; every DTL number before 16:02Z was without it (R8 states flags).
 - uintqueue is a STACK: Oink's attractors are depth-first; the newest tangle fired at a pop is explored first.
 - W: one extractTangles per top per search; the "perheadsearch" fitness therefore measures equal-priority tops.

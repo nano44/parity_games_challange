@@ -2,7 +2,7 @@
 """Free-form hill-climb over small parity games maximising Oink DTL's learned-tangle count (L-RED, DTL box).
 Fitness = tangles found by `oink --dtl --no-single --no-wcwc --no-loops` (raw solver, no preprocessing, self-loops kept;
 before 16:02Z the runs used --no-single --no-wcwc only). Mutations: add/remove an edge,
-change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha|strch|newrecur|maxsets|pairs|iters|restarts|maxrestarts|osc|rep|excess|carries|evens] [--maxeven K] [--grow k] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
+change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha|strch|newrecur|maxsets|pairs|iters|restarts|maxrestarts|osc|rep|excess|carries|pviol|evens] [--maxeven K] [--grow k] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
 import sys, os, random, subprocess, tempfile, time, re
 oink, n = sys.argv[1], int(sys.argv[2]); arg = lambda k, d: type(d)(sys.argv[sys.argv.index(k) + 1]) if k in sys.argv else d
 steps, seed, maxpr = arg("--steps", 20000), arg("--seed", 0), arg("--maxpr", 2 * int(sys.argv[2])); rng = random.Random(seed)
@@ -35,6 +35,11 @@ def score_py(g):
     per = {}
     for sr in d.searches:
         for top, vs, _ in sr["tangles"]: per.setdefault((sr["player"], top), set()).add(sr["index"])
+    if fitness == "pviol":     # adversarial test of Claim P/Q (dtl_ctxmono.check): violations, plus recurring context pairs/1000
+        spec2 = importlib.util.spec_from_file_location("cm", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "dtl_ctxmono.py"))
+        cm = importlib.util.module_from_spec(spec2); spec2.loader.exec_module(cm)
+        ctx, pairs, P, Q, M = cm.check(d)
+        return 100 * (P + Q) + pairs / 1000.0
     if fitness == "carries":   # (CARRY) moves: consecutive same-player searches whose depth-0 piece 0 differs (removed set or kind),
         c = 0                  # plus searches/1000 as a tie-break; dominion searches excluded
         for pl in (0, 1):
@@ -51,7 +56,7 @@ def score_py(g):
 
 def score(g):
     open(tmp, "w").write(dumps(g))
-    if fitness in ("rep", "excess", "carries"): return score_py(g)
+    if fitness in ("rep", "excess", "carries", "pviol"): return score_py(g)
     try:
         r = subprocess.run([oink, SOLVER] + OINKFLAGS + (["-t", "-t", "-t"] if fitness in ("strch", "newrecur", "maxsets", "pairs") else ["-t", "-t"] if fitness.startswith("per") or fitness in ("prunemono", "dups", "alpha", "straddles", "restarts", "maxrestarts", "osc") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
     except subprocess.TimeoutExpired:

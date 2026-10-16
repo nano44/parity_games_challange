@@ -9,8 +9,8 @@ dtl_ctxmono.py (Claims P and Q below), dtl_search.py fitnesses iters / restarts 
 option --grow. Instances: experiments/red/dtl/instances/lalg_dtl_restart8_n20.pg and lalg_dtl_pertop31_n18.pg are byte
 copies of L-ALG's experiments/alg/instances/dtl_restart8_n20.pg and dtl_pertop31_n18.pg at claude/l-alg d6129e3.
 
-## Verdict (interim; final at the end of the box)
-OPEN. No counter built. The flip-flop is real and I can read it off DTL's own data structures (section 2), the per-top
+## Verdict (interim 2, 01:15Z my clock; final at the end of the box)
+OPEN. No counter built; no polynomial damping found. What is established (data) and what is handed over (statements): The flip-flop is real and I can read it off DTL's own data structures (section 2), the per-top
 count that motivated it is an artefact of equal priorities (section 1), and every non-monotone event I can produce is
 funnelled through one of two mechanisms (section 3). I have not found a mechanism that bounds their composition
 polynomially; section 4 states exactly what a counter must do, as the proof lane's target or mine.
@@ -69,6 +69,19 @@ dtl_ctxmono.py: dtl_restart8_n20 (12 contexts, 8 recurring pairs), dtl_pertop31_
 156), osc_r8_s31 (15, 12), rep_r8g8_s52 (5, 2), 400 random games n <= 12 (1,154 contexts, 203 pairs): 0 violations of
 P, 0 of Q. (L-ALG's F5 is Claim P for R = G only.) The -1 return set (the argmax) DOES change between visits of the same R
 (3, 2, 1, 1, 4, 1, 2 changes): that is F7.
+Adversarial tests of P/Q (DATA): hill-climbs with fitness 100*(P+Q violations) + recurring pairs/1000 at n = 12, 16 (also
+with self-loop and renumbering mutations), from dtl_restart8_n20 and dtl_searches20_n32: 0 violations in every run (fitness
+never reached 1); random: 3,000 games n <= 16 (10,060 contexts, 2,079 recurring pairs) and 1,500 games n <= 24 (6,098
+contexts, 1,703 pairs): 0 violations.
+Proof route for Claim P (READING, unrefereed, for the proof lane): fix R and T subset of T'. Induction on the round r with the
+hypothesis V_r(T) subset of V_r(T'). (i) Z_r(T) subset of Z_r(T'): every vertex of a T-region of top tau is attracted under T'
+either to tau or to a higher top tau' in V_r(T') whose region consumed a vertex on its path (an Even-owned vertex with an
+edge into the consumed part is attracted to tau' directly, pr <= pr(tau') since pr <= pr(tau); an Odd-owned vertex whose
+exits split between tau'-region and tau-region is attracted to tau because consumed exits are forgiven, dtl.cpp 85-93);
+tangle attraction is monotone in T and in Z. (ii) attracts(v, Z, R) is monotone in Z (41-56), so every T'-candidate in
+V_r(T) is a T-candidate. (iii) the threshold attractor is monotone in Z and T, so a T'-candidate not forgiven under T' is
+not forgiven under T. Hence a vertex pruned at round r under T' is pruned at round <= r under T. Claim Q and the "-1 return
+set = argmax" statement follow. Step (i) is the only step with content (the consumption order).
 Consequences if P and Q are proved (READING):
 (a) In a fixed context, pieces are monotone in the tangle set: a cut's seeds and threshold do not depend on tangles at all
     (attracts() is edge-only) and its attractor grows; a stable piece's V* grows and Dom(V*) grows; so for fixed (R, X)
