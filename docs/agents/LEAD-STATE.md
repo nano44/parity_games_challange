@@ -325,3 +325,4 @@
 - 19:15Z Lead: merged l-alg c615c2b ((F1-DEF) dead in §17/DEAD; §18l: searches per phase headline, nest products final 4/6/2/6 at n=20/28/36/44; climb at n=20 reaches 11 searches in a phase).
 - 20:05Z sweep: no overage (seven_day allowed_warning); Lead $182; L-ALG idle between checkpoints (516k ctx, $26), L-RED idle between checks (330k ctx, $12; longest phase 12 searches at n=64 in refall climbs); CI green on all heads; merged l-alg af5abaa, l-red 3c1f993; M2 done so no daily owner line due.
 - 20:06Z WATCHDOG report: own context 755k (>600k; auto-compacts at 1M, routine cheap, no handover planned); fleet total $227.43; lanes under idle and context limits. No action.
+- 20:41Z Lead: merged l-alg 113fe90 (spp_n20/30/40/60); pinned Oink re-run: 19/21/19/16 iterations, phase max 16/18/11/14, all verified. Below n, rising with budget, not monotone in n: no owner report.
