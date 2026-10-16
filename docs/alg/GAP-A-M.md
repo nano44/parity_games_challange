@@ -753,6 +753,11 @@ pieces 0..j-1; measured ctx_changed = 0.
     The actual, in original ids: −1 {36, 43} → {9, 20, 43} → {9, 20, 34, 36, 38, 43} → {43} → {34, 36, 38} →
     {34, 38} → stable (10 vertices) → stable (the 26 of the ideal). That is 7 DEF changes at one ideal-stable context.
     Max per context, Oink order: n = 20: 4, 28: 6, 36: 6, 44: 7.
+  - 13:39Z, n = 44, same climb: experiments/alg/instances/h4_def8_oink_n44.pg (Oink and dtl_pyref --order oink both 11
+    iterations, verified). Piece 0, R = G, ideal STABLE (27 vertices) in searches 3-11; actual −1 in searches 3-10,
+    return sets (original ids) {5, 34} → {5} → {5, 6, 30} → {5, 6, 30, 34} → {6, 30} → {30} → {30, 34} → {34} →
+    stable. That is 8 DEF changes at one ideal-stable context, the whole phase. Max per context, Oink order:
+    n = 20: 4, 28: 6, 36: 6, 44: 8 (climbs running).
   - Key earlier instances agree in both orders and with Oink (iterations): phi_idx_flat_n20 5, nest_nest_s84 19,
     lemmaS_viol_n20 8.
 
