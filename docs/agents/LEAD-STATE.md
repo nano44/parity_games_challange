@@ -317,3 +317,6 @@
 - 18:33Z merged l-red 78469a8; (F1) '<=1 fall step per context' candidate routed to L-ALG.
 - 18:45Z merged l-alg a56af6a ((F1) not structural; attack recipe to L-RED).
 - 18:57Z merged l-red 6b384b2 ((F1) false as stated; DEF-only (F1) open). Lead re-ran Oink.
+- 19:01Z merged l-red 289931e (replay depth 4 at n=32; (F1-DEF) false). Lead re-ran Oink on both.
+- 19:04Z hourly sweep: no overage (seven_day allowed_warning). Lead 775k $179.5; L-ALG succ. 4 running (475k, $20.2), L-RED succ. 3 running (307k, $9.7). No exceptions.
+- 19:07Z merged l-red R20 §3: replay depth is padding-sensitive; headline measure changed to searches per phase. Told L-ALG.
