@@ -17,7 +17,7 @@ INF = 10 ** 9
 class P(rd.RD):
     def __init__(self, *a, **k):
         super().__init__(*a, **k); self.calls = {}; self.d0 = 0; self.born = []; self.events = []; self.rec = {}; self._depth = 0
-        self.alive = []; self.recx = {}           # recx[j][context R] = per-context record at index j (cross-context split)
+        self.alive = []; self.recx = {}; self.deep = {}           # recx[j][context R] = per-context record at index j (cross-context split)
         self.lastp = None
 
     def search(self, p):
@@ -44,7 +44,11 @@ class P(rd.RD):
 
     def best_vertices(self, V, R, p):
         if self._depth != 0:
-            return super().best_vertices(V, R, p)
+            res = super().best_vertices(V, R, p)
+            if res == -1:                      # deep staircases (nest2deep): last -1 call per (search, depth, context)
+                si = len(self.searches) - 1
+                self.deep[(si, self._depth, frozenset(R))] = (len(self.rounds(R, p, set())) - 1, frozenset(V))
+            return res
         si = len(self.searches) - 1; j = self.d0; self.d0 += 1
         rb = self.rounds(R, p, set())
         res = super().best_vertices(V, R, p)
@@ -223,6 +227,31 @@ def nest2(d):
         kids = [C for C in sts if C["phase"] == P["phase"] and C["j"] > P["j"] and C["new_rises"]]
         sc = len(P["new_rises"]) * len(kids)
         if sc > best[0]: best = (sc, (P["j"], P["M"], P["new_rises"], [(C["j"], C["nR"], C["M"], C["new_rises"]) for C in kids]))
+    return best
+
+
+def nest2deep(d):
+    """nest2 with children INSIDE cut recursions (depth >= 1; R10: levels live in cuts). Child staircase = the -1 calls
+    at one (phase, depth >= 1, context R) over consecutive searches, any piece kind (approximation: kind unknown at depth
+    >= 1). Score = max over depth-0 parent staircases of (#new-leader rises) x (#child staircases in the phase with >= 1
+    new-leader rise)."""
+    sts = staircases(d); ph = {si: d.searches[si]["_ph"] for si in range(len(d.searches))}
+    deep = {}
+    for (si, dep, R), (M, V) in sorted(d.deep.items(), key=lambda x: x[0][0]):
+        deep.setdefault((ph[si], dep, R), []).append((si, M, V))
+    kids = []
+    for (p_, dep, R), seq in deep.items():
+        seen = {seq[0][2]}; r = 0
+        for (sa, Ma, Va), (sb, Mb, Vb) in zip(seq, seq[1:]):
+            if sb == sa + 1 and Mb > Ma and Vb not in seen: r += 1
+            seen.add(Vb)
+        if r: kids.append((p_, dep, len(R), r))
+    best = (0, None)
+    for P in sts:
+        if P["j"] != 0 or not P["new_rises"]: continue
+        k = [x for x in kids if x[0] == P["phase"]]
+        sc = len(P["new_rises"]) * len(k)
+        if sc > best[0]: best = (sc, (P["M"], P["new_rises"], k))
     return best
 
 

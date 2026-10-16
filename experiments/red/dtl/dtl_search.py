@@ -2,7 +2,7 @@
 """Free-form hill-climb over small parity games maximising Oink DTL's learned-tangle count (L-RED, DTL box).
 Fitness = tangles found by `oink --dtl --no-single --no-wcwc --no-loops` (raw solver, no preprocessing, self-loops kept;
 before 16:02Z the runs used --no-single --no-wcwc only). Mutations: add/remove an edge,
-change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha|strch|newrecur|maxsets|pairs|iters|restarts|maxrestarts|osc|rep|excess|carries|pviol|resets|ogate|fresh|phiflat|phicap|cidx|h4|replay2|phaselen|lemmas|nest2|evens] [--maxeven K] [--grow k] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
+change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha|strch|newrecur|maxsets|pairs|iters|restarts|maxrestarts|osc|rep|excess|carries|pviol|resets|ogate|fresh|phiflat|phicap|cidx|h4|replay2|phaselen|lemmas|nest2|nest2deep|evens] [--maxeven K] [--grow k] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
 import sys, os, random, subprocess, tempfile, time, re
 oink, n = sys.argv[1], int(sys.argv[2]); arg = lambda k, d: type(d)(sys.argv[sys.argv.index(k) + 1]) if k in sys.argv else d
 steps, seed, maxpr = arg("--steps", 20000), arg("--seed", 0), arg("--maxpr", 2 * int(sys.argv[2])); rng = random.Random(seed)
@@ -73,11 +73,11 @@ def score_py(g):
         except Exception:
             return -1
         return 100 * st["max_def_per_ctx"] + 10 * st["max_def_phase"][0] + st.get("DEF_m1m1", 0) + 1000 * st["NOT_weaker"] + d.iterations / 1000.0
-    if fitness == "nest2":     # CARRY box (Opus 5.5): k=2 staircase counter score (phi_full.nest2) + longest phase/100
+    if fitness in ("nest2", "nest2deep"):     # nest2deep: children inside cut recursions (phi_full.nest2deep). CARRY box (Opus 5.5): k=2 staircase counter score (phi_full.nest2) + longest phase/100
         spec9 = importlib.util.spec_from_file_location("pf", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "carry", "phi_full.py"))
         pf = importlib.util.module_from_spec(spec9); spec9.loader.exec_module(pf)
         try:
-            dd = pf.run(tmp); sc, _ = pf.nest2(dd); _, lp, _ = pf.replay_blocks(dd)
+            dd = pf.run(tmp); sc, _ = (pf.nest2deep if fitness == "nest2deep" else pf.nest2)(dd); _, lp, _ = pf.replay_blocks(dd)
         except Exception:
             return -1
         return sc + lp / 100.0
@@ -160,7 +160,7 @@ def score_py(g):
 
 def score(g):
     open(tmp, "w").write(dumps(g))
-    if fitness in ("rep", "excess", "carries", "pviol", "resets", "ogate", "fresh", "phiflat", "phicap", "cidx", "h4", "replay2", "phaselen", "lemmas", "nest2"): return score_py(g)
+    if fitness in ("rep", "excess", "carries", "pviol", "resets", "ogate", "fresh", "phiflat", "phicap", "cidx", "h4", "replay2", "phaselen", "lemmas", "nest2", "nest2deep"): return score_py(g)
     try:
         r = subprocess.run([oink, SOLVER] + OINKFLAGS + (["-t", "-t", "-t"] if fitness in ("strch", "newrecur", "maxsets", "pairs") else ["-t", "-t"] if fitness.startswith("per") or fitness in ("prunemono", "dups", "alpha", "straddles", "restarts", "maxrestarts", "osc") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
     except subprocess.TimeoutExpired:
