@@ -472,6 +472,15 @@ its last escape, (b) the unconsumed rest has a cycle whose maximum is a survivin
 V*_s ⊆ V*_{s+1} and Reg_s ⊆ Reg_{s+1}. The hypothesis is narrower than "no tangle straddles", so the statement is
 stronger than (r1) asked. Still open: the case with solved dominions in between (R shrinks, tangles deleted), and (r2).
 The PLAIN monotonicity that (r1) was meant to support is FALSE (GAP-A-M.md §4b): Lemma E's shape occurs.
+STATUS (r2), 2026-10-16 09:30Z: (r2) FAILS (L-RED docs/red/R11-r2-regress.md, l-red 5dc5707, trunk 6d8d75a; reproducer
+experiments/red/carry/r2_check.py on a byte copy of experiments/alg/instances/dtl_mviol_n20.pg, Lead re-run R2-CHECK PASS):
+the FIRST Odd tangle t4 = {orig11, orig18}, learned in a deep stable piece (|R| = 13) with its escapes orig2, orig10
+forgiven (outside R), straddles with a lower pickup (Lemma E (a)+(b)) at R = G' in the next Odd search, so the regress has
+no base case. Cause: the learning context differs from the use context (escapes forgiven at learning are in R at use).
+(α) itself is not exhibited. So the (α)-exclusion route of this section is DEAD as written; GAP-C needs either another
+well-foundedness argument or a proof that the straddle shape is harmless for (α) (the lowest top's successor in the orphan).
+C6 (docs/alg/candidates/C6-DTLhat.md) does not remove this gap: its monotonicity is per fixed context, the regress compares
+the learning context with the use context, and (α) is a straddle in sptl regions, which C6 does not change.
 Evidence for (r1) (experiments/alg/dtl_monotone.py): on 4,000 random games (n 5..14) plus tc+ N = 4..10 and c3, c4, the
 stable set of the first best_vertices call of a search (∅ when that call returns -1) is contained in that of the next
 search of the same player, restricted to still-unsolved vertices, in every case (0 violations); the first stable set of a
