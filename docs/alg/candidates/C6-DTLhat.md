@@ -28,8 +28,12 @@ unchanged.
 
 ## What carries over and what does not (status per item)
 - Fixed-context monotonicity (M): PROVED (GAP-A-M.md Lemma 2.1: Û and the survival test are monotone in (V, T)).
-- Soundness and output strategies: SKETCH. DTL-proof.md §1.3-1.4 and §2.1 use only sptl, extraction and the solve
-  attractor, which are unchanged; a line-by-line re-check that no step uses a property of the old pruning is still to do.
+- Soundness, output strategies, termination: PROVED (reading, 08:51Z). DTL-proof.md §2.1 uses only TS (§1.3) and the
+  dominion-removal Lemma 1.4b, both about sptl/extractTangles/search, which C6 does not change. §2.2 uses from the pruning
+  only (iii) "each round except the last removes ≥ 1 vertex of V" and, in (v), "V ≠ ∅ when the result is ≠ 0 (V := prevV
+  in the −1 case)"; best_vertices_hat has the same loop exit structure, so both hold. str values written inside
+  best_vertices are never read by extraction or output (§1.0 (s4): sptl resets str on its region; solved vertices get str
+  from the dominion or the removal attractor), so the change cannot affect TS or the output strategies.
 - Completeness (GAP-C analogue): OPEN. The DTL sketch (§2.3) reasons about which tops are stable; with the ideal test a top
   can be stable while its consumed sptl region is not closed. DATA: prototype (experiments/alg/dtl_c6proto.py), 1,530 games (random n ≤ 20, every instance in
   experiments/alg/instances, tc and tc+ N ≤ 6, counter_* families): every game solved, regions equal Zielonka, strategies

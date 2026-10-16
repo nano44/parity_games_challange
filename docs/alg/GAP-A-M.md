@@ -169,6 +169,12 @@ first j where (R_j, res_j, V_j) differ, or ∗ if all depth-0 pieces agree (prog
 - Counting (PROVED from the two lines above): with N_j := number of transitions of level j in the phase and E_j := number of
   level-j epochs = 1 + Σ_{i<j} N_i, N_j ≤ K·E_j, so N_j ≤ K(K+1)^j and the phase has at most (K+1)^L depth-0 transitions,
   L = the number of depth-0 pieces (≤ n), with the same structure recursively inside every cut (∗ transitions).
+- Driver lemma (SKETCH, 08:52Z). A transition of level j is driven by a tangle that is NEW (learned in search s) and fires
+  in piece j's computation in search s+1 (first-difference argument: with the old tangle set the computation at an equal
+  context is identical). Such a tangle was learned at a piece k ≥ j of search s, or inside the recursion of a cut piece
+  k ≥ j: a tangle learned at a piece k < j lies inside D_k(s) (an SCC of an sptl region of V*, or inside a cut's Z), and
+  D_k(s) = D_k(s+1) is outside R_j by the equal contexts. Open step: "every sptl region of the last pass lies in Dom(V*, R)"
+  (both are top-down consumed attractors from V*; not written out). So carries come from deeper learning (R9's CARRY).
 6.2 The precise obstruction. The product comes only from REPLAYS: transitions of level j in an epoch other than the first
 level-j epoch in which level j changed (some level i < j changed in between). With replays bounded, N_j ≤ K + (replays at
 level j) and the phase has O(L·K + replays) transitions. Nothing proved bounds replays, for a concrete reason: when a level
