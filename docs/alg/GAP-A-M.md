@@ -2382,3 +2382,24 @@ Packet 6 SETTLED (per referee: REFEREE R-P6 @ 9f77ff9 with comparison §C @ ad4b
   nested-counter recursion again (§22g, §22k).
 - Context climbs (dtl_ctxclimb.py: spp25 and spp22 starts, both orders) are running to see how far the number of
   first-difference contexts per phase can be pushed.
+
+22p. What a long phase looks like at depth 0 (DATA; spp22_oink_n40, Oink order, Odd's phase of 22 searches; 13:56Z by date -u)
+Each search's depth-0 iterations as (call result, piece size). M is a −1 piece (P or T), S is a stable piece, E is the
+end:
+  s0  M1 M2 M1 M2 M3 M1 M1 M1 M1 M2 M1 M2 M2 M1 M2 M2 M1 M1 M2 M1 M2 M1 S4 E1
+  s3  M1 M2 M1 M2 M3 M1 M1 M1 M1 M2 M1 M2 M2 M3 M4 S10 E1
+  s7  M1 M3 M1 M2 M3 M2 M1 M2 M1 S22
+  s8  M1 M1 M1 M2 M1 M2 M3 M1 M1 M1 M1 M2 M1 M2 M2 M1 S15
+  s10 M1 M1 M1 M2 M1 M2 M3 M2 M1 M2 M1 S21
+  s11 M1 M1 M1 M3 M1 M2 M3 M1 M1 M1 M1 M2 M1 M1 M2 M2 M4 S10
+  s17 M1 M3 M1 M2 M3 S28
+  s21 S38
+- Reading: a phase is a run of small "distraction" −1 pieces, each removing a level set Dom(prevV) of 1-3 vertices, then
+  ONE stable piece that grows as the learned tangles let vertices survive pruning.
+- The number of depth-0 pieces falls overall (24 → 2) but RISES twice: s7 → s8 (9 → 16 M pieces) and s10 → s11 (11 → 17).
+  At both, an early distraction piece changes its level set (M3 → M1 at position 2, or M2 → M3 at position 4). This is
+  §22g's obstruction at work: the level-set jump re-creates every later context, and the run of distractions behind it
+  is rebuilt.
+- So a (CTX⁺) proof needs a potential that pays for the rebuilt distraction runs, for instance through the vertices that
+  move from distraction pieces into the final stable piece (here 4 → 38). It must survive the two re-expansions. Not
+  attempted further in this box.
