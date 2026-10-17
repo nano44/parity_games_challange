@@ -24,6 +24,11 @@ All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `sc
   DATA (0 violations, both orders): (K-in) W_p ≠ ∅ ⇒ dominion or a tangle learned INSIDE W_p; (TW) learned tangles never
   straddle W_p's boundary; (NO-ORPHAN-W). Exhaustive n ≤ 3 complete both orders.
   Proposed GAP-C statement for the fleet: (K-in) with obligations (α-W), (β-W), (Cb-W). Sent 02:36Z.
+  03:19Z by date -u: (LOW-W) DATA 478/478 Oink, 459/459 stable: the progress comes from the LOWEST top of some stable piece;
+  GAP-C = (Cb-W) + (α-W) + (β-W) + (TW) at that one region (GAP-C.md §10). Random games: (TW) 869/0/36, weak for the rest.
+  Next for a successor: prove (TW) for the lowest closed region (the obstacle: a p-vertex of W_p whose attraction edge
+  points into W_{1-p}, and an opponent vertex of W_{1-p} with an edge back), or (Cb-W) via contexts that shrink into W_p
+  (GAP-C.md §9: 1,653 of 2,033 tangles inside W_p are learned at depth 0 in a context inside W_p).
 - Sources opened this box: tools/oink/src/src/solvers/dtl.cpp @ 8fbf0a7 lines 60-100 (attractVertices), 548-639
   (computeDistanceValues), 905-945 (search_rec −1 branch), 995-1070 (search() incl. the trace check); str reads at
   73, 268, 316-317 checked against writes 89, 171, 485, 881, 908, 965.
