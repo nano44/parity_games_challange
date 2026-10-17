@@ -176,3 +176,7 @@ Context: docs/alg/GAP-C.md. Lemma K: W_p(G') ≠ ∅ ⇒ search(p) learns a tang
   DEAD, experiments/red/carry/instances/gapbW_dup_n20.pg (L-RED, l-red 2b792b8; Oink-verified, both orders): a duplicate inside
   W_0 at a depth-1 lowest region; the search is productive elsewhere inside W_p. GAP-C is now the existential (K-low),
   GAP-C.md §12.
+- (K-first) "the first stable piece's lowest region is productive inside W_p" and (K4-B) "its regions lie in W_p": DEAD,
+  experiments/alg/instances/kfirst_viol_union.pg (disjoint union of two corpus games, n = 26; Oink-verified; both orders);
+  276 of 891 mixed union searches. They held on the corpus only because there W_p = G' (or one opponent vertex). The
+  existential (K-low) survives (2,092 of 2,092 mixed union searches).
