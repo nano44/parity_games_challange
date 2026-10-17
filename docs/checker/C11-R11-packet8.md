@@ -240,3 +240,38 @@ The draft may land as written. If edited, I re-diff the text only.
   - (FALL-V) "is FALSE, RESULTS DE18 (fallv_viol_n28)". DE18 landed at 357224b ("RESULTS DE18 (FALL-V false,
     fallv_viol_n28)").
   - "R11 pending" now reads "R11".
+
+## Addendum 9: post-landing check of DE20, the R11 POST-LANDING NOTE and the GAPS row, trunk efff851 (Lead 19:37Z): PASS
+- 00083c7 is an ancestor of efff851. efff851 touches docs/RESULTS.md, docs/GAPS.md and LEAD-STATE only.
+- The R11 body is unchanged except for two things: the G-R11-5 label ("FALSE AS STATED ..., before that: DATA only ...") and
+  the appended note.
+- Sources on trunk:
+  - experiments/red/carry/instances/stealonce_viol_n76.pg, sha1 32c2da0b6ff0ad87b3f7d725e351356bd8e14172 (DE20: "32c2da0b");
+  - docs/red/R35-stealonce.md (l-red 6af3a14, an ancestor of efff851);
+  - GAP-A-M §23b (line 2758). Its chain "(STOLEN-PERM) ⇒ (STAYS-MET) ⇒ (NO-REFIRE at σ) ⇒ (STEAL-ONCE*)" (§23b line 36 of
+    the section) is the route DE20 names.
+- Tools: experiments/alg/dtl_rootmono.py at HEAD is identical to l-alg e2f7e198, and dtl_stealtrace.py is identical to
+  7b909b6, as DE20 states.
+- CHECKER re-run:
+  | check | stable | Oink | DE20 |
+  | --- | --- | --- | --- |
+  | pinned Oink `--dtl --no-single --no-wcwc --no-loops -v` | 1 dominion, 50 tangles, 7 iterations, verified (33 strategies) | (same binary) | same |
+  | dtl_rootmono (RM_EXCL=1 RM_PREF=1 RM_DV=0): STOLEN-PERM FAILS / holds | 7 / 12 | 0 / 1 | 7 / 12 (stable) |
+  | NO-REFIRE "REFIRES later \| prefix later unmeets t" | 7 | 0 | 7 |
+  | "RELEVANT STEALS per (context, round, top, tangle)" | max 2 | max 1 | max 2 (stable) |
+  | INCOMPLETE lines | 0 | 0 | "no INCOMPLETE" |
+  | dtl_stealtrace (+ RM_LIGHT=1) | "STEAL-ONCE* VIOLATION ... phase 1 ctx \|R\| 76 step (round 4, top 18) tangle 7: 2 relevant steals"; STAYS-MET FAILS 7 / holds 12 | STAYS-MET holds 1; STEAL-ONCE* max 1 | same; "Oink order: everything holds" |
+  All reproduced, exit 0.
+- Overstatement check:
+  - The note says (a)-(c) are unaffected, which is correct: the counterexample concerns the hypothesis of (d) only.
+  - It says (d) "remains VALID as a conditional, but its hypothesis fails, so (d) gives no reduction of GAP-A as stated".
+    That is accurate, and it does not overclaim.
+  - R11's Object line says "every order datum", so one order datum suffices to falsify (STEAL-ONCE*) as R11 uses it. The
+    note says "under the stable order datum", and DE20 says "NOT a dead end for DTL itself". Both are correct and
+    conservative.
+  - The Lead reading is explicitly "(unsigned, not part of R11)" and "needs both referees before it is used". The GAPS row
+    says "open replacement (Lead reading, unsigned) ... (DATA max 2)". Neither presents it as signed.
+  - The obstruction text matches R35 (vertex 3 via 3→64; region 66; tangle 7 refires, then a second steal). This is DATA,
+    and "No growth shown (k = 2)" is stated.
+- Note (no change needed). R11's Scope line still lists (STEAL-ONCE*) among the open statements, and the POST-LANDING NOTE
+  directly below it qualifies that. The G-R11-5 label carries "FALSE AS STATED", so a reader of the gap list sees it.
