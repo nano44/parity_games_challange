@@ -2557,3 +2557,34 @@ every context; Oink / stable):
   can move earlier at most n times.
 - But a descent can move many vertices later again, which re-enables steals. So the count is #descents·n² circularly.
   This is the remaining core of (FALL).
+
+22t. Packet 7 (REFEREE R-P7 @ 299bc58; REFEREE-2 pending), imported per referee; §22r unchanged (15:17Z by date -u)
+- EXACT: SIGN WITH GAPS, both closed.
+  - G7-a1: the rejection is at 138-139 ("not contained in Z+R"); 137 is the "already attracted" skip.
+  - G7-a2: the "remaining instances" step, written out.
+    - A p-vertex's trigger edge goes into Z_τ and is tried at that pop.
+    - An opponent vertex with ≥ 1 successor in Z_τ is tried at the pop of the last one; its successors in P(τ⁺) are not
+      escapes (80).
+    - A tangle with ≥ 1 escape in Z_τ is tried at the pop of its last escape in Z_τ; escapes in P(τ⁺) pass (156 tests
+      Gx = CurR).
+    - A tangle with all escapes in P(τ⁺) or outside R is the closedness case.
+  - REFEREE's probe (own closure): EXACT at 233,399 stable / 244,057 Oink region steps, 0 failures.
+- PREFIX-MONO-X: SIGN. Wording: "PREFIX-MONO is the special case" should read "the same induction proves PREFIX-MONO with
+  T′ in place of T′ \ E′_τ". A step-ideal run's prefixes are closed under all of T′. It is the same proof pattern, not a
+  special case of the hypothesis.
+- Corollary: SIGN WITH GAPS.
+  - G7-c1 (closed): Π-blind e* steps also need a new steal. POS-FALL uses step-ideality only through (C4), which holds
+    under (NS).
+  - G7-c2 (stated): the bound is ONE-SIDED and loose. New steals outnumber falls about 8-13 to 1.
+- Reduction (REFEREE): GAP-A ⇐ (CTX⁺) ∧ (NS-COUNT), given STR-DET. (NS-COUNT) says new-steal visit pairs per context are
+  polynomial. (NS-COUNT) ⇒ (FALL), not conversely.
+- §22s (PREFIX-MONO-X*, "relevant" steals) tightens the charge to (RELSTEAL), with 5 / 5 relevant steals without a
+  descent. It is for packet 8.
+Per-(context, round, top, tangle) counting (REFEREE's suggestion; DATA, 15:17Z; corpus plus fall3, fall4, fallv, f1_two*;
+RM_EXCL=1):
+- (STEAL-ONCE): every (context, round, top, tangle) is newly stolen at most once per phase. 91 phases with new steals and
+  23 with relevant steals, in both orders, all with max 1.
+- So the same tangle can be stolen repeatedly only at DIFFERENT steps. In fallv_viol_n28 tangle 2 is stolen at both
+  falls, at different (round, top).
+- Consequence: #new-steal visits per context ≤ (n + 1)·n·|T_phase|, but |T_phase| ≤ n·S (Lemma W), which is circular.
+  (STEAL-ONCE) would need a bound on the tangles that can be stolen at a context independent of S.

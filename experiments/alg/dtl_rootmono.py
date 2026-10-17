@@ -113,7 +113,7 @@ if __name__ == "__main__":
     for f, g in ST.games(sys.argv[1:]):
         d0 = FD.P.X.build(g); d = RM(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.run()
         for ph in FD.phase_rows(d):
-            nd = nr = 0; wl = []; nbad = 0; seq = []; fdc = set(); kseq = []; desc = {}; ifd = set(); victim = {}; vfall = {}; nsteal = {}; rsteal = {}
+            nd = nr = 0; wl = []; nbad = 0; seq = []; fdc = set(); kseq = []; desc = {}; ifd = set(); victim = {}; vfall = {}; nsteal = {}; rsteal = {}; trip = {}; rtrip = {}
             for r in ph:
                 full = r["log"]; red = FC.reduce_log(full, st)
                 # map root spans onto the reduced log: the root call precedes every sptl pass, so its positions shift only
@@ -315,6 +315,12 @@ if __name__ == "__main__":
                         kre = "PREFIX-MONO-X*: " + ("relevant new steal" if relst else "no relevant new steal") + " | " + ("DESCENT" if c_ in ("RV falls", "Ψ NOT monotone", "Φ_top RISES (descent)") else "no descent")
                         tab[kre] = tab.get(kre, 0) + 1
                         if relst: rsteal[key_] = rsteal.get(key_, 0) + 1
+                        for k_ in ey_:
+                            if k_ not in ex_: continue
+                            for t in ey_[k_]:
+                                if t < x["ntv"] and t not in ex_[k_]:
+                                    trip[(key_, k_[0], k_[1], t)] = trip.get((key_, k_[0], k_[1], t), 0) + 1
+                                    if t in fx_.get(k_, frozenset()): rtrip[(key_, k_[0], k_[1], t)] = rtrip.get((key_, k_[0], k_[1], t), 0) + 1
                         tab[kns] = tab.get(kns, 0) + 1
                     if c_ in ("RV falls", "Ψ NOT monotone", "Φ_top RISES (descent)"):
                         desc[key_] = desc.get(key_, 0) + 1
@@ -344,6 +350,10 @@ if __name__ == "__main__":
                 for u, w in zip(c0, c0[1:]): succ_.setdefault(u, set()).add(w)
             if succ_:
                 ms = max(len(v_) for v_ in succ_.values()); succrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), ms, len(succ_), len(ph) - 1, len(ph[0]["G"])))
+            if trip:
+                kt3 = f"NEW STEALS per (context, round, top, tangle): max {max(trip.values())}"; tab[kt3] = tab.get(kt3, 0) + 1
+            if rtrip:
+                kt4 = f"RELEVANT STEALS per (context, round, top, tangle): max {max(rtrip.values())}"; tab[kt4] = tab.get(kt4, 0) + 1
             if rsteal: rsrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), max(rsteal.values()), sum(rsteal.values()), len(ph) - 1, len(ph[0]["G"])))
             if nsteal: nsrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), max(nsteal.values()), sum(nsteal.values()), len(ph) - 1, len(ph[0]["G"])))
             if vfall:
@@ -412,6 +422,6 @@ if __name__ == "__main__":
         badrows.sort(key=lambda r: -r[1]); print("phases where PI fails to rise (file, failures, transitions, |G'|):", badrows[:8], "phases:", len(badrows))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT", "DISTRACTION", "RV SHAPE", "PREFIX-MONO-X")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT", "DISTRACTION", "RV SHAPE", "PREFIX-MONO-X", "NEW STEALS per", "RELEVANT STEALS per")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})
