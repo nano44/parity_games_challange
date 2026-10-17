@@ -204,3 +204,21 @@ Where the progress inside W_p happens (02:48Z by date -u; experiments/alg/dtl_ki
   (first: experiments/alg/instances/c1_k1_min_n7_m10.pg, Even wins all 7 vertices and 5 are removed before the first
   productive piece). So DTL does not peel the opponent's region first; when it learns inside W_p, the earlier pieces have
   removed opponent-won AND p-won vertices.
+
+## 10. (LOW-W): the progress comes from a LOWEST region inside W_p (03:13Z by date -u; experiments/alg/dtl_loww.py)
+(LOW-W), DATA: every search of p with W_p(G') ≠ ∅ that finds no dominion has a stable piece (any depth) in one of whose
+sptl passes the LOWEST top that gets a region learns a tangle inside W_p(G'). C5: Oink order 478 of 478, stable order 459 of
+459 (lowest-top tangles outside W_p: 6 in each order, the 6 'outside' tangles of §9). Of the 2,033
+tangles learned inside W_p in those searches, 1,822 come from the lowest top of their pass, 211 from a higher top.
+(A first version of the tool took the last top of V in sptl order, which can be consumed by a higher region and has no
+region of its own; it reported 261 false violations. The corrected tool re-implements dtl_pyref.sptl verbatim and records
+the tops that get a region.)
+Consequence for the proof (reading). K5/K6 (DTL-proof.md §2.3) already say: the lowest region of a stable set is closed
+unless (α), and SCC1 + B-thr: a closed region at a top not in W is productive unless (β). So GAP-C reduces to statements
+about ONE region (what was measured is the learned SCC, not the region):
+  (Cb-W) some stable piece of the search has its lowest top (with a region) in W_p(G') (existence);
+  (α-W)  that region is closed (no straddling tangle blocking its top's successor);
+  (β-W)  its SCC C_τ is not a stored tangle (no orphan inside W_p);
+  (TW)   C_τ lies inside W_p(G').
+Data: a lowest top learns a tangle inside W_p in every case (478/478). L-RED target: a search with W_p ≠ ∅ where no stable piece has
+its lowest region inside W_p (Cb-W fails), or where it does but that region is open (α-W) or a duplicate (β-W).
