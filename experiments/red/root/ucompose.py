@@ -5,7 +5,8 @@ shifted by an EVEN amount above the previous part, so parities and in-part order
 root/rootfit.py (L-ALG dtl_rootmono.py unmodified, LALGR_DIR; mode from ROOTFIT, default fall). Keeps every union whose
 score's leading measure exceeds BASE. CHAIN=1 replaces the random cross edges by the fall3_n76 pattern: for every pair
 of consecutive parts in the stack, one edge from a random Even-owned vertex of the upper part to a random Even-owned
-vertex of the part below (plus 0..CMAX random edges of the same kind). Usage: ucompose.py SEED COUNT ORDER CMAX BASE OUTDIR G1.pg G2.pg ..."""
+vertex of the part below (plus 0..CMAX random edges of the same kind). K=k draws k DISTINCT parts from the given pool
+for each union (default: all of them). Usage: ucompose.py SEED COUNT ORDER CMAX BASE OUTDIR G1.pg G2.pg ..."""
 import sys, os, random
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import rootfit
@@ -17,7 +18,7 @@ os.environ.setdefault("ROOTFIT", "fall"); lead = {"fall": "desc", "ctx": "ctx", 
 best = (-1, None)
 for i in range(cnt):
     prio, own, succ, shift, offs = [], [], [], 0, []
-    for h in rng.sample(parts, len(parts)):                  # random stacking order
+    for h in rng.sample(parts, int(os.environ.get("K", len(parts)))):   # random choice and stacking order
         o = len(prio); offs.append((o, o + h.n)); prio += [p + shift for p in h.prio]; own += list(h.owner); succ += [[w + o for w in s] for s in h.succ]
         shift = max(prio) + 1 + (max(prio) + 1) % 2
     N = len(prio)
