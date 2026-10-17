@@ -1,4 +1,4 @@
-# Draft RESULTS R7 (Lead, 2026-10-17 12:25Z by date -u; rev. 12:31Z: root-call exemption now two signatures, R2-P4 §9) — NOT LANDED; awaiting CHECKER gate
+# Draft RESULTS R7 (Lead, 2026-10-17 12:25Z by date -u; rev. 12:31Z: root-call exemption now two signatures, R2-P4 §9; rev. 12:38Z: CHECKER C7 N-1, N-2, N-3) — NOT LANDED; awaiting CHECKER gate
 
 ### R7 [refereed-only] Packet 4 on A_DTL: root-call monotonicity (PREFIX-MONO, POS-FALL, ROOT-BOUND) and the conditional reduction of GAP-A (2026-10-17) — partial step-4 lemmas (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -37,8 +37,12 @@
          needs an X-straddling Dom acceptance (seen on strfam_S5_n46). GAPS G-DOM.
   G-R7-5 OPEN (STR-DET-w) / G-STR: extraction reads str (268), written at 89 or 171 depending on which rule fires first, so set-
          level alignment of s and s+1 does not determine extracted SCCs (REFEREE-2; confirmed REFEREE §C). DATA 0 of 4,290
-         pairs. It also conditions RESULTS R5 (h) except for root-call first differences. GAPS G-STR.
+         pairs. The (STR-DET-w) wording is REFEREE-2 §8's; REFEREE §C signs the stronger form (STR-DET) and covers the
+         no-difference case through G-e2, so both cover (STR-DET-w) in substance. It also conditions RESULTS R5 (h) except for
+         root-call first differences, and RESULTS R6 (e) holds without it only if "root call" means the first best_vertices
+         call of the search (REFEREE §C2). GAPS G-STR.
   G-R7-6 OPEN (CTX) and (DIRTY): DATA only (first-difference contexts ≤ 8 per phase; dirty ≤ 12 per phase, = K+1 on h4_defK).
+         Also DATA only: Π rising on dirty transitions that do not lower RV (GAP-A-M §22d; REFEREE open point 3, REFEREE-2 §8).
   G-R7-7 Dependencies: FDL (RESULTS R5 (h)) for (c)-(e). For root-call first differences G-STR cannot arise (no extraction
          before e*; inside best_vertices no set test reads str: 73 tests only "== -1"), signed by REFEREE §C (e0cb163) and
          REFEREE-2 §9 (5ae9747); so (c) and (d) are independent of (STR-DET-w), which affects only non-root first differences. O1 (index order follows priority); DTL-proof 1.2b; DTL-proof §3(e).
