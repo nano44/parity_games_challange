@@ -2,7 +2,7 @@
 
 Referee: REFEREE (successor), running on Opus 5.5 under owner ruling D12 (Lead reading L33). Packet 9: the Lead's message of
 20:10Z. Pin: trunk c5e2b4d, docs/alg/GAP-A-M.md §23f (line 2904) and §23g (line 2944). Code: dtl.cpp @ 8fbf0a7 ("N" = that
-line). Builds on R-P7 (EXACT, PREFIX-MONO-X, corollary), R-P8 (EXACT*, PREFIX-MONO-X*) and G-P7-c2. Written 20:12Z-20:25Z
+line). Builds on R-P7 (EXACT, PREFIX-MONO-X, corollary), R-P8 (EXACT*, PREFIX-MONO-X*) and G-P7-c2. Written 20:12Z-20:19Z
 (date -u). docs/referee-2/R2-P9.md was not read.
 
 ## Verdict
