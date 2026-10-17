@@ -1143,10 +1143,11 @@ KILLED (FALSE / DEAD), each with its instance
 | The author's per-search check (DV changes at every tangle-learning search; dtl.cpp computeDistanceValues) | spp_chain_up_n43 (41 of 41 unchanged; pinned Debug Oink agrees), 525 of 990 corpus searches | §21f |
 | Constant tangles per top per phase | spp_final_n40 (13 at one top) | §21e |
 | (PHI-DV): PHI0 rises only when the root DV* moves | climbs_1016/nest_nest_s43 (69 counterexamples) | §21j |
+| (ABS-mono) PHI0 never rises at a non-RES-d0 transition; (ABS-mono-pw) no vertex moves to a later depth-0 piece there | red/carry/instances/absmono_viol_n44.pg (L-RED R22, l-red cf9bdba; Oink 5 iterations, verified): Even's search 0 → 1, SHRINK at depth-0 piece 14, then piece 17 (same context) stable → −1 under the larger T; 7 vertices move later, PHI0 374 → 379; both order data | §21j, DEAD.md |
 
 DATA candidates left after box 4 (A_DTL; every per-context (H4) POTENTIAL candidate is dead):
 (U-MONO_DTL) same-input union monotone in T (701/701 Oink, 661/661 stable, §18h); (LEX-R) first differing round grows (775/775, 755/755); "no DEF-down step at an ideal-stable context" (0/181).
-Box 5 DATA candidates (A_DTL): (ABS-mono) the depth-0 removal-index sum PHI0 never rises at a transition whose first difference is not a depth-0 RES (0/280, §21j); (ABS-mono-pw) no vertex moves to a later depth-0 piece at a non-RES transition (280/280, 269/269, §21j); (SPP) S ≤ |G'| and (SPP-sharp) S ≤ max(1, |G'| − 1), tight (dtl_chainfam, spp_chain_up_n43, both orders, §21a-b); (DV-nofall) the author's DV never falls (0/1,237, 0/1,204; synthetic 0/101,600; Lemma DV-MONO = SKETCH + GAP, §21f-g); absorption (c1) 87/87, 75/75 (§21d).
+Box 5 DATA candidates (A_DTL): (SPP) S ≤ |G'| and (SPP-sharp) S ≤ max(1, |G'| − 1), tight (dtl_chainfam, spp_chain_up_n43, both orders, §21a-b); (DV-nofall) the author's DV never falls (0/1,237, 0/1,204; synthetic 0/101,600; Lemma DV-MONO = SKETCH + GAP, §21f-g); absorption (c1) 87/87, 75/75 (§21d).
 OPEN: GAP-A via (H1) cut carries, (H2a) alive-top self-reinforcing carries, (H2b) dead-top cap carries (reduces to
 c_i, circular), (H3) catch-ups and recursion, (H4) deficits on A_DTL (per context: 4 → 8 over n = 20 → 44, Oink
 order). Core: whether fresh, resetting child contexts (§15, §16) or deficit staircases (§13b) can compound across
@@ -1817,6 +1818,9 @@ Follow-up (00:55Z by date -u; dtl_phidv.py, dtl_dvctx.py DVC_PHI=1; C5, Oink ord
   and #LRN ≤ n(n + 1)·(distinct contexts) (PROVED). The deeper transitions would need the same argument one level down (a
   PHI at the recursion's context), which multiplies over the depth: the nested-counter core again, now with explicit
   per-level polynomial budgets for everything except DEF steps and context counts.
+- KILLED (01:59Z by date -u): (ABS-mono) and (ABS-mono-pw) by L-RED R22, red/carry/instances/absmono_viol_n44.pg (both order
+  data; reproduced here with dtl_dvctx.py DVC_PHI=1: one 'SHRINK d0 DEF PHI0 RISES' step; a later depth-0 piece at the
+  same context goes stable → −1 under the larger tangle set, exactly the weak point named below).
 - (ABS-mono-pw), DATA (01:00Z by date -u): POINTWISE form: at every transition whose first piece-level difference is not a RES
   at a depth-0 piece, no vertex moves to a LATER depth-0 piece: Oink order 280 of 280 (GROW 145, SHRINK 128, deeper RES
   7), stable order 269 of 269. Why a proof is not immediate: after the first difference, a later depth-0 piece runs at the

@@ -10,6 +10,11 @@ search(p) returns true (it creates a new tangle or a dominion).
 Why it is completeness (PROVED, DTL-proof.md §2.3; run() = C5 lines 141-142, dtl.cpp 1072-1161): player 0's loop stops
 at the first false search(0), so by Lemma K W_0(G') = ∅ then, i.e. G' ⊆ W_1; player 1's loop stops at the first false
 search(1), so W_1(G') = ∅, hence G' = ∅. Soundness and strategies are PROVED separately (DTL-proof.md §2.1, Lemma 1.4b).
+Lead question 01:12Z (01:59Z by date -u): does a false search(0) prove that Even wins nowhere in the current G, so that Odd's
+later removals cannot create an Even dominion? Yes, GIVEN Lemma K, and no extra gap: Lemma K gives W_0(G') = ∅ when line 141
+breaks; every later unsolved set G'' ⊆ G' (Odd's dominion removals) satisfies W_0(G'') = W_0(G) ∩ G'' (DTL-proof.md Lemma
+1.4c: winning regions of the subgame are restrictions), and W_0(G) ∩ G' = W_0(G') = ∅ by the same lemma, so W_0(G'') = ∅.
+Without Lemma K the statement is exactly what is open; it is not a separate GAP.
 A failure of Lemma K is observable: the run ends with unsolved vertices (the release build does not check; C5 line 145).
 
 ## 2. Proof map (status of each step)
