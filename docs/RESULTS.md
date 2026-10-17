@@ -303,8 +303,8 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   consecutive searches on the reduced log.
 - Claims signed (both referees, all labelled "(Opus 5.5, D12)"):
   (a) For every best_vertices context R, the potential Π_R is a function of (R, p, T) (no X or W read; str read only at 73, deciding a str write only); T grows along a
-      phase; clean later visits never lower Π_R. Hence the e*-at-R transitions number at most (F_R + 1)(H + 1) (see POST-LANDING
-      NOTE: factor 2), where F_R counts
+      phase; clean later visits never lower Π_R. Hence the e*-at-R transitions number at most (F_R + 1)(H + 1) (given STR-DET; see
+      POST-LANDING NOTE), where F_R counts
       EVERY transition at R where Π_R does not rise (descents, incomparable steps, and Π-blind e* transitions).
   (b) For a fixed tattr input I of a −1 attractor or a Dom step, the output is a triggered closure monotone in T (DTL-proof 1.2b;
       for Dom, the closure triggered by the new part, with only the top pushed), so the transitions whose e* has input I form a
@@ -323,8 +323,9 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
       same premise in R2-P6 and adds: the per-input term of (b) is ≤ 2n (an input can recur within a search), so (c) reads
       S − 1 ≤ Σ_R 2(F_R + 1)(H + 1) + 2n(|C_T| + |C_Dom|) + 1. REFEREE R-P7 §C2 (referee 876c06e) confirms the +2F′ correction
       and agrees this doubled display is TRUE; it argues via STR-DET (c) that the original constants also hold ((F_R+1)(H+1)
-      and n per input), which has one signature (REFEREE-2 check pending). Lead reading: the doubled display, signed by both,
-      is the one of record; constants do not affect the reduction GAP-A ⇐ (CTX⁺) ∧ (FALL).
+      and n per input). REFEREE-2 R2-P8 §7 (referee-2 c2ac652) SIGNS that argument and withdraws its "2n needed". So, given
+      STR-DET (RESULTS R8), R9's ORIGINAL constants in (a)-(c) hold with both signatures; the doubled display holds without
+      STR-DET (c). Constants do not affect the reduction GAP-A ⇐ (CTX⁺) ∧ (FALL).
   (d) The remark that the raw per-input bound S − 1 ≤ n·|I_fd| + 1 is vacuous on data (|I_fd| ≈ S − 1) is DATA, used only as
       motivation.
 - Signatures: REFEREE docs/referee/R-P6.md (referee 9f77ff9 + 0c0e3ce): (a) SIGN WITH GAPS (G6-a1, G6-a2, closed); (b) SIGN WITH
