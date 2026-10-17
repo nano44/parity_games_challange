@@ -2,8 +2,8 @@
 
 ### R4 [refereed-only] GAP-C Step 5 for A_DTL: KT survives every depth-0 P piece, with (ACYC) as the only open hypothesis (2026-10-17) — partial step-4 lemma (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). G' = the game at the
-  start of a search(p); D = W_p(G'). A depth-0 P piece is a depth-0 call of search(p) that returns −1 and whose removal
-  is the Dom(prevV, R) step (dtl.cpp 961-976, Q empty after it); R is its context and Y_0 the set it removes. Packet: docs/alg/STEP5.md and docs/alg/GAP-C.md §18g-§18k at trunk 8f41be8.
+  start of a search(p); D = W_p(G'). A depth-0 P piece is, as in STEP5.md line 9, "the −1 branch with Q empty, dtl.cpp
+  961-991" at depth 0 (best_vertices 643-776 returned −1); R is its context and Y_0 the set it removes. Packet: docs/alg/STEP5.md and docs/alg/GAP-C.md §18g-§18k at trunk 8f41be8.
 - Claims signed (both referees, all labelled "(Opus 5.5, D12)"):
   (1) KT(R) definitions; KT(G') holds when D ≠ ∅; KT(R_end) fails.
   (2) Lemma NT-f: the final pruning round of a −1 call accepts no stored tangle in its region loop.
@@ -29,9 +29,9 @@
          Nothing Lean-checked.
 - Scope: depth-0 P pieces of one search only. The S step ((S-LOW), data) and T step (CORE-PASS + REC, data), hence (K-in)
   and GAP-C as a whole, are NOT established. GAP-A untouched. Gauntlet step 4 stays open.
-- Data (evidence, not part of the signed statement): REFEREE step5_probe.py (Python ref, 254 corpus files, both orders):
+- Data (evidence, not part of the signed statement): REFEREE step5_probe.py (Python ref; 243 of the 254 corpus files: n > 80 and one unreadable file skipped; both orders):
   NT-f 0/8,323 and 0/8,145, YZ 0/4,476 and 0/4,377. REFEREE-2 instrumented pinned C++ (docs/referee-2/R2-STEP5/), 254 corpus
-  + 3,000 random/unions + 9,000 climb mutants, ~32k runs: 0 NT-f / FM / YZ / ACYC / tpr violations. In the corpus the only straddling Dom
+  + 3,000 random/unions + 9,000 climb mutants (each in 2 in-orders), 32,026 runs: 0 NT-f / FM / YZ / ACYC / tpr violations. In the corpus the only straddling Dom
   firing is strfam_S5_n46 stable order (both referees; Lead and CHECKER re-ran pinned Oink: 6 iterations, verified); REFEREE-2's
-  climbs from it (18,000 mutants) produce many straddling firings, none with a cyclic new part or a YZ failure (no total count
+  climbs from it (18,000 runs) produce many straddling firings, none with a cyclic new part or a YZ failure (no total count
   kept). CHECKER C4 (checker 7d7c6fb) reproduced REFEREE's probe and REFEREE-2's corpus and random parts exactly.
