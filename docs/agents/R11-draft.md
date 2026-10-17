@@ -1,4 +1,4 @@
-# Draft RESULTS R11 (Lead, 2026-10-17 16:06Z by date -u) — NOT LANDED; awaiting CHECKER gate
+# Draft RESULTS R11 (Lead, 2026-10-17 16:06Z by date -u) (rev. 16:20Z per CHECKER C11 N-1..N-3, N-2 and the FIRED-R caveat) — NOT LANDED; awaiting CHECKER re-diff
 
 ### R11 [refereed-only] Packet 8 on A_DTL: only fired tangles matter (EXACT*, PREFIX-MONO-X*), and GAP-A ⇐ (CTX⁺) ∧ (STEAL-ONCE*) ∧ (FIRED-R) (2026-10-17) — partial step-4 reduction (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -23,7 +23,8 @@
   SIGN; (b) SIGN; (c) SIGN WITH GAPS, closed (G8-1 = G-P7-c2); (d) VALID as a conditional, with G8-2 ((CTX⁺) for the sum) and
   the relevant-triple form (STEAL-ONCE*). Independent (each read the other's P8 report only after pushing its own). No REJECT;
   full agreement after comparison.
-- Gaps (union). G-R11-1..3 closed in the reports (imported by L-ALG in GAP-A-M §22w, l-alg c915af1); G-R11-4..6 OPEN;
+- Gaps (union). G-R11-1..3 closed in the reports (REFEREE's items imported by L-ALG in GAP-A-M §22w, l-alg c915af1; G8-2 and
+  N8-1 still to be imported); G-R11-4..6 OPEN;
   G-R11-7 dependencies:
   G-R11-1 Over consecutive visit pairs the corollary needs the factor 3 (G8-1); §22s "F_R ≈ #relevant steals" and §22u's first
           line omit it. REFEREE-2 R2-P8 §7 (c2ac652) adds that, given STR-DET, the factor tightens to 2
@@ -32,17 +33,23 @@
           G8-2, accepted by REFEREE §C). Only the relevant-triple form (STEAL-ONCE*) is needed.
   G-R11-3 Wording: §22s's ⊆/⊇ labels are swapped (REFEREE-2 N8-1); F_τ depends on the pop order of the earlier run, which is
           harmless because only the earlier run's F_τ is used (REFEREE; REFEREE-2 §6).
-  G-R11-4 OPEN (CTX⁺): DATA only (max 13 first-difference contexts per phase at n = 40, L-RED ctx13_n40; still rising under
-          climbing at fixed n).
+  G-R11-4 OPEN (CTX⁺): DATA only (max 13 first-difference contexts per phase at n = 40, L-RED ctx13_n40, re-run CHECKER C11:
+          dtl_rootmono both orders, pinned Oink 29 iterations verified).
   G-R11-5 OPEN (STEAL-ONCE*): DATA only (max 1 on every set: corpus, specials, mixed and cross unions, both orders; REFEREE-2
-          523 groups; L-ALG 665/703 and 325/338 phases with new steals).
-  G-R11-6 OPEN (FIRED-R): DATA only and without any argument ("the real obstruction", REFEREE): max 17 fired tangles at one
+          523 groups; L-ALG 665/703 (GAP-A-M §22w, mixed unions) and 325/338 (§22u, cross unions) phases with new
+          steals).
+  G-R11-6 OPEN (FIRED-R): DATA only and without any argument (REFEREE R-P8: "the obstruction is (FIRED-R)"): max 17 fired
+          tangles at one
           context; the ratio to |R| reaches 0.62 (REFEREE) and 0.67 (REFEREE-2) on small contexts, so L-ALG's "≤ 0.5·|R|" is
-          not robust.
-  G-R11-7 Dependencies: RESULTS R10 (EXACT, PREFIX-MONO-X), R9 (reduction; constants per its post-landing note), R8 (STR-DET).
+          not robust. CAVEAT (L-ALG GAP-A-M §22w, l-alg 8642d5c): every fired tangle is a stored tangle, so by Lemma W
+          #fired(R) ≤ #tangles ≤ n·S, and GAP-A itself implies (FIRED-R). (FIRED-R) is a context-local form of the tangle count,
+          not an independent weaker statement; its content is that the tangles active at one context do not grow with the
+          phase length, and only long phases (S ≫ |R|) test it. Short-phase climbs reach 15 fired tangles at |R| = 17 (0.88).
+  G-R11-7 Also open, inherited: (ACYC) (G-S5-6, a GAP-C item). Dependencies: RESULTS R10 (EXACT, PREFIX-MONO-X), R9 (reduction; constants per its post-landing note), R8 (STR-DET).
           Nothing Lean-checked.
 - Data (evidence only): EXACT* 0 failures in REFEREE's 481k and REFEREE-2's 927k best_vertices region steps; every non-rise at a
   relevant steal (REFEREE-2: 103/103 consecutive non-rises; 5 relevant steals at rises, = L-ALG's 5; 872 plain-only steals,
   all at rises), so the relevant-steal charge is nearly tight.
-- Scope: a reduction, not a bound. GAP-A stays OPEN on (CTX⁺), (STEAL-ONCE*) and (FIRED-R). Completeness (GAP-C) is separate.
+- Scope: a reduction, not a bound. Because (FIRED-R) is implied by GAP-A (G-R11-6 caveat), this reduction is not the L32
+  single-statement progress criterion. GAP-A stays OPEN on (CTX⁺), (STEAL-ONCE*) and (FIRED-R). Completeness (GAP-C) is separate.
   Gauntlet step 4 stays open.
