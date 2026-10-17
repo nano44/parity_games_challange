@@ -2733,3 +2733,15 @@ Partial proof (reading).
   stolen, those vertices can leave. So the induction does not go through as stated.
 - What is needed: when a region loses vertices through a relevant steal of its own fired tangle t′, it never loses every
   vertex through which an earlier-stolen tangle t is met at a later step. Not proved.
+Sharper invariants (17:08Z by date -u; same data, Oink order):
+- (MET-MONO) "a tangle met by a step's prefix stays met" is FALSE in general. 117 of the 119 visit pairs with a prefix
+  shrink lose some met tangle.
+- (STOLEN-PERM) holds in 216 / 216: after a relevant steal the STEALING vertices t ∩ P(σ⁺) stay in every later prefix at σ.
+  It implies (STAYS-MET).
+- (STEALER-MONO) holds in 216 / 216: the region that holds the stolen vertices never loses any vertex afterwards.
+- Reading. By EXACT* and PREFIX-MONO-X*, region j can shrink only after a relevant steal at some step ≤ j. So the data
+  says: once region j has stolen from a later step, no relevant steal happens at steps ≤ j again in the phase. That
+  would be an ORDER on steals (each region steals only after the regions above it have stopped changing).
+- Not proved. The obvious attack shape: after region 2 has stolen from region 3, let region 1 (monotone in round 1)
+  grow into a tangle that fired in region 2. Target for L-RED.
+- Union runs with all these checks are running.
