@@ -191,3 +191,20 @@ The draft may land as written. If edited, I re-diff the text only.
   only.
 - The ee4e060 PASS (Addendum 3) stands for ee4e060 as it was against §22w at 8642d5c. It is superseded by L-ALG's
   correction, which is now on trunk.
+
+## Addendum 5: R11 re-diff at trunk afba224 (Lead 16:29Z), text only: PASS
+- History: 77c5fa3 and eb1ad3f are ancestors of afba224.
+- The net change from ee4e060 (Addendum 3, PASS) to afba224 touches only the G-R11-6 caveat and the Scope line.
+- No duplicate block: each of G-R11-1..7 and each top-level bullet (Claims, Signatures, Gaps, Data, Scope) occurs once.
+- So 369b4bf → afba224 in full is the union of Addendum 2 (G-R11-1 sentence), Addendum 3 (N-1..N-3, N-2) and the two
+  changes below.
+| draft at afba224 | GAP-A-M §22w on trunk (L-ALG bracket "Correction 16:11Z") | |
+| --- | --- | --- |
+| "(FIRED-R) bounds a count of stored tangles, and the tangle count is GAP-A's own core (Lemma W: #fired(R) ≤ #tangles ≤ n·S)" | "(FIRED-R) bounds tangles, and the tangle count is GAP-A's own core (Lemma W)"; "Lemma W gives #tangles ≤ n·S, so #fired(R) ≤ n·S" | OK |
+| "so it is unlikely to be much easier than GAP-A" | "(FIRED-R) is therefore unlikely to be much easier than GAP-A" | OK |
+| "(STEAL-ONCE*) is of a different kind (repetition, not size)" | "unlike (STEAL-ONCE), which is a statement about repetition" | OK |
+| "its content is ... only long phases (S ≫ \|R\|) test it"; "Short-phase climbs reach 15 fired tangles at \|R\| = 17 (0.88)" | unchanged text of §22w (Addendum 3) | OK |
+| Scope: "a reduction, not a bound, to three open statements (not the L32 single-statement criterion); (FIRED-R) in particular is a tangle count close to GAP-A's core (G-R11-6 caveat)" | follows from the bracket. The withdrawn "implied by GAP-A" reason is gone | OK |
+- The withdrawn clause "GAP-A itself implies (FIRED-R)" is no longer in the draft. Addendum 4's FAIL is resolved.
+- C11 Addendum 3 N-7 (optional, "(stable order, dtl_pyref)" on the 15/17 figure) is not applied. It remains optional.
+- C11 verdict at afba224: PASS.
