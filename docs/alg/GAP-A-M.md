@@ -2274,3 +2274,51 @@ bv-thr 2,083, −1 attractor 117, Dom 0, sptl 0; clean root transitions 2,284, a
     every node below k.
   - So #nodes ≤ n·S, and S ≤ |C|·B: no bound follows either way.
   - A proof must charge the new first-difference nodes below k to something that does not renew at the same rate.
+
+22l. Is (FALL)'s "at most 2 per context" structural? No: DATA only (12:59Z by date -u; dtl_rootmono.py "FALL witness")
+- Mechanism (Lemma E, §3). In 72 of 73 falls (Oink) and 71 of 72 (stable), every straddling witness tangle at the
+  falling call was already stored at the PREVIOUS visit of the context. So a fall is not caused by a new tangle
+  straddling. It is caused by new tangles enlarging an earlier region, which then steals a vertex of an OLD tangle, the
+  victim. The victim's rest is re-absorbed by a lower top, and RV falls.
+- Per (context, victim): at most 2 falls. 14 phases have max 1, and 2 phases have max 2: the f1_two* instances, where
+  the same victim falls twice at the same context. So "one fall per victim and context" is FALSE as a rule.
+- A structural bound would have to limit how often a fixed old tangle can be stolen from at a fixed context. Between two
+  falls the prefix must stop stealing, which only a non-monotone (dirty) step can cause, and then steal again.
+  NOT PROVED. The ≤ 2 is the maximum on the data, and L-RED's f1_twodef_n48 / f1_twofall_n48 were built to reach it.
+
+22m. GAP-A after box 7: one-page state (L-ALG, 13:00Z by date -u)
+Statement chain. All are readings of dtl.cpp @ 8fbf0a7, for every order datum. Signatures are those of REFEREE and
+REFEREE-2 (packets 4 and 5).
+1. FDL on reduced logs (§21d; signed, G-h1 closed given STR-DET). Lemma STR-DET (§22i; SIGNED by both). Every
+   transition except the last of a phase has a first differing tattr e*: equal input, strictly larger set output.
+2. PREFIX-MONO, POS-FALL, ROOT-BOUND (§22c; SIGNED by both). For every context R, Π_R(T) = (RV, Ψ, Φ_top) rises
+   strictly at each transition whose e* lies in the call at R, unless that call has a step deficit. Its chain heights
+   are polynomial: H = O(n^8).
+3. Per-input budget (§22j; packet 6 pending). The −1 attractor and Dom steps carry at most n first-difference
+   transitions per distinct input.
+4. Hence, per phase (§22e, §22f, §22j):
+   S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·(|C_T| + |C_Dom|) + 1.
+OPEN (GAP-A ⇐ both):
+- (CTX⁺): the numbers of distinct first-difference contexts (best_vertices calls, −1 attractors, Dom steps) per phase are
+  polynomial.
+  - DATA: at most 10 per phase (spp25_oink_n40), at most 0.26·|G′|. Dom first differences: 0 in all data.
+  - Exact obstruction (§22f/g): a P piece removes Dom(prevV) = Z_f, the level set of maximal RV, which jumps when RV
+    rises. This happens on CLEAN calls, and it re-creates every later context.
+  - Known dead routes: monotone removal prefixes (ABS-mono-pw, box 5), (CHAIN) (§22k).
+  - This is the nested-counter core. Each context has polynomially many successors (sketch, §22g), but the depth-0
+    positions multiply.
+- (FALL): F_R, the number of descents of Π_R along a phase, is polynomial.
+  - DATA: descents only where RV falls, at most 2 per context (f1_two*).
+  - Mechanism: new tangles enlarge an earlier region, which steals a vertex of an OLD tangle (Lemma E). The same victim
+    can fall twice (§22l).
+- (CTX⁺) and (FALL) have different causes (§22g), so this is two statements, not one.
+DEAD this box (with instances):
+- Root-call RMONO = (M) (dtl_mviol_n20, pinned Oink re-run).
+- (CHAIN) (dtl_searches15_n24, Oink; nest_nest_s43, both orders).
+- The raw per-input bound S ≤ n·|I_fd| + 1 is valid but vacuous (|I_fd| ≈ S − 1).
+Targets for L-RED's successor:
+- (a) A family with a bushy first-difference context tree: nested P pieces whose level sets jump at several depth-0
+  positions in turn. spp22/spp25 are the current maxima.
+- (b) A family where one context's Π falls more than twice: repeated stealing from the same victim, e.g. h4_defK or
+  f1_two* grown.
+- (c) PREFIX-MONO and STR-DET themselves (signed, but the referees welcome attacks).

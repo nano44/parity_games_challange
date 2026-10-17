@@ -100,7 +100,7 @@ if __name__ == "__main__":
     for f, g in ST.games(sys.argv[1:]):
         d0 = FD.P.X.build(g); d = RM(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.run()
         for ph in FD.phase_rows(d):
-            nd = nr = 0; wl = []; nbad = 0; seq = []; fdc = set(); kseq = []; desc = {}; ifd = set()
+            nd = nr = 0; wl = []; nbad = 0; seq = []; fdc = set(); kseq = []; desc = {}; ifd = set(); victim = {}
             for r in ph:
                 full = r["log"]; red = FC.reduce_log(full, st)
                 # map root spans onto the reduced log: the root call precedes every sptl pass, so its positions shift only
@@ -272,7 +272,16 @@ if __name__ == "__main__":
                             fa_ = sum(d.n - t_ for m in x.get("rtop", []) for t_ in m.values()); fb_ = sum(d.n - t_ for m in y.get("rtop", []) for t_ in m.values())
                             c_ = "rises (Φ_top)" if fb_ < fa_ else "equal" if fb_ == fa_ else "Φ_top RISES (descent)"
                     kv = "VISITS of a context (consecutive): " + c_ + (" | later call dirty" if y.get("stepdef") else ""); tab[kv] = tab.get(kv, 0) + 1
-                    if c_ in ("RV falls", "Ψ NOT monotone", "Φ_top RISES (descent)"): desc[key_] = desc.get(key_, 0) + 1
+                    if c_ in ("RV falls", "Ψ NOT monotone", "Φ_top RISES (descent)"):
+                        desc[key_] = desc.get(key_, 0) + 1
+                        wids = set().union(*y.get("wits", {}).values()) if y.get("wits") else set()
+                        k1, k2 = ph[s1]["k0"], ph[s2]["k0"]
+                        new_ = {t for t in wids if t >= k1}
+                        for t in wids: victim[(key_, t)] = victim.get((key_, t), 0) + 1
+                        kf = "FALL witness straddling tangle: " + ("none recorded" if not wids else "some created since the previous visit" if new_ else "ALL older than the previous visit")
+                        tab[kf] = tab.get(kf, 0) + 1
+                        if not new_ and wids and shown < 30:
+                            shown += 1; print("FALL with only old witnesses", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), "visits", s1, s2, "witnesses", sorted(wids), "k0", k1, k2, flush=True)
             # recurrence: a context visited in search i, absent in some search j > i, visited again in a later search
             rec_n = 0
             for key_, vl in visits.items():
@@ -287,6 +296,8 @@ if __name__ == "__main__":
                 for u, w in zip(c0, c0[1:]): succ_.setdefault(u, set()).add(w)
             if succ_:
                 ms = max(len(v_) for v_ in succ_.values()); succrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), ms, len(succ_), len(ph) - 1, len(ph[0]["G"])))
+            if victim:
+                mv_ = max(victim.values()); kvv = f"FALLS per (context, victim tangle): max {mv_}"; tab[kvv] = tab.get(kvv, 0) + 1
             if desc: descrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), max(desc.values()), sum(desc.values()), len(ph) - 1, len(ph[0]["G"])))
             if len(ph) > 1: ifdrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), len(ifd), len(ph) - 1, len(ph[0]["G"])))
             for dep_ in (0, 1):
@@ -330,6 +341,6 @@ if __name__ == "__main__":
         badrows.sort(key=lambda r: -r[1]); print("phases where PI fails to rise (file, failures, transitions, |G'|):", badrows[:8], "phases:", len(badrows))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})
