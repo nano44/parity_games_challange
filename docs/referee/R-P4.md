@@ -143,3 +143,47 @@ whose first difference lies in a Dom tattr is polynomial per phase".
 - G-e1 (OPEN): "e* never in sptl or Dom" is DATA. e* ∉ sptl is provable; e* ∈ Dom needs an X-straddling Dom acceptance
   and has no budget. Add (DOM-e*) or exclude it.
 - G-e2: one transition per phase may have no differing tattr (s+1 learns nothing); add +1.
+
+## §C. Comparison with REFEREE-2 (docs/referee-2/R2-P4.md @ 352da6e), added 12:16Z (date -u), Lead request 12:17Z
+We agree on (a)-(d), on (f), and on the Dom gap (my G-e1 = REFEREE-2's G-DOM). REFEREE-2's reading R-Cl is my R-a1/R-b1,
+and its G-Ψ is my G-d1.
+
+### C1. G-STR holds against the code. My set-only arguments (R-PROVED2 §C1, G-h1) have the same hole
+- Extraction reads str: for a p-vertex the H-edge is str[n] (268), with no set test.
+- The region attractor writes str in two ways:
+  - 89 (str = the popped vertex: the DFS parent) when a vertex joins by the vertex rule;
+  - 171 (str = the stored strategy) when it joins as part of a fired tangle.
+  Which one applies depends on WHICH rule fires first. That is not a function of the output set.
+- Suppose s+1 holds a tangle t2 that s learned later, and t2 fires at an escape pop in a region whose final set is the same
+  as in s (in s the same vertices joined by vertex rules). Then the region sets agree and str on t2's p-vertices differs.
+- By SCC1 the extracted SCC is the set reachable from τ in the str-restricted graph. Nothing forces it to be the same:
+  - SCC1 only says that every vertex reaches τ;
+  - B-thr (ii) concerns the escapes of a duplicate;
+  - the duplicate check (385-424) only compares with stored sets.
+  A different reachable set gives a different SCC, which may be new.
+- So, before the first SET difference, s+1 can learn a tangle that s did not learn there, or skip one. Then:
+  - FDL (iii)/(iv) ("s+1 learns nothing before e") can fail;
+  - sptl's `more` flag (870-874) can differ in EITHER direction. In particular s+1 may run an EXTRA pass. That case is not
+    a pure repetition (no upper bound from s), so the reduced-log alignment fails;
+  - a transition might have no set difference at all.
+- FDL (ii) itself ("e has equal input and a larger output") survives where the logs align: T at e in s+1 still contains
+  T_s^e, and 1.2b applies. What fails is the alignment and the counting.
+- (STR-DET) is the needed hypothesis. The weak form suffices: "s+1 creates no tangle before its first set difference, and
+  one exists". REFEREE-2's data has 0 of 4,290. I have no instance and did not build one.
+- One exception (my addition, checked). If e* lies in the ROOT best_vertices call (§22's root call: the first
+  best_vertices call of the search), no extraction happens before e*. The root call is the first tattr sequence of the
+  search; best_vertices reads str only at 73, whose effect does not depend on which non-(−1) value str holds. So G-STR
+  cannot affect transitions whose e* is in the root call. ROOT-BOUND and POS-FALL (§22c) are unaffected.
+  G-STR matters for e* after the first sptl of the search, i.e. for §22e's other contexts and for the FDL in general.
+
+### C2. Revised verdicts
+- R5 (h), First-Difference Lemma: SIGN WITH GAPS (Opus 5.5, D12). G-h1 is closed GIVEN (STR-DET). G-STR is OPEN, and
+  (STR-DET) is a stated hypothesis (DATA 0/4,290). For transitions with e* in the root best_vertices call, it holds
+  without (STR-DET) (C1).
+- §22c, (c) POS-FALL and (d) ROOT-BOUND: unchanged, SIGN / SIGN WITH GAPS (closed). They concern e* in the root call only,
+  where G-STR cannot arise.
+- §22e (e): SIGN WITH GAPS (Opus 5.5, D12), with two OPEN gaps: G-e1/G-DOM and G-STR. As I read it, the reduction is
+  GAP-A ⇐ (CTX) ∧ (DIRTY) ∧ (DOM-e*) ∧ (STR-DET), where the weak form of (STR-DET) also supplies "every transition has a
+  first set difference" (plus G-e2's +1).
+- R-P3 (d), GAP-A first step: unaffected if "root call" means the first best_vertices call. If it means any best_vertices
+  call of the depth-0 search_rec, it needs (STR-DET) for calls after the first sptl.
