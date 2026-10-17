@@ -354,3 +354,4 @@
 - 02:09Z Lead: merged l-red R23 (docs/red/R23-gapb-orphan.md): the duplicate search had already learned 3 new tangles at depth 0, so it returned true; incompleteness needs a duplicate in a search that learns nothing else (L-RED climbing). Forwarded to L-ALG.
 - 02:11Z Lead: L-ALG: gapb duplicate is in a search with W_p empty (harmless for Lemma K); NO-ORPHAN-W routed to L-RED.
 - 02:15Z Lead: merged l-red feb5eeb (W_p filter: gapb_dup_n20 dupW=orphW=0; NO-ORPHAN-W not refuted). L-RED context ~500k: continue to the ~04:30Z equal-step table, then successor if past ~600k.
+- 02:36Z Lead: merged l-alg cd1a62e (K-in, TW, NO-ORPHAN-W DATA); routed to L-RED with fitness order.
