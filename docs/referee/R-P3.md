@@ -8,12 +8,12 @@ pushing this. The code facts C1-C6 of docs/referee/R-STEP5.md §0 are used witho
 ## Verdict
 | item | verdict (Opus 5.5, D12) | lines checked |
 |---|---|---|
-| (a) K5' (GAP-C §18n "(C)") | SIGN WITH GAPS: G-a1, G-a2 (closed here); reading R-a | 65-101, 110-185, 198-202, 481-526, 690-741 |
-| (b) (α) restated with Up(Str); K6's closed case read with K5' | (α): SIGN. K6 closed case: SIGN WITH GAPS: G-b1 (wording, closed); remark R-b (W is harmless, closed) | 317, 385-424, 481-546, 862-991 |
+| (a) K5' (GAP-C §18n "(C)") | REVISED in §C: my SIGN is WITHDRAWN; (iii') in the Up(Str) form is REJECTED (REFEREE-2's configuration). K5'' with Dep(Str): SIGN | 65-101, 110-185, 198-202, 481-526, 690-741 |
+| (b) (α) restated with Up(Str); K6's closed case read with K5' | REVISED in §C: (α) with Up(Str) REJECTED (withdrawn); (α) with Dep(Str), ⇒ direction: SIGN; REFEREE-2's ⇔ form: SIGN WITH GAPS (G-α1). K6 closed case: SIGN WITH GAPS: G-b1 (wording, closed); remark R-b (W is harmless, closed) | 317, 385-424, 481-546, 862-991 |
 | (c) Lemma O-P, given (YZ) (§18l) | SIGN (conditional on (YZ), as stated) | 110-185, 200-201, 643-776, 962-991 |
 | (d) GAP-A angle, first step (§18p) | SIGN, for round r only, as stated | 65-101, 110-185, 198-202, 712-760 |
 
-No REJECT.
+No REJECT in my first pass; after the comparison (§C) I withdraw (a) and the (α) part of (b) in the Up(Str) form.
 
 ## (a) K5' — SIGN WITH GAPS (Opus 5.5, D12)
 Setting (K5): V* stable at X = ∅ (K6: any X, forgiven). Reg is the union of the final round's regions, which equal the first
@@ -117,3 +117,76 @@ G-h1 closed); e is the level-t_e attractor (724-731) of round r of a best_vertic
 - R-a: K5' (iii'): "Z_k ∪" is redundant (Z_k ⊆ Reg); Str should be read inside A_<.
 - G-b1: K6 (β'): "escapes all in X" → "no escape in R" (depth ≥ 1; solved escapes excluded by O0).
 - R-b: K6: note that W[τ_k] cannot block extraction at the first pass of a piece (tops go to X by Dom; context chain).
+
+## §C. Comparison with REFEREE-2 (docs/referee-2/R2-P3.md @ d555ebf), added 10:57Z (date -u), Lead request 10:55Z
+I read R2-P3 after my report was pushed (e3f3256).
+
+### C1. K5' (iii'): REFEREE-2 is right; my G-a1/G-a2 argument does NOT handle its configuration, and I withdraw my SIGN
+Where my step fails. My cases G-a1/G-a2 are correct for what they say: a non-straddling t' whose in-R escapes all lie in
+Reg fires into a region. So t' has an escape e ∈ A_< \ Reg ⊆ Up(Str). The wrong step is my last sentence: "by strong
+connectivity of t' under its strategy, an opponent vertex of t' reaches that escape on some ψ-play".
+- t' is strongly connected only under its STORED strategy.
+- An old vertex u ∈ t' ∩ Z_k keeps its own region strategy, because attractTangle skips vertices already in the set (169).
+  So ψ(u) ≠ the stored strategy.
+- A ψ-play from a new vertex x can then be forced through u into Z_k without ever reaching e.
+REFEREE-2's configuration, re-checked by me:
+- t' = {x, y, u, o}, stored strategies x → y and u → o; y (opponent) → x, u; o (opponent) → u, y, e; u ∈ Z_k by its own
+  vertex rule.
+- During Z_k's computation:
+  - y is blocked by its edge to the unconsumed x (80);
+  - x's only edge goes to y;
+  - o is blocked by e;
+  - t' is never tried, because its only escape e ∉ Z_k (attractTangles runs only at escape pops, 200-201).
+- In the rescue loop, e is in the set (with e ∈ Str or in Up(Str)) and is popped. attractTangle(t') skips u (in Z) and
+  pushes x, y, o (110-185).
+- ψ-plays from x go x → y → {x, u}, and u leads into Z_k under its region strategy. So x, y ∉ Up(Str), and (iii') fails.
+- With τ_k p-owned and its single edge τ_k → x, Z_k is open and τ_k's ψ-successor x ∉ Up(Str), so the Consequence fails
+  too.
+- Neither of us built an instance. The step is still refuted as a proof step.
+Final verdict (a): K5' (iii') and its Consequence in the Up(Str) form: REJECT (Opus 5.5, D12), failing step = "a vertex
+pushed by a non-straddling tangle lies in Up(Str)", configuration as above. (i') and (ii) remain signed.
+
+### C2. K5'' with Dep(Str): SIGN (Opus 5.5, D12)
+Dep(Str) is the least D ⊇ Str ∩ A_< closed under "v ∈ A_< \ Reg is in D when one of its rescue witnesses is in D". The
+witnesses are:
+- for a vertex-rule p-vertex, the vertex it was attracted to;
+- for a vertex-rule opponent vertex, its R-successors;
+- for a vertex pushed by a non-straddling t', the escapes of t' and the vertices of t' already in A_< \ Reg.
+Induction over the rescue order:
+- p-vertex. Its witness is not in Z_k (otherwise the vertex joins Z_k) and not in a higher region (i'), so it is in
+  A_< \ Reg ⊆ Dep by the induction hypothesis.
+- Opponent vertex. If all its R-successors were in Reg, it would have joined Z_k or the last higher region.
+- Non-straddling t'. Suppose no witness lies in A_< \ Reg. Then:
+  - it has an in-R escape, since it fired at the pop of an escape in the rescue set (200-201);
+  - if all in-R escapes lie in higher regions, it fires into the last of them. Its vertices, including old ones like u,
+    are unconsumed when that region is computed, with priority < pr(τ_k);
+  - otherwise it fires into Z_k at the pop of its last escape in Z_k. Its vertices are in CurZ or unconsumed.
+  Either way its new vertices are in Reg, a contradiction.
+- Straddling tangles at levels < pr(τ_k) put their vertices in Str.
+Consequence ("Z_k open ⇒ τ_k has a successor in A_< \ Reg ⊆ Dep(Str), so Str ≠ ∅"):
+- p-owned τ_k. Open means no edge into Z_k (73, 515). An edge into a higher region would have absorbed τ_k. So τ_k is a
+  candidate, rescued at a level < pr(τ_k) (737) through a successor in A_< \ Reg.
+- Opponent τ_k. Open means an R-successor in unconsumed R after Z_k (519-525). That successor is not in Reg, so τ_k is a
+  candidate rescued with all its R-successors in A_<.
+
+### C3. (α) with Dep(Str): the ⇒ direction SIGN; REFEREE-2's "⇔" form SIGN WITH GAPS (Opus 5.5, D12)
+- (α) with Up(Str) (§18n): REJECTED, withdrawn, with the same configuration as C1.
+- REFEREE-2's repaired statement is "Z_k is open ⇔ τ_k has a successor in A_< \ Reg, and then A_< \ Reg ⊆ Dep(Str) ≠ ∅".
+  The ⇒ direction is C2's Consequence, and it is all that K6 and the S-step reduction use.
+- G-α1 (gap in the ⇐ direction; wording). For a p-owned τ_k, a successor in A_< \ Reg does not make Z_k open if τ_k also
+  has an edge into Z_k: str[τ_k] is set at that vertex's pop (73), and the region is closed (515). REFEREE-2's converse
+  covers only the opponent-owned τ_k.
+  Fix: for p-owned τ_k read "τ_k has no successor in Z_k (hence one in A_< \ Reg)". For opponent-owned τ_k the statement
+  is correct as written.
+
+### C4. Agreed items
+(c) O-P: SIGN. (d) GAP-A first step (round r only): SIGN. K6's closed case: SIGN. Both of us give the same wording fix:
+"(β') escapes outside R", i.e. in G' \ R at depth > 0, not "in X". My R-b remark (W cannot block extraction at a piece's
+first pass) is not in R2-P3, and it stands.
+
+### Final verdicts after the comparison
+(a): K5' (iii')/Consequence with Up(Str) REJECT; K5'' with Dep(Str) SIGN.
+(b): (α) with Up(Str) REJECT; (α) with Dep(Str): ⇒ SIGN, ⇔ SIGN WITH GAPS (G-α1); K6 closed case SIGN WITH GAPS (G-b1
+wording, closed; R-b).
+My error: in G-a1/G-a2 I assumed that ψ follows the tangle strategy on every vertex of a fired tangle. It does not on
+vertices that were already in the set (169).
