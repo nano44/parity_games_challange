@@ -11,6 +11,7 @@ no dominion (Zielonka on G'), counts:
             region; true at R = G', false at R_end; K-FIRST: the first depth-0 piece after which K fails learns inside D;
   LASTD   : the depth-0 piece removing the last vertex of D (a T piece together with its recursion) learns inside D.
 Games: the files given, and with UNIONS=k also k random disjoint unions of two of them (UM_CROSS=c cross edges, seed SEED).
+RANDOM=k adds k random games (gen.random_game, n = 4..14). ALLSEARCH=1 keeps searches that find a dominion.
 Only mixed searches (|W_{1-p}| >= 3) with MIXED=1. DTL_ORDER = oink | stable. Usage: dtl_step5stats.py G.pg ..."""
 import sys, os, random
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
@@ -85,6 +86,35 @@ def kq(d, p, Dw, R, G):
     return O.winning(d, rest, p) if rest else set()
 
 
+def kqT(d, p, Dw, R, G, nt):
+    """K^T(R): as kq, but the attractor to X also takes stored p-tangles (the first nt, not deleted) that lie in D and
+    whose every vertex is in R or already attracted and every escape in G' is in X or attracted (no threshold)."""
+    S = Dw & R; X = G - R
+    tg = [(set(v for v, _ in d.tv[i]), d.tout[i]) for i in range(nt) if d.tpr[i] != -1 and d.tpr[i] % 2 == p]
+    tg = [(T, E) for T, E in tg if T <= Dw]
+    A = set(); ch = True
+    while ch:
+        ch = False
+        for v in S - A:
+            out = [w for w in d.outs[v] if w in G]
+            if d.ow[v] == p: ok = any(w in X or w in A for w in out)
+            else: ok = all(w in X or w in A for w in out)
+            if ok: A.add(v); ch = True
+        for T, E in tg:
+            if T <= (S | A) and not T <= A and all(e in X or e in A or e not in G for e in E):
+                A |= T; ch = True
+    Q = S - A
+    L = set(); ch = True
+    while ch:
+        ch = False
+        for v in Q - L:
+            out = [w for w in d.outs[v] if w in Q]
+            if (d.ow[v] == p and all(w in L for w in out)) or (d.ow[v] != p and any(w in L for w in out)):
+                L.add(v); ch = True
+    rest = Q - L
+    return O.winning(d, rest, p) if rest else set()
+
+
 def segments(pcs):
     top = [pc for pc in pcs if pc["depth"] == 0]; segs, cur = [], []
     for pc in pcs:
@@ -97,6 +127,9 @@ def segments(pcs):
 def games(files):
     gs = [pg.read(f) for f in files]
     for f, g in zip(files, gs): yield f, g
+    import gen
+    for i in range(int(os.environ.get("RANDOM", "0"))):                 # random games, n = 4..14, out-degree 1..3
+        n = 4 + i % 11; yield f"random{i}", gen.random_game(n, n, 1, 3, int(os.environ.get("SEED", "1")) * 100000 + i)
     k = int(os.environ.get("UNIONS", "0")); rnd = random.Random(int(os.environ.get("SEED", "1"))); nmax = int(os.environ.get("NMAX", "32"))
     small = [g for g in gs if g.n <= nmax]
     for i in range(k):
@@ -117,7 +150,7 @@ if __name__ == "__main__":
         d = S5.build(g); d.run()
         for tr in d.trace:
             Dw, G, p = tr["Wp"], tr["G"], tr["p"]
-            if not Dw or tr["dom"] or (mixed and len(G - Dw) < 3): continue
+            if not Dw or (tr["dom"] and os.environ.get("ALLSEARCH") != "1") or (mixed and len(G - Dw) < 3): continue
             inc("searches")
             pcs = tr["pieces"]
             for i, pc in enumerate(pcs):
@@ -168,6 +201,14 @@ if __name__ == "__main__":
                         firstK[0] = 1; inc(f"K FIRST break by {pc['kind']} " + ("learns inside D" if learned else "barren, learned inside D before it" if before else "VIOLATION (barren, nothing learned inside D before)"), f)
                 if not k0: inc(f"K already false before {pc['kind']}", f if a_ == 0 else None)
                 if k0 and k1: inc(f"K kept by {pc['kind']}")
+                nt1 = pcs[top[a_ + 1]]["nt"] if a_ + 1 < len(top) else len(d.tv)
+                t0 = kqT(d, p, Dw, R0, G, pc["nt"]); t1 = kqT(d, p, Dw, R1, G, nt1)
+                if t0 and not t1:
+                    nxt = top[a_ + 1] if a_ + 1 < len(top) else len(pcs)
+                    learned = any(C <= Dw for q in pcs[i:nxt] if q["kind"] == "S" for C in q["new"])
+                    before = any(C <= Dw for q in pcs[:i] if q["kind"] == "S" for C in q["new"])
+                    inc(f"KT broken by {pc['kind']} " + ("which learns inside D" if learned else "barren, D-learning before" if before else "VIOLATION (barren, nothing learned inside D before)"), f)
+                if t0 and t1: inc(f"KT kept by {pc['kind']}")
             if firstK[0] is None: inc("K never broken at depth 0", f)
             # LASTD: the depth-0 piece that removes the last vertex of D (with its recursion, for T) learns inside D
             top = [i for i, pc in enumerate(pcs) if pc["depth"] == 0]

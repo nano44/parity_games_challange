@@ -26,15 +26,15 @@ class S5(D.DTL):
     def search_rec(s, R, p, depth):
         X_ = set()
         while True:
-            V = set(); R0 = frozenset(R); X0 = frozenset(X_)
+            V = set(); R0 = frozenset(R); X0 = frozenset(X_); s.cur_nt = len(s.tv)
             res = s.best_vertices(V, R, p)
             if res == 0:
-                s.pieces.append(dict(kind="E", depth=depth, R=R0, X=X0, rem=frozenset(), V=frozenset())); return
+                s.pieces.append(dict(kind="E", depth=depth, nt=s.cur_nt, R=R0, X=X0, rem=frozenset(), V=frozenset())); return
             if res == 1:
                 s.cur_new = []
                 while s.sptl(V, set(R), p): pass
                 s.dom(V, R, X_, p)
-                s.pieces.append(dict(kind="S", depth=depth, R=R0, X=X0, rem=R0 - frozenset(R), V=frozenset(V), new=list(s.cur_new)))
+                s.pieces.append(dict(kind="S", depth=depth, nt=s.cur_nt, R=R0, X=X0, rem=R0 - frozenset(R), V=frozenset(V), new=list(s.cur_new)))
                 continue
             t = 0; Z = set(); s.Q = []
             for v in range(s.n):
@@ -55,11 +55,11 @@ class S5(D.DTL):
                     u = s.Q.pop(); Z.discard(u)
                     s.attractVertices(1 - p, u, Z, X_, Z, t)
                 X_ |= Z
-                s.pieces.append(dict(kind="T", depth=depth, R=R0, X=X0, rem=Zall, V=frozenset(V), t=t, seeds=seeds, rest=frozenset(Z)))
+                s.pieces.append(dict(kind="T", depth=depth, nt=s.cur_nt, R=R0, X=X0, rem=Zall, V=frozenset(V), t=t, seeds=seeds, rest=frozenset(Z)))
                 s.search_rec(Z, p, depth + 1)
             else:
                 s.dom(V, R, X_, p)
-                s.pieces.append(dict(kind="P", depth=depth, R=R0, X=X0, rem=R0 - frozenset(R), V=frozenset(V)))
+                s.pieces.append(dict(kind="P", depth=depth, nt=s.cur_nt, R=R0, X=X0, rem=R0 - frozenset(R), V=frozenset(V)))
 
 
 def build(g):
