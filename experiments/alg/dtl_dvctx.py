@@ -14,7 +14,7 @@ def ctxdv(d, R, p, tl):
     return dvstar(d, set(R), p, tlR)
 
 if __name__ == "__main__":
-    sys.setrecursionlimit(100000); tab = {}
+    sys.setrecursionlimit(100000); tab = {}; verbose = os.environ.get("DVC_V") == "1"
     for f in sys.argv[1:]:
         g = pg.read(f); d0 = SL.P.X.build(g)
         d = SL.SL(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx
@@ -30,7 +30,7 @@ if __name__ == "__main__":
             cur.append(t)
         if cur: rows.append(cur)
         for ph in rows:
-            p, G = ph[0]["p"], set(ph[0]["G"])
+            p, G = ph[0]["p"], set(ph[0]["G"]); ctxs = {}; nd = na = 0
             for s in range(len(ph) - 1):
                 a, b = ph[s], ph[s + 1]; key, k = PD.classify(a["calls"], b["calls"])
                 if key[0] in ("END", "POS"): tab[(key[0],)] = tab.get((key[0],), 0) + 1; continue
@@ -43,4 +43,10 @@ if __name__ == "__main__":
                 tl1 = [(C, esc) for i, (C, esc, pa) in born.items() if i < b["t0"] and pa == p and C <= G]
                 cls = "LRN" if ctxdv(d, R, p, tl0) != ctxdv(d, R, p, tl1) else "DEF"
                 kk = (key[0], "d0" if len(pos) == 1 else "deep", cls); tab[kk] = tab.get(kk, 0) + 1
+                fr = frozenset(R); ctxs.setdefault(fr, [0, 0])
+                if cls == "LRN": ctxs[fr][0] += 1
+                elif key[0] == "RES": nd += 1
+                else: na += 1
+            if verbose and len(ph) >= 10:
+                print(os.path.relpath(f), f"p={p} S={len(ph)} |G'|={len(G)}: distinct first-difference contexts {len(ctxs)}, LRN {sum(c[0] for c in ctxs.values())} (max per context {max((c[0] for c in ctxs.values()), default=0)}), DEF {nd}, ABS {na}")
     for k, v in sorted(tab.items(), key=lambda kv: -kv[1]): print(v, k)

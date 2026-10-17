@@ -1781,3 +1781,16 @@ and (SPP) or any polynomial bound needs polynomial bounds on the three right-han
 "distinct contexts" core (now with a PROVED per-context LRN budget for A_DTL itself, not only for C6), the second is (H4),
 the third is the absorption chains of §21b/§21e. This is the (H1)-(H4) map of §12 restated for one phase with the new
 global tools; no term is bounded yet.
+Per long phase (dtl_dvctx.py DVC_V=1, Oink order): distinct first-difference contexts / LRN (max per context) / DEF / ABS:
+| instance | S, |G'| | contexts | LRN (max/ctx) | DEF | ABS |
+|---|---|---|---|---|---|
+| spp_final_n20 | 19, 20 | 3 | 4 (2) | 0 | 14 |
+| spp_final_n30 | 19, 30 | 3 | 3 (1) | 0 | 15 |
+| spp_final_n40 (Odd) | 19, 40 | 12 | 16 (4) | 0 | 2 |
+| spp_final_n60 | 14, 60 | 3 | 4 (2) | 0 | 9 |
+| red spp19_oink_n30 / spp19_stable_n30 | 19, 30 | 3 / 5 | 6 (3) / 7 (3) | 0 | 12 / 11 |
+| red replay4_n32 | 11, 32 | 6 | 7 (2) | 0 | 3 |
+| spp_chain_up_n43 | 42, 43 | 1 | 0 | 0 | 41 |
+So the longest phases have NO deficit step: they are absorption chains (A-type) or LRN runs over many contexts (B-type,
+spp_final_n40). The deficit (DEF) steps of the corpus (138) sit in the h4_* / lex_* / cm_* instances, whose phases are
+short (≤ 11). For (SPP) the two terms that the climbs push are #ABS (≤ |G'| − 1 so far) and n(n+1)·contexts (contexts ≤ 12).
