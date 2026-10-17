@@ -380,3 +380,4 @@
 - 06:06Z sweep: overage false and lanes running per WATCHDOG 06:03Z measurement (L-ALG succ. 6 144k, L-RED succ. 4 113k); no unmerged lane commits. No action.
 - 06:09Z Lead: L-RED addendum: pk_viol_n20 also realises target (i) (after the barren Dom(prevV) piece ALL remaining D-vertices are p-attracted to X, Q empty, both orders; a later stable piece still learns {3,5,6}); a second P-K violator from climb 9501 (unpinned); SPP n=40 now 25 searches at |G'|=38 (Oink order, 23 stable; unpinned, pin at box end); klow climbs from pk_viol_n20 aim at K-in.
 - 06:24Z Lead: merged l-alg b389ce1 (P-K killed, P-K1 Case 1 proved given YZ/WM, KT candidate). L-ALG succ. 6 notification slip 05:50-06:19Z (30 min), self-reported, fix: read after every data run.
+- 06:35Z Lead: merged l-alg 312c918 (KT DATA); routed to L-RED.
