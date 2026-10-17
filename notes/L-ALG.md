@@ -5,6 +5,20 @@ points, dead ends, sources opened) is in git history: `git show 8a9c0f44:notes/L
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push only with `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?`.
 Truth for GAP-A: docs/alg/GAP-A-M.md §22 (22a-22x; §22x is the box-7 ledger) and §23 (box 8). Dead ends: docs/alg/DEAD.md.
 
+## Successor 7 (session started 17:38Z by date -u; GO 17:46Z; box to ~00:45Z; check-in ~20:45Z; produced on Opus 5.5)
+Handover check 5/5 (ca909c3). Box-8 results so far, all in GAP-A-M §23b-§23e:
+- §23b: (STEALER-MONO) KILLED by stealer_viol_n76 (L-RED, stable order; RESULTS DE19, Lead-verified). Obstruction: upward
+  migration, i.e. a higher region captures the region's fired tangle whole. (STAYS-MET), (STEAL-ONCE*) and (STOLEN-PERM)
+  survive there. Chain STOLEN-PERM ⇒ STAYS-MET ⇒ NO-REFIRE ⇒ STEAL-ONCE* (each arrow PROVED, reading).
+- §23c: shrink-vertex analysis (dtl_shrinkdep.py). Lost prefix vertices fall into three classes: A, under a relevantly
+  stolen path tangle; B, region top gone; C, escape cascades (an escape left the prefix; checked on 2 cases). (DEP-SAFE)
+  holds 1,169/1,169, but the single-parent forest misses the C class.
+- §23d: (FIRED-R) on long phases (L-RED filter): at most 3 fired, ratio ≤ 0.375; long-phase contexts are small (|R| ≤ 9).
+- §23e: on all 32,024 contexts, (FIRED-STEP) with a constant, (FIRED-LAMINAR) and (FIRED-TOP-INJ) are KILLED
+  (fired18_stable_n20, c6_replay3_n32). (FIRED ≤ |R|) is tight DATA (18/18). That tight case is mostly singleton tangles
+  (14 of 18), so it looks fragile.
+Tools: dtl_stealtrace.py, dtl_shrinkdep.py, dtl_firedlong2.py (flags in their docstrings).
+
 ## DONE
 Signed by both referees (all readings of dtl.cpp @ 8fbf0a7, every order datum):
 - (S0), PREFIX-MONO, POS-FALL, ROOT-BOUND (packet 4).
@@ -79,10 +93,15 @@ Box 8 so far (GAP-A-M §23a). The invariant behind (STEAL-ONCE*), DATA only, 0 e
   verified". Re-run every instance before reporting it.
 
 ## Resume point
-Read DONE above, then GAP-A-M §23a and §22x. The first task is the missing step of (STEAL-ONCE*) stated under DONE.
-The box-8 queue is under NEEDS.
+Successor 7: read the section "Successor 7" above, then GAP-A-M §23b-§23e. Open items:
+(1) (STOLEN-PERM)/(STAYS-MET) proof. The route needs an escape-aware dependency (§23c). Big-union stress runs:
+  UNIONS=300, SEED=7/8, UM_CROSS=4, NMAX=60, both orders.
+(2) (FIRED-R): no structure survives except (FIRED ≤ |R|), tight DATA.
+(3) (CTX⁺) not started (it was conditional on (1) or (2) moving).
 
 ## Dead ends
+- Box 8 successor 7: STEALER-MONO (stealer_viol_n76), FIRED-STEP const and FIRED-TOP-INJ (fired18_stable_n20), FIRED-LAMINAR
+  (c6_replay3_n32); all in docs/alg/DEAD.md.
 Box 7-8 dead ends, each with its instance, are in docs/alg/DEAD.md (latest sections):
 - root-call RMONO = (M) (dtl_mviol_n20);
 - CHAIN (dtl_searches15_n24);
@@ -96,6 +115,8 @@ Box 7-8 dead ends, each with its instance, are in docs/alg/DEAD.md (latest secti
 Boxes 1-6: see `git show 8a9c0f44:notes/L-ALG.md`.
 
 ## Sources opened
+- Successor 7: no external sources opened. Readings are of dtl.cpp @ 8fbf0a7 through experiments/alg/dtl_pyref.py (attractVertices
+  67-76, attractTangle 78-101, tattr 196-203, best_vertices 220-) and of the fleet's docs.
 - No external sources were opened in boxes 7-8. All arguments are readings of dtl.cpp @ 8fbf0a7 (tools/oink/src/src/solvers/dtl.cpp,
   dtl.hpp) and of the fleet's referee reports (docs/referee/R-P4..R-P8.md, docs/referee-2/R2-P4..R2-P8.md).
 - Earlier sources: `git show 8a9c0f44:notes/L-ALG.md`.

@@ -20,6 +20,8 @@ class FL(RMM.RM):
         k = len(s.tv); r = RMM.RM.extractTangles(s, top, R)
         if not hasattr(s, "born"): s.born = {}
         for t in range(k, len(s.tv)): s.born[t] = getattr(s, "_spR", None)
+        if not hasattr(s, "btop"): s.btop = {}
+        for t in range(k, len(s.tv)): s.btop[t] = top
         return r
 
 
@@ -66,6 +68,8 @@ if __name__ == "__main__":
                 dup = len(set(vs)) < len(vs)
                 tops = [max(a, key=lambda v: (d.pr[v], v)) for a in vs]
                 kt_ = "FIRED-TOP-INJ (fired tangles at a context have distinct top vertices): " + ("holds" if len(set(tops)) == len(tops) else "FAILS"); tot[kt_] = tot.get(kt_, 0) + 1
+                bt = [getattr(d, "btop", {}).get(t, ("old", t)) for t in sorted(fired)]
+                kbt = "FIRED-BIRTHTOP-INJ (distinct extraction tops at birth): " + ("holds" if len(set(bt)) == len(bt) else "FAILS"); tot[kbt] = tot.get(kbt, 0) + 1
                 ktr = "FIRED ≤ |R|: " + ("holds" if len(fired) <= len(R) else "FAILS"); tot[ktr] = tot.get(ktr, 0) + 1
                 if len(fired) > len(R): print("FIRED > |R|", nm, "|R|", len(R), "fired", len(fired), flush=True)
                 kd = "FIRED vertex sets distinct: " + ("NO (two fired tangles share a vertex set)" if dup else "yes"); tot[kd] = tot.get(kd, 0) + 1
