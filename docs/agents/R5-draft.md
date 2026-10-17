@@ -1,4 +1,4 @@
-# Draft RESULTS R5 (Lead, 2026-10-17 10:20Z) (rev. 10:35Z per CHECKER C5 c14c09f: header, N-1, N-2, N-4, N-5) — NOT LANDED; awaiting CHECKER re-diff
+# Draft RESULTS R5 (Lead, 2026-10-17 10:20Z) (rev. 10:35Z per CHECKER C5 c14c09f: header, N-1, N-2, N-4, N-5) — LANDED as RESULTS R5 (2026-10-17 10:45Z, CHECKER PASS 1209739)
 
 ### R5 [refereed-only] Eleven structural lemmas on A_DTL (GAP-C support and GAP-A conditional bound) (2026-10-17) — partial step-4 lemmas (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet: the

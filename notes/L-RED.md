@@ -52,6 +52,21 @@ Status: WORKING (box 6, Lead GO 04:29Z, to ~12:30Z Lead clock). Box-5 status lin
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-17 11:06Z (date -u) BOX 6 FINAL (successor 4, produced on Opus 5.5; parked at the Lead's 11:05Z order, context 623k).
+NEW since the 10:16Z handover notes below:
+- R29 (2455159): (K-in), (K-low)/(LOW-W), (TW), (S-LOW tight) and (KT-STEP-first at an S piece) FALSE on A_DTL, both
+  orders, run COMPLETE (pinned Oink 2 dominions, 15 tangles, 8 iterations, verified): carry/instances/kin_viol_n29.pg
+  (sha1 50987098), pinned in check.sh. Found by umix 18 union 9922 (interacting union + random cross edges). Search 0
+  (Even, |W_0| 9, no dominion): one MIX stable piece learns OUT {10,12}, OUT {14} and the STRADDLING
+  {0,4,6,10,12,16,20,26,27}; nothing inside W_0. L-ALG loose S-LOW passes, tight fails (slow.py: loose 0, tight 1, both orders).
+- Container restarted ~10:25Z (climbs killed, scratchpad kept); relaunched 9811/9812/9963/9964/umix 18.
+FINAL CLIMB SCORES (all stopped 11:06Z, PIDs 249-253): ntf 9811 (Oink) best r/f 11/12; ntf 9812 (stable) 15/16 (0.9375);
+slow 9963 (stable) lowfail 0, qual 5; slow 9964 (Oink) lowfail 4, qual 2, no S-LOW violation; umix 18: 10,500 unions,
+11,500 eligible runs, 2 runs with minprod 0 = the kin_viol_n29 hit (both orders). Before the restart: umix 17 17,500
+unions / 19,379 runs, 0 hits; ntf 9802 14/15; slow 9954 lowfail 2.
+NEXT for a successor: (1) re-check kin_viol_n29 with L-ALG's current tools; (2) more interacting unions (umix.py,
+CMAX 12, NMAX 30) — that sampler found the K-in kill where 62,848 earlier runs (CMAX 8/16) found none; (3) a weaker K-in
+form from L-ALG, then attack it with the same sampler.
 2026-10-17 10:16Z (date -u) BOX 6 HANDOVER NOTES (successor 4, produced on Opus 5.5; context near the 600k line). Box: Lead
 GO 04:29Z, end ~12:30Z (Lead clock). Every count below is labelled with its order datum where it matters.
 DONE this box (all pushed; latest 65a3931):

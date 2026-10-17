@@ -1849,3 +1849,67 @@ Follow-up (00:55Z by date -u; dtl_phidv.py, dtl_dvctx.py DVC_PHI=1; C5, Oink ord
   same or a smaller context with a LARGER tangle set (T_{s+1} contains every tangle s learned, so at every position s+1's
   tangle set contains s's), and the actual best_vertices is not monotone in T (DEF steps), so its result could change and
   push vertices later. Attack target: such a later-piece change inside an absorption transition.
+
+## 22. Box 7 (L-ALG successor 6, Lead GO 10:47Z by date -u; produced on Opus 5.5): the root call across consecutive searches (11:02Z by date -u)
+Tool: experiments/alg/dtl_rootmono.py. The root call is the first best_vertices call of a search (depth 0, R = G'). RV(s)[v]
+is the round at which the root call of search s drops the p-priority vertex v, and INF if v survives to a round that
+returns 1. Transitions s → s+1 of one phase are classified by the first difference e* of the reduced logs (FDL, §21d).
+Corpus: 238 files with n ≤ 80, plus gapb_dup_n20 and gapbW_dup_n20, both order data.
+
+22a. Target 1 of the box is FALSE, and it is the known (M). The target was "the larger V_{r+1} of s+1 cannot make a later
+round drop a vertex that s kept", i.e. (RMONO): RV(s+1) ≥ RV(s) pointwise. Failures (Oink / stable):
+
+| first difference e* | transitions | RMONO fails |
+|---|---|---|
+| root threshold loop | 611 / 585 | 16 / 16 |
+| root regions | 252 / 257 | 2 / 2 |
+| after the root call | 194 / 185 | 0 / 0 |
+
+Every failure has a deficit round, U ≠ Û (§3), in a root call: 18 of 18 in both order data. This is §4b's (M) at the
+root context, dead since box 4.
+Re-run with pinned Oink today: dtl_mviol_check.py printed "M-VIOLATION REPRODUCED". Oink's own -t -t first-call
+distances fall: orig16 and orig1 8 → 7, orig19 9 → 8. The obstruction is Lemma E (§3): a straddling stored tangle whose
+unconsumed rest is re-absorbed by a lower surviving top.
+
+22b. What does hold at the root call (candidates; DATA, with proof routes).
+- (RV-ND) If the root call of s has no deficit round, then RV(s) = DV*(T_s), with DV* from §21h and T_s the tangles at
+  the start of s.
+  - DATA: 1,363 / 1,363 deficit-free root calls (Oink), 1,354 / 1,354 (stable). With a deficit, RV ≠ DV* in 180 / 182
+    and 168 / 170.
+  - Route, PROVED (reading): with no deficit, Theorem M-cond's chain gives V_i = V̂_i, the ideal rounds of §2-3. The ideal
+    rounds are DV*'s rounds:
+    - Û_{≥q} = Attr_q(Û_{>q} ∪ V_q) is DV*'s Z after the tops of priority ≥ q. lfp at one threshold absorbs the tops of
+      that priority one at a time or all at once.
+    - Ŝ's test "attracts into Attr_t(Û) for some t < pr(v)" is DV*'s ascending sweep, since Attr_t is increasing in t.
+- (PSI-MONO) Let Ψ(s) be the list of the root call's round unions U_r and rescue sets W_{r,t} (after each level t of the
+  threshold loop). If RV(s) = RV(s+1) and neither root call has a deficit, then Ψ(s) ⊆ Ψ(s+1) componentwise.
+  - DATA: 235 / 235 such root transitions (Oink), 230 / 230 (stable). Strict in 218 / 212.
+  - Route, PROVED (reading): the V_r are the same in both searches. With no deficit, U_r = Û(V_r, T), which is monotone
+    in T (Lemma 2.1). The code's rescue set at level t is the closure Attr_t(U_r) (DTL-proof Lemma 1.2: the pop loop with
+    all of Z pushed computes the closure), monotone in U_r and T (1.2b).
+- (POS-FALL) If, in addition, Ψ(s) = Ψ(s+1), then Φ_pos(s+1) < Φ_pos(s), where Φ_pos = Σ_r Σ_v (rank, in processing
+  order, of the round-r region containing v).
+  - DATA: 17 / 17 (Oink), 18 / 18 (stable). In every such case e* is a root region tattr: one region grows while the
+    union stays fixed.
+  - Not proved. FDL gives an equal input and a strictly larger output at e* with the earlier regions unchanged, so the
+    new vertices come from later regions.
+  - The gap: a later region is computed in a smaller arena CurR. The region attractor (Gx = CurR) is not monotone in its
+    arena (an opponent vertex forgiven outside a small arena must cover more successors in a larger one), so a vertex
+    could in principle move to a later region.
+  - Data: in Ψ-growing transitions Φ_pos never rises (falls 43, equal 175, Oink order).
+- Consequence (PROVED from the three, given POS-FALL). In one phase, order the deficit-free root-call transitions by
+  (DV*, Ψ, −Φ_pos) lexicographically. Each one raises this triple:
+  - (a) RV moves: then DV* moves, by RV-ND on both sides. DV* is pointwise monotone (DV*-MONO), so this happens at most
+    n(n+1) times per phase.
+  - (b) RV is fixed and Ψ grows strictly (PSI-MONO).
+  - (c) Ψ is equal and Φ_pos falls (POS-FALL).
+  - Transitions after the root call leave the root call identical, so they change nothing.
+  - Ψ has at most (n+1)(d+2) components, each ⊆ G', and Φ_pos ≤ (n+1)n². So between two consecutive DV* moves or root
+    deficit transitions there are at most H := (n+1)(d+2)n · ((n+1)n² + 1) + 1 deficit-free root transitions, and
+    #(root-call transitions) ≤ (n(n+1) + #DEF_root + 1) · H + #DEF_root, where #DEF_root counts root transitions with a
+    deficit on either side (Oink 174, stable 160 on the corpus).
+- So, given POS-FALL, GAP-A at the root call reduces to bounding #DEF_root, the root transitions with a deficit, which are
+  Lemma E's straddles.
+- The other part of a phase is the transitions whose first difference lies after the root call: Oink 194, stable 185,
+  i.e. 18% of all transitions. These are box target 3, the same frame at the first differing deeper call, which is the
+  per-context problem (§21j).
