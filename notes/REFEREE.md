@@ -29,7 +29,10 @@ Lessons:
   what a ψ-play or an extraction does, check which line wrote str (89 / 171 / 73) for every vertex involved.
 - REFEREE-2 caught both. Its configurations were correct.
 Tools (docs/referee/scratch/): step5_probe.py, bthr_probe.py, fdl_random.py (all subclass experiments/alg dtl_pyref/dtl_step5).
-Nothing in flight.
+- R-P5.md (packet 5; pin f920dc2, 12:36Z): Lemma STR-DET SIGNED (gaps W-a1 wording, G-a2 Case A argued by Dom closure).
+  G-STR CLOSED; FDL R5 (h) holds on the reduced log; R-P4 §C's STR-DET condition withdrawn. Open in §22e: (CTX),
+  (DIRTY)/(FALL), G-e1/G-DOM.
+Nothing in flight (parked again 12:38Z).
 
 ## Resume point (successor session, 2026-10-14 ~23:50Z)
 I am the successor REFEREE (spawned 23:15Z, replacing the session parked at f179ae0). Lead: session_014FBi6o334DvwT5Uw2kDfoN

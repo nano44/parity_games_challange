@@ -101,3 +101,37 @@ The Lead's named points:
 ## Fix list (none required)
 Recommended: N-1 (STR-DET-w signature status), N-2 (R6 (e) qualification), N-3 (PI-RISE). The draft may land as written;
 if edited, I re-diff the text only.
+
+## Addendum: re-diff at trunk 1e4babe (Lead 12:32Z; REFEREE-2 R2-P4 §9 at 5ae9747)
+History: 0eba38b is an ancestor of 1e4babe, and 5ae9747 (12:26:33Z) is an ancestor of 1e4babe. R2-P4.md is identical at
+5ae9747 and at 1e4babe. docs/referee/ is unchanged since 0eba38b. Trunk 1e4babe was merged into claude/checker by merge
+commit.
+
+### Verdict: PASS (unchanged; N-1..N-3 still open as recommended)
+- R7-draft.md, 0eba38b → 1e4babe: the diff touches only the header stamp and G-R7-7, as the Lead said. (a)-(f), the
+  Signatures line, G-R7-1..6 and Scope are byte-identical.
+- New G-R7-7 against §9:
+  | draft | R2-P4 §9 | |
+  | --- | --- | --- |
+  | "For root-call first differences G-STR cannot arise (no extraction before e*; ...)" | "Claim: G-STR cannot arise when e* lies in the root best_vertices call"; "Nothing runs before it in the search: no sptl, no extraction, no Dom" | OK |
+  | "inside best_vertices no set test reads str: 73 tests only '== -1'" | "Inside best_vertices no set test reads str: 73 tests only `str[from] == −1` and writes str" | OK |
+  | "signed by REFEREE §C (e0cb163) and REFEREE-2 §9 (5ae9747)" | §9 heading: "SIGN (Opus 5.5, D12)"; "So I sign the exemption" | OK. Two signatures; the G-R7-7 claim of one signature is now correctly withdrawn |
+  | "so (c) and (d) are independent of (STR-DET-w), which affects only non-root first differences" | "POS-FALL and ROOT-BOUND (§3, §4) hold as signed, with no dependence on (STR-DET). G-STR affects only first differences after the root call" | OK. §9 names (STR-DET), the draft (STR-DET-w). §9's argument uses no str fact at all ("Their classification needs no str argument"), so it covers both |
+- Code anchors of §9, checked on Oink 8fbf0a7 dtl.cpp (anchors only, not the argument):
+  - best_vertices is 644-779. It calls attracts (41), attractVertices (66) and attractTangles (198)/attractTangle (110).
+  - In 41-209 and 644-779 the only non-logging read of str is 73 (`str[from] == -1`). 89, 171 and 694 are writes.
+  - The other reads (268, 316-317 in extractTangles; 515 in sptl) are outside the root call.
+  - search_rec (835) runs no computation before its first best_vertices call (853): only declarations and trace output.
+- REFEREE-2 §0/§3 ("POS-FALL rests on (STR-DET) for the alignment") is superseded for root-call e* by §9. The draft's
+  Signatures line still says REFEREE-2 signs (c) "given FDL (ii)'s conclusion". That stays accurate: §9 shows that
+  conclusion holds at a root e* without (STR-DET).
+- Independence: §9 reviews REFEREE's §C claim, so it is written after reading it by design. This is a cross-signature, not
+  an independent derivation. The independence of the main reports (§2 above) is unaffected.
+- RESULTS R5 (h), touched by the same Lead commit: "an exemption signed by both referees (REFEREE-2 R2-P4 §9, 5ae9747)" is
+  accurate.
+- Not applied at 1e4babe (still recommended): N-1 ((STR-DET-w) wording has one explicit signature), N-2 (REFEREE §C2
+  qualification of R6 (e)), N-3 (PI-RISE on dirty transitions).
+- N-6 (note, outside the draft). GAP-A-M §22h at 1e4babe (L-ALG, unrefereed) states the weak form as "s+1 creates no tangle
+  before its first set difference, and every transition but the last has a set difference". This is not REFEREE-2 §8's
+  (STR-DET-w). §22h also writes the reduction with (FALL) for (DIRTY). R7 (e) pins §22e at 44d1428 and §8's wording, so R7
+  is unaffected. Any later result citing §22h needs its own diff.
