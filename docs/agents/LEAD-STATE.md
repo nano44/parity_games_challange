@@ -359,3 +359,4 @@
 - 03:16Z Lead: merged l-alg cf68c58 (LOW-W, GAP-C four-part reduction); routed to L-RED.
 - 03:21Z Lead: merged l-alg 5fe0ee7 (GAP-C half-box status); L-ALG continues on a (TW) proof, then (Cb-W); park ~07:30Z.
 - 03:26Z Lead: merged l-red 2b792b8: NO-ORPHAN-W FALSE (gapbW_dup_n20, duplicate inside W_p), verified with pinned Oink and L-ALG tools; run complete; K-in, TW, LOW-W hold. Routed to L-ALG.
+- 03:38Z Lead: merged l-alg f435bc2 (K-low, GAP-K, OPP-EXIT); K-low breaking shape routed to L-RED.
