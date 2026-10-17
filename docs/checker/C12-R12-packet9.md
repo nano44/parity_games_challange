@@ -128,3 +128,19 @@ With E-1 applied, R12 passes. I re-diff the text only.
   - N-2: G-R12-8 "also open, inherited: (ACYC) (G-S5-6, a GAP-C item)". Applied.
   - Header: revision stamp.
 - Nothing else moved. R12 PASSES as at 5b626ca.
+
+## Addendum 2: post-landing text check, trunk 6c65d69 (Lead 21:00Z): PASS
+- 5b626ca is an ancestor of 6c65d69.
+- RESULTS R12 against R12-draft.md at 5b626ca, from "### R12": identical except for two things.
+  - The heading stamp: "CHECKER PASS (docs/checker/C12-R12-packet9.md, checker ed3a58c + re-diff cdc9009)".
+  - One trailing blank line.
+- docs/GAPS.md, GAP-A row: the "open replacement (Lead reading, unsigned) ... (DATA max 2)" clause is replaced. All points
+  are accurate:
+  - The new text is "replacement signed in RESULTS R12: GAP-A ⇐ (CTX⁺) ∧ (STEAL-POLY_sum), and via Lemma CHARGE GAP-A ⇐
+    (CTX⁺) ∧ (STEAL-DEPTH_D, D constant) ∧ (FIRED-R), given STR-DET; (STEAL-DEPTH) DATA: every re-steal found has depth 1
+    (65, all on stealonce_viol_n76)".
+  - Both implications are R12 (a) and (c) as landed, with STR-DET.
+  - 65 = REFEREE-2's 1 (corpus, stable) + 64 (random tie-breaks), all on stealonce_viol_n76 (R2-P9 §4: "fails at all 65
+    re-steals").
+  - The Lead's earlier unsigned reading (relevant steals per quadruple polynomial) is R12's (STEAL-POLY_k), now signed as part
+    of R12 (a) (with FIRED-R). So "replacement signed" is right.
