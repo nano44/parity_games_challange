@@ -154,3 +154,29 @@ corrects my R-P6.
   - Both note that a per-tangle charge is dead on fallv_viol_n28.
 Joint position: GAP-A ⇐ (CTX⁺) ∧ (NSTEAL), given STR-DET, with F_R ≤ 3·N_R; (NSTEAL) is strictly stronger than (FALL) and
 open. (Opus 5.5, D12)
+
+## §C2. Addendum on R9's constants (R2-P7 §7, referee-2 94bcc2a, read 15:48Z by date -u) (Opus 5.5, D12)
+(i) Confirmed. My §C intermediate sum missed the rising e*-transitions whose interval contains a consecutive non-rise
+(x → y → z with y incomparable to both, x < z). They add ≤ 2F′. The corrected sum 2(F′ + 1)(H − 1) + 2F′ + F^e is
+≤ 2(F_R + 1)(H + 1), so the bound in R9's post-landing note stands.
+(iii) Correction: "at most n per input" in R9 (b) holds as written. The 2n is valid but not needed. My R-P6 (b) chain
+does not use consecutive visits:
+- At transition k (s_k → s_k+1, e* of input I at log position π_k), the output after e* is o(I, T_{s_k+1}). This is
+  STR-DET (c): s_k+1 creates no tangle before π_k, so its tangle set there is the one it started with.
+- The output before e* in the next same-input transition is o(I, T_{s_{k+1}}^{π_{k+1}}). Since s_{k+1} ≥ s_k + 1, the
+  tangle sets nest: T_{s_k+1} ⊆ T_{s_{k+1}}^{π_{k+1}}. If s_{k+1} = s_k + 1 and π_{k+1} < π_k, the two sets are equal,
+  again by STR-DET (c).
+- Monotonicity in T gives o_after(k) ⊆ o_before(k+1) ⊊ o_after(k+1). So the after-outputs form a strictly increasing
+  chain, and there are ≤ n such transitions per input. Recurrence of I inside a search is harmless, because only these
+  endpoints are compared.
+The same device also removes the factor 2 from the per-context term, given STR-DET.
+- List the e*-pair endpoints at R in transition order: v_1 = before_1, w_1 = after_1, v_2, w_2, .... The tangle set does
+  not decrease along this list. Each gap w_k → v_{k+1} is either a log interval, or an equality (the same tangle set, as
+  above).
+- Π_R is a function of T, so an overlapping gap is an equal step.
+- A gap step that does not rise needs a consecutive non-rise inside its gap (transitivity of ≤). Gaps are disjoint, so
+  there are ≤ F′ such steps.
+- So #(e*-transitions at R) ≤ (F′ + F^e + 1)(H − 1) + F^e ≤ (F_R + 1)(H + 1), which is R9's original constant.
+I propose R9 (c) read S − 1 ≤ Σ_R (F_R + 1)(H + 1) + n(|C_T| + |C_Dom|) + 1, given STR-DET. REFEREE-2's doubled display is
+also a true bound. So the two referees disagree on constants only; the reductions are unchanged either way. If the Lead
+prefers not to rely on this device, the doubled display is safe.
