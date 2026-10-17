@@ -3039,3 +3039,50 @@ event of q at pair j < i, a RE-STEAL.
     the call path to the birth of s's new tangle".
 - No (CTX⁺) statement proposed. Candidate to measure next: (PIECES-POLY), distinct depth-0 pieces per phase ≤ 2|G′|
   (max 1.95 so far).
+
+23k. Referee imports for packet 9 (§23f-§23g) (L-ALG succ. 7, 20:35Z by date -u)
+The Lead asked for these as "§23j"; §23j was already taken (CTX⁺ data), so they go here. §23f-§23g are not rewritten.
+Sources: REFEREE docs/referee/R-P9.md and REFEREE-2 docs/referee-2/R2-P9.md, on trunk 25111fa; both labelled "(Opus 5.5, D12)".
+- Verdicts:
+  - (a) §23f: SIGN from both.
+  - (b) Lemma CHARGE: SIGN WITH GAPS from both, all gaps closed.
+  - (c) the depth count: REFEREE SIGN WITH GAPS (G9-c1, closed); REFEREE-2 SIGN.
+  - (d) the data: CONFIRMED by both.
+  - No disagreement on the mathematics.
+- G9-b1 (both; closed). CHARGE's proof must use the prefix BEFORE τ, P(τ⁺) of round r, wherever §23g writes P_{j+1}(τ) and
+  P_i(τ). In §22r's notation P(τ) is the prefix after τ's region. With that reading "t ∩ P_i(τ) = ∅" is FALSE, since t fired
+  inside region τ (REFEREE-2's probe: false at all 65 re-steals).
+  Corrected step 2: a firing tangle's vertices lie in CurZ or CurR (dtl.cpp 136-139), and CurR = R \ P(τ⁺) minus the
+  vertices popped in τ's own region (690, 699). So t ∩ P_i(τ⁺) = ∅.
+  Then: take w ∈ t ∩ P_{j+1}(τ⁺) with w ∉ P_i(τ⁺), so i ≥ j + 2. Let m be the LAST visit in [j+1, i−1] with w ∈ P_m(τ⁺).
+  Then P_m(τ⁺) ⊄ P_{m+1}(τ⁺).
+  The correction is needed for strictness: with P(τ), a loss could be caused at step τ itself.
+  The tool was already right: dtl_rootmono.py records pref[(round, top)] = Z BEFORE tattr, i.e. P(τ⁺), and
+  dtl_stealdepth.py uses it.
+- G9-b2 (REFEREE; closed). An intermediate visit can have fewer than r rounds.
+  - "No candidates" stop (dtl.cpp 716 / 765) at round r′ < r: the later rounds repeat round r′, since the call is a function
+    of (V, R, T). Use P^{(r′)} as a virtual round r. C3 gives V_r(m) ⊆ V_{r′+1}(m) ⊆ V_{r′}(m+1), unless a steal occurs at a
+    round ≤ r′, which is itself a cause.
+  - V′ = ∅ stop (768-771): it contradicts w ∈ P_m unless an earlier-round steal exists.
+- Citations (REFEREE N9-b1 = REFEREE-2 G9-b2): the tangle rule is dtl.cpp 136-139 (138-139 for "!R[v] return false"), not
+  dtl_pyref 86-89.
+- G23g-1 and G23g-2: CHECKED and closed by both.
+  - The local form needs τ′ ∈ V ⊆ V′ in the absorbed case, which §23g's hypothesis includes.
+  - V_r ⊆ V′_r needs (NS*) at ALL steps of rounds 1..r−1, lower tops included (C1 uses the whole union). All of these steps
+    are earlier than (r, τ).
+  - The threshold loop (722-741) and the survivors (713-772) add no case.
+- Forms of (STEAL-POLY) (REFEREE-2 N9-a1, REFEREE G9-c1), named:
+  - SUM form, Σ_q k_q ≤ poly(|R|) per phase: F_R ≤ 3·Σ_q k_q directly, so GAP-A ⇐ (CTX⁺) ∧ (STEAL-POLY_sum), with no (FIRED-R).
+  - k_R form, k_R ≤ poly(|R|): needs (FIRED-R), since Σ_q k_q ≤ k_R·Q.
+  - §23f's "Σ_q k_q ≤ poly(|R|)·#fired(R)" form needs (FIRED-R).
+  - (c) gives the sum form from (STEAL-DEPTH_D) only together with (FIRED-R): 2Q^{D+1} contains #fired(R)^{D+1}.
+  - Working conclusion of both referees: GAP-A ⇐ (CTX⁺) ∧ (FIRED-R) ∧ (STEAL-DEPTH_D for a constant D), given STR-DET. All
+    three premises are DATA.
+- Constant D only (both). D = O(log n) gives only a quasi-polynomial bound. The proved D ≤ (|R|+1)|R| − 1 gives
+  exp(Θ(n² log n)).
+- N9-c1 (REFEREE-2): for Q = 1 there is no re-steal, since a cause is an event of another quadruple. So Σ = 1 ≤ 2, and the
+  bound holds for all Q ≥ 1.
+- The "R2-P8 §7" citation in §23f is CORRECT: c2ac652, line 139 (REFEREE-2 comparison; Lead checked). REFEREE's N9-a1 read an
+  older R2-P8. Unchanged.
+- REFEREE-2 data: random equal-priority tie-breaks of stealonce_viol_n76 give the re-steal in 32 of 50 orders (64 re-steals in
+  320 runs). Each has a cause and depth 1. So DE20 holds under many order data; the pinned Oink order is among those without it.

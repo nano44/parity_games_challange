@@ -1,5 +1,6 @@
 # STEAL-DEPTH: Lemma CHARGE and the depth count (draft for a referee packet; L-ALG succ. 7, produced on Opus 5.5)
-Status: reading of dtl.cpp @ 8fbf0a7, UNREFEREED. Source of truth for the context is docs/alg/GAP-A-M.md §23f-§23g. This
+Status: packet 9 SIGNED (REFEREE R-P9, REFEREE-2 R2-P9, trunk 25111fa) with gaps G9-b1/G9-b2 closed; the imports are in
+GAP-A-M §23k. Below, the prefix in CHARGE's proof is P(τ⁺) (the prefix BEFORE τ), per G9-b1. Originally a reading of dtl.cpp @ 8fbf0a7. Source of truth for the context is docs/alg/GAP-A-M.md §23f-§23g. This
 file only restates them self-contained. Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every
 order datum (L22/L26).
 
@@ -20,12 +21,12 @@ Let (i, q) be an event of q = ((r, τ), t) and let (j, q), j < i, be the previou
 with j < m < i whose step σ′ is strictly earlier than (r, τ). Distinct such pairs (j, i) of the same q get distinct m.
 
 Proof.
-1. At visit j+1, t ∩ P_{j+1}(r, τ) ≠ ∅. This is the steal at pair j.
+1. (All prefixes below are P(τ⁺) of round r, the prefix BEFORE τ; G9-b1.) At visit j+1, t ∩ P_{j+1}(r, τ⁺) ≠ ∅. This is the steal at pair j.
 2. At visit i, t ∈ F_(r,τ)(i). A tangle fires only if each of its vertices is in CurZ or in CurR (dtl.cpp attractTangle
    131-137: `Z[v]` continue, `!R[v]` return false, with R = CurR and Z = CurZ at lines 700-701). CurR = R minus every
-   vertex popped so far in this round (line 690, line 699). So t ∩ P_i(r, τ) = ∅.
-3. So some w ∈ t ∩ P_{j+1}(r, τ) is not in P_i(r, τ). Hence there is a pair m, j+1 ≤ m ≤ i−1, with
-   P_m(r, τ) ⊄ P_{m+1}(r, τ).
+   vertex popped so far in this round (line 690, line 699). So t ∩ P_i(r, τ⁺) = ∅.
+3. So some w ∈ t ∩ P_{j+1}(r, τ⁺) is not in P_i(r, τ⁺). With m the last visit in [j+1, i−1] holding w:
+   P_m(r, τ⁺) ⊄ P_{m+1}(r, τ⁺). Visits with fewer than r rounds: G9-b2 (GAP-A-M §23k).
 4. Local PREFIX-MONO-X*. Suppose that at pair m no step of round r above τ has an event, and V_r(m) ⊆ V_r(m+1). Then
    P_m(r, τ) ⊆ P_{m+1}(r, τ). This is the induction of R10's PREFIX-MONO-X proof (GAP-A-M §22r), "by induction over τ
    in decreasing order". Its three cases (τ not processed in run 1, processed in both, processed in run 1 only) use the
