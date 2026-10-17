@@ -2209,3 +2209,29 @@ DATA (dtl_rootmono.py, corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29, me
 - e* caller: bv-reg 282 / 286, bv-thr 739 / 703, search_rec (−1 attractor) 44 / 46. In Dom or sptl: 0 / 0.
 - No transition without a set-level difference.
 - Union runs: pending at 12:26Z.
+
+22j. (e* ∉ Dom) as a budgeted term, and why raw inputs do not help (12:34Z by date -u)
+Per-input budget (PROVED, reading). Fix a tattr input I = (caller, Z_in, R, Gx, maxpr). Its output is the triggered
+closure (DTL-proof 1.2), which is monotone in T (1.2b). Take transitions s₁ < s₂ of one phase whose first differences
+e*₁, e*₂ have input I. Then
+  o(I, T_{s₁+1}) ⊆ o(I, T_{s₂}^{e*}) ⊊ o(I, T_{s₂+1}), since T_{s₁+1} ⊆ T_{s₂} ⊆ T_{s₂}^{e*}.
+So the transitions whose e* has input I form a strictly increasing chain of subsets of G′, at most n of them.
+Consequence for G-DOM. Replace the hypothesis (e* ∉ Dom) by the term n·|C_Dom|, where C_Dom is the set of distinct
+first-difference Dom-step inputs. The reduction then reads
+  S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·(|C_T| + |C_Dom|) + 1,
+so GAP-A ⇐ (CTX⁺) ∧ (FALL), with (CTX⁺) counting the distinct first-difference contexts of best_vertices calls, −1
+attractors and Dom steps.
+The same bound for every tattr type, S − 1 ≤ n·|I_fd| + 1 with I_fd the distinct first-difference inputs, is valid but
+VACUOUS on the data: |I_fd| ≈ S − 1. For example spp_chain_up_n43 has 41 inputs in 41 transitions, and spp22_oink_n40 21
+in 21; the maximum is 0.95·|G′|, both orders. The per-context Π of §22c-e is what compresses the threshold-loop and
+region inputs of one call into one context. The −1 attractor and Dom steps keep the per-input form.
+Where a Dom e* would come from (§22h sketch, sharpened). The new tangle t must fire in s+1's Dom step j but NOT in s+1's
+final-round rescue loop, which has W_max ⊇ U and Gx = R. If t fired there, a set difference would lie before e*.
+- So some escape of t lies in Dom_{≤j}(s) \ W_max: a vertex that Dom gained only through an X-straddling acceptance of
+  an old tangle t′. In the rescue loop t′ is rejected, because its X-vertex is outside R (137).
+- The shape is therefore an old X-straddling t′ in Dom that feeds an escape of a tangle t that s learns later, inside
+  R \ Dom_P(s).
+- DATA: 0 Dom e* in corpus (1,065 / 1,035) and in cross unions (stable 3,377). Mixed unions and Oink cross are pending.
+DATA, cross unions s11 (UM_CROSS = 3, 600 games, stable order): weak STR-DET 3,377 / 3,377; e* caller bv-reg 1,177,
+bv-thr 2,083, −1 attractor 117, Dom 0, sptl 0; clean root transitions 2,284, all predictions hold; Π at root-e*: rises
+2,799, RV falls 62.

@@ -95,12 +95,12 @@ def where(root, k_full):
 
 
 if __name__ == "__main__":
-    phrows = []; badrows = []; seqrows = []; ctxrows = []; fdcrows = []; descrows = []; recrows = []; succrows = []
+    phrows = []; badrows = []; seqrows = []; ctxrows = []; fdcrows = []; descrows = []; recrows = []; succrows = []; ifdrows = []
     sys.setrecursionlimit(100000); st = {"dropped": 0, "kept: differs": 0, "kept: identical but extracts": 0}; shown = 0
     for f, g in ST.games(sys.argv[1:]):
         d0 = FD.P.X.build(g); d = RM(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.run()
         for ph in FD.phase_rows(d):
-            nd = nr = 0; wl = []; nbad = 0; seq = []; fdc = set(); kseq = []; desc = {}
+            nd = nr = 0; wl = []; nbad = 0; seq = []; fdc = set(); kseq = []; desc = {}; ifd = set()
             for r in ph:
                 full = r["log"]; red = FC.reduce_log(full, st)
                 # map root spans onto the reduced log: the root call precedes every sptl pass, so its positions shift only
@@ -125,6 +125,7 @@ if __name__ == "__main__":
                     kx = "E* CALLER: no set-level difference at all"
                 else:
                     kx = "E* CALLER: " + b["log"][lb[k]][0]
+                    e_ = b["log"][lb[k]]; ifd.add((e_[0], e_[1], e_[2], e_[4], e_[7], e_[8]))
                     pre = any(e_[0] == "extract" for e_ in b["log"][:lb[k]])
                     kw = "STR-DET weak (s+1 creates no tangle before e*): " + ("FAILS" if pre else "holds"); tab[kw] = tab.get(kw, 0) + 1
                 tab[kx] = tab.get(kx, 0) + 1
@@ -287,6 +288,7 @@ if __name__ == "__main__":
             if succ_:
                 ms = max(len(v_) for v_ in succ_.values()); succrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), ms, len(succ_), len(ph) - 1, len(ph[0]["G"])))
             if desc: descrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), max(desc.values()), sum(desc.values()), len(ph) - 1, len(ph[0]["G"])))
+            if len(ph) > 1: ifdrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), len(ifd), len(ph) - 1, len(ph[0]["G"])))
             if fdc: fdcrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), len(fdc), len(ph) - 1, len(ph[0]["G"]), " ".join(kseq)))
             if seq:
                 runs = [len(x) for x in "".join(seq).replace("=", "R").split("R") if x]
@@ -297,6 +299,9 @@ if __name__ == "__main__":
         phrows.sort(key=lambda r: -r[1])
         print("phases with dirty root transitions (file, dirty, root transitions, transitions, |G'|):", phrows[:8])
         print("phases with a dirty root transition:", len(phrows), "max dirty per phase:", max(r[1] for r in phrows), "max dirty/|G'|:", round(max(r[1] / r[4] for r in phrows), 3))
+    if ifdrows:
+        ifdrows.sort(key=lambda r: -r[1]); print("distinct first-difference tattr inputs per phase (file, inputs, transitions, |G'|):", ifdrows[:8])
+        print("max inputs/transitions:", round(max(r[1] / max(1, r[2]) for r in ifdrows), 3), "max inputs/|G'|:", round(max(r[1] / r[3] for r in ifdrows), 3))
     if succrows:
         succrows.sort(key=lambda r: -r[1]); print("distinct successor contexts of a depth-0 context (file, max successors, depth-0 contexts, transitions, |G'|):", succrows[:8])
     if recrows:
