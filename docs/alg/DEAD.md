@@ -155,3 +155,9 @@ experiments/alg/instances/spp_chain_up_n43.pg). Wanted: a quantity that every no
   re-learned in new tangles (spp_final_n20: 38 re-opened, 33 re-learned). Any quantity that ignores the reset structure fails
   at the resets; any T-only quantity at the root (DV, DV*) is monotone but does not see absorption in later pieces.
 - Kept: (SPP) as DATA; First-Difference Lemma and DV*-MONO PROVED; DV-MONO SKETCH + GAP (DATA 0 falls).
+- (01:59Z by date -u) (ABS-mono) "the depth-0 removal-index sum PHI0 never rises at a transition whose first difference is not a
+  depth-0 RES" and its pointwise form (ABS-mono-pw): DEAD. Killer: experiments/red/carry/instances/absmono_viol_n44.pg (L-RED
+  R22, l-red cf9bdba; Oink 5 iterations, verified; both order data): Even's search 0 → 1, first difference a SHRINK at
+  depth-0 piece 14; depth-0 piece 17 (same context in both searches) goes stable → −1 under the larger tangle set, so 7
+  vertices move to later pieces and PHI0 rises 374 → 379. Obstruction: actual best_vertices is not monotone in T at a
+  fixed context (the deficit of §13-§18), and later pieces see a larger T.
