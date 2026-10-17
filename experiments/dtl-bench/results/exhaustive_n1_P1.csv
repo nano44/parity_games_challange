@@ -1,0 +1,9 @@
+game,n,m,d,solver,status,wall_s,solver_s,dominions,tangles,iterations,pruning,detail,cmd
+x_n1_P1_000000.pg,1,1,1,dtl-pin,ok,0.0052,2.4e-05,1,0,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+x_n1_P1_000000.pg,1,1,1,idtl-pin,ok,0.0052,1.8e-05,1,0,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+x_n1_P1_000001.pg,1,1,1,dtl-pin,ok,0.0045,1.9e-05,1,0,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+x_n1_P1_000001.pg,1,1,1,idtl-pin,ok,0.0054,1.9e-05,1,0,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+x_n1_P1_000002.pg,1,1,1,dtl-pin,ok,0.0038,2.3e-05,1,0,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+x_n1_P1_000002.pg,1,1,1,idtl-pin,ok,0.0034,1.8e-05,1,0,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+x_n1_P1_000003.pg,1,1,1,dtl-pin,ok,0.0056,1.8e-05,1,0,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+x_n1_P1_000003.pg,1,1,1,idtl-pin,ok,0.0030,1.8e-05,1,0,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}

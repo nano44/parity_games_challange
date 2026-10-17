@@ -2,11 +2,21 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14 19:15Z. PARKED by the Lead (19:11Z). M1 accepted; range up to de7ea19 is with the REFEREE before landing on
-trunk. M2 (arXiv 2511.03752v1) closed BROKEN (Lead 18:36Z): CE1 experiments/m2/counterexamples/ce1_4v.pg plus the
-REFEREE's independent counterexample (claude/referee 936d47c). No queued work. Wait for: REFEREE review changes, a new
-claim, or L-STRUCT SAT engineering. Setup in a fresh session: scripts/setup_oink.sh (about 80 s); python3 with
-matplotlib for plots (pip install matplotlib); check with scripts/verify.sh.
+2026-10-15 23:05Z. DTL gauntlet step 2 DONE: (i) bench (Oink pinned dtl/idtl vs Zielonka, verified strategies, families +
+growth: experiments/dtl-bench/README.md, d1537b0/011fec0); (ii) second implementation dtl_py.py from C5-DTL.md only,
+cross-checked against Oink on 238,071 games (all five quantities equal with --order oink; regions/strategies equal with
+C5-literal orders); 3 divergences, all C5 order/counter omissions (README table; reported to Lead 21:19Z, 21:56Z, 22:14Z).
+L15 DONE 23:30Z (experiments/hard-families/pgsolver-binary-diff.md): binaries ran (no classifier refusal); generators
+byte-identical, switchall/switchbest iteration counts and solutions identical. PARKED after this (Lead 23:08Z); sat-hard
+parked with the T-L2 line (L25).
+
+## Queue (for the successor, after the running cells)
+0. sat-hard state (from the 2026-10-14 resume point): CEGAR-only s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT; CNFs lost
+   with the container; regenerate with `diag.py 5 5 V strong --klo 10` / `diag.py 5 7 V strong --min-letter 2 --klo 8`.
+   Next k: w^V(5,5) k=10, s^V(5,5) k=11, TARGET n=5 k=9 (1-2 h per k per core; cube.py on 4 cores). Needs cadical (apt).
+1. Report the four n=5 cells with evidence; LRAT for out/w_n4_d6_k8.cnf (w^E(4,6) >= 9; solve ~1000 s, proof large).
+2. Remaining (Lead's order): (4,5) V weak/strong, (5,6) V, E cells (4,5)/(4,6)/(5,4) k >= 9 (cube.py for 4 cores).
+3. Low: w(2,d) for d >= 14 (E): k=4 UNSAT (CEGAR only) for d=14,16,20,24; row2.py computes the row (slow).
 
 ## How to run the bench on a new claim
 Wrap the claimed algorithm as a command that reads a PGSolver .pg file (max-parity, owner 0 = Even, priorities any
@@ -23,8 +33,7 @@ solver import) to a minimal game, save the .pg, push, message the Lead with SHA,
 ## Open items
 - counter_qpt growth class: qpt lifts jump x15 at N = 8 and x31 at N = 16, ~N^3..N^4 in between, timeout at N = 32;
   run N = 29..40 with a long timeout (sweep.py counter_qpt --timeout 600) to see the N = 32 jump.
-- PGSolver binary diff waiting on owner Q4: if allowed, run the built generator.exe / pgsolver.exe (switchall,
-  switchbest) and diff against pgsolver_port.py and pgsolver_si.py (iteration counts and games byte for byte).
+- PGSolver binary diff: DONE 2026-10-15 (pgsolver-binary-diff.md), all identical.
 - counter_dtl is listed in Oink's README (8fbf0a7) but has no source upstream (no src/tools/counter_dtl.cpp, not in
   CMakeLists); not swept.
 - avh strategy construction S1/S2 is not always winning (experiments/m2/counterexamples/strat_s2_12v.pg); moot since
@@ -114,7 +123,8 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
   ((lang dune 3.18)->3.14, drop maintenance_intent) in a dune workspace with tcslib 6778419,
   ocaml-sat-solvers 0264291, c-cube/ocaml-minisat aeb7776 (cloned under experiments/hard-families/out/pgsolver,
   gitignored; a fresh session must re-clone). Running the built binaries was refused by the permission classifier
-  ("code from external"); the Lead said not to work around it. Hence the Python ports.
+  on 2026-10-14 ("code from external"); on 2026-10-15 (L15 attempt) it ran. Build also needs apt libextlib-ocaml-dev,
+  libnum-ocaml-dev. switchall/switchbest: `pgsolver.exe -global policyiter -x "-sa"|"-sb" -dgo -dsd -dlo -dsg -v 3`.
 - The ported SI (pgsolver_si.py) runs the bare strategy-improvement loop; PGSolver wraps it in universal_solve
   (preprocessing, SCC decomposition), so counts may differ from PGSolver's own. Details that matter for fidelity:
   TreeSet.choose = min_elt, folds ascending, del_edge is a no-op on deleted nodes, iter_by iterates a snapshot.
@@ -128,8 +138,16 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 - Oink's work counters are solver-specific (iterations, promotions, lifts, major iterations); compare across sizes
   of one solver, never across solvers. Iteration counts are deterministic with -w 1; wall times are noisy.
 - py-zlk is slow on exponential families (Python recursion); sweep.py skips a solver after its first timeout.
-- Background watchers: `pgrep -f NAME` inside a loop matches its own command line; use a pid file instead.
+- Background watchers: `pgrep -f NAME` inside a loop matches its own command line; use a pid file instead. (Bit again
+  2026-10-15 20:10Z: an `until ! pgrep -f "sweep.py X"` watcher never ended; wait on a log line instead.)
 - gen.py uses its own splitmix64 so games are identical across Python versions; selftest pins the corpus hash.
+- sat-hard: graphs.family/family_V/family_S are my own generators (progress-measure trees; every graph brute-force
+  checked); counts equal L-STRUCT's maximal families. Families are not reduced to maximal graphs: n=5 V families are
+  ~30k-60k graphs, so each CEGAR round's check is slow-ish.
+- Unary (thermometer) ranks + CEGAR are the best encoding found; binary ranks ~8x slower, pure lasso CEGAR does not
+  converge, clique bounds are always 1 (shared tail -> same limsup parity), annealing / state merging fail.
+- Never `pkill -f PATTERN` where PATTERN occurs in the current shell's own command line: it kills the shell (exit 144).
+  List pids with `ps -eo pid,args | grep ...` first, then kill by pid.
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
@@ -140,6 +158,12 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 | github.com/tcsprojects/pgsolver @ d3cd624 | generators recursiveladder.ml, policyiter/generators/*.ml; paritygame.ml conventions | 2026-10-14 | code, not a paper; papers awaiting source |
 
 ## Dead ends
+- 2026-10-15 (not a dead end of an idea; a method note): a C5-literal reimplementation cannot reproduce Oink's
+  tangle counts: four orders (step-0 std::sort, in-edge order, stored tangle order, Pearce SCC order) change counts.
+  Use dtl_py.py --order oink for exact counts; stdsort.py emulates libstdc++ introsort incl. heap fallback.
+- 2026-10-14 sat-hard (L-STRUCT task): pairwise-inconsistent-word clique bound (always 1: u.y and v.y share the tail's
+  limsup parity); simulated annealing (stuck at 16 violations, (3,6) k=7); pure lasso CEGAR (no convergence at (2,6) k=2);
+  binary ranks (~8x slower UNSAT); merging strong separators (fails to recover the known (2,6) weak separator).
 - 2026-10-14 (M2 closed BROKEN by the Lead 18:36Z; REFEREE's independent counterexample breaks readings (a)-(d)): arXiv 2511.03752v1 Algorithm 1 as read in
   "M2 pseudocode" is incorrect. Obstruction: Theorem 2 (A(G,d) is a player(d)-dominion) fails; A'_d only removes
   vertices the opponent can force into lower-priority parts, but player(d) (here Odd) can dodge A' on a

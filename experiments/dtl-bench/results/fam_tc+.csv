@@ -1,0 +1,20 @@
+family,N,gen,game,n,m,d,solver,status,wall_s,solver_s,dominions,tangles,iterations,pruning,detail,cmd
+tc+,2,tools/oink/build/tc+ 2,tc+_2.pg,24,38,15,oink-uzlk,ok,0.0080,2.6e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc+,2,tools/oink/build/tc+ 2,tc+_2.pg,24,38,15,py-zlk,ok,0.0363,,,,,,,python3 -I experiments/harness/zielonka.py
+tc+,2,tools/oink/build/tc+ 2,tc+_2.pg,24,38,15,dtl-pin,ok,0.0035,0.000194,2,8,5,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc+,2,tools/oink/build/tc+ 2,tc+_2.pg,24,38,15,idtl-pin,ok,0.0043,0.000224,2,8,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+tc+,4,tools/oink/build/tc+ 4,tc+_4.pg,104,196,27,oink-uzlk,ok,0.0056,0.00016,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc+,4,tools/oink/build/tc+ 4,tc+_4.pg,104,196,27,py-zlk,ok,0.0355,,,,,,,python3 -I experiments/harness/zielonka.py
+tc+,4,tools/oink/build/tc+ 4,tc+_4.pg,104,196,27,dtl-pin,ok,0.0146,0.011021,2,30,10,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc+,4,tools/oink/build/tc+ 4,tc+_4.pg,104,196,27,idtl-pin,ok,0.0272,0.022988,2,36,8,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+tc+,8,tools/oink/build/tc+ 8,tc+_8.pg,624,1256,51,oink-uzlk,ok,0.0084,0.003386,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc+,8,tools/oink/build/tc+ 8,tc+_8.pg,624,1256,51,py-zlk,ok,0.2475,,,,,,,python3 -I experiments/harness/zielonka.py
+tc+,8,tools/oink/build/tc+ 8,tc+_8.pg,624,1256,51,dtl-pin,ok,1.5629,1.555274,2,94,18,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc+,8,tools/oink/build/tc+ 8,tc+_8.pg,624,1256,51,idtl-pin,ok,4.1350,4.128592,2,118,17,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+tc+,12,tools/oink/build/tc+ 12,tc+_12.pg,1944,3948,75,oink-uzlk,ok,0.0644,0.05824,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc+,12,tools/oink/build/tc+ 12,tc+_12.pg,1944,3948,75,py-zlk,ok,3.3413,,,,,,,python3 -I experiments/harness/zielonka.py
+tc+,12,tools/oink/build/tc+ 12,tc+_12.pg,1944,3948,75,dtl-pin,ok,42.4644,42.457968,2,190,26,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc+,12,tools/oink/build/tc+ 12,tc+_12.pg,1944,3948,75,idtl-pin,ok,137.6125,137.604765,2,239,25,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+tc+,16,tools/oink/build/tc+ 16,tc+_16.pg,4448,9040,99,oink-uzlk,ok,1.6434,1.63333,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+tc+,16,tools/oink/build/tc+ 16,tc+_16.pg,4448,9040,99,dtl-pin,timeout,400.1019,,,,,,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+tc+,16,tools/oink/build/tc+ 16,tc+_16.pg,4448,9040,99,idtl-pin,timeout,400.0568,,,,,,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}

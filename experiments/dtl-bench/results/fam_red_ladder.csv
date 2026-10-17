@@ -1,0 +1,43 @@
+family,N,gen,game,n,m,d,solver,status,wall_s,solver_s,dominions,tangles,iterations,pruning,detail,cmd
+red_ladder,1,python3 experiments/red/dtl/gens_dtl.py ladder 1,red_ladder_1.pg,12,20,12,oink-uzlk,ok,0.0032,1.3e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_ladder,1,python3 experiments/red/dtl/gens_dtl.py ladder 1,red_ladder_1.pg,12,20,12,py-zlk,ok,0.0203,,,,,,,python3 -I experiments/harness/zielonka.py
+red_ladder,1,python3 experiments/red/dtl/gens_dtl.py ladder 1,red_ladder_1.pg,12,20,12,dtl-pin,ok,0.0029,3.3e-05,1,4,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,1,python3 experiments/red/dtl/gens_dtl.py ladder 1,red_ladder_1.pg,12,20,12,idtl-pin,ok,0.0025,2.6e-05,1,4,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,2,python3 experiments/red/dtl/gens_dtl.py ladder 2,red_ladder_2.pg,18,32,18,oink-uzlk,ok,0.0027,1.6e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_ladder,2,python3 experiments/red/dtl/gens_dtl.py ladder 2,red_ladder_2.pg,18,32,18,py-zlk,ok,0.0207,,,,,,,python3 -I experiments/harness/zielonka.py
+red_ladder,2,python3 experiments/red/dtl/gens_dtl.py ladder 2,red_ladder_2.pg,18,32,18,dtl-pin,ok,0.0029,3.6e-05,1,6,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,2,python3 experiments/red/dtl/gens_dtl.py ladder 2,red_ladder_2.pg,18,32,18,idtl-pin,ok,0.0028,3.1e-05,1,6,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,4,python3 experiments/red/dtl/gens_dtl.py ladder 4,red_ladder_4.pg,30,56,30,oink-uzlk,ok,0.0037,2.2e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_ladder,4,python3 experiments/red/dtl/gens_dtl.py ladder 4,red_ladder_4.pg,30,56,30,py-zlk,ok,0.0305,,,,,,,python3 -I experiments/harness/zielonka.py
+red_ladder,4,python3 experiments/red/dtl/gens_dtl.py ladder 4,red_ladder_4.pg,30,56,30,dtl-pin,ok,0.0032,5.3e-05,1,10,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,4,python3 experiments/red/dtl/gens_dtl.py ladder 4,red_ladder_4.pg,30,56,30,idtl-pin,ok,0.0031,4.8e-05,1,10,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,8,python3 experiments/red/dtl/gens_dtl.py ladder 8,red_ladder_8.pg,54,104,54,oink-uzlk,ok,0.0029,5.4e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_ladder,8,python3 experiments/red/dtl/gens_dtl.py ladder 8,red_ladder_8.pg,54,104,54,py-zlk,ok,0.0223,,,,,,,python3 -I experiments/harness/zielonka.py
+red_ladder,8,python3 experiments/red/dtl/gens_dtl.py ladder 8,red_ladder_8.pg,54,104,54,dtl-pin,ok,0.0047,0.000132,1,18,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,8,python3 experiments/red/dtl/gens_dtl.py ladder 8,red_ladder_8.pg,54,104,54,idtl-pin,ok,0.0066,0.000111,1,18,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,16,python3 experiments/red/dtl/gens_dtl.py ladder 16,red_ladder_16.pg,102,200,102,oink-uzlk,ok,0.0043,6.2e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_ladder,16,python3 experiments/red/dtl/gens_dtl.py ladder 16,red_ladder_16.pg,102,200,102,py-zlk,ok,0.0252,,,,,,,python3 -I experiments/harness/zielonka.py
+red_ladder,16,python3 experiments/red/dtl/gens_dtl.py ladder 16,red_ladder_16.pg,102,200,102,dtl-pin,ok,0.0035,0.000197,1,34,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,16,python3 experiments/red/dtl/gens_dtl.py ladder 16,red_ladder_16.pg,102,200,102,idtl-pin,ok,0.0028,0.000159,1,34,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,32,python3 experiments/red/dtl/gens_dtl.py ladder 32,red_ladder_32.pg,198,392,198,oink-uzlk,ok,0.0029,2.9e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_ladder,32,python3 experiments/red/dtl/gens_dtl.py ladder 32,red_ladder_32.pg,198,392,198,py-zlk,ok,0.0247,,,,,,,python3 -I experiments/harness/zielonka.py
+red_ladder,32,python3 experiments/red/dtl/gens_dtl.py ladder 32,red_ladder_32.pg,198,392,198,dtl-pin,ok,0.0034,0.00046,1,66,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,32,python3 experiments/red/dtl/gens_dtl.py ladder 32,red_ladder_32.pg,198,392,198,idtl-pin,ok,0.0038,0.00059,1,66,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,64,python3 experiments/red/dtl/gens_dtl.py ladder 64,red_ladder_64.pg,390,776,360,oink-uzlk,ok,0.0040,3.3e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_ladder,64,python3 experiments/red/dtl/gens_dtl.py ladder 64,red_ladder_64.pg,390,776,360,py-zlk,ok,0.0303,,,,,,,python3 -I experiments/harness/zielonka.py
+red_ladder,64,python3 experiments/red/dtl/gens_dtl.py ladder 64,red_ladder_64.pg,390,776,360,dtl-pin,ok,0.0075,0.00164,1,130,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,64,python3 experiments/red/dtl/gens_dtl.py ladder 64,red_ladder_64.pg,390,776,360,idtl-pin,ok,0.0048,0.001606,1,130,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,128,python3 experiments/red/dtl/gens_dtl.py ladder 128,red_ladder_128.pg,774,1544,560,oink-uzlk,ok,0.0038,6.8e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_ladder,128,python3 experiments/red/dtl/gens_dtl.py ladder 128,red_ladder_128.pg,774,1544,560,py-zlk,ok,0.0582,,,,,,,python3 -I experiments/harness/zielonka.py
+red_ladder,128,python3 experiments/red/dtl/gens_dtl.py ladder 128,red_ladder_128.pg,774,1544,560,dtl-pin,ok,0.1357,0.130258,1,258,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,128,python3 experiments/red/dtl/gens_dtl.py ladder 128,red_ladder_128.pg,774,1544,560,idtl-pin,ok,0.1193,0.114973,1,258,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,256,python3 experiments/red/dtl/gens_dtl.py ladder 256,red_ladder_256.pg,1542,3080,816,oink-uzlk,ok,0.0047,9.4e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_ladder,256,python3 experiments/red/dtl/gens_dtl.py ladder 256,red_ladder_256.pg,1542,3080,816,py-zlk,ok,0.1234,,,,,,,python3 -I experiments/harness/zielonka.py
+red_ladder,256,python3 experiments/red/dtl/gens_dtl.py ladder 256,red_ladder_256.pg,1542,3080,816,dtl-pin,ok,1.7024,1.697045,1,514,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,256,python3 experiments/red/dtl/gens_dtl.py ladder 256,red_ladder_256.pg,1542,3080,816,idtl-pin,ok,1.5872,1.580905,1,514,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,512,python3 experiments/red/dtl/gens_dtl.py ladder 512,red_ladder_512.pg,3078,6152,1328,oink-uzlk,ok,0.0062,0.00017,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_ladder,512,python3 experiments/red/dtl/gens_dtl.py ladder 512,red_ladder_512.pg,3078,6152,1328,dtl-pin,ok,14.2969,14.289712,1,1026,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,512,python3 experiments/red/dtl/gens_dtl.py ladder 512,red_ladder_512.pg,3078,6152,1328,idtl-pin,ok,14.5467,14.538341,1,1026,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,1024,python3 experiments/red/dtl/gens_dtl.py ladder 1024,red_ladder_1024.pg,6150,12296,2352,oink-uzlk,ok,0.0130,0.000591,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+red_ladder,1024,python3 experiments/red/dtl/gens_dtl.py ladder 1024,red_ladder_1024.pg,6150,12296,2352,dtl-pin,ok,121.1240,121.113205,1,2050,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+red_ladder,1024,python3 experiments/red/dtl/gens_dtl.py ladder 1024,red_ladder_1024.pg,6150,12296,2352,idtl-pin,ok,122.0089,121.998182,1,2050,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}

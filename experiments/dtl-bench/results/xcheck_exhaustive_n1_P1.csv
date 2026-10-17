@@ -1,0 +1,9 @@
+game,n,m,variant,status,oink_tangles,py_tangles,oink_dominions,py_dominions,oink_iterations,py_iterations,oink_s,py_s,detail
+x_n1_P1_000000.pg,1,1,dtl,ok,0,0,1,1,1,1,0.011,0.001,
+x_n1_P1_000000.pg,1,1,idtl,ok,0,0,1,1,1,1,0.011,0.000,
+x_n1_P1_000001.pg,1,1,dtl,ok,0,0,1,1,2,2,0.013,0.001,
+x_n1_P1_000001.pg,1,1,idtl,ok,0,0,1,1,2,2,0.016,0.000,
+x_n1_P1_000002.pg,1,1,dtl,ok,0,0,1,1,1,1,0.005,0.001,
+x_n1_P1_000002.pg,1,1,idtl,ok,0,0,1,1,1,1,0.017,0.000,
+x_n1_P1_000003.pg,1,1,dtl,ok,0,0,1,1,2,2,0.022,0.001,
+x_n1_P1_000003.pg,1,1,idtl,ok,0,0,1,1,2,2,0.008,0.000,

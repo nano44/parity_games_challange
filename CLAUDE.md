@@ -14,7 +14,7 @@ Playbook: docs/sources/fleet-playbook.md. Literature map (secondary source): doc
 - Every cited result has an opened source (arXiv id or DOI, theorem/section number) in your notebook. The landscape doc is never a source by itself.
 - Record every dead end with the exact obstruction and the instance that killed it.
 - Edit only your lane's files. Never rewrite pushed history (no rebase, amend, force-push). No pull requests.
-- Push only when scripts/verify.sh passes, chained: `scripts/verify.sh && git push -u origin <your-branch>`.
+- Push only with `scripts/push.sh` (runs scripts/verify.sh, pushes the current branch only on PASS). Never pipe the output of verify.sh or push.sh into anything: a pipe hides the exit code. Redirect to a file and print `$?`.
 - Quote the owner's rulings verbatim (docs/DECISIONS.md). A reading is labelled "Lead reading".
 - Never publish, post, email, submit or contact anyone outside the fleet. No secrets in any session.
 - Report outcomes faithfully: failures with their output, skipped steps named as skipped.
@@ -41,6 +41,7 @@ Playbook: docs/sources/fleet-playbook.md. Literature map (secondary source): doc
 
 ## Commands
 - scripts/setup_oink.sh   build Oink (pinned) into tools/oink/build (gitignored); generators tc, tc+, counter_*, rngame live there.
+- scripts/push.sh         the only way to push: runs verify, pushes the current branch on PASS.
 - scripts/verify.sh       the gate: doc shape, Lean (when present), experiment checks, Oink smoke. Prints PASS/FAILED/NOT RUN per step.
 
 ## Traps

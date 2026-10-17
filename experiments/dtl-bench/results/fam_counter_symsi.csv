@@ -1,0 +1,29 @@
+family,N,gen,game,n,m,d,solver,status,wall_s,solver_s,dominions,tangles,iterations,pruning,detail,cmd
+counter_symsi,2,tools/oink/build/counter_symsi 2,counter_symsi_2.pg,22,48,21,oink-uzlk,ok,0.0038,2e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_symsi,2,tools/oink/build/counter_symsi 2,counter_symsi_2.pg,22,48,21,py-zlk,ok,0.0359,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_symsi,2,tools/oink/build/counter_symsi 2,counter_symsi_2.pg,22,48,21,dtl-pin,ok,0.0085,0.00036,1,8,3,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,2,tools/oink/build/counter_symsi 2,counter_symsi_2.pg,22,48,21,idtl-pin,ok,0.0071,0.000622,1,15,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,4,tools/oink/build/counter_symsi 4,counter_symsi_4.pg,42,92,41,oink-uzlk,ok,0.0044,0.000115,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_symsi,4,tools/oink/build/counter_symsi 4,counter_symsi_4.pg,42,92,41,py-zlk,ok,0.0238,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_symsi,4,tools/oink/build/counter_symsi 4,counter_symsi_4.pg,42,92,41,dtl-pin,ok,0.0047,0.001599,1,14,3,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,4,tools/oink/build/counter_symsi 4,counter_symsi_4.pg,42,92,41,idtl-pin,ok,0.0073,0.003093,1,27,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,8,tools/oink/build/counter_symsi 8,counter_symsi_8.pg,82,180,81,oink-uzlk,ok,0.0075,0.003763,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_symsi,8,tools/oink/build/counter_symsi 8,counter_symsi_8.pg,82,180,81,py-zlk,ok,0.2734,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_symsi,8,tools/oink/build/counter_symsi 8,counter_symsi_8.pg,82,180,81,dtl-pin,ok,0.0144,0.010105,1,26,3,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,8,tools/oink/build/counter_symsi 8,counter_symsi_8.pg,82,180,81,idtl-pin,ok,0.0244,0.020047,1,51,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,16,tools/oink/build/counter_symsi 16,counter_symsi_16.pg,162,356,161,oink-uzlk,ok,27.0119,27.005606,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_symsi,16,tools/oink/build/counter_symsi 16,counter_symsi_16.pg,162,356,161,py-zlk,timeout,120.1042,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_symsi,16,tools/oink/build/counter_symsi 16,counter_symsi_16.pg,162,356,161,dtl-pin,ok,0.0916,0.085393,1,50,3,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,16,tools/oink/build/counter_symsi 16,counter_symsi_16.pg,162,356,161,idtl-pin,ok,0.1741,0.168927,1,99,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,32,tools/oink/build/counter_symsi 32,counter_symsi_32.pg,322,708,321,oink-uzlk,timeout,120.0999,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_symsi,32,tools/oink/build/counter_symsi 32,counter_symsi_32.pg,322,708,321,dtl-pin,ok,0.6655,0.660178,1,98,3,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,32,tools/oink/build/counter_symsi 32,counter_symsi_32.pg,322,708,321,idtl-pin,ok,1.5886,1.583302,1,195,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,64,tools/oink/build/counter_symsi 64,counter_symsi_64.pg,642,1412,641,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_symsi,64,tools/oink/build/counter_symsi 64,counter_symsi_64.pg,642,1412,641,dtl-pin,ok,6.3084,6.304067,1,194,3,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,64,tools/oink/build/counter_symsi 64,counter_symsi_64.pg,642,1412,641,idtl-pin,ok,14.1474,14.143005,1,387,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,128,tools/oink/build/counter_symsi 128,counter_symsi_128.pg,1282,2820,1281,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_symsi,128,tools/oink/build/counter_symsi 128,counter_symsi_128.pg,1282,2820,1281,dtl-pin,ok,64.9065,64.900923,1,386,3,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,128,tools/oink/build/counter_symsi 128,counter_symsi_128.pg,1282,2820,1281,idtl-pin,ok,156.5812,156.573728,1,771,3,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,256,tools/oink/build/counter_symsi 256,counter_symsi_256.pg,2562,5636,2561,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_symsi,256,tools/oink/build/counter_symsi 256,counter_symsi_256.pg,2562,5636,2561,dtl-pin,timeout,400.1010,,,,,,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_symsi,256,tools/oink/build/counter_symsi 256,counter_symsi_256.pg,2562,5636,2561,idtl-pin,timeout,400.0988,,,,,,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
