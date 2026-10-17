@@ -2700,3 +2700,11 @@ Next, for whoever continues:
   (§22v). Show that the retreats caused by earlier relevant steals never uncover the same tangle at the same step.
 - (b) (FIRED-R) on LONG phases, by climbing from spp/h4 starts.
 - (c) (CTX⁺) needs a potential that pays for the rebuilt distraction runs after a level-set jump (§22p).
+Ledger addendum (16:36Z by date -u):
+- The long-phase (FIRED-R) climb from h4_def11_oink_n28 (Oink order) did NOT stay long. Its best instance has a phase of
+  5 searches (the start had 12): 18 tangles fire at one context with |R| = 22, out of 26 tangles in the whole run.
+  Pinned Oink found 3 dominions and 26 tangles in 7 iterations, verified.
+- So item (b) of "Next" is still open. A long-phase test needs a fitness that keeps S large. It is not saved as an
+  instance.
+- (CTX⁺) climbs: 12 first-difference contexts, reached from spp22 (stable) and from spp25 (Oink). The best instance is
+  saved as ctx12_oink_n40.
