@@ -1612,3 +1612,33 @@ lengths 5, 3, 5, 6. (SPP) needs a reason why the epochs' total stays ≤ |G'|, i
 re-absorption is paid by vertices the reset settles. No such reason is known; the per-context results of §13-§18 (RES
 changes at one context are DEF or LRN changes, up to 11 at one ideal-stable context) say a reset count per context is not
 constant, so a proof must use the global phase.
+
+### 21e. More "settling" forms (DEAD), the two phase mechanisms, resets are renewable on DTL runs (00:05Z by date -u)
+- Hard families (Python A_DTL, both order data, identical): tc 4/8/12: S = 3 (|G'| 68/232/492); tc+ 3/5/7: S = 4/6/8
+  (|G'| 54/180/434); counter_symsi 4/6: 3; counter_rr 4/6: 2; counter_core, _dp, _m, _ortl, _qpt, _rob (sizes 4/6, 3/4): 1.
+- Further candidates (C5, Oink order; stable in brackets):
+  | candidate | failures |
+  |---|---|
+  | the set of stored tangles attracted anywhere in the search grows; its vertex union grows | 467 / 246 of 990 |
+  | (LR-SETTLE) some vertex of the learning regions of s is in no later learning region | 26 of 83 (spp_final_n20/n40, chain) |
+  | (LT-SETTLE) the same with learned tangle vertices | 26 of 83 |
+  | (CL) every transition moves some vertex to a lexicographically earlier full tree position | 159 of 990 (157 of 957) |
+  So no literal "each search settles a vertex" holds. spp_final_n40's long Odd phase (19 searches) settles nothing in 17
+  of them (LR-SETTLE and LT-SETTLE fail at searches 0-16).
+- Two mechanisms in the long phases (dtl_spptree.py, Oink order). (A) ABSORPTION (spp_final_n20, n30, the chain): a fixed
+  prefix of −1 pieces, then a stable learning piece that loses the tangles learned before. (B) DOMINION BUILDING
+  (spp_final_n40, Odd): a long run of −1 distraction pieces (up to 20) and one stable piece at the end whose tangles at the
+  same tops (17, 22) grow to most of G' until the last search finds the dominion; 17 of 18 transitions are depth-0 RES
+  changes. The tangles at one top are not ⊆-monotone (top 22: vertex 12 in at search 6, out at 8).
+- Resets re-open and the re-opened vertices are re-learned (experiments/alg/dtl_reopen.py; depth-0 removal index up =
+  opened, down = closed; re-learned = in a tangle learned later in the phase), Oink order:
+  | instance | S / G' | closed | opened | opened, then re-learned |
+  |---|---|---|---|---|
+  | spp_final_n20 | 19/20 | 87 | 38 (3 resets: 18, 14, 6) | 33 |
+  | spp_final_n30 | 19/30 | 51 | 22 (1 reset) | 14 |
+  | spp_final_n40 (Odd) | 19/40 | 303 | 110 | 98 |
+  | red spp19_oink_n30 | 19/30 | 129 | 46 | 28 |
+  So the renewable reset that a counter needs DOES occur on actual DTL runs. The phases stay short because absorption
+  closes several vertices per search (spp_final_n20: 87 closings in 18 transitions), not because resets are impossible.
+  The chain (21b) closes exactly one vertex per search. Attack recipe (sent to the Lead): a chain-like epoch (one closing
+  per search) that a reset re-opens wholly and that then needs new tangles (new vertex sets).
