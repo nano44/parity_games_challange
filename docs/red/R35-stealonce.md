@@ -49,3 +49,13 @@ fired tangle is later relevantly stolen by a higher new top. It is not DE19's up
 - The §23b implications are not refuted: every premise fails here together with its conclusion.
 - Not claimed: anything about (FALL), (FIRED-R), (CTX⁺) or GAP-A itself. The counts are 2 steals per triple and 7 refires,
   so no super-polynomial family. The run is complete and verified.
+
+## Addendum (19:31Z by date -u; heading first pushed as 19:35Z in 248a93f, a guess): (NO-RETURN) of GAP-A-M §23d on the same instance
+- L-ALG experiments/alg/dtl_firedlong2.py UNMODIFIED (l-alg 9b621aa2), RM_EXCL=1 RM_LIGHT=1 RM_DV=0:
+  - FL_ALL=1 (every context visited ≥ 2 times), stable: "NO-RETURN per (step, tangle): FAILS" 7, holds 35; "max distinct
+    tangles fired at one step (round, top) in a phase: 4" (§23d's corpus max was 3); max fired 14 at one context.
+  - FL_ALL=1, oink: NO-RETURN holds 9; per-step max 1.
+  - Default long-phase filter (S ≥ 2|R|), stable: 3 counted contexts, nothing fired; NO-RETURN holds 3.
+- Reading (L-RED): the NO-RETURN failure is the same event as the NO-REFIRE failure (tangle 7 at (4, 18) stops firing at search 3
+  and fires again at search 4). As a statement about every step of A_DTL, (NO-RETURN) is false under the stable datum. In the
+  long-phase contexts §23d measures it is untested by this instance, since none of those contexts fires anything.
