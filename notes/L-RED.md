@@ -1,4 +1,4 @@
-# L-RED notebook (independent adversary). Successor 5 (Opus 5.5, owner D8) from 2026-10-17 11:16Z (date -u); successor 4 (04:22Z-11:06Z) before
+# L-RED notebook (independent adversary). Successor 6 (Opus 5.5, owner D8) from 2026-10-17 18:55Z (date -u); successor 5 from 2026-10-17 11:16Z (date -u); successor 4 (04:22Z-11:06Z) before
 Previous: session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, parked 15:20Z); before it session_0117Yy21tGGz9s1zzLfBdUKC (Fable).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh > file 2>&1; echo $?`.
@@ -52,6 +52,17 @@ Status: HANDOVER (box 7 successor 5 parks at ~580k; see Resume point). Older sta
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-17 19:33Z (date -u), successor 6 (Opus 5.5), box 8 (Lead GO 19:01Z, to ~01:00Z; check-in ~21:30Z).
+DONE this box: handover check fda109c; R35 (6af3a14f, addendum 248a93f3/d11271d9): stealonce_viol_n76 (sha1 32c2da0b) =
+stealer_viol_n76 with 3->31 replaced by 3->64 and 20->31 added; stable order: STOLEN-PERM FAILS 7, NO-REFIRE REFIRES 7,
+STEAL-ONCE* max 2, STAYS-MET FAILS 7 (dtl_rootmono + dtl_stealtrace unmodified, l-alg 9b621aa2); NO-RETURN FAILS 7 (dtl_firedlong2
+FL_ALL=1). Oink order holds. Found by hand edit (r64) + one-edge neighbourhood scan (scratch nbscan.py) on permgap near2.
+Tools: root/permgap.py (graded STOLEN-PERM near-miss; PERMFIT=stealk = STEAL-ONCE* k), root/steptrace.py (per-step tracer).
+RUNNING (scratch, LALGR_DIR = <scr>/lalg detached l-alg 9b621aa2): k25001 (stealk stable), k25002 (stealk oink), p24002 (permgap
+oink from stealer_viol_n76), l21001 (firedlong oink from spp25_oink_n40, 0.222).
+NEXT: (2) long-phase FIRED-R gadget; (3) CTX+ n-trend.
+
+## Resume point (successor 5 handover, history)
 2026-10-17 17:54Z (date -u) HANDOVER, successor 5 (Opus 5.5, session_01DT8bvW9MGLgZURmnwB2JAc), box 7 (Lead GO 11:32Z).
 DONE this box (all pushed, all pinned in check.sh with sha1, both orders, pinned Oink verified):
 - R30 (MEET) FALSE meet_viol_n17 = DE15. (PHASE-IN) = phase completeness (dtl.cpp 1068, 1106-1121), Lead confirmed.
@@ -278,6 +289,10 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
 - GAP-C: (alpha) (straddling tangle leaving the lowest region open) never produced; proxy fitness "alpha" in dtl_search.py.
 
 ## Things only I know
+- (box 8) In phase 1 of the stealer_viol family the searching player is Odd (p = 1): tops are odd-priority vertices, and an
+  Odd-owned vertex joins a region through ONE edge into it. Check p before reasoning about attraction.
+- (box 8) A one-edge neighbourhood scan around a near-miss (scratch nbscan.py: delete/add each edge, flip the owner at chosen
+  vertices) found the R35 kill in ~15 min where random climbs had found nothing. Use it before long climbs.
 - (box 7) Oink renumbers vertices with an UNSTABLE std::sort by priority (game.cpp:492-495), NOT (priority, id): ids in
   -t -t traces map to file ids only via experiments/red/meet/omap.cpp (same libstdc++; checked on meet_viol_n17/n29).
 - (box 7) Killing a ucompose sampler or a rootfit climb leaves its dtl_rootmono subprocess running with ppid 1: after
