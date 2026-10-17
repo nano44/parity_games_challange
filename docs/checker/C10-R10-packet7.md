@@ -171,3 +171,9 @@ History: a907c46 is an ancestor of 515ed17. Word diff of docs/agents/R10-draft.m
   - Suggest adding "(see POST-LANDING NOTE: 2n of record)" after "at most n per input" in (b).
   - Suggest adding "(see POST-LANDING NOTE: doubled display of record)" after the (c) display.
 - Nothing in the note goes beyond R2-P7 §7 and R-P7 §C2.
+
+## Addendum 3: landed R10 and the Lead's (1) of 16:08Z
+- The Lead's item (1) (the R9 note and the (a) pointer against R2-P7 §7 and R-P7 §C2) is Addendum 2 above, at checker
+  e62a9ec: PASS, with N-7 recommended.
+- Landed RESULTS R10 at trunk 369b4bf against R10-draft.md at 515ed17: identical except for the heading's landing stamp
+  ("CHECKER PASS (docs/checker/C10-R10-packet7.md, checker 383533b + re-diff 8f0f4db)") and one trailing blank line. PASS.
