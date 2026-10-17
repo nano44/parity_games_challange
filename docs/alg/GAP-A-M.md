@@ -2796,3 +2796,73 @@ With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) /
   through t′, or through a vertex dependent on t′. Then by EXACT* and PREFIX-MONO-X*, w leaves P(σ) only after a relevant steal
   of a tangle it depends on. Upward capture keeps w inside P(σ). So (STOLEN-PERM) needs: the stealing vertices of a steal never
   depend on a fired tangle that is later relevantly stolen.
+
+23c. Shrink-vertex analysis and (DEP-SAFE) (DATA; L-ALG succ. 7, 18:34Z by date -u; experiments/alg/dtl_shrinkdep.py @ l-alg b45bd87)
+- Tool. Model and visits are those of dtl_rootmono.RM with RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0. It adds an ATTRACTION FOREST
+  per best_vertices region step: each attracted vertex gets one parent, either ('v', popped vertex) or ('t', fired tangle,
+  popped trigger). path(w) is the set of fired tangles on w's chain to the region top.
+- Data sets:
+  - corpus: 254 committed .pg under experiments/ with n < 80, plus stealer_viol_n76;
+  - cross unions: UNIONS=600 SEED=11 UM_CROSS=3 NMAX=32, corpus included.
+  - Both order data. No INCOMPLETE.
+- Results (Oink / stable):
+
+  | set | (DEP-SAFE) holds | lost vertices A / B / C |
+  |---|---|---|
+  | corpus | 154/154 / 169/169 | 815 / 388 / 816 and 1,219 / 477 / 973 |
+  | cross unions s11 | 399/399 / 447/447 | 2,688 / 1,045 / 1,697 and 3,689 / 1,028 / 2,209 |
+
+  - A: a tangle on path_x(w) is relevantly stolen at its own step.
+  - B: w's region top is no longer a region top.
+  - C: other.
+  - A' (a path tangle plainly stolen, not fired) never occurs.
+- Reading of C, checked on two cases (scratch script; round 5 in both):
+  - stealer_viol_n76 (stable), |R| 75, visits 2→3, region top 14: path tangle 22 = {22, 24} with escapes {0, 4, 6, 14, 15, 16}.
+    Escape 16 is in P_x and not in P_y, and is not in the region, so tangle 22 cannot fire at y.
+  - climbs_1016/b_best_s33 (Oink), |R| 20, visits 1→2, region top 19: tangle 6 = {6}, escape 5, in P_x and not in P_y.
+  - So the cause is an ESCAPE. A tangle escape (or, by the same rule, an opponent successor) that lay in the prefix above at
+    x is back in Gx = CurR at y (dtl_pyref attractTangle lines 95-97, attractVertices line 74). The cause is thus another,
+    higher loss. Only these two C cases were checked; the rest are unclassified. The single-parent forest cannot
+  see this, so roughly 40% of losses (C) are cascades through escapes.
+- (DEP-SAFE) "no path tangle of a stealing vertex is relevantly stolen later" holds on 1,169 relevant steals (DATA). The
+  forest misses the escape cascades, though, so (DEP-SAFE) does not by itself imply (STOLEN-PERM).
+  The route needs an escape-aware dependency:
+  - w depends on every fired tangle on its chain, and on every prefix vertex that hides an escape of a tangle or of an
+    opponent vertex on its chain.
+  - Then: "a stealing vertex never depends on a later-stolen tangle or on a later-lost escape holder". SKETCH, not measured.
+- Status: (STOLEN-PERM), (STAYS-MET) and (STEAL-ONCE*) remain DATA. No proof. No kill.
+
+23d. (FIRED-R) on LONG phases (DATA; L-ALG succ. 7, 18:47Z by date -u; experiments/alg/dtl_firedlong2.py)
+- Filter: L-RED's, from experiments/red/root/firedlong.py (l-red 2486288). A context counts in a phase of S searches if it is
+  visited ≥ 2 times and S ≥ 2|R|. Same model and fired sets as dtl_rootmono.RM with RM_EXCL=1 RM_LIGHT=1 RM_DV=0.
+- Data sets:
+  - corpus: as in §23c, plus fall3_n76 and fall4_n116 (l-red);
+  - mixed unions: UNIONS=900 SEED=1 NMAX=32, corpus included.
+  - Both order data. No INCOMPLETE.
+- Results:
+
+  | set | order | counted contexts | max fired/\|R\| | max fired | max per step | NO-RETURN |
+  |---|---|---|---|---|---|---|
+  | corpus | Oink | 327 | 0.333 (3 at \|R\| 9, spp_n20) | 3 | 3 | holds 327 |
+  | corpus | stable | 316 | 0.25 | 2 | ≤ 2 (1 in the 25 printed rows) | holds 316 |
+  | mixed | Oink | 2,088 | 0.375 (3 at \|R\| 8, union758) | 3 | 3 | holds 2,088 |
+  | mixed | stable | 2,132 | 0.25 | 2 | ≤ 2 (1 in the 25 printed rows) | holds 2,132 |
+
+  - NO-RETURN: a tangle that fired at a step (round, top) and then did not fire there at a later visit where the step
+    exists never fires there again in the phase.
+- Birth of the fired tangles in these long-phase contexts. The birth arena is the sptl arena R′ of the extraction.
+
+  | set (Oink / stable) | born in this phase, R′ ⊆ R | R′ ⊋ R | R′ incomparable with R | born before the phase |
+  |---|---|---|---|---|
+  | corpus | 13 / 7 | 2 / 0 | 12 / 7 | 0 / 0 |
+  | mixed | 26 / 17 | 3 / 3 | 61 / 46 | 17 / 8 |
+
+  Most fired tangles are learned in OTHER branches of the recursion (incomparable arenas), so a count of the tangles learned
+  inside R does not bound #fired(R).
+- Reading. Long phases (S ≥ 2|R|) exist only for small contexts here (|R| ≤ 9, S ≤ 25). There the fired count stays ≤ 3,
+  well below L-RED's best long-phase ratio of 0.40. This is weak evidence that the fired set does not grow with phase length,
+  but the filter selects contexts too small to test growth.
+- Candidate sharp statement (DATA, being measured on all contexts): (FIRED-STEP) the number of distinct tangles that fire at
+  one step (context, round, top) in a phase is bounded by a constant c. With the (|R| + 1)·|R| steps per context (R11 (d)) it
+  gives (FIRED-R) with #fired(R) ≤ c(|R| + 1)|R|. It has the same per-step shape as (STEAL-ONCE*). With NO-RETURN, each
+  (step, tangle) fires on ONE interval of visits. So (FIRED-STEP) asks how many times a step can switch to a NEW tangle.
