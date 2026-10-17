@@ -14,6 +14,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   new steals; same tangle stolen at both. (FALL) <= (NS-COUNT). Tool docs/referee/scratch/p7probe.py.
 - R-P7 §C (1abe1d7): agree with R2-P7; ACCEPTED R2's G-P7-c2 (e*-pairs need not be consecutive visits; F_R <= 3 N_R) and
   corrected my R-P6 A4 (factor 2 in R9's per-context budget). Lesson: never assume a context is visited once per search.
+- R-P8.md (packet 8; pin a907c46): EXACT* SIGN (corollary of EXACT), PREFIX-MONO-X* SIGN, corollary SIGN WITH GAPS (G8-1
+  factor 3), §22u chain valid as conditional with factor 3. Tool docs/referee/scratch/p8probe.py.
 - Lesson: Lemma 1.2 assumes Q = Z_0; Dom (878-890, 962-991) and bv regions push only the top. Check the push pattern.
 
 ## HANDOVER (parked 2026-10-17 ~12:20Z on the Lead's instruction; context ~520k; produced on Opus 5.5 under D12/L33)
