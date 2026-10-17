@@ -1734,7 +1734,13 @@ Consequences. DV* depends on T only, so in one phase (T only grows, G fixed) it 
 non-decreasing, values in {1..n, INF}, hence it changes at most |V_0|·(n + 1) ≤ n(n + 1) times per phase. PROVED.
 DATA (dtl_dvstar.py): on spp_final_n20, spp_chain_up_n43, spp_final_n40 (Oink order) DV* moves in only 10 of 83
 transitions (0 falls, as proved); on C5 it moves in 465 of 990 transitions (Oink order) and 464 of 957 (stable), 0 falls:
-exactly the transitions where the author's DV moves (21f: 990 − 525, 957 − 493). So DV* bounds a minority of the searches; the rest (the
+exactly the transitions where the author's DV moves (21f: 990 − 525, 957 − 493).
+DV = DV* as functions (DATA, 00:42Z by date -u; experiments/alg/dtl_dveq.py): equal on all 1,408 DTL-learned tangle sets of
+the C5 phases (Oink order) and on 20,000 random (game, genuine tangle set) pairs (n ≤ 11, re-indexed by priority). If
+DV = DV* holds in general, Lemma DV-MONO follows from DV*-MONO. Why the GAP scenario of 21f is rare (reading): a difference
+needs a tangle τ outside Z whose escapes are all in Z before the sweep reaches τ's top priority; in round 1 every p-priority
+vertex of τ is itself a top and its region pulls τ in vertex by vertex, so a difference needs a later round in which
+τ's tops were already dropped as distractions. Not proved. So DV* bounds a minority of the searches; the rest (the
 absorption and later-piece changes of 21d/21g) leave DV* (and DV) unchanged. Relation to the author's
 DV (21f): the same rounds with Oink's re-check order; DV* removes the GAP by construction.
 
