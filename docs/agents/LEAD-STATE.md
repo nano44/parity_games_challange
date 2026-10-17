@@ -467,3 +467,4 @@
 - 13:41Z (date -u) merged l-red (R31 fall3_n76). Lead re-ran fall3_n76 (sha1 a85133ec): Oink 3 dominions, 56 tangles, 10 iterations, verified; dtl_rootmono.py max 3 descents per context, both orders. R9 draft G-R9-5 updated; CHECKER told.
 - 13:44Z (date -u) merged l-alg 2b20f09 (§22n packet-6 rewordings per referee; §22f display Dom term +1). L-ALG slip: 13:18Z message read 19 min late (blocking wait loop); fix: waits <5 min. fall3_n76 already on trunk (merged b55c144).
 - 13:47Z (date -u) merged checker a9258e6 (C9 PASS; p6probe re-run identical; fall3_n76 re-run by CHECKER too). Applied N-1..N-5 and fall3 wording (narrowing/citation only); LANDED RESULTS R9. CHECKER parked.
+- 13:49Z (date -u) GAPS: GAP-A row restated per R9; G-DOM closed (absorbed into CTX+).
