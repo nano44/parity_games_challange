@@ -3,6 +3,7 @@ For consecutive searches s, s+1 of a phase, take the first differing best_vertic
 for SHRINK/GROW the context itself changed, then the PARENT-level context is used: the context of the last common call
 before it at depth - 1, or G' at depth 0) and compute DV*_R (dtl_dvstar.dvstar on the subgame R: edges and escapes outside R
 ignored, tangles inside R only) with the tangle sets T_s and T_{s+1}. Classes: LRN (DV*_R moves) / DEF (DV*_R equal).
+DVC_PHI=1 adds the direction of the depth-0 removal-index sum PHI0 (dtl_idx0.py) to each class.
 DTL_ORDER=oink | stable. Usage: dtl_dvctx.py G.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
@@ -42,7 +43,12 @@ if __name__ == "__main__":
                 tl0 = [(C, esc) for i, (C, esc, pa) in born.items() if i < a["t0"] and pa == p and C <= G]
                 tl1 = [(C, esc) for i, (C, esc, pa) in born.items() if i < b["t0"] and pa == p and C <= G]
                 cls = "LRN" if ctxdv(d, R, p, tl0) != ctxdv(d, R, p, tl1) else "DEF"
-                kk = (key[0], "d0" if len(pos) == 1 else "deep", cls); tab[kk] = tab.get(kk, 0) + 1
+                kk = (key[0], "d0" if len(pos) == 1 else "deep", cls)
+                if os.environ.get("DVC_PHI") == "1":           # add the direction of PHI0 (dtl_idx0) at this transition
+                    import dtl_idx0 as I0
+                    pa_ = sum(I0.idx0(a["calls"], G).get(v, 0) for v in G); pb_ = sum(I0.idx0(b["calls"], G).get(v, 0) for v in G)
+                    kk = kk + ("PHI0 falls" if pb_ < pa_ else "PHI0 same" if pb_ == pa_ else "PHI0 RISES",)
+                tab[kk] = tab.get(kk, 0) + 1
                 fr = frozenset(R); ctxs.setdefault(fr, [0, 0])
                 if cls == "LRN": ctxs[fr][0] += 1
                 elif key[0] == "RES": nd += 1

@@ -1794,3 +1794,15 @@ Per long phase (dtl_dvctx.py DVC_V=1, Oink order): distinct first-difference con
 So the longest phases have NO deficit step: they are absorption chains (A-type) or LRN runs over many contexts (B-type,
 spp_final_n40). The deficit (DEF) steps of the corpus (138) sit in the h4_* / lex_* / cm_* instances, whose phases are
 short (≤ 11). For (SPP) the two terms that the climbs push are #ABS (≤ |G'| − 1 so far) and n(n+1)·contexts (contexts ≤ 12).
+Follow-up (00:55Z by date -u; dtl_phidv.py, dtl_dvctx.py DVC_PHI=1; C5, Oink order, 990 transitions):
+- (PHI-DV) "PHI0 rises only when the root DV* moves": DEAD, 69 counterexamples (stable order 60); first:
+  instances/climbs_1016/nest_nest_s43.pg, Odd's searches 0 → 1, PHI0 122 → 124 with DV* unchanged.
+- (ABS-mono), DATA: PHI0 (the depth-0 removal-index sum, range ≤ n²) NEVER rises at a transition whose first piece-level
+  difference is not a RES at a depth-0 piece: 0 rises in 280 such transitions (depth-0 SHRINK 106: all fall; deeper GROW
+  145: 107 fall, 38 same; deeper SHRINK 22 and deeper RES 7: same). It rises at 184 of 710 depth-0 RES transitions: 139
+  LRN (the ideal distance at that context moves) and 45 DEF.
+- What (ABS-mono) would give (reading): between two depth-0 RES transitions PHI0 does not rise and it falls at every depth-0
+  absorption, so S − 1 ≤ (#RES_d0 + 1)·(n² + 1) + #(transitions with PHI0 unchanged, all deeper), with #RES_d0 ≤ #LRN + #DEF
+  and #LRN ≤ n(n + 1)·(distinct contexts) (PROVED). The deeper transitions would need the same argument one level down (a
+  PHI at the recursion's context), which multiplies over the depth: the nested-counter core again, now with explicit
+  per-level polynomial budgets for everything except DEF steps and context counts.
