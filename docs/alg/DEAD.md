@@ -210,3 +210,9 @@ search's only D-touching tangle straddles D's boundary):
 Unaffected: R4 (P-KT for P pieces, given (YZ)); R5 (packet 2); T-step data on this instance (the T piece that breaks KT
 has a recursion that learns inside the core).
 Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
+- (MEET) "every search with W_p(G′) ≠ ∅ learns a tangle meeting W_p(G′) or finds a dominion": DEAD (RESULTS DE15, L-RED
+  R30). Instance experiments/red/carry/instances/meet_viol_n17.pg (n = 17, sha1 ab329297; pinned Oink verified, 6
+  iterations; L-ALG re-run 11:58Z by date -u, dtl_meetd.py both orders). Obstruction: a T piece eats a D-vertex and cuts the
+  opponent's escape; the next S piece attracts the rest of D into a closed region whose core cycle lies in W_{1-p}, and only
+  that core is learned. (PHASE-IN) survives but is equivalent to run completeness (dtl.cpp 1106-1121), so no single-search
+  progress statement toward D survives.
