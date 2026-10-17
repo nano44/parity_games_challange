@@ -134,3 +134,24 @@ fixed depth-0 context of A_DTL.
   (dtl_staterevisit.py, a pure DEF cycle). On actual DTL runs no full-state revisit has been seen (dtl_revisit.py §18j:
   0 in 296 / 301 context runs), and (LEX-R) and (U-MONO_DTL) stand as DATA. Both are lexicographic only, and a proof of
   either must use DTL's learning order.
+
+## Proof-route dead ends for DTL GAP-A, (SPP): per-phase potentials — DEAD (2026-10-17 box 5, 00:33Z by date -u; produced on Opus 5.5)
+Context: docs/alg/GAP-A-M.md §21. (SPP) = "every phase of A_DTL has at most |G'| searches" (DATA; tight up to one,
+experiments/alg/instances/spp_chain_up_n43.pg). Wanted: a quantity that every non-last search of a phase strictly moves.
+- Dead on actual A_DTL runs (C5 corpus = experiments/alg/instances, climbs_1016, experiments/red/**; Oink order, failures
+  out of 990 transitions; the long phases spp_final_n20/n30/n40 and spp19_oink_n30 fail every one):
+  union of tangle vertices (210), tangle tops (281), (top, vertex) incidences and "new vertex for its top" (129 each),
+  fixed-input attractor sums PSI1-PSI5 (24-44 of 37-101 on the long phases), settled piece labels (25 of 34), the depth-0
+  removal-index sum PHI0 (300) and vector LEX0 (323), the set of tangles used in a search (467) and its vertex union
+  (246), (LR-SETTLE)/(LT-SETTLE) (26 of 83), (CL) "some vertex moves to an earlier tree position" (159).
+- Dead: the author's own per-search expectation (dtl.cpp computeDistanceValues; the trace check "nothing changed!" is
+  vacuous because it compares uninitialized arrays): the root distance values stay unchanged after 525 of 990 tangle-learning
+  searches, and after all 41 of spp_chain_up_n43 (pinned Debug Oink agrees).
+- Dead: a constant bound on tangles per top per phase (13 at one top, spp_final_n40); sharper forms of (SPP):
+  S ≤ P + c and S ≤ d' (spp_final_n20, Oink order: S = 19, P = 14, d' = 13).
+- Exact obstruction: a phase is a nested counter. The first difference between consecutive searches is a strictly larger
+  attractor at an EARLIER call (First-Difference Lemma, §21d): absorption into earlier removals (one or more vertices per
+  search) alternates with RES changes of depth-0 results, which re-open absorbed vertices; the re-opened vertices are then
+  re-learned in new tangles (spp_final_n20: 38 re-opened, 33 re-learned). Any quantity that ignores the reset structure fails
+  at the resets; any T-only quantity at the root (DV, DV*) is monotone but does not see absorption in later pieces.
+- Kept: (SPP) as DATA; First-Difference Lemma and DV*-MONO PROVED; DV-MONO SKETCH + GAP (DATA 0 falls).
