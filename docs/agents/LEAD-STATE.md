@@ -355,3 +355,4 @@
 - 02:11Z Lead: L-ALG: gapb duplicate is in a search with W_p empty (harmless for Lemma K); NO-ORPHAN-W routed to L-RED.
 - 02:15Z Lead: merged l-red feb5eeb (W_p filter: gapb_dup_n20 dupW=orphW=0; NO-ORPHAN-W not refuted). L-RED context ~500k: continue to the ~04:30Z equal-step table, then successor if past ~600k.
 - 02:36Z Lead: merged l-alg cd1a62e (K-in, TW, NO-ORPHAN-W DATA); routed to L-RED with fitness order.
+- 03:04Z sweep: no overage (seven_day allowed_warning); Lead $193.6 (427k); L-ALG running (metadata stale); L-RED idle on climbs (547k, $32.1; equal-step batch cut to 500 steps; handover at the ~04:30Z table if past ~600k). Merged l-alg 8077456 ((PEEL) dead), l-red 11dea27.
