@@ -387,3 +387,4 @@
 - 07:04Z sweep: no overage (seven_day allowed_warning); Lead $207.9 (662k); L-ALG succ. 6 running (metadata 144k, likely stale; reducing YZ/WM_c1 to straddling tangles); L-RED succ. 4 idle between monitors (450k, $20.0; fast burn, likely ~600k near 09:30Z, before box end 12:30Z: plan successor or early park then). No unmerged lane commits.
 - 07:05Z Lead: WATCHDOG 07:03Z: Lead ctx 662k (+56k/h); automatic compaction handles the Lead (state in repo); no action.
 - 07:14Z Lead: merged l-alg 35b3f96; verified YZ code reading (dtl.cpp 136-138, 690-708, 961-976); FM/YZ routed to L-RED.
+- 07:18Z Lead: merged l-red eb7a58e; YZ/FM climbs 9711/9712 started; corpus 0 bad in 148 files; KT plateau (1 of 9 c-levels survive a P piece, no break); K-in samplers no hit.
