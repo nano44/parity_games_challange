@@ -1606,6 +1606,8 @@ First-Difference Lemma (PROVED, reading; A_DTL, any ω). Let s, s+1 be consecuti
 (iii) Hence the difference is caused by tangles that s learned AFTER e in its call order, and s+1 learns only after e.
     So learning feeds back to an earlier point of the computation; the search log rises lexicographically (entries
     compared by ⊆ at the first difference). This is injective in time but gives no polynomial bound by itself (counter).
+Mechanical check (experiments/alg/dtl_fdlcheck.py, box 5): (ii), (iii) and (iv) hold on all 990 (Oink) / 957 (stable)
+transitions of C5, 0 violations; check.sh runs it on three long phases.
 DATA for (ii): the first differing tattr is in best_vertices (threshold loop: Oink 642, stable 605; regions: 266, 269) or in
 the −1 attractor of search_rec (41, 42), never in sptl or Dom(V, R), in all 949 (Oink) / 916 (stable) transitions (counted
 over consecutive pairs incl. into the last search). Piece level (dtl_piecediff.py; first differing best_vertices call by
