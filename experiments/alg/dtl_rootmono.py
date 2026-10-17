@@ -108,7 +108,7 @@ def where(root, k_full):
 
 
 if __name__ == "__main__":
-    phrows = []; badrows = []; seqrows = []; ctxrows = []; fdcrows = []; descrows = []; recrows = []; succrows = []; ifdrows = []; nsrows = []; rsrows = []
+    phrows = []; badrows = []; seqrows = []; ctxrows = []; fdcrows = []; descrows = []; recrows = []; succrows = []; ifdrows = []; nsrows = []; rsrows = []; firedrows = []
     sys.setrecursionlimit(100000); st = {"dropped": 0, "kept: differs": 0, "kept: identical but extracts": 0}; shown = 0
     for f, g in ST.games(sys.argv[1:]):
         d0 = FD.P.X.build(g); d = RM(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.run()
@@ -350,6 +350,10 @@ if __name__ == "__main__":
                 for u, w in zip(c0, c0[1:]): succ_.setdefault(u, set()).add(w)
             if succ_:
                 ms = max(len(v_) for v_ in succ_.values()); succrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), ms, len(succ_), len(ph) - 1, len(ph[0]["G"])))
+            if os.environ.get("RM_EXCL"):
+                for key_, vl in visits.items():
+                    fired_all = set().union(*[set().union(*rc.get("fired", {}).values()) for _, rc in vl]) if vl else set()
+                    if len(vl) >= 2: firedrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), len(fired_all), len(key_[1]), len(vl), len(ph) - 1))
             if trip:
                 kt3 = f"NEW STEALS per (context, round, top, tangle): max {max(trip.values())}"; tab[kt3] = tab.get(kt3, 0) + 1
             if rtrip:
@@ -394,6 +398,9 @@ if __name__ == "__main__":
         phrows.sort(key=lambda r: -r[1])
         print("phases with dirty root transitions (file, dirty, root transitions, transitions, |G'|):", phrows[:8])
         print("phases with a dirty root transition:", len(phrows), "max dirty per phase:", max(r[1] for r in phrows), "max dirty/|G'|:", round(max(r[1] / r[4] for r in phrows), 3))
+    if firedrows:
+        firedrows.sort(key=lambda r: -r[1] / max(1, r[2])); print("distinct tangles fired at a context over a phase (file, tangles, |R|, visits, transitions):", firedrows[:8])
+        print("max tangles/|R|:", round(max(r[1] / max(1, r[2]) for r in firedrows), 2), "max tangles/visits:", round(max(r[1] / r[3] for r in firedrows), 2), "max tangles:", max(r[1] for r in firedrows))
     if rsrows:
         rsrows.sort(key=lambda r: -r[1]); print("RELEVANT new-steal visits per context (file, max per context, total, transitions, |G'|):", rsrows[:10])
     if nsrows:

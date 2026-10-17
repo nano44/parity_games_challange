@@ -2588,3 +2588,19 @@ RM_EXCL=1):
   falls, at different (round, top).
 - Consequence: #new-steal visits per context ≤ (n + 1)·n·|T_phase|, but |T_phase| ≤ n·S (Lemma W), which is circular.
   (STEAL-ONCE) would need a bound on the tangles that can be stolen at a context independent of S.
+
+22u. (FALL) ⇐ (STEAL-ONCE) ∧ (FIRED-R): two data statements, no S in them (15:23Z by date -u)
+Chain (proved parts are readings):
+- F_R ≤ #relevant-steal visits at R (§22s, PREFIX-MONO-X*).
+- A relevant steal at a visit pair is a (round, top, tangle) with the tangle in F_τ, newly met by the later prefix.
+- (STEAL-ONCE, DATA): each (context, round, top, tangle) is newly stolen at most once per phase.
+- (FIRED-R, DATA): the distinct tangles that ever FIRE in region steps at context R during a phase number at most
+  poly(|R|).
+  - Corpus plus fall3_n76, fall4_n116 and fallv_viol_n28, Oink order: at most 17 per context, and at most 0.5·|R|.
+    The maximum is climbs_1016/a_best_s31.
+  - Cross unions: running.
+- Then F_R ≤ (n + 1)·n·poly(|R|), and (FALL) holds. The circularity of §22t is gone, because (FIRED-R) counts only the
+  tangles active at R, not |T_phase|.
+- So GAP-A ⇐ (CTX⁺) ∧ (STEAL-ONCE) ∧ (FIRED-R), given STR-DET. All three are DATA only.
+- A proof of (FIRED-R) needs a structure on the tangles that fire at a fixed context: each adds at least one new vertex
+  to a region of R in some visit. I have no argument that their number is not ~ the number of searches.
