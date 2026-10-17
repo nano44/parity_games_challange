@@ -248,3 +248,7 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
   form; GAP-A-M §23d DATA): DEAD (§23h). Instance stealonce_viol_n76 (RESULTS DE20; L-RED R35 addendum l-red d11271d; L-ALG
   re-run 19:56Z, dtl_firedlong2.py FL_ALL=1, stable FAILS 7 / 42). Same event as the NO-REFIRE failure. The long-phase form is
   untested (vacuous on this instance).
+- (CTX-LAMINAR) "first-difference contexts of a phase pairwise nested or disjoint" (would give ≤ 2n − 1, GAP-A-M §23i): DEAD.
+  Instances experiments/alg/instances/ctx12_oink_n40.pg (sha1 eca1246f; pinned Oink 27 iterations verified, re-run 20:05Z) and
+  dtl_searches15_n24.pg (sha1 767e14c6; pinned Oink 16 iterations verified); dtl_rootmono.py RM_LAM=1, Oink order. Obstruction:
+  depth-0 contexts are G′ minus the earlier pieces of their search, and pieces are re-cut across searches (as for CHAIN, DE16).

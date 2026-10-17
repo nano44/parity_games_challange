@@ -3008,3 +3008,17 @@ event of q at pair j < i, a RE-STEAL.
   - dtl_stealdepth.py, more sets (20:00Z by date -u): mixed unions s1 + corpus + R35, stable: again R35's single re-steal
     (depth 1); 588 other contexts with steals have k = 1. Cross unions s11 + corpus + R35, Oink: k max 1, depth 0 (212
     contexts). "No cause" 0 everywhere.
+
+23i. (CTX⁺): (CTX-LAMINAR) KILLED (self-kill; L-ALG succ. 7, 20:05Z by date -u)
+- Candidate: "the distinct first-difference contexts of a phase (all depths) are pairwise nested or disjoint". With it,
+  #contexts ≤ 2n − 1 (laminar family), which is the C_bv part of (CTX⁺). It is weaker than (CHAIN) (DE16).
+- Test: dtl_rootmono.py with the new flag RM_LAM=1. Default output is unchanged; the flag only adds the CTX-LAMINAR counter.
+- KILLED by experiments/alg/instances/ctx12_oink_n40.pg (sha1 eca1246f; pinned Oink 27 iterations, verified; Oink order,
+  12 contexts) and by dtl_searches15_n24.pg (sha1 767e14c6; pinned Oink 16 iterations, verified; Oink order, 4 contexts).
+  Stable order on the same two files: FAILS 1, holds 3.
+  - The crossing pairs are two large depth-0 contexts of the form G′ minus the pieces removed earlier in the search. Each
+    lacks vertices the other has: e.g. on dtl_searches15_n24, {0, 1, 2, 5, 7, 9, 10, 13, 14, 15, 17, 20, 21, 23} and
+    {0, 1, 2, 5, 6, 7, 8, 9, 13, 15, 17, 20, 23}.
+- Reading. The depth-0 contexts of one search form a decreasing chain, R_i = G′ minus the pieces removed before. The
+  first-difference context of (s, s+1) lies on chain(s) (FDL: the searches agree before e*). Across searches the chains are
+  re-cut, so the contexts cross. This is the same re-cutting that killed (CHAIN). No (CTX⁺) route from set structure alone.

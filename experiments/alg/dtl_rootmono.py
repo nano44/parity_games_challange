@@ -5,7 +5,7 @@ INF if v survives to a round that returns 1 (in a −1 call every vertex is drop
 RV(s) pointwise. Transitions are classified by where the first difference e* of the reduced logs (dtl_fdlcheck.py) lies:
 root call (threshold loop / regions, with the round of e*), or later. For a failure, the first vertex whose RV falls and
 its rounds are printed. ROOT-SPLIT rows (root-call transitions): does RV fall / move, does DV* (dtl_dvstar.py, T at search start) move,
-does either root call have a deficit round (U ≠ Û, dtl_ideal.py). RM_DV=0 skips DV*. Games and env as dtl_step5stats.games (UNIONS, UM_CROSS, SEED, NMAX, RANDOM). RM_EXCL=1 records excluded tangles per region step (PREFIX-MONO-X test). RM_LIGHT=1 skips the ideal and step-deficit checks (deficit/stepdef flags are then never set). RM_ROUNDS=1 also prints the round of e*. DTL_ORDER = oink | stable. Usage: dtl_rootmono.py G.pg ..."""
+does either root call have a deficit round (U ≠ Û, dtl_ideal.py). RM_DV=0 skips DV*. Games and env as dtl_step5stats.games (UNIONS, UM_CROSS, SEED, NMAX, RANDOM). RM_EXCL=1 records excluded tangles per region step (PREFIX-MONO-X test). RM_LAM=1 adds (CTX-LAMINAR) (GAP-A-M §23i). RM_LIGHT=1 skips the ideal and step-deficit checks (deficit/stepdef flags are then never set). RM_ROUNDS=1 also prints the round of e*. DTL_ORDER = oink | stable. Usage: dtl_rootmono.py G.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import pg, dtl_fdlcheck as FC, dtl_ideal as I, dtl_dvstar as DS, dtl_step5stats as ST
@@ -428,6 +428,13 @@ if __name__ == "__main__":
                     kch = f"CHAIN of first-difference contexts at depth {'0' if dep_ == 0 else '>0'}: " + ("holds" if chain else "FAILS"); tab[kch] = tab.get(kch, 0) + 1
                     if not chain and dep_ == 0 and shown < 20:
                         shown += 1; print("CHAIN FAILS", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), "contexts (sizes):", sorted(len(c) for c in cs), flush=True)
+            if fdc and os.environ.get("RM_LAM") == "1":   # (CTX-LAMINAR), GAP-A-M §23i: first-difference contexts pairwise nested or disjoint (all depths)
+                cl_ = list({c for (_, c) in fdc})
+                lam_ = all(a_ <= b_ or b_ <= a_ or not (a_ & b_) for i_, a_ in enumerate(cl_) for b_ in cl_[i_ + 1:])
+                kl_ = "CTX-LAMINAR (first-difference contexts of a phase pairwise nested or disjoint): " + ("holds" if lam_ else "FAILS"); tab[kl_] = tab.get(kl_, 0) + 1
+                if not lam_ and shown < 40:
+                    shown += 1; bad_ = next((sorted(d.idx[v] for v in a_), sorted(d.idx[v] for v in b_)) for i_, a_ in enumerate(cl_) for b_ in cl_[i_ + 1:] if not (a_ <= b_ or b_ <= a_ or not (a_ & b_)))
+                    print("CTX-LAMINAR FAILS", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), "contexts", len(cl_), "pair", bad_, flush=True)
             if fdc:
                 nroot = sum(1 for x in kseq if x == "1")
                 kr2 = "CTX-ROOT (distinct first-difference contexts ≤ 1 + #root transitions): " + ("holds" if len(fdc) <= 1 + nroot else "FAILS")
