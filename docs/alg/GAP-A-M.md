@@ -3195,3 +3195,33 @@ structure. Reasons:
   (searches, tangles).
 - Risk: if L-RED stacks two R35 levels, depth grows with nesting, and then only (STEAL-POLY_sum) via a non-depth argument
   survives.
+
+23p. Vertex exits from a prefix: a polynomial charge that does not need constant depth (reading, unrefereed; DATA) (L-ALG
+succ. 7, 22:42Z by date -u; tool experiments/alg/dtl_prefexits.py)
+Definitions:
+- An EXIT is a triple (step σ = (r, τ), vertex w, pair m) with w ∈ P_m(τ⁺) and w ∉ P_{m+1}(τ⁺); the prefix is BEFORE τ, as
+  in G9-b1.
+- X_R is the number of exits of context R in the phase. X(σ, w) is the number of exits of w at σ.
+Lemma EXIT-CHARGE (reading; it uses only steps 1-3 of CHARGE as corrected in §23k, not the PREFIX-MONO part):
+- Every re-steal (i, q), q = (σ, t), with previous event (j, q), contains an exit (σ, w, m) with w ∈ t and j < m < i.
+- Distinct re-steals of the same q get distinct exits, because their intervals are disjoint.
+- Hence Σ_q (k_q − 1) ≤ Σ_{exits (σ, w, m)} #{t fired at σ : w ∈ t} ≤ #fired(R)·X_R.
+- So Σ_q k_q ≤ Q + #fired(R)·X_R ≤ #fired(R)·((|R| + 1)|R| + X_R).
+Consequence (reading):
+- (EXITS-POLY): X_R ≤ poly(|R|). Then (EXITS-POLY) ∧ (FIRED-R) ⇒ (STEAL-POLY_sum) for ANY polynomial bound; no constant D is
+  needed.
+- The local form (EXIT_c): X(σ, w) ≤ c for every step and vertex. It gives X_R ≤ c·|R|·(|R| + 1)|R|.
+- Caveat: an exit happens only at a pair with a relevant steal at an earlier step (local PREFIX-MONO-X*). Each such pair
+  gives at most |R|·#steps exits, so X_R ≤ N*_R·|R|·(|R|+1)|R|, and Σ_q k_q and X_R bound each other up to polynomial
+  factors. (EXITS-POLY) is therefore a REFORMULATION of the STEAL premise, not a reduction of it. Its value is that (EXIT_c)
+  is LOCAL: one vertex, one step.
+DATA (dtl_prefexits.py; RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0; corpus of 254 files plus stealonce_viol_n76,
+stealonce_both_n45 and stealer_viol_n76):
+- stable order: exits per (context, step, vertex) are 1 in 3,073 cases and 2 in 22. The value 2 occurs only on
+  stealonce_viol_n76 and stealonce_both_n45 (the DE20 instances). Max total exits per context: 3.78·|R| (fall3_n76, 287 at
+  |R| 76).
+- Oink order: 1 in 2,101 cases and 2 in 20 (only stealonce_both_n45). Max 3.43·|R|.
+- So (EXIT_2) holds on all data. (EXIT_1) is FALSE on the DE20 instances, the same event as the re-steal.
+Successor target: prove (EXIT_c) for some constant c, or a polynomial c(|R|). The question is how often one vertex can
+leave and re-enter one step's prefix. A re-entry needs the prefix above to regrow around w, which in R35 is a NEW tangle
+fired by region 66.
