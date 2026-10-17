@@ -1,0 +1,36 @@
+family,N,gen,game,n,m,d,solver,status,wall_s,solver_s,dominions,tangles,iterations,pruning,detail,cmd
+counter_ortl,2,tools/oink/build/counter_ortl 2,counter_ortl_2.pg,11,17,8,oink-uzlk,ok,0.0040,2.4e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_ortl,2,tools/oink/build/counter_ortl 2,counter_ortl_2.pg,11,17,8,py-zlk,ok,0.0334,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_ortl,2,tools/oink/build/counter_ortl 2,counter_ortl_2.pg,11,17,8,dtl-pin,ok,0.0034,4.6e-05,1,2,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,2,tools/oink/build/counter_ortl 2,counter_ortl_2.pg,11,17,8,idtl-pin,ok,0.0033,4e-05,1,2,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,4,tools/oink/build/counter_ortl 4,counter_ortl_4.pg,21,33,14,oink-uzlk,ok,0.0031,3.4e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_ortl,4,tools/oink/build/counter_ortl 4,counter_ortl_4.pg,21,33,14,py-zlk,ok,0.0206,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_ortl,4,tools/oink/build/counter_ortl 4,counter_ortl_4.pg,21,33,14,dtl-pin,ok,0.0026,4.3e-05,1,4,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,4,tools/oink/build/counter_ortl 4,counter_ortl_4.pg,21,33,14,idtl-pin,ok,0.0027,3.9e-05,1,4,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,8,tools/oink/build/counter_ortl 8,counter_ortl_8.pg,41,65,26,oink-uzlk,ok,0.0043,0.000377,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_ortl,8,tools/oink/build/counter_ortl 8,counter_ortl_8.pg,41,65,26,py-zlk,ok,0.0434,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_ortl,8,tools/oink/build/counter_ortl 8,counter_ortl_8.pg,41,65,26,dtl-pin,ok,0.0034,0.000142,1,8,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,8,tools/oink/build/counter_ortl 8,counter_ortl_8.pg,41,65,26,idtl-pin,ok,0.0030,8e-05,1,8,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,16,tools/oink/build/counter_ortl 16,counter_ortl_16.pg,81,129,50,oink-uzlk,ok,0.1364,0.133333,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_ortl,16,tools/oink/build/counter_ortl 16,counter_ortl_16.pg,81,129,50,py-zlk,ok,8.8354,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_ortl,16,tools/oink/build/counter_ortl 16,counter_ortl_16.pg,81,129,50,dtl-pin,ok,0.0040,0.000301,1,16,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,16,tools/oink/build/counter_ortl 16,counter_ortl_16.pg,81,129,50,idtl-pin,ok,0.0036,0.000281,1,16,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,32,tools/oink/build/counter_ortl 32,counter_ortl_32.pg,161,257,98,oink-uzlk,timeout,120.1049,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_ortl,32,tools/oink/build/counter_ortl 32,counter_ortl_32.pg,161,257,98,py-zlk,timeout,120.0993,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_ortl,32,tools/oink/build/counter_ortl 32,counter_ortl_32.pg,161,257,98,dtl-pin,ok,0.0051,0.001355,1,32,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,32,tools/oink/build/counter_ortl 32,counter_ortl_32.pg,161,257,98,idtl-pin,ok,0.0044,0.001392,1,32,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,64,tools/oink/build/counter_ortl 64,counter_ortl_64.pg,321,513,194,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_ortl,64,tools/oink/build/counter_ortl 64,counter_ortl_64.pg,321,513,194,dtl-pin,ok,0.0118,0.008905,1,64,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,64,tools/oink/build/counter_ortl 64,counter_ortl_64.pg,321,513,194,idtl-pin,ok,0.0120,0.009112,1,64,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,128,tools/oink/build/counter_ortl 128,counter_ortl_128.pg,641,1025,386,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_ortl,128,tools/oink/build/counter_ortl 128,counter_ortl_128.pg,641,1025,386,dtl-pin,ok,0.0996,0.096091,1,128,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,128,tools/oink/build/counter_ortl 128,counter_ortl_128.pg,641,1025,386,idtl-pin,ok,0.0978,0.093653,1,128,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,256,tools/oink/build/counter_ortl 256,counter_ortl_256.pg,1281,2049,770,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_ortl,256,tools/oink/build/counter_ortl 256,counter_ortl_256.pg,1281,2049,770,dtl-pin,ok,1.0263,1.021768,1,256,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,256,tools/oink/build/counter_ortl 256,counter_ortl_256.pg,1281,2049,770,idtl-pin,ok,1.0996,1.094561,1,256,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,512,tools/oink/build/counter_ortl 512,counter_ortl_512.pg,2561,4097,1538,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_ortl,512,tools/oink/build/counter_ortl 512,counter_ortl_512.pg,2561,4097,1538,dtl-pin,ok,13.0841,13.078557,1,512,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,512,tools/oink/build/counter_ortl 512,counter_ortl_512.pg,2561,4097,1538,idtl-pin,ok,13.6565,13.651268,1,512,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,1024,tools/oink/build/counter_ortl 1024,counter_ortl_1024.pg,5121,8193,3074,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_ortl,1024,tools/oink/build/counter_ortl 1024,counter_ortl_1024.pg,5121,8193,3074,dtl-pin,ok,207.8579,207.848284,1,1024,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_ortl,1024,tools/oink/build/counter_ortl 1024,counter_ortl_1024.pg,5121,8193,3074,idtl-pin,ok,208.3702,208.359774,1,1024,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}

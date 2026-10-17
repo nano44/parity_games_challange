@@ -1,0 +1,17 @@
+game,n,m,d,solver,status,wall_s,solver_s,dominions,tangles,iterations,pruning,detail,cmd
+dtl_proof_c1.pg,7,9,6,oink-uzlk,ok,0.0034,1.5e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+dtl_proof_c1.pg,7,9,6,py-zlk,ok,0.0242,,,,,,,python3 -I experiments/harness/zielonka.py
+dtl_proof_c1.pg,7,9,6,dtl-pin,ok,0.0029,3.2e-05,1,2,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+dtl_proof_c1.pg,7,9,6,idtl-pin,ok,0.0030,2.5e-05,1,2,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+dtl_proof_c2.pg,8,12,6,oink-uzlk,ok,0.0030,1.6e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+dtl_proof_c2.pg,8,12,6,py-zlk,ok,0.0238,,,,,,,python3 -I experiments/harness/zielonka.py
+dtl_proof_c2.pg,8,12,6,dtl-pin,ok,0.0027,2.4e-05,1,1,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+dtl_proof_c2.pg,8,12,6,idtl-pin,ok,0.0030,2.8e-05,1,1,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+dtl_proof_c3.pg,8,10,5,oink-uzlk,ok,0.0028,1.6e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+dtl_proof_c3.pg,8,10,5,py-zlk,ok,0.0220,,,,,,,python3 -I experiments/harness/zielonka.py
+dtl_proof_c3.pg,8,10,5,dtl-pin,ok,0.0030,3.8e-05,1,2,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+dtl_proof_c3.pg,8,10,5,idtl-pin,ok,0.0026,4.7e-05,1,2,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+dtl_proof_c4.pg,11,14,5,oink-uzlk,ok,0.0026,1.5e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+dtl_proof_c4.pg,11,14,5,py-zlk,ok,0.0230,,,,,,,python3 -I experiments/harness/zielonka.py
+dtl_proof_c4.pg,11,14,5,dtl-pin,ok,0.0029,4.2e-05,1,3,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+dtl_proof_c4.pg,11,14,5,idtl-pin,ok,0.0030,5.6e-05,1,3,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}

@@ -1,0 +1,17 @@
+n=2 games=240 time=0s variant=True
+('B,C', 'solved', 'solved') : 232
+('B,C', 'undecided', 'solved') : 8
+('C,Cx', 'solved', 'solved') : 240
+('Q,C', 'solved', 'solved') : 240
+('psolB', 'solved') : 232
+('psolB', 'undecided') : 8
+('psolC', 'solved') : 240
+('psolCx', 'solved') : 240
+('psolQ', 'solved') : 240
+('thm4', True) : 240
+by m, psolB, psolQ, psolC, thm4, psolCx : count
+(2, 'solved', 'solved', 'solved', True, 'solved') : 120
+(3, 'solved', 'solved', 'solved', True, 'solved') : 76
+(3, 'undecided', 'solved', 'solved', True, 'solved') : 4
+(4, 'solved', 'solved', 'solved', True, 'solved') : 36
+(4, 'undecided', 'solved', 'solved', True, 'solved') : 4

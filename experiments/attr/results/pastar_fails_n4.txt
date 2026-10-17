@@ -1,0 +1,1 @@
+n=4: psolQ failures 75856, PA* true on 0, greedy true on 0
