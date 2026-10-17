@@ -401,3 +401,4 @@
 - 08:53Z Lead: merged l-red ff0ba45 (R28: NT-f step D no gap, independent of Lead check).
 - 08:56Z Lead: merged l-alg c2e80e9 (YZ <= ACYC; P-KT given ACYC); L-ALG slip: pkill matched its own shell at 08:54Z (climbs relaunched, rule restated); S step approved next; ACYC routed to L-RED.
 - 08:59Z Lead: merged l-alg dc231e0 (STEP5.md: headline ACYC => YZ => P-KT, single open point ACYC with shape; D2 wording fixed). ACYC climbs: new parts up to 6 vertices, all acyclic.
+- 09:01Z Lead: merged l-red acfabb4; ACYC climb 9911 (stable, strfam_S5_n46, --loops; only seed with Dom straddles); T-STEP climb 9611 stopped; NT-f and K-in continue.
