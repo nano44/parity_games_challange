@@ -1146,7 +1146,7 @@ KILLED (FALSE / DEAD), each with its instance
 
 DATA candidates left after box 4 (A_DTL; every per-context (H4) POTENTIAL candidate is dead):
 (U-MONO_DTL) same-input union monotone in T (701/701 Oink, 661/661 stable, §18h); (LEX-R) first differing round grows (775/775, 755/755); "no DEF-down step at an ideal-stable context" (0/181).
-Box 5 DATA candidates (A_DTL): (ABS-mono-pw) no vertex moves to a later depth-0 piece at a non-RES transition (280/280, 269/269, §21j); (SPP) S ≤ |G'| and (SPP-sharp) S ≤ max(1, |G'| − 1), tight (dtl_chainfam, spp_chain_up_n43, both orders, §21a-b); (DV-nofall) the author's DV never falls (0/1,237, 0/1,204; synthetic 0/101,600; Lemma DV-MONO = SKETCH + GAP, §21f-g); absorption (c1) 87/87, 75/75 (§21d).
+Box 5 DATA candidates (A_DTL): (ABS-mono) the depth-0 removal-index sum PHI0 never rises at a transition whose first difference is not a depth-0 RES (0/280, §21j); (ABS-mono-pw) no vertex moves to a later depth-0 piece at a non-RES transition (280/280, 269/269, §21j); (SPP) S ≤ |G'| and (SPP-sharp) S ≤ max(1, |G'| − 1), tight (dtl_chainfam, spp_chain_up_n43, both orders, §21a-b); (DV-nofall) the author's DV never falls (0/1,237, 0/1,204; synthetic 0/101,600; Lemma DV-MONO = SKETCH + GAP, §21f-g); absorption (c1) 87/87, 75/75 (§21d).
 OPEN: GAP-A via (H1) cut carries, (H2a) alive-top self-reinforcing carries, (H2b) dead-top cap carries (reduces to
 c_i, circular), (H3) catch-ups and recursion, (H4) deficits on A_DTL (per context: 4 → 8 over n = 20 → 44, Oink
 order). Core: whether fresh, resetting child contexts (§15, §16) or deficit staircases (§13b) can compound across
@@ -1569,9 +1569,15 @@ vertex". (SPP-sharp), if true, is exactly tight. A counter to (SPP) must reset s
 NEW tangles (tangles are never re-learned, (a1)); recipe sent to the Lead for L-RED (23:45Z).
 
 ### 21c. The phase bound and the cost model (queue item 3)
-- Phases (PROVED, from run(), C5-DTL.md §2): dtl runs search(0) until it returns false, then search(1) until it returns
-  false. A phase of one player ends either with a dominion (search returns true; the next search has a smaller G) or with
-  that player's loop ending. So phases ≤ D + 2, D = the number of searches that find a dominion ≤ n.
+- Phases (PROVED, from run(), C5-DTL.md §2 lines 141-142 = dtl.cpp run() 1071-1161, non-interleaved branch; Lead ask
+  23:32Z (b), answered 01:11Z by date -u). Line 141: `while G != ∅: iterations++; if not search(0): break`; line 142: the same
+  for search(1). So player 0's searches are one maximal block at the start and player 1's one block after it; a search(p)
+  that returns false ends ALL of p's searches for good (player 0 is never searched again after line 141 breaks, even when
+  player 1's dominions later shrink G). Inside a block, a phase ends with a dominion-finding search (true, G shrinks, the
+  block continues) or with the block's last search (false, or G = ∅). Hence player p has ≤ D_p + 1 phases, D_p = searches
+  of p that find a dominion, and phases ≤ D_0 + D_1 + 2 = D + 2 ≤ n + 2.
+  What this does NOT say: that the run is complete. A 0-dominion left in G when line 141 breaks is never found; that is
+  exactly GAP-C (DTL-proof.md §5; §22 below).
 - With (SPP): searches ≤ Σ_phases |G'| ≤ (n + 2)·n; tangles ≤ n·searches (Lemma W) ≤ n²(n + 2); with DTL-proof.md §3(e),
   O((|T| + n)² n⁴ (m + n²)) = O(n¹⁰ (m + n²)) word operations. Every stored number is a vertex index, a priority, a tangle
   index ≤ n³ + 2n², a stack pointer or a bit: O(log n)-bit words, so unit cost equals bit cost (TARGET.md §3). Any
@@ -1740,8 +1746,9 @@ DATA (dtl_dvstar.py): on spp_final_n20, spp_chain_up_n43, spp_final_n40 (Oink or
 transitions (0 falls, as proved); on C5 it moves in 465 of 990 transitions (Oink order) and 464 of 957 (stable), 0 falls:
 exactly the transitions where the author's DV moves (21f: 990 − 525, 957 − 493).
 DV = DV* as functions (DATA, 00:42Z by date -u; experiments/alg/dtl_dveq.py): equal on all 1,408 DTL-learned tangle sets of
-the C5 phases (Oink order) and on 20,000 random (game, genuine tangle set) pairs (n ≤ 11, re-indexed by priority). If
-DV = DV* holds in general, Lemma DV-MONO follows from DV*-MONO. Why the GAP scenario of 21f is rare (reading): a difference
+the C5 phases (Oink order) and on 20,000 random (game, genuine tangle set) pairs (n ≤ 11, re-indexed by priority).
+OPEN CLAIM (Lead 00:48Z): DV = DV* in general is NOT proved; until it is, Lemma DV-MONO for the author's debug DV is a
+SKETCH with its GAP, and only DV*-MONO is PROVED. If DV = DV* holds in general, Lemma DV-MONO follows from DV*-MONO. Why the GAP scenario of 21f is rare (reading): a difference
 needs a tangle τ outside Z whose escapes are all in Z before the sweep reaches τ's top priority; in round 1 every p-priority
 vertex of τ is itself a top and its region pulls τ in vertex by vertex, so a difference needs a later round in which
 τ's tops were already dropped as distractions. Not proved. So DV* bounds a minority of the searches; the rest (the
