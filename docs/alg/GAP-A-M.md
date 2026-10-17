@@ -2754,3 +2754,45 @@ of the phase. NO-REFIRE, STOLEN-PERM and STEALER-MONO each hold in every case:
 | mixed unions s1 (900) | 644 / 644 | 849 / 849 |
 
 With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) / 1,519 (stable) relevant steals.
+
+23b. (STEALER-MONO) KILLED on stealer_viol_n76; (STAYS-MET), (STEAL-ONCE*), (STOLEN-PERM) survive there (L-ALG succ. 7, 17:47Z by date -u)
+- Instance: experiments/red/carry/instances/stealer_viol_n76.pg (L-RED, l-red 549f8de; n = 76, sha1 714ecc0f). Pinned Oink
+  (`oink --dtl --no-single --no-wcwc --no-loops -v` @ 8fbf0a7): solved in 7 iterations, "solution verified (33 strategies)".
+- Re-run (DATA), dtl_rootmono.py unmodified (l-alg e2f7e198 code), RM_EXCL=1 RM_PREF=1 RM_DV=0, with and without RM_LIGHT=1
+  (identical counts; RM_LIGHT changes only the closure check `cl` and the deficit flags, not pref/regset/excl/fired):
+  | order | STEALER-MONO | STOLEN-PERM | NO-REFIRE, stays met | relevant steals per triple |
+  |---|---|---|---|---|
+  | stable | FAILS 3, holds 14 | holds 17 | 17 / 17 | max 1 |
+  | oink | holds 1 | holds 1 | 1 / 1 | max 1 |
+  L-RED's numbers confirmed. No INCOMPLETE; no incorrect run.
+- New tool experiments/alg/dtl_stealtrace.py (same model; RM_EXCL=1 RM_PREF=1; "STAYS-MET" there is the strict form: t meets
+  every later prefix at σ, not merely "not met-but-not-contained"). Stable: STAYS-MET holds 17/17, NO-REFIRE 17/17, STEAL-ONCE*
+  max 1 on all 5 contexts with relevant steals, STEALER-MONO FAILS 3/17. Oink: all hold (1 steal).
+- (a) So (STAYS-MET) and (STEAL-ONCE*) survive on this instance in both orders. Only the route statement died.
+- (b) Failing shape (stable order, phase 1, three depth-0 contexts |R| = 76, 75, 74, identical shape; vertex labels as in the
+  file):
+  - Visit 2, round 5: top 18 (pr 39) fires tangle 8 = {3, 7, 15}.
+  - Visit 3: region (round 5, top 31) (pr 65) fires tangle 7 = {34} and contains 3. So tangle 8 is relevantly stolen at step
+    (5, 18) with W = {3}.
+  - Visit 4: a new top 68 (pr 89, above every old top) fires tangle 7 and absorbs 34 and 38. Region 35 (pr 65, processed
+    before 31) now also takes 30 and 40 through 34. Region 31 shrinks from {3, 30, 31, 34, 38, 40} to {3, 31}.
+  - The relevant steal at visit pair 3→4 is tangle 12 = {51, 55, 63} at steps (4, 66) and (5, 66), stolen by region 68. It is
+    not one of region 31's own fired tangles.
+  - Every lost vertex moved UP, into regions processed before 31. Region 31's own fired tangle 7 was CAPTURED whole by a
+    higher region; that is not a steal. So the prefix at step (5, 18) keeps 3, 30, 34, 38 and 40, and W = {3} stays
+    (STOLEN-PERM).
+- Obstruction: a region can lose vertices by UPWARD MIGRATION. A new or grown higher region captures the region's fired tangle
+  whole and takes its dependents. Nothing is stolen from the region, and the prefix of every step below it does not lose those
+  vertices. (STEALER-MONO) is a statement about a single region and was the wrong unit; the prefix (a union) is the right one.
+  The §23a "ORDER on steals" reading is also false here: a relevant steal at step (·, 66), above region 31, follows region 31's
+  steal from step 18.
+- (c) KILLED: (STEALER-MONO) as a statement about A_DTL (L22/L26: every order datum). Recorded in docs/alg/DEAD.md.
+- §23a's counts: its 1,519 stable steals were taken with RM_PREF=1 RM_EXCL=1 RM_LIGHT=1 (unions: UNIONS/SEED/UM_CROSS, NMAX = 32)
+  and DTL_ORDER=stable, so the counters are the same. The kill is in stable order, on an instance outside those sets: n = 76 is
+  above the unions' NMAX, and the instance is new.
+- What survives: (STOLEN-PERM) ⇒ (STAYS-MET) ⇒ (NO-REFIRE at σ) ⇒ (STEAL-ONCE*). Each arrow is PROVED (reading) as in §23a: a
+  relevant steal needs t ∈ F_τ at the earlier visit, and firing at σ needs t disjoint from P(σ⁺).
+- New candidate route (SKETCH, not proved). Call w ∈ P(σ) DEPENDENT on a fired tangle t′ at step σ′ > σ if w entered region σ′
+  through t′, or through a vertex dependent on t′. Then by EXACT* and PREFIX-MONO-X*, w leaves P(σ) only after a relevant steal
+  of a tangle it depends on. Upward capture keeps w inside P(σ). So (STOLEN-PERM) needs: the stealing vertices of a steal never
+  depend on a fired tangle that is later relevantly stolen.
