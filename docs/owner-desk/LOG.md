@@ -132,3 +132,9 @@ Desk reading: asks whether the work is converging on a decisive answer for DTL. 
 ## 2026-10-17 09:09Z owner (instruction: referees on Opus)
 > WE can run referees on opus too temperoraly
 Desk reading: owner allows referees on Opus 5.5 temporarily (until the Fable reset), relaxing D1 "Never downgrade the referee to save money" for that period. Relayed verbatim to the Lead, priority now.
+
+## 2026-10-17 09:14Z Lead (relayed to owner)
+D12 recorded (trunk 8f41be8), L33: Opus referees until the Fable reset, two independent referees, signatures labelled "(Opus 5.5, D12)";
+first packet docs/alg/STEP5.md with ACYC listed as a gap; REFEREE and REFEREE-2 start (4 of 5 lanes). L32: GAP-A reassessment criterion
+(immediate stop on verified wrong/incomplete run or super-polynomial searches per phase; otherwise reassess at the Fable reset or
+earlier; options (a) bank and write up, (b) cheap attack only, (c) new candidate).

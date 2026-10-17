@@ -2,7 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-16 ~16:48Z. D4-D11 recorded. No owner questions open (Q12 D11, Q13 D10). Waiting for the owner.
+2026-10-17 ~09:15Z. D4-D12 recorded. No owner questions open. L32: GAP-A reassessment at the Fable reset (2026-10-21 21:00Z) or earlier; Lead will put options (a)-(c) to the owner. Opus referees on STEP5 (D12/L33). Waiting for the owner.
 
 ## Queue
 1. On each owner reply: log verbatim in docs/owner-desk/LOG.md, relay verbatim to the Lead (session_014FBi6o334DvwT5Uw2kDfoN).
