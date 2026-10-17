@@ -2816,10 +2816,13 @@ With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) /
   - B: w's region top is no longer a region top.
   - C: other.
   - A' (a path tangle plainly stolen, not fired) never occurs.
-- Reading of C, checked by hand on stealer_viol_n76 and on climbs_1016/b_best_s33. A path tangle (6 there, 22 on stealer_viol)
-  neither fires nor is met at y. Its region top survives, and its vertices are not in the prefix. The cause is an ESCAPE: a
-  tangle escape, or an opponent successor, that lay in the prefix above at x is back in Gx = CurR at y (dtl_pyref
-  attractTangle lines 95-97, attractVertices line 74). So the cause is another, higher loss. The single-parent forest cannot
+- Reading of C, checked on two cases (scratch script; round 5 in both):
+  - stealer_viol_n76 (stable), |R| 75, visits 2→3, region top 14: path tangle 22 = {22, 24} with escapes {0, 4, 6, 14, 15, 16}.
+    Escape 16 is in P_x and not in P_y, and is not in the region, so tangle 22 cannot fire at y.
+  - climbs_1016/b_best_s33 (Oink), |R| 20, visits 1→2, region top 19: tangle 6 = {6}, escape 5, in P_x and not in P_y.
+  - So the cause is an ESCAPE. A tangle escape (or, by the same rule, an opponent successor) that lay in the prefix above at
+    x is back in Gx = CurR at y (dtl_pyref attractTangle lines 95-97, attractVertices line 74). The cause is thus another,
+    higher loss. Only these two C cases were checked; the rest are unclassified. The single-parent forest cannot
   see this, so roughly 40% of losses (C) are cascades through escapes.
 - (DEP-SAFE) "no path tangle of a stealing vertex is relevantly stolen later" holds on 1,169 relevant steals (DATA). The
   forest misses the escape cascades, though, so (DEP-SAFE) does not by itself imply (STOLEN-PERM).
