@@ -294,3 +294,13 @@ So the real obligation is Case B:
   gapbW_dup_n20 are at LATER stable pieces, consistent with (K-first)).
   Smallest shape that breaks GAP-K' (L-RED): a search with W_p ≠ ∅, no dominion, whose first stable piece (after −1
   pieces) has its lowest top outside W_p, or an open lowest region, or a duplicate there.
+(K4-B), DATA (04:09Z by date -u; experiments/alg/dtl_k4b.py, Oink order, corpus + random): at the first stable piece of
+every search with W_p(G') ≠ ∅ and no dominion, V* and the union of the final-round regions lie inside W_p(G'): 483 of 483
+(31 mixed). With (K4-B), Theorem A's argument gives "lowest top in W_p" and (TW) for Case B as well, so GAP-K' becomes:
+  (K4-B) the first stable piece's regions lie in W_p(G') even though X ≠ ∅ (K4's proof needs X p-won: an opponent vertex
+         of A may have an edge into X, and the −1 pieces may have removed opponent-won vertices);
+  (α)    its lowest region is closed;
+  (β-1)  its SCC is not a stored tangle whose escapes all lie in X (B-thr with X ≠ ∅).
+Reading of (K4-B): by OPP-EXIT-type reasoning, a vertex of A ∩ W_{1-p} would need the opponent's winning moves to leave A
+into X ∩ W_{1-p}; a proof would show that every −1 piece removed before the first stable piece is a set from which the
+opponent's winning moves cannot re-enter R. Not attempted further in this box.
