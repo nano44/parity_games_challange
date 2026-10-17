@@ -1,0 +1,52 @@
+# corpus: experiments/**/*.pg with n <= 130 (257 files), pinned order and R2_REV=1
+--- order Oink: 257 files
+EXACT_ok: 463742
+W_ok: 2250861
+allpairs: newsteal NONRISE: 195
+allpairs: newsteal rise: 5093
+allpairs: no-steal equal: 4057
+allpairs: no-steal rise: 7053
+consec: newsteal NONRISE: 103
+consec: newsteal rise: 877
+consec: no-steal equal: 1903
+consec: no-steal rise: 1852
+step_deficit(T unexcluded): 24259
+steps: 463742
+steps_with_E_nonempty: 196340
+surv_ok: 52400
+--- order reverse-ins (R2_REV=1): 257 files
+EXACT_ok: 463743
+W_ok: 2250861
+allpairs: newsteal NONRISE: 195
+allpairs: newsteal rise: 5096
+allpairs: no-steal equal: 4052
+allpairs: no-steal rise: 7051
+consec: newsteal NONRISE: 103
+consec: newsteal rise: 877
+consec: no-steal equal: 1903
+consec: no-steal rise: 1852
+step_deficit(T unexcluded): 24259
+steps: 463743
+steps_with_E_nonempty: 196344
+surv_ok: 52400
+# random: 420 rngame games n in {8,12,16,20,24,30,40}, maxPrio n, degree 1..2-5
+--- order Oink: 420 files
+EXACT_ok: 24285
+W_ok: 140590
+allpairs: no-steal equal: 14
+allpairs: no-steal rise: 17
+consec: no-steal equal: 14
+consec: no-steal rise: 17
+steps: 24285
+steps_with_E_nonempty: 84
+surv_ok: 3852
+--- order reverse-ins (R2_REV=1): 420 files
+EXACT_ok: 24291
+W_ok: 140659
+allpairs: no-steal equal: 14
+allpairs: no-steal rise: 17
+consec: no-steal equal: 14
+consec: no-steal rise: 17
+steps: 24291
+steps_with_E_nonempty: 84
+surv_ok: 3854

@@ -2,6 +2,12 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
+2026-10-17 15:22Z (successor session_01NUXFnUcx4V3ZWJJY11tXwx, Opus 5.5, D12). Handover check 6f33a84 (5/5).
+P7 (§22r EXACT / PREFIX-MONO-X / new steals, pin 357224b): docs/referee-2/R2-P7.md. (a) SIGN, (b) SIGN, (c) SIGN WITH GAPS
+G-P7-c1/c2 (closed: F_R <= 3 N_R), (d) confirmed 17/17. (FALL) <= (NSTEAL), open, lossy (980 steal pairs vs 103 non-rises).
+Probe: R2-P7/dtl_probe7.patch (logging-only + R2_REV), an7.py (own closure). Rebuild: copy tools/oink/src, patch7.py, cmake.
+Next: comparison with docs/referee/R-P7.md once the Lead allows; then idle.
+Earlier (predecessor):
 2026-10-17 ~13:05Z (REFEREE-2 on Opus 5.5 under D12; parking for handover at ~0.57M context, Lead 12:59Z).
 Packets done 2026-10-17. Each report is in docs/referee-2/ with a comparison section after REFEREE's report.
 | packet | report | pin | outcome (Opus 5.5, D12) |
@@ -13,7 +19,8 @@ Packets done 2026-10-17. Each report is in docs/referee-2/ with a comparison sec
 | P5 Lemma STR-DET | R2-P5.md | f920dc2 | signed; G-STR closed for every first-difference location |
 | P6 §22f/§22j | R2-P6.md | 8ff4085 | (a) SIGN WITH GAPS (G-F1: F_R must also count non-rising e*-at-R transitions; DATA 0), (b) SIGN (Dom input = full X), (c) SIGN |
 Open gaps I hold:
-- G-F1: the F_R definition.
+- G-F1: the F_R definition (with P7: F_R <= 3 N_R).
+- (NSTEAL): N_R new-steal visit pairs per context polynomial (P7 §5).
 - (CTX⁺): distinct first-difference contexts and inputs per phase.
 - (FALL): F_R polynomial.
 - G-S5-6 = (ACYC).

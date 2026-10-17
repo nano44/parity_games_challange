@@ -7,6 +7,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   closed; G6-a2 Dom term and +1, closed). §22j SIGN WITH GAPS (G6-b1 Dom step pushes only the top: base-triggered closure,
   monotone in T, closed; G6-b2 Dom input NOT fixed by (R, X): |C_Dom| counts inputs, OPEN inside (CTX⁺)). (c) SIGN.
   Tool docs/referee/scratch/p6probe.py (needs experiments/dtl-bench on the path for stdsort).
+- R-P6 §C (ad4be01): full agreement with R2-P6 (G6-a1 = G-F1; R2's R-I = my Dom input).
+- R-P7.md (packet 7; pin d461a76): EXACT SIGN WITH GAPS (G7-a1 line 137->138-139, G7-a2 remaining-instances step; closed),
+  PREFIX-MONO-X SIGN (absorbed case closes with EXACT's closedness, which does not need τ processed in run 2), corollary
+  SIGN WITH GAPS (G7-c1 Π-blind e* via POS-FALL+C4, closed; G7-c2 necessary not sufficient). fallv_viol_n28: both falls at
+  new steals; same tangle stolen at both. (FALL) <= (NS-COUNT). Tool docs/referee/scratch/p7probe.py.
+- R-P7 §C (1abe1d7): agree with R2-P7; ACCEPTED R2's G-P7-c2 (e*-pairs need not be consecutive visits; F_R <= 3 N_R) and
+  corrected my R-P6 A4 (factor 2 in R9's per-context budget). Lesson: never assume a context is visited once per search.
 - Lesson: Lemma 1.2 assumes Q = Z_0; Dom (878-890, 962-991) and bv regions push only the top. Check the push pattern.
 
 ## HANDOVER (parked 2026-10-17 ~12:20Z on the Lead's instruction; context ~520k; produced on Opus 5.5 under D12/L33)

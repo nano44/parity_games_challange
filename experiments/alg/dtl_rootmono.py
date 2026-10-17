@@ -5,7 +5,7 @@ INF if v survives to a round that returns 1 (in a −1 call every vertex is drop
 RV(s) pointwise. Transitions are classified by where the first difference e* of the reduced logs (dtl_fdlcheck.py) lies:
 root call (threshold loop / regions, with the round of e*), or later. For a failure, the first vertex whose RV falls and
 its rounds are printed. ROOT-SPLIT rows (root-call transitions): does RV fall / move, does DV* (dtl_dvstar.py, T at search start) move,
-does either root call have a deficit round (U ≠ Û, dtl_ideal.py). RM_DV=0 skips DV*. Games and env as dtl_step5stats.games (UNIONS, UM_CROSS, SEED, NMAX, RANDOM). RM_LIGHT=1 skips the ideal and step-deficit checks (deficit/stepdef flags are then never set). RM_ROUNDS=1 also prints the round of e*. DTL_ORDER = oink | stable. Usage: dtl_rootmono.py G.pg ..."""
+does either root call have a deficit round (U ≠ Û, dtl_ideal.py). RM_DV=0 skips DV*. Games and env as dtl_step5stats.games (UNIONS, UM_CROSS, SEED, NMAX, RANDOM). RM_EXCL=1 records excluded tangles per region step (PREFIX-MONO-X test). RM_LIGHT=1 skips the ideal and step-deficit checks (deficit/stepdef flags are then never set). RM_ROUNDS=1 also prints the round of e*. DTL_ORDER = oink | stable. Usage: dtl_rootmono.py G.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import pg, dtl_fdlcheck as FC, dtl_ideal as I, dtl_dvstar as DS, dtl_step5stats as ST
@@ -24,7 +24,7 @@ class RM(FC.CK):
     def best_vertices(s, V, R, p):
         if s.dep == 0: s.ctx0.append(frozenset(R))
         # dtl_pyref.DTL.best_vertices verbatim, recording the round of each drop and the log span of each round
-        rv = {}; spans = []; psi = []; pos = []; rk = []; rec = dict(rv=rv, spans=spans, start=len(s.log), psi=psi, pos=pos, rk=rk)
+        rv = {}; spans = []; psi = []; pos = []; rk = []; rec = dict(rv=rv, spans=spans, start=len(s.log), psi=psi, pos=pos, rk=rk, ntv=len(s.tv))
         if s.root is None: s.root = rec
         rec["key"] = (s.dep, frozenset(R)); s.allrecs.append(rec)
         if s.dep == 0: s.d0recs.append(rec)
@@ -46,12 +46,19 @@ class RM(FC.CK):
             for top in range(s.n - 1, -1, -1):
                 if top not in V or top in Z: continue
                 CurZ = {top}; s.Q = [top]
+                if os.environ.get("RM_EXCL"):
+                    rec.setdefault("excl", {})[(rnd, top)] = frozenset(t for t in tli if any(v in Z for v, _ in s.tv[t]) and not all(v in Z for v, _ in s.tv[t]))
                 s.tattr(p, CurZ, CurR, CurR, s.pr[top], CurR)
+                if os.environ.get("RM_EXCL"): rec.setdefault("fired", {})[(rnd, top)] = frozenset(getattr(s, "used", set()))
                 cl = (Z | CurZ) if LIGHT else I.lfp(s, p, Z | {top}, R, s.pr[top], tli)
                 if cl != Z | CurZ:
                     miss0 = cl - Z - CurZ
                     rec.setdefault("wits", {})[(rnd, top)] = frozenset(t for t in tli if any(v in Z for v, _ in s.tv[t]) and any(v in miss0 for v, _ in s.tv[t]))
                     rec["stepdef"] = True
+                    vt = {v: tp for tp, c in zip(rtops, regs) for v in c}
+                    det = rec.setdefault("witdet", {})
+                    for t_ in rec["wits"][(rnd, top)]:
+                        det[(rnd, top, t_)] = frozenset(vt.get(v) for v, _ in s.tv[t_] if v in Z)
                     if "wit" not in rec:
                         miss = cl - Z - CurZ
                         strad = [t for t in tli if any(v in Z for v, _ in s.tv[t]) and any(v in miss for v, _ in s.tv[t])]
@@ -101,12 +108,12 @@ def where(root, k_full):
 
 
 if __name__ == "__main__":
-    phrows = []; badrows = []; seqrows = []; ctxrows = []; fdcrows = []; descrows = []; recrows = []; succrows = []; ifdrows = []
+    phrows = []; badrows = []; seqrows = []; ctxrows = []; fdcrows = []; descrows = []; recrows = []; succrows = []; ifdrows = []; nsrows = []; rsrows = []; firedrows = []
     sys.setrecursionlimit(100000); st = {"dropped": 0, "kept: differs": 0, "kept: identical but extracts": 0}; shown = 0
     for f, g in ST.games(sys.argv[1:]):
         d0 = FD.P.X.build(g); d = RM(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.run()
         for ph in FD.phase_rows(d):
-            nd = nr = 0; wl = []; nbad = 0; seq = []; fdc = set(); kseq = []; desc = {}; ifd = set(); victim = {}
+            nd = nr = 0; wl = []; nbad = 0; seq = []; fdc = set(); kseq = []; desc = {}; ifd = set(); victim = {}; vfall = {}; nsteal = {}; rsteal = {}; trip = {}; rtrip = {}
             for r in ph:
                 full = r["log"]; red = FC.reduce_log(full, st)
                 # map root spans onto the reduced log: the root call precedes every sptl pass, so its positions shift only
@@ -126,6 +133,20 @@ if __name__ == "__main__":
                 while k < min(len(la), len(lb)) and a["log"][la[k]][:4] == b["log"][lb[k]][:4]: k += 1
                 cls = "no difference" if k == min(len(la), len(lb)) else where(b["root"], lb[k])
                 seq.append("R" if cls.startswith("root") else "N" if cls == "after the root call" else "=")
+                def mmass(r_):
+                    c0 = r_["ctx0"]; rr = [x for x in r_["recs"] if x["key"][0] == 0]
+                    return sum(len(c0[i_] - (c0[i_ + 1] if i_ + 1 < len(c0) else frozenset())) for i_, x in enumerate(rr) if x.get("res") == -1)
+                ma_, mb_ = mmass(a), mmass(b)
+                if mb_ > ma_ and cls != "no difference":
+                    pos_ = lb[k]; rb3 = next((r_ for r_ in b["recs"] if r_["start"] <= pos_ < r_["end"]), None)
+                    if rb3 is None: why = "e* not in a best_vertices call"
+                    else:
+                        ra3 = next((r_ for r_ in a["recs"] if r_["key"] == rb3["key"]), None)
+                        rvch = ra3 is not None and ra3["rv"] != rb3["rv"]
+                        why = f"e* in a {'−1' if rb3.get('res') == -1 else 'stable' if rb3.get('res') == 1 else 'other'} call, RV {'changed' if rvch else 'same'}"
+                    km = "DISTRACTION MASS rises: " + why; tab[km] = tab.get(km, 0) + 1
+                elif cls != "no difference":
+                    km = "DISTRACTION MASS " + ("falls" if mb_ < ma_ else "same"); tab[km] = tab.get(km, 0) + 1
                 # e* caller (any position) and the weak STR-DET check: does s+1 create a tangle before e*?
                 if cls == "no difference":
                     kx = "E* CALLER: no set-level difference at all"
@@ -270,6 +291,10 @@ if __name__ == "__main__":
             for key_, vl in visits.items():
                 for (s1, x), (s2, y) in zip(vl, vl[1:]):
                     fa = [v for v in x["rv"] if y["rv"].get(v, INF) < x["rv"][v]]
+                    for v in fa: vfall[(key_, v)] = vfall.get((key_, v), 0) + 1
+                    if fa and os.environ.get("RM_FALLDET"):
+                        print("FALLING VERTICES", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), "ctx |R|", len(key_[1]), "visits", s1, "->", s2,
+                              [(d.idx[v], x["rv"][v], y["rv"].get(v)) for v in sorted(fa)][:12], flush=True)
                     if fa: c_ = "RV falls"
                     elif x["rv"] != y["rv"]: c_ = "rises (RV)"
                     else:
@@ -280,12 +305,33 @@ if __name__ == "__main__":
                             fa_ = sum(d.n - t_ for m in x.get("rtop", []) for t_ in m.values()); fb_ = sum(d.n - t_ for m in y.get("rtop", []) for t_ in m.values())
                             c_ = "rises (Φ_top)" if fb_ < fa_ else "equal" if fb_ == fa_ else "Φ_top RISES (descent)"
                     kv = "VISITS of a context (consecutive): " + c_ + (" | later call dirty" if y.get("stepdef") else ""); tab[kv] = tab.get(kv, 0) + 1
+                    if os.environ.get("RM_EXCL"):
+                        ex_, ey_ = x.get("excl", {}), y.get("excl", {})
+                        newst = any(t < x["ntv"] and t not in ex_.get(k_, frozenset()) for k_ in ey_ if k_ in ex_ for t in ey_[k_])
+                        kns = "PREFIX-MONO-X: " + ("new steal" if newst else "no new steal") + " | " + ("DESCENT" if c_ in ("RV falls", "Ψ NOT monotone", "Φ_top RISES (descent)") else "no descent")
+                        if newst: nsteal[key_] = nsteal.get(key_, 0) + 1
+                        fx_ = x.get("fired", {})
+                        relst = any(t < x["ntv"] and t not in ex_.get(k_, frozenset()) and t in fx_.get(k_, frozenset()) for k_ in ey_ if k_ in ex_ for t in ey_[k_])
+                        kre = "PREFIX-MONO-X*: " + ("relevant new steal" if relst else "no relevant new steal") + " | " + ("DESCENT" if c_ in ("RV falls", "Ψ NOT monotone", "Φ_top RISES (descent)") else "no descent")
+                        tab[kre] = tab.get(kre, 0) + 1
+                        if relst: rsteal[key_] = rsteal.get(key_, 0) + 1
+                        for k_ in ey_:
+                            if k_ not in ex_: continue
+                            for t in ey_[k_]:
+                                if t < x["ntv"] and t not in ex_[k_]:
+                                    trip[(key_, k_[0], k_[1], t)] = trip.get((key_, k_[0], k_[1], t), 0) + 1
+                                    if t in fx_.get(k_, frozenset()): rtrip[(key_, k_[0], k_[1], t)] = rtrip.get((key_, k_[0], k_[1], t), 0) + 1
+                        tab[kns] = tab.get(kns, 0) + 1
                     if c_ in ("RV falls", "Ψ NOT monotone", "Φ_top RISES (descent)"):
                         desc[key_] = desc.get(key_, 0) + 1
                         wids = set().union(*y.get("wits", {}).values()) if y.get("wits") else set()
                         k1, k2 = ph[s1]["k0"], ph[s2]["k0"]
                         new_ = {t for t in wids if t >= k1}
                         for t in wids: victim[(key_, t)] = victim.get((key_, t), 0) + 1
+                        if os.environ.get("RM_FALLDET"):
+                            print("FALL DETAIL", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), "ctx |R|", len(key_[1]), "depth", key_[0], "visits", s1, "->", s2,
+                                  "| (round, failing top, victim) -> stealing region tops:",
+                                  sorted((r_, d.idx[tp_], t_, sorted(d.idx[x] for x in st_)) for (r_, tp_, t_), st_ in y.get("witdet", {}).items())[:6], flush=True)
                         kf = "FALL witness straddling tangle: " + ("none recorded" if not wids else "some created since the previous visit" if new_ else "ALL older than the previous visit")
                         tab[kf] = tab.get(kf, 0) + 1
                         if not new_ and wids and shown < 30:
@@ -304,6 +350,27 @@ if __name__ == "__main__":
                 for u, w in zip(c0, c0[1:]): succ_.setdefault(u, set()).add(w)
             if succ_:
                 ms = max(len(v_) for v_ in succ_.values()); succrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), ms, len(succ_), len(ph) - 1, len(ph[0]["G"])))
+            if os.environ.get("RM_EXCL"):
+                for key_, vl in visits.items():
+                    fired_all = set().union(*[set().union(*rc.get("fired", {}).values()) for _, rc in vl]) if vl else set()
+                    if len(vl) >= 2: firedrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), len(fired_all), len(key_[1]), len(vl), len(ph) - 1))
+            if trip:
+                kt3 = f"NEW STEALS per (context, round, top, tangle): max {max(trip.values())}"; tab[kt3] = tab.get(kt3, 0) + 1
+            if rtrip:
+                kt4 = f"RELEVANT STEALS per (context, round, top, tangle): max {max(rtrip.values())}"; tab[kt4] = tab.get(kt4, 0) + 1
+            if rsteal: rsrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), max(rsteal.values()), sum(rsteal.values()), len(ph) - 1, len(ph[0]["G"])))
+            if nsteal: nsrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), max(nsteal.values()), sum(nsteal.values()), len(ph) - 1, len(ph[0]["G"])))
+            if vfall:
+                mvf = max(vfall.values()); kvf = f"FALLS per (context, vertex): max {mvf}"; tab[kvf] = tab.get(kvf, 0) + 1
+                # shape of RV sequences of vertices that fall somewhere: what happens after the fall?
+                for (key_, v), _ in vfall.items():
+                    seqv = [rc["rv"].get(v) for _, rc in visits[key_] if v in rc["rv"]]
+                    i0 = next(i for i in range(1, len(seqv)) if seqv[i] < seqv[i - 1])
+                    after = seqv[i0:]
+                    shp = "constant after the fall" if all(x == after[0] for x in after) else ("rises after the fall" if any(after[j] > after[j - 1] for j in range(1, len(after))) else "falls again")
+                    before = seqv[:i0]
+                    shb = "non-decreasing before" if all(before[j] >= before[j - 1] for j in range(1, len(before))) else "not monotone before"
+                    ksh = f"RV SHAPE of a falling vertex: {shb}, {shp}"; tab[ksh] = tab.get(ksh, 0) + 1
             if victim:
                 mv_ = max(victim.values()); kvv = f"FALLS per (context, victim tangle): max {mv_}"; tab[kvv] = tab.get(kvv, 0) + 1
             if desc: descrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), max(desc.values()), sum(desc.values()), len(ph) - 1, len(ph[0]["G"])))
@@ -331,6 +398,13 @@ if __name__ == "__main__":
         phrows.sort(key=lambda r: -r[1])
         print("phases with dirty root transitions (file, dirty, root transitions, transitions, |G'|):", phrows[:8])
         print("phases with a dirty root transition:", len(phrows), "max dirty per phase:", max(r[1] for r in phrows), "max dirty/|G'|:", round(max(r[1] / r[4] for r in phrows), 3))
+    if firedrows:
+        firedrows.sort(key=lambda r: -r[1] / max(1, r[2])); print("distinct tangles fired at a context over a phase (file, tangles, |R|, visits, transitions):", firedrows[:8])
+        print("max tangles/|R|:", round(max(r[1] / max(1, r[2]) for r in firedrows), 2), "max tangles/visits:", round(max(r[1] / r[3] for r in firedrows), 2), "max tangles:", max(r[1] for r in firedrows))
+    if rsrows:
+        rsrows.sort(key=lambda r: -r[1]); print("RELEVANT new-steal visits per context (file, max per context, total, transitions, |G'|):", rsrows[:10])
+    if nsrows:
+        nsrows.sort(key=lambda r: -r[1]); print("new-steal visits per context (file, max per context, total, transitions, |G'|):", nsrows[:10])
     if ifdrows:
         ifdrows.sort(key=lambda r: -r[1]); print("distinct first-difference tattr inputs per phase (file, inputs, transitions, |G'|):", ifdrows[:8])
         print("max inputs/transitions:", round(max(r[1] / max(1, r[2]) for r in ifdrows), 3), "max inputs/|G'|:", round(max(r[1] / r[3] for r in ifdrows), 3))
@@ -355,6 +429,6 @@ if __name__ == "__main__":
         badrows.sort(key=lambda r: -r[1]); print("phases where PI fails to rise (file, failures, transitions, |G'|):", badrows[:8], "phases:", len(badrows))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT", "DISTRACTION", "RV SHAPE", "PREFIX-MONO-X", "NEW STEALS per", "RELEVANT STEALS per")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})
