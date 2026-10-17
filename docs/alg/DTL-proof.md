@@ -353,7 +353,11 @@ or ≤ pr(τ') (inside Z_τ'), so the maximum priority seen infinitely often is 
 Hence the first removed piece is p-won; by the same argument every later piece of type "stable regions" or type
 "attractor to X" (the -1 branch with Q nonempty) is p-won PROVIDED X is p-won; pieces of type Dom(prevV, R) (the -1
 branch with Q empty, 961-991) need not be p-won.
-K5 (the lowest region at X = ∅; PROVED). Let V* be stable at X = ∅, τ_k the lowest top that has a region, A the final
+[per referee, 10:08Z: K5 (i) and (iii) below are FALSE as written (REFEREE-2 R2-PROVED2 G-c2; instance
+docs/referee-2/R2-PROVED2/k5.pg, re-run by L-ALG on dtl_pyref, both order data: y has an edge into a higher region). The
+rescue loop runs to max_prio (721-722), so A holds vertices attracted above every top. The corrected K5 (restricted to
+A_<, Str replaced by Up(Str)) and the restated (α) are in GAP-C.md §18n; K5 (ii) stands. Text kept as history.]
+K5 (the lowest region at X = ∅; PROVED as stated only for (ii); see the note above). Let V* be stable at X = ∅, τ_k the lowest top that has a region, A the final
 threshold-loop set, Z_k the sptl region of τ_k (computed with all higher regions consumed). Then:
  (i) no p-vertex of A \ Reg has an edge into a higher region (it would have been attracted there: its priority is ≤ its
      rescue threshold < the top's priority, and it was never consumed);
@@ -429,7 +433,8 @@ by the −1 branch before the tangle's region is reached). In c3 shape (β) is a
 threshold loop and rescues the higher top; (β) needs the escape vertices to be unreachable by any rescue path, i.e. of
 priority above every surviving top's threshold.
 K6 (where a search can lose its last chance; PROVED as stated, with X arbitrary). Let V* be stable at some iteration with
-removed set X, τ_k the lowest top with a region, L_k its sptl region. K5(i)-(iii) hold verbatim with X ≠ ∅ (X is
+removed set X, τ_k the lowest top with a region, L_k its sptl region. [per referee: read K5 as CORRECTED in GAP-C.md §18n.]
+K5(i)-(iii) hold verbatim with X ≠ ∅ (X is
 forgiven in the threshold loop and in every region). Hence L_k is closed unless (α) τ_k's successor lies in the lower
 part of a straddling tangle; and if L_k is closed it is productive (an opponent-owned τ_k with all successors in X ∪
 consumed regions: with a successor in a consumed region it would have been consumed; with all other successors in X it
@@ -522,7 +527,8 @@ O(m), threshold loop (max priority + 1) ≤ n + 1 attractors each O(W_A) plus ca
 One best_vertices call: O(n^2 W_A). PROVED.
 (c) search_rec: ≤ n iterations per call, recursion depth ≤ d, every recursive call is made by an iteration that removes
 the whole of Z from its parent's R, so the total number of iterations over all calls of one search is ≤ n(d + 1) ≤
-n(n + 2). PROVED (2.2(v)). Per iteration: one best_vertices O(n^2 W_A); in the result-1 branch the sptl passes: each pass
+n(n + 2). PROVED (2.2(v)). [per referee, REFEREE-2 G-k2: each call also has its final, returning iteration, so the count is
+≤ 2n(d + 1) + 1; the O-bound is unchanged.] Per iteration: one best_vertices O(n^2 W_A); in the result-1 branch the sptl passes: each pass
 costs ≤ n regions × (O(W_A) + extractTangles O(n + m) + duplicate check O(|T| n) (396-406)) = O(n W_A + n |T| n), and the
 number of passes is ≤ (tangles + dominions created in this search_rec iteration) + 1; Dom(V,R) O(W_A); the -1 branch
 O(n + W_A + m). So one search costs O(n(d+1) · n^2 W_A + (|T| + n + 1) · n(W_A + |T| n)) = O(n^4 (m + |T| n^2) + (|T| + n)
@@ -710,7 +716,8 @@ distraction removes a cut, un-forgives exits, and turns another top into a distr
 So neither heads nor first-stable-piece contexts are monotone across searches (F6, F7), and Lemma D cannot be applied across
 searches in any piece. (iii) The first-call pruning distance is monotone in T (F5, 0 violations) but constant across progressing
 searches. Lemma W (PROVED, reading, 00:50Z): sptl extracts at a top only `if (closed_region and !W[top])` and sets W[top] (528-529); W is
-reset only in search() (1016); extractTangles is called nowhere else. So every vertex extracts at most once per search and
+reset only in search() (1016); extractTangles is called nowhere else; and by SCC1 (GAP-C.md §3) each extractTangles call
+creates at most one tangle [per referee, REFEREE-2 G-k1: Pearce emits every SCC reachable from top (290-305)]. So every vertex extracts at most once per search and
 tangles(G) ≤ n · (number of search calls). CORRECTION to (i): the 31 tangles are at one priority LEVEL (8 tops; true tops via
 the Debug trace give ≤ 4 per top there), and the in-search chain is across the equal-priority tops (each absorbs the previous
 top's fresh tangle), consistent with Lemma W. Reduction (PROVED via Lemma W): GAP-A ⇔ polynomially many search calls. Strongest
