@@ -39,7 +39,7 @@ class NT(S5.S5):
                 X_ |= Z
                 s.search_rec(Z, p, depth + 1)
             else:
-                s.in_dom = True; s.dom(V, R, X_, p); s.in_dom = False
+                s.in_dom = True; s.x_old = set(X_); s.dom(V, R, X_, p); s.in_dom = False
                 tab["P pieces"] = tab.get("P pieces", 0) + 1
     def attractTangle(s, t, p, R, Z, Gx, maxpr):
         r = D.DTL.attractTangle(s, t, p, R, Z, Gx, maxpr)
@@ -53,7 +53,11 @@ class NT(S5.S5):
             strad = any(w in s.x_before for w, _ in s.tv[t])
             k = "Dom(prevV) at a P piece fires a tangle" + (" with a vertex in old X or an earlier top's part (straddle)" if strad else " (no such vertex)")
             tab[k] = tab.get(k, 0) + 1
-            if strad: print("DOMSTRADDLE", s.fname, "tangle", sorted(s.idx[w] for w, _ in s.tv[t]), flush=True)
+            if strad:
+                oldx = any(w in s.x_old for w, _ in s.tv[t])
+                k2 = "Dom straddle kind: " + ("uses a vertex of old X" if oldx else "uses only an earlier top's part of this Dom")
+                tab[k2] = tab.get(k2, 0) + 1
+                print("DOMSTRADDLE", s.fname, "tangle", sorted(s.idx[w] for w, _ in s.tv[t]), k2, flush=True)
         return r
     def best_vertices(s, V, R, p):
         V.clear(); V.update(v for v in R if s.pr[v] % 2 == p)

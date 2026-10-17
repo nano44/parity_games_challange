@@ -25,12 +25,14 @@ leaving it deleted and dead ends lost for p. KT(R) :⇔ W_p(F_c) ≠ ∅ for som
 | KT0 | KT(G') holds when D ≠ ∅; KT fails at R_end (best_vertices returns 0: no p-priority vertex) | PROVED |
 | YZ-read | Dom(prevV, R) (961-976) and the final round's region loop (690-708) are step-for-step equal until Dom's attractTangle accepts a stored tangle with a vertex in old X or in an earlier top's part of the Dom (Dom: "in Z", 136-137; region loop: rejected, 138-139) | PROVED (reading) |
 | FM+ | in a −1 call, each final region Z^f_τ lies in the round-r union of the regions of tops with index ≥ index(τ), for every round r, unless round r straddles (Lemma E (a), GAP-A-M §3) a tangle that round f attracts | PROVED except that case |
-| FM ⇔ NT-f | (FM) holds iff (NT-f): the final pruning round of a −1 call accepts no stored tangle in its region loop | PROVED (equivalence); NT-f DATA 15,939/15,939 −1 calls, although earlier rounds accept tangles in 6,177 of them, 628 times with every p-priority vertex of the tangle already pruned |
-| P-KT | at every depth-0 P piece with D ∩ R ≠ ∅, KT(R \ Y_0) holds (Y_0 the removed set), witnessed at level c1 | PROVED given (YZ) Y_0 = Z_f and (FM) Z_f ⊆ Z^r for all rounds |
+| NT-f | the final pruning round of a −1 call accepts no stored tangle in its region loop | PROVED (reading; GAP-C.md 18k): the first such tangle's escapes lie in every earlier union (vertex-rule induction), its first-pruned top-priority vertex would have been rescued (q ≥ 1) or not been a candidate (q = 0). DATA 15,939/15,939 calls; INV-T (the same for intermediate rounds) is FALSE, 628 cases |
+| FM, WM | Z_f ⊆ Z^r ⊆ A^r_t for every round r and level t | PROVED (corollary of NT-f + the FM+ induction) |
+| P-KT | at every depth-0 P piece with D ∩ R ≠ ∅, KT(R \ Y_0) holds (Y_0 the removed set), witnessed at level c1 | PROVED given (YZ) Y_0 = Z_f only ((FM) is now proved) |
+| YZ-read (sharpened) | by NT-f, Dom(prevV) accepts no tangle at all unless its first acceptance uses a vertex of old X or of an earlier top's part; without such an acceptance Y_0 = Z_f | PROVED (reading) |
 | (YZ), (FM) | as above | DATA: 0 failures (YZ on 63,000+ P pieces, FM on 106,091 −1 calls; corpus both orders, unions). The YZ-read exception does occur once (strfam_S5_n46.pg, stable order: Dom fires the stored tangle {14,15,16,17} using a vertex of old X / an earlier top's part) yet Y_0 = Z_f and P-KT hold there |
 | KT-STEP-first | the first depth-0 piece after which KT fails learns inside D | DATA 0 violations; with KT0 and P-KT it would give (K-in) |
 
-## 4. Proof of P-KT (given (YZ), (FM))
+## 4. Proof of P-KT (given (YZ); (FM) is PROVED, GAP-C.md 18k)
 W1 := a p-dominion of H inside D ∩ R with the least maximum priority c1 (exists by T0). c1 has p's parity (otherwise W1
 minus the opponent's attractor to its top priority contains a p-dominion of H with a smaller maximum). W1 is closed in H
 (opponent vertices keep all their R-edges in W1), p wins it with σ1 staying inside. (FM) gives Z_f ⊆ Z^r ⊆ A^r_t for every
@@ -48,7 +50,7 @@ U := W1 \ (Z_f ∪ A_{c1}(R')) ≠ ∅.
 an edge into U and all its remaining edges in U, no vertex of U is a dead end, and every play in U consistent with σ1 is a
 W1-play: U ⊆ W_p(F_{c1}(R')). □
 
-## 5. Shape of a counterexample to (NT-f) (= to (FM)), for L-RED (Lead 08:08Z)
+## 5. (Superseded 08:43Z by date -u: NT-f is PROVED, GAP-C.md 18k.) Former shape of a counterexample to (NT-f) (= to (FM)), for L-RED (Lead 08:08Z)
 Necessary (PROVED from the definitions): a −1 call (rounds 1..f) on R with stored tangles T, and a stored p-tangle t with
 (i) an escape in R, accepted by the region loop of round f at the pop of its last escape inside the region of a final top
 τ (pr(t) ≤ pr(τ); no vertex of t in a region computed earlier in round f);
@@ -65,7 +67,10 @@ region. A counterexample therefore needs the host's role at round f taken by a F
 t's escapes while τ (a candidate at round f) has no edge into Z_f and no rescue below pr(τ).
 
 ## 6. What is not done, and what killed the earlier frames
-- (YZ) and (FM) are absences of straddling-tangle effects (GAP-A-M Lemma E), the family behind (α) and GAP-A's deficits.
+- (YZ): the only remaining hypothesis of Step 5. It can fail only through a stored tangle that Dom(prevV) accepts while
+  the final round's region loop rejects it (a vertex in old X or in an earlier top's part). Shape for L-RED: a P piece in
+  which such a tangle fires (seen once: strfam_S5_n46.pg, stable order, old-X kind, harmless there) AND its newly taken
+  vertices are not reached by the region loop, so that Y_0 ⊋ Z_f; then test P-KT on that piece.
 - The S step and the T step of KT (GAP-C.md 18i, 18j) are DATA only; the T step needs the frame at recursion depth ≥ 1, where
   a core closed in G[R_d] is not guaranteed; the S step is existential over the levels ((S-LEVEL) killed).
 - Killed (instances in GAP-C.md 18d, 18f, 18j): K-frame (P-K), (K-STEP-first) by L-RED pk_viol_n20 (R27); HYB
