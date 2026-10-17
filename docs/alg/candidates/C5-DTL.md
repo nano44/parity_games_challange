@@ -1,5 +1,16 @@
 # C5-DTL: Distance Tangle Learning as written in Oink (transcribed by L-ALG, 2026-10-15 13:20Z)
 
+Corrections 2026-10-15 16:30Z (L-ALG successor, found while writing docs/alg/DTL-proof.md against the code): (1) `Q` is a stack
+(LIFO), not a FIFO queue; (2) best_vertices computes its regions top-down with ONE copy CurR per pruning round, consumed across
+tops (line 690 precedes the loop 691), so the regions are disjoint and vertices of lower regions are attracted only from what
+higher tops left; the earlier text said "fresh copy per top, regions overlap". Both change strategy/region details, not set
+membership of attractors. Everything else re-read against dtl.cpp @ 8fbf0a7 and found exact.
+Pinning (17:45Z, after CHECKER C3): the object described here is A_DTL = `oink --dtl --no-single --no-wcwc --no-loops`
+(release build, trace = 0): the parser's bad-self-loop removal and Oink::solveSelfloops are OFF, so self-loops reach the
+solver as given; the duplicate-tangle check (dtl.cpp 385-424, `CHECK_UNIQUE (1 or !NDEBUG)` = always on) is part of the
+algorithm and is the "duplicate check" in extractTangles below; equal-priority vertices may be indexed in any order
+(std::sort is unstable), and every claim about this pseudocode is made for every such order.
+
 Status: CANDIDATE by the Lead's redirect (12:47Z): "the one complete solver nothing in the fleet's bench can hurt".
 This is NOT the fleet's design: it is Tom van Dijk's unpublished research solver `dtl` in Oink, commit 8fbf0a7
 (github.com/trolando/oink, src/solvers/dtl.cpp, 1163 lines; history and the author's own statements in notes/L-ALG.md
@@ -10,10 +21,27 @@ dtl.cpp (release build: code under `#ifndef NDEBUG` and `trace` is omitted; `com
 called only under NDEBUG/trace and is NOT part of the algorithm). Written so that an adversary (L-RED) can target it.
 
 ## 0. Conventions (Oink)
+Order data (added 2026-10-16 00:20Z on the Lead's go, option (ii) of docs/alg/C5-orders.md; D1/D2 are claimed for every datum).
+The pseudocode is parametrised by order data ω fixed before the run: (O1) a vertex indexing non-decreasing in priority;
+(O2) for each v a list ins(v) containing each predecessor once per edge; (O3) for each v a list outs(v) of its successors;
+(O3') for each extractTangles call, an order in which the nontrivial SCCs reachable from top are processed and, for each
+SCC, an order of its vertices (used only for dom_vector); (O4) tv[t] sorted ascending by index (this one is the code,
+dtl.cpp 389, not a free choice); (O5) dom_vector in O3' order, LIFO pops; (O6) "Q := all of Z" in best_vertices' threshold
+loop pushes in any order; (O7) tin[v] iterated in creation order; (O8) iterations_dtl = number of search calls,
+iterations_idtl = ⌊calls/2⌋ + 1 (dtl.cpp 1126). Oink @ 8fbf0a7 is the instance: O1 = std::sort on priorities (game.cpp
+478-505, introsort, unstable above 16 elements); O2 = predecessors in DECREASING index, one entry per edge (build_in_array
+after ensure_sorted, oink.cpp 35, 37; game.cpp 868-906 fills each in-list from its end); O3 = the vertex's input edge line in
+input order with targets renamed by the sort permutation (parse_pgsolver_renumber's edge loop, pgparser.cpp 441-457; the same
+parser always renumbers priorities to consecutive integers keeping parity, 492-511; game.cpp 534-575); O3' = Pearce's emission
+order (root first, then its post-order stack, dtl.cpp 283-299); O6 = increasing index (find_first/find_next, 723). Regions
+and the winning property of the output strategies do not depend on ω (every proof in DTL-proof.md is for a fixed arbitrary ω);
+the counters and the stored tangle set do (L-COMP divergences #1-#3, trunk experiments/dtl-bench/README.md).
+
 Max-parity; player 0 = Even, 1 = Odd; vertices are indexed in non-decreasing priority order (oink.cpp:35
 `game.ensure_sorted()`), so "for top from high index down" = from high priority down, and priority(n-1) = max priority.
 `G` = bitset of unsolved vertices; `R`, `Z`, `X`, `V`, `W`, `S`, `CurR`, `CurZ`: bitsets; `str[v]` = current strategy
-successor of v (-1 = none); `Q` a FIFO queue. owner(v) ∈ {0,1}; outs(v), ins(v) the edge lists. Tangles: for each tangle t,
+successor of v (-1 = none); `Q` a STACK (uintqueue.hpp: `pop()` returns `queue[--pointer]`, LIFO; CORRECTED 2026-10-15 16:30Z, it was
+written as a FIFO queue before: every attractor below is depth-first in the order of Oink's edge lists). owner(v) ∈ {0,1}; outs(v), ins(v) the edge lists. Tangles: for each tangle t,
 tv[t] = its (vertex, strategy) pairs, tout[t] = its escape vertices, tpr[t] = its priority (-1 = deleted), tin[v] = tangles
 having v as an escape. Counters: tangles, dominions, iterations.
 
@@ -59,11 +87,11 @@ best_vertices(V, R, p) [643-776] (V is output; returns 0 / 1 / -1):
   curdist := 0
   loop:
     curdist++; prevV := V
-    Z := ∅
+    Z := ∅; CurR := R                                                      # line 690: ONE copy per round, consumed across tops
     for top from n-1 down to 0 with top ∈ V and top ∉ Z:          # "the current p region"
-      CurR := R; CurZ := {top}; Q := [top]
+      CurZ := {top}; Q := [top]                                             # (CORRECTED 16:30Z: not a fresh CurR per top)
       while Q: v := Q.pop(); CurR := CurR \ {v}; attractVertices(p, v, CurR, CurZ, CurR, pr(top)); attractTangles(p, v, CurR, CurZ, CurR, pr(top))
-      Z := Z ∪ CurZ
+      Z := Z ∪ CurZ                                                         # regions are DISJOINT (top-down decomposition of R by V)
     Candidates := [v ∈ V, descending, with not attracts(p, v, Z, R)]      # no "good path" yet
     if Candidates = []: return 1                                           # stable
     for t := 0 .. pr(n-1):                                                 # attract R to Z "slowly", threshold t

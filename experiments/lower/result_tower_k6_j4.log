@@ -1,0 +1,16 @@
+nodes 51906148 [30s]
+depth 0: 4 types, 4 mixed [31s]
+depth 1: 60 types, 58 mixed [205s]
+depth 2: 50044 types, 3477 mixed [374s]
+depth 3: 459628 types, 4558 mixed [534s]
+depth 4: 923788 types, 1146 mixed [674s]
+depth 5: 1098316 types, 90 mixed [805s]
+depth 6: 1120780 types, 0 mixed [942s]
+M_1: 0 (winning type, losing type) pairs inside one depth-0 type; 0 representative nodes
+M_2: 11985101 (winning type, losing type) pairs inside one depth-1 type; 36909 representative nodes
+M_3: 904309 (winning type, losing type) pairs inside one depth-2 type; 91216 representative nodes
+M_4: 61123 (winning type, losing type) pairs inside one depth-3 type; 27547 representative nodes
+M_5: 4072 (winning type, losing type) pairs inside one depth-4 type; 4197 representative nodes
+M_6: 180 (winning type, losing type) pairs inside one depth-5 type; 270 representative nodes
+subset: 25593 games realising M_4..M_6
+SAT at k=6 on this subset (102058 nodes, 21191446 clauses): UNSAT [222.1s]

@@ -1,0 +1,36 @@
+family,N,gen,game,n,m,d,solver,status,wall_s,solver_s,dominions,tangles,iterations,pruning,detail,cmd
+counter_m,2,tools/oink/build/counter_m 2,counter_m_2.pg,9,15,5,oink-uzlk,ok,0.0030,3.2e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_m,2,tools/oink/build/counter_m 2,counter_m_2.pg,9,15,5,py-zlk,ok,0.0259,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_m,2,tools/oink/build/counter_m 2,counter_m_2.pg,9,15,5,dtl-pin,ok,0.0032,4.9e-05,1,1,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,2,tools/oink/build/counter_m 2,counter_m_2.pg,9,15,5,idtl-pin,ok,0.0042,4.7e-05,1,1,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,4,tools/oink/build/counter_m 4,counter_m_4.pg,15,27,7,oink-uzlk,ok,0.0033,2.7e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_m,4,tools/oink/build/counter_m 4,counter_m_4.pg,15,27,7,py-zlk,ok,0.0250,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_m,4,tools/oink/build/counter_m 4,counter_m_4.pg,15,27,7,dtl-pin,ok,0.0027,5.5e-05,1,2,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,4,tools/oink/build/counter_m 4,counter_m_4.pg,15,27,7,idtl-pin,ok,0.0027,5.3e-05,1,2,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,8,tools/oink/build/counter_m 8,counter_m_8.pg,27,51,11,oink-uzlk,ok,0.0034,8.5e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_m,8,tools/oink/build/counter_m 8,counter_m_8.pg,27,51,11,py-zlk,ok,0.0302,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_m,8,tools/oink/build/counter_m 8,counter_m_8.pg,27,51,11,dtl-pin,ok,0.0038,0.000168,1,4,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,8,tools/oink/build/counter_m 8,counter_m_8.pg,27,51,11,idtl-pin,ok,0.0035,0.000154,1,4,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,16,tools/oink/build/counter_m 16,counter_m_16.pg,51,99,19,oink-uzlk,ok,0.0064,0.002972,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_m,16,tools/oink/build/counter_m 16,counter_m_16.pg,51,99,19,py-zlk,ok,0.1070,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_m,16,tools/oink/build/counter_m 16,counter_m_16.pg,51,99,19,dtl-pin,ok,0.0038,0.000527,1,8,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,16,tools/oink/build/counter_m 16,counter_m_16.pg,51,99,19,idtl-pin,ok,0.0033,0.00044,1,8,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,32,tools/oink/build/counter_m 32,counter_m_32.pg,99,195,35,oink-uzlk,ok,4.4653,4.461682,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_m,32,tools/oink/build/counter_m 32,counter_m_32.pg,99,195,35,py-zlk,timeout,120.1011,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_m,32,tools/oink/build/counter_m 32,counter_m_32.pg,99,195,35,dtl-pin,ok,0.0086,0.00378,1,16,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,32,tools/oink/build/counter_m 32,counter_m_32.pg,99,195,35,idtl-pin,ok,0.0064,0.003227,1,16,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,64,tools/oink/build/counter_m 64,counter_m_64.pg,195,387,67,oink-uzlk,timeout,120.0817,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_m,64,tools/oink/build/counter_m 64,counter_m_64.pg,195,387,67,dtl-pin,ok,0.0359,0.031623,1,32,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,64,tools/oink/build/counter_m 64,counter_m_64.pg,195,387,67,idtl-pin,ok,0.0397,0.035616,1,32,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,128,tools/oink/build/counter_m 128,counter_m_128.pg,387,771,131,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_m,128,tools/oink/build/counter_m 128,counter_m_128.pg,387,771,131,dtl-pin,ok,0.3848,0.380476,1,64,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,128,tools/oink/build/counter_m 128,counter_m_128.pg,387,771,131,idtl-pin,ok,0.3913,0.386983,1,64,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,256,tools/oink/build/counter_m 256,counter_m_256.pg,771,1539,259,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_m,256,tools/oink/build/counter_m 256,counter_m_256.pg,771,1539,259,dtl-pin,ok,5.2573,5.252579,1,128,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,256,tools/oink/build/counter_m 256,counter_m_256.pg,771,1539,259,idtl-pin,ok,4.8728,4.868183,1,128,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,512,tools/oink/build/counter_m 512,counter_m_512.pg,1539,3075,515,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_m,512,tools/oink/build/counter_m 512,counter_m_512.pg,1539,3075,515,dtl-pin,ok,73.0661,73.060851,1,256,2,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,512,tools/oink/build/counter_m 512,counter_m_512.pg,1539,3075,515,idtl-pin,ok,74.1500,74.144612,1,256,2,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,1024,tools/oink/build/counter_m 1024,counter_m_1024.pg,3075,6147,1027,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_m,1024,tools/oink/build/counter_m 1024,counter_m_1024.pg,3075,6147,1027,dtl-pin,timeout,400.1037,,,,,,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_m,1024,tools/oink/build/counter_m 1024,counter_m_1024.pg,3075,6147,1027,idtl-pin,timeout,400.1031,,,,,,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
