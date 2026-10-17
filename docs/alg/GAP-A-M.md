@@ -2024,6 +2024,8 @@ output is strictly larger. It lies in a best_vertices call at some context R, or
 - In the second case, the attractor's output strictly grows.
 Hence (PROVED, reading; given FDL, PREFIX-MONO and the 22c corollaries): per phase,
   S − 1 ≤ Σ_{R ∈ C_bv} ((D_R + 1)·(H + 1)) + Σ_{(R,X) ∈ C_T} n,
+[per referee, R9 post-landing note (packet-7 comparisons, 15:53Z): the constants are 2(F_R + 1)(H + 1) per context and
+≤ 2n per input.]
 where C_bv is the set of distinct contexts of first-difference best_vertices calls and C_T is the set of distinct
 first-difference −1 attractor inputs. So:
 - GAP-A ⇐ (CTX) the numbers of distinct first-difference contexts |C_bv| and |C_T| per phase are polynomial, and (DIRTY)
@@ -2238,6 +2240,7 @@ So the transitions whose e* has input I form a strictly increasing chain of subs
 Consequence for G-DOM. Replace the hypothesis (e* ∉ Dom) by the term n·|C_Dom|, where C_Dom is the set of distinct
 first-difference Dom-step inputs. The reduction then reads
   S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·(|C_T| + |C_Dom|) + 1,
+[per referee, R9 post-landing note: with the constants 2(F_R + 1)(H + 1) per context and ≤ 2n per input.]
 so GAP-A ⇐ (CTX⁺) ∧ (FALL), with (CTX⁺) counting the distinct first-difference contexts of best_vertices calls, −1
 attractors and Dom steps.
 The same bound for every tattr type, S − 1 ≤ n·|I_fd| + 1 with I_fd the distinct first-difference inputs, is valid but
@@ -2625,3 +2628,19 @@ Chain (proved parts are readings):
   re-steal it at the same step.
 - A proof would need to show that the shrinks caused by earlier relevant steals never uncover the same tangle at the same
   later step. Not found.
+
+22w. Packet 8 (REFEREE R-P8 @ fe4be51; REFEREE-2 pending), imported per referee; §22s and §22u unchanged (15:53Z by date -u)
+- EXACT*: SIGN (a corollary of EXACT; no new assumption). PREFIX-MONO-X*: SIGN.
+- Corollary: SIGN WITH GAPS, G8-1. Counted over consecutive visit pairs it needs the factor 3: F_R ≤ 3·N*_R, where N*_R
+  is the number of relevant-steal visit pairs at R. §22s's "F_R ≈ #relevant steals" and §22u's first line omit it.
+- §22u chain: VALID as a conditional. F_R ≤ 3(|R| + 1)|R|·#fired(R) given (STEAL-ONCE). So GAP-A ⇐ (CTX⁺) ∧ (STEAL-ONCE)
+  ∧ (FIRED-R), given STR-DET. Both premises are DATA. (FIRED-R) is the real obstruction and has no argument yet.
+- Wording correction to §22u: "at most 0.5·|R|" holds on L-ALG's data only. REFEREE's probe finds (FIRED-R) up to 14
+  tangles per context and a ratio up to 0.62·|R| (Oink order) on small contexts. Read §22u's figure as "at most 14, and
+  at most 0.62·|R|, on all data so far".
+- R9 constants (post-landing note): per context 2(F_R + 1)(H + 1), per input ≤ 2n. Marked in the §22e and §22j displays.
+Mixed-union data for §22u (UNIONS = 900, SEED = 1, plus corpus; RM_EXCL=1, RM_LIGHT=1; Oink / stable):
+- (FIRED-R): at most 13 per context, ratio at most 0.5 / 0.47.
+- (STEAL-ONCE): max 1 in all 665 / 703 phases with new steals and all 124 / 150 with relevant steals.
+- PREFIX-MONO-X*: descents with a relevant steal 314 / 522; relevant steals without a descent 33 / 22; descents without a
+  relevant steal 0 / 0.
