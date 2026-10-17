@@ -169,3 +169,7 @@ R11 [refereed-only] landed (trunk af07389; Opus D12, CHECKER C11 PASS): only fir
 DE20 (trunk efff851): (STEAL-ONCE*) false on stealonce_viol_n76 (Oink verified; <=2 steals per quadruple, not super-polynomial; run
 correct). R11 (a)-(c) stand, (d) conditional no longer reduces GAP-A as stated; post-landing note. Weaker replacement under test.
 L-ALG and L-RED handed over (~600k context), successors 5/5.
+
+## 2026-10-17 19:49Z owner (progress question)
+> Give me a status update
+Answered from trunk deb74d1 (RESULTS R1-R11, DE1-DE20, DECISIONS L32) and the Lead's notes to 19:37Z. Relayed verbatim to the Lead.
