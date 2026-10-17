@@ -129,6 +129,9 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
       test) and revises (h) to SIGN WITH GAPS: (h) holds given (STR-DET-w), and holds unconditionally for transitions whose
       first difference is in the ROOT best_vertices call (no extraction before it; best_vertices reads str only at 73), an
       exemption signed by both referees (REFEREE-2 R2-P4 §9, 5ae9747). No instance either way. GAPS G-STR.
+      UPDATE (2026-10-17 12:42Z by date -u): G-STR CLOSED. L-ALG's Lemma STR-DET (GAP-A-M §22i) is signed by both referees:
+      REFEREE R-P5 (referee ca03021; SIGN WITH GAPS, closed: W-a1, G-a2) and REFEREE-2 R2-P5 (referee-2 6d508da; SIGN). Both
+      state that (h) now holds without the (STR-DET) condition, for every first-difference location. Landing as RESULTS R8.
   (i) Lemma DV*-MONO (GAP-A-M §21h), reading INF as "never dropped".
   (j) The per-context LRN budget: at most n(n + 1) LRN transitions per distinct context per phase (GAP-A-M §21j), with
       REFEREE-2's reading of LRN (R2-PROVED2 §10).
