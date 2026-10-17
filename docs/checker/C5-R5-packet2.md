@@ -139,3 +139,20 @@ All PASS.
 3. Optional: N-1, N-3.
 After these, CHECKER re-diffs the draft text only. The re-runs stay valid while 88d8e4c, 581902f and Oink 8fbf0a7 are
 unchanged.
+
+## C5 re-diff (CHECKER, 2026-10-17 ~10:28Z): docs/agents/R5-draft.md at trunk bbeb5b0, text only
+Method: word-level diff 273c2cd → bbeb5b0 of the draft. The branch was synced by merge commit after the ancestor check. No
+re-runs; §4 stays valid.
+
+### Verdict: PASS
+| item | at bbeb5b0 | |
+| --- | --- | --- |
+| G-3 gap header (required) | "G-R5-1..7 are closed in the reports; imported into the author's text at l-alg d67c5c8 except the REFEREE-2 G-b1 closure in G-R5-1 (to be recorded); G-R5-8 lists dependencies" | FIXED. I checked the import claim at d67c5c8: GAP-C.md carries the B-thr "(a) always" reading with G-b2 and R1 G-b1 = R2 G-b3 (§3, §18n), G-e1 (§11), G-c1 (§13), and edges of G' for K0 (§18b). GAP-A-M.md carries G-h1 (§21d) and R-i (§21h). DTL-proof.md carries G-k1, G-k2 and the K5 note. R2 G-b1 is marked "NOT recorded closed until REFEREE signs" (GAP-C.md §3 line 85 and the map row 26), exactly as the draft says |
+| N-1 (e) | "the SCC C_τ extracted at a closed top τ meets W_{1-p} only where ..." | FIXED |
+| N-2 (g) | "where D ≤ n is the number of searches that find a dominion (GAP-A-M §21c; run() loops C5-DTL.md lines 141-142 ...)". This matches GAP-A-M §21c ("phases ≤ D_0 + D_1 + 2 = D + 2 ≤ n + 2") | FIXED |
+| N-4 | G-R5-8: "Priorities renumbered to ≤ 2n + 2 under L26 (REFEREE's (k) text says ≤ n; the O(log n)-bit conclusion is unchanged)" | FIXED |
+| N-5 | G-R5-8 names "code facts C1-C6 of docs/referee/R-STEP5.md §0 (REFEREE hypothesis 5)" and "(α) and Case B (GAP-K') remain open (REFEREE hypothesis 3)". Both quote REFEREE's "Hypotheses and dependencies still open" list correctly | FIXED |
+| N-3, N-6 | unchanged, as the Lead states; both were optional | — |
+| nothing else moved | the diff touches only the header line, (e), (g), the gap header and G-R5-8. (a)-(d), (f), (h)-(k), the Signatures line, G-R5-1..7 texts, the K5 finding and Scope are unchanged from the version checked above | CONFIRMED |
+
+The draft at bbeb5b0 may land as RESULTS R5.
