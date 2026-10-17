@@ -1,4 +1,4 @@
-# Draft RESULTS R7 (Lead, 2026-10-17 12:25Z by date -u) — NOT LANDED; awaiting CHECKER gate
+# Draft RESULTS R7 (Lead, 2026-10-17 12:25Z by date -u; rev. 12:31Z: root-call exemption now two signatures, R2-P4 §9) — NOT LANDED; awaiting CHECKER gate
 
 ### R7 [refereed-only] Packet 4 on A_DTL: root-call monotonicity (PREFIX-MONO, POS-FALL, ROOT-BOUND) and the conditional reduction of GAP-A (2026-10-17) — partial step-4 lemmas (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -39,9 +39,9 @@
          level alignment of s and s+1 does not determine extracted SCCs (REFEREE-2; confirmed REFEREE §C). DATA 0 of 4,290
          pairs. It also conditions RESULTS R5 (h) except for root-call first differences. GAPS G-STR.
   G-R7-6 OPEN (CTX) and (DIRTY): DATA only (first-difference contexts ≤ 8 per phase; dirty ≤ 12 per phase, = K+1 on h4_defK).
-  G-R7-7 Dependencies: FDL (RESULTS R5 (h)) for (c)-(e). For root-call first differences REFEREE §C argues G-STR cannot arise
-         (no extraction before e*; best_vertices reads str only at 73); REFEREE-2 signs (c) given FDL (ii) and did not address
-         this exemption, so the exemption has one signature. O1 (index order follows priority); DTL-proof 1.2b; DTL-proof §3(e).
+  G-R7-7 Dependencies: FDL (RESULTS R5 (h)) for (c)-(e). For root-call first differences G-STR cannot arise (no extraction
+         before e*; inside best_vertices no set test reads str: 73 tests only "== -1"), signed by REFEREE §C (e0cb163) and
+         REFEREE-2 §9 (5ae9747); so (c) and (d) are independent of (STR-DET-w), which affects only non-root first differences. O1 (index order follows priority); DTL-proof 1.2b; DTL-proof §3(e).
          Nothing Lean-checked.
 - Scope: (a)-(d) are root-call statements; (e) is a reduction with four OPEN hypotheses, not a bound. GAP-A stays open; L-ALG
   §22f (unrefereed) sharpens (DIRTY) to (FALL) and finds (CTX) and (FALL) have different causes (§22g). Gauntlet step 4 stays
