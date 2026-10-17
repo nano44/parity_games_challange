@@ -3,7 +3,7 @@ Severity: blocker | major | minor. Status: open | in-progress | closed. Closed r
 
 | id | severity | owner | status | claim | gap |
 | --- | --- | --- | --- | --- | --- |
-| GAP-A | blocker | L-ALG (L-RED attacks) | open | A_DTL makes polynomially many searches (gauntlet step 4, running time) | (SPP) "searches per phase <= |G'|" is DATA only (tight: spp_chain_up_n43); phases <= D+2 and (SPP) => O(n^10(m+n^2)) refereed-signed (R-PROVED2 / R2-PROVED2 (g),(k), comparison pending); every per-context and per-phase potential dead (RESULTS DE9-DE12); L32 reassessment |
+| GAP-A | blocker | L-ALG (L-RED attacks) | open | A_DTL makes polynomially many searches (gauntlet step 4, running time) | (SPP) "searches per phase <= \|G'\|" is DATA only (tight: spp_chain_up_n43); phases <= D+2 and (SPP) => O(n^10(m+n^2)) refereed-signed (R-PROVED2 / R2-PROVED2 (g),(k), comparison pending); every per-context and per-phase potential dead (RESULTS DE9-DE12); L32 reassessment |
 | GAP-C | blocker | L-ALG (L-RED attacks) | open | A_DTL is complete: W_p(G') nonempty => search(p) learns or finds a dominion (gauntlet step 4) | KT frame: depth-0 P pieces keep KT given (ACYC) (RESULTS R4); S step (S-LOW, tight form) DATA; T step (CORE-PASS + REC) DATA; (K-in), (TW) DATA |
 | G-S5-6 | major | L-ALG | open | (ACYC): the new part of a Dom(prevV) straddle has no tangle-graph cycle | only open hypothesis of R4; DATA 0 failures (32,026 referee-2 runs, L-ALG 4 x 4,000 climb steps) |
 | G-K5 | major | L-ALG | open | DTL-proof K5 (i)/(iii) (lowest region closed unless straddling) | FALSE as written (REFEREE-2, docs/referee-2/R2-PROVED2/k5.pg); corrected form in R2-PROVED2 §3 to be imported; meaning of (alpha) depends on it |
