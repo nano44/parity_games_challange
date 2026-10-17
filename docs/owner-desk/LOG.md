@@ -120,3 +120,7 @@ Q12 closed as D11 / L30. p.15 recipe already built (L-RED R14, d70e99a): no slow
 ## 2026-10-16 21:07Z owner (progress question)
 > Give me a status update
 Answered from trunk 9e1ae89 (NOW.md, RESULTS DE9-DE11, DECISIONS L31), l-alg 7c2f3f1, l-red c09aef2. Relayed verbatim to the Lead.
+
+## 2026-10-17 09:05Z owner (progress question)
+> Give me a status update
+Answered from trunk 17ec77b (NOW.md, RESULTS DE12), l-alg dc231e0 (docs/alg/STEP5.md), l-red acfabb4. Relayed verbatim to the Lead.
