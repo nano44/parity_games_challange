@@ -1,6 +1,36 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER (parked 2026-10-17 ~12:20Z on the Lead's instruction; context ~520k; produced on Opus 5.5 under D12/L33)
+Resume point. Successor REFEREE: read CLAUDE.md, docs/NOW.md (Lead session_014FBi6o334DvwT5Uw2kDfoN), then my reports below.
+- Push only with scripts/push.sh; redirect its output to a file and print $?. Read the notification queue before every push.
+- Rebuild Oink first with scripts/setup_oink.sh (tools/ is gitignored).
+- Label every verdict "(Opus 5.5, D12)".
+- Do not read docs/referee-2/ for a packet until your own report for it is pushed.
+Packets done today (all on claude/referee; every report has a §C comparison with REFEREE-2 where the Lead asked):
+- R-STEP5.md (Step 5 of GAP-C; pin 8f41be8): KT, NT-f, FM/WM, (YZ) reading, (YZ)<=(ACYC), P-KT. All signed, gaps closed.
+- R-PROVED2.md (packet 2; pin 43d63b0): SCC1, B-thr ("(a) always", F-b3), Theorem A, O0/O1, OPP-EXIT, K0, phases<=D+2,
+  FDL, DV*-MONO, LRN budget, (SPP)=>bound. §C/§C5 hold the comparisons. The G-h1 "closed" there is now conditional on
+  (STR-DET) (R-P4 §C1).
+- R-P3.md (packet 3; pin 6e0082f): K5' and (α) with Up(Str) REJECTED after the comparison (REFEREE-2's configuration;
+  my G-a1/G-a2 step was wrong: old tangle vertices keep their region strategy, 169). K5''/(α) with Dep(Str) SIGNED; gap
+  G-α1 in R2's ⇔ form. O-P SIGN (given YZ). GAP-A first step SIGN (round r).
+- R-P4.md (packet 4; pin 44d1428): S0, PREFIX-MONO, POS-FALL, ROOT-BOUND SIGN. §22e SIGN WITH GAPS with G-e1 (e* in Dom
+  via an X-straddle) and G-STR OPEN. §C: G-STR holds; it cannot arise for e* in the root best_vertices call.
+Open gaps I hold (for GAPS.md):
+- (ACYC) (Step 5).
+- G-e1/G-DOM (§22e: first difference in Dom).
+- G-STR, i.e. (STR-DET) (FDL alignment and counting after the first sptl).
+- (CTX), (DIRTY), (SPP).
+- The (α) shape (SKETCH).
+- GAP-A beyond round r.
+Lessons:
+- Twice my set-level arguments missed strategy-level (str) effects: R-P3 (a) and G-STR. When a proof step reasons about
+  what a ψ-play or an extraction does, check which line wrote str (89 / 171 / 73) for every vertex involved.
+- REFEREE-2 caught both. Its configurations were correct.
+Tools (docs/referee/scratch/): step5_probe.py, bthr_probe.py, fdl_random.py (all subclass experiments/alg dtl_pyref/dtl_step5).
+Nothing in flight.
+
 ## Resume point (successor session, 2026-10-14 ~23:50Z)
 I am the successor REFEREE (spawned 23:15Z, replacing the session parked at f179ae0). Lead: session_014FBi6o334DvwT5Uw2kDfoN
 (send_message, first line "From REFEREE (<UTC from `date -u`>):"). Branch claude/referee, trunk merged in
