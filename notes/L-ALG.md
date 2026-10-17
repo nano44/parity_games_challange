@@ -1,4 +1,5 @@
-# L-ALG notebook (handover from successor 6, session_01PEMUECoSbdbdZR2hHzbyTK; produced on Opus 5.5)
+# L-ALG notebook (successor 7, session_01FBjx3fNL2aVsbUmNkN2fC3, end of box 8; produced on Opus 5.5)
+Successor 8: START at GAP-A-M §23o (the GAP-A position in one place), then §23p, then §23n (the ledger).
 Overwritten at the box-8 handover (Lead 17:10Z by date -u; WATCHDOG measured the context above 600k). Box 8 continues
 with the successor (GO 16:43Z by date -u, box to ~00:45Z; check-in ~20:45Z). Older notebook content (boxes 1-7 resume
 points, dead ends, sources opened) is in git history: `git show 8a9c0f44:notes/L-ALG.md`.
@@ -82,14 +83,28 @@ Box 8 so far (GAP-A-M §23a). The invariant behind (STEAL-ONCE*), DATA only, 0 e
   - fallv_viol_n28.pg lives on origin/claude/l-red (experiments/red/carry/instances/), sha1 21b235f4.
 
 ## NEEDS
-- Successor: box-8 queue in order:
-  - (1) prove (STEAL-ONCE*) via (STAYS-MET) / (STEALER-MONO), or find the obstruction;
-  - (2) (FIRED-R) on LONG phases. dtl_firedclimb.py's fitness does not keep S large and needs a phase-length term;
-    L-RED is climbing long phases too;
-  - (3) (CTX⁺), only if (1) or (2) moves.
+- Successor 8 queue:
+  - (1) (EXIT_c) or (STEAL-POLY_sum): proof attempt, or the sharpest failure;
+  - (2) if L-RED finds depth ≥ 2 or k ≥ 3: re-run with dtl_stealdepth.py and dtl_prefexits.py, both orders, and record it;
+  - (3) (CTX⁺) only with a genuinely new idea.
 - Owner: none.
 
 ## Things only I know
+- Successor-7 tools (flags in their docstrings):
+  - dtl_stealtrace.py: STEALER-MONO traces.
+  - dtl_shrinkdep.py: attraction forest, A/B/C shrink classes, DEP-SAFE.
+  - dtl_firedlong2.py: FL_ALL, FL_SHOW; LAMINAR / TOP-INJ / BIRTHTOP / HALL / ≤ |R| checks.
+  - dtl_stealdepth.py: analyze() and run_game(); re-steal causes and depth.
+  - dtl_depthclimb.py: climbs on depth, then k.
+  - dtl_prefexits.py: vertex exits.
+  - dtl_ctxpieces.py: depth-0 pieces.
+  - dtl_firedclimb.py FC_RATIO=1: ratio-first fitness.
+  - dtl_rootmono.py RM_LAM=1, RM_BIRTH=1: default output unchanged.
+- dtl_rootmono's pref[(round, top)] is P(τ⁺), the prefix BEFORE the top (Z before tattr). regset is the region.
+- Memory: dtl_rootmono with RM_PREF=1 on big unions (NMAX=60) needs about 6 GB per process. Run at most 2 at a time; 4 were
+  OOM-killed.
+- The tools count exits and steals only at steps present in both visits. Visits with fewer rounds (G9-b2) are not modelled
+  as virtual rounds.
 - dtl_rootmono.py flags:
   - RM_DV=0 skips DV*;
   - RM_LIGHT=1 skips the ideal and step-deficit checks, so "clean/dirty" labels are meaningless in light mode;
@@ -112,11 +127,17 @@ Box 8 so far (GAP-A-M §23a). The invariant behind (STEAL-ONCE*), DATA only, 0 e
   verified". Re-run every instance before reporting it.
 
 ## Resume point
-Successor 7: read the section "Successor 7" above, then GAP-A-M §23b-§23e. Open items:
-(1) (STOLEN-PERM)/(STAYS-MET) proof. The route needs an escape-aware dependency (§23c). Big-union stress runs:
-  UNIONS=300, SEED=7/8, UM_CROSS=4, NMAX=60, both orders.
-(2) (FIRED-R): no structure survives except (FIRED ≤ |R|), tight DATA.
-(3) (CTX⁺) not started (it was conditional on (1) or (2) moving).
+Successor 8:
+- Read GAP-A-M §23o (the position: signed conditionals, the three DATA premises with best data and killed routes, and the best
+  guess), then §23p (EXIT-CHARGE), §23k (the packet-9 imports), and docs/alg/STEAL-DEPTH.md.
+- Best next target, in my judgement: the STEAL premise via the local statement (EXIT_c). Each vertex leaves each step's
+  prefix P(τ⁺) at most c times per phase. Data: c = 2, reached only on the DE20 instances.
+  - Question: how can w re-enter P(τ⁺) after an exit? In R35 the re-entry comes from a NEW tangle fired by region 66.
+  - Route idea: an exit needs a relevant steal at an earlier step (local PREFIX-MONO-X*), and a re-entry needs prefix growth
+    above.
+- (CTX⁺) and (FIRED-R): every set-structure route is dead (see §23o). Do not retry CHAIN, CTX-ROOT, CTX-LAMINAR,
+  PIECES-LAMINAR, FIRED-STEP, FIRED-LAMINAR, FIRED-TOP-INJ, FIRED-HALL or NO-RETURN.
+- RESULTS R12 (packet 9) is being drafted by the Lead.
 
 ## Dead ends
 - Box 8 successor 7: STEALER-MONO (stealer_viol_n76), FIRED-STEP const and FIRED-TOP-INJ (fired18_stable_n20), FIRED-LAMINAR
