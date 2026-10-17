@@ -2652,6 +2652,10 @@ Mixed-union data for §22u (UNIONS = 900, SEED = 1, plus corpus; RM_EXCL=1, RM_L
 - CAVEAT. Every tangle that fires at R is a stored tangle, and Lemma W gives #tangles ≤ n·S, so #fired(R) ≤ n·S
   trivially. On short phases the data cannot distinguish (FIRED-R) from this bound. (FIRED-R) also FOLLOWS from GAP-A.
   So (FIRED-R) is a context-local form of GAP-A's tangle count, not an independently weaker statement.
+  [Correction 16:11Z: "follows from GAP-A" is true of EVERY premise of the form "X is polynomial" with X ≤ poly(S),
+  (CTX⁺) included, so that part is not specific. The specific point is that (FIRED-R) bounds tangles, and the tangle
+  count is GAP-A's own core (Lemma W). (FIRED-R) is therefore unlikely to be much easier than GAP-A, unlike (STEAL-ONCE),
+  which is a statement about repetition.]
 - Its content is that the tangles active at one context do not grow with the phase length. Testing it needs LONG phases
   (S ≫ |R|), e.g. the spp/h4 families. There (corpus, unions) the maximum is ≤ 14 per context and ≤ 0.62·|R|. Climbs
   from long-phase starts: not run.
