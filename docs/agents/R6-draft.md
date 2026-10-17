@@ -1,4 +1,4 @@
-# Draft RESULTS R6 (Lead, 2026-10-17 11:18Z by date -u) — NOT LANDED; awaiting CHECKER gate
+# Draft RESULTS R6 (Lead, 2026-10-17 11:18Z by date -u) — LANDED as RESULTS R6 (CHECKER C6 PASS 83bcc23; N-1, N-2, N-4, N-5 applied as citation/gap edits)
 
 ### R6 [refereed-only] Packet 3 on A_DTL: corrected K5 (K5''), (α) with Dep(Str), K6 closed case, Lemma O-P, and the first step of the GAP-A root-call angle (2026-10-17) — partial step-4 lemmas (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -12,8 +12,8 @@
       direction used by K6 and the S step.
   (c) K6, closed case (GAP-C §18n; DTL-proof K6 note): a closed lowest region yields a new tangle, a dominion, or a (β')
       duplicate with no escape in R. It uses neither K5 (i)/(iii) nor K5'.
-  (d) Lemma O-P, given (YZ) (GAP-C §18j/§18l): a depth-0 P piece creates no orphan.
-  (e) GAP-A angle, first step (GAP-C §18p; GAP-A-M §22), round r only: if the first difference e of consecutive searches
+  (d) Lemma O-P, given (YZ) (GAP-C §18l, line 843 at 6e0082f): a depth-0 P piece creates no orphan.
+  (e) GAP-A angle, first step (GAP-C §18p at 6e0082f), round r only: if the first difference e of consecutive searches
       s -> s+1 (reduced log) is in the root call's threshold loop at round r and level t_e, then for every level t ≥ t_e of
       round r the rescue set of s+1 contains that of s, and V_{r+1}(s+1) ⊇ V_{r+1}(s).
 - Refuted proof step (both referees, no instance, no run shown): K5'(iii') and (α) in the ψ-play Up(Str) form. A vertex pushed
@@ -25,7 +25,8 @@
   closed; (d) O-P SIGN; (e) SIGN, round r only. REFEREE-2 docs/referee-2/R2-P3.md (referee-2 d555ebf; comparison §6 at
   f25feaf): (a) K5'' SIGN, K5'(iii') Up(Str) proof step REJECT, (i') and (ii) SIGN; (b) Dep(Str) SIGN, Up(Str) REJECT; K6
   closed case SIGN; (d) O-P SIGN; (e) SIGN, round r only. Independent (each read the other's report only after pushing its
-  own). After comparison both reports agree on every item.
+  own). After both comparisons (REFEREE §C 87f1043 is the later one) the reports agree on every item R6 signs. Item letters
+  here differ from the reports: R6 (d) = reports' (c), R6 (e) = reports' (d).
 - Gaps (union of both reports and comparisons). G-R6-1..5 are closed in the reports and imported into the author's text at
   l-alg 89f0f4e; G-R6-6 lists dependencies and open hypotheses:
   G-R6-1 K5'' proof: the non-straddling fired-tangle sub-cases (in-R escapes all in higher regions: fires into the last such
@@ -37,7 +38,9 @@
   G-R6-5 (α) in the ⇔ form needs G-α1: for a p-owned τ_k, read "no successor in Z_k" (str[τ_k] set at 73, closed at 515).
          R6 signs only the ⇒ form.
   G-R6-6 Dependencies: (d) is conditional on (YZ), which follows from the OPEN hypothesis (ACYC) (RESULTS R4, G-S5-6); (e)
-         uses DTL-proof Lemma 1.2b (monotonicity of the attractor at fixed R, Gx = R, consume = None). Nothing Lean-checked.
+         uses DTL-proof Lemma 1.2b (monotonicity of the attractor at fixed R, Gx = R, consume = None). Also open: K6's open case
+         (orphan analysis and route are SKETCH; REFEREE open point 2) and orphans created by T pieces (REFEREE-2 §5).
+         Nothing Lean-checked.
 - Scope: (a)-(d) support GAP-C but do not establish completeness; after DE13 the S and T steps must be restated. (e) covers
   round r of the root call only; the later-round step is open, and RMONO (all rounds) is FALSE (DE14). Gauntlet step 4 stays
   open.
