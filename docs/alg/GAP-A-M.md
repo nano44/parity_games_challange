@@ -2598,7 +2598,11 @@ Chain (proved parts are readings):
   poly(|R|).
   - Corpus plus fall3_n76, fall4_n116 and fallv_viol_n28, Oink order: at most 17 per context, and at most 0.5·|R|.
     The maximum is climbs_1016/a_best_s31.
-  - Cross unions: running.
+  - Cross unions s11 (600 games plus corpus; RM_EXCL=1, RM_LIGHT=1; 15:31Z), Oink / stable:
+    - (FIRED-R): at most 13 per context, at most 0.5·|R|.
+    - (STEAL-ONCE): max 1 in all 325 / 338 phases with new steals and all 63 / 74 with relevant steals.
+    - PREFIX-MONO-X*: descents with a relevant steal 180 / 234; relevant steals without a descent 17 / 23; descents
+      without a relevant steal 0 / 0. Plain new steals without a descent: 2,554 / 2,625.
 - Then F_R ≤ (n + 1)·n·poly(|R|), and (FALL) holds. The circularity of §22t is gone, because (FIRED-R) counts only the
   tangles active at R, not |T_phase|.
 - So GAP-A ⇐ (CTX⁺) ∧ (STEAL-ONCE) ∧ (FIRED-R), given STR-DET. All three are DATA only.
