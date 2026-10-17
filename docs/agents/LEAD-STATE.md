@@ -465,3 +465,4 @@
 - 13:27Z (date -u) merged referee ad4be01 (R-P6 §C: full agreement; (b) SIGN given 'inputs' wording). R9 draft updated; CHECKER C9 reactivated.
 - 13:38Z (date -u) merged l-alg e4e52ac (§22n: G-F1 non-rising count 0 on corpus, mixed and cross unions both orders with the fixed tool; F_R = RV falls at R, <=2 on all L-ALG sets; R2-P6 imported; CTX climbs running ~4 h). L-RED fall3_n76 (3 falls) is outside these sets; Lead re-run pending its push.
 - 13:41Z (date -u) merged l-red (R31 fall3_n76). Lead re-ran fall3_n76 (sha1 a85133ec): Oink 3 dominions, 56 tangles, 10 iterations, verified; dtl_rootmono.py max 3 descents per context, both orders. R9 draft G-R9-5 updated; CHECKER told.
+- 13:44Z (date -u) merged l-alg 2b20f09 (§22n packet-6 rewordings per referee; §22f display Dom term +1). L-ALG slip: 13:18Z message read 19 min late (blocking wait loop); fix: waits <5 min. fall3_n76 already on trunk (merged b55c144).
