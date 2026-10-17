@@ -1760,3 +1760,24 @@ DV (21f): the same rounds with Oink's re-check order; DV* removes the GAP by con
   renewable reset appears to be one vertex per re-learned vertex, which is what (SPP) would need. The attack direction
   for L-RED stays open: a blocker that is shared across chain vertices AND across epochs, kept open by the pruning
   (best_vertices distractions), not by the attractors.
+
+### 21j. Option (a): the ideal distance at the first-difference context splits every phase into three step types (00:46Z by date -u)
+experiments/alg/dtl_dvctx.py: for each transition s → s+1, the context R of the first differing best_vertices call (for a
+SHRINK/GROW, the parent context, G' at depth 0) is the same in both searches; DV*_R = DV* on the subgame R (edges and
+escapes outside R ignored, tangles inside R only, as best_vertices treats its context). DV*_R is monotone in T at fixed R
+(Lemma DV*-MONO applied to the subgame R; PROVED). C5, Oink order, 990 transitions:
+| first difference | DV*_R moves (LRN) | DV*_R still (DEF / absorption) |
+|---|---|---|
+| RES at a depth-0 piece | 572 | 138 |
+| RES deeper | 7 | 0 |
+| SHRINK at depth 0 (absorption) | 6 | 100 |
+| GROW / SHRINK deeper (absorption into a recursion) | 4 | 163 |
+Reading. Every transition is one of: (LRN) the actual result at a context changes and so does the ideal distance there,
+at most n(n+1) times per DISTINCT context (PROVED); (DEF) the actual result changes with the ideal fixed (the (H4)
+deficits of §13-§18; 138 of 990 here, up to 11 at one context in §13g); (ABS) the removal before a piece grows
+(absorption; 263 of 990). So
+  S − 1 ≤ n(n + 1)·(distinct first-difference contexts) + #DEF + #ABS,
+and (SPP) or any polynomial bound needs polynomial bounds on the three right-hand terms. The first is exactly §19(b)'s
+"distinct contexts" core (now with a PROVED per-context LRN budget for A_DTL itself, not only for C6), the second is (H4),
+the third is the absorption chains of §21b/§21e. This is the (H1)-(H4) map of §12 restated for one phase with the new
+global tools; no term is bounded yet.
