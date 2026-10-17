@@ -183,3 +183,30 @@ Context: docs/alg/GAP-C.md. Lemma K: W_p(G') ≠ ∅ ⇒ search(p) learns a tang
 - (FIRST-W) "the first stable piece whose V* meets W_p is productive inside W_p": DEAD, experiments/alg/instances/firstw_viol_cross.pg
   (union of two corpus games with 3 cross edges, n = 30; Oink-verified; both orders; that piece's V* lies on both sides). 4 of 188
   interacting mixed searches. The existential (K-low) survives (188/188).
+
+## GAP-C (completeness): the "learn inside D" frame — DEAD (2026-10-17, L-RED R29 / RESULTS DE13; L-ALG re-run 11:12Z by date -u; produced on Opus 5.5)
+Instance: experiments/red/carry/instances/kin_viol_n29.pg (L-RED, l-red 2455159; n = 29; sha1 50987098...).
+- Pinned Oink run (`--dtl --no-single --no-wcwc --no-loops`): 2 dominions, 15 tangles, 8 iterations, solution
+  verified.
+- L-ALG's unmodified tools, both order data, each failure printed once.
+Search 0 (Even, |W_0(G')| = 9, no dominion):
+- One stable piece removes all of W_0 and learns three tangles: {10,12} (outside D), {14} (outside D), and the
+  STRADDLING tangle {0,4,6,10,12,16,20,26,27}, which has 3 vertices in D and 6 opponent-won ones (file ids, the same
+  in both orders; dtl_meetd.py).
+- Search 1 learns inside W_0 at depth 1; search 2 finds the dominion.
+DEAD, each with its exact obstruction (the frame needed learning INSIDE D at some piece of every search; here the
+search's only D-touching tangle straddles D's boundary):
+- (K-in) "every search with W_p ≠ ∅ learns inside W_p or finds a dominion" (dtl_kin.py: K-in VIOLATION).
+- (TW) "learned tangles lie wholly inside or wholly outside W_p" (dtl_twmixed.py: straddle 1).
+- (LOW-W) = (K-low) = the existential GAP-K statement "some stable piece's lowest region is productive inside W_p"
+  (dtl_loww.py: LOW-W VIOLATION; dtl_whichpiece.py ANY 4 of 5).
+- The S step of the KT frame, "a piece after which KT fails learns inside D". Also (KT-STEP-first) at an S piece,
+  K/KTHR/HYB/JD broken by S, and (S-STEP) (dtl_step5stats.py: barren, V* meets U).
+- (S-LOW-D) and (S-LOW-TIGHT) (S-LOW-TIGHT VIOLATION; S-LOW itself, "learns something", holds 2/2).
+- (S-LOC) (learned tangle inside the core of NO level).
+- (LASTD) at S and at T pieces.
+- Hence the KT-chain route to Lemma K is broken at the S step. GAP-C.md §18l's "Lemma K would follow from (ACYC),
+  (S-LOW) at every depth, (CORE-PASS-closed)" loses its S-LOW component.
+Unaffected: R4 (P-KT for P pieces, given (YZ)); R5 (packet 2); T-step data on this instance (the T piece that breaks KT
+has a recursion that learns inside the core).
+Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
