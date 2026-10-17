@@ -1372,7 +1372,8 @@ sptl, Dom, cut, recursion, extraction unchanged. Prototype only: experiments/alg
     of distinct child contexts that a parent piece hands out AND in which the child still has work (fresh, resetting child
     contexts, §6.3b/§16). That is exactly the open core today; APP(k) shows the proved facts allow 2^k. C6 removes one
     obstruction (fixed-context resets, which today killed (LEX), (NR), (CM) on A_DTL); it does not touch the core.
-(c) Completeness. CONFIRMED: no gain. K4 carries over; K5 for C6 reduces to A_DTL's GAP-C shapes ((α) with the straddle
+(c) Completeness. CONFIRMED: no gain. [per referee: K5 (i)/(iii) are false as written, see GAP-C.md §18n (C); the C6 sketch
+    needs the same restriction.] K4 carries over; K5 for C6 reduces to A_DTL's GAP-C shapes ((α) with the straddle
     set enlarged by the deficit, (β'), (C-b)); C6-DTLhat.md K5 sketch. DATA: prototype correct with verified strategies on
     1,530 games; completeness climbs (~19k steps, n = 16, 22) found no failure.
 (d) Running time per search. One pruning round: one tangle attractor per priority level of V (≤ d + 1 levels) plus the
@@ -1609,7 +1610,15 @@ First-Difference Lemma (PROVED, reading; A_DTL, any ω). Let s, s+1 be consecuti
 (i) A search is a deterministic function of (G', T_s) (T_s = tangles stored at its start): W is reset after each search and
     is read only by extraction; str is written for every vertex when it joins the current attractor before it is read; no
     dominion occurs before the last search of a phase, so S, dom_vector are empty.
-(ii) Let e be the first tangle-attractor computation (tattr) whose output differs between s and s+1. Every computation
+[per referee, 10:15Z: G-h1 CLOSED by both referees (R2-PROVED2 §13.1). As written, (ii) is false literally: sptl's repeat
+ loop (870-874) can give s an extra pass that s+1 skips (the SCC is now a duplicate, `more` is false), so a positional log
+ misaligns. (ii) and (iii) are therefore stated on the LOG WITH REPEATED sptl PASSES DELETED: delete from s every repeated
+ pass of an S piece before e. Proof (R2 §13.1): region by region, out(s pass 1) ⊆ out(s pass 2) ⊆ out(s+1 pass 1) =
+ out(s pass 1) (1.2b), so pass 2 has the same regions; closedness is a set property (73; 519-525), so the same tops are
+ closed, all already in W (529): pass 2 extracts nothing and sets no W bit; s+1 learns nothing in its one pass and has the
+ same W. After the deletion both logs continue with Dom(V, R) on the same input.]
+(ii) Let e be the first tangle-attractor computation (tattr), in the logs with repeated sptl passes deleted, whose output
+    differs between s and s+1. Every computation
     before e is identical, so e has the same input (Z, R, Gx, maxpr) in both, and its output is STRICTLY larger in s+1.
     Proof: before e, s+1 extracts exactly the SCCs that s extracted there, which are now stored (duplicate check) and are
     not dominions (s is not the last search); so s+1 learns nothing before e and its tangle set at e is T_{s+1} = T_s^end ⊇
@@ -1620,6 +1629,12 @@ First-Difference Lemma (PROVED, reading; A_DTL, any ω). Let s, s+1 be consecuti
     compared by ⊆ at the first difference). This is injective in time but gives no polynomial bound by itself (counter).
 Mechanical check (experiments/alg/dtl_fdlcheck.py, box 5): (ii), (iii) and (iv) hold on all 990 (Oink) / 957 (stable)
 transitions of C5, 0 violations; check.sh runs it on three long phases.
+[per referee, 10:17Z (box 6): the checker now compares the logs with repeated sptl passes deleted (FDL_POSITIONAL=1 keeps
+ the old alignment). It also had a defect: its "same caller" test in (ii) was vacuous, because the caller name was read one
+ frame too high (always "tattr"); fixed (the caller is read in the checker's own tattr). dtl_firstdiff.py, the source of the
+ DATA row below, was not affected. Re-run on the 238-file corpus (n ≤ 80), real caller test: reduced log 1,042 (Oink) /
+ 1,011 (stable) transitions, 0 violations; positional 1,042 / 1,011, 0 violations. Repeated passes dropped 325 / 339; kept
+ because they differ from the previous pass 3,079 / 3,011; identical but extracting 0 / 0.]
 DATA for (ii): the first differing tattr is in best_vertices (threshold loop: Oink 642, stable 605; regions: 266, 269) or in
 the −1 attractor of search_rec (41, 42), never in sptl or Dom(V, R), in all 949 (Oink) / 916 (stable) transitions (counted
 over consecutive pairs incl. into the last search). Piece level (dtl_piecediff.py; first differing best_vertices call by
@@ -1736,7 +1751,8 @@ priority ≤ θ with all its edges into Z; a tangle all of whose vertices have p
 (its vertices join). One round on input V: Z := ∅; for each τ ∈ V in decreasing priority (ties by index), Z := lfp(Z ∪
 {τ}, pr(τ)); C := the v ∈ V that do not attract into Z; for each priority level t ascending: Z := lfp(Z, t) and every v ∈ C
 with pr(v) > t that attracts into Z leaves C; output V \ C. Start from V_0 = the p-priority vertices of G; DV*[v] = the round
-at which v is dropped, INF if it is in a round with C = ∅.
+at which v is dropped, INF if it is in a round with C = ∅ [per referee, REFEREE R-i: INF = "never dropped", which also
+covers a round with C ≠ ∅ and every candidate rescued (V stays fixed, code line 767); the proof is unchanged].
 Lemma DV*-MONO (PROVED). T ⊆ T' ⇒ DV*(T) ≤ DV*(T') pointwise.
 Proof. lfp(Z, θ) is monotone in Z and in T (every rule is monotone in Z, and T' only adds rules). One round is monotone in
 (V, T): with V ⊆ V', walk the list V' in decreasing priority; at τ ∈ V' \ V only the primed Z changes and it only grows
@@ -1779,6 +1795,7 @@ DV (21f): the same rounds with Oink's re-check order; DV* removes the GAP by con
   (best_vertices distractions), not by the attractors.
 
 ### 21j. Option (a): the ideal distance at the first-difference context splits every phase into three step types (00:46Z by date -u)
+[per referee, REFEREE-2 §10: the LRN reading (per DISTINCT context only; DV*_R uses tangles inside R) is in GAP-C.md §18n (A).]
 experiments/alg/dtl_dvctx.py: for each transition s → s+1, the context R of the first differing best_vertices call (for a
 SHRINK/GROW, the parent context, G' at depth 0) is the same in both searches; DV*_R = DV* on the subgame R (edges and
 escapes outside R ignored, tangles inside R only, as best_vertices treats its context). DV*_R is monotone in T at fixed R

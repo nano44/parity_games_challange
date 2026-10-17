@@ -170,7 +170,7 @@ Context: docs/alg/GAP-C.md. Lemma K: W_p(G') ≠ ∅ ⇒ search(p) learns a tang
   semantics, experiments/alg/instances/c1_k1_min_n7_m10.pg (root piece) and c6_replay3_n32.pg (GAP-C.md §7).
 - (NODUP) "the duplicate check never fires" and (NO-ORPHAN): DEAD, experiments/red/carry/instances/gapb_dup_n20.pg (L-RED;
   Oink-verified, both orders). Obstruction: a stored tangle whose escapes are all removed earlier in the search ((β-a)/(β-b)
-  of Lemma B-thr) is re-found by its top. The instance has W_p(G') = ∅ in that search, so Lemma K is untouched; the
+  of Lemma B-thr; (β-b) is empty per referee, F-b3, GAP-C.md §18n) is re-found by its top. The instance has W_p(G') = ∅ in that search, so Lemma K is untouched; the
   surviving candidate is (NO-ORPHAN-W), restricted to the winning region.
 - (03:35Z by date -u) (NO-ORPHAN-W) "no stored p-tangle inside R ∩ W_p(G') has all its escapes outside R", i.e. (β-W) per region:
   DEAD, experiments/red/carry/instances/gapbW_dup_n20.pg (L-RED, l-red 2b792b8; Oink-verified, both orders): a duplicate inside

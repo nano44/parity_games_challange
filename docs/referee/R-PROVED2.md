@@ -11,18 +11,18 @@ Machine checks (mine): docs/referee/scratch/bthr_probe.py, docs/referee/scratch/
 | item | verdict (Opus 5.5, D12) | lines checked |
 |---|---|---|
 | (a) Lemma SCC1 (GAP-C §3) | SIGN | 65-101, 110-185, 198-202, 211-305, 315-317, 477-546 |
-| (b) Lemma B-thr (§3, corrected form) | SIGN WITH GAPS: G-b1, G-b2 (both closed here); finding F-b3 (branch (b) is vacuous) | 110-185, 327-339, 385-424, 477-546, 862-991, 1023-1039 |
+| (b) Lemma B-thr (§3, corrected form) | SIGN WITH GAPS, ALL CLOSED (final, §C5): G-b1, G-b2 closed here; REFEREE-2's G-b1 closed by R2-PROVED2 §13.2, checked by me; finding F-b3 ((b) vacuous; agreed by REFEREE-2) | 110-185, 327-339, 385-424, 477-546, 862-991, 1023-1039 |
 | (c) Theorem A (§13), root call stable, given no (α) | SIGN; it rests on DTL-proof.md §2.3 K4, K5(ii), which I re-checked in outline (§c) | 643-776, 477-546, 1014-1016 |
 | (d) Lemmas O0 and O1 (§6) | O0: SIGN. O1: SIGN | O0: 65-101, 110-185, 1023-1039. O1: 110-185, 878-890, 962-991 |
 | (e) Lemma OPP-EXIT (§11) | SIGN WITH GAPS: G-e1, G-e2 (both closed here) | 65-101, 110-185, 211-305, 512-526 |
 | (f) Lemma K0 (§18b) | not covered by R-STEP5 claim (1), which was KT0 (§18g). Checked here: SIGN | 643-668, 850-854, 1014-1015 |
 | (g) phases ≤ D + 2 (C5-DTL.md lines 141-142) | SIGN | 1023-1039, 1068, 1103-1121; solvers.cpp 77; dtl.hpp 33 |
-| (h) First-Difference Lemma (GAP-A-M §21d) | SIGN WITH GAPS: G-h1 (open; no instance) | 862-875, 477-546, 528-529, 1016, 385-424 |
+| (h) First-Difference Lemma (GAP-A-M §21d) | SIGN WITH GAPS: G-h1. REVISED in §C: G-h1 is CLOSED by REFEREE-2's alignment argument, which I checked | 862-875, 477-546, 528-529, 1016, 385-424 |
 | (i) Lemma DV*-MONO (§21h) | SIGN (with reading R-i of the INF case) | abstract definition (no code) |
 | (j) per-context LRN budget ≤ n(n + 1) (§21j) | SIGN | as (i) |
 | (k) (SPP) ⇒ searches ≤ n(n + 2) and O(n^10 (m + n²)), against TARGET.md §3 | SIGN (conditional on (SPP) for every ω) | DTL-proof.md §3 (b)-(e), Lemma W; 528-529, 539, 1016 |
 
-No REJECT. The one gap that is still open is G-h1, in (h). I have no instance for it.
+No REJECT. After the comparison with REFEREE-2 (§C, §C5) no gap of packet 2 is open.
 
 ## (a) Lemma SCC1 — SIGN (Opus 5.5, D12)
 Induction over the join order of Z_τ (sptl, 481-500, consumed set R, threshold pr(τ)).
@@ -186,7 +186,7 @@ only the budget is signed.
 This signs the conditional only. (SPP) is DATA, and completeness (GAP-C) is open.
 
 ## Hypotheses and dependencies still open after this report
-1. G-h1 (First-Difference Lemma): open; no instance; fix options in (h).
+1. G-h1 (First-Difference Lemma): CLOSED after §C1. REFEREE-2's B-thr G-b1: CLOSED after §C5.
 2. (SPP): DATA only. Item (k) is conditional on it for every ω.
 3. (α) for Theorem A (its premise "closed"), and Case B (GAP-K'): open.
 4. DTL-proof.md §2.3 K4 and K5(ii) and §3 (b)-(e): re-checked by me in outline only, as dependencies of (c) and (k). They
@@ -198,5 +198,114 @@ This signs the conditional only. (SPP) is DATA, and completeness (GAP-C) is open
 - G-b1: B-thr (iii) must use O0's argument for escapes solved before the search.
 - G-b2: B-thr: define "last escape popped" as the pop at which it leaves the current call's context chain.
 - G-e1/G-e2: OPP-EXIT: state "π(o) ∉ Z_τ"; add the tangle-rule and top cases to the proof.
-- G-h1: First-Difference Lemma: handle the sptl `more` flag divergence (870-874) through a duplicate, or add hypothesis (ND).
+- G-h1: First-Difference Lemma: state the log alignment (delete repeated sptl passes before e, §C1); no hypothesis needed.
+- K5: DTL-proof K5 (i)/(iii) false as written (k5.pg); use REFEREE-2's corrected form (§C3).
 - R-i: DV* definition: give INF to "never dropped" (C ≠ ∅ with all candidates rescued).
+
+## §C. Comparison with REFEREE-2 (docs/referee-2/R2-PROVED2.md @ 581902f), added 09:57Z (date -u) on the Lead's request (stamped 10:13Z by the Lead's clock)
+I read REFEREE-2's report only after my report was pushed (50f2546). I re-checked each point of disagreement against the code.
+
+### C1. First-Difference Lemma, G-h1: REFEREE-2 is right; my "OPEN" was wrong
+We saw the same thing: s+1 skips sptl's repeat pass (870-874), so the tattr logs are not aligned position by position. The
+difference is in what follows from it.
+- I concluded that (ii) and (iii) fail.
+- REFEREE-2 shows that the extra pass of s is a pure repetition. I checked the sandwich region by region (same inputs, by
+  induction over the tops):
+  - pass 1 of s ⊆ pass 2 of s, because T only grows (1.2b);
+  - pass 2 of s ⊆ pass 1 of s+1, because T_s(pass 2) ⊆ T_{s+1};
+  - pass 1 of s+1 = pass 1 of s, because that pass comes before e.
+  So the regions are equal. Closedness depends only on the sets (73, 512-526), so every closed top already has W set
+  (529), and pass 2 extracts nothing and sets no new W bit.
+- That removes both of my follow-up worries. No W difference reaches later pieces, and s+1 does not learn before e.
+- With the alignment "delete from s each repeated sptl pass before e", (ii) and (iii) hold as written. The repair is a
+  convention for the log, not a new hypothesis.
+- My error: I did not check whether the extra pass could change anything.
+- Remaining item for L-ALG (wording): state the alignment convention. dtl_fdlcheck.py compares the logs position by
+  position, so it should also drop repeated passes. On the corpus such misalignments evidently did not occur (0 caller
+  mismatches).
+Final verdict (h): SIGN WITH GAPS (Opus 5.5, D12). G-h1 is closed by the alignment argument; nothing is open.
+
+### C2. B-thr (iii), REFEREE-2's G-b1: a separate case that my report missed; F-b3 does not close it
+- REFEREE-2's case: t is created in the current search after the removal pop of its last in-G' escape. tout is computed
+  against this->G (333), so escapes already in X are recorded. Then t did not exist at that pop, so it was never
+  evaluated there, and neither (a) nor (b) applies.
+- My F-b3 (and my G-b2) assumed that t existed at that pop. They do not touch this case.
+- I agree with REFEREE-2's closed part. Within one S piece, W[τ] blocks a re-find at τ, and a re-find at another top of t
+  is impossible.
+- I also agree with the open part. Across S pieces (or later pieces of a recursion), t must have stayed outside
+  Dom(V*, R) of its S piece. Dom runs after sptl with the larger tangle set and consumes top-down. Monotonicity of the union
+  in T is the GAP-A deficit question (Lemma E; MONO is false in general), so nothing proved excludes this.
+- The case is OPEN. REFEREE-2's data found 0 same-search duplicates.
+F-b3 still stands, and here we disagree. REFEREE-2 writes that acceptance or "nothing new" in a −1 attractor means "(b)
+must hold". I hold that (b) cannot occur.
+- When e is moved to X at 936-950, its pop at 945 runs attractVertices(1−p, e, Z, X, Z, t).
+- That call pulls into X the opponent vertex o ∈ t with o → e. o is owned by pl = 1−p, so there is no escape test (75). It
+  is in Z, and pr(o) ≤ t because every vertex of Z_T has priority ≤ t. Every escape is an opponent successor (329-337).
+- So t ∩ X ≠ ∅, and t cannot be in the recursion context.
+- Data: 0 cases of that shape among 8,059 and 7,880 tangles inside a T region (bthr_probe.py).
+- REFEREE-2's "both hold in the partial −1 case" concerns a t that is partly in Z_T. Such a t is not inside any later
+  context of the chain either, so it does not change the conclusion.
+Net for B-thr: the conclusion "(a)", for tangles that existed at the removal pop, is correct and (b) is empty. The
+statement is unproven for REFEREE-2's G-b1 case.
+Final verdict (b): SIGN WITH GAPS (Opus 5.5, D12). Open: REFEREE-2's G-b1 (same-search creation after the last escape left,
+needing t ⊆ Dom(V*, R)). Closed: my G-b1 (= REFEREE-2's G-b3) and G-b2. Finding: F-b3.
+
+### C3. DTL-proof K5 (i)/(iii): REFEREE-2's counterexample is correct; my Theorem A verdict stands
+- k5.pg, checked by hand and by run:
+  - Even vertices: a (priority 2, self-loop), b (4) → d, d (3) → a, y (5) → b.
+  - The root best_vertices call of Even returns 1 with V* = {a, b} (dtl_pyref through dtl_step5, stable order).
+  - Regions: Z_b = {b} (y has priority 3 > 2 after compression and is not taken), Z_a = {a}.
+  - b is a candidate (b → d ∉ Reg). The rescue loop attracts d at level 1, which rescues b, and y at level 3. So
+    A = {a, b, d, y}.
+  - y ∈ A \ Reg is an Even vertex with an edge into the higher region {b}, so K5 (i) is false.
+  - d and y are in neither Z_a nor Str = ∅, so K5 (iii) is false.
+  - Pinned Oink: 1 dominion, 0 tangles, verified.
+  - Cause: the rescue loop runs to max_prio (721-722), so A contains vertices attracted above every top.
+- REFEREE-2's corrected form: restrict to A_< := the rescue set after level pr(τ_k) − 1, and replace Str by Up(Str).
+  Checked in outline.
+  - (i) holds for A_< \ Reg. Such a vertex has priority < pr(τ_k) ≤ every higher top's priority, and it was unconsumed,
+    so it would have been attracted at that region's pop.
+  - τ_k, if rescued, is rescued at a level < pr(τ_k) (737), so its ψ-successor lies in A_<.
+  - I did not re-derive the induction A_< \ Reg ⊆ Z_k ∪ Up(Str) step by step. I accept it as REFEREE-2's.
+- Effect on Theorem A: none.
+  - My signature (§c) used only K4 (A ⊆ W_p(G')) and K5 (ii) (an opponent top whose successors all lie in higher regions
+    joins the last of them). K5 (ii) is proved independently of (i) and (iii).
+  - K4 survives the max_prio sweep. From a top, ψ follows a rescue path at levels < pr(τ), whose vertices have priority
+    < pr(τ). Region vertices have no edge to vertices that no region took (80). So vertices attracted at high levels,
+    like y, are only transient.
+  - On k5.pg Theorem A's conclusion holds: the lowest region {a} is closed and is a dominion inside W_0.
+  - Theorem A uses "closed" as its hypothesis. Only the meaning of the label "(α)" depends on K5 (i)/(iii), as REFEREE-2
+    says.
+  - REFEREE-2's G-c1 reading (the first sptl pass of the root S piece) is the reading I used.
+Final verdict (c): SIGN (Opus 5.5, D12). Finding for L-ALG and the Lead: DTL-proof K5 (i)/(iii) is false as written
+(k5.pg). GAP-C's map should mark K5 as "(ii) PROVED; (i)/(iii) corrected form per R2-PROVED2 §3", and "(α)" should be
+defined with Up(Str).
+
+### C4. Other differences
+REFEREE-2 marks (f) K0 and (k) as SIGN WITH GAPS, where I signed them. I did not re-examine those gaps, because the Lead did
+not ask. On the three points above, the final verdicts are: (b) SIGN WITH GAPS, (c) SIGN, (h) SIGN WITH GAPS (closed).
+
+### C5. Follow-up (10:10Z by date -u; the Lead's message stamped 10:35Z): REFEREE-2 §13.2 closes its G-b1 — SIGNED
+Two corrections to §C2:
+- F-b3 is no longer disputed. R2-PROVED2 §13.2 checks it at 944-948, agrees with it, and withdraws its "partial −1"
+  remark.
+- REFEREE-2's G-b1 is closed by R2 §13.2. I checked the argument step by step against the code.
+  - Tangles are created only by extractTangles, called only at 539 (sptl), and sptl runs only in S pieces (867-874). So t
+    is created at a top a of an sptl region in some S piece P1 (call c, context R1, stable set V1). sptl takes tops only
+    from V (482), so a ∈ V1. By SCC1, a ∈ t.
+  - P1's Dom(V1, R1) (878-890) gives X[top] = true to every top of V1 (879-880; a top already in X stays in X). It pops
+    each pushed vertex and sets R[v] = false (885). So after P1, a ∉ R_c, and R_c only shrinks afterwards.
+  - Later contexts of c, and contexts of recursions started by later pieces of c, are subsets of R_c (search_rec(Z) with
+    Z ⊆ R at 914-954), so they exclude a.
+  - Ancestor case, at every depth (the Lead's question). c is search_rec(Z', p, d) called from a T piece of its parent c'.
+    Before the call, c' has popped every vertex of Z_T ⊇ Z' and cleared it from R_{c'} (918-920), and it has put all of
+    Z_T into X_{c'} (951). After c returns, Z is reset (955) and c' continues with R_{c'} ∩ Z_T = ∅. So every later
+    context of c' and of its later recursions excludes Z' ∋ a. By induction up the chain, the same holds for c'' (which
+    removed Z_T(c'') ⊇ R_{c'} at its own 920), and so on up to depth 0.
+  - A search_rec context is never re-entered: each call has its own local X and Z (837-840).
+  - So no context after P1 in search s contains a, and no duplicate of t can arise there. Within P1's own sptl passes,
+    R2 §2 (W[τ] at 528, and the order of tops) excludes it.
+  - Across searches, t was created before the next search, and B-thr (iii) applies with my G-b1 (= R2's G-b3, via O0).
+Final verdict (b): SIGN WITH GAPS (Opus 5.5, D12). All gaps are closed: my G-b1 and G-b2, and REFEREE-2's G-b1 (by R2 §13.2,
+checked). B-thr holds as "(a) always" (F-b3), and GAP-β = (β-a). This now agrees with REFEREE-2's verdict.
+Packet-2 final verdicts that changed in §C: (b) as above; (c) SIGN; (h) SIGN WITH GAPS, closed.

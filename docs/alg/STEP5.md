@@ -25,7 +25,7 @@ takes from R into X). A P piece: best_vertices (643-776) returned −1 with V = 
 attractors A^r_t (722-740); Z_f := Z^f. Every p-priority vertex x of R leaves V at a round r(x) as a candidate (714) that is
 not rescued at any t < pr(x).
 KT (thresholded core). For c of p's parity: S_c := D ∩ R ∩ {priority ≤ c}; A_c := the plain p-attractor of X inside S_c (an
-opponent vertex enters only when all its edges are in X ∪ A_c); F_c := the game on S_c \ A_c with the opponent's edges
+opponent vertex enters only when all its edges in G' are in X ∪ A_c — edges into solved vertices do not count; G-S5-5); F_c := the game on S_c \ A_c with the opponent's edges
 leaving it deleted and dead ends lost for p. KT(R) :⇔ W_p(F_c) ≠ ∅ for some c.
 
 ## 3. Statements
@@ -42,7 +42,7 @@ leaving it deleted and dead ends lost for p. KT(R) :⇔ W_p(F_c) ≠ ∅ for som
 | (YZ), (FM) | as above | DATA: 0 failures (YZ on 63,000+ P pieces, FM on 106,091 −1 calls; corpus both orders, unions). The YZ-read exception does occur once (strfam_S5_n46.pg, stable order: Dom fires the stored tangle {14,15,16,17} using a vertex of old X / an earlier top's part) yet Y_0 = Z_f and P-KT hold there |
 | KT-STEP-first | the first depth-0 piece after which KT fails learns inside D | DATA 0 violations; with KT0 and P-KT it would give (K-in) |
 
-## 4. Proof of P-KT (given (YZ); (FM) is PROVED, GAP-C.md 18k)
+## 4. Proof of P-KT (given (YZ); (FM) is PROVED, GAP-C.md 18k; case c1 = 0: GAP-C.md 18m, G-S5-4)
 W1 := a p-dominion of H inside D ∩ R with the least maximum priority c1 (exists by T0). c1 has p's parity (otherwise W1
 minus the opponent's attractor to its top priority contains a p-dominion of H with a smaller maximum). W1 is closed in H
 (opponent vertices keep all their R-edges in W1), p wins it with σ1 staying inside. (FM) gives Z_f ⊆ Z^r ⊆ A^r_t for every
@@ -73,7 +73,7 @@ into vertices added before it (escape test 76-86) and is attracted or taken at t
 consumed, 150-157).
 (C) No p-priority vertex of t is in V_f: after the acceptance it attracts into Z_f (p-owned: tangle successor in t;
 opponent-owned: all R-edges into t ∪ escapes, 325-339), so it would not be a candidate.
-(D) q := tpr(t) (p's parity), m_1 := a priority-q vertex of t pruned first, at round r_1. All priority-q vertices of t are
+(D) q := tpr(t) (= max pr(t), of p's parity: DTL-proof.md Lemma 1.5a, G-S5-1), m_1 := a priority-q vertex of t pruned first, at round r_1. All priority-q vertices of t are
 in V_{r_1} ⊆ Z^{r_1}. q = 0: t ⊆ Z^{r_1} and m_1 attracts into Z^{r_1}, so it is no candidate. q ≥ 1: (D1) round r_1's rescue
 loop runs on the same bitset Z that the region loop leaves (703-705), so it starts as Z^{r_1} and only grows; line 724
 pushes every member of Z at every level and 727-730 pop each one and call attractTangles, so e ∈ Z^{r_1} (by (B)) is popped
@@ -89,7 +89,7 @@ Corollaries: (FM) Z_f ⊆ Z^r for all r ((A) covers every addition of round f); 
 (ACYC) For every stored tangle t_X that Dom(prevV, R) accepts at a P piece using a vertex of old X or of an earlier top's
 part, the new part N_X := (vertices of t_X taken by that acceptance) contains no cycle of the tangle graph H_{t_X}
 (p-vertices keep their tangle strategy, opponent vertices all their edges inside t_X).
-Why it suffices (PROVED, GAP-C.md 18k end): a p-vertex of N_X has its tangle successor in the current region or in N_X (an
+Why it suffices (PROVED, GAP-C.md 18k end; both inclusions and the trigger case: 18m, G-S5-2, G-S5-3): a p-vertex of N_X has its tangle successor in the current region or in N_X (an
 edge into X is excluded by Q empty, an edge into an earlier region would have pulled it there); an opponent vertex of N_X
 has its R-edges in the current region, earlier regions or N_X, and its edges into old X are ignored by the vertex rule
 (76-86); so with N_X acyclic the final round's region loop takes N_X by vertex rules and, regions being least fixed points,

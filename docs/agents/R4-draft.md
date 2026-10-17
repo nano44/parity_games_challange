@@ -1,4 +1,4 @@
-# Draft RESULTS R4 (Lead, 2026-10-17 09:50Z; rev. 10:00Z per CHECKER C4 O-1..O-4, gap 3, optional) — NOT LANDED; awaiting CHECKER re-diff
+# Draft RESULTS R4 (Lead, 2026-10-17 09:50Z; rev. 10:00Z per CHECKER C4 O-1..O-4, gap 3, optional) — LANDED as RESULTS R4 (2026-10-17 10:20Z, CHECKER PASS fd8e3eb; WM citation moved to §18k per N-3)
 
 ### R4 [refereed-only] GAP-C Step 5 for A_DTL: KT survives every depth-0 P piece, with (ACYC) as the only open hypothesis (2026-10-17) — partial step-4 lemma (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). G' = the game at the

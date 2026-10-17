@@ -21,19 +21,19 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | step | content | status |
 |---|---|---|
 | K1-K4 | dominion found if closed; duplicates have all escapes outside the context (K2); first piece at X = ∅; stable V* at X = ∅ is p-won | PROVED (DTL-proof.md §2.3) |
-| K5, K6 | the lowest region of a stable set is closed unless (α); if closed, its bottom SCC is new, a dominion, or (β') | PROVED (DTL-proof.md §2.3) |
+| K5, K6 | the lowest region of a stable set is closed unless (α); if closed, its bottom SCC is new, a dominion, or (β') | K5(ii) PROVED; (i)/(iii) per R2-PROVED2 §3 (false as written, k5.pg; corrected with A_< and Up(Str), §18n) |
 | SCC1 (new) | in a closed sptl region Z_τ every vertex reaches τ in extractTangles' graph; so extractTangles(τ) finds at most ONE nontrivial SCC, the set C_τ reachable from τ | PROVED (reading), §3 |
-| B-thr (new) | if C_τ equals a stored tangle t, then τ ∈ t, every escape of t lies outside the context R, and the LAST escape of t to be popped either (a) was popped in an attractor with threshold < pr(τ), or (b) was cut off from t by an ancestor's −1 step (t inside the recursion context, e moved to X at 936-950) | PROVED (reading), §3 (corrected) |
+| B-thr (new) | if C_τ equals a stored tangle t, then τ ∈ t, every escape of t lies outside the context R, and the LAST escape of t to be popped either (a) was popped in an attractor with threshold < pr(τ), or (b) was cut off from t by an ancestor's −1 step (t inside the recursion context, e moved to X at 936-950) | per referee: "(a) always", branch (b) DROPPED (F-b3, both referees); PROVED (reading), §3; all gaps CLOSED (R2 G-b1: R2-PROVED2 §13.2, REFEREE R-PROVED2 §C5) |
 | NODUP | the duplicate case of SCC1 never occurs on DTL runs | KILLED (§8): experiments/red/carry/instances/gapb_dup_n20.pg (L-RED) |
 | NO-ORPHAN | no stored p-tangle inside a context has all its escapes outside it (implies NODUP) | KILLED (§8), same instance |
 | NO-ORPHAN-W | no stored p-tangle inside R ∩ W_p(G') has all its escapes outside R | KILLED (§12): experiments/red/carry/instances/gapbW_dup_n20.pg (L-RED) |
-| (α) | the lowest region is open because its top's successor lies in the lower part of a straddling tangle | GAP-α |
+| (α) | (restated §18n, per referee) the lowest region Z_k is open because τ_k's ψ-successor (some successor, opponent τ_k) lies in Up(Str) \ Z_k: a ψ-play from it reaches a straddling tangle's pushed vertices before Z_k | GAP-α |
 | (C-b) | a p-dominion survives a search whose pieces never reach a productive closed region (all relevant pieces removed through the −1 branch) | GAP-Cb |
 | (S2) | "a context containing a p-dominion is never pruned to −1" | FALSE (§4); the proof must follow the dominion through −1 pieces |
 | OPP-EXIT (new) | a learned tangle meets W_{1-p} only where the opponent's winning move is an edge the region forgives | PROVED (reading), §11 |
 | K-in, TW, LOW-W | progress inside W_p, from a lowest region; learned tangles never straddle W_p's boundary | DATA (§9-§11), 0 violations |
 | K-first | the FIRST stable piece's lowest region is productive inside W_p | KILLED (§14): instances/kfirst_viol_union.pg (276 of 891 mixed searches) |
-| Theorem A | if the root call is stable, its lowest region is in W_p and is productive unless (α) | PROVED (reading), §13 |
+| Theorem A | if the root call is stable, its lowest region is in W_p and is productive unless (α) | PROVED (reading), §13; stands under both readings of K5 (uses K4, K5(ii), SCC1, B-thr(ii), O0; R2 §13.3) |
 | K4-B | the first stable piece's regions lie in W_p even after −1 pieces | KILLED (§14), union games |
 | FIRST-W | the first stable piece with a p-won top is productive inside W_p | KILLED (§16): instances/firstw_viol_cross.pg |
 | GAP-K | (K-low): some stable piece's lowest region is productive inside W_p | GAP (§12, §14); DATA 0 violations incl. 2,092 mixed union searches |
@@ -42,11 +42,16 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | KT frame (18g) | KT(R): thresholded core at some p-parity level c | KT(G'), not KT(R_end) PROVED; (KT-STEP-first) DATA 0 violations |
 | Step 5 = P-KT (18h) | a depth-0 P piece (Dom(prevV), Q empty) keeps KT | PROVED given (YZ) only ((WM_c1) PROVED via NT-f, 18k); (YZ) DATA 0 failures |
 | S step, T step (18g) | a piece after which KT fails learns inside D (nothing learned in D before) | DATA only; S step contains (α), (β) |
+| NO-ORPHAN-pre, BORN-NEXT (18l, 18o) | no orphan at a call before the search's first learning; the next search absorbs every born orphan (38% of learned tangles) before it learns, or learns first | DATA only (0 violations; climbs and random 0 hits); (β') paths (i)/(ii) open for L-RED |
 | YZ-read (18h) | Dom(prevV) = final round's regions unless an X-straddling tangle fires in Dom | PROVED (reading); (YZ) itself DATA |
 | FM, FM+ (18h) | final union of a −1 call inside every earlier round's union | PROVED (18k, via NT-f); DATA 106,091/106,091 calls |
 | NT-f (18k) | the final pruning round of a −1 call accepts no stored tangle | PROVED (reading); intermediate-round analogue INV-T FALSE (c_best_s34.pg) |
 | T step split (18i) | (CORE-PASS-closed): a T piece that breaks KT hands the recursion a p-dominion of G[Z'] inside D; then (REC) | DATA 45/45; P-KT carries over to depth 1 |
 | S-LOC / S-LEVEL (18j) | S learning lies in the core of SOME KT level / of EVERY destroyed level meeting V* | S-LOC DATA 0 violations; S-LEVEL KILLED (cross_h_k1_n12_m18_17) |
+| ACYC (18h, STEP5 §6.1; GAPS G-S5-6) | the new part of every X-straddling tangle that Dom(prevV) accepts has no cycle of the tangle graph | OPEN; DATA 0 failures (climbs: new parts up to 16 vertices, all acyclic); (YZ) ⇐ (ACYC) PROVED (reading, refereed G-S5-2) |
+| S-LOW-TIGHT (18l) | at the first KT-breaking depth-0 S piece, the first pass's lowest top itself learns inside D or finds a dominion | DATA 403/403 Oink, 384/384 stable (corpus), 467/467 unions, 61/61 cross unions; reduces via K6 (read with K5', 18n) to excluding (α) and (β') there |
+| K5' (18n) | corrected K5: A_< \ Reg ⊆ Z_k ∪ Up(Str); (α) defined with Up(Str) | PROVED (reading; REFEREE-2 R2-PROVED2 §3, re-traced by L-ALG) |
+| First-Difference Lemma (GAP-A-M §21d) | stated on the log with repeated sptl passes deleted | PROVED (reading), signed by both referees (G-h1 closed); checker re-run 1,042 / 1,011 transitions, 0 violations |
 
 ## 3. The new steps
 Lemma SCC1 (PROVED, reading). Let τ be a top in sptl (dtl.cpp 477-550) with region Z_τ, computed from {τ} by the
@@ -73,23 +78,32 @@ escape lies outside the context R of the current search_rec iteration, i.e. in X
 962-991 with threshold pr(top); the −1 attractor 914-923 (seeds 899-912) with threshold t; the threshold vertices and the
 opponent attraction 936-950 only move vertices that the −1 attractor had popped). Take the pop of the LAST escape e of t:
 the other escapes are in that attractor's target or outside its Gx, and every vertex of t is in its R (contexts only
-shrink along the search). Then exactly one of two things held (CORRECTED 01:38Z by date -u; the first version claimed (a)
-only): (a) no vertex of t was in the attractor's target, so attractTangle (110-185) rejected t only through the priority
-test: that attractor's threshold was < pr(τ); or (b) the pop was in a −1 attractor (914-923) of an ANCESTOR search_rec and
-t was already inside its set Z (attractTangle returns "nothing new"), t then stayed in the recursion context (954) while
-e was moved to X by the threshold-vertex step (936-942) or the opponent attraction (944-950). □
+shrink along the search). Then (a) holds [per referee, 10:15Z: both referees, F-b3; branch (b) of the 01:38Z version is
+VACUOUS and is dropped; "(a) always", as the first version claimed; "last escape popped" = the pop at which it leaves the
+chain of contexts containing the current context (G-b2); escapes solved before the search are excluded by O0 (R1 G-b1 =
+R2 G-b3)]: (a) no vertex of t was in the attractor's target, so attractTangle (110-185) rejected t only through the priority
+test: that attractor's threshold was < pr(τ) (this includes t partly in a −1 attractor's Z). Why the dropped branch (b)
+("t inside an ancestor's −1 recursion context, e moved to X at 936-950") cannot occur: when e moves to X its pop at 945
+runs attractVertices(1−p, e, Z, X, Z, t), which takes every opponent predecessor in Z of priority ≤ t with no escape test
+(75); every vertex of Z has priority ≤ t (921) and e is a successor of an opponent vertex o ∈ t, so o moves to X too and
+t ⊄ the recursion context (R1 F-b3, R2 §13.2). □ Also covered (per referee, 10:31Z; R2 G-b1, CLOSED by both referees:
+R2-PROVED2 §13.2, SIGNED by REFEREE in R-PROVED2 §C5): (iii) needs t to exist at the pop of its last in-G' escape; a
+tangle t created in the current search at the top a of an sptl region in S piece P1 (context R1, stable set V1) is never a
+duplicate later in the search: a ∈ t (SCC1), P1's Dom(V1, R1) puts every top of V1 into X and out of R (879-880, 885),
+later contexts of P1's call and of its descendants are ⊆ R1 minus P1's removal (914-954), and ancestor contexts after the
+call returns exclude its whole context (918-920, 951, 955; induction to depth 0); inside P1's pass sequence a duplicate is
+impossible (W[τ], 528, and the index argument). So every duplicate is of a tangle created before the search.
 So a closed region at a top τ ∉ W is productive except in the duplicate case, and the duplicate case is exactly:
 GAP-β (sharpened (β')). A stored tangle t with top τ = argmax pr(t), all of whose escapes are removed earlier in the same
-search, the last one either (β-a) by an attractor of threshold below pr(τ), or (β-b) by an ancestor's −1 step that keeps t
-inside the recursion context and moves the escape to X (threshold vertex of level t_0, or opponent-attracted to the
-threshold vertices); τ survives the pruning as a stable top and its closed region is exactly t.
+search, the last one (β-a) by an attractor of threshold below pr(τ) [per referee, 10:15Z: shape (β-b), an ancestor's −1
+step keeping t in the recursion context, is EMPTY (F-b3, B-thr) and is dropped; GAP-β = (β-a)]; τ survives the pruning as a stable top and its closed region is exactly t.
 Smallest shapes (sketch, not built): two searches. Search 1 learns t at τ while an escape e of t is still in the context.
 (β-a) search 2 removes e into X by a −1 branch at a level t_e < pr(τ) (e of priority ≤ t_e, attracting X) or by Dom(V, R)
-of a lower top, before τ's stable piece. (β-b) search 2 takes a −1 branch at level t_0 whose attractor contains t and e,
+of a lower top, before τ's stable piece. [(β-b) below is EMPTY per referee (F-b3); kept as history.] (β-b) search 2 takes a −1 branch at level t_0 whose attractor contains t and e,
 e has priority t_0 (a threshold vertex) or is an opponent vertex forced to the threshold vertices, and t goes into the
 recursion, where τ is a stable top. Nothing else in search 2 is productive. About 5-6 vertices plus a gadget that makes e
 removable early only in search 2.
-GAP-α (from DTL-proof.md §2.3 K5/K6; unchanged). The lowest top's region is open because its top's successor lies in the
+GAP-α (from DTL-proof.md §2.3 K5/K6; per referee, read with the corrected K5 and the restated (α) of §18n). The lowest top's region is open because its top's successor lies in the
 lower part Y of a stored tangle that straddles a higher region. Smallest shape (DTL-proof.md §2.3): three generations —
 s1 learns a sub-tangle Y, s2 learns t' ⊋ Y with top a, s3 absorbs a into a higher region via a top J whose rescue path uses
 t', with every higher region open. The regress route that was meant to exclude (α) is DEAD (L-RED R11, DTL-proof.md §2.3).
@@ -249,7 +263,8 @@ trivially inside). Mixed searches (corpus + the 1,500 random games, Oink order):
 W_p, 42 outside, 0 straddling (stable order 497 / 42 / 0).
 Lemma OPP-EXIT (PROVED, reading). Let τ be a top whose sptl region Z_τ is closed, C_τ the SCC extracted at τ (Lemma SCC1),
 and π a positional winning strategy of the opponent on W_{1-p}(G') (it keeps the play in W_{1-p}; W_{1-p} is a trap for
-p). If C_τ ∩ W_{1-p} ≠ ∅, then some opponent vertex o ∈ C_τ ∩ W_{1-p} has π(o) outside the set CurR in which o was attracted,
+p). If C_τ ∩ W_{1-p} ≠ ∅, then some opponent vertex o ∈ C_τ ∩ W_{1-p} has π(o) ∉ Z_τ [per referee: REFEREE G-e1, REFEREE-2 G-e1;
+the old wording "outside the set CurR in which o was attracted" is trivially met by an already-popped vertex of Z_τ],
 i.e. π(o) lies in a region computed earlier in the same pass, in X, or outside the search_rec context (an edge the region
 forgives). Proof. Suppose not. A p-vertex v ∈ C_τ ∩ W_{1-p} has all its edges in W_{1-p}, so str[v] ∈ W_{1-p}, and str[v] ∈
 Z_τ (an H-edge), hence str[v] ∈ C_τ (everything reachable from τ is in C_τ). An opponent vertex o ∈ C_τ ∩ W_{1-p} was
@@ -291,7 +306,8 @@ that gets a region lies in W_p(G') and extracts a NEW tangle inside W_p(G'). Oin
 W_p ≠ G'), stable order 464 of 464 (31 mixed). (The LAST stable piece fails once in each order; "some piece" = LOW-W.)
 This matches DTL-proof.md §2.3 K6 ("a search that learns nothing at its first stable set is of shape (α) or (β')"), now with
 the location inside W_p.
-Theorem A (PROVED, reading, given (α) does not occur). If the ROOT call (depth 0, first best_vertices call, X = ∅) of
+Theorem A (PROVED, reading, given (α) does not occur; per referee, REFEREE-2 G-c1: "lowest region" = the region Z_k of the
+lowest top that gets a region in the FIRST sptl pass of the root S piece, and "given no (α)" = "Z_k is closed"). If the ROOT call (depth 0, first best_vertices call, X = ∅) of
 search(p) returns 1, then its lowest region (top τ_k) lies in W_p(G'), and if it is closed (not (α), K5) it yields a new
 tangle or a dominion, inside W_p(G'). Proof. K4 (DTL-proof.md §2.3, PROVED): the final threshold set A of a stable V* at
 X = ∅ is p-won, A ⊆ W_p(G'); the regions are inside A, so τ_k ∈ W_p and C_{τ_k} ⊆ Z_k ⊆ W_p. By SCC1 the only candidate SCC
@@ -444,7 +460,8 @@ context R (X = G' \ R) let A_D(R) be the least A ⊆ D ∩ R with: a p-vertex of
 opponent vertex of D ∩ R all of whose edges lie in X ∪ A is in A (X is a p-won SINK, as DTL's threshold step 897-912 and its
 forgiving attractors treat it). Q(R) := (D ∩ R) \ A_D(R); K(R) :⇔ Q(R) ≠ ∅.
 Lemma K0 (PROVED). (a) If Q(R) ≠ ∅, every p-vertex v ∈ Q(R) has σ(v) ∈ Q(R) (σ(v) ∈ X ∪ A would put v into A) and every
-opponent vertex of Q(R) has an edge into Q(R) (else all its edges, which lie in D, are in X ∪ A); every play staying in
+opponent vertex of Q(R) has an edge into Q(R) (else all its edges, which lie in D, are in X ∪ A; per referee, REFEREE-2 G1:
+"edges" and "all of whose edges lie in X ∪ A" mean edges OF G', an edge into a solved p-region does not block attraction); every play staying in
 Q(R) and consistent with σ is a G'-play from D consistent with σ, so p wins it: Q(R) is a p-dominion of the subgame G[Q(R)]
 (the game in which the opponent's edges LEAVING Q(R) are deleted). Closure used: σ-closed, and every opponent vertex keeps
 at least one edge into Q(R); Q(R) is NOT opponent-closed in G' (an opponent vertex may also have edges into A ∪ X). Only
@@ -558,8 +575,9 @@ vertices can never be attracted first, so such cycles keep Q nonempty; a violati
 
 ### 18g. Candidate KT (thresholded K; the Lead's lead 06:12Z) — DATA, not proved (06:32Z by date -u)
 Definition. For a depth-0 context R (X = G' \ R) and c of p's parity: S_c := D ∩ R ∩ {priority ≤ c}; A_c := the plain
-p-attractor of X inside S_c (a p-vertex enters with an edge into X ∪ A_c; an opponent vertex only if ALL its edges lie in
-X ∪ A_c, so an edge to a D-vertex of priority > c blocks it); Q_c := S_c \ A_c; F_c := the game on Q_c in which the
+p-attractor of X inside S_c (a p-vertex enters with an edge into X ∪ A_c; an opponent vertex only if ALL its edges IN G' lie
+in X ∪ A_c — edges into solved vertices, outside G', are not counted [referee gap G-S5-5, REFEREE-2 G1] — so an edge to a
+D-vertex of priority > c blocks it); Q_c := S_c \ A_c; F_c := the game on Q_c in which the
 opponent's edges leaving Q_c are deleted (forgiven, as DTL's regions forgive) and a vertex without successor loses for p.
 KT(R) :⇔ some c has W_p(F_c) ≠ ∅. Differences from K: attraction to X only through priorities ≤ c (DTL's threshold step
 and regions never use a path through a higher vertex, the pk_viol_n20 mechanism), and the core must be won by cycles.
@@ -816,3 +834,265 @@ closed) and the same frame inside recursions. Caveat: a KT core can contain an o
 escape in X: not plainly attracted to X, p-won with exits forgiven), so KT itself does not exclude (β'); a tangle-aware
 attractor in KT would, and the NT-f trick (take the tangle's top-priority vertex pruned first) seems to carry P-KT over to
 it for tangles without a vertex in old X — SKETCH, not written.
+(NO-ORPHAN-pre) and Lemma O-P (09:21Z by date -u; experiments/alg/dtl_orphpre.py). An ORPHAN at a best_vertices call with
+context R is an alive stored p-tangle t ⊆ R none of whose escapes lies in R (it is never re-checked inside R, and its
+region can only re-find it: (β')). DATA: no orphan at any call, at any depth, made before the search's first newly learned
+tangle: 11,725/11,725 calls corpus Oink (+ kfirst_viol_n13, pk_viol_n20), 11,523/11,523 stable; the only orphans (2 per
+order: gapb_dup_n20, gapbW_dup_n20) come after learning in the same search. With it, (β') cannot occur at the first
+KT-breaking stable piece (nothing is learned before it), so (S-LOW) would reduce to (α) at that piece.
+Lemma O-P (PROVED given (YZ)). A depth-0 P piece creates no orphan. Proof. Suppose Dom(prevV, R) removes the last escapes
+of t that lie in R while t ⊆ R \ Y_0. Those escapes lie in Y_0 = Z_f (YZ) ⊆ Z^r for every round r (FM, 18k). Let q :=
+tpr(t) and m_1 a priority-q vertex of t pruned first in the −1 call, at round r_1 (every priority-q vertex of t is pruned:
+one in V_f would be a top of Dom and lie in Y_0). At round r_1 all priority-q vertices of t are in V_{r_1} ⊆ Z^{r_1}. If
+q = 0, t ⊆ Z^{r_1} and m_1 attracts into Z^{r_1} (tangle successor / all R-edges in t ∪ escapes), so it is no candidate.
+If q ≥ 1, an escape e of t in R lies in Z^{r_1}, is popped at level q−1 of the rescue loop (step (D1) of NT-f), and
+attractTangle(t) finds every vertex in the set or of priority ≤ q−1 and every escape in R in the set, so t ⊆ the set and
+m_1 is rescued. Contradiction either way. □ Open: orphans created by a T piece (the threshold attractor takes t's last
+escapes at a level t* below tpr(t)) and by a barren stable piece (its rounds need not satisfy (FM)).
+(S-LOW), tight form (09:53Z by date -u; Lead 09:33Z after L-RED's check, l-red 57ab33f experiments/red/carry/slow.py). The
+first count above was LOOSE in three ways (L-RED): it pooled every sptl pass of the piece, accepted a dominion found by any
+top, and did not require the tangle to lie inside D. It did require a NEW tangle (skipped duplicates create no tv entry).
+(S-LOW-TIGHT) At a depth-0 stable piece that breaks KT, with nothing learned inside D earlier in the search, the lowest top
+that gets a region in the FIRST sptl pass itself creates a new tangle INSIDE D or itself finds a dominion.
+Recount with the tight test (dtl_step5stats.py "S-LOW-TIGHT", per-pass events recorded by dtl_step5.py's sptl): 403/403
+corpus Oink, 384/384 corpus stable, 467/467 unions Oink s1, 61/61 cross unions Oink s11 — no case where the tight form
+fails and the loose one passes. (The Lead's slow.py re-run on the four killers: 8/8 per order.)
+How (β') could arise at such a piece (shape for L-RED, from the reading; not built): a stored tangle t = {a, b} learned in
+an earlier search (a p-owned of priority 2 with tangle edge a → b; b opponent of priority 1 with b → a and one escape
+b → e); in the current search, before any learning, a T piece at level t* = pr(e) ≤ 1 (e a seed: it attracts into X)
+takes e but rejects t (pr(a) = 2 > t*), so t becomes an orphan (Lemma O-P excludes this for P pieces, not for T pieces);
+at the next stable piece the region of a closes on exactly t — a (β') duplicate. For (S-LOW-TIGHT) to fail, that piece must
+be the first to break KT and a's region must be the lowest of its first pass.
+
+### 18m. Referee gaps imported (REFEREE R-STEP5, REFEREE-2 R2-STEP5; union G-S5-1..7 in docs/agents/R4-draft.md; 09:56Z by date -u)
+Both reports: no REJECT; all signatures labelled "(Opus 5.5, D12)". Scope: depth-0 P pieces only; S and T steps and (K-in)
+not established. Closed gaps, written into the author's argument here (STEP5.md gets citations only):
+- G-S5-1 (REFEREE F2.1, REFEREE-2 G2). NT-f (D) uses q := tpr(t) = max pr(t) and that the vertices of priority q have p's
+  parity: by DTL-proof.md Lemma 1.5a a closed sptl region has exactly one SCC reachable from its top, so every extracted
+  tangle contains the top that extracted it; tpr(t) is that top's priority (dtl.cpp extractTangles), which is the region's
+  threshold and hence the maximum priority in t, of p's parity.
+- G-S5-2 (REFEREE G4.1). (YZ) ⇐ (ACYC), step (iii), both inclusions. For the top τ_j let L_Dom be Dom's part and L_loop
+  the final round's region, each the least fixed point of its rule set — vertex rules within the consumed set, the tangle
+  rule retried at every pop of an escape (DTL-proof.md Lemma 1.2: the pop loop computes exactly this closure). (⊇) every
+  rule application of the loop is one of Dom's (same vertex rules; a loop acceptance is a Dom acceptance). (⊆) induction
+  over Dom's derivation: vertex-rule steps are loop steps; a Dom tangle acceptance without an X-vertex would be a loop
+  acceptance, excluded by NT-f; an X-straddling acceptance with acyclic new part N_X is replaced by vertex-rule steps for
+  N_X in reverse topological order of H_{t_X} on N_X (using (i), (ii) and G-S5-3). So L_Dom = L_loop for every top, and
+  Y_0 = Z_f.
+- G-S5-3 (REFEREE G4.2, REFEREE-2 G3). The trigger case in (ii): a new opponent vertex o ∈ N_X all of whose R-edges lie in
+  earlier parts cannot exist — at the pop of the last of those successors, in an earlier region whose top has priority
+  ≥ pr(τ_j) ≥ pr(o), o would have been attracted (76-86), so it would not be new. Hence every new opponent vertex has an
+  R-edge into the current region or N_X, and in the reverse topological order it is attracted at the pop of its last such
+  successor.
+- G-S5-4 (REFEREE G5.1, REFEREE-2 G4). P-KT when c1 = 0 (p Even): there is no rescue level c1−1. Read A^r_{−1} := Z^r; A'' is
+  empty (no vertex has priority ≤ −1), so its role is played by Z_f alone. In (2) and (3) a priority-0 vertex that attracts into
+  Z_f ∪ A'' ⊆ Z^{r(x)} (FM) is not a candidate at round r(x) (dtl.cpp 714) — the contradiction comes from candidacy
+  instead of rescue.
+- G-S5-5 (REFEREE-2 G1; REFEREE wording note). In A_c "all its edges" means all its edges in G'; with whole-game edges an
+  opponent vertex with an edge into a solved region would never enter A_c and P-KT step (4) fails. Fixed in 18g.
+- G-S5-6 OPEN: (ACYC). G-S5-7: Lemmas 1.5a and 1.2 of DTL-proof.md were checked by the referees only for this use; sorted
+  indices (oink.cpp:35); O1 (index order follows priority) is an order-datum fact; positional determinacy and D = W_p(G')
+  (DTL-proof.md Lemma 1.4c) standard. Nothing Lean-checked.
+Why the NT-f trick does not exclude T-piece orphans (10:01Z by date -u; reading). At a T piece the seeds attract INTO X; an
+opponent seed has every edge in X (no R-edge at all), and the rescue loop (Gx = R) never pops such a vertex, so an escape
+of t taken by Z_T need not lie in any rescue set of the preceding −1 call: m_1's rescue argument does not start. Recipe
+(for L-RED; every step is consistent with the reading, nothing built): (1) an earlier search of p learns t = {a, b}
+(a p-owned, priority 2, a → b; b opponent, priority 1, b → a, b → e) at a's closed region, b's escape e (opponent,
+priority 1, e → x only) being forgiven because e lies in a higher region (e.g. with x) of that pass; (2) in the current
+search a barren piece puts x into X; (3) the next −1 call prunes a (b's edge to e blocks a's region; e has no R-edge, so
+no rescue reaches it), the threshold scan finds e at level t* = 1 (e attracts into X), the T piece takes e and rejects t
+(pr(a) = 2 > t*): t is an orphan; (4) at the next stable piece a's region is {a, b} (b's edge to e now leaves R), closed,
+and its SCC is the stored t: a (β') duplicate, nothing learned there. If t ⊆ D carries the KT core at that point, the piece
+breaks KT barren and (S-LOW-TIGHT) fails; if, moreover, nothing else in the search learns, Lemma K fails (an incomplete
+run). Data: 0 such events (NO-ORPHAN-pre).
+
+### 18n. Referee Packet 2 imported (REFEREE R-PROVED2 = R1, REFEREE-2 R2-PROVED2 = R2; Lead 10:14Z items (A)-(D); 10:09Z by date -u)
+Every item below is "per referee"; quotes are from docs/referee/R-PROVED2.md (R1) and docs/referee-2/R2-PROVED2.md (R2).
+No lemma statement is changed for G-h1 or R2's G-b1 (Lead: until the comparisons land).
+
+(C) K5 CORRECTED (per referee, R2 G-c2). K5 (i) and (iii) of DTL-proof.md §2.3 are FALSE as written: the rescue loop runs
+to max_prio (721-722), so A holds vertices attracted at levels above every top. Instance docs/referee-2/R2-PROVED2/k5.pg
+(Even a(2) → a, b(4) → d, d(3) → a, y(5) → b). L-ALG re-run (experiments/alg/dtl_k5chk.py on dtl_pyref), BOTH order data, same
+dump: V* = Reg = {a, b}, A = {a, d, b} after level 3 and {a, d, b, y} after level 5; y ∈ A \ Reg has an edge into the
+higher region {b} (K5 (i) fails), and d, y ∉ Z_k = {a} ∪ Str (K5 (iii) fails). R2 also names a second hole in (iii): an
+opponent vertex (or a p-vertex via str) whose successor lies in Str \ Z_k is in neither set.
+K5' (corrected; R2's form, PROVED (reading); L-ALG re-traced the induction). Let A_< := the rescue set after level
+pr(τ_k) − 1 and Up(Str) := the vertices from which some ψ-play reaches Str before Z_k. Then (i') no p-vertex of A_< \ Reg
+has an edge into a higher region (its priority is ≤ level < pr(τ_k) ≤ pr(higher top), and it was never consumed);
+(iii') A_< \ Reg ⊆ Z_k ∪ Up(Str) (induction over the attraction order of A_<: a p-vertex's str is in Z_k or in A_< \ Reg;
+an opponent vertex's R-successors in higher regions are forgiven, the others are in Z_k or Up(Str); a fired tangle
+straddles, or has its escapes in Z_k ∪ Up(Str)); (ii) unchanged. Consequence: Z_k is closed unless τ_k's ψ-successor
+(p-owned τ_k; some successor for an opponent τ_k) lies in Up(Str) \ Z_k; τ_k is rescued only at a level < pr(τ_k) (737),
+so that successor lies in A_<.
+(α) RESTATED: the lowest region Z_k is open because τ_k's ψ-successor lies in Up(Str) \ Z_k (a ψ-play from it reaches a
+vertex pushed by a straddling tangle before Z_k). Old (α) ("in the lower part of a straddling tangle") is the special
+case Up(Str) = Str.
+Who cites K5 (i)/(iii) (L-ALG audit, grep of docs/alg and experiments/alg):
+- DTL-proof.md K6 ("K5(i)-(iii) hold verbatim with X ≠ ∅"): read with K5'; the same induction with X forgiven. K6's closed
+  case (bottom SCC new, dominion or (β')) does not use (i)/(iii). Marked in place.
+- Theorem A (§13): does not depend on (i)/(iii) under R2's G-c1 reading (hypothesis "Z_k closed"). Marked in place.
+- §17 Step 1 and §18l's reduction of (S-LOW) via K6: stand, with (α) read as RESTATED.
+- DTL-proof.md (C-a) already uses Up_k (vertices from which a ψ-play enters a higher region): consistent with K5'.
+- docs/alg/candidates/C6-DTLhat.md K5-for-C6 sketch (PARKED) and GAP-A-M.md §(c) 1375: the same induction from Û gives
+  A' \ Reg ⊆ Z_k ∪ Str⁺ and has the same hole; it needs the same restriction (A'_<, Up(Str⁺)). Marked in place.
+- GAP-α (§2, §5): restated as above.
+
+(A) Write-up fixes (per referee):
+- B-thr (§3). R1 G-b1 = R2 G-b3: (iii) needs t to have an escape in G'. An escape solved in an earlier search is not
+  popped in this one; Lemma O0's argument (an escape solved for the opponent attracts t's opponent vertex, so t is dead;
+  the last escape solved for p fires t at 1037) gives that every escape of a live t ⊆ G' lies in G'. R1 G-b2 = R2 G-b2:
+  "the LAST escape of t to be popped" means, for each escape, the pop at which it leaves the chain of contexts containing
+  the current call's context (a vertex is popped again inside a recursion: 918-923, then the child); that pop is in a
+  piece of the current call or an ancestor, and its R contains the current context ⊇ t. R2 G-b2 also: read (a)/(b) on
+  their conclusions; (a) includes "t partly in the −1 attractor's Z" (rejection by the priority test, 140), which the
+  text's "no vertex of t was in the attractor's target" misses; "Exactly one" should read "at least one".
+- OPP-EXIT (§11). R1 G-e1 = R2 G-e1: the conclusion is "π(o) ∉ Z_τ" (statement fixed in place). R1 G-e2: the proof also
+  needs (1) o joined through a fired tangle t2: π(o) ∈ t2 ⊆ Z_τ, or π(o) is an escape of t2, in Z or not in R (155-156);
+  (2) o = τ opponent-owned: the closed test (519-525) leaves no successor in unconsumed R. With these, π(o) ∈ CurR ⇒
+  π(o) ∈ Z_τ in all cases; with "no edge into CurR \ Z at attraction" (80) this gives the gloss (earlier region, X, or
+  outside the context).
+- K0 (18b; R2 G1 of R2-STEP5): "all its edges" / "all of whose edges lie in X ∪ A" = edges OF G' (fixed in place).
+- Theorem A (§13; R2 G-c1): "lowest region" = Z_k of the lowest top with a region in the FIRST sptl pass of the root S
+  piece (that pass recomputes exactly best_vertices' final-round regions: same R, V*, tangle set and rules, 494-495 vs
+  700-701); "given no (α)" = "Z_k is closed" (fixed in place). R1 makes the same points (77-78, 91-92).
+- DV*-MONO (GAP-A-M §21h; R1 R-i): INF = "never dropped" (also a round with C ≠ ∅ and every candidate rescued; V stays
+  fixed, 767). Fixed in place; proof unchanged.
+- LRN reading (GAP-A-M §21j; R2 §10): "LRN at R" = the transitions s → s+1 whose first-difference context is R (the same in
+  s and s+1) and with DV*_R(T_s) ≠ DV*_R(T_{s+1}); DV*_R is DV* on the subgame R with tangles inside R only (T ↦ {t ⊆ R} is
+  monotone; §21h never uses that the subgame is a game); so DV*_R(T_s) is pointwise monotone in s and changes ≤
+  |V_0(R)|·|R| ≤ n(n+1) times; LRN at R is a subset of those changes. The bound is per DISTINCT context only; the number
+  of contexts is not bounded (§21j). R1 (j) adds: this does not depend on (h).
+- (k): R2 G-k1: Lemma W cites SCC1 (≤ 1 tangle per extractTangles call; Pearce emits every reachable SCC, 290-305). R2
+  G-k2: DTL-proof.md §3(c) iterations ≤ 2n(d+1) + 1 per search (each call has a final returning iteration); O-bound
+  unchanged. Both fixed in place in DTL-proof.md.
+
+(B) FINDING F-b3 (per referee, R1; recorded "unless the comparison overturns it"). B-thr branch (b) is VACUOUS: B-thr
+holds in the form "(a) always", GAP-β's shape (β-b) is empty and GAP-β = (β-a); the realised duplicates gapb_dup_n20 and
+gapbW_dup_n20 are (β-a). Argument (R1): if t ⊆ Z_T and e ∈ Z_T is moved to X at 936-950, its pop at 945 runs
+attractVertices(1−p, e, Z, X, Z, t), which attracts every opponent-owned predecessor in Z of priority ≤ t with no escape
+test (75: owner = pl), including the opponent vertex o ∈ t with o → e; so t ∩ X ≠ ∅. DATA (R1, bthr_probe.py, every .pg
+under experiments/ with n ≤ 80): 8,059 (Oink) / 7,880 (stable) live p-tangles inside Z_T over 3,847 / 3,768 T pieces;
+0 with t ⊆ Z' and an escape in B. L-ALG reading of the comparison with R2 G-b2: not a conflict on truth. R2 shows "not a
+priority rejection ⇒ (b)"; R1 shows (b) never occurs (every vertex of Z_T has priority ≤ t, so o qualifies). Together:
+(a) always, and R2's "at least one" is moot. B-thr's statement is left as is until the Lead's comparison lands.
+
+(D) Ledger lines (statements unchanged):
+- G-h1, First-Difference Lemma (GAP-A-M §21d) (ii)/(iii): R1 OPEN, R2 CLOSED. Issue: sptl's `while (more)` (870-874)
+  makes control flow diverge without a differing tattr: s learns t in a pass, s+1 re-finds t as a duplicate, runs one
+  pass fewer, and the tattr logs misalign. R2 closes it by deleting from s every repeated sptl pass of an S piece before
+  e (region by region the pass-2 output equals the pass-1 output by 1.2b monotonicity; closedness is a set property, all
+  closed tops are in W, pass 2 extracts nothing). R1's open part: option (2) needs a check that the extra passes add only
+  tangles and W bits learned before e, and that the W difference cannot let s+1 learn at a later top before e; R2's "all
+  of them are already in W" is meant to cover this. R1 had not seen R2. DATA: 0 violations on 990/957 transitions
+  (dtl_fdlcheck.py, positional), 0 in 12+3 / 13+3 on the two orphan instances, 0 in 293+293 random (R1, weak).
+- G-b1 of R2 (NOT R1's G-b1, which is R2's G-b3), B-thr (iii): R2 OPEN, R1 does not raise it. (iii) assumes t existed (and
+  was evaluated, t ∈ tin[e]) at the pop of its last in-G' escape; a tangle created in the current search after that pop
+  is not covered (tout is computed against this->G, 333, so escapes already in X are recorded). Closed within the sptl
+  pass sequence of its own S piece (at τ: W[τ], 528; at another top τ'' ∈ t: index argument). Open across S pieces of one
+  search: needs t ⊆ Dom(V, R) of its S piece, a union-monotonicity statement (GAP-A kind; MONO is false). DATA (R2):
+  same-search duplicates 0 (254 files, 2 in-orders, 2 labellings, 1,014 runs, 6 duplicate events; 6 × 1,500 mutants).
+  Relation to L-ALG data: (NO-ORPHAN-pre, §18l) also finds orphans only after learning in the same search.
+Addendum after both comparisons (Lead 10:35Z, Lead clock; R2-PROVED2 §13; 10:16Z by date -u). This supersedes (B) and (D) above.
+- B-thr: both referees agree on F-b3. Branch (b) is DROPPED from B-thr ("(a) always", §3) and (β-b) from GAP-β (§3);
+  REFEREE-2 withdraws its "at least one" remark (R2 §13.2: the partial −1 case cannot occur).
+- G-h1 (FDL): CLOSED by both referees. GAP-A-M §21d (ii)/(iii) now stated on the log with repeated sptl passes deleted
+  (proof R2 §13.1, copied there). experiments/alg/dtl_fdlcheck.py now drops a repeated pass (identical tattr calls to the
+  previous kept pass of the same S piece, no extraction); FDL_POSITIONAL=1 keeps the old alignment.
+- R2's G-b1 (tangle created in the current search): CLOSED by both referees (R2 §13.2; REFEREE signed it in R-PROVED2
+  §C5, Lead 10:40Z, Lead clock). Recorded in §3 B-thr (10:31Z by date -u).
+- K5: map row reads "K5(ii) PROVED; (i)/(iii) per R2-PROVED2 §3"; (α) is defined with Up(Str) (above). Theorem A stands
+  under both readings: it uses only K4, K5(ii), SCC1, B-thr(ii) and O0 (R2 §13.3).
+
+### 18o. (β') before learning: born orphans, L-RED's two open paths, data (10:28Z by date -u)
+Born orphans (DATA; experiments/alg/dtl_bornorph.py, dtl_bornnext.py). A tangle is a BORN ORPHAN if, when extractTangles
+creates it, none of its in-G' escapes lies in the sptl context R (all are in X or outside the search_rec context). If
+search s creates one at point P and s+1 ran identically up to P, s+1 would meet it as an orphan before learning, and
+(NO-ORPHAN-pre) would fail. Born orphans are COMMON. Corpus (238 files, n ≤ 80) plus gapb_dup_n20 and gapbW_dup_n20:
+- Oink order: 3,382 tangles created, 1,285 of them born orphans (1,097 at depth 0).
+- Stable order: 3,322 created, 1,253 born orphans (1,068 at depth 0).
+Fate in the next search s+1 of the same phase (born orphans that have one):
+| order | accepted by s+1 before s+1 learns (A) | s+1 learns first (L) | neither (N) |
+|---|---|---|---|
+| Oink, depth 0 / > 0 | 876 / 159 | 166 / 28 | 0 / 0 |
+| stable, depth 0 / > 0 | 853 / 158 | 160 / 27 | 0 / 0 |
+Accepting attractor (Oink; stable is similar): the best_vertices threshold loop at depth 0 in 915 cases (Gx = R, levels up
+to max_prio, so an escape in the rescue set at a level ≥ pr(t) fires t), best_vertices regions 62, the −1 attractor of
+search_rec 29, threshold loop at depth ≥ 1 29. Reading: (NO-ORPHAN-pre) holds on the data because a born orphan is the
+cause of the first difference (First-Difference Lemma (iii)) of its next search, which absorbs it early. Candidate lemma
+(BORN-NEXT, DATA only): the next search accepts every born orphan of its predecessor before it learns, or learns first.
+This covers only born orphans; it is not yet a proof route to (NO-ORPHAN-pre).
+L-RED's check of the §18l T-piece recipe (Lead 10:27Z, Lead clock; graft4: 2,996 games × 2 orders, 0 hits):
+- Steps (3)-(4) match dtl.cpp. Step (2), "a barren piece puts x into X", is the hard constraint: in a round with x ∈ Z
+  and a a candidate, the level-1 rescue pops x and attracts e, then b, so a is rescued. a can be pruned only after x left
+  Z, and if x leaves through a T piece at level ≥ 1, e leaves with it.
+- Step (1) needs the region holding e to have a top of priority < 2. Otherwise the current search attracts t whenever e is
+  popped.
+- Open path (i): x has priority 0, is pruned before a, is never in a region, and is removed by a T piece at LEVEL 0.
+- Open path (ii): x is removed by a barren STABLE piece, with a pruned in an earlier round when x was already outside Z.
+L-ALG's reading of path (i) (sketch; nothing built):
+- (F1) The first piece at depth 0 is S or P, never T. A T seed must attract into X = ∅, and every vertex of G' has a
+  successor in G'. So the level-0 T piece that takes x needs X ∋ y (x → y) from an earlier piece.
+- (F2) A priority-0 vertex is never rescued (the candidate check stops at priority(u) ≤ t, 737; at t = 0 a priority-0 candidate is never re-checked). So x is pruned in round 1 exactly when it
+  fails to attract into the round-1 regions. A p-owned x then has no edge into them.
+- (F3) If that earlier piece is P = Dom(prevV, R) with top w and y ∈ its target, then Dom's attractor also takes x
+  (priority 0 ≤ pr(w), edge into X). It takes e as well when pr(w) ≥ 1, and then t is attracted at e's pop when pr(w) ≥ 2
+  (t stored). So pr(w) = 0 and y ∈ w's region. But then x attracts into the round-1 regions, contradicting (F2), unless
+  w's Dom part differs from its round-1 region (the (YZ) question again).
+- Step (1) via a born orphan: the earlier search s' can learn t at a's region with e already in X (born orphan). By
+  BORN-NEXT data, s'+1 then accepts t before learning, typically in its first threshold loop, once x and e lie in the
+  rescue set at a level ≥ 2. A counterexample must keep e out of every depth-0 rescue set of s'+1 at levels ≥ 2. e → x
+  only, so x must stay out of those rescue sets, i.e. x must have no rescue path at any level ≥ 2. That is a sharper
+  form of step (2).
+Searches for a NO-ORPHAN-pre violation (0 hits). Fitness: minus the fewest in-R escapes of an alive stored tangle t ⊆ R at
+a pre-learning best_vertices call (0 = violation).
+- dtl_orphclimb.py: 8 climbs from gapb_dup_n20 / gapbW_dup_n20, both orders, seeds 1-2. Every climb is stuck at 1
+  in-R escape (the starting value). All 8 finished 30,000 steps each (10:38Z by date -u): 0 violations, 0 incomplete runs.
+- dtl_orphrand.py with the gadget planted: 40,000 games per order (seeds 11-12, up to 12 vertices), 0 violations.
+- Plain random games: 20,000 per order (seed 13, ≤ 9 vertices), 0 violations. Fewest in-R escapes was 1 in 486 games
+  and 2 in 82.
+- In these random and climb runs, the Oink and stable fitness values coincide. The order datum does change the runs
+  (gapb_dup_n20 makes 14 vs 16 searches); the fitness is coarse.
+Status: (β') at the first KT-breaking stable piece is OPEN. (NO-ORPHAN-pre) is DATA, and paths (i) and (ii) are for
+L-RED's successor. (F3) moves path (i) onto (YZ)-type ground; path (ii) is untouched.
+
+### 18p. Box 6 ledger (L-ALG successor 6, produced on Opus 5.5; GO 05:08Z (Lead clock), box end ~13:10Z; 10:35Z by date -u)
+PROVED (readings of dtl.cpp @ 8fbf0a7, every order datum; Step 5 signed by both referees with gaps, R4 / STEP5.md):
+- KT0. NT-f, and with it FM and WM. P-KT given (YZ). (YZ) ⇐ (ACYC). Lemma O-P given (YZ). K5' (REFEREE-2's form).
+- Packet 2 (both referees, gaps imported §18n): B-thr "(a) always", all gaps closed. OPP-EXIT with "π(o) ∉ Z_τ". K0.
+  Theorem A. DV*-MONO. The per-context LRN budget. FDL on the reduced log. Lemma W via SCC1.
+OPEN (in the order a proof of Lemma K needs them):
+1. (ACYC), the single open point of Step 5 (STEP5 §6.1, GAPS G-S5-6).
+2. The S step: (S-LOW-TIGHT) holds on all data and reduces via K6/K5' to excluding (α) (now via Up(Str)) and (β') at
+   the first KT-breaking stable piece. (β') needs an orphan; (NO-ORPHAN-pre) and BORN-NEXT are DATA (18o). L-RED paths
+   (i)/(ii) are the open shapes.
+3. The T step: (CORE-PASS-closed) 45/45 DATA, then (REC): the same frame inside recursions.
+4. GAP-A (polynomially many searches; separate from GAP-C).
+DEAD this box (instances in 18d, 18f, 18j, 18k, 18n):
+- The K frame: (P-K) and (K-STEP-first) (pk_viol_n20).
+- HYB, JD, ATTR, SEG-ALL, LASTD-T, KEEP, MONO/R-MONO, P-A, INV-T (c_best_s34), (S-LEVEL) (cross_h_k1_n12_m18_17).
+- K5 (i)/(iii) as written (k5.pg, REFEREE-2). B-thr branch (b) and GAP-β's (β-b): empty, not a dead end, removed.
+- Tool defect: the old dtl_fdlcheck.py "same caller" test was vacuous. Fixed and re-run, 0 violations.
+GAP-A angle for the next box (per L32; not started):
+- Proposal: rescue-set monotonicity for the actual code, the per-phase potential that DV* gives only for the clean ideal.
+- FDL puts the first difference of consecutive searches in the best_vertices threshold loop in 642 of 949 transitions (C5,
+  Oink order). §18o adds that born orphans (38% of learned tangles) are absorbed mostly there: 915 of 1,035, depth-0
+  threshold loop.
+- The tools that worked for the −1 call this box were NT-f and FM. They say the final round accepts no stored tangle and
+  its union lies inside every earlier round's union. They are rescue arguments on one call with T fixed.
+- The angle: prove the same kind of statement ACROSS consecutive searches for the root call. Let s → s+1 have its first
+  difference in the root call's threshold loop at round r. Claim: the round-r rescue sets of s+1 contain those of s at
+  every later level, and V_{r+1}(s+1) ⊇ V_{r+1}(s) (DV never falls: DATA, GAP-A-M §21h).
+- If that holds, the root-call pruning vector is pointwise monotone. It changes at most n(n+1) times per phase (as for
+  DV*), and the FDL transitions with the first difference in the root call are polynomially bounded.
+- The obstacle is the usual one. Regions consume (MONO is false), so the rounds after r need not be monotone. The claim must
+  use, as NT-f does, that a tangle accepted later is the cause of the difference.
+- First test: dtl_dvctx.py's DV vs DV* split on the transitions where the first difference is in the root call.
+GAP-A angle, first step (10:38Z by date -u; reading). Let the first difference e of s → s+1 (reduced log, FDL) be in the root
+call's threshold loop at round r and level t_e. Then for every later level t ≥ t_e of round r, the rescue set of s+1
+contains that of s. Reason: the loop's attractor has fixed R, Gx = R and consume = None, and it is monotone in (Z, T)
+(DTL-proof 1.2b). Its input at t_e is equal and its output is larger, and T_{s+1} ⊇ T_s. The candidate list of round r is
+the same in both searches (it is computed before e), and "attracts into Z" is monotone in Z. So V_{r+1}(s+1) ⊇ V_{r+1}(s):
+no vertex is dropped EARLIER in s+1 at round r. The step to rounds r' > r is exactly the open part of DV-MONO for the
+author's DV (GAP-A-M §21h: SKETCH with GAP; DATA: DV never falls). It is NOT (MONO)/(R-MONO): those compare consecutive
+rounds of ONE call and are false (§18d). A proof must say why the larger V_{r+1} of s+1 cannot make a later round drop a
+vertex that s kept. As in NT-f, the tangle learned by s after e that causes the difference is the handle.
