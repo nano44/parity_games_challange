@@ -229,3 +229,14 @@ The draft may land as written. If edited, I re-diff the text only.
 - This matches §22w, "Oink order: 12 tangles at one context with |R| = 16 (0.75); continued to 13 (0.87)", and is my
   suggested wording. E-2 is fixed.
 - C11 final: R11 PASSES as at e55bbdf.
+
+## Addendum 8: post-landing text check, trunk af07389 (Lead 16:58Z): PASS
+- e55bbdf is an ancestor of af07389.
+- RESULTS R11 against R11-draft.md at e55bbdf, from the "### R11" line: identical except for two things.
+  - The heading stamp: "CHECKER PASS (docs/checker/C11-R11-packet8.md, checker 7a7d23c + re-diff 2031e13)".
+  - One trailing blank line.
+- docs/GAPS.md, GAP-A row, three edits, all accurate:
+  - The CTX⁺ maximum is now "13 per phase, ctx13_n40 (L-RED; re-run CHECKER C11)", which matches C11 §3.
+  - (FALL-V) "is FALSE, RESULTS DE18 (fallv_viol_n28)". DE18 landed at 357224b ("RESULTS DE18 (FALL-V false,
+    fallv_viol_n28)").
+  - "R11 pending" now reads "R11".
