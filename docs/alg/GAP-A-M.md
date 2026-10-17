@@ -1147,6 +1147,7 @@ KILLED (FALSE / DEAD), each with its instance
 | GAP-C (NODUP) the duplicate check never fires; (NO-ORPHAN) no stored p-tangle inside a context has all escapes outside it | red/carry/instances/gapb_dup_n20.pg (L-RED, l-red e4138a0; Oink 14 iterations, verified; both orders); in a search with W_p(G') = ∅ | GAP-C.md §8 |
 | GAP-C (NO-ORPHAN-W): no orphan inside the winning region | red/carry/instances/gapbW_dup_n20.pg (L-RED, l-red 2b792b8; Oink 6 iterations, verified; both orders); the same search learns elsewhere inside W_p | GAP-C.md §12 |
 | GAP-C (K-first), (K4-B): the first stable piece is the productive one / its regions lie in W_p | instances/kfirst_viol_union.pg (L-ALG; disjoint union of two corpus games; Oink 7 iterations, verified; both orders) | GAP-C.md §14 |
+| GAP-C (FIRST-W): the first stable piece with a p-won top is productive | instances/firstw_viol_cross.pg (L-ALG; union with 3 cross edges, n = 30; Oink 6 iterations, verified; both orders) | GAP-C.md §16 |
 | (ABS-mono) PHI0 never rises at a non-RES-d0 transition; (ABS-mono-pw) no vertex moves to a later depth-0 piece there | red/carry/instances/absmono_viol_n44.pg (L-RED R22, l-red cf9bdba; Oink 5 iterations, verified): Even's search 0 → 1, SHRINK at depth-0 piece 14, then piece 17 (same context) stable → −1 under the larger T; 7 vertices move later, PHI0 374 → 379; both order data | §21j, DEAD.md |
 
 DATA candidates left after box 4 (A_DTL; every per-context (H4) POTENTIAL candidate is dead):

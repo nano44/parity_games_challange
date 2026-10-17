@@ -180,3 +180,6 @@ Context: docs/alg/GAP-C.md. Lemma K: W_p(G') ≠ ∅ ⇒ search(p) learns a tang
   experiments/alg/instances/kfirst_viol_union.pg (disjoint union of two corpus games, n = 26; Oink-verified; both orders);
   276 of 891 mixed union searches. They held on the corpus only because there W_p = G' (or one opponent vertex). The
   existential (K-low) survives (2,092 of 2,092 mixed union searches).
+- (FIRST-W) "the first stable piece whose V* meets W_p is productive inside W_p": DEAD, experiments/alg/instances/firstw_viol_cross.pg
+  (union of two corpus games with 3 cross edges, n = 30; Oink-verified; both orders; that piece's V* lies on both sides). 4 of 188
+  interacting mixed searches. The existential (K-low) survives (188/188).
