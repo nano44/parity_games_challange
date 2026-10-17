@@ -22,12 +22,12 @@ class RM(FC.CK):
         r = FC.CK.search(s, p); s.trace[-1]["root"] = s.root; s.trace[-1]["dvstar"] = dv; s.trace[-1]["ctx0"] = list(s.ctx0); s.trace[-1]["d0clean"] = not any(r_.get("stepdef") for r_ in s.d0recs); s.trace[-1]["recs"] = list(s.allrecs); return r
 
     def sptl(s, V, R, p):
-        s._spR = (s.dep, frozenset(R)); return FC.CK.sptl(s, V, R, p)
+        s._spRk = (s.dep, frozenset(R)); return FC.CK.sptl(s, V, R, p)
 
     def extractTangles(s, top, R):
         k = len(s.tv); r = FC.CK.extractTangles(s, top, R)
         if not hasattr(s, "bornR"): s.bornR = {}
-        for t in range(k, len(s.tv)): s.bornR[t] = getattr(s, "_spR", None)      # (depth, sptl arena) of the birth
+        for t in range(k, len(s.tv)): s.bornR[t] = getattr(s, "_spRk", None)      # (depth, sptl arena) of the birth
         return r
 
     def best_vertices(s, V, R, p):
