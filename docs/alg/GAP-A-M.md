@@ -2382,3 +2382,63 @@ Packet 6 SETTLED (per referee: REFEREE R-P6 @ 9f77ff9 with comparison §C @ ad4b
   nested-counter recursion again (§22g, §22k).
 - Context climbs (dtl_ctxclimb.py: spp25 and spp22 starts, both orders) are running to see how far the number of
   first-difference contexts per phase can be pushed.
+
+22p. What a long phase looks like at depth 0 (DATA; spp22_oink_n40, Oink order, Odd's phase of 22 searches; 13:56Z by date -u)
+Each search's depth-0 iterations as (call result, piece size). M is a −1 piece (P or T), S is a stable piece, E is the
+end:
+  s0  M1 M2 M1 M2 M3 M1 M1 M1 M1 M2 M1 M2 M2 M1 M2 M2 M1 M1 M2 M1 M2 M1 S4 E1
+  s3  M1 M2 M1 M2 M3 M1 M1 M1 M1 M2 M1 M2 M2 M3 M4 S10 E1
+  s7  M1 M3 M1 M2 M3 M2 M1 M2 M1 S22
+  s8  M1 M1 M1 M2 M1 M2 M3 M1 M1 M1 M1 M2 M1 M2 M2 M1 S15
+  s10 M1 M1 M1 M2 M1 M2 M3 M2 M1 M2 M1 S21
+  s11 M1 M1 M1 M3 M1 M2 M3 M1 M1 M1 M1 M2 M1 M1 M2 M2 M4 S10
+  s17 M1 M3 M1 M2 M3 S28
+  s21 S38
+- Reading: a phase is a run of small "distraction" −1 pieces, each removing a level set Dom(prevV) of 1-3 vertices, then
+  ONE stable piece that grows as the learned tangles let vertices survive pruning.
+- The number of depth-0 pieces falls overall (24 → 2) but RISES twice: s7 → s8 (9 → 16 M pieces) and s10 → s11 (11 → 17).
+  At both, an early distraction piece changes its level set (M3 → M1 at position 2, or M2 → M3 at position 4). This is
+  §22g's obstruction at work: the level-set jump re-creates every later context, and the run of distractions behind it
+  is rebuilt.
+- So a (CTX⁺) proof needs a potential that pays for the rebuilt distraction runs, for instance through the vertices that
+  move from distraction pieces into the final stable piece (here 4 → 38). It must survive the two re-expansions. Not
+  attempted further in this box.
+- Tested (14:06Z, corpus plus kin, meet and fall3 instances, Oink order, dtl_rootmono.py "DISTRACTION"): the
+  distraction mass (total size of the depth-0 −1 pieces) is NOT a potential.
+  - It falls at 528 transitions, stays the same at 156 and rises at 372.
+  - The rises: 159 at a −1 call whose RV changed, 194 at a −1 call with RV unchanged, 18 with e* outside best_vertices,
+    and 1 at a stable call.
+  - So the re-expansions are not confined to level-set jumps.
+
+22q. What a descent is charged to: (FALL-V) (14:19Z by date -u; dtl_rootmono.py RM_FALLDET=1, "FALLS per (context, vertex)")
+Instance experiments/red/carry/instances/fall4_n116.pg (L-RED R31; sha1 9b174a5e).
+- L-ALG re-run: pinned Oink (`--dtl --no-single --no-wcwc --no-loops`) found 6 dominions and 82 tangles in 13 iterations,
+  verified.
+- dtl_rootmono.py finds 4 descents of Π_R at one depth-0 context (|R| = 113), in both orders.
+- The step-deficit witnesses are IDENTICAL at all four descents: the same victim tangles, the same stealing region
+  tops (file ids 20, 47, 65) and the same failing tops. So the deficit is static, and (victim, stealing top) cannot be
+  what is used up.
+- The vertices whose RV falls are DISJOINT across the descents, one gadget per descent (file ids):
+  - visits 0 → 1: 48-67;
+  - visits 1 → 2: 2-43;
+  - visits 2 → 3: 72-91;
+  - visits 3 → 4: 110.
+- Reading: each gadget's vertices first gain RV through learning, then lose it once when the static deficit catches up.
+  The chain of cross edges staggers the gadgets by one search each (L-RED's delay mechanism).
+Candidate (FALL-V), DATA only: along a phase, each vertex's RV at a fixed context falls at most once.
+- Consequence: the descents of Π_R at R number at most |R| ≤ n. Together with the non-rise steps that F_R also counts
+  (0 on all data), (FALL) would follow, and GAP-A ⇐ (CTX⁺) alone, given STR-DET.
+- DATA so far: corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29, meet_viol_n17, fall3_n76 and fall4_n116, both
+  orders. In all 18 phases with falls, every vertex falls at most once per context. Unions (completed 14:39Z): mixed
+  unions s1, 106 (Oink) / 139 (stable) phases with falls; cross unions s11, 54 / 64. Max 1 fall per (context, vertex)
+  in every one.
+- Proof idea (not done). A fall of v at R needs a stolen victim (Lemma E). Where the later call is clean the prefixes
+  grow (PREFIX-MONO), so a stolen vertex stays stolen and v cannot regain support from that victim.
+- Gap: a NEW tangle could restore v's RV and then be stolen in turn. That is the shape for L-RED: v rises after its fall
+  and falls again at the same context.
+(CTX⁺) climb data (14:23Z by date -u; dtl_ctxclimb.py from spp25_oink_n40, seed 7, Oink order). Instance
+experiments/alg/instances/ctx12_oink_n40.pg (n = 40, |G′| = 38).
+- It has 12 distinct first-difference best_vertices contexts in one phase of 23 transitions in Oink order, and 9 in 20
+  in stable order.
+- Pinned Oink: 3 dominions, 46 tangles, 27 iterations, verified.
+- The previous maximum was L-RED's ctx11_n40 with 11. Growth so far is +2 over the spp25 start, at fixed n.

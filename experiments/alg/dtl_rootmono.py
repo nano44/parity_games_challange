@@ -52,6 +52,10 @@ class RM(FC.CK):
                     miss0 = cl - Z - CurZ
                     rec.setdefault("wits", {})[(rnd, top)] = frozenset(t for t in tli if any(v in Z for v, _ in s.tv[t]) and any(v in miss0 for v, _ in s.tv[t]))
                     rec["stepdef"] = True
+                    vt = {v: tp for tp, c in zip(rtops, regs) for v in c}
+                    det = rec.setdefault("witdet", {})
+                    for t_ in rec["wits"][(rnd, top)]:
+                        det[(rnd, top, t_)] = frozenset(vt.get(v) for v, _ in s.tv[t_] if v in Z)
                     if "wit" not in rec:
                         miss = cl - Z - CurZ
                         strad = [t for t in tli if any(v in Z for v, _ in s.tv[t]) and any(v in miss for v, _ in s.tv[t])]
@@ -106,7 +110,7 @@ if __name__ == "__main__":
     for f, g in ST.games(sys.argv[1:]):
         d0 = FD.P.X.build(g); d = RM(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.run()
         for ph in FD.phase_rows(d):
-            nd = nr = 0; wl = []; nbad = 0; seq = []; fdc = set(); kseq = []; desc = {}; ifd = set(); victim = {}
+            nd = nr = 0; wl = []; nbad = 0; seq = []; fdc = set(); kseq = []; desc = {}; ifd = set(); victim = {}; vfall = {}
             for r in ph:
                 full = r["log"]; red = FC.reduce_log(full, st)
                 # map root spans onto the reduced log: the root call precedes every sptl pass, so its positions shift only
@@ -126,6 +130,20 @@ if __name__ == "__main__":
                 while k < min(len(la), len(lb)) and a["log"][la[k]][:4] == b["log"][lb[k]][:4]: k += 1
                 cls = "no difference" if k == min(len(la), len(lb)) else where(b["root"], lb[k])
                 seq.append("R" if cls.startswith("root") else "N" if cls == "after the root call" else "=")
+                def mmass(r_):
+                    c0 = r_["ctx0"]; rr = [x for x in r_["recs"] if x["key"][0] == 0]
+                    return sum(len(c0[i_] - (c0[i_ + 1] if i_ + 1 < len(c0) else frozenset())) for i_, x in enumerate(rr) if x.get("res") == -1)
+                ma_, mb_ = mmass(a), mmass(b)
+                if mb_ > ma_ and cls != "no difference":
+                    pos_ = lb[k]; rb3 = next((r_ for r_ in b["recs"] if r_["start"] <= pos_ < r_["end"]), None)
+                    if rb3 is None: why = "e* not in a best_vertices call"
+                    else:
+                        ra3 = next((r_ for r_ in a["recs"] if r_["key"] == rb3["key"]), None)
+                        rvch = ra3 is not None and ra3["rv"] != rb3["rv"]
+                        why = f"e* in a {'−1' if rb3.get('res') == -1 else 'stable' if rb3.get('res') == 1 else 'other'} call, RV {'changed' if rvch else 'same'}"
+                    km = "DISTRACTION MASS rises: " + why; tab[km] = tab.get(km, 0) + 1
+                elif cls != "no difference":
+                    km = "DISTRACTION MASS " + ("falls" if mb_ < ma_ else "same"); tab[km] = tab.get(km, 0) + 1
                 # e* caller (any position) and the weak STR-DET check: does s+1 create a tangle before e*?
                 if cls == "no difference":
                     kx = "E* CALLER: no set-level difference at all"
@@ -270,6 +288,10 @@ if __name__ == "__main__":
             for key_, vl in visits.items():
                 for (s1, x), (s2, y) in zip(vl, vl[1:]):
                     fa = [v for v in x["rv"] if y["rv"].get(v, INF) < x["rv"][v]]
+                    for v in fa: vfall[(key_, v)] = vfall.get((key_, v), 0) + 1
+                    if fa and os.environ.get("RM_FALLDET"):
+                        print("FALLING VERTICES", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), "ctx |R|", len(key_[1]), "visits", s1, "->", s2,
+                              [(d.idx[v], x["rv"][v], y["rv"].get(v)) for v in sorted(fa)][:12], flush=True)
                     if fa: c_ = "RV falls"
                     elif x["rv"] != y["rv"]: c_ = "rises (RV)"
                     else:
@@ -286,6 +308,10 @@ if __name__ == "__main__":
                         k1, k2 = ph[s1]["k0"], ph[s2]["k0"]
                         new_ = {t for t in wids if t >= k1}
                         for t in wids: victim[(key_, t)] = victim.get((key_, t), 0) + 1
+                        if os.environ.get("RM_FALLDET"):
+                            print("FALL DETAIL", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), "ctx |R|", len(key_[1]), "depth", key_[0], "visits", s1, "->", s2,
+                                  "| (round, failing top, victim) -> stealing region tops:",
+                                  sorted((r_, d.idx[tp_], t_, sorted(d.idx[x] for x in st_)) for (r_, tp_, t_), st_ in y.get("witdet", {}).items())[:6], flush=True)
                         kf = "FALL witness straddling tangle: " + ("none recorded" if not wids else "some created since the previous visit" if new_ else "ALL older than the previous visit")
                         tab[kf] = tab.get(kf, 0) + 1
                         if not new_ and wids and shown < 30:
@@ -304,6 +330,8 @@ if __name__ == "__main__":
                 for u, w in zip(c0, c0[1:]): succ_.setdefault(u, set()).add(w)
             if succ_:
                 ms = max(len(v_) for v_ in succ_.values()); succrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), ms, len(succ_), len(ph) - 1, len(ph[0]["G"])))
+            if vfall:
+                mvf = max(vfall.values()); kvf = f"FALLS per (context, vertex): max {mvf}"; tab[kvf] = tab.get(kvf, 0) + 1
             if victim:
                 mv_ = max(victim.values()); kvv = f"FALLS per (context, victim tangle): max {mv_}"; tab[kvv] = tab.get(kvv, 0) + 1
             if desc: descrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), max(desc.values()), sum(desc.values()), len(ph) - 1, len(ph[0]["G"])))
@@ -355,6 +383,6 @@ if __name__ == "__main__":
         badrows.sort(key=lambda r: -r[1]); print("phases where PI fails to rise (file, failures, transitions, |G'|):", badrows[:8], "phases:", len(badrows))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT", "DISTRACTION")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})
