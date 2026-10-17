@@ -122,6 +122,10 @@ out=$(python3 -I dtl/dtl_flipflop.py carry/instances/stealonce_core_n76.pg --qui
 [[ "$out" == "n=76 tangles=15 dominions=5 iterations=4" ]] || { echo "stealonce_core_n76 drifted: $out"; exit 1; }
 out=$(python3 -I dtl/dtl_flipflop.py carry/instances/firedstep13_n76.pg --quiet 2>&1 | sed -n 1p)   # box 8 R36: 13 distinct tangles fired at one step (dtl_firedlong2 FL_ALL=1, stable)
 [[ "$out" == "n=76 tangles=38 dominions=5 iterations=4" ]] || { echo "firedstep13_n76 drifted: $out"; exit 1; }
+out=$(python3 -I dtl/dtl_flipflop.py carry/instances/firedlong667_n43.pg --quiet 2>&1 | sed -n 1p)   # box 8 R36 §4: long-phase FIRED-R 4 fired at |R| 6, S 14 (root/firedlong.py, both orders)
+[[ "$out" == "n=43 tangles=22 dominions=2 iterations=16" ]] || { echo "firedlong667_n43 drifted: $out"; exit 1; }
+out=$(python3 -I dtl/dtl_flipflop.py carry/instances/firedlong667_n20.pg --quiet 2>&1 | sed -n 1p)   # box 8 R36 §4: long-phase FIRED-R 4 fired at |R| 6, S 12 (both orders)
+[[ "$out" == "n=20 tangles=26 dominions=1 iterations=14" ]] || { echo "firedlong667_n20 drifted: $out"; exit 1; }
 out=$(python3 -I dtl/dtl_flipflop.py carry/instances/fired10_n20.pg --quiet 2>&1 | sed -n 1p)   # box 7: 10 distinct tangles fired at one context of |R| 12 (FIRED-R ratio 0.83, Oink order)
 [[ "$out" == "n=20 tangles=14 dominions=1 iterations=3" ]] || { echo "fired10_n20 drifted: $out"; exit 1; }
 out=$(python3 -I dtl/dtl_flipflop.py carry/instances/ctx13_n40.pg --quiet 2>&1 | sed -n 1p)   # box 7: 13 distinct first-difference contexts in one phase (CTX+), both orders

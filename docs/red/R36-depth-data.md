@@ -38,3 +38,18 @@ in experiments/red/check.sh and verified by pinned Oink 8fbf0a7 (`--dtl --no-sin
 - Reading (L-RED): one region step can fire many tangles in a single tattr, so a constant c cannot hold once a top's region
   can absorb many independent tangles. The count that matters for (FIRED-R) is its growth with n, which this one instance
   does not measure.
+
+## 4. Long-phase (FIRED-R) (Lead item 2): best ratio 0.667 in both orders (was 0.455, unpinned)
+Judge: root/firedlong.py, which counts a context when it is visited ≥ 2 times in a phase of S ≥ 2|R| searches. Climbs from the
+SPP seeds use FLGRAD=1, a gradient when no context is counted yet; the measure printed by the judge is unchanged.
+| file (sha1) | n | stable: fired / \|R\| / S | Oink: fired / \|R\| / S | pinned Oink |
+|---|---|---|---|---|
+| firedlong667_n43.pg (7f15d7ba4a72) | 43 | 4 / 6 / 14 (0.667) | 4 / 6 / 14 (0.667) | 2 dominions, 22 tangles, 16 iterations, verified |
+| firedlong667_n20.pg (2f9da571a7a1) | 20 | 4 / 6 / 12 (0.667) | 4 / 6 / 12 (0.667) | 1 dominion, 26 tangles, 14 iterations, verified |
+| (unpinned) l21014 (96e4f9e67cdf) | 30 | 3 / 5 / 12 (0.6) | 2 / 5 / 12 (0.4) | 2 dominions, 33 tangles, 14 iterations, verified |
+- L-ALG experiments/alg/dtl_firedlong2.py UNMODIFIED (l-alg 931fc221; default long-phase filter) agrees on both pinned files
+  in both orders: max ratio 0.667, max fired 4, per-step max 4, NO-RETURN holds, no INCOMPLETE.
+- Seeds: spp_chain_up_n43 (L-ALG; its phase is 42 searches long but no context is visited twice in it), spp_n20 (L-ALG),
+  spp19_stable_n30 (L-RED). The climbs shortened the phases from 42/18/19 to 14/12/12 searches and found contexts of size 5-6.
+- Reading (L-RED): 4 fired at |R| 6. These are single instances with small contexts, so they show no trend of fired/|R|
+  with phase length. The climbs keep running.
