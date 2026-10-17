@@ -435,7 +435,10 @@ opponent vertex of D ∩ R all of whose edges lie in X ∪ A is in A (X is a p-w
 forgiving attractors treat it). Q(R) := (D ∩ R) \ A_D(R); K(R) :⇔ Q(R) ≠ ∅.
 Lemma K0 (PROVED). (a) If Q(R) ≠ ∅, every p-vertex v ∈ Q(R) has σ(v) ∈ Q(R) (σ(v) ∈ X ∪ A would put v into A) and every
 opponent vertex of Q(R) has an edge into Q(R) (else all its edges, which lie in D, are in X ∪ A); every play staying in
-Q(R) and consistent with σ is a G'-play from D consistent with σ, so p wins it: Q(R) is a p-dominion of the subgame G[Q(R)].
+Q(R) and consistent with σ is a G'-play from D consistent with σ, so p wins it: Q(R) is a p-dominion of the subgame G[Q(R)]
+(the game in which the opponent's edges LEAVING Q(R) are deleted). Closure used: σ-closed, and every opponent vertex keeps
+at least one edge into Q(R); Q(R) is NOT opponent-closed in G' (an opponent vertex may also have edges into A ∪ X). Only
+this is used downstream ((c) needs one infinite σ-consistent play inside Q(R)). (Clarified 06:20Z after the Lead's check.)
 (b) K(G') holds (X = ∅, A = ∅, Q = D). (c) K(R_end) fails, R_end the context where best_vertices returns 0 (dtl.cpp
 651-655): R_end has no p-priority vertex, so every infinite play inside Q(R_end) is won by the opponent, while (a) gives a
 σ-consistent infinite play inside Q(R_end) (opponent picks an edge into Q) won by p; so Q(R_end) = ∅. (d) So in every search
@@ -448,7 +451,7 @@ At a P piece, A_D(R) = ∅ (the trigger: nothing of R attracts into X), so K(R) 
   is not all p-attracted to X ∪ Y_0. (The removal never needs repaying INSIDE its own piece; it only must not make D
   "attractor-only".)
 
-### 18c. DATA (counts of depth-0 pieces in searches with D ≠ ∅ and no dominion)
+### 18c. DATA (counts of depth-0 pieces in searches with D ≠ ∅ and no dominion) — both statements KILLED at 06:20Z, 18f
 | statement | corpus Oink | corpus stable | unions Oink s1 | unions stable s2 | cross Oink s11 |
 |---|---|---|---|---|---|
 | (P-K): K broken by a P piece | 0 (kept 1,556) | 0 | 0 | 0 | 0 |
@@ -492,7 +495,15 @@ same mechanism as (α)). PNL* holds on all data although (MONO) fails, so step (
 (P-K) is stronger than (PNL*) (Y_0 ∪ attractor instead of Y_0); its proof route is the same three steps with B replaced by
 "the part of D whose attraction to X ∪ Y_0 uses no vertex of a pruned top's good path" — not written.
 
-### 18f. (P-K): Case 1 PROVED (given (YZ), (WM)); Case 2 open (06:11Z by date -u)
+### 18f. (P-K): Case 1 PROVED (given (YZ), (WM)); Case 2 FALSE (06:11Z; status line 06:20Z by date -u)
+STATUS 06:20Z: (P-K) and (K-STEP-first) are KILLED by L-RED R27 (l-red 1cad017/184e4d8),
+experiments/red/carry/instances/pk_viol_n20.pg (sha1 942bd778; Lead: pinned Oink 1 dominion, 4 tangles, 2 iterations,
+verified; Even wins all 20), both order data: Even's search 0 = P piece (prevV {8, 11, 12, 13}) removing 14 of the 20
+D-vertices, then T at t = 15 removing {7}, then a stable piece learning {3, 5, 6} inside D; after the P piece
+Q(R') = ∅. It is CASE 2 (max priority of D ∩ R = 17, the opponent's parity); (YZ), WM-global and (PNL*) hold on it
+(dtl_pnl.py, both orders). So Lemma P-K1 below is not contradicted, and the K-frame of 18b is DEAD as a route to (K-in):
+its "X is a p-won sink" lets p use a path 6 → 15 → 7 → X through a high opponent vertex (15, priority 17) that DTL's
+threshold step (t = 15) never uses, while DTL's next stable piece finds {3, 5, 6} closed with its exits into X forgiven.
 Setting: a depth-0 P piece, R a p-trap (18a), H = G[R], D_R := D ∩ R ≠ ∅ a p-dominion of H (PROVED: opponent vertices of
 D keep all their edges in D, p's σ stays in D and, R being a p-trap, in R). Rounds r = 1..r_f of the −1 call, tops V_r,
 region unions Z^r, Z := Z_f = Z^{r_f}; A^r_t := the threshold-t tangle attractor of Z^r within R (rescue loop 722-731);
@@ -513,7 +524,7 @@ way w attracts into A_{M−1}, contradicting (GAP). □
 DATA (corpus Oink): of 1,595 depth-0 P pieces with D ∩ R ≠ ∅, Case 1 holds in 1,380 ((WM) for T_M holds in all 1,380;
 in 151 of them T_M ⊆ V_f, so (WM) is trivial there); (WM) for EVERY p-priority vertex of R ("WM-global") holds in
 1,595/1,595 although (MONO) fails elsewhere (18d). (YZ) 4,257/4,257. Case 2 (M of the opponent's parity): 215.
-Case 2 (GAP). What survives of the argument (PROVED, given (GAP) for every p-priority vertex of R and (COVER)): let π* be
+Case 2 (FALSE as a statement: pk_viol_n20). What survives of the argument (PROVED, given (GAP) for every p-priority vertex of R and (COVER)): let π* be
 the opponent strategy choosing in D_R a successor of largest level θ (θ(x) = least t with x ∈ A_t; finite on D_R by
 COVER). For every cycle C formed by σ and π* in D_R, with maximum c (p's parity, σ wins): (i) θ ≥ c on C (a step from
 θ ≥ c to θ < c at x would put x into A_{c−1} when pr(x) < c, and contradict (GAP) when pr(x) = c); (ii) the least θ on C,
