@@ -130,3 +130,19 @@ What blocks the obvious argument: in the threshold sweep (best_vertices, dtl.cpp
 level, 724, so every tangle with escapes in Z is re-checked at each level) a tangle is attracted only at a level ≥
 its maximal priority q = pr(m), so t can never help rescue m itself (rescue needs a level < pr(m)); m survives only
 through a lower good path, which t's own vertices do not provide.
+
+### 6a. The NO-ORPHAN mechanism on data (01:56Z by date -u; experiments/alg/dtl_orphan.py, dtl_nearorphan.py, dtl_nearorphan2.py)
+- NEAR-ORPHAN at a call (context R, returned V): a stored p-tangle t ⊆ R with exactly one escape e in R and its
+  top-priority vertex m ∉ V. Common: 5,375 (Oink order) / 5,298 (stable) on C5. So orphans are one removal away, often.
+- Fate in the next sibling call (Oink order): e kept 3,431; e and ALL of t removed in the same removal 1,944; e removed
+  with t kept (an orphan) 0; e removed with t partly kept 0.
+- How t leaves (dtl_nearorphan2.py): taken AS A TANGLE in the removal in 1,618 cases, always at a threshold ≥ pr(m)
+  (−1 attractor 1,419, Dom 199); m was already in the target in 1 case; taken vertex by vertex in 326. Never at a
+  threshold below pr(m). The escape itself is often low: pr(e) < pr(m) in 2,554 near-orphans, pr(e) = pr(m) in 203,
+  pr(e) > pr(m) in 2,618; so the reason is not the escape's priority.
+- Reading (SKETCH for the Dom case): m was pruned at some round r0 while it was still a top, so m ∈ Z_{r0} and
+  attractTangle skips m (136-137); t would then be attracted at a level < pr(m) (rescuing m through its strategy edge)
+  unless its only in-R escape e is outside Z_{r0} at those levels. But e is removed by Dom(V*, R), i.e. lies in (roughly)
+  the final round's regions. So the step closes if the ACTUAL region union is monotone in the top set (Z_{r0} ⊇ the final
+  round's regions when V* ⊆ V_{r0}); for the IDEAL union that is Lemma 2.1 (GAP-A-M §2), for A_DTL it is exactly the
+  deficit question of GAP-A (Lemma E straddles). GAP-β therefore meets GAP-A's (H4) core.
