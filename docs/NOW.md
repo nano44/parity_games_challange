@@ -1,5 +1,5 @@
 # NOW (rewritten, never appended; max 150 lines)
-Updated: 2026-10-16 21:10Z by Lead. Phase: M0-M3 done; M4 in progress (candidate DTL in the gauntlet: steps 1-3 done, step 4 proof attempt open with GAP-A route (H1)-(H4) and GAP-C). Lanes on Opus 5.5 per D8 until the Fable reset 2026-10-21 21:00Z. Reporting: weekly checkpoint (D1, after M2); immediate on milestones, step-4 claims, stops.
+Updated: 2026-10-17 09:08Z by Lead. Phase: M0-M3 done; M4 in progress (candidate DTL in the gauntlet: steps 1-3 done, step 4 proof attempt open with GAP-A route (H1)-(H4) and GAP-C). Lanes on Opus 5.5 per D8 until the Fable reset 2026-10-21 21:00Z. Reporting: weekly checkpoint (D1, after M2); immediate on milestones, step-4 claims, stops.
 
 ## Milestones
 | M | State | Evidence |
@@ -45,7 +45,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | WATCHDOG | session_01JQNTX8zT3T3mWMt6ZmYzkn | none (never edits) | haiku-5-5 | high | working (cron :30, trig_019xE43BZ5qaDGwxDkZ5h5ik) | Routine liveness/overage checks; reports to Lead only (deviation from playbook: does not wake lanes, so idle sessions never get messages) |
 | OWNER-DESK | session_01Eq99qsTJBiTh6xLzwCPtqv | claude/owner-desk | opus-5-5 | high | idle between owner messages | Owner D3: owner Q&A and open questions; accuracy in plain explanation, no proofs; idle between owner messages |
 
-## In flight (as of 2026-10-16 21:10Z; older bullets below are history kept for context)
+## In flight (as of 2026-10-17 09:08Z; older bullets below are history kept for context)
 - 11:06Z repo public (verified); owner ruled 16:39Z D10: keep it public (L29).
 - L-SI (PARKED 17:10Z, end of box l-si 0d48da2): obstruction map docs/si/README.md (multi-switch -> Friedmann gates; index -> DLMM; designer history -> DFH/AF; first-difference -> gate relabelling; magnitude -> M_L; count/traffic -> route-isolated bits + pads; Random-Edge/Facet -> Friedmann/FHZ/transfer; symmetric -> vdLM). Dead: S1 (DE6), S2a (DE4), S2b/S3/S4 (DE8), S7 (DE7). Not killed, not defended: S5 Zadeh+index tie-break (T15: OPEN), S6 Cunningham+index order. Queue (L23): S5/S6 under adversarial numbering -> L-RED after DTL; R2 transfer lemma -> REFEREE-2; a new SI rule must state its defence against gates, pads, priorities and numbering and run gated_*, fhz_padded, randomfacetsubexp, M_L first. No successor while DTL is the lead candidate.
 - Working-session count (D1 cap 5 counts lanes, not Lead/WATCHDOG): 2: L-ALG succ. 4 and L-RED succ. 3 on Opus 5.5 (D8, from 15:56Z; predecessors parked) (L-LIT D9 successor parked 11:05Z after T17); Fable sessions paused until 2026-10-21 21:00Z (L-ALG parked 18:20Z; L-RED parked after handover) (L-SI parked 17:10Z) (L-LIT parked after T16); L-COMP parked (DTL step 2 DONE 0d7dc7c); L-LOWER, CHECKER, referees parked.
