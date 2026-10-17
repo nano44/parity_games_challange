@@ -23,7 +23,8 @@ Unrefereed. Source of truth for details: docs/alg/GAP-A-M.md §21 (tools and cou
 Longest climbed phases (box 4 and L-RED R21): 19 searches at n = 20, 30, 40 (Oink order); 14 at n = 60.
 
 ## 3. What (SPP) would give (GAP-A-M §21c; PROVED given (SPP))
-- Phases ≤ D + 2 (PROVED, from run()): D = number of searches that find a dominion ≤ n.
+- Phases ≤ D + 2 (PROVED, from run(), C5-DTL.md lines 141-142: a false search(p) ends p's searches for good): D = number of
+  searches that find a dominion ≤ n.
 - Searches ≤ Σ_phases |G'| ≤ n(n + 2); tangles ≤ n · searches ≤ n²(n + 2) (Lemma W, DTL-proof.md §3).
 - Running time (DTL-proof.md §3(e)): O(n¹⁰ (m + n²)) word operations; all stored numbers fit O(log n)-bit words, so unit
   cost equals bit cost (TARGET.md §3). Any polynomial bound S ≤ poly(|G'|) gives a polynomial bound the same way.
@@ -35,7 +36,7 @@ Longest climbed phases (box 4 and L-RED R21): 19 searches at n = 20, 30, 40 (Oin
   later in its call order; s+1 learns nothing before that point. DATA: that first difference is always in best_vertices or
   in the −1 attractor of search_rec, never in sptl or Dom (949 / 916 transitions).
 - Lemma DV*-MONO (GAP-A-M §21h): a clean ideal root distance DV* (a function of T alone) is pointwise monotone in T, so it
-  changes at most n(n + 1) times per phase. It moves in only 465 of 990 transitions (Oink order), exactly where the
+  changes at most n(n + 1) times per phase (DV = DV*, the author's debug DV, is an OPEN claim with data only). It moves in only 465 of 990 transitions (Oink order), exactly where the
   author's own distance values (dtl.cpp computeDistanceValues) move.
 
 ## 5. Why no simple potential works (GAP-A-M §21d-§21i; docs/alg/DEAD.md last section)
