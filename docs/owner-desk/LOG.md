@@ -173,3 +173,7 @@ L-ALG and L-RED handed over (~600k context), successors 5/5.
 ## 2026-10-17 19:49Z owner (progress question)
 > Give me a status update
 Answered from trunk deb74d1 (RESULTS R1-R11, DE1-DE20, DECISIONS L32) and the Lead's notes to 19:37Z. Relayed verbatim to the Lead.
+
+## 2026-10-17 19:58Z Lead (relayed to owner)
+Spend reading ~19:50Z (trunk bb882ee, NOW.md Spend): total $1,781 over 36 sessions (+$1,089 since 10-15 14:55Z); no overage; 7-day
+limit "allowed_warning"; Fable paused until 2026-10-21 21:00Z.
