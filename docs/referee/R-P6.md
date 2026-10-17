@@ -157,3 +157,34 @@ It logs every tattr (caller, Z_in, R, Gx, maxpr, seeds) → output, drops sptl e
    GAP-C (completeness) is separate and open.
 Everything else in the reduction is proved: Π_R as a function of T, PREFIX-MONO/POS-FALL/ROOT-BOUND, FDL, STR-DET,
 e* ∉ sptl, the per-input chain, and the −1 attractor's per-(R, X) budget.
+
+## §C. Comparison with REFEREE-2 (R2-P6, referee-2 5ef09aa; read after R-P6 was pushed and merged; 13:22Z by date -u)
+Agreement on every verdict and on what remains open. There is no disagreement of substance.
+- (a) Both SIGN WITH GAPS, with the same gap: G6-a1 = R2's G-F1. Same mechanism: a region e* under a dirty later call can
+  leave Π_R equal by Φ_top compensation. Same fix: F_R also counts e*-at-R transitions where Π_R does not rise. Same data
+  status: 0 such cases. Both leave "descends only where RV falls" and "≤ 2 per context per phase" as DATA, unsigned.
+  - R2 indexes Π_R(T_s) over all s of the phase, hypothetical calls included. I index over visits of R. Both chain
+    arguments are valid and give the same bound.
+  - My G6-a2 (§22f's display alone lacks the Dom term and the +1) is R2's "the Dom term is item (b)" plus "the +1
+    (G-e2)". It is closed in both reports.
+- (b) R2 signs plain under reading R-I; I signed with gaps G6-b1/G6-b2. This is a difference of wording, not of
+  substance.
+  - G6-b1 = R2's first R-I bullet: only τ_j is pushed, the output is the least N ∋ τ_j closed under rules triggered in
+    N, and it is monotone in T. Same proof; both closed.
+  - The Lead's question. R2 answers "yes, with R-I", where X is the WHOLE CURRENT X at step j (old X plus earlier parts).
+    I answered "no", where X is the search_rec X at the start of the Dom loop. My input
+    (X ∪ Dom_{<j}, R \ Dom_{<j}, τ_j, pr τ_j) is exactly R2's I = (current X, current R, τ_j, pr τ_j). So we agree:
+    - the input is equal in s and s+1 at e*;
+    - the per-input chain holds;
+    - C_Dom counts full inputs.
+  - My extra datum (not in R2): at a fixed (R, X at loop start, top) the Dom input varies along a phase (105 / 2,110
+    stable, 111 / 2,166 Oink; spp_final_n20 example). So |C_Dom| is not bounded by counting Dom-loop contexts. R2's open
+    list already states C_Dom as "Dom-step inputs (full X)", which is the same point.
+  - I accept R2's verdict SIGN for (b) once §22j's (CTX⁺) wording says "inputs" for Dom (my G6-b2 wording item). The
+    substance stays OPEN in both reports, inside (CTX⁺).
+- (c) Both SIGN. I also reproduced spp_chain_up_n43 41/41 with my own log.
+- Open for GAP-A: both list (CTX⁺) and (FALL) with the corrected F_R. R2 counts the cost accounting as done (R2-P4 (f)).
+  I recorded it as signed conditional on DTL-proof §3(e), as both referees did in packet 4. This is not a disagreement;
+  the condition is unchanged.
+Joint position: GAP-A ⇐ (CTX⁺) ∧ (FALL), given STR-DET, with F_R as in G6-a1/G-F1 and C_Dom counting full Dom inputs.
+Both are DATA only. (Opus 5.5, D12)
