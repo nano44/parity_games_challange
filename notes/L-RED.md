@@ -67,7 +67,12 @@ IN FLIGHT at handover (scratch lost with the container; LALGR_DIR = worktree of 
 SUCCESSOR QUEUE (Lead 17:27Z / 17:58Z):
   (1) hand-built LONG-phase FIRED-R: an SPP chain (long phase) plus a small re-visited gadget that fires a NEW stored tangle
       at each search; judge root/firedlong.py (S >= 2|R|, context visited >= 2; the Lead adopted this filter).
-  (2) (STEAL-ONCE*) "RELEVANT STEALS per (context, round, top, tangle): max k" k >= 2, and (STAYS-MET) any "NO-REFIRE after
+  (2) TOP among the three (Lead 18:00Z; GAP-A-M §23b, l-alg 7b909b6: STOLEN-PERM => STAYS-MET => NO-REFIRE => STEAL-ONCE*):
+      (STOLEN-PERM) any "STOLEN-PERM (...): FAILS" (rootfit stay mode counts it, 7a9ce8e). L-ALG's diagnosis of R34: the
+      stealing region shrank by UPWARD MIGRATION (a higher new top captured its fired tangle whole), not a steal; the prefix
+      kept every vertex. Attack: make a PREFIX lose a stealing vertex, e.g. a path tangle stops firing because one of its
+      ESCAPES left the prefix (L-ALG's case C, 12 vertices on stealer_viol_n76).
+      Also (STEAL-ONCE*) "RELEVANT STEALS per (context, round, top, tangle): max k" k >= 2, and (STAYS-MET) any "NO-REFIRE after
       a relevant steal" outcome other than "never refires | stays met": ROOTFIT=stay (RM_EXCL=1 RM_PREF=1), seed
       stealer_viol_n76 (relevant steals 3 per context, stable).
   (3) Trace R34: which region j loses a vertex after its relevant steal (dtl_rootmono prints no detail line; add a read-only
