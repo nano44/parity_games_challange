@@ -52,6 +52,14 @@ Status: WORKING (box 6, Lead GO 04:29Z, to ~12:30Z Lead clock). Box-5 status lin
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-17 ~07:35Z box 6 (produced on Opus 5.5). Since 05:55Z: target (i) realised by pk_viol_n20 (R27 §3, 184e4d8);
+spp25_oink_n40 pinned (R24 addendum, e3b9a01; Oink 31 iterations verified, 25 searches/phase at |G'|=38 Oink order).
+New L-ALG targets and my fitnesses: KT (carry/kt.py, LALG7_DIR = <scr>/lalg13 = l-alg 312c918): plateau at 1 of 9
+c-levels surviving a P piece, no break; (YZ)/(WM_c1)/(FM) (carry/yzwm.py runs dtl_pnl.py, LALG8_DIR = <scr>/lalg15 =
+l-alg 35b3f96): 0 bad lines on 148 corpus files; climb 9712 (stable, from f1_twodef_n48) reaches monoP 81 / mono >= 99
+with no bad line (my 07:33Z message said 19: wrong, the score 8199000096 decodes to 81). (K-in) union samplers umix.py
+11-14: about 10,500 unions, 12,909 eligible runs, 0 hits (13/14 were stopped by me at 06:41Z, not "continuing" as my
+06:58Z/07:22Z messages said; corrected 07:33Z). RUNNING: kt 9601/9602, yzwm 9711/9712, umix 15/16 (scratch kt/, yz/, um*).
 2026-10-17 ~05:55Z box 6 (produced on Opus 5.5): R26 (a885315) K-in/K-low first pass: NO violation (grafts 3,500 +
 2,200 + 14,000, rgraft 20,000, nbhd 20 steps, klow climbs ~300k steps; obstruction notes: rescue, last-remnant closure,
 replay breaks by tangle attraction). R27 (1cad017): (P-K) and (K-STEP-first) FALSE, pk_viol_n20 (sha1 942bd778, both
