@@ -52,6 +52,25 @@ Status: WORKING (box 6, Lead GO 04:29Z, to ~12:30Z Lead clock). Box-5 status lin
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-17 14:58Z (date -u) BOX 7 (successor 5, produced on Opus 5.5; session_01DT8bvW9MGLgZURmnwB2JAc). Lead GO 11:32Z,
+box to ~19:30Z. Context ~410k at 14:58Z.
+DONE (all pushed; latest 821b9b4):
+- R30 (MEET) FALSE, meet_viol_n17 (landed DE15). (PHASE-IN) = phase completeness (dtl.cpp 1068, 1106-1121).
+- R31 (FALL) descents of Π_R per context: 3 (fall3_n76), 4 (fall4_n116), both orders; CHAIN mechanism (one Even->Even edge
+  from each stacked gadget to the one below delays its fall); repeats of one gadget merge; needs distinct fall timings.
+- R32 (FALL-V) FALSE, fallv_viol_n28 (vertex 14 RV at root 4,6,5,4,4: rise then two falls), both orders.
+- (CTX+) 11 (ctx11_n40), 12 (ctx12_n40), both orders. (2a) DIRTY: max 13 at n56 (keep_d13_n56, scratch only).
+- (2d) Dom e*: corpus 0/1,062; climbs found none. (2e) STR: 0 extractions before e* on the corpus; climb gap 265 -> 16.
+- Tools (experiments/red/meet, root): meetfit/umeet/shrink/oinkmeet+omap.cpp; rootfit (ROOTFIT=dirty|falls|ctx|fall), grow.sh,
+  compose.py, ucompose.py (CHAIN=1, K=k), estar.py, strscc.py, fallv.py; dtl_search fitnesses meet, root, estar, strscc, fallv.
+MY ERRORS this box: two message timestamps not from date -u (11:52Z, 14:36Z), both corrected. Killing a ucompose sampler
+leaves its dtl_rootmono subprocess orphaned (ppid 1): list with ps and kill it too.
+RUNNING (scratch $S, env in $S/env.sh; LALGR_DIR=$S/lalg5 = l-alg 94067096): fallv climbs 17011 (oink) / 17012 (stable)
+from fallv_viol_n28, 17013 (oink) from the f1 climb best (scratch fv/); ctx climb 13001 (oink, LALGR_DIR=$S/lalg3) from
+spp22_oink_n40 (scratch cx/).
+NEXT: FALL-V growth (3+ falls of one vertex), CTX+ growth with n, a delay gadget for FALL families.
+
+## Resume point (box 7 start, history)
 2026-10-17 11:42Z (date -u) BOX 7 (successor 5, produced on Opus 5.5; session_01DT8bvW9MGLgZURmnwB2JAc). Lead GO 11:32Z, box to
 ~19:30Z, check-in ~15:30Z. Handover check dfb5b4d (5/5).
 DONE: R30 (docs/red/R30-meet.md): (MEET) of GAP-C §18r FALSE, meet_viol_n17 (sha1 ab329297) / meet_viol_n29 (sha1 4796d6b1),

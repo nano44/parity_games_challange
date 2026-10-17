@@ -2507,3 +2507,13 @@ often a later prefix grows into a stored tangle that the earlier prefix did not 
 - That suggests a potential argument over (step, tangle) pairs, but the number of stored tangles grows with S, so it is
   circular as it stands.
 - (FALL-V) (§22q) is the data-side statement that this does not compound per vertex.
+(FALL-V) is FALSE (14:58Z by date -u). Instance experiments/red/carry/instances/fallv_viol_n28.pg (L-RED, from a climb on
+lex_viol_inj_n28; on l-red, sha1 21b235f4).
+- L-ALG re-run: pinned Oink found 1 dominion and 17 tangles in 7 iterations, verified.
+- dtl_rootmono.py, both orders: "FALLS per (context, vertex): max 2". At the ROOT context, vertex 14 (priority 27) has
+  RV 4, 6, 5, 4, 4: a rise, then two falls. 8 (context, vertex) pairs fall twice.
+- So "each vertex falls at most once per context" is dead. My shape count above (never a second fall) held only on the
+  corpus and unions.
+- PREFIX-MONO-X (§22r) survives on it: 17 / 17 descents have a new steal, and no descent occurs without one.
+- So the charge for (FALL) that survives is the NEW STEAL (§22r, proved as a reading): F_R ≤ #(new-steal visits at R).
+  How often a later prefix newly grows into a stored tangle at one context is the open question.

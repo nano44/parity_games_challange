@@ -216,3 +216,11 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
   opponent's escape; the next S piece attracts the rest of D into a closed region whose core cycle lies in W_{1-p}, and only
   that core is learned. (PHASE-IN) survives but is equivalent to run completeness (dtl.cpp 1106-1121), so no single-search
   progress statement toward D survives.
+- (FALL-V) "along a phase, each vertex's RV at a fixed context falls at most once" (GAP-A, L-ALG box 7 candidate, GAP-A-M
+  §22q): DEAD. Instance experiments/red/carry/instances/fallv_viol_n28.pg (L-RED; sha1 21b235f4; pinned Oink verified, 7
+  iterations; L-ALG re-run 14:58Z by date -u, both orders). Obstruction: a new tangle raises v's RV (4 → 6), then two later
+  steals of old tangles lower it twice (6 → 5 → 4). Every descent is still charged to a new steal (PREFIX-MONO-X).
+- (CTX-ROOT) "distinct first-difference contexts per phase ≤ 1 + #root transitions": DEAD, experiments/alg/instances/
+  dtl_cnew14_n20.pg (Oink; first-difference positions 3 1 5). (CHAIN) "first-difference contexts form a ⊆-chain": DEAD,
+  experiments/alg/instances/dtl_searches15_n24.pg (Oink); nest_nest_s43.pg in both orders. Root-call RMONO = (M) (box 4,
+  dtl_mviol_n20, pinned Oink re-run 10:50Z). Distraction mass as a potential: rises at 372 of 1,056 transitions.
