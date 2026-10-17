@@ -9,8 +9,9 @@ For each relevant steal (context, step σ, tangle t) at visit pair (i, i+1), W =
   near1 : lost ≠ ∅
   pairs : (steal, later visit with σ) pairs
 Score: 1e12 hit + 1e9 min(near2, 999) + 1e6 min(near1, 999) + 1e3 min(pairs, 999) + min(relevant steals, 999).
-PERMFIT=stealk: (STEAL-ONCE*) growth after R35: score 1e9 min(maxk, 999) + 1e6 min(hit, 999) + 1e3 min(near1, 999) + steals,
-maxk = max relevant steals per (context, round, top, tangle) over the phase (dtl_stealtrace's count).
+PERMFIT=stealk: (STEAL-ONCE*)/(STEAL-POLY) growth after R35: score 1e9 min(maxk, 999) + 1e6 min(resteal, 999) + 1e3 min(sumk, 999)
++ min(hit, 999); maxk = max relevant steals per (context, round, top, tangle) over the phase (dtl_stealtrace's count);
+sumk = max over (phase, context) of Σ_q k_q; resteal = max over (phase, context) of Σ_q (k_q − 1) (Lead 19:46Z: branching).
 PERMFIT=firedstep: (FIRED-STEP) growth (GAP-A-M §23d): score 1e9 min(maxstep, 999) + 1e6 min(maxk, 999) + 1e3 min(hit, 999) + steals,
 maxstep = max distinct tangles fired at one step (context, round, top) over a phase, every context (contexts visited >= 2 times, as dtl_firedlong2 FL_ALL=1).
 Usage: permgap.py G.pg ... (order from DTL_ORDER); prints the counts."""
@@ -30,7 +31,7 @@ def rel_steals(x, y):
 def measure_game(g, order):
     os.environ["DTL_ORDER"] = order
     d0 = FD.P.X.build(g); d = RMo.RM(d0.pr, d0.ow, d0.outs, ins_desc=(order == "oink")); d.idx = d0.idx; d.run()
-    m = dict(incomplete=int(not all(w is not None for w in d.win)), hit=0, near2=0, near1=0, pairs=0, steals=0, maxk=0, maxstep=0, ex=None)
+    m = dict(incomplete=int(not all(w is not None for w in d.win)), hit=0, near2=0, near1=0, pairs=0, steals=0, maxk=0, maxstep=0, sumk=0, resteal=0, ex=None)
     for ph in FD.phase_rows(d):
         visits = {}
         for r_ in ph:
@@ -54,6 +55,8 @@ def measure_game(g, order):
                         if lost & W:
                             m["hit"] += 1
                             if m["ex"] is None: m["ex"] = (len(key_[1]), k_, t, sorted(d.idx[v] for v in lost & W))
+            if trip:
+                m["sumk"] = max(m["sumk"], sum(trip.values())); m["resteal"] = max(m["resteal"], sum(c - 1 for c in trip.values()))
     return m
 
 
@@ -63,7 +66,7 @@ def score(path):
     if os.environ.get("PERMFIT") == "firedstep":
         return int(1e9 * min(m["maxstep"], 999) + 1e6 * min(m["maxk"], 999) + 1e3 * min(m["hit"], 999) + min(m["steals"], 999))
     if os.environ.get("PERMFIT") == "stealk":
-        return int(1e9 * min(m["maxk"], 999) + 1e6 * min(m["hit"], 999) + 1e3 * min(m["near1"], 999) + min(m["steals"], 999))
+        return int(1e9 * min(m["maxk"], 999) + 1e6 * min(m["resteal"], 999) + 1e3 * min(m["sumk"], 999) + min(m["hit"], 999))
     return int(1e12 * (m["hit"] > 0) + 1e9 * min(m["near2"], 999) + 1e6 * min(m["near1"], 999) + 1e3 * min(m["pairs"], 999) + min(m["steals"], 999))
 
 

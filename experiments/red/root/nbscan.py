@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """L-RED box 8 (produced on Opus 5.5): one-edge neighbourhood scan used to find R35. For each listed vertex: delete each edge
 (out-degree > 1), add each missing edge, flip the owner; score with root/permgap.py (LALGR_DIR, DTL_ORDER). Keeps variants with
-hit, incomplete or near2 >= 8 in OUTDIR. Usage: nbscan.py BASE.pg v1,v2,... OUTDIR"""
+hit, incomplete, near2 >= 8, max depth >= 2 or max k >= 3 in OUTDIR. NBFIT=depthfit scores with root/depthfit.py instead. Usage: nbscan.py BASE.pg v1,v2,... OUTDIR"""
 import sys, os, subprocess
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import permgap as P
+import importlib
+P = importlib.import_module(os.environ.get('NBFIT', 'permgap'))   # NBFIT=depthfit: root/depthfit.py
 base=sys.argv[1]; vs=[int(x) for x in sys.argv[2].split(",")]; out=sys.argv[3]
 lines=[l for l in open(base).read().split("\n") if l.strip()]
 hdr=lines[0]; rows={}
@@ -27,4 +28,4 @@ for v in vs:
         try: m=P.measure_game(P.pg.read(path), os.environ.get("DTL_ORDER","stable"))
         except Exception as e: m={"err":str(e)}
         print(v,kind,w,m,flush=True)
-        if not (m.get("hit") or m.get("incomplete") or m.get("near2",0)>=8): os.remove(path)
+        if not (m.get("hit") or m.get("incomplete") or m.get("near2",0)>=8 or m.get("maxd",0)>=2 or m.get("maxk",0)>=3): os.remove(path)
