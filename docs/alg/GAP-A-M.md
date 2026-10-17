@@ -2936,3 +2936,35 @@ The Lead asked for this in §23e; §23e was already taken (FIRED-R), so it goes 
       need distinct events.
   - Neither is proved. Measuring: k on large unions (n ≤ 120; UNIONS=300, SEED=7/8, UM_CROSS=4, NMAX=60; both orders).
     The chain-length statistic is next.
+
+23g. (STEAL-POLY) ⇐ (STEAL-DEPTH): a charging reduction (reading, unrefereed; L-ALG succ. 7, 19:43Z by date -u; tool dtl_stealdepth.py)
+Fix a context R and a phase. Q = number of quadruples q = (R, round, top, fired tangle) ≤ (|R| + 1)·|R|·#fired(R) (§23f).
+An EVENT is a relevant steal (pair i → i+1, q). For q = ((r, τ), t), call a later event of q at pair i, with the previous
+event of q at pair j < i, a RE-STEAL.
+- Lemma CHARGE (reading). Every re-steal e of q at pair i has a CAUSE: an event at a pair m with j < m < i, at a step strictly
+  earlier than (r, τ) in the step order (rounds ascending, tops descending). Distinct re-steals of the same q have distinct
+  causes.
+  Proof.
+  - At visit j+1, t meets P_{j+1}(τ) without being contained in it.
+  - At visit i, t ∈ F_τ, so t fired inside region τ. A firing tangle lies in CurR = R \ P_i(τ) (dtl_pyref attractTangle
+    lines 86-89), so t ∩ P_i(τ) = ∅.
+  - So some w ∈ t ∩ P_{j+1}(τ) has left P(τ) at some pair m with j+1 ≤ m ≤ i−1.
+  - At that pair P_m(τ) ⊄ P_{m+1}(τ). By PREFIX-MONO-X* in its LOCAL form (see the gaps below) there is a relevant steal at
+    a step before (r, τ) at pair m.
+  - Consecutive re-steals of q own disjoint pair intervals (j, i), so their causes lie at distinct pairs.
+- Depth. depth(e) = 0 for the first event of each q, and for a re-steal depth(e) = 1 + min over its causes of their depth.
+  - A chain of causes goes strictly earlier in the step order, so depth ≤ (|R| + 1)|R| − 1 (PROVED, reading, given CHARGE).
+  - This alone gives only an exponential bound.
+- Counting. Let E_d be the number of depth-d events. Then E_0 ≤ Q. For fixed q, the depth-d re-steals inject into causes of
+  depth d − 1 (choose a min-depth cause). Hence E_d ≤ Q·E_{d−1} ≤ Q^{d+1}.
+- (STEAL-DEPTH_D): every event has depth ≤ D. Under it, Σ_q k_q ≤ Σ_{d ≤ D} Q^{d+1} ≤ 2·Q^{D+1}. So for constant D:
+  (STEAL-DEPTH_D) ⇒ (STEAL-POLY) in the sum form of §23f. With (FIRED-R) this gives F_R ≤ 6·Q^{D+1}.
+- Gaps, named:
+  - G23g-1: PREFIX-MONO-X* is signed in a GLOBAL form (no relevant steal at any step ⇒ P(τ) ⊆ P′(τ) for all τ). CHARGE needs
+    it LOCALLY (no relevant steal before step σ ⇒ P(σ) ⊆ P′(σ)). The signed proof is an induction over steps, so the local
+    form should follow, but that is not checked against R10/R11.
+  - G23g-2: a change of the round input V in rounds ≥ 2 can also shrink P(τ). The tool prints such re-steals as "no cause".
+  - G23g-3: (STEAL-DEPTH_D) with constant D is DATA only. R35 (stealonce_viol_n76, stable order) has one re-steal, depth 1;
+    its cause is the depth-0 steal of tangle 9 at (round 4, top 66) at pair 3.
+- Status against L32. A named statement, (STEAL-DEPTH_D), with a proof route (CHARGE plus counting) to the (STEAL-POLY) part of
+  GAP-A. GAP-A also needs (CTX⁺) and (FIRED-R), so this is not the L32 single-statement criterion.
