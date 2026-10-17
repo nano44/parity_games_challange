@@ -135,3 +135,29 @@ commit.
   before its first set difference, and every transition but the last has a set difference". This is not REFEREE-2 §8's
   (STR-DET-w). §22h also writes the reduction with (FALL) for (DIRTY). R7 (e) pins §22e at 44d1428 and §8's wording, so R7
   is unaffected. Any later result citing §22h needs its own diff.
+
+## Addendum 2: text re-diff at trunk 86502cd (Lead 12:39Z): PASS
+History: 1e4babe is an ancestor of 86502cd. R7-draft.md has the same blob at 6a4003d and 1e4babe; 6a4003d touched only
+LEAD-STATE.md, and the Lead noted its message overstated it. Text only, no re-runs.
+- 0eba38b → 1e4babe (G-R7-7, two signatures): checked in Addendum 1. PASS.
+- 1e4babe → 86502cd: the diff is the header stamp, G-R7-5 (+3 lines) and G-R7-6 (+1 line). Nothing else moved.
+  - N-1 applied in G-R7-5: "The (STR-DET-w) wording is REFEREE-2 §8's; REFEREE §C signs the stronger form (STR-DET) and
+    covers the no-difference case through G-e2, so both cover (STR-DET-w) in substance". This matches N-1. OK.
+  - N-2 applied in G-R7-5: "RESULTS R6 (e) holds without it only if 'root call' means the first best_vertices call of the
+    search (REFEREE §C2)". This matches §C2 ("unaffected if 'root call' means the first best_vertices call"). OK. The Lead
+    adds the same reading to R6 (e) at landing; that will need its own text check.
+  - N-3 applied in G-R7-6: "Π rising on dirty transitions that do not lower RV (GAP-A-M §22d; REFEREE open point 3,
+    REFEREE-2 §8)". At 44d1428, §22d's open part is "dirty transitions where RV does not fall" (PI-RISE, line 1999:
+    "whose root RV does not fall raises Π strictly"). REFEREE open point 3 (R-P4 line 138) and R2-P4 §8 (line 197) say
+    "PI-RISE on dirty transitions". The draft's restriction to transitions that do not lower RV is §22d's own scope. OK.
+- No open recommendations remain. R7 may land as at 86502cd.
+
+## Addendum 3: text re-diff at trunk 44af920 (Lead 12:45Z): PASS
+History: 86502cd is an ancestor of 44af920. Text only.
+- 86502cd → 44af920 adds one line and moves nothing else: "- Post-gate note: G-R7-5 (STR-DET-w) was discharged after this
+  packet by Lemma STR-DET, signed by both referees (RESULTS R8)."
+- N-1, N-2 and N-3 are as checked in Addendum 2 (1e4babe → 86502cd).
+- The post-gate note is accurate.
+  - REFEREE-2 R2-P5 §4 (6d508da): "(STR-DET-w) is discharged".
+  - REFEREE R-P5 Consequences (ca03021): "§22e: the (STR-DET) term is discharged", which implies the weak form.
+  - It cites RESULTS R8, which is not landed. Land R8 before R7, or both together (C8: docs/checker/C8-R8-strdet.md).

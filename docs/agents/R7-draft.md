@@ -1,4 +1,4 @@
-# Draft RESULTS R7 (Lead, 2026-10-17 12:25Z by date -u; rev. 12:31Z: root-call exemption now two signatures, R2-P4 §9; rev. 12:38Z: CHECKER C7 N-1, N-2, N-3) — NOT LANDED; awaiting CHECKER gate
+# Draft RESULTS R7 (Lead, 2026-10-17 12:25Z by date -u; rev. 12:31Z: root-call exemption now two signatures, R2-P4 §9; rev. 12:38Z: CHECKER C7 N-1, N-2, N-3) — LANDED as RESULTS R7 (CHECKER C7 PASS, addenda through 544c3a9)
 
 ### R7 [refereed-only] Packet 4 on A_DTL: root-call monotonicity (PREFIX-MONO, POS-FALL, ROOT-BOUND) and the conditional reduction of GAP-A (2026-10-17) — partial step-4 lemmas (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
