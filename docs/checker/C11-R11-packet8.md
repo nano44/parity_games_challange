@@ -142,3 +142,33 @@ The draft may land as written. If edited, I re-diff the text only.
 - The sentence matches §7. It is correctly labelled as one signature and is not used in (c)/(d), which keep the factor 3.
   This settles C11 N-6.
 - C11 verdict at e9e424f: PASS. N-1..N-3 are still recommended and not applied.
+
+## Addendum 3: R11 draft re-diff, e9e424f → ee4e060 (Lead 16:21Z), text only: PASS
+- History: e9e424f is an ancestor of ee4e060. Word diff of R11-draft.md. The changes are the header stamp and the items
+  below; nothing else moved.
+| item | new text | |
+| --- | --- | --- |
+| N-3 | "(REFEREE's items imported by L-ALG in GAP-A-M §22w, l-alg c915af1; G8-2 and N8-1 still to be imported)" | applied |
+| N-1 G-R11-4 | "L-RED ctx13_n40, re-run CHECKER C11: dtl_rootmono both orders, pinned Oink 29 iterations verified"; "still rising ..." dropped | applied; matches C11 §3 |
+| N-1 G-R11-5 | "665/703 (GAP-A-M §22w, mixed unions) and 325/338 (§22u, cross unions)" | applied |
+| N-1 G-R11-6 | "(REFEREE R-P8: 'the obstruction is (FIRED-R)')" | applied, verbatim from R-P8 |
+| N-2 G-R11-7 | "Also open, inherited: (ACYC) (G-S5-6, a GAP-C item)" | applied |
+| CAVEAT G-R11-6 | see below | accurate |
+| Scope | "Because (FIRED-R) is implied by GAP-A (G-R11-6 caveat), this reduction is not the L32 single-statement progress criterion." | follows from the caveat; it is a conservative scope statement |
+- The CAVEAT checked against GAP-A-M §22w as on trunk ee4e060 ("(FIRED-R) climb and a caveat", l-alg 8642d5c, an ancestor of
+  ee4e060):
+  - "every fired tangle is a stored tangle, so by Lemma W #fired(R) ≤ #tangles ≤ n·S": §22w "Every tangle that fires at R
+    is a stored tangle, and Lemma W gives #tangles ≤ n·S, so #fired(R) ≤ n·S trivially". Lemma W is DTL-proof.md §3(a)
+    (GAP-A-M line 404). OK.
+  - "GAP-A itself implies (FIRED-R)": §22w "(FIRED-R) also FOLLOWS from GAP-A". OK.
+  - "a context-local form of the tangle count, not an independent weaker statement": §22w "(FIRED-R) is a context-local form
+    of GAP-A's tangle count, not an independently weaker statement". OK.
+  - "its content is that the tangles active at one context do not grow with the phase length, and only long phases (S ≫ |R|)
+    test it": §22w "Its content is that the tangles active at one context do not grow with the phase length. Testing it needs
+    LONG phases (S ≫ |R|)". OK.
+  - "Short-phase climbs reach 15 fired tangles at |R| = 17 (0.88)": §22w "Stable order: 15 tangles with |R| = 17 (0.88)".
+    OK.
+- N-7 (optional). §22w adds that the stable-order counts "come from dtl_pyref under that order datum, so Oink's own run
+  differs". The Oink-order climb reached 13 (0.87). The draft's 15 is the stable-order pyref figure. "(stable order,
+  dtl_pyref)" would make that exact.
+- C11 verdict at ee4e060: PASS. All of N-1..N-3 and N-2 are applied.
