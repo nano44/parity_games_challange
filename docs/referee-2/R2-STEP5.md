@@ -206,3 +206,27 @@ checks the following.
 - G4: the case c1 = 0 in P-KT. Closed in §6; it should be added to 18h.
 - O1 (index order non-decreasing in priority) is an Oink fact of the order datum, used by (A), (D) and P-KT (2).
 - None of this is Lean-checked.
+
+## 9. Comparison with the first referee (read after ce37984 was pushed; origin/claude/referee 8c2d012, docs/referee/R-STEP5.md)
+- The two reports were written independently and give the same verdict on every claim: no REJECT, (3) SIGN, (4) and (5)
+  SIGN WITH GAPS. Both find the same four points, and both close them the same way:
+  - Their F2.1 = my G2: NT-f (D) needs DTL-proof Lemma 1.5a, i.e. top ∈ t and tpr = max pr(t). Both of us re-derived it
+    and both checked it on data (theirs: 6,815 tangles; mine: 48,285).
+  - Their G4.2 = my G3: a new opponent vertex whose R-edges all go into earlier parts would have been taken there.
+  - Their G5.1 = my G4: the case c1 = 0, read as A^r_{−1} := Z^r, with candidacy at 714.
+  - Their claim-(1) wording note = my G1: "all its edges" means edges of G'. They label it a note and SIGN (1), (2). I
+    label it a gap and SIGN WITH GAPS. For (2) the difference is only in labelling (a cited lemma vs a gap). There is no
+    disagreement on substance.
+- They found one point I did not list separately. Their G4.1 asks for both inclusions of (YZ) ⇐ (ACYC) (iii) to be written
+  out, with regions as least fixed points and tangles retried at escape pops. My §5 proves the same two inclusions inline,
+  so I agree it belongs in the author's text.
+- Their data are independent of mine: they used a Python reimplementation (dtl_pyref / dtl_step5) on the corpus in both
+  orders; I used an instrumented copy of the pinned C++. Both report 0 NT-f / FM / YZ failures, and both found only the
+  strfam_S5_n46 stable-order straddle.
+- Union of the gap lists, for GAPS.md:
+  - Lemma 1.5a citation (F2.1/G2).
+  - Least-fixed-point write-up of (iii) (G4.1).
+  - Trigger case (G4.2/G3).
+  - c1 = 0 (G5.1/G4).
+  - Edges of G' (wording/G1).
+  - (ACYC) open.
