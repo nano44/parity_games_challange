@@ -177,3 +177,7 @@ Answered from trunk deb74d1 (RESULTS R1-R11, DE1-DE20, DECISIONS L32) and the Le
 ## 2026-10-17 19:58Z Lead (relayed to owner)
 Spend reading ~19:50Z (trunk bb882ee, NOW.md Spend): total $1,781 over 36 sessions (+$1,089 since 10-15 14:55Z); no overage; 7-day
 limit "allowed_warning"; Fable paused until 2026-10-21 21:00Z.
+
+## 2026-10-17 21:00Z Lead (relayed to owner)
+R12 [refereed-only] landed (trunk 6c65d69; Opus D12, CHECKER C12 PASS): repairs the GAP-A reduction after DE20; GAP-A <= (CTX+) &
+(STEAL-DEPTH_D, D const) & (FIRED-R), all data only (65 repeat steals, all depth 1, one instance). Not a bound; L32 not met.
