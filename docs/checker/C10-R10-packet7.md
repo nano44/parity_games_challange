@@ -149,3 +149,25 @@ History: a907c46 is an ancestor of 515ed17. Word diff of docs/agents/R10-draft.m
 - Nothing else moved.
 - R10 PASSES as at 515ed17.
 - N-4 (the R9 (a) pointer) is deferred by the Lead to the separate R9 update. That is not part of this gate.
+
+## Addendum 2: RESULTS R9 update at trunk 6e08940 (Lead 16:00Z), text only: PASS
+- Diff 515ed17 → 6e08940 in docs/RESULTS.md touches R9 only, in two places:
+  - (a) gains "(see POST-LANDING NOTE: factor 2)";
+  - the note gains the REFEREE §C2 sentences and the Lead reading.
+- Sources: REFEREE-2 R2-P7 §7 at 94bcc2a (15:37:13Z) and REFEREE R-P7 §C2 at 876c06e (15:48:20Z). Both are ancestors of
+  6e08940.
+| note claim | source | |
+| --- | --- | --- |
+| "CONFIRMED by REFEREE-2 R2-P7 §7 (referee-2 94bcc2a), which withdraws the same premise in R2-P6" | §7: "CONFIRMED for the per-context term, 2(F_R + 1)(H + 1)"; "R2-P6 (a)'s count rests on the premise REFEREE withdrew (R-P6 A4), and REFEREE-2 withdraws it too" | OK |
+| "the per-input term of (b) is ≤ 2n (an input can recur within a search), so (c) reads S − 1 ≤ Σ_R 2(F_R + 1)(H + 1) + 2n(\|C_T\| + \|C_Dom\|) + 1" | §7: "I can recur within a search ... So the count is at most 2n per input. Corrected display: S − 1 ≤ Σ_{R ∈ C_bv} 2(F_R + 1)(H + 1) + 2n·(\|C_T\| + \|C_Dom\|) + 1" | OK, verbatim in substance |
+| "REFEREE R-P7 §C2 (referee 876c06e) confirms the +2F′ correction" | §C2 (i): "Confirmed. My §C intermediate sum missed ... They add ≤ 2F′ ... the bound in R9's post-landing note stands" | OK |
+| "and agrees this doubled display is TRUE" | §C2: "REFEREE-2's doubled display is also a true bound"; "the doubled display is safe" | OK |
+| "it argues via STR-DET (c) that the original constants also hold ((F_R+1)(H+1) and n per input), which has one signature (REFEREE-2 check pending)" | §C2 (iii): "'at most n per input' ... holds as written ... STR-DET (c)"; "#(e*-transitions at R) ≤ ... ≤ (F_R + 1)(H + 1), which is R9's original constant"; "the two referees disagree on constants only". No REFEREE-2 text on §C2 at 6e08940. R2-P8 line 83 uses "the R9 budget as corrected in R2-P7 §7" and does not address §C2 | OK; "one signature" and "pending" are accurate |
+| "Lead reading: the doubled display, signed by both, is the one of record; constants do not affect the reduction" | labelled Lead reading. Both referees sign the doubled display as true (§7 CONFIRMED; §C2 "also a true bound"). Both say the reductions are unchanged | OK |
+- (a)'s pointer is N-4 as recommended.
+- N-7 (recommended, same reason as N-4). R9 (b) still reads "at most n per input", and the (c) display still reads
+  (F_R + 1)(H + 1) and n·(...). The doubled display is now the one of record, so the n in (b) and the display in (c) carry
+  only one signature (REFEREE §C2, given STR-DET), and neither has a pointer.
+  - Suggest adding "(see POST-LANDING NOTE: 2n of record)" after "at most n per input" in (b).
+  - Suggest adding "(see POST-LANDING NOTE: doubled display of record)" after the (c) display.
+- Nothing in the note goes beyond R2-P7 §7 and R-P7 §C2.
