@@ -197,3 +197,10 @@ Proposed statement of GAP-C for the fleet (replaces "Lemma K with shapes (α), (
   Obligations, as before but restricted to W_p: (α-W) a straddling tangle that blocks the lowest region inside W_p;
   (β-W) an orphan inside W_p (NO-ORPHAN-W); (Cb-W) every piece meeting W_p leaves through the −1 branch with nothing
   learned inside W_p.
+Where the progress inside W_p happens (02:48Z by date -u; experiments/alg/dtl_kin2.py, dtl_peel.py; C5, Oink order):
+- Tangles learned inside W_p: 1,653 at depth 0 in a piece whose context lies inside W_p, 341 at depth 0 in a context that
+  meets both regions, 39 at depth 1 (context inside W_p). First such tangle of each search: 636 / 66 / 12.
+- (PEEL) "every vertex removed at depth 0 before the first productive piece is opponent-won": DEAD, 476 of 777 searches
+  (first: experiments/alg/instances/c1_k1_min_n7_m10.pg, Even wins all 7 vertices and 5 are removed before the first
+  productive piece). So DTL does not peel the opponent's region first; when it learns inside W_p, the earlier pieces have
+  removed opponent-won AND p-won vertices.

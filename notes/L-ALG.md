@@ -14,7 +14,16 @@ All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `sc
   (3) Phases ≤ D + 2 PROVED; under (SPP) O(n^10 (m + n^2)) (§21c).
 - Findings for the record: the author's own "nothing changed!" check in dtl.cpp is vacuous (uninitialized val1/val2;
   Debug build of pinned Oink, scratchpad oink-debug/, -t -t -t); renewable resets occur on DTL runs (§21e).
-- Options offered to the Lead 00:44Z: (a) [doing], (b) shared-blocker construction, (c) GAP-C, (d) park early.
+- Lead pick 00:48Z/01:09Z (read late, my notification slip; rule now: ReadNotifications before every push and when idle):
+  (c) GAP-C until box end. State (02:48Z by date -u), docs/alg/GAP-C.md:
+  PROVED (reading): Lemma SCC1 (a closed sptl region has one nontrivial SCC, the part reachable from its top), Lemma B-thr
+  (corrected: a duplicate's last escape is removed below the top's priority, or cut off by an ancestor's −1 step),
+  O0 (no orphan at a search start), O1 (an orphan's top is a pruned distraction).
+  KILLED: (S2), (Cb1) strict and forgiving, (PEEL), and by L-RED gapb_dup_n20 (NODUP, NO-ORPHAN; W_p = ∅ there), L-RED
+  absmono_viol_n44 (ABS-mono, ABS-mono-pw).
+  DATA (0 violations, both orders): (K-in) W_p ≠ ∅ ⇒ dominion or a tangle learned INSIDE W_p; (TW) learned tangles never
+  straddle W_p's boundary; (NO-ORPHAN-W). Exhaustive n ≤ 3 complete both orders.
+  Proposed GAP-C statement for the fleet: (K-in) with obligations (α-W), (β-W), (Cb-W). Sent 02:36Z.
 - Sources opened this box: tools/oink/src/src/solvers/dtl.cpp @ 8fbf0a7 lines 60-100 (attractVertices), 548-639
   (computeDistanceValues), 905-945 (search_rec −1 branch), 995-1070 (search() incl. the trace check); str reads at
   73, 268, 316-317 checked against writes 89, 171, 485, 881, 908, 965.
@@ -26,7 +35,8 @@ All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `sc
   (d) The all-priority-0 chain collapses in Oink order above 16 equal priorities (std::sort unstable). (e) Debug Oink:
   cmake -S tools/oink/src -B $SCRATCH/oink-debug -DCMAKE_BUILD_TYPE=Debug -DOINK_BUILD_EXTRA_TOOLS=OFF
   -DOINK_BUILD_TOOLS=OFF -DOINK_BUILD_TESTS=OFF; cmake --build ... --target solve (binary oink).
-- Climbs: all stopped (no improvement over S = |G'| − 1); nothing running.
+- Climbs: all stopped; nothing running. Tools added for GAP-C: dtl_gapc_exh, dtl_gapc_shapes, dtl_s2, dtl_nodup, dtl_orphan
+  (W_p filter), dtl_nearorphan(2), dtl_cb1, dtl_kin, dtl_kin2, dtl_peel.
 
 ## FINAL RESUME POINT (successor 4, session_01KESFSwLyyKvwe3mzqN2Bzr; box 16:01Z-~00:00Z; written 23:14Z) — read this first
 All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?`.
