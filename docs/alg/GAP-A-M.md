@@ -2608,3 +2608,20 @@ Chain (proved parts are readings):
 - So GAP-A ⇐ (CTX⁺) ∧ (STEAL-ONCE) ∧ (FIRED-R), given STR-DET. All three are DATA only.
 - A proof of (FIRED-R) needs a structure on the tangles that fire at a fixed context: each adds at least one new vertex
   to a region of R in some visit. I have no argument that their number is not ~ the number of searches.
+
+22v. Toward (STEAL-ONCE): what a second steal needs (reading, SKETCH; 15:34Z by date -u)
+- Suppose (R, r, τ, t) is newly stolen at visit pairs (s₁ → s₂) and later (s₃ → s₄), with s₂ ≤ s₃.
+  - At s₂, P(τ⁺) of round r meets t without containing it.
+  - At s₃, t is again not excluded: either P(τ⁺) no longer meets t, or it contains t.
+  - Either way, between s₂ and s₄ some vertex of t leaves P(τ⁺) of round r, i.e. moves to a region whose top has index
+    below τ, or out of the round's union.
+- By PREFIX-MONO-X* (§22s), a prefix can shrink between two visits only if that transition has a relevant steal at some
+  step that precedes (r, τ) in the step order (rounds ascending, tops descending), or a change of V in an earlier round
+  (an RV change, itself charged to such a steal).
+- Induction over the steps in that order gives only steals(step) ≤ 1 + Σ_{earlier steps} steals. That is exponential
+  in the number of steps, so it does not explain the data's "max 1" (§22t, §22u: 0 exceptions in 416 / 412 phases with
+  steals).
+- The regularity the data shows is stronger: a prefix that has grown into a tangle never retreats from it far enough to
+  re-steal it at the same step.
+- A proof would need to show that the shrinks caused by earlier relevant steals never uncover the same tangle at the same
+  later step. Not found.
