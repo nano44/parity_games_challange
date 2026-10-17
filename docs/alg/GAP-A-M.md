@@ -3206,8 +3206,9 @@ structure. Reasons:
     written down, not built.
   - L-ALG note: a polynomial bound on V_R makes the STEAL premise trivial, without CHARGE or depth. Every event sits at a
     pair of consecutive visits, so k_q ≤ V_R − 1, N*_R ≤ V_R − 1, and F_R ≤ 3(V_R − 1) directly. So "(VISITS) V_R ≤ poly(|R|)
-    per phase" with (CTX⁺) would give GAP-A by R9 alone. (VISITS) is a per-context count of searches-like events, so it is
-    probably not easier than GAP-A. Through R12 (c) the depth bound gives only Q^(poly); the direct bound F_R ≤ 3(V_R − 1)
+    per phase" with (CTX⁺) would give GAP-A by R9 alone. But (VISITS) is GAP-A in disguise: every search
+    visits the root context G′ at least once (its first best_vertices call, depth 0), so V_{G′} ≥ S. Hence (VISITS) for
+    R = G′ alone already bounds S, and the link gives nothing new. Through R12 (c) the depth bound gives only Q^(poly); the direct bound F_R ≤ 3(V_R − 1)
     is the stronger use.
 
 23p. Vertex exits from a prefix: a polynomial charge that does not need constant depth (reading, unrefereed; DATA) (L-ALG
