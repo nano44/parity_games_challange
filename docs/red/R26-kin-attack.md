@@ -14,12 +14,12 @@ wrong > K-in > K-low > TW straddle > dupW > orphW > barren > dup > orphan. Statu
 - k4b/graft.py, graft3.py, rgraft.py, nbhd.py: exhaustive small grafts, random grafts, one-step neighbourhood ascent.
 
 ## 2. Runs (both order data unless noted; all scored with klow.py)
-| run | games | qualifying W_p searches | result |
+| run | games | qualifying | result |
 | --- | --- | --- | --- |
 | graft.py on c1_k1_min_n7_m10 (tangle {τ,y}, y -> 1-2 base vertices, optional base -> τ) | 3,500 | not counted | min prod 1 |
 | graft.py GR_S=1 GR_NOINTO=1 on gapbW_dup_n20 | 2,200 | not counted | min prod 1 |
 | graft3.py on c1_k1_min (x -> y -> x, z; z -> base; optional y -> base) | 14,000 | not counted | min prod 1, best eaten 714 per mille |
-| rgraft.py, 1-6 random vertices on 5 bases (c1_k1_min, gapbW_dup_n20, kfirst_viol_union, firstw_viol_cross, kfirst_viol_n13) | 20,000 | 29,064 | min prod histogram 1: 27,652; 2: 1,282; 3: 114; 4: 12; 5: 4 |
+| rgraft.py, 1-6 random vertices on 5 bases (c1_k1_min, gapbW_dup_n20, kfirst_viol_union, firstw_viol_cross, kfirst_viol_n13) | 20,000 | 29,064 (game, order) runs with a W_p search | min prod histogram 1: 27,652; 2: 1,282; 3: 114; 4: 12; 5: 4 |
 | nbhd.py steepest ascent from gapbW_dup_n20, 20 steps x ~1,250 neighbours | ~25,000 | not counted | plateau: prod 1, 1 duplicate inside W_p, eaten 666 |
 | dtl_search --fitness klow climbs 9301-9306, 9311-9314, 9321-9323 | about 300,000 steps in total | not counted | plateau prod 1 (best 81888010: 1 duplicate in W_p, eaten 888) |
 
