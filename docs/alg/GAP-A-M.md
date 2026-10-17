@@ -2796,3 +2796,35 @@ With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) /
   through t′, or through a vertex dependent on t′. Then by EXACT* and PREFIX-MONO-X*, w leaves P(σ) only after a relevant steal
   of a tangle it depends on. Upward capture keeps w inside P(σ). So (STOLEN-PERM) needs: the stealing vertices of a steal never
   depend on a fired tangle that is later relevantly stolen.
+
+23c. Shrink-vertex analysis and (DEP-SAFE) (DATA; L-ALG succ. 7, 18:34Z by date -u; experiments/alg/dtl_shrinkdep.py @ l-alg b45bd87)
+- Tool. Model and visits are those of dtl_rootmono.RM with RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0. It adds an ATTRACTION FOREST
+  per best_vertices region step: each attracted vertex gets one parent, either ('v', popped vertex) or ('t', fired tangle,
+  popped trigger). path(w) is the set of fired tangles on w's chain to the region top.
+- Data sets:
+  - corpus: 254 committed .pg under experiments/ with n < 80, plus stealer_viol_n76;
+  - cross unions: UNIONS=600 SEED=11 UM_CROSS=3 NMAX=32, corpus included.
+  - Both order data. No INCOMPLETE.
+- Results (Oink / stable):
+
+  | set | (DEP-SAFE) holds | lost vertices A / B / C |
+  |---|---|---|
+  | corpus | 154/154 / 169/169 | 815 / 388 / 816 and 1,219 / 477 / 973 |
+  | cross unions s11 | 399/399 / 447/447 | 2,688 / 1,045 / 1,697 and 3,689 / 1,028 / 2,209 |
+
+  - A: a tangle on path_x(w) is relevantly stolen at its own step.
+  - B: w's region top is no longer a region top.
+  - C: other.
+  - A' (a path tangle plainly stolen, not fired) never occurs.
+- Reading of C, checked by hand on stealer_viol_n76 and on climbs_1016/b_best_s33. A path tangle (6 there, 22 on stealer_viol)
+  neither fires nor is met at y. Its region top survives, and its vertices are not in the prefix. The cause is an ESCAPE: a
+  tangle escape, or an opponent successor, that lay in the prefix above at x is back in Gx = CurR at y (dtl_pyref
+  attractTangle lines 95-97, attractVertices line 74). So the cause is another, higher loss. The single-parent forest cannot
+  see this, so roughly 40% of losses (C) are cascades through escapes.
+- (DEP-SAFE) "no path tangle of a stealing vertex is relevantly stolen later" holds on 1,169 relevant steals (DATA). The
+  forest misses the escape cascades, though, so (DEP-SAFE) does not by itself imply (STOLEN-PERM).
+  The route needs an escape-aware dependency:
+  - w depends on every fired tangle on its chain, and on every prefix vertex that hides an escape of a tangle or of an
+    opponent vertex on its chain.
+  - Then: "a stealing vertex never depends on a later-stolen tangle or on a later-lost escape holder". SKETCH, not measured.
+- Status: (STOLEN-PERM), (STAYS-MET) and (STEAL-ONCE*) remain DATA. No proof. No kill.
