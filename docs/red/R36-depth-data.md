@@ -53,3 +53,17 @@ SPP seeds use FLGRAD=1, a gradient when no context is counted yet; the measure p
   spp19_stable_n30 (L-RED). The climbs shortened the phases from 42/18/19 to 14/12/12 searches and found contexts of size 5-6.
 - Reading (L-RED): 4 fired at |R| 6. These are single instances with small contexts, so they show no trend of fired/|R|
   with phase length. The climbs keep running.
+
+## 5. (STEAL-ONCE*), (STOLEN-PERM), (STAYS-MET), (NO-REFIRE) fail in the OINK order datum too (21:49Z by date -u)
+- File experiments/red/carry/instances/stealonce_both_n45.pg (n 45, 70 edges, sha1 ee52c4a3e47af0de4790bd66110cc7206aa62ec2). It
+  is stealonce_core_n76 after greedy VERTEX deletion (root/vshrink.py, keeping depthfit max k ≥ 2 and max depth ≥ 1 in the
+  stable order). Renumbering made the two order data agree on it.
+- L-ALG tools UNMODIFIED (l-alg 931fc221), the same numbers in BOTH order data (oink and stable):
+  - dtl_rootmono.py (RM_EXCL=1 RM_PREF=1 RM_DV=0): "STOLEN-PERM ...: FAILS" 2 / holds 4; "NO-REFIRE ...: REFIRES later |
+    prefix later unmeets t" 2; "RELEVANT STEALS per (context, round, top, tangle): max 2"; no INCOMPLETE;
+  - dtl_stealtrace.py: "STEAL-ONCE* VIOLATION ... phase 2 ctx |R| 43 step (round 5, top 12) tangle 0: 2 relevant steals", the
+    same at (round 6, top 12); STAYS-MET FAILS 2; NO-REFIRE FAILS 2;
+  - dtl_stealdepth.py: max k 2, max depth 1, 2 re-steals of depth 1 (cause: the steal at (5, 37) of tangle 4).
+- Pinned Oink: 2 dominions, 17 tangles, 6 iterations, verified (13 strategies). Pinned in check.sh.
+- Reading (L-RED): R35 (DE20) held in the Oink datum. With this file the four statements fail in the datum the shipped
+  solver uses as well, so no order-datum reading is needed for the kill.
