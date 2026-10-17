@@ -5,7 +5,7 @@ INF if v survives to a round that returns 1 (in a −1 call every vertex is drop
 RV(s) pointwise. Transitions are classified by where the first difference e* of the reduced logs (dtl_fdlcheck.py) lies:
 root call (threshold loop / regions, with the round of e*), or later. For a failure, the first vertex whose RV falls and
 its rounds are printed. ROOT-SPLIT rows (root-call transitions): does RV fall / move, does DV* (dtl_dvstar.py, T at search start) move,
-does either root call have a deficit round (U ≠ Û, dtl_ideal.py). RM_DV=0 skips DV*. Games and env as dtl_step5stats.games (UNIONS, UM_CROSS, SEED, NMAX, RANDOM). RM_LIGHT=1 skips the ideal and step-deficit checks (deficit/stepdef flags are then never set). RM_ROUNDS=1 also prints the round of e*. DTL_ORDER = oink | stable. Usage: dtl_rootmono.py G.pg ..."""
+does either root call have a deficit round (U ≠ Û, dtl_ideal.py). RM_DV=0 skips DV*. Games and env as dtl_step5stats.games (UNIONS, UM_CROSS, SEED, NMAX, RANDOM). RM_EXCL=1 records excluded tangles per region step (PREFIX-MONO-X test). RM_LIGHT=1 skips the ideal and step-deficit checks (deficit/stepdef flags are then never set). RM_ROUNDS=1 also prints the round of e*. DTL_ORDER = oink | stable. Usage: dtl_rootmono.py G.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import pg, dtl_fdlcheck as FC, dtl_ideal as I, dtl_dvstar as DS, dtl_step5stats as ST
@@ -24,7 +24,7 @@ class RM(FC.CK):
     def best_vertices(s, V, R, p):
         if s.dep == 0: s.ctx0.append(frozenset(R))
         # dtl_pyref.DTL.best_vertices verbatim, recording the round of each drop and the log span of each round
-        rv = {}; spans = []; psi = []; pos = []; rk = []; rec = dict(rv=rv, spans=spans, start=len(s.log), psi=psi, pos=pos, rk=rk)
+        rv = {}; spans = []; psi = []; pos = []; rk = []; rec = dict(rv=rv, spans=spans, start=len(s.log), psi=psi, pos=pos, rk=rk, ntv=len(s.tv))
         if s.root is None: s.root = rec
         rec["key"] = (s.dep, frozenset(R)); s.allrecs.append(rec)
         if s.dep == 0: s.d0recs.append(rec)
@@ -46,6 +46,8 @@ class RM(FC.CK):
             for top in range(s.n - 1, -1, -1):
                 if top not in V or top in Z: continue
                 CurZ = {top}; s.Q = [top]
+                if os.environ.get("RM_EXCL"):
+                    rec.setdefault("excl", {})[(rnd, top)] = frozenset(t for t in tli if any(v in Z for v, _ in s.tv[t]) and not all(v in Z for v, _ in s.tv[t]))
                 s.tattr(p, CurZ, CurR, CurR, s.pr[top], CurR)
                 cl = (Z | CurZ) if LIGHT else I.lfp(s, p, Z | {top}, R, s.pr[top], tli)
                 if cl != Z | CurZ:
@@ -302,6 +304,11 @@ if __name__ == "__main__":
                             fa_ = sum(d.n - t_ for m in x.get("rtop", []) for t_ in m.values()); fb_ = sum(d.n - t_ for m in y.get("rtop", []) for t_ in m.values())
                             c_ = "rises (Φ_top)" if fb_ < fa_ else "equal" if fb_ == fa_ else "Φ_top RISES (descent)"
                     kv = "VISITS of a context (consecutive): " + c_ + (" | later call dirty" if y.get("stepdef") else ""); tab[kv] = tab.get(kv, 0) + 1
+                    if os.environ.get("RM_EXCL"):
+                        ex_, ey_ = x.get("excl", {}), y.get("excl", {})
+                        newst = any(t < x["ntv"] and t not in ex_.get(k_, frozenset()) for k_ in ey_ if k_ in ex_ for t in ey_[k_])
+                        kns = "PREFIX-MONO-X: " + ("new steal" if newst else "no new steal") + " | " + ("DESCENT" if c_ in ("RV falls", "Ψ NOT monotone", "Φ_top RISES (descent)") else "no descent")
+                        tab[kns] = tab.get(kns, 0) + 1
                     if c_ in ("RV falls", "Ψ NOT monotone", "Φ_top RISES (descent)"):
                         desc[key_] = desc.get(key_, 0) + 1
                         wids = set().union(*y.get("wits", {}).values()) if y.get("wits") else set()
@@ -392,6 +399,6 @@ if __name__ == "__main__":
         badrows.sort(key=lambda r: -r[1]); print("phases where PI fails to rise (file, failures, transitions, |G'|):", badrows[:8], "phases:", len(badrows))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT", "DISTRACTION", "RV SHAPE")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT", "DISTRACTION", "RV SHAPE", "PREFIX-MONO-X")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})
