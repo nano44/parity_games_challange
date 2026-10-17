@@ -777,3 +777,25 @@ tangle {14, 15, 16, 17} uses a vertex of OLD X), with Y_0 = Z_f nevertheless.
 Status of Step 5: Lemma P-KT (18h) is PROVED given (YZ) only. (YZ) can fail only through a tangle that Dom(prevV)
 accepts using a vertex of old X or of an earlier top's part, at a moment when the region loop rejects it.
 Unrefereed; Lemma NT-f is a reading of dtl.cpp @ 8fbf0a7 for every order datum (no step uses ω).
+(YZ) anatomy (08:51Z by date -u; experiments/alg/dtl_yzclimb.py climbs from strfam_S5_n46.pg, 3 stable + 1 Oink seeds, up
+to 3 X-straddling Dom firings per run, never Y_0 ⊋ Z_f). In every observed firing the tangle lies in OLD X except for one
+or two new vertices (e.g. {14, 17} with 17 ∈ old X, 14 new; {14, 15, 16, 17} with 16 new), each OPPONENT-owned, whose
+tangle edges into old X lie outside R and are ignored by the region loop's vertex rule (76-86), so the region loop takes
+them as vertices and Y_0 = Z_f. Reading towards a proof (SKETCH): a new p-vertex v of such a tangle t_X has its tangle
+successor in R (an edge into X would make v attract into X, contradicting Q empty at a P piece); so a (YZ) failure needs
+the new part of t_X to contain a cycle of H_{t_X} that the region loop's vertex rules cannot enter; its maximum m is a
+p-priority vertex, and if m ∈ V_f it is a final candidate, so the cycle is not inside Z_f — consistent only with
+Y_0 ⊋ Z_f. Not closed.
+(YZ) ⇐ (ACYC) (08:52Z by date -u; reading, PROVED). Let Dom(prevV, R) accept, in the region of its top τ_j, a stored tangle
+t_X that uses a vertex of old X or of an earlier top's part, with new vertices N_X (in R, priority ≤ pr(τ_j)); by NT-f and
+18h this is the only way Dom and the final round's region loop can differ. (i) A p-vertex v ∈ N_X has its tangle successor
+in the current region or in N_X: not in old X (an edge into X would make v attract into X; Q is empty), not in an earlier
+region (v would have been attracted there at that vertex's pop, the earlier top having priority ≥ pr(τ_j) ≥ pr(v); then v
+would not be new). (ii) An opponent vertex of N_X has all its R-edges into the current region, earlier regions or N_X; its
+edges into old X are outside R and ignored by 76-86. (iii) Hence, if N_X contains no cycle of H_{t_X} (ACYC), the region
+loop attracts all of N_X by vertex rules into τ_j's region (reverse topological order of H_{t_X} on N_X), and since each
+region is the least fixed point of its rules (GAP-A-M §1, Lemma 1.2) Dom's region and the loop's region coincide; repeated
+for every such acceptance, Y_0 = Z_f. So Step 5 rests on (ACYC): "the new part of every X-straddling tangle that
+Dom(prevV) accepts is acyclic in the tangle graph". DATA: every observed firing has 1-2 new opponent vertices (acyclic).
+A (ACYC) failure needs a p-won cycle C of t_X entirely in R and new; if its maximum m_C is in V_f it is a final candidate,
+so C ⊄ Z_f and (YZ) fails; whether P-KT survives such a piece is open. L-RED target.
