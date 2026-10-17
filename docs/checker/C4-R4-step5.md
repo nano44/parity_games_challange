@@ -124,3 +124,27 @@ Fix for §3: add to G-S5-7 "DTL-proof Lemma 1.4c (G' is a parity game, D = W_p(G
 5. Optional: "in its region loop" in (2); define WM in (3).
 After these, CHECKER re-diffs the draft text only. The re-runs above stay valid while 8c2d012, ce37984 and Oink 8fbf0a7 are
 unchanged.
+
+## C4 re-diff (CHECKER, 2026-10-17 ~09:55Z): docs/agents/R4-draft.md at trunk 6d5962d, text only
+Method: word-level diff 20fe2ed → 6d5962d of the draft. Branch synced by merge commit after confirming that
+origin/claude/checker is an ancestor of the local branch. No re-runs; §1 above stays valid (8c2d012, ce37984 and Oink 8fbf0a7
+are unchanged).
+
+### Verdict: PASS (one non-blocking citation note)
+| item | at 6d5962d | |
+| --- | --- | --- |
+| O-1 straddle data | "In the corpus the only straddling Dom firing is strfam_S5_n46 stable order ...; REFEREE-2's climbs from it (18,000 runs) produce many straddling firings, none with a cyclic new part or a YZ failure (no total count kept)". Matches R2-STEP5 §7 | FIXED |
+| O-2 gap header | "G-S5-1..5 are closed in the reports and are to be imported into the author's text; G-S5-6 is OPEN; G-S5-7 lists dependencies checked only for this use" | FIXED |
+| O-3 | title and "Hence": "with (ACYC) as the only open hypothesis" (REFEREE-2 §8's wording) | FIXED |
+| O-4 | (5) "at every depth-0 P piece with D ∩ R ≠ ∅, KT(R \ Y_0) holds (witnessed at level c1)", the signed form (STEP5 §0 / §3; REFEREE-2 §8). P piece defined by quoting STEP5.md line 9 at 8f41be8; I checked the quote: "(the −1 branch with Q empty, dtl.cpp 961-991)" | FIXED |
+| §3 missing dependency | G-S5-7 adds "positional determinacy and D = W_p(G') (DTL-proof.md Lemma 1.4c; REFEREE §6.6, REFEREE-2 'standard parity-game facts named in (1)'), standard" | FIXED |
+| optional | (2) "in its region loop"; (3) "WM (Z^r ⊆ A^r_t, ...)" | DONE (note N-3) |
+| Lead's exactness edits | REFEREE probe "243 of the 254 corpus files: n > 80 and one unreadable file skipped" matches my count. REFEREE-2 "254 corpus + 3,000 random/unions + 9,000 climb mutants (each in 2 in-orders), 32,026 runs" matches 2,026 + 12,000 + 18,000. The corpus and random sets are also run in 4 and 2 labellings respectively, which "each in 2 in-orders" does not mention; the total is exact | CORRECT |
+| CHECKER sentence | "CHECKER C4 (checker 7d7c6fb) reproduced REFEREE's probe and REFEREE-2's corpus and random parts exactly"; "Lead and CHECKER re-ran pinned Oink: 6 iterations, verified" | CORRECT (§1 above) |
+| nothing else moved | the diff touches only the lines listed; object, signature lines, G-S5-1..6 texts and Scope are unchanged from the version checked above | CONFIRMED |
+
+- N-3 (note, non-blocking). (3) cites "WM (Z^r ⊆ A^r_t, GAP-C §18h)". §18h defines only the special case (WM_c1) and uses it.
+  The general (WM), "Z_f ⊆ Z^r ⊆ A^r_t for all r, t", is stated and proved in GAP-C §18k (line 37 of that section at 8f41be8),
+  and STEP5 §3's "FM, WM" row agrees. Suggest "GAP-C §18k". This does not change the claim.
+
+The draft at 6d5962d may land as RESULTS R4. If the N-3 citation is changed, no further check is needed.
