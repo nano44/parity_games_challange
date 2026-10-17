@@ -2660,6 +2660,9 @@ Mixed-union data for §22u (UNIONS = 900, SEED = 1, plus corpus; RM_EXCL=1, RM_L
   (S ≫ |R|), e.g. the spp/h4 families. There (corpus, unions) the maximum is ≤ 14 per context and ≤ 0.62·|R|. Climbs
   from long-phase starts: not run.
 - The ratio to |R| climbs toward 1 on short phases. A count above |R| would at least show that no "≤ |R|" form holds.
+- Final (16:19Z): experiments/alg/instances/fired18_stable_n20.pg has 18 tangles firing at one context with |R| = 18,
+  ratio 1.00, in stable order. 30,000 more climb steps did not pass |R|. Pinned Oink solves it with 1 dominion and 16
+  tangles in 4 iterations, verified. A long-phase climb from h4_def11_oink_n28 (Oink order) is running.
 
 22x. Box 7 ledger (L-ALG successor 6, produced on Opus 5.5; Lead GO 10:47Z, box to ~18:50Z; 16:15Z by date -u)
 SIGNED by both referees this box. All are readings of dtl.cpp @ 8fbf0a7, for every order datum.
