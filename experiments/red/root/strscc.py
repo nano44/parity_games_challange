@@ -60,7 +60,7 @@ def measure_game(g, order, verbose=False, name=""):
     os.environ["DTL_ORDER"] = order
     stat = {"dropped": 0, "kept: differs": 0, "kept: identical but extracts": 0}
     d0 = FD.P.X.build(g); d = SC(d0.pr, d0.ow, d0.outs, ins_desc=(order == "oink")); d.idx = d0.idx; d.run()
-    m = dict(hit=0, strdiff=0, compared=0, trans=0, silent=0, incomplete=int(not all(w is not None for w in d.win)))
+    m = dict(hit=0, strdiff=0, compared=0, trans=0, silent=0, mingap=999, incomplete=int(not all(w is not None for w in d.win)))
     for ph in FD.phase_rows(d):
         for r in ph: r["red"] = FC.reduce_log(r["log"], stat)
         for i, (a, b) in enumerate(zip(ph, ph[1:])):
@@ -79,6 +79,9 @@ def measure_game(g, order, verbose=False, name=""):
                     if j < k: out.setdefault((j, top, R), []).append((sccs, strR))
                 return out
             ra, rb = recs(a, la), recs(b, lb)
+            pa = {id(e): j for j, e in enumerate(la)}           # GAP: reduced position of s's first extraction minus e*'s
+            js = [(-1 if x[0] is None else pa[id(x[0])]) for x in a["side"] if x[0] is None or id(x[0]) in pa]
+            if js and k < min(len(la), len(lb)): m["mingap"] = min(m["mingap"], max(0, min(js) - k + 1))
             for key in ra.keys() & rb.keys():
                 for (sa, ta), (sb, tb) in zip(ra[key], rb[key]):
                     m["compared"] += 1
@@ -93,10 +96,12 @@ def measure_game(g, order, verbose=False, name=""):
 
 def score(path):
     """dtl_search.py --fitness strscc: 1e12 incomplete + 1e11 HIT-STR + 1e8 * STR-DIFF-ONLY + 1e5 * compared extractions
-    before e* + SILENT (tattr calls before e* in s+1 where a tangle created by s fires with an unchanged output)."""
+    before e* + 1e2 * (999 - GAP) + min(SILENT, 99), where GAP = least (reduced position of s's first extraction - position
+    of e* + 1) over the phase's transitions (0 once an extraction precedes e*) and SILENT = tattr calls before e* in s+1
+    where a tangle created by s fires with an unchanged output (the G-STR first half)."""
     sys.setrecursionlimit(100000); m = measure_game(pg.read(path), os.environ.get("DTL_ORDER", "stable"))
     return int(1e12 * m["incomplete"] + 1e11 * (m["hit"] > 0) + 1e8 * min(m["strdiff"], 999)
-               + 1e5 * min(m["compared"], 999) + min(m["silent"], 99999))
+               + 1e5 * min(m["compared"], 999) + 1e2 * (999 - min(m["mingap"], 999)) + min(m["silent"], 99))
 
 
 if __name__ == "__main__":
