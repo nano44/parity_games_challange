@@ -2517,3 +2517,11 @@ lex_viol_inj_n28; on l-red, sha1 21b235f4).
 - PREFIX-MONO-X (§22r) survives on it: 17 / 17 descents have a new steal, and no descent occurs without one.
 - So the charge for (FALL) that survives is the NEW STEAL (§22r, proved as a reading): F_R ≤ #(new-steal visits at R).
   How often a later prefix newly grows into a stored tangle at one context is the open question.
+How loose the new-steal charge is (15:04Z by date -u; corpus plus fall3_n76, fall4_n116, fallv_viol_n28, f1_twofall_n48,
+f1_twodef_n48; Oink order; "new-steal visits per context").
+- New-steal visits per context per phase reach 8: h4_def10_oink_n28 and h4_def11_oink_n28, with 11 and 12 transitions.
+  Next: dtl_replay2deep_n32 and h4_nested7_oink_n44 with 7, and h4_def8 with 7.
+- Descents reach at most 4 (fall4_n116). So most new steals cause no descent, and F_R ≤ #new steals is far from tight.
+- In the h4_defK family new steals occur at almost every transition, growing with K like the phase itself.
+- So (NEWSTEAL) is a true reduction of (FALL), but bounding it is about as hard as bounding the phase. A useful charge
+  would have to separate the steals that cause a descent from the rest. Not found in this box.
