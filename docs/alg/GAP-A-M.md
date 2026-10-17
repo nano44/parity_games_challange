@@ -1978,3 +1978,68 @@ DATA (dtl_rootmono.py; corpus 238 files plus gapb_dup_n20, gapbW_dup_n20, kin_vi
   4 to maximise deficits. There dirty = K + 1 (h4_def9/10/11_oink_n28: 10, 11, 12) and every transition of the long phase
   is dirty.
 - Transitions with e* after the root call: 194 / 185 (box target 3).
+
+22d. Sharper, DATA only: Π rises unless RV falls (11:42Z by date -u; dtl_rootmono.py "PI at root-e* transitions")
+On all root-e* transitions (corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29; Oink / stable):
+
+| class | Oink | stable |
+|---|---|---|
+| Π rises through RV | 612 | 595 |
+| Π rises through Ψ (RV equal) | 221 | 215 |
+| Π rises through Φ_top (RV, Ψ equal) | 17 | 19 |
+| RV falls | 18 | 18 |
+| Ψ not monotone, or Π does not rise | 0 | 0 |
+
+- The 18 falls lie in 16 phases, at most 2 per phase. The two 2-fall phases are L-RED's f1_twodef_n48 and
+  f1_twofall_n48, which were built to have two falls.
+- So the DIRTY transitions that do not lower RV behave as clean ones: 161 / 156. The step deficit is real there (a
+  tangle straddles), but it does not break the order.
+- NEWX ("a tangle of T_s newly excluded at the same region step") does not separate them: 102 / 95 NEWX transitions
+  satisfy the predictions; all 18 falls are NEWX.
+Candidate (PI-RISE, DATA only): every transition whose first difference lies in the root call and whose root RV does not
+fall raises Π strictly.
+- If it holds: #root-e* transitions per phase ≤ (#FALL + 1)·H + #FALL, where #FALL counts the (M)-failures at the root
+  (RV falls).
+- Proved part: PI-RISE on clean transitions (§22c).
+- Open part: dirty transitions where RV does not fall. The step deficit there must not shrink Ψ. In the h4_defK phases
+  the same stored tangle straddles at the same top in every search, and every transition is of this kind.
+
+22e. Every context, not only the root: GAP-A ⇐ two named statements (11:54Z by date -u; dtl_rootmono.py "ANY-CONTEXT")
+Nothing in 22c uses R = G′. A best_vertices call is a deterministic function of (R, p, T): it reads no X, no str value
+before writing it, and no W, and the set of alive tangles changes only at dominions. So, for EVERY context R (any depth):
+- Π_R(T) := (RV, Ψ, Φ_top) of the call best_vertices(·, R, p) under T is a function of T.
+- PREFIX-MONO: for T ⊆ T′, if the call under T′ is step-ideal, then Π_R(T) ≤ Π_R(T′). So along a phase Π_R(T_s)
+  changes at most (D_R + 1)·H times, where D_R counts the searches s whose (possibly hypothetical) call at R has a step
+  deficit.
+The −1 attractor of search_rec (914-923) at a T piece runs on input (seeds, R, t). The seeds are determined by the
+identical preceding best_vertices call at R and by X. Its output is the plain threshold attractor, which is monotone in T
+(1.2b). So for a fixed (R, X) it changes at most n times along a phase.
+By FDL (§21d, signed), a transition's first difference e* is a tattr whose input is equal in both searches and whose
+output is strictly larger. It lies in a best_vertices call at some context R, or in a −1 attractor at some (R, X)
+(DATA: never in sptl or Dom).
+- In the first case, Π_R(T_s) ≠ Π_R(T_{s+1}). If the call of s+1 is step-ideal, the change is a strict rise (22c); a
+  dirty call can lower RV.
+- In the second case, the attractor's output strictly grows.
+Hence (PROVED, reading; given FDL, PREFIX-MONO and the 22c corollaries): per phase,
+  S − 1 ≤ Σ_{R ∈ C_bv} ((D_R + 1)·(H + 1)) + Σ_{(R,X) ∈ C_T} n,
+where C_bv is the set of distinct contexts of first-difference best_vertices calls and C_T is the set of distinct
+first-difference −1 attractor inputs. So:
+- GAP-A ⇐ (CTX) the numbers of distinct first-difference contexts |C_bv| and |C_T| per phase are polynomial, and (DIRTY)
+  D_R is polynomial for each of them.
+- This replaces box 5's S − 1 ≤ n(n+1)·contexts + #DEF + #ABS (§21j). The ABS steps are now inside the per-context
+  budget, and DEF steps matter only where RV actually falls.
+DATA at e* (corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29; Oink / stable):
+
+| at the first differing call | Oink | stable |
+|---|---|---|
+| Π rises, later call clean (depth 0 / > 0) | 814 / 25 | 787 / 25 |
+| Π rises, later call dirty (depth 0) | 161 | 156 |
+| RV falls (dirty, depth 0) | 18 | 18 |
+| Ψ not monotone, or Π does not rise | 0 | 0 |
+| e* in a −1 attractor (C_T) | 44 | 46 |
+
+- Distinct first-difference best_vertices contexts per phase: at most 8 (spp_final_n40, spp22_oink_n40) in both orders,
+  at most 0.29·|G′|.
+- Box 5's long phases (§21j table) had at most 12 first-difference contexts under its parent-context convention.
+Open: (CTX) and (DIRTY), both DATA only. (CTX) is the old "distinct contexts" core, which box 5 did not bound. What is
+new is that every absorption step at a fixed context is now paid for by a proved polynomial budget.
