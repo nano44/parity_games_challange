@@ -342,3 +342,5 @@
 - 00:45Z Lead: merged l-alg 8668d09 (SPP.md, DV*-MONO). L-ALG options a/b/c/d: picked (c) GAP-C (a = per-context wall again; b = L-RED lane).
 - 00:57Z Lead: merged l-alg 57e2256 (§21j); (ABS-mono) routed to L-RED.
 - 01:04Z sweep: no overage (seven_day allowed_warning); Lead $188.5 (338k); L-ALG succ. 5 running (metadata stale at 134k/$1.4, pushes current); L-RED idle on climbs (451k, $21.9; n=60 best S/|G'| 0.28; DV-MONO and ABS-mono attacks 0 violations so far). Merged l-alg 9523d6e, l-red d4538a0. Watch L-RED context (~600k near box end).
+- 01:08Z Lead: merged l-alg f060d6a (ABS-mono-pw DATA, fdlcheck regression); L-ALG idle asking for a pick: re-sent (c) GAP-C (00:48Z/01:00Z messages apparently unread); ABS-mono-pw routed to L-RED.
+- 01:10Z Lead: L-ALG had not read its queue since 23:32Z (lane slip, acknowledged); now doing (b)/DV=DV* OPEN/ABS-mono row, then GAP-C; first GAP-C target = Even dominion after Odd removals.
