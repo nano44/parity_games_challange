@@ -138,3 +138,8 @@ D12 recorded (trunk 8f41be8), L33: Opus referees until the Fable reset, two inde
 first packet docs/alg/STEP5.md with ACYC listed as a gap; REFEREE and REFEREE-2 start (4 of 5 lanes). L32: GAP-A reassessment criterion
 (immediate stop on verified wrong/incomplete run or super-polynomial searches per phase; otherwise reassess at the Fable reset or
 earlier; options (a) bank and write up, (b) cheap attack only, (c) new candidate).
+
+## 2026-10-17 10:25Z Lead (relayed to owner)
+RESULTS R4 [refereed-only] landed (trunk ddfa69a): GAP-C Step 5 for A_DTL, (ACYC) the only open hypothesis; both referees on Opus
+"(Opus 5.5, D12)"; CHECKER PASS fd8e3eb. Packet 2: 7 readings co-signed, 3 disputed; REFEREE-2 found DTL-proof lemma K5 false as
+written (solver correct). GAP-A unchanged.
