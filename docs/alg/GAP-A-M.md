@@ -2660,3 +2660,40 @@ Mixed-union data for §22u (UNIONS = 900, SEED = 1, plus corpus; RM_EXCL=1, RM_L
   (S ≫ |R|), e.g. the spp/h4 families. There (corpus, unions) the maximum is ≤ 14 per context and ≤ 0.62·|R|. Climbs
   from long-phase starts: not run.
 - The ratio to |R| climbs toward 1 on short phases. A count above |R| would at least show that no "≤ |R|" form holds.
+
+22x. Box 7 ledger (L-ALG successor 6, produced on Opus 5.5; Lead GO 10:47Z, box to ~18:50Z; 16:15Z by date -u)
+SIGNED by both referees this box. All are readings of dtl.cpp @ 8fbf0a7, for every order datum.
+- (S0), PREFIX-MONO, POS-FALL and ROOT-BOUND (packet 4).
+- Lemma STR-DET (packet 5). It closes G-STR, so FDL and R5 (h) hold without condition.
+- §22j per-input budget, folding Dom first differences into (CTX⁺), and §22f with F_R = every non-rise (packet 6).
+- EXACT and PREFIX-MONO-X (packet 7; REFEREE signed, REFEREE-2 pending). EXACT* and PREFIX-MONO-X* (packet 8; REFEREE
+  signed, REFEREE-2 pending).
+REDUCTION (referee-signed as a conditional):
+- GAP-A ⇐ (CTX⁺) ∧ (FALL) ⇐ (CTX⁺) ∧ (NS-COUNT) ⇐ (CTX⁺) ∧ (STEAL-ONCE) ∧ (FIRED-R), given STR-DET.
+- Per phase: S − 1 ≤ Σ_{R ∈ C_bv} 2(F_R + 1)(H + 1) + 2n(|C_T| + |C_Dom|) + 1, with F_R ≤ 3·N*_R ≤ 3(|R| + 1)|R|·#fired(R)
+  under (STEAL-ONCE).
+OPEN, all DATA only:
+- (CTX⁺): distinct first-difference inputs (best_vertices contexts, −1 attractors, Dom steps) per phase are polynomial.
+  - Max 12 per phase so far: ctx12_oink_n40 (mine, Oink order) and ctx12_n40 (L-RED, both orders). No superlinear trend.
+- (STEAL-ONCE): each (context, round, top, tangle) is newly stolen at most once per phase. 0 exceptions on the corpus,
+  the special instances, and the mixed and cross unions (§22t-§22w).
+- (FIRED-R): the tangles that fire at one context in a phase number poly(|R|).
+  - Up to 18 at |R| = 18 on short climbed phases, and ≤ 14, ≤ 0.62·|R| on long-phase data.
+  - It bounds tangles, so it is close to GAP-A's own core (§22w caveat).
+DEAD this box, with instances (DEAD.md):
+- Root-call RMONO = (M) (dtl_mviol_n20, pinned Oink re-run).
+- (CHAIN) (dtl_searches15_n24; nest_nest_s43).
+- (CTX-ROOT) (dtl_cnew14_n20).
+- "F_R ≤ 2" (L-RED fall3_n76), then "F_R constant" (fall4_n116: 4, linear in parts).
+- (FALL-V), per vertex (L-RED fallv_viol_n28).
+- Per-tangle steal counting (fallv_viol_n28: tangle 2 is stolen at both falls).
+- The raw per-input bound (vacuous), and distraction mass as a potential.
+GAP-C this box: DE13 (kin_viol_n29) and DE15 (meet_viol_n17) recorded (§18r). The KT-chain S step, K-in, TW, K-low and
+MEET are dead, and (PHASE-IN) ⇔ run completeness. Packet 3: K5'' and (α) with Dep(Str) signed (§18q).
+Tools: experiments/alg/dtl_rootmono.py (env RM_DV, RM_LIGHT, RM_EXCL, RM_KSEQ, RM_WIT, RM_FALLDET, RM_ROUNDS),
+dtl_union_dump.py, dtl_ctxclimb.py, dtl_firedclimb.py, dtl_meetd.py. dtl_fdlcheck.py logs R and Gx.
+Next, for whoever continues:
+- (a) (STEAL-ONCE) is the most structural statement left. A second steal of (r, τ, t) needs a prefix to retreat from t
+  (§22v). Show that the retreats caused by earlier relevant steals never uncover the same tangle at the same step.
+- (b) (FIRED-R) on LONG phases, by climbing from spp/h4 starts.
+- (c) (CTX⁺) needs a potential that pays for the rebuilt distraction runs after a level-set jump (§22p).
