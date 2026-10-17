@@ -43,7 +43,12 @@ class NT(S5.S5):
                 tab["P pieces"] = tab.get("P pieces", 0) + 1
     def attractTangle(s, t, p, R, Z, Gx, maxpr):
         r = D.DTL.attractTangle(s, t, p, R, Z, Gx, maxpr)
-        if r and getattr(s, "in_regions", False): s.round_tangles += 1
+        if r and getattr(s, "in_regions", False):
+            s.round_tangles += 1
+            pv = [w for w, _ in s.tv[t] if s.pr[w] % 2 == p]
+            k = "INV-T: a region accepts a tangle with " + ("a p-priority vertex in V_r" if any(w in s.cur_V for w in pv) else "NO p-priority vertex in V_r (VIOLATION)")
+            tab[k] = tab.get(k, 0) + 1
+            if "VIOL" in k and tab.get("shownT", 0) < 3: tab["shownT"] = tab.get("shownT", 0) + 1; print("INV-T VIOLATION", s.fname, sorted(s.idx[w] for w, _ in s.tv[t]), flush=True)
         if r and getattr(s, "in_dom", False):
             strad = any(w in s.x_before for w, _ in s.tv[t])
             k = "Dom(prevV) at a P piece fires a tangle" + (" with a vertex in old X or an earlier top's part (straddle)" if strad else " (no such vertex)")
@@ -55,7 +60,7 @@ class NT(S5.S5):
         if not V: return 0
         tl = []
         while True:
-            prevV = set(V); Z = set(); CurR = set(R); s.in_regions = True; s.round_tangles = 0
+            prevV = set(V); Z = set(); CurR = set(R); s.in_regions = True; s.round_tangles = 0; s.cur_V = set(V)
             for top in range(s.n - 1, -1, -1):
                 if top not in V or top in Z: continue
                 CurZ = {top}; s.Q = [top]; s.tattr(p, CurZ, CurR, CurR, s.pr[top], CurR); Z |= CurZ

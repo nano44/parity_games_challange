@@ -25,8 +25,9 @@ leaving it deleted and dead ends lost for p. KT(R) :⇔ W_p(F_c) ≠ ∅ for som
 | KT0 | KT(G') holds when D ≠ ∅; KT fails at R_end (best_vertices returns 0: no p-priority vertex) | PROVED |
 | YZ-read | Dom(prevV, R) (961-976) and the final round's region loop (690-708) are step-for-step equal until Dom's attractTangle accepts a stored tangle with a vertex in old X or in an earlier top's part of the Dom (Dom: "in Z", 136-137; region loop: rejected, 138-139) | PROVED (reading) |
 | FM+ | in a −1 call, each final region Z^f_τ lies in the round-r union of the regions of tops with index ≥ index(τ), for every round r, unless round r straddles (Lemma E (a), GAP-A-M §3) a tangle that round f attracts | PROVED except that case |
+| FM ⇔ NT-f | (FM) holds iff (NT-f): the final pruning round of a −1 call accepts no stored tangle in its region loop | PROVED (equivalence); NT-f DATA 15,939/15,939 −1 calls, although earlier rounds accept tangles in 6,177 of them, 628 times with every p-priority vertex of the tangle already pruned |
 | P-KT | at every depth-0 P piece with D ∩ R ≠ ∅, KT(R \ Y_0) holds (Y_0 the removed set), witnessed at level c1 | PROVED given (YZ) Y_0 = Z_f and (FM) Z_f ⊆ Z^r for all rounds |
-| (YZ), (FM) | as above | DATA: 0 failures (YZ on 63,000+ P pieces, FM on 106,091 −1 calls; corpus both orders, unions) |
+| (YZ), (FM) | as above | DATA: 0 failures (YZ on 63,000+ P pieces, FM on 106,091 −1 calls; corpus both orders, unions). The YZ-read exception does occur once (strfam_S5_n46.pg, stable order: Dom fires the stored tangle {14,15,16,17} using a vertex of old X / an earlier top's part) yet Y_0 = Z_f and P-KT hold there |
 | KT-STEP-first | the first depth-0 piece after which KT fails learns inside D | DATA 0 violations; with KT0 and P-KT it would give (K-in) |
 
 ## 4. Proof of P-KT (given (YZ), (FM))
@@ -47,7 +48,23 @@ U := W1 \ (Z_f ∪ A_{c1}(R')) ≠ ∅.
 an edge into U and all its remaining edges in U, no vertex of U is a dead end, and every play in U consistent with σ1 is a
 W1-play: U ⊆ W_p(F_{c1}(R')). □
 
-## 5. What is not done, and what killed the earlier frames
+## 5. Shape of a counterexample to (NT-f) (= to (FM)), for L-RED (Lead 08:08Z)
+Necessary (PROVED from the definitions): a −1 call (rounds 1..f) on R with stored tangles T, and a stored p-tangle t with
+(i) an escape in R, accepted by the region loop of round f at the pop of its last escape inside the region of a final top
+τ (pr(t) ≤ pr(τ); no vertex of t in a region computed earlier in round f);
+(ii) EVERY p-priority vertex of t pruned before round f (each would attract into Z_f, so it cannot be a final candidate);
+(iii) at the last round r* < f holding a p-priority vertex m* of t, t not accepted: its escapes are already attracted
+(FM+ induction), so the rejection is the straddle test 138-139 — a vertex w of t consumed by a region of a top π computed
+before the region where t's last escape is popped (index(π) > index(τ)), and m*'s tangle successor (or one R-edge of m*)
+outside Z^{r*}.
+Observed near misses (experiments/alg/dtl_fmclimb.py, dtl_ntfclimb.py from c_best_s34, b_best_s33, dtl_mviol_n20,
+dtl_deficit_n20; both orders): a tangle with all its p-priority vertices pruned is accepted at round f−1, always inside
+the region of a top that is itself pruned at round f−1 (b_best_s33.pg: tangle {6}, host top 3 of priority 21, escape 5
+in 3's region; dtl_mviol_n20.pg: tangle {12}, host 18, escape 16); at round f the host is gone and the escape lies in no
+region. A counterexample therefore needs the host's role at round f taken by a FINAL top τ: τ's round-f region must reach
+t's escapes while τ (a candidate at round f) has no edge into Z_f and no rescue below pr(τ).
+
+## 6. What is not done, and what killed the earlier frames
 - (YZ) and (FM) are absences of straddling-tangle effects (GAP-A-M Lemma E), the family behind (α) and GAP-A's deficits.
 - The S step and the T step of KT (GAP-C.md 18i, 18j) are DATA only; the T step needs the frame at recursion depth ≥ 1, where
   a core closed in G[R_d] is not guaranteed; the S step is existential over the levels ((S-LEVEL) killed).
