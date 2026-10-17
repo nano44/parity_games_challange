@@ -1107,6 +1107,9 @@ PROVED
 | Region split: Attr_{q−1}(U) = Attr_{q−1}(A_q ∪ V^{<q}); level-q survival depends on lower levels only through the set V^{<q}, monotonically (box 4) | A_DTL | §18a |
 | U equal at r0 ⇒ V_r0 grows (LEX-R in that case) | A_DTL | §18b |
 | Extra tops X ⊆ Y (same T) hurt only vertices of their own priority or lower (box 4) | A_DTL | §18h |
+| Phases ≤ D + 2 (D = dominion-finding searches ≤ n); with (SPP): searches ≤ n(n+2), tangles ≤ n²(n+2), O(n¹⁰(m+n²)) word ops, O(log n)-bit words (box 5) | A_DTL | §21c |
+| First-Difference Lemma: consecutive searches agree up to the first differing tangle attractor, whose input is equal and output strictly larger; the cause is a tangle learned later in the earlier search (box 5; reading) | A_DTL | §21d |
+| Lemma DV*-MONO: the clean ideal root distance DV* is pointwise monotone in T, so it changes ≤ n(n+1) times per phase (box 5) | any tangle sets | §21h |
 
 KILLED (FALSE / DEAD), each with its instance
 | Claim | Instance (experiments/alg/instances unless noted) | Where |
@@ -1134,9 +1137,14 @@ KILLED (FALSE / DEAD), each with its instance
 | Any potential on the actual per-context state for DEF changes (synthetic, genuine tangles) | dtl_staterevisit.py (pure DEF cycle) | §18f |
 | "Fallers are strictly below the top riser in priority" (box 4 DATA pattern) | lex_viol_oink_n20.pg | §18h |
 | (CM): child M never drops across a parent DEF step into an ideal-stable child context | cm_viol_oink_n28.pg (L-ALG) and red/carry/instances/cm_mdrop_both_n28.pg (L-RED R17), A_DTL, Oink-verified, both orders | §18i, DEAD.md |
+| Per-phase potentials for (SPP) (box 5): tangle-vertex union, tops, (top, vertex) pairs, new-vertex-for-top; fixed-input attractor sums PSI1-PSI5; settled piece labels; PHI0 / LEX0 (depth-0 removal index); used-tangle set; LR-/LT-SETTLE; (CL) | C5 corpus, both orders: spp_final_n20/n30/n40, spp19_oink_n30 (failure counts in the tables) | §21d, §21e |
+| "S ≤ P + c", "S ≤ d'", "S ≤ distinct p-parity priorities" (sharper forms of (SPP)) | spp_final_n20 (Oink: 19 vs P 14, d' 13) | §21a |
+| The author's per-search check (DV changes at every tangle-learning search; dtl.cpp computeDistanceValues) | spp_chain_up_n43 (41 of 41 unchanged; pinned Debug Oink agrees), 525 of 990 corpus searches | §21f |
+| Constant tangles per top per phase | spp_final_n40 (13 at one top) | §21e |
 
 DATA candidates left after box 4 (A_DTL; every per-context (H4) POTENTIAL candidate is dead):
 (U-MONO_DTL) same-input union monotone in T (701/701 Oink, 661/661 stable, §18h); (LEX-R) first differing round grows (775/775, 755/755); "no DEF-down step at an ideal-stable context" (0/181).
+Box 5 DATA candidates (A_DTL): (SPP) S ≤ |G'| and (SPP-sharp) S ≤ max(1, |G'| − 1), tight (dtl_chainfam, spp_chain_up_n43, both orders, §21a-b); (DV-nofall) the author's DV never falls (0/1,237, 0/1,204; synthetic 0/101,600; Lemma DV-MONO = SKETCH + GAP, §21f-g); absorption (c1) 87/87, 75/75 (§21d).
 OPEN: GAP-A via (H1) cut carries, (H2a) alive-top self-reinforcing carries, (H2b) dead-top cap carries (reduces to
 c_i, circular), (H3) catch-ups and recursion, (H4) deficits on A_DTL (per context: 4 → 8 over n = 20 → 44, Oink
 order). Core: whether fresh, resetting child contexts (§15, §16) or deficit staircases (§13b) can compound across
@@ -1704,3 +1712,51 @@ tangle-learning search: a per-search progress measure ("distance tangle learning
   (absorption), 22 SHRINK deeper, 6 RES deeper. So root DV sees the root pruning; the rest of the work happens in later
   depth-0 pieces and in recursions, where the same ideal distance would have to be taken at a context that itself changes
   (the per-context problem of §13-§18 again).
+
+### 21h. DV*, a clean ideal distance: PROVED monotone, a global (per-phase) potential that rarely moves (00:32Z by date -u)
+Definition (experiments/alg/dtl_dvstar.py). G fixed, p the phase player, T a set of p-tangles with escapes judged in G.
+lfp(Z, θ) = the least superset of Z closed under: a p-vertex of priority ≤ θ with an edge into Z; an opponent vertex of
+priority ≤ θ with all its edges into Z; a tangle all of whose vertices have priority ≤ θ and all of whose escapes are in Z
+(its vertices join). One round on input V: Z := ∅; for each τ ∈ V in decreasing priority (ties by index), Z := lfp(Z ∪
+{τ}, pr(τ)); C := the v ∈ V that do not attract into Z; for each priority level t ascending: Z := lfp(Z, t) and every v ∈ C
+with pr(v) > t that attracts into Z leaves C; output V \ C. Start from V_0 = the p-priority vertices of G; DV*[v] = the round
+at which v is dropped, INF if it is in a round with C = ∅.
+Lemma DV*-MONO (PROVED). T ⊆ T' ⇒ DV*(T) ≤ DV*(T') pointwise.
+Proof. lfp(Z, θ) is monotone in Z and in T (every rule is monotone in Z, and T' only adds rules). One round is monotone in
+(V, T): with V ⊆ V', walk the list V' in decreasing priority; at τ ∈ V' \ V only the primed Z changes and it only grows
+(lfp(Z' ∪ {τ}, θ) ⊇ Z'); at τ ∈ V both runs apply lfp(· ∪ {τ}, pr(τ)) to Z ⊆ Z', so Z ⊆ Z' throughout. "Attracts into
+Z" is monotone in Z for both owners, so C' ∩ V ⊆ C at the start, and Z_t ⊆ Z'_t at every level t of the sweep (same
+induction). If v ∈ V stays in C' to the end, then v ∈ C at the start and v never attracts into Z'_t ⊇ Z_t, so v stays in
+C to the end. So V \ C ⊆ V' \ C'. Induction over rounds gives V_r(T) ⊆ V_r(T') for
+every r (a round with C = ∅ is a fixpoint, and the primed round on a superset drops none of it by the same inclusion), so
+a vertex dropped at round r under T' was dropped at a round ≤ r under T, and INF under T implies INF under T'. □
+Consequences. DV* depends on T only, so in one phase (T only grows, G fixed) it is a GLOBAL potential: pointwise
+non-decreasing, values in {1..n, INF}, hence it changes at most |V_0|·(n + 1) ≤ n(n + 1) times per phase. PROVED.
+DATA (dtl_dvstar.py): on spp_final_n20, spp_chain_up_n43, spp_final_n40 (Oink order) DV* moves in only 10 of 83
+transitions (0 falls, as proved); on C5 it moves in 465 of 990 transitions (Oink order) and 464 of 957 (stable), 0 falls:
+exactly the transitions where the author's DV moves (21f: 990 − 525, 957 − 493).
+DV = DV* as functions (DATA, 00:42Z by date -u; experiments/alg/dtl_dveq.py): equal on all 1,408 DTL-learned tangle sets of
+the C5 phases (Oink order) and on 20,000 random (game, genuine tangle set) pairs (n ≤ 11, re-indexed by priority). If
+DV = DV* holds in general, Lemma DV-MONO follows from DV*-MONO. Why the GAP scenario of 21f is rare (reading): a difference
+needs a tangle τ outside Z whose escapes are all in Z before the sweep reaches τ's top priority; in round 1 every p-priority
+vertex of τ is itself a top and its region pulls τ in vertex by vertex, so a difference needs a later round in which
+τ's tops were already dropped as distractions. Not proved. So DV* bounds a minority of the searches; the rest (the
+absorption and later-piece changes of 21d/21g) leave DV* (and DV) unchanged. Relation to the author's
+DV (21f): the same rounds with Oink's re-check order; DV* removes the GAP by construction.
+
+### 21i. Exhaustive small games, and why resets are expensive (designer reading) (00:37Z by date -u)
+- experiments/alg/dtl_sppexh.py (harness/exhaustive.py: every game with n vertices, owners {0,1}, priorities 0..3, every
+  non-empty successor set), both order data: n = 1 (8 games), n = 2 (576), n = 3 (175,616): 0 violations of (SPP-sharp).
+- Reading (L-ALG, hand designs around dtl_chainfam, not a proof). For a phase to exceed |G'|, some vertex x must be
+  learned in two tangles of different vertex sets after a reset, at less than one fresh vertex per extra search. Three
+  facts from the pseudocode make that expensive. (1) Every out-edge of an opponent vertex x leads to an escape of every
+  tangle containing x that does not contain its target, so a partner u on a new cycle through x is an escape of x's old
+  tangle. (2) Old tangles stay stored and are re-absorbed in ONE search as soon as their open escapes close (the −1
+  attractor chains through all stored tangles), so a reset that re-opens a chain is undone at once unless something keeps
+  an escape of each old tangle open. (3) sptl consumes regions top-down, so a partner shared by several chain vertices goes
+  to the highest one, whose region is not closed; the bottom vertex then finds only its old SCC (a duplicate). In every
+  variant tried (one shared Even partner w with edges to all x_j; w with an edge to x_1 only; an Odd pool), the second
+  epoch costs one search, or the chain stalls, or each re-learned x_j needs a private blocker vertex. So the cost of a
+  renewable reset appears to be one vertex per re-learned vertex, which is what (SPP) would need. The attack direction
+  for L-RED stays open: a blocker that is shared across chain vertices AND across epochs, kept open by the pruning
+  (best_vertices distractions), not by the attractors.
