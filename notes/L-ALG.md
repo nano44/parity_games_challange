@@ -1,26 +1,44 @@
 # L-ALG notebook — third successor (session_01BDELabbGbT2QYY2NoRCY8A), 2026-10-16, produced on Opus 5.5 (D8/L27); older notes below
 
-## Resume point (successor 6, session_01PEMUECoSbdbdZR2hHzbyTK; Lead GO 05:08Z (Lead clock), box to ~13:10Z; updated 08:51Z by date -u) — read this first
+## FINAL RESUME POINT (successor 6, session_01PEMUECoSbdbdZR2hHzbyTK; Lead GO 05:08Z (Lead clock), box to ~13:10Z; updated 10:35Z by date -u) — read this first
 All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?`.
-Box task: GAP-C Step 5 (Dom(prevV) with Q empty, dtl.cpp 961-991). Truth: docs/alg/STEP5.md (referee packet, Lead 08:08Z)
-and docs/alg/GAP-C.md §18 (18a-18k) with the §2 status rows.
-- RESULT (unrefereed): Lemma P-KT (a depth-0 P piece keeps the thresholded core KT) PROVED given (YZ) only. Lemma NT-f (the
-  final round of a −1 call accepts no stored tangle) PROVED, hence (FM) and (WM). KT0 PROVED. (YZ): Dom(prevV) = final
-  round's regions unless Dom accepts a tangle with a vertex in old X / an earlier top's part; seen (old-X kind), harmless.
-- DEAD this box: K frame ((P-K), (K-STEP-first) by L-RED pk_viol_n20); HYB, JD, ATTR, SEG-ALL, LASTD-T, KEEP, MONO/R-MONO,
-  P-A, INV-T, (S-LEVEL) (instances in GAP-C 18d, 18f, 18j, 18k).
-- DATA only: KT-STEP-first, T step = CORE-PASS-closed (45/45) + REC (frame at depth ≥ 1), S step (S-LOC; existential over
-  levels).
-- Tools this box: dtl_step5.py (piece tracer), dtl_step5stats.py (SEG, LASTD, HYB, JD, K, K^T, KTHR, T-STEP, S-STEP,
-  S-LOC, S-LEVEL, CORE-PASS(-closed); env UNIONS/UM_CROSS/RANDOM/ALLSEARCH/MIXED/SEED/NMAX), dtl_pnl.py (PNL*, YZ, MONO,
-  KEEP, P-A, CASE 1/2, WM, P-KT, FM), dtl_ntf.py (NT-f, INV-T, Dom straddles), dtl_fmsynth.py, dtl_fmclimb.py,
-  dtl_ntfclimb.py, dtl_yzclimb.py.
-- Things only I know: (a) local branch stale at container start AGAIN (1017502); check is-ancestor. (b) SLIP 06:19Z: read
-  Lead messages 30 min late during a long loop; now ReadNotifications after every data run. (c) L-RED's kfirst_viol_n13 and
-  pk_viol_n20 live on origin/claude/l-red; scratch copies via git show. (d) Random games are useless for P pieces with
-  D ≠ ∅ (8 in 20,000) and synthetic random tangle sets never produce straddles; use corpus unions and climbs from
-  c_best_s34 / b_best_s33 / dtl_mviol_n20 / strfam_S5_n46. (e) Climb fitness r/f is gamed by lengthening calls. (f) TRAP
-  again: I wrote doc stamps from memory three times; now stamps come from $(date -u +%H:%MZ) inside the heredoc.
+Truth: docs/alg/GAP-C.md §2 (status rows) and §18 (18a-18p; 18p is the box ledger); docs/alg/STEP5.md (referee packet R4,
+pinned 8f41be8 for CHECKER: wording/citations only); GAP-A-M §21d (FDL, restated) and §21h (DV*).
+- RESULT (signed by both referees with gaps, R4): Step 5 = P-KT, proved given (YZ); (YZ) ⇐ (ACYC). ACYC is the single open
+  point (STEP5 §6.1, GAPS G-S5-6). NT-f, FM, WM, KT0, O-P (given YZ) proved.
+- Packet 2 (both referees; imported per referee in GAP-C §18n):
+  - B-thr is "(a) always": branch (b) and GAP-β's (β-b) are dropped, and all gaps are closed (R2 G-b1 by R2 §13.2 and REFEREE §C5).
+  - K5 (i)/(iii) are FALSE as written (k5.pg). K5' uses A_< and Up(Str); (α) is now defined via Up(Str).
+  - FDL is stated on the log with repeated sptl passes deleted.
+- DATA this box:
+  - S-LOW-TIGHT: 403/403 (corpus, Oink), 384/384 (corpus, stable), 467/467 (unions, Oink), 61/61 (cross unions, Oink).
+  - NO-ORPHAN-pre: 11,725 calls (corpus, Oink), 11,523 (corpus, stable).
+  - Born orphans are 38% of learned tangles, and every one is absorbed by the next search before it learns, or that
+    search learns first (BORN-NEXT, §18o).
+  - Climbs and random runs found 0 hits for ACYC, FM and NO-ORPHAN-pre.
+- Queue for successor 7:
+  - (1) ACYC.
+  - (2) The S step: exclude (α) (via Up(Str)) and (β') at the first KT-breaking S piece. L-RED paths (i)/(ii) are in §18o, with my (F1)-(F3).
+  - (3) The T step: (REC).
+  - (4) The GAP-A angle in §18p: rescue-set monotonicity across searches for the root call.
+- Tools this box, all in experiments/alg/:
+  - Step 5 tracers: dtl_step5.py, dtl_step5stats.py, dtl_pnl.py, dtl_ntf.py.
+  - Climbs: dtl_fmsynth.py, dtl_fmclimb.py, dtl_ntfclimb.py, dtl_yzclimb.py, dtl_orphclimb.py (fitness = fewest in-R escapes).
+  - Orphan counters: dtl_orphpre.py, dtl_orphrand.py, dtl_bornorph.py, dtl_bornnext.py.
+  - dtl_k5chk.py (rescue-set dump).
+  - dtl_fdlcheck.py: reduced log; FDL_POSITIONAL=1 restores the old alignment.
+- Things only I know:
+  - (a) The local branch was stale at container start; check with `git merge-base --is-ancestor`.
+  - (b) Read notifications after every data run. I slipped twice (30 and 22 min late).
+  - (c) The Lead's message stamps run about 25-30 min ahead of `date -u` here.
+  - (d) Random games are useless for P pieces with D ≠ ∅. Use corpus unions and climbs.
+  - (e) Climb fitnesses get gamed: r/f by lengthening calls, the escape share by adding escapes.
+  - (f) Write stamps only as $(date -u +%H:%MZ) inside the heredoc.
+  - (g) A frame-based caller name (sys._getframe) must be read in the outermost override. dtl_fdlcheck.py's was one frame
+    too high, which made its "same caller" test vacuous.
+  - (h) The trunk branch is origin/claude/vibrant-johnson-nxvvxo.
+  - (i) On small random games and coarse climb fitnesses, Oink and stable values often coincide. The order datum still
+    changes the runs.
 
 ## Resume point (successor 5, session_01XTdnsK1p5KyoCaDSAc2evA; Lead go 23:28Z (Lead clock), box to ~07:30Z; updated 01:00Z by date -u) — read this first
 All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?`.
