@@ -160,3 +160,7 @@ but needs a cross-search progress measure. R6 [refereed-only] landed (packet 3).
 ## 2026-10-17 13:52Z Lead (relayed to owner)
 R7, R8, R9 [refereed-only] landed (trunk 1501aad; Opus referees D12, CHECKER PASS). R9: GAP-A <= (CTX+) and (FALL), both data only
 (<=10, <=3). DE14-DE16. GAP-C unchanged. REFEREE-2 and CHECKER parked.
+
+## 2026-10-17 16:58Z Lead (relayed to owner)
+R11 [refereed-only] landed (trunk af07389; Opus D12, CHECKER C11 PASS): only fired tangles matter; GAP-A <= (CTX+) & (STEAL-ONCE*)
+& (FIRED-R), all data only. GAP-A, GAP-C open. No overage, no incorrect run, no super-polynomial family.
