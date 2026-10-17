@@ -52,6 +52,13 @@ Status: WORKING (box 6, Lead GO 04:29Z, to ~12:30Z Lead clock). Box-5 status lin
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-17 ~05:55Z box 6 (produced on Opus 5.5): R26 (a885315) K-in/K-low first pass: NO violation (grafts 3,500 +
+2,200 + 14,000, rgraft 20,000, nbhd 20 steps, klow climbs ~300k steps; obstruction notes: rescue, last-remnant closure,
+replay breaks by tangle attraction). R27 (1cad017): (P-K) and (K-STEP-first) FALSE, pk_viol_n20 (sha1 942bd778, both
+orders, run complete, PNL* holds; reported 05:49Z). Tool carry/pk.py (LALG6_DIR = <scr>/lalg12 = l-alg 9000121).
+RUNNING: pk climbs 9501 (oink, gapbW), 9503 (oink, kfirst_viol_union); klow 9331 (stable, pk_viol_n20); spp 9401 (oink,
+spp22_oink_n40, LALG_DIR=<scr>/lalg6). Scratch pk/, kl/, spp/. Lead fitness (05:48Z): incomplete/wrong > K-in >
+K-STEP-first / P-K > K-low > PNL* > TW > rest.
 2026-10-17 ~05:15Z box 6 (successor 4, produced on Opus 5.5). DONE: handover 8fac07c; R25 (ec9b61d): (K-first)/(K4-B)
 FALSE, kfirst_viol_n13 (both orders, run complete) = INDEPENDENT second instance (L-ALG b992733 killed them first, n = 26;
 my 04:59Z report claimed priority wrongly, corrected 05:05Z). Mechanism: Odd-won b' enters X by a THRESHOLD piece built on
