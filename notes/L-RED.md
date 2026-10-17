@@ -2,9 +2,9 @@
 Previous: session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, parked 15:20Z); before it session_0117Yy21tGGz9s1zzLfBdUKC (Fable).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: PARKED (box 16:03Z-00:05Z Lead clock ended; all climbs stopped 23:05Z). This box: R17 (CM) FALSE; R18 (LEX)+(NR)
-FALSE; R19 (F1) FALSE; R20 replay depth 4 at n=32, DEF-(F1) FALSE, replay-depth caveat; R21 box-end data (searches per
-phase best 19 at n=30, both orders; no phase with > n searches). Next-box targets: R21 section 4.
+Status: WORKING (box 5, Lead 23:20Z, 8 h, same session). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
+(n = 20/30/40/60 x 3 seeds x both orders, 1500 steps, heartbeat 100; carry/spp.py, --fitness spp; scratchpad eq/);
+(2) renewable reset, U-shrink (R21 section 4); (3) per-phase potentials L-ALG states (via the Lead).
 
 ## DONE (all merged by the Lead unless noted)
 - R1 docs/red/R1-MSF.md: S2a MSF KILLED (gated Bland counter 2^N - 1; Gate Lemma: gates relabel the first-difference level).
