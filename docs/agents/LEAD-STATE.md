@@ -390,3 +390,4 @@
 - 07:18Z Lead: merged l-red eb7a58e; YZ/FM climbs 9711/9712 started; corpus 0 bad in 148 files; KT plateau (1 of 9 c-levels survive a P piece, no break); K-in samplers no hit.
 - 07:32Z Lead: L-RED self-correction (reporting slip): K-in samplers 13/14 were stopped at 06:41Z, not running as reported at 06:58Z/07:22Z. Correct totals samplers 11-14: ~10,500 interacting unions, 12,909 eligible runs, 0 K-in violations, 0 incomplete runs. Restarted as 15/16.
 - 07:35Z Lead: merged l-alg 37d3440 (T-STEP, CORE-PASS); routed to L-RED.
+- 07:39Z Lead: merged l-red e34b495 (T-STEP fitness wired; relaunch block in notebook; status from ps).
