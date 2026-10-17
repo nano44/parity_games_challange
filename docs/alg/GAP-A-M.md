@@ -2745,3 +2745,12 @@ Sharper invariants (17:08Z by date -u; same data, Oink order):
 - Not proved. The obvious attack shape: after region 2 has stolen from region 3, let region 1 (monotone in round 1)
   grow into a tangle that fired in region 2. Target for L-RED.
 - Union runs with all these checks are running.
+Union data (17:28Z by date -u; RM_PREF=1 RM_EXCL=1 RM_LIGHT=1; corpus included). Relevant steals followed through the rest
+of the phase. NO-REFIRE, STOLEN-PERM and STEALER-MONO each hold in every case:
+
+| set | Oink | stable |
+|---|---|---|
+| cross unions s11 (600, UM_CROSS = 3) | 377 / 377 | 456 / 456 |
+| mixed unions s1 (900) | 644 / 644 | 849 / 849 |
+
+With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) / 1,519 (stable) relevant steals.
