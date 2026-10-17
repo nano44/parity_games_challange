@@ -32,10 +32,10 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | (S2) | "a context containing a p-dominion is never pruned to −1" | FALSE (§4); the proof must follow the dominion through −1 pieces |
 | OPP-EXIT (new) | a learned tangle meets W_{1-p} only where the opponent's winning move is an edge the region forgives | PROVED (reading), §11 |
 | K-in, TW, LOW-W | progress inside W_p, from a lowest region; learned tangles never straddle W_p's boundary | DATA (§9-§11), 0 violations |
-| K-first | the FIRST stable piece's lowest region is productive inside W_p | DATA (§13), 483/483, 464/464 |
+| K-first | the FIRST stable piece's lowest region is productive inside W_p | KILLED (§14): instances/kfirst_viol_union.pg (276 of 891 mixed searches) |
 | Theorem A | if the root call is stable, its lowest region is in W_p and is productive unless (α) | PROVED (reading), §13 |
-| K4-B | the first stable piece's regions lie in W_p even after −1 pieces | DATA (§13), 483/483 (31 mixed) |
-| GAP-K' | Case B (first stable piece after −1 pieces, 481 of 483 searches): (K4-B) + (α) + (β-1) | GAP, §13 |
+| K4-B | the first stable piece's regions lie in W_p even after −1 pieces | KILLED (§14), union games |
+| GAP-K | (K-low): some stable piece's lowest region is productive inside W_p | GAP (§12, §14); DATA 0 violations incl. 2,092 mixed union searches |
 
 ## 3. The new steps
 Lemma SCC1 (PROVED, reading). Let τ be a top in sptl (dtl.cpp 477-550) with region Z_τ, computed from {τ} by the
@@ -309,3 +309,21 @@ every search with W_p(G') ≠ ∅ and no dominion, V* and the union of the final
 Reading of (K4-B): by OPP-EXIT-type reasoning, a vertex of A ∩ W_{1-p} would need the opponent's winning moves to leave A
 into X ∩ W_{1-p}; a proof would show that every −1 piece removed before the first stable piece is a set from which the
 opponent's winning moves cannot re-enter R. Not attempted further in this box.
+
+## 14. Mixed test games: (K-first) and (K4-B) are FALSE; (K-low), (K-in), (TW) survive a real test (04:31Z by date -u)
+Test set (experiments/alg/dtl_unionmix.py): disjoint unions of two corpus games (n ≤ 32 each, priorities kept), 900 pairs
+(seeds 1-3), searches of p with W_p(G') ≠ ∅, |W_{1-p}(G')| ≥ 3 and no dominion: 891 mixed searches. Random games give
+none (dtl_mixedgen.py: 0 of 12,000 random games qualify; every such search finds a dominion).
+- (K4-B) "the first stable piece's regions lie in W_p": DEAD at once (the opponent-won component has its own p-priority
+  tops); (K-first) "the FIRST stable piece's lowest region is productive inside W_p": DEAD, 276 of 891 mixed searches
+  (88/304, 98/300 Oink order seeds 1-2; 90/287 stable order seed 3). Killer committed:
+  experiments/alg/instances/kfirst_viol_union.pg (n = 26, Even wins 7; Even's searches 0 and 1 violate it in both order
+  data; pinned Oink 7 iterations, verified). So the corpus results of §13 were an artefact of W_p = G' (or a single
+  opponent vertex); Theorem A stands (it is about the root call).
+- (K-low)/(LOW-W) "SOME stable piece's lowest region is productive inside W_p": holds on all 235 saved union games with a
+  (K-first) violation, in every search with W_p ≠ ∅ and no dominion: 1,025 of 1,025 (Oink order), 1,067 of 1,067 (stable).
+- (K-in): 0 violations there (1,582 / 1,647 searches with W_p ≠ ∅). (TW): 4,119 learned tangles inside W_p, 1,782 outside,
+  0 straddling (stable 4,127 / 1,772 / 0): now a real test of (TW).
+Current GAP-C statement (replaces §13's GAP-K'): (K-low) with GAP-K (the existential, §12), plus (TW) as the conjecture
+that makes "inside W_p" automatic once a candidate's top is in W_p. Proved support: SCC1, B-thr, O0, O1, OPP-EXIT,
+Theorem A, K5/K6.
