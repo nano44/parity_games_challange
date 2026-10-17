@@ -268,3 +268,29 @@ Restated reduction (the four parts become one existential):
   show that one of those earlier pieces (or the recursion that removed them) contains a productive candidate inside W_p.
   Smallest shape that would break GAP-K (for L-RED; their current climb): a search with W_p ≠ ∅, no dominion, in which
   every candidate inside W_p is a duplicate of type (β-a)/(β-b) and every other candidate lies outside W_p or is open.
+
+## 13. (K-first): the FIRST stable piece is the productive one; Case A proved up to (α) (04:01Z by date -u)
+(K-first), DATA (experiments/alg/dtl_whichpiece.py; corpus + 1,500 random games): in every search of p with W_p(G') ≠ ∅ and
+no dominion, the FIRST stable piece of the search (call order, any depth) is good: in one of its sptl passes the lowest top
+that gets a region lies in W_p(G') and extracts a NEW tangle inside W_p(G'). Oink order 483 of 483 (31 of them mixed,
+W_p ≠ G'), stable order 464 of 464 (31 mixed). (The LAST stable piece fails once in each order; "some piece" = LOW-W.)
+This matches DTL-proof.md §2.3 K6 ("a search that learns nothing at its first stable set is of shape (α) or (β')"), now with
+the location inside W_p.
+Theorem A (PROVED, reading, given (α) does not occur). If the ROOT call (depth 0, first best_vertices call, X = ∅) of
+search(p) returns 1, then its lowest region (top τ_k) lies in W_p(G'), and if it is closed (not (α), K5) it yields a new
+tangle or a dominion, inside W_p(G'). Proof. K4 (DTL-proof.md §2.3, PROVED): the final threshold set A of a stable V* at
+X = ∅ is p-won, A ⊆ W_p(G'); the regions are inside A, so τ_k ∈ W_p and C_{τ_k} ⊆ Z_k ⊆ W_p. By SCC1 the only candidate SCC
+is C_{τ_k}; it is nontrivial when the region is closed (K5(ii)). It is not a stored tangle: by B-thr (ii) a duplicate has all
+its escapes outside R = G', i.e. solved, which Lemma O0's argument excludes for any stored tangle (solved sets change only
+between searches, and at the solving of a tangle's last escape the tangle is attracted or deleted; this holds equally for
+tangles learned earlier in the same search, whose escapes lie in G' or are solved). So C_{τ_k} is new (or a dominion). □
+Case split on data (experiments/alg/dtl_kfirst_case.py, Oink order, corpus + random): Case A (root call stable) only 2 of
+483 searches. Case B, the first stable piece comes after −1 pieces: 474 at depth 0 (after 1 to 9+ calls), 12 at depth 1.
+So the real obligation is Case B:
+  GAP-K' (Case B). At depth 0, after −1 pieces have removed X (Dom(prevV) with Q empty, 962-991; threshold attractor and
+  recursion, 899-954) with nothing learned, the first stable piece's lowest top lies in W_p(G'), its region is closed and
+  its SCC is new and inside W_p. What is missing compared with Case A: K4 needs X to be p-won, and Dom(prevV) pieces need
+  not be (DTL-proof.md §2.3); and B-thr allows duplicates whose escapes lie in X (the realised duplicates gapb_dup_n20 and
+  gapbW_dup_n20 are at LATER stable pieces, consistent with (K-first)).
+  Smallest shape that breaks GAP-K' (L-RED): a search with W_p ≠ ∅, no dominion, whose first stable piece (after −1
+  pieces) has its lowest top outside W_p, or an open lowest region, or a duplicate there.
