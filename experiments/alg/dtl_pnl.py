@@ -12,7 +12,7 @@ Also checks the two steps of the proof route:
 DTL_ORDER = oink | stable. Usage: dtl_pnl.py G.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
-import pg, dtl_step5 as S5, dtl_step5stats as ST
+import pg, dtl_step5 as S5, dtl_step5stats as ST, dtl_orphan as O
 D = S5.D
 
 
@@ -121,13 +121,48 @@ class PN(S5.S5):
                     if depth == 0 and (s.Wp & R) <= amax and os.environ.get("PADUMP") and s.kd < 3:
                         s.kd += 1; L = lambda S: sorted(s.idx[v] for v in S)
                         print("P-A FAILS", s.fname, "p", p, "R", L(R), "D∩R", L(s.Wp & R), "prevV", L(V), "Z_f", L(rounds[-1]), "A_max", L(amax), "#rounds", len(rounds))
-                if depth == 0 and s.Wp & R: s.case1(p, frozenset(R), rounds, rv)
+                if depth == 0 and s.Wp & R: s.case1(p, frozenset(R), rounds, rv); s.pkt(p, frozenset(R), rounds[-1])
                 s.dom(V, R, X_, p); Y0 = R0 - frozenset(R)
                 s.check(p, R0, Y0, rounds, depth)
 
     def thr(s, p, Z, R, t):
         """Threshold-t tangle attractor of Z within R (best_vertices 722-731), without side effects on str."""
         sv = list(s.str); Z = set(Z); s.Q = sorted(Z); s.tattr(p, Z, R, R, t, None); s.str = sv; return Z
+
+    def lowdom(s, p, DR, R):
+        """W1 = a p-dominion of H = G[R] inside D ∩ R with the least maximum c1 (GAP-C §18h): for c of p's parity,
+        increasing, the greatest S ⊆ D ∩ R ∩ {priority ≤ c} closed in H (opponent R-edges in S, every p-vertex an R-edge
+        into S), then W_p(G[S]); the first nonempty one."""
+        for c in sorted({s.pr[v] for v in DR if s.pr[v] % 2 == p}):
+            S = {v for v in DR if s.pr[v] <= c}; ch = True
+            while ch:
+                ch = False
+                for v in list(S):
+                    out = [w for w in s.outs[v] if w in R]
+                    ok = any(w in S for w in out) if s.ow[v] == p else (bool(out) and all(w in S for w in out))
+                    if not ok: S.discard(v); ch = True
+            if S:
+                W = O.winning(s, S, p)
+                if W: return c, W
+        return None, set()
+
+    def pkt(s, p, R, Zf):
+        """Lemma P-KT (§18h): W1 ⊄ Z_f ∪ A_{c1}(R'), A_{c1}(R') the plain p-attractor of X ∪ Z_f inside D ∩ R' ∩ {≤ c1}."""
+        def inc(k): s.tab[k] = s.tab.get(k, 0) + 1
+        DR = s.Wp & R; c1, W1 = s.lowdom(p, DR, R)
+        if c1 is None: inc("P-KT: no p-dominion of H inside D ∩ R (impossible)"); return
+        if s.pr[max(W1, key=lambda v: s.pr[v])] != c1: inc("P-KT: max of W1 != c1 (unexpected)")
+        G = set(s.G0); Rn = R - Zf; X = G - Rn; Sc = {v for v in DR & Rn if s.pr[v] <= c1}
+        A = set(); ch = True
+        while ch:
+            ch = False
+            for v in Sc - A:
+                outs = [w for w in s.outs[v] if w in G]
+                ok = any(w in X or w in A for w in outs) if s.ow[v] == p else all(w in X or w in A for w in outs)
+                if ok: A.add(v); ch = True
+        U = W1 - Zf - A
+        inc("P-KT " + ("holds (W1 survives)" if U else "VIOLATION (W1 inside Z_f ∪ A_c1)"))
+        if not U and s.shown < 6: s.shown += 1; print("P-KT VIOLATION", s.fname, "p", p, "c1", c1, flush=True)
 
     def case1(s, p, R, rounds, rv):
         """Case split of the (P-K) proof (GAP-C §18f): M = max priority of D ∩ R; Case 1 = M of p's parity. (WM): for every
