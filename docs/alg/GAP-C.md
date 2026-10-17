@@ -40,10 +40,11 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | K frame (18b) | K(R): D ∩ R not wholly p-attracted to X; K0 (K(G'), not K(R_end)) | K0 PROVED; route DEAD: (P-K), (K-STEP-first) KILLED by L-RED pk_viol_n20 (18f) |
 | P-K1 (18f) | Case 1 of (P-K): max priority of D ∩ R of p's parity | PROVED given (YZ), (WM) |
 | KT frame (18g) | KT(R): thresholded core at some p-parity level c | KT(G'), not KT(R_end) PROVED; (KT-STEP-first) DATA 0 violations |
-| Step 5 = P-KT (18h) | a depth-0 P piece (Dom(prevV), Q empty) keeps KT | PROVED given (YZ), (WM_c1) (DATA: both hold on 63,000+ / 17,000+ pieces) |
+| Step 5 = P-KT (18h) | a depth-0 P piece (Dom(prevV), Q empty) keeps KT | PROVED given (YZ) only ((WM_c1) PROVED via NT-f, 18k); (YZ) DATA 0 failures |
 | S step, T step (18g) | a piece after which KT fails learns inside D (nothing learned in D before) | DATA only; S step contains (α), (β) |
 | YZ-read (18h) | Dom(prevV) = final round's regions unless an X-straddling tangle fires in Dom | PROVED (reading); (YZ) itself DATA |
-| FM, FM+ (18h) | final union of a −1 call inside every earlier round's union | PROVED except a round-r straddle of a tangle the final round attracts; DATA 106,091/106,091 calls |
+| FM, FM+ (18h) | final union of a −1 call inside every earlier round's union | PROVED (18k, via NT-f); DATA 106,091/106,091 calls |
+| NT-f (18k) | the final pruning round of a −1 call accepts no stored tangle | PROVED (reading); intermediate-round analogue INV-T FALSE (c_best_s34.pg) |
 | T step split (18i) | (CORE-PASS-closed): a T piece that breaks KT hands the recursion a p-dominion of G[Z'] inside D; then (REC) | DATA 45/45; P-KT carries over to depth 1 |
 | S-LOC / S-LEVEL (18j) | S learning lies in the core of SOME KT level / of EVERY destroyed level meeting V* | S-LOC DATA 0 violations; S-LEVEL KILLED (cross_h_k1_n12_m18_17) |
 
@@ -732,3 +733,41 @@ deficit vertex reappears to f−1 of f but never to f.
 tangle {14, 15, 16, 17} with a vertex in old X or in an earlier top's part; Y_0 = Z_f still holds there (the region loop
 reaches the same set by other rules), and P-KT holds (25/25 depth-0 P pieces). So (YZ) is not implied by the reading;
 it held on all data.
+
+### 18k. (NT-f) PROVED, hence (FM) and (WM) PROVED; Step 5 rests on (YZ) alone (08:43Z by date -u)
+Lemma NT-f (PROVED, reading). In the final round f of a best_vertices call that returns −1, the region loop (690-708)
+accepts no stored tangle.
+Proof. Suppose it does, and let t be the FIRST tangle accepted in round f, in the region of a top τ ∈ V_f, at the pop of
+an escape e ∈ R (attractTangles is called only from popped escapes, 198-202).
+(A) Every vertex x added in round f before t's acceptance lies in A^r(τ_x) ⊆ Z^r for every round r, where τ_x is the
+round-f top of x's region and A^r(σ) := the union of the round-r regions of the tops with index ≥ index(σ). Induction
+over round f's additions, all made by attractVertices (t is the first tangle): the top τ_x ∈ V_f ⊆ V_r is in A^r(τ_x)
+(consumed earlier or given its own region); a p-vertex x added at the pop of v → x: at v's round-r pop (v ∈ A^r(τ_x) by
+induction, in a region whose top has priority ≥ pr(τ_x) ≥ pr(x)) x is already in a region or is attracted (65-101); an
+opponent vertex x has all its R-edges into vertices added before it (the escape test 76-86 with Gx = CurR), all in
+A^r(τ_x) by induction; at the round-r pop of the last of them x is already taken or attracted.
+(B) Hence every escape of t in R is in Z^r for every r: at the acceptance each escape in R is in CurZ or already consumed
+in round f (150-157: an escape in CurR \ CurZ rejects t).
+(C) No p-priority vertex of t is in V_f: after the acceptance t ⊆ Z_f; a p-owned v ∈ t has its tangle successor in t, an
+opponent-owned v ∈ t has all its R-edges in t ∪ escapes (the escape set holds every edge of an opponent vertex of t that
+leaves t, 325-339) and one edge into t; either way attracts(p, v, Z_f, R) holds (40-57) and v is no candidate, contradicting
+the −1 result (every vertex of V_f is a candidate).
+(D) Let q := tpr(t), the maximal priority in t (the priority of the top that learned t, p's parity), M_q := t ∩ pr^{-1}(q),
+and m_1 ∈ M_q a vertex pruned FIRST, at round r_1 < f (by (C) every vertex of M_q leaves V before f). At round r_1 all of
+M_q is in V_{r_1} ⊆ Z^{r_1}. If q = 0, all of t has priority 0 = p-priority, so t ⊆ V_{r_1} ⊆ Z^{r_1}, and by (B) and the
+argument of (C) m_1 attracts into Z^{r_1}: not a candidate, contradiction. If q ≥ 1, run the rescue loop of round r_1
+(722-740) to level q−1: its set contains Z^{r_1}, hence M_q and every escape of t in R; at the level-(q−1) pop of e
+attractTangle(t) (110-185) finds t alive, every vertex in Z or in R with priority ≤ q−1 (the priority-q ones are in Z), and
+no escape in R \ Z, so t joins the set; then the candidate test at level q−1 (pr(m_1) = q > q−1, candidates in descending
+priority) finds m_1 attracting into it (tangle successor, or all R-edges in t ∪ escapes): m_1 is rescued at round r_1,
+contradiction. □
+Corollary FM (PROVED). In a −1 call Z_f ⊆ Z^r for every round r: by NT-f every addition of round f is a vertex-rule
+addition, and (A) applies to all of them. Corollary (WM) (PROVED): Z_f ⊆ Z^r ⊆ A^r_t for all r, t.
+Corollary (YZ-read sharpened, PROVED). Dom(prevV, R) and the final round's region loop are step-for-step equal until Dom
+accepts a tangle with a vertex in old X or in an earlier top's part (18h); before that point any acceptance in Dom would be
+an acceptance in the region loop, excluded by NT-f. So Dom accepts no tangle at all unless that first acceptance is such a
+straddling one, and (YZ) holds whenever Dom accepts no tangle. Observed once (strfam_S5_n46.pg, stable order; the
+tangle {14, 15, 16, 17} uses a vertex of OLD X), with Y_0 = Z_f nevertheless.
+Status of Step 5: Lemma P-KT (18h) is PROVED given (YZ) only. (YZ) can fail only through a tangle that Dom(prevV)
+accepts using a vertex of old X or of an earlier top's part, at a moment when the region loop rejects it.
+Unrefereed; Lemma NT-f is a reading of dtl.cpp @ 8fbf0a7 for every order datum (no step uses ω).
