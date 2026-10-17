@@ -124,3 +124,7 @@ Answered from trunk 9e1ae89 (NOW.md, RESULTS DE9-DE11, DECISIONS L31), l-alg 7c2
 ## 2026-10-17 09:05Z owner (progress question)
 > Give me a status update
 Answered from trunk 17ec77b (NOW.md, RESULTS DE12), l-alg dc231e0 (docs/alg/STEP5.md), l-red acfabb4. Relayed verbatim to the Lead.
+
+## 2026-10-17 09:07Z owner (progress question)
+> Are we narrowing down the decision to see?
+Desk reading: asks whether the work is converging on a decisive answer for DTL. Answered from the same sources as 09:04Z. Relayed verbatim to the Lead.
