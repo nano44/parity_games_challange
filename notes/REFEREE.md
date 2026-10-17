@@ -12,6 +12,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   PREFIX-MONO-X SIGN (absorbed case closes with EXACT's closedness, which does not need τ processed in run 2), corollary
   SIGN WITH GAPS (G7-c1 Π-blind e* via POS-FALL+C4, closed; G7-c2 necessary not sufficient). fallv_viol_n28: both falls at
   new steals; same tangle stolen at both. (FALL) <= (NS-COUNT). Tool docs/referee/scratch/p7probe.py.
+- R-P7 §C (1abe1d7): agree with R2-P7; ACCEPTED R2's G-P7-c2 (e*-pairs need not be consecutive visits; F_R <= 3 N_R) and
+  corrected my R-P6 A4 (factor 2 in R9's per-context budget). Lesson: never assume a context is visited once per search.
 - Lesson: Lemma 1.2 assumes Q = Z_0; Dom (878-890, 962-991) and bv regions push only the top. Check the push pattern.
 
 ## HANDOVER (parked 2026-10-17 ~12:20Z on the Lead's instruction; context ~520k; produced on Opus 5.5 under D12/L33)
