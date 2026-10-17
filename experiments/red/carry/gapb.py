@@ -40,12 +40,25 @@ def kfirst(path):
     if not m: raise RuntimeError(r.stdout[-300:] + r.stderr[-300:])
     return int(m.group(1)) - int(m.group(2))
 
+def k4b(path):
+    """L-ALG's dtl_k4b.py (unmodified, subprocess, LALG5_DIR >= 31fdd98): table rows with 'REGIONS OUTSIDE' or V* outside."""
+    ld = os.environ.get("LALG5_DIR")
+    if not ld: return 0
+    r = subprocess.run([sys.executable, os.path.join(ld, "experiments", "alg", "dtl_k4b.py"), os.path.abspath(path)],
+                       capture_output=True, text=True, timeout=180, cwd=os.path.join(ld, "experiments", "alg"))
+    bad = 0
+    for line in r.stdout.splitlines():
+        m = re.match(r"^(\d+) \((.*)\)$", line.strip())
+        if m and ("OUTSIDE" in m.group(2).upper() and "INSIDE" not in m.group(2).split(",")[-1].upper()): bad += int(m.group(1))
+        elif m and "OUTSIDE" in m.group(2).upper(): bad += int(m.group(1))
+    return bad
+
 def measure(path):
-    m = dupcheck.measure(path); m["kfirst"] = kfirst(path); low, tot = near(path); m.update(near_low=low, near=tot, loww=loww(path)); return m
+    m = dupcheck.measure(path); m["kfirst"] = kfirst(path); m["k4b"] = k4b(path); low, tot = near(path); m.update(near_low=low, near=tot, loww=loww(path)); return m
 
 def score(path):
     m = measure(path)
-    return (10 ** 12 * (m["unsolved"] + m["wrong"]) + 10 ** 11 * m["kin_viol"] + 3 * 10 ** 10 * min(m["kfirst"], 3) + 10 ** 10 * min(m["loww"], 9) + 10 ** 9 * m["dupW"] + 10 ** 8 * m["tw_straddle"] + 10 ** 7 * min(m["orphW"], 9)
+    return (10 ** 12 * (m["unsolved"] + m["wrong"]) + 10 ** 11 * m["kin_viol"] + 3 * 10 ** 10 * min(m["kfirst"], 3) + 2 * 10 ** 10 * min(m["k4b"], 3) + 10 ** 10 * min(m["loww"], 9) + 10 ** 9 * m["dupW"] + 10 ** 8 * m["tw_straddle"] + 10 ** 7 * min(m["orphW"], 9)
             + 10 ** 6 * m["barren"] + 10 ** 5 * m["dup"] + 10 ** 4 * min(m["orphans"], 9)
             + 10 ** 3 * min(m["near_low"], 9) + 10 * min(m["near"], 500) + m["searches"])
 
