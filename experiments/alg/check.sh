@@ -55,4 +55,6 @@ python3 -I dtl_twofall.py | tail -1
 python3 -I app_model.py 1 2 3 4 5 6 | tail -1
 # GAP-A-M.md §21: the chain family keeps S = |G'| - 1 searches in one phase (tightness of (SPP-sharp)), both order data
 python3 -I dtl_chainfam.py --check | tail -1
+# GAP-A-M.md §21d: the First-Difference Lemma holds mechanically on three long phases (Oink order)
+DTL_ORDER=oink python3 -I dtl_fdlcheck.py instances/spp_final_n20.pg instances/spp_chain_up_n43.pg ../red/carry/instances/spp19_oink_n30.pg | tail -1
 echo "ALG-CHECK PASS"
