@@ -151,3 +151,13 @@ LEAD-STATE.md, and the Lead noted its message overstated it. Text only, no re-ru
     "whose root RV does not fall raises Π strictly"). REFEREE open point 3 (R-P4 line 138) and R2-P4 §8 (line 197) say
     "PI-RISE on dirty transitions". The draft's restriction to transitions that do not lower RV is §22d's own scope. OK.
 - No open recommendations remain. R7 may land as at 86502cd.
+
+## Addendum 3: text re-diff at trunk 44af920 (Lead 12:45Z): PASS
+History: 86502cd is an ancestor of 44af920. Text only.
+- 86502cd → 44af920 adds one line and moves nothing else: "- Post-gate note: G-R7-5 (STR-DET-w) was discharged after this
+  packet by Lemma STR-DET, signed by both referees (RESULTS R8)."
+- N-1, N-2 and N-3 are as checked in Addendum 2 (1e4babe → 86502cd).
+- The post-gate note is accurate.
+  - REFEREE-2 R2-P5 §4 (6d508da): "(STR-DET-w) is discharged".
+  - REFEREE R-P5 Consequences (ca03021): "§22e: the (STR-DET) term is discharged", which implies the weak form.
+  - It cites RESULTS R8, which is not landed. Land R8 before R7, or both together (C8: docs/checker/C8-R8-strdet.md).
