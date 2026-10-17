@@ -52,6 +52,17 @@ Status: WORKING (box 6, Lead GO 04:29Z, to ~12:30Z Lead clock). Box-5 status lin
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-17 ~07:42Z box 6 RELAUNCH BLOCK (produced on Opus 5.5). <scr> = this session's scratchpad (lost with the container).
+Worktrees (git worktree add --detach <scr>/NAME SHA): lalg11 39f6111, lalg13 312c918, lalg14 b50e0c2, lalg15 35b3f96.
+From experiments/red:
+  LALG7_DIR=<scr>/lalg13 DTL_ORDER=oink   nohup python3 dtl/dtl_search.py x 1 --fitness kt --seed 9611 --steps 1000000 --hb 200 --from carry/instances/h4_notweaker_n20.pg --out <scr>/kt/t9611.pg > <scr>/kt/t9611.log 2>&1 &
+  LALG7_DIR=<scr>/lalg13 DTL_ORDER=stable nohup python3 dtl/dtl_search.py x 1 --fitness kt --seed 9612 --steps 1000000 --hb 200 --from carry/instances/replay4_n32.pg --out <scr>/kt/t9612.pg > <scr>/kt/t9612.log 2>&1 &
+  LALG8_DIR=<scr>/lalg15 DTL_ORDER=oink   nohup python3 dtl/dtl_search.py x 1 --fitness yzwm --seed 9711 --steps 1000000 --hb 100 --from <best of 9701, lost: use carry/instances/lemmaS_viol_n20.pg> --out <scr>/yz/y9711.pg > <scr>/yz/y9711.log 2>&1 &
+  LALG8_DIR=<scr>/lalg15 DTL_ORDER=stable nohup python3 dtl/dtl_search.py x 1 --fitness yzwm --seed 9712 --steps 1000000 --hb 100 --from carry/instances/f1_twodef_n48.pg --out <scr>/yz/y9712.pg > <scr>/yz/y9712.log 2>&1 &
+From the repo root (umix samplers, (K-in)):
+  find . -name "*.pg" -not -path "./tools/*" -size -8k > <scr>/corpus8k.txt
+  LALG5_DIR=<scr>/lalg11 nohup python3 experiments/red/k4b/umix.py 15 20000 <scr>/um 8 30 $(cat <scr>/corpus8k.txt) > <scr>/um15.log 2>&1 &   (and seed 16)
+Fitness meanings: kt.py = (P-KT)/(KT-STEP-first)/(T-STEP) at 1e11, "KT broken by T" at 1e9; yzwm.py = (YZ)/(WM)/(FM) at 1e11.
 2026-10-17 ~07:35Z box 6 (produced on Opus 5.5). Since 05:55Z: target (i) realised by pk_viol_n20 (R27 §3, 184e4d8);
 spp25_oink_n40 pinned (R24 addendum, e3b9a01; Oink 31 iterations verified, 25 searches/phase at |G'|=38 Oink order).
 New L-ALG targets and my fitnesses: KT (carry/kt.py, LALG7_DIR = <scr>/lalg13 = l-alg 312c918): plateau at 1 of 9

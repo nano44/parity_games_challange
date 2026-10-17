@@ -9,7 +9,9 @@ D = W_p(G') != {} and no dominion:
   kfv   = 1 if the first KT break is barren with nothing learned inside D before  ((KT-STEP-first) violated)
   kmin  = least (#c with KT after) / (#c before) over depth-0 P pieces with KT true before (gradient)
   pD    = D-vertices removed by depth-0 P pieces
-Score: 1e12 incomplete + 1e11 (kin + pk + kfv) + 1e6 (1000 - best kmin per mille) + 1e3 min(pD, 999) + searches.
+  tb    = depth-0 T pieces that break KT; tbar = those whose recursion learns nothing inside D, with nothing learned
+          inside D before ((T-STEP) violated iff tbar > 0; l-alg 37d3440, GAP-C.md §18i)
+Score: 1e12 incomplete + 1e11 (kin + pk + kfv + tbar) + 1e9 min(tb, 9) + 1e6 (1000 - best kmin per mille) + 1e3 min(pD, 999) + searches.
 Order from DTL_ORDER. Usage: kt.py G.pg ..."""
 import sys, os
 ld = os.path.join(os.environ["LALG7_DIR"], "experiments", "alg")
@@ -18,7 +20,7 @@ import pg, dtl_step5 as S5, dtl_step5stats as ST
 
 def measure_game(g):
     d = S5.build(g); d.run()
-    m = dict(incomplete=len(d.G), kin=0, pk=0, kfv=0, kmin=1000, pD=0, searches=len(d.trace), wsearch=0)
+    m = dict(incomplete=len(d.G), kin=0, pk=0, kfv=0, tb=0, tbar=0, kmin=1000, pD=0, searches=len(d.trace), wsearch=0)
     for tr in d.trace:
         Dw, G, p = tr["Wp"], tr["G"], tr["p"]
         if not Dw or tr["dom"]: continue
@@ -34,6 +36,12 @@ def measure_game(g):
                 if k0:
                     m["kmin"] = min(m["kmin"], int(1000 * len(k1) / len(k0)))
                     if not k1: m["pk"] += 1
+            if pc["kind"] == "T" and k0 and not k1:                       # (T-STEP), GAP-C.md §18i (l-alg 37d3440)
+                m["tb"] += 1
+                nxt = next((j for j in range(i + 1, len(pcs)) if pcs[j]["depth"] == 0), len(pcs))
+                rec = any(C <= Dw for q in pcs[i + 1:nxt] if q["kind"] == "S" for C in q["new"])
+                before = any(C <= Dw for q in pcs[:i] if q["kind"] == "S" for C in q["new"])
+                if not rec and not before: m["tbar"] += 1
             if k0 and not k1 and first:
                 first = False
                 nxt = next((j for j in range(i + 1, len(pcs)) if pcs[j]["depth"] == 0), len(pcs))
@@ -47,7 +55,7 @@ def measure(path): return measure_game(pg.read(path))
 def score(path):
     m = measure(path)
     if m["wsearch"] == 0: return 0
-    return (10 ** 12 * m["incomplete"] + 10 ** 11 * (m["kin"] + m["pk"] + m["kfv"]) + 10 ** 6 * (1000 - m["kmin"])
+    return (10 ** 12 * m["incomplete"] + 10 ** 11 * (m["kin"] + m["pk"] + m["kfv"] + m["tbar"]) + 10 ** 9 * min(m["tb"], 9) + 10 ** 6 * (1000 - m["kmin"])
             + 10 ** 3 * min(m["pD"], 999) + min(m["searches"], 999))
 
 if __name__ == "__main__":
