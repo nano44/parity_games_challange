@@ -3032,7 +3032,7 @@ event of q at pair j < i, a RE-STEAL.
   - Pieces (differences along a chain) repeat heavily: 585 of 877 were seen earlier in the phase. The maximum number of
     distinct pieces is 84 at |G′| = 43 (spp_chain_up_n43, S = 42), i.e. 1.95·|G′|.
 - dtl_rootmono.py RM_BIRTH=1 (new flag; default output unchanged) compares e*'s context with the birth arenas (sptl arena at
-  extraction) of the tangles learned by s. Same three files plus spp_chain_up_n43: 91/91 transitions with e* in a
+  extraction) of the tangles learned by s. On ctx12_oink_n40, ctx13_n40 and spp_chain_up_n43 (Oink order): 91/91 transitions with e* in a
   best_vertices call land in the loose class "the context contains a birth arena at the same or greater depth"; 0 EQUAL a
   birth context.
   - The loose class is nearly automatic for depth-0 contexts, so this is NOT informative. A sharper test would be "e* lies on
