@@ -454,3 +454,4 @@
 - 12:47Z (date -u) merged checker ad8434c (C7 re-diff 0eba38b->86502cd PASS). Holding R7 landing for the C7/C8 request of 12:45Z (covers R7 post-gate note at 44af920, R8, and the R6 (e) reading edit).
 - 12:50Z (date -u) merged checker 544c3a9 (C7 addendum 3 PASS, C8 R8 PASS, N-1..N-4) and referee a13ad2f (REFEREE successor handover, 5/5). LANDED RESULTS R7 and R8 (R8 with N-1..N-4 citation/wording edits). R6 (e) reading line held for CHECKER's one-line check.
 - 12:52Z (date -u) packet 6 (GAP-A-M §22f FALL budget, §22j Dom budget) to REFEREE succ. and REFEREE-2, pin 8ff4085.
+- 12:55Z (date -u) merged checker ca9188f (R6 (e) note PASS) and l-alg a280827/5b48b91 (§22i per-referee imports; union data weak STR-DET 6,031/6,153 mixed, 3,370/3,377 cross, Dom 0, sptl 0; §22k (CHAIN) DEAD). Added R6 (e) note; RESULTS DE16 (CHAIN) after Lead re-run.
