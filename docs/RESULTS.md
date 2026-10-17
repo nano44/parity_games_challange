@@ -120,6 +120,10 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   (g) Phases ≤ D + 2, where D ≤ n is the number of searches that find a dominion (GAP-A-M §21c; run() loops C5-DTL.md
       lines 141-142; --dtl is non-interleaved).
   (h) First-Difference Lemma (GAP-A-M §21d), stated on the call log with repeated sptl passes (dtl.cpp 870-874) deleted.
+      POST-LANDING NOTE (2026-10-17 12:15Z by date -u): REFEREE-2 R2-P4 (referee-2 352da6e) re-opened part of (h) as gap
+      G-STR: (ii)-(iii) compare set outputs only, but extraction reads str (dtl.cpp 268), so an equal-set tattr with different
+      str could change an extracted SCC before the first set difference. (h) holds GIVEN (STR-DET) "equal set outputs before a
+      point imply equal extracted SCCs before it" (DATA: 0 of 4,290 same-phase pairs). Pending REFEREE's comparison; GAPS G-STR.
   (i) Lemma DV*-MONO (GAP-A-M §21h), reading INF as "never dropped".
   (j) The per-context LRN budget: at most n(n + 1) LRN transitions per distinct context per phase (GAP-A-M §21j), with
       REFEREE-2's reading of LRN (R2-PROVED2 §10).
