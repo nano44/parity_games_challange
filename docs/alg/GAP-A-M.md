@@ -2866,6 +2866,10 @@ With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) /
   one step (context, round, top) in a phase is bounded by a constant c. With the (|R| + 1)·|R| steps per context (R11 (d)) it
   gives (FIRED-R) with #fired(R) ≤ c(|R| + 1)|R|. It has the same per-step shape as (STEAL-ONCE*). With NO-RETURN, each
   (step, tangle) fires on ONE interval of visits. So (FIRED-STEP) asks how many times a step can switch to a NEW tangle.
+- CORRECTION (19:56Z by date -u): NO-RETURN is FALSE in its all-steps form (§23h; stealonce_viol_n76, stable order, 7 of 42
+  contexts). Its long-phase form is UNTESTED there: under the filter, 3 contexts qualify and nothing fires in them. The
+  long-phase table above is DATA on the listed sets only; nothing in this section depends on NO-RETURN. (FIRED-STEP) itself
+  is dead (§23e).
 
 23e. (FIRED-R) on ALL contexts: three candidate structures KILLED, two DATA statements survive (L-ALG succ. 7, 19:16Z by date -u)
 - Tool: dtl_firedlong2.py with FL_ALL=1 FL_SHOW=1, i.e. every context visited ≥ 2 times in a phase, with no long-phase filter.
@@ -2893,7 +2897,7 @@ With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) /
   - (FIRED ≤ |R|): #fired(R) ≤ |R| per phase. It is TIGHT: equality 18/18 on fired18_stable_n20 (stable) and on four mixed
     unions.
   - (FIRED-DISTINCT): fired tangles of a context have distinct vertex sets.
-  - NO-RETURN.
+  - NO-RETURN on these sets. It is FALSE in general (§23h, stealonce_viol_n76).
 - Reading. (FIRED ≤ |R|) is tight and has no injective witness yet: not laminar, and not by the top vertex. Climb target for
   L-RED: fired/|R| > 1 (dtl_firedclimb.py's fitness, or firedlong.py without the filter). No proof route.
 
@@ -2936,3 +2940,71 @@ The Lead asked for this in §23e; §23e was already taken (FIRED-R), so it goes 
       need distinct events.
   - Neither is proved. Measuring: k on large unions (n ≤ 120; UNIONS=300, SEED=7/8, UM_CROSS=4, NMAX=60; both orders).
     The chain-length statistic is next.
+
+23g. (STEAL-POLY) ⇐ (STEAL-DEPTH): a charging reduction (reading, unrefereed; L-ALG succ. 7, 19:43Z by date -u; tool dtl_stealdepth.py)
+Fix a context R and a phase. Q = number of quadruples q = (R, round, top, fired tangle) ≤ (|R| + 1)·|R|·#fired(R) (§23f).
+An EVENT is a relevant steal (pair i → i+1, q). For q = ((r, τ), t), call a later event of q at pair i, with the previous
+event of q at pair j < i, a RE-STEAL.
+- Lemma CHARGE (reading). Every re-steal e of q at pair i has a CAUSE: an event at a pair m with j < m < i, at a step strictly
+  earlier than (r, τ) in the step order (rounds ascending, tops descending). Distinct re-steals of the same q have distinct
+  causes.
+  Proof.
+  - At visit j+1, t meets P_{j+1}(τ) without being contained in it.
+  - At visit i, t ∈ F_τ, so t fired inside region τ. A firing tangle lies in CurR = R \ P_i(τ) (dtl_pyref attractTangle
+    lines 86-89), so t ∩ P_i(τ) = ∅.
+  - So some w ∈ t ∩ P_{j+1}(τ) has left P(τ) at some pair m with j+1 ≤ m ≤ i−1.
+  - At that pair P_m(τ) ⊄ P_{m+1}(τ). By PREFIX-MONO-X* in its LOCAL form (see the gaps below) there is a relevant steal at
+    a step before (r, τ) at pair m.
+  - Consecutive re-steals of q own disjoint pair intervals (j, i), so their causes lie at distinct pairs.
+- Depth. depth(e) = 0 for the first event of each q, and for a re-steal depth(e) = 1 + min over its causes of their depth.
+  - A chain of causes goes strictly earlier in the step order, so depth ≤ (|R| + 1)|R| − 1 (PROVED, reading, given CHARGE).
+  - This alone gives only an exponential bound.
+- Counting. Let E_d be the number of depth-d events. Then E_0 ≤ Q. For fixed q, the depth-d re-steals inject into causes of
+  depth d − 1 (choose a min-depth cause). Hence E_d ≤ Q·E_{d−1} ≤ Q^{d+1}.
+- (STEAL-DEPTH_D): every event has depth ≤ D. Under it, Σ_q k_q ≤ Σ_{d ≤ D} Q^{d+1} ≤ 2·Q^{D+1}. So for constant D:
+  (STEAL-DEPTH_D) ⇒ (STEAL-POLY) in the sum form of §23f. With (FIRED-R) this gives F_R ≤ 6·Q^{D+1}.
+- Gaps, named:
+  - G23g-1, CLOSED (reading, unrefereed): the LOCAL form of PREFIX-MONO-X*. The signed proof (§22r, "by induction over τ in
+    decreasing order", three cases) uses (NS) only at the steps τ′ ≥ the current τ of the same round, given V ⊆ V′ for that
+    round. So "(NS*) at every step of round r above σ, and V_r ⊆ V′_r" ⇒ P(σ) ⊆ P′(σ). The cases are: τ not processed in
+    run 1; τ processed in both runs; τ processed in run 1 only. Each uses the hypothesis at τ alone, plus P(τ⁺) ⊆ P′(τ⁺) from
+    the induction.
+  - G23g-2, CLOSED (reading, unrefereed) by the §22r Corollary's round alignment: "if (NS) holds at every region step of
+    every round (rounds aligned with V_r ⊆ V′_r inductively)". Contrapositive: if V_r ⊄ V′_r, then some region step of an
+    earlier round has a relevant steal at that pair. That step is earlier in the step order, so it is a cause. The threshold
+    loop has no exclusions (tattr with consume = None, Gx = R), so it adds no case. On cross unions s11 (stable) the tool
+    prints "no cause" 0 times.
+  - G23g-3: (STEAL-DEPTH_D) with constant D is DATA only. R35 (stealonce_viol_n76, stable order) has one re-steal, depth 1;
+    its cause is the depth-0 steal of tangle 9 at (round 4, top 66) at pair 3.
+- Status against L32. A named statement, (STEAL-DEPTH_D), with a proof route (CHARGE plus counting) to the (STEAL-POLY) part of
+  GAP-A. GAP-A also needs (CTX⁺) and (FIRED-R), so this is not the L32 single-statement criterion.
+- DATA for §23f/§23g (19:52Z by date -u). Big unions: corpus + UNIONS=300, SEED=7 / 8, UM_CROSS=4, NMAX=60 (n ≤ 120);
+  dtl_rootmono.py RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0. No INCOMPLETE. The first stable runs were OOM-killed (4 × ~6 GB) and
+  re-run two at a time.
+
+  | seed | order | phases with relevant steals | k max | STOLEN-PERM | STEALER-MONO |
+  |---|---|---|---|---|---|
+  | 7 | Oink | 33 | 1 | 215 / 215 | holds 215 |
+  | 7 | stable | 38 | 1 | 234 / 234 | holds 234 |
+  | 8 | Oink | 48 | 1 | 392 / 392 | FAILS 14, holds 378 |
+  | 8 | stable | 55 | 1 | 429 / 429 | FAILS 14, holds 415 |
+
+  - dtl_stealdepth.py, cross unions s11 + corpus + R35 (stable): one re-steal in all, R35's (depth 1); 250 other contexts
+    with steals have k = 1; "no cause" 0.
+  - So random unions up to n = 120 show no re-steal in either order. R35 is a constructed shape. Note that STEALER-MONO also
+    fails in the Oink order (seed 8).
+
+23h. NO-RETURN KILLED with DE20 (L-ALG succ. 7, 19:56Z by date -u; L-RED R35 addendum, l-red d11271d)
+- Instance: stealonce_viol_n76 (sha1 32c2da0b; pinned Oink 7 iterations, verified). L-ALG re-run with dtl_firedlong2.py
+  (FL_ALL=1 RM_EXCL=1 RM_LIGHT=1 RM_DV=0):
+  - stable order: NO-RETURN FAILS 7 / holds 35; at most 4 distinct tangles fire at one step; max fired 14 at one context
+    (fired/|R| ≤ 0.333 at every context); FIRED ≤ |R| holds 42/42; FIRED-LAMINAR holds 42/42.
+  - Oink order: everything holds (9 contexts).
+  - Long-phase filter (stable): 3 contexts qualify, nothing fires in them, so the test is vacuous.
+- Reading. This is the same event as the NO-REFIRE failure of §23f: tangle 7 fires at (round 4, top 18), stops firing there
+  after the first steal, and fires there again after 3 drops out of the prefix. So the "one firing interval per
+  (step, tangle)" form is false wherever STEAL-ONCE* is. The long-phase form stays UNTESTED, not confirmed.
+- Dependence: no surviving statement of §23d-§23g uses NO-RETURN.
+  - dtl_stealdepth.py, more sets (20:00Z by date -u): mixed unions s1 + corpus + R35, stable: again R35's single re-steal
+    (depth 1); 588 other contexts with steals have k = 1. Cross unions s11 + corpus + R35, Oink: k max 1, depth 0 (212
+    contexts). "No cause" 0 everywhere.

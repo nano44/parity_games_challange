@@ -244,3 +244,7 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
   7. It takes down with it: (STOLEN-PERM), (STAYS-MET), NO-REFIRE, and (DEP-SAFE) (dtl_shrinkdep.py FAILS 7 / 12). Mechanism:
   a stealing vertex's path tangle is stolen one level up, the vertex drops out of the prefix, and the tangle refires and is
   stolen again. Replacement target: (STEAL-POLY).
+- NO-RETURN "a tangle that stopped firing at a step (context, round, top) never fires there again in the phase" (all-steps
+  form; GAP-A-M §23d DATA): DEAD (§23h). Instance stealonce_viol_n76 (RESULTS DE20; L-RED R35 addendum l-red d11271d; L-ALG
+  re-run 19:56Z, dtl_firedlong2.py FL_ALL=1, stable FAILS 7 / 42). Same event as the NO-REFIRE failure. The long-phase form is
+  untested (vacuous on this instance).
