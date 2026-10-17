@@ -2517,3 +2517,43 @@ lex_viol_inj_n28; on l-red, sha1 21b235f4).
 - PREFIX-MONO-X (§22r) survives on it: 17 / 17 descents have a new steal, and no descent occurs without one.
 - So the charge for (FALL) that survives is the NEW STEAL (§22r, proved as a reading): F_R ≤ #(new-steal visits at R).
   How often a later prefix newly grows into a stored tangle at one context is the open question.
+How loose the new-steal charge is (15:04Z by date -u; corpus plus fall3_n76, fall4_n116, fallv_viol_n28, f1_twofall_n48,
+f1_twodef_n48; Oink order; "new-steal visits per context").
+- New-steal visits per context per phase reach 8: h4_def10_oink_n28 and h4_def11_oink_n28, with 11 and 12 transitions.
+  Next: dtl_replay2deep_n32 and h4_nested7_oink_n44 with 7, and h4_def8 with 7.
+- Descents reach at most 4 (fall4_n116). So most new steals cause no descent, and F_R ≤ #new steals is far from tight.
+- In the h4_defK family new steals occur at almost every transition, growing with K like the phase itself.
+- So (NEWSTEAL) is a true reduction of (FALL), but bounding it is about as hard as bounding the phase. A useful charge
+  would have to separate the steals that cause a descent from the rest. Not found in this box.
+
+22s. PREFIX-MONO-X*: the tight charge is a RELEVANT steal (PROVED, reading; L-ALG 15:10Z by date -u)
+Let F_τ ⊆ T \ E_τ be the tangles that FIRED (added vertices) at the processed step τ in the earlier run.
+- EXACT*: P(τ) = Cl_{pr τ}(P(τ⁺) ∪ {τ}; F_τ). The code's derivation uses only F_τ, so ⊇. By EXACT, P(τ) is the closure
+  over T \ E_τ ⊇ F_τ, so ⊆.
+- (NS*) "no relevant new steal": F_τ ∩ E′_τ = ∅ for every τ processed in the earlier run. That is, no tangle that fired
+  at τ before is newly met, without being contained, by the later prefix P′(τ⁺).
+- Lemma PREFIX-MONO-X*: let V ⊆ V′, T ⊆ T′ and (NS*). Then P(τ) ⊆ P′(τ) for every τ.
+  Proof: as §22r, with F_τ in place of T \ E_τ. In the processed-in-both case, F_τ ⊆ T′ \ E′_τ. In the absorbed case,
+  P′(τ⁺) is closed under the rules of T′ \ E′_τ ⊇ F_τ. □
+- Corollary: Π_R can fail to rise between two visits only at a relevant new steal. Such a steal means that some
+  vertices of a tangle t that fired in τ's region before now lie in an EARLIER region (higher top), while t is not inside
+  the prefix: t is split.
+DATA (corpus plus fall3_n76, fall4_n116, fallv_viol_n28, f1_twofall_n48, f1_twodef_n48; RM_EXCL=1; consecutive visits of
+every context; Oink / stable):
+
+| visit pairs | Oink | stable |
+|---|---|---|
+| relevant new steal, with a descent | 122 | 121 |
+| relevant new steal, no descent | 5 | 5 |
+| no relevant new steal, no descent | 8,125 | 7,906 |
+| no relevant new steal, with a descent | 0 | 0 |
+
+- Compare plain new steals without a descent: 665 / 630. The relevant ones are the right charge: F_R ≈ #relevant new
+  steals.
+- Relevant new steals per context per phase: at most 4 (fall4_n116), then 3 (f1_twodef_n48, fall3_n76), and 2
+  (fallv_viol_n28, f1_twofall_n48).
+(FALL) ⇐ (RELSTEAL): relevant new steals per context are polynomial per phase.
+- A relevant steal moves a vertex to an earlier region. Without descents prefixes only grow, so per round each vertex
+  can move earlier at most n times.
+- But a descent can move many vertices later again, which re-enables steals. So the count is #descents·n² circularly.
+  This is the remaining core of (FALL).

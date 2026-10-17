@@ -49,6 +49,7 @@ class RM(FC.CK):
                 if os.environ.get("RM_EXCL"):
                     rec.setdefault("excl", {})[(rnd, top)] = frozenset(t for t in tli if any(v in Z for v, _ in s.tv[t]) and not all(v in Z for v, _ in s.tv[t]))
                 s.tattr(p, CurZ, CurR, CurR, s.pr[top], CurR)
+                if os.environ.get("RM_EXCL"): rec.setdefault("fired", {})[(rnd, top)] = frozenset(getattr(s, "used", set()))
                 cl = (Z | CurZ) if LIGHT else I.lfp(s, p, Z | {top}, R, s.pr[top], tli)
                 if cl != Z | CurZ:
                     miss0 = cl - Z - CurZ
@@ -107,12 +108,12 @@ def where(root, k_full):
 
 
 if __name__ == "__main__":
-    phrows = []; badrows = []; seqrows = []; ctxrows = []; fdcrows = []; descrows = []; recrows = []; succrows = []; ifdrows = []
+    phrows = []; badrows = []; seqrows = []; ctxrows = []; fdcrows = []; descrows = []; recrows = []; succrows = []; ifdrows = []; nsrows = []; rsrows = []
     sys.setrecursionlimit(100000); st = {"dropped": 0, "kept: differs": 0, "kept: identical but extracts": 0}; shown = 0
     for f, g in ST.games(sys.argv[1:]):
         d0 = FD.P.X.build(g); d = RM(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.run()
         for ph in FD.phase_rows(d):
-            nd = nr = 0; wl = []; nbad = 0; seq = []; fdc = set(); kseq = []; desc = {}; ifd = set(); victim = {}; vfall = {}
+            nd = nr = 0; wl = []; nbad = 0; seq = []; fdc = set(); kseq = []; desc = {}; ifd = set(); victim = {}; vfall = {}; nsteal = {}; rsteal = {}
             for r in ph:
                 full = r["log"]; red = FC.reduce_log(full, st)
                 # map root spans onto the reduced log: the root call precedes every sptl pass, so its positions shift only
@@ -308,6 +309,12 @@ if __name__ == "__main__":
                         ex_, ey_ = x.get("excl", {}), y.get("excl", {})
                         newst = any(t < x["ntv"] and t not in ex_.get(k_, frozenset()) for k_ in ey_ if k_ in ex_ for t in ey_[k_])
                         kns = "PREFIX-MONO-X: " + ("new steal" if newst else "no new steal") + " | " + ("DESCENT" if c_ in ("RV falls", "Ψ NOT monotone", "Φ_top RISES (descent)") else "no descent")
+                        if newst: nsteal[key_] = nsteal.get(key_, 0) + 1
+                        fx_ = x.get("fired", {})
+                        relst = any(t < x["ntv"] and t not in ex_.get(k_, frozenset()) and t in fx_.get(k_, frozenset()) for k_ in ey_ if k_ in ex_ for t in ey_[k_])
+                        kre = "PREFIX-MONO-X*: " + ("relevant new steal" if relst else "no relevant new steal") + " | " + ("DESCENT" if c_ in ("RV falls", "Ψ NOT monotone", "Φ_top RISES (descent)") else "no descent")
+                        tab[kre] = tab.get(kre, 0) + 1
+                        if relst: rsteal[key_] = rsteal.get(key_, 0) + 1
                         tab[kns] = tab.get(kns, 0) + 1
                     if c_ in ("RV falls", "Ψ NOT monotone", "Φ_top RISES (descent)"):
                         desc[key_] = desc.get(key_, 0) + 1
@@ -337,6 +344,8 @@ if __name__ == "__main__":
                 for u, w in zip(c0, c0[1:]): succ_.setdefault(u, set()).add(w)
             if succ_:
                 ms = max(len(v_) for v_ in succ_.values()); succrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), ms, len(succ_), len(ph) - 1, len(ph[0]["G"])))
+            if rsteal: rsrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), max(rsteal.values()), sum(rsteal.values()), len(ph) - 1, len(ph[0]["G"])))
+            if nsteal: nsrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), max(nsteal.values()), sum(nsteal.values()), len(ph) - 1, len(ph[0]["G"])))
             if vfall:
                 mvf = max(vfall.values()); kvf = f"FALLS per (context, vertex): max {mvf}"; tab[kvf] = tab.get(kvf, 0) + 1
                 # shape of RV sequences of vertices that fall somewhere: what happens after the fall?
@@ -375,6 +384,10 @@ if __name__ == "__main__":
         phrows.sort(key=lambda r: -r[1])
         print("phases with dirty root transitions (file, dirty, root transitions, transitions, |G'|):", phrows[:8])
         print("phases with a dirty root transition:", len(phrows), "max dirty per phase:", max(r[1] for r in phrows), "max dirty/|G'|:", round(max(r[1] / r[4] for r in phrows), 3))
+    if rsrows:
+        rsrows.sort(key=lambda r: -r[1]); print("RELEVANT new-steal visits per context (file, max per context, total, transitions, |G'|):", rsrows[:10])
+    if nsrows:
+        nsrows.sort(key=lambda r: -r[1]); print("new-steal visits per context (file, max per context, total, transitions, |G'|):", nsrows[:10])
     if ifdrows:
         ifdrows.sort(key=lambda r: -r[1]); print("distinct first-difference tattr inputs per phase (file, inputs, transitions, |G'|):", ifdrows[:8])
         print("max inputs/transitions:", round(max(r[1] / max(1, r[2]) for r in ifdrows), 3), "max inputs/|G'|:", round(max(r[1] / r[3] for r in ifdrows), 3))
