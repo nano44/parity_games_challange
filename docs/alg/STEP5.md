@@ -89,7 +89,10 @@ t's escapes while τ (a candidate at round f) has no edge into Z_f and no rescue
 
 ## 6. What is not done, and what killed the earlier frames
 - (YZ): the only remaining hypothesis of Step 5. It can fail only through a stored tangle that Dom(prevV) accepts while
-  the final round's region loop rejects it (a vertex in old X or in an earlier top's part). Shape for L-RED: a P piece in
+  the final round's region loop rejects it (a vertex in old X or in an earlier top's part). PROVED (GAP-C.md 18k end):
+  (YZ) ⇐ (ACYC) "the new part of every such tangle is acyclic in the tangle graph" — then the region loop takes the new
+  vertices by vertex rules (p-vertices' tangle successors stay in the current region or the new part; opponent edges into
+  old X are ignored) and the least fixed points coincide. Shape for L-RED: a P piece in
   which such a tangle fires (seen once: strfam_S5_n46.pg, stable order, old-X kind, harmless there) AND its newly taken
   vertices are not reached by the region loop, so that Y_0 ⊋ Z_f; then test P-KT on that piece.
 - The S step and the T step of KT (GAP-C.md 18i, 18j) are DATA only. The T step needs the frame at recursion depth ≥ 1:
