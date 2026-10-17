@@ -5,7 +5,7 @@ and S >= 2|R|. Per counted context: fired = distinct tangles fired at it over th
 the phase (index < k0, k0 = tangle count at the phase's first search) and born in the phase; for the latter, where they were
 born: the sptl arena R' of the extraction (R' ⊆ R, R' ⊋ R, or incomparable). Per step (round, top): NO-RETURN (a tangle
 that fired at the step at visit i, did not fire there at a later visit j, never fires there again) and the max number of
-distinct tangles fired at one step. Usage: RM_EXCL=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=oink|stable dtl_firedlong2.py G.pg ..."""
+distinct tangles fired at one step. FL_ALL=1 drops the long-phase filter (every context visited >= 2 times). Usage: RM_EXCL=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=oink|stable dtl_firedlong2.py G.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import dtl_rootmono as RMM, dtl_step5stats as ST
@@ -37,7 +37,7 @@ if __name__ == "__main__":
                 for rc in r_["recs"]: visits.setdefault(rc["key"], []).append(rc)
             for key_, rcs in visits.items():
                 R = key_[1]
-                if len(rcs) < 2 or not R or S < 2 * len(R): continue
+                if len(rcs) < 2 or not R or (S < 2 * len(R) and os.environ.get("FL_ALL") != "1"): continue
                 fired = set(); per = {}; seq = {}
                 for i, rc in enumerate(rcs):
                     for k_, fs in rc.get("fired", {}).items():
@@ -67,4 +67,6 @@ if __name__ == "__main__":
     if rows:
         print(f"contexts {len(rows)}; max ratio {rows[0][0]}; max fired {max(r[1] for r in rows)}; contexts with returns {sum(1 for r in rows if r[11])}")
         print(f"new tangles born inside R: {sum(r[4] for r in rows)}, in a strictly larger arena: {sum(r[5] for r in rows)}, incomparable: {sum(r[6] for r in rows)}; old: {sum(r[2] for r in rows)}")
+        ms = max(r[7] for r in rows); print(f"max distinct tangles fired at one step (round, top) in a phase: {ms}; contexts with that max: {sum(1 for r in rows if r[7] == ms)}")
+        print("top per-step rows:", *sorted(rows, key=lambda r: -r[7])[:5], sep="\n  ")
     for k in sorted(tot): print(f"{tot[k]:7d}  {k}")
