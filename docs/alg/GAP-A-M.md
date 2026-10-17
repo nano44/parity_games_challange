@@ -1513,3 +1513,102 @@ Reading: no super-polynomial signal. The best phase length is about 19 at n = 20
 does not grow with n here; n = 20 and 30 have flattened, n = 40 and 60 were still slow. These are hill-climb lower bounds
 on what DTL can be made to do, not upper bounds; the next box should rerun with equal STEP budgets, several seeds per n,
 and seeds from L-RED's phase climbs.
+
+## 21. Box 5 (successor 5, Lead "go" 23:28Z by the Lead's clock, box to ~07:30Z; produced on Opus 5.5): searches per phase (SPP)
+Written from 23:53Z by date -u. Tools (experiments/alg): dtl_spp.py (phase table), dtl_spprand.py (random games),
+dtl_sppclimb.py (climb on max S − |G'|), dtl_chainfam.py (tight family), dtl_sppprobe.py, dtl_psi.py, dtl_settle.py,
+dtl_idx0.py (candidate potentials), dtl_firstdiff.py, dtl_piecediff.py, dtl_absorb.py (where consecutive searches differ),
+dtl_spptree.py (full piece tree per search). Corpus C5 = experiments/alg/instances/*.pg, instances/climbs_1016/*.pg and
+every experiments/red/**/*.pg on trunk 26417b3 (191 games).
+
+### 21a. The statement (queue item 1; DATA, sent to the Lead 23:28Z)
+Phase = a maximal run of consecutive search(p) calls of one player with no dominion found before its last call (the
+dominion-finding search is the last of its phase; dtl_phasestats.py and L-RED replay.py convention). S = searches in the
+phase, G' = unsolved vertices at the phase start, P = p-parity vertices of G', d' = distinct priorities of G'.
+- (SPP) For A_DTL and every order datum ω, every phase has S ≤ |G'|.
+- (SPP-sharp) S ≤ max(1, |G'| − 1). In C5, S = |G'| occurs only with |G'| = 1 (12 rows Oink order, 13 stable).
+- Broken weaker forms: S ≤ P + c (spp_final_n20, Oink order: S = 19, P = 14; spp_n20 18 vs 13); S ≤ d' (spp_final_n20,
+  Oink: 19 > 13); S ≤ number of distinct p-parity priorities (27 rows).
+DATA (best phase per game, S/|G'|):
+| instance | Oink order | stable order |
+|---|---|---|
+| spp_final_n20 | 19/20 (P 14, d' 13) | 11/20 |
+| spp_final_n30 | 19/30 (P 20) | 19/30 |
+| spp_final_n40 | 19/40 (P 26) | 17/40 |
+| spp_final_n60 | 14/60 (P 34) | 14/60 |
+| red/carry spp19_oink_n30 | 19/30 (P 18) | 16/30 |
+| red/carry spp19_stable_n30 | 19/30 (P 20) | 19/30 |
+| red/carry replay4_n32, phi_flat_alive_n32 | 11/32, 10/32 | same |
+| red/carry h4_compound_n44, h4_compound2x2_n44, h4_def7_n28 | 9/42, 9/43, 9/27 | same |
+| red/carry f1_twodef_n48, cm_mdrop_both_n28, lex_viol_inj_n28, lex_viol_tie_n28 | 8/48, 7/28, 6/28, 6/28 | 8, 7, 6, 5 |
+| spp_chain_up_n43 (21b) | 42/43 | 42/43 |
+C5: 416 phases (Oink order) / 424 (stable), 0 with S > |G'|. Random games gen.random_game, n = 2..8, 3,000 seeds per order:
+max S = 2. Climbs (dtl_sppclimb.py, fitness = max over phases with |G'| ≥ 2 of S − |G'|, then S; 300k-400k steps from random
+starts): best S = |G'| − 1 at n = 6 (Oink order), 8 and 12 (stable order); never S ≥ |G'|.
+
+### 21b. Tightness: a family with S = |G'| − 1 in both order data (DATA, Oink-verified)
+dtl_chainfam.py UP=1 k: a (pr 2k+1, Even, edges a, b), b (pr 2k, Odd, edges b, z), z (pr 2k, Odd, edges z, x_k), chain
+x_1..x_k (x_j: pr 2(j−1), Odd, self-loop and an edge to x_{j−1}; x_1 → a); n = k + 3. A_DTL: Even's phase has n − 1
+searches for k = 3, 12, 25, 40 in both order data; instances/spp_chain_up_n43.pg (k = 40): pinned Oink 43 iterations
+(42 even), verified. Each search learns exactly one tangle {x_j} (escape x_{j−1}, already removed), and the next search
+absorbs it into the preceding removal, so the stable piece where learning happens loses one vertex per search. With all
+x_j at priority 0 (default) the same holds in stable order; in Oink order it collapses to 3 searches for k ≥ 25 (std::sort is
+unstable above 16 equal keys; pinned Oink agrees). check.sh runs dtl_chainfam.py --check (k = 12, both order data).
+Reading: the family is linear (about n iterations in all) and is the pure form of "each search but the last settles a
+vertex". (SPP-sharp), if true, is exactly tight. A counter to (SPP) must reset such a chain and make it re-climb with
+NEW tangles (tangles are never re-learned, (a1)); recipe sent to the Lead for L-RED (23:45Z).
+
+### 21c. The phase bound and the cost model (queue item 3)
+- Phases (PROVED, from run(), C5-DTL.md §2): dtl runs search(0) until it returns false, then search(1) until it returns
+  false. A phase of one player ends either with a dominion (search returns true; the next search has a smaller G) or with
+  that player's loop ending. So phases ≤ D + 2, D = the number of searches that find a dominion ≤ n.
+- With (SPP): searches ≤ Σ_phases |G'| ≤ (n + 2)·n; tangles ≤ n·searches (Lemma W) ≤ n²(n + 2); with DTL-proof.md §3(e),
+  O((|T| + n)² n⁴ (m + n²)) = O(n¹⁰ (m + n²)) word operations. Every stored number is a vertex index, a priority, a tangle
+  index ≤ n³ + 2n², a stack pointer or a bit: O(log n)-bit words, so unit cost equals bit cost (TARGET.md §3). Any
+  S ≤ poly(|G'|) gives a polynomial bound the same way. So (SPP) for every ω plus GAP-C (completeness) closes the D2
+  polynomial-time part of gauntlet step 4. (SPP) is DATA only.
+
+### 21d. Queue item 2: per-phase potentials tested on data (all DEAD) and what is PROVED instead
+Candidates, each required to move strictly at every non-last search of a phase (C5, Oink order: 990 transitions in 247
+phases with S ≥ 2; stable order 957):
+| candidate | failures Oink / stable | example |
+|---|---|---|
+| UNION: union of the phase player's tangle vertex sets grows | 210 / 193 | spp_final_n20 searches 5-7, 9, 11-17 |
+| TOPS: set of tangle tops grows | 281 / 256 | spp_final_n20: top 17 learns at searches 0, 3, 4, 6, 7, 11, 12, 15 |
+| PAIRS: (top, vertex) incidences grow; NEWV: a new tangle has a vertex new for its top | 129 / 120 each | spp19_oink_n30 searches 9, 12, 14 |
+| PSI1/PSI2/PSI3: sums of fixed-input tangle attractors (single sources at every threshold; region of v at pr(v); upper p-sets) | 24, 34, 33 of 37 (spp_final_n20/n30, Oink) | PSI2 flat for 18 searches |
+| settled piece labels (dtl_settle.py) grow | 25 of 34 | spp_final_n30: none settles for 13 searches |
+| PHI0 = Σ_v (index of the depth-0 piece removing v) falls | 300 / 290 | spp_final_n20: 18 → 72 at search 4 → 5 |
+| LEX0: depth-0 removal-size vector rises lexicographically | 323 / 310 | same |
+A potential of T alone (PSI) cannot work: a new tangle changes only attractors with the specific inputs the search produces.
+A by-design per-vertex "settling" fails because the depth-0 results change (resets) and re-open absorbed parts.
+
+First-Difference Lemma (PROVED, reading; A_DTL, any ω). Let s, s+1 be consecutive searches of one phase.
+(i) A search is a deterministic function of (G', T_s) (T_s = tangles stored at its start): W is reset after each search and
+    is read only by extraction; str is written for every vertex when it joins the current attractor before it is read; no
+    dominion occurs before the last search of a phase, so S, dom_vector are empty.
+(ii) Let e be the first tangle-attractor computation (tattr) whose output differs between s and s+1. Every computation
+    before e is identical, so e has the same input (Z, R, Gx, maxpr) in both, and its output is STRICTLY larger in s+1.
+    Proof: before e, s+1 extracts exactly the SCCs that s extracted there, which are now stored (duplicate check) and are
+    not dominions (s is not the last search); so s+1 learns nothing before e and its tangle set at e is T_{s+1} = T_s^end ⊇
+    T_s^e (the tangles s had at e). Attractors are monotone in T for fixed inputs (DTL-proof §3 (a2)), so the output grows,
+    and strictly since it differs. □
+(iii) Hence the difference is caused by tangles that s learned AFTER e in its call order, and s+1 learns only after e.
+    So learning feeds back to an earlier point of the computation; the search log rises lexicographically (entries
+    compared by ⊆ at the first difference). This is injective in time but gives no polynomial bound by itself (counter).
+DATA for (ii): the first differing tattr is in best_vertices (threshold loop: Oink 642, stable 605; regions: 266, 269) or in
+the −1 attractor of search_rec (41, 42), never in sptl or Dom(V, R), in all 949 (Oink) / 916 (stable) transitions (counted
+over consecutive pairs incl. into the last search). Piece level (dtl_piecediff.py; first differing best_vertices call by
+tree position, context, result): Oink order RES at depth 0 (same context, other result) 710 of 990, GROW at depth 1 (a
+−1 piece's recursion context grows) 107, SHRINK at depth 0 (a later sibling's context shrinks: more absorbed before it) 106,
+deeper 32; stable 692 / 106 / 95 / 33 of 957 (incl. 1 GROW at depth 3).
+Absorption (DATA, dtl_absorb.py): when the first piece-level difference is a SHRINK of piece k, some tangle learned by s
+inside piece k's subtree lies wholly in the removed part: Oink 87/87, stable 75/75 (all of them: 81/87, 72/75; exactly the
+removed part: 51/87, 44/75; s learned only inside piece k's subtree: 80/87, 69/75).
+Reading (L-ALG): one phase is a nested counter. Inside an epoch (depth-0 results fixed) the depth-0 contexts only lose
+vertices by absorption, ≤ |G'| steps; an epoch ends with a RES change at a depth-0 piece, which can re-open absorbed
+vertices; the same holds one level down inside each −1 piece's recursion. spp_final_n20 (Oink order) has 4 epochs of
+lengths 5, 3, 5, 6. (SPP) needs a reason why the epochs' total stays ≤ |G'|, i.e. why a reset re-opens only vertices whose
+re-absorption is paid by vertices the reset settles. No such reason is known; the per-context results of §13-§18 (RES
+changes at one context are DEF or LRN changes, up to 11 at one ideal-stable context) say a reset count per context is not
+constant, so a proof must use the global phase.
