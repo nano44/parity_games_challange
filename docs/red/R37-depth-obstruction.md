@@ -67,8 +67,9 @@ carries no event. Hence the D + 1 pairs i_0..i_D, and the pairs p_j, are each se
   - The phase has 4 searches. Its closing dominion takes the remaining game.
 - Two copies stacked with no cross edge (scratch st0, n 90, priorities rescaled; see below) give two independent depth-1
   chains in the stable order. Both copies keep the 4-search phase in lockstep, so R37-1 (≥ D + 3 = 5 visits) rules out
-  depth 2 for every cross-edge variant that keeps that phase. The scan of all 4,050 single cross edges (root/crossscan.py)
-  is DATA for this point.
+  depth 2 for every cross-edge variant that keeps that phase. root/crossscan.py (one cross edge, stable) was stopped
+  after 1,112 of the 4,050 variants, once R37-1 showed it cannot succeed: 990 have max depth 1, 122 have max depth 0, none
+  has depth 2.
 - Interleave that makes copy U drive copy L's B level. Rescale U's priorities by p → 40p + (p mod 2), and lift L's
   priorities in [70, 89] by +1500. Then pr(T0^U) < pr(u^L) ≤ pr(A^L) < pr(C^U) < pr(A^U), with u = 28. With an edge
   u^L → w^U, u^L lies in P(A^L) exactly when w^U is held by A^U or C^U, which are the visits after U's steals. Tested
