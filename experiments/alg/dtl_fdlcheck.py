@@ -18,7 +18,7 @@ class CK(FD.FD):
         if who == "best_vertices": who = "bv-thr" if consume is None else "bv-reg"
         zin = frozenset(Z); s.used = set()
         D.DTL.tattr(s, p, Z, R, Gx, maxpr, consume)
-        s.log.append((who, s.dep, zin, frozenset(Z), maxpr, frozenset(s.used), len(s.tv)))   # + tangles existing at its end
+        s.log.append((who, s.dep, zin, frozenset(Z), maxpr, frozenset(s.used), len(s.tv), frozenset(R), frozenset(Gx)))   # + tangles at its end, arena, Gx
     def extractTangles(s, top, R):
         k = len(s.tv); r = D.DTL.extractTangles(s, top, R)
         for t in range(k, len(s.tv)): s.log.append(("extract", t))
