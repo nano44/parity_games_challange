@@ -764,7 +764,9 @@ call attractTangles(player, u, R, Z, R, t). So at level q−1 the set contains Z
 popped at 728, and attractTangle(t, ...) is evaluated at 730 (t ∈ tin[e], 200-201) with Z ⊇ Z^{r_1}.
 (D2) At that evaluation: the set contains M_q and every escape of t in R; at the level-(q−1) pop of e
 attractTangle(t) (110-185) finds t alive, every vertex in Z or in R with priority ≤ q−1 (the priority-q ones are in Z), and
-no escape in R \ Z, so t joins the set; then the candidate test at level q−1 (pr(m_1) = q > q−1, candidates in descending
+no escape in R \ Z. Either some vertex of t is new and t joins the set, or t ⊆ Z already and attractTangle returns false
+(the "nothing new" exit, 146) — in both cases t ⊆ Z after this pop [wording fixed 08:56Z by date -u, Lead 09:00Z after L-RED R28]; then the
+candidate test at level q−1 (pr(m_1) = q > q−1, candidates in descending
 priority) finds m_1 attracting into it (tangle successor, or all R-edges in t ∪ escapes): m_1 is rescued at round r_1,
 contradiction. □
 Corollary FM (PROVED). In a −1 call Z_f ⊆ Z^r for every round r: by NT-f every addition of round f is a vertex-rule

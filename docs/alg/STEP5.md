@@ -3,6 +3,16 @@ One-page brief for routing and for a referee after the Fable reset (D8/L27). Ful
 statements: docs/alg/GAP-C.md §18 (18a-18k). Algorithm: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7
 (L22), pseudocode docs/alg/candidates/C5-DTL.md, every order datum (L26). "dtl.cpp N" = tools/oink/src/src/solvers/dtl.cpp.
 
+## 0. Result (headline)
+(ACYC) ⇒ (YZ) ⇒ Lemma P-KT, with NT-f, (FM), (WM) PROVED on the way (all readings of dtl.cpp, unrefereed; NT-f step (D)
+independently re-read by the Lead and by L-RED, docs/red/R28-ntf-stepD.md, no gap found — not a referee signature).
+- Lemma P-KT: at every depth-0 P piece (the −1 branch with Q empty, dtl.cpp 961-991) with D ∩ R ≠ ∅, the thresholded core
+  KT survives the Dom(prevV) removal, at the level c1 of the least-maximum p-dominion of G[R] inside D (§4).
+- It needs (YZ): the removed set equals the final pruning round's region union. (YZ) holds unless Dom(prevV) accepts a
+  stored tangle using a vertex of old X or of an earlier top's part (YZ-read + NT-f), and even then it holds if the new part
+  of that tangle has no cycle of the tangle graph (ACYC) (§6.1).
+- The single open point is (ACYC), §6.1. Everything else of Step 5 is proved.
+
 ## 1. What Step 5 was
 GAP-C.md §17: completeness (Lemma K) by induction over the depth-0 pieces of one search(p) fails at the −1 piece with Q
 empty (dtl.cpp 961-991), which removes Dom(prevV, R) — neither p-won nor opponent-won — and must be "repaid" later.
@@ -67,38 +77,37 @@ opponent-owned: all R-edges into t ∪ escapes, 325-339), so it would not be a c
 in V_{r_1} ⊆ Z^{r_1}. q = 0: t ⊆ Z^{r_1} and m_1 attracts into Z^{r_1}, so it is no candidate. q ≥ 1: (D1) round r_1's rescue
 loop runs on the same bitset Z that the region loop leaves (703-705), so it starts as Z^{r_1} and only grows; line 724
 pushes every member of Z at every level and 727-730 pop each one and call attractTangles, so e ∈ Z^{r_1} (by (B)) is popped
-at level q−1 and attractTangle(t) (t ∈ tin[e]) is evaluated with the set ⊇ Z^{r_1}. (D2) At level q−1 the pop of e accepts t (its priority-q vertices are in the set, the rest have priority ≤ q−1,
-its escapes in R are in the set), and m_1 then attracts into the set: rescued. Either way m_1 is not pruned at r_1. □
+at level q−1 and attractTangle(t) (t ∈ tin[e]) is evaluated with the set ⊇ Z^{r_1}. (D2) At level q−1 the pop of e finds every priority-q vertex of t in the set, the rest of priority ≤ q−1, its escapes in R
+in the set: either t joins the set, or t lies in it already (attractTangle's "nothing new" exit, 146); in both cases t ⊆ the
+set, and m_1 then attracts into it: rescued. Either way m_1 is not pruned at r_1. □
 Corollaries: (FM) Z_f ⊆ Z^r for all r ((A) covers every addition of round f); (WM) Z_f ⊆ A^r_t; (YZ-read sharpened).
 
-## 5. (Superseded 08:43Z by date -u: NT-f is PROVED, GAP-C.md 18k.) Former shape of a counterexample to (NT-f) (= to (FM)), for L-RED (Lead 08:08Z)
-Necessary (PROVED from the definitions): a −1 call (rounds 1..f) on R with stored tangles T, and a stored p-tangle t with
-(i) an escape in R, accepted by the region loop of round f at the pop of its last escape inside the region of a final top
-τ (pr(t) ≤ pr(τ); no vertex of t in a region computed earlier in round f);
-(ii) EVERY p-priority vertex of t pruned before round f (each would attract into Z_f, so it cannot be a final candidate);
-(iii) at the last round r* < f holding a p-priority vertex m* of t, t not accepted: its escapes are already attracted
-(FM+ induction), so the rejection is the straddle test 138-139 — a vertex w of t consumed by a region of a top π computed
-before the region where t's last escape is popped (index(π) > index(τ)), and m*'s tangle successor (or one R-edge of m*)
-outside Z^{r*}.
-Observed near misses (experiments/alg/dtl_fmclimb.py, dtl_ntfclimb.py from c_best_s34, b_best_s33, dtl_mviol_n20,
-dtl_deficit_n20; both orders): a tangle with all its p-priority vertices pruned is accepted at round f−1, always inside
-the region of a top that is itself pruned at round f−1 (b_best_s33.pg: tangle {6}, host top 3 of priority 21, escape 5
-in 3's region; dtl_mviol_n20.pg: tangle {12}, host 18, escape 16); at round f the host is gone and the escape lies in no
-region. A counterexample therefore needs the host's role at round f taken by a FINAL top τ: τ's round-f region must reach
-t's escapes while τ (a candidate at round f) has no edge into Z_f and no rescue below pr(τ).
+## 5. (Superseded: the former counterexample shape for NT-f; NT-f is PROVED. The shape is kept in GAP-C.md 18h.)
 
-## 6. What is not done, and what killed the earlier frames
-- (YZ): the only remaining hypothesis of Step 5. It can fail only through a stored tangle that Dom(prevV) accepts while
-  the final round's region loop rejects it (a vertex in old X or in an earlier top's part). PROVED (GAP-C.md 18k end):
-  (YZ) ⇐ (ACYC) "the new part of every such tangle is acyclic in the tangle graph" — then the region loop takes the new
-  vertices by vertex rules (p-vertices' tangle successors stay in the current region or the new part; opponent edges into
-  old X are ignored) and the least fixed points coincide. Shape for L-RED: a P piece in
-  which such a tangle fires (seen once: strfam_S5_n46.pg, stable order, old-X kind, harmless there) AND its newly taken
-  vertices are not reached by the region loop, so that Y_0 ⊋ Z_f; then test P-KT on that piece.
+## 6. What is not done
+### 6.1 The single open point of Step 5: (ACYC)
+(ACYC) For every stored tangle t_X that Dom(prevV, R) accepts at a P piece using a vertex of old X or of an earlier top's
+part, the new part N_X := (vertices of t_X taken by that acceptance) contains no cycle of the tangle graph H_{t_X}
+(p-vertices keep their tangle strategy, opponent vertices all their edges inside t_X).
+Why it suffices (PROVED, GAP-C.md 18k end): a p-vertex of N_X has its tangle successor in the current region or in N_X (an
+edge into X is excluded by Q empty, an edge into an earlier region would have pulled it there); an opponent vertex of N_X
+has its R-edges in the current region, earlier regions or N_X, and its edges into old X are ignored by the vertex rule
+(76-86); so with N_X acyclic the final round's region loop takes N_X by vertex rules and, regions being least fixed points,
+Y_0 = Z_f.
+Exact shape of a counterexample (for L-RED): a P piece whose Dom(prevV) accepts such a t_X with a p-won cycle C ⊆ N_X
+(C ⊆ R, every vertex of C new). Sub-cases: (a) the straddle uses only an earlier top's part (no old-X vertex) — then if
+the maximum m_C of C is a final top and is the maximum of N_X, the final round's rescue loop accepts t_X and rescues m_C,
+a contradiction; so (a) needs ties or m_C below another new vertex; (b) the straddle uses old X — the rescue loop rejects
+t_X (an old-X vertex is outside R), and nothing found so far excludes it. If m_C ∈ V_f, m_C is a final candidate, so C is
+not inside Z_f and (YZ) fails; whether P-KT still holds on such a piece is open.
+DATA: every firing observed (1 in the corpus, strfam_S5_n46.pg stable order; climbs from it, experiments/alg/
+dtl_yzclimb.py, new parts up to 6 vertices) has an acyclic new part; (YZ) and P-KT hold on all data.
+
+### 6.2 Beyond Step 5
 - The S step and the T step of KT (GAP-C.md 18i, 18j) are DATA only. The T step needs the frame at recursion depth ≥ 1:
   (CORE-PASS-closed) DATA 45/45 says a T piece that breaks KT hands the recursion a p-dominion of G[Z'] inside D, and with
   it P-KT's proof runs unchanged inside the recursion; the S and T steps there remain. The S step is existential over the
   levels ((S-LEVEL) killed).
-- Killed (instances in GAP-C.md 18d, 18f, 18j): K-frame (P-K), (K-STEP-first) by L-RED pk_viol_n20 (R27); HYB
-  (strfam_S2_n4), JD (psolc_partial_..._n4_m6), ATTR, SEG-ALL, LASTD for T, per-round KEEP, (S-LEVEL)
-  (cross_h_k1_n12_m18_17).
+- Killed (instances in GAP-C.md 18d, 18f, 18j, 18k): K-frame (P-K), (K-STEP-first) by L-RED pk_viol_n20 (R27); HYB
+  (strfam_S2_n4), JD (psolc_partial_..._n4_m6), ATTR, SEG-ALL, LASTD for T, per-round KEEP, MONO/R-MONO, P-A, INV-T
+  (c_best_s34), (S-LEVEL) (cross_h_k1_n12_m18_17).
