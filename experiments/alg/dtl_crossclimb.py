@@ -3,7 +3,7 @@
 nested tangles at a top is bounded by n; crossing sequences at one top are the shape a counter needs), and secondarily for
 many searches. Fitness = (max over tops of the size of the largest set of pairwise crossing tangles at that top,
 max tangles at one top, searches, tangles). Release Oink, pinned command + -t -t to read the tangles.
-Usage: dtl_crossclimb.py OINK OUTDIR n seed steps [--pmax P] [--cnew | --pertop | --restart | --searches | --chainbreak]  (--chainbreak: fitness led by in-search chain breaks at a top, the F3 test) [--seedgame GAME.pg]  (--restart: fitness led by restart violations, then in-search chain breaks)  (--pertop: fitness led by the max number of tangles at one top)  (--cnew: fitness led by the number of (C-new) violations: tangles at a top covered by the union of the earlier tangles at that top)"""
+Usage: dtl_crossclimb.py OINK OUTDIR n seed steps [--pmax P] [--cnew | --pertop | --restart | --searches | --chainbreak]  (--chainbreak: fitness led by in-search chain breaks at a top, the F3 test) [--seedgame GAME.pg] [--crossonly]  (--restart: fitness led by restart violations, then in-search chain breaks)  (--pertop: fitness led by the max number of tangles at one top)  (--cnew: fitness led by the number of (C-new) violations: tangles at a top covered by the union of the earlier tangles at that top)"""
 import sys, os, random, re, subprocess, itertools, collections
 oink, outdir, n, seed, steps = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5])
 pmax = int(sys.argv[sys.argv.index("--pmax") + 1]) if "--pmax" in sys.argv else n
@@ -14,6 +14,13 @@ def rand_game():
     return pr, ow, succ
 def mutate(g):
     pr, ow, succ = [list(x) for x in g[:2]] + [[list(s) for s in g[2]]]
+    if "--crossonly" in sys.argv:   # only add/remove edges (cross edges between halves included); priorities and owners fixed
+        for _ in range(rng.randint(1, 3)):
+            v = rng.randrange(n); w = rng.randrange(n)
+            if w in succ[v]:
+                if len(succ[v]) > 1: succ[v].remove(w)
+            else: succ[v].append(w); succ[v].sort()
+        return pr, ow, succ
     for _ in range(rng.randint(1, 3)):
         v = rng.randrange(n); k = rng.random()
         if k < 0.3: pr[v] = rng.randint(0, pmax)

@@ -2,8 +2,11 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-14: T1-T3 pushed (landed on trunk 9079c01); T4 docs/lit/T4-weak-separators.md: verdict OPEN. T5 docs/lit/T5-S2-novelty.md: S2 T1/T2 NEW. T6 docs/lit/T6-S3.md: T3, H1 NEW; L4 via Claim R (unrefereed). T7 docs/lit/T7-rank2.md: rank 2 OPEN, SLP model, T7-1/T7-1'. T8 docs/lit/T8-TA1.md: T-A1 NEW, PA not ⊇ Büchi/SCC-constant (3-vertex witness). T9 docs/lit/T9-L1.md: µ-formula sources; oblivious exponent 2·lg(d/lg n); T7 amended. T10 docs/lit/T10-PAstarstar.md (2026-10-15): Q1-Q3 NEW; HKP LNCS 9560 chapter not opened. T11 docs/lit/T11-HKP-DTR15-4.md: DTR15-4 opened (sha256 a7b61fe3...); T10 verdicts unchanged; psolC stated. T12 docs/lit/T12-MSF-barriers.md: no published bound covers MSF; killer candidates for L-SI. T13 docs/lit/T13-RF-parity.md: original Random-Facet on parity games NEW as statement (Hansen thesis unopened). T14 docs/lit/T14-S7-barriers.md: S7 most-improved not covered; outside B1-B17. T15 docs/lit/T15-zadeh-fixed-tiebreak.md: Zadeh with fixed tie-break OPEN (Thomas 2017 AUSO only); T13 citation fixed. T16 docs/lit/T16-dtl-barriers.md: DTL step 3 SIGNED with caveats; counter_dftl on Oink branch dftl untested on dtl. Parked. Next: Lead feedback; open the
-not-opened primaries listed below if a lane needs them.
+2026-10-16 (successor session, Opus 5.5 per D8; label: Opus work): handover check pushed 5d5b2ac. T17 (D9, L28)
+docs/lit/T17-counter-dtl-search.md: counter_dtl NOT FOUND anywhere reachable; FOUND SOMETHING RELATED: open preprint of
+"Solving parity games, very slowly" (tvandijk.nl/pdf/2024festschrift.pdf, p.15 'good paths' recipe, p.19 DFTL-like variant
+"solves all known difficult parity games in polynomial time"); 2021 README "DTL" meant distraction-free (rename 1ba8b0a,
+DFTL + counter_dftl a028e62 two days later). T16 earlier work unchanged. Parked after T17. Next: Lead feedback.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -11,6 +14,8 @@ not-opened primaries listed below if a lane needs them.
   (Dagstuhl abstract only); Matoušek 1994; Gärtner 2002; Obdržálek CAV 2003 + CSL 2007 (Springer bot wall); Fearnley-Lachish
   MFCS 2011; Hunter-Kreutzer Kelly-width; Ganardi FoSSaCS 2015; Parys' Ω(n^2/lg n) black-box bound (ANP ref. [24]).
 - Retry Semantic Scholar citations of 2511.03752 (API 429 on 2026-10-14).
+- T17 not reached: dblp (bot wall), grep.app (429), Semantic Scholar/OpenAlex (429), research.utwente.nl PDF (403); diff of
+  2024festschrift.pdf against the Springer chapter (paywalled).
 - Arnold-Niwiński, Rudiments of µ-Calculus (Elsevier 2001) §4: not opened (book); needed only if L1 must quote it.
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
@@ -25,6 +30,11 @@ not-opened primaries listed below if a lane needs them.
   github.com 403 to curl but `git clone` works. rairo-ita.org 403. Semantic Scholar API 429. Google Scholar captcha.
 - Downloaded papers live in my scratchpad only (not committed): dl/papers/*.pdf, dl/oink (8fbf0a7), dl/pgsolver (d3cd624).
 - 2511.03752 is min-parity; pdftotext loses its overbars; read formulas from the rendered PDF.
+- T17 (2026-10-16): mirrors in scratchpad dl/oink.git (all 18 refs incl. refs/pull/*), dl/repos/*.git (author experiment
+  repos), forks/all.git (13 forks + 2 experiment repos, refs/forks/<name>/*), swh/*.json (24 snapshots), web/ (subagent
+  downloads incl. web/tvd/2024festschrift.pdf). Not committed. Subagent lists: scratchpad swh_lsr.txt, swh_roots.txt.
+- T17 TRAP (rule breach): the web subagent used GitHub MCP code and issue search beyond the session's repo scope (not asked; reported to Lead). Lead ruling 11:05Z: no GitHub MCP calls outside nano44/parity_games_challange; use git clone, ls-remote and WebFetch; tell every subagent so explicitly.
+- Repo visibility: the Lead verified (11:05Z) that nano44/parity_games_challange is public and is raising it with the owner; not mine to act on.
 - Two Counters lower bound is partly empirical: van Dijk 2019 says exponential behaviour "is clear from the empirical data"
   and only "sketch[es] out an inductive proof" (§ near line 440 of the text). Matters for BARRIERS.md.
 
@@ -161,9 +171,17 @@ not-opened primaries listed below if a lane needs them.
 | github.com/trolando/oink (clone, refs master=8fbf0a7, dftl, maintenance) | README l.33-49, 196, 213-216; git log of dtl.cpp (e67cb4c, 7798285, 2d12471, 0c2fab6, 1ba8b0a), 39254fe (counter_dtl line); branch dftl: a028e62 (dftl.cpp, counter_dftl.cpp), 5502912, d1a923d, d54dfad (counter_odftl.cpp), ea51834 | 2026-10-15 | T16; counter_dtl absent on all refs |
 | van Dijk 2020gandalf, 2024rrrr_oink, 2024ssi, 2018tangles_talk (author PDFs) | grep: no dtl/dftl/counterexample statements | 2026-10-15 | T16 |
 | NOT opened (T16) | van Dijk "Solving Parity Games, Very Slowly" (2024 chapter, DOI 10.1007/978-3-031-75778-5_21); Oink build blocked (no Boost; not installed) | - | 2026-10-15 | T16 |
+| github.com/trolando/oink, `git clone --mirror` (18 refs: master 8fbf0a7, dftl ea51834, maintenance 5a6c92c, tags FMCAD26 ac3c12a, ISOLA24 3982fe1, refs/pull/1-20) | README at 39254fe (DTL = "Distraction-free"), 1ba8b0a rename diff, a028e62 DFTL + counter_dftl, dftl.cpp docstring l.17-60, CMakeLists targets; no counter_dtl on any ref | 2026-10-16 | T17 |
+| Software Heritage API, origin https://github.com/trolando/oink, 24 visits 2019-03-09..2026-07-13 (snapshot a594185c... newest) | snapshot branches; SWH-only revisions dd16bb6, e2c45b7, 8b103b8 (directory listings, blobs 8099010, 104f177, 7a2abc4) | 2026-10-16 | T17 |
+| Wayback CDX github.com/trolando/ (2051 rows), tvandijk.nl/* (484 rows); captures 20201029042417 network/members, 20201029042414 releases, issues 1-7, 20241218064741 tree/ISOLA24 | fork names, no releases, no dtl in issues | 2026-10-16 | T17 |
+| trolando/{tl,rtl,oink,knor,dfi}-experiments, parallel-si, SPGSolver, hoa2pg, knor (git clone --mirror; rtl-experiments 5168e8b) | grep dtl/counter: none relevant | 2026-10-16 | T17 |
+| 13 forks of trolando/oink (subagent, one bare repo; grep re-run by L-LIT) | see T17 (c) | 2026-10-16 | T17 |
+| van Dijk, "Solving parity games, very slowly" author preprint, tvandijk.nl/pdf/2024festschrift.pdf, 20 pp., created 2024-08-15, sha256 8e36c3732f61feb78972fec1ea1e0aff5b737f9b1288a138f32ff491f31bee3c | §6 requirement 7 (p.15, "good paths" recipe), §7 (p.19, distraction method "solves all known difficult parity games in polynomial time"), Fig. 4, Fig. 6 | 2026-10-16 | T17; PREPRINT, retrieved 10:50Z, re-fetched 11:01Z HTTP 200; not diffed against Springer pages |
+| tvandijk.nl PDFs 2018-2024, Google Scholar profile bzOQ-aQAAAAJ, arXiv export API, FMCAD 2026 programme, Highlights 2019-2026, essay.utwente.nl files 98019/92054/98665, Zenodo 10558316/11265650/10932291/14740019, pgsolver, jkeiren/paritygame-generator, SYNTCOMP/benchmarks, mCRL2 (web subagent) | grep for dtl/distance/good path/counter: no DTL counterexample | 2026-10-16 | T17 |
 
 ## Dead ends
-(none)
+- T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
+- T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
 
 ## Corrections log
 - 2026-10-14: first draft cited priority promotion as arXiv 1608.04548; that id is an astrophysics paper (opened, wrong). Replaced by the CAV 2016 paper before push.

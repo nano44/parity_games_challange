@@ -76,3 +76,110 @@
   5 fixpoint rounds) but not the tangle structure: the counter states of tc give the same exponentially many tangles in H as
   in G. Idea killed: "give tangle learning the register memory". The complementarity of the two obstructions (registers vs
   tangle proliferation) is not resolved by composing the two mechanisms.
+
+## Proof-route dead ends for DTL GAP-A (not candidates): potentials Φ and Φ_idx for dead-top cap carries — DEAD (2026-10-16 11:36Z; produced on Opus 5.5)
+Context: docs/alg/GAP-A-M.md §11b-§11e, hypothesis (H2b) of §12. A "dead-top cap carry" is a change between consecutive
+searches at a depth-0 −1 piece with an equal context, driven by a tangle whose top was pruned before the first changed
+round, rescuing only higher candidates.
+- Φ (every such carry raises a vertex's death round above its record over ALL −1 pieces of the phase): DEAD. Killer:
+  experiments/alg/instances/cross_h_k1_n11_m17_37.pg (n = 11), search 1, piece 0. The rescued vertex reaches death 3,
+  equal to its record from another −1 piece of the same search (§11b).
+- Φ_idx (per piece INDEX i: every such carry raises R_i(u), the record of a rescued u over the phase's −1 results at
+  index i; original and Dom(prevV)-only restatement): DEAD.
+  Killer: experiments/alg/instances/phi_idx_flat_n20.pg (n = 20; Oink A_DTL 11 tangles, 5 iterations, verified; 0
+  deficit calls; A_DTL = C6 there). At piece 2 (original vertex ids), s3 → s4 has the same context and first differing set
+  V_5 {17, 19} → {14, 17, 19}. The single driver is tangle 9 (top 5, pr 16, dead), and the rescued vertex 14 reaches death
+  6, equal to its record from s1 (another context); vertex 19 reaches 7, equal to its s1 record (§11d). L-RED confirmed
+  this independently on A_DTL (l-red 17db195). Second
+  killer: climbs_1016/nest_nest_s84.pg, s13 → s14, piece 1; vertex 30 reaches 6 = its record from s9-s12 (another
+  context), driven by redundant drivers including dead-top tangle 26 (§11d.1). The original definition is also killed by
+  phi_idx_cutrec_n20.pg (records from cut pieces).
+- Exact obstruction: CROSS-CONTEXT records. Within one context every carry raises the same-context record (Lemma F,
+  PROVED for C6, §11c.1). An earlier visit to a DIFFERENT context at the same index can set a higher death that a later
+  carry only reaches. The earlier "support" (142/142, 273/273) never exercised this case (0/115 binding).
+- Idea killed: a per-index record potential bounding dead-top cap carries without bounding contexts. Idea kept: Lemma F,
+  so carries at index i ≤ n(n+2) · c_i (c_i = distinct Dom(prevV) contexts at index i), and (H2b) reduces to c_i.
+
+## Proof-route dead ends for DTL GAP-A, (H4): per-context potentials (LEX), (NR) and the child round count (CM) — DEAD (2026-10-16 box 4; produced on Opus 5.5)
+Context: docs/alg/GAP-A-M.md §18 (and §13h for (CM)). (H4) = a polynomial bound on deficit-triggered (DEF) changes at a
+fixed depth-0 context of A_DTL.
+- (LEX) (the actual death vector at a fixed context, read in index order, rises lexicographically when the tangle set
+  grows) and the route (LEX)+(NR) ⇒ ≤ n(n+3) changes per context: DEAD.
+  Killers on actual A_DTL runs (Oink-verified, both order data):
+  - experiments/alg/instances/lex_viol_oink_n20.pg (L-ALG, §18h): searches 3 → 4, ideal stable and unchanged; vertex 19
+    (priority 21) dies at 11 instead of 12 while the only higher-ranked riser, 17, has the same priority and a lower
+    index. Mechanism: the riser 17, as an extra top, steals 18 from top 3's region, the tangle {11, 18} straddles, and
+    vertex 5 drops out of the union.
+  - experiments/red/carry/instances/lex_viol_inj_n28.pg (L-RED R18, l-red 32798af; injective priorities): s5 → s6, the
+    top changed vertex 2 (priority 43) falls 8 → 7 while 20 (priority 41) rises; it is also an (NR) violation (2 is the
+    top riser again at s6 → s7), nesting level 1.
+  Synthetic, genuine tangles: experiments/alg/dtl_lexcounter.py (9 vertices; a new tangle steals instead of a riser).
+- (NR) (a vertex that fell at a context is never again the top changed vertex there): DEAD, lex_viol_inj_n28.pg.
+- (CM) (a child's actual round count never drops across a parent DEF step into an ideal-stable child context): DEAD.
+  Killers: experiments/red/carry/instances/cm_mdrop_both_n28.pg (L-RED R17, l-red 8af6eb3; M 8 → 7, both orders) and
+  experiments/alg/instances/cm_viol_oink_n28.pg (L-ALG, §18i; M 7 → 6, both orders; the child loses three p-parity tops,
+  no stored tangle loses a vertex).
+- "Fallers lie strictly below the top riser in priority" (box-4 DATA pattern): DEAD, both lex_viol instances.
+- (F1) (L-RED: at most one fall step per context): DEAD, experiments/red/carry/instances/f1_twofall_n48.pg (L-RED R19;
+  one DEF fall and one LRN fall at one context); synthetic: experiments/alg/dtl_twofall.py.
+- (F1-DEF) (at most one DEF fall step per context): DEAD, experiments/red/carry/instances/f1_twodef_n48.pg (L-RED R20,
+  l-red 289931e; Oink 11 iterations, verified: two DEF fall steps at one context, in the two disjoint components);
+  synthetic: dtl_twofall.py (both falls are DEF steps). With it, every per-context (H4) candidate stated on 2026-10-16
+  is dead.
+- Exact obstruction: a vertex that rises (or a new tangle) can steal a vertex of a straddling tangle into a HIGHER
+  region. The tangle's rest is re-absorbed only at the lower level of its own cycle maximum, so whatever followed the
+  tangle at the higher threshold is lost (Lemma R carry + Lemma E rest). The loss then propagates UP over the later rounds
+  through the dependence of level-q survival on V^{<q} (§18a). So no lexicographic potential over deaths survives.
+- Idea killed: a per-context potential over the actual state for (H4). Synthetically even the full state can return
+  (dtl_staterevisit.py, a pure DEF cycle). On actual DTL runs no full-state revisit has been seen (dtl_revisit.py §18j:
+  0 in 296 / 301 context runs), and (LEX-R) and (U-MONO_DTL) stand as DATA. Both are lexicographic only, and a proof of
+  either must use DTL's learning order.
+
+## Proof-route dead ends for DTL GAP-A, (SPP): per-phase potentials — DEAD (2026-10-17 box 5, 00:33Z by date -u; produced on Opus 5.5)
+Context: docs/alg/GAP-A-M.md §21. (SPP) = "every phase of A_DTL has at most |G'| searches" (DATA; tight up to one,
+experiments/alg/instances/spp_chain_up_n43.pg). Wanted: a quantity that every non-last search of a phase strictly moves.
+- Dead on actual A_DTL runs (C5 corpus = experiments/alg/instances, climbs_1016, experiments/red/**; Oink order, failures
+  out of 990 transitions; the long phases spp_final_n20/n30/n40 and spp19_oink_n30 fail every one):
+  union of tangle vertices (210), tangle tops (281), (top, vertex) incidences and "new vertex for its top" (129 each),
+  fixed-input attractor sums PSI1-PSI5 (24-44 of 37-101 on the long phases), settled piece labels (25 of 34), the depth-0
+  removal-index sum PHI0 (300) and vector LEX0 (323), the set of tangles used in a search (467) and its vertex union
+  (246), (LR-SETTLE)/(LT-SETTLE) (26 of 83), (CL) "some vertex moves to an earlier tree position" (159).
+- Dead: the author's own per-search expectation (dtl.cpp computeDistanceValues; the trace check "nothing changed!" is
+  vacuous because it compares uninitialized arrays): the root distance values stay unchanged after 525 of 990 tangle-learning
+  searches, and after all 41 of spp_chain_up_n43 (pinned Debug Oink agrees).
+- Dead: a constant bound on tangles per top per phase (13 at one top, spp_final_n40); sharper forms of (SPP):
+  S ≤ P + c and S ≤ d' (spp_final_n20, Oink order: S = 19, P = 14, d' = 13).
+- Exact obstruction: a phase is a nested counter. The first difference between consecutive searches is a strictly larger
+  attractor at an EARLIER call (First-Difference Lemma, §21d): absorption into earlier removals (one or more vertices per
+  search) alternates with RES changes of depth-0 results, which re-open absorbed vertices; the re-opened vertices are then
+  re-learned in new tangles (spp_final_n20: 38 re-opened, 33 re-learned). Any quantity that ignores the reset structure fails
+  at the resets; any T-only quantity at the root (DV, DV*) is monotone but does not see absorption in later pieces.
+- Kept: (SPP) as DATA; First-Difference Lemma and DV*-MONO PROVED; DV-MONO SKETCH + GAP (DATA 0 falls).
+- (01:59Z by date -u) (ABS-mono) "the depth-0 removal-index sum PHI0 never rises at a transition whose first difference is not a
+  depth-0 RES" and its pointwise form (ABS-mono-pw): DEAD. Killer: experiments/red/carry/instances/absmono_viol_n44.pg (L-RED
+  R22, l-red cf9bdba; Oink 5 iterations, verified; both order data): Even's search 0 → 1, first difference a SHRINK at
+  depth-0 piece 14; depth-0 piece 17 (same context in both searches) goes stable → −1 under the larger tangle set, so 7
+  vertices move to later pieces and PHI0 rises 374 → 379. Obstruction: actual best_vertices is not monotone in T at a
+  fixed context (the deficit of §13-§18), and later pieces see a larger T.
+
+## GAP-C (completeness) proof-route dead ends — box 5 (02:21Z by date -u; produced on Opus 5.5)
+Context: docs/alg/GAP-C.md. Lemma K: W_p(G') ≠ ∅ ⇒ search(p) learns a tangle or a dominion.
+- (S2) "a context containing a p-dominion is never pruned to −1": DEAD, experiments/alg/instances/spp_final_n20.pg (Odd's
+  root call returns −1 although Odd wins all 20 vertices).
+- (Cb1) "a dominion inside the context survives every unproductive iteration": DEAD in the strict and the forgiving
+  semantics, experiments/alg/instances/c1_k1_min_n7_m10.pg (root piece) and c6_replay3_n32.pg (GAP-C.md §7).
+- (NODUP) "the duplicate check never fires" and (NO-ORPHAN): DEAD, experiments/red/carry/instances/gapb_dup_n20.pg (L-RED;
+  Oink-verified, both orders). Obstruction: a stored tangle whose escapes are all removed earlier in the search ((β-a)/(β-b)
+  of Lemma B-thr) is re-found by its top. The instance has W_p(G') = ∅ in that search, so Lemma K is untouched; the
+  surviving candidate is (NO-ORPHAN-W), restricted to the winning region.
+- (03:35Z by date -u) (NO-ORPHAN-W) "no stored p-tangle inside R ∩ W_p(G') has all its escapes outside R", i.e. (β-W) per region:
+  DEAD, experiments/red/carry/instances/gapbW_dup_n20.pg (L-RED, l-red 2b792b8; Oink-verified, both orders): a duplicate inside
+  W_0 at a depth-1 lowest region; the search is productive elsewhere inside W_p. GAP-C is now the existential (K-low),
+  GAP-C.md §12.
+- (K-first) "the first stable piece's lowest region is productive inside W_p" and (K4-B) "its regions lie in W_p": DEAD,
+  experiments/alg/instances/kfirst_viol_union.pg (disjoint union of two corpus games, n = 26; Oink-verified; both orders);
+  276 of 891 mixed union searches. They held on the corpus only because there W_p = G' (or one opponent vertex). The
+  existential (K-low) survives (2,092 of 2,092 mixed union searches).
+- (FIRST-W) "the first stable piece whose V* meets W_p is productive inside W_p": DEAD, experiments/alg/instances/firstw_viol_cross.pg
+  (union of two corpus games with 3 cross edges, n = 30; Oink-verified; both orders; that piece's V* lies on both sides). 4 of 188
+  interacting mixed searches. The existential (K-low) survives (188/188).

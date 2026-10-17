@@ -147,3 +147,80 @@ class K), but no human-readable proof was found (DRUP 63,298 lemmas; case tree 8
 is a width cost from serving priority-2 counts {1,2} together. Three k = 9 runs (B_2(5) >= 10?) continue detached in the
 parked session at no extra spend; their RESULT lines are read later if the container survives. Standard for SAT data
 points: UNSAT by >= 2 independent solvers; no LRAT for now.
+
+## L26 (Lead reading, 2026-10-16 01:20Z): DTL step-4 statement re-frozen for every order datum
+Fleet judgement under L12. After CHECKER C3d/C3e/C3f (claude/checker 4b15364: PASS), docs/alg/DTL-proof.md §0 at
+claude/l-alg e144992 replaces the L24 freeze (ccff864). Theorems D1 and D2 are claimed for EVERY order datum omega (the eight
+implementation choices O1-O8 of docs/alg/C5-orders.md; Oink 8fbf0a7's instance recorded in C5-DTL.md §0), with the pinned
+parser's order- and parity-preserving renumbering of priorities named in step 0 (cost charged in D2(e)). Reason (option ii,
+L-ALG C5-orders.md): consistent with L22's equal-priority clause, no cost to the proved parts, keeps the tangle bound from
+depending on an order accident; L-COMP's second implementation showed counts depend on omega and regions/strategies do not.
+Changes to §0 go through the Lead and CHECKER. Not a result: GAP-C and GAP-A remain open.
+
+## D8 (2026-10-16 ~06:50Z, owner in the Lead session, answering Q11): Fable cap
+> I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
+
+Lead reading L27: Q11 option (b). Until the Fable weekly limit resets (2026-10-21 21:00Z), the paused attack lanes (L-ALG,
+L-RED) continue on Opus 5.5 at high effort, as fresh successor sessions under LANE-RESTART. Work produced on Opus is labelled
+as such in the lane notebooks. The referees are not engaged before the reset (no complete claim is ready); if one is needed
+earlier, the Lead asks the owner first, because D1 says "Never downgrade the referee to save money". The Opus weekly limit is
+also at "allowed_warning": if Opus hits its cap, the fleet pauses again (D7) and the owner is told. Sweeps return to hourly.
+
+## D9 (2026-10-16 ~10:38Z, owner in the Lead session): search for van Dijk's DTL counterexample
+> Can you start a subsession that tries to look up if van dijk's DLT counter example is anywhere online available or posted
+
+Lead reading L28: "DLT" means DTL. The target is the author's counter_dtl ("Counterexample to the DTL solver", Oink README
+39254fe, 2021-06-25, never committed; T16 caveat (i)). A fresh L-LIT successor (Opus, D8) runs a read-only search; it owns
+docs/lit/T17-counter-dtl-search.md. It does not contact anyone, post, file issues or log in (D1). Any find is reported to the
+Lead at once with URL, commit or archive id and date; running it against DTL goes to L-RED. Working sessions: 3 of 5. Given the
+narrow, read-only task, the successor answers the five LANE-RESTART questions and then proceeds without waiting for "go";
+the Lead re-measures the answers afterwards.
+
+## D10 (2026-10-16 ~16:39Z, owner via OWNER-DESK, answering Q13): repository visibility
+> I dont mind the repistory is public
+
+Lead reading L29: Q13 option (a), the repository nano44/parity_games_challange stays public. Pushing fleet work to this
+repository is not "publishing" in the sense of D1; D1 still forbids every other outward act (posting, emailing, submitting,
+contacting anyone, announcing or linking the repository anywhere). Consequences: (1) "No secrets in any session" now also
+means nothing sensitive is ever committed, since every push is public; (2) docs/HUMAN-REVIEW.md being readable in the repo is
+accepted under D10; the Q6 ruling (no external distribution by the fleet) is unchanged; (3) nothing in the repo is a claim to
+anyone outside: results stay labelled as unrefereed where they are.
+
+## D11 (2026-10-16 ~16:40Z, owner via OWNER-DESK, answering Q12): contact with van Dijk
+> No contact for now
+
+Lead reading L30: Q12 option (a). No contact with the author about counter_dtl or anything else; the fleet works from the
+public record (T17) and its own constructions. The p.15 recipe was already built (L-RED R14, d70e99a: no slowdown on A_DTL).
+The question may be put to the owner again only if a later finding makes the author's counterexample decisive.
+
+## L31 (Lead reading, 2026-10-16 17:25Z): C6 is not promoted to a gauntlet candidate
+Basis: L-ALG's C6 scoping note (docs/alg/GAP-A-M.md §19, l-alg 16fd55b). C6 (DTL with ideal pruning) removes (H4) by
+construction and has every per-context lemma proved (F, S), but its GAP-A reduces to the same core as A_DTL (a polynomial
+bound on fresh, resetting child contexts per parent piece), its completeness reduces to A_DTL's GAP-C, and (H1)-(H3) are
+open or dead on C6 as on A_DTL. Promoting it would add gauntlet steps 1-3 without shortening the open core. Reading:
+A_DTL stays the gauntlet candidate (step-4 statement L24/L26 unchanged). C6 is used as the SIMPLER MODEL for the core: a
+proof of the core on C6 is the first target, then its transfer to A_DTL (where (H4) adds deficits). Revisit if the core is
+proved on C6 and the transfer fails, or if the owner decides otherwise.
+
+## L32 (Lead reading, 2026-10-17 09:12Z): GAP-A reassessment criterion (owner asked via OWNER-DESK: "Are we narrowing down the decision to see?")
+GAP-A (polynomial number of searches for A_DTL) is not converging: every per-context and per-phase potential stated so far is
+dead (RESULTS DE9-DE12); the surviving statement (SPP) is DATA only (tight, 0 violations). GAP-C, by contrast, has narrowed to
+one open point ((ACYC), docs/alg/STEP5.md) plus the S/T steps. Criterion:
+(1) Immediate stop of the candidate (owner report at once): any Oink-verified incorrect/incomplete run under any order datum, or
+    a family whose searches per phase grow super-polynomially (gauntlet step 4 fails; DTL becomes a dead end).
+(2) Reassessment point: the Fable reset, 2026-10-21 21:00Z, or earlier when both lanes' boxes end with no new GAP-A reduction.
+    "Progress" means a reduction of GAP-A to ONE named statement with a proof route (as GAP-C reached), or a proved polynomial
+    bound on a nontrivial subclass. If neither exists at the reassessment point, the Lead puts three options to the owner:
+    (a) bank the refereed partial results (GAP-C chain, Step 5) and write up DTL's status as an open candidate;
+    (b) keep only the cheap adversarial side on GAP-A (L-RED climbs), no proof lane;
+    (c) a new candidate or a new approach. The owner decides.
+(3) Allocation until then: from the next boxes (after ~13:10Z) one lane returns to GAP-A with a fresh angle; GAP-C continues.
+
+## D12 (2026-10-17 ~09:10Z, owner via OWNER-DESK): referees on Opus
+> WE can run referees on opus too temperoraly
+
+Lead reading L33: until the Fable reset (2026-10-21 21:00Z), REFEREE and REFEREE-2 may run on Opus 5.5. This lifts the L27
+"referees wait" for that period and is the owner's own exception to D1's "never downgrade the referee". Unchanged: two
+independent referees, REFEREE-2 reads docs/referee/ only after its own report, gaps listed. Every signature given on Opus
+carries the label "(Opus 5.5, D12)" in its report and in RESULTS; after the reset the Lead may ask a Fable referee to re-read
+any such entry. First packet: docs/alg/STEP5.md (Step 5 of GAP-C: NT-f, FM, WM, (YZ) <= (ACYC), P-KT), pinned at a trunk SHA.
