@@ -132,3 +132,62 @@ The draft may land as written. If edited, I re-diff the text only.
   signature (REFEREE-2). It notes "The factor 3 of R2-P7/R2-P8 stays valid without STR-DET (c)". R10 (c) and R11 (c)/(d) use
   3, which is signed by both and remains correct. No change needed. If the Lead adopts 2, it needs REFEREE's signature
   first.
+
+## Addendum 2: R11 draft re-diff, 369b4bf → e9e424f (Lead 16:15Z): PASS
+- History: 369b4bf is an ancestor of e9e424f. Word diff of R11-draft.md.
+- The only change is one sentence added to G-R11-1: "REFEREE-2 R2-P8 §7 (c2ac652) adds that, given STR-DET, the factor
+  tightens to 2 (overlapping e*-intervals overlap only where T is constant); one signature, not used here."
+- R2-P8 §7: "The same device tightens G-P7-c2 / G8-1 from 3 to 2, given STR-DET (optional)"; "Two such intervals overlap
+  only inside search s_k+1 between π_{k+1} and π_k. There T is constant (STR-DET (c))".
+- The sentence matches §7. It is correctly labelled as one signature and is not used in (c)/(d), which keep the factor 3.
+  This settles C11 N-6.
+- C11 verdict at e9e424f: PASS. N-1..N-3 are still recommended and not applied.
+
+## Addendum 3: R11 draft re-diff, e9e424f → ee4e060 (Lead 16:21Z), text only: PASS
+- History: e9e424f is an ancestor of ee4e060. Word diff of R11-draft.md. The changes are the header stamp and the items
+  below; nothing else moved.
+| item | new text | |
+| --- | --- | --- |
+| N-3 | "(REFEREE's items imported by L-ALG in GAP-A-M §22w, l-alg c915af1; G8-2 and N8-1 still to be imported)" | applied |
+| N-1 G-R11-4 | "L-RED ctx13_n40, re-run CHECKER C11: dtl_rootmono both orders, pinned Oink 29 iterations verified"; "still rising ..." dropped | applied; matches C11 §3 |
+| N-1 G-R11-5 | "665/703 (GAP-A-M §22w, mixed unions) and 325/338 (§22u, cross unions)" | applied |
+| N-1 G-R11-6 | "(REFEREE R-P8: 'the obstruction is (FIRED-R)')" | applied, verbatim from R-P8 |
+| N-2 G-R11-7 | "Also open, inherited: (ACYC) (G-S5-6, a GAP-C item)" | applied |
+| CAVEAT G-R11-6 | see below | accurate |
+| Scope | "Because (FIRED-R) is implied by GAP-A (G-R11-6 caveat), this reduction is not the L32 single-statement progress criterion." | follows from the caveat; it is a conservative scope statement |
+- The CAVEAT checked against GAP-A-M §22w as on trunk ee4e060 ("(FIRED-R) climb and a caveat", l-alg 8642d5c, an ancestor of
+  ee4e060):
+  - "every fired tangle is a stored tangle, so by Lemma W #fired(R) ≤ #tangles ≤ n·S": §22w "Every tangle that fires at R
+    is a stored tangle, and Lemma W gives #tangles ≤ n·S, so #fired(R) ≤ n·S trivially". Lemma W is DTL-proof.md §3(a)
+    (GAP-A-M line 404). OK.
+  - "GAP-A itself implies (FIRED-R)": §22w "(FIRED-R) also FOLLOWS from GAP-A". OK.
+  - "a context-local form of the tangle count, not an independent weaker statement": §22w "(FIRED-R) is a context-local form
+    of GAP-A's tangle count, not an independently weaker statement". OK.
+  - "its content is that the tangles active at one context do not grow with the phase length, and only long phases (S ≫ |R|)
+    test it": §22w "Its content is that the tangles active at one context do not grow with the phase length. Testing it needs
+    LONG phases (S ≫ |R|)". OK.
+  - "Short-phase climbs reach 15 fired tangles at |R| = 17 (0.88)": §22w "Stable order: 15 tangles with |R| = 17 (0.88)".
+    OK.
+- N-7 (optional). §22w adds that the stable-order counts "come from dtl_pyref under that order datum, so Oink's own run
+  differs". The Oink-order climb reached 13 (0.87). The draft's 15 is the stable-order pyref figure. "(stable order,
+  dtl_pyref)" would make that exact.
+- C11 verdict at ee4e060: PASS. All of N-1..N-3 and N-2 are applied.
+
+## Addendum 4: R11 re-diff at trunk HEAD 77c5fa3 (Lead 16:24Z): FAIL (the caveat rewrite is not on trunk)
+- 77c5fa3 ("R11 draft: FIRED-R caveat corrected per L-ALG 16:13Z") changes only docs/agents/LEAD-STATE.md (1 line).
+  - `git log ee4e060..77c5fa3 -- docs/agents/R11-draft.md` is empty.
+  - R11-draft.md at 77c5fa3 is byte-identical to ee4e060.
+  - This is the same slip as 6a4003d in C7.
+- GAP-A-M §22w at 77c5fa3 now carries L-ALG's bracket: "[Correction 16:11Z: 'follows from GAP-A' is true of EVERY premise of
+  the form 'X is polynomial' with X ≤ poly(S), (CTX⁺) included, so that part is not specific. The specific point is that
+  (FIRED-R) bounds tangles, and the tangle count is GAP-A's own core (Lemma W). (FIRED-R) is therefore unlikely to be much
+  easier than GAP-A, unlike (STEAL-ONCE), which is a statement about repetition.]"
+- Against that bracket, the draft text still on trunk is no longer accurate to §22w:
+  - G-R11-6 (line 44 ff.): "and GAP-A itself implies (FIRED-R). (FIRED-R) is a context-local form of the tangle count, not an
+    independent weaker statement". The first clause is the part L-ALG withdrew as not specific.
+  - Scope (line 53): "Because (FIRED-R) is implied by GAP-A (G-R11-6 caveat), this reduction is not the L32 single-statement
+    progress criterion". It rests on the same withdrawn reason. By the bracket that reason applies to (CTX⁺) too.
+- Required: push the rewritten G-R11-6 caveat and Scope line that the Lead's message describes. Then I re-diff the text
+  only.
+- The ee4e060 PASS (Addendum 3) stands for ee4e060 as it was against §22w at 8642d5c. It is superseded by L-ALG's
+  correction, which is now on trunk.
