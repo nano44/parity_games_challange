@@ -298,6 +298,13 @@ if __name__ == "__main__":
                         low = pc["passes"][0][-1]
                         ok = any(tp == low for tp, C in pc["tops"]) or pc.get("domf")
                         inc("S-LOW (first KT-breaking S piece, lowest top of the first pass) " + ("learns" if ok else "VIOLATION: does not learn"), f if not ok else None)
+                        okD = any(tp == low and C <= Dw for tp, C in pc["tops"])
+                        inc("S-LOW-D (the same, a NEW tangle inside D) " + ("holds" if okD else "fails"), f if not okD else None)
+                        # tight form (L-RED slow.py, Lead 09:33Z): in the FIRST pass the lowest top itself creates a new tangle
+                        # inside D or finds a dominion
+                        ev = [e for e in pc.get("events", []) if e[0] == 0 and e[1] == low]
+                        okT = any(any(C <= Dw for C in e[2]) or e[3] for e in ev)
+                        inc("S-LOW-TIGHT " + ("holds" if okT else "VIOLATION"), f if not okT else None)
                     cW, Wst = lowdom(d, p, Dw & R0, R0)
                     if not Wst: inc("S-W*: no p-dominion of G[R] inside D at this S piece")
                     else:
