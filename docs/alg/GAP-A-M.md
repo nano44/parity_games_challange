@@ -2708,3 +2708,191 @@ Ledger addendum (16:36Z by date -u):
   instance.
 - (CTX⁺) climbs: 12 first-difference contexts, reached from spp22 (stable) and from spp25 (Oink). The best instance is
   saved as ctx12_oink_n40.
+
+## 23. Box 8 (L-ALG successor 6, Lead GO 16:43Z by date -u, box to ~00:45Z; produced on Opus 5.5)
+Ledger correction (16:44Z, Lead 16:43Z): REFEREE-2 has also signed packets 7 and 8 (EXACT, PREFIX-MONO-X, EXACT*,
+PREFIX-MONO-X*), in full agreement after the comparisons. R10 has landed, and R9's original constants hold given STR-DET.
+Targets: (1) prove (STEAL-ONCE*); (2) (FIRED-R) on long phases; (3) (CTX⁺), only if (1) or (2) moves.
+
+23a. Toward (STEAL-ONCE*): the invariant is (STAYS-MET) (DATA; 16:50Z by date -u; dtl_rootmono.py RM_EXCL=1 RM_PREF=1)
+- A second relevant steal of (context, step σ, tangle t) needs t to FIRE again at σ. That needs every later prefix
+  P(σ⁺) to be disjoint from t, i.e. the prefix must retreat from t entirely.
+- DATA (corpus plus fall3_n76, fall4_n116, fallv_viol_n28, f1_two*; Oink / stable): after each of the 216 / 214 relevant
+  steals, t NEVER fires again at σ, and every later visit's prefix at σ still MEETS t.
+- So the observed invariant is (STAYS-MET): once a fired tangle is split at a step, it stays split for the rest of the
+  phase. (STAYS-MET) ⇒ (STEAL-ONCE*).
+- Prefixes do shrink. Between consecutive visits some step's prefix loses a vertex in 119 of 8,252 pairs (Oink order),
+  all at relevant-steal pairs, as PREFIX-MONO-X* says. But no shrink ever removes ALL vertices of a previously stolen
+  tangle.
+Partial proof (reading).
+- In round 1 the input V₁ (all p-priority vertices of R) is fixed. The first region is Cl({τ₁}; T), with no exclusions
+  since its prefix is empty, so it is monotone in T. Hence the prefix at the second step of round 1 only grows, and
+  (STAYS-MET) holds there.
+- From the third step on, the second region is Cl(P ∪ {τ₂}; T \ E), where E grows with P. A stolen tangle at the third
+  step may be met only through vertices of the second region. If one of the second region's fired tangles is later
+  stolen, those vertices can leave. So the induction does not go through as stated.
+- What is needed: when a region loses vertices through a relevant steal of its own fired tangle t′, it never loses every
+  vertex through which an earlier-stolen tangle t is met at a later step. Not proved.
+Sharper invariants (17:08Z by date -u; same data, Oink order):
+- (MET-MONO) "a tangle met by a step's prefix stays met" is FALSE in general. 117 of the 119 visit pairs with a prefix
+  shrink lose some met tangle.
+- (STOLEN-PERM) holds in 216 / 216: after a relevant steal the STEALING vertices t ∩ P(σ⁺) stay in every later prefix at σ.
+  It implies (STAYS-MET).
+- (STEALER-MONO) holds in 216 / 216: the region that holds the stolen vertices never loses any vertex afterwards.
+- Reading. By EXACT* and PREFIX-MONO-X*, region j can shrink only after a relevant steal at some step ≤ j. So the data
+  says: once region j has stolen from a later step, no relevant steal happens at steps ≤ j again in the phase. That
+  would be an ORDER on steals (each region steals only after the regions above it have stopped changing).
+- Not proved. The obvious attack shape: after region 2 has stolen from region 3, let region 1 (monotone in round 1)
+  grow into a tangle that fired in region 2. Target for L-RED.
+- Union runs with all these checks are running.
+Union data (17:28Z by date -u; RM_PREF=1 RM_EXCL=1 RM_LIGHT=1; corpus included). Relevant steals followed through the rest
+of the phase. NO-REFIRE, STOLEN-PERM and STEALER-MONO each hold in every case:
+
+| set | Oink | stable |
+|---|---|---|
+| cross unions s11 (600, UM_CROSS = 3) | 377 / 377 | 456 / 456 |
+| mixed unions s1 (900) | 644 / 644 | 849 / 849 |
+
+With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) / 1,519 (stable) relevant steals.
+
+23b. (STEALER-MONO) KILLED on stealer_viol_n76; (STAYS-MET), (STEAL-ONCE*), (STOLEN-PERM) survive there (L-ALG succ. 7, 17:47Z by date -u)
+- Instance: experiments/red/carry/instances/stealer_viol_n76.pg (L-RED, l-red 549f8de; n = 76, sha1 714ecc0f). Pinned Oink
+  (`oink --dtl --no-single --no-wcwc --no-loops -v` @ 8fbf0a7): solved in 7 iterations, "solution verified (33 strategies)".
+- Re-run (DATA), dtl_rootmono.py unmodified (l-alg e2f7e198 code), RM_EXCL=1 RM_PREF=1 RM_DV=0, with and without RM_LIGHT=1
+  (identical counts; RM_LIGHT changes only the closure check `cl` and the deficit flags, not pref/regset/excl/fired):
+  | order | STEALER-MONO | STOLEN-PERM | NO-REFIRE, stays met | relevant steals per triple |
+  |---|---|---|---|---|
+  | stable | FAILS 3, holds 14 | holds 17 | 17 / 17 | max 1 |
+  | oink | holds 1 | holds 1 | 1 / 1 | max 1 |
+  L-RED's numbers confirmed. No INCOMPLETE; no incorrect run.
+- New tool experiments/alg/dtl_stealtrace.py (same model; RM_EXCL=1 RM_PREF=1; "STAYS-MET" there is the strict form: t meets
+  every later prefix at σ, not merely "not met-but-not-contained"). Stable: STAYS-MET holds 17/17, NO-REFIRE 17/17, STEAL-ONCE*
+  max 1 on all 5 contexts with relevant steals, STEALER-MONO FAILS 3/17. Oink: all hold (1 steal).
+- (a) So (STAYS-MET) and (STEAL-ONCE*) survive on this instance in both orders. Only the route statement died.
+- (b) Failing shape (stable order, phase 1, three depth-0 contexts |R| = 76, 75, 74, identical shape; vertex labels as in the
+  file):
+  - Visit 2, round 5: top 18 (pr 39) fires tangle 8 = {3, 7, 15}.
+  - Visit 3: region (round 5, top 31) (pr 65) fires tangle 7 = {34} and contains 3. So tangle 8 is relevantly stolen at step
+    (5, 18) with W = {3}.
+  - Visit 4: a new top 68 (pr 89, above every old top) fires tangle 7 and absorbs 34 and 38. Region 35 (pr 65, processed
+    before 31) now also takes 30 and 40 through 34. Region 31 shrinks from {3, 30, 31, 34, 38, 40} to {3, 31}.
+  - The relevant steal at visit pair 3→4 is tangle 12 = {51, 55, 63} at steps (4, 66) and (5, 66), stolen by region 68. It is
+    not one of region 31's own fired tangles.
+  - Every lost vertex moved UP, into regions processed before 31. Region 31's own fired tangle 7 was CAPTURED whole by a
+    higher region; that is not a steal. So the prefix at step (5, 18) keeps 3, 30, 34, 38 and 40, and W = {3} stays
+    (STOLEN-PERM).
+- Obstruction: a region can lose vertices by UPWARD MIGRATION. A new or grown higher region captures the region's fired tangle
+  whole and takes its dependents. Nothing is stolen from the region, and the prefix of every step below it does not lose those
+  vertices. (STEALER-MONO) is a statement about a single region and was the wrong unit; the prefix (a union) is the right one.
+  The §23a "ORDER on steals" reading is also false here: a relevant steal at step (·, 66), above region 31, follows region 31's
+  steal from step 18.
+- (c) KILLED: (STEALER-MONO) as a statement about A_DTL (L22/L26: every order datum). Recorded in docs/alg/DEAD.md.
+- §23a's counts: its 1,519 stable steals were taken with RM_PREF=1 RM_EXCL=1 RM_LIGHT=1 (unions: UNIONS/SEED/UM_CROSS, NMAX = 32)
+  and DTL_ORDER=stable, so the counters are the same. The kill is in stable order, on an instance outside those sets: n = 76 is
+  above the unions' NMAX, and the instance is new.
+- What survives: (STOLEN-PERM) ⇒ (STAYS-MET) ⇒ (NO-REFIRE at σ) ⇒ (STEAL-ONCE*). Each arrow is PROVED (reading) as in §23a: a
+  relevant steal needs t ∈ F_τ at the earlier visit, and firing at σ needs t disjoint from P(σ⁺).
+- New candidate route (SKETCH, not proved). Call w ∈ P(σ) DEPENDENT on a fired tangle t′ at step σ′ > σ if w entered region σ′
+  through t′, or through a vertex dependent on t′. Then by EXACT* and PREFIX-MONO-X*, w leaves P(σ) only after a relevant steal
+  of a tangle it depends on. Upward capture keeps w inside P(σ). So (STOLEN-PERM) needs: the stealing vertices of a steal never
+  depend on a fired tangle that is later relevantly stolen.
+
+23c. Shrink-vertex analysis and (DEP-SAFE) (DATA; L-ALG succ. 7, 18:34Z by date -u; experiments/alg/dtl_shrinkdep.py @ l-alg b45bd87)
+- Tool. Model and visits are those of dtl_rootmono.RM with RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0. It adds an ATTRACTION FOREST
+  per best_vertices region step: each attracted vertex gets one parent, either ('v', popped vertex) or ('t', fired tangle,
+  popped trigger). path(w) is the set of fired tangles on w's chain to the region top.
+- Data sets:
+  - corpus: 254 committed .pg under experiments/ with n < 80, plus stealer_viol_n76;
+  - cross unions: UNIONS=600 SEED=11 UM_CROSS=3 NMAX=32, corpus included.
+  - Both order data. No INCOMPLETE.
+- Results (Oink / stable):
+
+  | set | (DEP-SAFE) holds | lost vertices A / B / C |
+  |---|---|---|
+  | corpus | 154/154 / 169/169 | 815 / 388 / 816 and 1,219 / 477 / 973 |
+  | cross unions s11 | 399/399 / 447/447 | 2,688 / 1,045 / 1,697 and 3,689 / 1,028 / 2,209 |
+
+  - A: a tangle on path_x(w) is relevantly stolen at its own step.
+  - B: w's region top is no longer a region top.
+  - C: other.
+  - A' (a path tangle plainly stolen, not fired) never occurs.
+- Reading of C, checked on two cases (scratch script; round 5 in both):
+  - stealer_viol_n76 (stable), |R| 75, visits 2→3, region top 14: path tangle 22 = {22, 24} with escapes {0, 4, 6, 14, 15, 16}.
+    Escape 16 is in P_x and not in P_y, and is not in the region, so tangle 22 cannot fire at y.
+  - climbs_1016/b_best_s33 (Oink), |R| 20, visits 1→2, region top 19: tangle 6 = {6}, escape 5, in P_x and not in P_y.
+  - So the cause is an ESCAPE. A tangle escape (or, by the same rule, an opponent successor) that lay in the prefix above at
+    x is back in Gx = CurR at y (dtl_pyref attractTangle lines 95-97, attractVertices line 74). The cause is thus another,
+    higher loss. Only these two C cases were checked; the rest are unclassified. The single-parent forest cannot
+  see this, so roughly 40% of losses (C) are cascades through escapes.
+- (DEP-SAFE) "no path tangle of a stealing vertex is relevantly stolen later" holds on 1,169 relevant steals (DATA). The
+  forest misses the escape cascades, though, so (DEP-SAFE) does not by itself imply (STOLEN-PERM).
+  The route needs an escape-aware dependency:
+  - w depends on every fired tangle on its chain, and on every prefix vertex that hides an escape of a tangle or of an
+    opponent vertex on its chain.
+  - Then: "a stealing vertex never depends on a later-stolen tangle or on a later-lost escape holder". SKETCH, not measured.
+- Status: (STOLEN-PERM), (STAYS-MET) and (STEAL-ONCE*) remain DATA. No proof. No kill.
+
+23d. (FIRED-R) on LONG phases (DATA; L-ALG succ. 7, 18:47Z by date -u; experiments/alg/dtl_firedlong2.py)
+- Filter: L-RED's, from experiments/red/root/firedlong.py (l-red 2486288). A context counts in a phase of S searches if it is
+  visited ≥ 2 times and S ≥ 2|R|. Same model and fired sets as dtl_rootmono.RM with RM_EXCL=1 RM_LIGHT=1 RM_DV=0.
+- Data sets:
+  - corpus: as in §23c, plus fall3_n76 and fall4_n116 (l-red);
+  - mixed unions: UNIONS=900 SEED=1 NMAX=32, corpus included.
+  - Both order data. No INCOMPLETE.
+- Results:
+
+  | set | order | counted contexts | max fired/\|R\| | max fired | max per step | NO-RETURN |
+  |---|---|---|---|---|---|---|
+  | corpus | Oink | 327 | 0.333 (3 at \|R\| 9, spp_n20) | 3 | 3 | holds 327 |
+  | corpus | stable | 316 | 0.25 | 2 | ≤ 2 (1 in the 25 printed rows) | holds 316 |
+  | mixed | Oink | 2,088 | 0.375 (3 at \|R\| 8, union758) | 3 | 3 | holds 2,088 |
+  | mixed | stable | 2,132 | 0.25 | 2 | ≤ 2 (1 in the 25 printed rows) | holds 2,132 |
+
+  - NO-RETURN: a tangle that fired at a step (round, top) and then did not fire there at a later visit where the step
+    exists never fires there again in the phase.
+- Birth of the fired tangles in these long-phase contexts. The birth arena is the sptl arena R′ of the extraction.
+
+  | set (Oink / stable) | born in this phase, R′ ⊆ R | R′ ⊋ R | R′ incomparable with R | born before the phase |
+  |---|---|---|---|---|
+  | corpus | 13 / 7 | 2 / 0 | 12 / 7 | 0 / 0 |
+  | mixed | 26 / 17 | 3 / 3 | 61 / 46 | 17 / 8 |
+
+  Most fired tangles are learned in OTHER branches of the recursion (incomparable arenas), so a count of the tangles learned
+  inside R does not bound #fired(R).
+- Reading. Long phases (S ≥ 2|R|) exist only for small contexts here (|R| ≤ 9, S ≤ 25). There the fired count stays ≤ 3,
+  well below L-RED's best long-phase ratio of 0.40. This is weak evidence that the fired set does not grow with phase length,
+  but the filter selects contexts too small to test growth.
+- Candidate sharp statement (DATA, being measured on all contexts): (FIRED-STEP) the number of distinct tangles that fire at
+  one step (context, round, top) in a phase is bounded by a constant c. With the (|R| + 1)·|R| steps per context (R11 (d)) it
+  gives (FIRED-R) with #fired(R) ≤ c(|R| + 1)|R|. It has the same per-step shape as (STEAL-ONCE*). With NO-RETURN, each
+  (step, tangle) fires on ONE interval of visits. So (FIRED-STEP) asks how many times a step can switch to a NEW tangle.
+
+23e. (FIRED-R) on ALL contexts: three candidate structures KILLED, two DATA statements survive (L-ALG succ. 7, 19:16Z by date -u)
+- Tool: dtl_firedlong2.py with FL_ALL=1 FL_SHOW=1, i.e. every context visited ≥ 2 times in a phase, with no long-phase filter.
+  Model and data sets as in §23d, plus fired10_n20 (l-red). Both order data. No INCOMPLETE.
+
+  | set | order | contexts | max fired | max fired/\|R\| | max distinct fired at one step | NO-RETURN | fired vertex sets distinct | laminar |
+  |---|---|---|---|---|---|---|---|---|
+  | corpus | Oink | 2,391 | 17 | 0.833 | 12 (fired18_stable_n20, \|R\| 18, S 3) | holds | yes, all | FAILS 56 |
+  | corpus | stable | 2,359 | 18 | 1.0 (fired18_stable_n20) | 11 | holds | yes, all | FAILS 61 |
+  | mixed | Oink | 13,519 | 20 (union322, \|R\| 48) | 0.833 | 12 | holds | yes, all | FAILS 480 |
+  | mixed | stable | 13,755 | 23 | 1.0 (union825, union299, union616, union248) | 11 | holds | yes, all | FAILS 470 |
+
+- KILLED (self-kills, each a candidate of this box; docs/alg/DEAD.md):
+  - (FIRED-STEP) with a constant c: "at most c distinct tangles fire at one step (context, round, top) per phase". Killed by
+    experiments/alg/instances/fired18_stable_n20.pg (l-alg 9ffee93; sha1 42307b22; pinned Oink 4 iterations, verified): 12
+    distinct tangles fire at one step of a context with |R| = 18, in a phase of only 3 searches (Oink order). A single region
+    step fires many tangles, so the per-step count is of order |R|, not constant.
+  - (FIRED-LAMINAR): "the fired tangles of a context in a phase are pairwise nested or disjoint". Had it held, it would have
+    given #fired(R) ≤ 2|R| − 1. Killed by experiments/alg/instances/c6_replay3_n32.pg (sha1 ac987535; pinned Oink 11
+    iterations, verified; both orders): tangles {4, 7, 13, 17, 21, 25} and {8, 17, 21} cross, at contexts with |R| 32, 31, 29
+    and 26. Contrast: ALL tangles born in a phase are not laminar either (tc+ 4, tc+ 6, spp_final_n20; scratch check).
+  - (FIRED-TOP-INJ): "the fired tangles of a context have distinct top vertices". Killed by fired18_stable_n20 (stable, 2
+    contexts).
+- Survive (DATA, all 32,024 contexts):
+  - (FIRED ≤ |R|): #fired(R) ≤ |R| per phase. It is TIGHT: equality 18/18 on fired18_stable_n20 (stable) and on four mixed
+    unions.
+  - (FIRED-DISTINCT): fired tangles of a context have distinct vertex sets.
+  - NO-RETURN.
+- Reading. (FIRED ≤ |R|) is tight and has no injective witness yet: not laminar, and not by the top vertex. Climb target for
+  L-RED: fired/|R| > 1 (dtl_firedclimb.py's fitness, or firedlong.py without the filter). No proof route.
