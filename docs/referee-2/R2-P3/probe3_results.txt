@@ -1,0 +1,4 @@
+corpus (254 files x 2 in-orders x 2 labellings):
+runs 1014 {'m1': 35300, 'ntf_viol': 0, 'fm_viol': 0, 'P': 19102, 'P0': 14074, 'yz_viol': 0, 'dom_acc': 2, 'dom_nonstr': 0, 'dom_str': 2, 'acyc_viol': 0, 'tangles': 14283, 'tpr_bad': 0, 'notop': 0, 'dup': 6, 'dup_same': 0, 'k5st': 2550, 'k5nonempty': 0, 'k5str': 0, 'k5incl': 0, 'k5open': 0, 'k5cons': 0, 'orphP': 0, 'orphP0': 0}
+random (gen.py seeds 1-3000 x 2 in-orders; before the orphP counter was added):
+runs 6000 {'m1': 51645, 'ntf_viol': 0, 'fm_viol': 0, 'P': 33591, 'P0': 32875, 'yz_viol': 0, 'dom_acc': 0, 'dom_nonstr': 0, 'dom_str': 0, 'acyc_viol': 0, 'tangles': 9955, 'tpr_bad': 0, 'notop': 0, 'dup': 0, 'dup_same': 0, 'k5st': 1317, 'k5nonempty': 0, 'k5str': 0, 'k5incl': 0, 'k5open': 0, 'k5cons': 0}
