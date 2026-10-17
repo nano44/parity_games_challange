@@ -1,4 +1,4 @@
-# Draft RESULTS R12 (Lead, 2026-10-17 20:40Z by date -u) — NOT LANDED; awaiting REFEREE §C, L-ALG §23j imports, CHECKER gate
+# Draft RESULTS R12 (Lead, 2026-10-17 20:40Z by date -u) (rev. 20:40Z: REFEREE §C 3785d3f) — NOT LANDED; awaiting L-ALG §23j imports, CHECKER gate
 
 ### R12 [refereed-only] Packet 9 on A_DTL: R11 (d) with the factor k, Lemma CHARGE, and GAP-A ⇐ (CTX⁺) ∧ (STEAL-DEPTH_D, D constant) ∧ (FIRED-R) (2026-10-17) — partial step-4 reduction (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -20,11 +20,12 @@
       ∧ (FIRED-R), given STR-DET.
   (d) Data check on stealonce_viol_n76 (RESULTS DE20): one re-steal (stable order; tangle 7 at (round 4, top 18), k = 2, depth
       1, single cause: the depth-0 relevant steal of tangle 9 at (round 4, top 66)); none in the Oink order.
-- Signatures: REFEREE docs/referee/R-P9.md (referee 72313f3 + a3e9566; comparison §C PENDING): (a) SIGN (note N9-a1); (b) SIGN
+- Signatures: REFEREE docs/referee/R-P9.md (referee 72313f3 + a3e9566; comparison §C 3785d3f): (a) SIGN (its note N9-a1 WITHDRAWN in §C; accepts REFEREE-2 N9-a1); (b) SIGN
   WITH GAPS, closed (G9-b1, G9-b2; G23g-1/2 checked; N9-b1); (c) SIGN WITH GAPS, closed (G9-c1); (d) CONFIRMED (dtl_stealdepth
   unmodified + own probe p9charge.py). REFEREE-2 docs/referee-2/R2-P9.md (referee-2 2612634; comparison §5 19a94b8): (a) SIGN
   (N9-a1: name the form of STEAL-POLY); (b) SIGN WITH GAPS, closed (G9-b1, G9-b2 = REFEREE N9-b1); (c) SIGN (N9-c1); (d) own
-  pinned-C++ probe an9.py. Independent (each read the other's P9 report only after pushing its own). No REJECT.
+  pinned-C++ probe an9.py. Independent (each read the other's P9 report only after pushing its own). No REJECT; full
+  agreement after comparison.
 - Gaps (union). G-R12-1..4 closed in the reports, to be imported by L-ALG (§23j); G-R12-5..7 OPEN; G-R12-8 dependencies:
   G-R12-1 Notation: §23g's P_{j+1}(τ), P_i(τ) must read P(τ⁺) (the prefix before τ); as written "t ∩ P_i(τ) = ∅" is false
           since t fired inside region τ (REFEREE G9-b1 = REFEREE-2 G9-b1).
@@ -36,7 +37,7 @@
   G-R12-4 §23f's remark "the factor tightens to 2 given STR-DET (REFEREE-2 R2-P8 §7; one signature)": REFEREE N9-a1 called it
           misattributed; REFEREE-2 §5 and the Lead checked c2ac652:docs/referee-2/R2-P8.md §7 (line 139ff, "The same device
           tightens G-P7-c2 / G8-1 from 3 to 2, given STR-DET (optional)"); the citation is correct; the device is REFEREE's
-          R-P7 §C2. Unused here. [REFEREE §C to confirm.]
+          R-P7 §C2; REFEREE §C (3785d3f) WITHDRAWS N9-a1 (it had read R2-P8 at b8fdd76, before §7). Unused here.
   G-R12-5 OPEN (STEAL-DEPTH_D, D constant): DATA only. Every re-steal found has depth 1: 1 in the corpus (stable), 64 in 320
           random tie-break runs (REFEREE-2, all on stealonce_viol_n76, k_q ≤ 2); L-ALG: k max 1 on big unions (n ≤ 120,
           Oink order); no re-steal elsewhere. Attack in progress (L-RED; L-ALG dtl_depthclimb).
