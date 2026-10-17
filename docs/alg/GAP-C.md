@@ -21,9 +21,9 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | step | content | status |
 |---|---|---|
 | K1-K4 | dominion found if closed; duplicates have all escapes outside the context (K2); first piece at X = ∅; stable V* at X = ∅ is p-won | PROVED (DTL-proof.md §2.3) |
-| K5, K6 | the lowest region of a stable set is closed unless (α); if closed, its bottom SCC is new, a dominion, or (β') | K5 (i)/(iii) FALSE as written (per referee, REFEREE-2 G-c2, k5.pg); CORRECTED form (A_<, Up(Str)) PROVED (reading), §18n; K5 (ii) and K6's closed case unchanged |
+| K5, K6 | the lowest region of a stable set is closed unless (α); if closed, its bottom SCC is new, a dominion, or (β') | K5(ii) PROVED; (i)/(iii) per R2-PROVED2 §3 (false as written, k5.pg; corrected with A_< and Up(Str), §18n) |
 | SCC1 (new) | in a closed sptl region Z_τ every vertex reaches τ in extractTangles' graph; so extractTangles(τ) finds at most ONE nontrivial SCC, the set C_τ reachable from τ | PROVED (reading), §3 |
-| B-thr (new) | if C_τ equals a stored tangle t, then τ ∈ t, every escape of t lies outside the context R, and the LAST escape of t to be popped either (a) was popped in an attractor with threshold < pr(τ), or (b) was cut off from t by an ancestor's −1 step (t inside the recursion context, e moved to X at 936-950) | PROVED (reading), §3 (corrected); per referee §18n: G-b1/G-b2/G-b3 readings, FINDING F-b3 ((b) vacuous, pending comparison), R2 G-b1 OPEN |
+| B-thr (new) | if C_τ equals a stored tangle t, then τ ∈ t, every escape of t lies outside the context R, and the LAST escape of t to be popped either (a) was popped in an attractor with threshold < pr(τ), or (b) was cut off from t by an ancestor's −1 step (t inside the recursion context, e moved to X at 936-950) | per referee: "(a) always", branch (b) DROPPED (F-b3, both referees); PROVED (reading), §3; R2 G-b1 closed by REFEREE-2 §13.2, REFEREE checking (not recorded closed) |
 | NODUP | the duplicate case of SCC1 never occurs on DTL runs | KILLED (§8): experiments/red/carry/instances/gapb_dup_n20.pg (L-RED) |
 | NO-ORPHAN | no stored p-tangle inside a context has all its escapes outside it (implies NODUP) | KILLED (§8), same instance |
 | NO-ORPHAN-W | no stored p-tangle inside R ∩ W_p(G') has all its escapes outside R | KILLED (§12): experiments/red/carry/instances/gapbW_dup_n20.pg (L-RED) |
@@ -33,7 +33,7 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | OPP-EXIT (new) | a learned tangle meets W_{1-p} only where the opponent's winning move is an edge the region forgives | PROVED (reading), §11 |
 | K-in, TW, LOW-W | progress inside W_p, from a lowest region; learned tangles never straddle W_p's boundary | DATA (§9-§11), 0 violations |
 | K-first | the FIRST stable piece's lowest region is productive inside W_p | KILLED (§14): instances/kfirst_viol_union.pg (276 of 891 mixed searches) |
-| Theorem A | if the root call is stable, its lowest region is in W_p and is productive unless (α) | PROVED (reading), §13 |
+| Theorem A | if the root call is stable, its lowest region is in W_p and is productive unless (α) | PROVED (reading), §13; stands under both readings of K5 (uses K4, K5(ii), SCC1, B-thr(ii), O0; R2 §13.3) |
 | K4-B | the first stable piece's regions lie in W_p even after −1 pieces | KILLED (§14), union games |
 | FIRST-W | the first stable piece with a p-won top is productive inside W_p | KILLED (§16): instances/firstw_viol_cross.pg |
 | GAP-K | (K-low): some stable piece's lowest region is productive inside W_p | GAP (§12, §14); DATA 0 violations incl. 2,092 mixed union searches |
@@ -73,21 +73,23 @@ escape lies outside the context R of the current search_rec iteration, i.e. in X
 962-991 with threshold pr(top); the −1 attractor 914-923 (seeds 899-912) with threshold t; the threshold vertices and the
 opponent attraction 936-950 only move vertices that the −1 attractor had popped). Take the pop of the LAST escape e of t:
 the other escapes are in that attractor's target or outside its Gx, and every vertex of t is in its R (contexts only
-shrink along the search). Then exactly one of two things held (CORRECTED 01:38Z by date -u; the first version claimed (a)
-only): (a) no vertex of t was in the attractor's target, so attractTangle (110-185) rejected t only through the priority
-test: that attractor's threshold was < pr(τ); or (b) the pop was in a −1 attractor (914-923) of an ANCESTOR search_rec and
-t was already inside its set Z (attractTangle returns "nothing new"), t then stayed in the recursion context (954) while
-e was moved to X by the threshold-vertex step (936-942) or the opponent attraction (944-950). □
-[per referee, 10:08Z: REFEREE G-b1/G-b2, REFEREE-2 G-b2/G-b3 and FINDING F-b3 (branch (b) is vacuous) are imported in §18n; the
-statement is unchanged here pending the comparison of the two reports.]
+shrink along the search). Then (a) holds [per referee, 10:15Z: both referees, F-b3; branch (b) of the 01:38Z version is
+VACUOUS and is dropped; "(a) always", as the first version claimed; "last escape popped" = the pop at which it leaves the
+chain of contexts containing the current context (G-b2); escapes solved before the search are excluded by O0 (R1 G-b1 =
+R2 G-b3)]: (a) no vertex of t was in the attractor's target, so attractTangle (110-185) rejected t only through the priority
+test: that attractor's threshold was < pr(τ) (this includes t partly in a −1 attractor's Z). Why the dropped branch (b)
+("t inside an ancestor's −1 recursion context, e moved to X at 936-950") cannot occur: when e moves to X its pop at 945
+runs attractVertices(1−p, e, Z, X, Z, t), which takes every opponent predecessor in Z of priority ≤ t with no escape test
+(75); every vertex of Z has priority ≤ t (921) and e is a successor of an opponent vertex o ∈ t, so o moves to X too and
+t ⊄ the recursion context (R1 F-b3, R2 §13.2). □ Open per referee: R2 G-b1 (a tangle created in the current search),
+closed by REFEREE-2 (R2-PROVED2 §13.2: its top joins X at its piece's Dom, 879-880), NOT recorded closed until REFEREE signs.
 So a closed region at a top τ ∉ W is productive except in the duplicate case, and the duplicate case is exactly:
 GAP-β (sharpened (β')). A stored tangle t with top τ = argmax pr(t), all of whose escapes are removed earlier in the same
-search, the last one either (β-a) by an attractor of threshold below pr(τ), or (β-b) by an ancestor's −1 step that keeps t
-inside the recursion context and moves the escape to X (threshold vertex of level t_0, or opponent-attracted to the
-threshold vertices); τ survives the pruning as a stable top and its closed region is exactly t.
+search, the last one (β-a) by an attractor of threshold below pr(τ) [per referee, 10:15Z: shape (β-b), an ancestor's −1
+step keeping t in the recursion context, is EMPTY (F-b3, B-thr) and is dropped; GAP-β = (β-a)]; τ survives the pruning as a stable top and its closed region is exactly t.
 Smallest shapes (sketch, not built): two searches. Search 1 learns t at τ while an escape e of t is still in the context.
 (β-a) search 2 removes e into X by a −1 branch at a level t_e < pr(τ) (e of priority ≤ t_e, attracting X) or by Dom(V, R)
-of a lower top, before τ's stable piece. (β-b) search 2 takes a −1 branch at level t_0 whose attractor contains t and e,
+of a lower top, before τ's stable piece. [(β-b) below is EMPTY per referee (F-b3); kept as history.] (β-b) search 2 takes a −1 branch at level t_0 whose attractor contains t and e,
 e has priority t_0 (a threshold vertex) or is an opponent vertex forced to the threshold vertices, and t goes into the
 recursion, where τ is a stable top. Nothing else in search 2 is productive. About 5-6 vertices plus a gadget that makes e
 removable early only in search 2.
@@ -980,3 +982,13 @@ priority rejection ⇒ (b)"; R1 shows (b) never occurs (every vertex of Z_T has 
   search: needs t ⊆ Dom(V, R) of its S piece, a union-monotonicity statement (GAP-A kind; MONO is false). DATA (R2):
   same-search duplicates 0 (254 files, 2 in-orders, 2 labellings, 1,014 runs, 6 duplicate events; 6 × 1,500 mutants).
   Relation to L-ALG data: (NO-ORPHAN-pre, §18l) also finds orphans only after learning in the same search.
+Addendum after both comparisons (Lead 10:35Z, Lead clock; R2-PROVED2 §13; 10:16Z by date -u). This supersedes (B) and (D) above.
+- B-thr: both referees agree on F-b3. Branch (b) is DROPPED from B-thr ("(a) always", §3) and (β-b) from GAP-β (§3);
+  REFEREE-2 withdraws its "at least one" remark (R2 §13.2: the partial −1 case cannot occur).
+- G-h1 (FDL): CLOSED by both referees. GAP-A-M §21d (ii)/(iii) now stated on the log with repeated sptl passes deleted
+  (proof R2 §13.1, copied there). experiments/alg/dtl_fdlcheck.py now drops a repeated pass (identical tattr calls to the
+  previous kept pass of the same S piece, no extraction); FDL_POSITIONAL=1 keeps the old alignment.
+- R2's G-b1 (tangle created in the current search): REFEREE-2 closes it in R2 §13.2 (the creating top a ∈ t joins X at
+  its piece's Dom(V1, R1), 879-880, so no later context contains t); REFEREE is checking. NOT recorded closed.
+- K5: map row reads "K5(ii) PROVED; (i)/(iii) per R2-PROVED2 §3"; (α) is defined with Up(Str) (above). Theorem A stands
+  under both readings: it uses only K4, K5(ii), SCC1, B-thr(ii) and O0 (R2 §13.3).
