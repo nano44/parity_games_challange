@@ -26,6 +26,10 @@ Search 0 (Even, D = G', no dominion):
 Search 1 finds the dominion. So (K-in) and (K-low) hold: the search learns inside D only after K is false. The completeness
 route through K needs another statement; what this instance still satisfies is (K-low)/(K-in) and (PNL*).
 
-## 3. Next
-pk climbs continue (target (i): a P piece after which every remaining D-vertex is p-attracted to X; and a (K-in)
-violation from this instance).
+## 3. Target (i) too (06:12Z by date -u)
+After the depth-0 P piece, D ∩ R' = {3, 5, 6, 7, 15, 17} and the p-attractor A_D(R') (inside D ∩ R', X = G' \ R' a p-won
+sink, computed exactly as dtl_step5stats.kq) is all of it: Q = ∅, both order data. So the Lead's target (i), "a depth-0 P
+piece after which EVERY remaining D-vertex is p-attracted to X", is realised by the same instance.
+
+## 4. Next
+klow climbs from this instance (both orders) aim at a (K-in) violation.
