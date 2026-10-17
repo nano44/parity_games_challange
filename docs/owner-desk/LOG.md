@@ -143,3 +143,7 @@ earlier; options (a) bank and write up, (b) cheap attack only, (c) new candidate
 RESULTS R4 [refereed-only] landed (trunk ddfa69a): GAP-C Step 5 for A_DTL, (ACYC) the only open hypothesis; both referees on Opus
 "(Opus 5.5, D12)"; CHECKER PASS fd8e3eb. Packet 2: 7 readings co-signed, 3 disputed; REFEREE-2 found DTL-proof lemma K5 false as
 written (solver correct). GAP-A unchanged.
+
+## 2026-10-17 10:46Z Lead (relayed to owner)
+RESULTS R5 [refereed-only] landed (trunk b35139e): eleven structural lemmas on A_DTL, both Opus referees (D12), CHECKER PASS 1209739;
+includes conditional "(SPP) => O(n^10(m+n^2))"; not completeness, not polynomial time. K5 corrected.
