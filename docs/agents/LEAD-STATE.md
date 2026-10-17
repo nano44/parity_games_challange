@@ -345,3 +345,4 @@
 - 01:08Z Lead: merged l-alg f060d6a (ABS-mono-pw DATA, fdlcheck regression); L-ALG idle asking for a pick: re-sent (c) GAP-C (00:48Z/01:00Z messages apparently unread); ABS-mono-pw routed to L-RED.
 - 01:10Z Lead: L-ALG had not read its queue since 23:32Z (lane slip, acknowledged); now doing (b)/DV=DV* OPEN/ABS-mono row, then GAP-C; first GAP-C target = Even dominion after Odd removals.
 - 01:37Z Lead: merged l-alg a22db6c (GAP-C.md); GAP-beta routed to L-RED as top priority (completeness outranks SPP climbs).
+- 01:40Z Lead: merged l-red cf9bdba (R22). (ABS-mono)/(ABS-mono-pw) FALSE, absmono_viol_n44 (Oink verified; L-ALG tool reproduces the rise). Routed to L-ALG for DEAD.md/§17.
