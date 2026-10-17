@@ -266,6 +266,13 @@ if __name__ == "__main__":
                     inc(f"KTHR broken by {pc['kind']} " + ("which learns inside D" if learned else "barren, D-learning before" if before else "VIOLATION (barren, nothing learned inside D before)"), f)
                 if h0 and h1: inc(f"KTHR kept by {pc['kind']}")
                 if not h0 and a_ == 0: inc("KTHR false at G' (start)", f)
+                if pc["kind"] == "S" and h0 and not h1 and not any(C <= Dw for q in pcs[:i] if q["kind"] == "S" for C in q["new"]):
+                    c = h0[0]; U = kthr_core(d, p, Dw, R0, G, c)
+                    ins = [(tp, C) for tp, C in pc["tops"] if C <= U]
+                    tag = "S-STEP (S piece breaks KT, nothing learned before): " + ("learns inside the least-level core U" if ins else "learns inside D, not inside U" if any(C <= Dw for C in pc["new"]) else "VIOLATION barren")
+                    if ins: tag += ", its top " + ("in U" if all(tp in U for tp, C in ins) else "not always in U")
+                    tag += ", V* " + ("meets U" if pc["V"] & U else "avoids U")
+                    inc(tag, f if not ins else None)
                 if pc["kind"] == "T" and h0 and not any(C <= Dw for q in pcs[:i] if q["kind"] == "S" for C in q["new"]):
                     c = h0[0]; U = kthr_core(d, p, Dw, R0, G, c); t = pc["t"]
                     nxt = top[a_ + 1] if a_ + 1 < len(top) else len(pcs)

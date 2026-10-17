@@ -669,3 +669,12 @@ call. Obstacle for the P step at depth ≥ 1: Lemma P-KT used a p-dominion W1 of
 at depth 0 D ∩ R itself is a p-dominion of H (R is a p-trap of G'), at depth ≥ 1 it need not be (σ may leave the call's
 context), and a KT core may have opponent exits to D-vertices above its level (forgiven by F_c, real in H). So (REC) needs
 a core closed in G[R_d]; (CORE-PASS) would then have to pass such a closed core down. Not attempted further.
+
+### 18j. The S step: DATA (07:43Z by date -u)
+(S-STEP) If KT(R) holds at a depth-0 stable piece, nothing was learned inside D earlier in the search, and KT fails after
+Dom(V*, R), then the piece's sptl passes learn a tangle inside D. DATA (dtl_step5stats.py "S-STEP"): 0 barren breaks in
+every run (403 corpus Oink, 381 corpus stable, 467 unions Oink s1, 61 cross unions Oink s11 S pieces that break KT).
+Where the learning sits (same runs): inside the least-level core U with its top in U: 227 / 218 / 333 / 46; inside D but not
+inside U, V* meeting U: 161 / 148 / 84 / 11; inside D, V* AVOIDING U: 15 / 15 / 50 / 4. So the S step cannot be localized
+to the least-level core (the K-first / FIRST-W lesson again): a stable piece whose tops all lie outside U can swallow U and
+learn elsewhere in D. A proof needs another selection (e.g. the least level whose core meets V*'s regions); not attempted.
