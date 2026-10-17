@@ -64,8 +64,10 @@ consumed, 150-157).
 (C) No p-priority vertex of t is in V_f: after the acceptance it attracts into Z_f (p-owned: tangle successor in t;
 opponent-owned: all R-edges into t ∪ escapes, 325-339), so it would not be a candidate.
 (D) q := tpr(t) (p's parity), m_1 := a priority-q vertex of t pruned first, at round r_1. All priority-q vertices of t are
-in V_{r_1} ⊆ Z^{r_1}. q = 0: t ⊆ Z^{r_1} and m_1 attracts into Z^{r_1}, so it is no candidate. q ≥ 1: at level q−1 of round
-r_1's rescue loop (722-740) the pop of e accepts t (its priority-q vertices are in the set, the rest have priority ≤ q−1,
+in V_{r_1} ⊆ Z^{r_1}. q = 0: t ⊆ Z^{r_1} and m_1 attracts into Z^{r_1}, so it is no candidate. q ≥ 1: (D1) round r_1's rescue
+loop runs on the same bitset Z that the region loop leaves (703-705), so it starts as Z^{r_1} and only grows; line 724
+pushes every member of Z at every level and 727-730 pop each one and call attractTangles, so e ∈ Z^{r_1} (by (B)) is popped
+at level q−1 and attractTangle(t) (t ∈ tin[e]) is evaluated with the set ⊇ Z^{r_1}. (D2) At level q−1 the pop of e accepts t (its priority-q vertices are in the set, the rest have priority ≤ q−1,
 its escapes in R are in the set), and m_1 then attracts into the set: rescued. Either way m_1 is not pruned at r_1. □
 Corollaries: (FM) Z_f ⊆ Z^r for all r ((A) covers every addition of round f); (WM) Z_f ⊆ A^r_t; (YZ-read sharpened).
 

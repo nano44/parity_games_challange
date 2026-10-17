@@ -756,7 +756,13 @@ the −1 result (every vertex of V_f is a candidate).
 and m_1 ∈ M_q a vertex pruned FIRST, at round r_1 < f (by (C) every vertex of M_q leaves V before f). At round r_1 all of
 M_q is in V_{r_1} ⊆ Z^{r_1}. If q = 0, all of t has priority 0 = p-priority, so t ⊆ V_{r_1} ⊆ Z^{r_1}, and by (B) and the
 argument of (C) m_1 attracts into Z^{r_1}: not a candidate, contradiction. If q ≥ 1, run the rescue loop of round r_1
-(722-740) to level q−1: its set contains Z^{r_1}, hence M_q and every escape of t in R; at the level-(q−1) pop of e
+(722-740) to level q−1.
+(D1) [Lead 08:50Z] Why e is popped at level q−1 with a set containing Z^{r_1}: the rescue loop works on the SAME bitset Z
+that the region loop leaves at 703-705, i.e. Z = Z^{r_1} when the loop starts at 722; attractVertices and attractTangles
+only add members; at the start of every level t, line 724 pushes every member of Z, and 727-730 pop each pushed vertex and
+call attractTangles(player, u, R, Z, R, t). So at level q−1 the set contains Z^{r_1} ∋ e (by (B)), e is pushed at 724,
+popped at 728, and attractTangle(t, ...) is evaluated at 730 (t ∈ tin[e], 200-201) with Z ⊇ Z^{r_1}.
+(D2) At that evaluation: the set contains M_q and every escape of t in R; at the level-(q−1) pop of e
 attractTangle(t) (110-185) finds t alive, every vertex in Z or in R with priority ≤ q−1 (the priority-q ones are in Z), and
 no escape in R \ Z, so t joins the set; then the candidate test at level q−1 (pr(m_1) = q > q−1, candidates in descending
 priority) finds m_1 attracting into it (tangle successor, or all R-edges in t ∪ escapes): m_1 is rescued at round r_1,
