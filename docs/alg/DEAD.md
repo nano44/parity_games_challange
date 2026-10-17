@@ -252,3 +252,6 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
   Instances experiments/alg/instances/ctx12_oink_n40.pg (sha1 eca1246f; pinned Oink 27 iterations verified, re-run 20:05Z) and
   dtl_searches15_n24.pg (sha1 767e14c6; pinned Oink 16 iterations verified); dtl_rootmono.py RM_LAM=1, Oink order. Obstruction:
   depth-0 contexts are G′ minus the earlier pieces of their search, and pieces are re-cut across searches (as for CHAIN, DE16).
+- (PIECES-LAMINAR), distinct depth-0 pieces of a phase pairwise nested or disjoint (GAP-A-M §23l): DEAD. Instances
+  experiments/alg/instances/spp_chain_up_n43.pg and ctx12_oink_n40.pg (Oink; dtl_ctxpieces.py; pinned Oink verified for
+  ctx12_oink_n40, 27 iterations, and spp_chain_up_n43, 43 iterations, both re-run box 8).

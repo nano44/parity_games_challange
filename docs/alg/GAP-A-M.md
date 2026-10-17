@@ -3086,3 +3086,17 @@ Sources: REFEREE docs/referee/R-P9.md and REFEREE-2 docs/referee-2/R2-P9.md, on 
   older R2-P8. Unchanged.
 - REFEREE-2 data: random equal-priority tie-breaks of stealonce_viol_n76 give the re-steal in 32 of 50 orders (64 re-steals in
   320 runs). Each has a cause and depth 1. So DE20 holds under many order data; the pinned Oink order is among those without it.
+
+23l. (CTX⁺): (PIECES-LAMINAR) KILLED; (PIECES ≤ 2|G′| − 1) is DATA but tracks S (L-ALG succ. 7, 20:42Z by date -u)
+- dtl_ctxpieces.py (RM_DV=0 RM_LIGHT=1) on the corpus (Oink; 294 phases) and on the mixed unions s1 (stable; 1,711 phases,
+  corpus included).
+  - Depth-0 contexts of a search always form a decreasing chain (2,005/2,005 phases).
+  - Max distinct pieces per phase: 89 at |G′| = 113 (fall4_n116), and 84 at |G′| = 43 (spp_chain_up_n43), the maximum ratio
+    1.953.
+  - Reused pieces: 4,172 of 9,143 (corpus) and 20,992 of 48,947 (mixed).
+- (PIECES-LAMINAR) "the distinct depth-0 pieces of a phase are pairwise nested or disjoint" (which would give ≤ 2|G′| − 1):
+  KILLED (self-kill). Instances: experiments/alg/instances/spp_chain_up_n43.pg and ctx12_oink_n40.pg (Oink order). The
+  crossing pair on ctx12_oink_n40 is {0, 2, 4, 5, 6, 9, 10, 11, 12, 14, 16, ...} and {3, 8, 13, 25}.
+- (PIECES ≤ 2|G′| − 1) holds on every phase measured, but on spp_chain_up_n43 the 84 distinct pieces come from S = 42
+  searches, about 2 new pieces per search. So the piece count follows S, and bounding it is as hard as GAP-A. Not a route.
+- (CTX⁺) state: no statement with a route. The data maximum is still 13 first-difference contexts (ctx13_n40).
