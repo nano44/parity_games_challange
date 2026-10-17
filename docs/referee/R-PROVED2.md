@@ -11,7 +11,7 @@ Machine checks (mine): docs/referee/scratch/bthr_probe.py, docs/referee/scratch/
 | item | verdict (Opus 5.5, D12) | lines checked |
 |---|---|---|
 | (a) Lemma SCC1 (GAP-C §3) | SIGN | 65-101, 110-185, 198-202, 211-305, 315-317, 477-546 |
-| (b) Lemma B-thr (§3, corrected form) | SIGN WITH GAPS: G-b1, G-b2 (both closed here); finding F-b3 (branch (b) is vacuous). REVISED in §C: plus REFEREE-2's G-b1 (OPEN), a case I missed | 110-185, 327-339, 385-424, 477-546, 862-991, 1023-1039 |
+| (b) Lemma B-thr (§3, corrected form) | SIGN WITH GAPS, ALL CLOSED (final, §C5): G-b1, G-b2 closed here; REFEREE-2's G-b1 closed by R2-PROVED2 §13.2, checked by me; finding F-b3 ((b) vacuous; agreed by REFEREE-2) | 110-185, 327-339, 385-424, 477-546, 862-991, 1023-1039 |
 | (c) Theorem A (§13), root call stable, given no (α) | SIGN; it rests on DTL-proof.md §2.3 K4, K5(ii), which I re-checked in outline (§c) | 643-776, 477-546, 1014-1016 |
 | (d) Lemmas O0 and O1 (§6) | O0: SIGN. O1: SIGN | O0: 65-101, 110-185, 1023-1039. O1: 110-185, 878-890, 962-991 |
 | (e) Lemma OPP-EXIT (§11) | SIGN WITH GAPS: G-e1, G-e2 (both closed here) | 65-101, 110-185, 211-305, 512-526 |
@@ -22,7 +22,7 @@ Machine checks (mine): docs/referee/scratch/bthr_probe.py, docs/referee/scratch/
 | (j) per-context LRN budget ≤ n(n + 1) (§21j) | SIGN | as (i) |
 | (k) (SPP) ⇒ searches ≤ n(n + 2) and O(n^10 (m + n²)), against TARGET.md §3 | SIGN (conditional on (SPP) for every ω) | DTL-proof.md §3 (b)-(e), Lemma W; 528-529, 539, 1016 |
 
-No REJECT. The open-gap status after the comparison with REFEREE-2 is in §C: G-h1 is closed, and B-thr has one open case (REFEREE-2's G-b1).
+No REJECT. After the comparison with REFEREE-2 (§C, §C5) no gap of packet 2 is open.
 
 ## (a) Lemma SCC1 — SIGN (Opus 5.5, D12)
 Induction over the join order of Z_τ (sptl, 481-500, consumed set R, threshold pr(τ)).
@@ -186,7 +186,7 @@ only the budget is signed.
 This signs the conditional only. (SPP) is DATA, and completeness (GAP-C) is open.
 
 ## Hypotheses and dependencies still open after this report
-1. G-h1 (First-Difference Lemma): CLOSED after §C1 (alignment by deleting repeated sptl passes). Open instead: REFEREE-2's B-thr G-b1 (§C2).
+1. G-h1 (First-Difference Lemma): CLOSED after §C1. REFEREE-2's B-thr G-b1: CLOSED after §C5.
 2. (SPP): DATA only. Item (k) is conditional on it for every ω.
 3. (α) for Theorem A (its premise "closed"), and Case B (GAP-K'): open.
 4. DTL-proof.md §2.3 K4 and K5(ii) and §3 (b)-(e): re-checked by me in outline only, as dependencies of (c) and (k). They
@@ -284,3 +284,28 @@ defined with Up(Str).
 ### C4. Other differences
 REFEREE-2 marks (f) K0 and (k) as SIGN WITH GAPS, where I signed them. I did not re-examine those gaps, because the Lead did
 not ask. On the three points above, the final verdicts are: (b) SIGN WITH GAPS, (c) SIGN, (h) SIGN WITH GAPS (closed).
+
+### C5. Follow-up (10:10Z by date -u; the Lead's message stamped 10:35Z): REFEREE-2 §13.2 closes its G-b1 — SIGNED
+Two corrections to §C2:
+- F-b3 is no longer disputed. R2-PROVED2 §13.2 checks it at 944-948, agrees with it, and withdraws its "partial −1"
+  remark.
+- REFEREE-2's G-b1 is closed by R2 §13.2. I checked the argument step by step against the code.
+  - Tangles are created only by extractTangles, called only at 539 (sptl), and sptl runs only in S pieces (867-874). So t
+    is created at a top a of an sptl region in some S piece P1 (call c, context R1, stable set V1). sptl takes tops only
+    from V (482), so a ∈ V1. By SCC1, a ∈ t.
+  - P1's Dom(V1, R1) (878-890) gives X[top] = true to every top of V1 (879-880; a top already in X stays in X). It pops
+    each pushed vertex and sets R[v] = false (885). So after P1, a ∉ R_c, and R_c only shrinks afterwards.
+  - Later contexts of c, and contexts of recursions started by later pieces of c, are subsets of R_c (search_rec(Z) with
+    Z ⊆ R at 914-954), so they exclude a.
+  - Ancestor case, at every depth (the Lead's question). c is search_rec(Z', p, d) called from a T piece of its parent c'.
+    Before the call, c' has popped every vertex of Z_T ⊇ Z' and cleared it from R_{c'} (918-920), and it has put all of
+    Z_T into X_{c'} (951). After c returns, Z is reset (955) and c' continues with R_{c'} ∩ Z_T = ∅. So every later
+    context of c' and of its later recursions excludes Z' ∋ a. By induction up the chain, the same holds for c'' (which
+    removed Z_T(c'') ⊇ R_{c'} at its own 920), and so on up to depth 0.
+  - A search_rec context is never re-entered: each call has its own local X and Z (837-840).
+  - So no context after P1 in search s contains a, and no duplicate of t can arise there. Within P1's own sptl passes,
+    R2 §2 (W[τ] at 528, and the order of tops) excludes it.
+  - Across searches, t was created before the next search, and B-thr (iii) applies with my G-b1 (= R2's G-b3, via O0).
+Final verdict (b): SIGN WITH GAPS (Opus 5.5, D12). All gaps are closed: my G-b1 and G-b2, and REFEREE-2's G-b1 (by R2 §13.2,
+checked). B-thr holds as "(a) always" (F-b3), and GAP-β = (β-a). This now agrees with REFEREE-2's verdict.
+Packet-2 final verdicts that changed in §C: (b) as above; (c) SIGN; (h) SIGN WITH GAPS, closed.

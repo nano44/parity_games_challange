@@ -876,3 +876,15 @@ not established. Closed gaps, written into the author's argument here (STEP5.md 
 - G-S5-6 OPEN: (ACYC). G-S5-7: Lemmas 1.5a and 1.2 of DTL-proof.md were checked by the referees only for this use; sorted
   indices (oink.cpp:35); O1 (index order follows priority) is an order-datum fact; positional determinacy and D = W_p(G')
   (DTL-proof.md Lemma 1.4c) standard. Nothing Lean-checked.
+Why the NT-f trick does not exclude T-piece orphans (10:01Z by date -u; reading). At a T piece the seeds attract INTO X; an
+opponent seed has every edge in X (no R-edge at all), and the rescue loop (Gx = R) never pops such a vertex, so an escape
+of t taken by Z_T need not lie in any rescue set of the preceding −1 call: m_1's rescue argument does not start. Recipe
+(for L-RED; every step is consistent with the reading, nothing built): (1) an earlier search of p learns t = {a, b}
+(a p-owned, priority 2, a → b; b opponent, priority 1, b → a, b → e) at a's closed region, b's escape e (opponent,
+priority 1, e → x only) being forgiven because e lies in a higher region (e.g. with x) of that pass; (2) in the current
+search a barren piece puts x into X; (3) the next −1 call prunes a (b's edge to e blocks a's region; e has no R-edge, so
+no rescue reaches it), the threshold scan finds e at level t* = 1 (e attracts into X), the T piece takes e and rejects t
+(pr(a) = 2 > t*): t is an orphan; (4) at the next stable piece a's region is {a, b} (b's edge to e now leaves R), closed,
+and its SCC is the stored t: a (β') duplicate, nothing learned there. If t ⊆ D carries the KT core at that point, the piece
+breaks KT barren and (S-LOW-TIGHT) fails; if, moreover, nothing else in the search learns, Lemma K fails (an incomplete
+run). Data: 0 such events (NO-ORPHAN-pre).
