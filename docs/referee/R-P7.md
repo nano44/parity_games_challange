@@ -119,3 +119,38 @@ P′_r(τ⁺) meets without containing, and that P_r(τ⁺) did not, is polynomi
 - (NS-COUNT) ⇒ (FALL), not conversely (G7-c2).
 - DATA only. No potential is proposed; L-ALG notes that a count over (step, tangle) pairs is circular as it stands
   (stored tangles grow with S), and (d) shows a per-tangle count is false.
+
+## §C. Comparison with REFEREE-2 (R2-P7, trunk 4623faf; read after R-P7 was pushed; 15:28Z by date -u)
+Agreement on (a), (b), (d) and on the reduction. REFEREE-2 found one point I missed (G-P7-c2); I accept it, and it also
+corrects my R-P6.
+- (a) Both sign EXACT. My G7-a1 = R2's N-a1 (138-139, not 137). My G7-a2 = R2's single last-pop argument. R2's N-a2
+  (Cl must be the triggered closure) is in my (b). Both probes agree, each with its own closure: mine on pyref, 477,456
+  steps, 0 failures; R2's on instrumented pinned C++, 463,742, 0 failures.
+- (b) Both SIGN. Both checked the absorbed case: closedness holds at an unprocessed index (it uses only O1). My wording
+  note on "special case" = R2's N-b1.
+- (c) G7-c1 = R2's G-P7-c1: strict rise at e* via POS-FALL with C4 from (NS). Both closed.
+- G-P7-c2 (the Lead's question). No, my "F_R ≤ #(new-steal visit pairs)" does NOT cover non-consecutive e*-pairs, and my
+  claim that it held "as stated" was wrong.
+  - It rests on my R-P6 A4 premise: "a transition whose e* lies in R's call is a pair of consecutive visits of R". That
+    premise is false when R is visited more than once per search. The visits before π in s+1 copy those of s, and s can
+    visit R again after π.
+  - R2's interval argument is correct. If no consecutive pair inside an e*-interval has a new steal, the prefix
+    inclusions compose. A consecutive pair lies in at most two e*-intervals (those of u−1 → u and u → u+1). So
+    F_R ≤ 3·N_R. Alternatively, count the e*-pairs directly, since the lemma holds for any two calls with T ⊆ T′.
+  - Correction to my R-P6 A4 (the per-context budget behind R9). Under the same premise I counted e*-transitions as
+    consecutive visit pairs. Without it:
+    - each rising e*-transition contains a strict rise on some consecutive pair of its interval, and a consecutive pair
+      lies in at most two intervals;
+    - so #(e*-transitions at R) ≤ 2·(F′_R + 1)(H − 1) + F^e_R, where F′_R counts consecutive non-rises and F^e_R counts
+      non-rising e*-transitions;
+    - with F′_R, F^e_R ≤ 3·N_R (or F_R as in G6-a1, counted over e*-pairs), this is ≤ 2(F_R + 1)(H + 1).
+    The reduction GAP-A ⇐ (CTX⁺) ∧ (FALL) is unchanged; only the constant in R9's per-context budget changes, by a factor
+    of 2. I ask the Lead to note this against R9.
+- (d) Both CONFIRMED. Same vertex (file 14, priority 27; internal 15), same RV 4, 6, 5, 4, 4. Both falls are at new steals
+  of the SAME tangle (internal 2) at rounds 3 and 4 (and 5). R2 also counts 39 new-steal witnesses at the non-falling
+  pair 5 → 6.
+- Reduction. Both: (FALL) ⇐ (NSTEAL) = my (NS-COUNT), one-sided, DATA only. With G-P7-c2, F_R ≤ 3·N_R.
+  - Lossiness: 9.5 : 1 (R2, 257 files) vs about 13 : 1 (mine, 138 files, RV-fall detection only).
+  - Both note that a per-tangle charge is dead on fallv_viol_n28.
+Joint position: GAP-A ⇐ (CTX⁺) ∧ (NSTEAL), given STR-DET, with F_R ≤ 3·N_R; (NSTEAL) is strictly stronger than (FALL) and
+open. (Opus 5.5, D12)
