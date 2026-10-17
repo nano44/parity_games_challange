@@ -132,3 +132,13 @@ The draft may land as written. If edited, I re-diff the text only.
   signature (REFEREE-2). It notes "The factor 3 of R2-P7/R2-P8 stays valid without STR-DET (c)". R10 (c) and R11 (c)/(d) use
   3, which is signed by both and remains correct. No change needed. If the Lead adopts 2, it needs REFEREE's signature
   first.
+
+## Addendum 2: R11 draft re-diff, 369b4bf → e9e424f (Lead 16:15Z): PASS
+- History: 369b4bf is an ancestor of e9e424f. Word diff of R11-draft.md.
+- The only change is one sentence added to G-R11-1: "REFEREE-2 R2-P8 §7 (c2ac652) adds that, given STR-DET, the factor
+  tightens to 2 (overlapping e*-intervals overlap only where T is constant); one signature, not used here."
+- R2-P8 §7: "The same device tightens G-P7-c2 / G8-1 from 3 to 2, given STR-DET (optional)"; "Two such intervals overlap
+  only inside search s_k+1 between π_{k+1} and π_k. There T is constant (STR-DET (c))".
+- The sentence matches §7. It is correctly labelled as one signature and is not used in (c)/(d), which keep the factor 3.
+  This settles C11 N-6.
+- C11 verdict at e9e424f: PASS. N-1..N-3 are still recommended and not applied.
