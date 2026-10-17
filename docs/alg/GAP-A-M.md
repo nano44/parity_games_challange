@@ -1978,3 +1978,28 @@ DATA (dtl_rootmono.py; corpus 238 files plus gapb_dup_n20, gapbW_dup_n20, kin_vi
   4 to maximise deficits. There dirty = K + 1 (h4_def9/10/11_oink_n28: 10, 11, 12) and every transition of the long phase
   is dirty.
 - Transitions with e* after the root call: 194 / 185 (box target 3).
+
+22d. Sharper, DATA only: Π rises unless RV falls (11:42Z by date -u; dtl_rootmono.py "PI at root-e* transitions")
+On all root-e* transitions (corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29; Oink / stable):
+
+| class | Oink | stable |
+|---|---|---|
+| Π rises through RV | 612 | 595 |
+| Π rises through Ψ (RV equal) | 221 | 215 |
+| Π rises through Φ_top (RV, Ψ equal) | 17 | 19 |
+| RV falls | 18 | 18 |
+| Ψ not monotone, or Π does not rise | 0 | 0 |
+
+- The 18 falls lie in 16 phases, at most 2 per phase. The two 2-fall phases are L-RED's f1_twodef_n48 and
+  f1_twofall_n48, which were built to have two falls.
+- So the DIRTY transitions that do not lower RV behave as clean ones: 161 / 156. The step deficit is real there (a
+  tangle straddles), but it does not break the order.
+- NEWX ("a tangle of T_s newly excluded at the same region step") does not separate them: 102 / 95 NEWX transitions
+  satisfy the predictions; all 18 falls are NEWX.
+Candidate (PI-RISE, DATA only): every transition whose first difference lies in the root call and whose root RV does not
+fall raises Π strictly.
+- If it holds: #root-e* transitions per phase ≤ (#FALL + 1)·H + #FALL, where #FALL counts the (M)-failures at the root
+  (RV falls).
+- Proved part: PI-RISE on clean transitions (§22c).
+- Open part: dirty transitions where RV does not fall. The step deficit there must not shrink Ψ. In the h4_defK phases
+  the same stored tangle straddles at the same top in every search, and every transition is of this kind.

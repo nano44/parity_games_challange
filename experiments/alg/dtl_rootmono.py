@@ -43,7 +43,15 @@ class RM(FC.CK):
                 if top not in V or top in Z: continue
                 CurZ = {top}; s.Q = [top]
                 s.tattr(p, CurZ, CurR, CurR, s.pr[top], CurR)
-                if I.lfp(s, p, Z | {top}, R, s.pr[top], tli) != Z | CurZ: s.root["stepdef"] = True
+                cl = I.lfp(s, p, Z | {top}, R, s.pr[top], tli)
+                if cl != Z | CurZ:
+                    miss0 = cl - Z - CurZ
+                    s.root.setdefault("wits", {})[(rnd, top)] = frozenset(t for t in tli if any(v in Z for v, _ in s.tv[t]) and any(v in miss0 for v, _ in s.tv[t]))
+                    s.root["stepdef"] = True
+                    if "wit" not in s.root:
+                        miss = cl - Z - CurZ
+                        strad = [t for t in tli if any(v in Z for v, _ in s.tv[t]) and any(v in miss for v, _ in s.tv[t])]
+                        s.root["wit"] = (rnd, top, frozenset(miss), tuple(strad))
                 Z |= CurZ; regs.append(frozenset(CurZ)); rtops.append(top)
             a1 = len(s.log); psi.append(frozenset(Z)); pos.append(sum(i * len(c) for i, c in enumerate(regs)))
             rk.append({v: i for i, c in enumerate(regs) for v in c})
@@ -83,12 +91,12 @@ def where(root, k_full):
 
 
 if __name__ == "__main__":
-    phrows = []
+    phrows = []; badrows = []
     sys.setrecursionlimit(100000); st = {"dropped": 0, "kept: differs": 0, "kept: identical but extracts": 0}; shown = 0
     for f in sys.argv[1:]:
         g = pg.read(f); d0 = FD.P.X.build(g); d = RM(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.run()
         for ph in FD.phase_rows(d):
-            nd = nr = 0
+            nd = nr = 0; wl = []; nbad = 0
             for r in ph:
                 full = r["log"]; red = FC.reduce_log(full, st)
                 # map root spans onto the reduced log: the root call precedes every sptl pass, so its positions shift only
@@ -134,6 +142,30 @@ if __name__ == "__main__":
                     if not rvm and not (sda or sdb):
                         later = any(v in rb_ and v in ra_ and rb_[v] > ra_[v] for ra_, rb_ in zip(a["root"]["rk"], b["root"]["rk"]) for v in ra_)
                         k8 = "NO-LATER (step-deficit-free, same RV): " + ("FAILS" if later else "holds"); tab[k8] = tab.get(k8, 0) + 1
+                    wa = a["root"].get("wits", {}); wb = b["root"].get("wits", {})
+                    # NEWX: at some region step (round, top) of s+1, a tangle of T_s (id < k0 of s) is excluded and fires in the
+                    # closure, but was not so at the same step of s
+                    newx = any(t < a["k0"] and t not in wa.get(k_, frozenset()) for k_ in wb for t in wb[k_])
+                    if sdb:
+                        bad2 = []
+                        if fall: bad2.append("RV falls")
+                        if not rvm:
+                            pa, pb = a["root"]["psi"], b["root"]["psi"]
+                            okp = len(pa) == len(pb) and all(x <= y for x, y in zip(pa, pb))
+                            if not okp: bad2.append("PSI not monotone")
+                        k10 = ("DIRTY with NEWX: " if newx else "DIRTY without NEWX: ") + ("predictions hold" if not bad2 else "FAILS " + "+".join(bad2)); tab[k10] = tab.get(k10, 0) + 1
+                    # PI-RISE: (RV pointwise up, then Ψ ⊆ up, then Φ_top down), strictly, at this root-e* transition?
+                    def phit(r_): return sum(d.n - t_ for m in r_["root"]["rtop"] for t_ in m.values())
+                    if fall: pir = "RV falls"
+                    elif rvm: pir = "rises (RV)"
+                    else:
+                        pa, pb = a["root"]["psi"], b["root"]["psi"]
+                        if not (len(pa) == len(pb) and all(x <= y for x, y in zip(pa, pb))): pir = "Ψ NOT monotone"
+                        elif pa != pb: pir = "rises (Ψ)"
+                        elif phit(b) < phit(a): pir = "rises (Φ_top)"
+                        else: pir = "DOES NOT RISE"
+                    kp = "PI at root-e* transitions: " + pir; tab[kp] = tab.get(kp, 0) + 1
+                    if pir in ("RV falls", "Ψ NOT monotone", "DOES NOT RISE"): nbad += 1
                     if not sdb:                                    # CLEAN: the later root call has no step deficit
                         bad = []
                         if fall: bad.append("RV falls")
@@ -151,6 +183,7 @@ if __name__ == "__main__":
                     else:
                         tab["DIRTY root transition (later root call has a step deficit)"] = tab.get("DIRTY root transition (later root call has a step deficit)", 0) + 1
                         nd += 1
+                        w = b["root"]["wit"]; wl.append(w)
                     nr += 1
                     k2 = f"ROOT-SPLIT: RV {'falls' if fall else 'moves' if rvm else 'same'}, DV* {'moves' if dvm else 'same'}, deficit {'yes' if dfc else 'no'}"
                     tab[k2] = tab.get(k2, 0) + 1
@@ -159,13 +192,23 @@ if __name__ == "__main__":
                     shown += 1; v = max(fall)
                     print("RMONO FAILS", os.path.relpath(f), f"p={a['p']}", cls, "vertex", d.idx[v], "pr", d.pr[v],
                           "round", ra[v], "->", rb[v], "| falls:", len(fall), flush=True)
+            if wl:
+                tops_ = [w[1] for w in wl]; tg = [w[3] for w in wl]
+                kt = "DIRTY witness top repeats within the phase: " + ("yes" if len(set(tops_)) < len(tops_) else "no"); tab[kt] = tab.get(kt, 0) + 1
+                kg = "DIRTY witness tangle set repeats within the phase: " + ("yes" if len(set(tg)) < len(tg) else "no"); tab[kg] = tab.get(kg, 0) + 1
+                ke = "DIRTY witness has a straddling tangle: " + ("all" if all(tg) else "NOT all"); tab[ke] = tab.get(ke, 0) + 1
+                if os.environ.get("RM_WIT") and len(wl) >= 8:
+                    print("WITNESSES", os.path.relpath(f), [(w[0], d.idx[w[1]], len(w[2]), w[3]) for w in wl], flush=True)
+            if nbad: badrows.append((os.path.relpath(f), nbad, len(ph) - 1, len(ph[0]["G"])))
             if len(ph) > 1 and nd: phrows.append((os.path.relpath(f), nd, nr, len(ph) - 1, len(ph[0]["G"]) if "G" in ph[0] else d.n))
     if phrows:
         phrows.sort(key=lambda r: -r[1])
         print("phases with dirty root transitions (file, dirty, root transitions, transitions, |G'|):", phrows[:8])
         print("phases with a dirty root transition:", len(phrows), "max dirty per phase:", max(r[1] for r in phrows), "max dirty/|G'|:", round(max(r[1] / r[4] for r in phrows), 3))
+    if badrows:
+        badrows.sort(key=lambda r: -r[1]); print("phases where PI fails to rise (file, failures, transitions, |G'|):", badrows[:8], "phases:", len(badrows))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})
