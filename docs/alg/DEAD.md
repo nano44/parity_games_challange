@@ -172,3 +172,7 @@ Context: docs/alg/GAP-C.md. Lemma K: W_p(G') ≠ ∅ ⇒ search(p) learns a tang
   Oink-verified, both orders). Obstruction: a stored tangle whose escapes are all removed earlier in the search ((β-a)/(β-b)
   of Lemma B-thr) is re-found by its top. The instance has W_p(G') = ∅ in that search, so Lemma K is untouched; the
   surviving candidate is (NO-ORPHAN-W), restricted to the winning region.
+- (03:35Z by date -u) (NO-ORPHAN-W) "no stored p-tangle inside R ∩ W_p(G') has all its escapes outside R", i.e. (β-W) per region:
+  DEAD, experiments/red/carry/instances/gapbW_dup_n20.pg (L-RED, l-red 2b792b8; Oink-verified, both orders): a duplicate inside
+  W_0 at a depth-1 lowest region; the search is productive elsewhere inside W_p. GAP-C is now the existential (K-low),
+  GAP-C.md §12.

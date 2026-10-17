@@ -26,7 +26,7 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | B-thr (new) | if C_τ equals a stored tangle t, then τ ∈ t, every escape of t lies outside the context R, and the LAST escape of t to be popped either (a) was popped in an attractor with threshold < pr(τ), or (b) was cut off from t by an ancestor's −1 step (t inside the recursion context, e moved to X at 936-950) | PROVED (reading), §3 (corrected) |
 | NODUP | the duplicate case of SCC1 never occurs on DTL runs | KILLED (§8): experiments/red/carry/instances/gapb_dup_n20.pg (L-RED) |
 | NO-ORPHAN | no stored p-tangle inside a context has all its escapes outside it (implies NODUP) | KILLED (§8), same instance |
-| NO-ORPHAN-W | no stored p-tangle inside R ∩ W_p(G') has all its escapes outside R | DATA (§8); the current GAP-β |
+| NO-ORPHAN-W | no stored p-tangle inside R ∩ W_p(G') has all its escapes outside R | KILLED (§12): experiments/red/carry/instances/gapbW_dup_n20.pg (L-RED) |
 | (α) | the lowest region is open because its top's successor lies in the lower part of a straddling tangle | GAP-α |
 | (C-b) | a p-dominion survives a search whose pieces never reach a productive closed region (all relevant pieces removed through the −1 branch) | GAP-Cb |
 | (S2) | "a context containing a p-dominion is never pruned to −1" | FALSE (§4); the proof must follow the dominion through −1 pieces |
@@ -248,3 +248,23 @@ for that one would need the same with p's winning strategy on W_p, but H keeps o
 winning ones. Open step for (TW): show that a C_τ meeting W_p has no opponent vertex in W_{1-p} whose winning move is
 forgiven, or find the straddling shape (L-RED: a learned tangle with an opponent vertex of W_{1-p} whose only winning move
 goes into an earlier region or out of the context, inside a region whose top lies in W_p).
+
+## 12. (NO-ORPHAN-W) is FALSE; the reduction restated with an existential (03:35Z by date -u)
+Instance: experiments/red/carry/instances/gapbW_dup_n20.pg (L-RED, l-red 2b792b8, sha1 2ef690f9; Lead: pinned Oink 2
+dominions, 8 tangles, 6 iterations, verified, -t prints "duplicate tangle" once). Reproduced here, both order data:
+dtl_orphan.py "orphans inside W_p(G')": 1; dtl_loww.py: 3 of 3 searches satisfy (LOW-W). Anatomy (L-RED): Even's search 2,
+|W_0(G')| = 19; the stored Even tangle {3, 17}, wholly inside W_0, 13 escapes, is re-found by a depth-1 call with |R| = 4
+(a duplicate inside the winning region); the same search learns other tangles inside W_p, so the run is complete.
+So (β-W) is false as a per-region statement: a lowest closed region inside W_p CAN re-find a stored tangle.
+Restated reduction (the four parts become one existential):
+  (K-low) If W_p(G') ≠ ∅ and search(p) finds no dominion, then AMONG the lowest regions of the stable pieces of the search
+  (the candidates), at least one is closed, has its top in W_p(G'), and yields a NEW tangle inside W_p(G').
+  DATA: holds in every case (dtl_loww.py: corpus 478/478 Oink, 459/459 stable; gapbW_dup_n20 3/3; gapb_dup_n20).
+  PROVED around it: K5/K6 (a lowest region is closed unless (α)), SCC1 (one SCC), B-thr (how a duplicate arises), O0/O1,
+  OPP-EXIT. GAP-K (the existential): why the candidates of one search cannot ALL fail (be open, outside W_p, or
+  duplicates). Every route tried for a per-region version is dead (§4, §7, §8, §12). What an argument must use is the
+  relation BETWEEN candidates of one search: a duplicate at a candidate exists only because earlier pieces of the same
+  search removed all of its escapes (B-thr); so the earlier pieces themselves had to see those escapes, and a proof would
+  show that one of those earlier pieces (or the recursion that removed them) contains a productive candidate inside W_p.
+  Smallest shape that would break GAP-K (for L-RED; their current climb): a search with W_p ≠ ∅, no dominion, in which
+  every candidate inside W_p is a duplicate of type (β-a)/(β-b) and every other candidate lies outside W_p or is open.
