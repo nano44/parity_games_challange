@@ -867,8 +867,8 @@ not established. Closed gaps, written into the author's argument here (STEP5.md 
   ≥ pr(τ_j) ≥ pr(o), o would have been attracted (76-86), so it would not be new. Hence every new opponent vertex has an
   R-edge into the current region or N_X, and in the reverse topological order it is attracted at the pop of its last such
   successor.
-- G-S5-4 (REFEREE G5.1, REFEREE-2 G4). P-KT when c1 = 0 (p Even): there is no rescue level c1−1. Read A^r_{−1} := Z^r and
-  A'' := X ∪ Z_f-attraction through no vertex (empty rule set). In (2) and (3) a priority-0 vertex that attracts into
+- G-S5-4 (REFEREE G5.1, REFEREE-2 G4). P-KT when c1 = 0 (p Even): there is no rescue level c1−1. Read A^r_{−1} := Z^r; A'' is
+  empty (no vertex has priority ≤ −1), so its role is played by Z_f alone. In (2) and (3) a priority-0 vertex that attracts into
   Z_f ∪ A'' ⊆ Z^{r(x)} (FM) is not a candidate at round r(x) (dtl.cpp 714) — the contradiction comes from candidacy
   instead of rescue.
 - G-S5-5 (REFEREE-2 G1; REFEREE wording note). In A_c "all its edges" means all its edges in G'; with whole-game edges an
