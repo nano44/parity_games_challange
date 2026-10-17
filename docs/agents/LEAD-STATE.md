@@ -338,3 +338,4 @@
 - 00:13Z Lead: merged l-alg 1da59c8; renewable resets on actual runs; chain-breaker design constraint routed to L-RED.
 - 00:16Z Lead: L-RED box-5 status (66b05f0): no conflict with renewable resets (different notions); chain S = tangles+1; forgiven-escape route needs a per-epoch anchor; composites do not superpose (chain+h4_def11: 4 vs 15 it.), breaker needs a sequential dependency; n=60 equal-step now 16 per phase. Forwarded the anchor-per-epoch angle to L-ALG.
 - 00:18Z Lead: L-RED correction: n=60 equal-step best is 13 searches at |G'|=51 and 15 at |G'|=60 (max ratio 0.255), not 16 (climb score misread as a count).
+- 00:31Z Lead: merged l-alg efc8249; verified in pinned dtl.cpp that the author's DV check is vacuous (uninitialised val1/val2 compared over all vertices; debug-only); DV-MONO GAP routed to L-RED.
