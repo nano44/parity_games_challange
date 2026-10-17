@@ -119,3 +119,12 @@ Recommended:
 Optional:
 - N-2: (ACYC).
 With E-1 applied, R12 passes. I re-diff the text only.
+
+## Addendum: R12 draft re-diff, 4ca9b07 → 5b626ca (Lead 20:53Z), text only: PASS
+- History: 4ca9b07 is an ancestor of 5b626ca. 5b626ca changes R12-draft.md (5+/4−), LEAD-STATE and my own C12 file only.
+- Word diff of R12-draft.md:
+  - E-1: (c) now reads "Depth ≤ #steps − 1 ≤ (|R|+1)|R| − 1". FIXED, as signed by both referees.
+  - N-1: G-R12-5 "both orders". Applied; matches §23g's table.
+  - N-2: G-R12-8 "also open, inherited: (ACYC) (G-S5-6, a GAP-C item)". Applied.
+  - Header: revision stamp.
+- Nothing else moved. R12 PASSES as at 5b626ca.
