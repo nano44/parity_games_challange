@@ -366,3 +366,4 @@
 - 04:21Z Lead: L-RED succ. 3 box 5 ended (587k; 2387fd3 merged; R24 equal-step: ratio falls with n, no S > |G'|; spp22_oink_n40 verified 28 it.). Created L-RED succ. 4 session_01NCGdhfxbJoyHAubHP6tQRR (box 6: GAP-C attack, STEP 0 pending); old told to stop climbs and park. Working lanes 2/5.
 - 04:24Z Lead: L-RED succ. 3 PARKED (climbs killed, tree clean at 2387fd3; unpinned gapb best games regenerable from gapbW_dup_n20).
 - 04:26Z Lead: L-RED succ. 4 handover 5/5 (8fac07c), GO; box 6 to ~12:30Z.
+- 04:34Z Lead: merged l-alg b992733: K-first/K4-B DEAD on mixed unions (kfirst_viol_union, verified); K-low, K-in, TW survive; L-RED fitness updated (drop K-first/K4-B, seed from unions).
