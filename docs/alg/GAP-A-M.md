@@ -3008,3 +3008,81 @@ event of q at pair j < i, a RE-STEAL.
   - dtl_stealdepth.py, more sets (20:00Z by date -u): mixed unions s1 + corpus + R35, stable: again R35's single re-steal
     (depth 1); 588 other contexts with steals have k = 1. Cross unions s11 + corpus + R35, Oink: k max 1, depth 0 (212
     contexts). "No cause" 0 everywhere.
+
+23i. (CTX⁺): (CTX-LAMINAR) KILLED (self-kill; L-ALG succ. 7, 20:05Z by date -u)
+- Candidate: "the distinct first-difference contexts of a phase (all depths) are pairwise nested or disjoint". With it,
+  #contexts ≤ 2n − 1 (laminar family), which is the C_bv part of (CTX⁺). It is weaker than (CHAIN) (DE16).
+- Test: dtl_rootmono.py with the new flag RM_LAM=1. Default output is unchanged; the flag only adds the CTX-LAMINAR counter.
+- KILLED by experiments/alg/instances/ctx12_oink_n40.pg (sha1 eca1246f; pinned Oink 27 iterations, verified; Oink order,
+  12 contexts) and by dtl_searches15_n24.pg (sha1 767e14c6; pinned Oink 16 iterations, verified; Oink order, 4 contexts).
+  Stable order on the same two files: FAILS 1, holds 3.
+  - The crossing pairs are two large depth-0 contexts of the form G′ minus the pieces removed earlier in the search. Each
+    lacks vertices the other has: e.g. on dtl_searches15_n24, {0, 1, 2, 5, 7, 9, 10, 13, 14, 15, 17, 20, 21, 23} and
+    {0, 1, 2, 5, 6, 7, 8, 9, 13, 15, 17, 20, 23}.
+- Reading. The depth-0 contexts of one search form a decreasing chain, R_i = G′ minus the pieces removed before. The
+  first-difference context of (s, s+1) lies on chain(s) (FDL: the searches agree before e*). Across searches the chains are
+  re-cut, so the contexts cross. This is the same re-cutting that killed (CHAIN). No (CTX⁺) route from set structure alone.
+
+23j. (CTX⁺): context structure data (DATA; L-ALG succ. 7, 20:26Z by date -u)
+- dtl_ctxpieces.py (RM_DV=0 RM_LIGHT=1, Oink order) on ctx12_oink_n40, ctx13_n40 (l-red), spp_final_n40 and spp_chain_up_n43.
+  - The depth-0 contexts of each search form a decreasing chain from G′ (7/7 phases).
+  - All depth-0 contexts over a phase are MANY: 126 at |G′| = 40 with S = 25 (ctx13_n40); 111 at 38 with S = 24.
+    First-difference contexts are only 13 and 12 there. So (CTX⁺) is about which contexts carry a first difference, not
+    about how many contexts exist.
+  - Pieces (differences along a chain) repeat heavily: 585 of 877 were seen earlier in the phase. The maximum number of
+    distinct pieces is 84 at |G′| = 43 (spp_chain_up_n43, S = 42), i.e. 1.95·|G′|.
+- dtl_rootmono.py RM_BIRTH=1 (new flag; default output unchanged) compares e*'s context with the birth arenas (sptl arena at
+  extraction) of the tangles learned by s. On ctx12_oink_n40, ctx13_n40 and spp_chain_up_n43 (Oink order): 91/91 transitions with e* in a
+  best_vertices call land in the loose class "the context contains a birth arena at the same or greater depth"; 0 EQUAL a
+  birth context.
+  - The loose class is nearly automatic for depth-0 contexts, so this is NOT informative. A sharper test would be "e* lies on
+    the call path to the birth of s's new tangle".
+- No (CTX⁺) statement proposed. Candidate to measure next: (PIECES-POLY), distinct depth-0 pieces per phase ≤ 2|G′|
+  (max 1.95 so far).
+
+23k. Referee imports for packet 9 (§23f-§23g) (L-ALG succ. 7, 20:35Z by date -u)
+The Lead asked for these as "§23j"; §23j was already taken (CTX⁺ data), so they go here. §23f-§23g are not rewritten.
+Sources: REFEREE docs/referee/R-P9.md and REFEREE-2 docs/referee-2/R2-P9.md, on trunk 25111fa; both labelled "(Opus 5.5, D12)".
+- Verdicts:
+  - (a) §23f: SIGN from both.
+  - (b) Lemma CHARGE: SIGN WITH GAPS from both, all gaps closed.
+  - (c) the depth count: REFEREE SIGN WITH GAPS (G9-c1, closed); REFEREE-2 SIGN.
+  - (d) the data: CONFIRMED by both.
+  - No disagreement on the mathematics.
+- G9-b1 (both; closed). CHARGE's proof must use the prefix BEFORE τ, P(τ⁺) of round r, wherever §23g writes P_{j+1}(τ) and
+  P_i(τ). In §22r's notation P(τ) is the prefix after τ's region. With that reading "t ∩ P_i(τ) = ∅" is FALSE, since t fired
+  inside region τ (REFEREE-2's probe: false at all 65 re-steals).
+  Corrected step 2: a firing tangle's vertices lie in CurZ or CurR (dtl.cpp 136-139), and CurR = R \ P(τ⁺) minus the
+  vertices popped in τ's own region (690, 699). So t ∩ P_i(τ⁺) = ∅.
+  Then: take w ∈ t ∩ P_{j+1}(τ⁺) with w ∉ P_i(τ⁺), so i ≥ j + 2. Let m be the LAST visit in [j+1, i−1] with w ∈ P_m(τ⁺).
+  Then P_m(τ⁺) ⊄ P_{m+1}(τ⁺).
+  The correction is needed for strictness: with P(τ), a loss could be caused at step τ itself.
+  The tool was already right: dtl_rootmono.py records pref[(round, top)] = Z BEFORE tattr, i.e. P(τ⁺), and
+  dtl_stealdepth.py uses it.
+- G9-b2 (REFEREE; closed). An intermediate visit can have fewer than r rounds.
+  - "No candidates" stop (dtl.cpp 716 / 765) at round r′ < r: the later rounds repeat round r′, since the call is a function
+    of (V, R, T). Use P^{(r′)} as a virtual round r. C3 gives V_r(m) ⊆ V_{r′+1}(m) ⊆ V_{r′}(m+1), unless a steal occurs at a
+    round ≤ r′, which is itself a cause.
+  - V′ = ∅ stop (768-771): it contradicts w ∈ P_m unless an earlier-round steal exists.
+- Citations (REFEREE N9-b1 = REFEREE-2 G9-b2): the tangle rule is dtl.cpp 136-139 (138-139 for "!R[v] return false"), not
+  dtl_pyref 86-89.
+- G23g-1 and G23g-2: CHECKED and closed by both.
+  - The local form needs τ′ ∈ V ⊆ V′ in the absorbed case, which §23g's hypothesis includes.
+  - V_r ⊆ V′_r needs (NS*) at ALL steps of rounds 1..r−1, lower tops included (C1 uses the whole union). All of these steps
+    are earlier than (r, τ).
+  - The threshold loop (722-741) and the survivors (713-772) add no case.
+- Forms of (STEAL-POLY) (REFEREE-2 N9-a1, REFEREE G9-c1), named:
+  - SUM form, Σ_q k_q ≤ poly(|R|) per phase: F_R ≤ 3·Σ_q k_q directly, so GAP-A ⇐ (CTX⁺) ∧ (STEAL-POLY_sum), with no (FIRED-R).
+  - k_R form, k_R ≤ poly(|R|): needs (FIRED-R), since Σ_q k_q ≤ k_R·Q.
+  - §23f's "Σ_q k_q ≤ poly(|R|)·#fired(R)" form needs (FIRED-R).
+  - (c) gives the sum form from (STEAL-DEPTH_D) only together with (FIRED-R): 2Q^{D+1} contains #fired(R)^{D+1}.
+  - Working conclusion of both referees: GAP-A ⇐ (CTX⁺) ∧ (FIRED-R) ∧ (STEAL-DEPTH_D for a constant D), given STR-DET. All
+    three premises are DATA.
+- Constant D only (both). D = O(log n) gives only a quasi-polynomial bound. The proved D ≤ (|R|+1)|R| − 1 gives
+  exp(Θ(n² log n)).
+- N9-c1 (REFEREE-2): for Q = 1 there is no re-steal, since a cause is an event of another quadruple. So Σ = 1 ≤ 2, and the
+  bound holds for all Q ≥ 1.
+- The "R2-P8 §7" citation in §23f is CORRECT: c2ac652, line 139 (REFEREE-2 comparison; Lead checked). REFEREE's N9-a1 read an
+  older R2-P8. Unchanged.
+- REFEREE-2 data: random equal-priority tie-breaks of stealonce_viol_n76 give the re-steal in 32 of 50 orders (64 re-steals in
+  320 runs). Each has a cause and depth 1. So DE20 holds under many order data; the pinned Oink order is among those without it.
