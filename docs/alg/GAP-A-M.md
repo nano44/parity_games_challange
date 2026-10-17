@@ -3005,3 +3005,6 @@ event of q at pair j < i, a RE-STEAL.
   after the first steal, and fires there again after 3 drops out of the prefix. So the "one firing interval per
   (step, tangle)" form is false wherever STEAL-ONCE* is. The long-phase form stays UNTESTED, not confirmed.
 - Dependence: no surviving statement of §23d-§23g uses NO-RETURN.
+  - dtl_stealdepth.py, more sets (20:00Z by date -u): mixed unions s1 + corpus + R35, stable: again R35's single re-steal
+    (depth 1); 588 other contexts with steals have k = 1. Cross unions s11 + corpus + R35, Oink: k max 1, depth 0 (212
+    contexts). "No cause" 0 everywhere.
