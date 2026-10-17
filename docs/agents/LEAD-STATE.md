@@ -486,3 +486,4 @@
 - 15:27Z (date -u) merged l-alg 473edc4 (§22u: (FIRED-R) DATA 'distinct tangles firing at a context R per phase <= poly(|R|)', max 17, <=0.5|R|; chain F_R <= (n+1)n·#fired(R) via PREFIX-MONO-X* + STEAL-ONCE; GAP-A <= (CTX+) ∧ (STEAL-ONCE) ∧ (FIRED-R), all data; cross-union check running). Routed FIRED-R to L-RED.
 - 15:32Z (date -u) merged referee 1abe1d7/132e8d6 (R-P7 §C: agreement; accepts G-P7-c2 F_R <= 3·N_R; withdraws R-P6 A4 consecutive-visit premise: R9 budget gains factor 2). RESULTS R9 post-landing note added (REFEREE-2 confirmation pending).
 - 15:36Z (date -u) merged referee-2 19e63f7 (R2-P7 §6: NS-COUNT = NSTEAL; agreement) and l-alg 477c677 (§22u cross unions: FIRED-R max 13, STEAL-ONCE max 1, PREFIX-MONO-X* 0 violations). R10 drafted (packet 7) -> CHECKER C10.
+- 15:41Z (date -u) merged referee-2 94bcc2a (R2-P7 §7: R9 factor 2 confirmed; R2-P6 per-search premise withdrawn; per-input term 2n). R9 post-landing note updated; 2n routed to REFEREE.
