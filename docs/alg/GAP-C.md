@@ -35,7 +35,7 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | K-first | the FIRST stable piece's lowest region is productive inside W_p | DATA (§13), 483/483, 464/464 |
 | Theorem A | if the root call is stable, its lowest region is in W_p and is productive unless (α) | PROVED (reading), §13 |
 | K4-B | the first stable piece's regions lie in W_p even after −1 pieces | DATA (§13), 483/483 (31 mixed) |
-| GAP-K' | Case B (first stable piece after −1 pieces, 486 of 488 searches): (K4-B) + (α) + (β-1) | GAP, §13 |
+| GAP-K' | Case B (first stable piece after −1 pieces, 481 of 483 searches): (K4-B) + (α) + (β-1) | GAP, §13 |
 
 ## 3. The new steps
 Lemma SCC1 (PROVED, reading). Let τ be a top in sptl (dtl.cpp 477-550) with region Z_τ, computed from {τ} by the
@@ -289,7 +289,8 @@ its escapes outside R = G', i.e. solved, which Lemma O0's argument excludes for 
 between searches, and at the solving of a tangle's last escape the tangle is attracted or deleted; this holds equally for
 tangles learned earlier in the same search, whose escapes lie in G' or are solved). So C_{τ_k} is new (or a dominion). □
 Case split on data (experiments/alg/dtl_kfirst_case.py, Oink order, corpus + random): Case A (root call stable) only 2 of
-483 searches. Case B, the first stable piece comes after −1 pieces: 474 at depth 0 (after 1 to 9+ calls), 12 at depth 1.
+483 searches. Case B, the first stable piece comes after −1 pieces: 481 (469 at depth 0 after 1 to 9+ calls, 12 at depth 1;
+corrected 04:13Z, an earlier version said 474).
 So the real obligation is Case B:
   GAP-K' (Case B). At depth 0, after −1 pieces have removed X (Dom(prevV) with Q empty, 962-991; threshold attractor and
   recursion, 899-954) with nothing learned, the first stable piece's lowest top lies in W_p(G'), its region is closed and
