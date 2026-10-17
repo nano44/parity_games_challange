@@ -112,3 +112,23 @@ Recommended:
 Optional:
 - N-2: (ACYC).
 The draft may land as written. If edited, I re-diff the text only.
+
+## Addendum: RESULTS R9 text check, 6e08940 → 5ec3a71 (Lead 16:12Z): PASS
+- Source: REFEREE-2 R2-P8 §7 at c2ac652 (16:00:45Z), an ancestor of 5ec3a71.
+- Diff in R9: two hunks.
+  - (a)'s pointer now reads "(given STR-DET; see POST-LANDING NOTE)".
+  - The note's last sentences are replaced. (The rest of the diff is the landing of R10, checked in C10 Addendum 3.)
+- R11-draft.md and the P8 reports are unchanged apart from R2-P8 §7 (+35 lines).
+| note claim | source | |
+| --- | --- | --- |
+| "REFEREE-2 R2-P8 §7 (referee-2 c2ac652) SIGNS that argument" | §7 heading: "I SIGN the tighter constants, given STR-DET (Opus 5.5, D12)"; "§C2's device is correct" | OK |
+| "and withdraws its '2n needed'" | §7 (iii): "My 2n is true but not needed, and I withdraw it as a correction" | OK |
+| "given STR-DET (RESULTS R8), R9's ORIGINAL constants in (a)-(c) hold with both signatures" | §7: "R9's original display therefore holds given STR-DET: S − 1 ≤ Σ_R (F_R + 1)(H + 1) + n(\|C_T\| + \|C_Dom\|) + 1"; per context "(F_R + 1)(H + 1), checked"; (b) "holds as written". REFEREE §C2 (876c06e) is the other signature | OK |
+| "the doubled display holds without STR-DET (c)" | §7: "The doubled display of R2-P7 §7 also holds and does not need STR-DET (c)" | OK |
+| "Constants do not affect the reduction" | §7: "Either is safe, and the reduction is the same" | OK |
+- N-7 (C10) is moot, as the Lead says: (b)'s n and (c)'s display are now signed by both, given STR-DET. R9 already builds on
+  R8 (STR-DET), so (b) and (c) need no extra pointer.
+- N-6 (note, R10/R11). R2-P8 §7 also says the factor 3 of G-P7-c2 / G8-1 tightens to 2 given STR-DET, "(optional)", with one
+  signature (REFEREE-2). It notes "The factor 3 of R2-P7/R2-P8 stays valid without STR-DET (c)". R10 (c) and R11 (c)/(d) use
+  3, which is signed by both and remains correct. No change needed. If the Lead adopts 2, it needs REFEREE's signature
+  first.
