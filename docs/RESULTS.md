@@ -123,7 +123,9 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
       POST-LANDING NOTE (2026-10-17 12:15Z by date -u): REFEREE-2 R2-P4 (referee-2 352da6e) re-opened part of (h) as gap
       G-STR: (ii)-(iii) compare set outputs only, but extraction reads str (dtl.cpp 268), so an equal-set tattr with different
       str could change an extracted SCC before the first set difference. (h) holds GIVEN (STR-DET) "equal set outputs before a
-      point imply equal extracted SCCs before it" (DATA: 0 of 4,290 same-phase pairs). Pending REFEREE's comparison; GAPS G-STR.
+      point imply equal extracted SCCs before it" (DATA: 0 of 4,290 same-phase pairs), or its weak form (STR-DET-w) "s+1 creates
+      no tangle before its first set difference, and none at all if there is none" (R2-P4 §8, 69b38ab). Pending REFEREE's
+      comparison; GAPS G-STR.
   (i) Lemma DV*-MONO (GAP-A-M §21h), reading INF as "never dropped".
   (j) The per-context LRN budget: at most n(n + 1) LRN transitions per distinct context per phase (GAP-A-M §21j), with
       REFEREE-2's reading of LRN (R2-PROVED2 §10).
