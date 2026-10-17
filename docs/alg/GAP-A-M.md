@@ -2442,3 +2442,15 @@ experiments/alg/instances/ctx12_oink_n40.pg (n = 40, |G′| = 38).
   in stable order.
 - Pinned Oink: 3 dominions, 46 tangles, 27 iterations, verified.
 - The previous maximum was L-RED's ctx11_n40 with 11. Growth so far is +2 over the spp25 start, at fixed n.
+RV shape of a falling vertex (14:45Z by date -u; corpus plus fall3_n76, fall4_n116, kin_viol_n29, meet_viol_n17; Oink /
+stable). For each (context, vertex) whose RV falls at some visit:
+- Before the fall, its RV never decreases: 443 / 440.
+- After the fall, its RV stays constant (322 / 334) or rises again (121 / 106). It NEVER falls a second time.
+So (FALL-V) is not a matter of "nothing happens after the fall": a vertex regains support and still does not fall again.
+Route for a proof (reading; SKETCH):
+- The code's region step equals the triggered closure with every tangle that meets the earlier prefix EXCLUDED
+  (138-139: a tangle vertex outside CurR ∪ CurZ rejects it).
+- So PREFIX-MONO's induction goes through unless the later prefix grows into a tangle that the earlier prefix did not
+  meet: a NEW steal.
+- A second fall of v would therefore need a second, independent steal that affects v after v recovered. The data has
+  none. Cross-union shapes are running.

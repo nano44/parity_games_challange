@@ -332,6 +332,15 @@ if __name__ == "__main__":
                 ms = max(len(v_) for v_ in succ_.values()); succrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), ms, len(succ_), len(ph) - 1, len(ph[0]["G"])))
             if vfall:
                 mvf = max(vfall.values()); kvf = f"FALLS per (context, vertex): max {mvf}"; tab[kvf] = tab.get(kvf, 0) + 1
+                # shape of RV sequences of vertices that fall somewhere: what happens after the fall?
+                for (key_, v), _ in vfall.items():
+                    seqv = [rc["rv"].get(v) for _, rc in visits[key_] if v in rc["rv"]]
+                    i0 = next(i for i in range(1, len(seqv)) if seqv[i] < seqv[i - 1])
+                    after = seqv[i0:]
+                    shp = "constant after the fall" if all(x == after[0] for x in after) else ("rises after the fall" if any(after[j] > after[j - 1] for j in range(1, len(after))) else "falls again")
+                    before = seqv[:i0]
+                    shb = "non-decreasing before" if all(before[j] >= before[j - 1] for j in range(1, len(before))) else "not monotone before"
+                    ksh = f"RV SHAPE of a falling vertex: {shb}, {shp}"; tab[ksh] = tab.get(ksh, 0) + 1
             if victim:
                 mv_ = max(victim.values()); kvv = f"FALLS per (context, victim tangle): max {mv_}"; tab[kvv] = tab.get(kvv, 0) + 1
             if desc: descrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), max(desc.values()), sum(desc.values()), len(ph) - 1, len(ph[0]["G"])))
@@ -383,6 +392,6 @@ if __name__ == "__main__":
         badrows.sort(key=lambda r: -r[1]); print("phases where PI fails to rise (file, failures, transitions, |G'|):", badrows[:8], "phases:", len(badrows))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT", "DISTRACTION")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT", "DISTRACTION", "RV SHAPE")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})
