@@ -9,11 +9,13 @@ first-difference contexts per phase; from l-alg >= c8df405d also "descents of Π
 From l-alg >= 473edc4b with RM_EXCL=1 (set by mode steal): "RELEVANT new-steal visits per context" (§22s (RELSTEAL))
 and "NEW STEALS per (context, round, top, tangle): max K" (§22t (STEAL-ONCE): K >= 2 is a hit).
 "max tangles: K" = distinct tangles FIRED at one context over a phase (§22u (FIRED-R)), mode fired (RM_EXCL=1).
-Modes (ROOTFIT = dirty | falls | ctx | fall | steal | fired):
+Modes (ROOTFIT = dirty | falls | ctx | fall | steal | fired | firedr):
   dirty: 1e11 hit + 1e7 * max dirty per phase + 1e4 * (dirty phase transitions) + |G'| of that phase
   falls: 1e11 hit + 1e7 * max RV falls per phase + 1e4 * max dirty per phase
   fall:  1e11 hit + 1e7 * max descents of Π_R at one context in one phase + 1e4 * total descents + max RV falls per phase
   fired: 1e11 hit + 1e7 * max distinct fired tangles at one context + 1e4 * (max tangles/|R| in per mille)
+  firedr: 1e11 hit + 1e7 * (max tangles/|R| in per mille) + max distinct fired tangles (ratio first: > 1000 needs
+         more fired tangles at one context than |R|, i.e. several visits)
   steal: 1e11 hit + 1e7 * max relevant new-steal visits at one context + 1e4 * their total + max new-steal visits
   ctx:   1e11 hit + 1e7 * max distinct first-difference contexts per phase + 1e4 * that phase's transitions + |G'|
 Usage: rootfit.py G.pg ... (prints score and the parsed dict)."""
@@ -23,7 +25,7 @@ JUDGE = os.path.join(os.environ.get("LALGR_DIR", ""), "experiments", "alg", "dtl
 
 def measure(path, order=None):
     env = dict(os.environ); env["DTL_ORDER"] = order or os.environ.get("DTL_ORDER", "stable"); env["RM_DV"] = "0"
-    if os.environ.get("ROOTFIT") in ("steal", "fired"): env["RM_EXCL"] = "1"
+    if os.environ.get("ROOTFIT") in ("steal", "fired", "firedr"): env["RM_EXCL"] = "1"
     out = subprocess.run([sys.executable, JUDGE, os.path.abspath(path)], capture_output=True, text=True, env=env,
                          timeout=600, cwd=os.path.dirname(JUDGE)).stdout
     m = dict(hit=0, maxdirty=0, phlen=0, phG=0, maxfalls=0, clean=0, dirty=0, ctx=0, ctxlen=0, ctxG=0, desc=0, desctot=0, rsteal=0, rstealtot=0, nsteal=0, once=0, fired=0, firedratio=0.0)
@@ -68,6 +70,8 @@ def measure(path, order=None):
 
 
 def score_m(m):
+    if os.environ.get("ROOTFIT", "dirty") == "firedr":
+        return 1e11 * (m["hit"] > 0) + 1e7 * min(int(1000 * m["firedratio"]), 9999) + min(m["fired"], 9999)
     if os.environ.get("ROOTFIT", "dirty") == "fired":
         return 1e11 * (m["hit"] > 0) + 1e7 * min(m["fired"], 9999) + 1e4 * min(int(1000 * m["firedratio"]), 999)
     if os.environ.get("ROOTFIT", "dirty") == "steal":
