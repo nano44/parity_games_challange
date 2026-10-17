@@ -5,11 +5,12 @@ INF if v survives to a round that returns 1 (in a −1 call every vertex is drop
 RV(s) pointwise. Transitions are classified by where the first difference e* of the reduced logs (dtl_fdlcheck.py) lies:
 root call (threshold loop / regions, with the round of e*), or later. For a failure, the first vertex whose RV falls and
 its rounds are printed. ROOT-SPLIT rows (root-call transitions): does RV fall / move, does DV* (dtl_dvstar.py, T at search start) move,
-does either root call have a deficit round (U ≠ Û, dtl_ideal.py). RM_DV=0 skips DV*. Games and env as dtl_step5stats.games (UNIONS, UM_CROSS, SEED, NMAX, RANDOM). RM_ROUNDS=1 also prints the round of e*. DTL_ORDER = oink | stable. Usage: dtl_rootmono.py G.pg ..."""
+does either root call have a deficit round (U ≠ Û, dtl_ideal.py). RM_DV=0 skips DV*. Games and env as dtl_step5stats.games (UNIONS, UM_CROSS, SEED, NMAX, RANDOM). RM_LIGHT=1 skips the ideal and step-deficit checks (deficit/stepdef flags are then never set). RM_ROUNDS=1 also prints the round of e*. DTL_ORDER = oink | stable. Usage: dtl_rootmono.py G.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import pg, dtl_fdlcheck as FC, dtl_ideal as I, dtl_dvstar as DS, dtl_step5stats as ST
 FD = FC.FD; D = FD.D; INF = 10 ** 9; tab = {}
+LIGHT = os.environ.get("RM_LIGHT") == "1"          # skip the ideal / step-deficit checks (for climbs that only count contexts)
 
 
 class RM(FC.CK):
@@ -39,14 +40,14 @@ class RM(FC.CK):
             rnd += 1; a0 = len(s.log)
             prevV = set(V)
             tli = [t for t in range(len(s.tv)) if I.alive(s, t, p)]
-            if I.actual_union(s, p, V, R, tli)[0] != I.ideal_union(s, p, V, R, tli): rec["deficit"] = True
+            if not LIGHT and I.actual_union(s, p, V, R, tli)[0] != I.ideal_union(s, p, V, R, tli): rec["deficit"] = True
             Z = set(); CurR = set(R); regs = []; rtops = []
             CurR = set(R)
             for top in range(s.n - 1, -1, -1):
                 if top not in V or top in Z: continue
                 CurZ = {top}; s.Q = [top]
                 s.tattr(p, CurZ, CurR, CurR, s.pr[top], CurR)
-                cl = I.lfp(s, p, Z | {top}, R, s.pr[top], tli)
+                cl = (Z | CurZ) if LIGHT else I.lfp(s, p, Z | {top}, R, s.pr[top], tli)
                 if cl != Z | CurZ:
                     miss0 = cl - Z - CurZ
                     rec.setdefault("wits", {})[(rnd, top)] = frozenset(t for t in tli if any(v in Z for v, _ in s.tv[t]) and any(v in miss0 for v, _ in s.tv[t]))
@@ -61,7 +62,7 @@ class RM(FC.CK):
             rec.setdefault("rtop", []).append({v: tp for tp, c in zip(rtops, regs) for v in c})
             # level-wise deficit: the code's union after the tops of priority >= q vs the ideal Û_{>=q} (dtl_ideal.lfp)
             Uh = set()
-            for q in sorted({s.pr[v] for v in V}, reverse=True):
+            for q in ([] if LIGHT else sorted({s.pr[v] for v in V}, reverse=True)):
                 Uh = I.lfp(s, p, Uh | {v for v in V if s.pr[v] == q}, R, q, tli)
                 Aq = set().union(*[c for tp, c in zip(rtops, regs) if s.pr[tp] >= q])
                 if Aq != Uh: rec["leveldef"] = True
