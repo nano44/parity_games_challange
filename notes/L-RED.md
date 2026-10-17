@@ -59,7 +59,10 @@ DONE this box (all pushed, all pinned in check.sh with sha1, both orders, pinned
 - R32 (FALL-V) FALSE fallv_viol_n28 = DE18. R34 (STEALER-MONO) FALSE stealer_viol_n76 (stable order; Oink holds) = DE19.
 - (CTX+) ctx11/12/13_n40 (13; also 13 at n 48, scratch). R33 = data tables (CTX+, RELSTEAL, STEAL-ONCE, FIRED-R, DIRTY).
 - Discharged/no hit: (2d) Dom e*, (2e) STR (corpus 0/1,062 each); DIRTY max 13 (n 56); (beta') path (i), K5' parked.
-IN FLIGHT at handover (scratch lost with the container; LALGR_DIR = worktree of l-alg >= e2f7e198; from experiments/red):
+IN FLIGHT: NONE. All climbs stopped 18:51Z (date -u; ps shows no dtl_search/ucompose/dtl_rootmono). Final values: stay 23001
+(stable, stealer_viol_n76) 4 relevant steals/context, 0 STOLEN-PERM/STAYS-MET/STEAL-ONCE* failures; stay 23002 (oink) 1, 0
+failures; firedlong 21001 (oink, spp25) best ratio 0.455 (5 fired, |R| 11, S 28); 21002 (stable) 0.333. Bests are NOT
+pinned (scratch lost). Relaunch lines (LALGR_DIR = worktree of l-alg >= 7b909b6; from experiments/red):
   ROOTFIT=stay DTL_ORDER=stable python3 dtl/dtl_search.py x 1 --fitness root --seed 23001 --steps 1000000 --hb 50 --from carry/instances/stealer_viol_n76.pg --out <scr>/sy/y23001.pg
   ROOTFIT=stay DTL_ORDER=oink   (same, seed 23002)
   DTL_ORDER=oink   python3 dtl/dtl_search.py x 1 --fitness firedlong --seed 21001 --steps 1000000 --hb 50 --from carry/instances/spp25_oink_n40.pg --out <scr>/fl/l21001.pg   (best 0.40: 4 fired, S 25)
