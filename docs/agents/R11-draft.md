@@ -1,4 +1,4 @@
-# Draft RESULTS R11 (Lead, 2026-10-17 16:06Z by date -u) (rev. 16:20Z per CHECKER C11 N-1..N-3, N-2 and the FIRED-R caveat) — NOT LANDED; awaiting CHECKER re-diff
+# Draft RESULTS R11 (Lead, 2026-10-17 16:06Z by date -u) (rev. 16:20Z per CHECKER C11 N-1..N-3, N-2 and the FIRED-R caveat) — LANDED as RESULTS R11 (CHECKER C11 PASS, re-diff 2031e13 at e55bbdf)
 
 ### R11 [refereed-only] Packet 8 on A_DTL: only fired tangles matter (EXACT*, PREFIX-MONO-X*), and GAP-A ⇐ (CTX⁺) ∧ (STEAL-ONCE*) ∧ (FIRED-R) (2026-10-17) — partial step-4 reduction (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -45,7 +45,7 @@
           tangles, and the tangle count is GAP-A's own core (Lemma W: #fired(R) ≤ #tangles ≤ n·S), so it is unlikely to be much
           easier than GAP-A; its content is that the tangles active at one context do not grow with the phase length, and only
           long phases (S ≫ |R|) test it. (STEAL-ONCE*) is of a different kind (repetition, not size). Short-phase climbs reach
-          15 fired tangles at |R| = 17 (0.88; stable order, dtl_pyref; Oink order 13 at |R| = 16).
+          15 fired tangles at |R| = 17 (0.88; stable order, dtl_pyref; Oink order 12 at |R| = 16 (0.75), then 13 (0.87)).
   G-R11-7 Also open, inherited: (ACYC) (G-S5-6, a GAP-C item). Dependencies: RESULTS R10 (EXACT, PREFIX-MONO-X), R9 (reduction; constants per its post-landing note), R8 (STR-DET).
           Nothing Lean-checked.
 - Data (evidence only): EXACT* 0 failures in REFEREE's 481k and REFEREE-2's 927k best_vertices region steps; every non-rise at a

@@ -52,6 +52,22 @@ Status: WORKING (box 6, Lead GO 04:29Z, to ~12:30Z Lead clock). Box-5 status lin
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-17 16:52Z (date -u) BOX 7, successor 5 (Opus 5.5), preparing handover (context ~480k; Lead: hand over at ~600k).
+DONE since 14:58Z (all pushed): R32 (FALL-V) FALSE fallv_viol_n28 (DE18); ctx12_n40 / ctx13_n40 (CTX+ 12, 13); fired10_n20
+(FIRED-R ratio 0.83, short phase); R33 docs/red/R33-box7-data.md = the box-7 data tables (CTX+, RELSTEAL/STEAL-ONCE,
+FIRED-R, DIRTY). Tools: rootfit ROOTFIT=steal|fired|firedr (RM_EXCL=1), root/firedlong.py (long phases S >= 2|R|).
+CURRENT TOP TARGET (Lead 16:22Z): grow #fired(R) at ONE context over a LONG phase (S >= 2|R|); a family where #fired(R) grows
+with phase length at fixed |R| sinks (FIRED-R). Judge: L-ALG dtl_firedclimb.py (no long-phase filter) / my firedlong.py.
+Second: CTX+ n-trend (13 at n 40 and n 48; growing by random vertices destroys it).
+RUNNING (scratch lost with this container; relaunch from experiments/red, LALGR_DIR = worktree of l-alg >= 43302c11):
+  DTL_ORDER=oink   python3 dtl/dtl_search.py x 1 --fitness firedlong --seed 21001 --steps 1000000 --hb 50 --from carry/instances/spp25_oink_n40.pg --out <scr>/fl/l21001.pg
+  DTL_ORDER=stable (same, seed 21002); DTL_ORDER=oink seed 21003 --from carry/instances/ctx13_n40.pg
+  LALGR_DIR=<l-alg >= 94067096> ROOTFIT=ctx DTL_ORDER=oink python3 dtl/dtl_search.py x 1 --fitness root --seed 18101 --from <ctx13_n40 grown by 8>
+IDEAS NOT TRIED: long-phase seed = an SPP chain (long phase) glued under a small gadget whose context is re-visited every
+search and fires a new stored tangle each time; FALL/RELSTEAL family needs gadgets with distinct solo fall visits (0,1,2,...)
+or a delay gadget (R31 §2).
+
+## Resume point (14:58Z, history)
 2026-10-17 14:58Z (date -u) BOX 7 (successor 5, produced on Opus 5.5; session_01DT8bvW9MGLgZURmnwB2JAc). Lead GO 11:32Z,
 box to ~19:30Z. Context ~410k at 14:58Z.
 DONE (all pushed; latest 821b9b4):

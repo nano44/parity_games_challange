@@ -191,3 +191,52 @@ The draft may land as written. If edited, I re-diff the text only.
   only.
 - The ee4e060 PASS (Addendum 3) stands for ee4e060 as it was against §22w at 8642d5c. It is superseded by L-ALG's
   correction, which is now on trunk.
+
+## Addendum 5: R11 re-diff at trunk afba224 (Lead 16:29Z), text only: PASS
+- History: 77c5fa3 and eb1ad3f are ancestors of afba224.
+- The net change from ee4e060 (Addendum 3, PASS) to afba224 touches only the G-R11-6 caveat and the Scope line.
+- No duplicate block: each of G-R11-1..7 and each top-level bullet (Claims, Signatures, Gaps, Data, Scope) occurs once.
+- So 369b4bf → afba224 in full is the union of Addendum 2 (G-R11-1 sentence), Addendum 3 (N-1..N-3, N-2) and the two
+  changes below.
+| draft at afba224 | GAP-A-M §22w on trunk (L-ALG bracket "Correction 16:11Z") | |
+| --- | --- | --- |
+| "(FIRED-R) bounds a count of stored tangles, and the tangle count is GAP-A's own core (Lemma W: #fired(R) ≤ #tangles ≤ n·S)" | "(FIRED-R) bounds tangles, and the tangle count is GAP-A's own core (Lemma W)"; "Lemma W gives #tangles ≤ n·S, so #fired(R) ≤ n·S" | OK |
+| "so it is unlikely to be much easier than GAP-A" | "(FIRED-R) is therefore unlikely to be much easier than GAP-A" | OK |
+| "(STEAL-ONCE*) is of a different kind (repetition, not size)" | "unlike (STEAL-ONCE), which is a statement about repetition" | OK |
+| "its content is ... only long phases (S ≫ \|R\|) test it"; "Short-phase climbs reach 15 fired tangles at \|R\| = 17 (0.88)" | unchanged text of §22w (Addendum 3) | OK |
+| Scope: "a reduction, not a bound, to three open statements (not the L32 single-statement criterion); (FIRED-R) in particular is a tangle count close to GAP-A's core (G-R11-6 caveat)" | follows from the bracket. The withdrawn "implied by GAP-A" reason is gone | OK |
+- The withdrawn clause "GAP-A itself implies (FIRED-R)" is no longer in the draft. Addendum 4's FAIL is resolved.
+- C11 Addendum 3 N-7 (optional, "(stable order, dtl_pyref)" on the 15/17 figure) is not applied. It remains optional.
+- C11 verdict at afba224: PASS.
+
+## Addendum 6: R11 re-diff at trunk 9b29add (Lead 16:35Z), text only: FAIL on one figure (E-2)
+- History: afba224 is an ancestor of 9b29add.
+- ee4e060 → afba224 is Addendum 5 (PASS).
+- afba224 → 9b29add is one change, in G-R11-6: "(0.88)" → "(0.88; stable order, dtl_pyref; Oink order 13 at |R| = 16)".
+- E-2 (required, one figure). The Oink-order figure misstates §22w.
+  - §22w (trunk, line 2648): "Oink order: 12 tangles at one context with |R| = 16 (0.75); continued to 13 (0.87)".
+  - The 16 belongs to the count 12. For the count 13 §22w gives only the ratio 0.87, and 13/16 = 0.81, not 0.87. 0.87
+    corresponds to |R| = 15.
+  - "13 at |R| = 16" pairs the count of one step with the |R| of the other.
+  - My N-7 wording was "the Oink-order climb reached 13 (0.87)".
+  - Fix: "Oink order 13 (0.87)", or "Oink order 12 at |R| = 16 (0.75), then 13 (0.87)".
+- Everything else at 9b29add is as passed in Addendum 5. With E-2 fixed, R11 passes. I re-diff the text only.
+
+## Addendum 7: R11 re-diff, 9b29add → e55bbdf (Lead 16:49Z), text only: PASS
+- History: 9b29add is an ancestor of e55bbdf.
+- The only change in R11-draft.md is one line: "Oink order 13 at |R| = 16" → "Oink order 12 at |R| = 16 (0.75), then 13
+  (0.87)".
+- This matches §22w, "Oink order: 12 tangles at one context with |R| = 16 (0.75); continued to 13 (0.87)", and is my
+  suggested wording. E-2 is fixed.
+- C11 final: R11 PASSES as at e55bbdf.
+
+## Addendum 8: post-landing text check, trunk af07389 (Lead 16:58Z): PASS
+- e55bbdf is an ancestor of af07389.
+- RESULTS R11 against R11-draft.md at e55bbdf, from the "### R11" line: identical except for two things.
+  - The heading stamp: "CHECKER PASS (docs/checker/C11-R11-packet8.md, checker 7a7d23c + re-diff 2031e13)".
+  - One trailing blank line.
+- docs/GAPS.md, GAP-A row, three edits, all accurate:
+  - The CTX⁺ maximum is now "13 per phase, ctx13_n40 (L-RED; re-run CHECKER C11)", which matches C11 §3.
+  - (FALL-V) "is FALSE, RESULTS DE18 (fallv_viol_n28)". DE18 landed at 357224b ("RESULTS DE18 (FALL-V false,
+    fallv_viol_n28)").
+  - "R11 pending" now reads "R11".
