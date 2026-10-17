@@ -1,0 +1,12 @@
+== exhaustive n=1, priorities 0..1: 4 games in 0s
+   (psolB complete, psolQ complete, PA**) : count : first example
+   (True, True, True)       :        4 : 0 0 0 0
+   T-A1  'if'   PA** => psolB complete : HOLDS
+   T-A1 'only if' psolB complete => PA** : HOLDS
+   T-A1' PA** => psolQ complete : HOLDS
+   'psolQ complete => PA**' (the routed iff) : HOLDS
+   psolB sound: HOLDS
+   psolB_max == psolB_hkp: HOLDS
+   psolB order-independent (reversed): HOLDS
+   psolB order-independent (shuffled): HOLDS
+   psolQ ⊇ psolB (complete): HOLDS

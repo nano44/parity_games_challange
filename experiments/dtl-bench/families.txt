@@ -1,0 +1,19 @@
+# family | generator command ({N} = size; run from the repo root) | sizes
+tc | tools/oink/build/tc {N} | 2 4 8 12 16 20 24 32 40 48 64 80 96 128
+tc+ | tools/oink/build/tc+ {N} | 2 4 8 12 16 20 24 32 40 48 64 80 96 128
+counter_symsi | tools/oink/build/counter_symsi {N} | 2 4 8 16 32 64 128 256 512 1024 2048
+counter_rr | tools/oink/build/counter_rr {N} | 2 4 8 16 32 64 128 256 512 1024 2048
+counter_dp | tools/oink/build/counter_dp {N} | 2 4 8 16 32 64 128 256 512 1024 2048
+counter_m | tools/oink/build/counter_m {N} | 2 4 8 16 32 64 128 256 512 1024 2048
+counter_core | tools/oink/build/counter_core {N} | 2 4 8 16 32 64 128 256 512 1024 2048
+counter_rob | tools/oink/build/counter_rob {N} | 2 4 8 16 32 64 128 256 512 1024 2048
+counter_ortl | tools/oink/build/counter_ortl {N} | 2 4 8 16 32 64 128 256 512 1024 2048
+counter_qpt | tools/oink/build/counter_qpt {N} | 2 4 8 12 16 20 24 28 32 40 48 64 96 128 256
+recursiveladder | python3 experiments/hard-families/pgsolver_port.py recursiveladder {N} | 2 4 8 16 32 64 128 256 512 1024
+switchallexp | python3 experiments/hard-families/pgsolver_port.py switchallexp {N} | 1 2 4 8 16 32 64 128 256
+switchbestexp | python3 experiments/hard-families/pgsolver_port.py switchbestexp {N} | 1 2 4 8 16 32 64 128 256
+red_chain | python3 experiments/red/dtl/gens_dtl.py chain {N} | 2 4 8 16 32 64 128 256 512 1024 2048
+red_ladder | python3 experiments/red/dtl/gens_dtl.py ladder {N} | 1 2 4 8 16 32 64 128 256 512 1024
+red_counter_dftl | python3 experiments/red/dtl/gens_dtl.py counter_dftl {N} | 1 2 4 8 16 32 64 128 256 512 1024 2048
+red_counter_odftl | python3 experiments/red/dtl/gens_dtl.py counter_odftl {N} | 1 2 4 8 16 32 64 128 256 512 1024 2048
+red_n5 | python3 experiments/red/dtl/gens_dtl.py n5 {N} | 0

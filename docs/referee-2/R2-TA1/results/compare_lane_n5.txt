@@ -1,0 +1,1 @@
+compared 3000 games (n=5, random seed 55): psolB residual differs on 0, psolQ on 0, PA** on 0

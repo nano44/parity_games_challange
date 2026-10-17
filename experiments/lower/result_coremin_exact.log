@@ -1,0 +1,10 @@
+425 distinct games
+order 0: 38 games [67.1s]
+order 1: 31 games [36.1s]
+order 2: 35 games [67.2s]
+order 3: 30 games [56.4s]
+order 4: 28 games [47.8s]
+order 5: 35 games [105.6s]
+order 6: 40 games [92.1s]
+order 7: 30 games [37.5s]
+fresh verification: 28 games, 112 nodes, 23296 clauses -> UNSAT (confirmed)

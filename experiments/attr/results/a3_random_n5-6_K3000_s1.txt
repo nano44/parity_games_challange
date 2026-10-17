@@ -1,0 +1,16 @@
+random n5-6_K3000_s1: 3000 games
+(5, 'Q⊆C', True) : 1516
+(5, 'psolB', 'solved') : 1334
+(5, 'psolB', 'undecided') : 182
+(5, 'psolC', 'solved') : 1516
+(5, 'psolQ', 'solved') : 1511
+(5, 'psolQ', 'undecided') : 5
+(5, 'thm4', True) : 1516
+(6, 'Q⊆C', True) : 1484
+(6, 'psolB', 'solved') : 1327
+(6, 'psolB', 'undecided') : 157
+(6, 'psolC', 'solved') : 1484
+(6, 'psolQ', 'solved') : 1476
+(6, 'psolQ', 'undecided') : 8
+(6, 'thm4', True) : 1484
+psolC-partial games: 0
