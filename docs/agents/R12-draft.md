@@ -1,4 +1,4 @@
-# Draft RESULTS R12 (Lead, 2026-10-17 20:40Z by date -u) (rev. 20:40Z: REFEREE §C 3785d3f) — NOT LANDED; awaiting L-ALG §23j imports, CHECKER gate
+# Draft RESULTS R12 (Lead, 2026-10-17 20:40Z by date -u) (rev. 20:40Z: REFEREE §C 3785d3f; rev. 20:45Z: L-ALG imports §23k) — NOT LANDED; awaiting CHECKER gate
 
 ### R12 [refereed-only] Packet 9 on A_DTL: R11 (d) with the factor k, Lemma CHARGE, and GAP-A ⇐ (CTX⁺) ∧ (STEAL-DEPTH_D, D constant) ∧ (FIRED-R) (2026-10-17) — partial step-4 reduction (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -26,7 +26,7 @@
   (N9-a1: name the form of STEAL-POLY); (b) SIGN WITH GAPS, closed (G9-b1, G9-b2 = REFEREE N9-b1); (c) SIGN (N9-c1); (d) own
   pinned-C++ probe an9.py. Independent (each read the other's P9 report only after pushing its own). No REJECT; full
   agreement after comparison.
-- Gaps (union). G-R12-1..4 closed in the reports, to be imported by L-ALG (§23j); G-R12-5..7 OPEN; G-R12-8 dependencies:
+- Gaps (union). G-R12-1..4 closed in the reports and imported by L-ALG (GAP-A-M §23k, l-alg 67b9e05; §23f-§23g not rewritten); G-R12-5..7 OPEN; G-R12-8 dependencies:
   G-R12-1 Notation: §23g's P_{j+1}(τ), P_i(τ) must read P(τ⁺) (the prefix before τ); as written "t ∩ P_i(τ) = ∅" is false
           since t fired inside region τ (REFEREE G9-b1 = REFEREE-2 G9-b1).
   G-R12-2 An intermediate visit may have fewer than r rounds: a "no candidates" stop (dtl.cpp 716/765) repeats its last round
