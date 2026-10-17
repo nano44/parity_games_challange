@@ -382,3 +382,4 @@
 - 06:24Z Lead: merged l-alg b389ce1 (P-K killed, P-K1 Case 1 proved given YZ/WM, KT candidate). L-ALG succ. 6 notification slip 05:50-06:19Z (30 min), self-reported, fix: read after every data run.
 - 06:35Z Lead: merged l-alg 312c918 (KT DATA); routed to L-RED.
 - 06:38Z Lead: merged l-red e3b9a01; spp25_oink_n40 verified (31 it.); KT climbs started.
+- 06:47Z Lead: merged l-alg b50e0c2 (P-KT proved given YZ, WM_c1); plan approved (YZ reading, WM_c1, T step); YZ/WM_c1 routed to L-RED.
