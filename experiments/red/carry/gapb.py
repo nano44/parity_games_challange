@@ -25,7 +25,7 @@ def measure(path):
 
 def score(path):
     m = measure(path)
-    return (10 ** 10 * (m["unsolved"] + m["wrong"]) + 10 ** 9 * m["dupW"] + 10 ** 8 * min(m["orphW"], 9)
+    return (10 ** 12 * (m["unsolved"] + m["wrong"]) + 10 ** 11 * m["kin_viol"] + 10 ** 10 * m["dupW"] + 10 ** 9 * m["tw_straddle"] + 10 ** 8 * min(m["orphW"], 9)
             + 10 ** 7 * m["barren"] + 10 ** 6 * m["dup"] + 10 ** 5 * min(m["orphans"], 9)
             + 10 ** 4 * min(m["near_low"], 9) + 10 * min(m["near"], 500) + m["searches"])
 

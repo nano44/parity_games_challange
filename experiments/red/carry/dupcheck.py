@@ -32,7 +32,11 @@ def measure(path):
             alive = {s.idx[v] for v in s.G}; st = [0]; W0, W1 = Z.solve_sub(g, alive, st, {})
             inv = {s.idx[v]: v for v in range(s.n)}; s.Wp = {inv[v] for v in (W0 if p == 0 else W1)}; Counting.Wcur = s.Wp
             s.wsearch += bool(s.Wp)
-            h0 = Counting.hits; r = super().search(p)
+            h0 = Counting.hits; t0 = len(s.tv); d0_ = s.dominions; r = super().search(p)
+            if s.Wp:                          # (K-in) and (TW), L-ALG GAP-C.md §8-§9
+                new = [{w for w, _ in s.tv[t]} for t in range(t0, len(s.tv))]
+                if s.dominions == d0_ and not any(C <= s.Wp for C in new): s.kin += 1
+                s.straddle += sum(1 for C in new if (C & s.Wp) and not C <= s.Wp)
             if not r and Counting.hits > h0: s.barren += 1
             return r
         def best_vertices(s, V, R, p):        # GAP-beta precondition: stored p-tangles inside R with ALL escapes outside R
@@ -46,12 +50,12 @@ def measure(path):
             return super().best_vertices(V, R, p)
     d0 = X.build(g)
     d = T2(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx
-    Counting.hits = 0; Counting.inW = 0; d.orph = 0; d.orphW = 0; d.barren = 0; d.wsearch = 0; d.Wp = set(); d.run()
+    Counting.hits = 0; Counting.inW = 0; d.orph = 0; d.orphW = 0; d.barren = 0; d.wsearch = 0; d.kin = 0; d.straddle = 0; d.Wp = set(); d.run()
     unsolved = len(d.G)
     zw = Z.solve(g)
     win = {d.idx[i]: d.win[i] for i in range(g.n)}
     wrong = sum(1 for v in range(g.n) if win[v] is not None and win[v] != (zw[v] if not isinstance(zw, tuple) else zw[0][v]))
-    return dict(dup=Counting.hits, unsolved=unsolved, wrong=wrong, searches=d.iterations, orphans=d.orph, barren=d.barren, dupW=Counting.inW, orphW=d.orphW, searchesWithWp=d.wsearch)
+    return dict(dup=Counting.hits, unsolved=unsolved, wrong=wrong, searches=d.iterations, orphans=d.orph, barren=d.barren, dupW=Counting.inW, orphW=d.orphW, searchesWithWp=d.wsearch, kin_viol=d.kin, tw_straddle=d.straddle)
 
 def score(path):
     m = measure(path)
