@@ -446,3 +446,4 @@
 - 12:22Z (date -u) R7 drafted (packet 4) -> CHECKER C7 (reactivated; 4/5 working).
 - 12:26Z (date -u) merged l-alg c2b4961 (§22h: packet-4 wording imports R-b1/G-d1/G-e2; §22e bracket adds STR-DET, e* ∉ Dom, +1; reduction now GAP-A <= (CTX) ∧ (FALL) ∧ (STR-DET) ∧ (e* ∉ Dom); (e* ∉ Dom) SKETCH: needs an old straddling tangle letting a new non-straddling tangle fire in the same Dom step).
 - 12:29Z (date -u) merged referee-2 5ae9747 (R2-P4 §9: signs root-call exemption from G-STR). R7 draft G-R7-7 and R5 (h) note updated (two signatures). CHECKER told.
+- 12:31Z (date -u) merged l-alg c228028 (§22i Lemma STR-DET PROVED as reading; data weak STR-DET 1,065/1,065, 1,035/1,035; e* caller Dom 0, sptl 0; reduction GAP-A <= (CTX) ∧ (FALL) ∧ (e* ∉ Dom) given STR-DET). Packet 5 (STR-DET) to REFEREE-2 and REFEREE (un-parked for one short packet).
