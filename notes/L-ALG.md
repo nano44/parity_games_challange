@@ -18,6 +18,18 @@ Handover check 5/5 (ca909c3). Box-8 results so far, all in GAP-A-M §23b-§23e:
   (fired18_stable_n20, c6_replay3_n32). (FIRED ≤ |R|) is tight DATA (18/18). That tight case is mostly singleton tangles
   (14 of 18), so it looks fragile.
 Tools: dtl_stealtrace.py, dtl_shrinkdep.py, dtl_firedlong2.py (flags in their docstrings).
+- §23f: (STEAL-ONCE*) KILLED (RESULTS DE20, L-RED stealonce_viol_n76, stable order). It takes down STOLEN-PERM, STAYS-MET,
+  NO-REFIRE and DEP-SAFE. R11 count with the factor k: F_R ≤ 3·Σ_q k_q ≤ 3k_R(|R|+1)|R|·#fired(R).
+- §23g: Lemma CHARGE plus the depth count: (STEAL-DEPTH_D) ⇒ Σ_q k_q ≤ 2Q^{D+1} (reading). PACKET 9 went to both referees,
+  pinned at trunk c5e2b4d (Lead 20:11Z). DO NOT EDIT §23f-§23g while it is out; corrections go to a new subsection, and tell
+  the Lead. A self-contained copy with dtl.cpp lines is docs/alg/STEAL-DEPTH.md.
+- §23h: NO-RETURN KILLED (same instance). §23i: CTX-LAMINAR KILLED (ctx12_oink_n40, dtl_searches15_n24). §23j: (CTX⁺) context
+  structure data; no statement yet.
+- Running (dies with the container): experiments/alg/dtl_depthclimb.py, 4 climbs from stealonce_viol_n76 (seeds 1-4, 600
+  steps). Output goes to the scratchpad dc/ folder; best_s*.pg holds the best instance. Any depth ≥ 2 or k ≥ 3 goes to the
+  Lead at once.
+- Flags added to dtl_rootmono.py (default output unchanged): RM_LAM=1 (CTX-LAMINAR), RM_BIRTH=1 (CTX-BIRTH).
+- Trap: in-process order switches must set os.environ["DTL_ORDER"], because dtl_deficit.build reads it.
 
 ## DONE
 Signed by both referees (all readings of dtl.cpp @ 8fbf0a7, every order datum):

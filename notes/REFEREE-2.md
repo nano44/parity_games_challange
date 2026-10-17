@@ -9,7 +9,9 @@ Probe: R2-P7/dtl_probe7.patch (logging-only + R2_REV), an7.py (own closure). Reb
 R2-P7 §6 comparison (19e63f7: NS-COUNT = NSTEAL), §7 R9 budget (94bcc2a: 2(F_R+1)(H+1) confirmed; 2n per input on C_T/C_Dom; R2-P6 per-search indexing withdrawn).
 P8 (§22s EXACT*/PREFIX-MONO-X*, §22u chain, pin a907c46): docs/referee-2/R2-P8.md. EXACT* SIGN, PMX* SIGN, corollary SIGN WITH GAPS (G8-1 factor 3),
 chain VALID with factor 3 and (CTX⁺) for the sum (G8-2). Probe dtl_probe8.patch (+ "F t" fired log), an8.py. FIRED-R ratio 0.67|R| at small R.
-Next: comparison with R-P8 when the Lead allows.
+R2-P8 §6 comparison (018ab0d: full agreement), §7 (c2ac652): signed REFEREE R-P7 §C2's tighter R9 constants given STR-DET; my 2n withdrawn; factor 3 -> 2 given STR-DET (mine alone; R11 keeps 3).
+20:18Z P9 (§23f/§23g, pin c5e2b4d): docs/referee-2/R2-P9.md. (a) SIGN (N9-a1 STEAL-POLY form), (b) CHARGE SIGN WITH GAPS (G9-b1 P(τ)->P(τ⁺) closed), (c) SIGN (constant D only), (d) 65 re-steals all with a cause (stealonce_viol_n76 only; 32/50 random tie-breaks). Tools R2-P9/an9.py, stablerel.py, randrel.py.
+16:13Z: no packet; standing by (~300k context). Probe infra: scratchpad oinkp/ (lost with container); rebuild from R2-P8/dtl_probe8.patch.
 Earlier (predecessor):
 2026-10-17 ~13:05Z (REFEREE-2 on Opus 5.5 under D12; parking for handover at ~0.57M context, Lead 12:59Z).
 Packets done 2026-10-17. Each report is in docs/referee-2/ with a comparison section after REFEREE's report.

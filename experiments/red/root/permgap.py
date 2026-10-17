@@ -9,6 +9,8 @@ For each relevant steal (context, step σ, tangle t) at visit pair (i, i+1), W =
   near1 : lost ≠ ∅
   pairs : (steal, later visit with σ) pairs
 Score: 1e12 hit + 1e9 min(near2, 999) + 1e6 min(near1, 999) + 1e3 min(pairs, 999) + min(relevant steals, 999).
+PERMFIT=stealk: (STEAL-ONCE*) growth after R35: score 1e9 min(maxk, 999) + 1e6 min(hit, 999) + 1e3 min(near1, 999) + steals,
+maxk = max relevant steals per (context, round, top, tangle) over the phase (dtl_stealtrace's count).
 Usage: permgap.py G.pg ... (order from DTL_ORDER); prints the counts."""
 import sys, os
 for k, v in (("RM_DV", "0"), ("RM_LIGHT", "1"), ("RM_EXCL", "1"), ("RM_PREF", "1")): os.environ[k] = v
@@ -26,16 +28,17 @@ def rel_steals(x, y):
 def measure_game(g, order):
     os.environ["DTL_ORDER"] = order
     d0 = FD.P.X.build(g); d = RMo.RM(d0.pr, d0.ow, d0.outs, ins_desc=(order == "oink")); d.idx = d0.idx; d.run()
-    m = dict(incomplete=int(not all(w is not None for w in d.win)), hit=0, near2=0, near1=0, pairs=0, steals=0, ex=None)
+    m = dict(incomplete=int(not all(w is not None for w in d.win)), hit=0, near2=0, near1=0, pairs=0, steals=0, maxk=0, ex=None)
     for ph in FD.phase_rows(d):
         visits = {}
         for r_ in ph:
             for rc in r_["recs"]: visits.setdefault(rc["key"], []).append(rc)
         for key_, rcs in visits.items():
+            trip = {}
             for i in range(len(rcs) - 1):
                 x, y = rcs[i], rcs[i + 1]
                 for k_, t in rel_steals(x, y):
-                    m["steals"] += 1
+                    m["steals"] += 1; trip[(k_, t)] = trip.get((k_, t), 0) + 1; m["maxk"] = max(m["maxk"], trip[(k_, t)])
                     Py = y["pref"].get(k_, frozenset()); W = frozenset(v for v, _ in d.tv[t] if v in Py)
                     rsy = y["regset"]; stl = frozenset().union(*[rsy[kk] for kk in rsy if kk[0] == k_[0] and kk[1] > k_[1] and rsy[kk] & W])
                     for z in rcs[i + 2:]:
@@ -52,6 +55,8 @@ def measure_game(g, order):
 def score(path):
     sys.setrecursionlimit(100000); m = measure_game(pg.read(path), os.environ.get("DTL_ORDER", "stable"))
     if m["incomplete"]: return int(2e12)
+    if os.environ.get("PERMFIT") == "stealk":
+        return int(1e9 * min(m["maxk"], 999) + 1e6 * min(m["hit"], 999) + 1e3 * min(m["near1"], 999) + min(m["steals"], 999))
     return int(1e12 * (m["hit"] > 0) + 1e9 * min(m["near2"], 999) + 1e6 * min(m["near1"], 999) + 1e3 * min(m["pairs"], 999) + min(m["steals"], 999))
 
 
