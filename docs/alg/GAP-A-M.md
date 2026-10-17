@@ -2152,3 +2152,60 @@ Partial argument for (e* ∉ Dom) (L-ALG reading, SKETCH).
   The new t fires on escapes that t′ (or the chain after it) supplied, while its own vertices lie in R \ Dom_P(s). In
   the region loop t′ is rejected, which is why t does not fire there.
 DATA for both hypotheses: §22h addendum below (corpus plus unions, both orders; running at 12:20Z).
+
+22i. Lemma STR-DET (PROVED, reading; L-ALG 12:26Z by date -u). Closes G-STR, and with it the str part of G-h1 and R5 (h)
+Statement. Let s → s+1 be consecutive searches of one phase. Align their reduced logs (§21d) up to a point π, and suppose
+every tattr before π has the same input and the same SET output in both. Then:
+- (a) no tangle of T_{s+1} \ T_s^π fires in any sptl region computation before π, where T_s^π is the tangle set s had at
+  π;
+- (b) every sptl region computation before π is step-identical in s and s+1, including str;
+- (c) every SCC extracted before π is the same, s+1 creates no tangle before π, and the W bits agree;
+- (d) if no tattr differs at all, s+1 creates no tangle, returns false (1068) and is the last search of the phase (G-e2).
+Code facts used (dtl.cpp @ 8fbf0a7):
+- (F1) attractTangle (110-185) changes no state when it returns false. The only exception is deleting a tangle with a
+  vertex outside G (133-137); a tangle learned inside G′ never triggers it.
+- (F2) sptl (477-546) computes regions of a pass in disjoint arenas (R[v] = false at each pop, 489).
+- (F3) Extraction reads str only on region vertices (extractTangles(top, Z, str), 539). Every such value is written
+  during that region's own computation: the vertex rule writes at join (89); the tangle rule writes at join (171); line 73
+  writes only for a target vertex with str = −1, and in sptl the only target is the top, reset at 485.
+- (F4) Closedness is a set property: str[top] ≠ −1 iff some successor of top is popped in the region (73); for an
+  opponent top it is 519-525.
+- (F5) For the SCC C_τ extracted at top τ (SCC1), every escape of C_τ lies outside Z_τ. An opponent vertex of C_τ with an
+  edge into Z_τ \ C_τ would make that vertex reachable from τ.
+Proof of (a). Suppose a tangle t ∈ T_{s+1} \ T_s^π fires in s+1 in the pass-1 region Z_τ of a piece P before π. Then t is
+created by s after the corresponding point. Its newly added vertices lie in Z_τ(s+1), which equals Z_τ(s) (equal set
+output).
+- Case A: s creates t in a later piece, at any depth. By the context chain (R-PROVED2 §C5), the later contexts exclude
+  s's whole Dom removal Dom_P(s), and ancestor contexts after the call returns exclude the call's whole context. So
+  t ∩ Dom_P(s) = ∅.
+  - But Z_τ ⊆ Dom_P(s). Dom(V*, R) (877-890) processes the tops of V* in the same order with target X. By the induction
+    of PREFIX-MONO's absorbed case (O1, (S0)), the Dom set after the tops ≥ τ is closed at threshold pr τ and contains
+    the earlier pass-1 regions and τ, so it contains Cl_{pr τ}(P(τ⁺) ∪ {τ}) ⊇ Z_τ.
+  - So t's new vertices lie in Dom_P(s) ∩ t = ∅. Contradiction.
+- Case B: s creates t in piece P itself, at a top τ′ in some pass. Then t ⊆ Z_{τ′} of that pass.
+  - The pass-k regions of s up to π equal its pass-1 regions as sets: region by region the inputs agree, and
+    out(s, p1) ⊆ out(s, pk) ⊆ out(s+1, p1) = out(s, p1) by monotonicity in T (1.2b).
+  - By (F2) the regions of one pass are disjoint, and t's new vertices lie in Z_τ. So τ′ = τ and t = C_τ.
+  - By (F4) τ is closed in pass 1 iff it is closed in pass k, and W[τ] is set at its first closed extraction (529). So t
+    was extracted at τ in pass 1.
+  - By (F5) no escape of t lies in Z_τ. But a tangle fires only at the pop of an escape in the current set (200-201),
+    and Z_τ is the same set in s+1. Contradiction.
+Proof of (b)-(d).
+- By (a) and (F1), every tangle of s+1 that s does not have at that point is tried and rejected without a state change.
+  So each sptl region computation before π runs the same instruction sequence in both searches, and str agrees there by
+  (F3). Tattrs outside sptl may write different str, but str is read only by extraction (F3), and the later tattrs read
+  only sets.
+- So every extraction before π computes the same SCC (SCC1) and the same W bits. Each SCC that s created there is stored
+  in T_{s+1}, so in s+1 it is a duplicate (385-424) or a dominion found again. A dominion cannot occur before the phase's
+  last search.
+- (d) is (c) with π at the end of the log. □
+Consequences:
+- FDL (ii)/(iii) hold as written on the reduced log, and REFEREE-2's G-h1 hole closes: s+1's single pass extracts the
+  SCCs of s's pass 1, by (b).
+- So §22e's (STR-DET) hypothesis is discharged, given this reading. The open hypotheses are (CTX), (FALL) and
+  (e* ∉ Dom).
+DATA (dtl_rootmono.py, corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29, meet_viol_n17):
+- Weak STR-DET (s+1 creates no tangle before e*): 1,065 / 1,065 (Oink), 1,035 / 1,035 (stable).
+- e* caller: bv-reg 282 / 286, bv-thr 739 / 703, search_rec (−1 attractor) 44 / 46. In Dom or sptl: 0 / 0.
+- No transition without a set-level difference.
+- Union runs: pending at 12:26Z.
