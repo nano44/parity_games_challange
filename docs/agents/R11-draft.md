@@ -41,6 +41,27 @@
   G-R11-6 OPEN (FIRED-R): DATA only and without any argument (REFEREE R-P8: "the obstruction is (FIRED-R)"): max 17 fired
           tangles at one
           context; the ratio to |R| reaches 0.62 (REFEREE) and 0.67 (REFEREE-2) on small contexts, so L-ALG's "≤ 0.5·|R|" is
+          not robust. CAVEAT (L-ALG GAP-A-M §22w, l-alg 8642d5c as corrected 16:13Z): (FIRED-R) bounds a count of stored
+          tangles, and the tangle count is GAP-A's own core (Lemma W: #fired(R) ≤ #tangles ≤ n·S), so it is unlikely to be much
+          easier than GAP-A; its content is that the tangles active at one context do not grow with the phase length, and only
+          long phases (S ≫ |R|) test it. (STEAL-ONCE*) is of a different kind (repetition, not size). Short-phase climbs reach
+          15 fired tangles at |R| = 17 (0.88).
+  G-R11-7 dependencies:
+  G-R11-1 Over consecutive visit pairs the corollary needs the factor 3 (G8-1); §22s "F_R ≈ #relevant steals" and §22u's first
+          line omit it. REFEREE-2 R2-P8 §7 (c2ac652) adds that, given STR-DET, the factor tightens to 2
+          (overlapping e*-intervals overlap only where T is constant); one signature, not used here.
+  G-R11-2 The per-context form "(FALL) ⇐ (STEAL-ONCE) ∧ (FIRED-R)" holds per context; the sum over C_bv needs (CTX⁺) (REFEREE-2
+          G8-2, accepted by REFEREE §C). Only the relevant-triple form (STEAL-ONCE*) is needed.
+  G-R11-3 Wording: §22s's ⊆/⊇ labels are swapped (REFEREE-2 N8-1); F_τ depends on the pop order of the earlier run, which is
+          harmless because only the earlier run's F_τ is used (REFEREE; REFEREE-2 §6).
+  G-R11-4 OPEN (CTX⁺): DATA only (max 13 first-difference contexts per phase at n = 40, L-RED ctx13_n40, re-run CHECKER C11:
+          dtl_rootmono both orders, pinned Oink 29 iterations verified).
+  G-R11-5 OPEN (STEAL-ONCE*): DATA only (max 1 on every set: corpus, specials, mixed and cross unions, both orders; REFEREE-2
+          523 groups; L-ALG 665/703 (GAP-A-M §22w, mixed unions) and 325/338 (§22u, cross unions) phases with new
+          steals).
+  G-R11-6 OPEN (FIRED-R): DATA only and without any argument (REFEREE R-P8: "the obstruction is (FIRED-R)"): max 17 fired
+          tangles at one
+          context; the ratio to |R| reaches 0.62 (REFEREE) and 0.67 (REFEREE-2) on small contexts, so L-ALG's "≤ 0.5·|R|" is
           not robust. CAVEAT (L-ALG GAP-A-M §22w, l-alg 8642d5c): every fired tangle is a stored tangle, so by Lemma W
           #fired(R) ≤ #tangles ≤ n·S, and GAP-A itself implies (FIRED-R). (FIRED-R) is a context-local form of the tangle count,
           not an independent weaker statement; its content is that the tangles active at one context do not grow with the
@@ -50,6 +71,6 @@
 - Data (evidence only): EXACT* 0 failures in REFEREE's 481k and REFEREE-2's 927k best_vertices region steps; every non-rise at a
   relevant steal (REFEREE-2: 103/103 consecutive non-rises; 5 relevant steals at rises, = L-ALG's 5; 872 plain-only steals,
   all at rises), so the relevant-steal charge is nearly tight.
-- Scope: a reduction, not a bound. Because (FIRED-R) is implied by GAP-A (G-R11-6 caveat), this reduction is not the L32
-  single-statement progress criterion. GAP-A stays OPEN on (CTX⁺), (STEAL-ONCE*) and (FIRED-R). Completeness (GAP-C) is separate.
+- Scope: a reduction, not a bound, to three open statements (not the L32 single-statement criterion); (FIRED-R) in particular
+  is a tangle count close to GAP-A's core (G-R11-6 caveat). GAP-A stays OPEN on (CTX⁺), (STEAL-ONCE*) and (FIRED-R). Completeness (GAP-C) is separate.
   Gauntlet step 4 stays open.
