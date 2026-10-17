@@ -392,3 +392,4 @@
 - 07:35Z Lead: merged l-alg 37d3440 (T-STEP, CORE-PASS); routed to L-RED.
 - 07:39Z Lead: merged l-red e34b495 (T-STEP fitness wired; relaunch block in notebook; status from ps).
 - 08:05Z sweep: no overage (rate limit now reports five_hour allowed); Lead $211.7 (710k); L-ALG succ. 6 running (pushed STEP5.md brief, FM+ partial proof, S-LOC DATA, S-LEVEL killed by cross_h_k1_n12_m18_17); L-RED succ. 4 idle between monitors (477k, $23.5). Merged l-alg 1edbd5b.
+- 08:06Z Lead: L-ALG 08:03Z: STEP5.md brief (referee packet queued post-Fable-reset); FM+ partial; S-LEVEL killed; approved: close FM straddle case, else write counterexample shape.
