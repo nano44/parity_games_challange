@@ -2063,6 +2063,8 @@ new is that every absorption step at a fixed context is now paid for by a proved
 - Descents per context per phase: at most 2 (L-RED's f1_twodef_n48 / f1_twofall_n48), and 1 elsewhere, in 16 phases.
 - So the budget D_R of §22e can be replaced by F_R, the number of descents of Π_R along the phase:
   S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·|C_T|.
+  [per referee, G6-a2 (packet 6): the display reads S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·(|C_T| + |C_Dom|) + 1, with
+  the Dom term of §22j and the +1 of G-e2; F_R as in §22n (every non-rise).]
 - GAP-A ⇐ (CTX) ∧ (FALL), where (FALL) says F_R is polynomial. The data maximum is 2.
 (CTX), the obstruction, made exact.
 - A depth-0 context R_{k+1} = G′ \ (pieces 1..k) is fixed exactly while positions 1..k are frozen. Since Π_R is a function
@@ -2352,3 +2354,16 @@ G-F1 count (first differences where Π_R does not rise), dtl_rootmono.py with th
 - Falls whose witnesses are all OLDER than the previous visit: 316 / 323 and 521 / 527 (mixed), 159 / 167 and 210 / 217
   (cross). The stealing mechanism of §22l dominates everywhere.
 - So, on all data: F_R = number of RV falls at R, and F_R ≤ 2.
+Packet 6 SETTLED (per referee: REFEREE R-P6 §C @ ad4be01, REFEREE-2 R2-P6 §5 @ c7634a7; both agree; Lead 13:30Z; 13:39Z by date -u):
+- (1) G6-a1 = G-F1. F_R counts EVERY non-rise of Π_R at R along the phase: descents, incomparable steps, and Π-blind
+  e*-at-R transitions. It is not only descents. (FALL): this F_R is polynomial per context.
+- (2) G6-b2. (CTX⁺) counts Dom INPUTS (X ∪ Dom_{<j}, R \ Dom_{<j}, τ_j, pr τ_j), not Dom-loop contexts. REFEREE's probe
+  shows the input varying at fixed (R, X, top) in 105 of 2,110 phase-contexts.
+- G6-a2: §22f's display now carries the Dom term and the +1 (marked in place).
+- G6-b1: Dom pushes only the top (966), and its output is a monotone function of (input, T).
+- The §22h "equal lengths" sentence is corrected in place (13:16Z, e9acfb86).
+- Joint verdict: GAP-A ⇐ (CTX⁺) ∧ (FALL), given STR-DET. Both (CTX⁺) and (FALL) are DATA only.
+- (FALL) data update (L-RED, Lead 13:18Z; not yet re-run by L-ALG): fall3_n76.pg has 3 descents of Π_R at ONE context in
+  one phase, both orders. It is a union of three 1-descent gadgets (lex_viol_oink_n20, lex_viol_inj_n28,
+  lex_viol_tie_n28) with cross edges, and the same old witness tangles are stolen at each descent. So "≤ 2" is dead as a
+  data bound, as §22l said it might be. A "one steal per witness" bound is also false, since witnesses are reused.
