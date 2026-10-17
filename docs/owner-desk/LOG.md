@@ -128,3 +128,7 @@ Answered from trunk 17ec77b (NOW.md, RESULTS DE12), l-alg dc231e0 (docs/alg/STEP
 ## 2026-10-17 09:07Z owner (progress question)
 > Are we narrowing down the decision to see?
 Desk reading: asks whether the work is converging on a decisive answer for DTL. Answered from the same sources as 09:04Z. Relayed verbatim to the Lead.
+
+## 2026-10-17 09:09Z owner (instruction: referees on Opus)
+> WE can run referees on opus too temperoraly
+Desk reading: owner allows referees on Opus 5.5 temporarily (until the Fable reset), relaxing D1 "Never downgrade the referee to save money" for that period. Relayed verbatim to the Lead, priority now.
