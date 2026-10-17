@@ -1,7 +1,7 @@
 """L-ALG succ. 6 (produced on Opus 5.5, 2026-10-17 box 6), GAP-C §18k (YZ): hill-climb on real A_DTL runs for a P piece
 whose Dom(prevV) removal Y_0 exceeds the final round's region union Z_f (possible only through a stored tangle that Dom
 accepts using a vertex of old X or of an earlier top's part). Fitness (lexicographic): (max |Y_0 \\ Z_f| over P pieces,
-number of such straddling acceptances in Dom). On a hit the game is saved and P-KT is evaluated there (dtl_pnl.py).
+(ACYC) failures (a cycle of the tangle graph inside the new part), largest new part, number of straddling acceptances). On a hit the game is saved and P-KT is evaluated there (dtl_pnl.py).
 DTL_ORDER = oink | stable. Usage: dtl_yzclimb.py START.pg SEED STEPS OUTDIR"""
 import sys, os, random
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
@@ -10,8 +10,21 @@ import pg, dtl_step5 as S5, dtl_pyref as D, dtl_fmclimb as FC
 
 class Y(S5.S5):
     def attractTangle(s, t, p, R, Z, Gx, maxpr):
+        before = set(Z) if s.in_dom else None
         r = D.DTL.attractTangle(s, t, p, R, Z, Gx, maxpr)
-        if r and s.in_dom and any(w in s.x_before for w, _ in s.tv[t]): s.strad += 1
+        if r and s.in_dom and any(w in s.x_before for w, _ in s.tv[t]):
+            s.strad += 1
+            T = dict(s.tv[t]); N = set(T) - before
+            s.newmax = max(s.newmax, len(N))
+            # (ACYC): does the tangle graph restricted to the new part contain a cycle?
+            succ = lambda v: [T[v]] if s.ow[v] == p else [w for w in s.outs[v] if w in T]
+            col = {}
+            def cyc(v):
+                col[v] = 1
+                for w in succ(v):
+                    if w in N and (col.get(w) == 1 or (w not in col and cyc(w))): return True
+                col[v] = 2; return False
+            if any(v not in col and cyc(v) for v in N): s.acyc_fail += 1
         return r
 
     def best_vertices(s, V, R, p):
@@ -61,14 +74,14 @@ class Y(S5.S5):
 
 def fitness(g):
     d0 = S5.build(g); d = Y(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx
-    d.trace = []; d.in_dom = False; d.strad = 0; d.excess = 0; d.x_before = set(); d.zf = frozenset()
+    d.trace = []; d.in_dom = False; d.strad = 0; d.excess = 0; d.x_before = set(); d.zf = frozenset(); d.newmax = 0; d.acyc_fail = 0
     sys.setrecursionlimit(100000)
     try:
         d.run()
     except Exception:
-        return (-1, 0)
-    if not all(w is not None for w in d.win): return (99, 0)
-    return (d.excess, d.strad)
+        return (-1, 0, 0, 0)
+    if not all(w is not None for w in d.win): return (99, 0, 0, 0)
+    return (d.excess, d.acyc_fail, d.newmax, d.strad)
 
 
 if __name__ == "__main__":
@@ -81,4 +94,5 @@ if __name__ == "__main__":
             if fh > fg: print("step", it, "fitness", fh, flush=True)
             g, fg = h, fh
             if fg[0] >= 1: pg.write(g, os.path.join(out, f"yz_viol_{seed}_{it}.pg")); print("YZ FAILS", it, fg, flush=True); break
+            if fg[1] >= 1: pg.write(g, os.path.join(out, f"acyc_viol_{seed}_{it}.pg")); print("ACYC FAILS", it, fg, flush=True); break
     pg.write(g, os.path.join(out, f"yz_last_{seed}.pg")); print("end", fg, flush=True)
