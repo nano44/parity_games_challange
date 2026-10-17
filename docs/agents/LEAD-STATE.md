@@ -378,3 +378,4 @@
 - 05:52Z Lead: merged l-red cb5cc23 (R26: K-in/K-low 0 violations in ~60k structured games + ~300k climb steps, obstructions written; R27 pk_viol_n20 pinned).
 - 06:03Z Lead: WATCHDOG 06:03Z: Lead ctx 605k (>600k; automatic compaction handles the Lead, state lives in NOW/LEAD-STATE/DECISIONS); lanes L-ALG succ. 6 144k, L-RED succ. 4 113k; no overage; Lead $204. No action.
 - 06:06Z sweep: overage false and lanes running per WATCHDOG 06:03Z measurement (L-ALG succ. 6 144k, L-RED succ. 4 113k); no unmerged lane commits. No action.
+- 06:09Z Lead: L-RED addendum: pk_viol_n20 also realises target (i) (after the barren Dom(prevV) piece ALL remaining D-vertices are p-attracted to X, Q empty, both orders; a later stable piece still learns {3,5,6}); a second P-K violator from climb 9501 (unpinned); SPP n=40 now 25 searches at |G'|=38 (Oink order, 23 stable; unpinned, pin at box end); klow climbs from pk_viol_n20 aim at K-in.
