@@ -340,3 +340,4 @@
 - 00:18Z Lead: L-RED correction: n=60 equal-step best is 13 searches at |G'|=51 and 15 at |G'|=60 (max ratio 0.255), not 16 (climb score misread as a count).
 - 00:31Z Lead: merged l-alg efc8249; verified in pinned dtl.cpp that the author's DV check is vacuous (uninitialised val1/val2 compared over all vertices; debug-only); DV-MONO GAP routed to L-RED.
 - 00:45Z Lead: merged l-alg 8668d09 (SPP.md, DV*-MONO). L-ALG options a/b/c/d: picked (c) GAP-C (a = per-context wall again; b = L-RED lane).
+- 00:57Z Lead: merged l-alg 57e2256 (§21j); (ABS-mono) routed to L-RED.
