@@ -3,6 +3,7 @@
 search s of a phase (player p, unsolved set G'):
   PSI1 = sum over v in G', thresholds t in priorities: |p-tangle-attractor of {v} in G' at threshold t|  (range <= n^2 (d+1))
   PSI2 = sum over v in G': |p-tangle-attractor of {v} in G' at threshold pr(v)|                       (the "region of v as a top")
+  PSI_UP=1: PSI4 = sum over q of |attractor of H_q = {v: pr(v) >= q}| (no threshold), PSI5 the same at threshold q-1.
   PSI3 = sum over t: |p-tangle-attractor of G'_{>t} ... restricted to p-parity tops above t| (attractor of the p-vertices of
          priority > t, threshold t)
 Each must STRICTLY grow from T_s to T_{s+1} for every non-last search s (the phase continues only if new tangles change some
@@ -17,6 +18,12 @@ def attr(d, p, Z, G, maxpr):
     return len(Z)
 
 def psis(d, p, G, prios):
+    if os.environ.get("PSI_UP") == "1":          # PSI4 = sum_q |Attr_inf(H_q)|, PSI5 = sum_q |Attr_{q-1}(H_q)|, H_q = {v : pr(v) >= q}
+        s4 = s5 = 0
+        for q in prios:
+            H = {v for v in G if d.pr[v] >= q}
+            s4 += attr(d, p, H, G, 10 ** 9); s5 += attr(d, p, H, G, q - 1)
+        return s4, s5, 0
     s1 = s2 = s3 = 0
     for v in G:
         for t in prios:

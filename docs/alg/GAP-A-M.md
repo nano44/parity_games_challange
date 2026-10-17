@@ -1642,3 +1642,65 @@ constant, so a proof must use the global phase.
   closes several vertices per search (spp_final_n20: 87 closings in 18 transitions), not because resets are impossible.
   The chain (21b) closes exactly one vertex per search. Attack recipe (sent to the Lead): a chain-like epoch (one closing
   per search) that a reset re-opens wholly and that then needs new tangles (new vertex sets).
+
+### 21f. The author's own per-search potential: distance values (dtl.cpp computeDistanceValues) (00:21Z by date -u)
+Source: dtl.cpp @ 8fbf0a7, computeDistanceValues (lines 553-639) and search() (lines 1001-1066), code under #ifndef NDEBUG
+(not part of A_DTL). Under trace ≥ 3, search() computes val1 = DV(T) before and val2 = DV(T') after the search and, if the
+search learned tangles without a dominion and no value changed, logs "nothing changed!" (the "throw" next to it is commented
+out). DV(T)[v], for each p-priority vertex v of G, is the pruning round at which v is dropped, INF if it survives to a stable
+round, computed at the ROOT context with escapes judged in all of G, one shared region set Z grown top-down in R = G (no
+consumed CurR, no forgiven escapes), and the threshold sweep as written. So the author expected DV to move at every
+tangle-learning search: a per-search progress measure ("distance tangle learning").
+- Transcription: experiments/alg/dtl_distval.py (line by line on the dtl_pyref primitives).
+- The C++ check is VACUOUS: val1/val2 are uninitialized stack arrays (int val1[nodecount()]), computeDistanceValues writes
+  only the p-priority vertices of V, and the comparison loop runs over all vertices, so uninitialized entries differ and
+  "nothing changed!" never prints. Checked with a Debug build of pinned Oink (scratchpad, cmake -DCMAKE_BUILD_TYPE=Debug,
+  oink --dtl --no-single --no-wcwc --no-loops -t -t -t -v): 0 "nothing changed!" lines on spp_final_n20/n30/n40 and
+  spp_chain_up_n43, while every reported change on the chain is an uninitialized entry (vertex 42: −961249931 ⇒ −961249765,
+  41 times); no p-priority vertex value changes there. On spp_final_n20 the small-valued changes come in 3 groups, matching
+  the transcription (changes at searches 0, 4, 12 of Even's phase). All changes printed are rises (5 ⇒ 6, 3 ⇒ MAX, ...).
+- (DV-change), the author's expectation, is FALSE on data: DV is unchanged after 525 of 990 (Oink) / 493 of 957 (stable)
+  tangle-learning searches of C5 phases; on the chain after all 41 (and the pinned C++ agrees).
+- (DV-nofall) DATA: no DV value ever falls over any transition of any phase, C5: 0 of 1,237 (Oink), 0 of 1,204 (stable).
+  Synthetic genuine tangles in arbitrary order (experiments/alg/dtl_dvsynth.py): box 4's counters dtl_lexcounter and
+  dtl_staterevisit give no fall (their (LEX) falls are an artefact of consumption/forgiveness); random runs in 21g.
+- Lemma DV-MONO (SKETCH with one GAP; any tangle sets T ⊆ T' of genuine p-tangles with escapes, G fixed): DV(T) ≤ DV(T')
+  pointwise. (1) Region phase of one round, V ⊆ V', T ⊆ T' (PROVED, sketch): tops are processed in decreasing index, so the
+  thresholds pr(top) are non-increasing over the stages; Z_T(after stage τ) ⊆ Z_T'(after stage τ) by induction over τ. An
+  element (vertex or tangle) joins Z at the pop of a successor (escape) when its condition holds then (p-vertex: an edge into
+  Z; opponent vertex: no edge into G \ Z, escapes judged in G; tangle: all escapes in Z, all vertices of priority ≤ the
+  threshold). In T' every vertex popped in T by stage τ is in Z_T' by stage τ and was popped at a threshold ≥ pr(τ), so at
+  the pop of the LAST required successor in T' the condition holds with a threshold at least the one used in T. A top τ
+  skipped in T' (already in Z_T') was popped there at a higher threshold. (2) GAP: the threshold sweep (lines 593-620) seeds
+  each level by an index scan and runs a closure plus a candidate check ONLY when its queue is nonempty at a level boundary;
+  candidates of priority ≤ t are not checked at level t (break). With a larger initial Z (T'), a level of T can lose all
+  its seeds, so its candidate check does not happen in T', and a candidate whose priority lies between that level and the
+  next checked level is never re-checked. Monotonicity of the dropped set across such skipped levels is NOT proved.
+  (3) Given (2), induction over rounds gives V_r(T) ⊆ V_r(T') for every r, hence the claim. Data agree so far (0 falls).
+  DV is the ideal (C6-type, §2 Lemma 2.1, §19) root pruning, which is why it survives where (LEX) on the consuming
+  best_vertices died (§18).
+- Value as a potential: polynomial range (each value in 1..n or INF), pointwise monotone, so DV changes at most |V|·(n+1)
+  times per phase; but it stays constant across long runs of searches (the chain: all of them), so (SPP) needs a second
+  component for DV-plateaus (the absorption steps of §21d/§21e, in the −1 attractors and later pieces). Reading: the
+  author's design intent was a per-search distance increase; the actual algorithm makes progress inside DV-plateaus by
+  absorption in later pieces, which DV (a root-context quantity) does not see.
+
+### 21g. DV on synthetic tangles, and how DV splits the transitions (00:28Z by date -u)
+- Harness bug found and fixed before any report: the first random runs of dtl_dvsynth.py / dtl_dvfall.py /
+  dtl_dvfall2.py built the solver on gen.random_game WITHOUT re-indexing vertices by priority, so "top-down" was not
+  priority order; their results (3 "falls" in 4,073 chains, and the 0-fall counts) are VOID. Fixed with mkdtl()
+  (re-index by (priority, id), as dtl_deficit.build does). Every other tool of this box uses the sorted build.
+- Corrected runs, arbitrary genuine p-tangles (not DTL-learned), single additions T → T ∪ {t}: dtl_dvsynth.py 30000 7
+  (chains, n ≤ 14): 4,194 chains, 11,151 additions, 0 falls; dtl_dvfall2.py 3000 11 5 9 (all genuine tangles on sets of
+  size ≤ 4 per game): 13,368 additions, 0 falls; dtl_dvfall.py 40000 1 4 10: 77,104 additions, 0 falls.
+  So the GAP of Lemma DV-MONO (a tangle is re-checked only at pops of its escapes; an escape that joins at a sweep level
+  or a region stage below the tangle's top priority is never re-popped) has not been realised. My hand constructions
+  failed for one recurring reason: the tangle's own top (its max-priority vertex, of p-parity) is itself a top of the
+  region phase, and its region at that threshold tends to attract what the late route needed. Status: SKETCH + GAP,
+  DATA 0 falls (DTL runs 0 of 1,237 / 1,204; synthetic 0 of about 101,600).
+- DV against the piece-level first difference (§21d), C5, Oink order, 990 transitions: DV moves in 465 (454 with a RES
+  change at a depth-0 piece, 6 SHRINK, 4 GROW deeper, 1 RES deeper); DV is still in 525: 256 RES changes at a depth-0
+  piece other than the root piece, 141 GROW deeper (a −1 piece's recursion context grows), 100 SHRINK at depth 0
+  (absorption), 22 SHRINK deeper, 6 RES deeper. So root DV sees the root pruning; the rest of the work happens in later
+  depth-0 pieces and in recursions, where the same ideal distance would have to be taken at a context that itself changes
+  (the per-context problem of §13-§18 again).

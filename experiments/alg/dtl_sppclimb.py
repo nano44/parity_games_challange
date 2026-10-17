@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """L-ALG succ. 5 (produced on Opus 5.5, 2026-10-17 box 5): hill-climb against (SPP) "searches in one phase <= |G'|".
-Fitness = max over phases with |G'| >= 2 of (S - |G'|), then S of that phase, then iterations (dtl_spp.py phase convention). Order datum from
+Fitness = max over phases with |G'| >= SPPC_MING (default 2) of (S - |G'|), then S of that phase, then iterations (dtl_spp.py phase convention). Order datum from
 DTL_ORDER. Mutations: dtl_mclimb.mutate. Start: random game of size --n or --seed-game.
 Usage: DTL_ORDER=oink dtl_sppclimb.py OUTDIR SEED STEPS --n N"""
 import sys, os, argparse, random, signal
@@ -20,7 +20,7 @@ def measure(g, limit=30):
     finally:
         signal.alarm(0)
     ph = P.phases(d)
-    return max(((r["S"] - r["G"], r["S"], d.iterations) for r in ph if r["G"] >= 2), default=(-99, 0, 0))
+    return max(((r["S"] - r["G"], r["S"], d.iterations) for r in ph if r["G"] >= int(os.environ.get("SPPC_MING", "2"))), default=(-99, 0, 0))
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
