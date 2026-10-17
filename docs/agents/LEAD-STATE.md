@@ -403,3 +403,4 @@
 - 08:59Z Lead: merged l-alg dc231e0 (STEP5.md: headline ACYC => YZ => P-KT, single open point ACYC with shape; D2 wording fixed). ACYC climbs: new parts up to 6 vertices, all acyclic.
 - 09:01Z Lead: merged l-red acfabb4; ACYC climb 9911 (stable, strfam_S5_n46, --loops; only seed with Dom straddles); T-STEP climb 9611 stopped; NT-f and K-in continue.
 - 09:05Z sweep: per WATCHDOG 09:03Z: no overage; Lead 764k ($217.6; +54k/h, auto-compaction expected); L-ALG succ. 6 running; L-RED succ. 4 idle at 531k (relaunch block pushed; box ends ~12:30Z). No action.
+- 09:15Z D12/L33 referees started (Opus 5.5): REFEREE session_01W3Z4peJy1bngBmMVdJ1f6K (claude/referee, out docs/referee/R-STEP5.md), REFEREE-2 session_01SdxPAhFBFXe4ZCwR1WfPL4 (claude/referee-2, out docs/referee-2/R2-STEP5.md, independent); packet docs/alg/STEP5.md @ 8f41be8, claims (1)-(5); box 6 h to ~15:10Z. Working sessions: L-ALG succ. 6, L-RED succ. 4, REFEREE, REFEREE-2 = 4/5. NOW roster rows added.
