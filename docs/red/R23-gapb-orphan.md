@@ -35,3 +35,9 @@ tangles at depth 0, so it still returns true and the run proceeds (14 iterations
 ## 4. Open
 An incomplete run: the duplicate must happen in a search that learns nothing else (L-ALG's sketch: "nothing else in
 search 2 is productive"). Climbs --fitness gapb from this instance, both orders, in progress.
+
+## 5. W_p filter (Lead 02:15Z, L-ALG (NO-ORPHAN-W))
+dupcheck.py now computes W_p(G') with Zielonka (experiments/harness/zielonka.solve_sub on the unsolved set at each search)
+and counts orphans / duplicates whose tangle lies inside W_p. gapb_dup_n20: dupW = 0, orphW = 0 in both orders (the
+duplicate is in Even's search 1 with W_0(G') empty, as L-ALG found). (NO-ORPHAN-W) is not refuted. Climbs (fitness gapb:
+incomplete/wrong >> dupW >> orphW >> barren >> dup >> orphan >> near-orphan) continue.

@@ -2,7 +2,7 @@
 Previous: session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, parked 15:20Z); before it session_0117Yy21tGGz9s1zzLfBdUKC (Fable).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: WORKING (box 5, Lead 23:20Z, 8 h, same session). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
+Status: WORKING (box 5, Lead 23:20Z, 8 h, same session; resume point updated 02:15Z). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
 (n = 20/30/40/60 x 3 seeds x both orders, 1500 steps, heartbeat 100; carry/spp.py, --fitness spp; scratchpad eq/);
 (2) renewable reset, U-shrink (R21 section 4); (3) per-phase potentials L-ALG states (via the Lead).
 
@@ -52,6 +52,15 @@ Status: WORKING (box 5, Lead 23:20Z, 8 h, same session). Queue: (1) equal-STEP m
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-17 ~02:15Z box 5 (Lead 23:20Z start, to ~07:20Z). Done this box: R22 (ABS-mono)+(ABS-mono-pw) FALSE
+(absmono_viol_n44); R23 GAP-beta orphan + duplicate-check hit on A_DTL (gapb_dup_n20, both orders, pinned Oink prints
+"duplicate tangle", run complete; tangle outside W_p so harmless for Lemma K). Tools: carry/spp.py (S vs |G'|, sharp),
+chain.py (L-ALG chain UP), dvfall.py, absmono.py, abspw.py, dupcheck.py (dup hits, orphans, W_p-filtered, barren, Zielonka
+check), gapb.py (graded GAP-beta; needs LALG2_DIR >= 1335713 for dtl_nearorphan2). dtl_search fitnesses spp, sharp,
+dvfall, absmono, abspw, dupchk, gapb; --hb K heartbeat. Worktrees: <scratch>/lalg4 (b9b3b2b, batch), lalg6 (57e2256),
+lalg7 (1335713). RUNNING: equal-step batch (xargs -P4, scratch eq/, jobs_sorted.txt, run1.sh, table.sh); gapb climbs
+9001 (oink), 9002 (stable), 9003 (oink --loops) from gapb_dup_n20 (scratch gb/). Next: incomplete run; dupW/orphW > 0
+(needs a game where the duplicating player wins something); equal-step table (eq/table.sh).
 2026-10-16 ~19:50Z successor 3: tools carry/{cmf,nest,r0d,lex,umono,replay,injective}.py; dtl_search fitnesses cmf, nest3,
 r0d, lex, umono, falls, fallsdef, replay, phase. LALG_DIR worktrees <scratch>/lalg (d2ae597), lalg2 (670a762), lalg3
 (c7fc7cb; replay.py needs >= c7fc7cb). Instances this box (all pinned in check.sh): cm_mdrop_both_n28, cm_mdrop_oink_n28,
