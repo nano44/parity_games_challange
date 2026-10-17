@@ -14,7 +14,7 @@ sys.path.insert(0, os.path.join(os.environ["LALGR_DIR"], "experiments", "harness
 import pg
 seed, cnt, order, cmax, base, out = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3], int(sys.argv[4]), int(sys.argv[5]), sys.argv[6]
 parts = [pg.read(f) for f in sys.argv[7:]]; rng = random.Random(seed); os.makedirs(out, exist_ok=True)
-os.environ.setdefault("ROOTFIT", "fall"); lead = {"fall": "desc", "ctx": "ctx", "dirty": "maxdirty", "falls": "maxfalls", "steal": "rsteal"}[os.environ["ROOTFIT"]]
+os.environ.setdefault("ROOTFIT", "fall"); lead = {"fall": "desc", "ctx": "ctx", "dirty": "maxdirty", "falls": "maxfalls", "steal": "rsteal", "fired": "fired"}[os.environ["ROOTFIT"]]
 best = (-1, None)
 for i in range(cnt):
     prio, own, succ, shift, offs = [], [], [], 0, []
