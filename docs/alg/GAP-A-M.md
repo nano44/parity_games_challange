@@ -2998,7 +2998,7 @@ event of q at pair j < i, a RE-STEAL.
 - Instance: stealonce_viol_n76 (sha1 32c2da0b; pinned Oink 7 iterations, verified). L-ALG re-run with dtl_firedlong2.py
   (FL_ALL=1 RM_EXCL=1 RM_LIGHT=1 RM_DV=0):
   - stable order: NO-RETURN FAILS 7 / holds 35; at most 4 distinct tangles fire at one step; max fired 14 at one context
-    (|R| ≥ 42; ratio ≤ 0.333); FIRED ≤ |R| holds 42/42; FIRED-LAMINAR holds 42/42.
+    (fired/|R| ≤ 0.333 at every context); FIRED ≤ |R| holds 42/42; FIRED-LAMINAR holds 42/42.
   - Oink order: everything holds (9 contexts).
   - Long-phase filter (stable): 3 contexts qualify, nothing fires in them, so the test is vacuous.
 - Reading. This is the same event as the NO-REFIRE failure of §23f: tangle 7 fires at (round 4, top 18), stops firing there
