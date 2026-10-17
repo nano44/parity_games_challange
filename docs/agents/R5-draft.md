@@ -28,8 +28,8 @@
   (j),(k) SIGN; (b),(e),(h) SIGN WITH GAPS, all closed. REFEREE-2 docs/referee-2/R2-PROVED2.md (referee-2 581902f; comparison
   §13 72d1cd2): (a),(d),(g),(i),(j) SIGN; (b),(c),(e),(f),(h),(k) SIGN WITH GAPS, all closed. Independent (each read the other's
   report only after pushing its own). No REJECT. After comparison no gap of the packet is open in either report.
-- Gaps (union of both reports and comparisons). G-R5-1..7 are closed in the reports and imported into the author's text
-  (l-alg d67c5c8); G-R5-8 lists dependencies:
+- Gaps (union of both reports and comparisons). G-R5-1..7 are closed in the reports; imported into the author's text at
+  l-alg d67c5c8 except the REFEREE-2 G-b1 closure in G-R5-1 (to be recorded); G-R5-8 lists dependencies:
   G-R5-1 B-thr: escapes solved before the search via O0 (REFEREE G-b1 = REFEREE-2 G-b3); "last escape" = the pop at which it
          leaves the current call's context chain (REFEREE G-b2); tangles created in the current search cannot recur in a
          later context of that search (REFEREE-2 G-b1, closed R2 §13.2, signed by REFEREE §C5, dtl.cpp 879-880, 885, 914-955).
