@@ -362,3 +362,4 @@
 - 03:38Z Lead: merged l-alg f435bc2 (K-low, GAP-K, OPP-EXIT); K-low breaking shape routed to L-RED.
 - 04:04Z sweep: no overage (seven_day allowed_warning); Lead $195.6 (473k); L-ALG running (task summary: recording a (TW)-related kill in GAP-C.md, not pushed yet); L-RED idle on climbs (569k, $35.1; equal-step batch 12/24, stable-order gapb climb at 2 duplicates). No new lane commits. No action.
 - 04:04Z Lead: merged l-alg 704f8dc (K-first, Theorem A, GAP-K'); routed to L-RED.
+- 04:14Z Lead: merged l-alg 31fdd98 (K4-B; GAP-K' as three statements); routed to L-RED.
