@@ -29,10 +29,22 @@ def pclosed(s, p, Y, R):
     return B
 
 
+def ST2_attr(s, p, Dw, R, G):
+    """A_D(R) of GAP-C §18b (X = G' minus R a p-won sink), plain attractor inside D ∩ R."""
+    S = Dw & R; X = G - R; A = set(); ch = True
+    while ch:
+        ch = False
+        for v in S - A:
+            out = [w for w in s.outs[v] if w in G]
+            ok = any(w in X or w in A for w in out) if s.ow[v] == p else all(w in X or w in A for w in out)
+            if ok: A.add(v); ch = True
+    return A
+
+
 class PN(S5.S5):
     def best_vertices(s, V, R, p):
         """dtl_pyref.best_vertices verbatim, recording the region union of every round."""
-        s.rounds = []; s.cur_p = p; s.cur_R = frozenset(R)
+        s.rounds = []; s.rv = []; s.cur_p = p; s.cur_R = frozenset(R)
         V.clear(); V.update(v for v in R if s.pr[v] % 2 == p)
         if not V: return 0
         while True:
@@ -43,7 +55,7 @@ class PN(S5.S5):
                 CurZ = {top}; s.Q = [top]
                 s.tattr(p, CurZ, CurR, CurR, s.pr[top], CurR)
                 Z |= CurZ
-            s.rounds.append(frozenset(Z))
+            s.rounds.append(frozenset(Z)); s.rv.append(frozenset(V))
             C = pclosed(s, p, Z, R); pv = {v for v in C if s.pr[v] % 2 == p}
             k = "KEEP (p-priority vertices of the greatest p-closed subset of Z^r are in V_r) " + ("holds" if pv <= V else "VIOLATION")
             s.tab[k] = s.tab.get(k, 0) + 1
@@ -62,6 +74,7 @@ class PN(S5.S5):
                     if s.pr[u] <= t: keep += cand[i:]; break
                     if not s.attracts(p, u, Z, R): keep.append(u)
                 cand = keep
+            s.amax = frozenset(Z)
             V -= set(cand)
             if not cand: s.note_rounds(1); return 1
             if not V:
@@ -73,7 +86,7 @@ class PN(S5.S5):
             if not b <= a:
                 k = "R-MONO (p-closed part of Z^{r+1} inside Z^r) " + ("holds" if pclosed(s, s.cur_p, b, s.cur_R) <= a else "VIOLATION")
                 s.tab[k] = s.tab.get(k, 0) + 1
-        s.last_rounds = list(s.rounds)
+        s.last_rounds = list(s.rounds); s.last_rv = list(s.rv)
 
     def search_rec(s, R, p, depth):
         X_ = set()
@@ -101,9 +114,60 @@ class PN(S5.S5):
                 X_ |= Z
                 s.search_rec(Z, p, depth + 1)
             else:
-                rounds = s.last_rounds
+                rounds = s.last_rounds; amax = s.amax; rv = s.last_rv
+                if s.Wp & R:
+                    k = "P-A (D ∩ R not inside the final rescue attractor A_max) " + ("holds" if not (s.Wp & R) <= amax else "FAILS")
+                    s.tab[k + (" depth 0" if depth == 0 else " depth >= 1")] = s.tab.get(k + (" depth 0" if depth == 0 else " depth >= 1"), 0) + 1
+                    if depth == 0 and (s.Wp & R) <= amax and os.environ.get("PADUMP") and s.kd < 3:
+                        s.kd += 1; L = lambda S: sorted(s.idx[v] for v in S)
+                        print("P-A FAILS", s.fname, "p", p, "R", L(R), "D∩R", L(s.Wp & R), "prevV", L(V), "Z_f", L(rounds[-1]), "A_max", L(amax), "#rounds", len(rounds))
+                if depth == 0 and s.Wp & R: s.case1(p, frozenset(R), rounds, rv)
                 s.dom(V, R, X_, p); Y0 = R0 - frozenset(R)
                 s.check(p, R0, Y0, rounds, depth)
+
+    def thr(s, p, Z, R, t):
+        """Threshold-t tangle attractor of Z within R (best_vertices 722-731), without side effects on str."""
+        sv = list(s.str); Z = set(Z); s.Q = sorted(Z); s.tattr(p, Z, R, R, t, None); s.str = sv; return Z
+
+    def case1(s, p, R, rounds, rv):
+        """Case split of the (P-K) proof (GAP-C §18f): M = max priority of D ∩ R; Case 1 = M of p's parity. (WM): for every
+        w ∈ T_M (D-vertices of priority M), Z_f ⊆ A^{r(w)}_{M-1}, r(w) the round in which w left V."""
+        def inc(k): s.tab[k] = s.tab.get(k, 0) + 1
+        DR = s.Wp & R; M = max(s.pr[v] for v in DR)
+        okg = True                                       # global (WM): every p-priority x of R, Z_f ⊆ A^{r(x)}_{pr(x)-1}
+        cache = {}
+        for x in R:
+            if s.pr[x] % 2 != p: continue
+            r = max(i for i, Vi in enumerate(rv) if x in Vi)
+            key = (r, s.pr[x] - 1)
+            if key not in cache: cache[key] = s.thr(p, rounds[r], R, s.pr[x] - 1)
+            if not rounds[-1] <= cache[key]: okg = False; break
+        inc("WM-global " + ("holds" if okg else "FAILS"))
+        if M % 2 != p:
+            inc("CASE 2 (max priority of D ∩ R has the opponent's parity)")
+            import dtl_step5stats as ST2
+            Rn = R - rounds[-1]; G = set(s.G0)
+            Qn = set(DR & Rn) - ST2_attr(s, p, s.Wp, Rn, G)
+            OM = {v for v in DR if s.pr[v] == M}
+            inc("CASE 2: O_M meets Z_f" if OM & rounds[-1] else "CASE 2: O_M avoids Z_f")
+            s.margins.append((len(Qn), len(DR), len(R), s.fname))
+            if os.environ.get("QDUMP") and len(Qn) <= 1:
+                L = lambda S: sorted(s.idx[v] for v in S)
+                print("QDUMP", s.fname, "p", p, "|R|", len(R), "Q(R')", [(s.idx[v], s.pr[v], s.ow[v], [s.idx[w] for w in s.outs[v] if w in R]) for v in Qn], "M", M, "O_M", L(OM), "Z_f", L(rounds[-1]), "V_f", L(rv[-1]), "#rounds", len(rv))
+            inc("CASE 2: O_M meets Q(R')" if OM & Qn else "CASE 2: O_M avoids Q(R')")
+            pq = {v for v in Qn if s.pr[v] % 2 == p}
+            inc("CASE 2: max priority in Q(R') " + ("p-parity" if Qn and max(s.pr[v] for v in Qn) % 2 == p else "opponent parity" if Qn else "Q empty"))
+            if os.environ.get("C2DUMP") and len(R) <= int(os.environ.get("C2DUMP")) and s.kd < 4:
+                s.kd += 1; L = lambda S: sorted(s.idx[v] for v in S)
+                print("CASE2", s.fname, "p", p, "|R|", len(R), "D∩R", L(DR), "Z_f", L(rounds[-1]), "Q(R')", L(Qn), "O_M", L(OM), "V_f", L(rv[-1]))
+                print("   ", [(s.idx[v], s.pr[v], s.ow[v], [s.idx[w] for w in s.outs[v] if w in R]) for v in sorted(R)])
+            return
+        TM = [v for v in DR if s.pr[v] == M]; Zf = rounds[-1]; ok = True; allf = True
+        for w in TM:
+            r = max(i for i, Vi in enumerate(rv) if w in Vi)
+            if r != len(rv) - 1: allf = False
+            if not Zf <= s.thr(p, rounds[r], R, M - 1): ok = False
+        inc("CASE 1 " + ("T_M ⊆ V_f (WM trivial)" if allf else "T_M pruned earlier") + (", WM holds" if ok else ", WM FAILS"))
 
     def check(s, p, R0, Y0, rounds, depth):
         tag = "depth 0" if depth == 0 else "depth >= 1"
@@ -127,9 +191,10 @@ class PN(S5.S5):
 
 
 if __name__ == "__main__":
-    sys.setrecursionlimit(100000); tab = {}; shown = [0]; kd = [0]
+    sys.setrecursionlimit(100000); tab = {}; shown = [0]; kd = [0]; margins = []
     for f, g in ST.games(sys.argv[1:]):
         d0 = S5.build(g); d = PN(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.trace = []
-        d.tab = tab; d.shown = shown[0]; d.fname = f; d.last_rounds = []; d.cur_new = []; d.kd = kd[0]
+        d.tab = tab; d.shown = shown[0]; d.fname = f; d.last_rounds = []; d.cur_new = []; d.kd = kd[0]; d.margins = margins
         d.run(); shown[0] = d.shown; kd[0] = d.kd
     for k in sorted(tab): print(f"  {k}: {tab[k]}")
+    if margins: print("CASE 2 smallest |Q(R')| (|Q|, |D ∩ R|, |R|, file):", sorted(margins)[:6])
