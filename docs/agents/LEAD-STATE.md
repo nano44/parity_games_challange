@@ -349,3 +349,4 @@
 - 01:42Z Lead: merged l-alg 25bbebf (GAP-beta split into beta-a / beta-b); beta-b routed to L-RED.
 - 01:45Z Lead: merged l-alg a6fabed (NO-ORPHAN); orphan fitness routed to L-RED.
 - 01:58Z Lead: merged l-alg 1335713; GAP-beta reduces (sketch) to the GAP-A deficit core (actual region union monotone in V); graded targets routed to L-RED.
+- 02:01Z Lead: merged l-alg b98879c: ABS-mono in §17 KILLED/DEAD.md (reproduced both orders); GAP-C §1: Odd removals cannot create an Even dominion GIVEN Lemma K (Lemma 1.4c), no separate gap.
