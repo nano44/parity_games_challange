@@ -391,3 +391,4 @@
 - 07:32Z Lead: L-RED self-correction (reporting slip): K-in samplers 13/14 were stopped at 06:41Z, not running as reported at 06:58Z/07:22Z. Correct totals samplers 11-14: ~10,500 interacting unions, 12,909 eligible runs, 0 K-in violations, 0 incomplete runs. Restarted as 15/16.
 - 07:35Z Lead: merged l-alg 37d3440 (T-STEP, CORE-PASS); routed to L-RED.
 - 07:39Z Lead: merged l-red e34b495 (T-STEP fitness wired; relaunch block in notebook; status from ps).
+- 08:05Z sweep: no overage (rate limit now reports five_hour allowed); Lead $211.7 (710k); L-ALG succ. 6 running (pushed STEP5.md brief, FM+ partial proof, S-LOC DATA, S-LEVEL killed by cross_h_k1_n12_m18_17); L-RED succ. 4 idle between monitors (477k, $23.5). Merged l-alg 1edbd5b.
