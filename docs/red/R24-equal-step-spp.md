@@ -43,3 +43,10 @@ the run's saved best game with spp.py in the run's own order. "sharp" = max over
 - New best at n = 40: experiments/red/carry/instances/spp22_oink_n40.pg (sha1 79b25b73): 22 searches in one phase at |G'| = 38
   in BOTH orders (L-ALG's spp_final_n40: 19). Pinned Oink: 3 dominions, 41 tangles, 28 iterations, solution verified.
 - n = 60 climbs barely move in 1500 steps (eval ~2-4 s); the n = 60 numbers are the least converged.
+
+## Addendum, box 6 (06:35Z by date -u; produced on Opus 5.5)
+dtl_search --fitness spp, seed 9401, Oink order, from spp22_oink_n40, a few hundred steps (about 26 min; the gain came at step 128): carry/instances/
+spp25_oink_n40.pg (sha1 1bdd48e0). carry/spp.py: Oink order 25 searches in one phase at |G'| = 38 (ratio 0.658, sharp
+-12; 31 iterations); stable order 23 at |G'| = 38 (29 iterations). Pinned Oink 8fbf0a7: 3 dominions, 56 tangles,
+31 iterations (25 odd), solution verified. The n = 40 best moves 22 -> 25; still no phase with S > |G'| - 1. The climb then
+stalled (no gain in the last ~1,300 s); stopped 06:30Z.
