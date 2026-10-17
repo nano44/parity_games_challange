@@ -395,3 +395,99 @@ vertices on an "optimistic for p" basis (later pruning forgives the opponent's e
 and the completeness proof must show that this optimism is always repaid by a later productive candidate inside W_p. It is
 the same obligation as DTL-proof.md §2.3 (C-b), now with its quantitative form (K-low) and with instances showing that no
 local invariant carries it.
+
+## 18. Step 5 (box 6, L-ALG succ. 6, produced on Opus 5.5; 05:45Z by date -u): Dom(prevV) read exactly; invariant K
+Unrefereed. Tools: experiments/alg/dtl_step5.py (piece tracer: S / T / P / E per search_rec iteration, every depth),
+dtl_step5stats.py (segment, LASTD, HYB, JD, K counters), dtl_pnl.py (PNL*, YZ, MONO, R-MONO, KEEP). Test set (both order
+data unless said): 238 corpus files (every .pg under experiments/ with n ≤ 80 that pg.py parses, plus L-RED's
+kfirst_viol_n13.pg, origin/claude/l-red 46f3520); disjoint unions (UNIONS=900, seeds 1 Oink / 2 stable) and unions with 3
+random cross edges (600, seed 11, Oink); only searches with D := W_p(G') ≠ ∅ and no dominion; unions only mixed ones
+(|W_{1-p}| ≥ 3). "dtl.cpp N" = tools/oink/src/src/solvers/dtl.cpp @ 8fbf0a7.
+
+### 18a. What the −1 branch with Q empty removes and leaves (task (1); reading of dtl.cpp 852-991, C5 §2)
+- Trigger. best_vertices (643-776) returned −1 with V restored to prevV (676, 770: the tops of the last pruning round), and
+  the threshold scan 898-912 found no vertex: no v ∈ R with attracts(p, v, X, R) (40-57). So: no p-vertex of R has an edge
+  into X, and every opponent vertex of R with an edge into X also has an edge into R. At depth 0, X = G' \ R (every piece
+  moves exactly what it takes from R into X: S 877-890, T 914-951, P 961-976), so R is a p-TRAP of G' (PROVED; DATA
+  TRAP 1,582/1,582 corpus Oink) and H := G[R] is a parity game (every vertex keeps a successor in R).
+- Removal (961-991). For each top of prevV from high index down that is not yet in X: X ∪= {top}, str[top] := −1, then the
+  tangle attractor INTO X (the whole X) within R, escapes judged in R (opponent edges leaving R ignored), threshold
+  pr(top), R consumed. Call the removed set Y_0.
+- (YZ) Y_0 = Z_f, the union of the final pruning round's regions (690-708 with V = prevV). Reading: the two computations
+  differ only in attractTangle (110-185) for a stored tangle with a vertex in X or in an earlier region of the same pass
+  (counted "in Z" by Dom at 136-137, "not in R" by best_vertices' CurR at 138-139), so Dom can only take more. DATA: equal
+  in 3,121/3,121 depth-0 and 1,136/1,136 deeper P pieces (corpus, Oink order).
+- Every τ ∈ prevV was a candidate of the final round and was not rescued: ¬attracts(p, τ, Z_f, R) (a p-owned τ has NO
+  edge into Z_f, so every region of a p-owned top is OPEN; an opponent-owned τ has an edge into R \ Z_f or none into
+  Z_f), and for every t < pr(τ), τ does not attract into A_t, the threshold-t tangle attractor of Z_f within R (rescue loop 722-740;
+  candidates 714-716, removal 747-760).
+- Leaves R' = R \ Y_0. A p-vertex of R' with an edge into the region of τ has priority > pr(τ) (else attracted at 976);
+  the next iteration's threshold scan (898-912) seeds at the lowest level holding a vertex that attracts into X ∪ Y_0 (a T piece),
+  or, if none, another P piece.
+- It is neither p-won nor opponent-won: kfirst_viol_n13 (Even's search 0, both orders) removes {6, 3} with 6 ∈ W_0, 3 ∈ W_1
+  (original ids). Composition of depth-0 P pieces: corpus Oink D-only 1,539, W_{1-p}-only 35, mixed 8; disjoint unions Oink
+  1,159 / 1,285 / 309, stable 1,108 / 1,439 / 257.
+
+### 18b. Invariant K (definitions and the PROVED frame)
+Fix a search of p, G', D = W_p(G') ≠ ∅, σ a positional winning strategy of p on D in G' (plays stay in D). For a depth-0
+context R (X = G' \ R) let A_D(R) be the least A ⊆ D ∩ R with: a p-vertex of D ∩ R with an edge into X ∪ A is in A; an
+opponent vertex of D ∩ R all of whose edges lie in X ∪ A is in A (X is a p-won SINK, as DTL's threshold step 897-912 and its
+forgiving attractors treat it). Q(R) := (D ∩ R) \ A_D(R); K(R) :⇔ Q(R) ≠ ∅.
+Lemma K0 (PROVED). (a) If Q(R) ≠ ∅, every p-vertex v ∈ Q(R) has σ(v) ∈ Q(R) (σ(v) ∈ X ∪ A would put v into A) and every
+opponent vertex of Q(R) has an edge into Q(R) (else all its edges, which lie in D, are in X ∪ A); every play staying in
+Q(R) and consistent with σ is a G'-play from D consistent with σ, so p wins it: Q(R) is a p-dominion of the subgame G[Q(R)].
+(b) K(G') holds (X = ∅, A = ∅, Q = D). (c) K(R_end) fails, R_end the context where best_vertices returns 0 (dtl.cpp
+651-655): R_end has no p-priority vertex, so every infinite play inside Q(R_end) is won by the opponent, while (a) gives a
+σ-consistent infinite play inside Q(R_end) (opponent picks an edge into Q) won by p; so Q(R_end) = ∅. (d) So in every search
+with D ≠ ∅ some depth-0 piece turns K from true to false. □
+Consequence (PROVED from K0): (K-in) follows from
+  (K-STEP-first) the FIRST depth-0 piece after which K fails (a T piece counted with its recursion) learns a tangle inside D
+  or finds a dominion.
+At a P piece, A_D(R) = ∅ (the trigger: nothing of R attracts into X), so K(R) ⇔ D ∩ R ≠ ∅. Step 5 of §17 becomes:
+  (P-K) A depth-0 P piece keeps K: if D ∩ R ≠ ∅ then D ∩ R ⊄ Y_0 ∪ A_D(R \ Y_0), i.e. the part of D left after Dom(prevV, R)
+  is not all p-attracted to X ∪ Y_0. (The removal never needs repaying INSIDE its own piece; it only must not make D
+  "attractor-only".)
+
+### 18c. DATA (counts of depth-0 pieces in searches with D ≠ ∅ and no dominion)
+| statement | corpus Oink | corpus stable | unions Oink s1 | unions stable s2 | cross Oink s11 |
+|---|---|---|---|---|---|
+| (P-K): K broken by a P piece | 0 (kept 1,556) | 0 | 0 | 0 | 0 |
+| (K-STEP-first) violations / searches | 0 / 512 | 0 / 493 | 0 / 738 | 0 / 692 | 0 / 116 |
+| first break by S that learns / by T that learns | 497 / 12 | 478 / 12 | 713 / 18 | 662 / 24 | 109 / 3 |
+| first break barren, but D-learning earlier in the search | 3 | 3 | 7 | 6 | 4 |
+| (SEG-LAST) the last depth-0 segment (P piece to next P piece) meeting D learns inside D | 512/512 | 493/493 | 738/738 | 692/692 | 116/116 |
+(K-STEP) per piece ("every barren piece keeps K") is FALSE: barren breaks after earlier learning, e.g. S at
+experiments/red/carry/instances/gapbW_dup_n20.pg, T at experiments/alg/instances/cross_h_k1_n12_m19_42.pg (both Oink order).
+So a proof of the S and T steps must use "nothing learned inside D so far in this search" (stored tangles then predate the
+search); the P step needs no such hypothesis on data.
+
+### 18d. Killed on the way (each with its instance; Oink order, corpus)
+- (HYB) "the game on D ∩ R where a vertex without successor loses for p keeps a p-winning region across barren pieces":
+  broken by P pieces 548 times; smallest experiments/alg/instances/strfam_S2_n4.pg (n = 4, Odd's search, W_1 = all four
+  vertices: the P piece removes {0}; vertex 2's only edge then goes into X, so the game on D ∩ R' loses at 2; the next T
+  piece takes 2 and the S piece after it learns {1}). Treating X as p-LOSING is wrong for DTL.
+- (JD) "D ∩ R holds a set, closed for the opponent with X forgiven and p-closed inside R, with a p-priority vertex": broken by
+  P pieces 86 times; smallest experiments/attr/instances/psolc_partial_n5-8_K60000_s2_1_n4_m6.pg (n = 4). Fix: let p use X
+  too (that is K).
+- (ATTR) "the D-vertices a P piece removes are p-attracted to the D left behind": 562 violations (smallest
+  experiments/attr/instances/psolc_min_n4_m6.pg).
+- (SEG-ALL) "every segment whose start meets D learns inside D": 364 of 512 searches violate (c1_k1_min_n7_m10.pg).
+- (LASTD) "the piece removing the last D-vertex learns": false for T pieces (26; cross_h_k1_n12_m19_42.pg), mop-up after
+  learning; true for S (389/389); a P piece is never last (0).
+- (KEEP) per pruning round, "p-priority vertices in the greatest p-closed subset of Z^r are still in V_r": 144 violations
+  (experiments/alg/instances/climbs_1016/c_best_s34.pg, round 4: vertex 16 pruned at round 3 while 2 ∉ Z^3, 2 ∈ Z^4 again).
+  (MONO) Z^{r+1} ⊆ Z^r fails 135 times in 40,346 round pairs, (R-MONO) its p-closed part 125 times.
+
+### 18e. (PNL*) and the route to (P-K) (SKETCH; GAP named)
+(PNL*) DATA: Y_0 never contains a nonempty B ⊆ R holding a p-priority vertex in which every opponent vertex has all its
+R-edges in B (at least one) and every p-vertex an R-edge into B: 3,121/3,121 depth-0 and 1,136/1,136 deeper P pieces
+(corpus Oink; greatest such B empty in 2,615 + 897, nonempty without p-priority vertex in 506 + 239).
+Proof of (PNL*) given (YZ) and monotonicity (PROVED part + GAP). Let B ⊆ Z_f be such a set. (i) prevV ∩ B = ∅: a p-owned
+v ∈ prevV ∩ B has an edge into B ⊆ Z_f, an opponent-owned one has all R-edges in B ⊆ Z_f, so v attracts into Z_f, is no
+candidate, stays in V, and best_vertices could not have returned −1 (PROVED). (ii) Let r0 be the last round with
+V_{r0} ∩ B ≠ ∅ (B's p-priority vertex is in V_1). If B ⊆ Z^{r0}, the argument of (i) keeps V_{r0} ∩ B in V_{r0+1}: a
+contradiction (PROVED). (iii) B ⊆ Z^{r_f} ⇒ B ⊆ Z^{r0}: holds if the region union is monotone along the rounds of one call
+(GAP: (MONO) and (R-MONO) are FALSE on A_DTL, §18d; the failures come from straddling stored tangles, GAP-A-M Lemma E, the
+same mechanism as (α)). PNL* holds on all data although (MONO) fails, so step (iii) needs an argument specific to B.
+(P-K) is stronger than (PNL*) (Y_0 ∪ attractor instead of Y_0); its proof route is the same three steps with B replaced by
+"the part of D whose attraction to X ∪ Y_0 uses no vertex of a pruned top's good path" — not written.
