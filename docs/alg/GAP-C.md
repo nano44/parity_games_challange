@@ -37,6 +37,11 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | K4-B | the first stable piece's regions lie in W_p even after −1 pieces | KILLED (§14), union games |
 | FIRST-W | the first stable piece with a p-won top is productive inside W_p | KILLED (§16): instances/firstw_viol_cross.pg |
 | GAP-K | (K-low): some stable piece's lowest region is productive inside W_p | GAP (§12, §14); DATA 0 violations incl. 2,092 mixed union searches |
+| K frame (18b) | K(R): D ∩ R not wholly p-attracted to X; K0 (K(G'), not K(R_end)) | K0 PROVED; route DEAD: (P-K), (K-STEP-first) KILLED by L-RED pk_viol_n20 (18f) |
+| P-K1 (18f) | Case 1 of (P-K): max priority of D ∩ R of p's parity | PROVED given (YZ), (WM) |
+| KT frame (18g) | KT(R): thresholded core at some p-parity level c | KT(G'), not KT(R_end) PROVED; (KT-STEP-first) DATA 0 violations |
+| Step 5 = P-KT (18h) | a depth-0 P piece (Dom(prevV), Q empty) keeps KT | PROVED given (YZ), (WM_c1) (DATA: both hold on 63,000+ / 17,000+ pieces) |
+| S step, T step (18g) | a piece after which KT fails learns inside D (nothing learned in D before) | DATA only; S step contains (α), (β) |
 
 ## 3. The new steps
 Lemma SCC1 (PROVED, reading). Let τ be a top in sptl (dtl.cpp 477-550) with region Z_τ, computed from {τ} by the
@@ -567,3 +572,42 @@ Proof route for "P keeps KT" (SKETCH): take the core U at a level c where U hold
 P-K1 inside S_c (attraction only through priorities ≤ c) gives a contradiction at every p-owned vertex of priority c in U;
 the open case is an opponent-owned priority-c vertex of U whose exit goes to a D-vertex of priority > c (forgiven by F_c,
 not by GAP).
+
+### 18h. Step 5 for KT: a P piece keeps KT — PROVED given (YZ) and (WM_c1) (06:44Z by date -u)
+Setting of 18f (depth-0 P piece, R a p-trap, H = G[R], D_R = D ∩ R ≠ ∅ a p-dominion of H, Z := Z_f, every p-priority
+vertex x of R leaves V at a round r(x) as a candidate that is not rescued).
+Definitions. W1 := a p-dominion of H inside D_R whose maximum priority c1 is least among all such. c1 has p's parity: if it
+had the opponent's, W1 minus the opponent's attractor (in W1) to its top priority is closed in H and contains a nonempty
+p-dominion of H with a smaller maximum (Zielonka's step). W1 is CLOSED in H: every opponent vertex of W1 has all its
+R-edges in W1, and p has a strategy σ1 that keeps every play in W1 and wins it. T := W1 ∩ pr^{-1}(c1) ≠ ∅.
+(WM_c1): for every x ∈ D_R of priority c1, Z ⊆ A^{r(x)}_{c1−1} (the rescue attractor of x's round at threshold c1−1).
+(YZ): Y_0 = Z (the P piece removes exactly the final round's region union).
+Lemma P-KT (PROVED given (YZ), (WM_c1)). Let R' := R \ Y_0, S := D ∩ R' ∩ {priority ≤ c1}, A := the plain p-attractor of
+X ∪ Z inside S (KT's A_{c1}(R'), X ∪ Y_0 being G' \ R'). Then U := W1 \ (Z ∪ A) ≠ ∅, and U ⊆ W_p(F_{c1}(R')), so KT(R').
+Proof. (1) A'' := the plain p-attractor of X ∪ Z inside S ∩ {priority ≤ c1−1}. A'' ⊆ A^{r}_{c1−1} for every round r with
+Z ⊆ A^{r}_{c1−1}: after the level-t pass of the rescue loop (722-731) the set is closed under attraction of vertices of
+priority ≤ t (every element is popped once more after the last addition); a p-vertex of R has no edge into X (R is a
+p-trap) and an opponent vertex of R keeps an R-edge, so A'''s rules are instances of the rescue rules.
+(2) A = A''. Otherwise take x ∈ A \ A'' of least rank in A. Its witnesses (one successor if p-owned, all successors if
+opponent-owned) lie in X ∪ Z ∪ (A of smaller rank) ⊆ X ∪ Z ∪ A''. If pr(x) ≤ c1−1, x ∈ A''. If pr(x) = c1 (p's parity),
+x attracts into Z ∪ A'' ⊆ A^{r(x)}_{c1−1} by (WM_c1) and (1) (p-owned: one edge; opponent-owned: all R-edges, at least one),
+so x would have been rescued in round r(x): contradiction.
+(3) If U = ∅ then W1 ⊆ Z ∪ A'' by (2); A'' has no vertex of priority c1, so T ⊆ Z. Take w ∈ T: if p-owned, σ1(w) ∈ W1 ⊆
+Z ∪ A''; if opponent-owned, all its R-edges lie in W1 ⊆ Z ∪ A'' (W1 closed in H). Either way w attracts into
+A^{r(w)}_{c1−1}, so w was rescued: contradiction. So U ≠ ∅.
+(4) U ⊆ Q_{c1}(R') = S \ A. A p-vertex v ∈ U has σ1(v) ∈ U (σ1(v) ∈ W1; σ1(v) ∈ Z ∪ A would put v into A). An opponent
+vertex v ∈ U has all its R-edges in W1, hence its R'-edges in U ∪ A, and at least one in U (else all its edges lie in
+X ∪ Z ∪ A and v ∈ A). In F_{c1}(R') the edges into A are deleted, so U is closed for the opponent, has no dead end, and
+every play in U consistent with σ1 is a W1-play consistent with σ1, won by p. □
+Remarks. No hypothesis KT(R) is needed: at every depth-0 P piece with D ∩ R ≠ ∅, KT(R') holds, witnessed at the level
+c1 of the least-maximum p-dominion. This is Step 5 of §17 in the KT frame: the Dom(prevV) removal does not destroy the
+low dominion's core at its own threshold, whatever p-won vertices it takes. Where K (18b) failed (pk_viol_n20, Case 2)
+the argument works because W1 is closed in H with maximum c1 of p's parity, so Case 2 of 18f never arises at level c1.
+DATA (dtl_pnl.py "P-KT", every depth-0 P piece with D ∩ R ≠ ∅, all searches): U ≠ ∅ in 1,596/1,596 corpus Oink (incl.
+kfirst_viol_n13, pk_viol_n20), 1,532/1,532 corpus stable, 9,356/9,356 disjoint unions Oink s1, 4,613/4,613 cross unions
+stable s13 (6 cross edges). (WM) for all p-priority vertices of R and (YZ) hold in every one of these pieces.
+Open hypotheses: (YZ) (DATA 63,000+ P pieces, all depths; reading: Dom can only take more, through stored tangles with a
+vertex in X or in an earlier region of the same pass) and (WM_c1) (DATA; implied by monotonicity of the region union
+between round r(x) and the last round, which is FALSE in general (18d), so a proof must use the specific rounds).
+What KT still needs for (K-in): the S step and the T step ("a piece after which KT fails learns inside D, as long as
+nothing was learned inside D earlier in the search"); both are DATA only (18g), and the S step contains (α) and (β).
