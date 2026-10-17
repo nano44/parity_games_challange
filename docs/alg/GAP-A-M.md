@@ -1111,6 +1111,7 @@ PROVED
 | First-Difference Lemma: consecutive searches agree up to the first differing tangle attractor, whose input is equal and output strictly larger; the cause is a tangle learned later in the earlier search (box 5; reading) | A_DTL | §21d |
 | Lemma DV*-MONO: the clean ideal root distance DV* is pointwise monotone in T, so it changes ≤ n(n+1) times per phase (box 5) | any tangle sets | §21h |
 | Per-context LRN budget: at a fixed context R, transitions whose first difference is at R and moves DV*_R are ≤ n(n+1) (DV*-MONO on the subgame R); S − 1 ≤ n(n+1)·(contexts) + #DEF + #ABS (box 5) | A_DTL | §21j |
+| GAP-C lemmas (box 5): SCC1 (one candidate SCC per closed region), B-thr (how a duplicate arises), O0/O1 (orphans), OPP-EXIT, Theorem A (root call stable ⇒ productive inside W_p unless (α)) | A_DTL | GAP-C.md §3, §6, §11, §13 |
 
 KILLED (FALSE / DEAD), each with its instance
 | Claim | Instance (experiments/alg/instances unless noted) | Where |

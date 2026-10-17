@@ -32,6 +32,10 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | (S2) | "a context containing a p-dominion is never pruned to −1" | FALSE (§4); the proof must follow the dominion through −1 pieces |
 | OPP-EXIT (new) | a learned tangle meets W_{1-p} only where the opponent's winning move is an edge the region forgives | PROVED (reading), §11 |
 | K-in, TW, LOW-W | progress inside W_p, from a lowest region; learned tangles never straddle W_p's boundary | DATA (§9-§11), 0 violations |
+| K-first | the FIRST stable piece's lowest region is productive inside W_p | DATA (§13), 483/483, 464/464 |
+| Theorem A | if the root call is stable, its lowest region is in W_p and is productive unless (α) | PROVED (reading), §13 |
+| K4-B | the first stable piece's regions lie in W_p even after −1 pieces | DATA (§13), 483/483 (31 mixed) |
+| GAP-K' | Case B (first stable piece after −1 pieces, 486 of 488 searches): (K4-B) + (α) + (β-1) | GAP, §13 |
 
 ## 3. The new steps
 Lemma SCC1 (PROVED, reading). Let τ be a top in sptl (dtl.cpp 477-550) with region Z_τ, computed from {τ} by the
