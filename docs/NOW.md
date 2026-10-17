@@ -1,5 +1,5 @@
 # NOW (rewritten, never appended; max 150 lines)
-Updated: 2026-10-17 09:08Z by Lead. Phase: M0-M3 done; M4 in progress (candidate DTL in the gauntlet: steps 1-3 done, step 4 proof attempt open with GAP-A route (H1)-(H4) and GAP-C). Lanes on Opus 5.5 per D8 until the Fable reset 2026-10-21 21:00Z. Reporting: weekly checkpoint (D1, after M2); immediate on milestones, step-4 claims, stops.
+Updated: 2026-10-17 19:51Z by Lead. Phase: M0-M3 done; M4 in progress (candidate DTL in the gauntlet: steps 1-3 done, step 4 proof attempt open: GAP-A reduced by refereed results R5-R11 (R11 (d) hypothesis STEAL-ONCE* false, DE20), GAP-C open). Lanes on Opus 5.5 per D8 until the Fable reset 2026-10-21 21:00Z. Reporting: weekly checkpoint (D1, after M2); immediate on milestones, step-4 claims, stops.
 
 ## Milestones
 | M | State | Evidence |
@@ -8,7 +8,7 @@ Updated: 2026-10-17 09:08Z by Lead. Phase: M0-M3 done; M4 in progress (candidate
 | M1 Reproduce hard families | DONE 2026-10-14 19:10Z (l-comp de7ea19): 12 of 13 families blow up as published, all strategies checked; counter_qpt superpolynomial but class open (targets a quasi-poly algorithm). Friedmann SI via REFEREE-checked PGSolver ports (reading L5). Bench LANDED on trunk (REFEREE OK ae532f6) | experiments/hard-families/README.md (l-comp) |
 | M2 Audit arXiv 2511.03752 | DONE 2026-10-14 ~18:35Z: BROKEN (two independent 4-vertex counterexamples, cross-checked); RESULTS DE1 | docs/decisions/M2-arxiv-2511.03752.md |
 | M3 Partial results | DONE 2026-10-15 00:17Z (novelty T10 NEW, rechecked T11 against the chapter text DTR15-4: still NEW): RESULTS R2 T-A1 [refereed-only] (psolB solves G completely iff PA**(G)); two referee signatures at l-attr 57a1515, CHECKER PASS 62cf1c4. Also R1 L4 (lemma). 2026-10-15 13:50Z: RESULTS R3 [refereed-only] original Random-Facet needs e^Omega(sqrt n) expected switches on parity games (FHZ Thm 6.3 + L-RED transfer lemma; REFEREE + REFEREE-2 signed at l-red 49ae306; CHECKER PASS 068f9de; T13 NEW as statement) | docs/RESULTS.md |
-| M4 Target | IN PROGRESS: candidate A_DTL (Oink --dtl, pinned) in the gauntlet: step 1 done, step 2 DONE (L-COMP 0d7dc7c), step 3 SIGNED with 4 caveats (T16), step 4 proof attempt open: soundness/strategies/halting proved (unrefereed); GAP-C completeness open ((alpha)-exclusion route dead, R11); GAP-A polynomial bound open, route = (H1)-(H4) (GAP-A-M §12), barrier APP(k) (§10). Treated as wrong until it passes. | docs/alg/DTL-proof.md, docs/alg/GAP-A-M.md |
+| M4 Target | IN PROGRESS: candidate A_DTL (Oink --dtl, pinned) in the gauntlet: step 1 done, step 2 DONE (L-COMP 0d7dc7c), step 3 SIGNED with 4 caveats (T16), step 4 proof attempt open: soundness/strategies/halting proved (unrefereed); GAP-C completeness open ((alpha)-exclusion route dead, R11); GAP-A polynomial bound open: refereed reduction (RESULTS R7-R11) to (CTX⁺) ∧ (FALL), (FALL) ⇐ steal/fired-tangle counts; R11 (d) hypothesis (STEAL-ONCE*) FALSE (DE20, stealonce_viol_n76), open replacement (STEAL-POLY) (Lead reading, unsigned) + (FIRED-R) + (CTX⁺), all DATA; L32 single-statement criterion not met. Treated as wrong until it passes. | docs/alg/DTL-proof.md, docs/alg/GAP-A-M.md |
 
 ## Roster (model, effort, one-line reason; revisit at each restart)
 Lead session: session_014FBi6o334DvwT5Uw2kDfoN, environment env_013N6DGgsLr96BMjKj1hpw9i, branch claude/vibrant-johnson-nxvvxo.
@@ -90,7 +90,9 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 - Q13 CLOSED 16:39Z by D10 (owner: "I dont mind the repistory is public"); L29: repository stays public.
 
 ## Spend
-- 14:55Z last readings (cost_usd): Lead 86.2, L-LIT 93.5, L-RED 66.8, L-SI 58.6, REFEREE 55.0, L-ALG 53.6, REFEREE-2 39.6,
-  L-LOWER (succ.) 30.1; earlier/parked: L-LOWER (old) 56.8, REFEREE (old) 47.6, L-COMP 38.1, L-STRUCT 33.4, L-ATTR ~31, WATCHDOG 1.3.
-  Sum of readings about $692 (CHECKER, HUMAN-DESK, OWNER-DESK not read). Rate limit: seven_day "allowed_warning" since 12:02Z,
-  no overage; resets 2026-10-21 21:00Z; owner D7: continue, stop on overage.
+- 2026-10-17 19:51Z readings (cost_usd, cumulative, get_session per id, 36 sessions): total $1,781 (sessions created ≤ 2026-10-15: $1,242;
+  created after: $539; readings are cumulative per session, so spend per day is not measured; since the 10-15 reading the
+  total rose by about $1,089 (≈ 2.2 days, almost all Opus under D8/D12)). Largest: Lead 277, L-RED (old) 127, L-LIT 109, L-ALG succ. 6 87, L-SI 77,
+  L-ALG succ. 3 76, CHECKER 72. Working now: Lead, L-ALG succ. 7 (7.5), L-RED succ. 6 (0.8). isUsingOverage false on all 36;
+  seven_day "allowed_warning"; the two paused Fable sessions are "rejected" (Fable limit), resets 2026-10-21 21:00Z; D7 applies.
+- Earlier reading 2026-10-15 14:55Z: sum about $692 (see git history).
