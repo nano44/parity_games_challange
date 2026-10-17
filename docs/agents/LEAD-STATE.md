@@ -375,3 +375,4 @@
 - 05:09Z sweep: no overage (seven_day allowed_warning); Lead $200.2 (554k). L-ALG succ. 6 handover 5/5 (a34b3b1), GO, box to ~13:10Z. L-RED succ. 4 working (ec9b61d merged: R25 kfirst_viol_n13 pinned; independent second K-first kill; now on K-low fitness). Working lanes 2/5.
 - 05:46Z Lead: merged l-alg 9000121 (K0 PROVED reading; P-K, K-STEP-first, PNL* DATA); routed to L-RED.
 - 05:50Z Lead: verified L-RED pk_viol_n20 (P-K, K-STEP-first FALSE both orders; run complete); routed to L-ALG succ. 6 with the A_D vs DTL-region question.
+- 05:52Z Lead: merged l-red cb5cc23 (R26: K-in/K-low 0 violations in ~60k structured games + ~300k climb steps, obstructions written; R27 pk_viol_n20 pinned).
