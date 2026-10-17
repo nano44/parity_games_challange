@@ -2434,3 +2434,9 @@ Candidate (FALL-V), DATA only: along a phase, each vertex's RV at a fixed contex
   grow (PREFIX-MONO), so a stolen vertex stays stolen and v cannot regain support from that victim.
 - Gap: a NEW tangle could restore v's RV and then be stolen in turn. That is the shape for L-RED: v rises after its fall
   and falls again at the same context.
+(CTX⁺) climb data (14:23Z by date -u; dtl_ctxclimb.py from spp25_oink_n40, seed 7, Oink order). Instance
+experiments/alg/instances/ctx12_oink_n40.pg (n = 40, |G′| = 38).
+- It has 12 distinct first-difference best_vertices contexts in one phase of 23 transitions in Oink order, and 9 in 20
+  in stable order.
+- Pinned Oink: 3 dominions, 46 tangles, 27 iterations, verified.
+- The previous maximum was L-RED's ctx11_n40 with 11. Growth so far is +2 over the spp25 start, at fixed n.
