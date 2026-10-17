@@ -1,5 +1,22 @@
 # L-ALG notebook — third successor (session_01BDELabbGbT2QYY2NoRCY8A), 2026-10-16, produced on Opus 5.5 (D8/L27); older notes below
 
+## BOX 7 RESUME POINT (successor 6, same session; Lead GO 10:47Z by date -u, box to ~18:50Z; updated 12:37Z by date -u) — read this first
+Box 7 = GAP-A (Lead L32 (3)); truth: docs/alg/GAP-A-M.md §22 (22a-22j). Tool: experiments/alg/dtl_rootmono.py (env RM_DV,
+RM_KSEQ, RM_WIT, RM_ROUNDS; games/unions via dtl_step5stats.games).
+- DEAD (target 1): root-call RMONO = box 4's (M) (dtl_mviol_n20, pinned Oink re-run: M-VIOLATION REPRODUCED).
+- PROVED (reading), signed by both referees (packet 4): (S0), PREFIX-MONO (later round step-ideal ⇒ prefixes monotone),
+  POS-FALL, ROOT-BOUND. §22e: GAP-A ⇐ (CTX) ∧ (DIRTY) with OPEN gaps G-DOM, G-STR.
+- Since packet 4: §22f (DIRTY) → (FALL) (Π_R descends only where RV falls; data ≤ 2 per context); §22g (CTX) and (FALL)
+  have different causes (the P piece's level set Dom(prevV) = Z_f jumps when RV rises, on CLEAN calls); §22i Lemma
+  STR-DET (PROVED, reading) closes G-STR; §22j per-input budget folds G-DOM into (CTX⁺).
+- Current reduction: GAP-A ⇐ (CTX⁺) ∧ (FALL) [+ STR-DET as a reading]. Open: (CTX⁺) = the context tree of a phase is
+  thin (nested-counter core); (FALL).
+- GAP-C this box: DE13 (kin_viol_n29) killed the KT-chain S step, S-LOW-TIGHT, K-in, TW, K-low; DE15 (meet_viol_n17) killed
+  (MEET); (PHASE-IN) ⇔ run completeness (dtl.cpp 1106-1121). Packet 3: K5'' and (α) with Dep(Str) signed (§18q).
+- Things only I know: (a) Lead stamps are now date -u. (b) I slipped once more (22 min, 11:35 message); read notifications
+  after EVERY data run. (c) Unquoted heredocs eat backticks: \`-t -t\` vanished once; quote the heredoc or avoid backticks.
+  (d) dtl_fdlcheck.py log entries now carry R and Gx at indices 7, 8.
+
 ## FINAL RESUME POINT (successor 6, session_01PEMUECoSbdbdZR2hHzbyTK; Lead GO 05:08Z (Lead clock), box to ~13:10Z; updated 10:35Z by date -u) — read this first
 All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?`.
 Truth: docs/alg/GAP-C.md §2 (status rows) and §18 (18a-18p; 18p is the box ledger); docs/alg/STEP5.md (referee packet R4,
