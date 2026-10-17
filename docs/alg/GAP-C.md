@@ -42,6 +42,10 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | KT frame (18g) | KT(R): thresholded core at some p-parity level c | KT(G'), not KT(R_end) PROVED; (KT-STEP-first) DATA 0 violations |
 | Step 5 = P-KT (18h) | a depth-0 P piece (Dom(prevV), Q empty) keeps KT | PROVED given (YZ), (WM_c1) (DATA: both hold on 63,000+ / 17,000+ pieces) |
 | S step, T step (18g) | a piece after which KT fails learns inside D (nothing learned in D before) | DATA only; S step contains (α), (β) |
+| YZ-read (18h) | Dom(prevV) = final round's regions unless an X-straddling tangle fires in Dom | PROVED (reading); (YZ) itself DATA |
+| FM, FM+ (18h) | final union of a −1 call inside every earlier round's union | PROVED except a round-r straddle of a tangle the final round attracts; DATA 106,091/106,091 calls |
+| T step split (18i) | (CORE-PASS-closed): a T piece that breaks KT hands the recursion a p-dominion of G[Z'] inside D; then (REC) | DATA 45/45; P-KT carries over to depth 1 |
+| S-LOC / S-LEVEL (18j) | S learning lies in the core of SOME KT level / of EVERY destroyed level meeting V* | S-LOC DATA 0 violations; S-LEVEL KILLED (cross_h_k1_n12_m18_17) |
 
 ## 3. The new steps
 Lemma SCC1 (PROVED, reading). Let τ be a top in sptl (dtl.cpp 477-550) with region Z_τ, computed from {τ} by the
@@ -698,3 +702,33 @@ piece: 403/403 corpus Oink (227 at the least level, 176 only at a higher level),
 KILLED: 524 violations corpus Oink (478 stable, 207 unions, 36 cross); first instance
 experiments/alg/instances/cross_h_k1_n12_m18_17.pg (both orders). So the S step is existential over the levels, like
 (K-low) over the pieces; no rule naming the level is known.
+(FM, the open case; SKETCH, 08:04Z by date -u.) Let r be the LAST round with Z_f ⊄ Z^r, so Z_f ⊆ Z^{r'} for every r' > r, and let
+t be a tangle that round f attracts (t ⊆ Z_f, its escapes in Z_f or outside R) and round r straddles. Every p-priority
+vertex m of t attracts into Z_f (p-owned: its tangle successor is in t; opponent-owned: all its R-edges go to t or to
+escapes), hence into Z^{r'} for every r' > r; so m is no candidate at any round after r, and m ∉ V_f: every p-priority
+vertex of t was pruned at round r or earlier (PROVED). In particular t holds no top of rounds r+1..f, and the straddle at
+round r is created by the regions of round r's extra tops (pruned at r) or of tops above them; a top π pruned at r whose
+region holds a vertex of t has no edge into Z^r (a candidate), so if π ∈ t its tangle successor lies outside Z^r. The
+contradiction (or an FM counterexample built from it) is not reached; L-RED has the target.
+(CORE-PASS-closed), DATA (08:13Z by date -u): whenever a T piece breaks KT (nothing learned before), the recursion context Z'
+holds a nonempty p-dominion of G[Z'] (closed: every opponent vertex keeps all its Z'-edges inside it) lying inside D:
+12/12 corpus Oink, 12/12 stable, 18/18 unions, 3/3 cross. With such a W the proof of P-KT runs unchanged inside the
+recursion (a P piece of search_rec(Z', p, 1) has its context R_1 a p-trap of G[Z'], so W ∩ R_1 is a p-dominion of
+G[R_1]), which removes the depth-1 obstacle above for P pieces; the S and T steps inside the recursion remain.
+(NT-f) and the equivalence (FM) ⇔ (NT-f) (08:28Z by date -u; experiments/alg/dtl_ntf.py).
+(NT-f) The final round of a −1 call attracts no stored tangle in its region loop. DATA: 8,047/8,047 −1 calls corpus Oink
+(+ climbed games), 7,892/7,892 stable, although an earlier round attracts a tangle in 3,117 / 3,060 of those calls.
+(FM) ⇒ (NT-f): if round f accepts t, every p-priority vertex of t attracts into Z_f (tangle strategy / all R-edges into t
+or escapes), so none is in V_f; at the last round r* at which one of them, m*, is in V, m* is a candidate, so t ⊄ Z^{r*}
+while t ⊆ Z_f: (FM) fails at r*. (NT-f) ⇒ (FM): the only failing case of the (FM+) induction is a tangle that round f
+accepts. So (FM) ⇔ (NT-f) (PROVED), and Step 5 rests on one clean statement about the last pruning round plus (YZ).
+A counterexample to (NT-f) must have: a stored p-tangle t with an escape in R, accepted at round f at the pop of its last
+escape inside the region of a final top τ (pr(t) ≤ pr(τ), no vertex of t in an earlier round-f region); every p-priority
+vertex of t pruned before round f; at the last round r* holding one of them, t rejected by the straddle test 138-139 (a
+vertex of t consumed by an earlier region of round r*), its escapes already attracted. Climbs from c_best_s34.pg and
+dtl_deficit_n20.pg (experiments/alg/dtl_fmclimb.py, 4 runs × 4,000 steps, both orders) raised the latest round at which a
+deficit vertex reappears to f−1 of f but never to f.
+(YZ-read) exception observed: experiments/alg/instances/strfam_S5_n46.pg, stable order — Dom(prevV) fires the stored
+tangle {14, 15, 16, 17} with a vertex in old X or in an earlier top's part; Y_0 = Z_f still holds there (the region loop
+reaches the same set by other rules), and P-KT holds (25/25 depth-0 P pieces). So (YZ) is not implied by the reading;
+it held on all data.

@@ -81,6 +81,12 @@ class PN(S5.S5):
                 V.clear(); V.update(prevV); s.note_rounds(-1); return -1
 
     def note_rounds(s, res):
+        if res == -1 and len(s.rounds) > 1 and os.environ.get("MONODUMP") and not all(b <= a for a, b in zip(s.rounds, s.rounds[1:])) and s.kd < int(os.environ.get("MONODUMP")):
+            s.kd += 1; L = lambda S: sorted(s.idx[v] for v in S)
+            print("MONO-1", s.fname, "p", s.cur_p, "|R|", len(s.cur_R), "rounds", len(s.rounds), flush=True)
+            for i, (Z, Vi) in enumerate(zip(s.rounds, s.rv)):
+                print("   r%d V=%s new-vs-prev=%s gone-vs-prev=%s" % (i + 1, L(Vi), L(Z - s.rounds[i - 1]) if i else "-", L(s.rounds[i - 1] - Z) if i else "-"), flush=True)
+            print("   final union", L(s.rounds[-1]), flush=True)
         if res == -1 and s.rounds:
             fm = all(s.rounds[-1] <= z for z in s.rounds)
             k = "FM (-1 calls: Z_f ⊆ Z^r for every round r) " + ("holds" if fm else "FAILS")
