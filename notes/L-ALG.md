@@ -77,3 +77,25 @@ Box 8 so far (GAP-A-M §23a). The invariant behind (STEAL-ONCE*), DATA only, 0 e
 - Stamps: always $(date -u +%H:%MZ) inside the heredoc. The Lead's stamps are date -u now.
 - Pinned Oink: tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops -v G.pg OUT.sol, then grep "solution
   verified". Re-run every instance before reporting it.
+
+## Resume point
+Read DONE above, then GAP-A-M §23a and §22x. The first task is the missing step of (STEAL-ONCE*) stated under DONE.
+The box-8 queue is under NEEDS.
+
+## Dead ends
+Box 7-8 dead ends, each with its instance, are in docs/alg/DEAD.md (latest sections):
+- root-call RMONO = (M) (dtl_mviol_n20);
+- CHAIN (dtl_searches15_n24);
+- CTX-ROOT (dtl_cnew14_n20);
+- F_R ≤ const (fall3_n76, fall4_n116);
+- FALL-V (fallv_viol_n28);
+- per-tangle steal counting (fallv_viol_n28);
+- MET-MONO (§23a; corpus, 117 shrink pairs);
+- the raw input bound (vacuous);
+- distraction mass as a potential.
+Boxes 1-6: see `git show 8a9c0f44:notes/L-ALG.md`.
+
+## Sources opened
+- No external sources were opened in boxes 7-8. All arguments are readings of dtl.cpp @ 8fbf0a7 (tools/oink/src/src/solvers/dtl.cpp,
+  dtl.hpp) and of the fleet's referee reports (docs/referee/R-P4..R-P8.md, docs/referee-2/R2-P4..R2-P8.md).
+- Earlier sources: `git show 8a9c0f44:notes/L-ALG.md`.
