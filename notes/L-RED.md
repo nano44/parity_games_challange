@@ -52,15 +52,21 @@ Status: HANDOVER (box 7 successor 5 parks at ~580k; see Resume point). Older sta
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
-2026-10-17 19:33Z (date -u), successor 6 (Opus 5.5), box 8 (Lead GO 19:01Z, to ~01:00Z; check-in ~21:30Z).
-DONE this box: handover check fda109c; R35 (6af3a14f, addendum 248a93f3/d11271d9): stealonce_viol_n76 (sha1 32c2da0b) =
-stealer_viol_n76 with 3->31 replaced by 3->64 and 20->31 added; stable order: STOLEN-PERM FAILS 7, NO-REFIRE REFIRES 7,
-STEAL-ONCE* max 2, STAYS-MET FAILS 7 (dtl_rootmono + dtl_stealtrace unmodified, l-alg 9b621aa2); NO-RETURN FAILS 7 (dtl_firedlong2
-FL_ALL=1). Oink order holds. Found by hand edit (r64) + one-edge neighbourhood scan (scratch nbscan.py) on permgap near2.
-Tools: root/permgap.py (graded STOLEN-PERM near-miss; PERMFIT=stealk = STEAL-ONCE* k), root/steptrace.py (per-step tracer).
-RUNNING (scratch, LALGR_DIR = <scr>/lalg detached l-alg 9b621aa2): k25001 (stealk stable), k25002 (stealk oink), p24002 (permgap
-oink from stealer_viol_n76), l21001 (firedlong oink from spp25_oink_n40, 0.222).
-NEXT: (2) long-phase FIRED-R gadget; (3) CTX+ n-trend.
+2026-10-17 21:59Z (date -u), successor 6 (Opus 5.5), box 8 (Lead GO 19:01Z; depth box extended to ~00:30Z, note ~23:00Z).
+DONE (all pushed via push.sh; every instance pinned in check.sh, both orders, pinned Oink verified):
+- R35 (DE20): stealonce_viol_n76 (32c2da0b): STOLEN-PERM/STAYS-MET/NO-REFIRE FAIL 7, STEAL-ONCE* k 2 (stable); NO-RETURN FL_ALL.
+- R36: stealonce_core_n76 (4e017c28, edge-min), firedstep13_n76 (68df1c0d, 13 fired at one step, stable), firedlong667_n43
+  (7f15d7ba) and firedlong667_n20 (2f9da571): long-phase FIRED-R 0.667 BOTH orders (but all 4 fire in ONE visit: multi = 0);
+  §5 stealonce_both_n45 (ee52c4a3, vertex-min): the R35 kill in BOTH order data.
+- R37: depth-D necessary conditions (D+3 visits, D+1 ordered steps, a learned tangle per event pair).
+RUNNING (scratch; LALGR_DIR=<scr>/lalg2 = l-alg 931fc221 for depth tools, <scr>/lalg = 9b621aa2 for firedlong):
+  nbscan NBFIT=depthfit over all 45 vertices of stealonce_both_n45 (nb4/); dcompose.py 2-copy stacks of it (dc/s11 stable,
+  dc/o12 oink); firedlong FLMODE=multi oink climb n21032 (spp25).
+FINDINGS so far on depth: max depth 1 everywhere (~3,000 variants, climbs both orders). The core's B level (top 39) holds 28 by
+plain vertex attraction and appears through a ROUND (V) change, so a depth-2 toggle of B needs V-change control.
+SUCCESSOR QUEUE: (1) depth >= 2 construction (R37 shape: D+1 nested steps, cascade one step per pair, a new tangle per pair);
+(2) long-phase FIRED-R with multi > 0 (a tangle firing only at a LATER visit of a counted context; none found yet);
+(3) CTX+ n-trend (13 at n 40/48; growth destroys structure, use grow-and-climb with ROOTFIT=ctx, scratch ctx/grow.sh recipe).
 
 ## Resume point (successor 5 handover, history)
 2026-10-17 17:54Z (date -u) HANDOVER, successor 5 (Opus 5.5, session_01DT8bvW9MGLgZURmnwB2JAc), box 7 (Lead GO 11:32Z).
