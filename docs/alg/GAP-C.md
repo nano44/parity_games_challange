@@ -558,8 +558,9 @@ vertices can never be attracted first, so such cycles keep Q nonempty; a violati
 
 ### 18g. Candidate KT (thresholded K; the Lead's lead 06:12Z) — DATA, not proved (06:32Z by date -u)
 Definition. For a depth-0 context R (X = G' \ R) and c of p's parity: S_c := D ∩ R ∩ {priority ≤ c}; A_c := the plain
-p-attractor of X inside S_c (a p-vertex enters with an edge into X ∪ A_c; an opponent vertex only if ALL its edges lie in
-X ∪ A_c, so an edge to a D-vertex of priority > c blocks it); Q_c := S_c \ A_c; F_c := the game on Q_c in which the
+p-attractor of X inside S_c (a p-vertex enters with an edge into X ∪ A_c; an opponent vertex only if ALL its edges IN G' lie
+in X ∪ A_c — edges into solved vertices, outside G', are not counted [referee gap G-S5-5, REFEREE-2 G1] — so an edge to a
+D-vertex of priority > c blocks it); Q_c := S_c \ A_c; F_c := the game on Q_c in which the
 opponent's edges leaving Q_c are deleted (forgiven, as DTL's regions forgive) and a vertex without successor loses for p.
 KT(R) :⇔ some c has W_p(F_c) ≠ ∅. Differences from K: attraction to X only through priorities ≤ c (DTL's threshold step
 and regions never use a path through a higher vertex, the pk_viol_n20 mechanism), and the core must be won by cycles.
@@ -845,3 +846,33 @@ b → e); in the current search, before any learning, a T piece at level t* = pr
 takes e but rejects t (pr(a) = 2 > t*), so t becomes an orphan (Lemma O-P excludes this for P pieces, not for T pieces);
 at the next stable piece the region of a closes on exactly t — a (β') duplicate. For (S-LOW-TIGHT) to fail, that piece must
 be the first to break KT and a's region must be the lowest of its first pass.
+
+### 18m. Referee gaps imported (REFEREE R-STEP5, REFEREE-2 R2-STEP5; union G-S5-1..7 in docs/agents/R4-draft.md; 09:56Z by date -u)
+Both reports: no REJECT; all signatures labelled "(Opus 5.5, D12)". Scope: depth-0 P pieces only; S and T steps and (K-in)
+not established. Closed gaps, written into the author's argument here (STEP5.md gets citations only):
+- G-S5-1 (REFEREE F2.1, REFEREE-2 G2). NT-f (D) uses q := tpr(t) = max pr(t) and that the vertices of priority q have p's
+  parity: by DTL-proof.md Lemma 1.5a a closed sptl region has exactly one SCC reachable from its top, so every extracted
+  tangle contains the top that extracted it; tpr(t) is that top's priority (dtl.cpp extractTangles), which is the region's
+  threshold and hence the maximum priority in t, of p's parity.
+- G-S5-2 (REFEREE G4.1). (YZ) ⇐ (ACYC), step (iii), both inclusions. For the top τ_j let L_Dom be Dom's part and L_loop
+  the final round's region, each the least fixed point of its rule set — vertex rules within the consumed set, the tangle
+  rule retried at every pop of an escape (DTL-proof.md Lemma 1.2: the pop loop computes exactly this closure). (⊇) every
+  rule application of the loop is one of Dom's (same vertex rules; a loop acceptance is a Dom acceptance). (⊆) induction
+  over Dom's derivation: vertex-rule steps are loop steps; a Dom tangle acceptance without an X-vertex would be a loop
+  acceptance, excluded by NT-f; an X-straddling acceptance with acyclic new part N_X is replaced by vertex-rule steps for
+  N_X in reverse topological order of H_{t_X} on N_X (using (i), (ii) and G-S5-3). So L_Dom = L_loop for every top, and
+  Y_0 = Z_f.
+- G-S5-3 (REFEREE G4.2, REFEREE-2 G3). The trigger case in (ii): a new opponent vertex o ∈ N_X all of whose R-edges lie in
+  earlier parts cannot exist — at the pop of the last of those successors, in an earlier region whose top has priority
+  ≥ pr(τ_j) ≥ pr(o), o would have been attracted (76-86), so it would not be new. Hence every new opponent vertex has an
+  R-edge into the current region or N_X, and in the reverse topological order it is attracted at the pop of its last such
+  successor.
+- G-S5-4 (REFEREE G5.1, REFEREE-2 G4). P-KT when c1 = 0 (p Even): there is no rescue level c1−1. Read A^r_{−1} := Z^r and
+  A'' := X ∪ Z_f-attraction through no vertex (empty rule set). In (2) and (3) a priority-0 vertex that attracts into
+  Z_f ∪ A'' ⊆ Z^{r(x)} (FM) is not a candidate at round r(x) (dtl.cpp 714) — the contradiction comes from candidacy
+  instead of rescue.
+- G-S5-5 (REFEREE-2 G1; REFEREE wording note). In A_c "all its edges" means all its edges in G'; with whole-game edges an
+  opponent vertex with an edge into a solved region would never enter A_c and P-KT step (4) fails. Fixed in 18g.
+- G-S5-6 OPEN: (ACYC). G-S5-7: Lemmas 1.5a and 1.2 of DTL-proof.md were checked by the referees only for this use; sorted
+  indices (oink.cpp:35); O1 (index order follows priority) is an order-datum fact; positional determinacy and D = W_p(G')
+  (DTL-proof.md Lemma 1.4c) standard. Nothing Lean-checked.
