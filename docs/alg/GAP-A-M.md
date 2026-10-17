@@ -2960,10 +2960,16 @@ event of q at pair j < i, a RE-STEAL.
 - (STEAL-DEPTH_D): every event has depth ≤ D. Under it, Σ_q k_q ≤ Σ_{d ≤ D} Q^{d+1} ≤ 2·Q^{D+1}. So for constant D:
   (STEAL-DEPTH_D) ⇒ (STEAL-POLY) in the sum form of §23f. With (FIRED-R) this gives F_R ≤ 6·Q^{D+1}.
 - Gaps, named:
-  - G23g-1: PREFIX-MONO-X* is signed in a GLOBAL form (no relevant steal at any step ⇒ P(τ) ⊆ P′(τ) for all τ). CHARGE needs
-    it LOCALLY (no relevant steal before step σ ⇒ P(σ) ⊆ P′(σ)). The signed proof is an induction over steps, so the local
-    form should follow, but that is not checked against R10/R11.
-  - G23g-2: a change of the round input V in rounds ≥ 2 can also shrink P(τ). The tool prints such re-steals as "no cause".
+  - G23g-1, CLOSED (reading, unrefereed): the LOCAL form of PREFIX-MONO-X*. The signed proof (§22r, "by induction over τ in
+    decreasing order", three cases) uses (NS) only at the steps τ′ ≥ the current τ of the same round, given V ⊆ V′ for that
+    round. So "(NS*) at every step of round r above σ, and V_r ⊆ V′_r" ⇒ P(σ) ⊆ P′(σ). The cases are: τ not processed in
+    run 1; τ processed in both runs; τ processed in run 1 only. Each uses the hypothesis at τ alone, plus P(τ⁺) ⊆ P′(τ⁺) from
+    the induction.
+  - G23g-2, CLOSED (reading, unrefereed) by the §22r Corollary's round alignment: "if (NS) holds at every region step of
+    every round (rounds aligned with V_r ⊆ V′_r inductively)". Contrapositive: if V_r ⊄ V′_r, then some region step of an
+    earlier round has a relevant steal at that pair. That step is earlier in the step order, so it is a cause. The threshold
+    loop has no exclusions (tattr with consume = None, Gx = R), so it adds no case. On cross unions s11 (stable) the tool
+    prints "no cause" 0 times.
   - G23g-3: (STEAL-DEPTH_D) with constant D is DATA only. R35 (stealonce_viol_n76, stable order) has one re-steal, depth 1;
     its cause is the depth-0 steal of tangle 9 at (round 4, top 66) at pair 3.
 - Status against L32. A named statement, (STEAL-DEPTH_D), with a proof route (CHARGE plus counting) to the (STEAL-POLY) part of
