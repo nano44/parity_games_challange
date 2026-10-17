@@ -6,7 +6,10 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 P7 (§22r EXACT / PREFIX-MONO-X / new steals, pin 357224b): docs/referee-2/R2-P7.md. (a) SIGN, (b) SIGN, (c) SIGN WITH GAPS
 G-P7-c1/c2 (closed: F_R <= 3 N_R), (d) confirmed 17/17. (FALL) <= (NSTEAL), open, lossy (980 steal pairs vs 103 non-rises).
 Probe: R2-P7/dtl_probe7.patch (logging-only + R2_REV), an7.py (own closure). Rebuild: copy tools/oink/src, patch7.py, cmake.
-Next: comparison with docs/referee/R-P7.md once the Lead allows; then idle.
+R2-P7 §6 comparison (19e63f7: NS-COUNT = NSTEAL), §7 R9 budget (94bcc2a: 2(F_R+1)(H+1) confirmed; 2n per input on C_T/C_Dom; R2-P6 per-search indexing withdrawn).
+P8 (§22s EXACT*/PREFIX-MONO-X*, §22u chain, pin a907c46): docs/referee-2/R2-P8.md. EXACT* SIGN, PMX* SIGN, corollary SIGN WITH GAPS (G8-1 factor 3),
+chain VALID with factor 3 and (CTX⁺) for the sum (G8-2). Probe dtl_probe8.patch (+ "F t" fired log), an8.py. FIRED-R ratio 0.67|R| at small R.
+Next: comparison with R-P8 when the Lead allows.
 Earlier (predecessor):
 2026-10-17 ~13:05Z (REFEREE-2 on Opus 5.5 under D12; parking for handover at ~0.57M context, Lead 12:59Z).
 Packets done 2026-10-17. Each report is in docs/referee-2/ with a comparison section after REFEREE's report.
