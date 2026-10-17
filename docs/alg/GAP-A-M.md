@@ -2043,3 +2043,44 @@ DATA at e* (corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29; Oink / stable
 - Box 5's long phases (§21j table) had at most 12 first-difference contexts under its parent-context convention.
 Open: (CTX) and (DIRTY), both DATA only. (CTX) is the old "distinct contexts" core, which box 5 did not bound. What is
 new is that every absorption step at a fixed context is now paid for by a proved polynomial budget.
+
+22f. (DIRTY) sharpens to (FALL); the exact obstruction for (CTX) (12:06Z by date -u; dtl_rootmono.py "VISITS", RM_KSEQ=1)
+(FALL), DATA. Π_R compared over all pairs of CONSECUTIVE VISITS of a context R (any depth) within a phase, not only at e*
+(corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29, meet_viol_n17; Oink / stable):
+
+| class | Oink | stable |
+|---|---|---|
+| equal | 5,461 | 5,310 |
+| rises through RV | 1,543 | 1,495 |
+| rises through Ψ | 698 | 679 |
+| rises through Φ_top | 93 | 100 |
+| RV falls, all at dirty calls | 73 | 72 |
+| Ψ not monotone, or Φ_top rises | 0 | 0 |
+
+- Clean visits never descend, as PREFIX-MONO predicts.
+- Descents per context per phase: at most 2 (L-RED's f1_twodef_n48 / f1_twofall_n48), and 1 elsewhere, in 16 phases.
+- So the budget D_R of §22e can be replaced by F_R, the number of descents of Π_R along the phase:
+  S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·|C_T|.
+- GAP-A ⇐ (CTX) ∧ (FALL), where (FALL) says F_R is polynomial. The data maximum is 2.
+(CTX), the obstruction, made exact.
+- A depth-0 context R_{k+1} = G′ \ (pieces 1..k) is fixed exactly while positions 1..k are frozen. Since Π_R is a function
+  of T, the transitions at any one context are bounded over the whole phase. So the count of transitions is
+  ≤ (F + 1)(H + 1)·|C|, and |C| is the only open term.
+- A new context at position k+1 needs a change at a position ≤ k. With this alone, |C| can grow like (B + 1)^k: the
+  nested-counter core of boxes 4 and 5.
+- What would cut it: monotone removal prefixes, X_k(s) ⊆ X_k(s+1). That would give ≤ n contexts per position, so
+  |C| ≤ n². It is FALSE even on clean searches. The cause is the P piece.
+  - Instance: experiments/alg/instances/spp_final_n20.pg, Oink order, Even's phase.
+  - The root call is −1 in both searches, and e* is in its threshold loop at round 4, where RV rises.
+  - prevV is {0, 12} in s and {2} in s+1, so piece 1 removes {0, 12} in s and {2} in s+1: disjoint sets.
+  - In s+1 the vertices 0, 5, 8, 9, 11 leave in piece 3 or 5 instead of 1 or 2. Depth-0 results: s = (−1, −1, 0),
+    s+1 = (−1, −1, −1, −1, 1, −1, 0).
+- Reason: a P piece removes Dom(prevV) = Z_f (YZ), the regions of the final pruning round, i.e. the LEVEL SET of maximal
+  RV. RV rising pointwise moves that level set arbitrarily (a longer pruning ends on different vertices). So the root's
+  rise reshapes every later context.
+- First-difference positions (RM_KSEQ=1): long phases are either all-root (spp_chain_up_n43: 41 transitions at
+  position 1; h4_def11: 12) or blocks of deeper positions between root transitions. For example spp22_oink_n40:
+  4 4 4 4 4 1 4 1 6 6 4 6 6 5 5 1 6 1 1 4 1.
+- A bound on (CTX) therefore needs a reason why a P piece's level-set jump cannot happen at many positions in turn.
+  Candidate to test next: does a context at position k ≥ 2 recur after a root change (the same set again)? If contexts
+  never recur, distinct contexts and transitions coincide in count.
