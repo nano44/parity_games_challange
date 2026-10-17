@@ -23,7 +23,7 @@ class RM(FC.CK):
     def best_vertices(s, V, R, p):
         if s.root is not None: return D.DTL.best_vertices(s, V, R, p)
         # dtl_pyref.DTL.best_vertices verbatim, recording the round of each drop and the log span of each round
-        rv = {}; spans = []; psi = []; pos = []; s.root = dict(rv=rv, spans=spans, start=len(s.log), psi=psi, pos=pos)
+        rv = {}; spans = []; psi = []; pos = []; rk = []; s.root = dict(rv=rv, spans=spans, start=len(s.log), psi=psi, pos=pos, rk=rk)
         V.clear(); V.update(v for v in R if s.pr[v] % 2 == p)
         allV = set(V)
         def fin(res, Vlast):
@@ -37,13 +37,23 @@ class RM(FC.CK):
             prevV = set(V)
             tli = [t for t in range(len(s.tv)) if I.alive(s, t, p)]
             if I.actual_union(s, p, V, R, tli)[0] != I.ideal_union(s, p, V, R, tli): s.root["deficit"] = True
-            Z = set(); CurR = set(R); regs = []
+            Z = set(); CurR = set(R); regs = []; rtops = []
+            CurR = set(R)
             for top in range(s.n - 1, -1, -1):
                 if top not in V or top in Z: continue
                 CurZ = {top}; s.Q = [top]
                 s.tattr(p, CurZ, CurR, CurR, s.pr[top], CurR)
-                Z |= CurZ; regs.append(frozenset(CurZ))
+                if I.lfp(s, p, Z | {top}, R, s.pr[top], tli) != Z | CurZ: s.root["stepdef"] = True
+                Z |= CurZ; regs.append(frozenset(CurZ)); rtops.append(top)
             a1 = len(s.log); psi.append(frozenset(Z)); pos.append(sum(i * len(c) for i, c in enumerate(regs)))
+            rk.append({v: i for i, c in enumerate(regs) for v in c})
+            s.root.setdefault("rtop", []).append({v: tp for tp, c in zip(rtops, regs) for v in c})
+            # level-wise deficit: the code's union after the tops of priority >= q vs the ideal Û_{>=q} (dtl_ideal.lfp)
+            Uh = set()
+            for q in sorted({s.pr[v] for v in V}, reverse=True):
+                Uh = I.lfp(s, p, Uh | {v for v in V if s.pr[v] == q}, R, q, tli)
+                Aq = set().union(*[c for tp, c in zip(rtops, regs) if s.pr[tp] >= q])
+                if Aq != Uh: s.root["leveldef"] = True
             cand = [v for v in sorted(V, reverse=True) if not s.attracts(p, v, Z, R)]
             if not cand: spans.append((rnd, a0, a1, len(s.log))); return fin(1, V)
             for t in [0] + [q for q in s.prios if q > 0 and q <= s.maxpr]:
@@ -73,10 +83,12 @@ def where(root, k_full):
 
 
 if __name__ == "__main__":
+    phrows = []
     sys.setrecursionlimit(100000); st = {"dropped": 0, "kept: differs": 0, "kept: identical but extracts": 0}; shown = 0
     for f in sys.argv[1:]:
         g = pg.read(f); d0 = FD.P.X.build(g); d = RM(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.run()
         for ph in FD.phase_rows(d):
+            nd = nr = 0
             for r in ph:
                 full = r["log"]; red = FC.reduce_log(full, st)
                 # map root spans onto the reduced log: the root call precedes every sptl pass, so its positions shift only
@@ -102,6 +114,10 @@ if __name__ == "__main__":
                     dvm = a["dvstar"] != b["dvstar"]; dfc = a["root"].get("deficit", False) or b["root"].get("deficit", False)
                     rvm = ra != rb
                     if not rvm and not dfc:
+                        lv = a["root"].get("leveldef") or b["root"].get("leveldef")
+                        k5 = "LEVEL-DEF in a deficit-free same-RV transition: " + ("yes" if lv else "no"); tab[k5] = tab.get(k5, 0) + 1
+                        later = any(v in rb_ and v in ra_ and rb_[v] > ra_[v] for ra_, rb_ in zip(a["root"]["rk"], b["root"]["rk"]) for v in ra_)
+                        k6 = "NO-LATER (deficit-free, same RV): " + ("FAILS" if later else "holds"); tab[k6] = tab.get(k6, 0) + 1
                         pa, pb = a["root"]["psi"], b["root"]["psi"]
                         ok = len(pa) == len(pb) and all(x <= y for x, y in zip(pa, pb))
                         strict = ok and any(x != y for x, y in zip(pa, pb))
@@ -113,6 +129,29 @@ if __name__ == "__main__":
                             qa, qb = a["root"]["pos"], b["root"]["pos"]
                             if len(qa) == len(qb): k4 += " | PHIpos " + ("falls" if sum(qb) < sum(qa) else "equal" if sum(qb) == sum(qa) else "rises")
                         tab[k4] = tab.get(k4, 0) + 1
+                    sda = a["root"].get("stepdef", False); sdb = b["root"].get("stepdef", False)
+                    k7 = f"STEP-DEF (root, either side): {'yes' if sda or sdb else 'no'}; final deficit: {'yes' if dfc else 'no'}"; tab[k7] = tab.get(k7, 0) + 1
+                    if not rvm and not (sda or sdb):
+                        later = any(v in rb_ and v in ra_ and rb_[v] > ra_[v] for ra_, rb_ in zip(a["root"]["rk"], b["root"]["rk"]) for v in ra_)
+                        k8 = "NO-LATER (step-deficit-free, same RV): " + ("FAILS" if later else "holds"); tab[k8] = tab.get(k8, 0) + 1
+                    if not sdb:                                    # CLEAN: the later root call has no step deficit
+                        bad = []
+                        if fall: bad.append("RV falls")
+                        if not rvm:
+                            pa, pb = a["root"]["psi"], b["root"]["psi"]
+                            okp = len(pa) == len(pb) and all(x <= y for x, y in zip(pa, pb))
+                            if not okp: bad.append("PSI not monotone")
+                            elif pa == pb:
+                                fa = sum(s_.n - t_ for m in a["root"]["rtop"] for t_ in m.values() for s_ in [d])
+                                fb = sum(d.n - t_ for m in b["root"]["rtop"] for t_ in m.values())
+                                if not fb < fa: bad.append("PHItop does not fall")
+                            lt = any(v in mb and mb[v] < ma[v] for ma, mb in zip(a["root"]["rtop"], b["root"]["rtop"]) for v in ma)
+                            if lt: bad.append("a vertex moves to a lower-index top")
+                        k9 = "CLEAN root transition: " + ("ALL HOLD" if not bad else "FAILS " + "+".join(bad)); tab[k9] = tab.get(k9, 0) + 1
+                    else:
+                        tab["DIRTY root transition (later root call has a step deficit)"] = tab.get("DIRTY root transition (later root call has a step deficit)", 0) + 1
+                        nd += 1
+                    nr += 1
                     k2 = f"ROOT-SPLIT: RV {'falls' if fall else 'moves' if rvm else 'same'}, DV* {'moves' if dvm else 'same'}, deficit {'yes' if dfc else 'no'}"
                     tab[k2] = tab.get(k2, 0) + 1
                 tab[key] = tab.get(key, 0) + 1
@@ -120,8 +159,13 @@ if __name__ == "__main__":
                     shown += 1; v = max(fall)
                     print("RMONO FAILS", os.path.relpath(f), f"p={a['p']}", cls, "vertex", d.idx[v], "pr", d.pr[v],
                           "round", ra[v], "->", rb[v], "| falls:", len(fall), flush=True)
+            if len(ph) > 1 and nd: phrows.append((os.path.relpath(f), nd, nr, len(ph) - 1, len(ph[0]["G"]) if "G" in ph[0] else d.n))
+    if phrows:
+        phrows.sort(key=lambda r: -r[1])
+        print("phases with dirty root transitions (file, dirty, root transitions, transitions, |G'|):", phrows[:8])
+        print("phases with a dirty root transition:", len(phrows), "max dirty per phase:", max(r[1] for r in phrows), "max dirty/|G'|:", round(max(r[1] / r[4] for r in phrows), 3))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})

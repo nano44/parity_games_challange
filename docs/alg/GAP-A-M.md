@@ -1913,3 +1913,68 @@ unconsumed rest is re-absorbed by a lower surviving top.
 - The other part of a phase is the transitions whose first difference lies after the root call: Oink 194, stable 185,
   i.e. 18% of all transitions. These are box target 3, the same frame at the first differing deeper call, which is the
   per-context problem (§21j).
+
+22c. PREFIX-MONO and the root-call bound (reading, L-ALG; DATA first, below; 11:32Z by date -u)
+Setting: one pruning round of best_vertices in context R, with input V and tangle set T.
+- Tops are processed in decreasing index order. Index order follows priority (O1), so the priorities of processed tops
+  never increase.
+- A top τ ∈ V is PROCESSED iff τ ∉ P(τ⁺), where P(τ⁺) is the union of the regions of the processed tops of higher index.
+  Then P(τ) := P(τ⁺) ∪ region(τ); otherwise P(τ) := P(τ⁺).
+- Cl_q(B) is the least superset of B closed under the threshold-q rules in R (dtl_ideal.lfp): vertex rules for
+  priorities ≤ q, and the tangle rule for an alive tangle with every vertex of priority ≤ q and every escape in the set or
+  outside R.
+- The round is STEP-IDEAL if P(τ) = Cl_{pr τ}(P(τ⁺) ∪ {τ}) for every processed τ. Otherwise it has a STEP DEFICIT.
+- DATA: a step deficit occurs whenever the final union has a deficit (U ≠ Û, §3). The converse fails rarely (5 / 16
+  root transitions, Oink / stable, have a step deficit but no final deficit).
+(S0) For every processed τ, P(τ) ⊆ Cl_{pr τ}(P(τ⁺) ∪ {τ}). This is Lemma 2.2's induction restricted to one region: every
+  derivation of the consuming attractor is a threshold-q rule whose premises lie in P(τ⁺) ∪ region(τ), and the consumed
+  set lies outside Gx = CurR.
+(S1) Cl_q is monotone in B and in T (1.2b). A set closed under the threshold-q′ rules is closed under the threshold-q
+  rules for q ≤ q′.
+Lemma PREFIX-MONO (PROVED, reading). Let V ⊆ V′ and T ⊆ T′, and let the round of the LATER run (V′, T′) be step-ideal.
+Then P(τ) ⊆ P′(τ) for every index τ.
+Proof, by induction over τ in decreasing order (P = P′ = ∅ above every top).
+- If τ is not processed in run 1, then P(τ) = P(τ⁺) ⊆ P′(τ⁺) ⊆ P′(τ).
+- If τ is processed in run 1 (τ ∈ V ⊆ V′, q = pr τ), then P(τ) ⊆ Cl_q(P(τ⁺) ∪ {τ}) by (S0).
+  - If τ is processed in run 2: P′(τ) = Cl′_q(P′(τ⁺) ∪ {τ}) ⊇ Cl_q(P(τ⁺) ∪ {τ}) by (S1).
+  - If not, τ ∈ P′(τ⁺) ≠ ∅, and P′(τ⁺) = Cl′_{q′}(…) for the last processed top τ′ > τ of run 2, with q′ = pr τ′ ≥ q.
+    So P′(τ⁺) is threshold-q closed and contains P(τ⁺) ∪ {τ}. Hence P′(τ) = P′(τ⁺) ⊇ Cl′_q(P(τ⁺) ∪ {τ}) ⊇ P(τ). □
+Corollaries, assuming the later run's round is step-ideal:
+- (C1) U(V, T) ⊆ U(V′, T′).
+- (C2) The rescue sets satisfy W_t ⊆ W′_t. The threshold loop has Gx = R, consume = None and all of Z pushed, so it
+  computes Cl_t(U) (DTL-proof 1.2).
+- (C3) Survivors: V_next ⊆ V′_next (the survivor formula S of §1 is monotone in U and W_t).
+- (C4) NO-LATER: every v ∈ U(V, T) lies, in the later run, in a region whose top has index ≥ that of its region top in the
+  earlier run (v ∈ P(τ) ⊆ P′(τ)).
+- Over all rounds: if every round of the later run is step-ideal, then V_i ⊆ V′_i for all i. So the root pruning rounds
+  never fall (RMONO), and a stable V* never shrinks. This strengthens Theorem M-cond (§3) to the prefix sets.
+POS-FALL (PROVED, reading, from PREFIX-MONO and the First-Difference Lemma, §21d, signed). Let s → s+1 have the same RV
+and the same Ψ (round unions and rescue sets), with s+1's root call step-ideal in every round, and let e* lie in the root
+call.
+- e* cannot be in a threshold loop: there its output would be strictly larger, contradicting equal Ψ.
+- So e* is the region of some top τ_j in round r. It has the same input in both searches (P(τ_j⁺) is equal, since the
+  earlier log entries are identical) and a strictly larger output.
+- So some v ∈ region′(τ_j) \ region(τ_j) exists. v ∈ U_r(s) = U_r(s+1), and v ∉ P(τ_j), so in s its region top has a
+  lower index than τ_j.
+- With (C4) for every other vertex, Φ_top := Σ_r Σ_{v ∈ U_r} (n − index of v's region top) falls strictly. □
+Theorem ROOT-BOUND (PROVED, reading). Fix a phase (G′ and p fixed). Call a transition s → s+1 CLEAN if the root call of
+s+1 is step-ideal in every round, and DIRTY otherwise. Let Π(s) := (RV(s), Ψ(s), Φ_top(s)), ordered lexicographically by
+RV pointwise ↑, then Ψ componentwise ⊆ ↑, then Φ_top ↓.
+- A clean transition whose first difference e* lies in the root call raises Π strictly: either RV rises (RMONO, ≠), or
+  RV is equal and Ψ grows strictly ((C1)-(C2), ≠ since FDL makes the output at e* strictly larger), or Ψ is equal and
+  Φ_top falls (POS-FALL).
+- A transition with e* after the root call leaves the root call, and Π, unchanged.
+- Chain heights: RV has at most n(n+1) strict rises (values 1..n+1 or INF). Ψ has at most (n+1)(d+2) components, each
+  ⊆ G′, so at most (n+1)(d+2)n strict rises. Φ_top ≤ (n+1)n² gives at most that many falls.
+- Hence, per phase: #(transitions with e* in the root call) ≤ (#DIRTY + 1)·H + #DIRTY, where
+  H := (n(n+1) + 1)·((n+1)(d+2)n + 1)·((n+1)n² + 1).
+So GAP-A at the root call reduces to ONE statement: the number of DIRTY transitions per phase (the later root call has
+a step deficit, i.e. Lemma E's straddle at some region step) is polynomial.
+DATA (dtl_rootmono.py; corpus 238 files plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29; Oink / stable):
+- Every prediction for clean root transitions holds (RMONO, Ψ monotone when RV is equal, Φ_top falls when Ψ is equal, no
+  vertex moves to a lower-index top): 689 / 689 and 673 / 673.
+- DIRTY root transitions: 179 / 174. Phases with one: 36 / 39.
+- Max dirty per phase: 12 / 10, at most 0.43 / 0.32 of |G′|. The maxima are the h4_defK families, which were built in box
+  4 to maximise deficits. There dirty = K + 1 (h4_def9/10/11_oink_n28: 10, 11, 12) and every transition of the long phase
+  is dirty.
+- Transitions with e* after the root call: 194 / 185 (box target 3).
