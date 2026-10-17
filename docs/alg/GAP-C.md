@@ -545,3 +545,25 @@ O_M never meets Z_f (215 + 224 + 1,240 + 828). Nearest Case 2 miss (attack seed 
 c6_replay3_n48.pg, Odd's search, a P piece with |R| = |D ∩ R| = 43, Z_f = {10, 38}: Q(R') = {21} only (original ids;
 21 has priority 17, is Even-owned with a self-loop and an edge to 1). An opponent vertex on a p-won cycle of opponent
 vertices can never be attracted first, so such cycles keep Q nonempty; a violation needs every such cycle to meet Z_f.
+
+### 18g. Candidate KT (thresholded K; the Lead's lead 06:12Z) — DATA, not proved (06:32Z by date -u)
+Definition. For a depth-0 context R (X = G' \ R) and c of p's parity: S_c := D ∩ R ∩ {priority ≤ c}; A_c := the plain
+p-attractor of X inside S_c (a p-vertex enters with an edge into X ∪ A_c; an opponent vertex only if ALL its edges lie in
+X ∪ A_c, so an edge to a D-vertex of priority > c blocks it); Q_c := S_c \ A_c; F_c := the game on Q_c in which the
+opponent's edges leaving Q_c are deleted (forgiven, as DTL's regions forgive) and a vertex without successor loses for p.
+KT(R) :⇔ some c has W_p(F_c) ≠ ∅. Differences from K: attraction to X only through priorities ≤ c (DTL's threshold step
+and regions never use a path through a higher vertex, the pk_viol_n20 mechanism), and the core must be won by cycles.
+PROVED: KT(G') holds when D ≠ ∅ (a p-dominion of H inside D with the least maximum has a maximum c1 of p's parity, lies in
+S_{c1}, keeps σ inside and the opponent inside, and X = ∅); KT(R_end) fails (F_c on R_end has no p-won cycle).
+DATA (dtl_step5stats.py "KTHR"; searches with D ≠ ∅ and no dominion; corpus = 238 files + kfirst_viol_n13 + pk_viol_n20):
+| | corpus Oink | corpus stable | unions Oink s1 | cross Oink s11 |
+|---|---|---|---|---|
+| KT broken by a P piece | 0 (kept 1,557) | 0 (kept 1,493) | 0 (kept 2,064) | 0 (kept 455) |
+| first KT-break barren with nothing learned inside D before | 0 / 513 | 0 / 494 | 0 / 738 | 0 / 116 |
+| barren breaks after D-learning (S / T) | 1 / 3 | 1 / 3 | 7 / 0 | 0 / 4 |
+On pk_viol_n20 (both orders) KT holds after the P piece at c = 12 (S_12 ∩ R' = {3, 5, 6}, A_12 = ∅, cycle 6 → 3 → 5 with
+maximum 12), the T piece keeps it, the stable piece learns {3, 5, 6}.
+Proof route for "P keeps KT" (SKETCH): take the core U at a level c where U holds a vertex of priority c; the argument of
+P-K1 inside S_c (attraction only through priorities ≤ c) gives a contradiction at every p-owned vertex of priority c in U;
+the open case is an opponent-owned priority-c vertex of U whose exit goes to a D-vertex of priority > c (forgiven by F_c,
+not by GAP).
