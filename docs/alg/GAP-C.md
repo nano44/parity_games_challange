@@ -801,3 +801,18 @@ for every such acceptance, Y_0 = Z_f. So Step 5 rests on (ACYC): "the new part o
 Dom(prevV) accepts is acyclic in the tangle graph". DATA: every observed firing has 1-2 new opponent vertices (acyclic).
 A (ACYC) failure needs a p-won cycle C of t_X entirely in R and new; if its maximum m_C is in V_f it is a final candidate,
 so C ⊄ Z_f and (YZ) fails; whether P-KT survives such a piece is open. L-RED target.
+
+### 18l. The S step as (S-LOW): the lowest region of the first KT-breaking stable piece learns (DATA; 09:16Z by date -u)
+(S-LOW) At a depth-0 stable piece that breaks KT, with nothing learned inside D earlier in the search, the LOWEST top that
+gets a region in the piece's FIRST sptl pass learns a new tangle (or finds a dominion). DATA (dtl_step5stats.py
+"S-LOW"): 403/403 corpus Oink (incl. kfirst_viol_n13, pk_viol_n20), 384/384 corpus stable, 467/467 unions Oink s1,
+61/61 cross unions Oink s11. Also (S-W*): at every such piece a p-dominion of G[R] inside D exists (W*, least maximum),
+V* and the removed set meet it, and the learned tangle lies inside it in 394/403, 374/384, 467/467, 61/61.
+Reduction (PROVED): K6 (DTL-proof.md §2.3: for any stable V* and any X, the lowest region of a pass is closed unless (α),
+and a closed one yields a new tangle, a dominion or a (β') duplicate whose escapes all lie in X) turns (S-LOW) into
+"neither (α) nor (β') occurs at the lowest region of the first KT-breaking stable piece". With KT0, P-KT and the T split
+(18i), Lemma K (search(p) returns true when W_p(G') ≠ ∅) would follow from: (ACYC); (S-LOW) at every depth; (CORE-PASS-
+closed) and the same frame inside recursions. Caveat: a KT core can contain an orphan (a stored tangle in R with every
+escape in X: not plainly attracted to X, p-won with exits forgiven), so KT itself does not exclude (β'); a tangle-aware
+attractor in KT would, and the NT-f trick (take the tangle's top-priority vertex pruned first) seems to carry P-KT over to
+it for tangles without a vertex in old X — SKETCH, not written.

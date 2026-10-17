@@ -13,7 +13,7 @@ D = X.D
 class S5(D.DTL):
     """dtl_pyref.DTL with search_rec copied verbatim and instrumented (no change to the computation)."""
     def search(s, p):
-        s.Wp = O.winning(s, set(s.G), p) if s.G else set(); s.pieces = []; s.newt = []; s.G0 = set(s.G); s.cur_new = []; s.cur_top = []
+        s.Wp = O.winning(s, set(s.G), p) if s.G else set(); s.pieces = []; s.newt = []; s.G0 = set(s.G); s.cur_new = []; s.cur_top = []; s.cur_passes = []
         d0 = s.dominions; r = D.DTL.search(s, p)
         s.trace.append(dict(p=p, G=s.G0, Wp=s.Wp, pieces=s.pieces, newt=s.newt, dom=s.dominions > d0))
         return r
@@ -25,6 +25,21 @@ class S5(D.DTL):
             s.cur_top.append((top, frozenset(v for v, _ in s.tv[t])))
         return r
 
+    def sptl(s, V, R, p):
+        """dtl_pyref.sptl verbatim, recording the tops that get a region in this pass (in processing order)."""
+        tops = []; changes = False
+        for top in range(s.n - 1, -1, -1):
+            if top not in V or top not in R: continue
+            tops.append(top)
+            Z = {top}; s.str[top] = -1; s.Q = [top]
+            s.tattr(p, Z, R, R, s.pr[top], R)
+            closed = (s.str[top] != -1) if s.ow[top] == p else not any(w in R for w in s.outs[top])
+            if closed and top not in s.W:
+                s.W.add(top)
+                if s.extractTangles(top, Z): changes = True
+        s.cur_passes.append(tops)
+        return changes
+
     def search_rec(s, R, p, depth):
         X_ = set()
         while True:
@@ -33,10 +48,10 @@ class S5(D.DTL):
             if res == 0:
                 s.pieces.append(dict(kind="E", depth=depth, nt=s.cur_nt, R=R0, X=X0, rem=frozenset(), V=frozenset())); return
             if res == 1:
-                s.cur_new = []; s.cur_top = []
+                s.cur_new = []; s.cur_top = []; s.cur_passes = []; dom0 = s.dominions
                 while s.sptl(V, set(R), p): pass
                 s.dom(V, R, X_, p)
-                s.pieces.append(dict(kind="S", depth=depth, nt=s.cur_nt, R=R0, X=X0, rem=R0 - frozenset(R), V=frozenset(V), new=list(s.cur_new), tops=list(s.cur_top)))
+                s.pieces.append(dict(kind="S", depth=depth, nt=s.cur_nt, R=R0, X=X0, rem=R0 - frozenset(R), V=frozenset(V), new=list(s.cur_new), tops=list(s.cur_top), passes=list(s.cur_passes), domf=s.dominions > dom0))
                 continue
             t = 0; Z = set(); s.Q = []
             for v in range(s.n):
