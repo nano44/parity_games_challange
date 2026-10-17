@@ -126,6 +126,7 @@ again t's top vertex is a pruned distraction. So every orphan needs: t's top-pri
 piece where t's escapes are removed, those removals use thresholds below pr(m) (or the −1 moves of (β-b)), and m stays
 in R. The OPEN step (GAP-β) is to show that m cannot then be a distraction: m's tangle t is a p-winning cycle structure
 whose only exits are those escapes, so while they are in R, m's region or the threshold sweep should rescue m.
-What blocks the obvious argument: in the threshold sweep (best_vertices, 700-760) a tangle is attracted only at a level ≥
+What blocks the obvious argument: in the threshold sweep (best_vertices, dtl.cpp 722-740; Q is refilled with all of Z at every
+level, 724, so every tangle with escapes in Z is re-checked at each level) a tangle is attracted only at a level ≥
 its maximal priority q = pr(m), so t can never help rescue m itself (rescue needs a level < pr(m)); m survives only
 through a lower good path, which t's own vertices do not provide.
