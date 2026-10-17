@@ -3,6 +3,9 @@ DTL runs. For consecutive searches s, s+1 of a phase, with every tattr call and 
  (ii) the first tattr whose output differs has the same caller, depth, input Z and threshold, and a strictly larger output;
  (iv) search s+1 creates no tangle before that call;
  (iii) some tangle attracted there was created by s at or after the position of that call in s's log.
+The logs are compared with REPEATED sptl passes deleted (GAP-A-M §21d as restated per referee, R2-PROVED2 §13.1, box 6):
+within one S piece, a pass whose tattr calls equal the previous kept pass's (caller, depth, input, output, threshold) and
+that extracts nothing is dropped. FDL_POSITIONAL=1 keeps the old positional alignment.
 DTL_ORDER=oink | stable. Usage: dtl_fdlcheck.py G.pg ...   (exit 1 on any violation)"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
@@ -11,18 +14,43 @@ D = FD.D
 
 class CK(FD.FD):
     def tattr(s, p, Z, R, Gx, maxpr, consume):
-        FD.FD.tattr(s, p, Z, R, Gx, maxpr, consume)
-        s.log[-1] = s.log[-1] + (len(s.tv),)                  # tangles existing when this call ended
+        who = sys._getframe(1).f_code.co_name                 # the real caller (FD.tattr would see this frame instead)
+        if who == "best_vertices": who = "bv-thr" if consume is None else "bv-reg"
+        zin = frozenset(Z); s.used = set()
+        D.DTL.tattr(s, p, Z, R, Gx, maxpr, consume)
+        s.log.append((who, s.dep, zin, frozenset(Z), maxpr, frozenset(s.used), len(s.tv)))   # + tangles existing at its end
     def extractTangles(s, top, R):
         k = len(s.tv); r = D.DTL.extractTangles(s, top, R)
         for t in range(k, len(s.tv)): s.log.append(("extract", t))
         return r
+    def sptl(s, V, R, p):
+        s.log.append(("pass",)); return D.DTL.sptl(s, V, R, p)
+
+def reduce_log(log, stat):
+    """Drop repeated sptl passes (a pass identical to the previous kept pass of the same S piece, with no extraction)."""
+    out, i, prev = [], 0, None
+    while i < len(log):
+        e = log[i]
+        if e[0] != "pass":
+            if e[0] not in ("sptl", "extract"): prev = None      # anything else ends the S piece's pass sequence
+            out.append(e); i += 1; continue
+        j = i + 1
+        while j < len(log) and log[j][0] in ("sptl", "extract"): j += 1
+        blk = log[i + 1:j]; key = [x[:5] for x in blk]
+        if prev is not None and key == prev and not any(x[0] == "extract" for x in blk): stat["dropped"] += 1
+        else:
+            if prev is not None: stat["kept: differs" if key != prev else "kept: identical but extracts"] += 1
+            out.extend(blk); prev = key
+        i = j
+    return out
 
 if __name__ == "__main__":
-    sys.setrecursionlimit(100000); n = bad = 0
+    sys.setrecursionlimit(100000); n = bad = 0; stat = {"dropped": 0, "kept: differs": 0, "kept: identical but extracts": 0}
+    red = (lambda L: [e for e in L if e[0] != "pass"]) if os.environ.get("FDL_POSITIONAL") else (lambda L: reduce_log(L, stat))
     for f in sys.argv[1:]:
         g = pg.read(f); d0 = FD.P.X.build(g); d = CK(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.run()
         for ph in FD.phase_rows(d):
+            for r in ph: r["log"] = red(r["log"])
             for a, b in zip(ph, ph[1:]):
                 la = [e for e in a["log"] if e[0] != "extract"]; lb = [e for e in b["log"] if e[0] != "extract"]
                 k = 0
@@ -46,4 +74,5 @@ if __name__ == "__main__":
                 ok3 = bool(set(y[5]) & later_a)
                 if not (ok2 and ok3 and ok4):
                     bad += 1; print("VIOLATION", os.path.relpath(f), f"p={a['p']}", {"ii": ok2, "iii": ok3, "iv": ok4}, flush=True)
+    print("repeated sptl passes:", stat)
     print(f"First-Difference Lemma check: {n} transitions, violations {bad}"); sys.exit(1 if bad else 0)
