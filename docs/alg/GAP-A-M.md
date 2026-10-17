@@ -1760,3 +1760,49 @@ DV (21f): the same rounds with Oink's re-check order; DV* removes the GAP by con
   renewable reset appears to be one vertex per re-learned vertex, which is what (SPP) would need. The attack direction
   for L-RED stays open: a blocker that is shared across chain vertices AND across epochs, kept open by the pruning
   (best_vertices distractions), not by the attractors.
+
+### 21j. Option (a): the ideal distance at the first-difference context splits every phase into three step types (00:46Z by date -u)
+experiments/alg/dtl_dvctx.py: for each transition s → s+1, the context R of the first differing best_vertices call (for a
+SHRINK/GROW, the parent context, G' at depth 0) is the same in both searches; DV*_R = DV* on the subgame R (edges and
+escapes outside R ignored, tangles inside R only, as best_vertices treats its context). DV*_R is monotone in T at fixed R
+(Lemma DV*-MONO applied to the subgame R; PROVED). C5, Oink order, 990 transitions:
+| first difference | DV*_R moves (LRN) | DV*_R still (DEF / absorption) |
+|---|---|---|
+| RES at a depth-0 piece | 572 | 138 |
+| RES deeper | 7 | 0 |
+| SHRINK at depth 0 (absorption) | 6 | 100 |
+| GROW / SHRINK deeper (absorption into a recursion) | 4 | 163 |
+Reading. Every transition is one of: (LRN) the actual result at a context changes and so does the ideal distance there,
+at most n(n+1) times per DISTINCT context (PROVED); (DEF) the actual result changes with the ideal fixed (the (H4)
+deficits of §13-§18; 138 of 990 here, up to 11 at one context in §13g); (ABS) the removal before a piece grows
+(absorption; 263 of 990). So
+  S − 1 ≤ n(n + 1)·(distinct first-difference contexts) + #DEF + #ABS,
+and (SPP) or any polynomial bound needs polynomial bounds on the three right-hand terms. The first is exactly §19(b)'s
+"distinct contexts" core (now with a PROVED per-context LRN budget for A_DTL itself, not only for C6), the second is (H4),
+the third is the absorption chains of §21b/§21e. This is the (H1)-(H4) map of §12 restated for one phase with the new
+global tools; no term is bounded yet.
+Per long phase (dtl_dvctx.py DVC_V=1, Oink order): distinct first-difference contexts / LRN (max per context) / DEF / ABS:
+| instance | S, |G'| | contexts | LRN (max/ctx) | DEF | ABS |
+|---|---|---|---|---|---|
+| spp_final_n20 | 19, 20 | 3 | 4 (2) | 0 | 14 |
+| spp_final_n30 | 19, 30 | 3 | 3 (1) | 0 | 15 |
+| spp_final_n40 (Odd) | 19, 40 | 12 | 16 (4) | 0 | 2 |
+| spp_final_n60 | 14, 60 | 3 | 4 (2) | 0 | 9 |
+| red spp19_oink_n30 / spp19_stable_n30 | 19, 30 | 3 / 5 | 6 (3) / 7 (3) | 0 | 12 / 11 |
+| red replay4_n32 | 11, 32 | 6 | 7 (2) | 0 | 3 |
+| spp_chain_up_n43 | 42, 43 | 1 | 0 | 0 | 41 |
+So the longest phases have NO deficit step: they are absorption chains (A-type) or LRN runs over many contexts (B-type,
+spp_final_n40). The deficit (DEF) steps of the corpus (138) sit in the h4_* / lex_* / cm_* instances, whose phases are
+short (≤ 11). For (SPP) the two terms that the climbs push are #ABS (≤ |G'| − 1 so far) and n(n+1)·contexts (contexts ≤ 12).
+Follow-up (00:55Z by date -u; dtl_phidv.py, dtl_dvctx.py DVC_PHI=1; C5, Oink order, 990 transitions):
+- (PHI-DV) "PHI0 rises only when the root DV* moves": DEAD, 69 counterexamples (stable order 60); first:
+  instances/climbs_1016/nest_nest_s43.pg, Odd's searches 0 → 1, PHI0 122 → 124 with DV* unchanged.
+- (ABS-mono), DATA: PHI0 (the depth-0 removal-index sum, range ≤ n²) NEVER rises at a transition whose first piece-level
+  difference is not a RES at a depth-0 piece: 0 rises in 280 such transitions (depth-0 SHRINK 106: all fall; deeper GROW
+  145: 107 fall, 38 same; deeper SHRINK 22 and deeper RES 7: same). It rises at 184 of 710 depth-0 RES transitions: 139
+  LRN (the ideal distance at that context moves) and 45 DEF.
+- What (ABS-mono) would give (reading): between two depth-0 RES transitions PHI0 does not rise and it falls at every depth-0
+  absorption, so S − 1 ≤ (#RES_d0 + 1)·(n² + 1) + #(transitions with PHI0 unchanged, all deeper), with #RES_d0 ≤ #LRN + #DEF
+  and #LRN ≤ n(n + 1)·(distinct contexts) (PROVED). The deeper transitions would need the same argument one level down (a
+  PHI at the recursion's context), which multiplies over the depth: the nested-counter core again, now with explicit
+  per-level polynomial budgets for everything except DEF steps and context counts.
