@@ -1737,3 +1737,20 @@ transitions (0 falls, as proved); on C5 it moves in 465 of 990 transitions (Oink
 exactly the transitions where the author's DV moves (21f: 990 − 525, 957 − 493). So DV* bounds a minority of the searches; the rest (the
 absorption and later-piece changes of 21d/21g) leave DV* (and DV) unchanged. Relation to the author's
 DV (21f): the same rounds with Oink's re-check order; DV* removes the GAP by construction.
+
+### 21i. Exhaustive small games, and why resets are expensive (designer reading) (00:37Z by date -u)
+- experiments/alg/dtl_sppexh.py (harness/exhaustive.py: every game with n vertices, owners {0,1}, priorities 0..3, every
+  non-empty successor set), both order data: n = 1 (8 games), n = 2 (576), n = 3 (175,616): 0 violations of (SPP-sharp).
+- Reading (L-ALG, hand designs around dtl_chainfam, not a proof). For a phase to exceed |G'|, some vertex x must be
+  learned in two tangles of different vertex sets after a reset, at less than one fresh vertex per extra search. Three
+  facts from the pseudocode make that expensive. (1) Every out-edge of an opponent vertex x leads to an escape of every
+  tangle containing x that does not contain its target, so a partner u on a new cycle through x is an escape of x's old
+  tangle. (2) Old tangles stay stored and are re-absorbed in ONE search as soon as their open escapes close (the −1
+  attractor chains through all stored tangles), so a reset that re-opens a chain is undone at once unless something keeps
+  an escape of each old tangle open. (3) sptl consumes regions top-down, so a partner shared by several chain vertices goes
+  to the highest one, whose region is not closed; the bottom vertex then finds only its old SCC (a duplicate). In every
+  variant tried (one shared Even partner w with edges to all x_j; w with an edge to x_1 only; an Odd pool), the second
+  epoch costs one search, or the chain stalls, or each re-learned x_j needs a private blocker vertex. So the cost of a
+  renewable reset appears to be one vertex per re-learned vertex, which is what (SPP) would need. The attack direction
+  for L-RED stays open: a blocker that is shared across chain vertices AND across epochs, kept open by the pruning
+  (best_vertices distractions), not by the attractors.
