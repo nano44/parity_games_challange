@@ -669,3 +669,32 @@ call. Obstacle for the P step at depth ≥ 1: Lemma P-KT used a p-dominion W1 of
 at depth 0 D ∩ R itself is a p-dominion of H (R is a p-trap of G'), at depth ≥ 1 it need not be (σ may leave the call's
 context), and a KT core may have opponent exits to D-vertices above its level (forgiven by F_c, real in H). So (REC) needs
 a core closed in G[R_d]; (CORE-PASS) would then have to pass such a closed core down. Not attempted further.
+
+### 18j. The S step: DATA (07:41Z by date -u)
+(S-STEP) If KT(R) holds at a depth-0 stable piece, nothing was learned inside D earlier in the search, and KT fails after
+Dom(V*, R), then the piece's sptl passes learn a tangle inside D. DATA (dtl_step5stats.py "S-STEP"): 0 barren breaks in
+every run (403 corpus Oink, 381 corpus stable, 467 unions Oink s1, 61 cross unions Oink s11 S pieces that break KT).
+Where the learning sits (same runs): inside the least-level core U with its top in U: 227 / 218 / 333 / 46; inside D but not
+inside U, V* meeting U: 161 / 148 / 84 / 11; inside D, V* AVOIDING U: 15 / 15 / 50 / 4. So the S step cannot be localized
+to the least-level core (the K-first / FIRST-W lesson again): a stable piece whose tops all lie outside U can swallow U and
+learn elsewhere in D. A proof needs another selection (e.g. the least level whose core meets V*'s regions); not attempted.
+(FM+) A sharper reduction of (FM) (07:44Z by date -u). For a top τ ∈ V_f let A^r(τ) := the union of the round-r regions
+of the tops with index ≥ index(τ) (those computed no later than τ's turn in round r; τ ∈ V_r, so τ itself is in it).
+Claim: Z^f_τ ⊆ A^r(τ) for every τ ∈ V_f and every round r — PROVED except in one case. Induction over round f's
+computation (tops high to low, pushes in order). τ: in A^r(τ). (V, p-vertex) y → v with v earlier in Z^f_τ, hence
+v ∈ A^r(τ), i.e. in a round-r region of a top σ with pr(σ) ≥ pr(τ) ≥ pr(y): at v's pop in round r, y is consumed already
+(in A^r(τ)) or attracted. (V, opponent) every R-successor of y lies in Z^f_τ or in an earlier round-f region, hence (IH,
+also for the earlier tops) in A^r(τ); at the round-r pop of the last of them, y is consumed already or attracted
+(pr(y) ≤ pr(τ) ≤ the top's priority). (T) the tangle t that round f attracts at τ has no vertex in an earlier round-f
+region (138-139 would reject it), all escapes in A^r(τ) or outside R; at the round-r pop of its last escape (region of σ,
+pr(σ) ≥ pr(τ)) attractTangle accepts t unless some vertex of t lies in an EARLIER ROUND-r REGION — the Lemma E (a)
+straddle at round r. That case is the only gap: (FM) fails only if round r straddles a tangle that round f attracts.
+And then (−1 condition): the maximum m of any p-won cycle of t lies in t ⊆ Z_f and attracts into Z_f (p-owned: by its
+tangle strategy; opponent-owned: all its R-edges are in t or escapes), so m ∉ V_f: m was pruned between r and f.
+(S-LOC) and (S-LEVEL) (08:00Z by date -u). (S-LOC), DATA: when a stable piece breaks KT (nothing learned inside D before),
+its learned tangle lies inside the core of SOME KT level c of R, that core meets V*, and KT fails at that level after the
+piece: 403/403 corpus Oink (227 at the least level, 176 only at a higher level), 381/381 stable, 467/467 unions Oink s1,
+61/61 cross unions. (S-LEVEL) "every level-c core that the piece destroys and that meets V* gets a tangle inside it" is
+KILLED: 524 violations corpus Oink (478 stable, 207 unions, 36 cross); first instance
+experiments/alg/instances/cross_h_k1_n12_m18_17.pg (both orders). So the S step is existential over the levels, like
+(K-low) over the pieces; no rule naming the level is known.

@@ -13,14 +13,16 @@ D = X.D
 class S5(D.DTL):
     """dtl_pyref.DTL with search_rec copied verbatim and instrumented (no change to the computation)."""
     def search(s, p):
-        s.Wp = O.winning(s, set(s.G), p) if s.G else set(); s.pieces = []; s.newt = []; s.G0 = set(s.G)
+        s.Wp = O.winning(s, set(s.G), p) if s.G else set(); s.pieces = []; s.newt = []; s.G0 = set(s.G); s.cur_new = []; s.cur_top = []
         d0 = s.dominions; r = D.DTL.search(s, p)
         s.trace.append(dict(p=p, G=s.G0, Wp=s.Wp, pieces=s.pieces, newt=s.newt, dom=s.dominions > d0))
         return r
 
     def extractTangles(s, top, R):
         k = len(s.tv); r = D.DTL.extractTangles(s, top, R)
-        for t in range(k, len(s.tv)): s.newt.append(frozenset(v for v, _ in s.tv[t])); s.cur_new.append(frozenset(v for v, _ in s.tv[t]))
+        for t in range(k, len(s.tv)):
+            s.newt.append(frozenset(v for v, _ in s.tv[t])); s.cur_new.append(frozenset(v for v, _ in s.tv[t]))
+            s.cur_top.append((top, frozenset(v for v, _ in s.tv[t])))
         return r
 
     def search_rec(s, R, p, depth):
@@ -31,10 +33,10 @@ class S5(D.DTL):
             if res == 0:
                 s.pieces.append(dict(kind="E", depth=depth, nt=s.cur_nt, R=R0, X=X0, rem=frozenset(), V=frozenset())); return
             if res == 1:
-                s.cur_new = []
+                s.cur_new = []; s.cur_top = []
                 while s.sptl(V, set(R), p): pass
                 s.dom(V, R, X_, p)
-                s.pieces.append(dict(kind="S", depth=depth, nt=s.cur_nt, R=R0, X=X0, rem=R0 - frozenset(R), V=frozenset(V), new=list(s.cur_new)))
+                s.pieces.append(dict(kind="S", depth=depth, nt=s.cur_nt, R=R0, X=X0, rem=R0 - frozenset(R), V=frozenset(V), new=list(s.cur_new), tops=list(s.cur_top)))
                 continue
             t = 0; Z = set(); s.Q = []
             for v in range(s.n):
