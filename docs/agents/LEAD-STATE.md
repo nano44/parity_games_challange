@@ -368,3 +368,4 @@
 - 04:26Z Lead: L-RED succ. 4 handover 5/5 (8fac07c), GO; box 6 to ~12:30Z.
 - 04:34Z Lead: merged l-alg b992733: K-first/K4-B DEAD on mixed unions (kfirst_viol_union, verified); K-low, K-in, TW survive; L-RED fitness updated (drop K-first/K4-B, seed from unions).
 - 04:46Z Lead: merged l-alg 685d0d8 (FIRST-W); routed to L-RED.
+- 04:52Z Lead: merged l-alg 7ac4fce: FIRST-W DEAD (firstw_viol_cross verified); L-RED fitness = K-in > K-low > TW; L-ALG to write a GAP-K contradiction sketch, park ~07:30Z.
