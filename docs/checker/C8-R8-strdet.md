@@ -91,6 +91,21 @@ The Lead's named points:
   (str differences outside sptl are never read by extraction, F3) covers the same ground. Consistent.
 - N-7. R7's post-gate note cites RESULTS R8. Land R8 before or with R7 (C7 Addendum 3).
 
+## Addendum: RESULTS R6 (e) note (Lead 12:49Z), text only: PASS
+Proposed line: "Note (CHECKER C7 N-2; REFEREE R-P4 §C2): 'root call' here means the first best_vertices call of the search;
+read that way, (e) holds without (STR-DET), which RESULTS R8 in any case discharges."
+- REFEREE R-P4 §C2 (e0cb163): "R-P3 (d), GAP-A first step: unaffected if "root call" means the first best_vertices call.
+  If it means any best_vertices call of the depth-0 search_rec, it needs (STR-DET) for calls after the first sptl."
+- R-P3 (d) is R6 (e). The trunk text says so: "R6 (e) = reports' (d)", RESULTS at 44af920.
+- R6 (e) at 44af920 uses the phrase "in the root call's threshold loop", so the note attaches to existing wording.
+- The note matches §C2:
+  - "first best_vertices call" is §C2's reading;
+  - "holds without (STR-DET)" is §C2's "unaffected";
+  - "RESULTS R8 in any case discharges" is accurate under the other reading too. Both R8 referees close G-STR "for every
+    first-difference location" (R2-P5), "G-STR: CLOSED" (R-P5).
+  - The last clause depends on R8 being landed, so land R8 before or with this note (as N-7).
+- Cosmetic: the reference "CHECKER C7 N-2" is right (C7-R7-packet4.md N-2).
+
 ## Fix list (none required)
 Recommended:
 - N-1: W-a1 has one explicit signature.
