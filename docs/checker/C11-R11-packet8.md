@@ -275,3 +275,22 @@ The draft may land as written. If edited, I re-diff the text only.
     and "No growth shown (k = 2)" is stated.
 - Note (no change needed). R11's Scope line still lists (STEAL-ONCE*) among the open statements, and the POST-LANDING NOTE
   directly below it qualifies that. The G-R11-5 label carries "FALSE AS STATED", so a reader of the gap list sees it.
+
+## Addendum 10: DE20 ADDENDUM (Oink order, stealonce_both_n45), trunk 5af345d (Lead 22:00Z): PASS
+- 5af345d adds 7 lines to DE20 in docs/RESULTS.md (plus LEAD-STATE). l-red 3256056 (R36) is an ancestor of 5af345d.
+- Instance: experiments/red/carry/instances/stealonce_both_n45.pg, sha1 ee52c4a3e47af0de4790bd66110cc7206aa62ec2. It has
+  n = 45 and 70 edges, counted from the file. Matches the addendum.
+- CHECKER re-run, tools unmodified at trunk:
+  | check | Oink order | stable order | addendum |
+  | --- | --- | --- | --- |
+  | pinned Oink `-v` | 2 dominions, 17 tangles, 6 iterations, verified (13 strategies) | (same binary) | same |
+  | dtl_rootmono (RM_EXCL=1 RM_PREF=1 RM_DV=0): STOLEN-PERM FAILS / holds | 2 / 4 | 2 / 4 | 2 / 4 |
+  | NO-REFIRE "REFIRES later" | 2 | 2 | 2 |
+  | relevant steals per quadruple | max 2 | max 2 | max 2 |
+  | INCOMPLETE | 0 | 0 | none |
+  | dtl_stealtrace (+RM_LIGHT=1) | "STEAL-ONCE* VIOLATION ... phase 2 ctx \|R\| 43 step (round 5, top 12) tangle 0: 2 relevant steals" and the same at (round 6, top 12); STAYS-MET FAILS 2 / holds 4 | identical | same, "(and at round 6)" |
+  | dtl_stealdepth ("Depth still 1") | max k 2, max depth 1; 2 re-steals of depth 1 | identical | "Depth still 1" |
+- All four statements (STOLEN-PERM, STAYS-MET, NO-REFIRE, STEAL-ONCE*) fail in BOTH orders, as stated. Reproduced exactly.
+- Note (tool version). DE20's main text cites dtl_rootmono.py "unchanged since l-alg e2f7e198". At trunk the file is now
+  2ff12ff (20:26Z, §23j context-structure flags; default output unchanged per its message). The addendum's numbers come from
+  the current tool, which I used too. Citing the tool SHA (2ff12ff) in the addendum would make it exact. Optional.
