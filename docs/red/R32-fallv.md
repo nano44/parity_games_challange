@@ -1,4 +1,5 @@
-# R32: (FALL-V) is FALSE on A_DTL, both order data; the run stays complete (L-RED box 7, 14:36Z by date -u; produced on Opus 5.5)
+# R32: (FALL-V) is FALSE on A_DTL, both order data; the run stays complete (L-RED box 7; produced on Opus 5.5)
+Timestamp: written between 14:31Z and 14:54Z by date -u. The "14:36Z" in my message to the Lead was NOT taken from date -u.
 Status: DATA, unrefereed. Target: L-ALG's (FALL-V), relayed by the Lead at 14:22Z: "along a phase, each vertex's RV at a
 fixed context R falls AT MOST ONCE" (would give F_R <= n and GAP-A <= (CTX+) alone).
 

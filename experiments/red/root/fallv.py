@@ -38,11 +38,11 @@ def measure_game(g, order, verbose=False, name=""):
 
 
 def score(path):
-    """dtl_search.py --fitness fallv: 1e12 incomplete + 1e11 FALL-V failure + 1e6 * RESTORE (a vertex's RV rises again at
-    the same context after it fell) + 1e3 * total vertex falls + max falls of one (context, vertex)."""
+    """dtl_search.py --fitness fallv: 1e12 incomplete + 1e11 FALL-V failure + 1e9 * max falls of one (context, vertex)
+    + 1e6 * RESTORE (a vertex's RV rises again at the same context after it fell) + 1e3 * total vertex falls."""
     sys.setrecursionlimit(100000); m = measure_game(pg.read(path), os.environ.get("DTL_ORDER", "stable"))
-    return int(1e12 * m["incomplete"] + 1e11 * (m["hit"] > 0) + 1e6 * min(m["restore"], 999) + 1e3 * min(m["falls"], 999)
-               + min(m["maxfalls"], 999))
+    return int(1e12 * m["incomplete"] + 1e11 * (m["hit"] > 0) + 1e9 * min(m["maxfalls"], 99) + 1e6 * min(m["restore"], 999)
+               + 1e3 * min(m["falls"], 999))
 
 
 if __name__ == "__main__":
