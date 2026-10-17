@@ -1,4 +1,4 @@
-# Draft RESULTS R12 (Lead, 2026-10-17 20:40Z by date -u) (rev. 20:40Z: REFEREE §C 3785d3f; rev. 20:45Z: L-ALG imports §23k; rev. 20:50Z: CHECKER C12 E-1, N-1, N-2) — NOT LANDED; awaiting CHECKER re-diff
+# Draft RESULTS R12 (Lead, 2026-10-17 20:40Z by date -u) (rev. 20:40Z: REFEREE §C 3785d3f; rev. 20:45Z: L-ALG imports §23k; rev. 20:50Z: CHECKER C12 E-1, N-1, N-2) — LANDED as RESULTS R12 (CHECKER C12 PASS, re-diff cdc9009 at 5b626ca)
 
 ### R12 [refereed-only] Packet 9 on A_DTL: R11 (d) with the factor k, Lemma CHARGE, and GAP-A ⇐ (CTX⁺) ∧ (STEAL-DEPTH_D, D constant) ∧ (FIRED-R) (2026-10-17) — partial step-4 reduction (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at

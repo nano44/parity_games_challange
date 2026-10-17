@@ -525,3 +525,4 @@
 - 20:34Z (date -u) merged referee 3785d3f (R-P9 §C: full agreement; N9-a1 WITHDRAWN, R2-P8 §7 exists; accepts REFEREE-2 N9-a1). R12 draft updated.
 - 20:39Z (date -u) merged l-alg 67b9e05 (§23k packet-9 imports; dtl_rootmono pref = Z before tattr = P(τ⁺), so §23g data stand; self-attack: depth 1, k 2, no hit). R12 draft final; sent to CHECKER (C12).
 - 20:48Z (date -u) merged checker ed3a58c (C12: FAIL on E-1 only; (d) re-run reproduced at pin and HEAD versions). Applied E-1 ('#steps − 1'), N-1 ('both orders'), N-2 ((ACYC) in G-R12-8) to R12-draft; re-diff requested.
+- 20:56Z (date -u) merged checker cdc9009 (C12 re-diff PASS). LANDED RESULTS R12 before Dead ends (body identical to R12-draft lines 4-end; stamp checker ed3a58c + re-diff cdc9009); draft marked LANDED; GAPS GAP-A row updated (R12 replacement signed).
