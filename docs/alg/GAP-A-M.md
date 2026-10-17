@@ -3100,3 +3100,21 @@ Sources: REFEREE docs/referee/R-P9.md and REFEREE-2 docs/referee-2/R2-P9.md, on 
 - (PIECES ≤ 2|G′| − 1) holds on every phase measured, but on spp_chain_up_n43 the 84 distinct pieces come from S = 42
   searches, about 2 new pieces per search. So the piece count follows S, and bounding it is as hard as GAP-A. Not a route.
 - (CTX⁺) state: no statement with a route. The data maximum is still 13 first-difference contexts (ctx13_n40).
+
+23m. (FIRED ≤ |R|): self-attack climbs and (FIRED-HALL) KILLED (L-ALG succ. 7, 20:56Z by date -u)
+- Climbs with dtl_firedclimb.py:
+  - fitness (count, then ratio), 3,000 steps from fired18_stable_n20: stable order reaches 19 fired at |R| = 19 (ratio
+    1.0); Oink order reaches 16 at 0.889.
+  - FC_RATIO=1 (new: ratio first), 20,000 steps: from the 19/19 instance, no improvement (1.0); from fired10_n20, 0.857.
+  - The ratio never exceeds 1.0, and no INCOMPLETE run.
+- (FIRED-HALL) "the fired tangles of a context have a system of distinct representatives t ↦ v(t) ∈ t" (it would explain
+  FIRED ≤ |R|): KILLED (self-kill). Tested with dtl_firedlong2.py (FL_ALL=1, stable order), a Kuhn matching. Instances:
+  experiments/alg/instances/fired18_stable_n20.pg (|R| 18, 18 fired) and the climbed 19/19 instance (scratch, not kept).
+  On fired18 the tangles inside {0, 3, 5, 9, 13, 14} are the singletons {0}, {3}, {5}, {9}, {14} plus {0, 9, 13},
+  {0, 5, 9, 13, 14} and {0, 3, 5, 9, 13, 14}: 8 tangles on 6 vertices.
+- Reading. FIRED ≤ |R| holds there only because other vertices of R carry no tangle. A nested chain plus singletons gives
+  2k − 1 tangles on k vertices, so FIRED ≤ |R| has no local reason. The climbs' ceiling at 1.0 is a local optimum, not a
+  proof. (FIRED-R) itself, poly(|R|), is unaffected and stays DATA.
+- Tool fix: dtl_rootmono's RM_BIRTH bookkeeping (2ff12ff) used the attribute name _spR, which dtl_firedlong2's FL class
+  also uses, so it broke FL's birth arenas (TypeError). Renamed to _spRk. Every dtl_firedlong2 result in §23d, §23e and
+  §23h was produced before 2ff12ff, with the old code, so none is affected.

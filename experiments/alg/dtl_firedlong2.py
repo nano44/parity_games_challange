@@ -5,7 +5,7 @@ and S >= 2|R|. Per counted context: fired = distinct tangles fired at it over th
 the phase (index < k0, k0 = tangle count at the phase's first search) and born in the phase; for the latter, where they were
 born: the sptl arena R' of the extraction (R' ⊆ R, R' ⊋ R, or incomparable). Per step (round, top): NO-RETURN (a tangle
 that fired at the step at visit i, did not fire there at a later visit j, never fires there again) and the max number of
-distinct tangles fired at one step. FIRED-LAMINAR: are the fired tangles of a context pairwise nested or disjoint (vertex sets)? FL_SHOW=1 prints the first failures. FIRED-TOP-INJ: distinct top (max-priority) vertices. FIRED ≤ |R| per context. FL_ALL=1 drops the long-phase filter (every context visited >= 2 times). Usage: RM_EXCL=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=oink|stable dtl_firedlong2.py G.pg ..."""
+distinct tangles fired at one step. FIRED-LAMINAR: are the fired tangles of a context pairwise nested or disjoint (vertex sets)? FL_SHOW=1 prints the first failures. FIRED-TOP-INJ: distinct top (max-priority) vertices. FIRED ≤ |R| per context. FIRED-HALL: an SDR t -> v(t) ∈ t exists (it implies FIRED ≤ |∪ fired| ≤ |R|). FL_ALL=1 drops the long-phase filter (every context visited >= 2 times). Usage: RM_EXCL=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=oink|stable dtl_firedlong2.py G.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import dtl_rootmono as RMM, dtl_step5stats as ST
@@ -68,6 +68,17 @@ if __name__ == "__main__":
                 dup = len(set(vs)) < len(vs)
                 tops = [max(a, key=lambda v: (d.pr[v], v)) for a in vs]
                 kt_ = "FIRED-TOP-INJ (fired tangles at a context have distinct top vertices): " + ("holds" if len(set(tops)) == len(tops) else "FAILS"); tot[kt_] = tot.get(kt_, 0) + 1
+                # (FIRED-HALL): a system of distinct representatives t -> v(t) ∈ t exists (bipartite matching, Kuhn)
+                mt = {}
+                def aug(i, seen_):
+                    for v in vs[i]:
+                        if v in seen_: continue
+                        seen_.add(v)
+                        if v not in mt or aug(mt[v], seen_): mt[v] = i; return True
+                    return False
+                hall = all(aug(i, set()) for i in range(len(vs)))
+                kh = "FIRED-HALL (fired tangles of a context have distinct representatives): " + ("holds" if hall else "FAILS"); tot[kh] = tot.get(kh, 0) + 1
+                if not hall: print("FIRED-HALL FAILS", nm, "|R|", len(R), "fired", len(fired), flush=True)
                 bt = [getattr(d, "btop", {}).get(t, ("old", t)) for t in sorted(fired)]
                 kbt = "FIRED-BIRTHTOP-INJ (distinct extraction tops at birth): " + ("holds" if len(set(bt)) == len(bt) else "FAILS"); tot[kbt] = tot.get(kbt, 0) + 1
                 ktr = "FIRED ≤ |R|: " + ("holds" if len(fired) <= len(R) else "FAILS"); tot[ktr] = tot.get(ktr, 0) + 1

@@ -255,3 +255,5 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
 - (PIECES-LAMINAR), distinct depth-0 pieces of a phase pairwise nested or disjoint (GAP-A-M §23l): DEAD. Instances
   experiments/alg/instances/spp_chain_up_n43.pg and ctx12_oink_n40.pg (Oink; dtl_ctxpieces.py; pinned Oink verified for
   ctx12_oink_n40, 27 iterations, and spp_chain_up_n43, 43 iterations, both re-run box 8).
+- (FIRED-HALL), the fired tangles of a context admit distinct representatives (GAP-A-M §23m): DEAD. Instance
+  experiments/alg/instances/fired18_stable_n20.pg (stable; 8 fired tangles on 6 vertices). FIRED ≤ |R| has no local reason.
