@@ -678,7 +678,7 @@ Where the learning sits (same runs): inside the least-level core U with its top 
 inside U, V* meeting U: 161 / 148 / 84 / 11; inside D, V* AVOIDING U: 15 / 15 / 50 / 4. So the S step cannot be localized
 to the least-level core (the K-first / FIRST-W lesson again): a stable piece whose tops all lie outside U can swallow U and
 learn elsewhere in D. A proof needs another selection (e.g. the least level whose core meets V*'s regions); not attempted.
-(FM+) A sharper reduction of (FM) (07:49Z by date -u). For a top τ ∈ V_f let A^r(τ) := the union of the round-r regions
+(FM+) A sharper reduction of (FM) (07:44Z by date -u). For a top τ ∈ V_f let A^r(τ) := the union of the round-r regions
 of the tops with index ≥ index(τ) (those computed no later than τ's turn in round r; τ ∈ V_r, so τ itself is in it).
 Claim: Z^f_τ ⊆ A^r(τ) for every τ ∈ V_f and every round r — PROVED except in one case. Induction over round f's
 computation (tops high to low, pushes in order). τ: in A^r(τ). (V, p-vertex) y → v with v earlier in Z^f_τ, hence
