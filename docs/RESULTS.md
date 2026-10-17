@@ -123,7 +123,12 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
       POST-LANDING NOTE (2026-10-17 12:15Z by date -u): REFEREE-2 R2-P4 (referee-2 352da6e) re-opened part of (h) as gap
       G-STR: (ii)-(iii) compare set outputs only, but extraction reads str (dtl.cpp 268), so an equal-set tattr with different
       str could change an extracted SCC before the first set difference. (h) holds GIVEN (STR-DET) "equal set outputs before a
-      point imply equal extracted SCCs before it" (DATA: 0 of 4,290 same-phase pairs). Pending REFEREE's comparison; GAPS G-STR.
+      point imply equal extracted SCCs before it" (DATA: 0 of 4,290 same-phase pairs), or its weak form (STR-DET-w) "s+1 creates
+      no tangle before its first set difference, and none at all if there is none" (R2-P4 §8, 69b38ab). REFEREE R-P4 §C
+      (e0cb163) agrees G-STR is real (str written at 89 or 171 depending on which rule fires first; 268 reads it with no set
+      test) and revises (h) to SIGN WITH GAPS: (h) holds given (STR-DET-w), and holds unconditionally for transitions whose
+      first difference is in the ROOT best_vertices call (no extraction before it; best_vertices reads str only at 73), an
+      exemption signed by both referees (REFEREE-2 R2-P4 §9, 5ae9747). No instance either way. GAPS G-STR.
   (i) Lemma DV*-MONO (GAP-A-M §21h), reading INF as "never dropped".
   (j) The per-context LRN budget: at most n(n + 1) LRN transitions per distinct context per phase (GAP-A-M §21j), with
       REFEREE-2's reading of LRN (R2-PROVED2 §10).
