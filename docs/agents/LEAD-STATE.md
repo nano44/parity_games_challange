@@ -385,3 +385,4 @@
 - 06:47Z Lead: merged l-alg b50e0c2 (P-KT proved given YZ, WM_c1); plan approved (YZ reading, WM_c1, T step); YZ/WM_c1 routed to L-RED.
 - 06:53Z Lead: merged l-red 88cf1fa; YZ/WM_c1 attack: 0 bad lines on 148 corpus files (MONO at P pieces fails in several but YZ/WM hold); K-in samplers ~10,700 eligible runs, min productive pieces >= 1.
 - 07:04Z sweep: no overage (seven_day allowed_warning); Lead $207.9 (662k); L-ALG succ. 6 running (metadata 144k, likely stale; reducing YZ/WM_c1 to straddling tangles); L-RED succ. 4 idle between monitors (450k, $20.0; fast burn, likely ~600k near 09:30Z, before box end 12:30Z: plan successor or early park then). No unmerged lane commits.
+- 07:05Z Lead: WATCHDOG 07:03Z: Lead ctx 662k (+56k/h); automatic compaction handles the Lead (state in repo); no action.
