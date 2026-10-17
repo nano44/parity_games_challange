@@ -2708,3 +2708,8 @@ Ledger addendum (16:36Z by date -u):
   instance.
 - (CTX⁺) climbs: 12 first-difference contexts, reached from spp22 (stable) and from spp25 (Oink). The best instance is
   saved as ctx12_oink_n40.
+
+## 23. Box 8 (L-ALG successor 6, Lead GO 16:43Z by date -u, box to ~00:45Z; produced on Opus 5.5)
+Ledger correction (16:44Z, Lead 16:43Z): REFEREE-2 has also signed packets 7 and 8 (EXACT, PREFIX-MONO-X, EXACT*,
+PREFIX-MONO-X*), in full agreement after the comparisons. R10 has landed, and R9's original constants hold given STR-DET.
+Targets: (1) prove (STEAL-ONCE*); (2) (FIRED-R) on long phases; (3) (CTX⁺), only if (1) or (2) moves.
