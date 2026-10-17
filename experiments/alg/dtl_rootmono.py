@@ -14,29 +14,32 @@ FD = FC.FD; D = FD.D; INF = 10 ** 9; tab = {}
 
 class RM(FC.CK):
     def search(s, p):
-        s.root = None
+        s.root = None; s.ctx0 = []; s.d0recs = []; s.allrecs = []
         G = set(s.G); tl = [(frozenset(v for v, _ in s.tv[i]), tuple(s.tout[i])) for i in range(len(s.tv))
                            if s.tpr[i] != -1 and s.tpr[i] % 2 == p and all(v in G for v, _ in s.tv[i])]
         dv = DS.dvstar(s, G, p, tl) if os.environ.get("RM_DV", "1") == "1" else None
-        r = FC.CK.search(s, p); s.trace[-1]["root"] = s.root; s.trace[-1]["dvstar"] = dv; return r
+        r = FC.CK.search(s, p); s.trace[-1]["root"] = s.root; s.trace[-1]["dvstar"] = dv; s.trace[-1]["ctx0"] = list(s.ctx0); s.trace[-1]["d0clean"] = not any(r_.get("stepdef") for r_ in s.d0recs); s.trace[-1]["recs"] = list(s.allrecs); return r
 
     def best_vertices(s, V, R, p):
-        if s.root is not None: return D.DTL.best_vertices(s, V, R, p)
+        if s.dep == 0: s.ctx0.append(frozenset(R))
         # dtl_pyref.DTL.best_vertices verbatim, recording the round of each drop and the log span of each round
-        rv = {}; spans = []; psi = []; pos = []; rk = []; s.root = dict(rv=rv, spans=spans, start=len(s.log), psi=psi, pos=pos, rk=rk)
+        rv = {}; spans = []; psi = []; pos = []; rk = []; rec = dict(rv=rv, spans=spans, start=len(s.log), psi=psi, pos=pos, rk=rk)
+        if s.root is None: s.root = rec
+        rec["key"] = (s.dep, frozenset(R)); s.allrecs.append(rec)
+        if s.dep == 0: s.d0recs.append(rec)
         V.clear(); V.update(v for v in R if s.pr[v] % 2 == p)
         allV = set(V)
         def fin(res, Vlast):
             for v in allV:
                 if v not in rv: rv[v] = INF
-            s.root["end"] = len(s.log); s.root["res"] = res; return res
+            rec["end"] = len(s.log); rec["res"] = res; return res
         if not V: return fin(0, V)
         rnd = 0
         while True:
             rnd += 1; a0 = len(s.log)
             prevV = set(V)
             tli = [t for t in range(len(s.tv)) if I.alive(s, t, p)]
-            if I.actual_union(s, p, V, R, tli)[0] != I.ideal_union(s, p, V, R, tli): s.root["deficit"] = True
+            if I.actual_union(s, p, V, R, tli)[0] != I.ideal_union(s, p, V, R, tli): rec["deficit"] = True
             Z = set(); CurR = set(R); regs = []; rtops = []
             CurR = set(R)
             for top in range(s.n - 1, -1, -1):
@@ -46,22 +49,22 @@ class RM(FC.CK):
                 cl = I.lfp(s, p, Z | {top}, R, s.pr[top], tli)
                 if cl != Z | CurZ:
                     miss0 = cl - Z - CurZ
-                    s.root.setdefault("wits", {})[(rnd, top)] = frozenset(t for t in tli if any(v in Z for v, _ in s.tv[t]) and any(v in miss0 for v, _ in s.tv[t]))
-                    s.root["stepdef"] = True
-                    if "wit" not in s.root:
+                    rec.setdefault("wits", {})[(rnd, top)] = frozenset(t for t in tli if any(v in Z for v, _ in s.tv[t]) and any(v in miss0 for v, _ in s.tv[t]))
+                    rec["stepdef"] = True
+                    if "wit" not in rec:
                         miss = cl - Z - CurZ
                         strad = [t for t in tli if any(v in Z for v, _ in s.tv[t]) and any(v in miss for v, _ in s.tv[t])]
-                        s.root["wit"] = (rnd, top, frozenset(miss), tuple(strad))
+                        rec["wit"] = (rnd, top, frozenset(miss), tuple(strad))
                 Z |= CurZ; regs.append(frozenset(CurZ)); rtops.append(top)
             a1 = len(s.log); psi.append(frozenset(Z)); pos.append(sum(i * len(c) for i, c in enumerate(regs)))
             rk.append({v: i for i, c in enumerate(regs) for v in c})
-            s.root.setdefault("rtop", []).append({v: tp for tp, c in zip(rtops, regs) for v in c})
+            rec.setdefault("rtop", []).append({v: tp for tp, c in zip(rtops, regs) for v in c})
             # level-wise deficit: the code's union after the tops of priority >= q vs the ideal Û_{>=q} (dtl_ideal.lfp)
             Uh = set()
             for q in sorted({s.pr[v] for v in V}, reverse=True):
                 Uh = I.lfp(s, p, Uh | {v for v in V if s.pr[v] == q}, R, q, tli)
                 Aq = set().union(*[c for tp, c in zip(rtops, regs) if s.pr[tp] >= q])
-                if Aq != Uh: s.root["leveldef"] = True
+                if Aq != Uh: rec["leveldef"] = True
             cand = [v for v in sorted(V, reverse=True) if not s.attracts(p, v, Z, R)]
             if not cand: spans.append((rnd, a0, a1, len(s.log))); return fin(1, V)
             for t in [0] + [q for q in s.prios if q > 0 and q <= s.maxpr]:
@@ -91,12 +94,12 @@ def where(root, k_full):
 
 
 if __name__ == "__main__":
-    phrows = []; badrows = []
+    phrows = []; badrows = []; seqrows = []; ctxrows = []; fdcrows = []
     sys.setrecursionlimit(100000); st = {"dropped": 0, "kept: differs": 0, "kept: identical but extracts": 0}; shown = 0
     for f in sys.argv[1:]:
         g = pg.read(f); d0 = FD.P.X.build(g); d = RM(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.run()
         for ph in FD.phase_rows(d):
-            nd = nr = 0; wl = []; nbad = 0
+            nd = nr = 0; wl = []; nbad = 0; seq = []; fdc = set()
             for r in ph:
                 full = r["log"]; red = FC.reduce_log(full, st)
                 # map root spans onto the reduced log: the root call precedes every sptl pass, so its positions shift only
@@ -115,6 +118,35 @@ if __name__ == "__main__":
                 k = 0
                 while k < min(len(la), len(lb)) and a["log"][la[k]][:4] == b["log"][lb[k]][:4]: k += 1
                 cls = "no difference" if k == min(len(la), len(lb)) else where(b["root"], lb[k])
+                seq.append("R" if cls.startswith("root") else "N" if cls == "after the root call" else "=")
+                if cls != "no difference":
+                    pos_ = lb[k]; rb2 = next((r_ for r_ in b["recs"] if r_["start"] <= pos_ < r_["end"]), None)
+                    if rb2 is None: kc = "ANY-CONTEXT e*: not in a best_vertices call (search_rec −1 attractor)"
+                    else:
+                        ra2 = next((r_ for r_ in a["recs"] if r_["key"] == rb2["key"]), None)
+                        if ra2 is None: kc = "ANY-CONTEXT e*: in a call whose context s did not visit (impossible by FDL)"
+                        else:
+                            fa = [v for v in ra2["rv"] if rb2["rv"].get(v, INF) < ra2["rv"][v]]
+                            if fa: kc = "ANY-CONTEXT e*: RV falls"
+                            elif ra2["rv"] != rb2["rv"]: kc = "ANY-CONTEXT e*: Π rises (RV)"
+                            else:
+                                qa, qb = ra2["psi"], rb2["psi"]
+                                if not (len(qa) == len(qb) and all(x <= y for x, y in zip(qa, qb))): kc = "ANY-CONTEXT e*: Ψ NOT monotone"
+                                elif qa != qb: kc = "ANY-CONTEXT e*: Π rises (Ψ)"
+                                else:
+                                    fa_ = sum(d.n - t_ for m in ra2.get("rtop", []) for t_ in m.values()); fb_ = sum(d.n - t_ for m in rb2.get("rtop", []) for t_ in m.values())
+                                    kc = "ANY-CONTEXT e*: Π rises (Φ_top)" if fb_ < fa_ else "ANY-CONTEXT e*: Π DOES NOT RISE"
+                            kc += " | depth " + ("0" if rb2["key"][0] == 0 else ">0") + (" | later call dirty" if rb2.get("stepdef") else " | later call clean")
+                            fdc.add(rb2["key"])
+                    tab[kc] = tab.get(kc, 0) + 1
+                pa_ = {v: sum(v in c for c in a["ctx0"]) for v in a["G"]}; pb_ = {v: sum(v in c for c in b["ctx0"]) for v in b["G"]}
+                mv = any(pb_[v] > pa_[v] for v in pa_)
+                kab = f"ABS-pw (no vertex to a later depth-0 piece), later search {'CLEAN at depth 0' if b['d0clean'] else 'dirty at depth 0'}: " + ("FAILS" if mv else "holds")
+                tab[kab] = tab.get(kab, 0) + 1
+                if mv and b["d0clean"] and shown < 12:
+                    shown += 1; print("ABS-pw FAILS on a clean search", os.path.relpath(f), f"p={a['p']}", flush=True)
+                if cls == "after the root call":
+                    e_ = b["log"][lb[k]]; kd = f"after-root e*: caller {e_[0]}, depth {e_[1]}"; tab[kd] = tab.get(kd, 0) + 1
                 ra, rb = a["root"]["rv"], b["root"]["rv"]
                 fall = [v for v in ra if v in rb and rb[v] < ra[v]]
                 key = f"{cls}: " + ("RMONO FAILS" if fall else "RMONO holds")
@@ -199,16 +231,31 @@ if __name__ == "__main__":
                 ke = "DIRTY witness has a straddling tangle: " + ("all" if all(tg) else "NOT all"); tab[ke] = tab.get(ke, 0) + 1
                 if os.environ.get("RM_WIT") and len(wl) >= 8:
                     print("WITNESSES", os.path.relpath(f), [(w[0], d.idx[w[1]], len(w[2]), w[3]) for w in wl], flush=True)
+            if len(ph) > 1:
+                allc = set(c for r_ in ph for c in r_["ctx0"]); pos = max(len(r_["ctx0"]) for r_ in ph)
+                ctxrows.append((os.path.relpath(f), len(allc), len(ph), pos, len(ph[0]["G"])))
+            if fdc: fdcrows.append((os.path.relpath(f), len(fdc), len(ph) - 1, len(ph[0]["G"])))
+            if seq:
+                runs = [len(x) for x in "".join(seq).replace("=", "R").split("R") if x]
+                mr = max(runs) if runs else 0; seqrows.append((os.path.relpath(f), mr, "".join(seq), len(ph[0]["G"])))
             if nbad: badrows.append((os.path.relpath(f), nbad, len(ph) - 1, len(ph[0]["G"])))
             if len(ph) > 1 and nd: phrows.append((os.path.relpath(f), nd, nr, len(ph) - 1, len(ph[0]["G"]) if "G" in ph[0] else d.n))
     if phrows:
         phrows.sort(key=lambda r: -r[1])
         print("phases with dirty root transitions (file, dirty, root transitions, transitions, |G'|):", phrows[:8])
         print("phases with a dirty root transition:", len(phrows), "max dirty per phase:", max(r[1] for r in phrows), "max dirty/|G'|:", round(max(r[1] / r[4] for r in phrows), 3))
+    if fdcrows:
+        fdcrows.sort(key=lambda r: -r[1]); print("distinct first-difference contexts per phase (file, contexts, transitions, |G'|):", fdcrows[:8], "max contexts/|G'|:", round(max(r[1] / r[3] for r in fdcrows), 3))
+    if ctxrows:
+        ctxrows.sort(key=lambda r: -r[1] / r[4])
+        print("distinct depth-0 contexts per phase (file, contexts, searches, max depth-0 calls per search, |G'|):", ctxrows[:8])
+        print("max contexts/|G'|:", round(max(r[1] / r[4] for r in ctxrows), 3), "max contexts/searches:", round(max(r[1] / r[2] for r in ctxrows), 3), "max contexts:", max(r[1] for r in ctxrows))
+    if seqrows:
+        seqrows.sort(key=lambda r: -r[1]); print("longest runs of after-root transitions (file, run, sequence R/N, |G'|):", [(a_, b_, c_[:60], d_) for a_, b_, c_, d_ in seqrows[:8]])
     if badrows:
         badrows.sort(key=lambda r: -r[1]); print("phases where PI fails to rise (file, failures, transitions, |G'|):", badrows[:8], "phases:", len(badrows))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})
