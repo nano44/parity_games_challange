@@ -222,3 +222,6 @@ about ONE region (what was measured is the learned SCC, not the region):
   (TW)   C_τ lies inside W_p(G').
 Data: a lowest top learns a tangle inside W_p in every case (478/478). L-RED target: a search with W_p ≠ ∅ where no stable piece has
 its lowest region inside W_p (Cb-W fails), or where it does but that region is open (α-W) or a duplicate (β-W).
+Random games (1,500 games gen.random_game(n, n, 1, 3), n = 6..20, seeds 50000-51499; both order data): weak evidence for
+(K-in)/(LOW-W), because 2,363 of 2,365 (Oink order) searches with W_p ≠ ∅ find a dominion outright (2 / 2 hold); (TW) gets
+a real test: 869 learned tangles inside W_p, 36 outside, 0 straddling (stable: 877 / 36 / 0).
