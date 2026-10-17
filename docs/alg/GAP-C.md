@@ -20,6 +20,7 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | SCC1 (new) | in a closed sptl region Z_τ every vertex reaches τ in extractTangles' graph; so extractTangles(τ) finds at most ONE nontrivial SCC, the set C_τ reachable from τ | PROVED (reading), §3 |
 | B-thr (new) | if C_τ equals a stored tangle t, then τ ∈ t, every escape of t lies outside the context R, and the LAST escape of t to be popped either (a) was popped in an attractor with threshold < pr(τ), or (b) was cut off from t by an ancestor's −1 step (t inside the recursion context, e moved to X at 936-950) | PROVED (reading), §3 (corrected) |
 | NODUP | the duplicate case of SCC1 never occurs on DTL runs | DATA (§4); GAP-β |
+| NO-ORPHAN | no stored p-tangle inside a context has all its escapes outside it (implies NODUP) | DATA (§4), 0 of 28,541 calls |
 | (α) | the lowest region is open because its top's successor lies in the lower part of a straddling tangle | GAP-α |
 | (C-b) | a p-dominion survives a search whose pieces never reach a productive closed region (all relevant pieces removed through the −1 branch) | GAP-Cb |
 | (S2) | "a context containing a p-dominion is never pruned to −1" | FALSE (§4); the proof must follow the dominion through −1 pieces |
@@ -82,6 +83,15 @@ distractions with Q empty, the second escaping into it.
 - NODUP: the duplicate check never fires: 192 corpus files (experiments/alg/instances, climbs_1016, experiments/red/**),
   both order data, 0 hits (experiments/alg/dtl_nodup.py); 20,000 random games per order (n = 4..16, gen.random_game):
   0 hits, 0 incomplete runs.
+- (NO-ORPHAN), DATA (01:43Z by date -u; experiments/alg/dtl_orphan.py): an ORPHAN at a best_vertices call with context R is a
+  stored p-tangle t ⊆ R all of whose escapes lie outside R (such a t is never re-checked inside R, since tangles are
+  checked only at pops of their escapes); every duplicate of Lemma B-thr is an orphan at its piece. Corpus, every call at
+  every depth: 0 orphans in 14,415 calls (Oink order; 1,552 stable calls) and 0 in 14,126 (stable order). NO-ORPHAN implies
+  NODUP, hence GAP-β. Proof idea (SKETCH): orphans can only be created when a removal takes the last in-R escape of t
+  without taking a vertex of t, i.e. (β-a) at a threshold below pr(t's top) or (β-b) by the −1 step's moves; at a Dom
+  removal, attractTangle skips vertices already in the target (dtl.cpp 136-137) before its priority test (140-141), so if t's top-priority
+  vertex m was removed before (m ∈ V processed earlier at threshold pr(m)), the priority test only applies to t's lower
+  vertices; the open case is m pruned (m ∉ V) while its escape is removed by a lower top.
 - Near misses (experiments/alg/dtl_gapc_shapes.py, Oink order, corpus): of 1,408 searches, 774 have W_p(G') ≠ ∅; 297 of
   those find a dominion; 125 learn exactly one new tangle and nothing else; 0 learn nothing.
 - (S2) FALSE: in experiments/alg/instances/spp_final_n20.pg (Oink order) Odd wins all 20 vertices, yet the root
