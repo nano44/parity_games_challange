@@ -224,3 +224,27 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
   dtl_cnew14_n20.pg (Oink; first-difference positions 3 1 5). (CHAIN) "first-difference contexts form a ⊆-chain": DEAD,
   experiments/alg/instances/dtl_searches15_n24.pg (Oink); nest_nest_s43.pg in both orders. Root-call RMONO = (M) (box 4,
   dtl_mviol_n20, pinned Oink re-run 10:50Z). Distraction mass as a potential: rises at 372 of 1,056 transitions.
+- (STEALER-MONO) "after a relevant steal at step σ, the region holding the stealing vertices never loses a vertex later in
+  the phase" (GAP-A, box 8 route to (STEAL-ONCE*), GAP-A-M §23a): DEAD (GAP-A-M §23b). Instance
+  experiments/red/carry/instances/stealer_viol_n76.pg (L-RED, l-red 549f8de; sha1 714ecc0f; pinned Oink verified, 7
+  iterations; L-ALG re-run 17:47Z by date -u: dtl_rootmono.py RM_EXCL=1 RM_PREF=1 RM_DV=0, stable FAILS 3 / holds 14, Oink holds
+  1). Obstruction: upward migration. A new higher top (68) fires the region's own fired tangle 7 = {34} whole and takes its
+  dependents, so the region shrinks with no steal from it, while every prefix below keeps the vertices. (STAYS-MET),
+  (STOLEN-PERM) and (STEAL-ONCE*) still hold there in both orders. The "ORDER on steals" reading of §23a is false on the same run.
+- (FIRED-STEP), constant per-step bound on distinct fired tangles: DEAD (GAP-A-M §23e). Instance
+  experiments/alg/instances/fired18_stable_n20.pg (sha1 42307b22; pinned Oink 4 iterations verified, re-run 19:16Z): 12 tangles
+  at one step, |R| 18, S 3, Oink order. (FIRED-TOP-INJ), distinct top vertices among fired tangles: DEAD, same instance
+  (stable order).
+- (FIRED-LAMINAR), fired tangles of a context pairwise nested or disjoint (which would give #fired(R) ≤ 2|R| − 1): DEAD (GAP-A-M
+  §23e). Instance experiments/alg/instances/c6_replay3_n32.pg (sha1 ac987535; pinned Oink 11 iterations verified, re-run 19:16Z;
+  both orders): crossing pair {4, 7, 13, 17, 21, 25} and {8, 17, 21}.
+- (STEAL-ONCE*) "each (context, round, top, fired tangle) is a relevant steal at most once per phase" (R11 (d) hypothesis):
+  DEAD, RESULTS DE20 (L-RED R35, Lead-verified; GAP-A-M §23f). Instance experiments/red/carry/instances/stealonce_viol_n76.pg
+  (sha1 32c2da0b; pinned Oink 7 iterations verified, L-ALG re-run 19:34Z); stable order, k = 2 at (round 4, top 18), tangle
+  7. It takes down with it: (STOLEN-PERM), (STAYS-MET), NO-REFIRE, and (DEP-SAFE) (dtl_shrinkdep.py FAILS 7 / 12). Mechanism:
+  a stealing vertex's path tangle is stolen one level up, the vertex drops out of the prefix, and the tangle refires and is
+  stolen again. Replacement target: (STEAL-POLY).
+- NO-RETURN "a tangle that stopped firing at a step (context, round, top) never fires there again in the phase" (all-steps
+  form; GAP-A-M §23d DATA): DEAD (§23h). Instance stealonce_viol_n76 (RESULTS DE20; L-RED R35 addendum l-red d11271d; L-ALG
+  re-run 19:56Z, dtl_firedlong2.py FL_ALL=1, stable FAILS 7 / 42). Same event as the NO-REFIRE failure. The long-phase form is
+  untested (vacuous on this instance).
