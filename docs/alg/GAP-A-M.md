@@ -1143,6 +1143,7 @@ KILLED (FALSE / DEAD), each with its instance
 | The author's per-search check (DV changes at every tangle-learning search; dtl.cpp computeDistanceValues) | spp_chain_up_n43 (41 of 41 unchanged; pinned Debug Oink agrees), 525 of 990 corpus searches | §21f |
 | Constant tangles per top per phase | spp_final_n40 (13 at one top) | §21e |
 | (PHI-DV): PHI0 rises only when the root DV* moves | climbs_1016/nest_nest_s43 (69 counterexamples) | §21j |
+| GAP-C (NODUP) the duplicate check never fires; (NO-ORPHAN) no stored p-tangle inside a context has all escapes outside it | red/carry/instances/gapb_dup_n20.pg (L-RED, l-red e4138a0; Oink 14 iterations, verified; both orders); in a search with W_p(G') = ∅ | GAP-C.md §8 |
 | (ABS-mono) PHI0 never rises at a non-RES-d0 transition; (ABS-mono-pw) no vertex moves to a later depth-0 piece there | red/carry/instances/absmono_viol_n44.pg (L-RED R22, l-red cf9bdba; Oink 5 iterations, verified): Even's search 0 → 1, SHRINK at depth-0 piece 14, then piece 17 (same context) stable → −1 under the larger T; 7 vertices move later, PHI0 374 → 379; both order data | §21j, DEAD.md |
 
 DATA candidates left after box 4 (A_DTL; every per-context (H4) POTENTIAL candidate is dead):

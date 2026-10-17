@@ -24,8 +24,9 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | K5, K6 | the lowest region of a stable set is closed unless (α); if closed, its bottom SCC is new, a dominion, or (β') | PROVED (DTL-proof.md §2.3) |
 | SCC1 (new) | in a closed sptl region Z_τ every vertex reaches τ in extractTangles' graph; so extractTangles(τ) finds at most ONE nontrivial SCC, the set C_τ reachable from τ | PROVED (reading), §3 |
 | B-thr (new) | if C_τ equals a stored tangle t, then τ ∈ t, every escape of t lies outside the context R, and the LAST escape of t to be popped either (a) was popped in an attractor with threshold < pr(τ), or (b) was cut off from t by an ancestor's −1 step (t inside the recursion context, e moved to X at 936-950) | PROVED (reading), §3 (corrected) |
-| NODUP | the duplicate case of SCC1 never occurs on DTL runs | DATA (§4); GAP-β |
-| NO-ORPHAN | no stored p-tangle inside a context has all its escapes outside it (implies NODUP) | DATA (§4), 0 of 28,541 calls |
+| NODUP | the duplicate case of SCC1 never occurs on DTL runs | KILLED (§8): experiments/red/carry/instances/gapb_dup_n20.pg (L-RED) |
+| NO-ORPHAN | no stored p-tangle inside a context has all its escapes outside it (implies NODUP) | KILLED (§8), same instance |
+| NO-ORPHAN-W | no stored p-tangle inside R ∩ W_p(G') has all its escapes outside R | DATA (§8); the current GAP-β |
 | (α) | the lowest region is open because its top's successor lies in the lower part of a straddling tangle | GAP-α |
 | (C-b) | a p-dominion survives a search whose pieces never reach a productive closed region (all relevant pieces removed through the −1 branch) | GAP-Cb |
 | (S2) | "a context containing a p-dominion is never pruned to −1" | FALSE (§4); the proof must follow the dominion through −1 pieces |
@@ -164,3 +165,35 @@ Reading: the Dom(prevV, R) removal of a −1 iteration with Q empty (962-991) ca
 learned, so no induction "a dominion inside the context persists until a stable piece" exists; whatever compensates must
 be shown to come later in the same search (DTL-proof.md §2.3's (C-b) obligation, restated with instances). Every one of
 these searches still learned something elsewhere (complete runs, NODUP data).
+
+## 8. NODUP and NO-ORPHAN are FALSE; the GAP-β duplicate is realised, outside the winning region (02:21Z by date -u)
+Instance: experiments/red/carry/instances/gapb_dup_n20.pg (L-RED, l-red e4138a0, sha1 2f433a31; Lead: pinned Oink 14
+iterations, 1 dominion, 26 tangles, verified; pinned release Oink with -t prints "duplicate tangle"). Reproduced here
+(dtl_orphan.py, dtl_nodup.py), both order data: one orphan call and one duplicate-check hit. Oink order: Even's search 1
+(the second search) has depth-0 pieces −1 (|R| 20), −1 (|R| 17), recursion, stable |R| 12 (V* = {5, 8, 10, 11, 13, 17, 18},
+learns T@8, T@5, T@11), then stable |R| 2 = {3, 4} with V* = {4}, whose closed region re-finds the stored tangle
+{3, 4} (learned at top 4 in search 0; priority 12; all escapes outside {3, 4}): branch (β-b) / (β-a) of Lemma B-thr.
+The run is complete and correct.
+Key fact (dtl_gapc_shapes.subgame_win): |W_0(G')| = 0 in that search (Odd wins all 20 vertices; Even's whole block of
+12 searches, 13 in stable order, runs with W_0 = ∅). So the duplicate does not touch Lemma K, which only concerns
+searches with W_p(G') ≠ ∅; the search was productive anyway through the earlier stable piece.
+Restated GAP-β: (NO-ORPHAN-W) at every best_vertices call of a search of p, no stored p-tangle t ⊆ R ∩ W_p(G') has all
+its escapes outside R. A duplicate of Lemma B-thr inside the winning region would be such an orphan. Lemma O0, O1 and the
+§6a reduction hold unchanged for it (the threshold argument does not use W_p). L-RED target: an orphan inside W_p(G')
+(count with experiments/alg/dtl_orphan.py, which now reports orphans inside W_p).
+
+## 9. The progress mechanism on data: learning happens inside the winning region (02:33Z by date -u; experiments/alg/dtl_kin.py)
+(K-in), DATA: a search of p with W_p(G') ≠ ∅ either finds a dominion or learns at least one new tangle INSIDE W_p(G')
+(W_p by Zielonka on G'). C5: Oink order 777 such searches: 299 find a dominion, 478 learn inside W_p, 0 violations; stable
+order 767: 308 / 459 / 0. (K-in) is Lemma K with the location of the progress made explicit.
+(TW), DATA: in those searches every newly learned tangle lies either wholly inside W_p(G') or wholly outside it: Oink
+order 2,033 inside, 6 outside, 0 straddling; stable 1,993 / 6 / 0. (A genuine p-tangle can straddle in general: a p-vertex
+of W_p with its tangle edge into W_{1-p} and an opponent vertex of W_{1-p} with an edge back; so (TW) is a property of
+what DTL learns, not of tangles.)
+(NO-ORPHAN-W), DATA: 0 orphans inside W_p(G') at any call (14,650 calls Oink order, 14,372 stable); the only orphan anywhere
+is gapb_dup_n20's, outside W_p.
+Proposed statement of GAP-C for the fleet (replaces "Lemma K with shapes (α), (β'), (C-b)" as the attack target):
+  (K-in) W_p(G') ≠ ∅ ⇒ search(p) finds a dominion or learns a tangle t ⊆ W_p(G').
+  Obligations, as before but restricted to W_p: (α-W) a straddling tangle that blocks the lowest region inside W_p;
+  (β-W) an orphan inside W_p (NO-ORPHAN-W); (Cb-W) every piece meeting W_p leaves through the −1 branch with nothing
+  learned inside W_p.
