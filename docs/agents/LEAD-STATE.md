@@ -468,3 +468,4 @@
 - 13:44Z (date -u) merged l-alg 2b20f09 (§22n packet-6 rewordings per referee; §22f display Dom term +1). L-ALG slip: 13:18Z message read 19 min late (blocking wait loop); fix: waits <5 min. fall3_n76 already on trunk (merged b55c144).
 - 13:47Z (date -u) merged checker a9258e6 (C9 PASS; p6probe re-run identical; fall3_n76 re-run by CHECKER too). Applied N-1..N-5 and fall3 wording (narrowing/citation only); LANDED RESULTS R9. CHECKER parked.
 - 13:49Z (date -u) GAPS: GAP-A row restated per R9; G-DOM closed (absorbed into CTX+).
+- 13:52Z (date -u) merged l-alg bf64566/e225fc4 (§22n fall3 re-run by L-ALG; §22o CTX-ROOT DEAD) and checker c5ab323 (C9 re-diff b55c144 PASS; arrived after landing). RESULTS DE17 (CTX-ROOT) after Lead re-run. NOTE: R9 landed at 1501aad with N-1..N-5 applied without CHECKER text re-diff (CHECKER asked for one on any edit): post-landing re-diff requested.
