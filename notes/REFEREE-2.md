@@ -2,6 +2,36 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
+2026-10-17 15:22Z (successor session_01NUXFnUcx4V3ZWJJY11tXwx, Opus 5.5, D12). Handover check 6f33a84 (5/5).
+P7 (§22r EXACT / PREFIX-MONO-X / new steals, pin 357224b): docs/referee-2/R2-P7.md. (a) SIGN, (b) SIGN, (c) SIGN WITH GAPS
+G-P7-c1/c2 (closed: F_R <= 3 N_R), (d) confirmed 17/17. (FALL) <= (NSTEAL), open, lossy (980 steal pairs vs 103 non-rises).
+Probe: R2-P7/dtl_probe7.patch (logging-only + R2_REV), an7.py (own closure). Rebuild: copy tools/oink/src, patch7.py, cmake.
+R2-P7 §6 comparison (19e63f7: NS-COUNT = NSTEAL), §7 R9 budget (94bcc2a: 2(F_R+1)(H+1) confirmed; 2n per input on C_T/C_Dom; R2-P6 per-search indexing withdrawn).
+P8 (§22s EXACT*/PREFIX-MONO-X*, §22u chain, pin a907c46): docs/referee-2/R2-P8.md. EXACT* SIGN, PMX* SIGN, corollary SIGN WITH GAPS (G8-1 factor 3),
+chain VALID with factor 3 and (CTX⁺) for the sum (G8-2). Probe dtl_probe8.patch (+ "F t" fired log), an8.py. FIRED-R ratio 0.67|R| at small R.
+Next: comparison with R-P8 when the Lead allows.
+Earlier (predecessor):
+2026-10-17 ~13:05Z (REFEREE-2 on Opus 5.5 under D12; parking for handover at ~0.57M context, Lead 12:59Z).
+Packets done 2026-10-17. Each report is in docs/referee-2/ with a comparison section after REFEREE's report.
+| packet | report | pin | outcome (Opus 5.5, D12) |
+|---|---|---|---|
+| P1 Step 5 (GAP-C) | R2-STEP5.md | 8f41be8 | 5 claims signed, gaps G1-G4 closed; (ACYC) open (= GAPS G-S5-6) |
+| P2 PROVED readings (a)-(k) | R2-PROVED2.md | 20fe2ed | no REJECT; B-thr "(a) always" (REFEREE F-b3); G-b1 closed (top-in-X argument); FDL G-h1 closed; K5 (i)/(iii) false (k5.pg) |
+| P3 K5', (α), O-P, GAP-A first step | R2-P3.md | 6e0082f | REJECT of the K5' (iii') ψ-play step (tangle case through an old Z_k vertex; configuration in §1, no instance); repaired form K5''/Dep(Str) signed; disagreement with REFEREE on that one sentence, routed by Lead |
+| P4 §22 box 7 | R2-P4.md | 44d1428 | signed; found G-STR (FDL needs str determinism); root-call exemption signed (§9) |
+| P5 Lemma STR-DET | R2-P5.md | f920dc2 | signed; G-STR closed for every first-difference location |
+| P6 §22f/§22j | R2-P6.md | 8ff4085 | (a) SIGN WITH GAPS (G-F1: F_R must also count non-rising e*-at-R transitions; DATA 0), (b) SIGN (Dom input = full X), (c) SIGN |
+Open gaps I hold:
+- G-F1: the F_R definition (with P7: F_R <= 3 N_R).
+- (NSTEAL): N_R new-steal visit pairs per context polynomial (P7 §5).
+- (CTX⁺): distinct first-difference contexts and inputs per phase.
+- (FALL): F_R polynomial.
+- G-S5-6 = (ACYC).
+- K5''/(α)-Dep-form vs REFEREE's Up(Str) reading: the P3 dispute, Lead to route.
+Probe infrastructure (scratchpad, lost with the container): an instrumented dtl.cpp with counters only. Its diffs are kept
+in docs/referee-2/R2-STEP5/dtl_probe.patch, R2-PROVED2/dtl_probe2.patch, R2-P3/dtl_probe3.patch and
+R2-P4/dtl_probe4_full.patch (the last one is cumulative). R2_REV=1 reverses the ins(v) order ("stable" in-order).
+Earlier resume points follow.
 2026-10-15 13:50Z. R2-TL signed as second referee at l-red 49ae306 (R2-TL.md section 6, gaps G-TL-1..7). Idle until routed.
 Earlier 13:05Z. R2-TL (L-RED transfer lemma, l-red 0d50d4a) first-referee read done: OK with fixes F1-F2 (docs/referee-2/R2-TL.md); no counterexample in 435,584 exhaustive + 900 random tests. Idle until routed.
 Earlier 00:27Z. T-A1 signed as second referee at l-attr 57a1515 (R2-TA1.md section 8); G11 closed with a correction to HKP Thm 4's proof (minimal-rank strategy unsound; witness strategy repairs it; instance hkp_thm4_strategy.py). Idle until routed.

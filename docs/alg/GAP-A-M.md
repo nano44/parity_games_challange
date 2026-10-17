@@ -1913,3 +1913,886 @@ unconsumed rest is re-absorbed by a lower surviving top.
 - The other part of a phase is the transitions whose first difference lies after the root call: Oink 194, stable 185,
   i.e. 18% of all transitions. These are box target 3, the same frame at the first differing deeper call, which is the
   per-context problem (§21j).
+
+22c. PREFIX-MONO and the root-call bound (reading, L-ALG; DATA first, below; 11:32Z by date -u)
+Setting: one pruning round of best_vertices in context R, with input V and tangle set T.
+- Tops are processed in decreasing index order. Index order follows priority (O1), so the priorities of processed tops
+  never increase.
+- A top τ ∈ V is PROCESSED iff τ ∉ P(τ⁺), where P(τ⁺) is the union of the regions of the processed tops of higher index.
+  Then P(τ) := P(τ⁺) ∪ region(τ); otherwise P(τ) := P(τ⁺).
+- Cl_q(B) is the least superset of B closed under the threshold-q rules in R (dtl_ideal.lfp): vertex rules for
+  priorities ≤ q, and the tangle rule for an alive tangle with every vertex of priority ≤ q and every escape in the set or
+  outside R.
+- The round is STEP-IDEAL if P(τ) = Cl_{pr τ}(P(τ⁺) ∪ {τ}) for every processed τ. Otherwise it has a STEP DEFICIT.
+- DATA: a step deficit occurs whenever the final union has a deficit (U ≠ Û, §3). The converse fails rarely (5 / 16
+  root transitions, Oink / stable, have a step deficit but no final deficit).
+(S0) For every processed τ, P(τ) ⊆ Cl_{pr τ}(P(τ⁺) ∪ {τ}). This is Lemma 2.2's induction restricted to one region: every
+  derivation of the consuming attractor is a threshold-q rule whose premises lie in P(τ⁺) ∪ region(τ), and the consumed
+  set lies outside Gx = CurR.
+(S1) Cl_q is monotone in B and in T (1.2b). A set closed under the threshold-q′ rules is closed under the threshold-q
+  rules for q ≤ q′.
+Lemma PREFIX-MONO (PROVED, reading). Let V ⊆ V′ and T ⊆ T′, and let the round of the LATER run (V′, T′) be step-ideal.
+Then P(τ) ⊆ P′(τ) for every index τ.
+Proof, by induction over τ in decreasing order (P = P′ = ∅ above every top).
+- If τ is not processed in run 1, then P(τ) = P(τ⁺) ⊆ P′(τ⁺) ⊆ P′(τ).
+- If τ is processed in run 1 (τ ∈ V ⊆ V′, q = pr τ), then P(τ) ⊆ Cl_q(P(τ⁺) ∪ {τ}) by (S0).
+  - If τ is processed in run 2: P′(τ) = Cl′_q(P′(τ⁺) ∪ {τ}) ⊇ Cl_q(P(τ⁺) ∪ {τ}) by (S1).
+  - If not, τ ∈ P′(τ⁺) ≠ ∅, and P′(τ⁺) = Cl′_{q′}(…) for the last processed top τ′ > τ of run 2, with q′ = pr τ′ ≥ q.
+    So P′(τ⁺) is threshold-q closed and contains P(τ⁺) ∪ {τ}. Hence P′(τ) = P′(τ⁺) ⊇ Cl′_q(P(τ⁺) ∪ {τ}) ⊇ P(τ). □
+Corollaries, assuming the later run's round is step-ideal:
+- (C1) U(V, T) ⊆ U(V′, T′).
+- (C2) The rescue sets satisfy W_t ⊆ W′_t. The threshold loop has Gx = R, consume = None and all of Z pushed, so it
+  computes Cl_t(U) (DTL-proof 1.2).
+- (C3) Survivors: V_next ⊆ V′_next (the survivor formula S of §1 is monotone in U and W_t).
+- (C4) NO-LATER: every v ∈ U(V, T) lies, in the later run, in a region whose top has index ≥ that of its region top in the
+  earlier run (v ∈ P(τ) ⊆ P′(τ)).
+- Over all rounds: if every round of the later run is step-ideal, then V_i ⊆ V′_i for all i. So the root pruning rounds
+  never fall (RMONO), and a stable V* never shrinks. This strengthens Theorem M-cond (§3) to the prefix sets.
+POS-FALL (PROVED, reading, from PREFIX-MONO and the First-Difference Lemma, §21d, signed). Let s → s+1 have the same RV
+and the same Ψ (round unions and rescue sets), with s+1's root call step-ideal in every round, and let e* lie in the root
+call.
+- e* cannot be in a threshold loop: there its output would be strictly larger, contradicting equal Ψ.
+- So e* is the region of some top τ_j in round r. It has the same input in both searches (P(τ_j⁺) is equal, since the
+  earlier log entries are identical) and a strictly larger output.
+- So some v ∈ region′(τ_j) \ region(τ_j) exists. v ∈ U_r(s) = U_r(s+1), and v ∉ P(τ_j), so in s its region top has a
+  lower index than τ_j.
+- With (C4) for every other vertex, Φ_top := Σ_r Σ_{v ∈ U_r} (n − index of v's region top) falls strictly. □
+Theorem ROOT-BOUND (PROVED, reading). Fix a phase (G′ and p fixed). Call a transition s → s+1 CLEAN if the root call of
+s+1 is step-ideal in every round, and DIRTY otherwise. Let Π(s) := (RV(s), Ψ(s), Φ_top(s)), ordered lexicographically by
+RV pointwise ↑, then Ψ componentwise ⊆ ↑, then Φ_top ↓.
+- A clean transition whose first difference e* lies in the root call raises Π strictly: either RV rises (RMONO, ≠), or
+  RV is equal and Ψ grows strictly ((C1)-(C2), ≠ since FDL makes the output at e* strictly larger), or Ψ is equal and
+  Φ_top falls (POS-FALL).
+- A transition with e* after the root call leaves the root call, and Π, unchanged.
+- Chain heights: RV has at most n(n+1) strict rises (values 1..n+1 or INF). Ψ has at most (n+1)(d+2) components, each
+  ⊆ G′, so at most (n+1)(d+2)n strict rises. Φ_top ≤ (n+1)n² gives at most that many falls.
+- Hence, per phase: #(transitions with e* in the root call) ≤ (#DIRTY + 1)·H + #DIRTY, where
+  H := (n(n+1) + 1)·((n+1)(d+2)n + 1)·((n+1)n² + 1).
+So GAP-A at the root call reduces to ONE statement: the number of DIRTY transitions per phase (the later root call has
+a step deficit, i.e. Lemma E's straddle at some region step) is polynomial.
+DATA (dtl_rootmono.py; corpus 238 files plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29; Oink / stable):
+- Every prediction for clean root transitions holds (RMONO, Ψ monotone when RV is equal, Φ_top falls when Ψ is equal, no
+  vertex moves to a lower-index top): 689 / 689 and 673 / 673.
+- DIRTY root transitions: 179 / 174. Phases with one: 36 / 39.
+- Max dirty per phase: 12 / 10, at most 0.43 / 0.32 of |G′|. The maxima are the h4_defK families, which were built in box
+  4 to maximise deficits. There dirty = K + 1 (h4_def9/10/11_oink_n28: 10, 11, 12) and every transition of the long phase
+  is dirty.
+- Transitions with e* after the root call: 194 / 185 (box target 3).
+
+22d. Sharper, DATA only: Π rises unless RV falls (11:42Z by date -u; dtl_rootmono.py "PI at root-e* transitions")
+On all root-e* transitions (corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29; Oink / stable):
+
+| class | Oink | stable |
+|---|---|---|
+| Π rises through RV | 612 | 595 |
+| Π rises through Ψ (RV equal) | 221 | 215 |
+| Π rises through Φ_top (RV, Ψ equal) | 17 | 19 |
+| RV falls | 18 | 18 |
+| Ψ not monotone, or Π does not rise | 0 | 0 |
+
+- The 18 falls lie in 16 phases, at most 2 per phase. The two 2-fall phases are L-RED's f1_twodef_n48 and
+  f1_twofall_n48, which were built to have two falls.
+- So the DIRTY transitions that do not lower RV behave as clean ones: 161 / 156. The step deficit is real there (a
+  tangle straddles), but it does not break the order.
+- NEWX ("a tangle of T_s newly excluded at the same region step") does not separate them: 102 / 95 NEWX transitions
+  satisfy the predictions; all 18 falls are NEWX.
+Candidate (PI-RISE, DATA only): every transition whose first difference lies in the root call and whose root RV does not
+fall raises Π strictly.
+- If it holds: #root-e* transitions per phase ≤ (#FALL + 1)·H + #FALL, where #FALL counts the (M)-failures at the root
+  (RV falls).
+- Proved part: PI-RISE on clean transitions (§22c).
+- Open part: dirty transitions where RV does not fall. The step deficit there must not shrink Ψ. In the h4_defK phases
+  the same stored tangle straddles at the same top in every search, and every transition is of this kind.
+
+[12:20Z, per referee (packet 4, R-P4 / R2-P4): the reduction below holds with two more hypotheses, (STR-DET) and
+(e* ∉ Dom), and with +1 per phase (G-e2). Wording fixes R-b1, G-d1/G-Ψ: see §22h. Statements unchanged otherwise.]
+22e. Every context, not only the root: GAP-A ⇐ two named statements (11:54Z by date -u; dtl_rootmono.py "ANY-CONTEXT")
+Nothing in 22c uses R = G′. A best_vertices call is a deterministic function of (R, p, T): it reads no X, no str value
+before writing it, and no W, and the set of alive tangles changes only at dominions. So, for EVERY context R (any depth):
+- Π_R(T) := (RV, Ψ, Φ_top) of the call best_vertices(·, R, p) under T is a function of T.
+- PREFIX-MONO: for T ⊆ T′, if the call under T′ is step-ideal, then Π_R(T) ≤ Π_R(T′). So along a phase Π_R(T_s)
+  changes at most (D_R + 1)·H times, where D_R counts the searches s whose (possibly hypothetical) call at R has a step
+  deficit.
+The −1 attractor of search_rec (914-923) at a T piece runs on input (seeds, R, t). The seeds are determined by the
+identical preceding best_vertices call at R and by X. Its output is the plain threshold attractor, which is monotone in T
+(1.2b). So for a fixed (R, X) it changes at most n times along a phase.
+By FDL (§21d, signed), a transition's first difference e* is a tattr whose input is equal in both searches and whose
+output is strictly larger. It lies in a best_vertices call at some context R, or in a −1 attractor at some (R, X)
+(DATA: never in sptl or Dom).
+- In the first case, Π_R(T_s) ≠ Π_R(T_{s+1}). If the call of s+1 is step-ideal, the change is a strict rise (22c); a
+  dirty call can lower RV.
+- In the second case, the attractor's output strictly grows.
+Hence (PROVED, reading; given FDL, PREFIX-MONO and the 22c corollaries): per phase,
+  S − 1 ≤ Σ_{R ∈ C_bv} ((D_R + 1)·(H + 1)) + Σ_{(R,X) ∈ C_T} n,
+[per referee, R9 post-landing note (packet-7 comparisons, 15:53Z): the constants are 2(F_R + 1)(H + 1) per context and
+≤ 2n per input.]
+where C_bv is the set of distinct contexts of first-difference best_vertices calls and C_T is the set of distinct
+first-difference −1 attractor inputs. So:
+- GAP-A ⇐ (CTX) the numbers of distinct first-difference contexts |C_bv| and |C_T| per phase are polynomial, and (DIRTY)
+  D_R is polynomial for each of them.
+- This replaces box 5's S − 1 ≤ n(n+1)·contexts + #DEF + #ABS (§21j). The ABS steps are now inside the per-context
+  budget, and DEF steps matter only where RV actually falls.
+DATA at e* (corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29; Oink / stable):
+
+| at the first differing call | Oink | stable |
+|---|---|---|
+| Π rises, later call clean (depth 0 / > 0) | 814 / 25 | 787 / 25 |
+| Π rises, later call dirty (depth 0) | 161 | 156 |
+| RV falls (dirty, depth 0) | 18 | 18 |
+| Ψ not monotone, or Π does not rise | 0 | 0 |
+| e* in a −1 attractor (C_T) | 44 | 46 |
+
+- Distinct first-difference best_vertices contexts per phase: at most 8 (spp_final_n40, spp22_oink_n40) in both orders,
+  at most 0.29·|G′|.
+- Box 5's long phases (§21j table) had at most 12 first-difference contexts under its parent-context convention.
+Open: (CTX) and (DIRTY), both DATA only. (CTX) is the old "distinct contexts" core, which box 5 did not bound. What is
+new is that every absorption step at a fixed context is now paid for by a proved polynomial budget.
+
+22f. (DIRTY) sharpens to (FALL); the exact obstruction for (CTX) (12:06Z by date -u; dtl_rootmono.py "VISITS", RM_KSEQ=1)
+(FALL), DATA. Π_R compared over all pairs of CONSECUTIVE VISITS of a context R (any depth) within a phase, not only at e*
+(corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29, meet_viol_n17; Oink / stable):
+
+| class | Oink | stable |
+|---|---|---|
+| equal | 5,461 | 5,310 |
+| rises through RV | 1,543 | 1,495 |
+| rises through Ψ | 698 | 679 |
+| rises through Φ_top | 93 | 100 |
+| RV falls, all at dirty calls | 73 | 72 |
+| Ψ not monotone, or Φ_top rises | 0 | 0 |
+
+- Clean visits never descend, as PREFIX-MONO predicts.
+- Descents per context per phase: at most 2 (L-RED's f1_twodef_n48 / f1_twofall_n48), and 1 elsewhere, in 16 phases.
+- So the budget D_R of §22e can be replaced by F_R, the number of descents of Π_R along the phase:
+  S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·|C_T|.
+  [per referee, G6-a2 (packet 6): the display reads S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·(|C_T| + |C_Dom|) + 1, with
+  the Dom term of §22j and the +1 of G-e2; F_R as in §22n (every non-rise).]
+- GAP-A ⇐ (CTX) ∧ (FALL), where (FALL) says F_R is polynomial. The data maximum is 2.
+(CTX), the obstruction, made exact.
+- A depth-0 context R_{k+1} = G′ \ (pieces 1..k) is fixed exactly while positions 1..k are frozen. Since Π_R is a function
+  of T, the transitions at any one context are bounded over the whole phase. So the count of transitions is
+  ≤ (F + 1)(H + 1)·|C|, and |C| is the only open term.
+- A new context at position k+1 needs a change at a position ≤ k. With this alone, |C| can grow like (B + 1)^k: the
+  nested-counter core of boxes 4 and 5.
+- What would cut it: monotone removal prefixes, X_k(s) ⊆ X_k(s+1). That would give ≤ n contexts per position, so
+  |C| ≤ n². It is FALSE even on clean searches. The cause is the P piece.
+  - Instance: experiments/alg/instances/spp_final_n20.pg, Oink order, Even's phase.
+  - The root call is −1 in both searches, and e* is in its threshold loop at round 4, where RV rises.
+  - prevV is {0, 12} in s and {2} in s+1, so piece 1 removes {0, 12} in s and {2} in s+1: disjoint sets.
+  - In s+1 the vertices 0, 5, 8, 9, 11 leave in piece 3 or 5 instead of 1 or 2. Depth-0 results: s = (−1, −1, 0),
+    s+1 = (−1, −1, −1, −1, 1, −1, 0).
+- Reason: a P piece removes Dom(prevV) = Z_f (YZ), the regions of the final pruning round, i.e. the LEVEL SET of maximal
+  RV. RV rising pointwise moves that level set arbitrarily (a longer pruning ends on different vertices). So the root's
+  rise reshapes every later context.
+- First-difference positions (RM_KSEQ=1): long phases are either all-root (spp_chain_up_n43: 41 transitions at
+  position 1; h4_def11: 12) or blocks of deeper positions between root transitions. For example spp22_oink_n40:
+  4 4 4 4 4 1 4 1 6 6 4 6 6 5 5 1 6 1 1 4 1.
+- A bound on (CTX) therefore needs a reason why a P piece's level-set jump cannot happen at many positions in turn.
+  Candidate to test next: does a context at position k ≥ 2 recur after a root change (the same set again)? If contexts
+  never recur, distinct contexts and transitions coincide in count.
+
+22g. Do (CTX) and (FALL) share a cause? The context tree (12:16Z by date -u; dtl_rootmono.py)
+Answer to the Lead's 12:02Z question: NO, not on the data. They have different causes, and neither implies the other.
+- (FALL) is a Lemma E effect. Every descent of Π_R (73 / 72) is at a dirty call: a stored tangle straddles a region step
+  and its unconsumed rest is re-absorbed by a lower top.
+- (CTX) grows without any straddle. The obstruction instance of 22f (spp_final_n20, Oink, Even's phase) is a CLEAN
+  transition. The root's RV rises, and the P piece Dom(prevV) = Z_f then removes a different level set ({0, 12} → {2}),
+  so all later contexts change.
+- So GAP-A ⇐ (CTX) ∧ (FALL) is two statements. Merging them into "Σ_{R ∈ C_bv} (F_R + 1) is polynomial" is a
+  restatement, not a reduction, and I do not claim it as the L32 criterion.
+The context tree (DATA). Depth-0 contexts form a tree along a phase: each context R_k has successor contexts R_{k+1}.
+- Recurrences: 433 / 425 times a context is visited, missed in some later search, then visited again. 56 / 55 phases
+  have one.
+- Distinct visited contexts at all depths reach 116 per phase (spp22_oink_n40, 21 transitions, |G′| = 38), i.e. up to
+  3.05·|G′|. Yet first-difference contexts number at most 8.
+- Distinct successors of one depth-0 context: at most 42. This is spp_chain_up_n43's root (41 transitions: an absorption
+  chain whose piece 1 changes every search). Elsewhere at most 11 (h4_def11).
+Reading (SKETCH, not proved). For a fixed context R the successor depends on the call's result and on the piece:
+- S piece: Dom(V*, R), monotone in (V*, T), and V* never shrinks at clean calls (22c).
+- T piece: Zall, monotone in T for fixed (R, X).
+- P piece: Dom(prevV). Fixed while RV at R is fixed, and monotone in T then.
+So between two RV changes at R the successor shrinks monotonically. That gives ≤ (#RV changes at R + F_R + 1)·(n + 1)
+distinct successors per context, which is polynomial. The open part of (CTX) is then only the PRODUCT over the
+positions of a search: the visited part of the context tree must be thin, whereas each node may have polynomially many
+children. That is the nested-counter core in its sharpest form so far.
+
+22h. Packet 4 imported (per referee: REFEREE R-P4 @ f74857c, REFEREE-2 R2-P4 @ 352da6e; trunk 6aa9260; 12:20Z by date -u)
+Verdicts: no REJECT. Both sign (S0), PREFIX-MONO (gap closed), POS-FALL, ROOT-BOUND (gap closed) and the bit cost
+(conditional on DTL-proof §3(e)). §22e is SIGN WITH GAPS, with two OPEN gaps (GAPS rows G-DOM and G-STR).
+Wording fixes (closed):
+- R-a1 / R-b1 / R-Cl. Cl_q in §22c is the TRIGGERED closure of dtl_ideal.lfp. A tangle fires only with ≥ 1 escape in
+  the set, and only its NEW vertices need priority ≤ q; an opponent vertex needs ≥ 1 successor in the set. (S0) holds
+  either way. C2 needs the trigger: the threshold loop pushes all of Z at every level (724), so it computes exactly the
+  triggered closure, W_t = Cl_t(W_{t−1}) = Cl_t(U). A trigger-free closure would overstate W_t, because a tangle with no
+  escape in the set is never tried (200-201).
+- G-d1 / G-Ψ. A round that returns at 716 (no candidates) runs no threshold loop. Define W_{r,t} := Cl_t(U_r) for every
+  round and level, so Ψ's components align. dtl_rootmono.py compares Ψ only when the two lists have equal length. On the
+  data no RV-equal pair had unequal lengths ("Ψ not monotone": 0), so the counts of §22c-g stand.
+  [CORRECTION 13:13Z: false for the cross unions. union411 of UNIONS=600 SEED=11 UM_CROSS=3 (Oink order; n = 39) has
+  one RV-equal pair with Ψ lengths 18 vs 1, which the old tool counted as "Ψ not monotone". dtl_rootmono.py now implements
+  the convention (W_{r,t} := Cl_t(U_r) via dtl_ideal.lfp for rounds returning at 716). Under it that transition is "Π
+  rises (Ψ), later call dirty". Corpus, mixed unions and cross stable had no length mismatch. Full re-run with the fixed
+  tool: §22n.]
+- G-e2. A transition with no differing tattr can happen once per phase (the last search re-finds only duplicates and
+  returns false, 1068). The bound reads S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·|C_T| + 1.
+Hypotheses added to §22e (OPEN):
+- (STR-DET) (REFEREE-2 §0, G-STR). If every tattr before a point has equal set output in s and s+1, then every SCC
+  extracted before that point is equal.
+  - The danger: extraction reads str (268). A tangle that s learned later can fire in s+1 and write its stored strategy
+    (171) on vertices that in s joined by vertex rules (89). The set output stays equal while the strategies differ.
+  - The weak form suffices for the counting: s+1 creates no tangle before its first set difference, and every
+    transition but the last has a set difference.
+  - The FDL (G-h1 closure) and R5 (h) rest on it too.
+- (e* ∉ Dom) (G-e1 / G-DOM). The first difference never lies in a Dom tattr (878-890 or 962-991).
+  - e* ∉ sptl is proved (R-P4): pass 1 recomputes the final round's regions, and repeated passes are deleted.
+GAP-A ⇐ (CTX) ∧ (FALL) ∧ (STR-DET) ∧ (e* ∉ Dom), with §22f's (FALL) in place of (DIRTY).
+Partial argument for (e* ∉ Dom) (L-ALG reading, SKETCH).
+- Let e* be the Dom tattr at the j-th top τ_j of a piece P with context R and removed set X. Before e* the two searches
+  agree, including P's best_vertices call and P's sptl passes.
+- Dom's closure output is monotone in T for a fixed input (1.2b). So a difference at step j needs a tangle t created by s
+  after e*, i.e. in a later piece. By the context-chain argument (R-PROVED2 §C5), the later contexts of the call exclude
+  X and the whole of s's Dom removal of P, and ancestor contexts exclude the call's whole context. So t ∩ (X ∪ Dom_P(s))
+  = ∅. In particular t is NOT an X-straddling acceptance at step j: it meets neither old X nor Dom's earlier parts.
+- By the (YZ) reading (GAP-C §18h; R-STEP5 claim 4), Dom's step j differs from the final round's region step j (identical
+  in s and s+1) only through X-straddling acceptances.
+- So e* in Dom needs an OLD straddling tangle t′ ∈ T_s^{e*}, accepted at step j in both runs, whose accepted vertices let a
+  NEW non-straddling t fire in s+1 within the same step.
+- Open point: exclude that interaction, or give it a budget. t′ is accepted in both runs, so its vertices lie in Dom_P(s).
+  The new t fires on escapes that t′ (or the chain after it) supplied, while its own vertices lie in R \ Dom_P(s). In
+  the region loop t′ is rejected, which is why t does not fire there.
+DATA for both hypotheses: §22h addendum below (corpus plus unions, both orders; running at 12:20Z).
+
+22i. Lemma STR-DET (PROVED, reading; L-ALG 12:26Z by date -u). Closes G-STR, and with it the str part of G-h1 and R5 (h)
+Statement. Let s → s+1 be consecutive searches of one phase. Align their reduced logs (§21d) up to a point π, and suppose
+every tattr before π has the same input and the same SET output in both. Then:
+- (a) no tangle of T_{s+1} \ T_s^π fires in any sptl region computation before π, where T_s^π is the tangle set s had at
+  π [per referee, W-a1 (R-P5): read T_{s+1} \ T_s^ρ, where ρ is the point of the region in question; the proof
+  covers it];
+- (b) every sptl region computation before π is step-identical in s and s+1, including str;
+- (c) every SCC extracted before π is the same, s+1 creates no tangle before π, and the W bits agree;
+- (d) if no tattr differs at all, s+1 creates no tangle, returns false (1068) and is the last search of the phase (G-e2).
+Code facts used (dtl.cpp @ 8fbf0a7):
+- (F1) attractTangle (110-185) changes no state when it returns false. The only exception is deleting a tangle with a
+  vertex outside G (133-137); a tangle learned inside G′ never triggers it.
+- (F2) sptl (477-546) computes regions of a pass in disjoint arenas (R[v] = false at each pop, 489).
+- (F3) Extraction reads str only on region vertices (extractTangles(top, Z, str), 539). Every such value is written
+  during that region's own computation: the vertex rule writes at join (89); the tangle rule writes at join (171); line 73
+  writes only for a target vertex with str = −1, and in sptl the only target is the top, reset at 485.
+- (F4) Closedness is a set property: str[top] ≠ −1 iff some successor of top is popped in the region (73); for an
+  opponent top it is 519-525.
+- (F5) For the SCC C_τ extracted at top τ (SCC1), every escape of C_τ lies outside Z_τ. An opponent vertex of C_τ with an
+  edge into Z_τ \ C_τ would make that vertex reachable from τ.
+Proof of (a). Suppose a tangle t ∈ T_{s+1} \ T_s^π fires in s+1 in the pass-1 region Z_τ of a piece P before π. Then t is
+created by s after the corresponding point. Its newly added vertices lie in Z_τ(s+1), which equals Z_τ(s) (equal set
+output).
+- Case A: s creates t in a later piece, at any depth. By the context chain (R-PROVED2 §C5), the later contexts exclude
+  s's whole Dom removal Dom_P(s), and ancestor contexts after the call returns exclude the call's whole context. So
+  t ∩ Dom_P(s) = ∅.
+  - But Z_τ ⊆ Dom_P(s). Dom(V*, R) (877-890) processes the tops of V* in the same order with target X. By the induction
+    of PREFIX-MONO's absorbed case (O1, (S0)), the Dom set after the tops ≥ τ is closed at threshold pr τ and contains
+    the earlier pass-1 regions and τ, so it contains Cl_{pr τ}(P(τ⁺) ∪ {τ}) ⊇ Z_τ.
+    [per referee, G-a2 (R-P5): the justification is replaced. PREFIX-MONO's absorbed case needs a step-ideal later run,
+    and Dom is not known to be one. Direct argument: let D_τ be the union of Dom's parts for the tops of index ≥ τ.
+    D_τ is closed under the threshold-pr(τ) rules in R, for any T ⊆ T_s^{Dom}:
+    - p-vertices: 74, 88, with O1.
+    - Opponent vertices: 80.
+    - Tangles: Dom's target is X, and attractTangle skips vertices already in X (136), so an earlier part does not
+      reject a tangle. This is exactly the X-straddle acceptance.
+    Hence D_τ ⊇ Cl_{pr τ}(P(τ⁺) ∪ {τ}) ⊇ Z_τ by (S0), by induction over the tops.]
+  - So t's new vertices lie in Dom_P(s) ∩ t = ∅. Contradiction.
+- Case B: s creates t in piece P itself, at a top τ′ in some pass. Then t ⊆ Z_{τ′} of that pass.
+  - The pass-k regions of s up to π equal its pass-1 regions as sets: region by region the inputs agree, and
+    out(s, p1) ⊆ out(s, pk) ⊆ out(s+1, p1) = out(s, p1) by monotonicity in T (1.2b).
+  - By (F2) the regions of one pass are disjoint, and t's new vertices lie in Z_τ. So τ′ = τ and t = C_τ.
+  - By (F4) τ is closed in pass 1 iff it is closed in pass k, and W[τ] is set at its first closed extraction (529). So t
+    was extracted at τ in pass 1.
+  - By (F5) no escape of t lies in Z_τ. But a tangle fires only at the pop of an escape in the current set (200-201),
+    and Z_τ is the same set in s+1. Contradiction.
+Proof of (b)-(d).
+- By (a) and (F1), every tangle of s+1 that s does not have at that point is tried and rejected without a state change.
+  So each sptl region computation before π runs the same instruction sequence in both searches, and str agrees there by
+  (F3). Tattrs outside sptl may write different str, but str is read only by extraction (F3), and the later tattrs read
+  only sets.
+- So every extraction before π computes the same SCC (SCC1) and the same W bits. Each SCC that s created there is stored
+  in T_{s+1}, so in s+1 it is a duplicate (385-424) or a dominion found again. A dominion cannot occur before the phase's
+  last search.
+- (d) is (c) with π at the end of the log. □
+Consequences:
+- FDL (ii)/(iii) hold as written on the reduced log, and REFEREE-2's G-h1 hole closes: s+1's single pass extracts the
+  SCCs of s's pass 1, by (b).
+- So §22e's (STR-DET) hypothesis is discharged, given this reading. The open hypotheses are (CTX), (FALL) and
+  (e* ∉ Dom).
+DATA (dtl_rootmono.py, corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29, meet_viol_n17):
+- Weak STR-DET (s+1 creates no tangle before e*): 1,065 / 1,065 (Oink), 1,035 / 1,035 (stable).
+- e* caller: bv-reg 282 / 286, bv-thr 739 / 703, search_rec (−1 attractor) 44 / 46. In Dom or sptl: 0 / 0.
+- No transition without a set-level difference.
+- Union runs (completed): mixed unions s1, weak STR-DET 6,031 / 6,031 (Oink), 6,153 / 6,153 (stable); cross unions s11,
+  3,370 / 3,370 and 3,377 / 3,377. e* in Dom 0 and in sptl 0 everywhere.
+- Signed by both referees (R-P5 @ ca03021, (a) SIGN WITH GAPS, both closed; R2-P5 @ 6d508da, all SIGN). G-STR CLOSED.
+- Union runs: were pending at 12:26Z.
+
+22j. (e* ∉ Dom) as a budgeted term, and why raw inputs do not help (12:34Z by date -u)
+Per-input budget (PROVED, reading). Fix a tattr input I = (caller, Z_in, R, Gx, maxpr). Its output is the triggered
+closure (DTL-proof 1.2), which is monotone in T (1.2b). Take transitions s₁ < s₂ of one phase whose first differences
+e*₁, e*₂ have input I. Then
+  o(I, T_{s₁+1}) ⊆ o(I, T_{s₂}^{e*}) ⊊ o(I, T_{s₂+1}), since T_{s₁+1} ⊆ T_{s₂} ⊆ T_{s₂}^{e*}.
+So the transitions whose e* has input I form a strictly increasing chain of subsets of G′, at most n of them.
+Consequence for G-DOM. Replace the hypothesis (e* ∉ Dom) by the term n·|C_Dom|, where C_Dom is the set of distinct
+first-difference Dom-step inputs. The reduction then reads
+  S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·(|C_T| + |C_Dom|) + 1,
+[per referee, R9 post-landing note: with the constants 2(F_R + 1)(H + 1) per context and ≤ 2n per input.]
+so GAP-A ⇐ (CTX⁺) ∧ (FALL), with (CTX⁺) counting the distinct first-difference contexts of best_vertices calls, −1
+attractors and Dom steps.
+The same bound for every tattr type, S − 1 ≤ n·|I_fd| + 1 with I_fd the distinct first-difference inputs, is valid but
+VACUOUS on the data: |I_fd| ≈ S − 1. For example spp_chain_up_n43 has 41 inputs in 41 transitions, and spp22_oink_n40 21
+in 21; the maximum is 0.95·|G′|, both orders. The per-context Π of §22c-e is what compresses the threshold-loop and
+region inputs of one call into one context. The −1 attractor and Dom steps keep the per-input form.
+Where a Dom e* would come from (§22h sketch, sharpened). The new tangle t must fire in s+1's Dom step j but NOT in s+1's
+final-round rescue loop, which has W_max ⊇ U and Gx = R. If t fired there, a set difference would lie before e*.
+- So some escape of t lies in Dom_{≤j}(s) \ W_max: a vertex that Dom gained only through an X-straddling acceptance of
+  an old tangle t′. In the rescue loop t′ is rejected, because its X-vertex is outside R (137).
+- The shape is therefore an old X-straddling t′ in Dom that feeds an escape of a tangle t that s learns later, inside
+  R \ Dom_P(s).
+- DATA: 0 Dom e* in corpus (1,065 / 1,035) and in cross unions (stable 3,377). Mixed unions and Oink cross are pending.
+DATA, cross unions s11 (UM_CROSS = 3, 600 games, stable order): weak STR-DET 3,377 / 3,377; e* caller bv-reg 1,177,
+bv-thr 2,083, −1 attractor 117, Dom 0, sptl 0; clean root transitions 2,284, all predictions hold; Π at root-e*: rises
+2,799, RV falls 62.
+
+22k. (CTX): CHAIN is dead; scaling on the SPP families (12:46Z by date -u; dtl_rootmono.py "CHAIN")
+- (CHAIN) "the first-difference contexts of a phase form a chain under ⊆" would give |C| ≤ n + 1 per depth. It is FALSE.
+  - Depth 0: 13 of 49 phases (Oink), 12 of 50 (stable). Depth > 0: 4 phases each.
+  - Smallest instance: experiments/alg/instances/dtl_searches15_n24.pg, Oink order, incomparable first-difference
+    contexts of sizes 14, 16, 24. Both orders: climbs_1016/nest_nest_s43.pg, sizes 26, 26, 32.
+- Scaling of |C_bv| (first-difference best_vertices contexts per phase), Oink / stable:
+
+| instance | first-difference contexts | transitions | n |
+|---|---|---|---|
+| spp_final_n20 | 4 / 3 | 18 / 10 | 20 |
+| spp_final_n30 | 3 / 3 | 18 / 18 | 30 |
+| spp_final_n40 | 8 / 6 | 18 / 16 | 40 |
+| spp_final_n60 | 2 / 2 | 13 / 13 | 60 |
+| spp19_oink_n30 | 2 / 2 | 18 / 15 | 30 |
+| spp22_oink_n40 | 8 / 8 | 21 / 21 | 38 |
+| spp25_oink_n40 | 10 / 9 | 24 / 22 | 38 |
+| fresh_fixed_n24 | 2 / 2 | 8 / 8 | 24 |
+
+- Maximum 0.26·|G′|, with no sign of superlinear growth in n.
+- The visited context tree is much larger (up to 116 nodes, §22g), so the thinness that would be needed is that of the
+  FIRST-DIFFERENCE nodes, not of all visited nodes.
+- Counting facts (reading):
+  - A transition with first-difference position k creates at most one new successor at the node R_k. It may re-create
+    every node below k.
+  - So #nodes ≤ n·S, and S ≤ |C|·B: no bound follows either way.
+  - A proof must charge the new first-difference nodes below k to something that does not renew at the same rate.
+
+22l. Is (FALL)'s "at most 2 per context" structural? No: DATA only (12:59Z by date -u; dtl_rootmono.py "FALL witness")
+- Mechanism (Lemma E, §3). In 72 of 73 falls (Oink) and 71 of 72 (stable), every straddling witness tangle at the
+  falling call was already stored at the PREVIOUS visit of the context. So a fall is not caused by a new tangle
+  straddling. It is caused by new tangles enlarging an earlier region, which then steals a vertex of an OLD tangle, the
+  victim. The victim's rest is re-absorbed by a lower top, and RV falls.
+- Per (context, victim): at most 2 falls. 14 phases have max 1, and 2 phases have max 2: the f1_two* instances, where
+  the same victim falls twice at the same context. So "one fall per victim and context" is FALSE as a rule.
+- A structural bound would have to limit how often a fixed old tangle can be stolen from at a fixed context. Between two
+  falls the prefix must stop stealing, which only a non-monotone (dirty) step can cause, and then steal again.
+  NOT PROVED. The ≤ 2 is the maximum on the data, and L-RED's f1_twodef_n48 / f1_twofall_n48 were built to reach it.
+
+22m. GAP-A after box 7: one-page state (L-ALG, 13:00Z by date -u)
+Statement chain. All are readings of dtl.cpp @ 8fbf0a7, for every order datum. Signatures are those of REFEREE and
+REFEREE-2 (packets 4 and 5).
+1. FDL on reduced logs (§21d; signed, G-h1 closed given STR-DET). Lemma STR-DET (§22i; SIGNED by both). Every
+   transition except the last of a phase has a first differing tattr e*: equal input, strictly larger set output.
+2. PREFIX-MONO, POS-FALL, ROOT-BOUND (§22c; SIGNED by both). For every context R, Π_R(T) = (RV, Ψ, Φ_top) rises
+   strictly at each transition whose e* lies in the call at R, unless that call has a step deficit. Its chain heights
+   are polynomial: H = O(n^8).
+3. Per-input budget (§22j; packet 6 pending). The −1 attractor and Dom steps carry at most n first-difference
+   transitions per distinct input.
+4. Hence, per phase (§22e, §22f, §22j):
+   S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·(|C_T| + |C_Dom|) + 1.
+OPEN (GAP-A ⇐ both):
+- (CTX⁺): the numbers of distinct first-difference contexts (best_vertices calls, −1 attractors, Dom steps) per phase are
+  polynomial.
+  - DATA: at most 10 per phase (spp25_oink_n40), at most 0.26·|G′|. Dom first differences: 0 in all data.
+  - Exact obstruction (§22f/g): a P piece removes Dom(prevV) = Z_f, the level set of maximal RV, which jumps when RV
+    rises. This happens on CLEAN calls, and it re-creates every later context.
+  - Known dead routes: monotone removal prefixes (ABS-mono-pw, box 5), (CHAIN) (§22k).
+  - This is the nested-counter core. Each context has polynomially many successors (sketch, §22g), but the depth-0
+    positions multiply.
+- (FALL): F_R, the number of descents of Π_R along a phase, is polynomial.
+  - DATA: descents only where RV falls, at most 2 per context (f1_two*).
+  - Mechanism: new tangles enlarge an earlier region, which steals a vertex of an OLD tangle (Lemma E). The same victim
+    can fall twice (§22l).
+- (CTX⁺) and (FALL) have different causes (§22g), so this is two statements, not one.
+DEAD this box (with instances):
+- Root-call RMONO = (M) (dtl_mviol_n20, pinned Oink re-run).
+- (CHAIN) (dtl_searches15_n24, Oink; nest_nest_s43, both orders).
+- The raw per-input bound S ≤ n·|I_fd| + 1 is valid but vacuous (|I_fd| ≈ S − 1).
+Targets for L-RED's successor:
+- (a) A family with a bushy first-difference context tree: nested P pieces whose level sets jump at several depth-0
+  positions in turn. spp22/spp25 are the current maxima.
+- (b) A family where one context's Π falls more than twice: repeated stealing from the same victim, e.g. h4_defK or
+  f1_two* grown.
+- (c) PREFIX-MONO and STR-DET themselves (signed, but the referees welcome attacks).
+
+22n. Packet 6 (REFEREE-2 R2-P6 @ 5ef09aa; REFEREE's report pending), and data with the G-Ψ convention (13:36Z by date -u)
+REFEREE-2's verdicts (Lead 12:59Z). Imported here; §22f and §22j are unchanged until both reports are in.
+- §22j Dom budget: SIGN, with reading R-I. A Dom input is (the whole current X, R, top, threshold). Dom pushes only the
+  top (966), and its output is a monotone function of (I, T). (DOM-e*) is no longer needed: GAP-A ⇐ (CTX⁺) ∧ (FALL).
+- §22f: SIGN WITH GAPS, gap G-F1. A region e* at a DIRTY call could leave Π_R unchanged (one vertex moves up, another
+  down, and Φ_top compensates). Fix: F_R := descents of Π_R along the phase + the e*-at-R transitions at which Π_R does
+  not rise. (FALL) is stated for this F_R.
+- Signed as DATA only: "descends only where RV falls" and "≤ 2 per context". Proved: clean visits never descend.
+G-F1 count (first differences where Π_R does not rise), dtl_rootmono.py with the G-Ψ convention implemented
+(W_{r,t} := Cl_t(U_r) for rounds returning at 716; e9acfb86). Counts are Oink / stable:
+
+| set | transitions with e* | Π_R does not rise | RV falls at e* | visit-level falls |
+|---|---|---|---|---|
+| corpus + 4 instances | 1,065 / 1,035 | 0 / 0 | 18 / 18 | 73 / 72 |
+| mixed unions s1 (900) | 6,031 / 6,153 | 0 / 0 | 100 / 136 | 323 / 527 |
+| cross unions s11 (600, UM_CROSS = 3) | 3,370 / 3,377 | 0 / 0 | 53 / 62 | 167 / 217 |
+
+- The one case I reported at 13:08 (union411 of the cross unions, Oink order) was a tool artifact: Ψ lists of lengths
+  18 vs 1 under the missing convention. With the convention it is "Π rises (Ψ), later call dirty".
+- Falls per context, all sets: at most 2. The 2-fall phases are f1_twodef_n48, f1_twofall_n48 and, new, union807 of the
+  mixed unions (stable order, n = 45).
+- Falls whose witnesses are all OLDER than the previous visit: 316 / 323 and 521 / 527 (mixed), 159 / 167 and 210 / 217
+  (cross). The stealing mechanism of §22l dominates everywhere.
+- So, on these data sets: F_R = number of RV falls at R, and F_R ≤ 2. [Superseded by fall3_n76 below: 3 at one context.]
+Packet 6 SETTLED (per referee: REFEREE R-P6 @ 9f77ff9 with comparison §C @ ad4be01, REFEREE-2 R2-P6 §5 @ c7634a7; both agree; Lead 13:30Z; 13:39Z by date -u):
+- (1) G6-a1 = G-F1. F_R counts EVERY non-rise of Π_R at R along the phase: descents, incomparable steps, and Π-blind
+  e*-at-R transitions. It is not only descents. (FALL): this F_R is polynomial per context.
+- (2) G6-b2. (CTX⁺) counts Dom INPUTS (X ∪ Dom_{<j}, R \ Dom_{<j}, τ_j, pr τ_j), not Dom-loop contexts. REFEREE's probe
+  shows the input varying at fixed (R, X, top) in 105 of 2,110 phase-contexts.
+- G6-a2: §22f's display now carries the Dom term and the +1 (marked in place).
+- G6-b1: Dom pushes only the top (966), and its output is a monotone function of (input, T).
+- The §22h "equal lengths" sentence is corrected in place (13:16Z, e9acfb86).
+- Joint verdict: GAP-A ⇐ (CTX⁺) ∧ (FALL), given STR-DET. Both (CTX⁺) and (FALL) are DATA only.
+- (FALL) data update (L-RED R31; Lead re-run 13:42Z; L-ALG re-run 13:48Z: experiments/red/carry/instances/fall3_n76.pg,
+  sha1 a85133ec; pinned Oink: 3 dominions, 56 tangles, 10 iterations, verified; dtl_rootmono.py both orders: max 3
+  descents at one context, 3 falls of the same (context, victim) pair, phase of 5 transitions, |G′| = 76). Details: fall3_n76.pg has 3 descents of Π_R at ONE context in
+  one phase, both orders. It is a union of three 1-descent gadgets (lex_viol_oink_n20, lex_viol_inj_n28,
+  lex_viol_tie_n28) with cross edges, and the same old witness tangles are stolen at each descent. So "≤ 2" is dead as a
+  data bound, as §22l said it might be. A "one steal per witness" bound is also false, since witnesses are reused.
+
+22o. (CTX⁺): CTX-ROOT is dead (13:44Z by date -u; dtl_rootmono.py "CTX-ROOT", RM_LIGHT=1)
+- (CTX-ROOT) "distinct first-difference contexts per phase ≤ 1 + the number of root transitions" would have reduced
+  (CTX⁺) to the root's polynomial budget. It is FALSE. Corpus, Oink order: 5 of 261 phases.
+- Smallest instance: experiments/alg/instances/dtl_cnew14_n20.pg. First-difference positions are 3 1 5: 3 contexts for
+  1 root transition.
+- Others: strfam_S4_n22 (2 3 1), strfam_S5_n46 (2 2 3 1), spp_final_n40 and spp22_oink_n40 (8 contexts, 6 root
+  transitions).
+- Obstruction: inside one block where the root is frozen, the first-difference positions are not constant (2 then 3,
+  or 6 4 5), so deeper contexts change without any root change. Any bound must recurse into the blocks, which is the
+  nested-counter recursion again (§22g, §22k).
+- Context climbs (dtl_ctxclimb.py: spp25 and spp22 starts, both orders) are running to see how far the number of
+  first-difference contexts per phase can be pushed.
+
+22p. What a long phase looks like at depth 0 (DATA; spp22_oink_n40, Oink order, Odd's phase of 22 searches; 13:56Z by date -u)
+Each search's depth-0 iterations as (call result, piece size). M is a −1 piece (P or T), S is a stable piece, E is the
+end:
+  s0  M1 M2 M1 M2 M3 M1 M1 M1 M1 M2 M1 M2 M2 M1 M2 M2 M1 M1 M2 M1 M2 M1 S4 E1
+  s3  M1 M2 M1 M2 M3 M1 M1 M1 M1 M2 M1 M2 M2 M3 M4 S10 E1
+  s7  M1 M3 M1 M2 M3 M2 M1 M2 M1 S22
+  s8  M1 M1 M1 M2 M1 M2 M3 M1 M1 M1 M1 M2 M1 M2 M2 M1 S15
+  s10 M1 M1 M1 M2 M1 M2 M3 M2 M1 M2 M1 S21
+  s11 M1 M1 M1 M3 M1 M2 M3 M1 M1 M1 M1 M2 M1 M1 M2 M2 M4 S10
+  s17 M1 M3 M1 M2 M3 S28
+  s21 S38
+- Reading: a phase is a run of small "distraction" −1 pieces, each removing a level set Dom(prevV) of 1-3 vertices, then
+  ONE stable piece that grows as the learned tangles let vertices survive pruning.
+- The number of depth-0 pieces falls overall (24 → 2) but RISES twice: s7 → s8 (9 → 16 M pieces) and s10 → s11 (11 → 17).
+  At both, an early distraction piece changes its level set (M3 → M1 at position 2, or M2 → M3 at position 4). This is
+  §22g's obstruction at work: the level-set jump re-creates every later context, and the run of distractions behind it
+  is rebuilt.
+- So a (CTX⁺) proof needs a potential that pays for the rebuilt distraction runs, for instance through the vertices that
+  move from distraction pieces into the final stable piece (here 4 → 38). It must survive the two re-expansions. Not
+  attempted further in this box.
+- Tested (14:06Z, corpus plus kin, meet and fall3 instances, Oink order, dtl_rootmono.py "DISTRACTION"): the
+  distraction mass (total size of the depth-0 −1 pieces) is NOT a potential.
+  - It falls at 528 transitions, stays the same at 156 and rises at 372.
+  - The rises: 159 at a −1 call whose RV changed, 194 at a −1 call with RV unchanged, 18 with e* outside best_vertices,
+    and 1 at a stable call.
+  - So the re-expansions are not confined to level-set jumps.
+
+22q. What a descent is charged to: (FALL-V) (14:19Z by date -u; dtl_rootmono.py RM_FALLDET=1, "FALLS per (context, vertex)")
+Instance experiments/red/carry/instances/fall4_n116.pg (L-RED R31; sha1 9b174a5e).
+- L-ALG re-run: pinned Oink (`--dtl --no-single --no-wcwc --no-loops`) found 6 dominions and 82 tangles in 13 iterations,
+  verified.
+- dtl_rootmono.py finds 4 descents of Π_R at one depth-0 context (|R| = 113), in both orders.
+- The step-deficit witnesses are IDENTICAL at all four descents: the same victim tangles, the same stealing region
+  tops (file ids 20, 47, 65) and the same failing tops. So the deficit is static, and (victim, stealing top) cannot be
+  what is used up.
+- The vertices whose RV falls are DISJOINT across the descents, one gadget per descent (file ids):
+  - visits 0 → 1: 48-67;
+  - visits 1 → 2: 2-43;
+  - visits 2 → 3: 72-91;
+  - visits 3 → 4: 110.
+- Reading: each gadget's vertices first gain RV through learning, then lose it once when the static deficit catches up.
+  The chain of cross edges staggers the gadgets by one search each (L-RED's delay mechanism).
+Candidate (FALL-V), DATA only: along a phase, each vertex's RV at a fixed context falls at most once.
+- Consequence: the descents of Π_R at R number at most |R| ≤ n. Together with the non-rise steps that F_R also counts
+  (0 on all data), (FALL) would follow, and GAP-A ⇐ (CTX⁺) alone, given STR-DET.
+- DATA so far: corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29, meet_viol_n17, fall3_n76 and fall4_n116, both
+  orders. In all 18 phases with falls, every vertex falls at most once per context. Unions (completed 14:39Z): mixed
+  unions s1, 106 (Oink) / 139 (stable) phases with falls; cross unions s11, 54 / 64. Max 1 fall per (context, vertex)
+  in every one.
+- Proof idea (not done). A fall of v at R needs a stolen victim (Lemma E). Where the later call is clean the prefixes
+  grow (PREFIX-MONO), so a stolen vertex stays stolen and v cannot regain support from that victim.
+- Gap: a NEW tangle could restore v's RV and then be stolen in turn. That is the shape for L-RED: v rises after its fall
+  and falls again at the same context.
+(CTX⁺) climb data (14:23Z by date -u; dtl_ctxclimb.py from spp25_oink_n40, seed 7, Oink order). Instance
+experiments/alg/instances/ctx12_oink_n40.pg (n = 40, |G′| = 38).
+- It has 12 distinct first-difference best_vertices contexts in one phase of 23 transitions in Oink order, and 9 in 20
+  in stable order.
+- Pinned Oink: 3 dominions, 46 tangles, 27 iterations, verified.
+- The previous maximum was L-RED's ctx11_n40 with 11. Growth so far is +2 over the spp25 start, at fixed n.
+RV shape of a falling vertex (14:45Z by date -u; corpus plus fall3_n76, fall4_n116, kin_viol_n29, meet_viol_n17; Oink /
+stable). For each (context, vertex) whose RV falls at some visit:
+- Before the fall, its RV never decreases: 443 / 440.
+- After the fall, its RV stays constant (322 / 334) or rises again (121 / 106). It NEVER falls a second time.
+So (FALL-V) is not a matter of "nothing happens after the fall": a vertex regains support and still does not fall again.
+Route for a proof (reading; SKETCH):
+- The code's region step equals the triggered closure with every tangle that meets the earlier prefix EXCLUDED
+  (138-139: a tangle vertex outside CurR ∪ CurZ rejects it).
+- So PREFIX-MONO's induction goes through unless the later prefix grows into a tangle that the earlier prefix did not
+  meet: a NEW steal.
+- A second fall of v would therefore need a second, independent steal that affects v after v recovered. The data has
+  none. Cross-union shapes are running.
+
+22r. Lemma PREFIX-MONO-X: Π_R can descend only at a NEW STEAL (PROVED, reading; L-ALG 14:54Z by date -u)
+Setting as in §22c: one pruning round in context R with input V, tangle set T, tops processed in decreasing index (O1).
+P(τ⁺) is the prefix before the processed top τ. Define the EXCLUDED tangles at τ:
+  E_τ(T) := { t ∈ T alive : t meets P(τ⁺) and t ⊄ P(τ⁺) }.
+Lemma EXACT. For every processed τ, P(τ) = Cl_{pr τ}(P(τ⁺) ∪ {τ}; T \ E_τ), where Cl is the triggered closure in R
+(dtl_ideal.lfp) with tangle set T \ E_τ.
+Proof.
+- (⊆) is (S0) (R-P4 (a)). The code applies only closure rules. A tangle with a vertex in P(τ⁺) has that vertex outside
+  CurR ∪ CurZ, so attractTangle rejects it (137). So only tangles of T \ E_τ fire.
+- (⊇) Claim: P(τ⁺) is closed under the threshold-pr(τ) rules of T \ E_τ in R. This is the argument of R-P5 G-a2 for
+  the code's own prefix, using O1: every earlier region has threshold ≥ pr τ.
+  - A p-vertex u ∉ P(τ⁺) with pr(u) ≤ pr τ and an edge to w ∈ P(τ⁺): at w's pop u was unconsumed, so u was attracted
+    (74, 88).
+  - An opponent vertex with all R-edges in P(τ⁺) is attracted at the pop of the last of them (80).
+  - A tangle t ∈ T \ E_τ with t ∩ P(τ⁺) = ∅, all escapes in P(τ⁺) or outside R, and one escape in P(τ⁺): at the pop of
+    its last escape all its vertices are unconsumed, so it fires there and t meets P(τ⁺). Contradiction. A tangle with
+    t ⊆ P(τ⁺) adds nothing.
+  - So every rule instance with all premises in P(τ⁺) is already satisfied. The region's pop loop computes the closure
+    of the remaining instances (DTL-proof 1.2: every instance with a premise in CurZ is tried at that premise's pop).
+  So P(τ⁺) ∪ Z_τ ⊇ Cl. □
+Lemma PREFIX-MONO-X. Let V ⊆ V′ and T ⊆ T′ for one round. Assume (NS), "no new steal": for every τ processed in the
+EARLIER run, E′_τ ∩ T ⊆ E_τ, where E′_τ is computed from the later run's prefix P′(τ⁺), whether or not τ is processed
+there. Then P(τ) ⊆ P′(τ) for every τ.
+Proof, by induction over τ in decreasing order, as in §22c.
+- τ not processed in run 1: P(τ) = P(τ⁺) ⊆ P′(τ⁺) ⊆ P′(τ).
+- τ processed in both runs: P(τ) = Cl(P(τ⁺) ∪ {τ}; T \ E_τ) ⊆ Cl(P′(τ⁺) ∪ {τ}; T′ \ E′_τ) = P′(τ), by EXACT twice. Cl is
+  monotone in its base and its tangle set, and T \ E_τ ⊆ T′ \ E′_τ by (NS).
+- τ processed in run 1 only (τ ∈ P′(τ⁺)): by the closedness claim of EXACT applied to run 2, P′(τ⁺) is closed under the
+  threshold-pr(τ) rules of T′ \ E′_τ ⊇ T \ E_τ (by (NS)). It contains P(τ⁺) ∪ {τ}. So
+  P′(τ) = P′(τ⁺) ⊇ Cl(P(τ⁺) ∪ {τ}; T \ E_τ) = P(τ). □
+Corollary. If (NS) holds at every region step of every round (rounds aligned with V_r ⊆ V′_r inductively), then the
+§22c corollaries C1-C4 hold. The threshold loop has no exclusions: Gx = R, consume = None, so W_t = Cl_t(U) over all of
+T. So RV does not fall and Ψ does not shrink. Hence a non-rise of Π_R between two visits of R requires a NEW STEAL: a
+tangle of the earlier visit that the later visit's prefix newly meets without containing.
+PREFIX-MONO (§22c) is the special case in which the later run is step-ideal.
+DATA (dtl_rootmono.py RM_EXCL=1; corpus plus fall3_n76, fall4_n116, kin_viol_n29, meet_viol_n17; consecutive visits of
+every context; Oink / stable):
+
+| visit pairs | Oink | stable |
+|---|---|---|
+| new steal, with a descent | 86 | 85 |
+| new steal, no descent | 661 | 624 |
+| no new steal, no descent | 7,312 | 7,130 |
+| no new steal, with a descent | 0 | 0 |
+
+Consequence: F_R ≤ #(visit pairs at R with a new steal). (FALL) reduces to bounding new steals per context, i.e. how
+often a later prefix grows into a stored tangle that the earlier prefix did not meet.
+- In a stretch with no new steal, prefixes only grow. So a fixed (step, tangle) pair can be newly stolen again only after
+  some new steal has shrunk the prefix.
+- That suggests a potential argument over (step, tangle) pairs, but the number of stored tangles grows with S, so it is
+  circular as it stands.
+- (FALL-V) (§22q) is the data-side statement that this does not compound per vertex.
+(FALL-V) is FALSE (14:58Z by date -u). Instance experiments/red/carry/instances/fallv_viol_n28.pg (L-RED, from a climb on
+lex_viol_inj_n28; on l-red, sha1 21b235f4).
+- L-ALG re-run: pinned Oink found 1 dominion and 17 tangles in 7 iterations, verified.
+- dtl_rootmono.py, both orders: "FALLS per (context, vertex): max 2". At the ROOT context, vertex 14 (priority 27) has
+  RV 4, 6, 5, 4, 4: a rise, then two falls. 8 (context, vertex) pairs fall twice.
+- So "each vertex falls at most once per context" is dead. My shape count above (never a second fall) held only on the
+  corpus and unions.
+- PREFIX-MONO-X (§22r) survives on it: 17 / 17 descents have a new steal, and no descent occurs without one.
+- So the charge for (FALL) that survives is the NEW STEAL (§22r, proved as a reading): F_R ≤ #(new-steal visits at R).
+  How often a later prefix newly grows into a stored tangle at one context is the open question.
+How loose the new-steal charge is (15:04Z by date -u; corpus plus fall3_n76, fall4_n116, fallv_viol_n28, f1_twofall_n48,
+f1_twodef_n48; Oink order; "new-steal visits per context").
+- New-steal visits per context per phase reach 8: h4_def10_oink_n28 and h4_def11_oink_n28, with 11 and 12 transitions.
+  Next: dtl_replay2deep_n32 and h4_nested7_oink_n44 with 7, and h4_def8 with 7.
+- Descents reach at most 4 (fall4_n116). So most new steals cause no descent, and F_R ≤ #new steals is far from tight.
+- In the h4_defK family new steals occur at almost every transition, growing with K like the phase itself.
+- So (NEWSTEAL) is a true reduction of (FALL), but bounding it is about as hard as bounding the phase. A useful charge
+  would have to separate the steals that cause a descent from the rest. Not found in this box.
+
+22s. PREFIX-MONO-X*: the tight charge is a RELEVANT steal (PROVED, reading; L-ALG 15:10Z by date -u)
+Let F_τ ⊆ T \ E_τ be the tangles that FIRED (added vertices) at the processed step τ in the earlier run.
+- EXACT*: P(τ) = Cl_{pr τ}(P(τ⁺) ∪ {τ}; F_τ). The code's derivation uses only F_τ, so ⊇. By EXACT, P(τ) is the closure
+  over T \ E_τ ⊇ F_τ, so ⊆.
+- (NS*) "no relevant new steal": F_τ ∩ E′_τ = ∅ for every τ processed in the earlier run. That is, no tangle that fired
+  at τ before is newly met, without being contained, by the later prefix P′(τ⁺).
+- Lemma PREFIX-MONO-X*: let V ⊆ V′, T ⊆ T′ and (NS*). Then P(τ) ⊆ P′(τ) for every τ.
+  Proof: as §22r, with F_τ in place of T \ E_τ. In the processed-in-both case, F_τ ⊆ T′ \ E′_τ. In the absorbed case,
+  P′(τ⁺) is closed under the rules of T′ \ E′_τ ⊇ F_τ. □
+- Corollary: Π_R can fail to rise between two visits only at a relevant new steal. Such a steal means that some
+  vertices of a tangle t that fired in τ's region before now lie in an EARLIER region (higher top), while t is not inside
+  the prefix: t is split.
+DATA (corpus plus fall3_n76, fall4_n116, fallv_viol_n28, f1_twofall_n48, f1_twodef_n48; RM_EXCL=1; consecutive visits of
+every context; Oink / stable):
+
+| visit pairs | Oink | stable |
+|---|---|---|
+| relevant new steal, with a descent | 122 | 121 |
+| relevant new steal, no descent | 5 | 5 |
+| no relevant new steal, no descent | 8,125 | 7,906 |
+| no relevant new steal, with a descent | 0 | 0 |
+
+- Compare plain new steals without a descent: 665 / 630. The relevant ones are the right charge: F_R ≈ #relevant new
+  steals.
+- Relevant new steals per context per phase: at most 4 (fall4_n116), then 3 (f1_twodef_n48, fall3_n76), and 2
+  (fallv_viol_n28, f1_twofall_n48).
+(FALL) ⇐ (RELSTEAL): relevant new steals per context are polynomial per phase.
+- A relevant steal moves a vertex to an earlier region. Without descents prefixes only grow, so per round each vertex
+  can move earlier at most n times.
+- But a descent can move many vertices later again, which re-enables steals. So the count is #descents·n² circularly.
+  This is the remaining core of (FALL).
+
+22t. Packet 7 (REFEREE R-P7 @ 299bc58; REFEREE-2 pending), imported per referee; §22r unchanged (15:17Z by date -u)
+- EXACT: SIGN WITH GAPS, both closed.
+  - G7-a1: the rejection is at 138-139 ("not contained in Z+R"); 137 is the "already attracted" skip.
+  - G7-a2: the "remaining instances" step, written out.
+    - A p-vertex's trigger edge goes into Z_τ and is tried at that pop.
+    - An opponent vertex with ≥ 1 successor in Z_τ is tried at the pop of the last one; its successors in P(τ⁺) are not
+      escapes (80).
+    - A tangle with ≥ 1 escape in Z_τ is tried at the pop of its last escape in Z_τ; escapes in P(τ⁺) pass (156 tests
+      Gx = CurR).
+    - A tangle with all escapes in P(τ⁺) or outside R is the closedness case.
+  - REFEREE's probe (own closure): EXACT at 233,399 stable / 244,057 Oink region steps, 0 failures.
+- PREFIX-MONO-X: SIGN. Wording: "PREFIX-MONO is the special case" should read "the same induction proves PREFIX-MONO with
+  T′ in place of T′ \ E′_τ". A step-ideal run's prefixes are closed under all of T′. It is the same proof pattern, not a
+  special case of the hypothesis.
+- Corollary: SIGN WITH GAPS.
+  - G7-c1 (closed): Π-blind e* steps also need a new steal. POS-FALL uses step-ideality only through (C4), which holds
+    under (NS).
+  - G7-c2 (stated): the bound is ONE-SIDED and loose. New steals outnumber falls about 8-13 to 1.
+- Reduction (REFEREE): GAP-A ⇐ (CTX⁺) ∧ (NS-COUNT), given STR-DET. (NS-COUNT) says new-steal visit pairs per context are
+  polynomial. (NS-COUNT) ⇒ (FALL), not conversely.
+- §22s (PREFIX-MONO-X*, "relevant" steals) tightens the charge to (RELSTEAL), with 5 / 5 relevant steals without a
+  descent. It is for packet 8.
+Per-(context, round, top, tangle) counting (REFEREE's suggestion; DATA, 15:17Z; corpus plus fall3, fall4, fallv, f1_two*;
+RM_EXCL=1):
+- (STEAL-ONCE): every (context, round, top, tangle) is newly stolen at most once per phase. 91 phases with new steals and
+  23 with relevant steals, in both orders, all with max 1.
+- So the same tangle can be stolen repeatedly only at DIFFERENT steps. In fallv_viol_n28 tangle 2 is stolen at both
+  falls, at different (round, top).
+- Consequence: #new-steal visits per context ≤ (n + 1)·n·|T_phase|, but |T_phase| ≤ n·S (Lemma W), which is circular.
+  (STEAL-ONCE) would need a bound on the tangles that can be stolen at a context independent of S.
+
+22u. (FALL) ⇐ (STEAL-ONCE) ∧ (FIRED-R): two data statements, no S in them (15:23Z by date -u)
+Chain (proved parts are readings):
+- F_R ≤ #relevant-steal visits at R (§22s, PREFIX-MONO-X*).
+- A relevant steal at a visit pair is a (round, top, tangle) with the tangle in F_τ, newly met by the later prefix.
+- (STEAL-ONCE, DATA): each (context, round, top, tangle) is newly stolen at most once per phase.
+- (FIRED-R, DATA): the distinct tangles that ever FIRE in region steps at context R during a phase number at most
+  poly(|R|).
+  - Corpus plus fall3_n76, fall4_n116 and fallv_viol_n28, Oink order: at most 17 per context, and at most 0.5·|R|.
+    The maximum is climbs_1016/a_best_s31.
+  - Cross unions s11 (600 games plus corpus; RM_EXCL=1, RM_LIGHT=1; 15:31Z), Oink / stable:
+    - (FIRED-R): at most 13 per context, at most 0.5·|R|.
+    - (STEAL-ONCE): max 1 in all 325 / 338 phases with new steals and all 63 / 74 with relevant steals.
+    - PREFIX-MONO-X*: descents with a relevant steal 180 / 234; relevant steals without a descent 17 / 23; descents
+      without a relevant steal 0 / 0. Plain new steals without a descent: 2,554 / 2,625.
+- Then F_R ≤ (n + 1)·n·poly(|R|), and (FALL) holds. The circularity of §22t is gone, because (FIRED-R) counts only the
+  tangles active at R, not |T_phase|.
+- So GAP-A ⇐ (CTX⁺) ∧ (STEAL-ONCE) ∧ (FIRED-R), given STR-DET. All three are DATA only.
+- A proof of (FIRED-R) needs a structure on the tangles that fire at a fixed context: each adds at least one new vertex
+  to a region of R in some visit. I have no argument that their number is not ~ the number of searches.
+
+22v. Toward (STEAL-ONCE): what a second steal needs (reading, SKETCH; 15:34Z by date -u)
+- Suppose (R, r, τ, t) is newly stolen at visit pairs (s₁ → s₂) and later (s₃ → s₄), with s₂ ≤ s₃.
+  - At s₂, P(τ⁺) of round r meets t without containing it.
+  - At s₃, t is again not excluded: either P(τ⁺) no longer meets t, or it contains t.
+  - Either way, between s₂ and s₄ some vertex of t leaves P(τ⁺) of round r, i.e. moves to a region whose top has index
+    below τ, or out of the round's union.
+- By PREFIX-MONO-X* (§22s), a prefix can shrink between two visits only if that transition has a relevant steal at some
+  step that precedes (r, τ) in the step order (rounds ascending, tops descending), or a change of V in an earlier round
+  (an RV change, itself charged to such a steal).
+- Induction over the steps in that order gives only steals(step) ≤ 1 + Σ_{earlier steps} steals. That is exponential
+  in the number of steps, so it does not explain the data's "max 1" (§22t, §22u: 0 exceptions in 416 / 429 phases with
+  steals).
+- The regularity the data shows is stronger: a prefix that has grown into a tangle never retreats from it far enough to
+  re-steal it at the same step.
+- A proof would need to show that the shrinks caused by earlier relevant steals never uncover the same tangle at the same
+  later step. Not found.
+
+22w. Packet 8 (REFEREE R-P8 @ fe4be51; REFEREE-2 pending), imported per referee; §22s and §22u unchanged (15:53Z by date -u)
+- EXACT*: SIGN (a corollary of EXACT; no new assumption). PREFIX-MONO-X*: SIGN.
+- Corollary: SIGN WITH GAPS, G8-1. Counted over consecutive visit pairs it needs the factor 3: F_R ≤ 3·N*_R, where N*_R
+  is the number of relevant-steal visit pairs at R. §22s's "F_R ≈ #relevant steals" and §22u's first line omit it.
+- §22u chain: VALID as a conditional. F_R ≤ 3(|R| + 1)|R|·#fired(R) given (STEAL-ONCE). So GAP-A ⇐ (CTX⁺) ∧ (STEAL-ONCE)
+  ∧ (FIRED-R), given STR-DET. Both premises are DATA. (FIRED-R) is the real obstruction and has no argument yet.
+- Wording correction to §22u: "at most 0.5·|R|" holds on L-ALG's data only. REFEREE's probe finds (FIRED-R) up to 14
+  tangles per context and a ratio up to 0.62·|R| (Oink order) on small contexts. Read §22u's figure as "at most 14, and
+  at most 0.62·|R|, on all data so far".
+- R9 constants (post-landing note): per context 2(F_R + 1)(H + 1), per input ≤ 2n. Marked in the §22e and §22j displays.
+Mixed-union data for §22u (UNIONS = 900, SEED = 1, plus corpus; RM_EXCL=1, RM_LIGHT=1; Oink / stable):
+- (FIRED-R): at most 13 per context, ratio at most 0.5 / 0.47.
+- (STEAL-ONCE): max 1 in all 665 / 703 phases with new steals and all 124 / 150 with relevant steals.
+- PREFIX-MONO-X*: descents with a relevant steal 314 / 522; relevant steals without a descent 33 / 22; descents without a
+  relevant steal 0 / 0.
+(FIRED-R) climb and a caveat (16:08Z by date -u; experiments/alg/dtl_firedclimb.py, from climbs_1016/a_best_s31.pg).
+- Oink order: 12 tangles at one context with |R| = 16 (0.75); continued to 13 (0.87). Stable order: 15 tangles with
+  |R| = 17 (0.88).
+- Pinned Oink solves the stable-order instance (n = 20) with 2 dominions and 14 tangles in 3 iterations, verified. The
+  stable-order counts come from dtl_pyref under that order datum, so Oink's own run differs.
+- CAVEAT. Every tangle that fires at R is a stored tangle, and Lemma W gives #tangles ≤ n·S, so #fired(R) ≤ n·S
+  trivially. On short phases the data cannot distinguish (FIRED-R) from this bound. (FIRED-R) also FOLLOWS from GAP-A.
+  So (FIRED-R) is a context-local form of GAP-A's tangle count, not an independently weaker statement.
+  [Correction 16:11Z: "follows from GAP-A" is true of EVERY premise of the form "X is polynomial" with X ≤ poly(S),
+  (CTX⁺) included, so that part is not specific. The specific point is that (FIRED-R) bounds tangles, and the tangle
+  count is GAP-A's own core (Lemma W). (FIRED-R) is therefore unlikely to be much easier than GAP-A, unlike (STEAL-ONCE),
+  which is a statement about repetition.]
+- Its content is that the tangles active at one context do not grow with the phase length. Testing it needs LONG phases
+  (S ≫ |R|), e.g. the spp/h4 families. There (corpus, unions) the maximum is ≤ 14 per context and ≤ 0.62·|R|. Climbs
+  from long-phase starts: not run.
+- The ratio to |R| climbs toward 1 on short phases. A count above |R| would at least show that no "≤ |R|" form holds.
+- Final (16:19Z): experiments/alg/instances/fired18_stable_n20.pg has 18 tangles firing at one context with |R| = 18,
+  ratio 1.00, in stable order. 30,000 more climb steps did not pass |R|. Pinned Oink solves it with 1 dominion and 16
+  tangles in 4 iterations, verified. A long-phase climb from h4_def11_oink_n28 (Oink order) is running.
+
+22x. Box 7 ledger (L-ALG successor 6, produced on Opus 5.5; Lead GO 10:47Z, box to ~18:50Z; 16:15Z by date -u)
+SIGNED by both referees this box. All are readings of dtl.cpp @ 8fbf0a7, for every order datum.
+- (S0), PREFIX-MONO, POS-FALL and ROOT-BOUND (packet 4).
+- Lemma STR-DET (packet 5). It closes G-STR, so FDL and R5 (h) hold without condition.
+- §22j per-input budget, folding Dom first differences into (CTX⁺), and §22f with F_R = every non-rise (packet 6).
+- EXACT and PREFIX-MONO-X (packet 7; REFEREE signed, REFEREE-2 pending). EXACT* and PREFIX-MONO-X* (packet 8; REFEREE
+  signed, REFEREE-2 pending).
+REDUCTION (referee-signed as a conditional):
+- GAP-A ⇐ (CTX⁺) ∧ (FALL) ⇐ (CTX⁺) ∧ (NS-COUNT) ⇐ (CTX⁺) ∧ (STEAL-ONCE) ∧ (FIRED-R), given STR-DET.
+- Per phase: S − 1 ≤ Σ_{R ∈ C_bv} 2(F_R + 1)(H + 1) + 2n(|C_T| + |C_Dom|) + 1, with F_R ≤ 3·N*_R ≤ 3(|R| + 1)|R|·#fired(R)
+  under (STEAL-ONCE).
+OPEN, all DATA only:
+- (CTX⁺): distinct first-difference inputs (best_vertices contexts, −1 attractors, Dom steps) per phase are polynomial.
+  - Max 12 per phase so far: ctx12_oink_n40 (mine, Oink order) and ctx12_n40 (L-RED, both orders). No superlinear trend.
+- (STEAL-ONCE): each (context, round, top, tangle) is newly stolen at most once per phase. 0 exceptions on the corpus,
+  the special instances, and the mixed and cross unions (§22t-§22w).
+- (FIRED-R): the tangles that fire at one context in a phase number poly(|R|).
+  - Up to 18 at |R| = 18 on short climbed phases, and ≤ 14, ≤ 0.62·|R| on long-phase data.
+  - It bounds tangles, so it is close to GAP-A's own core (§22w caveat).
+DEAD this box, with instances (DEAD.md):
+- Root-call RMONO = (M) (dtl_mviol_n20, pinned Oink re-run).
+- (CHAIN) (dtl_searches15_n24; nest_nest_s43).
+- (CTX-ROOT) (dtl_cnew14_n20).
+- "F_R ≤ 2" (L-RED fall3_n76), then "F_R constant" (fall4_n116: 4, linear in parts).
+- (FALL-V), per vertex (L-RED fallv_viol_n28).
+- Per-tangle steal counting (fallv_viol_n28: tangle 2 is stolen at both falls).
+- The raw per-input bound (vacuous), and distraction mass as a potential.
+GAP-C this box: DE13 (kin_viol_n29) and DE15 (meet_viol_n17) recorded (§18r). The KT-chain S step, K-in, TW, K-low and
+MEET are dead, and (PHASE-IN) ⇔ run completeness. Packet 3: K5'' and (α) with Dep(Str) signed (§18q).
+Tools: experiments/alg/dtl_rootmono.py (env RM_DV, RM_LIGHT, RM_EXCL, RM_KSEQ, RM_WIT, RM_FALLDET, RM_ROUNDS),
+dtl_union_dump.py, dtl_ctxclimb.py, dtl_firedclimb.py, dtl_meetd.py. dtl_fdlcheck.py logs R and Gx.
+Next, for whoever continues:
+- (a) (STEAL-ONCE) is the most structural statement left. A second steal of (r, τ, t) needs a prefix to retreat from t
+  (§22v). Show that the retreats caused by earlier relevant steals never uncover the same tangle at the same step.
+- (b) (FIRED-R) on LONG phases, by climbing from spp/h4 starts.
+- (c) (CTX⁺) needs a potential that pays for the rebuilt distraction runs after a level-set jump (§22p).
+Ledger addendum (16:36Z by date -u):
+- The long-phase (FIRED-R) climb from h4_def11_oink_n28 (Oink order) did NOT stay long. Its best instance has a phase of
+  5 searches (the start had 12): 18 tangles fire at one context with |R| = 22, out of 26 tangles in the whole run.
+  Pinned Oink found 3 dominions and 26 tangles in 7 iterations, verified.
+- So item (b) of "Next" is still open. A long-phase test needs a fitness that keeps S large. It is not saved as an
+  instance.
+- (CTX⁺) climbs: 12 first-difference contexts, reached from spp22 (stable) and from spp25 (Oink). The best instance is
+  saved as ctx12_oink_n40.
+
+## 23. Box 8 (L-ALG successor 6, Lead GO 16:43Z by date -u, box to ~00:45Z; produced on Opus 5.5)
+Ledger correction (16:44Z, Lead 16:43Z): REFEREE-2 has also signed packets 7 and 8 (EXACT, PREFIX-MONO-X, EXACT*,
+PREFIX-MONO-X*), in full agreement after the comparisons. R10 has landed, and R9's original constants hold given STR-DET.
+Targets: (1) prove (STEAL-ONCE*); (2) (FIRED-R) on long phases; (3) (CTX⁺), only if (1) or (2) moves.
+
+23a. Toward (STEAL-ONCE*): the invariant is (STAYS-MET) (DATA; 16:50Z by date -u; dtl_rootmono.py RM_EXCL=1 RM_PREF=1)
+- A second relevant steal of (context, step σ, tangle t) needs t to FIRE again at σ. That needs every later prefix
+  P(σ⁺) to be disjoint from t, i.e. the prefix must retreat from t entirely.
+- DATA (corpus plus fall3_n76, fall4_n116, fallv_viol_n28, f1_two*; Oink / stable): after each of the 216 / 214 relevant
+  steals, t NEVER fires again at σ, and every later visit's prefix at σ still MEETS t.
+- So the observed invariant is (STAYS-MET): once a fired tangle is split at a step, it stays split for the rest of the
+  phase. (STAYS-MET) ⇒ (STEAL-ONCE*).
+- Prefixes do shrink. Between consecutive visits some step's prefix loses a vertex in 119 of 8,252 pairs (Oink order),
+  all at relevant-steal pairs, as PREFIX-MONO-X* says. But no shrink ever removes ALL vertices of a previously stolen
+  tangle.
+Partial proof (reading).
+- In round 1 the input V₁ (all p-priority vertices of R) is fixed. The first region is Cl({τ₁}; T), with no exclusions
+  since its prefix is empty, so it is monotone in T. Hence the prefix at the second step of round 1 only grows, and
+  (STAYS-MET) holds there.
+- From the third step on, the second region is Cl(P ∪ {τ₂}; T \ E), where E grows with P. A stolen tangle at the third
+  step may be met only through vertices of the second region. If one of the second region's fired tangles is later
+  stolen, those vertices can leave. So the induction does not go through as stated.
+- What is needed: when a region loses vertices through a relevant steal of its own fired tangle t′, it never loses every
+  vertex through which an earlier-stolen tangle t is met at a later step. Not proved.
+Sharper invariants (17:08Z by date -u; same data, Oink order):
+- (MET-MONO) "a tangle met by a step's prefix stays met" is FALSE in general. 117 of the 119 visit pairs with a prefix
+  shrink lose some met tangle.
+- (STOLEN-PERM) holds in 216 / 216: after a relevant steal the STEALING vertices t ∩ P(σ⁺) stay in every later prefix at σ.
+  It implies (STAYS-MET).
+- (STEALER-MONO) holds in 216 / 216: the region that holds the stolen vertices never loses any vertex afterwards.
+- Reading. By EXACT* and PREFIX-MONO-X*, region j can shrink only after a relevant steal at some step ≤ j. So the data
+  says: once region j has stolen from a later step, no relevant steal happens at steps ≤ j again in the phase. That
+  would be an ORDER on steals (each region steals only after the regions above it have stopped changing).
+- Not proved. The obvious attack shape: after region 2 has stolen from region 3, let region 1 (monotone in round 1)
+  grow into a tangle that fired in region 2. Target for L-RED.
+- Union runs with all these checks are running.
+Union data (17:28Z by date -u; RM_PREF=1 RM_EXCL=1 RM_LIGHT=1; corpus included). Relevant steals followed through the rest
+of the phase. NO-REFIRE, STOLEN-PERM and STEALER-MONO each hold in every case:
+
+| set | Oink | stable |
+|---|---|---|
+| cross unions s11 (600, UM_CROSS = 3) | 377 / 377 | 456 / 456 |
+| mixed unions s1 (900) | 644 / 644 | 849 / 849 |
+
+With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) / 1,519 (stable) relevant steals.
+
+23b. (STEALER-MONO) KILLED on stealer_viol_n76; (STAYS-MET), (STEAL-ONCE*), (STOLEN-PERM) survive there (L-ALG succ. 7, 17:47Z by date -u)
+- Instance: experiments/red/carry/instances/stealer_viol_n76.pg (L-RED, l-red 549f8de; n = 76, sha1 714ecc0f). Pinned Oink
+  (`oink --dtl --no-single --no-wcwc --no-loops -v` @ 8fbf0a7): solved in 7 iterations, "solution verified (33 strategies)".
+- Re-run (DATA), dtl_rootmono.py unmodified (l-alg e2f7e198 code), RM_EXCL=1 RM_PREF=1 RM_DV=0, with and without RM_LIGHT=1
+  (identical counts; RM_LIGHT changes only the closure check `cl` and the deficit flags, not pref/regset/excl/fired):
+  | order | STEALER-MONO | STOLEN-PERM | NO-REFIRE, stays met | relevant steals per triple |
+  |---|---|---|---|---|
+  | stable | FAILS 3, holds 14 | holds 17 | 17 / 17 | max 1 |
+  | oink | holds 1 | holds 1 | 1 / 1 | max 1 |
+  L-RED's numbers confirmed. No INCOMPLETE; no incorrect run.
+- New tool experiments/alg/dtl_stealtrace.py (same model; RM_EXCL=1 RM_PREF=1; "STAYS-MET" there is the strict form: t meets
+  every later prefix at σ, not merely "not met-but-not-contained"). Stable: STAYS-MET holds 17/17, NO-REFIRE 17/17, STEAL-ONCE*
+  max 1 on all 5 contexts with relevant steals, STEALER-MONO FAILS 3/17. Oink: all hold (1 steal).
+- (a) So (STAYS-MET) and (STEAL-ONCE*) survive on this instance in both orders. Only the route statement died.
+- (b) Failing shape (stable order, phase 1, three depth-0 contexts |R| = 76, 75, 74, identical shape; vertex labels as in the
+  file):
+  - Visit 2, round 5: top 18 (pr 39) fires tangle 8 = {3, 7, 15}.
+  - Visit 3: region (round 5, top 31) (pr 65) fires tangle 7 = {34} and contains 3. So tangle 8 is relevantly stolen at step
+    (5, 18) with W = {3}.
+  - Visit 4: a new top 68 (pr 89, above every old top) fires tangle 7 and absorbs 34 and 38. Region 35 (pr 65, processed
+    before 31) now also takes 30 and 40 through 34. Region 31 shrinks from {3, 30, 31, 34, 38, 40} to {3, 31}.
+  - The relevant steal at visit pair 3→4 is tangle 12 = {51, 55, 63} at steps (4, 66) and (5, 66), stolen by region 68. It is
+    not one of region 31's own fired tangles.
+  - Every lost vertex moved UP, into regions processed before 31. Region 31's own fired tangle 7 was CAPTURED whole by a
+    higher region; that is not a steal. So the prefix at step (5, 18) keeps 3, 30, 34, 38 and 40, and W = {3} stays
+    (STOLEN-PERM).
+- Obstruction: a region can lose vertices by UPWARD MIGRATION. A new or grown higher region captures the region's fired tangle
+  whole and takes its dependents. Nothing is stolen from the region, and the prefix of every step below it does not lose those
+  vertices. (STEALER-MONO) is a statement about a single region and was the wrong unit; the prefix (a union) is the right one.
+  The §23a "ORDER on steals" reading is also false here: a relevant steal at step (·, 66), above region 31, follows region 31's
+  steal from step 18.
+- (c) KILLED: (STEALER-MONO) as a statement about A_DTL (L22/L26: every order datum). Recorded in docs/alg/DEAD.md.
+- §23a's counts: its 1,519 stable steals were taken with RM_PREF=1 RM_EXCL=1 RM_LIGHT=1 (unions: UNIONS/SEED/UM_CROSS, NMAX = 32)
+  and DTL_ORDER=stable, so the counters are the same. The kill is in stable order, on an instance outside those sets: n = 76 is
+  above the unions' NMAX, and the instance is new.
+- What survives: (STOLEN-PERM) ⇒ (STAYS-MET) ⇒ (NO-REFIRE at σ) ⇒ (STEAL-ONCE*). Each arrow is PROVED (reading) as in §23a: a
+  relevant steal needs t ∈ F_τ at the earlier visit, and firing at σ needs t disjoint from P(σ⁺).
+- New candidate route (SKETCH, not proved). Call w ∈ P(σ) DEPENDENT on a fired tangle t′ at step σ′ > σ if w entered region σ′
+  through t′, or through a vertex dependent on t′. Then by EXACT* and PREFIX-MONO-X*, w leaves P(σ) only after a relevant steal
+  of a tangle it depends on. Upward capture keeps w inside P(σ). So (STOLEN-PERM) needs: the stealing vertices of a steal never
+  depend on a fired tangle that is later relevantly stolen.

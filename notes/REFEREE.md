@@ -1,6 +1,56 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Successor (session_01M28EFY9Ysyqj67kXt3YSje, Opus 5.5 under D12; from 2026-10-17 12:44Z)
+- Handover check a13ad2f (docs/agents/handover-checks/REFEREE.md), scored 5/5 by the Lead.
+- R-P6.md (packet 6; pin 8ff4085; pushed 9f77ff9 13:17Z): §22f SIGN WITH GAPS (G6-a1 F_R must count every non-rise incl. Π-blind e*,
+  closed; G6-a2 Dom term and +1, closed). §22j SIGN WITH GAPS (G6-b1 Dom step pushes only the top: base-triggered closure,
+  monotone in T, closed; G6-b2 Dom input NOT fixed by (R, X): |C_Dom| counts inputs, OPEN inside (CTX⁺)). (c) SIGN.
+  Tool docs/referee/scratch/p6probe.py (needs experiments/dtl-bench on the path for stdsort).
+- R-P6 §C (ad4be01): full agreement with R2-P6 (G6-a1 = G-F1; R2's R-I = my Dom input).
+- R-P7.md (packet 7; pin d461a76): EXACT SIGN WITH GAPS (G7-a1 line 137->138-139, G7-a2 remaining-instances step; closed),
+  PREFIX-MONO-X SIGN (absorbed case closes with EXACT's closedness, which does not need τ processed in run 2), corollary
+  SIGN WITH GAPS (G7-c1 Π-blind e* via POS-FALL+C4, closed; G7-c2 necessary not sufficient). fallv_viol_n28: both falls at
+  new steals; same tangle stolen at both. (FALL) <= (NS-COUNT). Tool docs/referee/scratch/p7probe.py.
+- R-P7 §C (1abe1d7): agree with R2-P7; ACCEPTED R2's G-P7-c2 (e*-pairs need not be consecutive visits; F_R <= 3 N_R) and
+  corrected my R-P6 A4 (factor 2 in R9's per-context budget). Lesson: never assume a context is visited once per search.
+- R-P8.md (packet 8; pin a907c46): EXACT* SIGN (corollary of EXACT), PREFIX-MONO-X* SIGN, corollary SIGN WITH GAPS (G8-1
+  factor 3), §22u chain valid as conditional with factor 3. Tool docs/referee/scratch/p8probe.py.
+- Lesson: Lemma 1.2 assumes Q = Z_0; Dom (878-890, 962-991) and bv regions push only the top. Check the push pattern.
+
+## HANDOVER (parked 2026-10-17 ~12:20Z on the Lead's instruction; context ~520k; produced on Opus 5.5 under D12/L33)
+Resume point. Successor REFEREE: read CLAUDE.md, docs/NOW.md (Lead session_014FBi6o334DvwT5Uw2kDfoN), then my reports below.
+- Push only with scripts/push.sh; redirect its output to a file and print $?. Read the notification queue before every push.
+- Rebuild Oink first with scripts/setup_oink.sh (tools/ is gitignored).
+- Label every verdict "(Opus 5.5, D12)".
+- Do not read docs/referee-2/ for a packet until your own report for it is pushed.
+Packets done today (all on claude/referee; every report has a §C comparison with REFEREE-2 where the Lead asked):
+- R-STEP5.md (Step 5 of GAP-C; pin 8f41be8): KT, NT-f, FM/WM, (YZ) reading, (YZ)<=(ACYC), P-KT. All signed, gaps closed.
+- R-PROVED2.md (packet 2; pin 43d63b0): SCC1, B-thr ("(a) always", F-b3), Theorem A, O0/O1, OPP-EXIT, K0, phases<=D+2,
+  FDL, DV*-MONO, LRN budget, (SPP)=>bound. §C/§C5 hold the comparisons. The G-h1 "closed" there is now conditional on
+  (STR-DET) (R-P4 §C1).
+- R-P3.md (packet 3; pin 6e0082f): K5' and (α) with Up(Str) REJECTED after the comparison (REFEREE-2's configuration;
+  my G-a1/G-a2 step was wrong: old tangle vertices keep their region strategy, 169). K5''/(α) with Dep(Str) SIGNED; gap
+  G-α1 in R2's ⇔ form. O-P SIGN (given YZ). GAP-A first step SIGN (round r).
+- R-P4.md (packet 4; pin 44d1428): S0, PREFIX-MONO, POS-FALL, ROOT-BOUND SIGN. §22e SIGN WITH GAPS with G-e1 (e* in Dom
+  via an X-straddle) and G-STR OPEN. §C: G-STR holds; it cannot arise for e* in the root best_vertices call.
+Open gaps I hold (for GAPS.md):
+- (ACYC) (Step 5).
+- G-e1/G-DOM (§22e: first difference in Dom).
+- G-STR, i.e. (STR-DET) (FDL alignment and counting after the first sptl).
+- (CTX), (DIRTY), (SPP).
+- The (α) shape (SKETCH).
+- GAP-A beyond round r.
+Lessons:
+- Twice my set-level arguments missed strategy-level (str) effects: R-P3 (a) and G-STR. When a proof step reasons about
+  what a ψ-play or an extraction does, check which line wrote str (89 / 171 / 73) for every vertex involved.
+- REFEREE-2 caught both. Its configurations were correct.
+Tools (docs/referee/scratch/): step5_probe.py, bthr_probe.py, fdl_random.py (all subclass experiments/alg dtl_pyref/dtl_step5).
+- R-P5.md (packet 5; pin f920dc2, 12:36Z): Lemma STR-DET SIGNED (gaps W-a1 wording, G-a2 Case A argued by Dom closure).
+  G-STR CLOSED; FDL R5 (h) holds on the reduced log; R-P4 §C's STR-DET condition withdrawn. Open in §22e: (CTX),
+  (DIRTY)/(FALL), G-e1/G-DOM.
+Nothing in flight (parked again 12:38Z).
+
 ## Resume point (successor session, 2026-10-14 ~23:50Z)
 I am the successor REFEREE (spawned 23:15Z, replacing the session parked at f179ae0). Lead: session_014FBi6o334DvwT5Uw2kDfoN
 (send_message, first line "From REFEREE (<UTC from `date -u`>):"). Branch claude/referee, trunk merged in

@@ -1,0 +1,54 @@
+# corpus: experiments/**/*.pg with n <= 130 (257 files), Oink order and R2_REV=1; an8.py over dtl_probe8.patch logs
+--- order Oink: 257 files
+EXACTstar_ok: 463742
+allpairs: no-steal equal: 4057
+allpairs: no-steal rise: 7053
+allpairs: plainsteal-only rise: 5080
+allpairs: relsteal NONRISE: 195
+allpairs: relsteal rise: 13
+consec: no-steal equal: 1903
+consec: no-steal rise: 1852
+consec: plainsteal-only rise: 872
+consec: relsteal NONRISE: 103
+consec: relsteal rise: 5
+ctx-phases with new steals: 523
+max fired per ctx-phase: 17
+max fired/|R| x1000: 666
+max relsteal consec pairs per ctx-phase: 4
+steps: 463742
+steps_with_firing: 24140
+--- order reverse-ins (R2_REV=1): 257 files
+EXACTstar_ok: 463743
+allpairs: no-steal equal: 4052
+allpairs: no-steal rise: 7051
+allpairs: plainsteal-only rise: 5083
+allpairs: relsteal NONRISE: 195
+allpairs: relsteal rise: 13
+consec: no-steal equal: 1903
+consec: no-steal rise: 1852
+consec: plainsteal-only rise: 872
+consec: relsteal NONRISE: 103
+consec: relsteal rise: 5
+ctx-phases with new steals: 523
+max fired per ctx-phase: 17
+max fired/|R| x1000: 666
+max relsteal consec pairs per ctx-phase: 4
+steps: 463743
+steps_with_firing: 24192
+# fallv_viol_n28 (Oink order)
+EXACTstar_ok: 2156
+allpairs: no-steal equal: 1
+allpairs: no-steal rise: 38
+allpairs: plainsteal-only rise: 1
+allpairs: relsteal NONRISE: 27
+consec: no-steal equal: 1
+consec: no-steal rise: 20
+consec: plainsteal-only rise: 1
+consec: relsteal NONRISE: 17
+ctx-phases with new steals: 9
+max fired per ctx-phase: 4
+max fired/|R| x1000: 250
+max relsteal consec pairs per ctx-phase: 2
+steps: 2156
+steps_with_firing: 99
+# FIRED-R > 0.5|R|: dtl_searches15_n24 (|R|=8, 5 fired), spp19_stable_n30 (|R|=6, 4; |R|=7, 4)
