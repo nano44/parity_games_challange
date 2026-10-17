@@ -1,4 +1,4 @@
-# Draft RESULTS R11 (Lead, 2026-10-17 16:06Z by date -u) (rev. 16:20Z per CHECKER C11 N-1..N-3, N-2 and the FIRED-R caveat) — NOT LANDED; awaiting CHECKER re-diff
+# Draft RESULTS R11 (Lead, 2026-10-17 16:06Z by date -u) (rev. 16:20Z per CHECKER C11 N-1..N-3, N-2 and the FIRED-R caveat) — LANDED as RESULTS R11 (CHECKER C11 PASS, re-diff 2031e13 at e55bbdf)
 
 ### R11 [refereed-only] Packet 8 on A_DTL: only fired tangles matter (EXACT*, PREFIX-MONO-X*), and GAP-A ⇐ (CTX⁺) ∧ (STEAL-ONCE*) ∧ (FIRED-R) (2026-10-17) — partial step-4 reduction (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
