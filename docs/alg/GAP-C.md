@@ -611,3 +611,36 @@ vertex in X or in an earlier region of the same pass) and (WM_c1) (DATA; implied
 between round r(x) and the last round, which is FALSE in general (18d), so a proof must use the specific rounds).
 What KT still needs for (K-in): the S step and the T step ("a piece after which KT fails learns inside D, as long as
 nothing was learned inside D earlier in the search"); both are DATA only (18g), and the S step contains (α) and (β).
+(YZ) by code reading (06:55Z by date -u; Lead order 06:48Z). Compare Dom(prevV, R) (961-976) with the final pruning round's
+region loop (690-708), both over the same R, tops prevV from high index down, skipping a top already taken (X[top] /
+Z[top]). The loops push the same vertex, pop it, and drop it from the consumed set (R[v] = false / CurR[v] = false) at the
+same steps, as long as every attractVertices and attractTangle call returns the same answer:
+- attractVertices(p, v, R, X, R, pr) vs (p, v, CurR, CurZ, CurR, pr): with the same consumed set, a predecessor u is "in
+  Z" in Dom iff u ∈ X, in the region loop iff u ∈ CurZ; X ∩ R and CurZ ∩ CurR are both the pushed-not-yet-popped vertices of
+  the current top, and the other members of X (old X, earlier tops' popped vertices) are outside R, so the membership test
+  "u ∈ R" and the escape test "edge into Gx \ Z" give identical answers; only str differs.
+- attractTangle (110-185): identical answers except for a stored tangle t with a vertex w that is in X but not in R (old X
+  or a popped vertex of an earlier top): Dom skips w as "in Z" (136-137), the region loop rejects t (w ∉ CurZ, w ∉ CurR,
+  138-139). Escapes in old X or in earlier regions are "in Z" for Dom and outside Gx for the region loop: same answer.
+So (YZ-read, PROVED): Y_0 = Z_f unless, during Dom(prevV, R), attractTangle accepts a stored p-tangle that has a vertex in
+old X or in an earlier top's part of this Dom; until the first such acceptance the two computations are step-for-step
+equal. At a P piece no p-vertex of R has an edge into X, so such a tangle enters R from X only through opponent edges.
+(YZ) is therefore NOT true by the code alone; it is the absence of an X-straddling tangle firing (the straddle family of
+GAP-A-M Lemma E). DATA: never on 63,000+ P pieces (all depths, both orders, unions).
+(WM_c1) reduced (07:11Z by date -u; Lead caution 06:48Z: why the c1 form escapes the 135 MONO failures).
+(FM) In a −1 call, Z_f ⊆ Z^r for EVERY round r (the final union lies inside every earlier union; consecutive rounds may
+still violate (MONO), as long as what the final round keeps was in each earlier union). (FM) ⇒ (WM) for every vertex and
+level: Z_f ⊆ Z^r ⊆ A^r_t for all t (the rescue loop starts from Z^r). (FM) holds (PROVED) for every −1 call without a
+deficit round (U = Û at each round, GAP-A-M §2-§3): Z_f = U(V_f) ⊆ Û(V_f) ⊆ Û(V_r) = U(V_r) by Lemmas 2.2, 2.1.
+DATA (dtl_pnl.py "FM", every −1 call at every depth, all searches): 7,955/7,955 corpus Oink, 7,803/7,803 corpus stable,
+57,864/57,864 disjoint unions Oink s1, 32,469/32,469 cross unions stable s13 — 106,091 calls, 0 failures, although
+(MONO) fails in 135 round pairs of the corpus (Oink) alone. At the rounds that (WM_c1) uses, the deficit set Z_f \ Z^{r(x)}
+is EMPTY in every case (2,322 corpus Oink, 15,144 unions, 7,280 cross unions): the c1 form escapes the MONO failures because
+those failures never touch the final union of a −1 call. Why (FM) holds when deficits occur is OPEN: a deficit vertex of
+round r lying in Z_f would come from a Lemma-E straddle at round r whose tangle is attracted in the final round; its
+cycle maximum m (a p-priority vertex, GAP-A-M Lemma E (b)) would then attract into Z_f through its tangle strategy and
+could not be a candidate of the final round, so such an m must have been pruned between r and r_f — the step from there
+is not done.
+So Step 5 (P-KT, 18h) holds for every P piece in which no X-straddling tangle fires during Dom(prevV) (YZ-read) and whose
+−1 call satisfies (FM); both hypotheses are absences of straddling-tangle effects (GAP-A-M Lemma E), the mechanism that
+also underlies (α) and GAP-A's deficits.

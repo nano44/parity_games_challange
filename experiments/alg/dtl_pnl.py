@@ -81,6 +81,12 @@ class PN(S5.S5):
                 V.clear(); V.update(prevV); s.note_rounds(-1); return -1
 
     def note_rounds(s, res):
+        if res == -1 and s.rounds:
+            fm = all(s.rounds[-1] <= z for z in s.rounds)
+            k = "FM (-1 calls: Z_f ⊆ Z^r for every round r) " + ("holds" if fm else "FAILS")
+            s.tab[k] = s.tab.get(k, 0) + 1
+            if not fm and os.environ.get("FMDUMP") and s.shown < 4:
+                s.shown += 1; print("FM FAILS", s.fname, "rounds", len(s.rounds), [sorted(s.idx[v] for v in s.rounds[-1] - z) for z in s.rounds], flush=True)
         for a, b in zip(s.rounds, s.rounds[1:]):
             s.tab["MONO all pairs " + ("holds" if b <= a else "VIOLATION")] = s.tab.get("MONO all pairs " + ("holds" if b <= a else "VIOLATION"), 0) + 1
             if not b <= a:
@@ -121,7 +127,10 @@ class PN(S5.S5):
                     if depth == 0 and (s.Wp & R) <= amax and os.environ.get("PADUMP") and s.kd < 3:
                         s.kd += 1; L = lambda S: sorted(s.idx[v] for v in S)
                         print("P-A FAILS", s.fname, "p", p, "R", L(R), "D∩R", L(s.Wp & R), "prevV", L(V), "Z_f", L(rounds[-1]), "A_max", L(amax), "#rounds", len(rounds))
-                if depth == 0 and s.Wp & R: s.case1(p, frozenset(R), rounds, rv); s.pkt(p, frozenset(R), rounds[-1])
+                if depth == 0 and s.Wp & R:
+                    s.case1(p, frozenset(R), rounds, rv); s.pkt(p, frozenset(R), rounds[-1])
+                    mono = all(b <= a for a, b in zip(rounds, rounds[1:]))
+                    s.tab["P pieces (depth 0, D ∩ R != {}) whose -1 call " + ("is MONO" if mono else "has a MONO failure (deficit round; proof of 18h does not apply, data only)")] = s.tab.get("P pieces (depth 0, D ∩ R != {}) whose -1 call " + ("is MONO" if mono else "has a MONO failure (deficit round; proof of 18h does not apply, data only)"), 0) + 1
                 s.dom(V, R, X_, p); Y0 = R0 - frozenset(R)
                 s.check(p, R0, Y0, rounds, depth)
 
@@ -160,6 +169,17 @@ class PN(S5.S5):
                 outs = [w for w in s.outs[v] if w in G]
                 ok = any(w in X or w in A for w in outs) if s.ow[v] == p else all(w in X or w in A for w in outs)
                 if ok: A.add(v); ch = True
+        # the deficit vertices Delta_r = Z_f \\ Z^r at the rounds r(x) of D-vertices x of priority c1 (Lead 06:48Z)
+        for x in DR:
+            if s.pr[x] != c1: continue
+            r = max(i for i, Vi in enumerate(s.last_rv) if x in Vi)
+            Dl = Zf - s.last_rounds[r]
+            if not Dl: inc("WM_c1 round: Z_f ⊆ Z^r (no deficit vertex)"); continue
+            mx = max(s.pr[v] for v in Dl); inA = Dl <= s.thr(p, s.last_rounds[r], R, c1 - 1)
+            inc("WM_c1 round: deficit vertices, max priority " + ("< c1" if mx < c1 else ">= c1") + (", all in A^r_{c1-1}" if inA else ", NOT all in A^r_{c1-1}"))
+            if s.shown < 8 and os.environ.get("DLDUMP"):
+                s.shown += 1; L = lambda S: sorted((s.idx[v], s.pr[v]) for v in S)
+                print("DELTA", s.fname, "p", p, "c1", c1, "round", r + 1, "of", len(s.last_rv), "Delta (id, pr)", L(Dl), "in A", inA, flush=True)
         U = W1 - Zf - A
         inc("P-KT " + ("holds (W1 survives)" if U else "VIOLATION (W1 inside Z_f ∪ A_c1)"))
         if not U and s.shown < 6: s.shown += 1; print("P-KT VIOLATION", s.fname, "p", p, "c1", c1, flush=True)
