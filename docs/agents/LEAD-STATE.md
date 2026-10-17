@@ -370,3 +370,4 @@
 - 04:46Z Lead: merged l-alg 685d0d8 (FIRST-W); routed to L-RED.
 - 04:52Z Lead: merged l-alg 7ac4fce: FIRST-W DEAD (firstw_viol_cross verified); L-RED fitness = K-in > K-low > TW; L-ALG to write a GAP-K contradiction sketch, park ~07:30Z.
 - 04:58Z Lead: L-ALG succ. 5 BOX END (39f6111, 705k, parked): GAP-K sketch, Step 5 (Dom(prevV) removal) is the crux. RESULTS DE12 added (box-5 dead routes). Lead reading: (SPP) and (K-low) are DATA, not RESULTS entries; they stay in NOW and lane docs. Referee brief for SCC1/B-thr/Theorem A/First-Difference/DV*-MONO queued for after the Fable reset.
+- 05:00Z Lead: created L-ALG succ. 6 session_01PEMUECoSbdbdZR2hHzbyTK (box: GAP-C Step 5, Dom(prevV) repayment; STEP 0 pending). Working lanes 2/5 (L-ALG succ. 6, L-RED succ. 4).
