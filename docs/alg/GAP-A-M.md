@@ -1110,6 +1110,7 @@ PROVED
 | Phases ≤ D + 2 (D = dominion-finding searches ≤ n); with (SPP): searches ≤ n(n+2), tangles ≤ n²(n+2), O(n¹⁰(m+n²)) word ops, O(log n)-bit words (box 5) | A_DTL | §21c |
 | First-Difference Lemma: consecutive searches agree up to the first differing tangle attractor, whose input is equal and output strictly larger; the cause is a tangle learned later in the earlier search (box 5; reading) | A_DTL | §21d |
 | Lemma DV*-MONO: the clean ideal root distance DV* is pointwise monotone in T, so it changes ≤ n(n+1) times per phase (box 5) | any tangle sets | §21h |
+| Per-context LRN budget: at a fixed context R, transitions whose first difference is at R and moves DV*_R are ≤ n(n+1) (DV*-MONO on the subgame R); S − 1 ≤ n(n+1)·(contexts) + #DEF + #ABS (box 5) | A_DTL | §21j |
 
 KILLED (FALSE / DEAD), each with its instance
 | Claim | Instance (experiments/alg/instances unless noted) | Where |
@@ -1141,10 +1142,11 @@ KILLED (FALSE / DEAD), each with its instance
 | "S ≤ P + c", "S ≤ d'", "S ≤ distinct p-parity priorities" (sharper forms of (SPP)) | spp_final_n20 (Oink: 19 vs P 14, d' 13) | §21a |
 | The author's per-search check (DV changes at every tangle-learning search; dtl.cpp computeDistanceValues) | spp_chain_up_n43 (41 of 41 unchanged; pinned Debug Oink agrees), 525 of 990 corpus searches | §21f |
 | Constant tangles per top per phase | spp_final_n40 (13 at one top) | §21e |
+| (PHI-DV): PHI0 rises only when the root DV* moves | climbs_1016/nest_nest_s43 (69 counterexamples) | §21j |
 
 DATA candidates left after box 4 (A_DTL; every per-context (H4) POTENTIAL candidate is dead):
 (U-MONO_DTL) same-input union monotone in T (701/701 Oink, 661/661 stable, §18h); (LEX-R) first differing round grows (775/775, 755/755); "no DEF-down step at an ideal-stable context" (0/181).
-Box 5 DATA candidates (A_DTL): (SPP) S ≤ |G'| and (SPP-sharp) S ≤ max(1, |G'| − 1), tight (dtl_chainfam, spp_chain_up_n43, both orders, §21a-b); (DV-nofall) the author's DV never falls (0/1,237, 0/1,204; synthetic 0/101,600; Lemma DV-MONO = SKETCH + GAP, §21f-g); absorption (c1) 87/87, 75/75 (§21d).
+Box 5 DATA candidates (A_DTL): (ABS-mono-pw) no vertex moves to a later depth-0 piece at a non-RES transition (280/280, 269/269, §21j); (SPP) S ≤ |G'| and (SPP-sharp) S ≤ max(1, |G'| − 1), tight (dtl_chainfam, spp_chain_up_n43, both orders, §21a-b); (DV-nofall) the author's DV never falls (0/1,237, 0/1,204; synthetic 0/101,600; Lemma DV-MONO = SKETCH + GAP, §21f-g); absorption (c1) 87/87, 75/75 (§21d).
 OPEN: GAP-A via (H1) cut carries, (H2a) alive-top self-reinforcing carries, (H2b) dead-top cap carries (reduces to
 c_i, circular), (H3) catch-ups and recursion, (H4) deficits on A_DTL (per context: 4 → 8 over n = 20 → 44, Oink
 order). Core: whether fresh, resetting child contexts (§15, §16) or deficit staircases (§13b) can compound across
@@ -1806,3 +1808,9 @@ Follow-up (00:55Z by date -u; dtl_phidv.py, dtl_dvctx.py DVC_PHI=1; C5, Oink ord
   and #LRN ≤ n(n + 1)·(distinct contexts) (PROVED). The deeper transitions would need the same argument one level down (a
   PHI at the recursion's context), which multiplies over the depth: the nested-counter core again, now with explicit
   per-level polynomial budgets for everything except DEF steps and context counts.
+- (ABS-mono-pw), DATA (01:00Z by date -u): POINTWISE form: at every transition whose first piece-level difference is not a RES
+  at a depth-0 piece, no vertex moves to a LATER depth-0 piece: Oink order 280 of 280 (GROW 145, SHRINK 128, deeper RES
+  7), stable order 269 of 269. Why a proof is not immediate: after the first difference, a later depth-0 piece runs at the
+  same or a smaller context with a LARGER tangle set (T_{s+1} contains every tangle s learned, so at every position s+1's
+  tangle set contains s's), and the actual best_vertices is not monotone in T (DEF steps), so its result could change and
+  push vertices later. Attack target: such a later-piece change inside an absorption transition.

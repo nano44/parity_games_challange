@@ -1,16 +1,32 @@
 # L-ALG notebook — third successor (session_01BDELabbGbT2QYY2NoRCY8A), 2026-10-16, produced on Opus 5.5 (D8/L27); older notes below
 
-## Resume point (successor 5, session_01XTdnsK1p5KyoCaDSAc2evA; Lead go 23:28Z (Lead clock), box to ~07:30Z; updated 23:53Z by date -u) — read this first
+## Resume point (successor 5, session_01XTdnsK1p5KyoCaDSAc2evA; Lead go 23:28Z (Lead clock), box to ~07:30Z; updated 01:00Z by date -u) — read this first
 All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?`.
-- Truth: docs/alg/GAP-A-M.md §21 (this box). Queue: (1) (SPP) stated + data, sent 23:28Z; (SPP-sharp) S ≤ max(1, |G'|−1)
-  TIGHT via dtl_chainfam.py UP=1 (instances/spp_chain_up_n43.pg, Oink 42 even iterations, verified), sent 23:45Z.
-  (3) phases ≤ D + 2 PROVED (run()), cost O(n^10 (m + n^2)) under (SPP), §21c. (2) every per-phase potential tried is
-  dead (§21d table); PROVED: First-Difference Lemma (§21d).
-- Running (scratchpad sppc/, die with the container): dtl_sppclimb.py seeds 901 (chain_up k=5, Oink), 902 (chain_up k=12,
-  stable), 903 (spp_final_n20, Oink), s12/s16 small random.
-- Things only I know: (a) the container's local branch was stale at start (1017502); always check
-  `git rev-list --left-right --count HEAD...origin/claude/l-alg` = "N 0". (b) dtl_sppclimb fitness ignores |G'| = 1 phases
-  (they score 0 trivially). (c) the all-priority-0 chain collapses in Oink order above 16 equal priorities (std::sort).
+- Truth: docs/alg/GAP-A-M.md §21 (21a-21j, this box), §17 ledger rows "box 5", docs/alg/DEAD.md last section,
+  docs/alg/SPP.md (one-page brief for routing).
+- Queue (Lead brief) all answered:
+  (1) (SPP) S ≤ |G'| and (SPP-sharp) S ≤ max(1, |G'|−1), DATA both orders (191 games, exhaustive n ≤ 3, random, climbs);
+      TIGHT: dtl_chainfam.py UP=1 (instances/spp_chain_up_n43.pg, pinned Oink 42 even iterations, verified). Sent 23:28Z/23:45Z.
+  (2) No per-phase potential that every search moves: 13+ candidates dead (§21d/e table, DEAD.md). PROVED: First-Difference
+      Lemma (§21d), DV*-MONO (§21h; clean ideal root distance, T-only, ≤ n(n+1) changes per phase), per-context LRN budget
+      (§21j). DATA: DV (the author's computeDistanceValues) never falls; DV = DV* on all data; (ABS-mono-pw) 280/280.
+      Decomposition: S − 1 ≤ n(n+1)·contexts + #DEF + #ABS; the longest phases have DEF = 0.
+  (3) Phases ≤ D + 2 PROVED; under (SPP) O(n^10 (m + n^2)) (§21c).
+- Findings for the record: the author's own "nothing changed!" check in dtl.cpp is vacuous (uninitialized val1/val2;
+  Debug build of pinned Oink, scratchpad oink-debug/, -t -t -t); renewable resets occur on DTL runs (§21e).
+- Options offered to the Lead 00:44Z: (a) [doing], (b) shared-blocker construction, (c) GAP-C, (d) park early.
+- Sources opened this box: tools/oink/src/src/solvers/dtl.cpp @ 8fbf0a7 lines 60-100 (attractVertices), 548-639
+  (computeDistanceValues), 905-945 (search_rec −1 branch), 995-1070 (search() incl. the trace check); str reads at
+  73, 268, 316-317 checked against writes 89, 171, 485, 881, 908, 965.
+- Dead ends this box (instances): see DEAD.md "(SPP): per-phase potentials" and §17 KILLED box-5 rows.
+- Things only I know: (a) the container's local branch was stale at start (1017502); check
+  `git rev-list --left-right --count HEAD...origin/claude/l-alg` = "N 0". (b) Synthetic harnesses MUST re-index vertices by
+  priority (dtl_dvsynth.mkdtl); my first dvsynth/dvfall runs did not and were void (3 fake DV falls). (c) dtl_sppclimb fitness
+  ignores |G'| < SPPC_MING (default 2); with 2 the climbs stall on S = 1, |G'| = 2 ties; use 4 from a long-phase seed.
+  (d) The all-priority-0 chain collapses in Oink order above 16 equal priorities (std::sort unstable). (e) Debug Oink:
+  cmake -S tools/oink/src -B $SCRATCH/oink-debug -DCMAKE_BUILD_TYPE=Debug -DOINK_BUILD_EXTRA_TOOLS=OFF
+  -DOINK_BUILD_TOOLS=OFF -DOINK_BUILD_TESTS=OFF; cmake --build ... --target solve (binary oink).
+- Climbs: all stopped (no improvement over S = |G'| − 1); nothing running.
 
 ## FINAL RESUME POINT (successor 4, session_01KESFSwLyyKvwe3mzqN2Bzr; box 16:01Z-~00:00Z; written 23:14Z) — read this first
 All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?`.
