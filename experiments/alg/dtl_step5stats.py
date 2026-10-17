@@ -115,6 +115,34 @@ def kqT(d, p, Dw, R, G, nt):
     return O.winning(d, rest, p) if rest else set()
 
 
+def kthr(d, p, Dw, R, G):
+    """KT(R) (GAP-C §18g): for some c of p's parity, with S_c = D ∩ R ∩ {priority ≤ c} and A_c the plain p-attractor of
+    X = G' \\ R inside S_c (an opponent vertex enters only if ALL its edges lie in X ∪ A_c), the game on Q_c = S_c \\ A_c in
+    which the opponent's edges leaving Q_c are deleted and a vertex without successor loses for p has a nonempty p-winning
+    region. Returns the list of c for which it holds."""
+    S0 = Dw & R; X = G - R; out_c = []
+    for c in sorted({d.pr[v] for v in S0 if d.pr[v] % 2 == p}):
+        S = {v for v in S0 if d.pr[v] <= c}
+        A = set(); ch = True
+        while ch:
+            ch = False
+            for v in S - A:
+                outs = [w for w in d.outs[v] if w in G]
+                ok = any(w in X or w in A for w in outs) if d.ow[v] == p else all(w in X or w in A for w in outs)
+                if ok: A.add(v); ch = True
+        Q = S - A
+        L = set(); ch = True                          # dead ends and what the opponent forces into them: lost for p
+        while ch:
+            ch = False
+            for v in Q - L:
+                outs = [w for w in d.outs[v] if w in Q]
+                if not outs or (d.ow[v] == p and all(w in L for w in outs)) or (d.ow[v] != p and any(w in L for w in outs)):
+                    L.add(v); ch = True
+        rest = Q - L
+        if rest and O.winning(d, rest, p): out_c.append(c)
+    return out_c
+
+
 def segments(pcs):
     top = [pc for pc in pcs if pc["depth"] == 0]; segs, cur = [], []
     for pc in pcs:
@@ -209,6 +237,14 @@ if __name__ == "__main__":
                     before = any(C <= Dw for q in pcs[:i] if q["kind"] == "S" for C in q["new"])
                     inc(f"KT broken by {pc['kind']} " + ("which learns inside D" if learned else "barren, D-learning before" if before else "VIOLATION (barren, nothing learned inside D before)"), f)
                 if t0 and t1: inc(f"KT kept by {pc['kind']}")
+                h0 = kthr(d, p, Dw, R0, G); h1 = kthr(d, p, Dw, R1, G)
+                if h0 and not h1:
+                    nxt = top[a_ + 1] if a_ + 1 < len(top) else len(pcs)
+                    learned = any(C <= Dw for q in pcs[i:nxt] if q["kind"] == "S" for C in q["new"])
+                    before = any(C <= Dw for q in pcs[:i] if q["kind"] == "S" for C in q["new"])
+                    inc(f"KTHR broken by {pc['kind']} " + ("which learns inside D" if learned else "barren, D-learning before" if before else "VIOLATION (barren, nothing learned inside D before)"), f)
+                if h0 and h1: inc(f"KTHR kept by {pc['kind']}")
+                if not h0 and a_ == 0: inc("KTHR false at G' (start)", f)
             if firstK[0] is None: inc("K never broken at depth 0", f)
             # LASTD: the depth-0 piece that removes the last vertex of D (with its recursion, for T) learns inside D
             top = [i for i, pc in enumerate(pcs) if pc["depth"] == 0]
