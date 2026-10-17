@@ -20,14 +20,24 @@ def near(path):
         if "threshold < pr(m)" in t: low += k
     return low, tot
 
+def loww(path):
+    """L-ALG's dtl_loww.py (unmodified, subprocess, LALG3_DIR >= cf68c58): count of 'LOW-W VIOLATION'."""
+    ld = os.environ.get("LALG3_DIR")
+    if not ld: return 0
+    r = subprocess.run([sys.executable, os.path.join(ld, "experiments", "alg", "dtl_loww.py"), os.path.abspath(path)],
+                       capture_output=True, text=True, timeout=180, cwd=os.path.join(ld, "experiments", "alg"))
+    m = re.search(r"'LOW-W VIOLATION': (\d+)", r.stdout)
+    if not m: raise RuntimeError(r.stdout[-300:] + r.stderr[-300:])
+    return int(m.group(1))
+
 def measure(path):
-    m = dupcheck.measure(path); low, tot = near(path); m.update(near_low=low, near=tot); return m
+    m = dupcheck.measure(path); low, tot = near(path); m.update(near_low=low, near=tot, loww=loww(path)); return m
 
 def score(path):
     m = measure(path)
-    return (10 ** 12 * (m["unsolved"] + m["wrong"]) + 10 ** 11 * m["kin_viol"] + 10 ** 10 * m["dupW"] + 10 ** 9 * m["tw_straddle"] + 10 ** 8 * min(m["orphW"], 9)
-            + 10 ** 7 * m["barren"] + 10 ** 6 * m["dup"] + 10 ** 5 * min(m["orphans"], 9)
-            + 10 ** 4 * min(m["near_low"], 9) + 10 * min(m["near"], 500) + m["searches"])
+    return (10 ** 12 * (m["unsolved"] + m["wrong"]) + 10 ** 11 * m["kin_viol"] + 10 ** 10 * min(m["loww"], 9) + 10 ** 9 * m["dupW"] + 10 ** 8 * m["tw_straddle"] + 10 ** 7 * min(m["orphW"], 9)
+            + 10 ** 6 * m["barren"] + 10 ** 5 * m["dup"] + 10 ** 4 * min(m["orphans"], 9)
+            + 10 ** 3 * min(m["near_low"], 9) + 10 * min(m["near"], 500) + m["searches"])
 
 if __name__ == "__main__":
     sys.setrecursionlimit(100000)
