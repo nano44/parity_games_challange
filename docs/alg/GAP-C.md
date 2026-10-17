@@ -18,7 +18,7 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | K1-K4 | dominion found if closed; duplicates have all escapes outside the context (K2); first piece at X = ∅; stable V* at X = ∅ is p-won | PROVED (DTL-proof.md §2.3) |
 | K5, K6 | the lowest region of a stable set is closed unless (α); if closed, its bottom SCC is new, a dominion, or (β') | PROVED (DTL-proof.md §2.3) |
 | SCC1 (new) | in a closed sptl region Z_τ every vertex reaches τ in extractTangles' graph; so extractTangles(τ) finds at most ONE nontrivial SCC, the set C_τ reachable from τ | PROVED (reading), §3 |
-| B-thr (new) | if C_τ equals a stored tangle t, then τ ∈ t, every escape of t lies outside the context R, and the LAST escape of t to be popped was popped in an attractor with threshold < pr(τ) | PROVED (reading), §3 |
+| B-thr (new) | if C_τ equals a stored tangle t, then τ ∈ t, every escape of t lies outside the context R, and the LAST escape of t to be popped either (a) was popped in an attractor with threshold < pr(τ), or (b) was cut off from t by an ancestor's −1 step (t inside the recursion context, e moved to X at 936-950) | PROVED (reading), §3 (corrected) |
 | NODUP | the duplicate case of SCC1 never occurs on DTL runs | DATA (§4); GAP-β |
 | (α) | the lowest region is open because its top's successor lies in the lower part of a straddling tangle | GAP-α |
 | (C-b) | a p-dominion survives a search whose pieces never reach a productive closed region (all relevant pieces removed through the −1 branch) | GAP-Cb |
@@ -47,17 +47,23 @@ CurR \ Z at their attraction, the closed check 512-525 covers τ) nor in a highe
 escape lies outside the context R of the current search_rec iteration, i.e. in X or outside the search_rec context;
 (iii) every such escape joined a removal in this search through a pop inside some tangle attractor (Dom(V, R) 878-890 /
 962-991 with threshold pr(top); the −1 attractor 914-923 (seeds 899-912) with threshold t; the threshold vertices and the
-opponent attraction 936-950 only move vertices that the −1 attractor had popped), and at the pop of the LAST escape of t the other
-escapes are in that attractor's target or outside its Gx, every vertex of t is in its R (contexts only shrink along the
-search) and none is in its target; so attractTangle (110-185) rejected t only through the priority test: that attractor's
-threshold was < pr(τ). □
+opponent attraction 936-950 only move vertices that the −1 attractor had popped). Take the pop of the LAST escape e of t:
+the other escapes are in that attractor's target or outside its Gx, and every vertex of t is in its R (contexts only
+shrink along the search). Then exactly one of two things held (CORRECTED 01:38Z by date -u; the first version claimed (a)
+only): (a) no vertex of t was in the attractor's target, so attractTangle (110-185) rejected t only through the priority
+test: that attractor's threshold was < pr(τ); or (b) the pop was in a −1 attractor (914-923) of an ANCESTOR search_rec and
+t was already inside its set Z (attractTangle returns "nothing new"), t then stayed in the recursion context (954) while
+e was moved to X by the threshold-vertex step (936-942) or the opponent attraction (944-950). □
 So a closed region at a top τ ∉ W is productive except in the duplicate case, and the duplicate case is exactly:
-GAP-β (sharpened (β')). A stored tangle t with top τ = argmax pr(t) whose escapes are all removed into X (in this search,
-before τ's stable piece) by attractors of threshold below pr(τ), the last of them by such an attractor; τ survives the
-pruning as a stable top and its closed region is exactly t.
-Smallest shape (sketch, not built): two searches. Search 1 learns t at τ while an escape e of t is still in the context;
-search 2 removes e into X by a −1 branch at a level t_e < pr(τ) (e of priority ≤ t_e, attracting X) or by Dom(V, R) of a
-lower top, before τ's stable piece; nothing else in search 2 is productive. About 5-6 vertices plus a gadget that makes e
+GAP-β (sharpened (β')). A stored tangle t with top τ = argmax pr(t), all of whose escapes are removed earlier in the same
+search, the last one either (β-a) by an attractor of threshold below pr(τ), or (β-b) by an ancestor's −1 step that keeps t
+inside the recursion context and moves the escape to X (threshold vertex of level t_0, or opponent-attracted to the
+threshold vertices); τ survives the pruning as a stable top and its closed region is exactly t.
+Smallest shapes (sketch, not built): two searches. Search 1 learns t at τ while an escape e of t is still in the context.
+(β-a) search 2 removes e into X by a −1 branch at a level t_e < pr(τ) (e of priority ≤ t_e, attracting X) or by Dom(V, R)
+of a lower top, before τ's stable piece. (β-b) search 2 takes a −1 branch at level t_0 whose attractor contains t and e,
+e has priority t_0 (a threshold vertex) or is an opponent vertex forced to the threshold vertices, and t goes into the
+recursion, where τ is a stable top. Nothing else in search 2 is productive. About 5-6 vertices plus a gadget that makes e
 removable early only in search 2.
 GAP-α (from DTL-proof.md §2.3 K5/K6; unchanged). The lowest top's region is open because its top's successor lies in the
 lower part Y of a stored tangle that straddles a higher region. Smallest shape (DTL-proof.md §2.3): three generations —
