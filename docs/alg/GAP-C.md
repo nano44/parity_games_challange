@@ -322,8 +322,26 @@ none (dtl_mixedgen.py: 0 of 12,000 random games qualify; every such search finds
   opponent vertex); Theorem A stands (it is about the root call).
 - (K-low)/(LOW-W) "SOME stable piece's lowest region is productive inside W_p": holds on all 235 saved union games with a
   (K-first) violation, in every search with W_p ≠ ∅ and no dominion: 1,025 of 1,025 (Oink order), 1,067 of 1,067 (stable).
-- (K-in): 0 violations there (1,582 / 1,647 searches with W_p ≠ ∅). (TW): 4,119 learned tangles inside W_p, 1,782 outside,
+- (K-in): 0 violations there: 1,582 searches with W_p ≠ ∅ in Oink order and 1,647 in stable order (the two numbers are
+  the two order data, not a gap; every one of them finds a dominion or learns inside W_p). (TW): 4,119 learned tangles inside W_p, 1,782 outside,
   0 straddling (stable 4,127 / 1,772 / 0): now a real test of (TW).
 Current GAP-C statement (replaces §13's GAP-K'): (K-low) with GAP-K (the existential, §12), plus (TW) as the conjecture
 that makes "inside W_p" automatic once a candidate's top is in W_p. Proved support: SCC1, B-thr, O0, O1, OPP-EXIT,
 Theorem A, K5/K6.
+
+## 15. The GAP-K mechanism on mixed games: the first stable piece with a top in W_p (04:44Z by date -u; experiments/alg/dtl_gapk.py)
+Test set: the 235 union games of §14 (searches with W_p ≠ ∅, |W_{1-p}| ≥ 3, no dominion; 443 searches in each order).
+- (FIRST-W), DATA: the first stable piece whose V* meets W_p(G') is productive (its lowest top lies in W_p and learns a new
+  tangle inside W_p): 443 of 443 (Oink order), 443 of 443 (stable). On the corpus: 483/483 and 464/464 (§13's FIRST-W
+  column). This is the GAP-K mechanism on data: stable pieces whose V* lies wholly in the opponent's region come first
+  (1 to 3 of them: sequences "OPP OWN+G ...", "OPP OPP OWN+G ..."), then the first piece with a p-won top is the productive one.
+- (V-sep), DATA with one exception: a stable V* lies wholly inside W_p or wholly inside W_{1-p}; 1 MIX piece in all these
+  searches (not a FIRST-W failure). So (V-sep) is FALSE as stated (1 case) but nearly always true.
+- What does NOT hold: before the first such piece, W_p is untouched (FALSE: some p-won vertices are already removed by
+  −1 pieces in 443 of 443); its context lies inside W_p (216 inside, 227 meeting W_{1-p}, Oink order).
+Restated GAP-K (the existential as a rule): (FIRST-W) the first stable piece with a top in W_p(G') has a closed lowest
+region with its top in W_p and a new SCC inside W_p. Theorem A is its special case "the root call is stable and meets W_p"
+(K4 then puts all of V* in W_p). What a proof must handle: the −1 pieces before it remove p-won vertices into X (so K4's
+"X p-won" hypothesis fails), and its context may still contain opponent-won vertices.
+L-RED target (sharper than an incomplete run, cheap to check with dtl_gapk.py, which prints "FIRST-W FAILS"): a search
+with W_p ≠ ∅ and no dominion whose first stable piece with a p-won top is not productive inside W_p.
