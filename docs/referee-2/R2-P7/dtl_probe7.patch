@@ -1,0 +1,114 @@
+--- /home/user/parity_games_challange/tools/oink/src/src/solvers/dtl.cpp	2026-10-17 15:05:09.816173753 +0000
++++ src/src/solvers/dtl.cpp	2026-10-17 15:13:21.207554464 +0000
+@@ -19,6 +19,10 @@
+ #include <cstring> // for memset
+ 
+ #include "dtl.hpp"
++#include <cstdio>
++#include <cstdlib>
++static FILE* r7f = nullptr;
++#define R7BS(b) do { if (r7f) { for (auto _v=(b).find_first(); _v!=pg::bitset::npos; _v=(b).find_next(_v)) fprintf(r7f," %d",(int)_v); } } while(0)
+ 
+ #define CHECK_UNIQUE (1 or !NDEBUG) // detect duplicate dominions
+ 
+@@ -66,8 +70,10 @@
+ DTLSolver::attractVertices(const int pl, const int v, bitset &R, bitset &Z, bitset &G, const int max_prio)
+ {
+     // attract vertices with an edge to <v>
+-    for (auto curedge = ins(v); *curedge != -1; curedge++) {
+-        int from = *curedge;
++    static int r2rev = getenv("R2_REV") ? 1 : 0;
++    int r2n=0; { auto ce=ins(v); while (ce[r2n]!=-1) r2n++; }
++    for (int r2i=0; r2i<r2n; r2i++) {
++        int from = r2rev ? ins(v)[r2n-1-r2i] : ins(v)[r2i];
+         if (Z[from]) {
+             // already in Z, maybe set strategy (for vertices in the original target set)
+             if (owner(from) == pl and str[from] == -1) str[from] = v;
+@@ -459,6 +465,7 @@
+ 
+         // and set p to pr
+         tpr.push_back(pr);
++        if (r7f) { fprintf(r7f, "T %d %d :", (int)tpr.size()-1, pr); for (int*q=tv.back(); *q!=-1; q+=2) fprintf(r7f," %d",*q); fprintf(r7f," :"); for (int*q=tout.back(); *q!=-1; q++) fprintf(r7f," %d",*q); fprintf(r7f,"\n"); }
+ 
+         tangles++;
+         new_tangles = true;
+@@ -653,6 +660,7 @@
+     bitset CurR(nodecount());
+     bitset CurZ(nodecount());
+     int curdist = 0;
++    if (r7f) { fprintf(r7f, "B %d :", player); R7BS(R); fprintf(r7f, "\n"); }
+ 
+     /**
+      * Initialize V := vertices in <R> with priority of <player>
+@@ -665,7 +673,7 @@
+             V[v] = true;
+         }
+     }
+-    if (!hasV) return 0;
++    if (!hasV) { if (r7f) fprintf(r7f,"E 0\n"); return 0; }
+ 
+     /**
+      * Now we prune until no more vertices are removed from V, or V is empty.
+@@ -674,6 +682,7 @@
+     while (true) {
+         curdist++;
+         prevV = V;
++        if (r7f) { fprintf(r7f, "V :"); R7BS(V); fprintf(r7f, "\n"); }
+ 
+ #ifndef NDEBUG
+         if (trace >= 3) {
+@@ -700,6 +709,7 @@
+                     attractVertices(player, v, CurR, CurZ, CurR, pr);
+                     attractTangles(player, v, CurR, CurZ, CurR, pr);
+                 }
++                if (r7f) { fprintf(r7f, "P %d :", top); R7BS(CurZ); fprintf(r7f, "\n"); }
+                 Z |= CurZ;
+                 CurZ.reset();
+             }
+@@ -713,7 +723,7 @@
+         for (int v=nodecount()-1; v>=0; v--) {
+             if (V[v] and !attracts(player, v, Z, R)) Candidates[n_candidates++] = v;
+         }
+-        if (n_candidates == 0) return 1; // no more vertices are removed
++        if (n_candidates == 0) { if (r7f) fprintf(r7f,"E 1\n"); return 1; } // no more vertices are removed
+ 
+         // Now attract from R to Z, "slowly"
+         // Note: we have to be carefully increasing t. Why?
+@@ -729,6 +739,7 @@
+                 attractVertices(player, u, R, Z, R, t);
+                 attractTangles(player, u, R, Z, R, t);
+             }
++            if (r7f) { fprintf(r7f, "W %d :", t); R7BS(Z); fprintf(r7f, "\n"); }
+ 
+             // Now check if any candidate is now attracted (via the good path)
+             for (int x=0; x<n_candidates; x++) {
+@@ -764,10 +775,12 @@
+ 
+         if (!changed_V) {
+             // No vertices were removed from V
++            if (r7f) fprintf(r7f,"E 1\n");
+             return 1;
+         } else if (!V.any()) {
+             // All vertices were removed from V
+             V.swap(prevV);
++            if (r7f) fprintf(r7f,"E -1\n");
+             return -1;
+         }
+     }
+@@ -1012,6 +1025,7 @@
+ #endif
+ 
+     bitset CurG(G);
++    if (r7f) { fprintf(r7f, "S %d :", player); R7BS(G); fprintf(r7f, "\n"); }
+     search_rec(CurG, player, 0);
+     W.reset();
+ 
+@@ -1081,6 +1095,8 @@
+     W.resize(nodecount());
+     G = disabled;
+     G.flip();
++    if (getenv("R2P7_LOG")) { r7f = fopen(getenv("R2P7_LOG"), "w");
++      for (int v=0; v<nodecount(); v++) { fprintf(r7f, "N %d %d %d :", v, priority(v), owner(v)); for (auto e=outs(v); *e!=-1; e++) fprintf(r7f," %d",*e); fprintf(r7f,"\n"); } }
+ 
+     Candidates = new int[nodecount()];
+ 
