@@ -453,3 +453,4 @@
 - 12:44Z (date -u) REFEREE successor created session_01M28EFY9Ysyqj67kXt3YSje (predecessor parked after R-P5). Sessions: L-ALG, L-RED succ. 5, CHECKER (C7 re-diff + C8), REFEREE succ. (handover) working; REFEREE-2 idle = 5/5.
 - 12:47Z (date -u) merged checker ad8434c (C7 re-diff 0eba38b->86502cd PASS). Holding R7 landing for the C7/C8 request of 12:45Z (covers R7 post-gate note at 44af920, R8, and the R6 (e) reading edit).
 - 12:50Z (date -u) merged checker 544c3a9 (C7 addendum 3 PASS, C8 R8 PASS, N-1..N-4) and referee a13ad2f (REFEREE successor handover, 5/5). LANDED RESULTS R7 and R8 (R8 with N-1..N-4 citation/wording edits). R6 (e) reading line held for CHECKER's one-line check.
+- 12:52Z (date -u) packet 6 (GAP-A-M §22f FALL budget, §22j Dom budget) to REFEREE succ. and REFEREE-2, pin 8ff4085.
