@@ -3,6 +3,10 @@ Target: L-ALG docs/alg/GAP-C.md §13 (l-alg 31fdd98): (K-first) "in every search
 FIRST stable piece is good"; (K4-B) "at that first stable piece, V* and the union of the final-round regions lie inside
 W_p(G')". Both DATA there (483/483 Oink order, 464/464 stable). GAP-K' = (K4-B) + (α) + (β-1). Status of this note: DATA,
 unrefereed.
+PRIORITY (correction 05:01Z by date -u, after reading the Lead's 04:37Z-04:55Z messages): L-ALG killed (K-first) and (K4-B)
+FIRST (l-alg b992733, GAP-C.md §14, experiments/alg/instances/kfirst_viol_union.pg, n = 26, a disjoint union of two corpus
+games), and then (FIRST-W) (l-alg 685d0d8/§15, firstw_viol_cross.pg, n = 30). This note is an INDEPENDENT second instance
+(n = 13) with a hand-derived mechanism; (FIRST-W) holds on it. My 04:59Z message to the Lead called it a new finding: wrong.
 
 ## 1. FINDING (experiments/red/carry/instances/kfirst_viol_n13.pg)
 n = 13, sha1 a9075c8b2182277b7afd71e256ae66b55ff10f85. Disjoint union of the hand gadget chain2 (vertices 0-5,
