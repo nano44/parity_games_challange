@@ -115,6 +115,14 @@ def kqT(d, p, Dw, R, G, nt):
     return O.winning(d, rest, p) if rest else set()
 
 
+def lowdom(d, p, DR, R):
+    """W* = a p-dominion of G[R] inside DR with the least maximum priority (as dtl_pnl.lowdom): (c, W) or (None, set())."""
+    for c in sorted({d.pr[v] for v in DR if d.pr[v] % 2 == p}):
+        W = closed_dom(d, p, {v for v in DR if d.pr[v] <= c}, R)
+        if W: return c, W
+    return None, set()
+
+
 def closed_dom(d, p, S, R):
     """A nonempty p-dominion of the subgame G[R] inside S, if any: the greatest B ⊆ S with every opponent vertex having all
     its R-edges in B (at least one) and every p-vertex an R-edge into B, then W_p(G[B]) (B is a trap for the opponent)."""
@@ -286,6 +294,15 @@ if __name__ == "__main__":
                     if ins: tag += ", its top " + ("in U" if all(tp in U for tp, C in ins) else "not always in U")
                     tag += ", V* " + ("meets U" if pc["V"] & U else "avoids U")
                     inc(tag, f if not ins else None)
+                    if pc.get("passes"):
+                        low = pc["passes"][0][-1]
+                        ok = any(tp == low for tp, C in pc["tops"]) or pc.get("domf")
+                        inc("S-LOW (first KT-breaking S piece, lowest top of the first pass) " + ("learns" if ok else "VIOLATION: does not learn"), f if not ok else None)
+                    cW, Wst = lowdom(d, p, Dw & R0, R0)
+                    if not Wst: inc("S-W*: no p-dominion of G[R] inside D at this S piece")
+                    else:
+                        lw = any(C <= Wst for C in pc["new"])
+                        inc("S-W*: W* exists; learned tangle " + ("inside W*" if lw else "NOT inside W*") + ", W* " + ("meets" if Wst & pc["rem"] else "avoids") + " the removed set, V* " + ("meets" if pc["V"] & Wst else "avoids") + " W*")
                     cores = {cc: kthr_core(d, p, Dw, R0, G, cc) for cc in h0}
                     anyc = [cc for cc, Uc in cores.items() if any(C <= Uc for C in pc["new"])]
                     tag2 = "S-LOC: learned tangle inside the core of " + ("the least level" if anyc and anyc[0] == h0[0] else "a higher level only" if anyc else "NO level (VIOLATION)")
