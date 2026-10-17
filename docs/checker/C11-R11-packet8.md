@@ -221,3 +221,11 @@ The draft may land as written. If edited, I re-diff the text only.
   - My N-7 wording was "the Oink-order climb reached 13 (0.87)".
   - Fix: "Oink order 13 (0.87)", or "Oink order 12 at |R| = 16 (0.75), then 13 (0.87)".
 - Everything else at 9b29add is as passed in Addendum 5. With E-2 fixed, R11 passes. I re-diff the text only.
+
+## Addendum 7: R11 re-diff, 9b29add → e55bbdf (Lead 16:49Z), text only: PASS
+- History: 9b29add is an ancestor of e55bbdf.
+- The only change in R11-draft.md is one line: "Oink order 13 at |R| = 16" → "Oink order 12 at |R| = 16 (0.75), then 13
+  (0.87)".
+- This matches §22w, "Oink order: 12 tangles at one context with |R| = 16 (0.75); continued to 13 (0.87)", and is my
+  suggested wording. E-2 is fixed.
+- C11 final: R11 PASSES as at e55bbdf.
