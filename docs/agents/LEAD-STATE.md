@@ -398,3 +398,4 @@
 - 08:43Z Lead: merged l-red e259cac; NT-f climbs 9801/9802 started (seeds at round f-1 of f); T-STEP and K-in samplers continue.
 - 08:46Z Lead: merged l-alg ced9921 (NT-f proved, unrefereed); step (D) rescue-pop link requested; L-RED to check adversarially + YZ target.
 - 08:50Z Lead: merged l-alg 620ccb7; verified NT-f step (D1) against dtl.cpp 703-705, 721-730, 200-201 (rescue loop reuses Z = Z^r1, pushes all of Z at each upward threshold). YZ climbs: 0 excess so far.
+- 08:53Z Lead: merged l-red ff0ba45 (R28: NT-f step D no gap, independent of Lead check).
