@@ -5,7 +5,7 @@ and S >= 2|R|. Per counted context: fired = distinct tangles fired at it over th
 the phase (index < k0, k0 = tangle count at the phase's first search) and born in the phase; for the latter, where they were
 born: the sptl arena R' of the extraction (R' ⊆ R, R' ⊋ R, or incomparable). Per step (round, top): NO-RETURN (a tangle
 that fired at the step at visit i, did not fire there at a later visit j, never fires there again) and the max number of
-distinct tangles fired at one step. FIRED-LAMINAR: are the fired tangles of a context pairwise nested or disjoint (vertex sets)? FL_SHOW=1 prints the first failures. FL_ALL=1 drops the long-phase filter (every context visited >= 2 times). Usage: RM_EXCL=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=oink|stable dtl_firedlong2.py G.pg ..."""
+distinct tangles fired at one step. FIRED-LAMINAR: are the fired tangles of a context pairwise nested or disjoint (vertex sets)? FL_SHOW=1 prints the first failures. FIRED-TOP-INJ: distinct top (max-priority) vertices. FIRED ≤ |R| per context. FL_ALL=1 drops the long-phase filter (every context visited >= 2 times). Usage: RM_EXCL=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=oink|stable dtl_firedlong2.py G.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import dtl_rootmono as RMM, dtl_step5stats as ST
@@ -64,6 +64,10 @@ if __name__ == "__main__":
                 lam = all(a <= b or b <= a or not (a & b) for i, a in enumerate(vs) for b in vs[i + 1:])
                 kl = "FIRED-LAMINAR (fired tangles at a context: pairwise nested or disjoint): " + ("holds" if lam else "FAILS"); tot[kl] = tot.get(kl, 0) + 1
                 dup = len(set(vs)) < len(vs)
+                tops = [max(a, key=lambda v: (d.pr[v], v)) for a in vs]
+                kt_ = "FIRED-TOP-INJ (fired tangles at a context have distinct top vertices): " + ("holds" if len(set(tops)) == len(tops) else "FAILS"); tot[kt_] = tot.get(kt_, 0) + 1
+                ktr = "FIRED ≤ |R|: " + ("holds" if len(fired) <= len(R) else "FAILS"); tot[ktr] = tot.get(ktr, 0) + 1
+                if len(fired) > len(R): print("FIRED > |R|", nm, "|R|", len(R), "fired", len(fired), flush=True)
                 kd = "FIRED vertex sets distinct: " + ("NO (two fired tangles share a vertex set)" if dup else "yes"); tot[kd] = tot.get(kd, 0) + 1
                 if not lam and os.environ.get("FL_SHOW") and tot[kl] <= 5:
                     bad = next((sorted(d.idx[v] for v in a), sorted(d.idx[v] for v in b)) for i, a in enumerate(vs) for b in vs[i + 1:] if not (a <= b or b <= a or not (a & b)))

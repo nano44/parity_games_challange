@@ -2866,3 +2866,33 @@ With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) /
   one step (context, round, top) in a phase is bounded by a constant c. With the (|R| + 1)·|R| steps per context (R11 (d)) it
   gives (FIRED-R) with #fired(R) ≤ c(|R| + 1)|R|. It has the same per-step shape as (STEAL-ONCE*). With NO-RETURN, each
   (step, tangle) fires on ONE interval of visits. So (FIRED-STEP) asks how many times a step can switch to a NEW tangle.
+
+23e. (FIRED-R) on ALL contexts: three candidate structures KILLED, two DATA statements survive (L-ALG succ. 7, 19:16Z by date -u)
+- Tool: dtl_firedlong2.py with FL_ALL=1 FL_SHOW=1, i.e. every context visited ≥ 2 times in a phase, with no long-phase filter.
+  Model and data sets as in §23d, plus fired10_n20 (l-red). Both order data. No INCOMPLETE.
+
+  | set | order | contexts | max fired | max fired/\|R\| | max distinct fired at one step | NO-RETURN | fired vertex sets distinct | laminar |
+  |---|---|---|---|---|---|---|---|---|
+  | corpus | Oink | 2,391 | 17 | 0.833 | 12 (fired18_stable_n20, \|R\| 18, S 3) | holds | yes, all | FAILS 56 |
+  | corpus | stable | 2,359 | 18 | 1.0 (fired18_stable_n20) | 11 | holds | yes, all | FAILS 61 |
+  | mixed | Oink | 13,519 | 20 (union322, \|R\| 48) | 0.833 | 12 | holds | yes, all | FAILS 480 |
+  | mixed | stable | 13,755 | 23 | 1.0 (union825, union299, union616, union248) | 11 | holds | yes, all | FAILS 470 |
+
+- KILLED (self-kills, each a candidate of this box; docs/alg/DEAD.md):
+  - (FIRED-STEP) with a constant c: "at most c distinct tangles fire at one step (context, round, top) per phase". Killed by
+    experiments/alg/instances/fired18_stable_n20.pg (l-alg 9ffee93; sha1 42307b22; pinned Oink 4 iterations, verified): 12
+    distinct tangles fire at one step of a context with |R| = 18, in a phase of only 3 searches (Oink order). A single region
+    step fires many tangles, so the per-step count is of order |R|, not constant.
+  - (FIRED-LAMINAR): "the fired tangles of a context in a phase are pairwise nested or disjoint". Had it held, it would have
+    given #fired(R) ≤ 2|R| − 1. Killed by experiments/alg/instances/c6_replay3_n32.pg (sha1 ac987535; pinned Oink 11
+    iterations, verified; both orders): tangles {4, 7, 13, 17, 21, 25} and {8, 17, 21} cross, at contexts with |R| 32, 31, 29
+    and 26. Contrast: ALL tangles born in a phase are not laminar either (tc+ 4, tc+ 6, spp_final_n20; scratch check).
+  - (FIRED-TOP-INJ): "the fired tangles of a context have distinct top vertices". Killed by fired18_stable_n20 (stable, 2
+    contexts).
+- Survive (DATA, all 32,024 contexts):
+  - (FIRED ≤ |R|): #fired(R) ≤ |R| per phase. It is TIGHT: equality 18/18 on fired18_stable_n20 (stable) and on four mixed
+    unions.
+  - (FIRED-DISTINCT): fired tangles of a context have distinct vertex sets.
+  - NO-RETURN.
+- Reading. (FIRED ≤ |R|) is tight and has no injective witness yet: not laminar, and not by the top vertex. Climb target for
+  L-RED: fired/|R| > 1 (dtl_firedclimb.py's fitness, or firedlong.py without the filter). No proof route.
