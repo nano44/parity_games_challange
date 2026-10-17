@@ -644,3 +644,28 @@ is not done.
 So Step 5 (P-KT, 18h) holds for every P piece in which no X-straddling tangle fires during Dom(prevV) (YZ-read) and whose
 −1 call satisfies (FM); both hypotheses are absences of straddling-tangle effects (GAP-A-M Lemma E), the mechanism that
 also underlies (α) and GAP-A's deficits.
+
+### 18i. The T step: statement, DATA, and the induction it needs (07:30Z by date -u)
+A depth-0 T piece (−1, Q nonempty; 898-955): seeds = the vertices of the lowest level t that attract into X; Z_T := the
+threshold-t tangle attractor of the seeds within R; Θ := Z_T ∩ pr^{-1}(t) and B := the opponent's attractor to Θ inside
+Z_T go to X; the rest Z' := Z_T \ B is searched by search_rec(Z', p, 1); all of Z_T joins X.
+(T-STEP) If KT(R) holds, nothing was learned inside D earlier in the search, and KT(R \ Z_T) fails, then the recursion
+search_rec(Z', p, 1) learns a tangle inside D.
+DATA (dtl_step5stats.py "T-STEP", searches with D ≠ ∅, no dominion, nothing learned inside D before the piece; c = least KT
+level of R):
+| | corpus Oink | corpus stable | unions Oink s1 | cross Oink s11 |
+|---|---|---|---|---|
+| c < t, core avoids Z_T (KT kept) | 804 | 787 | 1,846 | 315 |
+| c < t, core meets Z_T, KT kept | 131 | 120 | 126 | 10 |
+| c < t, core meets Z_T, KT fails, recursion learns inside D | 12 | 12 | 18 | 3 |
+| c > t (core always avoids Z_T, KT kept) | 38 | 38 | 13 | 2 |
+| c = t | 0 | 0 | 0 | 0 |
+| KT fails and the recursion is barren | 0 | 0 | 0 | 0 |
+(CORE-PASS) DATA: whenever a T piece breaks KT, the recursion context Z' has a KT core of its own (KT evaluated on Z' with
+X = ∅, D ∩ Z', the opponent's exits from Z' forgiven): 12/12, 12/12, 18/18, 3/3.
+So (T-STEP) splits into (CORE-PASS) and the depth-1 analogue of (K-in) (REC): "a search_rec call at depth ≥ 1 whose context
+holds a KT core learns inside D". (REC) needs the whole frame at depth d ≥ 1: a P step, an S step and a T step inside the
+call. Obstacle for the P step at depth ≥ 1: Lemma P-KT used a p-dominion W1 of H = G[R] inside D ∩ R that is CLOSED in H;
+at depth 0 D ∩ R itself is a p-dominion of H (R is a p-trap of G'), at depth ≥ 1 it need not be (σ may leave the call's
+context), and a KT core may have opponent exits to D-vertices above its level (forgiven by F_c, real in H). So (REC) needs
+a core closed in G[R_d]; (CORE-PASS) would then have to pass such a closed core down. Not attempted further.
