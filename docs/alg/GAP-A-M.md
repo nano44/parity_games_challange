@@ -2644,3 +2644,15 @@ Mixed-union data for §22u (UNIONS = 900, SEED = 1, plus corpus; RM_EXCL=1, RM_L
 - (STEAL-ONCE): max 1 in all 665 / 703 phases with new steals and all 124 / 150 with relevant steals.
 - PREFIX-MONO-X*: descents with a relevant steal 314 / 522; relevant steals without a descent 33 / 22; descents without a
   relevant steal 0 / 0.
+(FIRED-R) climb and a caveat (16:08Z by date -u; experiments/alg/dtl_firedclimb.py, from climbs_1016/a_best_s31.pg).
+- Oink order: 12 tangles at one context with |R| = 16 (0.75); continued to 13 (0.87). Stable order: 15 tangles with
+  |R| = 17 (0.88).
+- Pinned Oink solves the stable-order instance (n = 20) with 2 dominions and 14 tangles in 3 iterations, verified. The
+  stable-order counts come from dtl_pyref under that order datum, so Oink's own run differs.
+- CAVEAT. Every tangle that fires at R is a stored tangle, and Lemma W gives #tangles ≤ n·S, so #fired(R) ≤ n·S
+  trivially. On short phases the data cannot distinguish (FIRED-R) from this bound. (FIRED-R) also FOLLOWS from GAP-A.
+  So (FIRED-R) is a context-local form of GAP-A's tangle count, not an independently weaker statement.
+- Its content is that the tangles active at one context do not grow with the phase length. Testing it needs LONG phases
+  (S ≫ |R|), e.g. the spp/h4 families. There (corpus, unions) the maximum is ≤ 14 per context and ≤ 0.62·|R|. Climbs
+  from long-phase starts: not run.
+- The ratio to |R| climbs toward 1 on short phases. A count above |R| would at least show that no "≤ |R|" form holds.
