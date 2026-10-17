@@ -238,3 +238,9 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
 - (FIRED-LAMINAR), fired tangles of a context pairwise nested or disjoint (which would give #fired(R) ≤ 2|R| − 1): DEAD (GAP-A-M
   §23e). Instance experiments/alg/instances/c6_replay3_n32.pg (sha1 ac987535; pinned Oink 11 iterations verified, re-run 19:16Z;
   both orders): crossing pair {4, 7, 13, 17, 21, 25} and {8, 17, 21}.
+- (STEAL-ONCE*) "each (context, round, top, fired tangle) is a relevant steal at most once per phase" (R11 (d) hypothesis):
+  DEAD, RESULTS DE20 (L-RED R35, Lead-verified; GAP-A-M §23f). Instance experiments/red/carry/instances/stealonce_viol_n76.pg
+  (sha1 32c2da0b; pinned Oink 7 iterations verified, L-ALG re-run 19:34Z); stable order, k = 2 at (round 4, top 18), tangle
+  7. It takes down with it: (STOLEN-PERM), (STAYS-MET), NO-REFIRE, and (DEP-SAFE) (dtl_shrinkdep.py FAILS 7 / 12). Mechanism:
+  a stealing vertex's path tangle is stolen one level up, the vertex drops out of the prefix, and the tangle refires and is
+  stolen again. Replacement target: (STEAL-POLY).

@@ -2896,3 +2896,43 @@ With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) /
   - NO-RETURN.
 - Reading. (FIRED ≤ |R|) is tight and has no injective witness yet: not laminar, and not by the top vertex. Climb target for
   L-RED: fired/|R| > 1 (dtl_firedclimb.py's fitness, or firedlong.py without the filter). No proof route.
+
+23f. (STEAL-ONCE*) KILLED (RESULTS DE20); the R11 count with the factor k; toward (STEAL-POLY) (L-ALG succ. 7, 19:34Z by date -u)
+The Lead asked for this in §23e; §23e was already taken (FIRED-R), so it goes here, at the next free letter.
+- Instance: experiments/red/carry/instances/stealonce_viol_n76.pg (L-RED R35, l-red 6af3a14; sha1 32c2da0b). It is
+  stealer_viol_n76 with edge 3→31 replaced by 3→64 and edge 20→31 added. Pinned Oink: 1 dominion, 50 tangles, 7 iterations,
+  "solution verified (33 strategies)" (L-ALG re-run 19:34Z).
+- L-ALG re-run, dtl_shrinkdep.py, RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0:
+  - stable order: (DEP-SAFE) FAILS 7 / holds 12. Every failure is at step (round 4, top 18), tangle 7, with stealing vertex 3
+    and path tangle 9 relevantly stolen at the next pair.
+  - Oink order: all hold.
+  - So (DEP-SAFE), (STOLEN-PERM), (STAYS-MET), NO-REFIRE and (STEAL-ONCE*) are all FALSE as statements about A_DTL (L22/L26).
+  - The mechanism is §23c's case A one level up, as the Lead reads R35. Vertex 3 enters region 66 through the path tangle;
+    a new top 68 steals that tangle; 3 drops out of P(18⁺); tangle 7 refires at (4, 18); region 66 later fires a new
+    tangle, holds 3 again, and steals tangle 7 a second time.
+- (1) The R11 (d) count with the factor k. Lead reading checked: CORRECT, and stated precisely here.
+  - Fix a context R and a phase. A quadruple is q = (R, round r, top τ, tangle t). Let k_q be the number of consecutive
+    visit pairs of R at which q is a relevant steal, and k_R = max_q k_q.
+  - N*_R ≤ Σ_q k_q, since every pair counted in N*_R has at least one relevant steal.
+  - Only q with t ∈ F_τ at some visit count. So t is among the #fired(R) tangles, r ≤ |R| + 1 (dtl.cpp 748-760), and τ is a
+    p-vertex of R, so at most |R| tops.
+  - Hence F_R ≤ 3·N*_R ≤ 3·Σ_q k_q ≤ 3·k_R·(|R| + 1)·|R|·#fired(R). This is R11 (c) with G8-1's factor 3. The factor tightens
+    to 2 given STR-DET (REFEREE-2 R2-P8 §7; one signature, not used).
+  - So GAP-A ⇐ (CTX⁺) ∧ (STEAL-POLY) ∧ (FIRED-R), given STR-DET, where (STEAL-POLY) says k_R ≤ poly(|R|). The sum form,
+    Σ_q k_q ≤ poly(|R|)·#fired(R), is weaker and also suffices.
+  - Status: a reading of the signed R11 (c) chain with k replacing 1. Unrefereed.
+- (2) Toward a bound on k (SKETCH, with the gap named):
+  - A second relevant steal of q needs t ∈ F_τ again, i.e. t refires at (r, τ). That needs t ∩ P(τ⁺) = ∅. So between the two
+    steals, every stealing vertex leaves P(τ⁺).
+  - By PREFIX-MONO-X*, a vertex leaves P(τ⁺) only at a transition with a relevant steal at an EARLIER step: an earlier round,
+    or the same round at a higher top.
+  - The intervals between consecutive steals of q are disjoint, so the re-steals of q charge injectively to relevant-steal
+    EVENTS at earlier steps: k_q ≤ 1 + #(events at steps before (r, τ)).
+  - Gap: one event can be charged by many q, and summing over steps gives E(σ) ≤ #fired(R)·(1 + Σ_{σ′ before σ} E(σ′)),
+    which is exponential in the number of steps (the §22v obstruction). A polynomial bound needs one of two things:
+    - (a) DEPTH: chains event → re-steal → event have bounded length. On R35 the chain has length 2: the tangle at region
+      66 is stolen by new top 68, then tangle 7 is re-stolen at 18.
+    - (b) An injective charge: each event at σ′ un-steals at most poly(|R|) quadruples, and those quadruples' re-steals
+      need distinct events.
+  - Neither is proved. Measuring: k on large unions (n ≤ 120; UNIONS=300, SEED=7/8, UM_CROSS=4, NMAX=60; both orders).
+    The chain-length statistic is next.
