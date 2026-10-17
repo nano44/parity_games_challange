@@ -1,4 +1,4 @@
-# Draft RESULTS R9 (Lead, 2026-10-17 13:27Z by date -u) — NOT LANDED; awaiting REFEREE comparison and CHECKER gate
+# Draft RESULTS R9 (Lead, 2026-10-17 13:27Z by date -u) — NOT LANDED; awaiting CHECKER gate (REFEREE §C ad4be01: full agreement)
 
 ### R9 [refereed-only] Packet 6 on A_DTL: per-context budgets reduce GAP-A to (CTX⁺) and (FALL) (2026-10-17) — partial step-4 reduction (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -22,7 +22,8 @@
   (d) The remark that the raw per-input bound S − 1 ≤ n·|I_fd| + 1 is vacuous on data (|I_fd| ≈ S − 1) is DATA, used only as
       motivation.
 - Signatures: REFEREE docs/referee/R-P6.md (referee 9f77ff9 + 0c0e3ce): (a) SIGN WITH GAPS (G6-a1, G6-a2, closed); (b) SIGN WITH
-  GAPS (G6-b1 closed; G6-b2: Dom input not fixed by (R, X), so |C_Dom| counts inputs, OPEN inside (CTX⁺)); (c) SIGN.
+  GAPS (G6-b1 closed; G6-b2: Dom input not fixed by (R, X), so |C_Dom| counts inputs, OPEN inside (CTX⁺)), revised in the
+  comparison §C (ad4be01) to SIGN once (CTX⁺) says "inputs" for Dom, as (c) here does; (c) SIGN.
   REFEREE-2 docs/referee-2/R2-P6.md (referee-2 5ef09aa; comparison §5 c7634a7): (a) SIGN WITH GAPS (G-F1 = G6-a1); (b) SIGN with
   reading R-I (the Dom input includes the whole current X; "fixed" means equal in s and s+1 at a first difference, not
   determined by (R, X)); (c) SIGN. Independent (each read the other's P6 report only after pushing its own). No REJECT.
