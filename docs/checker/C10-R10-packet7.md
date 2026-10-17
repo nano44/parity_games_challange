@@ -135,3 +135,17 @@ Optional:
 - N-3: G-S5-6.
 - N-5: attribute the data.
 With E-1 applied, R10 passes. I re-diff the text only.
+
+## Addendum: text re-diff at trunk 515ed17 (Lead 15:56Z): PASS
+History: a907c46 is an ancestor of 515ed17. Word diff of docs/agents/R10-draft.md, text only.
+| item | new text | |
+| --- | --- | --- |
+| E-1 | (a) "every best_vertices region step (dtl.cpp 690-705; the Dom loops and sptl are not claimed) is exactly ..."; Data line "every best_vertices region step" | FIXED, my wording |
+| N-1 | "(E′_τ computed from the later prefix, whether or not τ is processed there)" | applied; matches §22r (NS) |
+| N-2 | §C: "my claim that it held 'as stated' was wrong" | applied, verbatim from R-P7 §C |
+| N-3 | G-R10-6 "Also open, inherited: (ACYC) (G-S5-6, a GAP-C item, listed by REFEREE-2)" | applied; matches R2-P7 Gaps |
+| N-5 | REFEREE: "non-rises detected via RV falls"; the 196,340 / 24,259 figures are now inside REFEREE-2's parenthesis | applied; matches R-P7 corpus note and R2-P7 §1 |
+| header | "(rev. 15:55Z per CHECKER C10: ...)", "awaiting CHECKER re-diff" | stamp |
+- Nothing else moved.
+- R10 PASSES as at 515ed17.
+- N-4 (the R9 (a) pointer) is deferred by the Lead to the separate R9 update. That is not part of this gate.
