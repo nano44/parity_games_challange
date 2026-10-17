@@ -357,3 +357,5 @@
 - 02:36Z Lead: merged l-alg cd1a62e (K-in, TW, NO-ORPHAN-W DATA); routed to L-RED with fitness order.
 - 03:04Z sweep: no overage (seven_day allowed_warning); Lead $193.6 (427k); L-ALG running (metadata stale); L-RED idle on climbs (547k, $32.1; equal-step batch cut to 500 steps; handover at the ~04:30Z table if past ~600k). Merged l-alg 8077456 ((PEEL) dead), l-red 11dea27.
 - 03:16Z Lead: merged l-alg cf68c58 (LOW-W, GAP-C four-part reduction); routed to L-RED.
+- 03:21Z Lead: merged l-alg 5fe0ee7 (GAP-C half-box status); L-ALG continues on a (TW) proof, then (Cb-W); park ~07:30Z.
+- 03:26Z Lead: merged l-red 2b792b8: NO-ORPHAN-W FALSE (gapbW_dup_n20, duplicate inside W_p), verified with pinned Oink and L-ALG tools; run complete; K-in, TW, LOW-W hold. Routed to L-ALG.

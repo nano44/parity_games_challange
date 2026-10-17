@@ -41,3 +41,17 @@ dupcheck.py now computes W_p(G') with Zielonka (experiments/harness/zielonka.sol
 and counts orphans / duplicates whose tangle lies inside W_p. gapb_dup_n20: dupW = 0, orphW = 0 in both orders (the
 duplicate is in Even's search 1 with W_0(G') empty, as L-ALG found). (NO-ORPHAN-W) is not refuted. Climbs (fitness gapb:
 incomplete/wrong >> dupW >> orphW >> barren >> dup >> orphan >> near-orphan) continue.
+
+## 6. FINDING: an orphan and a duplicate INSIDE W_p (experiments/red/carry/instances/gapbW_dup_n20.pg)
+n = 20, sha1 2ef690f9. Pinned Oink: 2 dominions, 8 tangles, 6 iterations, solution verified (11 strategies); pinned
+release Oink -t prints "duplicate tangle" once. Found by climb --fitness gapb (Oink order, seed 9011, from the best game of
+seed 9001, which descends from gapb_dup_n20).
+- L-ALG's dtl_orphan.py, unmodified (l-alg cf68c58), BOTH orders: "orphans inside W_p(G')": 1 (51 calls, 1 stable call with
+  an orphan). L-ALG's dtl_kin.py, both orders: 5 searches with W_p != {}, 2 found a dominion, 3 learned inside W_p,
+  'K-in VIOLATION': 0; new tangles inside 8 / meets 0 / avoids 0. L-ALG's dtl_loww.py: 0 LOW-W violations.
+- dupcheck.py, both orders: dup 1, dupW 1, orphans 1, orphW 1, unsolved 0, wrong 0.
+- Anatomy (original ids, Oink order): Even's search index 2 (searches: Even x5, Odd x1), |W_0(G')| = 19. The orphan is the
+  Even tangle {3, 17}, wholly inside W_0, with 13 escapes {1,2,5,6,7,8,10,11,12,13,14,16,19}; at a DEPTH-1 best_vertices
+  call with |R| = 4 all escapes are outside R, and the duplicate check hits key [3, 17] (inside W_0).
+So (NO-ORPHAN-W) is FALSE on A_DTL (both orders). (K-in), (TW) and (LOW-W) hold on this instance, and the run is complete:
+the same search learns other tangles inside W_p, so the duplicate costs nothing here.

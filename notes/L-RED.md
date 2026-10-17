@@ -60,7 +60,8 @@ check), gapb.py (graded GAP-beta; needs LALG2_DIR >= 1335713 for dtl_nearorphan2
 dvfall, absmono, abspw, dupchk, gapb; --hb K heartbeat. Worktrees: <scratch>/lalg4 (b9b3b2b, batch), lalg6 (57e2256),
 lalg7 (1335713). RUNNING: equal-step batch (xargs -P4, scratch eq/, jobs_sorted.txt, run1.sh, table.sh); gapb climbs
 9001 (oink), 9002 (stable), 9003 (oink --loops) from gapb_dup_n20 (scratch gb/). Exact relaunch (from experiments/red, after worktrees: git worktree add --detach <scr>/lalg6 57e2256; ... <scr>/lalg7 1335713):
-  export LALG_DIR=<scr>/lalg6 LALG2_DIR=<scr>/lalg7
+  export LALG_DIR=<scr>/lalg6 LALG2_DIR=<scr>/lalg7 LALG3_DIR=<scr>/lalg8   (lalg8 = l-alg cf68c58, dtl_loww.py)
+  (03:20Z: climbs relaunched as seeds 9011 oink / 9012 stable from <scr>/gb/s9001.pg / s9002.pg, the 9001/9002 bests)
   DTL_ORDER=oink   nohup python3 dtl/dtl_search.py x 1 --fitness gapb --seed 9001 --steps 1000000 --hb 500 --from carry/instances/gapb_dup_n20.pg --out <scr>/gb/g9001.pg > <scr>/gb/g9001.log 2>&1 &
   DTL_ORDER=stable nohup python3 dtl/dtl_search.py x 1 --fitness gapb --seed 9002 --steps 1000000 --hb 500 --from carry/instances/gapb_dup_n20.pg --out <scr>/gb/g9002.pg > <scr>/gb/g9002.log 2>&1 &
   DTL_ORDER=oink   nohup python3 dtl/dtl_search.py x 1 --fitness gapb --loops --seed 9003 --steps 1000000 --hb 500 --from carry/instances/gapb_dup_n20.pg --out <scr>/gb/g9003.pg > <scr>/gb/g9003.log 2>&1 &
