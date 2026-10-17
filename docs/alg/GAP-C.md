@@ -48,6 +48,10 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | NT-f (18k) | the final pruning round of a −1 call accepts no stored tangle | PROVED (reading); intermediate-round analogue INV-T FALSE (c_best_s34.pg) |
 | T step split (18i) | (CORE-PASS-closed): a T piece that breaks KT hands the recursion a p-dominion of G[Z'] inside D; then (REC) | DATA 45/45; P-KT carries over to depth 1 |
 | S-LOC / S-LEVEL (18j) | S learning lies in the core of SOME KT level / of EVERY destroyed level meeting V* | S-LOC DATA 0 violations; S-LEVEL KILLED (cross_h_k1_n12_m18_17) |
+| ACYC (18h, STEP5 §6.1; GAPS G-S5-6) | the new part of every X-straddling tangle that Dom(prevV) accepts has no cycle of the tangle graph | OPEN; DATA 0 failures (climbs: new parts up to 16 vertices, all acyclic); (YZ) ⇐ (ACYC) PROVED (reading, refereed G-S5-2) |
+| S-LOW-TIGHT (18l) | at the first KT-breaking depth-0 S piece, the first pass's lowest top itself learns inside D or finds a dominion | DATA 403/403 Oink, 384/384 stable (corpus), 467/467 unions, 61/61 cross unions; reduces via K6 (read with K5', 18n) to excluding (α) and (β') there |
+| K5' (18n) | corrected K5: A_< \ Reg ⊆ Z_k ∪ Up(Str); (α) defined with Up(Str) | PROVED (reading; REFEREE-2 R2-PROVED2 §3, re-traced by L-ALG) |
+| First-Difference Lemma (GAP-A-M §21d) | stated on the log with repeated sptl passes deleted | PROVED (reading), signed by both referees (G-h1 closed); checker re-run 1,042 / 1,011 transitions, 0 violations |
 
 ## 3. The new steps
 Lemma SCC1 (PROVED, reading). Let τ be a top in sptl (dtl.cpp 477-550) with region Z_τ, computed from {τ} by the
@@ -1050,3 +1054,36 @@ a pre-learning best_vertices call (0 = violation).
   (gapb_dup_n20 makes 14 vs 16 searches); the fitness is coarse.
 Status: (β') at the first KT-breaking stable piece is OPEN. (NO-ORPHAN-pre) is DATA, and paths (i) and (ii) are for
 L-RED's successor. (F3) moves path (i) onto (YZ)-type ground; path (ii) is untouched.
+
+### 18p. Box 6 ledger (L-ALG successor 6, produced on Opus 5.5; GO 05:08Z (Lead clock), box end ~13:10Z; 10:35Z by date -u)
+PROVED (readings of dtl.cpp @ 8fbf0a7, every order datum; Step 5 signed by both referees with gaps, R4 / STEP5.md):
+- KT0. NT-f, and with it FM and WM. P-KT given (YZ). (YZ) ⇐ (ACYC). Lemma O-P given (YZ). K5' (REFEREE-2's form).
+- Packet 2 (both referees, gaps imported §18n): B-thr "(a) always", all gaps closed. OPP-EXIT with "π(o) ∉ Z_τ". K0.
+  Theorem A. DV*-MONO. The per-context LRN budget. FDL on the reduced log. Lemma W via SCC1.
+OPEN (in the order a proof of Lemma K needs them):
+1. (ACYC), the single open point of Step 5 (STEP5 §6.1, GAPS G-S5-6).
+2. The S step: (S-LOW-TIGHT) holds on all data and reduces via K6/K5' to excluding (α) (now via Up(Str)) and (β') at
+   the first KT-breaking stable piece. (β') needs an orphan; (NO-ORPHAN-pre) and BORN-NEXT are DATA (18o). L-RED paths
+   (i)/(ii) are the open shapes.
+3. The T step: (CORE-PASS-closed) 45/45 DATA, then (REC): the same frame inside recursions.
+4. GAP-A (polynomially many searches; separate from GAP-C).
+DEAD this box (instances in 18d, 18f, 18j, 18k, 18n):
+- The K frame: (P-K) and (K-STEP-first) (pk_viol_n20).
+- HYB, JD, ATTR, SEG-ALL, LASTD-T, KEEP, MONO/R-MONO, P-A, INV-T (c_best_s34), (S-LEVEL) (cross_h_k1_n12_m18_17).
+- K5 (i)/(iii) as written (k5.pg, REFEREE-2). B-thr branch (b) and GAP-β's (β-b): empty, not a dead end, removed.
+- Tool defect: the old dtl_fdlcheck.py "same caller" test was vacuous. Fixed and re-run, 0 violations.
+GAP-A angle for the next box (per L32; not started):
+- Proposal: rescue-set monotonicity for the actual code, the per-phase potential that DV* gives only for the clean ideal.
+- FDL puts the first difference of consecutive searches in the best_vertices threshold loop in 642 of 949 transitions (C5,
+  Oink order). §18o adds that born orphans (38% of learned tangles) are absorbed mostly there: 915 of 1,035, depth-0
+  threshold loop.
+- The tools that worked for the −1 call this box were NT-f and FM. They say the final round accepts no stored tangle and
+  its union lies inside every earlier round's union. They are rescue arguments on one call with T fixed.
+- The angle: prove the same kind of statement ACROSS consecutive searches for the root call. Let s → s+1 have its first
+  difference in the root call's threshold loop at round r. Claim: the round-r rescue sets of s+1 contain those of s at
+  every later level, and V_{r+1}(s+1) ⊇ V_{r+1}(s) (DV never falls: DATA, GAP-A-M §21h).
+- If that holds, the root-call pruning vector is pointwise monotone. It changes at most n(n+1) times per phase (as for
+  DV*), and the FDL transitions with the first difference in the root call are polynomially bounded.
+- The obstacle is the usual one. Regions consume (MONO is false), so the rounds after r need not be monotone. The claim must
+  use, as NT-f does, that a tangle accepted later is the cause of the difference.
+- First test: dtl_dvctx.py's DV vs DV* split on the transitions where the first difference is in the root call.
