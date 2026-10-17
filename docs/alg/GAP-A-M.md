@@ -3196,6 +3196,20 @@ structure. Reasons:
 - Risk: if L-RED stacks two R35 levels, depth grows with nesting, and then only (STEAL-POLY_sum) via a non-depth argument
   survives.
 
+- ADDENDUM (23:03Z by date -u; Lead 23:02Z): L-RED R37 (docs/red/R37-depth-obstruction.md, l-red fcc179b; a reading plus data,
+  unrefereed) links the STEAL and CTX premises.
+  - R37-1: a depth-D event needs a chain e_0..e_D with strictly increasing pairs and D+1 strictly ordered steps, so ≥ D+3
+    visits of ONE context in ONE phase (tight, per L-RED). Hence depth ≤ V_R − 3, where V_R = visits of R in the phase.
+    V_R is not bounded by S, since search_rec revisits R after each res = 1 round.
+  - R37-2: every event pair needs a tangle learned in between (rests on an unproved determinacy reading).
+  - Lockstep copies cannot reach depth 2 (cf. the union climb s9: 29 re-steals, all depth 1). A clock-gated lag design is
+    written down, not built.
+  - L-ALG note: a polynomial bound on V_R makes the STEAL premise trivial, without CHARGE or depth. Every event sits at a
+    pair of consecutive visits, so k_q ≤ V_R − 1, N*_R ≤ V_R − 1, and F_R ≤ 3(V_R − 1) directly. So "(VISITS) V_R ≤ poly(|R|)
+    per phase" with (CTX⁺) would give GAP-A by R9 alone. (VISITS) is a per-context count of searches-like events, so it is
+    probably not easier than GAP-A. Through R12 (c) the depth bound gives only Q^(poly); the direct bound F_R ≤ 3(V_R − 1)
+    is the stronger use.
+
 23p. Vertex exits from a prefix: a polynomial charge that does not need constant depth (reading, unrefereed; DATA) (L-ALG
 succ. 7, 22:42Z by date -u; tool experiments/alg/dtl_prefexits.py)
 Definitions:
