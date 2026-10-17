@@ -2866,6 +2866,10 @@ With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) /
   one step (context, round, top) in a phase is bounded by a constant c. With the (|R| + 1)·|R| steps per context (R11 (d)) it
   gives (FIRED-R) with #fired(R) ≤ c(|R| + 1)|R|. It has the same per-step shape as (STEAL-ONCE*). With NO-RETURN, each
   (step, tangle) fires on ONE interval of visits. So (FIRED-STEP) asks how many times a step can switch to a NEW tangle.
+- CORRECTION (19:56Z by date -u): NO-RETURN is FALSE in its all-steps form (§23h; stealonce_viol_n76, stable order, 7 of 42
+  contexts). Its long-phase form is UNTESTED there: under the filter, 3 contexts qualify and nothing fires in them. The
+  long-phase table above is DATA on the listed sets only; nothing in this section depends on NO-RETURN. (FIRED-STEP) itself
+  is dead (§23e).
 
 23e. (FIRED-R) on ALL contexts: three candidate structures KILLED, two DATA statements survive (L-ALG succ. 7, 19:16Z by date -u)
 - Tool: dtl_firedlong2.py with FL_ALL=1 FL_SHOW=1, i.e. every context visited ≥ 2 times in a phase, with no long-phase filter.
@@ -2893,7 +2897,7 @@ With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) /
   - (FIRED ≤ |R|): #fired(R) ≤ |R| per phase. It is TIGHT: equality 18/18 on fired18_stable_n20 (stable) and on four mixed
     unions.
   - (FIRED-DISTINCT): fired tangles of a context have distinct vertex sets.
-  - NO-RETURN.
+  - NO-RETURN on these sets. It is FALSE in general (§23h, stealonce_viol_n76).
 - Reading. (FIRED ≤ |R|) is tight and has no injective witness yet: not laminar, and not by the top vertex. Climb target for
   L-RED: fired/|R| > 1 (dtl_firedclimb.py's fitness, or firedlong.py without the filter). No proof route.
 
@@ -2989,3 +2993,15 @@ event of q at pair j < i, a RE-STEAL.
     with steals have k = 1; "no cause" 0.
   - So random unions up to n = 120 show no re-steal in either order. R35 is a constructed shape. Note that STEALER-MONO also
     fails in the Oink order (seed 8).
+
+23h. NO-RETURN KILLED with DE20 (L-ALG succ. 7, 19:56Z by date -u; L-RED R35 addendum, l-red d11271d)
+- Instance: stealonce_viol_n76 (sha1 32c2da0b; pinned Oink 7 iterations, verified). L-ALG re-run with dtl_firedlong2.py
+  (FL_ALL=1 RM_EXCL=1 RM_LIGHT=1 RM_DV=0):
+  - stable order: NO-RETURN FAILS 7 / holds 35; at most 4 distinct tangles fire at one step; max fired 14 at one context
+    (|R| ≥ 42; ratio ≤ 0.333); FIRED ≤ |R| holds 42/42; FIRED-LAMINAR holds 42/42.
+  - Oink order: everything holds (9 contexts).
+  - Long-phase filter (stable): 3 contexts qualify, nothing fires in them, so the test is vacuous.
+- Reading. This is the same event as the NO-REFIRE failure of §23f: tangle 7 fires at (round 4, top 18), stops firing there
+  after the first steal, and fires there again after 3 drops out of the prefix. So the "one firing interval per
+  (step, tangle)" form is false wherever STEAL-ONCE* is. The long-phase form stays UNTESTED, not confirmed.
+- Dependence: no surviving statement of §23d-§23g uses NO-RETURN.
