@@ -160,3 +160,19 @@ History: f3cde82 is an ancestor of b55c144. Trunk b55c144 was merged into claude
   artifact. G-R9-1's data sentence is now backed on trunk. Suggest citing "GAP-A-M §22n" instead of the pending wording;
   the citation is optional.
 - N-1, N-2, N-3 and N-5 are not applied. They remain recommended, not required.
+
+## Addendum 2: post-landing text re-diff, RESULTS R9 (trunk d6e3bdd, landed at 1501aad) against R9-draft.md at b55c144: PASS
+Diff of the R9 entry against the draft from its "### R9" line: 7 hunks. Each maps to a recommended item or to the fall3
+ruling. Nothing else moved.
+| hunk | landed text | item | |
+| --- | --- | --- | --- |
+| heading | ", CHECKER PASS (docs/checker/C9-R9-packet6.md, checker a9258e6)" | landing stamp, as R5-R8 | OK |
+| (a) | "(no X or W read; str read only at 73, deciding a str write only)" | N-1, my wording | OK |
+| Signatures | "Item letters: R9 (b)+(c) = reports' (b); R9 (d) = reports' (c)." | N-3 | OK |
+| G-R9-1 | "...tool artifact; full re-run of corpus, mixed and cross unions in both orders: 0, GAP-A-M §22n, l-alg e4e52ac" | N-4 | OK. Checked at e4e52ac (ancestor of trunk): §22n table "Π_R does not rise" 0 / 0 (Oink / stable) for corpus + 4 (1,065 / 1,035), mixed unions s1 (6,031 / 6,153), cross unions s11 (3,370 / 3,377) |
+| G-R9-3 | "§22j's (CTX⁺) wording 'contexts' of Dom steps reads 'inputs' (REFEREE G6-b2, a wording item closed in the reports)" | N-2 | OK |
+| G-R9-5 | "also re-run by CHECKER C9, a9258e6)), DATA unrefereed, which does not refute (FALL); '≤ 2' was never signed" | fall3 ruling (C9 §3, my words) | OK. The CHECKER re-run is in this file at a9258e6 |
+| G-R9-6 | "H's (d + 2) factor counts distinct threshold levels while the code loops t = 0..max_prio (dtl.cpp 721-722); still polynomial (REFEREE nit)" | N-5 | OK |
+| end | one blank line | layout | n/a |
+- Nothing goes beyond the N-items or the fall3 wording. No revert is needed.
+- Process note: the re-diff is post-landing, as the Lead stated.
