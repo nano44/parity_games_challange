@@ -83,3 +83,26 @@ relevant steal): F_R ≤ 3·N*_R, with N*_R the consecutive visit pairs of R wit
 ## What (FALL) reduces to now
 (FALL) ⇐ (RELSTEAL): N*_R polynomial, with F_R ≤ 3·N*_R. Sharper conditional: (FALL) ⇐ (STEAL-ONCE) ∧ (FIRED-R). Open, DATA
 only; the obstruction is (FIRED-R): no bound on how many distinct tangles fire at one context in a phase.
+
+## §C. Comparison with REFEREE-2 (R2-P8, referee-2 b8fdd76; read after R-P8 was pushed and merged; 15:55Z by date -u)
+Agreement on every verdict. There is no disagreement of substance. (Opus 5.5, D12)
+- EXACT*: both SIGN, with the same two-line proof (the code's derivation uses only F_τ; then monotonicity plus EXACT).
+  - N8-1 (§22s's ⊆/⊇ labels are swapped): correct. I wrote the inclusions directly and did not flag the labels. I agree
+    it is wording only.
+  - Both probes: 0 EXACT* failures (mine 481,683 steps on pyref; R2's 927,485 on instrumented C++).
+- PREFIX-MONO-X*: both SIGN, including the absorbed case. Both note that (NS*) is weaker than (NS).
+- Corollary: both SIGN WITH GAPS with the same gap. My G8-1 = R2's G8-1 = G-P7-c2's factor 3. Closed. Both check the
+  "split" gloss.
+- §22u chain: both VALID as a conditional with the factor 3, F_R ≤ 3(|R|+1)|R|·#fired(R). Two refinements from R2, both
+  accepted:
+  - (STEAL-ONCE*), the RELEVANT-triple form, is all the chain needs. It is weaker than (STEAL-ONCE).
+  - G8-2. If (FALL) means the sum Σ_{R∈C_bv} F_R, the per-context bound gives it only with |C_bv| polynomial, which is part
+    of (CTX⁺). My R-P8 used §22f's per-context reading of (FALL) ("F_R polynomial for each R"). Under that reading
+    "(FALL) ⇐ (STEAL-ONCE) ∧ (FIRED-R)" holds as written. Under the sum reading it needs (CTX⁺).
+  The GAP-A statement is the same in both reports: GAP-A ⇐ (CTX⁺) ∧ (STEAL-ONCE*) ∧ (FIRED-R), given STR-DET.
+- Data (not signed). Both find (STEAL-ONCE) with max 1, and (FIRED-R) above §22u's 0.5·|R|: 0.62 (mine) and 0.67 (R2),
+  on small contexts. Only poly(|R|) is claimed.
+  - Relevant steals at a rise: 0 in mine (138 files, RV-fall detection) against 5 in R2's (257 files, full Π non-rise).
+    The corpora differ. Both show that the relevant charge is near-tight.
+- R9 items (Lead's (1)): answered in R-P7 §C2 (876c06e, sent 15:51Z). I confirm (i). On (iii), n per input suffices by
+  STR-DET (c), so 2n is true but not needed.
