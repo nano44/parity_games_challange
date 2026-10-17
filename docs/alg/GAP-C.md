@@ -558,8 +558,9 @@ vertices can never be attracted first, so such cycles keep Q nonempty; a violati
 
 ### 18g. Candidate KT (thresholded K; the Lead's lead 06:12Z) — DATA, not proved (06:32Z by date -u)
 Definition. For a depth-0 context R (X = G' \ R) and c of p's parity: S_c := D ∩ R ∩ {priority ≤ c}; A_c := the plain
-p-attractor of X inside S_c (a p-vertex enters with an edge into X ∪ A_c; an opponent vertex only if ALL its edges lie in
-X ∪ A_c, so an edge to a D-vertex of priority > c blocks it); Q_c := S_c \ A_c; F_c := the game on Q_c in which the
+p-attractor of X inside S_c (a p-vertex enters with an edge into X ∪ A_c; an opponent vertex only if ALL its edges IN G' lie
+in X ∪ A_c — edges into solved vertices, outside G', are not counted [referee gap G-S5-5, REFEREE-2 G1] — so an edge to a
+D-vertex of priority > c blocks it); Q_c := S_c \ A_c; F_c := the game on Q_c in which the
 opponent's edges leaving Q_c are deleted (forgiven, as DTL's regions forgive) and a vertex without successor loses for p.
 KT(R) :⇔ some c has W_p(F_c) ≠ ∅. Differences from K: attraction to X only through priorities ≤ c (DTL's threshold step
 and regions never use a path through a higher vertex, the pk_viol_n20 mechanism), and the core must be won by cycles.
@@ -816,3 +817,74 @@ closed) and the same frame inside recursions. Caveat: a KT core can contain an o
 escape in X: not plainly attracted to X, p-won with exits forgiven), so KT itself does not exclude (β'); a tangle-aware
 attractor in KT would, and the NT-f trick (take the tangle's top-priority vertex pruned first) seems to carry P-KT over to
 it for tangles without a vertex in old X — SKETCH, not written.
+(NO-ORPHAN-pre) and Lemma O-P (09:21Z by date -u; experiments/alg/dtl_orphpre.py). An ORPHAN at a best_vertices call with
+context R is an alive stored p-tangle t ⊆ R none of whose escapes lies in R (it is never re-checked inside R, and its
+region can only re-find it: (β')). DATA: no orphan at any call, at any depth, made before the search's first newly learned
+tangle: 11,725/11,725 calls corpus Oink (+ kfirst_viol_n13, pk_viol_n20), 11,523/11,523 stable; the only orphans (2 per
+order: gapb_dup_n20, gapbW_dup_n20) come after learning in the same search. With it, (β') cannot occur at the first
+KT-breaking stable piece (nothing is learned before it), so (S-LOW) would reduce to (α) at that piece.
+Lemma O-P (PROVED given (YZ)). A depth-0 P piece creates no orphan. Proof. Suppose Dom(prevV, R) removes the last escapes
+of t that lie in R while t ⊆ R \ Y_0. Those escapes lie in Y_0 = Z_f (YZ) ⊆ Z^r for every round r (FM, 18k). Let q :=
+tpr(t) and m_1 a priority-q vertex of t pruned first in the −1 call, at round r_1 (every priority-q vertex of t is pruned:
+one in V_f would be a top of Dom and lie in Y_0). At round r_1 all priority-q vertices of t are in V_{r_1} ⊆ Z^{r_1}. If
+q = 0, t ⊆ Z^{r_1} and m_1 attracts into Z^{r_1} (tangle successor / all R-edges in t ∪ escapes), so it is no candidate.
+If q ≥ 1, an escape e of t in R lies in Z^{r_1}, is popped at level q−1 of the rescue loop (step (D1) of NT-f), and
+attractTangle(t) finds every vertex in the set or of priority ≤ q−1 and every escape in R in the set, so t ⊆ the set and
+m_1 is rescued. Contradiction either way. □ Open: orphans created by a T piece (the threshold attractor takes t's last
+escapes at a level t* below tpr(t)) and by a barren stable piece (its rounds need not satisfy (FM)).
+(S-LOW), tight form (09:53Z by date -u; Lead 09:33Z after L-RED's check, l-red 57ab33f experiments/red/carry/slow.py). The
+first count above was LOOSE in three ways (L-RED): it pooled every sptl pass of the piece, accepted a dominion found by any
+top, and did not require the tangle to lie inside D. It did require a NEW tangle (skipped duplicates create no tv entry).
+(S-LOW-TIGHT) At a depth-0 stable piece that breaks KT, with nothing learned inside D earlier in the search, the lowest top
+that gets a region in the FIRST sptl pass itself creates a new tangle INSIDE D or itself finds a dominion.
+Recount with the tight test (dtl_step5stats.py "S-LOW-TIGHT", per-pass events recorded by dtl_step5.py's sptl): 403/403
+corpus Oink, 384/384 corpus stable, 467/467 unions Oink s1, 61/61 cross unions Oink s11 — no case where the tight form
+fails and the loose one passes. (The Lead's slow.py re-run on the four killers: 8/8 per order.)
+How (β') could arise at such a piece (shape for L-RED, from the reading; not built): a stored tangle t = {a, b} learned in
+an earlier search (a p-owned of priority 2 with tangle edge a → b; b opponent of priority 1 with b → a and one escape
+b → e); in the current search, before any learning, a T piece at level t* = pr(e) ≤ 1 (e a seed: it attracts into X)
+takes e but rejects t (pr(a) = 2 > t*), so t becomes an orphan (Lemma O-P excludes this for P pieces, not for T pieces);
+at the next stable piece the region of a closes on exactly t — a (β') duplicate. For (S-LOW-TIGHT) to fail, that piece must
+be the first to break KT and a's region must be the lowest of its first pass.
+
+### 18m. Referee gaps imported (REFEREE R-STEP5, REFEREE-2 R2-STEP5; union G-S5-1..7 in docs/agents/R4-draft.md; 09:56Z by date -u)
+Both reports: no REJECT; all signatures labelled "(Opus 5.5, D12)". Scope: depth-0 P pieces only; S and T steps and (K-in)
+not established. Closed gaps, written into the author's argument here (STEP5.md gets citations only):
+- G-S5-1 (REFEREE F2.1, REFEREE-2 G2). NT-f (D) uses q := tpr(t) = max pr(t) and that the vertices of priority q have p's
+  parity: by DTL-proof.md Lemma 1.5a a closed sptl region has exactly one SCC reachable from its top, so every extracted
+  tangle contains the top that extracted it; tpr(t) is that top's priority (dtl.cpp extractTangles), which is the region's
+  threshold and hence the maximum priority in t, of p's parity.
+- G-S5-2 (REFEREE G4.1). (YZ) ⇐ (ACYC), step (iii), both inclusions. For the top τ_j let L_Dom be Dom's part and L_loop
+  the final round's region, each the least fixed point of its rule set — vertex rules within the consumed set, the tangle
+  rule retried at every pop of an escape (DTL-proof.md Lemma 1.2: the pop loop computes exactly this closure). (⊇) every
+  rule application of the loop is one of Dom's (same vertex rules; a loop acceptance is a Dom acceptance). (⊆) induction
+  over Dom's derivation: vertex-rule steps are loop steps; a Dom tangle acceptance without an X-vertex would be a loop
+  acceptance, excluded by NT-f; an X-straddling acceptance with acyclic new part N_X is replaced by vertex-rule steps for
+  N_X in reverse topological order of H_{t_X} on N_X (using (i), (ii) and G-S5-3). So L_Dom = L_loop for every top, and
+  Y_0 = Z_f.
+- G-S5-3 (REFEREE G4.2, REFEREE-2 G3). The trigger case in (ii): a new opponent vertex o ∈ N_X all of whose R-edges lie in
+  earlier parts cannot exist — at the pop of the last of those successors, in an earlier region whose top has priority
+  ≥ pr(τ_j) ≥ pr(o), o would have been attracted (76-86), so it would not be new. Hence every new opponent vertex has an
+  R-edge into the current region or N_X, and in the reverse topological order it is attracted at the pop of its last such
+  successor.
+- G-S5-4 (REFEREE G5.1, REFEREE-2 G4). P-KT when c1 = 0 (p Even): there is no rescue level c1−1. Read A^r_{−1} := Z^r; A'' is
+  empty (no vertex has priority ≤ −1), so its role is played by Z_f alone. In (2) and (3) a priority-0 vertex that attracts into
+  Z_f ∪ A'' ⊆ Z^{r(x)} (FM) is not a candidate at round r(x) (dtl.cpp 714) — the contradiction comes from candidacy
+  instead of rescue.
+- G-S5-5 (REFEREE-2 G1; REFEREE wording note). In A_c "all its edges" means all its edges in G'; with whole-game edges an
+  opponent vertex with an edge into a solved region would never enter A_c and P-KT step (4) fails. Fixed in 18g.
+- G-S5-6 OPEN: (ACYC). G-S5-7: Lemmas 1.5a and 1.2 of DTL-proof.md were checked by the referees only for this use; sorted
+  indices (oink.cpp:35); O1 (index order follows priority) is an order-datum fact; positional determinacy and D = W_p(G')
+  (DTL-proof.md Lemma 1.4c) standard. Nothing Lean-checked.
+Why the NT-f trick does not exclude T-piece orphans (10:01Z by date -u; reading). At a T piece the seeds attract INTO X; an
+opponent seed has every edge in X (no R-edge at all), and the rescue loop (Gx = R) never pops such a vertex, so an escape
+of t taken by Z_T need not lie in any rescue set of the preceding −1 call: m_1's rescue argument does not start. Recipe
+(for L-RED; every step is consistent with the reading, nothing built): (1) an earlier search of p learns t = {a, b}
+(a p-owned, priority 2, a → b; b opponent, priority 1, b → a, b → e) at a's closed region, b's escape e (opponent,
+priority 1, e → x only) being forgiven because e lies in a higher region (e.g. with x) of that pass; (2) in the current
+search a barren piece puts x into X; (3) the next −1 call prunes a (b's edge to e blocks a's region; e has no R-edge, so
+no rescue reaches it), the threshold scan finds e at level t* = 1 (e attracts into X), the T piece takes e and rejects t
+(pr(a) = 2 > t*): t is an orphan; (4) at the next stable piece a's region is {a, b} (b's edge to e now leaves R), closed,
+and its SCC is the stored t: a (β') duplicate, nothing learned there. If t ⊆ D carries the KT core at that point, the piece
+breaks KT barren and (S-LOW-TIGHT) fails; if, moreover, nothing else in the search learns, Lemma K fails (an incomplete
+run). Data: 0 such events (NO-ORPHAN-pre).
