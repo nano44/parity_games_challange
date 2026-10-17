@@ -103,3 +103,50 @@ started 11:16Z (scripts/setup_oink.sh, background). Queue = Lead box-7 plan; not
   before any edit; `git merge-base --is-ancestor <reported head> HEAD` before reporting a head.
 - Also guarded: pushes only as `scripts/push.sh > file 2>&1; echo $?` (never piped); climbs killed by PID in a separate
   call after listing them with `ps` (pkill -f matched its own shell before).
+
+# Handover check: L-RED (successor 6, Opus 5.5 per owner D8; written 2026-10-17 18:56Z by date -u)
+Session successor 6. Predecessor: successor 5 (session_01DT8bvW9MGLgZURmnwB2JAc), handover at l-red 5a5f49e.
+
+## 1. Branch, head, distance to trunk
+- Branch claude/l-red. Container start: local HEAD 5a30e98, origin/claude/l-red 5a5f49e (local was 1339 behind; the stale
+  branch trap again). Fast-forwarded to 5a5f49e, then merged trunk origin/claude/vibrant-johnson-nxvvxo (d2f7415) with a
+  merge commit 994029e (no conflicts). Before this check: 5a5f49e was 5 ahead / 281 behind trunk; after the merge
+  994029e is 6 ahead / 0 behind (`git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`).
+  The head after this commit is reported to the Lead by SHA.
+
+## 2. Open work and the next step of each
+Nothing running (predecessor's climbs stopped 18:51Z; its scratchpad is gone, so its unpinned bests are lost). Oink build
+started (scripts/setup_oink.sh, background). Box 8 queue (Lead plan); nothing starts before GO:
+- (1) Break (STOLEN-PERM) (root DATA statement of GAP-A-M §23b: STOLEN-PERM => STAYS-MET => NO-REFIRE => STEAL-ONCE*).
+  Next: detached l-alg worktree as LALG_DIR; re-check stealer_viol_n76 (sha1 714ecc0f) with unmodified
+  experiments/alg/dtl_rootmono.py RM_EXCL=1 RM_PREF=1 RM_DV=0, both orders; then relaunch ROOTFIT=stay climbs (stable
+  seed 23001, oink seed 23002) and build L-ALG's case C by hand: a path tangle whose escape leaves the PREFIX, so the
+  prefix itself loses a stealing vertex (not DE19's upward migration of one region).
+- (2) Hand-built LONG-phase (FIRED-R): SPP chain + re-visited gadget firing a new stored tangle per search; judge with
+  root/firedlong.py (S >= 2|R|, >= 2 visits); best 0.455. Next: relaunch firedlong 21001/21002 from spp25_oink_n40 while
+  designing the gadget; report the ratio trend against phase length.
+- (3) (CTX+) n-trend (13 at n 40 and 48) and a FALL delay gadget. Next: grow ctx13_n40 with root/grow.sh at n 56/64.
+
+## 3. docs/GAPS.md rows I own
+- None. On trunk d2f7415 GAP-A and GAP-C are owned by L-ALG "(L-RED attacks)", both blocker, open; G-S5-6 is L-ALG's
+  (major, open). L-RED attacks GAP-A (box 8: STOLEN-PERM, FIRED-R, CTX+) and GAP-C.
+
+## 4. The three owner rulings that most constrain me (verbatim), with their DECISIONS-INDEX status
+1. D1 (docs/decisions/D001-launch-brief.md lines 25-26, 96-97; index row D1 "active"):
+   > - A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such
+   >   claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > - Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+   >   my decision.
+2. D7 (docs/DECISIONS.md line 105; index row D7 "active"):
+   > a
+   (Q9 option (a): continue at the current rate; stop at once on overage, D1.) So no detached climb outlives my box.
+3. D8 (docs/DECISIONS.md line 161; index row D8 "active"):
+   > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
+   Lead reading L32 (index "active"; a Lead reading, not an owner ruling): an incorrect run or a super-polynomial family
+   goes to the Lead at once.
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap: killing a rootfit/ucompose climb leaves its dtl_rootmono subprocess alive with ppid 1, still burning CPU and
+  writing (box 7). Check: after every kill, `ps -eo pid,ppid,args | awk '$2==1 && /dtl_rootmono/'` and kill those PIDs
+  in a separate call (never pkill -f: it matched its own shell four times).
+- Also (bit at this start): stale local branch; check `git rev-parse HEAD origin/claude/l-red` after a fetch.

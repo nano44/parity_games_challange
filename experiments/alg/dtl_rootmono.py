@@ -46,6 +46,7 @@ class RM(FC.CK):
             for top in range(s.n - 1, -1, -1):
                 if top not in V or top in Z: continue
                 CurZ = {top}; s.Q = [top]
+                if os.environ.get("RM_PREF"): rec.setdefault("pref", {})[(rnd, top)] = frozenset(Z)
                 if os.environ.get("RM_EXCL"):
                     rec.setdefault("excl", {})[(rnd, top)] = frozenset(t for t in tli if any(v in Z for v, _ in s.tv[t]) and not all(v in Z for v, _ in s.tv[t]))
                 s.tattr(p, CurZ, CurR, CurR, s.pr[top], CurR)
@@ -63,6 +64,7 @@ class RM(FC.CK):
                         miss = cl - Z - CurZ
                         strad = [t for t in tli if any(v in Z for v, _ in s.tv[t]) and any(v in miss for v, _ in s.tv[t])]
                         rec["wit"] = (rnd, top, frozenset(miss), tuple(strad))
+                if os.environ.get("RM_PREF"): rec.setdefault("regset", {})[(rnd, top)] = frozenset(CurZ)
                 Z |= CurZ; regs.append(frozenset(CurZ)); rtops.append(top)
             a1 = len(s.log); psi.append(frozenset(Z)); pos.append(sum(i * len(c) for i, c in enumerate(regs)))
             rk.append({v: i for i, c in enumerate(regs) for v in c})
@@ -351,6 +353,50 @@ if __name__ == "__main__":
             if succ_:
                 ms = max(len(v_) for v_ in succ_.values()); succrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), ms, len(succ_), len(ph) - 1, len(ph[0]["G"])))
             if os.environ.get("RM_EXCL"):
+                if os.environ.get("RM_PREF"):
+                    for key_, vl in visits.items():
+                        rcs = [rc for _, rc in vl]
+                        for x, y in zip(rcs, rcs[1:]):
+                            px, py = x.get("pref", {}), y.get("pref", {})
+                            shr = [k_ for k_ in px if k_ in py and not px[k_] <= py[k_]]
+                            stolen_lost = False
+                            kp = "PREFIX between consecutive visits: " + ("SHRINKS at some step" if shr else "never shrinks")
+                            tab[kp] = tab.get(kp, 0) + 1
+                            # MET-MONO: a tangle (alive at x) met by P(σ⁺) at x is met at y too (all tangles, contained counts as met)
+                            lostm = 0
+                            for k_ in px:
+                                if k_ not in py: continue
+                                for t in range(x["ntv"]):
+                                    vs = [v for v, _ in d.tv[t]]
+                                    if any(v in px[k_] for v in vs) and not any(v in py[k_] for v in vs): lostm += 1
+                            km = "MET-MONO between consecutive visits: " + ("holds" if lostm == 0 else "FAILS")
+                            tab[km] = tab.get(km, 0) + 1
+                # NO-REFIRE: after a relevant steal of (step, t) at visit pair (i, i+1), does t fire again at that step later?
+                for key_, vl in visits.items():
+                    rcs = [rc for _, rc in vl]
+                    for i in range(len(rcs) - 1):
+                        x, y = rcs[i], rcs[i + 1]
+                        ex_, ey_, fx_ = x.get("excl", {}), y.get("excl", {}), x.get("fired", {})
+                        for k_ in ey_:
+                            if k_ not in ex_: continue
+                            for t in ey_[k_]:
+                                if t < x["ntv"] and t not in ex_[k_] and t in fx_.get(k_, frozenset()):
+                                    later = rcs[i + 1:]
+                                    refire = any(t in z.get("fired", {}).get(k_, frozenset()) for z in later)
+                                    unmet = any(k_ in z.get("excl", {}) and t not in z["excl"][k_] for z in later)
+                                    if os.environ.get("RM_PREF"):
+                                        Wst = frozenset(v for v, _ in d.tv[t] if v in y.get("pref", {}).get(k_, frozenset()))
+                                        perm = all(Wst <= z.get("pref", {}).get(k_, Wst) for z in later)
+                                        # which region (same round, earlier top) holds the stolen vertices at y, and does that region ever shrink later?
+                                        rsy = y.get("regset", {})
+                                        stealers = [kk for kk in rsy if kk[0] == k_[0] and kk[1] > k_[1] and rsy[kk] & Wst]
+                                        smono = all(all(rsy[kk] <= z.get("regset", {}).get(kk, rsy[kk]) for z in later) for kk in stealers)
+                                        ks = "STEALER-MONO (the stealing region never loses vertices later): " + ("holds" if smono else "FAILS"); tab[ks] = tab.get(ks, 0) + 1
+                                        kperm = "STOLEN-PERM (the stealing vertices stay in the prefix): " + ("holds" if perm else "FAILS"); tab[kperm] = tab.get(kperm, 0) + 1
+                                    kq = "NO-REFIRE after a relevant steal: " + ("REFIRES later" if refire else "never refires") + (" | prefix later unmeets t" if unmet else " | stays met (or step absent)")
+                                    tab[kq] = tab.get(kq, 0) + 1
+                                    if refire and shown < 40:
+                                        shown += 1; print("REFIRE", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), "ctx |R|", len(key_[1]), "step", k_, "tangle", t, "visit", i, flush=True)
                 for key_, vl in visits.items():
                     fired_all = set().union(*[set().union(*rc.get("fired", {}).values()) for _, rc in vl]) if vl else set()
                     if len(vl) >= 2: firedrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), len(fired_all), len(key_[1]), len(vl), len(ph) - 1))
@@ -429,6 +475,6 @@ if __name__ == "__main__":
         badrows.sort(key=lambda r: -r[1]); print("phases where PI fails to rise (file, failures, transitions, |G'|):", badrows[:8], "phases:", len(badrows))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT", "DISTRACTION", "RV SHAPE", "PREFIX-MONO-X", "NEW STEALS per", "RELEVANT STEALS per")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT", "DISTRACTION", "RV SHAPE", "PREFIX-MONO-X", "NEW STEALS per", "RELEVANT STEALS per", "NO-REFIRE", "PREFIX between", "MET-MONO", "STOLEN-PERM", "STEALER-MONO")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})

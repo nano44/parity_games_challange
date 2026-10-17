@@ -53,3 +53,48 @@ before the fetch; a merge of trunk alone would have lost the lane head whenever 
 `git rev-list --left-right --count HEAD...origin/claude/l-alg` = "3 0" (0 behind) before writing anything.
 Second trap (successor 5): Lead messages read 1.5 h late. Check: ReadNotifications before every push and when idle.
 Push only as `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?`, reading "VERIFY PASS" and exit 0 before reporting.
+
+# Handover check: L-ALG (successor 7, written 2026-10-17T17:39Z by date -u; produced on Opus 5.5, D8)
+Predecessor: successor 6 (handover l-alg 526c2a0). Measured in this container, commands given.
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-alg`. At container start the LOCAL branch was the stale 1017502 ("behind 1601" after the fetch).
+  `git fetch origin claude/l-alg claude/vibrant-johnson-nxvvxo`; origin/claude/l-alg = 526c2a0; `git merge --ff-only` to 526c2a0.
+- Before merging: `git rev-list --left-right --count origin/claude/l-alg...origin/claude/vibrant-johnson-nxvvxo` = 2 27
+  (2 ahead, 27 behind trunk ee1b296; the 27 include L-RED firedlong.py 2486288 and ROOTFIT=stealer 5b6da4c).
+- Merged trunk (no-ff, no rewrite): HEAD...trunk = 3 0 before this file's commit; `git merge-base --is-ancestor 526c2a0 HEAD`:
+  ANCESTOR. This commit makes it 4 ahead, 0 behind (SHA in the message to the Lead).
+- tools/oink/build absent at start; scripts/setup_oink.sh running in the background.
+
+## 2. Open work and the next step of each
+- (1) (STEAL-ONCE*) (RESULTS R11 G-R11-5) via (STAYS-MET) (GAP-A-M §23a; DATA 0 exceptions in 1,237 Oink / 1,519 stable
+  relevant steals; PROVED (reading) only at round 1, step 2; (MET-MONO) KILLED). Next: the shrink-vertex analysis (per
+  shrinking visit pair: which vertices leave P(σ⁺), why, and whether any is a stealing vertex of an earlier steal), then try
+  to prove the steal ORDER ("a region that has stolen from a later step never afterwards loses vertices through a relevant
+  steal of its own fired tangles").
+- (2) (FIRED-R) (G-R11-6) on LONG phases only (L-RED filter S ≥ 2|R|, context visited ≥ 2 times, experiments/red/root/firedlong.py
+  @ l-red 5b6da4c). Next: run the filter, then look for an argument or a sharp statement.
+- (3) (CTX⁺) (G-R11-4), DATA max 13; only if (1) or (2) moves.
+- GAP-C / (ACYC): not in this box.
+
+## 3. docs/GAPS.md rows owned by L-ALG (trunk ee1b296)
+- GAP-A | blocker | L-ALG (L-RED attacks) | open: reduced to (CTX⁺) ∧ (STEAL-ONCE*) ∧ (FIRED-R) (R11).
+- GAP-C | blocker | L-ALG (L-RED attacks) | open.
+- G-S5-6 | major | L-ALG | open: (ACYC), DATA only.
+- Closed rows owned by L-ALG: G-FDL, G-Bthr, G-K5, G-STR, G-DOM.
+
+## 4. Three owner rulings that most constrain this lane (verbatim, docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md)
+1. D1 (active):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+2. D5 (active):
+   > I want you to believe in yourself and just loo kat the decade old mathematical open questions that has been cracked this year with AI. There are hundreads of examples so dont tell me it is highly unlikely to solve the parity game problem, because it is not
+3. D8 (active):
+   > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
+Also binding: L32 (Lead reading, active): progress = ONE named statement with a proof route; immediate stop on an incorrect run or a
+super-polynomial family. D11 (active): "No contact for now".
+
+## 5. One trap that bit this lane, and the check that prevents it
+Trap (bit again at this restart): the container's local claude/l-alg is the stale 1017502; without a fetch, work and pushes would
+start from a 1,601-commit-old head. Check: `git fetch origin claude/l-alg`, then `git merge-base --is-ancestor 526c2a0 HEAD`
+(ANCESTOR) and `git rev-list --left-right --count HEAD...origin/claude/l-alg` (x 0, i.e. 0 behind) before writing anything.
+Push only as `scripts/push.sh > $S/push.log 2>&1; echo exit $?`, reading the verify result and exit 0 before reporting.
