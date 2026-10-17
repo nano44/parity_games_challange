@@ -1188,3 +1188,28 @@ tangle meeting W_p(G') or finds a dominion, and within its phase some search lea
 It is the strongest one that survives, so attacking it tests both halves. For a proof, (MEET) is the natural
 replacement for (K-in): on this instance the straddling tangle meets D in 3 vertices. Per the Lead, no new GAP-C proof
 attempt in box 7.
+Additions to §18r (11:58Z by date -u):
+- (PHASE-IN) at every search is EQUIVALENT to completeness of the phase. This is L-RED succ. 5's reading, checked by the
+  Lead and by L-ALG against dtl.cpp 1068 and 1106-1121, dtl.hpp:33.
+  - run() is non-interleaved: `while (G.any()) { ...; if (!search(0)) break; }`, then the same loop for Odd. search()
+    returns `tangles != T or dominions != D`.
+  - So player p keeps searching exactly while its last search learned something. A same-G′ search that learns nothing
+    while D ≠ ∅ makes the run incomplete. If every later same-G′ search learns, finiteness gives a dominion.
+  - Hence PHASE-IN's 0 failures are the fact "0 incomplete runs", not independent evidence. (PHASE-IN-MEET) has no more
+    content than (MEET), and (MEET) was the only local statement left.
+- (MEET) is FALSE (RESULTS DE15; L-RED R30, l-red 06cd9f8). Instance experiments/red/carry/instances/meet_viol_n17.pg
+  (n = 17, sha1 ab329297).
+  - L-ALG re-run: pinned Oink `--dtl --no-single --no-wcwc --no-loops`: 2 dominions, 4 tangles, 6 iterations, verified.
+    dtl_meetd.py, both orders: "(MEET) FAILS search 0 p=0 |G′|=17 |D|=7 new=[[7, 10, 11, 14]]", with (K) 5/5 and
+    (PHASE-IN) 5/5.
+  - Mechanism (L-RED): a T piece eats D-vertex 1, which cuts Odd's escape 2 → 1. One S piece then Even-attracts the
+    rest of D into the closed region of top 14, whose core cycle lies in W_1. Only that core is learned. Searches 1-3
+    learn inside D and find the dominion.
+  - So no single-search progress statement toward D survives. A GAP-C proof needs a cross-search progress measure,
+    which is GAP-A-type.
+- Ledger question (Lead 11:52Z): does the ROOT-BOUND frame (GAP-A-M §22c-e) say anything about searches that learn only
+  in W_{1-p}? Only this: it bounds phase LENGTH, whatever the learned tangles are. Each transition s → s+1 inside a phase
+  raises Π at its first-difference context, whether s learned inside D, in W_{1-p}, or straddling. So given (CTX) and
+  (DIRTY), a run of searches that learn only in W_{1-p} is polynomially long. The frame does NOT say that such a run ends
+  in a dominion rather than a barren search: it assumes s+1 exists. It gives no progress toward D, and so nothing toward
+  GAP-C beyond "if the phase continues, it is short".
