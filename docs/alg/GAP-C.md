@@ -698,3 +698,11 @@ piece: 403/403 corpus Oink (227 at the least level, 176 only at a higher level),
 KILLED: 524 violations corpus Oink (478 stable, 207 unions, 36 cross); first instance
 experiments/alg/instances/cross_h_k1_n12_m18_17.pg (both orders). So the S step is existential over the levels, like
 (K-low) over the pieces; no rule naming the level is known.
+(FM, the open case; SKETCH, 08:04Z by date -u.) Let r be the LAST round with Z_f ⊄ Z^r, so Z_f ⊆ Z^{r'} for every r' > r, and let
+t be a tangle that round f attracts (t ⊆ Z_f, its escapes in Z_f or outside R) and round r straddles. Every p-priority
+vertex m of t attracts into Z_f (p-owned: its tangle successor is in t; opponent-owned: all its R-edges go to t or to
+escapes), hence into Z^{r'} for every r' > r; so m is no candidate at any round after r, and m ∉ V_f: every p-priority
+vertex of t was pruned at round r or earlier (PROVED). In particular t holds no top of rounds r+1..f, and the straddle at
+round r is created by the regions of round r's extra tops (pruned at r) or of tops above them; a top π pruned at r whose
+region holds a vertex of t has no edge into Z^r (a candidate), so if π ∈ t its tangle successor lies outside Z^r. The
+contradiction (or an FM counterexample built from it) is not reached; L-RED has the target.
