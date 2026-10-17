@@ -358,3 +358,40 @@ Test set: unions of two corpus games with 3 or 6 random cross edges between the 
 So no rule that names the productive piece in advance survives (first piece, first piece with a p-won top); the GAP-C
 statement stays the existential (K-low) (GAP-K) plus (TW). Data so far: 0 violations of (K-low) and (K-in) on the corpus,
 1,500 random games, 235 disjoint unions, 1,200 interacting unions, both order data where run.
+
+## 17. SKETCH of the GAP-K argument (Lead 04:56Z: a written sketch, no more experiments) (04:55Z by date -u)
+Claim to prove (K-low): if D := W_p(G') ≠ ∅, search(p) finds a dominion or some stable piece's lowest region is closed, has
+its top in D and yields a new tangle inside D. Contrapositive route: assume search(p) learns nothing and finds no dominion
+(every candidate fails) and derive D = ∅. Notation: depth-0 iterations i = 1..m with contexts R_1 = G' ⊋ R_2 ⊋ ...,
+removed sets Y_i (X_i = Y_1 ∪ ... ∪ Y_{i-1}), R_end = the last context (it has no p-priority vertex: best_vertices returned
+0); −1 pieces with Q nonempty recurse on their attractor's rest, which is again a search_rec with the same structure.
+Step 1 (PROVED; SCC1, K5/K6, B-thr). An unproductive search has, at every stable piece, every closed region at a top not in
+W yielding nothing, so its lowest region is open with a straddling tangle (α) or re-finds a stored tangle all of whose
+escapes lie outside the context (β-a/β-b of B-thr).
+Step 2 (PROVED, trivial). Every infinite play that stays in R_end is won by the opponent (R_end has no p-priority vertex).
+Step 3 (PROVED; Theorem A). If iteration 1 is stable, (α) is the only way to fail; so for an unproductive search either
+iteration 1 is (α), or iteration 1 is a −1 piece.
+Step 4 (SKETCH). Forgiving induction. Call a set Y ⊆ G' p-safe for context R if every opponent edge from R into Y is
+"forgiven" by DTL (dtl.cpp 75-86 judge escapes in R only). Hypothesis H_i: D ∩ R_i ≠ ∅ implies the game on R_i in which the
+opponent may not enter X_i still has a nonempty p-winning region inside D ∩ R_i. H_1 holds (D is a p-dominion of G'). A
+stable unproductive piece keeps H (its removal Dom(V*, R_i) is, by K4 relative to X_i, p-won in that forgiving game, so
+removing it leaves the rest of D p-winning in the smaller forgiving game). A −1 piece with Q nonempty (threshold attractor
+to X_i) keeps H by the same attractor argument (its removal is p-attracted to X_i at threshold t).
+Step 5 (GAP; the hardest step). A −1 piece with Q EMPTY removes Dom(prevV, R_i) (962-991), the region of the last
+pruned "distractions". This removal is NOT p-won in general and NOT opponent-won either: (S2) shows contexts that are
+entirely p-won are pruned to −1 (spp_final_n20, Odd's root call), and (Cb1) shows the p-dominion inside the context can be
+destroyed by this removal with nothing learned (c1_k1_min_n7_m10, c6_replay3_n32). So H_i can FAIL across such a piece in the
+strict sense, and in the forgiving sense the induction cannot conclude: at R_end the forgiving game lets p's vertices leave
+into X (counted p-safe), so H_end does not contradict Step 2. What is needed instead is a statement that charges each
+Dom(prevV) removal of p-won vertices to a LATER candidate of the same search: "if Dom(prevV, R_i) removes a p-won vertex v,
+then some later stable piece has a closed lowest region inside D that is not a stored tangle". The data say exactly this
+(K-low; the productive candidate follows OPP and MIX pieces, §15-§16), but no invariant that transports it is known: every
+per-piece candidate (S2, Cb1, PEEL, K-first, K4-B, FIRST-W) is dead with an instance.
+Step 6 (GAP, secondary). (α) at the candidate: the lowest region open because its top's successor lies in the lower part of
+a straddling tangle (DTL-proof.md §2.3; the regress route is dead, R11). Plausibly reducible to Step 5 (a straddle needs a
+tangle learned in another context), not shown.
+Hardest single step: Step 5, the Dom(prevV)-with-Q-empty removal (dtl.cpp 962-991). It is the one place where DTL removes
+vertices on an "optimistic for p" basis (later pruning forgives the opponent's exits into it) without a p-won certificate,
+and the completeness proof must show that this optimism is always repaid by a later productive candidate inside W_p. It is
+the same obligation as DTL-proof.md §2.3 (C-b), now with its quantitative form (K-low) and with instances showing that no
+local invariant carries it.
