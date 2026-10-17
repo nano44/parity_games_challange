@@ -30,6 +30,13 @@ Tools: dtl_stealtrace.py, dtl_shrinkdep.py, dtl_firedlong2.py (flags in their do
   Lead at once.
 - Flags added to dtl_rootmono.py (default output unchanged): RM_LAM=1 (CTX-LAMINAR), RM_BIRTH=1 (CTX-BIRTH).
 - Trap: in-process order switches must set os.environ["DTL_ORDER"], because dtl_deficit.build reads it.
+- Packet 9 is SIGNED by both referees (R-P9, R2-P9, trunk 25111fa); the imports are in §23k (l-alg 67b9e05). Working
+  conclusion: GAP-A ⇐ (CTX⁺) ∧ (FIRED-R) ∧ (STEAL-DEPTH_D for a constant D), given STR-DET; all three premises are DATA. The
+  Lead drafts RESULTS R12.
+- §23l: PIECES-LAMINAR killed; the piece count tracks S. §23m: FIRED ≤ |R| climbs stop at 1.0; FIRED-HALL killed.
+- Climbs running: depthclimb s1 and s4 (from stealonce_viol_n76), s5 (stealer_viol_n76) and s6 (fall3_n76). A watcher fires on
+  depth ≥ 2, k ≥ 3 or INCOMPLETE.
+- Trap: attribute-name clashes between subclasses of dtl_rootmono.RM (the _spR bug). Use distinct names.
 
 ## DONE
 Signed by both referees (all readings of dtl.cpp @ 8fbf0a7, every order datum):
