@@ -3118,3 +3118,80 @@ Sources: REFEREE docs/referee/R-P9.md and REFEREE-2 docs/referee-2/R2-P9.md, on 
 - Tool fix: dtl_rootmono's RM_BIRTH bookkeeping (2ff12ff) used the attribute name _spR, which dtl_firedlong2's FL class
   also uses, so it broke FL's birth arenas (TypeError). Renamed to _spRk. Every dtl_firedlong2 result in §23d, §23e and
   §23h was produced before 2ff12ff, with the old code, so none is affected.
+
+23n. Box-8 ledger, successor 7 (22:24Z by date -u; GO 17:46Z; box to ~00:45Z; produced on Opus 5.5)
+SIGNED by both referees (packet 9; R-P9 and R2-P9, trunk 25111fa; imports in §23k):
+- (a) The R11 count with the factor k: F_R ≤ 3·N*_R ≤ 3·Σ_q k_q ≤ 3·k_R·(|R|+1)·|R|·#fired(R) (§23f).
+- (b) Lemma CHARGE, with G9-b1 (P(τ⁺)) and G9-b2 (fewer rounds) closed. G23g-1 (local PREFIX-MONO-X*) and G23g-2 (V
+  alignment) are checked (§23g, §23k).
+- (c) Depth recursion: E_d ≤ Q^{d+1}, so Σ_q k_q ≤ 2Q^{D+1} under (STEAL-DEPTH_D). This gives STEAL-POLY for constant D only.
+- Conditional: GAP-A ⇐ (CTX⁺) ∧ (FIRED-R) ∧ (STEAL-DEPTH_D, constant D), given STR-DET. Also GAP-A ⇐ (CTX⁺) ∧
+  (STEAL-POLY_sum).
+PROVED (reading, unrefereed):
+- STOLEN-PERM ⇒ STAYS-MET ⇒ NO-REFIRE ⇒ STEAL-ONCE* (§23b). All four statements are now FALSE.
+KILLED this box (each with its instance, pinned Oink re-run; docs/alg/DEAD.md):
+- (STEALER-MONO): stealer_viol_n76 (L-RED; DE19). Also fails in the Oink order on big unions (seed 8).
+- (STEAL-ONCE*), (STOLEN-PERM), (STAYS-MET), NO-REFIRE, (DEP-SAFE): stealonce_viol_n76 (L-RED R35; DE20, stable order). In
+  the Oink order: stealonce_both_n45 (L-RED R36; DE20 addendum).
+- NO-RETURN (all-steps form): stealonce_viol_n76.
+- (FIRED-STEP) with a constant, (FIRED-TOP-INJ), (FIRED-HALL): fired18_stable_n20.
+- (FIRED-LAMINAR): c6_replay3_n32.
+- (CTX-LAMINAR): ctx12_oink_n40, dtl_searches15_n24.
+- (PIECES-LAMINAR): spp_chain_up_n43, ctx12_oink_n40.
+DATA (unproved; script, flags and sets in each section):
+- (STEAL-DEPTH_1): every event has depth ≤ 1, and k ≤ 2.
+  - Random sets up to n = 120: no re-steal at all.
+  - L-RED's instances, and climbs from them (dtl_depthclimb, 4 runs, ~2 h): up to 12 re-steals, all at depth 1.
+- Relevant-steal pairs per context: N*_R ≤ 3 on every set.
+- (FIRED ≤ |R|): tight (19/19). It has no local reason (FIRED-HALL is dead), so it is probably not robust.
+- (FIRED-DISTINCT): fired tangles of a context have distinct vertex sets.
+- (CTX⁺): at most 13 first-difference contexts per phase (unchanged). The depth-0 pieces of a phase number at most
+  1.953·|G′|, but that count tracks S.
+L32: NOT met. GAP-A still rests on (CTX⁺) and on either (STEAL-POLY_sum) or ((FIRED-R) and (STEAL-DEPTH_D)). (STEAL-DEPTH_D)
+has a signed route to (STEAL-POLY); the other premises have none.
+Open next:
+- (1) depth: a structural reason for depth ≤ 1, or a depth-2 gadget by stacking two R35 levels. That needs a re-steal at
+  (r, 66)-type steps. L-RED is climbing.
+- (2) (CTX⁺): no route; the set-structure candidates are exhausted (CHAIN, CTX-ROOT, CTX-LAMINAR, PIECES-LAMINAR).
+- (3) (FIRED-R): no route.
+
+23o. GAP-A POSITION, in one place (L-ALG succ. 7, 22:30Z by date -u; for the successor; Lead request 22:27Z)
+Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (L22/L26). Given STR-DET (R8).
+SIGNED CONDITIONALS (both referees; RESULTS R11 and the packet-9 draft R12; §23k):
+- (sum form) GAP-A ⇐ (CTX⁺) ∧ (STEAL-POLY_sum), where (STEAL-POLY_sum) says Σ_q k_q ≤ poly(|R|) per context and phase. The
+  chain is S − 1 ≤ Σ_R 2(F_R + 1)(H + 1) + 2n(|C_T| + |C_Dom|) + 1 (R9) and F_R ≤ 3·Σ_q k_q (R11 (c) with k).
+- (c) GAP-A ⇐ (CTX⁺) ∧ (FIRED-R) ∧ (STEAL-DEPTH_D for a constant D). Route: Lemma CHARGE plus E_d ≤ Q^{d+1}, so
+  Σ_q k_q ≤ 2Q^{D+1}, with Q ≤ (|R|+1)|R|·#fired(R).
+THE THREE DATA PREMISES:
+1. (CTX⁺): polynomially many first-difference contexts, −1 attractor contexts and Dom inputs per phase.
+   - Best data: max 13 first-difference contexts per phase (ctx13_n40, L-RED; CHECKER C11 re-run); 12 on ctx12_oink_n40; no
+     n-trend at n = 40, 48.
+   - Killed routes: (CHAIN) DE16; (CTX-ROOT) DE17; (CTX-LAMINAR) §23i; (PIECES-LAMINAR) §23l. The depth-0 piece count tracks
+     S (§23l).
+   - Structure known: the depth-0 contexts of a search form a decreasing chain from G′, and they are re-cut across
+     searches.
+2. (FIRED-R): #fired(R) ≤ poly(|R|) per context and phase.
+   - Best data: max 23 fired at one context (mixed unions, stable); fired/|R| ≤ 1.0, tight at 19/19 after climbs; on long
+     phases (S ≥ 2|R|) at most 3, ratio ≤ 0.375 (§23d, §23e, §23m).
+   - Killed routes: (FIRED-STEP) with a constant, (FIRED-TOP-INJ), (FIRED-HALL), all on fired18_stable_n20; (FIRED-LAMINAR) on
+     c6_replay3_n32; NO-RETURN on stealonce_viol_n76.
+   - Caveat (R11 G-R11-6): it is a tangle count close to GAP-A's core, and the sum form does not need it.
+3. (STEAL-DEPTH_D), constant D, or directly (STEAL-POLY_sum).
+   - Best data: no re-steal at all on random sets up to n = 120 (both orders). On L-RED's two instances, and on 4 climbs
+     from them: up to 12 re-steals, all at depth 1, k ≤ 2. N*_R ≤ 3 everywhere (§23g, §23n).
+   - Killed routes: (STEAL-ONCE*) DE20, with (STOLEN-PERM), (STAYS-MET), NO-REFIRE and (DEP-SAFE); (STEALER-MONO) DE19;
+     (MET-MONO) §23a.
+BEST GUESS, which premise is most provable: the STEAL premise, in the form (STEAL-POLY_sum), attacked through the CHARGE
+structure. Reasons:
+- (a) It is the only premise with a signed proof skeleton. Every re-steal is charged to an event at a strictly earlier step
+  (CHARGE), so the obstruction is now ONLY the multiplicative fan-out (one cause event may serve many re-steals). That is a
+  sharp, local question.
+- (b) The data is the cleanest of the three: depth ≤ 1, and k ≤ 2 even under targeted climbs. A depth-2 instance needs two
+  stacked R35 levels, and it has not appeared.
+- (c) A proof would not need (FIRED-R) if it bounds Σ_q k_q directly, e.g. by a potential over the step order that a cause
+  event "pays" for all the re-steals it enables. Candidate: charge each re-steal to the VERTEX w whose loss from P(τ⁺) enabled
+  it, and bound how often one vertex can leave and re-enter one prefix.
+- (d) By contrast, (CTX⁺) and (FIRED-R) have had every set-structure route killed, and their counts are close to GAP-A's own
+  (searches, tangles).
+- Risk: if L-RED stacks two R35 levels, depth grows with nesting, and then only (STEAL-POLY_sum) via a non-depth argument
+  survives.
