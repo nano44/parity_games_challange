@@ -34,8 +34,13 @@ All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `sc
   - OPEN = GAP-K': at the first stable piece of a search with W_p ≠ ∅: (K4-B) regions inside W_p although X ≠ ∅, (α),
     (β-1) no duplicate with escapes in X. Mixed evidence is thin (W_{1-p} mostly one vertex); a harvest of mixed games
     (|W_{1-p}| ≥ 3, experiments/alg/dtl_mixedgen.py) was run at box end.
-  Next for a successor: (K4-B) via the structure of the −1 pieces before the first stable piece (they remove p-won vertices
-  in every mixed case seen; the opponent-won vertices mostly stay in the context).
+  04:52Z by date -u, UPDATE: on mixed test games (disjoint unions of corpus games, dtl_unionmix.py; and with cross edges,
+  UM_CROSS) (K-first), (K4-B) and (FIRST-W) are DEAD (instances/kfirst_viol_union.pg, firstw_viol_cross.pg). Surviving,
+  0 violations everywhere: (K-low) = some stable piece's lowest region is productive inside W_p (GAP-K), (K-in), (TW)
+  (4,119 inside / 1,782 outside / 0 straddling on unions). Theorem A (root call) stands.
+  Next for a successor: GAP-K needs a global argument over all candidates of a search (no rule picks the piece in advance);
+  try "if every candidate fails, the union of their contexts contains no p-dominion", linked to the −1 removals (C-b).
+  Test games: unions of corpus games (cheap, mixed); random games are useless for GAP-C (always find a dominion).
 - Sources opened this box: tools/oink/src/src/solvers/dtl.cpp @ 8fbf0a7 lines 60-100 (attractVertices), 548-639
   (computeDistanceValues), 905-945 (search_rec −1 branch), 995-1070 (search() incl. the trace check); str reads at
   73, 268, 316-317 checked against writes 89, 171, 485, 881, 908, 965.
