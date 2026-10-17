@@ -151,3 +151,16 @@ through a lower good path, which t's own vertices do not provide.
   the final round's regions. So the step closes if the ACTUAL region union is monotone in the top set (Z_{r0} ⊇ the final
   round's regions when V* ⊆ V_{r0}); for the IDEAL union that is Lemma 2.1 (GAP-A-M §2), for A_DTL it is exactly the
   deficit question of GAP-A (Lemma E straddles). GAP-β therefore meets GAP-A's (H4) core.
+
+## 7. GAP-Cb: the dominion is not carried through −1 pieces (02:10Z by date -u; experiments/alg/dtl_cb1.py, dtl_s2.py)
+(Cb1) "if the context R of a best_vertices call contains a p-dominion and that iteration learns nothing, the next sibling
+context R' (R minus the iteration's removal) still contains one": FALSE in both semantics, C5, Oink order.
+- Strict (exits from R' won by the opponent, dtl_s2.dom_inside): of 546 unproductive −1 iterations with a dominion inside
+  R, 452 lose it. First instance: experiments/alg/instances/c1_k1_min_n7_m10.pg, the root piece (|R| 7 → 6).
+- Forgiving (exits from R' deleted, DTL's context semantics, dtl_s2.dom_forgive): 565 of 2,892 lose it; first instances
+  c1_k1_min_n7_m10.pg (root piece) and c6_replay3_n32.pg (depth-1 pieces (3, 2) and (4, 1)). (The 150 "result 0 with a
+  dominion inside" rows of that run are an artefact of the dead-end rule, which gives stuck opponent vertices to p.)
+Reading: the Dom(prevV, R) removal of a −1 iteration with Q empty (962-991) can take part of a p-dominion with nothing
+learned, so no induction "a dominion inside the context persists until a stable piece" exists; whatever compensates must
+be shown to come later in the same search (DTL-proof.md §2.3's (C-b) obligation, restated with instances). Every one of
+these searches still learned something elsewhere (complete runs, NODUP data).
