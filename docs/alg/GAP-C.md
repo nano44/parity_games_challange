@@ -23,7 +23,7 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | K1-K4 | dominion found if closed; duplicates have all escapes outside the context (K2); first piece at X = ∅; stable V* at X = ∅ is p-won | PROVED (DTL-proof.md §2.3) |
 | K5, K6 | the lowest region of a stable set is closed unless (α); if closed, its bottom SCC is new, a dominion, or (β') | K5(ii) PROVED; (i)/(iii) per R2-PROVED2 §3 (false as written, k5.pg; corrected with A_< and Up(Str), §18n) |
 | SCC1 (new) | in a closed sptl region Z_τ every vertex reaches τ in extractTangles' graph; so extractTangles(τ) finds at most ONE nontrivial SCC, the set C_τ reachable from τ | PROVED (reading), §3 |
-| B-thr (new) | if C_τ equals a stored tangle t, then τ ∈ t, every escape of t lies outside the context R, and the LAST escape of t to be popped either (a) was popped in an attractor with threshold < pr(τ), or (b) was cut off from t by an ancestor's −1 step (t inside the recursion context, e moved to X at 936-950) | per referee: "(a) always", branch (b) DROPPED (F-b3, both referees); PROVED (reading), §3; R2 G-b1 closed by REFEREE-2 §13.2, REFEREE checking (not recorded closed) |
+| B-thr (new) | if C_τ equals a stored tangle t, then τ ∈ t, every escape of t lies outside the context R, and the LAST escape of t to be popped either (a) was popped in an attractor with threshold < pr(τ), or (b) was cut off from t by an ancestor's −1 step (t inside the recursion context, e moved to X at 936-950) | per referee: "(a) always", branch (b) DROPPED (F-b3, both referees); PROVED (reading), §3; all gaps CLOSED (R2 G-b1: R2-PROVED2 §13.2, REFEREE R-PROVED2 §C5) |
 | NODUP | the duplicate case of SCC1 never occurs on DTL runs | KILLED (§8): experiments/red/carry/instances/gapb_dup_n20.pg (L-RED) |
 | NO-ORPHAN | no stored p-tangle inside a context has all its escapes outside it (implies NODUP) | KILLED (§8), same instance |
 | NO-ORPHAN-W | no stored p-tangle inside R ∩ W_p(G') has all its escapes outside R | KILLED (§12): experiments/red/carry/instances/gapbW_dup_n20.pg (L-RED) |
@@ -82,8 +82,13 @@ test: that attractor's threshold was < pr(τ) (this includes t partly in a −1 
 ("t inside an ancestor's −1 recursion context, e moved to X at 936-950") cannot occur: when e moves to X its pop at 945
 runs attractVertices(1−p, e, Z, X, Z, t), which takes every opponent predecessor in Z of priority ≤ t with no escape test
 (75); every vertex of Z has priority ≤ t (921) and e is a successor of an opponent vertex o ∈ t, so o moves to X too and
-t ⊄ the recursion context (R1 F-b3, R2 §13.2). □ Open per referee: R2 G-b1 (a tangle created in the current search),
-closed by REFEREE-2 (R2-PROVED2 §13.2: its top joins X at its piece's Dom, 879-880), NOT recorded closed until REFEREE signs.
+t ⊄ the recursion context (R1 F-b3, R2 §13.2). □ Also covered (per referee, 10:31Z; R2 G-b1, CLOSED by both referees:
+R2-PROVED2 §13.2, SIGNED by REFEREE in R-PROVED2 §C5): (iii) needs t to exist at the pop of its last in-G' escape; a
+tangle t created in the current search at the top a of an sptl region in S piece P1 (context R1, stable set V1) is never a
+duplicate later in the search: a ∈ t (SCC1), P1's Dom(V1, R1) puts every top of V1 into X and out of R (879-880, 885),
+later contexts of P1's call and of its descendants are ⊆ R1 minus P1's removal (914-954), and ancestor contexts after the
+call returns exclude its whole context (918-920, 951, 955; induction to depth 0); inside P1's pass sequence a duplicate is
+impossible (W[τ], 528, and the index argument). So every duplicate is of a tangle created before the search.
 So a closed region at a top τ ∉ W is productive except in the duplicate case, and the duplicate case is exactly:
 GAP-β (sharpened (β')). A stored tangle t with top τ = argmax pr(t), all of whose escapes are removed earlier in the same
 search, the last one (β-a) by an attractor of threshold below pr(τ) [per referee, 10:15Z: shape (β-b), an ancestor's −1
@@ -989,8 +994,8 @@ Addendum after both comparisons (Lead 10:35Z, Lead clock; R2-PROVED2 §13; 10:16
 - G-h1 (FDL): CLOSED by both referees. GAP-A-M §21d (ii)/(iii) now stated on the log with repeated sptl passes deleted
   (proof R2 §13.1, copied there). experiments/alg/dtl_fdlcheck.py now drops a repeated pass (identical tattr calls to the
   previous kept pass of the same S piece, no extraction); FDL_POSITIONAL=1 keeps the old alignment.
-- R2's G-b1 (tangle created in the current search): REFEREE-2 closes it in R2 §13.2 (the creating top a ∈ t joins X at
-  its piece's Dom(V1, R1), 879-880, so no later context contains t); REFEREE is checking. NOT recorded closed.
+- R2's G-b1 (tangle created in the current search): CLOSED by both referees (R2 §13.2; REFEREE signed it in R-PROVED2
+  §C5, Lead 10:40Z, Lead clock). Recorded in §3 B-thr (10:31Z by date -u).
 - K5: map row reads "K5(ii) PROVED; (i)/(iii) per R2-PROVED2 §3"; (α) is defined with Up(Str) (above). Theorem A stands
   under both readings: it uses only K4, K5(ii), SCC1, B-thr(ii) and O0 (R2 §13.3).
 
