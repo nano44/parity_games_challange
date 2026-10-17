@@ -706,3 +706,8 @@ vertex of t was pruned at round r or earlier (PROVED). In particular t holds no 
 round r is created by the regions of round r's extra tops (pruned at r) or of tops above them; a top π pruned at r whose
 region holds a vertex of t has no edge into Z^r (a candidate), so if π ∈ t its tangle successor lies outside Z^r. The
 contradiction (or an FM counterexample built from it) is not reached; L-RED has the target.
+(CORE-PASS-closed), DATA (08:13Z by date -u): whenever a T piece breaks KT (nothing learned before), the recursion context Z'
+holds a nonempty p-dominion of G[Z'] (closed: every opponent vertex keeps all its Z'-edges inside it) lying inside D:
+12/12 corpus Oink, 12/12 stable, 18/18 unions, 3/3 cross. With such a W the proof of P-KT runs unchanged inside the
+recursion (a P piece of search_rec(Z', p, 1) has its context R_1 a p-trap of G[Z'], so W ∩ R_1 is a p-dominion of
+G[R_1]), which removes the depth-1 obstacle above for P pieces; the S and T steps inside the recursion remain.

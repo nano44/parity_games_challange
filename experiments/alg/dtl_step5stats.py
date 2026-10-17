@@ -115,6 +115,19 @@ def kqT(d, p, Dw, R, G, nt):
     return O.winning(d, rest, p) if rest else set()
 
 
+def closed_dom(d, p, S, R):
+    """A nonempty p-dominion of the subgame G[R] inside S, if any: the greatest B ⊆ S with every opponent vertex having all
+    its R-edges in B (at least one) and every p-vertex an R-edge into B, then W_p(G[B]) (B is a trap for the opponent)."""
+    B = set(S); ch = True
+    while ch:
+        ch = False
+        for v in list(B):
+            out = [w for w in d.outs[v] if w in R]
+            ok = any(w in B for w in out) if d.ow[v] == p else (bool(out) and all(w in B for w in out))
+            if not ok: B.discard(v); ch = True
+    return O.winning(d, B, p) if B else set()
+
+
 def kthr_core(d, p, Dw, R, G, c):
     """The core W_p(F_c) of KT at level c (see kthr)."""
     S0 = Dw & R; X = G - R; S = {v for v in S0 if d.pr[v] <= c}
@@ -300,6 +313,8 @@ if __name__ == "__main__":
                         # CORE-PASS: the recursion context Z' (X empty there) has a KT core inside D: KT_1(Z')
                         k1 = kthr(d, p, Dw, set(pc["rest"]), set(pc["rest"]))
                         inc("T-STEP CORE-PASS (KT fails after T): " + ("recursion context has a KT core" if k1 else "VIOLATION: recursion context has no KT core"), f)
+                        Zr = set(pc["rest"]); Wc = closed_dom(d, p, Dw & Zr, Zr)
+                        inc("T-STEP CORE-PASS-closed: " + ("Z' holds a p-dominion of G[Z'] inside D" if Wc else "VIOLATION: no p-dominion of G[Z'] inside D"), f)
             if firstK[0] is None: inc("K never broken at depth 0", f)
             # LASTD: the depth-0 piece that removes the last vertex of D (with its recursion, for T) learns inside D
             top = [i for i, pc in enumerate(pcs) if pc["depth"] == 0]
