@@ -777,3 +777,12 @@ tangle {14, 15, 16, 17} uses a vertex of OLD X), with Y_0 = Z_f nevertheless.
 Status of Step 5: Lemma P-KT (18h) is PROVED given (YZ) only. (YZ) can fail only through a tangle that Dom(prevV)
 accepts using a vertex of old X or of an earlier top's part, at a moment when the region loop rejects it.
 Unrefereed; Lemma NT-f is a reading of dtl.cpp @ 8fbf0a7 for every order datum (no step uses ω).
+(YZ) anatomy (08:51Z by date -u; experiments/alg/dtl_yzclimb.py climbs from strfam_S5_n46.pg, 3 stable + 1 Oink seeds, up
+to 3 X-straddling Dom firings per run, never Y_0 ⊋ Z_f). In every observed firing the tangle lies in OLD X except for one
+or two new vertices (e.g. {14, 17} with 17 ∈ old X, 14 new; {14, 15, 16, 17} with 16 new), each OPPONENT-owned, whose
+tangle edges into old X lie outside R and are ignored by the region loop's vertex rule (76-86), so the region loop takes
+them as vertices and Y_0 = Z_f. Reading towards a proof (SKETCH): a new p-vertex v of such a tangle t_X has its tangle
+successor in R (an edge into X would make v attract into X, contradicting Q empty at a P piece); so a (YZ) failure needs
+the new part of t_X to contain a cycle of H_{t_X} that the region loop's vertex rules cannot enter; its maximum m is a
+p-priority vertex, and if m ∈ V_f it is a final candidate, so the cycle is not inside Z_f — consistent only with
+Y_0 ⊋ Z_f. Not closed.
