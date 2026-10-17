@@ -2454,3 +2454,56 @@ Route for a proof (reading; SKETCH):
   meet: a NEW steal.
 - A second fall of v would therefore need a second, independent steal that affects v after v recovered. The data has
   none. Cross-union shapes are running.
+
+22r. Lemma PREFIX-MONO-X: Π_R can descend only at a NEW STEAL (PROVED, reading; L-ALG 14:54Z by date -u)
+Setting as in §22c: one pruning round in context R with input V, tangle set T, tops processed in decreasing index (O1).
+P(τ⁺) is the prefix before the processed top τ. Define the EXCLUDED tangles at τ:
+  E_τ(T) := { t ∈ T alive : t meets P(τ⁺) and t ⊄ P(τ⁺) }.
+Lemma EXACT. For every processed τ, P(τ) = Cl_{pr τ}(P(τ⁺) ∪ {τ}; T \ E_τ), where Cl is the triggered closure in R
+(dtl_ideal.lfp) with tangle set T \ E_τ.
+Proof.
+- (⊆) is (S0) (R-P4 (a)). The code applies only closure rules. A tangle with a vertex in P(τ⁺) has that vertex outside
+  CurR ∪ CurZ, so attractTangle rejects it (137). So only tangles of T \ E_τ fire.
+- (⊇) Claim: P(τ⁺) is closed under the threshold-pr(τ) rules of T \ E_τ in R. This is the argument of R-P5 G-a2 for
+  the code's own prefix, using O1: every earlier region has threshold ≥ pr τ.
+  - A p-vertex u ∉ P(τ⁺) with pr(u) ≤ pr τ and an edge to w ∈ P(τ⁺): at w's pop u was unconsumed, so u was attracted
+    (74, 88).
+  - An opponent vertex with all R-edges in P(τ⁺) is attracted at the pop of the last of them (80).
+  - A tangle t ∈ T \ E_τ with t ∩ P(τ⁺) = ∅, all escapes in P(τ⁺) or outside R, and one escape in P(τ⁺): at the pop of
+    its last escape all its vertices are unconsumed, so it fires there and t meets P(τ⁺). Contradiction. A tangle with
+    t ⊆ P(τ⁺) adds nothing.
+  - So every rule instance with all premises in P(τ⁺) is already satisfied. The region's pop loop computes the closure
+    of the remaining instances (DTL-proof 1.2: every instance with a premise in CurZ is tried at that premise's pop).
+  So P(τ⁺) ∪ Z_τ ⊇ Cl. □
+Lemma PREFIX-MONO-X. Let V ⊆ V′ and T ⊆ T′ for one round. Assume (NS), "no new steal": for every τ processed in the
+EARLIER run, E′_τ ∩ T ⊆ E_τ, where E′_τ is computed from the later run's prefix P′(τ⁺), whether or not τ is processed
+there. Then P(τ) ⊆ P′(τ) for every τ.
+Proof, by induction over τ in decreasing order, as in §22c.
+- τ not processed in run 1: P(τ) = P(τ⁺) ⊆ P′(τ⁺) ⊆ P′(τ).
+- τ processed in both runs: P(τ) = Cl(P(τ⁺) ∪ {τ}; T \ E_τ) ⊆ Cl(P′(τ⁺) ∪ {τ}; T′ \ E′_τ) = P′(τ), by EXACT twice. Cl is
+  monotone in its base and its tangle set, and T \ E_τ ⊆ T′ \ E′_τ by (NS).
+- τ processed in run 1 only (τ ∈ P′(τ⁺)): by the closedness claim of EXACT applied to run 2, P′(τ⁺) is closed under the
+  threshold-pr(τ) rules of T′ \ E′_τ ⊇ T \ E_τ (by (NS)). It contains P(τ⁺) ∪ {τ}. So
+  P′(τ) = P′(τ⁺) ⊇ Cl(P(τ⁺) ∪ {τ}; T \ E_τ) = P(τ). □
+Corollary. If (NS) holds at every region step of every round (rounds aligned with V_r ⊆ V′_r inductively), then the
+§22c corollaries C1-C4 hold. The threshold loop has no exclusions: Gx = R, consume = None, so W_t = Cl_t(U) over all of
+T. So RV does not fall and Ψ does not shrink. Hence a non-rise of Π_R between two visits of R requires a NEW STEAL: a
+tangle of the earlier visit that the later visit's prefix newly meets without containing.
+PREFIX-MONO (§22c) is the special case in which the later run is step-ideal.
+DATA (dtl_rootmono.py RM_EXCL=1; corpus plus fall3_n76, fall4_n116, kin_viol_n29, meet_viol_n17; consecutive visits of
+every context; Oink / stable):
+
+| visit pairs | Oink | stable |
+|---|---|---|
+| new steal, with a descent | 86 | 85 |
+| new steal, no descent | 661 | 624 |
+| no new steal, no descent | 7,312 | 7,130 |
+| no new steal, with a descent | 0 | 0 |
+
+Consequence: F_R ≤ #(visit pairs at R with a new steal). (FALL) reduces to bounding new steals per context, i.e. how
+often a later prefix grows into a stored tangle that the earlier prefix did not meet.
+- In a stretch with no new steal, prefixes only grow. So a fixed (step, tangle) pair can be newly stolen again only after
+  some new steal has shrunk the prefix.
+- That suggests a potential argument over (step, tangle) pairs, but the number of stored tangles grows with S, so it is
+  circular as it stands.
+- (FALL-V) (§22q) is the data-side statement that this does not compound per vertex.
