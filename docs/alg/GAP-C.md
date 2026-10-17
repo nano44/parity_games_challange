@@ -107,3 +107,42 @@ only if τ attracts into the region union or is rescued at a threshold below pr(
 through vertices of t, and e is gone, so the rescue must come from a lower region that reaches t's vertices; since t's
 escapes are all outside R, no lower region can enter t except through t's vertices, which then would be attracted into
 that lower region (priority ≤ its threshold?) — the priority comparison is the open point.
+
+## 6. Toward NO-ORPHAN (01:45Z by date -u)
+Lemma O0 (PROVED, reading). At the start of search(p) (context R = G') there is no orphan. Let t be a stored p-tangle with
+t ⊆ G' and every escape solved. If the last escape e to be solved was solved for p, then at its pop in the dominion
+attraction (dtl.cpp 1032-1038, attractTangles with no priority limit, Gx = G) every other escape is in S or already solved
+(outside Gx) and every vertex of t is in G and not in S, so t is attracted and solved, a contradiction. If e was solved for
+the opponent, the opponent vertex o ∈ t with the edge o → e is owned by the opponent, so attractVertices (74-90) puts o
+into that solved set, and t is deleted on the fly (132-135), a contradiction. □
+Lemma O1 (PROVED, reading). Suppose a removal Dom(V, R) (878-890 or 962-991) creates an orphan t (t ⊆ R after the removal,
+t had an escape in R before, none after). Let m be the vertex of t of maximal priority q (parity p, since t is a genuine
+p-tangle and strongly connected). Then m ∈ R \ V: m was pruned in this piece. Proof: at the pop of t's last escape in R,
+in the attractor of some top τ_j ∈ V at threshold pr(τ_j), attractTangle (110-185) rejects t only through the priority
+test (the escape test passes as in B-thr; no vertex of t is in X), so q > pr(τ_j). If m ∈ V, the Dom loop (top from high
+index down) processes m before τ_j (higher priority) and puts m into X, contradicting t ⊆ R after the removal. □
+For an orphan created by a −1 branch (914-950) every p-priority vertex of the piece was pruned (the call returned −1), so
+again t's top vertex is a pruned distraction. So every orphan needs: t's top-priority vertex m is a distraction in the
+piece where t's escapes are removed, those removals use thresholds below pr(m) (or the −1 moves of (β-b)), and m stays
+in R. The OPEN step (GAP-β) is to show that m cannot then be a distraction: m's tangle t is a p-winning cycle structure
+whose only exits are those escapes, so while they are in R, m's region or the threshold sweep should rescue m.
+What blocks the obvious argument: in the threshold sweep (best_vertices, dtl.cpp 722-740; Q is refilled with all of Z at every
+level, 724, so every tangle with escapes in Z is re-checked at each level) a tangle is attracted only at a level ≥
+its maximal priority q = pr(m), so t can never help rescue m itself (rescue needs a level < pr(m)); m survives only
+through a lower good path, which t's own vertices do not provide.
+
+### 6a. The NO-ORPHAN mechanism on data (01:56Z by date -u; experiments/alg/dtl_orphan.py, dtl_nearorphan.py, dtl_nearorphan2.py)
+- NEAR-ORPHAN at a call (context R, returned V): a stored p-tangle t ⊆ R with exactly one escape e in R and its
+  top-priority vertex m ∉ V. Common: 5,375 (Oink order) / 5,298 (stable) on C5. So orphans are one removal away, often.
+- Fate in the next sibling call (Oink order): e kept 3,431; e and ALL of t removed in the same removal 1,944; e removed
+  with t kept (an orphan) 0; e removed with t partly kept 0.
+- How t leaves (dtl_nearorphan2.py): taken AS A TANGLE in the removal in 1,618 cases, always at a threshold ≥ pr(m)
+  (−1 attractor 1,419, Dom 199); m was already in the target in 1 case; taken vertex by vertex in 326. Never at a
+  threshold below pr(m). The escape itself is often low: pr(e) < pr(m) in 2,554 near-orphans, pr(e) = pr(m) in 203,
+  pr(e) > pr(m) in 2,618; so the reason is not the escape's priority.
+- Reading (SKETCH for the Dom case): m was pruned at some round r0 while it was still a top, so m ∈ Z_{r0} and
+  attractTangle skips m (136-137); t would then be attracted at a level < pr(m) (rescuing m through its strategy edge)
+  unless its only in-R escape e is outside Z_{r0} at those levels. But e is removed by Dom(V*, R), i.e. lies in (roughly)
+  the final round's regions. So the step closes if the ACTUAL region union is monotone in the top set (Z_{r0} ⊇ the final
+  round's regions when V* ⊆ V_{r0}); for the IDEAL union that is Lemma 2.1 (GAP-A-M §2), for A_DTL it is exactly the
+  deficit question of GAP-A (Lemma E straddles). GAP-β therefore meets GAP-A's (H4) core.
