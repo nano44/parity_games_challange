@@ -2429,7 +2429,9 @@ Candidate (FALL-V), DATA only: along a phase, each vertex's RV at a fixed contex
 - Consequence: the descents of Π_R at R number at most |R| ≤ n. Together with the non-rise steps that F_R also counts
   (0 on all data), (FALL) would follow, and GAP-A ⇐ (CTX⁺) alone, given STR-DET.
 - DATA so far: corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29, meet_viol_n17, fall3_n76 and fall4_n116, both
-  orders. In all 18 phases with falls, every vertex falls at most once per context. Union runs are pending.
+  orders. In all 18 phases with falls, every vertex falls at most once per context. Unions (completed 14:39Z): mixed
+  unions s1, 106 (Oink) / 139 (stable) phases with falls; cross unions s11, 54 / 64. Max 1 fall per (context, vertex)
+  in every one.
 - Proof idea (not done). A fall of v at R needs a stolen victim (Lemma E). Where the later call is clean the prefixes
   grow (PREFIX-MONO), so a stolen vertex stays stolen and v cannot regain support from that victim.
 - Gap: a NEW tangle could restore v's RV and then be stolen in turn. That is the shape for L-RED: v rises after its fall
