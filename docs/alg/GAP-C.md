@@ -1021,6 +1021,16 @@ search_rec 29, threshold loop at depth ≥ 1 29. Reading: (NO-ORPHAN-pre) holds 
 cause of the first difference (First-Difference Lemma (iii)) of its next search, which absorbs it early. Candidate lemma
 (BORN-NEXT, DATA only): the next search accepts every born orphan of its predecessor before it learns, or learns first.
 This covers only born orphans; it is not yet a proof route to (NO-ORPHAN-pre).
+Is the born orphan the FDL (iii) cause? (Lead 10:35Z by date -u; 10:43Z by date -u; experiments/alg/dtl_borncause.py.) Not as a rule.
+Of the transitions s → s+1 where s has a born orphan, a born orphan of s is accepted at the first differing tattr e* of
+s+1 (reduced logs) in 668 / 1,045 (Oink) and 639 / 1,014 (stable). In all the others another tangle created by s is
+accepted at e*. There are 0 cases with no tangle of s at e* and 0 without a difference. What does follow (SKETCH,
+reading): let t be a born orphan of s, created at the region of top τ in an S piece with context R_P. If s+1 had no
+difference before that region (reduced logs), then by the FDL (ii) argument s+1 learns nothing before it, and it reaches
+the same best_vertices call of that piece with the same context R_P. There t ⊆ R_P has no in-G' escape in R_P, i.e. it
+is an orphan before learning. So (NO-ORPHAN-pre) ⇒ e* lies before the creation point of every born orphan of s. The
+converse needs exactly the open part: why s+1 must differ that early. The data say the cause is a tangle of s, a born
+orphan in 64% of cases.
 L-RED's check of the §18l T-piece recipe (Lead 10:27Z, Lead clock; graft4: 2,996 games × 2 orders, 0 hits):
 - Steps (3)-(4) match dtl.cpp. Step (2), "a barren piece puts x into X", is the hard constraint: in a round with x ∈ Z
   and a a candidate, the level-1 rescue pops x and attracts e, then b, so a is rescued. a can be pruned only after x left
