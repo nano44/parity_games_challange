@@ -295,6 +295,14 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
 - GAP-C: (alpha) (straddling tangle leaving the lowest region open) never produced; proxy fitness "alpha" in dtl_search.py.
 
 ## Things only I know
+- (box 8, 23:10Z) Depth/EXIT need visits: depth D >= D+3 visits of one context in one phase (R37-1); EXIT c needs >= 2c visits.
+  The 45/76-vertex cores have 4-search phases (max depth 1, EXIT 2 by construction); only the R35 game (9 searches) has room.
+  Stacked copies run in lockstep (same phase); a lag between copies needs a gate (R37 addendum plan).
+- (box 8) LALGR_DIR worktrees in scratch: lalg (l-alg 9b621aa2: firedlong, permgap), lalg2 (931fc221: depthfit, depthgrad,
+  vshrink, crossscan), lalg3 (f1b3ba0b: exitfit). New tools reload per evaluation (dtl_search importlib); restart climbs after
+  editing a fitness formula, or the stored best uses the old formula.
+- (box 8) A waiter `until ! ps -p $(pgrep -f X)` matched its own shell again (exit 144 after kill): find PIDs with
+  `ps -eo pid,args | awk '/X/ && !/awk/'`.
 - (box 8) In phase 1 of the stealer_viol family the searching player is Odd (p = 1): tops are odd-priority vertices, and an
   Odd-owned vertex joins a region through ONE edge into it. Check p before reasoning about attraction.
 - (box 8) A one-edge neighbourhood scan around a near-miss (scratch nbscan.py: delete/add each edge, flip the owner at chosen
