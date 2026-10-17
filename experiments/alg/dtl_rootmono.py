@@ -5,10 +5,10 @@ INF if v survives to a round that returns 1 (in a −1 call every vertex is drop
 RV(s) pointwise. Transitions are classified by where the first difference e* of the reduced logs (dtl_fdlcheck.py) lies:
 root call (threshold loop / regions, with the round of e*), or later. For a failure, the first vertex whose RV falls and
 its rounds are printed. ROOT-SPLIT rows (root-call transitions): does RV fall / move, does DV* (dtl_dvstar.py, T at search start) move,
-does either root call have a deficit round (U ≠ Û, dtl_ideal.py). RM_DV=0 skips DV*. RM_ROUNDS=1 also prints the round of e*. DTL_ORDER = oink | stable. Usage: dtl_rootmono.py G.pg ..."""
+does either root call have a deficit round (U ≠ Û, dtl_ideal.py). RM_DV=0 skips DV*. Games and env as dtl_step5stats.games (UNIONS, UM_CROSS, SEED, NMAX, RANDOM). RM_ROUNDS=1 also prints the round of e*. DTL_ORDER = oink | stable. Usage: dtl_rootmono.py G.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
-import pg, dtl_fdlcheck as FC, dtl_ideal as I, dtl_dvstar as DS
+import pg, dtl_fdlcheck as FC, dtl_ideal as I, dtl_dvstar as DS, dtl_step5stats as ST
 FD = FC.FD; D = FD.D; INF = 10 ** 9; tab = {}
 
 
@@ -97,8 +97,8 @@ def where(root, k_full):
 if __name__ == "__main__":
     phrows = []; badrows = []; seqrows = []; ctxrows = []; fdcrows = []; descrows = []; recrows = []; succrows = []
     sys.setrecursionlimit(100000); st = {"dropped": 0, "kept: differs": 0, "kept: identical but extracts": 0}; shown = 0
-    for f in sys.argv[1:]:
-        g = pg.read(f); d0 = FD.P.X.build(g); d = RM(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.run()
+    for f, g in ST.games(sys.argv[1:]):
+        d0 = FD.P.X.build(g); d = RM(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.run()
         for ph in FD.phase_rows(d):
             nd = nr = 0; wl = []; nbad = 0; seq = []; fdc = set(); kseq = []; desc = {}
             for r in ph:
@@ -112,7 +112,7 @@ if __name__ == "__main__":
                 tab[k3] = tab.get(k3, 0) + 1
                 if r["root"]["rv"] != r["dvstar"] and not r["root"].get("deficit") and shown < 12:
                     shown += 1; dif = [v for v in r["root"]["rv"] if r["root"]["rv"][v] != r["dvstar"].get(v)]
-                    print("RV != DV* without deficit", os.path.relpath(f), f"p={r['p']}", [(d.idx[v], r["root"]["rv"][v], r["dvstar"].get(v)) for v in dif[:4]], flush=True)
+                    print("RV != DV* without deficit", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), f"p={r['p']}", [(d.idx[v], r["root"]["rv"][v], r["dvstar"].get(v)) for v in dif[:4]], flush=True)
             for a, b in zip(ph, ph[1:]):
                 la = [i for i, e in enumerate(a["log"]) if e[0] not in ("extract", "pass")]
                 lb = [i for i, e in enumerate(b["log"]) if e[0] not in ("extract", "pass")]
@@ -120,6 +120,14 @@ if __name__ == "__main__":
                 while k < min(len(la), len(lb)) and a["log"][la[k]][:4] == b["log"][lb[k]][:4]: k += 1
                 cls = "no difference" if k == min(len(la), len(lb)) else where(b["root"], lb[k])
                 seq.append("R" if cls.startswith("root") else "N" if cls == "after the root call" else "=")
+                # e* caller (any position) and the weak STR-DET check: does s+1 create a tangle before e*?
+                if cls == "no difference":
+                    kx = "E* CALLER: no set-level difference at all"
+                else:
+                    kx = "E* CALLER: " + b["log"][lb[k]][0]
+                    pre = any(e_[0] == "extract" for e_ in b["log"][:lb[k]])
+                    kw = "STR-DET weak (s+1 creates no tangle before e*): " + ("FAILS" if pre else "holds"); tab[kw] = tab.get(kw, 0) + 1
+                tab[kx] = tab.get(kx, 0) + 1
                 if cls != "no difference":
                     pos_ = lb[k]; rb2 = next((r_ for r_ in b["recs"] if r_["start"] <= pos_ < r_["end"]), None)
                     if rb2 is None: kc = "ANY-CONTEXT e*: not in a best_vertices call (search_rec −1 attractor)"; kseq.append("T")
@@ -151,7 +159,7 @@ if __name__ == "__main__":
                 if mv and b["d0clean"] and shown < 12:
                     shown += 1; mvs = [v for v in pa_ if pb_[v] > pa_[v]]
                     ra0 = [r_ for r_ in a["recs"] if r_["key"][0] == 0]; rb0 = [r_ for r_ in b["recs"] if r_["key"][0] == 0]
-                    print("ABS-pw FAILS on a clean search", os.path.relpath(f), f"p={a['p']}", "e*:", cls,
+                    print("ABS-pw FAILS on a clean search", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), f"p={a['p']}", "e*:", cls,
                           "| moved (vertex, piece s -> s+1):", [(d.idx[v], pa_[v], pb_[v]) for v in mvs[:5]],
                           "| depth-0 results s:", [r_.get("res") for r_ in ra0], "s+1:", [r_.get("res") for r_ in rb0],
                           "| root prevV s:", sorted(d.idx[v] for v in ra0[0].get("lastV", [])), "s+1:", sorted(d.idx[v] for v in rb0[0].get("lastV", [])),
@@ -234,7 +242,7 @@ if __name__ == "__main__":
                 tab[key] = tab.get(key, 0) + 1
                 if fall and shown < 6:
                     shown += 1; v = max(fall)
-                    print("RMONO FAILS", os.path.relpath(f), f"p={a['p']}", cls, "vertex", d.idx[v], "pr", d.pr[v],
+                    print("RMONO FAILS", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), f"p={a['p']}", cls, "vertex", d.idx[v], "pr", d.pr[v],
                           "round", ra[v], "->", rb[v], "| falls:", len(fall), flush=True)
             if wl:
                 tops_ = [w[1] for w in wl]; tg = [w[3] for w in wl]
@@ -242,10 +250,10 @@ if __name__ == "__main__":
                 kg = "DIRTY witness tangle set repeats within the phase: " + ("yes" if len(set(tg)) < len(tg) else "no"); tab[kg] = tab.get(kg, 0) + 1
                 ke = "DIRTY witness has a straddling tangle: " + ("all" if all(tg) else "NOT all"); tab[ke] = tab.get(ke, 0) + 1
                 if os.environ.get("RM_WIT") and len(wl) >= 8:
-                    print("WITNESSES", os.path.relpath(f), [(w[0], d.idx[w[1]], len(w[2]), w[3]) for w in wl], flush=True)
+                    print("WITNESSES", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), [(w[0], d.idx[w[1]], len(w[2]), w[3]) for w in wl], flush=True)
             if len(ph) > 1:
                 allc = set(c for r_ in ph for c in r_["ctx0"]); pos = max(len(r_["ctx0"]) for r_ in ph)
-                ctxrows.append((os.path.relpath(f), len(allc), len(ph), pos, len(ph[0]["G"])))
+                ctxrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), len(allc), len(ph), pos, len(ph[0]["G"])))
             # Π_R along the phase: compare consecutive visits of every context (any depth); count descents / incomparables
             visits = {}
             for si, r_ in enumerate(ph):
@@ -271,20 +279,20 @@ if __name__ == "__main__":
                 rec_n += sum(1 for u, w in zip(ids, ids[1:]) if w > u + 1)
             if len(ph) > 1:
                 kr = "CONTEXT RECURRENCES in a phase: " + ("none" if rec_n == 0 else "some"); tab[kr] = tab.get(kr, 0) + 1
-                recrows.append((os.path.relpath(f), rec_n, len(visits), len(ph) - 1, len(ph[0]["G"])))
+                recrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), rec_n, len(visits), len(ph) - 1, len(ph[0]["G"])))
             succ_ = {}
             for r_ in ph:
                 c0 = r_["ctx0"]
                 for u, w in zip(c0, c0[1:]): succ_.setdefault(u, set()).add(w)
             if succ_:
-                ms = max(len(v_) for v_ in succ_.values()); succrows.append((os.path.relpath(f), ms, len(succ_), len(ph) - 1, len(ph[0]["G"])))
-            if desc: descrows.append((os.path.relpath(f), max(desc.values()), sum(desc.values()), len(ph) - 1, len(ph[0]["G"])))
-            if fdc: fdcrows.append((os.path.relpath(f), len(fdc), len(ph) - 1, len(ph[0]["G"]), " ".join(kseq)))
+                ms = max(len(v_) for v_ in succ_.values()); succrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), ms, len(succ_), len(ph) - 1, len(ph[0]["G"])))
+            if desc: descrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), max(desc.values()), sum(desc.values()), len(ph) - 1, len(ph[0]["G"])))
+            if fdc: fdcrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), len(fdc), len(ph) - 1, len(ph[0]["G"]), " ".join(kseq)))
             if seq:
                 runs = [len(x) for x in "".join(seq).replace("=", "R").split("R") if x]
-                mr = max(runs) if runs else 0; seqrows.append((os.path.relpath(f), mr, "".join(seq), len(ph[0]["G"])))
-            if nbad: badrows.append((os.path.relpath(f), nbad, len(ph) - 1, len(ph[0]["G"])))
-            if len(ph) > 1 and nd: phrows.append((os.path.relpath(f), nd, nr, len(ph) - 1, len(ph[0]["G"]) if "G" in ph[0] else d.n))
+                mr = max(runs) if runs else 0; seqrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), mr, "".join(seq), len(ph[0]["G"])))
+            if nbad: badrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), nbad, len(ph) - 1, len(ph[0]["G"])))
+            if len(ph) > 1 and nd: phrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), nd, nr, len(ph) - 1, len(ph[0]["G"]) if "G" in ph[0] else d.n))
     if phrows:
         phrows.sort(key=lambda r: -r[1])
         print("phases with dirty root transitions (file, dirty, root transitions, transitions, |G'|):", phrows[:8])
@@ -310,6 +318,6 @@ if __name__ == "__main__":
         badrows.sort(key=lambda r: -r[1]); print("phases where PI fails to rise (file, failures, transitions, |G'|):", badrows[:8], "phases:", len(badrows))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})
