@@ -26,7 +26,8 @@
 - Gaps (union). G-R11-1..3 closed in the reports (imported by L-ALG in GAP-A-M §22w, l-alg c915af1); G-R11-4..6 OPEN;
   G-R11-7 dependencies:
   G-R11-1 Over consecutive visit pairs the corollary needs the factor 3 (G8-1); §22s "F_R ≈ #relevant steals" and §22u's first
-          line omit it.
+          line omit it. REFEREE-2 R2-P8 §7 (c2ac652) adds that, given STR-DET, the factor tightens to 2
+          (overlapping e*-intervals overlap only where T is constant); one signature, not used here.
   G-R11-2 The per-context form "(FALL) ⇐ (STEAL-ONCE) ∧ (FIRED-R)" holds per context; the sum over C_bv needs (CTX⁺) (REFEREE-2
           G8-2, accepted by REFEREE §C). Only the relevant-triple form (STEAL-ONCE*) is needed.
   G-R11-3 Wording: §22s's ⊆/⊇ labels are swapped (REFEREE-2 N8-1); F_τ depends on the pop order of the earlier run, which is
