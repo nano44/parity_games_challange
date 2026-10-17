@@ -56,3 +56,35 @@ carries no event. Hence the D + 1 pairs i_0..i_D, and the pairs p_j, are each se
   - stealk/depth hill climbs in both orders.
 - In these instances the cascade has exactly two active levels. The phases (4-9 searches) learn their last tangle that
   touches the context by search 6 at the latest, so (R37-1 (c)) leaves no room for depth 2 inside them.
+
+## Addendum (22:25Z by date -u): construction route for depth 2, and why the cheap versions cannot work
+- Base: stealonce_both_n45 (R36 §5). Roles (its file ids):
+  - T0 = 12 fires t0 = {2, 4, 9}; w = 2 is the stealing vertex.
+  - A = 37 holds w through w → 35 once tangles 4 = {28, 30, 34}, 5 and 6 fire (search 1).
+  - B = 39 becomes a region top at round 5 in search 2. It takes 28 ∈ t4 by plain vertex attraction (edge 28 → 39), so t4
+    is stolen at (5, 37).
+  - C = 14 becomes a top in search 3 and takes w through 2 → 14: the depth-1 re-steal of t0.
+  - The phase has 4 searches. Its closing dominion takes the remaining game.
+- Two copies stacked with no cross edge (scratch st0, n 90, priorities rescaled; see below) give two independent depth-1
+  chains in the stable order. Both copies keep the 4-search phase in lockstep, so R37-1 (≥ D + 3 = 5 visits) rules out
+  depth 2 for every cross-edge variant that keeps that phase. The scan of all 4,050 single cross edges (root/crossscan.py)
+  is DATA for this point.
+- Interleave that makes copy U drive copy L's B level. Rescale U's priorities by p → 40p + (p mod 2), and lift L's
+  priorities in [70, 89] by +1500. Then pr(T0^U) < pr(u^L) ≤ pr(A^L) < pr(C^U) < pr(A^U), with u = 28. With an edge
+  u^L → w^U, u^L lies in P(A^L) exactly when w^U is held by A^U or C^U, which are the visits after U's steals. Tested
+  (st1): t4^L is then excluded from its first visit and the mechanism dies, because the copies run in LOCKSTEP. Copy U must
+  lag copy L by 2 searches.
+- What a depth-2 build therefore needs (plan, not built):
+  - (i) An Odd-parity clock: L-ALG's dtl_chainfam UP chain with parities and owners flipped, so that it learns one tangle per
+    Odd search. Edges from an Even-owned vertex of each copy's closing dominion into the clock make each dominion wait for
+    the clock, which gives a phase of about k searches.
+  - (ii) A gate on copy U. Its first learned tangle gets an extra escape into clock vertex x_2, so U's learning starts two
+    searches after L's.
+  - (iii) The interleave and the u^L → w^U edge above.
+  - Expected events (R37-1 (d) shape):
+    - pair 0: B^L-type steal of t4^L;
+    - pair 1: U's A-level steal releases or holds u^L;
+    - pair 2: t4^L re-stolen (depth 1);
+    - pair 3: t0^L re-stolen with that event as its only cause (depth 2).
+  - Each further level needs one more lagged copy and two more clock steps, so depth D would cost about D copies and a clock
+    of length about 2D. The family would be linear in D, giving depth growing like n/(c·|core|).
