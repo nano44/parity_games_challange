@@ -670,7 +670,7 @@ at depth 0 D âˆ© R itself is a p-dominion of H (R is a p-trap of G'), at depth â
 context), and a KT core may have opponent exits to D-vertices above its level (forgiven by F_c, real in H). So (REC) needs
 a core closed in G[R_d]; (CORE-PASS) would then have to pass such a closed core down. Not attempted further.
 
-### 18j. The S step: DATA (07:43Z by date -u)
+### 18j. The S step: DATA (07:41Z by date -u)
 (S-STEP) If KT(R) holds at a depth-0 stable piece, nothing was learned inside D earlier in the search, and KT fails after
 Dom(V*, R), then the piece's sptl passes learn a tangle inside D. DATA (dtl_step5stats.py "S-STEP"): 0 barren breaks in
 every run (403 corpus Oink, 381 corpus stable, 467 unions Oink s1, 61 cross unions Oink s11 S pieces that break KT).
