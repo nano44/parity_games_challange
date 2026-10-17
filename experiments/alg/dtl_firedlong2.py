@@ -5,7 +5,7 @@ and S >= 2|R|. Per counted context: fired = distinct tangles fired at it over th
 the phase (index < k0, k0 = tangle count at the phase's first search) and born in the phase; for the latter, where they were
 born: the sptl arena R' of the extraction (R' ⊆ R, R' ⊋ R, or incomparable). Per step (round, top): NO-RETURN (a tangle
 that fired at the step at visit i, did not fire there at a later visit j, never fires there again) and the max number of
-distinct tangles fired at one step. FL_ALL=1 drops the long-phase filter (every context visited >= 2 times). Usage: RM_EXCL=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=oink|stable dtl_firedlong2.py G.pg ..."""
+distinct tangles fired at one step. FIRED-LAMINAR: are the fired tangles of a context pairwise nested or disjoint (vertex sets)? FL_SHOW=1 prints the first failures. FL_ALL=1 drops the long-phase filter (every context visited >= 2 times). Usage: RM_EXCL=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=oink|stable dtl_firedlong2.py G.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import dtl_rootmono as RMM, dtl_step5stats as ST
@@ -60,6 +60,14 @@ if __name__ == "__main__":
                     b = getattr(d, "born", {}).get(t)
                     bw["unknown" if b is None else "inside R" if b <= R else "strictly larger arena" if b > R else "incomparable"] += 1
                 mstep = max((len(v) for v in per.values()), default=0)
+                vs = [frozenset(v for v, _ in d.tv[t]) for t in sorted(fired)]
+                lam = all(a <= b or b <= a or not (a & b) for i, a in enumerate(vs) for b in vs[i + 1:])
+                kl = "FIRED-LAMINAR (fired tangles at a context: pairwise nested or disjoint): " + ("holds" if lam else "FAILS"); tot[kl] = tot.get(kl, 0) + 1
+                dup = len(set(vs)) < len(vs)
+                kd = "FIRED vertex sets distinct: " + ("NO (two fired tangles share a vertex set)" if dup else "yes"); tot[kd] = tot.get(kd, 0) + 1
+                if not lam and os.environ.get("FL_SHOW") and tot[kl] <= 5:
+                    bad = next((sorted(d.idx[v] for v in a), sorted(d.idx[v] for v in b)) for i, a in enumerate(vs) for b in vs[i + 1:] if not (a <= b or b <= a or not (a & b)))
+                    print("NOT LAMINAR", nm, "|R|", len(R), "fired", len(fired), "pair", bad, flush=True)
                 rows.append((round(len(fired) / len(R), 3), len(fired), len(old), len(new), bw["inside R"], bw["strictly larger arena"], bw["incomparable"], mstep, len(R), S, len(rcs), ret, nm))
     rows.sort(reverse=True)
     print("ratio fired old new | born: inside R, larger, incomparable | max per step | |R| S visits returns | game")
