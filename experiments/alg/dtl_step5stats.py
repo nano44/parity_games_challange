@@ -115,6 +115,27 @@ def kqT(d, p, Dw, R, G, nt):
     return O.winning(d, rest, p) if rest else set()
 
 
+def kthr_core(d, p, Dw, R, G, c):
+    """The core W_p(F_c) of KT at level c (see kthr)."""
+    S0 = Dw & R; X = G - R; S = {v for v in S0 if d.pr[v] <= c}
+    A = set(); ch = True
+    while ch:
+        ch = False
+        for v in S - A:
+            outs = [w for w in d.outs[v] if w in G]
+            ok = any(w in X or w in A for w in outs) if d.ow[v] == p else all(w in X or w in A for w in outs)
+            if ok: A.add(v); ch = True
+    Q = S - A; L = set(); ch = True
+    while ch:
+        ch = False
+        for v in Q - L:
+            outs = [w for w in d.outs[v] if w in Q]
+            if not outs or (d.ow[v] == p and all(w in L for w in outs)) or (d.ow[v] != p and any(w in L for w in outs)):
+                L.add(v); ch = True
+    rest = Q - L
+    return O.winning(d, rest, p) if rest else set()
+
+
 def kthr(d, p, Dw, R, G):
     """KT(R) (GAP-C §18g): for some c of p's parity, with S_c = D ∩ R ∩ {priority ≤ c} and A_c the plain p-attractor of
     X = G' \\ R inside S_c (an opponent vertex enters only if ALL its edges lie in X ∪ A_c), the game on Q_c = S_c \\ A_c in
@@ -245,6 +266,15 @@ if __name__ == "__main__":
                     inc(f"KTHR broken by {pc['kind']} " + ("which learns inside D" if learned else "barren, D-learning before" if before else "VIOLATION (barren, nothing learned inside D before)"), f)
                 if h0 and h1: inc(f"KTHR kept by {pc['kind']}")
                 if not h0 and a_ == 0: inc("KTHR false at G' (start)", f)
+                if pc["kind"] == "T" and h0 and not any(C <= Dw for q in pcs[:i] if q["kind"] == "S" for C in q["new"]):
+                    c = h0[0]; U = kthr_core(d, p, Dw, R0, G, c); t = pc["t"]
+                    nxt = top[a_ + 1] if a_ + 1 < len(top) else len(pcs)
+                    newin = [C for q in pcs[i:nxt] if q["kind"] == "S" for C in q["new"] if C <= Dw]
+                    tag = "T-STEP (nothing learned before): least KT level c " + ("< t" if c < t else "= t" if c == t else "> t")
+                    tag += ", core " + ("meets Z_T" if U & pc["rem"] else "avoids Z_T")
+                    if U & pc["rem"]: tag += ", core ∩ rest " + ("≠ ∅" if U & pc["rest"] else "= ∅")
+                    tag += ", KT after " + ("holds" if h1 else "FAILS") + (", recursion learns " + ("inside core" if any(C <= U for C in newin) else "inside D only") if newin else ", recursion barren")
+                    inc(tag, f if not h1 else None)
             if firstK[0] is None: inc("K never broken at depth 0", f)
             # LASTD: the depth-0 piece that removes the last vertex of D (with its recursion, for T) learns inside D
             top = [i for i, pc in enumerate(pcs) if pc["depth"] == 0]
