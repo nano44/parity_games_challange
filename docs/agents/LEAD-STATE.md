@@ -383,3 +383,4 @@
 - 06:35Z Lead: merged l-alg 312c918 (KT DATA); routed to L-RED.
 - 06:38Z Lead: merged l-red e3b9a01; spp25_oink_n40 verified (31 it.); KT climbs started.
 - 06:47Z Lead: merged l-alg b50e0c2 (P-KT proved given YZ, WM_c1); plan approved (YZ reading, WM_c1, T step); YZ/WM_c1 routed to L-RED.
+- 06:53Z Lead: merged l-red 88cf1fa; YZ/WM_c1 attack: 0 bad lines on 148 corpus files (MONO at P pieces fails in several but YZ/WM hold); K-in samplers ~10,700 eligible runs, min productive pieces >= 1.
