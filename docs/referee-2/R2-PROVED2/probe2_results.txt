@@ -1,0 +1,9 @@
+corpus runs 1014 duplicate events 6 same-search duplicates 0
+END seed 1 score 4 viol 0
+END seed 2 score 6 viol 0
+END seed 3 score 4 viol 0
+END seed 4 score 2 viol 0
+END seed 5 score 2 viol 0
+END seed 6 score 4 viol 0
+k5.pg:
+R2DUMP stable767 V: 0(pr0) 2(pr2) Reg: 0 2 A: 0(pr0) 1(pr1) 2(pr2) 3(pr3)
