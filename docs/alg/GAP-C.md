@@ -32,6 +32,10 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | (S2) | "a context containing a p-dominion is never pruned to −1" | FALSE (§4); the proof must follow the dominion through −1 pieces |
 | OPP-EXIT (new) | a learned tangle meets W_{1-p} only where the opponent's winning move is an edge the region forgives | PROVED (reading), §11 |
 | K-in, TW, LOW-W | progress inside W_p, from a lowest region; learned tangles never straddle W_p's boundary | DATA (§9-§11), 0 violations |
+| K-first | the FIRST stable piece's lowest region is productive inside W_p | DATA (§13), 483/483, 464/464 |
+| Theorem A | if the root call is stable, its lowest region is in W_p and is productive unless (α) | PROVED (reading), §13 |
+| K4-B | the first stable piece's regions lie in W_p even after −1 pieces | DATA (§13), 483/483 (31 mixed) |
+| GAP-K' | Case B (first stable piece after −1 pieces, 481 of 483 searches): (K4-B) + (α) + (β-1) | GAP, §13 |
 
 ## 3. The new steps
 Lemma SCC1 (PROVED, reading). Let τ be a top in sptl (dtl.cpp 477-550) with region Z_τ, computed from {τ} by the
@@ -285,7 +289,8 @@ its escapes outside R = G', i.e. solved, which Lemma O0's argument excludes for 
 between searches, and at the solving of a tangle's last escape the tangle is attracted or deleted; this holds equally for
 tangles learned earlier in the same search, whose escapes lie in G' or are solved). So C_{τ_k} is new (or a dominion). □
 Case split on data (experiments/alg/dtl_kfirst_case.py, Oink order, corpus + random): Case A (root call stable) only 2 of
-483 searches. Case B, the first stable piece comes after −1 pieces: 474 at depth 0 (after 1 to 9+ calls), 12 at depth 1.
+483 searches. Case B, the first stable piece comes after −1 pieces: 481 (469 at depth 0 after 1 to 9+ calls, 12 at depth 1;
+corrected 04:13Z, an earlier version said 474).
 So the real obligation is Case B:
   GAP-K' (Case B). At depth 0, after −1 pieces have removed X (Dom(prevV) with Q empty, 962-991; threshold attractor and
   recursion, 899-954) with nothing learned, the first stable piece's lowest top lies in W_p(G'), its region is closed and
@@ -294,3 +299,13 @@ So the real obligation is Case B:
   gapbW_dup_n20 are at LATER stable pieces, consistent with (K-first)).
   Smallest shape that breaks GAP-K' (L-RED): a search with W_p ≠ ∅, no dominion, whose first stable piece (after −1
   pieces) has its lowest top outside W_p, or an open lowest region, or a duplicate there.
+(K4-B), DATA (04:09Z by date -u; experiments/alg/dtl_k4b.py, Oink order, corpus + random): at the first stable piece of
+every search with W_p(G') ≠ ∅ and no dominion, V* and the union of the final-round regions lie inside W_p(G'): 483 of 483
+(31 mixed). With (K4-B), Theorem A's argument gives "lowest top in W_p" and (TW) for Case B as well, so GAP-K' becomes:
+  (K4-B) the first stable piece's regions lie in W_p(G') even though X ≠ ∅ (K4's proof needs X p-won: an opponent vertex
+         of A may have an edge into X, and the −1 pieces may have removed opponent-won vertices);
+  (α)    its lowest region is closed;
+  (β-1)  its SCC is not a stored tangle whose escapes all lie in X (B-thr with X ≠ ∅).
+Reading of (K4-B): by OPP-EXIT-type reasoning, a vertex of A ∩ W_{1-p} would need the opponent's winning moves to leave A
+into X ∩ W_{1-p}; a proof would show that every −1 piece removed before the first stable piece is a set from which the
+opponent's winning moves cannot re-enter R. Not attempted further in this box.
