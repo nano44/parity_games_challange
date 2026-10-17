@@ -151,3 +151,8 @@ includes conditional "(SPP) => O(n^10(m+n^2))"; not completeness, not polynomial
 ## 2026-10-17 11:11Z Lead (relayed to owner)
 RESULTS DE13 (trunk 2da329c): L-RED's kin_viol_n29.pg (Oink verified, run correct) falsifies the GAP-C proof route's data statements
 (K-in), (K-low), (TW), tight S-LOW, (KT-STEP-first). Plain completeness lemma not refuted; R4/R5 unaffected; GAP-C needs a restated S/T step.
+
+## 2026-10-17 11:53Z Lead (relayed to owner)
+DE15 (trunk 67acd6d): meet_viol_n17.pg (Oink verified, correct) falsifies (MEET); (PHASE-IN) is a restatement; completeness not refuted
+but needs a cross-search progress measure. R6 [refereed-only] landed (packet 3). GAP-A root-call part reduced (unrefereed) to
+"#DIRTY transitions per phase is polynomial"; transitions below the root call not covered.
