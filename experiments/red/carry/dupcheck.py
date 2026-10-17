@@ -44,7 +44,7 @@ def measure(path):
 
 def score(path):
     m = measure(path)
-    return 10 ** 6 * (m["unsolved"] + m["wrong"]) + 1000 * m["dup"] + 10 * min(m["orphans"], 50) + m["searches"]
+    return 10 ** 6 * (m["unsolved"] + m["wrong"]) + 1000 * m["dup"] + 100 * min(m["orphans"], 50) + m["searches"]
 
 if __name__ == "__main__":
     sys.setrecursionlimit(100000)
