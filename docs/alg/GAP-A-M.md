@@ -2974,3 +2974,18 @@ event of q at pair j < i, a RE-STEAL.
     its cause is the depth-0 steal of tangle 9 at (round 4, top 66) at pair 3.
 - Status against L32. A named statement, (STEAL-DEPTH_D), with a proof route (CHARGE plus counting) to the (STEAL-POLY) part of
   GAP-A. GAP-A also needs (CTX⁺) and (FIRED-R), so this is not the L32 single-statement criterion.
+- DATA for §23f/§23g (19:52Z by date -u). Big unions: corpus + UNIONS=300, SEED=7 / 8, UM_CROSS=4, NMAX=60 (n ≤ 120);
+  dtl_rootmono.py RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0. No INCOMPLETE. The first stable runs were OOM-killed (4 × ~6 GB) and
+  re-run two at a time.
+
+  | seed | order | phases with relevant steals | k max | STOLEN-PERM | STEALER-MONO |
+  |---|---|---|---|---|---|
+  | 7 | Oink | 33 | 1 | 215 / 215 | holds 215 |
+  | 7 | stable | 38 | 1 | 234 / 234 | holds 234 |
+  | 8 | Oink | 48 | 1 | 392 / 392 | FAILS 14, holds 378 |
+  | 8 | stable | 55 | 1 | 429 / 429 | FAILS 14, holds 415 |
+
+  - dtl_stealdepth.py, cross unions s11 + corpus + R35 (stable): one re-steal in all, R35's (depth 1); 250 other contexts
+    with steals have k = 1; "no cause" 0.
+  - So random unions up to n = 120 show no re-steal in either order. R35 is a constructed shape. Note that STEALER-MONO also
+    fails in the Oink order (seed 8).
