@@ -691,3 +691,10 @@ pr(σ) ≥ pr(τ)) attractTangle accepts t unless some vertex of t lies in an EA
 straddle at round r. That case is the only gap: (FM) fails only if round r straddles a tangle that round f attracts.
 And then (−1 condition): the maximum m of any p-won cycle of t lies in t ⊆ Z_f and attracts into Z_f (p-owned: by its
 tangle strategy; opponent-owned: all its R-edges are in t or escapes), so m ∉ V_f: m was pruned between r and f.
+(S-LOC) and (S-LEVEL) (08:00Z by date -u). (S-LOC), DATA: when a stable piece breaks KT (nothing learned inside D before),
+its learned tangle lies inside the core of SOME KT level c of R, that core meets V*, and KT fails at that level after the
+piece: 403/403 corpus Oink (227 at the least level, 176 only at a higher level), 381/381 stable, 467/467 unions Oink s1,
+61/61 cross unions. (S-LEVEL) "every level-c core that the piece destroys and that meets V* gets a tangle inside it" is
+KILLED: 524 violations corpus Oink (478 stable, 207 unions, 36 cross); first instance
+experiments/alg/instances/cross_h_k1_n12_m18_17.pg (both orders). So the S step is existential over the levels, like
+(K-low) over the pieces; no rule naming the level is known.

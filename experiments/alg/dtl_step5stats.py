@@ -273,6 +273,20 @@ if __name__ == "__main__":
                     if ins: tag += ", its top " + ("in U" if all(tp in U for tp, C in ins) else "not always in U")
                     tag += ", V* " + ("meets U" if pc["V"] & U else "avoids U")
                     inc(tag, f if not ins else None)
+                    cores = {cc: kthr_core(d, p, Dw, R0, G, cc) for cc in h0}
+                    anyc = [cc for cc, Uc in cores.items() if any(C <= Uc for C in pc["new"])]
+                    tag2 = "S-LOC: learned tangle inside the core of " + ("the least level" if anyc and anyc[0] == h0[0] else "a higher level only" if anyc else "NO level (VIOLATION)")
+                    if anyc:
+                        Uc = cores[anyc[0]]; tag2 += ", that core " + ("meets V*" if pc["V"] & Uc else "avoids V*")
+                        tag2 += ", KT after at that level " + ("fails" if anyc[0] not in h1 else "holds")
+                    inc(tag2, f if not anyc else None)
+                if pc["kind"] == "S" and h0 and not any(C <= Dw for q in pcs[:i] if q["kind"] == "S" for C in q["new"]):
+                    for cc in h0:
+                        if cc in h1: continue
+                        Uc = kthr_core(d, p, Dw, R0, G, cc)
+                        if not (pc["V"] & Uc): inc("S-LEVEL: core at level c killed, V* avoids it"); continue
+                        ok = any(C <= Uc for C in pc["new"])
+                        inc("S-LEVEL: core at level c killed and meets V*: " + ("learns inside it" if ok else "VIOLATION (no tangle inside that core)"), f)
                 if pc["kind"] == "T" and h0 and not any(C <= Dw for q in pcs[:i] if q["kind"] == "S" for C in q["new"]):
                     c = h0[0]; U = kthr_core(d, p, Dw, R0, G, c); t = pc["t"]
                     nxt = top[a_ + 1] if a_ + 1 < len(top) else len(pcs)
