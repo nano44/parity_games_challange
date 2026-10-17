@@ -49,3 +49,57 @@ s9022.pg, the lalg6..lalg10 worktrees, oink-det/oink-debug builds) is LOST with 
   merge origin/claude/l-red with --no-ff if false (done: dc9e26a).
 - Older traps still guarded: `| head` in check.sh under pipefail (`grep -c "| head" experiments/red/check.sh` must be 0);
   pushes only as `scripts/push.sh > file 2>&1; echo $?`; kill climbs by PID in a call of their own (pkill -f self-kill).
+
+# Handover check: L-RED (successor 5, Opus 5.5 per owner D8; written 2026-10-17 11:17Z by date -u)
+Measured from the repository at the time of writing (commands named). Predecessor: successor 4 (notebook FINAL RESUME
+POINT 11:06Z, head 0883016). Successor 4's section above is kept as history.
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-red`. Container head at start: 5a30e98 (STALE; `git status -sb` "behind 1091" after the fetch).
+  `git fetch origin claude/l-red claude/vibrant-johnson-nxvvxo`: origin/claude/l-red = 0883016, trunk = 2b5b14d.
+- `git merge --ff-only origin/claude/l-red` -> HEAD 0883016 (= origin). Then
+  `git rev-list --left-right --count origin/claude/vibrant-johnson-nxvvxo...HEAD` -> 214 behind, 0 ahead
+  (trunk already holds every l-red commit).
+- `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` -> 32b311e: 0 behind, 1 ahead (the merge commit);
+  2 ahead after this file's commit.
+
+## 2. Open work and the next step of each
+Nothing running in this container (successor 4's climbs were stopped 11:06Z, its scratchpad is gone). Oink build
+started 11:16Z (scripts/setup_oink.sh, background). Queue = Lead box-7 plan; nothing starts before GO:
+- (1) GAP-C after DE13: attack L-ALG's weakest surviving statement (docs/alg/GAP-C.md §18q/§18r, e.g. "search(p) learns a
+  tangle MEETING D, or a later search of the phase learns inside D"). Next: read §18q/§18r at the current l-alg head,
+  re-check kin_viol_n29 (sha1 50987098) with L-ALG's current tools, then a fitness for the new statement on top of
+  experiments/red/k4b/umix.py (interacting unions, CMAX 12, NMAX 30), the sampler that found kin_viol_n29.
+- (2) GAP-A box-7 candidates (docs/alg/GAP-A-M.md §22): (POS-FALL) counterexample = root call with RV and Ψ unchanged,
+  no root deficit round, Φ_pos not strictly falling; and #DEF_root per phase vs n. Next: read §22 and L-ALG's tool for
+  RV/Ψ/Φ_pos, wrap it unmodified as a carry/ fitness, climb in both orders.
+- (3) (beta') T-piece orphan recipe, path (i) (GAP-C §18o): x of priority 0 removed by a level-0 T piece. Next: hand
+  gadget from successor 4's constraint list (notes/L-RED.md, 10:20Z message).
+- (4) Optional: REFEREE-2's K5' configuration t' = {x,y,u,o}, u old in Z_k (docs/referee-2/R2-P3.md §1).
+
+## 3. docs/GAPS.md rows I own
+- None. `git show origin/claude/vibrant-johnson-nxvvxo:docs/GAPS.md`: GAP-A and GAP-C are owned by L-ALG with
+  "(L-RED attacks)"; G-S5-6 and G-K5 are L-ALG's; closed rows G1 (L-STRUCT), G-FDL, G-Bthr (L-ALG). L-RED attacks GAP-A
+  and GAP-C (both blocker, open).
+
+## 4. The three owner rulings that most constrain me (verbatim), with their DECISIONS-INDEX status
+1. D1 (docs/decisions/D001-launch-brief.md lines 25-26, 96-97; index row D1 "active"):
+   > - A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such
+   >   claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > - Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+   >   my decision.
+2. D7 (docs/DECISIONS.md line 105; index row D7 "active"):
+   > a
+   (Q9 option (a): "Continue at the current rate. We pause automatically if the cap is hit and stop at once on overage.")
+   With D1 line 62 "On paid overage, stop the fleet and tell me.": no detached climb outlives my box.
+3. D8 (docs/DECISIONS.md line 161; index row D8 "active"):
+   > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
+   Lead reading L27: Opus work labelled as such. Binding Lead reading L32 (index "active", not an owner ruling): an
+   incorrect run or a super-polynomial family is reported to the Lead at once.
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap (bit again this box): stale local branch at container start (local 5a30e98, origin 0883016, 1091 commits behind).
+  Check: `git fetch origin claude/l-red` then `git rev-parse HEAD origin/claude/l-red` must agree (fast-forwarded here)
+  before any edit; `git merge-base --is-ancestor <reported head> HEAD` before reporting a head.
+- Also guarded: pushes only as `scripts/push.sh > file 2>&1; echo $?` (never piped); climbs killed by PID in a separate
+  call after listing them with `ps` (pkill -f matched its own shell before).
