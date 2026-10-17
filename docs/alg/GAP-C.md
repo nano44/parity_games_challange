@@ -35,6 +35,7 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | K-first | the FIRST stable piece's lowest region is productive inside W_p | KILLED (§14): instances/kfirst_viol_union.pg (276 of 891 mixed searches) |
 | Theorem A | if the root call is stable, its lowest region is in W_p and is productive unless (α) | PROVED (reading), §13 |
 | K4-B | the first stable piece's regions lie in W_p even after −1 pieces | KILLED (§14), union games |
+| FIRST-W | the first stable piece with a p-won top is productive inside W_p | KILLED (§16): instances/firstw_viol_cross.pg |
 | GAP-K | (K-low): some stable piece's lowest region is productive inside W_p | GAP (§12, §14); DATA 0 violations incl. 2,092 mixed union searches |
 
 ## 3. The new steps
@@ -345,3 +346,15 @@ region with its top in W_p and a new SCC inside W_p. Theorem A is its special ca
 "X p-won" hypothesis fails), and its context may still contain opponent-won vertices.
 L-RED target (sharper than an incomplete run, cheap to check with dtl_gapk.py, which prints "FIRST-W FAILS"): a search
 with W_p ≠ ∅ and no dominion whose first stable piece with a p-won top is not productive inside W_p.
+
+## 16. Interacting mixed games: (FIRST-W) is FALSE; (K-low) and (K-in) still hold (04:50Z by date -u)
+Test set: unions of two corpus games with 3 or 6 random cross edges between the components (dtl_unionmix.py UM_CROSS),
+1,200 pairs (seeds 11, 12 Oink order with 3 cross edges; seed 13 stable order with 6): 188 mixed searches (W_p ≠ ∅,
+|W_{1-p}| ≥ 3, no dominion).
+- (K-first) fails in 35, (FIRST-W) in 4 (all with a MIX first piece meeting W_p: V* on both sides).
+  Killer committed: experiments/alg/instances/firstw_viol_cross.pg (n = 30; both order data, dtl_gapk.py "FIRST-W FAILS";
+  pinned Oink 6 iterations, verified).
+- (K-low)/(LOW-W): 188 of 188; (K-in): 188 of 188.
+So no rule that names the productive piece in advance survives (first piece, first piece with a p-won top); the GAP-C
+statement stays the existential (K-low) (GAP-K) plus (TW). Data so far: 0 violations of (K-low) and (K-in) on the corpus,
+1,500 random games, 235 disjoint unions, 1,200 interacting unions, both order data where run.
