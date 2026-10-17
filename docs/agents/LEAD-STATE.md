@@ -364,3 +364,4 @@
 - 04:04Z Lead: merged l-alg 704f8dc (K-first, Theorem A, GAP-K'); routed to L-RED.
 - 04:14Z Lead: merged l-alg 31fdd98 (K4-B; GAP-K' as three statements); routed to L-RED.
 - 04:21Z Lead: L-RED succ. 3 box 5 ended (587k; 2387fd3 merged; R24 equal-step: ratio falls with n, no S > |G'|; spp22_oink_n40 verified 28 it.). Created L-RED succ. 4 session_01NCGdhfxbJoyHAubHP6tQRR (box 6: GAP-C attack, STEP 0 pending); old told to stop climbs and park. Working lanes 2/5.
+- 04:24Z Lead: L-RED succ. 3 PARKED (climbs killed, tree clean at 2387fd3; unpinned gapb best games regenerable from gapbW_dup_n20).
