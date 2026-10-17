@@ -2844,9 +2844,9 @@ With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) /
   | set | order | counted contexts | max fired/\|R\| | max fired | max per step | NO-RETURN |
   |---|---|---|---|---|---|---|
   | corpus | Oink | 327 | 0.333 (3 at \|R\| 9, spp_n20) | 3 | 3 | holds 327 |
-  | corpus | stable | 316 | 0.25 | 2 | 1 | holds 316 |
+  | corpus | stable | 316 | 0.25 | 2 | ≤ 2 (1 in the 25 printed rows) | holds 316 |
   | mixed | Oink | 2,088 | 0.375 (3 at \|R\| 8, union758) | 3 | 3 | holds 2,088 |
-  | mixed | stable | 2,132 | 0.25 | 2 | 1 | holds 2,132 |
+  | mixed | stable | 2,132 | 0.25 | 2 | ≤ 2 (1 in the 25 printed rows) | holds 2,132 |
 
   - NO-RETURN: a tangle that fired at a step (round, top) and then did not fire there at a later visit where the step
     exists never fires there again in the phase.
