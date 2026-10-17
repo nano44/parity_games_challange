@@ -31,5 +31,15 @@ After the depth-0 P piece, D ∩ R' = {3, 5, 6, 7, 15, 17} and the p-attractor A
 sink, computed exactly as dtl_step5stats.kq) is all of it: Q = ∅, both order data. So the Lead's target (i), "a depth-0 P
 piece after which EVERY remaining D-vertex is p-attracted to X", is realised by the same instance.
 
+## 5. (T-STEP) near miss (08:08Z by date -u)
+Target (Lead 07:38Z; l-alg 37d3440, GAP-C.md §18i): at a depth-0 threshold piece where KT holds and nothing was learned
+inside D earlier in the search, if KT fails after the piece then its recursion learns inside D.
+experiments/red/carry/instances/tstep_near_n20.pg (sha1 471c3b3b; dtl_search --fitness kt, seed 9611, Oink order, from
+h4_notweaker_n20). Pinned Oink: 1 dominion, 19 tangles, 10 iterations (7 odd), solution verified. L-ALG's dtl_step5stats.py
+(l-alg 312c918) Oink order: "KTHR broken by T barren, D-learning before": 4, "KTHR broken by S which learns inside D": 2.
+carry/kt.py, both orders: 4 KT-breaking T pieces, at least one with a recursion that learns nothing inside D, preceded by
+exactly 1 D-tangle learned earlier in the same search. So the premise "nothing learned inside D earlier" is what keeps
+(T-STEP) alive here: NOT a violation.
+
 ## 4. Next
 klow climbs from this instance (both orders) aim at a (K-in) violation.
