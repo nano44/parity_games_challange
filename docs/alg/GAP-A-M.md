@@ -2713,3 +2713,23 @@ Ledger addendum (16:36Z by date -u):
 Ledger correction (16:44Z, Lead 16:43Z): REFEREE-2 has also signed packets 7 and 8 (EXACT, PREFIX-MONO-X, EXACT*,
 PREFIX-MONO-X*), in full agreement after the comparisons. R10 has landed, and R9's original constants hold given STR-DET.
 Targets: (1) prove (STEAL-ONCE*); (2) (FIRED-R) on long phases; (3) (CTX⁺), only if (1) or (2) moves.
+
+23a. Toward (STEAL-ONCE*): the invariant is (STAYS-MET) (DATA; 16:50Z by date -u; dtl_rootmono.py RM_EXCL=1 RM_PREF=1)
+- A second relevant steal of (context, step σ, tangle t) needs t to FIRE again at σ. That needs every later prefix
+  P(σ⁺) to be disjoint from t, i.e. the prefix must retreat from t entirely.
+- DATA (corpus plus fall3_n76, fall4_n116, fallv_viol_n28, f1_two*; Oink / stable): after each of the 216 / 214 relevant
+  steals, t NEVER fires again at σ, and every later visit's prefix at σ still MEETS t.
+- So the observed invariant is (STAYS-MET): once a fired tangle is split at a step, it stays split for the rest of the
+  phase. (STAYS-MET) ⇒ (STEAL-ONCE*).
+- Prefixes do shrink. Between consecutive visits some step's prefix loses a vertex in 119 of 8,252 pairs (Oink order),
+  all at relevant-steal pairs, as PREFIX-MONO-X* says. But no shrink ever removes ALL vertices of a previously stolen
+  tangle.
+Partial proof (reading).
+- In round 1 the input V₁ (all p-priority vertices of R) is fixed. The first region is Cl({τ₁}; T), with no exclusions
+  since its prefix is empty, so it is monotone in T. Hence the prefix at the second step of round 1 only grows, and
+  (STAYS-MET) holds there.
+- From the third step on, the second region is Cl(P ∪ {τ₂}; T \ E), where E grows with P. A stolen tangle at the third
+  step may be met only through vertices of the second region. If one of the second region's fired tangles is later
+  stolen, those vertices can leave. So the induction does not go through as stated.
+- What is needed: when a region loses vertices through a relevant steal of its own fired tangle t′, it never loses every
+  vertex through which an earlier-stolen tangle t is met at a later step. Not proved.

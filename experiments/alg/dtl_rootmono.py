@@ -46,6 +46,7 @@ class RM(FC.CK):
             for top in range(s.n - 1, -1, -1):
                 if top not in V or top in Z: continue
                 CurZ = {top}; s.Q = [top]
+                if os.environ.get("RM_PREF"): rec.setdefault("pref", {})[(rnd, top)] = frozenset(Z)
                 if os.environ.get("RM_EXCL"):
                     rec.setdefault("excl", {})[(rnd, top)] = frozenset(t for t in tli if any(v in Z for v, _ in s.tv[t]) and not all(v in Z for v, _ in s.tv[t]))
                 s.tattr(p, CurZ, CurR, CurR, s.pr[top], CurR)
@@ -351,6 +352,32 @@ if __name__ == "__main__":
             if succ_:
                 ms = max(len(v_) for v_ in succ_.values()); succrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), ms, len(succ_), len(ph) - 1, len(ph[0]["G"])))
             if os.environ.get("RM_EXCL"):
+                if os.environ.get("RM_PREF"):
+                    for key_, vl in visits.items():
+                        rcs = [rc for _, rc in vl]
+                        for x, y in zip(rcs, rcs[1:]):
+                            px, py = x.get("pref", {}), y.get("pref", {})
+                            shr = [k_ for k_ in px if k_ in py and not px[k_] <= py[k_]]
+                            stolen_lost = False
+                            kp = "PREFIX between consecutive visits: " + ("SHRINKS at some step" if shr else "never shrinks")
+                            tab[kp] = tab.get(kp, 0) + 1
+                # NO-REFIRE: after a relevant steal of (step, t) at visit pair (i, i+1), does t fire again at that step later?
+                for key_, vl in visits.items():
+                    rcs = [rc for _, rc in vl]
+                    for i in range(len(rcs) - 1):
+                        x, y = rcs[i], rcs[i + 1]
+                        ex_, ey_, fx_ = x.get("excl", {}), y.get("excl", {}), x.get("fired", {})
+                        for k_ in ey_:
+                            if k_ not in ex_: continue
+                            for t in ey_[k_]:
+                                if t < x["ntv"] and t not in ex_[k_] and t in fx_.get(k_, frozenset()):
+                                    later = rcs[i + 1:]
+                                    refire = any(t in z.get("fired", {}).get(k_, frozenset()) for z in later)
+                                    unmet = any(k_ in z.get("excl", {}) and t not in z["excl"][k_] for z in later)
+                                    kq = "NO-REFIRE after a relevant steal: " + ("REFIRES later" if refire else "never refires") + (" | prefix later unmeets t" if unmet else " | stays met (or step absent)")
+                                    tab[kq] = tab.get(kq, 0) + 1
+                                    if refire and shown < 40:
+                                        shown += 1; print("REFIRE", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), "ctx |R|", len(key_[1]), "step", k_, "tangle", t, "visit", i, flush=True)
                 for key_, vl in visits.items():
                     fired_all = set().union(*[set().union(*rc.get("fired", {}).values()) for _, rc in vl]) if vl else set()
                     if len(vl) >= 2: firedrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), len(fired_all), len(key_[1]), len(vl), len(ph) - 1))
@@ -429,6 +456,6 @@ if __name__ == "__main__":
         badrows.sort(key=lambda r: -r[1]); print("phases where PI fails to rise (file, failures, transitions, |G'|):", badrows[:8], "phases:", len(badrows))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT", "DISTRACTION", "RV SHAPE", "PREFIX-MONO-X", "NEW STEALS per", "RELEVANT STEALS per")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT", "DISTRACTION", "RV SHAPE", "PREFIX-MONO-X", "NEW STEALS per", "RELEVANT STEALS per", "NO-REFIRE", "PREFIX between")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})
