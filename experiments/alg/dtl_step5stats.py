@@ -275,6 +275,10 @@ if __name__ == "__main__":
                     if U & pc["rem"]: tag += ", core ∩ rest " + ("≠ ∅" if U & pc["rest"] else "= ∅")
                     tag += ", KT after " + ("holds" if h1 else "FAILS") + (", recursion learns " + ("inside core" if any(C <= U for C in newin) else "inside D only") if newin else ", recursion barren")
                     inc(tag, f if not h1 else None)
+                    if not h1:
+                        # CORE-PASS: the recursion context Z' (X empty there) has a KT core inside D: KT_1(Z')
+                        k1 = kthr(d, p, Dw, set(pc["rest"]), set(pc["rest"]))
+                        inc("T-STEP CORE-PASS (KT fails after T): " + ("recursion context has a KT core" if k1 else "VIOLATION: recursion context has no KT core"), f)
             if firstK[0] is None: inc("K never broken at depth 0", f)
             # LASTD: the depth-0 piece that removes the last vertex of D (with its recursion, for T) learns inside D
             top = [i for i, pc in enumerate(pcs) if pc["depth"] == 0]
