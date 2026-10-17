@@ -356,7 +356,9 @@ branch with Q empty, 961-991) need not be p-won.
 [per referee, 10:08Z: K5 (i) and (iii) below are FALSE as written (REFEREE-2 R2-PROVED2 G-c2; instance
 docs/referee-2/R2-PROVED2/k5.pg, re-run by L-ALG on dtl_pyref, both order data: y has an edge into a higher region). The
 rescue loop runs to max_prio (721-722), so A holds vertices attracted above every top. The corrected K5 (restricted to
-A_<, Str replaced by Up(Str)) and the restated (α) are in GAP-C.md §18n; K5 (ii) stands. Text kept as history.]
+A_<, Str replaced by Up(Str)) and the restated (α) are in GAP-C.md §18n; K5 (ii) stands. Text kept as history.
+11:05Z: the Up(Str) form is itself REFUTED as a proof step (per referee, R-P3 §C / R2-P3 §6); the signed form is K5'' with Dep(Str),
+GAP-C.md §18q.]
 K5 (the lowest region at X = ∅; PROVED as stated only for (ii); see the note above). Let V* be stable at X = ∅, τ_k the lowest top that has a region, A the final
 threshold-loop set, Z_k the sptl region of τ_k (computed with all higher regions consumed). Then:
  (i) no p-vertex of A \ Reg has an edge into a higher region (it would have been attracted there: its priority is ≤ its
@@ -433,7 +435,10 @@ by the −1 branch before the tangle's region is reached). In c3 shape (β) is a
 threshold loop and rescues the higher top; (β) needs the escape vertices to be unreachable by any rescue path, i.e. of
 priority above every surviving top's threshold.
 K6 (where a search can lose its last chance; PROVED as stated, with X arbitrary). Let V* be stable at some iteration with
-removed set X, τ_k the lowest top with a region, L_k its sptl region. [per referee: read K5 as CORRECTED in GAP-C.md §18n.]
+removed set X, τ_k the lowest top with a region, L_k its sptl region. [per referee (packet 3, per referee, R-P3 §C / R2-P3 §6): K6's closed case is SIGNED and uses neither K5 (i)/(iii) nor K5'; read (β') as
+"a stored tangle none of whose escapes lies in R" (outside R = in X or, at depth > 0, in G' \ R; solved escapes excluded by
+O0; G-b1 wording); extraction is not blocked by W[τ_k] at a piece's first pass (R-b); the open case (α) is the Dep(Str)
+form of GAP-C.md §18q.]
 K5(i)-(iii) hold verbatim with X ≠ ∅ (X is
 forgiven in the threshold loop and in every region). Hence L_k is closed unless (α) τ_k's successor lies in the lower
 part of a straddling tangle; and if L_k is closed it is productive (an opponent-owned τ_k with all successors in X ∪
