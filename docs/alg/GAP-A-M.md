@@ -2403,3 +2403,9 @@ end:
 - So a (CTX⁺) proof needs a potential that pays for the rebuilt distraction runs, for instance through the vertices that
   move from distraction pieces into the final stable piece (here 4 → 38). It must survive the two re-expansions. Not
   attempted further in this box.
+- Tested (14:06Z, corpus plus kin, meet and fall3 instances, Oink order, dtl_rootmono.py "DISTRACTION"): the
+  distraction mass (total size of the depth-0 −1 pieces) is NOT a potential.
+  - It falls at 528 transitions, stays the same at 156 and rises at 372.
+  - The rises: 159 at a −1 call whose RV changed, 194 at a −1 call with RV unchanged, 18 with e* outside best_vertices,
+    and 1 at a stable call.
+  - So the re-expansions are not confined to level-set jumps.

@@ -126,6 +126,20 @@ if __name__ == "__main__":
                 while k < min(len(la), len(lb)) and a["log"][la[k]][:4] == b["log"][lb[k]][:4]: k += 1
                 cls = "no difference" if k == min(len(la), len(lb)) else where(b["root"], lb[k])
                 seq.append("R" if cls.startswith("root") else "N" if cls == "after the root call" else "=")
+                def mmass(r_):
+                    c0 = r_["ctx0"]; rr = [x for x in r_["recs"] if x["key"][0] == 0]
+                    return sum(len(c0[i_] - (c0[i_ + 1] if i_ + 1 < len(c0) else frozenset())) for i_, x in enumerate(rr) if x.get("res") == -1)
+                ma_, mb_ = mmass(a), mmass(b)
+                if mb_ > ma_ and cls != "no difference":
+                    pos_ = lb[k]; rb3 = next((r_ for r_ in b["recs"] if r_["start"] <= pos_ < r_["end"]), None)
+                    if rb3 is None: why = "e* not in a best_vertices call"
+                    else:
+                        ra3 = next((r_ for r_ in a["recs"] if r_["key"] == rb3["key"]), None)
+                        rvch = ra3 is not None and ra3["rv"] != rb3["rv"]
+                        why = f"e* in a {'−1' if rb3.get('res') == -1 else 'stable' if rb3.get('res') == 1 else 'other'} call, RV {'changed' if rvch else 'same'}"
+                    km = "DISTRACTION MASS rises: " + why; tab[km] = tab.get(km, 0) + 1
+                elif cls != "no difference":
+                    km = "DISTRACTION MASS " + ("falls" if mb_ < ma_ else "same"); tab[km] = tab.get(km, 0) + 1
                 # e* caller (any position) and the weak STR-DET check: does s+1 create a tangle before e*?
                 if cls == "no difference":
                     kx = "E* CALLER: no set-level difference at all"
@@ -355,6 +369,6 @@ if __name__ == "__main__":
         badrows.sort(key=lambda r: -r[1]); print("phases where PI fails to rise (file, failures, transitions, |G'|):", badrows[:8], "phases:", len(badrows))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT", "DISTRACTION")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})
