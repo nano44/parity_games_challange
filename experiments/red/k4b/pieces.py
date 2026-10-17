@@ -9,9 +9,21 @@ sys.path.insert(0, ld); sys.path.insert(0, os.path.join(ld, "..", "harness"))
 import pg, dtl_kin as K
 D = K.D
 
+class Dup(list):
+    """pyref's duplicate check is `if key in self.tkeys: continue` (dtl.cpp 385-424); count the hits."""
+    def __contains__(self, x):
+        r = list.__contains__(self, x)
+        if r: self.hits.append(frozenset(x))
+        return r
+
 class PT(K.KI):
+    @property
+    def tkeys(s): return s._tk
+    @tkeys.setter
+    def tkeys(s, v): s._tk = Dup(v); s._tk.hits = []
     def search(s, p):
-        s.log = []; s.depth = 0; r = K.KI.search(s, p); s.trace[-1]["log"] = s.log; return r
+        s.log = []; s.depth = 0; h0 = len(s.tkeys.hits); r = K.KI.search(s, p)
+        s.trace[-1]["log"] = s.log; s.trace[-1]["dups"] = s.tkeys.hits[h0:]; return r
     def search_rec(s, R, p, depth):
         # same body as dtl_pyref.DTL.search_rec, with log lines
         s.depth = depth; X = set()
@@ -51,7 +63,7 @@ if __name__ == "__main__":
     g = pg.read(sys.argv[1]); d0 = K.P.build(g); d = PT(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.run()
     lab = lambda v: str(d0.idx[v]) if hasattr(d0, "idx") else str(v)
     for i, tr in enumerate(d.trace):
-        W = tr["Wp"]; print(f"search {i} p={tr['p']} |G'|={len(tr['G'])} |W_p|={len(W)} dominion={tr['d1'] > tr['dom']} W_p={sorted(map(int, map(lab, W)))}")
+        W = tr["Wp"]; print(f"search {i} dups={[('IN' if C <= W else 'OUT') + str(sorted(map(int, map(lab, C)))) for C in tr['dups']]} p={tr['p']} |G'|={len(tr['G'])} |W_p|={len(W)} dominion={tr['d1'] > tr['dom']} W_p={sorted(map(int, map(lab, W)))}")
         for dep, kind, V, rem, newt, Rin in tr["log"]:
             nt = " ".join(("IN" if C <= W else "MEET" if C & W else "OUT") + str(sorted(map(int, map(lab, C)))) for C in newt)
             print(f"  {'  ' * dep}d{dep} {kind:10s} V*={sorted(map(int, map(lab, V)))} removed={sorted(map(int, map(lab, rem)))} (W_p part {len(rem & W)}) {nt}")
