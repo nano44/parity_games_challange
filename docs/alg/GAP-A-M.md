@@ -2367,3 +2367,16 @@ Packet 6 SETTLED (per referee: REFEREE R-P6 §C @ ad4be01, REFEREE-2 R2-P6 §5 @
   one phase, both orders. It is a union of three 1-descent gadgets (lex_viol_oink_n20, lex_viol_inj_n28,
   lex_viol_tie_n28) with cross edges, and the same old witness tangles are stolen at each descent. So "≤ 2" is dead as a
   data bound, as §22l said it might be. A "one steal per witness" bound is also false, since witnesses are reused.
+
+22o. (CTX⁺): CTX-ROOT is dead (13:44Z by date -u; dtl_rootmono.py "CTX-ROOT", RM_LIGHT=1)
+- (CTX-ROOT) "distinct first-difference contexts per phase ≤ 1 + the number of root transitions" would have reduced
+  (CTX⁺) to the root's polynomial budget. It is FALSE. Corpus, Oink order: 5 of 261 phases.
+- Smallest instance: experiments/alg/instances/dtl_cnew14_n20.pg. First-difference positions are 3 1 5: 3 contexts for
+  1 root transition.
+- Others: strfam_S4_n22 (2 3 1), strfam_S5_n46 (2 2 3 1), spp_final_n40 and spp22_oink_n40 (8 contexts, 6 root
+  transitions).
+- Obstruction: inside one block where the root is frozen, the first-difference positions are not constant (2 then 3,
+  or 6 4 5), so deeper contexts change without any root change. Any bound must recurse into the blocks, which is the
+  nested-counter recursion again (§22g, §22k).
+- Context climbs (dtl_ctxclimb.py: spp25 and spp22 starts, both orders) are running to see how far the number of
+  first-difference contexts per phase can be pushed.
