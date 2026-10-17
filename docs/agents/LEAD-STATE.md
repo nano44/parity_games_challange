@@ -433,3 +433,4 @@
 - 11:21Z (date -u) merged l-alg 2a715cd (GAP-C §18r: DE13 kills the S step and the §18l reduction 'Lemma K <= ACYC + S-LOW + CORE-PASS + REC'; R4/R5/packet 3/plain Lemma K unaffected; surviving DATA (MEET), (PHASE-IN), target (PHASE-IN-MEET) for L-RED succ. 5). GAPS GAP-C row updated.
 - 11:24Z (date -u) merged checker 83bcc23 (C6 PASS, no fix required). Applied recommended N-1 (O-P cite §18l), N-2 (GAP-A cite §18p@6e0082f), N-4 (agreement wording, item renumbering), N-5 (K6 open case SKETCH, T-piece orphans open) as citation/gap-only edits (they only narrow), then LANDED R6. CHECKER parked; 4/5 working.
 - 11:30Z (date -u) L-RED succ. 5 handover 5/5 (dfb5b4d), GO box 7.
+- 11:35Z (date -u) L-RED succ. 5 reading: (PHASE-IN) <=> phase completeness (Lead checked dtl.cpp 1068, 1106-1121); target narrowed to (MEET); routed to L-ALG for §18r; GAPS updated.
