@@ -2124,6 +2124,11 @@ Wording fixes (closed):
 - G-d1 / G-Ψ. A round that returns at 716 (no candidates) runs no threshold loop. Define W_{r,t} := Cl_t(U_r) for every
   round and level, so Ψ's components align. dtl_rootmono.py compares Ψ only when the two lists have equal length. On the
   data no RV-equal pair had unequal lengths ("Ψ not monotone": 0), so the counts of §22c-g stand.
+  [CORRECTION 13:13Z: false for the cross unions. union411 of UNIONS=600 SEED=11 UM_CROSS=3 (Oink order; n = 39) has
+  one RV-equal pair with Ψ lengths 18 vs 1, which the old tool counted as "Ψ not monotone". dtl_rootmono.py now implements
+  the convention (W_{r,t} := Cl_t(U_r) via dtl_ideal.lfp for rounds returning at 716). Under it that transition is "Π
+  rises (Ψ), later call dirty". Corpus, mixed unions and cross stable had no length mismatch. Full re-run with the fixed
+  tool: §22n.]
 - G-e2. A transition with no differing tattr can happen once per phase (the last search re-finds only duplicates and
   returns false, 1068). The bound reads S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·|C_T| + 1.
 Hypotheses added to §22e (OPEN):
@@ -2322,3 +2327,28 @@ Targets for L-RED's successor:
 - (b) A family where one context's Π falls more than twice: repeated stealing from the same victim, e.g. h4_defK or
   f1_two* grown.
 - (c) PREFIX-MONO and STR-DET themselves (signed, but the referees welcome attacks).
+
+22n. Packet 6 (REFEREE-2 R2-P6 @ 5ef09aa; REFEREE's report pending), and data with the G-Ψ convention (13:36Z by date -u)
+REFEREE-2's verdicts (Lead 12:59Z). Imported here; §22f and §22j are unchanged until both reports are in.
+- §22j Dom budget: SIGN, with reading R-I. A Dom input is (the whole current X, R, top, threshold). Dom pushes only the
+  top (966), and its output is a monotone function of (I, T). (DOM-e*) is no longer needed: GAP-A ⇐ (CTX⁺) ∧ (FALL).
+- §22f: SIGN WITH GAPS, gap G-F1. A region e* at a DIRTY call could leave Π_R unchanged (one vertex moves up, another
+  down, and Φ_top compensates). Fix: F_R := descents of Π_R along the phase + the e*-at-R transitions at which Π_R does
+  not rise. (FALL) is stated for this F_R.
+- Signed as DATA only: "descends only where RV falls" and "≤ 2 per context". Proved: clean visits never descend.
+G-F1 count (first differences where Π_R does not rise), dtl_rootmono.py with the G-Ψ convention implemented
+(W_{r,t} := Cl_t(U_r) for rounds returning at 716; e9acfb86). Counts are Oink / stable:
+
+| set | transitions with e* | Π_R does not rise | RV falls at e* | visit-level falls |
+|---|---|---|---|---|
+| corpus + 4 instances | 1,065 / 1,035 | 0 / 0 | 18 / 18 | 73 / 72 |
+| mixed unions s1 (900) | 6,031 / 6,153 | 0 / 0 | 100 / 136 | 323 / 527 |
+| cross unions s11 (600, UM_CROSS = 3) | 3,370 / 3,377 | 0 / 0 | 53 / 62 | 167 / 217 |
+
+- The one case I reported at 13:08 (union411 of the cross unions, Oink order) was a tool artifact: Ψ lists of lengths
+  18 vs 1 under the missing convention. With the convention it is "Π rises (Ψ), later call dirty".
+- Falls per context, all sets: at most 2. The 2-fall phases are f1_twodef_n48, f1_twofall_n48 and, new, union807 of the
+  mixed unions (stable order, n = 45).
+- Falls whose witnesses are all OLDER than the previous visit: 316 / 323 and 521 / 527 (mixed), 159 / 167 and 210 / 217
+  (cross). The stealing mechanism of §22l dominates everywhere.
+- So, on all data: F_R = number of RV falls at R, and F_R ≤ 2.
