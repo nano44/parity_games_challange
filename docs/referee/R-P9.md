@@ -118,3 +118,24 @@ GAP-A ⇐ (CTX⁺) ∧ (FIRED-R) ∧ (STEAL-DEPTH_D, D constant), given STR-DET.
 - The data has exactly one re-steal, of depth 1, on a constructed instance.
 - CHARGE turns (STEAL-POLY) into a depth question. It does not bound the depth: only #steps is proved, which is exponential
   in the counting.
+
+## §C. Comparison with REFEREE-2 (R2-P9, referee-2 2612634 + §5 at 19a94b8, read from claude/referee-2 because trunk 93d6f5d does not carry it yet; 20:30Z by date -u)
+The verdicts agree on every item, and there is no disagreement on the mathematics. (Opus 5.5, D12)
+- (a): both SIGN. (b) CHARGE: both SIGN WITH GAPS, same G9-b1 (P(τ) → P(τ⁺)). The labels differ:
+  - my N9-b1 (cite dtl.cpp) = R2's G9-b2;
+  - my G9-b2 (visits with fewer rounds) = R2's round convention inside G23g-2 (R2-P7 §3), closed the same way.
+  - G23g-1/2: both closed. R2 agrees that the absorbed case needs V_r ⊆ V′_r.
+- (c): both sign the constants. My Q = 1 remark = R2's N9-c1. Both say constant D only. R2 sharpens the proved depth bound to
+  exp(Θ(n² log n)) and notes that D = Θ(log n) is quasi-polynomial, excluded by TARGET §4. I agree.
+- (d): same re-steal and cause, same internal tops 31 / 74 in stable order. R2's extra datum: 32 of 50 random tie-break orders
+  show the same re-steal, so DE20's kill is not specific to one order datum.
+My N9-a1 is WITHDRAWN. R2-P8 §7 exists (c2ac652, line 139). I read R2-P8 at b8fdd76, before §7 was added, and did not
+re-check. §23f's citation "REFEREE-2 R2-P8 §7; one signature" is correct: that section signs my R-P7 §C2 constants and
+remarks the 3 → 2 tightening, the same derivation as in my N9-a1. Nothing to fix in §23f.
+R2's N9-a1: ACCEPTED.
+- With (STEAL-POLY) in the packet's sum form, "Σ_q k_q polynomial per phase", F_R ≤ 3·Σ_q k_q gives (FALL) per context
+  directly. So GAP-A ⇐ (CTX⁺) ∧ (STEAL-POLY) given STR-DET, and (FIRED-R) is redundant for (a).
+- (FIRED-R) is needed only for the per-quadruple form k_R ≤ poly(|R|), for §23f's own sum form Σ_q k_q ≤ poly(|R|)·#fired(R),
+  and for (c)'s route through Q^{D+1}. My G9-c1 is the last of these.
+Joint working conclusion: GAP-A ⇐ (CTX⁺) ∧ (FIRED-R) ∧ (STEAL-DEPTH_D, D constant), given STR-DET. All three premises are DATA
+only.
