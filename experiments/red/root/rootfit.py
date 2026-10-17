@@ -12,7 +12,8 @@ and "NEW STEALS per (context, round, top, tangle): max K" (§22t (STEAL-ONCE): K
 From l-alg >= e2f7e198 with RM_EXCL=1 RM_PREF=1 (mode stealer): "STEALER-MONO (...): FAILS" and "STOLEN-PERM (...): FAILS"
 are hits (§23a).
 Mode stay (Lead 17:58Z, after DE19): hits are (STEAL-ONCE*) "RELEVANT STEALS per (context, round, top, tangle): max k"
-with k >= 2, and (STAYS-MET) any "NO-REFIRE after a relevant steal: ..." outcome other than "never refires | stays met";
+with k >= 2, (STAYS-MET) any "NO-REFIRE after a relevant steal: ..." outcome other than "never refires | stays met", and
+(STOLEN-PERM) "STOLEN-PERM (...): FAILS" (Lead 18:00Z, GAP-A-M §23b: STOLEN-PERM => STAYS-MET => NO-REFIRE => STEAL-ONCE*);
 STEALER-MONO (dead, DE19) is NOT a hit in this mode.
 Modes (ROOTFIT = dirty | falls | ctx | fall | steal | fired | firedr | stealer | stay):
   dirty: 1e11 hit + 1e7 * max dirty per phase + 1e4 * (dirty phase transitions) + |G'| of that phase
@@ -73,6 +74,7 @@ def measure(path, order=None):
                     if km >= 2: m["hit"] += v
                 if ("STEALER-MONO" in k or "STOLEN-PERM" in k) and k.rstrip().endswith("FAILS"): m["hit"] += v
                 if k.startswith("RELEVANT STEALS per (context, round, top, tangle): max") and int(k.rsplit("max ", 1)[1]) >= 2: m["stayhit"] += v
+                if "STOLEN-PERM" in k and k.rstrip().endswith("FAILS"): m["stayhit"] += v        # Lead 18:00Z: root of the §23b chain
                 if k.startswith("NO-REFIRE after a relevant steal"):
                     m["norefire"] += v
                     if not ("never refires" in k and "stays met" in k): m["stayhit"] += v
