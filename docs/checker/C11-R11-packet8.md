@@ -172,3 +172,22 @@ The draft may land as written. If edited, I re-diff the text only.
   differs". The Oink-order climb reached 13 (0.87). The draft's 15 is the stable-order pyref figure. "(stable order,
   dtl_pyref)" would make that exact.
 - C11 verdict at ee4e060: PASS. All of N-1..N-3 and N-2 are applied.
+
+## Addendum 4: R11 re-diff at trunk HEAD 77c5fa3 (Lead 16:24Z): FAIL (the caveat rewrite is not on trunk)
+- 77c5fa3 ("R11 draft: FIRED-R caveat corrected per L-ALG 16:13Z") changes only docs/agents/LEAD-STATE.md (1 line).
+  - `git log ee4e060..77c5fa3 -- docs/agents/R11-draft.md` is empty.
+  - R11-draft.md at 77c5fa3 is byte-identical to ee4e060.
+  - This is the same slip as 6a4003d in C7.
+- GAP-A-M §22w at 77c5fa3 now carries L-ALG's bracket: "[Correction 16:11Z: 'follows from GAP-A' is true of EVERY premise of
+  the form 'X is polynomial' with X ≤ poly(S), (CTX⁺) included, so that part is not specific. The specific point is that
+  (FIRED-R) bounds tangles, and the tangle count is GAP-A's own core (Lemma W). (FIRED-R) is therefore unlikely to be much
+  easier than GAP-A, unlike (STEAL-ONCE), which is a statement about repetition.]"
+- Against that bracket, the draft text still on trunk is no longer accurate to §22w:
+  - G-R11-6 (line 44 ff.): "and GAP-A itself implies (FIRED-R). (FIRED-R) is a context-local form of the tangle count, not an
+    independent weaker statement". The first clause is the part L-ALG withdrew as not specific.
+  - Scope (line 53): "Because (FIRED-R) is implied by GAP-A (G-R11-6 caveat), this reduction is not the L32 single-statement
+    progress criterion". It rests on the same withdrawn reason. By the bracket that reason applies to (CTX⁺) too.
+- Required: push the rewritten G-R11-6 caveat and Scope line that the Lead's message describes. Then I re-diff the text
+  only.
+- The ee4e060 PASS (Addendum 3) stands for ee4e060 as it was against §22w at 8642d5c. It is superseded by L-ALG's
+  correction, which is now on trunk.
