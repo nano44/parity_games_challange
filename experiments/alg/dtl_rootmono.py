@@ -5,7 +5,7 @@ INF if v survives to a round that returns 1 (in a −1 call every vertex is drop
 RV(s) pointwise. Transitions are classified by where the first difference e* of the reduced logs (dtl_fdlcheck.py) lies:
 root call (threshold loop / regions, with the round of e*), or later. For a failure, the first vertex whose RV falls and
 its rounds are printed. ROOT-SPLIT rows (root-call transitions): does RV fall / move, does DV* (dtl_dvstar.py, T at search start) move,
-does either root call have a deficit round (U ≠ Û, dtl_ideal.py). RM_DV=0 skips DV*. Games and env as dtl_step5stats.games (UNIONS, UM_CROSS, SEED, NMAX, RANDOM). RM_EXCL=1 records excluded tangles per region step (PREFIX-MONO-X test). RM_LAM=1 adds (CTX-LAMINAR) (GAP-A-M §23i). RM_LIGHT=1 skips the ideal and step-deficit checks (deficit/stepdef flags are then never set). RM_ROUNDS=1 also prints the round of e*. DTL_ORDER = oink | stable. Usage: dtl_rootmono.py G.pg ..."""
+does either root call have a deficit round (U ≠ Û, dtl_ideal.py). RM_DV=0 skips DV*. Games and env as dtl_step5stats.games (UNIONS, UM_CROSS, SEED, NMAX, RANDOM). RM_EXCL=1 records excluded tangles per region step (PREFIX-MONO-X test). RM_LAM=1 adds (CTX-LAMINAR) (GAP-A-M §23i). RM_BIRTH=1 adds (CTX-BIRTH) (§23j). RM_LIGHT=1 skips the ideal and step-deficit checks (deficit/stepdef flags are then never set). RM_ROUNDS=1 also prints the round of e*. DTL_ORDER = oink | stable. Usage: dtl_rootmono.py G.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import pg, dtl_fdlcheck as FC, dtl_ideal as I, dtl_dvstar as DS, dtl_step5stats as ST
@@ -20,6 +20,15 @@ class RM(FC.CK):
                            if s.tpr[i] != -1 and s.tpr[i] % 2 == p and all(v in G for v, _ in s.tv[i])]
         dv = DS.dvstar(s, G, p, tl) if os.environ.get("RM_DV", "1") == "1" else None
         r = FC.CK.search(s, p); s.trace[-1]["root"] = s.root; s.trace[-1]["dvstar"] = dv; s.trace[-1]["ctx0"] = list(s.ctx0); s.trace[-1]["d0clean"] = not any(r_.get("stepdef") for r_ in s.d0recs); s.trace[-1]["recs"] = list(s.allrecs); return r
+
+    def sptl(s, V, R, p):
+        s._spR = (s.dep, frozenset(R)); return FC.CK.sptl(s, V, R, p)
+
+    def extractTangles(s, top, R):
+        k = len(s.tv); r = FC.CK.extractTangles(s, top, R)
+        if not hasattr(s, "bornR"): s.bornR = {}
+        for t in range(k, len(s.tv)): s.bornR[t] = getattr(s, "_spR", None)      # (depth, sptl arena) of the birth
+        return r
 
     def best_vertices(s, V, R, p):
         if s.dep == 0: s.ctx0.append(frozenset(R))
@@ -163,6 +172,15 @@ if __name__ == "__main__":
                     if rb2 is None: kc = "ANY-CONTEXT e*: not in a best_vertices call (search_rec −1 attractor)"; kseq.append("T")
                     else:
                         ra2 = next((r_ for r_ in a["recs"] if r_["key"] == rb2["key"]), None)
+                        if os.environ.get("RM_BIRTH") == "1":   # (CTX-BIRTH), GAP-A-M §23j: e*'s context vs the birth contexts of s's new tangles
+                            newt = [e_[1] for e_ in a["log"] if e_[0] == "extract"]
+                            bs = {getattr(d, "bornR", {}).get(t) for t in newt} - {None}
+                            kd_, kR_ = rb2["key"]
+                            if rb2["key"] in bs: cb_ = "EQUALS a birth context of s's new tangles"
+                            elif any(bR <= kR_ and bd >= kd_ for bd, bR in bs): cb_ = "is an ANCESTOR-or-superset of a birth context (birth deeper or equal, arena inside)"
+                            elif any(t_ and all(v in kR_ for v, _ in d.tv[t_]) for t_ in newt): cb_ = "contains a new tangle, but no birth context"
+                            else: cb_ = "contains NO new tangle of s"
+                            kbb = "CTX-BIRTH e* context " + cb_ + (" | no new tangle in s" if not newt else ""); tab[kbb] = tab.get(kbb, 0) + 1
                         if ra2 is None: kc = "ANY-CONTEXT e*: in a call whose context s did not visit (impossible by FDL)"
                         else:
                             fa = [v for v in ra2["rv"] if rb2["rv"].get(v, INF) < ra2["rv"][v]]

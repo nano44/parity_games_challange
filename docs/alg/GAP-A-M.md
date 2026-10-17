@@ -3022,3 +3022,20 @@ event of q at pair j < i, a RE-STEAL.
 - Reading. The depth-0 contexts of one search form a decreasing chain, R_i = G′ minus the pieces removed before. The
   first-difference context of (s, s+1) lies on chain(s) (FDL: the searches agree before e*). Across searches the chains are
   re-cut, so the contexts cross. This is the same re-cutting that killed (CHAIN). No (CTX⁺) route from set structure alone.
+
+23j. (CTX⁺): context structure data (DATA; L-ALG succ. 7, 20:26Z by date -u)
+- dtl_ctxpieces.py (RM_DV=0 RM_LIGHT=1, Oink order) on ctx12_oink_n40, ctx13_n40 (l-red), spp_final_n40 and spp_chain_up_n43.
+  - The depth-0 contexts of each search form a decreasing chain from G′ (7/7 phases).
+  - All depth-0 contexts over a phase are MANY: 126 at |G′| = 40 with S = 25 (ctx13_n40); 111 at 38 with S = 24.
+    First-difference contexts are only 13 and 12 there. So (CTX⁺) is about which contexts carry a first difference, not
+    about how many contexts exist.
+  - Pieces (differences along a chain) repeat heavily: 585 of 877 were seen earlier in the phase. The maximum number of
+    distinct pieces is 84 at |G′| = 43 (spp_chain_up_n43, S = 42), i.e. 1.95·|G′|.
+- dtl_rootmono.py RM_BIRTH=1 (new flag; default output unchanged) compares e*'s context with the birth arenas (sptl arena at
+  extraction) of the tangles learned by s. Same three files plus spp_chain_up_n43: 91/91 transitions with e* in a
+  best_vertices call land in the loose class "the context contains a birth arena at the same or greater depth"; 0 EQUAL a
+  birth context.
+  - The loose class is nearly automatic for depth-0 contexts, so this is NOT informative. A sharper test would be "e* lies on
+    the call path to the birth of s's new tangle".
+- No (CTX⁺) statement proposed. Candidate to measure next: (PIECES-POLY), distinct depth-0 pieces per phase ≤ 2|G′|
+  (max 1.95 so far).
