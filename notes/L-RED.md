@@ -52,6 +52,34 @@ Status: WORKING (box 6, Lead GO 04:29Z, to ~12:30Z Lead clock). Box-5 status lin
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-17 10:16Z (date -u) BOX 6 HANDOVER NOTES (successor 4, produced on Opus 5.5; context near the 600k line). Box: Lead
+GO 04:29Z, end ~12:30Z (Lead clock). Every count below is labelled with its order datum where it matters.
+DONE this box (all pushed; latest 65a3931):
+- R25 (K-first)/(K4-B) FALSE, kfirst_viol_n13 (both orders, run complete): INDEPENDENT second kill (L-ALG b992733 first).
+  Hand mechanism: Odd-won b' enters X by a THRESHOLD piece built on an Odd-won Dom(prevV) piece (k4b/gen_chain.py).
+- R26 (K-in)/(K-low) first pass: no violation (grafts, rgraft, nbhd, klow climbs); obstructions: RESCUE (good-path test),
+  last-remnant closure, replay broken by tangle attraction in higher regions.
+- R27 (P-K)/(K-STEP-first) FALSE + target (i), pk_viol_n20 (sha1 942bd778, both orders, run complete); §5 (T-STEP) near
+  miss tstep_near_n20 (sha1 471c3b3b: KT broken by T, barren recursion, 1 D-tangle before).
+- R24 addendum: spp25_oink_n40 (25 searches/phase at |G'|=38, Oink order; pinned Oink 31 iterations verified).
+- R28: adversarial read of L-ALG NT-f step (D) against dtl.cpp 721-740: no gap (Lead concurred).
+- (S-LOW) tool check: L-ALG's test loose in pass/dominion/inside-D; tight form (carry/slow.py) adopted by L-ALG; 0 cases differ.
+- (K-in) union samplers umix 11-16: 62,848 eligible (game, order) runs, 0 violations, 0 incomplete runs.
+- (beta') 2-vertex shape (graft4.py, 2,996 games x 2 orders): 0 S-LOW violations; blocked by rescue ordering. Constraint
+  list for L-ALG's T-piece orphan recipe sent 10:20Z (x must leave via a level-0 T piece or barren stable piece after a
+  was pruned in rounds with x outside Z; step (1) needs a region top of priority < 2).
+- Corrections made to my own messages: 04:59Z priority claim (05:05Z), umix 13/14 "running" (07:33Z), 9712 monoP 19 -> 81.
+RUNNING at 10:15Z (ps), scratch <scr> lost with the container:
+  ntf 9801 (Oink, from carry/instances/lalg_dtl_mviol_n20.pg; best r/f 11/12) and 9802 (stable, from l-alg
+  instances/climbs_1016/b_best_s33.pg; best 13/14): LALG9_DIR=<scr>/lalg16 (l-alg 4841576), fitness ntf.
+  slow 9953 (stable, from l-alg instances/strfam_S5_n46.pg) and 9954 (Oink, from carry/instances/gapbW_dup_n20.pg; lowfail 1):
+  LALG12_DIR=<scr>/lalg19 (l-alg ae7e1d3), fitness slow.
+  umix 17 (LALG5_DIR=<scr>/lalg11 = l-alg 39f6111): experiments/red/k4b/umix.py 17 20000 <scr>/um 12 30 $(cat <scr>/corpus8k.txt).
+  Relaunch form (from experiments/red): LALGk_DIR=<worktree> DTL_ORDER=<order> nohup python3 dtl/dtl_search.py x 1
+  --fitness <f> --seed <s> --steps 1000000 --hb 200 --from <seed.pg> --out <scr>/<dir>/<name>.pg > <log> 2>&1 &
+OPEN TARGETS (Lead order): incomplete/wrong > (K-in) > (S-LOW tight) > (NT-f, claimed PROVED: empirical check) > (YZ)/(ACYC)
+(low) > (R2) G-b1 (low). Next build if continuing: L-ALG's T-piece orphan recipe along the level-0 path above.
+Fitness files: carry/{klow,pk,kt,yzwm,yzs,yzc,ntf,slow,fdl}.py, each wraps L-ALG tools unmodified (env var names in docstrings).
 2026-10-17 ~07:42Z box 6 RELAUNCH BLOCK (produced on Opus 5.5). <scr> = this session's scratchpad (lost with the container).
 Worktrees (git worktree add --detach <scr>/NAME SHA): lalg11 39f6111, lalg13 312c918, lalg14 b50e0c2, lalg15 35b3f96.
 From experiments/red:

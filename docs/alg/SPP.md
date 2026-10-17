@@ -31,7 +31,7 @@ Longest climbed phases (box 4 and L-RED R21): 19 searches at n = 20, 30, 40 (Oin
 - With GAP-C (completeness, open, docs/alg/DTL-proof.md §2.3) this closes the D2 polynomial-time part of gauntlet step 4.
 
 ## 4. Proved facts that a proof of (SPP) can use (unrefereed)
-- First-Difference Lemma (GAP-A-M §21d; reading): consecutive searches s, s+1 of a phase agree up to the first tangle
+- First-Difference Lemma (GAP-A-M §21d; reading; per referee G-h1, closed by both referees: stated on the log with repeated sptl passes deleted): consecutive searches s, s+1 of a phase agree up to the first tangle
   attractor whose output differs; it has the same input and a strictly larger output; the cause is a tangle that s learned
   later in its call order; s+1 learns nothing before that point. DATA: that first difference is always in best_vertices or
   in the −1 attractor of search_rec, never in sptl or Dom (949 / 916 transitions).
