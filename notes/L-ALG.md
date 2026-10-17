@@ -14,7 +14,7 @@ RM_KSEQ, RM_WIT, RM_ROUNDS; games/unions via dtl_step5stats.games).
 - GAP-C this box: DE13 (kin_viol_n29) killed the KT-chain S step, S-LOW-TIGHT, K-in, TW, K-low; DE15 (meet_viol_n17) killed
   (MEET); (PHASE-IN) ⇔ run completeness (dtl.cpp 1106-1121). Packet 3: K5'' and (α) with Dep(Str) signed (§18q).
 - Things only I know: (a) Lead stamps are now date -u. (b) I slipped once more (22 min, 11:35 message); read notifications
-  after EVERY data run. (c) Unquoted heredocs eat backticks: \`-t -t\` vanished once; quote the heredoc or avoid backticks.
+  after EVERY data run. (c) Unquoted heredocs eat backticks: "-t -t" vanished once; quote the heredoc or avoid backticks.
   (d) dtl_fdlcheck.py log entries now carry R and Gx at indices 7, 8.
 
 ## FINAL RESUME POINT (successor 6, session_01PEMUECoSbdbdZR2hHzbyTK; Lead GO 05:08Z (Lead clock), box to ~13:10Z; updated 10:35Z by date -u) — read this first

@@ -2235,3 +2235,30 @@ final-round rescue loop, which has W_max ⊇ U and Gx = R. If t fired there, a s
 DATA, cross unions s11 (UM_CROSS = 3, 600 games, stable order): weak STR-DET 3,377 / 3,377; e* caller bv-reg 1,177,
 bv-thr 2,083, −1 attractor 117, Dom 0, sptl 0; clean root transitions 2,284, all predictions hold; Π at root-e*: rises
 2,799, RV falls 62.
+
+22k. (CTX): CHAIN is dead; scaling on the SPP families (12:46Z by date -u; dtl_rootmono.py "CHAIN")
+- (CHAIN) "the first-difference contexts of a phase form a chain under ⊆" would give |C| ≤ n + 1 per depth. It is FALSE.
+  - Depth 0: 13 of 49 phases (Oink), 12 of 50 (stable). Depth > 0: 4 phases each.
+  - Smallest instance: experiments/alg/instances/dtl_searches15_n24.pg, Oink order, incomparable first-difference
+    contexts of sizes 14, 16, 24. Both orders: climbs_1016/nest_nest_s43.pg, sizes 26, 26, 32.
+- Scaling of |C_bv| (first-difference best_vertices contexts per phase), Oink / stable:
+
+| instance | |C_bv| | transitions | n |
+|---|---|---|---|
+| spp_final_n20 | 4 / 3 | 18 / 10 | 20 |
+| spp_final_n30 | 3 / 3 | 18 / 18 | 30 |
+| spp_final_n40 | 8 / 6 | 18 / 16 | 40 |
+| spp_final_n60 | 2 / 2 | 13 / 13 | 60 |
+| spp19_oink_n30 | 2 / 2 | 18 / 15 | 30 |
+| spp22_oink_n40 | 8 / 8 | 21 / 21 | 38 |
+| spp25_oink_n40 | 10 / 9 | 24 / 22 | 38 |
+| fresh_fixed_n24 | 2 / 2 | 8 / 8 | 24 |
+
+- Maximum 0.26·|G′|, with no sign of superlinear growth in n.
+- The visited context tree is much larger (up to 116 nodes, §22g), so the thinness that would be needed is that of the
+  FIRST-DIFFERENCE nodes, not of all visited nodes.
+- Counting facts (reading):
+  - A transition with first-difference position k creates at most one new successor at the node R_k. It may re-create
+    every node below k.
+  - So #nodes ≤ n·S, and S ≤ |C|·B: no bound follows either way.
+  - A proof must charge the new first-difference nodes below k to something that does not renew at the same rate.
