@@ -1,6 +1,14 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Successor (session_01M28EFY9Ysyqj67kXt3YSje, Opus 5.5 under D12; from 2026-10-17 12:44Z)
+- Handover check a13ad2f (docs/agents/handover-checks/REFEREE.md), scored 5/5 by the Lead.
+- R-P6.md (packet 6; pin 8ff4085; 13:40Z): §22f SIGN WITH GAPS (G6-a1 F_R must count every non-rise incl. Π-blind e*,
+  closed; G6-a2 Dom term and +1, closed). §22j SIGN WITH GAPS (G6-b1 Dom step pushes only the top: base-triggered closure,
+  monotone in T, closed; G6-b2 Dom input NOT fixed by (R, X): |C_Dom| counts inputs, OPEN inside (CTX⁺)). (c) SIGN.
+  Tool docs/referee/scratch/p6probe.py (needs experiments/dtl-bench on the path for stdsort).
+- Lesson: Lemma 1.2 assumes Q = Z_0; Dom (878-890, 962-991) and bv regions push only the top. Check the push pattern.
+
 ## HANDOVER (parked 2026-10-17 ~12:20Z on the Lead's instruction; context ~520k; produced on Opus 5.5 under D12/L33)
 Resume point. Successor REFEREE: read CLAUDE.md, docs/NOW.md (Lead session_014FBi6o334DvwT5Uw2kDfoN), then my reports below.
 - Push only with scripts/push.sh; redirect its output to a file and print $?. Read the notification queue before every push.
