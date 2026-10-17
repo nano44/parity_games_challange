@@ -315,6 +315,10 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
       (CTX⁺): |C_bv| + |C_T| + |C_Dom| is polynomial per phase;
       (FALL): Σ_R F_R (F_R as in (a)) is polynomial per phase.
       The (DOM-e*) hypothesis of RESULTS R7 (e) is no longer needed (absorbed into |C_Dom|).
+      POST-LANDING NOTE (2026-10-17 15:35Z by date -u): REFEREE R-P7 §C (referee 1abe1d7) withdraws its R-P6 A4 premise that an
+      e*-pair at R is a pair of consecutive visits of R (false when R is visited more than once per search). Corrected budget:
+      #(e*-transitions at R) ≤ 2(F_R + 1)(H + 1) (a consecutive pair lies in at most 2 e*-intervals). The reduction GAP-A ⇐ (CTX⁺)
+      ∧ (FALL) is unchanged; the per-context constant doubles. REFEREE-2 confirmation pending.
   (d) The remark that the raw per-input bound S − 1 ≤ n·|I_fd| + 1 is vacuous on data (|I_fd| ≈ S − 1) is DATA, used only as
       motivation.
 - Signatures: REFEREE docs/referee/R-P6.md (referee 9f77ff9 + 0c0e3ce): (a) SIGN WITH GAPS (G6-a1, G6-a2, closed); (b) SIGN WITH
