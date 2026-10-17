@@ -1046,7 +1046,7 @@ L-ALG's reading of path (i) (sketch; nothing built):
 Searches for a NO-ORPHAN-pre violation (0 hits). Fitness: minus the fewest in-R escapes of an alive stored tangle t ⊆ R at
 a pre-learning best_vertices call (0 = violation).
 - dtl_orphclimb.py: 8 climbs from gapb_dup_n20 / gapbW_dup_n20, both orders, seeds 1-2. Every climb is stuck at 1
-  in-R escape (the starting value); ≥ 12,000 steps by 10:28Z, still running.
+  in-R escape (the starting value). All 8 finished 30,000 steps each (10:38Z by date -u): 0 violations, 0 incomplete runs.
 - dtl_orphrand.py with the gadget planted: 40,000 games per order (seeds 11-12, up to 12 vertices), 0 violations.
 - Plain random games: 20,000 per order (seed 13, ≤ 9 vertices), 0 violations. Fewest in-R escapes was 1 in 486 games
   and 2 in 82.
@@ -1087,3 +1087,12 @@ GAP-A angle for the next box (per L32; not started):
 - The obstacle is the usual one. Regions consume (MONO is false), so the rounds after r need not be monotone. The claim must
   use, as NT-f does, that a tangle accepted later is the cause of the difference.
 - First test: dtl_dvctx.py's DV vs DV* split on the transitions where the first difference is in the root call.
+GAP-A angle, first step (10:38Z by date -u; reading). Let the first difference e of s → s+1 (reduced log, FDL) be in the root
+call's threshold loop at round r and level t_e. Then for every later level t ≥ t_e of round r, the rescue set of s+1
+contains that of s. Reason: the loop's attractor has fixed R, Gx = R and consume = None, and it is monotone in (Z, T)
+(DTL-proof 1.2b). Its input at t_e is equal and its output is larger, and T_{s+1} ⊇ T_s. The candidate list of round r is
+the same in both searches (it is computed before e), and "attracts into Z" is monotone in Z. So V_{r+1}(s+1) ⊇ V_{r+1}(s):
+no vertex is dropped EARLIER in s+1 at round r. The step to rounds r' > r is exactly the open part of DV-MONO for the
+author's DV (GAP-A-M §21h: SKETCH with GAP; DATA: DV never falls). It is NOT (MONO)/(R-MONO): those compare consecutive
+rounds of ONE call and are false (§18d). A proof must say why the larger V_{r+1} of s+1 cannot make a later round drop a
+vertex that s kept. As in NT-f, the tangle learned by s after e that causes the difference is the handle.
