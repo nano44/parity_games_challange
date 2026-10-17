@@ -95,7 +95,7 @@ def where(root, k_full):
 
 
 if __name__ == "__main__":
-    phrows = []; badrows = []; seqrows = []; ctxrows = []; fdcrows = []; descrows = []
+    phrows = []; badrows = []; seqrows = []; ctxrows = []; fdcrows = []; descrows = []; recrows = []; succrows = []
     sys.setrecursionlimit(100000); st = {"dropped": 0, "kept: differs": 0, "kept: identical but extracts": 0}; shown = 0
     for f in sys.argv[1:]:
         g = pg.read(f); d0 = FD.P.X.build(g); d = RM(d0.pr, d0.ow, d0.outs, ins_desc=(os.environ.get("DTL_ORDER") == "oink")); d.idx = d0.idx; d.run()
@@ -264,6 +264,20 @@ if __name__ == "__main__":
                             c_ = "rises (Φ_top)" if fb_ < fa_ else "equal" if fb_ == fa_ else "Φ_top RISES (descent)"
                     kv = "VISITS of a context (consecutive): " + c_ + (" | later call dirty" if y.get("stepdef") else ""); tab[kv] = tab.get(kv, 0) + 1
                     if c_ in ("RV falls", "Ψ NOT monotone", "Φ_top RISES (descent)"): desc[key_] = desc.get(key_, 0) + 1
+            # recurrence: a context visited in search i, absent in some search j > i, visited again in a later search
+            rec_n = 0
+            for key_, vl in visits.items():
+                ids = [si for si, _ in vl]
+                rec_n += sum(1 for u, w in zip(ids, ids[1:]) if w > u + 1)
+            if len(ph) > 1:
+                kr = "CONTEXT RECURRENCES in a phase: " + ("none" if rec_n == 0 else "some"); tab[kr] = tab.get(kr, 0) + 1
+                recrows.append((os.path.relpath(f), rec_n, len(visits), len(ph) - 1, len(ph[0]["G"])))
+            succ_ = {}
+            for r_ in ph:
+                c0 = r_["ctx0"]
+                for u, w in zip(c0, c0[1:]): succ_.setdefault(u, set()).add(w)
+            if succ_:
+                ms = max(len(v_) for v_ in succ_.values()); succrows.append((os.path.relpath(f), ms, len(succ_), len(ph) - 1, len(ph[0]["G"])))
             if desc: descrows.append((os.path.relpath(f), max(desc.values()), sum(desc.values()), len(ph) - 1, len(ph[0]["G"])))
             if fdc: fdcrows.append((os.path.relpath(f), len(fdc), len(ph) - 1, len(ph[0]["G"]), " ".join(kseq)))
             if seq:
@@ -275,6 +289,11 @@ if __name__ == "__main__":
         phrows.sort(key=lambda r: -r[1])
         print("phases with dirty root transitions (file, dirty, root transitions, transitions, |G'|):", phrows[:8])
         print("phases with a dirty root transition:", len(phrows), "max dirty per phase:", max(r[1] for r in phrows), "max dirty/|G'|:", round(max(r[1] / r[4] for r in phrows), 3))
+    if succrows:
+        succrows.sort(key=lambda r: -r[1]); print("distinct successor contexts of a depth-0 context (file, max successors, depth-0 contexts, transitions, |G'|):", succrows[:8])
+    if recrows:
+        recrows.sort(key=lambda r: -r[2]); print("contexts per phase, all depths (file, recurrences, distinct contexts, transitions, |G'|):", recrows[:8])
+        print("total recurrences:", sum(r[1] for r in recrows), "max distinct contexts/|G'|:", round(max(r[2] / r[4] for r in recrows), 2), "max distinct contexts/(transitions+1):", round(max(r[2] / (r[3] + 1) for r in recrows), 2))
     if descrows:
         descrows.sort(key=lambda r: -r[1]); print("descents of Π_R per context (file, max per context, total, transitions, |G'|):", descrows[:8], "phases:", len(descrows))
     if fdcrows:
@@ -291,6 +310,6 @@ if __name__ == "__main__":
         badrows.sort(key=lambda r: -r[1]); print("phases where PI fails to rise (file, failures, transitions, |G'|):", badrows[:8], "phases:", len(badrows))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})
