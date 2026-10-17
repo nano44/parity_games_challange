@@ -46,6 +46,8 @@ unchanged.
   open sptl region when its good successor lies in a deficit part (Û minus U). DATA: prototype (experiments/alg/dtl_c6proto.py),
   1,530 games (random n ≤ 20, every instance in experiments/alg/instances, tc and tc+ N ≤ 6, counter_* families): every
   game solved, regions equal Zielonka, strategies verified by experiments/harness/verify.py.
+- [per referee: DTL-proof.md K5 (i)/(iii) are FALSE as written (REFEREE-2 G-c2, k5.pg); this sketch inherits the hole and needs
+  the corrected form (rescue set below pr(τ_k), Str⁺ replaced by Dep(Str⁺); the Up form is refuted, per referee, R-P3 §C / R2-P3 §6): GAP-C.md §18q.]
 - K5 for C6 (SKETCH, 09:59Z; (A) of the Lead's 09:52Z plan). Let V* be C6-stable (any X: K6 says K5 holds verbatim with X
   forgiven), Reg := the first sptl pass's regions of V* (= the consumed union U(V*, T)), Û := Û(V*, T), A' := the threshold
   closure of Û. (P*) holds for V* in C6 (a vertex pruned at round i fails to attract into Ŵ(V_{i−1}) ⊇ Û(V*)), so Lemma E

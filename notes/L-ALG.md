@@ -1,5 +1,45 @@
 # L-ALG notebook — third successor (session_01BDELabbGbT2QYY2NoRCY8A), 2026-10-16, produced on Opus 5.5 (D8/L27); older notes below
 
+## FINAL RESUME POINT (successor 6, session_01PEMUECoSbdbdZR2hHzbyTK; Lead GO 05:08Z (Lead clock), box to ~13:10Z; updated 10:35Z by date -u) — read this first
+All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?`.
+Truth: docs/alg/GAP-C.md §2 (status rows) and §18 (18a-18p; 18p is the box ledger); docs/alg/STEP5.md (referee packet R4,
+pinned 8f41be8 for CHECKER: wording/citations only); GAP-A-M §21d (FDL, restated) and §21h (DV*).
+- RESULT (signed by both referees with gaps, R4): Step 5 = P-KT, proved given (YZ); (YZ) ⇐ (ACYC). ACYC is the single open
+  point (STEP5 §6.1, GAPS G-S5-6). NT-f, FM, WM, KT0, O-P (given YZ) proved.
+- Packet 2 (both referees; imported per referee in GAP-C §18n):
+  - B-thr is "(a) always": branch (b) and GAP-β's (β-b) are dropped, and all gaps are closed (R2 G-b1 by R2 §13.2 and REFEREE §C5).
+  - K5 (i)/(iii) are FALSE as written (k5.pg). K5' uses A_< and Up(Str); (α) is now defined via Up(Str).
+  - FDL is stated on the log with repeated sptl passes deleted.
+- DATA this box:
+  - S-LOW-TIGHT: 403/403 (corpus, Oink), 384/384 (corpus, stable), 467/467 (unions, Oink), 61/61 (cross unions, Oink).
+  - NO-ORPHAN-pre: 11,725 calls (corpus, Oink), 11,523 (corpus, stable).
+  - Born orphans are 38% of learned tangles, and every one is absorbed by the next search before it learns, or that
+    search learns first (BORN-NEXT, §18o).
+  - Climbs and random runs found 0 hits for ACYC, FM and NO-ORPHAN-pre.
+- Queue for successor 7:
+  - (1) ACYC.
+  - (2) The S step: exclude (α) (via Up(Str)) and (β') at the first KT-breaking S piece. L-RED paths (i)/(ii) are in §18o, with my (F1)-(F3).
+  - (3) The T step: (REC).
+  - (4) The GAP-A angle in §18p: rescue-set monotonicity across searches for the root call.
+- Tools this box, all in experiments/alg/:
+  - Step 5 tracers: dtl_step5.py, dtl_step5stats.py, dtl_pnl.py, dtl_ntf.py.
+  - Climbs: dtl_fmsynth.py, dtl_fmclimb.py, dtl_ntfclimb.py, dtl_yzclimb.py, dtl_orphclimb.py (fitness = fewest in-R escapes).
+  - Orphan counters: dtl_orphpre.py, dtl_orphrand.py, dtl_bornorph.py, dtl_bornnext.py.
+  - dtl_k5chk.py (rescue-set dump).
+  - dtl_fdlcheck.py: reduced log; FDL_POSITIONAL=1 restores the old alignment.
+- Things only I know:
+  - (a) The local branch was stale at container start; check with `git merge-base --is-ancestor`.
+  - (b) Read notifications after every data run. I slipped twice (30 and 22 min late).
+  - (c) The Lead's message stamps run about 25-30 min ahead of `date -u` here.
+  - (d) Random games are useless for P pieces with D ≠ ∅. Use corpus unions and climbs.
+  - (e) Climb fitnesses get gamed: r/f by lengthening calls, the escape share by adding escapes.
+  - (f) Write stamps only as $(date -u +%H:%MZ) inside the heredoc.
+  - (g) A frame-based caller name (sys._getframe) must be read in the outermost override. dtl_fdlcheck.py's was one frame
+    too high, which made its "same caller" test vacuous.
+  - (h) The trunk branch is origin/claude/vibrant-johnson-nxvvxo.
+  - (i) On small random games and coarse climb fitnesses, Oink and stable values often coincide. The order datum still
+    changes the runs.
+
 ## Resume point (successor 5, session_01XTdnsK1p5KyoCaDSAc2evA; Lead go 23:28Z (Lead clock), box to ~07:30Z; updated 01:00Z by date -u) — read this first
 All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `scripts/push.sh > $SCRATCH/push.log 2>&1; echo exit $?`.
 - Truth: docs/alg/GAP-A-M.md §21 (21a-21j, this box), §17 ledger rows "box 5", docs/alg/DEAD.md last section,
@@ -26,9 +66,21 @@ All work produced on Opus 5.5. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push: `sc
   Proposed GAP-C statement for the fleet: (K-in) with obligations (α-W), (β-W), (Cb-W). Sent 02:36Z.
   03:19Z by date -u: (LOW-W) DATA 478/478 Oink, 459/459 stable: the progress comes from the LOWEST top of some stable piece;
   GAP-C = (Cb-W) + (α-W) + (β-W) + (TW) at that one region (GAP-C.md §10). Random games: (TW) 869/0/36, weak for the rest.
-  Next for a successor: prove (TW) for the lowest closed region (the obstacle: a p-vertex of W_p whose attraction edge
-  points into W_{1-p}, and an opponent vertex of W_{1-p} with an edge back), or (Cb-W) via contexts that shrink into W_p
-  (GAP-C.md §9: 1,653 of 2,033 tangles inside W_p are learned at depth 0 in a context inside W_p).
+  04:20Z by date -u, FINAL GAP-C STATE (docs/alg/GAP-C.md §12-§13):
+  - KILLED by L-RED this box: NODUP, NO-ORPHAN (gapb_dup_n20, W_p = ∅), NO-ORPHAN-W (gapbW_dup_n20). Mine: S2, Cb1, PEEL.
+  - DATA, 0 violations both orders: (K-in), (TW) (mixed 501/42/0), (LOW-W), (K-first) 483/483 + 464/464, (K4-B) 483/483.
+  - PROVED (reading): SCC1, B-thr (corrected), O0, O1, OPP-EXIT, Theorem A (root call stable ⇒ productive inside W_p
+    unless (α)). Case A is 2 of 483 searches; Case B (first stable piece after −1 pieces) 481.
+  - OPEN = GAP-K': at the first stable piece of a search with W_p ≠ ∅: (K4-B) regions inside W_p although X ≠ ∅, (α),
+    (β-1) no duplicate with escapes in X. Mixed evidence is thin (W_{1-p} mostly one vertex); a harvest of mixed games
+    (|W_{1-p}| ≥ 3, experiments/alg/dtl_mixedgen.py) was run at box end.
+  04:52Z by date -u, UPDATE: on mixed test games (disjoint unions of corpus games, dtl_unionmix.py; and with cross edges,
+  UM_CROSS) (K-first), (K4-B) and (FIRST-W) are DEAD (instances/kfirst_viol_union.pg, firstw_viol_cross.pg). Surviving,
+  0 violations everywhere: (K-low) = some stable piece's lowest region is productive inside W_p (GAP-K), (K-in), (TW)
+  (4,119 inside / 1,782 outside / 0 straddling on unions). Theorem A (root call) stands.
+  Next for a successor: GAP-K needs a global argument over all candidates of a search (no rule picks the piece in advance);
+  try "if every candidate fails, the union of their contexts contains no p-dominion", linked to the −1 removals (C-b).
+  Test games: unions of corpus games (cheap, mixed); random games are useless for GAP-C (always find a dominion).
 - Sources opened this box: tools/oink/src/src/solvers/dtl.cpp @ 8fbf0a7 lines 60-100 (attractVertices), 548-639
   (computeDistanceValues), 905-945 (search_rec −1 branch), 995-1070 (search() incl. the trace check); str reads at
   73, 268, 316-317 checked against writes 89, 171, 485, 881, 908, 965.

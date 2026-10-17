@@ -1146,6 +1146,8 @@ KILLED (FALSE / DEAD), each with its instance
 | (PHI-DV): PHI0 rises only when the root DV* moves | climbs_1016/nest_nest_s43 (69 counterexamples) | §21j |
 | GAP-C (NODUP) the duplicate check never fires; (NO-ORPHAN) no stored p-tangle inside a context has all escapes outside it | red/carry/instances/gapb_dup_n20.pg (L-RED, l-red e4138a0; Oink 14 iterations, verified; both orders); in a search with W_p(G') = ∅ | GAP-C.md §8 |
 | GAP-C (NO-ORPHAN-W): no orphan inside the winning region | red/carry/instances/gapbW_dup_n20.pg (L-RED, l-red 2b792b8; Oink 6 iterations, verified; both orders); the same search learns elsewhere inside W_p | GAP-C.md §12 |
+| GAP-C (K-first), (K4-B): the first stable piece is the productive one / its regions lie in W_p | instances/kfirst_viol_union.pg (L-ALG; disjoint union of two corpus games; Oink 7 iterations, verified; both orders) | GAP-C.md §14 |
+| GAP-C (FIRST-W): the first stable piece with a p-won top is productive | instances/firstw_viol_cross.pg (L-ALG; union with 3 cross edges, n = 30; Oink 6 iterations, verified; both orders) | GAP-C.md §16 |
 | (ABS-mono) PHI0 never rises at a non-RES-d0 transition; (ABS-mono-pw) no vertex moves to a later depth-0 piece there | red/carry/instances/absmono_viol_n44.pg (L-RED R22, l-red cf9bdba; Oink 5 iterations, verified): Even's search 0 → 1, SHRINK at depth-0 piece 14, then piece 17 (same context) stable → −1 under the larger T; 7 vertices move later, PHI0 374 → 379; both order data | §21j, DEAD.md |
 
 DATA candidates left after box 4 (A_DTL; every per-context (H4) POTENTIAL candidate is dead):
@@ -1370,7 +1372,8 @@ sptl, Dom, cut, recursion, extraction unchanged. Prototype only: experiments/alg
     of distinct child contexts that a parent piece hands out AND in which the child still has work (fresh, resetting child
     contexts, §6.3b/§16). That is exactly the open core today; APP(k) shows the proved facts allow 2^k. C6 removes one
     obstruction (fixed-context resets, which today killed (LEX), (NR), (CM) on A_DTL); it does not touch the core.
-(c) Completeness. CONFIRMED: no gain. K4 carries over; K5 for C6 reduces to A_DTL's GAP-C shapes ((α) with the straddle
+(c) Completeness. CONFIRMED: no gain. [per referee: K5 (i)/(iii) are false as written, see GAP-C.md §18n (C); the C6 sketch
+    needs the same restriction.] K4 carries over; K5 for C6 reduces to A_DTL's GAP-C shapes ((α) with the straddle
     set enlarged by the deficit, (β'), (C-b)); C6-DTLhat.md K5 sketch. DATA: prototype correct with verified strategies on
     1,530 games; completeness climbs (~19k steps, n = 16, 22) found no failure.
 (d) Running time per search. One pruning round: one tangle attractor per priority level of V (≤ d + 1 levels) plus the
@@ -1607,7 +1610,15 @@ First-Difference Lemma (PROVED, reading; A_DTL, any ω). Let s, s+1 be consecuti
 (i) A search is a deterministic function of (G', T_s) (T_s = tangles stored at its start): W is reset after each search and
     is read only by extraction; str is written for every vertex when it joins the current attractor before it is read; no
     dominion occurs before the last search of a phase, so S, dom_vector are empty.
-(ii) Let e be the first tangle-attractor computation (tattr) whose output differs between s and s+1. Every computation
+[per referee, 10:15Z: G-h1 CLOSED by both referees (R2-PROVED2 §13.1). As written, (ii) is false literally: sptl's repeat
+ loop (870-874) can give s an extra pass that s+1 skips (the SCC is now a duplicate, `more` is false), so a positional log
+ misaligns. (ii) and (iii) are therefore stated on the LOG WITH REPEATED sptl PASSES DELETED: delete from s every repeated
+ pass of an S piece before e. Proof (R2 §13.1): region by region, out(s pass 1) ⊆ out(s pass 2) ⊆ out(s+1 pass 1) =
+ out(s pass 1) (1.2b), so pass 2 has the same regions; closedness is a set property (73; 519-525), so the same tops are
+ closed, all already in W (529): pass 2 extracts nothing and sets no W bit; s+1 learns nothing in its one pass and has the
+ same W. After the deletion both logs continue with Dom(V, R) on the same input.]
+(ii) Let e be the first tangle-attractor computation (tattr), in the logs with repeated sptl passes deleted, whose output
+    differs between s and s+1. Every computation
     before e is identical, so e has the same input (Z, R, Gx, maxpr) in both, and its output is STRICTLY larger in s+1.
     Proof: before e, s+1 extracts exactly the SCCs that s extracted there, which are now stored (duplicate check) and are
     not dominions (s is not the last search); so s+1 learns nothing before e and its tangle set at e is T_{s+1} = T_s^end ⊇
@@ -1618,6 +1629,12 @@ First-Difference Lemma (PROVED, reading; A_DTL, any ω). Let s, s+1 be consecuti
     compared by ⊆ at the first difference). This is injective in time but gives no polynomial bound by itself (counter).
 Mechanical check (experiments/alg/dtl_fdlcheck.py, box 5): (ii), (iii) and (iv) hold on all 990 (Oink) / 957 (stable)
 transitions of C5, 0 violations; check.sh runs it on three long phases.
+[per referee, 10:17Z (box 6): the checker now compares the logs with repeated sptl passes deleted (FDL_POSITIONAL=1 keeps
+ the old alignment). It also had a defect: its "same caller" test in (ii) was vacuous, because the caller name was read one
+ frame too high (always "tattr"); fixed (the caller is read in the checker's own tattr). dtl_firstdiff.py, the source of the
+ DATA row below, was not affected. Re-run on the 238-file corpus (n ≤ 80), real caller test: reduced log 1,042 (Oink) /
+ 1,011 (stable) transitions, 0 violations; positional 1,042 / 1,011, 0 violations. Repeated passes dropped 325 / 339; kept
+ because they differ from the previous pass 3,079 / 3,011; identical but extracting 0 / 0.]
 DATA for (ii): the first differing tattr is in best_vertices (threshold loop: Oink 642, stable 605; regions: 266, 269) or in
 the −1 attractor of search_rec (41, 42), never in sptl or Dom(V, R), in all 949 (Oink) / 916 (stable) transitions (counted
 over consecutive pairs incl. into the last search). Piece level (dtl_piecediff.py; first differing best_vertices call by
@@ -1734,7 +1751,8 @@ priority ≤ θ with all its edges into Z; a tangle all of whose vertices have p
 (its vertices join). One round on input V: Z := ∅; for each τ ∈ V in decreasing priority (ties by index), Z := lfp(Z ∪
 {τ}, pr(τ)); C := the v ∈ V that do not attract into Z; for each priority level t ascending: Z := lfp(Z, t) and every v ∈ C
 with pr(v) > t that attracts into Z leaves C; output V \ C. Start from V_0 = the p-priority vertices of G; DV*[v] = the round
-at which v is dropped, INF if it is in a round with C = ∅.
+at which v is dropped, INF if it is in a round with C = ∅ [per referee, REFEREE R-i: INF = "never dropped", which also
+covers a round with C ≠ ∅ and every candidate rescued (V stays fixed, code line 767); the proof is unchanged].
 Lemma DV*-MONO (PROVED). T ⊆ T' ⇒ DV*(T) ≤ DV*(T') pointwise.
 Proof. lfp(Z, θ) is monotone in Z and in T (every rule is monotone in Z, and T' only adds rules). One round is monotone in
 (V, T): with V ⊆ V', walk the list V' in decreasing priority; at τ ∈ V' \ V only the primed Z changes and it only grows
@@ -1777,6 +1795,7 @@ DV (21f): the same rounds with Oink's re-check order; DV* removes the GAP by con
   (best_vertices distractions), not by the attractors.
 
 ### 21j. Option (a): the ideal distance at the first-difference context splits every phase into three step types (00:46Z by date -u)
+[per referee, REFEREE-2 §10: the LRN reading (per DISTINCT context only; DV*_R uses tangles inside R) is in GAP-C.md §18n (A).]
 experiments/alg/dtl_dvctx.py: for each transition s → s+1, the context R of the first differing best_vertices call (for a
 SHRINK/GROW, the parent context, G' at depth 0) is the same in both searches; DV*_R = DV* on the subgame R (edges and
 escapes outside R ignored, tangles inside R only, as best_vertices treats its context). DV*_R is monotone in T at fixed R
@@ -1830,3 +1849,67 @@ Follow-up (00:55Z by date -u; dtl_phidv.py, dtl_dvctx.py DVC_PHI=1; C5, Oink ord
   same or a smaller context with a LARGER tangle set (T_{s+1} contains every tangle s learned, so at every position s+1's
   tangle set contains s's), and the actual best_vertices is not monotone in T (DEF steps), so its result could change and
   push vertices later. Attack target: such a later-piece change inside an absorption transition.
+
+## 22. Box 7 (L-ALG successor 6, Lead GO 10:47Z by date -u; produced on Opus 5.5): the root call across consecutive searches (11:02Z by date -u)
+Tool: experiments/alg/dtl_rootmono.py. The root call is the first best_vertices call of a search (depth 0, R = G'). RV(s)[v]
+is the round at which the root call of search s drops the p-priority vertex v, and INF if v survives to a round that
+returns 1. Transitions s → s+1 of one phase are classified by the first difference e* of the reduced logs (FDL, §21d).
+Corpus: 238 files with n ≤ 80, plus gapb_dup_n20 and gapbW_dup_n20, both order data.
+
+22a. Target 1 of the box is FALSE, and it is the known (M). The target was "the larger V_{r+1} of s+1 cannot make a later
+round drop a vertex that s kept", i.e. (RMONO): RV(s+1) ≥ RV(s) pointwise. Failures (Oink / stable):
+
+| first difference e* | transitions | RMONO fails |
+|---|---|---|
+| root threshold loop | 611 / 585 | 16 / 16 |
+| root regions | 252 / 257 | 2 / 2 |
+| after the root call | 194 / 185 | 0 / 0 |
+
+Every failure has a deficit round, U ≠ Û (§3), in a root call: 18 of 18 in both order data. This is §4b's (M) at the
+root context, dead since box 4.
+Re-run with pinned Oink today: dtl_mviol_check.py printed "M-VIOLATION REPRODUCED". Oink's own -t -t first-call
+distances fall: orig16 and orig1 8 → 7, orig19 9 → 8. The obstruction is Lemma E (§3): a straddling stored tangle whose
+unconsumed rest is re-absorbed by a lower surviving top.
+
+22b. What does hold at the root call (candidates; DATA, with proof routes).
+- (RV-ND) If the root call of s has no deficit round, then RV(s) = DV*(T_s), with DV* from §21h and T_s the tangles at
+  the start of s.
+  - DATA: 1,363 / 1,363 deficit-free root calls (Oink), 1,354 / 1,354 (stable). With a deficit, RV ≠ DV* in 180 / 182
+    and 168 / 170.
+  - Route, PROVED (reading): with no deficit, Theorem M-cond's chain gives V_i = V̂_i, the ideal rounds of §2-3. The ideal
+    rounds are DV*'s rounds:
+    - Û_{≥q} = Attr_q(Û_{>q} ∪ V_q) is DV*'s Z after the tops of priority ≥ q. lfp at one threshold absorbs the tops of
+      that priority one at a time or all at once.
+    - Ŝ's test "attracts into Attr_t(Û) for some t < pr(v)" is DV*'s ascending sweep, since Attr_t is increasing in t.
+- (PSI-MONO) Let Ψ(s) be the list of the root call's round unions U_r and rescue sets W_{r,t} (after each level t of the
+  threshold loop). If RV(s) = RV(s+1) and neither root call has a deficit, then Ψ(s) ⊆ Ψ(s+1) componentwise.
+  - DATA: 235 / 235 such root transitions (Oink), 230 / 230 (stable). Strict in 218 / 212.
+  - Route, PROVED (reading): the V_r are the same in both searches. With no deficit, U_r = Û(V_r, T), which is monotone
+    in T (Lemma 2.1). The code's rescue set at level t is the closure Attr_t(U_r) (DTL-proof Lemma 1.2: the pop loop with
+    all of Z pushed computes the closure), monotone in U_r and T (1.2b).
+- (POS-FALL) If, in addition, Ψ(s) = Ψ(s+1), then Φ_pos(s+1) < Φ_pos(s), where Φ_pos = Σ_r Σ_v (rank, in processing
+  order, of the round-r region containing v).
+  - DATA: 17 / 17 (Oink), 18 / 18 (stable). In every such case e* is a root region tattr: one region grows while the
+    union stays fixed.
+  - Not proved. FDL gives an equal input and a strictly larger output at e* with the earlier regions unchanged, so the
+    new vertices come from later regions.
+  - The gap: a later region is computed in a smaller arena CurR. The region attractor (Gx = CurR) is not monotone in its
+    arena (an opponent vertex forgiven outside a small arena must cover more successors in a larger one), so a vertex
+    could in principle move to a later region.
+  - Data: in Ψ-growing transitions Φ_pos never rises (falls 43, equal 175, Oink order).
+- Consequence (PROVED from the three, given POS-FALL). In one phase, order the deficit-free root-call transitions by
+  (DV*, Ψ, −Φ_pos) lexicographically. Each one raises this triple:
+  - (a) RV moves: then DV* moves, by RV-ND on both sides. DV* is pointwise monotone (DV*-MONO), so this happens at most
+    n(n+1) times per phase.
+  - (b) RV is fixed and Ψ grows strictly (PSI-MONO).
+  - (c) Ψ is equal and Φ_pos falls (POS-FALL).
+  - Transitions after the root call leave the root call identical, so they change nothing.
+  - Ψ has at most (n+1)(d+2) components, each ⊆ G', and Φ_pos ≤ (n+1)n². So between two consecutive DV* moves or root
+    deficit transitions there are at most H := (n+1)(d+2)n · ((n+1)n² + 1) + 1 deficit-free root transitions, and
+    #(root-call transitions) ≤ (n(n+1) + #DEF_root + 1) · H + #DEF_root, where #DEF_root counts root transitions with a
+    deficit on either side (Oink 174, stable 160 on the corpus).
+- So, given POS-FALL, GAP-A at the root call reduces to bounding #DEF_root, the root transitions with a deficit, which are
+  Lemma E's straddles.
+- The other part of a phase is the transitions whose first difference lies after the root call: Oink 194, stable 185,
+  i.e. 18% of all transitions. These are box target 3, the same frame at the first differing deeper call, which is the
+  per-context problem (§21j).

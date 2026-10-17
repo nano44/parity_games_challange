@@ -201,3 +201,26 @@ open or dead on C6 as on A_DTL. Promoting it would add gauntlet steps 1-3 withou
 A_DTL stays the gauntlet candidate (step-4 statement L24/L26 unchanged). C6 is used as the SIMPLER MODEL for the core: a
 proof of the core on C6 is the first target, then its transfer to A_DTL (where (H4) adds deficits). Revisit if the core is
 proved on C6 and the transfer fails, or if the owner decides otherwise.
+
+## L32 (Lead reading, 2026-10-17 09:12Z): GAP-A reassessment criterion (owner asked via OWNER-DESK: "Are we narrowing down the decision to see?")
+GAP-A (polynomial number of searches for A_DTL) is not converging: every per-context and per-phase potential stated so far is
+dead (RESULTS DE9-DE12); the surviving statement (SPP) is DATA only (tight, 0 violations). GAP-C, by contrast, has narrowed to
+one open point ((ACYC), docs/alg/STEP5.md) plus the S/T steps. Criterion:
+(1) Immediate stop of the candidate (owner report at once): any Oink-verified incorrect/incomplete run under any order datum, or
+    a family whose searches per phase grow super-polynomially (gauntlet step 4 fails; DTL becomes a dead end).
+(2) Reassessment point: the Fable reset, 2026-10-21 21:00Z, or earlier when both lanes' boxes end with no new GAP-A reduction.
+    "Progress" means a reduction of GAP-A to ONE named statement with a proof route (as GAP-C reached), or a proved polynomial
+    bound on a nontrivial subclass. If neither exists at the reassessment point, the Lead puts three options to the owner:
+    (a) bank the refereed partial results (GAP-C chain, Step 5) and write up DTL's status as an open candidate;
+    (b) keep only the cheap adversarial side on GAP-A (L-RED climbs), no proof lane;
+    (c) a new candidate or a new approach. The owner decides.
+(3) Allocation until then: from the next boxes (after ~13:10Z) one lane returns to GAP-A with a fresh angle; GAP-C continues.
+
+## D12 (2026-10-17 ~09:10Z, owner via OWNER-DESK): referees on Opus
+> WE can run referees on opus too temperoraly
+
+Lead reading L33: until the Fable reset (2026-10-21 21:00Z), REFEREE and REFEREE-2 may run on Opus 5.5. This lifts the L27
+"referees wait" for that period and is the owner's own exception to D1's "never downgrade the referee". Unchanged: two
+independent referees, REFEREE-2 reads docs/referee/ only after its own report, gaps listed. Every signature given on Opus
+carries the label "(Opus 5.5, D12)" in its report and in RESULTS; after the reset the Lead may ask a Fable referee to re-read
+any such entry. First packet: docs/alg/STEP5.md (Step 5 of GAP-C: NT-f, FM, WM, (YZ) <= (ACYC), P-KT), pinned at a trunk SHA.

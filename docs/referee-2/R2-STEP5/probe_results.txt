@@ -1,0 +1,19 @@
+runs 2026 no-probe-line 0
+{'m1': 70276, 'ntf_viol': 0, 'fm_viol': 0, 'P': 37968, 'P0': 27904, 'yz_viol': 0, 'dom_acc': 4, 'dom_nonstr': 0, 'dom_str': 4, 'acyc_viol': 0, 'tangles': 28384, 'tpr_bad': 0, 'notop': 0}
+4 runs with a straddle or a violation
+experiments/alg/instances/strfam_S5_n46.pg rev=1 s=0 R2PROBE m1=65 ntf_viol=0 fm_viol=0 P=40 P0=26 yz_viol=0 dom_acc=1 dom_nonstr=0 dom_str=1 acyc_viol=0 tangles=30 tpr_bad=0 notop=0
+experiments/alg/instances/strfam_S5_n46.pg rev=1 s=1 R2PROBE m1=65 ntf_viol=0 fm_viol=0 P=40 P0=26 yz_viol=0 dom_acc=1 dom_nonstr=0 dom_str=1 acyc_viol=0 tangles=30 tpr_bad=0 notop=0
+experiments/alg/instances/strfam_S5_n46.pg rev=1 s=2 R2PROBE m1=65 ntf_viol=0 fm_viol=0 P=40 P0=26 yz_viol=0 dom_acc=1 dom_nonstr=0 dom_str=1 acyc_viol=0 tangles=30 tpr_bad=0 notop=0
+experiments/alg/instances/strfam_S5_n46.pg rev=1 s=3 R2PROBE m1=65 ntf_viol=0 fm_viol=0 P=40 P0=26 yz_viol=0 dom_acc=1 dom_nonstr=0 dom_str=1 acyc_viol=0 tangles=30 tpr_bad=0 notop=0
+
+runs 12000 no-probe-line 0
+{'m1': 103229, 'ntf_viol': 0, 'fm_viol': 0, 'P': 67160, 'P0': 65742, 'yz_viol': 0, 'dom_acc': 0, 'dom_nonstr': 0, 'dom_str': 0, 'acyc_viol': 0, 'tangles': 19901, 'tpr_bad': 0, 'notop': 0}
+0 runs with a straddle or a violation
+
+
+END seed 1 score 20 viol 0
+END seed 2 score 6 viol 0
+END seed 3 score 4 viol 0
+END seed 4 score 24 viol 0
+END seed 5 score 1 viol 0
+END seed 6 score 6 viol 0
