@@ -816,3 +816,18 @@ closed) and the same frame inside recursions. Caveat: a KT core can contain an o
 escape in X: not plainly attracted to X, p-won with exits forgiven), so KT itself does not exclude (β'); a tangle-aware
 attractor in KT would, and the NT-f trick (take the tangle's top-priority vertex pruned first) seems to carry P-KT over to
 it for tangles without a vertex in old X — SKETCH, not written.
+(NO-ORPHAN-pre) and Lemma O-P (09:21Z by date -u; experiments/alg/dtl_orphpre.py). An ORPHAN at a best_vertices call with
+context R is an alive stored p-tangle t ⊆ R none of whose escapes lies in R (it is never re-checked inside R, and its
+region can only re-find it: (β')). DATA: no orphan at any call, at any depth, made before the search's first newly learned
+tangle: 11,725/11,725 calls corpus Oink (+ kfirst_viol_n13, pk_viol_n20), 11,523/11,523 stable; the only orphans (2 per
+order: gapb_dup_n20, gapbW_dup_n20) come after learning in the same search. With it, (β') cannot occur at the first
+KT-breaking stable piece (nothing is learned before it), so (S-LOW) would reduce to (α) at that piece.
+Lemma O-P (PROVED given (YZ)). A depth-0 P piece creates no orphan. Proof. Suppose Dom(prevV, R) removes the last escapes
+of t that lie in R while t ⊆ R \ Y_0. Those escapes lie in Y_0 = Z_f (YZ) ⊆ Z^r for every round r (FM, 18k). Let q :=
+tpr(t) and m_1 a priority-q vertex of t pruned first in the −1 call, at round r_1 (every priority-q vertex of t is pruned:
+one in V_f would be a top of Dom and lie in Y_0). At round r_1 all priority-q vertices of t are in V_{r_1} ⊆ Z^{r_1}. If
+q = 0, t ⊆ Z^{r_1} and m_1 attracts into Z^{r_1} (tangle successor / all R-edges in t ∪ escapes), so it is no candidate.
+If q ≥ 1, an escape e of t in R lies in Z^{r_1}, is popped at level q−1 of the rescue loop (step (D1) of NT-f), and
+attractTangle(t) finds every vertex in the set or of priority ≤ q−1 and every escape in R in the set, so t ⊆ the set and
+m_1 is rescued. Contradiction either way. □ Open: orphans created by a T piece (the threshold attractor takes t's last
+escapes at a level t* below tpr(t)) and by a barren stable piece (its rounds need not satisfy (FM)).
