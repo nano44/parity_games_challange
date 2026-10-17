@@ -1867,7 +1867,7 @@ round drop a vertex that s kept", i.e. (RMONO): RV(s+1) ≥ RV(s) pointwise. Fai
 
 Every failure has a deficit round, U ≠ Û (§3), in a root call: 18 of 18 in both order data. This is §4b's (M) at the
 root context, dead since box 4.
-Re-run with pinned Oink today: dtl_mviol_check.py printed "M-VIOLATION REPRODUCED". Oink's own  first-call
+Re-run with pinned Oink today: dtl_mviol_check.py printed "M-VIOLATION REPRODUCED". Oink's own -t -t first-call
 distances fall: orig16 and orig1 8 → 7, orig19 9 → 8. The obstruction is Lemma E (§3): a straddling stored tangle whose
 unconsumed rest is re-absorbed by a lower surviving top.
 
