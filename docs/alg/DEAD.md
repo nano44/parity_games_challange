@@ -161,3 +161,14 @@ experiments/alg/instances/spp_chain_up_n43.pg). Wanted: a quantity that every no
   depth-0 piece 14; depth-0 piece 17 (same context in both searches) goes stable → −1 under the larger tangle set, so 7
   vertices move to later pieces and PHI0 rises 374 → 379. Obstruction: actual best_vertices is not monotone in T at a
   fixed context (the deficit of §13-§18), and later pieces see a larger T.
+
+## GAP-C (completeness) proof-route dead ends — box 5 (02:21Z by date -u; produced on Opus 5.5)
+Context: docs/alg/GAP-C.md. Lemma K: W_p(G') ≠ ∅ ⇒ search(p) learns a tangle or a dominion.
+- (S2) "a context containing a p-dominion is never pruned to −1": DEAD, experiments/alg/instances/spp_final_n20.pg (Odd's
+  root call returns −1 although Odd wins all 20 vertices).
+- (Cb1) "a dominion inside the context survives every unproductive iteration": DEAD in the strict and the forgiving
+  semantics, experiments/alg/instances/c1_k1_min_n7_m10.pg (root piece) and c6_replay3_n32.pg (GAP-C.md §7).
+- (NODUP) "the duplicate check never fires" and (NO-ORPHAN): DEAD, experiments/red/carry/instances/gapb_dup_n20.pg (L-RED;
+  Oink-verified, both orders). Obstruction: a stored tangle whose escapes are all removed earlier in the search ((β-a)/(β-b)
+  of Lemma B-thr) is re-found by its top. The instance has W_p(G') = ∅ in that search, so Lemma K is untouched; the
+  surviving candidate is (NO-ORPHAN-W), restricted to the winning region.
