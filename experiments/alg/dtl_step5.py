@@ -13,7 +13,7 @@ D = X.D
 class S5(D.DTL):
     """dtl_pyref.DTL with search_rec copied verbatim and instrumented (no change to the computation)."""
     def search(s, p):
-        s.Wp = O.winning(s, set(s.G), p) if s.G else set(); s.pieces = []; s.newt = []; s.G0 = set(s.G); s.cur_new = []; s.cur_top = []; s.cur_passes = []
+        s.Wp = O.winning(s, set(s.G), p) if s.G else set(); s.pieces = []; s.newt = []; s.G0 = set(s.G); s.cur_new = []; s.cur_top = []; s.cur_passes = []; s.cur_events = []
         d0 = s.dominions; r = D.DTL.search(s, p)
         s.trace.append(dict(p=p, G=s.G0, Wp=s.Wp, pieces=s.pieces, newt=s.newt, dom=s.dominions > d0))
         return r
@@ -36,7 +36,9 @@ class S5(D.DTL):
             closed = (s.str[top] != -1) if s.ow[top] == p else not any(w in R for w in s.outs[top])
             if closed and top not in s.W:
                 s.W.add(top)
+                k0 = len(s.tv); d0 = s.dominions
                 if s.extractTangles(top, Z): changes = True
+                s.cur_events.append((len(s.cur_passes), top, [frozenset(v for v, _ in s.tv[i]) for i in range(k0, len(s.tv))], s.dominions > d0))
         s.cur_passes.append(tops)
         return changes
 
@@ -48,10 +50,10 @@ class S5(D.DTL):
             if res == 0:
                 s.pieces.append(dict(kind="E", depth=depth, nt=s.cur_nt, R=R0, X=X0, rem=frozenset(), V=frozenset())); return
             if res == 1:
-                s.cur_new = []; s.cur_top = []; s.cur_passes = []; dom0 = s.dominions
+                s.cur_new = []; s.cur_top = []; s.cur_passes = []; s.cur_events = []; dom0 = s.dominions
                 while s.sptl(V, set(R), p): pass
                 s.dom(V, R, X_, p)
-                s.pieces.append(dict(kind="S", depth=depth, nt=s.cur_nt, R=R0, X=X0, rem=R0 - frozenset(R), V=frozenset(V), new=list(s.cur_new), tops=list(s.cur_top), passes=list(s.cur_passes), domf=s.dominions > dom0))
+                s.pieces.append(dict(kind="S", depth=depth, nt=s.cur_nt, R=R0, X=X0, rem=R0 - frozenset(R), V=frozenset(V), new=list(s.cur_new), tops=list(s.cur_top), passes=list(s.cur_passes), events=list(s.cur_events), domf=s.dominions > dom0))
                 continue
             t = 0; Z = set(); s.Q = []
             for v in range(s.n):

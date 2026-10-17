@@ -831,3 +831,17 @@ If q ≥ 1, an escape e of t in R lies in Z^{r_1}, is popped at level q−1 of t
 attractTangle(t) finds every vertex in the set or of priority ≤ q−1 and every escape in R in the set, so t ⊆ the set and
 m_1 is rescued. Contradiction either way. □ Open: orphans created by a T piece (the threshold attractor takes t's last
 escapes at a level t* below tpr(t)) and by a barren stable piece (its rounds need not satisfy (FM)).
+(S-LOW), tight form (09:53Z by date -u; Lead 09:33Z after L-RED's check, l-red 57ab33f experiments/red/carry/slow.py). The
+first count above was LOOSE in three ways (L-RED): it pooled every sptl pass of the piece, accepted a dominion found by any
+top, and did not require the tangle to lie inside D. It did require a NEW tangle (skipped duplicates create no tv entry).
+(S-LOW-TIGHT) At a depth-0 stable piece that breaks KT, with nothing learned inside D earlier in the search, the lowest top
+that gets a region in the FIRST sptl pass itself creates a new tangle INSIDE D or itself finds a dominion.
+Recount with the tight test (dtl_step5stats.py "S-LOW-TIGHT", per-pass events recorded by dtl_step5.py's sptl): 403/403
+corpus Oink, 384/384 corpus stable, 467/467 unions Oink s1, 61/61 cross unions Oink s11 — no case where the tight form
+fails and the loose one passes. (The Lead's slow.py re-run on the four killers: 8/8 per order.)
+How (β') could arise at such a piece (shape for L-RED, from the reading; not built): a stored tangle t = {a, b} learned in
+an earlier search (a p-owned of priority 2 with tangle edge a → b; b opponent of priority 1 with b → a and one escape
+b → e); in the current search, before any learning, a T piece at level t* = pr(e) ≤ 1 (e a seed: it attracts into X)
+takes e but rejects t (pr(a) = 2 > t*), so t becomes an orphan (Lemma O-P excludes this for P pieces, not for T pieces);
+at the next stable piece the region of a closes on exactly t — a (β') duplicate. For (S-LOW-TIGHT) to fail, that piece must
+be the first to break KT and a's region must be the lowest of its first pass.
