@@ -2063,6 +2063,8 @@ new is that every absorption step at a fixed context is now paid for by a proved
 - Descents per context per phase: at most 2 (L-RED's f1_twodef_n48 / f1_twofall_n48), and 1 elsewhere, in 16 phases.
 - So the budget D_R of §22e can be replaced by F_R, the number of descents of Π_R along the phase:
   S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·|C_T|.
+  [per referee, G6-a2 (packet 6): the display reads S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·(|C_T| + |C_Dom|) + 1, with
+  the Dom term of §22j and the +1 of G-e2; F_R as in §22n (every non-rise).]
 - GAP-A ⇐ (CTX) ∧ (FALL), where (FALL) says F_R is polynomial. The data maximum is 2.
 (CTX), the obstruction, made exact.
 - A depth-0 context R_{k+1} = G′ \ (pieces 1..k) is fixed exactly while positions 1..k are frozen. Since Π_R is a function
@@ -2351,4 +2353,32 @@ G-F1 count (first differences where Π_R does not rise), dtl_rootmono.py with th
   mixed unions (stable order, n = 45).
 - Falls whose witnesses are all OLDER than the previous visit: 316 / 323 and 521 / 527 (mixed), 159 / 167 and 210 / 217
   (cross). The stealing mechanism of §22l dominates everywhere.
-- So, on all data: F_R = number of RV falls at R, and F_R ≤ 2.
+- So, on these data sets: F_R = number of RV falls at R, and F_R ≤ 2. [Superseded by fall3_n76 below: 3 at one context.]
+Packet 6 SETTLED (per referee: REFEREE R-P6 @ 9f77ff9 with comparison §C @ ad4be01, REFEREE-2 R2-P6 §5 @ c7634a7; both agree; Lead 13:30Z; 13:39Z by date -u):
+- (1) G6-a1 = G-F1. F_R counts EVERY non-rise of Π_R at R along the phase: descents, incomparable steps, and Π-blind
+  e*-at-R transitions. It is not only descents. (FALL): this F_R is polynomial per context.
+- (2) G6-b2. (CTX⁺) counts Dom INPUTS (X ∪ Dom_{<j}, R \ Dom_{<j}, τ_j, pr τ_j), not Dom-loop contexts. REFEREE's probe
+  shows the input varying at fixed (R, X, top) in 105 of 2,110 phase-contexts.
+- G6-a2: §22f's display now carries the Dom term and the +1 (marked in place).
+- G6-b1: Dom pushes only the top (966), and its output is a monotone function of (input, T).
+- The §22h "equal lengths" sentence is corrected in place (13:16Z, e9acfb86).
+- Joint verdict: GAP-A ⇐ (CTX⁺) ∧ (FALL), given STR-DET. Both (CTX⁺) and (FALL) are DATA only.
+- (FALL) data update (L-RED R31; Lead re-run 13:42Z; L-ALG re-run 13:48Z: experiments/red/carry/instances/fall3_n76.pg,
+  sha1 a85133ec; pinned Oink: 3 dominions, 56 tangles, 10 iterations, verified; dtl_rootmono.py both orders: max 3
+  descents at one context, 3 falls of the same (context, victim) pair, phase of 5 transitions, |G′| = 76). Details: fall3_n76.pg has 3 descents of Π_R at ONE context in
+  one phase, both orders. It is a union of three 1-descent gadgets (lex_viol_oink_n20, lex_viol_inj_n28,
+  lex_viol_tie_n28) with cross edges, and the same old witness tangles are stolen at each descent. So "≤ 2" is dead as a
+  data bound, as §22l said it might be. A "one steal per witness" bound is also false, since witnesses are reused.
+
+22o. (CTX⁺): CTX-ROOT is dead (13:44Z by date -u; dtl_rootmono.py "CTX-ROOT", RM_LIGHT=1)
+- (CTX-ROOT) "distinct first-difference contexts per phase ≤ 1 + the number of root transitions" would have reduced
+  (CTX⁺) to the root's polynomial budget. It is FALSE. Corpus, Oink order: 5 of 261 phases.
+- Smallest instance: experiments/alg/instances/dtl_cnew14_n20.pg. First-difference positions are 3 1 5: 3 contexts for
+  1 root transition.
+- Others: strfam_S4_n22 (2 3 1), strfam_S5_n46 (2 2 3 1), spp_final_n40 and spp22_oink_n40 (8 contexts, 6 root
+  transitions).
+- Obstruction: inside one block where the root is frozen, the first-difference positions are not constant (2 then 3,
+  or 6 4 5), so deeper contexts change without any root change. Any bound must recurse into the blocks, which is the
+  nested-counter recursion again (§22g, §22k).
+- Context climbs (dtl_ctxclimb.py: spp25 and spp22 starts, both orders) are running to see how far the number of
+  first-difference contexts per phase can be pushed.
