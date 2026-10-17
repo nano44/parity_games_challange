@@ -208,3 +208,16 @@ The draft may land as written. If edited, I re-diff the text only.
 - The withdrawn clause "GAP-A itself implies (FIRED-R)" is no longer in the draft. Addendum 4's FAIL is resolved.
 - C11 Addendum 3 N-7 (optional, "(stable order, dtl_pyref)" on the 15/17 figure) is not applied. It remains optional.
 - C11 verdict at afba224: PASS.
+
+## Addendum 6: R11 re-diff at trunk 9b29add (Lead 16:35Z), text only: FAIL on one figure (E-2)
+- History: afba224 is an ancestor of 9b29add.
+- ee4e060 → afba224 is Addendum 5 (PASS).
+- afba224 → 9b29add is one change, in G-R11-6: "(0.88)" → "(0.88; stable order, dtl_pyref; Oink order 13 at |R| = 16)".
+- E-2 (required, one figure). The Oink-order figure misstates §22w.
+  - §22w (trunk, line 2648): "Oink order: 12 tangles at one context with |R| = 16 (0.75); continued to 13 (0.87)".
+  - The 16 belongs to the count 12. For the count 13 §22w gives only the ratio 0.87, and 13/16 = 0.81, not 0.87. 0.87
+    corresponds to |R| = 15.
+  - "13 at |R| = 16" pairs the count of one step with the |R| of the other.
+  - My N-7 wording was "the Oink-order climb reached 13 (0.87)".
+  - Fix: "Oink order 13 (0.87)", or "Oink order 12 at |R| = 16 (0.75), then 13 (0.87)".
+- Everything else at 9b29add is as passed in Addendum 5. With E-2 fixed, R11 passes. I re-diff the text only.
