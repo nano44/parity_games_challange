@@ -396,3 +396,4 @@
 - 08:11Z Lead: merged l-red cdedd56; verified tstep_near_n20 (Oink 10 it. verified; 4 barren T-breaks of KT, all after prior D-learning in the same search, so harmless for K-in); climb pushes prior-learning count to 0.
 - 08:39Z Lead: merged l-alg 4841576 (FM <=> NT-f); L-ALG continues on NT-f to budget end; NT-f shape routed to L-RED.
 - 08:43Z Lead: merged l-red e259cac; NT-f climbs 9801/9802 started (seeds at round f-1 of f); T-STEP and K-in samplers continue.
+- 08:46Z Lead: merged l-alg ced9921 (NT-f proved, unrefereed); step (D) rescue-pop link requested; L-RED to check adversarially + YZ target.
