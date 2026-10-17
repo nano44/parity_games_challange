@@ -2004,6 +2004,8 @@ fall raises Π strictly.
 - Open part: dirty transitions where RV does not fall. The step deficit there must not shrink Ψ. In the h4_defK phases
   the same stored tangle straddles at the same top in every search, and every transition is of this kind.
 
+[12:20Z, per referee (packet 4, R-P4 / R2-P4): the reduction below holds with two more hypotheses, (STR-DET) and
+(e* ∉ Dom), and with +1 per phase (G-e2). Wording fixes R-b1, G-d1/G-Ψ: see §22h. Statements unchanged otherwise.]
 22e. Every context, not only the root: GAP-A ⇐ two named statements (11:54Z by date -u; dtl_rootmono.py "ANY-CONTEXT")
 Nothing in 22c uses R = G′. A best_vertices call is a deterministic function of (R, p, T): it reads no X, no str value
 before writing it, and no W, and the set of alive tangles changes only at dominions. So, for EVERY context R (any depth):
@@ -2109,3 +2111,44 @@ So between two RV changes at R the successor shrinks monotonically. That gives �
 distinct successors per context, which is polynomial. The open part of (CTX) is then only the PRODUCT over the
 positions of a search: the visited part of the context tree must be thin, whereas each node may have polynomially many
 children. That is the nested-counter core in its sharpest form so far.
+
+22h. Packet 4 imported (per referee: REFEREE R-P4 @ f74857c, REFEREE-2 R2-P4 @ 352da6e; trunk 6aa9260; 12:20Z by date -u)
+Verdicts: no REJECT. Both sign (S0), PREFIX-MONO (gap closed), POS-FALL, ROOT-BOUND (gap closed) and the bit cost
+(conditional on DTL-proof §3(e)). §22e is SIGN WITH GAPS, with two OPEN gaps (GAPS rows G-DOM and G-STR).
+Wording fixes (closed):
+- R-a1 / R-b1 / R-Cl. Cl_q in §22c is the TRIGGERED closure of dtl_ideal.lfp. A tangle fires only with ≥ 1 escape in
+  the set, and only its NEW vertices need priority ≤ q; an opponent vertex needs ≥ 1 successor in the set. (S0) holds
+  either way. C2 needs the trigger: the threshold loop pushes all of Z at every level (724), so it computes exactly the
+  triggered closure, W_t = Cl_t(W_{t−1}) = Cl_t(U). A trigger-free closure would overstate W_t, because a tangle with no
+  escape in the set is never tried (200-201).
+- G-d1 / G-Ψ. A round that returns at 716 (no candidates) runs no threshold loop. Define W_{r,t} := Cl_t(U_r) for every
+  round and level, so Ψ's components align. dtl_rootmono.py compares Ψ only when the two lists have equal length. On the
+  data no RV-equal pair had unequal lengths ("Ψ not monotone": 0), so the counts of §22c-g stand.
+- G-e2. A transition with no differing tattr can happen once per phase (the last search re-finds only duplicates and
+  returns false, 1068). The bound reads S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·|C_T| + 1.
+Hypotheses added to §22e (OPEN):
+- (STR-DET) (REFEREE-2 §0, G-STR). If every tattr before a point has equal set output in s and s+1, then every SCC
+  extracted before that point is equal.
+  - The danger: extraction reads str (268). A tangle that s learned later can fire in s+1 and write its stored strategy
+    (171) on vertices that in s joined by vertex rules (89). The set output stays equal while the strategies differ.
+  - The weak form suffices for the counting: s+1 creates no tangle before its first set difference, and every
+    transition but the last has a set difference.
+  - The FDL (G-h1 closure) and R5 (h) rest on it too.
+- (e* ∉ Dom) (G-e1 / G-DOM). The first difference never lies in a Dom tattr (878-890 or 962-991).
+  - e* ∉ sptl is proved (R-P4): pass 1 recomputes the final round's regions, and repeated passes are deleted.
+GAP-A ⇐ (CTX) ∧ (FALL) ∧ (STR-DET) ∧ (e* ∉ Dom), with §22f's (FALL) in place of (DIRTY).
+Partial argument for (e* ∉ Dom) (L-ALG reading, SKETCH).
+- Let e* be the Dom tattr at the j-th top τ_j of a piece P with context R and removed set X. Before e* the two searches
+  agree, including P's best_vertices call and P's sptl passes.
+- Dom's closure output is monotone in T for a fixed input (1.2b). So a difference at step j needs a tangle t created by s
+  after e*, i.e. in a later piece. By the context-chain argument (R-PROVED2 §C5), the later contexts of the call exclude
+  X and the whole of s's Dom removal of P, and ancestor contexts exclude the call's whole context. So t ∩ (X ∪ Dom_P(s))
+  = ∅. In particular t is NOT an X-straddling acceptance at step j: it meets neither old X nor Dom's earlier parts.
+- By the (YZ) reading (GAP-C §18h; R-STEP5 claim 4), Dom's step j differs from the final round's region step j (identical
+  in s and s+1) only through X-straddling acceptances.
+- So e* in Dom needs an OLD straddling tangle t′ ∈ T_s^{e*}, accepted at step j in both runs, whose accepted vertices let a
+  NEW non-straddling t fire in s+1 within the same step.
+- Open point: exclude that interaction, or give it a budget. t′ is accepted in both runs, so its vertices lie in Dom_P(s).
+  The new t fires on escapes that t′ (or the chain after it) supplied, while its own vertices lie in R \ Dom_P(s). In
+  the region loop t′ is rejected, which is why t does not fire there.
+DATA for both hypotheses: §22h addendum below (corpus plus unions, both orders; running at 12:20Z).
