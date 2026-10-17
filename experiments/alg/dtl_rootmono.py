@@ -315,6 +315,12 @@ if __name__ == "__main__":
                     kch = f"CHAIN of first-difference contexts at depth {'0' if dep_ == 0 else '>0'}: " + ("holds" if chain else "FAILS"); tab[kch] = tab.get(kch, 0) + 1
                     if not chain and dep_ == 0 and shown < 20:
                         shown += 1; print("CHAIN FAILS", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), "contexts (sizes):", sorted(len(c) for c in cs), flush=True)
+            if fdc:
+                nroot = sum(1 for x in kseq if x == "1")
+                kr2 = "CTX-ROOT (distinct first-difference contexts ≤ 1 + #root transitions): " + ("holds" if len(fdc) <= 1 + nroot else "FAILS")
+                tab[kr2] = tab.get(kr2, 0) + 1
+                if len(fdc) > 1 + nroot and shown < 40:
+                    shown += 1; print("CTX-ROOT FAILS", (f if f.startswith(('union', 'random')) else os.path.relpath(f)), "contexts", len(fdc), "root transitions", nroot, "kseq", " ".join(kseq), flush=True)
             if fdc: fdcrows.append(((f if f.startswith(('union', 'random')) else os.path.relpath(f)), len(fdc), len(ph) - 1, len(ph[0]["G"]), " ".join(kseq)))
             if seq:
                 runs = [len(x) for x in "".join(seq).replace("=", "R").split("R") if x]
@@ -349,6 +355,6 @@ if __name__ == "__main__":
         badrows.sort(key=lambda r: -r[1]); print("phases where PI fails to rise (file, failures, transitions, |G'|):", badrows[:8], "phases:", len(badrows))
     coarse = {}
     for k, v in tab.items():
-        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
+        c = k if k.startswith(("ROOT-SPLIT", "RV = DV*", "PSI", "LEVEL-DEF", "NO-LATER", "STEP-DEF", "CLEAN", "DIRTY", "PI at", "after-root e*", "ABS-pw", "ANY-CONTEXT", "VISITS", "CONTEXT RECURRENCES", "E* CALLER", "STR-DET", "CHAIN", "FALL witness", "FALLS per", "CTX-ROOT")) else k.split(",")[0].split(":")[0] + ": " + k.split(": ")[-1]; coarse[c] = coarse.get(c, 0) + v
     print({k: coarse[k] for k in sorted(coarse)})
     if os.environ.get("RM_ROUNDS"): print({k: tab[k] for k in sorted(tab)})

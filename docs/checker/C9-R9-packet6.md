@@ -140,3 +140,23 @@ Recommended:
 - N-5: H nit.
 - fall3_n76: re-run done by CHECKER; cite R31 / 065ba24.
 The draft may land as written. If edited, I re-diff the text only.
+
+## Addendum: text re-diff at trunk b55c144 (Lead 13:42Z): PASS
+History: f3cde82 is an ancestor of b55c144. Trunk b55c144 was merged into claude/checker by merge commit.
+- R9-draft.md, f3cde82 → b55c144: only G-R9-5 changed (1 line → 3 lines). The new text is "by L-RED fall3_n76
+  (experiments/red/carry/instances/fall3_n76.pg, sha1 a85133ec, docs/red/R31-fall3.md: 3 descents at one context, both
+  orders; Lead re-ran pinned Oink (10 iterations, verified) and dtl_rootmono.py (max 3 per context, both orders)), which
+  does not refute (FALL)". Nothing else moved.
+- The source is now on trunk: l-red 065ba24 is an ancestor of b55c144. experiments/red/carry/instances/fall3_n76.pg at
+  b55c144 has sha1 a85133ec886b05beea2582e4a50885eb3795a243, and docs/red/R31-fall3.md is present.
+- The claim is reproduced twice:
+  - §3 of this report: pinned Oink, 3 dominions, 56 tangles, 10 iterations, verified; dtl_rootmono.py at c8df405.
+  - Again at b55c144 with the trunk dtl_rootmono.py, which now carries the G-Ψ convention (l-alg e9acfb8), both orders:
+    "(fall3_n76.pg, 3, 3, 5, 76) phases: 1", with three "FALL with only old witnesses" lines.
+- "max 3 per context" is accurate. The citation is resolved (my FINDING on fall3 is met). Optional: add "DATA,
+  unrefereed" after the R31 citation, as R31's own Status line says. G-R9-5 is already headed "DATA only".
+- N-4 update: e9acfb8 is now on trunk, and GAP-A-M §22n (line 2331, 13:36Z) gives the full re-run with the G-Ψ convention.
+  "Π_R does not rise" at e* is 0/0 on every set, including cross unions 3,370/3,377, and union411 is confirmed as a tool
+  artifact. G-R9-1's data sentence is now backed on trunk. Suggest citing "GAP-A-M §22n" instead of the pending wording;
+  the citation is optional.
+- N-1, N-2, N-3 and N-5 are not applied. They remain recommended, not required.
