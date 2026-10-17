@@ -2619,7 +2619,7 @@ Chain (proved parts are readings):
   step that precedes (r, τ) in the step order (rounds ascending, tops descending), or a change of V in an earlier round
   (an RV change, itself charged to such a steal).
 - Induction over the steps in that order gives only steals(step) ≤ 1 + Σ_{earlier steps} steals. That is exponential
-  in the number of steps, so it does not explain the data's "max 1" (§22t, §22u: 0 exceptions in 416 / 412 phases with
+  in the number of steps, so it does not explain the data's "max 1" (§22t, §22u: 0 exceptions in 416 / 429 phases with
   steals).
 - The regularity the data shows is stronger: a prefix that has grown into a tangle never retreats from it far enough to
   re-steal it at the same step.
