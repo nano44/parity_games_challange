@@ -59,7 +59,14 @@ chain.py (L-ALG chain UP), dvfall.py, absmono.py, abspw.py, dupcheck.py (dup hit
 check), gapb.py (graded GAP-beta; needs LALG2_DIR >= 1335713 for dtl_nearorphan2). dtl_search fitnesses spp, sharp,
 dvfall, absmono, abspw, dupchk, gapb; --hb K heartbeat. Worktrees: <scratch>/lalg4 (b9b3b2b, batch), lalg6 (57e2256),
 lalg7 (1335713). RUNNING: equal-step batch (xargs -P4, scratch eq/, jobs_sorted.txt, run1.sh, table.sh); gapb climbs
-9001 (oink), 9002 (stable), 9003 (oink --loops) from gapb_dup_n20 (scratch gb/). Next: incomplete run; dupW/orphW > 0
+9001 (oink), 9002 (stable), 9003 (oink --loops) from gapb_dup_n20 (scratch gb/). Exact relaunch (from experiments/red, after worktrees: git worktree add --detach <scr>/lalg6 57e2256; ... <scr>/lalg7 1335713):
+  export LALG_DIR=<scr>/lalg6 LALG2_DIR=<scr>/lalg7
+  DTL_ORDER=oink   nohup python3 dtl/dtl_search.py x 1 --fitness gapb --seed 9001 --steps 1000000 --hb 500 --from carry/instances/gapb_dup_n20.pg --out <scr>/gb/g9001.pg > <scr>/gb/g9001.log 2>&1 &
+  DTL_ORDER=stable nohup python3 dtl/dtl_search.py x 1 --fitness gapb --seed 9002 --steps 1000000 --hb 500 --from carry/instances/gapb_dup_n20.pg --out <scr>/gb/g9002.pg > <scr>/gb/g9002.log 2>&1 &
+  DTL_ORDER=oink   nohup python3 dtl/dtl_search.py x 1 --fitness gapb --loops --seed 9003 --steps 1000000 --hb 500 --from carry/instances/gapb_dup_n20.pg --out <scr>/gb/g9003.pg > <scr>/gb/g9003.log 2>&1 &
+  Equal-step job: run1.sh ORDER N SEED START = DTL_ORDER=ORDER LALG_DIR=<scr>/lalg4 (b9b3b2b) python3 dtl/dtl_search.py x 1
+  --fitness spp --seed 5000+10N+SEED --steps 1500 --hb 100 --from START (spp_final_nN; n30 seed 3 = carry/instances/spp19_stable_n30.pg).
+Next: incomplete run; dupW/orphW > 0
 (needs a game where the duplicating player wins something); equal-step table (eq/table.sh).
 2026-10-16 ~19:50Z successor 3: tools carry/{cmf,nest,r0d,lex,umono,replay,injective}.py; dtl_search fitnesses cmf, nest3,
 r0d, lex, umono, falls, fallsdef, replay, phase. LALG_DIR worktrees <scratch>/lalg (d2ae597), lalg2 (670a762), lalg3
