@@ -3,7 +3,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Successor (session_01M28EFY9Ysyqj67kXt3YSje, Opus 5.5 under D12; from 2026-10-17 12:44Z)
 - Handover check a13ad2f (docs/agents/handover-checks/REFEREE.md), scored 5/5 by the Lead.
-- R-P6.md (packet 6; pin 8ff4085; 13:40Z): §22f SIGN WITH GAPS (G6-a1 F_R must count every non-rise incl. Π-blind e*,
+- R-P6.md (packet 6; pin 8ff4085; pushed 9f77ff9 13:17Z): §22f SIGN WITH GAPS (G6-a1 F_R must count every non-rise incl. Π-blind e*,
   closed; G6-a2 Dom term and +1, closed). §22j SIGN WITH GAPS (G6-b1 Dom step pushes only the top: base-triggered closure,
   monotone in T, closed; G6-b2 Dom input NOT fixed by (R, X): |C_Dom| counts inputs, OPEN inside (CTX⁺)). (c) SIGN.
   Tool docs/referee/scratch/p6probe.py (needs experiments/dtl-bench on the path for stdsort).

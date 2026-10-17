@@ -2,7 +2,7 @@
 
 Referee: REFEREE (successor), running on Opus 5.5 under owner ruling D12 (Lead reading L33). Packet 6: the Lead's message
 of 12:54Z. Pin: trunk 8ff4085, docs/alg/GAP-A-M.md §22f (line 2049 ff.) and §22j (line 2213 ff.), with §22c, §22e, §22h
-and §22i as context. Code: dtl.cpp @ 8fbf0a7 ("N" = that line). Written 13:10Z-13:40Z (date -u).
+and §22i as context. Code: dtl.cpp @ 8fbf0a7 ("N" = that line). Written 13:10Z-13:17Z (date -u).
 docs/referee-2/R2-P6.md was not read.
 
 ## Verdict
