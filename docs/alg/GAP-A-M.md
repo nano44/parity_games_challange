@@ -1913,3 +1913,199 @@ unconsumed rest is re-absorbed by a lower surviving top.
 - The other part of a phase is the transitions whose first difference lies after the root call: Oink 194, stable 185,
   i.e. 18% of all transitions. These are box target 3, the same frame at the first differing deeper call, which is the
   per-context problem (§21j).
+
+22c. PREFIX-MONO and the root-call bound (reading, L-ALG; DATA first, below; 11:32Z by date -u)
+Setting: one pruning round of best_vertices in context R, with input V and tangle set T.
+- Tops are processed in decreasing index order. Index order follows priority (O1), so the priorities of processed tops
+  never increase.
+- A top τ ∈ V is PROCESSED iff τ ∉ P(τ⁺), where P(τ⁺) is the union of the regions of the processed tops of higher index.
+  Then P(τ) := P(τ⁺) ∪ region(τ); otherwise P(τ) := P(τ⁺).
+- Cl_q(B) is the least superset of B closed under the threshold-q rules in R (dtl_ideal.lfp): vertex rules for
+  priorities ≤ q, and the tangle rule for an alive tangle with every vertex of priority ≤ q and every escape in the set or
+  outside R.
+- The round is STEP-IDEAL if P(τ) = Cl_{pr τ}(P(τ⁺) ∪ {τ}) for every processed τ. Otherwise it has a STEP DEFICIT.
+- DATA: a step deficit occurs whenever the final union has a deficit (U ≠ Û, §3). The converse fails rarely (5 / 16
+  root transitions, Oink / stable, have a step deficit but no final deficit).
+(S0) For every processed τ, P(τ) ⊆ Cl_{pr τ}(P(τ⁺) ∪ {τ}). This is Lemma 2.2's induction restricted to one region: every
+  derivation of the consuming attractor is a threshold-q rule whose premises lie in P(τ⁺) ∪ region(τ), and the consumed
+  set lies outside Gx = CurR.
+(S1) Cl_q is monotone in B and in T (1.2b). A set closed under the threshold-q′ rules is closed under the threshold-q
+  rules for q ≤ q′.
+Lemma PREFIX-MONO (PROVED, reading). Let V ⊆ V′ and T ⊆ T′, and let the round of the LATER run (V′, T′) be step-ideal.
+Then P(τ) ⊆ P′(τ) for every index τ.
+Proof, by induction over τ in decreasing order (P = P′ = ∅ above every top).
+- If τ is not processed in run 1, then P(τ) = P(τ⁺) ⊆ P′(τ⁺) ⊆ P′(τ).
+- If τ is processed in run 1 (τ ∈ V ⊆ V′, q = pr τ), then P(τ) ⊆ Cl_q(P(τ⁺) ∪ {τ}) by (S0).
+  - If τ is processed in run 2: P′(τ) = Cl′_q(P′(τ⁺) ∪ {τ}) ⊇ Cl_q(P(τ⁺) ∪ {τ}) by (S1).
+  - If not, τ ∈ P′(τ⁺) ≠ ∅, and P′(τ⁺) = Cl′_{q′}(…) for the last processed top τ′ > τ of run 2, with q′ = pr τ′ ≥ q.
+    So P′(τ⁺) is threshold-q closed and contains P(τ⁺) ∪ {τ}. Hence P′(τ) = P′(τ⁺) ⊇ Cl′_q(P(τ⁺) ∪ {τ}) ⊇ P(τ). □
+Corollaries, assuming the later run's round is step-ideal:
+- (C1) U(V, T) ⊆ U(V′, T′).
+- (C2) The rescue sets satisfy W_t ⊆ W′_t. The threshold loop has Gx = R, consume = None and all of Z pushed, so it
+  computes Cl_t(U) (DTL-proof 1.2).
+- (C3) Survivors: V_next ⊆ V′_next (the survivor formula S of §1 is monotone in U and W_t).
+- (C4) NO-LATER: every v ∈ U(V, T) lies, in the later run, in a region whose top has index ≥ that of its region top in the
+  earlier run (v ∈ P(τ) ⊆ P′(τ)).
+- Over all rounds: if every round of the later run is step-ideal, then V_i ⊆ V′_i for all i. So the root pruning rounds
+  never fall (RMONO), and a stable V* never shrinks. This strengthens Theorem M-cond (§3) to the prefix sets.
+POS-FALL (PROVED, reading, from PREFIX-MONO and the First-Difference Lemma, §21d, signed). Let s → s+1 have the same RV
+and the same Ψ (round unions and rescue sets), with s+1's root call step-ideal in every round, and let e* lie in the root
+call.
+- e* cannot be in a threshold loop: there its output would be strictly larger, contradicting equal Ψ.
+- So e* is the region of some top τ_j in round r. It has the same input in both searches (P(τ_j⁺) is equal, since the
+  earlier log entries are identical) and a strictly larger output.
+- So some v ∈ region′(τ_j) \ region(τ_j) exists. v ∈ U_r(s) = U_r(s+1), and v ∉ P(τ_j), so in s its region top has a
+  lower index than τ_j.
+- With (C4) for every other vertex, Φ_top := Σ_r Σ_{v ∈ U_r} (n − index of v's region top) falls strictly. □
+Theorem ROOT-BOUND (PROVED, reading). Fix a phase (G′ and p fixed). Call a transition s → s+1 CLEAN if the root call of
+s+1 is step-ideal in every round, and DIRTY otherwise. Let Π(s) := (RV(s), Ψ(s), Φ_top(s)), ordered lexicographically by
+RV pointwise ↑, then Ψ componentwise ⊆ ↑, then Φ_top ↓.
+- A clean transition whose first difference e* lies in the root call raises Π strictly: either RV rises (RMONO, ≠), or
+  RV is equal and Ψ grows strictly ((C1)-(C2), ≠ since FDL makes the output at e* strictly larger), or Ψ is equal and
+  Φ_top falls (POS-FALL).
+- A transition with e* after the root call leaves the root call, and Π, unchanged.
+- Chain heights: RV has at most n(n+1) strict rises (values 1..n+1 or INF). Ψ has at most (n+1)(d+2) components, each
+  ⊆ G′, so at most (n+1)(d+2)n strict rises. Φ_top ≤ (n+1)n² gives at most that many falls.
+- Hence, per phase: #(transitions with e* in the root call) ≤ (#DIRTY + 1)·H + #DIRTY, where
+  H := (n(n+1) + 1)·((n+1)(d+2)n + 1)·((n+1)n² + 1).
+So GAP-A at the root call reduces to ONE statement: the number of DIRTY transitions per phase (the later root call has
+a step deficit, i.e. Lemma E's straddle at some region step) is polynomial.
+DATA (dtl_rootmono.py; corpus 238 files plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29; Oink / stable):
+- Every prediction for clean root transitions holds (RMONO, Ψ monotone when RV is equal, Φ_top falls when Ψ is equal, no
+  vertex moves to a lower-index top): 689 / 689 and 673 / 673.
+- DIRTY root transitions: 179 / 174. Phases with one: 36 / 39.
+- Max dirty per phase: 12 / 10, at most 0.43 / 0.32 of |G′|. The maxima are the h4_defK families, which were built in box
+  4 to maximise deficits. There dirty = K + 1 (h4_def9/10/11_oink_n28: 10, 11, 12) and every transition of the long phase
+  is dirty.
+- Transitions with e* after the root call: 194 / 185 (box target 3).
+
+22d. Sharper, DATA only: Π rises unless RV falls (11:42Z by date -u; dtl_rootmono.py "PI at root-e* transitions")
+On all root-e* transitions (corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29; Oink / stable):
+
+| class | Oink | stable |
+|---|---|---|
+| Π rises through RV | 612 | 595 |
+| Π rises through Ψ (RV equal) | 221 | 215 |
+| Π rises through Φ_top (RV, Ψ equal) | 17 | 19 |
+| RV falls | 18 | 18 |
+| Ψ not monotone, or Π does not rise | 0 | 0 |
+
+- The 18 falls lie in 16 phases, at most 2 per phase. The two 2-fall phases are L-RED's f1_twodef_n48 and
+  f1_twofall_n48, which were built to have two falls.
+- So the DIRTY transitions that do not lower RV behave as clean ones: 161 / 156. The step deficit is real there (a
+  tangle straddles), but it does not break the order.
+- NEWX ("a tangle of T_s newly excluded at the same region step") does not separate them: 102 / 95 NEWX transitions
+  satisfy the predictions; all 18 falls are NEWX.
+Candidate (PI-RISE, DATA only): every transition whose first difference lies in the root call and whose root RV does not
+fall raises Π strictly.
+- If it holds: #root-e* transitions per phase ≤ (#FALL + 1)·H + #FALL, where #FALL counts the (M)-failures at the root
+  (RV falls).
+- Proved part: PI-RISE on clean transitions (§22c).
+- Open part: dirty transitions where RV does not fall. The step deficit there must not shrink Ψ. In the h4_defK phases
+  the same stored tangle straddles at the same top in every search, and every transition is of this kind.
+
+22e. Every context, not only the root: GAP-A ⇐ two named statements (11:54Z by date -u; dtl_rootmono.py "ANY-CONTEXT")
+Nothing in 22c uses R = G′. A best_vertices call is a deterministic function of (R, p, T): it reads no X, no str value
+before writing it, and no W, and the set of alive tangles changes only at dominions. So, for EVERY context R (any depth):
+- Π_R(T) := (RV, Ψ, Φ_top) of the call best_vertices(·, R, p) under T is a function of T.
+- PREFIX-MONO: for T ⊆ T′, if the call under T′ is step-ideal, then Π_R(T) ≤ Π_R(T′). So along a phase Π_R(T_s)
+  changes at most (D_R + 1)·H times, where D_R counts the searches s whose (possibly hypothetical) call at R has a step
+  deficit.
+The −1 attractor of search_rec (914-923) at a T piece runs on input (seeds, R, t). The seeds are determined by the
+identical preceding best_vertices call at R and by X. Its output is the plain threshold attractor, which is monotone in T
+(1.2b). So for a fixed (R, X) it changes at most n times along a phase.
+By FDL (§21d, signed), a transition's first difference e* is a tattr whose input is equal in both searches and whose
+output is strictly larger. It lies in a best_vertices call at some context R, or in a −1 attractor at some (R, X)
+(DATA: never in sptl or Dom).
+- In the first case, Π_R(T_s) ≠ Π_R(T_{s+1}). If the call of s+1 is step-ideal, the change is a strict rise (22c); a
+  dirty call can lower RV.
+- In the second case, the attractor's output strictly grows.
+Hence (PROVED, reading; given FDL, PREFIX-MONO and the 22c corollaries): per phase,
+  S − 1 ≤ Σ_{R ∈ C_bv} ((D_R + 1)·(H + 1)) + Σ_{(R,X) ∈ C_T} n,
+where C_bv is the set of distinct contexts of first-difference best_vertices calls and C_T is the set of distinct
+first-difference −1 attractor inputs. So:
+- GAP-A ⇐ (CTX) the numbers of distinct first-difference contexts |C_bv| and |C_T| per phase are polynomial, and (DIRTY)
+  D_R is polynomial for each of them.
+- This replaces box 5's S − 1 ≤ n(n+1)·contexts + #DEF + #ABS (§21j). The ABS steps are now inside the per-context
+  budget, and DEF steps matter only where RV actually falls.
+DATA at e* (corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29; Oink / stable):
+
+| at the first differing call | Oink | stable |
+|---|---|---|
+| Π rises, later call clean (depth 0 / > 0) | 814 / 25 | 787 / 25 |
+| Π rises, later call dirty (depth 0) | 161 | 156 |
+| RV falls (dirty, depth 0) | 18 | 18 |
+| Ψ not monotone, or Π does not rise | 0 | 0 |
+| e* in a −1 attractor (C_T) | 44 | 46 |
+
+- Distinct first-difference best_vertices contexts per phase: at most 8 (spp_final_n40, spp22_oink_n40) in both orders,
+  at most 0.29·|G′|.
+- Box 5's long phases (§21j table) had at most 12 first-difference contexts under its parent-context convention.
+Open: (CTX) and (DIRTY), both DATA only. (CTX) is the old "distinct contexts" core, which box 5 did not bound. What is
+new is that every absorption step at a fixed context is now paid for by a proved polynomial budget.
+
+22f. (DIRTY) sharpens to (FALL); the exact obstruction for (CTX) (12:06Z by date -u; dtl_rootmono.py "VISITS", RM_KSEQ=1)
+(FALL), DATA. Π_R compared over all pairs of CONSECUTIVE VISITS of a context R (any depth) within a phase, not only at e*
+(corpus plus gapb_dup_n20, gapbW_dup_n20, kin_viol_n29, meet_viol_n17; Oink / stable):
+
+| class | Oink | stable |
+|---|---|---|
+| equal | 5,461 | 5,310 |
+| rises through RV | 1,543 | 1,495 |
+| rises through Ψ | 698 | 679 |
+| rises through Φ_top | 93 | 100 |
+| RV falls, all at dirty calls | 73 | 72 |
+| Ψ not monotone, or Φ_top rises | 0 | 0 |
+
+- Clean visits never descend, as PREFIX-MONO predicts.
+- Descents per context per phase: at most 2 (L-RED's f1_twodef_n48 / f1_twofall_n48), and 1 elsewhere, in 16 phases.
+- So the budget D_R of §22e can be replaced by F_R, the number of descents of Π_R along the phase:
+  S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·|C_T|.
+- GAP-A ⇐ (CTX) ∧ (FALL), where (FALL) says F_R is polynomial. The data maximum is 2.
+(CTX), the obstruction, made exact.
+- A depth-0 context R_{k+1} = G′ \ (pieces 1..k) is fixed exactly while positions 1..k are frozen. Since Π_R is a function
+  of T, the transitions at any one context are bounded over the whole phase. So the count of transitions is
+  ≤ (F + 1)(H + 1)·|C|, and |C| is the only open term.
+- A new context at position k+1 needs a change at a position ≤ k. With this alone, |C| can grow like (B + 1)^k: the
+  nested-counter core of boxes 4 and 5.
+- What would cut it: monotone removal prefixes, X_k(s) ⊆ X_k(s+1). That would give ≤ n contexts per position, so
+  |C| ≤ n². It is FALSE even on clean searches. The cause is the P piece.
+  - Instance: experiments/alg/instances/spp_final_n20.pg, Oink order, Even's phase.
+  - The root call is −1 in both searches, and e* is in its threshold loop at round 4, where RV rises.
+  - prevV is {0, 12} in s and {2} in s+1, so piece 1 removes {0, 12} in s and {2} in s+1: disjoint sets.
+  - In s+1 the vertices 0, 5, 8, 9, 11 leave in piece 3 or 5 instead of 1 or 2. Depth-0 results: s = (−1, −1, 0),
+    s+1 = (−1, −1, −1, −1, 1, −1, 0).
+- Reason: a P piece removes Dom(prevV) = Z_f (YZ), the regions of the final pruning round, i.e. the LEVEL SET of maximal
+  RV. RV rising pointwise moves that level set arbitrarily (a longer pruning ends on different vertices). So the root's
+  rise reshapes every later context.
+- First-difference positions (RM_KSEQ=1): long phases are either all-root (spp_chain_up_n43: 41 transitions at
+  position 1; h4_def11: 12) or blocks of deeper positions between root transitions. For example spp22_oink_n40:
+  4 4 4 4 4 1 4 1 6 6 4 6 6 5 5 1 6 1 1 4 1.
+- A bound on (CTX) therefore needs a reason why a P piece's level-set jump cannot happen at many positions in turn.
+  Candidate to test next: does a context at position k ≥ 2 recur after a root change (the same set again)? If contexts
+  never recur, distinct contexts and transitions coincide in count.
+
+22g. Do (CTX) and (FALL) share a cause? The context tree (12:16Z by date -u; dtl_rootmono.py)
+Answer to the Lead's 12:02Z question: NO, not on the data. They have different causes, and neither implies the other.
+- (FALL) is a Lemma E effect. Every descent of Π_R (73 / 72) is at a dirty call: a stored tangle straddles a region step
+  and its unconsumed rest is re-absorbed by a lower top.
+- (CTX) grows without any straddle. The obstruction instance of 22f (spp_final_n20, Oink, Even's phase) is a CLEAN
+  transition. The root's RV rises, and the P piece Dom(prevV) = Z_f then removes a different level set ({0, 12} → {2}),
+  so all later contexts change.
+- So GAP-A ⇐ (CTX) ∧ (FALL) is two statements. Merging them into "Σ_{R ∈ C_bv} (F_R + 1) is polynomial" is a
+  restatement, not a reduction, and I do not claim it as the L32 criterion.
+The context tree (DATA). Depth-0 contexts form a tree along a phase: each context R_k has successor contexts R_{k+1}.
+- Recurrences: 433 / 425 times a context is visited, missed in some later search, then visited again. 56 / 55 phases
+  have one.
+- Distinct visited contexts at all depths reach 116 per phase (spp22_oink_n40, 21 transitions, |G′| = 38), i.e. up to
+  3.05·|G′|. Yet first-difference contexts number at most 8.
+- Distinct successors of one depth-0 context: at most 42. This is spp_chain_up_n43's root (41 transitions: an absorption
+  chain whose piece 1 changes every search). Elsewhere at most 11 (h4_def11).
+Reading (SKETCH, not proved). For a fixed context R the successor depends on the call's result and on the piece:
+- S piece: Dom(V*, R), monotone in (V*, T), and V* never shrinks at clean calls (22c).
+- T piece: Zall, monotone in T for fixed (R, X).
+- P piece: Dom(prevV). Fixed while RV at R is fixed, and monotone in T then.
+So between two RV changes at R the successor shrinks monotonically. That gives ≤ (#RV changes at R + F_R + 1)·(n + 1)
+distinct successors per context, which is polynomial. The open part of (CTX) is then only the PRODUCT over the
+positions of a search: the visited part of the context tree must be thin, whereas each node may have polynomially many
+children. That is the nested-counter core in its sharpest form so far.

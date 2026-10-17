@@ -31,25 +31,26 @@ A failure of Lemma K is observable: the run ends with unsolved vertices (the rel
 | (C-b) | a p-dominion survives a search whose pieces never reach a productive closed region (all relevant pieces removed through the −1 branch) | GAP-Cb |
 | (S2) | "a context containing a p-dominion is never pruned to −1" | FALSE (§4); the proof must follow the dominion through −1 pieces |
 | OPP-EXIT (new) | a learned tangle meets W_{1-p} only where the opponent's winning move is an edge the region forgives | PROVED (reading), §11 |
-| K-in, TW, LOW-W | progress inside W_p, from a lowest region; learned tangles never straddle W_p's boundary | DATA (§9-§11), 0 violations |
+| K-in, TW, LOW-W | progress inside W_p, from a lowest region; learned tangles never straddle W_p's boundary | KILLED (DE13, §18r): experiments/red/carry/instances/kin_viol_n29.pg (L-RED R29) |
 | K-first | the FIRST stable piece's lowest region is productive inside W_p | KILLED (§14): instances/kfirst_viol_union.pg (276 of 891 mixed searches) |
 | Theorem A | if the root call is stable, its lowest region is in W_p and is productive unless (α) | PROVED (reading), §13; stands under both readings of K5 (uses K4, K5(ii), SCC1, B-thr(ii), O0; R2 §13.3) |
 | K4-B | the first stable piece's regions lie in W_p even after −1 pieces | KILLED (§14), union games |
 | FIRST-W | the first stable piece with a p-won top is productive inside W_p | KILLED (§16): instances/firstw_viol_cross.pg |
-| GAP-K | (K-low): some stable piece's lowest region is productive inside W_p | GAP (§12, §14); DATA 0 violations incl. 2,092 mixed union searches |
+| GAP-K | (K-low): some stable piece's lowest region is productive inside W_p | KILLED (DE13, §18r): experiments/red/carry/instances/kin_viol_n29.pg (L-RED R29) |
 | K frame (18b) | K(R): D ∩ R not wholly p-attracted to X; K0 (K(G'), not K(R_end)) | K0 PROVED; route DEAD: (P-K), (K-STEP-first) KILLED by L-RED pk_viol_n20 (18f) |
 | P-K1 (18f) | Case 1 of (P-K): max priority of D ∩ R of p's parity | PROVED given (YZ), (WM) |
 | KT frame (18g) | KT(R): thresholded core at some p-parity level c | KT(G'), not KT(R_end) PROVED; (KT-STEP-first) DATA 0 violations |
 | Step 5 = P-KT (18h) | a depth-0 P piece (Dom(prevV), Q empty) keeps KT | PROVED given (YZ) only ((WM_c1) PROVED via NT-f, 18k); (YZ) DATA 0 failures |
-| S step, T step (18g) | a piece after which KT fails learns inside D (nothing learned in D before) | DATA only; S step contains (α), (β) |
+| S step, T step (18g) | a piece after which KT fails learns inside D (nothing learned in D before) | S step KILLED (DE13, §18r): experiments/red/carry/instances/kin_viol_n29.pg (L-RED R29); T step DATA (holds on that instance) |
 | NO-ORPHAN-pre, BORN-NEXT (18l, 18o) | no orphan at a call before the search's first learning; the next search absorbs every born orphan (38% of learned tangles) before it learns, or learns first | DATA only (0 violations; climbs and random 0 hits); (β') paths (i)/(ii) open for L-RED |
 | YZ-read (18h) | Dom(prevV) = final round's regions unless an X-straddling tangle fires in Dom | PROVED (reading); (YZ) itself DATA |
 | FM, FM+ (18h) | final union of a −1 call inside every earlier round's union | PROVED (18k, via NT-f); DATA 106,091/106,091 calls |
 | NT-f (18k) | the final pruning round of a −1 call accepts no stored tangle | PROVED (reading); intermediate-round analogue INV-T FALSE (c_best_s34.pg) |
 | T step split (18i) | (CORE-PASS-closed): a T piece that breaks KT hands the recursion a p-dominion of G[Z'] inside D; then (REC) | DATA 45/45; P-KT carries over to depth 1 |
-| S-LOC / S-LEVEL (18j) | S learning lies in the core of SOME KT level / of EVERY destroyed level meeting V* | S-LOC DATA 0 violations; S-LEVEL KILLED (cross_h_k1_n12_m18_17) |
+| S-LOC / S-LEVEL (18j) | S learning lies in the core of SOME KT level / of EVERY destroyed level meeting V* | S-LOC KILLED (DE13, §18r): experiments/red/carry/instances/kin_viol_n29.pg (L-RED R29); S-LEVEL KILLED (cross_h_k1_n12_m18_17) |
+| MEET, PHASE-IN (18r) | a search with W_p(G') ≠ ∅ learns a tangle meeting D (or finds a dominion); it or a later same-player search with the same G' learns inside D (or finds a dominion) | DATA only, 0 failures incl. kin_viol_n29 (§18r); weakest surviving frame statements |
 | ACYC (18h, STEP5 §6.1; GAPS G-S5-6) | the new part of every X-straddling tangle that Dom(prevV) accepts has no cycle of the tangle graph | OPEN; DATA 0 failures (climbs: new parts up to 16 vertices, all acyclic); (YZ) ⇐ (ACYC) PROVED (reading, refereed G-S5-2) |
-| S-LOW-TIGHT (18l) | at the first KT-breaking depth-0 S piece, the first pass's lowest top itself learns inside D or finds a dominion | DATA 403/403 Oink, 384/384 stable (corpus), 467/467 unions, 61/61 cross unions; reduces via K6 (closed case SIGNED) to excluding (α) (Dep(Str) form, 18q) and (β') there |
+| S-LOW-TIGHT (18l) | at the first KT-breaking depth-0 S piece, the first pass's lowest top itself learns inside D or finds a dominion | KILLED (DE13, §18r): experiments/red/carry/instances/kin_viol_n29.pg (L-RED R29) (S-LOW-D too; S-LOW "learns something" holds) |
 | K5' (18n) / K5'' (18q) | K5' (Up(Str)): proof step REFUTED (per referee, R-P3 §C / R2-P3 §6); K5'': A_< \ Reg ⊆ Dep(Str) | K5'' SIGNED by both referees |
 | First-Difference Lemma (GAP-A-M §21d) | stated on the log with repeated sptl passes deleted | PROVED (reading), signed by both referees (G-h1 closed); checker re-run 1,042 / 1,011 transitions, 0 violations |
 
@@ -1149,3 +1150,66 @@ K6, wording (G-b1, R-b; both closed):
   whose Dom then puts τ into X (879-880), so τ is in no later context of the search (R-PROVED2 §C5).
 Citations updated to the Dep(Str) form: §2 rows (K5/K6, (α), K5'/K5'', S-LOW-TIGHT), §17 Step 1, §18l Reduction, §18p
 ledger, DTL-proof.md K5 and K6 notes, C6-DTLhat.md.
+
+### 18r. DE13 (L-RED R29, kin_viol_n29): which links of the KT chain die, and what survives (11:19Z by date -u)
+Instance experiments/red/carry/instances/kin_viol_n29.pg (n = 29, sha1 50987098...).
+- Pinned Oink (`--dtl --no-single --no-wcwc --no-loops`) re-run by L-ALG: 2 dominions, 15 tangles, 8 iterations,
+  verified.
+- Search 0 (Even, |D| = |W_0(G')| = 9, no dominion) has one stable piece that removes all of D. It learns {10,12} and
+  {14} (outside D) and the straddling {0,4,6,10,12,16,20,26,27} (3 vertices in D, 6 in W_1; file ids, both orders).
+- Search 1 learns inside D at depth 1; search 2 finds the dominion.
+DEAD links (L-ALG's unmodified tools, both order data; DEAD.md):
+- The S step of the KT frame (18g/18i: "a piece after which KT fails learns inside D"). At this S piece KT breaks barren:
+  dtl_step5stats.py "KT broken by S VIOLATION", "S-STEP ... VIOLATION barren".
+- Every S-step refinement: (S-LOW-D), (S-LOW-TIGHT) (18l), (S-LOC) (18j), (LASTD) at S and T pieces, (KT-STEP-first) and
+  K/KTHR at an S piece.
+- The search-level statements: (K-in), (TW), (LOW-W) = (K-low) (§9-§12, GAP-K).
+- The reduction of 18l, "Lemma K ⇐ (ACYC) + (S-LOW) at every depth + (CORE-PASS-closed) + REC": its S-LOW part is dead,
+  so the KT chain no longer reaches Lemma K. Every reduction that assumed learning INSIDE D at the KT-breaking piece goes
+  with it, including the S-step use of K6 and of the Dep(Str) (α) (§18q).
+- Those lemmas themselves stay true (signed). They no longer close the chain.
+Not affected:
+- R4 (P-KT for P pieces given (YZ); ACYC), R5 (packet 2), packet 3 (K5'', O-P, the GAP-A first step).
+- The T-step data on this instance: the KT-breaking T piece's recursion learns inside the core.
+- (S-LOW), "learns something" (2/2 here).
+- The plain Lemma K: search 0 learns 3 tangles.
+What survives, from the weakest up (dtl_meetd.py; Oink / stable). (IN) is (K-in) plus dominions.
+| statement | corpus (all searches with D ≠ ∅) | mixed unions s1 | mixed cross unions s11 |
+|---|---|---|---|
+| (IN) | FAILS 1 (kin) | FAILS 7 / 7 (unions with kin) | FAILS 1 / 1 |
+| (K) plain Lemma K: learns or finds a dominion | 862 / 851 | 1,497 / 1,523 | 302 / 309 |
+| (MEET) learns a tangle meeting D, or a dominion | 862 / 851 | 1,497 / 1,523 | 302 / 309 |
+| (PHASE-IN) it or a later same-player search (same G') learns inside D or finds a dominion | 862 / 851 | 1,497 / 1,523 | 302 / 309 |
+| (PHASE-IN-MEET) both of the above | 862 / 851 | 1,497 / 1,523 | 302 / 309 |
+The corpus and union files include kin_viol_n29, kfirst_viol_n13 and pk_viol_n20; the union rows count mixed searches
+only (|W_{1-p}| ≥ 3).
+Weakest surviving frame statement (for L-RED's successor): (PHASE-IN-MEET). Every search with W_p(G') ≠ ∅ learns a
+tangle meeting W_p(G') or finds a dominion, and within its phase some search learns inside W_p(G') or finds a dominion.
+It is the strongest one that survives, so attacking it tests both halves. For a proof, (MEET) is the natural
+replacement for (K-in): on this instance the straddling tangle meets D in 3 vertices. Per the Lead, no new GAP-C proof
+attempt in box 7.
+Additions to §18r (11:58Z by date -u):
+- (PHASE-IN) at every search is EQUIVALENT to completeness of the phase. This is L-RED succ. 5's reading, checked by the
+  Lead and by L-ALG against dtl.cpp 1068 and 1106-1121, dtl.hpp:33.
+  - run() is non-interleaved: `while (G.any()) { ...; if (!search(0)) break; }`, then the same loop for Odd. search()
+    returns `tangles != T or dominions != D`.
+  - So player p keeps searching exactly while its last search learned something. A same-G′ search that learns nothing
+    while D ≠ ∅ makes the run incomplete. If every later same-G′ search learns, finiteness gives a dominion.
+  - Hence PHASE-IN's 0 failures are the fact "0 incomplete runs", not independent evidence. (PHASE-IN-MEET) has no more
+    content than (MEET), and (MEET) was the only local statement left.
+- (MEET) is FALSE (RESULTS DE15; L-RED R30, l-red 06cd9f8). Instance experiments/red/carry/instances/meet_viol_n17.pg
+  (n = 17, sha1 ab329297).
+  - L-ALG re-run: pinned Oink `--dtl --no-single --no-wcwc --no-loops`: 2 dominions, 4 tangles, 6 iterations, verified.
+    dtl_meetd.py, both orders: "(MEET) FAILS search 0 p=0 |G′|=17 |D|=7 new=[[7, 10, 11, 14]]", with (K) 5/5 and
+    (PHASE-IN) 5/5.
+  - Mechanism (L-RED): a T piece eats D-vertex 1, which cuts Odd's escape 2 → 1. One S piece then Even-attracts the
+    rest of D into the closed region of top 14, whose core cycle lies in W_1. Only that core is learned. Searches 1-3
+    learn inside D and find the dominion.
+  - So no single-search progress statement toward D survives. A GAP-C proof needs a cross-search progress measure,
+    which is GAP-A-type.
+- Ledger question (Lead 11:52Z): does the ROOT-BOUND frame (GAP-A-M §22c-e) say anything about searches that learn only
+  in W_{1-p}? Only this: it bounds phase LENGTH, whatever the learned tangles are. Each transition s → s+1 inside a phase
+  raises Π at its first-difference context, whether s learned inside D, in W_{1-p}, or straddling. So given (CTX) and
+  (DIRTY), a run of searches that learn only in W_{1-p} is polynomially long. The frame does NOT say that such a run ends
+  in a dominion rather than a barren search: it assumes s+1 exists. It gives no progress toward D, and so nothing toward
+  GAP-C beyond "if the phase continues, it is short".

@@ -1,4 +1,4 @@
-# L-RED notebook (independent adversary). Successor 4 (Opus 5.5, owner D8) from 2026-10-17 04:22Z (date -u); successor 3 before
+# L-RED notebook (independent adversary). Successor 5 (Opus 5.5, owner D8) from 2026-10-17 11:16Z (date -u); successor 4 (04:22Z-11:06Z) before
 Previous: session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, parked 15:20Z); before it session_0117Yy21tGGz9s1zzLfBdUKC (Fable).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh > file 2>&1; echo $?`.
@@ -52,6 +52,19 @@ Status: WORKING (box 6, Lead GO 04:29Z, to ~12:30Z Lead clock). Box-5 status lin
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-17 11:42Z (date -u) BOX 7 (successor 5, produced on Opus 5.5; session_01DT8bvW9MGLgZURmnwB2JAc). Lead GO 11:32Z, box to
+~19:30Z, check-in ~15:30Z. Handover check dfb5b4d (5/5).
+DONE: R30 (docs/red/R30-meet.md): (MEET) of GAP-C §18r FALSE, meet_viol_n17 (sha1 ab329297) / meet_viol_n29 (sha1 4796d6b1),
+both orders, run complete; dtl_meetd.py unmodified (l-alg 2a715cd) + pinned Oink (meet/oinkmeet.sh maps Oink ids by
+reproducing game.cpp std::sort, meet/omap.cpp). (PHASE-IN) = phase completeness (dtl.cpp 1068, 1106-1121), sent to the Lead.
+MY ERROR: the 1st box-7 message header said 11:52Z; the real time was 11:33-11:36Z (date -u). Correct it in the next message.
+RUNNING (scratch $S = /tmp/claude-0/-home-user-parity-games-challange/2cc0a884-c4b4-5edd-9f4e-55447f6586ac/scratchpad; env in
+$S/env.sh; LALGM_DIR = $S/lalg = l-alg 2a715cd worktree): climbs m10001 (oink) / m10002 (stable) --fitness meet from
+kin_viol_n29 (scratch mt/); umeet.py seeds 21 (CMAX 12) and 22 (CMAX 16), NMAX 30 (scratch um/, um2*.log).
+NEXT: target (2) GAP-A-M §22 (POS-FALL), #DEF_root growth; (3) (beta') path (i); (4) K5'.
+TRAP (new): `until ! pgrep -f setup_oink.sh` never ends (pgrep matches the loop's own command line); wait on a file instead.
+
+## Resume point (successor 4, history)
 2026-10-17 11:06Z (date -u) BOX 6 FINAL (successor 4, produced on Opus 5.5; parked at the Lead's 11:05Z order, context 623k).
 NEW since the 10:16Z handover notes below:
 - R29 (2455159): (K-in), (K-low)/(LOW-W), (TW), (S-LOW tight) and (KT-STEP-first at an S piece) FALSE on A_DTL, both

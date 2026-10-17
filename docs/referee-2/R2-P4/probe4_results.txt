@@ -1,0 +1,6 @@
+FDL str probe (corpus 254 files x 2 in-orders x 2 labellings, 1014 runs; random gen.py 1-3000 x 2 in-orders, 6000 runs):
+consecutive same-phase pairs 4290 pairs with no set-level difference 0 pairs where s+1 learns before the first set difference 0
+first-difference tag (1 region, 2 rescue level, 3 -1 attractor, 4 Dom), corpus x 2 in-orders, labelling 0:
+    282 R2EST 1 1
+    766 R2EST 2 2
+     43 R2EST 3 3
