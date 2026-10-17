@@ -164,3 +164,8 @@ R7, R8, R9 [refereed-only] landed (trunk 1501aad; Opus referees D12, CHECKER PAS
 ## 2026-10-17 16:58Z Lead (relayed to owner)
 R11 [refereed-only] landed (trunk af07389; Opus D12, CHECKER C11 PASS): only fired tangles matter; GAP-A <= (CTX+) & (STEAL-ONCE*)
 & (FIRED-R), all data only. GAP-A, GAP-C open. No overage, no incorrect run, no super-polynomial family.
+
+## 2026-10-17 19:37Z Lead (relayed to owner)
+DE20 (trunk efff851): (STEAL-ONCE*) false on stealonce_viol_n76 (Oink verified; <=2 steals per quadruple, not super-polynomial; run
+correct). R11 (a)-(c) stand, (d) conditional no longer reduces GAP-A as stated; post-landing note. Weaker replacement under test.
+L-ALG and L-RED handed over (~600k context), successors 5/5.
