@@ -4,7 +4,9 @@
 union as L-ALG's experiments/alg/dtl_firedclimb.fitness (dtl_rootmono.RM UNMODIFIED with RM_EXCL=1, RM_LIGHT=1, RM_DV=0;
 LALGR_DIR = l-alg >= 43302c11), plus the long-phase filter. Per context visited >= 2 times in a phase with S >= 2|R|:
 fired = distinct tangles fired over the phase. Score: 1e12 incomplete + 1e7 * (max fired/|R| per mille) + 1e4 * that
-context's fired + max S/|R| (x10) over the counted contexts. Usage: firedlong.py G.pg ... (order from DTL_ORDER)"""
+context's fired + max S/|R| (x10) over the counted contexts. Usage: firedlong.py G.pg ... (order from DTL_ORDER)
+FLGRAD=1 (box 8, climbs only; the printed measure is unchanged): when no context is counted, the score is
+min(999, 100 * max over contexts visited >= 2 times of S/(2|R|)) (how close a context is to the long-phase filter)."""
 import sys, os
 for k, v in (("RM_DV", "0"), ("RM_LIGHT", "1"), ("RM_EXCL", "1")): os.environ.setdefault(k, v)
 sys.path.insert(0, os.path.join(os.environ["LALGR_DIR"], "experiments", "alg"))
@@ -16,13 +18,14 @@ FD = RMo.FD
 def measure_game(g, order):
     os.environ["DTL_ORDER"] = order
     d0 = FD.P.X.build(g); d = RMo.RM(d0.pr, d0.ow, d0.outs, ins_desc=(order == "oink")); d.idx = d0.idx; d.run()
-    m = dict(incomplete=int(not all(w is not None for w in d.win)), ratio=0.0, fired=0, R=0, S=0, SR=0.0, maxS=0)
+    m = dict(incomplete=int(not all(w is not None for w in d.win)), ratio=0.0, fired=0, R=0, S=0, SR=0.0, maxS=0, near=0.0)
     for ph in FD.phase_rows(d):
         S = len(ph); m["maxS"] = max(m["maxS"], S); visits = {}
         for r in ph:
             for rc in r["recs"]: visits.setdefault(rc["key"], []).append(rc)
         for key_, vl in visits.items():
             R = len(key_[1])
+            if len(vl) >= 2 and R > 0: m["near"] = max(m["near"], S / (2 * R))
             if len(vl) < 2 or R == 0 or S < 2 * R: continue
             fired = set()
             for rc in vl:
@@ -35,6 +38,7 @@ def measure_game(g, order):
 
 def score(path):
     sys.setrecursionlimit(100000); m = measure_game(pg.read(path), os.environ.get("DTL_ORDER", "stable"))
+    if os.environ.get("FLGRAD") == "1" and m["SR"] == 0 and not m["incomplete"]: return min(999, int(100 * m["near"]))
     return int(1e12 * m["incomplete"] + 1e7 * min(int(1000 * m["ratio"]), 9999) + 1e4 * min(m["fired"], 999) + min(int(10 * m["SR"]), 9999))
 
 

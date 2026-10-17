@@ -15,9 +15,18 @@ in experiments/red/check.sh and verified by pinned Oink 8fbf0a7 (`--dtl --no-sin
 ## 2. Depth ≥ 2: not found yet
 - Shape needed (Lemma CHARGE, GAP-A-M §23g): the cause of a re-steal must itself be a re-steal, a three-level toggle
   T0 < A < B < C. Here the steal at A's step is by B, then C steals B's tangle so that A refires, and B steals A's new tangle.
-- Searches so far (stable unless noted, root/depthfit.py = dtl_stealdepth.analyze unmodified): one-edge neighbourhood of
-  stealonce_viol_n76 at 8 vertices (235 variants: max k 2, max depth 1); stealk climbs (both orders, ~1 h: k 2 stable, 1 Oink);
-  depth climbs from stealonce_core_n76 and stealonce_viol_n76 (both orders) and a one-edge depth scan of the core: running.
+- Searches, 20:20Z-21:09Z by date -u (stable unless noted; root/depthfit.py = dtl_stealdepth.analyze unmodified, l-alg 931fc221):
+  - one-edge neighbourhood of stealonce_viol_n76 at 8 vertices (235 variants, permgap): max k 2;
+  - one-edge neighbourhood of stealonce_core_n76 at 10 vertices (764 variants, depthfit): max k 2, max depth 1;
+  - stealk climbs (both orders, ~1 h): k 2 stable, k 1 Oink;
+  - depth climbs, 40 min each: from the core (stable, 820 steps), from stealonce_viol_n76 (stable 250 steps, Oink 500 steps).
+    Best: max depth 1, max k 2; the core climb reached 26 re-steals of depth 1.
+- The re-steals in a climbed core (sha1 7cbcf835, 13 of them at that point) are ONE event repeated in 8 nested depth-0
+  contexts (|R| 70, 69, 65, 63, 62, 60, 59, 58), each with the same cause (step (5, 66), tangle 5, depth 0). That is
+  replication across contexts, at most 2 per context; it is not branching inside a context.
+- Reading (L-RED): depth ≥ 2 needs the cause of a re-steal to be a re-steal. Then the phase must hold ≥ 2 more toggles
+  before the base re-steal. The R35 phase has 9 searches and the core's has 4, which leaves no room. A depth-D chain
+  needs a phase of about 2D + 2 searches with every level active, so phase length is the resource to build next.
 
 ## 3. (FIRED-STEP) per-step counts (GAP-A-M §23d candidate: bounded by a constant c)
 - File experiments/red/carry/instances/firedstep13_n76.pg (sha1 68df1c0d23fa2e91401338d325f4b873b2a0b815), found by a
