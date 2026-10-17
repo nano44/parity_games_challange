@@ -20,6 +20,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   signature. R-P8 §C (c0edb9c): full agreement with R2-P8 (STEAL-ONCE*, G8-2 accepted). Standing by, nothing in flight (16:09Z).
 - R-P9.md (packet 9; pin c5e2b4d): (a) SIGN; CHARGE SIGN WITH GAPS (G9-b1 notation P(τ)=P(τ⁺), G9-b2 short visits; G23g-1/2
   checked); depth/counting SIGN WITH GAPS (G9-c1 needs FIRED-R; constant D only); stealonce_viol_n76 confirmed. Tool p9charge.py.
+- R-P9 §C: agreement with R2-P9; my N9-a1 WITHDRAWN (R2-P8 §7 was added after I read R2-P8). Lesson: re-fetch a
+  referee-2 file before saying a section does not exist.
 - Lesson: Lemma 1.2 assumes Q = Z_0; Dom (878-890, 962-991) and bv regions push only the top. Check the push pattern.
 
 ## HANDOVER (parked 2026-10-17 ~12:20Z on the Lead's instruction; context ~520k; produced on Opus 5.5 under D12/L33)
