@@ -6,10 +6,13 @@ transitions: Ψ NOT monotone | DOES NOT RISE" (PI-RISE broken), RMONO falls per 
 that phase's length; from l-alg >= c983b024 also "ANY-CONTEXT e*" (§22e: Ψ NOT monotone, Π DOES NOT RISE, RV falls at a
 CLEAN later call, or "impossible by FDL" count as hits; ABS-pw is already dead and is NOT a hit) and the distinct
 first-difference contexts per phase; from l-alg >= c8df405d also "descents of Π_R per context" (§22l (FALL)).
-Modes (ROOTFIT = dirty | falls | ctx | fall):
+From l-alg >= 473edc4b with RM_EXCL=1 (set by mode steal): "RELEVANT new-steal visits per context" (§22s (RELSTEAL))
+and "NEW STEALS per (context, round, top, tangle): max K" (§22t (STEAL-ONCE): K >= 2 is a hit).
+Modes (ROOTFIT = dirty | falls | ctx | fall | steal):
   dirty: 1e11 hit + 1e7 * max dirty per phase + 1e4 * (dirty phase transitions) + |G'| of that phase
   falls: 1e11 hit + 1e7 * max RV falls per phase + 1e4 * max dirty per phase
   fall:  1e11 hit + 1e7 * max descents of Π_R at one context in one phase + 1e4 * total descents + max RV falls per phase
+  steal: 1e11 hit + 1e7 * max relevant new-steal visits at one context + 1e4 * their total + max new-steal visits
   ctx:   1e11 hit + 1e7 * max distinct first-difference contexts per phase + 1e4 * that phase's transitions + |G'|
 Usage: rootfit.py G.pg ... (prints score and the parsed dict)."""
 import sys, os, re, subprocess, ast
@@ -18,9 +21,10 @@ JUDGE = os.path.join(os.environ.get("LALGR_DIR", ""), "experiments", "alg", "dtl
 
 def measure(path, order=None):
     env = dict(os.environ); env["DTL_ORDER"] = order or os.environ.get("DTL_ORDER", "stable"); env["RM_DV"] = "0"
+    if os.environ.get("ROOTFIT") == "steal": env["RM_EXCL"] = "1"
     out = subprocess.run([sys.executable, JUDGE, os.path.abspath(path)], capture_output=True, text=True, env=env,
                          timeout=600, cwd=os.path.dirname(JUDGE)).stdout
-    m = dict(hit=0, maxdirty=0, phlen=0, phG=0, maxfalls=0, clean=0, dirty=0, ctx=0, ctxlen=0, ctxG=0, desc=0, desctot=0)
+    m = dict(hit=0, maxdirty=0, phlen=0, phG=0, maxfalls=0, clean=0, dirty=0, ctx=0, ctxlen=0, ctxG=0, desc=0, desctot=0, rsteal=0, rstealtot=0, nsteal=0, once=0)
     for line in out.splitlines():
         if line.startswith("phases with dirty root transitions"):
             rows = ast.literal_eval(line.split(": ", 1)[1])
@@ -28,6 +32,12 @@ def measure(path, order=None):
         elif line.startswith("distinct first-difference contexts per phase"):
             rows = ast.literal_eval(line.split(": ", 1)[1].rsplit(" max contexts", 1)[0])
             if rows: m["ctx"], m["ctxlen"], m["ctxG"] = rows[0][1], rows[0][2], rows[0][3]
+        elif line.startswith("RELEVANT new-steal visits per context"):
+            rows = ast.literal_eval(line.split(": ", 1)[1].rsplit(" phases:", 1)[0])
+            if rows: m["rsteal"], m["rstealtot"] = max(r[1] for r in rows), max(r[2] for r in rows)
+        elif line.startswith("new-steal visits per context"):
+            rows = ast.literal_eval(line.split(": ", 1)[1].rsplit(" phases:", 1)[0])
+            if rows: m["nsteal"] = max(r[1] for r in rows)
         elif line.startswith("descents of Π_R per context"):
             rows = ast.literal_eval(line.split(": ", 1)[1].rsplit(" phases:", 1)[0])
             if rows: m["desc"], m["desctot"] = max(r[1] for r in rows), max(r[2] for r in rows)
@@ -43,6 +53,9 @@ def measure(path, order=None):
                 if k.startswith("ANY-CONTEXT") and ("NOT monotone" in k or "DOES NOT RISE" in k or "impossible" in k
                                                     or ("RV falls" in k and "later call clean" in k)):
                     m["hit"] += v
+                if k.startswith(("NEW STEALS per (context, round, top, tangle): max", "RELEVANT STEALS per (context, round, top, tangle): max")):
+                    km = int(k.rsplit("max ", 1)[1]); m["once"] = max(m["once"], km)
+                    if km >= 2: m["hit"] += v
                 if k.startswith("CLEAN root transition"): m["clean"] += v
                 if k.startswith("DIRTY root transition"): m["dirty"] += v
     if "Traceback" in out or not out.strip(): m["hit"] = 0; m["error"] = 1
@@ -50,6 +63,8 @@ def measure(path, order=None):
 
 
 def score_m(m):
+    if os.environ.get("ROOTFIT", "dirty") == "steal":
+        return 1e11 * (m["hit"] > 0) + 1e7 * min(m["rsteal"], 999) + 1e4 * min(m["rstealtot"], 999) + min(m["nsteal"], 999)
     if os.environ.get("ROOTFIT", "dirty") == "fall":
         return 1e11 * (m["hit"] > 0) + 1e7 * min(m["desc"], 999) + 1e4 * min(m["desctot"], 999) + min(m["maxfalls"], 999)
     if os.environ.get("ROOTFIT", "dirty") == "ctx":
