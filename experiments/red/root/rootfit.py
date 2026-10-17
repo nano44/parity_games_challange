@@ -11,13 +11,17 @@ and "NEW STEALS per (context, round, top, tangle): max K" (§22t (STEAL-ONCE): K
 "max tangles: K" = distinct tangles FIRED at one context over a phase (§22u (FIRED-R)), mode fired (RM_EXCL=1).
 From l-alg >= e2f7e198 with RM_EXCL=1 RM_PREF=1 (mode stealer): "STEALER-MONO (...): FAILS" and "STOLEN-PERM (...): FAILS"
 are hits (§23a).
-Modes (ROOTFIT = dirty | falls | ctx | fall | steal | fired | firedr | stealer):
+Mode stay (Lead 17:58Z, after DE19): hits are (STEAL-ONCE*) "RELEVANT STEALS per (context, round, top, tangle): max k"
+with k >= 2, and (STAYS-MET) any "NO-REFIRE after a relevant steal: ..." outcome other than "never refires | stays met";
+STEALER-MONO (dead, DE19) is NOT a hit in this mode.
+Modes (ROOTFIT = dirty | falls | ctx | fall | steal | fired | firedr | stealer | stay):
   dirty: 1e11 hit + 1e7 * max dirty per phase + 1e4 * (dirty phase transitions) + |G'| of that phase
   falls: 1e11 hit + 1e7 * max RV falls per phase + 1e4 * max dirty per phase
   fall:  1e11 hit + 1e7 * max descents of Π_R at one context in one phase + 1e4 * total descents + max RV falls per phase
   fired: 1e11 hit + 1e7 * max distinct fired tangles at one context + 1e4 * (max tangles/|R| in per mille)
   firedr: 1e11 hit + 1e7 * (max tangles/|R| in per mille) + max distinct fired tangles (ratio first: > 1000 needs
          more fired tangles at one context than |R|, i.e. several visits)
+  stay:  1e11 hit (STEAL-ONCE* / STAYS-MET) + 1e7 * max relevant steal visits at one context + NO-REFIRE checks
   stealer: 1e11 hit (STEALER-MONO / STOLEN-PERM fails) + 1e7 * max relevant steal visits at one context + STEALER-MONO checks
   steal: 1e11 hit + 1e7 * max relevant new-steal visits at one context + 1e4 * their total + max new-steal visits
   ctx:   1e11 hit + 1e7 * max distinct first-difference contexts per phase + 1e4 * that phase's transitions + |G'|
@@ -28,11 +32,11 @@ JUDGE = os.path.join(os.environ.get("LALGR_DIR", ""), "experiments", "alg", "dtl
 
 def measure(path, order=None):
     env = dict(os.environ); env["DTL_ORDER"] = order or os.environ.get("DTL_ORDER", "stable"); env["RM_DV"] = "0"
-    if os.environ.get("ROOTFIT") in ("steal", "fired", "firedr", "stealer"): env["RM_EXCL"] = "1"
-    if os.environ.get("ROOTFIT") == "stealer": env["RM_PREF"] = "1"
+    if os.environ.get("ROOTFIT") in ("steal", "fired", "firedr", "stealer", "stay"): env["RM_EXCL"] = "1"
+    if os.environ.get("ROOTFIT") in ("stealer", "stay"): env["RM_PREF"] = "1"
     out = subprocess.run([sys.executable, JUDGE, os.path.abspath(path)], capture_output=True, text=True, env=env,
                          timeout=600, cwd=os.path.dirname(JUDGE)).stdout
-    m = dict(hit=0, maxdirty=0, phlen=0, phG=0, maxfalls=0, clean=0, dirty=0, ctx=0, ctxlen=0, ctxG=0, desc=0, desctot=0, rsteal=0, rstealtot=0, nsteal=0, once=0, fired=0, firedratio=0.0, smono=0)
+    m = dict(hit=0, maxdirty=0, phlen=0, phG=0, maxfalls=0, clean=0, dirty=0, ctx=0, ctxlen=0, ctxG=0, desc=0, desctot=0, rsteal=0, rstealtot=0, nsteal=0, once=0, fired=0, firedratio=0.0, smono=0, stayhit=0, norefire=0)
     for line in out.splitlines():
         if line.startswith("phases with dirty root transitions"):
             rows = ast.literal_eval(line.split(": ", 1)[1])
@@ -68,6 +72,10 @@ def measure(path, order=None):
                     km = int(k.rsplit("max ", 1)[1]); m["once"] = max(m["once"], km)
                     if km >= 2: m["hit"] += v
                 if ("STEALER-MONO" in k or "STOLEN-PERM" in k) and k.rstrip().endswith("FAILS"): m["hit"] += v
+                if k.startswith("RELEVANT STEALS per (context, round, top, tangle): max") and int(k.rsplit("max ", 1)[1]) >= 2: m["stayhit"] += v
+                if k.startswith("NO-REFIRE after a relevant steal"):
+                    m["norefire"] += v
+                    if not ("never refires" in k and "stays met" in k): m["stayhit"] += v
                 if "STEALER-MONO" in k: m["smono"] += v
                 if k.startswith("CLEAN root transition"): m["clean"] += v
                 if k.startswith("DIRTY root transition"): m["dirty"] += v
@@ -76,6 +84,8 @@ def measure(path, order=None):
 
 
 def score_m(m):
+    if os.environ.get("ROOTFIT", "dirty") == "stay":
+        return 1e11 * (m["stayhit"] > 0) + 1e7 * min(m["rsteal"], 999) + min(m["norefire"], 9999)
     if os.environ.get("ROOTFIT", "dirty") == "stealer":
         return 1e11 * (m["hit"] > 0) + 1e7 * min(m["rsteal"], 999) + min(m["smono"], 9999)
     if os.environ.get("ROOTFIT", "dirty") == "firedr":
