@@ -12,7 +12,7 @@ the algorithm unchanged. Also there: k5.pg, climbdup.py and probe2_results.txt.
 | item | verdict |
 |---|---|
 | (a) Lemma SCC1 (GAP-C §3) | **SIGN** |
-| (b) Lemma B-thr, corrected (GAP-C §3) | **SIGN WITH GAPS**: (i), (ii) signed. (iii) has one OPEN gap, G-b1, and two closed wording gaps, G-b2 and G-b3 |
+| (b) Lemma B-thr, corrected (GAP-C §3) | **SIGN WITH GAPS**, all gaps closed (revised 10:00Z, §13): (i), (ii) signed. (iii) holds in the stronger form "(a) always" (REFEREE F-b3, which I accept). G-b1 is closed in §13 |
 | (c) Theorem A (GAP-C §13), root-call-stable case, given no (α) | **SIGN WITH GAPS**: G-c1 (which sptl pass; reading fixed), G-c2 (DTL-proof K5 (i)/(iii) is false as written; Theorem A does not need it under my reading) |
 | (d) Lemma O0, Lemma O1 (GAP-C §6) | **SIGN** (both) |
 | (e) Lemma OPP-EXIT (GAP-C §11) | **SIGN WITH GAPS**: G-e1 (the "i.e." clause; closed by the same proof) |
@@ -24,7 +24,7 @@ the algorithm unchanged. Also there: k5.pg, climbdup.py and probe2_results.txt.
 | (k) (SPP) ⇒ searches ≤ n(n+2) and O(n^10(m+n²)), bit cost (TARGET.md §3) | **SIGN WITH GAPS**: G-k1 (Lemma W needs SCC1; closed by (a)), G-k2 (a factor 2 in DTL-proof §3(c); harmless) |
 
 No REJECT.
-- One gap is open: G-b1, a missing case in B-thr (iii).
+- One gap was open at first push: G-b1, a missing case in B-thr (iii). It is CLOSED in §13 (revision of 10:00Z).
 - One finding lies outside the packet: DTL-proof K5 (i) and (iii) are false as written. The instance is k5.pg (4 vertices),
   and a corrected form is in §3. GAP-C's map lists K5 as PROVED. Only the meaning of "(α)" depends on K5.
 
@@ -262,7 +262,7 @@ count is ≤ 2n(d+1) + 1. The O-bound is unchanged.
 Not checked: (SPP) itself (DATA only), and completeness, which this item does not need.
 
 ## 12. Remaining hypotheses and open points (for GAPS.md)
-- G-b1 (OPEN): B-thr (iii) for a tangle created in the current search after its last in-G' escape left the context chain.
+- G-b1 (CLOSED in §13; it was OPEN at first push): B-thr (iii) for a tangle created in the current search after its last in-G' escape left the context chain.
   Closed within one S piece's pass sequence. Open across S pieces: it needs t ⊆ Dom(V, R) of its S piece, a
   union-monotonicity statement. DATA 0 cases.
 - G-c2 (finding, outside the packet): DTL-proof K5 (i) and (iii) are false as written (k5.pg). Corrected form in §3.
@@ -278,3 +278,90 @@ Not checked: (SPP) itself (DATA only), and completeness, which this item does no
   - G-k2: factor 2 in §3(c).
 - Unchanged open problems these items reduce to: (SPP) (DATA), GAP-C completeness (Lemma K), (α), (ACYC).
 - Nothing here is Lean-checked.
+
+## 13. Comparison with the first referee, and revisions (10:00Z by date -u)
+I read docs/referee/R-PROVED2.md (referee 50f2546, pin 43d63b0) after 581902f was pushed. The Lead asked about three
+points (10:13Z, Lead clock). My answers follow.
+
+### 13.1 First-Difference Lemma, G-h1: my closure is correct, also in the "orphan in s+1" case
+REFEREE's scenario is the case my §8 treats:
+- s learns t in pass 1 of an S piece.
+- s+1 re-finds the same SCC in its pass 1. It is now a duplicate, so `more` is false and s+1 goes straight to Dom.
+- s runs pass 2 first.
+REFEREE notes that a positional log then misaligns. I agree, and this is why I stated (ii) on the log with s's repeated
+passes deleted. What remains to check is REFEREE's condition for that option (2): the extra pass of s adds no tangle and no
+W bit. It holds:
+- Suppose s and s+1 agree on every tattr of the S piece's pass 1. This is the premise: e lies later.
+- Compare, region by region, s's pass 2 with s+1's pass 1. Every region has the same input, because the consumed sets are
+  equal by induction.
+- The tangle sets are ordered: s pass 1 at region j ⊆ s pass 2 at region j ⊆ T_{s+1}. These are T_s plus the tangles
+  learned at higher tops of pass 1; then T_s plus all of pass 1; then T_s^end.
+- By 1.2b, out(s p1) ⊆ out(s p2) ⊆ out(s+1 p1) = out(s p1). So every region of s's pass 2 equals its pass-1 region as a set.
+- Closedness is a set property: for a p-top, str[top] ≠ −1 iff some successor of the top is popped in the region (73); for
+  an opponent top, 519-525. So pass 2 has the same closed tops as pass 1, and each is already in W (529). Pass 2 extracts
+  nothing, learns no tangle and sets no W bit.
+- s+1's pass 1 learns nothing: its SCCs are those of s's pass 1, which are stored. So s+1 has exactly one pass, with the
+  same W as s.
+- After deleting s's pass 2, the next tattrs are both Dom(V, R) with the same input (V, R, X). The W sets are equal, and
+  the tangle sets satisfy T_s^{Dom} ⊆ T_{s+1}.
+- So (ii) holds on the reduced log. (iii) does too: the tangles learned by s before e are in T_s^e, so the difference at e
+  comes from tangles learned after e.
+- REFEREE's worry that "the W difference can let s+1 extract at a later top" does not arise, because the W sets are equal.
+Verdict on (h) after comparison: SIGN WITH GAPS (Opus 5.5, D12). G-h1 is a real defect of the statement as written; it is
+closed by stating (ii) and (iii) on the log with repeated sptl passes deleted, with the proof above. REFEREE marks it OPEN.
+This is our only disagreement on substance. A checker with positional alignment (dtl_fdlcheck.py) must drop repeated passes
+to match the lemma.
+
+### 13.2 B-thr: REFEREE's F-b3 is correct, and it leads to closing my G-b1
+- F-b3, checked at 944-948.
+  - Every vertex moved to X at 936-950 is pushed (940, or 90) and popped (945).
+  - At its pop, attractVertices(1−p, u, Z, X, Z, t) adds every predecessor from ∈ Z with pr(from) ≤ t that is owned by
+    1−p, with no escape test: owner(from) = pl skips 76-86. Every vertex of Z has priority ≤ t (921).
+  - Escapes are successors of opponent vertices (329-337). So when an escape e ∈ Z of t moves to X, the opponent vertex
+    o ∈ t ∩ Z with o → e moves to X as well. Then t is not inside the recursion context.
+  - So branch (b) is vacuous, and B-thr holds as "(a) always". GAP-β = (β-a).
+- This also removes my G-b2 remark that "in the partial −1 case both hold". That case cannot occur. If t is partly in the
+  −1 attractor's Z at e's pop:
+    - If t ends inside Z, then e (in Z) moves to X and drags o along.
+    - Otherwise t is split between X ∪ Z' and the remaining R, so t ⊄ R_dup.
+  I withdraw that remark. My reading of "which pop" stands; it is the same as REFEREE's G-b2.
+  My G-b3 (escapes solved before the search, via O0) is REFEREE's G-b1.
+- My G-b1 is CLOSED by a different argument, which does not use F-b3.
+  - Let t be created in the current search s, by extractTangles at the top a of an sptl region in S piece P1 (context R1,
+    stable set V1). Only sptl creates tangles (439-466, called at 539).
+  - By SCC1, a ∈ t.
+  - P1's Dom(V1, R1) (878-890) puts every top of V1 into X (879-880: X[top] = true for each top of V1 not yet in X). So a
+    leaves P1's call for good after P1.
+  - Every later context in the chain is one of: a later context of P1's call, a descendant of a later piece (⊆ R1 minus
+    P1's removal), or a context of an ancestor after P1's call returned (it excludes P1's whole call context). So no later
+    context contains a, and t is never ⊆ R_dup there.
+  - Inside P1's pass sequence a duplicate of t is impossible (§2). So a duplicate is always of a tangle created before
+    search s, and (iii) applies.
+  - DATA agrees: 0 same-search duplicates.
+Verdict on (b) after comparison: SIGN WITH GAPS (Opus 5.5, D12). All gaps are closed: G-b1 (above), G-b2 (reading), G-b3
+(O0). It holds in the stronger form "(a) always" (F-b3), with GAP-β = (β-a). REFEREE's verdict is the same.
+
+### 13.3 K5 and Theorem A
+- The k5.pg finding touches only K5 (i) and (iii), and the induction hole for successors in Str \ Z_k.
+- K5 (ii) is unaffected. An opponent top whose successors all lie in higher regions is attracted at the round-f pop of the
+  last of them: it is unconsumed, has priority ≤ that top's, and has no escape (699 before 700). I re-derived this in §3,
+  and REFEREE re-checked it against 75-90.
+- K4 is unaffected; both referees re-checked it.
+- REFEREE's reading of Theorem A is mine: the first-pass regions equal best_vertices' last-round regions, and the premise
+  is "if it is closed", i.e. no (α).
+- Under that reading, Theorem A uses only K4, K5 (ii), SCC1, B-thr (ii) and O0, none of which k5.pg touches. It stands
+  under both readings.
+- k5.pg matters only if "(α)" is defined by K5's Consequence. The corrected Consequence (§3: rescue set below pr(τ_k),
+  Up(Str)) keeps (α) = "Z_k open" as the right premise.
+Verdict on (c) after comparison: SIGN WITH GAPS (Opus 5.5, D12), unchanged. G-c1 is a reading, the same as REFEREE's.
+G-c2 is a finding about DTL-proof K5 that Theorem A does not depend on. REFEREE gives SIGN; we differ only in labelling.
+
+### 13.4 Other differences (none on substance)
+- (e): REFEREE's G-e2 (the tangle-attracted and top cases) is covered in my §5 by the same lines (155-156, 519-525).
+- (f): REFEREE signs K0 without my "edges of G'" note. The note stands as wording, as in R2-STEP5 G1 / G-S5-5.
+- (i): I adopt REFEREE's R-i: INF means "never dropped", which includes a round with C ≠ ∅ in which every candidate is
+  rescued. My "a fixpoint round repeats" means the same, since such a round leaves V fixed.
+- (k): we agree on the conditional. My G-k2 (the returning iterations, a factor 2) does not affect O(·).
+- Both reports agree on (a), (d), (g), (i), (j).
+- Union of open items after both reports: (SPP) DATA; (α) and Case B; (ACYC); the DTL-proof K5 (i)/(iii) correction
+  (k5.pg); and REFEREE's G-h1, which I consider closed (13.1). That last point needs the Lead's routing.
