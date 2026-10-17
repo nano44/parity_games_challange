@@ -2124,6 +2124,11 @@ Wording fixes (closed):
 - G-d1 / G-Ψ. A round that returns at 716 (no candidates) runs no threshold loop. Define W_{r,t} := Cl_t(U_r) for every
   round and level, so Ψ's components align. dtl_rootmono.py compares Ψ only when the two lists have equal length. On the
   data no RV-equal pair had unequal lengths ("Ψ not monotone": 0), so the counts of §22c-g stand.
+  [CORRECTION 13:13Z: false for the cross unions. union411 of UNIONS=600 SEED=11 UM_CROSS=3 (Oink order; n = 39) has
+  one RV-equal pair with Ψ lengths 18 vs 1, which the old tool counted as "Ψ not monotone". dtl_rootmono.py now implements
+  the convention (W_{r,t} := Cl_t(U_r) via dtl_ideal.lfp for rounds returning at 716). Under it that transition is "Π
+  rises (Ψ), later call dirty". Corpus, mixed unions and cross stable had no length mismatch. Full re-run with the fixed
+  tool: §22n.]
 - G-e2. A transition with no differing tattr can happen once per phase (the last search re-finds only duplicates and
   returns false, 1068). The bound reads S − 1 ≤ Σ_{R ∈ C_bv} (F_R + 1)(H + 1) + n·|C_T| + 1.
 Hypotheses added to §22e (OPEN):

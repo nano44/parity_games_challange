@@ -66,7 +66,12 @@ class RM(FC.CK):
                 Aq = set().union(*[c for tp, c in zip(rtops, regs) if s.pr[tp] >= q])
                 if Aq != Uh: rec["leveldef"] = True
             cand = [v for v in sorted(V, reverse=True) if not s.attracts(p, v, Z, R)]
-            if not cand: spans.append((rnd, a0, a1, len(s.log))); return fin(1, V)
+            if not cand:
+                # G-d1 / G-Ψ convention (R-P4, R2-P4): a round returning at 716 has no threshold loop; Ψ uses W_{r,t} := Cl_t(U_r)
+                W_ = set(Z)
+                for t in [0] + [q for q in s.prios if q > 0 and q <= s.maxpr]:
+                    W_ = I.lfp(s, p, W_, R, t, tli); psi.append(frozenset(W_))
+                spans.append((rnd, a0, a1, len(s.log))); return fin(1, V)
             for t in [0] + [q for q in s.prios if q > 0 and q <= s.maxpr]:
                 s.Q = sorted(Z)
                 s.tattr(p, Z, R, R, t, None); psi.append(frozenset(Z))
@@ -141,7 +146,9 @@ if __name__ == "__main__":
                             elif ra2["rv"] != rb2["rv"]: kc = "ANY-CONTEXT e*: Π rises (RV)"
                             else:
                                 qa, qb = ra2["psi"], rb2["psi"]
-                                if not (len(qa) == len(qb) and all(x <= y for x, y in zip(qa, qb))): kc = "ANY-CONTEXT e*: Ψ NOT monotone"
+                                if not (len(qa) == len(qb) and all(x <= y for x, y in zip(qa, qb))):
+                                    kc = "ANY-CONTEXT e*: Ψ NOT monotone"
+                                    print("G-F1 CASE (Ψ not monotone at e*)", f, f"p={a['p']}", "depth", rb2["key"][0], "|R|", len(rb2["key"][1]), "rounds", len(qa), len(qb), "dirty" if rb2.get("stepdef") else "clean", flush=True)
                                 elif qa != qb: kc = "ANY-CONTEXT e*: Π rises (Ψ)"
                                 else:
                                     fa_ = sum(d.n - t_ for m in ra2.get("rtop", []) for t_ in m.values()); fb_ = sum(d.n - t_ for m in rb2.get("rtop", []) for t_ in m.values())
