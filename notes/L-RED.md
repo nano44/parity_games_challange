@@ -1,8 +1,8 @@
-# L-RED notebook (independent adversary). Successor 3 (Opus 5.5, owner D8) from 2026-10-16 15:56Z (date -u)
+# L-RED notebook (independent adversary). Successor 4 (Opus 5.5, owner D8) from 2026-10-17 04:22Z (date -u); successor 3 before
 Previous: session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, parked 15:20Z); before it session_0117Yy21tGGz9s1zzLfBdUKC (Fable).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: WORKING (box 5, Lead 23:20Z, 8 h; resume point updated 04:20Z; successor likely, context ~600k). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
+Status: WORKING (box 6, Lead GO 04:29Z, to ~12:30Z Lead clock). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
 (n = 20/30/40/60 x 3 seeds x both orders, 1500 steps, heartbeat 100; carry/spp.py, --fitness spp; scratchpad eq/);
 (2) renewable reset, U-shrink (R21 section 4); (3) per-phase potentials L-ALG states (via the Lead).
 
@@ -52,6 +52,44 @@ Status: WORKING (box 5, Lead 23:20Z, 8 h; resume point updated 04:20Z; successor
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-17 ~07:42Z box 6 RELAUNCH BLOCK (produced on Opus 5.5). <scr> = this session's scratchpad (lost with the container).
+Worktrees (git worktree add --detach <scr>/NAME SHA): lalg11 39f6111, lalg13 312c918, lalg14 b50e0c2, lalg15 35b3f96.
+From experiments/red:
+  LALG7_DIR=<scr>/lalg13 DTL_ORDER=oink   nohup python3 dtl/dtl_search.py x 1 --fitness kt --seed 9611 --steps 1000000 --hb 200 --from carry/instances/h4_notweaker_n20.pg --out <scr>/kt/t9611.pg > <scr>/kt/t9611.log 2>&1 &
+  LALG7_DIR=<scr>/lalg13 DTL_ORDER=stable nohup python3 dtl/dtl_search.py x 1 --fitness kt --seed 9612 --steps 1000000 --hb 200 --from carry/instances/replay4_n32.pg --out <scr>/kt/t9612.pg > <scr>/kt/t9612.log 2>&1 &
+  LALG8_DIR=<scr>/lalg15 DTL_ORDER=oink   nohup python3 dtl/dtl_search.py x 1 --fitness yzwm --seed 9711 --steps 1000000 --hb 100 --from <best of 9701, lost: use carry/instances/lemmaS_viol_n20.pg> --out <scr>/yz/y9711.pg > <scr>/yz/y9711.log 2>&1 &
+  LALG8_DIR=<scr>/lalg15 DTL_ORDER=stable nohup python3 dtl/dtl_search.py x 1 --fitness yzwm --seed 9712 --steps 1000000 --hb 100 --from carry/instances/f1_twodef_n48.pg --out <scr>/yz/y9712.pg > <scr>/yz/y9712.log 2>&1 &
+From the repo root (umix samplers, (K-in)):
+  find . -name "*.pg" -not -path "./tools/*" -size -8k > <scr>/corpus8k.txt
+  LALG5_DIR=<scr>/lalg11 nohup python3 experiments/red/k4b/umix.py 15 20000 <scr>/um 8 30 $(cat <scr>/corpus8k.txt) > <scr>/um15.log 2>&1 &   (and seed 16)
+Fitness meanings: kt.py = (P-KT)/(KT-STEP-first)/(T-STEP) at 1e11, "KT broken by T" at 1e9; yzwm.py = (YZ)/(WM)/(FM) at 1e11.
+2026-10-17 ~07:35Z box 6 (produced on Opus 5.5). Since 05:55Z: target (i) realised by pk_viol_n20 (R27 §3, 184e4d8);
+spp25_oink_n40 pinned (R24 addendum, e3b9a01; Oink 31 iterations verified, 25 searches/phase at |G'|=38 Oink order).
+New L-ALG targets and my fitnesses: KT (carry/kt.py, LALG7_DIR = <scr>/lalg13 = l-alg 312c918): plateau at 1 of 9
+c-levels surviving a P piece, no break; (YZ)/(WM_c1)/(FM) (carry/yzwm.py runs dtl_pnl.py, LALG8_DIR = <scr>/lalg15 =
+l-alg 35b3f96): 0 bad lines on 148 corpus files; climb 9712 (stable, from f1_twodef_n48) reaches monoP 81 / mono >= 99
+with no bad line (my 07:33Z message said 19: wrong, the score 8199000096 decodes to 81). (K-in) union samplers umix.py
+11-14: about 10,500 unions, 12,909 eligible runs, 0 hits (13/14 were stopped by me at 06:41Z, not "continuing" as my
+06:58Z/07:22Z messages said; corrected 07:33Z). RUNNING: kt 9601/9602, yzwm 9711/9712, umix 15/16 (scratch kt/, yz/, um*).
+2026-10-17 ~05:55Z box 6 (produced on Opus 5.5): R26 (a885315) K-in/K-low first pass: NO violation (grafts 3,500 +
+2,200 + 14,000, rgraft 20,000, nbhd 20 steps, klow climbs ~300k steps; obstruction notes: rescue, last-remnant closure,
+replay breaks by tangle attraction). R27 (1cad017): (P-K) and (K-STEP-first) FALSE, pk_viol_n20 (sha1 942bd778, both
+orders, run complete, PNL* holds; reported 05:49Z). Tool carry/pk.py (LALG6_DIR = <scr>/lalg12 = l-alg 9000121).
+RUNNING: pk climbs 9501 (oink, gapbW), 9503 (oink, kfirst_viol_union); klow 9331 (stable, pk_viol_n20); spp 9401 (oink,
+spp22_oink_n40, LALG_DIR=<scr>/lalg6). Scratch pk/, kl/, spp/. Lead fitness (05:48Z): incomplete/wrong > K-in >
+K-STEP-first / P-K > K-low > PNL* > TW > rest.
+2026-10-17 ~05:15Z box 6 (successor 4, produced on Opus 5.5). DONE: handover 8fac07c; R25 (ec9b61d): (K-first)/(K4-B)
+FALSE, kfirst_viol_n13 (both orders, run complete) = INDEPENDENT second instance (L-ALG b992733 killed them first, n = 26;
+my 04:59Z report claimed priority wrongly, corrected 05:05Z). Mechanism: Odd-won b' enters X by a THRESHOLD piece built on
+an Odd-won Dom(prevV) piece (k4b/gen_chain.py). gapb.py K4-B parser fixed (was always 0). Live targets (Lead 04:55Z):
+incomplete/wrong > K-in > K-low > TW straddle > dupW > orphW > barren > dup > orphan; (K-first)/(K4-B)/(FIRST-W) DEAD.
+Tools this box: carry/kfuzz.py (in-process K checks; random games useless: every search finds a dominion), carry/k4bp.py
+(dead target), carry/klow.py (graded K-in/K-low: min productive pieces, fraction of p-priority W_p eaten by -1 pieces
+before the first productive one), k4b/pieces.py (piece tracer: DOM-1 / THR-1 / STABLE with W_p parts), k4b/union_*.py.
+Worktrees: <scr>/lalg6..lalg10 (as box 5), lalg11 = l-alg 39f6111 (dtl_unionmix.py, dtl_gapk.py, §14-§17).
+RUNNING: klow climbs 9301 (oink, c1_k1_min_n7_m10), 9302 (oink, replay4_n32), 9303 (stable, kfirst_viol_union),
+9304 (oink, firstw_viol_cross); scratch kl/; LALG5_DIR=<scr>/lalg11; relaunch:
+  DTL_ORDER=oink LALG5_DIR=<scr>/lalg11 nohup python3 dtl/dtl_search.py x 1 --fitness klow --seed 9301 --steps 1000000 --hb 200 --from <lalg11>/experiments/alg/instances/c1_k1_min_n7_m10.pg --out <scr>/kl/l9301.pg > <scr>/kl/l9301.log 2>&1 &
 2026-10-17 ~04:20Z (box 5): DONE this box: R22 (ABS-mono) FALSE; R23 GAP-beta orphan+duplicate (gapb_dup_n20) and
 (NO-ORPHAN-W) FALSE (gapbW_dup_n20, orphan + duplicate inside W_p, run complete); R24 equal-step table (no S > |G'|, ratio
 falls with n; spp22_oink_n40 pinned). Equal-step batch FINISHED. RUNNING: gapb climbs 9031 (oink, from <scr>/gb/s9011b.pg)

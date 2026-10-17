@@ -47,10 +47,11 @@ def k4b(path):
     r = subprocess.run([sys.executable, os.path.join(ld, "experiments", "alg", "dtl_k4b.py"), os.path.abspath(path)],
                        capture_output=True, text=True, timeout=180, cwd=os.path.join(ld, "experiments", "alg"))
     bad = 0
+    # table keys (dtl_k4b.py line 32): ("mixed"|"W_p = G'", "V* inside W_p"|"V* meets W_{1-p}", "regions inside W_p"|"regions meet W_{1-p}")
     for line in r.stdout.splitlines():
         m = re.match(r"^(\d+) \((.*)\)$", line.strip())
-        if m and ("OUTSIDE" in m.group(2).upper() and "INSIDE" not in m.group(2).split(",")[-1].upper()): bad += int(m.group(1))
-        elif m and "OUTSIDE" in m.group(2).upper(): bad += int(m.group(1))
+        if m and ("meets W_{1-p}" in m.group(2) or "meet W_{1-p}" in m.group(2)): bad += int(m.group(1))
+    if r.returncode != 0: raise RuntimeError(r.stdout[-300:] + r.stderr[-300:])
     return bad
 
 def measure(path):

@@ -2,7 +2,7 @@
 """Free-form hill-climb over small parity games maximising Oink DTL's learned-tangle count (L-RED, DTL box).
 Fitness = tangles found by `oink --dtl --no-single --no-wcwc --no-loops` (raw solver, no preprocessing, self-loops kept;
 before 16:02Z the runs used --no-single --no-wcwc only). Mutations: add/remove an edge,
-change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha|strch|newrecur|maxsets|pairs|iters|restarts|maxrestarts|osc|rep|excess|carries|pviol|resets|ogate|fresh|phiflat|phicap|cidx|h4|replay2|phaselen|lemmas|nest2|nest2deep|h4ctx|h4prod|r0dips|crm|childm|cmf|nest3|r0d|lex|umono|falls|replay|fallsdef|phase|refall|spp|sharp|dvfall|absmono|abspw|dupchk|gapb|evens] [--hb K] [--maxeven K] [--grow k] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
+change a priority, flip an owner. Usage: dtl_search.py OINK n [--steps 20000] [--seed 0] [--maxpr P] [--even-min FRAC] [--fitness tangles|unsolved|wrong|perhead|perheadsearch|persearch|prunemono|dups|straddles|alpha|strch|newrecur|maxsets|pairs|iters|restarts|maxrestarts|osc|rep|excess|carries|pviol|resets|ogate|fresh|phiflat|phicap|cidx|h4|replay2|phaselen|lemmas|nest2|nest2deep|h4ctx|h4prod|r0dips|crm|childm|cmf|nest3|r0d|lex|umono|falls|replay|fallsdef|phase|refall|spp|sharp|dvfall|absmono|abspw|dupchk|gapb|k4bp|klow|pk|kt|yzwm|ntf|yzs|yzc|slow|evens] [--hb K] [--maxeven K] [--grow k] [--injective] [--loops] [--solver dtl|idtl] [--from game.pg] [--eval game.pg] [--out best.pg]"""
 import sys, os, random, subprocess, tempfile, time, re
 oink, n = sys.argv[1], int(sys.argv[2]); arg = lambda k, d: type(d)(sys.argv[sys.argv.index(k) + 1]) if k in sys.argv else d
 steps, seed, maxpr = arg("--steps", 20000), arg("--seed", 0), arg("--maxpr", 2 * int(sys.argv[2])); rng = random.Random(seed)
@@ -31,6 +31,69 @@ def score_py(g):
         um = importlib.util.module_from_spec(specu); specu.loader.exec_module(um)
         try:
             return um.score(tmp)
+        except Exception:
+            return -1
+    if fitness == "slow":      # box 6: (S-LOW) loose/tight (carry/slow.py; LALG12_DIR >= ae7e1d3)
+        specs = importlib.util.spec_from_file_location("slw", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "carry", "slow.py"))
+        slw = importlib.util.module_from_spec(specs); specs.loader.exec_module(slw)
+        try:
+            return slw.score(tmp)
+        except Exception:
+            return -1
+    if fitness == "yzc":       # box 6: (YZ)/(ACYC) via L-ALG dtl_yzclimb.fitness (carry/yzc.py; LALG11_DIR >= c2e80e9)
+        specc2 = importlib.util.spec_from_file_location("yzc", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "carry", "yzc.py"))
+        yzc = importlib.util.module_from_spec(specc2); specc2.loader.exec_module(yzc)
+        try:
+            return yzc.score(tmp)
+        except Exception:
+            return -1
+    if fitness == "yzs":       # box 6: (YZ) straddle target (carry/yzs.py; L-ALG dtl_ntf.py + dtl_pnl.py; LALG10_DIR >= ced9921)
+        specz = importlib.util.spec_from_file_location("yzs", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "carry", "yzs.py"))
+        yzs = importlib.util.module_from_spec(specz); specz.loader.exec_module(yzs)
+        try:
+            return yzs.score(tmp)
+        except Exception:
+            return -1
+    if fitness == "ntf":       # box 6: (NT-f) fitness (carry/ntf.py; L-ALG dtl_ntfclimb.fitness; LALG9_DIR >= 4841576)
+        specn = importlib.util.spec_from_file_location("ntf", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "carry", "ntf.py"))
+        ntf = importlib.util.module_from_spec(specn); specn.loader.exec_module(ntf)
+        try:
+            return ntf.score(tmp)
+        except Exception:
+            return -1
+    if fitness == "yzwm":      # box 6: (YZ)/(WM_c1) fitness (carry/yzwm.py runs L-ALG dtl_pnl.py; LALG8_DIR >= b50e0c2)
+        specy = importlib.util.spec_from_file_location("yzw", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "carry", "yzwm.py"))
+        yzw = importlib.util.module_from_spec(specy); specy.loader.exec_module(yzw)
+        try:
+            return yzw.score(tmp)
+        except Exception:
+            return -1
+    if fitness == "kt":        # box 6: graded (P-KT)/(KT-STEP-first) fitness (carry/kt.py; LALG7_DIR >= 312c918)
+        speck = importlib.util.spec_from_file_location("ktf", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "carry", "kt.py"))
+        ktf = importlib.util.module_from_spec(speck); speck.loader.exec_module(ktf)
+        try:
+            return ktf.score(tmp)
+        except Exception:
+            return -1
+    if fitness == "pk":        # box 6: graded (P-K)/(K-STEP-first) fitness (carry/pk.py; LALG6_DIR >= 9000121)
+        specp = importlib.util.spec_from_file_location("pkf", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "carry", "pk.py"))
+        pkf = importlib.util.module_from_spec(specp); specp.loader.exec_module(pkf)
+        try:
+            return pkf.score(tmp)
+        except Exception:
+            return -1
+    if fitness == "klow":      # box 6: graded (K-in)/(K-low) fitness (carry/klow.py; LALG5_DIR >= 31fdd98)
+        specl = importlib.util.spec_from_file_location("klow", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "carry", "klow.py"))
+        klw = importlib.util.module_from_spec(specl); specl.loader.exec_module(klw)
+        try:
+            return klw.score(tmp)
+        except Exception:
+            return -1
+    if fitness == "k4bp":      # box 6: graded (K4-B) fitness (carry/k4bp.py; LALG5_DIR >= 31fdd98)
+        speck = importlib.util.spec_from_file_location("k4bp", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "carry", "k4bp.py"))
+        kbp = importlib.util.module_from_spec(speck); speck.loader.exec_module(kbp)
+        try:
+            return kbp.score(tmp)
         except Exception:
             return -1
     if fitness == "gapb":      # box 5: graded GAP-beta fitness (carry/gapb.py)
@@ -322,7 +385,7 @@ def score_py(g):
 
 def score(g):
     open(tmp, "w").write(dumps(g))
-    if fitness in ("rep", "excess", "carries", "pviol", "resets", "ogate", "fresh", "phiflat", "phicap", "cidx", "h4", "replay2", "phaselen", "lemmas", "nest2", "nest2deep", "h4ctx", "h4prod", "r0dips", "crm", "childm", "cmf", "nest3", "r0d", "lex", "umono", "falls", "replay", "fallsdef", "phase", "refall", "spp", "sharp", "dvfall", "absmono", "abspw", "dupchk", "gapb"): return score_py(g)
+    if fitness in ("rep", "excess", "carries", "pviol", "resets", "ogate", "fresh", "phiflat", "phicap", "cidx", "h4", "replay2", "phaselen", "lemmas", "nest2", "nest2deep", "h4ctx", "h4prod", "r0dips", "crm", "childm", "cmf", "nest3", "r0d", "lex", "umono", "falls", "replay", "fallsdef", "phase", "refall", "spp", "sharp", "dvfall", "absmono", "abspw", "dupchk", "gapb", "k4bp", "klow", "pk", "kt", "yzwm", "ntf", "yzs", "yzc", "slow"): return score_py(g)
     try:
         r = subprocess.run([oink, SOLVER] + OINKFLAGS + (["-t", "-t", "-t"] if fitness in ("strch", "newrecur", "maxsets", "pairs") else ["-t", "-t"] if fitness.startswith("per") or fitness in ("prunemono", "dups", "alpha", "straddles", "restarts", "maxrestarts", "osc") else []) + (["-v"] if fitness == "wrong" else []) + [tmp, tmp + ".sol"], capture_output=True, text=True, timeout=20)
     except subprocess.TimeoutExpired:
