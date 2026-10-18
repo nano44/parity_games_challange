@@ -226,3 +226,7 @@ Answered from trunk 076732e, l-new e37910e (notes/L-NEW.md resume point), l-alg 
 N1 (Loff-Skomra IncreasingDiscountPI, published, not ours) survived gauntlet step 2 on data (L-NEW 9ad423a, docs/new/N1-step2.md):
 12,000 random games + 13 M1 families agree, strategies verified, growth <= ~n^2 iterations; Lead re-ran 3 rows. Caveats (1)-(5).
 NOT a claim. Next: step 3 barrier (temporary 4th lane), second implementation, dedicated attack. Owner may say "hold".
+
+## 2026-10-18 18:12Z Lead -> owner
+N1 KILLED on data (L-NEW 8ac5e5c, docs/new/N1-KILL.md): switch-all family + deep traps, one late phase with 11..1244 Howard switches
+at N=1..7 (~5*2^(N+1)), n=32N+15; Lead re-ran N=1..5 exactly. Referee fidelity check before it becomes a dead end. L-NEW continues (N3).
