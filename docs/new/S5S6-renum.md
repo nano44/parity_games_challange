@@ -81,3 +81,27 @@ Chains stopped at handover (12:40Z): Cunningham N = 5 climb from the lifted 3886
 Zadeh N = 5 climb from the lifted 1230 had reached 1506 (chain 274, 540, 983, 1506: ratios 1.97, 1.82, 1.53, falling).
 The C++ N1 sweep (summary_c.csv) was stopped after switchallexp N <= 14 and switchbestexp N <= 13 (both polynomial-looking;
 rows in N1-disc-anneal.md); the other families' N1 data are the Python sweep's (N <= 8, plots/).
+
+## Box 2 (1), 2026-10-18 13:10-14:20Z (date -u): S6 numbering RULE on switchbestexp. NOT killed (data)
+The climbed numberings of box 1 (instances/s6/*.perm) have no readable structure when listed by label (checked again: N = 2, 3, 4
+orders look random), so a rule was SEARCHED in a space of rules, each defined for every N from the labels alone
+(experiments/new/rule_s6.py): an order of the 24 label classes (q, s, p, c, t, x, y, w, d, k, l, a, b, e, e', f, f', g, g', h, m, z,
+v, r), a bit direction per class, and a mode (class-major or bit-major). The climb is over RULES; fitness = vjfast Cunningham
+iterations at one N; the best rule is then applied unchanged to N = 2..8 (10). Counts = vjfast (verbatim copy of L-SI's
+engine); regions = Oink zlk and strategies verified (check_sol2.py) at N = 4, 8 (rule_s1) and N = 10 (rule6_s11).
+| rule (experiments/new/instances/s6rule/) | fitted at | N = 2..8 (10) Cunningham iterations | n = 60 + 25(N - 2) |
+| --- | --- | --- | --- |
+| rule_s1.json (2,500 steps, seed 1) | N = 4 | 275, 758, 1608, 2320, 3042, 3842, 4717 | |
+| rule_s2.json (seed 2) | N = 4 | 234, 605, 1139, 1610, 2158, 2783, 3483 | |
+| rule_s3.json (seed 3) | N = 4 | 207, 661, 1021, 1483, 2025, 2640, 3325 | |
+| rule6_s11.json (1,500 steps from rule_s1) | N = 6 | 311, 874, 1681, 3035, 4027, 4425, 5394, 6429, 7524 | |
+| rule6_s12.json (1,500 steps, fresh) | N = 6 | (fitness 2249 at N = 6; not applied further) | |
+Per-N sha1 of every rule-generated instance: instances/s6rule/apply_*.txt (columns N, n, iterations, sha1); regenerate with
+`python3 rule_s6.py apply <rule> --maxN 10 --write DIR` (deterministic: pgsolver_port.py + the rule).
+Reading: every rule grows polynomially in n. The climb produces a bump at the N it is fitted at (rule6_s11: +1354 into N = 6,
+then +398, +969, +1035, +1095), and the tail is quadratic in N (log-log slope in n about 1.6 at N = 9..10). No rule beats
+the box-1 mechanical lift (lift: 3886, 4719, 5626, 6602 at N = 5..8; best rule: 3035, 4027, 4425, 5394), and the lift itself is
+polynomial. So the steep box-1 numbers came from per-N search over n! numberings, which a label rule of this class does not
+reproduce. VERDICT (box 2 (1)): S6 NOT killed on switchbestexp; no rule in the
+class (class order x directions x mode) found with super-polynomial counts. Not defended either: the rule class is small
+(it cannot express interleavings that depend on two bit indices, e.g. lane j of bit i), and R7's open design problem stands.

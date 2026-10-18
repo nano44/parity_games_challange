@@ -12,3 +12,6 @@ switchbestexp,10,260,python3 experiments/hard-families/pgsolver_port.py switchbe
 switchbestexp,11,285,python3 experiments/hard-families/pgsolver_port.py switchbestexp 11,6b22399c6fd1487b8904125c0a372426353aac93,40941,2618,840,121,72,187.38,zielonka OK strategies verified
 switchbestexp,12,310,python3 experiments/hard-families/pgsolver_port.py switchbestexp 12,c1444919e1bc73fb443e4eb3208a1a55471743e2,TO120,2889,988,144,78,358.95,zielonka OK strategies verified
 switchbestexp,13,335,python3 experiments/hard-families/pgsolver_port.py switchbestexp 13,1440916590874c90962daba393a3c565a9d918fd,TO120,3163,1147,169,84,648.59,zielonka OK strategies verified
+switchbestexp,14,360,python3 experiments/hard-families/pgsolver_port.py switchbestexp 14,d3f37965e84686b791523ea9d3eb0f2dfa7e9959,TO120,3440,1320,196,90,1040.96,zielonka OK strategies verified
+switchbestexp,15,385,python3 experiments/hard-families/pgsolver_port.py switchbestexp 15,2ed989e22123fc04914950b8f2d5e5ff2e35d10c,TO120,3719,1503,225,96,662.44,zielonka OK strategies verified
+switchbestexp,16,410,python3 experiments/hard-families/pgsolver_port.py switchbestexp 16,0cbce6b8933d692606480d678f0a73f0a4492d0a,TO120,4002,1699,256,102,784.91,zielonka OK strategies verified
