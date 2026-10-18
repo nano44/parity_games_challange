@@ -2,7 +2,8 @@
 
 Trigger (L32 (2), docs/DECISIONS.md): "the Fable reset, 2026-10-21 21:00Z, or earlier when both lanes' boxes end with no new
 GAP-A reduction". L-ALG box 10 ended 03:43Z (l-alg 434f92a, ledger GAP-A-M §24h). L-RED box 10 (serialized-context attempt on
-(CTX⁺)) ends near 560k context. If that box does not produce a (CTX⁺) family, the trigger is met.
+(CTX⁺)) ended 03:54Z (l-red 839b76d, R39 §9): NOT achieved; the precise condition is written (a hidden clock
+must learn inside a nonempty −1 subgame). The trigger is met.
 
 ## 1. Criterion check (L32 (2))
 "Progress" = a reduction of GAP-A to ONE named statement with a proof route, or a proved polynomial bound on a nontrivial
