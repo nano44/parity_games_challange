@@ -5,7 +5,7 @@ counter-strategy by Odd's own switch-all policy iteration (one-player discounted
 Exact rational arithmetic (fractions.Fraction); deterministic games, so values of a pair are lasso sums.
 Stop test after each phase (a certificate): win = sign of the discounted values; sigma and tau restricted to their regions
 pass harness/verify.py check (closure, no losing cycle). Output: those regions and strategies.
-Usage: anneal.py game.pg [out.sol] [--check] [--maxj J] [--j0 J0]   (--j0: ablation, start directly at gamma_J0) [--nocompress]
+Usage: anneal.py game.pg [out.sol] [--check] [--maxj J] [--j0 J0]   (--j0: ablation, start directly at gamma_J0) [--nocompress] [--odd-howard]
   prints: RESULT phases=J even_iters=E odd_iters=O per_phase=[...] secs=S [check: zielonka OK / strategies verified]"""
 import sys, os, subprocess, time, tempfile
 from fractions import Fraction
@@ -16,7 +16,8 @@ import pg, verify
 VERBOSE = "--verbose" in sys.argv
 COMPRESS = "--nocompress" not in sys.argv
 FAST = "--fractions" not in sys.argv   # integer-scaled exact values (default) or plain Fractions
-XCHECK = "--xcheck" in sys.argv   # merging same-parity neighbours; --nocompress keeps the input priorities
+XCHECK = "--xcheck" in sys.argv
+ODD_RULE = "howard" if "--odd-howard" in sys.argv else "dantzig"   # Odd best response: Post-Ye rule (default) or Howard   # merging same-parity neighbours; --nocompress keeps the input priorities
 T0 = time.time()
 
 
@@ -118,11 +119,24 @@ def solve(g, maxj=20000, j0=1):
                     assert all(q == Qs[0] for q in Qs) and all((x[v] == 0) == (xf[v] == 0) for v in range(n)), "xcheck"
                     assert all(x[v] == x[nxt[v]] * Fraction(2 ** j - 1, 2 ** j) + Qs[0] * r[v] for v in range(n)), "xcheck2"
                 ch = False
-                for v in range(n):
-                    if g.owner[v] == 1:
-                        b = min(succ[v], key=lambda w: (x[w], w))
-                        if x[b] < x[tau[v]]:
-                            tau[v] = b; ch = True
+                if ODD_RULE == "dantzig":
+                    # Post-Ye 1208.5083 Thm 3.7: highest-gain (most negative reduced cost) single switch; reduced cost of
+                    # Odd's edge (v, w) is r(v) + gamma x(w) - x(v), i.e. gamma (x(w) - x(tau(v))): compare x(w) - x(tau v)
+                    best = None
+                    for v in range(n):
+                        if g.owner[v] == 1:
+                            for w in succ[v]:
+                                d = x[w] - x[tau[v]]
+                                if d < 0 and (best is None or d < best[0] or (d == best[0] and (v, w) < best[1:])):
+                                    best = (d, v, w)
+                    if best is not None:
+                        tau[best[1]] = best[2]; ch = True
+                else:
+                    for v in range(n):
+                        if g.owner[v] == 1:
+                            b = min(succ[v], key=lambda w: (x[w], w))
+                            if x[b] < x[tau[v]]:
+                                tau[v] = b; ch = True
                 if not ch:
                     break
                 od_it += 1

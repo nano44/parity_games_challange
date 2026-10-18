@@ -29,7 +29,22 @@ Correctness of the output rests only on the certificate of step 3. Termination: 
 depending on n and the rewards) the discounted optimum is parity-optimal [source needed: Puri / Zwick-Paterson, not yet
 opened; used only for termination, and the stop test makes the output correct regardless].
 
-## Why it is new against RANKING.md and the dead ends
+## NOVELTY CORRECTION (10:40Z, sources opened, notes/L-NEW.md): N1 is a known algorithm
+N1 is, up to the stop test and the split of the inner loop, IncreasingDiscountPI of Loff-Skomra (ICALP 2024, LIPIcs 147:1-147:16
+[LS24], NOT opened; restated in Loff-Skomra arXiv 2610.22149 v1, §7.4, Figure 7.2, OPENED): "γ ← (1 + γ)/2; (σ, τ) ←
+DiscountedPI(σ, τ, γ); until (σ, τ) are optimal in the mean payoff game", with DiscountedPI = Howard's all-switches rule.
+Their Theorem 7.14: O(m² + m² n⁴ Δ(r)² log³(n Δ⁺(r))) switches (Howard), where Δ(r) is their condition number; with
+Theorem 7.9 (for 1 − γ < 1/(4n²Δ(r)) the optimal pair is the unique discounted optimum). Their use is SMOOTHED analysis:
+perturbed rewards have Δ = poly(n, 1/ρ) w.h.p. (Thm 1.2). Parity-induced rewards ±n^pr are the opposite of perturbed: Δ(r)
+is not polynomial for them (L-NEW reading: the slack between policies can be n^0 while ‖r‖ = n^d), so Theorem 7.14 gives an
+exponential bound there and no published bound is polynomial on parity games. §9 open problem 1 of 2610.22149 asks whether
+STANDARD rules are smoothed-polynomial; nothing there on worst-case parity games.
+What is still not in the opened literature (best effort): (a) any run of IncreasingDiscountPI on parity-induced games or on
+Friedmann's families; (b) the observation that the schedule defeats switchallexp/switchbestexp, whose ablation at the final γ
+reproduces Friedmann's counts. So N1 is a KNOWN ALGORITHM on a NEW input class; any result would be a statement about
+LS24's algorithm, not a new algorithm. L-LIT to check [LS24] itself and any worst-case analysis.
+
+## Why it is new against RANKING.md and the dead ends (written before the novelty search; see the correction above)
 - The fleet's SI lane (S1-S7, docs/si/) used Vöge-Jurdziński valuations, i.e. the gamma -> 1 limit, from fixed starts.
   S4 used a subgame optimum as start (DE8). No lane solved a sequence of discounted games with growing discount and warm
   starts. RANKING row 4 lists SI/LP/LCP; discount annealing as a schedule is not in it.
@@ -53,6 +68,28 @@ opened; used only for termination, and the stop test makes the output correct re
   stated; no transfer argument either way.
 - B14-B17: not applicable (no abstract cube; not an IPM; no automaton; complexity-class rows say nothing).
 - Bit cost: gamma_j has j bits; lasso values have O(n j + d log n) bit numerators/denominators. Polynomial per step.
+
+## Bit cost, phases and the hypothesis N1 needs (Lead 10:00Z items 1-2)
+- Phases. Friedmann 1106.0778 §9 (opened): rewards (−|V|)^Ω and β_G = 1 − 1/(4|V|·max|r(v)|) make discounted SI behave like
+  parity SI on 1-sink games (Thm 9.5, Lemma 9.6), and Zwick-Paterson (via 2610.22149 Prop. 7.11 = [ZP96, Thm 5.2]:
+  ‖λ(γ) − λ‖∞ ≤ 2n(1 − γ)‖r‖∞, normalised values) gives correctness of signs once 1 − γ < 1/(c n² n^d). Hence the last phase
+  is at most J = log2(4 n² n^d) + O(1) = (d + 2) log2 n + O(1). Observed (certificate stop, no merging): switchallexp N = 2..6,
+  d = max priority = 44, 60, 76, 92, 108: J = 221, 332, 449, 571, 697 vs (d + 2) log2 n = 236, 348, 466, 589, 716: the
+  certificate fires just before the threshold j.
+- Bits. γ_j = (2^j − 1)/2^j has j bits. A strategy pair's values are lasso sums: the integer-scaled values of anneal.py have
+  Q = b^n · Π_C (b^|C| − a^|C|) with a, b ≤ 2^j, so O(n j + d log n) bits; at j = J = O(d log n) that is O(n d log n) bits. One
+  evaluation is O(n) big-number operations of that size; one Even switch-all step is O(m) comparisons. Polynomial per step.
+- Odd's best response (inner solver). Default now (10:40Z): the highest-gain (Dantzig) single-switch simplex rule, for which
+  Post-Ye arXiv 1208.5083 v2 Thm 3.7 (opened) proves O(n³ m² log² n) iterations on deterministic MDPs with a uniform discount,
+  REGARDLESS of the discount: polynomial at bit cost with the bit sizes above. (The first version used Odd's Howard rule,
+  for which no polynomial bound on deterministic MDPs is known to L-NEW; it is kept as --odd-howard. Even's iteration
+  counts are identical under both on every instance compared: switchallexp 4, tc 5, counter_symsi 4, fhz_padded 4.)
+- Even's phases. HMZ 1008.0530 Thm 6.5 bounds phase j by (m+1)(1 + log_{1/γ}(n²/(1−γ))) = O(m 2^j j), i.e. n^Θ(d) at j ≈ J.
+  So N1 is polynomial IF AND ONLY IF the warm start keeps every phase short. Precise hypothesis:
+  (PHASE-POLY) there is a polynomial q such that for every parity game G and every j ≥ 1, Howard's rule on the discounted game
+  with γ_j, started from the optimal pair at γ_{j−1}, makes at most q(n) switches.
+  Together with J = O(d log n) phases, Post-Ye for Odd, and the bit sizes above, (PHASE-POLY) would give a polynomial bound.
+  (PHASE-POLY) is a DATA hypothesis; nothing proves it, and LS24's analysis needs a small condition number instead.
 
 ## Cheapest family expected to kill it
 Friedmann's switchallexp (experiments/hard-families/pgsolver_port.py; switch-all from best-reward takes 10, 30, 70, ...
