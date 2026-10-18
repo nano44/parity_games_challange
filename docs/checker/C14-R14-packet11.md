@@ -134,3 +134,17 @@ Recommended:
 - N-1: data attribution.
 - N-2: L-ALG to note in GAP-A-M that §C confirms N11-b1 (not blocking).
 With E-1, R14 passes. I re-diff the text only.
+
+## Addendum: R14 draft re-diff, f4a2439 → ed81675 (Lead 01:40Z), text only: PASS
+- History: f4a2439 is an ancestor of ed81675. R14-draft.md: 8 insertions, 5 deletions.
+- Word diff:
+  - E-1 in (c): "it is (SPP) there (GAP-A-M §23s end)" is replaced. It now reads: "on chain families where every first
+    difference is at the root (spp_chain_up_n43) it equals S − 1 (both referees). (L-ALG's unrefereed note at the end of
+    GAP-A-M §23s relates the root case to (SPP); not part of R14.)". This matches REFEREE (c) and REFEREE-2 §3. The pointer is
+    labelled unrefereed and excluded from R14.
+  - E-1 in G-R14-4: "at G′ it is necessary, not sufficient, and equals S − 1 on chain families". It matches.
+  - The only remaining "(SPP)" in the draft is inside that labelled pointer. FIXED.
+  - N-1 in (d): REFEREE's 1,160 / 1,231 are now "corpus 138 files", with "spp_chain_up_n43 + stealonce_viol_n76 with
+    dtl_changenew.py 89/89 (stable) and 49/49 (Oink)" listed separately. This matches R-P11 (d) and my §3 re-run.
+  - The header carries a revision stamp.
+- Nothing else moved. R14 PASSES as at ed81675.
