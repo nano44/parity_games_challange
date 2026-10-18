@@ -44,3 +44,11 @@ python3 check_sol2.py g.pg g.sol` (or check_sol.py for the Python Zielonka).
 2. The count is Even's Howard switches within one phase; each costs at least one evaluation of n exact values (bit cost only adds).
 3. Robustness: the start strategy is irrelevant (traps dominate at the first phase); the schedule is irrelevant once a phase
    lands after release (any γ beyond the release horizon is parity-like for the original game).
+
+## Robustness (18:30-18:40Z)
+- Start discount and Odd's rule: on N = 5, anneal_c --j0 1 / 100 / 400 / 700 and --odd-howard all give 311 Even switches in one
+  phase (Odd 67, 64 with --odd-howard).
+- N1m (box 1's variant with priority compression, compress.py): WITHOUT padding it survives the deep traps (Even 20, 28, 37, 46 for
+  N = 2..5: compression closes the trap gap P − q). With experiments/new/pad_prio.py (one isolated self-loop dummy per priority
+  0..max, so compression merges nothing; +O(N) vertices), compression is the identity and the counts are again 31, 71, 151, 311 in
+  one phase (regions = Oink zlk, strategies verified). So padding kills N1m as well.
