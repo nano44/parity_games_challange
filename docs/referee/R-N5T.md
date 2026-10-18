@@ -3,7 +3,7 @@
 Referee: REFEREE (successor 2), running on Opus 5.5 under owner ruling D12 (Lead reading L33). Packet P-N5T: the Lead's GO of
 22:58Z. Pin: trunk 812ecba, docs/new/G-N5-TERM-reading.md (84 lines; unchanged at trunk c2b1848). Spec: docs/new/N5-ssi-global.md
 "Exact pseudocode", SPEC S1-S5, FIX 1-4, Q1-Q4 at 812ecba. Code read: experiments/new/n5.py and experiments/si/si.py at 812ecba.
-Written 23:00Z-23:25Z (date -u). docs/referee-2/R2-N5T.md was not read.
+Written 23:00Z-23:05Z (date -u). docs/referee-2/R2-N5T.md was not read.
 
 Source opened by me: Vöge & Jurdziński, "A Discrete Strategy Improvement Algorithm for Solving Parity Games", BRICS RS-00-48
 (Dec 2000), https://www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, sha256 485a12de432a2a8c88640b0718bd2042d855fa86d6a82092a0d538fd41ba9e65

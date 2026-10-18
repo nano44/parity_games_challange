@@ -1,7 +1,7 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 2, written 2026-10-18T23:30Z by date -u, session_017Tv79KB6LLrQUtLtVCnNDH, Opus 5.5 under D12)
+## Resume point (successor 2, written 2026-10-18T23:04Z by date -u, session_017Tv79KB6LLrQUtLtVCnNDH, Opus 5.5 under D12)
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh, output to a file, print $?.
 Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD = origin/claude/referee before anything else.
 - Handover check 18b0569 (scored 5/5 by the Lead 22:58Z).
@@ -14,7 +14,7 @@ Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD =
 
 ## Sources opened (append)
 - VJ00 = Vöge & Jurdziński, BRICS RS-00-48 (Dec 2000), https://www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, sha256 485a12de432a2a8c..
-  (opened 2026-10-18 23:05Z): §3 postulates P1/P2/I1/I2; §4.1-4.5; §5.1 (3)-(11); Prop. 5.1, 5.3, 5.4, 5.6, 5.10; Lemmas 5.2,
+  (opened 2026-10-18 between 22:59Z and 23:04Z by date -u): §3 postulates P1/P2/I1/I2; §4.1-4.5; §5.1 (3)-(11); Prop. 5.1, 5.3, 5.4, 5.6, 5.10; Lemmas 5.2,
   5.5, 5.7, 5.8, 5.9; §6 Prop. 6.1.
 
 
