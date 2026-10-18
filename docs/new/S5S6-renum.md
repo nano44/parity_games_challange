@@ -32,3 +32,14 @@ per vertex it is not faster than the identity.
   design problem for S5; a block-order (contiguous per vertex) round-robin counter is the one for S6 (R4).
 - Neither rule is covered by a published lower bound (L-SI S5.md, S6.md; L-RED R4, R7).
 Not recorded as dead ends. Status in docs/new/README.md: "not killed (fast test), not defended".
+
+## switchbestexp: the steepest growth found (11:30-12:00Z), checked in detail
+Part 2 sweep (2 restarts x 200 steps; out/renum/summary_part2.csv): Zadeh best 268, 493, 976 (N = 2, 3, 4; identity 138,
+328, 596); Cunningham best 341, 928 (N = 2, 3; identity 91, 147). Identity counts for N = 2..10 (no search): Zadeh 138 ... 3842
+(second differences ~78, quadratic), Cunningham 91 ... 651 (+72 per N, linear).
+Both best instances reproduce with vjfast (341, 928; regions = Zielonka, strategies verified) and with L-SI's independent
+si.py engine (928): out/renum/switchbestexp_2_cunningham.pg sha1 94090514e570198de282c293fc37b4a007ff58e5,
+out/renum/switchbestexp_3_cunningham.pg sha1 172ff9bf599fd1a33cb1625b2e23433fb32e58e5 (scratch, not committed).
+Per-vertex switch counts on these runs (s6_trace.py): max 16 (N = 2, 341 iterations), max 31 (N = 3, 928): flat, spread over
+many vertices; no vertex's count doubles with N, i.e. no binary-counter signature. Lifted chain (numbering of N lifted by
+labels to N + 1, then climbed; s6_chain.sh): Cunningham N = 2: 395; N = 3: lifted start 688, climbing; Zadeh chain running.
