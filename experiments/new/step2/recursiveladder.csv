@@ -35,3 +35,14 @@ recursiveladder,33,165,python3 experiments/hard-families/pgsolver_port.py recurs
 recursiveladder,34,170,python3 experiments/hard-families/pgsolver_port.py recursiveladder 34,e4885ca6a71e347956a2ef4d194a42e0a13881f0,0,25,2,146,1,0.02,zielonka(oink zlk) OK strategies verified
 recursiveladder,35,175,python3 experiments/hard-families/pgsolver_port.py recursiveladder 35,dff4b0e7d1148e8f137e346bc60d604c7046a20d,34,25,34,182,33,0.03,zielonka(oink zlk) OK strategies verified
 recursiveladder,36,180,python3 experiments/hard-families/pgsolver_port.py recursiveladder 36,41da30a928984f2eb0342fca193fdef45b7252de,0,25,2,155,1,0.02,zielonka(oink zlk) OK strategies verified
+recursiveladder,37,185,python3 experiments/hard-families/pgsolver_port.py recursiveladder 37,2f6f348a4e33f5207c95a7260ced37e6d48842cd,36,25,36,193,35,0.03,zielonka(oink zlk) OK strategies verified
+recursiveladder,38,190,python3 experiments/hard-families/pgsolver_port.py recursiveladder 38,02d2954f1ad7468353d2df08f8441812ec6f7692,0,25,2,164,1,0.05,zielonka(oink zlk) OK strategies verified
+recursiveladder,39,195,python3 experiments/hard-families/pgsolver_port.py recursiveladder 39,cb2b2512e5d615d7c3bb62619245c4bd5204b2e4,38,25,38,204,37,0.04,zielonka(oink zlk) OK strategies verified
+recursiveladder,40,200,python3 experiments/hard-families/pgsolver_port.py recursiveladder 40,ba2895b03e3843b09fc514aabb7e6c38ab5e59dc,0,25,2,173,1,0.02,zielonka(oink zlk) OK strategies verified
+recursiveladder,41,205,python3 experiments/hard-families/pgsolver_port.py recursiveladder 41,866bb8a824a7e9201aefdfab7d5c5a9556e005f6,40,26,40,215,39,0.03,zielonka(oink zlk) OK strategies verified
+recursiveladder,42,210,python3 experiments/hard-families/pgsolver_port.py recursiveladder 42,c9f61a3bc16a3466f129f125c98fdd82cf44c8d4,0,26,2,182,1,0.03,zielonka(oink zlk) OK strategies verified
+recursiveladder,43,215,python3 experiments/hard-families/pgsolver_port.py recursiveladder 43,9dd0fcce1e8043eb3550bb61475ef3f951c55b86,42,26,42,226,41,0.05,oink tl (zlk exit 255) OK strategies verified
+recursiveladder,44,220,python3 experiments/hard-families/pgsolver_port.py recursiveladder 44,123bf64a5fa628c92a9d8e1f56362f4c27bd99ac,0,26,2,191,1,0.03,oink tl (zlk exit 255) OK strategies verified
+recursiveladder,45,225,python3 experiments/hard-families/pgsolver_port.py recursiveladder 45,294297e279c5ee052f4b4845b19ff67fa1f55e01,44,26,44,237,43,0.06,oink tl (zlk exit 255) OK strategies verified
+recursiveladder,46,230,python3 experiments/hard-families/pgsolver_port.py recursiveladder 46,75fda9f24b7ae28b5031aee126be550ea67f87cd,0,26,2,200,1,0.06,oink tl (zlk exit -9) OK strategies verified
+recursiveladder,47,235,python3 experiments/hard-families/pgsolver_port.py recursiveladder 47,8b8d9bb944c45c6ffc5587db39dfedab3743640e,46,26,46,248,45,0.05,oink tl (zlk exit -9) OK strategies verified

@@ -4,12 +4,15 @@
 # or experiments/hard-families/pgsolver_port.py. The sha1 of each generated file is recorded, so a lost out/ loses no evidence:
 # regenerate with the command in column gen and compare sha1. Solutions are checked by check_sol2.py (regions = Oink zlk, Zielonka in C++; tl only on zlk timeout, labelled; + harness/verify.py
 # on both players' positional strategies). Output (COMMITTED): experiments/new/step2/<family>.csv. $TO s per run; a family stops
-# at its first timeout. Usage: FAMS="tc+ counter_m" NMAX=40 TO=900 ./run_step2.sh
+# at its first timeout, or (BUDGET s, optional) once the family has used BUDGET s in total (row "BUDGET").
+# Usage: FAMS="tc+ counter_m" NMAX=40 TO=900 [BUDGET=900] ./run_step2.sh
 cd "$(dirname "$0")"; ROOT=$(cd ../.. && pwd); mkdir -p out/step2 step2; TO=${TO:-900}
 for fam in ${FAMS:-tc+ counter_m counter_rr counter_rob switchbestexp}; do
  out=step2/$fam.csv
  [ -s $out ] || echo "family,N,n,gen,sha1,vj_switchall_plain,phases,even_iters,odd_iters,max_phase,secs,check" > $out
+ t0=$(date +%s)
  for N in $(seq ${NMIN:-1} ${NMAX:-40}); do
+  if [ -n "$BUDGET" ] && [ $(( $(date +%s) - t0 )) -gt $BUDGET ]; then echo "$fam,$N,,,,,,,,,BUDGET${BUDGET}_REACHED," >> $out; break; fi
   f=out/step2/${fam}_$N.pg
   case $fam in
    switchallexp|switchbestexp|recursiveladder) gen="python3 experiments/hard-families/pgsolver_port.py $fam $N";;

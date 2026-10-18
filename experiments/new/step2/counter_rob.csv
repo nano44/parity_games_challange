@@ -19,3 +19,5 @@ counter_rob,17,1006,tools/oink/build/counter_rob 17,4682a5b1090ffb06d4ebcdc16f17
 counter_rob,18,1119,tools/oink/build/counter_rob 18,eb2e87ac47465b80cc177bb2a3cc19165f23abaa,84,376,344,1882,325,211.98,zielonka(oink zlk) OK strategies verified
 counter_rob,19,1238,tools/oink/build/counter_rob 19,93cfb365ccc6ab6211a16747bea42bced75651a5,89,402,382,2091,362,281.09,zielonka(oink zlk) OK strategies verified
 counter_rob,20,1363,tools/oink/build/counter_rob 20,0fe0ff7460ad191e9d4996e5b9a6efed17f7ff75,94,428,422,2311,401,446.85,oink tl (zlk timeout) OK strategies verified
+counter_rob,21,1494,tools/oink/build/counter_rob 21,1dd61b776f3ff0a0a4f64f090481f19632d64a77,99,455,464,2542,442,1059.60,oink tl (zlk timeout) OK strategies verified
+counter_rob,22,,tools/oink/build/counter_rob 22,f5e2f9bfcbcdeff317e0effd8193b161082ba00a,104,,,,,TIMEOUT1200,
