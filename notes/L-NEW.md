@@ -2,15 +2,15 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-SUCCESSOR 1, box 2 (GO 12:51Z, to ~17:50Z; handover check docs/agents/handover-checks/L-NEW.md at 2d17b3f).
-- (0) N1 step 2 on the hard bench: experiments/new/run_step2.sh -> COMMITTED CSVs experiments/new/step2/<fam>.csv (gen command +
-  sha1 per instance, deterministic generators), check_sol2.py (regions = Oink zlk, tl on zlk timeout/error; verify.py strategies),
-  plots docs/new/plots/step2_*.png, verdict table docs/new/N1-step2.md (summarize_step2.py prints its rows). Done so far:
-  counter_rr (N <= 42), counter_m (N <= 42), counter_rob (N <= 20), switchbestexp (N <= 16, N = 17 over 1200 s), switchallexp
-  (N >= 26) all polynomial-looking, every row checked. Running (14:30Z on): chain A = counter_rob, tc+; chain B = switchallexp,
-  recursiveladder, tc, counter_core, counter_dp, counter_ortl, counter_qpt, counter_symsi (NMAX 60, TO 1200).
-- (1) S6 numbering RULE: done 14:20Z, not killed (docs/new/S5S6-renum.md "Box 2 (1)"; rules in experiments/new/instances/s6rule/).
-- Oink zlk logic error on counter_m N = 41, 42 (zlk.cpp:589): side finding for L-COMP, in N1-step2.md.
+SUCCESSOR 1, box 3 (Lead GO received 17:49Z by date -u; box to ~23:00Z). Context ~480k at 20:25Z (handover at ~580k).
+Done in box 3 (all pushed): N1 KILLED on data (deep traps, N1-KILL.md, 8ac5e5c); robust to start γ, Odd rule, compression with
+padding; N2 KILLED (padded switchallexp, f301bfb); N3 DEAD AS STATED (one degenerate breakpoint carries the problem, n3grid);
+deep-trap lemma written (optional per Lead; gaps 1-2 closed); N4 proposed only (Lead: do not implement); N5 SSI-GLOBAL
+implemented (n5.py), engine validated against DLM Prop. 7, defeats both DLM families, 12,000 random games agree, 11/13 hard
+families linear (n5/*.csv, docs/new/N5-ssi-global.md). Running at 20:25Z: run_n5.sh chain B (counter_rob, counter_rr), PID 7200.
+NEXT: when counter_rob/counter_rr finish: if linear, N5 = step-2 survivor on data -> report to Lead AT ONCE with the 13-family
+table (summarize_n5.py); then adversarial work against N5 (its weakness: it steers by the opponent's current strategy; try
+DLM-style 'distraction' gadgets that make the best response to a bad τ restricted to improving switches a bad move).
 
 ## Queue
 0. DONE box 2 14:20Z (rule class: not killed, S5S6-renum.md). (Lead 12:14Z) S6 on switchbestexp: extract a numbering RULE from the climbed numberings
@@ -37,7 +37,7 @@ SUCCESSOR 1, box 2 (GO 12:51Z, to ~17:50Z; handover check docs/agents/handover-c
   "standard reductions [16, 21, 13] convert this parity game into average-reward ... discount factor ... very close to 1".
 - NOT yet opened (needed for N1's termination bound only): Zwick-Paterson TCS 158 (1996) discount threshold; Puri thesis.
   Used instead, as restated in 2610.22149: Prop. 7.11 = [ZP96, Thm 5.2] ‖λ(γ) − λ‖∞ ≤ 2n(1 − γ)‖r‖∞ (normalised values).
-- arXiv 1106.0778 (Friedmann, LMCS 7(3:19)), opened 10:30Z, §9: reward r_Ω(v) = (−|V|)^Ω(v); β_G := 1 − 1/(4·|V|·max|r(v)|);
+- arXiv 1106.0778 (Friedmann, LMCS 7(3:19)), opened 10:30Z, §9: reward r_Ω(v) = (−|V|)^Ω(v); β_G := 1 − 1/(4·|V|³·max|r(v)|) [p. 35; CORRECTED per L-LIT T19, box 3; earlier text had |V|];
   Thm 9.2 (Puri), Thm 9.5 (Vöge: every parity improving switch is a discounted improving switch), Lemma 9.6 (1-sink games:
   Odd's discounted best response reaches the sink), so the lower bound transfers to discounted payoff games.
 - arXiv 2610.22149 v1 (Loff-Skomra, "Smoothed analysis of policy iteration and value iteration for deterministic discounted
@@ -60,7 +60,24 @@ SUCCESSOR 1, box 2 (GO 12:51Z, to ~17:50Z; handover check docs/agents/handover-c
 - Search (WebSearch, 10:30Z) also listed: Madani-Thorup-Zwick, ACM TALG 6(2) 2010, O(mn) for deterministic discounted MDPs
   (abstract page only, NOT opened); Karczmarz arXiv 2110.15070 (NOT opened).
 
+- arXiv 1309.5925 v2 (Allamigeon-Benchimol-Gaubert-Joswig, "Combinatorial simplex algorithms can solve mean payoff games",
+  SIAM J. Optim. 24(4) 2014), abstract page opened 2026-10-18 ~18:39Z (box 3): any combinatorial simplex algorithm has a
+  tropical analogue solving MPGs (Hahn series + symbolic perturbation); strongly polynomial combinatorial simplex "is open".
+  Body NOT opened.
+- arXiv 2309.02223 (van Dijk-Loho-Maat, "The worst-case complexity of symmetric strategy improvement", CSL 2024), pdf opened
+  ~18:40Z (sha256 10e6794d82aba465..): Theorem 1 p. 2 (exponential for SSI independently of the improvement rule; any
+  valuation), Algorithm 2 (SSI, f applied to I), Algorithm 3 (generalized SSI with J-sets), Lemma 5, p. 3 "more than only
+  local information".
+
 ## Dead ends
+- N2 (PRIO-ANNEAL), KILLED ON DATA 18:05Z UTC (box 3; first implementation n2.py). Padded switchallexp
+  (gen_padsae.sh; dummies block compression): largest stage 6, 15, 34, 72, 148, 300, 604 (N = 1..7). Instance
+  experiments/new/instances/killer/padsae_N7.pg (sha1 9ee0385509ac81f2dd9eb111df2ecbdabdfa87b1, n = 230): stage of 604.
+- N1 (LS24 IncreasingDiscountPI on parity rewards), KILLED ON DATA 2026-10-18 17:54Z UTC (box 3; unrefereed; docs/new/N1-KILL.md).
+  Obstruction: deep traps (trap priority gap P - q > max priority + 2) hold Even in all traps with positive values until a phase
+  after the parity-like horizon; that single phase runs Howard from the best-reward start = Friedmann's counter. Instance:
+  experiments/new/instances/killer/deeptrap_sae_N7.pg (sha1 835ce1326ca36e318bd59d54aead26eee6d36b24, n = 239): 1244 Even
+  switches in one phase; N = 1..7: 11, 31, 71, 151, 311, 631, 1244.
 - X1 SCALE-VI (2026-10-18, screened out by argument before code; Lead 10:00Z: record as dead end by argument). Bit-scaled
   energy value iteration: phase k solves the energy game with weights ceil(w / 2^k), warm-started from 2 f_{k+1} (valid
   lower bound since ceil-weights at k+1 doubled dominate weights at k). Obstruction: vertices whose winner flips to Odd in
@@ -69,6 +86,10 @@ SUCCESSOR 1, box 2 (GO 12:51Z, to ~17:50Z; handover check docs/agents/handover-c
   late (a single Odd self-loop of priority 1 reached through high even priorities) forces the climb in the last phase.
 
 ## Things only I know
+- N5 fallback: on non-sink games N5's selection AND SSI's I can both be empty (random n = 11 game r00008); the fallback is one
+  classical switch-all step. Waiters: never `pgrep -f <script name>` in a loop whose own command line contains that name; wait on a PID.
+- Run date -u for EVERY timestamp, including message first lines; in box 3 I estimated two stamps (18:22Z, 19:05Z) that were
+  20-55 min ahead of the clock. Commit times (TZ=UTC git log --date=format-local) are the reliable record.
 - out/ does not survive a container: cite only committed CSVs. Python Zielonka is exponential on counter_rr/counter_m (b ~1.6):
   never use check_sol.py as the sweep checker there; check_sol2.py (Oink zlk, tl fallback) is the sweep checker.
 - Never edit a running bash script in place with an editor that keeps the inode (bash reads it lazily); sed -i is safe (new inode).

@@ -1,0 +1,8 @@
+N,n,sha1,phases,even_iters,odd_iters,max_phase,nonzero_phases,secs,check
+1,47,f44eeb9c656e4d09284e125eda6f06a4db97e9c9,184,11,3,11,"nonzero=[11]",0.01,zielonka(oink zlk) OK strategies verified
+2,79,99c96a0d913e79b54ec4490d179cf5cbef60d8e5,309,31,8,31,"nonzero=[31]",0.09,zielonka(oink zlk) OK strategies verified
+3,111,594d25f5c9f4b957b153a7b64c44a08a38873dc3,442,71,17,71,"nonzero=[71]",0.34,zielonka(oink zlk) OK strategies verified
+4,143,8f6af4677bf018f249385430224fa7fffc0025e1,580,151,34,151,"nonzero=[151]",1.24,zielonka(oink zlk) OK strategies verified
+5,175,a7c6370227eb7985aeb5a975a9ec00a32b864593,723,311,67,311,"nonzero=[311]",4.05,zielonka(oink zlk) OK strategies verified
+6,207,513427372388fc4361515aa4f851587eabef4bbb,870,631,132,631,"nonzero=[631]",12.18,zielonka(oink zlk) OK strategies verified
+7,239,835ce1326ca36e318bd59d54aead26eee6d36b24,1020,1244,261,1244,"nonzero=[1244]",35.34,zielonka(oink zlk) OK strategies verified
