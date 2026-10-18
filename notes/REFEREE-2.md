@@ -7,7 +7,7 @@ P-N5T (docs/new/G-N5-TERM-reading.md @ trunk 812ecba): docs/referee-2/R2-N5T.md,
 VJ00 improvements (si.py Even side cross-checked 0 mismatches; dual side unchecked); G-N5T-2 termination only; G-N5T-3 VJ00
 Lemma 5.9 / Prop 5.10 unproved in source, not re-derived). Lemma 5.8 2=>1 / 2=>3 NOT used. NEW: VJ00 postulate I1 also fails
 (3-vertex one-player game, R2-N5T §4). Tools R2-N5T/vjbf.py (plays enumerated, no (11)), 936,826 switches, 0 failures.
-Next: comparison section after REFEREE's R-N5T.md (may read docs/referee/ now that mine is pushed). Idle until routed.
+Lead 23:09Z: R2-N5T merged to trunk; I1 instance + Lemma 5.8 obs. -> L-LIT (vs CAV version); N1-N4 -> L-NEW. PARKED: write §C (comparison) ONLY after the Lead says REFEREE's docs/referee/R-N5T.md is pushed; do not read it before.
 Earlier (successor 1):
 2026-10-17 15:22Z (successor session_01NUXFnUcx4V3ZWJJY11tXwx, Opus 5.5, D12). Handover check 6f33a84 (5/5).
 P7 (§22r EXACT / PREFIX-MONO-X / new steals, pin 357224b): docs/referee-2/R2-P7.md. (a) SIGN, (b) SIGN, (c) SIGN WITH GAPS
