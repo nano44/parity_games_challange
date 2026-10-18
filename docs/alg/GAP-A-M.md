@@ -4159,6 +4159,14 @@ earlier round-r regions. So U_r ⊆ U_{r′} would make y attract at r′ (Z_{r�
 inclusion U_{r+1} ⊆ U_r is FALSE in general: 543 of 64,033 consecutive round pairs on the library (first: cm_viol_oink_n28.pg,
 |R| = 28, round 2 adds vertices 7 and 23; 0 of 16,883 on 5,000 random games). So the proof needs the inclusion only at y's
 attracts()-successors, or another argument. Open.
+ADDENDUM 3 (12:52Z by date -u): (TIE-BELOW) is FALSE (self-kill). The within-priority order of every library instance with BELOW events
+was permuted at random (stable order = (priority, new id); 6 + 20 permutations per file; tool:
+experiments/alg/fixd_tieperm.py). A fired tangle with a same-priority vertex ABOVE its top appears on permutations of h4_def10_oink_n28 and lalg_dtl_mviol_n20.
+Pinned instance experiments/alg/instances/tieabove_n20.pg (sha1 701d309c8b8a; pinned Oink 6 iterations, verified; stable model
+winners equal to Zielonka): the singleton tangle {14} (priority 15, odd player's phase) fires in the round-7 region of top 8
+(priority 15), with 14 above 8 in the order. On the same runs the case-(a) PRECONDITION and case-(a) steals stay 0 (414 permuted runs
+in the 6-permutation pass, 61,678 below-events, 7 above-events; steals 5, all case (b), on tieabove_n20). So the (TIE-BELOW) route to (NO-PRE-a) is dead, and (NO-PRE-a)
+itself stands as DATA (0 occurrences on the library, the permuted library, and random tie-heavy games).
 STATUS of (c) at 11:02Z: no route. (LONG-PHASE) at G′ reduces, via R11 (c) and STEAL-ENTRY, to bounding recurring strategy-conflict
 steals at the root (plus case (a)). The class 𝒞^1P is exactly where both cases vanish (§27b).
 
@@ -4209,8 +4217,8 @@ DATA that stands:
 - NOSTEAL-1P on 3,600 forced runs of the designed steal instances (ties too);
 - (NO-PRE-a): the case-(a) precondition is never seen (206 files, both orders);
 - lagdist: conflict edges recur ≤ D/2 times each, with a quadratic total.
-- (TIE-BELOW) (§28c addendum 2): no fired tangle holds a same-priority vertex above its top (58,739 library events); it implies
-  (NO-PRE-a). The round-union proof route fails (U_{r+1} ⊄ U_r in 543 of 64,033 round pairs).
+- (NO-PRE-a) (§28c addenda): the case-(a) precondition never occurs (library, permuted library, random). (TIE-BELOW), which
+  would imply it, is FALSE (tieabove_n20, addendum 3); the round-union route also fails (543 of 64,033 round pairs).
 - (OUTCOME-MONO) (§28d): at the first differing depth-0 call the outcome never goes stable → −1 and V* never shrinks; the reset
   events are −1 → stable, prevV growth and the §27d prevV shrink (about 300 per order on the library).
 VERDICTS: (FIX-d) NO ROUTE (§26d). (b2) dead. (b1) survives as a reduction to (CTX⁺) on 𝒞^1P. (CTX⁺) on 𝒞^1P: no route; the
@@ -4218,7 +4226,7 @@ obstruction is Dom(prevV) tail resets (§27d). (c): no route; (LONG-PHASE) at G�
 L32: NOT met. The class result is a reduction, not a bound.
 NEXT (successor): (1) the potential for (ii) on 𝒞^1P. Charge each reset at position j to the emptying-round increase at R_j
 (≤ |R_j| + 1 per context) and look for what a FRESH context below j must consume; or adopt L-RED's construction if it compounds.
-(2) A proof or an instance for (TIE-BELOW) ⇒ (NO-PRE-a): the proof needs inclusion only at y's attracts()-successors.
+(2) A proof or an instance for (NO-PRE-a) directly ((TIE-BELOW) is false, so a proof must use that y stays pruned).
 (3) DONE in box 11: OUTCOME-MONO-1P (§28e). (4) Fallback TC-6 P2-P6.
 28d. What changes at the first differing depth-0 call (DATA; tool experiments/alg/fixd_outcome.py; all 206 library files;
 11:49Z by date -u). Per transition s → s+1 of a phase: the first depth-0 best_vertices call whose (R, result, V) differs.
