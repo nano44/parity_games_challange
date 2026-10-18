@@ -3458,6 +3458,8 @@ trunk 3572651. No REJECT.
   charged pairs are distinct. Hence #(e*-at-R) ≤ D_R ≤ #fired⁺(R) given STR-DET (≤ 2·D_R without it), and
       S − 1 ≤ Σ_{R ∈ C_bv} #fired⁺(R) + n(|C_T| + |C_Dom|) + 1,
   with no H and no F_R.
+- UPDATE (Lead 01:41Z by date -u, CHECKER C14 N-2): REFEREE §C (referee abc5185) CONFIRMED N11-b1, so N11-b1 now has TWO
+  signatures; the "ONE signature; §C pending" above is stale.
 - What this changes for box 10 (L-ALG reading, unrefereed). With N11-b1 the per-context budget is D_R itself:
       S − 1 ≤ Σ_{R ∈ C_bv} D_R + n(|C_T| + |C_Dom|) + 1   (given STR-DET; one signature on the D_R form).
   So (D-POLY) "D_R ≤ poly(|R|) per context and phase" with (CTX⁺) gives GAP-A, and §23u's D_R ≤ N_ent + D_R^thr turns
@@ -3663,3 +3665,13 @@ date -u; dtl_defsplit.py, same sets and flags as §24b)
   U-shrink; §23x), and an RV rise is free (growth). Counting rises per vertex gives #USHRINK_R ≤ |R|(|R| + 2) + |R|·#USHRINK_R,
   which is vacuous (coefficient |R|). A proof needs a U-shrink to CONSUME something: e.g. the stolen-from lower top's tangle can
   be stolen by u only once per (u, tangle). Untested; candidate for the successor.
+
+24d. Correction to the §23s end note and §23u (CHECKER C14 E-1; L-ALG succ. 8, 03:09Z by date -u). §23s is frozen; the
+correction goes here.
+- The §23s note "(FIRED⁺ ≤ |R|) at the root would give S ≤ |G′| + 1 per phase, which is (SPP) itself" and §23u's "at the root both
+  are (SPP)-strength statements" are a READING resting on DATA (D_{G′} ≈ S − 1 on the chain family), unrefereed.
+- They are NOT literally (SPP). (SPP) bounds S, so it implies GAP-A (with phases ≤ D + 2). (FIRED⁺-R) at G′ alone bounds only
+  the root's own differing pairs (D_{G′}); S can be driven by deeper contexts while the root call is unchanged (R9's sum over
+  contexts), so (FIRED⁺-R) at G′ does NOT imply GAP-A (REFEREE R-P11 (c), REFEREE-2 R2-P11 §3). The correct statement: at G′,
+  (FIRED⁺-R) is necessary for GAP-A and coincides with (SPP) only on families where every search's first difference lies in the
+  root call (DATA, e.g. spp_chain_up_n43).
