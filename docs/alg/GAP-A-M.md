@@ -3675,3 +3675,12 @@ correction goes here.
   contexts), so (FIRED⁺-R) at G′ does NOT imply GAP-A (REFEREE R-P11 (c), REFEREE-2 R2-P11 §3). The correct statement: at G′,
   (FIRED⁺-R) is necessary for GAP-A and coincides with (SPP) only on families where every search's first difference lies in the
   root call (DATA, e.g. spp_chain_up_n43).
+
+24e. Box 10: (EXIT-LEAD-DISTINCT) DATA (L-ALG succ. 8, 03:16Z by date -u; tool experiments/alg/dtl_exitlead.py, RM_LIGHT=1
+RM_DV=0). Leading key of a pair x → y: (r0, τ0), the first grid round whose top map differs and the highest top whose round-r0
+region differs (a new top counts). Statement: the exits of one (step, vertex) never share a leading key. It would give
+exits(σ, w) ≤ (|R| + 1)|R|, so X_R ≤ (|R| + 1)²|R|³ and D_R polynomial (§23w), i.e. a polynomial-c form of (EXIT_c).
+- Corpus 141 files + stealonce_viol_n76, stealonce_both_n45, stealer_viol_n76, fall3_n76: (step, vertex) with ≥ 2 exits:
+  keys distinct 3,112 / 3,112 (stable), 84 / 84 (Oink). Union and climb-best stress runs in progress.
+- No proof: the leading change is a growth (equal prefix, EXACT), but nothing forbids the same region growing twice and
+  expelling w twice. DATA only.
