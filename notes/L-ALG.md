@@ -3,12 +3,13 @@ Successor 8's handover text is in git history: `git show fe1b928:notes/L-ALG.md`
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push only with `scripts/push.sh > $S/push.log 2>&1; echo exit $?`.
 Truth for GAP-A: docs/alg/GAP-A-M.md §23-§29 (§26-§29 = box 11, successor 9; §29 = ledger). Dead ends: docs/alg/DEAD.md.
 
-## Resume point (2026-10-18 12:03Z by date -u)
+## Resume point (2026-10-18 13:16Z by date -u; PARKED at box end)
 Box 11 (GO 09:38Z, to about 14:40Z). Ledger: docs/alg/GAP-A-M.md §29 (the map of (LONG-PHASE) is its first paragraph).
 - (FIX-d): NO ROUTE (§26). (b2): dead (§27a). (b1): CTRL + NOSTEAL-1P proved as readings; GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P (§27b);
   brief docs/alg/ONEPLAYER.md; packet HELD by the Lead (revive if (CTX⁺) moves). (CTX⁺) on 𝒞^1P: no route; the obstruction is
   Dom(prevV) tail resets (§27d). (c): no route (§28); Lemma STEAL-ENTRY (§28c); (TIE-BELOW) ⇒ (NO-PRE-a) DATA; reset events (§28d);
-  Lemma OUTCOME-MONO-1P (§28e). The precise compounding condition for L-RED is in §29.
+  Lemma OUTCOME-MONO-1P (§28e). The precise compounding condition for L-RED is in §29; §28f: it OCCURS (enabling tangles are
+  born in the tail, 36 of 36 in the class); §28g: (FIRE-LAMINAR) false. (TIE-BELOW) false (§28c add. 3). Packet HELD (Lead 12:09Z).
 - L-RED is routed (Lead 11:08Z): a reset counter over chain positions (inside 𝒞^1P or general); a serialized-context family in
   𝒞^1P. If either compounds, run fixd_fdpos.py and fixd_rank.py on it at once.
 QUEUE: (1) a potential for reset phases on 𝒞^1P (§29 NEXT (1), §28d lists the three reset kinds; §28f: enabling tangles are
@@ -24,7 +25,7 @@ also in ONEPLAYER.md); (4) fallback TC-6 P2-P6.
   lagdist_D4/D8/D12, onep_lagdist_D8, onep_chainfail_n20.
 - §28 with tools fixd_fdpos.py, fixd_topchain.py, fixd_stealentry.py (case-(a) precondition counter), fixd_tie.py, fixd_umono.py,
   fixd_outcome.py, fixd_tieperm.py, fixd_enable.py, fixd_firelam.py; instances
-  tieabove_n20, onep_firecross_n76. §29 ledger. Last push bb4185a.
+  tieabove_n20, onep_firecross_n76. §29 ledger. Last push: see git log (box-end commit after 485d0d9).
 
 ## Things only I know (successor 9)
 - Clock: `date -u` in this container reads earlier than the work volume suggests; I used it as instructed, unadjusted.
