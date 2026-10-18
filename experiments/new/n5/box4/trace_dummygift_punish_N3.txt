@@ -1,0 +1,12 @@
+it 1: |Is|=17 |It|=3 fb=0 sigma_changes=7 [7, 26, 33, 35, 36, 42, 43] tau_changes=3 [27, 37, 44]
+it 2: |Is|=14 |It|=1 fb=0 sigma_changes=4 [1, 10, 11, 12] tau_changes=1 [74]
+it 3: |Is|=23 |It|=1 fb=0 sigma_changes=6 [9, 26, 33, 35, 36, 42] tau_changes=1 [73]
+it 4: |Is|=17 |It|=21 fb=0 sigma_changes=4 [26, 31, 34, 36] tau_changes=21 [50, 51, 52, 53, 54, 56, 57, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 75, 76, 83, 84]
+it 5: |Is|=11 |It|=8 fb=0 sigma_changes=5 [19, 39, 41, 45, 46] tau_changes=8 [55, 58, 71, 72, 79, 81, 87, 89]
+it 6: |Is|=11 |It|=4 fb=0 sigma_changes=5 [21, 26, 36, 45, 46] tau_changes=4 [69, 70, 80, 82]
+it 7: |Is|=7 |It|=4 fb=0 sigma_changes=2 [23, 39] tau_changes=4 [77, 78, 88, 90]
+it 8: |Is|=6 |It|=2 fb=0 sigma_changes=3 [25, 36, 45] tau_changes=2 [85, 86]
+it 9: |Is|=6 |It|=0 fb=0 sigma_changes=4 [1, 9, 26, 46] tau_changes=0 []
+it 10: |Is|=2 |It|=0 fb=0 sigma_changes=2 [1, 8] tau_changes=0 []
+it 11: |Is|=9 |It|=0 fb=0 sigma_changes=2 [7, 9] tau_changes=0 []
+TOTAL iterations=11 fallback=0 (= n5.run)

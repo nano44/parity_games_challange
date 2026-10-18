@@ -5,7 +5,7 @@ and each one asserts that its counts equal n5.run's (n5_trace.py; n5_adv2.py re-
 Every solution cited is checked by check_sol2.py (Oink zlk + harness/verify.py) or by zielonka.py + verify.py (n5_adv2.py).
 Outputs: experiments/new/n5/box4/.
 
-## Result: NOT KILLED (attempts 3, 4, 4b, 5, 6). Forced fallback ("lock") exists but does not scale; obstruction below.
+## Result: NOT KILLED (attempts 3, 4, 4b, 4c, 5, 6; cycling attack §8). Forced fallback ("lock") exists but does not scale; obstruction below.
 
 ## 1. Deeptrap oscillation (26 / 15 / 33 / 18 at N = 6 / 7 / 8 / 9): explained, linear
 Per-iteration traces: n5_trace.py on gen_deeptrap.sh N (sha1 5134273723.., 835ce1326c.., 3ce8d18866.., b88d40574b..),
@@ -117,6 +117,15 @@ Result (dummygift.txt, all OK): iterations 14, 16, 18, 20, 22, 24 at N = 2..7, 0
 iterations 1-7, and Iτ = ∅ from iteration 8. Cause: the un-dummied edges to odd-priority targets put odd vertices on the fix routes
 under τ̄, so the fixes are improving for Odd (K5 again).
 
+### 5b'. Killer attempt 4c: dummies only on edges into EVEN-priority, Even-owned targets with ≥ 2 successors ("punish")
+Diagnosis of 4b at N = 2, iteration 1: the improving Odd fixes go to Odd-owned p (→ the Odd-winning sink q, which Even cannot
+punish) or along routes with high odd vertices. In 4c, Even can punish every fix at once (dummygift.py mode punish).
+Result (dummygift.txt, all OK): iterations 8, 11, 12, 15, 18, 21 at N = 2..7, 0 fallbacks.
+Trace N = 3 (trace_dummygift_punish_N3.txt): Odd keeps the dummies for 3 iterations, while Odd's OTHER vertices improve, and that
+changes τ̄. At iteration 4 the fixes become improving and Odd releases 21 dummies at once. Even's step is never empty: its
+undummied candidates always give progress against τ (K1 fails).
+Reading: K2 needs ALL of Odd frozen, not only the blunder vertices. Any Odd improvement elsewhere changes τ̄, hence Iτ.
+
 ### 5c. Killer attempt 6: per-bit replicated gadget (bitgadget.py)
 - One genome of K vertices is copied for EVERY bit i, wired to bit-relative labels (i, i+1) and to the next copy, so it scales with
   Friedmann's counter.
@@ -138,6 +147,8 @@ No per-bit gadget found whose lock or iteration count grows with N.
 - Ξ-flat climb (n5_adv3.py; fitness = iterations where neither Ξσ nor Ξτ strictly rises; mutations as n5_adv.py plus equal-priority
   moves): best 1 flat iteration of 17 (n = 12, 4,000 steps) and 2 of 13 (n = 24, 3,000 steps); checked OK
   (n5/box4/flat_n12.txt, flat_n24.txt).
+- Lemma B checked by computer (n5_flatcheck.py, 4,000 random games, half with many equal priorities): 296 flat side-steps, 0
+  violations; every flat switch is a length-only switch at a cycle node (n5/box4/flatcheck.txt).
 - Explanation and repair: docs/new/G-N5-TERM-reading.md. A flat switch is necessarily a length-only switch at a cycle node
   (Lemma B), and a potential gives termination for every switch sequence. Unrefereed L-NEW reading.
 - The same file records that VJ00 Lemma 5.8's "Improve(σ) ≠ σ ⇒ σ not maximum" fails at cycle nodes. Instance in §0; checked from

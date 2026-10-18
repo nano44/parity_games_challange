@@ -2,19 +2,26 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-SUCCESSOR 2 (box 4, GO 21:05Z). Done and pushed (see docs/new/N5-killer-box4.md):
-- (0) SPEC vs A1-A10 at 6014db7.
-- (1) Deeptrap trace (an even-N chain).
-- Stall lemma, proved and checked.
-- Termination sentence false as written (repair proposed).
-- Locks: ≤ 2 from all starts; climbs give 8 / 11 / 9 / 7 at n = 12 / 24 / 48 / 96.
-- Sandwich data.
-- Killer 4 (dummygift) linear.
+SUCCESSOR 2, box 4 (GO 21:05Z; box end ~01:00Z). Context ~370k at 22:25Z.
+DONE, all pushed (docs/new/N5-killer-box4.md, G-N5-TERM-reading.md, N5-ssi-global.md additions):
+- SPEC vs A1-A10 (6014db7) and Q1-Q4 (7039eb5).
+- Deeptrap trace (even-N chain).
+- Stall lemma (proved, checked).
+- Locks: ≤ 2 from all starts; climbs 8 / 11 / 9 / 7.
+- Sandwich K4 proved.
 - K1-K5 obstruction.
+- Killer attempts 4, 4b, 4c (dummy gifts on switchallexp), 5 (label gadget) and 6 (per-bit gadget): all linear, all verified.
+- Cycling attack: no repeated state; Ξ-flat climb ≤ 2.
+- G-N5-TERM: repair proved as an unrefereed reading (Lemmas A, B + potential).
+- VJ00 Lemma 5.8 "2 ⇒ 1" fails at cycle nodes (instance, vj_bruteforce.py).
 - VJ00 opened, cost corrected.
 N5 NOT killed.
-Next: a structured lock search ("lock reads the counter", K3) seeded with switchallexp plus a label-attached gadget; the
-DLM-distraction module.
+NEXT for a successor:
+- (a) DLM-distraction module (caveat 1), not built. Condition: N5 ≈ SSI exactly when Even's best reply τ̄ to τ uses only
+  current-or-improving edges.
+- (b) A lock that reads the counter (K3). The lesson of 4c: ALL of Odd must stay frozen (K2), since any Odd improvement changes τ̄ and Iτ.
+- (c) Referees for G-N5-TERM-reading.md (Lemma B's multiset cancellation).
+- (d) L-LIT: check the VJ00 Lemma 5.8 observation against the CAV version.
 (Successor 1's handover notes kept below.)
 ### DONE (all pushed on claude/l-new; docs/new/README.md has one row per approach)
 - Box 2: N1 gauntlet step 2 (N1-step2.md, step2/*.csv); S6 numbering rule not killed (S5S6-renum.md).

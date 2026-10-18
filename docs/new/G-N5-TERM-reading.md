@@ -75,6 +75,8 @@ step 4 question). Consecutive flat iterations (neither Ωσ nor Ωτ changes) nu
 are integers in [−n², n²] while the valuations are fixed.
 
 ## 4. Data matching the reading
+- Lemma B by computer: n5_flatcheck.py, 4,000 random games: 296 flat side-steps (one side's Ξ unchanged while its strategy
+  changed), 0 violations (n5/box4/flatcheck.txt).
 - No repeated state in any run of box 4: n5_lock.py over all start pairs (n ≤ 8; 1,600 games), and the climbs.
 - The Ξ-flat climb (n5_adv3.py, Lead 21:35Z) is running, with its own repeated-state detector. Results:
   docs/new/N5-killer-box4.md §8.
