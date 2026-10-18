@@ -52,7 +52,10 @@ Status: HANDOVER (box 7 successor 5 parks at ~580k; see Resume point). Older sta
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
-2026-10-18 00:10Z (date -u): BOX 8 END. All climbs stopped 00:08Z (ps: none). Worker restarted ~23:25Z and killed the
+2026-10-18 01:55Z (date -u): BOX 9 END (CTX+), PARKED. R38: best C_bv per n 6/7/13/6 at n 20/30/40/56, about half the
+transitions; no growth family. Pinned ctx6_n20, ctx7_n30, ctx6_n56. All climbs stopped 01:48Z (ps: none). Successor queue: (1) a
+serialized-piece construction (one lag gadget serves both depth >= 2 (R37) and C_bv growth (R38)); (2) long-phase FIRED-R multi > 0.
+(history) 2026-10-18 00:10Z (date -u): BOX 8 END. All climbs stopped 00:08Z (ps: none). Worker restarted ~23:25Z and killed the
 climbs then; they were restarted from saved bests. Final: no depth 2, no k 3, no EXIT 3 (R37 addenda). Successor queue below stands.
 (history) 2026-10-17 21:59Z (date -u), successor 6 (Opus 5.5), box 8 (Lead GO 19:01Z; depth box extended to ~00:30Z, note ~23:00Z).
 DONE (all pushed via push.sh; every instance pinned in check.sh, both orders, pinned Oink verified):
