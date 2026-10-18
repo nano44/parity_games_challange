@@ -3276,3 +3276,84 @@ stealonce_viol_n76 and stealonce_both_n45 (22 and 20 cases, stable / Oink); 1 in
 §23r.
 Status against L32: GAP-A ⇐ (CTX⁺) ∧ (EXIT_c), two named DATA statements. The STEAL side now has a proof route from a single
 local statement. (CTX⁺) has none.
+
+23r. Box 9: (EXIT_c) data and the shape of a proof (DATA plus SKETCH; L-ALG succ. 7, 00:23Z by date -u)
+- Data: dtl_prefexits.py (now also counting re-entries; RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0). Sets: corpus plus
+  stealonce_viol_n76, stealonce_both_n45, stealer_viol_n76 and resteal34_union_n90.
+
+  | order | exits = 1 | exits = 2 | exits ≥ 3 | re-entries = 1 | re-entries = 2 |
+  |---|---|---|---|---|---|
+  | stable | 6,692 | 189 | 0 | 627 | 17 |
+  | Oink | 2,106 | 20 | 0 | 49 | 0 |
+
+  - Two exits occur only on DE20-derived instances (stealonce_*, resteal34_union_n90).
+  - Re-entries occur on natural data too. Patterns 0101, 01001 and 10001 appear on f1_twodef_n48 and f1_twofall_n48, and
+    010111 on fall3_n76.
+  - So a vertex can leave a prefix and return without any re-steal, but no (step, vertex) has left 3 times. No INCOMPLETE
+    run.
+- Reformulation (reading). Within a round the prefixes are nested: P(r, τ⁺) grows as τ decreases. So w ∈ P_i(r, τ⁺) iff
+  top_r^i(w) > τ, where top_r^i(w) is the top whose region holds w at visit i, or ⊥.
+  - An exit of w at (r, τ) is exactly a downward crossing of level τ by the sequence (top_r^i(w))_i.
+  - (EXIT_c) says: for every round and vertex, the top sequence crosses every level downward at most c times. By §23q this
+    alone gives the STEAL side.
+- Why the obvious proofs fail (named gap G23r):
+  - (i) Exits at a step need a relevant steal at an earlier step (local PREFIX-MONO-X*), and every relevant steal is an
+    entry at that earlier step (§23q, step 1). So exits at later steps are driven by entries at earlier steps, and
+    re-entries are driven by growth.
+  - (ii) The only signed monotone structure across visits is the first difference: at the first differing step the region
+    grows strictly (FDL / EXACT*). The resulting lexicographic chain of prefix vectors gives only the bound
+    (|R| + 1)^{#steps}, the §22v obstruction again.
+  - (iii) A proof of (EXIT_c) therefore needs a per-vertex reason why top_r(w) cannot fall below the same level a third
+    time. In R35 the second fall needs a NEW tangle in region 66 (R37-2: each event pair needs a tangle learned in
+    between), so the reason must involve the learning dynamics, not the region geometry alone.
+  - Precedent: per-vertex fall counts have died before: (FALL-V), DE18, for RV.
+- Status: (EXIT_c) DATA (c = 2). No proof. Successor and climb target: EXIT ≥ 3 for one (step, vertex), e.g. three R35
+  levels in series.
+
+23s. Box 9: Lemma CHANGE-NEW: F_R ≤ 3·#fired⁺(R) UNCONDITIONALLY (reading, unrefereed; L-ALG succ. 7, 00:42Z by date -u; tool
+experiments/alg/dtl_changenew.py)
+Setting:
+- One phase and one best_vertices context R (key (depth, R)), with consecutive visits x → y.
+- T_x ⊆ T_y: within a phase tangles are only appended. tpr[t] = −1 (dtl.cpp 132-135) needs a vertex outside G, and G
+  shrinks only in the dominion loop after a search (1031-1036), which ends the phase.
+- #fired⁺(R) is the number of distinct tangles that fire (attractTangle returns true) at R in the phase, in region steps or
+  in the threshold loop. D_R is the number of consecutive visit pairs whose set-level computations (the sequence of tattr
+  calls: Z in, Z out, threshold) differ.
+Lemma CHANGE-NEW. If the computations at x and y differ, some tangle t with ntv(x) ≤ t < ntv(y), i.e. born between the two
+visits, fires at R in y.
+Proof.
+1. The call is a deterministic function of (R, T), given the order datum. It recomputes V from R (pyref 221; dtl.cpp 662-667).
+   At set level it does not depend on str (STR-DET, R8).
+   Let e_k be the first tattr call whose output differs. All earlier calls agree, so e_k has the same input Z, arena and
+   threshold in both visits (the candidate tests, attracts, depend only on Z and R).
+2. Region step. The prefix P(τ⁺) is the same, so each OLD tangle has the same exclusion status. By EXACT (R10 (a)),
+   Z_out(x) = Cl(base; T_x \ E_x) and Z_out(y) = Cl(base; T_y \ E_y) ⊇ Z_out(x).
+   - By EXACT* (R11 (a)), Z_out(y) = Cl(base; F(y)).
+   - If F(y) ⊆ T_x, then F(y) ⊆ T_x \ E_x (the fired tangles are not excluded), so Z_out(y) ⊆ Z_out(x), and the outputs
+     are equal: a contradiction.
+3. Threshold loop. There are no exclusions (Gx = R, consume = None, dtl.cpp 726-731), and W_t = Cl_t(U) over all of T (§22r
+   Corollary, the signed G-d1/G-Ψ convention). By soundness (S0), Z_out(y) ⊆ Cl(Z_in; used(y)). So the same argument
+   applies.
+4. In both cases a tangle of T_y \ T_x fires at e_k in y. □
+Corollary (reading):
+- Distinct differing pairs have disjoint birth intervals, so their new tangles are distinct, and D_R ≤ #fired⁺(R). A
+  relevant-steal pair is a differing pair, so N*_R ≤ D_R.
+- By R11 (c): F_R ≤ 3·N*_R ≤ 3·D_R ≤ 3·#fired⁺(R). This needs no STEAL premise at all; compare R11 (d)'s
+  3(|R|+1)|R|·#fired(R), which needed (STEAL-ONCE*).
+- With R9: GAP-A ⇐ (CTX⁺) ∧ (FIRED⁺-R), given STR-DET, where (FIRED⁺-R) says #fired⁺(R) ≤ poly(|R|). So there are two
+  alternative routes for the per-context budget: (FIRED⁺-R) (this section) or (EXIT_c) (§23q, packet 10).
+DATA (dtl_changenew.py; RM_EXCL=1 RM_LIGHT=1 RM_DV=0; sets include the corpus, the DE19/DE20 instances, fall3/fall4 and
+ctx13_n40):
+
+| set | order | differing pairs, CHANGE-NEW holds | contexts, D_R ≤ #fired⁺ and N*_R ≤ D_R | max D_R / #fired⁺ |
+|---|---|---|---|---|
+| mixed unions s1 | Oink | 14,008 / 14,008 | 17,427 / 17,427 | 1.0 |
+| mixed unions s1 | stable | 14,202 / 14,202 | 17,739 / 17,739 | 1.0 |
+| cross unions s11 | stable | 9,151 / 9,151 | 10,955 / 10,955 | 1.0 |
+
+No INCOMPLETE run.
+HONEST LIMIT. The bound is tight, and at the ROOT context it tracks S. On spp_chain_up_n43 the root context (|R| = 43) has
+42 visits, D_R = 41 and #fired⁺ = 41: every search learns a tangle that fires at the root in the next search. So
+(FIRED⁺-R) at G′ is close to bounding S directly, i.e. close to GAP-A's core (as R11 G-R11-6 warned for (FIRED-R)). It is
+still ≤ |R| on all data (41 ≤ 43). The lemma's value is structural: per context, the budget F_R is at most 3 times the
+number of NEW tangles that reach it, with no steal bookkeeping.
