@@ -2,15 +2,14 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-SUCCESSOR 1, box 2 (GO 12:51Z, to ~17:50Z; handover check docs/agents/handover-checks/L-NEW.md at 2d17b3f).
-- (0) N1 step 2 on the hard bench: experiments/new/run_step2.sh -> COMMITTED CSVs experiments/new/step2/<fam>.csv (gen command +
-  sha1 per instance, deterministic generators), check_sol2.py (regions = Oink zlk, tl on zlk timeout/error; verify.py strategies),
-  plots docs/new/plots/step2_*.png, verdict table docs/new/N1-step2.md (summarize_step2.py prints its rows). Done so far:
-  counter_rr (N <= 42), counter_m (N <= 42), counter_rob (N <= 20), switchbestexp (N <= 16, N = 17 over 1200 s), switchallexp
-  (N >= 26) all polynomial-looking, every row checked. Running (14:30Z on): chain A = counter_rob, tc+; chain B = switchallexp,
-  recursiveladder, tc, counter_core, counter_dp, counter_ortl, counter_qpt, counter_symsi (NMAX 60, TO 1200).
-- (1) S6 numbering RULE: done 14:20Z, not killed (docs/new/S5S6-renum.md "Box 2 (1)"; rules in experiments/new/instances/s6rule/).
-- Oink zlk logic error on counter_m N = 41, 42 (zlk.cpp:589): side finding for L-COMP, in N1-step2.md.
+SUCCESSOR 1, box 2 ENDED 17:52Z (head 9ad423a; report to Lead 17:52Z). Waiting for the Lead's routing.
+- (0) DONE: N1 passes gauntlet step 2 as DATA on all 13 hard families (docs/new/N1-step2.md: verdict table, caveats, n^O(d)
+  ceiling from HMZ Thm 6.5 + LS Thm 7.9; committed CSVs experiments/new/step2/, plots docs/new/plots/step2_*.png). Reported as a
+  step-2 survivor (L35 (3)). Open next steps (Lead to route): second independent implementation; step-3 barrier statement
+  (L-LIT); killer design with d -> infinity and a long LATE phase (the ceiling's constraint).
+- (1) DONE: S6 numbering RULE, not killed (docs/new/S5S6-renum.md "Box 2 (1)").
+- Tools: run_step2.sh (FAMS, NMIN, NMAX, TO, BUDGET), check_sol2.py (Oink zlk ref, 4 GB cap, tl fallback on timeout/exit/bad
+  output), summarize_step2.py, plot_step2.py, rule_s6.py. Oink zlk side findings in N1-step2.md.
 
 ## Queue
 0. DONE box 2 14:20Z (rule class: not killed, S5S6-renum.md). (Lead 12:14Z) S6 on switchbestexp: extract a numbering RULE from the climbed numberings
