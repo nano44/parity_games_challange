@@ -167,7 +167,8 @@ All measurements use L-ALG's tools UNMODIFIED (detached checkout of claude/l-alg
 - Closed forms on this data:
   - Σ_q k_q = (D/2 + 1)(D/2 + 2), quadratic in n;
   - #fired⁺ = 2D + 8 and D_R = D + 6, both linear;
-  - total exits per context are about cubic in D, with D_R ≤ #fired⁺(R) holding;
+  - total exits per context: 75 / 310 / 805 at D = 4 / 8 / 12, local exponents 2.0 to 2.4 in D (polynomial; a 03:35Z
+    draft said "about cubic", which overstated it). D_R ≤ #fired⁺(R) holds on every row;
   - S = D + 7 searches (Oink: D + 8 iterations);
   - first-difference contexts per transition: 1 / (D + 6), falling.
 - (CHANGE-NEW) holds, and N*_R ≤ D_R holds, on every row (dtl_changenew).
