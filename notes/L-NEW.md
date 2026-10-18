@@ -2,9 +2,14 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-- 2026-10-18 09:10Z: lane created on branch claude/l-new from trunk ff4e60c. Read: CLAUDE.md, TARGET.md, DECISIONS D1/D13/D14/L35,
-  lit/RANKING.md, lit/BARRIERS.md, RESULTS DE1-DE8 (DE9-DE21 are DTL proof routes), si/README.md, S5.md, S6.md, si.py, vjfast.cpp.
-- Next: Box 1 (i) S5/S6 fast kill under adversarial renumbering (experiments/new/renum.cpp), then (ii) own approaches.
+- 2026-10-18 ~09:55Z: (i) renumbering sweep running (experiments/new/run_renum.sh -> out/renum/summary.csv); no kill so far.
+  (ii) N1 DISC-ANNEAL implemented (experiments/new/anneal.py), N2/N3 proposed. N1 bench sweep (--nocompress) running
+  (run_anneal.sh -> out/anneal/summary.csv). Confound (merging) found and removed; ablation shows annealing is what helps on
+  switchallexp. Next: finish sweeps, 10,000 random games, adversarial search, a reveal-time-equalising killer.
+- Instance generation (out/inst, gitignored): for N in 2..8: si/gens.py {randomfacetsubexp,zadehexp,dlmm_bland,dlmm_ML,
+  cunninghamexp}; hard-families/pgsolver_port.py {recursiveladder,switchallexp,switchbestexp} (also N = 1, 9..12);
+  red/gens_red.py {gated_bland,fhz_padded}; si/gated.py {zadehexp,switchallexp,switchbestexp} -> gated_*; Oink build
+  generators {tc,tc+,counter_*} N = 1..8.
 
 ## Queue
 1. (i) S5 (zadeh, index tie-break) and S6 (cunningham, index order): hard bench, gated_*, fhz_padded, randomfacetsubexp, M_L,
@@ -13,7 +18,16 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 3. Implement the most promising; Zielonka agreement and strategy check first; then hard bench and its killer.
 
 ## Sources opened
-(none yet; docs/lit is a map, not a source)
+- arXiv 1008.0530 v1 (Hansen-Miltersen-Zwick, "Strategy iteration is strongly polynomial for 2-player turn-based
+  stochastic games with a constant discount factor"), opened 2026-10-18 09:2xZ (pdf, 13 pp). Thm 6.5: Strategy-Iteration
+  from any start terminates within (m+1)(1 + log_{1/γ}(n²/(1−γ))) = O(m/(1−γ) · log(n²/(1−γ))) iterations (the n² is
+  n²/(1-γ) inside the log). Proof via Lemma 6.4 (every L̄ iterations a new action is never used again). §7: SI is
+  "exponential for non-discounted 2TBSG, or when the discount factor is part of the input" (citing Friedmann).
+- arXiv 0909.5653 v1 (Fearnley-Jurdziński-Savani, Lemke / Cottle-Dantzig for discounted games), opened 2026-10-18.
+  Lemke as a homotopy in the covering parameter z at fixed discount (text near l.250: "how much further z can be decreased
+  before σi ceases to be optimal"); Thm 18: Lemke 2^(n+1) - 2 iterations on G_n; Thm 19 Cottle-Dantzig; p. near l.557:
+  "standard reductions [16, 21, 13] convert this parity game into average-reward ... discount factor ... very close to 1".
+- NOT yet opened (needed for N1's termination bound only): Zwick-Paterson TCS 158 (1996) discount threshold; Puri thesis.
 
 ## Dead ends
 (none yet)
