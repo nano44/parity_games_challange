@@ -64,6 +64,33 @@ other tie-breaks should reproduce regions and verified strategies exactly and it
 Reference counts for checking a second implementation: dlm1 (DLM start pair) n = 1..6: 1, 2, 4, 4, 6, 7; dlm2 n = 1..7: 2, 4, 7, 8,
 11, 12, 13; switchallexp (best-reward start) N = 1..8: experiments/new/n5/switchallexp.csv; mode ssi on dlm1: 2^(n+1) − 3.
 
+### SPEC vs L-COMP's ambiguities A1-A10 (experiments/n5-second/README.md, l-comp 2b6a965 on trunk); successor 2, 2026-10-18 21:06Z by date -u
+Line numbers: n5.py = experiments/new/n5.py at this commit (last changed in 334f057, before the spec commit 8925171 L-COMP read); si.py = experiments/si/si.py (trunk, read-only).
+| id | settled by | code | note / fix |
+| --- | --- | --- | --- |
+| A1 rank ties | S1 "rank(v) = position in V sorted by (Ω(v), v)" | si.py l. 38-41 | settled; L-COMP's reading = SPEC |
+| A2 best-reward start | S3 | n5.py l. 23; si.py l. 234-240 | settled. Spelled out (FIX 1 below): ties go to the LARGEST index for even r, the SMALLEST for odd r; L-COMP's PGSolver port must match this (the si.py comment "max index" is right only for even r) |
+| A3 dual ids / order | S1 "Odd's side ... G^d (owner swapped, Ω + 1)"; "lists in increasing index order" | n5.py l. 18 (same ids, same lists); si.py l. 33 (lists sorted) | settled; ranks of G^d equal those of G (Ω + 1 keeps the order and the index ties) |
+| A4 improving edges | S2 (strict, w.r.t. Ξσ at σ(v)) | si.py l. 220-228 | settled; L-COMP's reading = SPEC |
+| A5 tie-break of σ', τ' | S1 (iv)-(v) + S4a/b | n5.py l. 47-50, 55-58; si.py l. 152-195 | settled, but L-COMP's reading DIFFERS: SPEC's σ' is the counterstrategy of the VJ procedure (longest-path ties to the smallest index; BFS first discovery; DFS cycle choice at the cycle node), NOT "per vertex the successor of best valuation, ties by index". FIX 2 below pins the DFS order. Counts may differ under L-COMP's rule; regions and verified strategies must not |
+| A6 old or new σ | S4 "both steps computed from the SAME (σ, τ), applied together" | n5.py l. 46-48 (old τ), 54-56 (old σ), 65 | settled; L-COMP's reading = SPEC |
+| A7 fallback choice | S4c "(Ξσ(w), w) ... ties: larger index" | n5.py l. 59-64 | settled: ties to the LARGER index (L-COMP wrote "ties by index": must be the larger). FIX 3: τ is not changed in an iteration where Even falls back |
+| A8 iterations | S4 "one iteration = one pass with Iσ ∪ Iτ ≠ ∅" | n5.py l. 28-32 | settled (final pass with both sets empty is not counted); L-COMP's reading = SPEC |
+| A9 output Odd strategy | S5 "σ̄ ... (Not τ.)" | n5.py l. 66; si.py l. 254-264 | settled; L-COMP's reading = SPEC |
+| A10 valuation by reference | S1 (full definition, order and procedure) | si.py l. 54-204 | settled for implementation; the VJ00 source citation is box-4 item (4) |
+FIX 1 (S3, A2). Even's v: σ0(v) = argmax over successors w of (r(w), w if r(w) even else −w), r(w) = Ω(w) if Ω(w) even else −Ω(w):
+highest even priority, else lowest odd priority; equal priorities: largest index if even, smallest if odd. Odd's v (the rule on G^d), in
+G's terms: highest ODD Ω(w), else lowest EVEN Ω(w); equal priorities: largest index if Ω(w) odd, smallest if even.
+FIX 2 (S1 (v), A5). The cycle node v's own choice (when v is the optimiser's): explicit-stack DFS from v over the successors of the
+fixed-strategy graph Gσ (NOT the restricted graph), successors scanned in increasing index, each unvisited alive y of rank < rank(v)
+marked visited and pushed when scanned, last pushed popped first; the scan stops at the first successor equal to v; v's choice = the
+first vertex after v on the DFS tree path to that vertex (v itself for a self-loop). si.py l. 182-195.
+FIX 3 (S4c, A7). In a fallback iteration with Iσ ≠ ∅ only σ changes (τ_new = τ); n5.py l. 61-62. Odd falls back only if Iσ = ∅.
+FIX 4 (S1 (iv), A5). "first strict maximum" in the longest-path recursion = smallest index among the successors of maximum length
+(si.py l. 160-168); BFS: layers in FIFO order, each layer's vertices scanned in discovery order, predecessor lists in increasing
+index, a vertex's choice is the vertex from which it was first discovered (si.py l. 176-180). Every Odd vertex x ≠ v of R gets
+the choice, including those whose valuation is not affected.
+
 ## Why N5's step is NOT covered by 2309.02223 (opened pdf, sha256 10e6794d82aba465..; page numbers = running heads)
 - Improvement rules (p. 5): "an improvement rule, which is a function f : P(E) → P(E) that takes as input a set of improving
   edges, and outputs a set of improving edges", with "f(S) ⊆ S for all S ∈ P(E)" and at most one outgoing edge per node.
