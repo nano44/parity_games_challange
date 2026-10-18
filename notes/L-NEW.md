@@ -2,27 +2,18 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-HANDOVER (2026-10-18 ~12:10Z, context ~500k; box 1 from 09:09Z). Successor: read this, then docs/new/BOX1-REPORT.md,
-docs/new/N1-disc-anneal.md, docs/new/N1-killer-sketch.md, docs/new/S5S6-renum.md.
-- N1 = "LS24 IncreasingDiscountPI on parity-induced rewards" (credit Loff-Skomra, arXiv 2402.03975 Fig. 12 / 2610.22149
-  Fig. 7.2). Not killed. 12,000 random games agree with Zielonka (strategies verified). Bench polynomial-looking on every
-  family (switchallexp ~2.6N², switchbestexp quadratic, gated_switchallexp quadratic, tc ~linear in n). (PHASE-POLY) is a
-  DATA hypothesis. Evidence weak: Friedmann's families are trivial for Howard from Odd's side (dual). No worst-case lower
-  bound in the literature (verbatim "open" sentence under Sources opened).
-- Killer attempts all failed (list in N1-killer-sketch.md); the lock is an open design problem (path set vs max).
-- S5/S6: not killed on 13 families. Steepest: switchbestexp (Cunningham 341, 928, 1887 at N = 2..4; Zadeh 268 ... 1363 at
-  N = 2..5, ratios falling). Lifted chains (s6_chain.sh) were running at handover; results in
-  experiments/new/out/s6/switchbestexp_{cunningham,zadeh}_N*.txt (out/ is gitignored; rerun to reproduce).
-- C++ N1 sweep (run_anneal_c.sh -> out/anneal/summary_c.csv) still running at handover (switchbestexp N >= 12, then the
-  other families). docs/new/plots/ shows the Python sweep (summary_py.csv, N <= 8).
-- Build: cd experiments/new; g++ -O2 -std=c++17 -o anneal_c anneal.cpp; -o renum2 renum.cpp; -o vjfast vjfast_copy.cpp;
-  -o vjcert vjcert.cpp. Instances (out/inst, gitignored): si/gens.py {randomfacetsubexp,zadehexp,dlmm_bland,dlmm_ML,
-  cunninghamexp} N = 2..14; hard-families/pgsolver_port.py {recursiveladder,switchallexp,switchbestexp} N = 1..14;
-  red/gens_red.py {gated_bland,fhz_padded}; si/gated.py {zadehexp,switchallexp,switchbestexp} -> gated_*;
-  tools/oink/build {tc,tc+,counter_*} N = 1..14.
+SUCCESSOR 1, box 2 (GO 12:51Z, to ~17:50Z; handover check docs/agents/handover-checks/L-NEW.md at 2d17b3f).
+- (0) N1 step 2 on the hard bench: experiments/new/run_step2.sh -> COMMITTED CSVs experiments/new/step2/<fam>.csv (gen command +
+  sha1 per instance, deterministic generators), check_sol2.py (regions = Oink zlk, tl on zlk timeout/error; verify.py strategies),
+  plots docs/new/plots/step2_*.png, verdict table docs/new/N1-step2.md (summarize_step2.py prints its rows). Done so far:
+  counter_rr (N <= 42), counter_m (N <= 42), counter_rob (N <= 20), switchbestexp (N <= 16, N = 17 over 1200 s), switchallexp
+  (N >= 26) all polynomial-looking, every row checked. Running (14:30Z on): chain A = counter_rob, tc+; chain B = switchallexp,
+  recursiveladder, tc, counter_core, counter_dp, counter_ortl, counter_qpt, counter_symsi (NMAX 60, TO 1200).
+- (1) S6 numbering RULE: done 14:20Z, not killed (docs/new/S5S6-renum.md "Box 2 (1)"; rules in experiments/new/instances/s6rule/).
+- Oink zlk logic error on counter_m N = 41, 42 (zlk.cpp:589): side finding for L-COMP, in N1-step2.md.
 
 ## Queue
-0. (Lead 12:14Z, first for the successor) S6 on switchbestexp: extract a numbering RULE from the climbed numberings
+0. DONE box 2 14:20Z (rule class: not killed, S5S6-renum.md). (Lead 12:14Z) S6 on switchbestexp: extract a numbering RULE from the climbed numberings
    (instances/s6/*.perm; what the climb does to Friedmann's bit/lane structure, labels via pgsolver_port), generate
    N = 2..8 from the rule alone, run vjfast cunningham. That decides. Done 12:35Z: lift.py MECHANICALLY (no climbing) from
    N = 4 to N = 5..8 gives 3886, 4719, 5626, 6602 (polynomial), so a rule must do better than the lift. No Lead re-run before a
@@ -78,6 +69,9 @@ docs/new/N1-disc-anneal.md, docs/new/N1-killer-sketch.md, docs/new/S5S6-renum.md
   late (a single Odd self-loop of priority 1 reached through high even priorities) forces the climb in the last phase.
 
 ## Things only I know
+- out/ does not survive a container: cite only committed CSVs. Python Zielonka is exponential on counter_rr/counter_m (b ~1.6):
+  never use check_sol.py as the sweep checker there; check_sol2.py (Oink zlk, tl fallback) is the sweep checker.
+- Never edit a running bash script in place with an editor that keeps the inode (bash reads it lazily); sed -i is safe (new inode).
 - N1 stop test: "sigma has no VJ improving switch" is WRONG as a stop test (a region-correct sigma need not be VJ-optimal;
   tc 4 stalled at j = 102 forever). The certificate (sign of values + harness/verify.py on both restricted strategies) is right.
 - Merging equal-parity neighbouring priorities alone kills Friedmann's switchallexp for plain VJ switch-all (10, 7, 9, 11, 13 for

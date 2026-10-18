@@ -18,3 +18,10 @@ switchallexp,16,231,python3 experiments/hard-families/pgsolver_port.py switchall
 switchallexp,17,245,python3 experiments/hard-families/pgsolver_port.py switchallexp 17,beaa56dd0994724d1baa7d0e27c238d175ef562e,TO120,2247,714,289,39,65.64,zielonka(oink zlk) OK strategies verified
 switchallexp,18,259,python3 experiments/hard-families/pgsolver_port.py switchallexp 18,38c14a35fb442e18c3378868b3ac8a2ce58e6e93,TO120,2398,792,324,41,111.41,zielonka(oink zlk) OK strategies verified
 switchallexp,19,273,python3 experiments/hard-families/pgsolver_port.py switchallexp 19,02090238535f5564a5dd6991e6a90929e85e7d0c,TO120,2550,874,361,43,138.28,zielonka(oink zlk) OK strategies verified
+switchallexp,20,287,python3 experiments/hard-families/pgsolver_port.py switchallexp 20,2d39587b09805c6c2e66ef94a2c54a6568fccd90,TO120,2703,960,400,45,161.47,zielonka(oink zlk) OK strategies verified
+switchallexp,21,301,python3 experiments/hard-families/pgsolver_port.py switchallexp 21,e02ae2ea22827c5978f4a050cc334050ac29ce20,TO120,2858,1050,441,47,203.15,zielonka(oink zlk) OK strategies verified
+switchallexp,22,315,python3 experiments/hard-families/pgsolver_port.py switchallexp 22,77bf3a10890314e9717695cb3d92022a5344f1a0,TO120,3013,1144,484,49,240.62,zielonka(oink zlk) OK strategies verified
+switchallexp,23,329,python3 experiments/hard-families/pgsolver_port.py switchallexp 23,eb56d43f4b6306725e94ea396ca73bab1a33bb3c,TO120,3170,1242,529,51,292.94,zielonka(oink zlk) OK strategies verified
+switchallexp,24,343,python3 experiments/hard-families/pgsolver_port.py switchallexp 24,4aa62d431c11c33f6355b691ff53723422f8cc88,TO120,3327,1344,576,53,354.56,zielonka(oink zlk) OK strategies verified
+switchallexp,25,357,python3 experiments/hard-families/pgsolver_port.py switchallexp 25,085247248d58314dc0eeab5020b4b2c55b6fbd56,TO120,3486,1450,625,55,424.62,zielonka(oink zlk) OK strategies verified
+switchallexp,26,371,python3 experiments/hard-families/pgsolver_port.py switchallexp 26,7eb42097860b3b6a3e7a1b34673f27b2506aa868,TO120,3645,1560,676,57,520.38,zielonka(oink zlk) OK strategies verified
