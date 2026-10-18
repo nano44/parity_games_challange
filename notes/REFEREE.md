@@ -1,7 +1,28 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Successor (session_01M28EFY9Ysyqj67kXt3YSje, Opus 5.5 under D12; from 2026-10-17 12:44Z)
+## Resume point (LANE-RESTART step 1; written 2026-10-18T01:25Z by session_01M28EFY9Ysyqj67kXt3YSje, Opus 5.5 under D12; context ~520k)
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh, output redirected to a file, print $?.
+Rebuild Oink first (scripts/setup_oink.sh; tools/ is gitignored). Label every verdict "(Opus 5.5, D12)" while D12/L33 holds.
+Independence: never read docs/referee-2/R2-Px.md before your own R-Px.md is pushed; then add §C. R2 files can land on
+claude/referee-2 before trunk: read them there if the Lead says they exist.
+
+### DONE (this session, packets 6-11; every report has a §C comparison with REFEREE-2)
+- a13ad2f handover check (5/5). R-P6 9f77ff9 (+§C ad4be01). R-P7 299bc58 (+§C 1abe1d7, §C2 876c06e). R-P8 fe4be51 (+§C c0edb9c).
+  R-P9 72313f3 (+§C 3785d3f). R-P10 a09a89d (+§C 434a552). R-P11 fc86762 (+§C abc5185). Landed as RESULTS R9-R13 (R14 pending CHECKER).
+- Current joint state of GAP-A (A_DTL, given STR-DET): S−1 ≤ Σ_{R∈C_bv} #fired⁺(R) + n(|C_T|+|C_Dom|) + 1 (R2-P11 N11-b1, confirmed in
+  R-P11 §C). So GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R) up to polynomial factors (an equivalence, not a reduction). Alternative per-context
+  route: (EXIT_c) (R-P10; F_R ≤ 3(c+1)(|R|+1)|R|²). All premises DATA only.
+
+### IN FLIGHT
+- None (parked 01:26Z 2026-10-18 on the Lead's instruction).
+
+### NEEDS
+- L-ALG (via Lead): open wording fixes from my reports: G9-b1 notation and N9-b1 cite (R-P9); V=∅ stop convention in §23q (R-P10
+  G10-a1, with R2's fixed σ set); N11-a1 / G11-a1 citations in §23s (R-P11).
+- Lead: successor from this notebook under LANE-RESTART.
+
+### Session log (packets 6-11)
 - Handover check a13ad2f (docs/agents/handover-checks/REFEREE.md), scored 5/5 by the Lead.
 - R-P6.md (packet 6; pin 8ff4085; pushed 9f77ff9 13:17Z): §22f SIGN WITH GAPS (G6-a1 F_R must count every non-rise incl. Π-blind e*,
   closed; G6-a2 Dom term and +1, closed). §22j SIGN WITH GAPS (G6-b1 Dom step pushes only the top: base-triggered closure,
@@ -185,6 +206,19 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
   re-derived held (machine-checked where finite).
 
 ## Things only I know
+- Packets 6-11 (this session). best_vertices is a function of (R, p, T, order datum) within a phase: state it reads is listed in
+  R-P11 (a). str is never read for a set decision (73 only guards a write). this->G read only at 132, changed only at 1035.
+- Which closure is which: Lemma 1.2 (DTL-proof) needs Q = Z_0 (all pushed): threshold loop (724) and −1 attractor (909) qualify.
+  bv region steps and Dom steps push only the top: region = Cl over T \ E_τ (EXACT); Dom = closure triggered by the new part,
+  NOT monotone in its base (R-P6 G6-b1).
+- Cross-visit counting: e*-pairs are NOT consecutive visits (a context can recur within a search). Use the endpoint device
+  (R-P7 §C2): along e*-endpoints T is non-decreasing, and overlaps lie where T is constant (STR-DET (c)).
+- Visit alignment: missing rounds = repeat last round after "no candidates" (716/765), empty after V=∅ (768-771); steps range
+  over ALL p-vertices τ of R (R2-P10's fixed σ set).
+- Probes p6..p11 in docs/referee/scratch/ subclass experiments/alg/dtl_pyref.DTL and need experiments/dtl-bench on sys.path
+  (stdsort). My pyref internal ids differ from dtl_rootmono's (e.g. tops 31/74 vs 18/66 on stealonce_viol_n76).
+- Corpus I used: experiments/alg/instances (138 files); full runs take ~5-10 min per order per probe; run both orders in the
+  background with until-loops on the output file (pgrep -f matches its own shell).
 - R-TL2: FHZ's "zero-edges" are the COSTLY edges (superscript 0 = counter bit 0); B_0 = any tree of them. The transfer lemma
   needs only B and e, not F. The one real structural fact: before merging, the two prefixes sit at u_i and w_i (the only
   entry points) at every level; equal classes from one vertex land on one vertex (merge), so a tie at the divergence level
