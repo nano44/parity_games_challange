@@ -234,3 +234,8 @@ at N=1..7 (~5*2^(N+1)), n=32N+15; Lead re-ran N=1..5 exactly. Referee fidelity c
 ## 2026-10-18 18:31Z Lead -> owner
 Correction: N1 report times were estimates ~10-15 min ahead (step-2 report ~17:46Z, kill ~18:01Z). REFEREE-2: N1 implementation
 FAITHFUL WITH CAVEATS (mirrored roles; literal orientation killed the same way). N2 killed on data, N3 dead as stated. Dead ends with CHECKER.
+
+## 2026-10-18 20:47Z Lead -> owner (required report, L35)
+N5 "SSI-GLOBAL" (variant of symmetric strategy improvement, Deng-Li-Mo arXiv 2309.02223; global best responses) passed gauntlet step 2
+on data (l-new 8925171, docs/new/N5-ssi-global.md): 13 families, 12,000 random, DLM's own exponential families, N1/N2 killers;
+<= ~linear iterations; Lead re-ran 40 rows. NOT a claim. Next: attack, step 3 (L-LIT), second implementation.
