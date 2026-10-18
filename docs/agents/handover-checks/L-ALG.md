@@ -98,3 +98,53 @@ Trap (bit again at this restart): the container's local claude/l-alg is the stal
 start from a 1,601-commit-old head. Check: `git fetch origin claude/l-alg`, then `git merge-base --is-ancestor 526c2a0 HEAD`
 (ANCESTOR) and `git rev-list --left-right --count HEAD...origin/claude/l-alg` (x 0, i.e. 0 behind) before writing anything.
 Push only as `scripts/push.sh > $S/push.log 2>&1; echo exit $?`, reading the verify result and exit 0 before reporting.
+
+# L-ALG successor 8 handover check (2026-10-18 01:08Z by date -u; produced on Opus 5.5)
+
+## 1. Branch, head, ahead/behind trunk
+- Branch `claude/l-alg`. At container start the LOCAL branch was the stale 1017502 ("behind 1676" after the fetch).
+  `git fetch origin claude/l-alg claude/vibrant-johnson-nxvvxo`; origin/claude/l-alg = ef0ebf2 (descends from 01e5cea:
+  `git merge-base --is-ancestor 01e5cea HEAD` OK); `git merge --ff-only` to ef0ebf2.
+- Before merging: `git rev-list --left-right --count origin/claude/l-alg...origin/claude/vibrant-johnson-nxvvxo` = 1 135
+  (1 ahead, 135 behind trunk 3001287).
+- Merged trunk (no-ff, no rewrite) as b1d1969: HEAD...trunk = 2 0. This file's commit makes it 3 ahead, 0 behind
+  (SHA in the message to the Lead).
+- tools/oink/build was absent at start; scripts/setup_oink.sh is running in the background.
+
+## 2. Open work and the next step of each
+- (1) G23u (GAP-A-M §23u, SKETCH): D_R ≤ N_ent + D_R^thr. Next: MEASURE D_R^thr (differing consecutive visit pairs whose
+  first difference is in a threshold loop or at the last region step of a round) on the corpus, mixed/cross unions and
+  the DE19/DE20 instances, both orders; then try to charge those pairs to RV rises (§22r Corollary C1-C3).
+- (2) (EXIT_c) (RESULTS R13 draft G-R13-4; GAP-A-M §23r gap G23r): DATA c = 2, 2 only on DE20-derived instances. Next:
+  a proof attempt through the learning dynamics (why top_r(w) cannot cross a level downward a third time; R37-2: each
+  event pair needs a tangle learned in between).
+- (3) Only if (1)-(2) stall: (FIRED⁺-R) BELOW the root (§23s; at G′ it is (SPP), not to be retried there).
+- (0) Packet 11 (§23s CHANGE-NEW) is out to both referees: when reports land, import into a NEW subsection; §23q and §23s
+  stay frozen.
+- GAP-C / (ACYC): not in this box.
+
+## 3. docs/GAPS.md rows owned by L-ALG (trunk 3001287)
+- GAP-A | blocker | L-ALG (L-RED attacks) | open: GAP-A ⇐ (CTX⁺) ∧ (FALL) (R9); (STEAL-ONCE*) FALSE (DE20); signed
+  replacement R12: GAP-A ⇐ (CTX⁺) ∧ (STEAL-POLY_sum), and ⇐ (CTX⁺) ∧ (STEAL-DEPTH_D, D const) ∧ (FIRED-R). Not yet in the
+  row: R13 draft (packet 10, awaiting CHECKER): GAP-A ⇐ (CTX⁺) ∧ (EXIT_c).
+- GAP-C | blocker | L-ALG (L-RED attacks) | open.
+- G-S5-6 | major | L-ALG | open: (ACYC), DATA only.
+- Closed rows owned by L-ALG: G-FDL, G-Bthr, G-K5, G-STR, G-DOM.
+
+## 4. Three owner rulings that most constrain this lane (verbatim, docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md)
+1. D1 (active):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+2. D8 (active):
+   > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
+3. D11 (active):
+   > No contact for now
+Also binding: L32 (Lead reading, active): the GAP-A reassessment criterion, progress = ONE named statement with a proof
+route. CORRECTION (Lead 01:21Z by date -u): L32 says nothing about stopping. An incorrect run or a super-polynomial family is
+REPORTED to the Lead at once (CLAUDE.md, TARGET.md); the fleet does not stop on it. D5 (active) on aim: pursue M4, do not call it unlikely.
+
+## 5. One trap that bit this lane, and the check that prevents it
+Trap (bit again at this restart): the container's local claude/l-alg is the stale 1017502; without a fetch, work and pushes
+would start from a 1,676-commit-old head. Check: `git fetch origin claude/l-alg`, `git merge-base --is-ancestor 01e5cea HEAD`
+and `git rev-list --left-right --count HEAD...origin/claude/l-alg` (x 0) before writing anything.
+Second trap carried: big RM_PREF=1 union runs need ~6 GB each (4 were OOM-killed); at most 2 heavy jobs at once.
+Push only as `scripts/push.sh > $S/push.log 2>&1; echo exit $?`.

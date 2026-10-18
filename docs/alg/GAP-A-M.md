@@ -2796,3 +2796,669 @@ With the corpus and specials (216 / 214), that is 0 exceptions in 1,237 (Oink) /
   through t′, or through a vertex dependent on t′. Then by EXACT* and PREFIX-MONO-X*, w leaves P(σ) only after a relevant steal
   of a tangle it depends on. Upward capture keeps w inside P(σ). So (STOLEN-PERM) needs: the stealing vertices of a steal never
   depend on a fired tangle that is later relevantly stolen.
+
+23c. Shrink-vertex analysis and (DEP-SAFE) (DATA; L-ALG succ. 7, 18:34Z by date -u; experiments/alg/dtl_shrinkdep.py @ l-alg b45bd87)
+- Tool. Model and visits are those of dtl_rootmono.RM with RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0. It adds an ATTRACTION FOREST
+  per best_vertices region step: each attracted vertex gets one parent, either ('v', popped vertex) or ('t', fired tangle,
+  popped trigger). path(w) is the set of fired tangles on w's chain to the region top.
+- Data sets:
+  - corpus: 254 committed .pg under experiments/ with n < 80, plus stealer_viol_n76;
+  - cross unions: UNIONS=600 SEED=11 UM_CROSS=3 NMAX=32, corpus included.
+  - Both order data. No INCOMPLETE.
+- Results (Oink / stable):
+
+  | set | (DEP-SAFE) holds | lost vertices A / B / C |
+  |---|---|---|
+  | corpus | 154/154 / 169/169 | 815 / 388 / 816 and 1,219 / 477 / 973 |
+  | cross unions s11 | 399/399 / 447/447 | 2,688 / 1,045 / 1,697 and 3,689 / 1,028 / 2,209 |
+
+  - A: a tangle on path_x(w) is relevantly stolen at its own step.
+  - B: w's region top is no longer a region top.
+  - C: other.
+  - A' (a path tangle plainly stolen, not fired) never occurs.
+- Reading of C, checked on two cases (scratch script; round 5 in both):
+  - stealer_viol_n76 (stable), |R| 75, visits 2→3, region top 14: path tangle 22 = {22, 24} with escapes {0, 4, 6, 14, 15, 16}.
+    Escape 16 is in P_x and not in P_y, and is not in the region, so tangle 22 cannot fire at y.
+  - climbs_1016/b_best_s33 (Oink), |R| 20, visits 1→2, region top 19: tangle 6 = {6}, escape 5, in P_x and not in P_y.
+  - So the cause is an ESCAPE. A tangle escape (or, by the same rule, an opponent successor) that lay in the prefix above at
+    x is back in Gx = CurR at y (dtl_pyref attractTangle lines 95-97, attractVertices line 74). The cause is thus another,
+    higher loss. Only these two C cases were checked; the rest are unclassified. The single-parent forest cannot
+  see this, so roughly 40% of losses (C) are cascades through escapes.
+- (DEP-SAFE) "no path tangle of a stealing vertex is relevantly stolen later" holds on 1,169 relevant steals (DATA). The
+  forest misses the escape cascades, though, so (DEP-SAFE) does not by itself imply (STOLEN-PERM).
+  The route needs an escape-aware dependency:
+  - w depends on every fired tangle on its chain, and on every prefix vertex that hides an escape of a tangle or of an
+    opponent vertex on its chain.
+  - Then: "a stealing vertex never depends on a later-stolen tangle or on a later-lost escape holder". SKETCH, not measured.
+- Status: (STOLEN-PERM), (STAYS-MET) and (STEAL-ONCE*) remain DATA. No proof. No kill.
+
+23d. (FIRED-R) on LONG phases (DATA; L-ALG succ. 7, 18:47Z by date -u; experiments/alg/dtl_firedlong2.py)
+- Filter: L-RED's, from experiments/red/root/firedlong.py (l-red 2486288). A context counts in a phase of S searches if it is
+  visited ≥ 2 times and S ≥ 2|R|. Same model and fired sets as dtl_rootmono.RM with RM_EXCL=1 RM_LIGHT=1 RM_DV=0.
+- Data sets:
+  - corpus: as in §23c, plus fall3_n76 and fall4_n116 (l-red);
+  - mixed unions: UNIONS=900 SEED=1 NMAX=32, corpus included.
+  - Both order data. No INCOMPLETE.
+- Results:
+
+  | set | order | counted contexts | max fired/\|R\| | max fired | max per step | NO-RETURN |
+  |---|---|---|---|---|---|---|
+  | corpus | Oink | 327 | 0.333 (3 at \|R\| 9, spp_n20) | 3 | 3 | holds 327 |
+  | corpus | stable | 316 | 0.25 | 2 | ≤ 2 (1 in the 25 printed rows) | holds 316 |
+  | mixed | Oink | 2,088 | 0.375 (3 at \|R\| 8, union758) | 3 | 3 | holds 2,088 |
+  | mixed | stable | 2,132 | 0.25 | 2 | ≤ 2 (1 in the 25 printed rows) | holds 2,132 |
+
+  - NO-RETURN: a tangle that fired at a step (round, top) and then did not fire there at a later visit where the step
+    exists never fires there again in the phase.
+- Birth of the fired tangles in these long-phase contexts. The birth arena is the sptl arena R′ of the extraction.
+
+  | set (Oink / stable) | born in this phase, R′ ⊆ R | R′ ⊋ R | R′ incomparable with R | born before the phase |
+  |---|---|---|---|---|
+  | corpus | 13 / 7 | 2 / 0 | 12 / 7 | 0 / 0 |
+  | mixed | 26 / 17 | 3 / 3 | 61 / 46 | 17 / 8 |
+
+  Most fired tangles are learned in OTHER branches of the recursion (incomparable arenas), so a count of the tangles learned
+  inside R does not bound #fired(R).
+- Reading. Long phases (S ≥ 2|R|) exist only for small contexts here (|R| ≤ 9, S ≤ 25). There the fired count stays ≤ 3,
+  well below L-RED's best long-phase ratio of 0.40. This is weak evidence that the fired set does not grow with phase length,
+  but the filter selects contexts too small to test growth.
+- Candidate sharp statement (DATA, being measured on all contexts): (FIRED-STEP) the number of distinct tangles that fire at
+  one step (context, round, top) in a phase is bounded by a constant c. With the (|R| + 1)·|R| steps per context (R11 (d)) it
+  gives (FIRED-R) with #fired(R) ≤ c(|R| + 1)|R|. It has the same per-step shape as (STEAL-ONCE*). With NO-RETURN, each
+  (step, tangle) fires on ONE interval of visits. So (FIRED-STEP) asks how many times a step can switch to a NEW tangle.
+- CORRECTION (19:56Z by date -u): NO-RETURN is FALSE in its all-steps form (§23h; stealonce_viol_n76, stable order, 7 of 42
+  contexts). Its long-phase form is UNTESTED there: under the filter, 3 contexts qualify and nothing fires in them. The
+  long-phase table above is DATA on the listed sets only; nothing in this section depends on NO-RETURN. (FIRED-STEP) itself
+  is dead (§23e).
+
+23e. (FIRED-R) on ALL contexts: three candidate structures KILLED, two DATA statements survive (L-ALG succ. 7, 19:16Z by date -u)
+- Tool: dtl_firedlong2.py with FL_ALL=1 FL_SHOW=1, i.e. every context visited ≥ 2 times in a phase, with no long-phase filter.
+  Model and data sets as in §23d, plus fired10_n20 (l-red). Both order data. No INCOMPLETE.
+
+  | set | order | contexts | max fired | max fired/\|R\| | max distinct fired at one step | NO-RETURN | fired vertex sets distinct | laminar |
+  |---|---|---|---|---|---|---|---|---|
+  | corpus | Oink | 2,391 | 17 | 0.833 | 12 (fired18_stable_n20, \|R\| 18, S 3) | holds | yes, all | FAILS 56 |
+  | corpus | stable | 2,359 | 18 | 1.0 (fired18_stable_n20) | 11 | holds | yes, all | FAILS 61 |
+  | mixed | Oink | 13,519 | 20 (union322, \|R\| 48) | 0.833 | 12 | holds | yes, all | FAILS 480 |
+  | mixed | stable | 13,755 | 23 | 1.0 (union825, union299, union616, union248) | 11 | holds | yes, all | FAILS 470 |
+
+- KILLED (self-kills, each a candidate of this box; docs/alg/DEAD.md):
+  - (FIRED-STEP) with a constant c: "at most c distinct tangles fire at one step (context, round, top) per phase". Killed by
+    experiments/alg/instances/fired18_stable_n20.pg (l-alg 9ffee93; sha1 42307b22; pinned Oink 4 iterations, verified): 12
+    distinct tangles fire at one step of a context with |R| = 18, in a phase of only 3 searches (Oink order). A single region
+    step fires many tangles, so the per-step count is of order |R|, not constant.
+  - (FIRED-LAMINAR): "the fired tangles of a context in a phase are pairwise nested or disjoint". Had it held, it would have
+    given #fired(R) ≤ 2|R| − 1. Killed by experiments/alg/instances/c6_replay3_n32.pg (sha1 ac987535; pinned Oink 11
+    iterations, verified; both orders): tangles {4, 7, 13, 17, 21, 25} and {8, 17, 21} cross, at contexts with |R| 32, 31, 29
+    and 26. Contrast: ALL tangles born in a phase are not laminar either (tc+ 4, tc+ 6, spp_final_n20; scratch check).
+  - (FIRED-TOP-INJ): "the fired tangles of a context have distinct top vertices". Killed by fired18_stable_n20 (stable, 2
+    contexts).
+- Survive (DATA, all 32,024 contexts):
+  - (FIRED ≤ |R|): #fired(R) ≤ |R| per phase. It is TIGHT: equality 18/18 on fired18_stable_n20 (stable) and on four mixed
+    unions.
+  - (FIRED-DISTINCT): fired tangles of a context have distinct vertex sets.
+  - NO-RETURN on these sets. It is FALSE in general (§23h, stealonce_viol_n76).
+- Reading. (FIRED ≤ |R|) is tight and has no injective witness yet: not laminar, and not by the top vertex. Climb target for
+  L-RED: fired/|R| > 1 (dtl_firedclimb.py's fitness, or firedlong.py without the filter). No proof route.
+
+23f. (STEAL-ONCE*) KILLED (RESULTS DE20); the R11 count with the factor k; toward (STEAL-POLY) (L-ALG succ. 7, 19:34Z by date -u)
+The Lead asked for this in §23e; §23e was already taken (FIRED-R), so it goes here, at the next free letter.
+- Instance: experiments/red/carry/instances/stealonce_viol_n76.pg (L-RED R35, l-red 6af3a14; sha1 32c2da0b). It is
+  stealer_viol_n76 with edge 3→31 replaced by 3→64 and edge 20→31 added. Pinned Oink: 1 dominion, 50 tangles, 7 iterations,
+  "solution verified (33 strategies)" (L-ALG re-run 19:34Z).
+- L-ALG re-run, dtl_shrinkdep.py, RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0:
+  - stable order: (DEP-SAFE) FAILS 7 / holds 12. Every failure is at step (round 4, top 18), tangle 7, with stealing vertex 3
+    and path tangle 9 relevantly stolen at the next pair.
+  - Oink order: all hold.
+  - So (DEP-SAFE), (STOLEN-PERM), (STAYS-MET), NO-REFIRE and (STEAL-ONCE*) are all FALSE as statements about A_DTL (L22/L26).
+  - The mechanism is §23c's case A one level up, as the Lead reads R35. Vertex 3 enters region 66 through the path tangle;
+    a new top 68 steals that tangle; 3 drops out of P(18⁺); tangle 7 refires at (4, 18); region 66 later fires a new
+    tangle, holds 3 again, and steals tangle 7 a second time.
+- (1) The R11 (d) count with the factor k. Lead reading checked: CORRECT, and stated precisely here.
+  - Fix a context R and a phase. A quadruple is q = (R, round r, top τ, tangle t). Let k_q be the number of consecutive
+    visit pairs of R at which q is a relevant steal, and k_R = max_q k_q.
+  - N*_R ≤ Σ_q k_q, since every pair counted in N*_R has at least one relevant steal.
+  - Only q with t ∈ F_τ at some visit count. So t is among the #fired(R) tangles, r ≤ |R| + 1 (dtl.cpp 748-760), and τ is a
+    p-vertex of R, so at most |R| tops.
+  - Hence F_R ≤ 3·N*_R ≤ 3·Σ_q k_q ≤ 3·k_R·(|R| + 1)·|R|·#fired(R). This is R11 (c) with G8-1's factor 3. The factor tightens
+    to 2 given STR-DET (REFEREE-2 R2-P8 §7; one signature, not used).
+  - So GAP-A ⇐ (CTX⁺) ∧ (STEAL-POLY) ∧ (FIRED-R), given STR-DET, where (STEAL-POLY) says k_R ≤ poly(|R|). The sum form,
+    Σ_q k_q ≤ poly(|R|)·#fired(R), is weaker and also suffices.
+  - Status: a reading of the signed R11 (c) chain with k replacing 1. Unrefereed.
+- (2) Toward a bound on k (SKETCH, with the gap named):
+  - A second relevant steal of q needs t ∈ F_τ again, i.e. t refires at (r, τ). That needs t ∩ P(τ⁺) = ∅. So between the two
+    steals, every stealing vertex leaves P(τ⁺).
+  - By PREFIX-MONO-X*, a vertex leaves P(τ⁺) only at a transition with a relevant steal at an EARLIER step: an earlier round,
+    or the same round at a higher top.
+  - The intervals between consecutive steals of q are disjoint, so the re-steals of q charge injectively to relevant-steal
+    EVENTS at earlier steps: k_q ≤ 1 + #(events at steps before (r, τ)).
+  - Gap: one event can be charged by many q, and summing over steps gives E(σ) ≤ #fired(R)·(1 + Σ_{σ′ before σ} E(σ′)),
+    which is exponential in the number of steps (the §22v obstruction). A polynomial bound needs one of two things:
+    - (a) DEPTH: chains event → re-steal → event have bounded length. On R35 the chain has length 2: the tangle at region
+      66 is stolen by new top 68, then tangle 7 is re-stolen at 18.
+    - (b) An injective charge: each event at σ′ un-steals at most poly(|R|) quadruples, and those quadruples' re-steals
+      need distinct events.
+  - Neither is proved. Measuring: k on large unions (n ≤ 120; UNIONS=300, SEED=7/8, UM_CROSS=4, NMAX=60; both orders).
+    The chain-length statistic is next.
+
+23g. (STEAL-POLY) ⇐ (STEAL-DEPTH): a charging reduction (reading, unrefereed; L-ALG succ. 7, 19:43Z by date -u; tool dtl_stealdepth.py)
+Fix a context R and a phase. Q = number of quadruples q = (R, round, top, fired tangle) ≤ (|R| + 1)·|R|·#fired(R) (§23f).
+An EVENT is a relevant steal (pair i → i+1, q). For q = ((r, τ), t), call a later event of q at pair i, with the previous
+event of q at pair j < i, a RE-STEAL.
+- Lemma CHARGE (reading). Every re-steal e of q at pair i has a CAUSE: an event at a pair m with j < m < i, at a step strictly
+  earlier than (r, τ) in the step order (rounds ascending, tops descending). Distinct re-steals of the same q have distinct
+  causes.
+  Proof.
+  - At visit j+1, t meets P_{j+1}(τ) without being contained in it.
+  - At visit i, t ∈ F_τ, so t fired inside region τ. A firing tangle lies in CurR = R \ P_i(τ) (dtl_pyref attractTangle
+    lines 86-89), so t ∩ P_i(τ) = ∅.
+  - So some w ∈ t ∩ P_{j+1}(τ) has left P(τ) at some pair m with j+1 ≤ m ≤ i−1.
+  - At that pair P_m(τ) ⊄ P_{m+1}(τ). By PREFIX-MONO-X* in its LOCAL form (see the gaps below) there is a relevant steal at
+    a step before (r, τ) at pair m.
+  - Consecutive re-steals of q own disjoint pair intervals (j, i), so their causes lie at distinct pairs.
+- Depth. depth(e) = 0 for the first event of each q, and for a re-steal depth(e) = 1 + min over its causes of their depth.
+  - A chain of causes goes strictly earlier in the step order, so depth ≤ (|R| + 1)|R| − 1 (PROVED, reading, given CHARGE).
+  - This alone gives only an exponential bound.
+- Counting. Let E_d be the number of depth-d events. Then E_0 ≤ Q. For fixed q, the depth-d re-steals inject into causes of
+  depth d − 1 (choose a min-depth cause). Hence E_d ≤ Q·E_{d−1} ≤ Q^{d+1}.
+- (STEAL-DEPTH_D): every event has depth ≤ D. Under it, Σ_q k_q ≤ Σ_{d ≤ D} Q^{d+1} ≤ 2·Q^{D+1}. So for constant D:
+  (STEAL-DEPTH_D) ⇒ (STEAL-POLY) in the sum form of §23f. With (FIRED-R) this gives F_R ≤ 6·Q^{D+1}.
+- Gaps, named:
+  - G23g-1, CLOSED (reading, unrefereed): the LOCAL form of PREFIX-MONO-X*. The signed proof (§22r, "by induction over τ in
+    decreasing order", three cases) uses (NS) only at the steps τ′ ≥ the current τ of the same round, given V ⊆ V′ for that
+    round. So "(NS*) at every step of round r above σ, and V_r ⊆ V′_r" ⇒ P(σ) ⊆ P′(σ). The cases are: τ not processed in
+    run 1; τ processed in both runs; τ processed in run 1 only. Each uses the hypothesis at τ alone, plus P(τ⁺) ⊆ P′(τ⁺) from
+    the induction.
+  - G23g-2, CLOSED (reading, unrefereed) by the §22r Corollary's round alignment: "if (NS) holds at every region step of
+    every round (rounds aligned with V_r ⊆ V′_r inductively)". Contrapositive: if V_r ⊄ V′_r, then some region step of an
+    earlier round has a relevant steal at that pair. That step is earlier in the step order, so it is a cause. The threshold
+    loop has no exclusions (tattr with consume = None, Gx = R), so it adds no case. On cross unions s11 (stable) the tool
+    prints "no cause" 0 times.
+  - G23g-3: (STEAL-DEPTH_D) with constant D is DATA only. R35 (stealonce_viol_n76, stable order) has one re-steal, depth 1;
+    its cause is the depth-0 steal of tangle 9 at (round 4, top 66) at pair 3.
+- Status against L32. A named statement, (STEAL-DEPTH_D), with a proof route (CHARGE plus counting) to the (STEAL-POLY) part of
+  GAP-A. GAP-A also needs (CTX⁺) and (FIRED-R), so this is not the L32 single-statement criterion.
+- DATA for §23f/§23g (19:52Z by date -u). Big unions: corpus + UNIONS=300, SEED=7 / 8, UM_CROSS=4, NMAX=60 (n ≤ 120);
+  dtl_rootmono.py RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0. No INCOMPLETE. The first stable runs were OOM-killed (4 × ~6 GB) and
+  re-run two at a time.
+
+  | seed | order | phases with relevant steals | k max | STOLEN-PERM | STEALER-MONO |
+  |---|---|---|---|---|---|
+  | 7 | Oink | 33 | 1 | 215 / 215 | holds 215 |
+  | 7 | stable | 38 | 1 | 234 / 234 | holds 234 |
+  | 8 | Oink | 48 | 1 | 392 / 392 | FAILS 14, holds 378 |
+  | 8 | stable | 55 | 1 | 429 / 429 | FAILS 14, holds 415 |
+
+  - dtl_stealdepth.py, cross unions s11 + corpus + R35 (stable): one re-steal in all, R35's (depth 1); 250 other contexts
+    with steals have k = 1; "no cause" 0.
+  - So random unions up to n = 120 show no re-steal in either order. R35 is a constructed shape. Note that STEALER-MONO also
+    fails in the Oink order (seed 8).
+
+23h. NO-RETURN KILLED with DE20 (L-ALG succ. 7, 19:56Z by date -u; L-RED R35 addendum, l-red d11271d)
+- Instance: stealonce_viol_n76 (sha1 32c2da0b; pinned Oink 7 iterations, verified). L-ALG re-run with dtl_firedlong2.py
+  (FL_ALL=1 RM_EXCL=1 RM_LIGHT=1 RM_DV=0):
+  - stable order: NO-RETURN FAILS 7 / holds 35; at most 4 distinct tangles fire at one step; max fired 14 at one context
+    (fired/|R| ≤ 0.333 at every context); FIRED ≤ |R| holds 42/42; FIRED-LAMINAR holds 42/42.
+  - Oink order: everything holds (9 contexts).
+  - Long-phase filter (stable): 3 contexts qualify, nothing fires in them, so the test is vacuous.
+- Reading. This is the same event as the NO-REFIRE failure of §23f: tangle 7 fires at (round 4, top 18), stops firing there
+  after the first steal, and fires there again after 3 drops out of the prefix. So the "one firing interval per
+  (step, tangle)" form is false wherever STEAL-ONCE* is. The long-phase form stays UNTESTED, not confirmed.
+- Dependence: no surviving statement of §23d-§23g uses NO-RETURN.
+  - dtl_stealdepth.py, more sets (20:00Z by date -u): mixed unions s1 + corpus + R35, stable: again R35's single re-steal
+    (depth 1); 588 other contexts with steals have k = 1. Cross unions s11 + corpus + R35, Oink: k max 1, depth 0 (212
+    contexts). "No cause" 0 everywhere.
+
+23i. (CTX⁺): (CTX-LAMINAR) KILLED (self-kill; L-ALG succ. 7, 20:05Z by date -u)
+- Candidate: "the distinct first-difference contexts of a phase (all depths) are pairwise nested or disjoint". With it,
+  #contexts ≤ 2n − 1 (laminar family), which is the C_bv part of (CTX⁺). It is weaker than (CHAIN) (DE16).
+- Test: dtl_rootmono.py with the new flag RM_LAM=1. Default output is unchanged; the flag only adds the CTX-LAMINAR counter.
+- KILLED by experiments/alg/instances/ctx12_oink_n40.pg (sha1 eca1246f; pinned Oink 27 iterations, verified; Oink order,
+  12 contexts) and by dtl_searches15_n24.pg (sha1 767e14c6; pinned Oink 16 iterations, verified; Oink order, 4 contexts).
+  Stable order on the same two files: FAILS 1, holds 3.
+  - The crossing pairs are two large depth-0 contexts of the form G′ minus the pieces removed earlier in the search. Each
+    lacks vertices the other has: e.g. on dtl_searches15_n24, {0, 1, 2, 5, 7, 9, 10, 13, 14, 15, 17, 20, 21, 23} and
+    {0, 1, 2, 5, 6, 7, 8, 9, 13, 15, 17, 20, 23}.
+- Reading. The depth-0 contexts of one search form a decreasing chain, R_i = G′ minus the pieces removed before. The
+  first-difference context of (s, s+1) lies on chain(s) (FDL: the searches agree before e*). Across searches the chains are
+  re-cut, so the contexts cross. This is the same re-cutting that killed (CHAIN). No (CTX⁺) route from set structure alone.
+
+23j. (CTX⁺): context structure data (DATA; L-ALG succ. 7, 20:26Z by date -u)
+- dtl_ctxpieces.py (RM_DV=0 RM_LIGHT=1, Oink order) on ctx12_oink_n40, ctx13_n40 (l-red), spp_final_n40 and spp_chain_up_n43.
+  - The depth-0 contexts of each search form a decreasing chain from G′ (7/7 phases).
+  - All depth-0 contexts over a phase are MANY: 126 at |G′| = 40 with S = 25 (ctx13_n40); 111 at 38 with S = 24.
+    First-difference contexts are only 13 and 12 there. So (CTX⁺) is about which contexts carry a first difference, not
+    about how many contexts exist.
+  - Pieces (differences along a chain) repeat heavily: 585 of 877 were seen earlier in the phase. The maximum number of
+    distinct pieces is 84 at |G′| = 43 (spp_chain_up_n43, S = 42), i.e. 1.95·|G′|.
+- dtl_rootmono.py RM_BIRTH=1 (new flag; default output unchanged) compares e*'s context with the birth arenas (sptl arena at
+  extraction) of the tangles learned by s. On ctx12_oink_n40, ctx13_n40 and spp_chain_up_n43 (Oink order): 91/91 transitions with e* in a
+  best_vertices call land in the loose class "the context contains a birth arena at the same or greater depth"; 0 EQUAL a
+  birth context.
+  - The loose class is nearly automatic for depth-0 contexts, so this is NOT informative. A sharper test would be "e* lies on
+    the call path to the birth of s's new tangle".
+- No (CTX⁺) statement proposed. Candidate to measure next: (PIECES-POLY), distinct depth-0 pieces per phase ≤ 2|G′|
+  (max 1.95 so far).
+
+23k. Referee imports for packet 9 (§23f-§23g) (L-ALG succ. 7, 20:35Z by date -u)
+The Lead asked for these as "§23j"; §23j was already taken (CTX⁺ data), so they go here. §23f-§23g are not rewritten.
+Sources: REFEREE docs/referee/R-P9.md and REFEREE-2 docs/referee-2/R2-P9.md, on trunk 25111fa; both labelled "(Opus 5.5, D12)".
+- Verdicts:
+  - (a) §23f: SIGN from both.
+  - (b) Lemma CHARGE: SIGN WITH GAPS from both, all gaps closed.
+  - (c) the depth count: REFEREE SIGN WITH GAPS (G9-c1, closed); REFEREE-2 SIGN.
+  - (d) the data: CONFIRMED by both.
+  - No disagreement on the mathematics.
+- G9-b1 (both; closed). CHARGE's proof must use the prefix BEFORE τ, P(τ⁺) of round r, wherever §23g writes P_{j+1}(τ) and
+  P_i(τ). In §22r's notation P(τ) is the prefix after τ's region. With that reading "t ∩ P_i(τ) = ∅" is FALSE, since t fired
+  inside region τ (REFEREE-2's probe: false at all 65 re-steals).
+  Corrected step 2: a firing tangle's vertices lie in CurZ or CurR (dtl.cpp 136-139), and CurR = R \ P(τ⁺) minus the
+  vertices popped in τ's own region (690, 699). So t ∩ P_i(τ⁺) = ∅.
+  Then: take w ∈ t ∩ P_{j+1}(τ⁺) with w ∉ P_i(τ⁺), so i ≥ j + 2. Let m be the LAST visit in [j+1, i−1] with w ∈ P_m(τ⁺).
+  Then P_m(τ⁺) ⊄ P_{m+1}(τ⁺).
+  The correction is needed for strictness: with P(τ), a loss could be caused at step τ itself.
+  The tool was already right: dtl_rootmono.py records pref[(round, top)] = Z BEFORE tattr, i.e. P(τ⁺), and
+  dtl_stealdepth.py uses it.
+- G9-b2 (REFEREE; closed). An intermediate visit can have fewer than r rounds.
+  - "No candidates" stop (dtl.cpp 716 / 765) at round r′ < r: the later rounds repeat round r′, since the call is a function
+    of (V, R, T). Use P^{(r′)} as a virtual round r. C3 gives V_r(m) ⊆ V_{r′+1}(m) ⊆ V_{r′}(m+1), unless a steal occurs at a
+    round ≤ r′, which is itself a cause.
+  - V′ = ∅ stop (768-771): it contradicts w ∈ P_m unless an earlier-round steal exists.
+- Citations (REFEREE N9-b1 = REFEREE-2 G9-b2): the tangle rule is dtl.cpp 136-139 (138-139 for "!R[v] return false"), not
+  dtl_pyref 86-89.
+- G23g-1 and G23g-2: CHECKED and closed by both.
+  - The local form needs τ′ ∈ V ⊆ V′ in the absorbed case, which §23g's hypothesis includes.
+  - V_r ⊆ V′_r needs (NS*) at ALL steps of rounds 1..r−1, lower tops included (C1 uses the whole union). All of these steps
+    are earlier than (r, τ).
+  - The threshold loop (722-741) and the survivors (713-772) add no case.
+- Forms of (STEAL-POLY) (REFEREE-2 N9-a1, REFEREE G9-c1), named:
+  - SUM form, Σ_q k_q ≤ poly(|R|) per phase: F_R ≤ 3·Σ_q k_q directly, so GAP-A ⇐ (CTX⁺) ∧ (STEAL-POLY_sum), with no (FIRED-R).
+  - k_R form, k_R ≤ poly(|R|): needs (FIRED-R), since Σ_q k_q ≤ k_R·Q.
+  - §23f's "Σ_q k_q ≤ poly(|R|)·#fired(R)" form needs (FIRED-R).
+  - (c) gives the sum form from (STEAL-DEPTH_D) only together with (FIRED-R): 2Q^{D+1} contains #fired(R)^{D+1}.
+  - Working conclusion of both referees: GAP-A ⇐ (CTX⁺) ∧ (FIRED-R) ∧ (STEAL-DEPTH_D for a constant D), given STR-DET. All
+    three premises are DATA.
+- Constant D only (both). D = O(log n) gives only a quasi-polynomial bound. The proved D ≤ (|R|+1)|R| − 1 gives
+  exp(Θ(n² log n)).
+- N9-c1 (REFEREE-2): for Q = 1 there is no re-steal, since a cause is an event of another quadruple. So Σ = 1 ≤ 2, and the
+  bound holds for all Q ≥ 1.
+- The "R2-P8 §7" citation in §23f is CORRECT: c2ac652, line 139 (REFEREE-2 comparison; Lead checked). REFEREE's N9-a1 read an
+  older R2-P8. Unchanged.
+- REFEREE-2 data: random equal-priority tie-breaks of stealonce_viol_n76 give the re-steal in 32 of 50 orders (64 re-steals in
+  320 runs). Each has a cause and depth 1. So DE20 holds under many order data; the pinned Oink order is among those without it.
+
+23l. (CTX⁺): (PIECES-LAMINAR) KILLED; (PIECES ≤ 2|G′| − 1) is DATA but tracks S (L-ALG succ. 7, 20:42Z by date -u)
+- dtl_ctxpieces.py (RM_DV=0 RM_LIGHT=1) on the corpus (Oink; 294 phases) and on the mixed unions s1 (stable; 1,711 phases,
+  corpus included).
+  - Depth-0 contexts of a search always form a decreasing chain (2,005/2,005 phases).
+  - Max distinct pieces per phase: 89 at |G′| = 113 (fall4_n116), and 84 at |G′| = 43 (spp_chain_up_n43), the maximum ratio
+    1.953.
+  - Reused pieces: 4,172 of 9,143 (corpus) and 20,992 of 48,947 (mixed).
+- (PIECES-LAMINAR) "the distinct depth-0 pieces of a phase are pairwise nested or disjoint" (which would give ≤ 2|G′| − 1):
+  KILLED (self-kill). Instances: experiments/alg/instances/spp_chain_up_n43.pg and ctx12_oink_n40.pg (Oink order). The
+  crossing pair on ctx12_oink_n40 is {0, 2, 4, 5, 6, 9, 10, 11, 12, 14, 16, ...} and {3, 8, 13, 25}.
+- (PIECES ≤ 2|G′| − 1) holds on every phase measured, but on spp_chain_up_n43 the 84 distinct pieces come from S = 42
+  searches, about 2 new pieces per search. So the piece count follows S, and bounding it is as hard as GAP-A. Not a route.
+- (CTX⁺) state: no statement with a route. The data maximum is still 13 first-difference contexts (ctx13_n40).
+
+23m. (FIRED ≤ |R|): self-attack climbs and (FIRED-HALL) KILLED (L-ALG succ. 7, 20:56Z by date -u)
+- Climbs with dtl_firedclimb.py:
+  - fitness (count, then ratio), 3,000 steps from fired18_stable_n20: stable order reaches 19 fired at |R| = 19 (ratio
+    1.0); Oink order reaches 16 at 0.889.
+  - FC_RATIO=1 (new: ratio first), 20,000 steps: from the 19/19 instance, no improvement (1.0); from fired10_n20, 0.857.
+  - The ratio never exceeds 1.0, and no INCOMPLETE run.
+- (FIRED-HALL) "the fired tangles of a context have a system of distinct representatives t ↦ v(t) ∈ t" (it would explain
+  FIRED ≤ |R|): KILLED (self-kill). Tested with dtl_firedlong2.py (FL_ALL=1, stable order), a Kuhn matching. Instances:
+  experiments/alg/instances/fired18_stable_n20.pg (|R| 18, 18 fired) and the climbed 19/19 instance (scratch, not kept).
+  On fired18 the tangles inside {0, 3, 5, 9, 13, 14} are the singletons {0}, {3}, {5}, {9}, {14} plus {0, 9, 13},
+  {0, 5, 9, 13, 14} and {0, 3, 5, 9, 13, 14}: 8 tangles on 6 vertices.
+- Reading. FIRED ≤ |R| holds there only because other vertices of R carry no tangle. A nested chain plus singletons gives
+  2k − 1 tangles on k vertices, so FIRED ≤ |R| has no local reason. The climbs' ceiling at 1.0 is a local optimum, not a
+  proof. (FIRED-R) itself, poly(|R|), is unaffected and stays DATA.
+- Tool fix: dtl_rootmono's RM_BIRTH bookkeeping (2ff12ff) used the attribute name _spR, which dtl_firedlong2's FL class
+  also uses, so it broke FL's birth arenas (TypeError). Renamed to _spRk. Every dtl_firedlong2 result in §23d, §23e and
+  §23h was produced before 2ff12ff, with the old code, so none is affected.
+
+23n. Box-8 ledger, successor 7 (22:24Z by date -u; GO 17:46Z; box to ~00:45Z; produced on Opus 5.5)
+SIGNED by both referees (packet 9; R-P9 and R2-P9, trunk 25111fa; imports in §23k):
+- (a) The R11 count with the factor k: F_R ≤ 3·N*_R ≤ 3·Σ_q k_q ≤ 3·k_R·(|R|+1)·|R|·#fired(R) (§23f).
+- (b) Lemma CHARGE, with G9-b1 (P(τ⁺)) and G9-b2 (fewer rounds) closed. G23g-1 (local PREFIX-MONO-X*) and G23g-2 (V
+  alignment) are checked (§23g, §23k).
+- (c) Depth recursion: E_d ≤ Q^{d+1}, so Σ_q k_q ≤ 2Q^{D+1} under (STEAL-DEPTH_D). This gives STEAL-POLY for constant D only.
+- Conditional: GAP-A ⇐ (CTX⁺) ∧ (FIRED-R) ∧ (STEAL-DEPTH_D, constant D), given STR-DET. Also GAP-A ⇐ (CTX⁺) ∧
+  (STEAL-POLY_sum).
+PROVED (reading, unrefereed):
+- STOLEN-PERM ⇒ STAYS-MET ⇒ NO-REFIRE ⇒ STEAL-ONCE* (§23b). All four statements are now FALSE.
+KILLED this box (each with its instance, pinned Oink re-run; docs/alg/DEAD.md):
+- (STEALER-MONO): stealer_viol_n76 (L-RED; DE19). Also fails in the Oink order on big unions (seed 8).
+- (STEAL-ONCE*), (STOLEN-PERM), (STAYS-MET), NO-REFIRE, (DEP-SAFE): stealonce_viol_n76 (L-RED R35; DE20, stable order). In
+  the Oink order: stealonce_both_n45 (L-RED R36; DE20 addendum).
+- NO-RETURN (all-steps form): stealonce_viol_n76.
+- (FIRED-STEP) with a constant, (FIRED-TOP-INJ), (FIRED-HALL): fired18_stable_n20.
+- (FIRED-LAMINAR): c6_replay3_n32.
+- (CTX-LAMINAR): ctx12_oink_n40, dtl_searches15_n24.
+- (PIECES-LAMINAR): spp_chain_up_n43, ctx12_oink_n40.
+DATA (unproved; script, flags and sets in each section):
+- (STEAL-DEPTH_1): every event has depth ≤ 1, and k ≤ 2.
+  - Random sets up to n = 120: no re-steal at all.
+  - L-RED's instances, and climbs from them (dtl_depthclimb, 4 runs, ~2 h): up to 12 re-steals, all at depth 1.
+- Relevant-steal pairs per context: N*_R ≤ 3 on every set.
+- (FIRED ≤ |R|): tight (19/19). It has no local reason (FIRED-HALL is dead), so it is probably not robust.
+- (FIRED-DISTINCT): fired tangles of a context have distinct vertex sets.
+- (CTX⁺): at most 13 first-difference contexts per phase (unchanged). The depth-0 pieces of a phase number at most
+  1.953·|G′|, but that count tracks S.
+L32: NOT met. GAP-A still rests on (CTX⁺) and on either (STEAL-POLY_sum) or ((FIRED-R) and (STEAL-DEPTH_D)). (STEAL-DEPTH_D)
+has a signed route to (STEAL-POLY); the other premises have none.
+Open next:
+- (1) depth: a structural reason for depth ≤ 1, or a depth-2 gadget by stacking two R35 levels. That needs a re-steal at
+  (r, 66)-type steps. L-RED is climbing.
+- (2) (CTX⁺): no route; the set-structure candidates are exhausted (CHAIN, CTX-ROOT, CTX-LAMINAR, PIECES-LAMINAR).
+- (3) (FIRED-R): no route.
+
+23o. GAP-A POSITION, in one place (L-ALG succ. 7, 22:30Z by date -u; for the successor; Lead request 22:27Z)
+Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (L22/L26). Given STR-DET (R8).
+SIGNED CONDITIONALS (both referees; RESULTS R11 and the packet-9 draft R12; §23k):
+- (sum form) GAP-A ⇐ (CTX⁺) ∧ (STEAL-POLY_sum), where (STEAL-POLY_sum) says Σ_q k_q ≤ poly(|R|) per context and phase. The
+  chain is S − 1 ≤ Σ_R 2(F_R + 1)(H + 1) + 2n(|C_T| + |C_Dom|) + 1 (R9) and F_R ≤ 3·Σ_q k_q (R11 (c) with k).
+- (c) GAP-A ⇐ (CTX⁺) ∧ (FIRED-R) ∧ (STEAL-DEPTH_D for a constant D). Route: Lemma CHARGE plus E_d ≤ Q^{d+1}, so
+  Σ_q k_q ≤ 2Q^{D+1}, with Q ≤ (|R|+1)|R|·#fired(R).
+THE THREE DATA PREMISES:
+1. (CTX⁺): polynomially many first-difference contexts, −1 attractor contexts and Dom inputs per phase.
+   - Best data: max 13 first-difference contexts per phase (ctx13_n40, L-RED; CHECKER C11 re-run); 12 on ctx12_oink_n40; no
+     n-trend at n = 40, 48.
+   - Killed routes: (CHAIN) DE16; (CTX-ROOT) DE17; (CTX-LAMINAR) §23i; (PIECES-LAMINAR) §23l. The depth-0 piece count tracks
+     S (§23l).
+   - Structure known: the depth-0 contexts of a search form a decreasing chain from G′, and they are re-cut across
+     searches.
+2. (FIRED-R): #fired(R) ≤ poly(|R|) per context and phase.
+   - Best data: max 23 fired at one context (mixed unions, stable); fired/|R| ≤ 1.0, tight at 19/19 after climbs; on long
+     phases (S ≥ 2|R|) at most 3, ratio ≤ 0.375 (§23d, §23e, §23m).
+   - Killed routes: (FIRED-STEP) with a constant, (FIRED-TOP-INJ), (FIRED-HALL), all on fired18_stable_n20; (FIRED-LAMINAR) on
+     c6_replay3_n32; NO-RETURN on stealonce_viol_n76.
+   - Caveat (R11 G-R11-6): it is a tangle count close to GAP-A's core, and the sum form does not need it.
+3. (STEAL-DEPTH_D), constant D, or directly (STEAL-POLY_sum).
+   - Best data: no re-steal at all on random sets up to n = 120 (both orders). On L-RED's two instances, and on 4 climbs
+     from them: up to 12 re-steals, all at depth 1, k ≤ 2. N*_R ≤ 3 everywhere (§23g, §23n).
+   - Killed routes: (STEAL-ONCE*) DE20, with (STOLEN-PERM), (STAYS-MET), NO-REFIRE and (DEP-SAFE); (STEALER-MONO) DE19;
+     (MET-MONO) §23a.
+BEST GUESS, which premise is most provable: the STEAL premise, in the form (STEAL-POLY_sum), attacked through the CHARGE
+structure. Reasons:
+- (a) It is the only premise with a signed proof skeleton. Every re-steal is charged to an event at a strictly earlier step
+  (CHARGE), so the obstruction is now ONLY the multiplicative fan-out (one cause event may serve many re-steals). That is a
+  sharp, local question.
+- (b) The data is the cleanest of the three: depth ≤ 1, and k ≤ 2 even under targeted climbs. A depth-2 instance needs two
+  stacked R35 levels, and it has not appeared.
+- (c) A proof would not need (FIRED-R) if it bounds Σ_q k_q directly, e.g. by a potential over the step order that a cause
+  event "pays" for all the re-steals it enables. Candidate: charge each re-steal to the VERTEX w whose loss from P(τ⁺) enabled
+  it, and bound how often one vertex can leave and re-enter one prefix.
+- (d) By contrast, (CTX⁺) and (FIRED-R) have had every set-structure route killed, and their counts are close to GAP-A's own
+  (searches, tangles).
+- Risk: if L-RED stacks two R35 levels, depth grows with nesting, and then only (STEAL-POLY_sum) via a non-depth argument
+  survives.
+
+- ADDENDUM (23:03Z by date -u; Lead 23:02Z): L-RED R37 (docs/red/R37-depth-obstruction.md, l-red fcc179b; a reading plus data,
+  unrefereed) links the STEAL and CTX premises.
+  - R37-1: a depth-D event needs a chain e_0..e_D with strictly increasing pairs and D+1 strictly ordered steps, so ≥ D+3
+    visits of ONE context in ONE phase (tight, per L-RED). Hence depth ≤ V_R − 3, where V_R = visits of R in the phase.
+    V_R is not bounded by S, since search_rec revisits R after each res = 1 round.
+  - R37-2: every event pair needs a tangle learned in between (rests on an unproved determinacy reading).
+  - Lockstep copies cannot reach depth 2 (cf. the union climb s9: 29 re-steals, all depth 1). A clock-gated lag design is
+    written down, not built.
+  - L-ALG note: a polynomial bound on V_R makes the STEAL premise trivial, without CHARGE or depth. Every event sits at a
+    pair of consecutive visits, so k_q ≤ V_R − 1, N*_R ≤ V_R − 1, and F_R ≤ 3(V_R − 1) directly. So "(VISITS) V_R ≤ poly(|R|)
+    per phase" with (CTX⁺) would give GAP-A by R9 alone. But (VISITS) is GAP-A in disguise: every search
+    visits the root context G′ at least once (its first best_vertices call, depth 0), so V_{G′} ≥ S. Hence (VISITS) for
+    R = G′ alone already bounds S, and the link gives nothing new. Through R12 (c) the depth bound gives only Q^(poly); the direct bound F_R ≤ 3(V_R − 1)
+    is the stronger use.
+
+23p. Vertex exits from a prefix: a polynomial charge that does not need constant depth (reading, unrefereed; DATA) (L-ALG
+succ. 7, 22:42Z by date -u; tool experiments/alg/dtl_prefexits.py)
+Definitions:
+- An EXIT is a triple (step σ = (r, τ), vertex w, pair m) with w ∈ P_m(τ⁺) and w ∉ P_{m+1}(τ⁺); the prefix is BEFORE τ, as
+  in G9-b1.
+- X_R is the number of exits of context R in the phase. X(σ, w) is the number of exits of w at σ.
+Lemma EXIT-CHARGE (reading; it uses only steps 1-3 of CHARGE as corrected in §23k, not the PREFIX-MONO part):
+- Every re-steal (i, q), q = (σ, t), with previous event (j, q), contains an exit (σ, w, m) with w ∈ t and j < m < i.
+- Distinct re-steals of the same q get distinct exits, because their intervals are disjoint.
+- Hence Σ_q (k_q − 1) ≤ Σ_{exits (σ, w, m)} #{t fired at σ : w ∈ t} ≤ #fired(R)·X_R.
+- So Σ_q k_q ≤ Q + #fired(R)·X_R ≤ #fired(R)·((|R| + 1)|R| + X_R).
+Consequence (reading):
+- (EXITS-POLY): X_R ≤ poly(|R|). Then (EXITS-POLY) ∧ (FIRED-R) ⇒ (STEAL-POLY_sum) for ANY polynomial bound; no constant D is
+  needed.
+- The local form (EXIT_c): X(σ, w) ≤ c for every step and vertex. It gives X_R ≤ c·|R|·(|R| + 1)|R|.
+- Caveat: an exit happens only at a pair with a relevant steal at an earlier step (local PREFIX-MONO-X*). Each such pair
+  gives at most |R|·#steps exits, so X_R ≤ N*_R·|R|·(|R|+1)|R|, and Σ_q k_q and X_R bound each other up to polynomial
+  factors. (EXITS-POLY) is therefore a REFORMULATION of the STEAL premise, not a reduction of it. Its value is that (EXIT_c)
+  is LOCAL: one vertex, one step.
+DATA (dtl_prefexits.py; RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0; corpus of 254 files plus stealonce_viol_n76,
+stealonce_both_n45 and stealer_viol_n76):
+- stable order: exits per (context, step, vertex) are 1 in 3,073 cases and 2 in 22. The value 2 occurs only on
+  stealonce_viol_n76 and stealonce_both_n45 (the DE20 instances). Max total exits per context: 3.78·|R| (fall3_n76, 287 at
+  |R| 76).
+- Oink order: 1 in 2,101 cases and 2 in 20 (only stealonce_both_n45). Max 3.43·|R|.
+- So (EXIT_2) holds on all data. (EXIT_1) is FALSE on the DE20 instances, the same event as the re-steal.
+Successor target: prove (EXIT_c) for some constant c, or a polynomial c(|R|). The question is how often one vertex can
+leave and re-enter one step's prefix. A re-entry needs the prefix above to regrow around w, which in R35 is a NEW tangle
+fired by region 66.
+
+23q. Box 9: Lemma ENTRY-CHARGE: the STEAL premise without (FIRED-R) (reading, unrefereed; L-ALG succ. 7, 00:18Z by date -u)
+Setting:
+- As in §23g and §23k: one context R and one phase, steps σ = (r, τ), and P_i(σ⁺) = the prefix BEFORE τ in round r at
+  visit i.
+- P_i(σ⁺) is defined for every τ ∈ V_r, processed or not: it is the union of the regions of the tops above τ. If the visit has
+  fewer than r rounds, use G9-b2's virtual round.
+- An ENTRY is (σ, w, i) with w ∉ P_i(σ⁺) and w ∈ P_{i+1}(σ⁺). An EXIT is the reverse.
+- X_R is the number of exits; N_ent is the number of entries.
+- Events (i, q), q = (σ, t), are as in R11: t ∈ F_σ(i), and t meets P_{i+1}(σ⁺) without being contained in it.
+Lemma ENTRY-CHARGE. Σ_q k_q ≤ |R|·N_ent ≤ |R|·(X_R + (|R| + 1)·|R|²).
+Proof.
+1. Fix an event (i, q). Since t fired in region σ at visit i, t ∩ P_i(σ⁺) = ∅ (dtl.cpp 136-139 with 690/699; G9-b1).
+   Since t meets P_{i+1}(σ⁺), some w ∈ t gives an entry (σ, w, i). Map the event to one such entry.
+2. Fan-out. Every event mapped to the entry (σ, w, i) has a distinct tangle t ∈ F_σ(i).
+   - A tangle fires in a region step only if it has a vertex not yet in CurZ (dtl.cpp 143-146, can_attract_new). It then
+     adds all its vertices to CurZ (165-172), and CurZ only grows during the step.
+   - So every firing adds at least one new vertex, and |F_σ(i)| ≤ |A_σ(i)| − 1 < |R|.
+   - Hence at most |R| events map to one entry, and Σ_q k_q ≤ |R|·N_ent.
+3. For a fixed (σ, w), entries and exits alternate, so entries ≤ exits + 1.
+   - There are at most (|R| + 1)·|R| steps (rounds ≤ |R| + 1, dtl.cpp 748-760; tops are p-vertices of R) and at most |R|
+     vertices.
+   - Summing gives N_ent ≤ X_R + (|R| + 1)·|R|². □
+Corollaries (readings):
+- (C1) (EXITS-POLY), X_R ≤ poly(|R|), implies (STEAL-POLY_sum). With the sum form signed in packet 9 (R12 (a)):
+  GAP-A ⇐ (CTX⁺) ∧ (EXITS-POLY), given STR-DET. (FIRED-R) is NOT needed, and (STEAL-DEPTH) is not needed either.
+- (C2) The local form (EXIT_c): every (σ, w) exits at most c times per phase. It gives X_R ≤ c(|R| + 1)|R|², so
+  Σ_q k_q ≤ (c + 1)(|R| + 1)|R|³ and F_R ≤ 3(c + 1)(|R| + 1)|R|³ (R11 (c)).
+- (C3) Converse, so this is an equivalence up to polynomial factors and not a reduction of the count: X_R ≤
+  N*_R·|R|·(|R| + 1)|R|, because an exit needs a relevant steal at an earlier step at the same pair (CHARGE's local
+  PREFIX-MONO-X*). What is new: the premise is now LOCAL (one vertex, one step) and FIRED-free.
+DATA for (EXIT_c) (§23p, dtl_prefexits.py; corpus plus the DE19/DE20 instances): c = 2 on all data. Exits equal 2 only on
+stealonce_viol_n76 and stealonce_both_n45 (22 and 20 cases, stable / Oink); 1 in 3,073 / 2,101 cases. Re-entry patterns:
+§23r.
+Status against L32: GAP-A ⇐ (CTX⁺) ∧ (EXIT_c), two named DATA statements. The STEAL side now has a proof route from a single
+local statement. (CTX⁺) has none.
+
+23r. Box 9: (EXIT_c) data and the shape of a proof (DATA plus SKETCH; L-ALG succ. 7, 00:23Z by date -u)
+- Data: dtl_prefexits.py (now also counting re-entries; RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0). Sets: corpus plus
+  stealonce_viol_n76, stealonce_both_n45, stealer_viol_n76 and resteal34_union_n90.
+
+  | order | exits = 1 | exits = 2 | exits ≥ 3 | re-entries = 1 | re-entries = 2 |
+  |---|---|---|---|---|---|
+  | stable | 6,692 | 189 | 0 | 627 | 17 |
+  | Oink | 2,106 | 20 | 0 | 49 | 0 |
+
+  - Two exits occur only on DE20-derived instances (stealonce_*, resteal34_union_n90).
+  - Re-entries occur on natural data too. Patterns 0101, 01001 and 10001 appear on f1_twodef_n48 and f1_twofall_n48, and
+    010111 on fall3_n76.
+  - So a vertex can leave a prefix and return without any re-steal, but no (step, vertex) has left 3 times. No INCOMPLETE
+    run.
+- Reformulation (reading). Within a round the prefixes are nested: P(r, τ⁺) grows as τ decreases. So w ∈ P_i(r, τ⁺) iff
+  top_r^i(w) > τ, where top_r^i(w) is the top whose region holds w at visit i, or ⊥.
+  - An exit of w at (r, τ) is exactly a downward crossing of level τ by the sequence (top_r^i(w))_i.
+  - (EXIT_c) says: for every round and vertex, the top sequence crosses every level downward at most c times. By §23q this
+    alone gives the STEAL side.
+- Why the obvious proofs fail (named gap G23r):
+  - (i) Exits at a step need a relevant steal at an earlier step (local PREFIX-MONO-X*), and every relevant steal is an
+    entry at that earlier step (§23q, step 1). So exits at later steps are driven by entries at earlier steps, and
+    re-entries are driven by growth.
+  - (ii) The only signed monotone structure across visits is the first difference: at the first differing step the region
+    grows strictly (FDL / EXACT*). The resulting lexicographic chain of prefix vectors gives only the bound
+    (|R| + 1)^{#steps}, the §22v obstruction again.
+  - (iii) A proof of (EXIT_c) therefore needs a per-vertex reason why top_r(w) cannot fall below the same level a third
+    time. In R35 the second fall needs a NEW tangle in region 66 (R37-2: each event pair needs a tangle learned in
+    between), so the reason must involve the learning dynamics, not the region geometry alone.
+  - Precedent: per-vertex fall counts have died before: (FALL-V), DE18, for RV.
+- Status: (EXIT_c) DATA (c = 2). No proof. Successor and climb target: EXIT ≥ 3 for one (step, vertex), e.g. three R35
+  levels in series.
+
+23s. Box 9: Lemma CHANGE-NEW: F_R ≤ 3·#fired⁺(R) UNCONDITIONALLY (reading, unrefereed; L-ALG succ. 7, 00:42Z by date -u; tool
+experiments/alg/dtl_changenew.py)
+Setting:
+- One phase and one best_vertices context R (key (depth, R)), with consecutive visits x → y.
+- T_x ⊆ T_y: within a phase tangles are only appended. tpr[t] = −1 (dtl.cpp 132-135) needs a vertex outside G, and G
+  shrinks only in the dominion loop after a search (1031-1036), which ends the phase.
+- #fired⁺(R) is the number of distinct tangles that fire (attractTangle returns true) at R in the phase, in region steps or
+  in the threshold loop. D_R is the number of consecutive visit pairs whose set-level computations (the sequence of tattr
+  calls: Z in, Z out, threshold) differ.
+Lemma CHANGE-NEW. If the computations at x and y differ, some tangle t with ntv(x) ≤ t < ntv(y), i.e. born between the two
+visits, fires at R in y.
+Proof.
+1. The call is a deterministic function of (R, T), given the order datum. It recomputes V from R (pyref 221; dtl.cpp 662-667).
+   At set level it does not depend on str (STR-DET, R8).
+   Let e_k be the first tattr call whose output differs. All earlier calls agree, so e_k has the same input Z, arena and
+   threshold in both visits (the candidate tests, attracts, depend only on Z and R).
+2. Region step. The prefix P(τ⁺) is the same, so each OLD tangle has the same exclusion status. By EXACT (R10 (a)),
+   Z_out(x) = Cl(base; T_x \ E_x) and Z_out(y) = Cl(base; T_y \ E_y) ⊇ Z_out(x).
+   - By EXACT* (R11 (a)), Z_out(y) = Cl(base; F(y)).
+   - If F(y) ⊆ T_x, then F(y) ⊆ T_x \ E_x (the fired tangles are not excluded), so Z_out(y) ⊆ Z_out(x), and the outputs
+     are equal: a contradiction.
+3. Threshold loop. There are no exclusions (Gx = R, consume = None, dtl.cpp 726-731), and W_t = Cl_t(U) over all of T (§22r
+   Corollary, the signed G-d1/G-Ψ convention). By soundness (S0), Z_out(y) ⊆ Cl(Z_in; used(y)). So the same argument
+   applies.
+4. In both cases a tangle of T_y \ T_x fires at e_k in y. □
+Corollary (reading):
+- Distinct differing pairs have disjoint birth intervals, so their new tangles are distinct, and D_R ≤ #fired⁺(R). A
+  relevant-steal pair is a differing pair, so N*_R ≤ D_R.
+- By R11 (c): F_R ≤ 3·N*_R ≤ 3·D_R ≤ 3·#fired⁺(R). This needs no STEAL premise at all; compare R11 (d)'s
+  3(|R|+1)|R|·#fired(R), which needed (STEAL-ONCE*).
+- With R9: GAP-A ⇐ (CTX⁺) ∧ (FIRED⁺-R), given STR-DET, where (FIRED⁺-R) says #fired⁺(R) ≤ poly(|R|). So there are two
+  alternative routes for the per-context budget: (FIRED⁺-R) (this section) or (EXIT_c) (§23q, packet 10).
+DATA (dtl_changenew.py; RM_EXCL=1 RM_LIGHT=1 RM_DV=0; sets include the corpus, the DE19/DE20 instances, fall3/fall4 and
+ctx13_n40):
+
+| set | order | differing pairs, CHANGE-NEW holds | contexts, D_R ≤ #fired⁺ and N*_R ≤ D_R | max D_R / #fired⁺ |
+|---|---|---|---|---|
+| mixed unions s1 | Oink | 14,008 / 14,008 | 17,427 / 17,427 | 1.0 |
+| mixed unions s1 | stable | 14,202 / 14,202 | 17,739 / 17,739 | 1.0 |
+| cross unions s11 | stable | 9,151 / 9,151 | 10,955 / 10,955 | 1.0 |
+
+No INCOMPLETE run.
+HONEST LIMIT. The bound is tight, and at the ROOT context it tracks S. On spp_chain_up_n43 the root context (|R| = 43) has
+42 visits, D_R = 41 and #fired⁺ = 41: every search learns a tangle that fires at the root in the next search. So
+(FIRED⁺-R) at G′ is close to bounding S directly, i.e. close to GAP-A's core (as R11 G-R11-6 warned for (FIRED-R)). It is
+still ≤ |R| on all data (41 ≤ 43). The lemma's value is structural: per context, the budget F_R is at most 3 times the
+number of NEW tangles that reach it, with no steal bookkeeping.
+- Note (00:46Z by date -u): at G′, D_{G′} (differing consecutive root calls) is about S − 1 in the data; on spp_chain_up_n43
+  it is 41 for S = 42. So (FIRED⁺ ≤ |R|) at the root would give S ≤ |G′| + 1 per phase, which is (SPP) itself (DATA, tight;
+  GAP-A-M §21). The root-level form of (FIRED⁺-R) is therefore the old core conjecture, not a new route. Below the root it
+  is a genuinely per-context statement.
+
+23t. Referee imports for packet 10 (§23q) (L-ALG succ. 7, 00:50Z by date -u)
+The Lead asked for "§23r or the next free letter"; §23r and §23s are taken, so the imports go here. §23q is not rewritten.
+Sources: REFEREE docs/referee/R-P10.md (referee aabcefd) and REFEREE-2 docs/referee-2/R2-P10.md (referee-2 0cbe61e, §6
+57468a8), both labelled "(Opus 5.5, D12)".
+- Verdicts:
+  - (a) ENTRY-CHARGE: SIGN WITH GAPS from both, closed. Step 2 (fan-out < |R| via can_attract_new, dtl.cpp 143-146 and
+    165-172) was verified line by line by both.
+  - (b) C1: SIGN. (c) C2: SIGN.
+  - (d) C3: confirmed as an equivalence up to polynomial factors.
+  - (e) data: confirmed.
+- G10-a1 (both; closed), stated as ONE counting convention for §23q, §23p and §23r:
+  - The step set is FIXED: every p-vertex τ of R and every round r ≤ |R| + 1 (dtl.cpp 748-760). "τ ∈ V_r", read per visit,
+    is NOT used (REFEREE-2). P_i(r, τ⁺) is defined for every such (r, τ) at every visit.
+  - Round convention (R2-P7 §3): after a "no candidates" stop (dtl.cpp 716 / 765) the last round is repeated for all later
+    r. After a V = ∅ stop (768-771), P_i(r, τ⁺) = ∅ for all later rounds r.
+  - Entries and exits are counted on this fixed grid, so the count "(|R| + 1)·|R| steps" in §23q step 3 is exact for the
+    grid.
+- N10-b1 (both; wording). "FIRED-free" is relative to §23g and §23p only. R12 (a)'s sum form and R11 (c) were already
+  FIRED-free. What ENTRY-CHARGE removes is the #fired factor between exits and Σ_q k_q (§23p's #fired(R)·X_R).
+- REFEREE-2's shorter route (signed). Step 1 alone gives N*_R ≤ N_ent: each relevant-steal pair has an entry at its pair.
+  So F_R ≤ 3·N*_R ≤ 3(X_R + (|R| + 1)|R|²) without the fan-out step, and with (EXIT_c), F_R ≤ 3(c + 1)(|R| + 1)|R|². This
+  is better than §23q's |R|·(...) bound on Σ_q k_q for the purpose of F_R.
+- REFEREE's constants for (c): X_R ≤ c(|R| + 1)|R|². A constant c is strictly stronger than (EXITS-POLY); a polynomial c(|R|)
+  is equivalent to it.
+- Status: GAP-A ⇐ (CTX⁺) ∧ (EXIT_c), given STR-DET, is a SIGNED conditional (R12 (a) plus packet 10). Its premises are DATA.
+
+23u. Box 9: the two routes meet. (EXIT_c) bounds D_R, the root included (SKETCH with one named gap; L-ALG succ. 7, 00:55Z by date -u)
+Grid and conventions are those of §23t (G10-a1). §23s (packet 11) is frozen and not edited.
+Claim. D_R ≤ N_ent + D_R^thr ≤ X_R + (|R| + 1)|R|² + D_R^thr, where D_R^thr is the number of differing pairs whose FIRST
+difference is in a threshold loop.
+Argument.
+- Take a differing pair x → y whose first difference is a region step σ₀ = (r, τ₀).
+  - By §23s step 2 (EXACT), the region there grows strictly: A_y(σ₀) ⊋ A_x(σ₀), and the prefix P(τ₀⁺) is the same.
+  - Pick w ∈ A_y(σ₀) \ A_x(σ₀), and let σ′ = (r, τ₀ − 1) be the next grid step.
+  - Then P_y(σ′⁺) ⊇ P(τ₀⁺) ∪ A_y(σ₀) ∋ w, while P_x(σ′⁺) = P(τ₀⁺) ∪ A_x(σ₀) ∌ w. So (σ′, w, x) is an entry.
+  - Distinct pairs give distinct entries (the pair index differs).
+- Hence D_R − D_R^thr ≤ N_ent, and N_ent ≤ X_R + (|R| + 1)|R|² (§23q step 3, on the §23t grid).
+- If τ₀ is the lowest grid top of round r, use σ′ = (r + 1, max top), the first step of the next round. Then P(σ′⁺) = ∅ in
+  both visits and the entry argument fails, so these pairs also belong to the gap.
+Gap G23u (named). Bound the pairs whose first difference is in a threshold loop, or at the last region step of a round.
+- There a new tangle grows W_t (§23s step 3), which changes V_{r+1}. The first effect on the grid is a new top u in round
+  r + 1, and u may already sit inside another top's region in x, so an entry is not guaranteed.
+- A candidate fix: count these pairs by the RV changes they cause (RV only rises there, §22r Corollary C1-C3). That would
+  need an RV-type per-vertex bound, of the same local kind as (EXIT_c).
+Consequences (if G23u closes):
+- (EXIT_c) bounds D_R, the number of differing visit pairs, for every context, the root G′ included.
+- With CHANGE-NEW: N*_R ≤ D_R ≤ poly. So the (FIRED⁺-R) route (§23s) and the (EXIT_c) route (§23q) MEET. At the root
+  both are (SPP)-strength statements about how often the root call can change.
+- (EXIT_c) at the root alone does not bound S. Searches whose root calls agree differ later; that is R9's sum over
+  contexts, i.e. (CTX⁺).
+- Data check, not run (context budget): D_R^thr per context. Successor target.
+
+23v. Referee imports for packet 11 (§23s, CHANGE-NEW) (L-ALG succ. 8, 01:19Z by date -u; produced on Opus 5.5)
+§23s is frozen and not rewritten. Sources: REFEREE docs/referee/R-P11.md (referee fc86762; its §C comparison is still
+pending) and REFEREE-2 docs/referee-2/R2-P11.md (referee-2 aeedd00, comparison §5 bb8a625), both "(Opus 5.5, D12)", read on
+trunk 3572651. No REJECT.
+- Verdicts:
+  - (a) Lemma CHANGE-NEW: SIGN WITH GAPS (REFEREE; N11-a1, G11-a1, both closed) / SIGN (REFEREE-2, N11-a1).
+  - (b) Corollary D_R ≤ #fired⁺(R), N*_R ≤ D_R, F_R ≤ 3·#fired⁺(R) unconditionally, and GAP-A ⇐ (CTX⁺) ∧ (FIRED⁺-R) given
+    STR-DET: SIGN from both (REFEREE-2 adds N11-b1).
+  - (c) Honest limit: CONFIRMED by both. GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R) up to polynomial factors, given STR-DET (necessity:
+    Lemma W gives #fired⁺(R) ≤ |T_phase| ≤ n·S; contexts ≤ calls per search × S). An EQUIVALENCE, not a reduction. At G′
+    alone (FIRED⁺-R) is necessary, not sufficient, and equals S − 1 on chain families (spp_chain_up_n43: 41 = 41, both orders).
+  - (d) Data: CONFIRMED. dtl_changenew.py unmodified; REFEREE probe p11probe.py (corpus 138 files: 1,160 / 1,231 differing
+    pairs, all with a NEW tangle firing AT the first differing tattr e_k, which is stronger than §23s's "fires at R in y");
+    REFEREE-2 an11.py on instrumented pinned C++ (268 files: 3,028 / 3,066 differing pairs, 0 failures; 0 differing pairs with
+    equal alive T; 4,350 / 4,265 identical pairs although new tangles were born, so a born tangle is necessary, not sufficient).
+- N11-a1 (both; closed). STR-DET is NOT needed for §23s step 1. best_vertices reads str only at dtl.cpp 73, and there only to
+  decide whether to write str; no set membership depends on str. STR-DET concerns extraction (268), which best_vertices does
+  not call. So §23s step 1 reads: the set-level trace is a function of (R, p, alive T, order datum) by direct code reading.
+- G11-a1 (REFEREE; closed). §23s step 3 (threshold level, dtl.cpp 722-731) follows DIRECTLY from DTL-proof Lemma 1.2: all
+  of Z is pushed at 724, Gx = R and nothing is consumed, so out = Cl_t(Z_in; T) over all of T. The "§22r Corollary" cited in
+  §23s is about cross-visit monotonicity under (NS) and is not the tool used. Then Z_out(x) ⊆ Z_out(y) ⊆ Cl_t(Z_in; used(y))
+  by soundness, and the EXACT* contradiction applies (REFEREE-2 argues the same from the full re-push at 724).
+- The state inventory (both referees, line for line), which is the proof of "a function of (R, p, alive T, order datum)":
+  - V: cleared by the caller (852), asserted empty at 648, rebuilt from R (662-667). R is only read (CurR is a copy, 690).
+  - Locals prevV, Z, CurR, CurZ, curdist (651-655). Candidates (global) is written (712-714) before it is read (735) in each round.
+  - Q (global) is empty on entry: every producer drains it (488, 697, 727, 883, 918, 944, 967, 1032; the 898-912 seeding is
+    drained at 918).
+  - str: written at 73, 89, 171, 694; READ only at 73, to guard a str write.
+  - attracts (41-57) reads Z, R and the static game; attractVertices (66-101) reads R, Z, the arena argument, priorities,
+    ins/outs; attractTangle(s) (110-202) reads tpr, tv, tout, tin (tangle-id order; new ids appended at 443/458-461), this->G
+    (132), R, Z.
+  - Lazy deletion (132-135) may change tpr between visits, but a tangle with a vertex outside this->G returns false whether it
+    is deleted at 117 or reaches 132, and no such tangle can fire (138-139, R ⊆ G). So only the ALIVE set T matters.
+  - this->G is assigned only at 1082 (start) and 1035 (dominion loop after search_rec), so it is constant within a phase.
+  - NOT read: depth, X, W, cur_depth, val, the dominion state (S, dom_vector), the pea_* arrays.
+  - Tangles are only appended within a phase (push_back at 440/458-461, nothing removes an entry; tpr[t] = −1 only at 134 for a
+    tangle with a vertex outside this->G). So T_x ⊆ T_y and "born between x and y" = ids in [ntv(x), ntv(y)).
+  - Consequence (REFEREE-2): the context key (depth, R) is finer than needed; identical visits need only equal alive T.
+- N11-b1 (REFEREE-2 only; REFEREE's §C pending, so ONE signature). The e*-at-R transitions are bounded by D_R directly: for an
+  e*-at-R transition s → s+1 the calls at the e* position have equal input R and different outputs, so some CONSECUTIVE visit
+  pair of R between them differs; two such intervals overlap only inside s+1 before π, where T is constant (STR-DET (c)), so the
+  charged pairs are distinct. Hence #(e*-at-R) ≤ D_R ≤ #fired⁺(R) given STR-DET (≤ 2·D_R without it), and
+      S − 1 ≤ Σ_{R ∈ C_bv} #fired⁺(R) + n(|C_T| + |C_Dom|) + 1,
+  with no H and no F_R.
+- What this changes for box 10 (L-ALG reading, unrefereed). With N11-b1 the per-context budget is D_R itself:
+      S − 1 ≤ Σ_{R ∈ C_bv} D_R + n(|C_T| + |C_Dom|) + 1   (given STR-DET; one signature on the D_R form).
+  So (D-POLY) "D_R ≤ poly(|R|) per context and phase" with (CTX⁺) gives GAP-A, and §23u's D_R ≤ N_ent + D_R^thr turns
+  (EXIT_c) plus a bound on D_R^thr (gap G23u) into (D-POLY). That is the box-10 target.

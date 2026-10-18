@@ -231,3 +231,29 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
   1). Obstruction: upward migration. A new higher top (68) fires the region's own fired tangle 7 = {34} whole and takes its
   dependents, so the region shrinks with no steal from it, while every prefix below keeps the vertices. (STAYS-MET),
   (STOLEN-PERM) and (STEAL-ONCE*) still hold there in both orders. The "ORDER on steals" reading of §23a is false on the same run.
+- (FIRED-STEP), constant per-step bound on distinct fired tangles: DEAD (GAP-A-M §23e). Instance
+  experiments/alg/instances/fired18_stable_n20.pg (sha1 42307b22; pinned Oink 4 iterations verified, re-run 19:16Z): 12 tangles
+  at one step, |R| 18, S 3, Oink order. (FIRED-TOP-INJ), distinct top vertices among fired tangles: DEAD, same instance
+  (stable order).
+- (FIRED-LAMINAR), fired tangles of a context pairwise nested or disjoint (which would give #fired(R) ≤ 2|R| − 1): DEAD (GAP-A-M
+  §23e). Instance experiments/alg/instances/c6_replay3_n32.pg (sha1 ac987535; pinned Oink 11 iterations verified, re-run 19:16Z;
+  both orders): crossing pair {4, 7, 13, 17, 21, 25} and {8, 17, 21}.
+- (STEAL-ONCE*) "each (context, round, top, fired tangle) is a relevant steal at most once per phase" (R11 (d) hypothesis):
+  DEAD, RESULTS DE20 (L-RED R35, Lead-verified; GAP-A-M §23f). Instance experiments/red/carry/instances/stealonce_viol_n76.pg
+  (sha1 32c2da0b; pinned Oink 7 iterations verified, L-ALG re-run 19:34Z); stable order, k = 2 at (round 4, top 18), tangle
+  7. It takes down with it: (STOLEN-PERM), (STAYS-MET), NO-REFIRE, and (DEP-SAFE) (dtl_shrinkdep.py FAILS 7 / 12). Mechanism:
+  a stealing vertex's path tangle is stolen one level up, the vertex drops out of the prefix, and the tangle refires and is
+  stolen again. Replacement target: (STEAL-POLY).
+- NO-RETURN "a tangle that stopped firing at a step (context, round, top) never fires there again in the phase" (all-steps
+  form; GAP-A-M §23d DATA): DEAD (§23h). Instance stealonce_viol_n76 (RESULTS DE20; L-RED R35 addendum l-red d11271d; L-ALG
+  re-run 19:56Z, dtl_firedlong2.py FL_ALL=1, stable FAILS 7 / 42). Same event as the NO-REFIRE failure. The long-phase form is
+  untested (vacuous on this instance).
+- (CTX-LAMINAR) "first-difference contexts of a phase pairwise nested or disjoint" (would give ≤ 2n − 1, GAP-A-M §23i): DEAD.
+  Instances experiments/alg/instances/ctx12_oink_n40.pg (sha1 eca1246f; pinned Oink 27 iterations verified, re-run 20:05Z) and
+  dtl_searches15_n24.pg (sha1 767e14c6; pinned Oink 16 iterations verified); dtl_rootmono.py RM_LAM=1, Oink order. Obstruction:
+  depth-0 contexts are G′ minus the earlier pieces of their search, and pieces are re-cut across searches (as for CHAIN, DE16).
+- (PIECES-LAMINAR), distinct depth-0 pieces of a phase pairwise nested or disjoint (GAP-A-M §23l): DEAD. Instances
+  experiments/alg/instances/spp_chain_up_n43.pg and ctx12_oink_n40.pg (Oink; dtl_ctxpieces.py; pinned Oink verified for
+  ctx12_oink_n40, 27 iterations, and spp_chain_up_n43, 43 iterations, both re-run box 8).
+- (FIRED-HALL), the fired tangles of a context admit distinct representatives (GAP-A-M §23m): DEAD. Instance
+  experiments/alg/instances/fired18_stable_n20.pg (stable; 8 fired tangles on 6 vertices). FIRED ≤ |R| has no local reason.

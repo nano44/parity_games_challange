@@ -1,0 +1,90 @@
+# corpus (262 files, n<=130), oink = pinned order, stable = stablerel.py + R2_REV=1
+== oink: 262 files
+ctx-phases with events: 87
+events depth0 (first): 200
+max Q: 55
+max depth: 
+max k_q: 1
+== stable: 262 files
+RE-STEALS: 1
+ctx-phases with events: 98
+events depth0 (first): 234
+max Q: 66
+max depth: 1
+max k_q: 2
+re-steals with a cause: 1
+experiments_red_carry_instances_stealonce_viol_n76.pg_stable.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+# random tie-break orders (randrel.py seeds 1-50 on stealonce/stealer_viol_n76, 1-20 on fall4/fall3/fallv; R2_REV 0/1): 320 runs
+RE-STEALS: 64
+ctx-phases with events: 1524
+events depth0 (first): 5856
+max Q: 96
+max depth: 1
+max k_q: 2
+re-steals with a cause: 64
+re-steal runs by file:
+     64 stealonce_viol_n76
+stealonce_viol_n76_s10_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s10_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s11_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s11_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s15_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s15_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s17_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s17_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s19_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s19_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s1_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s1_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s20_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s20_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s22_r0.log {'R': 76, 'pair': 6, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s22_r1.log {'R': 76, 'pair': 6, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s24_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s24_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s26_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s26_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s27_r0.log {'R': 76, 'pair': 6, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s27_r1.log {'R': 76, 'pair': 6, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s2_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s2_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s30_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s30_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s31_r0.log {'R': 76, 'pair': 6, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s31_r1.log {'R': 76, 'pair': 6, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s33_r0.log {'R': 76, 'pair': 6, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s33_r1.log {'R': 76, 'pair': 6, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s35_r0.log {'R': 76, 'pair': 6, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s35_r1.log {'R': 76, 'pair': 6, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s36_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s36_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s37_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s37_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s38_r0.log {'R': 76, 'pair': 6, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s38_r1.log {'R': 76, 'pair': 6, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s39_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s39_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s40_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s40_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s41_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s41_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s42_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s42_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s43_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s43_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s45_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s45_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s46_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s46_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s48_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s48_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s49_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s49_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 74, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s4_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s4_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s50_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s50_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s5_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s5_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s8_r0.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
+stealonce_viol_n76_s8_r1.log {'R': 76, 'pair': 5, 'q': (3, 31, 7), 'prev': 2, 'causes': [(3, (3, 73, 9))], 'ncauses': 1, 'depth': 1, 'W': [0]}
