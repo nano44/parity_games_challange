@@ -1,7 +1,8 @@
 # G-N5-TERM: termination of N5. L-NEW READING (successor 2, 2026-10-18 22:13Z by date -u). A proof proposal for the referees, NOT a result.
 GAPS row G-N5-TERM (major, owner L-NEW). SPEC's sentence "each iteration strictly improves σ or τ (in Ξ)" is false as written
-(instance below). This file proposes the repair and a proof from VJ00's lemmas. Status: unrefereed. Under CLAUDE.md the row stays
-open until two referees sign or Lean checks it.
+(instance below). This file proposes the repair and a proof from VJ00's lemmas. Status: ONE signature, REFEREE-2 "SIGNED WITH GAPS (Opus 5.5, D12)" at trunk 812ecba (docs/referee-2/R2-N5T.md; gaps G-N5T-1..3).
+Its notes N1-N4 and the I1 instance were applied on 2026-10-18 (wording only; the theorem statement is unchanged). REFEREE's
+independent report is pending. Under CLAUDE.md the row stays open until two referees sign or Lean checks it.
 
 Source: Jurdziński & Vöge, "A Discrete Strategy Improvement Algorithm for Solving Parity Games", BRICS RS-00-48 (Dec 2000),
 pdf sha256 485a12de432a2a8c.. (opened 21:17Z). Section/lemma numbers below are from that report. Notation as there: Ωσ = (Λσ, Πσ);
@@ -21,16 +22,23 @@ So VJ00 Lemma 5.8's "2 ⇒ 1" (Improve(σ) ≠ σ ⇒ σ is not a maximum), and 
 clause 3 compares only path sets (≅~_v), not lengths, so a length-only improvement at v keeps Prog true.
 What is NOT affected: "1 ⇒ 2" (no improvement ⇒ maximum, proved via over-progressive valuations and Lemma 5.9) still holds. That
 is the direction N5's stopping rule (S5) uses. So correctness of N5's output stands; only termination needs the argument below.
+Postulate I1 fails too (REFEREE-2, R2-N5T §4, exhaustive n = 3; 4,272 triples).
+- Smallest instance: prio [0, 2, 4], all vertices Even's, succ 0→{1}, 1→{0, 1}, 2→{0, 1}; σ = (0→1, 1→0, 2→0).
+- (1, 1) is a flat improvement (R+ cycle node, shorter is better), and switching it leaves Ω unchanged.
+- σ is not a maximum, because (2, 1) improves Ω(2).
+- So VJ00 §5.6's P1 sentence is unsupported as written. The Theorem below is the repair: every Improve sequence ends in a σ with
+  no improvement, and "1 ⇒ 2" makes that σ a maximum.
 (Status: an observation on the opened report, with an instance. It is not checked against the CAV 2000 version and is not claimed
 to be new.)
 
-## 1. Lemma A (weak monotonicity for ANY subset of improvements; VJ00 Lemma 5.7's own proof)
+## 1. Lemma A (weak monotonicity for ANY subset of improvements) = VJ00 Lemma 5.7 itself
 Let I be an unambiguous set of improvements for σ (VJ00 §4.4), and σ⁺ = Switch_I(σ). Then Ωσ ⊴ Ωσ⁺.
 Proof (verbatim structure of Lemma 5.7):
 - Ωσ is locally under-progressive for σ (Prop. 5.3).
 - For (v, w) ∈ I: Ωσ(w) ⊳ Ωσ(σ(v)), and UnderProg holds along (v, σ(v)). By Prop. 5.4 clause 2 it holds along (v, w).
 - So Ωσ is locally under-progressive for σ⁺, and Lemma 5.5 gives Ωσ ⊴ Ωσ⁺. ∎
-Lemma 5.7 never uses that I contains a best edge per vertex, so it holds for every subset.
+This IS Lemma 5.7: VJ00 §4.4 defines Improve(σ) = Switch_I(σ) for ANY non-empty unambiguous set I of improvements, so Lemma 5.7
+is already stated for every such I (R2-N5T N2). The proof above uses no best edge.
 
 ## 2. Lemma B (what a flat switch looks like)
 In the setting of Lemma A, suppose moreover Ωσ⁺ = Ωσ. Then for every (v, w) ∈ I:
@@ -39,14 +47,16 @@ In the setting of Lemma A, suppose moreover Ωσ⁺ = Ωσ. Then for every (v, w
 - Πσ(w) ∩ V>v = Πσ(σ(v)) ∩ V>v = ∅;
 - the lengths k(w), k(σ(v)) (second components of Πσ) satisfy: k(w) > k(σ(v)) if v ∈ R−, and k(w) < k(σ(v)) if v ∈ R+.
 Proof.
-- (11) gives Ωσ⁺ = Θσ⁺σ̄⁺, so Ωσ = Ωσ⁺ is locally progressive for (σ⁺, σ̄⁺) (Lemma 5.2), and Prog(Ωσ, (v, w)) holds.
+- Prop. 5.1 for σ⁺: Ωσ⁺ is locally progressive for (σ⁺, σ̄⁺), and (v, w) = (v, σ⁺(v)) is an edge of E_{σ⁺σ̄⁺}. Since Ωσ⁺ = Ωσ,
+  Prog(Ωσ, (v, w)) holds. (Earlier text routed this through (11) and Lemma 5.2; Prop. 5.1 alone suffices, R2-N5T N1.)
 - Prop. 5.1 gives Prog(Ωσ, (v, σ(v))).
 - Suppose Λ(v) = ℓ ≠ v. Clause 1 gives Λ(w) = Λ(σ(v)) = ℓ. Clause 2 gives Π(v) =_ℓ Π(w) ⊕ v and Π(v) =_ℓ Π(σ(v)) ⊕ v.
   - Multiset union with {v} and +1 cancel in =_ℓ (MaxDiff over multiset differences is unchanged when the same element is added
     to both; the lengths differ by the same 1).
   - So Π(w) =_ℓ Π(σ(v)), hence Ω(w) and Ω(σ(v)) are ⊴-equivalent. That contradicts Ω(σ(v)) ◁ Ω(w).
 - Hence Λ(v) = v. Clause 1 gives Λ(w) = v. Clause 3 gives Π(v) = (∅, 0) and (∅, 0) ≅~_v Π(w) ⊕ v, i.e. Π(w) ∩ V>v = ∅
-  (v ∉ V>v). The same holds for σ(v).
+  (v ∉ V>v). The same holds for σ(v). Ω(w) and Ω(σ(v)) are play values, whose path sets lie inside V>v by (1), so both
+  path sets are ∅ (R2-N5T N3).
 - Two play values with the same Λ = v and empty path sets above v compare by length alone (§4.2): for v ∈ R−, k ≤ k'; for
   v ∈ R+, k' ≤ k. The improvement is strict, which gives the claim. ∎
 
@@ -68,11 +78,14 @@ N5. In every iteration:
 - The same holds for τ on G^d.
 - Iσ / Iτ in n5.py are VJ00's improvements: SPEC S1/S2, si.py key = VJ00's ⊴ (Q1: path sets by MaxDiff; lengths as in §4.2).
 - Every iteration changes σ or τ: S4 changes one of them, or the fallback does.
+- Iσ and Ξσ are functions of σ ALONE (Ωσ minimises over all of Odd's plays), and Iτ, Ξτ of τ alone. τ only selects WHICH subset
+  of Iσ is switched. So the σ-sequence is a VJ00 improvement sequence with stutters (iterations where σ does not change), and the
+  same holds for τ (R2-N5T N4).
 So (σ_k) and (τ_k) never go down in ≺ (resp. ≺ on G^d) and at least one goes strictly up. No (σ, τ) state can repeat, and the
 number of iterations is at most h(≺_G) + h(≺_{G^d}), where h is the height of the order. Hence N5 terminates. ∎
 What this does NOT give: a polynomial bound. h can be exponential, so the iteration count stays open (that is the gauntlet's
-step 4 question). Consecutive flat iterations (neither Ωσ nor Ωτ changes) number O(n²): in each one the side that changes raises its φ, and φ, φ^d
-are integers in [−n², n²] while the valuations are fixed.
+step 4 question). Consecutive flat iterations (neither Ωσ nor Ωτ changes) number at most 4n(n − 1). Each length satisfies 0 ≤ k ≤ n − 1, so
+|φ|, |φ^d| ≤ n(n − 1); in a flat iteration neither potential drops and at least one rises (constant from R2-N5T §3).
 
 ## 4. Data matching the reading
 - Lemma B by computer: n5_flatcheck.py, 4,000 random games: 296 flat side-steps (one side's Ξ unchanged while its strategy
