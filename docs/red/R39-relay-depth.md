@@ -176,3 +176,37 @@ All measurements use L-ALG's tools UNMODIFIED (detached checkout of claude/l-alg
   are untouched. Only the constant-bound forms die: STEAL-DEPTH_D (section 6) and EXIT_c (section 7).
 - Box item (3), long-phase FIRED-R with multi > 0: not reachable with this family. S = D + 7 is below 2 abs R = 14D + 44,
   so the root context never passes the S >= 2 abs R filter.
+
+## 9. Box order (c), first-difference contexts: status at 03:44Z (date -u). Not achieved; what a construction must satisfy
+- DATA:
+  - lagfam has 1 first-difference context per phase at every D (section 8).
+  - Disjoint stacks of two copies with different D (experiments/red/lag/stack.py; D 2+4 and 4+2, n 86) also give 1 context
+    in 10 transitions (dtl_rootmono UNMODIFIED, stable).
+  - Depth there is 4 (the larger copy). The copies run in lockstep, as R38 found for unions.
+- READING:
+  - The first difference of a transition is the first tattr log entry whose first four fields differ: caller, depth, Z in,
+    Z out (experiments/alg/dtl_fdlcheck.py CK.tattr and reduce_log).
+  - So a transition's first difference leaves the root call only if EVERY tattr of the root call returns the same Z.
+    This covers the round regions, the bv threshold loop ("bv-thr", consume None) and the root's sptl, dom and -1 entries.
+  - In lagfam this fails by design: S's round-1 region grows at every visit.
+- Necessary condition for a serialized piece U whose learning sits in a lower context C (depth 0 after a dom, or depth >= 1):
+  every tangle U learns between two visits must leave every tattr Z of the earlier calls unchanged.
+  - In a round region, its trigger escape must not be popped, or it must be excluded.
+  - In the threshold loop (no consume, bound up to the maximum priority), some escape must stay outside Z_t at every
+    threshold. So U's tangles need an escape into a part the root's threshold attractor never reaches, or the root must
+    return 1 at round 1, before any threshold loop.
+  - ctx13_n40 meets this for 16 of its 24 transitions: their first differences are in depth-0 calls of abs R 26-39.
+- Not built in this box (context budget). For a successor: a relay unit placed in a context where the root returns 1 at
+  round 1, with its clock's tangles escaping only into vertices the root call never attracts.
+- Probe (03:49Z date -u), experiments/red/lag/hideclk.py k = 8: every x_j gets an extra edge to an Odd-won vertex o
+  (o -> W), so the clock tangles carry an escape the root's threshold attractor can never contain.
+  - Result, with o at priority 1 and at priority 2k + 3 alike: tangles are learned in ONE search only. The clock dies, because
+    o lies inside the learning context, neither consumed nor in Z.
+  - This sharpens the condition above. The hiding escape e must be outside the root's Z_t at every threshold, AND, in the
+    learning context C, either consumed by an earlier region of C or outside R_C.
+  - Regions and X are Even attractors, so a vertex that Even can never attract in G' meets the second clause only through
+    "outside R_C". C must then be a subgame that excludes e: a depth >= 1 recursion of the -1 branch, or a depth-0 call
+    after e was consumed in a way the root's threshold loop does not repeat.
+  - chainfam learns at depth 0 (its depth-1 subgames are empty in srtrace). So its clock cannot simply be hidden; a hidden
+    clock has to learn inside a nonempty -1 subgame.
+  - Lead reading needed: whether this is worth a successor box (R38 question, the one premise shared by the live routes).

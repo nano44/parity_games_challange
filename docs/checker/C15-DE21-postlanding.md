@@ -166,3 +166,28 @@ the DE21 E-1 fix (Addendum 1, PASS), the DE21 ADDENDUM, the R12 POST-LANDING NOT
 - Nothing else moved. The timeline is noted: the Lead's own re-run (2/3/4/5/7) was applied at 22bbe74 before my Addendum 2
   arrived, and the two runs agree independently.
 - Combined verdict for 5c452e3 → 9338ddd: PASS. C15 is closed: E-1 fixed, E-2 resolved, N-1 and N-2 applied.
+
+## Addendum 5: text check 9338ddd → bf302b0 (Lead 04:07Z): PASS
+- History: 9338ddd is an ancestor of bf302b0, and referee-2 636697c is an ancestor.
+- docs/referee-2/R2-FAITH-lagfam.md is on trunk: 60 lines, labelled "(Opus 5.5, D12)", "not a packet".
+- Changes: RESULTS.md (+7/−3) and GAPS.md (1 line).
+- (1) The formula "D/2 + 1" becomes "⌈D/2⌉ + 1" in the R13 POST-LANDING NOTE, DE21 ADDENDUM 2 and GAPS.
+  - R2-FAITH (2): "Max exits per (σ, w) = ⌊(D+1)/2⌋ + 1 = ⌈D/2⌉ + 1, i.e. 2, 3, 3, 4, 4, 5, 5 for D = 2 … 8, in both orders",
+    and "At ODD D ... 3 at D = 3, 4 at D = 5, 5 at D = 7".
+  - The note's "3/4/5 at D = 3/5/7, REFEREE-2 R2-FAITH-lagfam" is exact.
+  - At even D the formula equals the earlier D/2 + 1, which my C15 Addendum 2 runs reproduce (2/3/4/5/7 at D = 2/4/6/8/12).
+    OK.
+- (2) The FAITHFULNESS paragraph against R2-FAITH, clause by clause:
+  | DE21 text | R2-FAITH | |
+  | --- | --- | --- |
+  | "own logging-only pinned-C++ build and own checkers (an9, an10; no L-ALG tools, no pyref)" | "logging-only instrumentation of the pinned dtl.cpp @ 8fbf0a7 (R2-P9/dtl_probe9.patch)"; "an9.py ... an10.py ... They do not use L-ALG's dtl_stealdepth.py or dtl_prefexits.py or pyref" | OK |
+  | "D = 2..8 ... pinned and stable order" | "D = 2, 3, 4, 5, 6, 7, 8"; Orders: pinned, stable | OK |
+  | "D + 8 iterations verified" | "solved in D + 8 iterations (10 … 16)"; "solution verified" | OK |
+  | "max depth = D, max k = ⌊(D+1)/2⌋ + 1, every re-steal with a CHARGE cause" | (1), and table column "all with a CHARGE cause: yes" | OK |
+  | "max exits per (σ, w) on the fixed grid = ⌈D/2⌉ + 1" | (2) | OK |
+  | "0 failures of CHARGE, ENTRY-CHARGE steps 1-3, N* ≤ N_ent, C3 and fan-out" | "No failures of any lemma check: CHARGE's corrected intermediate claims, ENTRY-CHARGE steps 1-3, N*_R ≤ N_ent, C3, and \|F_σ(i)\| ≤ \|region\| − 1" | OK |
+  | "exit TOTALS (64/177/376/685 at D = 2/4/6/8) count virtual rounds on the fixed grid and are ≈ 2.2-2.6× dtl_prefexits'; both polynomial" | Table: 64 / 177 / 376 / 685; (3) "My count includes virtual rounds (G9-b2) on the fixed grid"; "Both are polynomial" | OK. Ratios against my Addendum 2 totals 25/75/166/310: 2.56, 2.36, 2.27, 2.21, so "≈ 2.2-2.6×" is exact |
+  | "DE21 and its addenda therefore stand on a faithful implementation" | "the counterexample data of DE21 and its addenda REPRODUCE on instrumented pinned C++ in both orders" | OK |
+- No overclaim. R2-FAITH is cited as a faithfulness check, not as a signature, and (EXITS-POLY) stays "polynomial" under both
+  grid definitions.
+- Verdict: PASS.

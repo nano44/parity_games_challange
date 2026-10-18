@@ -55,6 +55,30 @@ Status: BOX 10 ACTIVE (successor 7; R39 depth/exit family; see Resume point). Ol
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-18 03:53Z (date -u): successor 7 PARKS at ~510k (Lead 03:52Z: box (b) until ~560k, then handover). Last pushed head
+before this commit: 90febc5c. Nothing running (ps: no climbs, no dtl_rootmono orphans).
+SUCCESSOR QUEUE:
+- (1) (CTX+) serialized contexts (Lead priority). R39 §9 gives the necessary condition. Every tangle the lower piece learns
+  needs an escape outside the root's Z_t at every threshold, and must still be closable in its learning context. A hidden
+  clock must therefore learn inside a NONEMPTY -1 subgame. First step: build a game whose -1 branch recursion
+  (search_rec depth 1) has a nonempty subgame, and check with lag/srtrace.py.
+- (2) A REFEREE-2 faithfulness check of dtl_stealdepth / dtl_prefexits on lagfam is with the Lead. Answer any questions
+  from experiments/red/lag/ (schemashow.py prints the F/X table; vtrace.py prints events per visit).
+- (3) Super-polynomial direction: lagfam's toggles are bounded by its freezes (D + 2), and its learning is the clock's
+  (linear). A counter needs state-dependent NEW tangles, e.g. B_j = {T_j} + t_j differing per relay configuration.
+  Not attempted.
+(history) earlier entries of this box follow.
+2026-10-18 03:42Z (date -u) successor 7, box 10 (GO 02:09Z, to ~07:00Z). Head bc9a5781. Lead verified R39: RESULTS DE21
++ addenda, post-landing notes on R12 (c) and R13 (trunk 5c452e3, 22bbe74).
+- DONE: uniform family experiments/red/lag/lagfam.py D (lag4 skeleton + rule T_j -> {x_1, tau_j}): depth = D,
+  k = floor((D+1)/2)+1, exits D/2+1, Σk = (D/2+1)(D/2+2), fired⁺ = 2D+8, D_R = D+6, S = D+7, ctx 1 per phase; D <= 20,
+  both orders, Oink verified. Kills (STEAL-DEPTH_D) and (EXIT_c) for every constant. Nothing super-polynomial.
+- OPEN (Lead order (c)): first-difference contexts growth (R38 question); status and the necessary condition are in R39 §9
+  (stacks stay at 1 context; hideclk.py probe: an Odd-won
+  escape kills the chainfam clock; a hidden clock must learn inside a NONEMPTY -1 subgame of depth >= 1). The region clock changes the root at every transition, so lagfam has 1 context. Idea to try: put a relay copy inside a lower depth-0 context (after a dom'd upper
+  part) with its own clock, so the root call stays identical while the lower piece learns.
+- Tools: experiments/red/lag/README.md. LALG_DIR = any detached claude/l-alg checkout (e0fc1bb0 used; the in-tree
+  experiments/alg copies are byte-identical for dtl_stealdepth/rootmono/prefexits/pyref).
 2026-10-18 03:02Z (date -u), successor 7, BOX 10 (Lead GO 02:09Z, to ~07:00Z). R39 docs/red/R39-relay-depth.md:
 - inversion relay + chainfam region clock (S top, a -> S) gives re-steal DEPTH 2 / 3 / 4 on n 39 / 46 / 53;
 - pinned in experiments/red/lag/instances; both orders by unmodified dtl_stealdepth; Oink verified; check.sh pins.
