@@ -4142,5 +4142,54 @@ pairs. So a bound needs "a conflict edge (y, z) causes a relevant steal at only 
 (STEAL-POLY)-type statement keyed by edges instead of (step, tangle), and it is not proved. On lagfam the same conflict
 edges should recur at every visit (the relay toggles every level at every visit, §24f), so a per-edge CONSTANT bound is FALSE there:
 max visit pairs per conflict edge = D/2 (2, 4, 6 at D = 4, 8, 12, table above), while the total Σ is quadratic (12, 30, 56).
+ADDENDUM (α), library-wide (fixd_stealentry.py on all 206 instance files under experiments/alg, red/carry, red/lag):
+stable order 836 steals, Oink order 465 steals; VIOLATIONS 0; case (a) 0; and the case-(a) PRECONDITION (a vertex of a tangle fired
+at (r, τ) in visit i is a round-r top above τ in visit i+1, steal or not) occurs 0 times in both orders. No construction of a
+case-(a) steal and no proof that it cannot occur were found in the 1 h box. Named statement (NO-PRE-a), DATA only: "a vertex of a
+tangle that fired at top τ in round r is never a round-r top above τ at the next visit". With it, STEAL-ENTRY is a pure
+strategy-conflict statement and NOSTEAL-1P holds without "dist".
 STATUS of (c) at 11:02Z: no route. (LONG-PHASE) at G′ reduces, via R11 (c) and STEAL-ENTRY, to bounding recurring strategy-conflict
 steals at the root (plus case (a)). The class 𝒞^1P is exactly where both cases vanish (§27b).
+
+29. BOX-11 LEDGER (L-ALG successor 9; GO 09:38Z, written 11:24Z by date -u; produced on Opus 5.5). Everything is unrefereed unless
+marked signed.
+THE MAP OF (LONG-PHASE), for a referee reading cold. A phase of A_DTL (player p, game G′ fixed) is a sequence of searches. Each
+search s is a tree of best_vertices contexts. Its depth-0 part is a decreasing chain G′ = R_0 ⊋ R_1 ⊋ ..., with each R_{j+1} =
+R_j minus one removed piece. Consecutive searches agree up to a first difference e* (FDL, RESULTS R5 (h), R8), which sits at one
+context. The signed per-context budget (R9 (a), R11 (c)) bounds the transitions whose e* is at a FIXED context R by
+(F_R + 1)(H + 1), H polynomial, where F_R ≤ 3·(visit pairs of R with a relevant steal). A long phase therefore needs one of two
+mechanisms, and the data show both, separately:
+(i) ROOT-ONLY phases. Every e* is at R_0 = G′ (lagfam / lagdist: S = D + 7; chainfam: S = n − 1). They are long only if G′ has many
+    visit pairs with a steal. Lemma STEAL-ENTRY (§28c, a reading, checked on 1,301 library steals) says every steal is a
+    STRATEGY CONFLICT: a p-vertex of the stolen tangle t is pulled into an earlier region by an edge other than its edge in t.
+    Possibly also case (a), never observed. Bounding (i) means bounding recurring conflicts at the root.
+(ii) RESET phases. The e* moves along the chain (ctx13_n40: positions 0, 4, 4, 0, 0, 4, 3, ...; 10 drops in S = 25), and every rise at
+    position j re-cuts the chain below j with FRESH contexts. The mechanism (§27d, from a trace): a −1 call's Dom(prevV) piece
+    (dtl.cpp 770, 958-991) shrinks when its emptying round moves later, even though every round's V grows. Bounding (ii) is
+    (CTX⁺): the resets must be charged to something the phase does only polynomially often.
+In the one-player class 𝒞^1P, (i) vanishes (no steals, NOSTEAL-1P), so GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P, and (ii) is all that is
+left. A counter needs (ii) compounding across chain positions: a rise at j resets j+1, ..., and the positions below rise again
+≥ 2 times between consecutive rises at j. That is the construction target routed to L-RED (Lead 11:08Z).
+PROVED (readings, unrefereed):
+- Lemma CTRL (§27b): in 𝒞_C the controller makes ≤ n + 1 searches (its tangles have no escapes, so each one is a dominion).
+- Lemma NOSTEAL-1P (§27b; brief docs/alg/ONEPLAYER.md): in 𝒞_C^dist, q's phases have no relevant steal. Corollary on signed R9 and
+  R11: GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P. Honest label: one-player games are polynomial by other means. The packet is HELD (Lead).
+- Lemma STEAL-ENTRY (§28c): every steal enters by (a) a same-priority top, or (b) a strategy conflict.
+KILLED (DEAD.md, box 11 succ. 9; instances pinned with sha1):
+- (STEAL-DEPTH_{f(d)}) and (EXIT_{f(d)}) at fixed d (lagflat7, d = 3).
+- "contexts with ≤ 2 priorities are static" (fixd_d2_n32).
+- the "top level = Büchi round" FIX-d simplification.
+- all-distinct priorities as a relay-free class (lagdist, both orders).
+- (CHAIN), (RANK-MONO) and (TOP-CHAIN) inside 𝒞^1P (onep_chainfail_n20).
+DATA that stands:
+- random games at fixed d are trivial (4-5 searches, n ≤ 3200);
+- every library killer has d ≥ 6;
+- NOSTEAL-1P on 3,600 forced runs of the designed steal instances (ties too);
+- (NO-PRE-a): the case-(a) precondition is never seen (206 files, both orders);
+- lagdist: conflict edges recur ≤ D/2 times each, with a quadratic total.
+VERDICTS: (FIX-d) NO ROUTE (§26d). (b2) dead. (b1) survives as a reduction to (CTX⁺) on 𝒞^1P. (CTX⁺) on 𝒞^1P: no route; the
+obstruction is Dom(prevV) tail resets (§27d). (c): no route; (LONG-PHASE) at G′ is case (i) above.
+L32: NOT met. The class result is a reduction, not a bound.
+NEXT (successor): (1) the potential for (ii) on 𝒞^1P. Charge each reset at position j to the emptying-round increase at R_j
+(≤ |R_j| + 1 per context) and look for what a FRESH context below j must consume; or adopt L-RED's construction if it compounds.
+(2) A proof or an instance for (NO-PRE-a). (3) Fallback TC-6 P2-P6.

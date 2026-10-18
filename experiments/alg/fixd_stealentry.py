@@ -10,6 +10,7 @@ import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 sys.path.insert(0, os.path.join(HERE, "..", "dtl-bench"))
 import pg, dtl_pyref as P, dtl_step5stats as ST
+PRE = [0]   # fired tangles at (r, τ) with a vertex that is a round-r top above τ at the next visit
 
 
 class SE(P.DTL):
@@ -105,6 +106,7 @@ def analyze(d):
                         if t2 > top: Pb |= set(rec2); recb.update(rec2)
                     for t in fired:
                         tv = dict(d.tv[t]); A = set(tv) & Pb
+                        if any(y in tops_b and y > top for y in tv): PRE[0] += 1   # case-(a) precondition (steal or not)
                         if not A or set(tv) <= Pb: continue
                         steals += 1
                         a = [y for y in A if y in tops_b and y > top]
@@ -128,4 +130,5 @@ if __name__ == "__main__":
     for f, g in ST.games(sys.argv[1:]):
         d = run(g, order); s, a, b, v, nc, mx, ex = analyze(d)
         print(os.path.basename(f), "steals", s, "case (a)", a, "case (b) only", b, "VIOLATIONS", v, "| conflict edges", nc,
-              "max visit pairs per conflict edge", mx, "| first violation", ex, flush=True)
+              "max visit pairs per conflict edge", mx, "| first violation", ex, "| case-(a) precondition", PRE[0], flush=True)
+        PRE[0] = 0
