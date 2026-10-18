@@ -26,7 +26,7 @@ def classgames(files, trials, seed, nmax):
             continue
         if g.n > nmax: continue
         if inclass(g, 0) or inclass(g, 1):
-            yield os.path.basename(f), g; continue
+            yield os.path.basename(f), (distinct(g) if os.environ.get("DIST") == "1" else g); continue
         zs = zielonka.solve_with_strategy(g)[1]
         for C in (0, 1):
             for k in range(trials):

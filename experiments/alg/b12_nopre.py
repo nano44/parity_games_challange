@@ -10,7 +10,6 @@ Graded counts per run (model fixd_stealentry.SE, with V recorded at the start of
 Modes: scan G.pg ...  |  climb N P STEPS SEED OUTDIR [START.pg]  (two-player games, class-free moves of fixd_oneplayer.mutate
 with ONEP_ANY=1; score (pre, near, surv, gap, above); a run with pre ≥ 1 is written to OUTDIR)."""
 import sys, os, random
-os.environ["ONEP_ANY"] = "1"
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import pg, fixd_stealentry as SE
 from fixd_oneplayer import start, mutate
@@ -106,6 +105,7 @@ if __name__ == "__main__":
             if c[0]: print("PRECONDITION", f, c, ex, flush=True)
         print("order", order, "files", len(sys.argv) - 2, "(pre, near, surv, max gap, above)", tot)
     else:
+        os.environ["ONEP_ANY"] = "1"                      # class-free moves (two-player games); set here only, not at import
         N, P, steps, seed = (int(a) for a in sys.argv[2:6]); out = sys.argv[6]; rnd = random.Random(seed); os.makedirs(out, exist_ok=True)
         g = pg.read(sys.argv[7]) if len(sys.argv) > 7 else start(0, N, P, rnd); P = max(P, max(g.prio) + 1)
         sg, _ = counts(run(g, order))
