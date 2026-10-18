@@ -67,6 +67,9 @@ Status: BOX 14 ACTIVE (successor 9, from Lead GO 21:10Z; R42). Box-13 status (hi
   depth 1 with a different X (parent subgame) repeats a key. Reported to the Lead 22:01Z (date -u). Write-up docs/red/R43-treepiece.md.
 - 22:12Z (date -u): KILL (VR-NEW_all) on 𝒞^1P, both orders: xctx/instances/vrall_viol_n20.pg (ed5058576554); b12_pot K-v-all 1;
   FD-WITNESS_all fails too (b12_fdwit). Reported to the Lead 22:12Z (date -u). R42 §5.
+- 22:20Z (date -u): (VR-NEW_all)/(FD-WITNESS_all) also false in general (vrall_viol_n20 without CLASS). KILL (NO-PRE-a), both orders:
+  nopre/instances/nopre_viol_n20.pg (9a93a8e24832), found by L-ALG's own b12_nopre climb (seed 51) from nopre_near_n20. R44 (§3:
+  super-polynomial reading for the owner). Reported to the Lead 22:19Z (date -u).
 - NEXT: (CHAIN-CHANGE) on 𝒞^1P (R42 §3 routes β1/β2); or a depth-0 (VR-NEW_all) attack; ask the Lead.
 - TRAP (bit me 21:40Z): I headed two Lead messages with ESTIMATED times (21:58Z, 22:14Z) instead of running date -u. Run
   date -u immediately before writing any timestamp.
