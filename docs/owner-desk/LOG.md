@@ -241,3 +241,9 @@ on data (l-new 8925171, docs/new/N5-ssi-global.md): 13 families, 12,000 random, 
 <= ~linear iterations; Lead re-ran 40 rows. NOT a claim. Next: attack, step 3 (L-LIT), second implementation.
 
 ## Correction (Lead, 2026-10-18 20:47Z): the N5 step-2 report above was sent at 20:40Z (its "20:47Z" header was an estimate).
+
+## 2026-10-18 20:53Z Lead -> owner
+Correction: arXiv 2309.02223 is van Dijk, Loho and Maat (CSL 2024), not "Deng-Li-Mo" (this log's 20:47Z entry and the desk's 20:4xZ
+reply repeated the wrong names). N5 passed gauntlet step 3: L-LIT SIGNED WITH CAVEATS (l-lit 4a99a12, docs/lit/T20-N5-barriers.md);
+caveats (a) "distraction" attack not ruled out, (b) forced fallback = switch-all, (c) outside frameworks is not evidence of poly time.
+Attack on (a)/(b) running; L-COMP second implementation; step 4 not started.
