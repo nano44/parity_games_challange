@@ -24,6 +24,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   referee-2 file before saying a section does not exist.
 - R-P10.md (packet 10; pin 1100f3a): ENTRY-CHARGE SIGN WITH GAPS (G10-a1 one prefix convention incl. V=∅ stop; step 2
   fan-out < |R| checked hard: 143/146/165-172), C1/C2/C3 SIGN (C1 = reformulation; N10-b1). Tool p10entry.py.
+- R-P10 §C (434a552): agree; fixed σ set accepted; R2 shorter route F_R ≤ 3(X_R+(|R|+1)|R|²) confirmed.
+- R-P11.md (packet 11; pin 5909724): CHANGE-NEW SIGN WITH GAPS (N11-a1 STR-DET not needed; G11-a1 threshold via Lemma 1.2);
+  corollary SIGN; honest limit: GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R) (equivalence). Tool p11probe.py.
 - Lesson: Lemma 1.2 assumes Q = Z_0; Dom (878-890, 962-991) and bv regions push only the top. Check the push pattern.
 
 ## HANDOVER (parked 2026-10-17 ~12:20Z on the Lead's instruction; context ~520k; produced on Opus 5.5 under D12/L33)
