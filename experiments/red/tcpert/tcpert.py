@@ -63,7 +63,9 @@ TCL = (("edge", "Even", "L", "Even", "H", -1),)   # tcL(N): every Even-i-L gets 
 R4 = (("edge", "Even", "A", "Even", "T", 0), ("prio", "Even", "S", -2), ("prio", "Even", "Z", -2),
       ("edge", "Even", "B", "Even", "L", -1))      # tcR4(N): tcclimb seed 3, step 764 (R40 §7-8)
 LT = (("edge", "Even", "T", "Even", "L", 1),)     # leanT(N) = lean.py base + edges Even-i-T -> Even-(i+1)-L (R40 §9)
-RULES = {"tcL": TCL, "tcR4": R4, "leanT": LT}
+S8 = (("edge", "Odd", "L", "Even", "T", 0), ("flip", "Odd", "L"), ("edge", "Even", "B", "Odd", "S", 0),
+      ("edge", "Odd", "B", "Odd", "T", -1), ("edge", "Odd", "T", "Odd", "B", 0), ("edge", "Even", "B", "Odd", "A", 0))   # R40 §7 seed-8 rule
+RULES = {"tcL": TCL, "tcR4": R4, "leanT": LT, "tcS8": S8}
 def write_tcl(N, path, name="tcL"):
     V = apply(gen(N), RULES[name])
     with open(path, "w") as f:
