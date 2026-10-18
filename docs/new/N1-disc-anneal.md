@@ -70,7 +70,7 @@ LS24's algorithm, not a new algorithm. L-LIT to check [LS24] itself and any wors
 - Bit cost: gamma_j has j bits; lasso values have O(n j + d log n) bit numerators/denominators. Polynomial per step.
 
 ## Bit cost, phases and the hypothesis N1 needs (Lead 10:00Z items 1-2)
-- Phases. Friedmann 1106.0778 §9 (opened): rewards (−|V|)^Ω and β_G = 1 − 1/(4|V|·max|r(v)|) make discounted SI behave like
+- Phases. Friedmann 1106.0778 §9 (opened): rewards (−|V|)^Ω and β_G = 1 − 1/(4|V|³·max|r(v)|) [CORRECTED box 3 per L-LIT T19, 1106.0778 p. 35; was |V|] make discounted SI behave like
   parity SI on 1-sink games (Thm 9.5, Lemma 9.6), and Zwick-Paterson (via 2610.22149 Prop. 7.11 = [ZP96, Thm 5.2]:
   ‖λ(γ) − λ‖∞ ≤ 2n(1 − γ)‖r‖∞, normalised values) gives correctness of signs once 1 − γ < 1/(c n² n^d). Hence the last phase
   is at most J = log2(4 n² n^d) + O(1) = (d + 2) log2 n + O(1). Observed (certificate stop, no merging): switchallexp N = 2..6,
@@ -106,7 +106,9 @@ switchallexp (Friedmann's switch-all family; PGSolver port), Even switch-all ite
 | 5 | 77 | 310 | 90 | 15 | 310 |
 | 6 | 91 | 630 | 120 | 17 | 630 |
 The ablation reproduces Friedmann's counts exactly, as his transfer theorem predicts (1106.0778 §9, Thm 9.5 + Lemma 9.6,
-1-sink games, rewards (-|V|)^Ω, discount close to 1). So the gain on this family comes from the annealing schedule, not from
+1-sink games, rewards (-|V|)^Ω, discount close to 1). CORRECTION (box 3, per L-LIT T19): his threshold is
+1 − β_G = 1/(4|V|³ max|r|), not 1/(4|V| max|r|); N1's final γ is BELOW β_G (e.g. switchallexp N = 6: J = 697 < 724 = log2 of
+Friedmann's horizon), so the exact match is DATA beyond the theorem's range, not a prediction of it. So the gain on this family comes from the annealing schedule, not from
 the discounted objective. Full bench sweep: experiments/new/out/anneal/summary.csv (run_anneal.sh), recorded when done.
 
 ## Confound found and removed (09:45Z)

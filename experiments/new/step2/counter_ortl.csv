@@ -1,0 +1,32 @@
+family,N,n,gen,sha1,vj_switchall_plain,phases,even_iters,odd_iters,max_phase,secs,check
+counter_ortl,1,6,tools/oink/build/counter_ortl 1,c40fe70fadf3dc9a9ace54446f96ba168a8911e7,2,13,2,2,1,0.00,zielonka(oink zlk) OK strategies verified
+counter_ortl,2,11,tools/oink/build/counter_ortl 2,1ea6c8fc6f8ddbedd5b1155e10f4f84f50586310,3,32,4,5,1,0.00,zielonka(oink zlk) OK strategies verified
+counter_ortl,3,16,tools/oink/build/counter_ortl 3,c8bc349942b32305edee56ba8fb7d6504ed86622,4,52,6,8,1,0.00,zielonka(oink zlk) OK strategies verified
+counter_ortl,4,21,tools/oink/build/counter_ortl 4,4c36cd47dbb6c8da73331f3c56b0fd7fd241a26c,5,75,8,11,1,0.00,zielonka(oink zlk) OK strategies verified
+counter_ortl,5,26,tools/oink/build/counter_ortl 5,51900953896e8990ccd8c1f0c5ffc8b4a69cd5c1,6,99,10,14,1,0.00,zielonka(oink zlk) OK strategies verified
+counter_ortl,6,31,tools/oink/build/counter_ortl 6,a0a99adc0b1be91d72615a2a54d50bea077f69d2,7,124,12,17,1,0.00,zielonka(oink zlk) OK strategies verified
+counter_ortl,7,36,tools/oink/build/counter_ortl 7,410fb4f587289ce85fb37455198b2b4b667737d9,8,150,14,20,1,0.00,zielonka(oink zlk) OK strategies verified
+counter_ortl,8,41,tools/oink/build/counter_ortl 8,0d5e81c0f54d2972dc33971c41bbb5ff5cb05f7b,9,177,16,23,1,0.01,zielonka(oink zlk) OK strategies verified
+counter_ortl,9,46,tools/oink/build/counter_ortl 9,cfe78b51e52f2e4341190a79346c667c2fdcb3e5,10,205,18,26,1,0.01,zielonka(oink zlk) OK strategies verified
+counter_ortl,10,51,tools/oink/build/counter_ortl 10,5f3f228360efad6f88a521acc20ea1dcbf301a9e,11,233,20,29,1,0.02,zielonka(oink zlk) OK strategies verified
+counter_ortl,11,56,tools/oink/build/counter_ortl 11,8278508d4f6befbe118bc9c0705a4da1744b762a,12,262,22,32,1,0.02,zielonka(oink zlk) OK strategies verified
+counter_ortl,12,61,tools/oink/build/counter_ortl 12,366881c2ec4fec046fc5daaae5ac66c35087deee,13,291,24,35,1,0.04,zielonka(oink zlk) OK strategies verified
+counter_ortl,13,66,tools/oink/build/counter_ortl 13,0adf8f3e49fec68f92ff158bb91c6dcbc990c718,14,321,26,38,1,0.05,zielonka(oink zlk) OK strategies verified
+counter_ortl,14,71,tools/oink/build/counter_ortl 14,8562036719057fd3a852925dd98e41e363a09bfc,15,351,28,41,1,0.08,zielonka(oink zlk) OK strategies verified
+counter_ortl,15,76,tools/oink/build/counter_ortl 15,1098d6e3dba68982d8325d96637931788bfc9a25,16,382,30,44,1,0.10,zielonka(oink zlk) OK strategies verified
+counter_ortl,16,81,tools/oink/build/counter_ortl 16,a054ed8ee51cca3188b48237ba417d5905ef32ee,17,413,32,47,1,0.14,zielonka(oink zlk) OK strategies verified
+counter_ortl,17,86,tools/oink/build/counter_ortl 17,a853b6ddfc065d06241750b299506c42ff472d15,18,444,34,50,1,0.16,zielonka(oink zlk) OK strategies verified
+counter_ortl,18,91,tools/oink/build/counter_ortl 18,2ce72c7eba9c59194aa5d31b6d09f0438acc46fb,19,476,36,53,1,0.25,zielonka(oink zlk) OK strategies verified
+counter_ortl,19,96,tools/oink/build/counter_ortl 19,03d04048460f05f9669329e0305246f8dbcc2c86,20,508,38,56,1,0.29,zielonka(oink zlk) OK strategies verified
+counter_ortl,20,101,tools/oink/build/counter_ortl 20,56b0d85b7e59de85070ada826eb27adc4dd27575,21,540,40,59,1,0.40,zielonka(oink zlk) OK strategies verified
+counter_ortl,21,106,tools/oink/build/counter_ortl 21,4858e3c619b86d16872985cdf06962e75efe8931,22,572,42,62,1,0.48,zielonka(oink zlk) OK strategies verified
+counter_ortl,22,111,tools/oink/build/counter_ortl 22,a3940dfae80b53da5a910ee222030dbf66dc6229,23,605,44,65,1,0.54,zielonka(oink zlk) OK strategies verified
+counter_ortl,23,116,tools/oink/build/counter_ortl 23,6344442c1f4f158fdb720ee9a4b05735d0f9e9e3,24,638,46,68,1,0.70,zielonka(oink zlk) OK strategies verified
+counter_ortl,24,121,tools/oink/build/counter_ortl 24,3a6a979ac89b65111b6323fdaff8b866c22d8b73,25,672,48,71,1,0.82,zielonka(oink zlk) OK strategies verified
+counter_ortl,25,126,tools/oink/build/counter_ortl 25,94e6592103ec75bd879cc61a2647d404e4098745,26,705,50,74,1,1.00,zielonka(oink zlk) OK strategies verified
+counter_ortl,26,131,tools/oink/build/counter_ortl 26,bdfc6935429d84aa79e18a0c14c2faa359dbdf15,27,739,52,77,1,1.36,zielonka(oink zlk) OK strategies verified
+counter_ortl,27,136,tools/oink/build/counter_ortl 27,3daf4d4277044266f61f5406d3062c8f8557d056,28,773,54,80,1,1.46,zielonka(oink zlk) OK strategies verified
+counter_ortl,28,141,tools/oink/build/counter_ortl 28,ccedf175d79f4c5fbbcb769736d9ff6d297866c8,29,807,56,83,1,2.08,zielonka(oink zlk) OK strategies verified
+counter_ortl,29,146,tools/oink/build/counter_ortl 29,374b3d18f52d0795b52c1a95fca2816cb33eefc6,30,842,58,86,1,1.98,zielonka(oink zlk) OK strategies verified
+counter_ortl,30,151,tools/oink/build/counter_ortl 30,bdd40f584dc9f738dcbedc6ca4a6561453b8bdc2,31,876,60,89,1,2.53,oink tl (zlk bad output: solution misses vertex 91) OK strategies verified (re-checked 17:3xZ; the sweep checker crashed on the truncated zlk output)
+counter_ortl,31,,,,,,,,,BUDGET900_REACHED,
