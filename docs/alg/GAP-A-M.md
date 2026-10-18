@@ -4198,9 +4198,35 @@ DATA that stands:
 - NOSTEAL-1P on 3,600 forced runs of the designed steal instances (ties too);
 - (NO-PRE-a): the case-(a) precondition is never seen (206 files, both orders);
 - lagdist: conflict edges recur ≤ D/2 times each, with a quadratic total.
+- (TIE-BELOW) (§28c addendum 2): no fired tangle holds a same-priority vertex above its top (58,739 library events); it implies
+  (NO-PRE-a). The round-union proof route fails (U_{r+1} ⊄ U_r in 543 of 64,033 round pairs).
+- (OUTCOME-MONO) (§28d): at the first differing depth-0 call the outcome never goes stable → −1 and V* never shrinks; the reset
+  events are −1 → stable, prevV growth and the §27d prevV shrink (about 300 per order on the library).
 VERDICTS: (FIX-d) NO ROUTE (§26d). (b2) dead. (b1) survives as a reduction to (CTX⁺) on 𝒞^1P. (CTX⁺) on 𝒞^1P: no route; the
 obstruction is Dom(prevV) tail resets (§27d). (c): no route; (LONG-PHASE) at G′ is case (i) above.
 L32: NOT met. The class result is a reduction, not a bound.
 NEXT (successor): (1) the potential for (ii) on 𝒞^1P. Charge each reset at position j to the emptying-round increase at R_j
 (≤ |R_j| + 1 per context) and look for what a FRESH context below j must consume; or adopt L-RED's construction if it compounds.
-(2) A proof or an instance for (NO-PRE-a). (3) Fallback TC-6 P2-P6.
+(2) A proof or an instance for (TIE-BELOW) ⇒ (NO-PRE-a): the proof needs inclusion only at y's attracts()-successors.
+(3) A proof of (OUTCOME-MONO) on 𝒞^1P (the §27c reading). (4) Fallback TC-6 P2-P6.
+28d. What changes at the first differing depth-0 call (DATA; tool experiments/alg/fixd_outcome.py; all 206 library files;
+11:49Z by date -u). Per transition s → s+1 of a phase: the first depth-0 best_vertices call whose (R, result, V) differs.
+| category | stable order (re-cut below: yes / no) | Oink order (yes / no) |
+| −1 → stable | 225 (225 / 0) | 222 (222 / 0) |
+| −1, prevV grows | 221 (209 / 12) | 234 (221 / 13) |
+| −1, prevV shrinks | 197 (191 / 6) | 198 (192 / 6) |
+| −1, prevV incomparable | 101 (101 / 0) | 104 (104 / 0) |
+| stable, V* grows | 2 (1 / 1) | 2 (1 / 1) |
+| stable → −1; V* shrinks or incomparable | 0 | 0 |
+| outcomes equal, R_j differs (difference between depth-0 calls) | 420 (156 / 264) | 425 (162 / 263) |
+| no depth-0 difference | 67 | 66 |
+Readings:
+- (OUTCOME-MONO), DATA, general games: at the first differing depth-0 call the outcome never moves stable → −1, and a stable
+  V* never loses a vertex. On 𝒞^1P the reading of §27c predicts this (no steals: V_r grows in every round). In general games it
+  holds on all data, steals included.
+- The §27d mechanism is COMMON: in 298 / 302 transitions the −1 result's prevV shrinks or becomes incomparable (a later emptying
+  round), and 292 / 296 of them re-cut the chain below. Together with −1 → stable (always a re-cut) and prevV growth, these are
+  the RESET events of mechanism (ii) in §29.
+- A potential for (ii) must charge resets of three kinds: −1 → stable (≤ 1 per context), prevV growth at a fixed emptying round
+  (≤ |R| per round value), and a later emptying round (≤ |R| + 1 per context). Each is ≤ poly PER CONTEXT. The open part is
+  unchanged: the count of fresh contexts that the re-cuts create.

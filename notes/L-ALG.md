@@ -10,7 +10,8 @@ Box 11 (GO 09:38Z, to about 14:40Z). Ledger: docs/alg/GAP-A-M.md §29 (the map o
   Dom(prevV) tail resets (§27d). (c): no route (§28); Lemma STEAL-ENTRY (§28c); (NO-PRE-a) DATA.
 - L-RED is routed (Lead 11:08Z): a reset counter over chain positions (inside 𝒞^1P or general); a serialized-context family in
   𝒞^1P. If either compounds, run fixd_fdpos.py and fixd_rank.py on it at once.
-QUEUE: (1) a potential for reset phases on 𝒞^1P (§29 NEXT (1)); (2) (NO-PRE-a): proof or instance; (3) fallback TC-6 P2-P6.
+QUEUE: (1) a potential for reset phases on 𝒞^1P (§29 NEXT (1), §28d lists the three reset kinds); (2) (TIE-BELOW) ⇒ (NO-PRE-a):
+proof or instance (§28c addendum 2); (3) (OUTCOME-MONO) on 𝒞^1P; (4) fallback TC-6 P2-P6.
 
 ## DONE (box 11, successor 9)
 - Handover check 0a7b8d8 (5/5 per Lead), trunk merge 443e6f5.
