@@ -4315,3 +4315,175 @@ count for §28f: "the distinct tangles that fire in region steps of one context 
   Oink 7 iterations, verified; stable model: 0 steals, winners equal to Zielonka). At a context of size 9, the firing tangles
   {48, 51, 56, 63, 65, 67, 70} and {51, 56, 57, 63, 67, 68} (model indices = priority ranks) cross.
 - So the per-context count on 𝒞^1P is not a laminar-family count. Small on all data (≤ 24 at |R| = 78), but with no structure found.
+
+30. Box 12 (L-ALG successor 10; Lead GO 13:47Z by the Lead's clock, owner D13, Lead reading L34; produced on Opus 5.5). QUEUE (1)
+of §29: a per-context bound on the DISTINCT q-tangles that fire at one context per phase on 𝒞^1P, then the re-cuts. Everything
+here is unrefereed. Class set (tools experiments/alg/b12_*.py): every library .pg with n ≤ 200 forced into 𝒞_C for C = 0, 1 (each
+q-vertex keeps one edge: in trial 0 its Zielonka strategy edge where it has one, else a seeded random edge), priorities refined
+to all-distinct (fixd_ctx1p.distinct); games already in a class are used as they are. Model: fixd_stealentry.SE (dtl_pyref).
+30a. (TOP-UNIQUE@R) "in one phase, at one best_vertices context R, at most one distinct tangle per top fires in R's region
+steps" (≤ |R| firing tangles per context): FALSE (self-kill; tool b12_topclimb.py, a class-preserving climb from
+onep_chainfail_n20, Oink order, step 293).
+- Pinned: experiments/alg/instances/onep_topuniq_n20.pg (sha1 6cf816c7a5ec; 𝒞_1^dist, all priorities distinct; pinned Oink 5
+  iterations, solution verified; model winners equal to Zielonka in both order data). In q = 0's first phase, at the depth-0
+  contexts of sizes 20, 18 and 17, the tangles {4, 10, 16} (escapes {1, 3, 13}) and {1, 3, 4, 10, 13, 16} (escapes {17}), both
+  with top 16 (model indices = priority ranks), fire: the first in top 16's own region step (16 is already in Z, so the tangle
+  only adds 4 and 10), the second at a later visit in top 17's region step. check.sh keeps this.
+- Mechanism (reading): attractTangles(v) runs right after attractVertices(v) for the popped v (dtl.cpp 694-696), so a tangle
+  whose last escape is popped can fire before plain attraction has climbed its DAG below the top, even when its top is in Z.
+  The same-top tangles were NESTED in every case seen.
+- Before the climb: 0 violations on 2,189 class games (set A: 891, 2 random-forced trials, n ≤ 140, both orders; set B: 1,298,
+  trial 0 Zielonka-forced and 2 random trials, n ≤ 200, stable), max 1 tangle per top per context; max 14 distinct firing tangles at |R| = 18 (fired18_stable_n20 forced).
+30b. (TOP-CHAIN@R) "the same-top tangles that fire at one context in one phase form a ⊆-chain" (≤ |R|² per context): DATA
+holds. 0 violations on sets A and B of 30a (set B in Oink order: ledger below), and in two 4,000-step
+class climbs targeting crossing same-top pairs (b12_topclimb.py MODE=chain, from onep_topuniq_n20 in Oink order and from
+onep_chainfail_n20 in stable order; best (0 crossings, 2 same-top, 122 / 103 firing incidences)). No proof attempted: see 30c.
+30c. Why the per-context count does not reach the re-cuts (reading; the exact failing point of QUEUE (1)).
+- On 𝒞^1P the per-context side is ALREADY closed: OUTCOME-MONO-1P (§28e) gives ≤ K = |R|(|R|+1) + |R| + 1 outcome changes per
+  context and phase, and R9 (c) with NOSTEAL-1P gives GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P (§27b). A bound on distinct firing tangles
+  per context (30b, or (FIRED⁺-R) of R14) bounds the same per-context events a second time. It does not enter (CTX⁺).
+- The only relation between contexts that these give is local: a context at depth-0 position j + 1 changes only after a change
+  at a position ≤ j or inside its own call, so N_{j+1} ≤ (changes over the contexts at positions ≤ j) + 1, where N_j counts the
+  contexts at position j in the phase. Iterated over Θ(n) positions this is a product, i.e. exponential. To close (CTX⁺), a
+  quantity must SURVIVE a re-cut (be indexed by vertices or tangles, not by contexts) and move monotonically.
+- DATA: per-context budgets are each used about once. onep_lagdist_D8 (class, 15 searches in one phase) has 15 distinct
+  contexts at depth-0 position 4: a fresh context in every search (b12_mono.per_position; also 5 at position 10 in leanT_N12/16
+  forced, 12/16 searches). So any route counts contexts globally; a per-context bound, however small, gives at best a factor.
+- Three vertex-indexed candidates that would survive re-cuts, tested (b12_mono.py, same-phase consecutive searches): (STABLE-MASS)
+  "the union of stable depth-0 pieces grows", (STABLE-TOPS) "the union of stable V* grows", (NEG-TOPS) "the union of −1 prevV
+  stays inside the next union of prevV and V*". FALSE on 20, 22 and 3 of 24 pairs of the onep_* instances (onep_chainfail_n20
+  first for the first two, onep_firecross_n76 for the third); library-scale counts in the ledger below. (RANK-MONO), the
+  position-indexed candidate, is FALSE (§27d).
+- Tangle-indexed charging is circular here: every change needs a tangle new to THAT context (CHANGE-NEW), not a globally new
+  tangle, and the tangles learned in a phase are what GAP-A counts (searches ≤ tangles learned + 2).
+30d. Growth check (no super-polynomial signal, nothing to report at once): leanT_N (L-RED tcpert family) forced into 𝒞_1 with
+Zielonka edges, stable order, N = 6, 8, 12, 16, 24, 32 (n = 8N): searches per phase = N, tangles learned in one phase =
+N(N+1)/2 (21, 36, 78, 136, 300, 528), at most N − 1 per (phase, top) (b12_pertop.py). Max searches per phase on the class
+set: 42 at n = 43 (spp_chain_up_n43 forced, the chain family).
+VERDICT on QUEUE (1): NO ROUTE. Exact failing point: the combination step. On 𝒞^1P a per-context bound on firing tangles (30b
+DATA; 30a's stronger form FALSE, onep_topuniq_n20) adds nothing that OUTCOME-MONO-1P does not already give, and no bound
+indexed by contexts can bound the number of contexts (30c). The open statement on the class stays (CTX⁺) on 𝒞^1P, and a proof
+needs a potential indexed by vertices or tangles that survives a re-cut. The three natural vertex-indexed ones are FALSE (30c).
+LEDGER (library-scale runs referenced above; 14:06Z by date -u): (TOP-CHAIN@R) in Oink order on set B plus onep_topuniq_n20
+(1,299 class games, 855 contexts with firing tangles): 0 violations, max 2 same-top tangles per context (onep_topuniq_n20 only).
+Potentials on set B, stable, 1,076 same-phase pairs: (STABLE-MASS) FALSE on 572, (STABLE-TOPS) on 956, (NEG-TOPS) on 168.
+NEXT: QUEUE (2), (NO-PRE-a).
+
+31. Box 12, QUEUE (2): (NO-PRE-a) (L-ALG successor 10; 14:30Z by date -u; produced on Opus 5.5; unrefereed). Statement (§28c
+addendum α): "a vertex y of a tangle t that fired at top τ in round r of visit i (context R, one phase) is never a round-r top
+above τ at visit i+1". Rounds are compared only where both visits have them, as in R11 and fixd_stealentry.analyze.
+31a. Reading (what an occurrence needs). Such a y has pr(y) = pr(τ) (t ⊆ ≤ pr(τ); a top above τ has priority ≥ pr(τ)), so it
+is a q-parity vertex. y ∉ V_r(i): a round-r top above τ, or a vertex inside an earlier round-r region, is popped before τ's step,
+and attractTangle needs every vertex of t in CurR ∪ CurZ. So y was pruned at visit i in some round r′ < r, and an occurrence needs
+y to survive at visit i+1 to round r (y ∈ V_r(i+1)) and not to lie in an earlier round-r region there. For an opponent-owned y,
+all of y's R-successors lie in U_r(i) at τ's step (t's vertices in τ's region, escapes in CurZ or popped), so pruning at r′ also
+needs U_r(i) ⊄ U_{r′}(i) at a successor of y. That round-union growth occurs (543 library round pairs, §28c addendum 2), so this
+reading excludes nothing by itself. No proof: two-player games have no monotonicity of V_r between visits, and in 𝒞^1P with ties
+(where V_r would be monotone given no steals) an occurrence is exactly what breaks NOSTEAL-1P's step 1, so the argument is circular.
+31b. DATA and a targeted climb (tool experiments/alg/b12_nopre.py: V recorded at every round; graded counts pre / near
+(y ∈ V_r(i+1)) / surv (y not pruned at i+1 in the round it was pruned at i) / gap (difference of the two pruning rounds) /
+above (tie-above events)).
+- All 323 parseable .pg files under experiments/ (stable): pre 0, near 0, surv 0; tie-above events 5 (tieabove_n20 only).
+- Climbs on two-player games with ties (class-free moves of fixd_oneplayer.mutate): from tieabove_n20, stable, 6,000 steps
+  (score without gap): best (0, 0, 0, above 10); with gap, stable, 6,000 steps: best (pre 0, near 0, surv 0, gap 1, above 7);
+  from tieabove_n20 in Oink order and from random n = 14 (P = 4): no tie-above event at all.
+- The only gap ≥ 1 found is not an occurrence. Pinned: experiments/alg/instances/nopre_near_n20.pg (sha1 e897ea540235; pinned
+  Oink 5 iterations, solution verified; model winners equal to Zielonka). Odd's phase, context R = all 20 vertices: at visit 12
+  (14 rounds) the singleton tangle {12} (priority 15) fires in rounds 4-9 in the region of top 10 (priority 15), and 12 was pruned
+  in round 1. At visit 17 the call stops STABLE after one round with V* = all 17 odd-priority vertices, and the only round tops
+  are 19 and 18; 12 lies in their regions. So even under the "last round repeated after a stable stop" reading of §28e, 12 is
+  not a top above 10 there.
+VERDICT (QUEUE (2)): no proof, no instance. (NO-PRE-a) stays DATA (0 occurrences on the library, the permuted library (§28c), random
+tie-heavy games, and two targeted climbs). Its use is small in any case: it would remove "dist" from NOSTEAL-1P and make
+STEAL-ENTRY a pure strategy-conflict statement. It does not touch (CTX⁺) (§30c).
+
+32. Box 12, Lead pick 14:37Z: a re-cut-proof potential for (CTX⁺) on 𝒞^1P (L-ALG successor 10; produced on Opus 5.5; DATA unless
+marked; unrefereed). Tools: experiments/alg/b12_pot.py (depth-0 chain per search: R_j, result, emptying round, V, piece; MONO and
+NEW-KEY candidates; class-preserving climb), experiments/alg/b12_fdkey.py (keys on first-difference contexts R*, any depth; climb).
+Corpus "𝒞^1P set": every library .pg with n ≤ 200 forced into 𝒞_0 and 𝒞_1 (trial 0 Zielonka edges, 2 random trials), and with
+DIST=1 every game, in-class ones too, refined to all-distinct priorities: 1,086 same-phase transitions, both order data.
+A candidate is a predicate on consecutive searches s, s+1 of a phase (a transition). MONO: a poly-range Φ that must rise strictly.
+NEW-KEY: search s+1 must hold a key never seen in the phase's earlier searches (then searches ≤ #keys + 1).
+32a. The Lead's three seeds (reading).
+- The learned-tangle set: monotone, but its size is what GAP-A counts (searches ≤ tangles learned + 2): circular.
+- The dominion-removed set: constant inside a phase.
+- The lex vector of per-position outcomes: at the first difference, the input is equal and the outcome rises (OUTCOME-MONO-1P) or
+  the piece grows, so the vector rises lexicographically at every transition. Below the first difference it is arbitrary.
+  DATA: some vertex's piece rank DROPS in 591 of 1,086 class transitions (VERT-RANK-PW). A lex-increase of exponential height is
+  what a counter uses, so a bound must come from novelty that a counter cannot supply.
+32b. Kills (DATA; first instance; class set unless noted).
+- MONO on the depth-0 chain: SUM-RANK (Σ_j rank_j; 960 of 1,086), VERT-RANK (Σ_v rank of v's piece; 478), VERT-RANK-PW (591),
+  STABLE-CNT (1,075), LEN (−chain length; 411). (rank: n + 2 stable, the emptying round e for −1, 0 for a call that returns 0.)
+- NEW-KEY on the depth-0 chain: (j, rank) 275; (|R_j|, rank) 81; (j, |R_j|, rank) 3; (j, rank, |V_j|) 3; (|R_j|, rank, |V_j|) 80;
+  (j, |R_j|, rank, |V_j|) 3; (R_j as a set, rank) 80: the chain RETURNS to earlier (context, rank) pairs.
+- Every class transition changes the depth-0 chain (R_j, rank_j, V_j): 0 identical out of 1,086 (on the two-player library 104 of
+  1,627 transitions are identical).
+- Injective keys on first-difference contexts R* (b12_fdkey.py): κ-dj (depth, position), κ-djs (depth, position, |R*|), κ-dsm
+  (depth, |R*|, max priority in R*) FALSE. Pinned: experiments/alg/instances/onep_fdkey_n20.pg (sha1 9daa6dbcf01d; 𝒞_1, all
+  priorities distinct; pinned Oink 7 iterations, verified; winners equal to Zielonka; both orders), from a class climb (seed 52).
+  Its phase of 5 transitions has first-difference positions 2, 0, 4, 1, 4: position 4 rises, the rise at position 1 re-cuts the
+  chain, and position 4 rises again at a FRESH context of the same size 15 ({…, 9, …} then {…, 16, …}). A one-level reset at n = 20.
+- Vertex-indexed key (v, rank of v's piece) (K-v-r): FALSE. Pinned: experiments/alg/instances/onep_vr_n12.pg (sha1
+  868476e00138; cross_h_k1_n12_m18_13 refined to all-distinct, 𝒞_1; pinned Oink 3 iterations, verified; both orders).
+32c. SURVIVORS, named to the Lead 15:33Z (DATA only).
+(VR-NEW_j). For a search s of a phase of q, let j_s(v) be the depth-0 position whose piece R_j \ R_{j+1} holds v, and ρ_s(v) the
+rank of that call. For every consecutive pair s, s+1 of the phase, some vertex v has (ρ_{s+1}(v), j_{s+1}(v)) ∉ {(ρ_{s′}(v), j_{s′}(v)) :
+s′ ≤ s}. Siblings: (VR-NEW_s) with |R_{j(v)}| in place of j, (VR-NEW_V) with |V_{j(v)}|.
+Consequence (if true): searches per q-phase ≤ n(n + 3)(n + 1) + 1; with Lemma CTRL, GAP-A on 𝒞^1P, with no use of (CTX⁺).
+Evidence: 0 violations of each on the 1,086 class transitions, both order data; class-preserving climbs (4,000 steps each, from
+onep_fdkey_n20) against (v, ρ) and (v, ρ, |V|): 0 violations (best 8 chain-changing transitions at n = 20); two climbs aimed at
+(VR-NEW_j) itself (5,000 steps; from onep_vr_n12 stable, from onep_fdkey_n20 Oink order): 0 violations (best 5 at n = 12, 9 at n = 20).
+Honest reading: every phase in the data is short (max 42 transitions, the chain family; 23 on leanT_N24 forced). (VR-NEW_j) says
+that no vertex is returned to a (rank, position) state it already held; a counter whose positions cycle through the same states
+on the same vertices kills it. It is the precise target for L-RED's §30c counter. No proof: per-vertex position (RANK-MONO, §27d)
+and per-vertex rank (VERT-RANK-PW above) are each non-monotone, so the novelty cannot come from either coordinate alone.
+32d. Correction (said plainly). The first two b12_pot.py runs on the "class set" (14:40Z and 15:19Z by date -u) ran on the
+UNFORCED two-player library: b12_nopre.py set ONEP_ANY=1 at import, so fixd_oneplayer.inclass() was always true. Fixed in
+41abf765 (ONEP_ANY is set only in b12_nopre's own climb); every class number in 32b-32c is from the re-runs. The earlier numbers stand
+as two-player library data only (1,622 / 1,638 transitions; all MONO and depth-0 keys FALSE there too).
+32e. UPDATE 15:50Z by date -u. (VR-NEW_j) is FALSE (self-kill; class climb against it from ctx12_n40 forced into 𝒞_0, 618 steps).
+Pinned: experiments/alg/instances/onep_vrj_n40.pg (sha1 96ac8459cbef; 𝒞_0, all priorities distinct; pinned Oink 9 iterations,
+verified; model winners equal to Zielonka); 1 violating transition of 6 chain-changing ones, both orders. On the same game the
+keys with a size, (v, ρ, |R_j|), (v, ρ, |V_j|), (v, ρ, j, |V_j|) and (v, ρ, j, |R_j|, |V_j|), hold.
+Mechanism seen on the two-player library (dtl_deficit_n20, search 3 → 4): the root call stays stable, V* grows, and every piece is
+unchanged. That is the "stable, V* grows" event of §28d, which OUTCOME-MONO-1P allows on 𝒞^1P too. A key without |V| cannot see it.
+Two-player library (n ≤ 100, stable, 1,481 transitions; 88 have an identical depth-0 chain and are not tested): K-v-r 112, K-v-rj 59,
+K-v-rs 26, K-v-rV 8, K-v-rjV 5, K-v-all 0 violations. The 59 K-v-rj violations sit in 33 games, none with a relevant steal
+(fixd_stealentry.analyze), so steals are not what the class removes.
+𝒞^1P set (1,088 transitions, stable, DIST=1): K-v-r 4 (cross_h_k1_n12 refined), all others 0.
+SURVIVORS now (DATA): (VR-NEW_V) key (v, ρ, |V_{j(v)}|) [n(n+3)(n+1) values] and (VR-NEW_s) key (v, ρ, |R_{j(v)}|) on 𝒞^1P;
+the weakest, (VR-NEW_all) key (v, ρ, j, |R_j|, |V_j|) [≤ n^5 values], on 𝒞^1P and on the two-player library at chain-changing
+transitions. Climbs against (VR-NEW_V) and (VR-NEW_s) from onep_vrj_n40 are running.
+32f. Climbs and a per-vertex test (16:35Z by date -u).
+- Class-preserving climbs, 0 violations: against (VR-NEW_V) from onep_vrj_n40, stable, 2,500 steps (best 11 chain-changing
+  transitions at n = 40); against (VR-NEW_s), Oink order, 2,500 steps (best 8); against (VR-NEW_all) from onep_fdkey_n20, Oink
+  order, 5,000 steps (best 8 at n = 20).
+- Two-player library, n ≤ 200, Oink order (1,651 transitions, 103 identical depth-0 chains): K-v-all 0 violations at the 1,548
+  chain-changing transitions (K-v-r 126, K-v-rj 67, K-v-rs 28, K-v-rV 7, K-v-rjV 4).
+- (NO-RETURN) "no vertex returns to a piece signature it held earlier in the phase and left" (tool b12_noret.py): FALSE on the
+  𝒞^1P set (1,094 transitions, stable): signature (ρ, j, |R|, |V|) 9 transitions (first h4_def5_stable_n20 forced into 𝒞_0,
+  vertex 19), (ρ, |V|) 47 (first cross_h_k1_n11_m17_6 refined), (ρ, |R|) 6 (first onep_firecross_n76, vertex 37). So the
+  survivors are not explained vertex by vertex: at those transitions some vertex returns to an old state and ANOTHER vertex
+  supplies the new key. Reading: (VR-NEW_*) is a global no-repetition statement, i.e. a no-counter statement, with no local
+  mechanism found. Its survival on short phases (max 42 transitions in the data) is weak evidence.
+32g. Long phases and margins (DATA; 16:49Z by date -u).
+- Long class phases: the chain family (dtl_chainfam.py UP=1) forced into 𝒞_1 (a → b), priorities refined: k = 20, 40, 60 give
+  21, 41, 61 chain-changing transitions in one phase; (VR-NEW_V), (VR-NEW_s), (VR-NEW_all) and even the dead (VR-NEW_j) have 0
+  violations, both orders. (A benign family: one piece grows per search.) With a → a the phase has 2 searches.
+- Two-player long phases with steals: lagdist_D4/D8/D12, lagflat5/7 (D up to 16, n ≤ 134), depth2-4, fam_D4/8/12 (red/lag):
+  K-v-rV and K-v-all 0 violations (up to 22 chain-changing transitions), stable.
+- Margins (tool b12_margin.py, 𝒞^1P set, 1,094 chain-changing transitions, stable): transitions where exactly ONE vertex
+  supplies a new key: (VR-NEW_V) 58, (VR-NEW_s) 34, (VR-NEW_all) 7. So the statements hold narrowly on about 5% / 3% / 0.6% of
+  transitions. A two-player class-free climb against K-v-all from ctx13_n40 made no progress in its first hour (start score
+  (0, 26, 29)).
+STATUS at 16:49Z by date -u: survivors (VR-NEW_V), (VR-NEW_s), (VR-NEW_all) (DATA). No proof route: the novelty is global (NO-RETURN false,
+§32f), not per-vertex. L32: not met in box 12.
+32h. Where the new key sits (DATA; tool b12_fdwit.py; 17:05Z by date -u). At a chain-changing transition let j* be the first
+depth-0 position whose (R_j, rank_j, V_j) differs. 𝒞^1P set, stable, 1,094 transitions: a vertex with a new key lies in the piece
+at j* except in 78 / 83 / 21 transitions ((v, ρ, |V|) / (v, ρ, |R|) / full key); in the piece at j* or j* − 1 except in 1 / 6 / 0.
+(The j* − 1 cases are those where R_{j*} changed because the piece above it grew with the same outcome.) So (VR-NEW_all) holds in a
+LOCAL form on all class data: (FD-WITNESS_all) "some vertex of the changed piece (at j*, or at j* − 1 when only R_{j*} changed)
+receives a full signature (ρ, j, |R_j|, |V_j|) it never held in the phase". A proof attempt reduces to: a context at position p with
+signature σ, once replaced, never returns at p with the same signature and an overlapping piece. That is again a no-counter
+statement; no argument for it is in hand. Margin climbs (score: fewest new-key vertices) reached margin 1 and no violation:
+(v, ρ, j, |R|, |V|) from onep_fdkey_n20, Oink order, 5,000 steps; (v, ρ, |V|) from onep_vrj_n40, stable (running at 17:05Z).

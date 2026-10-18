@@ -61,4 +61,6 @@ DTL_ORDER=oink python3 -I dtl_fdlcheck.py instances/spp_final_n20.pg instances/s
 python3 -I fixd_lagcollapse.py 4 flat7 "${TMPDIR:-/tmp}/lagflat7_chk.pg" > /dev/null
 cmp "${TMPDIR:-/tmp}/lagflat7_chk.pg" instances/lagflat7_d3_D4.pg
 RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=stable python3 -I dtl_stealdepth.py instances/lagflat7_d3_D4.pg | grep -m1 "max k" | grep -q "max depth 4"
+# GAP-A-M.md §30a: (TOP-UNIQUE@R) self-kill on the one-player class stays killed (both order data)
+python3 -I b12_topclimb.py --check instances/onep_topuniq_n20.pg | grep -q TOPUNIQ-VIOLATION
 echo "ALG-CHECK PASS"
