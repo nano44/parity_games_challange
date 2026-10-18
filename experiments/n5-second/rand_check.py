@@ -30,6 +30,8 @@ def one(a):
         win, strat, it, fb = n5b.N5(g).run()
     except TO:
         return dict(row, status="timeout")
+    except n5b.RepeatedState as e:
+        signal.alarm(0); return dict(row, status="INCOMPLETE", detail=str(e))
     signal.alarm(0)
     refname, ref = reference(gp, g)
     zl = zielonka.solve(g)

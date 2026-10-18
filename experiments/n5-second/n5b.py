@@ -171,6 +171,10 @@ class SpecSI(SI):
 MODE = "orig"   # "orig": my readings A1-A9 (Odd's optimum by best(): (valuation, index)); "spec": SPEC S1 choices
 
 
+class RepeatedState(Exception):
+    pass
+
+
 class N5:
     def __init__(self, g, mode=None):
         self.mode = mode or MODE
@@ -212,7 +216,12 @@ class N5:
         sigma = sigma or self.SG.initial_strategy_by_best_reward()                  # Even vertices: successor, Odd: -1
         tau = tau or self.SD.initial_strategy_by_best_reward()                      # on the dual: original Odd vertices
         it = fb = 0
+        seen_states = set()                      # Lead 21:34Z: a repeated (σ, τ) state = INCOMPLETE run
         while True:
+            key = (tuple(sigma), tuple(tau))          # exact, no hash collisions
+            if key in seen_states:
+                raise RepeatedState(f"(sigma, tau) repeated at iteration {it}")
+            seen_states.add(key)
             vs = self.ev(self.SG, sigma); vt = self.ev(self.SD, tau)
             Is, It = self.improving(self.SG, sigma, vs), self.improving(self.SD, tau, vt)
             if not Is and not It:                                                    # step 1

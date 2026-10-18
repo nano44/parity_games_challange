@@ -64,6 +64,10 @@ def main():
         signal.signal(signal.SIGALRM, _alarm); signal.alarm(a.timeout); t0 = time.perf_counter()
         try:
             win, strat, it, fb = n5b.N5(g).run(sigma, tau)
+        except n5b.RepeatedState as e:
+            signal.alarm(0); spent += time.perf_counter() - t0
+            rows.append(dict(row, status="INCOMPLETE", detail=str(e))); print(f"!! INCOMPLETE {a.family} N={r['N']} {e}", flush=True)
+            continue
         except TO:
             spent += time.perf_counter() - t0
             rows.append(dict(row, status="timeout", secs=f"{time.perf_counter() - t0:.1f}")); break
