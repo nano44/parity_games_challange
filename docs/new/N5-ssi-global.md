@@ -124,3 +124,19 @@ n = 60..400: AGREE 2000/2000 (max 15 iterations, 369 fallbacks) (n5/random.txt).
 CAVEATS: one implementation (Python, L-SI's engine); sizes modest (n <= 5304, most families n <= 1300); the bench was built against
 other algorithms, so it is weak evidence against N5; no barrier statement yet beyond N4N5-proposals.md; no adversarial family yet
 (next item: own killer attempt).
+
+## Killer attempt 1 (box 3, 20:39Z by date -u): adversarial hill climb, NOT killed
+experiments/new/n5_adv.py n 4000 seed: random game (n vertices, out-degree <= 3, distinct priorities), mutations = edge target,
+priority swap, owner flip; fitness = N5 iterations + 0.5 per fallback (the fallback trigger is where N5 hands over to classical
+switch-all). Best found (pinned: experiments/new/instances/n5adv/best_n<n>_seed<n>.pg, every improved best checked: Zielonka +
+verify.py, all OK):
+| n | best N5 iterations | fallbacks in that run | sha1 (first 12) |
+| --- | --- | --- | --- |
+| 8 | 13 | 3 | 8c15f67e059e |
+| 12 | 14 | 4 | 0a6d5f7c1d27 |
+| 16 | 21 | 5 | 62a4c6e40a87 |
+| 24 | 39 | 10 | 8aca328d1a66 |
+Reading: <= 1.6 n iterations; no doubling. LEAD for the next attempt: the fallback share grows under adversarial pressure (25% at
+n = 24, vs <= 4% on the bench). A family that forces N5's selection to stall at every step would make N5 = classical switch-all SI
+(Friedmann-hard). Concrete design: a non-sink gadget where, against Odd's current τ, every improving switch of Even is worse than
+staying (the one-player optimum keeps σ) while symmetric for Odd; then embed Friedmann's switchallexp counter behind it.
