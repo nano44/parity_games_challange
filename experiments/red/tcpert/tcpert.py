@@ -3,7 +3,7 @@
 Oink's Two Counters generator tc(N) (tools/oink/build/tc, pinned 8fbf0a7), solved by pinned Oink
 `--dtl --no-single --no-wcwc --no-loops -v`; reports iterations per N and whether the solution verified.
 A perturbation is a rule on labels "<Player>-<i>-<Role>[-<j>]": flip owners of a class, add edges between classes with an
-index relation (i same / i+1), or shift a class's priority. Usage: tcpert.py RNGSEED TRIES OUTDIR | tcpert.py tcL N OUT.pg"""
+index relation (i same / i+1), or shift a class's priority. Usage: tcpert.py RNGSEED TRIES OUTDIR | tcpert.py tcL|tcR4 N OUT.pg"""
 import sys, os, random, re, subprocess, itertools
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."); T = os.path.join(ROOT, "tools", "oink", "build")
 def gen(N):
@@ -60,12 +60,15 @@ def randrule(rng):
         else: rule.append(("prio", rng.choice(PL), rng.choice(ROLES), rng.choice([-2, 2])))
     return tuple(rule)
 TCL = (("edge", "Even", "L", "Even", "H", -1),)   # tcL(N): every Even-i-L gets an edge to Even-(i-1)-H (R40)
-def write_tcl(N, path):
-    V = apply(gen(N), TCL)
+R4 = (("edge", "Even", "A", "Even", "T", 0), ("prio", "Even", "S", -2), ("prio", "Even", "Z", -2),
+      ("edge", "Even", "B", "Even", "L", -1))      # tcR4(N): tcclimb seed 3, step 764 (R40 §7-8)
+RULES = {"tcL": TCL, "tcR4": R4}
+def write_tcl(N, path, name="tcL"):
+    V = apply(gen(N), RULES[name])
     with open(path, "w") as f:
         f.write(f"parity {len(V)-1};\n" + "".join(f'{k} {v[0]} {v[1]} {",".join(map(str, v[2]))} "{v[3]}";\n' for k, v in enumerate(V)))
-if __name__ == "__main__" and sys.argv[1] == "tcL":   # tcpert.py tcL N OUT.pg
-    write_tcl(int(sys.argv[2]), sys.argv[3]); sys.exit(0)
+if __name__ == "__main__" and sys.argv[1] in RULES:   # tcpert.py tcL|tcR4 N OUT.pg
+    write_tcl(int(sys.argv[2]), sys.argv[3], sys.argv[1]); sys.exit(0)
 if __name__ == "__main__":
     seed, tries, out = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3]; rng = random.Random(seed); os.makedirs(out, exist_ok=True)
     base = {N: gen(N) for N in (3, 4, 5, 6)}; seen = set(); best = 0

@@ -111,6 +111,28 @@ UNMODIFIED; pinned Oink tools/oink/build/oink @ 8fbf0a7 (scripts/setup_oink.sh),
 - Nothing super-polynomial in n. A climb for iterations EXPONENTIAL in N (which would be super-polynomial in n, since n is
   quadratic in N) is running (fitness iterations(8)/iterations(5), with cut and self-loop rules).
 
-## 8. Open, in this box
+## 8. tcR4(N): first differences INSIDE −1 subgames (depth 1) while the root call is identical (DATA, 10:43-10:50Z by date -u)
+- tcR4(N) := tc(N) with the four rules of §7's r4 (`tcpert.py tcR4 N OUT.pg`; instances tcR4_N4..N8, sha1 4e69bfd2,
+  665e657a, 167e1e85, 887a3eb2, 6591768a). Pinned Oink, verified: iterations 10 / 15 / 18 / 25 / 29 at N 4..8 (Even 8 / 13 /
+  16 / 23 / 27), tangles 17 / 27 / 35 / 49 / 59. dtl_flipflop at N 5: 27 tangles, 15 iterations (= Oink).
+- First differences, Even phase 0 (ctxlight; at N 5 also ctxfit with full sets, identical):
+
+  | N | n | S | transitions | distinct contexts | e* at depth 1 | order |
+  |---|---|---|---|---|---|---|
+  | 5 | 100 | 12 | 11 | 7 | 3 | stable = Oink order |
+  | 6 | 138 | 15 | 14 | 10 | 6 | stable and Oink order (same counts, slightly different sequences) |
+  | 7 | 182 | 22 | 21 | 14 | 10 | Oink order |
+  | 7 | 182 | 20 | 19 | 13 | 8 | stable |
+  | 8 | 232 | 26 | 25 | 18 | 13 | Oink order |
+  | 8 | 232 | 25 | 24 | 18 | 13 | stable |
+
+  N 8, Oink order: C0, then depth-1 contexts |R| 97, 113, 126, 136, then depth-0 |R| 225, then depth-1 112, 128, 172, 105, 123,
+  140, 172, back to depth 0 225, depth-1 198, 198, then depth 0 225, 225, 232, then five new depth-0 contexts |R| 222..230, C0.
+- So the R39 §9 condition is met on a uniform family: in 13 of 25 transitions (N 8) the root call and every depth-0 call are
+  identical and the first difference lies in a best_vertices call at search_rec depth 1. depthscan at N 5, both orders:
+  10 tangles born at depth ≥ 1, best_vertices returned 1 at depth ≥ 1 five times, (DEEP-STAB) held (FIRST-BV-1 0).
+- Counts grow linearly in N (contexts 7, 10, 14, 18), so about sqrt(n), like tcL. Nothing super-polynomial.
+
+## 9. Open, in this box
 - N = 14 needs a lighter tool (ctxlight peaks above 5 GB at N = 12).
 - The other totals on tcL (Σk, #fired⁺(R), D_R, exits) are not yet measured.
