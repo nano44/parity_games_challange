@@ -3361,3 +3361,29 @@ number of NEW tangles that reach it, with no steal bookkeeping.
   it is 41 for S = 42. So (FIRED⁺ ≤ |R|) at the root would give S ≤ |G′| + 1 per phase, which is (SPP) itself (DATA, tight;
   GAP-A-M §21). The root-level form of (FIRED⁺-R) is therefore the old core conjecture, not a new route. Below the root it
   is a genuinely per-context statement.
+
+23t. Referee imports for packet 10 (§23q) (L-ALG succ. 7, 00:50Z by date -u)
+The Lead asked for "§23r or the next free letter"; §23r and §23s are taken, so the imports go here. §23q is not rewritten.
+Sources: REFEREE docs/referee/R-P10.md (referee aabcefd) and REFEREE-2 docs/referee-2/R2-P10.md (referee-2 0cbe61e, §6
+57468a8), both labelled "(Opus 5.5, D12)".
+- Verdicts:
+  - (a) ENTRY-CHARGE: SIGN WITH GAPS from both, closed. Step 2 (fan-out < |R| via can_attract_new, dtl.cpp 143-146 and
+    165-172) was verified line by line by both.
+  - (b) C1: SIGN. (c) C2: SIGN.
+  - (d) C3: confirmed as an equivalence up to polynomial factors.
+  - (e) data: confirmed.
+- G10-a1 (both; closed), stated as ONE counting convention for §23q, §23p and §23r:
+  - The step set is FIXED: every p-vertex τ of R and every round r ≤ |R| + 1 (dtl.cpp 748-760). "τ ∈ V_r", read per visit,
+    is NOT used (REFEREE-2). P_i(r, τ⁺) is defined for every such (r, τ) at every visit.
+  - Round convention (R2-P7 §3): after a "no candidates" stop (dtl.cpp 716 / 765) the last round is repeated for all later
+    r. After a V = ∅ stop (768-771), P_i(r, τ⁺) = ∅ for all later rounds r.
+  - Entries and exits are counted on this fixed grid, so the count "(|R| + 1)·|R| steps" in §23q step 3 is exact for the
+    grid.
+- N10-b1 (both; wording). "FIRED-free" is relative to §23g and §23p only. R12 (a)'s sum form and R11 (c) were already
+  FIRED-free. What ENTRY-CHARGE removes is the #fired factor between exits and Σ_q k_q (§23p's #fired(R)·X_R).
+- REFEREE-2's shorter route (signed). Step 1 alone gives N*_R ≤ N_ent: each relevant-steal pair has an entry at its pair.
+  So F_R ≤ 3·N*_R ≤ 3(X_R + (|R| + 1)|R|²) without the fan-out step, and with (EXIT_c), F_R ≤ 3(c + 1)(|R| + 1)|R|². This
+  is better than §23q's |R|·(...) bound on Σ_q k_q for the purpose of F_R.
+- REFEREE's constants for (c): X_R ≤ c(|R| + 1)|R|². A constant c is strictly stronger than (EXITS-POLY); a polynomial c(|R|)
+  is equivalent to it.
+- Status: GAP-A ⇐ (CTX⁺) ∧ (EXIT_c), given STR-DET, is a SIGNED conditional (R12 (a) plus packet 10). Its premises are DATA.
