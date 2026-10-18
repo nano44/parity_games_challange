@@ -85,3 +85,13 @@ re-cut tail. fixd_enable: no enabling tangle fires at R_j in any transition.
   Oink order 4 transitions, K-v-rs 1, K-v-rV 1, K-v-rjV 1. vrV_viol_n40.pg (sha1 8cf415ec9267; from ctx13_n40, seed 3):
   27 transitions in both orders, K-v-rV 1 (K-v-rs 0, K-v-rjV 0). K-v-all: 0 on both, both orders. So in two-player games only
   (VR-NEW_all) survives among the vertex keys; (VR-NEW_s), (VR-NEW_V) and (v, rank, j, |V_j|) are false there.
+
+## 8. Box 13: (VR-NEW_all) and (FD-WITNESS_all) (DATA from 17:30Z by date -u; l-alg 7fc4681b, tools unmodified)
+- b12_fdwit.py on vrV_viol_n80, vrV_viol_n40, vrs_viol_n100, nest4_n80, ctx13_n40, tcR4_N6 (two-player): stable 74 / Oink order
+  72 chain-changing transitions. Transitions with no new-key vertex in the piece at j*: K-v-rV 26 / 26, K-v-rs 17 / 15,
+  K-v-all 2 / 2; nor at j* − 1: K-v-rV 21 / 21, K-v-rs 12 / 10, K-v-all 0 / 0. So (FD-WITNESS_all) holds on all of them
+  (2 transitions need the j* − 1 clause), while the rV and rs forms fail often in two-player games.
+- marginclimb.py (b12_pot.vr_score, MARGIN=1, key K-v-all; every accepted game verified by pinned Oink): the margin (fewest
+  vertices supplying a new key at one chain-changing transition) reaches 1 quickly from vrV_viol_n80 (stable) and from L-ALG's
+  onep_fdkey_n20 (Oink order; mutations leave the class), and stays at 1 (by 18:09Z: 9 and 17 chain-changing transitions, about
+  40,000 steps on the n = 20 seed). MC_TIGHT=1 (also maximising the number of margin-1 transitions) stays at one such transition.
