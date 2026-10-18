@@ -21,6 +21,49 @@ Termination: σ' differs from σ only by edges of Iσ, so σ' is σ with a subse
 unless σ' = σ (standard SI lemma); the same for τ; step 4 always improves one side. So each iteration strictly improves σ or τ.
 Output: Engine.regions(σ) (regions and both players' strategies), checked by check_sol2.py (Oink zlk + harness/verify.py).
 
+## SPEC (EXACT; the reference for an independent implementation; written 2026-10-18 ~20:55Z by date -u). n5.py implements this.
+Input: parity game G = (V, E, Ω, owner), V = {0..n-1}, Even = owner 0. Optional start pair (σ0 on Even vertices, τ0 on Odd vertices).
+S1 Valuations (Vöge-Jurdziński, as in Friedmann 1106.0778 §3; L-SI's experiments/si/si.py):
+  - injective priorities: rank(v) = position of v in V sorted by (Ω(v), v); p'(v) = 2·rank(v) + (Ω(v) mod 2).
+  - valuation of v under (σ, σ̄): (c, P, ℓ), c = the most relevant (max p') vertex of the cycle the play from v ends in, P = set of
+    vertices on the play before reaching c with p' > p'(c), ℓ = number of steps to reach c.
+  - order (better for Even): compare reward of c (p'(c) if even, −p'(c) if odd); then P by the signed weight
+    Σ_{u∈P} (+2^rank(u) if Ω(u) even else −2^rank(u)); then ℓ: if c is odd, longer is better for Even; if c even, shorter is better.
+  - Ξσ = valuation of every vertex under σ and Odd's OPTIMAL counterstrategy σ̄ (minimising this order at every vertex at once).
+  - σ̄ is computed by Vöge-Jurdziński's procedure exactly as si.py Engine.evaluate (lines 78-205): graph Gσ = Even vertices keep
+    only σ(v), Odd vertices keep all edges; all vertices "alive". For v in V in increasing order of reward(v) (= p'(v) if even,
+    −p'(v) if odd; Odd's preferred cycle nodes first), skipping dead v: (i) v is a cycle node iff DFS from v over Gσ-successors,
+    visiting only alive vertices of rank < rank(v), returns to v; otherwise skip. (ii) R = alive vertices that reach v in Gσ.
+    (iii) Restricted graph on R; path[x] = ∅. For u in R with rank(u) > rank(v), in decreasing rank: if Ω(u) even (Even likes u):
+    M = vertices of R reaching v without passing u; add u to path[q] for q ∉ M; delete edges from u and from every q ∈ M to
+    vertices outside M. If Ω(u) odd (Odd likes u): M = vertices of R reaching u without passing v; add u to path[q] for q ∈ M;
+    delete edges from every q ∈ M \ {u} to vertices outside M. (iv) Lengths: if Ω(v) even, Odd takes the LONGEST path to v in the
+    restricted graph (recursion over successors in list order, first strict maximum wins); if Ω(v) odd, the SHORTEST (BFS from v
+    over predecessors in list order; first discovery sets Odd's choice). (v) If v is Odd: its choice is the first successor on a
+    DFS-found cycle back to v through alive vertices of rank < rank(v). (vi) Every x in R gets valuation (v, path[x], length[x]) and
+    Odd's choice from (iv)/(v); R becomes dead. Successor and predecessor lists are in increasing index order.
+  - Odd's side: everything on the DUAL game G^d (owner swapped, Ω + 1); τ is an "Even" strategy of G^d; Ξτ, τ̄ (= Even's optimal
+    counterstrategy to τ, as a G^d-Odd strategy), Iτ computed there.
+S2 Improving edges: Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ(v))}; Iτ the same on G^d for τ.
+S3 Start (unless a start pair is given): Even v: σ(v) = the successor w maximising (r(w), w if r(w) even else −w), r(w) = Ω(w) if
+  even else −Ω(w) (PGSolver best-reward); Odd v: the same rule on G^d (r computed from Ω + 1).
+S4 Iteration (one iteration = one pass with Iσ ∪ Iτ ≠ ∅; both steps computed from the SAME (σ, τ), applied together):
+  a. If Iσ ≠ ∅: A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v. Arena H: Even v keeps only edges to A(v); Odd v keeps only the edge
+     to τ(v). σ_new = Odd's optimal counterstrategy (S1 procedure) in the dual of H to the dual-Even strategy τ, read as an Even
+     strategy of G. (Even's one-player optimum against τ among "keep or take an improving edge".) Else σ_new = σ.
+  b. If Iτ ≠ ∅: A(v) = {τ(v)} ∪ {w : (v, w) ∈ Iτ} for Odd v. Arena H': Odd v keeps only edges to A(v); Even v only the edge to σ(v).
+     τ_new = Odd's optimal counterstrategy (S1 procedure on H', not dual) to σ. Else τ_new = τ.
+  c. FALLBACK, if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, for every Even v with an improving edge set σ_new(v) = the w with (v, w) ∈ Iσ
+     maximising (Ξσ(w), w) (best valuation, ties: larger index); otherwise do the same for Odd on Iτ with G^d's valuations. Count it.
+  d. σ, τ := σ_new, τ_new.
+S5 Stop when Iσ = Iτ = ∅. Output: Even wins v iff the cycle node of Ξσ(v) has even Ω; Even's strategy = σ on Even's region; Odd's
+  strategy = σ̄ (Odd's optimal counterstrategy to the FINAL σ, S1) on Odd's region. (Not τ.)
+Invariants: each iteration strictly improves σ (in Ξ) or τ (in Ξ on G^d), so the loop terminates; correctness at the stop is
+classical SI (σ has no improving edge => optimal). Tie-breaks in S1/S3/S4c fix the exact iteration counts; an implementation with
+other tie-breaks should reproduce regions and verified strategies exactly and iteration counts only approximately.
+Reference counts for checking a second implementation: dlm1 (DLM start pair) n = 1..6: 1, 2, 4, 4, 6, 7; dlm2 n = 1..7: 2, 4, 7, 8,
+11, 12, 13; switchallexp (best-reward start) N = 1..8: experiments/new/n5/switchallexp.csv; mode ssi on dlm1: 2^(n+1) − 3.
+
 ## Why N5's step is NOT covered by 2309.02223 (opened pdf, sha256 10e6794d82aba465..; page numbers = running heads)
 - Improvement rules (p. 5): "an improvement rule, which is a function f : P(E) → P(E) that takes as input a set of improving
   edges, and outputs a set of improving edges", with "f(S) ⊆ S for all S ∈ P(E)" and at most one outgoing edge per node.
