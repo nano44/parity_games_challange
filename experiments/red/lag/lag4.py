@@ -15,7 +15,9 @@ def build(D, OFF=3, extra=2, tedge="b"):
     for j in range(1, k+1): g.e(f"x{j}", f"x{j}", "a" if j == 1 else f"x{j-1}")
     L = list(range(-1, D + 1)); top = base + 4 * len(L) + 4
     g.v("W", top + 3, 1); g.e("W", "W"); g.v("S", top + 2, 1); g.e("S", "W"); g.e("a", "S")
-    for i, j in enumerate(L): g.v(f"T{j}", top - 2 * i, 1); g.e(f"T{j}", tedge)
+    for i, j in enumerate(L):
+        g.v(f"T{j}", top - 2 * i, 1)
+        if tedge: g.e(f"T{j}", tedge)
     for i, j in enumerate(reversed(L)): g.v(f"tau{j}", top - 2 * len(L) - 2 * i, 1)
     for j in L:
         g.v(f"w{j}", 1, 0); g.v(f"y{j}", 1, 1); g.v(f"v{j}", 1, 0); g.v(f"f{j}", 1, 1)

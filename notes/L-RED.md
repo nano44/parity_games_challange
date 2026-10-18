@@ -55,9 +55,8 @@ Status: HANDOVER (box 7 successor 5 parks at ~580k; see Resume point). Older sta
 2026-10-18 03:02Z (date -u), successor 7, BOX 10 (Lead GO 02:09Z, to ~07:00Z). R39 docs/red/R39-relay-depth.md:
 - inversion relay + chainfam region clock (S top, a -> S) gives re-steal DEPTH 2 / 3 / 4 on n 39 / 46 / 53;
 - pinned in experiments/red/lag/instances; both orders by unmodified dtl_stealdepth; Oink verified; check.sh pins.
-Control wiring was climbed per D (lag/schemaclimb.py, SKEL=4). Running: D = 5 and 6 climbs (scratch sc/d5, d6).
-Next: a uniform hand rule for the wiring (R39 T3), so this becomes a family; then exits (dtl_prefexits) and ctx on the same
-skeleton. LALG_DIR = detached l-alg e0fc1bb0 in scratch.
+03:25Z: UNIFORM family lagfam.py (T_j -> {x_1, tau_j}): depth = D, k = floor((D+1)/2)+1, n = 7D+22, D <= 12 both orders,
+Oink verified (R39 §6). Next: exits (dtl_prefexits) and first-difference contexts on the same skeleton. LALG_DIR = detached l-alg e0fc1bb0 in scratch.
 (history) Successor 6 resume point follows.
 2026-10-18 01:55Z (date -u): BOX 9 END (CTX+), PARKED. R38: best C_bv per n 6/7/13/6 at n 20/30/40/56, about half the
 transitions; no growth family. Pinned ctx6_n20, ctx7_n30, ctx6_n56. All climbs stopped 01:48Z (ps: none). Successor queue: (1) a
