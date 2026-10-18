@@ -252,8 +252,11 @@ probe: 60,000 perturbed hard-family / tc games, all verified (§10).
   | 6 | 138 | 43 | 2 | 131 | 39 | 21,837 | 846,259 | 1,884,445 | 90,113,014 | 528 |
   | 7 | 182 | 69 | 2 | 224 | 72 | 62,904 | 2,693,901 | 13,337,907 | 917,770,088 | 1,953 |
   | 8 | 232 | 91 | 2 | 317 | 103 | 117,282 | 6,554,366 | 52,883,955 | 4,785,387,135 | 4,186 |
+  | 9 | 288 | 122 | 2 | 445 | 150 | 212,454 | 14,607,811 | 185,711,021 | 21,488,041,025 | 9,180 |
 
-  Ratios N 6->7 / 7->8: search_rec 1.6 / 1.3; best_vertices 1.7 / 1.4; tattr 2.9 / 1.9; pops 3.2 / 2.4; attractTangle calls
+  Ratios N 8->9 (box 12, 14:35Z): search_rec 1.34, bv 1.40, tattr 1.81, pops 2.23, attractTangle 3.51, scans 4.49.
+  Peak RSS of pinned Oink (getrusage of the child, no -v): 11.2 MB at N 6, 11.3 MB at N 7..10; wall 0.2 / 1.4 / 7.2 / 33.2 /
+  105.3 s at N 6..10 in that run. Ratios N 6->7 / 7->8: search_rec 1.6 / 1.3; best_vertices 1.7 / 1.4; tattr 2.9 / 1.9; pops 3.2 / 2.4; attractTangle calls
   7.1 / 4.0; tangle-vertex scans 10.2 / 5.2. Every ratio falls.
 - The term that carries the wall time is the tangle-attractor scan: attractTangle calls (one per tangle having the popped
   vertex as an escape) times the tangle's size. With |T| = 32..91 tangles of size up to about n, this is at most

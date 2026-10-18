@@ -15,10 +15,16 @@ def build(E):
     for u, w in E:
         if w not in V[u][2]: V[u][2].append(w)
     return V
+def write(V, path):
+    with open(path, "w") as f: f.write(f"parity {len(V)-1};\n" + "".join(f'{k} {v[0]} {v[1]} {",".join(map(str, v[2]))} "{v[3]}";\n' for k, v in enumerate(V)))
+def rebuild(pairs):   # label pairs from a log line -> edge list
+    ix = {x[3]: k for k, x in enumerate(U)}; return [(ix[u], ix[w]) for u, w in pairs]
 def fit(E):
     r = T.solve(build(E), tmp)
     if not r[1]: print("NOT VERIFIED", E, r, flush=True); return -1, r
     return r[0], r
+if os.environ.get("PC_REBUILD"):   # PC_REBUILD="[('1:..','2:..'), ...]": write that instance and exit
+    import ast; E = rebuild(ast.literal_eval(os.environ["PC_REBUILD"])); write(build(E), os.path.join(out, f"rebuilt_a{a}_b{b}.pg")); print(fit(E)); sys.exit(0)
 E = []; f, r = fit(E); best = f; print("start", r, "a+b+2 =", a + b + 2, flush=True)
 for it in range(steps):
     F = list(E); m = rng.random()
@@ -30,5 +36,7 @@ for it in range(steps):
     g, rr = fit(F)
     if g >= f:
         E, f = F, g
-        if f > best: best = f; print(it, rr, [(U[u][3], U[w][3]) for u, w in E], flush=True)
+        if f > best:
+            best = f; print(it, rr, [(U[u][3], U[w][3]) for u, w in E], flush=True)
+            write(build(E), os.path.join(out, f"best_s{seed}_a{a}_b{b}.pg"))
 print("done best", best)
