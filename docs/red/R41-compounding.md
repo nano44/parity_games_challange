@@ -105,4 +105,5 @@ re-cut tail. fixd_enable: no enabling tangle fires at R_j in any transition.
   (stable / −1 at an emptying round e / 0) and position it never held in the phase. A kill of (VR-NEW_all) needs a transition
   where EVERY vertex of the changed pieces returns to an exact earlier (rank, j, |R_j|, |V_j|); in particular a vertex that left
   a −1 piece for a stable one must come back to the same −1 piece with the same emptying round and the same |R_j|, |V_j|. The
-  climbs never produced such a re-crossing: whenever a vertex re-enters a −1 class, the piece's |R_j| or |V_j| or round differs.
+  climbs never produced a transition with zero new keys (margin 0). Whether re-entries into a −1 class always differ in |R_j|,
+  |V_j| or the round was NOT measured separately.
