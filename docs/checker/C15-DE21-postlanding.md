@@ -55,3 +55,10 @@ All values are identical in both orders, as stated. Exit codes are 0.
 Required:
 - E-1: DE21 "Consequence": "the R12 (c) route with D ≤ 3 ... are dead on data; depth grows along the R39 sequence (no
   uniform family yet)".
+
+## Addendum: re-diff 19a892c → a747106 (Lead 03:21Z), text only: PASS
+- History: 19a892c is an ancestor of a747106. docs/RESULTS.md: 2 insertions, 1 deletion; GAPS is unchanged.
+- DE21's Consequence now reads "the R12 (c) route with D ≤ 3 and the R13 (c) route with c = 2 are dead on data; depth grows
+  along the R39 sequence (no uniform family yet);". This is my suggested wording, and E-1 is fixed.
+- Nothing else moved. DE21 PASSES as at a747106.
+- Recorded: the Lead adopts the rule "a POST-LANDING NOTE on R12 (c) only if a uniform family refutes every constant D".

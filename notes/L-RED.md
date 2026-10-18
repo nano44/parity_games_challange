@@ -56,7 +56,7 @@ Status: HANDOVER (box 7 successor 5 parks at ~580k; see Resume point). Older sta
 - inversion relay + chainfam region clock (S top, a -> S) gives re-steal DEPTH 2 / 3 / 4 on n 39 / 46 / 53;
 - pinned in experiments/red/lag/instances; both orders by unmodified dtl_stealdepth; Oink verified; check.sh pins.
 03:11Z (date -u; first written as 03:25Z, a slip): UNIFORM family lagfam.py (T_j -> {x_1, tau_j}): depth = D, k = floor((D+1)/2)+1, n = 7D+22, D <= 12 both orders,
-Oink verified (R39 §6). Next: exits (dtl_prefexits) and first-difference contexts on the same skeleton. LALG_DIR = detached l-alg e0fc1bb0 in scratch.
+Oink verified (R39 §6). 03:20Z: exits = D/2+1 on the same family (EXIT_c false, R39 §7); ctx 1 per phase (no CTX+ effect). LALG_DIR = detached l-alg e0fc1bb0 in scratch.
 (history) Successor 6 resume point follows.
 2026-10-18 01:55Z (date -u): BOX 9 END (CTX+), PARKED. R38: best C_bv per n 6/7/13/6 at n 20/30/40/56, about half the
 transitions; no growth family. Pinned ctx6_n20, ctx7_n30, ctx6_n56. All climbs stopped 01:48Z (ps: none). Successor queue: (1) a
