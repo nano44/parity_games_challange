@@ -3779,3 +3779,37 @@ CHANGE-NEW that needs super-polynomially many tangles, so it is GAP-A's own core
 NEXT (successor): (i) the U-shrink "consumed quantity" (key reuse needs an RV fall, i.e. an earlier-round U-shrink: bound the
 chain across rounds without the |R|^r blow-up); (ii) if L-RED builds a long-phase family, run dtl_totals.py and dtl_defsplit.py
 on it at once.
+
+24i. Box 10: THE SINGLE NAMED TARGET for the successor and the packet (L-ALG succ. 8, 03:46Z by date -u; Lead requests
+03:46Z / 03:58Z)
+Conclusion, stated plainly (reading, unrefereed; it uses signed CHANGE-NEW and the signed packet-11 state inventory):
+1. Every live route for GAP-A is (CTX⁺) plus ONE polynomial-total per-context premise: (STEAL-POLY_sum) (R12 (a)), (EXITS-POLY)
+   (R13 (b)), (FIRED⁺-R) (R14), or the equivalent (D-POLY) / (XPAIRS-POLY) (§23w, §24b). Every constant-local route is dead
+   (DE20, DE21 and its addenda: (STEAL-ONCE*), (STEAL-DEPTH_D), (EXIT_c) for every constant).
+2. All of them are bounded by PHASE LENGTH × poly: a context's computation is a function of the alive T (packet 11), so Σ_q k_q,
+   X_R, #Xpairs_R ≤ D_R × poly(|R|) ≤ (visits of R) × poly(|R|), and D_R ≤ #fired⁺(R) (CHANGE-NEW).
+3. So the open core is ONE statement:
+   (LONG-PHASE) "no context sees super-polynomially many NEW firing tangles in one phase", i.e. (FIRED⁺-R) at the binding
+   context. Equivalently, there is no counter at one context: a D-bit counter needs a falling-edge memory, the only cross-visit
+   state is the growing T, and each tick is a differing pair that needs a newly born tangle firing at R. So it costs about
+   2^D new firing tangles there.
+Evidence (DATA, both orders, pinned Oink verified):
+- R39 (depth2_n39 / depth3_n46 / depth4_n53, §24f) and lagfam D = 2..12 (§24g). Local constants grow with D: max exits per
+  (step, vertex) ≈ D/2 + 1, depth = D, k ≈ D/2.
+- But D_R = D + 6 and #fired⁺ = 2D + 8 are LINEAR, Σ_q k_q is about quadratic and X_R is about cubic. The phase is D + 7
+  searches. No counter appears: the relay is combinational (every level toggles at every visit).
+- lagfam X-pairs (dtl_defsplit, RM_LIGHT unset): all are RECUTS (D + 2 per phase, no deficit), with 0 U-shrinks. So the relay
+  lives entirely in the re-cut half of SPLIT.
+Best guess at a provable premise: none has a route.
+- The most structured is (XPAIRS-POLY) via SPLIT. Its U-shrink half carries three constraints on all data (a deficit in y,
+  PROVED by DEF-SHRINK; a new top at the first shrinking round; a fresh (round, new top, losing top) key: 0 exceptions in
+  corpus, unions and climbs).
+- Its re-cut half is exactly the relay mechanism, and it is bounded only by the visits, i.e. by (LONG-PHASE) itself.
+- At the root, visits ≥ S, so (LONG-PHASE) at G′ is GAP-A's core (R-P11 (c)). No premise is easier than (LONG-PHASE).
+Packet-worthiness (my view; the Lead decides):
+- §23w QUIET-BLOCK: YES. Short, a clean proof, and the base of every D_R bound in §24. Brief docs/alg/QUIET-BLOCK.md.
+- §24a DEF-SHRINK + §24b SPLIT: YES, as a pair. They give the sparsest per-context form and locate the relay (re-cuts) versus
+  the deficit events (U-shrinks).
+- §24f "the relay is combinational in T; a counter at R costs about 2^D new firing tangles at R": YES as a short remark. It is a
+  two-line corollary of the signed CHANGE-NEW and the state inventory, and it justifies (LONG-PHASE) as the single target.
+- §23x EXIT-ORIGIN: OPTIONAL / LOW. Its purpose was (EXIT_c), which is dead. Keep it frozen as a supporting lemma only.
