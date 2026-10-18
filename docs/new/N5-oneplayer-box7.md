@@ -1,4 +1,4 @@
-# K8's constant case and the best-reply-change reduction (box 7, L-NEW successor 2; GO 23:42Z, written 23:50Z by date -u)
+# K8's constant case and the best-reply-change reduction (box 7, L-NEW successor 2; GO 23:42Z, written 23:47Z by date -u)
 ## 1. Literature (sources opened; also in notes/L-NEW.md)
 - VJ00 = Jurdziński & Vöge, BRICS RS-00-48 (pdf sha256 485a12de432a2a8c..), §7, p. 26-27:
   - Proposition 7.4: "The discrete strategy improvement algorithm terminates after O(n³) strategy improvement steps for one-player
@@ -8,7 +8,7 @@
     was open. That reads the "one player" as the improving player. Lead reading needed: the report does not say so explicitly.
   - The same page notes: at most O(n²) "substantial" steps (a loop value strictly improves).
 - Asadi, Chatterjee, de Raaij, "Lower Bound on Howard Policy Iteration for Deterministic Markov Decision Processes", arXiv 2506.12254
-  (UAI 2025), abstract page opened 23:4xZ:
+  (UAI 2025), abstract page opened between 23:42Z and 23:47Z (date -u bounds):
   - mean-payoff deterministic MDPs: Howard's PI needs Ω̃(I) iterations (input size I);
   - "the best known upper bound is exponential".
   So for deterministic MDPs with GENERAL weights Howard's polynomiality is open. Parity weights are what make VJ00's one-player

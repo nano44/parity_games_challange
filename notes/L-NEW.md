@@ -141,7 +141,7 @@ NEXT for a successor:
 
 - (succ. 2, box 7) VJ00 RS-00-48 §7 p. 26-27 re-read: Prop. 7.4 (O(n³) improvement steps, one-player parity games; NO proof), Prop. 7.5,
   Prop. 7.6, "at most O(n²) substantial steps". Asadi-Chatterjee-de Raaij arXiv 2506.12254 (UAI 2025), abstract page opened
-  2026-10-18 23:4xZ: Howard on deterministic mean-payoff MDPs Ω̃(I) lower bound; "best known upper bound is exponential".
+  2026-10-18 between 23:42Z and 23:47Z (date -u bounds): Howard on deterministic mean-payoff MDPs Ω̃(I) lower bound; "best known upper bound is exponential".
   Hansen-Zwick ISAAC 2010 and Hansen-Kaplan-Zwick SODA 2014: records only (WebSearch), NOT opened.
 
 ## Dead ends
