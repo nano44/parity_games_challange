@@ -117,3 +117,38 @@ the DE21 E-1 fix (Addendum 1, PASS), the DE21 ADDENDUM, the R12 POST-LANDING NOT
   reproduced.
 - N-2. The ADDENDUM's "re-steals per quadruple are unbounded" means unbounded in n, growing as ⌊(D+1)/2⌋ + 1 = O(n). Saying
   "grow linearly in n" would be more precise and would match "(STEAL-POLY_k) is not refuted" in the NOTE.
+
+## Addendum 3: combined verdict 19a892c → 22bbe74 (Lead 03:42Z): PASS
+- History: 5c452e3 is an ancestor of 22bbe74, and l-red 702e2e9 (R39 §7) is an ancestor.
+- 5c452e3 → 22bbe74 touches docs/RESULTS.md (10+) and docs/GAPS.md (1 line). It adds the R13 (c) POST-LANDING NOTE, DE21
+  ADDENDUM 2, and the GAPS GAP-A row edits.
+- E-2 (Addendum 2) is RESOLVED: the R13 NOTE and ADDENDUM 2 state exactly what my runs found.
+- Numbers, from CHECKER runs of unmodified dtl_prefexits.py (RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0), already done in
+  Addendum 2. D = 4 and 12 were run in both orders as asked:
+  | D | \|R\| | max exits per (context, step, vertex) | total exits per context | text |
+  | --- | --- | --- | --- | --- |
+  | 2 | 36 | 2 (stable) | 25 | 2; 25 |
+  | 4 | 50 | 3 / 3 | 75 / 75 | 3; 75 |
+  | 6 | 64 | 4 (stable) | 166 | 4; 166 |
+  | 8 | 78 | 5 / 5 | 310 / 310 | 5; 310 |
+  | 12 | 106 | 7 / 7 | 805 / 805 | 7; 805 |
+  - Identical in both orders where I ran both.
+  - "D/2 + 1" is exact for the even D used.
+  - "First break at c = 3: fam_D4_n50" is correct: 3 exits at D = 4.
+- Overclaim check:
+  - The R13 NOTE says "(a), (b), (d) and (c) as a conditional are unaffected; the route GAP-A ⇐ (CTX⁺) ∧ (EXITS-POLY) (b)
+    remains ... (polynomial on these data)". Correct, and hedged.
+  - "(EXIT_c) FALSE for EVERY constant c ... on the uniform family" is the same standard as the signed STEAL-DEPTH kill: a
+    uniform rule, growth D/2 + 1, both orders. Accepted.
+  - GAPS: "(EXIT_c) FALSE for every constant c on the same family ...; remaining routes ... (b) EXITS-POLY (... polynomial on
+    data), R14 FIRED⁺-R; all with (CTX⁺) (lagfam has 1 context per phase)". No overclaim. (STEAL-POLY_sum), (EXITS-POLY),
+    (CTX⁺), (FIRED⁺-R) and GAP-A all remain unrefuted in every text.
+  - "dtl_rootmono (L-RED): one first-difference context per phase on the family, so it says nothing about (CTX⁺)": this is
+    correctly limited. I did not re-run it.
+- The Lead's wording point: ADDENDUM 1's "(EXIT_c) for c ≥ 3 (exits on the family not yet measured)" can stay as the
+  time-stamped record, because ADDENDUM 2 directly follows it, is dated, and supersedes it.
+  - Optional: append " [superseded by ADDENDUM 2]" to that clause, and to the DE21 body's "(no uniform family yet)" and "NOT
+    yet a refutation ... for every constant" (N-1). Each then reads correctly on its own.
+  - Not required.
+- Combined verdict for 19a892c → 22bbe74: PASS. C15 E-1 is fixed (a747106), E-2 is resolved (22bbe74), and the numbers are
+  reproduced throughout. N-1 and N-2 are optional.

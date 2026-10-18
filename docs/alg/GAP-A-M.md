@@ -3714,3 +3714,37 @@ Is the relay the §23x counter? NO (reading).
   forms ((D-POLY) ⇔ (EXITS-POLY) ⇔ (STEAL-POLY_sum) ⇔ (XPAIRS-POLY), §23w, §24b) stand and are tested only by the phase length.
 - What would hurt the totals: a family where one context's visits (hence D_R) grow super-polynomially in |R|, i.e. a long
   phase. R39's phase length is D + OFF + 3 visits, linear.
+
+24g. Box 10: the polynomial-total statements on L-RED's uniform family lagfam D = 2..12 (DATA; L-ALG succ. 8, 03:33Z by
+date -u). Generator experiments/red/lag/lagfam.py (trunk 5c452e3; imports lag4.py, gb.py), n = 7D + 22. Pinned Oink re-run by
+L-ALG for every D: 1 dominion, 2D + 9 tangles, D + 8 iterations, solution verified (27 ... 77 strategies). Every number below is
+IDENTICAL in both order data (dtl_totals.py RM_EXCL=1 RM_LIGHT=1 RM_DV=0; dtl_stealdepth.py and dtl_prefexits.py RM_EXCL=1
+RM_PREF=1 RM_LIGHT=1 RM_DV=0; dtl_rootmono.py RM_LIGHT=1 RM_DV=0; all unmodified at l-alg ad4c922). No INCOMPLETE run. The
+binding context is the ROOT of Even's long phase (the max over all contexts equals the root value for every quantity).
+
+| D | n | phase S (root visits) | D_R | #fired⁺(R) | Σ_q k_q | X_R (grid, dtl_totals) | total exits (dtl_prefexits) | max exits per (step, vertex) | max k / depth | first-diff contexts |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 2 | 36 | 9 | 8 | 12 | 6 | 64 | 25 | 2 | 2 / 2 | 1 |
+| 3 | 43 | 10 | 9 | 14 | 9 | 111 | 45 | 3 (prefexits 2) | 3 / 3 | 1 |
+| 4 | 50 | 11 | 10 | 16 | 12 | 177 | 75 | 3 | 3 / 4 | 1 |
+| 5 | 57 | 12 | 11 | 18 | 16 | 264 | 114 | 4 (3) | 4 / 5 | 1 |
+| 6 | 64 | 13 | 12 | 20 | 20 | 376 | 166 | 4 | 4 / 6 | 1 |
+| 7 | 71 | 14 | 13 | 22 | 25 | 515 | 230 | 5 (4) | 5 / 7 | 1 |
+| 8 | 78 | 15 | 14 | 24 | 30 | 685 | 310 | 5 | 5 / 8 | 1 |
+| 9 | 85 | 16 | 15 | 26 | 36 | 888 | 405 | 6 (5) | 6 / 9 | 1 |
+| 10 | 92 | 17 | 16 | 28 | 42 | 1,128 | 519 | 6 | 6 / 10 | 1 |
+| 11 | 99 | 18 | 17 | 30 | 49 | 1,407 | 651 | 7 (6) | 7 / 11 | 1 |
+| 12 | 106 | 19 | 18 | 32 | 56 | 1,729 | 805 | 7 | 7 / 12 | 1 |
+
+(max exits: dtl_totals counts the grid plus the virtual end-of-round step; dtl_prefexits counts steps present in both visits;
+they differ by at most 1. dtl_stealdepth's own "max k" line agrees: k = ⌊(D+1)/2⌋ + 1 up to D = 10 and 7 at D = 11, 12.)
+Growth (fits over n = 36..106; slope = d log / d log n between the end points; DATA):
+- D_R = D + 6 and #fired⁺ = 2D + 8: LINEAR in n. Searches per phase S = D + 7: linear.
+- Σ_q k_q: slope ≈ 2.1 (about D²/2.6): QUADRATIC.
+- X_R: slope ≈ 3.05 overall and 3.0 at the top end (dtl_prefexits 3.1): CUBIC, well under the trivial cap
+  D_R·(|R| + 1)|R|² ≈ n⁴.
+- Max exits per (step, vertex) ≈ D/2 + 1 and depth = D: linear; the CONSTANT local forms are dead (DE21 addendum).
+- First-difference best_vertices contexts per phase: 1 (the root), so (CTX⁺) is not stressed by this family.
+Reading: every polynomial-total premise ((STEAL-POLY_sum), (EXITS-POLY), (D-POLY), (FIRED⁺-R), (XPAIRS-POLY)) is consistent with
+this family, at degree ≤ 3 in n. The family stresses LOCAL constants only, because its phase is linear (D + 7 searches): the
+totals are bounded by the phase length times polynomial factors. A threat to the totals needs a long phase at one context.
