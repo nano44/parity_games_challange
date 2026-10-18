@@ -1,4 +1,4 @@
-# Draft RESULTS R13 (Lead, 2026-10-18 00:45Z by date -u) — NOT LANDED; awaiting REFEREE's final report and §C, L-ALG imports, CHECKER gate
+# Draft RESULTS R13 (Lead, 2026-10-18 00:45Z by date -u) (rev. 00:48Z: REFEREE final aabcefd) — NOT LANDED; awaiting REFEREE §C, L-ALG imports, CHECKER gate
 
 ### R13 [refereed-only] Packet 10 on A_DTL: Lemma ENTRY-CHARGE, and GAP-A ⇐ (CTX⁺) ∧ (EXIT_c) (2026-10-18) — partial step-4 reformulation (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -22,8 +22,9 @@
       (EXIT_c).
   (e) Data: at most 2 exits per (step, vertex) on all data, both orders; 2 only on stealonce_viol_n76, stealonce_both_n45 and
       resteal34_union_n90.
-- Signatures: REFEREE docs/referee/R-P10.md (referee 8f2db93 [final SHA and §C PENDING]): (a) SIGN WITH GAPS, closed (G10-a1);
-  (b) SIGN (N10-b1); (c) SIGN; (d) SIGN; (e) CONFIRMED. REFEREE-2 docs/referee-2/R2-P10.md (referee-2 0cbe61e; comparison §6
+- Signatures: REFEREE docs/referee/R-P10.md (referee aabcefd; draft 8f2db93, report a09a89d; comparison §C PENDING): (a) SIGN WITH GAPS,
+  closed (G10-a1); (b) SIGN (N10-b1); (c) SIGN (constants: X_R ≤ c(|R|+1)|R|², F_R ≤ 3(c+1)(|R|+1)|R|³); (d) SIGN; (e) CONFIRMED
+  (dtl_prefexits unmodified + own probe p10entry.py, 140 files, both orders, 0 failures). REFEREE-2 docs/referee-2/R2-P10.md (referee-2 0cbe61e; comparison §6
   57468a8): (a) SIGN WITH GAPS, closed (G10-a1); (b) SIGN (N10-b1); (c) SIGN; (d) CONFIRMED; (e) own probe an10.py, 268 files,
   both orders, 0 failures. Independent (each read the other's P10 report only after pushing its own). No REJECT.
 - Gaps (union). G-R13-1..3 closed in the reports, to be imported by L-ALG; G-R13-4..5 OPEN; G-R13-6 dependencies:
