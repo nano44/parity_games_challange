@@ -4658,6 +4658,7 @@ outcome by piece ⊆. Order chains tree-lexicographically: c < c′ iff at their
 Proof. Consecutive searches: at p0 the input is the same set R (§33b); if the outcome changed it rose (OUTCOME-MONO-1P (2), (3));
 otherwise the piece changed and grew (SAME-CTX (iii)). So c(s) < c(s+1). The tree-lexicographic order is transitive (first differences
 at q1, q2: the smaller index decides; equal index: the per-R order is a partial order). □
+MECHANICAL CHECK (experiments/alg/b12_lexchk.py): 𝒞^1P set (DIST=1), 4,718 pairs s′ < s″, both orders: 0 violations.
 Consequence for (XCTX@p0). Suppose v ∈ N lies in piece_{p0}(s′) with R′ := R_{p0}(s′) ≠ R. By LEX, c(s′) < c(s) with first difference at
 some q; q < p0 because c(s) and c(s+1) agree below p0 and R′ ≠ R. At q the context Q := R_q is common, and either
  (G) the outcome at Q is equal and piece_q grew, so R_{q+1}(s) ⊊ R_{q+1}(s′); or
