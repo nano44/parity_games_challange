@@ -3,17 +3,15 @@ Successor 9's handover text is in git history: `git show a97f451:notes/L-ALG.md`
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push only with `scripts/push.sh > $S/push.log 2>&1; echo exit $?`.
 Truth for GAP-A: docs/alg/GAP-A-M.md §23-§30 (§30 = box 12, successor 10; §29 = box-11 ledger). Dead ends: docs/alg/DEAD.md.
 
-## Resume point (2026-10-18 21:25Z by date -u; box 15 (sketch box), GO 20:59Z, to ~00:00Z; same session)
-Ledger: GAP-A-M §36 (box 15), §35 (box 14), §33-§34 (box 13), §30-§32 (box 12). L32: NOT met.
-- Box 15: (TREE-PIECE⁺) in two-player games: NO SKETCH (§36 VERDICT). Steps S1-S3 hold in general (R9 (a), FDL, Lemma 1.2b). S4
-  (same-context novelty) FAILS: Lemma LEX is false in two-player games (18 / 12 library pairs; cm_viol_oink_n28, Odd phase, searches
-  4 → 5, root emptying round 8 → 7). The signed replacement (R11 (c), R14: falls ≤ 3·#fired⁺ per context) gives back the open
-  (CTX⁺) ∧ (FIRED⁺-R) term. S5 (cross-context) = §35 obstruction. Identical-tree runs need (FIRED⁺-R) (36c), open.
-- Box 14: (XCTX@p0) no route (§35); Lemma LEX proved on 𝒞^1P (reading).
-- Standing (3): run `TREE=1 b12_ident.py <file>` on any L-RED instance the Lead forwards; report at once.
-QUEUE for the successor (nothing in flight):
-(1) Only new ideas reopen §35 / §36: a cross-context comparison of depth-0 continuations, or a key argument at a fall.
-(2) Re-run b12_ident.py TREE=1, b12_core.py MODE=xcover and b12_lexchk.py on every new L-RED instance.
+## Resume point (2026-10-18 21:50Z by date -u; PARKED after box 16)
+- Box 16 triage: NO credible subclass with a first proof step (reason in docs/alg/GAP-A-STATUS.md §5). Brief for the L32
+  reassessment at the Fable reset: docs/alg/GAP-A-STATUS.md (routes since L32 with failing steps and instances, surviving DATA,
+  refereed basis, honest view).
+- Ledger: GAP-A-M §36 (box 15), §35 (box 14), §33-§34 (box 13), §30-§32 (box 12). L32: NOT met.
+- New since box 15: L-RED's xcov11_n20 (experiments/red/xctx/instances, sha1 47023109c198): first PARTIAL cross-context cover at
+  p0 on 𝒞^1P (11 of 16); (XCTX@p0) still holds.
+- Standing: run `TREE=1 b12_ident.py`, `MODE=xcover b12_core.py`, `CLASS=0 b12_lexchk.py` on any instance the Lead forwards.
+QUEUE for the successor: see GAP-A-STATUS.md §5; only a cross-context invariant of the depth-0 loop, or an L-RED counter, moves this.
 
 ## DONE (box 12, successor 10)
 - Handover check 50e66d3 (5/5 per Lead), trunk merges 781790d and the box-start merge.
@@ -21,6 +19,7 @@ QUEUE for the successor (nothing in flight):
 - §30 with tools b12_topchain.py (class set + TOP-CHAIN@R scan), b12_topclimb.py (climb, --check), b12_pertop.py (tangles
   learned per (phase, top)), b12_mono.py (re-cut-proof potentials, per_position); instance onep_topuniq_n20 (check.sh).
 - §31 with tool b12_nopre.py (scan / climb); instance nopre_near_n20 (near miss, pinned Oink 5 iterations verified).
+- Box 16: docs/alg/GAP-A-STATUS.md (brief). Parked.
 - Box 15: §36; b12_lexchk.py CLASS=0 mode. Push 7ea83d5 and the follow-up.
 - Box 14: §35 (b12_core.py MODE=chainnest and climb, b12_lexchk.py); instance onep_nest_n68; DEAD.md entry. Push 6278271
   and the follow-up.
