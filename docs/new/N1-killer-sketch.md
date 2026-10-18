@@ -66,3 +66,11 @@ k = 1, 3, both orders, N = 2..6: plain VJ 30..630 (unchanged); N1 33, 51, 81, 11
 quadratic. Regions = Zielonka, strategies verified. Did not kill. Reading: traps do delay bit i's availability, but when
 bit i appears, Howard does not replay the lower count; the lower bits' optimum at the current discount is already what
 Friedmann's counter would reach after the reset.
+
+## Route (B) with traps on every Even choice vertex (11:30Z, alltrap.py): did not kill
+Trap at every Even vertex with >= 2 successors (P = B + 2 + 2k, cycle priority B + 1, or 1 with --q 1 for the latest reveal).
+Plain VJ Howard from best-reward start (= all traps): 33, 73, 153, 313, 633, 1246 (Friedmann + 3, doubling). N1: k = 1, 4:
+26, 43, 65, 91, 121 (unchanged from the trap-free game); --q 1: 21, 39, 59, 83, 111, 143 with the traps revealed over the
+last ~log n phases (phases of 10-20 switches), not at once. Reading: a trap's reveal time depends on the priority of the even
+cycle Even can reach from v, so reveals spread out and come top-down again. A simultaneous reveal needs per-vertex trap
+priorities calibrated to v's own winning cycle; not built.

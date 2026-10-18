@@ -140,3 +140,10 @@ decision), which needs chains of length ~ horizon · Δp · ln n per edge: polyn
 - fhz_padded N = 7..11 (n = 414..892): plain 21..33; N1 36, 49, 42, 56, 55; largest phase N + 2 (the first phase).
 - Remaining families: docs/new/plots/n1_*.png from the Python sweep (summary_py.csv, N <= 8 or timeouts); the C++ sweep
   (summary_c.csv, N up to 14) is running.
+
+## Second confound check: the stop rule (11:30Z)
+N1 stops at a REGION certificate; plain VJ Howard runs to the optimal strategy. A fair baseline stops VJ Howard at the
+first iteration whose VJ regions and strategies pass the same certificate (experiments/new/vjcert.cpp = verbatim vjfast
+copy + --certstop). It still doubles: switchallexp N = 2..9: 14, 34, 74, 154, 314, 634, 1247, 2490; switchbestexp N = 2..9:
+30, 70, 150, 310, 630, 1270, 2550, 5110 (solutions = Zielonka, strategies verified on the instances checked). So N1's
+advantage on these families is not the stop rule. (fhz_padded is certified at iteration 0: Odd wins there from the start.)
