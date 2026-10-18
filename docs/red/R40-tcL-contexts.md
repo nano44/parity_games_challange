@@ -4,7 +4,18 @@ Status: DATA plus READING, unrefereed. No kill, no super-polynomial family, no i
 Started 2026-10-18 09:16Z (date -u). Tools: L-ALG's tools from a detached claude/l-alg checkout at 11d89e20 (LALG_DIR), imported
 UNMODIFIED; pinned Oink tools/oink/build/oink @ 8fbf0a7 (scripts/setup_oink.sh), `--dtl --no-single --no-wcwc --no-loops -v`.
 
-## 1. Result
+## 0. Summary (11:32Z by date -u)
+Three uniform perturbations of Oink's Two Counters generator, all solved correctly by pinned Oink at every size tried:
+- leanT(N) (§9), n = 8N: Even phase S = N, and EVERY transition has its own first-difference context (C_bv = S − 1 = n/8 − 1;
+  N 6..32, both order data). The strongest (CTX⁺) data: no slack at all between (CTX⁺) and the phase length.
+- tcL(N) (§1-3), n ≈ 3.4N²: C_bv = S − 3 = N − 4, through a "staircase" of depth-0 calls (§3).
+- tcR4(N) (§8): first differences at search_rec DEPTH 1 with the root call identical (13 of 25 transitions at N 8), the
+  R39 §9 condition met on a uniform family.
+Everything is linear in n; nothing refutes (CTX⁺) or GAP-A. Side results: TC-6 is fragile under one edge class (§4); (DEEP-STAB)
+data (§5); other totals trivial on these families (§6); perturbation climbs give at most about 0.13·n searches (§7); GAP-C
+probe: 60,000 perturbed hard-family / tc games, all verified (§10).
+
+## 1. Result (tcL)
 - tcL(N) := Oink's tc(N) (tools/oink/build/tc N, pinned) plus, for every i ≥ 1, an edge from the vertex labelled Even-i-L to
   the vertex labelled Even-(i−1)-H. Generator: `experiments/red/tcpert/tcpert.py tcL N OUT.pg` (calls the pinned tc binary).
   The rule is uniform in N; it adds N − 1 edges. n(tcL(N)) = n(tc(N)).
@@ -167,12 +178,21 @@ UNMODIFIED; pinned Oink tools/oink/build/oink @ 8fbf0a7 (scripts/setup_oink.sh),
   | 8 | 64 | 8 | 7 | 7 | ctxfit and ctxlight |
   | 12 | 96 | 12 | 11 | 11 | ctxlight |
   | 16 | 128 | 16 | 15 | 15 | ctxlight |
+  | 24 | 192 | 24 | 23 | 23 | ctxlight (11:30Z) |
+  | 32 | 256 | 32 | 31 | 31 | ctxlight (11:30Z); pinned Oink 34 iterations, verified |
 
   N 12 sequence: depth-0 bv-thr contexts with |R| 56, 60, 64, ..., 92, 96: the arena grows by 4 (half a bit) per transition, the
   last one is the root.
 - So distinct first-difference contexts per phase = S − 1 = n/8 − 1: linear in n, one new context for EVERY transition. This is
   the extreme case of the R38 question: (CTX⁺) is exactly as hard as bounding the phase length on this family.
 
-## 10. Open, in this box
+## 10. GAP-C probe (DATA, 10:42-11:10Z by date -u)
+- experiments/red/tcpert/hfpert.py seed 2: 40,000 random games, each one of Oink's hard-family generators (counter_core, _dp, _m,
+  _ortl, _qpt, _rob, _rr, _symsi, tc, tc+; sizes 1-4) with 1-4 random changes (add an edge, flip an owner, shift a priority):
+  pinned Oink DTL with -v, all 40,000 "solution verified".
+- tcpert.py seed 2 with cut / self-loop rules (TCP_EXT=1): 20,000 rule draws on tc(N), N 3..6: no unverified run. Earlier
+  seeds (0, 1) and all climbs: no unverified run either.
+
+## 11. Open, in this box
 - N = 14 needs a lighter tool (ctxlight peaks above 5 GB at N = 12).
 - The other totals on tcL (Σk, #fired⁺(R), D_R, exits) are not yet measured.
