@@ -206,6 +206,22 @@ probe: 60,000 perturbed hard-family / tc games, all verified (§10).
 - Repeated 11:39-11:48Z on leanT_N12, leanT_N16, tcR4_N6, both orders: FDL 0 violations (11 / 15 / 15 transitions); again only
   CTX-ROOT, CHAIN and ABS-pw fail.
 
-## 12. Open, in this box
-- N = 14 needs a lighter tool (ctxlight peaks above 5 GB at N = 12).
-- The other totals on tcL (Σk, #fired⁺(R), D_R, exits) are not yet measured.
+## 12. Item (2), long phase: NOT achieved; what was tried (DATA, 11:45-13:10Z by date -u)
+- Learned-TANGLE climbs (C5 §4: A_DTL is polynomial iff the number of learned tangles is). tcclimb.py with TCC_METRIC=tangles on
+  the lean base, seed 15, from leanT: best rule gives tangles 48 / 93 / 156 / 234 / 436 / 706 at N 12 / 16 / 20 / 24 / 32 / 40
+  (n = 8N; searches N − 2): about 0.44 N², quadratic. leanT itself: 27 / 44 / 90 at N 6 / 8 / 12 (quadratic).
+- Shape of every structured family found: nested chains. On leanT search k learns tangles extending a chain by bit k
+  (lag/learn.py on leanT(3): {E0}, {E1}, {E1, E0}, then {E2}, {E2, E1}, {E2, E1, E0}). A counter needs a rung RE-learned with a
+  new tangle after a higher rung advances; none of these families does that.
+- Width is NOT an obstruction (experiments/red/ctxp/width.py, tangles learned per phase, largest ⊆-antichain): leanT N 8 / 16:
+  width 8 / 16 = S; lagfam D 12: 32 tangles, width 32 (pairwise incomparable); ctx13_n40 Odd phase: 87 tangles, width 15.
+- Products of staircases (experiments/red/tcpert/prodclimb.py): disjoint union of leanT(a) and leanT(b), copy 2 shifted up,
+  climbing ≤ 8 individual cross edges on pinned-Oink iterations (all verified). The union alone runs in lockstep (6 / 8 / 10
+  iterations at a = b = 4 / 6 / 8). Best with cross edges: 19 (a = b = 4, n 64), 24 (6, 6; n 96), 29 (8, 8; n 128; climb ended by its
+  2000 s timeout at 13:22Z). Above a + b + 2, but growing slowly with the size, not like a product (a·b = 16 / 36 / 64). Every
+  run verified.
+
+## 13. Open (for a successor)
+- tcL N ≥ 14 and tcR4 N ≥ 9 need a lighter context tool (ctxlight peaks above 5 GB at n ≈ 490).
+- (DEEP-STAB): close the tangle-split gap (§5) or find a counterexample.
+- Item (2): a staircase whose rungs are RE-learned with new tangles after a higher rung advances (§12).
