@@ -3276,3 +3276,36 @@ stealonce_viol_n76 and stealonce_both_n45 (22 and 20 cases, stable / Oink); 1 in
 §23r.
 Status against L32: GAP-A ⇐ (CTX⁺) ∧ (EXIT_c), two named DATA statements. The STEAL side now has a proof route from a single
 local statement. (CTX⁺) has none.
+
+23r. Box 9: (EXIT_c) data and the shape of a proof (DATA plus SKETCH; L-ALG succ. 7, 00:23Z by date -u)
+- Data: dtl_prefexits.py (now also counting re-entries; RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0). Sets: corpus plus
+  stealonce_viol_n76, stealonce_both_n45, stealer_viol_n76 and resteal34_union_n90.
+
+  | order | exits = 1 | exits = 2 | exits ≥ 3 | re-entries = 1 | re-entries = 2 |
+  |---|---|---|---|---|---|
+  | stable | 6,692 | 189 | 0 | 627 | 17 |
+  | Oink | 2,106 | 20 | 0 | 49 | 0 |
+
+  - Two exits occur only on DE20-derived instances (stealonce_*, resteal34_union_n90).
+  - Re-entries occur on natural data too. Patterns 0101, 01001 and 10001 appear on f1_twodef_n48 and f1_twofall_n48, and
+    010111 on fall3_n76.
+  - So a vertex can leave a prefix and return without any re-steal, but no (step, vertex) has left 3 times. No INCOMPLETE
+    run.
+- Reformulation (reading). Within a round the prefixes are nested: P(r, τ⁺) grows as τ decreases. So w ∈ P_i(r, τ⁺) iff
+  top_r^i(w) > τ, where top_r^i(w) is the top whose region holds w at visit i, or ⊥.
+  - An exit of w at (r, τ) is exactly a downward crossing of level τ by the sequence (top_r^i(w))_i.
+  - (EXIT_c) says: for every round and vertex, the top sequence crosses every level downward at most c times. By §23q this
+    alone gives the STEAL side.
+- Why the obvious proofs fail (named gap G23r):
+  - (i) Exits at a step need a relevant steal at an earlier step (local PREFIX-MONO-X*), and every relevant steal is an
+    entry at that earlier step (§23q, step 1). So exits at later steps are driven by entries at earlier steps, and
+    re-entries are driven by growth.
+  - (ii) The only signed monotone structure across visits is the first difference: at the first differing step the region
+    grows strictly (FDL / EXACT*). The resulting lexicographic chain of prefix vectors gives only the bound
+    (|R| + 1)^{#steps}, the §22v obstruction again.
+  - (iii) A proof of (EXIT_c) therefore needs a per-vertex reason why top_r(w) cannot fall below the same level a third
+    time. In R35 the second fall needs a NEW tangle in region 66 (R37-2: each event pair needs a tangle learned in
+    between), so the reason must involve the learning dynamics, not the region geometry alone.
+  - Precedent: per-vertex fall counts have died before: (FALL-V), DE18, for RV.
+- Status: (EXIT_c) DATA (c = 2). No proof. Successor and climb target: EXIT ≥ 3 for one (step, vertex), e.g. three R35
+  levels in series.
