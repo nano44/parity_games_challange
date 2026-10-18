@@ -4148,6 +4148,17 @@ at (r, τ) in visit i is a round-r top above τ in visit i+1, steal or not) occu
 case-(a) steal and no proof that it cannot occur were found in the 1 h box. Named statement (NO-PRE-a), DATA only: "a vertex of a
 tangle that fired at top τ in round r is never a round-r top above τ at the next visit". With it, STEAL-ENTRY is a pure
 strategy-conflict statement and NOSTEAL-1P holds without "dist".
+ADDENDUM 2 (11:39Z by date -u): a STRONGER pattern, (TIE-BELOW), DATA: "every tangle that fires in top τ's region step has no vertex
+of priority pr(τ) with index above τ". (TIE-BELOW) implies (NO-PRE-a), since a case-(a) vertex y ∈ t has pr(y) = pr(τ) and index above τ.
+Data: library, stable order, 58,739 fired events (tangle t fired at (r, τ) at some visit): 11,184 hold a same-priority vertex BELOW τ,
+0 ABOVE. 5,000 random tie-heavy games: 198 fired events, 135 below, 0 above.
+Proof route tried. Such a y is not in V_r (else it is processed before τ and lies in an earlier region), so it was pruned as a
+distraction in some round r′ < r. At τ's firing, every R-successor of y that is relevant to attracts() (its t-strategy if p owns y;
+all R-edges if the opponent does) lies in U_r, the union of round r's regions: t ⊆ τ's region, and escapes lie in CurZ or in
+earlier round-r regions. So U_r ⊆ U_{r′} would make y attract at r′ (Z_{r′} ⊇ U_{r′}), a contradiction. BUT the round-union
+inclusion U_{r+1} ⊆ U_r is FALSE in general: 543 of 64,033 consecutive round pairs on the library (first: cm_viol_oink_n28.pg,
+|R| = 28, round 2 adds vertices 7 and 23; 0 of 16,883 on 5,000 random games). So the proof needs the inclusion only at y's
+attracts()-successors, or another argument. Open.
 STATUS of (c) at 11:02Z: no route. (LONG-PHASE) at G′ reduces, via R11 (c) and STEAL-ENTRY, to bounding recurring strategy-conflict
 steals at the root (plus case (a)). The class 𝒞^1P is exactly where both cases vanish (§27b).
 
