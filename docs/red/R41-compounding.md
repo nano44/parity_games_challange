@@ -71,3 +71,12 @@ re-cut tail. fixd_enable: no enabling tangle fires at R_j in any transition.
 - NEST (§1) on the library and on this box's instances (fixd_fdpos, stable order; the Oink order was identical where run):
   ctx13_n40 Odd phase 3; tcR4_N6 3; nest4_n80 4; leanT_N8 1; onep_lagdist_D8 1; onep_chainfail_n20 1. nest4_n80 is the
   highest NEST seen.
+
+## 7. L-ALG's NEW-KEY potentials (b12_pot.py, l-alg e2132aec, run UNMODIFIED; DATA 16:12-16:25Z by date -u)
+- On 11 box-11/12 instances (nest4_n80, products a6/a8, leanT_N8, tcL_N6, tcR4_N5/N6, deep1_n13, tcS8_N6, ctx13_n40,
+  fam_D8_n78; 148 transitions, 23 with an identical depth-0 chain), both orders identical: K-v-rs, K-v-rV, K-v-rjV, K-v-all:
+  0 violations. K-jRrV 1 and K-v-rj 3 (tcR4_N5), K-v-r 13, K-Rset 8.
+- Two-player kill of (VR-NEW_s) (key (v, rank, |R_j|) = K-v-rs): vrs_viol_n100.pg (sha1 b4bbe7f0fdc0;
+  experiments/red/tcpert/instances/prod/), found by keyclimb.py (seed 2, from tcR4_N5, 32 steps). Pinned Oink 7 iterations, 13
+  tangles, verified; dtl_flipflop the same. b12_pot: stable 6 transitions, K-v-rs 2 violations; Oink order 5 transitions, K-v-rs
+  1 violation. K-v-rV, K-v-rjV, K-v-all: 0 (both orders). Not in 𝒞^1P (two-player), so it does not touch the class claim.
