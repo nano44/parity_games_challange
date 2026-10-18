@@ -9,7 +9,7 @@ import pg, verify
 OINK = os.path.join(HERE, "..", "..", "tools", "oink", "build", "oink")
 g = pg.parse("".join(l for l in open(sys.argv[1]) if not l.lstrip().startswith("%"))); text = open(sys.argv[2]).read()
 win = pg.read_sol(text, g.n); e = verify.check(g, win, verify.read_strategy(text, g.n))
-TO = int(sys.argv[3]) if len(sys.argv) > 3 else 1800
+TO = int(sys.argv[3]) if len(sys.argv) > 3 else 600
 ref, name = None, None
 for solver, to in (("--zlk", TO), ("--tl", 3600)):
     with tempfile.NamedTemporaryFile("r", suffix=".sol", dir=os.path.join(HERE, "out")) as f:
