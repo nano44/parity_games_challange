@@ -4729,3 +4729,23 @@ VERDICT (box 15): NO SKETCH. Exact failing step: S4, same-context novelty, becau
 games (LEX false, cm_viol_oink_n28, searches 4 → 5). The signed replacement (falls ≤ 3·#fired⁺ per context) gives back exactly the open
 (CTX⁺) ∧ (FIRED⁺-R) term. S5 has no route even on the class (§35). Identical-tree runs need (FIRED⁺-R), also open.
 (TREE-PIECE⁺) stays a DATA statement (0 violations). Referee trigger (b) is not reached.
+
+37. Standing check: (XCTX@p0) is FALSE on 𝒞^1P (Lead 21:54Z; L-ALG successor 10; 22:10Z by date -u; produced on Opus 5.5).
+Instance (L-RED R42, l-red 8f09538): experiments/red/xctx/instances/xctx_viol_n20.pg, sha1 742ba103cdb77cbb20e8d94e99120331568e84cd.
+(1) Exactness. Recomputed from §35a directly (not through b12_core's xcover, which intersects with the whole new piece instead of N,
+    nor through MODE=core, whose CORE-ALL tests the whole piece against all same-signature pieces; both flag the same transition):
+    Even's phase (0, 0), s2 → s3, p0 = 2; R_{p0} is the same set at s2 and s3 (as §33b requires); the outcome (3, V) is unchanged, so case
+    P and N = piece_{p0}(s3) \ piece_{p0}(s2) = {12}; the union in §35a over s′ ≤ 2 with R_{p0}(s′) ≠ R, equal size 17 and equal
+    signature (3, 17, 4) is piece_{p0}(s0), which contains 12. So N ⊆ the union: an exact violation of (XCTX@p0) as written, in both
+    order data. Not a weaker or stronger variant.
+(2) Class. In 𝒞_1 (every vertex of q = 0 has one successor), q-parity priorities distinct, all priorities distinct: 𝒞^1P in §27b's
+    and §33's sense. Pinned Oink: 6 iterations, solution verified; model winners equal to Zielonka (both orders).
+(3) What survives. The §33 Corollary (GAP-A on 𝒞^1P ⇐ (XCTX@p0) ∧ (CHAIN-CHANGE)) has a FALSE hypothesis and gives no route.
+    Lemmas W, SAME-CTX and LEX are unaffected (they do not assume (XCTX@p0)). On this instance (VR-NEW_all), (VR-NEW_V), (VR-NEW_s),
+    (TREE-PIECE⁺) and (FD-WITNESS_all) (§32h, witness in the changed piece at j* or j* − 1) all still HOLD, with margin 1: the one new
+    full key is (14, 22, 3, 1, 1), vertex 14 at position 3 = j* (R_3 shrinks to {14} with a never-seen signature), not in N. So the
+    amended statement is (FD-WITNESS_all) itself, the DATA form that (XCTX@p0) was meant to prove; nothing proved is lost, and no
+    proved reduction remains on 𝒞^1P.
+(4) L-RED's Lemma EMPTY-REC (R42 §2: in 𝒞_C every recursive search_rec(Z, q, depth+1) of a q-search has Z = ∅): DATA agrees. 𝒞^1P set
+    (DIST=1) plus xcov11_n20 and xctx_viol_n20, 2,982 runs (both orders): 0 best_vertices calls at depth ≥ 1 with a nonempty context
+    in q's phases (6,372 occur in the controller's phases, where CTRL applies). Its proof (dtl.cpp 898-955) was not re-derived here.
