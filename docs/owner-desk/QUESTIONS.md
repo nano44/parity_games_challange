@@ -167,4 +167,17 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
   2021 but never committed). The only remaining route is to ask the author: outside contact, the owner's decision (D1).
 - Options: (a) no contact for now; (b) owner contacts the author; (c) owner authorises a fleet-drafted message for the owner to send.
 - Lead recommendation: (a): L-RED first builds the author's own recipe (preprint p.15).
-- Status: answered 2026-10-16: "No contact for now" (option (a)); relayed; awaiting the Lead's D-number.
+- Status: closed, D11 / Lead reading L30: no contact with the author; the fleet works from the public record and its own
+  constructions. Note: the p.15 recipe was already built (L-RED R14, l-red d70e99a): no slowdown on A_DTL.
+
+## Q14: L32 reassessment of the DTL polynomial bound (GAP-A) — DECISION NEEDED
+- id: Q14 (Lead, 2026-10-18 04:08Z; full text docs/agents/L32-REASSESSMENT.md at trunk 8a09d9f)
+- Background: L32's trigger is met (both lanes' boxes ended with no new GAP-A reduction). Criterion NOT met: R7-R14 reduce GAP-A only
+  to statements the referees judged equivalent to it; every constant/local premise is false on a uniform family (DE19-DE21). No stop
+  condition: no incorrect run, no super-polynomial family (strongest family needs D+8 iterations). DTL stays an open candidate; the
+  open core is (LONG-PHASE) = GAP-A itself. All lanes parked; nothing running. Spend $1,950 total, no overage.
+- Options: (a) bank the refereed results and write up DTL's status as an open candidate (one document for the owner, no external
+  contact); (b) keep only the cheap adversarial lane on GAP-A, no proof lane; (c) a new candidate or approach (needs an owner direction).
+- Lead recommendation: (a) now, plus (b) until the Fable reset 2026-10-21 21:00Z, then stop unless (b) finds a long-phase family.
+- Urgency: decision needed; the fleet is idle until the owner chooses.
+- Status: open

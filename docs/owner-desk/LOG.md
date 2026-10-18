@@ -113,3 +113,86 @@ Desk reading: Q12 option (a). Relayed verbatim to the Lead.
 
 ## 2026-10-16 16:44Z Lead (relayed to owner)
 Q13 closed as D10 / L29. Lead's message crossed the owner's Q12 answer (relayed 16:40Z); Q12 awaits its D-number.
+
+## 2026-10-16 16:47Z Lead (relayed to owner)
+Q12 closed as D11 / L30. p.15 recipe already built (L-RED R14, d70e99a): no slowdown on A_DTL. No owner questions open.
+
+## 2026-10-16 21:07Z owner (progress question)
+> Give me a status update
+Answered from trunk 9e1ae89 (NOW.md, RESULTS DE9-DE11, DECISIONS L31), l-alg 7c2f3f1, l-red c09aef2. Relayed verbatim to the Lead.
+
+## 2026-10-17 09:05Z owner (progress question)
+> Give me a status update
+Answered from trunk 17ec77b (NOW.md, RESULTS DE12), l-alg dc231e0 (docs/alg/STEP5.md), l-red acfabb4. Relayed verbatim to the Lead.
+
+## 2026-10-17 09:07Z owner (progress question)
+> Are we narrowing down the decision to see?
+Desk reading: asks whether the work is converging on a decisive answer for DTL. Answered from the same sources as 09:04Z. Relayed verbatim to the Lead.
+
+## 2026-10-17 09:09Z owner (instruction: referees on Opus)
+> WE can run referees on opus too temperoraly
+Desk reading: owner allows referees on Opus 5.5 temporarily (until the Fable reset), relaxing D1 "Never downgrade the referee to save money" for that period. Relayed verbatim to the Lead, priority now.
+
+## 2026-10-17 09:14Z Lead (relayed to owner)
+D12 recorded (trunk 8f41be8), L33: Opus referees until the Fable reset, two independent referees, signatures labelled "(Opus 5.5, D12)";
+first packet docs/alg/STEP5.md with ACYC listed as a gap; REFEREE and REFEREE-2 start (4 of 5 lanes). L32: GAP-A reassessment criterion
+(immediate stop on verified wrong/incomplete run or super-polynomial searches per phase; otherwise reassess at the Fable reset or
+earlier; options (a) bank and write up, (b) cheap attack only, (c) new candidate).
+
+## 2026-10-17 10:25Z Lead (relayed to owner)
+RESULTS R4 [refereed-only] landed (trunk ddfa69a): GAP-C Step 5 for A_DTL, (ACYC) the only open hypothesis; both referees on Opus
+"(Opus 5.5, D12)"; CHECKER PASS fd8e3eb. Packet 2: 7 readings co-signed, 3 disputed; REFEREE-2 found DTL-proof lemma K5 false as
+written (solver correct). GAP-A unchanged.
+
+## 2026-10-17 10:46Z Lead (relayed to owner)
+RESULTS R5 [refereed-only] landed (trunk b35139e): eleven structural lemmas on A_DTL, both Opus referees (D12), CHECKER PASS 1209739;
+includes conditional "(SPP) => O(n^10(m+n^2))"; not completeness, not polynomial time. K5 corrected.
+
+## 2026-10-17 11:11Z Lead (relayed to owner)
+RESULTS DE13 (trunk 2da329c): L-RED's kin_viol_n29.pg (Oink verified, run correct) falsifies the GAP-C proof route's data statements
+(K-in), (K-low), (TW), tight S-LOW, (KT-STEP-first). Plain completeness lemma not refuted; R4/R5 unaffected; GAP-C needs a restated S/T step.
+
+## 2026-10-17 11:53Z Lead (relayed to owner)
+DE15 (trunk 67acd6d): meet_viol_n17.pg (Oink verified, correct) falsifies (MEET); (PHASE-IN) is a restatement; completeness not refuted
+but needs a cross-search progress measure. R6 [refereed-only] landed (packet 3). GAP-A root-call part reduced (unrefereed) to
+"#DIRTY transitions per phase is polynomial"; transitions below the root call not covered.
+
+## 2026-10-17 13:52Z Lead (relayed to owner)
+R7, R8, R9 [refereed-only] landed (trunk 1501aad; Opus referees D12, CHECKER PASS). R9: GAP-A <= (CTX+) and (FALL), both data only
+(<=10, <=3). DE14-DE16. GAP-C unchanged. REFEREE-2 and CHECKER parked.
+
+## 2026-10-17 16:58Z Lead (relayed to owner)
+R11 [refereed-only] landed (trunk af07389; Opus D12, CHECKER C11 PASS): only fired tangles matter; GAP-A <= (CTX+) & (STEAL-ONCE*)
+& (FIRED-R), all data only. GAP-A, GAP-C open. No overage, no incorrect run, no super-polynomial family.
+
+## 2026-10-17 19:37Z Lead (relayed to owner)
+DE20 (trunk efff851): (STEAL-ONCE*) false on stealonce_viol_n76 (Oink verified; <=2 steals per quadruple, not super-polynomial; run
+correct). R11 (a)-(c) stand, (d) conditional no longer reduces GAP-A as stated; post-landing note. Weaker replacement under test.
+L-ALG and L-RED handed over (~600k context), successors 5/5.
+
+## 2026-10-17 19:49Z owner (progress question)
+> Give me a status update
+Answered from trunk deb74d1 (RESULTS R1-R11, DE1-DE20, DECISIONS L32) and the Lead's notes to 19:37Z. Relayed verbatim to the Lead.
+
+## 2026-10-17 19:58Z Lead (relayed to owner)
+Spend reading ~19:50Z (trunk bb882ee, NOW.md Spend): total $1,781 over 36 sessions (+$1,089 since 10-15 14:55Z); no overage; 7-day
+limit "allowed_warning"; Fable paused until 2026-10-21 21:00Z.
+
+## 2026-10-17 21:00Z Lead (relayed to owner)
+R12 [refereed-only] landed (trunk 6c65d69; Opus D12, CHECKER C12 PASS): repairs the GAP-A reduction after DE20; GAP-A <= (CTX+) &
+(STEAL-DEPTH_D, D const) & (FIRED-R), all data only (65 repeat steals, all depth 1, one instance). Not a bound; L32 not met.
+
+## 2026-10-18 01:47Z Lead (relayed to owner)
+R13, R14 [refereed-only] landed (Opus D12, CHECKER PASS). R14: GAP-A <=> (CTX+) & (FIRED+-R) up to polynomial factors (equivalence).
+R13: GAP-A <= (CTX+) & (EXIT_c), c = 2 on data. DE20 addendum (Oink order, n=45). L32 not met; no incorrect run, no super-poly family,
+no overage.
+
+## 2026-10-18 03:18Z Lead (relayed to owner)
+DE21 (trunk 19a892c): repeat-steal depth grows 2/3/4 at n=39/46/53; EXIT_2 false at n=53. Constant-depth route and c=2 local route
+dead on data; polynomial-total routes (R12 (a), R13 (b), R14) untouched. Oink 10/11/12 iterations (linear); not a running-time kill.
+
+## 2026-10-18 03:34Z Lead (relayed to owner)
+DE21 made uniform (trunk 5c452e3): lagfam.py D, n = 7D+22, repeat-steal depth exactly D (D=2..12), Oink D+8 iterations. R12 (c)
+constant-depth route false for every constant; post-landing note. Live routes R12 (a), R13, R14 (polynomial totals).
+
+## 2026-10-18 04:08Z Lead -> owner: Q14 (L32 reassessment) added; put to the owner at once. All lanes parked awaiting the choice.

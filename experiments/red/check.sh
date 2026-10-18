@@ -128,6 +128,12 @@ out=$(python3 -I dtl/dtl_flipflop.py carry/instances/firedlong667_n43.pg --quiet
 [[ "$out" == "n=43 tangles=22 dominions=2 iterations=16" ]] || { echo "firedlong667_n43 drifted: $out"; exit 1; }
 out=$(python3 -I dtl/dtl_flipflop.py carry/instances/firedlong667_n20.pg --quiet 2>&1 | sed -n 1p)   # box 8 R36 §4: long-phase FIRED-R 4 fired at |R| 6, S 12 (both orders)
 [[ "$out" == "n=20 tangles=26 dominions=1 iterations=14" ]] || { echo "firedlong667_n20 drifted: $out"; exit 1; }
+out=$(python3 -I dtl/dtl_flipflop.py carry/instances/ctx6_n20.pg --quiet 2>&1 | sed -n 1p)   # box 9 R38: (CTX+) curve, 6/13 first-difference contexts/transitions (stable)
+[[ "$out" == "n=20 tangles=24 dominions=1 iterations=14" ]] || { echo "ctx6_n20 drifted: $out"; exit 1; }
+out=$(python3 -I dtl/dtl_flipflop.py carry/instances/ctx7_n30.pg --quiet 2>&1 | sed -n 1p)   # box 9 R38: (CTX+) curve, 7/15 first-difference contexts/transitions (stable)
+[[ "$out" == "n=30 tangles=29 dominions=1 iterations=14" ]] || { echo "ctx7_n30 drifted: $out"; exit 1; }
+out=$(python3 -I dtl/dtl_flipflop.py carry/instances/ctx6_n56.pg --quiet 2>&1 | sed -n 1p)   # box 9 R38: (CTX+) curve, 6/12 first-difference contexts/transitions (stable)
+[[ "$out" == "n=56 tangles=56 dominions=1 iterations=15" ]] || { echo "ctx6_n56 drifted: $out"; exit 1; }
 out=$(python3 -I dtl/dtl_flipflop.py carry/instances/fired10_n20.pg --quiet 2>&1 | sed -n 1p)   # box 7: 10 distinct tangles fired at one context of |R| 12 (FIRED-R ratio 0.83, Oink order)
 [[ "$out" == "n=20 tangles=14 dominions=1 iterations=3" ]] || { echo "fired10_n20 drifted: $out"; exit 1; }
 out=$(python3 -I dtl/dtl_flipflop.py carry/instances/ctx13_n40.pg --quiet 2>&1 | sed -n 1p)   # box 7: 13 distinct first-difference contexts in one phase (CTX+), both orders
@@ -138,6 +144,28 @@ out=$(python3 -I dtl/dtl_flipflop.py carry/instances/fall4_n116.pg --quiet 2>&1 
 [[ "$out" == "n=116 tangles=82 dominions=6 iterations=13" ]] || { echo "fall4_n116 drifted: $out"; exit 1; }
 out=$(python3 -I dtl/dtl_flipflop.py carry/instances/fall3_n76.pg --quiet 2>&1 | sed -n 1p)   # box 7 R31: 3 descents of Π_R at one context (FALL), both orders
 [[ "$out" == "n=76 tangles=56 dominions=3 iterations=10" ]] || { echo "fall3_n76 drifted: $out"; exit 1; }
+out=$(python3 -I dtl/dtl_flipflop.py lag/instances/depth2_n39.pg --quiet 2>&1 | sed -n 1p)   # box 10 R39: first re-steal of DEPTH 2 (dtl_stealdepth, both order data)
+[[ "$out" == "n=39 tangles=15 dominions=1 iterations=10" ]] || { echo "depth2_n39 drifted: $out"; exit 1; }
+[[ "$(sha1sum lag/instances/depth2_n39.pg | cut -c1-12)" == "6200e5869e8f" ]] || { echo "depth2_n39 sha1 changed"; exit 1; }
+out=$(python3 -I dtl/dtl_flipflop.py lag/instances/depth3_n46.pg --quiet 2>&1 | sed -n 1p)   # box 10 R39: re-steal DEPTH 3 (both order data)
+[[ "$out" == "n=46 tangles=15 dominions=1 iterations=11" ]] || { echo "depth3_n46 drifted: $out"; exit 1; }
+[[ "$(sha1sum lag/instances/depth3_n46.pg | cut -c1-12)" == "54cc8526238e" ]] || { echo "depth3_n46 sha1 changed"; exit 1; }
+out=$(python3 -I dtl/dtl_flipflop.py lag/instances/depth4_n53.pg --quiet 2>&1 | sed -n 1p)   # box 10 R39: re-steal DEPTH 4, k 3 (both order data)
+[[ "$out" == "n=53 tangles=18 dominions=1 iterations=12" ]] || { echo "depth4_n53 drifted: $out"; exit 1; }
+[[ "$(sha1sum lag/instances/depth4_n53.pg | cut -c1-12)" == "40dacf0e4b6f" ]] || { echo "depth4_n53 sha1 changed"; exit 1; }
+for row in "4 50 c8fd86165aba 17 12" "8 78 46ad828c7901 25 16" "12 106 0dd2899eacfe 33 20"; do   # box 10 R39 §6: UNIFORM family lagfam.py, depth = D
+  set -- $row; f="lag/instances/fam_D$1_n$2.pg"
+  python3 -I lag/lagfam.py "$1" "$t/fam.pg" && cmp -s "$t/fam.pg" "$f" || { echo "lagfam.py D=$1 no longer generates $f"; exit 1; }
+  [[ "$(sha1sum "$f" | cut -c1-12)" == "$3" ]] || { echo "$f sha1 changed"; exit 1; }
+  out=$(python3 -I dtl/dtl_flipflop.py "$f" --quiet 2>&1 | sed -n 1p)
+  [[ "$out" == "n=$2 tangles=$4 dominions=1 iterations=$5" ]] || { echo "$f drifted: $out"; exit 1; }
+done
+for o in stable oink; do   # depth 4 / k 3 on fam_D4 by L-ALG's dtl_stealdepth.py (in-tree copy = l-alg e0fc1bb0), both order data
+  out=$(cd ../alg && RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=$o python3 -I dtl_stealdepth.py ../red/lag/instances/fam_D4_n50.pg 2>&1 | grep '^max')
+  [[ "$out" == "max k 3; max depth 4" ]] || { echo "fam_D4_n50 depth drifted ($o): $out"; exit 1; }
+  out=$(cd ../alg && RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=$o python3 -I dtl_prefexits.py ../red/lag/instances/fam_D4_n50.pg 2>&1 | grep '^max exits' | grep -o '\[(3, 50,')
+  [[ "$out" == "[(3, 50," ]] || { echo "fam_D4_n50 exits drifted ($o): expected max exits 3 (R39 §7)"; exit 1; }
+done
 if [[ -x ../../tools/oink/build/oink ]] && command -v g++ > /dev/null; then
   meet/oinkmeet.sh carry/instances/meet_viol_n17.pg | grep -q "^MEET FAILS at search 0" || { echo "meet_viol_n17: pinned Oink no longer shows the (MEET) failure (R30)"; exit 1; }
 else echo "meet_viol_n17 pinned-Oink check skipped (no oink build or no g++)"; fi

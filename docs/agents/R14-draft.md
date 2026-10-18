@@ -1,4 +1,4 @@
-# Draft RESULTS R14 (Lead, 2026-10-18 01:16Z by date -u) — NOT LANDED; awaiting REFEREE §C, L-ALG imports, CHECKER gate
+# Draft RESULTS R14 (Lead, 2026-10-18 01:16Z by date -u) (rev. 01:24Z: REFEREE §C abc5185; rev. 01:28Z: L-ALG imports §23v; rev. 01:38Z: CHECKER C14 E-1, N-1) — LANDED as RESULTS R14 (CHECKER C14 PASS, re-diff 1af4995 at ed81675)
 
 ### R14 [refereed-only] Packet 11 on A_DTL: Lemma CHANGE-NEW, F_R ≤ 3·#fired⁺(R) unconditionally, and GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R) (2026-10-18) — partial step-4 reformulation (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -20,23 +20,27 @@
   (c) Honest limit: the bound is tight (spp_chain_up_n43: root D_R = #fired⁺ = 41, both orders), and over all contexts the
       conditional is an EQUIVALENCE: GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R) up to polynomial factors, given STR-DET (GAP-A gives
       (FIRED⁺-R) via Lemma W, ≤ n·S tangles per phase, and (CTX⁺) via R5 (k)); a reformulation, not a reduction to something
-      easier. At G′ alone (FIRED⁺-R) is implied by GAP-A but does not imply it; it is (SPP) there (GAP-A-M §23s end).
-  (d) Data: CHANGE-NEW held at every differing pair checked: REFEREE p11probe.py (corpus 138 files + 2 instances, both orders,
-      AT the first differing tattr) 1,160/1,160 and 1,231/1,231; REFEREE-2 (268 files, both orders) 3,028/3,028 and
+      easier. At G′ alone (FIRED⁺-R) is implied by GAP-A but does not imply it; on chain families where every first
+      difference is at the root (spp_chain_up_n43) it equals S − 1 (both referees). (L-ALG's unrefereed note at the end of
+      GAP-A-M §23s relates the root case to (SPP); not part of R14.)
+  (d) Data: CHANGE-NEW held at every differing pair checked: REFEREE p11probe.py (corpus 138 files, both orders, AT the first
+      differing tattr) 1,160/1,160 and 1,231/1,231, and on spp_chain_up_n43 + stealonce_viol_n76 with dtl_changenew.py 89/89
+      (stable) and 49/49 (Oink); REFEREE-2 (268 files, both orders) 3,028/3,028 and
       3,066/3,066; L-ALG dtl_changenew.py 37,361/37,361; D_R > #fired⁺(R) in 0 contexts.
-- Signatures: REFEREE docs/referee/R-P11.md (referee fc86762; draft f953548; comparison §C PENDING): (a) SIGN WITH GAPS, closed
+- Signatures: REFEREE docs/referee/R-P11.md (referee fc86762; draft f953548; comparison §C abc5185): (a) SIGN WITH GAPS, closed
   (N11-a1, G11-a1); (b) SIGN; (c) CONFIRMED (equivalence); (d) CONFIRMED. REFEREE-2 docs/referee-2/R2-P11.md (referee-2
   aeedd00; comparison §5 bb8a625): (a) SIGN (N11-a1); (b) SIGN (N11-b1); (c) CONFIRMED (equivalence); (d) own probe, 0
-  failures. Independent (each read the other's P11 report only after pushing its own). No REJECT.
-- Gaps (union). G-R14-1..3 closed in the reports, to be imported by L-ALG; G-R14-4..5 OPEN; G-R14-6 dependencies:
+  failures. Independent (each read the other's P11 report only after pushing its own). No REJECT; full agreement after comparison.
+- Gaps (union). G-R14-1..3 closed in the reports and imported by L-ALG (GAP-A-M §23v, l-alg 510cb18, which marks N11-b1
+  as one signature, written before REFEREE §C confirmed it; §23s not rewritten); G-R14-4..5 OPEN; G-R14-6 dependencies:
   G-R14-1 STR-DET is not needed for the determinism step: best_vertices reads str only at 73, to guard a str write (REFEREE
           N11-a1 = REFEREE-2 N11-a1). STR-DET remains a hypothesis of the GAP-A conditional through R9.
   G-R14-2 The threshold step follows from DTL-proof Lemma 1.2 directly (all of Z pushed at 724, Gx = R), not from "the §22r
           Corollary" (REFEREE G11-a1; REFEREE-2 §1 makes the same fix in substance).
-  G-R14-3 Sharper use (REFEREE-2 N11-b1, one signature [REFEREE §C to confirm]): an e*-at-R transition contains a differing
+  G-R14-3 Sharper use (REFEREE-2 N11-b1; CONFIRMED by REFEREE §C abc5185, so two signatures): an e*-at-R transition contains a differing
           consecutive pair and, given STR-DET (c), overlaps occur only where T is constant, so #(e*-at-R) ≤ D_R ≤ #fired⁺(R)
           (2·D_R without STR-DET); hence S − 1 ≤ Σ_R #fired⁺(R) + n(|C_T| + |C_Dom|) + 1, with no H and no F_R.
-  G-R14-4 OPEN (FIRED⁺-R): DATA only; ≤ |R| on all data (tight: fired18_stable_n20 stable, #fired⁺ = |R|); at G′ it is (SPP);
+  G-R14-4 OPEN (FIRED⁺-R): DATA only; ≤ |R| on all data (tight: fired18_stable_n20 stable, #fired⁺ = |R|); at G′ it is necessary, not sufficient, and equals S − 1 on chain families;
           route via (EXIT_c) (GAP-A-M §23u, SKETCH, gap G23u, unrefereed).
   G-R14-5 OPEN (CTX⁺): DATA only; |C_bv| ≤ S − 1 per phase, best contexts/transitions ≈ 0.5 at n = 20, 30, 40 (L-RED box 9,
           unpinned, in progress).

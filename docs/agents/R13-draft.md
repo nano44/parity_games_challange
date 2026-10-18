@@ -1,4 +1,4 @@
-# Draft RESULTS R13 (Lead, 2026-10-18 00:45Z by date -u) (rev. 00:48Z: REFEREE final aabcefd; rev. 00:58Z: REFEREE §C 434a552, L-ALG imports §23t) (rev. 01:12Z: CHECKER C13 E-1) — NOT LANDED; awaiting CHECKER re-diff
+# Draft RESULTS R13 (Lead, 2026-10-18 00:45Z by date -u) (rev. 00:48Z: REFEREE final aabcefd; rev. 00:58Z: REFEREE §C 434a552, L-ALG imports §23t) (rev. 01:12Z: CHECKER C13 E-1) — LANDED as RESULTS R13 (CHECKER C13 PASS, re-diff 8886315 at c886ff9)
 
 ### R13 [refereed-only] Packet 10 on A_DTL: Lemma ENTRY-CHARGE, and GAP-A ⇐ (CTX⁺) ∧ (EXIT_c) (2026-10-18) — partial step-4 reformulation (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
