@@ -58,4 +58,38 @@ STILL OPEN / unclear in the SPEC text (findings against the spec):
 - S5 does not say what σ̄ is on a vertex where both the (iv) and (v) rules could apply; I use (v) for the cycle node only.
 
 ## Results
-See results/<family>.csv and results/random.csv; summary below (filled at the end of the box).
+Snapshot 2026-10-18 23:50Z (tc spec mode still running at N = 26). Per row: game regenerated from L-NEW's `gen`, sha1 equal to
+L-NEW's CSV on every row; regions = pinned Oink zlk (tl where zlk fails); both players' strategies verified by harness/verify.py.
+"equal" = n5b iterations AND fallbacks equal to L-NEW's CSV. "noref" = Oink zlk and tl both did not finish (tc N = 25, 26; zlk and
+tl time out at 300 s); there the strategies are verified (which certifies the regions) and at N = 25 the regions equal Oink dtl's.
+Rows stop where L-NEW stopped (its BUDGET600 marker) or at this lane's 900 s (orig) / 600 s (spec) budget.
+| family | orig: rows (equal / COUNT) | spec: rows (equal / COUNT) | largest N run (spec) | wrong region/strategy | repeated state |
+| --- | --- | --- | --- | --- | --- |
+| counter_core | 22 / 0 | 22 / 0 | 22 | 0 | 0 |
+| counter_dp | 40 / 0 | 40 / 0 | 40 | 0 | 0 |
+| counter_m | 40 / 0 | 40 / 0 | 40 | 0 | 0 |
+| counter_ortl | 29 / 0 | 29 / 0 | 29 | 0 | 0 |
+| counter_qpt | 40 / 0 | 40 / 0 | 40 | 0 | 0 |
+| counter_rob | 1 / 18 | 19 / 0 | 19 | 0 | 0 |
+| counter_rr | 40 / 0 | 40 / 0 | 40 | 0 | 0 |
+| counter_symsi | 22 / 0 | 22 / 0 | 22 | 0 | 0 |
+| recursiveladder | 40 / 0 | 40 / 0 | 40 | 0 | 0 |
+| switchallexp | 40 / 0 | 40 / 0 | 40 | 0 | 0 |
+| switchbestexp | 22 / 0 | 20 / 0 | 20 | 0 | 0 |
+| tc | 7 / 17 (+2 noref) | 24 / 0 (+1 noref) | 25 | 0 | 0 |
+| tc+ | 15 / 0 | 15 / 0 | 15 | 0 | 0 |
+| dlm1 | 40 / 0 | 40 / 0 | 40 | 0 | 0 |
+| dlm2 | 21 / 0 | 21 / 0 | 21 | 0 | 0 |
+| deeptrap | 35 / 0 | 34 / 0 | 34 | 0 | 0 |
+| padsae | 40 / 0 | 40 / 0 | 40 | 0 | 0 |
+| total | 494 / 35 (+2 noref) | 526 / 0 (+1 noref) | | 0 | 0 |
+
+Random games (results/random_orig.csv, random_spec.csv; `gen.py corpus out/rand2k 2000 20261018 --nmin 1 --nmax 120`, sha1 per
+game): 2,000/2,000 correct in BOTH modes (regions = Oink zlk AND harness/zielonka.py, both strategies verified, no repeated state).
+orig: max 11 iterations, 4 fallbacks in total (4 games); spec: max 11 iterations, 244 fallbacks (240 games). Iterations equal on 1,666
+games, spec higher on 296, lower on 38 (|diff| <= 5). L-NEW has not run these files; its n5.py can be compared on the same sha1s.
+
+Findings: (1) n5b in SPEC mode reproduces L-NEW's iteration and fallback counts on every row run of all 17 families; (2) in my
+original reading (A5: optimum ties by (valuation, index)) counts differ only on counter_rob (2N vs 3N+1) and tc (both directions),
+regions and strategies always right: the counts depend materially on the tie-break, the correctness does not; (3) the tie-break
+moves the fallback rate on random games from 0.2% (orig) to 12% (spec) of games.

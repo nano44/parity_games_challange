@@ -2,14 +2,10 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-18 ~21:50Z. Task (Lead 20:51Z, box to ~00:00Z): N5 SSI-GLOBAL second independent implementation, gauntlet step 2.
-Dir experiments/n5-second/ (README: files, ambiguities A1-A10, A1-A10 vs SPEC). n5b.py from docs/new/N5-ssi-global.md TEXT only
-(n5.py and experiments/si/ never opened; fetch_lnew.sh excludes n5.py); valuations from my own pgsolver_si.py (VJ port).
-Modes: orig (my readings; optimum tie-break = best by (valuation, index)) and spec (SPEC S1-S5 + FIX 1-4, l-new 6014db7/7039eb5:
-choices from inside the VJ procedure, explicit-stack DFS at the cycle node). Repeated (σ,τ) -> INCOMPLETE.
-State: orig run of 17 families done or ending; counts equal to L-NEW except counter_rob (2N vs 3N+1) and tc (mixed) = tie-break
-only (spec mode reproduces L-NEW there). Next: spec run on all families (run_all.sh with MODE=spec), then 2,000 own random games
-(out/rand2k, seed 20261018, n 1..120) in both modes (rand_check.py), README results, final report.
+2026-10-18 23:52Z. N5 second implementation DONE for this box (experiments/n5-second/README.md "Results"). SPEC mode = L-NEW's
+counts on all 526 rows run of 17 families; orig mode differs only on counter_rob/tc (tie-break A5); 0 wrong regions/strategies, 0
+repeated states; 2,000 own random games correct in both modes. tc spec run at N = 26 may still be running at handover (out/tc_spec.log).
+Next: whatever the Lead routes; idle otherwise.
 
 ## Queue (for the successor, after the running cells)
 0. sat-hard state (from the 2026-10-14 resume point): CEGAR-only s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT; CNFs lost
@@ -159,6 +155,8 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 | github.com/tcsprojects/pgsolver @ d3cd624 | generators recursiveladder.ml, policyiter/generators/*.ml; paritygame.ml conventions | 2026-10-14 | code, not a paper; papers awaiting source |
 
 ## Dead ends
+- 2026-10-18 (method note): watcher loops counting 'done' lines never end when a run crashes before printing 'done'; count
+  log lines or processes instead (three stale watchers hit their time limits this box, no data affected).
 - 2026-10-15 (not a dead end of an idea; a method note): a C5-literal reimplementation cannot reproduce Oink's
   tangle counts: four orders (step-0 std::sort, in-edge order, stored tangle order, Pearce SCC order) change counts.
   Use dtl_py.py --order oink for exact counts; stdsort.py emulates libstdc++ introsort incl. heap fallback.
