@@ -221,7 +221,45 @@ probe: 60,000 perturbed hard-family / tc games, all verified (§10).
   2000 s timeout at 13:22Z). Above a + b + 2, but growing slowly with the size, not like a product (a·b = 16 / 36 / 64). Every
   run verified.
 
-## 13. Open (for a successor)
+- Compounding (Lead 12:11Z / L-ALG §29 (b)) on leanT: it cannot carry, and the trace shows why (ctxp/d0calls.py on leanT_N8):
+  ```
+  search 0: 64:-1 63:-1 61:-1 ... 40:-1 39:-1 37:-1 36:1 33:-1 32:-1 24:-1 21:-1 ... 3:-1 0:0
+  search 1: 64:-1 ... 41:-1 40:1 32:-1 24:-1 ... 3:-1 0:0
+  ...
+  search 6: 64:-1 63:-1 61:-1 60:1 32:-1 24:-1 ... 0:0
+  search 7: 64:1 32:-1 24:-1 ... 0:0
+  ```
+  The −1 prefix above the rising rung is identical in every search. The stable (learning) call rises one rung per search
+  (|R| 36, 40, 44, ..., 64). Its Dom then swallows EVERY lower rung in one piece: the next depth-0 call is always |R| 32. The
+  tail below 32 is the Odd side, identical in every search, and it learns nothing in Even's phase. So no rung below the rise
+  point is ever re-cut and re-visited as a fresh context. The state of the lower rungs survives as a SUB-CHAIN of the new
+  tangle ({E_j, ..., E_0} contains {E_(j−1), ..., E_0}), not as something reset. Condition (b) fails: nothing is learned in a
+  fresh tail below j after the rise, so nothing can fire high later. Each rung rises exactly once (−1 -> 1).
+  What a counter needs is the opposite: after the rise at j, Dom(stable piece at j) must NOT contain the rungs below j, so they
+  remain a separate tail that is re-cut and must re-learn. Not built in this box.
+
+## 14. Wall time on the seed-8 rule (Lead 11:04Z / 12:17Z; DATA 13:41-13:50Z by date -u)
+- tcS8(N) = tc(N) + the §7 seed-8 rule (`tcpert.py tcS8 N OUT.pg`). Instances tcS8_N6..N11: sha1 d0424940f2d6, c10237a75021,
+  1a7ba80f5dc4, 6b5f47892aa0, 60eaa4e79e6a, 0df9ed4cf315.
+- Pinned Oink WITHOUT -v (no verification, no tracing): wall 0.16 / 1.33 / 6.55 / 29.5 / 102.9 s at N 6..10 (n 138 / 182 /
+  232 / 288 / 350); iterations 6 / 9 / 11 / 14 / 16; tangles 32 / 62 / 91 / 135 / 176. Per-N ratios 8.2, 4.9, 4.5, 3.5: FALLING.
+  N 11 not run (estimated > 5 min).
+- Counters in the reference model (experiments/red/ctxp/d2count.py, dtl_pyref unmodified via hooks, Oink order; the model's
+  searches and tangles equal Oink's):
+
+  | N | n | search_rec calls | max depth | best_vertices calls | sptl calls | tattr calls | vertex pops | attractTangle calls | tangle-vertex scans | dup-key comparisons |
+  |---|---|---|---|---|---|---|---|---|---|---|
+  | 6 | 138 | 43 | 2 | 131 | 39 | 21,837 | 846,259 | 1,884,445 | 90,113,014 | 528 |
+  | 7 | 182 | 69 | 2 | 224 | 72 | 62,904 | 2,693,901 | 13,337,907 | 917,770,088 | 1,953 |
+  | 8 | 232 | 91 | 2 | 317 | 103 | 117,282 | 6,554,366 | 52,883,955 | 4,785,387,135 | 4,186 |
+
+  Ratios N 6->7 / 7->8: search_rec 1.6 / 1.3; best_vertices 1.7 / 1.4; tattr 2.9 / 1.9; pops 3.2 / 2.4; attractTangle calls
+  7.1 / 4.0; tangle-vertex scans 10.2 / 5.2. Every ratio falls.
+- The term that carries the wall time is the tangle-attractor scan: attractTangle calls (one per tangle having the popped
+  vertex as an escape) times the tangle's size. With |T| = 32..91 tangles of size up to about n, this is at most
+  pops × |T| × n, inside D2's per-iteration form O((n + |T|)(m + Σ|t|) d). Local exponent in n: about 8.4, then 6.8. It is a
+  high-degree polynomial, not an exponential, and not an Oink artefact (the model shows the same growth). No D2 counter grows
+  exponentially on this data.
 - tcL N ≥ 14 and tcR4 N ≥ 9 need a lighter context tool (ctxlight peaks above 5 GB at n ≈ 490).
 - (DEEP-STAB): close the tangle-split gap (§5) or find a counterexample.
 - Item (2): a staircase whose rungs are RE-learned with new tangles after a higher rung advances (§12).
