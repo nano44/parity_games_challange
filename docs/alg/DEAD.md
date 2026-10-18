@@ -270,3 +270,9 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
   - (QUIET-LIN) and (QUIET-NEWV), linear forms of QUIET-BLOCK (GAP-A-M §23z): DEAD. Instances dtl_cross3_n14.pg (90d95c85),
     fired18_stable_n20.pg (42307b22), spp_final_n30.pg (e57c2cf9), spp_n30.pg (587697ae), all re-run with pinned Oink (verified);
     dtl_quietlin.py, both orders. Obstruction: a vertex joins W at different (round, level) slots at different pairs of one block.
+  - RESULTS DE21 (L-RED R39, l-red 9cd2702 / c021789; Lead-verified, trunk 19a892c): (STEAL-DEPTH_D) for constant D and (EXIT_2)
+    are FALSE on A_DTL in both orders: experiments/red/lag/instances/depth2_n39.pg (6200e586), depth3_n46.pg (54cc8526),
+    depth4_n53.pg (40dacf0e), re-steal depth 2/3/4; L-ALG re-ran pinned Oink (10/11/12 iterations verified) and dtl_drthr /
+    dtl_stealdepth (GAP-A-M §24f). Mechanism: inversion relay F_j = ¬(F_{j−1} ∨ x ≥ j+3) driven by a staggered freeze clock.
+    (EXIT_c) for any constant is endangered (exits 3 at D = 3-4).
+  - (EXIT-LEAD-DISTINCT) (GAP-A-M §24e): DEAD on the same instances, both orders (repeated leading keys 13/29/50); dtl_exitlead.py.
