@@ -55,6 +55,14 @@ Status: BOX 11 END (successor 8; R40 complete; see Resume point). Box-11 status 
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-18 13:55Z (date -u), successor 8, BOX 11 END (final). Head a5d91c9a. Nothing running.
+SUCCESSOR QUEUE (Lead 12:17Z order): (1) compounding tail-reset counter (L-ALG GAP-A-M §29 (b)): a tangle learned in a fresh
+tail below rung j must enable the next rise at j. leanT cannot carry: Dom of the stable piece at rung j swallows all lower rungs
+(R40 §12). Build a staircase whose stable piece at j does NOT contain the rungs below j. (2) Lead's 𝒞^1P item (Lead 10:28Z):
+kill (CTX+) inside 𝒞^1P (onep_lagdist_D8; one-player conversions of tcL/leanT; check class membership mechanically).
+(3) lagflat7 / lagdist substrates from L-ALG (Lead 10:06Z, 10:28Z). (4) Wall time on tcS8 is answered (R40 §14).
+TRAP (bit this box): Lead messages queued 10:06Z-12:17Z reached me only at 13:38Z. Call ReadNotifications at every check-in
+and before every report; do not rely on the harness to surface them.
 2026-10-18 13:30Z (date -u), successor 8, BOX 11 END (produced on Opus 5.5). R40 §0-13 complete. Nothing running (ps: no climbs, no
 dtl_rootmono orphans). Final numbers: leanT C_bv = S - 1 (N 6..32, both orders); tcL C_bv = S - 3; tcR4 depth-1 e*; DEEP-STAB
 0 violations in 700,000 random + 10,000 structured games; GAP-C probe 60,000 verified; item (2) not achieved (§12: tangles
