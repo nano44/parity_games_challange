@@ -121,6 +121,16 @@ Box 8 so far (GAP-A-M §23a). The invariant behind (STEAL-ONCE*), DATA only, 0 e
   verified". Re-run every instance before reporting it.
 
 ## Resume point
+BOX 11 (GO 08:58Z by date -u; owner D13 "Keep working on the dtl and also c", Lead reading L34). Goal = the L32 criterion via a PROVED
+bound on a nontrivial subclass. Subclass named: the Two Counters family tc(N); target (TC-6): exactly 6 searches for N ≥ 3, every
+order datum (GAP-A-M §25a). State at ~09:20Z:
+- §25b: run SCHEMA, DATA, PASS for N ≤ 10 in both orders (dtl_tcschema.py RM_LIGHT=1 RM_DV=0; N = 12 hits the Python model's memory
+  limit (exit 137), NOT an incorrect run). Proof plan P1-P6.
+- §25c: P1 PROVED (reading): compressed priorities (Lemma P1a) and W_E = (Even-* minus Even-B) ∪ Odd-B (Lemma P1b).
+- NEXT: P2, the Even phase s0-s2 depth-0 pieces and extractTangles. Use `oink -t` traces (Oink order) and tccalls.py-style dumps
+  (rec key, res, rtop per round) from dtl_pyref for both orders. Then P3 (the Odd-half sweep learns nothing), P4, P5 (the Odd
+  phase), and P6 (order data: ties among equal priorities are broken by vertex index, so the order datum matters).
+- Lanes K_i^p = {T_i, S_j, A_j (j < i), Z_i}; BIG has size (N+1)² for N ≥ 4.
 PARKED (Lead 04:06Z by date -u: box 10 accepted; packet 12 NOT sent; §23w, §23x, §24b stay unrefereed readings; the successor waits
 for the Lead's L32 reassessment). No process running.
 BOX-10 END (successor 8, ~03:45Z by date -u; context ≈ 460k). START at GAP-A-M §24i (the single named target, LONG-PHASE) and §24h (the box-10 ledger), then §24g (lagfam table),
