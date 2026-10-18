@@ -1,0 +1,2 @@
+instances/n5perturb/sae4_best.pg 8b264e95f022 n=63 iterations=38 fallback=1 zielonka(oink zlk) OK strategies verified
+instances/n5perturb/sbe3_best.pg cbf7b0298fcd n=85 iterations=73 fallback=0 zielonka(oink zlk) OK strategies verified

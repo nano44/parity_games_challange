@@ -5,7 +5,7 @@ and each one asserts that its counts equal n5.run's (n5_trace.py; n5_adv2.py re-
 Every solution cited is checked by check_sol2.py (Oink zlk + harness/verify.py) or by zielonka.py + verify.py (n5_adv2.py).
 Outputs: experiments/new/n5/box4/.
 
-## Result: NOT KILLED (attempts 3, 4, 4b, 4c, 4d, 5, 6, 7; cycling attack §8). Forced fallback ("lock") exists but does not scale; obstruction below.
+## Result: NOT KILLED (attempts 3, 4, 4b, 4c, 4d, 5, 6, 7, 8; cycling attack §8). Forced fallback ("lock") exists but does not scale; obstruction below.
 
 ## 1. Deeptrap oscillation (26 / 15 / 33 / 18 at N = 6 / 7 / 8 / 9): explained, linear
 Per-iteration traces: n5_trace.py on gen_deeptrap.sh N (sha1 5134273723.., 835ce1326c.., 3ce8d18866.., b88d40574b..),
@@ -151,6 +151,13 @@ All linear. No slow start pair exists on these families.
 | K = 6 (seed 63, N = 3, 4, 5) | min lock 2 | - |
 | K = 4 (seed 43, N = 3, 4, 5) | min lock 1 (best so far) | - |
 No per-bit gadget found whose lock or iteration count grows with N.
+
+### 5e. Attempt 8: perturbation climb FROM Friedmann's games (n5_perturb.py; fitness = iterations + 0.5 per fallback)
+| start game | n | start iterations | best after 3,000 steps | instance | check |
+| --- | --- | --- | --- | --- | --- |
+| switchallexp N = 4 | 63 | 8 | 38 (1 fallback) | instances/n5perturb/sae4_best.pg | Oink zlk OK, verified (perturb_check.txt) |
+| switchbestexp N = 3 | 85 | 41 | 73 (0 fallbacks) | instances/n5perturb/sbe3_best.pg | same |
+Both stay below n iterations, in line with box 3's random climbs (≤ 1.6 n). Small edits to Friedmann's games do not break N5's shortcut.
 
 ## 8 (Lead 21:35Z). Repeated states and Ξ-flat iterations (the cycling attack on G-N5-TERM): NOT killed
 - Simultaneous best-response updates can cycle in general, so a repeated (σ, τ) state would be an incomplete run, i.e. a kill.
