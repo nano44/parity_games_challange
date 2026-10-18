@@ -6,7 +6,8 @@ searches have the same call sequence entirely (then the difference is in tangle 
 TREE=1 also tests (TREE-NEW): every transition gives some vertex a new key (v, depth, rank, |R|, |V|) over the contexts of ALL
 calls containing it, and (TREE-PIECE): the same with the call's PIECE and its position in the parent call (b12_pot's full key,
 at every depth).
-Usage: DTL_ORDER=stable|oink [NMAX=n | CLASS=1 DIST=1] [TREE=1] b12_ident.py G.pg ..."""
+Usage: DTL_ORDER=stable|oink [NMAX=n | CLASS=1 DIST=1] [TREE=1] b12_ident.py G.pg ...
+   or: DTL_ORDER=... b12_ident.py climb START.pg STEPS SEED OUTDIR   (two-player climb against (TREE-PIECE))"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import pg, fixd_stealentry as SE, b12_pot as B
@@ -62,6 +63,48 @@ def treenew(d, n, keyf=None):
         seen |= k; prev = ph
     return tr, bad, ex
 
+
+def tp_score(g, order):
+    """(transitions without a new TREE-PIECE key, −(fewest vertices with a new key at one transition), transitions, searches).
+    With PLUS=1 ((TREE-PIECE⁺)): transitions whose call sequence (depth, R, rank, V) is identical are skipped (§34c)."""
+    d = run(g, order); log = getattr(d, "log", []); allc = getattr(d, "allc", {}); bad = tr = 0; marg = g.n + 1; seen = set(); prev = None
+    plus = os.environ.get("PLUS") == "1"; pcalls = None
+    for ph, calls in log:
+        A = allc.get(id(calls), []); k = treepieces(A, g.n)
+        if prev == ph and not (plus and A == pcalls):
+            tr += 1; nv = len({x[0] for x in k - seen}); marg = min(marg, nv); bad += (nv == 0)
+        elif prev != ph:
+            seen = set()
+        seen |= k; prev = ph; pcalls = A
+    return (bad, -marg, tr, d.iterations)
+
+
+def tp_climb(start_file, steps, seed, out, order):
+    """class-free climb (fixd_oneplayer.mutate with ONEP_ANY=1, two-player games, priorities as mutated) on tp_score."""
+    import random
+    os.environ["ONEP_ANY"] = "1"
+    from fixd_oneplayer import mutate
+    rnd = random.Random(seed); g = pg.read(start_file); P = max(g.prio) + 1; sg = tp_score(g, order); os.makedirs(out, exist_ok=True)
+    print("start", sg, flush=True)
+    for it in range(steps):
+        h = mutate(g, 0, P, rnd)
+        if h is None: continue
+        try:
+            sh = tp_score(h, order)
+        except RecursionError:
+            continue
+        if sh >= sg:
+            if sh > sg: print(it, sh, flush=True)
+            g, sg = h, sh
+            if sg[0] >= 1:
+                fn = os.path.join(out, f"treepiece_viol_n{g.n}_s{seed}.pg"); pg.write(g, fn); print("VIOLATION", sg, fn, flush=True); return
+    fn = os.path.join(out, f"treepiece_final_n{g.n}_s{seed}.pg"); pg.write(g, fn); print("final", sg, fn)
+
+
+if __name__ == "__main__" and len(sys.argv) > 1 and sys.argv[1] == "climb":
+    sys.setrecursionlimit(100000)
+    import importlib; M = importlib.import_module("b12_ident")
+    M.tp_climb(sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), sys.argv[5], os.environ.get("DTL_ORDER", "stable")); sys.exit(0)
 
 if __name__ == "__main__":
     sys.setrecursionlimit(100000); order = os.environ.get("DTL_ORDER", "stable")

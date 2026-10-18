@@ -4595,3 +4595,16 @@ there). The membership variant (v, d, rank, |R|, |V|) over all contexts containi
 a_best_s31): the piece and the position are essential.
 Honest reading: the same caveat as §32c. Phases in the data are short (≤ 42 transitions), the statement is a no-repetition statement
 over a poly-size state space, and it has no proof; on 𝒞^1P its depth-0 part reduces (§33b) to the cross-context (XCTX@p0).
+34c. (TREE-PIECE) literal: FALSE (self-kill, 19:13Z by date -u; two-player climb b12_ident.py climb, seed 113, from a margin-1 game).
+Pinned: experiments/alg/instances/tp_ident_n20.pg (sha1 dfeb04607e88; two-player; pinned Oink 4 iterations, 8 tangles, 1 dominion,
+solution verified; model winners equal to Zielonka; both orders). In Odd's phase the two searches have IDENTICAL call trees (one
+stable root call, |R| = 20, the same V*); the difference is only inside sptl at that stable context (the second search extracts the
+dominion with the tangle the first one learned). No key can see that.
+Amended (TREE-PIECE⁺): the statement at every transition whose call sequence (depth, R, rank, V) changes. Identical-tree transitions
+come in runs at one fixed call tree, and every search of a run differs only inside sptl at a stable context of that tree. Reading
+(to be checked): on 𝒞^1P such a run is bounded by the signed per-context budget (R9 (c) / R7 (d): (D_R + 1)(H + 1) with D_R = 0 there,
+NOSTEAL-1P) summed over the stable contexts of the tree, so (TREE-PIECE⁺) ∧ that budget ⇒ searches per phase ≤ (#keys + 1)·poly.
+In two-player games D_R (the falls) is not bounded, so identical-tree runs remain an open count there ((FALL)-type).
+DATA: the library and L-RED's instances contain no identical-tree transition (34a: every identical-depth-0 transition differs
+deeper); the climb found one at the end of a phase. Climbs against (TREE-PIECE⁺) (PLUS=1): from tp_ident_n20, stable, 8,000 two-player steps: 0 violations (margin down to 1, best 8
+transitions at n = 20); from vrV_viol_n40, Oink order: running at 19:24Z.
