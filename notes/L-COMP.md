@@ -2,13 +2,14 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-15 23:05Z. DTL gauntlet step 2 DONE: (i) bench (Oink pinned dtl/idtl vs Zielonka, verified strategies, families +
-growth: experiments/dtl-bench/README.md, d1537b0/011fec0); (ii) second implementation dtl_py.py from C5-DTL.md only,
-cross-checked against Oink on 238,071 games (all five quantities equal with --order oink; regions/strategies equal with
-C5-literal orders); 3 divergences, all C5 order/counter omissions (README table; reported to Lead 21:19Z, 21:56Z, 22:14Z).
-L15 DONE 23:30Z (experiments/hard-families/pgsolver-binary-diff.md): binaries ran (no classifier refusal); generators
-byte-identical, switchall/switchbest iteration counts and solutions identical. PARKED after this (Lead 23:08Z); sat-hard
-parked with the T-L2 line (L25).
+2026-10-18 ~21:50Z. Task (Lead 20:51Z, box to ~00:00Z): N5 SSI-GLOBAL second independent implementation, gauntlet step 2.
+Dir experiments/n5-second/ (README: files, ambiguities A1-A10, A1-A10 vs SPEC). n5b.py from docs/new/N5-ssi-global.md TEXT only
+(n5.py and experiments/si/ never opened; fetch_lnew.sh excludes n5.py); valuations from my own pgsolver_si.py (VJ port).
+Modes: orig (my readings; optimum tie-break = best by (valuation, index)) and spec (SPEC S1-S5 + FIX 1-4, l-new 6014db7/7039eb5:
+choices from inside the VJ procedure, explicit-stack DFS at the cycle node). Repeated (σ,τ) -> INCOMPLETE.
+State: orig run of 17 families done or ending; counts equal to L-NEW except counter_rob (2N vs 3N+1) and tc (mixed) = tie-break
+only (spec mode reproduces L-NEW there). Next: spec run on all families (run_all.sh with MODE=spec), then 2,000 own random games
+(out/rand2k, seed 20261018, n 1..120) in both modes (rand_check.py), README results, final report.
 
 ## Queue (for the successor, after the running cells)
 0. sat-hard state (from the 2026-10-14 resume point): CEGAR-only s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT; CNFs lost
