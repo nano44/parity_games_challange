@@ -558,3 +558,4 @@
 - 01:22Z (date -u) merged checker 8886315 (C13 re-diff PASS) and referee abc5185 (R-P11 §C: N11-b1 confirmed). LANDED RESULTS R13 before Dead ends (body identical to R13-draft lines 4-end; stamp checker 1bd345d + re-diff 8886315); draft marked LANDED; GAPS GAP-A row updated (R13, packet 11). R14 draft updated (REFEREE §C; G-R14-3 two signatures).
 - 01:25Z (date -u) merged l-alg 510cb18 (§23v packet-11 imports; handover L32 line corrected; reading: GAP-A ⇐ (CTX⁺) ∧ (D-POLY), and (EXIT_c) + bound on D_R^thr suffices). R14 draft final; to CHECKER C14.
 - 01:29Z (date -u) merged checker 5019c88 (C13 post-landing PASS; recommended note applied: GAPS packet-11 sentence marked 'refereed by both, not yet gated by CHECKER').
+- 01:33Z (date -u) merged referee 563d46c (notes/REFEREE.md LANE-RESTART step 1 ready; parked ~520k). Successor at the next packet.
