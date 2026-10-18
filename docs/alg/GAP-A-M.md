@@ -3904,3 +3904,79 @@ Proof (Even side; Odd is symmetric with the roles swapped and priorities one low
 - Hence E′ ⊆ W_E and O′ ⊆ W_O, and since they partition V, equality holds. □
 Checked against pinned Oink's solutions at N = 3, 4, 10, 12: "W_E = Even-* minus Even-B plus Odd-B: YES".
 Consequence for P2-P5: (TC-6)'s two dominions are exactly E′ and O′ (dominion 14 / 15 in the N = 3 trace).
+
+26. Box 11 (L-ALG successor 9; Lead GO 09:38Z, owner D13 "Keep working on the dtl and also c", Lead reading L34; produced on
+Opus 5.5): (FIX-d) scoping, "is the number of searches of A_DTL bounded by n^{f(d)} at a fixed number d of priorities?"
+(written 09:52Z by date -u). Everything below is DATA or a reading, unrefereed. d = number of distinct priorities after Oink's
+renumber (Oink prints "renumbered (d priorities)"); "searches" = Oink iterations (one search() each, run() dtl.cpp 1106-1121).
+
+26a. Data at fixed d: random games, climbs, and the fleet library (tools experiments/alg/fixd_scan.py, fixd_climb.py, fixd_ctx.py)
+- Random games (gen.random_game, priorities uniform in 0..d−1, out-degrees 1-2 / 1-3 / 2-5 mixed, seeds 3 and 7):
+  - pinned Oink, 200 games per n, n = 25, 50, ..., 3200: max searches 4-5 at d = 2, 3 and 4, flat in n; 0 unverified runs.
+  - dtl_pyref --order stable, 100 games per n, n ≤ 400 (d = 3, 4) and n ≤ 200 (d = 2): max searches 3-5; 0 Zielonka mismatches.
+  - Random games at fixed d are easy for A_DTL and say nothing about GAP-A.
+- Climbs (pinned Oink, score = searches − dominions, 3000-4000 steps, 2 seeds): best 7 at d = 3 (n ≤ 48), 8 at d = 4, 8 at d = 5;
+  at d = 2: 3, 4, 5, 6 at n = 10, 16, 24, 32 (fixd_d2_n32.pg below). Weak climber; no growth signal beyond linear.
+- Lower bound already on record at d = 3: dtl_chainfam UP with all x_j at priority 0 (§21b) has priorities {0, 2k, 2k+1}, i.e.
+  d = 3, and n − 1 searches in one phase in stable order. So a fixed-d bound is at least linear.
+- The fleet library (239 instances under experiments/*/instances, both order data): every instance that killed a GAP-A
+  statement (DE9-DE21 and DEAD.md) has d ≥ 6 (fired18_stable_n20 d = 6, ctx13_n40 d = 29, fall4_n116 d = 88, depth2_n39 d = 23).
+  Per context, grouped by k = |pr(R)|: max D_R = 0 at k ≤ 2 (up to 19 visits), 1 at k = 3, then growing (8-10 at k = 11-12).
+  Fixed small d was untested adversarially before this box.
+- d = 2 is not trivial for DTL: on fixd_d2_n32.pg (Oink order) the root context has 6 visits and D_R = 5, each search
+  shrinking the stable best vertices by one vertex (chain-like, as in §21b). So "contexts with ≤ 2 priorities never change"
+  (the library pattern) is FALSE.
+
+26b. lagfam survives at d = 3: every constant local premise is FALSE at fixed d (DATA; tool experiments/alg/fixd_lagcollapse.py)
+Construction: build L-RED's lagfam(D) (experiments/red/lag/lagfam.py, d = 3D + 14, n = 7D + 22); renumber the vertex ids by
+(original priority, original id), so that the stable index order of equal-priority vertices is the original priority order; then
+merge priority classes. MODE flat7: clock x_j, b, z → pr(b); a, w_j, y_j, v_j, f_j, W → pr(a); every T_j, tau_j and S → pr(S).
+After compression the priorities are {0, 1, 2}: d = 3, top priority 2 even (Even's), all relay tops at the top priority.
+Results (stable order: dtl_pyref model, winners equal to Zielonka; pinned Oink: verified):
+| D | n | d | sha1 (12) | stable: searches / tangles | re-steal depth, max k | max exits | root D_R | #fired⁺ | Oink searches |
+| 2 | 36 | 3 | 77f2821d486a | 10 / 13 | 2, 2 | 2 | 8 | 12 | 4 |
+| 4 | 50 | 3 | 45de9d933756 | 12 / 17 | 4, 3 | 3 | 10 | 16 | 12 |
+| 8 | 78 | 3 | 60f2df733ffa | 16 / 25 | 8, 5 | 5 | 14 | 24 | 15 |
+| 12 | 106 | 3 | aa5fceaae0aa | 20 / 33 | 12, 7 | 7 | 18 | 32 | 19 |
+| 16 | 134 | 3 | 67b2d56b32c6 | 24 / 41 | 16, 9 | - | - | - | 23 |
+(D = 6, 10: depth 6, 10; Oink 3 and 17 searches.) dtl_stealdepth.py and dtl_totals.py (RM_EXCL=1 RM_LIGHT=1 RM_DV=0, RM_PREF=1
+for the depth). The totals equal lagfam's own profile (§24g) exactly: D_R = D + 6, #fired⁺ = 2D + 8, Σ_q k_q and X_R the same,
+and the ROOT is the maximal context for every quantity. Intermediate modes: MODE both (d = 8) and flat5 (d = 4,
+lagflat5_d4_D8.pg, sha1 8919a5ab76f4) keep depth = D; flat3, flat4, flat6 (other merges, d = 4) kill the relay.
+Oink order: pinned Oink stays linear (searches above), and the Oink-order model keeps depth 4 at D = 4 but collapses to depth 0
+at D = 6, 8, 10, 12 (std::sort is unstable on large equal-priority classes, the §21b effect). Under L22/L26 a statement about
+A_DTL must hold for every order datum, so the stable-order data kill it.
+Consequences:
+- (STEAL-DEPTH_{f(d)}) and (EXIT_{f(d)}) are FALSE for every function f: at d = 3 the re-steal depth is D and the max exits
+  are D/2 + 1, unbounded. So R12 (c) and R13 give no fixed-d route; at d = 3 the live routes are those of the general case,
+  (CTX⁺) plus one polynomial-total premise (§24i).
+- Reading: lagfam's relay levels are carried by the INDEX ORDER of equal-priority tops, not by priorities. Region tops are
+  processed in descending index (dtl.cpp 691) and each region is capped at max_prio = pr(top) (attractVertices line 74,
+  attractTangle line 140); with all tops at one priority the caps are equal, and the processing order alone stages the relay.
+  So d is not the parameter that controls DTL's per-context state; the number of distinct (priority, index) positions is n.
+
+26c. The induction skeleton over the top priority, and where it breaks (reading)
+- Depth. search_rec recurses only on Z, the threshold-t attractor to X minus the opponent attractor of its priority-t vertices
+  (dtl.cpp 898-954: t at 898-904, attraction capped at t at 921 with 74/140, priority-t vertices moved to X at 937-947, recursion
+  954). So a depth-(k+1) context has only priorities < t ≤ max pr of its parent, and a depth-k context has ≤ d − k priorities.
+  Recursion depth ≤ d is already on record (DTL-proof.md §3(c), line 533; C5-DTL.md line 163).
+- At d = 3: depth 2 contexts have one priority. If it has the opponent's parity, best_vertices returns 0 at once (line 668);
+  if p's, V = R and the call is one region pass. Depth 1 contexts have ≤ 2 priorities. The root G′ has 3.
+- Signed coverage per level (every order datum): R9 (a)-(c) per-context budgets and R14 (CHANGE-NEW: D_R ≤ #fired⁺(R),
+  F_R ≤ 3·#fired⁺(R)) hold at every level; R8 STR-DET and R5 (h) FDL locate the first difference at one level. R12 (c) / R13
+  are the only signed results that would turn a FIXED-d local constant into a bound, and 26b kills their premises at d = 3.
+- Where the premises enter at d = 3: (CTX⁺) at depth 0 (the root's shrinking best_vertices contexts R \ X, 6 per phase on
+  lagflat7 D = 4) and at depth 1; (LONG-PHASE) = (FIRED⁺-R) at the ROOT G′, where lagflat7 carries the whole relay.
+- The predecessor's idea "at the top level q the root regions are full attractors, so level q behaves like a Büchi round"
+  (notes/L-ALG.md fe1b928, unverified) does not hold as a simplification: in lagflat7 every relay top (T_j, tau_j, S) is at
+  q = 2, and the relay lives among those same-priority tops. The full-attractor property only holds for the FIRST top of
+  priority q; later tops of priority q work in CurR = R minus the earlier regions (line 690, 699), which is exactly the prefix
+  P(τ⁺) of Lemma CHARGE (STEAL-DEPTH.md), and the steals happen there.
+
+26d. VERDICT (FIX-d): NO ROUTE. At d = 3, GAP-A is as open as in general. The open point is exactly (LONG-PHASE) at the root
+context G′ (equivalently (FIRED⁺-R) at G′, R-P11 (c)), together with (CTX⁺) for the depth-0 and depth-1 contexts. Fixing d bounds
+the call depth (≤ d) but none of the per-context local constants. A d = 3 proof of a polynomial bound would be a proof of
+(LONG-PHASE) at the root itself, for a root whose relay uses only one priority value. Not started; the Lead decides the next item.
+Family for L-RED (named, not run by me): lagflat7 (d = 3) is a substrate for long-phase / counter attempts at fixed d; an
+Oink-order version (an input permutation whose std::sort order realises the stable order on the large classes) would make it
+order-robust.

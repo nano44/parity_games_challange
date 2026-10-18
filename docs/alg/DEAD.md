@@ -276,3 +276,15 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
     dtl_stealdepth (GAP-A-M §24f). Mechanism: inversion relay F_j = ¬(F_{j−1} ∨ x ≥ j+3) driven by a staggered freeze clock.
     (EXIT_c) for any constant is endangered (exits 3 at D = 3-4).
   - (EXIT-LEAD-DISTINCT) (GAP-A-M §24e): DEAD on the same instances, both orders (repeated leading keys 13/29/50); dtl_exitlead.py.
+- Box 11, L-ALG successor 9 ((FIX-d) scoping, GAP-A-M §26; produced on Opus 5.5):
+  - (STEAL-DEPTH_{f(d)}) and (EXIT_{f(d)}), "re-steal depth / exits per (step, vertex) are bounded by a function of the number
+    of priorities d": FALSE already at d = 3 (stable order datum). Instances experiments/alg/instances/lagflat7_d3_D4.pg
+    (sha1 45de9d933756), lagflat7_d3_D8.pg (60f2df733ffa), lagflat7_d3_D16.pg (67b2d56b32c6): L-RED's lagfam(D) with its
+    priority classes merged to {0, 1, 2} (fixd_lagcollapse.py D flat7), n = 7D + 22; re-steal depth D, max exits D/2 + 1, the
+    same totals as lagfam; winners equal to Zielonka (stable model) and pinned Oink verified (12 / 15 / 23 searches).
+    Obstruction: the relay levels are carried by the index order of equal-priority region tops (dtl.cpp 691 with the caps at
+    74 / 140), not by priorities. Also at d = 4: lagflat5_d4_D8.pg (8919a5ab76f4), depth 8.
+  - Unnamed pattern from the library scan, "contexts with ≤ 2 priorities have D_R = 0 in a phase": FALSE at d = 2,
+    experiments/alg/instances/fixd_d2_n32.pg (sha1 8e8e3fe6624d; pinned Oink verified), root D_R = 5 over 6 visits (Oink order).
+  - The "top level q behaves like a Büchi round" simplification of the FIX-d induction (notes/L-ALG.md fe1b928): does not hold;
+    on lagflat7 all relay tops share the top priority q and the steals happen in later same-priority tops' CurR (dtl.cpp 690, 699).

@@ -1,27 +1,31 @@
-# L-ALG notebook (successor 8, end of box 11 handover; produced on Opus 5.5)
-Overwritten at the box-11 handover (Lead decision 09:28Z by date -u: successor now). Older content, including boxes 1-10 resume
-points, tools and traps, is in git history: `git show a98a158:notes/L-ALG.md` (box 10/11), `git show 8a9c0f44:notes/L-ALG.md` (boxes 1-7).
+# L-ALG notebook (successor 9, box 11; produced on Opus 5.5)
+Successor 8's handover text is in git history: `git show fe1b928:notes/L-ALG.md`. Older: `git show a98a158:notes/L-ALG.md`.
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push only with `scripts/push.sh > $S/push.log 2>&1; echo exit $?`.
-Truth for GAP-A: docs/alg/GAP-A-M.md §23-§25 (§24h is the box-10 ledger, §24i the single named target, §25 box 11).
-Dead ends: docs/alg/DEAD.md.
+Truth for GAP-A: docs/alg/GAP-A-M.md §23-§26 (§26 = box 11 FIX-d scoping). Dead ends: docs/alg/DEAD.md.
 
-## Resume point
-Successor 9 starts here. Owner D13 (verbatim): "Keep working on the dtl and also c". Lead reading L34: the DTL proof lane continues
-at the D7 rate. Box-11 goal (Lead): the L32 progress criterion. Either a proof route for (LONG-PHASE) (§24i), or a PROVED polynomial
-bound on the searches of A_DTL on a nontrivial STRUCTURAL class (a property of the game, infinite).
-QUEUE (Lead 09:28Z), in order:
-1. (FIX-d) scoping. The verdict goes to the Lead within your first ~1.5 h.
-   - Target: the searches of A_DTL are ≤ n^{f(d)} for games with d priorities, for an explicit f; failing that, d = 3 alone
-     (d = 2 only with a reason why it is not already trivial for DTL).
-   - Measure the max searches against n on random d = 3 / 4 games (gen.random_game in experiments/harness; dtl_step5stats
-     RANDOM/SEED; renumber to d priorities), and on lagfam at few priorities.
-   - Write the induction skeleton: which signed lemma covers which level, and where (CTX⁺) / (LONG-PHASE) enter at fixed d.
-   - If (CTX⁺) or (LONG-PHASE) is as open at d = 3 as in general, say exactly where. Then fall back to another structural class
-     under the same test.
-2. TC-6 steps P2-P6 (§25b), FALLBACK ONLY, labelled "single family, not L32 progress" (the Lead objected to TC-6 as a target at
-   09:16Z: it is the family tangle learning was built to beat).
+## Resume point (2026-10-18 09:53Z by date -u)
+Box 11 (GO 09:38Z by the Lead's message, to about 14:40Z). Item (1) (FIX-d) scoping DONE: GAP-A-M §26, verdict NO ROUTE (§26d).
+- At d = 3, lagflat7 (lagfam with priorities merged to {0,1,2}) keeps re-steal depth D and exits D/2+1 (stable order), so every
+  constant-local premise is false at fixed d; the open point at d = 3 is (LONG-PHASE) at the root G′ plus (CTX⁺) at depths 0-1.
+- NEXT: wait for the Lead's pick. Plan item (2) does not apply (no route). Item (3) TC-6 P2-P6 is the fallback, labelled
+  "single family, not L32 progress". Possible other structural classes (not tested): one-player games, bounded out-degree,
+  all-distinct priorities; each must survive the same test (does a lagfam variant live in the class?).
 
-## DONE (box 10 and box 11; all pushed; all readings are unrefereed unless marked)
+## DONE (box 11, successor 9)
+- Handover check 0a7b8d8 (5/5 per Lead), trunk merge 443e6f5.
+- §26 (FIX-d) scoping with tools fixd_scan.py, fixd_climb.py, fixd_ctx.py, fixd_lagcollapse.py; check.sh runs the lagflat7 D = 4
+  depth check; instances lagflat7_d3_D4/D8/D16, lagflat5_d4_D8, fixd_d2_n32 (sha1s in §26b and DEAD.md).
+
+## Things only I know (successor 9)
+- Clock: `date -u` in this container reads earlier than the work volume suggests; I used it as instructed, unadjusted.
+- fixd_lagcollapse.py renumbers ids by (original priority, id) BEFORE merging, so stable order reproduces lagfam's processing
+  order exactly; without that renumbering the merged game loses the relay (checked at D = 4: depth 0). Oink's std::sort is unstable on the big merged
+  classes, so the Oink-order runs collapse at D = 6, 8, 10, 12 (depth 4 survives at D = 4).
+- fixd_climb.py scores (searches − dominions, tangles, longest phase); it is weak (best 6-8 at n ≤ 48). Random games at
+  fixed d have 4-5 searches up to n = 3200.
+- Every library killer has d ≥ 6; small fixed d was untested before §26.
+
+## DONE (successor 8: box 10 and box 11; all pushed; all readings are unrefereed unless marked)
 - Box 10 (§23v-§24i; ledger §24h):
   - packet-11 imports (§23v; N11-b1 has two signatures);
   - Lemma QUIET-BLOCK (§23w) and EXIT-ORIGIN (§23x), frozen packet candidates (the Lead did NOT send packet 12);

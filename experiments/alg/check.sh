@@ -57,4 +57,8 @@ python3 -I app_model.py 1 2 3 4 5 6 | tail -1
 python3 -I dtl_chainfam.py --check | tail -1
 # GAP-A-M.md §21d: the First-Difference Lemma holds mechanically on three long phases (Oink order)
 DTL_ORDER=oink python3 -I dtl_fdlcheck.py instances/spp_final_n20.pg instances/spp_chain_up_n43.pg ../red/carry/instances/spp19_oink_n30.pg | tail -1
+# GAP-A-M.md §26b: lagfam collapsed to d = 3 (flat7) rebuilds bit-identically and keeps re-steal depth D = 4 (stable order)
+python3 -I fixd_lagcollapse.py 4 flat7 "${TMPDIR:-/tmp}/lagflat7_chk.pg" > /dev/null
+cmp "${TMPDIR:-/tmp}/lagflat7_chk.pg" instances/lagflat7_d3_D4.pg
+RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=stable python3 -I dtl_stealdepth.py instances/lagflat7_d3_D4.pg | grep -m1 "max k" | grep -q "max depth 4"
 echo "ALG-CHECK PASS"
