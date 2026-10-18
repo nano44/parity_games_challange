@@ -80,3 +80,8 @@ re-cut tail. fixd_enable: no enabling tangle fires at R_j in any transition.
   experiments/red/tcpert/instances/prod/), found by keyclimb.py (seed 2, from tcR4_N5, 32 steps). Pinned Oink 7 iterations, 13
   tangles, verified; dtl_flipflop the same. b12_pot: stable 6 transitions, K-v-rs 2 violations; Oink order 5 transitions, K-v-rs
   1 violation. K-v-rV, K-v-rjV, K-v-all: 0 (both orders). Not in 𝒞^1P (two-player), so it does not touch the class claim.
+- Two-player kills of (VR-NEW_V) (key K-v-rV = (v, rank, |V_j|)), keyclimb.py, both orders (DATA 16:59Z by date -u):
+  vrV_viol_n80.pg (sha1 f77f0d34d13f; from nest4_n80, seed 1): stable 5 transitions, K-v-rs 2, K-v-rV 1, K-v-rjV 1;
+  Oink order 4 transitions, K-v-rs 1, K-v-rV 1, K-v-rjV 1. vrV_viol_n40.pg (sha1 8cf415ec9267; from ctx13_n40, seed 3):
+  27 transitions in both orders, K-v-rV 1 (K-v-rs 0, K-v-rjV 0). K-v-all: 0 on both, both orders. So in two-player games only
+  (VR-NEW_all) survives among the vertex keys; (VR-NEW_s), (VR-NEW_V) and (v, rank, j, |V_j|) are false there.
