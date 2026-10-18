@@ -1,0 +1,4 @@
+sbe1.pg: switch-best steps 20; τ_sb changes 1 times; distinct τ_sb 2; OddStep(σ_k, τ_sb(k)) = τ_sb(k+1) at 18/19; misses at a change of τ_sb 1, elsewhere 0
+sbe2.pg: switch-best steps 58; τ_sb changes 4 times; distinct τ_sb 4; OddStep(σ_k, τ_sb(k)) = τ_sb(k+1) at 51/57; misses at a change of τ_sb 4, elsewhere 2
+sbe3.pg: switch-best steps 134; τ_sb changes 10 times; distinct τ_sb 8; OddStep(σ_k, τ_sb(k)) = τ_sb(k+1) at 117/133; misses at a change of τ_sb 10, elsewhere 6
+sbe4.pg: switch-best steps 286; τ_sb changes 24 times; distinct τ_sb 16; OddStep(σ_k, τ_sb(k)) = τ_sb(k+1) at 249/285; misses at a change of τ_sb 24, elsewhere 12

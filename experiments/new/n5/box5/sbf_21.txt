@@ -1,0 +1,8 @@
+start (13, 58)
+step 0 follow 28 of switch-best 28 (N5 iterations 28) check OK
+step 28 follow 30 of switch-best 30 (N5 iterations 30) check OK
+step 134 follow 31 of switch-best 31 (N5 iterations 31) check OK
+step 248 follow 35 of switch-best 35 (N5 iterations 35) check OK
+step 639 follow 36 of switch-best 36 (N5 iterations 36) check OK
+step 1245 follow 37 of switch-best 37 (N5 iterations 37) check OK
+best (37, 37)

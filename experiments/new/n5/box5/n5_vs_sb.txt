@@ -1,0 +1,4 @@
+sbe1.pg: N5 iterations 20; Even moves 20; N5 Even step = switch-best step at 20; τ = Odd's optimal reply in H_σ to switch-best's σ at 18
+sbe2.pg: N5 iterations 32; Even moves 32; N5 Even step = switch-best step at 27; τ = Odd's optimal reply in H_σ to switch-best's σ at 22
+sbe3.pg: N5 iterations 41; Even moves 41; N5 Even step = switch-best step at 35; τ = Odd's optimal reply in H_σ to switch-best's σ at 28
+sbe4.pg: N5 iterations 47; Even moves 47; N5 Even step = switch-best step at 40; τ = Odd's optimal reply in H_σ to switch-best's σ at 34
