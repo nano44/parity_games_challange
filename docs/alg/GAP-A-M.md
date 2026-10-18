@@ -3595,3 +3595,24 @@ A_i := the vertices that join some U_r or W_{r,t} at quiet differing pair i.
 - DATA: max quiet block length / |R| = 0.953 (spp_chain_up_n43, 41 / 43), both orders. 88 / 88 quiet differing pairs advance
   exactly one vertex, the rest ≥ 2.
 - Status: the polynomial QUIET-BLOCK bound stands (reading); a linear form has no surviving candidate. Not pursued further.
+
+24. Box 10, continued (L-ALG successor 8; produced on Opus 5.5)
+24a. U-shrinks need a deficit; grid exits without one are re-cuts inside U (reading + DATA; 02:34Z by date -u; tool
+experiments/alg/dtl_exitshape.py EX_DEF=1, RM_LIGHT unset, RM_DV=0; corpus 141 files + stealonce_viol_n76, stealonce_both_n45;
+both orders)
+Notation: Û_r(V, T) = the IDEAL round union (dtl_ideal.ideal_union: the tops of V_r level by level, closure over all of T, no
+exclusions); a round has a DEFICIT if U_r ≠ Û_r (rec["deficit"]). Actual ⊆ ideal (U_r ⊆ Û_r) as in the box-4 deficit
+analysis (GAP-A-M §18; reading).
+Lemma DEF-SHRINK (reading, unrefereed). For a consecutive visit pair x → y of R, let r be the first round with U_r(x) ⊄ U_r(y).
+Then round r of y has a deficit.
+Proof. For r′ < r, U_{r′}(x) ⊆ U_{r′}(y), so QUIET-BLOCK steps 2-3 (§23w; they use only U ⊆ and T ⊆) give V_r(x) ⊆ V_r(y).
+Û is monotone in V and T (a closure with no exclusions). So U_r(x) ⊆ Û_r(V_r(x), T_x) ⊆ Û_r(V_r(y), T_y). If U_r(y) = Û_r(y), then
+U_r(x) ⊆ U_r(y), a contradiction. □
+Corollary (reading). If no call of R in the phase has a deficit round, then along the visits every U_r and every V_r only grows,
+so W_{r,t} only grows, and the only falls of top_r(w) are RE-CUTS: w moves to a lower top's region inside the same U_r.
+DATA: pairs with a fall of some top_r(w): stable 90, of which 89 have a U-shrink (all 89 with a deficit in y, and in x) and 1 has
+no deficit in either visit (fired18_stable_n20 root |R| = 18, pair 1: no U-shrink, a re-cut, as the corollary says). Oink: 25,
+all with a U-shrink and a deficit in y (and in x).
+Reading: (EXIT_c) splits into (a) U-shrinks, charged to deficit rounds of the later visit (the old (H4)/Lemma E obstruction:
+a straddling stored tangle), and (b) re-cuts inside U. (a) is the box-4 DEF count, which has no constant bound (§17) but has
+not been shown super-polynomial; (b) is new and rare (1 pair in this data). Neither is proved.
