@@ -25,7 +25,7 @@ Tool: R2-N5-ESC/n5trace.py (my own code; output in trace.txt).
 
 ## Verdict: CONFIRMED (Opus 5.5, D12)
 N5's step leaves Algorithm 2's candidate set on DLM family 1, n = 3. It leaves Algorithm 3's set Jσ(τ) on DLM family 2, n = 2.
-On family 1 every N5 switch stays inside Algorithm 3's candidate sets. That is expected, since DLM note (p. 10) that
+On family 1 every N5 switch stays inside Algorithm 3's candidate sets. That is expected, since DLM note (opening of their §5: "The generalized version can solve the games from the previous section quickly") that
 generalized SSI already solves family 1 quickly. The Algorithm 3 escape therefore needs family 2, and it occurs there at
 exactly the move DLM's proof says generalized SSI postpones.
 
