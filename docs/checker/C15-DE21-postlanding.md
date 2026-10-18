@@ -152,3 +152,17 @@ the DE21 E-1 fix (Addendum 1, PASS), the DE21 ADDENDUM, the R12 POST-LANDING NOT
   - Not required.
 - Combined verdict for 19a892c → 22bbe74: PASS. C15 E-1 is fixed (a747106), E-2 is resolved (22bbe74), and the numbers are
   reproduced throughout. N-1 and N-2 are optional.
+
+## Addendum 4: combined text check 5c452e3 → 9338ddd (Lead 03:52Z): PASS
+- History: 5c452e3, 22bbe74 and 9338ddd are in a chain. 5c452e3 → 22bbe74 is checked in Addendum 3 (PASS).
+- 22bbe74 → 9338ddd changes docs/RESULTS.md only (4+/4−); GAPS is unchanged. Word diff:
+  - DE21 body: "[superseded by ADDENDUM and ADDENDUM 2 below]" before "NOT yet a refutation of (STEAL-DEPTH_D) or (EXIT_c) for
+    every constant". Correct: ADDENDUM refutes STEAL-DEPTH, ADDENDUM 2 refutes EXIT_c.
+  - DE21 Consequence: "(no uniform family yet [superseded: see ADDENDUM])". Correct.
+  - ADDENDUM: "re-steals per quadruple are unbounded (they grow linearly in n)". This is N-2, and it is right:
+    k = ⌊(D+1)/2⌋ + 1 with n = 7D + 22.
+  - ADDENDUM: "(exits on the family not yet measured [superseded: ADDENDUM 2 refutes (EXIT_c) for every constant c])". This
+    is N-1, and it is right.
+- Nothing else moved. The timeline is noted: the Lead's own re-run (2/3/4/5/7) was applied at 22bbe74 before my Addendum 2
+  arrived, and the two runs agree independently.
+- Combined verdict for 5c452e3 → 9338ddd: PASS. C15 is closed: E-1 fixed, E-2 resolved, N-1 and N-2 applied.
