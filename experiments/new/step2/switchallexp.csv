@@ -1,0 +1,29 @@
+family,N,n,gen,sha1,vj_switchall_plain,phases,even_iters,odd_iters,max_phase,secs,check
+switchallexp,1,21,python3 experiments/hard-families/pgsolver_port.py switchallexp 1,9cd6d25bd9d323ede0113930279105d57eb4f17a,10,119,13,1,7,0.00,zielonka(oink zlk) OK strategies verified
+switchallexp,2,35,python3 experiments/hard-families/pgsolver_port.py switchallexp 2,ca6e0b7d4745972e9f1c08cda86c70d5187277ff,30,221,25,4,9,0.00,zielonka(oink zlk) OK strategies verified
+switchallexp,3,49,python3 experiments/hard-families/pgsolver_port.py switchallexp 3,3ad1b30a06c0ab02c0dbdd9949866aed96d87cca,70,332,42,9,11,0.02,zielonka(oink zlk) OK strategies verified
+switchallexp,4,63,python3 experiments/hard-families/pgsolver_port.py switchallexp 4,c94d98d3961a6675023ecd839f54806931325288,150,449,64,16,13,0.07,zielonka(oink zlk) OK strategies verified
+switchallexp,5,77,python3 experiments/hard-families/pgsolver_port.py switchallexp 5,9e7b125bf3e54b375fd61e9bccc1a322f313fd0a,310,571,90,25,15,0.22,zielonka(oink zlk) OK strategies verified
+switchallexp,6,91,python3 experiments/hard-families/pgsolver_port.py switchallexp 6,5dc850b156c6d1e2adace088b58c0f65cc9e0bf2,630,697,120,36,17,0.44,zielonka(oink zlk) OK strategies verified
+switchallexp,7,105,python3 experiments/hard-families/pgsolver_port.py switchallexp 7,ff46e32f1d93b4c297173fdd2adb9abcbe39a04e,1243,826,154,49,19,0.85,zielonka(oink zlk) OK strategies verified
+switchallexp,8,119,python3 experiments/hard-families/pgsolver_port.py switchallexp 8,18c2462457856437590d82018d0e9140916a67a6,2486,959,192,64,21,1.61,zielonka(oink zlk) OK strategies verified
+switchallexp,9,133,python3 experiments/hard-families/pgsolver_port.py switchallexp 9,edeef9a35f62cdd319a00b0bf6530d7ed81aa31a,4972,1094,234,81,23,2.98,zielonka(oink zlk) OK strategies verified
+switchallexp,10,147,python3 experiments/hard-families/pgsolver_port.py switchallexp 10,90ba8d647a9607546d2476aed9b0a7976371c418,9927,1232,280,100,25,4.42,zielonka(oink zlk) OK strategies verified
+switchallexp,11,161,python3 experiments/hard-families/pgsolver_port.py switchallexp 11,29aa8ed75322e358f4a928b88b9ea4d6927796f9,19836,1371,330,121,27,7.61,zielonka(oink zlk) OK strategies verified
+switchallexp,12,175,python3 experiments/hard-families/pgsolver_port.py switchallexp 12,90293ee80c300069047b9f954a5cd7fbfa187067,39654,1513,384,144,29,11.46,zielonka(oink zlk) OK strategies verified
+switchallexp,13,189,python3 experiments/hard-families/pgsolver_port.py switchallexp 13,b25727d45b00ae7445202af456ba59b515b752dc,79253,1657,442,169,31,16.76,zielonka(oink zlk) OK strategies verified
+switchallexp,14,203,python3 experiments/hard-families/pgsolver_port.py switchallexp 14,f49796bb0cc1d478f8f63fdbb12e69e58de4aa71,TO120,1802,504,196,33,24.66,zielonka(oink zlk) OK strategies verified
+switchallexp,15,217,python3 experiments/hard-families/pgsolver_port.py switchallexp 15,6645dac1eb641d0d44ffd82748b1fd5f46123e84,TO120,1949,570,225,35,35.58,zielonka(oink zlk) OK strategies verified
+switchallexp,16,231,python3 experiments/hard-families/pgsolver_port.py switchallexp 16,ca3f59a6b51f258e99eece159beea0be104be694,TO120,2097,640,256,37,49.19,zielonka(oink zlk) OK strategies verified
+switchallexp,17,245,python3 experiments/hard-families/pgsolver_port.py switchallexp 17,beaa56dd0994724d1baa7d0e27c238d175ef562e,TO120,2247,714,289,39,65.64,zielonka(oink zlk) OK strategies verified
+switchallexp,18,259,python3 experiments/hard-families/pgsolver_port.py switchallexp 18,38c14a35fb442e18c3378868b3ac8a2ce58e6e93,TO120,2398,792,324,41,111.41,zielonka(oink zlk) OK strategies verified
+switchallexp,19,273,python3 experiments/hard-families/pgsolver_port.py switchallexp 19,02090238535f5564a5dd6991e6a90929e85e7d0c,TO120,2550,874,361,43,138.28,zielonka(oink zlk) OK strategies verified
+switchallexp,20,287,python3 experiments/hard-families/pgsolver_port.py switchallexp 20,2d39587b09805c6c2e66ef94a2c54a6568fccd90,TO120,2703,960,400,45,161.47,zielonka(oink zlk) OK strategies verified
+switchallexp,21,301,python3 experiments/hard-families/pgsolver_port.py switchallexp 21,e02ae2ea22827c5978f4a050cc334050ac29ce20,TO120,2858,1050,441,47,203.15,zielonka(oink zlk) OK strategies verified
+switchallexp,22,315,python3 experiments/hard-families/pgsolver_port.py switchallexp 22,77bf3a10890314e9717695cb3d92022a5344f1a0,TO120,3013,1144,484,49,240.62,zielonka(oink zlk) OK strategies verified
+switchallexp,23,329,python3 experiments/hard-families/pgsolver_port.py switchallexp 23,eb56d43f4b6306725e94ea396ca73bab1a33bb3c,TO120,3170,1242,529,51,292.94,zielonka(oink zlk) OK strategies verified
+switchallexp,24,343,python3 experiments/hard-families/pgsolver_port.py switchallexp 24,4aa62d431c11c33f6355b691ff53723422f8cc88,TO120,3327,1344,576,53,354.56,zielonka(oink zlk) OK strategies verified
+switchallexp,25,357,python3 experiments/hard-families/pgsolver_port.py switchallexp 25,085247248d58314dc0eeab5020b4b2c55b6fbd56,TO120,3486,1450,625,55,424.62,zielonka(oink zlk) OK strategies verified
+switchallexp,26,371,python3 experiments/hard-families/pgsolver_port.py switchallexp 26,7eb42097860b3b6a3e7a1b34673f27b2506aa868,TO120,3645,1560,676,57,520.38,zielonka(oink zlk) OK strategies verified
+switchallexp,27,385,python3 experiments/hard-families/pgsolver_port.py switchallexp 27,a89191b64299c12d53cdd88ce6f752034bf91333,TO120,3805,1674,729,59,679.49,zielonka(oink zlk) OK strategies verified
+switchallexp,28,,python3 experiments/hard-families/pgsolver_port.py switchallexp 28,8f8791035e9bf51d13d4d2f6d0a600ed79ce68d9,TO120,,,,,STOPPED by hand at about 10 s (box time; not a timeout),
