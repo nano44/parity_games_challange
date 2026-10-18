@@ -1,0 +1,28 @@
+family,N,n,sha1,lnew_iterations,lnew_fallbacks,n5b_iterations,n5b_fallbacks,ref,secs,status,detail
+tc,1,8,2ba267d33fc9456326162dbf393391db1c614691,1,0,1,0,oink-zlk,0.00,ok,
+tc,2,22,f290fb64336142aceb56e02229038188fc85d145,4,0,4,0,oink-zlk,0.01,ok,
+tc,3,42,2bce000cd0773b6120e7a9741df70f7e192fcda4,7,0,7,0,oink-zlk,0.05,ok,
+tc,4,68,d92e89fa6c1f1ece5fb2972a9b23401e820e31b6,16,0,13,0,oink-zlk,0.12,COUNT,
+tc,5,100,1edb30d541fcd10cd7de9fc25b00729fa4b14848,19,0,19,0,oink-zlk,0.26,ok,
+tc,6,138,530faa4328cf12c88547003f870e314d2b118873,18,0,22,0,oink-zlk,0.36,COUNT,
+tc,7,182,e97a44605ff414127c4321c6e2bd50891cf00708,23,0,23,0,oink-zlk,0.49,ok,
+tc,8,232,e3509c005a085476916301be07c48614356af5a6,30,0,30,0,oink-zlk,0.77,ok,
+tc,9,288,22b671c077ff1989aabb788bd2a20c852093fa8f,32,0,29,0,oink-zlk,1.18,COUNT,
+tc,10,350,c6d4d3c04841d723180328d273d2d769308534bb,27,0,34,0,oink-zlk,1.82,COUNT,
+tc,11,418,8f5ea1a10039ea6cd5fea2de284b95d30aa5dba4,33,1,41,0,oink-zlk,2.63,COUNT,
+tc,12,492,29f4bd4fffbaf921fff765e75bdc60bc8b5c222c,37,0,34,0,oink-zlk,2.96,COUNT,
+tc,13,572,b47ab36a71a115282e18ff8554c7d29cb67a3156,34,0,37,0,oink-zlk,4.32,COUNT,
+tc,14,658,7aa857d131fe3d9630239ff9bdcd25f2f105e639,32,0,42,0,oink-zlk,6.38,COUNT,
+tc,15,750,99f76aa04452feb509df7d1143fe8ed1e6c36443,43,0,45,0,oink-zlk,7.53,COUNT,
+tc,16,848,a85f10d25438c61a41e15b060061d922a67a1bff,49,0,53,0,oink-zlk,14.08,COUNT,
+tc,17,952,a62443443aa0ebb7ac81b360f63a4c7e3a7c3831,54,0,54,0,oink-zlk,14.31,ok,
+tc,18,1062,1bc528773eef495ac673edbdf99dd7c06ba58bdb,62,0,61,1,oink-zlk,16.69,COUNT,
+tc,19,1178,d076929268809c554e3cf6d2e6d887bbd3fe27e8,54,0,60,0,oink-zlk,25.94,COUNT,
+tc,20,1300,fbc90b0dde626f3d912b1174ead51d46e7d4e3f7,72,1,61,0,oink-zlk,34.88,COUNT,
+tc,21,1428,f75d3d30284643fc4c6766b11293cd99324476d8,71,1,55,0,oink-zlk,40.92,COUNT,
+tc,22,1562,d8739a672408e9850f88ceb192c735fdb8e6e728,62,0,66,0,oink-zlk,53.09,COUNT,
+tc,23,1702,608731c47d77c87fd9414405cf609851fd1cf64f,76,0,68,0,oink-zlk,61.26,COUNT,
+tc,24,1848,25e4ed57a000622ae7c6a35b61ce82acd1a305fc,65,0,73,0,oink-zlk,84.15,COUNT,
+tc,25,2000,fbf02f6ddb0dd9b23348aa31e74f6e79875a9682,74,0,67,0,none,78.62,noref,no reference finished
+tc,26,2158,4030578dd90d68554da74f169e0f158968116a5e,83,0,80,0,none,74.70,noref,no reference finished
+tc,27,,,,,,,,,lnew-not-run,BUDGET600_REACHED
