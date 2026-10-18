@@ -1,4 +1,4 @@
-# Draft RESULTS DE22 and DE23 (Lead, 2026-10-18 ~18:17Z by git) — for CHECKER (with DE21-add3-draft.md and the R40 pointer) (rev. after C16: E-1 applied; R40 pointer text below with E-2 applied)
+# Draft RESULTS DE22 and DE23 (Lead, 2026-10-18 ~18:17Z by git) — for CHECKER (with DE21-add3-draft.md and the R40 pointer) (rev. after C16: E-1 applied; R40 pointer text below with E-2 applied) — LANDED in RESULTS (CHECKER C16 + Addendum 1 PASS, checker e353339)
 
 - DE22 (2026-10-18): L-NEW candidate N1 = Loff-Skomra IncreasingDiscountPI (arXiv 2402.03975 Fig. 12; 2610.22149 §7.4,
   Fig. 7.2) on parity-induced rewards ±n^pr, Howard switch-all for the switching player, warm starts, γ_j = 1 − 2^−j (L-NEW
@@ -19,7 +19,7 @@
   the negated game, allowed by 2610.22149 §7.4, where DiscPI(σ,τ,γ) is any procedure that outputs a pair of optimal policies (REFEREE-2's reading of the opened text); in LS's literal orientation G_N is easy, and the kill
   transfers by duality: LS-literal on dual(G_N) gives 11, 31, 71, 151, 311 outer switch-alls in one phase (N = 1..5, regions
   verified). So IncreasingDiscountPI with Howard is exponential in both orientations (G_N resp. dual(G_N)).
-  (C2) The general claim "the certificate stops no later than LS's test" is not proved and can fail; it is not needed: on G_N
+  (C2) The general claim "the parity-certificate stop fires no later than LS's mean-payoff-optimality test" (N1-KILL.md) is not proved and can fail; it is not needed: on G_N
   the all-traps strategy is never mean-payoff optimal, so LS cannot stop before the release phase.
   (C3) the closed form is a fit for N ≤ 6 only (above).
   Literature (L-LIT T19, l-lit 8d8da04): not found in any opened source; a theorem form needs two lemmas (GAPS G-N1-LB,
