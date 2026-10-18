@@ -11,7 +11,8 @@ Box 5 DONE (docs/new/N5-dlm-box5.md):
 - Tools: dlm_diag.py, dlm_agree.py, dlm_module.py.
 - L-COMP's n5b.py (claude/l-comp 29a6ed17) runs read-only from scratchpad/lcomp/n5-second/n5b.py, with symlinks to
   experiments/hard-families and experiments/harness. Run it with --start FILE (a COMPLETE start pair) and --mode spec|orig.
-NEXT: a proof of "N5 ⊇ SSI" (it would make K6 a theorem); otherwise the box-4 NEXT items (a)-(d) below.
+NEXT: "N5 ⊇ SSI" is FALSE in general (random games, n5_superset.py); it holds on DLM only. Untried lead: exploit the states where
+N5 skips an SSI switch. Otherwise the box-4 NEXT items (a)-(d) below.
 Box 4 (kept):
 DONE, all pushed (docs/new/N5-killer-box4.md, G-N5-TERM-reading.md, N5-ssi-global.md additions):
 - SPEC vs A1-A10 (6014db7) and Q1-Q4 (7039eb5).

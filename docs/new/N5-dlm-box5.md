@@ -30,7 +30,13 @@ The distraction IS the failure: τ̄(v) is a non-improving edge, so SSI keeps σ
 - N5's step never omits a vertex that SSI switches, and never switches a vertex differently. It only adds switches, exactly at the
   vertices where the distraction makes SSI keep σ(v) although Iσ(v) ≠ ∅.
 - The number of states where the steps agree grows linearly (2n − 1 for dlm1, 2n + 2 for dlm2).
-- Observation, not proved: on these families N5 ⊇ SSI. N5's joint restricted optimum takes every switch SSI takes, plus the
+- NOT a theorem: on random games "N5 ⊇ SSI" FAILS (n5_superset.py, 1,500 games, every state of both N5's and SSI's runs,
+  44,366 states).
+  - SSI switches that N5 does not make: Even 69 times keeps, 49 times switches elsewhere; Odd 50 / 22 (n5/box5/superset_random.txt,
+    first witness saved there).
+  - N5 can skip a best-reply switch when τ̄'s downstream choices are not available in A_σ.
+  - So K6(i) is a statement about DLM's mechanism, not about N5 in general.
+- Observation on DLM's families only: N5 ⊇ SSI. N5's joint restricted optimum takes every switch SSI takes, plus the
   improving switches that the distraction withholds.
 
 ## 3. Module attempt (dlm_module.py): Odd blunder dummies on DLM's games
@@ -69,5 +75,6 @@ improving switches, and it takes every withheld switch unless an opponent blunde
 the K1-K3 structure at every distracted vertex at once.
 
 ## 5. Not done
-- No proof of "N5 ⊇ SSI" (§2 is data).
+- "N5 ⊇ SSI" is false in general (§2). On DLM's families it holds on the data. An attack that uses the states where N5 skips an
+  SSI switch has not been tried.
 - No module family that gives N5 super-linear growth in either tie-break mode.
