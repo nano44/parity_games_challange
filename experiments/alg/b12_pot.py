@@ -13,7 +13,7 @@ e_j if −1, 0 if the call returned 0. A candidate is a predicate on consecutive
     K-jrV     (j, rank_j, |V_j|)       K-RrV  (|R_j|, rank_j, |V_j|) K-jRrV (j, |R_j|, rank_j, |V_j|)
     K-Rset    (R_j as a set, rank_j)   (counts distinct contexts; exponential range, recorded as the reference)
     vertex-indexed (v ranges over the piece of call j): K-v-r (v, rank_j), K-v-rj (v, rank_j, j), K-v-rs (v, rank_j, |R_j|),
-    K-v-rV (v, rank_j, |V_j|)
+    K-v-rV (v, rank_j, |V_j|), K-v-rjV (v, rank_j, j, |V_j|), K-v-all (v, rank_j, j, |R_j|, |V_j|)
 A MONO candidate is violated at a transition where Φ(s+1) ≤ Φ(s) (it must rise strictly); a NEW-KEY candidate where search s+1
 has no new key, tested only at transitions whose depth-0 chain (R_j, rank_j, V_j) changes (the others are counted separately). Printed: transitions, violations per candidate, first violating instance.
 Corpus: b12_topchain.classgames (forced class set) with CLASS=1, else the files as they are.
@@ -83,7 +83,9 @@ def keys(ch):
             "K-v-r": {(v, r) for j, R, r, V, piece, _ in ch for v in piece},
             "K-v-rj": {(v, r, j) for j, R, r, V, piece, _ in ch for v in piece},
             "K-v-rs": {(v, r, len(R)) for j, R, r, V, piece, _ in ch for v in piece},
-            "K-v-rV": {(v, r, len(V)) for j, R, r, V, piece, _ in ch for v in piece}}
+            "K-v-rV": {(v, r, len(V)) for j, R, r, V, piece, _ in ch for v in piece},
+            "K-v-rjV": {(v, r, j, len(V)) for j, R, r, V, piece, _ in ch for v in piece},
+            "K-v-all": {(v, r, j, len(R), len(V)) for j, R, r, V, piece, _ in ch for v in piece}}
 
 
 if __name__ == "__main__" and sys.argv[1] == "climb":
@@ -117,7 +119,7 @@ if __name__ == "__main__":
             for c in k: seen[c] |= k[c]
             prev = (ph, m, vr, sig(ch))
     allc = ["SUM-RANK", "VERT-RANK", "VERT-RANK-PW", "STABLE-CNT", "LEN", "K-jr", "K-Rr", "K-jRr", "K-jrV", "K-RrV", "K-jRrV", "K-Rset",
-            "K-v-r", "K-v-rj", "K-v-rs", "K-v-rV"]
+            "K-v-r", "K-v-rj", "K-v-rs", "K-v-rV", "K-v-rjV", "K-v-all"]
     print("order", order, "transitions", trans, "of which identical depth-0 chain (keys not tested)", same)
     for c in allc: print(f"  {c:13s} violations {bad.get(c, 0):6d}  first {first.get(c)}")
 

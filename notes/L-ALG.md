@@ -3,14 +3,17 @@ Successor 9's handover text is in git history: `git show a97f451:notes/L-ALG.md`
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push only with `scripts/push.sh > $S/push.log 2>&1; echo exit $?`.
 Truth for GAP-A: docs/alg/GAP-A-M.md §23-§30 (§30 = box 12, successor 10; §29 = box-11 ledger). Dead ends: docs/alg/DEAD.md.
 
-## Resume point (2026-10-18 14:05Z by date -u; box 12, GO 13:47Z by the Lead's clock, to about 18:45Z)
-- QUEUE (1) verdict: NO ROUTE (GAP-A-M §30, VERDICT). (TOP-UNIQUE@R) FALSE (onep_topuniq_n20, §30a); (TOP-CHAIN@R) DATA (§30b);
-  the failing point is the combination step: on 𝒞^1P the per-context side is already closed by OUTCOME-MONO-1P, and nothing
-  indexed by contexts bounds the contexts (§30c). Re-cut-proof vertex potentials STABLE-MASS / STABLE-TOPS / NEG-TOPS FALSE.
-- No super-polynomial signal: leanT_N forced into the class has N searches per phase, N(N+1)/2 tangles (§30d).
-- QUEUE (2) (NO-PRE-a): no proof, no instance; DATA plus two targeted climbs; near miss nopre_near_n20 is not an occurrence (§31).
-QUEUE: (1) DONE (no route, verdict sent 14:07Z). (2) DONE (DATA, §31). (3) TC-6 P2-P6 last, labelled "single family, not L32
-progress" (GAP-A-M §25b), unless the Lead redirects.
+## Resume point (2026-10-18 15:52Z by date -u; box 12, GO 13:47Z by the Lead's clock, box end and handover notes by ~18:30Z)
+- QUEUE (1) verdict sent 14:07Z: NO ROUTE (GAP-A-M §30). QUEUE (2) (NO-PRE-a): DATA (§31). TC-6 parked by the Lead (14:37Z).
+- NOW (Lead pick 14:37Z): a re-cut-proof potential for (CTX⁺) on 𝒞^1P, as executable predicates, killed fast (§32). Tool
+  experiments/alg/b12_pot.py (MONO and NEW-KEY candidates on the depth-0 chain; climb with KEY=...), b12_fdkey.py (keys on
+  first-difference contexts). Survivors named to the Lead: (VR-NEW_V) key (v, ρ, |V_j(v)|), (VR-NEW_s) key (v, ρ, |R_j(v)|),
+  (VR-NEW_all) key (v, ρ, j, |R_j|, |V_j|) (also on the two-player library at chain-changing transitions). Killed: (VR-NEW_j)
+  (onep_vrj_n40), (v, ρ) (onep_vr_n12), injective R*-keys (onep_fdkey_n20), all depth-0 chain MONO and chain keys.
+- IN FLIGHT at 15:52Z: climbs vs (VR-NEW_V) (stable) and (VR-NEW_s) (Oink) from onep_vrj_n40 (scratchpad vr6_*.out); two-player
+  library n ≤ 200 Oink order (pot6_lib_oink.out). Not yet pushed: §32e text and instance onep_vrj_n40.
+QUEUE: (a) finish the climbs, record, push; (b) next candidate keys if these die: add per-vertex V-membership or the round in
+which v left V; (c) handover notes by ~18:30Z.
 
 ## DONE (box 12, successor 10)
 - Handover check 50e66d3 (5/5 per Lead), trunk merges 781790d and the box-start merge.
@@ -18,10 +21,17 @@ progress" (GAP-A-M §25b), unless the Lead redirects.
 - §30 with tools b12_topchain.py (class set + TOP-CHAIN@R scan), b12_topclimb.py (climb, --check), b12_pertop.py (tangles
   learned per (phase, top)), b12_mono.py (re-cut-proof potentials, per_position); instance onep_topuniq_n20 (check.sh).
 - §31 with tool b12_nopre.py (scan / climb); instance nopre_near_n20 (near miss, pinned Oink 5 iterations verified).
+- §32 with tools b12_pot.py, b12_fdkey.py; instances onep_fdkey_n20, onep_vr_n12, onep_vrj_n40 (all 𝒞^1P, pinned Oink verified).
 
 ## Things only I know (successor 10)
 - `date -u` advances much more slowly than the work done (as successor 9 noted); timestamps are as printed, unadjusted.
-- `pkill -f <name>` from the Bash tool kills the tool's own shell when <name> is in the command line (exit 144). Kill by PID.
+- `pkill -f <name>` / `pgrep -f` / `ps | grep <name>` from the Bash tool match the tool's OWN shell when <name> is anywhere in
+  the command (exit 144, the rest of the command is lost). List PIDs with `ps -eo pid,args | awk '$2=="python3"'` in one call,
+  kill by number in another.
+- b12_nopre.py used to set ONEP_ANY=1 at import, which makes fixd_oneplayer.inclass() always true for every importer
+  (fixed 41abf765). Any tool that imports a climb module: check `'ONEP_ANY' in os.environ` after import.
+- Running two RM-model (dtl_rootmono) library scans at once got both silently killed (empty output, likely OOM). Run them one at
+  a time; SE-model (fixd_stealentry) scans are light.
 - With all priorities distinct, the stable and Oink index orders coincide; the two order data then differ only in ins_desc,
   TV_SORTED and PEARCE (fixd_stealentry.run). Map model index i to the input vertex with sorted(range(n), key=(prio, id)).
 - Random-forced class games rarely fire tangles at all (221 firing contexts in 891 games); Zielonka-forced trial 0 is richer.

@@ -4396,3 +4396,61 @@ above (tie-above events)).
 VERDICT (QUEUE (2)): no proof, no instance. (NO-PRE-a) stays DATA (0 occurrences on the library, the permuted library (§28c), random
 tie-heavy games, and two targeted climbs). Its use is small in any case: it would remove "dist" from NOSTEAL-1P and make
 STEAL-ENTRY a pure strategy-conflict statement. It does not touch (CTX⁺) (§30c).
+
+32. Box 12, Lead pick 14:37Z: a re-cut-proof potential for (CTX⁺) on 𝒞^1P (L-ALG successor 10; produced on Opus 5.5; DATA unless
+marked; unrefereed). Tools: experiments/alg/b12_pot.py (depth-0 chain per search: R_j, result, emptying round, V, piece; MONO and
+NEW-KEY candidates; class-preserving climb), experiments/alg/b12_fdkey.py (keys on first-difference contexts R*, any depth; climb).
+Corpus "𝒞^1P set": every library .pg with n ≤ 200 forced into 𝒞_0 and 𝒞_1 (trial 0 Zielonka edges, 2 random trials), and with
+DIST=1 every game, in-class ones too, refined to all-distinct priorities: 1,086 same-phase transitions, both order data.
+A candidate is a predicate on consecutive searches s, s+1 of a phase (a transition). MONO: a poly-range Φ that must rise strictly.
+NEW-KEY: search s+1 must hold a key never seen in the phase's earlier searches (then searches ≤ #keys + 1).
+32a. The Lead's three seeds (reading).
+- The learned-tangle set: monotone, but its size is what GAP-A counts (searches ≤ tangles learned + 2): circular.
+- The dominion-removed set: constant inside a phase.
+- The lex vector of per-position outcomes: at the first difference, the input is equal and the outcome rises (OUTCOME-MONO-1P) or
+  the piece grows, so the vector rises lexicographically at every transition. Below the first difference it is arbitrary.
+  DATA: some vertex's piece rank DROPS in 591 of 1,086 class transitions (VERT-RANK-PW). A lex-increase of exponential height is
+  what a counter uses, so a bound must come from novelty that a counter cannot supply.
+32b. Kills (DATA; first instance; class set unless noted).
+- MONO on the depth-0 chain: SUM-RANK (Σ_j rank_j; 960 of 1,086), VERT-RANK (Σ_v rank of v's piece; 478), VERT-RANK-PW (591),
+  STABLE-CNT (1,075), LEN (−chain length; 411). (rank: n + 2 stable, the emptying round e for −1, 0 for a call that returns 0.)
+- NEW-KEY on the depth-0 chain: (j, rank) 275; (|R_j|, rank) 81; (j, |R_j|, rank) 3; (j, rank, |V_j|) 3; (|R_j|, rank, |V_j|) 80;
+  (j, |R_j|, rank, |V_j|) 3; (R_j as a set, rank) 80: the chain RETURNS to earlier (context, rank) pairs.
+- Every class transition changes the depth-0 chain (R_j, rank_j, V_j): 0 identical out of 1,086 (on the two-player library 104 of
+  1,627 transitions are identical).
+- Injective keys on first-difference contexts R* (b12_fdkey.py): κ-dj (depth, position), κ-djs (depth, position, |R*|), κ-dsm
+  (depth, |R*|, max priority in R*) FALSE. Pinned: experiments/alg/instances/onep_fdkey_n20.pg (sha1 9daa6dbcf01d; 𝒞_1, all
+  priorities distinct; pinned Oink 7 iterations, verified; winners equal to Zielonka; both orders), from a class climb (seed 52).
+  Its phase of 5 transitions has first-difference positions 2, 0, 4, 1, 4: position 4 rises, the rise at position 1 re-cuts the
+  chain, and position 4 rises again at a FRESH context of the same size 15 ({…, 9, …} then {…, 16, …}). A one-level reset at n = 20.
+- Vertex-indexed key (v, rank of v's piece) (K-v-r): FALSE. Pinned: experiments/alg/instances/onep_vr_n12.pg (sha1
+  868476e00138; cross_h_k1_n12_m18_13 refined to all-distinct, 𝒞_1; pinned Oink 3 iterations, verified; both orders).
+32c. SURVIVORS, named to the Lead 15:33Z (DATA only).
+(VR-NEW_j). For a search s of a phase of q, let j_s(v) be the depth-0 position whose piece R_j \ R_{j+1} holds v, and ρ_s(v) the
+rank of that call. For every consecutive pair s, s+1 of the phase, some vertex v has (ρ_{s+1}(v), j_{s+1}(v)) ∉ {(ρ_{s′}(v), j_{s′}(v)) :
+s′ ≤ s}. Siblings: (VR-NEW_s) with |R_{j(v)}| in place of j, (VR-NEW_V) with |V_{j(v)}|.
+Consequence (if true): searches per q-phase ≤ n(n + 3)(n + 1) + 1; with Lemma CTRL, GAP-A on 𝒞^1P, with no use of (CTX⁺).
+Evidence: 0 violations of each on the 1,086 class transitions, both order data; class-preserving climbs (4,000 steps each, from
+onep_fdkey_n20) against (v, ρ) and (v, ρ, |V|): 0 violations (best 8 chain-changing transitions at n = 20); two climbs aimed at
+(VR-NEW_j) itself (5,000 steps; from onep_vr_n12 stable, from onep_fdkey_n20 Oink order): 0 violations (best 5 at n = 12, 9 at n = 20).
+Honest reading: every phase in the data is short (max 42 transitions, the chain family; 23 on leanT_N24 forced). (VR-NEW_j) says
+that no vertex is returned to a (rank, position) state it already held; a counter whose positions cycle through the same states
+on the same vertices kills it. It is the precise target for L-RED's §30c counter. No proof: per-vertex position (RANK-MONO, §27d)
+and per-vertex rank (VERT-RANK-PW above) are each non-monotone, so the novelty cannot come from either coordinate alone.
+32d. Correction (said plainly). The first two b12_pot.py runs on the "class set" (14:40Z and 15:19Z by date -u) ran on the
+UNFORCED two-player library: b12_nopre.py set ONEP_ANY=1 at import, so fixd_oneplayer.inclass() was always true. Fixed in
+41abf765 (ONEP_ANY is set only in b12_nopre's own climb); every class number in 32b-32c is from the re-runs. The earlier numbers stand
+as two-player library data only (1,622 / 1,638 transitions; all MONO and depth-0 keys FALSE there too).
+32e. UPDATE 15:50Z by date -u. (VR-NEW_j) is FALSE (self-kill; class climb against it from ctx12_n40 forced into 𝒞_0, 618 steps).
+Pinned: experiments/alg/instances/onep_vrj_n40.pg (sha1 96ac8459cbef; 𝒞_0, all priorities distinct; pinned Oink 9 iterations,
+verified; model winners equal to Zielonka); 1 violating transition of 6 chain-changing ones, both orders. On the same game the
+keys with a size, (v, ρ, |R_j|), (v, ρ, |V_j|), (v, ρ, j, |V_j|) and (v, ρ, j, |R_j|, |V_j|), hold.
+Mechanism seen on the two-player library (dtl_deficit_n20, search 3 → 4): the root call stays stable, V* grows, and every piece is
+unchanged. That is the "stable, V* grows" event of §28d, which OUTCOME-MONO-1P allows on 𝒞^1P too. A key without |V| cannot see it.
+Two-player library (n ≤ 100, stable, 1,481 transitions; 88 have an identical depth-0 chain and are not tested): K-v-r 112, K-v-rj 59,
+K-v-rs 26, K-v-rV 8, K-v-rjV 5, K-v-all 0 violations. The 59 K-v-rj violations sit in 33 games, none with a relevant steal
+(fixd_stealentry.analyze), so steals are not what the class removes.
+𝒞^1P set (1,088 transitions, stable, DIST=1): K-v-r 4 (cross_h_k1_n12 refined), all others 0.
+SURVIVORS now (DATA): (VR-NEW_V) key (v, ρ, |V_{j(v)}|) [n(n+3)(n+1) values] and (VR-NEW_s) key (v, ρ, |R_{j(v)}|) on 𝒞^1P;
+the weakest, (VR-NEW_all) key (v, ρ, j, |R_j|, |V_j|) [≤ n^5 values], on 𝒞^1P and on the two-player library at chain-changing
+transitions. Climbs against (VR-NEW_V) and (VR-NEW_s) from onep_vrj_n40 are running.
