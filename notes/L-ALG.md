@@ -128,6 +128,13 @@ Successor 8 (box 9 ended in this session, 00:46Z by date -u):
   - GAP-A ⇐ (CTX⁺) ∧ (EXIT_c), via §23q plus the R12 sum form;
   - GAP-A ⇐ (CTX⁺) ∧ (FIRED⁺-R), via §23s, unconditional.
   - At the root, (FIRED⁺-R) is the old (SPP).
+- Update at park (00:58Z by date -u):
+  - PACKET 10 (§23q) SIGNED; imports in §23t. GAP-A ⇐ (CTX⁺) ∧ (EXIT_c) is now a SIGNED conditional.
+  - PACKET 11 = §23s (CHANGE-NEW), out, pinned at trunk 5909724. Freeze §23s; put corrections in a new subsection and tell
+    the Lead.
+  - §23u (SKETCH): D_R ≤ N_ent + D_R^thr, so (EXIT_c) bounds the differing visits of every context, the root included. The
+    two routes meet; gap G23u is the threshold-loop first differences. First successor task: measure D_R^thr.
+  - All climbs have ended. None found depth ≥ 2, k ≥ 3, exits ≥ 3, or an incomplete run.
 - Next targets, in order:
   - (1) the referee outcome of packet 10, then a CHANGE-NEW packet (§23s) if the Lead routes it;
   - (2) (EXIT_c): a per-vertex oscillation bound for top_r^i(w). Data c = 2; re-entries are common. The gap is named in §23r;
