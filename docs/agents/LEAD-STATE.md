@@ -564,3 +564,4 @@
 - 01:51Z (date -u) merged checker 5503179 (C14 post-landing PASS); applied optional 'given STR-DET' to GAPS sentence.
 - 01:55Z (date -u) L-RED succ. 6 BOX 9 END, PARKED (9a4b739, ~480k; climbs stopped 01:48Z): R38 CTX⁺ curve, C_bv ≈ half the transitions at n = 20/30/40/56, no growth; only a serialized-piece (lag) construction could break CTX⁺, the same gadget as depth ≥ 2 (R37). Spawning L-RED succ. 7 for the lag construction.
 - 01:58Z (date -u) Lead created L-RED succ. 7 session_01WMwHG59A8od889vPhroxTk on claude/l-red (clone_depth 3000, Opus D8); handover step pending.
+- 02:03Z (date -u) SWEEP (trigger 02:03Z): overage false (Lead 630k, $301, allowed_warning; Lead context is compacted automatically, state is in LEAD-STATE/NOW); L-ALG succ. 8 174k working (D_R^thr climbs, §23x); L-RED succ. 7 on handover step; L-RED succ. 6, L-ALG succ. 7, REFEREE succ. parked; REFEREE-2, CHECKER parked; no exceptions; owner line not due.
