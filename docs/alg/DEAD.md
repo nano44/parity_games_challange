@@ -293,3 +293,8 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
   - (CHAIN) "first-difference contexts of a phase form a ⊆-chain" restricted to the class 𝒞^1P (GAP-A-M §27c): FALSE in the
     class too, both orders: experiments/alg/instances/onep_chainfail_n20.pg (sha1 05bfe58e20d7; class 𝒞_1^dist; pinned Oink
     6 iterations verified), first-difference context sizes 13, 13, 18, 20 (dtl_rootmono "CHAIN FAILS"). No steal there.
+  - (RANK-MONO) (depth-0 removal positions never rise along a phase; GAP-A-M §27d): FALSE in 𝒞^1P, both orders, on
+    onep_chainfail_n20.pg (05bfe58e20d7) and onep_lagdist_D8.pg (a06a81ce42a7). Obstruction: the −1 result's Dom(prevV)
+    piece (dtl.cpp 770, 958-991) shrinks when the emptying round moves later, which re-cuts the chain below.
+  - (TOP-CHAIN) (same-top tangles of a phase form a ⊆-chain; GAP-A-M §28b): FALSE, onep_chainfail_n20.pg (stable order),
+    top 15 with {0,2,5,6,7,15} and {0,1,3,4,6,9,10,15}; also ctx13_n40, ctx12_oink_n40.

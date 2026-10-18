@@ -4090,3 +4090,44 @@ experiments/alg/fixd_rank.py)
 - VERDICT for (CTX⁺) on 𝒞^1P in this box: NO ROUTE. The named obstruction: the −1 result's Dom(prevV) piece (770 + 958-991) is
   not monotone along a phase, even when every round's V is (as on 𝒞^1P). A proof needs a bound on tail resets, i.e. a
   potential that charges a reset to something the phase can do only polynomially often. None is in hand.
+
+28. Box 11, item (c): (LONG-PHASE) at the root G′ (Lead 10:50Z; L-ALG succ. 9, produced on Opus 5.5; started 11:01Z by date -u)
+28a. Where the first differences sit (DATA; tool experiments/alg/fixd_fdpos.py, stable order). For each transition: the depth of
+the first-difference context, and its depth-0 chain position j (the last depth-0 context containing it).
+- lagdist D = 4, 8, 12 (S = 11, 15, 19), onep_lagdist_D8, spp_chain_up_n43 (S = 42): EVERY first difference is at depth 0,
+  position 0, i.e. at the root context G′ itself. The longest phases in the fleet are ROOT-ONLY. No resets.
+- ctx13_n40 (S = 25): positions 0, 4, 4, 0, 0, 4, 3, 0, 1, 4, 6, 5, 4, 7, 5, 9, 0, 4, 6, 1, 0, 0, 4, 0: 10 resets (j drops),
+  all at depth 0. ctx12_oink_n40 (S = 21): 5 resets. spp_final_n40 (S = 17): 4 resets. onep_chainfail_n20: 1 reset.
+- So there are two mechanisms. (i) Root-only phases, bounded by the root's own budget, 2(F_{G′} + 1)(H + 1) (R9 (a)), so they
+  need F_{G′} = O(poly): steals at G′ (the lagfam relay). (ii) Reset phases, where a rise at chain position j re-cuts the chain
+  below (the §27d mechanism, Dom(prevV)); they need (CTX⁺).
+- On 𝒞^1P, (i) is polynomial outright (F = 0, NOSTEAL-1P): a root-only phase there has ≤ 2(H + 1) + 1 searches. So the class
+  isolates (ii).
+28b. (TOP-CHAIN) "tangles learned in one phase with the same top form a ⊆-chain" (it would give ≤ n tangles per top and n² + n + 1
+searches per phase): FALSE, already in the class. onep_chainfail_n20.pg (stable order) has two tangles with top 15 that cross:
+{0, 2, 5, 6, 7, 15} and {0, 1, 3, 4, 6, 9, 10, 15} (input ids). It also fails on ctx13_n40 (6 groups) and ctx12_oink_n40 (4 groups).
+It holds on lagdist, chainfam and stealonce_viol (max 1-4 per group). Tool experiments/alg/fixd_topchain.py.
+28c. Lemma STEAL-ENTRY (PROVED, reading; general games, every order datum; L-ALG succ. 9, 11:02Z by date -u). This is the
+general form of NOSTEAL-1P: its proof without the class hypotheses. Let a relevant steal of t ∈ F_τ (round r, visit pair
+i → i+1, player p) be given, and let A = t ∩ P_{i+1}(τ⁺) ≠ t, A ≠ ∅. Then some vertex y ∈ A is
+  (a) a TOP of a prefix region. Then pr(y) = pr(τ) and y's index is above τ's (all of t is ≤ pr(τ); prefix tops are ≥ pr(τ)),
+      and y ∉ V_r(i): otherwise y would lie in P_i(τ⁺) and t could not fire at τ at visit i (attractTangle 131-142: every vertex
+      must be in CurZ or CurR); or
+  (b) a p-vertex whose ENTRY EDGE into the prefix is not its strategy in t. y was attracted via attractVertices along an
+      edge y → z with z in the prefix (74, 88), or as part of a tangle t″ whose strategy at y is z, and str_t(y) ∉ A.
+Proof. This is the closure argument of NOSTEAL-1P, steps 2-3. Opponent vertices of A have all their t-successors in A (75-85,
+152-157 with t ⊆ R). A p-vertex of A that is not a top and whose entry edge is str_t(y) has str_t(y) ∈ A. If neither (a) nor
+(b) happened, A would be forward-closed in t's SCC graph, so A = t. □
+Reading. A steal needs either a same-priority top that joins V between visits, or a STRATEGY CONFLICT: a p-vertex of t pulled
+into an earlier region by an edge other than its t-edge. lagfam's relay is case (b) by design: w_j is pulled into an earlier
+region by its edge to y_{j−1} or f_j, while its strategy in t_j is w_j → y_j (lag4.py docstring, "pulling w_j alone into an earlier
+region pulls nothing else"). Not checked mechanically by me. NOSTEAL-1P is the case where (b) is impossible (one edge per
+p-vertex) and (a) is excluded by distinct priorities.
+Use for (LONG-PHASE). A root-only long phase needs many root steal pairs (F_{G′} ≤ 3·N*_{G′}, R11 (c)). By STEAL-ENTRY each steal
+pair has a conflict pair (y, z) with z ≠ str_t(y), or a case-(a) top. There are ≤ m conflict EDGES, but each can recur at many
+pairs. So a bound needs "a conflict edge (y, z) causes a relevant steal at only poly many visit pairs of G′". That is a
+(STEAL-POLY)-type statement keyed by edges instead of (step, tangle), and it is not proved. On lagfam the same conflict
+edges should recur at every visit (the relay toggles every level at every visit, §24f), so a per-edge CONSTANT bound is expected to
+be FALSE there (a reading; not measured).
+STATUS of (c) at 11:02Z: no route. (LONG-PHASE) at G′ reduces, via R11 (c) and STEAL-ENTRY, to bounding recurring strategy-conflict
+steals at the root (plus case (a)). The class 𝒞^1P is exactly where both cases vanish (§27b).
