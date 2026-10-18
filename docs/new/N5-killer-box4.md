@@ -5,7 +5,7 @@ and each one asserts that its counts equal n5.run's (n5_trace.py; n5_adv2.py re-
 Every solution cited is checked by check_sol2.py (Oink zlk + harness/verify.py) or by zielonka.py + verify.py (n5_adv2.py).
 Outputs: experiments/new/n5/box4/.
 
-## Result: NOT KILLED (attempts 3, 4, 4b, 4c, 5, 6; cycling attack §8). Forced fallback ("lock") exists but does not scale; obstruction below.
+## Result: NOT KILLED (attempts 3, 4, 4b, 4c, 4d, 5, 6, 7; cycling attack §8). Forced fallback ("lock") exists but does not scale; obstruction below.
 
 ## 1. Deeptrap oscillation (26 / 15 / 33 / 18 at N = 6 / 7 / 8 / 9): explained, linear
 Per-iteration traces: n5_trace.py on gen_deeptrap.sh N (sha1 5134273723.., 835ce1326c.., 3ce8d18866.., b88d40574b..),
@@ -125,6 +125,19 @@ Trace N = 3 (trace_dummygift_punish_N3.txt): Odd keeps the dummies for 3 iterati
 changes τ̄. At iteration 4 the fixes become improving and Odd releases 21 dummies at once. Even's step is never empty: its
 undummied candidates always give progress against τ (K1 fails).
 Reading: K2 needs ALL of Odd frozen, not only the blunder vertices. Any Odd improvement elsewhere changes τ̄, hence Iτ.
+
+### 5b''. Attempt 4d: 4c started with ALL of Friedmann's Odd frozen (n5_frozen.py; K2 forced by the start pair)
+Start: the original Odd vertices at their final τ* (of a plain run), every dummy on the gift. Result (frozen_start.txt): iterations
+13, 12, 13, 14, 17 at N = 2..6, 0 fallbacks, longest lock 0. Even's restricted best response against τ always finds progress
+through the undummied candidates (K1 fails), so freezing Odd alone does not stall Even.
+
+### 5d. Attempt 7: start-pair sensitivity (n5_starts.py; 100 random (σ0, τ0) per instance; random_starts.txt)
+A prefix gadget could force any start, so a slow start pair would be a lead. Max iterations over 100 starts:
+- dlm1: 4, 8, 12, 16, 17 (N = 2..10, even N);
+- dlm2: 10, 16, 23, 28, 35;
+- switchallexp: 10, 17, 26, 33 (N = 2..8);
+- counter_symsi: 18, 30, 48, 59 (N = 2..8; at most 9 fallbacks).
+All linear. No slow start pair exists on these families.
 
 ### 5c. Killer attempt 6: per-bit replicated gadget (bitgadget.py)
 - One genome of K vertices is copied for EVERY bit i, wired to bit-relative labels (i, i+1) and to the next copy, so it scales with

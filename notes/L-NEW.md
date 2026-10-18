@@ -2,7 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-SUCCESSOR 2, box 4 (GO 21:05Z; box end ~01:00Z). Context ~370k at 22:25Z.
+SUCCESSOR 2, box 4 (GO 21:05Z; box end ~01:00Z). Context ~370k at 22:23Z (date -u).
 DONE, all pushed (docs/new/N5-killer-box4.md, G-N5-TERM-reading.md, N5-ssi-global.md additions):
 - SPEC vs A1-A10 (6014db7) and Q1-Q4 (7039eb5).
 - Deeptrap trace (even-N chain).
