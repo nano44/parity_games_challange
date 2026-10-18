@@ -3769,7 +3769,7 @@ KILLED (DEAD.md box 10; instances re-run with pinned Oink):
   on lagfam).
 DATA that stands:
 - (USHRINK-FRESH). Every U-shrink pair has a new key (round, new top, losing top), a new top at its first shrinking round, and
-  a deficit in y: corpus 104 / 29, cross unions 182 / 96, mixed unions 287 (stable) / pending (Oink), R39 0 U-shrinks.
+  a deficit in y: corpus 104 / 29, cross unions 182 / 96, mixed unions 287 / 130 (stable / Oink; dtl_defsplit.py RM_DV=0, UNIONS=900 SEED=1 NMAX=32 and UNIONS=600 SEED=11 UM_CROSS=3 NMAX=32), R39 0 U-shrinks.
 - lagfam D = 2..12 (§24g): every total is polynomial at degree ≤ 3; (CTX⁺) is unstressed there (1 first-difference context).
 - Quiet blocks ≤ 0.953·|R|. No birth locality for (FIRED⁺-R) below the root (§23y).
 POSITION. Every per-context form is one statement up to polynomial factors: (D-POLY) ⇔ (EXITS-POLY) ⇔ (STEAL-POLY_sum) ⇔
