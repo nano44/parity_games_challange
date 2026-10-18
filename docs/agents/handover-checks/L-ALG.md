@@ -148,3 +148,107 @@ would start from a 1,676-commit-old head. Check: `git fetch origin claude/l-alg`
 and `git rev-list --left-right --count HEAD...origin/claude/l-alg` (x 0) before writing anything.
 Second trap carried: big RM_PREF=1 union runs need ~6 GB each (4 were OOM-killed); at most 2 heavy jobs at once.
 Push only as `scripts/push.sh > $S/push.log 2>&1; echo exit $?`.
+
+# L-ALG successor 9 handover check (2026-10-18 09:33Z by date -u; produced on Opus 5.5, D8)
+
+## 1. Branch, head, ahead/behind trunk
+- Branch `claude/l-alg`. At container start the LOCAL branch was the stale 1017502 ("behind 1962" after the fetch).
+  `git fetch origin claude/l-alg claude/vibrant-johnson-nxvvxo`: origin/claude/l-alg = fe1b928, trunk = 9d874d0.
+  `git merge --ff-only origin/claude/l-alg`: HEAD = fe1b928 = origin/claude/l-alg.
+- Before merging: `git rev-list --left-right --count origin/claude/l-alg...origin/claude/vibrant-johnson-nxvvxo` = 6 5
+  (6 ahead, 5 behind trunk 9d874d0; the 5 are D13/L34, D14/L35, the L-NEW roster row and NOW/LEAD-STATE updates).
+- Merged trunk with a merge commit (no rebase, no rewrite): 443e6f5, HEAD...trunk = 7 0. This file's commit makes it 8 ahead,
+  0 behind (SHA in the message to the Lead).
+
+## 2. Open work and the next step of each
+- (1) (FIX-d) scoping (queue item 1, notes/L-ALG.md at fe1b928). Next, after GO: measure max searches against n at fixed d
+  (random d = 3 and d = 4 games, pinned Oink and the pyref, both order data; adversarial climbs at fixed d if cheap); check
+  whether repeat-steal depth / exits are bounded by a function of d (lagfam needs d = 3D + 14, so it does not live at fixed d);
+  write the induction skeleton over the context's top priority (top level q: root regions are full attractors, a Büchi-like
+  round; unverified), naming which signed lemma R4-R14 covers each level and where (CTX⁺) and (LONG-PHASE) enter. Verdict to
+  the Lead within ~1.5 h of GO: a route (go), or exactly where it is open at d = 3.
+- (2) If (FIX-d) has a route: prove it, d = 3 first, every step citing dtl.cpp @ 8fbf0a7 lines or signed results.
+- (3) Fallback only: TC-6 steps P2-P6 (GAP-A-M §25b; P1 proved as a reading in §25c), labelled "single family, not L32 progress".
+- Carried, not in this box: (LONG-PHASE) (§24i) as the single named GAP-A target; GAP-C / (ACYC) (STEP5.md). Nothing in flight.
+
+## 3. docs/GAPS.md rows owned by L-ALG (trunk 9d874d0)
+- GAP-A | blocker | L-ALG (L-RED attacks) | open: signed reductions R9 (CTX⁺ ∧ FALL), R12 (CTX⁺ ∧ STEAL-POLY_sum), R13
+  (CTX⁺ ∧ EXIT_c, EXIT_c FALSE for every constant, DE21 add. 2), R14 (F_R ≤ 3·#fired⁺(R); GAP-A ⇔ CTX⁺ ∧ FIRED⁺-R up to poly,
+  given STR-DET); (STEAL-DEPTH_D, D const) FALSE (lagfam, DE21). Not the L32 single statement.
+- GAP-C | blocker | L-ALG (L-RED attacks) | open: KT frame given (ACYC) (R4); single-search progress statements dead (DE13, DE15);
+  needs a cross-search progress measure.
+- G-S5-6 | major | L-ALG | open: (ACYC), the only open hypothesis of R4; DATA 0 failures.
+- Closed rows owned by L-ALG: G-FDL, G-Bthr, G-K5, G-STR, G-DOM.
+
+## 4. Three owner rulings that most constrain this lane (verbatim, docs/DECISIONS.md and D001; status from docs/DECISIONS-INDEX.md)
+1. D1 (active), docs/decisions/D001-launch-brief.md line 25 / DECISIONS.md D1:
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+2. D13 (active):
+   > Keep working on the dtl and also c
+3. D8 (active):
+   > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
+Also binding, D11 (active): "No contact for now". Lead readings (not owner rulings): L34 (active) puts this lane on
+(LONG-PHASE)/(CTX⁺) toward the L32 progress criterion; L32 (active) is the GAP-A reassessment criterion (progress = one named
+statement with a proof route, or a proved polynomial bound on a nontrivial subclass; next reassessment at the Fable reset
+2026-10-21 21:00Z), not a stop rule: an incorrect run or a super-polynomial family is reported to the Lead at once.
+L22/L26: a statement about A_DTL must hold under every order datum.
+
+## 5. One trap that bit this lane, and the check that prevents it
+Trap (bit again at this restart): the container's local claude/l-alg is the stale 1017502; without a fetch, work and pushes would
+start from a 1,962-commit-old head. Check: `git fetch origin claude/l-alg claude/vibrant-johnson-nxvvxo`, then
+`git rev-parse HEAD origin/claude/l-alg` equal (fe1b928 here) after `git merge --ff-only`, and
+`git rev-list --left-right --count HEAD...origin/claude/l-alg` = x 0 before writing anything.
+Second trap carried: big RM_PREF=1 union runs need ~6 GB each (4 were OOM-killed); at most 2 heavy jobs at once.
+Push only as `scripts/push.sh > $S/push.log 2>&1; echo exit $?` (never piped).
+
+# L-ALG successor 10 handover check (2026-10-18 13:40Z by date -u; produced on Opus 5.5, D8)
+
+## 1. Branch, head, ahead/behind trunk
+- Branch `claude/l-alg`. At container start the LOCAL branch was the stale 1017502 ("behind 1987" after the fetch).
+  `git fetch origin claude/l-alg claude/vibrant-johnson-nxvvxo`: origin/claude/l-alg = a97f451, trunk = 076732e.
+  `git merge --ff-only origin/claude/l-alg`: HEAD = a97f451 = origin/claude/l-alg.
+- Before merging: `git rev-list --left-right --count origin/claude/l-alg...origin/claude/vibrant-johnson-nxvvxo` = 0 45
+  (0 ahead: box 11 already merged into trunk at 83e5205; 45 behind).
+- Merged trunk with a merge commit (`--no-ff`, no rebase, no rewrite): 781790d; HEAD...trunk = 1 0, HEAD...origin/claude/l-alg = 46 0.
+  This file's commit makes it 2 ahead, 0 behind trunk 076732e (SHA in the message to the Lead).
+
+## 2. Open work and the next step of each (box 12, after GO)
+- (1) QUEUE (1) of notes/L-ALG.md @ a97f451: on 𝒞^1P, bound the number of distinct q-tangles that fire at one context per phase by
+  a potential (not laminarity: (FIRE-LAMINAR) is FALSE, GAP-A-M §28g, onep_firecross_n76). Next step: in 𝒞^1P q has no choices,
+  so a q-tangle is fixed by its vertex set (plus forced edges); define the potential on (vertex set, birth context in the tail,
+  §28f) and test it with fixd_enable.py / fixd_firelam.py data; then combine with Lemma OUTCOME-MONO-1P (§28e) to bound re-cuts,
+  i.e. the contexts, giving (CTX⁺) on 𝒞^1P and so GAP-A on 𝒞^1P via §27b (CTRL, NOSTEAL-1P).
+- (2) At about GO + 2.5 h: verdict to the Lead (route, or the exact failing point with an instance if one exists).
+- (3) If no route: QUEUE (2), (NO-PRE-a) proof or instance ((TIE-BELOW) is FALSE, tieabove_n20, §28c add. 3). TC-6 P2-P6 only
+  as last fallback, labelled "single family, not L32 progress".
+- Carried, not in this box: GAP-C / (ACYC) (STEP5.md); packets ONEPLAYER.md and §28 HELD by the Lead. Nothing in flight.
+
+## 3. docs/GAPS.md rows owned by L-ALG (trunk 076732e)
+- GAP-A | blocker | L-ALG (L-RED attacks) | open: signed reductions R9 (CTX⁺ ∧ FALL), R12 (CTX⁺ ∧ STEAL-POLY_sum), R13
+  (CTX⁺ ∧ EXIT_c; EXIT_c FALSE for every constant, DE21 add. 2), R14 (F_R ≤ 3·#fired⁺(R); GAP-A ⇔ CTX⁺ ∧ FIRED⁺-R up to poly,
+  given STR-DET); (STEAL-DEPTH_D, D const) FALSE (lagfam, DE21). Not the L32 single statement.
+- GAP-C | blocker | L-ALG (L-RED attacks) | open: KT frame given (ACYC) (R4); single-search progress statements dead (DE13, DE15);
+  needs a cross-search progress measure.
+- G-S5-6 | major | L-ALG | open: (ACYC), the only open hypothesis of R4; DATA 0 failures (32,026 referee-2 runs, 4 x 4,000 climb steps).
+- Closed rows owned by L-ALG: G-FDL, G-Bthr, G-K5, G-STR, G-DOM.
+
+## 4. Three owner rulings that most constrain this lane (verbatim, docs/DECISIONS.md and D001; status from docs/DECISIONS-INDEX.md)
+1. D1 (active), docs/decisions/D001-launch-brief.md ("What success means"):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+2. D13 (active):
+   > Keep working on the dtl and also c
+3. D8 (active):
+   > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
+Also binding: D5 (active, aim; do not call M4 unlikely) and D11 (active, no contact). Lead readings, not owner rulings: L34 (active)
+puts this lane on (LONG-PHASE)/(CTX⁺) toward the L32 progress criterion; L32 (active) is a reassessment criterion (progress = one
+named statement with a proof route, or a proved polynomial bound on a nontrivial subclass; next reassessment at the Fable reset
+2026-10-21 21:00Z), not a stop rule: an incorrect run or a super-polynomial family is reported to the Lead at once.
+L22/L26: a statement about A_DTL must hold under every order datum.
+
+## 5. One trap that bit this lane, and the check that prevents it
+Trap (bit again at this restart): the container's local claude/l-alg is the stale 1017502; without a fetch, work and pushes would
+start from a 1,987-commit-old head (and scripts/push.sh would be missing). Check: `git fetch origin claude/l-alg
+claude/vibrant-johnson-nxvvxo`, then `git merge --ff-only origin/claude/l-alg` and `git rev-parse HEAD origin/claude/l-alg` equal
+(a97f451 here), then `git rev-list --left-right --count HEAD...origin/claude/l-alg` = x 0 before writing anything.
+Second trap carried: big RM_PREF=1 union runs need ~6 GB each (4 were OOM-killed); at most 2 heavy jobs at once.
+Push only as `scripts/push.sh > $S/push.log 2>&1; echo exit $?` (never piped).

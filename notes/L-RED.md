@@ -1,8 +1,8 @@
-# L-RED notebook (independent adversary). Successor 7 (Opus 5.5, owner D8, session_01WMwHG59A8od889vPhroxTk) from 2026-10-18 01:59Z (date -u); successor 6 from 2026-10-17 18:55Z (date -u); successor 5 from 2026-10-17 11:16Z (date -u); successor 4 (04:22Z-11:06Z) before
+# L-RED notebook (independent adversary). Successor 8 (Opus 5.5, owner D8, session_01D43ipMMRUSWR487hmnegmB) from 2026-10-18 08:56Z (date -u); successor 7 (session_01WMwHG59A8od889vPhroxTk) from 2026-10-18 01:59Z (date -u); successor 6 from 2026-10-17 18:55Z (date -u); successor 5 from 2026-10-17 11:16Z (date -u); successor 4 (04:22Z-11:06Z) before
 Previous: session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, parked 15:20Z); before it session_0117Yy21tGGz9s1zzLfBdUKC (Fable).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: BOX 10 ACTIVE (successor 7; R39 depth/exit family; see Resume point). Older status lines follow (history): HANDOVER (box 7 successor 5 parks at ~580k). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
+Status: BOX 13 END 20:40Z (successor 8; R40, R41; nothing running; see Resume point and SUCCESSOR QUEUE). Box-11 status (history): BOX 11 END (R40 complete). Box-11 status (history): ACTIVE from Lead GO 09:15Z. Box-10 status (history): BOX 10 ACTIVE (successor 7; R39 depth/exit family). Older status lines follow (history): HANDOVER (box 7 successor 5 parks at ~580k). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
 (n = 20/30/40/60 x 3 seeds x both orders, 1500 steps, heartbeat 100; carry/spp.py, --fitness spp; scratchpad eq/);
 (2) renewable reset, U-shrink (R21 section 4); (3) per-phase potentials L-ALG states (via the Lead).
 
@@ -55,6 +55,60 @@ Status: BOX 10 ACTIVE (successor 7; R39 depth/exit family; see Resume point). Ol
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-18 19:49Z (date -u), successor 8, BOXES 12-13 (Lead GO 13:42Z box 12; 17:18Z box 13 to ~21:00Z; produced on Opus 5.5).
+Docs: docs/red/R40 §14 (D2 wall-time check, closed), docs/red/R41 (compounding; VR-NEW / FD-WITNESS / TREE-PIECE data).
+- Two-player kills (both orders, b12_pot.py unmodified): (VR-NEW_s) vrs_viol_n100 (b4bbe7f0fdc0); (VR-NEW_V) vrV_viol_n80
+  (f77f0d34d13f), vrV_viol_n40 (8cf415ec9267). Surviving: (VR-NEW_all), (FD-WITNESS_all), (TREE-PIECE+) (L-ALG d2784b14).
+- Compounding: nest4_n80 (31c02e548d82) NEST 4 = best seen; climbs plateau; leanT cannot carry (Dom swallows tail); two-copy
+  interval-product obstruction (R41 §5); ctx13's resets are −1 pieces above a bottom stable call (R41 §6).
+- Obstruction data for VR-NEW_all: margin stays 1; the single new key = a vertex's first rank-class crossing; re-entries
+  differ mostly in |R_j| (R41 §8, ctxp/reentry.py).
+- Tools (experiments/red/tcpert): carryclimb.py (NEST, k copies), keyclimb.py (b12_pot keys), marginclimb.py (MARGIN /
+  MC_TIGHT / MC_RE), nestclimb.py; (ctxp) newkeys.py, reentry.py, d2count.py. L-ALG climbs: b12_ident.py climb (PLUS=1).
+SUCCESSOR QUEUE: (1) kill (TREE-PIECE+) (Lead 19:02Z; b12_ident.py TREE=1 PLUS=1 / climb); seeds: ctxp/instances/margin1_*.pg,
+ctx13_n40, nest4_n80; a kill needs every vertex of every changed piece at every depth to return to an earlier key: the |R_j|
+component is what blocked VR-NEW_all. (2) compounding counter with cross-copy carry tangles (R41 §5). (3) Lead's 𝒞^1P items.
+TRAP: call ReadNotifications at every check-in (Lead messages arrived up to 3.5 h late in box 11).
+2026-10-18 13:55Z (date -u), successor 8, BOX 11 END (final). Head a5d91c9a. Nothing running.
+SUCCESSOR QUEUE (Lead 12:17Z order): (1) compounding tail-reset counter (L-ALG GAP-A-M §29 (b)): a tangle learned in a fresh
+tail below rung j must enable the next rise at j. leanT cannot carry: Dom of the stable piece at rung j swallows all lower rungs
+(R40 §12). Build a staircase whose stable piece at j does NOT contain the rungs below j. (2) Lead's 𝒞^1P item (Lead 10:28Z):
+kill (CTX+) inside 𝒞^1P (onep_lagdist_D8; one-player conversions of tcL/leanT; check class membership mechanically).
+(3) lagflat7 / lagdist substrates from L-ALG (Lead 10:06Z, 10:28Z). (4) Wall time on tcS8 is answered (R40 §14).
+TRAP (bit this box): Lead messages queued 10:06Z-12:17Z reached me only at 13:38Z. Call ReadNotifications at every check-in
+and before every report; do not rely on the harness to surface them.
+2026-10-18 13:30Z (date -u), successor 8, BOX 11 END (produced on Opus 5.5). R40 §0-13 complete. Nothing running (ps: no climbs, no
+dtl_rootmono orphans). Final numbers: leanT C_bv = S - 1 (N 6..32, both orders); tcL C_bv = S - 3; tcR4 depth-1 e*; DEEP-STAB
+0 violations in 700,000 random + 10,000 structured games; GAP-C probe 60,000 verified; item (2) not achieved (§12: tangles
+quadratic, products of staircases flat). SUCCESSOR QUEUE as below (11:43Z entry).
+2026-10-18 11:43Z (date -u), successor 8, box 11 (produced on Opus 5.5). Pushed through 6b1bc0c2: docs/red/R40 §0-11.
+- (CTX+) answered on uniform families: leanT(N) (lean.py, n = 8N) C_bv = S - 1 (N 6..32, both orders); tcL C_bv = S - 3;
+  tcR4 has e* at depth 1. All linear in n. No live L-ALG lemma broken (R40 §11). GAP-C probe 60k runs verified.
+- Item (2) long phase: NOT achieved. Every structured family found learns nested/extending chains (leanT: search k extends one
+  chain tangle by bit k); perturbation climbs top out at about 0.13 n searches. Antichain width is NOT an obstruction
+  (leanT width = S, lagfam all tangles incomparable): ctxp/width.py.
+SUCCESSOR QUEUE: (1) item (2) on the staircase: a counter needs each rung RE-learned with a new (state-dependent) tangle after a
+higher rung advances; TC's j-chains carry exactly such state (TL learns 2^(N+1) tangles on tc(N)), DTL's pruning skips them
+(ctxp/prunes.py prints what the root call prunes). (2) DEEP-STAB proof gap (R40 §5). (3) tcR4 at N >= 9 needs ctxlight and
+one job at a time.
+2026-10-18 11:07Z (date -u), successor 8, box 11 (produced on Opus 5.5). Pushed 5dd0b5cd, f020224f, 991ae4fb (R40 §1-8).
+- tcR4(N) (tcpert.py tcR4): e* at search_rec DEPTH 1 with the root identical (13 of 25 transitions at N 8, both orders); about
+  half the tangles born at depth >= 1; DEEP-STAB held. tcL / tcR4 totals: no steals, no exits, fired+ small. All linear in n.
+- TL (oink --tl) on tc(N): 2^(N+1) iterations; on tcR4: linear. Perturbations destroy TC hardness.
+- Running in scratch: tcclimb seeds 11 (from tcR4, N 4..9 ratios) and 12 (TCC_TLHARD=100: TL on tc(6) stays >= 100 iterations).
+  Watch for: a rule set with DTL iterations growing faster than n (ratio it(9)/it(5) > n ratio 2.88).
+- Check-in to the Lead due ~12:15Z (3 h after GO 09:15Z) with context size.
+2026-10-18 09:37Z (date -u), successor 8, box 11 (produced on Opus 5.5). LALG_DIR = detached l-alg 11d89e20 in scratch (lalg/).
+- experiments/red/ctxp/: depthscan.py (search_rec depth >= 1 calls, births per depth, FIRST-BV-1), lemmacheck.py, rsearch.py,
+  ctxfit.py (ctxtrace rule as a function), rsearch2.py, deepclimb.py. instances deep1_n13 (fa65aa1c), deep1_n21 (398c2ecd):
+  a tangle born at depth 1 (both orders on n13; pinned Oink verified 4 iterations).
+- (DEEP-STAB) data: the FIRST best_vertices of a -1 subcall never returned 1 (700k random games, 34,661 nonempty subcalls, both
+  orders); proof sketch has one gap (a higher region can split a tangle, so region unions are not monotone in V). Later bv's in
+  a subcall can return 1 (27 times), so depth >= 1 learning exists, but it changed the ROOT threshold loop (e* at root).
+- experiments/red/tcpert/tcpert.py: label-rule perturbations of tc(N). tcL(N) = tc(N) + edges Even-i-L -> Even-(i-1)-H:
+  pinned Oink iterations N+2 (N 4..16, verified); Even phase S = N-1; first-difference contexts 1/2/4/6/8 at N 4/6/8/10/12
+  (both orders; N >= 10 by ctxlight.py, validated = ctxfit on N 4/6/8): contexts = S - 3. Written up in docs/red/R40.
+  Traps: ctxfit (full sets) is OOM-killed at N 10 (~6 GB); run ONE rootmono-based job at a time above n ~ 200.
 2026-10-18 03:53Z (date -u): successor 7 PARKS at ~510k (Lead 03:52Z: box (b) until ~560k, then handover). Last pushed head
 before this commit: 90febc5c. Nothing running (ps: no climbs, no dtl_rootmono orphans).
 SUCCESSOR QUEUE:
@@ -333,6 +387,11 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
 - GAP-C: (alpha) (straddling tangle leaving the lowest region open) never produced; proxy fitness "alpha" in dtl_search.py.
 
 ## Things only I know
+- (box 11) ctxp/ctxfit.py keeps full frozensets per log entry (dtl_rootmono's CK): OOM-killed (~6 GB container cap) at n ~ 350
+  even alone. ctxp/ctxlight.py hashes them (validated equal on tcL 4/6/8, leanT 6/8). Run ONE rootmono-based job at a time.
+- (box 11) tcpert.py labels: "<Even|Odd>-<i>-<Z|T|L|H>" and "<..>-<i>-<S|A|B>-<j>"; tc+ uses another label format (not parsed).
+- (box 11) In-tree experiments/alg copies of dtl_rootmono/fdlcheck/firstdiff/deficit/pyref/stealdepth/changenew/prefexits/
+  defsplit/quietlin are byte-identical to l-alg 11d89e20, so LALG_DIR=<repo root> works (check.sh uses it).
 - (box 8, 23:10Z) Depth/EXIT need visits: depth D >= D+3 visits of one context in one phase (R37-1); EXIT c needs >= 2c visits.
   The 45/76-vertex cores have 4-search phases (max depth 1, EXIT 2 by construction); only the R35 game (9 searches) has room.
   Stacked copies run in lockstep (same phase); a lag between copies needs a gate (R37 addendum plan).
@@ -653,6 +712,12 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
   "DTL attack" table and verdict (read 15:05Z).
 
 ## Dead ends
+- (box 11, 11:15Z by date -u) Random search for first differences at depth >= 1 (ctxp/rsearch2.py, n 8-18, about 10^5 games
+  in 20 min; deepclimb.py from deep1_n13, 1,800 steps): best 0 such transitions. Obstruction: random games have phases of 1-3
+  searches. The depth-1 first differences came instead from a structured family (tcR4, R40 §8).
+- (box 11) Perturbation climbs on tc(N) for super-linear search growth (tcclimb.py seeds 3, 5-12; up to 8 rule parts; fitness
+  growth or robust ratio; also with TL kept exponential): best families have about N^2/2 searches = linear in n (tcR4 and
+  variants). Small-base ratios (2,2,3,6,9,12) are noise. Nothing super-linear in n.
 - (box 10) Adding a relay level under an EXISTING depth-1 re-steal: l2predict.py over every (step, hold vertex, freeze vertex),
   both orders: 0 depth-2 candidates on stealonce_viol_n76 and stealonce_core_n76. Obstruction: t7's vertices sit in every
   lower round-4 prefix at visits 1-8 (remainder re-attracted), so its re-steal releases nothing downstream.

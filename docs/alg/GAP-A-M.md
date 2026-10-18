@@ -3813,3 +3813,827 @@ Packet-worthiness (my view; the Lead decides):
 - §24f "the relay is combinational in T; a counter at R costs about 2^D new firing tangles at R": YES as a short remark. It is a
   two-line corollary of the signed CHANGE-NEW and the state inventory, and it justifies (LONG-PHASE) as the single target.
 - §23x EXIT-ORIGIN: OPTIONAL / LOW. Its purpose was (EXIT_c), which is dead. Keep it frozen as a supporting lemma only.
+
+25. Box 11 (L-ALG successor 8; Lead GO 08:58Z by date -u, owner D13 "Keep working on the dtl and also c", Lead reading L34;
+produced on Opus 5.5)
+25a. The subclass, named before any proof work (09:00Z by date -u)
+SUBCLASS: the Two Counters family TC = {tc(N) : N ≥ 1}, the games printed by Oink's generator tools/oink/build/tc N (src/tools/tc.cpp
+@ 8fbf0a7, no options). TARGET CLAIM (TC-6): for every N ≥ 3 and every order datum, A_DTL on tc(N) performs exactly 6 searches
+(iterations: 4 Even, 2 Odd; phases of 3, 1 and 2 searches) and learns 2N + 1 tangles. Any constant bound (and a fortiori a
+polynomial bound) on the searches is the L32 deliverable; the exact count is the strong form.
+Why nontrivial: on TC the targeted standard solvers are EXPONENTIAL, measured in this fleet's M1 bench
+(experiments/hard-families/tc/README.md, verdict CONFIRMED): oink-tl, zlk, uzlk, rr and dp grow by b = 2.00 per +1 in N; fpi
+1.92 and tspm 2.74 over shorter ranges. Oink's README (lines 199-219) names TL, FPI/FPJ, NPP/PP/PPP/DP/RRDP, ZLK/UZLK/ZLKPP-STD and
+TSPM/SPM/MSPM as exponential on it. The paper is van Dijk, GandALF 2019, doi:10.4204/EPTCS.305.8, NOT yet opened by this lane, so
+only the bench data is cited. Contrast, said plainly: oink-rtl and oink-psi are polynomial on TC (bench), so TC is NOT hard for
+every solver. It is a single designed family, not a structural class, and tc+ (where A_DTL's iterations grow: 5, 10, 18, 26) is
+NOT included.
+DATA behind the target: pinned Oink, N = 1..12: iterations 3, 5, 6, 6, ..., 6 and tangles 2, 4, 7, 9, ..., 2N + 1, all verified.
+dtl_pyref, both order data, N = 1..6 and 8: identical phase pattern [3, 1, 2] for N ≥ 3. Oink -t on tc(4): every tangle is learned
+at depth 0.
+Proof route: trace the run by induction on N. Describe the state (tangle set T) after each search and show which tangles the
+next search's depth-0 stable piece extracts; every step cites dtl.cpp lines and signed results (R4-R14). The order-datum
+dependence must be handled: either show that the traced sets are order-free, or restrict the claim to the order data checked.
+
+25b. (TC-6): the run schema (DATA) and the proof plan (L-ALG succ. 8, 09:14Z by date -u; tool experiments/alg/dtl_tcschema.py)
+Game (tc.cpp @ 8fbf0a7, read by L-ALG). There are 2N bits, Even bits i and Odd bits i, i = 0..N−1, with toppo_i = N² + 9N − 2i.
+- Even bit i (pl = 0):
+  - H_i: Even-owned, priority toppo_i − 2.
+  - T_i: Odd-owned, priority 2; edges T → H and T → the first connector.
+  - L_i (gate): Odd-owned, priority toppo_i − 2N − 3 (odd); edge L → T.
+  - For j < i, connector triples, all priority 1: S_j (Even; edges A_j, B_j); A_j (Odd; edges next, Even gate L_j);
+    B_j (Odd; edges next, Odd gate L_j).
+  - Z_i: Even, priority 1; edges T_i, and the Odd gates of bits j > i.
+  - H_i → Even gate L_{(i−1) mod N}.
+- Odd bits are the same with the roles of the players swapped and priorities one lower: H odd, T priority 1, connectors and Z
+  priority 0, Z → the Even gates of bits j ≥ i.
+- Oink then sorts and renumbers priorities. The exact compressed priorities are still to be written out (step P1).
+Learned tangles (DATA). The LANE K_i^p = {T_i, S_j, A_j (j < i), Z_i} of bit i, player p: the cycle T → S_0 → A_0 → S_1 → ... → Z → T,
+with the owner of S and Z (= p) choosing A. Its escapes are T → H_i and A_j → gates. Plus one Even tangle BIG in search 0, of size
+14, 25, 36, 49, 64, 81, 121 at N = 3..8, 10 ((N+1)² for N ≥ 4).
+SCHEMA (dtl_tcschema.py, RM_LIGHT=1 RM_DV=0; PASS for N = 3, 4, 5, 6, 7, 8, 10 in BOTH order data; N = 12 killed by memory
+(exit 137) in the Python model in both orders, not an incorrect run; pinned Oink N = 1..12: 6 iterations, verified):
+- s0 (Even): K_{N−1}^E and BIG.
+- s1: K_1^E .. K_{N−2}^E.
+- s2: K_0^E, and the dominion = the Even half (all "Even-*" vertices).
+- s3 (Even, on the Odd half): nothing; the Even phase ends.
+- s4 (Odd): K_1^O .. K_{N−1}^O.
+- s5: K_0^O, and the dominion = the Odd half.
+- Calls per search (Oink -t): 4N, 6N − 2, 4N, 4N − 1, 2N, 1. In every Even search the calls on the Odd half form the SAME
+  fruitless sweep (contexts |R| = |Odd half|, |Odd half| − 1, ...).
+- All tangles are learned at depth 0.
+PROOF PLAN for (TC-6) (each step to cite dtl.cpp lines and R4-R14):
+- P1. Exact compressed priorities and the half structure. Which edges cross between the halves (A/B → gates of both colours,
+  Z → opposite gates). That the Even half is an Even dominion and the Odd half an Odd dominion (W_E, W_O).
+- P2. The Even phase on G′ = G: the depth-0 piece sequence of s0-s2 and the tangles each stable piece extracts (extractTangles,
+  dtl.cpp 268, 171, 89, at the stable piece's regions). Show s2's stable root piece is a dominion (search 1068; dominion loop
+  1031-1036).
+- P3. The Odd-half sweep learns nothing in an Even search: every piece on the Odd half returns −1 or 0, and the recursion only
+  removes vertices (an induction over the sweep).
+- P4. s3 on the Odd half returns false (no tangle, no dominion), which ends the Even phase (run() 1106-1121).
+- P5. The Odd phase on the Odd half: s4 and s5, the mirror of P2 without BIG.
+- P6. Order data: show that the traced sets do not depend on the order datum, or restrict (TC-6) to the order data checked.
+Status: SCHEMA is DATA. No step of P1-P6 is written yet. Estimated length: P2 and P5 are the work, about 4N piece descriptions
+per search in schematic form. Recommended for a fresh successor (this session is at ≈ 500k context).
+
+25c. (TC-6) step P1: compressed priorities and winning regions of tc(N) (PROVED, reading, unrefereed; L-ALG succ. 8,
+09:19Z by date -u; checked on the generated files by the commands of this box)
+Lemma P1a (priorities). After game.sort() and game.renumber() (game.cpp 618-637: walk the vertices in priority order; on a
+parity change go +1, on a new value of the same parity go +2), tc(N) has:
+- 0: Odd-bit connectors S/A/B and Odd Z;
+- 1: Even-bit connectors, Even Z, Odd T;
+- 2: Even T;
+- Even gate L_i^E = 3 + 2(N−1−i), Odd gate L_i^O = 4 + 2(N−1−i);
+- Even H_i^E = 2N + 4 + 2(N−1−i), Odd H_i^O = 2N + 5 + 2(N−1−i).
+So 4N + 3 distinct values; 2N + 3 is skipped, because Odd L_0 (even) is followed by Even H_{N−1} (even).
+Proof: tc.cpp's raw priorities are 0 (Odd connectors and Z), 1 (Even connectors and Z, Odd T), 2 (Even T), then gates
+toppo_i − 2N − 3 / − 2N − 2 and highs toppo_i − 2 / − 1, with toppo_i = N² + 9N − 2i (even). They interleave
+Even L_{N−1} < Odd L_{N−1} < Even L_{N−2} < ... < Odd L_0 < Even H_{N−1} < Odd H_{N−1} < ... < Odd H_0; apply the renumber rule.
+Matches every vertex of the generated files at N = 3, 4, 10 (check printed "priority formula matches: True").
+Lemma P1b (winning regions). W_E(tc(N)) = E′ := (Even-bit vertices \ Even-bit B_j) ∪ Odd-bit B_j, and W_O = the complement O′.
+Proof (Even side; Odd is symmetric with the roles swapped and priorities one lower).
+- Even's positional strategy on E′: H_i → L_{(i−1) mod N}^E; S_j → A_j; Z_i → T_i; an Odd-bit B_j (Even-owned) → the Even gate
+  L_j^E.
+- E′ is an Odd trap: T_i^E → {H_i, first connector} ⊆ E′; L_i^E → T_i^E; A_j^E → {next connector or Z_i, L_j^E} ⊆ E′.
+- Every play consistent with the strategy is won by Even. Gates are entered only from A_j^E with j < i, where i is the bit of
+  the lane being run, and from H_{j+1}.
+  - If H's are seen finitely often, the bit index strictly decreases at each gate visit, so gates are seen finitely often.
+    The play ends in one lane cycle, whose maximum is T^E with priority 2, even.
+  - If H's are seen infinitely often, the maximum seen infinitely often is an Even H (even), which beats every gate and T.
+- Odd wins O′ symmetrically: the Odd-owned Even-bit B_j → the Odd gate L_j^O.
+- Hence E′ ⊆ W_E and O′ ⊆ W_O, and since they partition V, equality holds. □
+Checked against pinned Oink's solutions at N = 3, 4, 10, 12: "W_E = Even-* minus Even-B plus Odd-B: YES".
+Consequence for P2-P5: (TC-6)'s two dominions are exactly E′ and O′ (dominion 14 / 15 in the N = 3 trace).
+
+26. Box 11 (L-ALG successor 9; Lead GO 09:38Z, owner D13 "Keep working on the dtl and also c", Lead reading L34; produced on
+Opus 5.5): (FIX-d) scoping, "is the number of searches of A_DTL bounded by n^{f(d)} at a fixed number d of priorities?"
+(written 09:52Z by date -u). Everything below is DATA or a reading, unrefereed. d = number of distinct priorities after Oink's
+renumber (Oink prints "renumbered (d priorities)"); "searches" = Oink iterations (one search() each, run() dtl.cpp 1106-1121).
+
+26a. Data at fixed d: random games, climbs, and the fleet library (tools experiments/alg/fixd_scan.py, fixd_climb.py, fixd_ctx.py)
+- Random games (gen.random_game, priorities uniform in 0..d−1, out-degrees 1-2 / 1-3 / 2-5 mixed, seeds 3 and 7):
+  - pinned Oink, 200 games per n, n = 25, 50, ..., 3200: max searches 4-5 at d = 2, 3 and 4, flat in n; 0 unverified runs.
+  - dtl_pyref --order stable, 100 games per n, n ≤ 400 (d = 3, 4) and n ≤ 200 (d = 2): max searches 3-5; 0 Zielonka mismatches.
+  - Random games at fixed d are easy for A_DTL and say nothing about GAP-A.
+- Climbs (pinned Oink, score = searches − dominions, 3000-4000 steps, 2 seeds): best 7 at d = 3 (n ≤ 48), 8 at d = 4, 8 at d = 5;
+  at d = 2: 3, 4, 5, 6 at n = 10, 16, 24, 32 (fixd_d2_n32.pg below). Weak climber; no growth signal beyond linear.
+- Lower bound already on record at d = 3: dtl_chainfam UP with all x_j at priority 0 (§21b) has priorities {0, 2k, 2k+1}, i.e.
+  d = 3, and n − 1 searches in one phase in stable order. So a fixed-d bound is at least linear.
+- The fleet library (239 instances under experiments/*/instances, both order data): every instance that killed a GAP-A
+  statement (DE9-DE21 and DEAD.md) has d ≥ 6 (fired18_stable_n20 d = 6, ctx13_n40 d = 29, fall4_n116 d = 88, depth2_n39 d = 23).
+  Per context, grouped by k = |pr(R)|: max D_R = 0 at k ≤ 2 (up to 19 visits), 1 at k = 3, then growing (8-10 at k = 11-12).
+  Fixed small d was untested adversarially before this box.
+- d = 2 is not trivial for DTL: on fixd_d2_n32.pg (Oink order) the root context has 6 visits and D_R = 5, each search
+  shrinking the stable best vertices by one vertex (chain-like, as in §21b). So "contexts with ≤ 2 priorities never change"
+  (the library pattern) is FALSE.
+
+26b. lagfam survives at d = 3: every constant local premise is FALSE at fixed d (DATA; tool experiments/alg/fixd_lagcollapse.py)
+Construction: build L-RED's lagfam(D) (experiments/red/lag/lagfam.py, d = 3D + 14, n = 7D + 22); renumber the vertex ids by
+(original priority, original id), so that the stable index order of equal-priority vertices is the original priority order; then
+merge priority classes. MODE flat7: clock x_j, b, z → pr(b); a, w_j, y_j, v_j, f_j, W → pr(a); every T_j, tau_j and S → pr(S).
+After compression the priorities are {0, 1, 2}: d = 3, top priority 2 even (Even's), all relay tops at the top priority.
+Results (stable order: dtl_pyref model, winners equal to Zielonka; pinned Oink: verified):
+| D | n | d | sha1 (12) | stable: searches / tangles | re-steal depth, max k | max exits | root D_R | #fired⁺ | Oink searches |
+| 2 | 36 | 3 | 77f2821d486a | 10 / 13 | 2, 2 | 2 | 8 | 12 | 4 |
+| 4 | 50 | 3 | 45de9d933756 | 12 / 17 | 4, 3 | 3 | 10 | 16 | 12 |
+| 8 | 78 | 3 | 60f2df733ffa | 16 / 25 | 8, 5 | 5 | 14 | 24 | 15 |
+| 12 | 106 | 3 | aa5fceaae0aa | 20 / 33 | 12, 7 | 7 | 18 | 32 | 19 |
+| 16 | 134 | 3 | 67b2d56b32c6 | 24 / 41 | 16, 9 | - | - | - | 23 |
+(D = 6, 10: depth 6, 10; Oink 3 and 17 searches.) dtl_stealdepth.py and dtl_totals.py (RM_EXCL=1 RM_LIGHT=1 RM_DV=0, RM_PREF=1
+for the depth). The totals equal lagfam's own profile (§24g) exactly: D_R = D + 6, #fired⁺ = 2D + 8, Σ_q k_q and X_R the same,
+and the ROOT is the maximal context for every quantity. Intermediate modes: MODE both (d = 8) and flat5 (d = 4,
+lagflat5_d4_D8.pg, sha1 8919a5ab76f4) keep depth = D; flat3, flat4, flat6 (other merges, d = 4) kill the relay.
+Oink order: pinned Oink stays linear (searches above), and the Oink-order model keeps depth 4 at D = 4 but collapses to depth 0
+at D = 6, 8, 10, 12 (std::sort is unstable on large equal-priority classes, the §21b effect). Under L22/L26 a statement about
+A_DTL must hold for every order datum, so the stable-order data kill it.
+Consequences:
+- (STEAL-DEPTH_{f(d)}) and (EXIT_{f(d)}) are FALSE for every function f: at d = 3 the re-steal depth is D and the max exits
+  are D/2 + 1, unbounded. So R12 (c) and R13 give no fixed-d route; at d = 3 the live routes are those of the general case,
+  (CTX⁺) plus one polynomial-total premise (§24i).
+- Reading: lagfam's relay levels are carried by the INDEX ORDER of equal-priority tops, not by priorities. Region tops are
+  processed in descending index (dtl.cpp 691) and each region is capped at max_prio = pr(top) (attractVertices line 74,
+  attractTangle line 140); with all tops at one priority the caps are equal, and the processing order alone stages the relay.
+  So d is not the parameter that controls DTL's per-context state; the number of distinct (priority, index) positions is n.
+
+26c. The induction skeleton over the top priority, and where it breaks (reading)
+- Depth. search_rec recurses only on Z, the threshold-t attractor to X minus the opponent attractor of its priority-t vertices
+  (dtl.cpp 898-954: t at 898-904, attraction capped at t at 921 with 74/140, priority-t vertices moved to X at 937-947, recursion
+  954). So a depth-(k+1) context has only priorities < t ≤ max pr of its parent, and a depth-k context has ≤ d − k priorities.
+  Recursion depth ≤ d is already on record (DTL-proof.md §3(c), line 533; C5-DTL.md line 163).
+- At d = 3: depth 2 contexts have one priority. If it has the opponent's parity, best_vertices returns 0 at once (line 668);
+  if p's, V = R and the call is one region pass. Depth 1 contexts have ≤ 2 priorities. The root G′ has 3.
+- Signed coverage per level (every order datum): R9 (a)-(c) per-context budgets and R14 (CHANGE-NEW: D_R ≤ #fired⁺(R),
+  F_R ≤ 3·#fired⁺(R)) hold at every level; R8 STR-DET and R5 (h) FDL locate the first difference at one level. R12 (c) / R13
+  are the only signed results that would turn a FIXED-d local constant into a bound, and 26b kills their premises at d = 3.
+- Where the premises enter at d = 3: (CTX⁺) at depth 0 (the root's shrinking best_vertices contexts R \ X, 6 per phase on
+  lagflat7 D = 4) and at depth 1; (LONG-PHASE) = (FIRED⁺-R) at the ROOT G′, where lagflat7 carries the whole relay.
+- The predecessor's idea "at the top level q the root regions are full attractors, so level q behaves like a Büchi round"
+  (notes/L-ALG.md fe1b928, unverified) does not hold as a simplification: in lagflat7 every relay top (T_j, tau_j, S) is at
+  q = 2, and the relay lives among those same-priority tops. The full-attractor property only holds for the FIRST top of
+  priority q; later tops of priority q work in CurR = R minus the earlier regions (line 690, 699), which is exactly the prefix
+  P(τ⁺) of Lemma CHARGE (STEAL-DEPTH.md), and the steals happen there.
+
+26d. VERDICT (FIX-d): NO ROUTE. At d = 3, GAP-A is as open as in general. The open point is exactly (LONG-PHASE) at the root
+context G′ (equivalently (FIRED⁺-R) at G′, R-P11 (c)), together with (CTX⁺) for the depth-0 and depth-1 contexts. Fixing d bounds
+the call depth (≤ d) but none of the per-context local constants. A d = 3 proof of a polynomial bound would be a proof of
+(LONG-PHASE) at the root itself, for a root whose relay uses only one priority value. Not started; the Lead decides the next item.
+Family for L-RED (named, not run by me): lagflat7 (d = 3) is a substrate for long-phase / counter attempts at fixed d; an
+Oink-order version (an input permutation whose std::sort order realises the stable order on the large classes) would make it
+order-robust.
+
+27. Box 11, item (b) (Lead pick 10:05Z by the Lead's clock: (b1) one-player games, (b2) all-distinct priorities; L-ALG succ. 9,
+produced on Opus 5.5; written 10:08Z by date -u). Readings are unrefereed; every code line is dtl.cpp @ 8fbf0a7.
+
+27a. (b2) ALL-DISTINCT priorities: DEAD as a class (DATA). lagfam refined to all-distinct priorities, order- and parity-preserving,
+ties broken by id (DISTINCT=1 fixd_lagcollapse.py D none): d = n, re-steal depth D in BOTH order data (no ties, so stable = Oink
+order), pinned Oink verified, winners equal to Zielonka. Instances experiments/alg/instances/lagdist_D4.pg (sha1 af9b429696a0,
+depth 4), lagdist_D8.pg (215e9ce202dd, depth 8), lagdist_D12.pg (66855da1a880, Oink-order model depth 12, max k 7); searches
+12 / 16 / 20. Ties reversed (DISTINCT=rev) also keep depth D on lagfam itself. So index ties are NOT needed for the relay; the
+relay needs only a total order of the tops. Side product: lagdist is an ORDER-ROBUST version of lagfam (the §26b caveat is gone).
+
+HONEST LABEL (Lead 10:27Z): one-player parity games are solvable in polynomial time by other means (cycle detection on the
+controller's graph), so a bound for A_DTL on 𝒞^1P is a MODEST result. Its value would be that it is the FIRST proved structural
+bound for A_DTL, and that the technique (no steals ⇒ the computation at a fixed context is monotone along a phase) may transfer.
+The price of NOSTEAL-1P is the hypothesis that the q-parity priorities are pairwise distinct. Without it the lemma is OPEN:
+the proof fails at step 1, and no instance is known (3,600 forced tie runs of the designed steal instances, all k = 0, §27c).
+27b. (b1) one-player games. Class 𝒞_C (C ∈ {0, 1}): every vertex with ≥ 2 successors is owned by player C (the controller);
+every vertex of player q = 1 − C has exactly one successor. (This is a property of the game, not of DTL's run.)
+Lemma CTRL (PROVED, reading). In 𝒞_C, every tangle that search(C) extracts is a dominion. Hence every search(C) that returns
+true finds a dominion and removes ≥ 1 vertex, and player C makes at most n + 1 searches in the whole run.
+Proof. extractTangles builds the SCC graph on the region with str for C-vertices and the region edges of q-vertices, and computes
+escapes only from q-vertices of the SCC (dtl.cpp 329-338: `if (owner(v) != pl)` over outs(v), with `G[to]` and not in the tangle). A
+q-vertex in a nontrivial SCC has an out-edge inside the SCC, and its only successor is that edge; a one-vertex SCC needs a
+self-loop (is_tangle, 315-317). So the escape list is empty and the tangle is a dominion (`if (tangleto.empty())`, 347-376,
+dominions++). The vertex keeps its unique successor in G′: a vertex whose only successor is solved is attracted with it
+(search's dominion attractor, attractVertices(player, v, G, S, G, −1), 1031-1036), for either owner. search returns true only
+if tangles or dominions changed (1068); here only dominions can change, and each dominion removes its vertices from G. □
+Lemma NOSTEAL-1P (PROVED, reading). Let 𝒞_C^dist be 𝒞_C with the priorities of parity q pairwise distinct. In every phase of
+player q in a game of 𝒞_C^dist, under every order datum, there is NO relevant steal (R11 definition: a tangle t ∈ F_τ fired at
+top τ's region step of round r at visit i, met but not contained by the later prefix P_{i+1}(τ⁺)) in any best_vertices context.
+Proof. Let A = t ∩ P_{i+1}(τ⁺) ≠ ∅. A vertex enters a region (dtl.cpp 690-701) as its top, through attractVertices, or through
+attractTangle.
+1. No vertex of t is a top of a prefix region. Tops are q-parity vertices of V (line 692; V = q-parity vertices of R, 661-667) with index above τ, so priority > pr(τ):
+   vertices are indexed in priority order and q-parity priorities are distinct. Every vertex of t has priority ≤ pr(τ), because t
+   fired in τ's region (attractTangle line 140 for vertices not yet in CurZ; CurZ itself is capped at pr(τ) by line 74).
+2. A is forward-closed in t's SCC graph.
+   - q-vertex y ∈ A: y entered via attractVertices because its only successor s(y) was in that region (lines 74, 88: pl = q, no escape test), or via
+     an attracted tangle t″, whose strategy at y is s(y) ∈ t″. Either way s(y) lies in the prefix, and s(y) ∈ t (y's only edge,
+     and t is an SCC). So s(y) ∈ A.
+   - C-vertex o ∈ A: o entered via attractVertices only if no successor is in CurR \ CurZ (lines 75-85, G = CurR); a successor
+     outside CurR was popped earlier in round r (prefix) or lies outside R. Via attractTangle, o's successors outside t″ are
+     escapes of t″, which must be in CurZ or outside CurR (lines 152-157). Every successor of o inside t lies in R, so it is in
+     the prefix: in A.
+3. t is strongly connected in exactly these edges (str = the unique successor for q-vertices; all region edges of C-vertices).
+   So the forward closure of any vertex of A is all of t, and t ⊆ P_{i+1}(τ⁺). No steal. □
+Corollary (class reduction; reading on signed results). On 𝒞_C^dist: in every phase of q, N*_R = 0 for every context, so
+F_R ≤ 3·N*_R = 0 (R11 (c)): Π_R rises strictly at every e*-at-R transition. By R9 (c), S − 1 ≤ (H + 1)·|C_bv| + n(|C_T| + |C_Dom|) + 1,
+H polynomial (R7). Player C's searches are ≤ n + 1 (CTRL). Hence, for the class 𝒞^1P := 𝒞_0^dist ∪ 𝒞_1^dist,
+  GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P, given STR-DET (R8, signed).
+Every per-context premise is now discharged on the class. What remains is (CTX⁺), the count of distinct first-difference
+contexts per phase: a counter across serialized contexts, which is L-RED's current topic.
+DATA consistent with the lemma: lagfam made one-player (Even choices at a and w_j removed or flipped, 32 variants, D = 4, 8):
+max k = 0 in every variant, both order data, ties or distinct, phases still D + 7 long (the clock), 6 contexts per phase, root D_R
+= D + 6 (instance onep_lagdist_D8.pg, sha1 a06a81ce42a7). chainfam with a forced (Even has no choice): n − 1 searches in one
+phase (k = 3..40, both orders), so the class still has linear phases.
+Calibration caveat: random games and steal-scoring climbs find NO steal, in the class AND in unrestricted two-player games
+(fixd_steal1p.py: 1,600 class games, 800 two-player, 12 climbs), so the in-class zeros are no evidence by themselves; the
+evidence is the proof plus the lagfam conversions.
+Where ties enter: if two q-parity tops share a priority, step 1 fails (a later same-priority top can enter t), the mechanism of
+§26b. The lagfam conversions with ties still have k = 0, so dropping "dist" is open, not refuted.
+TARGET.md diff: the objects are those of TARGET.md §1 (vertex priorities, max-parity, every vertex with a successor); the class
+adds hypotheses on owners, out-degrees and q-parity priorities and changes no definition. Oink's renumber is injective on values
+(game.cpp 618-637), so "pairwise distinct" survives it. These are lemmas about A_DTL's search count, not an M4 claim.
+NEXT (proposal): (CTX⁺) on 𝒞^1P. With no steals, PREFIX-MONO-X* (R11 (b)) holds whenever V ⊆ V′, so a context's regions grow
+along a phase while its V does not shrink. The first question is whether the depth-0 contexts R \ X then form one chain per
+phase.
+
+27c. (CTX⁺) on 𝒞^1P, and an adversarial test of NOSTEAL-1P (DATA; L-ALG succ. 9, 10:40Z by date -u)
+- NOSTEAL-1P against the fleet's DESIGNED steal instances. stealonce_viol_n76, stealonce_core_n76, stealonce_both_n45 (DE20) and
+  depth2_n39 (DE21) all have steals in A_DTL, as do lagflat7_d3_D4 and lagdist_D4. Each was forced into the class: every
+  choice vertex of player q keeps one edge, Zielonka's strategy edge in trial 0, a random edge in trials 1-149, for q = 0 and
+  q = 1. Each forced game was run with its priorities as they are (ties) and refined to all-distinct, in both order data.
+  Result: 3,600 runs, max k = 0 in ALL of them (dtl_stealdepth model, winners equal to Zielonka in every run). No violation of
+  NOSTEAL-1P. The steals also vanish when ties are kept, so the "dist" hypothesis may be removable. In the tie case, step 1 of
+  the proof fails only if a same-priority top u ∈ t with index above τ joins V_r between visits; u ∉ V_r(i) is forced, since
+  otherwise t could not fire at τ at visit i. Open.
+- (CHAIN) in the class: FALSE (onep_chainfail_n20.pg, DEAD.md). So (CTX⁺) on 𝒞^1P is not a chain statement either.
+- Class climbs for first-difference contexts (fixd_ctx1p.py, stable order, all-distinct priorities, 2000-2500 steps): best 2 / 4 /
+  5 contexts at n = 12 / 20 / 30, with NOSTEAL checked at every improvement (0 violations). The same climber unrestricted
+  (ONEP_ANY=1) reaches 3 / 2 / 1: it is too weak to show growth either way. The fleet's targeted two-player climbs reached 13 at
+  n = 40 (ctx13_n40), so the class number is not evidence that (CTX⁺) is easier there.
+- Status: GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P (§27b corollary). No route for (CTX⁺) on the class yet. With no steals the computation
+  at a fixed context is monotone along a phase: V_r and every prefix grow (§22r corollary, R11 (b)), and so (reading, NOT yet
+  checked) a root outcome can only go from −1 to stable, with V* growing. But the −1 branch's lowest threshold t (898-904) is not monotone in X, so the depth-0
+  chains of consecutive searches can cross. This is the same re-cutting that killed (CTX-LAMINAR) (§23i), and it is not removed
+  by the class.
+
+27d. (CTX⁺) on 𝒞^1P: (RANK-MONO) is FALSE, and the precise obstruction (L-ALG succ. 9, 10:53Z by date -u; tool
+experiments/alg/fixd_rank.py)
+- (RANK-MONO): rank_s(v) := the last depth-0 position j with v ∈ R_j(s); claim rank_{s+1}(v) ≤ rank_s(v). With it, depth-0
+  contexts would change only at rank drops: at most (n+1)(n²+1) of them per phase. FALSE in the class, both orders:
+  onep_chainfail_n20 (1 violation in 4 pairs), onep_lagdist_D8 (1 in 14), and climbed class games (2 in 6, 2 in 2). For contrast
+  it fails in 17-22 of 21-27 pairs on ctx12_oink_n40 and ctx13_n40.
+- Anatomy (onep_chainfail_n20, iterations 0 → 1, Oink trace -t -t). The first four depth-0 calls are identical. The fifth is
+  at a context of size 13 with the same (R, X) in both searches, so it is the first-difference context, and it returns −1 both
+  times. Its prevV is {5, 11, 14} in iteration 0 and {5} in iteration 1 (vertex ids after Oink's reindex). The next context
+  has size 9 in iteration 0 and 12 in iteration 1: the piece shrinks from 4 vertices to 1. The threshold branch (898-955) does
+  not read V and its input (R, X) is equal, so the piece is the Dom(V, R) branch (958-991, "X ∪= Dom(V)", when no vertex of R
+  attracts to X), with V = prevV, restored at 770.
+- CORRECTION to my 10:45Z message and to the end of §27c: at a FIRST-DIFFERENCE context the input (R, X) is the same in both
+  searches, so the −1 branch's lowest threshold (898-904) is the same too. The obstruction is prevV, not t.
+- Why the class does not help. With no steals, V_r grows in every round, so the emptying round e of a −1 call can only move
+  later, and for equal e, prevV can only grow: the call's outcome rises in the order (e, prevV ⊆), and R9's per-context budget
+  holds. But a later emptying round has a SMALLER last nonempty V (later rounds prune more), so the Dom(prevV) piece can
+  shrink. The rest of the depth-0 chain is then re-cut with fresh contexts. That is a reset of the tail below the
+  first-difference context, i.e. a counter over chain positions: each position rises ≤ H + 1 times, but every rise resets
+  everything below it. Nothing in 𝒞^1P bounds the resets.
+- VERDICT for (CTX⁺) on 𝒞^1P in this box: NO ROUTE. The named obstruction: the −1 result's Dom(prevV) piece (770 + 958-991) is
+  not monotone along a phase, even when every round's V is (as on 𝒞^1P). A proof needs a bound on tail resets, i.e. a
+  potential that charges a reset to something the phase can do only polynomially often. None is in hand.
+
+28. Box 11, item (c): (LONG-PHASE) at the root G′ (Lead 10:50Z; L-ALG succ. 9, produced on Opus 5.5; started 11:01Z by date -u)
+28a. Where the first differences sit (DATA; tool experiments/alg/fixd_fdpos.py, stable order). For each transition: the depth of
+the first-difference context, and its depth-0 chain position j (the last depth-0 context containing it).
+- lagdist D = 4, 8, 12 (S = 11, 15, 19), onep_lagdist_D8, spp_chain_up_n43 (S = 42): EVERY first difference is at depth 0,
+  position 0, i.e. at the root context G′ itself. The longest phases in the fleet are ROOT-ONLY. No resets.
+- ctx13_n40 (S = 25): positions 0, 4, 4, 0, 0, 4, 3, 0, 1, 4, 6, 5, 4, 7, 5, 9, 0, 4, 6, 1, 0, 0, 4, 0: 10 resets (j drops),
+  all at depth 0. ctx12_oink_n40 (S = 21): 5 resets. spp_final_n40 (S = 17): 4 resets. onep_chainfail_n20: 1 reset.
+- So there are two mechanisms. (i) Root-only phases, bounded by the root's own budget, 2(F_{G′} + 1)(H + 1) (R9 (a)), so they
+  need F_{G′} = O(poly): steals at G′ (the lagfam relay). (ii) Reset phases, where a rise at chain position j re-cuts the chain
+  below (the §27d mechanism, Dom(prevV)); they need (CTX⁺).
+- On 𝒞^1P, (i) is polynomial outright (F = 0, NOSTEAL-1P): a root-only phase there has ≤ 2(H + 1) + 1 searches. So the class
+  isolates (ii).
+28b. (TOP-CHAIN) "tangles learned in one phase with the same top form a ⊆-chain" (it would give ≤ n tangles per top and n² + n + 1
+searches per phase): FALSE, already in the class. onep_chainfail_n20.pg (stable order) has two tangles with top 15 that cross:
+{0, 2, 5, 6, 7, 15} and {0, 1, 3, 4, 6, 9, 10, 15} (input ids). It also fails on ctx13_n40 (6 groups) and ctx12_oink_n40 (4 groups).
+It holds on lagdist, chainfam and stealonce_viol (max 1-4 per group). Tool experiments/alg/fixd_topchain.py.
+28c. Lemma STEAL-ENTRY (PROVED, reading; general games, every order datum; L-ALG succ. 9, 11:02Z by date -u). This is the
+general form of NOSTEAL-1P: its proof without the class hypotheses. Let a relevant steal of t ∈ F_τ (round r, visit pair
+i → i+1, player p) be given, and let A = t ∩ P_{i+1}(τ⁺) ≠ t, A ≠ ∅. Then some vertex y ∈ A is
+  (a) a TOP of a prefix region. Then pr(y) = pr(τ) and y's index is above τ's (all of t is ≤ pr(τ); prefix tops are ≥ pr(τ)),
+      and y ∉ V_r(i): otherwise y would lie in P_i(τ⁺) and t could not fire at τ at visit i (attractTangle 131-142: every vertex
+      must be in CurZ or CurR); or
+  (b) a p-vertex whose ENTRY EDGE into the prefix is not its strategy in t. y was attracted via attractVertices along an
+      edge y → z with z in the prefix (74, 88), or as part of a tangle t″ whose strategy at y is z, and str_t(y) ∉ A.
+Proof. This is the closure argument of NOSTEAL-1P, steps 2-3. Opponent vertices of A have all their t-successors in A (75-85,
+152-157 with t ⊆ R). A p-vertex of A that is not a top and whose entry edge is str_t(y) has str_t(y) ∈ A. If neither (a) nor
+(b) happened, A would be forward-closed in t's SCC graph, so A = t. □
+Reading. A steal needs either a same-priority top that joins V between visits, or a STRATEGY CONFLICT: a p-vertex of t pulled
+into an earlier region by an edge other than its t-edge. lagfam's relay is case (b) by design: w_j is pulled into an earlier
+region by its edge to y_{j−1} or f_j, while its strategy in t_j is w_j → y_j (lag4.py docstring, "pulling w_j alone into an earlier
+region pulls nothing else").
+MECHANICAL CHECK (experiments/alg/fixd_stealentry.py, dtl_pyref instrumented per region step, both order data): steals / case (a) /
+case (b) only / VIOLATIONS, conflict edges, max visit pairs per conflict edge:
+| instance | stable | Oink order |
+| lagdist_D4 | 12 / 0 / 12 / 0, 10, 2 | same |
+| lagdist_D8 | 30 / 0 / 30 / 0, 18, 4 | same |
+| lagdist_D12 | 56 / 0 / 56 / 0, 26, 6 | same |
+| lagflat7_d3_D8 | 30 / 0 / 30 / 0, 18, 4 | 0 steals (order collapse, §26b) |
+| stealonce_viol_n76 | 19 / 0 / 19 / 0, 3, 8 | 1 / 0 / 1 / 0, 1, 1 |
+| stealonce_both_n45 | 6 / 0 / 6 / 0, 3, 1 | same |
+| depth2_n39 | 11 / 0 / 11 / 0, 6, 2 | same |
+| ctx13_n40, onep_lagdist_D8 | 0 steals | 0 steals |
+So: 0 violations of STEAL-ENTRY; case (a) NEVER occurs (every steal is a strategy conflict), which is evidence that the "dist"
+hypothesis of NOSTEAL-1P is removable; ctx13_n40's long phase has no steal at all (it is a reset phase, §28a). NOSTEAL-1P is the case where (b) is impossible (one edge per
+p-vertex) and (a) is excluded by distinct priorities.
+Use for (LONG-PHASE). A root-only long phase needs many root steal pairs (F_{G′} ≤ 3·N*_{G′}, R11 (c)). By STEAL-ENTRY each steal
+pair has a conflict pair (y, z) with z ≠ str_t(y), or a case-(a) top. There are ≤ m conflict EDGES, but each can recur at many
+pairs. So a bound needs "a conflict edge (y, z) causes a relevant steal at only poly many visit pairs of G′". That is a
+(STEAL-POLY)-type statement keyed by edges instead of (step, tangle), and it is not proved. On lagfam the same conflict
+edges should recur at every visit (the relay toggles every level at every visit, §24f), so a per-edge CONSTANT bound is FALSE there:
+max visit pairs per conflict edge = D/2 (2, 4, 6 at D = 4, 8, 12, table above), while the total Σ is quadratic (12, 30, 56).
+ADDENDUM (α), library-wide (fixd_stealentry.py on all 206 instance files under experiments/alg, red/carry, red/lag):
+stable order 836 steals, Oink order 465 steals; VIOLATIONS 0; case (a) 0; and the case-(a) PRECONDITION (a vertex of a tangle fired
+at (r, τ) in visit i is a round-r top above τ in visit i+1, steal or not) occurs 0 times in both orders. No construction of a
+case-(a) steal and no proof that it cannot occur were found in the 1 h box. Named statement (NO-PRE-a), DATA only: "a vertex of a
+tangle that fired at top τ in round r is never a round-r top above τ at the next visit". With it, STEAL-ENTRY is a pure
+strategy-conflict statement and NOSTEAL-1P holds without "dist".
+ADDENDUM 2 (11:39Z by date -u): a STRONGER pattern, (TIE-BELOW), DATA: "every tangle that fires in top τ's region step has no vertex
+of priority pr(τ) with index above τ". (TIE-BELOW) implies (NO-PRE-a), since a case-(a) vertex y ∈ t has pr(y) = pr(τ) and index above τ.
+Data: library, stable order, 58,739 fired events (tangle t fired at (r, τ) at some visit): 11,184 hold a same-priority vertex BELOW τ,
+0 ABOVE. 5,000 random tie-heavy games: 198 fired events, 135 below, 0 above.
+Proof route tried. Such a y is not in V_r (else it is processed before τ and lies in an earlier region), so it was pruned as a
+distraction in some round r′ < r. At τ's firing, every R-successor of y that is relevant to attracts() (its t-strategy if p owns y;
+all R-edges if the opponent does) lies in U_r, the union of round r's regions: t ⊆ τ's region, and escapes lie in CurZ or in
+earlier round-r regions. So U_r ⊆ U_{r′} would make y attract at r′ (Z_{r′} ⊇ U_{r′}), a contradiction. BUT the round-union
+inclusion U_{r+1} ⊆ U_r is FALSE in general: 543 of 64,033 consecutive round pairs on the library (first: cm_viol_oink_n28.pg,
+|R| = 28, round 2 adds vertices 7 and 23; 0 of 16,883 on 5,000 random games). So the proof needs the inclusion only at y's
+attracts()-successors, or another argument. Open.
+ADDENDUM 3 (12:52Z by date -u): (TIE-BELOW) is FALSE (self-kill). The within-priority order of every library instance with BELOW events
+was permuted at random (stable order = (priority, new id); 6 + 20 permutations per file; tool:
+experiments/alg/fixd_tieperm.py). A fired tangle with a same-priority vertex ABOVE its top appears on permutations of h4_def10_oink_n28 and lalg_dtl_mviol_n20.
+Pinned instance experiments/alg/instances/tieabove_n20.pg (sha1 701d309c8b8a; pinned Oink 6 iterations, verified; stable model
+winners equal to Zielonka): the singleton tangle {14} (priority 15, odd player's phase) fires in the round-7 region of top 8
+(priority 15), with 14 above 8 in the order. On the same runs the case-(a) PRECONDITION and case-(a) steals stay 0 (414 permuted runs
+in the 6-permutation pass, 61,678 below-events, 7 above-events; steals 5, all case (b), on tieabove_n20). So the (TIE-BELOW) route to (NO-PRE-a) is dead, and (NO-PRE-a)
+itself stands as DATA (0 occurrences on the library, the permuted library, and random tie-heavy games).
+STATUS of (c) at 11:02Z: no route. (LONG-PHASE) at G′ reduces, via R11 (c) and STEAL-ENTRY, to bounding recurring strategy-conflict
+steals at the root (plus case (a)). The class 𝒞^1P is exactly where both cases vanish (§27b).
+
+29. BOX-11 LEDGER (L-ALG successor 9; GO 09:38Z, written 11:24Z by date -u; produced on Opus 5.5). Everything is unrefereed unless
+marked signed.
+THE MAP OF (LONG-PHASE), for a referee reading cold. A phase of A_DTL (player p, game G′ fixed) is a sequence of searches. Each
+search s is a tree of best_vertices contexts. Its depth-0 part is a decreasing chain G′ = R_0 ⊋ R_1 ⊋ ..., with each R_{j+1} =
+R_j minus one removed piece. Consecutive searches agree up to a first difference e* (FDL, RESULTS R5 (h), R8), which sits at one
+context. The signed per-context budget (R9 (a), R11 (c)) bounds the transitions whose e* is at a FIXED context R by
+(F_R + 1)(H + 1), H polynomial, where F_R ≤ 3·(visit pairs of R with a relevant steal). A long phase therefore needs one of two
+mechanisms, and the data show both, separately:
+(i) ROOT-ONLY phases. Every e* is at R_0 = G′ (lagfam / lagdist: S = D + 7; chainfam: S = n − 1). They are long only if G′ has many
+    visit pairs with a steal. Lemma STEAL-ENTRY (§28c, a reading, checked on 1,301 library steals) says every steal is a
+    STRATEGY CONFLICT: a p-vertex of the stolen tangle t is pulled into an earlier region by an edge other than its edge in t.
+    Possibly also case (a), never observed. Bounding (i) means bounding recurring conflicts at the root.
+(ii) RESET phases. The e* moves along the chain (ctx13_n40: positions 0, 4, 4, 0, 0, 4, 3, ...; 10 drops in S = 25), and every rise at
+    position j re-cuts the chain below j with FRESH contexts. The mechanism (§27d, from a trace): a −1 call's Dom(prevV) piece
+    (dtl.cpp 770, 958-991) shrinks when its emptying round moves later, even though every round's V grows. Bounding (ii) is
+    (CTX⁺): the resets must be charged to something the phase does only polynomially often.
+In the one-player class 𝒞^1P, (i) vanishes (no steals, NOSTEAL-1P), so GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P, and (ii) is all that is
+left. A counter needs (ii) compounding across chain positions: a rise at j resets j+1, ..., and the positions below rise again
+≥ 2 times between consecutive rises at j. That is the construction target routed to L-RED (Lead 11:08Z).
+PRECISE COMPOUNDING CONDITION on 𝒞^1P (for L-RED; uses OUTCOME-MONO-1P §28e, CHANGE-NEW R14). Every context's outcome is
+monotone and changes ≤ K = |R|(|R|+1) + |R| + 1 times. Every change at R needs a NEW tangle firing at R (CHANGE-NEW). So a
+super-polynomial phase needs a depth-0 position j whose context R_j makes ≥ 2 outcome rises, where each rise at R_j
+(a) re-cuts the tail, i.e. Dom(prevV) shrinks (a later emptying round, §27d) or −1 → stable, and (b) is ENABLED by a tangle
+learned in the tail below j after that tail has itself risen ≥ 2 times since the previous rise at R_j. Recursively, over Θ(n)
+positions, this is a binary counter whose carries are tangles learned low and firing high. A construction must exhibit (b):
+a tangle born in a fresh tail context that fires at R_j and moves R_j's emptying round later. Data so far: class instances reach
+a reset-depth proxy of at most 4 (ctx1p climbs, S = 7) and 3 on onep_chainfail_n20 (fixd_fdpos.py); ctx13_n40 (two-player) reaches 7.
+PROVED (readings, unrefereed):
+- Lemma CTRL (§27b): in 𝒞_C the controller makes ≤ n + 1 searches (its tangles have no escapes, so each one is a dominion).
+- Lemma NOSTEAL-1P (§27b; brief docs/alg/ONEPLAYER.md): in 𝒞_C^dist, q's phases have no relevant steal. Corollary on signed R9 and
+  R11: GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P. Honest label: one-player games are polynomial by other means. The packet is HELD (Lead).
+- Lemma STEAL-ENTRY (§28c): every steal enters by (a) a same-priority top, or (b) a strategy conflict.
+- Lemma OUTCOME-MONO-1P (§28e): on 𝒞^1P every context's best_vertices outcome is monotone along a phase
+  (V_r grows in every round; stable stays stable with V* growing; a −1's emptying round only moves later). So outcome changes
+  per context are ≤ |R|(|R|+1) + |R| + 1; the re-cuts (fresh contexts) remain unbounded.
+KILLED (DEAD.md, box 11 succ. 9; instances pinned with sha1):
+- (STEAL-DEPTH_{f(d)}) and (EXIT_{f(d)}) at fixed d (lagflat7, d = 3).
+- "contexts with ≤ 2 priorities are static" (fixd_d2_n32).
+- the "top level = Büchi round" FIX-d simplification.
+- all-distinct priorities as a relay-free class (lagdist, both orders).
+- (CHAIN), (RANK-MONO) and (TOP-CHAIN) inside 𝒞^1P (onep_chainfail_n20).
+- (TIE-BELOW) (tieabove_n20) and (FIRE-LAMINAR) on 𝒞^1P (onep_firecross_n76).
+DATA that stands:
+- random games at fixed d are trivial (4-5 searches, n ≤ 3200);
+- every library killer has d ≥ 6;
+- NOSTEAL-1P on 3,600 forced runs of the designed steal instances (ties too);
+- (NO-PRE-a): the case-(a) precondition is never seen (206 files, both orders);
+- lagdist: conflict edges recur ≤ D/2 times each, with a quadratic total.
+- (NO-PRE-a) (§28c addenda): the case-(a) precondition never occurs (library, permuted library, random). (TIE-BELOW), which
+  would imply it, is FALSE (tieabove_n20, addendum 3); the round-union route also fails (543 of 64,033 round pairs).
+- (OUTCOME-MONO) (§28d): at the first differing depth-0 call the outcome never goes stable → −1 and V* never shrinks; the reset
+  events are −1 → stable, prevV growth and the §27d prevV shrink (about 300 per order on the library).
+VERDICTS: (FIX-d) NO ROUTE (§26d). (b2) dead. (b1) survives as a reduction to (CTX⁺) on 𝒞^1P. (CTX⁺) on 𝒞^1P: no route; the
+obstruction is Dom(prevV) tail resets (§27d). (c): no route; (LONG-PHASE) at G′ is case (i) above.
+L32: NOT met. The class result is a reduction, not a bound.
+NEXT (successor): (1) the potential for (ii) on 𝒞^1P. §28f: enabling tangles at a rising context are born in the tail below
+it (36 of 36 in the class), so the potential must count tail tangles that fire high, e.g. a per-context bound on DISTINCT
+firing q-tangles in 𝒞^1P (a q-tangle there is its vertex set). Charge each reset at position j to the emptying-round increase at R_j
+(≤ |R_j| + 1 per context) and look for what a FRESH context below j must consume; or adopt L-RED's construction if it compounds.
+(2) A proof or an instance for (NO-PRE-a) directly ((TIE-BELOW) is false, so a proof must use that y stays pruned).
+(3) DONE in box 11: OUTCOME-MONO-1P (§28e). (4) Fallback TC-6 P2-P6.
+28d. What changes at the first differing depth-0 call (DATA; tool experiments/alg/fixd_outcome.py; all 206 library files;
+11:49Z by date -u). Per transition s → s+1 of a phase: the first depth-0 best_vertices call whose (R, result, V) differs.
+| category | stable order (re-cut below: yes / no) | Oink order (yes / no) |
+| −1 → stable | 225 (225 / 0) | 222 (222 / 0) |
+| −1, prevV grows | 221 (209 / 12) | 234 (221 / 13) |
+| −1, prevV shrinks | 197 (191 / 6) | 198 (192 / 6) |
+| −1, prevV incomparable | 101 (101 / 0) | 104 (104 / 0) |
+| stable, V* grows | 2 (1 / 1) | 2 (1 / 1) |
+| stable → −1; V* shrinks or incomparable | 0 | 0 |
+| outcomes equal, R_j differs (difference between depth-0 calls) | 420 (156 / 264) | 425 (162 / 263) |
+| no depth-0 difference | 67 | 66 |
+Readings:
+- (OUTCOME-MONO), DATA, general games: at the first differing depth-0 call the outcome never moves stable → −1, and a stable
+  V* never loses a vertex. On 𝒞^1P the reading of §27c predicts this (no steals: V_r grows in every round). In general games it
+  holds on all data, steals included.
+- The §27d mechanism is COMMON: in 298 / 302 transitions the −1 result's prevV shrinks or becomes incomparable (a later emptying
+  round), and 292 / 296 of them re-cut the chain below. Together with −1 → stable (always a re-cut) and prevV growth, these are
+  the RESET events of mechanism (ii) in §29.
+- A potential for (ii) must charge resets of three kinds: −1 → stable (≤ 1 per context), prevV growth at a fixed emptying round
+  (≤ |R| per round value), and a later emptying round (≤ |R| + 1 per context). Each is ≤ poly PER CONTEXT. The open part is
+  unchanged: the count of fresh contexts that the re-cuts create.
+28e. (OUTCOME-MONO) on 𝒞^1P, proved
+Lemma OUTCOME-MONO-1P (PROVED, reading, unrefereed; L-ALG succ. 9, 11:54Z by date -u). In 𝒞_C^dist, fix a phase of q and a
+best_vertices context R, and let i, i+1 be consecutive visits of R (T_i ⊆ T_{i+1}; the call reads only (R, q, T), R9 (a)). Let
+V_r(i) be V at the start of round r, with the last round repeated after a stable stop (716 or 765) and V_r = ∅ after an
+emptying stop (768-771). Then:
+(1) V_r(i) ⊆ V_r(i+1) for every round r.
+(2) If visit i is stable with V*_i, then visit i+1 is stable with V*_i ⊆ V*_{i+1}.
+(3) If visit i returns −1 with emptying round e_i, then visit i+1 is stable, or it returns −1 with e_{i+1} ≥ e_i, and
+    prevV_i ⊆ prevV_{i+1} when e_{i+1} = e_i.
+Proof. (1) by induction on r; V_1 is all q-parity vertices of R at both visits.
+- Step: assume V_r(i) ⊆ V_r(i+1).
+  - The region steps. By NOSTEAL-1P, no tangle fired in a round-r region step at visit i is met-but-not-contained by the
+    visit-(i+1) prefix. That is (NS*) at round r; the repeated round is a genuine round computation with input V*_i, and the
+    NOSTEAL-1P proof does not depend on the round index. So PREFIX-MONO-X* (R11 (b), signed) gives P_r^i(τ) ⊆ P_r^{i+1}(τ) for
+    every τ, hence U_r(i) ⊆ U_r(i+1).
+  - The candidate test (705-716). attracts() is monotone in Z (41-57): for a q-owned vertex an edge into Z suffices; for the
+    other owner, all R-edges in Z with one present. So a candidate at visit i+1 that lies in V_r(i) is a candidate at i.
+  - The threshold loop (721-741). Each stage t is tattr from the current Z with cap t and Gx = R. By DTL-proof Lemma 1.2 its
+    output is the least superset of Z closed under rules (V) and (T), whose premises are monotone in Z; with 1.2b it is
+    monotone in T. By induction on t, Z_t(i) ⊆ Z_t(i+1). A candidate u is cleared at stage t < pr(u) when attracts(u, Z_t)
+    holds (735-738), which is monotone. So a vertex of V_r(i) that is cleared at i is cleared at i+1.
+  - Hence the distractions D_r(i+1) ∩ V_r(i) ⊆ D_r(i), and V_{r+1}(i) = V_r(i) \ D_r(i) ⊆ V_r(i+1) \ D_r(i+1) = V_{r+1}(i+1).
+(2) V*_i ≠ ∅ and V_r(i+1) ⊇ V*_i for every r ≥ the stop round, so visit i+1 never empties V. It stops stable (V shrinks
+    strictly in every non-stable round), and V*_{i+1} ⊇ V*_i by (1).
+(3) If visit i+1 empties at a round e < e_i, then V_e(i) ⊆ V_e(i+1) = ∅, a contradiction. If e_{i+1} = e_i, then
+    prevV_i = V_{e−1}(i) ⊆ V_{e−1}(i+1) = prevV_{i+1}. □
+Consequence. On 𝒞^1P, every best_vertices context's outcome moves in one direction along a phase: (−1, e, prevV) rises in the
+order "e larger, or e equal and prevV ⊆", then possibly → stable, and then V* only grows. That is at most |R|·(|R| + 1) + |R| + 1
+outcome changes per context. The §28d data show the same in general games (0 reversals on the library), where this proof does
+not apply. The reset mechanism (§27d) lives inside this monotone order: a later emptying round can SHRINK prevV, and with it
+the Dom(prevV) piece. So OUTCOME-MONO bounds the outcome changes per context, but not the fresh contexts the re-cuts create.
+28f. QUEUE (1), the reset potential on 𝒞^1P: does compounding condition (b) of §29 occur? (DATA; tool
+experiments/alg/fixd_enable.py; 13:03Z by date -u; Lead 12:09Z: "can a tangle learned low fire high after a re-cut?")
+For consecutive searches s, s+1, let j be the depth-0 position of the first differing depth-0 call. The ENABLING tangles are those
+born in search s that fire in a region step of the position-j call of search s+1. For each one, record its birth position.
+| set | transitions | none enabling at R_j | births at position < j | = j | > j (the tail), depth 0 | > j, deeper |
+| 𝒞^1P games (onep_*, ctx1p climbs, lagfam conversions), stable | 116 | 107 | 0 | 0 | 36 | 0 |
+| library (206 files), stable | 1170 | 719 | 0 | 2 | 667 | 9 |
+| library, Oink order | 1189 | 753 | 0 | 2 | 637 | 10 |
+Answer: YES. Tangles learned low (in the tail below j) firing high (at R_j) is the NORMAL way a context at position j is changed,
+in the class and in general. 36 of 36 enabling births in the class are in the tail. So (b) cannot be refuted on 𝒞^1P by locality,
+and a reset potential cannot charge a rise at R_j to R_j's own learning.
+Most transitions (107 / 116 in the class) have no new tangle firing in R_j's REGION steps. Their change at R_j comes through the
+threshold loop or the candidate test (attractTangle with Gx = R, not counted here) or is absorbed earlier; CHANGE-NEW still
+requires a new firing tangle, so for them it fires in the threshold loop.
+Consequence for the successor. A polynomial bound on 𝒞^1P must count the TAIL tangles that can fire high. Each is a NEW tangle
+(never re-learned), so the count is the number of tangles learned in a phase, i.e. the search count itself, unless the class gives
+a structural bound on how many distinct tangles can fire at one context R_j. On 𝒞^1P a q-tangle is determined by its vertex set
+(q has no choices), and a tangle firing at R_j's region step lies in R_j and has all its escapes caught there. Bounding these
+per context, as (FIRED⁺-R) on 𝒞^1P, is one candidate for the remaining statement. On 𝒞^1P, OUTCOME-MONO-1P bounds the outcome changes
+per context, and CHANGE-NEW (R14) ties each change to a new firing tangle, so the open count is that of contexts and of their
+new firing tangles: R14's form GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R), with the steal term gone. No proof in this box.
+28g. (FIRE-LAMINAR) on 𝒞^1P: FALSE (self-kill; 13:12Z by date -u; tool experiments/alg/fixd_firelam.py). The candidate per-context
+count for §28f: "the distinct tangles that fire in region steps of one context R in one phase are pairwise nested or disjoint"
+(≤ 2|R| − 1 of them per context and phase).
+- Class set: 396 forced class versions of the library (each player's choices forced to Zielonka's strategy edge, priorities
+  made all-distinct), plus the class climbs and conversions. 620 contexts with firing tangles; NOT laminar at 3 (stable) and 4
+  (Oink order). Max 24 distinct firing tangles at |R| = 78.
+- Library (two-player, stable): 67 of 2,616 contexts not laminar; max 40 at |R| = 134.
+- Pinned: experiments/alg/instances/onep_firecross_n76.pg (sha1 59a94ce07e0b; class 𝒞_0^dist, all priorities distinct; pinned
+  Oink 7 iterations, verified; stable model: 0 steals, winners equal to Zielonka). At a context of size 9, the firing tangles
+  {48, 51, 56, 63, 65, 67, 70} and {51, 56, 57, 63, 67, 68} (model indices = priority ranks) cross.
+- So the per-context count on 𝒞^1P is not a laminar-family count. Small on all data (≤ 24 at |R| = 78), but with no structure found.
+
+30. Box 12 (L-ALG successor 10; Lead GO 13:47Z by the Lead's clock, owner D13, Lead reading L34; produced on Opus 5.5). QUEUE (1)
+of §29: a per-context bound on the DISTINCT q-tangles that fire at one context per phase on 𝒞^1P, then the re-cuts. Everything
+here is unrefereed. Class set (tools experiments/alg/b12_*.py): every library .pg with n ≤ 200 forced into 𝒞_C for C = 0, 1 (each
+q-vertex keeps one edge: in trial 0 its Zielonka strategy edge where it has one, else a seeded random edge), priorities refined
+to all-distinct (fixd_ctx1p.distinct); games already in a class are used as they are. Model: fixd_stealentry.SE (dtl_pyref).
+30a. (TOP-UNIQUE@R) "in one phase, at one best_vertices context R, at most one distinct tangle per top fires in R's region
+steps" (≤ |R| firing tangles per context): FALSE (self-kill; tool b12_topclimb.py, a class-preserving climb from
+onep_chainfail_n20, Oink order, step 293).
+- Pinned: experiments/alg/instances/onep_topuniq_n20.pg (sha1 6cf816c7a5ec; 𝒞_1^dist, all priorities distinct; pinned Oink 5
+  iterations, solution verified; model winners equal to Zielonka in both order data). In q = 0's first phase, at the depth-0
+  contexts of sizes 20, 18 and 17, the tangles {4, 10, 16} (escapes {1, 3, 13}) and {1, 3, 4, 10, 13, 16} (escapes {17}), both
+  with top 16 (model indices = priority ranks), fire: the first in top 16's own region step (16 is already in Z, so the tangle
+  only adds 4 and 10), the second at a later visit in top 17's region step. check.sh keeps this.
+- Mechanism (reading): attractTangles(v) runs right after attractVertices(v) for the popped v (dtl.cpp 694-696), so a tangle
+  whose last escape is popped can fire before plain attraction has climbed its DAG below the top, even when its top is in Z.
+  The same-top tangles were NESTED in every case seen.
+- Before the climb: 0 violations on 2,189 class games (set A: 891, 2 random-forced trials, n ≤ 140, both orders; set B: 1,298,
+  trial 0 Zielonka-forced and 2 random trials, n ≤ 200, stable), max 1 tangle per top per context; max 14 distinct firing tangles at |R| = 18 (fired18_stable_n20 forced).
+30b. (TOP-CHAIN@R) "the same-top tangles that fire at one context in one phase form a ⊆-chain" (≤ |R|² per context): DATA
+holds. 0 violations on sets A and B of 30a (set B in Oink order: ledger below), and in two 4,000-step
+class climbs targeting crossing same-top pairs (b12_topclimb.py MODE=chain, from onep_topuniq_n20 in Oink order and from
+onep_chainfail_n20 in stable order; best (0 crossings, 2 same-top, 122 / 103 firing incidences)). No proof attempted: see 30c.
+30c. Why the per-context count does not reach the re-cuts (reading; the exact failing point of QUEUE (1)).
+- On 𝒞^1P the per-context side is ALREADY closed: OUTCOME-MONO-1P (§28e) gives ≤ K = |R|(|R|+1) + |R| + 1 outcome changes per
+  context and phase, and R9 (c) with NOSTEAL-1P gives GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P (§27b). A bound on distinct firing tangles
+  per context (30b, or (FIRED⁺-R) of R14) bounds the same per-context events a second time. It does not enter (CTX⁺).
+- The only relation between contexts that these give is local: a context at depth-0 position j + 1 changes only after a change
+  at a position ≤ j or inside its own call, so N_{j+1} ≤ (changes over the contexts at positions ≤ j) + 1, where N_j counts the
+  contexts at position j in the phase. Iterated over Θ(n) positions this is a product, i.e. exponential. To close (CTX⁺), a
+  quantity must SURVIVE a re-cut (be indexed by vertices or tangles, not by contexts) and move monotonically.
+- DATA: per-context budgets are each used about once. onep_lagdist_D8 (class, 15 searches in one phase) has 15 distinct
+  contexts at depth-0 position 4: a fresh context in every search (b12_mono.per_position; also 5 at position 10 in leanT_N12/16
+  forced, 12/16 searches). So any route counts contexts globally; a per-context bound, however small, gives at best a factor.
+- Three vertex-indexed candidates that would survive re-cuts, tested (b12_mono.py, same-phase consecutive searches): (STABLE-MASS)
+  "the union of stable depth-0 pieces grows", (STABLE-TOPS) "the union of stable V* grows", (NEG-TOPS) "the union of −1 prevV
+  stays inside the next union of prevV and V*". FALSE on 20, 22 and 3 of 24 pairs of the onep_* instances (onep_chainfail_n20
+  first for the first two, onep_firecross_n76 for the third); library-scale counts in the ledger below. (RANK-MONO), the
+  position-indexed candidate, is FALSE (§27d).
+- Tangle-indexed charging is circular here: every change needs a tangle new to THAT context (CHANGE-NEW), not a globally new
+  tangle, and the tangles learned in a phase are what GAP-A counts (searches ≤ tangles learned + 2).
+30d. Growth check (no super-polynomial signal, nothing to report at once): leanT_N (L-RED tcpert family) forced into 𝒞_1 with
+Zielonka edges, stable order, N = 6, 8, 12, 16, 24, 32 (n = 8N): searches per phase = N, tangles learned in one phase =
+N(N+1)/2 (21, 36, 78, 136, 300, 528), at most N − 1 per (phase, top) (b12_pertop.py). Max searches per phase on the class
+set: 42 at n = 43 (spp_chain_up_n43 forced, the chain family).
+VERDICT on QUEUE (1): NO ROUTE. Exact failing point: the combination step. On 𝒞^1P a per-context bound on firing tangles (30b
+DATA; 30a's stronger form FALSE, onep_topuniq_n20) adds nothing that OUTCOME-MONO-1P does not already give, and no bound
+indexed by contexts can bound the number of contexts (30c). The open statement on the class stays (CTX⁺) on 𝒞^1P, and a proof
+needs a potential indexed by vertices or tangles that survives a re-cut. The three natural vertex-indexed ones are FALSE (30c).
+LEDGER (library-scale runs referenced above; 14:06Z by date -u): (TOP-CHAIN@R) in Oink order on set B plus onep_topuniq_n20
+(1,299 class games, 855 contexts with firing tangles): 0 violations, max 2 same-top tangles per context (onep_topuniq_n20 only).
+Potentials on set B, stable, 1,076 same-phase pairs: (STABLE-MASS) FALSE on 572, (STABLE-TOPS) on 956, (NEG-TOPS) on 168.
+NEXT: QUEUE (2), (NO-PRE-a).
+
+31. Box 12, QUEUE (2): (NO-PRE-a) (L-ALG successor 10; 14:30Z by date -u; produced on Opus 5.5; unrefereed). Statement (§28c
+addendum α): "a vertex y of a tangle t that fired at top τ in round r of visit i (context R, one phase) is never a round-r top
+above τ at visit i+1". Rounds are compared only where both visits have them, as in R11 and fixd_stealentry.analyze.
+31a. Reading (what an occurrence needs). Such a y has pr(y) = pr(τ) (t ⊆ ≤ pr(τ); a top above τ has priority ≥ pr(τ)), so it
+is a q-parity vertex. y ∉ V_r(i): a round-r top above τ, or a vertex inside an earlier round-r region, is popped before τ's step,
+and attractTangle needs every vertex of t in CurR ∪ CurZ. So y was pruned at visit i in some round r′ < r, and an occurrence needs
+y to survive at visit i+1 to round r (y ∈ V_r(i+1)) and not to lie in an earlier round-r region there. For an opponent-owned y,
+all of y's R-successors lie in U_r(i) at τ's step (t's vertices in τ's region, escapes in CurZ or popped), so pruning at r′ also
+needs U_r(i) ⊄ U_{r′}(i) at a successor of y. That round-union growth occurs (543 library round pairs, §28c addendum 2), so this
+reading excludes nothing by itself. No proof: two-player games have no monotonicity of V_r between visits, and in 𝒞^1P with ties
+(where V_r would be monotone given no steals) an occurrence is exactly what breaks NOSTEAL-1P's step 1, so the argument is circular.
+31b. DATA and a targeted climb (tool experiments/alg/b12_nopre.py: V recorded at every round; graded counts pre / near
+(y ∈ V_r(i+1)) / surv (y not pruned at i+1 in the round it was pruned at i) / gap (difference of the two pruning rounds) /
+above (tie-above events)).
+- All 323 parseable .pg files under experiments/ (stable): pre 0, near 0, surv 0; tie-above events 5 (tieabove_n20 only).
+- Climbs on two-player games with ties (class-free moves of fixd_oneplayer.mutate): from tieabove_n20, stable, 6,000 steps
+  (score without gap): best (0, 0, 0, above 10); with gap, stable, 6,000 steps: best (pre 0, near 0, surv 0, gap 1, above 7);
+  from tieabove_n20 in Oink order and from random n = 14 (P = 4): no tie-above event at all.
+- The only gap ≥ 1 found is not an occurrence. Pinned: experiments/alg/instances/nopre_near_n20.pg (sha1 e897ea540235; pinned
+  Oink 5 iterations, solution verified; model winners equal to Zielonka). Odd's phase, context R = all 20 vertices: at visit 12
+  (14 rounds) the singleton tangle {12} (priority 15) fires in rounds 4-9 in the region of top 10 (priority 15), and 12 was pruned
+  in round 1. At visit 17 the call stops STABLE after one round with V* = all 17 odd-priority vertices, and the only round tops
+  are 19 and 18; 12 lies in their regions. So even under the "last round repeated after a stable stop" reading of §28e, 12 is
+  not a top above 10 there.
+VERDICT (QUEUE (2)): no proof, no instance. (NO-PRE-a) stays DATA (0 occurrences on the library, the permuted library (§28c), random
+tie-heavy games, and two targeted climbs). Its use is small in any case: it would remove "dist" from NOSTEAL-1P and make
+STEAL-ENTRY a pure strategy-conflict statement. It does not touch (CTX⁺) (§30c).
+
+32. Box 12, Lead pick 14:37Z: a re-cut-proof potential for (CTX⁺) on 𝒞^1P (L-ALG successor 10; produced on Opus 5.5; DATA unless
+marked; unrefereed). Tools: experiments/alg/b12_pot.py (depth-0 chain per search: R_j, result, emptying round, V, piece; MONO and
+NEW-KEY candidates; class-preserving climb), experiments/alg/b12_fdkey.py (keys on first-difference contexts R*, any depth; climb).
+Corpus "𝒞^1P set": every library .pg with n ≤ 200 forced into 𝒞_0 and 𝒞_1 (trial 0 Zielonka edges, 2 random trials), and with
+DIST=1 every game, in-class ones too, refined to all-distinct priorities: 1,086 same-phase transitions, both order data.
+A candidate is a predicate on consecutive searches s, s+1 of a phase (a transition). MONO: a poly-range Φ that must rise strictly.
+NEW-KEY: search s+1 must hold a key never seen in the phase's earlier searches (then searches ≤ #keys + 1).
+32a. The Lead's three seeds (reading).
+- The learned-tangle set: monotone, but its size is what GAP-A counts (searches ≤ tangles learned + 2): circular.
+- The dominion-removed set: constant inside a phase.
+- The lex vector of per-position outcomes: at the first difference, the input is equal and the outcome rises (OUTCOME-MONO-1P) or
+  the piece grows, so the vector rises lexicographically at every transition. Below the first difference it is arbitrary.
+  DATA: some vertex's piece rank DROPS in 591 of 1,086 class transitions (VERT-RANK-PW). A lex-increase of exponential height is
+  what a counter uses, so a bound must come from novelty that a counter cannot supply.
+32b. Kills (DATA; first instance; class set unless noted).
+- MONO on the depth-0 chain: SUM-RANK (Σ_j rank_j; 960 of 1,086), VERT-RANK (Σ_v rank of v's piece; 478), VERT-RANK-PW (591),
+  STABLE-CNT (1,075), LEN (−chain length; 411). (rank: n + 2 stable, the emptying round e for −1, 0 for a call that returns 0.)
+- NEW-KEY on the depth-0 chain: (j, rank) 275; (|R_j|, rank) 81; (j, |R_j|, rank) 3; (j, rank, |V_j|) 3; (|R_j|, rank, |V_j|) 80;
+  (j, |R_j|, rank, |V_j|) 3; (R_j as a set, rank) 80: the chain RETURNS to earlier (context, rank) pairs.
+- Every class transition changes the depth-0 chain (R_j, rank_j, V_j): 0 identical out of 1,086 (on the two-player library 104 of
+  1,627 transitions are identical).
+- Injective keys on first-difference contexts R* (b12_fdkey.py): κ-dj (depth, position), κ-djs (depth, position, |R*|), κ-dsm
+  (depth, |R*|, max priority in R*) FALSE. Pinned: experiments/alg/instances/onep_fdkey_n20.pg (sha1 9daa6dbcf01d; 𝒞_1, all
+  priorities distinct; pinned Oink 7 iterations, verified; winners equal to Zielonka; both orders), from a class climb (seed 52).
+  Its phase of 5 transitions has first-difference positions 2, 0, 4, 1, 4: position 4 rises, the rise at position 1 re-cuts the
+  chain, and position 4 rises again at a FRESH context of the same size 15 ({…, 9, …} then {…, 16, …}). A one-level reset at n = 20.
+- Vertex-indexed key (v, rank of v's piece) (K-v-r): FALSE. Pinned: experiments/alg/instances/onep_vr_n12.pg (sha1
+  868476e00138; cross_h_k1_n12_m18_13 refined to all-distinct, 𝒞_1; pinned Oink 3 iterations, verified; both orders).
+32c. SURVIVORS, named to the Lead 15:33Z (DATA only).
+(VR-NEW_j). For a search s of a phase of q, let j_s(v) be the depth-0 position whose piece R_j \ R_{j+1} holds v, and ρ_s(v) the
+rank of that call. For every consecutive pair s, s+1 of the phase, some vertex v has (ρ_{s+1}(v), j_{s+1}(v)) ∉ {(ρ_{s′}(v), j_{s′}(v)) :
+s′ ≤ s}. Siblings: (VR-NEW_s) with |R_{j(v)}| in place of j, (VR-NEW_V) with |V_{j(v)}|.
+Consequence (if true): searches per q-phase ≤ n(n + 3)(n + 1) + 1; with Lemma CTRL, GAP-A on 𝒞^1P, with no use of (CTX⁺).
+Evidence: 0 violations of each on the 1,086 class transitions, both order data; class-preserving climbs (4,000 steps each, from
+onep_fdkey_n20) against (v, ρ) and (v, ρ, |V|): 0 violations (best 8 chain-changing transitions at n = 20); two climbs aimed at
+(VR-NEW_j) itself (5,000 steps; from onep_vr_n12 stable, from onep_fdkey_n20 Oink order): 0 violations (best 5 at n = 12, 9 at n = 20).
+Honest reading: every phase in the data is short (max 42 transitions, the chain family; 23 on leanT_N24 forced). (VR-NEW_j) says
+that no vertex is returned to a (rank, position) state it already held; a counter whose positions cycle through the same states
+on the same vertices kills it. It is the precise target for L-RED's §30c counter. No proof: per-vertex position (RANK-MONO, §27d)
+and per-vertex rank (VERT-RANK-PW above) are each non-monotone, so the novelty cannot come from either coordinate alone.
+32d. Correction (said plainly). The first two b12_pot.py runs on the "class set" (14:40Z and 15:19Z by date -u) ran on the
+UNFORCED two-player library: b12_nopre.py set ONEP_ANY=1 at import, so fixd_oneplayer.inclass() was always true. Fixed in
+41abf765 (ONEP_ANY is set only in b12_nopre's own climb); every class number in 32b-32c is from the re-runs. The earlier numbers stand
+as two-player library data only (1,622 / 1,638 transitions; all MONO and depth-0 keys FALSE there too).
+32e. UPDATE 15:50Z by date -u. (VR-NEW_j) is FALSE (self-kill; class climb against it from ctx12_n40 forced into 𝒞_0, 618 steps).
+Pinned: experiments/alg/instances/onep_vrj_n40.pg (sha1 96ac8459cbef; 𝒞_0, all priorities distinct; pinned Oink 9 iterations,
+verified; model winners equal to Zielonka); 1 violating transition of 6 chain-changing ones, both orders. On the same game the
+keys with a size, (v, ρ, |R_j|), (v, ρ, |V_j|), (v, ρ, j, |V_j|) and (v, ρ, j, |R_j|, |V_j|), hold.
+Mechanism seen on the two-player library (dtl_deficit_n20, search 3 → 4): the root call stays stable, V* grows, and every piece is
+unchanged. That is the "stable, V* grows" event of §28d, which OUTCOME-MONO-1P allows on 𝒞^1P too. A key without |V| cannot see it.
+Two-player library (n ≤ 100, stable, 1,481 transitions; 88 have an identical depth-0 chain and are not tested): K-v-r 112, K-v-rj 59,
+K-v-rs 26, K-v-rV 8, K-v-rjV 5, K-v-all 0 violations. The 59 K-v-rj violations sit in 33 games, none with a relevant steal
+(fixd_stealentry.analyze), so steals are not what the class removes.
+𝒞^1P set (1,088 transitions, stable, DIST=1): K-v-r 4 (cross_h_k1_n12 refined), all others 0.
+SURVIVORS now (DATA): (VR-NEW_V) key (v, ρ, |V_{j(v)}|) [n(n+3)(n+1) values] and (VR-NEW_s) key (v, ρ, |R_{j(v)}|) on 𝒞^1P;
+the weakest, (VR-NEW_all) key (v, ρ, j, |R_j|, |V_j|) [≤ n^5 values], on 𝒞^1P and on the two-player library at chain-changing
+transitions. Climbs against (VR-NEW_V) and (VR-NEW_s) from onep_vrj_n40 are running.
+32f. Climbs and a per-vertex test (16:35Z by date -u).
+- Class-preserving climbs, 0 violations: against (VR-NEW_V) from onep_vrj_n40, stable, 2,500 steps (best 11 chain-changing
+  transitions at n = 40); against (VR-NEW_s), Oink order, 2,500 steps (best 8); against (VR-NEW_all) from onep_fdkey_n20, Oink
+  order, 5,000 steps (best 8 at n = 20).
+- Two-player library, n ≤ 200, Oink order (1,651 transitions, 103 identical depth-0 chains): K-v-all 0 violations at the 1,548
+  chain-changing transitions (K-v-r 126, K-v-rj 67, K-v-rs 28, K-v-rV 7, K-v-rjV 4).
+- (NO-RETURN) "no vertex returns to a piece signature it held earlier in the phase and left" (tool b12_noret.py): FALSE on the
+  𝒞^1P set (1,094 transitions, stable): signature (ρ, j, |R|, |V|) 9 transitions (first h4_def5_stable_n20 forced into 𝒞_0,
+  vertex 19), (ρ, |V|) 47 (first cross_h_k1_n11_m17_6 refined), (ρ, |R|) 6 (first onep_firecross_n76, vertex 37). So the
+  survivors are not explained vertex by vertex: at those transitions some vertex returns to an old state and ANOTHER vertex
+  supplies the new key. Reading: (VR-NEW_*) is a global no-repetition statement, i.e. a no-counter statement, with no local
+  mechanism found. Its survival on short phases (max 42 transitions in the data) is weak evidence.
+32g. Long phases and margins (DATA; 16:49Z by date -u).
+- Long class phases: the chain family (dtl_chainfam.py UP=1) forced into 𝒞_1 (a → b), priorities refined: k = 20, 40, 60 give
+  21, 41, 61 chain-changing transitions in one phase; (VR-NEW_V), (VR-NEW_s), (VR-NEW_all) and even the dead (VR-NEW_j) have 0
+  violations, both orders. (A benign family: one piece grows per search.) With a → a the phase has 2 searches.
+- Two-player long phases with steals: lagdist_D4/D8/D12, lagflat5/7 (D up to 16, n ≤ 134), depth2-4, fam_D4/8/12 (red/lag):
+  K-v-rV and K-v-all 0 violations (up to 22 chain-changing transitions), stable.
+- Margins (tool b12_margin.py, 𝒞^1P set, 1,094 chain-changing transitions, stable): transitions where exactly ONE vertex
+  supplies a new key: (VR-NEW_V) 58, (VR-NEW_s) 34, (VR-NEW_all) 7. So the statements hold narrowly on about 5% / 3% / 0.6% of
+  transitions. A two-player class-free climb against K-v-all from ctx13_n40 made no progress in its first hour (start score
+  (0, 26, 29)).
+STATUS at 16:49Z by date -u: survivors (VR-NEW_V), (VR-NEW_s), (VR-NEW_all) (DATA). No proof route: the novelty is global (NO-RETURN false,
+§32f), not per-vertex. L32: not met in box 12.
+32h. Where the new key sits (DATA; tool b12_fdwit.py; 17:05Z by date -u). At a chain-changing transition let j* be the first
+depth-0 position whose (R_j, rank_j, V_j) differs. 𝒞^1P set, stable, 1,094 transitions: a vertex with a new key lies in the piece
+at j* except in 78 / 83 / 21 transitions ((v, ρ, |V|) / (v, ρ, |R|) / full key); in the piece at j* or j* − 1 except in 1 / 6 / 0.
+(The j* − 1 cases are those where R_{j*} changed because the piece above it grew with the same outcome.) So (VR-NEW_all) holds in a
+LOCAL form on all class data: (FD-WITNESS_all) "some vertex of the changed piece (at j*, or at j* − 1 when only R_{j*} changed)
+receives a full signature (ρ, j, |R_j|, |V_j|) it never held in the phase". A proof attempt reduces to: a context at position p with
+signature σ, once replaced, never returns at p with the same signature and an overlapping piece. That is again a no-counter
+statement; no argument for it is in hand. Margin climbs (score: fewest new-key vertices) reached margin 1 and no violation:
+(v, ρ, j, |R|, |V|) from onep_fdkey_n20, Oink order, 5,000 steps; (v, ρ, |V|) from onep_vrj_n40, stable (running at 17:05Z).
+32i. Proof sketch for (VR-NEW_j) on 𝒞^1P, and its failure point (Lead 15:43Z; written 17:22Z by date -u, AFTER the kill of 32e;
+the Lead's 14:42-17:10Z messages were read late, at 17:15Z, my error).
+Sketch. Take a transition s → s+1 of a q-phase and the first depth-0 position j* whose (R_j, rank_j, V_j) differs. Positions < j*
+are identical. (a) If R_{j*} is the same set, the call has the same input (R, X) and a larger tangle set, so by OUTCOME-MONO-1P
+(§28e, which uses NOSTEAL-1P) its outcome rises: e later, or −1 → stable, or the same e with prevV ⊆ larger, or stable with V*
+larger. (b) If R_{j*} differs, the piece at j* − 1 grew with an unchanged outcome (a larger Dom attractor). The vertices of the
+changed piece then carry (ρ′, j*) or (ρ, j* − 1). The sketch needs one of them to hold a pair it never held in the phase.
+FAILURE POINT (exact, with the instance). In case (a) with a later emptying round, prevV can SHRINK (§27d), so the Dom(prevV) piece
+shrinks and the chain below is re-cut. The vertices that leave or stay then land on (rank, position) pairs they already held
+before an earlier re-cut. onep_vrj_n40 (sha1 96ac8459cbef), phase (1, 1), transition into search 5, stable order:
+  position 4: |R| 24 = 24, rank 4 → 6, |V| 2 → 1, piece {1, 17} → {1};
+  position 5: |R| 22 → 23, rank 3 → 4, |V| 5 → 1, piece {38} = {38};
+  position 6: |R| 21 → 22, rank 42 (stable) = 42, |V| 15 → 16, piece gains 17.
+Vertices 1, 38 and 17 land on (6, 4), (4, 5) and (42, 6), each held earlier in the phase; every other vertex keeps its pair.
+So no vertex gets a new (ρ, j) pair. The danger the Lead named (the chain returns to earlier (context, rank) pairs) is exactly
+what happens, and position alone cannot see the re-cut.
+Where |V| is essential. In that transition the only novelty is the stable piece at position 6: a DIFFERENT context (size 21 → 22)
+whose V* has a size never seen at that position (16). The keys (v, ρ, |V|) and (v, ρ, j, |R|, |V|) are new for the piece's
+vertices only through that |V*|. A proof of (VR-NEW_V) would need "after a re-cut, some stable (or −1) piece below the first
+difference reaches a |V| its vertices never had", a growth statement across DIFFERENT contexts. OUTCOME-MONO-1P gives growth only
+at a fixed context. No argument for the cross-context growth is in hand: the sketch stops there.
+Class-free analog (Lead's ask). (v, ρ, j) in two-player games: FALSE. Library, stable, n ≤ 100: 59 violations in 33 games, all
+without relevant steals; first c6_replay3_n48 (§32e). L-RED's nest4_n80 (sha1 31c02e548d82): (v, ρ, j) holds (0 of 11), (v, ρ) fails 1.
+Which keys survive where (all counts re-run here at 17:20Z by date -u on L-RED's instances fetched from l-red 66c5c4a; both orders):
+| key | 𝒞^1P set + climbs | two-player library | L-RED vrs_viol_n100 / vrV_viol_n80 / vrV_viol_n40 / nest4_n80 |
+| (v, ρ) | FALSE (onep_vr_n12) | FALSE | FALSE on all four |
+| (v, ρ, j) | FALSE (onep_vrj_n40) | FALSE | 2 / 2 / 2 / 0 (stable) |
+| (v, ρ, |R|) = (VR-NEW_s) | holds | FALSE (26) | 2 / 2 / 0 / 0 |
+| (v, ρ, |V|) = (VR-NEW_V) | holds | FALSE (8) | 0 / 1 / 1 / 0 |
+| (v, ρ, j, |V|) | holds | FALSE (5) | 0 / 1 / 0 / 0 |
+| (v, ρ, j, |R|, |V|) = (VR-NEW_all) | holds | holds at chain-changing transitions | 0 / 0 / 0 / 0 |
+Plainly: (VR-NEW_V) and (VR-NEW_s) are CLASS-ONLY (two-player kills by L-RED: vrV_viol_n80 f77f0d34d13f, vrV_viol_n40
+8cf415ec9267, vrs_viol_n100 b4bbe7f0fdc0). Only (VR-NEW_all) survives two-player data, and there only at chain-changing transitions:
+88-104 library transitions keep the depth-0 chain identical and are not covered by any depth-0 key.
+
+33. Box 13 (L-ALG successor 10; Lead GO 17:17Z / 17:33Z; produced on Opus 5.5; unrefereed; written 18:20Z by date -u). Target: on
+𝒞^1P, (FD-WITNESS_all) ⇒ (VR-NEW_all), then the no-counter core. Tool: experiments/alg/b12_core.py (MODE = core | xcover | sigdisj
+| samectx). Notation as in §32: for a search s of a q-phase and a depth-0 position p, state_s(p) = (R_p, ρ_p, V_p, piece_p) and the
+signature σ_s(p) = (ρ_p, |R_p|, |V_p|); the full key of a vertex v is (v, ρ, j, |R_j|, |V_j|) for the position j whose piece holds v.
+At a transition s → s+1 whose depth-0 states differ, p0 is the first position whose state changes.
+33a. Lemma W (PROVED; trivial). If some vertex v of piece_{s+1}(p0) never held the key (σ_{s+1}(p0), p0) in searches ≤ s, then v
+receives a new full key at s → s+1. So (FD-WITNESS@p0) at a transition gives (VR-NEW_all) at it. For a SEARCH bound one more fact
+is needed, (CHAIN-CHANGE) "every transition of a q-phase changes the depth-0 states": DATA on 𝒞^1P (0 of 1,094 transitions keep
+them identical, §32b); false in two-player games (88-104 library transitions). Then searches per q-phase ≤ #full keys + 1 ≤ n⁵ + 1.
+33b. Lemma SAME-CTX (PROVED, reading; 𝒞_C^dist, every order datum). Let s′ < s be searches of one q-phase whose depth-0 contexts
+at one position p are the SAME set R. Then: (i) the depth-0 call at p is a function of (R, T): X = G′ \ R at depth 0 (every vertex
+removed from R at depth 0 is added to X: 877-891, 918-951, 961-975), and best_vertices reads only (R, q, T) (RESULTS R9 (a)); (ii) its
+outcome at s is ≥ its outcome at s′ in the order of OUTCOME-MONO-1P (§28e; visits of R in one phase, T grows); so if σ_{s′}(p) =
+σ_s(p), the outcomes are EQUAL (equal rank and |V| with V nested forces equal V); (iii) with equal outcome, piece_{s′}(p) ⊆
+piece_s(p).
+Proof of (iii). The branch is fixed by the outcome and (R, X): stable → sptl, then Dom(V*, R) (867-891); −1 → the threshold piece if
+some vertex of R attracts to X (898-951), else Dom(prevV, R) (958-975); the test and the threshold t read only (R, X) (attracts()
+has no tangle argument). Every piece is a tangle attractor from a seed fixed by (R, X, V) with fixed caps (Dom: cap pr(top) per top
+in V; threshold: cap t), and by DTL-proof Lemma 1.2b such an attractor is monotone in T. T only grows within a phase (no tangle
+of G′ is deleted before the phase ends), so T at s ⊇ T at s′, including the tangles sptl adds inside the call. □
+MECHANICAL CHECK (b12_core.py MODE=samectx): 𝒞^1P set (DIST=1), 26,155 same-set same-signature pairs, both orders: V differs 0,
+piece not ⊆ 0. Two-player library: 6 failures (first fall3_n76), as expected without NOSTEAL-1P.
+Corollary REDUCTION (PROVED, reading, on Lemma W and SAME-CTX). At a transition with p0, R_{p0}(s) = R_{p0}(s+1) =: R (a change of
+R_{p0} alone would change piece_{p0−1}, contradicting the choice of p0). Two cases:
+ (O) the outcome at p0 changes. A vertex of piece_{s+1}(p0) that held (σ_{s+1}(p0), p0) at s′ ≤ s at the SAME set R would give
+     outcome(s′) ≤ outcome(s) ≤ outcome(s+1) = outcome(s′) (by (ii)), so outcome(s) = outcome(s+1): contradiction.
+ (P) the outcome is unchanged, so the piece changed, and by (iii) it grew: N := piece_{s+1}(p0) \ piece_s(p0) ≠ ∅. A vertex of N
+     that held the key at s′ ≤ s at the same set R lies in piece_{s′}(p0) ⊆ piece_s(p0) by (iii): contradiction.
+Hence (VR-NEW_all) at the transition ⇐ (XCTX@p0): "NOT every vertex of N (case P; the whole new piece in case O) lay, in an earlier
+search of the phase, in the piece at p0 of a context set R′ ≠ R with |R′| = |R| and the same signature".
+33c. The residual, and the Lead's phrasing of the core (DATA).
+- (XCTX@p0) on 𝒞^1P: at 0 of 1,094 transitions (both orders) is ANY vertex of the new piece covered by an earlier same-signature
+  piece of a DIFFERENT context set at p0 (b12_core.py MODE=xcover). Every cover is same-context and inside piece_s (0 exceptions),
+  as SAME-CTX predicts; the largest covered fraction is 0.976 (spp_chain_up_n43 forced: the piece grows by one vertex).
+- Two-player library and L-RED's four instances (n ≤ 100, stable): cross-context cover at p0 in 3 of 1,447 transitions, never full.
+- (CORE) as phrased ("a context at p with signature σ, once replaced, never returns at p with σ and an overlapping piece"): FALSE in
+  its literal form because a same-context piece growth keeps σ and overlaps (95 pairs on the onep_* instances, first
+  onep_chainfail_n20); after SAME-CTX the true content is the cross-context part only.
+- The natural global strengthening (SIG-DISJ) "two different context sets with one signature at one position have disjoint
+  pieces": FALSE on 𝒞^1P, onep_vrj_n40 (sha1 96ac8459cbef), phase (1, 1), position 6, searches 0 and 3, two different stable contexts
+  of size 22 with |V*| = 16 and overlapping pieces (12 such pairs in the whole class set, 1 overlapping); two-player 194 of 242.
+  So any proof must use that the cover happens at the FIRST changed position p0, not at an arbitrary position.
+33d. Answer to the Lead's 17:33Z (1), and a correction to §32i.
+- For (VR-NEW_all) the novelty sits at p0 itself. In onep_vrj_n40 (transition into search 5) the new full keys are (1, 6, 4, 24, 1)
+  at p0 = 4 (same context, outcome rose: case O) and (38, 4, 5, 23, 1), (17, 42, 6, 22, 16) below. §32i's "the only novelty is
+  |V*| = 16 at position 6" is right for the coarse key (v, ρ, |V|) only (the one new key there is (17, 42, 16)). So cross-context
+  V* growth is the core of (VR-NEW_V), not of (VR-NEW_all). For (VR-NEW_all) on 𝒞^1P the core is (XCTX@p0).
+- STATUS on 𝒞^1P: GAP-A ⇐ (XCTX@p0) ∧ (CHAIN-CHANGE) (via Lemma W, SAME-CTX, Lemma CTRL), both DATA with 0 violations. The proved
+  part removes every same-context return, which is what a per-context argument can reach. The open step is a comparison of two
+  DIFFERENT context sets of equal size at the same depth-0 position. No monotone link between them is known (RANK-MONO false,
+  §27d), no instance of a cross-context cover at p0 is known in the class, and the general form (SIG-DISJ) is false. L32: this is a
+  reduction to two named statements, not one, and with no proof route for the cross-context one.
+TARGET.md diff: objects as in TARGET.md §1; the class adds owner / out-degree / distinct q-parity priority hypotheses (§27b); the
+statements count A_DTL's searches (gauntlet step 4 objects); no change of definitions; no M4 claim.
+34. Box 13, item (2): the two-player transitions with identical depth-0 states, and (TREE-PIECE) (DATA; tool
+experiments/alg/b12_ident.py; 18:55Z by date -u).
+34a. What they are. Two-player library plus L-RED's four instances, n ≤ 100, stable: 1,538 transitions, 91 with identical depth-0
+states (R_j, rank_j, V_j). For the 88 library ones the first differing best_vertices call over ALL depths is at depth 1 (context
+differs 18, outcome differs 12), depth 2 (context 51, outcome 4) or depth 3 (context 3); never "same call sequence". So they are the
+depth-0 phenomenon one level down: a re-cut inside a threshold piece's recursion.
+34b. (TREE-PIECE), the recursive form of (VR-NEW_all). For every best_vertices call c of a search (any depth d), its piece is R_c
+minus the context of the next call at depth d before the recursion returns to a shallower depth (all of R_c if none), and its
+position is its index among the depth-d calls of the same parent call. Key of a vertex v in that piece: (v, d, position, rank_c,
+|R_c|, |V_c|). Statement: every transition of a phase gives some vertex a key it never held in the phase.
+Consequence if true: searches per phase ≤ #keys + 1 ≤ n·n·n·(n + 3)·n·n + 1 = O(n⁶), for EVERY game (no class hypothesis): that
+is GAP-A (gauntlet step 4 objects; TARGET.md section 3 cost model unaffected, all quantities are indices).
+DATA: 0 transitions without a new key: 1,538 (stable) and 1,551 (Oink order) two-player transitions, every identical-depth-0
+transition included; L-RED's vrs_viol_n100, vrV_viol_n80, vrV_viol_n40 and nest4_n80 included. At depth 0 the keys equal b12_pot's
+full keys exactly (checked on 66 searches), so on 𝒞^1P (TREE-PIECE) follows from (VR-NEW_all) (the depth-0 chain always changes
+there). The membership variant (v, d, rank, |R|, |V|) over all contexts containing v FAILS (45 / 46 transitions, first
+a_best_s31): the piece and the position are essential.
+Honest reading: the same caveat as §32c. Phases in the data are short (≤ 42 transitions), the statement is a no-repetition statement
+over a poly-size state space, and it has no proof; on 𝒞^1P its depth-0 part reduces (§33b) to the cross-context (XCTX@p0).
+34c. (TREE-PIECE) literal: FALSE (self-kill, 19:13Z by date -u; two-player climb b12_ident.py climb, seed 113, from a margin-1 game).
+Pinned: experiments/alg/instances/tp_ident_n20.pg (sha1 dfeb04607e88; two-player; pinned Oink 4 iterations, 8 tangles, 1 dominion,
+solution verified; model winners equal to Zielonka; both orders). In Odd's phase the two searches have IDENTICAL call trees (one
+stable root call, |R| = 20, the same V*); the difference is only inside sptl at that stable context (the second search extracts the
+dominion with the tangle the first one learned). No key can see that.
+Amended (TREE-PIECE⁺): the statement at every transition whose call sequence (depth, R, rank, V) changes. Identical-tree transitions
+come in runs at one fixed call tree, and every search of a run differs only inside sptl at a stable context of that tree. Reading
+(to be checked): on 𝒞^1P such a run is bounded by the signed per-context budget (R9 (c) / R7 (d): (D_R + 1)(H + 1) with D_R = 0 there,
+NOSTEAL-1P) summed over the stable contexts of the tree, so (TREE-PIECE⁺) ∧ that budget ⇒ searches per phase ≤ (#keys + 1)·poly.
+In two-player games D_R (the falls) is not bounded, so identical-tree runs remain an open count there ((FALL)-type).
+DATA: the library and L-RED's instances contain no identical-tree transition (34a: every identical-depth-0 transition differs
+deeper); the climb found one at the end of a phase. Climbs against (TREE-PIECE⁺) (PLUS=1): from tp_ident_n20, stable, 8,000 two-player steps: 0 violations (margin down to 1, best 8
+transitions at n = 20); from tc+ N = 2 (n = 24), stable, 8,000 steps: 0 violations (margin 1, best 7 transitions); from
+vrV_viol_n40, Oink order: no improvement past step 1 in ~45 min at n = 40, stopped at 20:02Z by date -u (no violation seen).
+34d. Why (TREE-PIECE⁺) on general games would not contradict anything known (Lead 19:03Z; reading, with the sources the fleet
+opened). If (TREE-PIECE⁺) held, with a polynomial bound on identical-tree runs, A_DTL would make polynomially many searches per
+phase, and phases are ≤ 2(n + 1) (each ends with a dominion or a false search). With polynomial work per search (STEP5 / GAP-C
+side), that is M4 for A_DTL. So the statement is exactly as strong as the open question for this solver. It must therefore be
+consistent with:
+- Published lower bounds and barriers: none covers DTL (L-LIT T16, gauntlet step 3 SIGNED with four caveats: DTL is outside the
+  universal-tree and separator models B1-B3, outside the Two Counters mechanism B6, and B4 (attractor decompositions with tangles)
+  has no theorem). The Two Counters family tc gives A_DTL a CONSTANT 6 searches (§25a); tc+ grows (pyref, stable: 3, 5, 8, 10, 12
+  searches at N = 1..5, n = 8..180) and satisfies (TREE-PIECE⁺) with margins 9-75 (checked 19:35Z by date -u).
+- Fleet families: lagfam / lagdist (re-steal depth D on n = 7D + 22, linear phases), chainfam (n − 1), leanT (N), nest4_n80: all have
+  polynomial (linear or near-linear) phases, and all satisfy (TREE-PIECE⁺) (§32g, §34b). No family with super-polynomial searches is
+  known to the fleet (L32 (1) never triggered).
+- The one tension: the author's README row "counter_dtl | Counterexample to the DTL solver" (Oink 39254fe, still on master),
+  never committed anywhere (L-LIT T17: 23 places checked). L-LIT's provenance reading is that it may be the distraction-free
+  counterexample that became counter_dftl, which L-RED ran on dtl: polynomial (R8 §6). If a genuine super-polynomial DTL family
+  exists, (TREE-PIECE⁺) is false on it, and a long phase on that family would show which key repeats. So (TREE-PIECE⁺) contradicts
+  an unpublished claim, not a known result. It does not imply a polynomial bound for any solver with a proved exponential lower bound
+  (tl, zlk, pp, dp etc. are different algorithms; DTL's tc behaviour is constant).
+34e. L-RED's split (Lead 19:20Z), MEASURED (tool b12_split.py; depth-0 chain; stable). Rank class of v: stable / −1 / outside, of
+its depth-0 piece. A-type transition: some vertex enters a class it never held in the phase (≤ 3n per phase, trivially).
+| set | chain-changing | A-type | B-type | B without a new (v, j, class, |R_j|) | B without a new full key | margin-1 | margin-1 not A-type |
+| 𝒞^1P set (DIST=1) | 1,094 | 1,084 | 10 | 0 | 0 | 7 | 1 (spp_n20 forced into 𝒞_1, trial 2) |
+| two-player library + L-RED's 4 | 1,448 | 1,115 | 333 | 66 (first c6_replay3_n48) | 0 | 8 | 1 |
+Answers: (a) NO: "first-time class change" does not carry every margin-1 transition (one exception in each set). It is a monotone
+count ≤ 3n, but in the data almost every transition is A-type only because no phase is longer than 3n, so the split cannot be
+judged on these phases. (b) NO in two-player games: 66 B-type transitions get no new (v, j, class, |R_j|) key, yet every one gets a
+new full key: within a class, the exact rank (emptying round) and |V| are needed. So the split does not give two separate
+arguments; the full key stays the object.
