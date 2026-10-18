@@ -161,3 +161,56 @@ SIGN. DATA: φ strictly rose on all 3,855 flat switches, 0 violations. Negative 
 - G-N1 (scope, open as DATA): n5.py's termination = SPEC's termination, given si.py computes VJ00's Ωσ (0 mismatches in 22,969).
 - G-N2 (closed): S4a/S4b's σ_new/τ_new take values in A(v) at every vertex (code read; FIX 2, FIX 4).
 - Running time: open (outside this packet).
+
+## §C. Comparison with REFEREE-2 (R2-N5T.md, read 23:15Z by date -u, AFTER this report was pushed at 462c8ce; trunk 63b25d1)
+Both verdicts: SIGNED WITH GAPS (Opus 5.5, D12). Both use the same source file (sha256 485a12de…).
+| item | R-N5T (me) | R2-N5T | comparison |
+|---|---|---|---|
+| §0 instance, VJ00 5.8 gap | CONFIRMED; also breaks VJ00's I2 and P1 | CONFIRMED (same Ω, φ 0 → 1) | agree |
+| Lemma A | SIGN; = Lemma 5.7 as stated; Prop. 5.4 (2) checked by me | CORRECT; = Lemma 5.7 (N2); Prop. 5.4 (2) checked by them | agree, including the unproved-proposition check |
+| Lemma B, route to Prog(Ω, (v, w)) | via (11) and the easy direction of Lemma 5.2 | N1: Prop. 5.1 applied to σ⁺ suffices | ACCEPT N1. Prop. 5.1 for σ⁺ gives Prog(Ω_{σ⁺}, ·) on E_{σ⁺σ̄⁺} directly; my route is valid but longer |
+| Lemma B, =_ℓ on pairs | G-B1: VJ00 defines =_ℓ only on sets; the pair version with equal lengths is fixed by the Lemma 5.2 proof and (6) | takes it as the equivalence of the preorder E_ℓ on M(V) × N (both length clauses ⇒ k = k′) | agree on the content. Theirs is the natural reading, since E_ℓ is defined on pairs. G-B1 stays a citation note, with no effect |
+| Lemma B, contradiction step | G-B2: "⊴-equivalent" is equality, by (1) | "E-equivalent contradicts ◁; no antisymmetry needed"; N3: say "play values (1)" | agree. G-B2 is the same point as N3 |
+| Theorem | SIGN; 4-case transitivity | CORRECT; M3 mutant (φ over all ⊕ vertices) also never fails | agree. M3 is consistent with Lemma B: flat switches occur only at cycle nodes |
+| N5: both players per iteration | "Iσ depends only on σ; τ only selects the subset" | N4: the same fact, flagged as unstated in the reading | agree. N4 = my bullet. The reading should state it |
+| N5: fallback | strict (non-empty switch-all) | the same | agree |
+| flat iterations | ≤ 4n(n−1) | ≤ 4n(n−1) | agree, the same constant |
+| code link | G-N1: engine valuations, G AND G^d, 22,969 vertex valuations, 0 mismatches (improving() not compared) | G-N5T-1: Even side only, valuations AND improvement sets, 23,943 strategies, 0 mismatches; dual construction not checked | complementary. Together: valuations on both sides plus improvement sets on Even's side. I built G^d my way (prio + 1, owners swapped), which is n5.py's dual() line for line. Remaining open: improving() on the Odd side (same function, other Engine instance). G-N1 = G-N5T-1, DATA |
+| scope | no polynomial bound | G-N5T-2 | agree |
+| output correctness (S5) | I wrote the "1 ⇒ 2" text is "sound" | G-N5T-3: rests on Lemma 5.9 / Prop. 5.10, which VJ00 does not prove; not re-derived | ACCEPT G-N5T-3, and I correct my A0: I checked the 1 ⇒ 2 text GIVEN Lemma 5.9 and Prop. 5.10, not those two themselves. Outside the packet in both reports; outputs are verified by Oink and verify.py anyway |
+| Ω computation in the probe | min over positional ⊖ strategies (uses (11)) | min over all plays (does not use (11)) | theirs is the more independent oracle. Both find 0 failures. Their volume is larger (936,826 switches, 33,103 flat, plus the exhaustive n = 3 class) |
+
+R2's extra finding: VJ00 postulate I1 also fails. CHECKED, CONFIRMED (docs/referee/scratch/n5t_i1.py, my VJ00-only oracle, not
+their i1check.py).
+- Instance: prio [0, 2, 4], all vertices Even's, succ 0 → {1}, 1 → {0, 1}, 2 → {0, 1}; σ = (0→1, 1→0, 2→0).
+  - Ω = [(1,∅,1), (1,∅,0), (1,{2},2)]; improvements {1: [1], 2: [1]}.
+  - Switching only (1, 1) leaves Ω unchanged.
+  - σ is not a maximum: brute force over all strategies; (2, 1) improves Ω(2) to (1,{2},1).
+  - So for I = {(1, 1)}, Improve(σ) ⊑ σ, which violates I1's "Improve(σ) ⋢ σ".
+- By hand: vertex 1 ∈ R+ is a cycle node, and the switch is length-only (0 < 1, shorter is better on R+). That is exactly Lemma
+  B's shape.
+- Exhaustive one-player n = 3 (8 parity maps × 343 successor maps): 2,270 (game, σ, single flat improvement) triples with σ not
+  a maximum. R2's 4,272 is not over one-player games only, so the counts are not comparable; both are > 0.
+- Consequence (agree with R2 §4): VJ00 §5.6's P1 sentence is unsupported as written, and P2's first step uses the false I2.
+  The reading's Theorem (every Switch sequence of non-empty improvement sets is finite) repairs termination. Then "no improvement
+  ⇒ maximum" (1 ⇒ 2, given Lemma 5.9 / Prop. 5.10) gives P1. N5's stop rule needs only (12).
+- Routing the I1 instance to L-LIT (with the reading's §0 item) is a Lead reading, as R2 says. It is an observation on the BRICS
+  report, not checked against CAV 2000, and not claimed new.
+
+Does any gap change my verdict? No.
+- G-B1, G-B2, N1-N4: wording or citation.
+- G-N2: closed.
+- G-N1 = G-N5T-1: a condition on the code. The SPEC-level theorem holds by S1's definition of Ξ.
+- G-N5T-2: scope.
+- G-N5T-3: outside the packet.
+Joint position: the termination half of G-N5-TERM has two referee signatures (REFEREE R-N5T, REFEREE-2 R2-N5T; both (Opus 5.5,
+D12), both at 812ecba), with gaps G-B1, G-B2, G-N1 (= G-N5T-1, DATA), G-N2 (closed), G-N5T-2 (scope), G-N5T-3 (outside) and
+notes N1-N4.
+Suggested reading fixes (L-NEW's file, via the Lead):
+- Lemma A = Lemma 5.7;
+- Prop. 5.1 instead of (11) and Lemma 5.2 in Lemma B;
+- the pair =_ℓ includes length;
+- "play values (1)";
+- state N4;
+- add the I1 instance to §0.
+The running-time half stays open.
