@@ -1,0 +1,13 @@
+family,N,n,sha1,lnew_iterations,lnew_fallbacks,n5b_iterations,n5b_fallbacks,ref,secs,status,detail
+tc+,1,8,716ac479b46fe54d6ced174ca616856cf159044d,0,0,0,0,oink-zlk,0.00,ok,
+tc+,2,24,b462886dd1b75a7e1bd5c1388aee3d89261d6b0b,3,0,3,0,oink-zlk,0.01,ok,
+tc+,3,54,07c86e9a9f13d7f9c6aba8ead6db4b0764cbe399,7,0,7,0,oink-zlk,0.05,ok,
+tc+,4,104,e39bee98302fd0efefaa7b6456e89045b40d9b0e,11,0,11,0,oink-zlk,0.22,ok,
+tc+,5,180,d33f30a616a3fe155d904737fe29c373afc7f829,16,0,16,0,oink-zlk,0.43,ok,
+tc+,6,288,a3729b5bee6fee9babf9e179db2981f54dc432bf,26,0,26,0,oink-zlk,1.56,ok,
+tc+,7,434,3e34f3d71828ed9da2183decaa210aeb63a5a10e,24,0,24,0,oink-zlk,2.62,ok,
+tc+,8,624,c36bbe2f381db5f997f039f8d38284fece6abc3c,30,0,30,0,oink-zlk,6.35,ok,
+tc+,9,864,1bcc89c3b29084d66ef8d66bd1417627c9ca5c16,33,0,33,0,oink-zlk,8.85,ok,
+tc+,10,1160,e6e24658d5213d3e9bf5db90353fe8a3de6b40b3,37,0,37,0,oink-zlk,15.29,ok,
+tc+,11,1518,f20549f87ce8f176f9db3f6ec51911ce02770f54,42,0,42,0,oink-zlk,30.27,ok,
+tc+,12,1944,548897629b8a338296c2b4f78bd2f3889be20b20,98,2,98,2,oink-zlk,107.25,ok,
