@@ -3576,3 +3576,22 @@ fall3_n76, fall4_n116; both orders)
 - Reading: half the tangles that reach a sub-context come from sibling-type contexts, so a "tangles fired at R are learned
   inside R" induction on depth is not available. (FIRED⁺-R) below the root has no route from locality. Not pursued further this
   box (task (3) was conditional on (1)-(2) stalling; (1) closed, (2) stalled at the counter obstruction of §23x).
+
+23z. Box 10: can QUIET-BLOCK be made LINEAR? Two forms killed; block length ≤ 0.953·|R| stays DATA (L-ALG succ. 8,
+02:22Z by date -u; tool experiments/alg/dtl_quietlin.py; RM_LIGHT=1 RM_DV=0; corpus 141 files + stealonce_viol_n76,
+stealonce_both_n45, stealer_viol_n76, fall3_n76, fall4_n116; both orders)
+Motivation: §23w bounds a quiet block by Φ ≤ (|R|+1)(L+1)|R|, but the longest block seen is 41 at |R| = 43 (spp_chain_up_n43
+root). A LINEAR block bound would cap the threshold-only part of the root's work by |G′|, the (SPP) shape.
+A_i := the vertices that join some U_r or W_{r,t} at quiet differing pair i.
+- (QUIET-LIN) "each vertex is in A_i for at most one differing pair of a block": KILLED. 35 (stable) / 33 (Oink) failing pairs;
+  a vertex is re-advanced up to 4 times in one block (spp_final_n30 root, |R| = 30, block 6). Smallest instances:
+  experiments/alg/instances/dtl_cross3_n14.pg (sha1 90d95c85; pinned Oink 8 iterations verified) root pair 1 re-advances 0, both
+  orders; fired18_stable_n20.pg (sha1 42307b22; pinned Oink 4 iterations verified), stable. Reading: one vertex joins W at
+  different (round, level) slots at different pairs.
+- (QUIET-NEWV) "every A_i has a vertex not in an earlier A_j of its block": KILLED. 4 failing pairs per order (323 / 336
+  hold). Instances: experiments/alg/instances/spp_final_n30.pg (sha1 e57c2cf9; pinned Oink 22 iterations verified) root pair 16
+  A = {6, 7, 15}, also |R| = 29 pair 3 and depth 1 |R| = 26 pair 2, both orders; spp_n30.pg (sha1 587697ae; pinned Oink 21
+  iterations verified) |R| = 28 pair 6, both orders.
+- DATA: max quiet block length / |R| = 0.953 (spp_chain_up_n43, 41 / 43), both orders. 88 / 88 quiet differing pairs advance
+  exactly one vertex, the rest ≥ 2.
+- Status: the polynomial QUIET-BLOCK bound stands (reading); a linear form has no surviving candidate. Not pursued further.
