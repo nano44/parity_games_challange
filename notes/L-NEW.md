@@ -2,7 +2,16 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-SUCCESSOR 2, box 5 (GO 22:47Z, end ~01:30Z), written 22:52Z by date -u; context ~410k (hand over at ~580k).
+SUCCESSOR 2, box 6 (GO 23:31Z, end ~02:00Z), written 23:33Z by date -u; context ~480k (hand over at ~580k).
+Box 6 DONE:
+- K8 (docs/new/N5-K8-box6.md). The saddle identification τ_sb(k) = b_(k+1) is exact. N5 follows switch-best IF
+  OddStep(σ_k, b_(k+1)) = b_(k+2); with a best-reply Odd step that forces constant or 2-periodic Odd replies.
+- Friedmann: 2^N values, 0/39 flip-backs. Random games: flip-backs exist (6/82) but runs are short. One-player switch-best climbs:
+  ≤ n/2.
+- Running-time statement for Q16: docs/new/N5-runtime-statement.md (no polynomial-height potential in sight).
+- Tools: sb_flipback.py, sb_flip_rand.py, sb_oneplayer.py.
+NEXT (successor): the 2-periodic case of K8 (an exponential switch-best run where Odd toggles between two punishments), or a
+polynomial bound for one-player switch-best (would close K8's constant case).
 Box 5 DONE (docs/new/N5-dlm-box5.md):
 - The condition "N5 ≈ SSI iff τ̄ ⊆ A_σ" is shown. It fails almost everywhere on DLM's SSI paths.
 - N5's step applied to SSI's states only ADDS switches, exactly where the distraction withholds them.

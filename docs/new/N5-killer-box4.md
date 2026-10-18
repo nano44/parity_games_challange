@@ -198,6 +198,10 @@ K6 (DLM distraction; box 5, docs/new/N5-dlm-box5.md §4). N5 follows an SSI path
 K7 (switch-best forcing; N5-dlm-box5.md §7). N5's Even step equals switch-best's whenever τ = Odd's arena-optimal reply τ_sb
    (proved). Forcing switch-best's exponential path needs τ_{k+1} = OddStep(σ_k, τ_k) = τ_sb(σ_{k+1}) at every step. On switchbestexp,
    τ_sb changes 1, 4, 10, 24 times (N = 1..4; 2^N distinct values), N5's Odd step misses every change, and N5 leaves the path.
+K8 (switch-best following; N5-K8-box6.md). N5 follows a switch-best run IF OddStep(σ_k, b_{k+1}) = b_{k+2} at every step (sufficient;
+   on the data N5 leaves the path only where it fails) (b = Odd's best
+   replies along the run). When Odd's step is its best reply, this forces b_k = b_{k+2}: constant or 2-periodic replies. Friedmann's
+   family: 2^N values, 0/39 flip-backs. The constant case = one-player switch-best: ≤ n/2 in climbs.
 Families that make N5 slow WITHOUT fallbacks:
 - They must defeat the restricted best response against τ.
 - When τ = σ̄ (Odd has no real choices, as in switchallexp: only h0, h1 choose), Even's step is the optimum of the one-player arena
