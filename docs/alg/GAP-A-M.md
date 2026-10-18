@@ -4637,3 +4637,53 @@ count ≤ 3n, but in the data almost every transition is A-type only because no 
 judged on these phases. (b) NO in two-player games: 66 B-type transitions get no new (v, j, class, |R_j|) key, yet every one gets a
 new full key: within a class, the exact rank (emptying round) and |V| are needed. So the split does not give two separate
 arguments; the full key stays the object.
+
+35. Box 14 (L-ALG successor 10; Lead GO 20:19Z by date -u; PROOF box; produced on Opus 5.5; unrefereed; written 20:35Z by date -u).
+Target: a proof route for (XCTX@p0) on 𝒞^1P. Given readings used: CTRL, NOSTEAL-1P (§27b), OUTCOME-MONO-1P (§28e), Lemma W and
+Lemma SAME-CTX (§33). Tool: experiments/alg/b12_core.py (MODE=chainnest; climb).
+35a. Exact statement. Setting: G ∈ 𝒞_C^dist (TARGET.md §1 objects; the class adds: every q-vertex has one successor, q = 1 − C; the
+q-parity priorities are pairwise distinct), one phase of q under one order datum, G′ fixed. For a search s, its depth-0 chain is
+c(s) = (state_0, …, state_m), state_p = (R_p, ρ_p, V_p, piece_p), R_0 = G′, R_{p+1} = R_p \ piece_p; σ_s(p) = (ρ_p, |R_p|, |V_p|).
+At a transition s → s+1 with c(s) ≠ c(s+1), p0 is the first position with state_{p0}(s) ≠ state_{p0}(s+1); then R_{p0}(s) =
+R_{p0}(s+1) =: R (§33b). Let N := piece_{p0}(s+1) if the outcome (ρ, V) at p0 changed (case O), else N := piece_{p0}(s+1) \
+piece_{p0}(s) (case P; N ≠ ∅ by SAME-CTX (iii)).
+(XCTX@p0): N ⊄ ⋃ { piece_{p0}(s′) : s′ ≤ s, R_{p0}(s′) ≠ R, |R_{p0}(s′)| = |R|, σ_{s′}(p0) = σ_{s+1}(p0) }.
+Diff against §33: identical to the hypothesis of §33's Corollary REDUCTION (there: "not every vertex of N lay … in the piece at p0 of a
+context set R′ ≠ R with |R′| = |R| and the same signature"); here the union is written out. Diff against TARGET.md: a statement about
+A_DTL's search sequence (gauntlet step 4 object); no definition changed; no M4 claim.
+35b. Lemma LEX (PROVED, reading, unrefereed; uses SAME-CTX and OUTCOME-MONO-1P, hence NOSTEAL-1P). Order the states at one context
+set R by: outcome in the order of OUTCOME-MONO-1P (−1 with e larger, or e equal and prevV ⊆; then stable with V* ⊆), and for equal
+outcome by piece ⊆. Order chains tree-lexicographically: c < c′ iff at their first differing position q (where R_q agrees) state_q(c)
+< state_q(c′). Then c(s′) < c(s″) for ALL searches s′ < s″ of the phase.
+Proof. Consecutive searches: at p0 the input is the same set R (§33b); if the outcome changed it rose (OUTCOME-MONO-1P (2), (3));
+otherwise the piece changed and grew (SAME-CTX (iii)). So c(s) < c(s+1). The tree-lexicographic order is transitive (first differences
+at q1, q2: the smaller index decides; equal index: the per-R order is a partial order). □
+MECHANICAL CHECK (experiments/alg/b12_lexchk.py): 𝒞^1P set (DIST=1), 4,718 pairs s′ < s″, both orders: 0 violations.
+Consequence for (XCTX@p0). Suppose v ∈ N lies in piece_{p0}(s′) with R′ := R_{p0}(s′) ≠ R. By LEX, c(s′) < c(s) with first difference at
+some q; q < p0 because c(s) and c(s+1) agree below p0 and R′ ≠ R. At q the context Q := R_q is common, and either
+ (G) the outcome at Q is equal and piece_q grew, so R_{q+1}(s) ⊊ R_{q+1}(s′); or
+ (O) the outcome at Q rose (the §27d prevV-shrink re-cut is one such rise).
+In both cases R ⊆ R_{q+1}(s) and R′ ⊆ R_{q+1}(s′), and the two depth-0 continuations from position q+1 run on DIFFERENT input sets
+with different tangle sets. A proof of (XCTX@p0) must compare these two continuations at position p0.
+35c. The natural routes, and where they fail (DATA; 𝒞^1P set, DIST=1, stable; all PAIRS s′ < s of a phase, not only consecutive).
+- Route G (would close case G at once): (CHAIN-NEST) "below a case-G first difference, R_p(s) ⊆ R_p(s′) for every p > q". With
+  |R| = |R′| this forces R = R′, a contradiction. FALSE: 3 of 2,461 case-G pairs.
+  Pinned: experiments/alg/instances/onep_nest_n68.pg (sha1 926bbef91e0e; tcL_N4 forced into 𝒞_1, trial 2, all priorities distinct;
+  pinned Oink 4 iterations, solution verified; model winners equal to Zielonka; both orders). Even's phase, searches 0 and 2, q = 1:
+  the outcome at position 1 (|R| = 66) is equal and its piece grows from 9 to 46 vertices, so R_2 shrinks from 57 to 20. Below that the
+  chains are NOT nested: vertex 20 is removed at position 2 in search 0 but survives to position 10 in search 2 (R_3 … R_10 of search 2
+  contain 20; later also 55, 61, 1, 24, …). The size form (CHAIN-SIZE) "|R_p(s)| < |R_p(s′)| or equal sets" fails on the same pair
+  (position 10: 8 > 6; the later chain is longer).
+- Route O: no candidate. (CHAIN-NEST) fails on 1,005 of 2,257 case-O pairs and (CHAIN-SIZE) on 871 (first c6_replay3_n32 forced).
+- The global disjointness (SIG-DISJ) below a first difference is FALSE (§33c, onep_vrj_n40, position 6).
+- (XCTX@p0) itself: still 0 violations, and not even a partial cross-context cover at p0 in the class (1,094 transitions, both
+  orders); class climbs maximising that cover (b12_core.py climb; 3,000 steps from onep_vrj_n40 and 8,000 from onep_fdkey_n20)
+  found none.
+VERDICT (box 14, item (1)): NO PROOF ROUTE. Exact failing step: INPUT-MONOTONICITY of the depth-0 continuation. After the chains of
+two searches first differ at q < p0, the loop search_rec continues from R_{q+1} on two different input sets with T only larger,
+and nothing relates the two continuations position by position: not inclusion (CHAIN-NEST), not size (CHAIN-SIZE), not
+same-signature disjointness (SIG-DISJ). Each fails on a pinned class instance (onep_nest_n68 for case G, the gentlest case;
+c6_replay3_n32 forced for case O; onep_vrj_n40). (XCTX@p0) needs exactly what these lack: it uses that the later context R
+persists from s to s+1 and that only the NEW vertices N are compared, and no lemma in hand uses either fact across contexts.
+No instance violating (XCTX@p0) is known. Item (2) ((CHAIN-CHANGE)) is not attempted, per the Lead's condition.
+Dead ends recorded in DEAD.md: (CHAIN-NEST) and (CHAIN-SIZE) below a first difference, with onep_nest_n68.

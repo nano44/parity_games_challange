@@ -8,8 +8,10 @@ CORE ⇒ CORE-ALL ⇒ (VR-NEW_all) at that transition (GAP-A-M §33a). Printed: 
 position), CORE-ALL violations, first instance of each.
 Corpus: CLASS=1 [DIST=1] (b12_topchain.classgames, 3 trials, seed 2, n ≤ 200), else the files with n ≤ NMAX (default 100).
 Modes (MODE=): core (default), xcover (§33c: cover of the new piece at p0 by earlier same-signature pieces, same / different
-context set), sigdisj (§33c: (SIG-DISJ)), samectx (§33b: mechanical check of Lemma SAME-CTX).
-Usage: DTL_ORDER=stable|oink [MODE=...] [CLASS=1 DIST=1] b12_core.py G.pg ..."""
+context set), sigdisj (§33c: (SIG-DISJ)), samectx (§33b: mechanical check of Lemma SAME-CTX), chainnest (§35: (CHAIN-NEST) below the first difference of any two
+searches of a phase, split by case).
+Usage: DTL_ORDER=stable|oink [MODE=...] [CLASS=1 DIST=1] b12_core.py G.pg ...
+   or: DTL_ORDER=... b12_core.py climb C START.pg STEPS SEED OUTDIR   (class climb maximising cross-context cover at p0, §35)"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import pg, b12_pot as B
@@ -111,10 +113,69 @@ def samectx(d, n):
     return chk, bv, bp, ex
 
 
+def xc_score(g, order):
+    """class climb score: (vertices of the new piece at p0 covered cross-context, summed over transitions; its max over one
+    transition; transitions). A FULL cover of N at one transition is a violation of (XCTX@p0)."""
+    d = B.run(g, order); tot = mx = tr = 0; full = 0
+    for sz, same, other, ok, where in xcover(d, g.n):
+        tr += 1; tot += len(other); mx = max(mx, len(other))
+    return (tot, mx, tr), d
+
+
+def xc_climb(C, start_file, steps, seed, out, order):
+    import random
+    from fixd_oneplayer import mutate
+    from fixd_ctx1p import distinct
+    rnd = random.Random(seed); g = distinct(pg.read(start_file)); P = max(g.prio) + 1; sg, _ = xc_score(g, order); os.makedirs(out, exist_ok=True)
+    print("start", sg, flush=True)
+    for it in range(steps):
+        h = mutate(g, C, P, rnd)
+        if h is None: continue
+        h = distinct(h)
+        try:
+            sh, _ = xc_score(h, order)
+        except RecursionError:
+            continue
+        if sh >= sg:
+            if sh > sg:
+                print(it, sh, flush=True)
+                if sh[0] > 0: pg.write(h, os.path.join(out, f"xcover_C{C}_n{h.n}_s{seed}_{sh[0]}.pg"))
+            g, sg = h, sh
+    fn = os.path.join(out, f"xcover_final_C{C}_n{g.n}_s{seed}.pg"); pg.write(g, fn); print("final", sg, fn)
+
+
+def chainnest(d, n):
+    """For every pair s′ < s of one phase (not only consecutive), first differing depth-0 position q (state = (R, rank, V, piece)).
+    Case G (same outcome at q, piece grew) / case O (outcome rose at q). (CHAIN-NEST): R_p(s) ⊆ R_p(s′) for every p > q present in
+    both. Returns {case: [pairs, violations]}, first violation per case."""
+    phases = {}
+    for ph, calls in getattr(d, "log", []): phases.setdefault(ph, []).append(states(B.chain(calls, n)))
+    out = {"G": [0, 0], "O": [0, 0]}; ex = {}
+    for ph, L in phases.items():
+        for a in range(len(L)):
+            for b in range(a + 1, len(L)):
+                x, y = L[a], L[b]
+                q = next((p for p in range(min(len(x), len(y))) if x[p] != y[p]), None)
+                if q is None: continue
+                case = "G" if (x[q][1], x[q][2]) == (y[q][1], y[q][2]) else "O"
+                out[case][0] += 1
+                if any(not (y[p][0] <= x[p][0]) for p in range(q + 1, min(len(x), len(y)))):
+                    out[case][1] += 1; ex.setdefault(case, (ph, a, b, q))
+                if any(len(y[p][0]) == len(x[p][0]) and y[p][0] != x[p][0] or len(y[p][0]) > len(x[p][0])
+                       for p in range(q + 1, min(len(x), len(y)))):
+                    out.setdefault(case + "-size", [0, 0])[1] += 1; ex.setdefault(case + "-size", (ph, a, b, q))
+    return out, ex
+
+
+if __name__ == "__main__" and len(sys.argv) > 1 and sys.argv[1] == "climb":
+    sys.setrecursionlimit(100000)
+    import importlib; M = importlib.import_module("b12_core")
+    M.xc_climb(int(sys.argv[2]), sys.argv[3], int(sys.argv[4]), int(sys.argv[5]), sys.argv[6], os.environ.get("DTL_ORDER", "stable")); sys.exit(0)
+
 if __name__ == "__main__":
     sys.setrecursionlimit(100000); order = os.environ.get("DTL_ORDER", "stable"); mode = os.environ.get("MODE", "core")
     src = classgames(sys.argv[1:], 3, 2, 200) if os.environ.get("CLASS") == "1" else plain(sys.argv[1:], int(os.environ.get("NMAX", "100")))
-    T = [0, 0, 0, 0]; ex = [None, None]; worst = (0, None)
+    T = [0, 0, 0, 0]; ex = [None, None]; worst = (0, None); SZ = [0, 0]; SZX = [None, None]
     for name, g in src:
         try:
             d = B.run(g, order)
@@ -132,6 +193,14 @@ if __name__ == "__main__":
         elif mode == "sigdisj":
             c, b, e = sigdisj(d, g.n); T[0] += c; T[1] += b
             if e and ex[0] is None: ex[0] = (name, g.n, e)
+        elif mode == "chainnest":
+            o, e = chainnest(d, g.n)
+            T[0] += o["G"][0]; T[1] += o["G"][1]; T[2] += o["O"][0]; T[3] += o["O"][1]
+            if e.get("G") and ex[0] is None: ex[0] = (name, g.n, e["G"])
+            if e.get("O") and ex[1] is None: ex[1] = (name, g.n, e["O"])
+            SZ[0] += o.get("G-size", [0, 0])[1]; SZ[1] += o.get("O-size", [0, 0])[1]
+            if e.get("G-size") and SZX[0] is None: SZX[0] = (name, g.n, e["G-size"])
+            if e.get("O-size") and SZX[1] is None: SZX[1] = (name, g.n, e["O-size"])
         elif mode == "samectx":
             c, bv, bp, e = samectx(d, g.n); T[0] += c; T[1] += bv; T[2] += bp
             if e and ex[0] is None: ex[0] = (name, g.n, e)
@@ -142,5 +211,9 @@ if __name__ == "__main__":
               "| same-context cover outside piece_s (contradicts SAME-CTX)", T[2], "| max covered fraction", worst)
     elif mode == "sigdisj":
         print("order", order, "same-signature different-context pairs", T[0], "| overlapping pieces (SIG-DISJ violations)", T[1], "| first", ex[0])
+    elif mode == "chainnest":
+        print("order", order, "| case G (same outcome at q, piece grew): pairs", T[0], "CHAIN-NEST violations", T[1], "first", ex[0],
+              "| case O (outcome rose at q): pairs", T[2], "violations", T[3], "first", ex[1])
+        print("  (CHAIN-SIZE) |R_p(s)| < |R_p(s′)| or equal sets, every p > q: violations case G", SZ[0], "first", SZX[0], "| case O", SZ[1], "first", SZX[1])
     else:
         print("order", order, "same-set same-signature pairs", T[0], "| V differs", T[1], "| piece not ⊆", T[2], "| first", ex[0])

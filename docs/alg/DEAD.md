@@ -311,3 +311,9 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
   - (STABLE-MASS), (STABLE-TOPS), (NEG-TOPS) as re-cut-proof potentials for (CTX⁺) on 𝒞^1P (GAP-A-M §30c): FALSE on 20, 22 and
     3 of 24 consecutive same-phase search pairs of the onep_* instances (first: onep_chainfail_n20.pg (05bfe58e20d7) for the
     first two, onep_firecross_n76.pg (59a94ce07e0b) for the third).
+  - (CHAIN-NEST) / (CHAIN-SIZE) "below the first difference q of two searches of a phase on 𝒞^1P, the later depth-0 contexts are
+    subsets (resp. strictly smaller or equal) of the earlier ones" (GAP-A-M §35c; box 14, L-ALG succ. 10): FALSE even when the
+    outcome at q is unchanged and only its piece grew. experiments/alg/instances/onep_nest_n68.pg (sha1 926bbef91e0e; tcL_N4 forced
+    into 𝒞_1, all priorities distinct; pinned Oink 4 iterations verified), Even's phase, searches 0 and 2, q = 1: vertex 20 is removed
+    at position 2 in search 0 but survives to position 10 in search 2. Obstruction: the depth-0 loop is not monotone in its input set.
+    Case "outcome rose at q": 1,005 / 871 of 2,257 class pairs (first c6_replay3_n32 forced).
