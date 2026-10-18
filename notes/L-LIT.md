@@ -2,10 +2,10 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-18 18:3xZ: PARKED after T19 (Lead redirect 18:13Z: N1 killed on data, L-NEW 8ac5e5c). T19 docs/lit/T19-N1-kill-lit.md:
-the kill is NOT in the opened literature; relation to Friedmann §9 (late release above β_G + counter from all-traps start;
-missing lemmas: no improving trap edge after release, first switch reachable from ι_Gn); BARRIERS B20 (DATA). T18 marked
-SUPERSEDED (its caveat 1 was the kill route); T18 also added B18, B19. Trunk merged as a fast-forward earlier. Next: Lead.
+2026-10-18 ~21:0xZ (machine clock): T20 docs/lit/T20-N5-barriers.md, gauntlet step 3 for N5 SSI-GLOBAL (l-new 8925171):
+SIGNED WITH CAVEATS. DLM quotes verified (Thm 13 is p.15, not p.14); escape (i) real, (ii) not an escape alone; nearest
+bounds switch-best (1106.0778 Thm 8.4) and DLM; rule not in literature. Earlier today: T18 (superseded), T19 (N1 kill lit).
+Next: Lead feedback.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -200,6 +200,14 @@ SUPERSEDED (its caveat 1 was the kill route); T18 also added B18, B19. Trunk mer
 | arXiv 2503.17294 v1 (Loho-Maat-Skomra), sha256 32460e2c6bd93b89… | Prop. 5.5 p.23, §5 p.24 "a first step", Thm 5.10, Cor. 5.11 | 2026-10-18 | T18; new barrier row B19 |
 | Semantic Scholar citations of arXiv 2402.03975 (8 records) | titles scanned; 2610.22149 citations: API 429 | 2026-10-18 | T18 |
 | arXiv 1310.4953 v1 (Akian-Gaubert) | abstract: PI strongly polynomial with bounded first return times | 2026-10-18 | T18; context |
+| arXiv 2309.02223 v1 (van Dijk-Loho-Maat), sha256 10e6794d82aba465…; = tvandijk.nl/pdf/2024ssi.pdf (CSL 2024), sha256 baf912185fd69951… | Thm 1 p.2; p.3 quote; f definition p.5; p.6 "By [22]"; Alg. 2 p.7; Alg. 3, Lemma 5, 6, J-sets p.8; Lemma 12 p.14; Thm 13, §7 p.15 | 2026-10-18 | T20 |
+| arXiv 1501.06484 v1 (Schewe-Trivedi-Varghese), sha256 7b68cc69de78bd90… | Alg. 2 "Naïve symmetric" + Condon cycles p.2; Alg. 3 p.2; §6 p.11-12 ("folklore") | 2026-10-18 | T20 |
+| Friedmann PhD thesis LMU 2011 (edoc.ub.uni-muenchen.de/13294/1/Friedmann_Oliver.pdf), sha256 68748f5388a94151… | Thm 4.41, 4.44, 4.45, 4.50 (PDF p.165), 4.58, 4.76, 4.78, Cor. 4.79 (PDF p.207), 4.90 | 2026-10-18 | T20; re-opened |
+| arXiv 1106.0778 v2, further | arena A_G,σ p.5; §4 locally/globally optimizing policies, Lemma 4.1, Thm 4.2, Lemma 4.3 p.6-7; Thm 8.4 | 2026-10-18 | T20 |
+| arXiv 2404.04124 (Dell'Erba-Dumas-Schewe, LMCS 22(1) 2026), sha256 da74ce1ed5b56648… | p.2 (STV, Condon cycles); conclusion "trivial bound … number of strategies" | 2026-10-18 | T20 |
+| arXiv 2509.16075 v1 (Maat), 0806.2923 v4 (Luttenberger), 1006.1409 (Friedmann-Lange), 1705.02313 (Fearnley), 2008.09465 v3 (Křetínský et al.), 2606.29568 v1, 1607.01474 | abstracts + grep symmetric/best response: no N5 | 2026-10-18 | T20 |
+| Semantic Scholar citations of 2309.02223 (2) and 1501.06484 (14); arXiv API 4 queries; Oink README @ 8fbf0a7 l.118-127 (SSI) | scanned | 2026-10-18 | T20 |
+| NOT opened (T20) | Condon 1993 DIMACS; Schewe CSL 2008; Friedmann snare-memorization bound; Melekopoglou-Condon 1994; Hansen-Kaplan-Zwick 2014 | 2026-10-18 | T20 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
