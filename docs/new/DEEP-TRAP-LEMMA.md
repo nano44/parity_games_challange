@@ -58,3 +58,26 @@ but the two strategies have not been compared vertex by vertex.]
 Nothing above uses N1's schedule except "H doubles": any method that follows the discounted optimum in γ meets, at the release
 (between n'^D/4 and 4n'^D), a change from "all traps" to the parity-like optimum of G, all trap edges changing sign together.
 n3grid.cpp confirms one change of the optimal pair along the whole grid (N = 1..5).
+
+## Gaps 1 and 2 closed (box 3, 18:4xZ; unrefereed), assuming n' ≥ 11
+Notation: x(t) := x(t_v) = n'^P − γ n'^q H (equal for all traps), P = q + D = B + 1 + D. Positional strategies make every play a
+lasso, so a play that enters a trap does so after s steps with 1 ≤ s ≤ n'. For s ≤ H: 1 − γ^s ≥ s(1 − γ)γ^(s−1) ≥ s/(eH).
+Gap 1 (holding, H ≤ n'^D/4; claim: under ANY strategy pair, every real successor w of v ∈ E2 has x(w) < x(t)):
+- x(t) ≥ n'^P − n'^q H ≥ (3/4) n'^P > 0.
+- Plays from w avoiding traps: x(w) ≤ H n'^B ≤ n'^(B+D)/4 < x(t).
+- Plays from w entering a trap after s steps (s counted from v): x(w) ≤ s n'^B + γ^s x(t) − ... ≤ s n'^B + γ^s x(t), and
+  s n'^B < (1 − γ^s) x(t) because (1 − γ^s) x(t) ≥ (s/(eH))·(3/4) n'^P ≥ s·3n'^(P−D)/e = s·(3/e) n'^(B+1) > s n'^B (s ≤ H; for
+  H < s ≤ n', 1 − γ^s ≥ 1 − 1/e and (1 − 1/e)(3/4) n'^P > n'·n'^B).
+So t_v is the strict argmax at every v ∈ E2 in every Howard step of every phase with H ≤ n'^D/4: from any start, Even is in all
+traps after the first Even step and never leaves them in these phases. x(v) = r(v) + γ x(t) ≥ −n'^B + (3/8) n'^P > 0 (γ ≥ 1/2).
+Gap 2 (release, H ≥ 4 n'^D; claim: under ANY strategy pair, every real successor w of v ∈ E2 has x(w) > x(t)) = L-LIT's lemma (i):
+- x(t) ≤ n'^P − (1/2) n'^(B+1) H and n'^P = n'^(B+1+D) ≤ n'^(B+1) H/4, so x(t) ≤ −(1/4) n'^(B+1) H < 0.
+- Plays avoiding traps: x(w) ≥ −H n'^B > −(1/4) n'^(B+1) H ≥ x(t) since n' > 4.
+- Plays entering a trap after s ≤ n' ≤ H steps: x(w) ≥ −s n'^B + γ^s x(t) > x(t) iff (1 − γ^s)|x(t)| > s n'^B; and
+  (1 − γ^s)|x(t)| ≥ (s/(eH))·(1/4) n'^(B+1) H = s n'^(B+1)/(4e) > s n'^B since n' > 4e.
+So no trap edge is ever improving or optimal once H ≥ 4n'^D, in any game (no 1-sink assumption).
+Gap 5 (data, 18:3xZ, experiments/new/anneal_dbg.cpp dumps σ after the first Even step of each phase): σ_1 of the release phase,
+restricted to V, differs from G's best-reward start at 8, 12, 16, 20 Even vertices (N = 2..5), but plain VJ switch-all on G from
+σ_1|V takes 30, 70, 150, 310 iterations, the same as from the best-reward start (Friedmann's doubling). Still open: a proof.
+Remaining gaps: 3 (Thm 9.5 with base n' and the |V|³ threshold), 4 (the ≤ 4 window phases n'^D/4 < H < 4n'^D; all of them are
+already parity-like for G since n'^D/4 = n'^(B+5)/4 ≥ 4 n'^(B+3); data: a single nonzero phase), 5 (proof).
