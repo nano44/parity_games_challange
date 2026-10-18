@@ -3616,3 +3616,37 @@ all with a U-shrink and a deficit in y (and in x).
 Reading: (EXIT_c) splits into (a) U-shrinks, charged to deficit rounds of the later visit (the old (H4)/Lemma E obstruction:
 a straddling stored tangle), and (b) re-cuts inside U. (a) is the box-4 DEF count, which has no constant bound (§17) but has
 not been shown super-polynomial; (b) is new and rare (1 pair in this data). Neither is proved.
+
+24b. Box 10: the per-context budget lives on the EXIT PAIRS alone: D_R ≤ poly·(1 + #Xpairs_R), and U-shrink pairs need a
+deficit (reading + DATA; L-ALG succ. 8, 02:43Z by date -u; tool experiments/alg/dtl_defsplit.py, RM_LIGHT unset, RM_DV=0;
+corpus 141 files + stealonce_viol_n76, stealonce_both_n45, stealer_viol_n76, fall3_n76; both orders)
+Pair classes for consecutive visits x → y of R (grid of §23t plus the virtual end-of-round step, prefix U_r):
+- QUIET: no grid entry or exit (§23w); by QUIET-BLOCK step 1 no vertex leaves any U_r there.
+- ENTRY-ONLY (EO): an entry, no exit (grid or virtual).
+- X-PAIR: some exit; split into USHRINK (some vertex leaves some U_r) and RECUT (grid exits only, every U_r kept).
+Corollary SPLIT (reading, unrefereed). Let Φ⁺ := Σ_r Σ_{τ ∈ grid ∪ {virtual}} |P_r(τ⁺)| ≤ G := (|R| + 1)²|R|, and
+B := (|R| + 1)(L + 1)|R| (§23w). Then:
+- Φ⁺ is unchanged at a quiet pair (no entry, no exit) and rises strictly at an EO pair, so #EO_R ≤ G·(#Xpairs_R + 1).
+- By QUIET-BLOCK, the differing quiet pairs number ≤ B·(#EO_R + #Xpairs_R + 1).
+- Hence D_R ≤ (B + 1)(G + 1)(1 + #Xpairs_R), with #Xpairs_R = #USHRINK_R + #RECUT_R.
+- By Lemma DEF-SHRINK (§24a), every USHRINK pair has a deficit round in its later visit y.
+- Conversely #Xpairs_R ≤ D_R. So per context (D-POLY) ⇔ (XPAIRS-POLY) up to polynomial factors, where
+  (XPAIRS-POLY): the consecutive visit pairs of R with an exit are polynomially many per phase.
+  (EXIT_c) ⇒ (XPAIRS-POLY), since #Xpairs_R ≤ X_R ≤ c·G.
+DATA (dtl_defsplit.py):
+
+| order | differing pairs | EO | USHRINK (deficit in y) | RECUT | max #Xpairs_R per context | max D_R / (1 + #Xpairs_R) |
+|---|---|---|---|---|---|---|
+| stable | 1,346 | 928 | 104 (104) | 1 | 4 (resteal34_union_n90 root, US 4) | 41 (spp_chain_up_n43 root, 0 X-pairs) |
+| Oink | 1,307 | 960 | 29 (29) | 0 | 3 (stealonce_both_n45 root, US 3) | 41 (same) |
+
+- Max deficit visits per context: 10 (h4_deep_oink_n44, stable) and 12 (h4_def11_oink_n28, Oink), with 0 X-pairs. So deficits are
+  necessary for a U-shrink but far from sufficient, and they are not the count that matters.
+- The (RECUT) pair is the single fired18_stable_n20 pair of §24a.
+Reading. Per context, GAP-A's budget reduces to how often SOME exit happens at all (pairs, not (step, vertex) multiplicities).
+On data such pairs are rare (≤ 4 per context, 105 / 29 of 1,346 / 1,307 differing pairs). Disjoint unions add X-pairs over
+components, so the honest form is polynomial, not constant. With (CTX⁺) and R9 (or N11-b1): GAP-A ⇐ (CTX⁺) ∧ (XPAIRS-POLY), given
+STR-DET. This is again equivalent to the other per-context forms up to polynomial factors (a reformulation), but it is the
+SPARSEST one: it counts only the pairs where the round decomposition loses something, and DEF-SHRINK ties most of them to the
+deficit (Lemma E) event.
+Status: Corollary SPLIT and DEF-SHRINK are readings, unrefereed; (XPAIRS-POLY) is DATA (max 4). No proof route yet.
