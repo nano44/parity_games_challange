@@ -121,3 +121,13 @@ re-cut tail. fixd_enable: no enabling tangle fires at R_j in any transition.
   changed pieces to re-enter at the same position with the same |R_j| and |V_j| and the same emptying round, i.e. the low part
   of the depth-0 chain must be cut back to exactly an earlier set of sizes. That is a counter reset in the strict sense; none of
   the instances or climbs produced it for a whole changed piece.
+
+## 9. (TREE-PIECE) / (TREE-PIECE+) (Lead 19:02Z / 19:42Z; DATA 19:40-20:40Z by date -u; l-alg d2784b14, b12_ident.py and
+b12_pot.py byte-identical to 4101eb24 and a44216f2)
+- b12_ident.py TREE=1 PLUS=1 on margin1_n20, margin1_mc1, margin1_mc5, deep1_n13, tcR4_N5, leanT_N8, tcL_N6, rebuilt_a6_b6:
+  stable 76 / Oink order 73 transitions; TREE-PIECE without a new key: 0 / 0. TREE-NEW (no piece, no position): 2 / 2, first
+  margin1_mc1 (already known false).
+- L-ALG's own climb (b12_ident.py climb, PLUS=1, unmodified; class-free mutations), about 1 h each, stopped at 20:40Z:
+  from margin1_n20 (Oink order, about 50,700 steps): best (0 violations, margin 1, 15 transitions, 17 searches);
+  from margin1_mc1 (stable): (0, margin 1, 10, 12); from ctx13_n40 (stable): (0, margin 1, 19, 22). No violation; the margin
+  (fewest vertices with a new key at one call-tree-changing transition) reaches 1 and stays there, as for (VR-NEW_all) (§8).

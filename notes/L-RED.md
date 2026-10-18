@@ -2,7 +2,7 @@
 Previous: session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, parked 15:20Z); before it session_0117Yy21tGGz9s1zzLfBdUKC (Fable).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: BOX 13 ACTIVE / handover pending (successor 8; R40, R41; see Resume point). Box-11 status (history): BOX 11 END (R40 complete). Box-11 status (history): ACTIVE from Lead GO 09:15Z. Box-10 status (history): BOX 10 ACTIVE (successor 7; R39 depth/exit family). Older status lines follow (history): HANDOVER (box 7 successor 5 parks at ~580k). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
+Status: BOX 13 END 20:40Z (successor 8; R40, R41; nothing running; see Resume point and SUCCESSOR QUEUE). Box-11 status (history): BOX 11 END (R40 complete). Box-11 status (history): ACTIVE from Lead GO 09:15Z. Box-10 status (history): BOX 10 ACTIVE (successor 7; R39 depth/exit family). Older status lines follow (history): HANDOVER (box 7 successor 5 parks at ~580k). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
 (n = 20/30/40/60 x 3 seeds x both orders, 1500 steps, heartbeat 100; carry/spp.py, --fitness spp; scratchpad eq/);
 (2) renewable reset, U-shrink (R21 section 4); (3) per-phase potentials L-ALG states (via the Lead).
 
