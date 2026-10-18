@@ -4608,3 +4608,31 @@ In two-player games D_R (the falls) is not bounded, so identical-tree runs remai
 DATA: the library and L-RED's instances contain no identical-tree transition (34a: every identical-depth-0 transition differs
 deeper); the climb found one at the end of a phase. Climbs against (TREE-PIECE⁺) (PLUS=1): from tp_ident_n20, stable, 8,000 two-player steps: 0 violations (margin down to 1, best 8
 transitions at n = 20); from vrV_viol_n40, Oink order: running at 19:24Z.
+34d. Why (TREE-PIECE⁺) on general games would not contradict anything known (Lead 19:03Z; reading, with the sources the fleet
+opened). If (TREE-PIECE⁺) held, with a polynomial bound on identical-tree runs, A_DTL would make polynomially many searches per
+phase, and phases are ≤ 2(n + 1) (each ends with a dominion or a false search). With polynomial work per search (STEP5 / GAP-C
+side), that is M4 for A_DTL. So the statement is exactly as strong as the open question for this solver. It must therefore be
+consistent with:
+- Published lower bounds and barriers: none covers DTL (L-LIT T16, gauntlet step 3 SIGNED with four caveats: DTL is outside the
+  universal-tree and separator models B1-B3, outside the Two Counters mechanism B6, and B4 (attractor decompositions with tangles)
+  has no theorem). The Two Counters family tc gives A_DTL a CONSTANT 6 searches (§25a); tc+ grows (pyref, stable: 3, 5, 8, 10, 12
+  searches at N = 1..5, n = 8..180) and satisfies (TREE-PIECE⁺) with margins 9-75 (checked 19:35Z by date -u).
+- Fleet families: lagfam / lagdist (re-steal depth D on n = 7D + 22, linear phases), chainfam (n − 1), leanT (N), nest4_n80: all have
+  polynomial (linear or near-linear) phases, and all satisfy (TREE-PIECE⁺) (§32g, §34b). No family with super-polynomial searches is
+  known to the fleet (L32 (1) never triggered).
+- The one tension: the author's README row "counter_dtl | Counterexample to the DTL solver" (Oink 39254fe, still on master),
+  never committed anywhere (L-LIT T17: 23 places checked). L-LIT's provenance reading is that it may be the distraction-free
+  counterexample that became counter_dftl, which L-RED ran on dtl: polynomial (R8 §6). If a genuine super-polynomial DTL family
+  exists, (TREE-PIECE⁺) is false on it, and a long phase on that family would show which key repeats. So (TREE-PIECE⁺) contradicts
+  an unpublished claim, not a known result. It does not imply a polynomial bound for any solver with a proved exponential lower bound
+  (tl, zlk, pp, dp etc. are different algorithms; DTL's tc behaviour is constant).
+34e. L-RED's split (Lead 19:20Z), MEASURED (tool b12_split.py; depth-0 chain; stable). Rank class of v: stable / −1 / outside, of
+its depth-0 piece. A-type transition: some vertex enters a class it never held in the phase (≤ 3n per phase, trivially).
+| set | chain-changing | A-type | B-type | B without a new (v, j, class, |R_j|) | B without a new full key | margin-1 | margin-1 not A-type |
+| 𝒞^1P set (DIST=1) | 1,094 | 1,084 | 10 | 0 | 0 | 7 | 1 (spp_n20 forced into 𝒞_1, trial 2) |
+| two-player library + L-RED's 4 | 1,448 | 1,115 | 333 | 66 (first c6_replay3_n48) | 0 | 8 | 1 |
+Answers: (a) NO: "first-time class change" does not carry every margin-1 transition (one exception in each set). It is a monotone
+count ≤ 3n, but in the data almost every transition is A-type only because no phase is longer than 3n, so the split cannot be
+judged on these phases. (b) NO in two-player games: 66 B-type transitions get no new (v, j, class, |R_j|) key, yet every one gets a
+new full key: within a class, the exact rank (emptying round) and |V| are needed. So the split does not give two separate
+arguments; the full key stays the object.
