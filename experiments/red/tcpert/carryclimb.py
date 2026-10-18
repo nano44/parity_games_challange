@@ -3,16 +3,25 @@
 UNMODIFIED (subprocess; LALG_DIR): per phase, the chain positions of the first differences. CARRIES(p) = number of
 consecutive pairs of transitions at position p with >= 2 transitions at deeper positions (> p) between them; score =
 (max over phases of NEST (recursive nesting depth, see nest()), CARRIES, S). Base: disjoint union leanT(a) + leanT(b) as in prodclimb.py, with
-<= K individual cross edges; every game must verify on pinned Oink. Usage: carryclimb.py SEED STEPS A B K OUTDIR"""
+<= K individual cross edges; every game must verify on pinned Oink. CC_COPIES=a,b,c,... uses k copies (cross edges between any two different copies).
+Usage: carryclimb.py SEED STEPS A B K OUTDIR"""
 import sys, os, random, subprocess, re, ast
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import tcpert as T, lean as LE
 seed, steps, a, b, K, out = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5]), sys.argv[6]
 rng = random.Random(seed); os.makedirs(out, exist_ok=True); tmp = os.path.join(out, f"c{seed}.pg")
 FP = os.path.join(os.environ["LALG_DIR"], "experiments", "alg", "fixd_fdpos.py")
-A = LE.lean(a, T.LT); B = LE.lean(b, T.LT); sh = max(v[0] for v in A) + 2; sh += sh % 2
-U = [[v[0], v[1], list(v[2]), "1:" + v[3]] for v in A] + [[v[0] + sh, v[1], [w + len(A) for w in v[2]], "2:" + v[3]] for v in B]
-nA = len(A); n = len(U)
+sizes = [int(x) for x in os.environ["CC_COPIES"].split(",")] if os.environ.get("CC_COPIES") else [a, b]   # k copies
+U = []; sh = 0; owner = []
+for ci, sz in enumerate(sizes):
+    Cp = LE.lean(sz, T.LT); off = len(U)
+    U += [[v[0] + sh, v[1], [w + off for w in v[2]], f"{ci+1}:" + v[3]] for v in Cp]; owner += [ci] * len(Cp)
+    sh = max(v[0] for v in U) + 2; sh += sh % 2
+nA = len(U) - len(LE.lean(sizes[-1], T.LT)) if len(sizes) == 2 else None; n = len(U)
+def cross():
+    while True:
+        u, w = rng.randrange(n), rng.randrange(n)
+        if owner[u] != owner[w]: return (u, w)
 def build(E):
     V = [[x[0], x[1], list(x[2]), x[3]] for x in U]
     for u, w in E:
@@ -46,7 +55,7 @@ def fit(E):
     sc = (0, 0, 0)
     for line in o.splitlines():
         m = re.search(r"S (\d+) .* reset-depth proxy (\d+) positions (\[[^\]]*\])", line)
-        if m: ps = ast.literal_eval(m[3]); sc = max(sc, (nest(ps), carries(ps), int(m[1])))
+        if m: ps = [x for x in ast.literal_eval(m[3]) if x is not None]; sc = max(sc, (nest(ps), carries(ps), int(m[1])))
     return sc, r
 if os.environ.get("CC_SHRINK"):   # CC_SHRINK="[label pairs]": greedily drop cross edges while NEST stays >= its start value
     ix = {x[3]: k for k, x in enumerate(U)}; E = [(ix[u], ix[w]) for u, w in ast.literal_eval(os.environ["CC_SHRINK"])]
@@ -63,9 +72,8 @@ f, r = fit(E); best = f; print("start", f, r, flush=True)
 for it in range(steps):
     F = list(E); m = rng.random()
     if F and m < 0.3: F.pop(rng.randrange(len(F)))
-    elif len(F) < K:
-        u = rng.randrange(n); w = rng.randrange(nA, n) if u < nA else rng.randrange(nA); F.append((u, w))
-    else: F[rng.randrange(len(F))] = (rng.randrange(nA), rng.randrange(nA, n)) if rng.random() < .5 else (rng.randrange(nA, n), rng.randrange(nA))
+    elif len(F) < K: F.append(cross())
+    else: F[rng.randrange(len(F))] = cross()
     g, rr = fit(F)
     if g >= f:
         E, f = F, g

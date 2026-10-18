@@ -31,4 +31,25 @@ re-cut tail. fixd_enable: no enabling tangle fires at R_j in any transition.
   2:Even-4-H -> 1:Odd-1-T, 2:Odd-3-H -> 1:Odd-0-T. No uniform pattern is visible yet.
 - Caveat: one climbed instance, not a family. Each position re-rises at most twice here; a counter needs this recursively.
 
-## 4. Scaling (running)
+## 4. Scaling (DATA, 14:40-15:35Z by date -u): the climbs plateau
+- carryclimb.py NEST climbs (stable order), each started from the nest4 edges or from scratch, ≤ 1 h each:
+  2 copies a = b = 5 (n 80): NEST 4 (S 15-17); a = b = 6 (n 96): 3; a = b = 7 (n 112): 3;
+  3 copies 4,4,4 (n 96): 3; 4 copies 3,3,3,3 (n 96): 3. No growth with the size or the number of copies in this time.
+- Individual random cross edges do not scale; a uniform cross-edge RULE was not found (the shrunk 8-edge set of §3 has no
+  visible pattern).
+
+## 5. Reading: what a staircase product's tangles can be, and the obstruction for two copies
+- DATA (lag/learn.py on nest4_n80): all 35 learned tangles are, per copy and per player, contiguous ranges of bit indices
+  (35 of 35); 5 of them span both copies (an interval of copy 1 united with an interval of copy 2).
+- Reading. If every learned tangle of a k-copy staircase product is a union of one bit interval per copy (and player), then the
+  number of distinct tangles is at most prod_i O(b_i^2), and each search learns at least one new tangle, so
+  S ≤ prod_i O(b_i^2). For k = 2 this is polynomial (O(a^2 b^2) ⊆ O(n^4)): two staircases cannot make a super-polynomial phase,
+  whatever the cross edges, as long as the interval shape holds. For k copies the bound is about (n/k)^(2k), so with
+  k ≈ log n copies interval-product tangles leave room for n^(Θ(log n)) distinct tangles. That is the only place where this
+  substrate leaves room for a counter: carries must be CROSS-COPY tangles (one interval per copy), learned low and firing high.
+- The interval shape itself is DATA (one instance), not proved.
+- Why each rung re-rises only once in nest4 (READING): a re-rise at a rung needs a NEW tangle firing there (CHANGE-NEW, R14);
+  at a rung of copy 2 the new tangles available are the intervals of copy 2 ending at that rung, extended by intervals of copy 1.
+  In nest4 the second rise uses the cross tangle that the root rise of copy 1 created; copy 1 then has no further rise below
+  the root to supply another extension. A deeper counter would need copy 1's own tail to re-rise between the re-rises of
+  copy 2, which is the same problem one level down (k copies, one per counter bit).
