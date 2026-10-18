@@ -121,3 +121,23 @@ All measurements use L-ALG's tools UNMODIFIED (detached checkout of claude/l-alg
   - Re-steals per q are unbounded: max k grows like D/2. Any constant-k form (STEAL-ONCE*-type) fails on this family too.
     STEAL-POLY_sum (R12's main route) is NOT refuted: k <= n here, and the phase is linear.
   - Not a running-time kill: Oink iterations are D + 8.
+
+## 7. The same family breaks (EXIT_c) for constant c; (CTX+) unaffected (DATA, 03:20Z by date -u)
+- L-ALG experiments/alg/dtl_prefexits.py UNMODIFIED (RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0), BOTH order data (identical):
+
+  | D | n | max exits per (context, step, vertex) | exit distribution | max total exits per context / abs R |
+  |---|---|---|---|---|
+  | 2 | 36 | 2 | 1: 17, 2: 4 | |
+  | 4 | 50 | 3 | 1: 29, 2: 17, 3: 4 | 1.5 (75 exits, abs R 50, 11 visits) |
+  | 6 | 64 | 4 | 1: 41, 2: 29, 3: 17, 4: 4 | |
+  | 8 | 78 | 5 | 1: 53, 2: 41, 3: 29, 4: 17, 5: 4 | |
+  | 12 | 106 | 7 | | 7.59 (805 exits, abs R 106, 19 visits) |
+
+- Max exits = D/2 + 1 for even D. Re-entries reach the same counts: membership patterns like 0101010000000 are a vertex
+  ticking once per toggle of the level above.
+- (EXIT_c) with c CONSTANT is false. RESULTS R13's premise (EXIT_c; DATA "c = 2 on all data") fails at fam_D4_n50
+  already (c = 3). This is the gadget L-ALG described in §23w-§23x: one vertex's prefix membership ticks like a counter bit.
+- Total exits per context grow faster than abs R (75 to 805 for D 4 to 12), but they stay polynomial.
+- dtl_rootmono.py UNMODIFIED, both orders: 1 distinct first-difference context per phase (10 / 14 / 18 transitions at
+  D = 4 / 8 / 12). Everything happens in the root context, so the family says nothing about (CTX+). The serialized-piece
+  question of R38 stays open.
