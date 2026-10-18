@@ -3462,3 +3462,68 @@ trunk 3572651. No REJECT.
       S − 1 ≤ Σ_{R ∈ C_bv} D_R + n(|C_T| + |C_Dom|) + 1   (given STR-DET; one signature on the D_R form).
   So (D-POLY) "D_R ≤ poly(|R|) per context and phase" with (CTX⁺) gives GAP-A, and §23u's D_R ≤ N_ent + D_R^thr turns
   (EXIT_c) plus a bound on D_R^thr (gap G23u) into (D-POLY). That is the box-10 target.
+
+23w. Box 10: gap G23u CLOSED (reading, unrefereed): D_R is bounded by the non-quiet pairs; the "RV rises" fix is KILLED
+(L-ALG succ. 8, 01:41Z by date -u; produced on Opus 5.5; tool experiments/alg/dtl_drthr.py)
+Grid, conventions and notation as in §23t (G10-a1): rounds r ≤ |R| + 1 with the round convention, grid tops = every p-vertex
+of R, top_r^i(w) = the top whose region holds w in round r at visit i (⊥ = −1), U_r = the union of round r's regions, and
+W_{r,t} := Cl_t(U_r; T) for every grid round and threshold level t (the G-Ψ convention, also for padded rounds; U_r = ∅ after
+a V = ∅ stop). L = number of threshold levels (t ∈ {0} ∪ {q ∈ prios : 0 < q ≤ maxpr}, so L ≤ n + 1).
+Definition. A consecutive visit pair x → y of R is QUIET if it has no entry and no exit on the grid. (An entry/exit is at a grid
+step (r, τ); a vertex moving ⊥ ↔ region of the LOWEST grid top is invisible on the grid.)
+DATA FIRST (dtl_drthr.py; RM_LIGHT=1 RM_DV=0; sets: corpus experiments/alg/instances/*.pg (141 files) plus stealer_viol_n76,
+stealonce_viol_n76, stealonce_both_n45, fall3_n76, fall4_n116 (l-red carry); mixed unions UNIONS=900 SEED=1 NMAX=32; cross unions
+UNIONS=600 SEED=11 UM_CROSS=3 NMAX=32 with DR_VIRT=1; both order data; the union runs also re-run the corpus files):
+
+| set | order | differing pairs | 1st diff region (all have an entry) | 1st diff threshold: entry / NO entry | non-quiet pairs | quiet differing pairs, W grows strictly |
+|---|---|---|---|---|---|---|
+| corpus + DE19/DE20 | stable | 1,394 | 400 | 667 / 327 | 1,067 | 327 / 327 |
+| corpus + DE19/DE20 | Oink | 1,354 | 378 | 636 / 340 | 1,014 | 340 / 340 |
+| mixed unions | stable | 9,336 | 2,880 | 4,114 / 2,342 | 6,994 | 2,342 / 2,342 |
+| mixed unions | Oink | 9,435 | 2,978 | 4,106 / 2,351 | 7,084 | 2,351 / 2,351 |
+| cross unions | stable | 6,780 | 2,507 | 2,812 / 1,461 | 5,319 | 1,461 / 1,461 |
+| cross unions | Oink | 6,878 | 2,543 | 2,838 / 1,497 | 5,381 | 1,497 / 1,497 |
+
+- "No entry" ⇔ quiet on all data: 0 pairs with only invisible (⊥ ↔ lowest region) changes; no region first difference at the
+  lowest grid top; 0 identical pairs with an entry.
+- KILL of the §23u candidate fix "charge the threshold pairs to RV rises (§22r C1-C3)": at EVERY no-entry differing pair
+  (10,318 over the six runs) RV is unchanged (neither rises nor falls). Killer: spp_chain_up_n43, root context (|R| = 43,
+  42 visits): all 41 differing pairs are quiet, first difference in a threshold loop (rounds 2, 3, ...), RV equal, both orders.
+- Max D_R = 41 = max quiet differing pairs in ONE quiet block (spp_chain_up_n43 root), both orders, all sets.
+- Max exits per (step, vertex): 2 (stable; stealonce_viol_n76, resteal34_union_n90), 1 or 2 (Oink; 2 on stealonce_both_n45);
+  with the virtual end-of-round step (DR_VIRT=1, an exit from U_r) on the cross unions: still 2 / 1.
+Lemma QUIET-BLOCK (reading, unrefereed). Let x → y be quiet. Then for every grid round r and level t: U_r(x) ⊆ U_r(y),
+W_{r,t}(x) ⊆ W_{r,t}(y), every round-r region of x other than the lowest grid top's equals that of y, and the lowest grid top's
+region can only grow. If the set-level computations of x and y differ, then Φ := Σ_r |U_r| + Σ_{r,t} |W_{r,t}| rises strictly.
+Proof.
+1. Rounds by induction, claim (I_r): V_r(x) ⊆ V_r(y), and U_{r′}, W_{r′,t} are ⊆ for r′ < r. (I_1): V_1 = the p-vertices of R in
+   both visits (dtl.cpp 662-667).
+2. Round r. Quiet means top_r^x(w) = top_r^y(w) except for ⊥ ↔ low (the lowest grid top) moves. So every region of a top
+   τ > low is equal, and the prefix before low is equal. If low is processed in x it is in V_r(x) ⊆ V_r(y) and outside the
+   common prefix, so it is processed in y too, and by EXACT (R10 (a)) with equal prefix and T_x ⊆ T_y its region grows:
+   A_x(low) ⊆ A_y(low). If low is processed only in y, A_x(low) = ∅. So a move low → ⊥ never happens and U_r(x) ⊆ U_r(y).
+3. Threshold loop. Every threshold output is Cl_t(Z_in; T) over all of T (DTL-proof Lemma 1.2; §23v G11-a1), and the level chain
+   gives Cl_t(Cl_{t′}(U_r)) = Cl_t(U_r) for t′ ≤ t (Cl_{t′} ⊆ Cl_t, idempotent). So the level-t output is W_{r,t}, also on a
+   716 round by the G-Ψ convention. Cl is monotone in its base and in T, so W_{r,t}(x) ⊆ W_{r,t}(y).
+4. Candidates (dtl.cpp 713-747). A top v ∈ V_r is dropped iff it is unattracted to U_r and to every W_{r,t} with t < pr v;
+   attraction is monotone in the target set, so a top dropped in y is dropped in x if it is in V_r(x). Hence
+   V_{r+1}(x) = V_r(x) \ cand_x ⊆ V_r(y) \ cand_y = V_{r+1}(y): (I_{r+1}).
+5. Strictness. If Φ(x) = Φ(y), then U_r(x) = U_r(y) for all r, so (by 2) the round maps are equal, and W_{r,t}(x) = W_{r,t}(y).
+   The computation is then a function of these sets: by induction V_r is equal (step 4 with equal sets), the region and
+   threshold outputs are equal, and the stop decisions (716 / 765 / 768-771) are equal. So the computations are identical. □
+Corollary (G23u CLOSED, reading). Within a maximal run of consecutive quiet pairs, Φ never decreases (step 1-3 hold at every
+quiet pair, identical or not) and rises at every differing pair; Φ ≤ (|R| + 1)(L + 1)|R|. Let M_R be the number of non-quiet
+pairs; each has an entry or an exit, so M_R ≤ N_ent + X_R ≤ 2X_R + (|R| + 1)|R|² (§23q step 3). Hence
+    D_R ≤ M_R + (M_R + 1)·(|R| + 1)(L + 1)|R|.
+- With (EXIT_c): X_R ≤ c(|R| + 1)|R|² (REFEREE's constant, §23t), so D_R ≤ poly(|R|, n) at EVERY context, the root included.
+  This is §23u's claim with its gap closed; the threshold-loop and last-region-step pairs are absorbed by QUIET-BLOCK, not by an
+  entry and not by RV.
+- Conversely X_R ≤ D_R·(|R| + 1)|R|² trivially. So per context (D-POLY) ⇔ (EXITS-POLY) ⇔ (STEAL-POLY_sum) ⇔ (RELSTEAL) up to
+  polynomial factors, and (FIRED⁺-R) ⇒ (D-POLY) (§23s). The two routes MEET: all per-context forms are one statement, and the
+  local sufficient form is still (EXIT_c). This is a reformulation, not new progress on GAP-A.
+- Honest reading of the killer: on spp_chain_up_n43 all the root's work is quiet: the region maps never change and every one of
+  the 41 differing root calls is a strict growth of some W_{r,t}. So at the root the (SPP)-type count lives entirely inside one
+  quiet block, where QUIET-BLOCK gives only Φ ≤ (|R|+1)(L+1)|R| per block: polynomial, but the factor that (SPP) would need to
+  be linear is the block length.
+Status: Lemma QUIET-BLOCK and the corollary are a reading, unrefereed; the data columns above are DATA. Candidate for the next
+referee packet (short; the only new ingredients are steps 2 and 4).
