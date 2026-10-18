@@ -4721,9 +4721,9 @@ objects of §1, a statement about A_DTL's searches (gauntlet step 4); no definit
  S5. Cross-context novelty: the §35 obstruction (input-monotonicity of the continuation below a first difference), which is worse in
      two-player games ((CHAIN-NEST) already fails on 𝒞^1P, onep_nest_n68).
 36c. Identical call-sequence runs. In a run of searches with identical call sequences, every difference is inside sptl at a stable
-context of the fixed tree. The per-context budget R7 (d) / R9 (c) bounds such transitions at one context by (D_R + 1)(H + 1), H
-polynomial, D_R the falls (R7 / R9 notation). On 𝒞^1P, D_R = 0 (NOSTEAL-1P with R11 (c)). In two-player games D_R ≤ F_R ≤ 3·#fired⁺(R)
-(R14), so the bound needed is (FIRED⁺-R) at the stable contexts of one call tree. R5-R14 do NOT give it: (FIRED⁺-R) is open (GAPS
+context of the fixed tree. The signed per-context budget R9 (a) bounds the transitions whose first difference is at one context R by
+2(F_R + 1)(H + 1) (post-landing doubling), H polynomial, F_R the non-rises of Π_R at R. On 𝒞^1P, F_R = 0 (NOSTEAL-1P with R11 (c)). In
+two-player games F_R ≤ 3·#fired⁺(R) (R14), so the bound needed is (FIRED⁺-R) at the stable contexts of one call tree. R5-R14 do NOT give it: (FIRED⁺-R) is open (GAPS
 GAP-A row). DATA: no identical-tree transition occurs in the library or in L-RED's instances; tp_ident_n20 has one, at a phase end.
 VERDICT (box 15): NO SKETCH. Exact failing step: S4, same-context novelty, because the outcome at a fixed input can fall in two-player
 games (LEX false, cm_viol_oink_n28, searches 4 → 5). The signed replacement (falls ≤ 3·#fired⁺ per context) gives back exactly the open

@@ -3,19 +3,17 @@ Successor 9's handover text is in git history: `git show a97f451:notes/L-ALG.md`
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push only with `scripts/push.sh > $S/push.log 2>&1; echo exit $?`.
 Truth for GAP-A: docs/alg/GAP-A-M.md §23-§30 (§30 = box 12, successor 10; §29 = box-11 ledger). Dead ends: docs/alg/DEAD.md.
 
-## Resume point (2026-10-18 20:52Z by date -u; box 14 (PROOF box), GO 20:19Z, to ~23:30Z; same session)
-Ledger: GAP-A-M §35 (box 14), §33-§34 (box 13), §30-§32 (box 12). L32: NOT met.
-- Box 14 item (1), (XCTX@p0) on 𝒞^1P: NO PROOF ROUTE (§35 VERDICT). Proved on the way (reading): Lemma LEX (the depth-0 chain
-  rises in a tree-lexicographic order over the whole phase; mechanical check 4,718 pairs, 0 violations). Failing step:
-  input-monotonicity of the depth-0 continuation below the first difference q; (CHAIN-NEST) / (CHAIN-SIZE) false even in the
-  gentle case (onep_nest_n68), widely false after an outcome rise; (SIG-DISJ) false (onep_vrj_n40). No (XCTX@p0) violation known.
-- Item (2) (CHAIN-CHANGE): not attempted (Lead: only if (1) gives a route).
+## Resume point (2026-10-18 21:25Z by date -u; box 15 (sketch box), GO 20:59Z, to ~00:00Z; same session)
+Ledger: GAP-A-M §36 (box 15), §35 (box 14), §33-§34 (box 13), §30-§32 (box 12). L32: NOT met.
+- Box 15: (TREE-PIECE⁺) in two-player games: NO SKETCH (§36 VERDICT). Steps S1-S3 hold in general (R9 (a), FDL, Lemma 1.2b). S4
+  (same-context novelty) FAILS: Lemma LEX is false in two-player games (18 / 12 library pairs; cm_viol_oink_n28, Odd phase, searches
+  4 → 5, root emptying round 8 → 7). The signed replacement (R11 (c), R14: falls ≤ 3·#fired⁺ per context) gives back the open
+  (CTX⁺) ∧ (FIRED⁺-R) term. S5 (cross-context) = §35 obstruction. Identical-tree runs need (FIRED⁺-R) (36c), open.
+- Box 14: (XCTX@p0) no route (§35); Lemma LEX proved on 𝒞^1P (reading).
 - Standing (3): run `TREE=1 b12_ident.py <file>` on any L-RED instance the Lead forwards; report at once.
-- Earlier boxes: SAME-CTX + reduction (§33); (TREE-PIECE⁺) survives all data (§34); (VR-NEW_*) table (§32i).
-QUEUE for the successor:
-(1) A new idea for (XCTX@p0) must use the two facts no lemma uses yet: the later context R persists from s to s+1, and only the new
-    vertices N are compared. Possible handle: SAME-CTX applied to R at s and s+1 plus LEX between s′ and s.
-(2) (TREE-PIECE⁺) sketch in two-player games (next box per the Lead, if (1) is dead).
+QUEUE for the successor (nothing in flight):
+(1) Only new ideas reopen §35 / §36: a cross-context comparison of depth-0 continuations, or a key argument at a fall.
+(2) Re-run b12_ident.py TREE=1, b12_core.py MODE=xcover and b12_lexchk.py on every new L-RED instance.
 
 ## DONE (box 12, successor 10)
 - Handover check 50e66d3 (5/5 per Lead), trunk merges 781790d and the box-start merge.
@@ -23,6 +21,7 @@ QUEUE for the successor:
 - §30 with tools b12_topchain.py (class set + TOP-CHAIN@R scan), b12_topclimb.py (climb, --check), b12_pertop.py (tangles
   learned per (phase, top)), b12_mono.py (re-cut-proof potentials, per_position); instance onep_topuniq_n20 (check.sh).
 - §31 with tool b12_nopre.py (scan / climb); instance nopre_near_n20 (near miss, pinned Oink 5 iterations verified).
+- Box 15: §36; b12_lexchk.py CLASS=0 mode. Push 7ea83d5 and the follow-up.
 - Box 14: §35 (b12_core.py MODE=chainnest and climb, b12_lexchk.py); instance onep_nest_n68; DEAD.md entry. Push 6278271
   and the follow-up.
 - Box 13: §33 (b12_core.py), §34 (b12_ident.py incl. climb, b12_split.py); instance tp_ident_n20. Pushes 4f2b321, 1fac015,
