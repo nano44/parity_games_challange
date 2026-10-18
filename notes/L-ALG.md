@@ -121,6 +121,15 @@ Box 8 so far (GAP-A-M §23a). The invariant behind (STEAL-ONCE*), DATA only, 0 e
   verified". Re-run every instance before reporting it.
 
 ## Resume point
+Successor 8, box 10 (GO 01:21Z by date -u, box to ~06:00Z or 580k). State at the 02:30Z check-in:
+- (0) packet-11 imports: GAP-A-M §23v (l-alg 510cb18).
+- (1) G23u CLOSED (reading, unrefereed): §23w Lemma QUIET-BLOCK, D_R ≤ M_R + (M_R + 1)(|R|+1)(L+1)|R|, M_R = non-quiet pairs
+  ≤ 2X_R + (|R|+1)|R|². RV-rise fix KILLED (spp_chain_up_n43). Tool dtl_drthr.py; data six runs in §23w (l-alg 19c434f).
+- (2) (EXIT_c): §23x Lemma EXIT-ORIGIN (reading); DOWN_2 DATA; NET-GROWTH KILLED (cm_viol_oink_n28, lex_viol_oink_n20);
+  obstruction = lexicographic counter (re-triggered resets); round-count falls ≤ 2. Climbs dtl_exitclimb.py s1 (cm_viol_oink_n28)
+  and s2 (stealonce_both_n45) in the scratchpad ec/ folder; they die with the container.
+- (3) §23y: no birth locality below the root.
+- Candidate referee packet: §23w QUIET-BLOCK (+ §23x EXIT-ORIGIN), short.
 Successor 8 (session started 01:06Z by date -u, 2026-10-18; produced on Opus 5.5): handover check in
 docs/agents/handover-checks/L-ALG.md; waiting for GO. Box-10 plan: (1) measure D_R^thr and close G23u, (2) (EXIT_c) via G23r,
 (3) (FIRED⁺-R) below the root only if (1)-(2) stall.
@@ -150,6 +159,7 @@ Successor 8 (box 9 ended in this session, 00:46Z by date -u):
 - Box-8 resume notes below this line are still valid for tools and traps.
 
 ## Dead ends
+- Box 10 successor 8: G23u RV-rise fix (spp_chain_up_n43), NET-GROWTH (cm_viol_oink_n28, lex_viol_oink_n20); DEAD.md box 10.
 - Box 8 successor 7: STEALER-MONO (stealer_viol_n76), FIRED-STEP const and FIRED-TOP-INJ (fired18_stable_n20), FIRED-LAMINAR
   (c6_replay3_n32); all in docs/alg/DEAD.md.
 Box 7-8 dead ends, each with its instance, are in docs/alg/DEAD.md (latest sections):
@@ -165,6 +175,7 @@ Box 7-8 dead ends, each with its instance, are in docs/alg/DEAD.md (latest secti
 Boxes 1-6: see `git show 8a9c0f44:notes/L-ALG.md`.
 
 ## Sources opened
+- Successor 8: no external sources opened; readings of dtl.cpp @ 8fbf0a7 via the referee inventories (R-P11, R2-P11) and dtl_pyref.py.
 - Successor 7: no external sources opened. Readings are of dtl.cpp @ 8fbf0a7 through experiments/alg/dtl_pyref.py (attractVertices
   67-76, attractTangle 78-101, tattr 196-203, best_vertices 220-) and of the fleet's docs.
 - No external sources were opened in boxes 7-8. All arguments are readings of dtl.cpp @ 8fbf0a7 (tools/oink/src/src/solvers/dtl.cpp,

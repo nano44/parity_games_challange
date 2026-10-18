@@ -500,7 +500,7 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
           misattributed; REFEREE-2 §5 and the Lead checked c2ac652:docs/referee-2/R2-P8.md §7 (line 139ff, "The same device
           tightens G-P7-c2 / G8-1 from 3 to 2, given STR-DET (optional)"); the citation is correct; the device is REFEREE's
           R-P7 §C2; REFEREE §C (3785d3f) WITHDRAWS N9-a1 (it had read R2-P8 at b8fdd76, before §7). Unused here.
-  G-R12-5 OPEN (STEAL-DEPTH_D, D constant): DATA only. Every re-steal found has depth 1: 1 in the corpus (stable), 64 in 320
+  G-R12-5 OPEN (STEAL-DEPTH_D, D constant): DATA only; see RESULTS DE21 (depth 2/3/4 on a growing sequence). Before that: Every re-steal found has depth 1: 1 in the corpus (stable), 64 in 320
           random tie-break runs (REFEREE-2, all on stealonce_viol_n76, k_q ≤ 2); L-ALG: k max 1 on big unions (n ≤ 120,
           both orders); no re-steal elsewhere. Attack in progress (L-RED; L-ALG dtl_depthclimb).
   G-R12-6 OPEN (FIRED-R): DATA only, no route (L-ALG box 8 self-kills FIRED-STEP, FIRED-LAMINAR, FIRED-TOP-INJ, NO-RETURN).
@@ -551,7 +551,7 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
           Σ_q k_q (compare EXIT-CHARGE, §23p, unrefereed).
   G-R13-3 Shorter route (REFEREE-2 N10-b1; confirmed by REFEREE §C, so two signatures): step 1 alone gives N*_R ≤ N_ent, so F_R ≤ 3(X_R + (|R|+1)|R|²)
           without step 2 or R12 (a); with (EXIT_c), F_R ≤ 3(c+1)(|R|+1)|R|².
-  G-R13-4 OPEN (EXIT_c): DATA only; c = 2 on all data (both referees' probes and L-ALG dtl_prefexits.py); L-RED's exit climb
+  G-R13-4 OPEN (EXIT_c): DATA only; see RESULTS DE21 ((EXIT_2) FALSE: 3 exits on depth4_n53). Before that: c = 2 on all data (both referees' probes and L-ALG dtl_prefexits.py); L-RED's exit climb
           stayed at 2 (R37 addendum, l-red 59b3522).
   G-R13-5 OPEN (CTX⁺): DATA only (max 13); no route (CTX-ROOT DE17, CTX-LAMINAR, PIECES-LAMINAR dead).
   G-R13-6 Dependencies: R12 (a)-(b) (G9-b1 prefix convention), R11 (c), R10, R8 (STR-DET), R9; also open, inherited: (ACYC)
@@ -790,3 +790,16 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   RM_DV=0) and dtl_stealtrace.py (+RM_LIGHT=1), identical in BOTH orders: STOLEN-PERM FAILS 2 / holds 4, NO-REFIRE "REFIRES
   later" 2, relevant steals per quadruple max 2, no INCOMPLETE; "STEAL-ONCE* VIOLATION ... phase 2 ctx |R| 43 step (round 5,
   top 12) tangle 0: 2 relevant steals" (and at round 6). Depth still 1.
+- DE21 (2026-10-18): the DATA hypotheses (STEAL-DEPTH_D) for D ≤ 3 (RESULTS R12 (c)) and (EXIT_2) (RESULTS R13 (c)) are
+  FALSE on A_DTL in BOTH order data; re-steal depth GROWS along a constructed sequence; NOT a dead end for DTL itself (iterations
+  stay linear), and NOT yet a refutation of (STEAL-DEPTH_D) or (EXIT_c) for every constant (that needs a uniform family; the
+  control wiring is hill-climbed per D). Instances experiments/red/lag/instances/depth2_n39.pg (sha1 6200e586),
+  depth3_n46.pg (54cc8526), depth4_n53.pg (40dacf0e) (L-RED R39, l-red 9cd2702; an inversion relay driven by a region
+  clock, n = 7D + 25). Lead re-ran (03:07Z by date -u) pinned Oink (10/11/12 iterations, verified, 28/33/38 strategies)
+  and L-ALG's unmodified dtl_stealdepth.py (unchanged since l-alg e0fc1bb; RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0): max
+  depth 2/3/4 and max k 2/2/3, identical in both orders; and dtl_prefexits.py (same flags): max exits per (context, step,
+  vertex) 2/2/3 in both orders (3 on depth4_n53, |R| 53, 11 visits), total exits per context / |R| 0.64 / 1.13 / 1.79.
+  Obstruction (L-RED R39): a staggered freeze clock (top level first, one level per search) plus holds whose release reaches
+  the levels below drives a relay F_j(x) = not(F_(j-1)(x) or x ≥ j+3); each level's re-steal is caused by the level above.
+  Consequence: the R12 (c) route (constant depth) and the R13 (c) route with c = 2 are dead on data; R12 (a) (STEAL-POLY_sum),
+  R13 (b) (EXITS-POLY) and R14 are untouched (k ≤ 3, totals small).
