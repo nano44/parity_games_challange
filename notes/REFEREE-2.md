@@ -10,6 +10,8 @@ R2-P7 §6 comparison (19e63f7: NS-COUNT = NSTEAL), §7 R9 budget (94bcc2a: 2(F_R
 P8 (§22s EXACT*/PREFIX-MONO-X*, §22u chain, pin a907c46): docs/referee-2/R2-P8.md. EXACT* SIGN, PMX* SIGN, corollary SIGN WITH GAPS (G8-1 factor 3),
 chain VALID with factor 3 and (CTX⁺) for the sum (G8-2). Probe dtl_probe8.patch (+ "F t" fired log), an8.py. FIRED-R ratio 0.67|R| at small R.
 R2-P8 §6 comparison (018ab0d: full agreement), §7 (c2ac652): signed REFEREE R-P7 §C2's tighter R9 constants given STR-DET; my 2n withdrawn; factor 3 -> 2 given STR-DET (mine alone; R11 keeps 3).
+20:57Z R2-N5-ESC (8197777): CONFIRMED, N5 leaves Alg. 2 set (fam1 n=3 it.1, (a2,d3)) and Alg. 3 J (fam2 n=2 it.1, (m2,f2)); own tracer docs/referee-2/R2-N5-ESC/n5trace.py.
+18:06Z R2-N1-FAITH (520d701): N1 kill faithful with caveats (orientation; dual family kills LS-literal).
 03:45Z FAITH-lagfam (docs/referee-2/R2-FAITH-lagfam.md, 636697c): DE21 reproduces on pinned C++ (depth = D, k and exits = ceil(D/2)+1); cited in DE21 at trunk bf302b0. Parked (~410k).
 00:58Z P11 (§23s CHANGE-NEW, pin 5909724): docs/referee-2/R2-P11.md. (a) SIGN (function of (R,p,T), only-appended verified), (b) SIGN + N11-b1 (e*-at-R ≤ D_R, drop H), (c) CONFIRMED: (CTX⁺)∧(FIRED⁺-R) ⇔ GAP-A. Probe an11.py 0 failures.
 00:30Z P10 (§23q ENTRY-CHARGE, pin 1100f3a): docs/referee-2/R2-P10.md. (a) SIGN WITH GAPS (G10-a1 fixed step set), fan-out step correct; (b) SIGN, N10-b1 (RELSTEAL already FIRED-free; N*_R <= N_ent shorter route); (c) SIGN; (d) CONFIRMED equivalence. Probe an10.py: 0 failures, EXIT_2 on all data.
