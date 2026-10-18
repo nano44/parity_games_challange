@@ -194,3 +194,5 @@ dead on data; polynomial-total routes (R12 (a), R13 (b), R14) untouched. Oink 10
 ## 2026-10-18 03:34Z Lead (relayed to owner)
 DE21 made uniform (trunk 5c452e3): lagfam.py D, n = 7D+22, repeat-steal depth exactly D (D=2..12), Oink D+8 iterations. R12 (c)
 constant-depth route false for every constant; post-landing note. Live routes R12 (a), R13, R14 (polynomial totals).
+
+## 2026-10-18 04:08Z Lead -> owner: Q14 (L32 reassessment) added; put to the owner at once. All lanes parked awaiting the choice.
