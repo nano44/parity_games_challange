@@ -3487,7 +3487,7 @@ UNIONS=600 SEED=11 UM_CROSS=3 NMAX=32 with DR_VIRT=1; both order data; the union
 - "No entry" ⇔ quiet on all data: 0 pairs with only invisible (⊥ ↔ lowest region) changes; no region first difference at the
   lowest grid top; 0 identical pairs with an entry.
 - KILL of the §23u candidate fix "charge the threshold pairs to RV rises (§22r C1-C3)": at EVERY no-entry differing pair
-  (10,318 over the six runs) RV is unchanged (neither rises nor falls). Killer: spp_chain_up_n43, root context (|R| = 43,
+  (8,318 over the six runs) RV is unchanged (neither rises nor falls). Killer: spp_chain_up_n43, root context (|R| = 43,
   42 visits): all 41 differing pairs are quiet, first difference in a threshold loop (rounds 2, 3, ...), RV equal, both orders.
 - Max D_R = 41 = max quiet differing pairs in ONE quiet block (spp_chain_up_n43 root), both orders, all sets.
 - Max exits per (step, vertex): 2 (stable; stealonce_viol_n76, resteal34_union_n90), 1 or 2 (Oink; 2 on stealonce_both_n45);
