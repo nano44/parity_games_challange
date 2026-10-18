@@ -4576,3 +4576,22 @@ search of the phase, in the piece at p0 of a context set R′ ≠ R with |R′| 
   reduction to two named statements, not one, and with no proof route for the cross-context one.
 TARGET.md diff: objects as in TARGET.md §1; the class adds owner / out-degree / distinct q-parity priority hypotheses (§27b); the
 statements count A_DTL's searches (gauntlet step 4 objects); no change of definitions; no M4 claim.
+34. Box 13, item (2): the two-player transitions with identical depth-0 states, and (TREE-PIECE) (DATA; tool
+experiments/alg/b12_ident.py; 18:55Z by date -u).
+34a. What they are. Two-player library plus L-RED's four instances, n ≤ 100, stable: 1,538 transitions, 91 with identical depth-0
+states (R_j, rank_j, V_j). For the 88 library ones the first differing best_vertices call over ALL depths is at depth 1 (context
+differs 18, outcome differs 12), depth 2 (context 51, outcome 4) or depth 3 (context 3); never "same call sequence". So they are the
+depth-0 phenomenon one level down: a re-cut inside a threshold piece's recursion.
+34b. (TREE-PIECE), the recursive form of (VR-NEW_all). For every best_vertices call c of a search (any depth d), its piece is R_c
+minus the context of the next call at depth d before the recursion returns to a shallower depth (all of R_c if none), and its
+position is its index among the depth-d calls of the same parent call. Key of a vertex v in that piece: (v, d, position, rank_c,
+|R_c|, |V_c|). Statement: every transition of a phase gives some vertex a key it never held in the phase.
+Consequence if true: searches per phase ≤ #keys + 1 ≤ n·n·n·(n + 3)·n·n + 1 = O(n⁶), for EVERY game (no class hypothesis): that
+is GAP-A (gauntlet step 4 objects; TARGET.md section 3 cost model unaffected, all quantities are indices).
+DATA: 0 transitions without a new key: 1,538 (stable) and 1,551 (Oink order) two-player transitions, every identical-depth-0
+transition included; L-RED's vrs_viol_n100, vrV_viol_n80, vrV_viol_n40 and nest4_n80 included. At depth 0 the keys equal b12_pot's
+full keys exactly (checked on 66 searches), so on 𝒞^1P (TREE-PIECE) follows from (VR-NEW_all) (the depth-0 chain always changes
+there). The membership variant (v, d, rank, |R|, |V|) over all contexts containing v FAILS (45 / 46 transitions, first
+a_best_s31): the piece and the position are essential.
+Honest reading: the same caveat as §32c. Phases in the data are short (≤ 42 transitions), the statement is a no-repetition statement
+over a poly-size state space, and it has no proof; on 𝒞^1P its depth-0 part reduces (§33b) to the cross-context (XCTX@p0).
