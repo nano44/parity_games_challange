@@ -13,7 +13,9 @@ N1 has four parts:
 
 Sources were opened by L-LIT in this session. PDFs are in the scratchpad, with sha256 prefixes recorded in notes/L-LIT.md. "p." means the printed or PDF page as stated. Quotes are verbatim from pdftotext, with superscripts restored where pdftotext flattened them. "L-LIT reading" marks interpretation.
 
-**Verdict (step 3): SIGNED, with six caveats (§5).**
+**SUPERSEDED 2026-10-18 18:15Z:** N1 was killed on data (L-NEW 8ac5e5c, docs/new/N1-KILL.md) by the route of caveat 1. See docs/lit/T19-N1-kill-lit.md. Step 3 is moot; the text below is kept as the record.
+
+**Verdict (step 3): SIGNED, with six caveats (§6).**
 - No published lower-bound theorem covers N1.
 - **The one framework that comes close is B8.** Friedmann's switch-all bound transfers to discounted Howard at one discount exponentially close to 1 (1106.0778 §9). N1 lies outside it only because of its warm-started schedule: B8's theorems fix the start strategy and a single discount. **This is the weakest point.**
 - No source analyses the warm start. Both Loff-Skomra bounds hold "for any initial policies". Asadi-Chatterjee-Luo say explicitly that warm-starting "is not used in our analysis".

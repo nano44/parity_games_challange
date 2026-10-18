@@ -2,11 +2,10 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-18 (L-LIT successor for T18, Opus 5.5 per D8): T18 docs/lit/T18-N1-barriers.md, gauntlet step 3 for N1 (LS24
-IncreasingDiscountPI on parity rewards): SIGNED with 6 caveats; weakest point B8 by schedule only (Friedmann §9 / Hollanders
-Thm 2.18 fix one discount and one start). BARRIERS.md gained B18 (Howard outside parity games, discounted transfer) and
-B19 (LDT representability). Trunk merged into claude/l-lit as a fast-forward (no local commits were ahead). N1-step2.md read
-from origin/claude/l-new 5366078 (not on trunk). Next: Lead feedback.
+2026-10-18 18:3xZ: PARKED after T19 (Lead redirect 18:13Z: N1 killed on data, L-NEW 8ac5e5c). T19 docs/lit/T19-N1-kill-lit.md:
+the kill is NOT in the opened literature; relation to Friedmann §9 (late release above β_G + counter from all-traps start;
+missing lemmas: no improving trap edge after release, first switch reachable from ι_Gn); BARRIERS B20 (DATA). T18 marked
+SUPERSEDED (its caveat 1 was the kill route); T18 also added B18, B19. Trunk merged as a fast-forward earlier. Next: Lead.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
