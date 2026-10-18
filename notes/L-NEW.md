@@ -55,6 +55,9 @@ families, other schedules), wait for Lead routing; check in ~20:30Z with ReadNot
   (abstract page only, NOT opened); Karczmarz arXiv 2110.15070 (NOT opened).
 
 ## Dead ends
+- N2 (PRIO-ANNEAL), KILLED ON DATA ~19:00Z (box 3; first implementation n2.py). Padded switchallexp
+  (gen_padsae.sh; dummies block compression): largest stage 6, 15, 34, 72, 148, 300, 604 (N = 1..7). Instance
+  experiments/new/instances/killer/padsae_N7.pg (sha1 9ee0385509ac81f2dd9eb111df2ecbdabdfa87b1, n = 230): stage of 604.
 - N1 (LS24 IncreasingDiscountPI on parity rewards), KILLED ON DATA 2026-10-18 ~18:15Z (box 3; unrefereed; docs/new/N1-KILL.md).
   Obstruction: deep traps (trap priority gap P - q > max priority + 2) hold Even in all traps with positive values until a phase
   after the parity-like horizon; that single phase runs Howard from the best-reward start = Friedmann's counter. Instance:

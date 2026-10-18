@@ -1,6 +1,6 @@
 # N2 PRIO-ANNEAL: priority annealing (top-down coarsening) with warm-started strategy iteration (L-NEW; before code)
 
-Status: PROPOSED (not implemented in box 1).
+Status: DEAD END on data (box 3, 2026-10-18 ~19:00Z by date -u); see the last section.
 
 ## Exact pseudocode
 Input G, distinct priorities q_1 > q_2 > ... > q_k (after compression).
@@ -22,3 +22,15 @@ cycle structure, so a coarsened phase may make all bits trivially decided and th
 ## Cheapest killer expected
 switchallexp: its bits are encoded by priorities in a narrow band; the final phase sees almost the original game.
 Second: tc (two counters), where Oink's FPI/ZLK die (B6).
+
+## Box 3: first implementation and kill (2026-10-18 ~18:45-19:00Z)
+Implementation: experiments/new/n2.py (pseudocode above; compression as compress.py) driving n2_si.cpp (verbatim vjfast copy +
+one line printing Even's full strategy for warm starts). Every final solution: regions = Oink zlk, strategies verified.
+- switchallexp (unpadded): total 10, 18, 27, 32, 37 (N = 1..5): compression merges the counter's priorities (box 1 confound).
+- Padded switchallexp (experiments/new/gen_padsae.sh N: one isolated self-loop dummy per priority, so compression merges
+  nothing): largest stage 6, 15, 34, 72, 148, 300, 604 switch-all iterations, total 11 ... 624 (N = 1..7, n = 50 ... 230).
+  Pinned: experiments/new/instances/killer/padsae_N1..N7.pg, table padsae_n2.csv (sha1 per instance).
+  At N = 5 the long stage is stage 86 of 93 (148 iterations); all others have <= 7.
+Obstruction: coarsening sets the high bits first, but the stage that reveals the counter's low priorities starts from the
+coarse optimum, and from there switch-all replays Friedmann's count. The deep-trap game (deeptrap_sae, padded) gives similar
+counts (28, 50, 90 total for N = 2..4): the trap gadget is horizon-specific and plays no role for N2.
