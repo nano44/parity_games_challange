@@ -801,5 +801,6 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   vertex) 2/2/3 in both orders (3 on depth4_n53, |R| 53, 11 visits), total exits per context / |R| 0.64 / 1.13 / 1.79.
   Obstruction (L-RED R39): a staggered freeze clock (top level first, one level per search) plus holds whose release reaches
   the levels below drives a relay F_j(x) = not(F_(j-1)(x) or x ≥ j+3); each level's re-steal is caused by the level above.
-  Consequence: the R12 (c) route (constant depth) and the R13 (c) route with c = 2 are dead on data; R12 (a) (STEAL-POLY_sum),
+  Consequence: the R12 (c) route with D ≤ 3 and the R13 (c) route with c = 2 are dead on data; depth grows along the R39
+  sequence (no uniform family yet); R12 (a) (STEAL-POLY_sum),
   R13 (b) (EXITS-POLY) and R14 are untouched (k ≤ 3, totals small).
