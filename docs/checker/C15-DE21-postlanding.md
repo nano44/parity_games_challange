@@ -62,3 +62,58 @@ Required:
   along the R39 sequence (no uniform family yet);". This is my suggested wording, and E-1 is fixed.
 - Nothing else moved. DE21 PASSES as at a747106.
 - Recorded: the Lead adopts the rule "a POST-LANDING NOTE on R12 (c) only if a uniform family refutes every constant D".
+
+## Addendum 2: one-pass check 19a892c → 5c452e3 (Lead 03:32Z; supersedes Addendum 1's scope), text plus numbers
+History: 19a892c and a747106 are ancestors of 5c452e3, and l-red a0eb07a (R39 §5) is an ancestor. In scope are four changes:
+the DE21 E-1 fix (Addendum 1, PASS), the DE21 ADDENDUM, the R12 POST-LANDING NOTE, and the GAPS GAP-A row.
+
+### Verdict: numbers PASS (reproduced exactly); FAIL on one clause of the DE21 ADDENDUM and the GAPS row (E-2, new CHECKER data); notes N-1, N-2
+
+### Numbers (CHECKER re-run, tools unmodified, RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0)
+- I regenerated with `python3 -I experiments/red/lag/lagfam.py D out.pg`. D = 4, 8, 12 are byte-identical to the pinned
+  fam_D4_n50 (c8fd8616), fam_D8_n78 (46ad828c) and fam_D12_n106 (0dd2899e).
+| D | n | pinned Oink | dtl_stealdepth stable / Oink: max k; max depth | ADDENDUM |
+| --- | --- | --- | --- | --- |
+| 4 | 50 | 12 iterations, verified (37) | 3; 4 / 3; 4 | D + 8 = 12; k = ⌊5/2⌋ + 1 = 3; depth 4 |
+| 12 | 106 | 20 iterations, verified (77) | 7; 12 / 7; 12 | D + 8 = 20; k = ⌊13/2⌋ + 1 = 7; depth 12 |
+- Identical in both orders, as stated. "(STEAL-DEPTH_D) is FALSE for EVERY constant D (on this family, at D > the constant)"
+  is supported: depth = D, uniform rule, both orders.
+- The R12 POST-LANDING NOTE is accurate.
+  - "(a), (b) and (c) as a conditional are unaffected, but (c) gives no reduction of GAP-A": correct.
+  - "no constant-k form holds": k = ⌊(D+1)/2⌋ + 1 grows.
+  - "(STEAL-POLY_k) is not refuted (k ≤ n)": k ≈ n/14, which is polynomial.
+  - It is a NOTE, as the rule requires.
+
+### E-2 (required; new CHECKER data): "(EXIT_c) for c ≥ 3 (exits on the family not yet measured)" is no longer true
+- The ADDENDUM lists among "Still NOT refuted: ... (EXITS-POLY) / (EXIT_c) for c ≥ 3 (exits on the family not yet
+  measured)". GAPS says "remaining routes: ... R13 (EXITS-POLY / EXIT_c, c ≥ 3)".
+- I measured the exits with L-ALG's dtl_prefexits.py, unmodified, same flags:
+  | D | n | max exits per (context, step, vertex), stable / Oink | max total exits per context / \|R\| |
+  | --- | --- | --- | --- |
+  | 2 | 36 | 2 (stable; regenerated file) | — |
+  | 4 | 50 | 3 / 3 | 1.50 |
+  | 6 | 64 | 4 (stable; regenerated file) | — |
+  | 8 | 78 | 5 / 5 | 3.97 |
+  | 12 | 106 | 7 / 7 | 7.59 |
+- So max exits per (σ, w) = ⌊D/2⌋ + 1 on every D tested. (EXIT_c) fails on this family for every c ≤ 6 already at D = 12,
+  in both orders, and the uniform rule makes it fail for EVERY constant c at D ≥ 2c. That is the same shape as the depth
+  kill.
+- (EXITS-POLY) is NOT refuted: total exits per context grow like D·|R|, i.e. O(n²).
+- Consequences for the text, in Lead and L-RED terms:
+  - The ADDENDUM's "Still NOT refuted: ... (EXIT_c) for c ≥ 3" and GAPS's "EXIT_c, c ≥ 3" route are contradicted by this
+    data.
+  - By the rule adopted in C15 Addendum 1, R13 (c) (hypothesis (EXIT_c) for a constant c) now has a falsified signed
+    hypothesis on a uniform family, and would get a POST-LANDING NOTE like R12's.
+  - What remains unrefuted is (EXITS-POLY), the equivalent polynomial form (R13 (b)/(d)).
+- Caveat. These are CHECKER runs of an unmodified tool on pinned and regenerated L-RED instances. They are DATA, and L-RED
+  or L-ALG should reproduce them before the text is changed. The D = 2 and D = 6 files are regenerated, not pinned.
+- The rest of the list, "Still NOT refuted: (STEAL-POLY_sum), (EXITS-POLY), (CTX⁺), (FIRED⁺-R), GAP-A (iterations D + 8,
+  linear)", stands. Nothing in the NOTE or ADDENDUM refutes them, and the Oink iterations are D + 8.
+
+### Notes
+- N-1 (staleness inside DE21). DE21's body still says "NOT yet a refutation of (STEAL-DEPTH_D) or (EXIT_c) for every
+  constant (that needs a uniform family ...)" and "(no uniform family yet)". The ADDENDUM supersedes both for STEAL-DEPTH.
+  Suggest "(superseded for STEAL-DEPTH by the ADDENDUM below)" at both places, and the same for EXIT_c once E-2 is
+  reproduced.
+- N-2. The ADDENDUM's "re-steals per quadruple are unbounded" means unbounded in n, growing as ⌊(D+1)/2⌋ + 1 = O(n). Saying
+  "grow linearly in n" would be more precise and would match "(STEAL-POLY_k) is not refuted" in the NOTE.
