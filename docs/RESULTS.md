@@ -500,7 +500,7 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
           misattributed; REFEREE-2 §5 and the Lead checked c2ac652:docs/referee-2/R2-P8.md §7 (line 139ff, "The same device
           tightens G-P7-c2 / G8-1 from 3 to 2, given STR-DET (optional)"); the citation is correct; the device is REFEREE's
           R-P7 §C2; REFEREE §C (3785d3f) WITHDRAWS N9-a1 (it had read R2-P8 at b8fdd76, before §7). Unused here.
-  G-R12-5 OPEN (STEAL-DEPTH_D, D constant): DATA only. Every re-steal found has depth 1: 1 in the corpus (stable), 64 in 320
+  G-R12-5 OPEN (STEAL-DEPTH_D, D constant): DATA only; see RESULTS DE21 (depth 2/3/4 on a growing sequence). Before that: Every re-steal found has depth 1: 1 in the corpus (stable), 64 in 320
           random tie-break runs (REFEREE-2, all on stealonce_viol_n76, k_q ≤ 2); L-ALG: k max 1 on big unions (n ≤ 120,
           both orders); no re-steal elsewhere. Attack in progress (L-RED; L-ALG dtl_depthclimb).
   G-R12-6 OPEN (FIRED-R): DATA only, no route (L-ALG box 8 self-kills FIRED-STEP, FIRED-LAMINAR, FIRED-TOP-INJ, NO-RETURN).
@@ -511,6 +511,11 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
 - Scope: a reduction, not a bound. CHARGE turns the steal count into a depth question but does not bound the depth. GAP-A
   stays OPEN on (CTX⁺), (FIRED-R) and (STEAL-DEPTH_D) (or directly (STEAL-POLY_sum)); all are DATA only, and only
   (STEAL-DEPTH) has a proof route. Not the L32 single-statement criterion. GAP-C is separate. Gauntlet step 4 stays open.
+- POST-LANDING NOTE (2026-10-18 03:22Z by date -u): the hypothesis (STEAL-DEPTH_D, D constant) of (c) is FALSE on A_DTL in both order
+  data: a UNIFORM family has re-steal depth = D (RESULTS DE21 addendum, experiments/red/lag/lagfam.py, n = 7D + 22). (a), (b)
+  and (c) as a conditional are unaffected, but (c) gives no reduction of GAP-A; the routes via (STEAL-POLY_sum) (a), RESULTS
+  R13 and R14 remain. Max re-steals per quadruple grow too (k = ⌊(D+1)/2⌋ + 1), so no constant-k form holds; (STEAL-POLY_k)
+  is not refuted (k ≤ n).
 
 ### R13 [refereed-only] Packet 10 on A_DTL: Lemma ENTRY-CHARGE, and GAP-A ⇐ (CTX⁺) ∧ (EXIT_c) (2026-10-18) — partial step-4 reformulation (not M3, not a step-4 pass), CHECKER PASS (docs/checker/C13-R13-packet10.md, checker 1bd345d + re-diff 8886315)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -551,7 +556,7 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
           Σ_q k_q (compare EXIT-CHARGE, §23p, unrefereed).
   G-R13-3 Shorter route (REFEREE-2 N10-b1; confirmed by REFEREE §C, so two signatures): step 1 alone gives N*_R ≤ N_ent, so F_R ≤ 3(X_R + (|R|+1)|R|²)
           without step 2 or R12 (a); with (EXIT_c), F_R ≤ 3(c+1)(|R|+1)|R|².
-  G-R13-4 OPEN (EXIT_c): DATA only; c = 2 on all data (both referees' probes and L-ALG dtl_prefexits.py); L-RED's exit climb
+  G-R13-4 OPEN (EXIT_c): DATA only; see RESULTS DE21 ((EXIT_2) FALSE: 3 exits on depth4_n53). Before that: c = 2 on all data (both referees' probes and L-ALG dtl_prefexits.py); L-RED's exit climb
           stayed at 2 (R37 addendum, l-red 59b3522).
   G-R13-5 OPEN (CTX⁺): DATA only (max 13); no route (CTX-ROOT DE17, CTX-LAMINAR, PIECES-LAMINAR dead).
   G-R13-6 Dependencies: R12 (a)-(b) (G9-b1 prefix convention), R11 (c), R10, R8 (STR-DET), R9; also open, inherited: (ACYC)
@@ -559,6 +564,11 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
 - Scope: a reformulation, not a bound. GAP-A stays OPEN on (CTX⁺) and (EXIT_c) (or the equivalent (EXITS-POLY) / (RELSTEAL)),
   both DATA only; (EXIT_c) is a single local statement but has no proof yet, and (CTX⁺) has no route. Not the L32
   single-statement criterion. GAP-C is separate. Gauntlet step 4 stays open.
+- POST-LANDING NOTE (2026-10-18 03:27Z by date -u): the local premise (EXIT_c) of (c) is FALSE for EVERY constant c on A_DTL in both
+  order data: on the uniform family experiments/red/lag/lagfam.py (RESULTS DE21 addendum) the max exits per (context, step,
+  vertex) are ⌈D/2⌉ + 1 (2/3/4/5/7 at D = 2/4/6/8/12; 3/4/5 at D = 3/5/7, REFEREE-2 R2-FAITH-lagfam). (a), (b), (d) and (c) as a conditional are unaffected; the route
+  GAP-A ⇐ (CTX⁺) ∧ (EXITS-POLY) (b) remains: total exits per context on the family are 25/75/166/310/805 at n = 36/50/64/78/106
+  (polynomial on these data).
 
 ### R14 [refereed-only] Packet 11 on A_DTL: Lemma CHANGE-NEW, F_R ≤ 3·#fired⁺(R) unconditionally, and GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R) (2026-10-18) — partial step-4 reformulation (not M3, not a step-4 pass), CHECKER PASS (docs/checker/C14-R14-packet11.md, checker f89502d + re-diff 1af4995)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -790,3 +800,36 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   RM_DV=0) and dtl_stealtrace.py (+RM_LIGHT=1), identical in BOTH orders: STOLEN-PERM FAILS 2 / holds 4, NO-REFIRE "REFIRES
   later" 2, relevant steals per quadruple max 2, no INCOMPLETE; "STEAL-ONCE* VIOLATION ... phase 2 ctx |R| 43 step (round 5,
   top 12) tangle 0: 2 relevant steals" (and at round 6). Depth still 1.
+- DE21 (2026-10-18): the DATA hypotheses (STEAL-DEPTH_D) for D ≤ 3 (RESULTS R12 (c)) and (EXIT_2) (RESULTS R13 (c)) are
+  FALSE on A_DTL in BOTH order data; re-steal depth GROWS along a constructed sequence; NOT a dead end for DTL itself (iterations
+  stay linear), and [superseded by ADDENDUM and ADDENDUM 2 below] NOT yet a refutation of (STEAL-DEPTH_D) or (EXIT_c) for every constant (that needs a uniform family; the
+  control wiring is hill-climbed per D). Instances experiments/red/lag/instances/depth2_n39.pg (sha1 6200e586),
+  depth3_n46.pg (54cc8526), depth4_n53.pg (40dacf0e) (L-RED R39, l-red 9cd2702; an inversion relay driven by a region
+  clock, n = 7D + 25). Lead re-ran (03:07Z by date -u) pinned Oink (10/11/12 iterations, verified, 28/33/38 strategies)
+  and L-ALG's unmodified dtl_stealdepth.py (unchanged since l-alg e0fc1bb; RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0): max
+  depth 2/3/4 and max k 2/2/3, identical in both orders; and dtl_prefexits.py (same flags): max exits per (context, step,
+  vertex) 2/2/3 in both orders (3 on depth4_n53, |R| 53, 11 visits), total exits per context / |R| 0.64 / 1.13 / 1.79.
+  Obstruction (L-RED R39): a staggered freeze clock (top level first, one level per search) plus holds whose release reaches
+  the levels below drives a relay F_j(x) = not(F_(j-1)(x) or x ≥ j+3); each level's re-steal is caused by the level above.
+  Consequence: the R12 (c) route with D ≤ 3 and the R13 (c) route with c = 2 are dead on data; depth grows along the R39
+  sequence (no uniform family yet [superseded: see ADDENDUM]); R12 (a) (STEAL-POLY_sum),
+  R13 (b) (EXITS-POLY) and R14 are untouched (k ≤ 3, totals small).
+  ADDENDUM (2026-10-18 03:22Z by date -u): UNIFORM FAMILY. experiments/red/lag/lagfam.py D (L-RED R39 §5, l-red a0eb07a; one fixed
+  wiring rule T_j → {x_1, τ_j}, no climbed helpers) builds a game on n = 7D + 22 vertices. Lead regenerated D = 4, 8, 12
+  byte-identical to the pinned fam_D4_n50 (c8fd8616), fam_D8_n78 (46ad828c), fam_D12_n106 (0dd2899e), and ran D = 2, 3, 4,
+  5, 6, 8, 10, 12: pinned Oink D + 8 iterations, verified, every D; unmodified dtl_stealdepth.py (RM_EXCL=1 RM_PREF=1
+  RM_LIGHT=1 RM_DV=0), identical in both orders: max depth = D and max k = ⌊(D+1)/2⌋ + 1 (2,3,3,4,4,5,6,7). Hence
+  (STEAL-DEPTH_D) is FALSE for EVERY constant D (on this family, at D > the constant), and re-steals per quadruple are
+  unbounded (they grow linearly in n); RESULTS R12 (c) carries a POST-LANDING NOTE. Still NOT refuted: (STEAL-POLY_sum), (EXITS-POLY) / (EXIT_c) for
+  c ≥ 3 (exits on the family not yet measured [superseded: ADDENDUM 2 refutes (EXIT_c) for every constant c]), (CTX⁺), (FIRED⁺-R), GAP-A (iterations D + 8, linear).
+  ADDENDUM 2 (2026-10-18 03:27Z by date -u): (EXIT_c) FALSE for EVERY constant c on the same family (L-RED R39 §7, l-red 702e2e9). Lead
+  ran the unmodified dtl_prefexits.py (same flags) on lagfam D = 2, 4, 6, 8, 12, identical in both orders: max exits per
+  (context, step, vertex) 2/3/4/5/7 (= ⌈D/2⌉ + 1, odd D per REFEREE-2 below); total exits per context 25/75/166/310/805 (|R| 36/50/64/78/106), polynomial on
+  these data. First break at c = 3: fam_D4_n50. RESULTS R13 (c) carries a POST-LANDING NOTE. dtl_rootmono (L-RED): one
+  first-difference context per phase on the family, so it says nothing about (CTX⁺).
+  FAITHFULNESS (2026-10-18 03:47Z by date -u): REFEREE-2 docs/referee-2/R2-FAITH-lagfam.md (referee-2 636697c, "(Opus 5.5, D12)") re-measured
+  lagfam D = 2..8 with its own logging-only pinned-C++ build and own checkers (an9, an10; no L-ALG tools, no pyref), pinned and
+  stable order: D + 8 iterations verified; max depth = D, max k = ⌊(D+1)/2⌋ + 1, every re-steal with a CHARGE cause; max exits per
+  (σ, w) on the fixed grid = ⌈D/2⌉ + 1; 0 failures of CHARGE, ENTRY-CHARGE steps 1-3, N* ≤ N_ent, C3 and fan-out. Its exit TOTALS
+  (64/177/376/685 at D = 2/4/6/8) count virtual rounds on the fixed grid and are ≈ 2.2-2.6× dtl_prefexits'; both polynomial.
+  DE21 and its addenda therefore stand on a faithful implementation.

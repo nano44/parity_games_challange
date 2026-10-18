@@ -121,6 +121,37 @@ Box 8 so far (GAP-A-M §23a). The invariant behind (STEAL-ONCE*), DATA only, 0 e
   verified". Re-run every instance before reporting it.
 
 ## Resume point
+PARKED (Lead 04:06Z by date -u: box 10 accepted; packet 12 NOT sent; §23w, §23x, §24b stay unrefereed readings; the successor waits
+for the Lead's L32 reassessment). No process running.
+BOX-10 END (successor 8, ~03:45Z by date -u; context ≈ 460k). START at GAP-A-M §24i (the single named target, LONG-PHASE) and §24h (the box-10 ledger), then §24g (lagfam table),
+§24b (SPLIT), §23w (QUIET-BLOCK, frozen for packet 12; brief docs/alg/QUIET-BLOCK.md).
+- Tools new in box 10 (flags in the docstrings): dtl_drthr.py, dtl_exitshape.py (EX_DEF=1 needs RM_LIGHT unset), dtl_netgrowth.py,
+  dtl_roundfalls.py, dtl_exitclimb.py, dtl_firedlocal.py, dtl_quietlin.py, dtl_defsplit.py (RM_LIGHT unset), dtl_exitlead.py,
+  dtl_totals.py (RM_EXCL=1 RM_LIGHT=1 RM_DV=0; the growth-table tool).
+- lagfam: experiments/red/lag/lagfam.py D OUT (needs lag4.py and gb.py beside it; from trunk).
+- Trap: dtl_stealdepth's "max k" line is printed BEFORE the depth histogram; do not cut its output with tail -N at large D.
+- Trap: stamp every message with date -u; I once wrote a guessed time (corrected to the Lead).
+Successor 8, box 10 (GO 01:21Z by date -u, box to ~06:00Z or 580k). State at the 02:30Z check-in:
+- (0) packet-11 imports: GAP-A-M §23v (l-alg 510cb18).
+- (1) G23u CLOSED (reading, unrefereed): §23w Lemma QUIET-BLOCK, D_R ≤ M_R + (M_R + 1)(|R|+1)(L+1)|R|, M_R = non-quiet pairs
+  ≤ 2X_R + (|R|+1)|R|². RV-rise fix KILLED (spp_chain_up_n43). Tool dtl_drthr.py; data six runs in §23w (l-alg 19c434f).
+- (2) (EXIT_c): §23x Lemma EXIT-ORIGIN (reading); DOWN_2 DATA; NET-GROWTH KILLED (cm_viol_oink_n28, lex_viol_oink_n20);
+  obstruction = lexicographic counter (re-triggered resets); round-count falls ≤ 2. Climbs dtl_exitclimb.py s1 (cm_viol_oink_n28)
+  and s2 (stealonce_both_n45) in the scratchpad ec/ folder; they die with the container.
+- (3) §23y: no birth locality below the root.
+- Candidate referee packet: §23w QUIET-BLOCK (+ §23x EXIT-ORIGIN), short; brief docs/alg/QUIET-BLOCK.md (82d7131).
+After the check-in (02:06Z by date -u):
+- §23z: QUIET-LIN and QUIET-NEWV KILLED (linear quiet-block forms); block ≤ 0.953|R| DATA.
+- §24a Lemma DEF-SHRINK (reading): the first round where U_r shrinks has a deficit in the later visit; no-deficit falls are
+  re-cuts inside U.
+- §24b Corollary SPLIT (reading): D_R ≤ (B+1)(G+1)(1 + #Xpairs_R); (XPAIRS-POLY) "pairs with an exit are polynomially many"
+  ⇔ (D-POLY). DATA: X-pairs ≤ 4 per context; U-shrinks 104 / 29, re-cuts 1 / 0 (corpus, stable / Oink). Tool dtl_defsplit.py
+  (RM_LIGHT unset).
+- §24c: every U-shrink pair has V_r(x) ⊊ V_r(y) at its first shrinking round (new top; = (U-MONO_DTL)). (USHRINK-FRESH) "each
+  U-shrink pair has a new key (round, new top, losing top)" DATA 104/104, 29/29 on the corpus; stress run on unions and the
+  climb best (scratchpad dr/ds_*.txt) started 03:00Z. Proof attempt hits the counter again: re-using a key needs an RV fall,
+  i.e. an earlier-round U-shrink.
+- NEXT (successor): a CONSUMED quantity for U-shrinks (key reuse across rounds) is the sharpest open local question.
 Successor 8 (session started 01:06Z by date -u, 2026-10-18; produced on Opus 5.5): handover check in
 docs/agents/handover-checks/L-ALG.md; waiting for GO. Box-10 plan: (1) measure D_R^thr and close G23u, (2) (EXIT_c) via G23r,
 (3) (FIRED⁺-R) below the root only if (1)-(2) stall.
@@ -150,6 +181,8 @@ Successor 8 (box 9 ended in this session, 00:46Z by date -u):
 - Box-8 resume notes below this line are still valid for tools and traps.
 
 ## Dead ends
+- Box 10 successor 8: G23u RV-rise fix (spp_chain_up_n43), NET-GROWTH (cm_viol_oink_n28, lex_viol_oink_n20), QUIET-LIN
+  (dtl_cross3_n14, fired18_stable_n20), QUIET-NEWV (spp_final_n30, spp_n30); DEAD.md box 10.
 - Box 8 successor 7: STEALER-MONO (stealer_viol_n76), FIRED-STEP const and FIRED-TOP-INJ (fired18_stable_n20), FIRED-LAMINAR
   (c6_replay3_n32); all in docs/alg/DEAD.md.
 Box 7-8 dead ends, each with its instance, are in docs/alg/DEAD.md (latest sections):
@@ -165,6 +198,7 @@ Box 7-8 dead ends, each with its instance, are in docs/alg/DEAD.md (latest secti
 Boxes 1-6: see `git show 8a9c0f44:notes/L-ALG.md`.
 
 ## Sources opened
+- Successor 8: no external sources opened; readings of dtl.cpp @ 8fbf0a7 via the referee inventories (R-P11, R2-P11) and dtl_pyref.py.
 - Successor 7: no external sources opened. Readings are of dtl.cpp @ 8fbf0a7 through experiments/alg/dtl_pyref.py (attractVertices
   67-76, attractTangle 78-101, tattr 196-203, best_vertices 220-) and of the fleet's docs.
 - No external sources were opened in boxes 7-8. All arguments are readings of dtl.cpp @ 8fbf0a7 (tools/oink/src/src/solvers/dtl.cpp,

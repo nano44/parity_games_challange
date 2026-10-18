@@ -3458,7 +3458,358 @@ trunk 3572651. No REJECT.
   charged pairs are distinct. Hence #(e*-at-R) ≤ D_R ≤ #fired⁺(R) given STR-DET (≤ 2·D_R without it), and
       S − 1 ≤ Σ_{R ∈ C_bv} #fired⁺(R) + n(|C_T| + |C_Dom|) + 1,
   with no H and no F_R.
+- UPDATE (Lead 01:41Z by date -u, CHECKER C14 N-2): REFEREE §C (referee abc5185) CONFIRMED N11-b1, so N11-b1 now has TWO
+  signatures; the "ONE signature; §C pending" above is stale.
 - What this changes for box 10 (L-ALG reading, unrefereed). With N11-b1 the per-context budget is D_R itself:
       S − 1 ≤ Σ_{R ∈ C_bv} D_R + n(|C_T| + |C_Dom|) + 1   (given STR-DET; one signature on the D_R form).
   So (D-POLY) "D_R ≤ poly(|R|) per context and phase" with (CTX⁺) gives GAP-A, and §23u's D_R ≤ N_ent + D_R^thr turns
   (EXIT_c) plus a bound on D_R^thr (gap G23u) into (D-POLY). That is the box-10 target.
+
+23w. Box 10: gap G23u CLOSED (reading, unrefereed): D_R is bounded by the non-quiet pairs; the "RV rises" fix is KILLED
+(L-ALG succ. 8, 01:41Z by date -u; produced on Opus 5.5; tool experiments/alg/dtl_drthr.py)
+Grid, conventions and notation as in §23t (G10-a1): rounds r ≤ |R| + 1 with the round convention, grid tops = every p-vertex
+of R, top_r^i(w) = the top whose region holds w in round r at visit i (⊥ = −1), U_r = the union of round r's regions, and
+W_{r,t} := Cl_t(U_r; T) for every grid round and threshold level t (the G-Ψ convention, also for padded rounds; U_r = ∅ after
+a V = ∅ stop). L = number of threshold levels (t ∈ {0} ∪ {q ∈ prios : 0 < q ≤ maxpr}, so L ≤ n + 1).
+Definition. A consecutive visit pair x → y of R is QUIET if it has no entry and no exit on the grid. (An entry/exit is at a grid
+step (r, τ); a vertex moving ⊥ ↔ region of the LOWEST grid top is invisible on the grid.)
+DATA FIRST (dtl_drthr.py; RM_LIGHT=1 RM_DV=0; sets: corpus experiments/alg/instances/*.pg (141 files) plus stealer_viol_n76,
+stealonce_viol_n76, stealonce_both_n45, fall3_n76, fall4_n116 (l-red carry); mixed unions UNIONS=900 SEED=1 NMAX=32; cross unions
+UNIONS=600 SEED=11 UM_CROSS=3 NMAX=32 with DR_VIRT=1; both order data; the union runs also re-run the corpus files):
+
+| set | order | differing pairs | 1st diff region (all have an entry) | 1st diff threshold: entry / NO entry | non-quiet pairs | quiet differing pairs, W grows strictly |
+|---|---|---|---|---|---|---|
+| corpus + DE19/DE20 | stable | 1,394 | 400 | 667 / 327 | 1,067 | 327 / 327 |
+| corpus + DE19/DE20 | Oink | 1,354 | 378 | 636 / 340 | 1,014 | 340 / 340 |
+| mixed unions | stable | 9,336 | 2,880 | 4,114 / 2,342 | 6,994 | 2,342 / 2,342 |
+| mixed unions | Oink | 9,435 | 2,978 | 4,106 / 2,351 | 7,084 | 2,351 / 2,351 |
+| cross unions | stable | 6,780 | 2,507 | 2,812 / 1,461 | 5,319 | 1,461 / 1,461 |
+| cross unions | Oink | 6,878 | 2,543 | 2,838 / 1,497 | 5,381 | 1,497 / 1,497 |
+
+- "No entry" ⇔ quiet on all data: 0 pairs with only invisible (⊥ ↔ lowest region) changes; no region first difference at the
+  lowest grid top; 0 identical pairs with an entry.
+- KILL of the §23u candidate fix "charge the threshold pairs to RV rises (§22r C1-C3)": at EVERY no-entry differing pair
+  (8,318 over the six runs) RV is unchanged (neither rises nor falls). Killer: spp_chain_up_n43, root context (|R| = 43,
+  42 visits): all 41 differing pairs are quiet, first difference in a threshold loop (rounds 2, 3, ...), RV equal, both orders.
+- Max D_R = 41 = max quiet differing pairs in ONE quiet block (spp_chain_up_n43 root), both orders, all sets.
+- Max exits per (step, vertex): 2 (stable; stealonce_viol_n76, resteal34_union_n90), 1 or 2 (Oink; 2 on stealonce_both_n45);
+  with the virtual end-of-round step (DR_VIRT=1, an exit from U_r) on the cross unions: still 2 / 1.
+Lemma QUIET-BLOCK (reading, unrefereed). Let x → y be quiet. Then for every grid round r and level t: U_r(x) ⊆ U_r(y),
+W_{r,t}(x) ⊆ W_{r,t}(y), every round-r region of x other than the lowest grid top's equals that of y, and the lowest grid top's
+region can only grow. If the set-level computations of x and y differ, then Φ := Σ_r |U_r| + Σ_{r,t} |W_{r,t}| rises strictly.
+Proof.
+1. Rounds by induction, claim (I_r): V_r(x) ⊆ V_r(y), and U_{r′}, W_{r′,t} are ⊆ for r′ < r. (I_1): V_1 = the p-vertices of R in
+   both visits (dtl.cpp 662-667).
+2. Round r. Quiet means top_r^x(w) = top_r^y(w) except for ⊥ ↔ low (the lowest grid top) moves. So every region of a top
+   τ > low is equal, and the prefix before low is equal. If low is processed in x it is in V_r(x) ⊆ V_r(y) and outside the
+   common prefix, so it is processed in y too, and by EXACT (R10 (a)) with equal prefix and T_x ⊆ T_y its region grows:
+   A_x(low) ⊆ A_y(low). If low is processed only in y, A_x(low) = ∅. So a move low → ⊥ never happens and U_r(x) ⊆ U_r(y).
+3. Threshold loop. Every threshold output is Cl_t(Z_in; T) over all of T (DTL-proof Lemma 1.2; §23v G11-a1), and the level chain
+   gives Cl_t(Cl_{t′}(U_r)) = Cl_t(U_r) for t′ ≤ t (Cl_{t′} ⊆ Cl_t, idempotent). So the level-t output is W_{r,t}, also on a
+   716 round by the G-Ψ convention. Cl is monotone in its base and in T, so W_{r,t}(x) ⊆ W_{r,t}(y).
+4. Candidates (dtl.cpp 713-747). A top v ∈ V_r is dropped iff it is unattracted to U_r and to every W_{r,t} with t < pr v;
+   attraction is monotone in the target set, so a top dropped in y is dropped in x if it is in V_r(x). Hence
+   V_{r+1}(x) = V_r(x) \ cand_x ⊆ V_r(y) \ cand_y = V_{r+1}(y): (I_{r+1}).
+5. Strictness. If Φ(x) = Φ(y), then U_r(x) = U_r(y) for all r, so (by 2) the round maps are equal, and W_{r,t}(x) = W_{r,t}(y).
+   The computation is then a function of these sets: by induction V_r is equal (step 4 with equal sets), the region and
+   threshold outputs are equal, and the stop decisions (716 / 765 / 768-771) are equal. So the computations are identical. □
+Corollary (G23u CLOSED, reading). Within a maximal run of consecutive quiet pairs, Φ never decreases (step 1-3 hold at every
+quiet pair, identical or not) and rises at every differing pair; Φ ≤ (|R| + 1)(L + 1)|R|. Let M_R be the number of non-quiet
+pairs; each has an entry or an exit, so M_R ≤ N_ent + X_R ≤ 2X_R + (|R| + 1)|R|² (§23q step 3). Hence
+    D_R ≤ M_R + (M_R + 1)·(|R| + 1)(L + 1)|R|.
+- With (EXIT_c): X_R ≤ c(|R| + 1)|R|² (REFEREE's constant, §23t), so D_R ≤ poly(|R|, n) at EVERY context, the root included.
+  This is §23u's claim with its gap closed; the threshold-loop and last-region-step pairs are absorbed by QUIET-BLOCK, not by an
+  entry and not by RV.
+- Conversely X_R ≤ D_R·(|R| + 1)|R|² trivially. So per context (D-POLY) ⇔ (EXITS-POLY) ⇔ (STEAL-POLY_sum) ⇔ (RELSTEAL) up to
+  polynomial factors, and (FIRED⁺-R) ⇒ (D-POLY) (§23s). The two routes MEET: all per-context forms are one statement, and the
+  local sufficient form is still (EXIT_c). This is a reformulation, not new progress on GAP-A.
+- Honest reading of the killer: on spp_chain_up_n43 all the root's work is quiet: the region maps never change and every one of
+  the 41 differing root calls is a strict growth of some W_{r,t}. So at the root the (SPP)-type count lives entirely inside one
+  quiet block, where QUIET-BLOCK gives only Φ ≤ (|R|+1)(L+1)|R| per block: polynomial, but the factor that (SPP) would need to
+  be linear is the block length.
+Status: Lemma QUIET-BLOCK and the corollary are a reading, unrefereed; the data columns above are DATA. Candidate for the next
+referee packet (short; the only new ingredients are steps 2 and 4).
+
+23x. Box 10: (EXIT_c) proof attempt: where exits come from, one kill, and the exact missing step (L-ALG succ. 8, 01:54Z
+by date -u; produced on Opus 5.5; tools experiments/alg/dtl_exitshape.py, dtl_netgrowth.py, dtl_roundfalls.py, dtl_exitclimb.py)
+Grid and conventions as in §23t / §23w. The step order is: rounds ascending; within a round, grid tops descending, then the
+virtual end-of-round step (prefix U_r).
+Lemma EXIT-ORIGIN (reading, unrefereed). Let x → y be a consecutive visit pair of R with at least one exit (grid or virtual), and
+let σ₁ = (r₁, τ₁) be its first exit step. Then (a) V_{r₁}(x) ⊆ V_{r₁}(y), and (b) the pair has a relevant steal at a step
+(r₁, τ′) with τ′ > τ₁. So every exit of a pair is either in the round of a relevant steal above it, or later than an earlier
+exit of the SAME pair; a "V-loss" exit (a higher top of V_r(x) missing from V_r(y)) is always secondary.
+Proof. (a) No exit before σ₁ means U_r(x) ⊆ U_r(y) for r < r₁ (no vertex leaves U_r: the virtual step is included). Steps 3-4 of
+QUIET-BLOCK (§23w) use only U ⊆ and T ⊆, so W_{r,t}(x) ⊆ W_{r,t}(y) and V_{r+1}(x) ⊆ V_{r+1}(y) for r < r₁. (b) In round r₁,
+V ⊆ V′ and T ⊆ T′; if no relevant steal occurred at a step above τ₁ in round r₁, local PREFIX-MONO-X* (§23g G23g-1; signed
+in R12 (b) as G23g-1) gives P_x(σ) ⊆ P_y(σ) for every step σ of round r₁ up to and including σ₁, so no exit at σ₁. □
+DATA (dtl_exitshape.py; RM_LIGHT=1 RM_DV=0; corpus 141 files + stealer_viol_n76, stealonce_viol_n76, stealonce_both_n45,
+fall3_n76, fall4_n116; both orders):
+- Exits by round and cause (grid exits; cause 'Vloss' = a higher top of V_r(x) is missing from V_r(y)): stable round 1: 5 (all
+  steal); rounds ≥ 2: 1,406 Vloss, 982 steal. Oink: round 1: 0; rounds ≥ 2: 663 Vloss, 239 steal.
+- (DOWN_2) "top_r(w) falls at most twice per (context, round, vertex) per phase" (any level; implies (EXIT_2)): histogram of
+  falls per (r, w) with ≥ 1 fall: stable {1: 1,840, 2: 283}, Oink {1: 891, 2: 12}. Max 2.
+- (NET-GROWTH) KILLED (DEAD.md box 10; cm_viol_oink_n28, lex_viol_oink_n20). The obstruction is a round-index SHIFT: in
+  lex_viol_oink_n20 (root, pair 1, stable) the later visit keeps 7 and 6 tops in rounds 3-4 (3 and 4 before), ends after 14
+  rounds instead of 15, and rounds 5-15 show 0 entries and 146 exits.
+- Round-count oscillation (dtl_roundfalls.py, same sets): falls of a context's round count per phase: stable {0: 1,417, 1: 179,
+  2: 5}, Oink {0: 1,390, 1: 178, 2: 4}; max 2, on cm_viol_oink_n28 root: 5, 5, 8, 7, 9, 11, 10 (the last a res = 1 stop, which
+  repeats its round and empties nothing).
+Reading of the obstruction (why EXIT_c is hard):
+- The per-visit grid vector, ordered by step, increases LEXICOGRAPHICALLY at every pair (QUIET-BLOCK steps 1-4 up to the first
+  change, then the first change is growth: a new top or a strictly larger region with an equal prefix). (EXIT_c) is exactly the
+  statement that this lexicographic chain is not a counter: a coordinate (σ, w) is reset (exit) only O(1) times. EXIT-ORIGIN
+  says each reset is triggered by a growth at an earlier coordinate of the same pair, which is what a binary counter does. So a
+  proof must show that DTL's growth at an earlier coordinate cannot RE-trigger the same reset more than c times, i.e. a
+  per-vertex charge of re-entries to something consumed. Every candidate charge tried so far (RV, Φ_grid, depth) is dead or
+  multiplicative.
+- What a counter would need on A_DTL: one context whose round count (or one region's top set) oscillates ≥ 3 times in one phase
+  under DTL's own learning. Data: round count falls ≤ 2, top_r(w) falls ≤ 2.
+Status: Lemma EXIT-ORIGIN is a reading, unrefereed. (EXIT_c) and (DOWN_2) are DATA. No proof route closes; L32 is NOT met by this
+section. Self-attack climbs (dtl_exitclimb.py, fitness exits ≥ 3, then round-count falls) are running from cm_viol_oink_n28 and
+stealonce_both_n45.
+
+23y. Box 10: (FIRED⁺-R) below the root: no birth locality (DATA; L-ALG succ. 8, 02:02Z by date -u; tool
+experiments/alg/dtl_firedlocal.py; RM_LIGHT=1 RM_DV=0; corpus 141 files + stealonce_viol_n76, stealonce_both_n45, stealer_viol_n76,
+fall3_n76, fall4_n116; both orders)
+- Depth ≥ 1 contexts with ≥ 2 visits: 380 (stable) / 374 (Oink). Max #fired⁺(R)/|R| = 0.8 (dtl_searches15_n24, depth 1,
+  |R| = 15, 12 fired⁺, 5 visits; both orders).
+- Where the fired⁺ tangles of such an R were born (sptl context B): LOCAL B ⊆ R 277 / 284; INCOMPARABLE 277 / 301; ANCESTOR B ⊋ R
+  2 / 3; born before the phase 14 / 4.
+- Reading: half the tangles that reach a sub-context come from sibling-type contexts, so a "tangles fired at R are learned
+  inside R" induction on depth is not available. (FIRED⁺-R) below the root has no route from locality. Not pursued further this
+  box (task (3) was conditional on (1)-(2) stalling; (1) closed, (2) stalled at the counter obstruction of §23x).
+
+23z. Box 10: can QUIET-BLOCK be made LINEAR? Two forms killed; block length ≤ 0.953·|R| stays DATA (L-ALG succ. 8,
+02:22Z by date -u; tool experiments/alg/dtl_quietlin.py; RM_LIGHT=1 RM_DV=0; corpus 141 files + stealonce_viol_n76,
+stealonce_both_n45, stealer_viol_n76, fall3_n76, fall4_n116; both orders)
+Motivation: §23w bounds a quiet block by Φ ≤ (|R|+1)(L+1)|R|, but the longest block seen is 41 at |R| = 43 (spp_chain_up_n43
+root). A LINEAR block bound would cap the threshold-only part of the root's work by |G′|, the (SPP) shape.
+A_i := the vertices that join some U_r or W_{r,t} at quiet differing pair i.
+- (QUIET-LIN) "each vertex is in A_i for at most one differing pair of a block": KILLED. 35 (stable) / 33 (Oink) failing pairs;
+  a vertex is re-advanced up to 4 times in one block (spp_final_n30 root, |R| = 30, block 6). Smallest instances:
+  experiments/alg/instances/dtl_cross3_n14.pg (sha1 90d95c85; pinned Oink 8 iterations verified) root pair 1 re-advances 0, both
+  orders; fired18_stable_n20.pg (sha1 42307b22; pinned Oink 4 iterations verified), stable. Reading: one vertex joins W at
+  different (round, level) slots at different pairs.
+- (QUIET-NEWV) "every A_i has a vertex not in an earlier A_j of its block": KILLED. 4 failing pairs per order (323 / 336
+  hold). Instances: experiments/alg/instances/spp_final_n30.pg (sha1 e57c2cf9; pinned Oink 22 iterations verified) root pair 16
+  A = {6, 7, 15}, also |R| = 29 pair 3 and depth 1 |R| = 26 pair 2, both orders; spp_n30.pg (sha1 587697ae; pinned Oink 21
+  iterations verified) |R| = 28 pair 6, both orders.
+- DATA: max quiet block length / |R| = 0.953 (spp_chain_up_n43, 41 / 43), both orders. 88 quiet differing pairs (each order) advance
+  exactly one vertex; 239 (stable) / 252 (Oink) advance ≥ 2.
+- Status: the polynomial QUIET-BLOCK bound stands (reading); a linear form has no surviving candidate. Not pursued further.
+
+24. Box 10, continued (L-ALG successor 8; produced on Opus 5.5)
+24a. U-shrinks need a deficit; grid exits without one are re-cuts inside U (reading + DATA; 02:34Z by date -u; tool
+experiments/alg/dtl_exitshape.py EX_DEF=1, RM_LIGHT unset, RM_DV=0; corpus 141 files + stealonce_viol_n76, stealonce_both_n45;
+both orders)
+Notation: Û_r(V, T) = the IDEAL round union (dtl_ideal.ideal_union: the tops of V_r level by level, closure over all of T, no
+exclusions); a round has a DEFICIT if U_r ≠ Û_r (rec["deficit"]). Actual ⊆ ideal (U_r ⊆ Û_r) as in the box-4 deficit
+analysis (GAP-A-M §18; reading).
+Lemma DEF-SHRINK (reading, unrefereed). For a consecutive visit pair x → y of R, let r be the first round with U_r(x) ⊄ U_r(y).
+Then round r of y has a deficit.
+Proof. For r′ < r, U_{r′}(x) ⊆ U_{r′}(y), so QUIET-BLOCK steps 2-3 (§23w; they use only U ⊆ and T ⊆) give V_r(x) ⊆ V_r(y).
+Û is monotone in V and T (a closure with no exclusions). So U_r(x) ⊆ Û_r(V_r(x), T_x) ⊆ Û_r(V_r(y), T_y). If U_r(y) = Û_r(y), then
+U_r(x) ⊆ U_r(y), a contradiction. □
+Corollary (reading). If no call of R in the phase has a deficit round, then along the visits every U_r and every V_r only grows,
+so W_{r,t} only grows, and the only falls of top_r(w) are RE-CUTS: w moves to a lower top's region inside the same U_r.
+DATA: pairs with a fall of some top_r(w): stable 90, of which 89 have a U-shrink (all 89 with a deficit in y, and in x) and 1 has
+no deficit in either visit (fired18_stable_n20 root |R| = 18, pair 1: no U-shrink, a re-cut, as the corollary says). Oink: 25,
+all with a U-shrink and a deficit in y (and in x).
+Reading: (EXIT_c) splits into (a) U-shrinks, charged to deficit rounds of the later visit (the old (H4)/Lemma E obstruction:
+a straddling stored tangle), and (b) re-cuts inside U. (a) is the box-4 DEF count, which has no constant bound (§17) but has
+not been shown super-polynomial; (b) is new and rare (1 pair in this data). Neither is proved.
+
+24b. Box 10: the per-context budget lives on the EXIT PAIRS alone: D_R ≤ poly·(1 + #Xpairs_R), and U-shrink pairs need a
+deficit (reading + DATA; L-ALG succ. 8, 02:43Z by date -u; tool experiments/alg/dtl_defsplit.py, RM_LIGHT unset, RM_DV=0;
+corpus 141 files + stealonce_viol_n76, stealonce_both_n45, stealer_viol_n76, fall3_n76; both orders)
+Pair classes for consecutive visits x → y of R (grid of §23t plus the virtual end-of-round step, prefix U_r):
+- QUIET: no grid entry or exit (§23w); by QUIET-BLOCK step 1 no vertex leaves any U_r there.
+- ENTRY-ONLY (EO): an entry, no exit (grid or virtual).
+- X-PAIR: some exit; split into USHRINK (some vertex leaves some U_r) and RECUT (grid exits only, every U_r kept).
+Corollary SPLIT (reading, unrefereed). Let Φ⁺ := Σ_r Σ_{τ ∈ grid ∪ {virtual}} |P_r(τ⁺)| ≤ G := (|R| + 1)²|R|, and
+B := (|R| + 1)(L + 1)|R| (§23w). Then:
+- Φ⁺ is unchanged at a quiet pair (no entry, no exit) and rises strictly at an EO pair, so #EO_R ≤ G·(#Xpairs_R + 1).
+- By QUIET-BLOCK, the differing quiet pairs number ≤ B·(#EO_R + #Xpairs_R + 1).
+- Hence D_R ≤ (B + 1)(G + 1)(1 + #Xpairs_R), with #Xpairs_R = #USHRINK_R + #RECUT_R.
+- By Lemma DEF-SHRINK (§24a), every USHRINK pair has a deficit round in its later visit y.
+- Conversely #Xpairs_R ≤ D_R. So per context (D-POLY) ⇔ (XPAIRS-POLY) up to polynomial factors, where
+  (XPAIRS-POLY): the consecutive visit pairs of R with an exit are polynomially many per phase.
+  (EXIT_c) ⇒ (XPAIRS-POLY), since #Xpairs_R ≤ X_R ≤ c·G.
+DATA (dtl_defsplit.py):
+
+| order | differing pairs | EO | USHRINK (deficit in y) | RECUT | max #Xpairs_R per context | max D_R / (1 + #Xpairs_R) |
+|---|---|---|---|---|---|---|
+| stable | 1,346 | 928 | 104 (104) | 1 | 4 (resteal34_union_n90 root, US 4) | 41 (spp_chain_up_n43 root, 0 X-pairs) |
+| Oink | 1,307 | 960 | 29 (29) | 0 | 3 (stealonce_both_n45 root, US 3) | 41 (same) |
+
+- Max deficit visits per context: 10 (h4_deep_oink_n44, stable) and 12 (h4_def11_oink_n28, Oink), with 0 X-pairs. So deficits are
+  necessary for a U-shrink but far from sufficient, and they are not the count that matters.
+- The (RECUT) pair is the single fired18_stable_n20 pair of §24a.
+Reading. Per context, GAP-A's budget reduces to how often SOME exit happens at all (pairs, not (step, vertex) multiplicities).
+On data such pairs are rare (≤ 4 per context, 105 / 29 of 1,346 / 1,307 differing pairs). Disjoint unions add X-pairs over
+components, so the honest form is polynomial, not constant. With (CTX⁺) and R9 (or N11-b1): GAP-A ⇐ (CTX⁺) ∧ (XPAIRS-POLY), given
+STR-DET. This is again equivalent to the other per-context forms up to polynomial factors (a reformulation), but it is the
+SPARSEST one: it counts only the pairs where the round decomposition loses something, and DEF-SHRINK ties most of them to the
+deficit (Lemma E) event.
+Status: Corollary SPLIT and DEF-SHRINK are readings, unrefereed; (XPAIRS-POLY) is DATA (max 4). No proof route yet.
+
+24c. Box 10: every U-shrink pair has a NEW TOP at its first shrinking round (DATA + reading; L-ALG succ. 8, 02:52Z by
+date -u; dtl_defsplit.py, same sets and flags as §24b)
+- DATA: at the first round r with U_r(x) ⊄ U_r(y), the input satisfies V_r(x) ⊊ V_r(y) at 104 / 104 (stable) and 29 / 29 (Oink)
+  USHRINK pairs; equal input occurs 0 times ((U-MONO_DTL) of §18h, "same-input union monotone in T", 0 failures here too). V_r is
+  read from RV: V_r = {v : RV(v) ≥ r}.
+- Reading. (V_r(x) ⊆ V_r(y) is PROVED by EXIT-ORIGIN (a) / DEF-SHRINK; strictness is the DATA part, and it is exactly (U-MONO_DTL)
+  at round r.) So, given (U-MONO_DTL), a U-shrink pair has (i) a deficit round in y (DEF-SHRINK) and (ii) a top u with
+  RV_x(u) < r ≤ RV_y(u), an RV RISE, where u's new region steals from a lower top.
+- Why this does not close: an RV fall needs an earlier U-shrink of the same pair (a V-loss traces back to a W-shrink, hence a
+  U-shrink; §23x), and an RV rise is free (growth). Counting rises per vertex gives #USHRINK_R ≤ |R|(|R| + 2) + |R|·#USHRINK_R,
+  which is vacuous (coefficient |R|). A proof needs a U-shrink to CONSUME something: e.g. the stolen-from lower top's tangle can
+  be stolen by u only once per (u, tangle). Untested; candidate for the successor.
+
+24d. Correction to the §23s end note and §23u (CHECKER C14 E-1; L-ALG succ. 8, 03:09Z by date -u). §23s is frozen; the
+correction goes here.
+- The §23s note "(FIRED⁺ ≤ |R|) at the root would give S ≤ |G′| + 1 per phase, which is (SPP) itself" and §23u's "at the root both
+  are (SPP)-strength statements" are a READING resting on DATA (D_{G′} ≈ S − 1 on the chain family), unrefereed.
+- They are NOT literally (SPP). (SPP) bounds S, so it implies GAP-A (with phases ≤ D + 2). (FIRED⁺-R) at G′ alone bounds only
+  the root's own differing pairs (D_{G′}); S can be driven by deeper contexts while the root call is unchanged (R9's sum over
+  contexts), so (FIRED⁺-R) at G′ does NOT imply GAP-A (REFEREE R-P11 (c), REFEREE-2 R2-P11 §3). The correct statement: at G′,
+  (FIRED⁺-R) is necessary for GAP-A and coincides with (SPP) only on families where every search's first difference lies in the
+  root call (DATA, e.g. spp_chain_up_n43).
+
+24e. Box 10: (EXIT-LEAD-DISTINCT) DATA (L-ALG succ. 8, 03:16Z by date -u; tool experiments/alg/dtl_exitlead.py, RM_LIGHT=1
+RM_DV=0). Leading key of a pair x → y: (r0, τ0), the first grid round whose top map differs and the highest top whose round-r0
+region differs (a new top counts). Statement: the exits of one (step, vertex) never share a leading key. It would give
+exits(σ, w) ≤ (|R| + 1)|R|, so X_R ≤ (|R| + 1)²|R|³ and D_R polynomial (§23w), i.e. a polynomial-c form of (EXIT_c).
+- Corpus 141 files + stealonce_viol_n76, stealonce_both_n45, stealer_viol_n76, fall3_n76: (step, vertex) with ≥ 2 exits:
+  keys distinct 3,112 / 3,112 (stable), 84 / 84 (Oink). Union and climb-best stress runs in progress.
+- No proof: the leading change is a growth (equal prefix, EXACT), but nothing forbids the same region growing twice and
+  expelling w twice. DATA only.
+
+24f. Box 10: L-RED R39 (RESULTS DE21) against §23x and §24: constant local bounds die, totals stay small (L-ALG succ. 8,
+03:22Z by date -u). §23w-§23x are frozen for the packet; this subsection supersedes §24b's "re-cuts are rare" and §24e.
+Instances: experiments/red/lag/instances/depth{2_n39,3_n46,4_n53}.pg (l-red c021789; sha1 6200e586, 54cc8526, 40dacf0e). Pinned
+Oink re-run by L-ALG: 10 / 11 / 12 iterations, solution verified (28 / 33 / 38 strategies). Measurements, identical in BOTH
+orders (tools unmodified at l-alg b375c78; RM_LIGHT=1 RM_DV=0 unless stated):
+
+| D | n | root |R| | root visits | D_R (root) | max exits per (step, vertex) (dtl_drthr, DR_VIRT=1) | X_R (root, grid) | re-steals (dtl_stealdepth, RM_EXCL=1 RM_PREF=1) | max depth / k | X-pairs: USHRINK / RECUT (dtl_defsplit) |
+|---|---|---|---|---|---|---|---|---|---|
+| 2 | 39 | 39 | 9 | 8 | 2 | 73 | 2 | 2 / 2 | 0 / 4 |
+| 3 | 46 | 46 | 10 | 9 | 3 | 153 | 3 | 3 / 2 | 0 / 6 |
+| 4 | 53 | 53 | 11 | 10 | 3 | 206 | 5 | 4 / 3 | 0 / 5 |
+
+- KILLED on the same instances: (EXIT_2) (exits 3 at D = 3 with the virtual step, at D = 4 on the grid; L-RED/Lead via
+  dtl_prefexits 2/2/3), (STEAL-DEPTH_D) for constant D (R12 (c) route), and (EXIT-LEAD-DISTINCT) of §24e (repeated leading
+  keys at 13 / 29 / 50 (step, vertex), both orders). (USHRINK-FRESH) is untouched (0 U-shrinks); the relay works by RE-CUTS
+  with NO deficit (DEFvisits 0), so §24b's "re-cuts are rare" was a corpus artefact.
+- Totals: D_R = visits − 1 = D + 6, X_R ≤ 0.08|R|², re-steals ≤ D + 1. All linear or small in D; nothing super-polynomial.
+Is the relay the §23x counter? NO (reading).
+- R39 §3: F_j(x) = avail(x) ∧ ¬(F_{j−1}(x) ∨ x ≥ j + OFF). Every level toggles at EVERY visit until its freeze. That is the
+  carry chain of a counter without the halving: level j flips whenever level j − 1 flips. A binary counter needs level j to
+  flip only on a falling edge of level j − 1, i.e. state that depends on the previous visit, not only on the current input.
+- The only state a context carries across visits is the alive tangle set T, and T only grows (packet-11 inventory, §23v, two
+  signatures). So a visit's computation is a function of T, and the relay is COMBINATIONAL in T. A counter's ticks are
+  differing visit pairs, and each differing pair needs a new tangle that fires at R (CHANGE-NEW, signed, R14 draft). So a
+  D-bit counter at one context needs about 2^D new tangles at R: its existence is exactly the (FIRED⁺-R) / GAP-A question,
+  not a new obstruction. Hence R39 refutes the CONSTANT local forms ((EXIT_c), (STEAL-DEPTH_D)), while the per-context TOTAL
+  forms ((D-POLY) ⇔ (EXITS-POLY) ⇔ (STEAL-POLY_sum) ⇔ (XPAIRS-POLY), §23w, §24b) stand and are tested only by the phase length.
+- What would hurt the totals: a family where one context's visits (hence D_R) grow super-polynomially in |R|, i.e. a long
+  phase. R39's phase length is D + OFF + 3 visits, linear.
+
+24g. Box 10: the polynomial-total statements on L-RED's uniform family lagfam D = 2..12 (DATA; L-ALG succ. 8, 03:33Z by
+date -u). Generator experiments/red/lag/lagfam.py (trunk 5c452e3; imports lag4.py, gb.py), n = 7D + 22. Pinned Oink re-run by
+L-ALG for every D: 1 dominion, 2D + 9 tangles, D + 8 iterations, solution verified (27 ... 77 strategies). Every number below is
+IDENTICAL in both order data (dtl_totals.py RM_EXCL=1 RM_LIGHT=1 RM_DV=0; dtl_stealdepth.py and dtl_prefexits.py RM_EXCL=1
+RM_PREF=1 RM_LIGHT=1 RM_DV=0; dtl_rootmono.py RM_LIGHT=1 RM_DV=0; all unmodified at l-alg ad4c922). No INCOMPLETE run. The
+binding context is the ROOT of Even's long phase (the max over all contexts equals the root value for every quantity).
+
+| D | n | phase S (root visits) | D_R | #fired⁺(R) | Σ_q k_q | X_R (grid, dtl_totals) | total exits (dtl_prefexits) | max exits per (step, vertex) | max k / depth | first-diff contexts |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 2 | 36 | 9 | 8 | 12 | 6 | 64 | 25 | 2 | 2 / 2 | 1 |
+| 3 | 43 | 10 | 9 | 14 | 9 | 111 | 45 | 3 (prefexits 2) | 3 / 3 | 1 |
+| 4 | 50 | 11 | 10 | 16 | 12 | 177 | 75 | 3 | 3 / 4 | 1 |
+| 5 | 57 | 12 | 11 | 18 | 16 | 264 | 114 | 4 (3) | 4 / 5 | 1 |
+| 6 | 64 | 13 | 12 | 20 | 20 | 376 | 166 | 4 | 4 / 6 | 1 |
+| 7 | 71 | 14 | 13 | 22 | 25 | 515 | 230 | 5 (4) | 5 / 7 | 1 |
+| 8 | 78 | 15 | 14 | 24 | 30 | 685 | 310 | 5 | 5 / 8 | 1 |
+| 9 | 85 | 16 | 15 | 26 | 36 | 888 | 405 | 6 (5) | 6 / 9 | 1 |
+| 10 | 92 | 17 | 16 | 28 | 42 | 1,128 | 519 | 6 | 6 / 10 | 1 |
+| 11 | 99 | 18 | 17 | 30 | 49 | 1,407 | 651 | 7 (6) | 7 / 11 | 1 |
+| 12 | 106 | 19 | 18 | 32 | 56 | 1,729 | 805 | 7 | 7 / 12 | 1 |
+
+(max exits: dtl_totals counts the grid plus the virtual end-of-round step; dtl_prefexits counts steps present in both visits;
+they differ by at most 1. dtl_stealdepth's own "max k" line agrees: k = ⌊(D+1)/2⌋ + 1 up to D = 10 and 7 at D = 11, 12.)
+Growth (fits over n = 36..106; slope = d log / d log n between the end points; DATA):
+- D_R = D + 6 and #fired⁺ = 2D + 8: LINEAR in n. Searches per phase S = D + 7: linear.
+- Σ_q k_q: slope ≈ 2.1 (about D²/2.6): QUADRATIC.
+- X_R: slope ≈ 3.05 overall and 3.0 at the top end (dtl_prefexits 3.1): CUBIC, well under the trivial cap
+  D_R·(|R| + 1)|R|² ≈ n⁴.
+- Max exits per (step, vertex) ≈ D/2 + 1 and depth = D: linear; the CONSTANT local forms are dead (DE21 addendum).
+- First-difference best_vertices contexts per phase: 1 (the root), so (CTX⁺) is not stressed by this family.
+Reading: every polynomial-total premise ((STEAL-POLY_sum), (EXITS-POLY), (D-POLY), (FIRED⁺-R), (XPAIRS-POLY)) is consistent with
+this family, at degree ≤ 3 in n. The family stresses LOCAL constants only, because its phase is linear (D + 7 searches): the
+totals are bounded by the phase length times polynomial factors. A threat to the totals needs a long phase at one context.
+
+24h. BOX-10 LEDGER (L-ALG succ. 8; GO 01:21Z, written 03:37Z by date -u; produced on Opus 5.5). Everything is unrefereed
+unless marked signed.
+SIGNED and imported: packet 11 (CHANGE-NEW) in §23v, with N11-b1 now holding two signatures (REFEREE §C abc5185).
+READINGS (unrefereed). Packet-12 candidates per the Lead (§23w-§23x frozen; brief docs/alg/QUIET-BLOCK.md):
+- §23w Lemma QUIET-BLOCK + corollary: D_R ≤ M_R + (M_R + 1)(|R|+1)(L+1)|R|; gap G23u CLOSED.
+- §23x Lemma EXIT-ORIGIN: a pair's first exit has V ⊆ and a relevant steal above it in its own round.
+- §24a Lemma DEF-SHRINK: the first round where U_r shrinks has a deficit in the later visit.
+- §24b Corollary SPLIT: D_R ≤ (B+1)(G+1)(1 + #Xpairs_R), hence GAP-A ⇐ (CTX⁺) ∧ (XPAIRS-POLY) given STR-DET.
+- §24f: R39's relay is combinational in T. A counter at one context costs about 2^D new tangles there (CHANGE-NEW), so it is
+  the (FIRED⁺-R) question itself.
+- §24d: correction of the §23s root-case remark ((FIRED⁺-R) at G′ is not (SPP)).
+KILLED (DEAD.md box 10; instances re-run with pinned Oink):
+- G23u fix via RV rises (spp_chain_up_n43).
+- NET-GROWTH (cm_viol_oink_n28, lex_viol_oink_n20).
+- QUIET-LIN (dtl_cross3_n14, fired18_stable_n20) and QUIET-NEWV (spp_final_n30, spp_n30).
+- EXIT-LEAD-DISTINCT (depth2_n39 etc.).
+- By L-RED (DE21): (EXIT_2), (STEAL-DEPTH_D) for every constant D. Every constant local exit bound is endangered (max exits ≈ D/2 + 1
+  on lagfam).
+DATA that stands:
+- (USHRINK-FRESH). Every U-shrink pair has a new key (round, new top, losing top), a new top at its first shrinking round, and
+  a deficit in y: corpus 104 / 29, cross unions 182 / 96, mixed unions 287 / 130 (stable / Oink; dtl_defsplit.py RM_DV=0, UNIONS=900 SEED=1 NMAX=32 and UNIONS=600 SEED=11 UM_CROSS=3 NMAX=32), R39 0 U-shrinks.
+- lagfam D = 2..12 (§24g): every total is polynomial at degree ≤ 3; (CTX⁺) is unstressed there (1 first-difference context).
+- Quiet blocks ≤ 0.953·|R|. No birth locality for (FIRED⁺-R) below the root (§23y).
+POSITION. Every per-context form is one statement up to polynomial factors: (D-POLY) ⇔ (EXITS-POLY) ⇔ (STEAL-POLY_sum) ⇔
+(XPAIRS-POLY), and (FIRED⁺-R) implies them. The sparsest form is (XPAIRS-POLY). None has a proof route, and (CTX⁺) has none
+either. L32 is NOT met. The threat to the totals is a SUPER-POLYNOMIALLY LONG PHASE at one context (a real counter). By
+CHANGE-NEW that needs super-polynomially many tangles, so it is GAP-A's own core.
+NEXT (successor): (i) the U-shrink "consumed quantity" (key reuse needs an RV fall, i.e. an earlier-round U-shrink: bound the
+chain across rounds without the |R|^r blow-up); (ii) if L-RED builds a long-phase family, run dtl_totals.py and dtl_defsplit.py
+on it at once.
+
+24i. Box 10: THE SINGLE NAMED TARGET for the successor and the packet (L-ALG succ. 8, 03:46Z by date -u; Lead requests
+03:46Z / 03:58Z)
+Conclusion, stated plainly (reading, unrefereed; it uses signed CHANGE-NEW and the signed packet-11 state inventory):
+1. Every live route for GAP-A is (CTX⁺) plus ONE polynomial-total per-context premise: (STEAL-POLY_sum) (R12 (a)), (EXITS-POLY)
+   (R13 (b)), (FIRED⁺-R) (R14), or the equivalent (D-POLY) / (XPAIRS-POLY) (§23w, §24b). Every constant-local route is dead
+   (DE20, DE21 and its addenda: (STEAL-ONCE*), (STEAL-DEPTH_D), (EXIT_c) for every constant).
+2. All of them are bounded by PHASE LENGTH × poly: a context's computation is a function of the alive T (packet 11), so Σ_q k_q,
+   X_R, #Xpairs_R ≤ D_R × poly(|R|) ≤ (visits of R) × poly(|R|), and D_R ≤ #fired⁺(R) (CHANGE-NEW).
+3. So the open core is ONE statement:
+   (LONG-PHASE) "no context sees super-polynomially many NEW firing tangles in one phase", i.e. (FIRED⁺-R) at the binding
+   context. Equivalently, there is no counter at one context: a D-bit counter needs a falling-edge memory, the only cross-visit
+   state is the growing T, and each tick is a differing pair that needs a newly born tangle firing at R. So it costs about
+   2^D new firing tangles there.
+Evidence (DATA, both orders, pinned Oink verified):
+- R39 (depth2_n39 / depth3_n46 / depth4_n53, §24f) and lagfam D = 2..12 (§24g). Local constants grow with D: max exits per
+  (step, vertex) ≈ D/2 + 1, depth = D, k ≈ D/2.
+- But D_R = D + 6 and #fired⁺ = 2D + 8 are LINEAR, Σ_q k_q is about quadratic and X_R is about cubic. The phase is D + 7
+  searches. No counter appears: the relay is combinational (every level toggles at every visit).
+- lagfam X-pairs (dtl_defsplit, RM_LIGHT unset): all are RECUTS (D + 2 per phase, no deficit), with 0 U-shrinks. So the relay
+  lives entirely in the re-cut half of SPLIT.
+Best guess at a provable premise: none has a route.
+- The most structured is (XPAIRS-POLY) via SPLIT. Its U-shrink half carries three constraints on all data (a deficit in y,
+  PROVED by DEF-SHRINK; a new top at the first shrinking round; a fresh (round, new top, losing top) key: 0 exceptions in
+  corpus, unions and climbs).
+- Its re-cut half is exactly the relay mechanism, and it is bounded only by the visits, i.e. by (LONG-PHASE) itself.
+- At the root, visits ≥ S, so (LONG-PHASE) at G′ is GAP-A's core (R-P11 (c)). No premise is easier than (LONG-PHASE).
+Packet-worthiness (my view; the Lead decides):
+- §23w QUIET-BLOCK: YES. Short, a clean proof, and the base of every D_R bound in §24. Brief docs/alg/QUIET-BLOCK.md.
+- §24a DEF-SHRINK + §24b SPLIT: YES, as a pair. They give the sparsest per-context form and locate the relay (re-cuts) versus
+  the deficit events (U-shrinks).
+- §24f "the relay is combinational in T; a counter at R costs about 2^D new firing tangles at R": YES as a short remark. It is a
+  two-line corollary of the signed CHANGE-NEW and the state inventory, and it justifies (LONG-PHASE) as the single target.
+- §23x EXIT-ORIGIN: OPTIONAL / LOW. Its purpose was (EXIT_c), which is dead. Keep it frozen as a supporting lemma only.
