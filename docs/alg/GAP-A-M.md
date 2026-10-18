@@ -3240,3 +3240,39 @@ stealonce_both_n45 and stealer_viol_n76):
 Successor target: prove (EXIT_c) for some constant c, or a polynomial c(|R|). The question is how often one vertex can
 leave and re-enter one step's prefix. A re-entry needs the prefix above to regrow around w, which in R35 is a NEW tangle
 fired by region 66.
+
+23q. Box 9: Lemma ENTRY-CHARGE: the STEAL premise without (FIRED-R) (reading, unrefereed; L-ALG succ. 7, 00:18Z by date -u)
+Setting:
+- As in §23g and §23k: one context R and one phase, steps σ = (r, τ), and P_i(σ⁺) = the prefix BEFORE τ in round r at
+  visit i.
+- P_i(σ⁺) is defined for every τ ∈ V_r, processed or not: it is the union of the regions of the tops above τ. If the visit has
+  fewer than r rounds, use G9-b2's virtual round.
+- An ENTRY is (σ, w, i) with w ∉ P_i(σ⁺) and w ∈ P_{i+1}(σ⁺). An EXIT is the reverse.
+- X_R is the number of exits; N_ent is the number of entries.
+- Events (i, q), q = (σ, t), are as in R11: t ∈ F_σ(i), and t meets P_{i+1}(σ⁺) without being contained in it.
+Lemma ENTRY-CHARGE. Σ_q k_q ≤ |R|·N_ent ≤ |R|·(X_R + (|R| + 1)·|R|²).
+Proof.
+1. Fix an event (i, q). Since t fired in region σ at visit i, t ∩ P_i(σ⁺) = ∅ (dtl.cpp 136-139 with 690/699; G9-b1).
+   Since t meets P_{i+1}(σ⁺), some w ∈ t gives an entry (σ, w, i). Map the event to one such entry.
+2. Fan-out. Every event mapped to the entry (σ, w, i) has a distinct tangle t ∈ F_σ(i).
+   - A tangle fires in a region step only if it has a vertex not yet in CurZ (dtl.cpp 143-146, can_attract_new). It then
+     adds all its vertices to CurZ (165-172), and CurZ only grows during the step.
+   - So every firing adds at least one new vertex, and |F_σ(i)| ≤ |A_σ(i)| − 1 < |R|.
+   - Hence at most |R| events map to one entry, and Σ_q k_q ≤ |R|·N_ent.
+3. For a fixed (σ, w), entries and exits alternate, so entries ≤ exits + 1.
+   - There are at most (|R| + 1)·|R| steps (rounds ≤ |R| + 1, dtl.cpp 748-760; tops are p-vertices of R) and at most |R|
+     vertices.
+   - Summing gives N_ent ≤ X_R + (|R| + 1)·|R|². □
+Corollaries (readings):
+- (C1) (EXITS-POLY), X_R ≤ poly(|R|), implies (STEAL-POLY_sum). With the sum form signed in packet 9 (R12 (a)):
+  GAP-A ⇐ (CTX⁺) ∧ (EXITS-POLY), given STR-DET. (FIRED-R) is NOT needed, and (STEAL-DEPTH) is not needed either.
+- (C2) The local form (EXIT_c): every (σ, w) exits at most c times per phase. It gives X_R ≤ c(|R| + 1)|R|², so
+  Σ_q k_q ≤ (c + 1)(|R| + 1)|R|³ and F_R ≤ 3(c + 1)(|R| + 1)|R|³ (R11 (c)).
+- (C3) Converse, so this is an equivalence up to polynomial factors and not a reduction of the count: X_R ≤
+  N*_R·|R|·(|R| + 1)|R|, because an exit needs a relevant steal at an earlier step at the same pair (CHARGE's local
+  PREFIX-MONO-X*). What is new: the premise is now LOCAL (one vertex, one step) and FIRED-free.
+DATA for (EXIT_c) (§23p, dtl_prefexits.py; corpus plus the DE19/DE20 instances): c = 2 on all data. Exits equal 2 only on
+stealonce_viol_n76 and stealonce_both_n45 (22 and 20 cases, stable / Oink); 1 in 3,073 / 2,101 cases. Re-entry patterns:
+§23r.
+Status against L32: GAP-A ⇐ (CTX⁺) ∧ (EXIT_c), two named DATA statements. The STEAL side now has a proof route from a single
+local statement. (CTX⁺) has none.
