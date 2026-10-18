@@ -4607,7 +4607,8 @@ NOSTEAL-1P) summed over the stable contexts of the tree, so (TREE-PIECE⁺) ∧ 
 In two-player games D_R (the falls) is not bounded, so identical-tree runs remain an open count there ((FALL)-type).
 DATA: the library and L-RED's instances contain no identical-tree transition (34a: every identical-depth-0 transition differs
 deeper); the climb found one at the end of a phase. Climbs against (TREE-PIECE⁺) (PLUS=1): from tp_ident_n20, stable, 8,000 two-player steps: 0 violations (margin down to 1, best 8
-transitions at n = 20); from vrV_viol_n40, Oink order: running at 19:24Z.
+transitions at n = 20); from tc+ N = 2 (n = 24), stable, 8,000 steps: 0 violations (margin 1, best 7 transitions); from
+vrV_viol_n40, Oink order: no improvement past step 1 in ~45 min at n = 40, stopped at 20:02Z by date -u (no violation seen).
 34d. Why (TREE-PIECE⁺) on general games would not contradict anything known (Lead 19:03Z; reading, with the sources the fleet
 opened). If (TREE-PIECE⁺) held, with a polynomial bound on identical-tree runs, A_DTL would make polynomially many searches per
 phase, and phases are ≤ 2(n + 1) (each ends with a dominion or a false search). With polynomial work per search (STEP5 / GAP-C

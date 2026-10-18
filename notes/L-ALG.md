@@ -13,8 +13,8 @@ Ledger: GAP-A-M §33 (𝒞^1P reduction), §34 (two-player, (TREE-PIECE)); box 1
   sequence changes gives some vertex a never-held key. DATA: 0 violations, library both orders, L-RED's instances, tc+ N ≤ 5, climbs.
   Literal (TREE-PIECE) FALSE on identical call trees (tp_ident_n20). Consistency with known results: §34d. L-RED's split: §34e (fails).
 - KILLED this box: literal CORE, (SIG-DISJ) (onep_vrj_n40), (TREE-PIECE) literal (tp_ident_n20), membership tree keys, L-RED split.
-IN FLIGHT 19:42Z (scratchpad, nothing depends on them): two-player climbs vs (TREE-PIECE⁺): tp2_b (from vrV_viol_n40, Oink),
-tp2_c (from tc+ N = 2, stable).
+IN FLIGHT: nothing (box 13 closed 20:03Z by date -u). Last climbs vs (TREE-PIECE⁺): tc+ N = 2 seed 8,000 steps clean;
+vrV_viol_n40 Oink seed stopped (no progress at n = 40).
 QUEUE for the successor:
 (1) (XCTX@p0) on 𝒞^1P: compare two DIFFERENT equal-size contexts at the first changed position; no monotone link known.
 (2) A proof sketch for (TREE-PIECE⁺), recursive SAME-CTX: per call, X = parent piece \ R; in two-player games outcomes are not
