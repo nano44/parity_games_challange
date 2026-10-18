@@ -166,8 +166,8 @@ probe: 60,000 perturbed hard-family / tc games, all verified (§10).
 - lean base (experiments/red/tcpert/lean.py): tc(N) with every S/A/B vertex deleted (an edge into X-i-S-j is redirected to
   X-i-Z, other edges into deleted vertices are dropped). n = 8N. On the base alone pinned Oink needs 3 iterations at every N.
 - leanT(N) := lean base + edges Even-i-T -> Even-(i+1)-L (`tcpert.py`'s rule "leanT"; `lean.py N OUT.pg leanT`; found by
-  tcclimb.py on the lean base, seed 13, step 2). Instances leanT_N6/8/12/16/24 (sha1 f037844a, 5b5ab3ee, 604b3497, 341f92ce,
-  739b03f4).
+  tcclimb.py on the lean base, seed 13, step 2). Instances leanT_N6/8/12/16/24/32 (sha1 f037844a, 5b5ab3ee, 604b3497, 341f92ce,
+  739b03f4, c66aea08).
 - Pinned Oink, verified: iterations N + 2 at N 6, 8, 12, 16, 24 (8, 10, 14, 18, 26); tangles 27 / 44 / 90 at N 6 / 8 / 12
   (dtl_flipflop: the same).
 - First differences, Even phase 0 (S = N), both order data, identical:
@@ -193,6 +193,14 @@ probe: 60,000 perturbed hard-family / tc games, all verified (§10).
 - tcpert.py seed 2 with cut / self-loop rules (TCP_EXT=1): 20,000 rule draws on tc(N), N 3..6: no unverified run. Earlier
   seeds (0, 1) and all climbs: no unverified run either.
 
-## 11. Open, in this box
+## 11. L-ALG's live checkers on the new instances (DATA, 11:31-11:34Z by date -u; in-tree = l-alg 11d89e20, unmodified)
+- Instances leanT_N6, leanT_N8, tcL_N4, tcL_N6, tcR4_N4, tcR4_N5, deep1_n13; both order data; RM_DV=0.
+- dtl_fdlcheck.py (First-Difference Lemma): 0 violations on every instance (rc 0).
+- dtl_rootmono.py (RM_EXCL=1 RM_PREF=1, ideal checks on): the only FAILS lines are statements already dead: CTX-ROOT (RESULTS
+  DE17) on leanT 6/8 and tcR4 5; CHAIN (DE16) at depth 0 on tcR4 4/5 and at depth > 0 on tcR4 5; ABS-pw (dead, not a hit) on
+  tcL 4/6 and tcR4 4/5.
+- dtl_changenew.py, dtl_defsplit.py, dtl_quietlin.py: no failure line. No live lemma is broken by these families.
+
+## 12. Open, in this box
 - N = 14 needs a lighter tool (ctxlight peaks above 5 GB at N = 12).
 - The other totals on tcL (Σk, #fired⁺(R), D_R, exits) are not yet measured.
