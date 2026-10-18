@@ -8,14 +8,16 @@ Truth for GAP-A: docs/alg/GAP-A-M.md §23-§30 (§30 = box 12, successor 10; §2
   the failing point is the combination step: on 𝒞^1P the per-context side is already closed by OUTCOME-MONO-1P, and nothing
   indexed by contexts bounds the contexts (§30c). Re-cut-proof vertex potentials STABLE-MASS / STABLE-TOPS / NEG-TOPS FALSE.
 - No super-polynomial signal: leanT_N forced into the class has N searches per phase, N(N+1)/2 tangles (§30d).
-QUEUE: (1) DONE (no route). (2) NOW: (NO-PRE-a), proof or instance ((TIE-BELOW) FALSE, tieabove_n20, §28c add. 3; a proof
-must use that the pruned tie vertex stays pruned). (3) TC-6 P2-P6 last, labelled "single family, not L32 progress".
+- QUEUE (2) (NO-PRE-a): no proof, no instance; DATA plus two targeted climbs; near miss nopre_near_n20 is not an occurrence (§31).
+QUEUE: (1) DONE (no route, verdict sent 14:07Z). (2) DONE (DATA, §31). (3) TC-6 P2-P6 last, labelled "single family, not L32
+progress" (GAP-A-M §25b), unless the Lead redirects.
 
 ## DONE (box 12, successor 10)
 - Handover check 50e66d3 (5/5 per Lead), trunk merges 781790d and the box-start merge.
 - Oink built (scripts/setup_oink.sh exit 0), so verify's smoke step runs.
 - §30 with tools b12_topchain.py (class set + TOP-CHAIN@R scan), b12_topclimb.py (climb, --check), b12_pertop.py (tangles
   learned per (phase, top)), b12_mono.py (re-cut-proof potentials, per_position); instance onep_topuniq_n20 (check.sh).
+- §31 with tool b12_nopre.py (scan / climb); instance nopre_near_n20 (near miss, pinned Oink 5 iterations verified).
 
 ## Things only I know (successor 10)
 - `date -u` advances much more slowly than the work done (as successor 9 noted); timestamps are as printed, unadjusted.

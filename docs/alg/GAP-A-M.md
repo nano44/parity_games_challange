@@ -4368,3 +4368,31 @@ LEDGER (library-scale runs referenced above; 14:06Z by date -u): (TOP-CHAIN@R) i
 (1,299 class games, 855 contexts with firing tangles): 0 violations, max 2 same-top tangles per context (onep_topuniq_n20 only).
 Potentials on set B, stable, 1,076 same-phase pairs: (STABLE-MASS) FALSE on 572, (STABLE-TOPS) on 956, (NEG-TOPS) on 168.
 NEXT: QUEUE (2), (NO-PRE-a).
+
+31. Box 12, QUEUE (2): (NO-PRE-a) (L-ALG successor 10; 14:30Z by date -u; produced on Opus 5.5; unrefereed). Statement (§28c
+addendum α): "a vertex y of a tangle t that fired at top τ in round r of visit i (context R, one phase) is never a round-r top
+above τ at visit i+1". Rounds are compared only where both visits have them, as in R11 and fixd_stealentry.analyze.
+31a. Reading (what an occurrence needs). Such a y has pr(y) = pr(τ) (t ⊆ ≤ pr(τ); a top above τ has priority ≥ pr(τ)), so it
+is a q-parity vertex. y ∉ V_r(i): a round-r top above τ, or a vertex inside an earlier round-r region, is popped before τ's step,
+and attractTangle needs every vertex of t in CurR ∪ CurZ. So y was pruned at visit i in some round r′ < r, and an occurrence needs
+y to survive at visit i+1 to round r (y ∈ V_r(i+1)) and not to lie in an earlier round-r region there. For an opponent-owned y,
+all of y's R-successors lie in U_r(i) at τ's step (t's vertices in τ's region, escapes in CurZ or popped), so pruning at r′ also
+needs U_r(i) ⊄ U_{r′}(i) at a successor of y. That round-union growth occurs (543 library round pairs, §28c addendum 2), so this
+reading excludes nothing by itself. No proof: two-player games have no monotonicity of V_r between visits, and in 𝒞^1P with ties
+(where V_r would be monotone given no steals) an occurrence is exactly what breaks NOSTEAL-1P's step 1, so the argument is circular.
+31b. DATA and a targeted climb (tool experiments/alg/b12_nopre.py: V recorded at every round; graded counts pre / near
+(y ∈ V_r(i+1)) / surv (y not pruned at i+1 in the round it was pruned at i) / gap (difference of the two pruning rounds) /
+above (tie-above events)).
+- All 323 parseable .pg files under experiments/ (stable): pre 0, near 0, surv 0; tie-above events 5 (tieabove_n20 only).
+- Climbs on two-player games with ties (class-free moves of fixd_oneplayer.mutate): from tieabove_n20, stable, 6,000 steps
+  (score without gap): best (0, 0, 0, above 10); with gap, stable, 6,000 steps: best (pre 0, near 0, surv 0, gap 1, above 7);
+  from tieabove_n20 in Oink order and from random n = 14 (P = 4): no tie-above event at all.
+- The only gap ≥ 1 found is not an occurrence. Pinned: experiments/alg/instances/nopre_near_n20.pg (sha1 e897ea540235; pinned
+  Oink 5 iterations, solution verified; model winners equal to Zielonka). Odd's phase, context R = all 20 vertices: at visit 12
+  (14 rounds) the singleton tangle {12} (priority 15) fires in rounds 4-9 in the region of top 10 (priority 15), and 12 was pruned
+  in round 1. At visit 17 the call stops STABLE after one round with V* = all 17 odd-priority vertices, and the only round tops
+  are 19 and 18; 12 lies in their regions. So even under the "last round repeated after a stable stop" reading of §28e, 12 is
+  not a top above 10 there.
+VERDICT (QUEUE (2)): no proof, no instance. (NO-PRE-a) stays DATA (0 occurrences on the library, the permuted library (§28c), random
+tie-heavy games, and two targeted climbs). Its use is small in any case: it would remove "dist" from NOSTEAL-1P and make
+STEAL-ENTRY a pure strategy-conflict statement. It does not touch (CTX⁺) (§30c).
