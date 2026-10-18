@@ -53,3 +53,21 @@ re-cut tail. fixd_enable: no enabling tangle fires at R_j in any transition.
   In nest4 the second rise uses the cross tangle that the root rise of copy 1 created; copy 1 then has no further rise below
   the root to supply another extension. A deeper counter would need copy 1's own tail to re-rise between the re-rises of
   copy 2, which is the same problem one level down (k copies, one per counter bit).
+
+## 6. What keeps ctx13_n40's tail alive (Lead 14:03Z question; DATA 15:44Z by date -u)
+- ctxp/d0calls.py on ctx13_n40, Odd phase (S 25): every search is a long chain of depth-0 calls that return −1, and the
+  SINGLE stable call is the last one (its Dom ends the search: the next call is |R| 0 or 1). For example:
+  `40:-1 39:-1 38:-1 37:-1 35:-1 33:-1 30:-1 28:-1 23:-1 20:-1 14:-1 13:-1 10:-1 9:1 1:0`, next search
+  `40:-1 39:-1 38:-1 37:-1 35:-1 33:-1 30:-1 27:-1 25:-1 20:-1 19:-1 18:-1 14:-1 10:1 0:0`.
+- So the counter positions of ctx13 are the −1 calls ABOVE the stable call, i.e. distraction pieces removed by Dom(prevV)
+  without learning. Its resets (fixd_outcome: PV-SHRINK 13, PV-GROW 9, −1→ST 2) change the SIZE of a −1 piece, which re-cuts
+  every −1 piece below it. The lower part stays out of Dom because a −1 call removes only the regions of its prevV, not the
+  rest of R. leanT is the opposite: its rungs turn STABLE (−1→ST every time), and a stable piece's Dom takes everything below.
+- Design consequence (READING): a compounding counter should keep its rungs as −1 pieces whose prevV shrinks (a later
+  emptying round, §27d), with learning only at the bottom stable call; the tangle learned at the bottom must then make a −1
+  piece HIGHER up shrink (fire high), and the pieces below that one restart from a low state. In ctx13 only 4 of 26
+  transitions have an enabling tangle firing at R_j (all tail-born); the rest change R_j through a different context (CTX) or
+  a deeper attractor.
+- NEST (§1) on the library and on this box's instances (fixd_fdpos, stable order; the Oink order was identical where run):
+  ctx13_n40 Odd phase 3; tcR4_N6 3; nest4_n80 4; leanT_N8 1; onep_lagdist_D8 1; onep_chainfail_n20 1. nest4_n80 is the
+  highest NEST seen.
