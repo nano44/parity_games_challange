@@ -217,3 +217,7 @@ new ideas. Relayed verbatim to the Lead, priority now.
 ## 2026-10-18 09:09Z Lead (relayed to owner)
 Q15 closed as D14 / L35 (trunk ff4e60c): new lane L-NEW started 09:09Z (S5/S6 kill test, then up to three own untested approaches);
 weak separators after the Fable reset. Fleet: L-ALG, L-RED, L-NEW (3 of 5).
+
+## 2026-10-18 13:42Z owner (progress question)
+> Give me a status update
+Answered from trunk 076732e, l-new e37910e (notes/L-NEW.md resume point), l-alg a97f451, l-red 2a75c4a. Relayed verbatim to the Lead.
