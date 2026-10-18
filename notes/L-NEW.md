@@ -2,7 +2,17 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-SUCCESSOR 2, box 4 (GO 21:05Z; box end ~01:00Z). Context ~370k at 22:23Z (date -u).
+SUCCESSOR 2, box 5 (GO 22:47Z, end ~01:30Z), written 22:52Z by date -u; context ~410k (hand over at ~580k).
+Box 5 DONE (docs/new/N5-dlm-box5.md):
+- The condition "N5 ≈ SSI iff τ̄ ⊆ A_σ" is shown. It fails almost everywhere on DLM's SSI paths.
+- N5's step applied to SSI's states only ADDS switches, exactly where the distraction withholds them.
+- Module (Odd blunder dummies on DLM's games): SSI stays exponential, N5 needs 2-15 iterations. n5.py, n5b spec and n5b orig agree on every row.
+- K6 written. NOT killed.
+- Tools: dlm_diag.py, dlm_agree.py, dlm_module.py.
+- L-COMP's n5b.py (claude/l-comp 29a6ed17) runs read-only from scratchpad/lcomp/n5-second/n5b.py, with symlinks to
+  experiments/hard-families and experiments/harness. Run it with --start FILE (a COMPLETE start pair) and --mode spec|orig.
+NEXT: a proof of "N5 ⊇ SSI" (it would make K6 a theorem); otherwise the box-4 NEXT items (a)-(d) below.
+Box 4 (kept):
 DONE, all pushed (docs/new/N5-killer-box4.md, G-N5-TERM-reading.md, N5-ssi-global.md additions):
 - SPEC vs A1-A10 (6014db7) and Q1-Q4 (7039eb5).
 - Deeptrap trace (even-N chain).
