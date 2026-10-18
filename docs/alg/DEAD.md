@@ -267,3 +267,6 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
     212 entries / 476 exits stable, 223 / 406 Oink) and lex_viol_oink_n20.pg (sha1 1a436027; pinned Oink 5 iterations verified;
     39 / 214 stable); dtl_netgrowth.py, 13 of 988 (stable) and 12 of 955 (Oink) non-quiet pairs fail. Obstruction: round-index
     SHIFT; the later visit prunes faster, ends a round earlier, and every later round's prefixes collapse on the grid.
+  - (QUIET-LIN) and (QUIET-NEWV), linear forms of QUIET-BLOCK (GAP-A-M §23z): DEAD. Instances dtl_cross3_n14.pg (90d95c85),
+    fired18_stable_n20.pg (42307b22), spp_final_n30.pg (e57c2cf9), spp_n30.pg (587697ae), all re-run with pinned Oink (verified);
+    dtl_quietlin.py, both orders. Obstruction: a vertex joins W at different (round, level) slots at different pairs of one block.
