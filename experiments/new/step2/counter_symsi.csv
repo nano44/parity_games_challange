@@ -1,0 +1,12 @@
+family,N,n,gen,sha1,vj_switchall_plain,phases,even_iters,odd_iters,max_phase,secs,check
+counter_symsi,1,12,tools/oink/build/counter_symsi 1,b40256ed7c20f6a9bf41ee05c103f859349636a2,4,104,2,8,1,0.00,zielonka(oink zlk) OK strategies verified
+counter_symsi,2,22,tools/oink/build/counter_symsi 2,541a8ef59a22d9aa6836f1db5b3352c1c63e9f8b,7,194,8,19,3,0.00,zielonka(oink zlk) OK strategies verified
+counter_symsi,3,32,tools/oink/build/counter_symsi 3,1979e61c8f0c3399f8b8da48bd4ea45678ca98ae,10,317,15,47,4,0.01,zielonka(oink zlk) OK strategies verified
+counter_symsi,4,42,tools/oink/build/counter_symsi 4,4f4009b9df79dac1ad38aebc4a505f20a41fa68e,16,439,20,81,4,0.05,zielonka(oink zlk) OK strategies verified
+counter_symsi,5,52,tools/oink/build/counter_symsi 5,1511270f9332440d14ce2385964110d14770c98f,20,566,25,122,4,0.13,zielonka(oink zlk) OK strategies verified
+counter_symsi,6,62,tools/oink/build/counter_symsi 6,5e4934814304011bca9ea3f491f2e3e660f0cf18,23,699,30,170,4,0.28,zielonka(oink zlk) OK strategies verified
+counter_symsi,7,72,tools/oink/build/counter_symsi 7,20f0310d337082ee67e774f49373bf9044074150,25,835,35,225,4,0.61,zielonka(oink zlk) OK strategies verified
+counter_symsi,8,82,tools/oink/build/counter_symsi 8,9594ad159237f4b778ad6466b435adb1c8355fcb,32,975,40,287,4,1.12,zielonka(oink zlk) OK strategies verified
+counter_symsi,9,92,tools/oink/build/counter_symsi 9,8444f63f2f2b89569386cf3cc041cdf2e2d99386,34,1118,45,356,4,1.95,zielonka(oink zlk) OK strategies verified
+counter_symsi,10,102,tools/oink/build/counter_symsi 10,632dae4ead75ad6fef3bc2ce0bcaf26da20fc12f,37,1263,49,426,4,3.37,zielonka(oink zlk) OK strategies verified
+counter_symsi,11,112,tools/oink/build/counter_symsi 11,9a4dc1ff08afbdd9d63e82b1febc85422fef3cf8,40,1411,59,515,4,5.84,zielonka(oink zlk) OK strategies verified

@@ -9,3 +9,5 @@ tc+,7,434,tools/oink/build/tc+ 7,3e34f3d71828ed9da2183decaa210aeb63a5a10e,25,238
 tc+,8,624,tools/oink/build/tc+ 8,c36bbe2f381db5f997f039f8d38284fece6abc3c,28,289,127,1724,10,29.64,zielonka(oink zlk) OK strategies verified
 tc+,9,864,tools/oink/build/tc+ 9,1bcc89c3b29084d66ef8d66bd1417627c9ca5c16,39,343,164,2682,12,107.79,zielonka(oink zlk) OK strategies verified
 tc+,10,1160,tools/oink/build/tc+ 10,e6e24658d5213d3e9bf5db90353fe8a3de6b40b3,42,399,213,4070,12,373.25,zielonka(oink zlk) OK strategies verified
+tc+,11,1518,tools/oink/build/tc+ 11,f20549f87ce8f176f9db3f6ec51911ce02770f54,57,456,275,5924,21,1033.29,zielonka(oink zlk) OK strategies verified
+tc+,12,,tools/oink/build/tc+ 12,548897629b8a338296c2b4f78bd2f3889be20b20,63,,,,,TIMEOUT1200,
