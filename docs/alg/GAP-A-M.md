@@ -3565,3 +3565,14 @@ Reading of the obstruction (why EXIT_c is hard):
 Status: Lemma EXIT-ORIGIN is a reading, unrefereed. (EXIT_c) and (DOWN_2) are DATA. No proof route closes; L32 is NOT met by this
 section. Self-attack climbs (dtl_exitclimb.py, fitness exits ≥ 3, then round-count falls) are running from cm_viol_oink_n28 and
 stealonce_both_n45.
+
+23y. Box 10: (FIRED⁺-R) below the root: no birth locality (DATA; L-ALG succ. 8, 02:02Z by date -u; tool
+experiments/alg/dtl_firedlocal.py; RM_LIGHT=1 RM_DV=0; corpus 141 files + stealonce_viol_n76, stealonce_both_n45, stealer_viol_n76,
+fall3_n76, fall4_n116; both orders)
+- Depth ≥ 1 contexts with ≥ 2 visits: 380 (stable) / 374 (Oink). Max #fired⁺(R)/|R| = 0.8 (dtl_searches15_n24, depth 1,
+  |R| = 15, 12 fired⁺, 5 visits; both orders).
+- Where the fired⁺ tangles of such an R were born (sptl context B): LOCAL B ⊆ R 277 / 284; INCOMPARABLE 277 / 301; ANCESTOR B ⊋ R
+  2 / 3; born before the phase 14 / 4.
+- Reading: half the tangles that reach a sub-context come from sibling-type contexts, so a "tangles fired at R are learned
+  inside R" induction on depth is not available. (FIRED⁺-R) below the root has no route from locality. Not pursued further this
+  box (task (3) was conditional on (1)-(2) stalling; (1) closed, (2) stalled at the counter obstruction of §23x).
