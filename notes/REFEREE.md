@@ -10,7 +10,7 @@ Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD =
   length; G-B2 wording; closed); Theorem SIGN; N5 application SIGN WITH GAPS (G-N1 engine = Ωσ, DATA 0/22,969 mismatches;
   G-N2 closed). VJ00 Lemma 5.8 "2 ⇒ 3" gap CONFIRMED (also breaks VJ00's I2/P1); the reading does not use it.
   Tools: docs/referee/scratch/n5t_probe.py (VJ00-only brute force), n5t_engine_xcheck.py.
-- NEXT: after R-N5T is pushed, read docs/referee-2/R2-N5T.md (trunk or claude/referee-2) and add §C to R-N5T.md.
+- §C written 23:15Z (agree; accepted R2's N1 and G-N5T-3; I1 failure confirmed with n5t_i1.py). Then PARK on the Lead's word.
 
 ## Sources opened (append)
 - VJ00 = Vöge & Jurdziński, BRICS RS-00-48 (Dec 2000), https://www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, sha256 485a12de432a2a8c..
