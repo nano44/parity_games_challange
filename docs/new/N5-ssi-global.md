@@ -64,6 +64,67 @@ other tie-breaks should reproduce regions and verified strategies exactly and it
 Reference counts for checking a second implementation: dlm1 (DLM start pair) n = 1..6: 1, 2, 4, 4, 6, 7; dlm2 n = 1..7: 2, 4, 7, 8,
 11, 12, 13; switchallexp (best-reward start) N = 1..8: experiments/new/n5/switchallexp.csv; mode ssi on dlm1: 2^(n+1) − 3.
 
+### SPEC vs L-COMP's ambiguities A1-A10 (experiments/n5-second/README.md, l-comp 2b6a965 on trunk); successor 2, 2026-10-18 21:06Z by date -u
+Line numbers: n5.py = experiments/new/n5.py at this commit (last changed in 334f057, before the spec commit 8925171 L-COMP read); si.py = experiments/si/si.py (trunk, read-only).
+| id | settled by | code | note / fix |
+| --- | --- | --- | --- |
+| A1 rank ties | S1 "rank(v) = position in V sorted by (Ω(v), v)" | si.py l. 38-41 | settled; L-COMP's reading = SPEC |
+| A2 best-reward start | S3 | n5.py l. 23; si.py l. 234-240 | settled. Spelled out (FIX 1 below): ties go to the LARGEST index for even r, the SMALLEST for odd r; L-COMP's PGSolver port must match this (the si.py comment "max index" is right only for even r) |
+| A3 dual ids / order | S1 "Odd's side ... G^d (owner swapped, Ω + 1)"; "lists in increasing index order" | n5.py l. 18 (same ids, same lists); si.py l. 33 (lists sorted) | settled; ranks of G^d equal those of G (Ω + 1 keeps the order and the index ties) |
+| A4 improving edges | S2 (strict, w.r.t. Ξσ at σ(v)) | si.py l. 220-228 | settled; L-COMP's reading = SPEC |
+| A5 tie-break of σ', τ' | S1 (iv)-(v) + S4a/b | n5.py l. 47-50, 55-58; si.py l. 152-195 | settled, but L-COMP's reading DIFFERS: SPEC's σ' is the counterstrategy of the VJ procedure (longest-path ties to the smallest index; BFS first discovery; DFS cycle choice at the cycle node), NOT "per vertex the successor of best valuation, ties by index". FIX 2 below pins the DFS order. Counts may differ under L-COMP's rule; regions and verified strategies must not |
+| A6 old or new σ | S4 "both steps computed from the SAME (σ, τ), applied together" | n5.py l. 46-48 (old τ), 54-56 (old σ), 65 | settled; L-COMP's reading = SPEC |
+| A7 fallback choice | S4c "(Ξσ(w), w) ... ties: larger index" | n5.py l. 59-64 | settled: ties to the LARGER index (L-COMP wrote "ties by index": must be the larger). FIX 3: τ is not changed in an iteration where Even falls back |
+| A8 iterations | S4 "one iteration = one pass with Iσ ∪ Iτ ≠ ∅" | n5.py l. 28-32 | settled (final pass with both sets empty is not counted); L-COMP's reading = SPEC |
+| A9 output Odd strategy | S5 "σ̄ ... (Not τ.)" | n5.py l. 66; si.py l. 254-264 | settled; L-COMP's reading = SPEC |
+| A10 valuation by reference | S1 (full definition, order and procedure) | si.py l. 54-204 | settled for implementation; the VJ00 source citation is box-4 item (4) |
+FIX 1 (S3, A2). Even's v: σ0(v) = argmax over successors w of (r(w), w if r(w) even else −w), r(w) = Ω(w) if Ω(w) even else −Ω(w):
+highest even priority, else lowest odd priority; equal priorities: largest index if even, smallest if odd. Odd's v (the rule on G^d), in
+G's terms: highest ODD Ω(w), else lowest EVEN Ω(w); equal priorities: largest index if Ω(w) odd, smallest if even.
+FIX 2 (S1 (v), A5). The cycle node v's own choice (when v is the optimiser's): explicit-stack DFS from v over the successors of the
+fixed-strategy graph Gσ (NOT the restricted graph), successors scanned in increasing index, each unvisited alive y of rank < rank(v)
+marked visited and pushed when scanned, last pushed popped first; the scan stops at the first successor equal to v; v's choice = the
+first vertex after v on the DFS tree path to that vertex (v itself for a self-loop). si.py l. 182-195.
+FIX 3 (S4c, A7). In a fallback iteration with Iσ ≠ ∅ only σ changes (τ_new = τ); n5.py l. 61-62. Odd falls back only if Iσ = ∅.
+FIX 4 (S1 (iv), A5). "first strict maximum" in the longest-path recursion = smallest index among the successors of maximum length
+(si.py l. 160-168); BFS: layers in FIFO order, each layer's vertices scanned in discovery order, predecessor lists in increasing
+index, a vertex's choice is the vertex from which it was first discovered (si.py l. 176-180). Every Odd vertex x ≠ v of R gets
+the choice, including those whose valuation is not affected.
+
+### Four further SPEC points (Lead 21:10Z, from L-COMP 12fd5c2); successor 2, 2026-10-18 21:30Z by date -u
+Q1 (S1, path-set order, bit cost). The SPEC phrase "signed weight Σ ±2^rank(u)" is only a way of writing the order. The equivalent
+   comparison is: for path sets M ≠ N, let r = the highest rank in the symmetric difference M Δ N. Then M ◁ N (N better for Even)
+   iff r ∈ N and Ω(r) is even, or r ∈ M and Ω(r) is odd. Proof: 2^r > Σ_{i<r} 2^i, so the top differing term decides the sign.
+   - si.py l. 54-65 (weight) computes the signed sum as a Python integer. The sum has at most n bits (|weight| < 2^n), so the
+     integers are n-bit, not exponential-size, and each comparison costs O(n) bits. Computing a weight costs O(n²) bits as coded
+     (n shifts/additions of ≤ n-bit numbers, cached per mask). As E − O (E = the mask restricted to even ranks, O = to odd ranks)
+     it would cost O(n). No unit-cost big-number shortcut is involved (TARGET.md §3).
+   - Checked: 10,000 random mask pairs (n ≤ 60). weight(M) < weight(N) agrees with the symmetric-difference rule in every case.
+   - An implementation may use either; they are equivalent.
+Q2 (S1 (i), (v), cycle DFS). Each DFS has ONE visited set, created fresh per cycle node v and shared across all of v's successors.
+   - The cycle test (l. 99-106: seen = {v}) and the cycle-node choice (l. 184-195: par = {v: None}) are separate DFS runs.
+   - In the choice DFS, a vertex is marked when PUSHED. Successors are pushed in ascending index and popped LIFO, so the subtree
+     of v's LARGEST-index eligible successor is explored first. A vertex reached there is never re-entered from another successor.
+   - The scan of the popped vertex x's successor list stops at the first successor equal to v. v's choice = the child of v on the
+     DFS-tree path to that x (v itself for a self-loop, l. 195).
+   - So the visited set can change which successor v picks, and SPEC FIX 2 is to be read with this exploration order.
+Q3 (S1 (iv), termination of the longest-path recursion). Claim: when cycle node v (Ω(v) even) is processed, the restricted graph
+   on R has no cycle avoiding v. Take such a cycle C of alive vertices and let m be its most relevant vertex.
+   - If m is ranked below v, then rew(m) < rew(v), so m's turn in the increasing-rew loop (l. 94) came earlier. C was a cycle
+     through m over lower-rank alive vertices, so m would have been a cycle node and C would be dead. Contradiction.
+   - If m is ranked above v and Ω(m) is odd, then rew(m) < 0 < rew(v): the same argument.
+   - If m is ranked above v and Ω(m) is even, then after the restriction step for u = m, m keeps only edges into M = {vertices
+     reaching v without passing m}, and M's vertices keep only edges into M (l. 136-143). So no cycle passes m. This is VJ00 §6,
+     Prop. 6.1 clause 4 ("there is no cycle in G(r) containing s").
+   So the recursion only ever closes at v. si.py guards this with RuntimeError("cycle in restricted graph") (l. 159), which
+   no run has raised.
+Q4 (S5, σ̄ at the cycle node). The choice at the cycle node v comes from (v) ONLY (l. 182-195).
+   - The longest-path recursion returns 0 at v without setting tau[v] (l. 155-156).
+   - The BFS starts at v with dist[v] = 0 and never revisits v (l. 173-179).
+   - tau_full[v] = tau[v] is copied at l. 200. L-COMP's reading (v) = SPEC.
+Note for kills (Lead 21:10Z): a family that kills only under SPEC's tie-break kills that rule, not N5 in general. Any kill claim
+from this lane will name the tie-break mode. Box 4's attempts (N5-killer-box4.md) did not kill in SPEC mode.
+
 ## Why N5's step is NOT covered by 2309.02223 (opened pdf, sha256 10e6794d82aba465..; page numbers = running heads)
 - Improvement rules (p. 5): "an improvement rule, which is a function f : P(E) → P(E) that takes as input a set of improving
   edges, and outputs a set of improving edges", with "f(S) ⊆ S for all S ∈ P(E)" and at most one outgoing edge per node.
@@ -96,6 +157,22 @@ Vöge-Jurdziński counterstrategy computation (VJ00, as implemented by L-SI; pol
 bound), plus a fallback step (no extra evaluation). Valuations are (vertex, n-bit path set, length): comparisons cost O(n) bits; no
 big-number arithmetic anywhere (no discount, no weights). So the cost is poly(n) per iteration; the open question is the
 iteration count, which is what the sweeps measure (iterations and fallbacks per row).
+CORRECTION (box 4, successor 2; VJ00 OPENED): Jurdziński & Vöge, "A Discrete Strategy Improvement Algorithm for Solving Parity
+Games", BRICS RS-00-48 (Dec 2000; the full version of the CAV 2000 paper, LNCS 1855), pdf sha256 485a12de432a2a8c..
+- §6 "Efficient implementation" gives the shortest-paths procedure (lines 1-10: edge deletions per vertex r above t in
+  descending order, then longest distances if t ∈ R+ and shortest if t ∈ R−).
+- Theorem 6.2 (report p. 25): "An improvement step of our discrete strategy improvement algorithm can be performed in time O(n · m)."
+  §1 says the naive Bellman-Ford alternative costs O(n²·m).
+- So one evaluation (valuation + optimal counterstrategy) costs O(n·m) set/length operations by VJ00. At bit cost a path-set
+  operation costs O(n) bits, so a crude bound is O(n²·m) bit operations per evaluation.
+- si.py's Engine.evaluate is a direct transcription (a reachability pass per vertex u above each cycle node). It costs at most
+  O(n²·m) set operations, i.e. O(n³·m) bit operations. It does not reach VJ00's O(n·m), which shares the work across cycle nodes.
+- N5 per iteration: 2 valuations + at most 2 restricted optima (4 evaluations), plus the improving sets (O(m) key comparisons,
+  O(n) bits each). Total poly(n, m) per iteration: O(n·m) set operations with VJ00's procedure, O(n²·m) as implemented.
+- The open question stays the iteration count.
+CORRECTION (box 4) to the Termination paragraph above: "strictly unless σ' = σ" is false as written. An Odd switch that closes a
+cycle through its own cycle node can change τ and leave Ξτ identical (instance and repair: docs/new/N5-killer-box4.md §3). No
+repeated (σ, τ) state was found in any run.
 
 ## Deep traps and padding
 VJ valuations depend only on the priority order (injective rank), so priority gaps and isolated dummies change nothing; a trap

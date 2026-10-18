@@ -1,0 +1,8 @@
+start (0, 0, 0)
+step 0 fitness (0, 0, 1) (N3: lock 1 fb 1 it 6; N4: lock 0 fb 0 it 6) check OK
+step 22 fitness (0, 1, 0) (N3: lock 0 fb 0 it 3; N4: lock 1 fb 1 it 4) check OK
+step 41 fitness (1, 1, 1) (N3: lock 1 fb 1 it 5; N4: lock 1 fb 1 it 5) check OK
+step 397 fitness (1, 1, 2) (N3: lock 2 fb 2 it 7; N4: lock 1 fb 1 it 4) check OK
+step 596 fitness (1, 2, 1) (N3: lock 1 fb 1 it 4; N4: lock 2 fb 2 it 5) check OK
+step 600 fitness (2, 2, 2) (N3: lock 2 fb 2 it 7; N4: lock 2 fb 2 it 7) check OK
+best (2, 2, 2)

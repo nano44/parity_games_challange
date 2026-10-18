@@ -1,0 +1,6 @@
+start (0, 0, 0)
+step 81 lock N3 1 N2 0 fallbacks N3 1 (N2 it 5, N3 it 12) check OK
+step 83 lock N3 1 N2 1 fallbacks N3 1 (N2 it 5, N3 it 12) check OK
+step 121 lock N3 2 N2 1 fallbacks N3 2 (N2 it 3, N3 it 7) check OK
+step 170 lock N3 2 N2 2 fallbacks N3 2 (N2 it 9, N3 it 7) check OK
+best (2, 2, 2)

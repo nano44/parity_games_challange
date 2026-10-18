@@ -1,0 +1,18 @@
+start (0, 1)
+step 3 flat 0 iterations 2 check OK
+step 7 flat 0 iterations 4 check OK
+step 11 flat 0 iterations 5 check OK
+step 12 flat 1 iterations 4 check OK
+step 28 flat 1 iterations 5 check OK
+step 180 flat 1 iterations 6 check OK
+step 263 flat 1 iterations 8 check OK
+step 351 flat 1 iterations 9 check OK
+step 390 flat 2 iterations 6 check OK
+step 441 flat 2 iterations 7 check OK
+step 506 flat 2 iterations 8 check OK
+step 592 flat 2 iterations 9 check OK
+step 865 flat 2 iterations 10 check OK
+step 1829 flat 2 iterations 11 check OK
+step 2408 flat 2 iterations 12 check OK
+step 2427 flat 2 iterations 13 check OK
+best (2, 13)

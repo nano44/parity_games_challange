@@ -1,0 +1,8 @@
+2 41 3f1cc5d92d64 lock 0 fallbacks 0 iterations 3 OK 0.0s
+3 58 c8c4aea1cf74 lock 1 fallbacks 1 iterations 11 OK 0.0s
+4 75 af4ed9d778aa lock 1 fallbacks 2 iterations 50 OK 0.2s
+5 92 3fd5b5287a03 lock 1 fallbacks 2 iterations 43 OK 0.3s
+6 109 912b6d7482e4 lock 1 fallbacks 2 iterations 48 OK 0.4s
+7 126 71130818890c lock 1 fallbacks 1 iterations 36 OK 0.4s
+8 143 187d7a4eefd5 lock 1 fallbacks 1 iterations 33 OK 0.4s
+9 160 bfd93bb55c4d lock 1 fallbacks 1 iterations 42 OK 0.8s
