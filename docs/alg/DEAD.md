@@ -290,3 +290,6 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
     on lagflat7 all relay tops share the top priority q and the steals happen in later same-priority tops' CurR (dtl.cpp 690, 699).
   - (b2) "all-distinct priorities" as a class where the relay dies: FALSE. lagdist_D4/D8/D12.pg (sha1 af9b429696a0,
     215e9ce202dd, 66855da1a880): re-steal depth D in both order data (GAP-A-M §27a).
+  - (CHAIN) "first-difference contexts of a phase form a ⊆-chain" restricted to the class 𝒞^1P (GAP-A-M §27c): FALSE in the
+    class too, both orders: experiments/alg/instances/onep_chainfail_n20.pg (sha1 05bfe58e20d7; class 𝒞_1^dist; pinned Oink
+    6 iterations verified), first-difference context sizes 13, 13, 18, 20 (dtl_rootmono "CHAIN FAILS"). No steal there.

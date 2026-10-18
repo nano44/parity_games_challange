@@ -4041,3 +4041,23 @@ adds hypotheses on owners, out-degrees and q-parity priorities and changes no de
 NEXT (proposal): (CTX⁺) on 𝒞^1P. With no steals, PREFIX-MONO-X* (R11 (b)) holds whenever V ⊆ V′, so a context's regions grow
 along a phase while its V does not shrink. The first question is whether the depth-0 contexts R \ X then form one chain per
 phase.
+
+27c. (CTX⁺) on 𝒞^1P, and an adversarial test of NOSTEAL-1P (DATA; L-ALG succ. 9, 10:40Z by date -u)
+- NOSTEAL-1P against the fleet's DESIGNED steal instances. stealonce_viol_n76, stealonce_core_n76, stealonce_both_n45 (DE20) and
+  depth2_n39 (DE21) all have steals in A_DTL, as do lagflat7_d3_D4 and lagdist_D4. Each was forced into the class: every
+  choice vertex of player q keeps one edge, Zielonka's strategy edge in trial 0, a random edge in trials 1-149, for q = 0 and
+  q = 1. Each forced game was run with its priorities as they are (ties) and refined to all-distinct, in both order data.
+  Result: 3,600 runs, max k = 0 in ALL of them (dtl_stealdepth model, winners equal to Zielonka in every run). No violation of
+  NOSTEAL-1P. The steals also vanish when ties are kept, so the "dist" hypothesis may be removable. In the tie case, step 1 of
+  the proof fails only if a same-priority top u ∈ t with index above τ joins V_r between visits; u ∉ V_r(i) is forced, since
+  otherwise t could not fire at τ at visit i. Open.
+- (CHAIN) in the class: FALSE (onep_chainfail_n20.pg, DEAD.md). So (CTX⁺) on 𝒞^1P is not a chain statement either.
+- Class climbs for first-difference contexts (fixd_ctx1p.py, stable order, all-distinct priorities, 2000-2500 steps): best 2 / 4 /
+  5 contexts at n = 12 / 20 / 30, with NOSTEAL checked at every improvement (0 violations). The same climber unrestricted
+  (ONEP_ANY=1) reaches 3 / 2 / 1: it is too weak to show growth either way. The fleet's targeted two-player climbs reached 13 at
+  n = 40 (ctx13_n40), so the class number is not evidence that (CTX⁺) is easier there.
+- Status: GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P (§27b corollary). No route for (CTX⁺) on the class yet. With no steals the computation
+  at a fixed context is monotone along a phase: V_r and every prefix grow (§22r corollary, R11 (b)), and so (reading, NOT yet
+  checked) a root outcome can only go from −1 to stable, with V* growing. But the −1 branch's lowest threshold t (898-904) is not monotone in X, so the depth-0
+  chains of consecutive searches can cross. This is the same re-cutting that killed (CTX-LAMINAR) (§23i), and it is not removed
+  by the class.
