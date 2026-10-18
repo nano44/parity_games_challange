@@ -144,3 +144,34 @@ All measurements use L-ALG's tools UNMODIFIED (detached checkout of claude/l-alg
 - dtl_rootmono.py UNMODIFIED, both orders: 1 distinct first-difference context per phase (10 / 14 / 18 transitions at
   D = 4 / 8 / 12). Everything happens in the root context, so the family says nothing about (CTX+). The serialized-piece
   question of R38 stays open.
+
+## 8. Totals on the family against n (DATA, 03:35Z by date -u): all polynomial
+- Tools, both order data (identical output):
+  - Σ_q k_q per (context, phase): experiments/red/lag/sumk.py, a count of dtl_stealdepth.analyze's own events. Only the
+    count is mine; the run is the unmodified L-ALG model.
+  - #fired⁺(R), D_R and (CHANGE-NEW): L-ALG experiments/alg/dtl_changenew.py UNMODIFIED.
+  - Total exits per context: dtl_prefexits.py UNMODIFIED (section 7).
+  - Contexts: dtl_rootmono.py UNMODIFIED.
+- The maximum is in the root context in every row:
+
+  | D | n | max Σ_q k_q (distinct q) | max #fired⁺(R) | max D_R | total exits per context | S (searches in the phase) | first-difference contexts / transitions |
+  |---|---|---|---|---|---|---|---|
+  | 2 | 36 | 6 (4) | 12 | 8 | 25 | 9 | |
+  | 4 | 50 | 12 (6) | 16 | 10 | 75 | 11 | 1 / 10 |
+  | 6 | 64 | 20 (8) | 20 | 12 | 166 | 13 | |
+  | 8 | 78 | 30 (10) | 24 | 14 | 310 | 15 | 1 / 14 |
+  | 10 | 92 | 42 (12) | 28 | 16 | | 17 | |
+  | 12 | 106 | 56 (14) | 32 | 18 | 805 | 19 | 1 / 18 |
+
+  The total-exits entries for D = 2, 6, 8 are the Lead's re-run (03:43Z message); the rest are mine.
+- Closed forms on this data:
+  - Σ_q k_q = (D/2 + 1)(D/2 + 2), quadratic in n;
+  - #fired⁺ = 2D + 8 and D_R = D + 6, both linear;
+  - total exits per context are about cubic in D, with D_R ≤ #fired⁺(R) holding;
+  - S = D + 7 searches (Oink: D + 8 iterations);
+  - first-difference contexts per transition: 1 / (D + 6), falling.
+- (CHANGE-NEW) holds, and N*_R ≤ D_R holds, on every row (dtl_changenew).
+- So on this family no total grows super-polynomially. The R12 main route (STEAL-POLY_sum) and the R14 route (FIRED⁺-R)
+  are untouched. Only the constant-bound forms die: STEAL-DEPTH_D (section 6) and EXIT_c (section 7).
+- Box item (3), long-phase FIRED-R with multi > 0: not reachable with this family. S = D + 7 is below 2 abs R = 14D + 44,
+  so the root context never passes the S >= 2 abs R filter.
