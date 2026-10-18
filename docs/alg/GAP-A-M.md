@@ -4687,3 +4687,65 @@ c6_replay3_n32 forced for case O; onep_vrj_n40). (XCTX@p0) needs exactly what th
 persists from s to s+1 and that only the NEW vertices N are compared, and no lemma in hand uses either fact across contexts.
 No instance violating (XCTX@p0) is known. Item (2) ((CHAIN-CHANGE)) is not attempted, per the Lead's condition.
 Dead ends recorded in DEAD.md: (CHAIN-NEST) and (CHAIN-SIZE) below a first difference, with onep_nest_n68.
+
+36. Box 15 (L-ALG successor 10; Lead GO 20:59Z by date -u; proof-sketch box; produced on Opus 5.5; unrefereed; 21:20Z by date -u).
+Target: a proof sketch for (TREE-PIECE⁺) in two-player games, or the exact failing step.
+36a. Exact statement. G a parity game (TARGET.md §1; no class hypothesis), one phase of player p under one order datum, G′ fixed.
+For a search s, list its best_vertices calls in execution order; a call c has depth d_c, context R_c, rank ρ_c (n + 2 stable,
+emptying round e for −1, 0 if it returns 0), final V_c, its PIECE (R_c minus the context of the next call at depth d_c before the
+recursion returns to a shallower depth; all of R_c if none) and its position (index among the depth-d_c calls of its parent call).
+Key of v in piece(c): (v, d_c, position, ρ_c, |R_c|, |V_c|).
+(TREE-PIECE⁺): for every consecutive pair s, s+1 of the phase whose call sequences (d, R, ρ, V) differ, some vertex holds at s+1 a
+key it held at no search ≤ s of the phase.
+Consequence: such transitions ≤ #keys ≤ n⁶; with a bound on runs of identical call sequences (36c), searches per phase are
+polynomial. Diff against §34b: identical, with "call sequence differs" made explicit (the §34c amendment). Diff against TARGET.md:
+objects of §1, a statement about A_DTL's searches (gauntlet step 4); no definition changed; no M4 claim.
+36b. Sketch, step by step, and where it stops.
+ S1. (Signed, RESULTS R9 (a); R8 STR-DET) A best_vertices call reads only (R, p, T); its piece is fixed by (R, X, outcome, T), where X
+     is the set its search_rec level has removed so far (at depth 0, X = G′ \ R; deeper, X = parent piece minus R). Holds in general.
+ S2. (Signed, R5 (h) FDL with R8) Consecutive searches agree up to a first difference; let c* be the first call whose (d, R, ρ, V) or
+     piece differs. Its input (R, X) is the same in both searches. Holds in general.
+ S3. (DTL-proof Lemma 1.2b) For a fixed outcome, the piece is a tangle attractor from a seed fixed by (R, X, V) with fixed caps, so it
+     is monotone in T. Holds in general.
+ S4. Same-context novelty. On 𝒞^1P this is SAME-CTX: the outcome at a fixed (R, X) is monotone along the phase (OUTCOME-MONO-1P,
+     via NOSTEAL-1P), so a vertex of c*'s new piece cannot have held its key at an earlier visit of the same context.
+     IN TWO-PLAYER GAMES THIS STEP FAILS. Lemma LEX is FALSE there (experiments/alg/b12_lexchk.py CLASS=0, library and L-RED's four
+     instances, n ≤ 100: 18 of 9,341 search pairs stable, 12 of 9,621 Oink order). Pinned (already in the library):
+     experiments/alg/instances/cm_viol_oink_n28.pg (sha1 587d2c68a942; relevant steals in the run: 6). Odd's phase (1, 0), searches
+     4 → 5 (global indices): the root context (all 28 vertices) returns −1 with emptying round 8, then −1 with emptying round 7 — the
+     outcome FALLS at the same input. (TREE-PIECE⁺) still holds at that transition (data), but no lemma supplies the new key.
+     Replacement available from the signed record: R11 (c) (Π_R fails to rise only at a relevant steal) and R14 (F_R ≤ 3·#fired⁺(R),
+     unconditional). They bound the falls PER CONTEXT. Summed over the contexts of a phase this is exactly the open term of R9 / R14
+     (GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R)). So the replacement turns (TREE-PIECE⁺) into nothing weaker than the known reduction. The step with
+     no replacement: "at a fall of a context's outcome, some vertex of the tree gets a never-held key".
+ S5. Cross-context novelty: the §35 obstruction (input-monotonicity of the continuation below a first difference), which is worse in
+     two-player games ((CHAIN-NEST) already fails on 𝒞^1P, onep_nest_n68).
+36c. Identical call-sequence runs. In a run of searches with identical call sequences, every difference is inside sptl at a stable
+context of the fixed tree. The signed per-context budget R9 (a) bounds the transitions whose first difference is at one context R by
+2(F_R + 1)(H + 1) (post-landing doubling), H polynomial, F_R the non-rises of Π_R at R. On 𝒞^1P, F_R = 0 (NOSTEAL-1P with R11 (c)). In
+two-player games F_R ≤ 3·#fired⁺(R) (R14), so the bound needed is (FIRED⁺-R) at the stable contexts of one call tree. R5-R14 do NOT give it: (FIRED⁺-R) is open (GAPS
+GAP-A row). DATA: no identical-tree transition occurs in the library or in L-RED's instances; tp_ident_n20 has one, at a phase end.
+VERDICT (box 15): NO SKETCH. Exact failing step: S4, same-context novelty, because the outcome at a fixed input can fall in two-player
+games (LEX false, cm_viol_oink_n28, searches 4 → 5). The signed replacement (falls ≤ 3·#fired⁺ per context) gives back exactly the open
+(CTX⁺) ∧ (FIRED⁺-R) term. S5 has no route even on the class (§35). Identical-tree runs need (FIRED⁺-R), also open.
+(TREE-PIECE⁺) stays a DATA statement (0 violations). Referee trigger (b) is not reached.
+
+37. Standing check: (XCTX@p0) is FALSE on 𝒞^1P (Lead 21:54Z; L-ALG successor 10; 22:10Z by date -u; produced on Opus 5.5).
+Instance (L-RED R42, l-red 8f09538): experiments/red/xctx/instances/xctx_viol_n20.pg, sha1 742ba103cdb77cbb20e8d94e99120331568e84cd.
+(1) Exactness. Recomputed from §35a directly (not through b12_core's xcover, which intersects with the whole new piece instead of N,
+    nor through MODE=core, whose CORE-ALL tests the whole piece against all same-signature pieces; both flag the same transition):
+    Even's phase (0, 0), s2 → s3, p0 = 2; R_{p0} is the same set at s2 and s3 (as §33b requires); the outcome (3, V) is unchanged, so case
+    P and N = piece_{p0}(s3) \ piece_{p0}(s2) = {12}; the union in §35a over s′ ≤ 2 with R_{p0}(s′) ≠ R, equal size 17 and equal
+    signature (3, 17, 4) is piece_{p0}(s0), which contains 12. So N ⊆ the union: an exact violation of (XCTX@p0) as written, in both
+    order data. Not a weaker or stronger variant.
+(2) Class. In 𝒞_1 (every vertex of q = 0 has one successor), q-parity priorities distinct, all priorities distinct: 𝒞^1P in §27b's
+    and §33's sense. Pinned Oink: 6 iterations, solution verified; model winners equal to Zielonka (both orders).
+(3) What survives. The §33 Corollary (GAP-A on 𝒞^1P ⇐ (XCTX@p0) ∧ (CHAIN-CHANGE)) has a FALSE hypothesis and gives no route.
+    Lemmas W, SAME-CTX and LEX are unaffected (they do not assume (XCTX@p0)). On this instance (VR-NEW_all), (VR-NEW_V), (VR-NEW_s),
+    (TREE-PIECE⁺) and (FD-WITNESS_all) (§32h, witness in the changed piece at j* or j* − 1) all still HOLD, with margin 1: the one new
+    full key is (14, 22, 3, 1, 1), vertex 14 at position 3 = j* (R_3 shrinks to {14} with a never-seen signature), not in N. So the
+    amended statement is (FD-WITNESS_all) itself, the DATA form that (XCTX@p0) was meant to prove; nothing proved is lost, and no
+    proved reduction remains on 𝒞^1P.
+(4) L-RED's Lemma EMPTY-REC (R42 §2: in 𝒞_C every recursive search_rec(Z, q, depth+1) of a q-search has Z = ∅): DATA agrees. 𝒞^1P set
+    (DIST=1) plus xcov11_n20 and xctx_viol_n20, 2,982 runs (both orders): 0 best_vertices calls at depth ≥ 1 with a nonempty context
+    in q's phases (6,372 occur in the controller's phases, where CTRL applies). Its proof (dtl.cpp 898-955) was not re-derived here.

@@ -192,6 +192,36 @@ else echo "tcL generator check skipped (no tc build)"; fi
 if [[ -x ../../tools/oink/build/oink ]] && command -v g++ > /dev/null; then
   meet/oinkmeet.sh carry/instances/meet_viol_n17.pg | grep -q "^MEET FAILS at search 0" || { echo "meet_viol_n17: pinned Oink no longer shows the (MEET) failure (R30)"; exit 1; }
 else echo "meet_viol_n17 pinned-Oink check skipped (no oink build or no g++)"; fi
+# R42 (box 14): (XCTX@p0) kill on 𝒞^1P and the near miss; L-ALG's b12_core (in-tree copy, unmodified) in both orders.
+[[ "$(sha1sum xctx/instances/xctx_viol_n20.pg | cut -c1-12)" == "742ba103cdb7" ]] || { echo "xctx_viol_n20 sha1 changed"; exit 1; }
+[[ "$(sha1sum xctx/instances/xcov11_n20.pg | cut -c1-12)" == "47023109c198" ]] || { echo "xcov11_n20 sha1 changed"; exit 1; }
+for o in stable oink; do
+  out=$(cd ../alg && DTL_ORDER=$o MODE=core CLASS=1 DIST=1 python3 -I b12_core.py ../red/xctx/instances/xctx_viol_n20.pg | grep -o "CORE-ALL violations [0-9]*")
+  [[ "$out" == "CORE-ALL violations 1" ]] || { echo "xctx_viol_n20: b12_core CORE-ALL drifted ($o): $out"; exit 1; }
+  out=$(cd ../alg && DTL_ORDER=$o MODE=xcover CLASS=1 DIST=1 python3 -I b12_core.py ../red/xctx/instances/xcov11_n20.pg | grep -o "cross-context [0-9]*")
+  [[ "$out" == "cross-context 1" ]] || { echo "xcov11_n20: b12_core xcover drifted ($o): $out"; exit 1; }
+  out=$(cd xctx && DTL_ORDER=$o python3 -I xscore.py instances/xctx_viol_n20.pg | grep -o "score ([0-9]*")
+  [[ "$out" == "score (1" ]] || { echo "xctx_viol_n20: (XCTX@p0) violation not reproduced ($o): $out"; exit 1; }
+done
+# R42 §5 (box 14): (VR-NEW_all) kill on 𝒞^1P; b12_pot (in-tree, unmodified) K-v-all = 1 in both orders.
+[[ "$(sha1sum xctx/instances/vrall_viol_n20.pg | cut -c1-12)" == "ed5058576554" ]] || { echo "vrall_viol_n20 sha1 changed"; exit 1; }
+for o in stable oink; do
+  out=$(cd ../alg && DTL_ORDER=$o CLASS=1 DIST=1 python3 -I b12_pot.py ../red/xctx/instances/vrall_viol_n20.pg | grep "K-v-all" | awk '{print $3}')
+  [[ "$out" == "1" ]] || { echo "vrall_viol_n20: b12_pot K-v-all violations drifted ($o): $out"; exit 1; }
+done
+# R43 (box 14): (TREE-PIECE⁺) kill, two-player; L-ALG's b12_ident.tp_score PLUS=1 (in-tree copy, unmodified), both orders.
+[[ "$(sha1sum tpp/instances/tpp_viol_n22.pg | cut -c1-12)" == "a5088b091cbd" ]] || { echo "tpp_viol_n22 sha1 changed"; exit 1; }
+[[ "$(sha1sum tpp/instances/tpp_viol_n63.pg | cut -c1-12)" == "64d0832859a4" ]] || { echo "tpp_viol_n63 sha1 changed"; exit 1; }
+for o in stable oink; do
+  out=$(cd ../alg && PLUS=1 python3 -I -c "import sys; sys.setrecursionlimit(100000); sys.path.insert(0, '.'); sys.path.insert(0, '../harness'); import pg, b12_ident as I; print(I.tp_score(pg.read('../red/tpp/instances/tpp_viol_n22.pg'), '$o'))")
+  [[ "$out" == "(1, 0, 3, 5)" ]] || { echo "tpp_viol_n22: tp_score PLUS=1 drifted ($o): $out"; exit 1; }
+done
+# R44 (box 14): (NO-PRE-a) kill; L-ALG's b12_nopre.py scan (in-tree, unmodified) reports pre = 1 in both orders.
+[[ "$(sha1sum nopre/instances/nopre_viol_n20.pg | cut -c1-12)" == "9a93a8e24832" ]] || { echo "nopre_viol_n20 sha1 changed"; exit 1; }
+for o in stable oink; do
+  out=$(cd ../alg && DTL_ORDER=$o python3 -I b12_nopre.py scan ../red/nopre/instances/nopre_viol_n20.pg | tail -1 | grep -o "\[[0-9]*,")
+  [[ "$out" == "[1," ]] || { echo "nopre_viol_n20: (NO-PRE-a) precondition count drifted ($o): $out"; exit 1; }
+done
 TMPDIR="$t" python3 correspond.py 2 3 4 5 6 > "$t/corr.log" || { cat "$t/corr.log"; exit 1; }
 python3 xcheck.py --games 150 --nmax 7 --seed 7 > "$t/x.log" || { cat "$t/x.log"; exit 1; }
 echo "red check: r2_check PASS (R11), bsolo 4 = 4 tangles/7 iterations (R10); dtl_flipflop F8 = 36/1/5 (R9), Claim P/Q 0 violations; zadeh_lb N2 = 43 (no fixed order, R7); fhz_padded 2 S7 = 16 (R5 kill);  friedmann_Gn 2 S7 = 15; fhz lockstep3/relation/export OK; gated_bland 6 = 63 MSF iterations (regions = Zielonka, strategies verified); Claim F instances; MSF == Bland N<=6; $(tail -1 "$t/x.log")"
