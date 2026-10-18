@@ -163,6 +163,8 @@ done
 for o in stable oink; do   # depth 4 / k 3 on fam_D4 by L-ALG's dtl_stealdepth.py (in-tree copy = l-alg e0fc1bb0), both order data
   out=$(cd ../alg && RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=$o python3 -I dtl_stealdepth.py ../red/lag/instances/fam_D4_n50.pg 2>&1 | grep '^max')
   [[ "$out" == "max k 3; max depth 4" ]] || { echo "fam_D4_n50 depth drifted ($o): $out"; exit 1; }
+  out=$(cd ../alg && RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=$o python3 -I dtl_prefexits.py ../red/lag/instances/fam_D4_n50.pg 2>&1 | grep '^max exits' | grep -o '\[(3, 50,')
+  [[ "$out" == "[(3, 50," ]] || { echo "fam_D4_n50 exits drifted ($o): expected max exits 3 (R39 §7)"; exit 1; }
 done
 if [[ -x ../../tools/oink/build/oink ]] && command -v g++ > /dev/null; then
   meet/oinkmeet.sh carry/instances/meet_viol_n17.pg | grep -q "^MEET FAILS at search 0" || { echo "meet_viol_n17: pinned Oink no longer shows the (MEET) failure (R30)"; exit 1; }
