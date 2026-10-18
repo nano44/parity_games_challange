@@ -3527,3 +3527,41 @@ pairs; each has an entry or an exit, so M_R ≤ N_ent + X_R ≤ 2X_R + (|R| + 1)
   be linear is the block length.
 Status: Lemma QUIET-BLOCK and the corollary are a reading, unrefereed; the data columns above are DATA. Candidate for the next
 referee packet (short; the only new ingredients are steps 2 and 4).
+
+23x. Box 10: (EXIT_c) proof attempt: where exits come from, one kill, and the exact missing step (L-ALG succ. 8, 01:54Z
+by date -u; produced on Opus 5.5; tools experiments/alg/dtl_exitshape.py, dtl_netgrowth.py, dtl_roundfalls.py, dtl_exitclimb.py)
+Grid and conventions as in §23t / §23w. The step order is: rounds ascending; within a round, grid tops descending, then the
+virtual end-of-round step (prefix U_r).
+Lemma EXIT-ORIGIN (reading, unrefereed). Let x → y be a consecutive visit pair of R with at least one exit (grid or virtual), and
+let σ₁ = (r₁, τ₁) be its first exit step. Then (a) V_{r₁}(x) ⊆ V_{r₁}(y), and (b) the pair has a relevant steal at a step
+(r₁, τ′) with τ′ > τ₁. So every exit of a pair is either in the round of a relevant steal above it, or later than an earlier
+exit of the SAME pair; a "V-loss" exit (a higher top of V_r(x) missing from V_r(y)) is always secondary.
+Proof. (a) No exit before σ₁ means U_r(x) ⊆ U_r(y) for r < r₁ (no vertex leaves U_r: the virtual step is included). Steps 3-4 of
+QUIET-BLOCK (§23w) use only U ⊆ and T ⊆, so W_{r,t}(x) ⊆ W_{r,t}(y) and V_{r+1}(x) ⊆ V_{r+1}(y) for r < r₁. (b) In round r₁,
+V ⊆ V′ and T ⊆ T′; if no relevant steal occurred at a step above τ₁ in round r₁, local PREFIX-MONO-X* (§23g G23g-1; signed
+in R12 (b) as G23g-1) gives P_x(σ) ⊆ P_y(σ) for every step σ of round r₁ up to and including σ₁, so no exit at σ₁. □
+DATA (dtl_exitshape.py; RM_LIGHT=1 RM_DV=0; corpus 141 files + stealer_viol_n76, stealonce_viol_n76, stealonce_both_n45,
+fall3_n76, fall4_n116; both orders):
+- Exits by round and cause (grid exits; cause 'Vloss' = a higher top of V_r(x) is missing from V_r(y)): stable round 1: 5 (all
+  steal); rounds ≥ 2: 1,406 Vloss, 982 steal. Oink: round 1: 0; rounds ≥ 2: 663 Vloss, 239 steal.
+- (DOWN_2) "top_r(w) falls at most twice per (context, round, vertex) per phase" (any level; implies (EXIT_2)): histogram of
+  falls per (r, w) with ≥ 1 fall: stable {1: 1,840, 2: 283}, Oink {1: 891, 2: 12}. Max 2.
+- (NET-GROWTH) KILLED (DEAD.md box 10; cm_viol_oink_n28, lex_viol_oink_n20). The obstruction is a round-index SHIFT: in
+  lex_viol_oink_n20 (root, pair 1, stable) the later visit keeps 7 and 6 tops in rounds 3-4 (3 and 4 before), ends after 14
+  rounds instead of 15, and rounds 5-15 show 0 entries and 146 exits.
+- Round-count oscillation (dtl_roundfalls.py, same sets): falls of a context's round count per phase: stable {0: 1,417, 1: 179,
+  2: 5}, Oink {0: 1,390, 1: 178, 2: 4}; max 2, on cm_viol_oink_n28 root: 5, 5, 8, 7, 9, 11, 10 (the last a res = 1 stop, which
+  repeats its round and empties nothing).
+Reading of the obstruction (why EXIT_c is hard):
+- The per-visit grid vector, ordered by step, increases LEXICOGRAPHICALLY at every pair (QUIET-BLOCK steps 1-4 up to the first
+  change, then the first change is growth: a new top or a strictly larger region with an equal prefix). (EXIT_c) is exactly the
+  statement that this lexicographic chain is not a counter: a coordinate (σ, w) is reset (exit) only O(1) times. EXIT-ORIGIN
+  says each reset is triggered by a growth at an earlier coordinate of the same pair, which is what a binary counter does. So a
+  proof must show that DTL's growth at an earlier coordinate cannot RE-trigger the same reset more than c times, i.e. a
+  per-vertex charge of re-entries to something consumed. Every candidate charge tried so far (RV, Φ_grid, depth) is dead or
+  multiplicative.
+- What a counter would need on A_DTL: one context whose round count (or one region's top set) oscillates ≥ 3 times in one phase
+  under DTL's own learning. Data: round count falls ≤ 2, top_r(w) falls ≤ 2.
+Status: Lemma EXIT-ORIGIN is a reading, unrefereed. (EXIT_c) and (DOWN_2) are DATA. No proof route closes; L32 is NOT met by this
+section. Self-attack climbs (dtl_exitclimb.py, fitness exits ≥ 3, then round-count falls) are running from cm_viol_oink_n28 and
+stealonce_both_n45.

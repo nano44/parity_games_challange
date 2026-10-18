@@ -257,3 +257,13 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
   ctx12_oink_n40, 27 iterations, and spp_chain_up_n43, 43 iterations, both re-run box 8).
 - (FIRED-HALL), the fired tangles of a context admit distinct representatives (GAP-A-M §23m): DEAD. Instance
   experiments/alg/instances/fired18_stable_n20.pg (stable; 8 fired tangles on 6 vertices). FIRED ≤ |R| has no local reason.
+- Box 10 (L-ALG succ. 8, 01:54Z by date -u; GAP-A-M §23w-§23x):
+  - G23u fix "charge the threshold-loop first differences to RV rises (§22r C1-C3)" (§23u): DEAD. At every no-entry differing
+    pair (8,318 over corpus + DE19/DE20, mixed and cross unions, both orders; dtl_drthr.py) RV is unchanged. Killer
+    experiments/alg/instances/spp_chain_up_n43.pg (sha1 b9b0fd20; pinned Oink 43 iterations, 41 tangles, verified, re-run box 10):
+    root context, all 41 differing pairs quiet, RV equal, both orders. Replaced by Lemma QUIET-BLOCK (§23w), which closes G23u.
+  - (NET-GROWTH) "at every non-quiet pair the grid entries outnumber the grid exits" (would give M_R ≤ (|R|+1)|R|², §23x):
+    DEAD. Instances experiments/alg/instances/cm_viol_oink_n28.pg (sha1 587d2c68; pinned Oink 9 iterations verified; root pair 2:
+    212 entries / 476 exits stable, 223 / 406 Oink) and lex_viol_oink_n20.pg (sha1 1a436027; pinned Oink 5 iterations verified;
+    39 / 214 stable); dtl_netgrowth.py, 13 of 988 (stable) and 12 of 955 (Oink) non-quiet pairs fail. Obstruction: round-index
+    SHIFT; the later visit prunes faster, ends a round earlier, and every later round's prefixes collapse on the grid.
