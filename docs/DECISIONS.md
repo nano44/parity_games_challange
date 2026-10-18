@@ -241,3 +241,20 @@ Lead reading L34 (2026-10-18 08:55Z by date -u):
 (4) D1 cap: at most 5 working sessions: L-ALG, L-RED, the (c) lane once approved, and at most two of REFEREE, REFEREE-2 and
     CHECKER at a time.
 
+## D14 (2026-10-18 ~08:59Z and ~09:02Z, owner via OWNER-DESK owner-desk 64c66ac and 425a190, answering Q15, the direction for (c))
+> D
+> You know it can also test prveiously not tested approaches, it can come up with it own as well
+
+Lead reading L35 (2026-10-18 09:04Z by date -u):
+(1) "D" is the Lead's choice of direction for (c), and with the follow-up it is the owner's approval (D1) of ONE (c) lane that is
+    not limited to the mapped options A-C: it may test approaches the fleet has not tested, including its own.
+(2) The Lead's pick: a new design lane L-NEW (Opus 5.5 under D8; files docs/new/, experiments/new/, notes/L-NEW.md). Box 1:
+    (i) option A first as a fast kill test, S5 (Zadeh, index tie-break) and S6 (Cunningham, index order) on the hard bench and
+    under adversarial numbering, using L-SI's engine; (ii) then up to three approaches of its own, each screened against
+    docs/lit/BARRIERS.md and the dead-end record before any code, and run on the hard bench before any gauntlet step.
+    Option B (weak separators) is queued for after the Fable reset.
+(3) Unchanged: D1 "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+    fleet's own, as wrong until it passes the gauntlet below."; the gauntlet (TARGET.md section 5); big numbers at bit cost.
+    An approach that survives gauntlet step 2 is reported to the owner at once.
+(4) Working sessions: L-ALG, L-RED, L-NEW (3 of the D1 cap of 5).
+
