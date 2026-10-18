@@ -176,3 +176,25 @@ All measurements use L-ALG's tools UNMODIFIED (detached checkout of claude/l-alg
   are untouched. Only the constant-bound forms die: STEAL-DEPTH_D (section 6) and EXIT_c (section 7).
 - Box item (3), long-phase FIRED-R with multi > 0: not reachable with this family. S = D + 7 is below 2 abs R = 14D + 44,
   so the root context never passes the S >= 2 abs R filter.
+
+## 9. Box order (c), first-difference contexts: status at 03:44Z (date -u). Not achieved; what a construction must satisfy
+- DATA:
+  - lagfam has 1 first-difference context per phase at every D (section 8).
+  - Disjoint stacks of two copies with different D (experiments/red/lag/stack.py; D 2+4 and 4+2, n 86) also give 1 context
+    in 10 transitions (dtl_rootmono UNMODIFIED, stable).
+  - Depth there is 4 (the larger copy). The copies run in lockstep, as R38 found for unions.
+- READING:
+  - The first difference of a transition is the first tattr log entry whose first four fields differ: caller, depth, Z in,
+    Z out (experiments/alg/dtl_fdlcheck.py CK.tattr and reduce_log).
+  - So a transition's first difference leaves the root call only if EVERY tattr of the root call returns the same Z.
+    This covers the round regions, the bv threshold loop ("bv-thr", consume None) and the root's sptl, dom and -1 entries.
+  - In lagfam this fails by design: S's round-1 region grows at every visit.
+- Necessary condition for a serialized piece U whose learning sits in a lower context C (depth 0 after a dom, or depth >= 1):
+  every tangle U learns between two visits must leave every tattr Z of the earlier calls unchanged.
+  - In a round region, its trigger escape must not be popped, or it must be excluded.
+  - In the threshold loop (no consume, bound up to the maximum priority), some escape must stay outside Z_t at every
+    threshold. So U's tangles need an escape into a part the root's threshold attractor never reaches, or the root must
+    return 1 at round 1, before any threshold loop.
+  - ctx13_n40 meets this for 16 of its 24 transitions: their first differences are in depth-0 calls of abs R 26-39.
+- Not built in this box (context budget). For a successor: a relay unit placed in a context where the root returns 1 at
+  round 1, with its clock's tangles escaping only into vertices the root call never attracts.
