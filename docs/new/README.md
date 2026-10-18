@@ -1,8 +1,8 @@
 # L-NEW: (c) design lane (D14, Lead reading L35). One line per approach.
 | id | approach | status |
 | --- | --- | --- |
-| N0-S5 | Zadeh least-entered rule, index tie-break (L-SI S5), under adversarial renumbering | BOX 1 (i): sweep running (experiments/new/run_renum.sh) |
-| N0-S6 | Cunningham round-robin, index order (L-SI S6), under adversarial renumbering | BOX 1 (i): sweep running |
+| N0-S5 | Zadeh least-entered rule, index tie-break (L-SI S5), under adversarial renumbering | not killed (fast test, S5S6-renum.md); sweep still running |
+| N0-S6 | Cunningham round-robin, index order (L-SI S6), under adversarial renumbering | not killed (fast test, S5S6-renum.md); sweep still running |
 | N1 | DISC-ANNEAL: discount 1-2^-j annealing, warm-started switch-all (N1-disc-anneal.md) | implemented; UNDER TEST (not killed so far; switchallexp quadratic vs plain doubling; no claim) |
 | N2 | PRIO-ANNEAL: top-down priority coarsening, warm-started SI (N2-prio-anneal.md) | proposed |
 | N3 | BLACKWELL-PATH: exact discount homotopy (N3-blackwell-path.md) | proposed |

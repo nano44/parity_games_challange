@@ -33,5 +33,15 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 (none yet)
 
 ## Things only I know
+- N1 stop test: "sigma has no VJ improving switch" is WRONG as a stop test (a region-correct sigma need not be VJ-optimal;
+  tc 4 stalled at j = 102 forever). The certificate (sign of values + harness/verify.py on both restricted strategies) is right.
+- Merging equal-parity neighbouring priorities alone kills Friedmann's switchallexp for plain VJ switch-all (10, 7, 9, 11, 13 for
+  N = 2..6): the counter depends on strict priority order; merged ties are ranked by index. Any test of an SI-type method must
+  say whether it merges. Adversary can block merging by dummies.
+- N1 on switchallexp is invariant under priority spreading p -> K p (K = 3, 9: identical even/odd iteration counts; phases
+  scale by K). Reveal order of decisions, not their absolute horizon, determines the run.
+- N1 ablation (straight at the final gamma) = Friedmann's counts exactly, matching 1106.0778 Thm 9.5 / Lemma 9.6.
+- The exact integer-scaled evaluation (Q = b^n * prod over cycles (b^L - a^L)) is only ~25% faster than Fractions; the cost is
+  the number of phases (~(d+3) log2 n without merging) times big-number comparisons.
 - Index dependence in L-SI's engine: the vertex numbering enters (a) the injective priority rank (ties of equal priority by
   index), (b) the best-reward start (ties), (c) the zadeh tie-break / the cunningham cyclic order. A renumbering changes all three.

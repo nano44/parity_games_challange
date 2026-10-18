@@ -85,3 +85,11 @@ originals shifted by +2). Uniform L = 8, and L = 1 + 24·pr(w)/max or 1 + 24·(m
 gamma^t · n^Δp outweighs the closer rewards, i.e. at horizon about t / (Δp ln n); uniform or monotone delays keep the
 ORDER of reveals, so they do not force the counter into one phase. A killer must equalise reveal times (delay ∝ Δp per
 decision), which needs chains of length ~ horizon · Δp · ln n per edge: polynomial, but beyond the exact Python engine.
+
+## Further killer attempts (10:00-10:20Z, --nocompress), none killed
+- Priority spreading p -> K p (experiments/new/spread.py), K = 3, 9, switchallexp N = 2..5: N1 counts identical to K = 1
+  (25, 42, 64, 90); only the number of phases scales by K. The run depends on the order of reveals, not their horizon.
+- Bit-indexed delays (bitdelay.py; chain c(i+1) or c(N-i) on edges of bit i's Even vertices, c = 2): plain VJ 15, 35, 75;
+  N1 26, 44, 69 and 25, 43, 64 (N = 2..4); c = 8, N = 2: 26.
+- Per-edge delay hill climb (delay_search.py, delays 0..12, switchallexp N = 2): best 49 Even iterations after 155 steps
+  (base 25; plain VJ 30 on the undelayed game). Running; N = 3 next. A higher count at fixed N is not a family.
