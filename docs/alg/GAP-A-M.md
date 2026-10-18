@@ -4466,3 +4466,15 @@ transitions. Climbs against (VR-NEW_V) and (VR-NEW_s) from onep_vrj_n40 are runn
   survivors are not explained vertex by vertex: at those transitions some vertex returns to an old state and ANOTHER vertex
   supplies the new key. Reading: (VR-NEW_*) is a global no-repetition statement, i.e. a no-counter statement, with no local
   mechanism found. Its survival on short phases (max 42 transitions in the data) is weak evidence.
+32g. Long phases and margins (DATA; 16:55Z by date -u).
+- Long class phases: the chain family (dtl_chainfam.py UP=1) forced into 𝒞_1 (a → b), priorities refined: k = 20, 40, 60 give
+  21, 41, 61 chain-changing transitions in one phase; (VR-NEW_V), (VR-NEW_s), (VR-NEW_all) and even the dead (VR-NEW_j) have 0
+  violations, both orders. (A benign family: one piece grows per search.) With a → a the phase has 2 searches.
+- Two-player long phases with steals: lagdist_D4/D8/D12, lagflat5/7 (D up to 16, n ≤ 134), depth2-4, fam_D4/8/12 (red/lag):
+  K-v-rV and K-v-all 0 violations (up to 22 chain-changing transitions), stable.
+- Margins (tool b12_margin.py, 𝒞^1P set, 1,094 chain-changing transitions, stable): transitions where exactly ONE vertex
+  supplies a new key: (VR-NEW_V) 58, (VR-NEW_s) 34, (VR-NEW_all) 7. So the statements hold narrowly on about 5% / 3% / 0.6% of
+  transitions. A two-player class-free climb against K-v-all from ctx13_n40 made no progress in its first hour (start score
+  (0, 26, 29)).
+STATUS at 16:55Z: survivors (VR-NEW_V), (VR-NEW_s), (VR-NEW_all) (DATA). No proof route: the novelty is global (NO-RETURN false,
+§32f), not per-vertex. L32: not met in box 12.
