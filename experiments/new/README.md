@@ -3,6 +3,7 @@
 | --- | --- |
 | renum.cpp (+ vjfast_copy.cpp) | Box 1 (i): renumbering hill climb for S5 (zadeh) / S6 (cunningham); vjfast_copy.cpp is a verbatim copy of experiments/si/vjfast.cpp (sha1 af4f517) whose main is renamed. `g++ -O2 -std=c++17 -o renum renum.cpp` |
 | run_renum.sh | sweep over the bench families; out/renum/summary.csv |
+| anneal.cpp | C++ port of N1 (boost cpp_int, shifts for gamma = (2^j-1)/2^j); `g++ -O2 -std=c++17 -o anneal_c anneal.cpp`; xcheck_c.py: equal to anneal.py on 1,000 games (seed 21); rand_c.py: random-game agreement; run_anneal_c.sh: bench sweep; check_sol.py: Zielonka + verify |
 | anneal.py | N1 DISC-ANNEAL (docs/new/N1-disc-anneal.md). Run with --nocompress (the candidate); default merges priorities (N1m). --check compares with Zielonka and verifies strategies; --j0 J ablation; --xcheck integer vs Fraction values |
 | anneal_random.py | N1 vs Zielonka + strategy check on harness/gen.py corpora |
 | anneal_adv.py | adversarial hill climb over small games (objective: N1 iterations or largest phase) |
