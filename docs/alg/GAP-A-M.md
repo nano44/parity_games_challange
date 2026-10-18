@@ -4454,3 +4454,15 @@ K-v-rs 26, K-v-rV 8, K-v-rjV 5, K-v-all 0 violations. The 59 K-v-rj violations s
 SURVIVORS now (DATA): (VR-NEW_V) key (v, ρ, |V_{j(v)}|) [n(n+3)(n+1) values] and (VR-NEW_s) key (v, ρ, |R_{j(v)}|) on 𝒞^1P;
 the weakest, (VR-NEW_all) key (v, ρ, j, |R_j|, |V_j|) [≤ n^5 values], on 𝒞^1P and on the two-player library at chain-changing
 transitions. Climbs against (VR-NEW_V) and (VR-NEW_s) from onep_vrj_n40 are running.
+32f. Climbs and a per-vertex test (16:35Z by date -u).
+- Class-preserving climbs, 0 violations: against (VR-NEW_V) from onep_vrj_n40, stable, 2,500 steps (best 11 chain-changing
+  transitions at n = 40); against (VR-NEW_s), Oink order, 2,500 steps (best 8); against (VR-NEW_all) from onep_fdkey_n20, Oink
+  order, 5,000 steps (best 8 at n = 20).
+- Two-player library, n ≤ 200, Oink order (1,651 transitions, 103 identical depth-0 chains): K-v-all 0 violations at the 1,548
+  chain-changing transitions (K-v-r 126, K-v-rj 67, K-v-rs 28, K-v-rV 7, K-v-rjV 4).
+- (NO-RETURN) "no vertex returns to a piece signature it held earlier in the phase and left" (tool b12_noret.py): FALSE on the
+  𝒞^1P set (1,094 transitions, stable): signature (ρ, j, |R|, |V|) 9 transitions (first h4_def5_stable_n20 forced into 𝒞_0,
+  vertex 19), (ρ, |V|) 47 (first cross_h_k1_n11_m17_6 refined), (ρ, |R|) 6 (first onep_firecross_n76, vertex 37). So the
+  survivors are not explained vertex by vertex: at those transitions some vertex returns to an old state and ANOTHER vertex
+  supplies the new key. Reading: (VR-NEW_*) is a global no-repetition statement, i.e. a no-counter statement, with no local
+  mechanism found. Its survival on short phases (max 42 transitions in the data) is weak evidence.
