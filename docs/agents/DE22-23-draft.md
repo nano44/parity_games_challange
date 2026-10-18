@@ -1,4 +1,4 @@
-# Draft RESULTS DE22 and DE23 (Lead, 2026-10-18 18:50Z by date -u) — for CHECKER (with DE21-add3-draft.md and the R40 pointer)
+# Draft RESULTS DE22 and DE23 (Lead, 2026-10-18 ~18:17Z by git) — for CHECKER (with DE21-add3-draft.md and the R40 pointer) (rev. after C16: E-1 applied; R40 pointer text below with E-2 applied)
 
 - DE22 (2026-10-18): L-NEW candidate N1 = Loff-Skomra IncreasingDiscountPI (arXiv 2402.03975 Fig. 12; 2610.22149 §7.4,
   Fig. 7.2) on parity-induced rewards ±n^pr, Howard switch-all for the switching player, warm starts, γ_j = 1 − 2^−j (L-NEW
@@ -16,7 +16,7 @@
   the priority-compression variant N1m dies once priorities are padded (pad_prio.py).
   Faithfulness: REFEREE-2 docs/referee-2/R2-N1-FAITH.md (referee-2 520d701), FAITHFUL WITH CAVEATS (Opus 5.5, D12):
   (C1) anneal.cpp swaps the players' roles relative to 2402.03975's DiscPI figure (Odd best-responds, Even switches) — LS on
-  the negated game, allowed by 2610.22149 §7.4 ("any optimal DiscPI"); in LS's literal orientation G_N is easy, and the kill
+  the negated game, allowed by 2610.22149 §7.4, where DiscPI(σ,τ,γ) is any procedure that outputs a pair of optimal policies (REFEREE-2's reading of the opened text); in LS's literal orientation G_N is easy, and the kill
   transfers by duality: LS-literal on dual(G_N) gives 11, 31, 71, 151, 311 outer switch-alls in one phase (N = 1..5, regions
   verified). So IncreasingDiscountPI with Howard is exponential in both orientations (G_N resp. dual(G_N)).
   (C2) The general claim "the certificate stops no later than LS's test" is not proved and can fail; it is not needed: on G_N
@@ -31,3 +31,7 @@
   experiments/new/instances/killer/padsae_N1..N7.pg (claude/l-new f301bfb; N7 sha1 9ee0385509ac…, n = 230). Largest single
   stage 6, 15, 34, 72, 148, 300, 604 switch-all iterations at N = 1..7. Lead re-run (detached l-new f301bfb, unmodified):
   N = 3..6 give 34, 72, 148, 300 (stage counts 61/77/93/109), sha1 = pins, regions = Oink zlk. Single implementation, DATA.
+
+- G-R14-5 pointer (append to the RESULTS gap line, rev. after C16 E-2): see L-RED R40 (docs/red/R40-tcL-contexts.md, l-red 2a75c4a):
+  first-difference contexts in Even phase 0 are S − 3 (tcL(N), N ≥ 6) and S − 1 (leanT(N), n = 8N), both orders, i.e. linear in S
+  and within an additive constant of the phase length S (no slack at all on leanT); no refutation of (CTX⁺).
