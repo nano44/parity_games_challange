@@ -195,6 +195,9 @@ K6 (DLM distraction; box 5, docs/new/N5-dlm-box5.md §4). N5 follows an SSI path
    although Iσ(v) ≠ ∅, σ(v) is restricted-optimal against τ (a local stall). On DLM's SSI paths N5's step only ADDS switches, exactly
    there (342 Even / 399 Odd vertex-events, n = 2..5, never the reverse). Blunders that would supply the local stall change τ̄ and
    so SSI's own path, and N5 exploits them (module: SSI stays ≈ 2^(n+1), N5 needs 2-15 iterations, the same in both tie-break modes).
+K7 (switch-best forcing; N5-dlm-box5.md §7). N5's Even step equals switch-best's whenever τ = Odd's arena-optimal reply τ_sb
+   (proved). Forcing switch-best's exponential path needs τ_{k+1} = OddStep(σ_k, τ_k) = τ_sb(σ_{k+1}) at every step. On switchbestexp,
+   τ_sb changes 1, 4, 10, 24 times (N = 1..4; 2^N distinct values), N5's Odd step misses every change, and N5 leaves the path.
 Families that make N5 slow WITHOUT fallbacks:
 - They must defeat the restricted best response against τ.
 - When τ = σ̄ (Odd has no real choices, as in switchallexp: only h0, h1 choose), Even's step is the optimum of the one-player arena

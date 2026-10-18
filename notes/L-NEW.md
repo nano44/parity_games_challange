@@ -11,6 +11,14 @@ Box 5 DONE (docs/new/N5-dlm-box5.md):
 - Tools: dlm_diag.py, dlm_agree.py, dlm_module.py.
 - L-COMP's n5b.py (claude/l-comp 29a6ed17) runs read-only from scratchpad/lcomp/n5-second/n5b.py, with symlinks to
   experiments/hard-families and experiments/harness. Run it with --start FILE (a COMPLETE start pair) and --mode spec|orig.
+Box 5 part 2 (23:10Z by date -u):
+- Skip states characterised. Harmful skips can be forced in ≤ 88% of iterations, but runs stay ≤ n/2.
+- Switch-best coincidence lemma (τ = τ_sb ⇒ N5 step = switch-best step). On switchbestexp N5 follows switch-best's path for 13
+  iterations and then leaves it: τ_sb changes 2^N-ish times and N5's Odd step misses every change.
+- K7 written (N5-dlm-box5.md §7).
+- Tools: n5_skip.py, n5_adv4.py, n5_vs_sb.py, sb_traj.py, sb_tauvar.py.
+NEXT candidate for a successor (the sharpest remaining lead): a switch-best family whose arena reply τ_sb changes only in ways that
+OddStep(σ_k, ·) reproduces. Test it with sb_tauvar.py (misses at changes must be 0).
 NEXT: "N5 ⊇ SSI" is FALSE in general (random games, n5_superset.py); it holds on DLM only. Untried lead: exploit the states where
 N5 skips an SSI switch. Otherwise the box-4 NEXT items (a)-(d) below.
 Box 4 (kept):
