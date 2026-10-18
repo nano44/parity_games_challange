@@ -147,3 +147,14 @@ first iteration whose VJ regions and strategies pass the same certificate (exper
 copy + --certstop). It still doubles: switchallexp N = 2..9: 14, 34, 74, 154, 314, 634, 1247, 2490; switchbestexp N = 2..9:
 30, 70, 150, 310, 630, 1270, 2550, 5110 (solutions = Zielonka, strategies verified on the instances checked). So N1's
 advantage on these families is not the stop rule. (fhz_padded is certified at iteration 0: Odd wins there from the start.)
+
+## Weak evidence warning: Friedmann's families are trivial from Odd's side (11:40Z)
+Odd wins EVERY vertex of switchallexp, switchbestexp and gated_switchallexp (Zielonka; e.g. switchallexp 4: 0 of 63 Even-won).
+On the dual game (owners swapped, priorities +1; experiments/new/dual.py) plain VJ Howard needs 2, 3, 4, 5, 6, 7 iterations
+for switchallexp and switchbestexp N = 2..7 (gated_switchallexp: 7, 9, ..., 17; zadehexp 3..13; randomfacetsubexp 2..7;
+tc 4..15; counter_symsi 3..19). So "run Howard for both players and stop at the first certificate" already beats these
+families, and N1's quadratic counts there are WEAK evidence. A meaningful test family for N1 must be hard for Howard from
+BOTH sides (e.g. the symmetric-SI families of B11, or a two-sided composition of Friedmann's games). Not yet built.
+More data (C++): switchbestexp N = 1..8: plain 21 ... 5101 (doubling), N1 26, 49, 87, 138, 204, 280, 368, 469 (second
+differences 10-15), largest phase 6N + 6; gated_switchallexp N = 2..5: plain 17, 24, 26, 36, N1 51, 90, 134, 188 (largest phase
+14, 22, 24, 32; Odd's Dantzig inner switches 296, 711, 1278, 2153).
