@@ -77,3 +77,7 @@ renum2's runner (= vjfast's loop): 3886, 4719, 5626, 6602 (identity: 291, 363, 4
 mildly quadratic in N. So the steep growth at N = 2..4 came from per-N climbing; the one mechanically defined family we have
 grows polynomially. VERDICT for box 1 (i): S5 and S6 NOT KILLED; no super-polynomial growth found under renumbering on 13
 bench families plus the lifted switchbestexp family. Rules still not defended (no barrier statement; R7's open problem stands).
+Chains stopped at handover (12:40Z): Cunningham N = 5 climb from the lifted 3886 had reached 4186 (ratio 1.43 over N = 4's 2935);
+Zadeh N = 5 climb from the lifted 1230 had reached 1506 (chain 274, 540, 983, 1506: ratios 1.97, 1.82, 1.53, falling).
+The C++ N1 sweep (summary_c.csv) was stopped after switchallexp N <= 14 and switchbestexp N <= 13 (both polynomial-looking;
+rows in N1-disc-anneal.md); the other families' N1 data are the Python sweep's (N <= 8, plots/).
