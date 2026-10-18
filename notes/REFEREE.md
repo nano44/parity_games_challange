@@ -22,6 +22,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   checked); depth/counting SIGN WITH GAPS (G9-c1 needs FIRED-R; constant D only); stealonce_viol_n76 confirmed. Tool p9charge.py.
 - R-P9 §C: agreement with R2-P9; my N9-a1 WITHDRAWN (R2-P8 §7 was added after I read R2-P8). Lesson: re-fetch a
   referee-2 file before saying a section does not exist.
+- R-P10.md (packet 10; pin 1100f3a): ENTRY-CHARGE SIGN WITH GAPS (G10-a1 one prefix convention incl. V=∅ stop; step 2
+  fan-out < |R| checked hard: 143/146/165-172), C1/C2/C3 SIGN (C1 = reformulation; N10-b1). Tool p10entry.py.
 - Lesson: Lemma 1.2 assumes Q = Z_0; Dom (878-890, 962-991) and bv regions push only the top. Check the push pattern.
 
 ## HANDOVER (parked 2026-10-17 ~12:20Z on the Lead's instruction; context ~520k; produced on Opus 5.5 under D12/L33)
