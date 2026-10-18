@@ -2,28 +2,57 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-SUCCESSOR 1, box 2 (GO 12:51Z, to ~17:50Z; handover check docs/agents/handover-checks/L-NEW.md at 2d17b3f).
-- (0) N1 step 2 on the hard bench: experiments/new/run_step2.sh -> COMMITTED CSVs experiments/new/step2/<fam>.csv (gen command +
-  sha1 per instance, deterministic generators), check_sol2.py (regions = Oink zlk, tl on zlk timeout/error; verify.py strategies),
-  plots docs/new/plots/step2_*.png, verdict table docs/new/N1-step2.md (summarize_step2.py prints its rows). Done so far:
-  counter_rr (N <= 42), counter_m (N <= 42), counter_rob (N <= 20), switchbestexp (N <= 16, N = 17 over 1200 s), switchallexp
-  (N >= 26) all polynomial-looking, every row checked. Running (14:30Z on): chain A = counter_rob, tc+; chain B = switchallexp,
-  recursiveladder, tc, counter_core, counter_dp, counter_ortl, counter_qpt, counter_symsi (NMAX 60, TO 1200).
-- (1) S6 numbering RULE: done 14:20Z, not killed (docs/new/S5S6-renum.md "Box 2 (1)"; rules in experiments/new/instances/s6rule/).
-- Oink zlk logic error on counter_m N = 41, 42 (zlk.cpp:589): side finding for L-COMP, in N1-step2.md.
-
-## Queue
-0. DONE box 2 14:20Z (rule class: not killed, S5S6-renum.md). (Lead 12:14Z) S6 on switchbestexp: extract a numbering RULE from the climbed numberings
-   (instances/s6/*.perm; what the climb does to Friedmann's bit/lane structure, labels via pgsolver_port), generate
-   N = 2..8 from the rule alone, run vjfast cunningham. That decides. Done 12:35Z: lift.py MECHANICALLY (no climbing) from
-   N = 4 to N = 5..8 gives 3886, 4719, 5626, 6602 (polynomial), so a rule must do better than the lift. No Lead re-run before a
-   rule-generated family exists.
-1. CLOSED box 2 (answered by the mechanical lift 12:35Z and the rule test 14:20Z: polynomial; chain values at handover kept in S5S6-renum.md). Was: Record the S6/S5 switchbestexp chain results (N = 4, 5) in docs/new/S5S6-renum.md; decide polynomial vs doubling
-   (Cunningham N = 5: polynomial ~3,300, doubling >= 3,800). If doubling persists to N = 6, extract a numbering scheme
-   (lift.py chain) and pin instances with sha1 before calling a kill.
-2. N1: finish the C++ sweep (tc+, counter_m/rr/rob, gated_switchbestexp, larger N); regenerate plots from summary_c.csv.
-3. N1 killer: a both-sides-hard family / a lock with coupled per-bit audits (sketch); Lead routes to L-RED.
-4. N3 (exact discount homotopy) only if N1 dies; N2 parked.
+SUCCESSOR 2, box 4 (GO 21:05Z; box end ~01:00Z). Context ~370k at 22:23Z (date -u).
+DONE, all pushed (docs/new/N5-killer-box4.md, G-N5-TERM-reading.md, N5-ssi-global.md additions):
+- SPEC vs A1-A10 (6014db7) and Q1-Q4 (7039eb5).
+- Deeptrap trace (even-N chain).
+- Stall lemma (proved, checked).
+- Locks: ≤ 2 from all starts; climbs 8 / 11 / 9 / 7.
+- Sandwich K4 proved.
+- K1-K5 obstruction.
+- Killer attempts 4, 4b, 4c (dummy gifts on switchallexp), 5 (label gadget) and 6 (per-bit gadget): all linear, all verified.
+- Cycling attack: no repeated state; Ξ-flat climb ≤ 2.
+- G-N5-TERM: repair proved as an unrefereed reading (Lemmas A, B + potential).
+- VJ00 Lemma 5.8 "2 ⇒ 1" fails at cycle nodes (instance, vj_bruteforce.py).
+- VJ00 opened, cost corrected.
+N5 NOT killed.
+NEXT for a successor:
+- (a) DLM-distraction module (caveat 1), not built. Condition: N5 ≈ SSI exactly when Even's best reply τ̄ to τ uses only
+  current-or-improving edges.
+- (b) A lock that reads the counter (K3). The lesson of 4c: ALL of Odd must stay frozen (K2), since any Odd improvement changes τ̄ and Iτ.
+- (c) Referees for G-N5-TERM-reading.md (Lemma B's multiset cancellation).
+- (d) L-LIT: check the VJ00 Lemma 5.8 observation against the CAV version.
+(Successor 1's handover notes kept below.)
+### DONE (all pushed on claude/l-new; docs/new/README.md has one row per approach)
+- Box 2: N1 gauntlet step 2 (N1-step2.md, step2/*.csv); S6 numbering rule not killed (S5S6-renum.md).
+- Box 3: N1 KILLED (N1-KILL.md, deep traps, gen_deeptrap.sh, instances/killer/); N2 KILLED (padded switchallexp, gen_padsae.sh);
+  N3 DEAD AS STATED (N3-blackwell-path.md, n3grid.cpp); deep-trap lemma (DEEP-TRAP-LEMMA.md, optional, gaps 1-2 closed);
+  N4 proposed only (N4N5-proposals.md; Lead: do not implement); N5 SSI-GLOBAL = STEP-2 SURVIVOR on data (N5-ssi-global.md:
+  SPEC section = the exact reference for L-COMP's independent second implementation; STEP-2 REPORT; killer attempts 1-2).
+### IN FLIGHT
+- Nothing running. L-COMP: independent N5 implementation from the SPEC section. REFEREE-2: N1-kill faithfulness check.
+### NEEDS
+- Lead: route the N5 killer design (below) to successor 2.
+### NEXT: N5 killer plan (what the global optimum ignores; the fallback trigger)
+- What N5 ignores: its Even step optimises against Odd's CURRENT τ (not τ̄ or the optimal Odd strategy), restricted to "keep or take
+  an improving edge". A gadget where τ is bad (DLM p. 15 "distracted by the opponent's bad strategy") makes the τ-optimal choice
+  among improving edges a WRONG move for the real valuation: e.g. Even prefers an improving edge into a region that Odd's current τ
+  leaves open but Odd will close next step; Odd symmetric. Goal: alternating distraction that resets a counter each round.
+- Fallback trigger: N5's selection keeps σ and τ when every improving switch is worse than staying against the opponent's current
+  strategy (non-sink games; random n = 11 example r00008). If a family forces this at EVERY step, N5 = classical switch-all SI, and
+  Friedmann's switchallexp counter behind the stall gadget would be exponential. Adversarial climbs reached 25-42% fallbacks
+  (n5_adv.py ... fb); the bench <= 4%.
+- Ideas: (1) per Friedmann bit, a stall gadget g_i whose improving switches lose against τ until bit i's lane is set; (2) make τ
+  oscillate (Odd's τ-step flips each iteration) so Even's τ-optimum flips too; (3) seed the climb with switchallexp + random
+  gadgets instead of random games; (4) climb with fitness = fallbacks on DLM-style sink games (Lemma 5 holds there, so fallbacks
+  are impossible on sink games: use non-sink).
+- Tools: n5.py (modes n5/ssi; run(g, mode, start, cap) importable), n5_adv.py (climb; fb mode), run_n5.sh (sweep, committed CSV
+  with sha1), check_sol2.py (Oink zlk + verify.py, 4 GB cap), summarize_n5.py / plot_n5.py, dlm_gen.py (DLM Tables 1-2),
+  gen_deeptrap.sh / gen_padsae.sh / pad_prio.py, anneal_c / n3grid / anneal_dbg (N1 family tools).
+- Open debts: VJ00 (Vöge-Jurdziński 2000) not opened by L-NEW (cited for Engine.evaluate's cost); the deeptrap oscillation of N5
+  (iterations 26 at N = 6, 15 at N = 7, 33 at N = 8; plain switchallexp is a smooth 2N): CAUSE UNKNOWN, not investigated;
+  hypothesis: the best-reward start is "all traps" (P is the top reward) and N5's trap release order depends on tie-breaks that
+  vary with N; check with a per-iteration trace (which edges each step switches).
 
 ## Sources opened
 - arXiv 1008.0530 v1 (Hansen-Miltersen-Zwick, "Strategy iteration is strongly polynomial for 2-player turn-based
@@ -37,7 +66,7 @@ SUCCESSOR 1, box 2 (GO 12:51Z, to ~17:50Z; handover check docs/agents/handover-c
   "standard reductions [16, 21, 13] convert this parity game into average-reward ... discount factor ... very close to 1".
 - NOT yet opened (needed for N1's termination bound only): Zwick-Paterson TCS 158 (1996) discount threshold; Puri thesis.
   Used instead, as restated in 2610.22149: Prop. 7.11 = [ZP96, Thm 5.2] ‖λ(γ) − λ‖∞ ≤ 2n(1 − γ)‖r‖∞ (normalised values).
-- arXiv 1106.0778 (Friedmann, LMCS 7(3:19)), opened 10:30Z, §9: reward r_Ω(v) = (−|V|)^Ω(v); β_G := 1 − 1/(4·|V|·max|r(v)|);
+- arXiv 1106.0778 (Friedmann, LMCS 7(3:19)), opened 10:30Z, §9: reward r_Ω(v) = (−|V|)^Ω(v); β_G := 1 − 1/(4·|V|³·max|r(v)|) [p. 35; CORRECTED per L-LIT T19, box 3; earlier text had |V|];
   Thm 9.2 (Puri), Thm 9.5 (Vöge: every parity improving switch is a discounted improving switch), Lemma 9.6 (1-sink games:
   Odd's discounted best response reaches the sink), so the lower bound transfers to discounted payoff games.
 - arXiv 2610.22149 v1 (Loff-Skomra, "Smoothed analysis of policy iteration and value iteration for deterministic discounted
@@ -60,7 +89,34 @@ SUCCESSOR 1, box 2 (GO 12:51Z, to ~17:50Z; handover check docs/agents/handover-c
 - Search (WebSearch, 10:30Z) also listed: Madani-Thorup-Zwick, ACM TALG 6(2) 2010, O(mn) for deterministic discounted MDPs
   (abstract page only, NOT opened); Karczmarz arXiv 2110.15070 (NOT opened).
 
+- arXiv 1309.5925 v2 (Allamigeon-Benchimol-Gaubert-Joswig, "Combinatorial simplex algorithms can solve mean payoff games",
+  SIAM J. Optim. 24(4) 2014), abstract page opened 2026-10-18 ~18:39Z (box 3): any combinatorial simplex algorithm has a
+  tropical analogue solving MPGs (Hahn series + symbolic perturbation); strongly polynomial combinatorial simplex "is open".
+  Body NOT opened.
+- arXiv 2309.02223 (van Dijk-Loho-Maat, "The worst-case complexity of symmetric strategy improvement", CSL 2024), pdf opened
+  ~18:40Z (sha256 10e6794d82aba465..): Theorem 1 p. 2 (exponential for SSI independently of the improvement rule; any
+  valuation), Algorithm 2 (SSI, f applied to I), Algorithm 3 (generalized SSI with J-sets), Lemma 5, p. 3 "more than only
+  local information".
+
+- Jurdziński & Vöge, "A Discrete Strategy Improvement Algorithm for Solving Parity Games", BRICS RS-00-48 (Dec 2000; full
+  version of the CAV 2000 paper, LNCS 1855), https://www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, opened 2026-10-18 ~21:17Z
+  (sha256 485a12de432a2a8c..):
+  - §6 shortest-paths procedure, lines 1-10;
+  - Theorem 6.2 (p. 25): an improvement step in O(n·m);
+  - §1: Bellman-Ford O(n²·m);
+  - §5 Lemmas 5.2-5.9: Improve(σ) = σ iff σ is optimal (Lemma 5.8);
+  - §7: number of steps open (2000).
+  Box 4 used it to correct N5's cost statement.
+
 ## Dead ends
+- N2 (PRIO-ANNEAL), KILLED ON DATA 18:05Z UTC (box 3; first implementation n2.py). Padded switchallexp
+  (gen_padsae.sh; dummies block compression): largest stage 6, 15, 34, 72, 148, 300, 604 (N = 1..7). Instance
+  experiments/new/instances/killer/padsae_N7.pg (sha1 9ee0385509ac81f2dd9eb111df2ecbdabdfa87b1, n = 230): stage of 604.
+- N1 (LS24 IncreasingDiscountPI on parity rewards), KILLED ON DATA 2026-10-18 17:54Z UTC (box 3; unrefereed; docs/new/N1-KILL.md).
+  Obstruction: deep traps (trap priority gap P - q > max priority + 2) hold Even in all traps with positive values until a phase
+  after the parity-like horizon; that single phase runs Howard from the best-reward start = Friedmann's counter. Instance:
+  experiments/new/instances/killer/deeptrap_sae_N7.pg (sha1 835ce1326ca36e318bd59d54aead26eee6d36b24, n = 239): 1244 Even
+  switches in one phase; N = 1..7: 11, 31, 71, 151, 311, 631, 1244.
 - X1 SCALE-VI (2026-10-18, screened out by argument before code; Lead 10:00Z: record as dead end by argument). Bit-scaled
   energy value iteration: phase k solves the energy game with weights ceil(w / 2^k), warm-started from 2 f_{k+1} (valid
   lower bound since ceil-weights at k+1 doubled dominate weights at k). Obstruction: vertices whose winner flips to Odd in
@@ -69,6 +125,12 @@ SUCCESSOR 1, box 2 (GO 12:51Z, to ~17:50Z; handover check docs/agents/handover-c
   late (a single Odd self-loop of priority 1 reached through high even priorities) forces the climb in the last phase.
 
 ## Things only I know
+- N5 Odd output strategy is σ̄ (Odd's optimal counter to the final σ), not τ. n5.py mode ssi reproduces DLM Prop. 7 exactly:
+  use it as the engine check after any change. The Lead's clock stamps were ahead earlier; always date -u.
+- N5 fallback: on non-sink games N5's selection AND SSI's I can both be empty (random n = 11 game r00008); the fallback is one
+  classical switch-all step. Waiters: never `pgrep -f <script name>` in a loop whose own command line contains that name; wait on a PID.
+- Run date -u for EVERY timestamp, including message first lines; in box 3 I estimated two stamps (18:22Z, 19:05Z) that were
+  20-55 min ahead of the clock. Commit times (TZ=UTC git log --date=format-local) are the reliable record.
 - out/ does not survive a container: cite only committed CSVs. Python Zielonka is exponential on counter_rr/counter_m (b ~1.6):
   never use check_sol.py as the sweep checker there; check_sol2.py (Oink zlk, tl fallback) is the sweep checker.
 - Never edit a running bash script in place with an editor that keeps the inode (bash reads it lazily); sed -i is safe (new inode).
@@ -92,3 +154,9 @@ SUCCESSOR 1, box 2 (GO 12:51Z, to ~17:50Z; handover check docs/agents/handover-c
 - renum's best numberings have no readable class structure (as L-RED R7 found); lift.py transfers numbering by labels and
   keeps most of the count (Cunningham switchbestexp N = 2 -> 3: lifted start 688 vs best 939).
 - Big-d random games (n ~ 350, d ~ 350) take minutes in anneal_c: ~3,000 phases of ~1M-bit numbers.
+- (succ. 2) n5_lock.step / n5_trace copy n5.py's loop for logging and assert equality with n5.run; never cite them without that assert.
+- (succ. 2) VJ "improving" at a cycle node: a switch that closes a cycle through its own cycle node can change the strategy with
+  Ξ unchanged (Odd 1→3 instance in N5-killer-box4.md §3). Every one-switch argument must exclude cycle-closing switches and cycle nodes.
+- (succ. 2) Engine.evaluate's tie-break is static (index order). Any design that makes candidates TIE against τ turns N5's step
+  into an index rule, not a stall.
+- (succ. 2) The container's clock runs differently from your sense of time: always date -u.

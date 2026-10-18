@@ -1,0 +1,23 @@
+family,N,n,gen,sha1,n5_iterations,fallback,evals,secs,check
+dlm2,1,12,python3 experiments/new/dlm_gen.py 2 1,5402f5f5c5153f33dc5e520643124a70d8cd8c84,2,0,6,0.00,zielonka(oink zlk) OK strategies verified
+dlm2,2,22,python3 experiments/new/dlm_gen.py 2 2,b2efe8731c384e2743a4559e8cd18e674afb64d9,4,0,10,0.00,zielonka(oink zlk) OK strategies verified
+dlm2,3,32,python3 experiments/new/dlm_gen.py 2 3,412fbbf962136afb48ff9c1e5362411b59d4e9c9,7,0,15,0.01,zielonka(oink zlk) OK strategies verified
+dlm2,4,42,python3 experiments/new/dlm_gen.py 2 4,a538ec61ebc2e290f652ce4dcead8ddc65076f85,8,0,18,0.02,zielonka(oink zlk) OK strategies verified
+dlm2,5,52,python3 experiments/new/dlm_gen.py 2 5,09cf21d4b99b32dcc9ae37e5e00b518ddbf0a79f,11,0,22,0.03,zielonka(oink zlk) OK strategies verified
+dlm2,6,62,python3 experiments/new/dlm_gen.py 2 6,8ff5aafa6a1d0d755497ddb82319e67af5d2d04d,12,0,24,0.04,zielonka(oink zlk) OK strategies verified
+dlm2,7,72,python3 experiments/new/dlm_gen.py 2 7,762f1e486f77aca0194c87c739c7c3f695377d6f,13,0,27,0.06,zielonka(oink zlk) OK strategies verified
+dlm2,8,82,python3 experiments/new/dlm_gen.py 2 8,5fb8139b6667ae37ff1d48ff6c4a19dc52276a5e,15,0,31,0.09,zielonka(oink zlk) OK strategies verified
+dlm2,9,92,python3 experiments/new/dlm_gen.py 2 9,4b7a30a73093ce4e42b1171d804ea133db9f28d5,17,0,35,0.13,zielonka(oink zlk) OK strategies verified
+dlm2,10,102,python3 experiments/new/dlm_gen.py 2 10,552db570e9a220b44770cd570da100f2c8023dff,18,0,37,0.16,zielonka(oink zlk) OK strategies verified
+dlm2,11,112,python3 experiments/new/dlm_gen.py 2 11,89503c6d76c75385c4e745f46326c5d5f8865ecb,19,0,40,0.24,zielonka(oink zlk) OK strategies verified
+dlm2,12,122,python3 experiments/new/dlm_gen.py 2 12,3be4b486d5ccd964afb8e4441cfcbb8a84851a98,21,0,43,0.27,zielonka(oink zlk) OK strategies verified
+dlm2,13,132,python3 experiments/new/dlm_gen.py 2 13,3d8c7fd02afb232b93df735a144dbb032e10ab07,23,0,47,0.37,zielonka(oink zlk) OK strategies verified
+dlm2,14,142,python3 experiments/new/dlm_gen.py 2 14,b8678893b5091ddc00ab6562b46860140fc0494b,24,0,49,0.42,zielonka(oink zlk) OK strategies verified
+dlm2,15,152,python3 experiments/new/dlm_gen.py 2 15,ee809b3c74430040a1d43821c20a2835be6a7093,26,0,53,0.50,zielonka(oink zlk) OK strategies verified
+dlm2,16,162,python3 experiments/new/dlm_gen.py 2 16,5e5c1c5287b453218a7ecb249d24175594fc74ea,27,0,56,0.61,zielonka(oink zlk) OK strategies verified
+dlm2,17,172,python3 experiments/new/dlm_gen.py 2 17,7e2d6f52e61536aab60664ba10870fdd394f477d,29,0,59,0.70,zielonka(oink zlk) OK strategies verified
+dlm2,18,182,python3 experiments/new/dlm_gen.py 2 18,6c3471129834b7de7d25e4edabf9a36de8173761,31,0,63,0.83,zielonka(oink zlk) OK strategies verified
+dlm2,19,192,python3 experiments/new/dlm_gen.py 2 19,e364240b0bd7ed37c03b688b070edf0c2f72fff8,30,0,62,0.99,zielonka(oink zlk) OK strategies verified
+dlm2,20,202,python3 experiments/new/dlm_gen.py 2 20,9cb2a69adf36a708c2f537c16e4930d31f5cd539,32,0,65,1.14,zielonka(oink zlk) OK strategies verified
+dlm2,21,212,python3 experiments/new/dlm_gen.py 2 21,828552ce8ea2a2b1cc1a09b9fe98b5008d97453d,34,0,69,1.32,zielonka(oink zlk) OK strategies verified
+dlm2,22,,,,,,,BUDGET600_REACHED,

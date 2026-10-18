@@ -85,3 +85,49 @@ re-cut tail. fixd_enable: no enabling tangle fires at R_j in any transition.
   Oink order 4 transitions, K-v-rs 1, K-v-rV 1, K-v-rjV 1. vrV_viol_n40.pg (sha1 8cf415ec9267; from ctx13_n40, seed 3):
   27 transitions in both orders, K-v-rV 1 (K-v-rs 0, K-v-rjV 0). K-v-all: 0 on both, both orders. So in two-player games only
   (VR-NEW_all) survives among the vertex keys; (VR-NEW_s), (VR-NEW_V) and (v, rank, j, |V_j|) are false there.
+
+## 8. Box 13: (VR-NEW_all) and (FD-WITNESS_all) (DATA from 17:30Z by date -u; l-alg 7fc4681b, tools unmodified)
+- b12_fdwit.py on vrV_viol_n80, vrV_viol_n40, vrs_viol_n100, nest4_n80, ctx13_n40, tcR4_N6 (two-player): stable 74 / Oink order
+  72 chain-changing transitions. Transitions with no new-key vertex in the piece at j*: K-v-rV 26 / 26, K-v-rs 17 / 15,
+  K-v-all 2 / 2; nor at j* − 1: K-v-rV 21 / 21, K-v-rs 12 / 10, K-v-all 0 / 0. So (FD-WITNESS_all) holds on all of them
+  (2 transitions need the j* − 1 clause), while the rV and rs forms fail often in two-player games.
+- marginclimb.py (b12_pot.vr_score, MARGIN=1, key K-v-all; every accepted game verified by pinned Oink): the margin (fewest
+  vertices supplying a new key at one chain-changing transition) reaches 1 quickly from vrV_viol_n80 (stable) and from L-ALG's
+  onep_fdkey_n20 (Oink order; mutations leave the class), and stays at 1 (by 18:09Z: 9 and 17 chain-changing transitions, about
+  40,000 steps on the n = 20 seed). MC_TIGHT=1 (also maximising the number of margin-1 transitions) stays at one such transition.
+- Margin-1 anatomy (experiments/red/ctxp/newkeys.py over b12_pot.run/chain/keys/sig, unmodified): on the three climb bests
+  (instances ctxp/instances/margin1_n20.pg from onep_fdkey_n20, Oink order; margin1_mc1.pg from vrV_viol_n80 and margin1_mc5.pg
+  from lagfam fam_D4_n50, stable order) the single new-key vertex is, every time, a vertex changing its RANK CLASS for the first
+  time in the phase: stable -> −1 (margin1_n20: vertex 18, earlier keys all rank n+2, new key rank 4 at position 5 or 7;
+  margin1_mc5: vertex 34, rank n+2 -> 5) or outside -> stable (margin1_mc1: vertex 73, rank 0 -> n+2). lagfam itself has margin 2
+  at every D (fam_D4/D8, depth2_n39; both orders).
+- READING (the obstruction as it shows in the data): every chain change found so far moves some vertex into a rank class
+  (stable / −1 at an emptying round e / 0) and position it never held in the phase. A kill of (VR-NEW_all) needs a transition
+  where EVERY vertex of the changed pieces returns to an exact earlier (rank, j, |R_j|, |V_j|); in particular a vertex that left
+  a −1 piece for a stable one must come back to the same −1 piece with the same emptying round and the same |R_j|, |V_j|. The
+  climbs never produced a transition with zero new keys (margin 0). Whether re-entries into a −1 class always differ in |R_j|,
+  |V_j| or the round was NOT measured separately.
+- RE-ENTRIES (experiments/red/ctxp/reentry.py, b12_pot functions unmodified; DATA 19:10Z by date -u; both orders identical):
+  a re-entry is a transition where a vertex moves back into a rank class (stable / −1 / 0) it held earlier in the phase.
+  Exact returns to an earlier key: nest4_n80 31, ctx13_n40 3, vrV_viol_n40 3 (so single vertices do return, as (NO-RETURN)'s
+  failure says). Non-returning re-entries and the key components that differ from the nearest earlier key of the same class
+  (r = rank, j = position, R = |R_j|, V = |V_j|):
+  nest4_n80: jRV 109, jR 49, rjRV 6, rR 5, rjR 2, RV 2, rRV 1, rV 1, r 1 (R involved in 174 of 176);
+  ctx13_n40: jRV 20, RV 15, R 15, j 10, jR 7, rjRV 3, rjR 2, jV 2 (R involved in 62 of 74);
+  vrV_viol_n40: jRV 19, RV 15, R 11, jR 11, j 8, rjRV 3, rjR 3, r 2, rj 1, jV 1 (R in 62 of 74);
+  tcR4_N6: jRV 66, rjR 2, rj 1, rR 1, RV 1, R 1 (R in 71 of 72); margin1_n20: jRV 7, RV 5, rR 5, jV 3, rjR 3, jR 1 (R in 21 of 24);
+  margin1_mc1: RV 12, R 12, rjR 1 (all R). lagfam fam_D8 and margin1_mc5: no re-entries at all.
+- READING: the component that most often blocks an exact return is the context size |R_j|. A (VR-NEW_all) kill needs the
+  changed pieces to re-enter at the same position with the same |R_j| and |V_j| and the same emptying round, i.e. the low part
+  of the depth-0 chain must be cut back to exactly an earlier set of sizes. That is a counter reset in the strict sense; none of
+  the instances or climbs produced it for a whole changed piece.
+
+## 9. (TREE-PIECE) / (TREE-PIECE+) (Lead 19:02Z / 19:42Z; DATA 19:40-20:40Z by date -u; l-alg d2784b14, b12_ident.py and
+b12_pot.py byte-identical to 4101eb24 and a44216f2)
+- b12_ident.py TREE=1 PLUS=1 on margin1_n20, margin1_mc1, margin1_mc5, deep1_n13, tcR4_N5, leanT_N8, tcL_N6, rebuilt_a6_b6:
+  stable 76 / Oink order 73 transitions; TREE-PIECE without a new key: 0 / 0. TREE-NEW (no piece, no position): 2 / 2, first
+  margin1_mc1 (already known false).
+- L-ALG's own climb (b12_ident.py climb, PLUS=1, unmodified; class-free mutations), about 1 h each, stopped at 20:40Z:
+  from margin1_n20 (Oink order, about 50,700 steps): best (0 violations, margin 1, 15 transitions, 17 searches);
+  from margin1_mc1 (stable): (0, margin 1, 10, 12); from ctx13_n40 (stable): (0, margin 1, 19, 22). No violation; the margin
+  (fewest vertices with a new key at one call-tree-changing transition) reaches 1 and stays there, as for (VR-NEW_all) (§8).

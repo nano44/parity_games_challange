@@ -1,0 +1,10 @@
+lock_n12_seed212.pg {'C': 14, 'X': 3, 'N': 0}
+lock_n24_seed224.pg {'C': 17, 'X': 2, 'N': 1}
+lock_n48_seed248.pg {'C': 2, 'X': 2, 'N': 0}
+lock_n96_seed296.pg {'C': 22, 'X': 3, 'N': 0}
+best_fb_n24_seed124.pg {'C': 12, 'X': 1, 'N': 1}
+best_fb_n32_seed132.pg {'C': 38, 'X': 3, 'N': 0}
+best_n12_seed12.pg {'C': 3, 'X': 0, 'N': 0}
+best_n16_seed16.pg {'C': 6, 'X': 1, 'N': 0}
+best_n24_seed24.pg {'C': 2, 'X': 1, 'N': 0}
+best_n8_seed8.pg {'C': 3, 'X': 2, 'N': 0}

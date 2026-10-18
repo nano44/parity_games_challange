@@ -244,3 +244,48 @@ queue (predecessor's SUCCESSOR QUEUE + Lead plan); nothing starts before GO:
   claude/l-red` then `git rev-parse HEAD origin/claude/l-red` must agree before any edit (fast-forwarded here).
 - Also guarded: killed climbs leave dtl_rootmono orphans with ppid 1; after every kill run
   `ps -eo pid,ppid,args | awk '$2==1 && /dtl_rootmono/'` and kill those PIDs in a separate call (never pkill -f).
+
+# L-RED successor 9 handover check, 2026-10-18 20:52Z (date -u) (produced on Opus 5.5, owner D8)
+
+## 1. Branch, head, ahead/behind trunk
+- Branch claude/l-red. On arrival the local branch was STALE (local 5a30e98, origin 4b12770b); fast-forwarded to
+  origin/claude/l-red 4b12770b. At 4b12770b: 6 ahead, 88 behind trunk origin/claude/vibrant-johnson-nxvvxo 1b6f6924
+  (`git rev-list --left-right --count origin/claude/l-red...origin/claude/vibrant-johnson-nxvvxo`).
+- Merged trunk 1b6f6924 with a merge commit (no rebase): head 6a7076c2, 7 ahead, 0 behind. This check commit makes it 8 ahead.
+- First push (20:58Z) was REJECTED: the predecessor pushed 8451b455 (marginclimb.py MC_RE mode, committed 20:45Z) to
+  origin/claude/l-red after my first fetch. Fetched and merged it with a merge commit (no rebase). After that merge and this
+  edit the branch is 11 ahead, 0 behind trunk 1b6f6924.
+
+## 2. Open work and the next step of each
+Nothing running (ps: no oink, no dtl_*, no climbs). Pinned Oink rebuild started (scripts/setup_oink.sh, background).
+Box 14 plan (Lead); nothing starts before GO:
+- (1) FIRST: attack (XCTX@p0) and (CHAIN-CHANGE) on 𝒞^1P (one-player games, opponent out-degree 1, distinct priorities).
+  Next: fetch claude/l-alg, quote the exact statements of GAP-A-M §33 (and §34 (TREE-PIECE⁺)) with the l-alg SHA, find
+  L-ALG's checker and class checker; then search inside 𝒞^1P (exhaustive small n, then structured one-player conversions of
+  ctx13_n40 / nest4_n80 / lagfam), checking every candidate with the UNMODIFIED checker in both orders.
+- (2) THEN: compounding counter with cross-copy carry tangles (R41 §5) against (TREE-PIECE⁺), checked with l-alg
+  b12_ident.py TREE=1 PLUS=1, unmodified. Next: design two copies whose carry tangle spans both copies, so the interval-product
+  obstruction of R41 §5 does not apply.
+- (3) If (1) or (2) is infeasible: a precise necessary condition (R37 / R39 §9 / R41 §8 style).
+
+## 3. docs/GAPS.md rows I own
+- None. On trunk 1b6f6924: GAP-A and GAP-C are owned by L-ALG "(L-RED attacks)", blocker, open; G-STR and G-DOM are
+  L-ALG "(L-RED attacks)", closed. Box 14 attacks GAP-A on 𝒞^1P.
+
+## 4. The three owner rulings that most constrain me (verbatim, from docs/DECISIONS.md), with their DECISIONS-INDEX status
+1. D1 (docs/DECISIONS.md lines 6-7; index row D1 "active"):
+   > Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision.
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+2. D13 (docs/DECISIONS.md line 229; index row D13 "active"):
+   > Keep working on the dtl and also c
+   (Lead reading L34, not an owner ruling: L-RED continues as the DTL adversary at the D7 rate.)
+3. D8 (docs/DECISIONS.md line 161; index row D8 "active"):
+   > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
+   (Work in this box is labelled Opus 5.5.) Binding Lead readings, not owner rulings: L22/L26 (a failure under either order
+   datum refutes a statement about A_DTL), L34.
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap (bit again at this start): stale local branch (local 5a30e98, origin 4b12770b). Check: `git fetch origin claude/l-red`,
+  then `git rev-parse HEAD origin/claude/l-red` must agree before any edit (fast-forwarded here).
+- Second trap (box 11): Lead messages arrived up to 3.5 h late. Check: ReadNotifications at every check-in, after every long
+  wait and after every push.
