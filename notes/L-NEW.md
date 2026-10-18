@@ -2,22 +2,32 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-- 2026-10-18 ~12:00Z (box 1, started 09:09Z, ends ~14:10Z). Pushed through a6bbcdd.
-- (i) S5/S6: no super-polynomial growth under renumbering on 9 families (out/renum/summary_part1.csv); part 2 (switchallexp,
-  switchbestexp, recursiveladder, Oink tc/tc+/counter_*, N = 2..5, 2 restarts x 200 steps) running -> summary_part2.csv.
-- (ii) N1 = Loff-Skomra IncreasingDiscountPI (known algorithm, novelty corrected). C++ port anneal_c (= anneal.py on
-  1,000 games). 12,000 random games agree. Bench: polynomial-looking everywhere; caveat: Friedmann's families are trivial
-  from Odd's side (dual), so the evidence is weak. Killer attempts (delays, traps, bait, spreading, searches) all failed;
-  sketch for L-RED in docs/new/N1-killer-sketch.md incl. the "lock" proposal.
-- C++ N1 sweep running (run_anneal_c.sh -> out/anneal/summary_c.csv); then regenerate plots (plot_n1.py summary_c.csv).
-- Messages to the Lead: 09:14Z start, ~10:0xZ N1-N3 summary, ~11:00Z reply to Lead's 10:00Z list, ~11:5xZ 3 h check-in.
+HANDOVER (2026-10-18 ~12:10Z, context ~500k; box 1 from 09:09Z). Successor: read this, then docs/new/BOX1-REPORT.md,
+docs/new/N1-disc-anneal.md, docs/new/N1-killer-sketch.md, docs/new/S5S6-renum.md.
+- N1 = "LS24 IncreasingDiscountPI on parity-induced rewards" (credit Loff-Skomra, arXiv 2402.03975 Fig. 12 / 2610.22149
+  Fig. 7.2). Not killed. 12,000 random games agree with Zielonka (strategies verified). Bench polynomial-looking on every
+  family (switchallexp ~2.6N², switchbestexp quadratic, gated_switchallexp quadratic, tc ~linear in n). (PHASE-POLY) is a
+  DATA hypothesis. Evidence weak: Friedmann's families are trivial for Howard from Odd's side (dual). No worst-case lower
+  bound in the literature (verbatim "open" sentence under Sources opened).
+- Killer attempts all failed (list in N1-killer-sketch.md); the lock is an open design problem (path set vs max).
+- S5/S6: not killed on 13 families. Steepest: switchbestexp (Cunningham 341, 928, 1887 at N = 2..4; Zadeh 268 ... 1363 at
+  N = 2..5, ratios falling). Lifted chains (s6_chain.sh) were running at handover; results in
+  experiments/new/out/s6/switchbestexp_{cunningham,zadeh}_N*.txt (out/ is gitignored; rerun to reproduce).
+- C++ N1 sweep (run_anneal_c.sh -> out/anneal/summary_c.csv) still running at handover (switchbestexp N >= 12, then the
+  other families). docs/new/plots/ shows the Python sweep (summary_py.csv, N <= 8).
+- Build: cd experiments/new; g++ -O2 -std=c++17 -o anneal_c anneal.cpp; -o renum2 renum.cpp; -o vjfast vjfast_copy.cpp;
+  -o vjcert vjcert.cpp. Instances (out/inst, gitignored): si/gens.py {randomfacetsubexp,zadehexp,dlmm_bland,dlmm_ML,
+  cunninghamexp} N = 2..14; hard-families/pgsolver_port.py {recursiveladder,switchallexp,switchbestexp} N = 1..14;
+  red/gens_red.py {gated_bland,fhz_padded}; si/gated.py {zadehexp,switchallexp,switchbestexp} -> gated_*;
+  tools/oink/build {tc,tc+,counter_*} N = 1..14.
 
 ## Queue
-0. (after box 1) Lead decides: N1 to L-RED with the lock proposal; C++ engine is ready for big instances.
-1. (i) S5 (zadeh, index tie-break) and S6 (cunningham, index order): hard bench, gated_*, fhz_padded, randomfacetsubexp, M_L,
-   zadehexp, cunninghamexp; renumbering hill climb on the iteration count.
-2. (ii) up to three own approaches in docs/new/<name>.md (pseudocode, novelty, barrier draft, cheapest killer) before code.
-3. Implement the most promising; Zielonka agreement and strategy check first; then hard bench and its killer.
+1. Record the S6/S5 switchbestexp chain results (N = 4, 5) in docs/new/S5S6-renum.md; decide polynomial vs doubling
+   (Cunningham N = 5: polynomial ~3,300, doubling >= 3,800). If doubling persists to N = 6, extract a numbering scheme
+   (lift.py chain) and pin instances with sha1 before calling a kill.
+2. N1: finish the C++ sweep (tc+, counter_m/rr/rob, gated_switchbestexp, larger N); regenerate plots from summary_c.csv.
+3. N1 killer: a both-sides-hard family / a lock with coupled per-bit audits (sketch); Lead routes to L-RED.
+4. N3 (exact discount homotopy) only if N1 dies; N2 parked.
 
 ## Sources opened
 - arXiv 1008.0530 v1 (Hansen-Miltersen-Zwick, "Strategy iteration is strongly polynomial for 2-player turn-based
@@ -75,3 +85,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   the number of phases (~(d+3) log2 n without merging) times big-number comparisons.
 - Index dependence in L-SI's engine: the vertex numbering enters (a) the injective priority rank (ties of equal priority by
   index), (b) the best-reward start (ties), (c) the zadeh tie-break / the cunningham cyclic order. A renumbering changes all three.
+- N1 counts on switchallexp are insensitive to every delay/trap transform tried (key-edge delays up to 100(i+1): EXACTLY
+  25, 42, 64, 90); the largest phase is always the final one (2N + 5). Friedmann's games: Odd wins every vertex.
+- In 1-sink games the region certificate needs Odd's discounted best response to be globally winning; certificate-stopped
+  VJ Howard reaches that after 2^(N-1) + O(1) iterations (vjcert --certstop); N1 after ~2.6 N².
+- The dual transform (owners swapped, priorities +1: dual.py) makes Friedmann's families trivial for Howard (N + O(1)).
+- renum's best numberings have no readable class structure (as L-RED R7 found); lift.py transfers numbering by labels and
+  keeps most of the count (Cunningham switchbestexp N = 2 -> 3: lifted start 688 vs best 939).
+- Big-d random games (n ~ 350, d ~ 350) take minutes in anneal_c: ~3,000 phases of ~1M-bit numbers.
