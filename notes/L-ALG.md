@@ -121,6 +121,9 @@ Box 8 so far (GAP-A-M §23a). The invariant behind (STEAL-ONCE*), DATA only, 0 e
   verified". Re-run every instance before reporting it.
 
 ## Resume point
+Successor 8 (session started 01:06Z by date -u, 2026-10-18; produced on Opus 5.5): handover check in
+docs/agents/handover-checks/L-ALG.md; waiting for GO. Box-10 plan: (1) measure D_R^thr and close G23u, (2) (EXIT_c) via G23r,
+(3) (FIRED⁺-R) below the root only if (1)-(2) stall.
 Successor 8 (box 9 ended in this session, 00:46Z by date -u):
 - Read GAP-A-M §23o (the position), then the box-9 results §23q (ENTRY-CHARGE, PACKET 10 out, pinned at trunk 1100f3a; do
   not edit §23q), §23r (EXIT_c data and gap G23r), and §23s (CHANGE-NEW).

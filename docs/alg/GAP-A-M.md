@@ -3413,3 +3413,52 @@ Consequences (if G23u closes):
 - (EXIT_c) at the root alone does not bound S. Searches whose root calls agree differ later; that is R9's sum over
   contexts, i.e. (CTX⁺).
 - Data check, not run (context budget): D_R^thr per context. Successor target.
+
+23v. Referee imports for packet 11 (§23s, CHANGE-NEW) (L-ALG succ. 8, 01:19Z by date -u; produced on Opus 5.5)
+§23s is frozen and not rewritten. Sources: REFEREE docs/referee/R-P11.md (referee fc86762; its §C comparison is still
+pending) and REFEREE-2 docs/referee-2/R2-P11.md (referee-2 aeedd00, comparison §5 bb8a625), both "(Opus 5.5, D12)", read on
+trunk 3572651. No REJECT.
+- Verdicts:
+  - (a) Lemma CHANGE-NEW: SIGN WITH GAPS (REFEREE; N11-a1, G11-a1, both closed) / SIGN (REFEREE-2, N11-a1).
+  - (b) Corollary D_R ≤ #fired⁺(R), N*_R ≤ D_R, F_R ≤ 3·#fired⁺(R) unconditionally, and GAP-A ⇐ (CTX⁺) ∧ (FIRED⁺-R) given
+    STR-DET: SIGN from both (REFEREE-2 adds N11-b1).
+  - (c) Honest limit: CONFIRMED by both. GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R) up to polynomial factors, given STR-DET (necessity:
+    Lemma W gives #fired⁺(R) ≤ |T_phase| ≤ n·S; contexts ≤ calls per search × S). An EQUIVALENCE, not a reduction. At G′
+    alone (FIRED⁺-R) is necessary, not sufficient, and equals S − 1 on chain families (spp_chain_up_n43: 41 = 41, both orders).
+  - (d) Data: CONFIRMED. dtl_changenew.py unmodified; REFEREE probe p11probe.py (corpus 138 files: 1,160 / 1,231 differing
+    pairs, all with a NEW tangle firing AT the first differing tattr e_k, which is stronger than §23s's "fires at R in y");
+    REFEREE-2 an11.py on instrumented pinned C++ (268 files: 3,028 / 3,066 differing pairs, 0 failures; 0 differing pairs with
+    equal alive T; 4,350 / 4,265 identical pairs although new tangles were born, so a born tangle is necessary, not sufficient).
+- N11-a1 (both; closed). STR-DET is NOT needed for §23s step 1. best_vertices reads str only at dtl.cpp 73, and there only to
+  decide whether to write str; no set membership depends on str. STR-DET concerns extraction (268), which best_vertices does
+  not call. So §23s step 1 reads: the set-level trace is a function of (R, p, alive T, order datum) by direct code reading.
+- G11-a1 (REFEREE; closed). §23s step 3 (threshold level, dtl.cpp 722-731) follows DIRECTLY from DTL-proof Lemma 1.2: all
+  of Z is pushed at 724, Gx = R and nothing is consumed, so out = Cl_t(Z_in; T) over all of T. The "§22r Corollary" cited in
+  §23s is about cross-visit monotonicity under (NS) and is not the tool used. Then Z_out(x) ⊆ Z_out(y) ⊆ Cl_t(Z_in; used(y))
+  by soundness, and the EXACT* contradiction applies (REFEREE-2 argues the same from the full re-push at 724).
+- The state inventory (both referees, line for line), which is the proof of "a function of (R, p, alive T, order datum)":
+  - V: cleared by the caller (852), asserted empty at 648, rebuilt from R (662-667). R is only read (CurR is a copy, 690).
+  - Locals prevV, Z, CurR, CurZ, curdist (651-655). Candidates (global) is written (712-714) before it is read (735) in each round.
+  - Q (global) is empty on entry: every producer drains it (488, 697, 727, 883, 918, 944, 967, 1032; the 898-912 seeding is
+    drained at 918).
+  - str: written at 73, 89, 171, 694; READ only at 73, to guard a str write.
+  - attracts (41-57) reads Z, R and the static game; attractVertices (66-101) reads R, Z, the arena argument, priorities,
+    ins/outs; attractTangle(s) (110-202) reads tpr, tv, tout, tin (tangle-id order; new ids appended at 443/458-461), this->G
+    (132), R, Z.
+  - Lazy deletion (132-135) may change tpr between visits, but a tangle with a vertex outside this->G returns false whether it
+    is deleted at 117 or reaches 132, and no such tangle can fire (138-139, R ⊆ G). So only the ALIVE set T matters.
+  - this->G is assigned only at 1082 (start) and 1035 (dominion loop after search_rec), so it is constant within a phase.
+  - NOT read: depth, X, W, cur_depth, val, the dominion state (S, dom_vector), the pea_* arrays.
+  - Tangles are only appended within a phase (push_back at 440/458-461, nothing removes an entry; tpr[t] = −1 only at 134 for a
+    tangle with a vertex outside this->G). So T_x ⊆ T_y and "born between x and y" = ids in [ntv(x), ntv(y)).
+  - Consequence (REFEREE-2): the context key (depth, R) is finer than needed; identical visits need only equal alive T.
+- N11-b1 (REFEREE-2 only; REFEREE's §C pending, so ONE signature). The e*-at-R transitions are bounded by D_R directly: for an
+  e*-at-R transition s → s+1 the calls at the e* position have equal input R and different outputs, so some CONSECUTIVE visit
+  pair of R between them differs; two such intervals overlap only inside s+1 before π, where T is constant (STR-DET (c)), so the
+  charged pairs are distinct. Hence #(e*-at-R) ≤ D_R ≤ #fired⁺(R) given STR-DET (≤ 2·D_R without it), and
+      S − 1 ≤ Σ_{R ∈ C_bv} #fired⁺(R) + n(|C_T| + |C_Dom|) + 1,
+  with no H and no F_R.
+- What this changes for box 10 (L-ALG reading, unrefereed). With N11-b1 the per-context budget is D_R itself:
+      S − 1 ≤ Σ_{R ∈ C_bv} D_R + n(|C_T| + |C_Dom|) + 1   (given STR-DET; one signature on the D_R form).
+  So (D-POLY) "D_R ≤ poly(|R|) per context and phase" with (CTX⁺) gives GAP-A, and §23u's D_R ≤ N_ent + D_R^thr turns
+  (EXIT_c) plus a bound on D_R^thr (gap G23u) into (D-POLY). That is the box-10 target.
