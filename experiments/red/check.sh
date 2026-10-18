@@ -153,6 +153,17 @@ out=$(python3 -I dtl/dtl_flipflop.py lag/instances/depth3_n46.pg --quiet 2>&1 | 
 out=$(python3 -I dtl/dtl_flipflop.py lag/instances/depth4_n53.pg --quiet 2>&1 | sed -n 1p)   # box 10 R39: re-steal DEPTH 4, k 3 (both order data)
 [[ "$out" == "n=53 tangles=18 dominions=1 iterations=12" ]] || { echo "depth4_n53 drifted: $out"; exit 1; }
 [[ "$(sha1sum lag/instances/depth4_n53.pg | cut -c1-12)" == "40dacf0e4b6f" ]] || { echo "depth4_n53 sha1 changed"; exit 1; }
+for row in "4 50 c8fd86165aba 17 12" "8 78 46ad828c7901 25 16" "12 106 0dd2899eacfe 33 20"; do   # box 10 R39 §6: UNIFORM family lagfam.py, depth = D
+  set -- $row; f="lag/instances/fam_D$1_n$2.pg"
+  python3 -I lag/lagfam.py "$1" "$t/fam.pg" && cmp -s "$t/fam.pg" "$f" || { echo "lagfam.py D=$1 no longer generates $f"; exit 1; }
+  [[ "$(sha1sum "$f" | cut -c1-12)" == "$3" ]] || { echo "$f sha1 changed"; exit 1; }
+  out=$(python3 -I dtl/dtl_flipflop.py "$f" --quiet 2>&1 | sed -n 1p)
+  [[ "$out" == "n=$2 tangles=$4 dominions=1 iterations=$5" ]] || { echo "$f drifted: $out"; exit 1; }
+done
+for o in stable oink; do   # depth 4 / k 3 on fam_D4 by L-ALG's dtl_stealdepth.py (in-tree copy = l-alg e0fc1bb0), both order data
+  out=$(cd ../alg && RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=$o python3 -I dtl_stealdepth.py ../red/lag/instances/fam_D4_n50.pg 2>&1 | grep '^max')
+  [[ "$out" == "max k 3; max depth 4" ]] || { echo "fam_D4_n50 depth drifted ($o): $out"; exit 1; }
+done
 if [[ -x ../../tools/oink/build/oink ]] && command -v g++ > /dev/null; then
   meet/oinkmeet.sh carry/instances/meet_viol_n17.pg | grep -q "^MEET FAILS at search 0" || { echo "meet_viol_n17: pinned Oink no longer shows the (MEET) failure (R30)"; exit 1; }
 else echo "meet_viol_n17 pinned-Oink check skipped (no oink build or no g++)"; fi

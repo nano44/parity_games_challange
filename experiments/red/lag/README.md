@@ -2,6 +2,7 @@
 All measurements use L-ALG's tools UNMODIFIED from a detached checkout (LALG_DIR; box 10: l-alg e0fc1bb0).
 - measure.sh G.pg: dtl_spp phases, dtl_stealdepth max depth, dtl_prefexits max exits, dtl_rootmono first-difference contexts,
   both order data.
+- lagfam.py D: the UNIFORM family (depth D on 7D + 22 vertices); famsweep.sh sweeps it (both orders + pinned Oink).
 - Builders: gb.py (named-vertex builder), cl2.py (region clock alone), lag3.py / lag4.py (relay + clock skeletons; lag4 is the
   one that works), schemaclimb.py (climb of the control wiring toward the schema), relaymodel.py (abstract schema + depth rule).
 - Inspection: learn.py (tangles learned per search), vtrace.py (fired/excluded per step per visit), sptltrace.py, bvtrace.py,
