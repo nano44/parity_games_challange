@@ -58,3 +58,28 @@ iteration count, which is what the sweeps measure (iterations and fallbacks per 
 VJ valuations depend only on the priority order (injective rank), so priority gaps and isolated dummies change nothing; a trap
 option (top priority P on a path into an odd cycle of priority q = B + 1 above every original priority) is Even's worst option
 under VJ. Measured: experiments/new/n5/deeptrap.csv and padsae.csv.
+
+## Bench and killer families (interim table 20:2xZ by date -u; summarize_n5.py; start = best-reward except dlm1/dlm2 = DLM (σ0, τ0))
+Iterations = N5 loop iterations; slope = local log-log exponent of iterations in n; fallback = classical switch-all steps taken
+because N5 selection made no progress; every finished row: regions = Oink zlk (tl where zlk hit the 4 GB cap), strategies verified.
+| family | N (n) covered | N5 iterations first .. last | slope (last 3) | fallbacks | rows checked |
+| --- | --- | --- | --- | --- | --- |
+| dlm1 | N = 1..40 (n = 4..82) | 1 .. 41 | [0.97, 0.98, 0.0] | 0 | 40/40 |
+| dlm2 | N = 1..21 (n = 12..212); BUDGET600_REACHED at N = 22 | 2 .. 34 | [-0.61, 1.27, 1.25] | 0 | 21/21 |
+| counter_symsi | N = 1..22 (n = 12..222); BUDGET600_REACHED at N = 23 | 7 .. 99 | [1.3, 0.22, 0.89] | 84 | 22/22 |
+| deeptrap | N = 1..40 (n = 47..1295) | 4 .. 145 | [4.88, 0.55, 0.56] | 0 | 40/40 |
+| padsae | N = 1..40 (n = 50..1220) | 5 .. 80 | [1.02, 1.02, 1.02] | 0 | 40/40 |
+| switchallexp | N = 1..40 (n = 21..567) | 5 .. 80 | [1.01, 1.01, 1.01] | 0 | 40/40 |
+| switchbestexp | N = 1..32 (n = 35..810); BUDGET600_REACHED at N = 33 | 20 .. 242 | [0.8, 1.47, 0.67] | 0 | 32/32 |
+| recursiveladder | N = 1..40 (n = 5..200) | 1 .. 40 | [2.03, 0.0, 2.03] | 0 | 40/40 |
+| tc | N = 1..26 (n = 8..2158); BUDGET600_REACHED at N = 27 | 1 .. 83 | [-1.9, 1.64, 1.51] | 3 | 26/26 |
+| tc+ | N = 1..17 (n = 8..5304); BUDGET600_REACHED at N = 18 | 1 .. 178 | [0.25, 0.67, 0.57] | 7 | 17/17 |
+| counter_core | N = 1..22 (n = 9..135); BUDGET600_REACHED at N = 23 | 2 .. 44 | [1.03, 1.02, 1.02] | 0 | 22/22 |
+| counter_dp | N = 1..40 (n = 8..164) | 2 .. 40 | [0.0, 2.03, 0.0] | 0 | 40/40 |
+| counter_m | N = 1..40 (n = 6..123) | 1 .. 21 | [1.97, 0.0, 1.98] | 0 | 40/40 |
+| counter_ortl | N = 1..29 (n = 6..146); BUDGET600_REACHED at N = 30 | 2 .. 30 | [0.97, 0.97, 0.97] | 0 | 29/29 |
+| counter_qpt | N = 1..40 (n = 2..80) | 1 .. 1 | [0.0, 0.0, 0.0] | 0 | 40/40 |
+Random games (n5_random.py; harness/gen.py corpus): seed 1, 10,000 games n <= 60: AGREE 10000/10000, max 11 iterations; seed 2,
+2,000 games n = 60..400: AGREE 2000/2000, max 15 iterations (n5/random.txt). Still running: counter_rob, counter_rr.
+Reading (DATA, not a claim): no family shows super-linear growth of N5 iterations in n; the killers of N1/N2 (deeptrap, padsae)
+and both DLM families are linear.

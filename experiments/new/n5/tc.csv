@@ -15,3 +15,14 @@ tc,13,572,tools/oink/build/tc 13,b47ab36a71a115282e18ff8554c7d29cb67a3156,34,0,6
 tc,14,658,tools/oink/build/tc 14,7aa857d131fe3d9630239ff9bdcd25f2f105e639,32,0,66,1.84,zielonka(oink zlk) OK strategies verified
 tc,15,750,tools/oink/build/tc 15,99f76aa04452feb509df7d1143fe8ed1e6c36443,43,0,88,2.65,zielonka(oink zlk) OK strategies verified
 tc,16,848,tools/oink/build/tc 16,a85f10d25438c61a41e15b060061d922a67a1bff,49,0,96,3.42,zielonka(oink zlk) OK strategies verified
+tc,17,952,tools/oink/build/tc 17,a62443443aa0ebb7ac81b360f63a4c7e3a7c3831,54,0,108,6.06,zielonka(oink zlk) OK strategies verified
+tc,18,1062,tools/oink/build/tc 18,1bc528773eef495ac673edbdf99dd7c06ba58bdb,62,0,123,7.83,zielonka(oink zlk) OK strategies verified
+tc,19,1178,tools/oink/build/tc 19,d076929268809c554e3cf6d2e6d887bbd3fe27e8,54,0,110,7.70,zielonka(oink zlk) OK strategies verified
+tc,20,1300,tools/oink/build/tc 20,fbc90b0dde626f3d912b1174ead51d46e7d4e3f7,72,1,132,11.61,zielonka(oink zlk) OK strategies verified
+tc,21,1428,tools/oink/build/tc 21,f75d3d30284643fc4c6766b11293cd99324476d8,71,1,140,14.64,zielonka(oink zlk) OK strategies verified
+tc,22,1562,tools/oink/build/tc 22,d8739a672408e9850f88ceb192c735fdb8e6e728,62,0,125,13.93,zielonka(oink zlk) OK strategies verified
+tc,23,1702,tools/oink/build/tc 23,608731c47d77c87fd9414405cf609851fd1cf64f,76,0,150,19.64,zielonka(oink zlk) OK strategies verified
+tc,24,1848,tools/oink/build/tc 24,25e4ed57a000622ae7c6a35b61ce82acd1a305fc,65,0,129,21.02,zielonka(oink zlk) OK strategies verified
+tc,25,2000,tools/oink/build/tc 25,fbf02f6ddb0dd9b23348aa31e74f6e79875a9682,74,0,148,24.26,zielonka(oink zlk) OK strategies verified
+tc,26,2158,tools/oink/build/tc 26,4030578dd90d68554da74f169e0f158968116a5e,83,0,166,33.21,zielonka(oink zlk) OK strategies verified
+tc,27,,,,,,,BUDGET600_REACHED,
