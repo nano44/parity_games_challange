@@ -252,6 +252,9 @@ queue (predecessor's SUCCESSOR QUEUE + Lead plan); nothing starts before GO:
   origin/claude/l-red 4b12770b. At 4b12770b: 6 ahead, 88 behind trunk origin/claude/vibrant-johnson-nxvvxo 1b6f6924
   (`git rev-list --left-right --count origin/claude/l-red...origin/claude/vibrant-johnson-nxvvxo`).
 - Merged trunk 1b6f6924 with a merge commit (no rebase): head 6a7076c2, 7 ahead, 0 behind. This check commit makes it 8 ahead.
+- First push (20:58Z) was REJECTED: the predecessor pushed 8451b455 (marginclimb.py MC_RE mode, committed 20:45Z) to
+  origin/claude/l-red after my first fetch. Fetched and merged it with a merge commit (no rebase). After that merge and this
+  edit the branch is 11 ahead, 0 behind trunk 1b6f6924.
 
 ## 2. Open work and the next step of each
 Nothing running (ps: no oink, no dtl_*, no climbs). Pinned Oink rebuild started (scripts/setup_oink.sh, background).
