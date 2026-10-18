@@ -151,6 +151,28 @@ UNMODIFIED; pinned Oink tools/oink/build/oink @ 8fbf0a7 (scripts/setup_oink.sh),
   10 tangles born at depth ≥ 1, best_vertices returned 1 at depth ≥ 1 five times, (DEEP-STAB) held (FIRST-BV-1 0).
 - Counts grow linearly in N (contexts 7, 10, 14, 18), so about sqrt(n), like tcL. Nothing super-polynomial.
 
-## 9. Open, in this box
+## 9. leanT(N): every transition of the phase has its own first-difference context; n = 8N (DATA, 11:12-11:14Z by date -u)
+- lean base (experiments/red/tcpert/lean.py): tc(N) with every S/A/B vertex deleted (an edge into X-i-S-j is redirected to
+  X-i-Z, other edges into deleted vertices are dropped). n = 8N. On the base alone pinned Oink needs 3 iterations at every N.
+- leanT(N) := lean base + edges Even-i-T -> Even-(i+1)-L (`tcpert.py`'s rule "leanT"; `lean.py N OUT.pg leanT`; found by
+  tcclimb.py on the lean base, seed 13, step 2). Instances leanT_N6/8/12/16/24 (sha1 f037844a, 5b5ab3ee, 604b3497, 341f92ce,
+  739b03f4).
+- Pinned Oink, verified: iterations N + 2 at N 6, 8, 12, 16, 24 (8, 10, 14, 18, 26); tangles 27 / 44 / 90 at N 6 / 8 / 12
+  (dtl_flipflop: the same).
+- First differences, Even phase 0 (S = N), both order data, identical:
+
+  | N | n | S | transitions | distinct contexts | tool |
+  |---|---|---|---|---|---|
+  | 6 | 48 | 6 | 5 | 5 | ctxfit (full sets) and ctxlight |
+  | 8 | 64 | 8 | 7 | 7 | ctxfit and ctxlight |
+  | 12 | 96 | 12 | 11 | 11 | ctxlight |
+  | 16 | 128 | 16 | 15 | 15 | ctxlight |
+
+  N 12 sequence: depth-0 bv-thr contexts with |R| 56, 60, 64, ..., 92, 96: the arena grows by 4 (half a bit) per transition, the
+  last one is the root.
+- So distinct first-difference contexts per phase = S − 1 = n/8 − 1: linear in n, one new context for EVERY transition. This is
+  the extreme case of the R38 question: (CTX⁺) is exactly as hard as bounding the phase length on this family.
+
+## 10. Open, in this box
 - N = 14 needs a lighter tool (ctxlight peaks above 5 GB at N = 12).
 - The other totals on tcL (Σk, #fired⁺(R), D_R, exits) are not yet measured.

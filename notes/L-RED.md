@@ -671,6 +671,12 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
   "DTL attack" table and verdict (read 15:05Z).
 
 ## Dead ends
+- (box 11, 11:15Z by date -u) Random search for first differences at depth >= 1 (ctxp/rsearch2.py, n 8-18, about 10^5 games
+  in 20 min; deepclimb.py from deep1_n13, 1,800 steps): best 0 such transitions. Obstruction: random games have phases of 1-3
+  searches. The depth-1 first differences came instead from a structured family (tcR4, R40 §8).
+- (box 11) Perturbation climbs on tc(N) for super-linear search growth (tcclimb.py seeds 3, 5-12; up to 8 rule parts; fitness
+  growth or robust ratio; also with TL kept exponential): best families have about N^2/2 searches = linear in n (tcR4 and
+  variants). Small-base ratios (2,2,3,6,9,12) are noise. Nothing super-linear in n.
 - (box 10) Adding a relay level under an EXISTING depth-1 re-steal: l2predict.py over every (step, hold vertex, freeze vertex),
   both orders: 0 depth-2 candidates on stealonce_viol_n76 and stealonce_core_n76. Obstruction: t7's vertices sit in every
   lower round-4 prefix at visits 1-8 (remainder re-attracted), so its re-steal releases nothing downstream.

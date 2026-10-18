@@ -2,14 +2,17 @@
 """L-RED box 11 (produced on Opus 5.5): hill climb over label-rule sets (tcpert.py rules, up to MAXR parts) on tc(N),
 fitness = pinned-Oink DTL iterations at N = NB minus at N = NA (growth; TCC_RATIO=1: their ratio; TCC_RATIO=2: min of the ratios at NB/NA and NB-1/NA-1; TCP_EXT=1 adds cut/loop rules), every solution verified (an unverified run is
 printed as NOT VERIFIED and rejected). Prints improvements with the iteration row at N = 3..NB.
-TCC_TLHARD=K keeps only rule sets whose pinned-Oink TL iterations on tc(6) stay >= K.
+TCC_LEAN=1 uses lean.py's base (no S/A/B vertices). TCC_TLHARD=K keeps only rule sets whose pinned-Oink TL iterations on tc(6) stay >= K.
 Usage: tcclimb.py RNGSEED STEPS MAXR NA NB OUTDIR"""
 import sys, os, random
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import tcpert as T
 seed, steps, maxr, na, nb, out = (int(x) for x in sys.argv[1:6]) + (sys.argv[6],) if False else (int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5]), sys.argv[6])
 rng = random.Random(seed); os.makedirs(out, exist_ok=True); tmp = os.path.join(out, f"c{seed}.pg")
-base = {N: T.gen(N) for N in range(3, nb + 1)}; cache = {}
+if os.environ.get("TCC_LEAN") == "1":   # lean.py base: tc(N) without S/A/B vertices (n = 8N)
+    import lean as LE; base = {N: LE.lean(N, ()) for N in range(3, nb + 1)}
+else: base = {N: T.gen(N) for N in range(3, nb + 1)}
+cache = {}
 def its(rule, Ns):
     r = []
     for N in Ns:

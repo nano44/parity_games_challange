@@ -62,7 +62,8 @@ def randrule(rng):
 TCL = (("edge", "Even", "L", "Even", "H", -1),)   # tcL(N): every Even-i-L gets an edge to Even-(i-1)-H (R40)
 R4 = (("edge", "Even", "A", "Even", "T", 0), ("prio", "Even", "S", -2), ("prio", "Even", "Z", -2),
       ("edge", "Even", "B", "Even", "L", -1))      # tcR4(N): tcclimb seed 3, step 764 (R40 §7-8)
-RULES = {"tcL": TCL, "tcR4": R4}
+LT = (("edge", "Even", "T", "Even", "L", 1),)     # leanT(N) = lean.py base + edges Even-i-T -> Even-(i+1)-L (R40 §9)
+RULES = {"tcL": TCL, "tcR4": R4, "leanT": LT}
 def write_tcl(N, path, name="tcL"):
     V = apply(gen(N), RULES[name])
     with open(path, "w") as f:
