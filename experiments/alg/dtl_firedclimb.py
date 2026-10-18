@@ -2,6 +2,7 @@
 runs (dtl_pyref via dtl_rootmono.RM with RM_EXCL=1, RM_LIGHT=1; order datum DTL_ORDER) for MANY distinct tangles firing
 at one context over a phase. Fitness: max over contexts visited at least twice of (#distinct fired tangles, then the same
 divided by |R|). Mutations as dtl_fmclimb.py; incomplete runs saved and reported.
+FC_RATIO=1 ranks by fired/|R| first (succ. 7, GAP-A-M §23e attack on FIRED ≤ |R|).
 Usage: dtl_firedclimb.py START.pg SEED STEPS OUTDIR"""
 import sys, os, random
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
@@ -28,6 +29,7 @@ def fitness(g):
             for rc in vl:
                 for fs in rc.get("fired", {}).values(): fired |= fs
             cand = (len(fired), round(len(fired) / max(1, len(key_[1])), 3))
+            if os.environ.get("FC_RATIO") == "1": cand = (cand[1], cand[0])     # ratio first (L-ALG succ. 7, attack on FIRED ≤ |R|)
             if cand > best: best = cand
     return best
 

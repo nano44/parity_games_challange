@@ -39,6 +39,8 @@ if __name__ == "__main__":
         h = mutate(g, rnd)
         try: sc, inf = score(h)
         except RecursionError: continue
+        except Exception as ex:
+            print(f"it {it} EXCEPTION {type(ex).__name__}: {ex}", flush=True); pg.write(h, os.path.join(outd, f"exc_{tag}_{it}.pg")); continue
         if sc >= cur:
             g, cur = h, sc
             if sc > best:

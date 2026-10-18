@@ -9,7 +9,8 @@ FLGRAD=1 (box 8, climbs only; the printed measure is unchanged): when no context
 min(999, 100 * max over contexts visited >= 2 times of S/(2|R|)) (how close a context is to the long-phase filter).
 Also printed (box 8): multi = max over counted contexts of (distinct fired over the phase) - (max fired at one visit), the
 tangles that need a LATER visit; multiR, multiS = that context's |R| and S. FLMODE=multi scores 1e7 multi/|R| (per mille)
-+ 1e4 multi + 10 S/|R| instead (with the FLGRAD fallback)."""
++ 1e4 multi + 10 S/|R| instead; when no counted context has multi > 0 it scores min(9999, 1000 * max over contexts visited
+>= 2 times with a later-visit firing of S/(2|R|)) (nearmulti), which pushes such contexts toward the long-phase filter."""
 import sys, os
 for k, v in (("RM_DV", "0"), ("RM_LIGHT", "1"), ("RM_EXCL", "1")): os.environ.setdefault(k, v)
 sys.path.insert(0, os.path.join(os.environ["LALGR_DIR"], "experiments", "alg"))
@@ -21,14 +22,18 @@ FD = RMo.FD
 def measure_game(g, order):
     os.environ["DTL_ORDER"] = order
     d0 = FD.P.X.build(g); d = RMo.RM(d0.pr, d0.ow, d0.outs, ins_desc=(order == "oink")); d.idx = d0.idx; d.run()
-    m = dict(incomplete=int(not all(w is not None for w in d.win)), ratio=0.0, fired=0, R=0, S=0, SR=0.0, maxS=0, near=0.0, multi=0, multiR=0, multiS=0, multiratio=0.0)
+    m = dict(incomplete=int(not all(w is not None for w in d.win)), ratio=0.0, fired=0, R=0, S=0, SR=0.0, maxS=0, near=0.0, multi=0, multiR=0, multiS=0, multiratio=0.0, nearmulti=0.0)
     for ph in FD.phase_rows(d):
         S = len(ph); m["maxS"] = max(m["maxS"], S); visits = {}
         for r in ph:
             for rc in r["recs"]: visits.setdefault(rc["key"], []).append(rc)
         for key_, vl in visits.items():
             R = len(key_[1])
-            if len(vl) >= 2 and R > 0: m["near"] = max(m["near"], S / (2 * R))
+            if len(vl) >= 2 and R > 0:
+                m["near"] = max(m["near"], S / (2 * R)); fa = set(); b1 = 0
+                for rc in vl:
+                    f1 = set().union(*rc.get("fired", {}).values()) if rc.get("fired") else set(); fa |= f1; b1 = max(b1, len(f1))
+                if len(fa) > b1: m["nearmulti"] = max(m["nearmulti"], round(S / (2 * R), 3))
             if len(vl) < 2 or R == 0 or S < 2 * R: continue
             fired = set(); best1 = 0
             for rc in vl:
@@ -47,6 +52,7 @@ def score(path):
     sys.setrecursionlimit(100000); m = measure_game(pg.read(path), os.environ.get("DTL_ORDER", "stable"))
     if os.environ.get("FLGRAD") == "1" and m["SR"] == 0 and not m["incomplete"]: return min(999, int(100 * m["near"]))
     if os.environ.get("FLMODE") == "multi":
+        if m["multi"] == 0 and not m["incomplete"]: return min(9999, int(1000 * m["nearmulti"]))
         return int(1e12 * m["incomplete"] + 1e7 * min(int(1000 * m["multiratio"]), 9999) + 1e4 * min(m["multi"], 999) + min(int(10 * m["SR"]), 9999))
     return int(1e12 * m["incomplete"] + 1e7 * min(int(1000 * m["ratio"]), 9999) + 1e4 * min(m["fired"], 999) + min(int(10 * m["SR"]), 9999))
 
