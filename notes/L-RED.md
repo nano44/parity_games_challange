@@ -55,6 +55,19 @@ Status: BOX 10 ACTIVE (successor 7; R39 depth/exit family; see Resume point). Ol
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-18 03:53Z (date -u): successor 7 PARKS at ~510k (Lead 03:52Z: box (b) until ~560k, then handover). Last pushed head
+before this commit: 90febc5c. Nothing running (ps: no climbs, no dtl_rootmono orphans).
+SUCCESSOR QUEUE:
+- (1) (CTX+) serialized contexts (Lead priority). R39 §9 gives the necessary condition. Every tangle the lower piece learns
+  needs an escape outside the root's Z_t at every threshold, and must still be closable in its learning context. A hidden
+  clock must therefore learn inside a NONEMPTY -1 subgame. First step: build a game whose -1 branch recursion
+  (search_rec depth 1) has a nonempty subgame, and check with lag/srtrace.py.
+- (2) A REFEREE-2 faithfulness check of dtl_stealdepth / dtl_prefexits on lagfam is with the Lead. Answer any questions
+  from experiments/red/lag/ (schemashow.py prints the F/X table; vtrace.py prints events per visit).
+- (3) Super-polynomial direction: lagfam's toggles are bounded by its freezes (D + 2), and its learning is the clock's
+  (linear). A counter needs state-dependent NEW tangles, e.g. B_j = {T_j} + t_j differing per relay configuration.
+  Not attempted.
+(history) earlier entries of this box follow.
 2026-10-18 03:42Z (date -u) successor 7, box 10 (GO 02:09Z, to ~07:00Z). Head bc9a5781. Lead verified R39: RESULTS DE21
 + addenda, post-landing notes on R12 (c) and R13 (trunk 5c452e3, 22bbe74).
 - DONE: uniform family experiments/red/lag/lagfam.py D (lag4 skeleton + rule T_j -> {x_1, tau_j}): depth = D,
