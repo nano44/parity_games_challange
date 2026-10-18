@@ -14,3 +14,10 @@ ADDENDUM 3 (2026-10-18, fixed d): the DE21 kills hold at d = 3. Source: L-ALG su
   per-context constants. In the Oink order the depth collapses at D ≥ 6-12 because std::sort is unstable on large
   equal-priority classes (the §21b effect); an Oink-order-robust variant is open (routed to L-RED).
 - Not a running-time kill: searches grow linearly in D; every total stays polynomial, as for lagfam.
+- (rev. 10:32Z) All-distinct priorities as well (L-ALG succ. 9, GAP-A-M §27a, l-alg 6266da9): lagdist(D) := lagfam(D) with
+  priorities refined to pairwise distinct (order and parity kept, ties broken by id); instances
+  experiments/alg/instances/lagdist_D4.pg (af9b429696a0), _D8 (215e9ce202dd), _D12 (66855da1a880). With no ties the stable and
+  Oink orders coincide. Lead re-run (detached l-alg 6266da9): Oink 12 / 16 searches at D = 4 / 8, verified (37/57
+  strategies), winners equal to `--zlk`; unmodified dtl_stealdepth.py re-steal depth 4 / 8 (max k 3 / 5) in BOTH orders. So
+  (STEAL-DEPTH_c) is false in both order data on games with all-distinct priorities; the relay needs only a total order of
+  the region tops. D = 12 not re-run by the Lead.
