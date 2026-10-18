@@ -65,12 +65,18 @@ A binary counter over k levels needs nesting depth NEST ≥ k (R41 §1). That me
   - Vertex 7 returns to the last context after the outcome rise at position 2 (s4: rank 3 to 5). That return is (N3b).
   - Each epoch therefore re-learns the old tangle plus a returned vertex. This is the additive "extend by one" pattern of leanT
     (R40) inside the class, nested 3 deep, and it is bounded by the number of returnable vertices.
+- Further climbs, stopped at 23:54Z (date -u):
+  - nestclass.py (oink order, seed 62) ended at NEST 3, CARRIES 3, S 18 at n 24: experiments/red/xctx/instances/nest3_n24.pg,
+    sha1 6b039158a2d16109b3414e95bc396b779ecd83af, C = 1. Pinned Oink: 18 Even iterations, verified; the same in both orders.
+  - slen.py (maximise S with free growth to n 80, NEUTRAL=1, GROW 0.1): S rose only from 11 to 13 (stable) and to 15 (oink) by
+    n 80. The added vertices do not lengthen phases; the climb finds no S that grows with n.
+  - A NEST climb with NMAX 100 from nest3_n20 (stable, seed 64) stayed at NEST 3, S ≤ 16, n ≤ 23.
 - Corpus NEST on 𝒞^1P before the climbs (stable order; nestclass.py positions): onep_fdkey_n20 2. Every other onep_* instance
   and every other instance of this box has 1 (lagdist_D8 is a single position repeated 13 times: an additive staircase).
 - Two-player best: nest4_n80 has NEST 4 at n 80 (R41). It is not in the class.
 
 ## 4. Status, and the next construction to try
-- NEST 3 is realised on 𝒞^1P (nest3_n20, one instance, not a family); in two-player games NEST 4 is the best seen.
+- NEST 3 is realised on 𝒞^1P (nest3_n20, nest3_n24; instances, not a family); in two-player games NEST 4 is the best seen.
   No super-polynomial growth has been seen: every phase observed is at most linear in n.
 - The obstruction is not proved. (N1)-(N3) are necessary conditions, and no lemma shows they cannot hold together.
 - Concrete next target (open): a 2-level class gadget.

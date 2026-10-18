@@ -224,9 +224,12 @@ for o in stable oink; do
 done
 # R45 (box 14): NEST 3 inside 𝒞^1P (nestclass.py on L-ALG's chain), both orders.
 [[ "$(sha1sum xctx/instances/nest3_n20.pg | cut -c1-12)" == "4ac8e1f4955b" ]] || { echo "nest3_n20 sha1 changed"; exit 1; }
+[[ "$(sha1sum xctx/instances/nest3_n24.pg | cut -c1-12)" == "6b039158a2d1" ]] || { echo "nest3_n24 sha1 changed"; exit 1; }
 for o in stable oink; do
   out=$(cd xctx && DTL_ORDER=$o python3 -I nestclass.py instances/nest3_n20.pg | grep -o "score ([0-9]*, [0-9]*, [0-9]*")
   [[ "$out" == "score (3, 1, 11" ]] || { echo "nest3_n20: NEST drifted ($o): $out"; exit 1; }
+  out=$(cd xctx && DTL_ORDER=$o python3 -I nestclass.py instances/nest3_n24.pg | grep -o "score ([0-9]*, [0-9]*, [0-9]*")
+  [[ "$out" == "score (3, 3, 18" ]] || { echo "nest3_n24: NEST drifted ($o): $out"; exit 1; }
 done
 TMPDIR="$t" python3 correspond.py 2 3 4 5 6 > "$t/corr.log" || { cat "$t/corr.log"; exit 1; }
 python3 xcheck.py --games 150 --nmax 7 --seed 7 > "$t/x.log" || { cat "$t/x.log"; exit 1; }
