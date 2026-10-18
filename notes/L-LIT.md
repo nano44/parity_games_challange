@@ -2,9 +2,9 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-18 ~21:0xZ (machine clock): T20 docs/lit/T20-N5-barriers.md, gauntlet step 3 for N5 SSI-GLOBAL (l-new 8925171):
-SIGNED WITH CAVEATS. DLM quotes verified (Thm 13 is p.15, not p.14); escape (i) real, (ii) not an escape alone; nearest
-bounds switch-best (1106.0778 Thm 8.4) and DLM; rule not in literature. Earlier today: T18 (superseded), T19 (N1 kill lit).
+2026-10-18 ~23:4xZ (machine clock): T21 docs/lit/T21-VJ00-check.md: VJ00 CAV 2000 opened (Warwick author copy, rendered pages).
+Both fleet findings (Lemma 5.8/I2 at cycle nodes; I1 flat switch) NOT FOUND in literature; CAV p.13 strictness sentence fails
+on both instances; Friedmann Thm 3.2, Fearnley-Savani Lemma 2.3, DLM p.6 restate strictness. Earlier today: T18-T20.
 Next: Lead feedback.
 
 ## Queue
@@ -208,6 +208,13 @@ Next: Lead feedback.
 | arXiv 2509.16075 v1 (Maat), 0806.2923 v4 (Luttenberger), 1006.1409 (Friedmann-Lange), 1705.02313 (Fearnley), 2008.09465 v3 (Křetínský et al.), 2606.29568 v1, 1607.01474 | abstracts + grep symmetric/best response: no N5 | 2026-10-18 | T20 |
 | Semantic Scholar citations of 2309.02223 (2) and 1501.06484 (14); arXiv API 4 queries; Oink README @ 8fbf0a7 l.118-127 (SSI) | scanned | 2026-10-18 | T20 |
 | NOT opened (T20) | Condon 1993 DIMACS; Schewe CSL 2008; Friedmann snare-memorization bound; Melekopoglou-Condon 1994; Hansen-Kaplan-Zwick 2014 | 2026-10-18 | T20 |
+| VJ00 CAV 2000 (LNCS 1855 pp.202-215, DOI 10.1007/10722167_18), author copy dcs.warwick.ac.uk/~mju/Papers/VJ00-CAV.pdf, sha256 64d1143b9e5f95fb… | rendered p.1, 4-10, 12-13: order on profiles p.6; §3.3 optimal (⪯x at cycle nodes) p.7; Lemma 3, Thm 4, Lemma 5 p.8; Fig. 1 p.9; p.12 arbitrary subset, Prop. 7; p.13 strictness sentence, Prop. 9, 10 | 2026-10-18 | T21; text layer unreadable (Type 3) |
+| BRICS RS-00-48 (Jurdziński-Vöge), sha256 485a12de432a2a8c… | §3 P1, P2, I1, I2, Thm 3.1; §4.2-4.4 (order, ⊑, Improve); Lemma 5.7, 5.8 | 2026-10-18 | T21 |
+| Crossref 10.1007/10722167_18 | metadata (pages 202-215) | 2026-10-18 | T21 |
+| arXiv 1507.04500 v4 (Fearnley-Savani), further | p.2, §2 p.6-8: VJ order, Lemma 2.3 ([43] = VJ00), Lemma 2.4 | 2026-10-18 | T21 |
+| arXiv 1106.0778 v2, further | §3 p.4-6: node valuations, order, p.6 strictness sentence, Thm 3.2, 3.3 | 2026-10-18 | T21 |
+| arXiv 1210.2459 v1 (Canavoi-Grädel-Rabinovich); 0806.2923 v4 §5 p.10 (Luttenberger); Friedmann thesis p.105; Oink README l.116-118 + psi.cpp header | grep strict/length: no remark | 2026-10-18 | T21 |
+| WRONG (T21) | BRICS DS-00-6 is Henriksen's thesis, not Jurdziński's (discarded) | 2026-10-18 | T21 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
