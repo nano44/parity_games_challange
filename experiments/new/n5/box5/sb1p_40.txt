@@ -1,0 +1,17 @@
+start 1
+step 0 switch-best steps 2
+step 36 switch-best steps 3
+step 38 switch-best steps 4
+step 51 switch-best steps 5
+step 54 switch-best steps 6
+step 101 switch-best steps 7
+step 234 switch-best steps 8
+step 242 switch-best steps 9
+step 525 switch-best steps 10
+step 618 switch-best steps 11
+step 816 switch-best steps 12
+step 823 switch-best steps 13
+step 894 switch-best steps 14
+step 1196 switch-best steps 15
+step 1502 switch-best steps 16
+best 16

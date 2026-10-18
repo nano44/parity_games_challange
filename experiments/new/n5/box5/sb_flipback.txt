@@ -1,0 +1,4 @@
+sbe1.pg: switch-best steps 20; τ_sb(k) = b_(k+1) at 20/20; τ_sb changes 1; flip-back b_k = b_(k+2) at 0/1 changes
+sbe2.pg: switch-best steps 58; τ_sb(k) = b_(k+1) at 58/58; τ_sb changes 4; flip-back b_k = b_(k+2) at 0/4 changes
+sbe3.pg: switch-best steps 134; τ_sb(k) = b_(k+1) at 134/134; τ_sb changes 10; flip-back b_k = b_(k+2) at 0/10 changes
+sbe4.pg: switch-best steps 286; τ_sb(k) = b_(k+1) at 286/286; τ_sb changes 24; flip-back b_k = b_(k+2) at 0/24 changes
