@@ -95,3 +95,14 @@ re-cut tail. fixd_enable: no enabling tangle fires at R_j in any transition.
   vertices supplying a new key at one chain-changing transition) reaches 1 quickly from vrV_viol_n80 (stable) and from L-ALG's
   onep_fdkey_n20 (Oink order; mutations leave the class), and stays at 1 (by 18:09Z: 9 and 17 chain-changing transitions, about
   40,000 steps on the n = 20 seed). MC_TIGHT=1 (also maximising the number of margin-1 transitions) stays at one such transition.
+- Margin-1 anatomy (experiments/red/ctxp/newkeys.py over b12_pot.run/chain/keys/sig, unmodified): on the three climb bests
+  (instances ctxp/instances/margin1_n20.pg from onep_fdkey_n20, Oink order; margin1_mc1.pg from vrV_viol_n80 and margin1_mc5.pg
+  from lagfam fam_D4_n50, stable order) the single new-key vertex is, every time, a vertex changing its RANK CLASS for the first
+  time in the phase: stable -> −1 (margin1_n20: vertex 18, earlier keys all rank n+2, new key rank 4 at position 5 or 7;
+  margin1_mc5: vertex 34, rank n+2 -> 5) or outside -> stable (margin1_mc1: vertex 73, rank 0 -> n+2). lagfam itself has margin 2
+  at every D (fam_D4/D8, depth2_n39; both orders).
+- READING (the obstruction as it shows in the data): every chain change found so far moves some vertex into a rank class
+  (stable / −1 at an emptying round e / 0) and position it never held in the phase. A kill of (VR-NEW_all) needs a transition
+  where EVERY vertex of the changed pieces returns to an exact earlier (rank, j, |R_j|, |V_j|); in particular a vertex that left
+  a −1 piece for a stable one must come back to the same −1 piece with the same emptying round and the same |R_j|, |V_j|. The
+  climbs never produced such a re-crossing: whenever a vertex re-enters a −1 class, the piece's |R_j| or |V_j| or round differs.
