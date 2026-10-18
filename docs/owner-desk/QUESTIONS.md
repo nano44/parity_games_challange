@@ -190,4 +190,4 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
   probability, SAT-heavy; better on Fable after the reset). C. lower bounds for symbolic algorithms (negative direction; no algorithm).
   D. Lead's choice.
 - Lead recommendation: A now, then B after the reset.
-- Status: open
+- Status: answered 2026-10-18: "D" (Lead's choice); relayed; awaiting the Lead's D-number.

@@ -204,3 +204,7 @@ option (c), a new candidate/approach, with no direction named. (a) write-up not 
 
 ## 2026-10-18 08:57Z Lead (relayed to owner)
 Q14 closed as D13 / L34. Q15 (direction for (c)) put to the owner.
+
+## 2026-10-18 09:01Z owner (Q15)
+> D
+Desk reading: Q15 option D, Lead's choice of direction for (c). Relayed verbatim to the Lead, priority now.
