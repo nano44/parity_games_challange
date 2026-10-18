@@ -55,6 +55,13 @@ Status: BOX 11 ACTIVE (successor 8, Lead GO 09:15Z, to ~14:15Z; R40 in progress;
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-18 11:07Z (date -u), successor 8, box 11 (produced on Opus 5.5). Pushed 5dd0b5cd, f020224f, 991ae4fb (R40 §1-8).
+- tcR4(N) (tcpert.py tcR4): e* at search_rec DEPTH 1 with the root identical (13 of 25 transitions at N 8, both orders); about
+  half the tangles born at depth >= 1; DEEP-STAB held. tcL / tcR4 totals: no steals, no exits, fired+ small. All linear in n.
+- TL (oink --tl) on tc(N): 2^(N+1) iterations; on tcR4: linear. Perturbations destroy TC hardness.
+- Running in scratch: tcclimb seeds 11 (from tcR4, N 4..9 ratios) and 12 (TCC_TLHARD=100: TL on tc(6) stays >= 100 iterations).
+  Watch for: a rule set with DTL iterations growing faster than n (ratio it(9)/it(5) > n ratio 2.88).
+- Check-in to the Lead due ~12:15Z (3 h after GO 09:15Z) with context size.
 2026-10-18 09:37Z (date -u), successor 8, box 11 (produced on Opus 5.5). LALG_DIR = detached l-alg 11d89e20 in scratch (lalg/).
 - experiments/red/ctxp/: depthscan.py (search_rec depth >= 1 calls, births per depth, FIRST-BV-1), lemmacheck.py, rsearch.py,
   ctxfit.py (ctxtrace rule as a function), rsearch2.py, deepclimb.py. instances deep1_n13 (fa65aa1c), deep1_n21 (398c2ecd):
