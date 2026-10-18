@@ -138,8 +138,9 @@ Push only as `scripts/push.sh > $S/push.log 2>&1; echo exit $?`, reading the ver
    > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
 3. D11 (active):
    > No contact for now
-Also binding: L32 (Lead reading, active): progress = ONE named statement with a proof route; immediate stop on an incorrect
-run or a super-polynomial family. D5 (active) on aim: pursue M4, do not call it unlikely.
+Also binding: L32 (Lead reading, active): the GAP-A reassessment criterion, progress = ONE named statement with a proof
+route. CORRECTION (Lead 01:21Z by date -u): L32 says nothing about stopping. An incorrect run or a super-polynomial family is
+REPORTED to the Lead at once (CLAUDE.md, TARGET.md); the fleet does not stop on it. D5 (active) on aim: pursue M4, do not call it unlikely.
 
 ## 5. One trap that bit this lane, and the check that prevents it
 Trap (bit again at this restart): the container's local claude/l-alg is the stale 1017502; without a fetch, work and pushes
