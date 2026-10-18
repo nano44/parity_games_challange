@@ -322,3 +322,10 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
     pinned Oink 6 iterations, verified; model winners equal to Zielonka; both orders): Even's phase, s2 → s3, p0 = 2, case P, N = {12};
     search 0's piece at a different context of the same size and signature (3, 17, 4) (R \ R′ = {18}, R′ \ R = {11}) contains 12.
     Obstruction: same-signature contexts at one position recur across a re-cut with overlapping pieces (the §35 failing step happens).
+  - (TREE-PIECE⁺), GAP-A-M §36a, two-player games: FALSE (L-RED R43, l-red 313aaae). experiments/red/tpp/instances/tpp_viol_n22.pg
+    (sha1 a5088b091cbd) and tpp_viol_n63.pg (sha1 64d0832859a4). Confirmed by author: b12_ident.tp_score with PLUS=1 computes §36a as
+    written (keys over every call's piece, transitions with identical call sequences skipped); both orders (1, 0, 3, 5) and
+    (1, 0, 6, 8). Obstruction (L-RED): at depth 1 an equal (d, position, R, ρ, |V|) under a different parent subgame repeats the key.
+  - (VR-NEW_all), GAP-A-M §32c, on 𝒞^1P: FALSE (L-RED R42 §5, l-red 8a81ce9). experiments/red/xctx/instances/vrall_viol_n20.pg
+    (sha1 ed5058576554; 𝒞_1, all priorities distinct). Confirmed by author: b12_pot.vr_score key K-v-all computes the statement as
+    written; 1 violating transition, both orders. With (XCTX@p0) above, no key statement of §32-§36 survives on 𝒞^1P.
