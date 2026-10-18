@@ -112,3 +112,11 @@ The Lead's named points:
 Required:
 - E-1: add stealonce_core_n76 to (e)'s "2 only on" list.
 With E-1, R13 passes. I re-diff the text only.
+
+## Addendum: R13 draft re-diff, 3a9d890 → c886ff9 (Lead 01:14Z), text only: PASS
+- History: 3a9d890 is an ancestor of c886ff9. R13-draft.md: 3 insertions, 3 deletions.
+- Word diff:
+  - (e) now reads "2 only on stealonce_viol_n76, stealonce_both_n45, stealonce_core_n76 and resteal34_union_n90". E-1 is
+    fixed and matches §3 of this report and REFEREE-2's probe file list.
+  - The header carries a revision stamp.
+- Nothing else moved. R13 PASSES as at c886ff9.
