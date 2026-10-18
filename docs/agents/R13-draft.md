@@ -1,4 +1,4 @@
-# Draft RESULTS R13 (Lead, 2026-10-18 00:45Z by date -u) (rev. 00:48Z: REFEREE final aabcefd) — NOT LANDED; awaiting REFEREE §C, L-ALG imports, CHECKER gate
+# Draft RESULTS R13 (Lead, 2026-10-18 00:45Z by date -u) (rev. 00:48Z: REFEREE final aabcefd; rev. 00:58Z: REFEREE §C 434a552, L-ALG imports §23t) — NOT LANDED; awaiting CHECKER gate
 
 ### R13 [refereed-only] Packet 10 on A_DTL: Lemma ENTRY-CHARGE, and GAP-A ⇐ (CTX⁺) ∧ (EXIT_c) (2026-10-18) — partial step-4 reformulation (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -22,19 +22,22 @@
       (EXIT_c).
   (e) Data: at most 2 exits per (step, vertex) on all data, both orders; 2 only on stealonce_viol_n76, stealonce_both_n45 and
       resteal34_union_n90.
-- Signatures: REFEREE docs/referee/R-P10.md (referee aabcefd; draft 8f2db93, report a09a89d; comparison §C PENDING): (a) SIGN WITH GAPS,
+- Signatures: REFEREE docs/referee/R-P10.md (referee aabcefd; draft 8f2db93, report a09a89d; comparison §C 434a552): (a) SIGN WITH GAPS,
   closed (G10-a1); (b) SIGN (N10-b1); (c) SIGN (constants: X_R ≤ c(|R|+1)|R|², F_R ≤ 3(c+1)(|R|+1)|R|³); (d) SIGN; (e) CONFIRMED
   (dtl_prefexits unmodified + own probe p10entry.py, 140 files, both orders, 0 failures). REFEREE-2 docs/referee-2/R2-P10.md (referee-2 0cbe61e; comparison §6
   57468a8): (a) SIGN WITH GAPS, closed (G10-a1); (b) SIGN (N10-b1); (c) SIGN; (d) CONFIRMED; (e) own probe an10.py, 268 files,
-  both orders, 0 failures. Independent (each read the other's P10 report only after pushing its own). No REJECT.
-- Gaps (union). G-R13-1..3 closed in the reports, to be imported by L-ALG; G-R13-4..5 OPEN; G-R13-6 dependencies:
+  both orders, 0 failures. Independent (each read the other's P10 report only after pushing its own). No REJECT; full
+  agreement after comparison (REFEREE §C accepts the fixed σ set and confirms the shorter route; its probe's per-pair σ
+  set gives only a lower bound on the fixed-set X_R).
+- Gaps (union). G-R13-1..3 closed in the reports and imported by L-ALG (GAP-A-M §23t, l-alg 44e2bd8; §23q not rewritten); G-R13-4..5 OPEN; G-R13-6 dependencies:
   G-R13-1 Counting convention (both G10-a1, complementary halves): entries, exits and events are counted on ONE membership
           sequence per (σ, w): a FIXED σ set (every p-vertex τ of R, not "τ ∈ V_r" read per visit; REFEREE-2) and one round
-          convention (repeat the last round after a "no candidates" stop, empty after V = ∅; REFEREE).
+          convention (repeat the last round after a "no candidates" stop (dtl.cpp 716/765); P = ∅ for later rounds after a
+          V = ∅ stop (768-771); REFEREE).
   G-R13-2 FIRED-freeness is not new: R12 (a)'s sum form and R11 (c) ((RELSTEAL) via F_R ≤ 3·N*_R) are already free of
           (FIRED-R) (REFEREE N10-b1, REFEREE-2 N10-b1). What ENTRY-CHARGE removes is the #fired factor between exits and
           Σ_q k_q (compare EXIT-CHARGE, §23p, unrefereed).
-  G-R13-3 Shorter route (REFEREE-2 N10-b1, one signature): step 1 alone gives N*_R ≤ N_ent, so F_R ≤ 3(X_R + (|R|+1)|R|²)
+  G-R13-3 Shorter route (REFEREE-2 N10-b1; confirmed by REFEREE §C, so two signatures): step 1 alone gives N*_R ≤ N_ent, so F_R ≤ 3(X_R + (|R|+1)|R|²)
           without step 2 or R12 (a); with (EXIT_c), F_R ≤ 3(c+1)(|R|+1)|R|².
   G-R13-4 OPEN (EXIT_c): DATA only; c = 2 on all data (both referees' probes and L-ALG dtl_prefexits.py); L-RED's exit climb
           stayed at 2 (R37 addendum, l-red 59b3522).
