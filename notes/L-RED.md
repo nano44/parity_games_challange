@@ -2,7 +2,7 @@
 Previous: session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, parked 15:20Z); before it session_0117Yy21tGGz9s1zzLfBdUKC (Fable).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: BOX 13 END 20:40Z (successor 8; R40, R41; nothing running; see Resume point and SUCCESSOR QUEUE). Box-11 status (history): BOX 11 END (R40 complete). Box-11 status (history): ACTIVE from Lead GO 09:15Z. Box-10 status (history): BOX 10 ACTIVE (successor 7; R39 depth/exit family). Older status lines follow (history): HANDOVER (box 7 successor 5 parks at ~580k). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
+Status: BOX 14 ACTIVE (successor 9, from Lead GO 21:10Z; R42). Box-13 status (history): BOX 13 END 20:40Z (successor 8; R40, R41; nothing running; see Resume point and SUCCESSOR QUEUE). Box-11 status (history): BOX 11 END (R40 complete). Box-11 status (history): ACTIVE from Lead GO 09:15Z. Box-10 status (history): BOX 10 ACTIVE (successor 7; R39 depth/exit family). Older status lines follow (history): HANDOVER (box 7 successor 5 parks at ~580k). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
 (n = 20/30/40/60 x 3 seeds x both orders, 1500 steps, heartbeat 100; carry/spp.py, --fitness spp; scratchpad eq/);
 (2) renewable reset, U-shrink (R21 section 4); (3) per-phase potentials L-ALG states (via the Lead).
 
@@ -55,6 +55,20 @@ Status: BOX 13 END 20:40Z (successor 8; R40, R41; nothing running; see Resume po
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-18 ~21:45Z (reconstructed; first written as 22:10Z, an estimate, not date -u), successor 9 (session_01Vg2PZioPtUWbhZT7xu1yqZ, Opus 5.5, owner D8), BOX 14 (Lead GO 21:10Z, to ~01:00Z).
+- KILL: (XCTX@p0) (GAP-A-M §35a, l-alg 9ab9a3e6) FALSE on 𝒞^1P, both orders: xctx/instances/xctx_viol_n20.pg (742ba103cdb7);
+  b12_core MODE=core CORE-ALL 1, xcover fraction 1.0; (VR-NEW_all) survives (new key below p0). Near miss xcov11_n20 (47023109c198).
+  Reported to the Lead (message headed 21:58Z, an estimate; date -u was ~21:40Z). Write-up docs/red/R42-xctx.md.
+- Lemma EMPTY-REC (reading, dtl.cpp 898-955): in 𝒞_C every recursive call of a q-search has an empty subgame (dagchk.py 98/98).
+- (CHAIN-CHANGE): no kill; necessary conditions R42 §3 ((α), (β1)/(β2), (γ)). chainfin.py climbs cf21/cf22 running in scratch.
+- Tools: experiments/red/xctx/ (xscore.py graded climb with GROW; show.py; chainchg.py; chainfin.py; deep*.py; dagchk.py).
+- 22:06Z (date -u): KILL (TREE-PIECE⁺) (§36a, l-alg 5eb1b4bd), two-player, both orders: tpp/instances/tpp_viol_n22.pg (a5088b091cbd;
+  shrunk from tpp_viol_n63, 64d0832859a4); b12_ident.tp_score PLUS=1 = (1, 0, 3, 5). Mechanism: same (d, position, R, outcome) at
+  depth 1 with a different X (parent subgame) repeats a key. Reported to the Lead 22:01Z (date -u). Write-up docs/red/R43-treepiece.md.
+- NEXT: (CHAIN-CHANGE) on 𝒞^1P (R42 §3 routes β1/β2); or a depth-0 (VR-NEW_all) attack; ask the Lead.
+- TRAP (bit me 21:40Z): I headed two Lead messages with ESTIMATED times (21:58Z, 22:14Z) instead of running date -u. Run
+  date -u immediately before writing any timestamp.
+- TRAP: the scratch l-alg worktree is $SP/lalg; xscore.py defaults to the in-tree experiments/alg (identical for the used modules).
 2026-10-18 19:49Z (date -u), successor 8, BOXES 12-13 (Lead GO 13:42Z box 12; 17:18Z box 13 to ~21:00Z; produced on Opus 5.5).
 Docs: docs/red/R40 §14 (D2 wall-time check, closed), docs/red/R41 (compounding; VR-NEW / FD-WITNESS / TREE-PIECE data).
 - Two-player kills (both orders, b12_pot.py unmodified): (VR-NEW_s) vrs_viol_n100 (b4bbe7f0fdc0); (VR-NEW_V) vrV_viol_n80
