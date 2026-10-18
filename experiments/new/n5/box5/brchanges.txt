@@ -1,0 +1,7 @@
+57b27b7476bc sbe4.pg: n=110 iterations 47; Even moves 47, changes of Odd's best reply 4; Odd moves 4, changes of Even's best reply 4
+18c246245785 sae8.pg: n=119 iterations 16; Even moves 16, changes of Odd's best reply 3; Odd moves 8, changes of Even's best reply 8
+9594ad159237 sym8.pg: n=82 iterations 48; Even moves 32, changes of Odd's best reply 23; Odd moves 27, changes of Even's best reply 25
+3ce8d188666a dt8.pg: n=271 iterations 33; Even moves 33, changes of Odd's best reply 10; Odd moves 8, changes of Even's best reply 8
+4c15858d0a2f harm_n96_seed496.pg: n=96 iterations 50; Even moves 37, changes of Odd's best reply 18; Odd moves 20, changes of Even's best reply 7
+e46d695ea5ca lock_n24_seed224.pg: n=24 iterations 19; Even moves 11, changes of Odd's best reply 6; Odd moves 10, changes of Even's best reply 7
+5fb8139b6667 dlm2 n=8 (DLM start) u2.pg: n=82 iterations 15; Even moves 15, changes of Odd's best reply 11; Odd moves 14, changes of Even's best reply 10

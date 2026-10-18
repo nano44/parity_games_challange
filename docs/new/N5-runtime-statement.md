@@ -18,6 +18,11 @@ L-NEW's honest statement, not a claim (D1). What is known:
   - They also say that N5 coincides with switch-best whenever τ is Odd's arena-optimal reply (proved). So a proof must use the lag
     between the two players: on Friedmann's switch-best family, the lag is exactly what makes N5 leave the exponential path.
   - None of K1-K8 is a bound. Each is a necessary condition that the lane's attacks failed to meet.
+Addendum (box 7, N5-oneplayer-box7.md). The constant-reply segments are cheap: with Odd's best reply fixed, Even's moves form an improvement
+sequence of a one-player game, O(n³) by VJ00 Prop. 7.4 (stated without proof in the source). So #iterations ≤ C n³ (2 + number of
+changes of the two players' best replies along the run). A polynomial running-time proof would therefore follow from a POLYNOMIAL
+BOUND ON THE NUMBER OF BEST-REPLY CHANGES (plus a proof of Prop. 7.4). That is the potential to aim at. On every family and climb so far
+the count is ≤ 25. No argument for it is in sight; Friedmann's switch-best run has 2^N distinct replies.
 Summary: termination is proved. A polynomial running-time proof would need a polynomial-height potential that the τ-steered step
 raises every poly(n) iterations. None is in sight. The evidence for polynomial behaviour is data only (every bench family and every
 adversarial search so far is linear or near-linear in n).

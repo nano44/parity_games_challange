@@ -2,7 +2,8 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-SUCCESSOR 2, box 6 (GO 23:31Z, end ~02:00Z), written 23:33Z by date -u; context ~480k (hand over at ~580k).
+SUCCESSOR 2, box 7 done (N5-oneplayer-box7.md: K8 constant case via VJ00 Prop. 7.4, conditional; K9 reduction to best-reply
+changes). Box 6 (GO 23:31Z), written 23:33Z by date -u; context ~480k (hand over at ~580k).
 Box 6 DONE:
 - K8 (docs/new/N5-K8-box6.md). The saddle identification τ_sb(k) = b_(k+1) is exact. N5 follows switch-best IF
   OddStep(σ_k, b_(k+1)) = b_(k+2); with a best-reply Odd step that forces constant or 2-periodic Odd replies.
@@ -137,6 +138,11 @@ NEXT for a successor:
   - §5 Lemmas 5.2-5.9: Improve(σ) = σ iff σ is optimal (Lemma 5.8);
   - §7: number of steps open (2000).
   Box 4 used it to correct N5's cost statement.
+
+- (succ. 2, box 7) VJ00 RS-00-48 §7 p. 26-27 re-read: Prop. 7.4 (O(n³) improvement steps, one-player parity games; NO proof), Prop. 7.5,
+  Prop. 7.6, "at most O(n²) substantial steps". Asadi-Chatterjee-de Raaij arXiv 2506.12254 (UAI 2025), abstract page opened
+  2026-10-18 23:4xZ: Howard on deterministic mean-payoff MDPs Ω̃(I) lower bound; "best known upper bound is exponential".
+  Hansen-Zwick ISAAC 2010 and Hansen-Kaplan-Zwick SODA 2014: records only (WebSearch), NOT opened.
 
 ## Dead ends
 - N2 (PRIO-ANNEAL), KILLED ON DATA 18:05Z UTC (box 3; first implementation n2.py). Padded switchallexp
