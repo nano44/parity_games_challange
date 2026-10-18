@@ -4487,3 +4487,37 @@ receives a full signature (ρ, j, |R_j|, |V_j|) it never held in the phase". A p
 signature σ, once replaced, never returns at p with the same signature and an overlapping piece. That is again a no-counter
 statement; no argument for it is in hand. Margin climbs (score: fewest new-key vertices) reached margin 1 and no violation:
 (v, ρ, j, |R|, |V|) from onep_fdkey_n20, Oink order, 5,000 steps; (v, ρ, |V|) from onep_vrj_n40, stable (running at 17:05Z).
+32i. Proof sketch for (VR-NEW_j) on 𝒞^1P, and its failure point (Lead 15:43Z; written 17:22Z by date -u, AFTER the kill of 32e;
+the Lead's 14:42-17:10Z messages were read late, at 17:15Z, my error).
+Sketch. Take a transition s → s+1 of a q-phase and the first depth-0 position j* whose (R_j, rank_j, V_j) differs. Positions < j*
+are identical. (a) If R_{j*} is the same set, the call has the same input (R, X) and a larger tangle set, so by OUTCOME-MONO-1P
+(§28e, which uses NOSTEAL-1P) its outcome rises: e later, or −1 → stable, or the same e with prevV ⊆ larger, or stable with V*
+larger. (b) If R_{j*} differs, the piece at j* − 1 grew with an unchanged outcome (a larger Dom attractor). The vertices of the
+changed piece then carry (ρ′, j*) or (ρ, j* − 1). The sketch needs one of them to hold a pair it never held in the phase.
+FAILURE POINT (exact, with the instance). In case (a) with a later emptying round, prevV can SHRINK (§27d), so the Dom(prevV) piece
+shrinks and the chain below is re-cut. The vertices that leave or stay then land on (rank, position) pairs they already held
+before an earlier re-cut. onep_vrj_n40 (sha1 96ac8459cbef), phase (1, 1), transition into search 5, stable order:
+  position 4: |R| 24 = 24, rank 4 → 6, |V| 2 → 1, piece {1, 17} → {1};
+  position 5: |R| 22 → 23, rank 3 → 4, |V| 5 → 1, piece {38} = {38};
+  position 6: |R| 21 → 22, rank 42 (stable) = 42, |V| 15 → 16, piece gains 17.
+Vertices 1, 38 and 17 land on (6, 4), (4, 5) and (42, 6), each held earlier in the phase; every other vertex keeps its pair.
+So no vertex gets a new (ρ, j) pair. The danger the Lead named (the chain returns to earlier (context, rank) pairs) is exactly
+what happens, and position alone cannot see the re-cut.
+Where |V| is essential. In that transition the only novelty is the stable piece at position 6: a DIFFERENT context (size 21 → 22)
+whose V* has a size never seen at that position (16). The keys (v, ρ, |V|) and (v, ρ, j, |R|, |V|) are new for the piece's
+vertices only through that |V*|. A proof of (VR-NEW_V) would need "after a re-cut, some stable (or −1) piece below the first
+difference reaches a |V| its vertices never had", a growth statement across DIFFERENT contexts. OUTCOME-MONO-1P gives growth only
+at a fixed context. No argument for the cross-context growth is in hand: the sketch stops there.
+Class-free analog (Lead's ask). (v, ρ, j) in two-player games: FALSE. Library, stable, n ≤ 100: 59 violations in 33 games, all
+without relevant steals; first c6_replay3_n48 (§32e). L-RED's nest4_n80 (sha1 31c02e548d82): (v, ρ, j) holds (0 of 11), (v, ρ) fails 1.
+Which keys survive where (all counts re-run here at 17:20Z by date -u on L-RED's instances fetched from l-red 66c5c4a; both orders):
+| key | 𝒞^1P set + climbs | two-player library | L-RED vrs_viol_n100 / vrV_viol_n80 / vrV_viol_n40 / nest4_n80 |
+| (v, ρ) | FALSE (onep_vr_n12) | FALSE | FALSE on all four |
+| (v, ρ, j) | FALSE (onep_vrj_n40) | FALSE | 2 / 2 / 2 / 0 (stable) |
+| (v, ρ, |R|) = (VR-NEW_s) | holds | FALSE (26) | 2 / 2 / 0 / 0 |
+| (v, ρ, |V|) = (VR-NEW_V) | holds | FALSE (8) | 0 / 1 / 1 / 0 |
+| (v, ρ, j, |V|) | holds | FALSE (5) | 0 / 1 / 0 / 0 |
+| (v, ρ, j, |R|, |V|) = (VR-NEW_all) | holds | holds at chain-changing transitions | 0 / 0 / 0 / 0 |
+Plainly: (VR-NEW_V) and (VR-NEW_s) are CLASS-ONLY (two-player kills by L-RED: vrV_viol_n80 f77f0d34d13f, vrV_viol_n40
+8cf415ec9267, vrs_viol_n100 b4bbe7f0fdc0). Only (VR-NEW_all) survives two-player data, and there only at chain-changing transitions:
+88-104 library transitions keep the depth-0 chain identical and are not covered by any depth-0 key.
