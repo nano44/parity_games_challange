@@ -1,21 +1,29 @@
-# L-ALG notebook (successor 9, box 11; produced on Opus 5.5)
-Successor 8's handover text is in git history: `git show fe1b928:notes/L-ALG.md`. Older: `git show a98a158:notes/L-ALG.md`.
+# L-ALG notebook (successor 10, box 12; produced on Opus 5.5)
+Successor 9's handover text is in git history: `git show a97f451:notes/L-ALG.md`. Older: `git show fe1b928:notes/L-ALG.md`.
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push only with `scripts/push.sh > $S/push.log 2>&1; echo exit $?`.
-Truth for GAP-A: docs/alg/GAP-A-M.md §23-§29 (§26-§29 = box 11, successor 9; §29 = ledger). Dead ends: docs/alg/DEAD.md.
+Truth for GAP-A: docs/alg/GAP-A-M.md §23-§30 (§30 = box 12, successor 10; §29 = box-11 ledger). Dead ends: docs/alg/DEAD.md.
 
-## Resume point (2026-10-18 13:16Z by date -u; PARKED at box end)
-Box 11 (GO 09:38Z, to about 14:40Z). Ledger: docs/alg/GAP-A-M.md §29 (the map of (LONG-PHASE) is its first paragraph).
-- (FIX-d): NO ROUTE (§26). (b2): dead (§27a). (b1): CTRL + NOSTEAL-1P proved as readings; GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P (§27b);
-  brief docs/alg/ONEPLAYER.md; packet HELD by the Lead (revive if (CTX⁺) moves). (CTX⁺) on 𝒞^1P: no route; the obstruction is
-  Dom(prevV) tail resets (§27d). (c): no route (§28); Lemma STEAL-ENTRY (§28c); (TIE-BELOW) ⇒ (NO-PRE-a) DATA; reset events (§28d);
-  Lemma OUTCOME-MONO-1P (§28e). The precise compounding condition for L-RED is in §29; §28f: it OCCURS (enabling tangles are
-  born in the tail, 36 of 36 in the class); §28g: (FIRE-LAMINAR) false. (TIE-BELOW) false (§28c add. 3). Packet HELD (Lead 12:09Z).
-- L-RED is routed (Lead 11:08Z): a reset counter over chain positions (inside 𝒞^1P or general); a serialized-context family in
-  𝒞^1P. If either compounds, run fixd_fdpos.py and fixd_rank.py on it at once.
-QUEUE: (1) a potential for reset phases on 𝒞^1P (§29 NEXT (1), §28d lists the three reset kinds; §28f: enabling tangles are
-born in the tail, so count distinct q-tangles firing at a context; (FIRE-LAMINAR) is FALSE, §28g); (2) (NO-PRE-a): proof or instance; (TIE-BELOW) is FALSE (tieabove_n20, §28c addendum 3), so a
-proof must use that the pruned tie vertex stays pruned; (3) DONE: OUTCOME-MONO-1P proved as a reading (§28e,
-also in ONEPLAYER.md); (4) fallback TC-6 P2-P6.
+## Resume point (2026-10-18 14:05Z by date -u; box 12, GO 13:47Z by the Lead's clock, to about 18:45Z)
+- QUEUE (1) verdict: NO ROUTE (GAP-A-M §30, VERDICT). (TOP-UNIQUE@R) FALSE (onep_topuniq_n20, §30a); (TOP-CHAIN@R) DATA (§30b);
+  the failing point is the combination step: on 𝒞^1P the per-context side is already closed by OUTCOME-MONO-1P, and nothing
+  indexed by contexts bounds the contexts (§30c). Re-cut-proof vertex potentials STABLE-MASS / STABLE-TOPS / NEG-TOPS FALSE.
+- No super-polynomial signal: leanT_N forced into the class has N searches per phase, N(N+1)/2 tangles (§30d).
+QUEUE: (1) DONE (no route). (2) NOW: (NO-PRE-a), proof or instance ((TIE-BELOW) FALSE, tieabove_n20, §28c add. 3; a proof
+must use that the pruned tie vertex stays pruned). (3) TC-6 P2-P6 last, labelled "single family, not L32 progress".
+
+## DONE (box 12, successor 10)
+- Handover check 50e66d3 (5/5 per Lead), trunk merges 781790d and the box-start merge.
+- Oink built (scripts/setup_oink.sh exit 0), so verify's smoke step runs.
+- §30 with tools b12_topchain.py (class set + TOP-CHAIN@R scan), b12_topclimb.py (climb, --check), b12_pertop.py (tangles
+  learned per (phase, top)), b12_mono.py (re-cut-proof potentials, per_position); instance onep_topuniq_n20 (check.sh).
+
+## Things only I know (successor 10)
+- `date -u` advances much more slowly than the work done (as successor 9 noted); timestamps are as printed, unadjusted.
+- `pkill -f <name>` from the Bash tool kills the tool's own shell when <name> is in the command line (exit 144). Kill by PID.
+- With all priorities distinct, the stable and Oink index orders coincide; the two order data then differ only in ins_desc,
+  TV_SORTED and PEARCE (fixd_stealentry.run). Map model index i to the input vertex with sorted(range(n), key=(prio, id)).
+- Random-forced class games rarely fire tangles at all (221 firing contexts in 891 games); Zielonka-forced trial 0 is richer.
+- leanT_N files parse; a few library files (with "% start" lines) do not, and classgames() skips them silently.
 
 ## DONE (box 11, successor 9)
 - Handover check 0a7b8d8 (5/5 per Lead), trunk merge 443e6f5.

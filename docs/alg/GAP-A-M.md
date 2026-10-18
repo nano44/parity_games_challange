@@ -4315,3 +4315,56 @@ count for §28f: "the distinct tangles that fire in region steps of one context 
   Oink 7 iterations, verified; stable model: 0 steals, winners equal to Zielonka). At a context of size 9, the firing tangles
   {48, 51, 56, 63, 65, 67, 70} and {51, 56, 57, 63, 67, 68} (model indices = priority ranks) cross.
 - So the per-context count on 𝒞^1P is not a laminar-family count. Small on all data (≤ 24 at |R| = 78), but with no structure found.
+
+30. Box 12 (L-ALG successor 10; Lead GO 13:47Z by the Lead's clock, owner D13, Lead reading L34; produced on Opus 5.5). QUEUE (1)
+of §29: a per-context bound on the DISTINCT q-tangles that fire at one context per phase on 𝒞^1P, then the re-cuts. Everything
+here is unrefereed. Class set (tools experiments/alg/b12_*.py): every library .pg with n ≤ 200 forced into 𝒞_C for C = 0, 1 (each
+q-vertex keeps one edge: in trial 0 its Zielonka strategy edge where it has one, else a seeded random edge), priorities refined
+to all-distinct (fixd_ctx1p.distinct); games already in a class are used as they are. Model: fixd_stealentry.SE (dtl_pyref).
+30a. (TOP-UNIQUE@R) "in one phase, at one best_vertices context R, at most one distinct tangle per top fires in R's region
+steps" (≤ |R| firing tangles per context): FALSE (self-kill; tool b12_topclimb.py, a class-preserving climb from
+onep_chainfail_n20, Oink order, step 293).
+- Pinned: experiments/alg/instances/onep_topuniq_n20.pg (sha1 6cf816c7a5ec; 𝒞_1^dist, all priorities distinct; pinned Oink 5
+  iterations, solution verified; model winners equal to Zielonka in both order data). In q = 0's first phase, at the depth-0
+  contexts of sizes 20, 18 and 17, the tangles {4, 10, 16} (escapes {1, 3, 13}) and {1, 3, 4, 10, 13, 16} (escapes {17}), both
+  with top 16 (model indices = priority ranks), fire: the first in top 16's own region step (16 is already in Z, so the tangle
+  only adds 4 and 10), the second at a later visit in top 17's region step. check.sh keeps this.
+- Mechanism (reading): attractTangles(v) runs right after attractVertices(v) for the popped v (dtl.cpp 694-696), so a tangle
+  whose last escape is popped can fire before plain attraction has climbed its DAG below the top, even when its top is in Z.
+  The same-top tangles were NESTED in every case seen.
+- Before the climb: 0 violations on 2,189 class games (set A: 891, 2 random-forced trials, n ≤ 140, both orders; set B: 1,298,
+  trial 0 Zielonka-forced and 2 random trials, n ≤ 200, stable), max 1 tangle per top per context; max 14 distinct firing tangles at |R| = 18 (fired18_stable_n20 forced).
+30b. (TOP-CHAIN@R) "the same-top tangles that fire at one context in one phase form a ⊆-chain" (≤ |R|² per context): DATA
+holds. 0 violations on sets A and B of 30a (set B in Oink order: ledger below), and in two 4,000-step
+class climbs targeting crossing same-top pairs (b12_topclimb.py MODE=chain, from onep_topuniq_n20 in Oink order and from
+onep_chainfail_n20 in stable order; best (0 crossings, 2 same-top, 122 / 103 firing incidences)). No proof attempted: see 30c.
+30c. Why the per-context count does not reach the re-cuts (reading; the exact failing point of QUEUE (1)).
+- On 𝒞^1P the per-context side is ALREADY closed: OUTCOME-MONO-1P (§28e) gives ≤ K = |R|(|R|+1) + |R| + 1 outcome changes per
+  context and phase, and R9 (c) with NOSTEAL-1P gives GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P (§27b). A bound on distinct firing tangles
+  per context (30b, or (FIRED⁺-R) of R14) bounds the same per-context events a second time. It does not enter (CTX⁺).
+- The only relation between contexts that these give is local: a context at depth-0 position j + 1 changes only after a change
+  at a position ≤ j or inside its own call, so N_{j+1} ≤ (changes over the contexts at positions ≤ j) + 1, where N_j counts the
+  contexts at position j in the phase. Iterated over Θ(n) positions this is a product, i.e. exponential. To close (CTX⁺), a
+  quantity must SURVIVE a re-cut (be indexed by vertices or tangles, not by contexts) and move monotonically.
+- DATA: per-context budgets are each used about once. onep_lagdist_D8 (class, 15 searches in one phase) has 15 distinct
+  contexts at depth-0 position 4: a fresh context in every search (b12_mono.per_position; also 5 at position 10 in leanT_N12/16
+  forced, 12/16 searches). So any route counts contexts globally; a per-context bound, however small, gives at best a factor.
+- Three vertex-indexed candidates that would survive re-cuts, tested (b12_mono.py, same-phase consecutive searches): (STABLE-MASS)
+  "the union of stable depth-0 pieces grows", (STABLE-TOPS) "the union of stable V* grows", (NEG-TOPS) "the union of −1 prevV
+  stays inside the next union of prevV and V*". FALSE on 20, 22 and 3 of 24 pairs of the onep_* instances (onep_chainfail_n20
+  first for the first two, onep_firecross_n76 for the third); library-scale counts in the ledger below. (RANK-MONO), the
+  position-indexed candidate, is FALSE (§27d).
+- Tangle-indexed charging is circular here: every change needs a tangle new to THAT context (CHANGE-NEW), not a globally new
+  tangle, and the tangles learned in a phase are what GAP-A counts (searches ≤ tangles learned + 2).
+30d. Growth check (no super-polynomial signal, nothing to report at once): leanT_N (L-RED tcpert family) forced into 𝒞_1 with
+Zielonka edges, stable order, N = 6, 8, 12, 16, 24, 32 (n = 8N): searches per phase = N, tangles learned in one phase =
+N(N+1)/2 (21, 36, 78, 136, 300, 528), at most N − 1 per (phase, top) (b12_pertop.py). Max searches per phase on the class
+set: 42 at n = 43 (spp_chain_up_n43 forced, the chain family).
+VERDICT on QUEUE (1): NO ROUTE. Exact failing point: the combination step. On 𝒞^1P a per-context bound on firing tangles (30b
+DATA; 30a's stronger form FALSE, onep_topuniq_n20) adds nothing that OUTCOME-MONO-1P does not already give, and no bound
+indexed by contexts can bound the number of contexts (30c). The open statement on the class stays (CTX⁺) on 𝒞^1P, and a proof
+needs a potential indexed by vertices or tangles that survives a re-cut. The three natural vertex-indexed ones are FALSE (30c).
+LEDGER (library-scale runs referenced above; 14:06Z by date -u): (TOP-CHAIN@R) in Oink order on set B plus onep_topuniq_n20
+(1,299 class games, 855 contexts with firing tangles): 0 violations, max 2 same-top tangles per context (onep_topuniq_n20 only).
+Potentials on set B, stable, 1,076 same-phase pairs: (STABLE-MASS) FALSE on 572, (STABLE-TOPS) on 956, (NEG-TOPS) on 168.
+NEXT: QUEUE (2), (NO-PRE-a).

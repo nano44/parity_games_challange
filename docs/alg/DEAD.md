@@ -304,3 +304,10 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
   - (FIRE-LAMINAR) "distinct tangles firing at one context per phase are nested or disjoint" on 𝒞^1P (GAP-A-M §28g; self-kill):
     FALSE, experiments/alg/instances/onep_firecross_n76.pg (sha1 59a94ce07e0b; pinned Oink 7 iterations verified); also 67 of
     2,616 library contexts (two-player).
+  - (TOP-UNIQUE@R) "in one phase, at one best_vertices context, at most one distinct tangle per top fires" on 𝒞^1P (GAP-A-M
+    §30a; self-kill, box 12, L-ALG succ. 10): FALSE, experiments/alg/instances/onep_topuniq_n20.pg (sha1 6cf816c7a5ec; class
+    𝒞_1^dist; pinned Oink 5 iterations verified), nested tangles {4, 10, 16} ⊂ {1, 3, 4, 10, 13, 16}, top 16, both fire at the
+    depth-0 contexts of sizes 20, 18, 17, both order data. The ⊆-chain form (TOP-CHAIN@R) holds on all data (§30b).
+  - (STABLE-MASS), (STABLE-TOPS), (NEG-TOPS) as re-cut-proof potentials for (CTX⁺) on 𝒞^1P (GAP-A-M §30c): FALSE on 20, 22 and
+    3 of 24 consecutive same-phase search pairs of the onep_* instances (first: onep_chainfail_n20.pg (05bfe58e20d7) for the
+    first two, onep_firecross_n76.pg (59a94ce07e0b) for the third).
