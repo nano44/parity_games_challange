@@ -198,3 +198,15 @@ All measurements use L-ALG's tools UNMODIFIED (detached checkout of claude/l-alg
   - ctx13_n40 meets this for 16 of its 24 transitions: their first differences are in depth-0 calls of abs R 26-39.
 - Not built in this box (context budget). For a successor: a relay unit placed in a context where the root returns 1 at
   round 1, with its clock's tangles escaping only into vertices the root call never attracts.
+- Probe (03:49Z date -u), experiments/red/lag/hideclk.py k = 8: every x_j gets an extra edge to an Odd-won vertex o
+  (o -> W), so the clock tangles carry an escape the root's threshold attractor can never contain.
+  - Result, with o at priority 1 and at priority 2k + 3 alike: tangles are learned in ONE search only. The clock dies, because
+    o lies inside the learning context, neither consumed nor in Z.
+  - This sharpens the condition above. The hiding escape e must be outside the root's Z_t at every threshold, AND, in the
+    learning context C, either consumed by an earlier region of C or outside R_C.
+  - Regions and X are Even attractors, so a vertex that Even can never attract in G' meets the second clause only through
+    "outside R_C". C must then be a subgame that excludes e: a depth >= 1 recursion of the -1 branch, or a depth-0 call
+    after e was consumed in a way the root's threshold loop does not repeat.
+  - chainfam learns at depth 0 (its depth-1 subgames are empty in srtrace). So its clock cannot simply be hidden; a hidden
+    clock has to learn inside a nonempty -1 subgame.
+  - Lead reading needed: whether this is worth a successor box (R38 question, the one premise shared by the live routes).

@@ -60,8 +60,9 @@ Status: BOX 10 ACTIVE (successor 7; R39 depth/exit family; see Resume point). Ol
 - DONE: uniform family experiments/red/lag/lagfam.py D (lag4 skeleton + rule T_j -> {x_1, tau_j}): depth = D,
   k = floor((D+1)/2)+1, exits D/2+1, Σk = (D/2+1)(D/2+2), fired⁺ = 2D+8, D_R = D+6, S = D+7, ctx 1 per phase; D <= 20,
   both orders, Oink verified. Kills (STEAL-DEPTH_D) and (EXIT_c) for every constant. Nothing super-polynomial.
-- OPEN (Lead order (c)): first-difference contexts growth (R38 question). The region clock changes the root at every
-  transition, so lagfam has 1 context. Idea to try: put a relay copy inside a lower depth-0 context (after a dom'd upper
+- OPEN (Lead order (c)): first-difference contexts growth (R38 question); status and the necessary condition are in R39 §9
+  (stacks stay at 1 context; hideclk.py probe: an Odd-won
+  escape kills the chainfam clock; a hidden clock must learn inside a NONEMPTY -1 subgame of depth >= 1). The region clock changes the root at every transition, so lagfam has 1 context. Idea to try: put a relay copy inside a lower depth-0 context (after a dom'd upper
   part) with its own clock, so the root call stays identical while the lower piece learns.
 - Tools: experiments/red/lag/README.md. LALG_DIR = any detached claude/l-alg checkout (e0fc1bb0 used; the in-tree
   experiments/alg copies are byte-identical for dtl_stealdepth/rootmono/prefexits/pyref).
