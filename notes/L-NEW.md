@@ -2,14 +2,9 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-SUCCESSOR 1, box 2 ENDED 17:52Z (head 9ad423a; report to Lead 17:52Z). Waiting for the Lead's routing.
-- (0) DONE: N1 passes gauntlet step 2 as DATA on all 13 hard families (docs/new/N1-step2.md: verdict table, caveats, n^O(d)
-  ceiling from HMZ Thm 6.5 + LS Thm 7.9; committed CSVs experiments/new/step2/, plots docs/new/plots/step2_*.png). Reported as a
-  step-2 survivor (L35 (3)). Open next steps (Lead to route): second independent implementation; step-3 barrier statement
-  (L-LIT); killer design with d -> infinity and a long LATE phase (the ceiling's constraint).
-- (1) DONE: S6 numbering RULE, not killed (docs/new/S5S6-renum.md "Box 2 (1)").
-- Tools: run_step2.sh (FAMS, NMIN, NMAX, TO, BUDGET), check_sol2.py (Oink zlk ref, 4 GB cap, tl fallback on timeout/exit/bad
-  output), summarize_step2.py, plot_step2.py, rule_s6.py. Oink zlk side findings in N1-step2.md.
+SUCCESSOR 1, box 3 (GO 18:00Z, to ~23:00Z). 18:15Z: N1 KILL on data (docs/new/N1-KILL.md, head 8ac5e5c, reported 18:22Z).
+Box 2 results: N1 step-2 survivor (N1-step2.md), S6 rule not killed (S5S6-renum.md). Next: generalise the deep trap (other
+families, other schedules), wait for Lead routing; check in ~20:30Z with ReadNotifications.
 
 ## Queue
 0. DONE box 2 14:20Z (rule class: not killed, S5S6-renum.md). (Lead 12:14Z) S6 on switchbestexp: extract a numbering RULE from the climbed numberings
@@ -60,6 +55,11 @@ SUCCESSOR 1, box 2 ENDED 17:52Z (head 9ad423a; report to Lead 17:52Z). Waiting f
   (abstract page only, NOT opened); Karczmarz arXiv 2110.15070 (NOT opened).
 
 ## Dead ends
+- N1 (LS24 IncreasingDiscountPI on parity rewards), KILLED ON DATA 2026-10-18 ~18:15Z (box 3; unrefereed; docs/new/N1-KILL.md).
+  Obstruction: deep traps (trap priority gap P - q > max priority + 2) hold Even in all traps with positive values until a phase
+  after the parity-like horizon; that single phase runs Howard from the best-reward start = Friedmann's counter. Instance:
+  experiments/new/instances/killer/deeptrap_sae_N7.pg (sha1 835ce1326ca36e318bd59d54aead26eee6d36b24, n = 239): 1244 Even
+  switches in one phase; N = 1..7: 11, 31, 71, 151, 311, 631, 1244.
 - X1 SCALE-VI (2026-10-18, screened out by argument before code; Lead 10:00Z: record as dead end by argument). Bit-scaled
   energy value iteration: phase k solves the energy game with weights ceil(w / 2^k), warm-started from 2 f_{k+1} (valid
   lower bound since ceil-weights at k+1 doubled dominate weights at k). Obstruction: vertices whose winner flips to Odd in
