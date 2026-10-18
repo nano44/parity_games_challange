@@ -2,7 +2,7 @@
 Previous: session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, parked 15:20Z); before it session_0117Yy21tGGz9s1zzLfBdUKC (Fable).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: BOX 11 END (successor 8; R40 complete; see Resume point). Box-11 status (history): ACTIVE from Lead GO 09:15Z. Box-10 status (history): BOX 10 ACTIVE (successor 7; R39 depth/exit family). Older status lines follow (history): HANDOVER (box 7 successor 5 parks at ~580k). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
+Status: BOX 13 END 20:40Z (successor 8; R40, R41; nothing running; see Resume point and SUCCESSOR QUEUE). Box-11 status (history): BOX 11 END (R40 complete). Box-11 status (history): ACTIVE from Lead GO 09:15Z. Box-10 status (history): BOX 10 ACTIVE (successor 7; R39 depth/exit family). Older status lines follow (history): HANDOVER (box 7 successor 5 parks at ~580k). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
 (n = 20/30/40/60 x 3 seeds x both orders, 1500 steps, heartbeat 100; carry/spp.py, --fitness spp; scratchpad eq/);
 (2) renewable reset, U-shrink (R21 section 4); (3) per-phase potentials L-ALG states (via the Lead).
 
@@ -55,6 +55,20 @@ Status: BOX 11 END (successor 8; R40 complete; see Resume point). Box-11 status 
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-18 19:49Z (date -u), successor 8, BOXES 12-13 (Lead GO 13:42Z box 12; 17:18Z box 13 to ~21:00Z; produced on Opus 5.5).
+Docs: docs/red/R40 §14 (D2 wall-time check, closed), docs/red/R41 (compounding; VR-NEW / FD-WITNESS / TREE-PIECE data).
+- Two-player kills (both orders, b12_pot.py unmodified): (VR-NEW_s) vrs_viol_n100 (b4bbe7f0fdc0); (VR-NEW_V) vrV_viol_n80
+  (f77f0d34d13f), vrV_viol_n40 (8cf415ec9267). Surviving: (VR-NEW_all), (FD-WITNESS_all), (TREE-PIECE+) (L-ALG d2784b14).
+- Compounding: nest4_n80 (31c02e548d82) NEST 4 = best seen; climbs plateau; leanT cannot carry (Dom swallows tail); two-copy
+  interval-product obstruction (R41 §5); ctx13's resets are −1 pieces above a bottom stable call (R41 §6).
+- Obstruction data for VR-NEW_all: margin stays 1; the single new key = a vertex's first rank-class crossing; re-entries
+  differ mostly in |R_j| (R41 §8, ctxp/reentry.py).
+- Tools (experiments/red/tcpert): carryclimb.py (NEST, k copies), keyclimb.py (b12_pot keys), marginclimb.py (MARGIN /
+  MC_TIGHT / MC_RE), nestclimb.py; (ctxp) newkeys.py, reentry.py, d2count.py. L-ALG climbs: b12_ident.py climb (PLUS=1).
+SUCCESSOR QUEUE: (1) kill (TREE-PIECE+) (Lead 19:02Z; b12_ident.py TREE=1 PLUS=1 / climb); seeds: ctxp/instances/margin1_*.pg,
+ctx13_n40, nest4_n80; a kill needs every vertex of every changed piece at every depth to return to an earlier key: the |R_j|
+component is what blocked VR-NEW_all. (2) compounding counter with cross-copy carry tangles (R41 §5). (3) Lead's 𝒞^1P items.
+TRAP: call ReadNotifications at every check-in (Lead messages arrived up to 3.5 h late in box 11).
 2026-10-18 13:55Z (date -u), successor 8, BOX 11 END (final). Head a5d91c9a. Nothing running.
 SUCCESSOR QUEUE (Lead 12:17Z order): (1) compounding tail-reset counter (L-ALG GAP-A-M §29 (b)): a tangle learned in a fresh
 tail below rung j must enable the next rise at j. leanT cannot carry: Dom of the stable piece at rung j swallows all lower rungs
