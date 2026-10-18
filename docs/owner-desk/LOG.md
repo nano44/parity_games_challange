@@ -247,3 +247,5 @@ Correction: arXiv 2309.02223 is van Dijk, Loho and Maat (CSL 2024), not "Deng-Li
 reply repeated the wrong names). N5 passed gauntlet step 3: L-LIT SIGNED WITH CAVEATS (l-lit 4a99a12, docs/lit/T20-N5-barriers.md);
 caveats (a) "distraction" attack not ruled out, (b) forced fallback = switch-all, (c) outside frameworks is not evidence of poly time.
 Attack on (a)/(b) running; L-COMP second implementation; step 4 not started.
+
+## 2026-10-18 22:29Z Lead -> owner: Q16 (early L32 reassessment) added and put to the owner.

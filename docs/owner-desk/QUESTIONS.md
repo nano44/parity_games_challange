@@ -192,3 +192,16 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - Lead recommendation: A now, then B after the reset.
 - Status: closed, D14 / Lead reading L35 (trunk ff4e60c; owner addendum: the fleet may test untested approaches and its own ideas):
   new lane L-NEW (Opus) - kill test of S5/S6, then up to three own untested approaches; weak separators queued after the Fable reset.
+
+## Q16: early L32 reassessment of DTL (decision requested)
+- id: Q16 (Lead, 2026-10-18 22:29Z)
+- Background: L-ALG tried the last two GAP-A proof routes; both failed at a named step (docs/alg/GAP-A-STATUS.md); L-ALG parked.
+  L-RED disproved five statements those routes rested on within an hour (pinned games n = 20-63, Lead re-ran). DTL never wrong, no slow
+  family; R4-R14 stand; L-RED: kills close proof routes, not steps to a lower bound. Open: (CTX+), needs a compounding counter.
+  N5 ((c) lane): steps 2-3 passed with caveats; second implementation agrees; six killer attempts failed; termination repaired
+  (unrefereed); no running-time proof.
+- Options: (a) bank and write up DTL as an open candidate (mostly done); (b) keep only the cheap adversarial lane on DTL (compounding
+  counter), no proof lane; (c) put the effort into a new approach (N5 already running). Or a combination / own direction.
+- Lead recommendation: (b) + (c): L-RED on the counter, DTL proof lane parked, proof effort to N5 gauntlet step 4; re-ask at the
+  Fable reset 2026-10-21 21:00Z. Until answered, D13 continues as is.
+- Status: open
