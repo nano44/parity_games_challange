@@ -301,3 +301,6 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
   - (TIE-BELOW) "a fired tangle has no vertex of its top's priority above the top" (GAP-A-M §28c addendum 3; self-kill): FALSE,
     experiments/alg/instances/tieabove_n20.pg (sha1 701d309c8b8a; a tie permutation of lalg_dtl_mviol_n20; pinned Oink 6
     iterations verified), singleton tangle {14} fires in top 8's round-7 region, both at priority 15. (NO-PRE-a) still holds there.
+  - (FIRE-LAMINAR) "distinct tangles firing at one context per phase are nested or disjoint" on 𝒞^1P (GAP-A-M §28g; self-kill):
+    FALSE, experiments/alg/instances/onep_firecross_n76.pg (sha1 59a94ce07e0b; pinned Oink 7 iterations verified); also 67 of
+    2,616 library contexts (two-player).

@@ -4211,6 +4211,7 @@ KILLED (DEAD.md, box 11 succ. 9; instances pinned with sha1):
 - the "top level = Büchi round" FIX-d simplification.
 - all-distinct priorities as a relay-free class (lagdist, both orders).
 - (CHAIN), (RANK-MONO) and (TOP-CHAIN) inside 𝒞^1P (onep_chainfail_n20).
+- (TIE-BELOW) (tieabove_n20) and (FIRE-LAMINAR) on 𝒞^1P (onep_firecross_n76).
 DATA that stands:
 - random games at fixed d are trivial (4-5 searches, n ≤ 3200);
 - every library killer has d ≥ 6;
@@ -4303,3 +4304,14 @@ a structural bound on how many distinct tangles can fire at one context R_j. On 
 per context, as (FIRED⁺-R) on 𝒞^1P, is one candidate for the remaining statement. On 𝒞^1P, OUTCOME-MONO-1P bounds the outcome changes
 per context, and CHANGE-NEW (R14) ties each change to a new firing tangle, so the open count is that of contexts and of their
 new firing tangles: R14's form GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R), with the steal term gone. No proof in this box.
+28g. (FIRE-LAMINAR) on 𝒞^1P: FALSE (self-kill; 13:12Z by date -u; tool experiments/alg/fixd_firelam.py). The candidate per-context
+count for §28f: "the distinct tangles that fire in region steps of one context R in one phase are pairwise nested or disjoint"
+(≤ 2|R| − 1 of them per context and phase).
+- Class set: 396 forced class versions of the library (each player's choices forced to Zielonka's strategy edge, priorities
+  made all-distinct), plus the class climbs and conversions. 620 contexts with firing tangles; NOT laminar at 3 (stable) and 4
+  (Oink order). Max 24 distinct firing tangles at |R| = 78.
+- Library (two-player, stable): 67 of 2,616 contexts not laminar; max 40 at |R| = 134.
+- Pinned: experiments/alg/instances/onep_firecross_n76.pg (sha1 59a94ce07e0b; class 𝒞_0^dist, all priorities distinct; pinned
+  Oink 7 iterations, verified; stable model: 0 steals, winners equal to Zielonka). At a context of size 9, the firing tangles
+  {48, 51, 56, 63, 65, 67, 70} and {51, 56, 57, 63, 67, 68} (model indices = priority ranks) cross.
+- So the per-context count on 𝒞^1P is not a laminar-family count. Small on all data (≤ 24 at |R| = 78), but with no structure found.
