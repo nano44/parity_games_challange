@@ -50,3 +50,53 @@ regenerated. Queue (Lead box-2 brief 12:2xZ, consistent with notes/L-NEW.md queu
   positional strategies are verified against Zielonka (experiments/new/check.sh / check_sol.py) before a count is used.
 - Second trap, guarded at this handover: gitignored outputs (out/) do not survive a container; any number cited in a
   report must come from a committed CSV (the box-1 report cited uncommitted summary_c.csv / summary_py.csv).
+
+## 2026-10-18 20:54Z (successor 2, Opus 5.5 per owner D8; every time from date -u)
+Measured from the repository at writing time. Predecessor: successor 1, notebook head bdd53ae.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/l-new`. Local HEAD was STALE (6034271, 54 behind origin/claude/l-new): fast-forwarded to
+  origin/claude/l-new = bdd53ae after `git fetch origin claude/l-new claude/vibrant-johnson-nxvvxo`.
+- Before merge: `git rev-list --left-right --count origin/claude/l-new...origin/claude/vibrant-johnson-nxvvxo` -> 2 ahead,
+  129 behind (trunk = 140d35d).
+- `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` -> 522d604 (clean). Now 3 ahead, 0 behind; 4 ahead after this
+  file's commit.
+
+### 2. Open work and the next step of each (Lead box-4 brief)
+Nothing running in this container; tools/oink/build and experiments/new/out/ (gitignored) must be regenerated.
+- (0) N5 spec completion for L-COMP's independent implementation: pin "best-reward start", the tie-break among optimal
+  σ'/τ', the switch-all fallback choice and tie-break, and simultaneous vs sequential update, each from n5.py's actual
+  behaviour with line numbers. Next: read experiments/new/n5.py against docs/new/N5-ssi-global.md "Exact pseudocode".
+- (1) Killer design: (a) non-sink stall gadget forcing fallback every step, with Friedmann's switchallexp behind it (L-LIT
+  T20 caveat 3); (b) DLM distraction module (2309.02223 p. 15, caveat 1). Next: after (0), build the stall gadget and
+  measure fallbacks/iteration and iterations/N.
+- (2) Any super-polynomial family: report to the Lead at once with pinned sha1 instances, Oink zlk/tl regions, verify.py.
+- (3) No kill: write the exact obstruction as a necessary condition for a killer.
+- (4) Open VJ00 for the cost of the counterstrategy procedure; fix N5's cost statement.
+- Optional, not routed: GAP row G-N1-LB (below).
+
+### 3. docs/GAPS.md rows I own
+- `grep -n "L-NEW" docs/GAPS.md` at 522d604 -> one row: **G-N1-LB** (minor; owner "L-NEW (optional; not routed)";
+  status **open**): theorem form of the N1 kill (2^Ω(n) switches in one IncreasingDiscountPI phase on deep-trap
+  switchallexp); two missing lemmas (i), (ii) per L-LIT T19. Not in this box's plan.
+- N5 has no GAPS row (`grep -n N5 docs/GAPS.md` -> no match).
+
+### 4. The three owner rulings that most constrain me (verbatim from docs/DECISIONS.md), with index status
+1. D1 (docs/DECISIONS.md "## D1", key lines; DECISIONS-INDEX row D1 "active"):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   Binds this box: N5 is wrong until proved; my job is to kill it.
+2. D14 (docs/DECISIONS.md "## D14"; index row D14 "active"):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+   The lane's mandate (Lead reading L35 is a reading, not a ruling).
+3. D13 (docs/DECISIONS.md "## D13"; index row D13 "active"):
+   > Keep working on the dtl and also c
+   Keeps (c) alive alongside DTL. Also binding (D1 key line, same file):
+   > Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision.
+
+### 5. One trap that bit this lane, and the check that now prevents it
+- Trap: a STALE local branch. This container started at 6034271, 54 commits behind origin/claude/l-new (bdd53ae); working
+  from it would have lost box 3 (N5, the N1/N2 kills). Check: `git fetch` then `git rev-parse HEAD origin/claude/l-new`
+  before any work (done above; fast-forward only, then a --no-ff merge of trunk; never rebase).
+- Also carried: estimated timestamps (box 3 had two stamps 20-55 min ahead of the clock): every stamp now comes from a
+  `date -u` call made just before writing.

@@ -1,0 +1,8 @@
+d1_2.pg: SSI iterations 5; N5 step agrees with SSI's at 3/5 SSI states; disagreements {'E_ssi-keeps/n5-switches': 1, 'O_ssi-keeps/n5-switches': 2}
+d1_3.pg: SSI iterations 13; N5 step agrees with SSI's at 5/13 SSI states; disagreements {'E_ssi-keeps/n5-switches': 7, 'O_ssi-keeps/n5-switches': 10}
+d1_4.pg: SSI iterations 29; N5 step agrees with SSI's at 7/29 SSI states; disagreements {'E_ssi-keeps/n5-switches': 27, 'O_ssi-keeps/n5-switches': 34}
+d1_5.pg: SSI iterations 61; N5 step agrees with SSI's at 9/61 SSI states; disagreements {'E_ssi-keeps/n5-switches': 83, 'O_ssi-keeps/n5-switches': 98}
+d2_2.pg: SSI iterations 9; N5 step agrees with SSI's at 6/9 SSI states; disagreements {'E_ssi-keeps/n5-switches': 2, 'O_ssi-keeps/n5-switches': 3}
+d2_3.pg: SSI iterations 23; N5 step agrees with SSI's at 8/23 SSI states; disagreements {'E_ssi-keeps/n5-switches': 14, 'O_ssi-keeps/n5-switches': 17}
+d2_4.pg: SSI iterations 51; N5 step agrees with SSI's at 10/51 SSI states; disagreements {'E_ssi-keeps/n5-switches': 52, 'O_ssi-keeps/n5-switches': 60}
+d2_5.pg: SSI iterations 107; N5 step agrees with SSI's at 12/107 SSI states; disagreements {'E_ssi-keeps/n5-switches': 156, 'O_ssi-keeps/n5-switches': 175}

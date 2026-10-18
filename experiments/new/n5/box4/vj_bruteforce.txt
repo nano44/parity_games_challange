@@ -1,0 +1,5 @@
+⊕ strategy 1->1: Ω = {0: (0, [], 0), 1: (1, [], 0), 2: (0, [], 1), 3: (1, [], 1)}
+⊕ strategy 1->3: Ω = {0: (0, [], 0), 1: (1, [], 0), 2: (0, [], 1), 3: (1, [], 1)}
+edge (1,3) is an improvement for 1->1 (VJ00 (2): Ω(σ(1)) ◁ Ω(3)): True
+Ω unchanged by the switch: True
+1->1 is a maximum (its Ω equals that of every ⊕ strategy): True

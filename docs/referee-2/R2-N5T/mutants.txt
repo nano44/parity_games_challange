@@ -1,0 +1,3 @@
+M1 phi sign flipped {'games': 21952, 'switch': 68776, 'strict': 60428, 'flat': 8348, 'A_fail': 0, 'B_fail': 0, 'phi_fail': 8348}
+M2 length order reversed {'games': 21952, 'switch': 67512, 'strict': 40132, 'flat': 8460, 'A_fail': 18920, 'B_fail': 8460, 'phi_fail': 8460}
+M3 phi over all vertices {'games': 21952, 'switch': 68776, 'strict': 60428, 'flat': 8348, 'A_fail': 0, 'B_fail': 0, 'phi_fail': 0}

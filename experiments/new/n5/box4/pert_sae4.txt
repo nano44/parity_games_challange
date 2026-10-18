@@ -1,0 +1,20 @@
+start 8 0
+step 0 iterations 9 fallbacks 0 check OK
+step 3 iterations 13 fallbacks 0 check OK
+step 5 iterations 15 fallbacks 0 check OK
+step 22 iterations 16 fallbacks 0 check OK
+step 41 iterations 19 fallbacks 0 check OK
+step 68 iterations 20 fallbacks 0 check OK
+step 170 iterations 21 fallbacks 0 check OK
+step 312 iterations 23 fallbacks 0 check OK
+step 468 iterations 25 fallbacks 0 check OK
+step 835 iterations 26 fallbacks 0 check OK
+step 1063 iterations 27 fallbacks 0 check OK
+step 1068 iterations 29 fallbacks 0 check OK
+step 1301 iterations 30 fallbacks 0 check OK
+step 2400 iterations 31 fallbacks 0 check OK
+step 2416 iterations 32 fallbacks 0 check OK
+step 2590 iterations 36 fallbacks 1 check OK
+step 2624 iterations 37 fallbacks 1 check OK
+step 2640 iterations 38 fallbacks 1 check OK
+best 38 1

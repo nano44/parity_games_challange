@@ -2,6 +2,13 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
+2026-10-18 23:05Z (successor 2, session_01GkEUShwH75XDth7fwempSj, Opus 5.5, D12). Handover check 7f4ae9a (Lead: 5/5).
+P-N5T (docs/new/G-N5-TERM-reading.md @ trunk 812ecba): docs/referee-2/R2-N5T.md, SIGNED WITH GAPS (G-N5T-1 code link n5.py Iσ =
+VJ00 improvements (si.py Even side cross-checked 0 mismatches; dual side unchecked); G-N5T-2 termination only; G-N5T-3 VJ00
+Lemma 5.9 / Prop 5.10 unproved in source, not re-derived). Lemma 5.8 2=>1 / 2=>3 NOT used. NEW: VJ00 postulate I1 also fails
+(3-vertex one-player game, R2-N5T §4). Tools R2-N5T/vjbf.py (plays enumerated, no (11)), 936,826 switches, 0 failures.
+Lead 23:09Z: R2-N5T merged; I1 -> L-LIT, N1-N4 -> L-NEW. 23:3xZ: §8 comparison with REFEREE R-N5T (462c8ce, §C 368a7a7) written: full agreement; dual-side improving() 0 mismatches (si_vs_bf_dual.txt); I1 one-player count 2,270 = REFEREE. Parked until routed.
+Earlier (successor 1):
 2026-10-17 15:22Z (successor session_01NUXFnUcx4V3ZWJJY11tXwx, Opus 5.5, D12). Handover check 6f33a84 (5/5).
 P7 (§22r EXACT / PREFIX-MONO-X / new steals, pin 357224b): docs/referee-2/R2-P7.md. (a) SIGN, (b) SIGN, (c) SIGN WITH GAPS
 G-P7-c1/c2 (closed: F_R <= 3 N_R), (d) confirmed 17/17. (FALL) <= (NSTEAL), open, lossy (980 steal pairs vs 103 non-rises).
@@ -10,6 +17,8 @@ R2-P7 §6 comparison (19e63f7: NS-COUNT = NSTEAL), §7 R9 budget (94bcc2a: 2(F_R
 P8 (§22s EXACT*/PREFIX-MONO-X*, §22u chain, pin a907c46): docs/referee-2/R2-P8.md. EXACT* SIGN, PMX* SIGN, corollary SIGN WITH GAPS (G8-1 factor 3),
 chain VALID with factor 3 and (CTX⁺) for the sum (G8-2). Probe dtl_probe8.patch (+ "F t" fired log), an8.py. FIRED-R ratio 0.67|R| at small R.
 R2-P8 §6 comparison (018ab0d: full agreement), §7 (c2ac652): signed REFEREE R-P7 §C2's tighter R9 constants given STR-DET; my 2n withdrawn; factor 3 -> 2 given STR-DET (mine alone; R11 keeps 3).
+20:57Z R2-N5-ESC (8197777): CONFIRMED, N5 leaves Alg. 2 set (fam1 n=3 it.1, (a2,d3)) and Alg. 3 J (fam2 n=2 it.1, (m2,f2)); own tracer docs/referee-2/R2-N5-ESC/n5trace.py.
+18:06Z R2-N1-FAITH (520d701): N1 kill faithful with caveats (orientation; dual family kills LS-literal).
 03:45Z FAITH-lagfam (docs/referee-2/R2-FAITH-lagfam.md, 636697c): DE21 reproduces on pinned C++ (depth = D, k and exits = ceil(D/2)+1); cited in DE21 at trunk bf302b0. Parked (~410k).
 00:58Z P11 (§23s CHANGE-NEW, pin 5909724): docs/referee-2/R2-P11.md. (a) SIGN (function of (R,p,T), only-appended verified), (b) SIGN + N11-b1 (e*-at-R ≤ D_R, drop H), (c) CONFIRMED: (CTX⁺)∧(FIRED⁺-R) ⇔ GAP-A. Probe an11.py 0 failures.
 00:30Z P10 (§23q ENTRY-CHARGE, pin 1100f3a): docs/referee-2/R2-P10.md. (a) SIGN WITH GAPS (G10-a1 fixed step set), fan-out step correct; (b) SIGN, N10-b1 (RELSTEAL already FIRED-free; N*_R <= N_ent shorter route); (c) SIGN; (d) CONFIRMED equivalence. Probe an10.py: 0 failures, EXIT_2 on all data.
@@ -71,6 +80,7 @@ L4 (claude/l-struct 50dc28b, docs/struct/L4-proof.md). Do your own report before
 | arXiv 1410.7530 (FHZ shortest paths, e-print tex) | Table 1 (G_{n,r,s,t}), Def. 5.2 functional, B_0 = zero-edge trees, Thm 6.3 (Lower-RandomFacet.tex thm:main), intro lines 23-33, Conclude.tex open problem | 2026-10-15 | no remark on parity-game transfer |
 | arXiv 1410.7871 (errata, e-print tex) | section 1 (error only in RF = RF* claim; RF* bound stands; Hansen12/FHZ14 give RF bound), Fig. 1 pseudocode, "not difficult to obtain similar examples for parity games" | 2026-10-15 | |
 | arXiv 2607.06334 (Zwick RAR, e-print tex) | section 4 RAR steps 1-5, Appendix pseudocode (test (c -> b) in H) | 2026-10-15 | same recursion as RF |
+| BRICS RS-00-48 (Vöge-Jurdziński, pdf sha256 485a12de432a2a8c...) | §3 P1/P2/I1/I2, Thm 3.1; §4.1-4.5 (Θ, E, E_ℓ, Ẽ_ℓ, ⊕, multiset MaxDiff); §5.1 (3)-(10); Prop 5.1, Lemma 5.2, (11); Prop 5.3-5.6, Lemma 5.5, 5.7, 5.8 (+proof), 5.9, Prop 5.10; §5.6 | 2026-10-18 | Lemma 5.8 2=>3 proof step false at cycle nodes; I1 and I2 fail (R2-N5T §4) |
 | TARGET.md v1.0 | section 1 vocabulary (max-parity, successor condition, priorities 0..n) | 2026-10-14 | T-A1 uses nothing about the priority range |
 
 ## Things only I know (cont.)
