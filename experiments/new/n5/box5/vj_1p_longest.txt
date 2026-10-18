@@ -1,0 +1,1 @@
+games=300 seed=7: longest improvement sequence over all policies and all starts, by n: {4: 5, 5: 9, 6: 9, 7: 16, 8: 21, 9: 14}

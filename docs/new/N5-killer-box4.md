@@ -202,6 +202,8 @@ K8 (switch-best following; N5-K8-box6.md). N5 follows a switch-best run IF OddSt
    on the data N5 leaves the path only where it fails) (b = Odd's best
    replies along the run). When Odd's step is its best reply, this forces b_k = b_{k+2}: constant or 2-periodic replies. Friedmann's
    family: 2^N values, 0/39 flip-backs. The constant case = one-player switch-best: ≤ n/2 in climbs.
+K9 (best-reply changes; N5-oneplayer-box7.md). #iterations ≤ C n³ (2 + #changes of σ̄ + #changes of τ̄) along the run, conditional on VJ00
+   Prop. 7.4. A killer needs super-polynomially many best-reply changes; data ≤ 25.
 Families that make N5 slow WITHOUT fallbacks:
 - They must defeat the restricted best response against τ.
 - When τ = σ̄ (Odd has no real choices, as in switchallexp: only h0, h1 choose), Even's step is the optimum of the one-player arena
