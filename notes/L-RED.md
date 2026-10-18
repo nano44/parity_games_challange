@@ -55,6 +55,16 @@ Status: BOX 11 ACTIVE (successor 8, Lead GO 09:15Z, to ~14:15Z; R40 in progress;
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-18 11:43Z (date -u), successor 8, box 11 (produced on Opus 5.5). Pushed through 6b1bc0c2: docs/red/R40 §0-11.
+- (CTX+) answered on uniform families: leanT(N) (lean.py, n = 8N) C_bv = S - 1 (N 6..32, both orders); tcL C_bv = S - 3;
+  tcR4 has e* at depth 1. All linear in n. No live L-ALG lemma broken (R40 §11). GAP-C probe 60k runs verified.
+- Item (2) long phase: NOT achieved. Every structured family found learns nested/extending chains (leanT: search k extends one
+  chain tangle by bit k); perturbation climbs top out at about 0.13 n searches. Antichain width is NOT an obstruction
+  (leanT width = S, lagfam all tangles incomparable): ctxp/width.py.
+SUCCESSOR QUEUE: (1) item (2) on the staircase: a counter needs each rung RE-learned with a new (state-dependent) tangle after a
+higher rung advances; TC's j-chains carry exactly such state (TL learns 2^(N+1) tangles on tc(N)), DTL's pruning skips them
+(ctxp/prunes.py prints what the root call prunes). (2) DEEP-STAB proof gap (R40 §5). (3) tcR4 at N >= 9 needs ctxlight and
+one job at a time.
 2026-10-18 11:07Z (date -u), successor 8, box 11 (produced on Opus 5.5). Pushed 5dd0b5cd, f020224f, 991ae4fb (R40 §1-8).
 - tcR4(N) (tcpert.py tcR4): e* at search_rec DEPTH 1 with the root identical (13 of 25 transitions at N 8, both orders); about
   half the tangles born at depth >= 1; DEEP-STAB held. tcL / tcR4 totals: no steals, no exits, fired+ small. All linear in n.
@@ -351,6 +361,11 @@ None open. Last end-of-box messages: 18:00Z ((M-cross)), 18:30Z ((D), removal-or
 - GAP-C: (alpha) (straddling tangle leaving the lowest region open) never produced; proxy fitness "alpha" in dtl_search.py.
 
 ## Things only I know
+- (box 11) ctxp/ctxfit.py keeps full frozensets per log entry (dtl_rootmono's CK): OOM-killed (~6 GB container cap) at n ~ 350
+  even alone. ctxp/ctxlight.py hashes them (validated equal on tcL 4/6/8, leanT 6/8). Run ONE rootmono-based job at a time.
+- (box 11) tcpert.py labels: "<Even|Odd>-<i>-<Z|T|L|H>" and "<..>-<i>-<S|A|B>-<j>"; tc+ uses another label format (not parsed).
+- (box 11) In-tree experiments/alg copies of dtl_rootmono/fdlcheck/firstdiff/deficit/pyref/stealdepth/changenew/prefexits/
+  defsplit/quietlin are byte-identical to l-alg 11d89e20, so LALG_DIR=<repo root> works (check.sh uses it).
 - (box 8, 23:10Z) Depth/EXIT need visits: depth D >= D+3 visits of one context in one phase (R37-1); EXIT c needs >= 2c visits.
   The 45/76-vertex cores have 4-search phases (max depth 1, EXIT 2 by construction); only the R35 game (9 searches) has room.
   Stacked copies run in lockstep (same phase); a lag between copies needs a gate (R37 addendum plan).
