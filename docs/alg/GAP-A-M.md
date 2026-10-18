@@ -3357,3 +3357,7 @@ HONEST LIMIT. The bound is tight, and at the ROOT context it tracks S. On spp_ch
 (FIRED⁺-R) at G′ is close to bounding S directly, i.e. close to GAP-A's core (as R11 G-R11-6 warned for (FIRED-R)). It is
 still ≤ |R| on all data (41 ≤ 43). The lemma's value is structural: per context, the budget F_R is at most 3 times the
 number of NEW tangles that reach it, with no steal bookkeeping.
+- Note (00:46Z by date -u): at G′, D_{G′} (differing consecutive root calls) is about S − 1 in the data; on spp_chain_up_n43
+  it is 41 for S = 42. So (FIRED⁺ ≤ |R|) at the root would give S ≤ |G′| + 1 per phase, which is (SPP) itself (DATA, tight;
+  GAP-A-M §21). The root-level form of (FIRED⁺-R) is therefore the old core conjecture, not a new route. Below the root it
+  is a genuinely per-context statement.

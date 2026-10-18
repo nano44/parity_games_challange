@@ -121,17 +121,18 @@ Box 8 so far (GAP-A-M §23a). The invariant behind (STEAL-ONCE*), DATA only, 0 e
   verified". Re-run every instance before reporting it.
 
 ## Resume point
-Successor 8:
-- Read GAP-A-M §23o (the position: signed conditionals, the three DATA premises with best data and killed routes, and the best
-  guess), then §23p (EXIT-CHARGE), §23k (the packet-9 imports), and docs/alg/STEAL-DEPTH.md.
-- Best next target, in my judgement: the STEAL premise via the local statement (EXIT_c). Each vertex leaves each step's
-  prefix P(τ⁺) at most c times per phase. Data: c = 2, reached only on the DE20 instances.
-  - Question: how can w re-enter P(τ⁺) after an exit? In R35 the re-entry comes from a NEW tangle fired by region 66.
-  - Route idea: an exit needs a relevant steal at an earlier step (local PREFIX-MONO-X*), and a re-entry needs prefix growth
-    above.
-- (CTX⁺) and (FIRED-R): every set-structure route is dead (see §23o). Do not retry CHAIN, CTX-ROOT, CTX-LAMINAR,
-  PIECES-LAMINAR, FIRED-STEP, FIRED-LAMINAR, FIRED-TOP-INJ, FIRED-HALL or NO-RETURN.
-- RESULTS R12 (packet 9) is being drafted by the Lead.
+Successor 8 (box 9 ended in this session, 00:46Z by date -u):
+- Read GAP-A-M §23o (the position), then the box-9 results §23q (ENTRY-CHARGE, PACKET 10 out, pinned at trunk 1100f3a; do
+  not edit §23q), §23r (EXIT_c data and gap G23r), and §23s (CHANGE-NEW).
+- Current position: two alternative routes for the per-context budget, each with (CTX⁺):
+  - GAP-A ⇐ (CTX⁺) ∧ (EXIT_c), via §23q plus the R12 sum form;
+  - GAP-A ⇐ (CTX⁺) ∧ (FIRED⁺-R), via §23s, unconditional.
+  - At the root, (FIRED⁺-R) is the old (SPP).
+- Next targets, in order:
+  - (1) the referee outcome of packet 10, then a CHANGE-NEW packet (§23s) if the Lead routes it;
+  - (2) (EXIT_c): a per-vertex oscillation bound for top_r^i(w). Data c = 2; re-entries are common. The gap is named in §23r;
+  - (3) (CTX⁺): no route.
+- Box-8 resume notes below this line are still valid for tools and traps.
 
 ## Dead ends
 - Box 8 successor 7: STEALER-MONO (stealer_viol_n76), FIRED-STEP const and FIRED-TOP-INJ (fired18_stable_n20), FIRED-LAMINAR
