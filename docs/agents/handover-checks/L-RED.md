@@ -150,3 +150,48 @@ started (scripts/setup_oink.sh, background). Box 8 queue (Lead plan); nothing st
   writing (box 7). Check: after every kill, `ps -eo pid,ppid,args | awk '$2==1 && /dtl_rootmono/'` and kill those PIDs
   in a separate call (never pkill -f: it matched its own shell four times).
 - Also (bit at this start): stale local branch; check `git rev-parse HEAD origin/claude/l-red` after a fetch.
+
+# Handover check: L-RED (successor 7, Opus 5.5 per owner D8; written 2026-10-18 02:00Z by date -u)
+Predecessor: successor 6 (session_01Kf25QZtGKPk1nizXDPFsuJ), parked at l-red 9a4b739 (box 9 END, R38).
+
+## 1. Branch, head, distance to trunk
+- Branch claude/l-red. Container start: local HEAD 5a30e98, origin/claude/l-red 9a4b739 (stale-branch trap again).
+  Fast-forwarded to 9a4b739; it was 0 ahead / 185 behind trunk origin/claude/vibrant-johnson-nxvvxo (cc59eb8).
+  Merged trunk with merge commit e81142d (no conflicts): 1 ahead / 0 behind
+  (`git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`). This check commit makes it 2 ahead;
+  the pushed head is reported to the Lead by SHA.
+
+## 2. Open work and the next step of each
+Nothing running (ps: no dtl_rootmono; predecessor stopped all climbs 01:48Z; its scratchpad is gone). Oink build started
+(scripts/setup_oink.sh, background). Box 10 queue (Lead plan); nothing starts before GO:
+- (1) Lag gadget (serialized pieces; R37 addendum, R38): Odd-parity clock delaying closing dominions + gate starting copy
+  U two searches late, u^L -> w^U interleave, priorities p -> 40p + (p mod 2). Next: read R37 addendum and L-ALG's
+  dtl_stealdepth.py / dtl_prefexits.py / dtl_rootmono.py (unmodified, detached l-alg worktree as LALG_DIR), rebuild
+  the predecessor's ctxtrace, then build a 2-copy lag on stealonce_both_n45 / ctx6_n20 and measure depth, exits per
+  (step, vertex), first-difference contexts per transition, both orders.
+- (2) If infeasible: a precise necessary condition (R37 style) for the lag. Next: only after (1) fails on design.
+- (3) Long-phase FIRED-R with multi > 0 (a tangle firing only at a later visit). Next: only if (1)-(2) finish early.
+
+## 3. docs/GAPS.md rows I own
+- None. On trunk cc59eb8: GAP-A and GAP-C are owned by L-ALG "(L-RED attacks)", blocker, open; G-STR and G-DOM are
+  L-ALG "(L-RED attacks)", closed. L-RED attacks GAP-A via (CTX+) (box 10) and GAP-C.
+
+## 4. The three owner rulings that most constrain me (verbatim), with their DECISIONS-INDEX status
+1. D1 (docs/decisions/D001-launch-brief.md lines 25-26, 96-97; index row D1 "active"):
+   > - A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such
+   >   claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > - Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+   >   my decision.
+2. D7 (docs/DECISIONS.md line 105; index row D7 "active"):
+   > a
+   (Q9 option (a): continue at the current spend rate; stop at once on overage.) So no climb outlives my box.
+3. D8 (docs/DECISIONS.md line 161; index row D8 "active"):
+   > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
+   Lead reading L32 (index "active"; a Lead reading, not an owner ruling): an incorrect run or a super-polynomial
+   family goes to the Lead at once.
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap (bit again at this start): stale local branch (local 5a30e98, origin 9a4b739). Check: `git fetch origin
+  claude/l-red` then `git rev-parse HEAD origin/claude/l-red` must agree before any edit (fast-forwarded here).
+- Also guarded: killed climbs leave dtl_rootmono orphans with ppid 1; after every kill run
+  `ps -eo pid,ppid,args | awk '$2==1 && /dtl_rootmono/'` and kill those PIDs in a separate call (never pkill -f).
