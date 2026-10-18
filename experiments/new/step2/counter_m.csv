@@ -39,5 +39,5 @@ counter_m,37,114,tools/oink/build/counter_m 37,4169a2b6d1ba5837fe033ef629e8a6892
 counter_m,38,117,tools/oink/build/counter_m 38,fd2caccdf22e8b24ed4fdde883280ffaffdbadef,1,268,19,57,1,0.13,zielonka(oink zlk) OK strategies verified
 counter_m,39,120,tools/oink/build/counter_m 39,ff6905e1a9449c5b9fafd8d57b0a9f557c268ac6,39,284,20,57,1,0.37,zielonka(oink zlk) OK strategies verified
 counter_m,40,123,tools/oink/build/counter_m 40,168dc37f94caeacffd2f0b75bbf8d871a20daf3e,1,285,20,60,1,0.19,zielonka(oink zlk) OK strategies verified
-counter_m,41,126,tools/oink/build/counter_m 41,b9d6a3d22f71c9cdb91076b0d8232078aabf65d3,41,301,21,60,1,0.16,CHECK_TIMEOUT
-counter_m,42,129,tools/oink/build/counter_m 42,76ef4ebbc510dcbbc7e19f90aa3736dff2cc8bcd,1,302,21,63,1,0.23,CHECK_TIMEOUT
+counter_m,41,126,tools/oink/build/counter_m 41,b9d6a3d22f71c9cdb91076b0d8232078aabf65d3,41,301,21,60,1,0.16,oink tl (zlk exit 255) OK strategies verified (re-checked 14:2xZ after the sweep checker crashed on the zlk error)
+counter_m,42,129,tools/oink/build/counter_m 42,76ef4ebbc510dcbbc7e19f90aa3736dff2cc8bcd,1,302,21,63,1,0.23,oink tl (zlk exit 255) OK strategies verified (re-checked 14:2xZ after the sweep checker crashed on the zlk error)
