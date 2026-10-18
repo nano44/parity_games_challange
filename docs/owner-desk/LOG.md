@@ -230,3 +230,7 @@ NOT a claim. Next: step 3 barrier (temporary 4th lane), second implementation, d
 ## 2026-10-18 18:12Z Lead -> owner
 N1 KILLED on data (L-NEW 8ac5e5c, docs/new/N1-KILL.md): switch-all family + deep traps, one late phase with 11..1244 Howard switches
 at N=1..7 (~5*2^(N+1)), n=32N+15; Lead re-ran N=1..5 exactly. Referee fidelity check before it becomes a dead end. L-NEW continues (N3).
+
+## 2026-10-18 18:31Z Lead -> owner
+Correction: N1 report times were estimates ~10-15 min ahead (step-2 report ~17:46Z, kill ~18:01Z). REFEREE-2: N1 implementation
+FAITHFUL WITH CAVEATS (mirrored roles; literal orientation killed the same way). N2 killed on data, N3 dead as stated. Dead ends with CHECKER.
