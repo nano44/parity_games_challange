@@ -11,6 +11,8 @@ Box 11 (GO 09:38Z by the Lead's message, to about 14:40Z). Item (1) (FIX-d) scop
   Lemma CTRL (controller's searches ≤ n + 1) and Lemma NOSTEAL-1P (no relevant steal in the non-controller's phase when its
   parity's priorities are distinct), both PROVED as readings; so GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P (R9 + R11 (c)).
 - NEXT: (CTX⁺) on 𝒞^1P (proposal in §27b end), unless the Lead says otherwise; a referee packet for CTRL + NOSTEAL-1P is the Lead's call.
+- §27c: NOSTEAL-1P held on 3,600 forced runs of the designed steal instances (ties too); (CHAIN) false in class
+  (onep_chainfail_n20); class (CTX⁺) climbs 2/4/5 at n = 12/20/30 (climber weak). Brief: docs/alg/ONEPLAYER.md. No (CTX⁺) route yet.
 
 ## DONE (box 11, successor 9)
 - Handover check 0a7b8d8 (5/5 per Lead), trunk merge 443e6f5.
