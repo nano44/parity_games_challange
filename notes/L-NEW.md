@@ -2,7 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-SUCCESSOR 1, box 3 (GO 18:00Z, to ~23:00Z). 18:15Z: N1 KILL on data (docs/new/N1-KILL.md, head 8ac5e5c, reported 18:22Z).
+SUCCESSOR 1, box 3 (Lead GO received 17:49Z by date -u; to ~23:00Z). N1 KILL on data at 8ac5e5c (17:54Z UTC; docs/new/N1-KILL.md). NOTE: my messages of this box were stamped 18:22Z and 19:05Z without date -u; true send times about 17:56Z and 18:07Z.
 Box 2 results: N1 step-2 survivor (N1-step2.md), S6 rule not killed (S5S6-renum.md). Next: generalise the deep trap (other
 families, other schedules), wait for Lead routing; check in ~20:30Z with ReadNotifications.
 
@@ -55,10 +55,10 @@ families, other schedules), wait for Lead routing; check in ~20:30Z with ReadNot
   (abstract page only, NOT opened); Karczmarz arXiv 2110.15070 (NOT opened).
 
 ## Dead ends
-- N2 (PRIO-ANNEAL), KILLED ON DATA ~19:00Z (box 3; first implementation n2.py). Padded switchallexp
+- N2 (PRIO-ANNEAL), KILLED ON DATA 18:05Z UTC (box 3; first implementation n2.py). Padded switchallexp
   (gen_padsae.sh; dummies block compression): largest stage 6, 15, 34, 72, 148, 300, 604 (N = 1..7). Instance
   experiments/new/instances/killer/padsae_N7.pg (sha1 9ee0385509ac81f2dd9eb111df2ecbdabdfa87b1, n = 230): stage of 604.
-- N1 (LS24 IncreasingDiscountPI on parity rewards), KILLED ON DATA 2026-10-18 ~18:15Z (box 3; unrefereed; docs/new/N1-KILL.md).
+- N1 (LS24 IncreasingDiscountPI on parity rewards), KILLED ON DATA 2026-10-18 17:54Z UTC (box 3; unrefereed; docs/new/N1-KILL.md).
   Obstruction: deep traps (trap priority gap P - q > max priority + 2) hold Even in all traps with positive values until a phase
   after the parity-like horizon; that single phase runs Howard from the best-reward start = Friedmann's counter. Instance:
   experiments/new/instances/killer/deeptrap_sae_N7.pg (sha1 835ce1326ca36e318bd59d54aead26eee6d36b24, n = 239): 1244 Even
@@ -71,6 +71,8 @@ families, other schedules), wait for Lead routing; check in ~20:30Z with ReadNot
   late (a single Odd self-loop of priority 1 reached through high even priorities) forces the climb in the last phase.
 
 ## Things only I know
+- Run date -u for EVERY timestamp, including message first lines; in box 3 I estimated two stamps (18:22Z, 19:05Z) that were
+  20-55 min ahead of the clock. Commit times (TZ=UTC git log --date=format-local) are the reliable record.
 - out/ does not survive a container: cite only committed CSVs. Python Zielonka is exponential on counter_rr/counter_m (b ~1.6):
   never use check_sol.py as the sweep checker there; check_sol2.py (Oink zlk, tl fallback) is the sweep checker.
 - Never edit a running bash script in place with an editor that keeps the inode (bash reads it lazily); sed -i is safe (new inode).

@@ -1,4 +1,4 @@
-# N1 KILL candidate: deep traps on switchallexp (L-NEW box 3, 2026-10-18 ~18:15Z by date -u). DATA, unrefereed
+# N1 KILL candidate: deep traps on switchallexp (L-NEW box 3, 2026-10-18; commit 8ac5e5c at 17:54Z by git log, UTC). DATA, unrefereed
 
 N1 = LS24 IncreasingDiscountPI on parity-induced rewards, experiments/new/anneal.cpp UNMODIFIED (the implementation that passed
 step 2, docs/new/N1-step2.md). Family: Friedmann's switchallexp plus a "deep trap" on every Even choice vertex.
@@ -45,7 +45,7 @@ python3 check_sol2.py g.pg g.sol` (or check_sol.py for the Python Zielonka).
 3. Robustness: the start strategy is irrelevant (traps dominate at the first phase); the schedule is irrelevant once a phase
    lands after release (any γ beyond the release horizon is parity-like for the original game).
 
-## Robustness (18:30-18:40Z)
+## Robustness (commit a5d55fc, 18:00Z)
 - Start discount and Odd's rule: on N = 5, anneal_c --j0 1 / 100 / 400 / 700 and --odd-howard all give 311 Even switches in one
   phase (Odd 67, 64 with --odd-howard).
 - N1m (box 1's variant with priority compression, compress.py): WITHOUT padding it survives the deep traps (Even 20, 28, 37, 46 for

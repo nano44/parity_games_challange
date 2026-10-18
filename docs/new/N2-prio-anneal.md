@@ -1,6 +1,6 @@
 # N2 PRIO-ANNEAL: priority annealing (top-down coarsening) with warm-started strategy iteration (L-NEW; before code)
 
-Status: DEAD END on data (box 3, 2026-10-18 ~19:00Z by date -u); see the last section.
+Status: DEAD END on data (box 3, 2026-10-18; commit f301bfb at 18:05Z, UTC); see the last section.
 
 ## Exact pseudocode
 Input G, distinct priorities q_1 > q_2 > ... > q_k (after compression).
@@ -23,7 +23,7 @@ cycle structure, so a coarsened phase may make all bits trivially decided and th
 switchallexp: its bits are encoded by priorities in a narrow band; the final phase sees almost the original game.
 Second: tc (two counters), where Oink's FPI/ZLK die (B6).
 
-## Box 3: first implementation and kill (2026-10-18 ~18:45-19:00Z)
+## Box 3: first implementation and kill (commit f301bfb, 18:05Z UTC)
 Implementation: experiments/new/n2.py (pseudocode above; compression as compress.py) driving n2_si.cpp (verbatim vjfast copy +
 one line printing Even's full strategy for warm starts). Every final solution: regions = Oink zlk, strategies verified.
 - switchallexp (unpadded): total 10, 18, 27, 32, 37 (N = 1..5): compression merges the counter's priorities (box 1 confound).
