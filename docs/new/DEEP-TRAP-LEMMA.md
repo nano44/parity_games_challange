@@ -49,9 +49,10 @@ The length of the VJ switch-all run on switchallexp from σ_1 (the first Howard 
 N = 1..7): N1 makes 11, 31, 71, 151, 311, 631, 1244 Even switches in that one phase; plain VJ switch-all from all traps on the same
 games: 13, 33, 73 (N = 1..3), i.e. Friedmann's count + 3 (box 1: 33, 73, 153, 313, 633, 1246 on alltrap). A proof needs:
 σ_1 is a strategy from which Friedmann's switch-all lower bound applies (his σ_0, or a state of his counter at value ≤ c).
-[Gap 5: identify σ_1 with Friedmann's initial strategy on switchallexp, using 1106.0778's description of σ_0. Evidence: box 1
-measured that plain VJ from all traps equals VJ from PGSolver's best-reward start (alltrap.py docstring: "best-reward start = all
-traps"), and the M1 bench (experiments/hard-families/switchallexp) confirms Friedmann's doubling from that start.]
+[Gap 5: identify σ_1 with Friedmann's initial strategy on switchallexp, using 1106.0778's description of σ_0. Evidence (data only): on G'
+plain VJ's best-reward start IS all traps (P is the top reward; alltrap.py docstring), and VJ from there takes Friedmann's count + 3
+(box 1: 33, 73, 153, 313, 633, 1246 vs 30, 70, 150, 310, 630 from the best-reward start on G); so σ_1 behaves like Friedmann's start,
+but the two strategies have not been compared vertex by vertex.]
 
 ## Generalisation used in the N3 obstruction
 Nothing above uses N1's schedule except "H doubles": any method that follows the discounted optimum in γ meets, at the release
