@@ -34,5 +34,28 @@ experiments/hard-families/pgsolver-binary-diff.md). So the valuation code shares
   section number; a reader without that code must supply VJ's valuation (cycle vertex, path set, length), its order and the
   counterstrategy algorithm. [PGSolver's, via pgsolver_si.py]
 
+## A1-A10 against the SPEC (docs/new/N5-ssi-global.md "SPEC (EXACT ...)" S1-S5, l-new c66ce20; Lead 20:59Z)
+| # | settled by | SPEC vs my reading | mode |
+| --- | --- | --- | --- |
+| A1 rank | S1 "rank(v) = position of v in V sorted by (Ω(v), v)" | same | both |
+| A2 start | S3 (PGSolver best-reward, key (r(w), ±w)) | same (pgsolver_si initial_strategy_by_best_reward) | both |
+| A3 dual | S1 last item ("owner swapped, Ω + 1") | same; ids/successor order: S1 "Successor and predecessor lists are in increasing index order" | both |
+| A4 Iσ, Iτ | S2 | same (strict, under Ξσ / Ξτ on G^d) | both |
+| A5 tie-break of the optimum | S1 (iv)-(v): Odd's choice is produced INSIDE the VJ procedure (longest path: first strict maximum in successor order; shortest: BFS first discovery; cycle node: first successor on the DFS cycle) | DIFFERENT: my reading took per vertex the best successor by (valuation, index) | orig = mine, spec = S1 |
+| A6 old σ | S4 "both steps computed from the SAME (σ, τ), applied together" | same | both |
+| A7 fallback | S4c "maximising (Ξσ(w), w)" | same (PGSolver switch-all best, ties to the larger index) | both |
+| A8 iterations | S4 "one iteration = one pass with Iσ ∪ Iτ ≠ ∅" | same | both |
+| A9 output | S5 "Odd's strategy = σ̄ ... to the FINAL σ (Not τ)" | same choice of strategy; in spec mode σ̄ is S1's procedure choice | both |
+| A10 valuation by reference to code | S1 now states the procedure in text (still citing si.py lines 78-205; "as in Friedmann 1106.0778 §3") | settled except as below | - |
+STILL OPEN / unclear in the SPEC text (findings against the spec):
+- S1 P-order: "signed weight Σ ±2^rank" is unit-cost big-integer arithmetic as written; equivalent to comparing the most relevant
+  element of the symmetric difference (what pgsolver_si.py does, O(n) bit cost). The spec should say which, given TARGET §3.
+- S1 (i)/(v): "DFS ... visiting only alive vertices of rank < rank(v)": the DFS visited-set is shared across v's successors (my
+  reading, as PGSolver) or fresh per successor; it does not change WHETHER v is a cycle node but can change WHICH successor (v)
+  picks. Not stated.
+- S1 (iv) longest path: "recursion over successors": the restricted graph can still contain cycles away from v (vertices of rank
+  < rank(v) that are not cycle nodes); the text does not say why the recursion terminates (it does in practice on all games run).
+- S5 does not say what σ̄ is on a vertex where both the (iv) and (v) rules could apply; I use (v) for the cycle node only.
+
 ## Results
 See results/<family>.csv and results/random.csv; summary below (filled at the end of the box).

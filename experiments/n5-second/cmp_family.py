@@ -6,7 +6,7 @@ Oink zlk (Oink tl if zlk exits non-zero, labelled) and BOTH players' strategies 
 compare iterations and fallbacks with the CSV.
 Status: ok | COUNT (counts differ; regions and strategies right) | INCORRECT (wrong region or strategy) | SHA1 (instance
 differs) | timeout. Stops the family when the cumulative time exceeds --budget or a row times out.
-Usage: cmp_family.py FAMILY [--budget 900] [--timeout 600]   -> results/FAMILY.csv"""
+Usage: cmp_family.py FAMILY [--budget 900] [--timeout 600] [--mode orig|spec]   -> results/FAMILY.csv (spec: FAMILY_spec.csv)"""
 import sys, os, csv, hashlib, subprocess, shlex, time, signal, argparse, tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
@@ -37,10 +37,12 @@ def reference(gp, g):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("family")
     ap.add_argument("--budget", type=float, default=900); ap.add_argument("--timeout", type=int, default=600)
+    ap.add_argument("--mode", default="orig", choices=["orig", "spec"])
     a = ap.parse_args()
+    n5b.MODE = a.mode
     rows_in = list(csv.DictReader(open(os.path.join(ROOT, "experiments", "new", "n5", f"{a.family}.csv"))))
     rows_in.sort(key=lambda r: int(r["N"]))
-    out = os.path.join(HERE, "results", f"{a.family}.csv"); os.makedirs(os.path.dirname(out), exist_ok=True)
+    out = os.path.join(HERE, "results", f"{a.family}{'' if a.mode == 'orig' else '_spec'}.csv"); os.makedirs(os.path.dirname(out), exist_ok=True)
     rows, spent = [], 0.0
     td = tempfile.mkdtemp()
     for r in rows_in:
