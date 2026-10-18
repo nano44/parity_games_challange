@@ -46,3 +46,6 @@ equivalent to GAP-A (reformulations), while each adversarial box produced a veri
 get_session on all 38 roster ids at 2026-10-18 04:00Z: total $1,950 (up $169 since 2026-10-17 19:51Z); Lead $304, CHECKER $103,
 OWNER-DESK $53. isUsingOverage false on all 38; seven_day 'allowed_warning'; the two paused Fable sessions are 'rejected' until
 the reset 2026-10-21 21:00Z. All lane sessions are parked; nothing is running.
+
+## Q16 (early reassessment, 22:30Z by date -u)
+Sent to OWNER-DESK at 22:29Z (date -u). Trigger: L32 (2) "earlier when both lanes' boxes end with no new GAP-A reduction". L-ALG boxes 14-16 ended with no route (§35, §36, GAP-A-STATUS.md); L-RED box 14 killed (XCTX@p0), (TREE-PIECE⁺), (VR-NEW_all), (FD-WITNESS_all), (NO-PRE-a) (R42-R44, all re-run by the Lead in both orders). Options put: L32 (a), (b), (c). Lead recommendation: (b)+(c) (L-RED on the (CTX⁺) compounding-counter question; DTL proof lane parked; proof effort to N5 step 4; re-ask at the Fable reset). Until the owner answers, D13 holds. Status: OPEN.
