@@ -17,6 +17,8 @@ Box 5 part 2 (23:10Z by date -u):
   iterations and then leaves it: τ_sb changes 2^N-ish times and N5's Odd step misses every change.
 - K7 written (N5-dlm-box5.md §7).
 - Tools: n5_skip.py, n5_adv4.py, n5_vs_sb.py, sb_traj.py, sb_tauvar.py.
+Attempt 9 (sb_follow.py): a fully followed switch-best run reaches only 37 < 58 under perturbation.
+G-N5-TERM reading: REFEREE-2 SIGNED WITH GAPS; N1-N4 applied at e7157417 (theorem unchanged); REFEREE pending.
 NEXT candidate for a successor (the sharpest remaining lead): a switch-best family whose arena reply τ_sb changes only in ways that
 OddStep(σ_k, ·) reproduces. Test it with sb_tauvar.py (misses at changes must be 0).
 NEXT: "N5 ⊇ SSI" is FALSE in general (random games, n5_superset.py); it holds on DLM only. Untried lead: exploit the states where

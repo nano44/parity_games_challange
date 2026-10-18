@@ -120,6 +120,15 @@ next arena optimum at every step: τ_{k+1} = OddStep(σ_k, τ_k) = τ_sb(σ_{k+1
   improvement against σ_k.
 - No such family is known. The climbs (§6) show frequent harmful skips without longer runs.
 
+## 8. Attempt 9: make N5 follow switch-best for a whole LONG run (sb_follow.py; perturbation climb from switchbestexp N = 2)
+- Fitness = (iterations for which N5 follows switch-best's exact σ-trajectory, switch-best's length). Unperturbed: (13, 58).
+- The climb at once finds games where N5 follows switch-best to the end, but only by first shortening switch-best's run (28).
+  From there the fully followed run grows only to 37 (seed 21) and 33 (seed 22) in 1,500 steps, below the original 58.
+  All OK by Oink zlk + verify.py (sbfollow_check.txt; instances/sbfollow).
+- Reading: K7's requirement (Odd's lagged step reproduces every change of the arena reply) is met only on short switch-best runs here.
+- Tie-break modes: on switchbestexp N = 1..6 and on the harmful-skip instances, n5.py, n5b spec and n5b orig agree (one exception:
+  harm_n48, where n5b orig takes 9 against 27; modes_sbe_harm.txt).
+
 ## 5. Not done
 - "N5 ⊇ SSI" is false in general (§2). On DLM's families it holds on the data. An attack that uses the states where N5 skips an
   SSI switch has not been tried.
