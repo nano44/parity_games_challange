@@ -203,6 +203,12 @@ for o in stable oink; do
   out=$(cd xctx && DTL_ORDER=$o python3 -I xscore.py instances/xctx_viol_n20.pg | grep -o "score ([0-9]*")
   [[ "$out" == "score (1" ]] || { echo "xctx_viol_n20: (XCTX@p0) violation not reproduced ($o): $out"; exit 1; }
 done
+# R42 §5 (box 14): (VR-NEW_all) kill on 𝒞^1P; b12_pot (in-tree, unmodified) K-v-all = 1 in both orders.
+[[ "$(sha1sum xctx/instances/vrall_viol_n20.pg | cut -c1-12)" == "ed5058576554" ]] || { echo "vrall_viol_n20 sha1 changed"; exit 1; }
+for o in stable oink; do
+  out=$(cd ../alg && DTL_ORDER=$o CLASS=1 DIST=1 python3 -I b12_pot.py ../red/xctx/instances/vrall_viol_n20.pg | grep "K-v-all" | awk '{print $3}')
+  [[ "$out" == "1" ]] || { echo "vrall_viol_n20: b12_pot K-v-all violations drifted ($o): $out"; exit 1; }
+done
 # R43 (box 14): (TREE-PIECE⁺) kill, two-player; L-ALG's b12_ident.tp_score PLUS=1 (in-tree copy, unmodified), both orders.
 [[ "$(sha1sum tpp/instances/tpp_viol_n22.pg | cut -c1-12)" == "a5088b091cbd" ]] || { echo "tpp_viol_n22 sha1 changed"; exit 1; }
 [[ "$(sha1sum tpp/instances/tpp_viol_n63.pg | cut -c1-12)" == "64d0832859a4" ]] || { echo "tpp_viol_n63 sha1 changed"; exit 1; }

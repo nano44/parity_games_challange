@@ -1,5 +1,5 @@
 # R42: (XCTX@p0) and (CHAIN-CHANGE) on 𝒞^1P (L-RED box 14; produced on Opus 5.5)
-Status: KILL (DATA, both orders, L-ALG's unmodified checker) plus one READING (Lemma EMPTY-REC), unrefereed.
+Status: TWO KILLS ((XCTX@p0) §1, (VR-NEW_all) §5; DATA, both orders, L-ALG's unmodified checkers) plus one READING (Lemma EMPTY-REC), unrefereed.
 Target: Lead box-14 item 1. The statements are attacked as written in L-ALG docs/alg/GAP-A-M.md §33a/§35a at l-alg 9ab9a3e6.
 Started 2026-10-18 21:11Z (date -u). Pinned Oink @ 8fbf0a7 verifies every instance. L-ALG tools are used unmodified: b12_pot.py,
 b12_core.py, fixd_oneplayer.py, fixd_ctx1p.py and b12_topchain.classgames, from the in-tree experiments/alg copies (the kill is
@@ -107,10 +107,43 @@ Necessary conditions for a violation s → s+1 (reading; uses EMPTY-REC):
     matters for a bound.
 Status: (CHAIN-CHANGE) on 𝒞^1P survives every test made here. A violation needs (β1) or (β2) in the mid-phase case, or (γ) at the end.
 
-## 4. Files
+## 5. (VR-NEW_all) is FALSE on 𝒞^1P (both order data), and (FD-WITNESS_all) with it
+Statement (GAP-A-M §32-§33a, the b12_pot key K-v-all): every chain-changing transition of a q-phase gives some vertex a new full key
+(v, ρ_j, j, |R_j|, |V_j|) that it held at no earlier search of the phase.
+Instance: experiments/red/xctx/instances/vrall_viol_n20.pg, sha1 ed50585765541988d42aa4fa2b3d97c0b3bb8401.
+- Class membership: n = 20, C = 1, `inclass(g, 1)` is True, and all priorities are distinct. classgames takes the file as in-class.
+- Pinned Oink: 5 iterations (even 4, odd 1), 1 dominion, 6 tangles, solution verified. Zielonka solves it.
+- L-ALG's unmodified `b12_pot.py CLASS=1 DIST=1`: "K-v-all violations 1" in BOTH orders, out of 3 transitions, 0 of them with an
+  identical chain.
+- `b12_fdwit.py CLASS=1 DIST=1`, both orders: no new-key vertex in the piece at j* nor at j* − 1, for each of K-v-rV, K-v-rs and
+  K-v-all. So (FD-WITNESS_all) fails as well.
+- `b12_core MODE=xcover`: cross-context cover fraction 1.0 at ((0,0), 2, 2).
+
+The transition: Even phase, s2 → s3. Chains are (|R|, ρ, |V|, piece):
+
+| search | pos 0 | pos 1 | pos 2 | pos 3 |
+| --- | --- | --- | --- | --- |
+| s0 | (20,4,4,{1,4,11,19}) | (16,3,2,{18}) | (15,3,3,{3,5,6,7,9,10,12,13,14,15}) | (5,2,2,{16}) … |
+| s2 | (20,5,1,{19}) | (19,4,4,{0,1,4,11}) | (15,3,3, 13 vertices without 9, 10) | (2,22,1,{9,10}) |
+| s3 | (20,5,1,{19}) | (19,4,4,{0,1,4,11}) | (15,3,3, the s2 piece ∪ {9,10}) | (0,0,0,∅) |
+
+- At s3 the new keys of 9 and 10 are (9,3,2,15,3) and (10,3,2,15,3). Both were held at s0, at position 2 under the context
+  G′∖{1,4,11,18,19}. That is a different set of the same size, with the same rank and |V|.
+- Every other key of s3 was held at s2. Nothing new appears below p0: position 3 disappears.
+Found by experiments/red/xctx/vrclimb.py (graded: margin, then #new keys, then key distance; class moves), stable order, seed 41,
+2,110 steps from xctx_viol_n20 (margin 1, distance 2).
+Consequence (reading):
+- On 𝒞^1P, the depth-0 full-key pigeonhole (searches per q-phase ≤ #keys + 1) fails, and with EMPTY-REC so does the depth-0
+  (TREE-PIECE⁺).
+- What the instance shows is that the key must identify the CONTEXT SET, not only its size. With the set in the key, the count is
+  (CTX⁺) again.
+
+## 6. Files
 - experiments/red/xctx/xscore.py: the graded (XCTX@p0) scorer and climb (GROW=p adds class-preserving vertex insertions).
 - experiments/red/xctx/show.py: chains per q-phase.
 - experiments/red/xctx/chainchg.py and chainfin.py: (CHAIN-CHANGE) climbs.
 - experiments/red/xctx/deep.py, deeprand.py, deepclass.py and dagchk.py: depth-≥1 births and the EMPTY-REC check.
-- experiments/red/xctx/instances/: xctx_viol_n20.pg (kill), xcov11_n20.pg (near miss). Both are pinned in experiments/red/check.sh
+- experiments/red/xctx/vrclimb.py: the (VR-NEW_all) graded climb.
+- experiments/red/xctx/instances/: xctx_viol_n20.pg (kill), xcov11_n20.pg (near miss), vrall_viol_n20.pg ((VR-NEW_all) kill, §5;
+  pinned with b12_pot K-v-all = 1 in both orders). Both are pinned in experiments/red/check.sh
   (sha1, b12_core CORE-ALL = 1 and the xscore violation, both orders).
