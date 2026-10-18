@@ -91,6 +91,40 @@ FIX 4 (S1 (iv), A5). "first strict maximum" in the longest-path recursion = smal
 index, a vertex's choice is the vertex from which it was first discovered (si.py l. 176-180). Every Odd vertex x ≠ v of R gets
 the choice, including those whose valuation is not affected.
 
+### Four further SPEC points (Lead 21:10Z, from L-COMP 12fd5c2); successor 2, 2026-10-18 21:30Z by date -u
+Q1 (S1, path-set order, bit cost). The SPEC phrase "signed weight Σ ±2^rank(u)" is only a way of writing the order. The equivalent
+   comparison is: for path sets M ≠ N, let r = the highest rank in the symmetric difference M Δ N. Then M ◁ N (N better for Even)
+   iff r ∈ N and Ω(r) is even, or r ∈ M and Ω(r) is odd. Proof: 2^r > Σ_{i<r} 2^i, so the top differing term decides the sign.
+   - si.py l. 54-65 (weight) computes the signed sum as a Python integer. The sum has at most n bits (|weight| < 2^n), so the
+     integers are n-bit, not exponential-size, and each comparison costs O(n) bits. Computing a weight costs O(n²) bits as coded
+     (n shifts/additions of ≤ n-bit numbers, cached per mask). As E − O (E = the mask restricted to even ranks, O = to odd ranks)
+     it would cost O(n). No unit-cost big-number shortcut is involved (TARGET.md §3).
+   - Checked: 10,000 random mask pairs (n ≤ 60). weight(M) < weight(N) agrees with the symmetric-difference rule in every case.
+   - An implementation may use either; they are equivalent.
+Q2 (S1 (i), (v), cycle DFS). Each DFS has ONE visited set, created fresh per cycle node v and shared across all of v's successors.
+   - The cycle test (l. 99-106: seen = {v}) and the cycle-node choice (l. 184-195: par = {v: None}) are separate DFS runs.
+   - In the choice DFS, a vertex is marked when PUSHED. Successors are pushed in ascending index and popped LIFO, so the subtree
+     of v's LARGEST-index eligible successor is explored first. A vertex reached there is never re-entered from another successor.
+   - The scan of the popped vertex x's successor list stops at the first successor equal to v. v's choice = the child of v on the
+     DFS-tree path to that x (v itself for a self-loop, l. 195).
+   - So the visited set can change which successor v picks, and SPEC FIX 2 is to be read with this exploration order.
+Q3 (S1 (iv), termination of the longest-path recursion). Claim: when cycle node v (Ω(v) even) is processed, the restricted graph
+   on R has no cycle avoiding v. Take such a cycle C of alive vertices and let m be its most relevant vertex.
+   - If m is ranked below v, then rew(m) < rew(v), so m's turn in the increasing-rew loop (l. 94) came earlier. C was a cycle
+     through m over lower-rank alive vertices, so m would have been a cycle node and C would be dead. Contradiction.
+   - If m is ranked above v and Ω(m) is odd, then rew(m) < 0 < rew(v): the same argument.
+   - If m is ranked above v and Ω(m) is even, then after the restriction step for u = m, m keeps only edges into M = {vertices
+     reaching v without passing m}, and M's vertices keep only edges into M (l. 136-143). So no cycle passes m. This is VJ00 §6,
+     Prop. 6.1 clause 4 ("there is no cycle in G(r) containing s").
+   So the recursion only ever closes at v. si.py guards this with RuntimeError("cycle in restricted graph") (l. 159), which
+   no run has raised.
+Q4 (S5, σ̄ at the cycle node). The choice at the cycle node v comes from (v) ONLY (l. 182-195).
+   - The longest-path recursion returns 0 at v without setting tau[v] (l. 155-156).
+   - The BFS starts at v with dist[v] = 0 and never revisits v (l. 173-179).
+   - tau_full[v] = tau[v] is copied at l. 200. L-COMP's reading (v) = SPEC.
+Note for kills (Lead 21:10Z): a family that kills only under SPEC's tie-break kills that rule, not N5 in general. Any kill claim
+from this lane will name the tie-break mode. Box 4's attempts (N5-killer-box4.md) did not kill in SPEC mode.
+
 ## Why N5's step is NOT covered by 2309.02223 (opened pdf, sha256 10e6794d82aba465..; page numbers = running heads)
 - Improvement rules (p. 5): "an improvement rule, which is a function f : P(E) → P(E) that takes as input a set of improving
   edges, and outputs a set of improving edges", with "f(S) ⊆ S for all S ∈ P(E)" and at most one outgoing edge per node.
