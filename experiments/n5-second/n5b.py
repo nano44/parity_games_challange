@@ -72,11 +72,24 @@ class SpecSI(SI):
                     if self.rel(w, v) <= 0 and (v in gs[w] or process(w)):
                         return True
                 return False
+            # (i) cycle-node test and (v) FIX 2 (l-new 6014db7): explicit-stack DFS from v over Gσ, successors scanned in
+            # increasing index, each unvisited alive y of rank < rank(v) marked and pushed when scanned, last pushed popped
+            # first; the scan stops at the first successor equal to v; choice = first vertex after v on the tree path.
             cyc = None
-            seen.add(v)
-            for w in sorted(gs[v]):                      # (v): first successor of v on a DFS-found cycle back to v
-                if self.rel(w, v) <= 0 and (w == v or v in gs[w] or process(w)):
-                    cyc = w; break
+            stack, vis, parent, found = [v], {v}, {}, None
+            while stack and found is None:
+                x = stack.pop()
+                for y in sorted(gs[x]):
+                    if y == v:
+                        found = x; break
+                    if y not in vis and y in gs and self.rel(y, v) < 0:
+                        vis.add(y); parent[y] = x; stack.append(y)
+            if found is not None:
+                cyc = found
+                while cyc != v and parent.get(cyc) != v:
+                    cyc = parent[cyc]
+                if found == v:
+                    cyc = v
             if cyc is None:
                 continue
             nodes, st = set(), [v]

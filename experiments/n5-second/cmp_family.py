@@ -48,6 +48,8 @@ def main():
     for r in rows_in:
         if spent > a.budget:
             rows.append(dict(family=a.family, N=r["N"], status="BUDGET", detail=f"not started, {spent:.0f} s spent")); break
+        if not r["gen"]:                          # L-NEW's own budget marker row (e.g. BUDGET600_REACHED): nothing to run
+            rows.append(dict(family=a.family, N=r["N"], status="lnew-not-run", detail=r.get("secs", ""))); continue
         gp = os.path.join(td, "g.pg")
         p = subprocess.run(shlex.split(r["gen"]), cwd=ROOT, capture_output=True, text=True, timeout=600)
         open(gp, "w").write(p.stdout)
