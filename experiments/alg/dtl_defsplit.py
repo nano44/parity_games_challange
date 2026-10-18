@@ -39,6 +39,10 @@ if __name__ == "__main__":
                                 if ty == -1: ush = True
                     if ush:
                         c["US"] += 1
+                        r1 = min(r for r in range(nr) if any(w not in gy[r] for w in gx[r]))
+                        Vx = {v for v in grid if x["rv"].get(v, 0) >= r1 + 1}; Vy = {v for v in grid if y["rv"].get(v, 0) >= r1 + 1}
+                        kv = "USHRINK pairs, first shrinking round input: " + ("V_r EQUAL (U-MONO_DTL FAILS)" if Vx == Vy else ("V_r(x) ⊊ V_r(y)" if Vx < Vy else "V_r(x) ⊄ V_r(y) (EXIT-ORIGIN (a) FAILS?)")); tot[kv] = tot.get(kv, 0) + 1
+                        if Vx == Vy and tot[kv] <= 3: print("U-MONO_DTL FAILS", nm, "depth", key_[0], "|R|", len(R), "pair", i, "round", r1 + 1, flush=True)
                         k = "USHRINK pairs: deficit in y " + ("yes" if y.get("deficit") else "NO (DEF-SHRINK FAILS)"); tot[k] = tot.get(k, 0) + 1
                     elif ex: c["RC"] += 1
                     elif ent: c["EO"] += 1

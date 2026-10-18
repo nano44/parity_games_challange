@@ -3650,3 +3650,16 @@ STR-DET. This is again equivalent to the other per-context forms up to polynomia
 SPARSEST one: it counts only the pairs where the round decomposition loses something, and DEF-SHRINK ties most of them to the
 deficit (Lemma E) event.
 Status: Corollary SPLIT and DEF-SHRINK are readings, unrefereed; (XPAIRS-POLY) is DATA (max 4). No proof route yet.
+
+24c. Box 10: every U-shrink pair has a NEW TOP at its first shrinking round (DATA + reading; L-ALG succ. 8, 02:52Z by
+date -u; dtl_defsplit.py, same sets and flags as §24b)
+- DATA: at the first round r with U_r(x) ⊄ U_r(y), the input satisfies V_r(x) ⊊ V_r(y) at 104 / 104 (stable) and 29 / 29 (Oink)
+  USHRINK pairs; equal input occurs 0 times ((U-MONO_DTL) of §18h, "same-input union monotone in T", 0 failures here too). V_r is
+  read from RV: V_r = {v : RV(v) ≥ r}.
+- Reading. (V_r(x) ⊆ V_r(y) is PROVED by EXIT-ORIGIN (a) / DEF-SHRINK; strictness is the DATA part, and it is exactly (U-MONO_DTL)
+  at round r.) So, given (U-MONO_DTL), a U-shrink pair has (i) a deficit round in y (DEF-SHRINK) and (ii) a top u with
+  RV_x(u) < r ≤ RV_y(u), an RV RISE, where u's new region steals from a lower top.
+- Why this does not close: an RV fall needs an earlier U-shrink of the same pair (a V-loss traces back to a W-shrink, hence a
+  U-shrink; §23x), and an RV rise is free (growth). Counting rises per vertex gives #USHRINK_R ≤ |R|(|R| + 2) + |R|·#USHRINK_R,
+  which is vacuous (coefficient |R|). A proof needs a U-shrink to CONSUME something: e.g. the stolen-from lower top's tangle can
+  be stolen by u only once per (u, tangle). Untested; candidate for the successor.
