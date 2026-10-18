@@ -17,3 +17,8 @@
 | L32 | 2026-10-17 | Lead reading: GAP-A reassessment criterion (immediate stop on incorrect run or super-poly family; reassess at Fable reset; options a/b/c to owner) | active | docs/DECISIONS.md#l32 |
 | D12 | 2026-10-17 | Owner: referees may run on Opus 5.5 temporarily | active | docs/DECISIONS.md#d12 |
 | L33 | 2026-10-17 | Lead reading of D12: Opus referees until Fable reset, label (Opus 5.5, D12), first packet STEP5.md | active | docs/DECISIONS.md#d12 |
+| D13 | 2026-10-18 | Owner (Q14, L32 reassessment): "Keep working on the dtl and also c" | active | docs/DECISIONS.md#d13 |
+| L34 | 2026-10-18 | Lead reading of D13: L-ALG and L-RED continue on DTL; (c) waits for an owner-chosen direction (Q15); next reassessment at the Fable reset | active | docs/DECISIONS.md#d13 |
+| D14 | 2026-10-18 | Owner (Q15): "D" (Lead's choice), plus: the (c) lane may test untested approaches, its own included | active | docs/DECISIONS.md#d14 |
+| L35 | 2026-10-18 | Lead reading of D14: new lane L-NEW; box 1 = S5/S6 fast kill, then up to 3 own approaches screened against barriers; B after the reset | active | docs/DECISIONS.md#d14 |
+
