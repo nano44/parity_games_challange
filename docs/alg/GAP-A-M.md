@@ -3834,3 +3834,44 @@ at depth 0.
 Proof route: trace the run by induction on N. Describe the state (tangle set T) after each search and show which tangles the
 next search's depth-0 stable piece extracts; every step cites dtl.cpp lines and signed results (R4-R14). The order-datum
 dependence must be handled: either show that the traced sets are order-free, or restrict the claim to the order data checked.
+
+25b. (TC-6): the run schema (DATA) and the proof plan (L-ALG succ. 8, 09:14Z by date -u; tool experiments/alg/dtl_tcschema.py)
+Game (tc.cpp @ 8fbf0a7, read by L-ALG). There are 2N bits, Even bits i and Odd bits i, i = 0..N−1, with toppo_i = N² + 9N − 2i.
+- Even bit i (pl = 0):
+  - H_i: Even-owned, priority toppo_i − 2.
+  - T_i: Odd-owned, priority 2; edges T → H and T → the first connector.
+  - L_i (gate): Odd-owned, priority toppo_i − 2N − 3 (odd); edge L → T.
+  - For j < i, connector triples, all priority 1: S_j (Even; edges A_j, B_j); A_j (Odd; edges next, Even gate L_j);
+    B_j (Odd; edges next, Odd gate L_j).
+  - Z_i: Even, priority 1; edges T_i, and the Odd gates of bits j > i.
+  - H_i → Even gate L_{(i−1) mod N}.
+- Odd bits are the same with the roles of the players swapped and priorities one lower: H odd, T priority 1, connectors and Z
+  priority 0, Z → the Even gates of bits j ≥ i.
+- Oink then sorts and renumbers priorities. The exact compressed priorities are still to be written out (step P1).
+Learned tangles (DATA). The LANE K_i^p = {T_i, S_j, A_j (j < i), Z_i} of bit i, player p: the cycle T → S_0 → A_0 → S_1 → ... → Z → T,
+with the owner of S and Z (= p) choosing A. Its escapes are T → H_i and A_j → gates. Plus one Even tangle BIG in search 0, of size
+14, 25, 36, 49, 64, 81, 121 at N = 3..8, 10 ((N+1)² for N ≥ 4).
+SCHEMA (dtl_tcschema.py, RM_LIGHT=1 RM_DV=0; PASS for N = 3, 4, 5, 6, 7, 8, 10 in BOTH order data; N = 12 killed by memory
+(exit 137) in the Python model in both orders, not an incorrect run; pinned Oink N = 1..12: 6 iterations, verified):
+- s0 (Even): K_{N−1}^E and BIG.
+- s1: K_1^E .. K_{N−2}^E.
+- s2: K_0^E, and the dominion = the Even half (all "Even-*" vertices).
+- s3 (Even, on the Odd half): nothing; the Even phase ends.
+- s4 (Odd): K_1^O .. K_{N−1}^O.
+- s5: K_0^O, and the dominion = the Odd half.
+- Calls per search (Oink -t): 4N, 6N − 2, 4N, 4N − 1, 2N, 1. In every Even search the calls on the Odd half form the SAME
+  fruitless sweep (contexts |R| = |Odd half|, |Odd half| − 1, ...).
+- All tangles are learned at depth 0.
+PROOF PLAN for (TC-6) (each step to cite dtl.cpp lines and R4-R14):
+- P1. Exact compressed priorities and the half structure. Which edges cross between the halves (A/B → gates of both colours,
+  Z → opposite gates). That the Even half is an Even dominion and the Odd half an Odd dominion (W_E, W_O).
+- P2. The Even phase on G′ = G: the depth-0 piece sequence of s0-s2 and the tangles each stable piece extracts (extractTangles,
+  dtl.cpp 268, 171, 89, at the stable piece's regions). Show s2's stable root piece is a dominion (search 1068; dominion loop
+  1031-1036).
+- P3. The Odd-half sweep learns nothing in an Even search: every piece on the Odd half returns −1 or 0, and the recursion only
+  removes vertices (an induction over the sweep).
+- P4. s3 on the Odd half returns false (no tangle, no dominion), which ends the Even phase (run() 1106-1121).
+- P5. The Odd phase on the Odd half: s4 and s5, the mirror of P2 without BIG.
+- P6. Order data: show that the traced sets do not depend on the order datum, or restrict (TC-6) to the order data checked.
+Status: SCHEMA is DATA. No step of P1-P6 is written yet. Estimated length: P2 and P5 are the work, about 4N piece descriptions
+per search in schematic form. Recommended for a fresh successor (this session is at ≈ 500k context).
