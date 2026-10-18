@@ -4,6 +4,13 @@ L-ALG successor 9, box 11, 2026-10-18 (produced on Opus 5.5). Source: docs/alg/G
 Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). "N" = dtl.cpp
 line N (tools/oink/src/src/solvers/dtl.cpp). Signed results used: RESULTS R8 (STR-DET), R9 (c), R11 (c).
 
+## Honest label
+HONEST LABEL (Lead 10:27Z): one-player parity games are solvable in polynomial time by other means (cycle detection on the
+controller's graph), so a bound for A_DTL on 𝒞^1P is a MODEST result. Its value would be that it is the FIRST proved structural
+bound for A_DTL, and that the technique (no steals ⇒ the computation at a fixed context is monotone along a phase) may transfer.
+The price of NOSTEAL-1P is the hypothesis that the q-parity priorities are pairwise distinct. Without it the lemma is OPEN:
+the proof fails at step 1, and no instance is known (3,600 forced tie runs of the designed steal instances, all k = 0, §27c).
+
 ## Class (a property of the game)
 For C ∈ {0, 1} and q = 1 − C, the class 𝒞_C holds the parity games (TARGET.md §1) in which every vertex of player q has exactly one
 successor. 𝒞_C^dist is 𝒞_C with the priorities of parity q pairwise distinct. 𝒞^1P := 𝒞_0^dist ∪ 𝒞_1^dist.

@@ -3991,6 +3991,11 @@ depth 4), lagdist_D8.pg (215e9ce202dd, depth 8), lagdist_D12.pg (66855da1a880, O
 12 / 16 / 20. Ties reversed (DISTINCT=rev) also keep depth D on lagfam itself. So index ties are NOT needed for the relay; the
 relay needs only a total order of the tops. Side product: lagdist is an ORDER-ROBUST version of lagfam (the §26b caveat is gone).
 
+HONEST LABEL (Lead 10:27Z): one-player parity games are solvable in polynomial time by other means (cycle detection on the
+controller's graph), so a bound for A_DTL on 𝒞^1P is a MODEST result. Its value would be that it is the FIRST proved structural
+bound for A_DTL, and that the technique (no steals ⇒ the computation at a fixed context is monotone along a phase) may transfer.
+The price of NOSTEAL-1P is the hypothesis that the q-parity priorities are pairwise distinct. Without it the lemma is OPEN:
+the proof fails at step 1, and no instance is known (3,600 forced tie runs of the designed steal instances, all k = 0, §27c).
 27b. (b1) one-player games. Class 𝒞_C (C ∈ {0, 1}): every vertex with ≥ 2 successors is owned by player C (the controller);
 every vertex of player q = 1 − C has exactly one successor. (This is a property of the game, not of DTL's run.)
 Lemma CTRL (PROVED, reading). In 𝒞_C, every tangle that search(C) extracts is a dominion. Hence every search(C) that returns
@@ -4061,3 +4066,27 @@ phase.
   checked) a root outcome can only go from −1 to stable, with V* growing. But the −1 branch's lowest threshold t (898-904) is not monotone in X, so the depth-0
   chains of consecutive searches can cross. This is the same re-cutting that killed (CTX-LAMINAR) (§23i), and it is not removed
   by the class.
+
+27d. (CTX⁺) on 𝒞^1P: (RANK-MONO) is FALSE, and the precise obstruction (L-ALG succ. 9, 10:53Z by date -u; tool
+experiments/alg/fixd_rank.py)
+- (RANK-MONO): rank_s(v) := the last depth-0 position j with v ∈ R_j(s); claim rank_{s+1}(v) ≤ rank_s(v). With it, depth-0
+  contexts would change only at rank drops: at most (n+1)(n²+1) of them per phase. FALSE in the class, both orders:
+  onep_chainfail_n20 (1 violation in 4 pairs), onep_lagdist_D8 (1 in 14), and climbed class games (2 in 6, 2 in 2). For contrast
+  it fails in 17-22 of 21-27 pairs on ctx12_oink_n40 and ctx13_n40.
+- Anatomy (onep_chainfail_n20, iterations 0 → 1, Oink trace -t -t). The first four depth-0 calls are identical. The fifth is
+  at a context of size 13 with the same (R, X) in both searches, so it is the first-difference context, and it returns −1 both
+  times. Its prevV is {5, 11, 14} in iteration 0 and {5} in iteration 1 (vertex ids after Oink's reindex). The next context
+  has size 9 in iteration 0 and 12 in iteration 1: the piece shrinks from 4 vertices to 1. The threshold branch (898-955) does
+  not read V and its input (R, X) is equal, so the piece is the Dom(V, R) branch (958-991, "X ∪= Dom(V)", when no vertex of R
+  attracts to X), with V = prevV, restored at 770.
+- CORRECTION to my 10:45Z message and to the end of §27c: at a FIRST-DIFFERENCE context the input (R, X) is the same in both
+  searches, so the −1 branch's lowest threshold (898-904) is the same too. The obstruction is prevV, not t.
+- Why the class does not help. With no steals, V_r grows in every round, so the emptying round e of a −1 call can only move
+  later, and for equal e, prevV can only grow: the call's outcome rises in the order (e, prevV ⊆), and R9's per-context budget
+  holds. But a later emptying round has a SMALLER last nonempty V (later rounds prune more), so the Dom(prevV) piece can
+  shrink. The rest of the depth-0 chain is then re-cut with fresh contexts. That is a reset of the tail below the
+  first-difference context, i.e. a counter over chain positions: each position rises ≤ H + 1 times, but every rise resets
+  everything below it. Nothing in 𝒞^1P bounds the resets.
+- VERDICT for (CTX⁺) on 𝒞^1P in this box: NO ROUTE. The named obstruction: the −1 result's Dom(prevV) piece (770 + 958-991) is
+  not monotone along a phase, even when every round's V is (as on 𝒞^1P). A proof needs a bound on tail resets, i.e. a
+  potential that charges a reset to something the phase can do only polynomially often. None is in hand.

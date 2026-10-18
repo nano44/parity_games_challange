@@ -13,6 +13,8 @@ Box 11 (GO 09:38Z by the Lead's message, to about 14:40Z). Item (1) (FIX-d) scop
 - NEXT: (CTX⁺) on 𝒞^1P (proposal in §27b end), unless the Lead says otherwise; a referee packet for CTRL + NOSTEAL-1P is the Lead's call.
 - §27c: NOSTEAL-1P held on 3,600 forced runs of the designed steal instances (ties too); (CHAIN) false in class
   (onep_chainfail_n20); class (CTX⁺) climbs 2/4/5 at n = 12/20/30 (climber weak). Brief: docs/alg/ONEPLAYER.md. No (CTX⁺) route yet.
+- §27d: (RANK-MONO) FALSE in class; obstruction = −1 result's Dom(prevV) piece (770 + 958-991) not monotone (tail resets);
+  (CTX⁺) on 𝒞^1P: NO ROUTE this box. Next: (c) (LONG-PHASE) at G′ per Lead 10:50Z. Labels added (Lead 10:27Z): modest result.
 
 ## DONE (box 11, successor 9)
 - Handover check 0a7b8d8 (5/5 per Lead), trunk merge 443e6f5.
