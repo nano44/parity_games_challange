@@ -190,3 +190,7 @@ no overage.
 ## 2026-10-18 03:18Z Lead (relayed to owner)
 DE21 (trunk 19a892c): repeat-steal depth grows 2/3/4 at n=39/46/53; EXIT_2 false at n=53. Constant-depth route and c=2 local route
 dead on data; polynomial-total routes (R12 (a), R13 (b), R14) untouched. Oink 10/11/12 iterations (linear); not a running-time kill.
+
+## 2026-10-18 03:34Z Lead (relayed to owner)
+DE21 made uniform (trunk 5c452e3): lagfam.py D, n = 7D+22, repeat-steal depth exactly D (D=2..12), Oink D+8 iterations. R12 (c)
+constant-depth route false for every constant; post-landing note. Live routes R12 (a), R13, R14 (polynomial totals).
