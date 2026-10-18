@@ -2,16 +2,18 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-- 2026-10-18 ~09:55Z: (i) renumbering sweep running (experiments/new/run_renum.sh -> out/renum/summary.csv); no kill so far.
-  (ii) N1 DISC-ANNEAL implemented (experiments/new/anneal.py), N2/N3 proposed. N1 bench sweep (--nocompress) running
-  (run_anneal.sh -> out/anneal/summary.csv). Confound (merging) found and removed; ablation shows annealing is what helps on
-  switchallexp. Next: finish sweeps, 10,000 random games, adversarial search, a reveal-time-equalising killer.
-- Instance generation (out/inst, gitignored): for N in 2..8: si/gens.py {randomfacetsubexp,zadehexp,dlmm_bland,dlmm_ML,
-  cunninghamexp}; hard-families/pgsolver_port.py {recursiveladder,switchallexp,switchbestexp} (also N = 1, 9..12);
-  red/gens_red.py {gated_bland,fhz_padded}; si/gated.py {zadehexp,switchallexp,switchbestexp} -> gated_*; Oink build
-  generators {tc,tc+,counter_*} N = 1..8.
+- 2026-10-18 ~12:00Z (box 1, started 09:09Z, ends ~14:10Z). Pushed through a6bbcdd.
+- (i) S5/S6: no super-polynomial growth under renumbering on 9 families (out/renum/summary_part1.csv); part 2 (switchallexp,
+  switchbestexp, recursiveladder, Oink tc/tc+/counter_*, N = 2..5, 2 restarts x 200 steps) running -> summary_part2.csv.
+- (ii) N1 = Loff-Skomra IncreasingDiscountPI (known algorithm, novelty corrected). C++ port anneal_c (= anneal.py on
+  1,000 games). 12,000 random games agree. Bench: polynomial-looking everywhere; caveat: Friedmann's families are trivial
+  from Odd's side (dual), so the evidence is weak. Killer attempts (delays, traps, bait, spreading, searches) all failed;
+  sketch for L-RED in docs/new/N1-killer-sketch.md incl. the "lock" proposal.
+- C++ N1 sweep running (run_anneal_c.sh -> out/anneal/summary_c.csv); then regenerate plots (plot_n1.py summary_c.csv).
+- Messages to the Lead: 09:14Z start, ~10:0xZ N1-N3 summary, ~11:00Z reply to Lead's 10:00Z list, ~11:5xZ 3 h check-in.
 
 ## Queue
+0. (after box 1) Lead decides: N1 to L-RED with the lock proposal; C++ engine is ready for big instances.
 1. (i) S5 (zadeh, index tie-break) and S6 (cunningham, index order): hard bench, gated_*, fhz_padded, randomfacetsubexp, M_L,
    zadehexp, cunninghamexp; renumbering hill climb on the iteration count.
 2. (ii) up to three own approaches in docs/new/<name>.md (pseudocode, novelty, barrier draft, cheapest killer) before code.
@@ -37,6 +39,16 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   "γ ← (1 + γ)/2; (σ, τ) ← DiscountedPI(σ, τ, γ) until (σ, τ) are optimal in the mean payoff game" = N1. Thm 7.9 (1 − γ <
   1/(4n²Δ(r)) => unique optimal pair), Thm 7.14 (O(m² + m²n⁴Δ(r)² log³(nΔ⁺)) Howard switches), Thm 1.2 (smoothed poly), §9
   open problems. Cites [LS24] = Loff-Skomra, ICALP 2024, LIPIcs 147:1-147:16 (NOT opened).
+- arXiv 2402.03975 v1 (Loff-Skomra, "Smoothed analysis of deterministic discounted and mean-payoff games", 6 Feb 2024 =
+  [LS24], ICALP 2024 version restricted to ergodic graphs per its HAL listing), opened 11:45Z. Thm 1.10: "The greedy-all
+  switches policy iteration rule combined with increasing discount factor solves random instances of deterministic discounted
+  or mean-payoff games in polynomial smoothed complexity." Thm 6.6 (Figure 12, IncreasingDiscountPI: halts on every input,
+  smoothed polynomial). WORST CASE, verbatim (p. 5, l. 199-201 of the text dump): "Otherwise, for mean-payoff games, or for
+  discount factors γ exponentially close to 1, no upper-bound is known on the number of iterations, significantly better
+  than the number of policies, which is exponential in √ the number n of states." (same sentence in 2610.22149 §1.2).
+  Example 3.5 / §3.2: a deterministic two-player game whose value, as ONE payoff varies in [−1, 1], has 2^Ω(n) break points
+  (from [BNRC08] / [ABGJ18]); this is a parametric-PAYOFF statement, not a lower bound for IncreasingDiscountPI. No
+  worst-case lower bound for IncreasingDiscountPI is stated in either paper (searched: worst, exponential, lower bound, open).
 - arXiv 1208.5083 v2 (Post-Ye), opened 10:38Z: Thm 3.7, the highest-gain simplex rule takes O(n³m²log²n) iterations on
   deterministic MDPs with uniform discount, any discount (Thm 4.8: O(n⁵m³log²n) for distinct discounts).
 - Search (WebSearch, 10:30Z) also listed: Madani-Thorup-Zwick, ACM TALG 6(2) 2010, O(mn) for deterministic discounted MDPs

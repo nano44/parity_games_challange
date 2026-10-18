@@ -74,3 +74,23 @@ Plain VJ Howard from best-reward start (= all traps): 33, 73, 153, 313, 633, 124
 last ~log n phases (phases of 10-20 switches), not at once. Reading: a trap's reveal time depends on the priority of the even
 cycle Even can reach from v, so reveals spread out and come top-down again. A simultaneous reveal needs per-vertex trap
 priorities calibrated to v's own winning cycle; not built.
+
+## Lock attempt (Lead 11:40Z item 3; 12:05-12:15Z, experiments/new/lock.py): NOT built; why
+Goal: a family where Even wins only with the counter's final strategy, hard for Howard from BOTH sides.
+- p0 (FinalSink p -> priority 0; p lies on every play into q, so VJ comparisons are unchanged): plain VJ 30, 70, 150, 310, 630
+  (unchanged), certificate-stopped 14, 34, 74, 154, 314, dual certificate-stopped 2, 3, 4, 5, 6 (still trivial from Odd's
+  side), N1 35, 64, 101, 146, 199 (N = 2..6; Odd wins everything; regions = Zielonka, strategies verified).
+- loop (q's self-loop replaced by q -> L -> s, L Odd, priority 0): Even wins EVERY vertex (36/36 ... 92/92): s -> p -> q -> L -> s
+  is a cycle of even top priority. Plain VJ 14..27, certificate at iteration 0 on both sides; N1 21..109.
+- loop2 (loop and s loses its edge to p): still Even wins every vertex (the cycle through a bit's access k_i (odd 6n+...) also
+  passes m_i (even, higher)); plain VJ 9..17, certificate at 3 / 0; N1 26..120.
+Why it fails: Friedmann's counter encodes the bits in the PATH SET (lexicographic order of all priorities on the path to the
+sink), while a parity condition sees only the MAXIMUM on a cycle. Closing the plays into a cycle through s makes the winner
+depend on the top priority alone, which Even controls at once. A lock needs a gadget that turns "the path set equals the
+final counter state" into "the top priority on some cycle Odd can force is even" for every non-final state, e.g. Odd
+choosing, from L, which bit i to audit (L -> audit_i), each audit_i cycle being Even-won iff bit i's lane is in its final
+position. That is a per-bit check, so Howard can satisfy it bit by bit unless the audits are coupled through the counter's
+resets; whether such a coupling exists is the open design problem. Note also: for N1 itself, switchallexp already acts as
+a lock on Odd's side (the certificate needs Odd's discounted best response to Even's σ to be globally winning, which
+certificate-stopped VJ Howard reaches only after 2^(N−1) + O(1) iterations), and N1 gets there in ~2.6 N² switches. The
+"weak evidence" caveat is against the two-sided baseline, not against N1's own mechanism.

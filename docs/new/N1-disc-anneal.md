@@ -158,3 +158,23 @@ BOTH sides (e.g. the symmetric-SI families of B11, or a two-sided composition of
 More data (C++): switchbestexp N = 1..8: plain 21 ... 5101 (doubling), N1 26, 49, 87, 138, 204, 280, 368, 469 (second
 differences 10-15), largest phase 6N + 6; gated_switchallexp N = 2..5: plain 17, 24, 26, 36, N1 51, 90, 134, 188 (largest phase
 14, 22, 24, 32; Odd's Dantzig inner switches 296, 711, 1278, 2153).
+- tc (Two Counters; Even wins half the vertices) N = 8..12 (n = 232..492), C++: plain VJ 25, 26, 30, 28, 31; certificate-stopped
+  VJ 14, 16, 17, 17, 25; N1 120, 156, 189, 232, 268 Even switches (~linear in n), largest phase 8-10, Odd Dantzig switches
+  672, 947, 1429, 1799, 2581 (~n^1.9). Regions = Zielonka, strategies verified.
+- Random games: 2,000 more with n = 60..400 (seed 2): AGREE 2000/2000 (12,000 random games in total).
+
+## Worst-case literature check (Lead 10:45Z item 1; done 11:50Z)
+N1 = "LS24 IncreasingDiscountPI on parity-induced rewards" (credit: Loff-Skomra). Opened: arXiv 2402.03975 v1 [LS24]
+(Thm 1.10, Thm 6.6, Figure 12) and arXiv 2610.22149 v1 (Figure 7.2, Thm 7.14, §9). Neither gives a worst-case lower bound for
+IncreasingDiscountPI or for discount-homotopy policy iteration. Barrier-statement anchor, verbatim from both (2402.03975 p. 5;
+2610.22149 §1.2): "for mean-payoff games, or for discount factors γ exponentially close to 1, no upper-bound is known on the
+number of iterations, significantly better than the number of policies". Near miss: 2402.03975 Example 3.5 (§3.2), a game
+whose value has 2^Ω(n) break points as one PAYOFF varies; relevant to N3's homotopy idea (in γ, not in a payoff), not to N1.
+No kill by citation.
+
+## J, bits and switches (Lead 10:45Z question)
+J is the number of discount phases: the run ends at γ_J = 1 − 2^−J, so γ_J has J bits (697 phases at switchallexp N = 6 means
+~700-bit discounts; values then have O(nJ + d log n) bits). Switches are counted separately: "N1 total" = Even's Howard
+switches summed over all phases; "largest phase" = the most Even switches in one phase; Odd's Dantzig switches are a third
+count. All tables use Odd = Dantzig except where marked (Python sweep summary_py.csv mixes Howard/Dantzig in its odd column;
+the C++ sweep summary_c.csv is Dantzig throughout). (PHASE-POLY) is a DATA hypothesis in every table.
