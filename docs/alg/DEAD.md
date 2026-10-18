@@ -288,3 +288,5 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
     experiments/alg/instances/fixd_d2_n32.pg (sha1 8e8e3fe6624d; pinned Oink verified), root D_R = 5 over 6 visits (Oink order).
   - The "top level q behaves like a Büchi round" simplification of the FIX-d induction (notes/L-ALG.md fe1b928): does not hold;
     on lagflat7 all relay tops share the top priority q and the steals happen in later same-priority tops' CurR (dtl.cpp 690, 699).
+  - (b2) "all-distinct priorities" as a class where the relay dies: FALSE. lagdist_D4/D8/D12.pg (sha1 af9b429696a0,
+    215e9ce202dd, 66855da1a880): re-steal depth D in both order data (GAP-A-M §27a).

@@ -7,14 +7,16 @@ Truth for GAP-A: docs/alg/GAP-A-M.md §23-§26 (§26 = box 11 FIX-d scoping). De
 Box 11 (GO 09:38Z by the Lead's message, to about 14:40Z). Item (1) (FIX-d) scoping DONE: GAP-A-M §26, verdict NO ROUTE (§26d).
 - At d = 3, lagflat7 (lagfam with priorities merged to {0,1,2}) keeps re-steal depth D and exits D/2+1 (stable order), so every
   constant-local premise is false at fixed d; the open point at d = 3 is (LONG-PHASE) at the root G′ plus (CTX⁺) at depths 0-1.
-- NEXT: wait for the Lead's pick. Plan item (2) does not apply (no route). Item (3) TC-6 P2-P6 is the fallback, labelled
-  "single family, not L32 progress". Possible other structural classes (not tested): one-player games, bounded out-degree,
-  all-distinct priorities; each must survive the same test (does a lagfam variant live in the class?).
+- Item (b) (Lead pick 10:05Z): §27. (b2) all-distinct priorities DEAD (lagdist keeps depth D, both orders). (b1) one-player games:
+  Lemma CTRL (controller's searches ≤ n + 1) and Lemma NOSTEAL-1P (no relevant steal in the non-controller's phase when its
+  parity's priorities are distinct), both PROVED as readings; so GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P (R9 + R11 (c)).
+- NEXT: (CTX⁺) on 𝒞^1P (proposal in §27b end), unless the Lead says otherwise; a referee packet for CTRL + NOSTEAL-1P is the Lead's call.
 
 ## DONE (box 11, successor 9)
 - Handover check 0a7b8d8 (5/5 per Lead), trunk merge 443e6f5.
 - §26 (FIX-d) scoping with tools fixd_scan.py, fixd_climb.py, fixd_ctx.py, fixd_lagcollapse.py; check.sh runs the lagflat7 D = 4
   depth check; instances lagflat7_d3_D4/D8/D16, lagflat5_d4_D8, fixd_d2_n32 (sha1s in §26b and DEAD.md).
+- §27 with tools fixd_oneplayer.py, fixd_steal1p.py (DISTINCT=1 in fixd_lagcollapse.py); instances lagdist_D4/D8/D12, onep_lagdist_D8.
 
 ## Things only I know (successor 9)
 - Clock: `date -u` in this container reads earlier than the work volume suggests; I used it as instructed, unadjusted.
@@ -24,6 +26,8 @@ Box 11 (GO 09:38Z by the Lead's message, to about 14:40Z). Item (1) (FIX-d) scop
 - fixd_climb.py scores (searches − dominions, tangles, longest phase); it is weak (best 6-8 at n ≤ 48). Random games at
   fixed d have 4-5 searches up to n = 3200.
 - Every library killer has d ≥ 6; small fixed d was untested before §26.
+- Steal-scoring climbs from random games find NO steal even unrestricted (calibration failed): steals need designed gadgets.
+- dtl_stealdepth's model d.win is in the model's index; map with d.idx before comparing to Zielonka (I first saw a false 140/400 mismatch).
 
 ## DONE (successor 8: box 10 and box 11; all pushed; all readings are unrefereed unless marked)
 - Box 10 (§23v-§24i; ledger §24h):

@@ -11,6 +11,7 @@ equal-priority vertices after collapsing is the original priority order; then ma
   MODE flat4 : flat2, and a -> pr(W);  flat5: flat2, and w, y, v, f -> pr(a);  flat6: flat2, and w, y, v, f -> pr(W)
   MODE flat7 : flat5, and W -> pr(a)
   MODE none  : only the id renumbering
+DISTINCT=1 (or =rev) then refines every class to all-distinct priorities in (merged priority, new id) order (rev: id reversed).
 Priorities are then compressed order- and parity-preserving (gaps closed, same rule as game.cpp renumber).
 Usage: fixd_lagcollapse.py D MODE OUT.pg"""
 import sys, os
@@ -50,6 +51,14 @@ def collapse(D, mode):
     if mode == "flat3":
         for nm in ("b", "z"): pr[g.ids[nm]] = g.pr[g.ids["S"]]
         for j in range(1, k + 1): pr[g.ids[f"x{j}"]] = g.pr[g.ids["S"]]
+    if os.environ.get("DISTINCT"):
+        # refine to ALL-DISTINCT priorities, order- and parity-preserving: walk vertices by (merged priority, new id)
+        # (DISTINCT=rev: reversed id within a class); same parity as the previous vertex -> +2, else +1
+        rev = os.environ["DISTINCT"] == "rev"
+        seq = sorted(range(n), key=lambda v: (pr[v], -new[v] if rev else new[v])); q = {}; last = None
+        for v in seq:
+            q[v] = (pr[v] % 2) if last is None else (q[last] + (2 if pr[v] % 2 == q[last] % 2 else 1)); last = v
+        pr = [q[v] for v in range(n)]
     # compress: walk distinct values ascending; parity change +1, same parity +2 (game.cpp renumber), start at parity of min
     vals = sorted(set(pr)); m = {}; cur = None
     for x in vals:

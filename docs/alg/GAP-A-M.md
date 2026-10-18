@@ -3980,3 +3980,64 @@ the call depth (≤ d) but none of the per-context local constants. A d = 3 proo
 Family for L-RED (named, not run by me): lagflat7 (d = 3) is a substrate for long-phase / counter attempts at fixed d; an
 Oink-order version (an input permutation whose std::sort order realises the stable order on the large classes) would make it
 order-robust.
+
+27. Box 11, item (b) (Lead pick 10:05Z by the Lead's clock: (b1) one-player games, (b2) all-distinct priorities; L-ALG succ. 9,
+produced on Opus 5.5; written 10:08Z by date -u). Readings are unrefereed; every code line is dtl.cpp @ 8fbf0a7.
+
+27a. (b2) ALL-DISTINCT priorities: DEAD as a class (DATA). lagfam refined to all-distinct priorities, order- and parity-preserving,
+ties broken by id (DISTINCT=1 fixd_lagcollapse.py D none): d = n, re-steal depth D in BOTH order data (no ties, so stable = Oink
+order), pinned Oink verified, winners equal to Zielonka. Instances experiments/alg/instances/lagdist_D4.pg (sha1 af9b429696a0,
+depth 4), lagdist_D8.pg (215e9ce202dd, depth 8), lagdist_D12.pg (66855da1a880, Oink-order model depth 12, max k 7); searches
+12 / 16 / 20. Ties reversed (DISTINCT=rev) also keep depth D on lagfam itself. So index ties are NOT needed for the relay; the
+relay needs only a total order of the tops. Side product: lagdist is an ORDER-ROBUST version of lagfam (the §26b caveat is gone).
+
+27b. (b1) one-player games. Class 𝒞_C (C ∈ {0, 1}): every vertex with ≥ 2 successors is owned by player C (the controller);
+every vertex of player q = 1 − C has exactly one successor. (This is a property of the game, not of DTL's run.)
+Lemma CTRL (PROVED, reading). In 𝒞_C, every tangle that search(C) extracts is a dominion. Hence every search(C) that returns
+true finds a dominion and removes ≥ 1 vertex, and player C makes at most n + 1 searches in the whole run.
+Proof. extractTangles builds the SCC graph on the region with str for C-vertices and the region edges of q-vertices, and computes
+escapes only from q-vertices of the SCC (dtl.cpp 329-338: `if (owner(v) != pl)` over outs(v), with `G[to]` and not in the tangle). A
+q-vertex in a nontrivial SCC has an out-edge inside the SCC, and its only successor is that edge; a one-vertex SCC needs a
+self-loop (is_tangle, 315-317). So the escape list is empty and the tangle is a dominion (`if (tangleto.empty())`, 347-376,
+dominions++). The vertex keeps its unique successor in G′: a vertex whose only successor is solved is attracted with it
+(search's dominion attractor, attractVertices(player, v, G, S, G, −1), 1031-1036), for either owner. search returns true only
+if tangles or dominions changed (1068); here only dominions can change, and each dominion removes its vertices from G. □
+Lemma NOSTEAL-1P (PROVED, reading). Let 𝒞_C^dist be 𝒞_C with the priorities of parity q pairwise distinct. In every phase of
+player q in a game of 𝒞_C^dist, under every order datum, there is NO relevant steal (R11 definition: a tangle t ∈ F_τ fired at
+top τ's region step of round r at visit i, met but not contained by the later prefix P_{i+1}(τ⁺)) in any best_vertices context.
+Proof. Let A = t ∩ P_{i+1}(τ⁺) ≠ ∅. A vertex enters a region (dtl.cpp 690-701) as its top, through attractVertices, or through
+attractTangle.
+1. No vertex of t is a top of a prefix region. Tops are q-parity vertices of V (line 692; V = q-parity vertices of R, 661-667) with index above τ, so priority > pr(τ):
+   vertices are indexed in priority order and q-parity priorities are distinct. Every vertex of t has priority ≤ pr(τ), because t
+   fired in τ's region (attractTangle line 140 for vertices not yet in CurZ; CurZ itself is capped at pr(τ) by line 74).
+2. A is forward-closed in t's SCC graph.
+   - q-vertex y ∈ A: y entered via attractVertices because its only successor s(y) was in that region (lines 74, 88: pl = q, no escape test), or via
+     an attracted tangle t″, whose strategy at y is s(y) ∈ t″. Either way s(y) lies in the prefix, and s(y) ∈ t (y's only edge,
+     and t is an SCC). So s(y) ∈ A.
+   - C-vertex o ∈ A: o entered via attractVertices only if no successor is in CurR \ CurZ (lines 75-85, G = CurR); a successor
+     outside CurR was popped earlier in round r (prefix) or lies outside R. Via attractTangle, o's successors outside t″ are
+     escapes of t″, which must be in CurZ or outside CurR (lines 152-157). Every successor of o inside t lies in R, so it is in
+     the prefix: in A.
+3. t is strongly connected in exactly these edges (str = the unique successor for q-vertices; all region edges of C-vertices).
+   So the forward closure of any vertex of A is all of t, and t ⊆ P_{i+1}(τ⁺). No steal. □
+Corollary (class reduction; reading on signed results). On 𝒞_C^dist: in every phase of q, N*_R = 0 for every context, so
+F_R ≤ 3·N*_R = 0 (R11 (c)): Π_R rises strictly at every e*-at-R transition. By R9 (c), S − 1 ≤ (H + 1)·|C_bv| + n(|C_T| + |C_Dom|) + 1,
+H polynomial (R7). Player C's searches are ≤ n + 1 (CTRL). Hence, for the class 𝒞^1P := 𝒞_0^dist ∪ 𝒞_1^dist,
+  GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P, given STR-DET (R8, signed).
+Every per-context premise is now discharged on the class. What remains is (CTX⁺), the count of distinct first-difference
+contexts per phase: a counter across serialized contexts, which is L-RED's current topic.
+DATA consistent with the lemma: lagfam made one-player (Even choices at a and w_j removed or flipped, 32 variants, D = 4, 8):
+max k = 0 in every variant, both order data, ties or distinct, phases still D + 7 long (the clock), 6 contexts per phase, root D_R
+= D + 6 (instance onep_lagdist_D8.pg, sha1 a06a81ce42a7). chainfam with a forced (Even has no choice): n − 1 searches in one
+phase (k = 3..40, both orders), so the class still has linear phases.
+Calibration caveat: random games and steal-scoring climbs find NO steal, in the class AND in unrestricted two-player games
+(fixd_steal1p.py: 1,600 class games, 800 two-player, 12 climbs), so the in-class zeros are no evidence by themselves; the
+evidence is the proof plus the lagfam conversions.
+Where ties enter: if two q-parity tops share a priority, step 1 fails (a later same-priority top can enter t), the mechanism of
+§26b. The lagfam conversions with ties still have k = 0, so dropping "dist" is open, not refuted.
+TARGET.md diff: the objects are those of TARGET.md §1 (vertex priorities, max-parity, every vertex with a successor); the class
+adds hypotheses on owners, out-degrees and q-parity priorities and changes no definition. Oink's renumber is injective on values
+(game.cpp 618-637), so "pairwise distinct" survives it. These are lemmas about A_DTL's search count, not an M4 claim.
+NEXT (proposal): (CTX⁺) on 𝒞^1P. With no steals, PREFIX-MONO-X* (R11 (b)) holds whenever V ⊆ V′, so a context's regions grow
+along a phase while its V does not shrink. The first question is whether the depth-0 contexts R \ X then form one chain per
+phase.
