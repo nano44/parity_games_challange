@@ -1,6 +1,23 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 2, written 2026-10-18T23:04Z by date -u, session_017Tv79KB6LLrQUtLtVCnNDH, Opus 5.5 under D12)
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh, output to a file, print $?.
+Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD = origin/claude/referee before anything else.
+- Handover check 18b0569 (scored 5/5 by the Lead 22:58Z).
+- P-N5T (GO 22:58Z; box to ~01:30Z): docs/referee/R-N5T.md. N5 termination reading (docs/new/G-N5-TERM-reading.md @ 812ecba):
+  SIGNED WITH GAPS (Opus 5.5, D12). Lemma A = VJ00 Lemma 5.7 (SIGN); Lemma B SIGN WITH GAPS (G-B1 =_ℓ on pairs includes
+  length; G-B2 wording; closed); Theorem SIGN; N5 application SIGN WITH GAPS (G-N1 engine = Ωσ, DATA 0/22,969 mismatches;
+  G-N2 closed). VJ00 Lemma 5.8 "2 ⇒ 3" gap CONFIRMED (also breaks VJ00's I2/P1); the reading does not use it.
+  Tools: docs/referee/scratch/n5t_probe.py (VJ00-only brute force), n5t_engine_xcheck.py.
+- NEXT: after R-N5T is pushed, read docs/referee-2/R2-N5T.md (trunk or claude/referee-2) and add §C to R-N5T.md.
+
+## Sources opened (append)
+- VJ00 = Vöge & Jurdziński, BRICS RS-00-48 (Dec 2000), https://www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, sha256 485a12de432a2a8c..
+  (opened 2026-10-18 between 22:59Z and 23:04Z by date -u): §3 postulates P1/P2/I1/I2; §4.1-4.5; §5.1 (3)-(11); Prop. 5.1, 5.3, 5.4, 5.6, 5.10; Lemmas 5.2,
+  5.5, 5.7, 5.8, 5.9; §6 Prop. 6.1.
+
+
 ## Resume point (LANE-RESTART step 1; written 2026-10-18T01:25Z by session_01M28EFY9Ysyqj67kXt3YSje, Opus 5.5 under D12; context ~520k)
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh, output redirected to a file, print $?.
 Rebuild Oink first (scripts/setup_oink.sh; tools/ is gitignored). Label every verdict "(Opus 5.5, D12)" while D12/L33 holds.
