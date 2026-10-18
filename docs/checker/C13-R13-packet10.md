@@ -120,3 +120,18 @@ With E-1, R13 passes. I re-diff the text only.
     fixed and matches §3 of this report and REFEREE-2's probe file list.
   - The header carries a revision stamp.
 - Nothing else moved. R13 PASSES as at c886ff9.
+
+## Addendum 2: post-landing text check, trunk 4a47fb3 (Lead 01:26Z): PASS (one note)
+- c886ff9 is an ancestor of 4a47fb3.
+- RESULTS R13 against R13-draft.md at c886ff9, from "### R13": identical except for two things.
+  - The heading stamp: "CHECKER PASS (docs/checker/C13-R13-packet10.md, checker 1bd345d + re-diff 8886315)".
+  - One trailing blank line.
+- GAPS GAP-A row: one sentence added.
+  - "RESULTS R13 (packet 10, ENTRY-CHARGE): GAP-A ⇐ (CTX⁺) ∧ (EXIT_c), given STR-DET, a reformulation with a LOCAL premise
+    (EXIT_c DATA: c = 2 on all data)" is accurate to landed R13 (c), (d) and (e).
+- Note (recommended). The same sentence continues "packet 11 (CHANGE-NEW, R14 draft): F_R ≤ 3·#fired⁺(R) unconditionally and
+  GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R) up to poly".
+  - R14 is NOT landed: docs/agents/R14-draft.md says "awaiting L-ALG imports, CHECKER gate". It has not passed the gate.
+  - "R14 draft" is stated, but the claims read as facts in the truth file GAPS.md.
+  - Suggest "(R14 draft; refereed, not yet gated)" until C14 passes. If the draft text changes at the gate, the GAPS sentence
+    needs the same change.
