@@ -2,11 +2,10 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-16 (successor session, Opus 5.5 per D8; label: Opus work): handover check pushed 5d5b2ac. T17 (D9, L28)
-docs/lit/T17-counter-dtl-search.md: counter_dtl NOT FOUND anywhere reachable; FOUND SOMETHING RELATED: open preprint of
-"Solving parity games, very slowly" (tvandijk.nl/pdf/2024festschrift.pdf, p.15 'good paths' recipe, p.19 DFTL-like variant
-"solves all known difficult parity games in polynomial time"); 2021 README "DTL" meant distraction-free (rename 1ba8b0a,
-DFTL + counter_dftl a028e62 two days later). T16 earlier work unchanged. Parked after T17. Next: Lead feedback.
+2026-10-18 ~21:0xZ (machine clock): T20 docs/lit/T20-N5-barriers.md, gauntlet step 3 for N5 SSI-GLOBAL (l-new 8925171):
+SIGNED WITH CAVEATS. DLM quotes verified (Thm 13 is p.15, not p.14); escape (i) real, (ii) not an escape alone; nearest
+bounds switch-best (1106.0778 Thm 8.4) and DLM; rule not in literature. Earlier today: T18 (superseded), T19 (N1 kill lit).
+Next: Lead feedback.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -37,6 +36,9 @@ DFTL + counter_dftl a028e62 two days later). T16 earlier work unchanged. Parked 
 - Repo visibility: the Lead verified (11:05Z) that nano44/parity_games_challange is public and is raising it with the owner; not mine to act on.
 - Two Counters lower bound is partly empirical: van Dijk 2019 says exponential behaviour "is clear from the empirical data"
   and only "sketch[es] out an inductive proof" (§ near line 440 of the text). Matters for BARRIERS.md.
+
+- T18 (2026-10-18): PDFs in this session's scratchpad dl/<arXiv id>/p.pdf (+ hollanders-thesis, icaps-dmdp, anp); not committed.
+  HDJ12 CDC paper itself not on arXiv; its theorem was read in Hollanders' thesis (same authors' result).
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
@@ -179,9 +181,37 @@ DFTL + counter_dftl a028e62 two days later). T16 earlier work unchanged. Parked 
 | van Dijk, "Solving parity games, very slowly" author preprint, tvandijk.nl/pdf/2024festschrift.pdf, 20 pp., created 2024-08-15, sha256 8e36c3732f61feb78972fec1ea1e0aff5b737f9b1288a138f32ff491f31bee3c | §6 requirement 7 (p.15, "good paths" recipe), §7 (p.19, distraction method "solves all known difficult parity games in polynomial time"), Fig. 4, Fig. 6 | 2026-10-16 | T17; PREPRINT, retrieved 10:50Z, re-fetched 11:01Z HTTP 200; not diffed against Springer pages |
 | tvandijk.nl PDFs 2018-2024, Google Scholar profile bzOQ-aQAAAAJ, arXiv export API, FMCAD 2026 programme, Highlights 2019-2026, essay.utwente.nl files 98019/92054/98665, Zenodo 10558316/11265650/10932291/14740019, pgsolver, jkeiren/paritygame-generator, SYNTCOMP/benchmarks, mCRL2 (web subagent) | grep for dtl/distance/good path/counter: no DTL counterexample | 2026-10-16 | T17 |
 
+| arXiv 2402.03975 v1 (Loff-Skomra, smoothed DMPG), sha256 fbe498226a150670… | §1.2 p.4 anchor sentence (verbatim); Thm 1.9, 1.10 p.11; Fig. 11-12 p.36; Thm 6.6, Remark 6.7 | 2026-10-18 | T18; re-opened by L-LIT |
+| arXiv 2610.22149 v1 (Loff-Skomra, any graph), sha256 18d7ea9dab8dff7e… | §1.2 p.5 anchor; fn.3 p.3; Def. 5.7 p.30; §7.4 Thm 7.9 p.42, Prop. 7.11, Thm 7.12-7.14 p.44-45, Fig. 7.2-7.3 p.45; proof of 7.14 (start-independent); §9 p.52 | 2026-10-18 | T18 |
+| arXiv 1008.0530 v1 (HMZ), sha256 f53a6b5127d95078… | Fig. 1 PDF p.9 (Strategy-Iteration = switch-all vs optimal counter-strategy); Thm 6.5; §1 p.3 and §7 p.11 "exponential … when the discount factor is part of the input" | 2026-10-18 | T18; re-opened |
+| arXiv 1106.0778 v2 (Friedmann LMCS), sha256 46c96f44775aa2b0… | §9 p.35-39: β_G = 1 − 1/(4·\|V\|³·max\|r\|) (pdftotext -raw), r = (−\|V\|)^Ω, Alg. 2-3, Thm 9.5 [Vög00], Lemma 9.6-9.7 (1-sink, σ with Ξ_ιG ⊴ Ξ_σ), Thm 9.8, Cor. 9.9-9.10 | 2026-10-18 | T18; re-opened |
+| arXiv 1003.3418 v1 (Fearnley, ICALP 2010), sha256 0964f029581ae02e… | abstract; Thm 17 (total reward), Thm 18 (average reward), start π_∅ | 2026-10-18 | T18 |
+| Hollanders PhD thesis, UCLouvain 2015 (perso.uclouvain.be/romain.hollanders/docs/thesis - Romain Hollanders.pdf), sha256 c068ce34261ce6a9… | §2.2 Thm 2.18 printed p.48 (PDF p.58, rendered): discounted MDPs, particular start, γ = 1 − 2^(−Ω(n²)), Ω((2^(1/7))^n); p.51 open question for deterministic | 2026-10-18 | T18; = HDJ12 CDC result (CDC paper itself NOT opened) |
+| arXiv 1410.7583 v1, 1407.4293 v2 (Hollanders, Gerencsér, Delvenne, Jungers) | 1410.7583 p.1 ([Fea10], [HDJ12] Ω(2^(n/7))), Thm 1-2, p.8 pseudo-PI caveat; 1407.4293 p.2, Thm 1 | 2026-10-18 | T18; re-opened |
+| arXiv 1306.0386 (Scherrer), 1312.6832 (Feinberg-Huang, VI) | titles/abstracts: upper bounds for PI; VI not strongly polynomial | 2026-10-18 | T18; context only |
+| arXiv 1208.5083 v2 (Post-Ye) | Thm 3.7 (O(n³m²log²n), highest gain, DMDP, uniform discount) | 2026-10-18 | T18; re-opened |
+| arXiv 1911.01074 v2 Thm 6.18; 1305.3944 v1 Thm 4; 1410.7871 v1 p.1; 2512.16684 v2 Thm 4.3, Obs. 4.1 (p.12), p.6 model; 2309.02223 Thm 1; 1507.04500 v4 Thm 1.2, p.1; 0909.5653 Thm 18-19; 1807.10546 v2 Thm 5.1; 2104.05262 v8 Thm 4.1, Cor. 6.13; LIPIcs.CSL.2021.9 Thm 5.1 | re-opened and grepped for the B-rows | 2026-10-18 | T18 |
+| Mukherjee-Kalyanakrishnan, ICAPS 2025 (ojs.aaai.org ICAPS article 36104, PDF), sha256 223619e6090c573e… | Thm 1.2 (PDF p.2): HPI subexponential on DMDPs, fixed reward bit-size, any γ; threshold γ_Q; PDF p.5: Hansen-Zwick Ω(n), AUSO realizability open | 2026-10-18 | T18 |
+| arXiv 2212.00083 v1 (Christ-Yannakakis) | abstract: 2^Ω(n^c) smoothed lower bound, Howard, stochastic MDPs | 2026-10-18 | T18 |
+| arXiv 2506.12254 v1 (Asadi-Chatterjee-de Raaij) | Thm 3.2: (n²+7n−6)/2 Howard iterations on a DMDP | 2026-10-18 | T18 |
+| arXiv 2610.14150 v1 (Asadi-Chatterjee-Luo) | PDF p.24 "Comparison with [LS24]": warm start "not used in our analysis"; Lemma 11 (n^n·(n ln n + 2)) | 2026-10-18 | T18 |
+| arXiv 2610.10295 v1, 2506.18545 v1 (Blackwell thresholds) | 2506.18545 p.4 ([LS24] cited for strategy iteration); 2610.10295 l.1572 | 2026-10-18 | T18; phase count only |
+| arXiv 2603.07555 v1 (Ohlmann) | p.1: "no deterministic subexponential time algorithm is known for solving mean-payoff games" | 2026-10-18 | T18 |
+| arXiv 2503.17294 v1 (Loho-Maat-Skomra), sha256 32460e2c6bd93b89… | Prop. 5.5 p.23, §5 p.24 "a first step", Thm 5.10, Cor. 5.11 | 2026-10-18 | T18; new barrier row B19 |
+| Semantic Scholar citations of arXiv 2402.03975 (8 records) | titles scanned; 2610.22149 citations: API 429 | 2026-10-18 | T18 |
+| arXiv 1310.4953 v1 (Akian-Gaubert) | abstract: PI strongly polynomial with bounded first return times | 2026-10-18 | T18; context |
+| arXiv 2309.02223 v1 (van Dijk-Loho-Maat), sha256 10e6794d82aba465…; = tvandijk.nl/pdf/2024ssi.pdf (CSL 2024), sha256 baf912185fd69951… | Thm 1 p.2; p.3 quote; f definition p.5; p.6 "By [22]"; Alg. 2 p.7; Alg. 3, Lemma 5, 6, J-sets p.8; Lemma 12 p.14; Thm 13, §7 p.15 | 2026-10-18 | T20 |
+| arXiv 1501.06484 v1 (Schewe-Trivedi-Varghese), sha256 7b68cc69de78bd90… | Alg. 2 "Naïve symmetric" + Condon cycles p.2; Alg. 3 p.2; §6 p.11-12 ("folklore") | 2026-10-18 | T20 |
+| Friedmann PhD thesis LMU 2011 (edoc.ub.uni-muenchen.de/13294/1/Friedmann_Oliver.pdf), sha256 68748f5388a94151… | Thm 4.41, 4.44, 4.45, 4.50 (PDF p.165), 4.58, 4.76, 4.78, Cor. 4.79 (PDF p.207), 4.90 | 2026-10-18 | T20; re-opened |
+| arXiv 1106.0778 v2, further | arena A_G,σ p.5; §4 locally/globally optimizing policies, Lemma 4.1, Thm 4.2, Lemma 4.3 p.6-7; Thm 8.4 | 2026-10-18 | T20 |
+| arXiv 2404.04124 (Dell'Erba-Dumas-Schewe, LMCS 22(1) 2026), sha256 da74ce1ed5b56648… | p.2 (STV, Condon cycles); conclusion "trivial bound … number of strategies" | 2026-10-18 | T20 |
+| arXiv 2509.16075 v1 (Maat), 0806.2923 v4 (Luttenberger), 1006.1409 (Friedmann-Lange), 1705.02313 (Fearnley), 2008.09465 v3 (Křetínský et al.), 2606.29568 v1, 1607.01474 | abstracts + grep symmetric/best response: no N5 | 2026-10-18 | T20 |
+| Semantic Scholar citations of 2309.02223 (2) and 1501.06484 (14); arXiv API 4 queries; Oink README @ 8fbf0a7 l.118-127 (SSI) | scanned | 2026-10-18 | T20 |
+| NOT opened (T20) | Condon 1993 DIMACS; Schewe CSL 2008; Friedmann snare-memorization bound; Melekopoglou-Condon 1994; Hansen-Kaplan-Zwick 2014 | 2026-10-18 | T20 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
 
 ## Corrections log
+- 2026-10-18 (T18): N1-disc-anneal.md (L-NEW) has Friedmann's β_G with |V|; opened text has |V|³ (1106.0778 p.35). Reported, not mine to edit.
 - 2026-10-14: first draft cited priority promotion as arXiv 1608.04548; that id is an astrophysics paper (opened, wrong). Replaced by the CAV 2016 paper before push.
