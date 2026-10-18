@@ -102,7 +102,7 @@ Necessary conditions for a violation s → s+1 (reading; uses EMPTY-REC):
     least three tops with non-monotone consumption.
   - In case (β2) the tangle must also stay out of Dom(V*_j) at s+1. Otherwise piece_j changes.
 - (γ) If s+1 learns nothing, it is the final search of the last q-phase, and then W_q(G′) = ∅ (completeness, GAP-C side).
-  - Claim (PROVED, reading): if position 0 is stable, the union U of the round's regions is a q-dominion of G′, so W_q(G′) ≠ ∅.
+  - Claim (SKETCH, reading; not checked line by line): if position 0 is stable, the union U of the round's regions is a q-dominion of G′, so W_q(G′) ≠ ∅.
     - U is Odd-closed (here Odd means the controller C). A C-vertex enters a region only if all of its successors lie in that
       region or in a region consumed earlier.
     - A q-vertex's unique successor lies in its region, and the top's successor lies in U by stability.
