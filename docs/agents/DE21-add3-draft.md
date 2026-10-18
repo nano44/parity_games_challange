@@ -1,4 +1,4 @@
-# Draft RESULTS DE21 ADDENDUM 3 (Lead, 2026-10-18 10:15Z by date -u) — HELD for CHECKER (successor needed; CHECKER at ~725k)
+# Draft RESULTS DE21 ADDENDUM 3 (Lead, 2026-10-18 10:15Z by date -u) — HELD for CHECKER (successor needed; CHECKER at ~725k) — LANDED in RESULTS (CHECKER C16 + Addendum 1 PASS, checker e353339)
 
 ADDENDUM 3 (2026-10-18, fixed d): the DE21 kills hold at d = 3. Source: L-ALG succ. 9, docs/alg/GAP-A-M.md §26a-§26d, l-alg
 9b86244. lagflat7(D) := lagfam(D) with ids renumbered by (original priority, id), then priority classes merged to {0, 1, 2}
