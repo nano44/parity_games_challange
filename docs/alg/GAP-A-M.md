@@ -3714,3 +3714,68 @@ Is the relay the §23x counter? NO (reading).
   forms ((D-POLY) ⇔ (EXITS-POLY) ⇔ (STEAL-POLY_sum) ⇔ (XPAIRS-POLY), §23w, §24b) stand and are tested only by the phase length.
 - What would hurt the totals: a family where one context's visits (hence D_R) grow super-polynomially in |R|, i.e. a long
   phase. R39's phase length is D + OFF + 3 visits, linear.
+
+24g. Box 10: the polynomial-total statements on L-RED's uniform family lagfam D = 2..12 (DATA; L-ALG succ. 8, 03:33Z by
+date -u). Generator experiments/red/lag/lagfam.py (trunk 5c452e3; imports lag4.py, gb.py), n = 7D + 22. Pinned Oink re-run by
+L-ALG for every D: 1 dominion, 2D + 9 tangles, D + 8 iterations, solution verified (27 ... 77 strategies). Every number below is
+IDENTICAL in both order data (dtl_totals.py RM_EXCL=1 RM_LIGHT=1 RM_DV=0; dtl_stealdepth.py and dtl_prefexits.py RM_EXCL=1
+RM_PREF=1 RM_LIGHT=1 RM_DV=0; dtl_rootmono.py RM_LIGHT=1 RM_DV=0; all unmodified at l-alg ad4c922). No INCOMPLETE run. The
+binding context is the ROOT of Even's long phase (the max over all contexts equals the root value for every quantity).
+
+| D | n | phase S (root visits) | D_R | #fired⁺(R) | Σ_q k_q | X_R (grid, dtl_totals) | total exits (dtl_prefexits) | max exits per (step, vertex) | max k / depth | first-diff contexts |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 2 | 36 | 9 | 8 | 12 | 6 | 64 | 25 | 2 | 2 / 2 | 1 |
+| 3 | 43 | 10 | 9 | 14 | 9 | 111 | 45 | 3 (prefexits 2) | 3 / 3 | 1 |
+| 4 | 50 | 11 | 10 | 16 | 12 | 177 | 75 | 3 | 3 / 4 | 1 |
+| 5 | 57 | 12 | 11 | 18 | 16 | 264 | 114 | 4 (3) | 4 / 5 | 1 |
+| 6 | 64 | 13 | 12 | 20 | 20 | 376 | 166 | 4 | 4 / 6 | 1 |
+| 7 | 71 | 14 | 13 | 22 | 25 | 515 | 230 | 5 (4) | 5 / 7 | 1 |
+| 8 | 78 | 15 | 14 | 24 | 30 | 685 | 310 | 5 | 5 / 8 | 1 |
+| 9 | 85 | 16 | 15 | 26 | 36 | 888 | 405 | 6 (5) | 6 / 9 | 1 |
+| 10 | 92 | 17 | 16 | 28 | 42 | 1,128 | 519 | 6 | 6 / 10 | 1 |
+| 11 | 99 | 18 | 17 | 30 | 49 | 1,407 | 651 | 7 (6) | 7 / 11 | 1 |
+| 12 | 106 | 19 | 18 | 32 | 56 | 1,729 | 805 | 7 | 7 / 12 | 1 |
+
+(max exits: dtl_totals counts the grid plus the virtual end-of-round step; dtl_prefexits counts steps present in both visits;
+they differ by at most 1. dtl_stealdepth's own "max k" line agrees: k = ⌊(D+1)/2⌋ + 1 up to D = 10 and 7 at D = 11, 12.)
+Growth (fits over n = 36..106; slope = d log / d log n between the end points; DATA):
+- D_R = D + 6 and #fired⁺ = 2D + 8: LINEAR in n. Searches per phase S = D + 7: linear.
+- Σ_q k_q: slope ≈ 2.1 (about D²/2.6): QUADRATIC.
+- X_R: slope ≈ 3.05 overall and 3.0 at the top end (dtl_prefexits 3.1): CUBIC, well under the trivial cap
+  D_R·(|R| + 1)|R|² ≈ n⁴.
+- Max exits per (step, vertex) ≈ D/2 + 1 and depth = D: linear; the CONSTANT local forms are dead (DE21 addendum).
+- First-difference best_vertices contexts per phase: 1 (the root), so (CTX⁺) is not stressed by this family.
+Reading: every polynomial-total premise ((STEAL-POLY_sum), (EXITS-POLY), (D-POLY), (FIRED⁺-R), (XPAIRS-POLY)) is consistent with
+this family, at degree ≤ 3 in n. The family stresses LOCAL constants only, because its phase is linear (D + 7 searches): the
+totals are bounded by the phase length times polynomial factors. A threat to the totals needs a long phase at one context.
+
+24h. BOX-10 LEDGER (L-ALG succ. 8; GO 01:21Z, written 03:37Z by date -u; produced on Opus 5.5). Everything is unrefereed
+unless marked signed.
+SIGNED and imported: packet 11 (CHANGE-NEW) in §23v, with N11-b1 now holding two signatures (REFEREE §C abc5185).
+READINGS (unrefereed). Packet-12 candidates per the Lead (§23w-§23x frozen; brief docs/alg/QUIET-BLOCK.md):
+- §23w Lemma QUIET-BLOCK + corollary: D_R ≤ M_R + (M_R + 1)(|R|+1)(L+1)|R|; gap G23u CLOSED.
+- §23x Lemma EXIT-ORIGIN: a pair's first exit has V ⊆ and a relevant steal above it in its own round.
+- §24a Lemma DEF-SHRINK: the first round where U_r shrinks has a deficit in the later visit.
+- §24b Corollary SPLIT: D_R ≤ (B+1)(G+1)(1 + #Xpairs_R), hence GAP-A ⇐ (CTX⁺) ∧ (XPAIRS-POLY) given STR-DET.
+- §24f: R39's relay is combinational in T. A counter at one context costs about 2^D new tangles there (CHANGE-NEW), so it is
+  the (FIRED⁺-R) question itself.
+- §24d: correction of the §23s root-case remark ((FIRED⁺-R) at G′ is not (SPP)).
+KILLED (DEAD.md box 10; instances re-run with pinned Oink):
+- G23u fix via RV rises (spp_chain_up_n43).
+- NET-GROWTH (cm_viol_oink_n28, lex_viol_oink_n20).
+- QUIET-LIN (dtl_cross3_n14, fired18_stable_n20) and QUIET-NEWV (spp_final_n30, spp_n30).
+- EXIT-LEAD-DISTINCT (depth2_n39 etc.).
+- By L-RED (DE21): (EXIT_2), (STEAL-DEPTH_D) for every constant D. Every constant local exit bound is endangered (max exits ≈ D/2 + 1
+  on lagfam).
+DATA that stands:
+- (USHRINK-FRESH). Every U-shrink pair has a new key (round, new top, losing top), a new top at its first shrinking round, and
+  a deficit in y: corpus 104 / 29, cross unions 182 / 96, mixed unions 287 / 130 (stable / Oink; dtl_defsplit.py RM_DV=0, UNIONS=900 SEED=1 NMAX=32 and UNIONS=600 SEED=11 UM_CROSS=3 NMAX=32), R39 0 U-shrinks.
+- lagfam D = 2..12 (§24g): every total is polynomial at degree ≤ 3; (CTX⁺) is unstressed there (1 first-difference context).
+- Quiet blocks ≤ 0.953·|R|. No birth locality for (FIRED⁺-R) below the root (§23y).
+POSITION. Every per-context form is one statement up to polynomial factors: (D-POLY) ⇔ (EXITS-POLY) ⇔ (STEAL-POLY_sum) ⇔
+(XPAIRS-POLY), and (FIRED⁺-R) implies them. The sparsest form is (XPAIRS-POLY). None has a proof route, and (CTX⁺) has none
+either. L32 is NOT met. The threat to the totals is a SUPER-POLYNOMIALLY LONG PHASE at one context (a real counter). By
+CHANGE-NEW that needs super-polynomially many tangles, so it is GAP-A's own core.
+NEXT (successor): (i) the U-shrink "consumed quantity" (key reuse needs an RV fall, i.e. an earlier-round U-shrink: bound the
+chain across rounds without the |R|^r blow-up); (ii) if L-RED builds a long-phase family, run dtl_totals.py and dtl_defsplit.py
+on it at once.
