@@ -3387,3 +3387,29 @@ Sources: REFEREE docs/referee/R-P10.md (referee aabcefd) and REFEREE-2 docs/refe
 - REFEREE's constants for (c): X_R ≤ c(|R| + 1)|R|². A constant c is strictly stronger than (EXITS-POLY); a polynomial c(|R|)
   is equivalent to it.
 - Status: GAP-A ⇐ (CTX⁺) ∧ (EXIT_c), given STR-DET, is a SIGNED conditional (R12 (a) plus packet 10). Its premises are DATA.
+
+23u. Box 9: the two routes meet. (EXIT_c) bounds D_R, the root included (SKETCH with one named gap; L-ALG succ. 7, 00:55Z by date -u)
+Grid and conventions are those of §23t (G10-a1). §23s (packet 11) is frozen and not edited.
+Claim. D_R ≤ N_ent + D_R^thr ≤ X_R + (|R| + 1)|R|² + D_R^thr, where D_R^thr is the number of differing pairs whose FIRST
+difference is in a threshold loop.
+Argument.
+- Take a differing pair x → y whose first difference is a region step σ₀ = (r, τ₀).
+  - By §23s step 2 (EXACT), the region there grows strictly: A_y(σ₀) ⊋ A_x(σ₀), and the prefix P(τ₀⁺) is the same.
+  - Pick w ∈ A_y(σ₀) \ A_x(σ₀), and let σ′ = (r, τ₀ − 1) be the next grid step.
+  - Then P_y(σ′⁺) ⊇ P(τ₀⁺) ∪ A_y(σ₀) ∋ w, while P_x(σ′⁺) = P(τ₀⁺) ∪ A_x(σ₀) ∌ w. So (σ′, w, x) is an entry.
+  - Distinct pairs give distinct entries (the pair index differs).
+- Hence D_R − D_R^thr ≤ N_ent, and N_ent ≤ X_R + (|R| + 1)|R|² (§23q step 3, on the §23t grid).
+- If τ₀ is the lowest grid top of round r, use σ′ = (r + 1, max top), the first step of the next round. Then P(σ′⁺) = ∅ in
+  both visits and the entry argument fails, so these pairs also belong to the gap.
+Gap G23u (named). Bound the pairs whose first difference is in a threshold loop, or at the last region step of a round.
+- There a new tangle grows W_t (§23s step 3), which changes V_{r+1}. The first effect on the grid is a new top u in round
+  r + 1, and u may already sit inside another top's region in x, so an entry is not guaranteed.
+- A candidate fix: count these pairs by the RV changes they cause (RV only rises there, §22r Corollary C1-C3). That would
+  need an RV-type per-vertex bound, of the same local kind as (EXIT_c).
+Consequences (if G23u closes):
+- (EXIT_c) bounds D_R, the number of differing visit pairs, for every context, the root G′ included.
+- With CHANGE-NEW: N*_R ≤ D_R ≤ poly. So the (FIRED⁺-R) route (§23s) and the (EXIT_c) route (§23q) MEET. At the root
+  both are (SPP)-strength statements about how often the root call can change.
+- (EXIT_c) at the root alone does not bound S. Searches whose root calls agree differ later; that is R9's sum over
+  contexts, i.e. (CTX⁺).
+- Data check, not run (context budget): D_R^thr per context. Successor target.
