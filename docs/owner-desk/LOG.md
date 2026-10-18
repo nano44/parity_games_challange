@@ -186,3 +186,7 @@ R12 [refereed-only] landed (trunk 6c65d69; Opus D12, CHECKER C12 PASS): repairs 
 R13, R14 [refereed-only] landed (Opus D12, CHECKER PASS). R14: GAP-A <=> (CTX+) & (FIRED+-R) up to polynomial factors (equivalence).
 R13: GAP-A <= (CTX+) & (EXIT_c), c = 2 on data. DE20 addendum (Oink order, n=45). L32 not met; no incorrect run, no super-poly family,
 no overage.
+
+## 2026-10-18 03:18Z Lead (relayed to owner)
+DE21 (trunk 19a892c): repeat-steal depth grows 2/3/4 at n=39/46/53; EXIT_2 false at n=53. Constant-depth route and c=2 local route
+dead on data; polynomial-total routes (R12 (a), R13 (b), R14) untouched. Oink 10/11/12 iterations (linear); not a running-time kill.
