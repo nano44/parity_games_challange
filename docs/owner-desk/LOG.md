@@ -221,3 +221,8 @@ weak separators after the Fable reset. Fleet: L-ALG, L-RED, L-NEW (3 of 5).
 ## 2026-10-18 13:42Z owner (progress question)
 > Give me a status update
 Answered from trunk 076732e, l-new e37910e (notes/L-NEW.md resume point), l-alg a97f451, l-red 2a75c4a. Relayed verbatim to the Lead.
+
+## 2026-10-18 17:58Z Lead -> owner (required report, L35 (3))
+N1 (Loff-Skomra IncreasingDiscountPI, published, not ours) survived gauntlet step 2 on data (L-NEW 9ad423a, docs/new/N1-step2.md):
+12,000 random games + 13 M1 families agree, strategies verified, growth <= ~n^2 iterations; Lead re-ran 3 rows. Caveats (1)-(5).
+NOT a claim. Next: step 3 barrier (temporary 4th lane), second implementation, dedicated attack. Owner may say "hold".
