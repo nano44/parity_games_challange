@@ -148,3 +148,14 @@ With E-1, R14 passes. I re-diff the text only.
     dtl_changenew.py 89/89 (stable) and 49/49 (Oink)" listed separately. This matches R-P11 (d) and my §3 re-run.
   - The header carries a revision stamp.
 - Nothing else moved. R14 PASSES as at ed81675.
+
+## Addendum 2: post-landing text check, trunk 73ff116 (Lead 01:47Z): PASS
+- ed81675 is an ancestor of 73ff116.
+- RESULTS R14 against R14-draft.md at ed81675, from "### R14": identical except for two things.
+  - The heading stamp: "CHECKER PASS (docs/checker/C14-R14-packet11.md, checker f89502d + re-diff 1af4995)".
+  - One trailing blank line.
+- docs/GAPS.md, GAP-A row: "packet 11 (CHANGE-NEW; draft: refereed by both, not yet gated by CHECKER):" → "RESULTS R14
+  (packet 11, CHANGE-NEW):". The claims that follow, "F_R ≤ 3·#fired⁺(R) unconditionally and GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R)
+  up to poly", are R14 (b)/(c) as landed. My C13 note is resolved.
+- Note (optional). R14 (c) states the equivalence "given STR-DET". The GAPS sentence omits that qualifier. STR-DET is a
+  signed result (R8), so the sentence is true as written, but adding "given STR-DET" would match R14 verbatim.
