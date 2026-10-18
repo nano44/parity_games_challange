@@ -57,7 +57,7 @@ Status: BOX 11 END (successor 8; R40 complete; see Resume point). Box-11 status 
 ## Resume point
 2026-10-18 13:30Z (date -u), successor 8, BOX 11 END (produced on Opus 5.5). R40 §0-13 complete. Nothing running (ps: no climbs, no
 dtl_rootmono orphans). Final numbers: leanT C_bv = S - 1 (N 6..32, both orders); tcL C_bv = S - 3; tcR4 depth-1 e*; DEEP-STAB
-0 violations in 710,000 random + 10,000 structured games; GAP-C probe 60,000 verified; item (2) not achieved (§12: tangles
+0 violations in 700,000 random + 10,000 structured games; GAP-C probe 60,000 verified; item (2) not achieved (§12: tangles
 quadratic, products of staircases flat). SUCCESSOR QUEUE as below (11:43Z entry).
 2026-10-18 11:43Z (date -u), successor 8, box 11 (produced on Opus 5.5). Pushed through 6b1bc0c2: docs/red/R40 §0-11.
 - (CTX+) answered on uniform families: leanT(N) (lean.py, n = 8N) C_bv = S - 1 (N 6..32, both orders); tcL C_bv = S - 3;
