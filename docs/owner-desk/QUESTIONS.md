@@ -190,4 +190,5 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
   probability, SAT-heavy; better on Fable after the reset). C. lower bounds for symbolic algorithms (negative direction; no algorithm).
   D. Lead's choice.
 - Lead recommendation: A now, then B after the reset.
-- Status: answered 2026-10-18: "D" (Lead's choice); relayed; awaiting the Lead's D-number.
+- Status: closed, D14 / Lead reading L35 (trunk ff4e60c; owner addendum: the fleet may test untested approaches and its own ideas):
+  new lane L-NEW (Opus) - kill test of S5/S6, then up to three own untested approaches; weak separators queued after the Fable reset.

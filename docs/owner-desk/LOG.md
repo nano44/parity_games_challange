@@ -213,3 +213,7 @@ Desk reading: Q15 option D, Lead's choice of direction for (c). Relayed verbatim
 > You know it can also test prveiously not tested approaches, it can come up with it own as well
 Desk reading: (c) is not limited to the mapped options A-C; the fleet may test previously untested approaches, including its own
 new ideas. Relayed verbatim to the Lead, priority now.
+
+## 2026-10-18 09:09Z Lead (relayed to owner)
+Q15 closed as D14 / L35 (trunk ff4e60c): new lane L-NEW started 09:09Z (S5/S6 kill test, then up to three own untested approaches);
+weak separators after the Fable reset. Fleet: L-ALG, L-RED, L-NEW (3 of 5).
