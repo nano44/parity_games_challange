@@ -125,15 +125,17 @@ if __name__ == "__main__":
 
 
 def vr_score(g, order, key="K-v-r"):
-    """(transitions violating key, chain-changing transitions, searches) over g's phases; used by the climb."""
-    d = run(g, order); viol = changing = 0; seen = None; prev = None
+    """(transitions violating key, chain-changing transitions, searches) over g's phases; used by the climb. With MARGIN=1:
+    (violations, −(fewest vertices supplying a new key at one chain-changing transition), chain-changing, searches)."""
+    d = run(g, order); viol = changing = 0; seen = None; prev = None; marg = g.n + 1
     for ph, calls in getattr(d, "log", []):
         ch = chain(calls, g.n); k = keys(ch)[key]
         if prev is not None and prev[0] == ph and sig(ch) != prev[1]:
-            changing += 1
+            changing += 1; marg = min(marg, len({x[0] for x in k - seen}))
             if not (k - seen): viol += 1
         if prev is None or prev[0] != ph: seen = set()
         seen |= k; prev = (ph, sig(ch))
+    if os.environ.get("MARGIN") == "1": return (viol, -marg, changing, d.iterations)
     return (viol, changing, d.iterations)
 
 

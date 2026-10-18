@@ -3,17 +3,34 @@ Successor 9's handover text is in git history: `git show a97f451:notes/L-ALG.md`
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push only with `scripts/push.sh > $S/push.log 2>&1; echo exit $?`.
 Truth for GAP-A: docs/alg/GAP-A-M.md §23-§30 (§30 = box 12, successor 10; §29 = box-11 ledger). Dead ends: docs/alg/DEAD.md.
 
-## Resume point (2026-10-18 15:52Z by date -u; box 12, GO 13:47Z by the Lead's clock, box end and handover notes by ~18:30Z)
-- QUEUE (1) verdict sent 14:07Z: NO ROUTE (GAP-A-M §30). QUEUE (2) (NO-PRE-a): DATA (§31). TC-6 parked by the Lead (14:37Z).
-- NOW (Lead pick 14:37Z): a re-cut-proof potential for (CTX⁺) on 𝒞^1P, as executable predicates, killed fast (§32). Tool
-  experiments/alg/b12_pot.py (MONO and NEW-KEY candidates on the depth-0 chain; climb with KEY=...), b12_fdkey.py (keys on
-  first-difference contexts). Survivors named to the Lead: (VR-NEW_V) key (v, ρ, |V_j(v)|), (VR-NEW_s) key (v, ρ, |R_j(v)|),
-  (VR-NEW_all) key (v, ρ, j, |R_j|, |V_j|) (also on the two-player library at chain-changing transitions). Killed: (VR-NEW_j)
-  (onep_vrj_n40), (v, ρ) (onep_vr_n12), injective R*-keys (onep_fdkey_n20), all depth-0 chain MONO and chain keys.
-- IN FLIGHT at 15:52Z: climbs vs (VR-NEW_V) (stable) and (VR-NEW_s) (Oink) from onep_vrj_n40 (scratchpad vr6_*.out); two-player
-  library n ≤ 200 Oink order (pot6_lib_oink.out). Not yet pushed: §32e text and instance onep_vrj_n40.
-QUEUE: (a) finish the climbs, record, push; (b) next candidate keys if these die: add per-vertex V-membership or the round in
-which v left V; (c) handover notes by ~18:30Z.
+## Resume point (2026-10-18 17:08Z by date -u; box 12 END; GO 13:47Z by the Lead's clock)
+Box 12 ledger: docs/alg/GAP-A-M.md §30 (QUEUE (1) verdict), §31 ((NO-PRE-a)), §32 (the (CTX⁺)-potential search, Lead pick
+14:37Z; §32a-32h). L32: NOT met in box 12.
+- QUEUE (1): NO ROUTE (§30). The per-context side on 𝒞^1P is already closed by OUTCOME-MONO-1P; nothing indexed by contexts
+  bounds the contexts. (TOP-UNIQUE@R) FALSE (onep_topuniq_n20); (TOP-CHAIN@R) DATA.
+- QUEUE (2) (NO-PRE-a): DATA, no proof, no instance (§31; near miss nopre_near_n20 is not an occurrence).
+- §32 SURVIVORS (DATA, named to the Lead 15:33Z / 15:50Z): pigeonhole keys, "every chain-changing transition of a q-phase gives
+  some vertex v a key it never held in the phase":
+    (VR-NEW_V) key (v, ρ, |V_j(v)|); (VR-NEW_s) key (v, ρ, |R_j(v)|); (VR-NEW_all) key (v, ρ, j, |R_j|, |V_j|)
+  (ρ = rank of v's depth-0 piece: n+2 stable, emptying round e for −1, 0 for a call that returns 0). Consequence if true: searches
+  per q-phase ≤ #keys + 1, so GAP-A on 𝒞^1P (with CTRL), with no use of (CTX⁺). On the class every transition changes the depth-0
+  chain (0 of 1,094 identical). Local form (FD-WITNESS_all): the new key sits in the changed piece (j* or j* − 1), 0 exceptions.
+  (VR-NEW_all) also holds on the two-player library at its chain-changing transitions (0 of 1,393 / 1,548), but there 88-104
+  transitions keep the depth-0 chain identical and need a separate count.
+  Margins are thin (one vertex carries 58 / 34 / 7 of 1,094 transitions). NO-RETURN (per vertex) is FALSE, so the novelty is global.
+- KILLED in §32 (instances pinned, all 𝒞^1P, pinned Oink verified): (VR-NEW_j) onep_vrj_n40; (v, ρ) onep_vr_n12; injective
+  first-difference keys κ-djs / κ-dsm onep_fdkey_n20 (a one-level reset at n = 20); all depth-0 MONO potentials and depth-0 chain
+  keys (§32b); NO-RETURN (§32f).
+IN FLIGHT at 17:08Z (scratchpad, will die with the container; nothing depends on them): margin climb vs (VR-NEW_V) from
+onep_vrj_n40 (vr8_a.out) and a two-player climb vs K-v-all from ctx13_n40 (vr7_b.out, no progress in 2 h).
+QUEUE for the successor:
+(1) If L-RED's counter lands: run b12_pot.py (keys) and b12_fdwit.py on it at once; the counter must make a vertex return to an
+    exact (ρ, j, |R_j|, |V_j|) state with no other vertex gaining a new one.
+(2) Proof attempt of (FD-WITNESS_all) on 𝒞^1P only with a new idea: it reduces to "a context at position p with signature σ, once
+    replaced, never returns at p with the same signature and an overlapping piece" (§32h), a no-counter statement.
+(3) (VR-NEW_all) on two-player games needs the identical-chain transitions bounded (first difference inside a depth-0 call's
+    regions, or deeper); measure what they are before claiming anything general.
+(4) TC-6 stays parked (Lead 14:37Z).
 
 ## DONE (box 12, successor 10)
 - Handover check 50e66d3 (5/5 per Lead), trunk merges 781790d and the box-start merge.
@@ -21,7 +38,9 @@ which v left V; (c) handover notes by ~18:30Z.
 - §30 with tools b12_topchain.py (class set + TOP-CHAIN@R scan), b12_topclimb.py (climb, --check), b12_pertop.py (tangles
   learned per (phase, top)), b12_mono.py (re-cut-proof potentials, per_position); instance onep_topuniq_n20 (check.sh).
 - §31 with tool b12_nopre.py (scan / climb); instance nopre_near_n20 (near miss, pinned Oink 5 iterations verified).
-- §32 with tools b12_pot.py, b12_fdkey.py; instances onep_fdkey_n20, onep_vr_n12, onep_vrj_n40 (all 𝒞^1P, pinned Oink verified).
+- §32 with tools b12_pot.py (climb: KEY=..., MARGIN=1), b12_fdkey.py, b12_noret.py, b12_margin.py, b12_fdwit.py; instances
+  onep_fdkey_n20, onep_vr_n12, onep_vrj_n40 (all 𝒞^1P, pinned Oink verified). Pushes: 50e66d3, c81bb8f, 6f6a246, 41abf76,
+  e2132ae, 011e663, 1618e76, and the box-end commit.
 
 ## Things only I know (successor 10)
 - `date -u` advances much more slowly than the work done (as successor 9 noted); timestamps are as printed, unadjusted.
@@ -36,6 +55,9 @@ which v left V; (c) handover notes by ~18:30Z.
   TV_SORTED and PEARCE (fixd_stealentry.run). Map model index i to the input vertex with sorted(range(n), key=(prio, id)).
 - Random-forced class games rarely fire tangles at all (221 firing contexts in 891 games); Zielonka-forced trial 0 is richer.
 - leanT_N files parse; a few library files (with "% start" lines) do not, and classgames() skips them silently.
+- classgames() uses in-class games AS GIVEN (ties possible) unless DIST=1; for 𝒞^1P statements always run with DIST=1.
+- b12_pot / b12_fdkey numbers depend on the corpus seed: TRIALS=3 SEED=2 NMAX=200 is the set used in §32 (1,086-1,094 transitions).
+- Climbs at n = 40 take ~1 s per step (RM-free SE model); the RM-model climbs (b12_fdkey) are slower and memory-heavier.
 
 ## DONE (box 11, successor 9)
 - Handover check 0a7b8d8 (5/5 per Lead), trunk merge 443e6f5.

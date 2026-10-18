@@ -4466,7 +4466,7 @@ transitions. Climbs against (VR-NEW_V) and (VR-NEW_s) from onep_vrj_n40 are runn
   survivors are not explained vertex by vertex: at those transitions some vertex returns to an old state and ANOTHER vertex
   supplies the new key. Reading: (VR-NEW_*) is a global no-repetition statement, i.e. a no-counter statement, with no local
   mechanism found. Its survival on short phases (max 42 transitions in the data) is weak evidence.
-32g. Long phases and margins (DATA; 16:55Z by date -u).
+32g. Long phases and margins (DATA; 16:49Z by date -u).
 - Long class phases: the chain family (dtl_chainfam.py UP=1) forced into 𝒞_1 (a → b), priorities refined: k = 20, 40, 60 give
   21, 41, 61 chain-changing transitions in one phase; (VR-NEW_V), (VR-NEW_s), (VR-NEW_all) and even the dead (VR-NEW_j) have 0
   violations, both orders. (A benign family: one piece grows per search.) With a → a the phase has 2 searches.
@@ -4476,5 +4476,14 @@ transitions. Climbs against (VR-NEW_V) and (VR-NEW_s) from onep_vrj_n40 are runn
   supplies a new key: (VR-NEW_V) 58, (VR-NEW_s) 34, (VR-NEW_all) 7. So the statements hold narrowly on about 5% / 3% / 0.6% of
   transitions. A two-player class-free climb against K-v-all from ctx13_n40 made no progress in its first hour (start score
   (0, 26, 29)).
-STATUS at 16:55Z: survivors (VR-NEW_V), (VR-NEW_s), (VR-NEW_all) (DATA). No proof route: the novelty is global (NO-RETURN false,
+STATUS at 16:49Z by date -u: survivors (VR-NEW_V), (VR-NEW_s), (VR-NEW_all) (DATA). No proof route: the novelty is global (NO-RETURN false,
 §32f), not per-vertex. L32: not met in box 12.
+32h. Where the new key sits (DATA; tool b12_fdwit.py; 17:05Z by date -u). At a chain-changing transition let j* be the first
+depth-0 position whose (R_j, rank_j, V_j) differs. 𝒞^1P set, stable, 1,094 transitions: a vertex with a new key lies in the piece
+at j* except in 78 / 83 / 21 transitions ((v, ρ, |V|) / (v, ρ, |R|) / full key); in the piece at j* or j* − 1 except in 1 / 6 / 0.
+(The j* − 1 cases are those where R_{j*} changed because the piece above it grew with the same outcome.) So (VR-NEW_all) holds in a
+LOCAL form on all class data: (FD-WITNESS_all) "some vertex of the changed piece (at j*, or at j* − 1 when only R_{j*} changed)
+receives a full signature (ρ, j, |R_j|, |V_j|) it never held in the phase". A proof attempt reduces to: a context at position p with
+signature σ, once replaced, never returns at p with the same signature and an overlapping piece. That is again a no-counter
+statement; no argument for it is in hand. Margin climbs (score: fewest new-key vertices) reached margin 1 and no violation:
+(v, ρ, j, |R|, |V|) from onep_fdkey_n20, Oink order, 5,000 steps; (v, ρ, |V|) from onep_vrj_n40, stable (running at 17:05Z).
