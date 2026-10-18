@@ -1,4 +1,4 @@
-# Draft RESULTS R13 (Lead, 2026-10-18 00:45Z by date -u) (rev. 00:48Z: REFEREE final aabcefd; rev. 00:58Z: REFEREE §C 434a552, L-ALG imports §23t) — NOT LANDED; awaiting CHECKER gate
+# Draft RESULTS R13 (Lead, 2026-10-18 00:45Z by date -u) (rev. 00:48Z: REFEREE final aabcefd; rev. 00:58Z: REFEREE §C 434a552, L-ALG imports §23t) (rev. 01:12Z: CHECKER C13 E-1) — NOT LANDED; awaiting CHECKER re-diff
 
 ### R13 [refereed-only] Packet 10 on A_DTL: Lemma ENTRY-CHARGE, and GAP-A ⇐ (CTX⁺) ∧ (EXIT_c) (2026-10-18) — partial step-4 reformulation (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -20,8 +20,8 @@
   (d) Corollary C3 (honesty): X_R ≤ N*_R·|R|·#steps, so (EXITS-POLY) ⇔ (STEAL-POLY_sum) ⇔ (RELSTEAL) up to polynomial
       factors: a REFORMULATION of a premise already in R10/R11/R12, not a reduction. What is new is the LOCAL sufficient form
       (EXIT_c).
-  (e) Data: at most 2 exits per (step, vertex) on all data, both orders; 2 only on stealonce_viol_n76, stealonce_both_n45 and
-      resteal34_union_n90.
+  (e) Data: at most 2 exits per (step, vertex) on all data, both orders; 2 only on stealonce_viol_n76, stealonce_both_n45,
+      stealonce_core_n76 and resteal34_union_n90.
 - Signatures: REFEREE docs/referee/R-P10.md (referee aabcefd; draft 8f2db93, report a09a89d; comparison §C 434a552): (a) SIGN WITH GAPS,
   closed (G10-a1); (b) SIGN (N10-b1); (c) SIGN (constants: X_R ≤ c(|R|+1)|R|², F_R ≤ 3(c+1)(|R|+1)|R|³); (d) SIGN; (e) CONFIRMED
   (dtl_prefexits unmodified + own probe p10entry.py, 140 files, both orders, 0 failures). REFEREE-2 docs/referee-2/R2-P10.md (referee-2 0cbe61e; comparison §6
