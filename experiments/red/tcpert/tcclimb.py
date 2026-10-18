@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """L-RED box 11 (produced on Opus 5.5): hill climb over label-rule sets (tcpert.py rules, up to MAXR parts) on tc(N),
-fitness = pinned-Oink DTL iterations at N = NB minus at N = NA (growth; TCC_RATIO=1: their ratio; TCC_RATIO=2: min of the ratios at NB/NA and NB-1/NA-1; TCP_EXT=1 adds cut/loop rules), every solution verified (an unverified run is
+fitness = pinned-Oink DTL iterations at N = NB minus at N = NA (growth; TCC_RATIO=1: their ratio; TCC_RATIO=2: min of the ratios at NB/NA and NB-1/NA-1 (of iterations, or of tangles with TCC_METRIC=tangles); TCP_EXT=1 adds cut/loop rules), every solution verified (an unverified run is
 printed as NOT VERIFIED and rejected). Prints improvements with the iteration row at N = 3..NB.
 TCC_LEAN=1 uses lean.py's base (no S/A/B vertices). TCC_TLHARD=K keeps only rule sets whose pinned-Oink TL iterations on tc(6) stay >= K.
 Usage: tcclimb.py RNGSEED STEPS MAXR NA NB OUTDIR"""
@@ -19,7 +19,7 @@ def its(rule, Ns):
         k = (rule, N)
         if k not in cache:
             try: cache[k] = T.solve(T.apply(base[N], list(rule)), tmp)
-            except Exception: cache[k] = (-2, False)
+            except Exception: cache[k] = (-2, False, -1)
         r.append(cache[k])
     return r
 def tlhard(rule):   # TCC_TLHARD=K: pinned Oink --tl iterations on the perturbed tc(6) must stay >= K (tc(6): 128)
@@ -40,7 +40,9 @@ def fit(rule):
         if not all(x[1] for x in rs):
             if all(x[0] >= 0 for x in rs): print("NOT VERIFIED", rule, rs, flush=True)
             return -99
-        return min(rs[3][0] / rs[1][0], rs[2][0] / rs[0][0])
+        j = 2 if os.environ.get("TCC_METRIC") == "tangles" else 0   # TCC_METRIC=tangles: ratio of learned tangles
+        if min(rs[1][j], rs[0][j]) <= 0: return -98
+        return min(rs[3][j] / rs[1][j], rs[2][j] / rs[0][j])
     a, b = its(rule, [na, nb])
     if not (a[1] and b[1]):
         if a[0] >= 0 and b[0] >= 0: print("NOT VERIFIED", rule, a, b, flush=True)
@@ -58,5 +60,5 @@ for it in range(steps):
     if f >= fc:
         cur, fc = cand, f
         if f > best:
-            best = f; print(it, f, cand, [x[0] for x in its(cand, list(range(3, nb + 1)))], flush=True)
+            best = f; print(it, f, cand, [x[0] for x in its(cand, list(range(3, nb + 1)))], [x[2] for x in its(cand, list(range(3, nb + 1)))], flush=True)
 print("done best", best, cur)

@@ -200,6 +200,8 @@ probe: 60,000 perturbed hard-family / tc games, all verified (§10).
   DE17) on leanT 6/8 and tcR4 5; CHAIN (DE16) at depth 0 on tcR4 4/5 and at depth > 0 on tcR4 5; ABS-pw (dead, not a hit) on
   tcL 4/6 and tcR4 4/5.
 - dtl_changenew.py, dtl_defsplit.py, dtl_quietlin.py: no failure line. No live lemma is broken by these families.
+- Repeated 11:39-11:48Z on leanT_N12, leanT_N16, tcR4_N6, both orders: FDL 0 violations (11 / 15 / 15 transitions); again only
+  CTX-ROOT, CHAIN and ABS-pw fail.
 
 ## 12. Open, in this box
 - N = 14 needs a lighter tool (ctxlight peaks above 5 GB at N = 12).

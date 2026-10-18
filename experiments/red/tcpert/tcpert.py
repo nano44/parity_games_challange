@@ -47,8 +47,8 @@ def solve(V, path):
         f.write(f"parity {len(V)-1};\n" + "".join(f'{k} {v[0]} {v[1]} {",".join(map(str, v[2]))} "{v[3]}";\n' for k, v in enumerate(V)))
     o = subprocess.run([os.path.join(T, "oink"), "--dtl", "--no-single", "--no-wcwc", "--no-loops", "-v", path, "/dev/null"], capture_output=True, text=True, timeout=120).stdout + ""
     o = o + subprocess.run(["true"], capture_output=True, text=True).stdout
-    m = re.search(r"solved in (\d+) iterations", o); ok = "solution verified" in o
-    return (int(m[1]) if m else -1), ok
+    m = re.search(r"solved in (\d+) iterations", o); ok = "solution verified" in o; tg = re.search(r"and (\d+) tangles", o)
+    return (int(m[1]) if m else -1), ok, (int(tg[1]) if tg else -1)   # (iterations, verified, tangles)
 def randrule(rng):
     k = rng.randint(1, 2); rule = []
     for _ in range(k):
