@@ -23,3 +23,6 @@ tc,21,1428,f75d3d30284643fc4c6766b11293cd99324476d8,71,1,55,0,oink-zlk,40.92,COU
 tc,22,1562,d8739a672408e9850f88ceb192c735fdb8e6e728,62,0,66,0,oink-zlk,53.09,COUNT,
 tc,23,1702,608731c47d77c87fd9414405cf609851fd1cf64f,76,0,68,0,oink-zlk,61.26,COUNT,
 tc,24,1848,25e4ed57a000622ae7c6a35b61ce82acd1a305fc,65,0,73,0,oink-zlk,84.15,COUNT,
+tc,25,2000,fbf02f6ddb0dd9b23348aa31e74f6e79875a9682,74,0,67,0,none,78.62,noref,no reference finished
+tc,26,2158,4030578dd90d68554da74f169e0f158968116a5e,83,0,80,0,none,74.70,noref,no reference finished
+tc,27,,,,,,,,,lnew-not-run,BUDGET600_REACHED
