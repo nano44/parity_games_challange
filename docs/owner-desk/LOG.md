@@ -201,3 +201,6 @@ constant-depth route false for every constant; post-landing note. Live routes R1
 > Keep working on the dtl and also c
 Desk reading: continue DTL work (not stated whether proof lane, attack lane, or both; not limited to the cheap attack only) AND
 option (c), a new candidate/approach, with no direction named. (a) write-up not chosen. Relayed verbatim to the Lead, priority now.
+
+## 2026-10-18 08:57Z Lead (relayed to owner)
+Q14 closed as D13 / L34. Q15 (direction for (c)) put to the owner.

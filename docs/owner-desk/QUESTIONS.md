@@ -180,4 +180,14 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
   contact); (b) keep only the cheap adversarial lane on GAP-A, no proof lane; (c) a new candidate or approach (needs an owner direction).
 - Lead recommendation: (a) now, plus (b) until the Fable reset 2026-10-21 21:00Z, then stop unless (b) finds a long-phase family.
 - Urgency: decision needed; the fleet is idle until the owner chooses.
-- Status: answered 2026-10-18: "Keep working on the dtl and also c"; relayed; awaiting the Lead's D-number.
+- Status: closed, D13 / Lead reading L34: DTL continues on both sides (L-ALG proof, L-RED attack) at the D7 rate; (a) not chosen;
+  (c) needs a direction (Q15); next reassessment at the Fable reset 2026-10-21 21:00Z.
+
+## Q15: direction for option (c), run alongside DTL (one lane, Opus until the reset)
+- id: Q15 (Lead, 2026-10-18 08:57Z; D1 "Spawn no attack lane before I approve it")
+- Options: A. strategy improvement rules S5/S6 (Zadeh/Cunningham with index tie-breaks; only SI rules neither killed nor defended;
+  cheap, fast verdict, likely negative). B. deterministic weak separators (rank 1; diagonal at n = 5 and growth; high leverage, low
+  probability, SAT-heavy; better on Fable after the reset). C. lower bounds for symbolic algorithms (negative direction; no algorithm).
+  D. Lead's choice.
+- Lead recommendation: A now, then B after the reset.
+- Status: open
