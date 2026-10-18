@@ -130,6 +130,19 @@ under τ̄, so the fixes are improving for Odd (K5 again).
 | K = 4 (seed 43, N = 3, 4, 5) | min lock 1 (best so far) | - |
 No per-bit gadget found whose lock or iteration count grows with N.
 
+## 8 (Lead 21:35Z). Repeated states and Ξ-flat iterations (the cycling attack on G-N5-TERM): NOT killed
+- Simultaneous best-response updates can cycle in general, so a repeated (σ, τ) state would be an incomplete run, i.e. a kill.
+- Repeated-state detector: a wrapper, so the algorithm is unchanged and n5.py stays unmodified at the spec commit.
+  - n5_lock.py: all start pairs, n ≤ 8, 1,600 games: none.
+  - n5_adv3.py: every candidate of its climb: none.
+- Ξ-flat climb (n5_adv3.py; fitness = iterations where neither Ξσ nor Ξτ strictly rises; mutations as n5_adv.py plus equal-priority
+  moves): best 1 flat iteration of 17 (n = 12, 4,000 steps) and 2 of 13 (n = 24, 3,000 steps); checked OK
+  (n5/box4/flat_n12.txt, flat_n24.txt).
+- Explanation and repair: docs/new/G-N5-TERM-reading.md. A flat switch is necessarily a length-only switch at a cycle node
+  (Lemma B), and a potential gives termination for every switch sequence. Unrefereed L-NEW reading.
+- The same file records that VJ00 Lemma 5.8's "Improve(σ) ≠ σ ⇒ σ not maximum" fails at cycle nodes. Instance in §0; checked from
+  VJ00's own definitions by vj_bruteforce.py.
+
 ## 6. The obstruction, as necessary conditions a killer must meet (for gauntlet step 4 and for L-RED)
 Any family that makes N5 super-polynomial THROUGH FALLBACKS (caveat 3) must have, at all but polynomially many iterations:
 K1 (lemma §2) both players off their best replies, each on the other's improving plays. Odd's current τ is strictly worse for Odd
