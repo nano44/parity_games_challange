@@ -55,14 +55,19 @@ Status: BOX 14 ACTIVE (successor 9, from Lead GO 21:10Z; R42). Box-13 status (hi
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
-2026-10-18 22:10Z (date -u), successor 9 (session_01Vg2PZioPtUWbhZT7xu1yqZ, Opus 5.5, owner D8), BOX 14 (Lead GO 21:10Z, to ~01:00Z).
+2026-10-18 ~21:45Z (reconstructed; first written as 22:10Z, an estimate, not date -u), successor 9 (session_01Vg2PZioPtUWbhZT7xu1yqZ, Opus 5.5, owner D8), BOX 14 (Lead GO 21:10Z, to ~01:00Z).
 - KILL: (XCTX@p0) (GAP-A-M §35a, l-alg 9ab9a3e6) FALSE on 𝒞^1P, both orders: xctx/instances/xctx_viol_n20.pg (742ba103cdb7);
   b12_core MODE=core CORE-ALL 1, xcover fraction 1.0; (VR-NEW_all) survives (new key below p0). Near miss xcov11_n20 (47023109c198).
-  Reported to the Lead 21:58Z. Write-up docs/red/R42-xctx.md.
+  Reported to the Lead (message headed 21:58Z, an estimate; date -u was ~21:40Z). Write-up docs/red/R42-xctx.md.
 - Lemma EMPTY-REC (reading, dtl.cpp 898-955): in 𝒞_C every recursive call of a q-search has an empty subgame (dagchk.py 98/98).
 - (CHAIN-CHANGE): no kill; necessary conditions R42 §3 ((α), (β1)/(β2), (γ)). chainfin.py climbs cf21/cf22 running in scratch.
 - Tools: experiments/red/xctx/ (xscore.py graded climb with GROW; show.py; chainchg.py; chainfin.py; deep*.py; dagchk.py).
-- NEXT: box item (2), the TREE-PIECE⁺ compounding counter with cross-copy carries (R41 §5), using b12_ident.py TREE=1 PLUS=1.
+- 22:06Z (date -u): KILL (TREE-PIECE⁺) (§36a, l-alg 5eb1b4bd), two-player, both orders: tpp/instances/tpp_viol_n22.pg (a5088b091cbd;
+  shrunk from tpp_viol_n63, 64d0832859a4); b12_ident.tp_score PLUS=1 = (1, 0, 3, 5). Mechanism: same (d, position, R, outcome) at
+  depth 1 with a different X (parent subgame) repeats a key. Reported to the Lead 22:01Z (date -u). Write-up docs/red/R43-treepiece.md.
+- NEXT: (CHAIN-CHANGE) on 𝒞^1P (R42 §3 routes β1/β2); or a depth-0 (VR-NEW_all) attack; ask the Lead.
+- TRAP (bit me 21:40Z): I headed two Lead messages with ESTIMATED times (21:58Z, 22:14Z) instead of running date -u. Run
+  date -u immediately before writing any timestamp.
 - TRAP: the scratch l-alg worktree is $SP/lalg; xscore.py defaults to the in-tree experiments/alg (identical for the used modules).
 2026-10-18 19:49Z (date -u), successor 8, BOXES 12-13 (Lead GO 13:42Z box 12; 17:18Z box 13 to ~21:00Z; produced on Opus 5.5).
 Docs: docs/red/R40 §14 (D2 wall-time check, closed), docs/red/R41 (compounding; VR-NEW / FD-WITNESS / TREE-PIECE data).
