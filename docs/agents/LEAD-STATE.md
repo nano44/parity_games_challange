@@ -557,3 +557,6 @@
 - 01:18Z (date -u) L-ALG succ. 8 handover 4.5/5 (c245315; answer 4 misattributed 'stop' to L32, corrected); GO 01:21Z, first packet-11 imports.
 - 01:22Z (date -u) merged checker 8886315 (C13 re-diff PASS) and referee abc5185 (R-P11 §C: N11-b1 confirmed). LANDED RESULTS R13 before Dead ends (body identical to R13-draft lines 4-end; stamp checker 1bd345d + re-diff 8886315); draft marked LANDED; GAPS GAP-A row updated (R13, packet 11). R14 draft updated (REFEREE §C; G-R14-3 two signatures).
 - 01:25Z (date -u) merged l-alg 510cb18 (§23v packet-11 imports; handover L32 line corrected; reading: GAP-A ⇐ (CTX⁺) ∧ (D-POLY), and (EXIT_c) + bound on D_R^thr suffices). R14 draft final; to CHECKER C14.
+- 01:29Z (date -u) merged checker 5019c88 (C13 post-landing PASS; recommended note applied: GAPS packet-11 sentence marked 'refereed by both, not yet gated by CHECKER').
+- 01:33Z (date -u) merged referee 563d46c (notes/REFEREE.md LANE-RESTART step 1 ready; parked ~520k). Successor at the next packet.
+- 01:36Z (date -u) merged checker f89502d (C14 FAIL E-1 only: '(SPP) at G′' unrefereed and self-inconsistent). Applied E-1 to (c) and G-R14-4 (both referees' wording: necessary, not sufficient, = S − 1 on chain families; L-ALG note pointer), N-1 to (d); re-diff requested. N-2 (§23v stale count) routed to L-ALG.
