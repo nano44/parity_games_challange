@@ -89,3 +89,17 @@ carries no event. Hence the D + 1 pairs i_0..i_D, and the pairs p_j, are each se
     - pair 3: t0^L re-stolen with that event as its only cause (depth 2).
   - Each further level needs one more lagged copy and two more clock steps, so depth D would cost about D copies and a clock
     of length about 2D. The family would be linear in D, giving depth growing like n/(c·|core|).
+
+## Addendum (00:07Z by date -u, 2026-10-18): (EXIT_c) search (Lead 22:48Z, GAP-A-M §23p) and the last depth searches
+- Target: EXIT ≥ 3 for one (context, step, vertex). An exit needs the vertex in, then out, so c exits need ≥ 2c visits. The 4-search
+  cores cannot exceed 2; only the R35 game (9-search phase) has room.
+- root/exitfit.py (dtl_prefexits model, l-alg f1b3ba0b) climbs from stealonce_viol_n76, about 1 h each, stable order: max exits stayed
+  at 2. The number of (step, vertex) pairs with 2 exits rose from 10 to 309. Oink order: max 1 (up to 999 pairs with 1 exit).
+- Check of a climbed file (scratch x30001_b, sha1 0bd0c40a, not pinned) with L-ALG's dtl_prefexits.py UNMODIFIED:
+  - stable: distribution {1: 489, 2: 95}, max total exits per context / |R| = 1.77 (|R| 66, 11 visits);
+  - oink: {1: 1340}.
+  - Pinned Oink: 11 iterations, verified.
+- Depth: the depthgrad climbs from the R35 game (about 2.5 h together) and a one-edge depthgrad scan at its release vertices (406
+  variants) all stayed at max depth 1 with cause count 1.
+- Status at box end: no EXIT 3, no depth 2, no k 3. The plan in the previous addendum (clock-gated lag between copies) is the
+  open constructive route.

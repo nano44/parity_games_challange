@@ -52,7 +52,9 @@ Status: HANDOVER (box 7 successor 5 parks at ~580k; see Resume point). Older sta
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
-2026-10-17 21:59Z (date -u), successor 6 (Opus 5.5), box 8 (Lead GO 19:01Z; depth box extended to ~00:30Z, note ~23:00Z).
+2026-10-18 00:10Z (date -u): BOX 8 END. All climbs stopped 00:08Z (ps: none). Worker restarted ~23:25Z and killed the
+climbs then; they were restarted from saved bests. Final: no depth 2, no k 3, no EXIT 3 (R37 addenda). Successor queue below stands.
+(history) 2026-10-17 21:59Z (date -u), successor 6 (Opus 5.5), box 8 (Lead GO 19:01Z; depth box extended to ~00:30Z, note ~23:00Z).
 DONE (all pushed via push.sh; every instance pinned in check.sh, both orders, pinned Oink verified):
 - R35 (DE20): stealonce_viol_n76 (32c2da0b): STOLEN-PERM/STAYS-MET/NO-REFIRE FAIL 7, STEAL-ONCE* k 2 (stable); NO-RETURN FL_ALL.
 - R36: stealonce_core_n76 (4e017c28, edge-min), firedstep13_n76 (68df1c0d, 13 fired at one step, stable), firedlong667_n43
