@@ -2,7 +2,20 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-HANDOVER (successor 1 -> successor 2), 2026-10-18 ~20:50Z by date -u, context ~525k. Lead: killer attempt goes to the successor.
+SUCCESSOR 2 (box 4, GO 21:05Z). Done and pushed (see docs/new/N5-killer-box4.md):
+- (0) SPEC vs A1-A10 at 6014db7.
+- (1) Deeptrap trace (an even-N chain).
+- Stall lemma, proved and checked.
+- Termination sentence false as written (repair proposed).
+- Locks: ≤ 2 from all starts; climbs give 8 / 11 / 9 / 7 at n = 12 / 24 / 48 / 96.
+- Sandwich data.
+- Killer 4 (dummygift) linear.
+- K1-K5 obstruction.
+- VJ00 opened, cost corrected.
+N5 NOT killed.
+Next: a structured lock search ("lock reads the counter", K3) seeded with switchallexp plus a label-attached gadget; the
+DLM-distraction module.
+(Successor 1's handover notes kept below.)
 ### DONE (all pushed on claude/l-new; docs/new/README.md has one row per approach)
 - Box 2: N1 gauntlet step 2 (N1-step2.md, step2/*.csv); S6 numbering rule not killed (S5S6-renum.md).
 - Box 3: N1 KILLED (N1-KILL.md, deep traps, gen_deeptrap.sh, instances/killer/); N2 KILLED (padded switchallexp, gen_padsae.sh);
@@ -78,6 +91,16 @@ HANDOVER (successor 1 -> successor 2), 2026-10-18 ~20:50Z by date -u, context ~5
   valuation), Algorithm 2 (SSI, f applied to I), Algorithm 3 (generalized SSI with J-sets), Lemma 5, p. 3 "more than only
   local information".
 
+- Jurdziński & Vöge, "A Discrete Strategy Improvement Algorithm for Solving Parity Games", BRICS RS-00-48 (Dec 2000; full
+  version of the CAV 2000 paper, LNCS 1855), https://www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, opened 2026-10-18 ~21:17Z
+  (sha256 485a12de432a2a8c..):
+  - §6 shortest-paths procedure, lines 1-10;
+  - Theorem 6.2 (p. 25): an improvement step in O(n·m);
+  - §1: Bellman-Ford O(n²·m);
+  - §5 Lemmas 5.2-5.9: Improve(σ) = σ iff σ is optimal (Lemma 5.8);
+  - §7: number of steps open (2000).
+  Box 4 used it to correct N5's cost statement.
+
 ## Dead ends
 - N2 (PRIO-ANNEAL), KILLED ON DATA 18:05Z UTC (box 3; first implementation n2.py). Padded switchallexp
   (gen_padsae.sh; dummies block compression): largest stage 6, 15, 34, 72, 148, 300, 604 (N = 1..7). Instance
@@ -124,3 +147,9 @@ HANDOVER (successor 1 -> successor 2), 2026-10-18 ~20:50Z by date -u, context ~5
 - renum's best numberings have no readable class structure (as L-RED R7 found); lift.py transfers numbering by labels and
   keeps most of the count (Cunningham switchbestexp N = 2 -> 3: lifted start 688 vs best 939).
 - Big-d random games (n ~ 350, d ~ 350) take minutes in anneal_c: ~3,000 phases of ~1M-bit numbers.
+- (succ. 2) n5_lock.step / n5_trace copy n5.py's loop for logging and assert equality with n5.run; never cite them without that assert.
+- (succ. 2) VJ "improving" at a cycle node: a switch that closes a cycle through its own cycle node can change the strategy with
+  Ξ unchanged (Odd 1→3 instance in N5-killer-box4.md §3). Every one-switch argument must exclude cycle-closing switches and cycle nodes.
+- (succ. 2) Engine.evaluate's tie-break is static (index order). Any design that makes candidates TIE against τ turns N5's step
+  into an index rule, not a stall.
+- (succ. 2) The container's clock runs differently from your sense of time: always date -u.

@@ -123,6 +123,22 @@ Vöge-Jurdziński counterstrategy computation (VJ00, as implemented by L-SI; pol
 bound), plus a fallback step (no extra evaluation). Valuations are (vertex, n-bit path set, length): comparisons cost O(n) bits; no
 big-number arithmetic anywhere (no discount, no weights). So the cost is poly(n) per iteration; the open question is the
 iteration count, which is what the sweeps measure (iterations and fallbacks per row).
+CORRECTION (box 4, successor 2; VJ00 OPENED): Jurdziński & Vöge, "A Discrete Strategy Improvement Algorithm for Solving Parity
+Games", BRICS RS-00-48 (Dec 2000; the full version of the CAV 2000 paper, LNCS 1855), pdf sha256 485a12de432a2a8c..
+- §6 "Efficient implementation" gives the shortest-paths procedure (lines 1-10: edge deletions per vertex r above t in
+  descending order, then longest distances if t ∈ R+ and shortest if t ∈ R−).
+- Theorem 6.2 (report p. 25): "An improvement step of our discrete strategy improvement algorithm can be performed in time O(n · m)."
+  §1 says the naive Bellman-Ford alternative costs O(n²·m).
+- So one evaluation (valuation + optimal counterstrategy) costs O(n·m) set/length operations by VJ00. At bit cost a path-set
+  operation costs O(n) bits, so a crude bound is O(n²·m) bit operations per evaluation.
+- si.py's Engine.evaluate is a direct transcription (a reachability pass per vertex u above each cycle node). It costs at most
+  O(n²·m) set operations, i.e. O(n³·m) bit operations. It does not reach VJ00's O(n·m), which shares the work across cycle nodes.
+- N5 per iteration: 2 valuations + at most 2 restricted optima (4 evaluations), plus the improving sets (O(m) key comparisons,
+  O(n) bits each). Total poly(n, m) per iteration: O(n·m) set operations with VJ00's procedure, O(n²·m) as implemented.
+- The open question stays the iteration count.
+CORRECTION (box 4) to the Termination paragraph above: "strictly unless σ' = σ" is false as written. An Odd switch that closes a
+cycle through its own cycle node can change τ and leave Ξτ identical (instance and repair: docs/new/N5-killer-box4.md §3). No
+repeated (σ, τ) state was found in any run.
 
 ## Deep traps and padding
 VJ valuations depend only on the priority order (injective rank), so priority gaps and isolated dummies change nothing; a trap

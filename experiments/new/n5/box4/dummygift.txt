@@ -1,0 +1,10 @@
+dummygift top N=2 aaf5cd0d2dd425f905f8387bda4d3df4ff63c4e5 n=96 iterations=8 fallback=0 capped=0 zielonka(oink zlk) OK strategies verified
+dummygift top N=3 9cbe84d24707ab82b67ecef40584e1378eea797b n=138 iterations=9 fallback=0 capped=0 zielonka(oink zlk) OK strategies verified
+dummygift top N=4 7258ca4bfbaaa0cc370917cc8dbdebc63f8d92f8 n=180 iterations=11 fallback=0 capped=0 zielonka(oink zlk) OK strategies verified
+dummygift top N=5 0294a1aad24de7385a7af4a48673cd8586a3091e n=222 iterations=13 fallback=0 capped=0 zielonka(oink zlk) OK strategies verified
+dummygift top N=6 ea2aaf387ccdb115b9d1cc479f9b47c7188d6564 n=264 iterations=15 fallback=0 capped=0 zielonka(oink zlk) OK strategies verified
+dummygift low N=2 b888b131000a5dd28a08a03ed987eccaa1a3fe43 n=96 iterations=14 fallback=0 capped=0 zielonka(oink zlk) OK strategies verified
+dummygift low N=3 371feddf218c45f5cfaf9e7719aa38f86c44ae27 n=138 iterations=16 fallback=0 capped=0 zielonka(oink zlk) OK strategies verified
+dummygift low N=4 d25ca335f78b6ed58f3a07d22912992377cfa1b8 n=180 iterations=18 fallback=0 capped=0 zielonka(oink zlk) OK strategies verified
+dummygift low N=5 b099b431cff7b3f612bc8bca5f1fcbd7c92f6f53 n=222 iterations=20 fallback=0 capped=0 zielonka(oink zlk) OK strategies verified
+dummygift low N=6 157b484a39aaa03a0bb4a2057320abb0de357a0f n=264 iterations=22 fallback=0 capped=0 zielonka(oink zlk) OK strategies verified
