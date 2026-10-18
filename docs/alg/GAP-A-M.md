@@ -4181,6 +4181,14 @@ mechanisms, and the data show both, separately:
 In the one-player class 𝒞^1P, (i) vanishes (no steals, NOSTEAL-1P), so GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P, and (ii) is all that is
 left. A counter needs (ii) compounding across chain positions: a rise at j resets j+1, ..., and the positions below rise again
 ≥ 2 times between consecutive rises at j. That is the construction target routed to L-RED (Lead 11:08Z).
+PRECISE COMPOUNDING CONDITION on 𝒞^1P (for L-RED; uses OUTCOME-MONO-1P §28e, CHANGE-NEW R14). Every context's outcome is
+monotone and changes ≤ K = |R|(|R|+1) + |R| + 1 times. Every change at R needs a NEW tangle firing at R (CHANGE-NEW). So a
+super-polynomial phase needs a depth-0 position j whose context R_j makes ≥ 2 outcome rises, where each rise at R_j
+(a) re-cuts the tail, i.e. Dom(prevV) shrinks (a later emptying round, §27d) or −1 → stable, and (b) is ENABLED by a tangle
+learned in the tail below j after that tail has itself risen ≥ 2 times since the previous rise at R_j. Recursively, over Θ(n)
+positions, this is a binary counter whose carries are tangles learned low and firing high. A construction must exhibit (b):
+a tangle born in a fresh tail context that fires at R_j and moves R_j's emptying round later. Data so far: class instances reach
+a reset-depth proxy of at most 4 (ctx1p climbs, S = 7) and 3 on onep_chainfail_n20 (fixd_fdpos.py); ctx13_n40 (two-player) reaches 7.
 PROVED (readings, unrefereed):
 - Lemma CTRL (§27b): in 𝒞_C the controller makes ≤ n + 1 searches (its tangles have no escapes, so each one is a dominion).
 - Lemma NOSTEAL-1P (§27b; brief docs/alg/ONEPLAYER.md): in 𝒞_C^dist, q's phases have no relevant steal. Corollary on signed R9 and
