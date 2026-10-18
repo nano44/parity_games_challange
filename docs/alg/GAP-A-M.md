@@ -3748,3 +3748,34 @@ Growth (fits over n = 36..106; slope = d log / d log n between the end points; D
 Reading: every polynomial-total premise ((STEAL-POLY_sum), (EXITS-POLY), (D-POLY), (FIRED⁺-R), (XPAIRS-POLY)) is consistent with
 this family, at degree ≤ 3 in n. The family stresses LOCAL constants only, because its phase is linear (D + 7 searches): the
 totals are bounded by the phase length times polynomial factors. A threat to the totals needs a long phase at one context.
+
+24h. BOX-10 LEDGER (L-ALG succ. 8; GO 01:21Z, written 03:37Z by date -u; produced on Opus 5.5). Everything is unrefereed
+unless marked signed.
+SIGNED and imported: packet 11 (CHANGE-NEW) in §23v, with N11-b1 now holding two signatures (REFEREE §C abc5185).
+READINGS (unrefereed). Packet-12 candidates per the Lead (§23w-§23x frozen; brief docs/alg/QUIET-BLOCK.md):
+- §23w Lemma QUIET-BLOCK + corollary: D_R ≤ M_R + (M_R + 1)(|R|+1)(L+1)|R|; gap G23u CLOSED.
+- §23x Lemma EXIT-ORIGIN: a pair's first exit has V ⊆ and a relevant steal above it in its own round.
+- §24a Lemma DEF-SHRINK: the first round where U_r shrinks has a deficit in the later visit.
+- §24b Corollary SPLIT: D_R ≤ (B+1)(G+1)(1 + #Xpairs_R), hence GAP-A ⇐ (CTX⁺) ∧ (XPAIRS-POLY) given STR-DET.
+- §24f: R39's relay is combinational in T. A counter at one context costs about 2^D new tangles there (CHANGE-NEW), so it is
+  the (FIRED⁺-R) question itself.
+- §24d: correction of the §23s root-case remark ((FIRED⁺-R) at G′ is not (SPP)).
+KILLED (DEAD.md box 10; instances re-run with pinned Oink):
+- G23u fix via RV rises (spp_chain_up_n43).
+- NET-GROWTH (cm_viol_oink_n28, lex_viol_oink_n20).
+- QUIET-LIN (dtl_cross3_n14, fired18_stable_n20) and QUIET-NEWV (spp_final_n30, spp_n30).
+- EXIT-LEAD-DISTINCT (depth2_n39 etc.).
+- By L-RED (DE21): (EXIT_2), (STEAL-DEPTH_D) for every constant D. Every constant local exit bound is endangered (max exits ≈ D/2 + 1
+  on lagfam).
+DATA that stands:
+- (USHRINK-FRESH). Every U-shrink pair has a new key (round, new top, losing top), a new top at its first shrinking round, and
+  a deficit in y: corpus 104 / 29, cross unions 182 / 96, mixed unions 287 (stable) / pending (Oink), R39 0 U-shrinks.
+- lagfam D = 2..12 (§24g): every total is polynomial at degree ≤ 3; (CTX⁺) is unstressed there (1 first-difference context).
+- Quiet blocks ≤ 0.953·|R|. No birth locality for (FIRED⁺-R) below the root (§23y).
+POSITION. Every per-context form is one statement up to polynomial factors: (D-POLY) ⇔ (EXITS-POLY) ⇔ (STEAL-POLY_sum) ⇔
+(XPAIRS-POLY), and (FIRED⁺-R) implies them. The sparsest form is (XPAIRS-POLY). None has a proof route, and (CTX⁺) has none
+either. L32 is NOT met. The threat to the totals is a SUPER-POLYNOMIALLY LONG PHASE at one context (a real counter). By
+CHANGE-NEW that needs super-polynomially many tangles, so it is GAP-A's own core.
+NEXT (successor): (i) the U-shrink "consumed quantity" (key reuse needs an RV fall, i.e. an earlier-round U-shrink: bound the
+chain across rounds without the |R|^r blow-up); (ii) if L-RED builds a long-phase family, run dtl_totals.py and dtl_defsplit.py
+on it at once.

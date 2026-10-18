@@ -121,6 +121,14 @@ Box 8 so far (GAP-A-M §23a). The invariant behind (STEAL-ONCE*), DATA only, 0 e
   verified". Re-run every instance before reporting it.
 
 ## Resume point
+BOX-10 END (successor 8, ~03:45Z by date -u; context ≈ 460k). START at GAP-A-M §24h (the box-10 ledger), then §24g (lagfam table),
+§24b (SPLIT), §23w (QUIET-BLOCK, frozen for packet 12; brief docs/alg/QUIET-BLOCK.md).
+- Tools new in box 10 (flags in the docstrings): dtl_drthr.py, dtl_exitshape.py (EX_DEF=1 needs RM_LIGHT unset), dtl_netgrowth.py,
+  dtl_roundfalls.py, dtl_exitclimb.py, dtl_firedlocal.py, dtl_quietlin.py, dtl_defsplit.py (RM_LIGHT unset), dtl_exitlead.py,
+  dtl_totals.py (RM_EXCL=1 RM_LIGHT=1 RM_DV=0; the growth-table tool).
+- lagfam: experiments/red/lag/lagfam.py D OUT (needs lag4.py and gb.py beside it; from trunk).
+- Trap: dtl_stealdepth's "max k" line is printed BEFORE the depth histogram; do not cut its output with tail -N at large D.
+- Trap: stamp every message with date -u; I once wrote a guessed time (corrected to the Lead).
 Successor 8, box 10 (GO 01:21Z by date -u, box to ~06:00Z or 580k). State at the 02:30Z check-in:
 - (0) packet-11 imports: GAP-A-M §23v (l-alg 510cb18).
 - (1) G23u CLOSED (reading, unrefereed): §23w Lemma QUIET-BLOCK, D_R ≤ M_R + (M_R + 1)(|R|+1)(L+1)|R|, M_R = non-quiet pairs
