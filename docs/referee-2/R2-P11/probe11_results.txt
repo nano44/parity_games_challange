@@ -1,0 +1,25 @@
+# corpus (268 files, n<=130), oink = pinned order, stable = stablerel.py + R2_REV=1; an11.py; key (G, player, R)
+== oink: 268 files
+  identical with new tangles: 4350
+CHANGE-NEW holds: 3028
+contexts: 8963
+max #fired+/|R| x100: 95
+max D_R/#fired+ x100: 100
+max D_R: 41
+max root #fired+: 41
+max root D: 41
+pairs differing: 3028
+pairs identical: 7666
+== stable: 268 files
+  identical with new tangles: 4265
+CHANGE-NEW holds: 3066
+contexts: 8984
+max #fired+/|R| x100: 100
+max D_R/#fired+ x100: 100
+max D_R: 41
+max root #fired+: 41
+max root D: 41
+pairs differing: 3066
+pairs identical: 7536
+#fired+ = |R|: experiments_alg_instances_fired18_stable_n20.pg_stable.res 
+# spp_chain_up_n43 (pinned): root |R| 43, 42 visits, D 41, #fired+ 41
