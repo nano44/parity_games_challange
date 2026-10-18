@@ -1,8 +1,10 @@
 # G-N5-TERM: termination of N5. L-NEW READING (successor 2, 2026-10-18 22:13Z by date -u). A proof proposal for the referees, NOT a result.
 GAPS row G-N5-TERM (major, owner L-NEW). SPEC's sentence "each iteration strictly improves σ or τ (in Ξ)" is false as written
-(instance below). This file proposes the repair and a proof from VJ00's lemmas. Status: ONE signature, REFEREE-2 "SIGNED WITH GAPS (Opus 5.5, D12)" at trunk 812ecba (docs/referee-2/R2-N5T.md; gaps G-N5T-1..3).
-Its notes N1-N4 and the I1 instance were applied on 2026-10-18 (wording only; the theorem statement is unchanged). REFEREE's
-independent report is pending. Under CLAUDE.md the row stays open until two referees sign or Lean checks it.
+(instance below). This file proposes the repair and a proof from VJ00's lemmas. Status: TWO signatures, both on the version pinned at trunk 812ecba (Lead 23:27Z): REFEREE R-N5T and REFEREE-2 R2-N5T
+(docs/referee-2/R2-N5T.md; gaps G-N5T-1..3), both "SIGNED WITH GAPS (Opus 5.5, D12)". They do not disagree. RESULTS draft:
+docs/agents/R15-draft.md (CHECKER lands it). The signed object is the 812ecba text. The referees' wording fixes were applied on
+2026-10-18 in later commits: Lemma A = VJ00 Lemma 5.7; Prop. 5.1 in Lemma B; =_ℓ on pairs includes equal lengths; "play values
+(1)"; N4 stated; the I1 instance in §0. These are wording only; the statement and the mathematics are unchanged.
 
 Source: Jurdziński & Vöge, "A Discrete Strategy Improvement Algorithm for Solving Parity Games", BRICS RS-00-48 (Dec 2000),
 pdf sha256 485a12de432a2a8c.. (opened 21:17Z). Section/lemma numbers below are from that report. Notation as there: Ωσ = (Λσ, Πσ);
@@ -51,6 +53,8 @@ Proof.
   Prog(Ωσ, (v, w)) holds. (Earlier text routed this through (11) and Lemma 5.2; Prop. 5.1 alone suffices, R2-N5T N1.)
 - Prop. 5.1 gives Prog(Ωσ, (v, σ(v))).
 - Suppose Λ(v) = ℓ ≠ v. Clause 1 gives Λ(w) = Λ(σ(v)) = ℓ. Clause 2 gives Π(v) =_ℓ Π(w) ⊕ v and Π(v) =_ℓ Π(σ(v)) ⊕ v.
+  - On pairs, =_ℓ includes EQUAL LENGTHS: (B, k) =_ℓ (B', k') means B =_ℓ B' and k = k', by both length clauses of E_ℓ
+    (REFEREE / REFEREE-2 wording fix).
   - Multiset union with {v} and +1 cancel in =_ℓ (MaxDiff over multiset differences is unchanged when the same element is added
     to both; the lengths differ by the same 1).
   - So Π(w) =_ℓ Π(σ(v)), hence Ω(w) and Ω(σ(v)) are ⊴-equivalent. That contradicts Ω(σ(v)) ◁ Ω(w).
