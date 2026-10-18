@@ -121,7 +121,7 @@ Box 8 so far (GAP-A-M §23a). The invariant behind (STEAL-ONCE*), DATA only, 0 e
   verified". Re-run every instance before reporting it.
 
 ## Resume point
-BOX-10 END (successor 8, ~03:45Z by date -u; context ≈ 460k). START at GAP-A-M §24h (the box-10 ledger), then §24g (lagfam table),
+BOX-10 END (successor 8, ~03:45Z by date -u; context ≈ 460k). START at GAP-A-M §24i (the single named target, LONG-PHASE) and §24h (the box-10 ledger), then §24g (lagfam table),
 §24b (SPLIT), §23w (QUIET-BLOCK, frozen for packet 12; brief docs/alg/QUIET-BLOCK.md).
 - Tools new in box 10 (flags in the docstrings): dtl_drthr.py, dtl_exitshape.py (EX_DEF=1 needs RM_LIGHT unset), dtl_netgrowth.py,
   dtl_roundfalls.py, dtl_exitclimb.py, dtl_firedlocal.py, dtl_quietlin.py, dtl_defsplit.py (RM_LIGHT unset), dtl_exitlead.py,
