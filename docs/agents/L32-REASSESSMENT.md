@@ -24,6 +24,8 @@ subclass. Status: NOT MET.
 - The open core, stated once (L-ALG §24h, Lead reading): every live route needs (CTX⁺) plus one polynomial-total premise, and
   each total is bounded by (phase length at one context) × poly; the only remaining threat is a super-polynomially long phase
   at one context, i.e. super-polynomially many NEW tangles firing at one context (Lemma CHANGE-NEW, R14). That is GAP-A itself.
+  L-ALG names it (LONG-PHASE) (GAP-A-M §24i): "no context sees super-polynomially many NEW firing tangles in one phase"; a
+  counter at one context would cost about 2^D new firing tangles there (combinational-in-T remark, §24f, from signed results).
 - GAP-C (completeness): reduced to the KT frame with one open hypothesis (ACYC) for Step 5 (R4), but single-search progress
   statements are dead (DE13, DE15); a proof needs a cross-search measure of GAP-A type.
 
