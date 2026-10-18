@@ -43,3 +43,11 @@ out/renum/switchbestexp_3_cunningham.pg sha1 172ff9bf599fd1a33cb1625b2e23433fb32
 Per-vertex switch counts on these runs (s6_trace.py): max 16 (N = 2, 341 iterations), max 31 (N = 3, 928): flat, spread over
 many vertices; no vertex's count doubles with N, i.e. no binary-counter signature. Lifted chain (numbering of N lifted by
 labels to N + 1, then climbed; s6_chain.sh): Cunningham N = 2: 395; N = 3: lifted start 688, climbing; Zadeh chain running.
+
+## UPDATE 12:10Z: S6 on switchbestexp looks super-polynomial (data, not a claim)
+Part 2 sweep (2 x 200 steps, from scratch): Cunningham 341, 928, 1887, >= 3882 (N = 2..5; N = 5 hit the 600 s cap while
+climbing). Lifted chain (s6_chain.sh, 800 steps per N): 395, 939, 2837 (N = 4 still climbing at 668/800). Ratios 2.4-3.0
+per N while n grows x1.29-1.42 per N: a polynomial fit needs a degree rising from 2.8 to 4.3. Identity numbering on the same
+family is linear (91 ... 651, N = 2..10). Zadeh (S5) on the same family: 268, 493, 976, 1363 (ratios falling to 1.40).
+Rest of the part-2 sweep (Oink bench, recursiveladder, switchallexp to N = 5): all small and polynomial-looking (e.g. tc+
+Zadeh 9, 47, 131, 279; Cunningham 6, 34, 116, 291; counter_rob Zadeh 24, 56, 98, 142); summary_part2.csv.
