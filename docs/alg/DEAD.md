@@ -317,3 +317,8 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
     into 𝒞_1, all priorities distinct; pinned Oink 4 iterations verified), Even's phase, searches 0 and 2, q = 1: vertex 20 is removed
     at position 2 in search 0 but survives to position 10 in search 2. Obstruction: the depth-0 loop is not monotone in its input set.
     Case "outcome rose at q": 1,005 / 871 of 2,257 class pairs (first c6_replay3_n32 forced).
+  - (XCTX@p0) on 𝒞^1P (GAP-A-M §35a, the hypothesis of the §33 reduction): FALSE (L-RED R42, l-red 8f09538; confirmed exactly by
+    L-ALG succ. 10, GAP-A-M §37). experiments/red/xctx/instances/xctx_viol_n20.pg (sha1 742ba103cdb7; 𝒞_1, all priorities distinct;
+    pinned Oink 6 iterations, verified; model winners equal to Zielonka; both orders): Even's phase, s2 → s3, p0 = 2, case P, N = {12};
+    search 0's piece at a different context of the same size and signature (3, 17, 4) (R \ R′ = {18}, R′ \ R = {11}) contains 12.
+    Obstruction: same-signature contexts at one position recur across a re-cut with overlapping pieces (the §35 failing step happens).

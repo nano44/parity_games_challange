@@ -43,13 +43,14 @@ dead ends: docs/alg/DEAD.md.
 | (VR-NEW_V), (VR-NEW_s) in two-player games (L-RED, 12-13) | a vertex returns to its (ρ, \|V\|) or (ρ, \|R\|) state | vrV_viol_n80/n40, vrs_viol_n100 (experiments/red/tcpert/instances/prod) |
 | literal CORE, (SIG-DISJ), literal (TREE-PIECE) (13) | same-signature returns; identical call trees | onep_vrj_n40, tp_ident_n20 dfeb04607e88 (§33c, §34c) |
 | (XCTX@p0), the core on 𝒞^1P (14) | input-monotonicity of the depth-0 continuation below a first difference: (CHAIN-NEST), (CHAIN-SIZE) false | onep_nest_n68 926bbef91e0e (§35) |
+| (XCTX@p0), the §33 hypothesis on 𝒞^1P (L-RED R42, after box 16) | FALSE: a same-signature context of a different set covers N at p0 | xctx_viol_n20 742ba103cdb7 (§37; L-ALG confirmed exactly) |
 | (TREE-PIECE⁺) sketch, two-player games (15) | step S4: the outcome at a fixed input FALLS (LEX false); the signed replacement gives back (CTX⁺) ∧ (FIRED⁺-R) | cm_viol_oink_n28 587d2c68a942 (§36) |
 | (TC-6), the Two Counters family (10-11) | parked: single family, not L32 progress | — |
 | (NO-PRE-a) proof (12) | no monotonicity between visits in two-player games | none; data only (§31) |
 
 ## 4. What survives as DATA (0 violations on all data; none proved)
 - **On 𝒞^1P:**
-  - (XCTX@p0) and (CHAIN-CHANGE). Together they give GAP-A on 𝒞^1P (§33, proved reduction).
+  - (CHAIN-CHANGE). (XCTX@p0) is now FALSE (xctx_viol_n20, §37), so the §33 reduction gives no route; (FD-WITNESS_all), which it was meant to prove, still holds (margin 1 there).
   - L-RED's xcov11_n20 (sha1 47023109c198, 21:18Z) is the first PARTIAL cross-context cover at p0 (11 of 16 vertices). (XCTX@p0) still holds there.
   - (VR-NEW_all), (TOP-CHAIN@R).
 - **In all games:**

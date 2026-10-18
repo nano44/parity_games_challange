@@ -3,7 +3,9 @@ Successor 9's handover text is in git history: `git show a97f451:notes/L-ALG.md`
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push only with `scripts/push.sh > $S/push.log 2>&1; echo exit $?`.
 Truth for GAP-A: docs/alg/GAP-A-M.md §23-§30 (§30 = box 12, successor 10; §29 = box-11 ledger). Dead ends: docs/alg/DEAD.md.
 
-## Resume point (2026-10-18 21:50Z by date -u; PARKED after box 16)
+## Resume point (2026-10-18 22:12Z by date -u; PARKED after box 16 + standing check)
+- Standing check 22:10Z: (XCTX@p0) FALSE on 𝒞^1P, confirmed exactly (L-RED xctx_viol_n20, GAP-A-M §37, DEAD.md); the §33
+  reduction gives no route; (FD-WITNESS_all), (VR-NEW_all), (TREE-PIECE⁺) still hold there; EMPTY-REC agrees with data.
 - Box 16 triage: NO credible subclass with a first proof step (reason in docs/alg/GAP-A-STATUS.md §5). Brief for the L32
   reassessment at the Fable reset: docs/alg/GAP-A-STATUS.md (routes since L32 with failing steps and instances, surviving DATA,
   refereed basis, honest view).
