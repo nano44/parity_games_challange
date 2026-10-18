@@ -8,6 +8,7 @@ x → y of a context R and each grid round r:
          step of round r is then needed; the tool records only the label).
   per round index: exits in round 1 vs later rounds.
 Printed: histogram of falls per (r, w); exits by round class and cause; examples of (r, w) with ≥ 2 falls (top sequences).
+EX_DEF=1 (with RM_LIGHT unset) also classifies the pairs with a fall by deficit calls (rec["deficit"]: some round has U ≠ Û, dtl_ideal).
 Usage: RM_LIGHT=1 RM_DV=0 DTL_ORDER=oink|stable [UNIONS=.. SEED=.. UM_CROSS=.. NMAX=..] dtl_exitshape.py G.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
@@ -32,6 +33,14 @@ if __name__ == "__main__":
                 falls = {}; seqs = {}
                 for i in range(len(gs) - 1):
                     gx, gy = gs[i], gs[i + 1]
+                    if os.environ.get("EX_DEF") == "1":          # needs RM_LIGHT unset: does an exit pair have a deficit call (U ≠ Û)?
+                        hasx = any(gx[r].get(w, -1) > gy[r].get(w, -1) for r in range(nr) for w in gx[r])
+                        if hasx:
+                            dx, dy = vl[i][1].get("deficit", False), vl[i + 1][1].get("deficit", False)
+                            k = f"pairs with a fall: deficit in x {'yes' if dx else 'no '} in y {'yes' if dy else 'no '}"; tot[k] = tot.get(k, 0) + 1
+                            ushr = any(w not in gy[r] for r in range(nr) for w in gx[r])
+                            k2 = f"pairs with a fall: some U_r shrinks {'yes' if ushr else 'no '}, deficit in y {'yes' if dy else 'no '}"; tot[k2] = tot.get(k2, 0) + 1
+                            if not dx and not dy: print("NO-DEFICIT FALL", nm, "depth", key_[0], "|R|", len(R), "pair", i, "U shrinks", ushr, flush=True)
                     for r in range(nr):
                         Vx = set(gx[r].values()); Vy = set(gy[r].values())
                         for w in set(gx[r]) | set(gy[r]):

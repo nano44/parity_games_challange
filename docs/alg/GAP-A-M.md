@@ -3576,3 +3576,90 @@ fall3_n76, fall4_n116; both orders)
 - Reading: half the tangles that reach a sub-context come from sibling-type contexts, so a "tangles fired at R are learned
   inside R" induction on depth is not available. (FIRED⁺-R) below the root has no route from locality. Not pursued further this
   box (task (3) was conditional on (1)-(2) stalling; (1) closed, (2) stalled at the counter obstruction of §23x).
+
+23z. Box 10: can QUIET-BLOCK be made LINEAR? Two forms killed; block length ≤ 0.953·|R| stays DATA (L-ALG succ. 8,
+02:22Z by date -u; tool experiments/alg/dtl_quietlin.py; RM_LIGHT=1 RM_DV=0; corpus 141 files + stealonce_viol_n76,
+stealonce_both_n45, stealer_viol_n76, fall3_n76, fall4_n116; both orders)
+Motivation: §23w bounds a quiet block by Φ ≤ (|R|+1)(L+1)|R|, but the longest block seen is 41 at |R| = 43 (spp_chain_up_n43
+root). A LINEAR block bound would cap the threshold-only part of the root's work by |G′|, the (SPP) shape.
+A_i := the vertices that join some U_r or W_{r,t} at quiet differing pair i.
+- (QUIET-LIN) "each vertex is in A_i for at most one differing pair of a block": KILLED. 35 (stable) / 33 (Oink) failing pairs;
+  a vertex is re-advanced up to 4 times in one block (spp_final_n30 root, |R| = 30, block 6). Smallest instances:
+  experiments/alg/instances/dtl_cross3_n14.pg (sha1 90d95c85; pinned Oink 8 iterations verified) root pair 1 re-advances 0, both
+  orders; fired18_stable_n20.pg (sha1 42307b22; pinned Oink 4 iterations verified), stable. Reading: one vertex joins W at
+  different (round, level) slots at different pairs.
+- (QUIET-NEWV) "every A_i has a vertex not in an earlier A_j of its block": KILLED. 4 failing pairs per order (323 / 336
+  hold). Instances: experiments/alg/instances/spp_final_n30.pg (sha1 e57c2cf9; pinned Oink 22 iterations verified) root pair 16
+  A = {6, 7, 15}, also |R| = 29 pair 3 and depth 1 |R| = 26 pair 2, both orders; spp_n30.pg (sha1 587697ae; pinned Oink 21
+  iterations verified) |R| = 28 pair 6, both orders.
+- DATA: max quiet block length / |R| = 0.953 (spp_chain_up_n43, 41 / 43), both orders. 88 quiet differing pairs (each order) advance
+  exactly one vertex; 239 (stable) / 252 (Oink) advance ≥ 2.
+- Status: the polynomial QUIET-BLOCK bound stands (reading); a linear form has no surviving candidate. Not pursued further.
+
+24. Box 10, continued (L-ALG successor 8; produced on Opus 5.5)
+24a. U-shrinks need a deficit; grid exits without one are re-cuts inside U (reading + DATA; 02:34Z by date -u; tool
+experiments/alg/dtl_exitshape.py EX_DEF=1, RM_LIGHT unset, RM_DV=0; corpus 141 files + stealonce_viol_n76, stealonce_both_n45;
+both orders)
+Notation: Û_r(V, T) = the IDEAL round union (dtl_ideal.ideal_union: the tops of V_r level by level, closure over all of T, no
+exclusions); a round has a DEFICIT if U_r ≠ Û_r (rec["deficit"]). Actual ⊆ ideal (U_r ⊆ Û_r) as in the box-4 deficit
+analysis (GAP-A-M §18; reading).
+Lemma DEF-SHRINK (reading, unrefereed). For a consecutive visit pair x → y of R, let r be the first round with U_r(x) ⊄ U_r(y).
+Then round r of y has a deficit.
+Proof. For r′ < r, U_{r′}(x) ⊆ U_{r′}(y), so QUIET-BLOCK steps 2-3 (§23w; they use only U ⊆ and T ⊆) give V_r(x) ⊆ V_r(y).
+Û is monotone in V and T (a closure with no exclusions). So U_r(x) ⊆ Û_r(V_r(x), T_x) ⊆ Û_r(V_r(y), T_y). If U_r(y) = Û_r(y), then
+U_r(x) ⊆ U_r(y), a contradiction. □
+Corollary (reading). If no call of R in the phase has a deficit round, then along the visits every U_r and every V_r only grows,
+so W_{r,t} only grows, and the only falls of top_r(w) are RE-CUTS: w moves to a lower top's region inside the same U_r.
+DATA: pairs with a fall of some top_r(w): stable 90, of which 89 have a U-shrink (all 89 with a deficit in y, and in x) and 1 has
+no deficit in either visit (fired18_stable_n20 root |R| = 18, pair 1: no U-shrink, a re-cut, as the corollary says). Oink: 25,
+all with a U-shrink and a deficit in y (and in x).
+Reading: (EXIT_c) splits into (a) U-shrinks, charged to deficit rounds of the later visit (the old (H4)/Lemma E obstruction:
+a straddling stored tangle), and (b) re-cuts inside U. (a) is the box-4 DEF count, which has no constant bound (§17) but has
+not been shown super-polynomial; (b) is new and rare (1 pair in this data). Neither is proved.
+
+24b. Box 10: the per-context budget lives on the EXIT PAIRS alone: D_R ≤ poly·(1 + #Xpairs_R), and U-shrink pairs need a
+deficit (reading + DATA; L-ALG succ. 8, 02:43Z by date -u; tool experiments/alg/dtl_defsplit.py, RM_LIGHT unset, RM_DV=0;
+corpus 141 files + stealonce_viol_n76, stealonce_both_n45, stealer_viol_n76, fall3_n76; both orders)
+Pair classes for consecutive visits x → y of R (grid of §23t plus the virtual end-of-round step, prefix U_r):
+- QUIET: no grid entry or exit (§23w); by QUIET-BLOCK step 1 no vertex leaves any U_r there.
+- ENTRY-ONLY (EO): an entry, no exit (grid or virtual).
+- X-PAIR: some exit; split into USHRINK (some vertex leaves some U_r) and RECUT (grid exits only, every U_r kept).
+Corollary SPLIT (reading, unrefereed). Let Φ⁺ := Σ_r Σ_{τ ∈ grid ∪ {virtual}} |P_r(τ⁺)| ≤ G := (|R| + 1)²|R|, and
+B := (|R| + 1)(L + 1)|R| (§23w). Then:
+- Φ⁺ is unchanged at a quiet pair (no entry, no exit) and rises strictly at an EO pair, so #EO_R ≤ G·(#Xpairs_R + 1).
+- By QUIET-BLOCK, the differing quiet pairs number ≤ B·(#EO_R + #Xpairs_R + 1).
+- Hence D_R ≤ (B + 1)(G + 1)(1 + #Xpairs_R), with #Xpairs_R = #USHRINK_R + #RECUT_R.
+- By Lemma DEF-SHRINK (§24a), every USHRINK pair has a deficit round in its later visit y.
+- Conversely #Xpairs_R ≤ D_R. So per context (D-POLY) ⇔ (XPAIRS-POLY) up to polynomial factors, where
+  (XPAIRS-POLY): the consecutive visit pairs of R with an exit are polynomially many per phase.
+  (EXIT_c) ⇒ (XPAIRS-POLY), since #Xpairs_R ≤ X_R ≤ c·G.
+DATA (dtl_defsplit.py):
+
+| order | differing pairs | EO | USHRINK (deficit in y) | RECUT | max #Xpairs_R per context | max D_R / (1 + #Xpairs_R) |
+|---|---|---|---|---|---|---|
+| stable | 1,346 | 928 | 104 (104) | 1 | 4 (resteal34_union_n90 root, US 4) | 41 (spp_chain_up_n43 root, 0 X-pairs) |
+| Oink | 1,307 | 960 | 29 (29) | 0 | 3 (stealonce_both_n45 root, US 3) | 41 (same) |
+
+- Max deficit visits per context: 10 (h4_deep_oink_n44, stable) and 12 (h4_def11_oink_n28, Oink), with 0 X-pairs. So deficits are
+  necessary for a U-shrink but far from sufficient, and they are not the count that matters.
+- The (RECUT) pair is the single fired18_stable_n20 pair of §24a.
+Reading. Per context, GAP-A's budget reduces to how often SOME exit happens at all (pairs, not (step, vertex) multiplicities).
+On data such pairs are rare (≤ 4 per context, 105 / 29 of 1,346 / 1,307 differing pairs). Disjoint unions add X-pairs over
+components, so the honest form is polynomial, not constant. With (CTX⁺) and R9 (or N11-b1): GAP-A ⇐ (CTX⁺) ∧ (XPAIRS-POLY), given
+STR-DET. This is again equivalent to the other per-context forms up to polynomial factors (a reformulation), but it is the
+SPARSEST one: it counts only the pairs where the round decomposition loses something, and DEF-SHRINK ties most of them to the
+deficit (Lemma E) event.
+Status: Corollary SPLIT and DEF-SHRINK are readings, unrefereed; (XPAIRS-POLY) is DATA (max 4). No proof route yet.
+
+24c. Box 10: every U-shrink pair has a NEW TOP at its first shrinking round (DATA + reading; L-ALG succ. 8, 02:52Z by
+date -u; dtl_defsplit.py, same sets and flags as §24b)
+- DATA: at the first round r with U_r(x) ⊄ U_r(y), the input satisfies V_r(x) ⊊ V_r(y) at 104 / 104 (stable) and 29 / 29 (Oink)
+  USHRINK pairs; equal input occurs 0 times ((U-MONO_DTL) of §18h, "same-input union monotone in T", 0 failures here too). V_r is
+  read from RV: V_r = {v : RV(v) ≥ r}.
+- Reading. (V_r(x) ⊆ V_r(y) is PROVED by EXIT-ORIGIN (a) / DEF-SHRINK; strictness is the DATA part, and it is exactly (U-MONO_DTL)
+  at round r.) So, given (U-MONO_DTL), a U-shrink pair has (i) a deficit round in y (DEF-SHRINK) and (ii) a top u with
+  RV_x(u) < r ≤ RV_y(u), an RV RISE, where u's new region steals from a lower top.
+- Why this does not close: an RV fall needs an earlier U-shrink of the same pair (a V-loss traces back to a W-shrink, hence a
+  U-shrink; §23x), and an RV rise is free (growth). Counting rises per vertex gives #USHRINK_R ≤ |R|(|R| + 2) + |R|·#USHRINK_R,
+  which is vacuous (coefficient |R|). A proof needs a U-shrink to CONSUME something: e.g. the stolen-from lower top's tangle can
+  be stolen by u only once per (u, tangle). Untested; candidate for the successor.

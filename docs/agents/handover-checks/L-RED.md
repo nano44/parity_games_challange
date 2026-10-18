@@ -187,8 +187,9 @@ Nothing running (ps: no dtl_rootmono; predecessor stopped all climbs 01:48Z; its
    (Q9 option (a): continue at the current spend rate; stop at once on overage.) So no climb outlives my box.
 3. D8 (docs/DECISIONS.md line 161; index row D8 "active"):
    > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
-   Lead reading L32 (index "active"; a Lead reading, not an owner ruling): an incorrect run or a super-polynomial
-   family goes to the Lead at once.
+   CORRECTION (Lead 02:09Z): L32 (index "active", a Lead reading) is the GAP-A reassessment criterion ("progress means
+   ONE named statement with a proof route"). The rule that an incorrect run or a super-polynomial family goes to the
+   Lead at once comes from CLAUDE.md and TARGET.md, not from L32. (Same slip in the successor 6 section above: history.)
 
 ## 5. One trap that bit this lane, and the check that now prevents it
 - Trap (bit again at this start): stale local branch (local 5a30e98, origin 9a4b739). Check: `git fetch origin

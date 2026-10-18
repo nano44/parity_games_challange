@@ -1,4 +1,4 @@
-# L-RED notebook (independent adversary). Successor 6 (Opus 5.5, owner D8) from 2026-10-17 18:55Z (date -u); successor 5 from 2026-10-17 11:16Z (date -u); successor 4 (04:22Z-11:06Z) before
+# L-RED notebook (independent adversary). Successor 7 (Opus 5.5, owner D8, session_01WMwHG59A8od889vPhroxTk) from 2026-10-18 01:59Z (date -u); successor 6 from 2026-10-17 18:55Z (date -u); successor 5 from 2026-10-17 11:16Z (date -u); successor 4 (04:22Z-11:06Z) before
 Previous: session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, parked 15:20Z); before it session_0117Yy21tGGz9s1zzLfBdUKC (Fable).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh > file 2>&1; echo $?`.
@@ -52,6 +52,13 @@ Status: HANDOVER (box 7 successor 5 parks at ~580k; see Resume point). Older sta
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+2026-10-18 03:02Z (date -u), successor 7, BOX 10 (Lead GO 02:09Z, to ~07:00Z). R39 docs/red/R39-relay-depth.md:
+- inversion relay + chainfam region clock (S top, a -> S) gives re-steal DEPTH 2 / 3 / 4 on n 39 / 46 / 53;
+- pinned in experiments/red/lag/instances; both orders by unmodified dtl_stealdepth; Oink verified; check.sh pins.
+Control wiring was climbed per D (lag/schemaclimb.py, SKEL=4). Running: D = 5 and 6 climbs (scratch sc/d5, d6).
+Next: a uniform hand rule for the wiring (R39 T3), so this becomes a family; then exits (dtl_prefexits) and ctx on the same
+skeleton. LALG_DIR = detached l-alg e0fc1bb0 in scratch.
+(history) Successor 6 resume point follows.
 2026-10-18 01:55Z (date -u): BOX 9 END (CTX+), PARKED. R38: best C_bv per n 6/7/13/6 at n 20/30/40/56, about half the
 transitions; no growth family. Pinned ctx6_n20, ctx7_n30, ctx6_n56. All climbs stopped 01:48Z (ps: none). Successor queue: (1) a
 serialized-piece construction (one lag gadget serves both depth >= 2 (R37) and C_bv growth (R38)); (2) long-phase FIRED-R multi > 0.
