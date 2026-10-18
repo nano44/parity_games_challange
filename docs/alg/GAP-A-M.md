@@ -3813,3 +3813,24 @@ Packet-worthiness (my view; the Lead decides):
 - §24f "the relay is combinational in T; a counter at R costs about 2^D new firing tangles at R": YES as a short remark. It is a
   two-line corollary of the signed CHANGE-NEW and the state inventory, and it justifies (LONG-PHASE) as the single target.
 - §23x EXIT-ORIGIN: OPTIONAL / LOW. Its purpose was (EXIT_c), which is dead. Keep it frozen as a supporting lemma only.
+
+25. Box 11 (L-ALG successor 8; Lead GO 08:58Z by date -u, owner D13 "Keep working on the dtl and also c", Lead reading L34;
+produced on Opus 5.5)
+25a. The subclass, named before any proof work (09:00Z by date -u)
+SUBCLASS: the Two Counters family TC = {tc(N) : N ≥ 1}, the games printed by Oink's generator tools/oink/build/tc N (src/tools/tc.cpp
+@ 8fbf0a7, no options). TARGET CLAIM (TC-6): for every N ≥ 3 and every order datum, A_DTL on tc(N) performs exactly 6 searches
+(iterations: 4 Even, 2 Odd; phases of 3, 1 and 2 searches) and learns 2N + 1 tangles. Any constant bound (and a fortiori a
+polynomial bound) on the searches is the L32 deliverable; the exact count is the strong form.
+Why nontrivial: on TC the targeted standard solvers are EXPONENTIAL, measured in this fleet's M1 bench
+(experiments/hard-families/tc/README.md, verdict CONFIRMED): oink-tl, zlk, uzlk, rr and dp grow by b = 2.00 per +1 in N; fpi
+1.92 and tspm 2.74 over shorter ranges. Oink's README (lines 199-219) names TL, FPI/FPJ, NPP/PP/PPP/DP/RRDP, ZLK/UZLK/ZLKPP-STD and
+TSPM/SPM/MSPM as exponential on it. The paper is van Dijk, GandALF 2019, doi:10.4204/EPTCS.305.8, NOT yet opened by this lane, so
+only the bench data is cited. Contrast, said plainly: oink-rtl and oink-psi are polynomial on TC (bench), so TC is NOT hard for
+every solver. It is a single designed family, not a structural class, and tc+ (where A_DTL's iterations grow: 5, 10, 18, 26) is
+NOT included.
+DATA behind the target: pinned Oink, N = 1..12: iterations 3, 5, 6, 6, ..., 6 and tangles 2, 4, 7, 9, ..., 2N + 1, all verified.
+dtl_pyref, both order data, N = 1..6 and 8: identical phase pattern [3, 1, 2] for N ≥ 3. Oink -t on tc(4): every tangle is learned
+at depth 0.
+Proof route: trace the run by induction on N. Describe the state (tangle set T) after each search and show which tangles the
+next search's depth-0 stable piece extracts; every step cites dtl.cpp lines and signed results (R4-R14). The order-datum
+dependence must be handled: either show that the traced sets are order-free, or restrict the claim to the order data checked.
