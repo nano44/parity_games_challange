@@ -5,7 +5,7 @@ and each one asserts that its counts equal n5.run's (n5_trace.py; n5_adv2.py re-
 Every solution cited is checked by check_sol2.py (Oink zlk + harness/verify.py) or by zielonka.py + verify.py (n5_adv2.py).
 Outputs: experiments/new/n5/box4/.
 
-## Result: NOT KILLED. Forced fallback ("lock") exists but does not scale; obstruction below.
+## Result: NOT KILLED (attempts 3, 4, 4b, 5, 6). Forced fallback ("lock") exists but does not scale; obstruction below.
 
 ## 1. Deeptrap oscillation (26 / 15 / 33 / 18 at N = 6 / 7 / 8 / 9): explained, linear
 Per-iteration traces: n5_trace.py on gen_deeptrap.sh N (sha1 5134273723.., 835ce1326c.., 3ce8d18866.., b88d40574b..),
@@ -109,6 +109,26 @@ Why it fails (argument; it matches the data):
 - Even when every Even candidate ties against τ, Engine.evaluate's tie-break is STATIC (BFS first discovery / smallest index;
   SPEC S1 (iv)). Even's step then becomes a fixed index rule ("move to the lowest-index candidate"), not a stall. A vertex that
   switch-all flips both ways (a ↔ b) cannot be stuck at both times under a static preference.
+
+### 5b. Killer attempt 4b: dummies only on edges with EVEN-priority targets (the K5 escape), gift priority 0
+switchallexp ends every play at q (priority 1, the worst odd cycle for Odd). So a blunder for Odd must be an Even-winning gift, and
+Odd's fix is non-improving only if the fix target has even priority. dummygift.py mode evenonly; Odd's best-reward start picks g.
+Result (dummygift.txt, all OK): iterations 14, 16, 18, 20, 22, 24 at N = 2..7, 0 fallbacks. Trace N = 3: Odd leaves every dummy in
+iterations 1-7, and Iτ = ∅ from iteration 8. Cause: the un-dummied edges to odd-priority targets put odd vertices on the fix routes
+under τ̄, so the fixes are improving for Odd (K5 again).
+
+### 5c. Killer attempt 6: per-bit replicated gadget (bitgadget.py)
+- One genome of K vertices is copied for EVERY bit i, wired to bit-relative labels (i, i+1) and to the next copy, so it scales with
+  Friedmann's counter.
+- Climbs: K = 3 and 5 (fitness on N = 3, 4), and K = 4 and 6 (fitness on N = 3, 4, 5 jointly). Every improved best is checked
+  (zielonka.py + verify.py). Scaling files: n5/box4/scale_bit_K*.txt.
+| genome | fitness found | scaled N = 2..9: lock / iterations |
+| --- | --- | --- |
+| K = 3 (seed 31) | lock 1 / 1 at N = 3 / 4; 50 iterations at N = 4 | lock ≤ 1; iterations 3, 11, 50, 43, 48, 36, 33, 42 (no growth) |
+| K = 5 (seed 51) | lock 4 / 5 at N = 3 / 4 | 0, 4, 5, then 0 for N ≥ 5; iterations ≤ 18 |
+| K = 6 (seed 63, N = 3, 4, 5) | min lock 2 | - |
+| K = 4 (seed 43, N = 3, 4, 5) | min lock 1 (best so far) | - |
+No per-bit gadget found whose lock or iteration count grows with N.
 
 ## 6. The obstruction, as necessary conditions a killer must meet (for gauntlet step 4 and for L-RED)
 Any family that makes N5 super-polynomial THROUGH FALLBACKS (caveat 3) must have, at all but polynomially many iterations:

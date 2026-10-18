@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Box 4 killer attempt 4 (stall-gadget test): put an Odd dummy D on every edge (x, y) of an Even vertex x with >= 2 successors:
 x -> D -> {y, g}; g = one shared gift vertex (Even self-loop) with priority GP. Dummies get priority DP (even, below everything).
-Shifts the original priorities by +2 so 0/1 stay free. Usage: dummygift.py game.pg GP_mode(top|low) > out.pg"""
+Shifts the original priorities by +2 so 0/1 stay free. Mode evenonly: gift priority 0 and dummies ONLY on edges whose target has even priority (K5: Odd's fix to an odd-priority target
+is improving for Odd; to an even-priority target it is not).
+Usage: dummygift.py game.pg GP_mode(top|low|evenonly) > out.pg"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import pg
@@ -13,6 +15,7 @@ for x in range(g.n):
     if g.owner[x] == 0 and len(g.succ[x]) >= 2:
         new = []
         for y in g.succ[x]:
+            if mode == "evenonly" and g.prio[y] % 2 == 1: new.append(y); continue
             D = len(prio); prio.append(0); owner.append(1); succ.append([y, G]); new.append(D)
         succ[x] = new
 sys.stdout.write(pg.dumps(pg.Game(prio, owner, succ)))
