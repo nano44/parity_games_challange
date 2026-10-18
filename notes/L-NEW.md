@@ -2,9 +2,15 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-SUCCESSOR 1, box 3 (Lead GO received 17:49Z by date -u; to ~23:00Z). N1 KILL on data at 8ac5e5c (17:54Z UTC; docs/new/N1-KILL.md). NOTE: my messages of this box were stamped 18:22Z and 19:05Z without date -u; true send times about 17:56Z and 18:07Z.
-Box 2 results: N1 step-2 survivor (N1-step2.md), S6 rule not killed (S5S6-renum.md). Next: generalise the deep trap (other
-families, other schedules), wait for Lead routing; check in ~20:30Z with ReadNotifications.
+SUCCESSOR 1, box 3 (Lead GO received 17:49Z by date -u; box to ~23:00Z). Context ~480k at 20:25Z (handover at ~580k).
+Done in box 3 (all pushed): N1 KILLED on data (deep traps, N1-KILL.md, 8ac5e5c); robust to start γ, Odd rule, compression with
+padding; N2 KILLED (padded switchallexp, f301bfb); N3 DEAD AS STATED (one degenerate breakpoint carries the problem, n3grid);
+deep-trap lemma written (optional per Lead; gaps 1-2 closed); N4 proposed only (Lead: do not implement); N5 SSI-GLOBAL
+implemented (n5.py), engine validated against DLM Prop. 7, defeats both DLM families, 12,000 random games agree, 11/13 hard
+families linear (n5/*.csv, docs/new/N5-ssi-global.md). Running at 20:25Z: run_n5.sh chain B (counter_rob, counter_rr), PID 7200.
+NEXT: when counter_rob/counter_rr finish: if linear, N5 = step-2 survivor on data -> report to Lead AT ONCE with the 13-family
+table (summarize_n5.py); then adversarial work against N5 (its weakness: it steers by the opponent's current strategy; try
+DLM-style 'distraction' gadgets that make the best response to a bad τ restricted to improving switches a bad move).
 
 ## Queue
 0. DONE box 2 14:20Z (rule class: not killed, S5S6-renum.md). (Lead 12:14Z) S6 on switchbestexp: extract a numbering RULE from the climbed numberings
@@ -80,6 +86,8 @@ families, other schedules), wait for Lead routing; check in ~20:30Z with ReadNot
   late (a single Odd self-loop of priority 1 reached through high even priorities) forces the climb in the last phase.
 
 ## Things only I know
+- N5 fallback: on non-sink games N5's selection AND SSI's I can both be empty (random n = 11 game r00008); the fallback is one
+  classical switch-all step. Waiters: never `pgrep -f <script name>` in a loop whose own command line contains that name; wait on a PID.
 - Run date -u for EVERY timestamp, including message first lines; in box 3 I estimated two stamps (18:22Z, 19:05Z) that were
   20-55 min ahead of the clock. Commit times (TZ=UTC git log --date=format-local) are the reliable record.
 - out/ does not survive a container: cite only committed CSVs. Python Zielonka is exponential on counter_rr/counter_m (b ~1.6):
