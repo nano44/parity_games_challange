@@ -3458,6 +3458,8 @@ trunk 3572651. No REJECT.
   charged pairs are distinct. Hence #(e*-at-R) ≤ D_R ≤ #fired⁺(R) given STR-DET (≤ 2·D_R without it), and
       S − 1 ≤ Σ_{R ∈ C_bv} #fired⁺(R) + n(|C_T| + |C_Dom|) + 1,
   with no H and no F_R.
+- UPDATE (Lead 01:41Z by date -u, CHECKER C14 N-2): REFEREE §C (referee abc5185) CONFIRMED N11-b1, so N11-b1 now has TWO
+  signatures; the "ONE signature; §C pending" above is stale.
 - What this changes for box 10 (L-ALG reading, unrefereed). With N11-b1 the per-context budget is D_R itself:
       S − 1 ≤ Σ_{R ∈ C_bv} D_R + n(|C_T| + |C_Dom|) + 1   (given STR-DET; one signature on the D_R form).
   So (D-POLY) "D_R ≤ poly(|R|) per context and phase" with (CTX⁺) gives GAP-A, and §23u's D_R ≤ N_ent + D_R^thr turns
@@ -3663,3 +3665,52 @@ date -u; dtl_defsplit.py, same sets and flags as §24b)
   U-shrink; §23x), and an RV rise is free (growth). Counting rises per vertex gives #USHRINK_R ≤ |R|(|R| + 2) + |R|·#USHRINK_R,
   which is vacuous (coefficient |R|). A proof needs a U-shrink to CONSUME something: e.g. the stolen-from lower top's tangle can
   be stolen by u only once per (u, tangle). Untested; candidate for the successor.
+
+24d. Correction to the §23s end note and §23u (CHECKER C14 E-1; L-ALG succ. 8, 03:09Z by date -u). §23s is frozen; the
+correction goes here.
+- The §23s note "(FIRED⁺ ≤ |R|) at the root would give S ≤ |G′| + 1 per phase, which is (SPP) itself" and §23u's "at the root both
+  are (SPP)-strength statements" are a READING resting on DATA (D_{G′} ≈ S − 1 on the chain family), unrefereed.
+- They are NOT literally (SPP). (SPP) bounds S, so it implies GAP-A (with phases ≤ D + 2). (FIRED⁺-R) at G′ alone bounds only
+  the root's own differing pairs (D_{G′}); S can be driven by deeper contexts while the root call is unchanged (R9's sum over
+  contexts), so (FIRED⁺-R) at G′ does NOT imply GAP-A (REFEREE R-P11 (c), REFEREE-2 R2-P11 §3). The correct statement: at G′,
+  (FIRED⁺-R) is necessary for GAP-A and coincides with (SPP) only on families where every search's first difference lies in the
+  root call (DATA, e.g. spp_chain_up_n43).
+
+24e. Box 10: (EXIT-LEAD-DISTINCT) DATA (L-ALG succ. 8, 03:16Z by date -u; tool experiments/alg/dtl_exitlead.py, RM_LIGHT=1
+RM_DV=0). Leading key of a pair x → y: (r0, τ0), the first grid round whose top map differs and the highest top whose round-r0
+region differs (a new top counts). Statement: the exits of one (step, vertex) never share a leading key. It would give
+exits(σ, w) ≤ (|R| + 1)|R|, so X_R ≤ (|R| + 1)²|R|³ and D_R polynomial (§23w), i.e. a polynomial-c form of (EXIT_c).
+- Corpus 141 files + stealonce_viol_n76, stealonce_both_n45, stealer_viol_n76, fall3_n76: (step, vertex) with ≥ 2 exits:
+  keys distinct 3,112 / 3,112 (stable), 84 / 84 (Oink). Union and climb-best stress runs in progress.
+- No proof: the leading change is a growth (equal prefix, EXACT), but nothing forbids the same region growing twice and
+  expelling w twice. DATA only.
+
+24f. Box 10: L-RED R39 (RESULTS DE21) against §23x and §24: constant local bounds die, totals stay small (L-ALG succ. 8,
+03:22Z by date -u). §23w-§23x are frozen for the packet; this subsection supersedes §24b's "re-cuts are rare" and §24e.
+Instances: experiments/red/lag/instances/depth{2_n39,3_n46,4_n53}.pg (l-red c021789; sha1 6200e586, 54cc8526, 40dacf0e). Pinned
+Oink re-run by L-ALG: 10 / 11 / 12 iterations, solution verified (28 / 33 / 38 strategies). Measurements, identical in BOTH
+orders (tools unmodified at l-alg b375c78; RM_LIGHT=1 RM_DV=0 unless stated):
+
+| D | n | root |R| | root visits | D_R (root) | max exits per (step, vertex) (dtl_drthr, DR_VIRT=1) | X_R (root, grid) | re-steals (dtl_stealdepth, RM_EXCL=1 RM_PREF=1) | max depth / k | X-pairs: USHRINK / RECUT (dtl_defsplit) |
+|---|---|---|---|---|---|---|---|---|---|
+| 2 | 39 | 39 | 9 | 8 | 2 | 73 | 2 | 2 / 2 | 0 / 4 |
+| 3 | 46 | 46 | 10 | 9 | 3 | 153 | 3 | 3 / 2 | 0 / 6 |
+| 4 | 53 | 53 | 11 | 10 | 3 | 206 | 5 | 4 / 3 | 0 / 5 |
+
+- KILLED on the same instances: (EXIT_2) (exits 3 at D = 3 with the virtual step, at D = 4 on the grid; L-RED/Lead via
+  dtl_prefexits 2/2/3), (STEAL-DEPTH_D) for constant D (R12 (c) route), and (EXIT-LEAD-DISTINCT) of §24e (repeated leading
+  keys at 13 / 29 / 50 (step, vertex), both orders). (USHRINK-FRESH) is untouched (0 U-shrinks); the relay works by RE-CUTS
+  with NO deficit (DEFvisits 0), so §24b's "re-cuts are rare" was a corpus artefact.
+- Totals: D_R = visits − 1 = D + 6, X_R ≤ 0.08|R|², re-steals ≤ D + 1. All linear or small in D; nothing super-polynomial.
+Is the relay the §23x counter? NO (reading).
+- R39 §3: F_j(x) = avail(x) ∧ ¬(F_{j−1}(x) ∨ x ≥ j + OFF). Every level toggles at EVERY visit until its freeze. That is the
+  carry chain of a counter without the halving: level j flips whenever level j − 1 flips. A binary counter needs level j to
+  flip only on a falling edge of level j − 1, i.e. state that depends on the previous visit, not only on the current input.
+- The only state a context carries across visits is the alive tangle set T, and T only grows (packet-11 inventory, §23v, two
+  signatures). So a visit's computation is a function of T, and the relay is COMBINATIONAL in T. A counter's ticks are
+  differing visit pairs, and each differing pair needs a new tangle that fires at R (CHANGE-NEW, signed, R14 draft). So a
+  D-bit counter at one context needs about 2^D new tangles at R: its existence is exactly the (FIRED⁺-R) / GAP-A question,
+  not a new obstruction. Hence R39 refutes the CONSTANT local forms ((EXIT_c), (STEAL-DEPTH_D)), while the per-context TOTAL
+  forms ((D-POLY) ⇔ (EXITS-POLY) ⇔ (STEAL-POLY_sum) ⇔ (XPAIRS-POLY), §23w, §24b) stand and are tested only by the phase length.
+- What would hurt the totals: a family where one context's visits (hence D_R) grow super-polynomially in |R|, i.e. a long
+  phase. R39's phase length is D + OFF + 3 visits, linear.
