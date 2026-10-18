@@ -19,5 +19,6 @@ for solver, to in (("--zlk", TO), ("--tl", 3600)):
             ref = pg.read_sol(open(f.name).read(), g.n); name = "zielonka(oink zlk)" if solver == "--zlk" else f"oink tl (zlk {why})"; break
         except subprocess.TimeoutExpired: continue
         except subprocess.CalledProcessError as x: why = f"exit {x.returncode}"; continue
+        except ValueError as x: why = "bad output: " + str(x)[:40]; continue  # zlk once wrote a solution missing a vertex (counter_ortl 30)
 if ref is None: print("NO REFERENCE (zlk and tl timeout)" + (" strategies verified" if not e else " STRATEGY FAIL " + e[0])); sys.exit()
 print(name + " " + ("OK" if win == ref else "MISMATCH") + (" strategies verified" if not e else " STRATEGY FAIL " + e[0]))

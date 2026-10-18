@@ -37,3 +37,9 @@ counter_dp,35,144,tools/oink/build/counter_dp 35,7ed544b4c2a29ac54ac78a27821cbb6
 counter_dp,36,148,tools/oink/build/counter_dp 36,fb69eb8095f5414372380a2668fa1998fbcd2050,36,22,36,90,35,0.01,zielonka(oink zlk) OK strategies verified
 counter_dp,37,152,tools/oink/build/counter_dp 37,2e384c3659ed47a5a42c09d04627b503bad8580b,0,22,2,56,1,0.01,zielonka(oink zlk) OK strategies verified
 counter_dp,38,156,tools/oink/build/counter_dp 38,df1493e474eec71f9365300e5a909af88d35d0e1,38,22,38,95,37,0.02,zielonka(oink zlk) OK strategies verified
+counter_dp,39,160,tools/oink/build/counter_dp 39,49fa199088b9d2796d464aac0ac2c28862b9dbde,0,22,2,59,1,0.01,zielonka(oink zlk) OK strategies verified
+counter_dp,40,164,tools/oink/build/counter_dp 40,bfaab148ffc55317c1de3005158991d5edf126dc,40,23,40,100,39,0.02,zielonka(oink zlk) OK strategies verified
+counter_dp,41,168,tools/oink/build/counter_dp 41,558f640404e5c0c518de2abfafcc25e4d5f5c38e,0,23,2,62,1,0.01,zielonka(oink zlk) OK strategies verified
+counter_dp,42,172,tools/oink/build/counter_dp 42,845e8dc5b056075163a15050da7fa55330c386ec,42,23,42,105,41,0.02,oink tl (zlk exit 250) OK strategies verified
+counter_dp,43,176,tools/oink/build/counter_dp 43,ad405cf52c1e78786a47cd2f5f18ba7684ad407f,0,23,2,65,1,0.01,oink tl (zlk exit 250) OK strategies verified
+counter_dp,44,,,,,,,,,BUDGET900_REACHED,

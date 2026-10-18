@@ -37,12 +37,31 @@ successor found for a vertex when building the strategy. N1's solutions on both 
   LATE phase (2^j ≥ 2^Ω(N) / m). Neither the warm start nor the schedule enters this bound; it is the classical n^O(d) class. Not a
   claim of anything new; it bounds where a counterexample can live.
 
-## Verdict per family (filled as the sweeps finish)
-| family | N (n) covered | N1 iterations (even + odd) | local slope in n, iterations / seconds (last sizes) | all rows checked | step-2 verdict |
+## VERDICT (2026-10-18 17:45Z by date -u): N1 PASSES gauntlet step 2 as DATA on all 13 hard families (+ 12,000 random games, box 1)
+Every finished row on every family: regions agree with the reference (Oink zlk = Zielonka; tl where zlk timed out, hit the 4 GB cap
+or misbehaved, labelled per row) and both players' positional strategies verified. No family shows super-polynomial growth of N1's
+iteration count: local log-log slopes of iterations in n are steady at ≤ 2 (switchbestexp 1.96, switchallexp 1.94, symsi 1.88, tc
+1.4-1.7, tc+ 1.4, counter_rob 1.04); counter_dp / recursiveladder slopes oscillate only because the instance shape alternates with
+the parity of N (totals 67 and 294). Wall time at bit cost grows like n^4..n^7 on the larger families (noisy: 2-4 jobs on 4 cores).
+CAVEATS (why this is data, not a claim; D1): (1) sizes are modest (n ≤ 1518; switchbestexp only to n = 410, N = 17 over 1200 s);
+(2) the bench was built against other algorithms; box 1 showed Friedmann's families are trivial from Odd's side, so they test N1
+weakly; (3) by the ceiling above N1 is n^O(d), so a counterexample must have d → ∞ and a long LATE phase, which no bench family
+is designed to produce; (4) one implementation (anneal.cpp; = anneal.py on 1,000 games); a second independent implementation
+is step 2's own follow-up "only if the first survives" (TARGET.md §5), i.e. now due; (5) no barrier statement yet (step 3).
+| family | N (n) covered; how the sweep stopped | N1 iterations (even + odd), first .. last | local slope in n, iterations / seconds (last 3) | rows checked | step-2 verdict |
 | --- | --- | --- | --- | --- | --- |
-| counter_rr | N = 1..42 (n = 4..168) | 0 .. 101 (largest phase 1) | [0.41, 1.65, 0.41] / [-15.62, 8.96, 11.94] | 42/42 |
-| counter_m | N = 1..42 (n = 6..129) | 1 .. 84 (largest phase 1) | [1.55, 0.52, 1.55] / [-26.99, -7.13, 15.42] | 42/42 |
-| counter_rob | N = 1..20 (n = 14..1363) | 12 .. 2733 (largest phase 401) | [1.04, 1.04, 1.04] / [5.14, 2.79, 4.82] | 20/20 |
-| switchbestexp | N = 1..16 (n = 35..410); N = 17 timeout | 27 .. 1955 (largest phase 102) | [1.97, 1.95, 1.96] / [6.57, -6.73, 2.7] | 16/16 |
-| switchallexp | N = 1..26 (n = 21..371) | 14 .. 2236 (largest phase 57) | [1.94, 1.94, 1.94] / [4.58, 4.51, 5.29] | 26/26 |
-(interim table 15:30Z; tc+, recursiveladder, tc, counter_core, counter_dp, counter_ortl, counter_qpt, counter_symsi running; switchallexp still running)
+| counter_core | N = 1..23 (n = 9..141); stop at N = 24: BUDGET900_REACHED | 9 .. 185 (largest phase 45) | [1.02, 1.02, 1.02] / [10.73, -6.82, 1.35] | 23/23 | polynomial-looking; agrees, strategies verified |
+| counter_dp | N = 1..43 (n = 8..176); stop at N = 44: BUDGET900_REACHED | 2 .. 67 (largest phase 41) | [-32.48, 35.34, -34.18] / [-28.76, 29.46, -30.15] | 43/43 | polynomial-looking; agrees, strategies verified |
+| counter_m | N = 1..42 (n = 6..129) | 1 .. 84 (largest phase 1) | [1.55, 0.52, 1.55] / [-26.99, -7.13, 15.42] | 42/42 | polynomial-looking; agrees, strategies verified |
+| counter_ortl | N = 1..30 (n = 6..151); stop at N = 31: BUDGET900_REACHED | 4 .. 149 (largest phase 1) | [1.01, 1.01, 1.01] / [9.8, -1.41, 7.28] | 30/30 | polynomial-looking; agrees, strategies verified |
+| counter_qpt | N = 1..60 (n = 2..120) | 0 .. 1 (largest phase 1) | [0.0, 0.0, 0.0] / [0.0, 0.0, 0.0] | 60/60 | polynomial-looking; agrees, strategies verified |
+| counter_rob | N = 1..21 (n = 14..1494); stop at N = 22: TIMEOUT1200 | 12 .. 3006 (largest phase 442) | [1.04, 1.04, 1.04] / [2.79, 4.82, 9.41] | 21/21 | polynomial-looking; agrees, strategies verified |
+| counter_rr | N = 1..42 (n = 4..168) | 0 .. 101 (largest phase 1) | [0.41, 1.65, 0.41] / [-15.62, 8.96, 11.94] | 42/42 | polynomial-looking; agrees, strategies verified |
+| counter_symsi | N = 1..21 (n = 12..212); stop at N = 22: BUDGET900_REACHED | 10 .. 1852 (largest phase 4) | [1.84, 1.75, 1.88] / [3.81, 3.64, 8.09] | 21/21 | polynomial-looking; agrees, strategies verified |
+| recursiveladder | N = 1..47 (n = 5..235) | 2 .. 294 (largest phase 45) | [16.72, -15.02, 17.45] / [30.84, 0.0, -8.48] | 47/47 | polynomial-looking; agrees, strategies verified |
+| switchallexp | N = 1..27 (n = 21..385); stop at N = 28: STOPPED by hand at about 10 s | 14 .. 2403 (largest phase 59) | [1.94, 1.94, 1.94] / [4.51, 5.29, 7.2] | 27/27 | polynomial-looking; agrees, strategies verified |
+| switchbestexp | N = 1..16 (n = 35..410); stop at N = 17: TIMEOUT1200 | 27 .. 1955 (largest phase 102) | [1.97, 1.95, 1.96] / [6.57, -6.73, 2.7] | 16/16 | polynomial-looking; agrees, strategies verified |
+| tc | N = 1..18 (n = 8..1062); stop at N = 19: BUDGET900_REACHED | 2 .. 9345 (largest phase 17) | [1.73, 1.66, 1.4] / [4.26, 4.61, 5.21] | 18/18 | polynomial-looking; agrees, strategies verified |
+| tc+ | N = 1..11 (n = 8..1518); stop at N = 12: TIMEOUT1200 | 1 .. 6199 (largest phase 21) | [1.32, 1.39, 1.37] / [3.97, 4.22, 3.79] | 11/11 | polynomial-looking; agrees, strategies verified |
+Stops: TIMEOUT1200 = one N1 run over 1200 s wall; BUDGET900 = the family's 900 s budget (box time); STOPPED = switchallexp
+stopped by hand at N = 28 (box time). Plots: docs/new/plots/step2_<family>.png (13).
