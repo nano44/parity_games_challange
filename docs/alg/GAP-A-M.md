@@ -4224,7 +4224,9 @@ DATA that stands:
 VERDICTS: (FIX-d) NO ROUTE (§26d). (b2) dead. (b1) survives as a reduction to (CTX⁺) on 𝒞^1P. (CTX⁺) on 𝒞^1P: no route; the
 obstruction is Dom(prevV) tail resets (§27d). (c): no route; (LONG-PHASE) at G′ is case (i) above.
 L32: NOT met. The class result is a reduction, not a bound.
-NEXT (successor): (1) the potential for (ii) on 𝒞^1P. Charge each reset at position j to the emptying-round increase at R_j
+NEXT (successor): (1) the potential for (ii) on 𝒞^1P. §28f: enabling tangles at a rising context are born in the tail below
+it (36 of 36 in the class), so the potential must count tail tangles that fire high, e.g. a per-context bound on DISTINCT
+firing q-tangles in 𝒞^1P (a q-tangle there is its vertex set). Charge each reset at position j to the emptying-round increase at R_j
 (≤ |R_j| + 1 per context) and look for what a FRESH context below j must consume; or adopt L-RED's construction if it compounds.
 (2) A proof or an instance for (NO-PRE-a) directly ((TIE-BELOW) is false, so a proof must use that y stays pruned).
 (3) DONE in box 11: OUTCOME-MONO-1P (§28e). (4) Fallback TC-6 P2-P6.
@@ -4280,3 +4282,24 @@ order "e larger, or e equal and prevV ⊆", then possibly → stable, and then V
 outcome changes per context. The §28d data show the same in general games (0 reversals on the library), where this proof does
 not apply. The reset mechanism (§27d) lives inside this monotone order: a later emptying round can SHRINK prevV, and with it
 the Dom(prevV) piece. So OUTCOME-MONO bounds the outcome changes per context, but not the fresh contexts the re-cuts create.
+28f. QUEUE (1), the reset potential on 𝒞^1P: does compounding condition (b) of §29 occur? (DATA; tool
+experiments/alg/fixd_enable.py; 13:03Z by date -u; Lead 12:09Z: "can a tangle learned low fire high after a re-cut?")
+For consecutive searches s, s+1, let j be the depth-0 position of the first differing depth-0 call. The ENABLING tangles are those
+born in search s that fire in a region step of the position-j call of search s+1. For each one, record its birth position.
+| set | transitions | none enabling at R_j | births at position < j | = j | > j (the tail), depth 0 | > j, deeper |
+| 𝒞^1P games (onep_*, ctx1p climbs, lagfam conversions), stable | 116 | 107 | 0 | 0 | 36 | 0 |
+| library (206 files), stable | 1170 | 719 | 0 | 2 | 667 | 9 |
+| library, Oink order | 1189 | 753 | 0 | 2 | 637 | 10 |
+Answer: YES. Tangles learned low (in the tail below j) firing high (at R_j) is the NORMAL way a context at position j is changed,
+in the class and in general. 36 of 36 enabling births in the class are in the tail. So (b) cannot be refuted on 𝒞^1P by locality,
+and a reset potential cannot charge a rise at R_j to R_j's own learning.
+Most transitions (107 / 116 in the class) have no new tangle firing in R_j's REGION steps. Their change at R_j comes through the
+threshold loop or the candidate test (attractTangle with Gx = R, not counted here) or is absorbed earlier; CHANGE-NEW still
+requires a new firing tangle, so for them it fires in the threshold loop.
+Consequence for the successor. A polynomial bound on 𝒞^1P must count the TAIL tangles that can fire high. Each is a NEW tangle
+(never re-learned), so the count is the number of tangles learned in a phase, i.e. the search count itself, unless the class gives
+a structural bound on how many distinct tangles can fire at one context R_j. On 𝒞^1P a q-tangle is determined by its vertex set
+(q has no choices), and a tangle firing at R_j's region step lies in R_j and has all its escapes caught there. Bounding these
+per context, as (FIRED⁺-R) on 𝒞^1P, is one candidate for the remaining statement. On 𝒞^1P, OUTCOME-MONO-1P bounds the outcome changes
+per context, and CHANGE-NEW (R14) ties each change to a new firing tangle, so the open count is that of contexts and of their
+new firing tangles: R14's form GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R), with the steal term gone. No proof in this box.
