@@ -2,15 +2,14 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-SUCCESSOR 1, box 3 (Lead GO received 17:49Z by date -u; box to ~23:00Z). Context ~480k at 20:25Z (handover at ~580k).
-Done in box 3 (all pushed): N1 KILLED on data (deep traps, N1-KILL.md, 8ac5e5c); robust to start γ, Odd rule, compression with
-padding; N2 KILLED (padded switchallexp, f301bfb); N3 DEAD AS STATED (one degenerate breakpoint carries the problem, n3grid);
-deep-trap lemma written (optional per Lead; gaps 1-2 closed); N4 proposed only (Lead: do not implement); N5 SSI-GLOBAL
-implemented (n5.py), engine validated against DLM Prop. 7, defeats both DLM families, 12,000 random games agree, 11/13 hard
-families linear (n5/*.csv, docs/new/N5-ssi-global.md). Running at 20:25Z: run_n5.sh chain B (counter_rob, counter_rr), PID 7200.
-NEXT: when counter_rob/counter_rr finish: if linear, N5 = step-2 survivor on data -> report to Lead AT ONCE with the 13-family
-table (summarize_n5.py); then adversarial work against N5 (its weakness: it steers by the opponent's current strategy; try
-DLM-style 'distraction' gadgets that make the best response to a bad τ restricted to improving switches a bad move).
+SUCCESSOR 1, box 3 ends ~23:00Z; context ~520k at 20:45Z (handover point ~580k).
+Box 3 results (all pushed, see docs/new/README.md): N1 KILLED (deep traps), N2 KILLED (padded switchallexp), N3 DEAD AS STATED
+(degenerate breakpoint), N4 proposed only, N5 SSI-GLOBAL = STEP-2 SURVIVOR on data (reported 20:38Z; N5-ssi-global.md
+"STEP-2 REPORT"); N5 killer attempts 1-2 (adversarial climbs) not killed.
+NEXT (successor): killer design against N5 from the recorded lead: a non-sink "stall" gadget where, against the opponent's current
+strategy, every improving switch is worse than staying (N5's one-player optimum keeps σ) for BOTH players, so each step falls back to
+classical switch-all; then put Friedmann's switchallexp counter behind it. Measure fallbacks per iteration. Also open VJ00 for the
+exact cost of Engine.evaluate (N5 cost statement cites it unopened).
 
 ## Queue
 0. DONE box 2 14:20Z (rule class: not killed, S5S6-renum.md). (Lead 12:14Z) S6 on switchbestexp: extract a numbering RULE from the climbed numberings

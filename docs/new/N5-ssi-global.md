@@ -140,3 +140,9 @@ Reading: <= 1.6 n iterations; no doubling. LEAD for the next attempt: the fallba
 n = 24, vs <= 4% on the bench). A family that forces N5's selection to stall at every step would make N5 = classical switch-all SI
 (Friedmann-hard). Concrete design: a non-sink gadget where, against Odd's current τ, every improving switch of Even is worse than
 staying (the one-player optimum keeps σ) while symmetric for Odd; then embed Friedmann's switchallexp counter behind it.
+
+## Killer attempt 2 (20:43-20:44Z by date -u): maximise FALLBACKS (n5_adv.py ... fb), NOT killed
+Fitness = fallback count (ties by iterations), 4,000 steps, n = 16, 24, 32 (seeds 116, 124, 132): best fallbacks/iterations 2/12,
+13/31 (n = 24, instances/n5adv/best_fb_n24_seed124.pg sha1 f27b128efa82..), 9/35 (n = 32, best_fb_n32_seed132.pg sha1 0173afdccde9..);
+every improved best checked (Zielonka + verify.py, all OK). The climb cannot make fallbacks dominate (<= 42%); forcing a stall at
+every step needs a designed gadget (the lead above), not random search.
