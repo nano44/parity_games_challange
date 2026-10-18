@@ -3,34 +3,23 @@ Successor 9's handover text is in git history: `git show a97f451:notes/L-ALG.md`
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Push only with `scripts/push.sh > $S/push.log 2>&1; echo exit $?`.
 Truth for GAP-A: docs/alg/GAP-A-M.md §23-§30 (§30 = box 12, successor 10; §29 = box-11 ledger). Dead ends: docs/alg/DEAD.md.
 
-## Resume point (2026-10-18 17:08Z by date -u; box 12 END; GO 13:47Z by the Lead's clock)
-Box 12 ledger: docs/alg/GAP-A-M.md §30 (QUEUE (1) verdict), §31 ((NO-PRE-a)), §32 (the (CTX⁺)-potential search, Lead pick
-14:37Z; §32a-32h). L32: NOT met in box 12.
-- QUEUE (1): NO ROUTE (§30). The per-context side on 𝒞^1P is already closed by OUTCOME-MONO-1P; nothing indexed by contexts
-  bounds the contexts. (TOP-UNIQUE@R) FALSE (onep_topuniq_n20); (TOP-CHAIN@R) DATA.
-- QUEUE (2) (NO-PRE-a): DATA, no proof, no instance (§31; near miss nopre_near_n20 is not an occurrence).
-- §32 SURVIVORS (DATA, named to the Lead 15:33Z / 15:50Z): pigeonhole keys, "every chain-changing transition of a q-phase gives
-  some vertex v a key it never held in the phase":
-    (VR-NEW_V) key (v, ρ, |V_j(v)|); (VR-NEW_s) key (v, ρ, |R_j(v)|); (VR-NEW_all) key (v, ρ, j, |R_j|, |V_j|)
-  (ρ = rank of v's depth-0 piece: n+2 stable, emptying round e for −1, 0 for a call that returns 0). Consequence if true: searches
-  per q-phase ≤ #keys + 1, so GAP-A on 𝒞^1P (with CTRL), with no use of (CTX⁺). On the class every transition changes the depth-0
-  chain (0 of 1,094 identical). Local form (FD-WITNESS_all): the new key sits in the changed piece (j* or j* − 1), 0 exceptions.
-  (VR-NEW_all) also holds on the two-player library at its chain-changing transitions (0 of 1,393 / 1,548), but there 88-104
-  transitions keep the depth-0 chain identical and need a separate count.
-  Margins are thin (one vertex carries 58 / 34 / 7 of 1,094 transitions). NO-RETURN (per vertex) is FALSE, so the novelty is global.
-- KILLED in §32 (instances pinned, all 𝒞^1P, pinned Oink verified): (VR-NEW_j) onep_vrj_n40; (v, ρ) onep_vr_n12; injective
-  first-difference keys κ-djs / κ-dsm onep_fdkey_n20 (a one-level reset at n = 20); all depth-0 MONO potentials and depth-0 chain
-  keys (§32b); NO-RETURN (§32f).
-IN FLIGHT at 17:08Z (scratchpad, will die with the container; nothing depends on them): margin climb vs (VR-NEW_V) from
-onep_vrj_n40 (vr8_a.out) and a two-player climb vs K-v-all from ctx13_n40 (vr7_b.out, no progress in 2 h).
+## Resume point (2026-10-18 19:42Z by date -u; box 13, GO 17:17Z by the Lead's clock, to ~21:30Z; same session)
+Ledger: GAP-A-M §33 (𝒞^1P reduction), §34 (two-player, (TREE-PIECE)); box 12 = §30-§32 (see below). L32: NOT met.
+- PROVED (readings, unrefereed): Lemma W (§33a); Lemma SAME-CTX (§33b; mechanical check 26,155 class pairs, 0 failures);
+  Corollary: on 𝒞^1P, (VR-NEW_all) at a transition ⇐ (XCTX@p0). So GAP-A on 𝒞^1P ⇐ (XCTX@p0) ∧ (CHAIN-CHANGE), both DATA.
+  Referee packet: HOLD (Lead 19:03Z). Triggers: (a) a proof route for (XCTX@p0), or (b) (TREE-PIECE⁺) survives L-RED's box-13
+  attack AND a proof sketch exists.
+- (TREE-PIECE⁺) (§34b-c): key (v, depth, position in parent, ρ, |R|, |V|) over every call's PIECE; every transition whose call
+  sequence changes gives some vertex a never-held key. DATA: 0 violations, library both orders, L-RED's instances, tc+ N ≤ 5, climbs.
+  Literal (TREE-PIECE) FALSE on identical call trees (tp_ident_n20). Consistency with known results: §34d. L-RED's split: §34e (fails).
+- KILLED this box: literal CORE, (SIG-DISJ) (onep_vrj_n40), (TREE-PIECE) literal (tp_ident_n20), membership tree keys, L-RED split.
+IN FLIGHT: nothing (box 13 closed 20:03Z by date -u). Last climbs vs (TREE-PIECE⁺): tc+ N = 2 seed 8,000 steps clean;
+vrV_viol_n40 Oink seed stopped (no progress at n = 40).
 QUEUE for the successor:
-(1) If L-RED's counter lands: run b12_pot.py (keys) and b12_fdwit.py on it at once; the counter must make a vertex return to an
-    exact (ρ, j, |R_j|, |V_j|) state with no other vertex gaining a new one.
-(2) Proof attempt of (FD-WITNESS_all) on 𝒞^1P only with a new idea: it reduces to "a context at position p with signature σ, once
-    replaced, never returns at p with the same signature and an overlapping piece" (§32h), a no-counter statement.
-(3) (VR-NEW_all) on two-player games needs the identical-chain transitions bounded (first difference inside a depth-0 call's
-    regions, or deeper); measure what they are before claiming anything general.
-(4) TC-6 stays parked (Lead 14:37Z).
+(1) (XCTX@p0) on 𝒞^1P: compare two DIFFERENT equal-size contexts at the first changed position; no monotone link known.
+(2) A proof sketch for (TREE-PIECE⁺), recursive SAME-CTX: per call, X = parent piece \ R; in two-player games outcomes are not
+    monotone (SAME-CTX fails 6 times, fall3_n76), so the class argument does not transfer; identical-tree runs need (FALL)-type bounds.
+(3) Run b12_ident.py TREE=1 / tp_score on every new L-RED instance at once.
 
 ## DONE (box 12, successor 10)
 - Handover check 50e66d3 (5/5 per Lead), trunk merges 781790d and the box-start merge.
@@ -38,11 +27,15 @@ QUEUE for the successor:
 - §30 with tools b12_topchain.py (class set + TOP-CHAIN@R scan), b12_topclimb.py (climb, --check), b12_pertop.py (tangles
   learned per (phase, top)), b12_mono.py (re-cut-proof potentials, per_position); instance onep_topuniq_n20 (check.sh).
 - §31 with tool b12_nopre.py (scan / climb); instance nopre_near_n20 (near miss, pinned Oink 5 iterations verified).
+- Box 13: §33 (b12_core.py), §34 (b12_ident.py incl. climb, b12_split.py); instance tp_ident_n20. Pushes 4f2b321, 1fac015,
+  d2784b1, 4101eb2 and the box-end commit.
 - §32 with tools b12_pot.py (climb: KEY=..., MARGIN=1), b12_fdkey.py, b12_noret.py, b12_margin.py, b12_fdwit.py; instances
   onep_fdkey_n20, onep_vr_n12, onep_vrj_n40 (all 𝒞^1P, pinned Oink verified). Pushes: 50e66d3, c81bb8f, 6f6a246, 41abf76,
   e2132ae, 011e663, 1618e76, and the box-end commit.
 
 ## Things only I know (successor 10)
+- TRAP that bit me: four Lead messages (14:42Z-17:10Z) sat unread until 17:15Z because I never called ReadNotifications
+  between tool runs. Call it after every long wait or push, not only when a system notice says so.
 - `date -u` advances much more slowly than the work done (as successor 9 noted); timestamps are as printed, unadjusted.
 - `pkill -f <name>` / `pgrep -f` / `ps | grep <name>` from the Bash tool match the tool's OWN shell when <name> is anywhere in
   the command (exit 144, the rest of the command is lost). List PIDs with `ps -eo pid,args | awk '$2=="python3"'` in one call,

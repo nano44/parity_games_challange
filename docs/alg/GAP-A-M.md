@@ -4487,3 +4487,153 @@ receives a full signature (ρ, j, |R_j|, |V_j|) it never held in the phase". A p
 signature σ, once replaced, never returns at p with the same signature and an overlapping piece. That is again a no-counter
 statement; no argument for it is in hand. Margin climbs (score: fewest new-key vertices) reached margin 1 and no violation:
 (v, ρ, j, |R|, |V|) from onep_fdkey_n20, Oink order, 5,000 steps; (v, ρ, |V|) from onep_vrj_n40, stable (running at 17:05Z).
+32i. Proof sketch for (VR-NEW_j) on 𝒞^1P, and its failure point (Lead 15:43Z; written 17:22Z by date -u, AFTER the kill of 32e;
+the Lead's 14:42-17:10Z messages were read late, at 17:15Z, my error).
+Sketch. Take a transition s → s+1 of a q-phase and the first depth-0 position j* whose (R_j, rank_j, V_j) differs. Positions < j*
+are identical. (a) If R_{j*} is the same set, the call has the same input (R, X) and a larger tangle set, so by OUTCOME-MONO-1P
+(§28e, which uses NOSTEAL-1P) its outcome rises: e later, or −1 → stable, or the same e with prevV ⊆ larger, or stable with V*
+larger. (b) If R_{j*} differs, the piece at j* − 1 grew with an unchanged outcome (a larger Dom attractor). The vertices of the
+changed piece then carry (ρ′, j*) or (ρ, j* − 1). The sketch needs one of them to hold a pair it never held in the phase.
+FAILURE POINT (exact, with the instance). In case (a) with a later emptying round, prevV can SHRINK (§27d), so the Dom(prevV) piece
+shrinks and the chain below is re-cut. The vertices that leave or stay then land on (rank, position) pairs they already held
+before an earlier re-cut. onep_vrj_n40 (sha1 96ac8459cbef), phase (1, 1), transition into search 5, stable order:
+  position 4: |R| 24 = 24, rank 4 → 6, |V| 2 → 1, piece {1, 17} → {1};
+  position 5: |R| 22 → 23, rank 3 → 4, |V| 5 → 1, piece {38} = {38};
+  position 6: |R| 21 → 22, rank 42 (stable) = 42, |V| 15 → 16, piece gains 17.
+Vertices 1, 38 and 17 land on (6, 4), (4, 5) and (42, 6), each held earlier in the phase; every other vertex keeps its pair.
+So no vertex gets a new (ρ, j) pair. The danger the Lead named (the chain returns to earlier (context, rank) pairs) is exactly
+what happens, and position alone cannot see the re-cut.
+Where |V| is essential. In that transition the only novelty is the stable piece at position 6: a DIFFERENT context (size 21 → 22)
+whose V* has a size never seen at that position (16). The keys (v, ρ, |V|) and (v, ρ, j, |R|, |V|) are new for the piece's
+vertices only through that |V*|. A proof of (VR-NEW_V) would need "after a re-cut, some stable (or −1) piece below the first
+difference reaches a |V| its vertices never had", a growth statement across DIFFERENT contexts. OUTCOME-MONO-1P gives growth only
+at a fixed context. No argument for the cross-context growth is in hand: the sketch stops there.
+Class-free analog (Lead's ask). (v, ρ, j) in two-player games: FALSE. Library, stable, n ≤ 100: 59 violations in 33 games, all
+without relevant steals; first c6_replay3_n48 (§32e). L-RED's nest4_n80 (sha1 31c02e548d82): (v, ρ, j) holds (0 of 11), (v, ρ) fails 1.
+Which keys survive where (all counts re-run here at 17:20Z by date -u on L-RED's instances fetched from l-red 66c5c4a; both orders):
+| key | 𝒞^1P set + climbs | two-player library | L-RED vrs_viol_n100 / vrV_viol_n80 / vrV_viol_n40 / nest4_n80 |
+| (v, ρ) | FALSE (onep_vr_n12) | FALSE | FALSE on all four |
+| (v, ρ, j) | FALSE (onep_vrj_n40) | FALSE | 2 / 2 / 2 / 0 (stable) |
+| (v, ρ, |R|) = (VR-NEW_s) | holds | FALSE (26) | 2 / 2 / 0 / 0 |
+| (v, ρ, |V|) = (VR-NEW_V) | holds | FALSE (8) | 0 / 1 / 1 / 0 |
+| (v, ρ, j, |V|) | holds | FALSE (5) | 0 / 1 / 0 / 0 |
+| (v, ρ, j, |R|, |V|) = (VR-NEW_all) | holds | holds at chain-changing transitions | 0 / 0 / 0 / 0 |
+Plainly: (VR-NEW_V) and (VR-NEW_s) are CLASS-ONLY (two-player kills by L-RED: vrV_viol_n80 f77f0d34d13f, vrV_viol_n40
+8cf415ec9267, vrs_viol_n100 b4bbe7f0fdc0). Only (VR-NEW_all) survives two-player data, and there only at chain-changing transitions:
+88-104 library transitions keep the depth-0 chain identical and are not covered by any depth-0 key.
+
+33. Box 13 (L-ALG successor 10; Lead GO 17:17Z / 17:33Z; produced on Opus 5.5; unrefereed; written 18:20Z by date -u). Target: on
+𝒞^1P, (FD-WITNESS_all) ⇒ (VR-NEW_all), then the no-counter core. Tool: experiments/alg/b12_core.py (MODE = core | xcover | sigdisj
+| samectx). Notation as in §32: for a search s of a q-phase and a depth-0 position p, state_s(p) = (R_p, ρ_p, V_p, piece_p) and the
+signature σ_s(p) = (ρ_p, |R_p|, |V_p|); the full key of a vertex v is (v, ρ, j, |R_j|, |V_j|) for the position j whose piece holds v.
+At a transition s → s+1 whose depth-0 states differ, p0 is the first position whose state changes.
+33a. Lemma W (PROVED; trivial). If some vertex v of piece_{s+1}(p0) never held the key (σ_{s+1}(p0), p0) in searches ≤ s, then v
+receives a new full key at s → s+1. So (FD-WITNESS@p0) at a transition gives (VR-NEW_all) at it. For a SEARCH bound one more fact
+is needed, (CHAIN-CHANGE) "every transition of a q-phase changes the depth-0 states": DATA on 𝒞^1P (0 of 1,094 transitions keep
+them identical, §32b); false in two-player games (88-104 library transitions). Then searches per q-phase ≤ #full keys + 1 ≤ n⁵ + 1.
+33b. Lemma SAME-CTX (PROVED, reading; 𝒞_C^dist, every order datum). Let s′ < s be searches of one q-phase whose depth-0 contexts
+at one position p are the SAME set R. Then: (i) the depth-0 call at p is a function of (R, T): X = G′ \ R at depth 0 (every vertex
+removed from R at depth 0 is added to X: 877-891, 918-951, 961-975), and best_vertices reads only (R, q, T) (RESULTS R9 (a)); (ii) its
+outcome at s is ≥ its outcome at s′ in the order of OUTCOME-MONO-1P (§28e; visits of R in one phase, T grows); so if σ_{s′}(p) =
+σ_s(p), the outcomes are EQUAL (equal rank and |V| with V nested forces equal V); (iii) with equal outcome, piece_{s′}(p) ⊆
+piece_s(p).
+Proof of (iii). The branch is fixed by the outcome and (R, X): stable → sptl, then Dom(V*, R) (867-891); −1 → the threshold piece if
+some vertex of R attracts to X (898-951), else Dom(prevV, R) (958-975); the test and the threshold t read only (R, X) (attracts()
+has no tangle argument). Every piece is a tangle attractor from a seed fixed by (R, X, V) with fixed caps (Dom: cap pr(top) per top
+in V; threshold: cap t), and by DTL-proof Lemma 1.2b such an attractor is monotone in T. T only grows within a phase (no tangle
+of G′ is deleted before the phase ends), so T at s ⊇ T at s′, including the tangles sptl adds inside the call. □
+MECHANICAL CHECK (b12_core.py MODE=samectx): 𝒞^1P set (DIST=1), 26,155 same-set same-signature pairs, both orders: V differs 0,
+piece not ⊆ 0. Two-player library: 6 failures (first fall3_n76), as expected without NOSTEAL-1P.
+Corollary REDUCTION (PROVED, reading, on Lemma W and SAME-CTX). At a transition with p0, R_{p0}(s) = R_{p0}(s+1) =: R (a change of
+R_{p0} alone would change piece_{p0−1}, contradicting the choice of p0). Two cases:
+ (O) the outcome at p0 changes. A vertex of piece_{s+1}(p0) that held (σ_{s+1}(p0), p0) at s′ ≤ s at the SAME set R would give
+     outcome(s′) ≤ outcome(s) ≤ outcome(s+1) = outcome(s′) (by (ii)), so outcome(s) = outcome(s+1): contradiction.
+ (P) the outcome is unchanged, so the piece changed, and by (iii) it grew: N := piece_{s+1}(p0) \ piece_s(p0) ≠ ∅. A vertex of N
+     that held the key at s′ ≤ s at the same set R lies in piece_{s′}(p0) ⊆ piece_s(p0) by (iii): contradiction.
+Hence (VR-NEW_all) at the transition ⇐ (XCTX@p0): "NOT every vertex of N (case P; the whole new piece in case O) lay, in an earlier
+search of the phase, in the piece at p0 of a context set R′ ≠ R with |R′| = |R| and the same signature".
+33c. The residual, and the Lead's phrasing of the core (DATA).
+- (XCTX@p0) on 𝒞^1P: at 0 of 1,094 transitions (both orders) is ANY vertex of the new piece covered by an earlier same-signature
+  piece of a DIFFERENT context set at p0 (b12_core.py MODE=xcover). Every cover is same-context and inside piece_s (0 exceptions),
+  as SAME-CTX predicts; the largest covered fraction is 0.976 (spp_chain_up_n43 forced: the piece grows by one vertex).
+- Two-player library and L-RED's four instances (n ≤ 100, stable): cross-context cover at p0 in 3 of 1,447 transitions, never full.
+- (CORE) as phrased ("a context at p with signature σ, once replaced, never returns at p with σ and an overlapping piece"): FALSE in
+  its literal form because a same-context piece growth keeps σ and overlaps (95 pairs on the onep_* instances, first
+  onep_chainfail_n20); after SAME-CTX the true content is the cross-context part only.
+- The natural global strengthening (SIG-DISJ) "two different context sets with one signature at one position have disjoint
+  pieces": FALSE on 𝒞^1P, onep_vrj_n40 (sha1 96ac8459cbef), phase (1, 1), position 6, searches 0 and 3, two different stable contexts
+  of size 22 with |V*| = 16 and overlapping pieces (12 such pairs in the whole class set, 1 overlapping); two-player 194 of 242.
+  So any proof must use that the cover happens at the FIRST changed position p0, not at an arbitrary position.
+33d. Answer to the Lead's 17:33Z (1), and a correction to §32i.
+- For (VR-NEW_all) the novelty sits at p0 itself. In onep_vrj_n40 (transition into search 5) the new full keys are (1, 6, 4, 24, 1)
+  at p0 = 4 (same context, outcome rose: case O) and (38, 4, 5, 23, 1), (17, 42, 6, 22, 16) below. §32i's "the only novelty is
+  |V*| = 16 at position 6" is right for the coarse key (v, ρ, |V|) only (the one new key there is (17, 42, 16)). So cross-context
+  V* growth is the core of (VR-NEW_V), not of (VR-NEW_all). For (VR-NEW_all) on 𝒞^1P the core is (XCTX@p0).
+- STATUS on 𝒞^1P: GAP-A ⇐ (XCTX@p0) ∧ (CHAIN-CHANGE) (via Lemma W, SAME-CTX, Lemma CTRL), both DATA with 0 violations. The proved
+  part removes every same-context return, which is what a per-context argument can reach. The open step is a comparison of two
+  DIFFERENT context sets of equal size at the same depth-0 position. No monotone link between them is known (RANK-MONO false,
+  §27d), no instance of a cross-context cover at p0 is known in the class, and the general form (SIG-DISJ) is false. L32: this is a
+  reduction to two named statements, not one, and with no proof route for the cross-context one.
+TARGET.md diff: objects as in TARGET.md §1; the class adds owner / out-degree / distinct q-parity priority hypotheses (§27b); the
+statements count A_DTL's searches (gauntlet step 4 objects); no change of definitions; no M4 claim.
+34. Box 13, item (2): the two-player transitions with identical depth-0 states, and (TREE-PIECE) (DATA; tool
+experiments/alg/b12_ident.py; 18:55Z by date -u).
+34a. What they are. Two-player library plus L-RED's four instances, n ≤ 100, stable: 1,538 transitions, 91 with identical depth-0
+states (R_j, rank_j, V_j). For the 88 library ones the first differing best_vertices call over ALL depths is at depth 1 (context
+differs 18, outcome differs 12), depth 2 (context 51, outcome 4) or depth 3 (context 3); never "same call sequence". So they are the
+depth-0 phenomenon one level down: a re-cut inside a threshold piece's recursion.
+34b. (TREE-PIECE), the recursive form of (VR-NEW_all). For every best_vertices call c of a search (any depth d), its piece is R_c
+minus the context of the next call at depth d before the recursion returns to a shallower depth (all of R_c if none), and its
+position is its index among the depth-d calls of the same parent call. Key of a vertex v in that piece: (v, d, position, rank_c,
+|R_c|, |V_c|). Statement: every transition of a phase gives some vertex a key it never held in the phase.
+Consequence if true: searches per phase ≤ #keys + 1 ≤ n·n·n·(n + 3)·n·n + 1 = O(n⁶), for EVERY game (no class hypothesis): that
+is GAP-A (gauntlet step 4 objects; TARGET.md section 3 cost model unaffected, all quantities are indices).
+DATA: 0 transitions without a new key: 1,538 (stable) and 1,551 (Oink order) two-player transitions, every identical-depth-0
+transition included; L-RED's vrs_viol_n100, vrV_viol_n80, vrV_viol_n40 and nest4_n80 included. At depth 0 the keys equal b12_pot's
+full keys exactly (checked on 66 searches), so on 𝒞^1P (TREE-PIECE) follows from (VR-NEW_all) (the depth-0 chain always changes
+there). The membership variant (v, d, rank, |R|, |V|) over all contexts containing v FAILS (45 / 46 transitions, first
+a_best_s31): the piece and the position are essential.
+Honest reading: the same caveat as §32c. Phases in the data are short (≤ 42 transitions), the statement is a no-repetition statement
+over a poly-size state space, and it has no proof; on 𝒞^1P its depth-0 part reduces (§33b) to the cross-context (XCTX@p0).
+34c. (TREE-PIECE) literal: FALSE (self-kill, 19:13Z by date -u; two-player climb b12_ident.py climb, seed 113, from a margin-1 game).
+Pinned: experiments/alg/instances/tp_ident_n20.pg (sha1 dfeb04607e88; two-player; pinned Oink 4 iterations, 8 tangles, 1 dominion,
+solution verified; model winners equal to Zielonka; both orders). In Odd's phase the two searches have IDENTICAL call trees (one
+stable root call, |R| = 20, the same V*); the difference is only inside sptl at that stable context (the second search extracts the
+dominion with the tangle the first one learned). No key can see that.
+Amended (TREE-PIECE⁺): the statement at every transition whose call sequence (depth, R, rank, V) changes. Identical-tree transitions
+come in runs at one fixed call tree, and every search of a run differs only inside sptl at a stable context of that tree. Reading
+(to be checked): on 𝒞^1P such a run is bounded by the signed per-context budget (R9 (c) / R7 (d): (D_R + 1)(H + 1) with D_R = 0 there,
+NOSTEAL-1P) summed over the stable contexts of the tree, so (TREE-PIECE⁺) ∧ that budget ⇒ searches per phase ≤ (#keys + 1)·poly.
+In two-player games D_R (the falls) is not bounded, so identical-tree runs remain an open count there ((FALL)-type).
+DATA: the library and L-RED's instances contain no identical-tree transition (34a: every identical-depth-0 transition differs
+deeper); the climb found one at the end of a phase. Climbs against (TREE-PIECE⁺) (PLUS=1): from tp_ident_n20, stable, 8,000 two-player steps: 0 violations (margin down to 1, best 8
+transitions at n = 20); from tc+ N = 2 (n = 24), stable, 8,000 steps: 0 violations (margin 1, best 7 transitions); from
+vrV_viol_n40, Oink order: no improvement past step 1 in ~45 min at n = 40, stopped at 20:02Z by date -u (no violation seen).
+34d. Why (TREE-PIECE⁺) on general games would not contradict anything known (Lead 19:03Z; reading, with the sources the fleet
+opened). If (TREE-PIECE⁺) held, with a polynomial bound on identical-tree runs, A_DTL would make polynomially many searches per
+phase, and phases are ≤ 2(n + 1) (each ends with a dominion or a false search). With polynomial work per search (STEP5 / GAP-C
+side), that is M4 for A_DTL. So the statement is exactly as strong as the open question for this solver. It must therefore be
+consistent with:
+- Published lower bounds and barriers: none covers DTL (L-LIT T16, gauntlet step 3 SIGNED with four caveats: DTL is outside the
+  universal-tree and separator models B1-B3, outside the Two Counters mechanism B6, and B4 (attractor decompositions with tangles)
+  has no theorem). The Two Counters family tc gives A_DTL a CONSTANT 6 searches (§25a); tc+ grows (pyref, stable: 3, 5, 8, 10, 12
+  searches at N = 1..5, n = 8..180) and satisfies (TREE-PIECE⁺) with margins 9-75 (checked 19:35Z by date -u).
+- Fleet families: lagfam / lagdist (re-steal depth D on n = 7D + 22, linear phases), chainfam (n − 1), leanT (N), nest4_n80: all have
+  polynomial (linear or near-linear) phases, and all satisfy (TREE-PIECE⁺) (§32g, §34b). No family with super-polynomial searches is
+  known to the fleet (L32 (1) never triggered).
+- The one tension: the author's README row "counter_dtl | Counterexample to the DTL solver" (Oink 39254fe, still on master),
+  never committed anywhere (L-LIT T17: 23 places checked). L-LIT's provenance reading is that it may be the distraction-free
+  counterexample that became counter_dftl, which L-RED ran on dtl: polynomial (R8 §6). If a genuine super-polynomial DTL family
+  exists, (TREE-PIECE⁺) is false on it, and a long phase on that family would show which key repeats. So (TREE-PIECE⁺) contradicts
+  an unpublished claim, not a known result. It does not imply a polynomial bound for any solver with a proved exponential lower bound
+  (tl, zlk, pp, dp etc. are different algorithms; DTL's tc behaviour is constant).
+34e. L-RED's split (Lead 19:20Z), MEASURED (tool b12_split.py; depth-0 chain; stable). Rank class of v: stable / −1 / outside, of
+its depth-0 piece. A-type transition: some vertex enters a class it never held in the phase (≤ 3n per phase, trivially).
+| set | chain-changing | A-type | B-type | B without a new (v, j, class, |R_j|) | B without a new full key | margin-1 | margin-1 not A-type |
+| 𝒞^1P set (DIST=1) | 1,094 | 1,084 | 10 | 0 | 0 | 7 | 1 (spp_n20 forced into 𝒞_1, trial 2) |
+| two-player library + L-RED's 4 | 1,448 | 1,115 | 333 | 66 (first c6_replay3_n48) | 0 | 8 | 1 |
+Answers: (a) NO: "first-time class change" does not carry every margin-1 transition (one exception in each set). It is a monotone
+count ≤ 3n, but in the data almost every transition is A-type only because no phase is longer than 3n, so the split cannot be
+judged on these phases. (b) NO in two-player games: 66 B-type transitions get no new (v, j, class, |R_j|) key, yet every one gets a
+new full key: within a class, the exact rank (emptying round) and |V| are needed. So the split does not give two separate
+arguments; the full key stays the object.
