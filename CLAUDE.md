@@ -34,6 +34,7 @@ Playbook: docs/sources/fleet-playbook.md. Literature map (secondary source): doc
 - L-ALG: docs/alg/, experiments/alg/ (algorithm design loop; reads experiments/attr/ and experiments/harness/, does not edit them).
 - L-SI: docs/si/, experiments/si/ (strategy-improvement design loop; reads other experiments/ dirs, does not edit them).
 - L-RED: docs/red/, experiments/red/ (independent adversary against a named candidate; reads other lanes' files, does not edit them).
+- L-NEW: docs/new/, experiments/new/ ((c) design lane under D14: untested approaches, its own included; reads other lanes' files, does not edit them).
 - CHECKER: docs/checker/ (landing gate: exact-commit re-runs and statement diffs).
 - HUMAN-DESK: docs/HUMAN-REVIEW.md (packet for a human expert; owner decides any contact).
 - OWNER-DESK: docs/owner-desk/ (owner Q&A; open owner questions; relays owner words to the Lead verbatim).
