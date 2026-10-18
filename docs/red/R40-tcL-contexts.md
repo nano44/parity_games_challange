@@ -105,6 +105,9 @@ probe: 60,000 perturbed hard-family / tc games, all verified (§10).
 - The learned tangle is visible to the root: both transitions of that phase first differ in the root threshold loop (bv-thr).
 - (DEEP-STAB), DATA: the FIRST best_vertices call of a −1 subcall never returned 1 in 700,000 random games (n 6-18, both orders;
   34,661 nonempty subcalls; lemmacheck.py seeds 21 and 22); later calls in a subcall returned 1 27 times.
+- Structured games (11:52-12:33Z by date -u; experiments/red/ctxp/lemmatc.py): 10,000 random tcpert rule sets (cut / loop
+  included) on tc(4) (1,500 stable + 1,500 Oink order), tc(5) (4,000 stable), tc(6) (3,000 Oink order): 286 games learn tangles
+  at depth >= 1 (1,113 births), 0 (DEEP-STAB) violations. tcR4 N 5..8, both orders: 0 violations (§8).
 - READING, two facts behind it:
   - (ODD-CLOSED), from search_rec's −1 branch (C5 §2; dtl_pyref search_rec): every opponent vertex w of the subgame Z_s has
     succ(w) ∩ R_P ⊆ Z_s, where R_P is the parent's arena. Reason: w was p-attracted (all successors in Z or outside R), and the
