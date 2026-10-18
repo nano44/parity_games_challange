@@ -560,3 +560,4 @@
 - 01:29Z (date -u) merged checker 5019c88 (C13 post-landing PASS; recommended note applied: GAPS packet-11 sentence marked 'refereed by both, not yet gated by CHECKER').
 - 01:33Z (date -u) merged referee 563d46c (notes/REFEREE.md LANE-RESTART step 1 ready; parked ~520k). Successor at the next packet.
 - 01:36Z (date -u) merged checker f89502d (C14 FAIL E-1 only: '(SPP) at G′' unrefereed and self-inconsistent). Applied E-1 to (c) and G-R14-4 (both referees' wording: necessary, not sufficient, = S − 1 on chain families; L-ALG note pointer), N-1 to (d); re-diff requested. N-2 (§23v stale count) routed to L-ALG.
+- 01:44Z (date -u) merged checker 1af4995 (C14 re-diff PASS). LANDED RESULTS R14 before Dead ends (body identical to R14-draft lines 4-end; stamp checker f89502d + re-diff 1af4995); draft marked LANDED; GAPS GAP-A sentence now cites RESULTS R14 (gated).

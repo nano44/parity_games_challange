@@ -1,4 +1,4 @@
-# Draft RESULTS R14 (Lead, 2026-10-18 01:16Z by date -u) (rev. 01:24Z: REFEREE §C abc5185; rev. 01:28Z: L-ALG imports §23v; rev. 01:38Z: CHECKER C14 E-1, N-1) — NOT LANDED; awaiting CHECKER re-diff
+# Draft RESULTS R14 (Lead, 2026-10-18 01:16Z by date -u) (rev. 01:24Z: REFEREE §C abc5185; rev. 01:28Z: L-ALG imports §23v; rev. 01:38Z: CHECKER C14 E-1, N-1) — LANDED as RESULTS R14 (CHECKER C14 PASS, re-diff 1af4995 at ed81675)
 
 ### R14 [refereed-only] Packet 11 on A_DTL: Lemma CHANGE-NEW, F_R ≤ 3·#fired⁺(R) unconditionally, and GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R) (2026-10-18) — partial step-4 reformulation (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
