@@ -2,7 +2,8 @@
 // Engine: vjfast_copy.cpp = verbatim copy of experiments/si/vjfast.cpp (L-SI; its main is renamed and unused).
 // A renumbering pi (old vertex v -> new index pi[v]) changes (a) priority-rank ties, (b) best-reward start ties,
 // (c) the zadeh tie-break / cunningham cyclic order. Hill climb (swaps; sideways moves allowed) maximises iterations.
-// Usage: renum RULE game.pg [--restarts R] [--steps S] [--seed X] [--cap C] [--out best.pg] [--rev]
+// Usage: renum RULE game.pg [--restarts R] [--steps S] [--seed X] [--cap C] [--out best.pg] [--init perm]
+//   --out also writes best.pg.perm (old new per line); --init starts restart 0 from a permutation file (missing vertices appended)
 //   prints the identity count, the best count, and writes the best renumbered game to --out.
 #define main vjfast_main
 #include "vjfast_copy.cpp"
@@ -34,17 +35,21 @@ static void writepg(const Game& g, const string& path) {
 }
 int main(int argc, char** argv) {
     if (argc < 3) { fprintf(stderr, "usage: renum RULE game.pg [--restarts R] [--steps S] [--seed X] [--cap C] [--out f]\n"); return 1; }
-    string rule = argv[1], path = argv[2], out; long restarts = 4, steps = 300, seed = 1, cap = 2000000; bool rev = false;
+    string rule = argv[1], path = argv[2], out, initp; long restarts = 4, steps = 300, seed = 1, cap = 2000000; bool rev = false;
     for (int i = 3; i < argc; i++) { string a = argv[i];
         if (a == "--restarts") restarts = atol(argv[++i]); else if (a == "--steps") steps = atol(argv[++i]);
         else if (a == "--seed") seed = atol(argv[++i]); else if (a == "--cap") cap = atol(argv[++i]);
-        else if (a == "--out") out = argv[++i]; else if (a == "--rev") rev = true; }
+        else if (a == "--out") out = argv[++i]; else if (a == "--rev") rev = true; else if (a == "--init") initp = argv[++i]; }
     Game g = readpg(path); int n = g.n; mt19937_64 rng(seed);
     vector<int> id(n); iota(id.begin(), id.end(), 0);
     long base = runrule(g, rule, cap); vector<int> rv(n); for (int v = 0; v < n; v++) rv[v] = n - 1 - v;
     long revc = runrule(relabel(g, rv), rule, cap);
     printf("identity %ld reverse %ld\n", base, revc); fflush(stdout);
     vector<int> best = id; long bestc = base; if (revc > bestc) { best = rv; bestc = revc; }
+    if (!initp.empty()) { ifstream in(initp); vector<int> pi(n, -1); int a, b; while (in >> a >> b) if (a < n) pi[a] = b;
+        vector<char> used(n, 0); for (int v = 0; v < n; v++) if (pi[v] >= 0 && pi[v] < n && !used[pi[v]]) used[pi[v]] = 1; else pi[v] = -1;
+        int nx = 0; for (int v = 0; v < n; v++) if (pi[v] < 0) { while (used[nx]) nx++; pi[v] = nx; used[nx] = 1; }
+        long c = runrule(relabel(g, pi), rule, cap); printf("init %ld\n", c); if (c > bestc) { best = pi; bestc = c; } }
     for (long r = 0; r < restarts; r++) {
         vector<int> cur; long curc;
         if (r == 0) { cur = best; curc = bestc; } else { cur = id; shuffle(cur.begin(), cur.end(), rng); curc = runrule(relabel(g, cur), rule, cap); }
@@ -57,6 +62,6 @@ int main(int argc, char** argv) {
         }
     }
     printf("RESULT rule=%s game=%s n=%d identity=%ld best=%ld\n", rule.c_str(), path.c_str(), n, base, bestc);
-    if (!out.empty()) writepg(relabel(g, best), out);
+    if (!out.empty()) { writepg(relabel(g, best), out); FILE* f = fopen((out + ".perm").c_str(), "w"); for (int v = 0; v < n; v++) fprintf(f, "%d %d\n", v, best[v]); fclose(f); }
     return 0;
 }

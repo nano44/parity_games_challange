@@ -19,6 +19,8 @@ gated_*, switchallexp, switchbestexp, recursiveladder; Oink hard bench not yet i
 | dlmm_bland | 1, 2, 5, 8, 13 | same | 1, 2, 5, 6, 9 | 1, 2, 5, 8, 11 |
 | gated_bland | 3, 5, 7, 9, 11 | same | 3, 5, 9, 11, 15 | 3, 5, 9, 13, 17 |
 | fhz_padded (n = 64..322) | 16, 36, 64, 100, 144 | 22, 45, 74, 112, 161 | 16, 32, 48, 64, 80 | 23, 40, 67, 83, 113 |
+| gated_zadehexp (n = 82..294) | 24, 47, 70, 93, 116 | 48, 105, 202, 323, >=476 (timeout) | 34, 73, 98, 131, 156 | 52, 109, 168, 249, >=354 (timeout) |
+| gated_switchallexp (N = 2..4, n = 117..219) | 77, 172, 305 | 123, 235, 381 | 58, 94, (stopped) | 117, 233, (stopped) |
 Growth of the best-found counts is at most quadratic in N on every family (e.g. zadehexp/zadeh second differences 0..+70
 over N; cunninghamexp/zadeh 23, 33, 41, 51 first differences). randomfacetsubexp grows with n (n jumps 90 -> 207 at N = 5);
 per vertex it is not faster than the identity.
