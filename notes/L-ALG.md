@@ -135,6 +135,11 @@ Successor 8 (box 9 ended in this session, 00:46Z by date -u):
   - §23u (SKETCH): D_R ≤ N_ent + D_R^thr, so (EXIT_c) bounds the differing visits of every context, the root included. The
     two routes meet; gap G23u is the threshold-loop first differences. First successor task: measure D_R^thr.
   - All climbs have ended. None found depth ≥ 2, k ≥ 3, exits ≥ 3, or an incomplete run.
+- SUCCESSOR-8 QUEUE (Lead 00:57Z), in order:
+  - (0) import the packet-11 (§23s) referee results into a NEW subsection; do not rewrite §23s;
+  - (1) (EXIT_c) via G23r: the learning dynamics (why top_r(w) cannot fall below a level a third time); then measure
+    D_R^thr for §23u's gap G23u;
+  - (2) (FIRED⁺-R) BELOW the root only. At G′ it is (SPP) (§21, eight potentials dead), so do not retry it there.
 - Next targets, in order:
   - (1) the referee outcome of packet 10, then a CHANGE-NEW packet (§23s) if the Lead routes it;
   - (2) (EXIT_c): a per-vertex oscillation bound for top_r^i(w). Data c = 2; re-entries are common. The gap is named in §23r;
