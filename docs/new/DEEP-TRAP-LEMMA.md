@@ -2,7 +2,7 @@
 
 Purpose: make the N1 kill (docs/new/N1-KILL.md) and the discount-homotopy obstruction (docs/new/N3-blackwell-path.md, last
 section) checkable on paper. Sources (opened by L-NEW, notes/L-NEW.md "Sources opened"): Friedmann, arXiv 1106.0778 (LMCS 7(3:19))
-§9: rewards r(v) = (−|V|)^Ω(v), β_G = 1 − 1/(4|V| max|r|), Thm 9.5 (Vöge: for γ ≥ β_G every parity improving switch is a
+§9: rewards r(v) = (−|V|)^Ω(v), β_G = 1 − 1/(4|V|³ max|r|) (p. 35; corrected per L-LIT docs/lit/T19-N1-kill-lit.md, the notebook had |V|), Thm 9.5 (Vöge: for γ ≥ β_G every parity improving switch is a
 discounted improving switch), Lemma 9.6 (1-sink games). Loff-Skomra arXiv 2610.22149 Fig. 7.2 (IncreasingDiscountPI), Thm 7.9.
 Hansen-Miltersen-Zwick arXiv 1008.0530 Thm 6.5.
 
@@ -19,7 +19,7 @@ Let D := P − q = 2k + 1.
 (b) Holding phase: if H ≤ n'^D / 4, then in the discounted optimum of G' every v ∈ E2 plays t_v, and x(v) > 0 for every v ∈ E2.
 (c) Release phase: if H ≥ 4·n'^D, then no v ∈ E2 plays t_v in the discounted optimum, and every Even switch in Howard's run on
     G' at γ is an Even switch on G (trap edges are never improving).
-(d) Parity-like after release: if moreover D ≥ B + 3 (k ≥ B/2 + 1), then every γ with H ≥ n'^D satisfies γ ≥ β_G for G with
+(d) Parity-like after release: if moreover D ≥ B + 4 (k ≥ B/2 + 2; the generator uses k = B/2 + 2, D = B + 5), then every γ with H ≥ n'^D satisfies γ ≥ β_G for G with
     rewards (−n')^Ω, so (Vöge, 1106.0778 Thm 9.5) Howard's improving switches on G at γ are the parity (VJ) improving switches.
 (e) Consequence for N1: N1's phases with H_j ≤ n'^D/4 make no Even switch after the first phase (Even stays in the traps; the
     certificate cannot fire: Even's values are positive while Odd wins every vertex of V in switchallexp). The first phase j* with
@@ -38,7 +38,7 @@ Let D := P − q = 2k + 1.
     its value is ≥ γ^s x(t_w) > x(t_v) because x(t_w) = x(t_v) < 0 and γ^s < 1. For options avoiding traps the bound
     −n'^B H > −n'^P needs H < n'^(P−B) = n'^(D+1): so (c) as stated holds for 4n'^D ≤ H < n'^(D+1); for larger H use
     x(t_v) ≤ −n'^q H/2 < −n'^B H.] Hence trap edges are never improving and never optimal once released.
-(d) β_G for G with base n' (≥ n): 1 − β_G = 1/(4 n'·n'^B) is reached at H = 4 n'^(B+1) ≤ n'^D when D ≥ B + 3 and n' ≥ 4.
+(d) β_G for G with base n' (≥ n): 1 − β_G = 1/(4 n'^3·n'^B) is reached at H = 4 n'^(B+3) ≤ n'^D when D ≥ B + 4 and n' ≥ 2 (D = B + 5 here: 4n'^(B+3) ≤ n'^(B+5)).
     Thm 9.5 is stated for base |V(G)|; base n' > |V(G)| only increases the separation between priorities. [Gap 3: check that
     1106.0778 §9's proof uses only base ≥ |V|.]
 (e) Follows from (b)-(d) and the schedule H_j = 2^j. [Gap 4: the window phases n'^D/4 < H_j < 4n'^D may already switch some
