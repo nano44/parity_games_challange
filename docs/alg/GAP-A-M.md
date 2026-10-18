@@ -4121,13 +4121,26 @@ Proof. This is the closure argument of NOSTEAL-1P, steps 2-3. Opponent vertices 
 Reading. A steal needs either a same-priority top that joins V between visits, or a STRATEGY CONFLICT: a p-vertex of t pulled
 into an earlier region by an edge other than its t-edge. lagfam's relay is case (b) by design: w_j is pulled into an earlier
 region by its edge to y_{j−1} or f_j, while its strategy in t_j is w_j → y_j (lag4.py docstring, "pulling w_j alone into an earlier
-region pulls nothing else"). Not checked mechanically by me. NOSTEAL-1P is the case where (b) is impossible (one edge per
+region pulls nothing else").
+MECHANICAL CHECK (experiments/alg/fixd_stealentry.py, dtl_pyref instrumented per region step, both order data): steals / case (a) /
+case (b) only / VIOLATIONS, conflict edges, max visit pairs per conflict edge:
+| instance | stable | Oink order |
+| lagdist_D4 | 12 / 0 / 12 / 0, 10, 2 | same |
+| lagdist_D8 | 30 / 0 / 30 / 0, 18, 4 | same |
+| lagdist_D12 | 56 / 0 / 56 / 0, 26, 6 | same |
+| lagflat7_d3_D8 | 30 / 0 / 30 / 0, 18, 4 | 0 steals (order collapse, §26b) |
+| stealonce_viol_n76 | 19 / 0 / 19 / 0, 3, 8 | 1 / 0 / 1 / 0, 1, 1 |
+| stealonce_both_n45 | 6 / 0 / 6 / 0, 3, 1 | same |
+| depth2_n39 | 11 / 0 / 11 / 0, 6, 2 | same |
+| ctx13_n40, onep_lagdist_D8 | 0 steals | 0 steals |
+So: 0 violations of STEAL-ENTRY; case (a) NEVER occurs (every steal is a strategy conflict), which is evidence that the "dist"
+hypothesis of NOSTEAL-1P is removable; ctx13_n40's long phase has no steal at all (it is a reset phase, §28a). NOSTEAL-1P is the case where (b) is impossible (one edge per
 p-vertex) and (a) is excluded by distinct priorities.
 Use for (LONG-PHASE). A root-only long phase needs many root steal pairs (F_{G′} ≤ 3·N*_{G′}, R11 (c)). By STEAL-ENTRY each steal
 pair has a conflict pair (y, z) with z ≠ str_t(y), or a case-(a) top. There are ≤ m conflict EDGES, but each can recur at many
 pairs. So a bound needs "a conflict edge (y, z) causes a relevant steal at only poly many visit pairs of G′". That is a
 (STEAL-POLY)-type statement keyed by edges instead of (step, tangle), and it is not proved. On lagfam the same conflict
-edges should recur at every visit (the relay toggles every level at every visit, §24f), so a per-edge CONSTANT bound is expected to
-be FALSE there (a reading; not measured).
+edges should recur at every visit (the relay toggles every level at every visit, §24f), so a per-edge CONSTANT bound is FALSE there:
+max visit pairs per conflict edge = D/2 (2, 4, 6 at D = 4, 8, 12, table above), while the total Σ is quadratic (12, 30, 56).
 STATUS of (c) at 11:02Z: no route. (LONG-PHASE) at G′ reduces, via R11 (c) and STEAL-ENTRY, to bounding recurring strategy-conflict
 steals at the root (plus case (a)). The class 𝒞^1P is exactly where both cases vanish (§27b).
