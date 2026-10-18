@@ -88,6 +88,29 @@ UNMODIFIED; pinned Oink tools/oink/build/oink @ 8fbf0a7 (scripts/setup_oink.sh),
 - Consequence for a hidden clock (R39 §9): its learning context at depth ≥ 1 cannot be the first call of the subgame; it needs a
   Dom inside the subgame and a later call. tcL shows that serialized contexts do not need depth ≥ 1 at all.
 
-## 6. Open, in this box
+## 6. Other totals on tcL (DATA, 10:09-10:16Z by date -u; L-ALG tools unmodified, in-tree = l-alg 11d89e20; both orders identical)
+| N | max k / depth (dtl_stealdepth) | max Σ_q k_q (red/lag/sumk.py) | max #fired⁺(R), D_R (dtl_changenew) | max exits (dtl_prefexits) |
+|---|---|---|---|---|
+| 4 | 0 / 0 | 0 | 4, 2 | none |
+| 6 | 0 / 0 | 0 | 8, 3 | none |
+| 8 | 0 / 0 | 0 | 12, 3 | none |
+- No steal, no exit; #fired⁺(R) = 2N − 4 (linear); (CHANGE-NEW) and D_R ≤ #fired⁺(R) hold on every row. So tcL stresses only
+  (CTX⁺): every other total is trivial or linear there.
+
+## 7. Faster-growing perturbations of tc(N) (DATA, 10:17-10:20Z by date -u; pinned Oink, every solution verified)
+- experiments/red/tcpert/tcclimb.py (hill climb over rule sets, fitness = iterations(N=7) − iterations(N=4)), seed 3:
+  r4 = {edges Even-i-A -> Even-i-T; Even-S priority −2; Even-Z priority −2; edges Even-i-B -> Even-(i−1)-L}:
+  iterations 7, 10, 15, 18, 25, 29, 37, 45, 59, 67 at N = 3..12 (tangles 10 ... 139). About N²/2, and since n ≈ 3.4N², about
+  0.13 n: linear in n. The 3-part r3 (without the B -> L edges): 7, 9, 12, 14, 18, 19, 20, 24, 27, 29, 29, 32 at N = 3..14.
+- tcclimb seeds 7 and 8, fitness min(it(8)/it(5), it(7)/it(4)), up to 6 rule parts incl. cut / self-loop rules (10:21-10:40Z):
+  best ratios 2.0 and 4.0 come from small bases (2, 2, 3, 6, 9, 12 at N 3..8). The seed-8 rule {Odd-i-L -> Even-i-T, Odd-L owner
+  flip, Even-B -> Odd-S, Odd-i-B -> Odd-(i−1)-T, Odd-T -> Odd-B, Even-B -> Odd-A} gives 3, 3, 4, 6, 9, 11, 14, 16 iterations at
+  N 3..10: linear. Its pinned-Oink WALL TIME grows about 4x per N (0.14 / 1.3 / 7.0 / 29.6 s at N 6..9, n 138..288; tangles
+  32 / 62 / 91 / 135). That is per-search cost (polynomial by C5 §2), not search count, so it is not a gauntlet failure; noted
+  for the step-5 timing record only.
+- Nothing super-polynomial in n. A climb for iterations EXPONENTIAL in N (which would be super-polynomial in n, since n is
+  quadratic in N) is running (fitness iterations(8)/iterations(5), with cut and self-loop rules).
+
+## 8. Open, in this box
 - N = 14 needs a lighter tool (ctxlight peaks above 5 GB at N = 12).
 - The other totals on tcL (Σk, #fired⁺(R), D_R, exits) are not yet measured.

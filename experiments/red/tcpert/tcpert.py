@@ -15,7 +15,7 @@ def gen(N):
     return V
 def lab(s):
     p = s.split("-"); return (p[0], int(p[1]), p[2], int(p[3]) if len(p) > 3 else None)
-ROLES = ["Z", "B", "A", "S", "T", "L", "H"]; PL = ["Even", "Odd"]
+ROLES = ["Z", "B", "A", "S", "T", "L", "H"]; PL = ["Even", "Odd"]; EXT = os.environ.get("TCP_EXT") == "1"   # cut / loop rules
 def apply(V, rule):
     V = [[a, b, list(c), d] for a, b, c, d in V]; L = [lab(v[3]) for v in V]
     for r in rule:
@@ -29,6 +29,15 @@ def apply(V, rule):
                 for k2, l2 in enumerate(L):
                     if l2[0] == p2 and l2[2] == r2 and l2[1] == l[1] + di and (l[3] is None or l2[3] is None or l2[3] == l[3]) and k2 not in V[k][2]:
                         V[k][2].append(k2)
+        elif r[0] == "cut":   # remove edges class1 -> class2 (index offset), keeping at least one successor
+            _, p1, r1, p2, r2, di = r
+            for k, l in enumerate(L):
+                if l[0] != p1 or l[2] != r1: continue
+                keep = [w for w in V[k][2] if not (L[w][0] == p2 and L[w][2] == r2 and L[w][1] == l[1] + di)]
+                if keep: V[k][2] = keep
+        elif r[0] == "loop":
+            for k, l in enumerate(L):
+                if l[0] == r[1] and l[2] == r[2] and k not in V[k][2]: V[k][2].append(k)
         elif r[0] == "prio":
             for k, l in enumerate(L):
                 if l[0] == r[1] and l[2] == r[2]: V[k][0] = max(0, V[k][0] + r[3])
@@ -43,9 +52,11 @@ def solve(V, path):
 def randrule(rng):
     k = rng.randint(1, 2); rule = []
     for _ in range(k):
-        t = rng.choice(["flip", "edge", "edge", "prio"])
+        t = rng.choice(["flip", "edge", "edge", "prio"] + (["cut", "loop"] if EXT else []))
         if t == "flip": rule.append(("flip", rng.choice(PL), rng.choice(ROLES)))
         elif t == "edge": rule.append(("edge", rng.choice(PL), rng.choice(ROLES), rng.choice(PL), rng.choice(ROLES), rng.choice([0, 1, -1])))
+        elif t == "cut": rule.append(("cut", rng.choice(PL), rng.choice(ROLES), rng.choice(PL), rng.choice(ROLES), rng.choice([0, 1, -1])))
+        elif t == "loop": rule.append(("loop", rng.choice(PL), rng.choice(ROLES)))
         else: rule.append(("prio", rng.choice(PL), rng.choice(ROLES), rng.choice([-2, 2])))
     return tuple(rule)
 TCL = (("edge", "Even", "L", "Even", "H", -1),)   # tcL(N): every Even-i-L gets an edge to Even-(i-1)-H (R40)
