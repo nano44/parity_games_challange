@@ -84,7 +84,7 @@ All measurements use L-ALG's tools UNMODIFIED (detached checkout of claude/l-alg
   - It is not a running-time kill: iterations are linear.
 - Next: climbs at D = 5 and 6 (running), and a hand rule for the control wiring (T3) that makes the family uniform.
 
-## 6. UNIFORM family: depth = D on n = 7D + 22 (DATA, 03:25Z by date -u)
+## 6. UNIFORM family: depth = D on n = 7D + 22 (DATA, 03:11Z by date -u; first pushed with the wrong label "03:25Z")
 - experiments/red/lag/lagfam.py D is the lag4 skeleton with the fixed control rule T_j -> {x_1, tau_j} and no helpers.
 - Why the rule works (READING of the search_rec trace, srtrace.py):
   - At root round 1 the clock tops lie BELOW the relay tops. So T_j's edge x_1 points into a later region: T_j stays open
