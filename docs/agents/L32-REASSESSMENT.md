@@ -1,4 +1,4 @@
-# L32 reassessment of GAP-A (Lead draft, 2026-10-18 by date -u) — NOT SENT; to be sent via OWNER-DESK when L-RED's box 10 ends
+# L32 reassessment of GAP-A (Lead draft, 2026-10-18 by date -u) — SENT via OWNER-DESK 2026-10-18 04:00Z by date -u (trigger met: L-RED box 10 ended 03:54Z without a (CTX⁺) family)
 
 Trigger (L32 (2), docs/DECISIONS.md): "the Fable reset, 2026-10-21 21:00Z, or earlier when both lanes' boxes end with no new
 GAP-A reduction". L-ALG box 10 ended 03:43Z (l-alg 434f92a, ledger GAP-A-M §24h). L-RED box 10 (serialized-context attempt on
@@ -42,5 +42,6 @@ unless (b) produces a long-phase family. Reason: since L32 the proof lanes produ
 equivalent to GAP-A (reformulations), while each adversarial box produced a verified kill; the refereed record is worth banking before the Opus period ends.
 
 ## 4. Spend at drafting
-To be filled from get_session readings at send time (last reading 2026-10-17 19:51Z: $1,781 total; Lead $302 at 03:03Z).
-No overage at any sweep.
+get_session on all 38 roster ids at 2026-10-18 04:00Z: total $1,950 (up $169 since 2026-10-17 19:51Z); Lead $304, CHECKER $103,
+OWNER-DESK $53. isUsingOverage false on all 38; seven_day 'allowed_warning'; the two paused Fable sessions are 'rejected' until
+the reset 2026-10-21 21:00Z. All lane sessions are parked; nothing is running.
