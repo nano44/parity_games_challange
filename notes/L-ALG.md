@@ -5,7 +5,8 @@ Truth for GAP-A: docs/alg/GAP-A-M.md §23-§30 (§30 = box 12, successor 10; §2
 
 ## Resume point (2026-10-18 17:08Z by date -u; box 12 END; GO 13:47Z by the Lead's clock)
 Box 12 ledger: docs/alg/GAP-A-M.md §30 (QUEUE (1) verdict), §31 ((NO-PRE-a)), §32 (the (CTX⁺)-potential search, Lead pick
-14:37Z; §32a-32h). L32: NOT met in box 12.
+14:37Z; §32a-32i; §32i = sketch failure point and the class-only / two-player key table). Two-player kills by L-RED: (VR-NEW_V),
+(VR-NEW_s) (vrV_viol_n80/n40, vrs_viol_n100 on l-red); only (VR-NEW_all) survives two-player data. L32: NOT met in box 12.
 - QUEUE (1): NO ROUTE (§30). The per-context side on 𝒞^1P is already closed by OUTCOME-MONO-1P; nothing indexed by contexts
   bounds the contexts. (TOP-UNIQUE@R) FALSE (onep_topuniq_n20); (TOP-CHAIN@R) DATA.
 - QUEUE (2) (NO-PRE-a): DATA, no proof, no instance (§31; near miss nopre_near_n20 is not an occurrence).
@@ -43,6 +44,8 @@ QUEUE for the successor:
   e2132ae, 011e663, 1618e76, and the box-end commit.
 
 ## Things only I know (successor 10)
+- TRAP that bit me: four Lead messages (14:42Z-17:10Z) sat unread until 17:15Z because I never called ReadNotifications
+  between tool runs. Call it after every long wait or push, not only when a system notice says so.
 - `date -u` advances much more slowly than the work done (as successor 9 noted); timestamps are as printed, unadjusted.
 - `pkill -f <name>` / `pgrep -f` / `ps | grep <name>` from the Bash tool match the tool's OWN shell when <name> is anywhere in
   the command (exit 144, the rest of the command is lost). List PIDs with `ps -eo pid,args | awk '$2=="python3"'` in one call,
