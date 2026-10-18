@@ -59,27 +59,68 @@ VJ valuations depend only on the priority order (injective rank), so priority ga
 option (top priority P on a path into an odd cycle of priority q = B + 1 above every original priority) is Even's worst option
 under VJ. Measured: experiments/new/n5/deeptrap.csv and padsae.csv.
 
-## Bench and killer families (interim table 20:2xZ by date -u; summarize_n5.py; start = best-reward except dlm1/dlm2 = DLM (σ0, τ0))
-Iterations = N5 loop iterations; slope = local log-log exponent of iterations in n; fallback = classical switch-all steps taken
-because N5 selection made no progress; every finished row: regions = Oink zlk (tl where zlk hit the 4 GB cap), strategies verified.
-| family | N (n) covered | N5 iterations first .. last | slope (last 3) | fallbacks | rows checked |
+## STEP-2 REPORT (2026-10-18 20:3xZ by date -u; data at this commit; DATA, not a claim, D1)
+Gauntlet step 2 for N5: agreement with Zielonka on 12,000 random games and on EVERY M1 hard family, growth plotted.
+(d) Verifier: every row is checked by experiments/new/check_sol2.py = regions equal to Oink zlk (pinned 8fbf0a7; Oink tl where zlk
+hit the 4 GB cap, labelled per row) AND experiments/harness/verify.py (L-COMP's strategy checker, the D2 change 5 tool) on BOTH
+players' positional strategies. Random games: harness/zielonka.py + harness/verify.py in-process (n5_random.py). Counts per family
+= the "rows checked" column (all rows of every family verified; no mismatch anywhere).
+(e) Stops: Python engine, 600 s budget per family (run_n5.sh BUDGET); the stopping row is named in the table ("BUDGET600_REACHED at
+N = k" means sizes 1..k-1 finished and k was not started); families without a stop ran to NMAX = 40.
+Start pair: best-reward for both players, except dlm1/dlm2 = DLM's (σ0, τ0).
+| family | N (n) covered; stop | N5 iterations first .. last | (a) local log-log slope in n, last 3 | fallbacks (total) | rows verified |
 | --- | --- | --- | --- | --- | --- |
-| dlm1 | N = 1..40 (n = 4..82) | 1 .. 41 | [0.97, 0.98, 0.0] | 0 | 40/40 |
-| dlm2 | N = 1..21 (n = 12..212); BUDGET600_REACHED at N = 22 | 2 .. 34 | [-0.61, 1.27, 1.25] | 0 | 21/21 |
-| counter_symsi | N = 1..22 (n = 12..222); BUDGET600_REACHED at N = 23 | 7 .. 99 | [1.3, 0.22, 0.89] | 84 | 22/22 |
-| deeptrap | N = 1..40 (n = 47..1295) | 4 .. 145 | [4.88, 0.55, 0.56] | 0 | 40/40 |
-| padsae | N = 1..40 (n = 50..1220) | 5 .. 80 | [1.02, 1.02, 1.02] | 0 | 40/40 |
-| switchallexp | N = 1..40 (n = 21..567) | 5 .. 80 | [1.01, 1.01, 1.01] | 0 | 40/40 |
-| switchbestexp | N = 1..32 (n = 35..810); BUDGET600_REACHED at N = 33 | 20 .. 242 | [0.8, 1.47, 0.67] | 0 | 32/32 |
-| recursiveladder | N = 1..40 (n = 5..200) | 1 .. 40 | [2.03, 0.0, 2.03] | 0 | 40/40 |
-| tc | N = 1..26 (n = 8..2158); BUDGET600_REACHED at N = 27 | 1 .. 83 | [-1.9, 1.64, 1.51] | 3 | 26/26 |
-| tc+ | N = 1..17 (n = 8..5304); BUDGET600_REACHED at N = 18 | 1 .. 178 | [0.25, 0.67, 0.57] | 7 | 17/17 |
 | counter_core | N = 1..22 (n = 9..135); BUDGET600_REACHED at N = 23 | 2 .. 44 | [1.03, 1.02, 1.02] | 0 | 22/22 |
 | counter_dp | N = 1..40 (n = 8..164) | 2 .. 40 | [0.0, 2.03, 0.0] | 0 | 40/40 |
 | counter_m | N = 1..40 (n = 6..123) | 1 .. 21 | [1.97, 0.0, 1.98] | 0 | 40/40 |
 | counter_ortl | N = 1..29 (n = 6..146); BUDGET600_REACHED at N = 30 | 2 .. 30 | [0.97, 0.97, 0.97] | 0 | 29/29 |
 | counter_qpt | N = 1..40 (n = 2..80) | 1 .. 1 | [0.0, 0.0, 0.0] | 0 | 40/40 |
-Random games (n5_random.py; harness/gen.py corpus): seed 1, 10,000 games n <= 60: AGREE 10000/10000, max 11 iterations; seed 2,
-2,000 games n = 60..400: AGREE 2000/2000, max 15 iterations (n5/random.txt). Still running: counter_rob, counter_rr.
-Reading (DATA, not a claim): no family shows super-linear growth of N5 iterations in n; the killers of N1/N2 (deeptrap, padsae)
-and both DLM families are linear.
+| counter_rob | N = 1..19 (n = 14..1238); BUDGET600_REACHED at N = 20 | 3 .. 55 | [0.56, 0.56, 0.56] | 0 | 19/19 |
+| counter_rr | N = 1..40 (n = 4..160) | 1 .. 2 | [0.0, 0.0, 0.0] | 0 | 40/40 |
+| counter_symsi | N = 1..22 (n = 12..222); BUDGET600_REACHED at N = 23 | 7 .. 99 | [1.3, 0.22, 0.89] | 84 | 22/22 |
+| recursiveladder | N = 1..40 (n = 5..200) | 1 .. 40 | [2.03, 0.0, 2.03] | 0 | 40/40 |
+| switchallexp | N = 1..40 (n = 21..567) | 5 .. 80 | [1.01, 1.01, 1.01] | 0 | 40/40 |
+| switchbestexp | N = 1..32 (n = 35..810); BUDGET600_REACHED at N = 33 | 20 .. 242 | [0.8, 1.47, 0.67] | 0 | 32/32 |
+| tc | N = 1..26 (n = 8..2158); BUDGET600_REACHED at N = 27 | 1 .. 83 | [-1.9, 1.64, 1.51] | 3 | 26/26 |
+| tc+ | N = 1..17 (n = 8..5304); BUDGET600_REACHED at N = 18 | 1 .. 178 | [0.25, 0.67, 0.57] | 7 | 17/17 |
+| dlm1 | N = 1..40 (n = 4..82) | 1 .. 41 | [0.97, 0.98, 0.0] | 0 | 40/40 |
+| dlm2 | N = 1..21 (n = 12..212); BUDGET600_REACHED at N = 22 | 2 .. 34 | [-0.61, 1.27, 1.25] | 0 | 21/21 |
+| deeptrap | N = 1..40 (n = 47..1295) | 4 .. 145 | [4.88, 0.55, 0.56] | 0 | 40/40 |
+| padsae | N = 1..40 (n = 50..1220) | 5 .. 80 | [1.02, 1.02, 1.02] | 0 | 40/40 |
+Plots (a): docs/new/plots/n5_<family>.png (17): iterations and fallbacks against n, seconds per iteration against n, log-log.
+(a) switchbestexp (Friedmann's switch-best family, nearest relative of a global best step), iterations per N = 1..32:
+[20, 32, 41, 47, 55, 62, 68, 77, 83, 89, 98, 104, 110, 117, 123, 129, 136, 122, 150, 153, 159, 165, 171, 177, 183, 189, 195, 214, 220, 226, 237, 242]; about +6 per N (n = 25N + 10), slope in
+n 0.7-1.5 over the last sizes, no fallbacks. Switch-best SI doubles on this family (M1 bench, experiments/hard-families/switchbestexp/README.md: PGSolver switch-best
+23, 61, 137, ..., 4849 at N = 1..8).
+(b) Fallbacks per N (a fallback = one classical switch-all step taken because N5's selection made no progress):
+- counter_core: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/44 = 0.00
+- counter_dp: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/40 = 0.00
+- counter_m: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/21 = 0.00
+- counter_ortl: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/30 = 0.00
+- counter_qpt: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/1 = 0.00
+- counter_rob: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/55 = 0.00
+- counter_rr: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/2 = 0.00
+- counter_symsi: [1, 4, 5, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]; fallback fraction at largest N 4/99 = 0.04
+- recursiveladder: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/40 = 0.00
+- switchallexp: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/80 = 0.00
+- switchbestexp: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/242 = 0.00
+- tc: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/83 = 0.00
+- tc+: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1]; fallback fraction at largest N 1/178 = 0.01
+- dlm1: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/41 = 0.00
+- dlm2: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/34 = 0.00
+- deeptrap: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/145 = 0.00
+- padsae: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; fallback fraction at largest N 0/80 = 0.00
+Only counter_symsi (4 per N, constant from N = 4), tc (3 in total) and tc+ (1-2 per N from N = 12) use fallbacks; the fraction at
+the largest N is <= 0.04 everywhere. N5 does not degenerate into switch-all SI on any family.
+(c) Measured cost: seconds per iteration against n (local log-log slope, last 3 sizes; Python, shared cores):
+- switchbestexp: [1.88, 1.41, 2.53]
+- tc: [2.72, 0.17, 2.62]
+- tc+: [1.84, 1.8, 1.87]
+- deeptrap: [1.19, 4.02, 1.94]
+- padsae: [1.05, 3.18, 1.05]
+i.e. about n^1.8-2.5 per iteration on the large families (VJ00 evaluations in Python), polynomial; no big numbers.
+Random games: seed 1, 10,000 games n <= 60: AGREE 10000/10000 (max 11 iterations, 1,057 fallbacks in total); seed 2, 2,000 games
+n = 60..400: AGREE 2000/2000 (max 15 iterations, 369 fallbacks) (n5/random.txt).
+CAVEATS: one implementation (Python, L-SI's engine); sizes modest (n <= 5304, most families n <= 1300); the bench was built against
+other algorithms, so it is weak evidence against N5; no barrier statement yet beyond N4N5-proposals.md; no adversarial family yet
+(next item: own killer attempt).
