@@ -2,6 +2,7 @@
 """L-RED box 11 (produced on Opus 5.5): hill climb over label-rule sets (tcpert.py rules, up to MAXR parts) on tc(N),
 fitness = pinned-Oink DTL iterations at N = NB minus at N = NA (growth; TCC_RATIO=1: their ratio; TCC_RATIO=2: min of the ratios at NB/NA and NB-1/NA-1; TCP_EXT=1 adds cut/loop rules), every solution verified (an unverified run is
 printed as NOT VERIFIED and rejected). Prints improvements with the iteration row at N = 3..NB.
+TCC_TLHARD=K keeps only rule sets whose pinned-Oink TL iterations on tc(6) stay >= K.
 Usage: tcclimb.py RNGSEED STEPS MAXR NA NB OUTDIR"""
 import sys, os, random
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -18,7 +19,19 @@ def its(rule, Ns):
             except Exception: cache[k] = (-2, False)
         r.append(cache[k])
     return r
+def tlhard(rule):   # TCC_TLHARD=K: pinned Oink --tl iterations on the perturbed tc(6) must stay >= K (tc(6): 128)
+    k = ("tl", rule)
+    if k not in cache:
+        import subprocess, re
+        V = T.apply(base[6], list(rule)); p = tmp + ".tl.pg"
+        with open(p, "w") as f: f.write(f"parity {len(V)-1};\n" + "".join(f'{i} {v[0]} {v[1]} {",".join(map(str, v[2]))} "{v[3]}";\n' for i, v in enumerate(V)))
+        try:
+            o = subprocess.run([os.path.join(T.T, "oink"), "--tl", "--no-single", "--no-wcwc", "--no-loops", p, "/dev/null"], capture_output=True, text=True, timeout=60).stdout
+            m = re.search(r"solved in (\d+) iterations", o); cache[k] = int(m[1]) if m else 0
+        except subprocess.TimeoutExpired: cache[k] = 10 ** 6
+    return cache[k]
 def fit(rule):
+    if os.environ.get("TCC_TLHARD") and tlhard(rule) < int(os.environ["TCC_TLHARD"]): return -50
     if os.environ.get("TCC_RATIO") == "2":   # robust ratio: min(it(NB)/it(NA), it(NB-1)/it(NA-1)), all four verified
         rs = its(rule, [na - 1, na, nb - 1, nb])
         if not all(x[1] for x in rs):
@@ -31,7 +44,8 @@ def fit(rule):
         return -99
     return (b[0] / a[0]) if os.environ.get("TCC_RATIO") == "1" else b[0] - a[0]
 def one(): return T.randrule(rng)[0]
-cur = (); fc = fit(cur); best = fc
+import ast
+cur = tuple(ast.literal_eval(os.environ["TCC_INIT"])) if os.environ.get("TCC_INIT") else (); fc = fit(cur); best = fc   # TCC_INIT: start rule set
 for it in range(steps):
     r = list(cur); m = rng.random()
     if r and m < 0.3: r.pop(rng.randrange(len(r)))

@@ -58,6 +58,24 @@ UNMODIFIED; pinned Oink tools/oink/build/oink @ 8fbf0a7 (scripts/setup_oink.sh),
   the earlier depth-0 calls stay identical while a lower piece learns. It is obtained through the Dom sequence at depth 0, not
   through a −1 subgame.
 
+- DATA (11:12Z by date -u; experiments/red/ctxp/d0calls.py, the reference model via a subclass hook): the depth-0
+  best_vertices calls of each search on tcL(8), as |R|:result:
+  ```
+  search 0: 232:-1 224:1 115:-1 0:0
+  search 1: 232:-1 231:-1 229:-1 221:1 217:-1 216:-1 207:-1 201:-1 200:-1 196:-1 191:-1 190:-1 184:-1 180:-1 179:-1 171:-1 168:1 116:-1 115:-1 0:0
+  search 2: 232:-1 231:-1 228:-1 216:-1 215:-1 207:-1 201:-1 200:-1 196:-1 191:-1 190:-1 184:-1 180:1 116:-1 115:-1 0:0
+  search 3: 232:-1 231:-1 228:-1 216:-1 215:-1 207:-1 201:-1 200:-1 196:-1 191:1 116:-1 115:-1 0:0
+  search 4: 232:-1 231:-1 228:-1 216:-1 215:-1 207:-1 201:1 116:-1 115:-1 0:0
+  search 5: 232:-1 231:-1 228:-1 216:1 116:-1 115:-1 0:0
+  search 6: 232:1 116:-1 115:-1 0:0
+  search 7: 116:-1 115:-1 0:0   (then the Odd searches)
+  ```
+  A staircase: each search walks a chain of depth-0 calls that return −1 (each followed by a Dom or a −1 recursion), and the
+  first call that returns 1 (where sptl learns) moves up one rung per search: |R| 180, 191, 201, 216, 232. The first difference
+  of transition s → s+1 is at the rung where search s+1 learns: the call that returned −1 in search s returns 1 in s+1, because of
+  the tangle that s learned one rung lower (contexts |R| 191, 201, 216 in §1's N = 8 row; 232 is the root, C0). The number of
+  rungs, and so of contexts, is the number of serialized bits.
+
 ## 4. Side check for the Lead: TC-6 is fragile
 - L-ALG's TC-6 (GAP-A-M §25a) is about tc(N) itself, and nothing here contradicts it (pinned Oink: tc(N) 6 iterations, 2N+1
   tangles, N = 3..12, table above).
