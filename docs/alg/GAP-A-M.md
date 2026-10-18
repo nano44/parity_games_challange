@@ -4521,3 +4521,58 @@ Which keys survive where (all counts re-run here at 17:20Z by date -u on L-RED's
 Plainly: (VR-NEW_V) and (VR-NEW_s) are CLASS-ONLY (two-player kills by L-RED: vrV_viol_n80 f77f0d34d13f, vrV_viol_n40
 8cf415ec9267, vrs_viol_n100 b4bbe7f0fdc0). Only (VR-NEW_all) survives two-player data, and there only at chain-changing transitions:
 88-104 library transitions keep the depth-0 chain identical and are not covered by any depth-0 key.
+
+33. Box 13 (L-ALG successor 10; Lead GO 17:17Z / 17:33Z; produced on Opus 5.5; unrefereed; written 18:20Z by date -u). Target: on
+𝒞^1P, (FD-WITNESS_all) ⇒ (VR-NEW_all), then the no-counter core. Tool: experiments/alg/b12_core.py (MODE = core | xcover | sigdisj
+| samectx). Notation as in §32: for a search s of a q-phase and a depth-0 position p, state_s(p) = (R_p, ρ_p, V_p, piece_p) and the
+signature σ_s(p) = (ρ_p, |R_p|, |V_p|); the full key of a vertex v is (v, ρ, j, |R_j|, |V_j|) for the position j whose piece holds v.
+At a transition s → s+1 whose depth-0 states differ, p0 is the first position whose state changes.
+33a. Lemma W (PROVED; trivial). If some vertex v of piece_{s+1}(p0) never held the key (σ_{s+1}(p0), p0) in searches ≤ s, then v
+receives a new full key at s → s+1. So (FD-WITNESS@p0) at a transition gives (VR-NEW_all) at it. For a SEARCH bound one more fact
+is needed, (CHAIN-CHANGE) "every transition of a q-phase changes the depth-0 states": DATA on 𝒞^1P (0 of 1,094 transitions keep
+them identical, §32b); false in two-player games (88-104 library transitions). Then searches per q-phase ≤ #full keys + 1 ≤ n⁵ + 1.
+33b. Lemma SAME-CTX (PROVED, reading; 𝒞_C^dist, every order datum). Let s′ < s be searches of one q-phase whose depth-0 contexts
+at one position p are the SAME set R. Then: (i) the depth-0 call at p is a function of (R, T): X = G′ \ R at depth 0 (every vertex
+removed from R at depth 0 is added to X: 877-891, 918-951, 961-975), and best_vertices reads only (R, q, T) (RESULTS R9 (a)); (ii) its
+outcome at s is ≥ its outcome at s′ in the order of OUTCOME-MONO-1P (§28e; visits of R in one phase, T grows); so if σ_{s′}(p) =
+σ_s(p), the outcomes are EQUAL (equal rank and |V| with V nested forces equal V); (iii) with equal outcome, piece_{s′}(p) ⊆
+piece_s(p).
+Proof of (iii). The branch is fixed by the outcome and (R, X): stable → sptl, then Dom(V*, R) (867-891); −1 → the threshold piece if
+some vertex of R attracts to X (898-951), else Dom(prevV, R) (958-975); the test and the threshold t read only (R, X) (attracts()
+has no tangle argument). Every piece is a tangle attractor from a seed fixed by (R, X, V) with fixed caps (Dom: cap pr(top) per top
+in V; threshold: cap t), and by DTL-proof Lemma 1.2b such an attractor is monotone in T. T only grows within a phase (no tangle
+of G′ is deleted before the phase ends), so T at s ⊇ T at s′, including the tangles sptl adds inside the call. □
+MECHANICAL CHECK (b12_core.py MODE=samectx): 𝒞^1P set (DIST=1), 26,155 same-set same-signature pairs, both orders: V differs 0,
+piece not ⊆ 0. Two-player library: 6 failures (first fall3_n76), as expected without NOSTEAL-1P.
+Corollary REDUCTION (PROVED, reading, on Lemma W and SAME-CTX). At a transition with p0, R_{p0}(s) = R_{p0}(s+1) =: R (a change of
+R_{p0} alone would change piece_{p0−1}, contradicting the choice of p0). Two cases:
+ (O) the outcome at p0 changes. A vertex of piece_{s+1}(p0) that held (σ_{s+1}(p0), p0) at s′ ≤ s at the SAME set R would give
+     outcome(s′) ≤ outcome(s) ≤ outcome(s+1) = outcome(s′) (by (ii)), so outcome(s) = outcome(s+1): contradiction.
+ (P) the outcome is unchanged, so the piece changed, and by (iii) it grew: N := piece_{s+1}(p0) \ piece_s(p0) ≠ ∅. A vertex of N
+     that held the key at s′ ≤ s at the same set R lies in piece_{s′}(p0) ⊆ piece_s(p0) by (iii): contradiction.
+Hence (VR-NEW_all) at the transition ⇐ (XCTX@p0): "NOT every vertex of N (case P; the whole new piece in case O) lay, in an earlier
+search of the phase, in the piece at p0 of a context set R′ ≠ R with |R′| = |R| and the same signature".
+33c. The residual, and the Lead's phrasing of the core (DATA).
+- (XCTX@p0) on 𝒞^1P: at 0 of 1,094 transitions (both orders) is ANY vertex of the new piece covered by an earlier same-signature
+  piece of a DIFFERENT context set at p0 (b12_core.py MODE=xcover). Every cover is same-context and inside piece_s (0 exceptions),
+  as SAME-CTX predicts; the largest covered fraction is 0.976 (spp_chain_up_n43 forced: the piece grows by one vertex).
+- Two-player library and L-RED's four instances (n ≤ 100, stable): cross-context cover at p0 in 3 of 1,447 transitions, never full.
+- (CORE) as phrased ("a context at p with signature σ, once replaced, never returns at p with σ and an overlapping piece"): FALSE in
+  its literal form because a same-context piece growth keeps σ and overlaps (95 pairs on the onep_* instances, first
+  onep_chainfail_n20); after SAME-CTX the true content is the cross-context part only.
+- The natural global strengthening (SIG-DISJ) "two different context sets with one signature at one position have disjoint
+  pieces": FALSE on 𝒞^1P, onep_vrj_n40 (sha1 96ac8459cbef), phase (1, 1), position 6, searches 0 and 3, two different stable contexts
+  of size 22 with |V*| = 16 and overlapping pieces (12 such pairs in the whole class set, 1 overlapping); two-player 194 of 242.
+  So any proof must use that the cover happens at the FIRST changed position p0, not at an arbitrary position.
+33d. Answer to the Lead's 17:33Z (1), and a correction to §32i.
+- For (VR-NEW_all) the novelty sits at p0 itself. In onep_vrj_n40 (transition into search 5) the new full keys are (1, 6, 4, 24, 1)
+  at p0 = 4 (same context, outcome rose: case O) and (38, 4, 5, 23, 1), (17, 42, 6, 22, 16) below. §32i's "the only novelty is
+  |V*| = 16 at position 6" is right for the coarse key (v, ρ, |V|) only (the one new key there is (17, 42, 16)). So cross-context
+  V* growth is the core of (VR-NEW_V), not of (VR-NEW_all). For (VR-NEW_all) on 𝒞^1P the core is (XCTX@p0).
+- STATUS on 𝒞^1P: GAP-A ⇐ (XCTX@p0) ∧ (CHAIN-CHANGE) (via Lemma W, SAME-CTX, Lemma CTRL), both DATA with 0 violations. The proved
+  part removes every same-context return, which is what a per-context argument can reach. The open step is a comparison of two
+  DIFFERENT context sets of equal size at the same depth-0 position. No monotone link between them is known (RANK-MONO false,
+  §27d), no instance of a cross-context cover at p0 is known in the class, and the general form (SIG-DISJ) is false. L32: this is a
+  reduction to two named statements, not one, and with no proof route for the cross-context one.
+TARGET.md diff: objects as in TARGET.md §1; the class adds owner / out-degree / distinct q-parity priority hypotheses (§27b); the
+statements count A_DTL's searches (gauntlet step 4 objects); no change of definitions; no M4 claim.
