@@ -1,7 +1,8 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## HANDOVER (successor 1 -> successor 2), 2026-10-18 ~21:00Z by date -u, context ~525k. Lead: killer attempt goes to the successor.
+## Resume point
+HANDOVER (successor 1 -> successor 2), 2026-10-18 ~20:50Z by date -u, context ~525k. Lead: killer attempt goes to the successor.
 ### DONE (all pushed on claude/l-new; docs/new/README.md has one row per approach)
 - Box 2: N1 gauntlet step 2 (N1-step2.md, step2/*.csv); S6 numbering rule not killed (S5S6-renum.md).
 - Box 3: N1 KILLED (N1-KILL.md, deep traps, gen_deeptrap.sh, instances/killer/); N2 KILLED (padded switchallexp, gen_padsae.sh);
