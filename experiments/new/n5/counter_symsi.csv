@@ -17,3 +17,8 @@ counter_symsi,15,152,tools/oink/build/counter_symsi 15,a6c84c8fa20488121cf56fddb
 counter_symsi,16,162,tools/oink/build/counter_symsi 16,0c4e7e4a6e7ea2f213a0e35dd8af901155fb8302,78,4,99,0.87,zielonka(oink zlk) OK strategies verified
 counter_symsi,17,172,tools/oink/build/counter_symsi 17,aea766f3fa725e54e950cbbcdc5bbcedb97c9c58,79,4,101,0.75,zielonka(oink zlk) OK strategies verified
 counter_symsi,18,182,tools/oink/build/counter_symsi 18,a45635a81706a9b9bf26c31dfd300b6004e02368,85,4,108,1.00,zielonka(oink zlk) OK strategies verified
+counter_symsi,19,192,tools/oink/build/counter_symsi 19,4444b907dc0d414f469be50e71392e95a481f00c,88,4,112,1.29,zielonka(oink zlk) OK strategies verified
+counter_symsi,20,202,tools/oink/build/counter_symsi 20,eff9b95387bf8f3764c12ec9329daccd5b55a312,94,4,119,1.48,zielonka(oink zlk) OK strategies verified
+counter_symsi,21,212,tools/oink/build/counter_symsi 21,b84d8ae075475885ade18e853681f21e4defe7d0,95,4,121,1.46,zielonka(oink zlk) OK strategies verified
+counter_symsi,22,222,tools/oink/build/counter_symsi 22,dd3002d810569f0bb2b5a0d15e075e54065d9a66,99,4,126,1.81,oink tl (zlk exit 250) OK strategies verified
+counter_symsi,23,,,,,,,BUDGET600_REACHED,

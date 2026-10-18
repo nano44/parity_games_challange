@@ -1,0 +1,14 @@
+family,N,n,gen,sha1,n5_iterations,fallback,evals,secs,check
+padsae,1,50,experiments/new/gen_padsae.sh 1,cfadab8eee8b424aadc34a5c6c35e0c7b9f9a3a1,5,0,8,0.00,zielonka(oink zlk) OK strategies verified
+padsae,2,80,experiments/new/gen_padsae.sh 2,51e5b49f32f92a3c57fc48044e5b027332cadde0,8,0,12,0.02,zielonka(oink zlk) OK strategies verified
+padsae,3,110,experiments/new/gen_padsae.sh 3,797b265d873df6aded476c0bcf7958cf64effbf9,7,0,12,0.02,zielonka(oink zlk) OK strategies verified
+padsae,4,140,experiments/new/gen_padsae.sh 4,8b324e8f50832c5968260a9cadf848c3345ed012,8,0,14,0.03,zielonka(oink zlk) OK strategies verified
+padsae,5,170,experiments/new/gen_padsae.sh 5,f77a2208feccc3e971efedbb82640918ca55dbb3,10,0,17,0.08,zielonka(oink zlk) OK strategies verified
+padsae,6,200,experiments/new/gen_padsae.sh 6,63f36a9114989305bb5fc16742eee2a887bd126b,12,0,20,0.08,zielonka(oink zlk) OK strategies verified
+padsae,7,230,experiments/new/gen_padsae.sh 7,9ee0385509ac81f2dd9eb111df2ecbdabdfa87b1,14,0,23,0.12,zielonka(oink zlk) OK strategies verified
+padsae,8,260,experiments/new/gen_padsae.sh 8,e4060cf63d07d48b514eccee07bb7390a9adf133,16,0,26,0.19,zielonka(oink zlk) OK strategies verified
+padsae,9,290,experiments/new/gen_padsae.sh 9,e09bee37905825bd11d10911c14661b5bf2c2686,18,0,29,0.22,zielonka(oink zlk) OK strategies verified
+padsae,10,320,experiments/new/gen_padsae.sh 10,d8b7c264b9c081827ff144656d92265d339f8008,20,0,32,0.29,zielonka(oink zlk) OK strategies verified
+padsae,11,350,experiments/new/gen_padsae.sh 11,667acd4fb4fc47eb29269d7940c5f83060a77e7c,22,0,35,0.41,zielonka(oink zlk) OK strategies verified
+padsae,12,380,experiments/new/gen_padsae.sh 12,2799dfb416f6b41c5bd2eda61ea5d6b708c2ebfd,24,0,38,0.53,zielonka(oink zlk) OK strategies verified
+padsae,13,410,experiments/new/gen_padsae.sh 13,936d4f8e34a5668033f3d9d097d6339e0f2a2a49,26,0,41,0.60,zielonka(oink zlk) OK strategies verified

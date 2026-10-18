@@ -17,3 +17,7 @@ dlm2,15,152,python3 experiments/new/dlm_gen.py 2 15,ee809b3c74430040a1d43821c20a
 dlm2,16,162,python3 experiments/new/dlm_gen.py 2 16,5e5c1c5287b453218a7ecb249d24175594fc74ea,27,0,56,0.61,zielonka(oink zlk) OK strategies verified
 dlm2,17,172,python3 experiments/new/dlm_gen.py 2 17,7e2d6f52e61536aab60664ba10870fdd394f477d,29,0,59,0.70,zielonka(oink zlk) OK strategies verified
 dlm2,18,182,python3 experiments/new/dlm_gen.py 2 18,6c3471129834b7de7d25e4edabf9a36de8173761,31,0,63,0.83,zielonka(oink zlk) OK strategies verified
+dlm2,19,192,python3 experiments/new/dlm_gen.py 2 19,e364240b0bd7ed37c03b688b070edf0c2f72fff8,30,0,62,0.99,zielonka(oink zlk) OK strategies verified
+dlm2,20,202,python3 experiments/new/dlm_gen.py 2 20,9cb2a69adf36a708c2f537c16e4930d31f5cd539,32,0,65,1.14,zielonka(oink zlk) OK strategies verified
+dlm2,21,212,python3 experiments/new/dlm_gen.py 2 21,828552ce8ea2a2b1cc1a09b9fe98b5008d97453d,34,0,69,1.32,zielonka(oink zlk) OK strategies verified
+dlm2,22,,,,,,,BUDGET600_REACHED,

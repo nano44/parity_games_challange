@@ -1,1 +1,2 @@
 random1 (seed 1, 10,000 games n <= 60): AGREE 10000/10000 max_iter=11 fallbacks=1057
+random2 (seed 2, 2,000 games n = 60..400): AGREE 2000/2000 max_iter=15 fallbacks=369
