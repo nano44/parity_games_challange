@@ -105,8 +105,11 @@ All measurements use L-ALG's tools UNMODIFIED (detached checkout of claude/l-alg
   | 8 | 78 | 46ad828c7901 | 8 | 5 | 16, verified | MATCH |
   | 10 | 92 | 96c73fb8578b | 10 | 6 | 18, verified | MATCH |
   | 12 | 106 | 0dd2899eacfe | 12 | 7 | 20, verified | MATCH |
+  | 16 | 134 | a35ddaf9887e | 16 | 9 | 24, verified | MATCH |
+  | 20 | 162 | 3afbe4405e3f | 20 | 11 | 28, verified | MATCH |
 
-- Observed: depth = D, max k = floor((D+1)/2) + 1, and iterations = D + 8.
+- Observed: depth = D, max k = floor((D+1)/2) + 1, and iterations = D + 8, for every D tested up to 20.
+  The rows for D = 16 and 20 were added at 03:28Z (date -u).
 - At D = 2 and D = 3 the observed F/X table at the steps (1, T_j) equals the schema of section 3 cell for cell
   (schemashow.py). The depth-D re-steal sits at level D, pair D + 2, with a single cause: level D - 1 at pair D + 1, of
   depth D - 1.

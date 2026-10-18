@@ -129,7 +129,19 @@ Successor 8, box 10 (GO 01:21Z by date -u, box to ~06:00Z or 580k). State at the
   obstruction = lexicographic counter (re-triggered resets); round-count falls ≤ 2. Climbs dtl_exitclimb.py s1 (cm_viol_oink_n28)
   and s2 (stealonce_both_n45) in the scratchpad ec/ folder; they die with the container.
 - (3) §23y: no birth locality below the root.
-- Candidate referee packet: §23w QUIET-BLOCK (+ §23x EXIT-ORIGIN), short.
+- Candidate referee packet: §23w QUIET-BLOCK (+ §23x EXIT-ORIGIN), short; brief docs/alg/QUIET-BLOCK.md (82d7131).
+After the check-in (02:06Z by date -u):
+- §23z: QUIET-LIN and QUIET-NEWV KILLED (linear quiet-block forms); block ≤ 0.953|R| DATA.
+- §24a Lemma DEF-SHRINK (reading): the first round where U_r shrinks has a deficit in the later visit; no-deficit falls are
+  re-cuts inside U.
+- §24b Corollary SPLIT (reading): D_R ≤ (B+1)(G+1)(1 + #Xpairs_R); (XPAIRS-POLY) "pairs with an exit are polynomially many"
+  ⇔ (D-POLY). DATA: X-pairs ≤ 4 per context; U-shrinks 104 / 29, re-cuts 1 / 0 (corpus, stable / Oink). Tool dtl_defsplit.py
+  (RM_LIGHT unset).
+- §24c: every U-shrink pair has V_r(x) ⊊ V_r(y) at its first shrinking round (new top; = (U-MONO_DTL)). (USHRINK-FRESH) "each
+  U-shrink pair has a new key (round, new top, losing top)" DATA 104/104, 29/29 on the corpus; stress run on unions and the
+  climb best (scratchpad dr/ds_*.txt) started 03:00Z. Proof attempt hits the counter again: re-using a key needs an RV fall,
+  i.e. an earlier-round U-shrink.
+- NEXT (successor): a CONSUMED quantity for U-shrinks (key reuse across rounds) is the sharpest open local question.
 Successor 8 (session started 01:06Z by date -u, 2026-10-18; produced on Opus 5.5): handover check in
 docs/agents/handover-checks/L-ALG.md; waiting for GO. Box-10 plan: (1) measure D_R^thr and close G23u, (2) (EXIT_c) via G23r,
 (3) (FIRED⁺-R) below the root only if (1)-(2) stall.
@@ -159,7 +171,8 @@ Successor 8 (box 9 ended in this session, 00:46Z by date -u):
 - Box-8 resume notes below this line are still valid for tools and traps.
 
 ## Dead ends
-- Box 10 successor 8: G23u RV-rise fix (spp_chain_up_n43), NET-GROWTH (cm_viol_oink_n28, lex_viol_oink_n20); DEAD.md box 10.
+- Box 10 successor 8: G23u RV-rise fix (spp_chain_up_n43), NET-GROWTH (cm_viol_oink_n28, lex_viol_oink_n20), QUIET-LIN
+  (dtl_cross3_n14, fired18_stable_n20), QUIET-NEWV (spp_final_n30, spp_n30); DEAD.md box 10.
 - Box 8 successor 7: STEALER-MONO (stealer_viol_n76), FIRED-STEP const and FIRED-TOP-INJ (fired18_stable_n20), FIRED-LAMINAR
   (c6_replay3_n32); all in docs/alg/DEAD.md.
 Box 7-8 dead ends, each with its instance, are in docs/alg/DEAD.md (latest sections):
