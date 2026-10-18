@@ -208,3 +208,8 @@ Q14 closed as D13 / L34. Q15 (direction for (c)) put to the owner.
 ## 2026-10-18 09:01Z owner (Q15)
 > D
 Desk reading: Q15 option D, Lead's choice of direction for (c). Relayed verbatim to the Lead, priority now.
+
+## 2026-10-18 09:03Z owner (Q15 addendum)
+> You know it can also test prveiously not tested approaches, it can come up with it own as well
+Desk reading: (c) is not limited to the mapped options A-C; the fleet may test previously untested approaches, including its own
+new ideas. Relayed verbatim to the Lead, priority now.
