@@ -180,4 +180,4 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
   contact); (b) keep only the cheap adversarial lane on GAP-A, no proof lane; (c) a new candidate or approach (needs an owner direction).
 - Lead recommendation: (a) now, plus (b) until the Fable reset 2026-10-21 21:00Z, then stop unless (b) finds a long-phase family.
 - Urgency: decision needed; the fleet is idle until the owner chooses.
-- Status: open
+- Status: answered 2026-10-18: "Keep working on the dtl and also c"; relayed; awaiting the Lead's D-number.

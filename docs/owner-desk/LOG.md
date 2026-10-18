@@ -196,3 +196,8 @@ DE21 made uniform (trunk 5c452e3): lagfam.py D, n = 7D+22, repeat-steal depth ex
 constant-depth route false for every constant; post-landing note. Live routes R12 (a), R13, R14 (polynomial totals).
 
 ## 2026-10-18 04:08Z Lead -> owner: Q14 (L32 reassessment) added; put to the owner at once. All lanes parked awaiting the choice.
+
+## 2026-10-18 08:53Z owner (Q14)
+> Keep working on the dtl and also c
+Desk reading: continue DTL work (not stated whether proof lane, attack lane, or both; not limited to the cheap attack only) AND
+option (c), a new candidate/approach, with no direction named. (a) write-up not chosen. Relayed verbatim to the Lead, priority now.
