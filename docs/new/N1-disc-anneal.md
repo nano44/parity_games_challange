@@ -130,3 +130,13 @@ decision), which needs chains of length ~ horizon · Δp · ln n per edge: polyn
   N1 26, 44, 69 and 25, 43, 64 (N = 2..4); c = 8, N = 2: 26.
 - Per-edge delay hill climb (delay_search.py, delays 0..12, switchallexp N = 2): best 49 Even iterations after 155 steps
   (base 25; plain VJ 30 on the undelayed game). Running; N = 3 next. A higher count at fixed N is not a family.
+
+## Gauntlet step 2 progress (11:10Z; C++ port anneal_c, = anneal.py on 1,000 random games, xcheck_c.py seed 21)
+- Random games: 10,000 harness/gen.py corpus games (seed 1, n = 1..60, m <= 2200): AGREE 10000/10000 with Zielonka, all
+  strategies verified (rand_c.py; out/rand_1.csv: max 15 Even switches, max phase 8, max 95 Odd switches). Larger sizes:
+  2,000 games n = 60..400 (seed 2) running.
+- switchallexp N = 1..12 (n = 21..175): plain VJ Howard 10 ... 39654 (doubling); N1 13, 25, 42, 64, 90, 120, 154, 192, 234, 280,
+  330, 384 (second differences 4: ~2.6 N²); largest phase 2N + 5; ablation = plain (N <= 11; N = 12 capped at 300 s).
+- fhz_padded N = 7..11 (n = 414..892): plain 21..33; N1 36, 49, 42, 56, 55; largest phase N + 2 (the first phase).
+- Remaining families: docs/new/plots/n1_*.png from the Python sweep (summary_py.csv, N <= 8 or timeouts); the C++ sweep
+  (summary_c.csv, N up to 14) is running.

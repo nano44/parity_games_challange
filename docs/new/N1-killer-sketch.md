@@ -39,3 +39,30 @@ Howard only); a kill would be a new lower bound for LS24's IncreasingDiscountPI 
 ## Route (B) first try (10:55Z, experiments/new/bait.py): did not kill
 Chain of k priority-0 Odd vertices on each start edge (originals +2). Plain VJ Howard: 15, 35, 75 (still doubling, N = 2..4).
 N1: k = 4: 30, 50, 72; k = 16: 33, 51, 74 (largest phase 9, 11, 13 = the last one). Regions = Zielonka, strategies verified.
+
+## Route (A), key-edge delays (11:05Z, experiments/new/keydelay.py, C++ engine): no effect at all
+Only bit i's cycle-closing edge e_i -> h_i delayed by c(i+1) (or c(N-i)) priority-0 Odd vertices, c = 20 and 100, N = 2..5
+(n up to 1577): plain VJ Howard 30, 70, 150, 310 (unchanged, doubling); N1 25, 42, 64, 90 in EVERY variant, i.e. exactly
+the undelayed counts; largest phase = the last one (9, 11, 13, 15). Regions = Zielonka, strategies verified.
+Reading (unrefereed): on this family N1's Even switches do not depend on when a bit's closing edge becomes visible; the
+optimum at γ_{J-1} is already within 2N + 5 Howard steps of the parity optimum. A killer must make the optimum of the
+previous discount a BAD START for the next one (route B), not merely reorder reveals. HMZ-style arguments do not exclude
+it: from a warm start the gap is small, but Howard's iteration bound depends on log(gap_0 / smallest nonzero gap) / (1 − γ),
+which is still 2^j-sized for parity rewards.
+
+## A reveal-time tool that does work: priority gaps (11:20Z, argument, not yet built)
+Trap gadget at an Even vertex v: option A = a vertex of even priority p, then an Odd-won cycle of priority q < p (A loses);
+option B = a small Even-won cycle of low even priority. Discounted value of A ≈ n^p − H n^q (H = 1/(1−γ) up to constants), of
+B ≈ small·H. So the parity-correct choice B becomes optimal only once H > n^(p−q), i.e. at phase j ≈ (p − q) log2 n. Delays
+can only push a reveal by a polynomial horizon; gaps push it to any phase up to (d + 2) log2 n with O(1) extra vertices.
+This also explains why the certificate fires only at J ≈ (d + 2) log2 n (signs of values in 1-sink games need H > n^(p_max)).
+Use for route (A): gate bit i's set-decision of a Friedmann-type counter by a trap with gap g_i increasing in i, so bits are
+revealed bottom-up. Open: whether gating a bit this way keeps Friedmann's reset behaviour once the bit is revealed (the trap
+must disappear from the comparison after its reveal, which an Odd-won cycle on the losing option does: after the reveal,
+A is simply worse). Not built in box 1.
+Built (11:25Z, experiments/new/gaptrap.py): trap at each e_i, P_i = B + 2 + 2k(i+1) (or 2k(N−i), --rev), cycle B + 1.
+k = 1, 3, both orders, N = 2..6: plain VJ 30..630 (unchanged); N1 33, 51, 81, 110, 142 (k = 1) and 45, 65, 99, 136, 180
+(k = 3); --rev similar. Largest phase 9..17 = 2N + 5 = the final phase, as without traps. Totals rise by ~1.5x, growth stays
+quadratic. Regions = Zielonka, strategies verified. Did not kill. Reading: traps do delay bit i's availability, but when
+bit i appears, Howard does not replay the lower count; the lower bits' optimum at the current discount is already what
+Friedmann's counter would reach after the reset.
