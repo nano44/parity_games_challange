@@ -34,6 +34,7 @@ Playbook: docs/sources/fleet-playbook.md. Literature map (secondary source): doc
 - L-ALG: docs/alg/, experiments/alg/ (algorithm design loop; reads experiments/attr/ and experiments/harness/, does not edit them).
 - L-SI: docs/si/, experiments/si/ (strategy-improvement design loop; reads other experiments/ dirs, does not edit them).
 - L-RED: docs/red/, experiments/red/ (independent adversary against a named candidate; reads other lanes' files, does not edit them).
+- L-NEW: docs/new/, experiments/new/ ((c) design lane under D14: untested approaches, its own included; reads other lanes' files, does not edit them).
 - CHECKER: docs/checker/ (landing gate: exact-commit re-runs and statement diffs).
 - HUMAN-DESK: docs/HUMAN-REVIEW.md (packet for a human expert; owner decides any contact).
 - OWNER-DESK: docs/owner-desk/ (owner Q&A; open owner questions; relays owner words to the Lead verbatim).
@@ -47,4 +48,5 @@ Playbook: docs/sources/fleet-playbook.md. Literature map (secondary source): doc
 ## Traps
 - Oink's OINK_BUILD_TOOLS target (test_solvers) needs Boost >= 1.86; setup_oink.sh turns it off.
 - Count arithmetic on big numbers at its bit cost (TARGET.md section 3). Unit-cost big integers fake polynomial time.
+- Oink `--zlk` @ 8fbf0a7 aborts ("logic error", zlk.cpp:589, exit 255) on counter_m N = 41, 42 (sha1 b9d6a3d2…, 76ef4ebb…; Lead repro 2026-10-18). Do not use zlk as the sole reference there; A_DTL and `--tl` solve N = 41 in 1 iteration, verified.
 - A "counterexample" from an unfaithful implementation is not a counterexample: the referee checks pseudocode against the paper first.

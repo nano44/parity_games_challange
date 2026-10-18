@@ -276,3 +276,38 @@ Survives (GAP-C.md §18r): the plain Lemma K, (MEET) and (PHASE-IN).
     dtl_stealdepth (GAP-A-M §24f). Mechanism: inversion relay F_j = ¬(F_{j−1} ∨ x ≥ j+3) driven by a staggered freeze clock.
     (EXIT_c) for any constant is endangered (exits 3 at D = 3-4).
   - (EXIT-LEAD-DISTINCT) (GAP-A-M §24e): DEAD on the same instances, both orders (repeated leading keys 13/29/50); dtl_exitlead.py.
+- Box 11, L-ALG successor 9 ((FIX-d) scoping, GAP-A-M §26; produced on Opus 5.5):
+  - (STEAL-DEPTH_{f(d)}) and (EXIT_{f(d)}), "re-steal depth / exits per (step, vertex) are bounded by a function of the number
+    of priorities d": FALSE already at d = 3 (stable order datum). Instances experiments/alg/instances/lagflat7_d3_D4.pg
+    (sha1 45de9d933756), lagflat7_d3_D8.pg (60f2df733ffa), lagflat7_d3_D16.pg (67b2d56b32c6): L-RED's lagfam(D) with its
+    priority classes merged to {0, 1, 2} (fixd_lagcollapse.py D flat7), n = 7D + 22; re-steal depth D, max exits D/2 + 1, the
+    same totals as lagfam; winners equal to Zielonka (stable model) and pinned Oink verified (12 / 15 / 23 searches).
+    Obstruction: the relay levels are carried by the index order of equal-priority region tops (dtl.cpp 691 with the caps at
+    74 / 140), not by priorities. Also at d = 4: lagflat5_d4_D8.pg (8919a5ab76f4), depth 8.
+  - Unnamed pattern from the library scan, "contexts with ≤ 2 priorities have D_R = 0 in a phase": FALSE at d = 2,
+    experiments/alg/instances/fixd_d2_n32.pg (sha1 8e8e3fe6624d; pinned Oink verified), root D_R = 5 over 6 visits (Oink order).
+  - The "top level q behaves like a Büchi round" simplification of the FIX-d induction (notes/L-ALG.md fe1b928): does not hold;
+    on lagflat7 all relay tops share the top priority q and the steals happen in later same-priority tops' CurR (dtl.cpp 690, 699).
+  - (b2) "all-distinct priorities" as a class where the relay dies: FALSE. lagdist_D4/D8/D12.pg (sha1 af9b429696a0,
+    215e9ce202dd, 66855da1a880): re-steal depth D in both order data (GAP-A-M §27a).
+  - (CHAIN) "first-difference contexts of a phase form a ⊆-chain" restricted to the class 𝒞^1P (GAP-A-M §27c): FALSE in the
+    class too, both orders: experiments/alg/instances/onep_chainfail_n20.pg (sha1 05bfe58e20d7; class 𝒞_1^dist; pinned Oink
+    6 iterations verified), first-difference context sizes 13, 13, 18, 20 (dtl_rootmono "CHAIN FAILS"). No steal there.
+  - (RANK-MONO) (depth-0 removal positions never rise along a phase; GAP-A-M §27d): FALSE in 𝒞^1P, both orders, on
+    onep_chainfail_n20.pg (05bfe58e20d7) and onep_lagdist_D8.pg (a06a81ce42a7). Obstruction: the −1 result's Dom(prevV)
+    piece (dtl.cpp 770, 958-991) shrinks when the emptying round moves later, which re-cuts the chain below.
+  - (TOP-CHAIN) (same-top tangles of a phase form a ⊆-chain; GAP-A-M §28b): FALSE, onep_chainfail_n20.pg (stable order),
+    top 15 with {0,2,5,6,7,15} and {0,1,3,4,6,9,10,15}; also ctx13_n40, ctx12_oink_n40.
+  - (TIE-BELOW) "a fired tangle has no vertex of its top's priority above the top" (GAP-A-M §28c addendum 3; self-kill): FALSE,
+    experiments/alg/instances/tieabove_n20.pg (sha1 701d309c8b8a; a tie permutation of lalg_dtl_mviol_n20; pinned Oink 6
+    iterations verified), singleton tangle {14} fires in top 8's round-7 region, both at priority 15. (NO-PRE-a) still holds there.
+  - (FIRE-LAMINAR) "distinct tangles firing at one context per phase are nested or disjoint" on 𝒞^1P (GAP-A-M §28g; self-kill):
+    FALSE, experiments/alg/instances/onep_firecross_n76.pg (sha1 59a94ce07e0b; pinned Oink 7 iterations verified); also 67 of
+    2,616 library contexts (two-player).
+  - (TOP-UNIQUE@R) "in one phase, at one best_vertices context, at most one distinct tangle per top fires" on 𝒞^1P (GAP-A-M
+    §30a; self-kill, box 12, L-ALG succ. 10): FALSE, experiments/alg/instances/onep_topuniq_n20.pg (sha1 6cf816c7a5ec; class
+    𝒞_1^dist; pinned Oink 5 iterations verified), nested tangles {4, 10, 16} ⊂ {1, 3, 4, 10, 13, 16}, top 16, both fire at the
+    depth-0 contexts of sizes 20, 18, 17, both order data. The ⊆-chain form (TOP-CHAIN@R) holds on all data (§30b).
+  - (STABLE-MASS), (STABLE-TOPS), (NEG-TOPS) as re-cut-proof potentials for (CTX⁺) on 𝒞^1P (GAP-A-M §30c): FALSE on 20, 22 and
+    3 of 24 consecutive same-phase search pairs of the onep_* instances (first: onep_chainfail_n20.pg (05bfe58e20d7) for the
+    first two, onep_firecross_n76.pg (59a94ce07e0b) for the third).

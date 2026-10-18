@@ -166,6 +166,29 @@ for o in stable oink; do   # depth 4 / k 3 on fam_D4 by L-ALG's dtl_stealdepth.p
   out=$(cd ../alg && RM_EXCL=1 RM_PREF=1 RM_LIGHT=1 RM_DV=0 DTL_ORDER=$o python3 -I dtl_prefexits.py ../red/lag/instances/fam_D4_n50.pg 2>&1 | grep '^max exits' | grep -o '\[(3, 50,')
   [[ "$out" == "[(3, 50," ]] || { echo "fam_D4_n50 exits drifted ($o): expected max exits 3 (R39 §7)"; exit 1; }
 done
+for row in "ctxp/instances/deep1_n13.pg fa65aa1c971b 13 4 1 4" "tcpert/instances/tcL_N4.pg 37146b39a5f9 68 10 2 6" "tcpert/instances/tcL_N6.pg 93e22887e13f 138 16 2 8" "tcpert/instances/tcR4_N5.pg 665e657a7306 100 27 2 15" "tcpert/instances/leanT_N8.pg 5b5ab3eee9e5 64 44 2 10" "tcpert/instances/prod/nest4_n80.pg 31c02e548d82 80 35 1 14"; do   # box 11 R40, box 12 R41
+  set -- $row
+  [[ "$(sha1sum "$1" | cut -c1-12)" == "$2" ]] || { echo "$1 sha1 changed"; exit 1; }
+  out=$(python3 -I dtl/dtl_flipflop.py "$1" --quiet 2>&1 | sed -n 1p)
+  [[ "$out" == "n=$3 tangles=$4 dominions=$5 iterations=$6" ]] || { echo "$1 drifted: $out"; exit 1; }
+done
+for o in stable oink; do   # R40: depth-1 birth on deep1_n13; tcL(6) phase-0 contexts 2 (in-tree experiments/alg = l-alg 11d89e20 copies)
+  out=$(LALG_DIR="$(cd ../.. && pwd)" DTL_ORDER=$o python3 -I ctxp/depthscan.py ctxp/instances/deep1_n13.pg -q)
+  [[ "$out" == *"tangles-born-at-depth>=1 1 deep-bv-res1 1 FIRST-BV-1 0"* ]] || { echo "deep1_n13 depth-1 birth drifted ($o): $out"; exit 1; }
+  out=$(LALG_DIR="$(cd ../.. && pwd)" DTL_ORDER=$o python3 -I ctxp/ctxfit.py tcpert/instances/tcL_N6.pg | grep '^phase 0')
+  [[ "$out" == "phase 0: S 5 |G'| 138 contexts 2: 0/138/C0/bv-thr 0/138/C0/bv-thr 0/124/C1/bv-thr 0/138/C0/bv-thr" ]] || { echo "tcL_N6 contexts drifted ($o): $out"; exit 1; }
+  out=$(LALG_DIR="$(cd ../.. && pwd)" DTL_ORDER=$o python3 -I ctxp/ctxfit.py tcpert/instances/tcR4_N5.pg | tail -1)   # R40 §8: e* at depth 1
+  [[ "$out" == "SUMMARY transitions 12 max-contexts 7 e*-at-depth>=1 3" ]] || { echo "tcR4_N5 depth-1 first differences drifted ($o): $out"; exit 1; }
+  out=$(LALG_DIR="$(cd ../.. && pwd)" DTL_ORDER=$o python3 -I ctxp/ctxfit.py tcpert/instances/leanT_N8.pg | tail -1)   # R40 §9: a new context per transition
+  [[ "$out" == "SUMMARY transitions 7 max-contexts 7 e*-at-depth>=1 0" ]] || { echo "leanT_N8 contexts drifted ($o): $out"; exit 1; }
+  out=$(cd ../alg && DTL_ORDER=$o python3 -I fixd_fdpos.py ../red/tcpert/instances/prod/nest4_n80.pg | grep -o "positions \[[^]]*\]" | head -1)   # R41: tail re-rise
+  [[ "$out" == "positions [6, 6, 15, 15, 14, 9, 0, 3, 6, 9, 6, 3, 0]" ]] || { echo "nest4_n80 positions drifted ($o): $out"; exit 1; }
+done
+if [[ -x ../../tools/oink/build/tc ]]; then   # R40: tcL generator reproduces the pinned files
+  for N in 4 6; do python3 -I tcpert/tcpert.py tcL $N "$t/tcl.pg" && cmp -s "$t/tcl.pg" tcpert/instances/tcL_N$N.pg || { echo "tcpert.py tcL $N no longer generates tcL_N$N.pg"; exit 1; }; done
+  python3 -I tcpert/tcpert.py tcR4 5 "$t/tcr.pg" && cmp -s "$t/tcr.pg" tcpert/instances/tcR4_N5.pg || { echo "tcpert.py tcR4 5 no longer generates tcR4_N5.pg"; exit 1; }
+  python3 -I tcpert/lean.py 8 "$t/lean.pg" leanT > /dev/null && cmp -s "$t/lean.pg" tcpert/instances/leanT_N8.pg || { echo "lean.py 8 leanT no longer generates leanT_N8.pg"; exit 1; }
+else echo "tcL generator check skipped (no tc build)"; fi
 if [[ -x ../../tools/oink/build/oink ]] && command -v g++ > /dev/null; then
   meet/oinkmeet.sh carry/instances/meet_viol_n17.pg | grep -q "^MEET FAILS at search 0" || { echo "meet_viol_n17: pinned Oink no longer shows the (MEET) failure (R30)"; exit 1; }
 else echo "meet_viol_n17 pinned-Oink check skipped (no oink build or no g++)"; fi

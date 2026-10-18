@@ -196,3 +196,51 @@ Nothing running (ps: no dtl_rootmono; predecessor stopped all climbs 01:48Z; its
   claude/l-red` then `git rev-parse HEAD origin/claude/l-red` must agree before any edit (fast-forwarded here).
 - Also guarded: killed climbs leave dtl_rootmono orphans with ppid 1; after every kill run
   `ps -eo pid,ppid,args | awk '$2==1 && /dtl_rootmono/'` and kill those PIDs in a separate call (never pkill -f).
+
+# Handover check: L-RED (successor 8, Opus 5.5 per owner D8; written 2026-10-18 08:58Z by date -u)
+Predecessor: successor 7, parked at l-red 839b76d (box 10 END, R39 lagfam).
+
+## 1. Branch, head, distance to trunk
+- Branch claude/l-red. Container start: local HEAD 5a30e98, origin/claude/l-red 839b76d (stale-branch trap again,
+  1840 commits behind). Fast-forwarded to 839b76d. It was 0 ahead / 90 behind trunk origin/claude/vibrant-johnson-nxvvxo
+  (bb566c3, "LEAD-STATE: 07:03Z sweep"). Merged trunk with merge commit d5c3132 (no conflicts): 1 ahead / 0 behind
+  (`git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`). This check commit makes it 2 ahead.
+- Trunk does NOT yet carry e4cd13f (D13): fetched twice (08:56Z, 08:57Z); `git cat-file -t e4cd13f` fails; no D13 or L34
+  row in docs/DECISIONS-INDEX.md or docs/DECISIONS.md. I fetch again and merge it after GO.
+
+## 2. Open work and the next step of each
+Nothing running (ps: no dtl_rootmono, no oink). Pinned Oink rebuild started (scripts/setup_oink.sh, background). Box 11
+queue (predecessor's SUCCESSOR QUEUE + Lead plan); nothing starts before GO:
+- (1) (CTX⁺) serialized contexts. Next: build a game whose -1 branch recursion has a NONEMPTY subgame (search_rec depth
+  >= 1) and check it with experiments/red/lag/srtrace.py; then a relay copy with its own clock inside a lower depth-0
+  context, root call unchanged; measure first-difference contexts per transition (dtl_rootmono.py + ctxtrace), both orders.
+- (2) Long phase at one context with state-dependent NEW tangles (B_j = {T_j} + t_j per relay configuration). Next:
+  only after (1) has a nonempty -1 subgame piece to reuse; target #fired⁺(R) per phase above degree 3.
+- (3) If (1)/(2) infeasible: a precise necessary condition in R37 / R39 §9 style, for L-ALG.
+- REFEREE-2 faithfulness check of dtl_stealdepth / dtl_prefexits on lagfam: with the Lead; I answer questions from
+  experiments/red/lag/.
+
+## 3. docs/GAPS.md rows I own
+- None. On trunk bb566c3: GAP-A and GAP-C are owned by L-ALG "(L-RED attacks)", blocker, open; G-STR and G-DOM are
+  L-ALG "(L-RED attacks)", closed. Box 11 attacks GAP-A via (CTX⁺) and (LONG-PHASE).
+
+## 4. The three owner rulings that most constrain me (verbatim), with their DECISIONS-INDEX status
+1. D1 (docs/decisions/D001-launch-brief.md lines 25-26 and 96-97; index row D1 "active"):
+   > - A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such
+   >   claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > - Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+   >   my decision.
+2. D7 (docs/DECISIONS.md line 105; index row D7 "active"):
+   > a
+   (Q9 option (a), as recorded on line 106: "Continue at the current rate. We pause automatically if the cap is hit and
+   stop at once on overage.") So at most 2 heavy jobs, and no climb outlives my box.
+3. D8 (docs/DECISIONS.md line 161; index row D8 "active"):
+   > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
+   (Work in this box is labelled Opus 5.5 in notes/L-RED.md.) Not owner rulings, but binding Lead readings: L22/L26
+   (a failure under either order datum refutes a statement about A_DTL) and L32 (GAP-A reassessment criterion).
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap (bit again at this start): stale local branch (local 5a30e98, origin 839b76d). Check: `git fetch origin
+  claude/l-red` then `git rev-parse HEAD origin/claude/l-red` must agree before any edit (fast-forwarded here).
+- Also guarded: killed climbs leave dtl_rootmono orphans with ppid 1; after every kill run
+  `ps -eo pid,ppid,args | awk '$2==1 && /dtl_rootmono/'` and kill those PIDs in a separate call (never pkill -f).
