@@ -24,8 +24,8 @@ docs/new/N1-disc-anneal.md, docs/new/N1-killer-sketch.md, docs/new/S5S6-renum.md
 ## Queue
 0. (Lead 12:14Z, first for the successor) S6 on switchbestexp: extract a numbering RULE from the climbed numberings
    (instances/s6/*.perm; what the climb does to Friedmann's bit/lane structure, labels via pgsolver_port), generate
-   N = 2..8 from the rule alone, run vjfast cunningham. That decides. Alternative: apply lift.py MECHANICALLY (no climbing)
-   from the N = 4 numbering to N = 5..8 and run vjfast (lift-only starts so far 688, 1346, 3886). No Lead re-run before a
+   N = 2..8 from the rule alone, run vjfast cunningham. That decides. Done 12:35Z: lift.py MECHANICALLY (no climbing) from
+   N = 4 to N = 5..8 gives 3886, 4719, 5626, 6602 (polynomial), so a rule must do better than the lift. No Lead re-run before a
    rule-generated family exists.
 1. Record the S6/S5 switchbestexp chain results (N = 4, 5) in docs/new/S5S6-renum.md; decide polynomial vs doubling
    (Cunningham N = 5: polynomial ~3,300, doubling >= 3,800). If doubling persists to N = 6, extract a numbering scheme

@@ -1,7 +1,10 @@
 # L-NEW box 1 report (2026-10-18, 09:09Z-14:10Z by date -u; Opus 5.5 under D8)
 
 ## (i) S5 (Zadeh, index tie-break) and S6 (Cunningham, index order): fast kill test
-Details: docs/new/S5S6-renum.md. Verdict: [filled at the end of the box]
+Details: docs/new/S5S6-renum.md. Verdict: NOT KILLED, not defended. Renumbering hill climbs on 13 bench families (identity
+vs best: at most quadratic growth except switchbestexp). switchbestexp: per-N climbs give Cunningham 395, 939, 2935 (N = 2..4,
+pinned with sha1s) and Zadeh 274, 540, 983, 1363; but the MECHANICALLY lifted numbering (no climbing) gives Cunningham 3886,
+4719, 5626, 6602 at N = 5..8 (polynomial). Successor item: extract a numbering rule from the climbed numberings.
 
 ## (ii) Own approaches
 | id | approach | status |

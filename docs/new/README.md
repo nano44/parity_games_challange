@@ -1,8 +1,8 @@
 # L-NEW: (c) design lane (D14, Lead reading L35). One line per approach.
 | id | approach | status |
 | --- | --- | --- |
-| N0-S5 | Zadeh least-entered rule, index tie-break (L-SI S5), under adversarial renumbering | not killed (fast test, S5S6-renum.md); sweep still running |
-| N0-S6 | Cunningham round-robin, index order (L-SI S6), under adversarial renumbering | not killed (fast test, S5S6-renum.md); sweep still running |
+| N0-S5 | Zadeh least-entered rule, index tie-break (L-SI S5), under adversarial renumbering | NOT KILLED (fast test, 13 families + lifted chains; S5S6-renum.md); not defended |
+| N0-S6 | Cunningham round-robin, index order (L-SI S6), under adversarial renumbering | NOT KILLED (steep per-N climbs on switchbestexp, but the mechanically lifted family is polynomial: 3886..6602 at N = 5..8); not defended |
 | N1 | DISC-ANNEAL = Loff-Skomra IncreasingDiscountPI (2610.22149 Fig. 7.2) on parity-induced rewards (N1-disc-anneal.md, N1-killer-sketch.md) | KNOWN ALGORITHM, new input class; UNDER TEST (not killed; switchallexp quadratic vs plain doubling; needs (PHASE-POLY); no claim) |
 | N2 | PRIO-ANNEAL: top-down priority coarsening, warm-started SI (N2-prio-anneal.md) | proposed |
 | N3 | BLACKWELL-PATH: exact discount homotopy (N3-blackwell-path.md) | proposed |

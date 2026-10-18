@@ -70,3 +70,10 @@ Mechanical lift starts (lift.py of the previous climbed numbering, before climbi
 STATUS: suggestive, NOT a family. The bar (Lead 12:14Z): a numbering produced by an explicit rule or a mechanical lifting
 map N -> N+1, generating N = 2..8, with super-polynomial counts in n. Counts in the thousands at n = 60-135 are compatible
 with n^4.
+
+## Mechanical lift test (12:35Z): the lifted family is POLYNOMIAL; S6 not killed
+lift.py applied mechanically (NO climbing) from sbe_cun_chain_N4.perm to N = 5, 6, 7, 8 (n = 135, 160, 185, 210), counts by
+renum2's runner (= vjfast's loop): 3886, 4719, 5626, 6602 (identity: 291, 363, 435, 507). Differences 833, 907, 976: linear to
+mildly quadratic in N. So the steep growth at N = 2..4 came from per-N climbing; the one mechanically defined family we have
+grows polynomially. VERDICT for box 1 (i): S5 and S6 NOT KILLED; no super-polynomial growth found under renumbering on 13
+bench families plus the lifted switchbestexp family. Rules still not defended (no barrier statement; R7's open problem stands).
