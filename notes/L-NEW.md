@@ -18,7 +18,7 @@ SUCCESSOR 1, box 2 (GO 12:51Z, to ~17:50Z; handover check docs/agents/handover-c
    N = 2..8 from the rule alone, run vjfast cunningham. That decides. Done 12:35Z: lift.py MECHANICALLY (no climbing) from
    N = 4 to N = 5..8 gives 3886, 4719, 5626, 6602 (polynomial), so a rule must do better than the lift. No Lead re-run before a
    rule-generated family exists.
-1. Record the S6/S5 switchbestexp chain results (N = 4, 5) in docs/new/S5S6-renum.md; decide polynomial vs doubling
+1. CLOSED box 2 (answered by the mechanical lift 12:35Z and the rule test 14:20Z: polynomial; chain values at handover kept in S5S6-renum.md). Was: Record the S6/S5 switchbestexp chain results (N = 4, 5) in docs/new/S5S6-renum.md; decide polynomial vs doubling
    (Cunningham N = 5: polynomial ~3,300, doubling >= 3,800). If doubling persists to N = 6, extract a numbering scheme
    (lift.py chain) and pin instances with sha1 before calling a kill.
 2. N1: finish the C++ sweep (tc+, counter_m/rr/rob, gated_switchbestexp, larger N); regenerate plots from summary_c.csv.

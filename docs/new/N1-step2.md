@@ -25,6 +25,18 @@ Oink zlk (pinned 8fbf0a7) aborts with "solving error: logic error (at src/solver
 counter_m N = 41 (sha1 b9d6a3d22f71c9cdb91076b0d8232078aabf65d3) and N = 42 (76ef4ebbc510dcbbc7e19f90aa3736dff2cc8bcd): no winning
 successor found for a vertex when building the strategy. N1's solutions on both pass with tl as reference and verify.py.
 
+## Ceiling from opened sources (argument, unrefereed; L-NEW 15:35Z): N1 is n^O(d)
+- Phase count: rewards r(v) = ±n^pr(v), so Δ(r) ≤ 2n^d. By 2610.22149 Thm 7.9, once 1 − γ < 1/(4n²Δ(r)) the optimal pair is
+  unique and mean-payoff optimal; with base n the sign of the mean-payoff value is the parity winner (1106.0778 §9 / Puri), so the
+  certificate fires at the latest at J ≤ log2(8 n^(d+2)) + 1 = O(d log n) phases.
+- Per phase: N1's phase j is strategy iteration at fixed γ_j = 1 − 2^-j (Even's Howard, Odd best-responding exactly), so by
+  1008.0530 Thm 6.5 it takes at most (m + 1)(1 + log_{1/γ_j}(n²/(1 − γ_j))) = O(m 2^j (j + log n)) Even iterations from ANY start.
+- Sum over j ≤ J: O(m 2^J (J + log n)) = O(m n^(d+2) d log n) Even iterations; Odd's single-switch best response is strongly
+  polynomial per Even iteration (1208.5083 Thm 3.7); exact values (anneal.cpp: X = Q·x, Q = b^n·Π_C(b^|C| − a^|C|), b = 2^j) have O(n·j + d log n) bits, so each iteration costs poly(n, d log n) bit operations.
+- Consequences: N1 is polynomial for every family with d = O(1) priorities, so a killer needs d → ∞; and the long phase must be a
+  LATE phase (2^j ≥ 2^Ω(N) / m). Neither the warm start nor the schedule enters this bound; it is the classical n^O(d) class. Not a
+  claim of anything new; it bounds where a counterexample can live.
+
 ## Verdict per family (filled as the sweeps finish)
 | family | N (n) covered | N1 iterations (even + odd) | local slope in n, iterations / seconds (last sizes) | all rows checked | step-2 verdict |
 | --- | --- | --- | --- | --- | --- |
