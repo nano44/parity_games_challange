@@ -1,0 +1,8 @@
+it 1: |Is|=3 |It|=3 Even: tbar outside A_sigma at [2, 8, 12, 13, 18, 22, 23, 28]; Odd: sbar outside A_tau at [5, 7, 14, 15, 17, 24, 25, 27]
+it 2: |Is|=3 |It|=3 Even: tbar outside A_sigma at [8, 12, 13, 18, 22, 23, 28]; Odd: sbar outside A_tau at [7, 14, 15, 17, 24, 25, 27]
+it 3: |Is|=3 |It|=1 Even: tbar outside A_sigma at [19]; Odd: sbar outside A_tau at [14, 15, 16]
+it 4: |Is|=1 |It|=1 Even: tbar outside A_sigma at [19]; Odd: sbar outside A_tau at [16]
+it 5: |Is|=1 |It|=1 Even: tbar outside A_sigma at [2, 3, 9]; Odd: sbar outside A_tau at [16]
+it 6: |Is|=1 |It|=1 Even: tbar outside A_sigma at [3, 9]; Odd: sbar outside A_tau at [6]
+it 7: |Is|=1 |It|=0 Even: tbar outside A_sigma at []; Odd: sbar outside A_tau at [6]
+TOTAL n5 iterations=7 fallback=0 (= n5.run); condition failures: Even 22, Odd 22

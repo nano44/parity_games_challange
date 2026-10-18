@@ -191,6 +191,10 @@ K4 (sandwich, PROVED §4(c)) V_{σ_k,τ} is non-increasing along the lock and st
 K5 (no length lever) inside an even-cycle gift, Odd's fix is improving whenever the fix route is longer. A gift reached through
    per-edge exits therefore needs exit lengths that decrease strictly along every fix route. That is impossible on the σ-cycles
    of the run (a potential argument; sketch, not a proof).
+K6 (DLM distraction; box 5, docs/new/N5-dlm-box5.md §4). N5 follows an SSI path only if, at every vertex where SSI keeps σ(v)
+   although Iσ(v) ≠ ∅, σ(v) is restricted-optimal against τ (a local stall). On DLM's SSI paths N5's step only ADDS switches, exactly
+   there (342 Even / 399 Odd vertex-events, n = 2..5, never the reverse). Blunders that would supply the local stall change τ̄ and
+   so SSI's own path, and N5 exploits them (module: SSI stays ≈ 2^(n+1), N5 needs 2-15 iterations, the same in both tie-break modes).
 Families that make N5 slow WITHOUT fallbacks:
 - They must defeat the restricted best response against τ.
 - When τ = σ̄ (Odd has no real choices, as in switchallexp: only h0, h1 choose), Even's step is the optimum of the one-player arena
