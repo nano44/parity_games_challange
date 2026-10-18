@@ -3592,8 +3592,8 @@ A_i := the vertices that join some U_r or W_{r,t} at quiet differing pair i.
   hold). Instances: experiments/alg/instances/spp_final_n30.pg (sha1 e57c2cf9; pinned Oink 22 iterations verified) root pair 16
   A = {6, 7, 15}, also |R| = 29 pair 3 and depth 1 |R| = 26 pair 2, both orders; spp_n30.pg (sha1 587697ae; pinned Oink 21
   iterations verified) |R| = 28 pair 6, both orders.
-- DATA: max quiet block length / |R| = 0.953 (spp_chain_up_n43, 41 / 43), both orders. 88 / 88 quiet differing pairs advance
-  exactly one vertex, the rest ≥ 2.
+- DATA: max quiet block length / |R| = 0.953 (spp_chain_up_n43, 41 / 43), both orders. 88 quiet differing pairs (each order) advance
+  exactly one vertex; 239 (stable) / 252 (Oink) advance ≥ 2.
 - Status: the polynomial QUIET-BLOCK bound stands (reading); a linear form has no surviving candidate. Not pursued further.
 
 24. Box 10, continued (L-ALG successor 8; produced on Opus 5.5)
