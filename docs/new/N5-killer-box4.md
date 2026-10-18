@@ -74,12 +74,27 @@ Anatomy of the n = 12 lock (trace_lock_n12.txt, iterations 7-14):
   against τ, so Even's step is empty.
 - Even does 7 single switch-all steps (a chain 10, 11, 8, 3, 2, 0) until Iσ = ∅.
 - The lock length = the length of Even's switch-all run from the lock state: a chain, so linear.
-(c) Sandwich (data, not proved): during every lock step, Ξσ_{k+1} ⊴ V_{σ_{k+1},τ} ⊴ V_{σ_k,τ} pointwise.
-    - On the 10 instances in instances/n5lock and instances/n5adv: 0 violations (sandwich_instances.txt).
-    - On 3,000 random games (89 lock steps): 0 violations (sandwich_random.txt).
-    - So a lock of length L needs a strictly rising chain Ξσ_0 ◁ .. ◁ Ξσ_L that stays below the falling V_{σ_k,τ} ⊴ V_{σ_0,τ}. The value
-      Even gets against the frozen τ at the lock's start bounds the whole switch-all run inside the lock.
-
+(c) SANDWICH (PROVED; also checked by computer). In every lock step k → k+1 with τ frozen:
+    Ξσ_{k+1} ⊴ V_{σ_{k+1},τ} ⊴ V_{σ_k,τ} pointwise.
+    Proof: at a fallback, σ_k' = σ_k, i.e. σ_k is the optimum of Even's one-player arena H_{σ_k} against τ. VJ optimality is
+    pointwise maximal over all strategies of that arena (VJ00 §5, Lemma 5.8, "maximum element"). The fallback σ_{k+1} uses only
+    edges of A_{σ_k}, so it is a strategy of H_{σ_k}, and V_{σ_{k+1},τ} ⊴ V_{σ_k,τ}. The left inequality holds because σ̄ minimises
+    every vertex at once. ∎
+    Data: 0 violations on the 10 instances in instances/n5lock and instances/n5adv (sandwich_instances.txt), and on 3,000 random
+    games, 89 lock steps (sandwich_random.txt).
+    Consequence: over a lock of length L, Ξσ_0 ◁ Ξσ_1 ◁ .. ◁ Ξσ_L ⊴ V_{σ_L,τ} ⊴ .. ⊴ V_{σ_0,τ}. Odd's frozen blunder must give Even,
+    from the lock's start, at least everything Even will reach in the lock: V_{σ_0,τ} ⊵ Ξσ_L pointwise.
+(d) What the stalls use (n5_stallclass.py, n5/box4/stallclass.txt): at Even-stall iterations, improving edges are lemma-covered
+    (C) 119 times, cycle-closing (X) 18, own cycle node (N) 2, summed over the 10 instances. Locks found so far use the lemma's
+    mechanism, not its exemptions.
+(e) Killer attempt 5: a structured lock search (lockgadget.py). A gadget of K vertices is attached to switchallexp(N) only through
+    N-independent label templates (global labels; bit 0 / top bit), so the same genome builds every N. Climbs, every improved best
+    checked by zielonka.py + verify.py:
+    - K = 6, fitness on N = 2, 3: lock 11 at N = 2 and 3 (instances/lockgadget/gadget_K6_seed61.json). Transferred to N = 4..8:
+      lock 0, 0 fallbacks, iterations 11, 13, 15, 17, 19 (all OK). It overfits small N.
+    - K = 10 (N = 2, 3): lock 2.
+    - K = 6 and K = 8 with fitness on N = 3 and 4 JOINTLY (min of the two locks): lock 2.
+    No gadget found whose lock grows with N.
 ## 5. Killer attempt 4: stall gadget with Friedmann's switchallexp behind it (designed; NOT killed)
 Design (dummygift.py):
 - Every edge (x, y) of an Even vertex with ≥ 2 successors becomes x → D → {y, g}.
@@ -101,12 +116,14 @@ K1 (lemma §2) both players off their best replies, each on the other's improvin
    than σ̄ on the play from every σ(v) with a non-cycle-closing improving edge. If Iτ ≠ ∅, also σ is worse than τ̄ on every τ(u)'s play.
 K2 (frozen Odd) the lock state's τ must survive, unchanged, the whole switch-all run: it must not be improvable against τ̄
    (Iτ fixed), and no fix in the fixed Iτ may help against any σ_k of the run.
-K3 (dynamic preference) against the frozen τ, the preference between a vertex's candidates must DEPEND ON σ downstream.
+K3 (dynamic preference) against the frozen τ (the lemma's exemptions, cycle-closing edges and own cycle nodes, are the only
+   other door; §4(d) shows the found locks do not use them), the preference between a vertex's candidates must DEPEND ON σ downstream.
    - The τ-plays from candidate successors must cross Even vertices whose σ-choices change during the run.
    - Otherwise (every candidate enters the gift structure directly) preferences are static. Then any vertex flipped both ways by
      switch-all breaks the lock (§5).
    - In words: the lock must "read the counter".
-K4 (sandwich, data) V_{σ_k,τ} is non-increasing along the lock and stays above the rising Ξσ_k.
+K4 (sandwich, PROVED §4(c)) V_{σ_k,τ} is non-increasing along the lock and stays above the rising Ξσ_k. The blunder's value
+   at the lock start must dominate the whole lock's progress.
 K5 (no length lever) inside an even-cycle gift, Odd's fix is improving whenever the fix route is longer. A gift reached through
    per-edge exits therefore needs exit lengths that decrease strictly along every fix route. That is impossible on the σ-cycles
    of the run (a potential argument; sketch, not a proof).
@@ -122,5 +139,5 @@ Families that make N5 slow WITHOUT fallbacks:
 ## 7. Not done in this box (named)
 - DLM-distraction module (caveat 1) as a construction: the time went to the lock analysis, and K1-K3 are the conditions such a
   module must meet.
-- A proof of K4 and of the termination repair (§3).
+- A proof of the termination repair (§3).
 - Locks of larger n by a structured search.

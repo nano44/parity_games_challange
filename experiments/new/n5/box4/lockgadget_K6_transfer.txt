@@ -1,0 +1,7 @@
+2 41 144666daf0fc lock 11 fallbacks 11 iterations 15 OK
+3 55 db3f6500e43a lock 11 fallbacks 11 iterations 17 OK
+4 69 6ba073c14589 lock 0 fallbacks 0 iterations 11 OK
+5 83 ba994fe3146f lock 0 fallbacks 0 iterations 13 OK
+6 97 6ff6fdec0dcf lock 0 fallbacks 0 iterations 15 OK
+7 111 2a39886ae17d lock 0 fallbacks 0 iterations 17 OK
+8 125 384e5279c92d lock 0 fallbacks 0 iterations 19 OK

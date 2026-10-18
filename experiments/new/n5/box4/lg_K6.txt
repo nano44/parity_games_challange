@@ -1,0 +1,21 @@
+start (0, 0, 0)
+step 68 lock N3 1 N2 1 fallbacks N3 1 (N2 it 4, N3 it 6) check OK
+step 365 lock N3 2 N2 2 fallbacks N3 3 (N2 it 14, N3 it 12) check OK
+step 375 lock N3 2 N2 2 fallbacks N3 4 (N2 it 14, N3 it 13) check OK
+step 459 lock N3 3 N2 2 fallbacks N3 3 (N2 it 13, N3 it 13) check OK
+step 481 lock N3 3 N2 3 fallbacks N3 3 (N2 it 11, N3 it 11) check OK
+step 1095 lock N3 4 N2 4 fallbacks N3 4 (N2 it 9, N3 it 9) check OK
+step 2162 lock N3 5 N2 5 fallbacks N3 5 (N2 it 13, N3 it 15) check OK
+step 2199 lock N3 6 N2 5 fallbacks N3 6 (N2 it 14, N3 it 16) check OK
+step 2563 lock N3 6 N2 6 fallbacks N3 6 (N2 it 14, N3 it 14) check OK
+step 2646 lock N3 7 N2 6 fallbacks N3 7 (N2 it 13, N3 it 14) check OK
+step 2709 lock N3 8 N2 7 fallbacks N3 8 (N2 it 13, N3 it 16) check OK
+step 2772 lock N3 8 N2 8 fallbacks N3 8 (N2 it 12, N3 it 13) check OK
+step 2800 lock N3 8 N2 8 fallbacks N3 9 (N2 it 14, N3 it 15) check OK
+step 2811 lock N3 9 N2 9 fallbacks N3 9 (N2 it 13, N3 it 14) check OK
+step 3060 lock N3 10 N2 8 fallbacks N3 10 (N2 it 15, N3 it 19) check OK
+step 3103 lock N3 10 N2 9 fallbacks N3 10 (N2 it 16, N3 it 19) check OK
+step 3515 lock N3 10 N2 9 fallbacks N3 11 (N2 it 19, N3 it 22) check OK
+step 3593 lock N3 11 N2 10 fallbacks N3 11 (N2 it 17, N3 it 20) check OK
+step 3737 lock N3 11 N2 11 fallbacks N3 11 (N2 it 15, N3 it 17) check OK
+best (11, 11, 11)
