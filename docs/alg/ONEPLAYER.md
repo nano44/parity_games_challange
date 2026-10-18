@@ -60,6 +60,38 @@ Corollary (on signed results, given STR-DET (R8)):
 - CTRL bounds C's searches by n + 1.
 - Hence GAP-A on 𝒞^1P ⇐ (CTX⁺) on 𝒞^1P.
 
+## Lemma OUTCOME-MONO-1P (GAP-A-M §28e)
+Lemma OUTCOME-MONO-1P (PROVED, reading, unrefereed; L-ALG succ. 9, 11:54Z by date -u). In 𝒞_C^dist, fix a phase of q and a
+best_vertices context R, and let i, i+1 be consecutive visits of R (T_i ⊆ T_{i+1}; the call reads only (R, q, T), R9 (a)). Let
+V_r(i) be V at the start of round r, with the last round repeated after a stable stop (716 or 765) and V_r = ∅ after an
+emptying stop (768-771). Then:
+(1) V_r(i) ⊆ V_r(i+1) for every round r.
+(2) If visit i is stable with V*_i, then visit i+1 is stable with V*_i ⊆ V*_{i+1}.
+(3) If visit i returns −1 with emptying round e_i, then visit i+1 is stable, or it returns −1 with e_{i+1} ≥ e_i, and
+    prevV_i ⊆ prevV_{i+1} when e_{i+1} = e_i.
+Proof. (1) by induction on r; V_1 is all q-parity vertices of R at both visits.
+- Step: assume V_r(i) ⊆ V_r(i+1).
+  - The region steps. By NOSTEAL-1P, no tangle fired in a round-r region step at visit i is met-but-not-contained by the
+    visit-(i+1) prefix. That is (NS*) at round r; the repeated round is a genuine round computation with input V*_i, and the
+    NOSTEAL-1P proof does not depend on the round index. So PREFIX-MONO-X* (R11 (b), signed) gives P_r^i(τ) ⊆ P_r^{i+1}(τ) for
+    every τ, hence U_r(i) ⊆ U_r(i+1).
+  - The candidate test (705-716). attracts() is monotone in Z (41-57): for a q-owned vertex an edge into Z suffices; for the
+    other owner, all R-edges in Z with one present. So a candidate at visit i+1 that lies in V_r(i) is a candidate at i.
+  - The threshold loop (721-741). Each stage t is tattr from the current Z with cap t and Gx = R. By DTL-proof Lemma 1.2 its
+    output is the least superset of Z closed under rules (V) and (T), whose premises are monotone in Z; with 1.2b it is
+    monotone in T. By induction on t, Z_t(i) ⊆ Z_t(i+1). A candidate u is cleared at stage t < pr(u) when attracts(u, Z_t)
+    holds (735-738), which is monotone. So a vertex of V_r(i) that is cleared at i is cleared at i+1.
+  - Hence the distractions D_r(i+1) ∩ V_r(i) ⊆ D_r(i), and V_{r+1}(i) = V_r(i) \ D_r(i) ⊆ V_r(i+1) \ D_r(i+1) = V_{r+1}(i+1).
+(2) V*_i ≠ ∅ and V_r(i+1) ⊇ V*_i for every r ≥ the stop round, so visit i+1 never empties V. It stops stable (V shrinks
+    strictly in every non-stable round), and V*_{i+1} ⊇ V*_i by (1).
+(3) If visit i+1 empties at a round e < e_i, then V_e(i) ⊆ V_e(i+1) = ∅, a contradiction. If e_{i+1} = e_i, then
+    prevV_i = V_{e−1}(i) ⊆ V_{e−1}(i+1) = prevV_{i+1}. □
+Consequence. On 𝒞^1P, every best_vertices context's outcome moves in one direction along a phase: (−1, e, prevV) rises in the
+order "e larger, or e equal and prevV ⊆", then possibly → stable, and then V* only grows. That is at most |R|·(|R| + 1) + |R| + 1
+outcome changes per context. The §28d data show the same in general games (0 reversals on the library), where this proof does
+not apply. The reset mechanism (§27d) lives inside this monotone order: a later emptying round can SHRINK prevV, and with it
+the Dom(prevV) piece. So OUTCOME-MONO bounds the outcome changes per context, but not the fresh contexts the re-cuts create.
+
 ## Scope and caveats
 - Not a bound by itself: (CTX⁺) on 𝒞^1P stays open. CTRL alone makes the controller's phases trivial.
 - Without "dist": step 1 fails, since a later top of the same priority can be in t. Data on 32 one-player lagfam conversions,
