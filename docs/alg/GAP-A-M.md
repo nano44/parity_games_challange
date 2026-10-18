@@ -3875,3 +3875,32 @@ PROOF PLAN for (TC-6) (each step to cite dtl.cpp lines and R4-R14):
 - P6. Order data: show that the traced sets do not depend on the order datum, or restrict (TC-6) to the order data checked.
 Status: SCHEMA is DATA. No step of P1-P6 is written yet. Estimated length: P2 and P5 are the work, about 4N piece descriptions
 per search in schematic form. Recommended for a fresh successor (this session is at ≈ 500k context).
+
+25c. (TC-6) step P1: compressed priorities and winning regions of tc(N) (PROVED, reading, unrefereed; L-ALG succ. 8,
+09:19Z by date -u; checked on the generated files by the commands of this box)
+Lemma P1a (priorities). After game.sort() and game.renumber() (game.cpp 618-637: walk the vertices in priority order; on a
+parity change go +1, on a new value of the same parity go +2), tc(N) has:
+- 0: Odd-bit connectors S/A/B and Odd Z;
+- 1: Even-bit connectors, Even Z, Odd T;
+- 2: Even T;
+- Even gate L_i^E = 3 + 2(N−1−i), Odd gate L_i^O = 4 + 2(N−1−i);
+- Even H_i^E = 2N + 4 + 2(N−1−i), Odd H_i^O = 2N + 5 + 2(N−1−i).
+So 4N + 3 distinct values; 2N + 3 is skipped, because Odd L_0 (even) is followed by Even H_{N−1} (even).
+Proof: tc.cpp's raw priorities are 0 (Odd connectors and Z), 1 (Even connectors and Z, Odd T), 2 (Even T), then gates
+toppo_i − 2N − 3 / − 2N − 2 and highs toppo_i − 2 / − 1, with toppo_i = N² + 9N − 2i (even). They interleave
+Even L_{N−1} < Odd L_{N−1} < Even L_{N−2} < ... < Odd L_0 < Even H_{N−1} < Odd H_{N−1} < ... < Odd H_0; apply the renumber rule.
+Matches every vertex of the generated files at N = 3, 4, 10 (check printed "priority formula matches: True").
+Lemma P1b (winning regions). W_E(tc(N)) = E′ := (Even-bit vertices \ Even-bit B_j) ∪ Odd-bit B_j, and W_O = the complement O′.
+Proof (Even side; Odd is symmetric with the roles swapped and priorities one lower).
+- Even's positional strategy on E′: H_i → L_{(i−1) mod N}^E; S_j → A_j; Z_i → T_i; an Odd-bit B_j (Even-owned) → the Even gate
+  L_j^E.
+- E′ is an Odd trap: T_i^E → {H_i, first connector} ⊆ E′; L_i^E → T_i^E; A_j^E → {next connector or Z_i, L_j^E} ⊆ E′.
+- Every play consistent with the strategy is won by Even. Gates are entered only from A_j^E with j < i, where i is the bit of
+  the lane being run, and from H_{j+1}.
+  - If H's are seen finitely often, the bit index strictly decreases at each gate visit, so gates are seen finitely often.
+    The play ends in one lane cycle, whose maximum is T^E with priority 2, even.
+  - If H's are seen infinitely often, the maximum seen infinitely often is an Even H (even), which beats every gate and T.
+- Odd wins O′ symmetrically: the Odd-owned Even-bit B_j → the Odd gate L_j^O.
+- Hence E′ ⊆ W_E and O′ ⊆ W_O, and since they partition V, equality holds. □
+Checked against pinned Oink's solutions at N = 3, 4, 10, 12: "W_E = Even-* minus Even-B plus Odd-B: YES".
+Consequence for P2-P5: (TC-6)'s two dominions are exactly E′ and O′ (dominion 14 / 15 in the N = 3 trace).
