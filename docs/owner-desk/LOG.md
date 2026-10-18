@@ -239,3 +239,5 @@ FAITHFUL WITH CAVEATS (mirrored roles; literal orientation killed the same way).
 N5 "SSI-GLOBAL" (variant of symmetric strategy improvement, Deng-Li-Mo arXiv 2309.02223; global best responses) passed gauntlet step 2
 on data (l-new 8925171, docs/new/N5-ssi-global.md): 13 families, 12,000 random, DLM's own exponential families, N1/N2 killers;
 <= ~linear iterations; Lead re-ran 40 rows. NOT a claim. Next: attack, step 3 (L-LIT), second implementation.
+
+## Correction (Lead, 2026-10-18 20:47Z): the N5 step-2 report above was sent at 20:40Z (its "20:47Z" header was an estimate).
