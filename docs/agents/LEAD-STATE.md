@@ -584,3 +584,5 @@
 - 05:07Z (date -u) WATCHDOG 05:03Z: roster rows for L-ALG succ. 8 / L-RED succ. 7 led with 'created'; status column now leads with PARKED.
 - 06:03Z (date -u) SWEEP (trigger 06:02Z): overage false (Lead $317, 83k after compaction, allowed_warning); CHECKER parked (725k, over 600k: successor before the next landing); OWNER-DESK blocked awaiting the owner's L32 a/b/c choice; no other exceptions; roster CHECKER row refreshed; owner line not due (L32 report 04:00Z).
 - 07:03Z (date -u) SWEEP (trigger 07:03Z): overage false (Lead $317, allowed_warning); no session working; OWNER-DESK still blocked awaiting the owner's L32 a/b/c choice (no update since 04:05Z); no exceptions; owner line not due.
+- 08:03Z (date -u) SWEEP (trigger 08:03Z): overage false (Lead $317); nothing running; OWNER-DESK blocked on Q14; no exceptions (not committed at the time).
+- 08:55Z (date -u) OWNER-DESK relayed the owner's Q14 answer (owner-desk f29eef5), verbatim: "Keep working on the dtl and also c". Recorded as D13, Lead reading L34. Actions: Q15 (c) directions to OWNER-DESK; L-ALG succ. 8 resumed (box 11); L-RED succ. 8 to be created (succ. 7 parked at ~510k).

@@ -224,3 +224,20 @@ Lead reading L33: until the Fable reset (2026-10-21 21:00Z), REFEREE and REFEREE
 independent referees, REFEREE-2 reads docs/referee/ only after its own report, gaps listed. Every signature given on Opus
 carries the label "(Opus 5.5, D12)" in its report and in RESULTS; after the reset the Lead may ask a Fable referee to re-read
 any such entry. First packet: docs/alg/STEP5.md (Step 5 of GAP-C: NT-f, FM, WM, (YZ) <= (ACYC), P-KT), pinned at a trunk SHA.
+
+## D13 (2026-10-18 ~08:53Z, owner via OWNER-DESK owner-desk f29eef5, answering Q14, the L32 reassessment)
+> Keep working on the dtl and also c
+
+Lead reading L34 (2026-10-18 08:55Z by date -u):
+(1) DTL: both sides continue at the D7 rate. The proof lane (L-ALG) works on (LONG-PHASE)/(CTX⁺) toward the L32 progress
+    criterion (one named statement with a proof route, or a proved polynomial bound on a nontrivial subclass). The adversarial
+    lane (L-RED) works on a long phase at one context and on serialized contexts. Option (a), the write-up, was not chosen; the
+    refereed record stays in RESULTS as it is.
+(2) (c): a new candidate or approach runs alongside DTL. The owner named no direction, and D1 says "Spawn no attack lane before I
+    approve it." So the Lead puts 2-4 concrete directions to the owner through OWNER-DESK (Q15) and starts no (c) lane until the
+    owner picks one.
+(3) L32 stays in force: its (1) report-at-once conditions are unchanged; the next reassessment is at the Fable reset,
+    2026-10-21 21:00Z.
+(4) D1 cap: at most 5 working sessions: L-ALG, L-RED, the (c) lane once approved, and at most two of REFEREE, REFEREE-2 and
+    CHECKER at a time.
+
