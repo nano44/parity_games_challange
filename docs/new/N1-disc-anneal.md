@@ -1,0 +1,180 @@
+# N1 DISC-ANNEAL: discount annealing with warm-started strategy iteration (L-NEW, 2026-10-18; written before code)
+
+Status: IMPLEMENTED (experiments/new/anneal.py), UNDER TEST. Not killed on the data below; no claim. Treated as wrong until it passes the
+gauntlet (D1). No running-time claim is made here.
+
+## Exact pseudocode
+Input: parity game G = (V, V_E, V_O, E, pr), n = |V|.
+1. Rewards r(v) = n^pr(v) if pr(v) is even, -n^pr(v) if pr(v) is odd (Jurdziński's weights; Θ(d log n) bits each).
+2. sigma := the best-reward start of L-SI's engine (each Even vertex to its successor of best reward; index ties).
+3. For j = 1, 2, 3, ...:
+   gamma_j := 1 - 2^-j (exact rational).
+   Discounted game D_j: payoff of a play v0 v1 ... = sum_t gamma_j^t r(v_t); Even maximises, Odd minimises.
+   Inner loop (Howard / switch-all strategy iteration for Even on D_j, warm-started at sigma):
+     a. tau := Odd's optimal counter-strategy to sigma in D_j (one-player deterministic discounted game; solved
+        exactly by Odd's own switch-all policy iteration started from Odd's previous tau, exact lasso evaluation).
+     b. x := values of (sigma, tau) (exact rationals: lasso sums).
+     c. for every Even vertex v: best := argmax_{w in E(v)} x(w) (ties: keep sigma(v), then smallest index).
+        If x(best) > x(sigma(v)), set sigma(v) := best. (r(v) is common to all edges of v, so gamma*x(w) decides.)
+     d. If no vertex switched: sigma is optimal in D_j; leave the inner loop.
+   Stop test (a certificate, independent of any threshold theorem): win(v) := Even iff x(v) > 0; if sigma restricted to
+   Even's region and tau restricted to Odd's region pass the strategy check of experiments/harness/verify.py (closure, and
+   no cycle won by the opponent in each one-player restriction), STOP.
+   (First version used "sigma has no Vöge-Jurdziński improving switch"; dropped 09:3xZ: a correct sigma need not be
+   VJ-optimal, and on tc 4 the discounted optimum stabilised at j = 102 without ever being VJ-optimal.)
+4. Output: the certified regions and both positional strategies; additionally compared with Zielonka in every test.
+No priority merging: rewards use the input priorities. (anneal.py's default merges consecutive equal-parity priorities;
+that variant is N1m and is NOT the candidate, see "Confound" below. All N1 data use --nocompress.)
+Correctness of the output rests only on the certificate of step 3. Termination: for gamma >= gamma* (a threshold
+depending on n and the rewards) the discounted optimum is parity-optimal [source needed: Puri / Zwick-Paterson, not yet
+opened; used only for termination, and the stop test makes the output correct regardless].
+
+## NOVELTY CORRECTION (10:40Z, sources opened, notes/L-NEW.md): N1 is a known algorithm
+N1 is, up to the stop test and the split of the inner loop, IncreasingDiscountPI of Loff-Skomra (ICALP 2024, LIPIcs 147:1-147:16
+[LS24], NOT opened; restated in Loff-Skomra arXiv 2610.22149 v1, §7.4, Figure 7.2, OPENED): "γ ← (1 + γ)/2; (σ, τ) ←
+DiscountedPI(σ, τ, γ); until (σ, τ) are optimal in the mean payoff game", with DiscountedPI = Howard's all-switches rule.
+Their Theorem 7.14: O(m² + m² n⁴ Δ(r)² log³(n Δ⁺(r))) switches (Howard), where Δ(r) is their condition number; with
+Theorem 7.9 (for 1 − γ < 1/(4n²Δ(r)) the optimal pair is the unique discounted optimum). Their use is SMOOTHED analysis:
+perturbed rewards have Δ = poly(n, 1/ρ) w.h.p. (Thm 1.2). Parity-induced rewards ±n^pr are the opposite of perturbed: Δ(r)
+is not polynomial for them (L-NEW reading: the slack between policies can be n^0 while ‖r‖ = n^d), so Theorem 7.14 gives an
+exponential bound there and no published bound is polynomial on parity games. §9 open problem 1 of 2610.22149 asks whether
+STANDARD rules are smoothed-polynomial; nothing there on worst-case parity games.
+What is still not in the opened literature (best effort): (a) any run of IncreasingDiscountPI on parity-induced games or on
+Friedmann's families; (b) the observation that the schedule defeats switchallexp/switchbestexp, whose ablation at the final γ
+reproduces Friedmann's counts. So N1 is a KNOWN ALGORITHM on a NEW input class; any result would be a statement about
+LS24's algorithm, not a new algorithm. L-LIT to check [LS24] itself and any worst-case analysis.
+
+## Why it is new against RANKING.md and the dead ends (written before the novelty search; see the correction above)
+- The fleet's SI lane (S1-S7, docs/si/) used Vöge-Jurdziński valuations, i.e. the gamma -> 1 limit, from fixed starts.
+  S4 used a subgame optimum as start (DE8). No lane solved a sequence of discounted games with growing discount and warm
+  starts. RANKING row 4 lists SI/LP/LCP; discount annealing as a schedule is not in it.
+- DE8 (S4) showed that a start which is optimal for a DIFFERENT game (subgame) restarts Friedmann's counter at zero.
+  N1's warm start is optimal for the same arena with a slightly shorter horizon; whether that also resets the counter is
+  exactly what the first experiment tests.
+
+## Barrier statement draft (honest)
+- B1/B2/B3 (separators, universal graphs, black-box nested fixpoints): outside; values are discounted rationals, not
+  automaton states or fixpoint queries. Says nothing about running time.
+- B8 (classical SI, named rules): INSIDE in part. Each inner loop is switch-all (Howard) on a discounted game. HMZ
+  1008.0530 Thm 6.5 bounds it by (m+1)(1 + log_{1/gamma}(n^2/(1-gamma))) = O(m 2^j j) at gamma_j: polynomial for each
+  fixed j, exponential at the last j ~ d log n. Friedmann's families defeat switch-all for discount near 1 from his start
+  (HMZ §7: "exponential for non-discounted 2TBSG, or when the discount factor is part of the input"). N1 is outside B8
+  only through its start (the previous phase's optimum); the adversary still owns the game. This is the weak point.
+- B9 (index-based single switch): outside (multi-switch, valuation-based). B10: deterministic. B11: not symmetric.
+- B12: all-switches path prediction is PSPACE-complete; N1 uses all-switches inner loops, so its run is not predictable
+  either; this is no iteration bound.
+- B13 (Lemke / Cottle-Dantzig): FJS 0909.5653's Lemke is a homotopy in the covering parameter z at fixed discount
+  (p.5: "how much further z can be decreased before σi ceases to be optimal"); N1 moves the discount itself. Outside as
+  stated; no transfer argument either way.
+- B14-B17: not applicable (no abstract cube; not an IPM; no automaton; complexity-class rows say nothing).
+- Bit cost: gamma_j has j bits; lasso values have O(n j + d log n) bit numerators/denominators. Polynomial per step.
+
+## Bit cost, phases and the hypothesis N1 needs (Lead 10:00Z items 1-2)
+- Phases. Friedmann 1106.0778 §9 (opened): rewards (−|V|)^Ω and β_G = 1 − 1/(4|V|·max|r(v)|) make discounted SI behave like
+  parity SI on 1-sink games (Thm 9.5, Lemma 9.6), and Zwick-Paterson (via 2610.22149 Prop. 7.11 = [ZP96, Thm 5.2]:
+  ‖λ(γ) − λ‖∞ ≤ 2n(1 − γ)‖r‖∞, normalised values) gives correctness of signs once 1 − γ < 1/(c n² n^d). Hence the last phase
+  is at most J = log2(4 n² n^d) + O(1) = (d + 2) log2 n + O(1). Observed (certificate stop, no merging): switchallexp N = 2..6,
+  d = max priority = 44, 60, 76, 92, 108: J = 221, 332, 449, 571, 697 vs (d + 2) log2 n = 236, 348, 466, 589, 716: the
+  certificate fires just before the threshold j.
+- Bits. γ_j = (2^j − 1)/2^j has j bits. A strategy pair's values are lasso sums: the integer-scaled values of anneal.py have
+  Q = b^n · Π_C (b^|C| − a^|C|) with a, b ≤ 2^j, so O(n j + d log n) bits; at j = J = O(d log n) that is O(n d log n) bits. One
+  evaluation is O(n) big-number operations of that size; one Even switch-all step is O(m) comparisons. Polynomial per step.
+- Odd's best response (inner solver). Default now (10:40Z): the highest-gain (Dantzig) single-switch simplex rule, for which
+  Post-Ye arXiv 1208.5083 v2 Thm 3.7 (opened) proves O(n³ m² log² n) iterations on deterministic MDPs with a uniform discount,
+  REGARDLESS of the discount: polynomial at bit cost with the bit sizes above. (The first version used Odd's Howard rule,
+  for which no polynomial bound on deterministic MDPs is known to L-NEW; it is kept as --odd-howard. Even's iteration
+  counts are identical under both on every instance compared: switchallexp 4, tc 5, counter_symsi 4, fhz_padded 4.)
+- Even's phases. HMZ 1008.0530 Thm 6.5 bounds phase j by (m+1)(1 + log_{1/γ}(n²/(1−γ))) = O(m 2^j j), i.e. n^Θ(d) at j ≈ J.
+  So N1 is polynomial IF AND ONLY IF the warm start keeps every phase short. Precise hypothesis:
+  (PHASE-POLY) there is a polynomial q such that for every parity game G and every j ≥ 1, Howard's rule on the discounted game
+  with γ_j, started from the optimal pair at γ_{j−1}, makes at most q(n) switches.
+  Together with J = O(d log n) phases, Post-Ye for Odd, and the bit sizes above, (PHASE-POLY) would give a polynomial bound.
+  (PHASE-POLY) is a DATA hypothesis; nothing proves it, and LS24's analysis needs a small condition number instead.
+
+## Cheapest family expected to kill it
+Friedmann's switchallexp (experiments/hard-families/pgsolver_port.py; switch-all from best-reward takes 10, 30, 70, ...
+at N = 1..). If the last phases replay the counter, inner iterations double per N. Second: switchbestexp; then
+randomfacetsubexp, M_L, gated_* (L-SI's bench), tc/counter_* (Oink).
+
+## Data (2026-10-18, unrefereed, single implementation; regions = Zielonka and strategies verified on every row)
+switchallexp (Friedmann's switch-all family; PGSolver port), Even switch-all iterations:
+| N | n | plain VJ switch-all (vjfast) | N1 total | N1 largest phase | ablation: discounted switch-all straight at N1's final gamma |
+| --- | --- | --- | --- | --- | --- |
+| 2 | 35 | 30 | 25 | 9 | 30 |
+| 3 | 49 | 70 | 42 | 11 | 70 |
+| 4 | 63 | 150 | 64 | 13 | 150 |
+| 5 | 77 | 310 | 90 | 15 | 310 |
+| 6 | 91 | 630 | 120 | 17 | 630 |
+The ablation reproduces Friedmann's counts exactly, as his transfer theorem predicts (1106.0778 §9, Thm 9.5 + Lemma 9.6,
+1-sink games, rewards (-|V|)^Ω, discount close to 1). So the gain on this family comes from the annealing schedule, not from
+the discounted objective. Full bench sweep: experiments/new/out/anneal/summary.csv (run_anneal.sh), recorded when done.
+
+## Confound found and removed (09:45Z)
+Merging consecutive equal-parity priorities (N1m) ALONE makes plain VJ switch-all polynomial on switchallexp: 10, 7, 9, 11, 13
+iterations for N = 2..6 (vjfast on compress.py output) vs 30..630 on the input. Merging creates equal priorities, which the
+engine ranks by index, so the counter's order breaks. An adversary blocks merging with isolated dummy vertices of the missing
+parities, so merging is no defence and N1 is tested without it.
+
+## Delay transform (candidate killer, experiments/new/delay.py) — did not kill (N1m data, N = 1..3)
+Each Even choice edge subdivided by a chain of L Odd single-successor vertices (priority 0 on the start edge, 1 otherwise,
+originals shifted by +2). Uniform L = 8, and L = 1 + 24·pr(w)/max or 1 + 24·(max - pr(w))/max: plain switch-all unchanged
+(10, 30, 70); N1m 15/21/30, 15/24/34, 14/26/33, largest phase 2N+3 in every variant. Reading: N1 reveals a decision when
+gamma^t · n^Δp outweighs the closer rewards, i.e. at horizon about t / (Δp ln n); uniform or monotone delays keep the
+ORDER of reveals, so they do not force the counter into one phase. A killer must equalise reveal times (delay ∝ Δp per
+decision), which needs chains of length ~ horizon · Δp · ln n per edge: polynomial, but beyond the exact Python engine.
+
+## Further killer attempts (10:00-10:20Z, --nocompress), none killed
+- Priority spreading p -> K p (experiments/new/spread.py), K = 3, 9, switchallexp N = 2..5: N1 counts identical to K = 1
+  (25, 42, 64, 90); only the number of phases scales by K. The run depends on the order of reveals, not their horizon.
+- Bit-indexed delays (bitdelay.py; chain c(i+1) or c(N-i) on edges of bit i's Even vertices, c = 2): plain VJ 15, 35, 75;
+  N1 26, 44, 69 and 25, 43, 64 (N = 2..4); c = 8, N = 2: 26.
+- Per-edge delay hill climb (delay_search.py, delays 0..12, switchallexp N = 2): best 49 Even iterations after 155 steps
+  (base 25; plain VJ 30 on the undelayed game). Running; N = 3 next. A higher count at fixed N is not a family.
+
+## Gauntlet step 2 progress (11:10Z; C++ port anneal_c, = anneal.py on 1,000 random games, xcheck_c.py seed 21)
+- Random games: 10,000 harness/gen.py corpus games (seed 1, n = 1..60, m <= 2200): AGREE 10000/10000 with Zielonka, all
+  strategies verified (rand_c.py; out/rand_1.csv: max 15 Even switches, max phase 8, max 95 Odd switches). Larger sizes:
+  2,000 games n = 60..400 (seed 2) running.
+- switchallexp N = 1..12 (n = 21..175): plain VJ Howard 10 ... 39654 (doubling); N1 13, 25, 42, 64, 90, 120, 154, 192, 234, 280,
+  330, 384 (second differences 4: ~2.6 N²); largest phase 2N + 5; ablation = plain (N <= 11; N = 12 capped at 300 s).
+- fhz_padded N = 7..11 (n = 414..892): plain 21..33; N1 36, 49, 42, 56, 55; largest phase N + 2 (the first phase).
+- Remaining families: docs/new/plots/n1_*.png from the Python sweep (summary_py.csv, N <= 8 or timeouts); the C++ sweep
+  (summary_c.csv, N up to 14) is running.
+
+## Second confound check: the stop rule (11:30Z)
+N1 stops at a REGION certificate; plain VJ Howard runs to the optimal strategy. A fair baseline stops VJ Howard at the
+first iteration whose VJ regions and strategies pass the same certificate (experiments/new/vjcert.cpp = verbatim vjfast
+copy + --certstop). It still doubles: switchallexp N = 2..9: 14, 34, 74, 154, 314, 634, 1247, 2490; switchbestexp N = 2..9:
+30, 70, 150, 310, 630, 1270, 2550, 5110 (solutions = Zielonka, strategies verified on the instances checked). So N1's
+advantage on these families is not the stop rule. (fhz_padded is certified at iteration 0: Odd wins there from the start.)
+
+## Weak evidence warning: Friedmann's families are trivial from Odd's side (11:40Z)
+Odd wins EVERY vertex of switchallexp, switchbestexp and gated_switchallexp (Zielonka; e.g. switchallexp 4: 0 of 63 Even-won).
+On the dual game (owners swapped, priorities +1; experiments/new/dual.py) plain VJ Howard needs 2, 3, 4, 5, 6, 7 iterations
+for switchallexp and switchbestexp N = 2..7 (gated_switchallexp: 7, 9, ..., 17; zadehexp 3..13; randomfacetsubexp 2..7;
+tc 4..15; counter_symsi 3..19). So "run Howard for both players and stop at the first certificate" already beats these
+families, and N1's quadratic counts there are WEAK evidence. A meaningful test family for N1 must be hard for Howard from
+BOTH sides (e.g. the symmetric-SI families of B11, or a two-sided composition of Friedmann's games). Not yet built.
+More data (C++): switchbestexp N = 1..8: plain 21 ... 5101 (doubling), N1 26, 49, 87, 138, 204, 280, 368, 469 (second
+differences 10-15), largest phase 6N + 6; gated_switchallexp N = 2..5: plain 17, 24, 26, 36, N1 51, 90, 134, 188 (largest phase
+14, 22, 24, 32; Odd's Dantzig inner switches 296, 711, 1278, 2153).
+- tc (Two Counters; Even wins half the vertices) N = 8..12 (n = 232..492), C++: plain VJ 25, 26, 30, 28, 31; certificate-stopped
+  VJ 14, 16, 17, 17, 25; N1 120, 156, 189, 232, 268 Even switches (~linear in n), largest phase 8-10, Odd Dantzig switches
+  672, 947, 1429, 1799, 2581 (~n^1.9). Regions = Zielonka, strategies verified.
+- Random games: 2,000 more with n = 60..400 (seed 2): AGREE 2000/2000 (12,000 random games in total).
+
+## Worst-case literature check (Lead 10:45Z item 1; done 11:50Z)
+N1 = "LS24 IncreasingDiscountPI on parity-induced rewards" (credit: Loff-Skomra). Opened: arXiv 2402.03975 v1 [LS24]
+(Thm 1.10, Thm 6.6, Figure 12) and arXiv 2610.22149 v1 (Figure 7.2, Thm 7.14, §9). Neither gives a worst-case lower bound for
+IncreasingDiscountPI or for discount-homotopy policy iteration. Barrier-statement anchor, verbatim from both (2402.03975 p. 5;
+2610.22149 §1.2): "for mean-payoff games, or for discount factors γ exponentially close to 1, no upper-bound is known on the
+number of iterations, significantly better than the number of policies". Near miss: 2402.03975 Example 3.5 (§3.2), a game
+whose value has 2^Ω(n) break points as one PAYOFF varies; relevant to N3's homotopy idea (in γ, not in a payoff), not to N1.
+No kill by citation.
+
+## J, bits and switches (Lead 10:45Z question)
+J is the number of discount phases: the run ends at γ_J = 1 − 2^−J, so γ_J has J bits (697 phases at switchallexp N = 6 means
+~700-bit discounts; values then have O(nJ + d log n) bits). Switches are counted separately: "N1 total" = Even's Howard
+switches summed over all phases; "largest phase" = the most Even switches in one phase; Odd's Dantzig switches are a third
+count. All tables use Odd = Dantzig except where marked (Python sweep summary_py.csv mixes Howard/Dantzig in its odd column;
+the C++ sweep summary_c.csv is Dantzig throughout). (PHASE-POLY) is a DATA hypothesis in every table.
