@@ -1,0 +1,5 @@
+rnd ['3000', '6', '7', '2'] {'games': 6000, 'switch': 769193, 'strict': 749731, 'flat': 19462, 'A_fail': 0, 'B_fail': 0, 'phi_fail': 0}
+
+real	0m7.287s
+user	0m7.198s
+sys	0m0.000s
