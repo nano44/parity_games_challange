@@ -107,3 +107,17 @@ re-cut tail. fixd_enable: no enabling tangle fires at R_j in any transition.
   a −1 piece for a stable one must come back to the same −1 piece with the same emptying round and the same |R_j|, |V_j|. The
   climbs never produced a transition with zero new keys (margin 0). Whether re-entries into a −1 class always differ in |R_j|,
   |V_j| or the round was NOT measured separately.
+- RE-ENTRIES (experiments/red/ctxp/reentry.py, b12_pot functions unmodified; DATA 19:10Z by date -u; both orders identical):
+  a re-entry is a transition where a vertex moves back into a rank class (stable / −1 / 0) it held earlier in the phase.
+  Exact returns to an earlier key: nest4_n80 31, ctx13_n40 3, vrV_viol_n40 3 (so single vertices do return, as (NO-RETURN)'s
+  failure says). Non-returning re-entries and the key components that differ from the nearest earlier key of the same class
+  (r = rank, j = position, R = |R_j|, V = |V_j|):
+  nest4_n80: jRV 109, jR 49, rjRV 6, rR 5, rjR 2, RV 2, rRV 1, rV 1, r 1 (R involved in 174 of 176);
+  ctx13_n40: jRV 20, RV 15, R 15, j 10, jR 7, rjRV 3, rjR 2, jV 2 (R involved in 62 of 74);
+  vrV_viol_n40: jRV 19, RV 15, R 11, jR 11, j 8, rjRV 3, rjR 3, r 2, rj 1, jV 1 (R in 62 of 74);
+  tcR4_N6: jRV 66, rjR 2, rj 1, rR 1, RV 1, R 1 (R in 71 of 72); margin1_n20: jRV 7, RV 5, rR 5, jV 3, rjR 3, jR 1 (R in 21 of 24);
+  margin1_mc1: RV 12, R 12, rjR 1 (all R). lagfam fam_D8 and margin1_mc5: no re-entries at all.
+- READING: the component that most often blocks an exact return is the context size |R_j|. A (VR-NEW_all) kill needs the
+  changed pieces to re-enter at the same position with the same |R_j| and |V_j| and the same emptying round, i.e. the low part
+  of the depth-0 chain must be cut back to exactly an earlier set of sizes. That is a counter reset in the strict sense; none of
+  the instances or climbs produced it for a whole changed piece.
