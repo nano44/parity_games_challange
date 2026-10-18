@@ -1,4 +1,4 @@
-# Draft RESULTS R14 (Lead, 2026-10-18 01:16Z by date -u) (rev. 01:24Z: REFEREE §C abc5185) — NOT LANDED; awaiting L-ALG imports, CHECKER gate
+# Draft RESULTS R14 (Lead, 2026-10-18 01:16Z by date -u) (rev. 01:24Z: REFEREE §C abc5185; rev. 01:28Z: L-ALG imports §23v) — NOT LANDED; awaiting CHECKER gate
 
 ### R14 [refereed-only] Packet 11 on A_DTL: Lemma CHANGE-NEW, F_R ≤ 3·#fired⁺(R) unconditionally, and GAP-A ⇔ (CTX⁺) ∧ (FIRED⁺-R) (2026-10-18) — partial step-4 reformulation (not M3, not a step-4 pass)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Packet pinned at
@@ -28,7 +28,8 @@
   (N11-a1, G11-a1); (b) SIGN; (c) CONFIRMED (equivalence); (d) CONFIRMED. REFEREE-2 docs/referee-2/R2-P11.md (referee-2
   aeedd00; comparison §5 bb8a625): (a) SIGN (N11-a1); (b) SIGN (N11-b1); (c) CONFIRMED (equivalence); (d) own probe, 0
   failures. Independent (each read the other's P11 report only after pushing its own). No REJECT; full agreement after comparison.
-- Gaps (union). G-R14-1..3 closed in the reports, to be imported by L-ALG; G-R14-4..5 OPEN; G-R14-6 dependencies:
+- Gaps (union). G-R14-1..3 closed in the reports and imported by L-ALG (GAP-A-M §23v, l-alg 510cb18, which marks N11-b1
+  as one signature, written before REFEREE §C confirmed it; §23s not rewritten); G-R14-4..5 OPEN; G-R14-6 dependencies:
   G-R14-1 STR-DET is not needed for the determinism step: best_vertices reads str only at 73, to guard a str write (REFEREE
           N11-a1 = REFEREE-2 N11-a1). STR-DET remains a hypothesis of the GAP-A conditional through R9.
   G-R14-2 The threshold step follows from DTL-proof Lemma 1.2 directly (all of Z pushed at 724, Gx = R), not from "the §22r
