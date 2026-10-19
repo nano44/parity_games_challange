@@ -148,3 +148,10 @@ Weak points for the referees:
 - §3 (a) identifies BV's final-round regions with sptl's pass-1 regions line by line (692/699 against 482/490).
 - (4) uses "every piece except the last is nonempty". A −1 piece contains prevV or the seeds; a stable piece contains V*; the
   last call returns 0.
+
+## 6. Addendum, 02:02Z (date -u): mechanical check of DOM-MONO (DATA; appended after the push of b9d75800, §1-§5 unchanged)
+experiments/red/xctx/dommono.py wraps the model's dom(). It is the only definition in b12_pot.CH's class chain (DTL), and the
+wrapper re-states its loop line for line. The tool records each Dom call's input (R, V, X) and X after every top step, then compares
+all pairs of calls with the same input within a phase: the later call must have X_i ⊇ X_i of the earlier one for every step i.
+- Pinned class instances plus 150 climb instances, both orders: 12,043 same-input pairs per order, 0 violations.
+- 100,000 random class games (n 4-14, seed 7), both orders: 1,434 pairs per order, 0 violations.
