@@ -1,4 +1,4 @@
-# R2-C1P: second-referee check of the 𝒞^1P chain (CTRL, NOSTEAL-1P, OUTCOME-MONO-1P, SAME-CTX, LEX, R46 NEST*-BOUND). REFEREE-2, 2026-10-19 01:40Z (date -u)
+# R2-C1P: second-referee check of the 𝒞^1P chain (CTRL, NOSTEAL-1P, OUTCOME-MONO-1P, SAME-CTX, LEX, R46 NEST*-BOUND). REFEREE-2, 2026-10-19 01:29Z (date -u, at push)
 Signature: (Opus 5.5, D12). Packet P-C1P (Lead 01:14Z).
 A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7.
 Objects at trunk 01d63d7:
