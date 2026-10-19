@@ -319,3 +319,16 @@ Does anything change my verdict? No. Corrections to my A1:
 - A1-N2 is accepted.
 Joint position on A1: R47 Theorem CK is signed by both referees with closed gaps. Hence GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED), one named
 statement, on the chain CTRL → NOSTEAL-1P → OUTCOME-MONO-1P → SAME-CTX → LEX (chain-changing) → K-constraint → L-NEST* → CK.
+
+### Correction note (02:47Z by date -u, on reading the Lead's R16 draft at trunk f0a36c1)
+- My count for R46 §1 (section (5) above) is wrong in its arithmetic, though the bound it was meant to check is true. I wrote
+  "outcomes ≤ (n + 1)(n + 1) + (n + 1) + 1, times ≤ n + 2 piece sizes", and that product, ((n + 1)² + n + 2)(n + 2), EXCEEDS
+  (n + 2)²(n + 1). So my count did not establish the displayed bound.
+- The correct count, with |R| ≤ n and every V and piece nonempty, is REFEREE-2's (R2-C1P §6):
+  - ≤ n emptying rounds × ≤ n prevV sizes, plus ≤ n V* sizes, plus the result-0 outcome;
+  - times ≤ n piece sizes;
+  - so the longest chain is ≤ (n² + n + 1)·n ≤ (n + 2)²(n + 1).
+  The verdict on R46 §1 (SIGN) is unchanged.
+- The same count shows that the post-pin R46 §1 value (n + 3)(n + 1)² is also valid: ≤ n + 3 ranks × ≤ n V sizes × ≤ n piece
+  sizes ≤ (n + 3)(n + 1)². Its text's "grows ≤ n + 1 times" is loose but harmless. Neither K value is a referee issue for the
+  theorem.
