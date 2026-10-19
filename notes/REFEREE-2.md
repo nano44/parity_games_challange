@@ -2,6 +2,7 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
+2026-10-19 01:45Z P-C1P (GAP-A-M §27b/§28e/§33b/§35b, R46 §1/§2b/§3 @ 01d63d7): docs/referee-2/R2-C1P.md. SIGN: CTRL, NOSTEAL-1P, §27b corollary, OUTCOME-MONO-1P, R46 §1, §2b. SIGN WITH GAPS: SAME-CTX (G-SC-1 rho=rank incl. e; G-SC-2 cite R9(b)), LEX + R46 §3 (G-LEX-1 = G-R46-1 MAJOR: need (CHAIN-CHANGE); S-1 = |P| + Z). Probe: R2-C1P/r2log.patch (depth-0 log + R2_REV), c1pcheck.py, nestbf.py. Next: §C after Lead says REFEREE's R-C1P pushed. Handover at ~600k.
 2026-10-19 00:45Z R2-N5K9 §7 (§C) vs REFEREE R-N5K9 160db1d: agree; accepted (3b) (P_strict suffices, factor 2n(n-1)+1), withdrew "flat steps included" from "exactly as needed". Parked.
 2026-10-19 00:40Z P-N5K9 (docs/new/N5-K9-reading.md @ e73b214): docs/referee-2/R2-N5K9.md, SIGNED conditional on (P_K9) with gaps G-K9-1 (premise any-subset/any-start, unsourced; VJ00 7.4 at most switch-all = T22), G-K9-2 (optimal-reply code cond.), G-K9-3 (constants). Switch-all premise insufficient. DATA: one-player chains single 183 @ n=10 (verified), switch-all <= 10. Next: §C after Lead says REFEREE's report pushed.
 2026-10-18 23:05Z (successor 2, session_01GkEUShwH75XDth7fwempSj, Opus 5.5, D12). Handover check 7f4ae9a (Lead: 5/5).

@@ -1,0 +1,14 @@
+onep_chainfail_n20.pg n=20 C=1 {'phases': 1, 'trans': 4, 'pairs': 10, 'maxS': 5, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 1, 'maxK': 2}
+onep_fdkey_n20.pg n=20 C=1 {'phases': 1, 'trans': 5, 'pairs': 15, 'maxS': 6, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 2, 'maxK': 2}
+onep_firecross_n76.pg n=76 C=0 {'phases': 3, 'trans': 3, 'pairs': 6, 'maxS': 4, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 1, 'maxK': 1}
+onep_lagdist_D8.pg n=78 C=1 {'phases': 1, 'trans': 14, 'pairs': 105, 'maxS': 15, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 1, 'maxK': 13}
+onep_nest_n68.pg n=68 C=1 {'phases': 1, 'trans': 2, 'pairs': 3, 'maxS': 3, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 1, 'maxK': 1}
+onep_topuniq_n20.pg n=20 C=1 {'phases': 1, 'trans': 3, 'pairs': 6, 'maxS': 4, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 1, 'maxK': 2}
+onep_vr_n12.pg n=12 C=1 {'phases': 1, 'trans': 2, 'pairs': 3, 'maxS': 3, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 1, 'maxK': 2}
+onep_vrj_n40.pg n=40 C=0 {'phases': 1, 'trans': 6, 'pairs': 21, 'maxS': 7, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 1, 'maxK': 2}
+vrall_viol_n20.pg n=20 C=1 {'phases': 1, 'trans': 3, 'pairs': 6, 'maxS': 4, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 1, 'maxK': 1}
+xcov11_n20.pg n=20 C=1 {'phases': 1, 'trans': 6, 'pairs': 21, 'maxS': 7, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 1, 'maxK': 2}
+xctx_viol_n20.pg n=20 C=1 {'phases': 1, 'trans': 4, 'pairs': 10, 'maxS': 5, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 1, 'maxK': 2}
+nest3_n20.pg n=20 C=1 {'phases': 1, 'trans': 10, 'pairs': 55, 'maxS': 11, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 3, 'maxK': 3}
+nest3_n24.pg n=24 C=1 {'phases': 1, 'trans': 17, 'pairs': 153, 'maxS': 18, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 3, 'maxK': 4}
+nest4_n80.pg NOT in C^1P: None
