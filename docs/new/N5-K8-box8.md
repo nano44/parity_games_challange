@@ -57,6 +57,11 @@ Conjecture SB1: switch-best on a one-player game (⊖ out-degree 1, cycles allow
 - Typical failing run: n = 15, 2 steps, settled 10 → 10 → 15. The first step prepares a cycle and the second closes it.
 - So a proof of SB1 needs an amortised argument, e.g. charge each cycle-preparing step to the cycle it closes. Not done.
 
+- A weaker invariant SB2 is also FALSE (p_strict/sb_settle2.py, sb_settle2.txt). SB2 says: every step settles a vertex OR strictly
+  raises some vertex's cycle node in reward order; it would give ≤ n + n(n−1) steps. Yet 82 of 1,616 runs have a step that only
+  improves path sets or lengths.
+  Instance: instances/sb1p/sb2_fail.pg (n = 14; start in sb2_fail.pg.start; the failing step is the first).
+
 ## 3c. Lemma T (tree propagation; L-NEW reading, unrefereed): what is left of SB1 is the cycle tops
 Setting:
 - H is one-player (⊖ out-degree 1), VJ00 Ω, injective priorities.
