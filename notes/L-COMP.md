@@ -4,8 +4,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 ## Resume point
 2026-10-18 23:52Z. N5 second implementation DONE for this box (experiments/n5-second/README.md "Results"). SPEC mode = L-NEW's
 counts on all 526 rows run of 17 families; orig mode differs only on counter_rob/tc (tie-break A5); 0 wrong regions/strategies, 0
-repeated states; 2,000 own random games correct in both modes. tc spec run at N = 26 may still be running at handover (out/tc_spec.log).
-Next: whatever the Lead routes; idle otherwise.
+repeated states; 2,000 own random games correct in both modes. tc spec run stopped at park (N = 26 not compared in spec mode;
+orig mode N = 26: strategies verified, noref). Lead 23:58Z: merged (b49c9fc), step-2 second implementation for N5 complete;
+L-NEW successor runs n5.py on my 2,000 random files. PARKED (context ~520k). A successor starts from this notebook.
 
 ## Queue (for the successor, after the running cells)
 0. sat-hard state (from the 2026-10-14 resume point): CEGAR-only s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT; CNFs lost
