@@ -300,3 +300,22 @@ All uses match what the results state.
 - LEX's strict all-pairs form stays as written in (4) (L-1 as a statement about LEX), but nothing depends on it.
 Honest scope: the class is 𝒞^1P (one-player for the non-searching side, distinct q-priorities). The open statement is
 (NEST*-BOUNDED). This is a step-4 search-count reduction on a subclass, not a step-4 pass, and not an M4 claim.
+
+### §C-A1. Comparison with REFEREE-2's A1 (R2-C1P.md §A1, referee-2 8e7a02c + 22e5d2d, read 02:27Z by date -u, AFTER my A1 was pushed at 640ffae)
+Same overall verdict: R47 SIGNED with closed gaps, and GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED) alone. Both labelled (Opus 5.5, D12).
+| item | mine | REFEREE-2 | comparison |
+|---|---|---|---|
+| EMPTY-REC | SIGN | SIGN (A1-N1: name the trigger fact, tin = escape targets, 443) | agree. My (b) uses the same fact (tin / tout = C-edges, 329-338). A1-N1 is a wording note for R47 |
+| §2 (i) | SIGN | SIGN | agree |
+| DOM-MONO | SIGN (A1-3: distinctness not needed) | SIGN WITH GAPS (A1-G1, the same point) | agree. A1-3 = A1-G1 |
+| SPTL-SANDWICH | SIGN WITH GAPS (A1-1: 716 or 765) | SIGN WITH GAPS (A1-G2: T-monotonicity on a consumed subgame is R10 (a) EXACT with R9 (b), not 1.2b; also notes 765) | ACCEPT A1-G2. It is the same point as their G-SC-2, which I already accepted in §C, and I repeated the loose citation in A1 ("R9 (b) / 1.2b"). Correction: the citation for f_k's T-monotonicity is R10 (a) with R9 (b). In my "used for" table the 1.2b row reads "R10 (a) / R9 (b): T-monotonicity of a fixed-seed capped tattr on a consumed subgame (§3)" |
+| Theorem CK (1) | once per phase; CHECK_UNIQUE line 23 (A1-2) | A1-N2: in fact once per PLAYER BLOCK, since a false search ends the non-interleaved block (1106-1120); also cites line 23 | agree. A1-N2 is correct and only strengthens the "+1": at most one chain-keeping transition of type (1) per player in the whole run |
+| Theorem CK (2) | A1-5: the dominion attractor (1032-1037) excluded via STR-DET | the same exclusion: that attractor runs only if a dominion was found, and the 942-946 opponent pass is a function of Z | agree. They also note the opponent pass, which I covered implicitly (it is not a tattr of the search's T: no attractTangles at 947) |
+| K in §5 | A1-4: "R47's K = (n+3)(n+1)² is smaller than R46's (n+2)²(n+1) and unproved" | A1-N3: both polynomial, immaterial | I WITHDRAW the "unproved" half of A1-4. R2's own count (R2-C1P §6: K ≤ (n² + n)·n) is a proved bound, and (n+3)(n+1)² ≥ n²(n+1) for n ≥ 1, so R47's constant is a valid K. My (n+2)²(n+1) was a looser count. What remains is wording: R47 should cite which count gives its K. The conclusion was never affected |
+| DATA | dagchk for EMPTY-REC (188 calls, both orders) | their own patched C++ log: I = 0 on 15 q-phases; DOM-MONO 163 pairs, 0 violations, but ALL 163 step vectors IDENTICAL | agree with their vacuity caveat: the DOM-MONO data tests nothing, and neither did mine (I ran no DOM-MONO data). The DOM-MONO and SPTL-SANDWICH verdicts rest on the proofs alone |
+Does anything change my verdict? No. Corrections to my A1:
+- the T-monotonicity citation is R10 (a) / R9 (b) (A1-G2 accepted);
+- A1-4 is withdrawn as a gap and kept as a wording note;
+- A1-N2 is accepted.
+Joint position on A1: R47 Theorem CK is signed by both referees with closed gaps. Hence GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED), one named
+statement, on the chain CTRL → NOSTEAL-1P → OUTCOME-MONO-1P → SAME-CTX → LEX (chain-changing) → K-constraint → L-NEST* → CK.
