@@ -161,3 +161,24 @@ phases only, and they do not test (CHAIN-CHANGE) beyond §33a's count.
   all-pairs form and for R46's S − 1 = |P|. DATA: 0 / 1,094 (§33a).
 - N-1, O-1, O-2, S-1, S-2, S-3, R-1: wording or citation; closed here.
 - Named statement left open by R46 (unchanged): (NEST*-BOUNDED).
+
+## §C. Comparison with REFEREE-2 (R2-C1P.md, trunk / referee-2 b666c4a, read 01:39Z by date -u, AFTER my report was pushed at 3061415)
+Same verdicts in substance, item by item. Both are labelled (Opus 5.5, D12), and both re-read dtl.cpp @ 8fbf0a7 independently.
+| item | R-C1P (me) | R2-C1P | comparison |
+|---|---|---|---|
+| CTRL | SIGN | SIGN | agree (same lines: 215/663, 329-338, 347-378, 1023-1038, 1068; their DATA 7,500 random class games) |
+| NOSTEAL-1P | SIGN (N-1 wording) | SIGN | agree. R2 makes explicit that P(τ⁺) excludes τ (R10's definition), which my step 1 uses implicitly |
+| §27b Corollary | not itemised | SIGN (arithmetic on R9 (c), R11 (c)) | agree on reading: N*_R = 0 ⇒ F_R ≤ 3·0 ⇒ R9 (c). Not a separate signature of mine |
+| OUTCOME-MONO-1P | SIGN WITH GAPS (O-1 e-convention, O-2 T ⊆ T′; closed) | SIGN (N-OM1: the break at 737 relies on decreasing index = decreasing priority) | agree. N-OM1 is the same point as my threshold-loop paragraph. O-1 (e = the first round with V_e = ∅) is mine only; R2 does not flag it, and it is wording |
+| SAME-CTX | SIGN WITH GAPS (S-1 ρ undefined, S-2 W guard, S-3 G′ fixed; closed) | SIGN WITH GAPS (G-SC-1 = my S-1; G-SC-2 citation) | ACCEPT G-SC-2. The Dom step consumes R while it runs (880-889) and is a sequence of capped attractors with skipped tops, so the T-monotonicity is RESULTS R9 (b) (signed), not DTL-proof 1.2b as I cited (1.2b is stated for consume = None). I correct my (iii): cite R9 (b). R2's skipped-top remark (a top absorbed earlier is covered by that attractor) is correct. My S-2 = R2's "including the tangles sptl added inside the call at s′" |
+| LEX | SIGN WITH GAPS (L-1 OPEN = (CHAIN-CHANGE)) | SIGN WITH GAPS (G-LEX-1 major, same) | agree. L-1 = G-LEX-1; "LEX-weak" = my proved form. R2 adds the length case: result 0 ⇔ R has no q-parity vertex (661-668), so a first difference never falls at a chain end. Correct; I had not stated it |
+| R46 §1 | SIGN, K ≤ (n+2)²(n+1) | SIGN, K ≤ (n² + n)·n | agree. R2's count uses |R| ≤ n and is tighter; both are ≤ R46's constant |
+| R46 §2b | SIGN (R-1: F as a sup) | SIGN; unrolled bound (2(d+1)m²K)^d; independent brute force (nestbf.py) | agree; R2's tighter constant is correct. Their brute force covers more cells than my neststar run (which timed out at m = 4) |
+| R46 §3 | SIGN WITH GAPS (R-2 OPEN: S − 1 = |P| + I) | SIGN WITH GAPS (G-R46-1: S − 1 = |P| + Z) | agree; I = Z. Route for the second conjunct: I pointed to GAP-A-M §36c (R9 (a) with F_R = 0), R2 to L-RED R44 (EMPTY-REC budget). These are the same idea, which the coming R47 addendum is to write out. Neither is signed |
+| EMPTY-REC | listed in R46 but unused in §1-§3 | not discussed | no conflict |
+| DATA | b12 tools, both orders, onep_* forced set | own patched logger, effectively one order (Oink); 0 identical-chain transitions on ~250 transitions | complementary; no violation anywhere |
+Does anything change my verdict? No. Correction to my text: SAME-CTX (iii)'s T-monotonicity citation is R9 (b) (accepted from
+R2's G-SC-2). Joint position: CTRL, NOSTEAL-1P, OUTCOME-MONO-1P, SAME-CTX, R46 §1 and §2b SIGNED by both referees with closed
+gaps. LEX and R46 §3 are SIGNED WITH ONE OPEN GAP (L-1 = G-LEX-1, R-2 = G-R46-1): (CHAIN-CHANGE), or a polynomial bound on the
+chain-keeping transitions per q-phase. Obstruction statement as both referees read it: GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED) ∧ (I
+polynomial per q-phase).
