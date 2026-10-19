@@ -201,3 +201,114 @@ proof step I signed. L-1 / R-2 are my G-LEX-1 / G-R46-1.
 Joint position: CTRL, NOSTEAL-1P, OUTCOME-MONO-1P, SAME-CTX, R46 §1 and §2b have two signatures (gaps closed). LEX (strict form)
 and R46 §3 (S − 1 = |P|) have two signatures WITH the open gap (CHAIN-CHANGE) / (chain-keeping transitions polynomial per phase),
 now routed to L-RED R47. Open named statements on 𝒞^1P: (NEST*-BOUNDED) and that gap.
+
+## A1. Addendum: L-RED R47 (Theorem CK, chain-keeping transitions). REFEREE-2, 2026-10-19 02:08Z (date -u, writing start)
+Signature: (Opus 5.5, D12).
+- Object: docs/red/R47-chainkeep.md at trunk da63c40 (L-RED b9d7580), against pinned dtl.cpp @ 8fbf0a7.
+- I did not read docs/referee/ on R47 before pushing this section.
+- Signed inputs it uses: R5 (h) FDL, R8 STR-DET, R7 (d), R9 (a)-(b), R11 (c), and P-C1P's NOSTEAL-1P (two signatures).
+
+### Verdicts (Opus 5.5, D12)
+| item | verdict |
+| --- | --- |
+| §1 Lemma EMPTY-REC | SIGN (note A1-N1) |
+| §2 (i) e* is not the −1 threshold attractor at a chain-keeping transition | SIGN |
+| §2 (ii) Lemma DOM-MONO and its budget n·\|V\| | SIGN WITH GAPS: A1-G1 (an unneeded hypothesis; closed) |
+| §3 Lemma SPTL-SANDWICH | SIGN WITH GAPS: A1-G2 (citation for T-monotonicity under consumption; closed) |
+| §4 Theorem CK, I ≤ (n+1)(\|P\|+1)(H+1+n²) + 1 | SIGN (note A1-N2 on the "+1" case) |
+| §5 consequence | SIGN. It closes my G-R46-1: GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED) alone. A1-N3: R47 quotes K = (n+3)(n+1)², R46 (n+2)²(n+1). Both are polynomial; immaterial |
+
+### §1 EMPTY-REC (dtl.cpp 896-955): SIGN
+- (a) Seeds. The scan at 899-911 runs in increasing index, which is priority order (O1). t is raised only while Q is empty, and the
+  scan breaks at the first higher priority once Q is nonempty (902-904). So all seeds have priority exactly t. ✓
+- (b) Every vertex of Z has a path inside Z to a seed.
+  - attractVertices(q, u, R, Z, R, t) adds predecessors of the popped u. A q-vertex (owner = pl) is added because its unique
+    edge goes to u. A C-vertex is added only with an edge to u. ✓
+  - attractTangles is triggered only through tin[u], the tangles that have u as an escape target (443: tin is filled from
+    tangleto). tangleto holds the targets of non-pl (C) edges of the tangle (329-338).
+  - So an attracted tangle has a C-vertex with an edge to u ∈ Z. Every vertex of the tangle reaches that C-vertex inside the
+    tangle: q-vertices by their stored strategy (their unique edge), C-vertices by internal edges. ✓
+- (c) 935-940 move all priority-t vertices of Z (the seeds among them) to X and push them. 942-946 run
+  attractVertices(1 − q, u, Z, X, Z, t), with Z[u] = false at each pop.
+  - A C-vertex predecessor (owner = 1 − q = pl here) is added at once.
+  - A q-vertex predecessor (opponent) has its only successor u already removed from G = Z, so it has no escape.
+  - The cap t is no restriction (Z ⊆ priority ≤ t, from cap t at 916-921 and seeds of priority t).
+  - By (b) the backward closure is all of Z, so Z = ∅ at 954. search_rec(∅) gets best_vertices → 0 (668) and returns at 854. ✓
+- A1-N1 (wording). (b) should name the trigger fact (tin = escape targets, line 443) explicitly. The proof uses it.
+
+### §2 (i): SIGN
+- At a chain-keeping transition, suppose e* = the threshold attractor (916-921) at position j. FDL gives the same input (seeds,
+  R_j, t, X) and a strictly larger output Z.
+- All of Z leaves R_j in this iteration: R[u] = false at 920. The priority-t vertices and the 1−q-attracted vertices go to X;
+  X |= Z at 951; nothing returns to R.
+- So piece_j = Z grows, and the chain changes. Contradiction. ✓
+
+### §2 (ii) DOM-MONO: SIGN WITH GAPS (A1-G1)
+I re-derived the induction on the join order under T, across steps.
+- Vertex rule: v ∈ R_j joined at step i under T. Every R-successor of a C-vertex v (the unique successor of a q-vertex) is in
+  X_i(T), and none is in X_0 = G′ \ R_j. By induction, all of them are in X′_i \ X_0, so they joined under T′ during the call by
+  step i, and were popped (every joiner is pushed: the top, 88-90, 170-172).
+  - At the LAST of those pops (step k ≤ i, cap c_k ≥ c_i ≥ pr(v)), attractVertices examines v. It is not yet in X′ (or we are
+    done), still in the current R, and has no R-successor outside X′. So v joins. ✓
+- Tangle rule: the same argument on t's escapes inside R_j. There is at least one, because the trigger under T was a popped
+  escape, which lies in R_j. t's other vertices are in X′ or in the current R, the cap holds, and t ∈ T ⊆ T′ is not deleted
+  (G′ is fixed). ✓
+- Tops: τ_i ∈ X′_{i−1}, or it is processed at step i under T′ (skip test `V[top] and !X[top]`). ✓
+- The budget: a fixed Dom input (R, V) also fixes X_0 = G′ \ R (depth 0, my R2-C1P §4). Each X_i is a ⊆-chain over the phase
+  and strictly grows at a Dom-e* transition (FDL). So there are ≤ |R|·|V| ≤ n² such transitions. ✓
+- A1-G1 (closed). The proof needs only that the caps c_1 ≥ c_2 ≥ … are non-increasing along the loop. That holds by index order =
+  priority order (O1) without "distinct q-priorities". The class hypothesis is harmless but not used here.
+- R47's own remark is right: monotone step outputs do not give a strictly larger final piece. Hence a budget, not an exclusion.
+
+### §3 SPTL-SANDWICH: SIGN WITH GAPS (A1-G2)
+- (a) Line-by-line identification:
+  - BV's final round (returns at 716 or 765-767; V = V* in both cases) and sptl pass 1 (481-499, called with a COPY of R at 871)
+    process the same tops of V* in the same decreasing order.
+  - Each uses a per-top target (BV: CurZ, reset per top at 704; sptl: member Z, reset at 542), cap priority(top), and a subgame
+    consumed by all earlier regions of the round/pass (BV: CurR at 699; sptl: R at 490).
+  - The skip tests agree: BV skips `Z[top]` (in an earlier region = popped); sptl skips `!R[top]` (popped). ✓
+  - closed_region / W affect only extraction (512-541), not regions. ✓
+- (b) The tangle sets T^j_s ⊆ T^j_s ∪ L_k ⊆ T_{s+1}: L_k is learned during s, T only grows in a phase, and s + 1 learns nothing
+  before e*. ✓
+- (c) The induction over k, with f_k monotone in T at a fixed input, sandwiches SP_s(a_k) between equal values. So no SP region of
+  pass 1 differs. A pass ≥ 2 of s + 1 needs earlier learning in s + 1, which FDL excludes before e*. ✓
+- A1-G2 (closed). f_k runs on a consumed subgame (R[v] = false while popping). 1.2b as cited is stated for consume = None. The
+  needed fact is the signed R10 (a) EXACT (a region step is a triggered closure) with its T-monotonicity, as in R9 (b). This is the
+  same citation point as my G-SC-2.
+
+### §4 Theorem CK: SIGN
+- (1) Identical logs: every extraction of s + 1 repeats one of s, and duplicates are skipped and not counted (CHECK_UNIQUE = 1,
+  line 23; 383-416).
+  - A dominion found at s would have ended the phase.
+  - So s + 1 returns false (1068) and ends q's block: at most once per phase.
+  - A1-N2: "once per phase" is in fact once per player block, because a false search ends the non-interleaved block (run()
+    1106-1120). That only strengthens the "+1".
+- (2) EMPTY-REC ⇒ e* at depth 0 at a common position j. §2 (i) and §3 exclude the threshold attractor and sptl. The opponent
+  pass 942-946 is a function of Z, and the post-search dominion attractor (1018-1038) runs only if a dominion was found. So e*
+  is in BV at R_j or in a Dom step with input (R_j, V_j). ✓
+- (3) Budgets: e*-at-R ≤ (F_R + 1)(H + 1) = H + 1 (R9 (a); F_R = 0 by R11 (c) + NOSTEAL-1P); Dom ≤ n² per input. ✓
+- (4) ≤ |P| + 1 maximal constant-chain blocks, hence ≤ |P| + 1 distinct chains. Each has ≤ n + 1 positions, because every
+  non-final piece is nonempty:
+  - stable: the first top of V* ⊆ R is not in X = G′ \ R, so it joins;
+  - −1 with seeds: Z ⊇ seeds;
+  - −1 without seeds: Dom(prevV), prevV ≠ ∅;
+  - the final call returns 0.
+  ✓ (The same fact I used for R46 §3.)
+- (5) The sum is correct. ✓
+
+### DATA (my own code on the pinned C++; docs/referee-2/R2-C1P/)
+- r2log_a1.patch = r2log.patch plus "D top : X" before every V-top of both depth-0 Dom loops. a1check.py checks, per q-phase:
+  DOM-MONO (the step-output vector of every Dom input seen in several searches is ⊆-monotone) and I against the CK bound with
+  H = 0 (stricter than CK).
+- 13 pinned class instances, 15 q-phases: I = 0 everywhere (|P| total 79); 0 bound violations.
+- DOM-MONO: 163 same-input Dom pairs, 0 violations (a1_instances.txt).
+- VACUITY (a1_control.txt): in all 163 pairs the step vector is IDENTICAL. So the DOM-MONO data is non-informative on these
+  instances: no Dom input ever changed its output. This is consistent with GAP-A-M §22e ("e* never in sptl or Dom"), but it tests
+  nothing. The verdict rests on the proof.
+- EMPTY-REC: not re-measured (my log is depth-0 only); R42's 98/98 stands as the lanes' DATA.
+
+### Net effect on P-C1P (Opus 5.5, D12)
+- G-R46-1 / G-LEX-1 is replaced: S − 1 = |P| + I with I ≤ (n+1)(|P|+1)(H+1+n²) + 1.
+- So, on the signed chain CTRL → NOSTEAL-1P → OUTCOME-MONO-1P → SAME-CTX → LEX(chain-changing) → K-constraint → L-NEST* → CK:
+  GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED), one named statement. LEX's strict all-pairs form still needs (CHAIN-CHANGE), but nothing uses
+  that form any more.
