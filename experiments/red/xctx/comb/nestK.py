@@ -1,7 +1,10 @@
 """L-RED box 15 (produced on Opus 5.5): R46 L-NEST brute force. Usage: nestK.py K d MMAX CAP (max length of sequences over m positions with the
 K-constraint and NEST <= d, for m = 1..MMAX)."""
 import sys
-from nestmax import nest
+try:
+    from nestmax import nest
+except ImportError:
+    from comb.nestmax import nest
 def ok_K(seq, K):
     # for each position p: #occurrences of p since the last occurrence of any position < p must be <= K
     cnt = {}

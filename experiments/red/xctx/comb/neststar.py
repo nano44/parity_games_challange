@@ -3,7 +3,10 @@ the first and the last), and a brute-force check of L-NEST* (|P| <= (2(d+2)m^2 K
 Usage: neststar.py check K d MMAX CAP | neststar.py seq 2 1 2 0 2 1 2"""
 import sys, functools
 sys.path.insert(0, __import__("os").path.dirname(__import__("os").path.abspath(__file__)))
-from nestK import ok_K
+try:
+    from nestK import ok_K
+except ImportError:
+    from comb.nestK import ok_K
 
 
 @functools.lru_cache(maxsize=None)
