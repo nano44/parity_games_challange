@@ -14,7 +14,7 @@ Inputs:
 Fix a q-phase of G ∈ 𝒞^1P. Let P = (p_1, …, p_{S−1}) be the first changed depth-0 positions of its transitions.
 Claim (K): for every position p, among the transitions lying strictly between two consecutive transitions at positions < p (or
 before the first, or after the last), at most K have position p. Here K is the length of the longest chain of the per-context
-state order: K ≤ (n + 2)²(n + 1) = O(n³).
+state order: K ≤ (n + 3)(n + 1)² = O(n³).
 Proof.
 - A transition whose first changed position is p0 leaves states 0 … p0−1 unchanged. So inside such a window, the states at
   positions < p never change, and R_p (= G′ minus the pieces at positions < p) is one fixed set.
@@ -22,7 +22,13 @@ Proof.
   order. Transitions at positions > p do not touch state_p.
 - So inside the window, state_p goes through a strictly increasing chain in the per-context order: at most K steps.
 - That order is: the outcome (−1 with rising emptying round e ≤ n + 1; for equal e, prevV ⊆; then stable with V* ⊆), then the
-  piece ⊆ for an equal outcome. Its longest chain is at most (n + 2)·(n + 2)·(n + 1). □
+  piece ⊆ for an equal outcome. Ranks take ≤ n + 3 values (0, the emptying rounds 1 … n + 1, and stable n + 2); for a fixed
+  rank V grows ≤ n + 1 times, and for a fixed outcome the piece grows ≤ n + 1 times. So the longest chain is ≤ (n + 3)(n + 1)². □
+
+Adversarial check of the input LEX (experiments/red/xctx/lexrand.py, the b12_lexchk.py test re-stated), 01:09-01:15Z (date -u):
+- 200,000 random class games per order (n 4-14): 1,741 and 1,734 pairs, 0 LEX violations.
+- All 230 class instances saved by this box's climbs (long, nested phases): 12,940 pairs (stable) and 13,255 (oink), 0 violations.
+- L-ALG's own b12_lexchk.py on experiments/red/xctx/instances/: 245 pairs per order, 0 violations.
 
 ## 2. The combinatorial side: sequences with bounded NEST
 Lemma L-NEST(d). Let P be a sequence over positions {0, …, m−1} that satisfies the K-constraint and has NEST(P) ≤ d. Then
@@ -88,7 +94,7 @@ example K = 1, d = 2 gives 1, 3, 7, 13, 19.
 
 ## 3. Consequence (reading; PROVED given L-ALG's LEX and OUTCOME-MONO-1P)
 THEOREM (NEST*-BOUND). On 𝒞^1P, every q-phase with first-difference sequence P satisfies
-S − 1 = |P| ≤ (2(d + 2)(n + 1)²K)^d, where d = NEST*(P) and K ≤ (n + 2)²(n + 1). So S ≤ n^{O(NEST*)}.
+S − 1 = |P| ≤ (2(d + 2)(n + 1)²K)^d, where d = NEST*(P) and K ≤ (n + 3)(n + 1)². So S ≤ n^{O(NEST*)}.
 - The K-constraint is §1. A chain has at most n + 1 positions, so m ≤ n + 1.
 - A super-polynomial family on 𝒞^1P must therefore have UNBOUNDED NEST*: NEST* = ω(1), since n^{O(d)} has to exceed every
   polynomial.
