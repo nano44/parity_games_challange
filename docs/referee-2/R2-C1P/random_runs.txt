@@ -1,0 +1,4 @@
+qdist N=1500 n=20..60 seed=12 {'games': 1500, 'phases': 1429, 'trans': 29, 'pairs': 29, 'maxS': 2, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 1, 'maxK': 1}
+all N=1500 n=20..60 seed=11 {'games': 1500, 'phases': 1451, 'trans': 36, 'pairs': 38, 'maxS': 3, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 1, 'maxK': 2}
+all N=1500 n=20..60 seed=13 {'games': 1500, 'phases': 1445, 'trans': 34, 'pairs': 37, 'maxS': 3, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 1, 'maxK': 2}
+qdist N=3000 n=8..20 seed=14 {'games': 3000, 'phases': 2778, 'trans': 23, 'pairs': 23, 'maxS': 2, 'ctrl_viol': 0, 'change_viol': 0, 'lex_viol': 0, 'lexw_viol': 0, 'lexw_kinds': {}, 'K_viol': 0, 'bound_viol': 0, 'maxNEST': 1, 'maxK': 1}
