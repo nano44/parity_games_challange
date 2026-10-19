@@ -1,0 +1,5 @@
+rand2k: 2000 games (gen.py corpus 2000 20261018 --nmin 1 --nmax 120); sha1 = L-COMP random_*.csv: 2000
+n5.py regions = harness Zielonka: 2000 ; verify.py errors > 0: 0
+n5.py vs n5b spec: iterations AND fallbacks equal on 2000 / 2000
+n5.py vs n5b orig: equal on 1666 ; n5 - orig iterations: +1: 268  other: {2: 24, 3: 2, 4: 1, 5: 1, -2: 3, -4: 1, -3: 1, -1: 33}
+n5 iterations: max 11 mean 2.682 ; fallbacks total 244
