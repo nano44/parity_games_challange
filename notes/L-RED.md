@@ -2,7 +2,7 @@
 Previous: session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, parked 15:20Z); before it session_0117Yy21tGGz9s1zzLfBdUKC (Fable).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: BOX 14 END (successor 9; R42-R45; see Resume point and SUCCESSOR QUEUE). Box-14 status (history): BOX 14 ACTIVE (successor 9, from Lead GO 21:10Z; R42). Box-13 status (history): BOX 13 END 20:40Z (successor 8; R40, R41; nothing running; see Resume point and SUCCESSOR QUEUE). Box-11 status (history): BOX 11 END (R40 complete). Box-11 status (history): ACTIVE from Lead GO 09:15Z. Box-10 status (history): BOX 10 ACTIVE (successor 7; R39 depth/exit family). Older status lines follow (history): HANDOVER (box 7 successor 5 parks at ~580k). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
+Status: BOX 15 ACTIVE (successor 9; R46). Box-14 status (history): BOX 14 END (successor 9; R42-R45; see Resume point and SUCCESSOR QUEUE). Box-14 status (history): BOX 14 ACTIVE (successor 9, from Lead GO 21:10Z; R42). Box-13 status (history): BOX 13 END 20:40Z (successor 8; R40, R41; nothing running; see Resume point and SUCCESSOR QUEUE). Box-11 status (history): BOX 11 END (R40 complete). Box-11 status (history): ACTIVE from Lead GO 09:15Z. Box-10 status (history): BOX 10 ACTIVE (successor 7; R39 depth/exit family). Older status lines follow (history): HANDOVER (box 7 successor 5 parks at ~580k). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
 (n = 20/30/40/60 x 3 seeds x both orders, 1500 steps, heartbeat 100; carry/spp.py, --fitness spp; scratchpad eq/);
 (2) renewable reset, U-shrink (R21 section 4); (3) per-phase potentials L-ALG states (via the Lead).
 
@@ -55,6 +55,14 @@ Status: BOX 14 END (successor 9; R42-R45; see Resume point and SUCCESSOR QUEUE).
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+BOX 15 (successor 9, same session; Lead GO 00:09Z, to ~03:00Z by date -u). Docs: docs/red/R46-nest-bound.md.
+- THEOREM (reading; PROVED given L-ALG's LEX and OUTCOME-MONO-1P): on 𝒞^1P, S − 1 ≤ (2(d+2)(n+1)²K)^d with d = NEST*(P) and
+  K = (n+3)(n+1)². So a counter needs NEST* = ω(1). (NEST*-BOUNDED) would give GAP-A on 𝒞^1P.
+  - The proof's pieces: the K-constraint (§1, from LEX), the monotone NEST* (NEST is not monotone), and L-NEST* by unrolling the
+    shallowest symbol (§2b).
+- LEX adversarial checks: 0 violations (random 400k games; 230 climb instances, 26k pairs; L-ALG's b12_lexchk on my instances).
+- Gadget: not built. Class NEST* best 3 (nest3_n20/n24). Productive releases ≤ 6 (resetclass.py).
+- Running at ~01:20Z: nestclass climbs (NEST: seeds 101/102; NEST*: STAR=1 seeds 104/105) in scratch n4/.
 BOX 14 END (successor 9, session_01Vg2PZioPtUWbhZT7xu1yqZ, Opus 5.5 under D8; written ~23:35Z by date -u; final head in the box-end
 message to the Lead). Docs: docs/red/R42-xctx.md, R43-treepiece.md, R44-nopre-and-growth.md, R45-counter-obstruction.md.
 - KILLS (all both orders, L-ALG's unmodified checkers, pinned Oink verified, Lead re-ran each):
