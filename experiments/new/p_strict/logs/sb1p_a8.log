@@ -1,0 +1,8 @@
+start (1, 1)
+step 12 P2 2 sbsteps 2 check OK sha1 8f2f3e5a5e38307b6925861a8fcfe3876072ee74
+step 120 P2 3 sbsteps 3 check OK sha1 985ef16deffda348fc5202b0a5c4f3329e3cc5a2
+step 286 P2 4 sbsteps 4 check OK sha1 6872deefa34da4c5b2320d234a28163ba4491f32
+step 740 P2 5 sbsteps 5 check OK sha1 26edfbbc4eb535de245b294fc906856225dcc7bd
+step 827 P2 6 sbsteps 6 check OK sha1 09249516742f94b2952d6fef218f8cb13939831c
+step 2298 P2 7 sbsteps 7 check OK sha1 692e34977ebbed5b998015a435d8cc9b28b728f0
+best (7, 7)

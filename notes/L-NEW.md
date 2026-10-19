@@ -2,20 +2,26 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-SUCCESSOR 3 (box 8, GO 00:32Z 2026-10-19; box end ~04:00Z). Resume point updated 01:00Z by date -u.
-DONE in box 8 (all on claude/l-new):
-- 42ef86e handover check. de4b588 CDAG_n: (P*) and (P_strict) FALSE (docs/new/N5-K9-Pstrict-counter.md; experiments/new/p_strict/
-  cdag.py checks every step with si.py; 2^n-n-1 single Ω-strict VJ00 improvements; instances/cdag sha1 pinned). Lead re-ran it (00:52Z),
-  GAPS G-N5-TIME updated: K9's policy-free route CLOSED, N5 not killed. L-LIT T23 checks whether CDAG-type chains are known.
-- 29fed67 item (4): n5.py = n5b spec on all 2000 random games (rand2k/summary.txt).
-- a4a9e13 K8 constant-case closure WITHDRAWN (used the any-policy reading); Lemma S (switch-best on ACYCLIC one-player games ≤ h steps);
-  N5 segment data (max 15 Even moves per σ̄-segment); n5_adv_ch.py (item 2 climb: ch 23/30/28/50 at n = 16/32/48/64).
-DONE 01:13Z: K10 written (docs/new/N5-K10-box8.md); climbs finished. WAS IN FLIGHT: p_strict/cdag_mask.py climbs (n = 6, 8): CDAG + Odd gift gadgets with ladder exits, fitness N5 iterations (Lead 00:52Z
-  item: can τ_k make N5's S4a emulate gen(m)? -> kill AT ONCE, or write K10). Outputs in scratchpad/mask (copy instances when done).
-K10 draft idea: with a frozen τ, Even's moves are V_τ-monotone in G_τ (arena optimum ⊇ σ_k); if every Even edge's τ-play enters a gift
-  directly, preferences depend only on the own exit length -> ≤ |E| Even moves per frozen period (K3 again). K5's length obstruction
-  needs σ-cycles, so it does NOT apply on DAG-shaped (CDAG) games.
-Traps this box: the local branch was stale again (6034271); docs/referee/R-N5K9.md is on claude/referee, not trunk, at 00:32Z.
+SUCCESSOR 3 (box 8, GO 00:32Z 2026-10-19; box end ~04:00Z). Resume point updated 01:42Z by date -u. Context ~360k at 01:42Z.
+DONE in box 8 (all pushed on claude/l-new; head 22b94e4 + this notebook):
+- 42ef86e handover check (5/5 per Lead).
+- de4b588 CDAG_n: (P*) and (P_strict) FALSE: 2^n-n-1 single Ω-strict VJ00 improvements, one-player, all ⊕
+  (docs/new/N5-K9-Pstrict-counter.md; p_strict/cdag.py checks each step with si.py; instances/cdag sha1-pinned). The Lead re-ran it
+  (00:52Z) and updated GAPS G-N5-TIME: K9's policy-free route CLOSED; N5 not killed. L-LIT T23 is checking the literature.
+- 29fed67 item (4): n5.py = n5b spec on all 2000 random games (experiments/new/rand2k/summary.txt).
+- a4a9e13 K8 constant-case closure (box 7) WITHDRAWN; Lemma S (switch-best ≤ h on ACYCLIC one-player games); N5 segment data.
+- 3a6078b K10 (docs/new/N5-K10-box8.md): emulating gen(m) inside N5 is not built. Lemma F (frozen τ ⇒ V_τ-monotone), Lemma G (direct
+  gifts ⇒ ≤ Σ(deg−1) strict Even moves per frozen period); masking load Θ(n); gift-gadget climb 5/7 iterations (n = 6/8);
+  segment climb 7/12/12 (n = 16/40/80); ch climb 23/30/28/50/39 (n = 16..96).
+- 98770e2 item (3) (docs/new/N5-K8-box8.md): Lemma NR (from R15 (c)+(d): σ and τ never return) closes K8's 2-periodic case;
+  alternating instance sbalt_n16 (N5 leaves at k = 2 because the flip-back edge is not in Iτ).
+- 22b94e4 Lemma T (switch-best tree propagation on one-player games with cycles); Conjecture SB1 (switch-best ≤ n steps on one-player
+  games; all-start data n ≤ 7, climbs to n = 64). OPEN: the ρ*-cycle tops (a top settles only when a ρ_k-cycle with that top exists in
+  the arena; its edges need not be improvements before it closes).
+- n5_cdag2p.py: N5 on two-player complete DAGs ≤ 5 iterations (n ≤ 12, 9,000 runs).
+NEXT (if time): the cycle-top part of SB1 (it would close K8's constant case fully and give "N5 is polynomial on one-player games").
+Traps this box: stale local branch again (6034271); docs/referee/R-N5K9.md lived on claude/referee, not trunk, at 00:32Z; the pgrep
+  waiter trap bit again; two doc stamps were estimated (corrected in 689515a): take every stamp from date -u or the commit time.
 (Successor 2's resume point kept below.)
 SUCCESSOR 2 PARKED at 2026-10-19 00:05Z by date -u, context ~530k. Boxes 4-7 are done. Every item is pushed; docs/new/README.md has the N5 row.
 N5 status: NOT killed. Gauntlet steps 2-3 passed earlier. Termination: two signatures (G-N5-TERM; R15 draft with CHECKER).
