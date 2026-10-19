@@ -1,4 +1,4 @@
-# Draft RESULTS R16 (Lead, 2026-10-19 02:35Z by date -u) — DRAFT, not landed; awaits CHECKER C19 (rev. 02:45Z: both §C-A1, K)
+# Draft RESULTS R16 (Lead, 2026-10-19 02:35Z by date -u) — DRAFT, not landed; awaits CHECKER C19 (rev. 02:45Z: both §C-A1, K; rev. 02:55Z: REFEREE K attribution)
 
 ### R16 [refereed-only] A_DTL on one-player games 𝒞^1P: the search count per phase is n^{O(NEST*)}, so GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED) (2026-10-19) — partial step-4 reduction on a subclass (not M3, not a step-4 pass, not M4)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Class (GAP-A-M
@@ -47,7 +47,9 @@
   docs/referee-2/R2-C1P.md (referee-2 1ecc8d5; §C ff4011f; A1 8e7a02c + 22e5d2d; §C-A1 420b14b). Both §C-A1: no conflict. Closed gaps: S-1/S-2/S-3 =
   G-SC-1/G-SC-2 (SAME-CTX), O-1/O-2 (OUTCOME-MONO-1P), N-1 (NOSTEAL-1P wording), R-1 (L-NEST* wording), A1-1..A1-5 and
   A1-G1/A1-G2, A1-N1..A1-N3. Closed by A1: L-1 = G-LEX-1 and R-2 = G-R46-1 (no longer needed).
-- Constant K: R46 §1's text states K ≤ (n+3)(n+1)²; REFEREE checked K ≤ (n+2)²(n+1) (R-C1P); in §C-A1 REFEREE accepts
-  (n+3)(n+1)² via REFEREE-2's count K ≤ (n²+n)·n, while REFEREE-2 calls (n+3)(n+1)² unproved and asks for (n+2)²(n+1). This entry
-  states the larger K ≤ (n+2)²(n+1), which both accept; R47 §7 (l-red 28c0a20, after the A1 pin, §1-§5 unchanged) uses it.
+- Constant K: at the pin both referees signed (trunk 01d63d7), R46 §1 and §3 state K ≤ (n+2)²(n+1); R46 §1/§3 were changed AFTER
+  the pin to (n+3)(n+1)² (l-red 938cea5; a process slip, recorded), and R47 §5 at da63c40 quotes (n+3)(n+1)². REFEREE signed R46
+  §1's (n+2)²(n+1); its own count had an arithmetic slip, corrected 02:47Z (referee 89fee50, R-C1P "Correction note"); the bound
+  holds by REFEREE-2's count (n²+n+1)·n ≤ (n+2)²(n+1), which also makes (n+3)(n+1)² valid. This entry states the signed
+  K ≤ (n+2)²(n+1); R47 §7 (l-red 28c0a20) uses it.
 - Gauntlet: partial step-4 reduction for A_DTL on a subclass. GAP-A (general) stays OPEN; GAPS gets a row for (NEST*-BOUNDED).
