@@ -45,8 +45,21 @@ Regions and strategies are checked (zielonka + verify.py) for every improved bes
 - The gap is the optimal CYCLE itself. Its edges need not be improving before it closes, and they can enter and leave the arena.
   A bound on cycle formation per cycle-node phase (≤ n² phases) would give a polynomial bound.
 
-## 3b. Conjecture SB1 and the potentials that fail (DATA, p_strict/sb_settle.py)
+## 3b. Conjecture SB1 (REFUTED at 01:58Z), its linear replacement SB1', and the potentials that fail
 Conjecture SB1: switch-best on a one-player game (⊖ out-degree 1, cycles allowed) is optimal after at most n steps.
+FALSE.
+- Seeded climbs (p_strict/sb_seeded_climb.py, seeded from sb_phases F(k, 1)) found:
+  - 11 steps at n = 10: instances/sb1p/sb1_counter_n10.pg, sha1 755099c58f22eb3c9d509085fc3e32fa8d03cee5, start in .start;
+  - 17 steps at n = 16: sb1_counter_n16.pg, sha1 6babed791f8d7e802eb1a0d26fc4f982c3fbaf20;
+  - 23 at n = 24.
+- n5.py, unmodified, reproduces 11 and 17 iterations, 0 fallbacks. Zielonka + verify.py: no errors.
+- Mechanism (n = 10 trace):
+  - steps 0-1 settle an intermediate cycle node;
+  - steps 2-5 build the optimal top's cycle backwards, one vertex per step;
+  - steps 6-10 then spread the new cycle node outward, one vertex per step.
+  So there are two serial propagations over disjoint vertex sets, plus the cycle preparation: about n + 1 steps.
+Revised conjecture SB1': switch-best on one-player games takes O(n) steps (data: ≤ n + 1). The rest of this section is the evidence
+gathered under SB1, and it stands for SB1'.
 - 906 runs: 300 random one-player games (n ≤ 20) plus the sb1p climb instances, 3 random starts each. max(steps − n) = 0.
 - Climbs: 7 at n = 8, 11 at n = 16, 18 at n = 32, 17 at n = 64 (all ≤ n).
 - All starts (p_strict/sb1_allstarts.py, 1,500 random one-player games n ≤ 7): max steps 1, 3, 3, 3, 3, 4 at n = 2..7. Two runs reach
@@ -55,12 +68,23 @@ Conjecture SB1: switch-best on a one-player game (⊖ out-degree 1, cycles allow
   number of vertices with an optimal cycle node, nor that number plus #settled, nor the lexicographic pair, increases at every
   step.
 - Typical failing run: n = 15, 2 steps, settled 10 → 10 → 15. The first step prepares a cycle and the second closes it.
-- So a proof of SB1 needs an amortised argument, e.g. charge each cycle-preparing step to the cycle it closes. Not done.
+- So a proof of SB1' needs an amortised argument, e.g. charge each cycle-preparing step to the cycle it closes. Not done.
 
 - A weaker invariant SB2 is also FALSE (p_strict/sb_settle2.py, sb_settle2.txt). SB2 says: every step settles a vertex OR strictly
   raises some vertex's cycle node in reward order; it would give ≤ n + n(n−1) steps. Yet 82 of 1,616 runs have a step that only
   improves path sets or lengths.
   Instance: instances/sb1p/sb2_fail.pg (n = 14; start in sb2_fail.pg.start; the failing step is the first).
+
+- Attempt to break SB1 by serialising cycle formation (p_strict/sb_phases.py, family F(k, m)). Construction:
+  - a shared path p_1..p_k;
+  - tops u_1 < … < u_m whose cycles run along the path in alternating directions;
+  - for j ≥ 2, a blocker u_j → b_j → y_j (b_j odd, just above u_j; y_j an even self-loop between u_{j−2} and u_{j−1}), meant to keep
+    C_j's entry unattractive until C_{j−1} closes.
+  Result: with m = 1, k steps (backward propagation of one cycle, as designed). With m ≥ 2, FEWER steps (4-7 for (k, m) up to
+  (12, 6), n ≤ 29), because the blockers' intermediate cycle nodes propagate in parallel. The reason: an even top more relevant
+  than the current cycle node makes its entry an improvement at once, so its formation cannot be postponed by relevance alone.
+  Not a counterexample by itself; the SEEDED climbs from F(k, 1) then found the counterexamples above (logs p_strict/logs/sb_seeded_*.log;
+  F(10, 4) seed: 17 steps at n = 21).
 
 ## 3c. Lemma T (tree propagation; L-NEW reading, unrefereed): what is left of SB1 is the cycle tops
 Setting:
@@ -91,7 +115,7 @@ the cycle node. Suppose x is not settled at k. Three cases.
 Consequence:
 - Once every top of a ρ*-cycle is settled, switch-best is optimal within h more steps, where h = the depth of the ρ*-forest
   measured to the cycle tops (≤ n).
-- SB1 therefore reduces to: the ρ*-cycle tops settle within O(n) steps (O(n) would give ≤ 2n overall).
+- SB1' therefore reduces to: the ρ*-cycle tops settle within O(n) steps (giving O(n) overall).
 - A top u settles exactly when some ρ_k-cycle through u has top u. Its cycle's edges need not be improvements before it closes;
   that is the open part.
 Check: sb_settle.py's failing runs are exactly cycle-preparing steps (n = 15: 10 → 10 → 15), consistent with Lemma T.

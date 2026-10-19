@@ -9,5 +9,6 @@ Each entry: statement, where the proof is, the computer check. Source for VJ00: 
 | G | Frozen τ + direct gifts ⇒ ≤ Σ(deg − 1) V_τ-strict Even moves | N5-K10-box8.md §1 | gift-gadget climb 5/7 iterations |
 | NR | Along N5's run, σ and τ never return to an earlier strategy (from R15 (c)+(d)) | N5-K8-box8.md §1 | n5_noreturn.py: 0 returns in 329 runs |
 | K8-2 | K8's 2-periodic case cannot be followed by N5, except for an edge effect at the start (from NR) | N5-K8-box8.md §2 | sbalt_n16 + sb_alt_diag.py |
-| T | One-player switch-best: if ρ*(x) is settled and x ≠ λ*(x), then x is settled one step later | N5-K8-box8.md §3c | consistent with sb_settle.py |
-| SB1 | CONJECTURE: switch-best on one-player games takes ≤ n steps | open (cycle tops) | all-start n ≤ 7; climbs to n = 64; SB2 (a weaker potential) is false |
+| T | One-player switch-best: if ρ*(x) is settled and x ≠ λ*(x), then x is settled one step later | N5-K8-box8.md §3c | consistent with sb_settle.py and with the SB1 counterexample traces |
+| SB1 | "switch-best on one-player games takes ≤ n steps": FALSE (11 at n = 10, 17 at n = 16; instances/sb1p/sb1_counter_n*.pg) | — | n5.py reproduces |
+| SB1' | CONJECTURE: O(n) steps (data ≤ n + 1) | open (cycle tops) | all-start n ≤ 7; climbs to n = 64; SB2 (a weaker potential) is false |
