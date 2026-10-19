@@ -125,3 +125,34 @@ Switch_{I_j}(ρ_j), where I_j is ANY non-empty unambiguous set of improvements o
 - Premise (P*) (OPEN, no source): the any-subset, flat-steps-included one-player bound. (P_strict) suffices instead, with an extra
   O(n²) factor. Switch-all does NOT suffice.
 - Not given: any bound on ch_O + ch_E along N5's runs. Gauntlet step 4 for N5 stays open.
+
+## §C. Comparison with REFEREE-2 (R2-N5K9.md at claude/referee-2 2fc1279, read 00:38Z by date -u, AFTER my report was pushed at 160db1d)
+Both verdicts: SIGNED, conditional on the any-subset premise, with gaps (Opus 5.5, D12). Same source file (sha256 485a12de…).
+| item | R-N5K9 (me) | R2-N5K9 | comparison |
+|---|---|---|---|
+| Steps 1-4 | correct | correct | agree |
+| code link | K9-G1: computed σ̄ must be optimal; DATA 0/21,373 (Θ_{σσ̄} vs Ω, G and G^d) | G-K9-2: the same condition, pointed to R15's G-N1 | agree. My check is the direct one (Θ under the computed reply), R15's is on valuations only. They are complementary |
+| any optimal reply works | yes (§6 check 1) | yes; adds that ch_O may be taken as the MIN over admissible optimal replies | agree; their remark is a strict strengthening of the statement, correct |
+| the premise | (P*): C n³, any adaptive subsets, any start, flat included | (P_K9): f(n), the same quantifiers | the same statement. f(n) is the generalisation of my K9-G2. "Adaptive" = their "ANY choice of I_j" |
+| Step 2 count | #Even ≤ (C n³ + 1)(1 + ch_O) | tightening (G-K9-3): #Even ≤ (1 + ch_O)·C n³ | ACCEPT. A crossing step k → k+1 has its source σ_k in the left interval, where Ω^{G_c} = Ω^G. So it is an improvement switch in G_{c_left} and extends that segment's chain, and (P) bounds the extended chain. The target σ_{k+1} need not satisfy Ω^{G_c} = Ω^G, since it is only the chain's last element. Re-derived: ✓. K ≤ C n³(2 + ch_O + ch_E) |
+| weaker premise | (3a) switch-all: NO. (3b) counting only Ω-strict steps: YES, with factor 2n(n−1)+1 | "NO, not for K9 as proved": addresses switch-all (P_SA) and a domination lemma | NO CONFLICT. R2's NO is on the POLICY axis (switch-all), and it is my (3a) with the same reason (S4a is the optimum against τ_k, not switch-all; τ_k is invisible in G_c). My YES is on the FLAT axis: it keeps any adaptive subsets and drops only the count of flat steps, which R15's φ bounds. R2 does not consider that axis. With R2's tightening, (P_strict) gives K ≤ (C n³ + 1)(2n(n−1) + 1)(2 + ch_O + ch_E) (the chain extended by the crossing step has ≤ s + (s + 1)·2n(n−1) < (C n³ + 1)(2n(n−1) + 1) moves) |
+| relation to VJ00 7.4 | not forced; agree with T22 | not on any safe reading; agree with T22 | agree. Both read §7 p.27 in the source |
+| chain DATA | max 8/14/23/17 at n = 4..7: EXHAUSTIVE over all subsets and starts, but on 60 RANDOM games per n | hill-climbed (adversarial) games: single-switch 42, 72, 99, 137, 130, 183 at n = 5..10; switch-all ≤ 10 at n ≤ 8 | NO CONFLICT: both are lower bounds on the class maximum. Mine are maxima over a random sample, theirs over a search for bad games. Theirs dominate (42 vs 14 at n = 5; 72 vs 23 at n = 6). I WITHDRAW my sentence that my numbers are "of the same order as L-NEW's" as evidence of anything: random games understate the any-subset maximum badly, as R2 says. My data says nothing about (P*) |
+
+Independent re-check of R2's n = 10 chain (docs/referee/scratch/n5k9_r2chain.py; my VJ00-only oracle n5t_probe, not their
+vjbf/onep/verify_chain). Game: prio [4,5,3,5,7,4,6,8,5,1], owner [1,0,…,0], succ as in R2 §4; start {1:6, 2:0, 3:4, 4:6, 5:8,
+6:0, 7:3, 8:3, 9:2} (chain_n10.txt records only the start).
+- Longest single-switch improvement chain from that start: 183 steps, with 6 flat steps on the longest chain my DFS picks. All
+  3^9 = 19,683 strategies were reached.
+- CONFIRMED: 183 at n = 10 = 0.183·n³, so C ≥ 0.183 for (P*). It also shows what (P_strict) buys: 177 strict steps. The flat
+  axis is cheap in practice here (6 of 183), so (3b) weakens the premise only logically. The policy axis is where the
+  difficulty is: R2's switch-all chains are ≤ 10 at n ≤ 8.
+
+Does anything change my verdict? No. Changes to my text:
+- Step 2 constant improved by R2's tightening (accepted).
+- My DATA paragraph's comparison with L-NEW's numbers is withdrawn as evidence; replaced by R2's adversarial data, which I
+  confirmed at n = 10.
+Joint position: K9 SIGNED by both referees, conditional on (P*) = (P_K9). Gaps: G-K9-1 (premise, major, OPEN, no source), K9-G1 =
+G-K9-2 (code link, DATA, 0 failures), K9-G2 and K9-G3 (closed). Notes: R2's G-K9-3 tightening; my (3b) flat-axis weakening.
+Switch-all does NOT suffice (both). Suggested next steps for routing (agree with R2): a proof or refutation of (P*); a
+larger-n adversarial search for long any-subset chains in one-player games (cheap test).

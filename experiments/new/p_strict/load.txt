@@ -1,0 +1,4 @@
+n=4 steps=11 masked vertices per step: min 0 mean 1.18 max 2; steps with load 0: 3
+n=6 steps=57 masked vertices per step: min 0 mean 2.68 max 4; steps with load 0: 5
+n=8 steps=247 masked vertices per step: min 0 mean 4.21 max 6; steps with load 0: 7
+n=10 steps=1013 masked vertices per step: min 0 mean 5.73 max 8; steps with load 0: 9

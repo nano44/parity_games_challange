@@ -44,6 +44,9 @@ def positions(g, order, C):
 def score(g, order, C):
     P, d = positions(g, order, C)
     if not P: return (0, 0, 0, -g.n)
+    if os.environ.get("STAR") == "1":   # R46: rank by NEST* (comb/neststar.py) instead of NEST
+        from comb.neststar import nest_star
+        return (max(nest_star(tuple(p)) for p in P.values()), max(carries(p) for p in P.values()), max(len(p) + 1 for p in P.values()), -g.n)
     return (max(nest(p) for p in P.values()), max(carries(p) for p in P.values()), max(len(p) + 1 for p in P.values()), -g.n)
 
 

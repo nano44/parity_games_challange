@@ -15,7 +15,16 @@ Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD =
 - P-N5K9 (Lead 00:20Z 10-19): docs/referee/R-N5K9.md. K9 SIGNED conditional on (P*), gaps K9-G1 (computed σ̄ optimal, DATA
   0/21,373), K9-G2, K9-G3 (closed). (P*) = any-subset, adaptive, flat-included one-player bound for the improver: NO source.
   Switch-all does NOT suffice; (P_strict) (count only Ω-strict steps) does, with an extra (2n(n−1)+1) factor. VJ00 §7 read myself.
-  Tools: scratch/n5k9_sbar.py, n5k9_longest.py. NEXT: §C after R2's report, then park.
+  Tools: scratch/n5k9_sbar.py, n5k9_longest.py, n5k9_r2chain.py. §C written 00:38Z (no conflict; accepted R2's Step 2 tightening;
+  R2's 183-step n=10 chain confirmed; my random-game data withdrawn as evidence). PARKED.
+
+- P-C1P (Lead 01:14Z 10-19; pin 01d63d7): docs/referee/R-C1P.md. CTRL SIGN, NOSTEAL-1P SIGN, OUTCOME-MONO-1P / SAME-CTX SIGN WITH
+  GAPS (closed), LEX SIGN WITH GAPS (L-1 OPEN: strict all-pairs form = (CHAIN-CHANGE)), R46 §1 SIGN, §2b SIGN, §3 SIGN WITH GAPS
+  (R-2 OPEN: S − 1 = |P| + I, I = chain-keeping transitions). Oink built at tools/oink (8fbf0a7). Lesson: "phase" = searches of one
+  player between dominion-finding searches (R5 (g)); G′ fixed inside a phase. §C written 01:39Z (agree; accepted R2's G-SC-2: cite
+  R9 (b) for the Dom step). A1 (R47, Lead 02:04Z, pin da63c40) written 02:06Z-02:09Z: EMPTY-REC, §2 (i), DOM-MONO SIGN; SPTL-SANDWICH, CK, §5 SIGN WITH
+  GAPS (A1-1..A1-5 closed). Overall YES: GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED). §C-A1 written 02:26Z (agree; accepted A1-G2 cite R10 (a)/R9 (b);
+  withdrew A1-4 'unproved' — R2's K ≤ (n²+n)n makes R47's K valid; A1-N2 once per player block). NEXT: CHECKER diff of RESULTS R16.
 
 ## Sources opened (append)
 - VJ00 = Vöge & Jurdziński, BRICS RS-00-48 (Dec 2000), https://www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, sha256 485a12de432a2a8c..

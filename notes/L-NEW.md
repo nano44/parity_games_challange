@@ -2,6 +2,30 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
+SUCCESSOR 3 (box 8, GO 00:32Z 2026-10-19; box end ~04:00Z). Resume point updated 01:42Z by date -u. Context ~360k at 01:42Z.
+DONE in box 8 (all pushed on claude/l-new; head 22b94e4 + this notebook):
+- 42ef86e handover check (5/5 per Lead).
+- de4b588 CDAG_n: (P*) and (P_strict) FALSE: 2^n-n-1 single Ω-strict VJ00 improvements, one-player, all ⊕
+  (docs/new/N5-K9-Pstrict-counter.md; p_strict/cdag.py checks each step with si.py; instances/cdag sha1-pinned). The Lead re-ran it
+  (00:52Z) and updated GAPS G-N5-TIME: K9's policy-free route CLOSED; N5 not killed. L-LIT T23 is checking the literature.
+- 29fed67 item (4): n5.py = n5b spec on all 2000 random games (experiments/new/rand2k/summary.txt).
+- a4a9e13 K8 constant-case closure (box 7) WITHDRAWN; Lemma S (switch-best ≤ h on ACYCLIC one-player games); N5 segment data.
+- 3a6078b K10 (docs/new/N5-K10-box8.md): emulating gen(m) inside N5 is not built. Lemma F (frozen τ ⇒ V_τ-monotone), Lemma G (direct
+  gifts ⇒ ≤ Σ(deg−1) strict Even moves per frozen period); masking load Θ(n); gift-gadget climb 5/7 iterations (n = 6/8);
+  segment climb 7/12/12 (n = 16/40/80); ch climb 23/30/28/50/39 (n = 16..96).
+- 98770e2 item (3) (docs/new/N5-K8-box8.md): Lemma NR (from R15 (c)+(d): σ and τ never return) closes K8's 2-periodic case;
+  alternating instance sbalt_n16 (N5 leaves at k = 2 because the flip-back edge is not in Iτ).
+- 22b94e4 Lemma T (switch-best tree propagation on one-player games with cycles); Conjecture SB1 (switch-best ≤ n steps on one-player
+  games; all-start data n ≤ 7, climbs to n = 64). OPEN: the ρ*-cycle tops (a top settles only when a ρ_k-cycle with that top exists in
+  the arena; its edges need not be improvements before it closes).
+- n5_cdag2p.py: N5 on two-player complete DAGs ≤ 5 iterations (n ≤ 12, 9,000 runs).
+- 01:58Z SB1 (≤ n) REFUTED by seeded climbs (11 at n = 10, 17 at n = 16, instances/sb1p/sb1_counter_n*.pg); revised SB1' = O(n), data ≤ n + 1 up to n = 64 (b59c44c + park commit).
+Resumed 02:15Z (Lead 02:04Z: continue SB1 cycle tops; box8-lemmas.md NOT to referees now, keep it current). 02:20Z (commit d757afb): §3d O(n³) phase route
+  recorded (reduction; the gap is cycle building inside a phase). PARKED 02:21Z by date -u, context ~400k; nothing running; next for a successor: in-phase cycle building (§3c/§3d of N5-K8-box8.md).
+NEXT (if time): the cycle-top part of SB1' (it would close K8's constant case fully and give "N5 is polynomial on one-player games").
+Traps this box: stale local branch again (6034271); docs/referee/R-N5K9.md lived on claude/referee, not trunk, at 00:32Z; the pgrep
+  waiter trap bit again; two doc stamps were estimated (corrected in 689515a): take every stamp from date -u or the commit time.
+(Successor 2's resume point kept below.)
 SUCCESSOR 2 PARKED at 2026-10-19 00:05Z by date -u, context ~530k. Boxes 4-7 are done. Every item is pushed; docs/new/README.md has the N5 row.
 N5 status: NOT killed. Gauntlet steps 2-3 passed earlier. Termination: two signatures (G-N5-TERM; R15 draft with CHECKER).
 K1-K9 are recorded:
@@ -163,6 +187,11 @@ NEXT for a successor:
   2026-10-18 between 23:42Z and 23:47Z (date -u bounds): Howard on deterministic mean-payoff MDPs Ω̃(I) lower bound; "best known upper bound is exponential".
   Hansen-Zwick ISAAC 2010 and Hansen-Kaplan-Zwick SODA 2014: records only (WebSearch), NOT opened.
 
+- (succ. 3, box 8) Fearnley arXiv 1705.02313 v1 (sha256 a49296a2…), §4 "One-player strategy improvement", Lemma 3: O(|V||E|) for the
+  ALL-SWITCHES (greedy) one-player rule only, citing Cochet-Terrasson-Gaubert [3]; it does not cover adaptive subsets.
+- (succ. 3, box 8) Zadeh, "What is the worst case behavior of the simplex algorithm?", CRM Proc. Lecture Notes (2008), §1 p. 1:
+  "An example due to Edmonds for shortest path computations is also known [16]". Edmonds' example itself NOT opened.
+- (succ. 3, box 8) REFEREE R-N5K9 (claude/referee 160db1d) §(2)-(3): (P*), (P_strict), switch-all insufficient.
 ## Dead ends
 - N2 (PRIO-ANNEAL), KILLED ON DATA 18:05Z UTC (box 3; first implementation n2.py). Padded switchallexp
   (gen_padsae.sh; dummies block compression): largest stage 6, 15, 34, 72, 148, 300, 604 (N = 1..7). Instance
@@ -179,6 +208,9 @@ NEXT for a successor:
   measure behaviour (pseudo-polynomial per phase). Instance: none run. Any game where a low priority decides an Odd win
   late (a single Odd self-loop of priority 1 reached through high even priorities) forces the climb in the last phase.
 
+- (succ. 3, box 8) K9's route through a policy-free one-player premise ((P*), (P_strict), VJ00 Prop. 7.4 "every policy" reading),
+  and box 7's K8 constant-case closure. Obstruction: CDAG_n has 2^n - n - 1 Ω-strict single VJ00 improvements (one-player, all ⊕).
+  Instance: experiments/new/instances/cdag/cdag_N12.pg (sha1 41f780ede48ae00d4e4f15251abf2583f9094aa0), chain 4083 by cdag.py.
 ## Things only I know
 - N5 Odd output strategy is σ̄ (Odd's optimal counter to the final σ), not τ. n5.py mode ssi reproduces DLM Prop. 7 exactly:
   use it as the engine check after any change. The Lead's clock stamps were ahead earlier; always date -u.
@@ -215,3 +247,12 @@ NEXT for a successor:
 - (succ. 2) Engine.evaluate's tie-break is static (index order). Any design that makes candidates TIE against τ turns N5's step
   into an index rule, not a stall.
 - (succ. 2) The container's clock runs differently from your sense of time: always date -u.
+- (succ. 3) The pgrep waiter trap bit AGAIN (01:03Z): `until ! pgrep -f "n5_adv_ch.py 96"` matched its own bash -c line and never ended.
+  Wait on a PID (`wait`/`kill -0 PID`), or check the log's final "best" line.
+- (succ. 3) Exhaustive longest-chain DP over all strategies (dagchain.cpp) found CDAG at n = 5..7 in minutes; random-game sampling
+  (box 7's 21 at n ≤ 9) and even REFEREE-2's climb (183 at n = 10) understated the truth (1013 at n = 10). Anneal the GAME, not
+  only the start.
+- (succ. 3) Seeded climbs (start from a hand-built family) beat random climbs: random one-player climbs never exceeded n, while
+  seeded ones refuted SB1 within minutes (11 at n = 10). Seed from structure whenever a "≤ f(n)" conjecture rests on climbs.
+- (succ. 3) Lemma NR (σ and τ never return; R15 (c)+(d)) kills every N5-following argument that needs a reply to come back.
+- (succ. 3) A worker restart can kill push.sh mid-run (exit 137): check `git rev-parse HEAD origin/claude/l-new` and re-run push.sh.

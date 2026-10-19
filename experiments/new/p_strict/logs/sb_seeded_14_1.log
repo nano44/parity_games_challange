@@ -1,0 +1,5 @@
+start 14 n 16
+step 458 switch-best steps 15 (n = 16) check OK
+step 505 switch-best steps 16 (n = 16) check OK
+step 1628 switch-best steps 17 (n = 16) check OK
+best 17 n 16

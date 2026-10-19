@@ -2,7 +2,7 @@
 Previous: session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, parked 15:20Z); before it session_0117Yy21tGGz9s1zzLfBdUKC (Fable).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: BOX 14 END (successor 9; R42-R45; see Resume point and SUCCESSOR QUEUE). Box-14 status (history): BOX 14 ACTIVE (successor 9, from Lead GO 21:10Z; R42). Box-13 status (history): BOX 13 END 20:40Z (successor 8; R40, R41; nothing running; see Resume point and SUCCESSOR QUEUE). Box-11 status (history): BOX 11 END (R40 complete). Box-11 status (history): ACTIVE from Lead GO 09:15Z. Box-10 status (history): BOX 10 ACTIVE (successor 7; R39 depth/exit family). Older status lines follow (history): HANDOVER (box 7 successor 5 parks at ~580k). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
+Status: BOX 15 END (successor 9; R46-R48; see Resume point). Box-15 status (history): BOX 15 ACTIVE (successor 9; R46). Box-14 status (history): BOX 14 END (successor 9; R42-R45; see Resume point and SUCCESSOR QUEUE). Box-14 status (history): BOX 14 ACTIVE (successor 9, from Lead GO 21:10Z; R42). Box-13 status (history): BOX 13 END 20:40Z (successor 8; R40, R41; nothing running; see Resume point and SUCCESSOR QUEUE). Box-11 status (history): BOX 11 END (R40 complete). Box-11 status (history): ACTIVE from Lead GO 09:15Z. Box-10 status (history): BOX 10 ACTIVE (successor 7; R39 depth/exit family). Older status lines follow (history): HANDOVER (box 7 successor 5 parks at ~580k). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
 (n = 20/30/40/60 x 3 seeds x both orders, 1500 steps, heartbeat 100; carry/spp.py, --fitness spp; scratchpad eq/);
 (2) renewable reset, U-shrink (R21 section 4); (3) per-phase potentials L-ALG states (via the Lead).
 
@@ -55,6 +55,26 @@ Status: BOX 14 END (successor 9; R42-R45; see Resume point and SUCCESSOR QUEUE).
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+BOX 15 END (successor 9, same session; Lead GO 00:09Z; ended ~02:30Z by date -u). Docs: docs/red/R46-nest-bound.md, R47-chainkeep.md,
+R48-nest-attack.md.
+- R46 (signed by both referees in P-C1P, except the gap that R47 addresses): the K-constraint from LEX; L-NEST* (monotone NEST*);
+  S − 1 = |P| + I with |P| ≤ (2(d+2)(n+1)²K)^d.
+- R47 (P-C1P addendum A1, pinned at trunk da63c40; DO NOT EDIT §1-§4 while the referees read):
+  - Theorem CK: I ≤ (n+1)(|P|+1)(H+1+n²) + 1 chain-keeping transitions.
+  - Proved along the way: EMPTY-REC in full; the −1 threshold attractor is excluded as e*; DOM-MONO (Dom steps budgeted, n² per
+    input); SPTL-SANDWICH.
+  - §6: DOM-MONO mechanical check, 0 violations.
+  - Hence (reading) GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED), one statement.
+- R48: no class family with growing NEST*. Library 955 q-phases: max NEST* 3 (my two instances), all forced conversions ≤ 2;
+  lagfam D 4-16 forced: NEST* 1; climbs plateau at NEST* 3, S ≤ 21 at n 24.
+- LEX adversarial: 0 violations (400k random class games; 230 climb instances, 26k pairs).
+SUCCESSOR QUEUE:
+- (1) Answer the referees on R47 (via the Lead).
+- (2) Attack (NEST*-BOUNDED). Target (R48 §4): a −1 piece whose own outcome rise feeds a SECOND, shallower −1 piece (a carry
+  chain through intermediate levels). Or prove that −1 rises are fed only from the deepest stable piece, which would bound NEST*.
+  Seeds: nest3_n20, nest3_n24. Tools: nestclass.py STAR=1, tlog.py, resetclass.py.
+- (3) If (NEST*-BOUNDED) gets a proof route, check it adversarially like DOM-MONO (dommono.py pattern).
+
 BOX 14 END (successor 9, session_01Vg2PZioPtUWbhZT7xu1yqZ, Opus 5.5 under D8; written ~23:35Z by date -u; final head in the box-end
 message to the Lead). Docs: docs/red/R42-xctx.md, R43-treepiece.md, R44-nopre-and-growth.md, R45-counter-obstruction.md.
 - KILLS (all both orders, L-ALG's unmodified checkers, pinned Oink verified, Lead re-ran each):

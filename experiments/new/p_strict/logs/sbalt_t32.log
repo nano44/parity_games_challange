@@ -1,0 +1,21 @@
+start (1, 1, 1)
+step 49 changes 1 P2 1 sbsteps 2 check OK sha1 288632eda2c3a8c9aac2e9222b49e47144f84766
+step 79 changes 1 P2 1 sbsteps 3 check OK sha1 c74e910b43619a459c9385980834577b538bbf86
+step 196 changes 1 P2 1 sbsteps 4 check OK sha1 0a99e59475b6aa363a1282b367a388eca6e5869b
+step 203 changes 1 P2 1 sbsteps 5 check OK sha1 25ba20aa2de4f074b6fe2984cdac1087f78a03c6
+step 304 changes 1 P2 1 sbsteps 6 check OK sha1 deb556e2c6bffb8d130c657fd54290bcef303f59
+step 432 changes 1 P2 1 sbsteps 7 check OK sha1 f132c4a57d3d4db13d86ba26bd02f8e4d407d5bf
+step 446 changes 1 P2 1 sbsteps 8 check OK sha1 dd17ce47c83d35bca244e44ef365170e7836f167
+step 509 changes 2 P2 2 sbsteps 8 check OK sha1 b0c4f2b92bd320d8e68850f333c9a1b217d458a8
+step 594 changes 2 P2 2 sbsteps 9 check OK sha1 b87d7d0deef4a7b33d57e79abfeaf5e9562eba1c
+step 638 changes 2 P2 2 sbsteps 10 check OK sha1 71a38c3dd7c20a98bfbe60d5c424cedb55e6dee3
+step 683 changes 2 P2 2 sbsteps 11 check OK sha1 0bcce88e8c1fe087c5152df519db86ac3525cf7c
+step 725 changes 3 P2 3 sbsteps 10 check OK sha1 a59b8a6c1b2143cf17b76390eece16ab08500abd
+step 790 changes 3 P2 3 sbsteps 11 check OK sha1 26205ad7b1cd76669ca126cf839270bcaab9c9c1
+step 839 changes 3 P2 3 sbsteps 12 check OK sha1 cba9d9235c134848cf61aec2ae5f1694f308f8dd
+step 896 changes 3 P2 3 sbsteps 13 check OK sha1 e81315770d0904ad1001a438f171effbc2868cbf
+step 1439 changes 3 P2 3 sbsteps 14 check OK sha1 c2fef1b2bde10893442612cd115a074e651fee51
+step 1551 changes 3 P2 3 sbsteps 15 check OK sha1 24a3b40c37d1c6734bbe1c58feda9d0412c0de53
+step 2230 changes 3 P2 3 sbsteps 16 check OK sha1 d7289356098fec557e565ff9d4a5a1f4813f739b
+step 2769 changes 3 P2 3 sbsteps 17 check OK sha1 c8afc3db8986722ec2e1f09597e3568ec11f7934
+best (3, 3, 17)
