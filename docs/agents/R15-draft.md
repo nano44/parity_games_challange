@@ -1,4 +1,4 @@
-# Draft RESULTS R15 (Lead, 2026-10-18 23:27Z by date -u) — DRAFT, not landed; awaits CHECKER C17 re-diff (rev. 23:36Z: REFEREE-2 §C fd5abd8; rev. 23:53Z: CHECKER C17 E-1..E-3, N-2..N-4)
+# Draft RESULTS R15 (Lead, 2026-10-18 23:27Z by date -u) — LANDED as RESULTS R15 (CHECKER C17 PASS, re-diff c5a8c52); was: awaits CHECKER C17 re-diff (rev. 23:36Z: REFEREE-2 §C fd5abd8; rev. 23:53Z: CHECKER C17 E-1..E-3, N-2..N-4)
 
 ### R15 [refereed-only] Termination of N5 (SSI-GLOBAL), and of every VJ00 strategy-improvement step sequence, by the potential (Ω, φ) (2026-10-18) — correctness half of gauntlet step 4 for N5 (not M3, not a step-4 pass; no running-time bound)
 - Object: N5 "SSI-GLOBAL" as specified in docs/new/N5-ssi-global.md, sections "Exact pseudocode" and "SPEC (EXACT ...)" S1-S5
