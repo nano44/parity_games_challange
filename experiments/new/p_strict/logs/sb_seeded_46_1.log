@@ -1,0 +1,5 @@
+start 46 n 48
+step 261 switch-best steps 47 (n = 48) check OK
+step 414 switch-best steps 48 (n = 48) check OK
+step 672 switch-best steps 49 (n = 48) check OK
+best 49 n 48
