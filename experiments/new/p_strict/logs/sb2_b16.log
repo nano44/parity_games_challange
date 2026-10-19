@@ -1,0 +1,15 @@
+start (1, 3)
+step 19 P2 2 sbsteps 2 check OK sha1 fee5b3d760345bf292554e71f6749ea9a9bcbee3
+step 30 P2 3 sbsteps 3 check OK sha1 eace65bc05ca8dcb0f95487f3db02ab7d0ef76dd
+step 49 P2 3 sbsteps 4 check OK sha1 2fabf24f5618be1e37ad50e254db1a86c39d5059
+step 57 P2 4 sbsteps 4 check OK sha1 079538cf66e9e2c98fc834305529f2acfdded670
+step 234 P2 5 sbsteps 5 check OK sha1 98658b311d6078f08a50a0e00b5fc91571a5e170
+step 376 P2 6 sbsteps 6 check OK sha1 a8cecab65527a8441e2456618dfc5638b70bfcb1
+step 394 P2 7 sbsteps 7 check OK sha1 9f5758c9aa74efd4a9a4911e4a13ffe7bc145be6
+step 416 P2 8 sbsteps 8 check OK sha1 3774ea0d396ed9867fa533ac937b53e33e040a3e
+step 629 P2 9 sbsteps 9 check OK sha1 32d2faac4355c971ce7e79ba3c06a65a363c0243
+step 832 P2 10 sbsteps 10 check OK sha1 f7d26db16b472cb28d588ad46dc8e0f5e95e4b18
+step 938 P2 11 sbsteps 11 check OK sha1 00c67336c7e6c453ccc5ff9185647587b7b784c6
+step 939 P2 12 sbsteps 12 check OK sha1 c55555d562c56a78070e99c79340e74bdaea4315
+step 1346 P2 13 sbsteps 13 check OK sha1 88025ec3943f0d179d30f273ce06d4ae9956909c
+best (13, 13)

@@ -1,4 +1,4 @@
-# K10: can a varying τ_k make N5's Even steps emulate CDAG's gen(m)? (L-NEW box 8; written 01:05Z 2026-10-19 by date -u)
+# K10: can a varying τ_k make N5's Even steps emulate CDAG's gen(m)? (L-NEW box 8; 2026-10-19, file written ~01:02Z between two date -u calls, first commit 3a6078b at 01:13Z)
 L-NEW successor 3, Opus 5.5 (D8). Lead brief 00:52Z. Status: NOT BUILT, so N5 is not killed. Below are two proved lemmas
 (L-NEW readings, unrefereed), DATA, and the obstruction K10 written as necessary conditions. K10 is NOT an impossibility proof.
 
