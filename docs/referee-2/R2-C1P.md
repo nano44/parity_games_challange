@@ -179,3 +179,25 @@ threshold seed). ✓
 - Correct form of the obstruction statement: GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED) ∧ (Z poly), where Z = identical-chain
   transitions per q-phase. Candidate routes for the second conjunct: prove (CHAIN-CHANGE) on 𝒞^1P, or get R44's EMPTY-REC
   budget argument refereed.
+
+## 9. §C: comparison with REFEREE's R-C1P (read 01:40Z by date -u, after my report was pushed at 1ecc8d56/b666c4a9)
+Read: docs/referee/R-C1P.md at claude/referee 3061415 (merged into trunk per the Lead). Both reports: same pin 01d63d7, same pinned
+dtl.cpp, all labelled (Opus 5.5, D12).
+| item | REFEREE R-C1P | mine (R2-C1P) | comparison |
+| --- | --- | --- | --- |
+| CTRL | SIGN | SIGN | agree; both read 1068, 1106-1121 / dtl.hpp 33, and escapes in the member G |
+| NOSTEAL-1P | SIGN (N-1 wording: "earlier region of round r at visit i + 1") | SIGN | agree. I accept N-1: it is the same "popped earlier in this round = in the prefix or in the current higher region" point I spelled out in §2. REFEREE adds that the proof holds for ANY two region computations of one context; I agree (it uses neither i < i+1 nor T ⊆ T′) |
+| §27b corollary | not separately tabulated | SIGN | no conflict |
+| OUTCOME-MONO-1P | SIGN WITH GAPS O-1 (e = FIRST round with V_e = ∅), O-2 (T_i ⊆ T_{i+1} via R5 (g)) | SIGN, note N-OM1 (break relies on index = priority order) | agree. O-1 is a convention point I did not raise; I accept it (my K count used e ≤ n, consistent with either convention). N-OM1 = REFEREE's "the scan reaches u … break at the first uncleared candidate with priority ≤ t" |
+| SAME-CTX | SIGN WITH GAPS S-1 (ρ undefined in text), S-2 (sptl's W guard), S-3 (G′ fixed, R5 (g)) | SIGN WITH GAPS G-SC-1 (= S-1), G-SC-2 (cite R9 (b) for Dom/−1 T-monotonicity) | agree in substance. S-2 is a point I did not raise (W is per search, so s and s′ may extract different tangles; harmless because T only grows); I accept it. Citation difference: REFEREE cites 1.2b for the Dom pieces; I asked for R9 (b) because the Dom step consumes R (R[v] = false while popping), and 1.2b is stated for consume = None. R9 (b) is signed and states exactly the needed fact, so either way the step holds; I keep G-SC-2 as a citation note |
+| LEX | SIGN WITH GAPS L-1 (OPEN): strict all-pairs form needs (CHAIN-CHANGE); proved: ≤ for all pairs, < at chain-changing transitions | G-LEX-1 (MAJOR): identical | agree exactly |
+| R46 §1 | SIGN; L-1 does not affect it | SIGN; same reason | agree. K count: REFEREE (n+1)(n+1)+(n+1)+1 outcomes × (n+2) pieces; mine (n²+n)·n; both ≤ (n+2)²(n+1) |
+| R46 §2b | SIGN (R-1: define F_r as a supremum; d = 0 ⇔ Q = ∅) | SIGN (I used F as the supremum, monotone in r) | agree; R-1 is the wording I assumed |
+| R46 §3 | SIGN WITH GAPS R-2 (OPEN): S − 1 = \|P\| + I | G-R46-1 (MAJOR): S − 1 = \|P\| + Z | agree exactly (I = Z) |
+| Route for the open gap | GAP-A-M §36c with R9 (a)/(c), F_R = 0 (recorded, not checked) | R44's EMPTY-REC budget argument (recorded, not checked) | the same route from two citations; the Lead has routed it to L-RED as R47 |
+| DATA | L-ALG's tools at the pin (samectx 646 pairs, lexchk 169 pairs both orders), neststar.py K=2 d=2 | my own C++ logging patch + analyser (13 class instances, Oink order; R2_REV identical), my own nestbf.py | complementary: REFEREE ran the lanes' tools with the stable order; I ran independent code on the C++ (one effective order). Both 0 violations. nestbf.py and REFEREE's neststar run agree (K = 2, d = 2: 2, 8, 24) |
+Do REFEREE's gaps change my verdicts? No. N-1, O-1, O-2, S-2, S-3, R-1 are wording/citation points, all closed, and none touches a
+proof step I signed. L-1 / R-2 are my G-LEX-1 / G-R46-1.
+Joint position: CTRL, NOSTEAL-1P, OUTCOME-MONO-1P, SAME-CTX, R46 §1 and §2b have two signatures (gaps closed). LEX (strict form)
+and R46 §3 (S − 1 = |P|) have two signatures WITH the open gap (CHAIN-CHANGE) / (chain-keeping transitions polynomial per phase),
+now routed to L-RED R47. Open named statements on 𝒞^1P: (NEST*-BOUNDED) and that gap.
