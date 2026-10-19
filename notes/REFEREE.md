@@ -12,6 +12,11 @@ Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD =
   Tools: docs/referee/scratch/n5t_probe.py (VJ00-only brute force), n5t_engine_xcheck.py.
 - §C written 23:15Z (agree; accepted R2's N1 and G-N5T-3; I1 failure confirmed with n5t_i1.py). Then PARK on the Lead's word.
 
+- P-N5K9 (Lead 00:20Z 10-19): docs/referee/R-N5K9.md. K9 SIGNED conditional on (P*), gaps K9-G1 (computed σ̄ optimal, DATA
+  0/21,373), K9-G2, K9-G3 (closed). (P*) = any-subset, adaptive, flat-included one-player bound for the improver: NO source.
+  Switch-all does NOT suffice; (P_strict) (count only Ω-strict steps) does, with an extra (2n(n−1)+1) factor. VJ00 §7 read myself.
+  Tools: scratch/n5k9_sbar.py, n5k9_longest.py. NEXT: §C after R2's report, then park.
+
 ## Sources opened (append)
 - VJ00 = Vöge & Jurdziński, BRICS RS-00-48 (Dec 2000), https://www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, sha256 485a12de432a2a8c..
   (opened 2026-10-18 between 22:59Z and 23:04Z by date -u): §3 postulates P1/P2/I1/I2; §4.1-4.5; §5.1 (3)-(11); Prop. 5.1, 5.3, 5.4, 5.6, 5.10; Lemmas 5.2,
