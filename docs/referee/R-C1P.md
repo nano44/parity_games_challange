@@ -320,7 +320,7 @@ Does anything change my verdict? No. Corrections to my A1:
 Joint position on A1: R47 Theorem CK is signed by both referees with closed gaps. Hence GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED), one named
 statement, on the chain CTRL → NOSTEAL-1P → OUTCOME-MONO-1P → SAME-CTX → LEX (chain-changing) → K-constraint → L-NEST* → CK.
 
-### Correction note (02:48Z by date -u, on reading the Lead's R16 draft at trunk f0a36c1)
+### Correction note (02:47Z by date -u, on reading the Lead's R16 draft at trunk f0a36c1)
 - My count for R46 §1 (section (5) above) is wrong in its arithmetic, though the bound it was meant to check is true. I wrote
   "outcomes ≤ (n + 1)(n + 1) + (n + 1) + 1, times ≤ n + 2 piece sizes", and that product, ((n + 1)² + n + 2)(n + 2), EXCEEDS
   (n + 2)²(n + 1). So my count did not establish the displayed bound.
