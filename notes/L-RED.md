@@ -1,8 +1,8 @@
-# L-RED notebook (independent adversary). Successor 8 (Opus 5.5, owner D8, session_01D43ipMMRUSWR487hmnegmB) from 2026-10-18 08:56Z (date -u); successor 7 (session_01WMwHG59A8od889vPhroxTk) from 2026-10-18 01:59Z (date -u); successor 6 from 2026-10-17 18:55Z (date -u); successor 5 from 2026-10-17 11:16Z (date -u); successor 4 (04:22Z-11:06Z) before
+# L-RED notebook (independent adversary). Successor 9 (Opus 5.5, owner D8, session_01Vg2PZioPtUWbhZT7xu1yqZ) from 2026-10-18 20:47Z (date -u); successor 8 (Opus 5.5, owner D8, session_01D43ipMMRUSWR487hmnegmB) from 2026-10-18 08:56Z (date -u); successor 7 (session_01WMwHG59A8od889vPhroxTk) from 2026-10-18 01:59Z (date -u); successor 6 from 2026-10-17 18:55Z (date -u); successor 5 from 2026-10-17 11:16Z (date -u); successor 4 (04:22Z-11:06Z) before
 Previous: session_01PxvcUhsSEhfjURzmBDBeoN (Opus 5.5, parked 15:20Z); before it session_0117Yy21tGGz9s1zzLfBdUKC (Fable).
 Owns docs/red/, experiments/red/, this file. Reads other lanes' files, never edits them. Messages only the Lead
 (session id in docs/NOW.md; first line "From L-RED (<UTC>):"). Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: BOX 14 ACTIVE (successor 9, from Lead GO 21:10Z; R42). Box-13 status (history): BOX 13 END 20:40Z (successor 8; R40, R41; nothing running; see Resume point and SUCCESSOR QUEUE). Box-11 status (history): BOX 11 END (R40 complete). Box-11 status (history): ACTIVE from Lead GO 09:15Z. Box-10 status (history): BOX 10 ACTIVE (successor 7; R39 depth/exit family). Older status lines follow (history): HANDOVER (box 7 successor 5 parks at ~580k). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
+Status: BOX 14 END (successor 9; R42-R45; see Resume point and SUCCESSOR QUEUE). Box-14 status (history): BOX 14 ACTIVE (successor 9, from Lead GO 21:10Z; R42). Box-13 status (history): BOX 13 END 20:40Z (successor 8; R40, R41; nothing running; see Resume point and SUCCESSOR QUEUE). Box-11 status (history): BOX 11 END (R40 complete). Box-11 status (history): ACTIVE from Lead GO 09:15Z. Box-10 status (history): BOX 10 ACTIVE (successor 7; R39 depth/exit family). Older status lines follow (history): HANDOVER (box 7 successor 5 parks at ~580k). Box-5 status line follows (history). Queue: (1) equal-STEP multi-seed searches-per-phase climbs
 (n = 20/30/40/60 x 3 seeds x both orders, 1500 steps, heartbeat 100; carry/spp.py, --fitness spp; scratchpad eq/);
 (2) renewable reset, U-shrink (R21 section 4); (3) per-phase potentials L-ALG states (via the Lead).
 
@@ -55,6 +55,33 @@ Status: BOX 14 ACTIVE (successor 9, from Lead GO 21:10Z; R42). Box-13 status (hi
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+BOX 14 END (successor 9, session_01Vg2PZioPtUWbhZT7xu1yqZ, Opus 5.5 under D8; written ~23:35Z by date -u; final head in the box-end
+message to the Lead). Docs: docs/red/R42-xctx.md, R43-treepiece.md, R44-nopre-and-growth.md, R45-counter-obstruction.md.
+- KILLS (all both orders, L-ALG's unmodified checkers, pinned Oink verified, Lead re-ran each):
+  - (XCTX@p0) on 𝒞^1P: xctx_viol_n20 (742ba103cdb7).
+  - (VR-NEW_all) and (FD-WITNESS_all), class and general: vrall_viol_n20 (ed5058576554).
+  - (TREE-PIECE⁺), two-player: tpp_viol_n22 (a5088b091cbd), shrunk from n63.
+  - (NO-PRE-a): nopre_viol_n20 (9a93a8e24832).
+- PROVED (reading): Lemma EMPTY-REC (R42 §2). On 𝒞_C, every recursive call of a q-search has an empty subgame.
+- Survivor: (CHAIN-CHANGE) on 𝒞^1P (R42 §3; cannot give growth, R44 §3).
+- Counter question (Lead 22:30Z): NOT built. NEST 3 realised in the class (nest3_n20, nest3_n24: S 18 at n 24). Phases are linear.
+  Necessary conditions (N1)-(N3) are in R45.
+- Owner question Q16 (L32 early reassessment) is open with the Lead's recommendation (keep L-RED on the counter question).
+SUCCESSOR QUEUE:
+- (1) R45 §4 target: a 2-level class gadget. The XCTX swap (vertex v moves between positions p and p+1) on top, with a lower
+  tangle family containing v, so that each swap breaks the lower tangles by (N2a) or (N2b). Test NEST and S against k copies.
+  Seeds: nest3_n20, nest3_n24, vrall_viol_n20. Tools: xctx/tlog.py (tangles per search and position), nestclass.py, slen.py
+  (NEUTRAL=1 GROW=0.1 to grow).
+- (2) If (1) fails, prove the incompatibility of (N2) with (N3b): that would be the obstruction.
+- (3) Answer L-ALG's replacement statements, if any, with the graded-climb technique (xscore.py / vrclimb.py / tpclimb.py pattern:
+  margin, then #new keys, then key distance).
+THINGS ONLY I KNOW (successor 9):
+- Graded fitness is what worked this box. Blind cover counts were 0 everywhere. Adding the same-size / any-signature overlap levels
+  (xscore f1/ov1) gave the gradient, and kills followed within minutes.
+- xscore.py, vrclimb.py and the other xctx/ tools default to the in-tree experiments/alg copy (LALG_DIR overrides it). tpclimb.py
+  sets ONEP_ANY=1 (two-player moves) at import, so do not import it into a class tool.
+- sppclass.py's score is gamed by trivial phases (|G′| ≤ 2 gives 0); it is not a useful fitness.
+- The cloud machine's date -u advances slowly against work done (as L-ALG noted); timestamps are as printed.
 2026-10-18 ~21:45Z (reconstructed; first written as 22:10Z, an estimate, not date -u), successor 9 (session_01Vg2PZioPtUWbhZT7xu1yqZ, Opus 5.5, owner D8), BOX 14 (Lead GO 21:10Z, to ~01:00Z).
 - KILL: (XCTX@p0) (GAP-A-M §35a, l-alg 9ab9a3e6) FALSE on 𝒞^1P, both orders: xctx/instances/xctx_viol_n20.pg (742ba103cdb7);
   b12_core MODE=core CORE-ALL 1, xcover fraction 1.0; (VR-NEW_all) survives (new key below p0). Near miss xcov11_n20 (47023109c198).

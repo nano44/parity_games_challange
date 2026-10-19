@@ -161,3 +161,52 @@ So the checker detects broken definitions.
   - Prop. 5.1 instead of (11) and Lemma 5.2 in Lemma B (N1).
   - State N4 (Iσ depends on σ only).
   - Add the I1 instance to §0.
+
+## 8. §C: comparison with REFEREE's R-N5T (read 23:27Z by date -u, after my report was pushed at 0fb5fd2)
+Read: docs/referee/R-N5T.md at trunk 860fcf0 (report, REFEREE 462c8ce) and its §C at claude/referee 368a7a7.
+REFEREE's verdict: SIGNED WITH GAPS (Opus 5.5, D12), from the same source file (sha256 485a12de…).
+Item by item:
+| item | REFEREE R-N5T | mine (R2-N5T) | comparison |
+| --- | --- | --- | --- |
+| §0 instance, VJ00 5.8 "2 ⇒ 3" step | CONFIRMED by hand and by probe; also breaks I2 and P1 | CONFIRMED (§4) | agree, with the same Ω and φ 0 → 1 |
+| broken direction used by the reading? | NO (A0) | NO (§3) | agree. Both list the same VJ00 items as used |
+| Lemma A | SIGN; = Lemma 5.7 as stated; Prop. 5.4 (2) proved | CORRECT; N2; Prop. 5.4 (2) proved | agree |
+| Lemma B, route to Prog(Ω,(v,w)) | (11) + easy direction of Lemma 5.2 | N1: Prop. 5.1 for σ⁺ suffices | agree (REFEREE accepts N1 in its §C) |
+| Lemma B, =_ℓ on pairs (G-B1) | VJ00 defines =_ℓ only on sets; pair reading with equal lengths fixed by the Lemma 5.2 proof and (6) | read as the equivalence of E_ℓ on M(V) × N (forces k = k′) | agree on content. I accept G-B1 as a citation note: VJ00 indeed writes =_ℓ for sets in §4.2 and uses it on pairs in (6) and Prog. The reading should say the pair =_ℓ includes length |
+| Lemma B, contradiction (G-B2) | "⊴-equivalent" is equality, by (1) | "E-equivalent contradicts ◁", N3 "say play values (1)" | agree (G-B2 = N3) |
+| Theorem, ≺ order | SIGN; 4-case transitivity | CORRECT | agree |
+| N5, both players per iteration | Iσ depends on σ only; τ selects the subset | N4 (unstated in the reading) | agree |
+| N5, engine returns a choice in A(v) everywhere (G-N2) | closed by code read (FIX 2, FIX 4) | not raised; I took σ_new as a strategy by SPEC S4a | ACCEPT G-N2 as closed. It is a fair point I did not make: S4a's "σ_new" presupposes a total choice, which REFEREE checked in code |
+| fallback, "every iteration changes σ or τ", no repeat | ✓ | ✓ | agree |
+| flat iterations | ≤ 4n(n−1) | ≤ 4n(n−1) | agree, the same constant |
+| code link (G-N1 = G-N5T-1) | valuations on G AND G^d, 22,969 vertex valuations, 0 mismatches; improving() not compared | valuations + improvement sets, Even side, 23,943 strategies, 0 mismatches | complementary. The one remaining open piece (improving() on the Odd side) is now run, see below |
+| S5 output correctness | §C corrects A0: "1 ⇒ 2" checked GIVEN Lemma 5.9 / Prop. 5.10 | G-N5T-3 (not re-derived) | agree after REFEREE's correction |
+| oracle for Ω | min over positional ⊖ strategies (uses (11)) | min over all plays (no (11)) | different routes, both 0 failures. Volumes: theirs 83,472 switches / 3,855 flat; mine 936,826 / 33,103 |
+| negative control | N5T_FLIP=1: T fails 113/113 | M1: 8,348/8,348; M2 | agree in kind |
+
+New since §7 (my own code; DATA):
+- G-N1 / G-N5T-1, Odd side. si_vs_bf.py now has a "dual" mode. G^d is built as prio + 1 with owners swapped, which is n5.py's
+  dual() line for line (experiments/new/n5.py at 812ecba).
+  - Setup: 3,000 random games (seed 8), every ⊕-strategy of G^d (21,205).
+  - Result: 0 valuation mismatches and 0 improvement-set mismatches. Output: si_vs_bf_dual.txt.
+  - With REFEREE's run, si.py's valuations and Engine.improving now agree with a VJ00 brute force on both sides of N5.
+  - G-N1 stays DATA (random games, not a proof of si.py), but no unchecked component remains.
+- REFEREE's I1 count. i1check_1p.py restricts my i1check.py to one-player games (all vertices ⊕; 8 parity maps × 343 successor
+  maps = 2,744 games). It finds 2,270 (game, σ, single flat improvement) triples with σ not a maximum, EXACTLY REFEREE's 2,270
+  from their independent n5t_i1.py.
+  - My 4,272 is over all owner maps; the one-player subset accounts for 2,270 of them.
+  - So the two counts are now comparable, and they agree.
+  - REFEREE independently confirmed my I1 instance (prio [0, 2, 4]).
+
+Do REFEREE's gaps change my verdict? No.
+- G-B1 and G-B2 are wording or citation points. I had used the same reading of =_ℓ on pairs.
+- G-N2 is closed by REFEREE's code read.
+- G-N1 = G-N5T-1 is a code condition, DATA on both sides now.
+My verdict stays SIGNED WITH GAPS (Opus 5.5, D12) at 812ecba. There is no disagreement between the two reports.
+Joint gap list:
+- G-B1, G-B2 (closed; wording);
+- G-N1 = G-N5T-1 (DATA, both sides);
+- G-N2 (closed);
+- G-N5T-2 (scope: termination only, no running-time bound);
+- G-N5T-3 (Lemma 5.9 / Prop. 5.10 unproved in VJ00; outside the packet);
+- notes N1-N4.
