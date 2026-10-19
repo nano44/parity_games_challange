@@ -81,3 +81,45 @@ Strictness: each step strictly raises Ω at the switched vertex, so every step i
 - On CDAG_n each such move is a best response within the improving edges, and it ends the run at once.
 - The open question is whether a varying τ_k can make N5's S4a moves on some G_c emulate gen(m), i.e. single or small-subset
   steps. That is the next probe (box 8 item 1, continued).
+
+## 5. Consequence for K8's constant case, and Lemma S (switch-best in one-player 1-sink games)
+K8's constant case was closed (N5-oneplayer-box7.md §2) by the same premise: "By Prop. 7.4 the segment has O(n³) Even moves,
+whatever τ does". That is the any-policy reading, and CDAG_n refutes it. So that closure is WITHDRAWN.
+What K8's constant case needs is narrower:
+- There, τ_k = τ_sb(k) = b_(k+1) = c (N5-K8-box6.md §1 (a)-(c)), and Ω^G_σ = Ω^{G_c}_σ.
+- So each Even move of N5 is the optimum of the one-player improvement arena H_σ of G_c (Even restricted to {σ(v)} ∪ Iσ(v), Odd
+  fixed to c). That is switch-best on G_c, a single rule, not every policy.
+
+Lemma S (L-NEW reading, unrefereed). Let H be a one-player game (⊖ out-degree 1) that is 1-sink: every ⊕-strategy sends every
+play to the sink 0, a self-loop of least relevance. Since ⊖ has no choices, this is the same as: the graph without the sink loop
+is ACYCLIC (any other cycle could be selected by some ⊕-strategy). So the lemma covers DAG-shaped one-player games only. Let ρ* be
+an optimal ⊕-strategy, and h the largest number of edges on a ρ*-path to 0. Then switch-best (ρ_{k+1} = an optimal strategy of the arena H_{ρ_k}) is optimal after at most h ≤ n − 1 steps.
+Proof.
+- In a 1-sink game, Ω_ρ(v) is the path set, compared by the most relevant differing vertex, and P_ρ(v) = {v} ∪ P_ρ(ρ(v)) with
+  v ∉ P_ρ(ρ(v)). The optimal strategy of an arena has pointwise-maximal Ω (VJ00 §5).
+- H_{ρ_k} contains ρ_k, so Ω is monotone along the run, and Ω ≤ Ω* = Ω_{ρ*}.
+- Let d(v) = the number of edges on v's ρ*-path. Induction on k: after k steps, Ω_{ρ_k}(v) = Ω*(v) whenever d(v) ≤ k.
+- Take d(v) = k + 1 and x = ρ*(v), so d(x) = k and Ω_{ρ_k}(x) = Ω*(x). If v is already optimal, monotonicity keeps it there.
+- Otherwise {v} ∪ P(ρ_k(v)) ≺ {v} ∪ P*(x) = {v} ∪ P_{ρ_k}(x). Since v lies in neither set, (v, x) is an improvement, so it is an
+  edge of H_{ρ_k}.
+- Let ρ̂ = ρ_k with v → x. Then ρ̂ ∈ H_{ρ_k}. By 1-sink, ρ̂ has no cycle, so the ρ_k-path from x avoids v and
+  P_ρ̂(v) = {v} ∪ P_{ρ_k}(x) = P*(v).
+- The arena optimum ρ_{k+1} dominates ρ̂ pointwise, so Ω_{ρ_{k+1}}(v) = Ω*(v). □
+
+Computer checks:
+- experiments/new/p_strict/sb_sink_check.py: 400 random one-player 1-sink DAG games (n ≤ 14), 5 random starts each, N5 (= switch-best
+  on a one-player game) run unmodified. Violations of "iterations ≤ h": 0 of 2,000 runs; max(iterations − h) = 0.
+- On general one-player games (cycles allowed, ⊖ out-degree 1; sb_1p_general.py, 600 games n ≤ 24, 4 random starts each), switch-best
+  takes at most 6 iterations (n = 21, 22). 0 incorrect runs (regions = Zielonka, verify.py).
+So K8's constant case is re-closed only when G_c is acyclic apart from the sink loop: a narrow case. (The two-player analogue of
+the argument fails: in Friedmann's sink games the sink is the cycle node only under Odd's BEST reply, so after switching v the
+opponent may reroute through v.) For a general G_c (cycles) the constant case is OPEN; the data say ≤ 6 iterations.
+
+## 6. N5's own segments (DATA)
+experiments/new/p_strict/n5_segments.py reports the maximum number of Even moves within one segment where σ̄ is constant, and of
+Odd moves within one segment where τ̄ is constant. Runs are N5's own (n5_lock.step = n5.py's loop), on the lane's adversarial
+instances (n5adv, n5harm, n5lock, sbfollow, switchallexp_N3, deeptrap_sae N1-5, padsae N1-2).
+- The maximum is 15 Even moves in one σ̄-segment (sbe2_s22, n = 60) and 8 Odd moves (best_n24, harm_n96).
+- All the others are ≤ 6.
+- Full output: experiments/new/p_strict/segments.txt.
+So on these instances the per-segment premise holds with room to spare. CDAG shows that no any-policy theorem can give it.
