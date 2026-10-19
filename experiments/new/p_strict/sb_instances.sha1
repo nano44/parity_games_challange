@@ -8,3 +8,5 @@ d91ac1450348c9072a08d6e588f0dbed17e1ead7  instances/sb1p/sb1p_n32_seed932.pg
 2ffec851b1da69dfa547999077d47d2ac18d668b  instances/sb1p/sb1p_n64_seed964.pg
 692e34977ebbed5b998015a435d8cc9b28b728f0  instances/sb1p/sb1p_n8_seed908.pg
 072696d94f723a440153fa61b1dfc7572f10132d  experiments/new/instances/sb1p/sb2_fail.pg
+755099c58f22eb3c9d509085fc3e32fa8d03cee5  instances/sb1p/sb1_counter_n10.pg
+6babed791f8d7e802eb1a0d26fc4f982c3fbaf20  instances/sb1p/sb1_counter_n16.pg

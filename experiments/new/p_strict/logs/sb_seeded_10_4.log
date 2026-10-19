@@ -1,0 +1,13 @@
+start 6 n 21
+step 72 switch-best steps 7 (n = 21) check OK
+step 258 switch-best steps 8 (n = 21) check OK
+step 293 switch-best steps 9 (n = 21) check OK
+step 297 switch-best steps 10 (n = 21) check OK
+step 300 switch-best steps 11 (n = 21) check OK
+step 493 switch-best steps 12 (n = 21) check OK
+step 1139 switch-best steps 13 (n = 21) check OK
+step 1404 switch-best steps 14 (n = 21) check OK
+step 1506 switch-best steps 15 (n = 21) check OK
+step 1603 switch-best steps 16 (n = 21) check OK
+step 1684 switch-best steps 17 (n = 21) check OK
+best 17 n 21
