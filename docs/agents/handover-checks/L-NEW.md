@@ -100,3 +100,52 @@ Nothing running in this container; tools/oink/build and experiments/new/out/ (gi
   before any work (done above; fast-forward only, then a --no-ff merge of trunk; never rebase).
 - Also carried: estimated timestamps (box 3 had two stamps 20-55 min ahead of the clock): every stamp now comes from a
   `date -u` call made just before writing.
+
+## 2026-10-19 00:21Z (successor 3, Opus 5.5 per owner D8; every time from date -u)
+Measured from the repository at writing time. Predecessor: successor 2, notebook head 1fa0305 (parked 00:05Z).
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/l-new`. Local HEAD was STALE again (6034271, the same stale start as successor 2):
+  `git fetch origin claude/l-new claude/vibrant-johnson-nxvvxo`, then `git merge --ff-only origin/claude/l-new` -> 1fa0305.
+- Before merge: `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 0 ahead, 53 behind
+  (trunk = e73b214).
+- `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` -> f259083 (clean). Now 1 ahead, 0 behind; 2 ahead after this
+  file's commit.
+
+### 2. Open work and the next step of each (Lead box-8 brief; notebook queue)
+Nothing running in this container; tools/oink/build and experiments/new/out/ (gitignored) are absent and must be rebuilt.
+- (1) K9 premise (P): on one-player ⊕ games every VJ00 improvement chain (any non-empty unambiguous switch sets, flat steps
+  included) has poly(n) length. VJ00 Prop. 7.4 is stated only (L-LIT T22). Next: rebuild the one-player longest-chain search
+  (max 21 at n ≤ 9), extend n, read what the longest chains do; open Fearnley 1705.02313 Lemma 3 (Cochet-Terrasson-Gaubert
+  O(|V||E|), sink one-player) and test whether it adapts; either a reading tied to RS-00-48 definitions or a super-polynomial
+  one-player family (report at once).
+- (2) Climb with fitness ch_O + ch_E (best-reply changes, n5_brchanges.py) against N5. Next: after (1).
+- (3) K8's 2-periodic case (sb_flipback.py, sb_tauvar.py). Next: after (2).
+- (4) n5.py on L-COMP's 2,000 random games vs n5b spec mode. Next: regenerate with
+  `python3 experiments/harness/gen.py corpus out/rand2k 2000 20261018 --nmin 1 --nmax 120`, check sha1s against
+  claude/l-comp experiments/n5-second/results/random_*.csv.
+
+### 3. docs/GAPS.md rows I own (`grep -n "L-NEW" docs/GAPS.md` at f259083)
+- **G-N5-TIME** (major; owner "L-NEW (L-LIT T22; referees later)"; status **open**): N5 makes polynomially many iterations.
+- **G-N5-TERM** (major; owner "L-NEW (L-COMP checks runs)"; status **closed**; RESULTS R15 [refereed-only]).
+- **G-N1-LB** (minor; owner "L-NEW (optional; not routed)"; status **open**). Not in this box's plan.
+
+### 4. The three owner rulings that most constrain me (verbatim from docs/DECISIONS.md), with index status
+1. D1 (docs/DECISIONS.md "## D1"; DECISIONS-INDEX row D1 "active"):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   Binds this box: N5 and K9 are wrong until proved; a reading of (P) is a reading, not a result.
+2. D14 (docs/DECISIONS.md "## D14"; index row D14 "active"):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+   The lane's mandate (Lead reading L35 is a reading, not a ruling).
+3. D13 (docs/DECISIONS.md "## D13"; index row D13 "active"):
+   > Keep working on the dtl and also c
+   Keeps (c) alive. Also binding (D1 key line, same file, index "active"):
+   > Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision.
+
+### 5. One trap that bit this lane, and the check that now prevents it
+- Trap: a STALE local branch. It bit again today: the container started at 6034271 while origin/claude/l-new was 1fa0305;
+  working from it would have lost boxes 4-7 (K1-K9, R15 material). Check: `git fetch` then
+  `git rev-parse HEAD origin/claude/l-new` before any work; fast-forward only, then a --no-ff merge of trunk; never rebase.
+- Also carried: never put a command that can fail (e.g. cp onto itself) inside a `&&` chain before a commit; it silently
+  drops the later steps. Check: commit as its own call and confirm with `git log -1`.

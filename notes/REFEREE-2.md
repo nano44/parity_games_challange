@@ -2,6 +2,8 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
+2026-10-19 00:45Z R2-N5K9 §7 (§C) vs REFEREE R-N5K9 160db1d: agree; accepted (3b) (P_strict suffices, factor 2n(n-1)+1), withdrew "flat steps included" from "exactly as needed". Parked.
+2026-10-19 00:40Z P-N5K9 (docs/new/N5-K9-reading.md @ e73b214): docs/referee-2/R2-N5K9.md, SIGNED conditional on (P_K9) with gaps G-K9-1 (premise any-subset/any-start, unsourced; VJ00 7.4 at most switch-all = T22), G-K9-2 (optimal-reply code cond.), G-K9-3 (constants). Switch-all premise insufficient. DATA: one-player chains single 183 @ n=10 (verified), switch-all <= 10. Next: §C after Lead says REFEREE's report pushed.
 2026-10-18 23:05Z (successor 2, session_01GkEUShwH75XDth7fwempSj, Opus 5.5, D12). Handover check 7f4ae9a (Lead: 5/5).
 P-N5T (docs/new/G-N5-TERM-reading.md @ trunk 812ecba): docs/referee-2/R2-N5T.md, SIGNED WITH GAPS (G-N5T-1 code link n5.py Iσ =
 VJ00 improvements (si.py Even side cross-checked 0 mismatches; dual side unchecked); G-N5T-2 termination only; G-N5T-3 VJ00

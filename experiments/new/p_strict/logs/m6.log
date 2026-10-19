@@ -1,0 +1,5 @@
+start (2, 0)
+step 0 iterations 3 fallback 0 n=40 check OK sha1 f30ffa9ba6cf84714775e00772ff7a26a2fbd0cd
+step 52 iterations 4 fallback 0 n=38 check OK sha1 0fe3ec1bd75e9b9f0f0dff448c1b2a8601efc9aa
+step 122 iterations 5 fallback 0 n=41 check OK sha1 2094ec9a46b39880e61bd28db550245e340f141b
+best (5, 0)
