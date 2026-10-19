@@ -2,7 +2,7 @@
 """n5b.py on a seeded random corpus (harness/gen.py corpus): regions vs Oink zlk (tl if zlk fails) AND the independent
 Python Zielonka (harness/zielonka.py); both players' strategies through harness/verify.py; iterations and fallbacks recorded
 per game with the game's sha1, so L-NEW can run its n5.py on the same files and compare counts.
-Usage: rand_check.py DIR --csv OUT.csv [--jobs 4] [--timeout 300]"""
+Usage: rand_check.py DIR --csv OUT.csv [--jobs 4] [--timeout 300] [--mode orig|spec]"""
 import sys, os, csv, hashlib, argparse, signal, time
 from multiprocessing import Pool
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -30,6 +30,8 @@ def one(a):
         win, strat, it, fb = n5b.N5(g).run()
     except TO:
         return dict(row, status="timeout")
+    except n5b.RepeatedState as e:
+        signal.alarm(0); return dict(row, status="INCOMPLETE", detail=str(e))
     signal.alarm(0)
     refname, ref = reference(gp, g)
     zl = zielonka.solve(g)
@@ -47,7 +49,9 @@ def one(a):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("dir"); ap.add_argument("--csv", required=True)
     ap.add_argument("--jobs", type=int, default=4); ap.add_argument("--timeout", type=int, default=300)
+    ap.add_argument("--mode", default="orig", choices=["orig", "spec"])
     a = ap.parse_args()
+    n5b.MODE = a.mode
     sys.setrecursionlimit(1000000)
     games = list(compare.games_of([a.dir]))
     rows = []

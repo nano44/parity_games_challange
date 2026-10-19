@@ -81,6 +81,8 @@ Statement (GAP-A-M §33a, quoted): "(CHAIN-CHANGE) 'every transition of a q-phas
 Data:
 - Class set: 0 identical-chain transitions in 1,046 q-transitions.
 - 2,000 random class games: 0, but these have only 22 transitions.
+- deeprand.py, 22:25-22:27Z (date -u). 300,000 games with n 4-10 per order (stable seed 101, oink seed 102), plus 100,000 with
+  n 10-18 (stable, seed 103): 5,566 q-transitions, 0 identical-chain transitions, 0 tangle births at depth ≥ 1 in ANY phase.
 - Climbs: chainchg.py (minimum chain distance) and chainfin.py (the transition into the last q-phase's final search), both orders,
   from onep_chainfail_n20, onep_topuniq_n20 and xcov11_n20. No violation; the best distance stays at about 2 positions.
 Necessary conditions for a violation s → s+1 (reading; uses EMPTY-REC):
@@ -100,8 +102,14 @@ Necessary conditions for a violation s → s+1 (reading; uses EMPTY-REC):
     least three tops with non-monotone consumption.
   - In case (β2) the tangle must also stay out of Dom(V*_j) at s+1. Otherwise piece_j changes.
 - (γ) If s+1 learns nothing, it is the final search of the last q-phase, and then W_q(G′) = ∅ (completeness, GAP-C side).
-  - A stable call at position 0 makes the union of the region sets an Odd-closed q-trap in G′. Every cycle in it has a q-top as its
-    maximum, so that union is a q-dominion.
+  - Claim (SKETCH, reading; not checked line by line): if position 0 is stable, the union U of the round's regions is a q-dominion of G′, so W_q(G′) ≠ ∅.
+    - U is Odd-closed (here Odd means the controller C). A C-vertex enters a region only if all of its successors lie in that
+      region or in a region consumed earlier.
+    - A q-vertex's unique successor lies in its region, and the top's successor lies in U by stability.
+    - Inside a region, play moves down the attraction order, or stays inside a q-tangle that was attracted as a unit, whose
+      cycles q wins. Between regions, C moves only to regions of higher tops; only tops jump elsewhere.
+    - So every infinite play either ends inside one tangle block or visits tops infinitely often. In the second case its maximum
+      priority is a top's priority, which has q's parity.
   - Hence case (γ) needs j ≥ 1, with t escaping into earlier pieces.
   - Such a violation would cost one search per phase, which is harmless for the count (#keys + 2). (β) is the only case that
     matters for a bound.
