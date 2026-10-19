@@ -12,7 +12,7 @@ classgames DIST=1 (in-class files as given, others forced into 𝒞_C, 3 trials)
 - nest4_n80 has NEST 4 as a two-player game (R41), but is ≤ 2 after forcing.
 
 ## 2. A parametrised family
-lagfam.py D (R39), forced into 𝒞_C: D = 4, 8, 12, 16 (n = 50, 78, 106, 134). Best q-phase NEST* is 1 at every D, with S = 11, 15, 19
+lagfam.py D (R39), forced into 𝒞_C: D = 4, 8, 12, 16 (n = 50, 78, 106, 134). Best q-phase NEST* is 1 at every D, with S = 11, 15, 19, 23
 (D + 7, linear). No growth of NEST* with n.
 
 ## 3. Climbs (this box)
