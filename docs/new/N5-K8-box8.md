@@ -1,5 +1,5 @@
 # K8 revisited (box 8): the 2-periodic case is closed; the constant case is open for cyclic G_c (L-NEW successor 3)
-Opus 5.5 (D8). Written 01:35Z 2026-10-19 by date -u. Status: L-NEW READING, unrefereed, with DATA. Builds on N5-K8-box6.md (K8)
+Opus 5.5 (D8). 2026-10-19, first commit 98770e2 at 01:23Z (commit time; an earlier stamp "01:35Z" was an estimate and is corrected here). Status: L-NEW READING, unrefereed, with DATA. Builds on N5-K8-box6.md (K8)
 and N5-K9-Pstrict-counter.md §5.
 
 ## 1. Lemma NR (non-returning), from R15
