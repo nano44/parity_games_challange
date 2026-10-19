@@ -204,4 +204,16 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
   counter), no proof lane; (c) put the effort into a new approach (N5 already running). Or a combination / own direction.
 - Lead recommendation: (b) + (c): L-RED on the counter, DTL proof lane parked, proof effort to N5 gauntlet step 4; re-ask at the
   Fable reset 2026-10-21 21:00Z. Until answered, D13 continues as is.
+- Addendum (Lead, 2026-10-19 00:21Z): R15 [refereed-only] landed: N5 always terminates (two referees, CHECKER); repairs a strictness
+  claim in Voege-Jurdzinski 2000 that fails at cycles. N5 running time reduced (unrefereed, K9) to (P) polynomial one-player SI and (CH)
+  polynomially many opponent best-reply changes; referees checking; L-NEW on (P).
 - Status: open
+
+## Q17: Jens Voege's PhD thesis (optional)
+- id: Q17 (Lead, 2026-10-19 00:21Z; optional, not blocking)
+- Background: statement (P) (polynomial one-player strategy improvement) is stated without proof in Voege-Jurdzinski 2000 Prop. 7.4;
+  Friedmann's thesis attributes a proof (switch-all only) to Voege's PhD thesis (RWTH Aachen, 2000). The host refuses access from the
+  fleet's container.
+- Ask: if the owner can obtain a copy, place it in the repository (any path) and tell OWNER-DESK; L-LIT checks the proof. The fleet
+  contacts no one.
+- Status: open (optional)

@@ -249,3 +249,5 @@ caveats (a) "distraction" attack not ruled out, (b) forced fallback = switch-all
 Attack on (a)/(b) running; L-COMP second implementation; step 4 not started.
 
 ## 2026-10-18 22:29Z Lead -> owner: Q16 (early L32 reassessment) added and put to the owner.
+
+## 2026-10-19 00:21Z Lead -> owner: Q16 addendum (R15 N5 termination refereed; N5 time reduced to (P)+(CH), unrefereed); Q17 optional Voege thesis.
