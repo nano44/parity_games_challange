@@ -1,0 +1,7 @@
+ssi d1_2.pg: n=6 iterations 5; Even moves 4, changes of σ̄ 2; Odd moves 3, changes of τ̄ 1
+ssi d1_4.pg: n=10 iterations 29; Even moves 22, changes of σ̄ 14; Odd moves 15, changes of τ̄ 7
+ssi d1_6.pg: n=14 iterations 125; Even moves 94, changes of σ̄ 62; Odd moves 63, changes of τ̄ 31
+sa sae2.pg: n=35 iterations 30; Even moves 30, changes of σ̄ 4; Odd moves 0, changes of τ̄ 0
+sa sae4.pg: n=63 iterations 150; Even moves 150, changes of σ̄ 24; Odd moves 0, changes of τ̄ 0
+sa sae6.pg: n=91 iterations 630; Even moves 630, changes of σ̄ 116; Odd moves 0, changes of τ̄ 0
+sa sae8.pg: n=119 iterations 2486; Even moves 2486, changes of σ̄ 493; Odd moves 0, changes of τ̄ 0

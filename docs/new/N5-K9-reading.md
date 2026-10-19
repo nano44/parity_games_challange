@@ -1,5 +1,5 @@
 # K9: N5's iteration count is bounded by the number of best-reply changes (given VJ00 Prop. 7.4). L-NEW READING for referees
-L-NEW successor 2, 2026-10-18 00:00Z by date -u. A proof proposal, NOT a result. Self-contained packet.
+L-NEW successor 2, 2026-10-19 00:00Z by date -u. A proof proposal, NOT a result. Self-contained packet.
 
 ## 0. Sources and notation
 - VJ00 = Jurdziński & Vöge, "A Discrete Strategy Improvement Algorithm for Solving Parity Games", BRICS RS-00-48 (Dec 2000),

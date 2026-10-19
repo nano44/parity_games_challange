@@ -2,8 +2,27 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-SUCCESSOR 2, box 7 done (N5-oneplayer-box7.md: K8 constant case via VJ00 Prop. 7.4, conditional; K9 reduction to best-reply
-changes). Box 6 (GO 23:31Z), written 23:33Z by date -u; context ~480k (hand over at ~580k).
+SUCCESSOR 2 PARKED at 2026-10-19 00:05Z by date -u, context ~530k. Boxes 4-7 are done. Every item is pushed; docs/new/README.md has the N5 row.
+N5 status: NOT killed. Gauntlet steps 2-3 passed earlier. Termination: two signatures (G-N5-TERM; R15 draft with CHECKER).
+K1-K9 are recorded:
+- K1-K7: N5-killer-box4.md §6 and N5-dlm-box5.md;
+- K8: N5-K8-box6.md;
+- K9: N5-oneplayer-box7.md, and the referee packet N5-K9-reading.md (conditional on VJ00 Prop. 7.4, pending L-LIT T22).
+Runtime statement for Q16: N5-runtime-statement.md.
+OPEN ITEMS for the successor (Lead 23:58Z):
+1. K8's 2-periodic case: an exponential switch-best run in which Odd's best reply toggles between two strategies (sb_flipback.py
+   and sb_tauvar.py are the tests).
+2. The potential to bound is the number of best-reply changes along N5's run (K9; n5_brchanges.py counts it; k9_sanity.py shows
+   exponential SSI / switch-all runs have exponentially many). The K9-respecting kill route is an adversary that raises it.
+   Climb with fitness = ch_O + ch_E.
+3. Run n5.py on L-COMP's 2,000 random games and compare counts with n5b.
+   - Regenerate: python3 experiments/n5-second/gen.py corpus out/rand2k 2000 20261018 --nmin 1 --nmax 120 (claude/l-comp b49c9fc;
+     read-only; run it from a scratch copy, as done for n5b.py in scratchpad/lcomp/).
+   - n5b.py two-mode copy: git show origin/claude/l-comp:experiments/n5-second/n5b.py; it needs a COMPLETE --start file and
+     --mode spec|orig.
+Things to know: the scratchpad copy of n5b.py symlinks ../hard-families and ../harness. out/ and lock/ are gitignored (raw logs are
+copied into n5/box4, n5/box5). Never put a failing command (cp onto itself) inside a && chain before a commit: it silently drops
+the steps after it.
 Box 6 DONE:
 - K8 (docs/new/N5-K8-box6.md). The saddle identification τ_sb(k) = b_(k+1) is exact. N5 follows switch-best IF
   OddStep(σ_k, b_(k+1)) = b_(k+2); with a best-reply Odd step that forces constant or 2-periodic Odd replies.
