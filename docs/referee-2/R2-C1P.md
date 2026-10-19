@@ -312,3 +312,19 @@ I re-derived the induction on the join order under T, across steps.
 - So, on the signed chain CTRL → NOSTEAL-1P → OUTCOME-MONO-1P → SAME-CTX → LEX(chain-changing) → K-constraint → L-NEST* → CK:
   GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED), one named statement. LEX's strict all-pairs form still needs (CHAIN-CHANGE), but nothing uses
   that form any more.
+
+### §C-A1: comparison with REFEREE's A1 (docs/referee/R-C1P.md §A1, claude/referee 640ffae0; read after my A1 was pushed at 8e7a02c2)
+Both: R47 SIGNED (Opus 5.5, D12), gaps closed, GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED). Item by item:
+| item | REFEREE | mine | comparison |
+| --- | --- | --- | --- |
+| EMPTY-REC | SIGN | SIGN (A1-N1: name the tin = escape-target trigger, 443) | agree |
+| §2 (i) | SIGN | SIGN | agree |
+| DOM-MONO | SIGN, A1-3: only non-increasing caps used | SIGN WITH GAPS, A1-G1: the same point | agree (A1-3 = A1-G1) |
+| SPTL-SANDWICH | A1-1: stable stop also at 765 | A1-G2: cite R10 (a)/R9 (b) under consumption; I already used both stops (716 and 765-767, V = V*) | agree. A1-1 is covered in my text; A1-G2 is a citation point REFEREE did not raise. It does not change the verdict |
+| CK (1), CHECK_UNIQUE | A1-2: R47 must cite dtl.cpp 23 | I cited line 23 and 383-416 | agree (A1-2 is a request to R47; my check already rests on line 23) |
+| CK (2), e* location | A1-5: search()'s dominion attractor (1032-1037) must be excluded; it is, by STR-DET: equal search_rec tattrs ⇒ equal extractions ⇒ no dominion at s+1 | I wrote "runs only if a dominion was found", WITHOUT showing that s+1 finds none | ACCEPT A1-5. Theirs is the complete argument: my sentence silently needed R8 STR-DET (identical tattrs ⇒ identical extractions, so s+1 finds a dominion only if s did, and s found none inside the phase). With A1-5 the case analysis of (2) is exhaustive |
+| CK (3)-(5) | SIGN | SIGN | agree (both: R9 (a) original constants given R8, F_R = 0) |
+| §5, K | A1-4: use R46's K ≤ (n+2)²(n+1); R47's (n+3)(n+1)² is SMALLER and unproved | A1-N3: "both polynomial; immaterial" | ACCEPT A1-4, and I withdraw "immaterial" as wording. (n+3)(n+1)² = (n+1)(n²+4n+3) < (n+1)(n²+4n+4) = (n+2)²(n+1). So R47's constant is a strict understatement with no proof, and the stated bound must use R46's signed K. The conclusion (polynomial) is unchanged |
+Do REFEREE's gaps change my verdict? No: A1-1..A1-5 are closed wording or citation points, and A1-4 / A1-5 are now in my record as
+above. Joint position: R47 Theorem CK has two signatures, with R46's K. The P-C1P chain gives
+GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED), one named statement.
