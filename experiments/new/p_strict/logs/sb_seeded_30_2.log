@@ -1,0 +1,10 @@
+start 16 n 35
+step 55 switch-best steps 23 (n = 35) check OK
+step 207 switch-best steps 24 (n = 35) check OK
+step 385 switch-best steps 25 (n = 35) check OK
+step 533 switch-best steps 26 (n = 35) check OK
+step 1051 switch-best steps 27 (n = 35) check OK
+step 1131 switch-best steps 28 (n = 35) check OK
+step 1381 switch-best steps 29 (n = 35) check OK
+step 1458 switch-best steps 30 (n = 35) check OK
+best 30 n 35

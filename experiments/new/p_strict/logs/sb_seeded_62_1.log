@@ -1,0 +1,3 @@
+start 62 n 64
+step 215 switch-best steps 63 (n = 64) check OK
+best 63 n 64
