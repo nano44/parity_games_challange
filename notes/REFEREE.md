@@ -18,6 +18,11 @@ Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD =
   Tools: scratch/n5k9_sbar.py, n5k9_longest.py, n5k9_r2chain.py. §C written 00:38Z (no conflict; accepted R2's Step 2 tightening;
   R2's 183-step n=10 chain confirmed; my random-game data withdrawn as evidence). PARKED.
 
+- P-C1P (Lead 01:14Z 10-19; pin 01d63d7): docs/referee/R-C1P.md. CTRL SIGN, NOSTEAL-1P SIGN, OUTCOME-MONO-1P / SAME-CTX SIGN WITH
+  GAPS (closed), LEX SIGN WITH GAPS (L-1 OPEN: strict all-pairs form = (CHAIN-CHANGE)), R46 §1 SIGN, §2b SIGN, §3 SIGN WITH GAPS
+  (R-2 OPEN: S − 1 = |P| + I, I = chain-keeping transitions). Oink built at tools/oink (8fbf0a7). Lesson: "phase" = searches of one
+  player between dominion-finding searches (R5 (g)); G′ fixed inside a phase. NEXT: §C after R2's report.
+
 ## Sources opened (append)
 - VJ00 = Vöge & Jurdziński, BRICS RS-00-48 (Dec 2000), https://www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, sha256 485a12de432a2a8c..
   (opened 2026-10-18 between 22:59Z and 23:04Z by date -u): §3 postulates P1/P2/I1/I2; §4.1-4.5; §5.1 (3)-(11); Prop. 5.1, 5.3, 5.4, 5.6, 5.10; Lemmas 5.2,
