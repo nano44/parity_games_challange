@@ -155,3 +155,17 @@ wrapper re-states its loop line for line. The tool records each Dom call's input
 all pairs of calls with the same input within a phase: the later call must have X_i ⊇ X_i of the earlier one for every step i.
 - Pinned class instances plus 150 climb instances, both orders: 12,043 same-input pairs per order, 0 violations.
 - 100,000 random class games (n 4-14, seed 7), both orders: 1,434 pairs per order, 0 violations.
+
+## 7. Referee wording (02:33Z, date -u; requested by the Lead 02:25Z after both referees signed A1; §1-§5 unchanged)
+- A1-2 (step (1) of §4): the duplicate check that makes s+1's repeated extractions learn nothing is CHECK_UNIQUE, defined as 1 at
+  dtl.cpp 23 (`#define CHECK_UNIQUE (1 or !NDEBUG)`). So it is on in the pinned release build.
+- A1-4 (§5): use R46's signed constant K ≤ (n + 2)²(n + 1), as pinned in P-C1P. The value (n + 3)(n + 1)² written in §5 (and in
+  R46 after the pin) is the slightly smaller count. The signed, larger constant is the one to cite.
+- A1-5 (§4 step (2)): a first difference e* inside search()'s dominion attractor (dtl.cpp 1032-1037: attractVertices and
+  attractTangles from the solved vertices into S on G) is excluded by STR-DET (RESULTS R8). In a phase that attractor runs only
+  in the last search, after a dominion, so it lies outside every within-phase transition's comparison window.
+- A1-N1 (DOM-MONO, and §1 (b)): a tangle is examined only through tin, the lists of its escape targets (dtl.cpp 443:
+  `tin[tangleto[x]].push_back(tidx)`). So attractTangles(player, u, …) triggers exactly the tangles that have u as an escape,
+  which is the trigger structure the last-pop argument uses.
+- A1-G2 (DOM-MONO, SPTL-SANDWICH): T-monotonicity of a tattr on a consumed subgame cites RESULTS R10 (a) and R9 (b), the signed
+  forms of DTL-proof Lemma 1.2b.
