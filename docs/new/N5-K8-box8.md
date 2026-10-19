@@ -122,6 +122,20 @@ Consequence:
   that is the open part.
 Check: sb_settle.py's failing runs are exactly cycle-preparing steps (n = 15: 10 → 10 → 15), consistent with Lemma T.
 
+## 3d. The O(n³) route by cycle-node phases (sketch; DATA p_strict/sb_phaselen.py, sb_phaselen.txt)
+- A phase is a maximal run of switch-best steps in which every vertex's cycle node λ is unchanged. λ is monotone in reward
+  order, so there are ≤ n(n−1) + 1 phases.
+- Inside a phase, let K_u be the vertices with λ = u, and H^ph_u the subgame on K_u in which u keeps a self-loop. Values inside a phase
+  coincide with H^ph_u values. So Lemma T, run in H^ph_u, settles every vertex whose H^ph_u-optimal play reaches u within its depth,
+  ≤ |K_u| steps.
+- Vertices whose H^ph_u-optimum uses a better cycle inside K_u end the phase when that cycle closes. Bounding how long that cycle
+  takes to build is the SAME open part as in §3c. So this is a reduction, not a proof.
+- DATA: phases are short.
+  - Random one-player games (900 runs, n ≤ 20): ≤ 4 steps per phase.
+  - SB1 counterexamples: n = 10: 11 steps in 9 phases (max 4 per phase); n = 16: 17 steps in 17 phases (max 2); n = 48: 49 steps
+    in 34 phases (max 17).
+  - So the long runs are many short phases, consistent with an O(n)-per-phase bound.
+
 ## 4. Files
 p_strict/sb_2per_climb.py, sb_alt_climb.py, sb_1p_climb.py, sb_replies.py, sb_alt_diag.py, n5_noreturn.py; instances in
 instances/sbalt/, instances/sb2/, instances/sb1p/ (sha1 in p_strict/sb_instances.sha1); logs in p_strict/logs/.
