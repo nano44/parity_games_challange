@@ -247,7 +247,7 @@ Signature: (Opus 5.5, D12).
 I re-derived the induction on the join order under T, across steps.
 - Vertex rule: v ∈ R_j joined at step i under T. Every R-successor of a C-vertex v (the unique successor of a q-vertex) is in
   X_i(T), and none is in X_0 = G′ \ R_j. By induction, all of them are in X′_i \ X_0, so they joined under T′ during the call by
-  step i, and were popped (every joiner is pushed: top, 88-89, 170-172).
+  step i, and were popped (every joiner is pushed: the top, 88-90, 170-172).
   - At the LAST of those pops (step k ≤ i, cap c_k ≥ c_i ≥ pr(v)), attractVertices examines v. It is not yet in X′ (or we are
     done), still in the current R, and has no R-successor outside X′. So v joins. ✓
 - Tangle rule: the same argument on t's escapes inside R_j. There is at least one, because the trigger under T was a popped
@@ -264,10 +264,10 @@ I re-derived the induction on the join order under T, across steps.
 - (a) Line-by-line identification:
   - BV's final round (returns at 716 or 765-767; V = V* in both cases) and sptl pass 1 (481-499, called with a COPY of R at 871)
     process the same tops of V* in the same decreasing order.
-  - Each uses a per-top target (BV: CurZ, reset per top at 703; sptl: member Z, reset at 547), cap priority(top), and a subgame
+  - Each uses a per-top target (BV: CurZ, reset per top at 704; sptl: member Z, reset at 542), cap priority(top), and a subgame
     consumed by all earlier regions of the round/pass (BV: CurR at 699; sptl: R at 490).
   - The skip tests agree: BV skips `Z[top]` (in an earlier region = popped); sptl skips `!R[top]` (popped). ✓
-  - closed_region / W affect only extraction (517-546), not regions. ✓
+  - closed_region / W affect only extraction (512-541), not regions. ✓
 - (b) The tangle sets T^j_s ⊆ T^j_s ∪ L_k ⊆ T_{s+1}: L_k is learned during s, T only grows in a phase, and s + 1 learns nothing
   before e*. ✓
 - (c) The induction over k, with f_k monotone in T at a fixed input, sandwiches SP_s(a_k) between equal values. So no SP region of

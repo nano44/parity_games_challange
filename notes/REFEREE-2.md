@@ -2,7 +2,7 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
-2026-10-19 02:1xZ (see commit time) A1 = R47 Theorem CK in R2-C1P.md §A1: all SIGN (A1-G1 unneeded distinct-prio hyp., A1-G2 cite R10(a)/R9(b) under consumption; closed). Closes G-R46-1: GAP-A on C^1P <= (NEST*-BOUNDED) alone. DOM-MONO DATA vacuous (0 changes in 163 pairs). Next: §C of A1 after Lead says REFEREE's is pushed.
+2026-10-19 02:14Z A1 = R47 Theorem CK in R2-C1P.md §A1: all SIGN (A1-G1 unneeded distinct-prio hyp., A1-G2 cite R10(a)/R9(b) under consumption; closed). Closes G-R46-1: GAP-A on C^1P <= (NEST*-BOUNDED) alone. DOM-MONO DATA vacuous (0 changes in 163 pairs). Next: §C of A1 after Lead says REFEREE's is pushed.
 2026-10-19 01:44Z R2-C1P §9 (§C) vs REFEREE R-C1P 3061415: full agreement (L-1=G-LEX-1, R-2=G-R46-1); accepted N-1, O-1, S-2. Waiting for P-C1P addendum (L-RED R47, chain-keeping transitions).
 2026-10-19 01:29Z P-C1P (GAP-A-M §27b/§28e/§33b/§35b, R46 §1/§2b/§3 @ 01d63d7): docs/referee-2/R2-C1P.md. SIGN: CTRL, NOSTEAL-1P, §27b corollary, OUTCOME-MONO-1P, R46 §1, §2b. SIGN WITH GAPS: SAME-CTX (G-SC-1 rho=rank incl. e; G-SC-2 cite R9(b)), LEX + R46 §3 (G-LEX-1 = G-R46-1 MAJOR: need (CHAIN-CHANGE); S-1 = |P| + Z). Probe: R2-C1P/r2log.patch (depth-0 log + R2_REV), c1pcheck.py, nestbf.py. Next: §C after Lead says REFEREE's R-C1P pushed. Handover at ~600k.
 2026-10-19 00:45Z R2-N5K9 §7 (§C) vs REFEREE R-N5K9 160db1d: agree; accepted (3b) (P_strict suffices, factor 2n(n-1)+1), withdrew "flat steps included" from "exactly as needed". Parked.
