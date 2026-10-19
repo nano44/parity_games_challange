@@ -58,6 +58,8 @@ FALSE.
   - steps 2-5 build the optimal top's cycle backwards, one vertex per step;
   - steps 6-10 then spread the new cycle node outward, one vertex per step.
   So there are two serial propagations over disjoint vertex sets, plus the cycle preparation: about n + 1 steps.
+Seeded-climb growth (n, steps): (10, 11), (16, 17), (24, 23), (32, 31), (48, 49). The n = 48 instance is
+instances/sb1p/sb1_counter_n48.pg; n5.py reproduces 49 iterations.
 Revised conjecture SB1': switch-best on one-player games takes O(n) steps (data: ≤ n + 1). The rest of this section is the evidence
 gathered under SB1, and it stands for SB1'.
 - 906 runs: 300 random one-player games (n ≤ 20) plus the sb1p climb instances, 3 random starts each. max(steps − n) = 0.
