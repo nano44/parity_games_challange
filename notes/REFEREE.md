@@ -23,7 +23,7 @@ Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD =
   (R-2 OPEN: S − 1 = |P| + I, I = chain-keeping transitions). Oink built at tools/oink (8fbf0a7). Lesson: "phase" = searches of one
   player between dominion-finding searches (R5 (g)); G′ fixed inside a phase. §C written 01:39Z (agree; accepted R2's G-SC-2: cite
   R9 (b) for the Dom step). A1 (R47, Lead 02:04Z, pin da63c40) written 02:06Z-02:09Z: EMPTY-REC, §2 (i), DOM-MONO SIGN; SPTL-SANDWICH, CK, §5 SIGN WITH
-  GAPS (A1-1..A1-5 closed). Overall YES: GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED). §C-A1 written 02:27Z (agree; accepted A1-G2 cite R10 (a)/R9 (b);
+  GAPS (A1-1..A1-5 closed). Overall YES: GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED). §C-A1 written 02:26Z (agree; accepted A1-G2 cite R10 (a)/R9 (b);
   withdrew A1-4 'unproved' — R2's K ≤ (n²+n)n makes R47's K valid; A1-N2 once per player block). NEXT: CHECKER diff of RESULTS R16.
 
 ## Sources opened (append)

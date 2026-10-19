@@ -301,7 +301,7 @@ All uses match what the results state.
 Honest scope: the class is 𝒞^1P (one-player for the non-searching side, distinct q-priorities). The open statement is
 (NEST*-BOUNDED). This is a step-4 search-count reduction on a subclass, not a step-4 pass, and not an M4 claim.
 
-### §C-A1. Comparison with REFEREE-2's A1 (R2-C1P.md §A1, referee-2 8e7a02c + 22e5d2d, read 02:27Z by date -u, AFTER my A1 was pushed at 640ffae)
+### §C-A1. Comparison with REFEREE-2's A1 (R2-C1P.md §A1, referee-2 8e7a02c + 22e5d2d, read 02:26Z by date -u, AFTER my A1 was pushed at 640ffae)
 Same overall verdict: R47 SIGNED with closed gaps, and GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED) alone. Both labelled (Opus 5.5, D12).
 | item | mine | REFEREE-2 | comparison |
 |---|---|---|---|
