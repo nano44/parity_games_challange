@@ -708,3 +708,4 @@
 - L-NEW succ. 3 (session_01PTa8b1EHQDZYpwmi99oG5G, ~370k): box 8 to ~03:45Z (park): K8 constant case (one-player switch-best, SB1'); box8-lemmas.md index (referee packet deferred). GAPS G-N5-TIME open (K9 premise false via CDAG_n).
 - Parked: L-ALG succ. 10 (do not reuse, 595k), L-COMP (520k), L-LIT (session_01U8UDMdzBEgWLNYXESoijfi), CHECKER, OWNER-DESK idle (session_01Eq99qsTJBiTh6xLzwCPtqv).
 - Rules reminder: date -u before every header; re-run every kill; scope + Lead-file diff on every merge; never land without CHECKER.
+- 02:12Z (date -u) L-RED R47 §6 (d33550d, merged): DOM-MONO mechanical check 12,043 + 1,434 same-input Dom pairs per order, 0 violations; §1-§5 unchanged (0 removed lines vs da63c40), so the A1 pin stands.
