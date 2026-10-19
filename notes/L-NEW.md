@@ -16,8 +16,8 @@ OPEN ITEMS for the successor (Lead 23:58Z):
    exponential SSI / switch-all runs have exponentially many). The K9-respecting kill route is an adversary that raises it.
    Climb with fitness = ch_O + ch_E.
 3. Run n5.py on L-COMP's 2,000 random games and compare counts with n5b.
-   - Regenerate: python3 experiments/n5-second/gen.py corpus out/rand2k 2000 20261018 --nmin 1 --nmax 120 (claude/l-comp b49c9fc;
-     read-only; run it from a scratch copy, as done for n5b.py in scratchpad/lcomp/).
+   - Regenerate (Lead correction 00:03Z): python3 experiments/harness/gen.py corpus out/rand2k 2000 20261018 --nmin 1 --nmax 120.
+     Check the sha1s against claude/l-comp results/random_*.csv (b49c9fc).
    - n5b.py two-mode copy: git show origin/claude/l-comp:experiments/n5-second/n5b.py; it needs a COMPLETE --start file and
      --mode spec|orig.
 Things to know: the scratchpad copy of n5b.py symlinks ../hard-families and ../harness. out/ and lock/ are gitignored (raw logs are
