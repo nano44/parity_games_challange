@@ -184,7 +184,7 @@ chain-keeping transitions per q-phase. Obstruction statement as both referees re
 polynomial per q-phase).
 
 ## A1. Addendum: R47 Theorem CK (chain-keeping transitions), docs/red/R47-chainkeep.md at trunk da63c40
-Lead routing 02:04Z by date -u. Written 02:06Z-02:25Z (date -u). docs/referee-2/ not read for A1. Code as above (dtl.cpp @ 8fbf0a7).
+Lead routing 02:04Z by date -u. Written 02:06Z-02:09Z (date -u). docs/referee-2/ not read for A1. Code as above (dtl.cpp @ 8fbf0a7).
 ### Verdicts (Opus 5.5, D12)
 | item | verdict |
 |---|---|
