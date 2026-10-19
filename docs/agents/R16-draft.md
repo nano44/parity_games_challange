@@ -1,4 +1,4 @@
-# Draft RESULTS R16 (Lead, 2026-10-19 02:35Z by date -u) — DRAFT, not landed; awaits both §C-A1 and CHECKER C19
+# Draft RESULTS R16 (Lead, 2026-10-19 02:35Z by date -u) — DRAFT, not landed; awaits CHECKER C19 (rev. 02:45Z: both §C-A1, K)
 
 ### R16 [refereed-only] A_DTL on one-player games 𝒞^1P: the search count per phase is n^{O(NEST*)}, so GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED) (2026-10-19) — partial step-4 reduction on a subclass (not M3, not a step-4 pass, not M4)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Class (GAP-A-M
@@ -20,7 +20,7 @@
       tree-lexicographic per-context order; hence c(s′) ≤ c(s″) for all searches s′ < s″ of a phase. (The strict form "for ALL
       pairs" needs (CHAIN-CHANGE), DATA only; nothing below uses it.)
   (f) K-constraint (R46 §1): between two consecutive transitions at positions < p, at most K transitions have position p,
-      K = O(n³) [exact constant: see CHECKER note below].
+      K ≤ (n+2)²(n+1) = O(n³) (R46 §1 count; R47 §7 uses this signed K).
   (g) L-NEST* (R46 §2b): a sequence over m positions satisfying the K-constraint with NEST* ≤ d has length ≤ (2(d+2)m²K)^d;
       NEST* (first-to-last-occurrence nesting) is monotone under subsequences.
   (h) Lemma EMPTY-REC (R47 §1): in 𝒞_C (out-degree-1 hypothesis only), every recursive search_rec call of a q-search gets an
@@ -43,10 +43,11 @@
   on pinned 8fbf0a7 + own analyser, Oink order): 13 pinned class instances, 0 violations of CTRL, CHAIN-CHANGE, LEX, K, the
   bound and CK (I = 0, total |P| = 79); 7,500 random class games 0 violations (trivial phases); nestbf = R46's tables. L-RED:
   DOM-MONO 12,043 + 1,434 same-input pairs per order, 0 violations (R47 §6).
-- Signatures: REFEREE docs/referee/R-C1P.md (referee 2ad62df; §C 2d69929; A1 83c2916; §C-A1 pending). REFEREE-2
-  docs/referee-2/R2-C1P.md (referee-2 1ecc8d5; §C ff4011f; A1 8e7a02c + 22e5d2d; §C-A1 pending). Closed gaps: S-1/S-2/S-3 =
+- Signatures: REFEREE docs/referee/R-C1P.md (referee 2ad62df; §C 2d69929; A1 83c2916; §C-A1 4701783). REFEREE-2
+  docs/referee-2/R2-C1P.md (referee-2 1ecc8d5; §C ff4011f; A1 8e7a02c + 22e5d2d; §C-A1 420b14b). Both §C-A1: no conflict. Closed gaps: S-1/S-2/S-3 =
   G-SC-1/G-SC-2 (SAME-CTX), O-1/O-2 (OUTCOME-MONO-1P), N-1 (NOSTEAL-1P wording), R-1 (L-NEST* wording), A1-1..A1-5 and
   A1-G1/A1-G2, A1-N1..A1-N3. Closed by A1: L-1 = G-LEX-1 and R-2 = G-R46-1 (no longer needed).
-- CHECKER note to resolve: R46 §1's text states K ≤ (n+3)(n+1)²; REFEREE R-C1P checked K ≤ (n+2)²(n+1) and A1-4 asks R47 §5 to
-  use R46's signed K; REFEREE-2 A1-N3 calls the difference immaterial. The landed text must state the K both referees signed.
+- Constant K: R46 §1's text states K ≤ (n+3)(n+1)²; REFEREE checked K ≤ (n+2)²(n+1) (R-C1P); in §C-A1 REFEREE accepts
+  (n+3)(n+1)² via REFEREE-2's count K ≤ (n²+n)·n, while REFEREE-2 calls (n+3)(n+1)² unproved and asks for (n+2)²(n+1). This entry
+  states the larger K ≤ (n+2)²(n+1), which both accept; R47 §7 (l-red 28c0a20, after the A1 pin, §1-§5 unchanged) uses it.
 - Gauntlet: partial step-4 reduction for A_DTL on a subclass. GAP-A (general) stays OPEN; GAPS gets a row for (NEST*-BOUNDED).
