@@ -21,7 +21,7 @@ Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD =
 - P-C1P (Lead 01:14Z 10-19; pin 01d63d7): docs/referee/R-C1P.md. CTRL SIGN, NOSTEAL-1P SIGN, OUTCOME-MONO-1P / SAME-CTX SIGN WITH
   GAPS (closed), LEX SIGN WITH GAPS (L-1 OPEN: strict all-pairs form = (CHAIN-CHANGE)), R46 §1 SIGN, §2b SIGN, §3 SIGN WITH GAPS
   (R-2 OPEN: S − 1 = |P| + I, I = chain-keeping transitions). Oink built at tools/oink (8fbf0a7). Lesson: "phase" = searches of one
-  player between dominion-finding searches (R5 (g)); G′ fixed inside a phase. §C written 01:40Z (agree; accepted R2's G-SC-2: cite
+  player between dominion-finding searches (R5 (g)); G′ fixed inside a phase. §C written 01:39Z (agree; accepted R2's G-SC-2: cite
   R9 (b) for the Dom step). NEXT: P-C1P addendum R47 (I polynomial via R9 (a), F_R = 0, EMPTY-REC) when the Lead routes it.
 
 ## Sources opened (append)

@@ -162,7 +162,7 @@ phases only, and they do not test (CHAIN-CHANGE) beyond §33a's count.
 - N-1, O-1, O-2, S-1, S-2, S-3, R-1: wording or citation; closed here.
 - Named statement left open by R46 (unchanged): (NEST*-BOUNDED).
 
-## §C. Comparison with REFEREE-2 (R2-C1P.md, trunk / referee-2 b666c4a, read 01:40Z by date -u, AFTER my report was pushed at 3061415)
+## §C. Comparison with REFEREE-2 (R2-C1P.md, trunk / referee-2 b666c4a, read 01:39Z by date -u, AFTER my report was pushed at 3061415)
 Same verdicts in substance, item by item. Both are labelled (Opus 5.5, D12), and both re-read dtl.cpp @ 8fbf0a7 independently.
 | item | R-C1P (me) | R2-C1P | comparison |
 |---|---|---|---|
