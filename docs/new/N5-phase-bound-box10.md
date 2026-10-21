@@ -99,3 +99,25 @@ switch-best on G_σ only when τ̄ = σ, which never happens on the long instanc
   Most switches of one vertex inside one phase: 6 at n = 16 (fl_n16: 0→5→4→0→13→5→0, the whole run is one phase that ends optimal, so the
   vertex is simply deep in the optimal tree), 7 at n = 32, 8 at n = 18 with growth. Consistent with ≤ depth ≤ n per vertex per phase.
 - phase_trace.py: per-phase traces (sb1_counter_n48: the 17-step phase is the backward build of the cycle 30..47, each vertex once, 31 twice).
+
+## 5. The two-player bridge: Lemma P's statement is FALSE for N5's Even moves inside a σ̄-segment (instances; written 22:57Z by date -u)
+K9 (N5-oneplayer-box7.md, referee-signed conditional on a one-player premise) bounds N5's iterations by the number of best-reply changes
+times a per-segment bound. Inside a σ̄-segment (Odd's best reply σ̄ = c constant) Even's honest values Ξσ are the values in the one-player game
+G_c, so the natural bridge is (P-N5): Lemma P's conclusion for N5's Even-moving iterations inside one λ-phase of one segment, with simple paths
+of G_c. Test: experiments/new/tail/segP_check.py (DFS over simple paths of G_c, honest values from the engine, N5's loop unmodified).
+- Random two-player games n ≤ 9 (300 games): 109 checks, 0 violations, but segments are short (≤ 2 Even moves).
+- Lane instances n ≤ 16 and DLM modules: 239 checks, 0 violations; longest in-phase Even-move count 7 (seg_n16).
+- Climbed instances (tail/seg_climb.py, fitness = Even moves inside one λ-phase of one segment): (P-N5) FALSE. instances/seg10/seg_r16.pg
+  (n = 16, sha1 a4d7333ed40674cd5d06800eaf2ee6f32db25258): at k = 4 Even moves, vertex 1 (Even) has Ξ(1) = (12, {15 only…}, 3) while the simple
+  path 1 → 15 → 10 → 14 → 12 (4 edges, Odd-forced after the first hop, so its value is constant in the segment) is better; the first hop (1, 15)
+  is honest-improving at every step of the segment and is never taken: Even's arena optimum against the CURRENT τ_k prefers 10, then 13.
+  instances/seg10/seg_n24.pg (sha1 1c5c6f22…): already at k = 1, vertex 1 has cycle node 12 while its direct edge to the cycle node 11 (better)
+  is honest-improving and not taken (x does not move at all: a K1 stall). 204 violations over the three climbed instances; 0 (SEG-LEN) violations.
+- Diagnosis: the induction step of Lemma P uses (F1) in Case B: the arena optimum dominates the single honest switch ρ̂ = σ[x → z]. In N5 the
+  arena optimum maximises V_{σ,τ_k} (against Odd's current τ_k) while the gate and the progress measure are honest (against c). A K1 stall
+  (N5-killer-box4.md) is exactly a vertex where the honest switch is available and the τ_k-optimum refuses it; stalls lasting ≥ 4 Even moves
+  exist (seg_r16). So the one-player argument does not transfer; this is the obstruction with an instance.
+- What survives on data, (SEG-LEN): Even moves inside one λ-phase of one σ̄-segment ≤ n − 1. Climbs: 12 at n = 16 (three seeds), 11 at n = 16
+  (grown from 12), 17 at n = 20, 8 at n = 24 (seeded from best_n24), all < n − 1; every improved best re-run through n5.run, regions = Zielonka,
+  verify.py OK (tail/logs/seg_*.log). Together with K9's structure, (SEG-LEN) plus a polynomial bound on best-reply changes would bound N5;
+  neither is proved, and K9's remaining premise is now (SEG-LEN) for Even and its dual for Odd, not the one-player bound (which is Theorem PH).

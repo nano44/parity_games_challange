@@ -1,0 +1,21 @@
+instance fc1.pg n 48
+instance fc2.pg n 36
+instance sc24.pg n 24
+instance sc24g.pg n 25
+instance sg2.pg n 30
+instance sg3.pg n 34
+instance sg4.pg n 36
+instance sg5.pg n 38
+instance tc1.pg n 40
+instance tc2.pg n 42
+instance seg_n16_seed716.pg n 16
+instance seg_n40_seed740.pg n 40
+instance seg_n80_seed780.pg n 80
+instance ch_n16_seed516.pg n 16
+instance ch_n32_seed532.pg n 32
+instance ch_n48_seed548.pg n 48
+instance ch_n64_seed564.pg n 64
+instance ch_n96_seed596.pg n 96
+instance best_n24_seed24.pg n 24
+games=19 nmax=0 deg=0 segment-phases=186 (P-N5) checks=0 violations=0; (SEG-LEN) violations=0; longest in-phase Even-move count 7 at n=16
+exit 0

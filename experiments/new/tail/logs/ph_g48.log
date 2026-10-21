@@ -1,3 +1,4 @@
 start (46, 47, -48)
 step 1276 maxphase 46 steps 48 n 49 n5-iterations 48 check OK sha1 593333f5326be5f1a7e568d9c218bfff15f3d35b
 step 5060 maxphase 46 steps 49 n 49 n5-iterations 49 check OK sha1 86831ca4be035555047067b09e6b8e2a8457c33d
+best (46, 49, -49)

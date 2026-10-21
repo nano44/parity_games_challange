@@ -1,0 +1,23 @@
+start (0, 1, -12)
+step 1 inphase-seg-moves 1 iterations 1 n 13 check OK sha1 59abf8888ddc122b592d06d8e264656a0ca1d0c0
+step 11 inphase-seg-moves 2 iterations 2 n 13 check OK sha1 3c295e5a138f486392db02557ea573ccac917510
+step 80 inphase-seg-moves 3 iterations 3 n 13 check OK sha1 12889caea32fb756a94e5119750656232d3190e9
+step 136 inphase-seg-moves 3 iterations 4 n 13 check OK sha1 6c51815807cbe5d114525a55d3a6ae8887046d6c
+step 218 inphase-seg-moves 3 iterations 6 n 13 check OK sha1 fafa5275c24e3af84eec758ffb8013ae93ae5ed2
+step 219 inphase-seg-moves 4 iterations 7 n 13 check OK sha1 006c4164d0d71dcdba3189f2266523ca3b978eab
+step 482 inphase-seg-moves 4 iterations 8 n 13 check OK sha1 1eb94351d3df7f46d9d47d56ecab893d4d4dd009
+step 537 inphase-seg-moves 4 iterations 9 n 13 check OK sha1 c5bab1c59f3019e0b25d4fe725c84c6f2d3f9de4
+step 619 inphase-seg-moves 4 iterations 11 n 13 check OK sha1 05718ebdeda380092c27c1a915d7f91787229f4f
+step 689 inphase-seg-moves 5 iterations 10 n 13 check OK sha1 5955d9fc67d54d2082c14c466a419985cedb3241
+step 702 inphase-seg-moves 5 iterations 11 n 13 check OK sha1 0a07f47c255f298eb35d8c828ff5e8c3481c5529
+step 846 inphase-seg-moves 5 iterations 12 n 13 check OK sha1 8521222f1f28d19d93ec5de3ff97091fc5a0072a
+step 861 inphase-seg-moves 5 iterations 13 n 13 check OK sha1 c1214e4398bfaf6da03cb9bb359501a0b048747f
+step 928 inphase-seg-moves 5 iterations 14 n 13 check OK sha1 10f4d522b794e8a8945a3efd3ca66509e5fc5b87
+step 1109 inphase-seg-moves 5 iterations 15 n 13 check OK sha1 a157c69b5277a42dbe0be31ca5a2827ed6173fbb
+step 1110 inphase-seg-moves 7 iterations 15 n 13 check OK sha1 393468ddc5f81a5ae891938aa4fb5f0c2eeaee90
+step 1134 inphase-seg-moves 7 iterations 16 n 13 check OK sha1 de7c1db76006ad49af72e1c84ddc4cfc6c8fd9d9
+step 1170 inphase-seg-moves 8 iterations 16 n 14 check OK sha1 72135cadefd216da777800d27180f6799f22b876
+step 1724 inphase-seg-moves 8 iterations 18 n 14 check OK sha1 7ea0dad55582c6fbaef3efcc5804f21bc3fabeec
+step 2478 inphase-seg-moves 8 iterations 19 n 14 check OK sha1 d6d9c9ff0b1d3e2fb7c51c5dba069481ea8bc507
+step 2678 inphase-seg-moves 8 iterations 20 n 14 check OK sha1 434a122d0a7ff464aba7aa3ab05fe87d0f402660
+best (8, 20, -14)
