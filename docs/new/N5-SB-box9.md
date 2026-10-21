@@ -1,4 +1,4 @@
-# Box 9: one-player switch-best, in-phase structure (L-NEW successor 3; Lead brief 2026-10-21 21:06Z; written ~21:40Z by date -u)
+# Box 9: one-player switch-best, in-phase structure (L-NEW successor 3; Lead brief 2026-10-21 21:06Z; committed 53da244 at 21:15Z, date -u)
 Target: G-N5-TIME, K8's constant case = switch-best (= N5) on one-player games with cycles. Status: NO bound proved. One fact is proved,
 one lemma is transferred to phases, and two conjectures are REFUTED with instances. Builds on N5-K8-box8.md §3b-§3d.
 
