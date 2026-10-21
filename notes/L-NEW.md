@@ -2,6 +2,18 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
+BOX 9 (Lead 2026-10-21 21:06Z; ends ~00:10Z Oct 22). Merged trunk a74d82f (dea2407).
+- docs/new/N5-SB-box9.md:
+  - Fact A (proved): I_{k+1} ∩ H_k = ∅.
+  - Edge-counting bounds and Conjectures R and R2 are REFUTED (instance in sb_conjR.txt).
+  - Lemma T inside phases. The in-phase cycle-building bound is still OPEN.
+- §5: N5's longest runs (seeded climbs, ≈ 2n, up to 73 at n = 36, instances/n5b9) are frozen-σ TAILS of Odd moves, gated by Odd's
+  improvements against τ̄ ≠ σ. That is the next killer design target.
+- Stamp trap again: "~21:40Z" was estimated; fixed to the commit time. ALWAYS run date -u before writing a stamp.
+- 8f0cc71: tail climbs (tail ≈ 1.4n) and one-vertex flip climbs (≤ 17 flips at n = 48, about n/3): linear. All instances checked.
+PARKED 21:51Z (date -u), context ~495k (handover at ~580k): nothing running.
+NEXT for a successor: (i) design the frozen-σ tail to follow gen(m), with masks from τ̄'s exploits (N5-SB-box9.md §5);
+or (ii) a bound on in-phase cycle building (§3). Start a fresh successor: this session is near its context limit.
 SUCCESSOR 3 (box 8, GO 00:32Z 2026-10-19; box end ~04:00Z). Resume point updated 01:42Z by date -u. Context ~360k at 01:42Z.
 DONE in box 8 (all pushed on claude/l-new; head 22b94e4 + this notebook):
 - 42ef86e handover check (5/5 per Lead).
