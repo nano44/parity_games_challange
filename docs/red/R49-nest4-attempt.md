@@ -39,6 +39,15 @@ Every instance below: sha1, both orders give the same P, pinned Oink verified, O
   3 cases (nest3_n20, nest3_n24, near4_n26), both orders. Segment NEST* 1: 66; 0: 706.
 - On the xctx instances and this box's climb outputs (stable and oink): every G with a stable piece below it sits directly above that stable piece (216/216);
   after an O-rise at b > 0 the first stable piece is at b + 2 in 44 cases, b + 3 in 8, b + 6 in 2.
+- experiments/red/nest16/lawscan.py on the same library (identical counts in stable and oink order; NEST* histogram 0: 540, 1: 397,
+  2: 16, 3: 3):
+  - (G-NEXT): 382 G-transitions, 0 violations.
+  - (G-ADJ) "a G sits directly above the first stable piece below it": 306 cases with a stable piece below, 1 violation
+    (phi_flat_alive_n32 forced into 𝒞_0, phase (1, 0), transition 0: b 2, stable piece at 7).
+  - (O-SEG) (definition below): 189 O-rises deeper than the shallowest rising position, 0 violations in the library. The only
+    violation known is the climbed oseg_n26 below.
+  - (W): 25 windows with NEST* ≥ 2, 4 violations (the first three: spp22_oink_n40 forced into 𝒞_0, near4_n26
+    twice; the small run on near4_n26 + nest3_n24 also flags nest3_n24's position 3).
 - FALSE laws:
   - (O-SEG) "a segment after an O-rise deeper than the shallowest rising position has NEST* ≤ 1": instances/oseg_n26.pg
     (sha1 381b7b9d70d75a9f9dba2b8f7c6111ec4814eb73; S 16, Oink 16 even iterations, verified, both orders):
