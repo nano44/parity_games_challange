@@ -63,7 +63,14 @@ resumed 2026-10-21 21:07Z (date -u) on the Lead's 21:06Z message, Lead reading L
   G-ADJ 1/306; O-SEG 0/189 (false on oseg_n26); W false.
 - Tools experiments/red/nest16/: starclimb.py (MASS; FIT=seg), kcheck.sh (sha1, both orders, pinned Oink -v), wrapsearch.py,
   edgenbr.py, segstat.py, segscan.py, lawscan.py.
-- NEXT: climb from oseg_n26 so that position 1 re-rises at the end (then NEST* 4 inside a 0-window); or prove G-NEXT from dtl.cpp.
+- 22:00Z (date -u): NEST* 4 on 𝒞^1P via DISJOINT UNIONS (pairunion.py; reported to the Lead 22:05Z):
+  - nest4u_n46 = near4_n26 ⊎ onep_chainfail_n20 above (ae7ed559);
+  - nest4uu_n51 = win3_n27 ⊎ nest3_n24 interleaved (302c03a8).
+  - Both orders identical, pinned Oink verified, S 18 / 19.
+  - Mechanism: A's levels wrap B's inner levels in time; B's own outer rises are masked; mixed pieces couple the components
+    (R49 §5).
+- Growth NOT found: second-level unions, random interleavings, and library scans all stay at NEST* 4 (S stays ~19).
+- NEXT: get growth (longer phases, coupling through mixed pieces); or prove G-NEXT from dtl.cpp.
 TRAP (this box): scripts/setup_oink.sh is needed in a fresh container before any Oink check (verify's smoke step is NOT RUN without it).
 
 BOX 15 END (successor 9, same session; Lead GO 00:09Z; ended ~02:30Z by date -u). Docs: docs/red/R46-nest-bound.md, R47-chainkeep.md,

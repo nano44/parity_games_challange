@@ -1,5 +1,5 @@
 # R49: R48 §4 attack (box 16): can a −1 piece's rise feed a shallower −1 piece? (L-RED successor 10; produced on Opus 5.5)
-Status: DATA plus a mechanism reading; NO kill and NO proof so far. Written 2026-10-21 (date -u; box 16 resumed 21:07Z after the
+Status: DATA plus a mechanism reading. NEST* 4 REALISED on 𝒞^1P (two instances, §5); NO growing family and NO proof so far. Written 2026-10-21 (date -u; box 16 resumed 21:07Z after the
 usage cap cut it at ~04:01Z on 2026-10-19). Target: Lead GO 2026-10-19 03:19Z and 2026-10-21 21:06Z (date -u).
 Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, both order data, q-phases on 𝒞^1P. Chains come from L-ALG's
 unmodified b12_pot.run / chain and b12_core.states (through experiments/red/xctx/xscore.py), NEST* from experiments/red/xctx/comb/neststar.py.
@@ -106,6 +106,11 @@ Every instance below: sha1, both orders give the same P, pinned Oink verified, O
   - A's piece at 6 sits between B's pieces and rises at searches 3, 9 and 12. These interleave with B's inner activity, so A
     wraps B's window.
   - So unions add levels when one component's window encloses, in time, the other's visible structure at deeper positions.
+  - This is COUPLING, not independent composition. onep_chainfail_n20 alone has NEST* 1, S 5, P = 4,4,2,3. Inside the union, its
+    pieces rise until search 13 of 18. With no edges between the parts, the coupling goes through the shared depth-0 chain.
+    - Observed: a mixed piece (vertices of both parts) at position 2 in every search.
+    - Reading: each piece's outcome is computed by best_vertices on the union's R, so it depends on both parts, and so does every
+      context below it.
 - Growth attempts (all NEST* 4, MASS up to 46, S stays 18-19 because the components run in parallel in the same searches):
   - nest4u_n46 ⊎ each of {onep_chainfail_n20, nest3_n24, nest3_n20, near4_n26, win3_n27, w1_n27, oseg_n26, onep_fdkey_n20,
     nest4uu_n51, nest4u_n46}, 3 placements each.
