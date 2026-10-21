@@ -1,0 +1,1 @@
+games=1500 nmax=12 steps=3791 checks=137401 violations=0

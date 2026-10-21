@@ -1,0 +1,6 @@
+start (17, 49, -48)
+step 646 maxphase 42 steps 45 n 48 n5-iterations 45 check OK sha1 8fe2953635fe5738600b6ab2a6872eebf9d470a4
+step 673 maxphase 43 steps 46 n 48 n5-iterations 46 check OK sha1 a73309d7006529b71c2644d03c2b6d20201ddfde
+step 784 maxphase 45 steps 46 n 48 n5-iterations 46 check OK sha1 140517336ada2c5e5b9e86dee772097c7d5cbf7b
+step 1107 maxphase 46 steps 47 n 48 n5-iterations 47 check OK sha1 bae0aba3f16c04c8072c0bcdf5aaa8c0c2fc2418
+best (46, 47, -48)

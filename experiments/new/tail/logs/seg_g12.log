@@ -1,0 +1,22 @@
+start (1, 2, -12)
+step 20 inphase-seg-moves 2 iterations 2 n 12 check OK sha1 13f92e2e8cfd5dc8e87ee91453849ed70b438255
+step 48 inphase-seg-moves 2 iterations 3 n 13 check OK sha1 c00d97f413f78813f80df41a8059cc1e39223011
+step 87 inphase-seg-moves 3 iterations 3 n 13 check OK sha1 536514586fd912dc6137f211b4d5a7ad8dd88c8b
+step 165 inphase-seg-moves 3 iterations 4 n 13 check OK sha1 f1459fbac7004a1c97639cbbf47ab9a071fbccc8
+step 223 inphase-seg-moves 4 iterations 5 n 13 check OK sha1 b21e7e897a74be797c60b0a426e88429df6831d7
+step 315 inphase-seg-moves 5 iterations 5 n 13 check OK sha1 6047b250d96e98b705b194a504527829e21c5d1f
+step 688 inphase-seg-moves 5 iterations 6 n 14 check OK sha1 dbc04a540b5a1d5811b2128e3a5c30177cad2608
+step 718 inphase-seg-moves 5 iterations 7 n 14 check OK sha1 cb0affed4d12e9f925a42f2b868b119a59508d05
+step 742 inphase-seg-moves 6 iterations 7 n 14 check OK sha1 281292060939f152b1cef67204a67a660accf870
+step 844 inphase-seg-moves 6 iterations 8 n 14 check OK sha1 3d92ad41a9764259af1795e3a20e0ac095ddbe74
+step 1385 inphase-seg-moves 7 iterations 8 n 14 check OK sha1 3441e6a58a175ca4b401f40057f8ec423444f742
+step 1727 inphase-seg-moves 8 iterations 9 n 15 check OK sha1 cb9718c6603350bb36db2e7ff087d827cf034c6e
+step 3905 inphase-seg-moves 8 iterations 10 n 15 check OK sha1 787b282bfc365e7ab3a32f5fefd56e8c58b884f7
+step 4770 inphase-seg-moves 9 iterations 10 n 15 check OK sha1 8ca848d1d79839671decebd77d5a6cdcaf6a2dae
+step 5563 inphase-seg-moves 9 iterations 11 n 15 check OK sha1 77c67ea9485213d836aa9f9f4bf0858cc859a3d5
+step 5667 inphase-seg-moves 9 iterations 12 n 15 check OK sha1 c9e231bea6222ae8c477933f006b8e524011a766
+step 6006 inphase-seg-moves 10 iterations 12 n 15 check OK sha1 ad537810166e22e47d3693ee1942eca7672c45d0
+step 8027 inphase-seg-moves 11 iterations 13 n 16 check OK sha1 839546672b778e53345f9cb22a9d298336059902
+step 9470 inphase-seg-moves 11 iterations 14 n 16 check OK sha1 4d058423d00e5f8cf6001ed949330f99df21fefb
+step 9779 inphase-seg-moves 11 iterations 15 n 16 check OK sha1 67dfbff1e24ecc4b14312e01f78f6a2e7b871718
+best (11, 15, -16)

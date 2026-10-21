@@ -1,0 +1,17 @@
+fl_g16.pg n=18 steps=17 phases=3 max phase (steps, value-changing)=(13, 13) max value-changing per phase=13 (n-1=17) ok
+fl_n16.pg n=16 steps=9 phases=1 max phase (steps, value-changing)=(9, 9) max value-changing per phase=9 (n-1=15) ok
+fl_r24.pg n=24 steps=12 phases=5 max phase (steps, value-changing)=(8, 8) max value-changing per phase=8 (n-1=23) ok
+fl_r32.pg n=32 steps=27 phases=5 max phase (steps, value-changing)=(24, 24) max value-changing per phase=24 (n-1=31) ok
+fl_r48.pg n=48 steps=10 phases=2 max phase (steps, value-changing)=(9, 9) max value-changing per phase=9 (n-1=47) ok
+ph_g16.pg n=17 steps=17 phases=5 max phase (steps, value-changing)=(12, 12) max value-changing per phase=12 (n-1=16) ok
+ph_g48.pg n=49 steps=49 phases=5 max phase (steps, value-changing)=(46, 46) max value-changing per phase=46 (n-1=48) ok
+ph_n16.pg n=16 steps=14 phases=2 max phase (steps, value-changing)=(13, 13) max value-changing per phase=13 (n-1=15) ok
+ph_n48.pg n=48 steps=47 phases=3 max phase (steps, value-changing)=(46, 46) max value-changing per phase=46 (n-1=47) ok
+ph_r24.pg n=24 steps=19 phases=8 max phase (steps, value-changing)=(13, 13) max value-changing per phase=13 (n-1=23) ok
+ph_r64.pg n=64 steps=14 phases=5 max phase (steps, value-changing)=(10, 10) max value-changing per phase=10 (n-1=63) ok
+rel_g12.pg n=12 steps=14 phases=5 max phase (steps, value-changing)=(11, 11) max value-changing per phase=11 (n-1=11) ok
+rel_g16.pg n=16 steps=16 phases=3 max phase (steps, value-changing)=(15, 15) max value-changing per phase=15 (n-1=15) ok
+rel_g24.pg n=24 steps=26 phases=6 max phase (steps, value-changing)=(21, 21) max value-changing per phase=21 (n-1=23) ok
+sb1_counter_n10.pg n=10 steps=11 phases=9 max phase (steps, value-changing)=(4, 4) max value-changing per phase=4 (n-1=9) ok
+sb1_counter_n16.pg n=16 steps=17 phases=17 max phase (steps, value-changing)=(2, 2) max value-changing per phase=2 (n-1=15) ok
+sb1_counter_n48.pg n=48 steps=49 phases=34 max phase (steps, value-changing)=(17, 17) max value-changing per phase=17 (n-1=47) ok
