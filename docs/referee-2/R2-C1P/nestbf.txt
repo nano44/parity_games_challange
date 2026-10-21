@@ -1,0 +1,6 @@
+K=1 d=1: 1(bound 6), 3(bound 24), 5(bound 54), 7(bound 96), 9(bound 150), 11(bound 216)
+K=2 d=1: 2(bound 12), 6(bound 48), 10(bound 108), 14(bound 192), 18(bound 300)
+K=3 d=1: 3(bound 18), 9(bound 72), 15(bound 162), 21(bound 288)
+K=1 d=2: 1(bound 64), 3(bound 1024), 7(bound 5184), 13(bound 16384), 19(bound 40000)
+K=2 d=2: 2(bound 256), 8(bound 4096), 24(bound 20736)
+K=1 d=3: 1(bound 1000), 3(bound 64000), 7(bound 729000), 15(bound 4096000), 29(bound 15625000)

@@ -1,4 +1,4 @@
-# Draft RESULTS DE24 (Lead, 2026-10-19 00:12Z by date -u) — DRAFT, not landed; awaits CHECKER C18 re-diff (rev. 00:27Z: C18 E-1..E-3, N-1, N-2)
+# Draft RESULTS DE24 (Lead, 2026-10-19 00:12Z by date -u) — LANDED as RESULTS DE24 (CHECKER C18 PASS, re-diff a8a4a2f); was: awaits CHECKER C18 re-diff (rev. 00:27Z: C18 E-1..E-3, N-1, N-2)
 
 - DE24 (2026-10-18): five DATA hypotheses toward GAP-A (A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7) are
   FALSE, each in BOTH order data (L22/L26), each found by L-RED successor 9 (box 14) with graded climbs and checked with L-ALG's

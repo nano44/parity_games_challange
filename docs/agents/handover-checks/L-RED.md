@@ -289,3 +289,47 @@ Box 14 plan (Lead); nothing starts before GO:
   then `git rev-parse HEAD origin/claude/l-red` must agree before any edit (fast-forwarded here).
 - Second trap (box 11): Lead messages arrived up to 3.5 h late. Check: ReadNotifications at every check-in, after every long
   wait and after every push.
+
+# L-RED successor 10 handover check, 2026-10-19 03:07Z (date -u) (produced on Opus 5.5, owner D8)
+
+## 1. Branch, head, ahead/behind trunk
+- Branch claude/l-red. On arrival the local branch was STALE (local 5a30e98, origin/claude/l-red 878fd1a2, 2352 behind).
+  Fast-forwarded to 878fd1a2 (0 local commits to keep). At 878fd1a2: 0 ahead, 58 behind trunk
+  origin/claude/vibrant-johnson-nxvvxo 7710c0e1 (`git rev-list --left-right --count`).
+- Merged trunk 7710c0e1: git fast-forwarded (l-red had no commits trunk lacked), so no merge commit was needed; no rebase.
+  Head 7710c0e1, 0 ahead, 0 behind. This check commit makes it 1 ahead, 0 behind.
+
+## 2. Open work and next step of each item
+- (1) R48 §4 (box 16 target): does a −1 piece's own outcome rise ever feed a SHALLOWER −1 piece (carries chaining through
+  intermediate levels)? Next step: on nest3_n20 / nest3_n24 (experiments/red/xctx/instances/), log per search which piece's rise
+  feeds which (tlog.py), then either climb for NEST* ≥ 4 with a chain-through fitness (nestclass.py STAR=1 pattern) or
+  read dtl.cpp for the mechanism that forbids it. Waits for GO.
+- (2) CHECKER C19 / referee questions on R46/R47 via the Lead. Next step: answer when routed. R46 §1-§3 and R47 §1-§5 are FROZEN
+  (pinned 01d63d7 / da63c40); corrections go in new sections only.
+- (3) Adversarial check of any proof route for (NEST*-BOUNDED) that appears (dommono.py / lexrand.py pattern). Nothing to do yet.
+- Nothing running (no climbs started this session).
+
+## 3. docs/GAPS.md rows relevant to me
+- GAP-A (blocker, L-ALG; L-RED attacks): open. On 𝒞^1P the refereed reduction R16 draft (awaits CHECKER C19):
+  GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED); class best NEST* 3 (R48).
+- GAP-C (blocker, L-ALG; L-RED attacks): open (completeness; needs a cross-search progress measure).
+- G-FDL, G-STR, G-DOM: closed (used as signed inputs).
+
+## 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md)
+1. D13 (line 228; index row D13 "active"):
+   > Keep working on the dtl and also c
+   (Lead reading L34, active: L-RED works on a long phase at one context and serialized contexts.)
+2. D7 (line 105; index row D7 "active"):
+   > a
+   (Q9 (a): "Continue at the current rate. We pause automatically if the cap is hit and stop at once on overage.")
+   So at most 2 heavy jobs, and no climb outlives my box.
+3. D8 (line 161; index row D8 "active"):
+   > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
+   (Work in this box is labelled Opus 5.5 in notes/L-RED.md.)
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap: editing referee-signed text after its pin (successor 9 changed the K constant in R46 §1/§3 after pin 01d63d7; a referee
+  caught it). Check: before any edit to docs/red/R46-R48, `git diff 01d63d7 -- docs/red/R46-nest-bound.md` and
+  `git diff da63c40 -- docs/red/R47-chainkeep.md` limited to §1-§3 / §1-§5 must stay empty; new material goes in new sections
+  and is flagged to the Lead.
+- Also (bit again at this start): stale local branch; `git rev-parse HEAD origin/claude/l-red` must agree before any edit.
