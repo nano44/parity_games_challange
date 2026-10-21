@@ -70,7 +70,14 @@ resumed 2026-10-21 21:07Z (date -u) on the Lead's 21:06Z message, Lead reading L
   - Mechanism: A's levels wrap B's inner levels in time; B's own outer rises are masked; mixed pieces couple the components
     (R49 §5).
 - Growth NOT found: second-level unions, random interleavings, and library scans all stay at NEST* 4 (S stays ~19).
-- NEXT: get growth (longer phases, coupling through mixed pieces); or prove G-NEXT from dtl.cpp.
+- 22:44Z (date -u): NEST* 5. nest5_n49 (fe50a2c9), from a starclimb run (stable, seed 131) seeded with nest4u_n46. Both orders,
+  pinned Oink verified, S 20. Reported to the Lead 22:48Z.
+- CORRECTION: (G-NEXT) and (G-ADJ) are FALSE on unions (two pools), R49 §6. The library law held only on single-pool phases.
+- NEXT (successor queue):
+  (1) Growth: NEST* 6+ as n grows. Seeds nest5_n49 and nest5 ⊎ onep_fdkey_n20 (above). Graded climbs (starclimb MASS) in both
+      orders. Unions alone stayed at the base NEST*; climbing after a union is what added levels (4 → 5).
+  (2) A parametrised family: k parts / k pools at different depths, coupled through mixed pieces.
+  (3) Re-runs of nest4u_n46, nest4uu_n51 and nest5_n49 by the Lead or CHECKER.
 TRAP (this box): scripts/setup_oink.sh is needed in a fresh container before any Oink check (verify's smoke step is NOT RUN without it).
 
 BOX 15 END (successor 9, same session; Lead GO 00:09Z; ended ~02:30Z by date -u). Docs: docs/red/R46-nest-bound.md, R47-chainkeep.md,
