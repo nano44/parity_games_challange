@@ -128,3 +128,14 @@ Every instance below: sha1, both orders give the same P, pinned Oink verified, O
   deeper run is an O-rise", fails exactly where the fourth level appears.
 - The library law held 382/382 because every library phase has a single learning pool. Unions have two pools (one per part, at
   different depths). A G above the shallower pool can be followed by a change below it, coming from the deeper pool.
+
+## 7. NEST* 5 on 𝒞^1P (2026-10-21 22:44Z, date -u)
+- instances/nest5_n49.pg: sha1 fe50a2c9d437c48927500a8add8186abeeb87466, n 49, C = 1, in 𝒞^1P by L-ALG's fixd_oneplayer.inclass,
+  all priorities distinct.
+  - Found by starclimb.py (score (NEST*, MASS, S, −n), stable order, seed 131, GROW 0.05, NMAX 60) at step 1278, starting from
+    nest4u_n46.
+- q-phase (0, 0), L-ALG's unmodified b12_pot.run / chain + b12_core.states, identical in stable and oink order: S 20,
+  P = 0,1,6,9,7,4,9,3,8,4,6,7,6,1,5,5,4,0,3, NEST* 5.
+  - Witness: 0 (idx 0, 17) ⊃ 1 (idx 1, 13) ⊃ 6 (idx 2, 12) ⊃ 7 (idx 4, 11) ⊃ a nonempty deeper gap (9 at idx 6, 8 at idx 8).
+- Pinned Oink 8fbf0a7 `--dtl --no-single --no-wcwc --no-loops -v`: 20 even iterations (= S), 1 odd, solution verified (39 strategies).
+- Class best so far: 3 (R48) → 4 (§5, unions) → 5 (this). Still single instances, not a family.
