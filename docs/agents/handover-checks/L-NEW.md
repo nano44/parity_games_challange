@@ -149,3 +149,56 @@ Nothing running in this container; tools/oink/build and experiments/new/out/ (gi
   `git rev-parse HEAD origin/claude/l-new` before any work; fast-forward only, then a --no-ff merge of trunk; never rebase.
 - Also carried: never put a command that can fail (e.g. cp onto itself) inside a `&&` chain before a commit; it silently
   drops the later steps. Check: commit as its own call and confirm with `git log -1`.
+
+## 2026-10-21 21:57Z (successor 4, Fable 5.1 per Lead reading L36; every time from date -u)
+Measured from the repository at writing time. Predecessor: successor 3 (session_01PTa8b1EHQDZYpwmi99oG5G), box 9 parked 21:51Z at
+notebook head 6b3dcd5.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/l-new`. After `git fetch origin claude/l-new claude/vibrant-johnson-nxvvxo`: local HEAD = origin/claude/l-new =
+  6b3dcd5 (NOT stale this time; checked with `git rev-parse HEAD origin/claude/l-new`).
+- Before merge: `git rev-list --left-right --count origin/claude/l-new...origin/claude/vibrant-johnson-nxvvxo` -> 6 ahead, 5 behind
+  (trunk = 414b85e; merge-base a74d82f; the 5 trunk commits are CHECKER C19 Addendum 3 and the Lead's L36/Q18 records).
+- `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` -> 5dce0be (clean, no conflicts). Now 7 ahead, 0 behind; 8 ahead after
+  this file's commit.
+
+### 2. Open work and the next step of each (Lead brief 21:55Z; notebook resume point; N5-SB-box9.md §3, §5)
+Nothing running in this container; tools/oink/build and experiments/new/out/ (gitignored) are absent and must be rebuilt before any
+sweep (scripts/setup_oink.sh first; check_sol2.py needs Oink).
+- Box 10 (NOT started; waits for "go"), target G-N5-TIME, one of:
+  (i) Killer: make N5's frozen-σ Odd tail follow a CDAG-type chain gen(m), with Even's exploits τ̄ as the masks (N5-SB-box9.md §5).
+      Next: trace the tail of instances/n5b9/tc2 (134 Odd switches, 29 vertices) with n5_tail.py to read which τ̄ changes open which
+      gates; then build the gadget per gen(m) bit and measure tail length vs n; any super-polynomial family goes to the Lead at once
+      with sha1-pinned instances, Oink zlk/tl regions and verify.py = 0 errors. Known obstacle: K10's masking load Θ(n) per step.
+  (ii) Proof: a bound on in-phase cycle building (N5-SB-box9.md §3, N5-K8-box8.md §3c-§3d). Next: on the n = 14 leapfrog instance
+      (sb_conjR.txt) and the n = 10 trace, state what moves the build front and test a candidate potential (distance of the front
+      to the new cycle's top) over the 4,508 recorded runs before any proof text.
+- Carried, not routed: SB1' cycle tops (would give "N5 polynomial on one-player games"); G-N1-LB (optional).
+- Debts carried: raw climb outputs live only in committed files (p_strict/logs, n5b9.sha1); nothing else is cited.
+
+### 3. docs/GAPS.md rows I own (`grep -n "L-NEW" docs/GAPS.md` at 5dce0be)
+- **G-N5-TIME** (major; owner "L-NEW (L-LIT T22; referees later)"; status **open**): N5 makes polynomially many iterations. K9's
+  policy-free route CLOSED by CDAG_n; K9 would need a bound specific to N5's S4a subset sequences. Box 10 target.
+- **G-N1-LB** (minor; owner "L-NEW (optional; not routed)"; status **open**). Not in the box-10 plan.
+- **G-N5-TERM** (major; owner "L-NEW (L-COMP checks runs)"; status **closed**, RESULTS R15, closed list).
+
+### 4. The three owner rulings that most constrain me (verbatim from docs/DECISIONS.md), with index status
+1. D1 (docs/DECISIONS.md "## D1", key lines; DECISIONS-INDEX row D1 "active"):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   Binds box 10: N5 is wrong until proved; a frozen-σ tail bound or a cycle-building bound is a reading until two referees sign.
+2. D14 (docs/DECISIONS.md "## D14"; index row D14 "active"):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+   The lane's mandate (Lead readings L35 and L36 are readings, not rulings; L36 (2): "The (c) lane L-NEW continues its next box").
+3. D13 (docs/DECISIONS.md "## D13"; index row D13 "active"):
+   > Keep working on the dtl and also c
+   Keeps (c) alive. Also binding (D1 key line, same file, index "active"):
+   > Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision.
+
+### 5. One trap that bit this lane, and the check that now prevents it
+- Trap: ESTIMATED timestamps. It bit in box 3 (two stamps 20-55 min ahead), box 8 (two doc stamps, corrected in 689515a) and again in
+  box 9 ("~21:40Z" in N5-SB-box9.md, corrected in 0015ba9 to the commit time). Check: every stamp, including this heading and the
+  first line of every message to the Lead, is taken from a `date -u` call made in the same command that writes it; commit times
+  (`TZ=UTC git log --date=format-local`) are the record when a stamp is in doubt.
+- Also run at this handover: the stale-local-branch check (fetch, then `git rev-parse HEAD origin/claude/l-new`; equal this time),
+  and the push rule (push.sh output redirected to a file, `$?` printed, never piped).
