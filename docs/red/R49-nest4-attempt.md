@@ -31,7 +31,14 @@ Every instance below: sha1, both orders give the same P, pinned Oink verified, O
 - Targeted edits on nest3_n24: adding an escape from the s9 tangle {8, 9, 19} into piece 3 ({12}), to move its effect from position 3
   to position 4: 8→12 and 19→12 change nothing; 9→12 collapses the phase to 4 transitions.
 - Climb with FIT=seg (score (NEST*, max NEST* of the segment after an O-rise deeper than the phase's shallowest rising position,
-  0, MASS, S, −n)), oink order, seed near4_n26: in progress (§4).
+  0, MASS, S, −n)), oink order, seeds near4_n26 (seeds 31, 41): plateau NEST* 3. It produced oseg_n26 (§3) and:
+  - instances/win3_n27.pg (sha1 b5de9bbe5a75dff75bb0ecb5dfc06d3583b4b423; S 19, Oink 19 even iterations, verified, same P in both
+    orders): P = 3,1,9,9,9,9,9,6,8,8,5,6,5,1,4,4,4,4. Position 1 (NOT the first piece) has a window of NEST* 3: O-rise at 1, then
+    9-domino, 6, 8-domino, 5, 6, 5, then 1 rises again. Position 0 (piece {17}, rank 4) never changes in the phase. One rise at 0
+    before index 1 and one after index 13 would give NEST* 4. Its single-edge neighbourhood: no NEST* 4 (best (3, 28)).
+- So the open step is exactly an OUTER WRAP: a shallower level that rises once before and once after a NEST*-3 window of a non-first
+  piece. Climb FIT=wrap (score (NEST*, W, MASS, S, −n); W counts a shallower rise before / after the deepest window, 2 = NEST* + 1)
+  and wrapsearch on win3_n27: in progress (§4).
 
 ## 3. DATA laws (library: L-ALG's class set as in R48 §1, 956 q-phases per order)
 - (G-NEXT) every G-transition at b is followed by a transition at a position ≤ b (or ends the phase): 382/382, stable and oink.
