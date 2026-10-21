@@ -63,7 +63,7 @@ Every instance below: sha1, both orders give the same P, pinned Oink verified, O
   - (W) "a window of NEST* ≥ 2 contains no shallower transition": near4_n26 (5's window 5,6,6,4,5 contains 4).
     So NEST* windows do cross shallower transitions (contexts).
 
-## 4. What a fourth level needs (reading; rests on the DATA law (G-NEXT), not on a proof)
+## 4. What a fourth level needs (reading; rests on the DATA law (G-NEXT), not on a proof) — SUPERSEDED by §6: (G-NEXT) is false on unions
 - Every NEST* 3 phase seen (nest3_n20, nest3_n24, near4_n26, oseg_n26, win3_n27, w1_n27) has this shape. An O-rise at a level r; then
   a segment below r (G-dominoes at the piece directly above the pool, separated by O-rises of intermediate levels); then r, or a
   shallower level, rises again.
@@ -117,3 +117,14 @@ Every instance below: sha1, both orders give the same P, pinned Oink verified, O
   - nest4uu_n51 ⊎ {nest4uu_n51, nest3_n24, win3_n27}.
   - nest4u_n46 ⊎ library files: 157 results scanned (stopped), best NEST* 4.
   - Random-interleaving merges (experiments/red/nest16/mergesearch.py): running.
+
+## 6. Correction (2026-10-21 22:35Z, date -u): (G-NEXT) and (G-ADJ) are FALSE on 𝒞^1P
+- lawscan.py on nest4u_n46, nest4uu_n51 and a climb descendant of nest4u_n46, stable and oink order (identical): 3 (G-NEXT)
+  violations and 3 (G-ADJ) violations.
+  - nest4u_n46, transition idx 3: a G at position 6 (a piece of the onep_chainfail part) is followed by a transition at 10 (near4
+    part). The stable piece below 6 is at 11, not 7.
+  - nest4uu_n51, transition idx 16: a G at 5, stable piece at 7.
+- In nest4u_n46 the violating G is the opening of the NEST*-4 window (6 at idx 3 … 12). So §4's reading, "the transition opening a
+  deeper run is an O-rise", fails exactly where the fourth level appears.
+- The library law held 382/382 because every library phase has a single learning pool. Unions have two pools (one per part, at
+  different depths). A G above the shallower pool can be followed by a change below it, coming from the deeper pool.
