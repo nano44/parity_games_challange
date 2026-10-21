@@ -2,6 +2,9 @@
 Status: L-NEW READING with computer checks, NOT refereed. This is the "in-phase cycle-building bound" that N5-K8-box8.md §3c-§3d and
 N5-SB-box9.md §3 left open. It closes K8's constant case for every one-player game (not only acyclic G_c, Lemma S) and gives
 "N5 is polynomial on one-player games". It says nothing about two-player N5 runs (G-N5-TIME stays open); it is not a TARGET.md claim.
+SCOPE (Lead 22:55Z): one-player parity games are solvable in polynomial time by other means (e.g. cycle detection by priority), so the value of
+this result is only that it bounds N5 ITSELF on that class (K8's constant case, the segments of two-player runs in which N5's step is
+switch-best on G_c) and is one step toward G-N5-TIME. Dependencies on VJ00 are listed in §6; Lemma 5.8 and postulates I1/I2 are NOT used.
 
 ## 1. Setting and notation (as in N5-K8-box8.md §3c)
 - H: a one-player parity game (⊖ out-degree 1; so a strategy ρ of ⊕ fixes every play), injective priorities (rank), VJ00 valuation
@@ -143,3 +146,29 @@ of G_c. Test: experiments/new/tail/segP_check.py (DFS over simple paths of G_c, 
   σ̄-segment λ-phase: 26 at n = 25 (vc_g25.pg, sha1 243f890d34cad9991cc7e11cc73d7b718f885ff0; 27 Even-moving iterations, 26 value-changing, 1 flat,
   n5.run 27 iterations, Zielonka + verify.py OK), 20 at n = 21 (vc_g17), 18 at n = 24 (vc_g20, all value-changing), 17 at n = 24 (vc_r24), 13 at
   n = 16 (vc_r16). One-player phases (phase_vc.py over all 20 phase instances): 0 violations of Theorem PH, maximum exactly n − 1.
+
+## 6. Dependencies on VJ00 (Lead 22:55Z item 3; source re-opened 23:33Z by date -u: BRICS RS-00-48 pdf, sha256 485a12de432a2a8c…, pdftotext)
+Everything the proofs of Lemma P and Theorem PH use from Vöge-Jurdziński:
+- The valuation and its order (§5.1, pp. 12-14 of the report): Ω_σ(v) = (Λ, Π) with the cycle node Λ_σ(v) = λ(P_σ(v)) and Π_σ(v) = the weight of
+  the shortest path from v to Λ_σ(v) in G^ℓ_σ, "they are simple paths" (text after the Remark on p. 14); the prefix equations (6)-(10): (6)
+  Π_σ(v) = Π_σ(w) ⊕ v for the successor w on a shortest path, (8) Π_σ(ℓ) = (∅, 0), (9)-(10) at the cycle node. These are (V1) of §1 and the
+  definition of ⊕ (called "prefix" here; VJ00's extension operator, p. 13). (V2) prefix monotonicity is elementary from the definition of
+  the order ⊴_ℓ (p. 13) and is used only on values whose paths avoid x.
+- (F1), the pointwise optimum of a one-player game: VJ00 §5.2, Proposition 5.1 and Lemma 5.2 give Ω_σ = Θ_{σ σ̄} (equation (11), p. 16) and
+  "by definition of Ω_σ we get that Θ_{σ σ̄} ⊴ Θ_{σ τ} for all strategies τ for player ⊖. In other words, σ̄ is a best counter-strategy
+  against σ" (p. 16). Applied to the DUAL game (owners swapped, priorities + 1), this is exactly (F1): in a one-player game the optimal
+  strategy's play values dominate every other strategy's pointwise. The lane's engine computes this optimum by that shortest-paths procedure
+  (si.py Engine.evaluate; N5 S4a-b use it on the arena, N5-ssi-global.md SPEC). (F2) follows from (F1) because ρ_k is an arena strategy.
+- Improving edges: the definition in §5.4, Improve(σ)(v) = a successor maximising Ω_σ (p. 17, used only as "I_k(x) = {z : Ω_k(z) ≻ Ω_k(ρ_k(x))}").
+NOT used: Lemma 5.5 (under-progressive valuations), Lemma 5.7 (σ ⊑ Improve(σ), the improvement lemma; Case B proves what it needs
+directly), Lemma 5.8 (Improve(σ) = σ iff σ maximal; its "2 ⇒ 1" is the direction this lane found to fail at cycle nodes,
+N5-killer-box4.md §3, R15 side finding), the postulates P1-P2, I1-I2 of §3 (pp. 7-8), and §5.6. Proposition 7.4 (p. 36: "terminates
+after O(n³) strategy improvement steps for one-player parity games", no proof) is cited only in Corollary 3 as the statement this
+result proves for the arena-optimum rule; nothing here depends on it.
+Rule used by the computer checks: phase_trace.sbstep computes the arena optimum either by switch-all SI on the arena to a fixpoint (default;
+this relies on Lemma 5.8 "2 ⇒ 1" and can stop at a value-flat cycle-node tie) or, with EXACT=1, by N5's own step (n5_lock.step =
+n5.py's loop: the shortest-paths procedure on the dual of the arena, exact, plus N5's fallback). With EXACT=1 (logs: phase_vc_exact.txt):
+lemmaP_check on the six long-phase instances 3,193 checks, 0 violations; random n ≤ 9, 500 games × 2 starts, 686 checks, 0 violations;
+phase_vc on 17 instances 0 violations, maxima 15 at n = 16 (rel_g16) and 46 at n = 48. The two rules differ only in tie situations
+(rel_g12: 11 steps with the fixpoint rule, 10 with N5's step); the Theorem allows any tie-break.
+FREEZE: §§1-3 (Lemma P, Theorem PH, corollaries, tightness) are frozen at the commit that adds this section; later changes go in new sections.

@@ -7,9 +7,16 @@ import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..")); sys.path.insert(0, os.path.join(HERE, "..", "..", "harness"))
 import pg
 from n5 import Engine
+EXACT = os.environ.get("EXACT") == "1"   # EXACT=1: the arena optimum by N5's own step (n5_lock.step = n5.py's loop: VJ00 shortest-paths
+                                          # procedure on the dual of the arena, exact); default: switch-all SI on the arena to a fixpoint
 def sbstep(g, E, s):
     vs, _ = E.evaluate(tuple(s)); Is = E.improving(tuple(s), vs); lam = tuple(vs[v][0] for v in range(g.n))
     if not Is: return None, lam, vs
+    if EXACT:
+        from n5_lock import step
+        from n5 import Engine as _E, dual as _d
+        r = step(g, E, _E(_d(g)), list(s), [g.succ[v][0] if g.owner[v] == 1 else -1 for v in range(g.n)])
+        return (list(r[0]) if r is not None else None), lam, vs
     A = {v: {s[v]} | {w for x, w in Is if x == v} for v in range(g.n) if g.owner[v] == 0}
     h = pg.Game(list(g.prio), list(g.owner), [sorted(A[v]) if g.owner[v] == 0 else list(g.succ[v]) for v in range(g.n)])
     Eh = Engine(h); x, _ = Eh.run(Eh.rule_switch_all, tuple(s)); return list(x), lam, vs
