@@ -34,5 +34,25 @@ BETTER CYCLE inside K_u: the vertices with λ^ph ≠ u. Data: the build runs bac
 (n = 10 counterexample trace, box 8), but leapfrogs like the one in §2 can stall the front.
 So K8's constant case reduces exactly to a bound on in-phase cycle building, as in box 8. This box adds no bound on it.
 
+## 5. Killer direction: N5's longest runs are frozen-σ TAILS (DATA; p_strict/n5_seeded_climb.py, n5_tail.py)
+Seeded N5 climbs from the lane's best instance (instances/n5adv/best_n24_seed24.pg, 39 iterations):
+- 44 iterations at n = 24, 46 at 25, 61 at 30, 65 at 34, 73 at 36, 72 at 38 (instances/n5b9/*.pg, sha1 in p_strict/n5b9.sha1).
+- Every one: regions = harness Zielonka, verify.py errors = 0 (re-run through n5.run unmodified).
+- Growth ≈ 2n: linear on this evidence.
+Structure (n5_brchanges.py, n5_tail.py, n5_tail.txt):
+- Even stops moving early (its last move falls at iteration 17-26). The remaining 21-49 iterations are Odd-only, with Even's
+  best reply τ̄ changing about 30 times (sg4: 66 Odd moves, 15 Even moves).
+- In EVERY tail iteration of every instance, τ̄ ≠ σ.
+- Fallbacks in the tail stay at 7-10 while the tail grows, so the growth comes from Odd's restricted-optimum steps.
+The tail process, with σ frozen at Even's final strategy:
+- τ' = Odd's optimum in G_σ over the arena {τ(o)} ∪ Iτ(o).
+- Iτ consists of Odd's G-improvements against Even's FRESH best reply τ̄(τ). It is not lagged.
+- If τ̄ were σ, this would be switch-best on the one-player game G_σ (≤ n + 1 in data). It never is.
+- So the tail is K10's frozen-opponent situation with the roles swapped: σ is final, the gate is τ̄-honest, and the choice is
+  σ-optimal. By Lemma F (dual), Odd's moves are monotone in G_σ.
+Killer design target (not built): make the tail follow a CDAG-type chain. The gate (Odd improvements against τ̄) must let through
+the next gen(m) switch and nothing that G_σ prefers; Even's exploit τ̄ is what shapes the gate. K10's masking-load obstacle applies
+(Θ(n) stalls per step), but here the stalls come from τ̄'s exploits rather than from lagged blunders.
+
 ## 4. Files
 p_strict/sb_union.py, sb_union_phase.py, sb_conjR.py, sb_reentry.py (+ .txt outputs).
