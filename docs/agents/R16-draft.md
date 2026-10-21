@@ -1,4 +1,4 @@
-# Draft RESULTS R16 (Lead, 2026-10-19 02:35Z by date -u) — DRAFT, not landed; awaits CHECKER C19 (rev. 02:45Z: both §C-A1, K; rev. 02:55Z: REFEREE K attribution; rev. 03:14Z: C19 E-3, E-4, N-2..N-5)
+# Draft RESULTS R16 (Lead, 2026-10-19 02:35Z by date -u) — LANDED as RESULTS R16 (CHECKER C19 PASS, Addendum 2 e6ed679); was: awaits CHECKER C19 (rev. 02:45Z: both §C-A1, K; rev. 02:55Z: REFEREE K attribution; rev. 03:14Z: C19 E-3, E-4, N-2..N-5)
 
 ### R16 [refereed-only] A_DTL on one-player games 𝒞^1P: the search count per phase is n^{O(NEST*)}, so GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED) (2026-10-19) — partial step-4 reduction on a subclass (not M3, not a step-4 pass, not M4)
 - Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, every order datum (frozen §0, L26). Class (GAP-A-M
