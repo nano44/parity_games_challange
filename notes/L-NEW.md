@@ -229,6 +229,10 @@ NEXT for a successor:
 - (succ. 3, box 8) Zadeh, "What is the worst case behavior of the simplex algorithm?", CRM Proc. Lecture Notes (2008), §1 p. 1:
   "An example due to Edmonds for shortest path computations is also known [16]". Edmonds' example itself NOT opened.
 - (succ. 3, box 8) REFEREE R-N5K9 (claude/referee 160db1d) §(2)-(3): (P*), (P_strict), switch-all insufficient.
+- (succ. 4, box 10) VJ00 BRICS RS-00-48 re-opened 2026-10-21 23:31Z (pdf sha256 485a12de432a2a8c…, pdftotext): §5.1 pp. 12-14 (shortest-path
+  characterisation of Π_σ, equations (6)-(10)), §5.2 Prop. 5.1 + Lemma 5.2 => Ω_σ = Θ_{σσ̄} and σ̄ is a best counter-strategy (eq. (11), p. 16: the
+  (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
+  I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
 - N2 (PRIO-ANNEAL), KILLED ON DATA 18:05Z UTC (box 3; first implementation n2.py). Padded switchallexp
   (gen_padsae.sh; dummies block compression): largest stage 6, 15, 34, 72, 148, 300, 604 (N = 1..7). Instance
