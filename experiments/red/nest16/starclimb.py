@@ -1,10 +1,10 @@
 """L-RED successor 10 (box 16, produced on Opus 5.5): graded climb toward NEST* >= 4 on 𝒞^1P (R48 §4).
 Positions P per q-phase come from ../xctx/nestclass.py positions() (b12_pot.chain / b12_core.states, unmodified); NEST* from
-../xctx/comb/neststar.py. Score: (max NEST*, MASS, S, -n), MASS = sum over positions p of the phase of (1 + NEST*(window_p))^2,
+../xctx/comb/neststar.py. Score: (max NEST*, MASS, S, -n); FIT=seg: see segscore(), MASS = sum over positions p of the phase of (1 + NEST*(window_p))^2,
 window_p = elements > p strictly between p's first and last occurrence (rewards nesting inside windows, which NEST* alone does not).
 Usage: DTL_ORDER=.. starclimb.py G.pg ... | [GROW=p NMAX=m] starclimb.py climb C START.pg STEPS SEED OUTDIR"""
 import sys, os, random
-HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "xctx"))
+HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "xctx"))
 import xscore as X
 import nestclass as NC
 from comb.neststar import nest_star
@@ -20,7 +20,20 @@ def mass(P):
     return sum(wnest(P, p) ** 2 for p in set(P))
 
 
+def segscore(g, order, C):
+    """FIT=seg: (NEST*, max segment NEST* after an O-rise at b > min(P), 0, MASS, S, -n)."""
+    import segstat as S
+    best = (0, 0, 0, 0, 0, -g.n)
+    for ph, T in S.trans(g, order, C):
+        P = [b for b, _ in T]
+        if not P: continue
+        so = max([s for (b, t, s) in S.segs(T) if t == "O" and b > min(P)] or [0])
+        best = max(best, (nest_star(tuple(P)), so, 0, mass(P), len(P) + 1, -g.n))
+    return best
+
+
 def score(g, order, C):
+    if os.environ.get("FIT") == "seg": return segscore(g, order, C)
     Ps, d = NC.positions(g, order, C)
     if not Ps: return (0, 0, 0, -g.n)
     best = max(Ps.values(), key=lambda P: (nest_star(tuple(P)), mass(P), len(P)))

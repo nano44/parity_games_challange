@@ -1,0 +1,48 @@
+# R49: R48 §4 attack (box 16): can a −1 piece's rise feed a shallower −1 piece? (L-RED successor 10; produced on Opus 5.5)
+Status: DATA plus a mechanism reading; NO kill and NO proof so far. Written 2026-10-21 (date -u; box 16 resumed 21:07Z after the
+usage cap cut it at ~04:01Z on 2026-10-19). Target: Lead GO 2026-10-19 03:19Z and 2026-10-21 21:06Z (date -u).
+Object: A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, both order data, q-phases on 𝒞^1P. Chains come from L-ALG's
+unmodified b12_pot.run / chain and b12_core.states (through experiments/red/xctx/xscore.py), NEST* from experiments/red/xctx/comb/neststar.py.
+Every instance below: sha1, both orders give the same P, pinned Oink verified, Oink's q iteration count = S (experiments/red/nest16/kcheck.sh).
+
+## 1. The question in chain terms
+- For NEST*(P) ≥ 4 a phase needs positions a < b < c < d with a d-pair inside c's window, inside b's window, inside a's window (window =
+  the elements deeper than p between p's first and last occurrence).
+- Transition types at the first changed position b: G (same (rank, V), the piece grew) and O ((rank, V) rose).
+- Mechanism seen in every NEST* 3 phase (nest3_n24 tlog, R48 §3): the −1 piece directly above the pool (the deepest stable piece)
+  absorbs pool tangles one by one (a G-run, the "domino": each absorption removes an escape of the next pool tangle). When the domino
+  ends, the pool learns a tangle that raises a shallower −1 piece by an O-rise. Example, nest3_n24 s5 → s7: position 5 absorbs 16,
+  which removes escape 16 of {18}; the pool learns {18} at s6; {18} raises position 3 (rank 4 → 5) at s7. So a −1 piece's growth
+  DOES feed a shallower −1 piece, but only through the pool.
+- After an O-rise at b the chain below b is rebuilt, usually as one −1 piece plus the pool (DATA, §3). A fourth level needs two
+  −1 levels below an O-rise that both re-rise before b rises again.
+
+## 2. Construction attempts (all negative so far)
+- Graded climb experiments/red/nest16/starclimb.py, score (NEST*, MASS, S, −n), MASS = Σ_p (1 + NEST*(window_p))²: 3 runs, 6000
+  steps, stable and oink order, seeds nest3_n24, nest3_n20, GROW 0.05-0.08, NMAX 40-44. Plateau NEST* 3, MASS 28.
+  - Near miss instances/near4_n26.pg (sha1 6d7c5e3839c0632c618d8da002ceb65f3259b77f): S 18, Oink 18 even iterations, verified;
+    P = 3,0,7,7,7,7,5,6,6,4,5,5,4,0,3,3,3. With the first 4 before the 5/6 block it would be NEST* 4.
+  - near4_n26 is a strict local maximum: every single-edge addition or removal (experiments/red/nest16/edgenbr.py) gives NEST* ≤ 3,
+    MASS ≤ 28. Same for nest3_n24 (best (3, 25)).
+- Wrapper search experiments/red/nest16/wrapsearch.py (1-3 new vertices plus edges into the base, around nest3_n24 and near4_n26,
+  ~1000 trials): best NEST* 3. Reading on why a wrapper is hard: a tangle that the new top piece absorbs must have all escapes in that
+  piece's region (dtl.cpp attractTangles, line 156), so it is learnable as soon as its vertices reach the pool; the outer level's
+  second rise can be timed only by when those vertices reach the pool.
+- Targeted edits on nest3_n24: adding an escape from the s9 tangle {8, 9, 19} into piece 3 ({12}), to move its effect from position 3
+  to position 4: 8→12 and 19→12 change nothing; 9→12 collapses the phase to 4 transitions.
+- Climb with FIT=seg (score (NEST*, max NEST* of the segment after an O-rise deeper than the phase's shallowest rising position,
+  0, MASS, S, −n)), oink order, seed near4_n26: in progress (§4).
+
+## 3. DATA laws (library: L-ALG's class set as in R48 §1, 956 q-phases per order)
+- (G-NEXT) every G-transition at b is followed by a transition at a position ≤ b (or ends the phase): 382/382, stable and oink.
+- After an O-rise, a segment with NEST* 2 (the positions deeper than b until the next transition at ≤ b) occurs only at b = 0:
+  3 cases (nest3_n20, nest3_n24, near4_n26), both orders. Segment NEST* 1: 66; 0: 706.
+- On the xctx instances and this box's climb outputs (stable and oink): every G with a stable piece below it sits directly above that stable piece (216/216);
+  after an O-rise at b > 0 the first stable piece is at b + 2 in 44 cases, b + 3 in 8, b + 6 in 2.
+- FALSE laws:
+  - (O-SEG) "a segment after an O-rise deeper than the shallowest rising position has NEST* ≤ 1": instances/oseg_n26.pg
+    (sha1 381b7b9d70d75a9f9dba2b8f7c6111ec4814eb73; S 16, Oink 16 even iterations, verified, both orders):
+    P = 3,1,6,6,6,6,4,5,5,3,4,4,3,0,3; the O-rise at 1 is followed by a NEST*-2 segment, and 0 rises later. NEST* is still 3 because
+    1 never rises again.
+  - (W) "a window of NEST* ≥ 2 contains no shallower transition": near4_n26 (5's window 5,6,6,4,5 contains 4).
+    So NEST* windows do cross shallower transitions (contexts).
