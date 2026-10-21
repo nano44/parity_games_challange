@@ -50,6 +50,11 @@ The tail process, with σ frozen at Even's final strategy:
 - If τ̄ were σ, this would be switch-best on the one-player game G_σ (≤ n + 1 in data). It never is.
 - So the tail is K10's frozen-opponent situation with the roles swapped: σ is final, the gate is τ̄-honest, and the choice is
   σ-optimal. By Lemma F (dual), Odd's moves are monotone in G_σ.
+Targeted climbs (p_strict/n5_tail_climb.py, n5_flip_climb.py; instances/n5b9/tc*, fc*; checked):
+- Tail length: 48 at n = 40, 58 at n = 42. About 1.4n.
+- The tails exceed Odd's vertex count. In tc2 (n = 42): 134 Odd switches over 29 distinct vertices, up to 10 per vertex.
+- Maximum switches of ONE Odd vertex inside a tail: 15 at n = 36, 17 at n = 48 (fc2, fc1). A vertex cycles through its ≤ 4
+  successors repeatedly; Lemma NR forbids only τ as a whole from repeating. That is about n/3: no super-linear signal.
 Killer design target (not built): make the tail follow a CDAG-type chain. The gate (Odd improvements against τ̄) must let through
 the next gen(m) switch and nothing that G_σ prefers; Even's exploit τ̄ is what shapes the gate. K10's masking-load obstacle applies
 (Θ(n) stalls per step), but here the stalls come from τ̄'s exploits rather than from lagged blunders.
