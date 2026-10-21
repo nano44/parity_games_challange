@@ -1,0 +1,2 @@
+games=2000 runs=4000 nmax=7 Lemma-P checks=1837 violations=0; longest phase 3 steps at n=7; runs stopped by a no-change step 0
+games=400 runs=800 nmax=10 Lemma-P checks=463 violations=0; longest phase 2 steps at n=7; runs stopped by a no-change step 0
