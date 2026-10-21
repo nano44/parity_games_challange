@@ -81,3 +81,14 @@ Every instance below: sha1, both orders give the same P, pinned Oink verified, O
   - (G-NEXT) together with a segment bound does not bound NEST* combinatorially. 0,1,0,2,0,1,0 has NEST* 3 and
     0,1,0,2,0,1,0,3,0,1,0,2,0,1,0 has NEST* 4, while every segment in both has NEST* ≤ 1.
   - Their windows cross shallower transitions. Any bound must control such cross-context windows.
+
+## 5. NEST* 4 on 𝒞^1P (2026-10-21 22:00Z, date -u): a disjoint union
+- experiments/red/nest16/pairunion.py builds B ⊎ A (no edges between them) with A's priorities shifted above B's (parity kept).
+  - B = near4_n26 (sha1 6d7c5e38…), A = L-ALG's experiments/alg/instances/onep_chainfail_n20.pg (sha1 05bfe58e…).
+  - Result: instances/nest4u_n46.pg, sha1 ae7ed55930f06223c5f3cd64fb1d617064bb8ede, n 46, C = 1.
+  - In 𝒞^1P by L-ALG's fixd_oneplayer.inclass: q-vertices have one successor, all priorities distinct.
+- q-phase (0, 0), both orders (L-ALG's unmodified b12_pot.run / chain, b12_core.states): S 18, identical P in stable and oink order:
+  P = 4,1,2,6,10,10,8,9,9,6,8,8,6,1,5,5,5, NEST* 4.
+  - Witness: 1 (idx 1, 13) ⊃ 6 (idx 3, 12) ⊃ 8 (idx 6, 11) ⊃ the 9-pair (idx 7, 8).
+- Pinned Oink 8fbf0a7 `--dtl --no-single --no-wcwc --no-loops -v`: even iterations 18 (= S), odd 1, solution verified (40 strategies).
+- Status: ONE instance with NEST* 4. This is not yet a family, and not growth with n.
