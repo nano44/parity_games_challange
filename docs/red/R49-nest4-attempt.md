@@ -62,3 +62,22 @@ Every instance below: sha1, both orders give the same P, pinned Oink verified, O
     1 never rises again.
   - (W) "a window of NEST* ≥ 2 contains no shallower transition": near4_n26 (5's window 5,6,6,4,5 contains 4).
     So NEST* windows do cross shallower transitions (contexts).
+
+## 4. What a fourth level needs (reading; rests on the DATA law (G-NEXT), not on a proof)
+- Every NEST* 3 phase seen (nest3_n20, nest3_n24, near4_n26, oseg_n26, win3_n27, w1_n27) has this shape. An O-rise at a level r; then
+  a segment below r (G-dominoes at the piece directly above the pool, separated by O-rises of intermediate levels); then r, or a
+  shallower level, rises again.
+- NEST* ≥ 4 needs a level a < r whose first rise comes before the NEST*-3 window and whose last rise comes after it.
+  - By (G-NEXT), a transition directly followed by a deeper one is never a G. So each transition that opens a deeper run (in particular
+    the one directly before the window's first element) is an O-rise, and it recomputes every position below it.
+  - The window may contain further rises of a (windows cross shallower transitions; law (W) is false). So the window need not lie in
+    one context of a.
+- Observed so far:
+  - Every segment after an O-rise has NEST* ≤ 2.
+  - Non-first pieces carry NEST*-3 windows: win3_n27 (position 1) and w1_n27 (position 3, with position 1 rising after it).
+  - In no instance does a shallower level rise BEFORE such a window.
+- The exact open step (R48 §4 sharpened): a NEST*-3 window at a level r together with rises at some a < r both before it and after it.
+  Neither a construction nor an impossibility argument for this step is known.
+  - (G-NEXT) together with a segment bound does not bound NEST* combinatorially. 0,1,0,2,0,1,0 has NEST* 3 and
+    0,1,0,2,0,1,0,3,0,1,0,2,0,1,0 has NEST* 4, while every segment in both has NEST* ≤ 1.
+  - Their windows cross shallower transitions. Any bound must control such cross-context windows.

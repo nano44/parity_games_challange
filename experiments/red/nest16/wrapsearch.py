@@ -35,7 +35,7 @@ if __name__ == "__main__":
             sh = SC.score(h, order, C)
         except RecursionError:
             continue
-        if sh[0] > sb[0] or sh[:2] > best[:2]:
+        if sh[0] > sb[0] or sh[:2] > best[:2] or (os.environ.get("FIT") == "wrap" and sh[1] >= 2):
             print(it, sh, flush=True); X.pg.write(h, os.path.join(out, f"wrap_s{seed}_{it}_{sh[0]}_{sh[1]}.pg"))
         if sh[:2] > best[:2]: best = sh
         if it % 500 == 0: print("hb", it, best, flush=True)
