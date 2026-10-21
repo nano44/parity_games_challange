@@ -161,3 +161,15 @@ Every instance below: sha1, both orders give the same P, pinned Oink verified, O
   - (O-SEG): oseg_n26.
   - (W): near4_n26.
   - The reading of §4 (superseded): nest4u_n46.
+
+## 9. Box-16 end (2026-10-21 ~23:40Z, date -u)
+- Answer to R48 §4: YES. A −1 piece's rise can feed shallower levels across intermediate levels.
+  - The class best moved 3 → 4 → 5: nest4u_n46, nest4uu_n51, nest5_n49. All re-run by the Lead (DATA).
+  - The mechanism needs TWO learning pools at different depths. In this box, they came from a disjoint union (§5, §6).
+- (NEST*-BOUNDED) is NOT refuted: no family, no growth law.
+  - Last climbs, 3000 steps each from nest5_n49 and from nest5_n49 ⊎ onep_fdkey_n20 (oink order): plateau NEST* 5, MASS ≤ 93.
+  - S stays ≈ 20 at n ≈ 50 (S/n ≈ 0.4): no super-polynomial signal.
+- Impossibility: no proof. The single-pool laws (G-NEXT) and (G-ADJ) are false once two pools exist (§6, §8).
+- Concrete next target: k parts (k pools at k depths) coupled through mixed depth-0 pieces, with NEST* = 3 + (k − 1)?
+  - Iterated unions alone did not add levels. A union followed by a graded climb did (4 → 5).
+  - The test is whether union + climb can be repeated with n linear in the level.

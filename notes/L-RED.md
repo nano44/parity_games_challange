@@ -77,7 +77,8 @@ resumed 2026-10-21 21:07Z (date -u) on the Lead's 21:06Z message, Lead reading L
   (1) Growth: NEST* 6+ as n grows. Seeds nest5_n49 and nest5 ⊎ onep_fdkey_n20 (above). Graded climbs (starclimb MASS) in both
       orders. Unions alone stayed at the base NEST*; climbing after a union is what added levels (4 → 5).
   (2) A parametrised family: k parts / k pools at different depths, coupled through mixed pieces.
-  (3) Re-runs of nest4u_n46, nest4uu_n51 and nest5_n49 by the Lead or CHECKER.
+  (3) The Lead re-ran nest4u_n46 (22:12Z), nest5_n49 and nest4uu_n51 (22:49Z): all CONFIRMED as DATA.
+- BOX 16 END ~23:40Z (date -u): best NEST* 5; climbs c11/c12 plateaued at NEST* 5 (MASS 93 / 85); scratch logs are not kept.
 TRAP (this box): scripts/setup_oink.sh is needed in a fresh container before any Oink check (verify's smoke step is NOT RUN without it).
 
 BOX 15 END (successor 9, same session; Lead GO 00:09Z; ended ~02:30Z by date -u). Docs: docs/red/R46-nest-bound.md, R47-chainkeep.md,
