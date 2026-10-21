@@ -2,3 +2,4 @@ start (-3, 13, 14)
 step 133 maxphase -2 steps 14 n 16 n5-iterations 15 check OK sha1 c9a66134c11ff9f0458fe02d77cff764fc9e9db2
 step 915 maxphase -1 steps 15 n 16 n5-iterations 15 check OK sha1 eb9b19c673aedc341836f3ed8e45696886ca99cc
 step 12076 maxphase -1 steps 15 n 16 n5-iterations 16 check OK sha1 c3dfe41775be0617d7e80985540cf84ceeaa9caa
+best (-1, 15, 16)

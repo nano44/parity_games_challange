@@ -74,7 +74,9 @@ Remark. Value-flat steps are the cycle-closing switches of N5-killer-box4.md §3
 (N5 takes them in its fallback, S4c, which switches each such x to its Ω-best improving successor at once, after which I = ∅).
 Tightness (23:11Z by date -u). The bound n − 1 value-changing steps per phase is attained: phase_climb.py with FIT=rel (fitness = phase
 length − n, growth allowed) found phases of exactly n − 1 steps, all value-changing, at n = 12 and n = 16 (instances/phase/rel_g12.pg,
-rel_g16.pg; phase_vc.py), and 46 at n = 48 (ph_n48.pg). No climb exceeded n − 1 (tail/logs/rel_*.log, phase_vc.txt: 17 instances, 0 violations).
+rel_g16.pg; phase_vc.py), and 46 at n = 48 (ph_n48.pg). No climb exceeded n − 1 (tail/logs/rel_*.log, phase_vc.txt: 17 instances, 0 violations). Note: phase_climb.py's "maxphase" is the number of
+λ-observations in the phase = steps + 1, so a logged "maxphase − n = 0" (rel_g12, sha1 20db1b22…) is a phase of n − 1 = 11 steps; phase_vc.py
+counts steps and is the reference (11 steps, 11 value-changing; Lemma P checked on it: 525 checks, 0 violations).
 Corollary 1 (switch-best is polynomial on one-player games). At most n(n − 1) + 1 phases of fewer than n + m steps: fewer than
 (n² − n + 1)(n + m) steps, i.e. O(n²·m) (≤ n³ − n² + n value-changing steps in all).
 Corollary 2 (N5 on one-player games). On a game in which one player has out-degree 1 everywhere, N5's step for the other player is
@@ -103,6 +105,9 @@ switch-best on G_σ only when τ̄ = σ, which never happens on the long instanc
   same 47 iterations, regions = Zielonka, verify.py OK); 13 at n = 16 and n = 24; 46 at n = 49 with growth. Never above n − 2.
   Most switches of one vertex inside one phase: 6 at n = 16 (fl_n16: 0→5→4→0→13→5→0, the whole run is one phase that ends optimal, so the
   vertex is simply deep in the optimal tree), 7 at n = 32, 8 at n = 18 with growth. Consistent with ≤ depth ≤ n per vertex per phase.
+- f1_check.py: the two facts used, (F1) the arena optimum dominates every single-switch arena strategy ρ_k[x → z] pointwise and (F2)
+  Ω_{k+1} ⪰ Ω_k pointwise, checked directly with the engine on random one-player games: 1,500 games (n ≤ 12) and 300 games (n ≤ 20), 2 starts
+  each, 4,769 steps, 209,732 vertex comparisons, 0 violations.
 - phase_trace.py: per-phase traces (sb1_counter_n48: the 17-step phase is the backward build of the cycle 30..47, each vertex once, 31 twice).
 
 ## 5. The two-player bridge: Lemma P's statement is FALSE for N5's Even moves inside a σ̄-segment (instances; written 22:57Z by date -u)

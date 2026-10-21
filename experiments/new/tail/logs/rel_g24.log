@@ -12,3 +12,4 @@ step 7183 maxphase -6 steps 18 n 24 n5-iterations 22 check OK sha1 6488b83bb02ff
 step 7977 maxphase -5 steps 19 n 24 n5-iterations 24 check OK sha1 6a443741302f1818fb81fe2cffa5870c2673f32d
 step 8895 maxphase -4 steps 20 n 24 n5-iterations 24 check OK sha1 2824a20334af46bb1709dd0ad7345d13168da3c2
 step 11322 maxphase -3 steps 21 n 24 n5-iterations 25 check OK sha1 eb8886c29031083847a5ae22378d085aaf5ea6a3
+best (-3, 21, 26)
