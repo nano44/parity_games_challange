@@ -139,3 +139,25 @@ Every instance below: sha1, both orders give the same P, pinned Oink verified, O
   - Witness: 0 (idx 0, 17) ⊃ 1 (idx 1, 13) ⊃ 6 (idx 2, 12) ⊃ 7 (idx 4, 11) ⊃ a nonempty deeper gap (9 at idx 6, 8 at idx 8).
 - Pinned Oink 8fbf0a7 `--dtl --no-single --no-wcwc --no-loops -v`: 20 even iterations (= S), 1 odd, solution verified (39 strategies).
 - Class best so far: 3 (R48) → 4 (§5, unions) → 5 (this). Still single instances, not a family.
+
+## 8. Table per level, and the (G-NEXT) / (G-ADJ) counterexamples (experiments/red/nest16/table.py; identical in stable and oink order)
+| instance | sha1 | n | S | P size | I | NEST* | Oink even iterations, verified |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| nest3_n24 (R45) | 6b039158a2d1… | 24 | 18 | 17 | 0 | 3 | 18, yes |
+| near4_n26 | 6d7c5e3839c0… | 26 | 18 | 17 | 0 | 3 | 18, yes |
+| nest4u_n46 = near4_n26 ⊎ onep_chainfail_n20 | ae7ed55930f0… | 46 | 18 | 17 | 0 | 4 | 18, yes |
+| nest4uu_n51 = win3_n27 ⊎ nest3_n24 | 302c03a8f37a… | 51 | 19 | 18 | 0 | 4 | 19, yes |
+| nest5_n49 (climb from nest4u_n46) | fe50a2c9d437… | 49 | 20 | 19 | 0 | 5 | 20, yes |
+- Growth law: NOT established. The levels come from one union step (3 → 4, n 26 → 46) and one climb (4 → 5, n 46 → 49).
+  - Second-level unions stay at the base NEST* (§5, and nest5_n49 ⊎ 7 helpers × 3 placements: best 5).
+  - S stays 18-20, so S/n falls from 0.75 to 0.4. No super-polynomial signal in S.
+- (G-NEXT) / (G-ADJ) counterexamples (transition # counted from 0 within the q-phase):
+  - nest4u_n46: search 3→4, transition #3. G at 6, next transition at 10, stable piece at 11.
+  - nest4uu_n51: search 16→17, transition #16. G at 5, next transition at 6, stable piece at 7.
+  - nest5_n49: search 2→3, transition #2. G at 6, next transition at 9, stable piece at 10.
+- Dead ends of this box (each with the instance that killed it):
+  - (G-NEXT): nest4u_n46.
+  - (G-ADJ): nest4u_n46.
+  - (O-SEG): oseg_n26.
+  - (W): near4_n26.
+  - The reading of §4 (superseded): nest4u_n46.
