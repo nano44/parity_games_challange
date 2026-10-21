@@ -2,6 +2,43 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
+BOX 10 END (successor 4, Fable 5.1; ~23:25Z Oct 21 by date -u; Lead box to ~01:05Z): both routes done, pushed; nothing running.
+- (i) docs/new/N5-tail-box10.md: gen(m) cannot be the tail's Odd chain (Fact B; searches ≤ 3 steps); real tails lift masks by downstream repairs.
+- (ii) docs/new/N5-phase-bound-box10.md: Lemma P + Theorem PH (λ-phase ≤ n−1 value-changing steps, tight) => switch-best / N5 on one-player
+  games O(n²m); K8 constant case closed for all G_c; VJ00 Prop. 7.4 proved for the arena-optimum rule. UNREFEREED. Checks: lemmaP_check.py
+  (all phases), f1_check.py, phase_vc.py: 0 violations. Two-player bridge (P-N5) FALSE (K1 stalls; seg_r16, seg_n24); value-changing Even moves
+  per segment-phase reach n+1 (vc_g25, n = 25): the one-player bound does not transfer; all counts ≈ n; G-N5-TIME open.
+- Tools: experiments/new/tail/ (tailsim, exsearch, genrule, abstractgate, masklift, lifttrace, phase_trace, phase_climb, phase_vc,
+  lemmaP_check, f1_check, segP_check, seg_climb, segtrace, seglen_odd); instances/phase, instances/seg10 (sha1 in tail/box10_instances.sha1).
+NEXT for a successor: (a) referee packet for N5-phase-bound-box10.md if the Lead routes it; (b) the two-player per-segment bound: no
+Lemma-P route (stalls); a potential must mix honest Ξσ with V_{σ,τ_k}; (c) best-reply changes along N5 runs (K9's other factor) stay the open
+potential; (d) Odd dual of (SEG-LEN): max 12 Odd moves per τ̄-segment-phase at n = 30 (seglen_odd.txt).
+Traps this box: a climb fitness that counts observations (steps + 1) looked like a phase of n steps; phase_vc.py counts steps. Importing a
+script with top-level code re-runs it (phase_trace.py needed a __main__ guard). Clock: my sense of time ran ~2x faster than date -u.
+(Earlier box-10 line and successor 3's box-9 resume point kept below.)
+BOX 10 (GO 22:03Z Oct 21; ends ~01:05Z Oct 22). Route (i) DONE 22:23Z (docs/new/N5-tail-box10.md): gen(m) cannot be the tail's Odd chain in the
+gadgeted Odd-CDAG family: exhaustive n=3 / random n=4..6 exploit searches give tails <= 3; Fact B (a vertex at Even's favourite target has
+no mask) kills gen's waiting bottom vertex; real tails lift masks by DOWNSTREAM repairs (tc2: 54 lifts, 42 fire; closures ~0). Tools in
+experiments/new/tail/. Route (ii) DONE 22:46Z: docs/new/N5-phase-bound-box10.md: Lemma P (after k in-phase steps every vertex dominates every simple path of ≤ k
+edges to every cycle node) => a λ-phase has ≤ n−1 value-changing steps (+ < m flat ones) => switch-best / N5 on ONE-PLAYER games is O(n²m):
+K8's constant case closed for all G_c; VJ00 Prop. 7.4 proved for the arena-optimum rule. Checks: lemmaP_check.py 0 violations (random n ≤ 10,
+climbed instances); longest phase found by climbs 46 at n=48 (< n). UNREFEREED. Two-player N5 (G-N5-TIME) still open.
+SUCCESSOR 4 (Fable 5.1, L36) started 2026-10-21 21:55Z (Lead brief). Handover check written (docs/agents/handover-checks/L-NEW.md);
+trunk 414b85e merged (5dce0be). WAITING for "go". Box 10 target: G-N5-TIME, (i) frozen-σ tail following gen(m) with τ̄'s exploits as
+masks (N5-SB-box9.md §5), or (ii) an in-phase cycle-building bound (§3). Nothing running; tools/oink/build and out/ must be rebuilt.
+(Successor 3's box 9 resume point kept below.)
+BOX 9 (Lead 2026-10-21 21:06Z; ends ~00:10Z Oct 22). Merged trunk a74d82f (dea2407).
+- docs/new/N5-SB-box9.md:
+  - Fact A (proved): I_{k+1} ∩ H_k = ∅.
+  - Edge-counting bounds and Conjectures R and R2 are REFUTED (instance in sb_conjR.txt).
+  - Lemma T inside phases. The in-phase cycle-building bound is still OPEN.
+- §5: N5's longest runs (seeded climbs, ≈ 2n, up to 73 at n = 36, instances/n5b9) are frozen-σ TAILS of Odd moves, gated by Odd's
+  improvements against τ̄ ≠ σ. That is the next killer design target.
+- Stamp trap again: "~21:40Z" was estimated; fixed to the commit time. ALWAYS run date -u before writing a stamp.
+- 8f0cc71: tail climbs (tail ≈ 1.4n) and one-vertex flip climbs (≤ 17 flips at n = 48, about n/3): linear. All instances checked.
+PARKED 21:51Z (date -u), context ~495k (handover at ~580k): nothing running.
+NEXT for a successor: (i) design the frozen-σ tail to follow gen(m), with masks from τ̄'s exploits (N5-SB-box9.md §5);
+or (ii) a bound on in-phase cycle building (§3). Start a fresh successor: this session is near its context limit.
 SUCCESSOR 3 (box 8, GO 00:32Z 2026-10-19; box end ~04:00Z). Resume point updated 01:42Z by date -u. Context ~360k at 01:42Z.
 DONE in box 8 (all pushed on claude/l-new; head 22b94e4 + this notebook):
 - 42ef86e handover check (5/5 per Lead).
@@ -192,6 +229,10 @@ NEXT for a successor:
 - (succ. 3, box 8) Zadeh, "What is the worst case behavior of the simplex algorithm?", CRM Proc. Lecture Notes (2008), §1 p. 1:
   "An example due to Edmonds for shortest path computations is also known [16]". Edmonds' example itself NOT opened.
 - (succ. 3, box 8) REFEREE R-N5K9 (claude/referee 160db1d) §(2)-(3): (P*), (P_strict), switch-all insufficient.
+- (succ. 4, box 10) VJ00 BRICS RS-00-48 re-opened 2026-10-21 23:31Z (pdf sha256 485a12de432a2a8c…, pdftotext): §5.1 pp. 12-14 (shortest-path
+  characterisation of Π_σ, equations (6)-(10)), §5.2 Prop. 5.1 + Lemma 5.2 => Ω_σ = Θ_{σσ̄} and σ̄ is a best counter-strategy (eq. (11), p. 16: the
+  (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
+  I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
 - N2 (PRIO-ANNEAL), KILLED ON DATA 18:05Z UTC (box 3; first implementation n2.py). Padded switchallexp
   (gen_padsae.sh; dummies block compression): largest stage 6, 15, 34, 72, 148, 300, 604 (N = 1..7). Instance

@@ -1,0 +1,20 @@
+start (11, 46, -36)
+step 120 maxflips 12 tail 46 n 36 check OK sha1 74fd2f14799d1ae285e9eb9a728af9dba60b4619
+step 194 maxflips 13 tail 40 n 36 check OK sha1 147388acdb29c5a5d0a962752fa5d69ee609a0b1
+step 270 maxflips 13 tail 41 n 36 check OK sha1 1fcf69c331878ae65eb2de20d9dce1d1b03ebfd2
+step 451 maxflips 14 tail 30 n 36 check OK sha1 1f705c124878cebea3eb914d1520ea5ff5a1da03
+step 732 maxflips 14 tail 31 n 36 check OK sha1 a8cb1829a33b9747dc62222043e31c80b79b0c1a
+step 929 maxflips 14 tail 33 n 36 check OK sha1 0326afb1708ff74432c03d2fd19b57462ec216af
+step 985 maxflips 14 tail 34 n 36 check OK sha1 a3f1c64a43fd2f2bf0a7496f82233964a00a2b23
+step 1439 maxflips 14 tail 35 n 36 check OK sha1 c907e0e4af1709d852cfe1db85c6301e6e68b4f7
+step 1679 maxflips 14 tail 36 n 36 check OK sha1 3bfcc00a782bbd56777b7245d317cd96b51ec975
+step 1686 maxflips 15 tail 35 n 36 check OK sha1 c490f0d62328df1e3839773f27de28736a73fd86
+step 2269 maxflips 15 tail 36 n 36 check OK sha1 54e1406dca4a688da79ab35cbb99e6f215713cda
+step 2299 maxflips 15 tail 37 n 36 check OK sha1 387528dd5e1fcdee6b18b370095b346ca78d0603
+step 2451 maxflips 15 tail 38 n 36 check OK sha1 45fd42827d9079108a63ee91e4a63b2906126980
+step 2490 maxflips 15 tail 39 n 36 check OK sha1 91fb40993c4d8bfaac9e074bf8bbcd01d13a7b80
+step 3190 maxflips 15 tail 40 n 36 check OK sha1 af6a91fb4ee6030712cc5b56bf9c14f85854df6d
+step 3663 maxflips 15 tail 41 n 36 check OK sha1 b1e1e7d604b5330087bc2086fd478c3d544a8909
+step 4342 maxflips 15 tail 42 n 36 check OK sha1 3f5777866f9f1dc03e9d69bfb26f7af5b9978267
+step 4701 maxflips 15 tail 43 n 36 check OK sha1 a9bb1c597a0715082f6e9a28984780335cf5dafc
+best (15, 43, -36)

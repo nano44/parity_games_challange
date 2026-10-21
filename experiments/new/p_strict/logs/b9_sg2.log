@@ -1,0 +1,17 @@
+start (46, -25)
+step 41 iterations 47 n 26 check OK sha1 6cc984800ae02a5397cc6bc2c1cd8252964043c6
+step 993 iterations 48 n 27 check OK sha1 64581bb004eaeaac626ecb2723e3fa00fd94e098
+step 1026 iterations 49 n 27 check OK sha1 80d2a4481a38418c6e8d8326eb3f4fe96abc8e37
+step 1046 iterations 50 n 27 check OK sha1 3f9b7109e4e1022e676896110150ae11f313245e
+step 1494 iterations 51 n 28 check OK sha1 57ea657094037dd0b162e338935b1fdfa0e2ec92
+step 1563 iterations 52 n 28 check OK sha1 a1107ad76f7070549916fb26a479c35812502712
+step 1647 iterations 53 n 28 check OK sha1 48ff1054f97c76e72a747f652cde918979e611cb
+step 2158 iterations 54 n 29 check OK sha1 9c46598ea54f53c42462ab84a9265f6d15fe269c
+step 2702 iterations 55 n 30 check OK sha1 4a11f6fc0fddf6e98bd13e466234209ed5d36de4
+step 3298 iterations 56 n 30 check OK sha1 caa6363ba68584f0cbbb350120001d701bb67278
+step 3781 iterations 57 n 30 check OK sha1 f8653ee4ac92bf6e3c423d5fedf6cf1d1fecfb3c
+step 4275 iterations 58 n 30 check OK sha1 2f14cc5c99e680067a44db63077d66d3b577f776
+step 4456 iterations 59 n 30 check OK sha1 9f3609bdac042690b78d87863d01c789412f2da3
+step 5407 iterations 60 n 30 check OK sha1 9382da357ff543b3c72a8764c593ed7c2b1f04cc
+step 5633 iterations 61 n 30 check OK sha1 5861e9694cbfb1c0f10ab726d3345a73d3eb0b51
+best (61, -30)

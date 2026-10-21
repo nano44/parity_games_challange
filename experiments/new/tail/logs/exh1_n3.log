@@ -1,0 +1,4 @@
+OPT  steps 1 exploits {}
+NONOPT steps 1 even_moves 1 exploits {(3, 2): [0]}
+NONOPT steps 2 even_moves 1 exploits {(3, 2): [1]}
+DONE n=3 mode=exh1 configs=15625 best optimal-sigma tail=1 best non-optimal-sigma run=2

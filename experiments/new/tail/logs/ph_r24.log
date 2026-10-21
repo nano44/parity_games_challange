@@ -1,0 +1,21 @@
+start (1, 2, -24)
+step 2 maxphase 2 steps 3 n 24 n5-iterations 3 check OK sha1 c98e65162b351e1f787973b5538c37bd723ec130
+step 9 maxphase 2 steps 4 n 24 n5-iterations 4 check OK sha1 887b9de80dc833b2769d4c22aed4711936afb6c3
+step 59 maxphase 3 steps 2 n 24 n5-iterations 2 check OK sha1 94a6e1f678c4b822c783527963ca4817de3faafa
+step 161 maxphase 4 steps 3 n 24 n5-iterations 3 check OK sha1 b286ff7cf8e8b3be9c593e5415d33063d9ddea5f
+step 181 maxphase 6 steps 5 n 24 n5-iterations 5 check OK sha1 168b8312ba81e923da10fa42afa1b642aa464066
+step 217 maxphase 7 steps 6 n 24 n5-iterations 6 check OK sha1 8c4064fbf185101ec298e5a1803c07ef712bc69d
+step 279 maxphase 8 steps 7 n 24 n5-iterations 7 check OK sha1 49aa4d4c8fa42d97219287816aee7fd4f97b81e2
+step 355 maxphase 8 steps 8 n 24 n5-iterations 7 check OK sha1 6edfebc29363df57424fa1da901e3ccee41b6adc
+step 513 maxphase 8 steps 9 n 24 n5-iterations 6 check OK sha1 e59cc2b947396f0106c4f45e2fc6f24f543ff8a9
+step 822 maxphase 8 steps 10 n 24 n5-iterations 9 check OK sha1 36f86fe968fa46f609ccc22c43828b270fe274c0
+step 829 maxphase 9 steps 12 n 24 n5-iterations 11 check OK sha1 c91de8952f693e657cf9b4b3296b4df0b0cc6e66
+step 870 maxphase 9 steps 13 n 24 n5-iterations 12 check OK sha1 e6633f2bb1e189e06a43480e41deafb74508c536
+step 1049 maxphase 10 steps 14 n 24 n5-iterations 13 check OK sha1 a324f49f0c7d00b2ac040bd79350f2521dcb004a
+step 1087 maxphase 10 steps 15 n 24 n5-iterations 14 check OK sha1 385da2837a8d91a66e5d24795e6b0fc3982f51f0
+step 1540 maxphase 10 steps 16 n 24 n5-iterations 14 check OK sha1 b4f171fc7f81ec652fffc432adfc90be0c51315b
+step 2345 maxphase 11 steps 17 n 24 n5-iterations 15 check OK sha1 7c7aa97ca281080e2a862eb05774c014aecfafc0
+step 2572 maxphase 12 steps 18 n 24 n5-iterations 16 check OK sha1 f8c4d2b07ed60c04bc50e5311aec7a6e1a916e1d
+step 3009 maxphase 12 steps 19 n 24 n5-iterations 18 check OK sha1 514205eaccc9dae45a9f04e185779c65a359b4e1
+step 3438 maxphase 13 steps 19 n 24 n5-iterations 18 check OK sha1 1277490ae0374bc3975d325727f6f73cee0fa96d
+best (13, 19, -24)

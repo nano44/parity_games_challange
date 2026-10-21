@@ -258,3 +258,18 @@ Lead reading L35 (2026-10-18 09:04Z by date -u):
     An approach that survives gauntlet step 2 is reported to the owner at once.
 (4) Working sessions: L-ALG, L-RED, L-NEW (3 of the D1 cap of 5).
 
+
+## L36 (Lead reading, 2026-10-21 21:06Z by date -u): after the weekly-cap pause and the Fable reset
+Facts: every fleet session (Lead and OWNER-DESK included) stopped between 2026-10-19 03:33Z and 04:01Z with "You've hit your
+weekly limit · resets Oct 21, 9pm (UTC)" (rate_limit seven_day "rejected", isUsingOverage false on all). This is the D7 automatic
+pause ("We pause automatically if the cap is hit"), not paid overage; the owner could not be told at the time and was told at
+21:06Z (OWNER-DESK). The reset at 21:00Z is also the Fable reset that ends the D8 period ("switch to opus 5.5 until the weekly
+limit is reset") and the D12 period ("temperoraly"), and it is the L32 (2) reassessment point. Q16 (L32 options) is still open,
+so D13 ("Keep working on the dtl and also c") holds. Q18 put to the owner: models after the reset.
+Reading, until the owner answers Q18:
+(1) Work the cap cut off finishes on its existing session: L-RED succ. 10 (box 16, R48 §4) and CHECKER (C19 Addendum 3).
+(2) The (c) lane L-NEW continues its next box on its existing session (D13).
+(3) Any NEW session starts on Fable 5.1, as before D8. The Fable L-ALG session paused on 2026-10-16 is not resumed: it is stale
+    and the proof lane is parked (Q16 recommendation).
+(4) No referee signs on Opus after the reset unless the owner extends D12; existing "(Opus 5.5, D12)" labels stay.
+(5) Working sessions: 3 of 5 (L-RED, L-NEW, CHECKER).
