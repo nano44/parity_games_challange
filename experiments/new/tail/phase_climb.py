@@ -30,7 +30,7 @@ def fit(c, cap=3000):
         for v in range(g.n):
             if ns[v] != s[v]: cnt[v] = cnt.get(v, 0) + 1; mf = max(mf, cnt[v])
         s = ns; k += 1
-    return ((mf, mx, k, -g.n) if MODE == "flips" else (mx, k, -g.n)), g
+    return ((mf, mx, k, -g.n) if MODE == "flips" else (mx - g.n, mx, k) if MODE == "rel" else (mx, k, -g.n)), g
 best, _ = fit(cur); print("start", best, flush=True)
 for t in range(steps):
     pr, ow, sc, st = list(cur[0]), list(cur[1]), [list(x) for x in cur[2]], list(cur[3]); n = len(pr); r = rng.random(); v = rng.randrange(n)

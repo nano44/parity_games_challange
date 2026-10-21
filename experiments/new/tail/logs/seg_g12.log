@@ -19,3 +19,4 @@ step 6006 inphase-seg-moves 10 iterations 12 n 15 check OK sha1 ad537810166e22e4
 step 8027 inphase-seg-moves 11 iterations 13 n 16 check OK sha1 839546672b778e53345f9cb22a9d298336059902
 step 9470 inphase-seg-moves 11 iterations 14 n 16 check OK sha1 4d058423d00e5f8cf6001ed949330f99df21fefb
 step 9779 inphase-seg-moves 11 iterations 15 n 16 check OK sha1 67dfbff1e24ecc4b14312e01f78f6a2e7b871718
+best (11, 15, -16)

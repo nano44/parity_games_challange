@@ -13,15 +13,18 @@ if src.startswith("random:"):
     n = int(src.split(":")[1]); g0 = pg.Game(rng.sample(range(2 * n), n), [rng.randrange(2) for _ in range(n)], [sorted(set(rng.randrange(n) for _ in range(rng.randint(1, 3)))) for _ in range(n)])
 else: g0 = pg.read(src)
 cur = (list(g0.prio), list(g0.owner), [list(x) for x in g0.succ])
+VC = os.environ.get("FIT") == "vc"   # count only Even-moving iterations that change the honest valuation Xi_sigma
 def fit(c, cap=3000):
     g = pg.Game(*c); E, Ed = Engine(g), Engine(dual(g)); s, t = list(E.initial("best")), list(Ed.initial("best")); it = 0; seg = None; k = mx = 0
+    vs, sbar = E.evaluate(tuple(s))
     while it < cap:
-        vs, sbar = E.evaluate(tuple(s)); key = (tuple(sbar[v] if g.owner[v] == 1 else -1 for v in range(g.n)), tuple(vs[v][0] for v in range(g.n)))
+        key = (tuple(sbar[v] if g.owner[v] == 1 else -1 for v in range(g.n)), tuple(vs[v][0] for v in range(g.n)))
         if key != seg: seg, k = key, 0
         r = step(g, E, Ed, s, t)
         if r is None: break
-        if r[0] != s: k += 1; mx = max(mx, k)
-        s, t = r[0], r[1]; it += 1
+        vs2, sbar2 = E.evaluate(tuple(r[0]))
+        if r[0] != s and (not VC or any(E.key(vs2[v]) != E.key(vs[v]) for v in range(g.n))): k += 1; mx = max(mx, k)
+        s, t = r[0], r[1]; vs, sbar = vs2, sbar2; it += 1
     return (mx, it, -g.n), g
 best, _ = fit(cur); print("start", best, flush=True)
 for tt in range(steps):

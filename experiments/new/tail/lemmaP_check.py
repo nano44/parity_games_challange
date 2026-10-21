@@ -37,8 +37,8 @@ for gi in range(games):
         vs0, _ = E.evaluate(tuple(s)); lam0 = tuple(vs0[v][0] for v in range(n)); cycnodes = sorted(set(lam0))
         # all simple paths from x to u, by length: paths[u][x][L] = list of P-values (as values) -- enumerate via DFS
         best = {}   # (u, x, L) -> best value of a simple path with exactly L edges
-        for u in cycnodes:
-            def dfs(x, path, seen):
+        def dfs(x, path, seen, u=None):
+                if u is None: u = dfs_u[0]
                 if x == u and path:
                     val = value_of_path(path, u); key = (u, path[0], len(path))
                     if key not in best or E.key(val) > E.key(best[key]): best[key] = val
@@ -48,13 +48,21 @@ for gi in range(games):
                     if w == u:
                         val = value_of_path(path + [x], u); key = (u, path[0] if path else x, len(path) + 1)
                         if key not in best or E.key(val) > E.key(best[key]): best[key] = val
-                    elif w not in seen: dfs(w, path + [x], seen | {w})
+                    elif w not in seen: dfs(w, path + [x], seen | {w}, u)
+        dfs_u = [None]
+        for u in cycnodes:
+            dfs_u[0] = u
             for x in range(n):
-                if x != u: dfs(x, [], {x})
+                if x != u: dfs(x, [], {x}, u)
         k = 0; cur = list(s); inphase = True
         while True:
             vs, _ = E.evaluate(tuple(cur)); lam = tuple(vs[v][0] for v in range(n))
-            if lam != lam0: inphase = False
+            if lam != lam0:      # new phase: restart the table from the current strategy (every phase is checked)
+                lam0 = lam; cycnodes = sorted(set(lam0)); best = {}; k = 0
+                for u in cycnodes:
+                    dfs_u[0] = u
+                    for x in range(n):
+                        if x != u: dfs(x, [], {x}, u)
             if inphase:
                 maxphase = max(maxphase, (k, n)) if k > maxphase[0] else maxphase
                 if k > n: print("PHASE LONGER THAN n:", n, k, g.prio, g.owner, g.succ, s); viol += 1

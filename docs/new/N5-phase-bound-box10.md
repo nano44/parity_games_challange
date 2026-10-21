@@ -72,6 +72,9 @@ values. So there are at most Σ_x (deg(x) − 1) < m flat steps, after which no 
 the phase first). □
 Remark. Value-flat steps are the cycle-closing switches of N5-killer-box4.md §3 (Ξ unchanged); switch-best's engine may or may not take them
 (N5 takes them in its fallback, S4c, which switches each such x to its Ω-best improving successor at once, after which I = ∅).
+Tightness (23:11Z by date -u). The bound n − 1 value-changing steps per phase is attained: phase_climb.py with FIT=rel (fitness = phase
+length − n, growth allowed) found phases of exactly n − 1 steps, all value-changing, at n = 12 and n = 16 (instances/phase/rel_g12.pg,
+rel_g16.pg; phase_vc.py), and 46 at n = 48 (ph_n48.pg). No climb exceeded n − 1 (tail/logs/rel_*.log, phase_vc.txt: 17 instances, 0 violations).
 Corollary 1 (switch-best is polynomial on one-player games). At most n(n − 1) + 1 phases of fewer than n + m steps: fewer than
 (n² − n + 1)(n + m) steps, i.e. O(n²·m) (≤ n³ − n² + n value-changing steps in all).
 Corollary 2 (N5 on one-player games). On a game in which one player has out-degree 1 everywhere, N5's step for the other player is
@@ -92,7 +95,9 @@ switch-best on G_σ only when τ̄ = σ, which never happens on the long instanc
   with at most k edges (DFS enumeration) is compared with Ω_k(x) (L-SI's engine, read-only). Random one-player games: 2,000 games × 2 starts
   at n ≤ 7 (1,837 checks), 300 × 2 at n ≤ 8 (288), 150 × 2 at n ≤ 9 (100), 400 × 2 at n ≤ 10 (463): 0 violations. Climbed long-phase
   instances (sb1_counter_n10/n16, phase/fl_n16, ph_n16, ph_g16, fl_g16; a 12-step phase at n = 16): 1,317 checks, 0 violations
-  (tail/logs/lemmaP_inst.txt, lemmaP_rand.txt). Also checked there: no phase longer than n.
+  (tail/logs/lemmaP_inst.txt, lemmaP_rand.txt). Also checked there: no phase longer than n. Re-run with EVERY phase of a run checked (the table
+  of simple paths is rebuilt at each λ change; lemmaP_inst_allphases.txt): rel_g12, rel_g16 (the tight n − 1 phases), fl_n16, ph_n16,
+  sb1_counter_n10/n16: 3,239 checks, 0 violations; random n ≤ 9, 500 games × 2 starts: 613 checks, 0 violations.
 - phase_climb.py (fitness = longest phase; or FIT=flips = most switches of one vertex inside a phase): longest phase 46 steps at n = 48
   (instances/phase/ph_n48.pg, the whole run but one step; the phase builds a 47-vertex cycle backwards, one vertex per step; n5.run gives the
   same 47 iterations, regions = Zielonka, verify.py OK); 13 at n = 16 and n = 24; 46 at n = 49 with growth. Never above n − 2.
@@ -121,3 +126,11 @@ of G_c. Test: experiments/new/tail/segP_check.py (DFS over simple paths of G_c, 
   (grown from 12), 17 at n = 20, 8 at n = 24 (seeded from best_n24), all < n − 1; every improved best re-run through n5.run, regions = Zielonka,
   verify.py OK (tail/logs/seg_*.log). Together with K9's structure, (SEG-LEN) plus a polynomial bound on best-reply changes would bound N5;
   neither is proved, and K9's remaining premise is now (SEG-LEN) for Even and its dual for Odd, not the one-player bound (which is Theorem PH).
+- UPDATE (23:12Z by date -u): with the climb fitness restricted to VALUE-CHANGING Even moves (FIT=vc; an Even-moving iteration counts iff Ξσ
+  changes somewhere; Ξσ does not depend on τ), the two-player count EXCEEDS the one-player bound: instances/seg10/vc_g25.pg (n = 25, 15 Even
+  vertices, sha1 0ffe46db056823a82b1f72f0fd78dfec774a7b9d): one σ̄-segment λ-phase spans the whole run (iterations 0..26) with 27 Even-moving
+  iterations, 25 of them value-changing (> n − 1 = 24) and 2 value-flat; vc_g17.pg (n = 21, sha1 813cfeed…): 20 value-changing (= n − 1).
+  Both re-run through n5.run: regions = Zielonka, verify.py OK (tail/logs/vc_*.log; tail/segtrace.py shows the per-iteration moves: vertex 4
+  oscillates 5 → 2 → 5 → 2 inside the segment, up to 10 Even vertices stalled at once). So no statement of the form "Even moves per segment
+  λ-phase ≤ n − 1" holds for two-player N5 even in value-changing form; the K1 stalls cost real steps. On all data the count stays ≈ n
+  (climb maxima 25 at n = 25, 20 at n = 21, 17 at n = 20, 14 at n = 16/24/32); no growth beyond linear was found, and no bound is proved.
