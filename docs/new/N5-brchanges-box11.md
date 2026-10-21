@@ -40,3 +40,8 @@ step, not from the valuation.
 (c) yields no usable invariant: the count of best-reply changes is as large as the run on the adversarial instances, and every structural
 restriction tried (no per-vertex revisit, no global return, change only with a λ change) fails with pinned instances. Route (b) (a two-player
 per-segment potential mixing honest Ξσ with V_{σ,τ_k}) was therefore not started in this box, per the Lead's condition.
+- Final climb numbers (23:49Z by date -u; br/logs/*.log, instances pinned in br/box11_instances.sha1, every improved best re-run through n5.run,
+  regions = Zielonka, verify.py OK): total changes σ̄ + τ̄ = 65 in 46 iterations at n = 33 (ch_g16.pg, sha1 a0df9895…: 36 + 29; changes ≈ 1.4 ×
+  iterations); max revisits of one vertex's best reply 16 at n = 24 (rev_r24.pg, sha1 ed28bad8…; σ̄ at one Odd vertex changes 19 times among
+  ≤ 4 successors), 12 at n = 16, 10 at n = 21; global returns of σ̄: 26 in 34 changes at n = 60 (glob_sbe.pg, sha1 28a3b3d8…, seeded from
+  sbe2_s21; Odd still never moves), 10 at n = 16. All runs ≤ 46 iterations: the structure that breaks the invariants does not lengthen the runs.

@@ -2,6 +2,11 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
+BOX 11 (GO 23:33Z Oct 21, to ~02:35Z Oct 22): option (c), the best-reply-change count (K9's factor). Box 10 merged at trunk 26905f0; packet
+P-N5-1P = N5-phase-bound-box10.md §1-§4 pinned there (my head adds the SCOPE header line and §6 only). (c) RESULT 23:50Z: no usable invariant;
+docs/new/N5-brchanges-box11.md: (BR-NR-vertex), (BR-NR-global), (BR-λ) all FALSE with pinned instances (br/, instances/br11); changes ≈ iterations
+on adversarial instances (65 changes in 46 iterations at n = 33); toggle mechanism: sbe2_s21 (Odd never moves, σ̄ toggles among 4 states, 26 global
+returns after a seeded climb). Route (b) not started (Lead's condition). Waiting for the Lead's direction.
 BOX 10 END (successor 4, Fable 5.1; ~23:25Z Oct 21 by date -u; Lead box to ~01:05Z): both routes done, pushed; nothing running.
 - (i) docs/new/N5-tail-box10.md: gen(m) cannot be the tail's Odd chain (Fact B; searches ≤ 3 steps); real tails lift masks by downstream repairs.
 - (ii) docs/new/N5-phase-bound-box10.md: Lemma P + Theorem PH (λ-phase ≤ n−1 value-changing steps, tight) => switch-best / N5 on one-player
