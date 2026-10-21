@@ -251,3 +251,8 @@ Attack on (a)/(b) running; L-COMP second implementation; step 4 not started.
 ## 2026-10-18 22:29Z Lead -> owner: Q16 (early L32 reassessment) added and put to the owner.
 
 ## 2026-10-19 00:21Z Lead -> owner: Q16 addendum (R15 N5 termination refereed; N5 time reduced to (P)+(CH), unrefereed); Q17 optional Voege thesis.
+
+## 2026-10-19 03:32Z Lead -> owner: Q16 addendum 2 (R16, DTL on subclass C^1P reduces to (NEST*-BOUNDED)). Not delivered at the time:
+the desk, like every session, stopped at the weekly cap (~03:33Z) before replying.
+## 2026-10-21 21:06Z Lead -> owner (verbatim relay requested): fleet paused ~2.7 days by the weekly cap (not overage); reset 21:00Z =
+L32 reassessment point; state unchanged; Q16 still open; new Q18 (models after the reset); interim L36.

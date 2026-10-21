@@ -207,6 +207,10 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - Addendum (Lead, 2026-10-19 00:21Z): R15 [refereed-only] landed: N5 always terminates (two referees, CHECKER); repairs a strictness
   claim in Voege-Jurdzinski 2000 that fails at cycles. N5 running time reduced (unrefereed, K9) to (P) polynomial one-player SI and (CH)
   polynomially many opponent best-reply changes; referees checking; L-NEW on (P).
+- Addendum 2 (Lead, 2026-10-19 03:32Z): R16 [refereed-only, Opus D12] landed: on the one-player-like subclass C^1P, DTL searches
+  <= n^O(d) with d = NEST*; GAP-A there reduces to ONE named statement (NEST*-BOUNDED), no proof route (L32 half met); data max 3.
+  Lead recommendation updated: (b)+(c) plus a proof attempt on (NEST*-BOUNDED). Fleet paused 2026-10-19 ~03:33Z-2026-10-21 21:00Z
+  by the weekly cap (no overage); reassessment point reached at the reset.
 - Status: open
 
 ## Q17: Jens Voege's PhD thesis (optional)
@@ -217,3 +221,11 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - Ask: if the owner can obtain a copy, place it in the repository (any path) and tell OWNER-DESK; L-LIT checks the proof. The fleet
   contacts no one.
 - Status: open (optional)
+
+## Q18: which models after the reset (D8, D12 were tied to it)
+- id: Q18 (Lead, 2026-10-21 21:06Z)
+- Options: (a) back to Fable 5.1 for new lanes and referees, as before D8; (b) stay on Opus 5.5 for lanes and referees; (c) Fable for
+  referees, Opus for lanes.
+- Interim (Lead reading L36): sessions cut off by the cap (L-RED on NEST*-BOUNDED, CHECKER on R16) finish on Opus; L-NEW resumes on its
+  existing session; any NEW session starts on Fable 5.1; no Opus referee signs unless D12 is extended. Working sessions 3 of 5.
+- Status: open
