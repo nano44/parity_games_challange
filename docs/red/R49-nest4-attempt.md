@@ -92,3 +92,23 @@ Every instance below: sha1, both orders give the same P, pinned Oink verified, O
   - Witness: 1 (idx 1, 13) ⊃ 6 (idx 3, 12) ⊃ 8 (idx 6, 11) ⊃ the 9-pair (idx 7, 8).
 - Pinned Oink 8fbf0a7 `--dtl --no-single --no-wcwc --no-loops -v`: even iterations 18 (= S), odd 1, solution verified (40 strategies).
 - Status: ONE instance with NEST* 4. This is not yet a family, and not growth with n.
+- Second instance, from two NEST*-3 games and no other helper: instances/nest4uu_n51.pg = win3_n27 ⊎ nest3_n24, priorities interleaved
+  (f(p) = 2p − p mod 2 for B, f(p) + 2 for A).
+  - sha1 302c03a8f37a3e7afd0c3f7fa5a533fc00483fa7, n 51. S 19, identical P in both orders: 4,1,11,11,11,11,6,8,10,6,7,8,6,1,1,5,5,6.
+    NEST* 4.
+  - Pinned Oink: 19 even iterations, 1 odd, solution verified (46 strategies).
+  - Also NEST* 4: win3_n27 ⊎ onep_chainfail_n20 (above) and win3_n27 ⊎ nest3_n24 (below).
+- Mechanism, nest4u_n46 (component of the changed piece per transition: A = the chainfail part, B = near4, M = a mixed piece; type G/O):
+  4AO 1AO 2MO 6AG 10BG 10BG 8BO 9BG 9BG 6AO 8BG 8BG 6MO 1AO 5BG 5BG 5BG.
+  - The witness 1 ⊃ 6 ⊃ 8 ⊃ 9-pair has its two outer levels in A and its two inner levels in B.
+  - B's own outer rises (near4's level 0) happen in searches where A changes at a shallower position, so they are masked (only the
+    first changed position counts).
+  - A's piece at 6 sits between B's pieces and rises at searches 3, 9 and 12. These interleave with B's inner activity, so A
+    wraps B's window.
+  - So unions add levels when one component's window encloses, in time, the other's visible structure at deeper positions.
+- Growth attempts (all NEST* 4, MASS up to 46, S stays 18-19 because the components run in parallel in the same searches):
+  - nest4u_n46 ⊎ each of {onep_chainfail_n20, nest3_n24, nest3_n20, near4_n26, win3_n27, w1_n27, oseg_n26, onep_fdkey_n20,
+    nest4uu_n51, nest4u_n46}, 3 placements each.
+  - nest4uu_n51 ⊎ {nest4uu_n51, nest3_n24, win3_n27}.
+  - nest4u_n46 ⊎ library files: 157 results scanned (stopped), best NEST* 4.
+  - Random-interleaving merges (experiments/red/nest16/mergesearch.py): running.
