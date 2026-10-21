@@ -139,3 +139,7 @@ of G_c. Test: experiments/new/tail/segP_check.py (DFS over simple paths of G_c, 
   oscillates 5 → 2 → 5 → 2 inside the segment, up to 10 Even vertices stalled at once). So no statement of the form "Even moves per segment
   λ-phase ≤ n − 1" holds for two-player N5 even in value-changing form; the K1 stalls cost real steps. On all data the count stays ≈ n
   (climb maxima 25 at n = 25, 20 at n = 21, 17 at n = 20, 14 at n = 16/24/32); no growth beyond linear was found, and no bound is proved.
+- FINAL climb numbers (23:24Z by date -u; every climb finished; tail/box10_instances.sha1 pins every instance): value-changing Even moves in one
+  σ̄-segment λ-phase: 26 at n = 25 (vc_g25.pg, sha1 243f890d34cad9991cc7e11cc73d7b718f885ff0; 27 Even-moving iterations, 26 value-changing, 1 flat,
+  n5.run 27 iterations, Zielonka + verify.py OK), 20 at n = 21 (vc_g17), 18 at n = 24 (vc_g20, all value-changing), 17 at n = 24 (vc_r24), 13 at
+  n = 16 (vc_r16). One-player phases (phase_vc.py over all 20 phase instances): 0 violations of Theorem PH, maximum exactly n − 1.

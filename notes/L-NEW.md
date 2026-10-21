@@ -2,6 +2,20 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
+BOX 10 END (successor 4, Fable 5.1; ~23:25Z Oct 21 by date -u; Lead box to ~01:05Z): both routes done, pushed; nothing running.
+- (i) docs/new/N5-tail-box10.md: gen(m) cannot be the tail's Odd chain (Fact B; searches ≤ 3 steps); real tails lift masks by downstream repairs.
+- (ii) docs/new/N5-phase-bound-box10.md: Lemma P + Theorem PH (λ-phase ≤ n−1 value-changing steps, tight) => switch-best / N5 on one-player
+  games O(n²m); K8 constant case closed for all G_c; VJ00 Prop. 7.4 proved for the arena-optimum rule. UNREFEREED. Checks: lemmaP_check.py
+  (all phases), f1_check.py, phase_vc.py: 0 violations. Two-player bridge (P-N5) FALSE (K1 stalls; seg_r16, seg_n24); value-changing Even moves
+  per segment-phase reach n+1 (vc_g25, n = 25): the one-player bound does not transfer; all counts ≈ n; G-N5-TIME open.
+- Tools: experiments/new/tail/ (tailsim, exsearch, genrule, abstractgate, masklift, lifttrace, phase_trace, phase_climb, phase_vc,
+  lemmaP_check, f1_check, segP_check, seg_climb, segtrace, seglen_odd); instances/phase, instances/seg10 (sha1 in tail/box10_instances.sha1).
+NEXT for a successor: (a) referee packet for N5-phase-bound-box10.md if the Lead routes it; (b) the two-player per-segment bound: no
+Lemma-P route (stalls); a potential must mix honest Ξσ with V_{σ,τ_k}; (c) best-reply changes along N5 runs (K9's other factor) stay the open
+potential; (d) Odd dual of (SEG-LEN): max 12 Odd moves per τ̄-segment-phase at n = 30 (seglen_odd.txt).
+Traps this box: a climb fitness that counts observations (steps + 1) looked like a phase of n steps; phase_vc.py counts steps. Importing a
+script with top-level code re-runs it (phase_trace.py needed a __main__ guard). Clock: my sense of time ran ~2x faster than date -u.
+(Earlier box-10 line and successor 3's box-9 resume point kept below.)
 BOX 10 (GO 22:03Z Oct 21; ends ~01:05Z Oct 22). Route (i) DONE 22:23Z (docs/new/N5-tail-box10.md): gen(m) cannot be the tail's Odd chain in the
 gadgeted Odd-CDAG family: exhaustive n=3 / random n=4..6 exploit searches give tails <= 3; Fact B (a vertex at Even's favourite target has
 no mask) kills gen's waiting bottom vertex; real tails lift masks by DOWNSTREAM repairs (tc2: 54 lifts, 42 fire; closures ~0). Tools in

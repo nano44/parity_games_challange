@@ -35,7 +35,10 @@ c91f1e543a0e5bde93bbbfd26c0ced9029913422  instances/seg10/seg_r20_s203.pg
 d7d9923cbfd89052ab1723049fad1bad399f421d  instances/seg10/seg_r20_s204.pg
 f96c184b6dfb523259bafd235832a0d09a45d325  instances/seg10/seg_r24.pg
 d213d85f4bee5423ccb2b6e71cd8fbe8b32546b9  instances/seg10/seg_r32.pg
-617bb4ea2d6eb5ed36b242e32383e92d77cdc703  instances/seg10/vc_g12.pg
-813cfeed8ed460a615575079c295c7ef0eb3b82d  instances/seg10/vc_g17.pg
-0ffe46db056823a82b1f72f0fd78dfec774a7b9d  instances/seg10/vc_g25.pg
+675f2358509bed50330b97f29589ad718d7202dd  instances/seg10/vc_g12.pg
+e58d9896b103a2eb49d4db5ef9e5fff93b2753f0  instances/seg10/vc_g17.pg
+2fc1aa17623d1edebabc6ec6f56ea8a6eb90b987  instances/seg10/vc_g20.pg
+243f890d34cad9991cc7e11cc73d7b718f885ff0  instances/seg10/vc_g25.pg
+243f890d34cad9991cc7e11cc73d7b718f885ff0  instances/seg10/vc_g25_snap.pg
 ae1cfdb9d06ffe48905cc8c5a9110c6aea76f752  instances/seg10/vc_r16.pg
+2fa786d208a12c92143192ee3dae89f40507345e  instances/seg10/vc_r24.pg
