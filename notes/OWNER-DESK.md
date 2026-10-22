@@ -27,3 +27,5 @@ Reports (milestones, step-2 survivors, incorrect runs, super-poly families, step
 - 2026-10-22 07:1xZ: pushed 79abccc2 with scripts/verify.sh FAILED (my regex dropped "## Resume point"; I piped verify through
   `tail -1`, so `&&` did not gate the push). Fixed in the next commit. Lesson: never pipe verify before `&&`; use
   `scripts/verify.sh >/dev/null && git push`.
+- 2026-10-22T07:12Z Lead correction: push ONLY with scripts/push.sh, output redirected to a file, then print $? (never a pipe,
+  never verify.sh && git push). Timestamps: take them from date -u in the same command that writes them.
