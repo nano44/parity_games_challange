@@ -4,7 +4,7 @@ Opus 5.5: the session's model was switched (get_session: user_switched_model cla
 The previous notebook (boxes 1-18) is in git at l-red 4f73e7a6: `git show 4f73e7a6:notes/L-RED.md`; boxes 16-18 handover at a5274bd6.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: box 19 END, PARKED (see Resume point).
+Status: box 19 END (merged trunk 18812f7). Lead 07:34Z (D15 / L37): k-pools NEST* line CLOSED. Box 20 (DTL adversary, S growth on two-player games) GO 07:34Z to ~10:40Z.
 
 ## DONE (box 19; docs/red/R51-piecemap.md; tools experiments/red/nest16/piecemap.py, gatescan.py; evidence in experiments/red/nest16/maps/ and scans/)
 - Trap found: fixd_stealentry.run renumbers vertices by priority, so tlog.py / partmask.py print SOLVER indices, not file ids.
@@ -51,6 +51,9 @@ dtl.cpp @ 8fbf0a7. Earlier opened sources are listed in `git show 4f73e7a6:notes
 - Literal mirror of the k = 3 step onto nest6min ⊎ oseg: NEST* 4 (scan4; agrees with R50 §5 on nest6 ⊎ oseg).
 - Head-ladder gates (72→80 etc., + returns): lengthen S to 28 / 31 but NEST* 5; added searches are cut by new rises of position 1
   (k4L72r_n101, three 1-rises at P indices 13, 19, 21); scans/scan6_*, scan7_*.
+- k-pools NEST* line (boxes 16-19) CLOSED by the Lead (D15 / L37, 07:34Z): NEST* plateaus at 6 (448 hand-built configurations and
+  climbs), S linear (≤ 31 at n 101). Obstruction R51 §4: a seventh level needs a longer post-block stretch with no shallow first
+  change; no edge class gives both. Killing instance k4u_n101 (37a45ff8a932bcc6e4a79d4848a0a57dbb82367a), scans 1-7.
 - Plain union nest6min ⊎ oseg above: E's piece nests around D's pair (16 ⊃ 18) but level 8 is lost: NEST* 6, not 7 (k4u_n101).
 
 ## NEEDS

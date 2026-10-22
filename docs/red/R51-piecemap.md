@@ -199,3 +199,26 @@ Why the innermost window of the k = 3 structure cannot host a gate for a fourth 
   one seed (nest6min ⊎ oseg above); the obstruction is a reading of the data on this seed, not an impossibility proof; nothing here
   touches (NEST*-BOUNDED)'s status (open, DATA only).
 - Frozen after this box: R51 §0-§5 (corrections in new sections only, as for R49 / R50).
+
+## 6. Correction to R50 §6 (solver-index trap; 2026-10-22 07:34Z by date -u; produced on Opus 5.5 under D15 / L37; R50 stays frozen)
+- Which R50 statements used solver indices: only the partmask-based sentence of R50 §6 ("most depth-0 pieces mix vertices of
+  several parts, and every transition changes pieces of all parts"). R50 §4 and §7 attribute EDGES and priority moves by
+  experiments/red/nest16/gdiff.py, which diffs the two game FILES on file ids, so §4 / §7 are unaffected (re-checked: gdiff never calls
+  the solver). R49 §1 / R50 §1 learning-position COUNTS do not depend on vertex ids and stand.
+- Recomputed with experiments/red/nest16/maskfix.py (unmapped = what partmask.py saw; mapped = file ids as in piecemap.py), identical in
+  stable and oink order (scans/maskfix_r50s6.txt):
+
+| instance | parts | mixed depth-0 pieces, unmapped | mixed, mapped | transitions touching all parts, unmapped | mapped |
+| --- | --- | --- | --- | --- | --- |
+| nest4u_n46 | 2 | 18/194 = 0.09 | 18/194 = 0.09 | 8/17 | 8/17 |
+| nest5_n49 | 3 | 142/178 = 0.80 | 95/178 = 0.53 | 16/19 | 14/19 |
+| nest6_n75 | 4 | 226/412 = 0.55 | 157/412 = 0.38 | 17/24 | 13/24 |
+| nest6min_n75 | 4 | 230/407 = 0.57 | 141/407 = 0.35 | 17/24 | 14/24 |
+| nest6x_n75 | 2 | 137/406 = 0.34 | 114/406 = 0.28 | 25/26 | 25/26 |
+
+- Corrected statement: with file ids, a minority to about half of the depth-0 pieces mix parts (0.09-0.53), and 54-96 % of the
+  chain-changing transitions touch every part (not "every transition"). nest4u_n46 is unchanged because its parts are priority bands,
+  so solver order agrees with file order there; the gap appears once climbs interleave priorities (nest5 onward).
+- What stands: the masking mechanism itself (P records only the shallowest change per search, so a part's level shows only where the
+  other parts change deeper; NEST* dropped in 10 of 21 union seeds) does not use part labels and is unaffected. Only its quantitative
+  support ("most pieces mix") is weakened to "many pieces mix and most transitions touch every part".
