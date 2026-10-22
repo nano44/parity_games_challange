@@ -14,7 +14,11 @@ Trunk claude/vibrant-johnson-nxvvxo was merged into claude/referee at the start 
   no Lemma 5.8), with citation slips G7 (Improve is §4.4 (2), not §5.4), G8 ("2=>1" should be "1=>2"), G9 (Prop. 7.4 is p. 27).
   "switch-best = N5 on one-player games" checked against SPEC S4a-c: YES (dual order is the exact reverse; fallback only in the all-flat
   situation and terminal). Tool: docs/referee/scratch/n5_1p_probe.py (from the definitions; modes rand|keep|far, 'n5' compares n5.py
-  unmodified, 'inst' reads .pg/.start). NEXT: §C comparison with REFEREE-2 when the Lead says R2-N5-1P exists.
+  unmodified, 'inst' reads .pg/.start). §C written 00:20Z-00:40Z 10-22 after R2-N5-1P (referee-2 f954070, trunk 12617fc): full agreement;
+  accepted R2's N-2 (phase_vc counts the closing step: only rel_g12 is tight in-phase), G-1P-2 (the "no other switched vertex on the return
+  path" line as its own gap), G-1P-4's sharpening (VJ00 asserts the ⊵ halves of (4)/(6); my route (a) via the dual of Lemma 5.5 avoids
+  them); G-1P-7 reduced with scratch/n5_1p_ph48.py (Lemma P on n5.py's own ph_n48 sequence, simple paths of ≤ LMAX edges). PARKED after
+  the push on the Lead's word; next packet from the Lead.
 - Lesson (this packet): a wrong order makes switch-all CYCLE in a one-player game (VJ00 Lemma 5.7 breaks); my first probe had both
   MaxDiff signs reversed and hung. Test the order on a 3-vertex game before trusting any loop built on it.
 - Lesson: si.py strategies hold -1 at Odd vertices; fill the forced edge before simulating plays.
