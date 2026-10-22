@@ -1,0 +1,14 @@
+{
+ "n": 3,
+ "d": 3,
+ "conv": "E",
+ "k": 5,
+ "weak": 16,
+ "weak_complete": true,
+ "strong": 16,
+ "strong_complete": true,
+ "nonstrong": 0,
+ "nonstrong_with_bijection": 0,
+ "strong_weak_with_bijection": 16,
+ "failures": []
+}
