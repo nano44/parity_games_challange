@@ -144,3 +144,36 @@ All rows are identical in stable and oink order. Pinned Oink 8fbf0a7 `-v` gives 
     the oseg part's activity so that its whole block falls inside the innermost open window of nest5's witness.
   - (ii) RETURN edges: 55→27 and 64→15 (oseg C-vertices escaping into the chainfail and near4 parts) make the witness's levels
     rise once more after the block. That re-closes the windows around the block, so the block's depth is added on top.
+
+### 8c. k = 4 with a small fourth part: plateau AT THIS BUDGET (DATA)
+- Climb: crossclimb.py (cross-part edges and single priority moves only), CUTS 49,75, oink order, score (NEST*, MASS, S, −n).
+- Seed 1: instances/k4seed_c1_n82.pg (sha1 37c93f21cf98518b3eefad0b52a7fe9d1b2252c5) = nest6min_n75 ⊎ dtl_proof_c1, interleaved;
+  n 82, NEST* 5, max learning positions 3.
+  - y1, seed 231: NEST* 6 at step 52 (instances/k4y1_n82.pg, sha1 7d543504bb32e662085f1160d3f9c972f0184def; S 25), then no gain
+    up to ≥ 300 steps.
+  - Killed by a container restart (~04:0xZ). Resumed from k4y1_n82 (seed 232): no gain in ≥ 350 more steps.
+  - Total ≥ 650 steps, NEST* 6, MASS 118.
+- Seed 2: instances/k4seed_vr_n87.pg (sha1 8dcfbfec6de48b41e7c8165fd7cfc57e579774c8) = nest6min_n75 ⊎ onep_vr_n12, above; n 87,
+  NEST* 4, max learning positions 4.
+  - y2, seed 241: NEST* 6 at step 2, best at step 136 (instances/k4y2_n87.pg, sha1 043f550d53701f6572c4b91797f86315cde9358e; S 27).
+  - Killed by the same restart at ≥ 150 steps. Resumed (seed 242): no gain in ≥ 150 more steps.
+  - Total ≥ 300 steps, NEST* 6, MASS 132.
+- So the Lead's criterion (≥ 600 steps on each of 2 seeds) is MET ON SEED 1 ONLY. Seed 2 has ≥ 300 steps. Record: k = 4 shows
+  NEST* 6, no 7, at budgets ≥ 650 (seed 1) and ≥ 300 (seed 2) cross-part-only steps.
+  - For comparison, the k = 3 control needed 287 steps (§7) and the full-move climb 103 (§2).
+- Not re-verified with Oink: k4y1_n82 and k4y2_n87 do not raise the class best (NEST* 6).
+
+### 8d. Could the coupling be made an explicit recipe? (reading)
+Partly. §8b shows the 5 → 6 step has two separable roles.
+- A GATE edge from a C-vertex of the existing structure into the new part, with that new-part vertex moved into the old part's
+  priority band. It delays the new part, so that its whole block of transitions falls inside the innermost open window of the old
+  witness.
+- RETURN edges from C-vertices of the new part back into the witness's parts. They make the enclosing levels rise once more after
+  the block, which closes their windows around it.
+The roles are clear, but the endpoints are not structural. Which vertex can serve as the gate depends on the exact search at
+which the innermost window opens. The return targets must be vertices whose escape changes the right pieces' outcomes at the
+right search. Index mirroring of the same step fails (§5), and two k = 4 climbs did not find a second step. So making it a recipe
+would need a per-search map, "which piece is at the innermost window's position, and which C-escape re-raises it". That map can be
+read off the chains (tlog.py, partmask.py), but this box did not build it. My estimate: a recipe is plausible only if a gadget
+can be designed whose innermost window is opened and closed by a single, known vertex. None of the instances here has such a
+vertex.
