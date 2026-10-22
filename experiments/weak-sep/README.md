@@ -56,6 +56,13 @@ Timings (one core): everything with n <= 3, and n = 4 with d <= 4, takes seconds
 extra state: (4,5) E weak needed 118 s at k = 8 and is open from k = 9; s(4,5) = s(4,6) = 13 means k up to 12 must be
 refuted. Those cells need better engineering (spec in docs/struct/S1-statement.md §6 / notes) or theory.
 
+## n = 5 (2026-10-22)
+`n5.py N D CONV MODE K [--batch B] [--cnf | --cnf-only]` asks one k (resumable: cached families and CEGAR checkpoints
+in out/; result in results/n5/). By Lemma P (docs/struct/S3-statement.md §2), SAT at k <=> value <= k, so one query
+at k stands on its own. `lrat.sh N D CONV MODE K` rebuilds the UNSAT formula from the checkpoint, solves it with the
+cadical binary (apt cadical 1.7.4) and checks the LRAT proof with ../sat-hard/lrat_check.py. Result so far:
+s^V(5,5) >= 11 (results/n5/strong_V_n5_d5_k10.{json,lrat.log}). Costs: strong (5,5) k=10 420 s; k=11 > 4 h unfinished.
+
 ## Caveats
 - A value is exact only if the enumeration covers all graphs (theorem + brute-force coverage on small cases), the
   encoding is sound (every SAT answer is re-checked; UNSAT answers rest on the encoding), and the solver is right.

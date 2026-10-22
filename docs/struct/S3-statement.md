@@ -64,6 +64,18 @@ No cell with d ≤ n + 1 violates T3; (4,5) V, the first non-trivial n = 4 cell,
 witness results/automata/weak_V_n4_d6_k9.json re-verified), so at n = 4 no gap appears even one step above the threshold. Decisive next cells: (5,5) V, (5,6) V. Above the threshold the
 equality fails: (2,5), (2,6), (2,7..12), (3,5), (3,6), (3,8), (3,10) (w^V(3,10) ≥ 8 > ... s^V(3,10) open).
 
+n = 5 (2026-10-22 box, experiments/weak-sep/results/n5/): s^V(5,5) ≥ 11 (strong k = 10 UNSAT on 30 maximal even
+graphs, 420 s; CaDiCaL 1.7.4 LRAT proof VERIFIED by experiments/sat-hard/lrat_check.py, 3417924 RUP steps, CNF sha256
+af340fd5...; agrees with L-COMP's CEGAR k = 10); w^V(5,5) ≥ 10 and s^V(5,6) ≥ 11 by S1 Lemma 2(a). No n = 5 upper bound:
+strong (5,5) k = 11 did not finish in 4 h (one solver call; k = 10 took 7 min), weak (5,5) k = 10 not in 2.5 h,
+weak (5,6) k = 14 at ~20 min per CEGAR round after 67 rounds, strong (5,6) k = 13 > 30 min in one round. T3 at n = 5 is
+untested. A weak (5,5) separator with 10 states would certify a gap (w = 10 < 11 ≤ s); that query is the cheapest
+decisive one left.
+Observation (DATA, not a conjecture to pursue): every computed strong V value fits s^V(n,2h−1) = s^V(n,2h) =
+n + (h−1)(n−1) (n ≤ 4, h ≤ 3), which predicts s^V(5,5) = s^V(5,6) = 13. The formula is polynomial in n at d = n, so
+by L4 (s^V(n,n) ≥ n^Ω(lg n)) it must fail for large n: the computable cells are pre-asymptotic for s^V, and the same
+caution applies to any equality w = s found there.
+
 Lemma P (padding; 2026-10-22, L-STRUCT, elementary, unrefereed; used by experiments/weak-sep/n5.py to read one
 query at k on its own). If a deterministic safety automaton A with k' states, all reachable, is a weak (strong)
 (n,d)-separator, then for every k ≥ k' there is one with exactly k states, all reachable. Proof: by induction it is
