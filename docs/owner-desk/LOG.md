@@ -261,3 +261,8 @@ L32 reassessment point; state unchanged; Q16 still open; new Q18 (models after t
 R17 [refereed-only; first Fable 5.1 referees under L36; CHECKER C20]: N5 on one-player games < (n^2-n+1)(n+m) iterations (bounds N5
 only; G-N5-TIME open for two-player). DTL: L-RED raised best NEST* 3 -> 6 (n 26/49/75; not yet a family; S ~ n/3, linear); would refute
 (NEST*-BOUNDED) without super-poly time. No incorrect run, no super-poly family, no cap/overage. Q16, Q18 open; L36 applies.
+
+## 2026-10-22 06:59Z owner (Q18, Q16, standing instruction)
+> q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+Desk reading: Q18 (b) stay on Opus 5.5 for lanes and referees; Q16 (b)+(c); plus a standing instruction that the fleet decide such
+questions itself instead of asking the owner. Relayed verbatim to the Lead, priority now.

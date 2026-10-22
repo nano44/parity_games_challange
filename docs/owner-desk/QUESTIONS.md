@@ -211,7 +211,7 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
   <= n^O(d) with d = NEST*; GAP-A there reduces to ONE named statement (NEST*-BOUNDED), no proof route (L32 half met); data max 3.
   Lead recommendation updated: (b)+(c) plus a proof attempt on (NEST*-BOUNDED). Fleet paused 2026-10-19 ~03:33Z-2026-10-21 21:00Z
   by the weekly cap (no overage); reassessment point reached at the reset.
-- Status: open
+- Status: answered 2026-10-22: "q16 b,c" (with standing instruction: be autonomous); relayed; awaiting the Lead's D-number.
 
 ## Q17: Jens Voege's PhD thesis (optional)
 - id: Q17 (Lead, 2026-10-19 00:21Z; optional, not blocking)
@@ -228,4 +228,4 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
   referees, Opus for lanes.
 - Interim (Lead reading L36): sessions cut off by the cap (L-RED on NEST*-BOUNDED, CHECKER on R16) finish on Opus; L-NEW resumes on its
   existing session; any NEW session starts on Fable 5.1; no Opus referee signs unless D12 is extended. Working sessions 3 of 5.
-- Status: open
+- Status: answered 2026-10-22: "q18 b" (Opus 5.5 for lanes and referees); relayed; awaiting the Lead's D-number.
