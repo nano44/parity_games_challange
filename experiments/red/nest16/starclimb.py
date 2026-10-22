@@ -1,6 +1,6 @@
 """L-RED successor 10 (box 16, produced on Opus 5.5): graded climb toward NEST* >= 4 on 𝒞^1P (R48 §4).
 Positions P per q-phase come from ../xctx/nestclass.py positions() (b12_pot.chain / b12_core.states, unmodified); NEST* from
-../xctx/comb/neststar.py. Score: (max NEST*, MASS, S, -n); FIT=seg: see segscore(); FIT=wrap: see wrapscore(), MASS = sum over positions p of the phase of (1 + NEST*(window_p))^2,
+../xctx/comb/neststar.py. Score: (max NEST*, MASS, S, -n); FIT=seg: see segscore(); FIT=wrap: see wrapscore(); FIT=pool: see poolscore(), MASS = sum over positions p of the phase of (1 + NEST*(window_p))^2,
 window_p = elements > p strictly between p's first and last occurrence (rewards nesting inside windows, which NEST* alone does not).
 Usage: DTL_ORDER=.. starclimb.py G.pg ... | [GROW=p NMAX=m] starclimb.py climb C START.pg STEPS SEED OUTDIR"""
 import sys, os, random
@@ -48,7 +48,18 @@ def wrapscore(g, order, C):
     return best
 
 
+def poolscore(g, order, C):
+    """FIT=pool: (NEST*, max learning positions in one search, searches with >= 2 learning positions, MASS, S, -n)."""
+    import learnpos as LP
+    Ps, d = NC.positions(g, order, C)
+    if not Ps: return (0, 0, 0, 0, 0, -g.n)
+    P = max(Ps.values(), key=lambda P: (nest_star(tuple(P)), mass(P), len(P)))
+    per = LP.pools(g, order)
+    return (nest_star(tuple(P)), max(per or [0]), sum(1 for x in per if x >= 2), mass(P), len(P) + 1, -g.n)
+
+
 def score(g, order, C):
+    if os.environ.get("FIT") == "pool": return poolscore(g, order, C)
     if os.environ.get("FIT") == "seg": return segscore(g, order, C)
     if os.environ.get("FIT") == "wrap": return wrapscore(g, order, C)
     Ps, d = NC.positions(g, order, C)
