@@ -1,0 +1,8 @@
+edge:81:27;edge:90:15
+edge:81:15;edge:90:15
+edge:81:0;edge:90:0
+edge:81:49;edge:90:49
+move:99:81;edge:23:99;edge:81:27;edge:90:15
+move:99:99;edge:23:99;edge:81:27;edge:90:15
+move:99:81;edge:23:99;edge:81:53;edge:90:64
+edge:81:27;edge:90:15;edge:81:15

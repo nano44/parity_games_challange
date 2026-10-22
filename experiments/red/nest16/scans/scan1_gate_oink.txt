@@ -1,0 +1,93 @@
+# scan 1: gates u -> g on nest6min_n75 ⊎ oseg_n26 (above, E = 75..100), oink order; config index restarts at 0 for the b half
+# base nest6min_n75.pg E oseg_n26.pg n 101 C 1 order oink cuts [26, 46, 49, 75, 101]
+0 move:99:81;edge:49:99 S 23 |P| 22 I 0 NEST* 4 win (3, 14) Etrans [10, 14, 19] inside 1 P 0,1,6,9,7,4,9,3,8,17,18,1,9,1,9,17,1,16,16,7,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.ABCDE.ABD.ABCDE.E.ABCD.ABCDE.ABC.ABC.E.BC.ABCDE
+1 move:99:97;edge:49:99 S 23 |P| 22 I 0 NEST* 4 win (3, 14) Etrans [10, 14, 19] inside 1 P 0,1,6,9,7,4,9,3,8,17,18,1,9,1,9,17,1,16,16,7,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.ABCDE.ABD.ABCDE.E.ABCD.ABCDE.ABC.ABC.E.BC.ABCDE
+2 move:99:113;edge:49:99 S 23 |P| 22 I 0 NEST* 4 win (3, 14) Etrans [10, 14, 19] inside 1 P 0,1,6,9,7,4,9,3,8,17,18,1,9,1,9,17,1,16,16,7,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.ABCDE.ABD.ABCDE.E.ABCD.ABCDE.ABC.ABC.E.BC.ABCDE
+3 move:99:57;edge:49:99 S 23 |P| 22 I 0 NEST* 4 win (3, 14) Etrans [10, 14, 19] inside 1 P 0,1,6,9,7,4,9,3,8,17,18,1,9,1,9,17,1,16,16,7,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.ABCDE.ABD.ABCDE.E.ABCD.ABCDE.ABC.ABC.E.BC.ABCDE
+4 move:97:81;edge:49:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+5 move:97:97;edge:49:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+6 move:97:113;edge:49:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+7 move:97:57;edge:49:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+8 move:76:81;edge:49:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+9 move:76:97;edge:49:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+10 move:76:113;edge:49:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+11 move:76:57;edge:49:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+12 move:99:81;edge:50:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+13 move:99:97;edge:50:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+14 move:99:113;edge:50:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+15 move:99:57;edge:50:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+16 move:97:81;edge:50:97 S 7 |P| 6 I 0 NEST* 1 win (-1, -1) Etrans [] inside 0 P 0,1,6,9,7,4 labs BCDE.ABCDE.AB.A.B.ABC
+17 move:97:97;edge:50:97 S 7 |P| 6 I 0 NEST* 1 win (-1, -1) Etrans [] inside 0 P 0,1,6,9,7,4 labs BCDE.ABCDE.AB.A.B.ABC
+18 move:97:113;edge:50:97 S 7 |P| 6 I 0 NEST* 1 win (-1, -1) Etrans [] inside 0 P 0,1,6,9,7,4 labs BCDE.ABCDE.AB.A.B.ABC
+19 move:97:57;edge:50:97 S 7 |P| 6 I 0 NEST* 1 win (-1, -1) Etrans [] inside 0 P 0,1,6,9,7,4 labs BCDE.ABCDE.AB.A.B.ABC
+20 move:76:81;edge:50:76 S 7 |P| 6 I 0 NEST* 1 win (-1, -1) Etrans [] inside 0 P 0,1,6,9,7,4 labs BCDE.ABCDE.AB.A.B.ABC
+21 move:76:97;edge:50:76 S 7 |P| 6 I 0 NEST* 1 win (-1, -1) Etrans [] inside 0 P 0,1,6,9,7,4 labs BCDE.ABCDE.AB.A.B.ABC
+22 move:76:113;edge:50:76 S 7 |P| 6 I 0 NEST* 1 win (-1, -1) Etrans [] inside 0 P 0,1,6,9,7,4 labs BCDE.ABCDE.AB.A.B.ABC
+23 move:76:57;edge:50:76 S 7 |P| 6 I 0 NEST* 1 win (-1, -1) Etrans [] inside 0 P 0,1,6,9,7,4 labs BCDE.ABCDE.AB.A.B.ABC
+24 move:99:81;edge:51:99 S 24 |P| 23 I 0 NEST* 4 win (10, 11) Etrans [10, 11, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,1,1,9,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.ABCDE.ABCDE.E.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+25 move:99:97;edge:51:99 S 24 |P| 23 I 0 NEST* 4 win (10, 11) Etrans [10, 11, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,1,1,9,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.ABCDE.ABCDE.E.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+26 move:99:113;edge:51:99 S 24 |P| 23 I 0 NEST* 4 win (10, 11) Etrans [10, 11, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,1,1,9,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.ABCDE.ABCDE.E.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+27 move:99:57;edge:51:99 S 24 |P| 23 I 0 NEST* 4 win (10, 11) Etrans [10, 11, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,1,1,9,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.ABCDE.ABCDE.E.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+28 move:97:81;edge:51:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+29 move:97:97;edge:51:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+30 move:97:113;edge:51:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+31 move:97:57;edge:51:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+32 move:76:81;edge:51:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+33 move:76:97;edge:51:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+34 move:76:113;edge:51:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+35 move:76:57;edge:51:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+36 move:99:81;edge:52:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+37 move:99:97;edge:52:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+38 move:99:113;edge:52:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+39 move:99:57;edge:52:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+40 move:97:81;edge:52:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+41 move:97:97;edge:52:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+# --- half b
+# base nest6min_n75.pg E oseg_n26.pg n 101 C 1 order oink cuts [26, 46, 49, 75, 101]
+0 move:97:113;edge:52:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+1 move:97:57;edge:52:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+2 move:76:81;edge:52:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+3 move:76:97;edge:52:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+4 move:76:113;edge:52:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+5 move:76:57;edge:52:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+6 move:99:81;edge:58:99 S 24 |P| 23 I 0 NEST* 4 win (10, 11) Etrans [9, 10, 11, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,1,1,9,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.E.E.E.ABCDE.ABCDE.E.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+7 move:99:97;edge:58:99 S 24 |P| 23 I 0 NEST* 4 win (10, 11) Etrans [9, 10, 11, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,1,1,9,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.E.E.E.ABCDE.ABCDE.E.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+8 move:99:113;edge:58:99 S 24 |P| 23 I 0 NEST* 4 win (10, 11) Etrans [9, 10, 11, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,1,1,9,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.E.E.E.ABCDE.ABCDE.E.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+9 move:99:57;edge:58:99 S 24 |P| 23 I 0 NEST* 4 win (10, 11) Etrans [9, 10, 11, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,1,1,9,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.E.E.E.ABCDE.ABCDE.E.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+10 move:97:81;edge:58:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+11 move:97:97;edge:58:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+12 move:97:113;edge:58:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+13 move:97:57;edge:58:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+14 move:76:81;edge:58:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+15 move:76:97;edge:58:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+16 move:76:113;edge:58:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+17 move:76:57;edge:58:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+18 move:99:81;edge:59:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14, 21] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,7,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.E.BC.ABCDE
+19 move:99:97;edge:59:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14, 21] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,7,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.E.BC.ABCDE
+20 move:99:113;edge:59:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14, 21] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,7,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.E.BC.ABCDE
+21 move:99:57;edge:59:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14, 21] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,7,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.E.BC.ABCDE
+22 move:97:81;edge:59:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+23 move:97:97;edge:59:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+24 move:97:113;edge:59:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+25 move:97:57;edge:59:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+26 move:76:81;edge:59:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+27 move:76:97;edge:59:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+28 move:76:113;edge:59:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+29 move:76:57;edge:59:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+30 move:99:81;edge:68:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+31 move:99:97;edge:68:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+32 move:99:113;edge:68:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+33 move:99:57;edge:68:99 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [10, 11, 12, 14] inside 0 P 0,1,6,9,7,4,9,3,8,17,18,18,17,1,7,10,19,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.DE.E.E.E.ABCDE.E.D.ABC.ABCD.ABCDE.ABC.ABC.ABCD.BC.ABCDE
+34 move:97:81;edge:68:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+35 move:97:97;edge:68:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+36 move:97:113;edge:68:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+37 move:97:57;edge:68:97 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+38 move:76:81;edge:68:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+39 move:76:97;edge:68:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+40 move:76:113;edge:68:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+41 move:76:57;edge:68:76 S 10 |P| 9 I 0 NEST* 1 win (3, 6) Etrans [] inside 0 P 0,1,6,9,7,4,9,3,8 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB
+# --- baseline (no-op move)
+# base nest6min_n75.pg E oseg_n26.pg n 101 C 1 order oink cuts [26, 46, 49, 75, 101]
+0 move:99:135 S 25 |P| 24 I 0 NEST* 6 win (10, 11) Etrans [9, 14, 15] inside 0 P 0,1,6,9,7,4,9,3,8,16,18,18,16,1,9,7,19,17,1,16,16,7,0,6 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.E.D.D.DE.ABCDE.E.E.ABC.ABCD.ABCDE.ABC.ABC.ABCDE.BC.ABCD
+# base nest6min_n75.pg E oseg_n26.pg n 101 C 1 order stable cuts [26, 46, 49, 75, 101]
+0 move:99:135 S 25 |P| 24 I 0 NEST* 6 win (10, 11) Etrans [9, 14, 15] inside 0 P 0,1,6,9,7,4,9,3,8,16,18,18,16,1,9,7,19,17,1,16,16,7,0,6 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.E.D.D.DE.ABCDE.E.E.ABC.ABCD.ABCDE.ABC.ABC.ABCDE.BC.ABCD
