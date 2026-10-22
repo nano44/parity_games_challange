@@ -8,3 +8,6 @@ step 1072 fit (10, 21, -60) (max revisits, iterations, odd moves) (10, 21, 4) n 
 step 1189 fit (10, 24, -60) (max revisits, iterations, odd moves) (10, 24, 7) n 60 n5-iterations 24 check OK sha1 800306231cb64d5ecd8d419b0da79a60733f6b8b
 step 1306 fit (10, 25, -60) (max revisits, iterations, odd moves) (10, 25, 7) n 60 n5-iterations 25 check OK sha1 74dcd058a0d7d15b81fefaebfe949ceee0923f01
 step 1395 fit (10, 26, -60) (max revisits, iterations, odd moves) (10, 26, 9) n 60 n5-iterations 26 check OK sha1 8f838f8eceed4845ff541f8477c4483dcd813b35
+step 1719 fit (10, 27, -60) (max revisits, iterations, odd moves) (10, 27, 7) n 60 n5-iterations 27 check OK sha1 40c3458549b6be4fd9622a415c95d8aa7627e19f
+step 2159 fit (10, 28, -60) (max revisits, iterations, odd moves) (10, 28, 7) n 60 n5-iterations 28 check OK sha1 e75982200ab4011bf695318ab5f7a960e1290376
+step 2201 fit (10, 29, -60) (max revisits, iterations, odd moves) (10, 29, 8) n 60 n5-iterations 29 check OK sha1 bac92dd33fb85374fa67050f2487cc98b9bcf747
