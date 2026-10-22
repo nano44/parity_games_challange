@@ -1,0 +1,17 @@
+move:99:81;edge:0:99
+move:99:81;edge:4:99
+move:99:81;edge:6:99
+move:99:81;edge:7:99
+move:99:81;edge:8:99
+move:99:81;edge:15:99
+move:99:81;edge:16:99
+move:99:81;edge:18:99
+move:99:81;edge:20:99
+move:99:81;edge:21:99
+move:99:81;edge:22:99
+move:99:81;edge:23:99
+move:99:81;edge:28:99
+move:99:81;edge:38:99
+move:99:81;edge:54:99
+move:99:81;edge:63:99
+move:99:81;edge:74:99
