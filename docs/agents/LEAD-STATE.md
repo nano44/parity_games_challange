@@ -799,3 +799,4 @@
 - 15:04Z (date -u) SWEEP (trigger 15:03Z): overage false; Lead $424 ~629k. Fleet idle; L-STRUCT PID 5687 (strong (5,5) k=11) to the 01:30Z cap. No exceptions.
 - 16:04Z (date -u) SWEEP (trigger 16:02Z): overage false; Lead $425 ~636k. Fleet idle; L-STRUCT PID 5687 to 01:30Z cap. No exceptions.
 - 17:04Z (date -u) SWEEP (trigger 17:02Z): overage false; Lead $426 ~641k. Fleet idle; L-STRUCT PID 5687 to 01:30Z cap. No exceptions.
+- 18:04Z (date -u) SWEEP (trigger 18:02Z): overage false; Lead $426 ~646k. Fleet idle; L-STRUCT PID 5687 to 01:30Z cap. No exceptions.
