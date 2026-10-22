@@ -112,5 +112,5 @@ All rows are identical in stable and oink order. Pinned Oink 8fbf0a7 `-v` gives 
   other way, 0 within a part), plus priority moves. No owner changes and no removals: crossclimb can do neither.
 - Reading: two independent climbs (k3b with the full move set, x3 with cross-part moves only) both turned the k = 3 union into
   NEST* 6. So the third level-gain mechanism is cross-part coupling, not internal restructuring of a part.
-- The k = 4 cross-part climb (x4b, n 101, seed 211): about 150 steps by 02:00Z, NEST* still 6. It is too slow to decide k = 4 within
-  this box.
+- The k = 4 cross-part climb (x4b, n 101, seed 211): stopped at box end (02:35Z) after about 250 steps at NEST* 6, MASS 128. The
+  k = 3 control needed 287 steps, so k = 4 is NOT decided: too few steps, not a plateau.
