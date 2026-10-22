@@ -55,6 +55,32 @@ Status: PARKED 02:47Z (date -u) at ~525k (Lead 02:46Z: handover; successor next 
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+BOX 16 (successor 10, session_012PWyY4bucvqFyvrGC27Zph, Opus 5.5 under D8; GO 2026-10-19 03:19Z; cut by the usage cap ~04:01Z;
+resumed 2026-10-21 21:07Z (date -u) on the Lead's 21:06Z message, Lead reading L36). Doc: docs/red/R49-nest4-attempt.md.
+- Record repair first (C19): R46 §1/§3 restored to the 01d63d7 text; post-pin K count + LEX block moved to new §1b (l-red bc26acae).
+- R48 §4: NO kill, NO proof. Near misses near4_n26 (6d7c5e38, NEST* 3, strict single-edge local max) and oseg_n26 (381b7b9d: an
+  O-rise at 1 followed by a NEST*-2 segment; 1 never re-rises). Laws on 956 library phases, both orders: G-NEXT 0/382 violations;
+  G-ADJ 1/306; O-SEG 0/189 (false on oseg_n26); W false.
+- Tools experiments/red/nest16/: starclimb.py (MASS; FIT=seg), kcheck.sh (sha1, both orders, pinned Oink -v), wrapsearch.py,
+  edgenbr.py, segstat.py, segscan.py, lawscan.py.
+- 22:00Z (date -u): NEST* 4 on 𝒞^1P via DISJOINT UNIONS (pairunion.py; reported to the Lead 22:05Z):
+  - nest4u_n46 = near4_n26 ⊎ onep_chainfail_n20 above (ae7ed559);
+  - nest4uu_n51 = win3_n27 ⊎ nest3_n24 interleaved (302c03a8).
+  - Both orders identical, pinned Oink verified, S 18 / 19.
+  - Mechanism: A's levels wrap B's inner levels in time; B's own outer rises are masked; mixed pieces couple the components
+    (R49 §5).
+- Growth NOT found: second-level unions, random interleavings, and library scans all stay at NEST* 4 (S stays ~19).
+- 22:44Z (date -u): NEST* 5. nest5_n49 (fe50a2c9), from a starclimb run (stable, seed 131) seeded with nest4u_n46. Both orders,
+  pinned Oink verified, S 20. Reported to the Lead 22:48Z.
+- CORRECTION: (G-NEXT) and (G-ADJ) are FALSE on unions (two pools), R49 §6. The library law held only on single-pool phases.
+- NEXT (successor queue):
+  (1) Growth: NEST* 6+ as n grows. Seeds nest5_n49 and nest5 ⊎ onep_fdkey_n20 (above). Graded climbs (starclimb MASS) in both
+      orders. Unions alone stayed at the base NEST*; climbing after a union is what added levels (4 → 5).
+  (2) A parametrised family: k parts / k pools at different depths, coupled through mixed pieces.
+  (3) The Lead re-ran nest4u_n46 (22:12Z), nest5_n49 and nest4uu_n51 (22:49Z): all CONFIRMED as DATA.
+- BOX 16 END ~23:40Z (date -u): best NEST* 5; climbs c11/c12 plateaued at NEST* 5 (MASS 93 / 85); scratch logs are not kept.
+TRAP (this box): scripts/setup_oink.sh is needed in a fresh container before any Oink check (verify's smoke step is NOT RUN without it).
+
 BOX 15 END (successor 9, same session; Lead GO 00:09Z; ended ~02:30Z by date -u). Docs: docs/red/R46-nest-bound.md, R47-chainkeep.md,
 R48-nest-attack.md.
 - R46 (signed by both referees in P-C1P, except the gap that R47 addresses): the K-constraint from LEX; L-NEST* (monotone NEST*);

@@ -1,0 +1,1 @@
+runs=903: runs violating (a) I_(k+1) ∩ H_k = ∅: 0; runs with a step bringing NO never-seen edge: 42; runs where ρ_(k+1) is not optimal in U_k: 54

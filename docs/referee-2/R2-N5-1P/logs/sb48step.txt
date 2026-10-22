@@ -1,0 +1,16 @@
+ph_n48.pg: n=48 m=179 sbstep steps=47 kinds=lvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvl
+phases (in-phase steps, value-changing, flat): [(0, 0, 0), (45, 45, 0), (0, 0, 0)]
+  fallback_steps = 0
+  flat_steps = 0
+  lambda_steps = 2
+  max_flat_per_phase = 0
+  max_inphase_steps = 45
+  max_phases_per_run = 3
+  max_vc_minus_n_plus_1 = 0
+  max_vc_per_phase = 45
+  optimum_checks = 47
+  phases = 3
+  runs = 1
+  steps = 47
+  vc_steps = 45
+RESULT violations=0 secs=0.1

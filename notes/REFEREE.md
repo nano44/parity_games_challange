@@ -1,6 +1,28 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 3, written 2026-10-22T00:08Z by date -u, Fable 5.1 under L36)
+Lead: session_014FBi6o334DvwT5Uw2kDfoN (docs/NOW.md line 14). Branch claude/referee. Push ONLY with scripts/push.sh, output to a file, print $?.
+Label every verdict "(Fable 5.1)". Never read docs/referee-2/ for a packet before my own report is pushed.
+Trunk claude/vibrant-johnson-nxvvxo was merged into claude/referee at the start (639c3e8c; packet pin 26905f0 is an ancestor).
+- P-N5-1P (Lead 23:32Z 10-21; pin 26905f0): docs/referee/R-N5-1P.md. Lemma P / (F1)(F2) / (V1)(V2) / Theorem PH / Cor. 1-3 of
+  docs/new/N5-phase-bound-box10.md: SIGNED WITH GAPS G1-G9 (G1-G5 closed, G6 DATA note, G7-G9 citation slips in the addendum's §6); no step wrong. G1 = (F1) is VJ00 Lemma 5.8 (1=>2)
+  whose source proof leans on unproved Lemma 5.9 / Prop. 5.10 (fleet G-N5T-3): I re-derived the one-player case by dualising Lemma 5.5's
+  proof (report §3) + exhaustive data. G2 = B1's case list omits "c even, shorter" (conclusion survives). G3 = optimum not unique, stop
+  rule, counts tie-break dependent. G6 = rel_g12 tightness holds for sbstep (11 = n-1) but n5.py takes 10; phase_vc.txt line 12 stale.
+  Lead addendum 23:42Z (trunk 0f899f3): SCOPE line + §6 VJ00 dependency list; checked: right for the bounds ((F1) via (11) in the dual,
+  no Lemma 5.8), with citation slips G7 (Improve is §4.4 (2), not §5.4), G8 ("2=>1" should be "1=>2"), G9 (Prop. 7.4 is p. 27).
+  "switch-best = N5 on one-player games" checked against SPEC S4a-c: YES (dual order is the exact reverse; fallback only in the all-flat
+  situation and terminal). Tool: docs/referee/scratch/n5_1p_probe.py (from the definitions; modes rand|keep|far, 'n5' compares n5.py
+  unmodified, 'inst' reads .pg/.start). §C written 00:20Z-00:40Z 10-22 after R2-N5-1P (referee-2 f954070, trunk 12617fc): full agreement;
+  accepted R2's N-2 (phase_vc counts the closing step: only rel_g12 is tight in-phase), G-1P-2 (the "no other switched vertex on the return
+  path" line as its own gap), G-1P-4's sharpening (VJ00 asserts the ⊵ halves of (4)/(6); my route (a) via the dual of Lemma 5.5 avoids
+  them); G-1P-7 reduced with scratch/n5_1p_ph48.py (Lemma P on n5.py's own ph_n48 sequence, simple paths of ≤ LMAX edges). PARKED after
+  the push on the Lead's word; next packet from the Lead.
+- Lesson (this packet): a wrong order makes switch-all CYCLE in a one-player game (VJ00 Lemma 5.7 breaks); my first probe had both
+  MaxDiff signs reversed and hung. Test the order on a 3-vertex game before trusting any loop built on it.
+- Lesson: si.py strategies hold -1 at Odd vertices; fill the forced edge before simulating plays.
+
 ## Resume point (successor 2, written 2026-10-18T23:04Z by date -u, session_017Tv79KB6LLrQUtLtVCnNDH, Opus 5.5 under D12)
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh, output to a file, print $?.
 Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD = origin/claude/referee before anything else.
@@ -28,6 +50,11 @@ Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD =
   Lesson: multiply out every constant I tick.
 
 ## Sources opened (append)
+- VJ00 BRICS RS-00-48, same pdf (sha256 485a12de432a2a8c88640b0718bd2042d855fa86d6a82092a0d538fd41ba9e65), re-downloaded and opened
+  2026-10-21 23:40Z by date -u (successor 3, Fable 5.1): §4.1 (play values), §4.2 (order, MaxDiff), §4.3-4.5 (multisets, ⊕), §5.1 (3)-(10),
+  §5.2 Prop. 5.1, Lemma 5.2, §5.3 Props. 5.3, 5.4, 5.6 (proof read), Lemma 5.5 (proof read in full), §5.4 Lemma 5.7, §5.5 Lemma 5.8 (proof
+  read: 1=>2 uses Lemma 5.9 "proved similarly to Lemma 5.5" and Prop. 5.10, both without proof), §5.6, §6 Prop. 6.1 end, Thm 6.2, §7
+  Prop. 7.4 (p. 27, no proof, no rule named), Claim 7.2.
 - VJ00 = Vöge & Jurdziński, BRICS RS-00-48 (Dec 2000), https://www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, sha256 485a12de432a2a8c..
   (opened 2026-10-18 between 22:59Z and 23:04Z by date -u): §3 postulates P1/P2/I1/I2; §4.1-4.5; §5.1 (3)-(11); Prop. 5.1, 5.3, 5.4, 5.6, 5.10; Lemmas 5.2,
   5.5, 5.7, 5.8, 5.9; §6 Prop. 6.1.
