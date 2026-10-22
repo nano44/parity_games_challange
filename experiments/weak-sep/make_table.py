@@ -58,5 +58,17 @@ for n in ns:
         cells.append(str(g) if g == f else f"[{g},{f}]")
     out.append(f"| {n} | " + " | ".join(cells) + " |")
 out.append("")
+out.append("## n = 5 bounds from single-k queries (results/n5/; value >= k+1 by S3 Lemma P)"); out.append("")
+out.append("| cell | query | answer | bound | certificate |")
+out.append("| --- | --- | --- | --- | --- |")
+for f in sorted(glob.glob(str(pathlib.Path(__file__).parent / 'results/n5/*.json'))):
+    r = json.load(open(f))
+    if r['status'] != 'UNSAT':
+        continue
+    lrat = pathlib.Path(f[:-5] + '.lrat.log')
+    cert = ('LRAT VERIFIED (' + lrat.name + ')') if lrat.exists() and 'VERIFIED' in lrat.read_text() else 'SOLVER-ONLY (no proof)'
+    sym = 'w' if r['mode'] == 'weak' else 's'
+    out.append(f"| {r['conv']} ({r['n']},{r['d']}) | {r['mode']} k = {r['k']} | UNSAT | {sym} >= {r['k'] + 1} | {cert} |")
+out.append("")
 (pathlib.Path(__file__).parent / 'results/table.md').write_text("\n".join(out) + "\n")
 print("\n".join(out))
