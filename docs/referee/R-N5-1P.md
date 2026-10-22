@@ -221,15 +221,15 @@ Joint gap list (mine ↔ theirs):
 | G5 | N-1 | CLOSED, same arithmetic |
 | G6 | N-3 | DATA note, same finding (sbstep vs n5.py tie-breaks: rel_g12 11 / 10; both referees' tie-breaks 10 / 10 / 9); R2 adds the method point that every one of the lane's switch-best numbers should name its rule |
 | — (my §6 took phase_vc's (15, 15) at face value) | N-2 | ACCEPTED, my §6 corrected above: phase_vc.py counts the closing step; in-phase tightness n − 1 is attained at n = 12 only (rel_g12), rel_g16 is 14 + 1, ph_n48 is 45 + 1. No bound affected |
-| (LP skipped above n = 24 in my probe) | G-1P-7 | DATA scope, now REDUCED (see below): Lemma P checked on n5.py's own ph_n48 sequence, all three phases including the 45-step one, for every simple path of ≤ 16 edges at every step: 24,987 checks, 0 violations; longer paths: see the line below |
+| (LP skipped above n = 24 in my probe) | G-1P-7 | CLOSED (see below): Lemma P checked on n5.py's own ph_n48 sequence, all three phases including the 45-step one, over EVERY simple path at every step (the instance is sparse enough: 43,781 checks, 430 s), 0 violations |
 | G7-G9 (addendum §6 citations) | — | R2's report is on the pin 26905f0 and does not cover the addendum §6 (0f899f3); these stay mine, OPEN for L-NEW |
 | inherited G-N1 | G-1P-6 | DATA, both sides (R2: 34,601 iterations, 11,479 optima, 522 fallbacks; me: 7,224 runs), 0 mismatches |
 G-1P-7 (Lemma P on ph_n48's 45-step phase), what I did: docs/referee/scratch/n5_1p_ph48.py replays n5.py's loop unmodified on ph_n48 from
 its .start (47 iterations, 0 fallbacks, phases of 0 / 45 / 0 in-phase value-changing steps, as R2 and the box report) and checks Lemma P at
 every step of every phase over all simple paths of ≤ LMAX edges (exhaustive DFS up to that length): LMAX = 8: 13,325 checks; 11: 18,078;
-16: 24,987 (30 s); all 0 violations. LMAX = 24 and the full 47: still running at this push (started 00:22Z, 1,500 s cap each); their outcome goes in a follow-up commit. Paths longer than the largest finished LMAX remain unchecked; the proof
-does not depend on it (R2 and I agree).
+16: 24,987 (30 s); all 0 violations. LMAX = 24: 33,834 checks (208 s); LMAX = 47 = EVERY simple path: 43,781 checks (430 s); all 0 violations (logs in my scratchpad, re-runnable in
+~8 minutes). So Lemma P holds on ph_n48's 45-step phase for all simple paths at every step; G-1P-7 is CLOSED (finished 00:30Z, recorded 00:55Z).
 Disagreements: none. Two self-corrections on my side, both accepted from R2: the (4)/(6) point in G1 and the N-2 count. One addition on my
 side R2 does not have: route (a) for (F1) (§3), which avoids both Lemma 5.8 and the asserted halves of (4)/(6), and the addendum §6 slips
 G7-G9. Joint picture: the packet's §1-§4 and §6 are signed by both referees with the same gaps, all closed as wording or by derivation,
-except the DATA notes (tie-break, N-2, G-1P-7 partial) and the citation slips G7-G9 for L-NEW.
+except the DATA notes (tie-break, N-2) and the citation slips G7-G9 for L-NEW.
