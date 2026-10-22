@@ -10,10 +10,10 @@ optimum + brute force, switch-best 4 tie-breaks, Lemma P every phase), n5link.py
 522 fallbacks all flat, 0 mismatches), sbstep_link.py (L-NEW's data rule = switch-all inside the arena, N-3; every step an arena optimum;
 rel_g12 11 = n−1 tight confirmed; phase_vc counts the closing λ-step, N-2), climb.py. 0 violations anywhere. Next: §C comparison with
 docs/referee/ after the Lead says REFEREE's R-N5-1P is pushed.
-00:40Z: Lead addendum (trunk 0f899f3: SCOPE line + §6 VJ00 dependency list) checked in R2-N5-1P §7: SIGN WITH GAPS, nits N-4 (improving
+(stamp corrected 00:26Z: this entry's true time is 00:12Z, git committer date of 857ce074) Lead addendum (trunk 0f899f3: SCOPE line + §6 VJ00 dependency list) checked in R2-N5-1P §7: SIGN WITH GAPS, nits N-4 (improving
 edges are §4.4 (2) p. 11, Improve = Switch_I not argmax), N-5 (fixpoint data rule rests on Lemma 5.8 1⇒2 via 5.9/5.10, not 2⇒1), N-6 (pages).
 EXACT=1 numbers = my n5 replay.
-00:55Z §C vs REFEREE R-N5-1P (dfa87d0, trunk 12617fc): full agreement on verdicts; map G-1P-1..7/N-1..6 -> G1-G9 in §C; accepted G6's
+(true time 00:21Z = 498b8c99) §C vs REFEREE R-N5-1P (dfa87d0, trunk 12617fc): full agreement on verdicts; map G-1P-1..7/N-1..6 -> G1-G9 in §C; accepted G6's
 stale phase_vc.txt line; only mine: N-2 (phase_vc counts the closing λ-step; REFEREE's own probe gives 14 in-phase at n = 16 = mine). PARKED.
 2026-10-19 02:26Z §C-A1 vs REFEREE A1 (640ffae0): agree; accepted A1-5 (STR-DET excludes dominion-attractor e*) and A1-4 (use R46 K). Parked.
 2026-10-19 02:14Z A1 = R47 Theorem CK in R2-C1P.md §A1: all SIGN (A1-G1 unneeded distinct-prio hyp., A1-G2 cite R10(a)/R9(b) under consumption; closed). Closes G-R46-1: GAP-A on C^1P <= (NEST*-BOUNDED) alone. DOM-MONO DATA vacuous (0 changes in 163 pairs). Next: §C of A1 after Lead says REFEREE's is pushed.
