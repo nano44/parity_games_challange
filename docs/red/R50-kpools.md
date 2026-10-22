@@ -33,3 +33,18 @@ unmodified b12_pot / b12_core (through ../xctx/xscore.py). Instance checks use e
 - Learning positions per search (oink order): 2,2,3,2,2,2,2,2,2, then 1 from search 9 on.
 - (G-NEXT) violations: search 2→3 (G at 6, next at 9) and search 8→9 (G at 8, next at 16). Their own searches learn at 3 and 2
   positions, consistent with (G-NEXT-1P).
+
+## 3. Union-only steps (no climb): NEST* and maximum learning positions (FIT=pool score; NEST*, max positions per search, searches with ≥ 2)
+- k = 3, base nest5_n49 (NEST* 5, max 2 positions), stable order. Third part × placement → (NEST*, max positions, searches with ≥ 2):
+  - nest3_n24: above (4, 3, 17); below (5, 3, 17); inter (5, 3, 17).
+  - near4_n26: above (4, 3, 17); below (4, 3, 17); inter (4, 3, 17).
+  - oseg_n26: above (5, 3, 15); below (5, 3, 15); inter (5, 3, 15).
+  - onep_fdkey_n20: above (5, 3, 5); below (5, 3, 5); inter (5, 3, 5).
+  - nest3_n20: above (4, 3, 10); below (4, 3, 10); inter (4, 3, 10).
+- k = 4, base nest6_n75 (NEST* 6, max 3 positions), oink order:
+  - oseg_n26: above (6, 4, 15); below (5, 4, 15).
+  - nest3_n24: above (4, 4, 17); below (5, 4, 17).
+  - onep_fdkey_n20: above (6, 4, 9); below (6, 4, 9).
+- So every added part adds one simultaneous learning position (max positions = k). But a union alone never raised NEST* beyond the
+  base, except 3 → 4 at k = 2 (R49 §5), and it often lowered it (masking). Each further level (4 → 5, 5 → 6) came from a graded
+  climb on a union seed.
