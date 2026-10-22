@@ -256,3 +256,8 @@ Attack on (a)/(b) running; L-COMP second implementation; step 4 not started.
 the desk, like every session, stopped at the weekly cap (~03:33Z) before replying.
 ## 2026-10-21 21:06Z Lead -> owner (verbatim relay requested): fleet paused ~2.7 days by the weekly cap (not overage); reset 21:00Z =
 L32 reassessment point; state unchanged; Q16 still open; new Q18 (models after the reset); interim L36.
+
+## 2026-10-22 01:33Z Lead -> owner (status, relevant to Q16)
+R17 [refereed-only; first Fable 5.1 referees under L36; CHECKER C20]: N5 on one-player games < (n^2-n+1)(n+m) iterations (bounds N5
+only; G-N5-TIME open for two-player). DTL: L-RED raised best NEST* 3 -> 6 (n 26/49/75; not yet a family; S ~ n/3, linear); would refute
+(NEST*-BOUNDED) without super-poly time. No incorrect run, no super-poly family, no cap/overage. Q16, Q18 open; L36 applies.
