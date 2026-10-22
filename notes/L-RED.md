@@ -4,7 +4,7 @@ Opus 5.5: the session's model was switched (get_session: user_switched_model cla
 The previous notebook (boxes 1-18) is in git at l-red 4f73e7a6: `git show 4f73e7a6:notes/L-RED.md`; boxes 16-18 handover at a5274bd6.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: box 20 END (10:16Z by date -u), PARKED. Box 19 merged trunk 18812f7; k-pools NEST* line CLOSED (Lead, D15 / L37). Box 20 = S growth on
+Status: PARKED after box 20 (Lead 10:24Z, D15 / L37: DTL side stays cheap; wake only on a new named target). Box 19 merged trunk 18812f7; k-pools NEST* line CLOSED (Lead, D15 / L37). Box 20 = S growth on
 two-player games: docs/red/R52-sgrowth.md, experiments/red/sgrow/.
 
 ## DONE (box 19; docs/red/R51-piecemap.md; tools experiments/red/nest16/piecemap.py, gatescan.py; evidence in experiments/red/nest16/maps/ and scans/)
@@ -42,8 +42,18 @@ None. No process runs at box end.
 2. A different fourth part: E = nest5_n49 (a part with its own 5-level structure) above nest6min, then the recipe; n 124, ~40 s/eval.
 3. Re-read R50 §4 / §7 cross-part attributions with piecemap.py (file ids).
 ## Resume point
-PARKED at box 19 END (2026-10-22, date -u time in the last push's commit). Start from NEXT above; nothing is in flight. Read R51 §1-§4
-first, then R50 §8 and R49 §9. Earlier resume points: `git show a5274bd6:notes/L-RED.md`, `git show 4f73e7a6:notes/L-RED.md`.
+PARKED after box 20 (2026-10-22 ~10:30Z, date -u). Nothing in flight; no process runs. Wake only on a new named target from the Lead
+(a referee / lane hypothesis, or a new candidate such as an L-NEW step-2 survivor). Read first: R52 (S growth), R51 §4-§6, CLAUDE.md
+traps. Earlier resume points: `git show a5274bd6:notes/L-RED.md`, `git show 4f73e7a6:notes/L-RED.md`.
+Climb lessons (box 20, experiments/red/sgrow/oclimb.py):
+- Fitness from pinned Oink (F = max(even, odd iterations) − dominions) is a cheap proxy for the longest phase; confirm S afterwards
+  with smeasure.py (L-ALG's phase convention, both orders) and require Oink's count = S.
+- Padding to grow n: RANDOM pads (random priority, an incoming edge) create early dominions and collapse long phases (F ≤ 8 at
+  n 40-80). NEUTRAL pads (priority 0, one successor into the old game, no incoming edge) keep S and give the climb material.
+- Evaluation cost: Oink -v is ~8 ms at n 20 but 0.2-1.5 s on long-phase games at n ≥ 40 (tangles ≤ 88); budget by wall clock (--secs),
+  not by steps. Python smeasure takes ~4 min per game at n 80.
+- Two-job limit: pause a climb with kill -STOP / kill -CONT for a short measurement instead of starting a third job. Count jobs with
+  `ps -eo args | grep -c '^python3 .*oclimb'`; never pkill -f a pattern that occurs in your own shell's command line.
 
 ## Sources opened
 None new in boxes 16-18. The work cites only fleet-internal signed results (RESULTS R5, R8, R9, R11; P-C1P items; R16 draft) and
@@ -58,6 +68,9 @@ dtl.cpp @ 8fbf0a7. Earlier opened sources are listed in `git show 4f73e7a6:notes
 - Literal mirror of the k = 3 step onto nest6min ⊎ oseg: NEST* 4 (scan4; agrees with R50 §5 on nest6 ⊎ oseg).
 - Head-ladder gates (72→80 etc., + returns): lengthen S to 28 / 31 but NEST* 5; added searches are cut by new rises of position 1
   (k4L72r_n101, three 1-rises at P indices 13, 19, 21); scans/scan6_*, scan7_*.
+- (SPP) "S ≤ |G'|" (longest phase at most the unsolved game at its start; R24's target, DATA only, never signed) is FALSE in oink
+  order: s21_oink_n20 (experiments/red/sgrow/instances/, sha1 da164511784449b906663c190757fd78c057f97c), an Even phase of S 21 at
+  |G'| 20 (pinned Oink even 21, odd 1, verified; Lead re-ran 10:24Z, CONFIRMED). Stable order on the same game: S 11. Excess +1, linear.
 - k-pools NEST* line (boxes 16-19) CLOSED by the Lead (D15 / L37, 07:34Z): NEST* plateaus at 6 (448 hand-built configurations and
   climbs), S linear (≤ 31 at n 101). Obstruction R51 §4: a seventh level needs a longer post-block stretch with no shallow first
   change; no edge class gives both. Killing instance k4u_n101 (37a45ff8a932bcc6e4a79d4848a0a57dbb82367a), scans 1-7.
