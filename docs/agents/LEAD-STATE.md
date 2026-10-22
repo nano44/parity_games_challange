@@ -785,3 +785,4 @@
 - 10:31Z (date -u) L-RED parked (595ca26, merged; scope ok). Working: L-STRUCT only (to ~13:20Z).
 - 11:05Z (date -u) SWEEP (trigger 11:03Z): overage false; Lead $420 ~579k (handover/compaction near; RESUME POINT 09:04Z current). Working: L-STRUCT succ. (2 SAT solver jobs, waiter armed). All others parked. No exceptions.
 - 12:06Z (date -u) SWEEP (trigger 12:02Z): overage false; Lead $420 ~585k. L-STRUCT succ. idle by design since 10:15Z (2 SAT jobs, waiter armed; box to ~13:20Z). All others parked. No exceptions.
+- 13:07Z (date -u) SWEEP (trigger 13:02Z): overage false; Lead $421 ~593k (at the handover line; RESUME POINT 09:04Z current; compaction or Lead successor next). L-STRUCT succ. pushed 1116770 ~12:21Z, jobs queued, waiter 13:18Z; box report due ~13:20Z. Others parked. No exceptions.
