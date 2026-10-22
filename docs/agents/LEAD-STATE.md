@@ -748,3 +748,4 @@
 - 01:24Z (date -u) Created CHECKER succ. 2 session_01DuxdDA1V4ehMcRkJ1yM3vU (Fable 5.1) for the R17 landed-text check (C20 Addendum 5). Working: L-RED (box 17), CHECKER succ. 2.
 - 01:30Z (date -u) CHECKER succ. 2 C20 Addendum 5 PASS (bef6dbf, merged): landed R17 = draft 7b61725 + suffix; RESULTS +48/−0; GAPS note consistent. C20 CLOSED. N-3 noted: suffix omits superseded Addendum 1 (642421e), deliberately (withdrawn). CHECKER succ. 2 parked. Working: L-RED (box 17 to ~02:50Z).
 - 01:33Z (date -u) OWNER-DESK: status update relayed (R17 landed; NEST* 3 -> 6 data on 𝒞^1P, not a family, S linear; no incorrect run / super-poly family; no overage; Q16/Q18 open).
+- 02:04Z (date -u) SWEEP (trigger 02:02Z): overage false; Lead $404 ~385k. Working: L-RED succ. 10 (box 17 to ~02:50Z, ~467k). All others parked; OWNER-DESK blocked on Q16/Q18. No exceptions.
