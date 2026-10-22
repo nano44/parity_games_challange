@@ -66,7 +66,10 @@ equality fails: (2,5), (2,6), (2,7..12), (3,5), (3,6), (3,8), (3,10) (w^V(3,10) 
 
 n = 5 (2026-10-22 box, experiments/weak-sep/results/n5/): s^V(5,5) ≥ 11 (strong k = 10 UNSAT on 30 maximal even
 graphs, 420 s; CaDiCaL 1.7.4 LRAT proof VERIFIED by experiments/sat-hard/lrat_check.py, 3417924 RUP steps, CNF sha256
-af340fd5...; agrees with L-COMP's CEGAR k = 10); w^V(5,5) ≥ 10 and s^V(5,6) ≥ 11 by S1 Lemma 2(a). No n = 5 upper bound:
+af340fd5...; agrees with L-COMP's CEGAR k = 10); s^V(5,6) ≥ 11 by S1 Lemma 2(a). w^V(5,5) ≥ 11 (2026-10-22 14:17Z: weak
+k = 10 UNSAT by Lemma P, CEGAR on 80 even + 40 odd graphs, 7 rounds, last solve 11913 s, 4004493 clauses;
+results/n5/weak_V_n5_d5_k10.json; SOLVER-ONLY: pysat CaDiCaL 1.5.3, no LRAT proof, as re-solving with a proof costs
+~3.3 h and a proof of tens of GB); hence w^V(5,6) ≥ 11 as well. So no gap with w ≤ 10 at (5,5). No n = 5 upper bound:
 strong (5,5) k = 11 did not finish in 4 h (one solver call; k = 10 took 7 min), weak (5,5) k = 10 not in 2.5 h,
 weak (5,6) k = 14 at ~20 min per CEGAR round after 67 rounds, strong (5,6) k = 13 > 30 min in one round. T3 at n = 5 is
 untested. A weak (5,5) separator with 10 states would certify a gap (w = 10 < 11 ≤ s); that query is the cheapest

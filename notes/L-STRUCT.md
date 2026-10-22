@@ -7,7 +7,7 @@ the cap 2026-10-23 01:30Z. No new box.
 - Running jobs (experiments/weak-sep/, logs out/<case>.log, PID files out/<case>.pid):
   - PID 5687: `python3 n5.py 5 5 V strong 11`, started 07:58Z (one solver call since 07:58:24Z; not resumable).
     UNSAT => s^V(5,5) >= 12: run lrat.sh 5 5 V strong 11 if the proof size allows, else record as solver-only.
-  - PID 12501: `python3 n5.py 5 5 V weak 10 --batch 20`, started 09:47Z (round 7 solving since 10:58:45Z; checkpoint
+  - PID 12501: FINISHED 14:17Z, weak (5,5) k=10 UNSAT (solver-only) => w^V(5,5) >= 11; was `python3 n5.py 5 5 V weak 10 --batch 20`, started 09:47Z (round 7 solving since 10:58:45Z; checkpoint
     out/ckpt_weak_V_n5_d5_k10.json). SAT => gap w = 10 < 11 <= s, T3 REFUTED: report to the Lead AT ONCE with the
     witness sha1, its re-verification on the full families, and the LRAT path for s >= 11
     (results/n5/strong_V_n5_d5_k10.lrat.log).
