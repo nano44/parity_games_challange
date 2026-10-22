@@ -268,3 +268,7 @@ Desk reading: Q18 (b) stay on Opus 5.5 for lanes and referees; Q16 (b)+(c); plus
 questions itself instead of asking the owner. Relayed verbatim to the Lead, priority now.
 
 ## 2026-10-22 07:02Z Lead -> owner: recorded as D15 / L37 (trunk 0f33c77). Q16, Q17, Q18 closed. No owner questions open.
+
+## 2026-10-22T07:38Z owner (progress question)
+> So we are using opus everywhere correct?
+Answered from D15/L37 and the NOW.md roster (trunk 1a05c8f8). Relayed verbatim to the Lead.
