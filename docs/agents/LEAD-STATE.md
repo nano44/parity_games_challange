@@ -797,3 +797,4 @@
   Open: GAP-A, GAP-C, G-NEST, G-N5-TIME. No incorrect run, no super-poly family.
 - 14:25Z (date -u) L-STRUCT job event (79aaedc, merged): weak (5,5) V k=10 UNSAT (round 7, 11,913 s last solve; SOLVER-ONLY, pysat CaDiCaL 1.5.3, no LRAT: proof size): w^V(5,5) ≥ 11 (solver-only), s^V(5,5) ≥ 11 (LRAT). No gap at w ≤ 10; T3 at n = 5 untested. DECISION: no weak k=11 (cannot finish before the cap); PID 5687 (strong k=11) continues to 01:30Z.
 - 15:04Z (date -u) SWEEP (trigger 15:03Z): overage false; Lead $424 ~629k. Fleet idle; L-STRUCT PID 5687 (strong (5,5) k=11) to the 01:30Z cap. No exceptions.
+- 16:04Z (date -u) SWEEP (trigger 16:02Z): overage false; Lead $425 ~636k. Fleet idle; L-STRUCT PID 5687 to 01:30Z cap. No exceptions.
