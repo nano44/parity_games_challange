@@ -1,0 +1,17 @@
+/tmp/claude-0/-home-user-parity-games-challange/43e400f1-0236-57e9-a7f9-34754965f4cf/scratchpad/inst/ph_n48.pg: n=48 m=179 replica it=47 fb=0; n5.run it=47 fb=0; kinds=lvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvl
+phases (in-phase steps, value-changing, flat): [(0, 0, 0), (45, 45, 0), (0, 0, 0)]
+  fallback_steps = 0
+  flat_steps = 0
+  iterations_checked = 48
+  lambda_steps = 2
+  max_flat_per_phase = 0
+  max_inphase_steps = 45
+  max_phases_per_run = 3
+  max_vc_minus_n_plus_1 = 0
+  max_vc_per_phase = 45
+  optimum_checks = 47
+  phases = 3
+  runs = 1
+  steps = 47
+  vc_steps = 45
+RESULT violations=0 secs=0.2
