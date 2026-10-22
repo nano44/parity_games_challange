@@ -100,3 +100,17 @@ All rows are identical in stable and oink order. Pinned Oink 8fbf0a7 `-v` gives 
     parts change deeper at the same search, and plain unions mostly mask instead (NEST* drops in 10 of the 21 union seeds of §3: 7 of 15 at k = 3, 3 of 6 at k = 4).
   - Each observed gain came only after extra coupling (cross-part edges and priority interleaving, §4) that re-times the parts
     against each other. That coupling is instance-specific.
+
+## 7. Control (02:02Z, date -u): cross-part coupling ALONE adds the level at k = 3
+- experiments/red/nest16/crossclimb.py on the k = 3 seed nest5_n49 ⊎ oseg_n26 (above): CUTS 49, oink order, seed 221. Its moves are
+  only: add a C-edge from one part to another, or move one vertex's priority rank. NEST* 5 → 6 at step 287.
+- instances/nest6x_n75.pg: sha1 e50b3e809381ec5d954fa20603194c68028d37aa, n 75, C = 1, in 𝒞^1P.
+  - Both orders identical: S 27, |P| 26, I 0, P = 0,1,6,15,15,11,15,15,12,13,13,11,1,7,15,10,13,7,11,12,11,1,10,7,0,6, NEST* 6,
+    max learning positions 3.
+  - Pinned Oink -v: 27 even iterations (= S), 1 odd, verified (63 strategies).
+- The diff to the seed is edge ADDITIONS only, every one from a part-1 vertex (0-48) to a part-2 vertex (49-74), plus priority moves.
+  No owner changes and no removals: crossclimb can do neither.
+- Reading: two independent climbs (k3b with the full move set, x3 with cross-part moves only) both turned the k = 3 union into
+  NEST* 6. So the third level-gain mechanism is cross-part coupling, not internal restructuring of a part.
+- The k = 4 cross-part climb (x4b, n 101, seed 211): about 150 steps by 02:00Z, NEST* still 6. It is too slow to decide k = 4 within
+  this box.
