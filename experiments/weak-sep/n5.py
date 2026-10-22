@@ -10,7 +10,7 @@ Answer semantics: SAT at k <=> a separator with <= k states exists (pad a smalle
 non-tree transition; it accepts infinite words, so such a transition exists; docs/struct/S3-statement.md §2).
 UNSAT at k therefore gives value >= k+1.  Every SAT automaton is re-verified on the full families before it is written.
 Result: results/n5/<mode>_<conv>_n<n>_d<d>_k<k>.json.
-Usage: n5.py N D CONV {weak|strong} K [--cnf]"""
+Usage: n5.py N D CONV {weak|strong} K [--cnf | --cnf-only]"""
 import sys, json, time, pickle, hashlib, argparse, pathlib, os
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE))
@@ -21,7 +21,7 @@ from wsep.automata import check_separator
 ap = argparse.ArgumentParser()
 ap.add_argument('n', type=int); ap.add_argument('d', type=int); ap.add_argument('conv', choices=['E', 'S', 'V'])
 ap.add_argument('mode', choices=['weak', 'strong']); ap.add_argument('k', type=int)
-ap.add_argument('--cnf', action='store_true'); ap.add_argument('--solver', default='cadical153')
+ap.add_argument('--cnf', action='store_true'); ap.add_argument('--cnf-only', action='store_true'); ap.add_argument('--solver', default='cadical153')
 a = ap.parse_args()
 strong = a.mode == 'strong'
 OUT = HERE / 'out'; OUT.mkdir(exist_ok=True)
@@ -52,7 +52,7 @@ log(f"families {len(evens)}+{len(odds)}; checkpoint {len(state['even'])}+{len(st
 
 enc = Encoder(a.n, a.d, a.k, strong, a.solver)
 cnf_body = None
-if a.cnf:  # record every clause from here on (the constructor's clauses are replayed below)
+if a.cnf or a.cnf_only:  # record every clause from here on (the constructor's clauses are replayed below)
     enc2 = Encoder.__new__(Encoder)
     cls = []
     enc2.__dict__.update(solver_name=a.solver, n=a.n, d=a.d, k=a.k, strong=strong, nv=0, nclauses=0)
@@ -78,6 +78,8 @@ if a.cnf:  # record every clause from here on (the constructor's clauses are rep
     p.write_text(text)
     log(f"CNF {p.name}: {enc2.nv} vars, {len(cls)} clauses, sha256 {hashlib.sha256(text.encode()).hexdigest()}")
     cnf_body = (p.name, hashlib.sha256(text.encode()).hexdigest())
+    if a.cnf_only:
+        raise SystemExit(0)
 
 for i in state['even']:
     enc.add_even(evens[i])
