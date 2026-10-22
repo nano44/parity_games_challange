@@ -7,7 +7,9 @@ induced discounted game: DEAD END (docs/new/N6-ipm.md §8; notebook "Dead ends")
 HMZ Thm 6.5). Bench (experiments/new/ipm/results/*.csv): no answer on 7 of 13 hard families at small N, smallest counter_ortl N = 3 (n = 16,
 instances/n6/counter_ortl-3.pg), and on every random game with n >= 23; all produced answers correct. Obstruction §6 (path lost in
 coordinate space; Newton direction arb-certified; M certified P). Nothing running.
-NEXT for this lane (Lead decides): back to (i) only with a concrete N5 statement, or the next untested approach (screen first).
+Second half (Lead 08:02Z): N7 entropic temperature homotopy screened and benched: DEAD END (docs/new/N7-entropic.md). PARKED; nothing running.
+NEXT for this lane (Lead decides): a candidate must pass the HMZ principle (gamma-free argument) if it uses the discounted reduction.
+
 BOX 11 END (~00:48Z Oct 22, date -u; Lead box to ~02:35Z, parked early: all three routes answered). PARKED after the final report; nothing running.
 - P-N5-1P (N5-phase-bound-box10.md §1-§4 + §6 as A1) has TWO Fable signatures (R-N5-1P dfa87d0 SIGNED WITH GAPS G1-G9; R2-N5-1P f954070,
   Lemma P SIGN, rest SIGN WITH GAPS wording); §7 answers G6-G9, N-2, N-3, G-1P-4, G-1P-7 (a300339). §1-§4 and §6 FROZEN: additions only.
@@ -186,6 +188,7 @@ NEXT for a successor:
   vary with N; check with a per-iteration trace (which edges each step switches).
 
 ## Sources opened
+- (succ. 5) arXiv 2007.06558 v5 Cen et al. (sha256 23fddbc3f493d02e): Thm 1. arXiv 2105.15186 v3 Cen-Wei (a2da0da3164be410): Thm 3.
 - (succ. 5, 2026-10-22) arXiv 1304.1888 v2 HIJ (sha256 01e4cde9b47f90cb): §2.3 Def. 16, Thm 18; §3 Thm 19, Thm 21 (family G_n); §4 Thm 22-25;
   §1.1. arXiv 1708.01544 ABGJ (9608058cb6fa98a3): Thm A/B, Cor. 31, Remark 32, p.2-3 (bitlength of t exponential). de Klerk-Nagy,
   optimization-online 2010/02/2555 (726c92b99e80dae6): abstract, Def. 1. arXiv 1106.0778 Friedmann (46c96f44775aa2b0): §9 beta_G, Thm 9.3.
@@ -258,6 +261,12 @@ NEXT for a successor:
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- N7 (entropic temperature homotopy: soft Bellman operator at gamma = beta_G, Newton path following in tau), DEAD END 2026-10-22 (box 12;
+  docs/new/N7-entropic.md). Proof route dead at the screen: known entropy-regularised rates are poly(1/(1-gamma), 1/tau) (Cen et al.
+  2007.06558 Thm 1; Cen-Wei 2105.15186 Thm 3), both exponential for parity; HMZ principle. Bench: stalls on counter_ortl-3 (sha1 c8bc3499...)
+  at tau ~ 2.8e-7 and on tc+ N = 2; start-phase failures on tc 4, counter_symsi 1-2, counter_rob 2. All produced answers correct.
+  SCREENING PRINCIPLE (N6, N7): any method on the parity -> discounted reduction analysed polynomially in 1/(1-gamma) is no better than SI
+  (HMZ 1008.0530 Thm 6.5); require a gamma-free argument before benching such a candidate.
 - N6 (IPM on the Jurdzinski-Savani P-matrix LCP of the parity-induced discounted game), DEAD END 2026-10-22 (box 12, successor 5;
   docs/new/N6-ipm.md). Proof route dead at the screen: HIJ arXiv 1304.1888 Thm 19/21 kappa = Theta(n/(1-gamma)^2) (cost-independent,
   extremal arena G_n), parity needs 1/(1-gamma) = n^Theta(d) (Friedmann 1106.0778 sec. 9 beta_G), and HMZ 1008.0530 Thm 6.5 makes SI
