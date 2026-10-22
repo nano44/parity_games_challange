@@ -34,3 +34,16 @@ designs apply here: K7/K8 (N5's Odd step reproduces a wanted lure sequence only 
 masked). The new data add: with σ̄ constant, Odd's lures DID produce 22 deviations in 27 steps, so distraction is cheap locally; what is
 missing is a mechanism that makes the lures RECUR (Odd would have to revisit lure configurations, which Lemma NR forbids for τ as a whole
 and which the data show only at single vertices, up to 16 revisits at n = 24, N5-brchanges-box11.md §4).
+
+## 4. Climbs that target the mechanism (final, 00:47Z by date -u; br/srev_climb.py; every improved best re-run through n5.run, regions = Zielonka, verify.py OK; sha1 in br/box11b_instances.sha1)
+- FIT=srev (most REVISITS of one vertex's own strategy target, Odd required to move): 17 at n = 35 (srev_vc25.pg, 48 iterations, Odd moves at 34
+  of them; grown from vc_g25), 14 at n = 60 (srev_sbe.pg, 41 iterations, Odd moves 10), 11 at n = 18 (srev_g12, 25 iterations), 6 at n = 16.
+- FIT=it (iterations, Odd required to move): 50 at n = 61 (it_sbe.pg, grown from glob_sbe; 26 σ̄ states, 20 of 49 Even steps deviate from honest
+  switch-best), 38 at n = 25 (it_g20.pg, 21 Odd-moving iterations).
+- deviate.py on the best instances: srev_vc25 18 of 18 Even steps deviate (3 σ̄ states); it_sbe 20 of 49.
+So distraction is easy to make frequent and revisits of single vertices reach ≈ n/2, but the runs stay at ≤ 50 iterations for n ≤ 61: the
+lures do not recur in a way that lengthens the run, as §3 predicts. Nothing here is a kill; N5 solves every instance correctly.
+
+## 5. Verdict
+Option (2) was not built beyond requirements and targeted climbs. The precise obstacle is §3's circularity plus K7/K8/K10/Fact B; the data
+say the toggle buys a constant number of extra steps per segment, not growth. G-N5-TIME stays open.

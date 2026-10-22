@@ -7,3 +7,13 @@ step 1746 fit (43, 11, -60) (max revisits, iterations, odd moves) (11, 43, 4) n 
 step 1850 fit (43, 13, -61) (max revisits, iterations, odd moves) (13, 43, 3) n 61 n5-iterations 43 check OK sha1 70facf70ba451800eace6a7539ec12ebc5c0d0d2
 step 1905 fit (44, 13, -61) (max revisits, iterations, odd moves) (13, 44, 5) n 61 n5-iterations 44 check OK sha1 6a99108b05a95cf74788416cd759cc099ff22702
 step 2067 fit (44, 15, -61) (max revisits, iterations, odd moves) (15, 44, 5) n 61 n5-iterations 44 check OK sha1 2592aec7b4644ca49a2d2a0caaf69a100cbbbfe8
+step 2225 fit (45, 15, -61) (max revisits, iterations, odd moves) (15, 45, 5) n 61 n5-iterations 45 check OK sha1 db9b33fa4e2950a2f779fbdf04d514de768f3278
+step 2915 fit (46, 15, -61) (max revisits, iterations, odd moves) (15, 46, 5) n 61 n5-iterations 46 check OK sha1 ae8452084d3cef64630d2765b4f30dd81259987e
+step 3842 fit (46, 16, -61) (max revisits, iterations, odd moves) (16, 46, 7) n 61 n5-iterations 46 check OK sha1 768129e7d9c5c05ca2de5eccbb203165350a9c27
+step 3915 fit (46, 17, -61) (max revisits, iterations, odd moves) (17, 46, 6) n 61 n5-iterations 46 check OK sha1 681b413f0dc2684ad95339c3d05d1192aa2ede7b
+step 3972 fit (46, 20, -61) (max revisits, iterations, odd moves) (20, 46, 7) n 61 n5-iterations 46 check OK sha1 7bb9f1b595ae3083f56424bdb24870b09f52cfff
+step 4827 fit (47, 20, -61) (max revisits, iterations, odd moves) (20, 47, 7) n 61 n5-iterations 47 check OK sha1 94d59ecbb664952e757b09f7eab91358cdfe0a7e
+step 5184 fit (48, 19, -61) (max revisits, iterations, odd moves) (19, 48, 7) n 61 n5-iterations 48 check OK sha1 166eb450f1affcf4bf7f33a9521b86219aae23f4
+step 5337 fit (49, 20, -61) (max revisits, iterations, odd moves) (20, 49, 8) n 61 n5-iterations 49 check OK sha1 4d5ab0dbf5450b6934b306b49ff2c353a975c2a5
+step 5350 fit (50, 20, -61) (max revisits, iterations, odd moves) (20, 50, 9) n 61 n5-iterations 50 check OK sha1 1fb2669649ed82dde38195cce5dde1d2f4588f5b
+best (50, 20, -61)

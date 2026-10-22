@@ -31,3 +31,4 @@ step 10241 fit (6, 24, -16) (max revisits, iterations, odd moves) (6, 24, 19) n 
 step 10344 fit (6, 25, -16) (max revisits, iterations, odd moves) (6, 25, 20) n 16 n5-iterations 25 check OK sha1 c1b15e4ea0c7a789d319386fdf14bd1c65278cc3
 step 16979 fit (6, 26, -16) (max revisits, iterations, odd moves) (6, 26, 21) n 16 n5-iterations 26 check OK sha1 37b8270b79833715dd36bae417402a55d3ab018e
 step 17257 fit (6, 27, -16) (max revisits, iterations, odd moves) (6, 27, 22) n 16 n5-iterations 27 check OK sha1 4d877c190cffb9824d9eb67eb1f4e5a9f5876bba
+best (6, 27, -16)

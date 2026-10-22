@@ -44,3 +44,4 @@ step 10539 fit (10, 24, -17) (max revisits, iterations, odd moves) (10, 24, 20) 
 step 11179 fit (10, 25, -18) (max revisits, iterations, odd moves) (10, 25, 20) n 18 n5-iterations 25 check OK sha1 5c4d23af72419d7fc0296e03a2555be5262f18c3
 step 11919 fit (11, 24, -18) (max revisits, iterations, odd moves) (11, 24, 21) n 18 n5-iterations 24 check OK sha1 9db48dd64a5197f00d3dd2de73453a261c4e107f
 step 12201 fit (11, 25, -18) (max revisits, iterations, odd moves) (11, 25, 22) n 18 n5-iterations 25 check OK sha1 b26d7a45e2dda5bf2059447fb5e81de1f00550f3
+best (11, 25, -18)
