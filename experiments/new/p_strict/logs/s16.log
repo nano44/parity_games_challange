@@ -1,0 +1,11 @@
+start (1, 1)
+step 1 segment 2 iterations 2 check OK
+step 2 segment 2 iterations 3 check OK
+step 81 segment 2 iterations 4 check OK
+step 104 segment 3 iterations 4 check OK
+step 109 segment 4 iterations 5 check OK
+step 345 segment 4 iterations 6 check OK
+step 348 segment 5 iterations 7 check OK
+step 381 segment 6 iterations 7 check OK
+step 593 segment 7 iterations 8 check OK
+best (7, 8)

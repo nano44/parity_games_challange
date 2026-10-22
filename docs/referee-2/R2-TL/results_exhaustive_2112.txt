@@ -1,0 +1,1 @@
+n=2 r=1 s=1 t=2: 414720 (tree, edge) tests over all trees; disagreements: 0

@@ -1,0 +1,11 @@
+49362a336a3e97b48ae92d44bd5febe73d5833fb  instances/n5ch/ch_n16_seed516.pg
+dc413696fa13e0e42106f72cdebca33d32ac3726  instances/n5ch/ch_n32_seed532.pg
+137b7edf4c69bf2e48424169d2928b49a66b2a11  instances/n5ch/ch_n48_seed548.pg
+981eac90c260a8816f84279888b4f8ceb44bbb3d  instances/n5ch/ch_n64_seed564.pg
+5e19cfcf071f1b9e46cec5f705d8268bfc11cfcc  instances/n5ch/ch_n96_seed596.pg
+7873c5e307660c73f87871b1b5f58006d23af205  instances/n5seg/seg_n16_seed716.pg
+1070e7ab3e82d8eaee4ed8a251e33bf24ea86e6f  instances/n5seg/seg_n40_seed740.pg
+8d55b16cab4ad7b40e54f14ad25828b653ce220c  instances/n5seg/seg_n80_seed780.pg
+047eeb4c6e4b8965882a9a31313d9aa7263c84c0  instances/cdagmask/mask_n4_K12_seed1.pg
+2094ec9a46b39880e61bd28db550245e340f141b  instances/cdagmask/mask_n6_K24_seed6.pg
+282c7e7eb9b21fe30a46757b3ae7e64279e4c42c  instances/cdagmask/mask_n8_K32_seed8.pg

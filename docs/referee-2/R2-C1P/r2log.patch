@@ -1,0 +1,62 @@
+diff --git a/src/solvers/dtl.cpp b/src/solvers/dtl.cpp
+index eb14894..483bea6 100644
+--- a/src/solvers/dtl.cpp
++++ b/src/solvers/dtl.cpp
+@@ -19,6 +19,10 @@
+ #include <cstring> // for memset
+ 
+ #include "dtl.hpp"
++#include <cstdio>
++#include <cstdlib>
++static FILE* r2f = nullptr; static int r2_lastdist = 0;
++#define R2BS(b) do { for (auto _v=(b).find_first(); _v!=pg::bitset::npos; _v=(b).find_next(_v)) fprintf(r2f," %d",(int)_v); } while(0)
+ 
+ #define CHECK_UNIQUE (1 or !NDEBUG) // detect duplicate dominions
+ 
+@@ -66,8 +70,10 @@ void
+ DTLSolver::attractVertices(const int pl, const int v, bitset &R, bitset &Z, bitset &G, const int max_prio)
+ {
+     // attract vertices with an edge to <v>
+-    for (auto curedge = ins(v); *curedge != -1; curedge++) {
+-        int from = *curedge;
++    static int r2rev = getenv("R2_REV") ? 1 : 0;
++    int r2n=0; { auto ce=ins(v); while (ce[r2n]!=-1) r2n++; }
++    for (int r2i=0; r2i<r2n; r2i++) {
++        int from = r2rev ? ins(v)[r2n-1-r2i] : ins(v)[r2i];
+         if (Z[from]) {
+             // already in Z, maybe set strategy (for vertices in the original target set)
+             if (owner(from) == pl and str[from] == -1) str[from] = v;
+@@ -672,7 +678,7 @@ DTLSolver::best_vertices(bitset &V, bitset &R, const int player)
+      */
+ 
+     while (true) {
+-        curdist++;
++        curdist++; r2_lastdist = curdist;
+         prevV = V;
+ 
+ #ifndef NDEBUG
+@@ -851,6 +857,7 @@ DTLSolver::search_rec(bitset &R, const int player, const int depth)
+         // Compute the best vertices V
+         V.reset();
+         int result = best_vertices(V, R, player);
++        if (r2f and depth == 0) { fprintf(r2f, "C %d %d :", result, r2_lastdist); R2BS(R); fprintf(r2f, " :"); R2BS(V); fprintf(r2f, "\n"); }
+         if (result == 0) return; // done
+ 
+         if (trace >= 1) {
+@@ -1011,6 +1018,8 @@ DTLSolver::search(const int player)
+     }
+ #endif
+ 
++    if (!r2f and getenv("R2_LOG")) r2f = fopen(getenv("R2_LOG"), "w");
++    if (r2f) { fprintf(r2f, "S %d :", player); R2BS(G); fprintf(r2f, "\n"); }
+     bitset CurG(G);
+     search_rec(CurG, player, 0);
+     W.reset();
+@@ -1065,6 +1074,7 @@ DTLSolver::search(const int player)
+     }
+ #endif
+ 
++    if (r2f) { fprintf(r2f, "X %d\n", (int)(tangles != T or dominions != D)); fflush(r2f); }
+     return tangles != T or dominions != D;
+ }
+ 

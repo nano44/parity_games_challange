@@ -1,0 +1,11 @@
+chain violations for 64 <= n <= 20000: none
+n=64: Thm L4 max 36 at d'=16 (d'/n^0.6=1.32); closed C(a0+b0,a0)=3; last form (sqrt n/(2 lg n))^a0 = 0.667
+n=256: Thm L4 max 816 at d'=32 (d'/n^0.6=1.15); closed C(a0+b0,a0)=28; last form (sqrt n/(2 lg n))^a0 = 1
+n=1024: Thm L4 max 52360 at d'=64 (d'/n^0.6=1.00); closed C(a0+b0,a0)=680; last form (sqrt n/(2 lg n))^a0 = 4.1
+n=4096: Thm L4 max 11716640 at d'=256 (d'/n^0.6=1.74); closed C(a0+b0,a0)=46376; last form (sqrt n/(2 lg n))^a0 = 50.6
+n=65536: Thm L4 max 25761160440576 at d'=1024 (d'/n^0.6=1.32); closed C(a0+b0,a0)=6547258432; last form (sqrt n/(2 lg n))^a0 = 2.62e+05
+last closed form (sqrt n/(2 lg n))^{a0} exceeds 1 from n = 257 on (it is < 1 at n = 64: 8/12)
+n < 64: closed form C(a0+b0,a0) <= 1? True
+Theorem L4 at n = 1: the set of even d' in [2, 1] is empty; max undefined. n=2..8: [(1, 2), (1, 2), (1, 2), (1, 2), (1, 2), (1, 2), (2, 4)]
+CDFJLP Thm 5.1 bound vs s^E table: True
+Thm L4 bound vs s^V(n,n) table: {2: (1, 2), 3: (1, 5), 4: (1, 7)}

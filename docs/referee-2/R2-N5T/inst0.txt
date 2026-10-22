@@ -1,0 +1,3 @@
+dual prio [3, 7, 1, 2] owner [1, 0, 1, 1] rank [2, 3, 0, 1]
+tau {1: 1} Omega [(0, [], 0), (1, [], 0), (0, [], 1), (1, [], 1)] improvements [(1, 3)] phi 0
+tau {1: 3} Omega [(0, [], 0), (1, [], 0), (0, [], 1), (1, [], 1)] improvements [] phi 1

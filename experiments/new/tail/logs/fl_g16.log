@@ -1,0 +1,11 @@
+start (6, 10, 9, -16)
+step 1260 maxphase 6 steps 11 n 17 n5-iterations 10 check OK sha1 34e730fcfe40807cd5daf3bdd2e5558431903612
+step 3122 maxphase 6 steps 12 n 18 n5-iterations 11 check OK sha1 8b9617cb09a81edbb3dab895dbf8d9423bd32e13
+step 4028 maxphase 6 steps 13 n 18 n5-iterations 12 check OK sha1 4ca3620c1251c4423dd5b658aad49924465da2af
+step 5784 maxphase 7 steps 13 n 18 n5-iterations 12 check OK sha1 034e131e78d253ac1ccba25e116e57465531c840
+step 7745 maxphase 7 steps 13 n 18 n5-iterations 14 check OK sha1 d62150ae64fe74e1fd057c44265e8205c1c7c5a3
+step 10252 maxphase 7 steps 13 n 18 n5-iterations 15 check OK sha1 12b9e9660bb080f55988c45cad7e03123c7db9d1
+step 12817 maxphase 7 steps 13 n 18 n5-iterations 16 check OK sha1 9e165fe3a0ff4e94714ab017bf562e487ca80de9
+step 18298 maxphase 7 steps 13 n 18 n5-iterations 17 check OK sha1 4f10f2e5b86e346eee590336ae97026200df06ff
+step 22537 maxphase 8 steps 13 n 18 n5-iterations 17 check OK sha1 51fc5068d422b0987a639ca9b76ae8b9d0d9f37d
+best (8, 13, 17, -18)

@@ -1,0 +1,20 @@
+/tmp/claude-0/-home-user-parity-games-challange/43e400f1-0236-57e9-a7f9-34754965f4cf/scratchpad/inst/rel_g24.pg: n=24 m=76 status=ok steps=26 kinds=vvvvvvvvvvvvvvvvvvvvlllllv
+phases (in-phase steps, value-changing, flat): [(20, 20, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0), (1, 1, 0)]
+  F1_argmax_checks = 26
+  bruteforce_arenas = 26
+  bruteforce_strategies = 83180
+  fallback_steps = 0
+  flat_steps = 0
+  lambda_steps = 5
+  lemmaP_checks = 474
+  lemmaP_phases_checked = 6
+  max_flat_per_phase = 0
+  max_inphase_steps = 20
+  max_phases_per_run = 6
+  max_vc_minus_n_plus_1 = 0
+  max_vc_per_phase = 20
+  phases = 6
+  runs = 1
+  steps = 26
+  vc_steps = 21
+RESULT violations=0 secs=8.6

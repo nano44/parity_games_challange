@@ -1,0 +1,35 @@
+family,N,gen,game,n,m,d,solver,status,wall_s,solver_s,dominions,tangles,iterations,pruning,detail,cmd
+counter_core,2,tools/oink/build/counter_core 2,counter_core_2.pg,15,28,10,oink-uzlk,ok,0.0028,2.4e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_core,2,tools/oink/build/counter_core 2,counter_core_2.pg,15,28,10,py-zlk,ok,0.0256,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_core,2,tools/oink/build/counter_core 2,counter_core_2.pg,15,28,10,dtl-pin,ok,0.0030,5.3e-05,1,4,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,2,tools/oink/build/counter_core 2,counter_core_2.pg,15,28,10,idtl-pin,ok,0.0034,3.8e-05,1,4,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,4,tools/oink/build/counter_core 4,counter_core_4.pg,27,52,18,oink-uzlk,ok,0.0027,7.8e-05,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_core,4,tools/oink/build/counter_core 4,counter_core_4.pg,27,52,18,py-zlk,ok,0.0277,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_core,4,tools/oink/build/counter_core 4,counter_core_4.pg,27,52,18,dtl-pin,ok,0.0035,9.8e-05,1,9,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,4,tools/oink/build/counter_core 4,counter_core_4.pg,27,52,18,idtl-pin,ok,0.0030,9.1e-05,1,9,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,8,tools/oink/build/counter_core 8,counter_core_8.pg,51,100,34,oink-uzlk,ok,0.0132,0.010171,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_core,8,tools/oink/build/counter_core 8,counter_core_8.pg,51,100,34,py-zlk,ok,0.5980,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_core,8,tools/oink/build/counter_core 8,counter_core_8.pg,51,100,34,dtl-pin,ok,0.0034,0.000275,1,22,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,8,tools/oink/build/counter_core 8,counter_core_8.pg,51,100,34,idtl-pin,ok,0.0029,0.000271,1,22,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,16,tools/oink/build/counter_core 16,counter_core_16.pg,99,196,66,oink-uzlk,timeout,120.0497,,,,,,,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_core,16,tools/oink/build/counter_core 16,counter_core_16.pg,99,196,66,py-zlk,timeout,120.0767,,,,,,,python3 -I experiments/harness/zielonka.py
+counter_core,16,tools/oink/build/counter_core 16,counter_core_16.pg,99,196,66,dtl-pin,ok,0.0051,0.001367,1,37,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,16,tools/oink/build/counter_core 16,counter_core_16.pg,99,196,66,idtl-pin,ok,0.0045,0.001428,1,37,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,32,tools/oink/build/counter_core 32,counter_core_32.pg,195,388,130,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_core,32,tools/oink/build/counter_core 32,counter_core_32.pg,195,388,130,dtl-pin,ok,0.0113,0.008186,1,77,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,32,tools/oink/build/counter_core 32,counter_core_32.pg,195,388,130,idtl-pin,ok,0.0112,0.008181,1,77,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,64,tools/oink/build/counter_core 64,counter_core_64.pg,387,772,258,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_core,64,tools/oink/build/counter_core 64,counter_core_64.pg,387,772,258,dtl-pin,ok,0.0606,0.057296,1,148,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,64,tools/oink/build/counter_core 64,counter_core_64.pg,387,772,258,idtl-pin,ok,0.0617,0.057534,1,148,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,128,tools/oink/build/counter_core 128,counter_core_128.pg,771,1540,514,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_core,128,tools/oink/build/counter_core 128,counter_core_128.pg,771,1540,514,dtl-pin,ok,0.3957,0.391806,1,306,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,128,tools/oink/build/counter_core 128,counter_core_128.pg,771,1540,514,idtl-pin,ok,0.4660,0.461482,1,306,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,256,tools/oink/build/counter_core 256,counter_core_256.pg,1539,3076,1026,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_core,256,tools/oink/build/counter_core 256,counter_core_256.pg,1539,3076,1026,dtl-pin,ok,3.5373,3.531346,1,622,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,256,tools/oink/build/counter_core 256,counter_core_256.pg,1539,3076,1026,idtl-pin,ok,3.5004,3.495592,1,622,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,512,tools/oink/build/counter_core 512,counter_core_512.pg,3075,6148,2050,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_core,512,tools/oink/build/counter_core 512,counter_core_512.pg,3075,6148,2050,dtl-pin,ok,27.1252,27.11876,1,1214,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,512,tools/oink/build/counter_core 512,counter_core_512.pg,3075,6148,2050,idtl-pin,ok,27.0047,26.998552,1,1214,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,1024,tools/oink/build/counter_core 1024,counter_core_1024.pg,6147,12292,4098,oink-uzlk,skipped,,,,,,,timed out at a smaller size,tools/oink/build/oink --uzlk -w 1 {in} {out}
+counter_core,1024,tools/oink/build/counter_core 1024,counter_core_1024.pg,6147,12292,4098,dtl-pin,ok,223.5769,223.566575,1,2427,1,0,,tools/oink/build/oink --dtl --no-single --no-wcwc --no-loops {in} {out}
+counter_core,1024,tools/oink/build/counter_core 1024,counter_core_1024.pg,6147,12292,4098,idtl-pin,ok,222.2115,222.200035,1,2427,1,0,,tools/oink/build/oink --idtl --no-single --no-wcwc --no-loops {in} {out}

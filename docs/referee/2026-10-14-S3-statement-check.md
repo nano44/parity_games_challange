@@ -62,8 +62,9 @@ answer re-checked against all graphs by wsepref.py)
 | 1 | 1 | 1 | k = 1 SAT (δ(0,1) = ⊥; the only graph is the odd loop) |
 | 2 | 2 | 2 | weak k=1 UNSAT, k=2 SAT; strong k=1 UNSAT, k=2 SAT |
 | 3 | 5 | 5 | weak k=4 UNSAT, k=5 SAT; strong k=4 UNSAT, k=5 SAT |
-| 4 | DIAG4_PLACEHOLDER |
-Matches S3's W = S = 1, 2, 5 for n ≤ 3. ✓
+| 4 | 7 | 7 | strong k=6 UNSAT (683 s), strong k=7 SAT (re-verified over all V-graphs with ≤ 4 vertices; a strong separator is weak, so W(4) ≤ 7); weak k=6 UNSAT (1.67M clauses, 1428 s); hence W(4) = S(4) = 7 |
+Matches S3's W = S = 1, 2, 5, 7 for n ≤ 4. ✓ (n = 4 added 2026-10-15 after the background cells finished; the
+redundant weak k=7 cell was stopped.)
 
 ## (5) Other checks on §3 ("why n = 2 is degenerate")
 - "In an even 2-vertex graph no two consecutive letters are odd": right (two consecutive odd letters on vertices u, v
@@ -84,7 +85,7 @@ Matches S3's W = S = 1, 2, 5 for n ≤ 3. ✓
 3. T3-neg and T3-pos are mutually exclusive only under L4.
 4. H1 evidence: s^V(2,2h) = h+1 is verified only for h ≤ 4; the formula and "→ ∞" are for E; fix the d-list count.
 5. §3: replace the false "immediately followed by a larger even letter" sentence.
-6. Diagonal n = 4 from my tools: see the table line (pending at the time of this commit).
+6. Diagonal n = 4 from my tools: W(4) = S(4) = 7, confirmed (table line).
 
 ## Gaps
 - My SAT encoding is unproven; its answers agree with L-STRUCT's and L-COMP's on every cell all have run.

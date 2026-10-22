@@ -1,0 +1,184 @@
+--- /home/user/parity_games_challange/tools/oink/src/src/solvers/dtl.cpp	2026-10-17 09:13:33.030715970 +0000
++++ /tmp/claude-0/-home-user-parity-games-challange/ed877541-f327-55e7-9156-81a7b36a0873/scratchpad/oinkp/src/src/solvers/dtl.cpp	2026-10-17 09:41:48.058086556 +0000
+@@ -19,10 +19,19 @@
+ #include <cstring> // for memset
+ 
+ #include "dtl.hpp"
++#include <map>
++#include <vector>
++#include <cstdio>
++#include <cstdlib>
++static pg::bitset r2_Zf; static pg::bitset r2A_last;
+ 
+ #define CHECK_UNIQUE (1 or !NDEBUG) // detect duplicate dominions
+ 
+ namespace pg {
++// R2 probe counters (instrumentation only)
++static long r2_acc=0; static int r2_mode=0; // 1=region loop, 2=Dom
++static long c_m1=0,c_ntf_viol=0,c_fm_viol=0,c_P=0,c_P0=0,c_yz_viol=0,c_dom_acc=0,c_dom_nonstr=0,c_dom_str=0,c_acyc_viol=0,c_tang=0,c_tpr_bad=0,c_notop=0,c_r1fail=0;
++static std::vector<int> r2_lastacc; static long r2_search=0; static std::vector<long> r2_tsearch; static long c_dup=0,c_dup_same=0; // tangle ids accepted
+ 
+ DTLSolver::DTLSolver(Oink& oink, Game& game) : Solver(oink, game)
+ {
+@@ -66,8 +75,10 @@
+ DTLSolver::attractVertices(const int pl, const int v, bitset &R, bitset &Z, bitset &G, const int max_prio)
+ {
+     // attract vertices with an edge to <v>
+-    for (auto curedge = ins(v); *curedge != -1; curedge++) {
+-        int from = *curedge;
++    static int r2rev = getenv("R2_REV") ? 1 : 0;
++    int r2n=0; { auto ce=ins(v); while (ce[r2n]!=-1) r2n++; }
++    for (int r2i=0; r2i<r2n; r2i++) {
++        int from = r2rev ? ins(v)[r2n-1-r2i] : ins(v)[r2i];
+         if (Z[from]) {
+             // already in Z, maybe set strategy (for vertices in the original target set)
+             if (owner(from) == pl and str[from] == -1) str[from] = v;
+@@ -181,6 +192,7 @@
+         }
+     }
+ 
++    r2_acc++; r2_lastacc.push_back(t);
+     return true;
+ }
+ 
+@@ -404,7 +416,7 @@
+             }
+             if (already_exists) break;
+         }
+-        if (already_exists) {
++        if (already_exists) { { int idx=0; for (auto &_tv : tv) { bool eq=true; for (int i=0;;i++){ if(i==tsize){ eq = (_tv[2*i]==-1); break;} if(_tv[2*i]!=tangle[i]){eq=false;break;} } if(eq) break; idx++; } c_dup++; if (r2_tsearch[idx]==r2_search) { c_dup_same++; fprintf(stderr,"R2DUPSAME tangle %d search %ld\n", idx, r2_search);} }
+             if (trace >= 1) {
+                 logger << "\033[1;38;5;198mduplicate tangle\033[m";
+ #ifndef NDEBUG
+@@ -458,7 +470,8 @@
+         tv.push_back(_vv);
+ 
+         // and set p to pr
+-        tpr.push_back(pr);
++        { c_tang++; int mx=-1; bool hastop=false; for (int v: tangle){ if (priority(v)>mx) mx=priority(v); if (v==startvertex) hastop=true;} if (mx!=pr) c_tpr_bad++; if(!hastop) c_notop++; }
++        tpr.push_back(pr); r2_tsearch.push_back(r2_search);
+ 
+         tangles++;
+         new_tangles = true;
+@@ -671,6 +684,7 @@
+      * Now we prune until no more vertices are removed from V, or V is empty.
+      */
+ 
++    std::vector<bitset> r2Z; std::vector<long> r2A;
+     while (true) {
+         curdist++;
+         prevV = V;
+@@ -687,7 +701,7 @@
+ 
+         // First compute the current <player> region Z
+ 
+-        CurR = R;
++        CurR = R; long acc0=r2_acc;
+         for (int top=nodecount()-1; top>=0; top--) {
+             if (V[top] and !Z[top]) {
+                 CurZ[top] = true; // add to <Z>
+@@ -705,6 +719,7 @@
+             }
+         }
+ 
++        r2Z.push_back(Z); r2A.push_back(r2_acc-acc0);
+         /**
+          * Now find all Candidates: v \in V that do not yet have a good path to Z
+          */
+@@ -713,7 +728,7 @@
+         for (int v=nodecount()-1; v>=0; v--) {
+             if (V[v] and !attracts(player, v, Z, R)) Candidates[n_candidates++] = v;
+         }
+-        if (n_candidates == 0) return 1; // no more vertices are removed
++        if (n_candidates == 0) { if (getenv("R2_DUMP")) { fprintf(stderr,"R2DUMP stable716 V:"); for(int v=0;v<nodecount();v++) if(V[v]) fprintf(stderr," %d",v); fprintf(stderr," Reg:"); for(int v=0;v<nodecount();v++) if(Z[v]) fprintf(stderr," %d",v); fprintf(stderr,"\n"); } return 1; }
+ 
+         // Now attract from R to Z, "slowly"
+         // Note: we have to be carefully increasing t. Why?
+@@ -745,6 +760,7 @@
+          * Any remaining vertices in Candidates are now distractions...
+          */
+ 
++        r2A_last = Z;
+         bool changed_V = false;
+         for (int x=0; x<n_candidates; x++) {
+             const int u = Candidates[x];
+@@ -764,10 +780,14 @@
+ 
+         if (!changed_V) {
+             // No vertices were removed from V
++            if (getenv("R2_DUMP")) { fprintf(stderr,"R2DUMP stable767 V:"); for(int v=0;v<nodecount();v++) if(V[v]) fprintf(stderr," %d(pr%d)",v,priority(v)); fprintf(stderr," Reg:"); for(int v=0;v<nodecount();v++) if(r2Z.back()[v]) fprintf(stderr," %d",v); fprintf(stderr," A:"); for(int v=0;v<nodecount();v++) if(r2A_last[v]) fprintf(stderr," %d(pr%d)",v,priority(v)); fprintf(stderr,"\n"); }
+             return 1;
+         } else if (!V.any()) {
+             // All vertices were removed from V
+             V.swap(prevV);
++            c_m1++; size_t f=r2Z.size()-1; if (r2A[f]!=0) c_ntf_viol++;
++            for (size_t r=0;r<f;r++){ bitset d=r2Z[f]; d-=r2Z[r]; if (d.any()) { c_fm_viol++; break; } }
++            r2_Zf = r2Z[f];
+             return -1;
+         }
+     }
+@@ -959,14 +979,40 @@
+ #endif
+ 
+             // Add Dom(V,R) to X
++            bitset r2R0(R); bitset r2X0(X); bitset r2cur(nodecount()); c_P++; if (depth==0) c_P0++;
+             for (int top=nodecount()-1; top>=0; top--) {
+                 if (V[top] and !X[top]) {
+                     X[top] = true; // add to <X>
+                     str[top] = -1;
+                     Q.push(top);
++                    r2cur.reset(); r2cur[top]=true;
+                     while (Q.nonempty()) {
+                         const int v = Q.pop();
+                         R[v] = false;
++                        bitset r2Xb(X); r2_lastacc.clear();
++                        attractVertices(player, v, R, X, R, priority(top));
++                        bitset r2Xm(X);
++                        attractTangles(player, v, R, X, R, priority(top));
++                        // new from vertex rules
++                        { bitset nv(r2Xm); nv-=r2Xb; r2cur|=nv; }
++                        for (int tt : r2_lastacc) {
++                            c_dom_acc++;
++                            bool straddle=false; std::vector<int> nw; bitset nb(nodecount());
++                            int *ptr=tv[tt]; for(;;){int u=*ptr++; if(u==-1)break; ptr++; if (r2Xm[u] && !r2cur[u]) straddle=true; if(!r2Xm[u]){nw.push_back(u); nb[u]=true;} }
++                            if (straddle) c_dom_str++; else c_dom_nonstr++;
++                            // ACYC check on new part: H_t restricted to nb
++                            std::map<int,int> st; ptr=tv[tt]; for(;;){int u=*ptr++; if(u==-1)break; st[u]=*ptr++;}
++                            // Kahn: remove vertices with no succ in nb
++                            bitset rem(nb); bool changed=true;
++                            while(changed){changed=false; for(int u: nw){ if(!rem[u]) continue; bool hs=false;
++                                if (owner(u)==player){ int s2=st[u]; if (s2>=0 && rem[s2]) hs=true; }
++                                else { for (auto ce=outs(u); *ce!=-1; ce++) if (rem[*ce]) { hs=true; break; } }
++                                if(!hs){rem[u]=false; changed=true;} } }
++                            if (rem.any()) c_acyc_viol++;
++                            r2cur|=nb;
++                        }
++                        r2_lastacc.clear();
++                        continue;
+ #ifndef NDEBUG
+                         if (trace >= 3) Zvec.push(v);
+ #endif
+@@ -989,6 +1035,7 @@
+ #endif
+                 }
+             }
++            { bitset Y0(r2R0); Y0-=R; if (Y0 != r2_Zf) c_yz_viol++; }
+         }
+     }
+ }
+@@ -1011,6 +1058,7 @@
+     }
+ #endif
+ 
++    r2_search++;
+     bitset CurG(G);
+     search_rec(CurG, player, 0);
+     W.reset();
+@@ -1138,6 +1186,7 @@
+         }
+     }
+ 
++    fprintf(stderr,"R2PROBE m1=%ld ntf_viol=%ld fm_viol=%ld P=%ld P0=%ld yz_viol=%ld dom_acc=%ld dom_nonstr=%ld dom_str=%ld acyc_viol=%ld tangles=%ld tpr_bad=%ld notop=%ld dup=%ld dup_same=%ld\n",c_m1,c_ntf_viol,c_fm_viol,c_P,c_P0,c_yz_viol,c_dom_acc,c_dom_nonstr,c_dom_str,c_acyc_viol,c_tang,c_tpr_bad,c_notop,c_dup,c_dup_same);
+     logger << "found " << dominions << " dominions and "<< tangles << " tangles.\n";
+     logger << "solved in " << iterations << " iterations and " << steps << " pruning steps.\n";
+     logger << "odd iterations: " << odd_iterations << std::endl;

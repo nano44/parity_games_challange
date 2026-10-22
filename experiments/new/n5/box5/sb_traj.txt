@@ -1,0 +1,8 @@
+sbe1.pg: switch-best iterations 20; N5 iterations 20; N5's σ leaves the switch-best trajectory at iteration None
+flags (S = step equals switch-best, t = τ is Odd's arena-optimal reply): St St St St St St St St St S. S. St St St St St St St St St
+sbe2.pg: switch-best iterations 58; N5 iterations 32; N5's σ leaves the switch-best trajectory at iteration 14
+flags (S = step equals switch-best, t = τ is Odd's arena-optimal reply): St St St St St St St St St S. S. S. S. -. -. St St St St S. -. -. -. St St St St St St St St St
+sbe3.pg: switch-best iterations 134; N5 iterations 41; N5's σ leaves the switch-best trajectory at iteration 14
+flags (S = step equals switch-best, t = τ is Odd's arena-optimal reply): St St St St St St St St St S. S. S. S. -. -. S. S. -. St St St St S. -. -. -. St St St St St St St St St St St St St St St
+sbe4.pg: switch-best iterations 286; N5 iterations 47; N5's σ leaves the switch-best trajectory at iteration 14
+flags (S = step equals switch-best, t = τ is Odd's arena-optimal reply): St St St St St St St St St S. S. S. S. -. -. -. S. -. St St St St S. -. -. -. St St St St St St St St St St St St St St St St St St St St St

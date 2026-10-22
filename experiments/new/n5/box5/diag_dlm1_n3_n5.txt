@@ -1,0 +1,5 @@
+it 1: |Is|=3 |It|=3 Even: tbar outside A_sigma at [2, 4]; Odd: sbar outside A_tau at [3, 5]
+it 2: |Is|=2 |It|=1 Even: tbar outside A_sigma at []; Odd: sbar outside A_tau at [3]
+it 3: |Is|=1 |It|=1 Even: tbar outside A_sigma at [0]; Odd: sbar outside A_tau at []
+it 4: |Is|=1 |It|=1 Even: tbar outside A_sigma at []; Odd: sbar outside A_tau at []
+TOTAL n5 iterations=4 fallback=0 (= n5.run); condition failures: Even 3, Odd 3

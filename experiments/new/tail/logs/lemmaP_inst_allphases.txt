@@ -1,0 +1,7 @@
+instance rel_g12.pg n 12
+instance rel_g16.pg n 16
+instance fl_n16.pg n 16
+instance ph_n16.pg n 16
+instance sb1_counter_n10.pg n 10
+instance sb1_counter_n16.pg n 16
+games=6 runs=6 nmax=0 Lemma-P checks=3239 violations=0; longest phase 14 steps at n=16; runs stopped by a no-change step 0

@@ -1,0 +1,30 @@
+# fallv_viol_n28.pg (sha1 21b235f4), pinned order
+EXACT_ok: 2156
+W_ok: 13216
+allpairs: newsteal NONRISE: 27
+allpairs: newsteal rise: 1
+allpairs: no-steal equal: 1
+allpairs: no-steal rise: 38
+consec: newsteal NONRISE: 17
+consec: newsteal rise: 1
+consec: no-steal equal: 1
+consec: no-steal rise: 20
+step_deficit(T unexcluded): 506
+steps: 2156
+steps_with_E_nonempty: 904
+surv_ok: 342
+# R2_REV=1
+EXACT_ok: 2156
+W_ok: 13216
+allpairs: newsteal NONRISE: 27
+allpairs: newsteal rise: 1
+allpairs: no-steal equal: 1
+allpairs: no-steal rise: 38
+consec: newsteal NONRISE: 17
+consec: newsteal rise: 1
+consec: no-steal equal: 1
+consec: no-steal rise: 20
+step_deficit(T unexcluded): 506
+steps: 2156
+steps_with_E_nonempty: 904
+surv_ok: 342

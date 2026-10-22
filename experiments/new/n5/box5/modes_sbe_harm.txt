@@ -1,0 +1,10 @@
+switchbestexp N=1 n5.py iterations=20 | n5b spec 20 | n5b orig 20
+switchbestexp N=2 n5.py iterations=32 | n5b spec 32 | n5b orig 32
+switchbestexp N=3 n5.py iterations=41 | n5b spec 41 | n5b orig 41
+switchbestexp N=4 n5.py iterations=47 | n5b spec 47 | n5b orig 47
+switchbestexp N=5 n5.py iterations=55 | n5b spec 55 | n5b orig 55
+switchbestexp N=6 n5.py iterations=62 | n5b spec 62 | n5b orig 62
+harm_n12_seed412.pg n5.py iterations=9 | n5b spec 9 | n5b orig 9
+harm_n24_seed424.pg n5.py iterations=26 | n5b spec 26 | n5b orig 25
+harm_n48_seed448.pg n5.py iterations=27 | n5b spec 27 | n5b orig 9
+harm_n96_seed496.pg n5.py iterations=50 | n5b spec 50 | n5b orig 50

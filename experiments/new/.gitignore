@@ -1,0 +1,11 @@
+# compiled binaries (build lines in README.md)
+anneal_c
+renum
+renum2
+vjcert
+vjfast
+anneal_c_check
+n2_si
+n3grid
+anneal_dbg
+lock/

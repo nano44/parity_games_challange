@@ -1,0 +1,97 @@
+--- /tmp/claude-0/-home-user-parity-games-challange/ed877541-f327-55e7-9156-81a7b36a0873/scratchpad/oinkp/src/src/solvers/dtl.cpp.p3	2026-10-17 12:04:33.648870823 +0000
++++ /tmp/claude-0/-home-user-parity-games-challange/ed877541-f327-55e7-9156-81a7b36a0873/scratchpad/oinkp/src/src/solvers/dtl.cpp	2026-10-17 12:06:40.325550524 +0000
+@@ -31,7 +31,10 @@
+ // R2 probe counters (instrumentation only)
+ static long r2_acc=0; static int r2_mode=0; // 1=region loop, 2=Dom
+ static long c_m1=0,c_ntf_viol=0,c_fm_viol=0,c_P=0,c_P0=0,c_yz_viol=0,c_dom_acc=0,c_dom_nonstr=0,c_dom_str=0,c_acyc_viol=0,c_tang=0,c_tpr_bad=0,c_notop=0,c_r1fail=0;
+-static std::vector<int> r2_lastacc; static std::vector<int> r2reg; static long c_orph_P=0,c_orph_P0=0; static long c_k5_st=0,c_k5_nonempty=0,c_k5_incl_viol=0,c_k5_open=0,c_k5_cons_viol=0,c_k5_str=0; static long r2_search=0; static std::vector<long> r2_tsearch; static long c_dup=0,c_dup_same=0; // tangle ids accepted
++static std::vector<int> r2_lastacc;
++static std::vector<std::vector<unsigned long long>> r2logs; static std::vector<int> r2logpl; static std::vector<int> r2logdom;
++static inline unsigned long long r2h(pg::bitset &b, unsigned long long tag){ unsigned long long h=1469598103934665603ULL^tag; for (auto v=b.find_first(); v!=pg::bitset::npos; v=b.find_next(v)) { h^=(unsigned long long)v+0x9e37; h*=1099511628211ULL; } return (h & 0x0fffffffffffffffULL) | (tag<<60); }
++static inline void r2L(unsigned long long x){ if(!r2logs.empty()) r2logs.back().push_back(x); } static std::vector<int> r2reg; static long c_orph_P=0,c_orph_P0=0; static long c_k5_st=0,c_k5_nonempty=0,c_k5_incl_viol=0,c_k5_open=0,c_k5_cons_viol=0,c_k5_str=0; static long r2_search=0; static std::vector<long> r2_tsearch; static long c_dup=0,c_dup_same=0; // tangle ids accepted
+ 
+ DTLSolver::DTLSolver(Oink& oink, Game& game) : Solver(oink, game)
+ {
+@@ -472,6 +475,7 @@
+         // and set p to pr
+         { c_tang++; int mx=-1; bool hastop=false; for (int v: tangle){ if (priority(v)>mx) mx=priority(v); if (v==startvertex) hastop=true;} if (mx!=pr) c_tpr_bad++; if(!hastop) c_notop++; }
+         tpr.push_back(pr); r2_tsearch.push_back(r2_search);
++        { unsigned long long h=1469598103934665603ULL; for (int i=0;i<c;i++){ h^=(unsigned long long)(_vv[i]+7); h*=1099511628211ULL;} r2L((h&0x0fffffffffffffffULL)|(5ULL<<60)); }
+ 
+         tangles++;
+         new_tangles = true;
+@@ -715,6 +719,7 @@
+                     attractTangles(player, v, CurR, CurZ, CurR, pr);
+                 }
+                 for (auto w = CurZ.find_first(); w != bitset::npos; w = CurZ.find_next(w)) r2reg[w]=top;
++                r2L(r2h(CurZ, 1) ^ ((unsigned long long)top<<20));
+                 r2low = top;
+                 Z |= CurZ;
+                 CurZ.reset();
+@@ -751,6 +756,7 @@
+                 r2_lastacc.clear();
+             }
+             if (r2low>=0 && t == priority(r2low)-1) r2Alt = Z;
++            r2L(r2h(Z, 2) ^ ((unsigned long long)t<<20));
+ 
+             // Now check if any candidate is now attracted (via the good path)
+             for (int x=0; x<n_candidates; x++) {
+@@ -932,6 +938,7 @@
+                     }
+                 }
+             }
++            r2L(r2h(X, 4));
+ 
+             continue;
+         }
+@@ -965,6 +972,7 @@
+                 attractVertices(player, u, R, Z, R, t);
+                 attractTangles(player, u, R, Z, R, t);
+             }
++            r2L(r2h(Z, 3) ^ ((unsigned long long)t<<20));
+ 
+ #ifndef NDEBUG
+             if (trace >= 2) {
+@@ -1060,6 +1068,7 @@
+                 }
+             }
+             { bitset Y0(r2R0); Y0-=R; if (Y0 != r2_Zf) c_yz_viol++; }
++            r2L(r2h(X, 4));
+             for (size_t tt=0; tt<tv.size(); tt++) { if (tpr[tt]<0 || (tpr[tt]&1)!=player) continue; bool inR=true; int *ptr=tv[tt]; for(;;){int w=*ptr++; if(w==-1)break; ptr++; if(!R[w]) {inR=false;break;}} if(!inR) continue;
+                 bool before=false, after=false; ptr=tout[tt]; int w; while((w=*ptr++)!=-1){ if(r2R0[w]) before=true; if(R[w]) after=true; }
+                 if (before && !after) { c_orph_P++; if (depth==0) c_orph_P0++; } }
+@@ -1085,10 +1094,11 @@
+     }
+ #endif
+ 
+-    r2_search++;
++    r2_search++; r2logs.push_back({}); r2logpl.push_back(player);
+     bitset CurG(G);
+     search_rec(CurG, player, 0);
+     W.reset();
++    r2logdom.push_back(dominions != D ? 1 : 0);
+ 
+     /**
+      * Extend any dominions that were found.
+@@ -1213,6 +1223,21 @@
+         }
+     }
+ 
++    { long pairs=0,nodiff=0,newbefore=0,newbefore_pairs=0;
++      for (size_t i=0;i+1<r2logs.size();i++) {
++        if (r2logpl[i]!=r2logpl[i+1] || r2logdom[i]) continue;
++        pairs++;
++        std::vector<unsigned long long> a,b; std::vector<size_t> bpos;
++        for (auto x: r2logs[i]) if ((x>>60)!=5) a.push_back(x);
++        for (size_t k=0;k<r2logs[i+1].size();k++) if ((r2logs[i+1][k]>>60)!=5) { b.push_back(r2logs[i+1][k]); bpos.push_back(k);} 
++        size_t j=0; while (j<a.size() && j<b.size() && a[j]==b[j]) j++;
++        if (j==a.size() && j==b.size()) { nodiff++; continue; }
++        { int ta = j<a.size()? (int)(a[j]>>60) : 0, tb = j<b.size()? (int)(b[j]>>60) : 0; fprintf(stderr,"R2EST %d %d\n", ta, tb); }
++        size_t lim = (j<bpos.size())? bpos[j] : r2logs[i+1].size();
++        long nb=0; for (size_t k=0;k<lim;k++) if ((r2logs[i+1][k]>>60)==5) nb++;
++        if (nb) { newbefore++; newbefore_pairs++; if (getenv("R2_FDL")) fprintf(stderr,"R2FDL search %zu->%zu: %ld new tangles in s+1 before first set difference (pos %zu)\n", i, i+1, nb, j); }
++      }
++      fprintf(stderr,"R2FDLSUM pairs=%ld nodiff=%ld newbefore=%ld\n",pairs,nodiff,newbefore); }
+     fprintf(stderr,"R2PROBE m1=%ld ntf_viol=%ld fm_viol=%ld P=%ld P0=%ld yz_viol=%ld dom_acc=%ld dom_nonstr=%ld dom_str=%ld acyc_viol=%ld tangles=%ld tpr_bad=%ld notop=%ld dup=%ld dup_same=%ld k5st=%ld k5nonempty=%ld k5str=%ld k5incl=%ld k5open=%ld k5cons=%ld orphP=%ld orphP0=%ld\n",c_m1,c_ntf_viol,c_fm_viol,c_P,c_P0,c_yz_viol,c_dom_acc,c_dom_nonstr,c_dom_str,c_acyc_viol,c_tang,c_tpr_bad,c_notop,c_dup,c_dup_same,c_k5_st,c_k5_nonempty,c_k5_str,c_k5_incl_viol,c_k5_open,c_k5_cons_viol,c_orph_P,c_orph_P0);
+     logger << "found " << dominions << " dominions and "<< tangles << " tangles.\n";
+     logger << "solved in " << iterations << " iterations and " << steps << " pruning steps.\n";

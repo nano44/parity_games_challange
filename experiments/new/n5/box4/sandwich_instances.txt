@@ -1,0 +1,10 @@
+lock_n12_seed212.pg: Even-fallback steps checked 9; V not monotone at 0 vertex-steps; Xi above V after the step at 0 vertex-steps
+lock_n24_seed224.pg: Even-fallback steps checked 9; V not monotone at 0 vertex-steps; Xi above V after the step at 0 vertex-steps
+lock_n48_seed248.pg: Even-fallback steps checked 3; V not monotone at 0 vertex-steps; Xi above V after the step at 0 vertex-steps
+lock_n96_seed296.pg: Even-fallback steps checked 5; V not monotone at 0 vertex-steps; Xi above V after the step at 0 vertex-steps
+best_fb_n24_seed124.pg: Even-fallback steps checked 6; V not monotone at 0 vertex-steps; Xi above V after the step at 0 vertex-steps
+best_fb_n32_seed132.pg: Even-fallback steps checked 9; V not monotone at 0 vertex-steps; Xi above V after the step at 0 vertex-steps
+best_n12_seed12.pg: Even-fallback steps checked 2; V not monotone at 0 vertex-steps; Xi above V after the step at 0 vertex-steps
+best_n16_seed16.pg: Even-fallback steps checked 4; V not monotone at 0 vertex-steps; Xi above V after the step at 0 vertex-steps
+best_n24_seed24.pg: Even-fallback steps checked 3; V not monotone at 0 vertex-steps; Xi above V after the step at 0 vertex-steps
+best_n8_seed8.pg: Even-fallback steps checked 2; V not monotone at 0 vertex-steps; Xi above V after the step at 0 vertex-steps

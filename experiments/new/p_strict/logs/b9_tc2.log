@@ -1,0 +1,13 @@
+start (49, 72, -38)
+step 121 tail 50 iterations 73 n 39 check OK sha1 0d168b8fff8d2609b698fe18edf829a5352357e5
+step 514 tail 51 iterations 74 n 40 check OK sha1 3007a2efc7e6b477ef8f123e5c7af65c01a3f2bf
+step 751 tail 52 iterations 63 n 40 check OK sha1 6bb1ee86c3293a81400fef7e1800d9c0b501b19c
+step 790 tail 53 iterations 62 n 40 check OK sha1 a58dbebd34cd7ecb22c9fb3a8415c72a4a77486f
+step 876 tail 54 iterations 63 n 40 check OK sha1 b0bc6be9f52ef214a9d0e1beb22eccf9de46b13c
+step 938 tail 55 iterations 64 n 40 check OK sha1 b753eabe9b530821bf2b3ef7a446e94f94d7c00a
+step 1515 tail 55 iterations 65 n 40 check OK sha1 40d6abdda15f195112ae3cd09a06019433f95188
+step 2682 tail 56 iterations 66 n 40 check OK sha1 4045e8dc2a1961224dec42eba7769b10d12ccc67
+step 3092 tail 57 iterations 67 n 40 check OK sha1 dc191f89fb76967d1eb6f25f20d1422923f9c987
+step 3763 tail 58 iterations 68 n 41 check OK sha1 226c37d755db8ff0982c177e2fad9e15588f219d
+step 5419 tail 58 iterations 69 n 42 check OK sha1 4d61c9797811306f0ae5a04726414488a71e0d6f
+best (58, 69, -42)

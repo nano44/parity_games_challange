@@ -1,0 +1,4 @@
+start (17, 23, -17)
+step 12453 inphase-seg-moves 17 iterations 24 n 18 check OK sha1 26d9a206992a50f5cf61080a3f32a533e1215418
+step 12833 inphase-seg-moves 17 iterations 25 n 18 check OK sha1 51db284db9d538b42ebda1bbef2150be5c604caa
+best (17, 25, -18)

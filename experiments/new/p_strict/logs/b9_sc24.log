@@ -1,0 +1,7 @@
+start (39, -24)
+step 445 iterations 40 n 24 check OK sha1 2385cb7e493065b3b4f5decef1ae2b11da46cb42
+step 847 iterations 41 n 24 check OK sha1 404f9d7e9725227b97bcf03804cd2c80e79f4ad5
+step 955 iterations 42 n 24 check OK sha1 2c5819bf81abe27ad8f9cddaa9ff88dc84a979d1
+step 1965 iterations 43 n 24 check OK sha1 5ca8400fdc6a5ca09545210449c0fb1f66ca0729
+step 2882 iterations 44 n 24 check OK sha1 c503c31be3b4138558a2aae10bbf287cca0c5c86
+best (44, -24)

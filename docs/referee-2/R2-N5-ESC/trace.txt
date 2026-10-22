@@ -1,0 +1,43 @@
+# fam1 n=3
+--- iteration 1: Iσ=[('a1', 'd2'), ('a2', 'd3'), ('a3', 'd4')] Iτ=[('d1', 'a2'), ('d2', 'a3'), ('d3', 'a4')]  #optimal σ'=1 #optimal τ'=1
+   Even switch (a1,d2): τ̄(a1) ∈ ['d2'] -> w = τ̄(v) possible; (v,w) ∈ Jσ(τ) [Ξτ(w) ⊵ Ξτ(σ(v))]; in Iσ: True
+   Even switch (a2,d3): τ̄(a2) ∈ ['a1'] -> w ≠ τ̄(v) for EVERY optimal τ̄; (v,w) ∈ Jσ(τ) [Ξτ(w) ⊵ Ξτ(σ(v))]; in Iσ: True
+   Even switch (a3,d4): τ̄(a3) ∈ ['a1'] -> w ≠ τ̄(v) for EVERY optimal τ̄; (v,w) ∈ Jσ(τ) [Ξτ(w) ⊵ Ξτ(σ(v))]; in Iσ: True
+   Odd switch (d1,a2): σ̄(d1) ∈ ['a2']; (v,w) ∈ Jτ(σ)
+   Odd switch (d2,a3): σ̄(d2) ∈ ['d1']; (v,w) ∈ Jτ(σ)
+   Odd switch (d3,a4): σ̄(d3) ∈ ['d1']; (v,w) ∈ Jτ(σ)
+--- iteration 2: Iσ=[('a2', 'a1'), ('a2', 'a3')] Iτ=[('d2', 'd3')]  #optimal σ'=1 #optimal τ'=1
+   Even switch (a2,a1): τ̄(a2) ∈ ['a1'] -> w = τ̄(v) possible; (v,w) ∈ Jσ(τ) [Ξτ(w) ⊵ Ξτ(σ(v))]; in Iσ: True
+   Odd switch (d2,d3): σ̄(d2) ∈ ['d1']; (v,w) ∈ Jτ(σ)
+--- iteration 3: Iσ=[('a2', 'a3')] Iτ=[('d1', 'd2')]  #optimal σ'=1 #optimal τ'=1
+   Even switch (a2,a3): τ̄(a2) ∈ ['a3'] -> w = τ̄(v) possible; (v,w) ∈ Jσ(τ) [Ξτ(w) ⊵ Ξτ(σ(v))]; in Iσ: True
+--- iteration 4: Iσ=[('a1', 'a2')] Iτ=[('d1', 'd2')]  #optimal σ'=1 #optimal τ'=1
+   Even switch (a1,a2): τ̄(a1) ∈ ['a2'] -> w = τ̄(v) possible; (v,w) ∈ Jσ(τ) [Ξτ(w) ⊵ Ξτ(σ(v))]; in Iσ: True
+   Odd switch (d1,d2): σ̄(d1) ∈ ['d2']; (v,w) ∈ Jτ(σ)
+STOP after 4 iterations; sigma={'a1': 'a2', 'a2': 'a3', 'a3': 'd4', 'a4': 'a4'} tau={'d1': 'd2', 'd2': 'd3', 'd3': 'a4', 'd4': 'a4'}
+# fam2 n=1
+--- iteration 1: Iσ=[('m1', 'f1')] Iτ=[('g1', 'k1')]  #optimal σ'=1 #optimal τ'=1
+   Even switch (m1,f1): τ̄(m1) ∈ ['f1'] -> w = τ̄(v) possible; (v,w) ∈ Jσ(τ) [Ξτ(w) ⊵ Ξτ(σ(v))]; in Iσ: True
+   Odd switch (g1,k1): σ̄(g1) ∈ ['k1']; (v,w) ∈ Jτ(σ)
+--- iteration 2: Iσ=[('c1', 'm1')] Iτ=[('h1', 'g1')]  #optimal σ'=1 #optimal τ'=1
+   Even switch (c1,m1): τ̄(c1) ∈ ['m1'] -> w = τ̄(v) possible; (v,w) ∈ Jσ(τ) [Ξτ(w) ⊵ Ξτ(σ(v))]; in Iσ: True
+   Odd switch (h1,g1): σ̄(h1) ∈ ['g1']; (v,w) ∈ Jτ(σ)
+STOP after 2 iterations; sigma={'a1': 'c1', 'c1': 'm1', 'm1': 'f1', 'k1': 'a2', 'l1': 'd2', 'a2': 'a2'} tau={'d1': 'h1', 'e1': 'a2', 'f1': 'd2', 'g1': 'k1', 'h1': 'g1', 'd2': 'a2'}
+# fam2 n=2
+--- iteration 1: Iσ=[('m1', 'f1'), ('m2', 'f2')] Iτ=[('g1', 'k1'), ('g2', 'k2')]  #optimal σ'=1 #optimal τ'=1
+   Even switch (m1,f1): τ̄(m1) ∈ ['f1'] -> w = τ̄(v) possible; (v,w) ∈ Jσ(τ) [Ξτ(w) ⊵ Ξτ(σ(v))]; in Iσ: True
+   Even switch (m2,f2): τ̄(m2) ∈ ['a1'] -> w ≠ τ̄(v) for EVERY optimal τ̄; (v,w) ∉ Jσ(τ) [Ξτ(w) ◁ Ξτ(σ(v))]; in Iσ: True
+   Odd switch (g1,k1): σ̄(g1) ∈ ['k1']; (v,w) ∈ Jτ(σ)
+   Odd switch (g2,k2): σ̄(g2) ∈ ['d1']; (v,w) ∉ Jτ(σ)
+--- iteration 2: Iσ=[('c1', 'm1'), ('c2', 'm2')] Iτ=[('h1', 'g1'), ('h2', 'g2')]  #optimal σ'=1 #optimal τ'=1
+   Even switch (c1,m1): τ̄(c1) ∈ ['m1'] -> w = τ̄(v) possible; (v,w) ∈ Jσ(τ) [Ξτ(w) ⊵ Ξτ(σ(v))]; in Iσ: True
+   Even switch (c2,m2): τ̄(c2) ∈ ['a1'] -> w ≠ τ̄(v) for EVERY optimal τ̄; (v,w) ∈ Jσ(τ) [Ξτ(w) ⊵ Ξτ(σ(v))]; in Iσ: True
+   Odd switch (h1,g1): σ̄(h1) ∈ ['g1']; (v,w) ∈ Jτ(σ)
+   Odd switch (h2,g2): σ̄(h2) ∈ ['d1']; (v,w) ∈ Jτ(σ)
+--- iteration 3: Iσ=[('c1', 'e1')] Iτ=[('h1', 'l1')]  #optimal σ'=1 #optimal τ'=1
+   Even switch (c1,e1): τ̄(c1) ∈ ['e1'] -> w = τ̄(v) possible; (v,w) ∈ Jσ(τ) [Ξτ(w) ⊵ Ξτ(σ(v))]; in Iσ: True
+   Odd switch (h1,l1): σ̄(h1) ∈ ['l1']; (v,w) ∈ Jτ(σ)
+--- iteration 4: Iσ=[('m1', 'c1')] Iτ=[('g1', 'h1')]  #optimal σ'=1 #optimal τ'=1
+   Even switch (m1,c1): τ̄(m1) ∈ ['c1'] -> w = τ̄(v) possible; (v,w) ∈ Jσ(τ) [Ξτ(w) ⊵ Ξτ(σ(v))]; in Iσ: True
+   Odd switch (g1,h1): σ̄(g1) ∈ ['h1']; (v,w) ∈ Jτ(σ)
+STOP after 4 iterations; sigma={'a1': 'c1', 'c1': 'e1', 'm1': 'c1', 'k1': 'a2', 'l1': 'd2', 'a2': 'c2', 'c2': 'm2', 'm2': 'f2', 'k2': 'a3', 'l2': 'd3', 'a3': 'a3'} tau={'d1': 'h1', 'e1': 'a2', 'f1': 'd2', 'g1': 'h1', 'h1': 'l1', 'd2': 'h2', 'e2': 'a3', 'f2': 'd3', 'g2': 'k2', 'h2': 'g2', 'd3': 'a3'}

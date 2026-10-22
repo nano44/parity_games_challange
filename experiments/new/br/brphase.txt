@@ -1,0 +1,8 @@
+sbe2_s21.pg n=60 | σ̄ changes 15, with any λ(Ξσ) change 1, with λ change at a switched Odd vertex 0 | τ̄ changes 0, with any λ(Ξτ) change 0, at a switched Even vertex 0
+tc2.pg n=42 | σ̄ changes 6, with any λ(Ξσ) change 3, with λ change at a switched Odd vertex 1 | τ̄ changes 38, with any λ(Ξτ) change 15, at a switched Even vertex 8
+sg5.pg n=38 | σ̄ changes 5, with any λ(Ξσ) change 1, with λ change at a switched Odd vertex 1 | τ̄ changes 38, with any λ(Ξτ) change 13, at a switched Even vertex 9
+ch_n64_seed564.pg n=64 | σ̄ changes 29, with any λ(Ξσ) change 17, with λ change at a switched Odd vertex 11 | τ̄ changes 21, with any λ(Ξτ) change 7, at a switched Even vertex 6
+ch_n16_seed516.pg n=16 | σ̄ changes 12, with any λ(Ξσ) change 8, with λ change at a switched Odd vertex 2 | τ̄ changes 11, with any λ(Ξτ) change 6, at a switched Even vertex 4
+lock_n96_seed296.pg n=96 | σ̄ changes 11, with any λ(Ξσ) change 6, with λ change at a switched Odd vertex 5 | τ̄ changes 12, with any λ(Ξτ) change 8, at a switched Even vertex 3
+harm_n96_seed496.pg n=96 | σ̄ changes 18, with any λ(Ξσ) change 12, with λ change at a switched Odd vertex 11 | τ̄ changes 7, with any λ(Ξτ) change 1, at a switched Even vertex 1
+TOTAL σ̄: [96, 48, 31] τ̄: [127, 50, 31]

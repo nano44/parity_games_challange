@@ -1,0 +1,1 @@
+compared 175616 games (n=3, exhaustive): psolB residual differs on 0, psolQ on 0, PA** on 0
