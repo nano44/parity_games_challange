@@ -1,0 +1,3 @@
+family,N,sha1,n,nbin,d,bits,prec,it_cert,it_total,status,mu_final,secs,check
+counter_rob,1,f388163c68c4,14,22,5,38,448,449,449,cert/tau10,1.3071857502746582e-05,1.0,zielonka(oink zlk) OK strategies verified
+counter_rob,2,d664d5f041f0,31,55,9,72,736,None,200,start-fail/tau0,1.4417843070961713e+22,3.1,no solution

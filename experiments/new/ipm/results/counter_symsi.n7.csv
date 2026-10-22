@@ -1,0 +1,3 @@
+family,N,sha1,n,nbin,d,bits,prec,it_cert,it_total,status,mu_final,secs,check
+counter_symsi,1,b40256ed7c20,12,16,16,80,784,None,200,start-fail/tau0,3.189059870763704e+24,1.0,no solution
+counter_symsi,2,541a8ef59a22,22,30,32,176,1552,None,200,start-fail/tau0,2.2859037995864556e+53,5.9,no solution
