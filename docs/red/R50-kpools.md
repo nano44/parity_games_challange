@@ -48,3 +48,25 @@ unmodified b12_pot / b12_core (through ../xctx/xscore.py). Instance checks use e
 - So every added part adds one simultaneous learning position (max positions = k). But a union alone never raised NEST* beyond the
   base, except 3 → 4 at k = 2 (R49 §5), and it often lowered it (masking). Each further level (4 → 5, 5 → 6) came from a graded
   climb on a union seed.
+
+## 4. What the climbs change (Lead 00:21Z: "record exactly what the climb changes")
+Tools: experiments/red/nest16/gdiff.py (diff), shrinkdiff.py (greedy revert toward the seed, keeping NEST* ≥ target in stable order),
+subsets.py (all subsets of the remaining changes, NEST* in both orders).
+- 5 → 6 (k = 3). Seed nest5_n49 ⊎ oseg_n26 (above) (parts: 0-48 nest5_n49, 49-74 oseg_n26); result nest6_n75.
+  - The climb changed 5 owners, 23 vertices' successor sets, and the priority order (116 inversions).
+  - The shrink reverted all owner changes and 20 of the successor sets, leaving instances/nest6min_n75.pg
+    (sha1 e2c0d57f0b29e379a33dbcd9cc4f30fb28736563). It still has NEST* 6 in both orders: S 25, Oink 25 even iterations, verified.
+  - Four vertices really move in the priority order (24 +32 ranks, 28 +19, 50 −33, 73 −27); the rest are knock-on ±1-3 shifts.
+  - subsets.py over the 4 moves × 3 edge changes (128 subsets). NEST* 6 in both orders exactly when the edges 23→73, 55→27, 64→15
+    are added AND vertex 73 is moved. Every other subset gives ≤ 5.
+  - So the minimal 5 → 6 step is three CROSS-PART edges plus one priority move:
+    - 23 → 73: a nest5 C-vertex to an oseg vertex.
+    - 55 → 27: an oseg C-vertex to a chainfail-part vertex.
+    - 64 → 15: an oseg C-vertex to a near4-part vertex.
+    - 73 (oseg) moves 27 ranks down, into nest5's priority band.
+- 4 → 5 (k = 2). Seed nest4u_n46 (parts 0-25 near4, 26-45 chainfail); result nest5_n49 (3 added vertices).
+  - The greedy shrink keeps: 3 added vertices, 5 owner changes, about 15 successor-set changes, and 345 order inversions.
+  - Many of the kept edges cross the part boundary (2→39, 44; 25→30, 33; 27→5; 30→9; 36→2, 3, 9, 13, 17; 44→11, 25). Not reduced further.
+- Reading: after a union, the next level comes from coupling the parts directly: C-edges between parts plus interleaved
+  priorities, on top of the coupling through mixed pieces. This is the clue for a recipe. A restricted climb that only adds
+  cross-part edges and moves single priorities (experiments/red/nest16/crossclimb.py) is running on the k = 4 seed.
