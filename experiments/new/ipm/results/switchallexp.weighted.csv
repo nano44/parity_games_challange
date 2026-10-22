@@ -1,0 +1,4 @@
+family,N,sha1,n,nbin,d,bits,prec,it_cert,it_total,status,mu_final,secs,check
+switchallexp,1,9cd6d25bd9d3,21,27,28,151,1352,0,0,cert/c0/mu0,1.0,0.0,zielonka(oink zlk) OK strategies verified
+switchallexp,2,ca6e0b7d4745,35,51,44,270,2320,0,0,cert/c0/mu0,1.0,0.0,zielonka(oink zlk) OK strategies verified
+switchallexp,3,3ad1b30a06c0,49,75,60,396,3344,0,0,cert/c0/mu0,1.0,0.2,zielonka(oink zlk) OK strategies verified

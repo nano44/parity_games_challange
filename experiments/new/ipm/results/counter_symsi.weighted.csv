@@ -1,0 +1,4 @@
+family,N,sha1,n,nbin,d,bits,prec,it_cert,it_total,status,mu_final,secs,check
+counter_symsi,1,b40256ed7c20,12,16,16,80,784,222,222,cert/c0/mu12,1e-38,0.1,zielonka(oink zlk) OK strategies verified
+counter_symsi,2,541a8ef59a22,22,30,32,176,1552,None,800,stalled/c0/mu34,4.3325734069739933e-67,2.3,no solution
+counter_symsi,3,1979e61c8f0c,32,44,48,282,2416,None,871,stalled/c0/mu45,4.577248351414919e-127,7.5,no solution

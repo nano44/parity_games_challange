@@ -1,0 +1,7 @@
+family,N,sha1,n,nbin,d,bits,prec,it_cert,it_total,status,mu_final,secs,check
+counter_rr,1,3cbb56a17068,4,4,2,13,216,0,0,cert/c2/mu0,6.5808,0.0,zielonka(oink zlk) OK strategies verified
+counter_rr,2,d37d7b80c5f1,8,8,4,24,320,42,42,cert/c25/mu5,6.867763225461105e-08,0.0,zielonka(oink zlk) OK strategies verified
+counter_rr,3,bdd2e8849c8b,12,12,6,35,408,66,66,cert/c35/mu7,9.081027072216768e-13,0.0,zielonka(oink zlk) OK strategies verified
+counter_rr,4,ef43e15b5d65,16,16,8,47,520,90,90,cert/c47/mu10,5.178795054530561e-21,0.0,zielonka(oink zlk) OK strategies verified
+counter_rr,6,2d2aead0a79c,24,24,12,72,720,145,145,cert/c72/mu15,1.4328002925e-33,0.2,zielonka(oink zlk) OK strategies verified
+counter_rr,8,0c435ed1f5a3,32,32,16,98,944,203,203,cert/c98/mu21,1.1038739812321773e-49,0.6,zielonka(oink zlk) OK strategies verified
