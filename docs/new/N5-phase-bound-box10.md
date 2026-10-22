@@ -172,3 +172,54 @@ lemmaP_check on the six long-phase instances 3,193 checks, 0 violations; random 
 phase_vc on 17 instances 0 violations, maxima 15 at n = 16 (rel_g16) and 46 at n = 48. The two rules differ only in tie situations
 (rel_g12: 11 steps with the fixpoint rule, 10 with N5's step); the Theorem allows any tie-break.
 FREEZE: §§1-3 (Lemma P, Theorem PH, corollaries, tightness) are frozen at the commit that adds this section; later changes go in new sections.
+
+## 7. Referee wording and data items (REFEREE R-N5-1P G6-G9, REFEREE-2 R2-N5-1P N-2, N-3, G-1P-4, G-1P-7; written 2026-10-22 00:28Z by date -u). §1-§4 and §6 are frozen; this section corrects them by addition only.
+Citations (VJ00 = BRICS RS-00-48, printed page numbers; pdf re-read with pdftotext, sha256 485a12de432a2a8c…):
+- G7. The improving edges are VJ00 §4.4, equation (2), p. 11: "(v, w) is an improvement for σ if Ω_σ(σ(v)) ◁ Ω_σ(w)"; Improve = Switch_I for ANY
+  non-empty unambiguous set I of improvements (p. 11), not "a successor maximising Ω_σ". §6's bullet "§5.4 … (p. 17)" is wrong as a citation;
+  the proofs use only I_k(x) = {z : Ω_k(z) ≻ Ω_k(ρ_k(x))}, which is (2). Nothing in the proofs changes.
+- G8. §6's sentence "this relies on Lemma 5.8 '2 ⇒ 1'" has the direction wrong: the switch-all FIXPOINT rule (sbstep's default) is sound iff
+  "Improve(σ) = σ ⇒ σ is a maximum", which is Lemma 5.8 "1 ⇒ 2" in VJ00's numbering (1 = σ not a maximum, 2 = Improve(σ) ≠ σ), p. 20. The
+  direction R15 found to fail at cycle nodes is "2 ⇒ 1", which the fixpoint rule does not use. The EXACT=1 checks use n5.py's step and need
+  neither direction.
+- G9 and pages. §5.1 (shortest-path characterisation, equations (6)-(10)) is on pp. 13-14; the order ⊴_ℓ on ℘(V) × ℕ (MaxDiff, R⁻/R⁺) on p. 10;
+  the extension operator ⊕ on p. 12; Prop. 7.4 on p. 27 (not p. 36); the postulates P1-P2 and I1-I2 on p. 8; §4.3 (Ω_σ as the minimum over
+  all plays consistent with σ) on p. 11.
+- G1 (REFEREE, optional), G-1P-4 (REFEREE-2, closed by its own §2 derivation, which is cited here as the proof of (F1)): the dual game swaps
+  owners and adds 1 to every priority, so ranks are unchanged, R⁺ and R⁻ are swapped, every reward changes sign, and the orders ≺ on V, ⊴_ℓ
+  and ⊴ are reversed EXACTLY (MaxDiff is the same vertex, the two bullets of p. 10 exchange roles, the length clauses exchange). VJ00 §4.3
+  defines Ω_σ(v) = min_⊴ {Θ(P) : P ∈ Plays_σ(v)} over ALL plays consistent with σ (p. 11), and (11) p. 16 identifies this minimum with the
+  single counter-strategy σ̄. Read in the dual game, "min over all plays of the dual ⊖ = max over all strategies of the original ⊕ in the
+  one-player game": that is (F1). R2-N5-1P §2 derives it directly.
+Data items:
+- G6 (stale log line). The old tail/logs/phase_vc.txt line "rel_g12.pg … steps=14 phases=5" was produced at 23:10Z by phase_vc.py on the
+  then-current instances/phase/rel_g12.pg of the still-running climb phase_climb.py FIT=rel (an intermediate best that the climb later
+  overwrote); that intermediate game was never pinned. The committed rel_g12.pg (sha1 20db1b220d0bcf469d71bf3760df67b854937094, start in
+  .start) gives 11 steps in 1 phase under the sbstep fixpoint rule and 10 under n5.py's step. tail/logs/phase_vc.txt and phase_vc_exact.txt
+  were regenerated from the committed instances at 00:26Z (date -u) and now agree with the referee's numbers.
+- N-3 (rule behind every count). Counts in §3-§4 come from phase_trace.sbstep's default rule = switch-all SI on the arena to a fixpoint;
+  phase_vc_exact.txt uses n5.py's step (EXACT=1). Both rules on the key instances (steps of the longest phase, closing step included):
+  | instance | sbstep fixpoint | n5.py step |
+  | --- | --- | --- |
+  | rel_g12 (n = 12) | 11 (run ends inside the phase) | 10 |
+  | rel_g16 (n = 16) | 15 | 15 |
+  | ph_n48 (n = 48) | 46 | 46 |
+  | ph_g48 (n = 49) | 46 | 46 |
+  | fl_n16, ph_n16 (n = 16) | 9, 13 | 9, 13 |
+  | sb1_counter_n48 (n = 48) | 17 | 17 |
+  The n5.run iteration counts printed by the climbs are a third count (N5 includes its fallback iteration).
+- N-2 (closing step). phase_vc.py counts the λ-changing step as the last step of the phase it closes. In-phase steps = steps − 1 when a λ change
+  closes the phase, = steps when the run ends inside it. So the in-phase bound n − 1 of Theorem PH is ATTAINED at n = 12 (rel_g12: 11 in-phase
+  steps, the run ends inside the phase); at n = 16 the longest phase has 14 in-phase steps + 1 closing (rel_g16), at n = 48 45 + 1 (ph_n48).
+  §3's "Tightness" sentence should be read with this correction: 14 and 45 in-phase, not 15 and 46; the bound n − 1 is attained at n = 12.
+- G-1P-7 (Lemma P at n = 48). Full simple-path enumeration is infeasible on ph_n48's 45-step phase (REFEREE-2's budget and ours). A feasible
+  partial check exists and was run (experiments/new/tail/lemmaP_paths.py; logs tail/logs/lemmaP_paths.txt, lemmaP_paths_exact.txt): at every
+  in-phase step k of every phase, (C1) every improving non-cycle-closing edge (x, z) has |π_z| + 1 > k, where π_z is the current path from z to
+  its cycle node (this is exactly the instance of Lemma P that Theorem PH's proof uses), and (C2) Lemma P on the polynomially many paths of the
+  form x, π^j_z for every earlier in-phase step j ≤ k and every successor z of x with x ∉ π^j_z and z's cycle node ≠ x (so that x, π^j_z is a
+  simple path to a cycle node other than x; the first version of the script omitted the second condition and reported 90 spurious
+  "violations" on ph_n16 from a self-loop, fixed at 00:33Z before this text). Results, both rules (sbstep fixpoint and n5.py's step):
+  ph_n48 C1 111 checks, C2 166,608 checks, 0 violations; ph_g48 153 / 150,978, 0; sb1_counter_n48 165 / 25,954, 0; rel_g16 32 / 4,498, 0;
+  rel_g12 21 / 1,806 (n5.py: 20 / 1,508), 0; fl_n16 37 / 1,411, 0; ph_n16 25 / 2,645, 0; sb1_counter_n16 0 violations. The full statement
+  over all simple paths remains checked only for n ≤ 18 (§4, §6); on n = 48 it is checked on the paths that occur and on the consequence
+  the theorem needs.
