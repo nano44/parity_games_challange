@@ -10,7 +10,7 @@ Answer semantics: SAT at k <=> a separator with <= k states exists (pad a smalle
 non-tree transition; it accepts infinite words, so such a transition exists; docs/struct/S3-statement.md §2).
 UNSAT at k therefore gives value >= k+1.  Every SAT automaton is re-verified on the full families before it is written.
 Result: results/n5/<mode>_<conv>_n<n>_d<d>_k<k>.json.
-Usage: n5.py N D CONV {weak|strong} K [--cnf | --cnf-only]"""
+Usage: n5.py N D CONV {weak|strong} K [--cnf | --cnf-only] [--batch B]"""
 import sys, json, time, pickle, hashlib, argparse, pathlib, os
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE))
@@ -22,6 +22,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument('n', type=int); ap.add_argument('d', type=int); ap.add_argument('conv', choices=['E', 'S', 'V'])
 ap.add_argument('mode', choices=['weak', 'strong']); ap.add_argument('k', type=int)
 ap.add_argument('--cnf', action='store_true'); ap.add_argument('--cnf-only', action='store_true'); ap.add_argument('--solver', default='cadical153')
+ap.add_argument('--batch', type=int, default=3, help='violated graphs added per CEGAR round')
 a = ap.parse_args()
 strong = a.mode == 'strong'
 OUT = HERE / 'out'; OUT.mkdir(exist_ok=True)
@@ -115,7 +116,7 @@ while True:
                 enc.add_odd(g); state['odd'].append(i); cnt += 1
         else:
             raise AssertionError("S2 violated although encoded: encoding bug")
-        if cnt >= 3:
+        if cnt >= a.batch:
             break
     assert cnt > 0, "checker rejects but no new graph to add: encoding/checker disagree"
     ck.write_text(json.dumps(state))
