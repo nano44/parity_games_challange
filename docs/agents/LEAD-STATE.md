@@ -779,3 +779,4 @@
   Parked: L-NEW succ. 5 session_019MJMHr7jYQTFT71mo82rZB (needs a screened γ-free candidate before waking), REFEREE succ. 3 / REFEREE-2 succ. 3 (Fable; next referee work on Opus successors per L37 (1)), L-LIT (~535k; successor for any task), OWNER-DESK (no open owner questions), L-ALG (parked, no DTL proof lane).
   Open gaps: GAP-A, GAP-C, G-NEST (open, DATA best 6), G-N5-TIME (open, two-player). No incorrect run, no super-poly family anywhere.
   Rules: date -u before every stamp; re-run every kill; scope + frozen-section check on merges; CHECKER before landing + landed-text check.
+- 09:09Z (date -u) CHECKER C21 Addendum 2 PASS (26ad179, merged): DE25-DE27 landed verbatim at a47990c. C21 CLOSED. CHECKER succ. 3 parked. Working: L-RED (box 20), L-STRUCT.
