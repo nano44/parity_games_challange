@@ -4,7 +4,8 @@ Opus 5.5: the session's model was switched (get_session: user_switched_model cla
 The previous notebook (boxes 1-18) is in git at l-red 4f73e7a6: `git show 4f73e7a6:notes/L-RED.md`; boxes 16-18 handover at a5274bd6.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: box 19 END (merged trunk 18812f7). Lead 07:34Z (D15 / L37): k-pools NEST* line CLOSED. Box 20 (DTL adversary, S growth on two-player games) GO 07:34Z to ~10:40Z.
+Status: box 20 END (10:16Z by date -u), PARKED. Box 19 merged trunk 18812f7; k-pools NEST* line CLOSED (Lead, D15 / L37). Box 20 = S growth on
+two-player games: docs/red/R52-sgrowth.md, experiments/red/sgrow/.
 
 ## DONE (box 19; docs/red/R51-piecemap.md; tools experiments/red/nest16/piecemap.py, gatescan.py; evidence in experiments/red/nest16/maps/ and scans/)
 - Trap found: fixd_stealentry.run renumbers vertices by priority, so tlog.py / partmask.py print SOLVER indices, not file ids.
@@ -25,10 +26,16 @@ Status: box 19 END (merged trunk 18812f7). Lead 07:34Z (D15 / L37): k-pools NEST
   index (#14) before 7 closes at #15; a seventh level needs two recurring positions between 9 and 16, i.e. a longer post-block tail,
   which only a gate-type change (not a return) can add; gates from the innermost pieces replace D's block by E's instead of nesting.
 
+## DONE box 20 (R52; produced on Opus 5.5)
+- Structured families: tc S ≤ 3, tc+ S = N+1 ≈ log n, Oink counters S ≤ 3, lagfam S = D+7 ≈ n/7.
+- Climbs (oclimb.py, Oink proxy F = max(even, odd) − dominions; neutral padding to grow n): best S per n = 21/29/34/36/35 (oink order),
+  20/29/30/34/33 (stable) at n = 20/30/40/60/80; log-log slope 0.36 / 0.34. All Oink-verified, Oink count = S. No super-polynomial or
+  super-linear signal. s21_oink_n20 (da164511…): S 21 > |G'| 20 in oink order (R24's (SPP) DATA bound broken by 1; stable 11).
+
 ## IN FLIGHT
 None. No process runs at box end.
 
-## NEXT (for the Lead to route)
+## NEXT (for the Lead to route; items 1-2 belong to the CLOSED k-pools line and stay only as history)
 1. Lengthening without shallow rises: start from k4L72r_n101 (S 31) and look for edges that stop the mixed piece at position 1
    (ABCDE[14,37,40,47,60,62,86,88,…]) from absorbing vertices between the block and the closes; score = NEST* of P restricted to
    the stretch after the block, plus S.
@@ -60,6 +67,9 @@ dtl.cpp @ 8fbf0a7. Earlier opened sources are listed in `git show 4f73e7a6:notes
 - Lead: route NEXT 1-3 or close the k-pools line; referee routing of R51 only if a claim needs signing (it is DATA plus readings).
 
 ## Things only I know
+- Box 20: oclimb.py with Oink fitness is ~8 ms/step at n 20 but 0.2-1.5 s at n 40-80 on long-phase games; use --secs. Random padding
+  kills long phases (early dominions); pad neutrally (priority 0, one successor into the game). Pause a climb with kill -STOP / -CONT
+  to run a short measurement without a third job. smeasure.py at n 80 takes ~4 min per game (Python DTL).
 - SOLVER INDICES: fixd_stealentry.run renumbers vertices by priority (stable: sorted by (prio, v); oink: stdsort.oink_order). Chains,
   tangles and escapes from the harness are in those indices. piecemap.py and gatescan.py map back (idx[i]); tlog.py, partmask.py,
   learnpos.py do not. Part labels by vertex range are only safe after mapping (or for a part that is a priority band).
