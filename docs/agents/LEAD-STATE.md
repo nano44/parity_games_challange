@@ -780,3 +780,4 @@
   Open gaps: GAP-A, GAP-C, G-NEST (open, DATA best 6), G-N5-TIME (open, two-player). No incorrect run, no super-poly family anywhere.
   Rules: date -u before every stamp; re-run every kill; scope + frozen-section check on merges; CHECKER before landing + landed-text check.
 - 09:09Z (date -u) CHECKER C21 Addendum 2 PASS (26ad179, merged): DE25-DE27 landed verbatim at a47990c. C21 CLOSED. CHECKER succ. 3 parked. Working: L-RED (box 20), L-STRUCT.
+- 10:04Z (date -u) SWEEP (trigger 10:03Z): overage false; Lead $418 ~558k. Working: L-RED succ. 11 (box 20, n80 climbs, pinning instances), L-STRUCT succ. (weak (5,5) k=10 and strong (5,5) k=11 SAT solves in background, idle by design). No exceptions.
