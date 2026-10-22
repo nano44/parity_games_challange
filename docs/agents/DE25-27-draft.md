@@ -1,4 +1,4 @@
-# Draft RESULTS DE25-DE27 (Lead, 2026-10-22 08:25Z by date -u) — awaits CHECKER C21 re-diff (rev. 08:45Z: C21 E-1..E-4, N-1..N-3, N-6)
+# Draft RESULTS DE25-DE27 (Lead, 2026-10-22 08:25Z by date -u) — LANDED in RESULTS Dead ends (CHECKER C21 PASS, Addendum 1 30a0919 + stamp fix 4105c4a); was: awaits CHECKER C21 re-diff (rev. 08:45Z: C21 E-1..E-4, N-1..N-3, N-6)
 
 - DE25 (2026-10-22): N6 = path-following interior-point method on the Jurdziński-Savani P-matrix LCP of the discounted game obtained
   from a parity game (L-NEW successor 5, (c) lane under D14/D15; docs/new/N6-ipm.md §1-§8, l-new c0e8b57 + addendum 8ace011) is a DEAD
