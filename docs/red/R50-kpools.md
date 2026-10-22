@@ -79,3 +79,24 @@ subsets.py (all subsets of the remaining changes, NEST* in both orders).
   restart (01:2xZ).
 - So the minimal step does not transfer by index mirroring: the extra edges collapse the phase instead of adding a level. The step is
   specific to the instance's dynamics, not a structural recipe.
+
+## 6. Box-17 end (2026-10-22 ~02:30Z, date -u): table and status
+All rows are identical in stable and oink order. Pinned Oink 8fbf0a7 `-v` gives even iterations = S with the solution verified.
+| k (parts) | instance | sha1 | n | S | P size | I | NEST* | how | climb steps |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | near4_n26 | 6d7c5e3839c0… | 26 | 18 | 17 | 0 | 3 | climb (box 16) | n/a |
+| 2 | nest4u_n46 | ae7ed55930f0… | 46 | 18 | 17 | 0 | 4 | union only | 0 |
+| 2 | nest5_n49 | fe50a2c9d437… | 49 | 20 | 19 | 0 | 5 | union + climb (stable, seed 131) | 1278 |
+| 3 | nest6_n75 | dc8b04cc7c16… | 75 | 25 | 24 | 0 | 6 | union + climb (FIT=pool, oink, seed 181) | 103 |
+| 3 | nest6min_n75 | e2c0d57f0b29… | 75 | 25 | 24 | 0 | 6 | k = 3 seed + 3 cross-part edges + 1 priority move | (shrunk) |
+| 4 | best seed nest6_n75 ⊎ oseg_n26 | (scratch) | 101 | 25 | not measured | not measured | 6 | union; climbs did not add a level | ~200 (FIT=pool) + ~2×150 (crossclimb) |
+- NEST* against k: 3, 5, 6, (6). Against n: 26, 49, 75, (101). S: 18, 20, 25, 25, about n/3: NOT super-polynomial.
+- No family: no recipe was found. The minimal 5 → 6 step does not transfer by mirroring (§5). k = 4 gives no level within this box,
+  though its climbs are slow at n ≈ 100 (FIT=pool needs two DTL runs per evaluation).
+- Why a part does not add a level by itself (DATA, §3 and partmask.py):
+  - Every added part adds one simultaneous learning position. But in the union's chain the parts share pieces: most depth-0 pieces
+    mix vertices of several parts, and every transition changes pieces of all parts.
+  - So P records, per search, only the shallowest change across all parts. A part's level becomes visible only where all other
+    parts change deeper at the same search, and plain unions mostly mask instead (NEST* drops in 10 of the 21 union seeds of §3: 7 of 15 at k = 3, 3 of 6 at k = 4).
+  - Each observed gain came only after extra coupling (cross-part edges and priority interleaving, §4) that re-times the parts
+    against each other. That coupling is instance-specific.
