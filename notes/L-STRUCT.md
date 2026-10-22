@@ -25,7 +25,8 @@ Lead limits: <= 2 SAT jobs at once (container kills ~3 heavy processes), checkpo
 - Timestamps in my messages of 2026-10-14 ran ahead of UTC by up to 90 min until ~20:35Z; SHAs are authoritative.
 - 2026-10-22: make_table.py skipped every '_k<j>' file, which hid the exact w^V(4,6) = 10 for a week; it now accepts a
   partial run when k_start <= the monotone lower bound (S1 Lemma 2(a)) and prints it.
-- Kill long jobs only by PID file (out/<cell>.pid), never pkill -f.
+- Kill long jobs only by PID file (out/<cell>.pid), never pkill -f. Take the PID from `ps -C python3 -o pid=,args=`
+  (pgrep -f matches the calling shell, and `$!` after a chained `... && nohup X &` is the subshell's PID; both bit on 2026-10-22).
 - Encoding traps: BFS symmetry breaking forces all states reachable, so search k upward and stop at the first SAT; the
   (W2) rank clauses are the UNSAT bottleneck (~20x per state at n = 4); the rank range N = n·k is needed for completeness.
 - Enumeration (enumerate_weak.py) is per BFS numbering, not per isomorphism class (over-counts); fine for existence.
