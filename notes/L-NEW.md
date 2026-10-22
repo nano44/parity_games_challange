@@ -2,6 +2,20 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
+BOX 11 END (~00:48Z Oct 22, date -u; Lead box to ~02:35Z, parked early: all three routes answered). PARKED after the final report; nothing running.
+- P-N5-1P (N5-phase-bound-box10.md §1-§4 + §6 as A1) has TWO Fable signatures (R-N5-1P dfa87d0 SIGNED WITH GAPS G1-G9; R2-N5-1P f954070,
+  Lemma P SIGN, rest SIGN WITH GAPS wording); §7 answers G6-G9, N-2, N-3, G-1P-4, G-1P-7 (a300339). §1-§4 and §6 FROZEN: additions only.
+- (c) N5-brchanges-box11.md: no invariant for best-reply changes (three killed with instances; changes ≈ iterations). (b)-lite §5: fixed-τ frame
+  inapplicable to real runs. (2) N5-toggle-box11.md: requirements R1-R4, circularity §3, climbs ≤ 50 iterations at n ≤ 61, not built.
+NEXT for a successor: referee §C comparisons for P-N5-1P may bring questions (through the Lead); otherwise G-N5-TIME needs a new idea: a
+potential tied to N5's subset rule itself (optimum against the opponent's CURRENT strategy), not to either honest valuation.
+Traps this box: pkill/grep -f of a script name inside a command that itself names the script kills your own shell (bit twice, exit 144); a
+climb-produced file is not pinned until the climb ends (rel_g12 log line, referee G6); a fitness counting observations is steps + 1.
+BOX 11 (GO 23:33Z Oct 21, to ~02:35Z Oct 22): option (c), the best-reply-change count (K9's factor). Box 10 merged at trunk 26905f0; packet
+P-N5-1P = N5-phase-bound-box10.md §1-§4 pinned there (my head adds the SCOPE header line and §6 only). (c) RESULT 23:50Z: no usable invariant;
+docs/new/N5-brchanges-box11.md: (BR-NR-vertex), (BR-NR-global), (BR-λ) all FALSE with pinned instances (br/, instances/br11); changes ≈ iterations
+on adversarial instances (65 changes in 46 iterations at n = 33); toggle mechanism: sbe2_s21 (Odd never moves, σ̄ toggles among 4 states, 26 global
+returns after a seeded climb). Route (b) not started (Lead's condition). Waiting for the Lead's direction.
 BOX 10 END (successor 4, Fable 5.1; ~23:25Z Oct 21 by date -u; Lead box to ~01:05Z): both routes done, pushed; nothing running.
 - (i) docs/new/N5-tail-box10.md: gen(m) cannot be the tail's Odd chain (Fact B; searches ≤ 3 steps); real tails lift masks by downstream repairs.
 - (ii) docs/new/N5-phase-bound-box10.md: Lemma P + Theorem PH (λ-phase ≤ n−1 value-changing steps, tight) => switch-best / N5 on one-player

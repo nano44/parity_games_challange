@@ -1,0 +1,21 @@
+selftest ok (key vs direct comparator 3000; (V2) prefix monotonicity 2837 pairs)
+  F1_argmax_checks = 3039
+  bruteforce_arenas = 3039
+  bruteforce_strategies = 18244
+  fallback_steps = 0
+  flat_situations = 245
+  flat_steps = 245
+  games = 2000
+  lambda_steps = 2308
+  lemmaP_checks = 11776
+  lemmaP_phases_checked = 6308
+  max_flat_per_phase = 1
+  max_inphase_steps = 2
+  max_phases_per_run = 4
+  max_vc_minus_n_plus_1 = 0
+  max_vc_per_phase = 2
+  phases = 6308
+  runs = 4000
+  steps = 3039
+  vc_steps = 486
+RESULT violations=0 secs=1.0
