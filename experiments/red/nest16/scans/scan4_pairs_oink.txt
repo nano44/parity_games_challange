@@ -1,0 +1,10 @@
+# scan 4: return pairs and the mirrored k = 3 step on the plain union nest6min_n75 ⊎ oseg_n26 (above), oink order
+# base nest6min_n75.pg E oseg_n26.pg n 101 C 1 order oink cuts [26, 46, 49, 75, 101]
+0 edge:81:27;edge:90:15 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [9, 15] inside 0 P 0,1,6,9,7,4,9,3,8,16,18,18,16,1,11,7,20,17,1,16,16,7,0,6 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.E.D.D.DE.ABCDE.DE.E.ABC.ABCDE.ABCDE.ABC.ABC.ABCDE.BC.ABCD
+1 edge:81:15;edge:90:15 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [9, 15] inside 0 P 0,1,6,9,7,4,9,3,8,16,18,18,16,1,11,7,21,17,1,16,16,7,0,6 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.E.D.D.DE.ABCDE.DE.E.ABC.ABCDE.ABCDE.ABC.ABC.ABCDE.BC.ABCD
+2 edge:81:0;edge:90:0 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [9, 15] inside 0 P 0,1,6,9,7,4,9,3,8,16,18,18,16,1,10,7,21,17,1,16,10,7,0,6 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.E.D.D.DE.ABCDE.DE.E.ABC.ABCDE.ABCDE.ABC.DE.ABCDE.BC.ABCD
+3 edge:81:49;edge:90:49 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [9, 15] inside 0 P 0,1,6,9,7,4,9,3,8,16,18,18,16,1,19,7,27,25,1,24,24,7,0,6 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.E.D.D.DE.ABCDE.D.E.ABC.ABCD.ABCDE.ABC.ABC.ABCDE.BC.ABCD
+4 move:99:81;edge:23:99;edge:81:27;edge:90:15 S 25 |P| 24 I 0 NEST* 4 win (10, 11) Etrans [9] inside 0 P 0,1,6,9,7,4,9,3,8,16,18,18,16,1,11,10,20,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.E.D.D.DE.ABCDE.DE.DE.ABC.ABCDE.ABCDE.ABC.ABC.ABCDE.BC.ABCDE
+5 move:99:99;edge:23:99;edge:81:27;edge:90:15 S 25 |P| 24 I 0 NEST* 4 win (10, 11) Etrans [9] inside 0 P 0,1,6,9,7,4,9,3,8,16,18,18,16,1,11,10,20,17,1,16,16,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.E.D.D.DE.ABCDE.DE.DE.ABC.ABCDE.ABCDE.ABC.ABC.ABCDE.BC.ABCDE
+6 move:99:81;edge:23:99;edge:81:53;edge:90:64 S 25 |P| 24 I 0 NEST* 4 win (10, 11) Etrans [9, 15] inside 0 P 0,1,6,9,7,4,9,3,8,16,18,18,16,1,12,10,21,19,1,18,18,10,0,9 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.E.D.D.DE.ABCDE.DE.E.ABC.ABCD.ABCDE.ABC.ABC.ABCDE.BC.ABCDE
+7 edge:81:27;edge:90:15;edge:81:15 S 25 |P| 24 I 0 NEST* 5 win (10, 11) Etrans [9, 15] inside 0 P 0,1,6,9,7,4,9,3,8,16,18,18,16,1,11,7,21,17,1,16,16,7,0,6 labs BCDE.ABCDE.AB.A.B.ABC.A.BC.AB.E.D.D.DE.ABCDE.DE.E.ABC.ABCDE.ABCDE.ABC.ABC.ABCDE.BC.ABCD
