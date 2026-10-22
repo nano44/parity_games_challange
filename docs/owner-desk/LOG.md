@@ -272,3 +272,9 @@ questions itself instead of asking the owner. Relayed verbatim to the Lead, prio
 ## 2026-10-22T07:38Z owner (progress question)
 > So we are using opus everywhere correct?
 Answered from D15/L37 and the NOW.md roster (trunk 1a05c8f8). Relayed verbatim to the Lead.
+
+## 2026-10-22T14:09Z relayed: Lead 2026-10-22 14:05Z information report (no questions)
+DE25 (N6 IPM on LCP), DE26 (N7 entropic smoothing), DE27 (DTL k-pools) landed, CHECKER PASS; barrier B21 (Hansen & Ibsen-Jensen).
+DTL: NEST* plateau 6, line closed; two-player longest phase ~n^0.36; DTL lane parked. L-NEW parked (needs a non-discounting mechanism).
+L-STRUCT: s^V(5,5) >= 11 (LRAT), docs/struct/S5 transfer map; two n=5 SAT jobs to 01:30Z (weak 10-state success would refute T3).
+No incorrect run, no super-poly family, no overage. All working sessions parked.
