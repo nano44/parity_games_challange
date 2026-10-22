@@ -117,6 +117,33 @@ Seed k4u_n101 = nest6min_n75 ⊎ oseg_n26 placed above (pairunion 'above'; the c
   score (6, 116, 25, −101); pinned Oink 8fbf0a7 -v: even iterations 25 = S, odd 1, 2 dominions, 71 tangles, solution verified (87
   strategies). k = 4, n 101, S 25, |P| 24, I 0, NEST* 6: not a class-best raise (nest6_n75 has NEST* 6 at n 75); S/n = 0.25.
 
+- 3g. Gates from the A ladder (scans/scan5_laddergates_oink.txt; 17 configurations: u → 99 with 99 at priority 81, u ∈ the C-vertices
+  of the pieces at positions 9-15 of search 9 of the union: {0, 4, 6, 7, 8, 15, 16, 18, 20, 21, 22, 23, 28, 38, 54, 63, 74}): NEST* 6 in
+  2 (38, 63: P unchanged), 5 in 9 (the tail becomes 1,9,10,19,17,1,16,16,10,0,9: 7 no longer closes), 4 in 6. The gates from the ladder's
+  own pieces (8, 16, 18, 22) move the ladder-building earlier (P = 0,1,6,9,15,15,13,14,14,11,3,7,14,… for u = 8) at the cost of nest5's
+  7, 4, 9, 3, 8 prefix, with S 23-25. No configuration has S > 25.
+- 3h. Gates from D's POST-block head ladder (scans/scan6_headladder_gates_oink.txt; 120 configurations: u → t for u ∈ {49, 51, 58, 72,
+  50} (the D pieces at positions 4-14 of search 14 of the union) and every C-vertex t of the copy, no priority move): NEST* 6 in 22
+  (P unchanged), 5 in 47, 4 in 46, 3 in 5 (S 17-18, u = 50). This is the first class that LENGTHENS the phase: 72→80, 72→84, 72→95,
+  72→99, 72→100 give S 28 (and 58→90 gives S 26). For 72→80 (instances/k4L72_n101.pg, sha1 f3097a66d13b720a36b65ff226b0322b5afb151a):
+  P = 0,1,6,9,7,4,9,3,8,16,17,17,16,1,5,7,20,18,1,17,17,7,0,7,7,7,6, NEST* 5. The block is D's original 16,17,17,16 (E does not take
+  over), but the three extra searches are appended AFTER the old end (…,0,7,7,7,6 in place of …,0,6), not between the block and the
+  closing of 7; and #14 moves to position 5, shallower than 7, which breaks the 7/8 windows (witness 0 ⊃ 1 ⊃ 8 (8,15) ⊃ 16 ⊃ 17).
+  So a head-ladder gate can add searches, but on the wrong side of the tail. Scan 7 (§3i) combines it with return edges.
+
+- 3i. The S 28 gate plus returns (scans/scan7_headgate_returns_oink.txt; 43 configurations: 72→80 with 81→t or 90→t for 20 targets
+  t, and 3 pairs/triples) [this item and later text produced on Opus 5.5: the session's model was switched from Fable 5.1 at ~07:25Z
+  (get_session: user_switched_model claude-opus-5-5)]: NEST* 5 with S 28 in 33, NEST* 5 with S 31 in 5 (81→{49, 50, 51, 58, 72}), NEST* 4
+  with S 29 in 5 (90→{49, 50, 51, 58, 72}). Never 6.
+  - S 31 instance k4L72r_n101 (72→80, 81→49; sha1 e84a57b6f13e546811c203bf35b86a0ee8b69462; map maps/union_gate72to80_ret81to49_oink.txt):
+    P = 0,1,6,9,7,4,9,3,8,26,27,27,26,1,5,5,9,22,21,1,28,1,27,27,7,0,7,7,7,6, both orders identical, NEST* 5, witness 0 (0,25) ⊃ 1 (1,21)
+    ⊃ 9 (3,16) ⊃ 26 (9,12) ⊃ 27 (10,11). The return 81→49 grows E's tail ladder (s13: E pieces at 15-23, ranks 3..7) so the block moves
+    to 26/27 and the post-block tail gains searches; but each gained stretch is opened by a NEW rise of position 1 (indices 13, 19, 21):
+    the mixed piece ABCDE at 1 absorbs vertices three times, and every rise at 1 closes all windows deeper than 1. So the lengthening
+    is real (S 25 → 31) but it is cut into segments by shallow transitions, and no level is added.
+  - Oink (scans/kcheck_k4L72_n101.txt): k4L72_n101 even iterations 28 = S, k4L72r_n101 31 = S, odd 1, 82 tangles, both verified (87
+    strategies); stable and oink P identical for both.
+
 ## 4. The obstruction (reading of §1-§3; DATA, not a proof)
 Why the innermost window of the k = 3 structure cannot host a gate for a fourth part, with the instances:
 - (i) The gate's effect is to put the new part's block deeper than, and during, the old innermost open window. On nest6min ⊎ oseg
@@ -136,11 +163,39 @@ Why the innermost window of the k = 3 structure cannot host a gate for a fourth 
   single free index (#14). Return edges move #14's position (9, 10, 12-22 observed) but never add a search (§3d, §3e). So on this
   seed no choice of return edges can produce the extra level; what is missing is a LENGTHENING of the post-block tail, which in the
   k = 3 step came from the gate (S 20 → 25, the A ladder) and not from the returns.
+- (iii') Scans 6-7 qualify (iii): edges from D's post-block head ladder into the copy DO lengthen the phase (S 28, and 31 with a
+  return), so the tail length is not fixed in general. But the added searches land after the old end (72→80) or are separated by new
+  rises of position 1 (72→80 + 81→49, three 1-rises at indices 13, 19, 21). A rise at a shallow position closes every deeper window, so
+  extra searches add a level only if no shallow position changes first in between; in every lengthened configuration one does.
 - (iv) What the gate did at k = 3 that it cannot repeat at k = 4: at k = 3 the gate source 23 lay in the OLD structure's innermost
   −1 pieces (the mixed ABD piece at positions 5-8 with D's 49 and 50) and the gate created a new descending ladder (positions 10-14,
   ranks 8..4) in the old part, in front of the new part's block. At k = 4 the analogous sources (the D pieces at 16-17) are already
   at the tail, in front of nothing but E: there is no old material behind them to form a ladder, so the gate can only reorder E and D
-  (§3b). Gates from the A ladder's own C-vertices (§3g) are the remaining source class.
-- Instance that kills the recipe: k4u_n101 (sha1 37a45ff8…) with the 84 + 50 + 126 + 8 configurations of scans 1-4 (scans/), all
-  NEST* ≤ 6, all with the union's prefix or a collapsed phase. It does not refute a gate-recipe in general: a different fourth part,
+  (§3b). Gates from the A ladder's own C-vertices (§3g) re-index or shorten; gates from D's post-block head ladder (§3h) are the one class that adds searches, and they add them after the old end, with #14 pulled to position 5.
+- Instance that kills the recipe: k4u_n101 (sha1 37a45ff8…) with the 84 + 50 + 126 + 8 + 17 + 120 (+ scan 7) configurations of scans 1-7
+  (scans/), all NEST* ≤ 6, all with the union's prefix, a collapsed phase, or (scan 6/7) extra searches after the old end. It does not refute a gate-recipe in general: a different fourth part,
   or a gate that lengthens the post-block tail, is untested here (see §5).
+## 5. Box-19 end: table and status
+| k | instance (experiments/red/nest16/instances/) | sha1 | n | S | |P| | I | NEST* | both orders | Oink -v | how |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 3 | nest6min_n75 | e2c0d57f0b29e379a33dbcd9cc4f30fb28736563 | 75 | 25 | 24 | 0 | 6 | same P | R50 (Lead re-ran nest6_n75) | R50 §8b |
+| 4 | k4u_n101 = nest6min_n75 ⊎ oseg_n26 (above) | 37a45ff8a932bcc6e4a79d4848a0a57dbb82367a | 101 | 25 | 24 | 0 | 6 | same P | 25 even = S, verified, 87 strategies | union only (§3a, §3f) |
+| 4 | k4g50_n101 = k4u + gate 50→99 (99 at 81) | 62cbc3e8b5e11c856a37c13e41eb2f78031aa004 | 101 | 25 | 24 | 0 | 5 | oink only | not run | §3b (negative) |
+| 4 | k4L72_n101 = k4u + 72→80 | f3097a66d13b720a36b65ff226b0322b5afb151a | 101 | 28 | 26 | 1 | 5 | same P | 28 even = S, verified | §3h (lengthens, after the old end) |
+| 4 | k4L72r_n101 = k4L72 + 81→49 | e84a57b6f13e546811c203bf35b86a0ee8b69462 | 101 | 31 | 29 | 1 | 5 | same P | 31 even = S, verified | §3i (lengthens, cut by 1-rises) |
+- No NEST* 7. The class best stays 6 (k = 3, n 75). k = 4 reaches 6 by the plain union (S 25, S/n = 0.25) and by nothing better in
+  84 + 50 + 126 + 8 + 17 + 120 + 43 = 448 hand-built configurations (§3b-§3i). The longest phase is S 31 at n 101 (S/n 0.31, k4L72r_n101),
+  NEST* 5: no super-polynomial signal.
+- Recipe status: the two roles of R50 §8d are confirmed and sharpened (§2): GATE = add a descending −1 ladder in the OLD structure in
+  front of the new part's block, which lengthens the phase and places the block inside the old innermost window; RETURN = shape the
+  new part's head ladder after the re-indexing so that pieces at the old levels' positions change first right after the block. Both
+  are statements about chain positions, not about vertices (hence R50 §5's mirror failure). At k = 4 on this seed the union
+  supplies the placement for free (16 (E) ⊃ 18 (D)), but a seventh level needs a longer post-block tail (one more recurring position
+  between 9 and 16), and none of the edge classes tried lengthens it: gates from the innermost pieces reorder E before D (masking),
+  gates from the ladder shorten or re-index, returns only re-index, and head-ladder gates lengthen the phase but only behind new
+  shallow rises (§3h, §3i, §4 (iii')). Open: a lengthening whose added searches have no shallow first change in between (notes/L-RED.md
+  NEXT 1), and a fourth part with its own multi-level structure (NEXT 2).
+- Honest limits: oink order only for the scans (§3b-§3g; the union and nest6min were checked in both orders and agree); n ≤ 101;
+  one seed (nest6min ⊎ oseg above); the obstruction is a reading of the data on this seed, not an impossibility proof; nothing here
+  touches (NEST*-BOUNDED)'s status (open, DATA only).
+- Frozen after this box: R51 §0-§5 (corrections in new sections only, as for R49 / R50).

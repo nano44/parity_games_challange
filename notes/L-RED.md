@@ -1,5 +1,6 @@
 # L-RED notebook (independent adversary on A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7)
-Box 19 (2026-10-22, successor 11, session_01Vq1xXP1gJphfvYS1UxA4td, Fable 5.1 under Lead reading L36; GO 05:32Z, to ~08:30Z).
+Box 19 (2026-10-22, successor 11, session_01Vq1xXP1gJphfvYS1UxA4td; GO 05:32Z, to ~08:30Z). Produced on Fable 5.1 (L36) to ~07:25Z, then on
+Opus 5.5: the session's model was switched (get_session: user_switched_model claude-opus-5-5, configured_model claude-fable-5-1).
 The previous notebook (boxes 1-18) is in git at l-red 4f73e7a6: `git show 4f73e7a6:notes/L-RED.md`; boxes 16-18 handover at a5274bd6.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
@@ -15,7 +16,11 @@ Status: box 19 END, PARKED (see Resume point).
   after #13 so that positions 8 and 7 change first at #14/#15; each alone gives NEST* 5.
 - k = 4 by hand on nest6min ⊎ oseg (above), k4u_n101 (37a45ff8…, Oink-verified): the plain union already nests E's piece around D's
   pair (16 ⊃ 18) but loses level 8: NEST* 6, S 25, both orders. 84 gates (D sources into 99/97/76, 4 priority slots: slot never
-  matters), 50 returns-on-gate, 126 single returns, 8 pairs/mirrors, 17 ladder-source gates: all NEST* ≤ 6. No NEST* 7.
+  matters), 50 returns-on-gate, 126 single returns, 8 pairs/mirrors, 17 ladder-source gates, 120 head-ladder gates, 43 head-gate +
+  returns (448 in all): all NEST* ≤ 6. No NEST* 7.
+- Lengthening found (R51 §3h-§3i): 72→80 gives S 28 (k4L72_n101, f3097a66…), + 81→49 gives S 31 (k4L72r_n101, e84a57b6…), both
+  Oink-verified (even iterations = S), both orders identical, NEST* 5: the extra searches come after the old end or between new rises of
+  position 1, which close every deeper window.
 - Obstruction (R51 §4): all 126 single returns keep S 25 and the identical prefix P[0..13]; after the block there is one free
   index (#14) before 7 closes at #15; a seventh level needs two recurring positions between 9 and 16, i.e. a longer post-block tail,
   which only a gate-type change (not a return) can add; gates from the innermost pieces replace D's block by E's instead of nesting.
@@ -24,8 +29,9 @@ Status: box 19 END, PARKED (see Resume point).
 None. No process runs at box end.
 
 ## NEXT (for the Lead to route)
-1. A gate that lengthens the POST-block tail: an edge from an old C-vertex into E whose delay only bites after #13 (candidates: the
-   D head-ladder vertices 49, 51, 58, 72 of s14, into E vertices that are consumed late). Score: S > 25 with the union's prefix.
+1. Lengthening without shallow rises: start from k4L72r_n101 (S 31) and look for edges that stop the mixed piece at position 1
+   (ABCDE[14,37,40,47,60,62,86,88,…]) from absorbing vertices between the block and the closes; score = NEST* of P restricted to
+   the stretch after the block, plus S.
 2. A different fourth part: E = nest5_n49 (a part with its own 5-level structure) above nest6min, then the recipe; n 124, ~40 s/eval.
 3. Re-read R50 §4 / §7 cross-part attributions with piecemap.py (file ids).
 ## Resume point
@@ -43,6 +49,8 @@ dtl.cpp @ 8fbf0a7. Earlier opened sources are listed in `git show 4f73e7a6:notes
 - Return edges on the plain union: only re-index the tail after #13; S 25 and prefix P[0..13] identical in all 126; never a new
   recurring position; scans/scan3_returns_on_union_oink.txt. Pairs and triples the same (scan4).
 - Literal mirror of the k = 3 step onto nest6min ⊎ oseg: NEST* 4 (scan4; agrees with R50 §5 on nest6 ⊎ oseg).
+- Head-ladder gates (72→80 etc., + returns): lengthen S to 28 / 31 but NEST* 5; added searches are cut by new rises of position 1
+  (k4L72r_n101, three 1-rises at P indices 13, 19, 21); scans/scan6_*, scan7_*.
 - Plain union nest6min ⊎ oseg above: E's piece nests around D's pair (16 ⊃ 18) but level 8 is lost: NEST* 6, not 7 (k4u_n101).
 
 ## NEEDS
