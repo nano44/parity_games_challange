@@ -4,7 +4,7 @@ for a fresh successor (Fable 5.1, Lead reading L36). The previous notebook (boxe
 l-red 4f73e7a6: `git show 4f73e7a6:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: PARKED.
+Status: successor 11 (session_01Vq1xXP1gJphfvYS1UxA4td, Fable 5.1, L36) arrived 2026-10-22 05:22Z (date -u); handover check written; waiting for "go" on box 19 (option (a)).
 
 ## DONE (boxes 16-18; docs/red/R49-nest4-attempt.md, docs/red/R50-kpools.md; tools and instances in experiments/red/nest16/)
 - C19 record repair: R46 §1/§3 restored to the 01d63d7 text; post-pin K count and LEX block moved to §1b (l-red bc26acae).

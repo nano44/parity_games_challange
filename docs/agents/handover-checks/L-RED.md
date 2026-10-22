@@ -333,3 +333,60 @@ Box 14 plan (Lead); nothing starts before GO:
   `git diff da63c40 -- docs/red/R47-chainkeep.md` limited to §1-§3 / §1-§5 must stay empty; new material goes in new sections
   and is flagged to the Lead.
 - Also (bit again at this start): stale local branch; `git rev-parse HEAD origin/claude/l-red` must agree before any edit.
+
+# L-RED successor 11 handover check, 2026-10-22 05:24Z (date -u) (produced on Fable 5.1, Lead reading L36)
+
+## 1. Branch, head, ahead/behind trunk
+- Branch claude/l-red. On arrival the local branch was NOT stale: after `git fetch origin claude/l-red claude/vibrant-johnson-nxvvxo`,
+  `git rev-parse HEAD origin/claude/l-red` both gave a5274bd6 (0/0 by `git rev-list --left-right --count HEAD...origin/claude/l-red`).
+- At a5274bd6: 3 ahead, 2 behind trunk origin/claude/vibrant-johnson-nxvvxo b41d57b4 (merge-base 4f73e7a6; the 2 trunk commits are
+  the Lead's ae3ddce4 merge of box 18 and b41d57b4 NOW/LEAD-STATE bookkeeping; the 3 l-red commits are the predecessor's merge
+  f4cc51d7 and the notebook handover 95a9b445, a5274bd6).
+- Merged trunk b41d57b4 with a merge commit (no rebase): head 25985b22, 4 ahead, 0 behind. This check commit makes it 5 ahead.
+
+## 2. Open work and the next step of each
+- Nothing running on arrival (ps: no oink, no dtl_*, no climbs, no python). Pinned Oink is not built in this fresh container;
+  `scripts/setup_oink.sh` started in the background (log in scratch), needed by experiments/red/nest16/kcheck.sh.
+- Box 19 target = notes/L-RED.md NEXT option (a); nothing starts before GO:
+  - (1) Per-search piece map of nest6min_n75 (e2c0d57f…, oink order). Next step: for each of the 25 searches, dump the depth-0 chain
+    with each piece's vertices, rank and part label (parts 0-25 near4, 26-45 chainfail, 46-48 climb-added, 49-74 oseg) with
+    ../xctx/tlog.py + partmask.py (L-ALG code unmodified); then name the piece holding the innermost open window of the witness
+    0 ⊃ 1 ⊃ 7 ⊃ 8 ⊃ 16 ⊃ 17 (positions 16/17 at P indices 9-12) and the enclosing 8- and 7-windows; then the tangles learned and
+    their escape vertices against the edges 23→73, 55→27, 64→15 (R50 §8b).
+  - (2) Then hand-build a GATE + RETURN pair (R50 §8d) for a fourth part on k4seed_c1_n82 (37c93f21…) or nest6min_n75 ⊎ a part with
+    n ≈ 10-12, aiming at NEST* 7 without a climb. Next step after (1): pick the gate vertex from the map, move its priority into the
+    band, add return edges into the parts carrying the enclosing levels; score with table.py in BOTH orders, verify every candidate
+    with pinned Oink (kcheck.sh), pin sha1s. At most 2 parallel jobs.
+  - (3) Standing: CHECKER / referee questions on R49 / R50 if the Lead routes them (R49, R50 are DATA, unrefereed). Frozen: R46 §1-§3,
+    R47 §1-§5, R49 §1-§8, R50 §1-§8d; new sections only.
+
+## 3. docs/GAPS.md rows I own
+- G-NEST (major, owner "L-RED (attacks + proof attempts); L-ALG successor if any"): OPEN. (NEST*-BOUNDED): NEST* ≤ c on 𝒞^1P.
+  GAPS text says class best NEST* 3 → 5 (box 16); the notebook / R50 §6 have NEST* 6 at k = 3 (nest6_n75, nest6min_n75, nest6x_n75,
+  Lead re-ran nest6_n75) and 6 with no 7 at k = 4; the row's update to 6 is the Lead's (docs/*.md). No family, no growth law,
+  not refuted, no proof route.
+- Relevant but owned by L-ALG "(L-RED attacks)": GAP-A (blocker, open; on 𝒞^1P reduced to (NEST*-BOUNDED) by RESULTS R16),
+  GAP-C (blocker, open). G-STR, G-DOM, G-FDL: closed (signed inputs).
+
+## 4. The three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with their DECISIONS-INDEX status
+1. D1 (docs/DECISIONS.md lines 6-7; index row D1 "active"):
+   > Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision.
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   (Any NEST* 7 candidate stays DATA until re-run by the Lead / referees; a "counterexample" from unmodified tools and pinned Oink only.)
+2. D13 (docs/DECISIONS.md line 229; index row D13 "active"):
+   > Keep working on the dtl and also c
+   (Lead readings L34 and L36, not owner rulings: L-RED continues as the DTL adversary; new sessions start on Fable 5.1 until the
+   owner answers Q18; no Opus referee signatures after the reset.)
+3. D7 (docs/DECISIONS.md line 105; index row D7 "active"):
+   > a
+   (Q9 option (a): "Continue at the current rate. We pause automatically if the cap is hit and stop at once on overage.") So at most
+   2 heavy jobs, and no climb outlives my box. D8 (Opus until the reset, "active" in the index) no longer applies to a session created
+   after the 2026-10-21 21:00Z reset (L36 (3)); this box is labelled Fable 5.1.
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap (box 18, twice): three parallel Python jobs at n ≈ 75-100 killed the container (exit 137, restarts ~01:2xZ and ~04:0xZ on
+  2026-10-22); scratch climbs lost steps, so the k = 4 step counts are lower bounds. Check: before launching any job,
+  `ps -eo pid,etime,args | grep -c "[p]ython.*nest16"` must be ≤ 1 (so the new job makes at most 2), and results go to files,
+  never to a pipe (a timeout on `| sort | head` lost the 94-union scan).
+- Standing check (bit successors 8-10, not this one): `git fetch origin claude/l-red` then `git rev-parse HEAD origin/claude/l-red`
+  must agree before any edit.
