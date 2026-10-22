@@ -70,3 +70,12 @@ subsets.py (all subsets of the remaining changes, NEST* in both orders).
 - Reading: after a union, the next level comes from coupling the parts directly: C-edges between parts plus interleaved
   priorities, on top of the coupling through mixed pieces. This is the clue for a recipe. A restricted climb that only adds
   cross-part edges and moves single priorities (experiments/red/nest16/crossclimb.py) is running on the k = 4 seed.
+
+## 5. Is the minimal step a recipe? Mirror test on k = 4 (negative)
+- Seed nest6_n75 ⊎ oseg_n26 (above): k = 4, n 101, NEST* 6. Its new oseg copy is vertices 75-100.
+- Mirror of the §4 step (oseg vertex i ↦ 75 + i): add 81→27, 90→15 and 23→99, then move 99 down 0 / 27 / 40 ranks.
+  NEST* (stable, oink): [3, 3], [4, 4] and [4, 4].
+- Variant "into the previous oseg copy" (81→53, 90→64, 23→99), shift 0: [3, 3]. The remaining variants were lost to a container
+  restart (01:2xZ).
+- So the minimal step does not transfer by index mirroring: the extra edges collapse the phase instead of adding a level. The step is
+  specific to the instance's dynamics, not a structural recipe.
