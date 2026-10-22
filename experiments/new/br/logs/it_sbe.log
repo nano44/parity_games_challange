@@ -1,0 +1,5 @@
+start (40, 9, -60)
+step 312 fit (41, 8, -60) (max revisits, iterations, odd moves) (8, 41, 4) n 60 n5-iterations 41 check OK sha1 359bd0ae89b3cbb08ed22d78a53a791f0152e398
+step 362 fit (41, 9, -60) (max revisits, iterations, odd moves) (9, 41, 4) n 60 n5-iterations 41 check OK sha1 ed4099bd709b438f38c6f1f704fb1d806dc8f89d
+step 538 fit (41, 11, -60) (max revisits, iterations, odd moves) (11, 41, 3) n 60 n5-iterations 41 check OK sha1 1c1bbd588914860fe4878f71400dc381443da376
+step 637 fit (42, 11, -60) (max revisits, iterations, odd moves) (11, 42, 4) n 60 n5-iterations 42 check OK sha1 e86d082e8c74fe6114306ed5fda247d9f3b4ec27
