@@ -202,3 +202,65 @@ sweep (scripts/setup_oink.sh first; check_sol2.py needs Oink).
   (`TZ=UTC git log --date=format-local`) are the record when a stamp is in doubt.
 - Also run at this handover: the stale-local-branch check (fetch, then `git rev-parse HEAD origin/claude/l-new`; equal this time),
   and the push rule (push.sh output redirected to a file, `$?` printed, never piped).
+
+## 2026-10-22 07:09Z (successor 5, Opus 5.5 per owner D15 / Lead reading L37; every time from date -u)
+Measured from the repository at writing time. Predecessor: successor 4 (Fable 5.1), box 11 parked, notebook head b8a1c58.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/l-new`. Local HEAD was STALE: 6b3dcd5, 23 behind origin/claude/l-new. After
+  `git fetch origin claude/l-new claude/vibrant-johnson-nxvvxo`: `git merge --ff-only origin/claude/l-new` -> b8a1c58 (= origin).
+- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 0 ahead, 106 behind (trunk = 0f33c77;
+  merge-base b8a1c58, i.e. trunk already contains all of box 11). `git merge --ff-only` trunk -> HEAD 0f33c77: 0 ahead, 0 behind;
+  1 ahead after this file's commit.
+
+### 2. Open work and the next step of each
+Nothing running; tools/oink/build and experiments/new/out/ are absent (gitignored) and must be rebuilt (scripts/setup_oink.sh) before
+any bench run.
+- P-N5-1P (box 10) is DONE: RESULTS R17 [refereed-only], CHECKER C20 PASS. No referee questions pending to my knowledge.
+- G-N5-TIME (two-player running time of N5): open; box 11 closed three routes (best-reply-change invariants FALSE with instances;
+  fixed-τ frame inapplicable; toggle killer blocked by circularity, ≤ 50 iterations at n ≤ 61). Next step depends on box 12 (below).
+- Box 12 (waits for "go"): choice and reason below.
+- Carried, not routed: G-N1-LB (optional).
+
+### 3. docs/GAPS.md rows I own (`grep -n "L-NEW" docs/GAPS.md` at 0f33c77)
+- **G-N5-TIME** (major; owner "L-NEW (L-LIT T22; referees later)"; status **open**).
+- **G-N1-LB** (minor; owner "L-NEW (optional; not routed)"; status **open**).
+- **G-N5-TERM** (major; owner "L-NEW (L-COMP checks runs)"; status **closed**, RESULTS R15).
+
+### 4. The three owner rulings that most constrain me (verbatim from docs/DECISIONS.md), with index status
+1. D1 (docs/DECISIONS.md line 7; DECISIONS-INDEX row D1 "active"):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+2. D14 (docs/DECISIONS.md "## D14"; index row D14 "active"):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D15 (docs/DECISIONS.md "## D15"; index row D15 "active"):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+   Lead reading L37 (a reading, not a ruling): main effort is (c) under D14; no option questions to the owner; step-2 survivors and
+   super-polynomial families are reported as information. Also binding (D1, line 6, "active"):
+   > Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision.
+
+### 5. One trap that bit this lane, and the check that now prevents it
+- Trap: a STALE local branch; it bit again at this start (6b3dcd5, 23 behind; working from it would have lost box 11's files).
+  Check: `git fetch` then `git rev-parse HEAD origin/claude/l-new` before any work; fast-forward only; never rebase.
+- Also carried: timestamps only from `date -u` in the same command that writes them (this heading was written that way);
+  push.sh output redirected to a file and `$?` printed, never piped.
+
+### Box 12 choice: (ii), a new untested approach. Proposed: N6 = path-following interior-point method on the P-matrix LCP of the game
+Reason for (ii) over (i):
+- (i) has had eight boxes (4-11) on N5 without a handle: K1-K10 killers failed, K9's policy-free route is dead (CDAG_n), and box 11
+  showed that neither honest valuation (stalls) nor fixed-τ values (τ moves every step) carry a two-player potential; the only named
+  remaining handle ("a potential tied to the subset rule") has no candidate statement. Climbed runs stay ≈ n (≤ 50 at n ≤ 61). Another
+  box on (i) without a concrete new statement is low information per hour. N5 stays a survivor; G-N5-TIME stays open and recorded.
+- (ii) tests a family no lane has touched: RANKING.md row 7 (IPM / tropical LP) "no IPM-based parity algorithm is known to L-LIT",
+  and N4 (tropical simplex) was proposed but not run. A fast kill test is cheap and decisive in either direction.
+- N6 sketch (to be screened BEFORE any code, per L35/L37): reduce parity -> mean-payoff (Jurdziński weights) -> discounted game with
+  γ of polynomial bit length (Zwick-Paterson), write it as a P-matrix LCP (Jurdziński-Savani), run a primal-dual path-following IPM
+  (Kojima et al. for P*(κ) LCPs) at counted bit cost, round to positional strategies, verify with experiments/harness/verify.py.
+- Screening questions I will answer first, each against an opened source: B13 (pivoting only: outside), B15 (strong polynomiality
+  only: does not bite in the bit model, but RANKING row 7's open question whether the long-and-winding LPs tropicalize to parity
+  games is a direct threat), B19 (weight compression, not applicable unless N6 shrinks weights), B18 (Howard / discount: N6 is not
+  PI). Known obstruction to a proof: IPM iteration bounds for P*(κ)-LCPs grow with κ(M), and κ can be exponential for P-matrices;
+  whether it is for game matrices is the first thing the bench measures (iterations and κ estimates vs N on the hard families).
+- Kill criteria: super-polynomial iteration growth or bit growth on any hard family (gauntlet step 2), or a screen showing a known
+  barrier covers it; recorded as a dead end with the instance. If N6 dies at the screen, I fall back to (i) only with a concrete
+  statement, otherwise to the next untested approach.
