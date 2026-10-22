@@ -26,12 +26,18 @@ Lead limits: <= 2 SAT jobs at once (container kills ~3 heavy processes), checkpo
 - 13:18Z box end: strong (5,5) k=11 still in ONE solve after 5h20m (PID 5687; not resumable, no checkpoint gain);
   weak (5,5) k=10 in round 7 after 3h33m (PID 12501; round 6 took 4255 s; checkpoint out/ckpt_weak_V_n5_d5_k10.json).
   Both left running pending the Lead's decision. Paused: weak (5,6) k=14 checkpoint (181+37 graphs, 67 rounds).
+- 13:25Z theory box GO (to ~16:30Z; jobs PIDs 5687/12501 kept until ~01:30Z Oct 23). Output docs/struct/S5-weak-strong.md:
+  CDFJLP needs strongness only in Lemma 5.2 (quote); Lemma TD (tree-decomposable <=> strong) PROVED; Prop. W PROVED
+  (weak W with U_G(W) odd-cycle-free obeys Thm 5.1's bound) but its hypothesis UG is DEAD on data; same-even-partition
+  hypothesis DEAD; Lemma SL (lasso > n) PROVED (elementary); s^V formula: DATA range + false for n >= 2 240 572 at d = n
+  by L4 (l4_vs_formula.py).
 
 ## Queue
+0. At ~01:30Z Oct 23 (Lead cap): stop PIDs 5687, 12501; record bounds + cost obstruction in S3 §2 (LRAT via lrat.sh
+   if 5687 ends UNSAT and the proof fits; PID 12501 SAT = gap: report at once with sha1, re-verification, LRAT path).
 1. The box above. A gap at d <= n+1: report at once (LRAT path, witness sha1), then lasso_analysis / family (T3-pos).
-2. If T3 is attacked again: the open core is a SIZE argument; "rewire to strong" (F9) and "hidden universal tree" (F10)
-   are dead. Untried: compare minimal weak and minimal strong separators of one cell state by state (bisimulation up to
-   even-realisable words) to see whether they are always related by a bijection of states.
+2. Theory targets after S5: T5 (a thinner universal word family whose runs avoid the tolerated odd cycles) and T6
+   (fooling sets with the safety-correct notion, S5 §7). The state-by-state comparison (old item 2) is DONE: DEAD (S5 §4).
 
 ## Things only I know
 - Timestamps in my messages of 2026-10-14 ran ahead of UTC by up to 90 min until ~20:35Z; SHAs are authoritative.
@@ -59,6 +65,7 @@ Lead limits: <= 2 SAT jobs at once (container kills ~3 heavy processes), checkpo
 | Parys, CSL 2020, LIPIcs.CSL.2020.32 | p.2 intro sentence; Def. 3.2 (PG separator weak / strong PG separator); remark after Def. 3.2 | 2026-10-14 | cited in S2 to pre-empt a misreading |
 | arXiv 2305.00308v1 (Parys-Wiącek) | p.2 vertex-splitting remark (verbatim in L4-proof.md); p.8 §4 "necessity proof does not apply"; Thm 3.1, recursion (1) | 2026-10-14 | L4 attribution |
 | arXiv 1902.07175v3 (Kozachinskiy-Vyalyi) | §1.2-1.3 alphabet, "in time t", qn-time remark (App. A), p.6 quote; Thm 2 | 2026-10-14 | their intro describes CDFJLP's bound with reversed roles |
+| arXiv 1807.10546v2 (CDFJLP), re-opened | §5.1 Lemma 5.2 proof (the LimsupOdd sentence, quoted in S5 §1), §5.2 Lemma 5.3, G_t, α_t, Prop. 5.1, Claim 5.1; §6 open question (quoted S5 §0) | 2026-10-22 | arxiv.org/pdf/1807.10546v2, pdftotext; scratch copy not committed |
 
 ## Dead ends
 | date | idea | obstruction (exact) | instance |
@@ -73,3 +80,5 @@ Lead limits: <= 2 SAT jobs at once (container kills ~3 heavy processes), checkpo
 | 2026-10-14 | D-C1: rewire target "next state of the cycle or source" | wrong in 42 of 64 working rewires | V (3,3) k=5, δ = [[1,0,1],[2,3,2],[⊥,3,⊥],[4,3,⊥],[2,0,⊥]], δ(4,2): 0 → 3 |
 | 2026-10-14 | D-C2: any deterministic target rule (shallowest/deepest interval state, source, successor, predecessor) | none holds on all 57 groups; only NR (necessary) does | same instance, interval {1,3,4}, only 3 works (target_rule2.py) |
 | 2026-10-14 | D-HB2: the D-tree of A − τ0 of a minimal weak separator at d ≤ n+1 is (n,⌈d/2⌉)-universal | false on 2/3 (E (2,3)), 8/11 (V (3,3)), 30/42 (V (3,4)); control on strong E witnesses passes | E (2,3) k=3, δ = [[1,0,1],[⊥,2,⊥],[1,0,⊥]], τ0 = (1,2), leaves {(0,0),(1,0)} (test_HB2.py) |
+| 2026-10-22 | Same even-prefix partition: every minimal weak W at d ≤ n+1 has a minimal strong S with R(W,S) a bijection | false: 1/16 (V (2,3)), 0/3 (E (2,3)), 1/11 (V (3,3)), 2/42 (V (3,4)) | V (2,3) W = [[1,1,1],[2,1,⊥],[⊥,0,⊥]], least |R| = 5 (prefix_partition.py, results/partition/) |
+| 2026-10-22 | UG: the CDFJLP graphs G_t drive no odd cycle of a weak separator (would give Thm 5.1's bound by S5 Prop. W) | false on almost all non-strong weak separators, also at d = n+1 | E (2,4) k=3 δ = [[1,0,1,0],[⊥,2,⊥,0],[1,0,⊥,0]] (ug_test.py) |

@@ -1,0 +1,75 @@
+{
+ "n": 2,
+ "d": 3,
+ "conv": "E",
+ "k": 3,
+ "weak": 11,
+ "weak_complete": true,
+ "strong": 8,
+ "strong_complete": true,
+ "nonstrong": 3,
+ "nonstrong_with_bijection": 0,
+ "strong_weak_with_bijection": 8,
+ "failures": [
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     null,
+     2,
+     null
+    ],
+    [
+     1,
+     0,
+     null
+    ]
+   ],
+   "least_R": 4
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     2
+    ],
+    [
+     2,
+     0,
+     null
+    ],
+    [
+     null,
+     1,
+     null
+    ]
+   ],
+   "least_R": 5
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     2
+    ],
+    [
+     null,
+     0,
+     null
+    ],
+    [
+     null,
+     1,
+     null
+    ]
+   ],
+   "least_R": 5
+  }
+ ]
+}

@@ -1,0 +1,315 @@
+{
+ "n": 2,
+ "d": 3,
+ "conv": "V",
+ "k": 3,
+ "weak": 28,
+ "weak_complete": true,
+ "strong": 12,
+ "strong_complete": true,
+ "nonstrong": 16,
+ "nonstrong_with_bijection": 1,
+ "strong_weak_with_bijection": 12,
+ "failures": [
+  {
+   "delta": [
+    [
+     1,
+     1,
+     1
+    ],
+    [
+     2,
+     1,
+     null
+    ],
+    [
+     null,
+     0,
+     null
+    ]
+   ],
+   "least_R": 5
+  },
+  {
+   "delta": [
+    [
+     1,
+     1,
+     2
+    ],
+    [
+     2,
+     0,
+     null
+    ],
+    [
+     null,
+     1,
+     null
+    ]
+   ],
+   "least_R": 5
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     2
+    ],
+    [
+     2,
+     0,
+     null
+    ],
+    [
+     null,
+     1,
+     null
+    ]
+   ],
+   "least_R": 5
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     2
+    ],
+    [
+     null,
+     0,
+     null
+    ],
+    [
+     null,
+     1,
+     null
+    ]
+   ],
+   "least_R": 5
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     2
+    ],
+    [
+     null,
+     0,
+     null
+    ],
+    [
+     1,
+     1,
+     null
+    ]
+   ],
+   "least_R": 5
+  },
+  {
+   "delta": [
+    [
+     1,
+     2,
+     2
+    ],
+    [
+     null,
+     0,
+     null
+    ],
+    [
+     1,
+     2,
+     null
+    ]
+   ],
+   "least_R": 4
+  },
+  {
+   "delta": [
+    [
+     1,
+     2,
+     1
+    ],
+    [
+     null,
+     2,
+     null
+    ],
+    [
+     1,
+     0,
+     null
+    ]
+   ],
+   "least_R": 4
+  },
+  {
+   "delta": [
+    [
+     1,
+     2,
+     1
+    ],
+    [
+     null,
+     2,
+     null
+    ],
+    [
+     0,
+     0,
+     null
+    ]
+   ],
+   "least_R": 5
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     null,
+     2,
+     null
+    ],
+    [
+     0,
+     0,
+     null
+    ]
+   ],
+   "least_R": 5
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     null,
+     2,
+     null
+    ],
+    [
+     0,
+     2,
+     null
+    ]
+   ],
+   "least_R": 5
+  },
+  {
+   "delta": [
+    [
+     1,
+     2,
+     1
+    ],
+    [
+     null,
+     2,
+     null
+    ],
+    [
+     0,
+     2,
+     null
+    ]
+   ],
+   "least_R": 4
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     null,
+     2,
+     null
+    ],
+    [
+     2,
+     2,
+     null
+    ]
+   ],
+   "least_R": 4
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     null,
+     2,
+     null
+    ],
+    [
+     2,
+     0,
+     null
+    ]
+   ],
+   "least_R": 5
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     null,
+     2,
+     null
+    ],
+    [
+     1,
+     0,
+     null
+    ]
+   ],
+   "least_R": 4
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     2,
+     1,
+     null
+    ],
+    [
+     null,
+     0,
+     null
+    ]
+   ],
+   "least_R": 5
+  }
+ ]
+}
