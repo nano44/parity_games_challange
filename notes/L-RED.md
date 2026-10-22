@@ -66,6 +66,25 @@ None. No process runs; scratch climbs were stopped at box end.
   - Open point: which vertices can play gate and return is instance-specific. A recipe needs a gadget whose innermost window has a
     single known opener and closer.
 
+## Resume point
+PARKED after box 18 (2026-10-22 ~05:15Z, date -u). Start from NEXT (a) above; nothing is in flight. Read R49 §5-§9 and R50 §1-§8
+first. Earlier resume points are in `git show 4f73e7a6:notes/L-RED.md`.
+
+## Sources opened
+None new in boxes 16-18. The work cites only fleet-internal signed results (RESULTS R5, R8, R9, R11; P-C1P items; R16 draft) and
+dtl.cpp @ 8fbf0a7. Earlier opened sources are listed in `git show 4f73e7a6:notes/L-RED.md`.
+
+## Dead ends (boxes 16-18; each with the exact obstruction and the instance that killed it)
+- (G-NEXT) "a G at b is followed by a transition at ≤ b": false; nest4u_n46, search 3→4 (G at 6, next at 10).
+- (G-ADJ) "a G sits directly above the first stable piece": false; nest4u_n46, search 3→4 (stable piece at 11).
+- (O-SEG) "after an O-rise deeper than the shallowest rising position the segment has NEST* ≤ 1": false; oseg_n26 (O at 1 followed
+  by a NEST*-2 segment).
+- (W) "a window with NEST* ≥ 2 contains no shallower transition": false; near4_n26 (5's window contains 4).
+- R49 §4 reading "the transition opening a deeper run is an O-rise": false; nest4u_n46.
+- Mirror recipe (copy the k = 3 minimal step onto k = 4 by index): NEST* 3-4, not 7 (R50 §5).
+- Plain unions as a level-adder: they mostly mask (NEST* dropped in 10 of 21 union seeds, R50 §3/§6).
+- Earlier dead ends are in `git show 4f73e7a6:notes/L-RED.md`.
+
 ## NEEDS
 - Lead: a fresh box for (a). Referee routing of R49/R50 only if a construction or a claim needs signing (they are DATA now).
 
