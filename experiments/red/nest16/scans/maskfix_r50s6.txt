@@ -1,0 +1,10 @@
+nest4u_n46.pg stable: unmapped: mixed pieces 18/194 = 0.09, transitions touching all 2 parts 8/17 | mapped: mixed pieces 18/194 = 0.09, transitions touching all 2 parts 8/17
+nest4u_n46.pg oink: unmapped: mixed pieces 18/194 = 0.09, transitions touching all 2 parts 8/17 | mapped: mixed pieces 18/194 = 0.09, transitions touching all 2 parts 8/17
+nest5_n49.pg stable: unmapped: mixed pieces 142/178 = 0.80, transitions touching all 3 parts 16/19 | mapped: mixed pieces 95/178 = 0.53, transitions touching all 3 parts 14/19
+nest5_n49.pg oink: unmapped: mixed pieces 142/178 = 0.80, transitions touching all 3 parts 16/19 | mapped: mixed pieces 95/178 = 0.53, transitions touching all 3 parts 14/19
+nest6_n75.pg stable: unmapped: mixed pieces 226/412 = 0.55, transitions touching all 4 parts 17/24 | mapped: mixed pieces 157/412 = 0.38, transitions touching all 4 parts 13/24
+nest6_n75.pg oink: unmapped: mixed pieces 226/412 = 0.55, transitions touching all 4 parts 17/24 | mapped: mixed pieces 157/412 = 0.38, transitions touching all 4 parts 13/24
+nest6min_n75.pg stable: unmapped: mixed pieces 230/407 = 0.57, transitions touching all 4 parts 17/24 | mapped: mixed pieces 141/407 = 0.35, transitions touching all 4 parts 14/24
+nest6min_n75.pg oink: unmapped: mixed pieces 230/407 = 0.57, transitions touching all 4 parts 17/24 | mapped: mixed pieces 141/407 = 0.35, transitions touching all 4 parts 14/24
+nest6x_n75.pg stable: unmapped: mixed pieces 137/406 = 0.34, transitions touching all 2 parts 25/26 | mapped: mixed pieces 114/406 = 0.28, transitions touching all 2 parts 25/26
+nest6x_n75.pg oink: unmapped: mixed pieces 137/406 = 0.34, transitions touching all 2 parts 25/26 | mapped: mixed pieces 114/406 = 0.28, transitions touching all 2 parts 25/26
