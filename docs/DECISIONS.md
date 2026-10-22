@@ -273,3 +273,25 @@ Reading, until the owner answers Q18:
     and the proof lane is parked (Q16 recommendation).
 (4) No referee signs on Opus after the reset unless the owner extends D12; existing "(Opus 5.5, D12)" labels stay.
 (5) Working sessions: 3 of 5 (L-RED, L-NEW, CHECKER).
+
+## D15 (2026-10-22 ~06:59Z, owner via OWNER-DESK owner-desk a7578c6e, answering Q18 and Q16)
+> q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+
+Lead reading L37 (2026-10-22 07:00Z by date -u):
+(1) Q18 (b): lanes AND referees run on Opus 5.5. This extends D12 past the reset and replaces L36 (3)/(4). New sessions start on
+    Opus 5.5; referee signatures on Opus are labelled "(Opus 5.5, D15)". Fable sessions already running finish their current box and
+    are then succeeded on Opus; signatures already given on Fable 5.1 (RESULTS R17) stand with their label.
+(2) Q16 (b)+(c), closing the L32 reassessment: DTL keeps only the cheap adversarial side (L-RED: attacks on (NEST*-BOUNDED) and
+    on GAP-A; no DTL proof lane; L-ALG stays parked). The main effort goes to (c) under D14: L-NEW on N5 and on approaches not yet
+    tested, its own included. The extra "proof attempt on (NEST*-BOUNDED)" from the Lead's recommendation is dropped: the box-16-18
+    data (NEST* 3 -> 6 with the number of parts) point the other way; L-RED's adversarial work on it continues.
+(3) Standing instruction: the owner is not asked questions of this kind (options, models, reassessments, allocation). The Lead
+    reasons and decides, records the decision as a Lead reading, and reports it as information. This supersedes the "options to the
+    owner" parts of L32 (2) and L34 (2).
+(4) Still the owner's (D1/D10/D11, CLAUDE.md, Lead reading): changes to TARGET.md; anything external (publishing, posting,
+    emailing, submitting, contacting anyone; D11 "No contact for now"); paid overage (stop the fleet and tell the owner, D1/D7);
+    restart after an owner "stop"; more than 5 working sessions (D1: "unless you justify more to me", reported with the
+    justification). Reports stay as information without questions: milestones, step-2 survivors, incorrect runs, super-polynomial
+    families, step-4 claims, the weekly checkpoint.
+(5) D1 "Spawn no attack lane before I approve it": lanes inside the D15 (2) directions (DTL adversary; (c) new approaches per D14)
+    need no further approval; that is the Lead's reading of "Be autonomous".

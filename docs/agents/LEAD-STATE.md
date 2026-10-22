@@ -757,3 +757,4 @@
 - 05:22Z (date -u) L-RED succ. 10 handover a5274bd (merged 6b8f030); parked. Created L-RED succ. 11 session_01Vq1xXP1gJphfvYS1UxA4td (Fable 5.1), handover first; box 19 = option (a).
 - 05:32Z (date -u) L-RED succ. 11 handover 5/5 (448553e); GO box 19 (option (a)) to ~08:30Z. GAPS G-NEST note updated to NEST* 6 / k = 4 plateau at budget (stale row caught by the successor).
 - 06:05Z (date -u) SWEEP (trigger 06:02Z): overage false; Lead $408 ~438k. Working: L-RED succ. 11 (Fable; box 19, ~125k, staging piece maps + k = 4 instances). Others parked; Q16/Q18 open. No exceptions.
+- 07:01Z (date -u) D15 recorded (owner via OWNER-DESK a7578c6e): Q18 (b), Q16 (b)+(c), 'Be autonomous, reason about it'. Lead reading L37. Q16/Q17/Q18 closed. Plan: L-RED succ. 11 (Fable) finishes box 19, successor on Opus; L-NEW next box on an Opus successor (main effort (c): N5 two-player + Option B weak separators queued by L35 + own approaches); referees on Opus (D15).
