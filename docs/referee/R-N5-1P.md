@@ -172,7 +172,9 @@ Honesty note: my first version had both signs of the MaxDiff rule reversed; the 
 breaks VJ00 Lemma 5.7), which is how I found it. Nothing was recorded before the fix.
 Packet scripts re-run by me (unmodified): lemmaP_check.py inst rel_g12 rel_g16 fl_n16: 2,402 checks, 0 violations, longest phase 14 at n = 16;
 lemmaP_check.py 300 5 8: 343 checks, 0; f1_check.py 300 5 10: 703 steps, 17,286 checks, 0. phase_vc.py: rel_g12 (11, 11) at n = 12,
-rel_g16 (15, 15) at n = 16, rel_g24 (21, 21) at n = 24: the n − 1 tightness as claimed, for the packet's sbstep rule.
+rel_g16 (15, 15) at n = 16, rel_g24 (21, 21) at n = 24. CORRECTION (§C, from REFEREE-2's N-2): phase_vc.py counts the λ-changing step that
+closes a phase inside it, so rel_g16's 15 is 14 in-phase + 1 closing (my own probe's 14 at n = 16 above is the in-phase count) and only
+rel_g12 (one phase, no closing step) attains n − 1 in-phase, for the packet's sbstep rule.
 GAP G6 (DATA note, not a claim): the tight count is tie-break dependent. On rel_g12 from the committed .start, sbstep takes 11 steps in one
 phase (all value-changing); n5.py, the actual N5 engine, takes 10 iterations; my 'keep' optimum 10 and 'far' 9. So "N5 attains n − 1 per
 phase" is shown for the packet's switch-all-in-the-arena engine, not for n5.py's VJ00-procedure engine. Also tail/logs/phase_vc.txt line 12
@@ -198,3 +200,36 @@ postulates I1/I2 are NOT used" is right for the bounds signed here (checked use 
 proof needs: that dualisation reverses the order exactly (my §4) and that (11) is a statement about all plays, not only positional
 strategies (VJ00 §4.3), which is what makes the dual's σ̄ dominate every arena strategy. The claim "N5 is polynomial on one-player games" is signed; it is not a TARGET.md claim (one-player parity games are
 polynomial by other means), as the Lead's packet says.
+
+## C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-1P.md, referee-2 f954070, read after my report was pushed at dfa87d0d; written
+2026-10-22 00:20Z-00:40Z by date -u; trunk 12617fc merged)
+Verdicts, claim by claim: identical in every row. (V1)/(V2) SIGN both. (F1)/(F2) SIGN WITH GAPS both (my G1 = their G-1P-4). Lemma P:
+R2 SIGN with the wording gap G-1P-1, I SIGN WITH GAPS G1/G2; G2 = G-1P-1 exactly (the B1 "c even, shorter" case; both note B2's list is
+complete because z's path is strictly longer). Theorem PH SIGN WITH GAPS both. Corollary 1: R2 SIGN with nit N-1, I SIGN WITH GAPS G5; N-1 = G5
+(λ-changing steps lie in no phase; both re-did the arithmetic and get the same bounds; R2 observes the box's n³ − n² + n is the count WITH
+the closing steps). Corollary 2 SIGN WITH GAPS both (G-1P-5 = my G4; G-1P-6 = G-N1 inherited). Corollary 3 SIGN as a reading / remark, both,
+no attribution. "Switch-best = N5 on one-player games": YES both, by the same order-reversal argument (R2 §2 (i), my §4). Scope statements
+agree. No disagreement on any verdict.
+Joint gap list (mine ↔ theirs):
+| mine | theirs | status after comparison |
+|---|---|---|
+| G1 ((F1) source) | G-1P-4 | CLOSED by two independent derivations. R2's: (11) in the dual, with the "⊵" halves of VJ00 (4) and (6) re-derived because the source ASSERTS them (R2 §2 (ii)). I ACCEPT this sharpening and withdraw my §3 sentence "the chain §5.1 → Prop. 5.1 → Lemma 5.2 is proved in the source": Lemma 5.2 is, (4)/(6) are not in full. My route (a) (dual of Lemma 5.5, §3) does not need (4)/(6): in the arena ⊕ chooses and ⊖ is forced, so Ω_σ is a single play's value and Prog along σ's edges is play-following; it needs Prop. 5.6 (proved) and Prop. 5.10 (verified by me). Two different proofs, same conclusion, exhaustive data on both sides |
+| G2 | G-1P-1 | CLOSED, same finding, same fix (one clause) |
+| G3 | G-1P-3 | CLOSED, same finding; R2's formulation is sharper: a deterministic optimum returning ρ_k is STUCK, not "stopped with I = ∅"; counts are of strategy-changing steps plus one terminal stuck/fallback event. I ACCEPT that wording |
+| (inside my G4 and §5 "flat regime") | G-1P-2 | CLOSED; R2 lists as its own gap the line "the return path of z_x to x contains no other switched vertex" that Theorem PH's step n and S4c both need. My report has the argument (§4, G4) but did not list it under Theorem PH; I ACCEPT it as a separate gap, closed |
+| G4 | G-1P-5 | CLOSED, same finding (the fallback needs no Lemma P and fires at any step) |
+| G5 | N-1 | CLOSED, same arithmetic |
+| G6 | N-3 | DATA note, same finding (sbstep vs n5.py tie-breaks: rel_g12 11 / 10; both referees' tie-breaks 10 / 10 / 9); R2 adds the method point that every one of the lane's switch-best numbers should name its rule |
+| — (my §6 took phase_vc's (15, 15) at face value) | N-2 | ACCEPTED, my §6 corrected above: phase_vc.py counts the closing step; in-phase tightness n − 1 is attained at n = 12 only (rel_g12), rel_g16 is 14 + 1, ph_n48 is 45 + 1. No bound affected |
+| (LP skipped above n = 24 in my probe) | G-1P-7 | DATA scope, now REDUCED (see below): Lemma P checked on n5.py's own ph_n48 sequence, all three phases including the 45-step one, for every simple path of ≤ 16 edges at every step: 24,987 checks, 0 violations; longer paths: see the line below |
+| G7-G9 (addendum §6 citations) | — | R2's report is on the pin 26905f0 and does not cover the addendum §6 (0f899f3); these stay mine, OPEN for L-NEW |
+| inherited G-N1 | G-1P-6 | DATA, both sides (R2: 34,601 iterations, 11,479 optima, 522 fallbacks; me: 7,224 runs), 0 mismatches |
+G-1P-7 (Lemma P on ph_n48's 45-step phase), what I did: docs/referee/scratch/n5_1p_ph48.py replays n5.py's loop unmodified on ph_n48 from
+its .start (47 iterations, 0 fallbacks, phases of 0 / 45 / 0 in-phase value-changing steps, as R2 and the box report) and checks Lemma P at
+every step of every phase over all simple paths of ≤ LMAX edges (exhaustive DFS up to that length): LMAX = 8: 13,325 checks; 11: 18,078;
+16: 24,987 (30 s); all 0 violations. LMAX = 24 and the full 47: still running at this push (started 00:22Z, 1,500 s cap each); their outcome goes in a follow-up commit. Paths longer than the largest finished LMAX remain unchecked; the proof
+does not depend on it (R2 and I agree).
+Disagreements: none. Two self-corrections on my side, both accepted from R2: the (4)/(6) point in G1 and the N-2 count. One addition on my
+side R2 does not have: route (a) for (F1) (§3), which avoids both Lemma 5.8 and the asserted halves of (4)/(6), and the addendum §6 slips
+G7-G9. Joint picture: the packet's §1-§4 and §6 are signed by both referees with the same gaps, all closed as wording or by derivation,
+except the DATA notes (tie-break, N-2, G-1P-7 partial) and the citation slips G7-G9 for L-NEW.
