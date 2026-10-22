@@ -1,0 +1,21 @@
+/tmp/claude-0/-home-user-parity-games-challange/43e400f1-0236-57e9-a7f9-34754965f4cf/scratchpad/inst/ph_n48.pg: n=48 m=179 status=ok steps=47 kinds=lvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvl
+phases (in-phase steps, value-changing, flat): [(0, 0, 0), (45, 45, 0), (0, 0, 0)]
+  F1_argmax_checks = 47
+  bruteforce_arenas = 46
+  bruteforce_strategies = 218
+  fallback_steps = 0
+  flat_steps = 0
+  lambda_steps = 2
+  lemmaP_checks = 1557
+  lemmaP_phases_SKIPPED_budget = 1
+  lemmaP_phases_checked = 2
+  max_flat_per_phase = 0
+  max_inphase_steps = 45
+  max_phases_per_run = 3
+  max_vc_minus_n_plus_1 = 0
+  max_vc_per_phase = 45
+  phases = 3
+  runs = 1
+  steps = 47
+  vc_steps = 45
+RESULT violations=0 secs=25.0
