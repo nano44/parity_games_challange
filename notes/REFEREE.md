@@ -17,7 +17,7 @@ Trunk claude/vibrant-johnson-nxvvxo was merged into claude/referee at the start 
   unmodified, 'inst' reads .pg/.start). §C written 00:20Z-00:40Z 10-22 after R2-N5-1P (referee-2 f954070, trunk 12617fc): full agreement;
   accepted R2's N-2 (phase_vc counts the closing step: only rel_g12 is tight in-phase), G-1P-2 (the "no other switched vertex on the return
   path" line as its own gap), G-1P-4's sharpening (VJ00 asserts the ⊵ halves of (4)/(6); my route (a) via the dual of Lemma 5.5 avoids
-  them); G-1P-7 reduced with scratch/n5_1p_ph48.py (Lemma P on n5.py's own ph_n48 sequence, simple paths of ≤ LMAX edges). PARKED after
+  them); G-1P-7 CLOSED with scratch/n5_1p_ph48.py (Lemma P on n5.py's own ph_n48 sequence, every simple path, 430 s). PARKED after
   the push on the Lead's word; next packet from the Lead.
 - Lesson (this packet): a wrong order makes switch-all CYCLE in a one-player game (VJ00 Lemma 5.7 breaks); my first probe had both
   MaxDiff signs reversed and hung. Test the order on a 3-vertex game before trusting any loop built on it.
