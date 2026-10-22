@@ -1,0 +1,16 @@
+== instances/k4L72_n101.pg sha1 f3097a66d13b720a36b65ff226b0322b5afb151a
+k4L72_n101.pg n 101 C 1 stable score (5, 75, 28, -101) P {(0, 0): [0, 1, 6, 9, 7, 4, 9, 3, 8, 16, 17, 17, 16, 1, 5, 7, 20, 18, 1, 17, 17, 7, 0, 7, 7, 7, 6]}
+k4L72_n101.pg n 101 C 1 oink score (5, 75, 28, -101) P {(0, 0): [0, 1, 6, 9, 7, 4, 9, 3, 8, 16, 17, 17, 16, 1, 5, 7, 20, 18, 1, 17, 17, 7, 0, 7, 7, 7, 6]}
+  oink: found 1 dominions and 82 tangles.
+  oink: solved in 29 iterations and 0 pruning steps.
+  oink: odd iterations: 1
+  oink: even iterations: 28
+  oink: solution verified (87 strategies).
+== instances/k4L72r_n101.pg sha1 e84a57b6f13e546811c203bf35b86a0ee8b69462
+k4L72r_n101.pg n 101 C 1 stable score (5, 100, 31, -101) P {(0, 0): [0, 1, 6, 9, 7, 4, 9, 3, 8, 26, 27, 27, 26, 1, 5, 5, 9, 22, 21, 1, 28, 1, 27, 27, 7, 0, 7, 7, 7, 6]}
+k4L72r_n101.pg n 101 C 1 oink score (5, 100, 31, -101) P {(0, 0): [0, 1, 6, 9, 7, 4, 9, 3, 8, 26, 27, 27, 26, 1, 5, 5, 9, 22, 21, 1, 28, 1, 27, 27, 7, 0, 7, 7, 7, 6]}
+  oink: found 1 dominions and 82 tangles.
+  oink: solved in 32 iterations and 0 pruning steps.
+  oink: odd iterations: 1
+  oink: even iterations: 31
+  oink: solution verified (87 strategies).

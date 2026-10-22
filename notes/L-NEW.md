@@ -2,6 +2,14 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
+SUCCESSOR 5 (Opus 5.5, D15/L37), BOX 12 (GO 07:18Z Oct 22, Lead box to ~10:45Z). N6 = IPM on the Jurdzinski-Savani P-matrix LCP of the
+induced discounted game: DEAD END (docs/new/N6-ipm.md §8; notebook "Dead ends"). Screen: proof route dead (HIJ kappa, Friedmann beta_G,
+HMZ Thm 6.5). Bench (experiments/new/ipm/results/*.csv): no answer on 7 of 13 hard families at small N, smallest counter_ortl N = 3 (n = 16,
+instances/n6/counter_ortl-3.pg), and on every random game with n >= 23; all produced answers correct. Obstruction §6 (path lost in
+coordinate space; Newton direction arb-certified; M certified P). Nothing running.
+Second half (Lead 08:02Z): N7 entropic temperature homotopy screened and benched: DEAD END (docs/new/N7-entropic.md). PARKED; nothing running.
+NEXT for this lane (Lead decides): a candidate must pass the HMZ principle (gamma-free argument) if it uses the discounted reduction.
+
 BOX 11 END (~00:48Z Oct 22, date -u; Lead box to ~02:35Z, parked early: all three routes answered). PARKED after the final report; nothing running.
 - P-N5-1P (N5-phase-bound-box10.md §1-§4 + §6 as A1) has TWO Fable signatures (R-N5-1P dfa87d0 SIGNED WITH GAPS G1-G9; R2-N5-1P f954070,
   Lemma P SIGN, rest SIGN WITH GAPS wording); §7 answers G6-G9, N-2, N-3, G-1P-4, G-1P-7 (a300339). §1-§4 and §6 FROZEN: additions only.
@@ -180,6 +188,11 @@ NEXT for a successor:
   vary with N; check with a per-iteration trace (which edges each step switches).
 
 ## Sources opened
+- (succ. 5) arXiv 2007.06558 v5 Cen et al. (sha256 23fddbc3f493d02e): Thm 1. arXiv 2105.15186 v3 Cen-Wei (a2da0da3164be410): Thm 3.
+- (succ. 5, 2026-10-22) arXiv 1304.1888 v2 HIJ (sha256 01e4cde9b47f90cb): §2.3 Def. 16, Thm 18; §3 Thm 19, Thm 21 (family G_n); §4 Thm 22-25;
+  §1.1. arXiv 1708.01544 ABGJ (9608058cb6fa98a3): Thm A/B, Cor. 31, Remark 32, p.2-3 (bitlength of t exponential). de Klerk-Nagy,
+  optimization-online 2010/02/2555 (726c92b99e80dae6): abstract, Def. 1. arXiv 1106.0778 Friedmann (46c96f44775aa2b0): §9 beta_G, Thm 9.3.
+  arXiv 1008.0530 v1 HMZ (f53a6b5127d95078): Thm 6.5. arXiv 0909.5653 v1 FJS (9fbd86643615f000): B13 context only.
 - arXiv 1008.0530 v1 (Hansen-Miltersen-Zwick, "Strategy iteration is strongly polynomial for 2-player turn-based
   stochastic games with a constant discount factor"), opened 2026-10-18 09:2xZ (pdf, 13 pp). Thm 6.5: Strategy-Iteration
   from any start terminates within (m+1)(1 + log_{1/γ}(n²/(1−γ))) = O(m/(1−γ) · log(n²/(1−γ))) iterations (the n² is
@@ -248,6 +261,20 @@ NEXT for a successor:
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- N7 (entropic temperature homotopy: soft Bellman operator at gamma = beta_G, Newton path following in tau), DEAD END 2026-10-22 (box 12;
+  docs/new/N7-entropic.md). Proof route dead at the screen: known entropy-regularised rates are poly(1/(1-gamma), 1/tau) (Cen et al.
+  2007.06558 Thm 1; Cen-Wei 2105.15186 Thm 3), both exponential for parity; HMZ principle. Bench: stalls on counter_ortl-3 (sha1 c8bc3499...)
+  at tau ~ 2.8e-7 and on tc+ N = 2; start-phase failures on tc 4, counter_symsi 1-2, counter_rob 2. All produced answers correct.
+  SCREENING PRINCIPLE (N6, N7): any method on the parity -> discounted reduction analysed polynomially in 1/(1-gamma) is no better than SI
+  (HMZ 1008.0530 Thm 6.5); require a gamma-free argument before benching such a candidate.
+- N6 (IPM on the Jurdzinski-Savani P-matrix LCP of the parity-induced discounted game), DEAD END 2026-10-22 (box 12, successor 5;
+  docs/new/N6-ipm.md). Proof route dead at the screen: HIJ arXiv 1304.1888 Thm 19/21 kappa = Theta(n/(1-gamma)^2) (cost-independent,
+  extremal arena G_n), parity needs 1/(1-gamma) = n^Theta(d) (Friedmann 1106.0778 sec. 9 beta_G), and HMZ 1008.0530 Thm 6.5 makes SI
+  polynomial whenever the kappa bound is polynomial. Gauntlet step 2 failed: the implemented path-following IPMs give no answer on
+  counter_ortl N = 3 (n = 16; experiments/new/instances/n6/counter_ortl-3.pg sha1 c8bc349942b32305edee56ba8fb7d6504ed86622), tc N = 4,
+  tc+ N = 2, counter_symsi, counter_rob, counter_core N = 4 (central) and every random game with n >= 23. Obstruction: the iterate keeps
+  every product w_i z_i within 50% (or 1%) of mu yet leaves the path in coordinate space (state 7: z_7 ~ 0.05 vs 2.5e5 on the path);
+  Newton direction arb-certified, M certified P (262,143 minors), stall mu independent of precision, neighbourhood and step factor.
 - N2 (PRIO-ANNEAL), KILLED ON DATA 18:05Z UTC (box 3; first implementation n2.py). Padded switchallexp
   (gen_padsae.sh; dummies block compression): largest stage 6, 15, 34, 72, 148, 300, 604 (N = 1..7). Instance
   experiments/new/instances/killer/padsae_N7.pg (sha1 9ee0385509ac81f2dd9eb111df2ecbdabdfa87b1, n = 230): stage of 604.
@@ -267,6 +294,12 @@ NEXT for a successor:
   and box 7's K8 constant-case closure. Obstruction: CDAG_n has 2^n - n - 1 Ω-strict single VJ00 improvements (one-player, all ⊕).
   Instance: experiments/new/instances/cdag/cdag_N12.pg (sha1 41f780ede48ae00d4e4f15251abf2583f9094aa0), chain 4083 by cdag.py.
 ## Things only I know
+- (succ. 5) Kill processes by matching argv fields (`ps -eo pid,args | awk '$3 ~ /bench\.sh$/'`), never by a pattern that also appears in
+  your own bash -c line: `awk '/bench.sh/'` killed my own shell (exit 144) again on 2026-10-22. Background subshells re-launch the next
+  job: kill the parent subshell too.
+- (succ. 5) bench.sh re-reads n6.py per instance: do not edit n6.py while a bench runs; two modes sharing one .sol path raced (fixed).
+- (succ. 5) For IPM work: a "jam" is first a step-rule bug (Armijo on max-norm proximity, infeasible starts, big-M all jammed); only after
+  certifying the Newton direction (arb ball) and the P-property did the counter_ortl-3 stall count as the method's.
 - N5 Odd output strategy is σ̄ (Odd's optimal counter to the final σ), not τ. n5.py mode ssi reproduces DLM Prop. 7 exactly:
   use it as the engine check after any change. The Lead's clock stamps were ahead earlier; always date -u.
 - N5 fallback: on non-sink games N5's selection AND SSI's I can both be empty (random n = 11 game r00008); the fallback is one

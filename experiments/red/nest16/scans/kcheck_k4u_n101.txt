@@ -1,0 +1,8 @@
+== instances/k4u_n101.pg sha1 37a45ff8a932bcc6e4a79d4848a0a57dbb82367a
+k4u_n101.pg n 101 C 1 stable score (6, 116, 25, -101) P {(0, 0): [0, 1, 6, 9, 7, 4, 9, 3, 8, 16, 18, 18, 16, 1, 9, 7, 19, 17, 1, 16, 16, 7, 0, 6]}
+k4u_n101.pg n 101 C 1 oink score (6, 116, 25, -101) P {(0, 0): [0, 1, 6, 9, 7, 4, 9, 3, 8, 16, 18, 18, 16, 1, 9, 7, 19, 17, 1, 16, 16, 7, 0, 6]}
+  oink: found 2 dominions and 71 tangles.
+  oink: solved in 26 iterations and 0 pruning steps.
+  oink: odd iterations: 1
+  oink: even iterations: 25
+  oink: solution verified (87 strategies).
