@@ -1,0 +1,2 @@
+n=7 deg=3 games=400 seed=7: max consecutive fallbacks = 1; lemma checked on 1275 fallback iterations, no violation
+witness: (22, [7, 6, 0, 2, 11, 13, 8], [1, 1, 0, 1, 1, 1, 1], [[6], [0, 2], [3, 6], [1], [0, 2, 5], [0, 2], [3, 6]], (6, 0, 3, 1, 0, 0, 6), 2)

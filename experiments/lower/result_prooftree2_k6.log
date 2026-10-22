@@ -1,0 +1,3 @@
+core: 68 games, 217 vertices; k = 6; depth-k types separate W: True
+level 1: 16 realisable choices from 1 partitions -> 15 new live partitions, 0 dead [0.0s]
+level 2: 2776 realisable choices from 15 partitions -> 2555 new live partitions, 0 dead [2.2s]

@@ -1,0 +1,4 @@
+harm_n12_seed412.pg n=12 iterations=9 fallback=0 zielonka(oink zlk) OK strategies verified
+harm_n24_seed424.pg n=24 iterations=26 fallback=3 zielonka(oink zlk) OK strategies verified
+harm_n48_seed448.pg n=48 iterations=27 fallback=6 zielonka(oink zlk) OK strategies verified
+harm_n96_seed496.pg n=96 iterations=50 fallback=13 zielonka(oink zlk) OK strategies verified

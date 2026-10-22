@@ -1,0 +1,9 @@
+start 1
+step 27 switch-best steps 2
+step 57 switch-best steps 5
+step 148 switch-best steps 6
+step 328 switch-best steps 7
+step 455 switch-best steps 8
+step 470 switch-best steps 9
+step 1417 switch-best steps 10
+best 10

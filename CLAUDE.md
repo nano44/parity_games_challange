@@ -14,7 +14,7 @@ Playbook: docs/sources/fleet-playbook.md. Literature map (secondary source): doc
 - Every cited result has an opened source (arXiv id or DOI, theorem/section number) in your notebook. The landscape doc is never a source by itself.
 - Record every dead end with the exact obstruction and the instance that killed it.
 - Edit only your lane's files. Never rewrite pushed history (no rebase, amend, force-push). No pull requests.
-- Push only when scripts/verify.sh passes, chained: `scripts/verify.sh && git push -u origin <your-branch>`.
+- Push only with `scripts/push.sh` (runs scripts/verify.sh, pushes the current branch only on PASS). Never pipe the output of verify.sh or push.sh into anything: a pipe hides the exit code. Redirect to a file and print `$?`.
 - Quote the owner's rulings verbatim (docs/DECISIONS.md). A reading is labelled "Lead reading".
 - Never publish, post, email, submit or contact anyone outside the fleet. No secrets in any session.
 - Report outcomes faithfully: failures with their output, skipped steps named as skipped.
@@ -31,6 +31,10 @@ Playbook: docs/sources/fleet-playbook.md. Literature map (secondary source): doc
 - L-ATTR: docs/attr/, experiments/attr/.
 - REFEREE-2: docs/referee-2/ (independent second referee; reads docs/referee/ only after its own report).
 - L-LOWER: docs/lower/, experiments/lower/.
+- L-ALG: docs/alg/, experiments/alg/ (algorithm design loop; reads experiments/attr/ and experiments/harness/, does not edit them).
+- L-SI: docs/si/, experiments/si/ (strategy-improvement design loop; reads other experiments/ dirs, does not edit them).
+- L-RED: docs/red/, experiments/red/ (independent adversary against a named candidate; reads other lanes' files, does not edit them).
+- L-NEW: docs/new/, experiments/new/ ((c) design lane under D14: untested approaches, its own included; reads other lanes' files, does not edit them).
 - CHECKER: docs/checker/ (landing gate: exact-commit re-runs and statement diffs).
 - HUMAN-DESK: docs/HUMAN-REVIEW.md (packet for a human expert; owner decides any contact).
 - OWNER-DESK: docs/owner-desk/ (owner Q&A; open owner questions; relays owner words to the Lead verbatim).
@@ -38,9 +42,11 @@ Playbook: docs/sources/fleet-playbook.md. Literature map (secondary source): doc
 
 ## Commands
 - scripts/setup_oink.sh   build Oink (pinned) into tools/oink/build (gitignored); generators tc, tc+, counter_*, rngame live there.
+- scripts/push.sh         the only way to push: runs verify, pushes the current branch on PASS.
 - scripts/verify.sh       the gate: doc shape, Lean (when present), experiment checks, Oink smoke. Prints PASS/FAILED/NOT RUN per step.
 
 ## Traps
 - Oink's OINK_BUILD_TOOLS target (test_solvers) needs Boost >= 1.86; setup_oink.sh turns it off.
 - Count arithmetic on big numbers at its bit cost (TARGET.md section 3). Unit-cost big integers fake polynomial time.
+- Oink `--zlk` @ 8fbf0a7 aborts ("logic error", zlk.cpp:589, exit 255) on counter_m N = 41, 42 (sha1 b9d6a3d2…, 76ef4ebb…; Lead repro 2026-10-18). Do not use zlk as the sole reference there; A_DTL and `--tl` solve N = 41 in 1 iteration, verified.
 - A "counterexample" from an unfaithful implementation is not a counterexample: the referee checks pseudocode against the paper first.

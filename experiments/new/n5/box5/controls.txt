@@ -1,0 +1,6 @@
+SSI on module dlm1_top n=1..6: 2 6 14 30 62 126 
+SSI on module dlm1_low n=1..6: 1 3 4 7 14 25 
+SSI on module dlm2_top n=1..6: 2 10 18 33 64 123 
+SSI on module dlm2_low n=1..6: 3 10 23 39 74 148 
+unmodified dlm1 n=1..8 (n5.py spec / n5b spec / n5b orig): 1/1/1 2/2/2 4/4/4 4/4/4 6/6/6 7/7/7 8/8/8 8/8/8 
+unmodified dlm2 n=1..8 (n5.py spec / n5b spec / n5b orig): 2/2/2 4/4/4 7/7/7 8/8/8 11/11/11 12/12/12 13/13/13 15/15/15 

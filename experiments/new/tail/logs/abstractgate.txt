@@ -1,0 +1,12 @@
+n=4 rule=none starts=24 max steps=3 at start tau(1..n)=(0, 0, 1, 0); runs stuck (all improving edges masked, not optimal) 0
+n=5 rule=none starts=120 max steps=4 at start tau(1..n)=(0, 0, 1, 0, 1); runs stuck (all improving edges masked, not optimal) 0
+n=6 rule=none starts=720 max steps=5 at start tau(1..n)=(0, 0, 1, 0, 1, 0); runs stuck (all improving edges masked, not optimal) 0
+n=7 rule=none starts=5040 max steps=6 at start tau(1..n)=(0, 0, 1, 0, 1, 0, 1); runs stuck (all improving edges masked, not optimal) 0
+n=4 rule=up1 starts=24 max steps=3 at start tau(1..n)=(0, 0, 1, 0); runs stuck (all improving edges masked, not optimal) 0
+n=5 rule=up1 starts=120 max steps=4 at start tau(1..n)=(0, 0, 0, 2, 1); runs stuck (all improving edges masked, not optimal) 0
+n=6 rule=up1 starts=720 max steps=5 at start tau(1..n)=(0, 0, 1, 0, 1, 0); runs stuck (all improving edges masked, not optimal) 0
+n=7 rule=up1 starts=5040 max steps=6 at start tau(1..n)=(0, 0, 0, 2, 1, 2, 1); runs stuck (all improving edges masked, not optimal) 0
+n=4 rule=upall starts=24 max steps=3 at start tau(1..n)=(0, 0, 1, 0); runs stuck (all improving edges masked, not optimal) 0
+n=5 rule=upall starts=120 max steps=4 at start tau(1..n)=(0, 0, 0, 2, 1); runs stuck (all improving edges masked, not optimal) 0
+n=6 rule=upall starts=720 max steps=5 at start tau(1..n)=(0, 0, 1, 0, 1, 0); runs stuck (all improving edges masked, not optimal) 0
+n=7 rule=upall starts=5040 max steps=6 at start tau(1..n)=(0, 0, 0, 2, 0, 2, 1); runs stuck (all improving edges masked, not optimal) 0

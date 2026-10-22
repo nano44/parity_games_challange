@@ -1,0 +1,9 @@
+games with V_E in [8]: 2592
+round 1: 0 games, 808 clauses -> SAT [0.0s]
+   2587 failing
+round 2: 200 games, 167208 clauses -> SAT [7.7s]
+   105 failing
+round 3: 305 games, 254568 clauses -> SAT [3.1s]
+   120 failing
+round 4: 425 games, 354408 clauses -> UNSAT [13.3s]
+RESULT: no 6-gate program solves all 4-vertex games with V_E in [8] (UNSAT core of 425 games)

@@ -1,0 +1,5 @@
+punish N=2 plain: it=8 fb=0 | frozen-start: it=13 fb=0 longest lock=0
+punish N=3 plain: it=11 fb=0 | frozen-start: it=12 fb=0 longest lock=0
+punish N=4 plain: it=12 fb=0 | frozen-start: it=13 fb=0 longest lock=0
+punish N=5 plain: it=15 fb=0 | frozen-start: it=14 fb=0 longest lock=0
+punish N=6 plain: it=18 fb=0 | frozen-start: it=17 fb=0 longest lock=0

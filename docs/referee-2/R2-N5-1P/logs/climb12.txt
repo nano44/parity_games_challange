@@ -1,0 +1,7 @@
+it 3: max value-changing in-phase steps 1 (n-1 = 11)
+it 44: max value-changing in-phase steps 2 (n-1 = 11)
+it 199: max value-changing in-phase steps 3 (n-1 = 11)
+it 204: max value-changing in-phase steps 4 (n-1 = 11)
+it 226: max value-changing in-phase steps 5 (n-1 = 11)
+it 888: max value-changing in-phase steps 6 (n-1 = 11)
+climb n=12: best 6 vs n-1=11; runs=4002 steps=12982 max_vc_per_phase=6 violations=0 secs=29

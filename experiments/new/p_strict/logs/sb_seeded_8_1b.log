@@ -1,0 +1,5 @@
+start 8 n 10
+step 102 switch-best steps 9 (n = 10) check OK
+step 429 switch-best steps 10 (n = 10) check OK
+step 1445 switch-best steps 11 (n = 10) check OK
+best 11 n 10

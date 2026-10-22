@@ -1,0 +1,2 @@
+lockstep3 n=5 r=2 s=1 t=2 seed=0: 34 switches, 1216 tests, all three models agree
+lockstep3 n=5 r=2 s=1 t=2 seed=1: 55 switches, 1755 tests, all three models agree

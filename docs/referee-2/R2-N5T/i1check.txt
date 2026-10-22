@@ -1,0 +1,2 @@
+games 21952 non-maximum sigma with a single flat improvement (I1 fails for I = {(v,w)}): 4272
+example ([0, 2, 4], (0, 0, 0), ((1,), (0, 1), (0, 1)), {0: 1, 1: 0, 2: 0}, (1, 1))

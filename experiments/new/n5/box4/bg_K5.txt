@@ -1,0 +1,21 @@
+start (0, 0, 8)
+step 1 fitness (0, 0, 11) (N3 lock 0 fb 0 it 9; N4 lock 0 fb 0 it 11) check OK
+step 52 fitness (1, 1, 4) (N3 lock 1 fb 1 it 4; N4 lock 1 fb 1 it 4) check OK
+step 120 fitness (1, 1, 6) (N3 lock 1 fb 1 it 5; N4 lock 1 fb 1 it 6) check OK
+step 127 fitness (1, 1, 7) (N3 lock 1 fb 1 it 7; N4 lock 1 fb 1 it 7) check OK
+step 141 fitness (1, 1, 9) (N3 lock 1 fb 1 it 7; N4 lock 1 fb 1 it 9) check OK
+step 245 fitness (1, 1, 10) (N3 lock 1 fb 1 it 8; N4 lock 1 fb 1 it 10) check OK
+step 266 fitness (1, 1, 11) (N3 lock 1 fb 1 it 8; N4 lock 1 fb 1 it 11) check OK
+step 395 fitness (1, 1, 12) (N3 lock 1 fb 1 it 9; N4 lock 1 fb 1 it 12) check OK
+step 519 fitness (1, 1, 13) (N3 lock 1 fb 1 it 10; N4 lock 1 fb 1 it 13) check OK
+step 600 fitness (1, 1, 14) (N3 lock 1 fb 1 it 11; N4 lock 1 fb 1 it 14) check OK
+step 961 fitness (1, 1, 15) (N3 lock 1 fb 1 it 12; N4 lock 1 fb 1 it 15) check OK
+step 1246 fitness (1, 1, 16) (N3 lock 1 fb 1 it 13; N4 lock 1 fb 1 it 16) check OK
+step 1774 fitness (1, 1, 19) (N3 lock 1 fb 1 it 8; N4 lock 1 fb 2 it 19) check OK
+step 1939 fitness (3, 4, 15) (N3 lock 3 fb 4 it 12; N4 lock 4 fb 5 it 15) check OK
+step 2284 fitness (3, 4, 16) (N3 lock 3 fb 4 it 13; N4 lock 4 fb 5 it 16) check OK
+step 2503 fitness (3, 5, 17) (N3 lock 3 fb 4 it 12; N4 lock 5 fb 6 it 17) check OK
+step 3116 fitness (3, 5, 18) (N3 lock 3 fb 4 it 13; N4 lock 5 fb 6 it 18) check OK
+step 4570 fitness (4, 4, 17) (N3 lock 4 fb 5 it 14; N4 lock 4 fb 5 it 17) check OK
+step 4700 fitness (4, 5, 18) (N3 lock 4 fb 5 it 14; N4 lock 5 fb 6 it 18) check OK
+best (4, 5, 18)

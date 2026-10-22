@@ -1,0 +1,2 @@
+chain length 183 flat steps 6 all steps verified
+start {1: 6, 2: 0, 3: 4, 4: 6, 5: 8, 6: 0, 7: 3, 8: 3, 9: 2}

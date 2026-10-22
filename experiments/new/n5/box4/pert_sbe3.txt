@@ -1,0 +1,11 @@
+start 41 0
+step 2 iterations 59 fallbacks 0 check OK
+step 21 iterations 62 fallbacks 0 check OK
+step 610 iterations 64 fallbacks 0 check OK
+step 1027 iterations 65 fallbacks 0 check OK
+step 1512 iterations 67 fallbacks 0 check OK
+step 1670 iterations 68 fallbacks 0 check OK
+step 1678 iterations 71 fallbacks 0 check OK
+step 2281 iterations 72 fallbacks 0 check OK
+step 2293 iterations 73 fallbacks 0 check OK
+best 73 0

@@ -1,0 +1,1 @@
+games=3000 seed=41: Even-fallback steps 89; V increases at 0 vertex-steps; Xi above V at 0 vertex-steps (n5_sandwich_rand.py 3000 41, run 2026-10-18 box 4)

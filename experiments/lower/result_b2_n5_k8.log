@@ -1,0 +1,8 @@
+Q_3 prios=[1, 2] owners=[0, 1]: 22100 games, 66148 nodes -> 5164 classes (W true on 3298); max split round 4 [0.6s]
+seeded with 14 four-vertex core games
+round 1: subset 5220 nodes (14 games), 4120512 clauses -> SAT [26.8s]
+   sample of 2000000 random 5-vertex games: 379804 failing (in the chunks seen) [3.0s]
+round 2: subset 6220 nodes (214 games), 4915096 clauses -> SAT [110.0s]
+   sample of 2000000 random 5-vertex games: 120920 failing (in the chunks seen) [2.8s]
+round 3: subset 7220 nodes (414 games), 5708440 clauses -> UNSAT [1733.2s]
+RESULT: no program with 8 Cpre gates solves all two-player Büchi games with <= 5 vertices (UNSAT on a successor-closed subset): B_2(5) >= 9

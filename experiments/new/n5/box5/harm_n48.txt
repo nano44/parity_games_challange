@@ -1,0 +1,28 @@
+start (0, 3)
+step 3 harmful 1 iterations 4 check OK
+step 21 harmful 1 iterations 5 check OK
+step 26 harmful 2 iterations 5 check OK
+step 27 harmful 4 iterations 7 check OK
+step 147 harmful 4 iterations 8 check OK
+step 170 harmful 6 iterations 9 check OK
+step 181 harmful 7 iterations 10 check OK
+step 190 harmful 7 iterations 11 check OK
+step 192 harmful 8 iterations 12 check OK
+step 202 harmful 10 iterations 14 check OK
+step 351 harmful 10 iterations 15 check OK
+step 485 harmful 11 iterations 16 check OK
+step 497 harmful 11 iterations 17 check OK
+step 522 harmful 12 iterations 18 check OK
+step 543 harmful 13 iterations 18 check OK
+step 709 harmful 14 iterations 19 check OK
+step 1314 harmful 15 iterations 20 check OK
+step 1351 harmful 16 iterations 22 check OK
+step 1467 harmful 17 iterations 23 check OK
+step 1521 harmful 18 iterations 24 check OK
+step 1665 harmful 19 iterations 24 check OK
+step 1693 harmful 20 iterations 25 check OK
+step 1986 harmful 20 iterations 26 check OK
+step 2161 harmful 20 iterations 27 check OK
+step 2183 harmful 21 iterations 26 check OK
+step 2241 harmful 22 iterations 27 check OK
+best (22, 27)

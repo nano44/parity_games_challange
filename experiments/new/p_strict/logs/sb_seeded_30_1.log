@@ -1,0 +1,3 @@
+start 30 n 32
+step 846 switch-best steps 31 (n = 32) check OK
+best 31 n 32

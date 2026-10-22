@@ -1,0 +1,2 @@
+sbe2_s21.pg 9a0e32591bce n=60 iterations=37 fallback=0 zielonka(oink zlk) OK strategies verified | switch-best follow:  switch-best iterations 37; N5 iterations 37; N5's σ leaves the switch-best trajectory at iteration None
+sbe2_s22.pg 2ada5e28a654 n=60 iterations=33 fallback=0 zielonka(oink zlk) OK strategies verified | switch-best follow:  switch-best iterations 33; N5 iterations 33; N5's σ leaves the switch-best trajectory at iteration None

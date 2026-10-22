@@ -1,0 +1,11 @@
+start (18, 24, -20)
+step 1377 inphase-seg-moves 18 iterations 25 n 20 check OK sha1 ac1f38044609fe052dd68b98bacc91f8568ad02b
+step 3937 inphase-seg-moves 19 iterations 26 n 21 check OK sha1 216571bc42e6f6aa780866bb1c41919995183d1e
+step 4306 inphase-seg-moves 20 iterations 26 n 22 check OK sha1 6db74b11d1bb049649c40db3d14e8332a0cbf9e6
+step 5075 inphase-seg-moves 21 iterations 26 n 22 check OK sha1 89014e6181f9a31ef25a0e38130e3c76958ac13c
+step 5740 inphase-seg-moves 22 iterations 26 n 23 check OK sha1 afba3c4455c587919fd3ea6a919e4a24d2cc4caa
+step 7984 inphase-seg-moves 23 iterations 26 n 24 check OK sha1 b34ed3696e8262c60c2c2a93f8d320bea06c2826
+step 8790 inphase-seg-moves 24 iterations 26 n 25 check OK sha1 32714359f642eca05603d27797ca7476d15d0649
+step 17764 inphase-seg-moves 25 iterations 26 n 25 check OK sha1 fff725df113ea2b5dee53737a1f1639d33a16a91
+step 18191 inphase-seg-moves 25 iterations 27 n 25 check OK sha1 a053687acdcc6af36e483f6959cb745823c7c05e
+best (25, 27, -25)

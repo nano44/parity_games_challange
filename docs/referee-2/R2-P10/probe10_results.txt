@@ -1,0 +1,34 @@
+# corpus (268 files, n<=130, incl. DE19/DE20 instances), oink = pinned order, stable = stablerel.py + R2_REV=1; an10.py (wide sigma range: every p-vertex tau of R, every round incl. virtual)
+== oink: 268 files
+(σ,w) with exactly 1 exits: 27098
+(σ,w) with exactly 2 exits: 84
+ctx-phases with events: 89
+ctx-phases: 7703
+max X(σ,w): 2
+max X_R/|R| x100: 3350
+max |F_sigma|: 12
+steps: 519065
+sum N*: 114
+sum N_ent: 667913
+sum X: 27266
+sum events (Σk_q): 213
+== stable: 268 files
+(σ,w) with exactly 1 exits: 51737
+(σ,w) with exactly 2 exits: 3368
+ctx-phases with events: 121
+ctx-phases: 7709
+max X(σ,w): 2
+max X_R/|R| x100: 3379
+max |F_sigma|: 11
+steps: 536655
+sum N*: 197
+sum N_ent: 846410
+sum X: 58473
+sum events (Σk_q): 436
+files with a (sigma,w) exiting twice:
+experiments_alg_instances_resteal34_union_n90.pg_stable.res
+experiments_red_carry_instances_stealonce_both_n45.pg_oink.res
+experiments_red_carry_instances_stealonce_both_n45.pg_stable.res
+experiments_red_carry_instances_stealonce_core_n76.pg_stable.res
+experiments_red_carry_instances_stealonce_viol_n76.pg_stable.res
+# an10b.py narrow reading (tau in V_r of the earlier visit), DE20 instances: no 'entries > narrow exits + 1'; narrow/wide exits stealonce_viol oink 35/44, stable 1153/1969; stealonce_both oink 200/422, stable 204/430

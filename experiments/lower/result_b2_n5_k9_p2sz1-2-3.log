@@ -1,0 +1,3 @@
+resumed 612 games
+round 1: subset 3052 nodes (612 games), 4777231 clauses -> SAT [570.2s]
+   sample of 2000000 random 5-vertex games: 251689 failing (in the chunks seen) [3.1s]
