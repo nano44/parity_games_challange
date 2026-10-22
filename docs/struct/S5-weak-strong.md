@@ -48,14 +48,20 @@ blocks; "at most |A| − 1 decreases" holds with |B| ≤ |W|) and Conditions 1-2
 Hypothesis UG ("U_G(W) has no cycle with odd maximum" for minimal, or all, weak separators; tested below and at
 the T3 cell (3,4), d = n+1) — DEAD on data
 (experiments/weak-sep/ug_test.py, results/partition/UG_E_*.json; every strong separator passes, as Lemma TD says):
-| cell (E) | k | weak | non-strong | UG holds on non-strong |
-| --- | --- | --- | --- | --- |
-| (2,4) | 3 (= w) | 13 | 3 | 0 |
-| (2,4) | 4 (capped 5000) | 5000 | 1867 | 99 |
-| (2,6) | 3 (= w) | 2 | 2 | 0 |
-| (3,4) | 5 (= w) | 20 | 0 | - |
-| (3,4) | 6 (capped 5000) | 5000 | 9 | 0 |
-Instance: E (2,4) k = 3, δ = [[1,0,1,0],[⊥,2,⊥,0],[1,0,⊥,0]] (rows = states, columns = letters 1..4). Control: the
+| cell (E) | k | weak | non-strong | UG holds on non-strong | UG_α holds on non-strong |
+| --- | --- | --- | --- | --- | --- |
+| (2,4) | 3 (= w) | 13 | 3 | 0 | 0 |
+| (2,4) | 4 (capped 5000) | 5000 | 1867 | 99 | 374 |
+| (2,6) | 3 (= w) | 2 | 2 | 0 | 0 |
+| (3,4) | 5 (= w) | 20 | 0 | - | - |
+| (3,4) | 6 (capped 5000) | 5000 | 9 | 0 | 0 |
+UG_α is the thinnest form the proof allows: U_α(W) = the transitions of W's single run on each word α_t·2^ω (block
+exponent |W|); Prop. W holds verbatim with U_α(W) in place of U_G(W), because Lemma 5.3 reads only these runs.
+α_t is checked by hand on the two trees of n = 2, d = 4 (2^N 3 2^N and (1 2)^N), and every stored strong E separator
+passes both UG and UG_α (control).
+Instance: E (2,4) k = 3, δ = [[1,0,1,0],[⊥,2,⊥,0],[1,0,⊥,0]] (rows = states, columns = letters 1..4); for the tree
+t = ((0,0),(1,0)), α_t = 2^3·3·2^3 and the run goes 0 -3-> 1 -2-> 2 -2-> 0, a cycle with maximum 3 (its word (3 2 2)^ω
+needs 3 vertices in an odd graph, so n = 2 tolerates it). Control: the
 4-state weak (2,10) E separator (results/external/lcomp_weak_E_n2_d10_k4.json) is below the Prop. W bound
 C(1+5−1, 1) = 5, so UG must fail on it; it does. Obstruction: the paths of the G_t already drive a minimal weak
 separator around its tolerated odd cycles; the odd cycle is traversed by an even word whose graph path is not closed.
@@ -103,8 +109,10 @@ weak values: equality w = s on small cells says nothing about the growth of w.
 ## 7. What is left, stated as targets
 - T5 (weak transfer of Thm 5.1): find a sub-automaton B of every weak (n,d)-separator W that accepts a family of even
   words rich enough for Lemma 5.3 (a universal family of trees) and has no cycle with odd maximum. §3 shows the CDFJLP
-  family itself is too rich (B = U_G(W) has odd cycles); a thinner family must keep universality while avoiding the
-  tolerated odd cycles, whose lassos are all longer than n (Lemma SL).
+  family itself fails: already the single runs on the words α_t (B = U_α(W)) close odd cycles at minimum size. A
+  different family of even words must keep universality while avoiding the tolerated odd cycles, whose lassos are all
+  longer than n (Lemma SL); the instance above shows the obstruction: a high odd letter between blocks of an even
+  letter, which an odd graph with n vertices cannot fold.
 - T6 (pumping with folding): every lower bound must pump cycles inside the automaton (§8 Remark F rules out
   common-suffix fooling sets). For a weak separator a pump δ(u) = δ(uv) only bites when u·v^ω ∈ OddCycles_{n,d}, i.e.
   when the lasso folds into an odd graph with ≤ n vertices; Lemma SL is the unfolded one-loop case. Target: a family of
