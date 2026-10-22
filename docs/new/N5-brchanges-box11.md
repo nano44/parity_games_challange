@@ -45,3 +45,20 @@ per-segment potential mixing honest Ξσ with V_{σ,τ_k}) was therefore not sta
   iterations); max revisits of one vertex's best reply 16 at n = 24 (rev_r24.pg, sha1 ed28bad8…; σ̄ at one Odd vertex changes 19 times among
   ≤ 4 successors), 12 at n = 16, 10 at n = 21; global returns of σ̄: 26 in 34 changes at n = 60 (glob_sbe.pg, sha1 28a3b3d8…, seeded from
   sbe2_s21; Odd still never moves), 10 at n = 16. All runs ≤ 46 iterations: the structure that breaks the invariants does not lengthen the runs.
+
+## 5. (b)-lite on the test bed, after the 00:15Z default (written 00:21Z by date -u; br/evenonly_diag.py, br/segV_check.py; br/segV_*.txt)
+Frame tried: V = V_{σ,τ} (Even's one-player values in G_τ, the quantity N5's Even step optimises). Inside a (τ, λ(V))-phase (Odd's τ constant and
+every cycle node of V constant) Even's step is the optimum of the honestly gated arena of G_τ, and Lemma P (N5-phase-bound-box10.md) would hold
+verbatim if the gate were the V-gate. Findings:
+- Even-only runs (Odd never moves): sbe2_s21 (n = 60, 37 iterations): the honest gate and the V-gate coincide at every iteration but one (1
+  masked edge-iteration, 0 lures), so the run IS switch-best on G_τ and Theorem PH applies (9 λ(V)-phases, ≤ 12 Even moves each, ≤ n − 1);
+  Lemma-P-in-V 899 checks in the first phase, 0 violations. glob_sbe (26 σ̄ returns): 13 phases, ≤ 12 moves each, 32 masked, 26 lures. So the
+  toggling best reply of §3 does NOT lengthen these runs beyond the one-player bound: the toggle is harmless when τ is fixed.
+- Genuine two-player runs: τ changes at almost every iteration, so (τ, λ(V))-phases are tiny: max Even moves in one phase 1-2 on tc2, sg5,
+  ch_g16, ch_n16, best_n24, rev_r24, 5 on vc_g25 (segV_small.txt, segV_fast.txt). The gate mismatch is large (tc2: 856 masked edge-iterations,
+  29 lures; sg5: 701 / 80), and one Lemma-P-in-V violation occurs (sc24). The fixed-τ frame therefore does not see the length of real runs,
+  which comes from τ moving; and the honest frame fails by K1 stalls (N5-phase-bound-box10.md §5).
+- Consequence for (b): a two-player per-segment potential cannot be built from V_{σ,τ_k} alone (τ_k moves) nor from Ξσ alone (stalls). Both
+  honest valuations Ξσ_k (Even-monotone) and Ξτ_k (Odd-monotone) are monotone along the whole run whoever moves, so any N5 run is at the same
+  time an Even-SI run and an Odd-SI run with N5's subset rule; the only N5-specific handle is that rule (the optimum against the opponent's
+  CURRENT strategy), and no potential tied to it was found in this box. Not built; no instance beyond ≈ n iterations.

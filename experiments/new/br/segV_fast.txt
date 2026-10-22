@@ -1,0 +1,6 @@
+sbe2_s21.pg n=60 | (τ,λ(V))-phases 9, max Even moves in one 12 | Lemma-P-in-V checks 0 violations 0 (phases with a violation 0) | masked edge-iterations 1, lures 0
+glob_sbe.pg n=60 | (τ,λ(V))-phases 13, max Even moves in one 12 | Lemma-P-in-V checks 0 violations 0 (phases with a violation 0) | masked edge-iterations 32, lures 26
+ch_g16.pg n=33 | (τ,λ(V))-phases 45, max Even moves in one 2 | Lemma-P-in-V checks 0 violations 0 (phases with a violation 0) | masked edge-iterations 210, lures 111
+tc2.pg n=42 | (τ,λ(V))-phases 70, max Even moves in one 1 | Lemma-P-in-V checks 0 violations 0 (phases with a violation 0) | masked edge-iterations 856, lures 29
+sg5.pg n=38 | (τ,λ(V))-phases 71, max Even moves in one 2 | Lemma-P-in-V checks 0 violations 0 (phases with a violation 0) | masked edge-iterations 701, lures 80
+TOTAL checks, violations, masked, lures, max moves: [0, 0, 1800, 246, 12]
