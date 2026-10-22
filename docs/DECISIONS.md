@@ -258,3 +258,40 @@ Lead reading L35 (2026-10-18 09:04Z by date -u):
     An approach that survives gauntlet step 2 is reported to the owner at once.
 (4) Working sessions: L-ALG, L-RED, L-NEW (3 of the D1 cap of 5).
 
+
+## L36 (Lead reading, 2026-10-21 21:06Z by date -u): after the weekly-cap pause and the Fable reset
+Facts: every fleet session (Lead and OWNER-DESK included) stopped between 2026-10-19 03:33Z and 04:01Z with "You've hit your
+weekly limit · resets Oct 21, 9pm (UTC)" (rate_limit seven_day "rejected", isUsingOverage false on all). This is the D7 automatic
+pause ("We pause automatically if the cap is hit"), not paid overage; the owner could not be told at the time and was told at
+21:06Z (OWNER-DESK). The reset at 21:00Z is also the Fable reset that ends the D8 period ("switch to opus 5.5 until the weekly
+limit is reset") and the D12 period ("temperoraly"), and it is the L32 (2) reassessment point. Q16 (L32 options) is still open,
+so D13 ("Keep working on the dtl and also c") holds. Q18 put to the owner: models after the reset.
+Reading, until the owner answers Q18:
+(1) Work the cap cut off finishes on its existing session: L-RED succ. 10 (box 16, R48 §4) and CHECKER (C19 Addendum 3).
+(2) The (c) lane L-NEW continues its next box on its existing session (D13).
+(3) Any NEW session starts on Fable 5.1, as before D8. The Fable L-ALG session paused on 2026-10-16 is not resumed: it is stale
+    and the proof lane is parked (Q16 recommendation).
+(4) No referee signs on Opus after the reset unless the owner extends D12; existing "(Opus 5.5, D12)" labels stay.
+(5) Working sessions: 3 of 5 (L-RED, L-NEW, CHECKER).
+
+## D15 (2026-10-22 ~06:59Z, owner via OWNER-DESK owner-desk a7578c6e, answering Q18 and Q16)
+> q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+
+Lead reading L37 (2026-10-22 07:00Z by date -u):
+(1) Q18 (b): lanes AND referees run on Opus 5.5. This extends D12 past the reset and replaces L36 (3)/(4). New sessions start on
+    Opus 5.5; referee signatures on Opus are labelled "(Opus 5.5, D15)". Fable sessions already running finish their current box and
+    are then succeeded on Opus; signatures already given on Fable 5.1 (RESULTS R17) stand with their label.
+(2) Q16 (b)+(c), closing the L32 reassessment: DTL keeps only the cheap adversarial side (L-RED: attacks on (NEST*-BOUNDED) and
+    on GAP-A; no DTL proof lane; L-ALG stays parked). The main effort goes to (c) under D14: L-NEW on N5 and on approaches not yet
+    tested, its own included. The extra "proof attempt on (NEST*-BOUNDED)" from the Lead's recommendation is dropped: the box-16-18
+    data (NEST* 3 -> 6 with the number of parts) point the other way; L-RED's adversarial work on it continues.
+(3) Standing instruction: the owner is not asked questions of this kind (options, models, reassessments, allocation). The Lead
+    reasons and decides, records the decision as a Lead reading, and reports it as information. This supersedes the "options to the
+    owner" parts of L32 (2) and L34 (2).
+(4) Still the owner's (D1/D10/D11, CLAUDE.md, Lead reading): changes to TARGET.md; anything external (publishing, posting,
+    emailing, submitting, contacting anyone; D11 "No contact for now"); paid overage (stop the fleet and tell the owner, D1/D7);
+    restart after an owner "stop"; more than 5 working sessions (D1: "unless you justify more to me", reported with the
+    justification). Reports stay as information without questions: milestones, step-2 survivors, incorrect runs, super-polynomial
+    families, step-4 claims, the weekly checkpoint.
+(5) D1 "Spawn no attack lane before I approve it": lanes inside the D15 (2) directions (DTL adversary; (c) new approaches per D14)
+    need no further approval; that is the Lead's reading of "Be autonomous".

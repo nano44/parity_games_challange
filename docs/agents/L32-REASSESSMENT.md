@@ -49,3 +49,5 @@ the reset 2026-10-21 21:00Z. All lane sessions are parked; nothing is running.
 
 ## Q16 (early reassessment, 22:30Z by date -u)
 Sent to OWNER-DESK at 22:29Z (date -u). Trigger: L32 (2) "earlier when both lanes' boxes end with no new GAP-A reduction". L-ALG boxes 14-16 ended with no route (§35, §36, GAP-A-STATUS.md); L-RED box 14 killed (XCTX@p0), (TREE-PIECE⁺), (VR-NEW_all), (FD-WITNESS_all), (NO-PRE-a) (R42-R44, all re-run by the Lead in both orders). Options put: L32 (a), (b), (c). Lead recommendation: (b)+(c) (L-RED on the (CTX⁺) compounding-counter question; DTL proof lane parked; proof effort to N5 step 4; re-ask at the Fable reset). Until the owner answers, D13 holds. Status: OPEN.
+
+- Q16 addendum 2 (03:32Z by date -u): RESULTS R16 landed: on 𝒞^1P, GAP-A ⇐ (NEST*-BOUNDED), one named statement (refereed reduction); L32 half met (statement), proof route NOT met. Updated Lead recommendation: (b)+(c) plus a subclass proof attempt on (NEST*-BOUNDED). Status: OPEN.

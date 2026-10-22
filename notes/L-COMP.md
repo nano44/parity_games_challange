@@ -2,13 +2,11 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-15 23:05Z. DTL gauntlet step 2 DONE: (i) bench (Oink pinned dtl/idtl vs Zielonka, verified strategies, families +
-growth: experiments/dtl-bench/README.md, d1537b0/011fec0); (ii) second implementation dtl_py.py from C5-DTL.md only,
-cross-checked against Oink on 238,071 games (all five quantities equal with --order oink; regions/strategies equal with
-C5-literal orders); 3 divergences, all C5 order/counter omissions (README table; reported to Lead 21:19Z, 21:56Z, 22:14Z).
-L15 DONE 23:30Z (experiments/hard-families/pgsolver-binary-diff.md): binaries ran (no classifier refusal); generators
-byte-identical, switchall/switchbest iteration counts and solutions identical. PARKED after this (Lead 23:08Z); sat-hard
-parked with the T-L2 line (L25).
+2026-10-18 23:52Z. N5 second implementation DONE for this box (experiments/n5-second/README.md "Results"). SPEC mode = L-NEW's
+counts on all 526 rows run of 17 families; orig mode differs only on counter_rob/tc (tie-break A5); 0 wrong regions/strategies, 0
+repeated states; 2,000 own random games correct in both modes. tc spec run stopped at park (N = 26 not compared in spec mode;
+orig mode N = 26: strategies verified, noref). Lead 23:58Z: merged (b49c9fc), step-2 second implementation for N5 complete;
+L-NEW successor runs n5.py on my 2,000 random files. PARKED (context ~520k). A successor starts from this notebook.
 
 ## Queue (for the successor, after the running cells)
 0. sat-hard state (from the 2026-10-14 resume point): CEGAR-only s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT; CNFs lost
@@ -158,6 +156,8 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 | github.com/tcsprojects/pgsolver @ d3cd624 | generators recursiveladder.ml, policyiter/generators/*.ml; paritygame.ml conventions | 2026-10-14 | code, not a paper; papers awaiting source |
 
 ## Dead ends
+- 2026-10-18 (method note): watcher loops counting 'done' lines never end when a run crashes before printing 'done'; count
+  log lines or processes instead (three stale watchers hit their time limits this box, no data affected).
 - 2026-10-15 (not a dead end of an idea; a method note): a C5-literal reimplementation cannot reproduce Oink's
   tangle counts: four orders (step-0 std::sort, in-edge order, stored tangle order, Pearce SCC order) change counts.
   Use dtl_py.py --order oink for exact counts; stdsort.py emulates libstdc++ introsort incl. heap fallback.

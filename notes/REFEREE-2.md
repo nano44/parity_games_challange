@@ -2,6 +2,25 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
+2026-10-22 00:10Z (successor 3, Fable 5.1, L36). P-N5-1P (docs/new/N5-phase-bound-box10.md §1-§4 @ trunk 26905f0): docs/referee-2/R2-N5-1P.md.
+SIGN: (V1)/(V2), Lemma P (G-1P-1 wording), Corollary 1 (N-1), Corollary 3 (remark). SIGN WITH GAPS: (F1)/(F2) (G-1P-4: VJ00 (11) on the dual, order
+reversal + (4)/(6) "⊵" half re-derived in §2), Theorem PH (G-1P-2 simultaneous flat switches, G-1P-3 stuck engine = N5 fallback; both
+closed as wording), Corollary 2 (G-1P-5 pointer; G-1P-6 = G-N5T-1 code link DATA). Own tools R2-N5-1P/sb1p.py (valuation, play-max arena
+optimum + brute force, switch-best 4 tie-breaks, Lemma P every phase), n5link.py (n5.py replay vs mine: 34,601 iterations, 11,479 optima,
+522 fallbacks all flat, 0 mismatches), sbstep_link.py (L-NEW's data rule = switch-all inside the arena, N-3; every step an arena optimum;
+rel_g12 11 = n−1 tight confirmed; phase_vc counts the closing λ-step, N-2), climb.py. 0 violations anywhere. Next: §C comparison with
+docs/referee/ after the Lead says REFEREE's R-N5-1P is pushed.
+(stamp corrected 00:26Z: this entry's true time is 00:12Z, git committer date of 857ce074) Lead addendum (trunk 0f899f3: SCOPE line + §6 VJ00 dependency list) checked in R2-N5-1P §7: SIGN WITH GAPS, nits N-4 (improving
+edges are §4.4 (2) p. 11, Improve = Switch_I not argmax), N-5 (fixpoint data rule rests on Lemma 5.8 1⇒2 via 5.9/5.10, not 2⇒1), N-6 (pages).
+EXACT=1 numbers = my n5 replay.
+(true time 00:21Z = 498b8c99) §C vs REFEREE R-N5-1P (dfa87d0, trunk 12617fc): full agreement on verdicts; map G-1P-1..7/N-1..6 -> G1-G9 in §C; accepted G6's
+stale phase_vc.txt line; only mine: N-2 (phase_vc counts the closing λ-step; REFEREE's own probe gives 14 in-phase at n = 16 = mine). PARKED.
+2026-10-19 02:26Z §C-A1 vs REFEREE A1 (640ffae0): agree; accepted A1-5 (STR-DET excludes dominion-attractor e*) and A1-4 (use R46 K). Parked.
+2026-10-19 02:14Z A1 = R47 Theorem CK in R2-C1P.md §A1: all SIGN (A1-G1 unneeded distinct-prio hyp., A1-G2 cite R10(a)/R9(b) under consumption; closed). Closes G-R46-1: GAP-A on C^1P <= (NEST*-BOUNDED) alone. DOM-MONO DATA vacuous (0 changes in 163 pairs). Next: §C of A1 after Lead says REFEREE's is pushed.
+2026-10-19 01:44Z R2-C1P §9 (§C) vs REFEREE R-C1P 3061415: full agreement (L-1=G-LEX-1, R-2=G-R46-1); accepted N-1, O-1, S-2. Waiting for P-C1P addendum (L-RED R47, chain-keeping transitions).
+2026-10-19 01:29Z P-C1P (GAP-A-M §27b/§28e/§33b/§35b, R46 §1/§2b/§3 @ 01d63d7): docs/referee-2/R2-C1P.md. SIGN: CTRL, NOSTEAL-1P, §27b corollary, OUTCOME-MONO-1P, R46 §1, §2b. SIGN WITH GAPS: SAME-CTX (G-SC-1 rho=rank incl. e; G-SC-2 cite R9(b)), LEX + R46 §3 (G-LEX-1 = G-R46-1 MAJOR: need (CHAIN-CHANGE); S-1 = |P| + Z). Probe: R2-C1P/r2log.patch (depth-0 log + R2_REV), c1pcheck.py, nestbf.py. Next: §C after Lead says REFEREE's R-C1P pushed. Handover at ~600k.
+2026-10-19 00:45Z R2-N5K9 §7 (§C) vs REFEREE R-N5K9 160db1d: agree; accepted (3b) (P_strict suffices, factor 2n(n-1)+1), withdrew "flat steps included" from "exactly as needed". Parked.
+2026-10-19 00:40Z P-N5K9 (docs/new/N5-K9-reading.md @ e73b214): docs/referee-2/R2-N5K9.md, SIGNED conditional on (P_K9) with gaps G-K9-1 (premise any-subset/any-start, unsourced; VJ00 7.4 at most switch-all = T22), G-K9-2 (optimal-reply code cond.), G-K9-3 (constants). Switch-all premise insufficient. DATA: one-player chains single 183 @ n=10 (verified), switch-all <= 10. Next: §C after Lead says REFEREE's report pushed.
 2026-10-18 23:05Z (successor 2, session_01GkEUShwH75XDth7fwempSj, Opus 5.5, D12). Handover check 7f4ae9a (Lead: 5/5).
 P-N5T (docs/new/G-N5-TERM-reading.md @ trunk 812ecba): docs/referee-2/R2-N5T.md, SIGNED WITH GAPS (G-N5T-1 code link n5.py Iσ =
 VJ00 improvements (si.py Even side cross-checked 0 mismatches; dual side unchecked); G-N5T-2 termination only; G-N5T-3 VJ00
@@ -80,6 +99,7 @@ L4 (claude/l-struct 50dc28b, docs/struct/L4-proof.md). Do your own report before
 | arXiv 1410.7530 (FHZ shortest paths, e-print tex) | Table 1 (G_{n,r,s,t}), Def. 5.2 functional, B_0 = zero-edge trees, Thm 6.3 (Lower-RandomFacet.tex thm:main), intro lines 23-33, Conclude.tex open problem | 2026-10-15 | no remark on parity-game transfer |
 | arXiv 1410.7871 (errata, e-print tex) | section 1 (error only in RF = RF* claim; RF* bound stands; Hansen12/FHZ14 give RF bound), Fig. 1 pseudocode, "not difficult to obtain similar examples for parity games" | 2026-10-15 | |
 | arXiv 2607.06334 (Zwick RAR, e-print tex) | section 4 RAR steps 1-5, Appendix pseudocode (test (c -> b) in H) | 2026-10-15 | same recursion as RF |
+| BRICS RS-00-48 (same pdf, re-downloaded 2026-10-21, sha256 verified) | §4.1-4.5, §5.1 (3)-(10) with the "⊵" half of (4)/(6) re-derived, §5.2 Prop. 5.1, Lemma 5.2, (11); §7 Prop. 7.4 (p. 27, no proof) | 2026-10-22 | used for (F1) in R2-N5-1P §2; Lemma 5.8 not used |
 | BRICS RS-00-48 (Vöge-Jurdziński, pdf sha256 485a12de432a2a8c...) | §3 P1/P2/I1/I2, Thm 3.1; §4.1-4.5 (Θ, E, E_ℓ, Ẽ_ℓ, ⊕, multiset MaxDiff); §5.1 (3)-(10); Prop 5.1, Lemma 5.2, (11); Prop 5.3-5.6, Lemma 5.5, 5.7, 5.8 (+proof), 5.9, Prop 5.10; §5.6 | 2026-10-18 | Lemma 5.8 2=>3 proof step false at cycle nodes; I1 and I2 fail (R2-N5T §4) |
 | TARGET.md v1.0 | section 1 vocabulary (max-parity, successor condition, priorities 0..n) | 2026-10-14 | T-A1 uses nothing about the priority range |
 

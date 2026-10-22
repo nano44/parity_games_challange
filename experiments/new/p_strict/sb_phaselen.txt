@@ -1,0 +1,4 @@
+random: max steps in one phase 4 (at n = 19 ) example (steps, max phase, #phases) (4, 4, 1)
+sb1_counter_n10.pg n 10 (steps, max steps in one phase, #phases) (11, 4, 9)
+sb1_counter_n16.pg n 16 (steps, max steps in one phase, #phases) (17, 2, 17)
+sb1_counter_n48.pg n 48 (steps, max steps in one phase, #phases) (49, 17, 34)

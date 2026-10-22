@@ -289,3 +289,104 @@ Box 14 plan (Lead); nothing starts before GO:
   then `git rev-parse HEAD origin/claude/l-red` must agree before any edit (fast-forwarded here).
 - Second trap (box 11): Lead messages arrived up to 3.5 h late. Check: ReadNotifications at every check-in, after every long
   wait and after every push.
+
+# L-RED successor 10 handover check, 2026-10-19 03:07Z (date -u) (produced on Opus 5.5, owner D8)
+
+## 1. Branch, head, ahead/behind trunk
+- Branch claude/l-red. On arrival the local branch was STALE (local 5a30e98, origin/claude/l-red 878fd1a2, 2352 behind).
+  Fast-forwarded to 878fd1a2 (0 local commits to keep). At 878fd1a2: 0 ahead, 58 behind trunk
+  origin/claude/vibrant-johnson-nxvvxo 7710c0e1 (`git rev-list --left-right --count`).
+- Merged trunk 7710c0e1: git fast-forwarded (l-red had no commits trunk lacked), so no merge commit was needed; no rebase.
+  Head 7710c0e1, 0 ahead, 0 behind. This check commit makes it 1 ahead, 0 behind.
+
+## 2. Open work and next step of each item
+- (1) R48 §4 (box 16 target): does a −1 piece's own outcome rise ever feed a SHALLOWER −1 piece (carries chaining through
+  intermediate levels)? Next step: on nest3_n20 / nest3_n24 (experiments/red/xctx/instances/), log per search which piece's rise
+  feeds which (tlog.py), then either climb for NEST* ≥ 4 with a chain-through fitness (nestclass.py STAR=1 pattern) or
+  read dtl.cpp for the mechanism that forbids it. Waits for GO.
+- (2) CHECKER C19 / referee questions on R46/R47 via the Lead. Next step: answer when routed. R46 §1-§3 and R47 §1-§5 are FROZEN
+  (pinned 01d63d7 / da63c40); corrections go in new sections only.
+- (3) Adversarial check of any proof route for (NEST*-BOUNDED) that appears (dommono.py / lexrand.py pattern). Nothing to do yet.
+- Nothing running (no climbs started this session).
+
+## 3. docs/GAPS.md rows relevant to me
+- GAP-A (blocker, L-ALG; L-RED attacks): open. On 𝒞^1P the refereed reduction R16 draft (awaits CHECKER C19):
+  GAP-A on 𝒞^1P ⇐ (NEST*-BOUNDED); class best NEST* 3 (R48).
+- GAP-C (blocker, L-ALG; L-RED attacks): open (completeness; needs a cross-search progress measure).
+- G-FDL, G-STR, G-DOM: closed (used as signed inputs).
+
+## 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md)
+1. D13 (line 228; index row D13 "active"):
+   > Keep working on the dtl and also c
+   (Lead reading L34, active: L-RED works on a long phase at one context and serialized contexts.)
+2. D7 (line 105; index row D7 "active"):
+   > a
+   (Q9 (a): "Continue at the current rate. We pause automatically if the cap is hit and stop at once on overage.")
+   So at most 2 heavy jobs, and no climb outlives my box.
+3. D8 (line 161; index row D8 "active"):
+   > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
+   (Work in this box is labelled Opus 5.5 in notes/L-RED.md.)
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap: editing referee-signed text after its pin (successor 9 changed the K constant in R46 §1/§3 after pin 01d63d7; a referee
+  caught it). Check: before any edit to docs/red/R46-R48, `git diff 01d63d7 -- docs/red/R46-nest-bound.md` and
+  `git diff da63c40 -- docs/red/R47-chainkeep.md` limited to §1-§3 / §1-§5 must stay empty; new material goes in new sections
+  and is flagged to the Lead.
+- Also (bit again at this start): stale local branch; `git rev-parse HEAD origin/claude/l-red` must agree before any edit.
+
+# L-RED successor 11 handover check, 2026-10-22 05:24Z (date -u) (produced on Fable 5.1, Lead reading L36)
+
+## 1. Branch, head, ahead/behind trunk
+- Branch claude/l-red. On arrival the local branch was NOT stale: after `git fetch origin claude/l-red claude/vibrant-johnson-nxvvxo`,
+  `git rev-parse HEAD origin/claude/l-red` both gave a5274bd6 (0/0 by `git rev-list --left-right --count HEAD...origin/claude/l-red`).
+- At a5274bd6: 3 ahead, 2 behind trunk origin/claude/vibrant-johnson-nxvvxo b41d57b4 (merge-base 4f73e7a6; the 2 trunk commits are
+  the Lead's ae3ddce4 merge of box 18 and b41d57b4 NOW/LEAD-STATE bookkeeping; the 3 l-red commits are the predecessor's merge
+  f4cc51d7 and the notebook handover 95a9b445, a5274bd6).
+- Merged trunk b41d57b4 with a merge commit (no rebase): head 25985b22, 4 ahead, 0 behind. This check commit makes it 5 ahead.
+
+## 2. Open work and the next step of each
+- Nothing running on arrival (ps: no oink, no dtl_*, no climbs, no python). Pinned Oink is not built in this fresh container;
+  `scripts/setup_oink.sh` started in the background (log in scratch), needed by experiments/red/nest16/kcheck.sh.
+- Box 19 target = notes/L-RED.md NEXT option (a); nothing starts before GO:
+  - (1) Per-search piece map of nest6min_n75 (e2c0d57f…, oink order). Next step: for each of the 25 searches, dump the depth-0 chain
+    with each piece's vertices, rank and part label (parts 0-25 near4, 26-45 chainfail, 46-48 climb-added, 49-74 oseg) with
+    ../xctx/tlog.py + partmask.py (L-ALG code unmodified); then name the piece holding the innermost open window of the witness
+    0 ⊃ 1 ⊃ 7 ⊃ 8 ⊃ 16 ⊃ 17 (positions 16/17 at P indices 9-12) and the enclosing 8- and 7-windows; then the tangles learned and
+    their escape vertices against the edges 23→73, 55→27, 64→15 (R50 §8b).
+  - (2) Then hand-build a GATE + RETURN pair (R50 §8d) for a fourth part on k4seed_c1_n82 (37c93f21…) or nest6min_n75 ⊎ a part with
+    n ≈ 10-12, aiming at NEST* 7 without a climb. Next step after (1): pick the gate vertex from the map, move its priority into the
+    band, add return edges into the parts carrying the enclosing levels; score with table.py in BOTH orders, verify every candidate
+    with pinned Oink (kcheck.sh), pin sha1s. At most 2 parallel jobs.
+  - (3) Standing: CHECKER / referee questions on R49 / R50 if the Lead routes them (R49, R50 are DATA, unrefereed). Frozen: R46 §1-§3,
+    R47 §1-§5, R49 §1-§8, R50 §1-§8d; new sections only.
+
+## 3. docs/GAPS.md rows I own
+- G-NEST (major, owner "L-RED (attacks + proof attempts); L-ALG successor if any"): OPEN. (NEST*-BOUNDED): NEST* ≤ c on 𝒞^1P.
+  GAPS text says class best NEST* 3 → 5 (box 16); the notebook / R50 §6 have NEST* 6 at k = 3 (nest6_n75, nest6min_n75, nest6x_n75,
+  Lead re-ran nest6_n75) and 6 with no 7 at k = 4; the row's update to 6 is the Lead's (docs/*.md). No family, no growth law,
+  not refuted, no proof route.
+- Relevant but owned by L-ALG "(L-RED attacks)": GAP-A (blocker, open; on 𝒞^1P reduced to (NEST*-BOUNDED) by RESULTS R16),
+  GAP-C (blocker, open). G-STR, G-DOM, G-FDL: closed (signed inputs).
+
+## 4. The three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with their DECISIONS-INDEX status
+1. D1 (docs/DECISIONS.md lines 6-7; index row D1 "active"):
+   > Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision.
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   (Any NEST* 7 candidate stays DATA until re-run by the Lead / referees; a "counterexample" from unmodified tools and pinned Oink only.)
+2. D13 (docs/DECISIONS.md line 229; index row D13 "active"):
+   > Keep working on the dtl and also c
+   (Lead readings L34 and L36, not owner rulings: L-RED continues as the DTL adversary; new sessions start on Fable 5.1 until the
+   owner answers Q18; no Opus referee signatures after the reset.)
+3. D7 (docs/DECISIONS.md line 105; index row D7 "active"):
+   > a
+   (Q9 option (a): "Continue at the current rate. We pause automatically if the cap is hit and stop at once on overage.") So at most
+   2 heavy jobs, and no climb outlives my box. D8 (Opus until the reset, "active" in the index) no longer applies to a session created
+   after the 2026-10-21 21:00Z reset (L36 (3)); this box is labelled Fable 5.1.
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap (box 18, twice): three parallel Python jobs at n ≈ 75-100 killed the container (exit 137, restarts ~01:2xZ and ~04:0xZ on
+  2026-10-22); scratch climbs lost steps, so the k = 4 step counts are lower bounds. Check: before launching any job,
+  `ps -eo pid,etime,args | grep -c "[p]ython.*nest16"` must be ≤ 1 (so the new job makes at most 2), and results go to files,
+  never to a pipe (a timeout on `| sort | head` lost the 94-union scan).
+- Standing check (bit successors 8-10, not this one): `git fetch origin claude/l-red` then `git rev-parse HEAD origin/claude/l-red`
+  must agree before any edit.

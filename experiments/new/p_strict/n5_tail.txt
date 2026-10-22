@@ -1,0 +1,7 @@
+sc24.pg n=24 iterations=44 tail=24 (after Even's last move at 19); tail iterations with τ̄ = σ: 0; fallback iterations in the tail: 7 (whole run: 10)
+sc24g.pg n=25 iterations=46 tail=26 (after Even's last move at 19); tail iterations with τ̄ = σ: 0; fallback iterations in the tail: 7 (whole run: 10)
+sg2.pg n=30 iterations=61 tail=39 (after Even's last move at 21); tail iterations with τ̄ = σ: 0; fallback iterations in the tail: 7 (whole run: 10)
+sg3.pg n=34 iterations=65 tail=42 (after Even's last move at 22); tail iterations with τ̄ = σ: 0; fallback iterations in the tail: 10 (whole run: 13)
+sg4.pg n=36 iterations=73 tail=46 (after Even's last move at 26); tail iterations with τ̄ = σ: 0; fallback iterations in the tail: 7 (whole run: 10)
+sg5.pg n=38 iterations=72 tail=49 (after Even's last move at 22); tail iterations with τ̄ = σ: 0; fallback iterations in the tail: 10 (whole run: 13)
+best_n24_seed24.pg n=24 iterations=39 tail=21 (after Even's last move at 17); tail iterations with τ̄ = σ: 0; fallback iterations in the tail: 7 (whole run: 10)

@@ -1,0 +1,27 @@
+start (1, 2)
+step 0 changes 2 iterations 4 check OK
+step 3 changes 3 iterations 4 check OK
+step 17 changes 3 iterations 5 check OK
+step 35 changes 4 iterations 5 check OK
+step 49 changes 5 iterations 6 check OK
+step 87 changes 6 iterations 6 check OK
+step 94 changes 7 iterations 6 check OK
+step 100 changes 7 iterations 7 check OK
+step 110 changes 8 iterations 7 check OK
+step 125 changes 8 iterations 8 check OK
+step 127 changes 9 iterations 9 check OK
+step 140 changes 11 iterations 11 check OK
+step 155 changes 13 iterations 11 check OK
+step 208 changes 15 iterations 12 check OK
+step 222 changes 16 iterations 11 check OK
+step 368 changes 16 iterations 12 check OK
+step 401 changes 17 iterations 12 check OK
+step 417 changes 18 iterations 12 check OK
+step 476 changes 19 iterations 12 check OK
+step 682 changes 20 iterations 12 check OK
+step 869 changes 21 iterations 13 check OK
+step 1596 changes 22 iterations 13 check OK
+step 1942 changes 22 iterations 14 check OK
+step 2305 changes 22 iterations 15 check OK
+step 2473 changes 23 iterations 16 check OK
+best (23, 16)
