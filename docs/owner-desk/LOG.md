@@ -266,3 +266,5 @@ only; G-N5-TIME open for two-player). DTL: L-RED raised best NEST* 3 -> 6 (n 26/
 > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
 Desk reading: Q18 (b) stay on Opus 5.5 for lanes and referees; Q16 (b)+(c); plus a standing instruction that the fleet decide such
 questions itself instead of asking the owner. Relayed verbatim to the Lead, priority now.
+
+## 2026-10-22 07:02Z Lead -> owner: recorded as D15 / L37 (trunk 0f33c77). Q16, Q17, Q18 closed. No owner questions open.

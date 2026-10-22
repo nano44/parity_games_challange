@@ -1,8 +1,9 @@
 # OWNER-DESK notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point
-2026-10-18 ~09:10Z. D4-D14 recorded. No owner questions open. Lanes: L-ALG (DTL proof), L-RED (DTL attack), L-NEW ((c), D14). Next reassessment at the Fable reset 2026-10-21 21:00Z. Waiting for the owner.
+P26-10-22 ~07:10Z. D4-D15 recorded. No owner questions open. Standing D15/L37: never ask the owner option, model,
+allocation or reassessment questions; raise only TARGET changes, external acts, paid overage, restart after stop, >5 sessions.
+Reports (milestones, step-2 survivors, incorrect runs, super-poly families, step-4 claims, weekly checkpoint) are information only.
 
 ## Queue
 1. On each owner reply: log verbatim in docs/owner-desk/LOG.md, relay verbatim to the Lead (session_014FBi6o334DvwT5Uw2kDfoN).
