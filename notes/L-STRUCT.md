@@ -30,7 +30,8 @@ Lead limits: <= 2 SAT jobs at once (container kills ~3 heavy processes), checkpo
   CDFJLP needs strongness only in Lemma 5.2 (quote); Lemma TD (tree-decomposable <=> strong) PROVED; Prop. W PROVED
   (weak W with U_G(W) odd-cycle-free obeys Thm 5.1's bound) but its hypothesis UG is DEAD on data; same-even-partition
   hypothesis DEAD; Lemma SL (lasso > n) PROVED (elementary); s^V formula: DATA range + false for n >= 2 240 572 at d = n
-  by L4 (l4_vs_formula.py).
+  by L4 (l4_vs_formula.py). 13:50Z: S5 §8 Lemma CL (EvenCycles_{n,d} is closed, König) => closure DFA is strong and
+  huge (c^V(3,6) = 140; closure_dfa.py) and common-suffix fooling sets are void for weak and strong (Remark F); T6 restated.
 
 ## Queue
 0. At ~01:30Z Oct 23 (Lead cap): stop PIDs 5687, 12501; record bounds + cost obstruction in S3 §2 (LRAT via lrat.sh

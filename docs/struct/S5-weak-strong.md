@@ -34,7 +34,7 @@ Consequence. Any transfer of Thm 5.1 to a weak separator W must run Lemma 5.3 on
 the runs on all words α_t (one B, one D for all trees t: the D-tree must contain every t), and by Lemma TD B must have
 no cycle with odd maximum.
 
-## 3. Bridge 1: the CDFJLP words avoid the tolerated odd cycles (Prop. W PROVED; hypothesis UG DEAD)
+## 3. Bridge 1: do the CDFJLP words avoid the tolerated odd cycles? (Prop. W PROVED; hypothesis UG DEAD: they do not)
 Let U_G(W) be the set of transitions W takes on paths (from any vertex) of the graphs G_t of CDFJLP §5.2, t an ordered
 tree with exactly n leaves, all at depth d/2 (convention E, d even).
 Prop. W. If W is a weak (n,d)-separator in convention E and U_G(W) has no cycle with odd maximum, then
@@ -105,8 +105,26 @@ weak values: equality w = s on small cells says nothing about the growth of w.
   words rich enough for Lemma 5.3 (a universal family of trees) and has no cycle with odd maximum. §3 shows the CDFJLP
   family itself is too rich (B = U_G(W) has odd cycles); a thinner family must keep universality while avoiding the
   tolerated odd cycles, whose lassos are all longer than n (Lemma SL).
-- T6 (fooling sets for safety automata): a lower bound by pairwise distinguishable even prefixes u_i, with the right
-  notion for weak separators: for i ≠ j some y with u_j·y ∈ OddCycles_{n,d} and every finite prefix of u_i·y extendable
-  to a word of EvenCycles_{n,d} (L-COMP's version required u_i·y ∈ EvenCycles itself, which is impossible because both
-  words share the tail's limsup: notes/L-COMP.md 2026-10-14). Not computed.
+- T6 (pumping with folding): every lower bound must pump cycles inside the automaton (§8 Remark F rules out
+  common-suffix fooling sets). For a weak separator a pump δ(u) = δ(uv) only bites when u·v^ω ∈ OddCycles_{n,d}, i.e.
+  when the lasso folds into an odd graph with ≤ n vertices; Lemma SL is the unfolded one-loop case. Target: a family of
+  even runs whose pumped lassos all fold into ≤ n vertices and which forces many distinct states. Not computed.
 Neither target is in reach of the data tools at n ≥ 5 (S3 §2: n = 5 queries take hours per k).
+
+## 8. The closure of EvenCycles, and why fooling sets give nothing (PROVED; DATA for the sizes)
+Lemma CL. EvenCycles_{n,d} is a closed (safety) language: an infinite word all of whose finite prefixes are path words of
+even graphs with ≤ n vertices is itself in EvenCycles_{n,d}. Proof: there are finitely many such graphs over Σ_d, so
+infinitely many prefixes are path words of one graph H; the finite paths of H reading those prefixes form a finitely
+branching tree, so by König's lemma H has an infinite path reading the whole word, and H is even. ∎
+Consequence. The minimal DFA of P_E (the prefixes of EvenCycles_{n,d}) accepts exactly EvenCycles_{n,d}, so it is a
+STRONG separator. Its size c(n,d) is far above w and s (experiments/weak-sep/closure_dfa.py, results/closure/; every
+automaton re-checked by wsep.automata): V: c(2,3) = 4, c(2,4) = 13, c(2,6) = 24, c(3,3) = 10, c(3,4) = 49,
+c(3,6) = 140 (s^V(3,6) = 7, w^V(3,6) = 6); E: c(2,6) = 16, c(3,4) = 59. Separators gain their size by accepting far
+more than EvenCycles.
+Remark F (common-suffix fooling sets are void). Let u, u' be prefixes of even path words with δ(u) = δ(u') in a weak or
+strong separator. A contradiction from a common continuation y would need u·y forced accepted, i.e. every prefix of
+u·y in P_E, i.e. u·y ∈ EvenCycles_{n,d} ⊆ LimsupEven (Lemma CL), and u'·y forced rejected, i.e. u'·y ∈ OddCycles_{n,d}
+(weak) or LimsupOdd (strong); the two words share the tail y, hence the limsup: impossible. So no fooling-set argument
+of this form proves anything for either kind of separator (this generalises L-COMP's 2026-10-14 "always 1",
+notes/L-COMP.md); lower bounds must pump cycles of the automaton, as CDFJLP's Lemma 5.2 does.
+
