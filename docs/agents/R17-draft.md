@@ -1,4 +1,4 @@
-# Draft RESULTS R17 (Lead, 2026-10-22 00:40Z by date -u) — awaits CHECKER C20 re-diff (rev. 01:00Z: C20 E-1, E-2, N-1, N-2; rev. 01:03Z: REFEREE follow-up 708b996 closes G-1P-7; rev. 01:11Z: C20 Addendum 2 E-3 (a)-(c) wording)
+# Draft RESULTS R17 (Lead, 2026-10-22 00:40Z by date -u) — LANDED as RESULTS R17 (CHECKER C20 PASS, Addendum 4 3001bb1); was: awaits CHECKER C20 re-diff (rev. 01:00Z: C20 E-1, E-2, N-1, N-2; rev. 01:03Z: REFEREE follow-up 708b996 closes G-1P-7; rev. 01:11Z: C20 Addendum 2 E-3 (a)-(c) wording)
 
 ### R17 [refereed-only] N5 (switch-best) on one-player games: a λ-phase has at most n − 1 value-changing steps, so N5 makes fewer than (n² − n + 1)(n + m) iterations on one-player games (2026-10-22) — a bound on the candidate N5 itself on a subclass that is polynomial by other means (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open)
 - Object: docs/new/N5-phase-bound-box10.md §1-§4 (L-NEW successor 4, Fable 5.1), packet P-N5-1P pinned at trunk 26905f0, with addendum A1
