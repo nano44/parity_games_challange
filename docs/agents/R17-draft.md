@@ -1,4 +1,4 @@
-# Draft RESULTS R17 (Lead, 2026-10-22 00:40Z by date -u) — awaits L-NEW §7 (wording G7-G9, G6 re-log) and CHECKER C20
+# Draft RESULTS R17 (Lead, 2026-10-22 00:40Z by date -u) — awaits CHECKER C20 (L-NEW §7 merged)
 
 ### R17 [refereed-only] N5 (switch-best) on one-player games: a λ-phase has at most n − 1 value-changing steps, so N5 makes fewer than (n² − n + 1)(n + m) iterations on one-player games (2026-10-22) — a bound on the candidate N5 itself on a subclass that is polynomial by other means (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open)
 - Object: docs/new/N5-phase-bound-box10.md §1-§4 (L-NEW successor 4, Fable 5.1), packet P-N5-1P pinned at trunk 26905f0, with addendum A1
@@ -44,7 +44,7 @@
   (referee-2 f954070; §7 addendum 857ce07; §C 498b8c9; stamp correction ec8d7a7): Lemma P SIGN, others SIGN WITH GAPS. Both §C: identical
   verdicts, no disagreement; joint gap map G1 = G-1P-4, G2 = G-1P-1, G3 = G-1P-3, G4 = G-1P-5, G5 = N-1, G6 = N-3, G-N1 = G-1P-6, G-1P-2
   separate; all closed or DATA except G7-G9 (= N-4..N-6, citation slips in §6: Improve is §4.4 eq. (2) p. 11; the switch-all fixpoint rule
-  relies on Lemma 5.8 "1 ⇒ 2"; Prop. 7.4 is on printed p. 27), corrected by L-NEW in §7 at [SHA pending]; G-1P-7 (Lemma P on ph_n48)
-  reduced to DATA by REFEREE.
+  relies on Lemma 5.8 "1 ⇒ 2"; Prop. 7.4 is on printed p. 27), corrected by L-NEW in the new §7 (l-new a300339, merged trunk ace3841; §1-§4 and §6 unchanged: 0 deleted lines against 0f899f3); G-1P-7 (Lemma P on ph_n48)
+  reduced to DATA by REFEREE and by L-NEW §7 (lemmaP_paths.py: on ph_n48 the Lemma P instances Theorem PH's proof uses, 111 checks, and all paths x, π^j_z, 166,608 checks, 0 violations, both rules; the full statement over all simple paths is checked only for n ≤ 18).
 - TARGET.md diff: not a claim of TARGET.md section 1 (one-player games; no statement about general parity games). Gauntlet: partial step-4
   lemma for N5 on a subclass. GAPS G-N5-TIME: K8's constant case closed by this entry on landing; G-N5-TIME open.
