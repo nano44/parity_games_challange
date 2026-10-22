@@ -55,6 +55,19 @@ Status: PARKED 02:47Z (date -u) at ~525k (Lead 02:46Z: handover; successor next 
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+BOX 17 (successor 10, same session; GO 2026-10-21 23:47Z; box end ~02:50Z by date -u). Doc: docs/red/R50-kpools.md §1-§7.
+- (G-NEXT-1P) (R50 §1): a G at b is followed by a deeper transition only if the G's own search learned at ≥ 2 depth-0 positions.
+  0 violations on the library, both orders.
+- NEST* 6 (k = 3), twice:
+  - nest6_n75 (dc8b04cc; full-move climb).
+  - nest6x_n75 (e50b3e80; climb with cross-part moves only).
+  - Both orders; Lead re-ran nest6_n75.
+- Minimal 5 → 6 step (nest6min_n75, e2c0d57f): 3 cross-part edges + 1 priority move. Mirroring it onto k = 4 fails (NEST* 3-4).
+- k = 4: no level gained (climbs at n 101 are slow). NEST* vs k: 3, 5, 6, (6). S ≈ n/3.
+- NEXT: k = 4 climb with cross-part moves only (crossclimb.py, CUTS 49,75, seed k4_oseg_n26_above; ~1 step per 10 s). Try a smaller
+  third part (fewer vertices) to keep n small. Look for a structural recipe for the cross-part coupling.
+- TRAP (this box): container restart at ~01:2xZ killed jobs (exit 137 with 3 Python jobs at n ≈ 100). Keep ≤ 2 jobs at that size.
+
 BOX 16 (successor 10, session_012PWyY4bucvqFyvrGC27Zph, Opus 5.5 under D8; GO 2026-10-19 03:19Z; cut by the usage cap ~04:01Z;
 resumed 2026-10-21 21:07Z (date -u) on the Lead's 21:06Z message, Lead reading L36). Doc: docs/red/R49-nest4-attempt.md.
 - Record repair first (C19): R46 §1/§3 restored to the 01d63d7 text; post-pin K count + LEX block moved to new §1b (l-red bc26acae).

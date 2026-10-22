@@ -108,8 +108,8 @@ All rows are identical in stable and oink order. Pinned Oink 8fbf0a7 `-v` gives 
   - Both orders identical: S 27, |P| 26, I 0, P = 0,1,6,15,15,11,15,15,12,13,13,11,1,7,15,10,13,7,11,12,11,1,10,7,0,6, NEST* 6,
     max learning positions 3.
   - Pinned Oink -v: 27 even iterations (= S), 1 odd, verified (63 strategies).
-- The diff to the seed is edge ADDITIONS only, every one from a part-1 vertex (0-48) to a part-2 vertex (49-74), plus priority moves.
-  No owner changes and no removals: crossclimb can do neither.
+- The diff to the seed: 81 edge ADDITIONS, all between the parts (44 from part 1 = vertices 0-48 to part 2 = vertices 49-74, 37 the
+  other way, 0 within a part), plus priority moves. No owner changes and no removals: crossclimb can do neither.
 - Reading: two independent climbs (k3b with the full move set, x3 with cross-part moves only) both turned the k = 3 union into
   NEST* 6. So the third level-gain mechanism is cross-part coupling, not internal restructuring of a part.
 - The k = 4 cross-part climb (x4b, n 101, seed 211): about 150 steps by 02:00Z, NEST* still 6. It is too slow to decide k = 4 within
