@@ -114,3 +114,66 @@ All rows are identical in stable and oink order. Pinned Oink 8fbf0a7 `-v` gives 
   NEST* 6. So the third level-gain mechanism is cross-part coupling, not internal restructuring of a part.
 - The k = 4 cross-part climb (x4b, n 101, seed 211): stopped at box end (02:35Z) after about 250 steps at NEST* 6, MASS 128. The
   k = 3 control needed 287 steps, so k = 4 is NOT decided: too few steps, not a plateau.
+
+## 8. Box 18 (GO 2026-10-22 02:43Z): a smaller fourth part, and the nest6min step step by step
+### 8a. Small fourth parts (base nest6min_n75, oink order, FIT=pool score (NEST*, max learning positions, searches with ≥ 2, ...))
+- Parts with n 7-9 that learn on their own (dtl_proof_c1, c1_k1_min_n7_m10, walk_* n 7-9, dtl_proof_c3; 10 parts × above / below /
+  inter):
+  - every union has NEST* 5 and max learning positions 3. The tiny part does NOT keep a pool of its own inside the union.
+  - Best by MASS: dtl_proof_c1 (n 82, MASS 82).
+- Parts with n 10-16, sample of 10 of the 94 unions written:
+  - c1_k2_min_n11_m15 and dtl_proof_c4: NEST* 5, max positions 3.
+  - onep_vr_n12 and cross_h_k1_* (n 10-15): max positions 4 (a fourth pool), but NEST* 4.
+  - The full scan of 94 unions hit its time limit, so only these 10 were scored.
+- So a part keeps its own pool only from n ≈ 10, and then NEST* first drops (masking) before any climb.
+
+### 8b. The minimal 5 → 6 step of nest6min_n75, one change at a time (oink order; P of the q-phase)
+- Seed (nest5_n49 ⊎ oseg_n26 above): S 20, NEST* 5, P = 0,1,6,9,7,4,9,3,8,4,6,7,6,1,6,8,4,0,3.
+- Move 73 alone: P unchanged.
+- The three edges without the move: S 25, NEST* 4.
+- Move 73 + edge 23→73: S 25 and NEST* 5, P = 0,1,6,9,7,4,9,3,8,16,17,17,16,1,6,9,10,9,1,8,8,7,0,6.
+  - A new block 16,17,17,16 replaces 4,6,7,6 at indices 9-12, i.e. INSIDE nest5's 8-window (8 at index 8).
+  - The phase gains 5 searches and a second block after position 1's second rise.
+- + 55→27 or + 64→15 alone (with the move): back to S 20, NEST* 5. Each re-indexes only the late part.
+- All three edges + the move: S 25, NEST* 6, P = 0,1,6,9,7,4,9,3,8,16,17,17,16,1,8,7,15,13,1,12,12,7,0,6.
+  - Levels 8 and 7 of nest5 rise again right after the inserted block (8 at index 14, 7 at index 15). This closes their windows
+    around the block.
+  - Witness: 0 ⊃ 1 ⊃ 7 ⊃ 8 ⊃ 16 ⊃ 17.
+- Reading, in two parts:
+  - (i) A GATE: the edge 23→73 (a nest5 C-vertex escaping into an oseg vertex), with 73 moved into nest5's priority band, delays
+    the oseg part's activity so that its whole block falls inside the innermost open window of nest5's witness.
+  - (ii) RETURN edges: 55→27 and 64→15 (oseg C-vertices escaping into the chainfail and near4 parts) make the witness's levels
+    rise once more after the block. That re-closes the windows around the block, so the block's depth is added on top.
+
+### 8c. k = 4 with a small fourth part: plateau AT THIS BUDGET (DATA)
+- Climb: crossclimb.py (cross-part edges and single priority moves only), CUTS 49,75, oink order, score (NEST*, MASS, S, −n).
+- Seed 1: instances/k4seed_c1_n82.pg (sha1 37c93f21cf98518b3eefad0b52a7fe9d1b2252c5) = nest6min_n75 ⊎ dtl_proof_c1, interleaved;
+  n 82, NEST* 5, max learning positions 3.
+  - y1, seed 231: NEST* 6 at step 52 (instances/k4y1_n82.pg, sha1 7d543504bb32e662085f1160d3f9c972f0184def; S 25), then no gain
+    up to ≥ 300 steps.
+  - Killed by a container restart (~04:0xZ). Resumed from k4y1_n82 (seed 232): no gain in ≥ 350 more steps.
+  - Total ≥ 650 steps, NEST* 6, MASS 118.
+- Seed 2: instances/k4seed_vr_n87.pg (sha1 8dcfbfec6de48b41e7c8165fd7cfc57e579774c8) = nest6min_n75 ⊎ onep_vr_n12, above; n 87,
+  NEST* 4, max learning positions 4.
+  - y2, seed 241: NEST* 6 at step 2, best at step 136 (instances/k4y2_n87.pg, sha1 043f550d53701f6572c4b91797f86315cde9358e; S 27).
+  - Killed by the same restart at ≥ 150 steps. Resumed (seed 242): no gain in ≥ 150 more steps.
+  - Total ≥ 300 steps, NEST* 6, MASS 132.
+- So the Lead's criterion (≥ 600 steps on each of 2 seeds) is MET ON SEED 1 ONLY. Seed 2 has ≥ 300 steps. Record: k = 4 shows
+  NEST* 6, no 7, at budgets ≥ 650 (seed 1) and ≥ 300 (seed 2) cross-part-only steps.
+  - For comparison, the k = 3 control needed 287 steps (§7) and the full-move climb 103 (§2).
+- Not re-verified with Oink: k4y1_n82 and k4y2_n87 do not raise the class best (NEST* 6).
+
+### 8d. Could the coupling be made an explicit recipe? (reading)
+Partly. §8b shows the 5 → 6 step has two separable roles.
+- A GATE edge from a C-vertex of the existing structure into the new part, with that new-part vertex moved into the old part's
+  priority band. It delays the new part, so that its whole block of transitions falls inside the innermost open window of the old
+  witness.
+- RETURN edges from C-vertices of the new part back into the witness's parts. They make the enclosing levels rise once more after
+  the block, which closes their windows around it.
+The roles are clear, but the endpoints are not structural. Which vertex can serve as the gate depends on the exact search at
+which the innermost window opens. The return targets must be vertices whose escape changes the right pieces' outcomes at the
+right search. Index mirroring of the same step fails (§5), and two k = 4 climbs did not find a second step. So making it a recipe
+would need a per-search map, "which piece is at the innermost window's position, and which C-escape re-raises it". That map can be
+read off the chains (tlog.py, partmask.py), but this box did not build it. My estimate: a recipe is plausible only if a gadget
+can be designed whose innermost window is opened and closed by a single, known vertex. None of the instances here has such a
+vertex.

@@ -55,6 +55,15 @@ Status: PARKED 02:47Z (date -u) at ~525k (Lead 02:46Z: handover; successor next 
   scaling 7 / 6 / 6 / 6 at n = 28 / 36 / 36 / 44.
 
 ## Resume point
+BOX 18 END (~05:05Z 2026-10-22, date -u; GO 02:43Z). Doc: R50 §8 (R50 §1-§7 frozen).
+- Small fourth parts: n 7-9 parts lose their own pool in the union; n 10-15 parts keep a 4th pool but drop NEST* to 4 (§8a).
+- k = 4 cross-part-only climbs: NEST* 6, no 7, at ≥ 650 steps (seed k4seed_c1_n82) and ≥ 300 steps (k4seed_vr_n87). Two container
+  restarts (01:2xZ, ~04:0xZ) cut runs; resumed from saved bests (§8c).
+- The nest6min step, one change at a time (§8b): a GATE (23→73 plus moving 73) puts the new part's block inside the innermost
+  window; RETURN edges (55→27, 64→15) re-raise the enclosing levels after it. A recipe needs a per-search map of pieces (§8d).
+- NEXT: build that map (tlog/partmask) for nest6min, to design a gadget whose innermost window has a single known opener/closer;
+  or give seed 2 its remaining ≥ 300 steps.
+
 BOX 17 (successor 10, same session; GO 2026-10-21 23:47Z; box end ~02:50Z by date -u). Doc: docs/red/R50-kpools.md §1-§7.
 - (G-NEXT-1P) (R50 §1): a G at b is followed by a deeper transition only if the G's own search learned at ≥ 2 depth-0 positions.
   0 violations on the library, both orders.
