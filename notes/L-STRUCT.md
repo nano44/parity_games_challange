@@ -23,6 +23,9 @@ Lead limits: <= 2 SAT jobs at once (container kills ~3 heavy processes), checkpo
   s^V(5,5) = s^V(5,6) = 13.
 - 09:47Z switched to the LOCKSTEP ladder: once strong UNSAT at k is proved (s >= k+1), weak SAT at k certifies a gap
   by itself (Lemma P), so weak and strong climb together from k = 10: weak (5,5) k=10 running beside strong (5,5) k=11.
+- 13:18Z box end: strong (5,5) k=11 still in ONE solve after 5h20m (PID 5687; not resumable, no checkpoint gain);
+  weak (5,5) k=10 in round 7 after 3h33m (PID 12501; round 6 took 4255 s; checkpoint out/ckpt_weak_V_n5_d5_k10.json).
+  Both left running pending the Lead's decision. Paused: weak (5,6) k=14 checkpoint (181+37 graphs, 67 rounds).
 
 ## Queue
 1. The box above. A gap at d <= n+1: report at once (LRAT path, witness sha1), then lasso_analysis / family (T3-pos).
