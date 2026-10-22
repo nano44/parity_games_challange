@@ -216,7 +216,10 @@ Data items:
   partial check exists and was run (experiments/new/tail/lemmaP_paths.py; logs tail/logs/lemmaP_paths.txt, lemmaP_paths_exact.txt): at every
   in-phase step k of every phase, (C1) every improving non-cycle-closing edge (x, z) has |π_z| + 1 > k, where π_z is the current path from z to
   its cycle node (this is exactly the instance of Lemma P that Theorem PH's proof uses), and (C2) Lemma P on the polynomially many paths of the
-  form x, π^j_z for every earlier in-phase step j ≤ k and every successor z of x with x ∉ π^j_z. Results, both rules: ph_n48 C1 111 checks,
-  C2 167,688 checks, 0 violations; ph_g48 153 / 153,114, 0; sb1_counter_n48 165 / 26,256, 0; rel_g16, rel_g12, fl_n16, ph_n16: 0 violations.
-  The full statement over all simple paths remains checked only for n ≤ 18 (§4, §6); on n = 48 it is checked on the paths that occur and on
-  the consequence the theorem needs.
+  form x, π^j_z for every earlier in-phase step j ≤ k and every successor z of x with x ∉ π^j_z and z's cycle node ≠ x (so that x, π^j_z is a
+  simple path to a cycle node other than x; the first version of the script omitted the second condition and reported 90 spurious
+  "violations" on ph_n16 from a self-loop, fixed at 00:33Z before this text). Results, both rules (sbstep fixpoint and n5.py's step):
+  ph_n48 C1 111 checks, C2 166,608 checks, 0 violations; ph_g48 153 / 150,978, 0; sb1_counter_n48 165 / 25,954, 0; rel_g16 32 / 4,498, 0;
+  rel_g12 21 / 1,806 (n5.py: 20 / 1,508), 0; fl_n16 37 / 1,411, 0; ph_n16 25 / 2,645, 0; sb1_counter_n16 0 violations. The full statement
+  over all simple paths remains checked only for n ≤ 18 (§4, §6); on n = 48 it is checked on the paths that occur and on the consequence
+  the theorem needs.

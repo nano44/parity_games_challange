@@ -53,7 +53,7 @@ for p in sys.argv[1:]:
                 if g.owner[x] != 0: continue
                 for z in g.succ[x]:
                     pz = pj[z]
-                    if x in pz or len(pz) + 1 > k: continue
+                    if x in pz or lam[z] == x or len(pz) + 1 > k: continue   # x,π^j_z must be a simple path to a cycle node u != x
                     u = vs[z][0] if j == len(hist) - 1 else None
                     # cycle node of z at step j: recompute from hist? paths store only the path; cycle node = successor of last path vertex at step j is not stored; use current lam (phase-invariant)
                     u = lam[z]
