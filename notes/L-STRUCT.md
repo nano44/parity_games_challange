@@ -15,6 +15,15 @@ Lead limits: <= 2 SAT jobs at once (container kills ~3 heavy processes), checkpo
 - n = 5 bounds before this box (L-COMP, experiments/sat-hard/results.md 47-57, LRAT): w^V(5,5) >= 10, s^V(5,5) >= 10
   (>= 11 CEGAR only), s^V(5,6) >= 10; no upper bound.
 
+## Box log 2026-10-22 (date -u)
+- 07:34Z P0: strong (5,5) V k=10 UNSAT (30 graphs, 420 s), LRAT VERIFIED (3417924 RUP) -> s^V(5,5) >= 11 (f6ce465).
+- Upper side (SAT) is NOT cheap at n = 5: weak (5,6) k=14 needed ~20 min per CEGAR round after 67 rounds (paused,
+  checkpoint out/ckpt_weak_V_n5_d6_k14.json: 181+37 graphs); strong (5,6) k=13 stuck > 30 min in round 5 (stopped).
+- Pattern in all computed s^V: s^V(n,2h-1) = s^V(n,2h) = n + (h-1)(n-1) (n <= 4, h <= 3; DATA, no proof). Predicts
+  s^V(5,5) = s^V(5,6) = 13.
+- 09:47Z switched to the LOCKSTEP ladder: once strong UNSAT at k is proved (s >= k+1), weak SAT at k certifies a gap
+  by itself (Lemma P), so weak and strong climb together from k = 10: weak (5,5) k=10 running beside strong (5,5) k=11.
+
 ## Queue
 1. The box above. A gap at d <= n+1: report at once (LRAT path, witness sha1), then lasso_analysis / family (T3-pos).
 2. If T3 is attacked again: the open core is a SIZE argument; "rewire to strong" (F9) and "hidden universal tree" (F10)
