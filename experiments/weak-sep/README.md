@@ -13,8 +13,11 @@ ordered pair, V = vertex-labelled (TARGET.md games). The rejecting sink is not c
 
 Headline (2026-10-14): w^E(2,5) = w^E(2,6) = 3 < 4 = s^E(2,5) = s^E(2,6) (the same in conventions S and V), and
 w^V(3,5) = w^V(3,6) = 6 < 7 = s^V(3,5) = s^V(3,6). On every other computed cell w = s. s^V(4,6) = 10 (k = 9 refuted in 1331 s, 10-state strong separator verified), so the vertex convention is well below
-s^E(4,6) = 13; w^V(4,6) <= 10 follows, a 9-state search is open (the 11- and 12-state weak separators in
-results/automata/weak_V_n4_d6_k1*.json are upper bounds that the strong value has since superseded).
+s^E(4,6) = 13. w^V(4,6) = 10 = s^V(4,6) (recorded 2026-10-22): lower bound w^V(4,6) >= w^V(4,5) = 10 by S1 Lemma 2(a)
+(monotone in d); upper bound the 10-state weak separator in results/automata/weak_V_n4_d6_k9.json (search from k = 9,
+3107 s; automaton re-verified by wsep/automata.py on the 464 even + 708 odd maximal graphs, 0 violations).
+make_table.py accepts such a '_k<j>' partial run only when k_start <= the monotone lower bound (it prints which); the
+11- and 12-state files weak_V_n4_d6_k1*.json are superseded upper bounds and stay out of the table.
 `probe_oddcycles.py n d conv k pmax` asks for a weak separator with k states that has an odd simple cycle with
 maximum <= pmax: such separators exist below the top odd letter (e.g. (3,6) V with k = 6 = w and pmax = 3), so
 'restricting a weak separator to the letters <= d-2 gives a strong one' is FALSE as a lemma. All s^E values at even d equal

@@ -2,28 +2,30 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-PARKED by the Lead (21:59Z, option 1). Branch claude/l-struct; all work pushed. The Lead wakes this lane if the n = 5
-diagonal cells (w^V(5,5), s^V(5,5), (5,6); L-COMP's successor) show a gap (then T3-pos, constructions) or if a new proof
-idea for T3 appears.
+2026-10-22 (successor on Opus 5.5, D15): handover 983cc6b (docs/agents/handover-checks/L-STRUCT.md); Lead GO 07:18Z.
+Box (Option B, L35/L37), to ~13:20Z: gap hunt at n = 5, (5,6) V first, (5,5) V alongside; P0 calibrate + reproduce
+L-COMP's lower bounds, P1 SAT upper side, P2 certify a gap (strong UNSAT + LRAT), P3 weak UNSAT only if P0's cost fits.
+Lead limits: <= 2 SAT jobs at once (container kills ~3 heavy processes), checkpoints, push at each milestone.
 - Lane files: docs/struct/S1-statement.md (definitions; refereed), S2-lower-bound-statement.md (T1 dead, DE2; T2 parked),
-  S3-statement.md (T3 parked, data conjecture; H1/H2 hypotheses), L4-proof.md (signed by first referee 9bf5301; second
-  referee pending with T3), T3-proof-attempt.md (record of gaps and dead ends), S4-structure-note.md (facts on data).
-- Experiments: experiments/weak-sep/ (README has the how-to; check.sh is in scripts/verify.sh; results/table.md,
-  results/sl8/, results/lasso_analysis.md, results/external/ (L-COMP's (2,10) witness re-checked)).
-- Live conjecture: T3: w^V(n,d) = s^V(n,d) for d ≤ n+1 (data through (4,5) V; REFEREE-checked statement; NEW per L-LIT).
-  Supporting unproved facts: S4 F7-F9. Refuted routes: notebook Dead ends.
+  S3-statement.md (T3 data conjecture), L4-proof.md (RESULTS R1, GAPS G1 closed: signatures 9bf5301, d76c9e1; G-L4-1 =
+  CDFJLP Thm 5.1 black box), T3-proof-attempt.md (gaps and dead ends), S4-structure-note.md (facts on data).
+- Experiments: experiments/weak-sep/ (README; check.sh is in scripts/verify.sh; results/table.md, results/sl8/,
+  results/lasso_analysis.md, results/external/).
+- Live conjecture: T3: w^V(n,d) = s^V(n,d) for d ≤ n+1 (data through (4,5) V; also (4,6) V equal, d = n+2).
+- n = 5 bounds before this box (L-COMP, experiments/sat-hard/results.md 47-57, LRAT): w^V(5,5) >= 10, s^V(5,5) >= 10
+  (>= 11 CEGAR only), s^V(5,6) >= 10; no upper bound.
 
-## Queue (if woken)
-1. If a diagonal gap at n = 5 appears: analyse the witness with lasso_analysis.py / probe_rules_min.py style tools;
-   try to generalise it into a family (T3-pos route); S3 §2 has the consequence for algorithms.
-2. If T3 is to be attacked again: the open core is a SIZE argument; both "rewire to strong" (needs a target rule; none
-   deterministic, F9) and "hidden universal tree" (F10, false) are dead. An untried idea: compare the weak separator with
-   the minimal STRONG one found by the solver on the same cell state-by-state (bisimulation up to even-realisable words)
-   to see whether minimal weak and strong separators are always related by a bijection of states.
-3. Second referee for L4 (+ T3 package) when the Lead schedules it; L4-proof.md is ready.
+## Queue
+1. The box above. A gap at d <= n+1: report at once (LRAT path, witness sha1), then lasso_analysis / family (T3-pos).
+2. If T3 is attacked again: the open core is a SIZE argument; "rewire to strong" (F9) and "hidden universal tree" (F10)
+   are dead. Untried: compare minimal weak and minimal strong separators of one cell state by state (bisimulation up to
+   even-realisable words) to see whether they are always related by a bijection of states.
 
 ## Things only I know
 - Timestamps in my messages of 2026-10-14 ran ahead of UTC by up to 90 min until ~20:35Z; SHAs are authoritative.
+- 2026-10-22: make_table.py skipped every '_k<j>' file, which hid the exact w^V(4,6) = 10 for a week; it now accepts a
+  partial run when k_start <= the monotone lower bound (S1 Lemma 2(a)) and prints it.
+- Kill long jobs only by PID file (out/<cell>.pid), never pkill -f.
 - Encoding traps: BFS symmetry breaking forces all states reachable, so search k upward and stop at the first SAT; the
   (W2) rank clauses are the UNSAT bottleneck (~20x per state at n = 4); the rank range N = n·k is needed for completeness.
 - Enumeration (enumerate_weak.py) is per BFS numbering, not per isomorphism class (over-counts); fine for existence.

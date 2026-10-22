@@ -6,11 +6,26 @@ from wsep.utrees import f_upper, g_lower
 from wsep.analyze import analyze
 
 R = {}
+partial = []  # '_k<j>' files: searches started at k = k_start, exact only when k_start is covered by a lower bound
 for f in sorted(glob.glob(str(pathlib.Path(__file__).parent / 'results/automata/*.json'))):
     r = json.load(open(f))
-    if '_k' in f or 'eager' in f:
+    if 'eager' in f:
         continue
+    if '_k' in f:
+        partial.append((f, r)); continue
     R[(r['mode'], r['conv'], r['n'], r['d'])] = r
+
+def mono_lower(mode, conv, n, d):
+    """Largest exact value at a cell (n' <= n, d' <= d), same mode and convention: a lower bound, since every
+    (n,d)-separator is an (n',d')-separator (fewer vertices, smaller alphabet; S1-statement.md monotonicity)."""
+    return max([r['value'] for (m, c, n2, d2), r in R.items() if m == mode and c == conv and n2 <= n and d2 <= d], default=1)
+
+# A partial run refuted k_start .. value-1; it is exact when no value below k_start is possible (k_start <= lower bound).
+for f, r in partial:
+    key = (r['mode'], r['conv'], r['n'], r['d'])
+    if key not in R and r['k_start'] <= mono_lower(*key):
+        R[key] = r
+        print(f"exact from partial run: {pathlib.Path(f).name} (k_start {r['k_start']} <= monotone lower bound {mono_lower(*key)})")
 ns = sorted({k[2] for k in R}); ds = sorted({k[3] for k in R})
 out = ["# w(n,d) and s(n,d): exact values (SAT, verified by the independent checker)", "",
        "Cell = w / s. '-' = not computed. '?' = strongness of the witness not analysed (slow family). '*' after w: the minimal weak separator found is not strong (its transition",
