@@ -64,6 +64,17 @@ No cell with d ≤ n + 1 violates T3; (4,5) V, the first non-trivial n = 4 cell,
 witness results/automata/weak_V_n4_d6_k9.json re-verified), so at n = 4 no gap appears even one step above the threshold. Decisive next cells: (5,5) V, (5,6) V. Above the threshold the
 equality fails: (2,5), (2,6), (2,7..12), (3,5), (3,6), (3,8), (3,10) (w^V(3,10) ≥ 8 > ... s^V(3,10) open).
 
+Lemma P (padding; 2026-10-22, L-STRUCT, elementary, unrefereed; used by experiments/weak-sep/n5.py to read one
+query at k on its own). If a deterministic safety automaton A with k' states, all reachable, is a weak (strong)
+(n,d)-separator, then for every k ≥ k' there is one with exactly k states, all reachable. Proof: by induction it is
+enough to go from k' to k'+1. Fix a BFS spanning tree of A's transition graph from the initial state. A accepts the
+infinite paths of the nonempty even graphs, so A has an infinite run, so its transition graph has a cycle and therefore
+a transition p -a-> q that is not a tree edge. Add a copy q' of q with δ(q',b) = δ(q,b) for all b, and redirect
+δ(p,a) := q'. Tree edges are unchanged, so every old state stays reachable, and q' is reachable through p. The states q
+and q' accept the same words from there on, so the language (the set of accepted infinite words) is unchanged; both the
+weak and the strong condition depend only on the language. Consequence: the encoding's BFS symmetry breaking forces all k
+states reachable, and still "SAT at k ⟺ value ≤ k", so "UNSAT at k" gives value ≥ k + 1 without the lower k.
+
 ## 3. Mechanism: why the gap appears only when d is large against n (structural core; hypotheses, testable)
 Fact M0 (elementary, to be written up with S3's proofs). In a word of OddCycles^X_{n,d}, every window of n
   consecutive letters contains a factor whose maximum is odd (n edges visit n + 1 vertices, so one repeats; the closed
