@@ -143,3 +143,8 @@ short-step method would replace by μ-steps of relative size ~1/κ = n^{−Θ(d)
   localising the iterate; Newton direction certified; M certified P). Killing instance: counter_ortl-3.pg (sha1 c8bc3499…), 16 vertices.
 - Not shown: a super-polynomial ITERATION COUNT for a convergent IPM. Whether some IPM variant is polynomial on these LCPs stays the open
   question HIJ §1.1 states; nothing here answers it, and the κ route cannot (§2).
+- Addendum (Lead 08:02Z, recorded 08:02Z by date -u; earlier sections unchanged): (1) The step-2 failure is non-convergence of THIS
+  implementation (the target-following path-following IPM of §7 with its stated parameters); no incorrect answer was produced. The
+  generic "IPM on the JS LCP" is killed by the SCREEN (HIJ κ + β_G + HMZ Thm 6.5: a polynomial κ bound implies SI is already
+  polynomial), not by the bench. (2) HIJ's open question (the actual iteration count of a convergent IPM) stays open and is not
+  the fleet's to claim.
