@@ -1,0 +1,3 @@
+ph_n48.pg n=48 rule=n5.py longest in-phase k 46 | C1 checks 111 violations 0 | C2 checks 167688 violations 0
+rel_g16.pg n=16 rule=n5.py longest in-phase k 15 | C1 checks 32 violations 0 | C2 checks 4733 violations 0
+rel_g12.pg n=12 rule=n5.py longest in-phase k 10 | C1 checks 20 violations 0 | C2 checks 1634 violations 0
