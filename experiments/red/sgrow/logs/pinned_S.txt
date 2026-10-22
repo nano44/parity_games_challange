@@ -1,0 +1,8 @@
+s20_n20.pg | f866f5079223 | stable: n 20 S 20 G' 20 it 21 | oink: n 20 S 20 G' 20 it 21 | oink-cpp: even 20 odd 1 verified
+s21_oink_n20.pg | da1645117844 | stable: n 20 S 11 G' 20 it 12 | oink: n 20 S 21 G' 20 it 22 | oink-cpp: even 21 odd 1 verified
+s29_n30.pg | 172a4328ac96 | stable: n 30 S 29 G' 30 it 30 | oink: n 30 S 29 G' 30 it 30 | oink-cpp: even 29 odd 1 verified
+s32_n60.pg | a74ac6e870e4 | stable: n 60 S 31 G' 60 it 32 | oink: n 60 S 32 G' 60 it 33 | oink-cpp: even 32 odd 1 verified
+s34_oink_n40.pg | 22ddda182cb4 | stable: n 40 S 30 G' 40 it 32 | oink: n 40 S 34 G' 40 it 36 | oink-cpp: even 2 odd 34 verified
+s34_oink_n80.pg | 6fbbeec64726 | stable: n 80 S 32 G' 80 it 33 | oink: n 80 S 34 G' 80 it 35 | oink-cpp: even 34 odd 1 verified
+s35_oink_n80.pg | 1fcf6967a875 | stable: n 80 S 33 G' 80 it 36 | oink: n 80 S 35 G' 80 it 38 | oink-cpp: even 3 odd 35 verified
+s36_oink_n60.pg | 79db9615438e | stable: n 60 S 34 G' 60 it 37 | oink: n 60 S 36 G' 60 it 39 | oink-cpp: even 3 odd 36 verified
