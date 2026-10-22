@@ -1,7 +1,13 @@
 # S3: the diagonal w^V(n,n) and the fixed-n saturation of weak separators (L-STRUCT, 2026-10-14)
 
-Status: statement, REFEREE-checked with CHANGES (docs/referee/2026-10-14-S3-statement-check.md, referee 5b99f2f);
-all six findings applied below (marked [R1]-[R6]). Awaiting L-LIT T6 (novelty; L4 sources) before proof work. Vocabulary: docs/struct/S1-statement.md (D1-D5, conventions E/S/V,
+Status 2026-10-14 (Lead 21:59Z): T3 is PARKED as a data-backed conjecture. Statement REFEREE-checked (5b99f2f, findings
+[R1]-[R7] applied); novelty NEW (L-LIT T6); T3 + L4 would be M3 (Lead L7). Data: w^V(n,d) = s^V(n,d) on every computed
+cell with d ≤ n+1 through (4,5) V (table in §2). Two proof routes tried and dead with instances (docs/struct/T3-proof-
+attempt.md; notes/L-STRUCT.md Dead ends): D-A (Lemma A as stated: all-odd cycles), D-C1 (rewire target "next or self"),
+D-C2 (any deterministic target rule), D-HB2 (hidden universal tree in A − τ0). What revives it: a diagonal gap at n = 5
+(w^V(5,5) < s^V(5,5), L-COMP's successor), which would turn the question towards T3-pos, or a new proof idea for the
+size statement. Supporting facts that hold on data: docs/struct/S4-structure-note.md. L4 is signed by the first referee
+(9bf5301) and waits for the second referee together with whatever T3 becomes. Vocabulary: docs/struct/S1-statement.md (D1-D5, conventions E/S/V,
 Lemmas 1-3 refereed). Lead's framing (20:09Z): the algorithmic question is the diagonal, because a TARGET game with n
 vertices has priorities in {0..n}, which after the shift by 2 and S1 Lemma 2(b) means the automaton must be a weak
 (n, n)-separator of convention V (REFEREE S2 finding 3). Fixed-n growth in d is algorithmically irrelevant; it is kept
@@ -54,8 +60,32 @@ value−1, CryptoMiniSat agreement and re-checked witnesses, claude/l-comp 8d969
 | (3,3), (3,4) | 5, 5 | 5, 5 | both |
 | (4,4), (4,5) | 7, 10 | 7, 10 | both at (4,4); L-STRUCT at (4,5) (weak k = 9 refuted in 3319 s, k = 10 SAT; strong k = 9 refuted in 1331 s); REFEREE reproduces n ≤ 3 [R6] |
 | TARGET alphabet {2..n+2}, n = 2, 3, 4 | 2, 5, 7 | 2, 5, 7 | L-COMP (LRAT; n = 4 strong confirmed 20:32Z); equals w^V(n,n) as S1 Lemma 2(b-V) predicts |
-No cell with d ≤ n + 1 violates T3; (4,5) V, the first non-trivial n = 4 cell, gives equality 10 = 10. Decisive next cells: (5,5) V, (5,6) V. Above the threshold the
+No cell with d ≤ n + 1 violates T3; (4,5) V, the first non-trivial n = 4 cell, gives equality 10 = 10. Also (4,6) V, d = n + 2, gives w = s = 10 (2026-10-22: w ≥ w^V(4,5) = 10 by S1 Lemma 2(a), 10-state weak
+witness results/automata/weak_V_n4_d6_k9.json re-verified), so at n = 4 no gap appears even one step above the threshold. Decisive next cells: (5,5) V, (5,6) V. Above the threshold the
 equality fails: (2,5), (2,6), (2,7..12), (3,5), (3,6), (3,8), (3,10) (w^V(3,10) ≥ 8 > ... s^V(3,10) open).
+
+n = 5 (2026-10-22 box, experiments/weak-sep/results/n5/): s^V(5,5) ≥ 11 (strong k = 10 UNSAT on 30 maximal even
+graphs, 420 s; CaDiCaL 1.7.4 LRAT proof VERIFIED by experiments/sat-hard/lrat_check.py, 3417924 RUP steps, CNF sha256
+af340fd5...; agrees with L-COMP's CEGAR k = 10); w^V(5,5) ≥ 10 and s^V(5,6) ≥ 11 by S1 Lemma 2(a). No n = 5 upper bound:
+strong (5,5) k = 11 did not finish in 4 h (one solver call; k = 10 took 7 min), weak (5,5) k = 10 not in 2.5 h,
+weak (5,6) k = 14 at ~20 min per CEGAR round after 67 rounds, strong (5,6) k = 13 > 30 min in one round. T3 at n = 5 is
+untested. A weak (5,5) separator with 10 states would certify a gap (w = 10 < 11 ≤ s); that query is the cheapest
+decisive one left.
+Observation (DATA, not a conjecture to pursue): every computed strong V value fits s^V(n,2h−1) = s^V(n,2h) =
+n + (h−1)(n−1) (n ≤ 4, h ≤ 3), which predicts s^V(5,5) = s^V(5,6) = 13. The formula is polynomial in n at d = n, so
+by L4 (s^V(n,n) ≥ n^Ω(lg n)) it must fail for large n: the computable cells are pre-asymptotic for s^V, and the same
+caution applies to any equality w = s found there.
+
+Lemma P (padding; 2026-10-22, L-STRUCT, elementary, unrefereed; used by experiments/weak-sep/n5.py to read one
+query at k on its own). If a deterministic safety automaton A with k' states, all reachable, is a weak (strong)
+(n,d)-separator, then for every k ≥ k' there is one with exactly k states, all reachable. Proof: by induction it is
+enough to go from k' to k'+1. Fix a BFS spanning tree of A's transition graph from the initial state. A accepts the
+infinite paths of the nonempty even graphs, so A has an infinite run, so its transition graph has a cycle and therefore
+a transition p -a-> q that is not a tree edge. Add a copy q' of q with δ(q',b) = δ(q,b) for all b, and redirect
+δ(p,a) := q'. Tree edges are unchanged, so every old state stays reachable, and q' is reachable through p. The states q
+and q' accept the same words from there on, so the language (the set of accepted infinite words) is unchanged; both the
+weak and the strong condition depend only on the language. Consequence: the encoding's BFS symmetry breaking forces all k
+states reachable, and still "SAT at k ⟺ value ≤ k", so "UNSAT at k" gives value ≥ k + 1 without the lower k.
 
 ## 3. Mechanism: why the gap appears only when d is large against n (structural core; hypotheses, testable)
 Fact M0 (elementary, to be written up with S3's proofs). In a word of OddCycles^X_{n,d}, every window of n
@@ -143,12 +173,34 @@ Probe data (experiments/weak-sep/probe_oddcycles.py, probe_rewire.py, probe_rule
   mechanism: it removes all odd cycles but breaks (W1) in 7 of 8 instances (probe_rule.py); "redirect to the cycle's
   entry state" loops. The solver's t = 1 rewire is a different transition or target each time. Dead end recorded.
 
-Sub-lemma SL8 (the statement T3 reduces to; to be proved, not assumed). Let X ∈ {E, S, V}, n ≥ 1, 1 ≤ d ≤ n + 1, and
-let A be a deterministic weak (n,d)-separator of convention X with state set Q. Then there is a deterministic strong
-(n,d)-separator of convention X with state set Q (same states, same initial state, transitions possibly changed).
-SL8 ⇒ T3 (w^X(n,d) ≥ s^X(n,d) for d ≤ n+1; the other inequality is S1 F1). Sharpened data-driven form SL8-1: the new
-automaton differs from A in exactly one transition per ... (open: the probes show one transition in total suffices in
-all nine instances; whether that persists is unknown).
+Sub-lemma SL8-t (Hamming form; the working statement, confirmed by the Lead 21:43Z after L-STRUCT's correction). Let
+X ∈ {E, S, V}, n ≥ 1, 1 ≤ d ≤ n + 1, and let A be a deterministic weak (n,d)-separator of convention X with state set Q
+and initial state q0. Then there is a deterministic strong (n,d)-separator of convention X with the same Q and q0 whose
+transition function differs from A's in at most t(n,d) pairs (state, letter), for a bound t(n,d) to be determined;
+a constant t is a hypothesis to test, not an assumption (Lead 21:43Z). Observed t_max per cell over ALL enumerated weak
+separators (results/sl8/): E (2,2): 1 (k ≤ 4); E (2,3): 3 (k = 4); E (3,3): 1 (k ≤ 6, capped); E (3,4): 1 (k ≤ 6,
+capped); V (2,2): 2 (k = 4); V (2,3): 4 (k = 4); V (3,3): 4 (k = 6, capped); V (3,4): 2 (k ≤ 6, capped). At minimum
+size k = w: t_max = 1 in E and 2 in V on these cells.
+SL8-t ⇒ T3 (w^X(n,d) ≥ s^X(n,d) for d ≤ n+1; the other inequality is S1 F1). Without the Hamming bound the statement
+("some strong separator on the same abstract state set") is trivially equivalent to T3 and carries no proof idea; the
+bound is what the local-rewiring proof would establish. SL8-1 (t = 1) is FALSE above minimum size: at E (2,3) with k = 4,
+one of 1026 weak separators needs 3 changes, and at V (2,3) with k = 4 five of 4550 need 4 (exact; enumerate_weak.py).
+Exhaustive test (Lead 21:40Z; results/sl8/, every weak separator with k reachable states up to BFS numbering, least t):
+| cell, k | weak separators | t = 0 (strong) | t = 1 | t = 2 | t = 3 | t ≥ 4 |
+| --- | --- | --- | --- | --- | --- | --- |
+| E (2,2), k = 2 / 3 / 4 | 1 / 22 / 525 | all / all / 507 | - / - / 18 | | | |
+| E (2,3), k = 3 / 4 | 11 / 1026 | 8 / 624 | 3 / 372 | - / 29 | - / 1 | |
+| E (3,3), k = 5 / 6 | 16 / 4072 | all / 4020 | - / 52 | | | |
+| E (3,4), k = 5 / 6 | 20 / ≥ 5000 (capped) | all / 4991 | - / 9 | | | |
+| V (2,2), k = 2 / 3 / 4 | 1 / 24 / 609 | all / 22 / 507 | - / 2 / 99 | - / - / 3 | | |
+| V (2,3), k = 3 / 4 | 28 / 4550 | 12 / 1075 | 12 / 2272 | 4 / 1059 | - / 139 | - / 5 (all t = 4) |
+| V (3,3), k = 5 / 6 | 76 / ≥ 5000 (capped) | 65 / 3432 | 10 / 1356 | 1 / 172 | - / 39 | - / 1 (t_max 4) |
+| V (3,4), k = 5 / 6 | 407 / ≥ 5000 (capped) | 365 / 3384 | 36 / 994 | 6 / 622 | | |
+Reading: at MINIMUM size (k = w, the only case T3 needs) every weak separator is within t ≤ 2 of a strong one (E: t ≤ 1;
+V: t ≤ 2), and most are strong outright. Above minimum size the distance grows (t = 4 at V (2,3) k = 4), so a universal
+small t is the wrong form; the T3-relevant statement is SL8-min: for every MINIMAL deterministic weak (n,d)-separator at
+d ≤ n+1 there is a strong one on the same states within t = 2 changes. No weak separator without any strong rewire
+exists, of course (T3 holds on these cells by the table), so the test cannot refute T3 here; it bounds the mechanism.
 Proof plan (statement-level): (1) from the lasso condition (Q3) and Fact M0 with windows of n letters, characterise
 the tolerated odd simple cycles at d ≤ n+1: their lasso words are unrealisable with n vertices although every letter
 ≤ n+1 can occur; identify on such a cycle a transition τ = (q, e, q') with e even whose even-realisable use is
@@ -158,6 +210,27 @@ itself); (3) show (W1) is preserved and every odd cycle through τ is destroyed,
 (4) iterate; termination by a potential (number of odd simple cycles). Step (2) is the open core; the next data step
 is to list ALL t = 1 rewires per instance (not just one) and read the rule off them, in the E convention first where
 the strong side has the universal-tree structure.
+Rule data at MINIMUM size (experiments/weak-sep/probe_rules_min.py, results/sl8/rules_min_*.json; every non-strong
+minimal weak separator of the cell, all single-transition rewires to a strong separator): E (2,3) k=3: 3 non-strong, all
+have a single rewire; V (2,3) k=3: 16 non-strong, 12 have one; V (3,3) k=5: 11, 10 have one; V (3,4) k=5: 42, 36 have one.
+Every working single rewire lies on an odd simple cycle of the weak automaton (no exception). In almost all cases the
+rewired transition carries the even letter 2 (twice letter 1, once to ⊥), it is the cycle's "return" edge (the
+transition that, after the odd maximum p has been read, leads back towards the state where p was read), and the new
+target is a state further along the cycle or the source itself (self-loop). The minority with no single rewire need
+exactly two changes (SL8-min bound t = 2 holds on all four cells).
+First proof step to attempt (SL9, hypothesis read off the data): let A be a minimal deterministic weak (n,d)-separator,
+d ≤ n+1, and C a reachable odd simple cycle of A with maximum p (odd); call a transition (q, e, q') of C with e even
+an ascent of C if, in the (yet to be defined) level order induced by p on the states of C, q' lies closer to the
+state where p is read than q does. SL9: redirecting one ascent of C to the state of C that follows q' (or to q) preserves
+(W1) and (W2), destroys C and every odd simple cycle through that transition, creates no new odd simple cycle, and keeps
+determinism and the state set; iterating over the odd cycles terminates. What is missing is the definition of the level
+order without assuming a tree decomposition (which only strong separators have); the candidate is CDFJLP's resistance
+computed in the sub-automaton of letters ≤ p after deleting the ascents themselves, which is finite exactly when the
+ascents are the only transitions closing odd cycles. The statement SL9 is where the proof attempt starts. Lead's caution (21:46Z) for the proof: minimality is global, so a
+local rewiring argument must use it through a contrapositive of the form "if no strong rewire exists within t changes
+at some odd cycle, then two states can be merged or one removed without breaking (W1)/(W2)", contradicting k = w; if the
+argument needs only a weaker hypothesis than minimality (e.g. "no two states are equivalent on even-realisable
+words"), that weaker form is to be stated instead. L4 is signed by the first referee (referee 9bf5301).
 Alternative route if (2) fails: a direct size argument (injective leaf map from a universal-tree-like structure built
 from even-realisable words), S3 §4b R2 as before.
 

@@ -59,7 +59,7 @@ bound would imply one for priority letters, but KV's is time-bounded and does no
 
 ## 3. What the data say (experiments/weak-sep/results/table.md, L-STRUCT data, unrefereed, l-struct 42dbbc2 and later)
 - T1 holds with equality at (2,5), (2,6) in E, S, V: w = 3 = s(2,4) = s(2,3). It holds strictly at (2,4) V (3 > 2),
-  (3,5), (3,6) V (6 > 5), (3,6) E (7 > 5), (4,6) V (w ≤ 11 vs s^V(4,4) = 7; w^V(4,6) itself is open from k = 10).
+  (3,5), (3,6) V (6 > 5), (3,6) E (7 > 5), (4,6) V (w^V(4,6) = 10 > 7 = s^V(4,4); exact since 2026-10-22, see S3 §2).
   No computed cell violates T1 or T2. REFEREE-checked cell: C1 (762c598).
 - Monotonicity (Lead, 20:04Z, from L-COMP): a weak (n,d)-separator restricted to Σ_{d−2} is a weak (n,d−2)-separator
   (S1 Lemma 2(a)), so w^X(n,d) ≥ w^X(n,d−2). Hence T1 is automatic at every cell where w^X(n,d−2) = s^X(n,d−2); in
