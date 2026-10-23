@@ -877,3 +877,4 @@
 - 17:25Z (date -u) CHECKER C23 Addendum 2 PASS (bc6f261, merged): DE30 landed text byte-identical; C23 CLOSED. DE30 final.
 - 17:30Z (date -u) Container restarted again (~17:26Z, uptime 4 min): relaunched k 3 re-run lost too. DECISION: no further Lead k 3 re-run in this container (it restarts while idle; multi-hour jobs do not survive). DE30 stands as landed ('k = 3: lane rows only'). Note for future: long verification runs go to a lane session (which keeps its container while working), not the Lead.
 - 18:03Z (date -u) SWEEP (trigger 18:03Z): overage false; Lead $468 ~569k. Working: L-NEW 7 (box 18: N9b probe 1,943/2,000 games, 57 stuck; writing; 18:03Z). No exceptions.
+- 19:03Z (date -u) SWEEP (trigger 19:02Z): overage false; Lead $469 ~580k. Working: L-NEW 7 (box 18, due ~20:16Z; circ(10,1,2) k*=4 probe, n 11-13 runs; 19:00Z). No exceptions.
