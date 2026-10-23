@@ -1,0 +1,4 @@
+GAP r1649 Q3 n=12 cuts=0
+GAP r1794 Q1 n=8 cuts=0
+GAP r2939 Q1 n=12 cuts=0
+random [1000, 2000, 3, 14] [N10b: ESC-tau]: 2000 games, 5432 queries, 3 gaps, 314s

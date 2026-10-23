@@ -15,3 +15,6 @@
 | N9b | certified LP-guided peeling (level-1 REGION lift, argmax rounding, one-player certificate) (box 18, §2) | KILL TEST RUN: STUCK on 57/2,000 random games, smallest n = 5 (peel_r1147.pg); sound by construction |
 | N9c | simulation-pruning kernel (box 18, §3) | SCREENED, not run (known heuristic, Fritz 2006 §3.5) |
 | N9d | tropical shadow-vertex simplex (= N4, box 18, §4) | SCREENED, not run (local pivoting) |
+| N10a | ACYC + ESC1 escape cuts (min-cut separation), box 19, N10-screen.md §1 | DEAD on data: one-player exact (Lemma B), 15 gaps / 800 two-player queries |
+| N10b | ACYC + ESC1 + ESC-tau cuts (tau from the Odd-side REGION LP), §2 | DEAD on data: 3 gaps / 5,432 random queries (smallest n = 8), counter_symsi N = 2, 3 |
+| N10c | conditioning on the N10b oracle, §3 | DEAD on data: one-sided; STUCK on a yes-instance r1569 (n = 14), 1 in 2,000 games |

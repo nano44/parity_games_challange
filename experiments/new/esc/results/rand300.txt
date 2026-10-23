@@ -1,0 +1,16 @@
+GAP r6 Q3 n=12 cuts=1
+GAP r17 Q1 n=11 cuts=0
+GAP r17 Q2 n=6 cuts=0
+GAP r30 Q1 n=11 cuts=2
+GAP r44 Q1 n=9 cuts=0
+GAP r51 Q1 n=6 cuts=0
+GAP r64 Q1 n=10 cuts=0
+GAP r83 Q3 n=10 cuts=0
+GAP r98 Q1 n=8 cuts=0
+GAP r118 Q1 n=5 cuts=0
+GAP r138 Q3 n=6 cuts=0
+GAP r232 Q1 n=7 cuts=1
+GAP r271 Q1 n=10 cuts=0
+GAP r271 Q2 n=9 cuts=0
+GAP r288 Q1 n=7 cuts=0
+random [0, 300, 3, 12]: 300 games, 800 queries, 15 gaps, 2s
