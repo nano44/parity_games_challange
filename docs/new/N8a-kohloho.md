@@ -64,3 +64,9 @@ tc 4: 4-10 pivots; tc 8: 11-17 pivots; counter_qpt 4, 8: 0 pivots for every τ_1
 Reading: the iteration counts are small and grow at most linearly in N on every hard family, including tc (exponential for the
 progress-measure algorithms on the SAME perfect tree, BARRIERS B6) and counter_qpt (built against the quasi-polynomial algorithms).
 Sizes reached: n ≤ 658 (tc 14), d ≤ 126. NOT yet done: gauntlet step 2's 10,000 random games, larger N, adversarial search.
+
+## 4. Random part of gauntlet step 2 (2026-10-23 ~02:02Z by date -u)
+Corpus: `gen.py corpus experiments/new/out/kl/rand10k 10000 20261023 --nmin 1 --nmax 120` (gitignored; regenerable; manifest.csv sha1
+c2b19244e676). Driver experiments/new/kl/randrun.py; results experiments/new/kl/results/rand10k.global.part{0-3}.csv (one row per game).
+Global rule: 10,000 / 10,000 games verified (harness/verify.py, both players' strategies) and regions = Oink zlk (no tl fallback needed);
+max 11 pivots primal, 11 dual.
