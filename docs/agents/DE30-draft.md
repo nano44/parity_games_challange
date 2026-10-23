@@ -1,4 +1,4 @@
-# Draft RESULTS DE30 (Lead, 2026-10-23 15:40Z by date -u) — awaits CHECKER C23 re-diff (rev. 15:57Z: C23 E-1, N-1..N-3; rev. 17:06Z: E-2; checker b356554)
+# Draft RESULTS DE30 (Lead, 2026-10-23 15:40Z by date -u) — LANDED in RESULTS Dead ends (CHECKER C23 Addendum 1 PASS, checker 77a8ede; lines 3-32 verbatim); was: awaits CHECKER C23 re-diff (rev. 15:57Z: C23 E-1, N-1..N-3; rev. 17:06Z: E-2; checker b356554)
 
 - DE30 (2026-10-23): N8d-R2 = Koh-Loho strategy iteration over the perfect (n, d/2)-universal tree (arXiv 2108.13338v5, Algorithm 1) with
   the single-switch rule R2 (a uniformly random Odd node with an admissible arc, drawn by random.Random(seed), takes its largest-Tighten
