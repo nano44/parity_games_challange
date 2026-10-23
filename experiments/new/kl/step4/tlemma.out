@@ -1,0 +1,27 @@
+# sae2.pg sha1 ca6e0b7d4745
+sae2.pg,primal,seed1,pivots=2,top_in_mustar=35,phase1_pivots<=2,states_violating_T=0,first_violation_state=None
+sae2.pg,dual,seed1,pivots=34,top_in_mustar=0,phase1_pivots<=0,states_violating_T=0,first_violation_state=None
+# sae4.pg sha1 c94d98d3961a
+sae4.pg,primal,seed1,pivots=4,top_in_mustar=63,phase1_pivots<=4,states_violating_T=0,first_violation_state=None
+sae4.pg,dual,seed1,pivots=100,top_in_mustar=0,phase1_pivots<=0,states_violating_T=0,first_violation_state=None
+# sbe2.pg sha1 b3d5bc293d1b
+sbe2.pg,primal,seed1,pivots=2,top_in_mustar=60,phase1_pivots<=2,states_violating_T=0,first_violation_state=None
+sbe2.pg,dual,seed1,pivots=99,top_in_mustar=0,phase1_pivots<=0,states_violating_T=0,first_violation_state=None
+# sbe3.pg sha1 e1cd8f136e05
+sbe3.pg,primal,seed1,pivots=3,top_in_mustar=85,phase1_pivots<=3,states_violating_T=0,first_violation_state=None
+sbe3.pg,dual,seed1,pivots=180,top_in_mustar=0,phase1_pivots<=0,states_violating_T=0,first_violation_state=None
+# famF.pg sha1 9ffdb16158b7
+famF.pg,primal,seed1,pivots=9,top_in_mustar=3,phase1_pivots<=8,states_violating_T=1,first_violation_state=1
+famF.pg,dual,seed1,pivots=13,top_in_mustar=15,phase1_pivots<=13,states_violating_T=8,first_violation_state=4
+# famG.pg sha1 cb9004b7af4b
+famG.pg,primal,seed1,pivots=9,top_in_mustar=1,phase1_pivots<=0,states_violating_T=0,first_violation_state=None
+famG.pg,dual,seed1,pivots=53,top_in_mustar=17,phase1_pivots<=53,states_violating_T=51,first_violation_state=1
+# famH.pg sha1 889e8e1d37ec
+famH.pg,primal,seed1,pivots=0,top_in_mustar=1,phase1_pivots<=0,states_violating_T=0,first_violation_state=None
+famH.pg,dual,seed1,pivots=5,top_in_mustar=14,phase1_pivots<=5,states_violating_T=4,first_violation_state=1
+# climb_r1_n8.pg sha1 a32b4cdfb2b5
+climb_r1_n8.pg,primal,seed1,pivots=10,top_in_mustar=8,phase1_pivots<=10,states_violating_T=7,first_violation_state=1
+climb_r1_n8.pg,dual,seed1,pivots=0,top_in_mustar=0,phase1_pivots<=0,states_violating_T=0,first_violation_state=None
+# climb_r1_n16.pg sha1 d9e0ef883716
+climb_r1_n16.pg,primal,seed1,pivots=4,top_in_mustar=16,phase1_pivots<=4,states_violating_T=0,first_violation_state=None
+climb_r1_n16.pg,dual,seed1,pivots=0,top_in_mustar=0,phase1_pivots<=0,states_violating_T=0,first_violation_state=None
