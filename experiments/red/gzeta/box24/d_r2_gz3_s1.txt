@@ -1,0 +1,6 @@
+SUMMARY r2 gz3.pg seed 1: pivots 1432 (= KLFast.run), states with A != I 1433/1433, first at state 0; {'A_minus_I': 575, 'I_minus_A': 1431, 'pick_not_improving': 475, 'pick_worsening': 467, 'pick_not_adm_fresh': 28}
+  classes A-I {'a->A': 10, 'w->A': 24, 'a->a': 435, 'b->B': 15, 'b->b': 1251, 'c->B': 32, 'u->d': 22, 'c->r': 859, 'c->c': 15, 'w->w': 2, 'u->u': 27, 'b->s': 3772}
+  classes I-A {'a->x': 45029, 'c->c': 173820, 'b->s': 86377, 'w->A': 1490, 'c->B': 1342, 'w->w': 1421, 'b->b': 288665, 'u->u': 946, 'c->r': 866, 'u->d': 41, 'b->B': 18}
+  R2 picks {'b->B': 4, 'a->A': 3, 'a->a': 69, 'w->A': 7, 'b->b': 1059, 'c->B': 7, 'c->c': 211, 'c->r': 31, 'u->d': 7, 'w->w': 4, 'u->u': 4, 'b->s': 26}
+  R2 picks that lower VJ val {'a->A': 3, 'a->a': 69, 'w->A': 1, 'b->b': 338, 'b->B': 3, 'c->r': 18, 'u->d': 2, 'c->B': 2, 'c->c': 7, 'w->w': 2, 'u->u': 3, 'b->s': 19}
+  R2 picks not admissible for the fresh lfp of the same tau {'c->r': 24, 'u->d': 2, 'b->s': 2}
