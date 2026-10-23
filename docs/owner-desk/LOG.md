@@ -278,3 +278,8 @@ DE25 (N6 IPM on LCP), DE26 (N7 entropic smoothing), DE27 (DTL k-pools) landed, C
 DTL: NEST* plateau 6, line closed; two-player longest phase ~n^0.36; DTL lane parked. L-NEW parked (needs a non-discounting mechanism).
 L-STRUCT: s^V(5,5) >= 11 (LRAT), docs/struct/S5 transfer map; two n=5 SAT jobs to 01:30Z (weak 10-state success would refute T3).
 No incorrect run, no super-poly family, no overage. All working sessions parked.
+
+## 2026-10-23T02:03Z relayed: Lead 2026-10-23 02:11Z step-2 survivor report (information, D14/L35)
+N8a (Koh & Loho strategy iteration over a universal tree, arXiv 2108.13338, 'global' pivot rule) passed the HARD-BENCH part of step 2
+on data: 13 families to n = 658, pivots small (tc <= 15, counter_symsi <= 16, switchbestexp <= 60), outputs verified; Lead re-ran 3.
+Caveats: bench untargeted; random part running; only quasi-poly bound known, no proof route. Running: L-NEW, L-RED attack, L-LIT step 3.
