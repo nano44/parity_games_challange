@@ -108,3 +108,26 @@ quasi-polynomially many leaves of the counted subtree, i.e. quasi-polynomial, no
 with the chain covers of §5 of the paper is not implemented).
 Also: dual pivots on these instances are 0 (the crawl is on the Odd-pivot side); the gadget search climbpad.py at n = 10 found no
 order-2 gadget in 392,653 steps (the 15-node core is the smallest found).
+
+## 7. DEAD END record, both rules, perfect tree (written 03:16Z by date -u, per Lead 02:46Z; §2 frozen, earlier sections unchanged)
+- Switch-all: DEAD (L-RED R53 §1-§3, l-red 9fa1067): klcount_n16 (sha1 b5269084…) dual 16,387 = 4·16³+3; klcount_n18_lvl (sha1 9ffdb161…)
+  dual 419,907 = 4·18⁴+3; Lead re-run with trunk kl.py, both verified. Kept below only as a control.
+- Global: DEAD (L-RED R53 §4, l-red 4035ab5): klglobal_n18_lvl (sha1 cb9004b7…) dual 2,598 = 8·18²+6; klglobal_n20_lvl2 (sha1 0ffbeaf1…)
+  dual 64,006 = 8·20³+6; Lead re-run with trunk kl.py, both verified. Law 8·n^L+6, n^Θ(n).
+- Both rules on one gadget: R53 §5 H_k (klmin_n13, sha1 b8a5b1bd…): dual 4·n^{k+1} under both rules (k = 0..3).
+- Independently (this lane, §6, found 02:45-03:10Z after the Lead's 02:08Z message moving climbs to L-RED, which I had not read: a
+  process slip, reported): L_k from the 15-node core nest_core.pg, PRIMAL side, 3·n^{k+1}+1 (global) and 4·n^{k+1} (switch-all),
+  levels_2.pg (sha1 3c0092c4…), levels_3.pg (sha1 9ce17076…), Oink zlk + verify.py OK. Same mechanism as R53 (Tighten's prefix successor
+  plus recurring strategies), seen from Odd's side; R53 has it from the dual side.
+- Verdict: N8a (Koh-Loho tree SI, perfect tree, switch-all and global) is a DEAD END at gauntlet step 4 (running time), on data with
+  verified families. Random and larger-N runs stopped per Lead 02:46Z; data so far (complete, not partial): rand10k.global.part0-3.csv
+  and rand10k.all.csv (10,000 games each, all verified); larger-N runs on the growing families were not started.
+- Not started per Lead: a succinct-tree (JL17) variant (idea only; L-RED is checking whether the lapping counter transfers to every
+  universal tree).
+
+## 8. Addendum to §3 (T25 C2 citation fix)
+§3 "Reading" says tc is exponential for the progress-measure algorithms "BARRIERS B6". That citation is wrong: B6 lists zlk, pp, dp, rr,
+rrdp, tl, atl, not SPM, and van Dijk §9.4 says SPM's slowness is not due to the Two Counters design (L-LIT T25 C2). The correct source is
+the repo's own Oink measurement: experiments/hard-families/results/tc.md (sha1 cdcc2c21f12813e763d7b968f0b43fc352e78dcc; column oink-tspm,
+lifts: 221 at N = 2, 25,938,757 at N = 12, timeout at N = 14) and tc.csv (sha1 00d8a721be1d00aaf64f8242be870919f599077d). tspm is Oink's
+progress-measure solver, not the perfect-tree value iteration of Koh-Loho §1.1, so the comparison is indicative only.

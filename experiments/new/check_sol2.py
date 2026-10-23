@@ -7,6 +7,7 @@ import sys, os, subprocess, tempfile, resource
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "harness"))
 import pg, verify
 OINK = os.path.join(HERE, "..", "..", "tools", "oink", "build", "oink")
+os.makedirs(os.path.join(HERE, "out"), exist_ok=True)   # fresh clones have no out/ (gitignored); Lead 02:08Z
 g = pg.parse("".join(l for l in open(sys.argv[1]) if not l.lstrip().startswith("%"))); text = open(sys.argv[2]).read()
 win = pg.read_sol(text, g.n); e = verify.check(g, win, verify.read_strategy(text, g.n))
 TO = int(sys.argv[3]) if len(sys.argv) > 3 else 600
