@@ -5,8 +5,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 PARKED (Lead 2026-10-22 13:59Z). Cap reached 2026-10-23 01:30Z; no job running. Outcome of the n = 5 box:
 s^V(5,5) >= 11 (LRAT), w^V(5,5) >= 11 (SOLVER-ONLY), strong (5,5) k=11 undecided (ran >= 8h24m from 07:58Z, lost at a
 container restart before the cap, no result). T3 at n = 5 untested; a gap needs s >= 12 and a weak 11-state separator.
-Checkpoints in out/ (gitignored) may be lost with the container; regenerate with n5.py. Next: the Lead chooses T6, the
-n = 2 o(d) family, or a full park.
+FULL PARK (Lead 2026-10-23 01:39Z): wake only on a concrete T5/T6 statement or a new encoding idea worth > 1 extra state.
+All CEGAR checkpoints (graph sets) are committed in experiments/weak-sep/results/n5/checkpoints/ (incl. weak (5,6) k=14:
+181+37 graphs, 67 rounds); to resume a query, copy the file back to out/ and rerun the same n5.py command.
 - Lane files: docs/struct/S1-statement.md (definitions; refereed), S2-lower-bound-statement.md (T1 dead, DE2; T2 parked),
   S3-statement.md (T3 data conjecture), L4-proof.md (RESULTS R1, GAPS G1 closed: signatures 9bf5301, d76c9e1; G-L4-1 =
   CDFJLP Thm 5.1 black box), T3-proof-attempt.md (gaps and dead ends), S4-structure-note.md (facts on data).
