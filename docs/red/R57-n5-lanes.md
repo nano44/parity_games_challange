@@ -104,3 +104,76 @@ experiments/red/n5/:
 - ssiedges.py: edges SSI takes; counts asserted equal to n5.run mode ssi.
 - vjlane.py: VJ delay lanes on named edges, with start-pair rewrite.
 - instances/: dl_*.pg plus start files.
+
+## 6. O4: why each attempted two-counter coupling fails (Lead 21:57Z; READING with DATA; 2026-10-23, written after 22:00Z by date -u)
+Instrument: experiments/red/n5/perswitch.py. It gives per-vertex switch counts of N5 runs, through n5tr.trace, whose counts are
+asserted equal to n5.run.
+
+| game | Even: vertices switching / max at one vertex / vertices with a return | Odd: the same | N5 iterations |
+| --- | --- | --- | --- |
+| switchbestexp N = 6 (n 160) | 101 / 11 / 77 | 6 / 1 / 0 | 62 |
+| switchallexp N = 6 (n 91) | 55 / 4 / 1 | 6 / 1 / 0 | 12 |
+| G_ζ gz2 (n 389) | 374 / 5 / 186 | 3 / 2 / 0 | 374 |
+| DLM family 1, n = 5 / 6 (DLM start pair) | 5 / 3 / 0; 6 / 4 / 2 | 5 / 4 / 1; 6 / 4 / 2 | 6 / 7 |
+| DLM family 2, n = 4 (DLM start pair; instances/dlm2_4.pg) | 8 / 4 / 1 | 8 / 4 / 1 | 8 |
+
+- (C1) One counter, with the opponent as best-replier (Friedmann's switch-best and switch-all games, and G_ζ).
+  - The counter needs the opponent's cycle-exit vertices to change with the count. On switch-best, Odd's arena reply τ_sb takes
+    2^N values and changes 1, 4, 10, 24 times for N = 1..4 (L-NEW, N5-dlm-box5.md §7, K7).
+  - Under N5, each opponent exit vertex switches at most twice and NEVER returns to an earlier successor. On switchbestexp N = 4,
+    Odd's only choice vertices h_0..h_3 each switch once, h_i -> m_i.
+  - Why: the opponent's gate Iτ is a function of τ alone (S2 on the dual; Ξτ is the valuation against Even's best reply τ̄). An
+    exit vertex can flip back only when the honest values of its two successors cross again, and those values move only with the
+    opponent's OWN strategy.
+  - In a one-counter game the opponent's strategy holds no counter. Its honest values settle after about N switches (§2), and N5
+    then runs one pass for the counting player against a fixed τ.
+- (C2) Two counters, symmetric (DLM; each player's strategy holds a counter, and each is the other's distracting best-replier).
+  - Here the opponent's exits DO return: 1-2 vertices with returns, up to 4 switches at one vertex.
+  - But N5's joint restricted optimum takes, in one step, every improving switch that the local rule withholds: K6
+    (N5-dlm-box5.md §4; on DLM's families N5 ⊇ SSI at every state, 100% of 342 + 399 vertex events, n = 2..5). The counter is
+    skipped in a few iterations (6-8 here).
+  - The withheld switches cannot be delayed without destroying the counter:
+    - the escape edges are counter edges (SSI takes them, §3b);
+    - removing the never-used edges removes threats SSI's counter needs (§3b: 125 -> 10);
+    - lanes on the escape edges make SSI itself linear (§3c).
+  - L-NEW's opponent-blunder modules (box 5 §3) keep SSI exponential but make N5 faster (2-15): N5 exploits the blunder at once.
+- (C3) Time-scale separation by lanes (proposed here against K7, NOT built).
+  - If each decisive switch of the counting player is preceded by L lane steps, the opponent's one-step lag (K7) stops mattering.
+  - But it does not touch the gate. The opponent's required alternations must still be honest improvements, and by C1 they
+    recur only if the opponent's own strategy holds a counter. That leads back to C2, where K6 applies.
+
+O4 (READING). A super-polynomial N5 run needs both of the following.
+- (R-a) Each player's strategy holds a counter whose own honest values (Ξσ for Even, Ξτ for Odd) cross at the vertices that face
+  the other counter, once per count. This lets the exit vertices alternate through honest improvements. The data show this only
+  in symmetric games (C2).
+- (R-b) In every state, the honest improving switches that are optimal against the opponent's CURRENT strategy (N5's joint
+  optimum) contain no jump ahead in the count. That is, the counter's next step is the only profitable honest change, for both
+  players at once.
+  - With the opponent fixed, a player's run is short: one-player games are polynomial (RESULTS R17), and fixed-τ two-player runs
+    stay within Theorem PH's per-phase bound on the box-10/11 data.
+  - So progress must alternate between the players, each opponent move unlocking only a bounded number of new honest switches.
+- Every construction tried satisfies at most one of the two. Friedmann's games fail (R-a), because only one strategy counts.
+  DLM fails (R-b), because the local rule's withheld switches are honest and profitable, so the joint optimum takes them.
+- Delay lanes can enforce (R-b) only on edges that are not themselves counter edges or threats. In DLM they are. No game is known
+  in which the count's "jump-ahead" switches use edges disjoint from the counter's edges and threats.
+- This is evidence, not proof, against the L1 transfer to N5. G-N5-TIME stays OPEN.
+- What would settle it: a proof that (R-a) and (R-b) are incompatible (e.g. that honest crossings at exit vertices force a
+  profitable jump-ahead switch somewhere), or a game meeting both.
+
+### 6b. Symmetric climbs (DATA; experiments/red/n5/symclimb.py; 2026-10-23 22:09-22:34Z, date -u)
+- Search space: games invariant under mirror + dual. Vertex v has a mirror v ± h with owner swapped, priority + 1 and mirrored
+  successors, so both players face the same structure (requirement R-a's shape).
+- Fitness: N5 iterations from the best-reward start. Two seeds per size, 1,500 s each.
+
+| n | iterations, seeds 1 / 2 | best / n | best instance (instances/) | check |
+| --- | --- | --- | --- | --- |
+| 12 | 23 (one 60-s seed) | 1.92 | — | Oink zlk OK, strategies verified; n5b spec 23 |
+| 16 | 25 / 24 | 1.56 | sym_h8_s1.pg (sha1 f87fee647f1c…) | Oink zlk OK, strategies verified; n5b spec 25, orig 25 |
+| 24 | 34 / 31 | 1.42 | sym_h12_s1.pg (sha1 5de0d6588c61…) | Oink zlk OK, strategies verified; n5b spec 34, orig 28 |
+| 32 | 55 / 44 | 1.72 | sym_h16_s1.pg (sha1 a46e6c88f031…) | Oink zlk OK, strategies verified; n5b spec 55, orig 55 |
+
+- The n = 32 best (55 iterations) exceeds the lane's earlier best run, 50 at n = 61 (N5-toggle-box11.md §4).
+- perswitch.py on sym_h16_s1: BOTH players switch at 15 vertices each, with returns at 10 vertices each (up to 6 switches at one
+  vertex). So symmetry does produce R-a-type behaviour: exits alternate through honest crossings on both sides.
+- Growth is still linear, iterations ≈ 1.4n-1.9n. R-b (no profitable jump-ahead) is not met by anything the climb finds.
+- Consistent with O4; not a kill.
