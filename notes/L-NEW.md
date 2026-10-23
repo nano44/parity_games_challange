@@ -2,6 +2,30 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
+Successor 8 (Opus 5.5, D15), session_017FJfp8hdPrDYKY1EZFYH16. Handover check edd757a4 (Lead 5/5). Box 21 (G-N5-TIME proof
+attempt from R57 O1-O4), Lead GO 23:05Z Oct 23 (date -u); about 4 h.
+- File docs/new/N5-time-box21.md; code experiments/new/box21/ (n5x.py trace = n5.run counts asserted).
+- PROVED there:
+  - Lemma R (G^d order = reverse);
+  - Lemma S (sandwich L_σ ↑ ⊴ V ⊴ U_τ ↓; N5 step = gated best reply);
+  - Lemma Φ (≤ 2n(n−1)+1 joint λ-phases);
+  - Theorem B (iterations ≤ (C_τ+1)(F_E+1); τ_0 optimal ⇒ N5 = frozen run);
+  - Lemma W;
+  - Lemma PT (R17 transfers iff gate ⊇ G_τ-improving edges = H1);
+  - Lemma G (𝒞^1O: gate and selection differ only on edges ENTERING o's reach set R, through θ = Ξ(o)).
+- FALSE / DATA:
+  - H1 is false (h1_hand.pg, 131/4,504 on random runs).
+  - fts_ph16 (start pair (σ_0, τ*)): 22 value-changing steps in one λ-phase, > n−1.
+  - fts_best16 (canonical start, one Odd choice vertex, τ never moves): 27 in one phase; σ̄ laps twice over 4 exits.
+- Reading: R57's (R-a) is not necessary; a kill can live in Even's gate against frozen τ* (single-counter branch).
+- Open pieces on 𝒞^1O: (SEG-1O), (CH-1O); the trust-mode deadlock is where both one-player inductions stop.
+- Climbs at box end: see N5-time-box21.md §6. Oink built in this container (tools/oink/build).
+- Next if continued:
+  - attempt (SEG-1O) with a deadlock count;
+  - or (for L-RED) a single-counter design: CDAG skeleton in G_τ*, with R-entering jump-ahead edges throttled by one Odd
+    vertex.
+
+### Earlier resume point (successor 7)
 PARKED after box 20 (synthesis docs/new/c-lane-synthesis.md), 2026-10-23 (date -u in the commit). Nothing running.
 Recommendation there: pause (c) design one box; L-RED builds an R56-style delay-lane counter against N5; fallback design =
 SA+_1/2 of ACYC + ESC1 + ESC-tau (test: N10 gap instances). Box 19 details below.
@@ -169,6 +193,12 @@ Successor 6 (Opus 5.5, D15), session_01ETtBUTp98P7J7EJVEmPEGj; PARKED 2026-10-23
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 8, box 21) Route "R17's Lemma P / Theorem PH for N5 against a frozen opponent" (Lemma PT): dead.
+  - Obstruction: H1 is false. Edges improving in G_τ* are withheld by the honest gate while their head is exploitable.
+  - Instances: experiments/new/box21/instances/h1_hand.pg (n 9), fts_ph16.pg (sha1 55a21ee5…; 22 > 15 in one λ-phase),
+    fts_best16.pg (sha1 5534245f…; canonical, 27 > 15).
+- (succ. 8, box 21) Route "bound N5 via (R-a) ∧ (R-b) incompatible" (R57 O4): insufficient by itself.
+  - Obstruction: Theorem B. (FO) is also needed, and fts_best16 has C_τ = 0 with a long phase.
 - (succ. 7, box 19) N10a ACYC + ESC1 (N10-screen.md §1): 15 gaps in 800 random two-player queries (results/rand300.txt); one-player exact.
 - (succ. 7, box 19) N10b ACYC + ESC1 + ESC-tau (§2): gap on experiments/new/esc/instances/esc_gap_r1794_Q1.pg (n = 8, sha1
   ab859e3f4acf4ca223bc7af905010d59db758d66; Even wins only vertex 5); no cut ever violated (cuts = 0).
@@ -224,6 +254,10 @@ Successor 6 (Opus 5.5, D15), session_01ETtBUTp98P7J7EJVEmPEGj; PARKED 2026-10-23
   and box 7's K8 constant-case closure. Obstruction: CDAG_n has 2^n - n - 1 Ω-strict single VJ00 improvements (one-player, all ⊕).
   Instance: experiments/new/instances/cdag/cdag_N12.pg (sha1 41f780ede48ae00d4e4f15251abf2583f9094aa0), chain 4083 by cdag.py.
 ## Things only I know
+- (succ. 8) Pitfalls in box 21:
+  - `pkill -f "climb_fix.py ..."` killed my own shell (exit 144). Kill by `ps -eo pid,args | awk '$2=="python3" && $3==...'`.
+  - Stretch counts on 𝒞^1O must hold the joint λ-map constant too: seg1o_20 first showed a 21-step "(θ, w, τ)-stretch" that
+    spanned 6 λ/w changes.
 - (succ. 7) The pkill self-kill trap bit AGAIN (box 18, exit 144): `pkill -f "twoout.py circ 9 9"` matched my own bash -c line.
   Use `ps -eo pid,args | awk '$2=="python3" && $4=="twoout.py"'` then kill the PID.
 - (succ. 7) Plain SA does not multiply the choice equality by continuous variables: (1 - s_a) f != s_b f as monomials. Pruning

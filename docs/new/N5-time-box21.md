@@ -1,5 +1,5 @@
 # N5 on two-player games: box 21, from R57's obstruction to a bound, and where it breaks
-L-NEW successor 8 (Opus 5.5, D15). Lead GO 2026-10-23 23:05Z; started 23:06Z; this draft 23:20Z (date -u).
+L-NEW successor 8 (Opus 5.5, D15). Lead GO 2026-10-23 23:05Z; started 23:06Z; first draft 23:20Z, §3.4 23:29Z (date -u).
 Status: proof attempt on GAPS G-N5-TIME. Every statement is labelled PROVED, READING or OPEN; DATA is labelled as such.
 Not refereed. No polynomial bound is claimed. G-N5-TIME stays OPEN.
 Object: N5 = docs/new/N5-ssi-global.md SPEC S1-S5 (code experiments/new/n5.py, run unmodified). Sources: Vöge-Jurdziński BRICS
@@ -21,6 +21,16 @@ RS-00-48 (pdf sha256 485a12de…, as in RESULTS R15/R17); R57 = docs/red/R57-n5-
 - On fts_ph16 (n = 16) the R17 conclusion itself fails for a genuine N5 run from (σ_0, τ*) (DATA, Oink-verified, §3.2):
   - 22 value-changing iterations in ONE joint λ-phase, against the one-player bound n − 1 = 15;
   - Lemma P (one-player, in G_τ*) is violated at 18 of the 22 steps (steps 4-21).
+- The canonical start shows it too (DATA, Oink-verified, §3.4): fts_best16 (n = 16).
+  - Odd has ONE vertex with a choice, and S3's τ_0 is already optimal, so τ never moves.
+  - 27 value-changing iterations fall in one joint λ-phase.
+  - Odd's best reply σ̄, which defines Even's gate, makes TWO laps over four exits inside that phase, and Even vertices
+    return (8 → 15 → 8 → 15 → 8).
+  - Lapping is impossible for σ and τ (R15) but not for σ̄.
+- On the class 𝒞^1O (one Odd choice vertex), Lemma G (§3.5, PROVED) locates the whole difference between honest gate and
+  selection. They disagree only on edges ENTERING the reach set R of o, through one monotone scalar θ = Ξ(o).
+  - The remaining statements are (SEG-1O) and (CH-1O) (§3.6), and both fail to follow from R17 at the same "trust-mode
+    deadlock".
 - Consequence for the obstruction (READING, §3.3): R57's requirement (R-a), counters in BOTH strategies, is not necessary for a
   kill. A single Even counter can live in Even's gate, whose best-replier σ̄ IS fresh every iteration, while τ = τ* never moves.
   So "(R-a) ∧ (R-b) incompatible", even if proved, would not bound N5. The open core is (FO*) (§5).
@@ -160,6 +170,90 @@ see §6.
   - by §3.1, an edge can be withheld only while its head z is exploitable (Ξ(z) ≠ W(z)), i.e. while some Even choice downstream
     of z is bad against σ̄.
 
+### 3.4 The canonical start, one Odd choice vertex (DATA, verified; 23:29Z by date -u)
+experiments/new/box21/instances/fts_best16.pg (n = 16, sha1 5534245f603f496d1e6122d7be1fff81f05088fd), canonical N5 (best-reward
+start, no start file).
+- Odd has ONE vertex with a choice: vertex 5, priority 10, successors {2, 4, 5, 9, 14, 15}. S3's τ_0(5) = 9 is honest-optimal
+  (Iτ_0 = ∅), so by Theorem B (c) the canonical run IS the frozen run, and τ never changes.
+- n5.py: 28 iterations (2 fallbacks). Oink zlk OK, strategies verified. Joint λ-phases [1, 27]: 27 iterations in one phase, all
+  value-changing (Ξσ and W change at every step). One-player bound: n − 1 = 15.
+- Mechanism, seen in the trace. Odd's best reply σ̄(5), which defines Even's gate, runs through the exits
+  9 → 14 → 15 → 4 → 2 → 14 → 15 → 4 → 2 → 9. That is TWO laps over four exits inside one λ-phase, with τ(5) = 9 fixed throughout.
+  Even vertices return in the same phase:
+  - 14: 8 → 15 → 8 → 15 → 8;
+  - 3: 13 → 4 → 2 → 7 → 13 → 4 → 7 → 4 (7 switches);
+  - 1: 1 → 10 → 15 → 4 → 15.
+  This is the lapping that R57 §1 says N5 cannot have through τ (O1). Here it happens through σ̄, which R15 does not constrain
+  (R15 says σ and τ never recur; σ̄ may).
+- READING. The smallest class where (FO) is open is 𝒞^1O: games in which Odd has at most one vertex of out-degree > 1.
+  - There C_τ ≤ d − 1, because τ is one choice at that vertex and never repeats (R15 (c): every τ change goes strictly up in
+    ≺ on G^d). So by Theorem B, N5 is polynomial on 𝒞^1O ⇐ F_E is polynomial on 𝒞^1O.
+  - Conversely, from every start pair (σ, τ*) with τ* honest-optimal, N5 IS the F_τ* run (Theorem B (c)).
+  - The class is solvable in polynomial time by other means (d one-player games). A bound would be about N5 itself, as R17 is.
+  - R17's argument does not cover the class (fts_best16).
+
+### 3.5 Lemma G: on 𝒞^1O the gate differs from G_τ's only on edges ENTERING o's reach set (PROVED; DATA check)
+Setting: o is the only Odd vertex with a choice, τ is fixed, σ is Even's current strategy. Let:
+- R := {v : the σ-path from v reaches o} (o ∈ R);
+- π_v := that path from v up to o, o excluded;
+- π ⊕ a := (c(a), P(a) ∪ {u ∈ π : u more relevant than c(a)}, ℓ(a) + |π|), the prefix of R17 §1 along a whole path.
+Hypothesis (h): o lies on no cycle of the (σ, σ̄)-play or of the (σ, τ)-play from o, and Ξ(o), W(o) have the same cycle node c.
+(This holds throughout a joint λ-phase in which every vertex's cycle node is the same sink s, e.g. the 27-step phase of
+fts_best16.)
+(a) If v ∉ R, then Ξ(v) = W(v). The σ-path from v meets no Odd vertex with a choice before it closes, so the two plays coincide.
+(b) If v ∈ R, then Ξ(v) = π_v ⊕ Ξ(o) and W(v) = π_v ⊕ W(o). The play from o avoids π_v; otherwise o would lie on a cycle,
+    contradicting (h).
+(c) For y, z ∈ R: Ξ(z) ▷ Ξ(y) ⇔ W(z) ▷ W(y).
+    - Both comparisons see the same cycle node c. Their path-set difference is A_z Δ A_y, where A_v = {u ∈ π_v : u more relevant
+      than c}; this set is disjoint from the paths of Ξ(o) and W(o).
+    - Their length difference is |π_z| − |π_y|.
+    - Neither depends on which value at o is used.
+(d) For an Even x and z ≠ σ(x): (x, z) ∈ Iσ ⇔ (x, z) is improving in G_τ, with exactly two exceptions:
+    - (d1) σ(x) ∉ R and z ∈ R (the edge ENTERS R): here (x, z) ∈ Iσ ⇒ improving in G_τ, but not conversely. The edge is withheld
+      iff π_z ⊕ Ξ(o) ⊴ W(σ(x)) ◁ π_z ⊕ W(o).
+    - (d2) σ(x) ∈ R and z ∉ R (the edge LEAVES R): improving in G_τ ⇒ (x, z) ∈ Iσ, but not conversely.
+    Proof: (a)-(c), Ξ(o) ⊴ W(o) (Lemma S (b)), and prefix monotonicity (R17 (V2)) along π_z, with the same cycle node. □
+Corollary.
+- On 𝒞^1O, (H1) fails only on edges entering R, and only while Ξ(o) ◁ W(o), i.e. while Odd's best reply at o beats τ(o) against
+  the current σ.
+- At every state with Ξ(o) = W(o), the gate contains G_τ's improving edges, so Lemma PT's inclusion holds at that state.
+- The throttle is ONE number: Ξ(o) = o ⊕ (the minimum honest value over o's exits outside R). It rises monotonically
+  (R15 (a)). An edge into R opens once that minimum is high enough.
+DATA (lemmaG.py):
+- fts_best16: 28 states; 80 withheld edges, all of type (d1); 30 extra edges, all of type (d2).
+- 2,000 random 𝒞^1O games (n 5..14, runs from (σ_0, τ*)): 2,246 states satisfying (h); 15 withheld, all (d1); 5 extra, all (d2).
+
+### 3.6 𝒞^1O: what is left, and where the one-player induction stops (READING with DATA)
+Fix a stretch of N5 iterations in which τ, θ := Ξ(o), w := W(o) and the joint λ-map are all constant, and (h) holds. By Lemma G, inside the
+stretch:
+- the gate is the improving set of the one-player game G^θ (o made a terminal of value θ);
+- each step is the optimum of the one-player game G^w (o a terminal of value w ⊵ θ) over that gate.
+The two games differ only in how attractive it is to route through o. So the run splits as:
+    #iterations ≤ (#θ-changes + #w-changes + #τ-changes + #λ-changes + 1) · (longest (θ, w, τ, λ)-constant stretch),
+with #τ-changes ≤ d − 1 (§3.4) and #λ-changes ≤ 2n(n − 1) (Lemma Φ). On 𝒞^1O it is therefore enough to prove:
+- (SEG-1O) a (θ, w, τ, λ)-constant stretch has ≤ n − 1 value-changing steps (plus flat ones);
+- (CH-1O) θ and w change poly(n) times.
+Neither is proved.
+DATA (theta.py, canonical runs):
+
+| instance | n | iterations | θ-changes | w-changes | Odd moves | longest stretch |
+| --- | --- | --- | --- | --- | --- | --- |
+| fts_best16 | 16 | 28 | 10 | 2 | 0 | 11 |
+| oneodd climb, n 16 | 16 | 33 | 9 | 3 | 0 | 11 |
+| oneodd climb, n 24 | 24 | 41 | 5 | 6 | 1 | 15 |
+
+The longest stretch is ≤ n − 1 in every case. A climb with fitness "longest stretch − (n − 1)" (climb_fix.py seg1o) is reported
+in §6.
+Where the R17 induction stops inside a stretch. Two different one-player inductions both fail, each at one edge type of Lemma G (d).
+- (i) In W (G^w): Lemma P's Case B fails at a withheld entering edge (x, z) (type d1). Its repair would need the honest bound
+  Ξ_k(z) ⪰ value(r') for z's o-avoiding continuation r'. Then "withheld" would give value(r') ⪯ π_z ⊕ θ ⊴ W(σ(x)), and Case A's
+  argument would go through.
+- (ii) In Ξ (G^θ): that honest bound fails exactly at z ∈ R in "trust mode". There z's W-optimal route goes through o (because of
+  w) while its honest value π_z ⊕ θ is below its best o-avoiding route. N5 keeps z in R because the selection trusts τ.
+- So x is withheld by z, and z stays in R until θ rises (the end of the stretch).
+- A proof of (SEG-1O) has to count such deadlocks. A proof of (CH-1O) has to bound the releases. This is the exact point where
+  the one-player argument stops on the smallest two-player class.
+
 ## 4. The (ALT) side: R-a, R-b
 - Formal (R-a): C_τ (Odd's changes) super-polynomial. With Theorem B, a kill on this branch needs C_τ super-polynomial while
   every block is short.
@@ -179,6 +273,11 @@ see §6.
   - It is necessary for G-N5-TIME from start pairs, and for the canonical start whenever S3's τ_0 is honest-optimal
     (Theorem B (c)).
   - Smallest sub-question: a bound on W-changing arena steps per λ_W-phase. On fts_ph16 it is 22 > n − 1.
+- (FO_1O) (FO) on 𝒞^1O (§3.4). It suffices there for N5 to be polynomial. The smallest open case; fts_best16 is the canonical
+  instance. By §3.6 it follows from:
+  - (SEG-1O) ≤ n − 1 value-changing steps per (θ, w, τ, λ)-constant stretch;
+  - (CH-1O) θ = Ξ(o) and w = W(o) change poly(n) times.
+  Both are DATA-consistent and unproved.
 - (FO) The same for arbitrary frozen τ (needed for Theorem B with blocks).
 - (ALT) C_τ ≤ poly(n) in N5 runs.
 - (WF) Fallback steps of F_τ are W-flat (DATA 52/52).
@@ -187,10 +286,11 @@ see §6.
 experiments/new/box21/ (read-only use of n5.py and si.py):
 - n5x.py: trace (asserts equal counts with n5.run).
 - fixtau.py: plain vs frozen-τ* vs Even switch-all.
-- climb_fix.py: climbs, modes tstar, tstarph, bestph, tany.
+- climb_fix.py: climbs, modes tstar, tstarph, bestph, oneodd, seg1o, tany. grow.py: growth climb on the phase excess.
+- lemmaG.py: Lemma G check. theta.py: θ/w stretch analysis on 𝒞^1O. shrink.py: greedy shrinker.
 - anal.py, phases.py, wtrace.py, lamw.py: per-step analysis and the Lemma P check.
 - h1.py: random H1 rates. wmono.py: Lemma W data.
-- instances/: h1_hand, fts_ph16, plus starts.
+- instances/: h1_hand, fts_ph16 (with start files), fts_best16 (canonical start).
 Frozen τ* on Friedmann's families (fixtau.py; N5 from (σ_0, τ*) vs plain N5 vs Even switch-all from σ_0):
 
 | game | n | plain N5 | N5 from (σ_0, τ*) | Even switch-all from σ_0 |
