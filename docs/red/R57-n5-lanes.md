@@ -159,3 +159,21 @@ O4 (READING). A super-polynomial N5 run needs both of the following.
 - This is evidence, not proof, against the L1 transfer to N5. G-N5-TIME stays OPEN.
 - What would settle it: a proof that (R-a) and (R-b) are incompatible (e.g. that honest crossings at exit vertices force a
   profitable jump-ahead switch somewhere), or a game meeting both.
+
+### 6b. Symmetric climbs (DATA; experiments/red/n5/symclimb.py; 2026-10-23 22:09-22:34Z, date -u)
+- Search space: games invariant under mirror + dual. Vertex v has a mirror v ± h with owner swapped, priority + 1 and mirrored
+  successors, so both players face the same structure (requirement R-a's shape).
+- Fitness: N5 iterations from the best-reward start. Two seeds per size, 1,500 s each.
+
+| n | iterations, seeds 1 / 2 | best / n | best instance (instances/) | check |
+| --- | --- | --- | --- | --- |
+| 12 | 23 (one 60-s seed) | 1.92 | — | Oink zlk OK, strategies verified; n5b spec 23 |
+| 16 | 25 / 24 | 1.56 | sym_h8_s1.pg (sha1 f87fee647f1c…) | Oink zlk OK, strategies verified; n5b spec 25, orig 25 |
+| 24 | 34 / 31 | 1.42 | sym_h12_s1.pg (sha1 5de0d6588c61…) | Oink zlk OK, strategies verified; n5b spec 34, orig 28 |
+| 32 | 55 / 44 | 1.72 | sym_h16_s1.pg (sha1 a46e6c88f031…) | Oink zlk OK, strategies verified; n5b spec 55, orig 55 |
+
+- The n = 32 best (55 iterations) exceeds the lane's earlier best run, 50 at n = 61 (N5-toggle-box11.md §4).
+- perswitch.py on sym_h16_s1: BOTH players switch at 15 vertices each, with returns at 10 vertices each (up to 6 switches at one
+  vertex). So symmetry does produce R-a-type behaviour: exits alternate through honest crossings on both sides.
+- Growth is still linear, iterations ≈ 1.4n-1.9n. R-b (no profitable jump-ahead) is not met by anything the climb finds.
+- Consistent with O4; not a kill.
