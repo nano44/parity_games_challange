@@ -2,6 +2,10 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
+BOX 14 (Lead GO 01:51Z Oct 23, to ~05:00Z): N8a kill test DONE: DEAD END for the perfect tree (both rules), family L_k, see Dead ends.
+Reported 02:00Z as a hard-bench step-2 survivor, 02:45Z the crawl, then the kill. Nothing running. Tools: experiments/new/kl/ (kl.py,
+kl_init.py, bench.sh, randrun.py, climb.py, climbpad.py, shrink.py). NEXT (Lead decides): the quasi-polynomial trees (Algorithm 4 + chain
+covers) would only move the crawl to quasi-polynomial; not a polynomial route.
 BOX 13 (Lead 01:39Z Oct 23, SCREEN ONLY, to ~03:45Z): docs/new/N8-screen.md. Three candidates pass the screen rule, ranked: N8a Koh-Loho
 tree SI (arXiv 2108.13338) with a global pivot rule (authors leave the polynomial pivot rule open; quasi-poly worst case by construction;
 kill test = perfect tree on tc, where SPM on the same tree is exponential); N8b Sherali-Adams lift of the strategy+potential MIP (long
@@ -269,6 +273,12 @@ NEXT for a successor:
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- N8a (Koh-Loho strategy iteration with tree labels, arXiv 2108.13338, PERFECT (n, d/2)-universal tree; pivot rules switch-all and global),
+  DEAD END 2026-10-23 (box 14; docs/new/N8a-kohloho.md §6). Passed the hard bench and 10,000 random games (all verified); killed by family
+  L_k = 15-node crawl core + k isolated Even self-loops of new high even priorities: pivots 3·n^{k+1} (global), 4·n^{k+1} (switch-all),
+  n = 15 + k; instances experiments/new/instances/n8a/levels_2.pg (sha1 3c0092c4c3b5163675b483d4235fb947a17cb130, 14,740 / 19,652 pivots)
+  and levels_3.pg (sha1 9ce17076951c96e3cfac2e0703a47253d81bbb6b, 314,929 / 419,904), Oink zlk + verify.py OK. Obstruction: Tighten at an
+  odd priority = prefix successor with carries; recurring strategies (Koh-Loho §3) turn each Odd toggle into +1 on an L-digit base-n counter.
 - N7 (entropic temperature homotopy: soft Bellman operator at gamma = beta_G, Newton path following in tau), DEAD END 2026-10-22 (box 12;
   docs/new/N7-entropic.md). Proof route dead at the screen: known entropy-regularised rates are poly(1/(1-gamma), 1/tau) (Cen et al.
   2007.06558 Thm 1; Cen-Wei 2105.15186 Thm 3), both exponential for parity; HMZ principle. Bench: stalls on counter_ortl-3 (sha1 c8bc3499...)
