@@ -1,0 +1,45 @@
+# sae2 sha1 ca6e0b7d4745
+sae2.pg,primal,seed1,n=35,odd=12,pivots=2,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sae2.pg,dual,seed1,n=35,odd=23,pivots=34,max_sw=6,mean_sw=2.00,lemma_c_viol=0
+sae2.pg,primal,seed2,n=35,odd=12,pivots=2,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sae2.pg,dual,seed2,n=35,odd=23,pivots=41,max_sw=6,mean_sw=2.28,lemma_c_viol=0
+# sae4 sha1 c94d98d3961a
+sae4.pg,primal,seed1,n=63,odd=22,pivots=4,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sae4.pg,dual,seed1,n=63,odd=41,pivots=100,max_sw=11,mean_sw=3.33,lemma_c_viol=0
+sae4.pg,primal,seed2,n=63,odd=22,pivots=4,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sae4.pg,dual,seed2,n=63,odd=41,pivots=79,max_sw=8,mean_sw=2.55,lemma_c_viol=0
+# sae6 sha1 5dc850b156c6
+sae6.pg,primal,seed1,n=91,odd=32,pivots=6,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sae6.pg,dual,seed1,n=91,odd=59,pivots=142,max_sw=10,mean_sw=3.02,lemma_c_viol=0
+sae6.pg,primal,seed2,n=91,odd=32,pivots=6,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sae6.pg,dual,seed2,n=91,odd=59,pivots=87,max_sw=7,mean_sw=1.85,lemma_c_viol=0
+# sae8 sha1 18c246245785
+sae8.pg,primal,seed1,n=119,odd=42,pivots=8,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sae8.pg,dual,seed1,n=119,odd=77,pivots=283,max_sw=15,mean_sw=4.49,lemma_c_viol=0
+sae8.pg,primal,seed2,n=119,odd=42,pivots=8,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sae8.pg,dual,seed2,n=119,odd=77,pivots=364,max_sw=17,mean_sw=5.78,lemma_c_viol=0
+# sae10 sha1 90ba8d647a96
+sae10.pg,primal,seed1,n=147,odd=52,pivots=10,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sae10.pg,dual,seed1,n=147,odd=95,pivots=500,max_sw=15,mean_sw=6.33,lemma_c_viol=0
+sae10.pg,primal,seed2,n=147,odd=52,pivots=10,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sae10.pg,dual,seed2,n=147,odd=95,pivots=458,max_sw=19,mean_sw=5.59,lemma_c_viol=0
+# sbe2 sha1 b3d5bc293d1b
+sbe2.pg,primal,seed1,n=60,odd=21,pivots=2,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sbe2.pg,dual,seed1,n=60,odd=39,pivots=99,max_sw=10,mean_sw=3.00,lemma_c_viol=0
+sbe2.pg,primal,seed2,n=60,odd=21,pivots=2,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sbe2.pg,dual,seed2,n=60,odd=39,pivots=144,max_sw=9,mean_sw=4.24,lemma_c_viol=0
+# sbe4 sha1 57b27b7476bc
+sbe4.pg,primal,seed1,n=110,odd=39,pivots=4,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sbe4.pg,dual,seed1,n=110,odd=71,pivots=264,max_sw=11,mean_sw=4.19,lemma_c_viol=0
+sbe4.pg,primal,seed2,n=110,odd=39,pivots=4,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sbe4.pg,dual,seed2,n=110,odd=71,pivots=388,max_sw=14,mean_sw=5.79,lemma_c_viol=0
+# sbe6 sha1 7348edf1358d
+sbe6.pg,primal,seed1,n=160,odd=57,pivots=6,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sbe6.pg,dual,seed1,n=160,odd=103,pivots=830,max_sw=28,mean_sw=8.83,lemma_c_viol=0
+sbe6.pg,primal,seed2,n=160,odd=57,pivots=6,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sbe6.pg,dual,seed2,n=160,odd=103,pivots=406,max_sw=15,mean_sw=4.32,lemma_c_viol=0
+# sbe8 sha1 7082e7242d82
+sbe8.pg,primal,seed1,n=210,odd=75,pivots=8,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sbe8.pg,dual,seed1,n=210,odd=135,pivots=879,max_sw=27,mean_sw=6.98,lemma_c_viol=0
+sbe8.pg,primal,seed2,n=210,odd=75,pivots=8,max_sw=1,mean_sw=1.00,lemma_c_viol=0
+sbe8.pg,dual,seed2,n=210,odd=135,pivots=994,max_sw=24,mean_sw=7.89,lemma_c_viol=0
