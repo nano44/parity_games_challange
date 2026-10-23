@@ -1,0 +1,63 @@
+{
+ "n": 3,
+ "d": 5,
+ "conv": "V",
+ "mode": "weak",
+ "value": 6,
+ "k_start": 1,
+ "automaton": {
+  "k": 6,
+  "d": 5,
+  "delta": [
+   [
+    1,
+    1,
+    1,
+    0,
+    1
+   ],
+   [
+    2,
+    1,
+    3,
+    4,
+    3
+   ],
+   [
+    5,
+    1,
+    3,
+    4,
+    null
+   ],
+   [
+    null,
+    3,
+    null,
+    4,
+    null
+   ],
+   [
+    5,
+    4,
+    5,
+    4,
+    null
+   ],
+   [
+    3,
+    1,
+    3,
+    4,
+    null
+   ]
+  ]
+ },
+ "graphs": {
+  "evens": 86,
+  "odds": 67,
+  "used_even": 24,
+  "used_odd": 15
+ },
+ "seconds": 0.7
+}

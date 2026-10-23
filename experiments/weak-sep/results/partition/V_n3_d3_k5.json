@@ -1,0 +1,315 @@
+{
+ "n": 3,
+ "d": 3,
+ "conv": "V",
+ "k": 5,
+ "weak": 76,
+ "weak_complete": true,
+ "strong": 65,
+ "strong_complete": true,
+ "nonstrong": 11,
+ "nonstrong_with_bijection": 1,
+ "strong_weak_with_bijection": 65,
+ "failures": [
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     2,
+     3,
+     2
+    ],
+    [
+     null,
+     3,
+     null
+    ],
+    [
+     4,
+     3,
+     null
+    ],
+    [
+     2,
+     0,
+     null
+    ]
+   ],
+   "least_R": 7
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     2,
+     3,
+     4
+    ],
+    [
+     null,
+     3,
+     null
+    ],
+    [
+     1,
+     3,
+     null
+    ],
+    [
+     2,
+     2,
+     null
+    ]
+   ],
+   "least_R": 7
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     2,
+     2,
+     3
+    ],
+    [
+     4,
+     2,
+     null
+    ],
+    [
+     null,
+     2,
+     null
+    ],
+    [
+     3,
+     1,
+     null
+    ]
+   ],
+   "least_R": 8
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     2,
+     3,
+     4
+    ],
+    [
+     4,
+     1,
+     null
+    ],
+    [
+     2,
+     3,
+     null
+    ],
+    [
+     null,
+     3,
+     null
+    ]
+   ],
+   "least_R": 6
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     2,
+     3,
+     4
+    ],
+    [
+     4,
+     3,
+     null
+    ],
+    [
+     1,
+     3,
+     null
+    ],
+    [
+     null,
+     2,
+     null
+    ]
+   ],
+   "least_R": 7
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     2,
+     3,
+     4
+    ],
+    [
+     null,
+     3,
+     null
+    ],
+    [
+     1,
+     3,
+     null
+    ],
+    [
+     null,
+     2,
+     null
+    ]
+   ],
+   "least_R": 7
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     2,
+     1,
+     3
+    ],
+    [
+     3,
+     1,
+     null
+    ],
+    [
+     null,
+     4,
+     null
+    ],
+    [
+     2,
+     4,
+     null
+    ]
+   ],
+   "least_R": 6
+  },
+  {
+   "delta": [
+    [
+     1,
+     1,
+     1
+    ],
+    [
+     2,
+     1,
+     3
+    ],
+    [
+     3,
+     1,
+     null
+    ],
+    [
+     null,
+     4,
+     null
+    ],
+    [
+     2,
+     4,
+     null
+    ]
+   ],
+   "least_R": 6
+  },
+  {
+   "delta": [
+    [
+     1,
+     1,
+     1
+    ],
+    [
+     2,
+     1,
+     3
+    ],
+    [
+     4,
+     2,
+     null
+    ],
+    [
+     null,
+     2,
+     null
+    ],
+    [
+     3,
+     1,
+     null
+    ]
+   ],
+   "least_R": 8
+  },
+  {
+   "delta": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     2,
+     1,
+     3
+    ],
+    [
+     4,
+     2,
+     null
+    ],
+    [
+     null,
+     2,
+     null
+    ],
+    [
+     3,
+     1,
+     null
+    ]
+   ],
+   "least_R": 8
+  }
+ ]
+}

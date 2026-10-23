@@ -1,0 +1,65 @@
+{
+ "n": 2,
+ "d": 6,
+ "k": 3,
+ "trees": 3,
+ "weak": 2,
+ "nonstrong": 2,
+ "UG_nonstrong": 0,
+ "UG_strong": 0,
+ "UA_nonstrong": 0,
+ "fail_examples": [
+  [
+   [
+    1,
+    0,
+    1,
+    0,
+    2,
+    0
+   ],
+   [
+    2,
+    1,
+    null,
+    0,
+    null,
+    0
+   ],
+   [
+    null,
+    1,
+    null,
+    1,
+    null,
+    0
+   ]
+  ],
+  [
+   [
+    1,
+    0,
+    2,
+    0,
+    2,
+    0
+   ],
+   [
+    2,
+    0,
+    2,
+    0,
+    null,
+    0
+   ],
+   [
+    null,
+    2,
+    null,
+    1,
+    null,
+    0
+   ]
+  ]
+ ]
+}

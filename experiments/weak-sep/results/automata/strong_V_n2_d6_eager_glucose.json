@@ -1,0 +1,55 @@
+{
+ "n": 2,
+ "d": 6,
+ "conv": "V",
+ "mode": "strong",
+ "value": 4,
+ "k_start": 1,
+ "eager": true,
+ "solver": "glucose4",
+ "automaton": {
+  "k": 4,
+  "d": 6,
+  "delta": [
+   [
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   [
+    2,
+    1,
+    2,
+    1,
+    null,
+    0
+   ],
+   [
+    null,
+    3,
+    null,
+    1,
+    null,
+    1
+   ],
+   [
+    2,
+    3,
+    null,
+    2,
+    null,
+    2
+   ]
+  ]
+ },
+ "graphs": {
+  "evens": 27,
+  "odds": 0,
+  "used_even": 27,
+  "used_odd": 0
+ },
+ "seconds": 0.0
+}

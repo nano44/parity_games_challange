@@ -1,0 +1,4 @@
+family,N,sha1,n,nbin,d,bits,prec,it_cert,it_total,status,mu_final,secs,check
+switchallexp,1,9cd6d25bd9d3,21,27,28,151,1352,225,225,centre-fail/c1/mu0,2.0178019881321135e+91,0.5,zielonka(oink zlk) OK strategies verified
+switchallexp,2,ca6e0b7d4745,35,51,44,270,2320,304,304,centre-fail/c14/mu0,7.202364104041635e+162,4.0,zielonka(oink zlk) OK strategies verified
+switchallexp,3,3ad1b30a06c0,49,75,60,396,3344,287,287,centre-fail/c12/mu0,3.330964783271271e+238,15.2,zielonka(oink zlk) OK strategies verified
