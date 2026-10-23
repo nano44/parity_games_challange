@@ -1,0 +1,10 @@
+rows 40000, non-OK 0
+r1: 10000/10000 instances equal to L-NEW (primal and dual)
+r2s1: 10000/10000 instances equal to L-NEW (primal and dual)
+total pivots (primal+dual): R1 mean 12.21 max 122; R2 seeds 1-3 mean 15.75 max 144
+  n in [0,19]: R2 mean 2.16 max 24 (4773 runs)
+  n in [20,39]: R2 mean 7.25 max 46 (5082 runs)
+  n in [40,59]: R2 mean 12.88 max 71 (5058 runs)
+  n in [60,79]: R2 mean 18.33 max 109 (4893 runs)
+  n in [80,99]: R2 mean 23.11 max 110 (4971 runs)
+  n in [100,119]: R2 mean 29.79 max 144 (5223 runs)
