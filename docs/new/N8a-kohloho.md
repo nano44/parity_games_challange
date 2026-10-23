@@ -2,8 +2,9 @@
 Lead GO 01:51Z 2026-10-23 (date -u): fidelity first, then pivot rules switch-all and global, bench on tc N = 1..8, counter_qpt, the rest.
 Source: Z. K. Koh, G. Loho, "Beyond value iteration for parity games: strategy iteration with universal trees", arXiv 2108.13338
 (LMCS 21(2) 2025, 24:1-24:35), PDF sha256 21ee0e4336252f7e (opened 2026-10-23). Code: experiments/new/kl/kl.py.
-Status: STEP-2 SURVIVOR ON THE HARD BENCH (DATA, Lead's box-14 criterion, 2026-10-23 ~01:57Z): all 13 hard families, both pivot rules,
-all outputs verified; iterations ≤ 2N+O(1)-type on every family (§3). Random-game part of step 2 pending (§4). D1 applies: this is data, not a claim.
+Status: DEAD END (§6) for the perfect-tree instantiation, both pivot rules. It passed the hard bench and 10,000 random games (§3-§4,
+reported 02:00Z as a step-2 survivor on the hard bench), then adversarial search found a value-iteration crawl (§5) and a family with
+exponentially many pivots in the number of priorities (§6): 3·n^{k+1} (global) and 4·n^{k+1} (switch-all) on n = 15 + k nodes.
 
 ## 0. Fidelity: code function ↔ paper
 | kl.py | paper | note |
@@ -70,3 +71,40 @@ Corpus: `gen.py corpus experiments/new/out/kl/rand10k 10000 20261023 --nmin 1 --
 c2b19244e676). Driver experiments/new/kl/randrun.py; results experiments/new/kl/results/rand10k.global.part{0-3}.csv (one row per game).
 Global rule: 10,000 / 10,000 games verified (harness/verify.py, both players' strategies) and regions = Oink zlk (no tl fallback needed);
 max 11 pivots primal, 11 dual.
+
+Switch-all on the same corpus: 10,000 / 10,000 verified and = Oink zlk; max 12 pivots (results/rand10k.all.csv).
+
+## 5. Adversarial search: the crawl (2026-10-23 02:05-02:50Z by date -u)
+climb.py (mutations: priority, owner, edge redirect/add/remove; fitness = primal + dual pivots, global rule; every new best re-checked
+against Oink zlk and verify.py; logs and instances in experiments/new/out/kl/climb, gitignored; the instances cited are pinned in
+experiments/new/instances/n8a/). Random seeds n = 8, 16, 32, 64: 17, 35, 69, 53. Seeded from hard-family instances: n = 32: 656; n = 62:
+1,381; n = 32: 3,084 (nest32.pg) and later 8,203.
+Mechanism (label traces): strategies RECUR (allowed, Koh-Loho §3 "a strategy τ may occur more than once") while labels creep up the
+perfect tree; Tighten at an odd priority returns the lexicographic SUCCESSOR of the truncated prefix (with carries, §2.2), so one Odd
+toggle per period advances a base-n counter whose digits are the tree components above the toggling priority, until it overflows to ⊤.
+- One-level crawl, crawl32.pg (sha1 abd47b7e…): padding with k isolated self-loops (only the tree width n grows): pivots 577 + 18k.
+- Two-level crawl, nest32.pg (sha1 1acb73ca…): padding to n = 32 / 48 / 64: 3,075 / 6,915 / 12,291 = 3.0·n².
+- shrink.py reduces nest32 to a 15-node core, nest_core.pg (sha1 40dde127…), keeping the quadratic growth: pivots 676, 1,588, 2,884,
+  6,628, 18,724 at n = 15, 23, 31, 47, 79 = 3.0·n² each; three Odd nodes (9, 10, 12) toggle between two arcs each (225 times at n = 15),
+  and the label prefix at positions 0-1 (priorities d−1, d−3) counts 00 → ee in base 15, one step per 3 pivots.
+
+## 6. The kill: adding priority levels above the crawl multiplies the count by n per level
+Family L_k: nest_core.pg plus k isolated Even self-loops whose priorities are new even values above every existing priority (each new
+distinct even priority adds one tree level; the first coincides with the rounding of d to even, so levels start at k = 2).
+| k | n | d | tree height | pivots, global | 3·n^{k+1} | pivots, switch-all | 4·n^{k+1} | check |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | 15 | 20 | 10 | 676 | 675 (k+1 → 2) | - | - | verified |
+| 2 | 17 | 22 | 11 | 14,740 | 14,739 | 19,652 | 19,652 | Oink zlk OK, verify.py OK (levels_2.pg, sha1 3c0092c4…) |
+| 3 | 18 | 24 | 12 | 314,929 | 314,928 | 419,904 | 419,904 | Oink zlk OK, verify.py OK (levels_3.pg, sha1 9ce17076…) |
+So pivots = 3·n^{L} + 1 (global) and 4·n^{L} (switch-all), L = the number of tree levels from the top down to the crawl's priority. With the
+gadget fixed and k levels added, n = 15 + k and pivots ≥ 3·(15 + k)^{k+1}: super-polynomial (n^{Θ(n)}) in the input size, with labels of
+O(d log n) bits, so no bit-cost artefact. Exact obstruction: the perfect tree's Tighten-successor at an odd priority below unused levels
+turns each Odd toggle into a +1 on a (levels)-digit base-n counter; Algorithm 1's forced-increase least fixed point allows the same two
+strategies to alternate n^L times (strategy recurrence, §3), so strategy iteration degenerates to the progress-measure crawl it was meant
+to leap over. Both rules; robust to the initial strategy on the bench.
+Scope: this kills N8a = Koh-Loho with the PERFECT tree (Theorem 4.5's instantiation), which the box tested. For the succinct (JL) and
+Strahler trees the run is bounded by n·|L(T)| (quasi-polynomial) by construction; the same mechanism predicts a crawl through the
+quasi-polynomially many leaves of the counted subtree, i.e. quasi-polynomial, not polynomial; NOT tested (the label-correcting Algorithm 4
+with the chain covers of §5 of the paper is not implemented).
+Also: dual pivots on these instances are 0 (the crawl is on the Odd-pivot side); the gadget search climbpad.py at n = 10 found no
+order-2 gadget in 392,653 steps (the 15-node core is the smallest found).
