@@ -1,0 +1,12 @@
+sae6,sha1 5dc850b156c6,dual,r1,pivots=615,top_in_mustar=0,n=91
+sae6,sha1 5dc850b156c6,dual,r2,pivots=142,top_in_mustar=0,n=91
+sae8,sha1 18c246245785,dual,r1,pivots=2361,top_in_mustar=0,n=119
+sae8,sha1 18c246245785,dual,r2,pivots=283,top_in_mustar=0,n=119
+sae10,sha1 90ba8d647a96,dual,r1,pivots=9291,top_in_mustar=0,n=147
+sae10,sha1 90ba8d647a96,dual,r2,pivots=500,top_in_mustar=0,n=147
+sbe4,sha1 57b27b7476bc,dual,r1,pivots=237,top_in_mustar=0,n=110
+sbe4,sha1 57b27b7476bc,dual,r2,pivots=264,top_in_mustar=0,n=110
+sbe6,sha1 7348edf1358d,dual,r1,pivots=691,top_in_mustar=0,n=160
+sbe6,sha1 7348edf1358d,dual,r2,pivots=830,top_in_mustar=0,n=160
+sbe8,sha1 7082e7242d82,dual,r1,pivots=2297,top_in_mustar=0,n=210
+sbe8,sha1 7082e7242d82,dual,r2,pivots=879,top_in_mustar=0,n=210
