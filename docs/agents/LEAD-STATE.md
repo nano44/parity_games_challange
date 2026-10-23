@@ -808,3 +808,4 @@
 - 2026-10-23 00:04Z (date -u) SWEEP (trigger 00:03Z): overage false; Lead $430 ~674k. Fleet idle; L-STRUCT PID 5687 to 01:30Z cap. No exceptions.
 - 01:04Z (date -u) SWEEP (trigger 01:02Z): overage false; Lead $431 ~679k. Fleet idle; L-STRUCT PID 5687 cap at 01:30Z (L-STRUCT self-reminder then reports). No exceptions.
 - 2026-10-23 01:40Z (date -u) L-STRUCT cap report (b7684e0, merged 612686b): strong (5,5) k=11 lost at a container restart (alive at 16:22Z after 8h24m, no result); final (5,5) V: s ≥ 11 (LRAT), w ≥ 11 (solver-only), no upper bound; T3 at n = 5 untested. DECISION: L-STRUCT full park (SAT line exhausted; wake on concrete T5/T6 or new encoding). L-NEW box 13: screen-only, ≥ 3 γ-free candidates, to ~03:45Z (keeps the (c) main effort alive at low cost).
+- 01:45Z (date -u) L-STRUCT full park (7e93afa, merged): 5 n = 5 CEGAR checkpoints committed (≤ 1 KB each, resumable); no jobs, no watchers. Working: L-NEW (box 13 screen) only.
