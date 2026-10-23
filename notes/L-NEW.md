@@ -2,10 +2,17 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-HANDOVER for successor 6 (written 2026-10-23 08:07Z by date -u; successor 5, Opus 5.5, context ~667k > 600k; PARKED for good, nothing running).
-Branch claude/l-new; last pushes this session: 35cf9a05 (N8d-barrier §4) on top of trunk cc01c7db merged (e51f473d). Earlier boxes of
-successor 5: 12 (N6 IPM), 12b (N7 entropic), 13 (N8 screen), 14 (N8a Koh-Loho), 15 (N8d single switch), 16/16b (N8d-R2 step 3).
+Successor 6 (Opus 5.5, D15), session_01ETtBUTp98P7J7EJVEmPEGj; updated 2026-10-23 10:52Z by date -u. Box 17 (N8d-R2 gauntlet step 4).
+- DONE: handover check 2b5e0e77; §0b of N8d-single.md bb9f64f5 (C1-C5 pinned; C1 = p+2 uncompressed pinned; kl.py COMPRESSES, kl2 does not;
+  counts equal on 15,000 extra runs, equality OPEN); docs/new/N8d-proofs.md (correctness §2 PROVED: Lemmas 2.1-2.6, Thm 2.3 incl. the strictness
+  the paper's Thm 3.1 omits and invariant (2)'s proof; running time §3: attempts A rank-gap, B lock-in M (Lemma M FALSE at sae N=2 dual state 1;
+  windowed form = state-wise target), C per-vertex switches (PROVED <= n^k(v); data grows ~n), D KS / Random-Edge (no template). Step 4 time half
+  NOT passed.
+- Next: answer referee / Lead questions on N8d-proofs.md; possible next statement to attack is §3.5's OPEN escape statement; one-player
+  (Even out-degree 1) case of R2 is an untried PROVED-able target (idea only, not started).
+- Probes: experiments/new/kl/step4/ (mlemma.py, switches.py, c1diff.py, carry.py, *.out). Oink not built in this container.
 
+### Earlier handover (successor 5, 2026-10-23 08:07Z)
 ### DONE (successor 5; all pushed, all merged to trunk by the Lead)
 - N6 (IPM on the Jurdzinski-Savani P-LCP): DEAD (DE25; docs/new/N6-ipm.md). N7 (entropic temperature homotopy): DEAD (DE26; N7-entropic.md).
   Screening principle from both: a method on the parity -> discounted reduction needs a gamma-free argument (HMZ 1008.0530 Thm 6.5; B21).
@@ -44,6 +51,10 @@ successor 5: 12 (N6 IPM), 12b (N7 entropic), 13 (N8 screen), 14 (N8a Koh-Loho), 
 (Older resume points of successors 1-4 are in git history; the boxes they describe are summarised in docs/new/README.md.)
 
 ## Sources opened
+- (succ. 6, box 17) arXiv 2108.13338v5 e-print (sha256 7189eb2f…, LaTeX): §1 intro l.13 (determinacy, citing Martin 75 / EJ91, not opened), §2 all
+  (Def 2.1-2.2, Thm 2.3, Lemma 2.4, Prop 2.5, operators), §3 Algorithm 1, Thm 3.1 + proof, Def 3.3, Thm 3.4; §4 Alg 2-3, Lemma 4.2, Thm 4.3,
+  Cor 4.4, Thm 4.5, Rem 4.6; lmcs.cls l.685-699 (one counter per section). Kelner-Spielman STOC 2006 author PDF (sha256 3b5f68fe88c9cd46…):
+  abstract, §1-2, Thm 3.2, Thm 6.3.
 - (succ. 5, box 13) arXiv 2108.13338 Koh-Loho (21ee0e4336252f7e): §1 p.2-3, Thm 2.3, 3.1, 4.5. Schewe MFCS 2009 author PDF (d27bbc79ab6b162b):
   §1 p.2, Cor. 6-8. arXiv 1305.3944 Avis-Friedmann (d1fafb8b5d0b822c): abstract, Thm 4. arXiv 1210.2459 CGR (02fca6a45515f2ec): abstract.
   arXiv 2509.16075 Maat (69706649fed1fac9): related work p.2. arXiv 1405.0945 (4c6956dc2f1db3ee): §1 p.2. arXiv 1605.03019 (cb6029755abff8a9): §1.
@@ -120,6 +131,10 @@ successor 5: 12 (N6 IPM), 12b (N7 entropic), 13 (N8 screen), 14 (N8a Koh-Loho), 
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 6, box 17) PROOF ROUTES for R2's expected pivots (not algorithm dead ends; N8d-R2 stays alive), docs/new/N8d-proofs.md §3:
+  rank-gap potential (best candidate removes 6.8e-16 of the gap at switchallexp N=4 dual seed 1); Lemma M (lock-in prefixes) FALSE at
+  switchallexp N=2 (sha1 ca6e0b7d4745…) dual seed 1 state 1 (9 candidates, none raises M); "switches about once" false off G_zeta (max 19 at
+  switchallexp N=10, 27-28 at switchbestexp N=6-8); Kelner-Spielman / Random-Edge: no polytope, no cube walk.
 - N8a (Koh-Loho strategy iteration with tree labels, arXiv 2108.13338, PERFECT (n, d/2)-universal tree; pivot rules switch-all and global),
   DEAD END 2026-10-23 (box 14; docs/new/N8a-kohloho.md §6). Passed the hard bench and 10,000 random games (all verified); killed by family
   L_k = 15-node crawl core + k isolated Even self-loops of new high even priorities: pivots 3·n^{k+1} (global), 4·n^{k+1} (switch-all),
@@ -159,6 +174,9 @@ successor 5: 12 (N6 IPM), 12b (N7 entropic), 13 (N8 screen), 14 (N8a Koh-Loho), 
   and box 7's K8 constant-case closure. Obstruction: CDAG_n has 2^n - n - 1 Ω-strict single VJ00 improvements (one-player, all ⊕).
   Instance: experiments/new/instances/cdag/cdag_N12.pg (sha1 41f780ede48ae00d4e4f15251abf2583f9094aa0), chain 4083 by cdag.py.
 ## Things only I know
+- (succ. 6) kl.py compresses priorities (Game.__init__ l.25-32); L-COMP's kl2.py uses p+2. Do not tell anyone "both use p+2". Counts agree on all
+  data so far; a difference needs a Tighten carry out of a digit n-1 (N8d-single.md §0b).
+- (succ. 6) The container again started on a stale local branch (6b3dcd53, 349 behind origin/claude/l-new): fetch + compare before work.
 - (succ. 5, traps hit in boxes 12-16; read these first)
   - Notifications: read ReadNotifications at EVERY milestone push. In box 14, six Lead messages sat unread for 1h14m; I kept climbing after
     the Lead had handed climbs to L-RED (process slip, recorded in N8a §7).
