@@ -1,0 +1,3 @@
+circ(8,1,2) k*=3 (1541s)
+# Unreduced run (python3 -I twoout.py circ 8 8 4 1 2, dual simplex first, before --sym existed), 17:23-17:49Z Oct 23.
+# File deleted by mistake at 19:3xZ and re-written from the session log line above (L-NEW succ. 7).

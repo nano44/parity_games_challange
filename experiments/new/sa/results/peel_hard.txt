@@ -1,0 +1,3 @@
+STUCK counter_symsi_2.pg n=22 rounds=1 left=22
+STUCK counter_symsi_3.pg n=32 rounds=1 left=32
+28 games: solved 26 (all agree with Zielonka), stuck 2, 1288s

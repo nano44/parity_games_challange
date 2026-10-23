@@ -8,7 +8,7 @@ Labels: PROVED (full argument here), DATA (a committed script reproduces it), RE
 ## Ranking (P = L-NEW estimate of surviving the kill test before it was run; leverage = what survival would buy)
 | rank | id | approach | progress mechanism | P(kill test) | leverage | cost | tested in box 18 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | N9a | fixed-level Sherali-Adams lift (SA+_k) of a small-coefficient 0-1 program ACYC for "Even wins every vertex" | none: one LP feasibility test | 0.10 | very high (constant k exact = polynomial) | 1.5 h | YES: §1(f), level 1 and 2 not exact; k* grows on a one-player family |
+| 1 | N9a | fixed-level Sherali-Adams lift (SA+_k) of a small-coefficient 0-1 program ACYC for "Even wins every vertex" | none: one LP feasibility test | 0.10 | very high (constant k exact = polynomial) | 1.5 h | YES: §1(f), levels 1-3 wrong; k* = ceil(n/3) on a one-player family (n <= 11) |
 | 2 | N9b | certified LP-guided peeling: round the level-1 lift of the region program REGION, certify by a one-player solve, remove the attractor, repeat | decided vertices (monotone, <= n rounds) | 0.05 | high | 1 h (reuses N9a) | YES: §2(f), stuck on 5- and 6-vertex games |
 | 3 | N9c | simulation-pruning kernel: delayed-simulation quotient and dominated-edge deletion to a fixed point, with attractors | game size (monotone) | 0.02 | medium | 2-3 h | no |
 | 4 | N9d | N4 revived: ABGJ tropical simplex with the shadow-vertex rule on the parity-induced mean-payoff LP | pivots (a local rule on a tropical polyhedron) | 0.05 | high | > 6 h | no (local pivoting; §4) |
@@ -68,16 +68,29 @@ leverage. N9c is a known heuristic (§3); N9d is local pivoting, the class the L
   | ring R_L, L = 1..6 | 3..18 | 1 |
   | K_n (no self-loops) | 2, 3, 4 | 1, 1, 2 (K_5 level 2 did not finish in 400 s) |
   | circ(n,1,2) | 3, 4, 5, 6, 7 | 1, 2, 2, 2, 3 |
-  | circ(n,1,2) | 8, 9, 10 | running at this push (kmax 4) |
+  | circ(n,1,2), rotation-orbit reduction | 3..9 | 1, 2, 2, 2, 3, 3, 3 (same values as the unreduced runs at n = 3..8) |
+  | circ(n,1,2), rotation-orbit reduction | 10, 11 | 4, 4 (prediction k* = ceil(n/3) written 18:00Z before these runs) |
+  | circ(n,1,2), rotation-orbit reduction | 12, 13 | NOT FINISHED: n = 12 ran 50 min in the k = 4 LP and was stopped; n = 13 not reached (prediction 4, 5 untested) |
   | random 2-out, n = 7, seeds 1..40 | 7 | 2 on 39, 3 on 1 (seed 40) |
-- Verdict on N9a (DATA): SA+_1 and SA+_2 give WRONG answers ("Even wins every vertex") on one-player games that Odd wins
-  everywhere: circ(4,1,2) (k = 1) and circ(7,1,2) (k = 2; instances/circ12_n7.pg, sha1 4a1973a88a1311966ef5d2f5382221aef3d09c3e;
-  Oink zlk: Odd wins all 7). For each fixed k the step-2 run would be incorrect on some circ(n,1,2) IF k* is unbounded there:
-  that is a READING from k* = 1, 2, 2, 2, 3 (n = 3..7), not proved. Mechanism (READING): in circ(n,1,2) every sigma is a functional
-  graph, so a cycle exists, but the cycle can use any of exponentially many choice patterns; a refutation by products of k choice
-  variables must cover all of them, and locally consistent fractional choices survive as long as k is small against the cycle length.
-  The gap is in the one-player core of the problem (detecting that every sigma closes an odd cycle), which a preprocessing step
-  (one-player games are easy) does not remove from two-player games that embed it.
+- Rotation-orbit reduction (sa_feasible(group=...), twoout.py --sym): circ(n,1,2) and SA+_k are invariant under v -> v+1; the LP is
+  convex, so it is feasible iff it has a rotation-invariant feasible point (average a feasible point over the orbit): merging variables
+  and rows into orbits is EXACT (PROVED, standard). It cut circ(8) k = 3 from 1,541 s to under 1 s with the same k*.
+- Solver caveat: a FEASIBLE verdict (a gap) is always checked by the residual of the returned point (<= 1e-6), so the wrong answers
+  below do not depend on HiGHS's infeasibility detection. The exact value of k* does: at n >= 9 the infeasible verdicts come from
+  HiGHS IPM (dual simplex stalled at circ(9) k = 4); at n = 3..8 dual simplex (unreduced) and IPM (reduced) agree.
+- Robustness (robust.py, results/robust_1.05.txt): with every strict constraint tightened from +1 to +1.05 (a strictly harder LP),
+  SA+_{k*-1} is still feasible on circ(4), circ(7), circ(10), circ(11): the gaps hold with margin, not at the solver's tolerance.
+- Verdict on N9a (DATA): SA+_1, SA+_2 and SA+_3 give WRONG answers ("Even wins every vertex") on one-player games that Odd wins
+  everywhere: circ(4,1,2) (k = 1), circ(7,1,2) (k = 2; instances/circ12_n7.pg, sha1 4a1973a88a1311966ef5d2f5382221aef3d09c3e) and
+  circ(10,1,2) (k = 3; instances/circ12_n10.pg, sha1 5683b4e48a53988a71ca5eae386a4a03f8a08e27); Oink zlk: Odd wins every vertex
+  (checked on circ12_n7 and circ12_n10). Measured k* = ceil(n/3) for n = 3..11; the formula was written down before n = 10, 11 were run and both
+  matched. That k* = ceil(n/3) for every n, hence that every fixed level k is wrong on circ(3k+1,1,2), is a READING, not proved.
+- Mechanism (READING): every sigma of circ(n,1,2) is a functional graph, so it has a cycle, and every cycle is odd; but the cycle
+  can be closed by many different choice patterns, and SA+_k keeps locally consistent fractional choices on every set of k
+  vertices. The gap sits in the one-player core of the problem (refuting "some sigma has no odd cycle"); preprocessing that solves
+  one-player games does not remove it from two-player games that contain such a core behind Odd's choices (not tested).
+- What N9a does NOT kill: SA+ on a different 0-1 program, Lasserre/SOS levels, or levels growing like log n (a quasi-polynomial
+  algorithm, not M4). None of these is proposed.
 
 ## 2. N9b (rank 2): certified LP-guided peeling
 (e) Exact pseudocode (experiments/new/sa/peel.py).
@@ -104,7 +117,9 @@ leverage. N9c is a known heuristic (§3); N9d is local pivoting, the class the L
 - 2,000 random games (seeds 1000..2999, n = 3..14; peel_rand2000.txt): solved 1,943, STUCK 57. Smallest STUCK: r1147 and r2136,
   n = 5, round 1 (instances/peel_r1147.pg sha1 68a8c41b926e2fd324b196c99c4c61ea6d2a91ed, peel_r2136.pg sha1
   88fe33cbfe579dc8901308a5a9fe3ebcabf53a74). r1147: 5 vertices, 4 of them Odd's; Oink zlk: Odd wins every vertex.
-- Hard families, smallest members (tc, tc+ N = 1, 2; counter_* N = 1..3 up to 33 vertices; switchallexp N = 3): run in progress at this push; so far STUCK on counter_symsi N = 2 (n = 22) and N = 3 (n = 32), round 1.
+- Hard families, smallest members (Oink generators @ 8fbf0a7: tc, tc+ N = 1, 2; counter_core, _dp, _m, _ortl, _qpt, _rr, _symsi
+  N = 1..3; counter_rob N = 1, 2; experiments/new/instances/switchallexp_N3.pg; 28 games, every file with <= 34 lines;
+  peel_hard.txt): solved 26, STUCK on counter_symsi N = 2 (n = 22) and N = 3 (n = 32), both in round 1.
 - Verdict (DATA): N9b as stated is incomplete, smallest STUCK instance at n = 5. Untested variants (not proposed for a box):
   higher level; rounding by conditioning (fix the most confident edge, re-solve, keep it only if the LP value does not drop). The
   rounding failure on r26 at an exact LP value says the fractional optimum is a mixture of strategies none of which wins on its own,
@@ -137,7 +152,8 @@ leverage. N9c is a known heuristic (§3); N9d is local pivoting, the class the L
   argument.
 
 ## 6. Status for the Lead
-- N9a: DEAD at levels 1 and 2 (DATA, wrong answers on one-player games of size 4 and 7); k* = 3 at n = 7; unbounded k* is a READING.
+- N9a: DEAD for levels 1, 2, 3 (DATA: wrong answers on one-player games with n = 4, 7, 10); k* = ceil(n/3) for n = 3..11 (predicted
+  before n = 10, 11); unbounded k* is a READING.
 - N9b: DEAD as a complete solver (DATA, STUCK at n = 5); sound by construction.
 - N9c, N9d: not run (§3, §4). No candidate is live. No running-time claim is made anywhere in this file.
 

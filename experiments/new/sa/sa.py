@@ -17,7 +17,7 @@ from scipy.optimize import linprog
 from scipy.sparse import coo_matrix
 
 
-def acyc(g):
+def acyc(g, strict=1.0):
     """Return (edges, cons, nf). edges: list of variable edges (v, u). cons: list of (const, {edge_idx: a}, {fvar: b}) meaning
     const + sum a s + sum b f >= 0, or ('eq', ...) for equalities. fvar = (p, x)."""
     n = g.n
@@ -44,7 +44,7 @@ def acyc(g):
             for y in succ[x]:
                 if g.prio[y] > p:
                     continue
-                c = 1.0 if g.prio[x] == p else 0.0
+                c = strict if g.prio[x] == p else 0.0
                 if (x, y) in eidx:
                     cons.append(("ge", -c + M, {eidx[(x, y)]: -M}, {(p, x): 1.0, (p, y): -1.0} if x != y else {}))
                 else:
@@ -52,8 +52,10 @@ def acyc(g):
     return edges, cons
 
 
-def sa_feasible(g, k, return_x=False):
-    edges, cons = acyc(g)
+def sa_feasible(g, k, return_x=False, group=None, strict=1.0):
+    """group: optional list of vertex permutations (automorphisms of g, checked). The LP is invariant under them and its feasible
+    set is convex, so it is feasible iff it has a group-invariant feasible point: variables are merged into orbits (exact)."""
+    edges, cons = acyc(g, strict)
     owner_of = [v for (v, u) in edges]
     nE = len(edges)
 
@@ -66,13 +68,34 @@ def sa_feasible(g, k, return_x=False):
         deg[v] = deg.get(v, 0) + 1
     deg2 = [deg[v] == 2 for v in owner_of]
     var = {}
+    canon = lambda key: key
+    if group:
+        eix = {e: i for i, e in enumerate(edges)}
+        for pi in group:
+            assert all(g.owner[pi[v]] == g.owner[v] and g.prio[pi[v]] == g.prio[v] and
+                       sorted(set(pi[w] for w in g.succ[v])) == sorted(set(g.succ[pi[v]])) for v in range(g.n)), "not an automorphism"
+        eperms = [[eix[(pi[v], pi[u])] for (v, u) in edges] for pi in group]
+
+        def canon(key):
+            best = None
+            for pi, ep in zip(group, eperms):
+                if key[0] == "y":
+                    t = ("y", tuple(sorted(ep[e] for e in key[1])))
+                else:
+                    p, x = key[2]
+                    t = ("q", tuple(sorted(ep[e] for e in key[1])), (p, pi[x]))
+                if best is None or t < best:
+                    best = t
+            return best
 
     def vid(key):
+        key = canon(key)
         if key not in var:
             var[key] = len(var)
         return var[key]
 
     rows, cols, vals, rhs, kinds = [], [], [], [], []
+    seen = set()
     r = 0
     for size in range(k + 1):
         for ST in itertools.combinations(range(nE), size):
@@ -84,6 +107,10 @@ def sa_feasible(g, k, return_x=False):
                 # (1 - s_a) = s_b, so its edges appear in S only.
                 if not ok(ST) or any(deg2[e] for e in T):
                     continue
+                if group:  # one multiplier per orbit: the rows of pi(m) are pi(rows of m), already merged into orbits
+                    key0 = (tuple(sorted(S)), tuple(sorted(T)))
+                    if any((tuple(sorted(ep[e] for e in S)), tuple(sorted(ep[e] for e in T))) < key0 for ep in eperms):
+                        continue
                 # multiplier = sum_{U subset T} (-1)^|U| y_{S cup U}
                 mult = []
                 for t in range(len(T) + 1):
@@ -108,11 +135,19 @@ def sa_feasible(g, k, return_x=False):
                             row[key] = row.get(key, 0.0) + sg * a
                         for fv, b in bF.items():
                             key = ("q", A, fv); row[key] = row.get(key, 0.0) + sg * b
-                    row = {kk: vv for kk, vv in row.items() if abs(vv) > 1e-12}
-                    if not row and abs(const) < 1e-12:
-                        continue
+                    crow = {}
                     for kk, vv in row.items():
-                        rows.append(r); cols.append(vid(kk)); vals.append(vv)
+                        c_ = vid(kk); crow[c_] = crow.get(c_, 0.0) + vv
+                    crow = {kk: vv for kk, vv in crow.items() if abs(vv) > 1e-12}
+                    if not crow and abs(const) < 1e-12:
+                        continue
+                    if group:  # rows in one orbit coincide after merging: keep one
+                        sig = (kind, round(-const, 9), tuple(sorted((kk, round(vv, 9)) for kk, vv in crow.items())))
+                        if sig in seen:
+                            continue
+                        seen.add(sig)
+                    for kk, vv in crow.items():
+                        rows.append(r); cols.append(kk); vals.append(vv)
                     rhs.append(-const); kinds.append(kind); r += 1
     # SA+ (N9-screen.md §1(e)): the choice equalities sum_u s_vu = 1 multiplied by q-monomials, i.e.
     # sum_u q_{A + vu, x} = q_{A, x} for |A| <= k - 1 (A without an edge of v). Valid for every integral point; it makes the
@@ -142,12 +177,16 @@ def sa_feasible(g, k, return_x=False):
     rhs = np.array(rhs)
     ge = np.array([kd == "ge" for kd in kinds]); eq = ~ge
     # row . x >= rhs  ->  -row . x <= -rhs
-    for method in ("highs-ds", "highs-ipm", "highs"):  # retry on a HiGHS solve error (status 4)
+    # IPM first (dual simplex stalled at circ(9) k = 4); retry on a solve error (status 4) or a time-limit stop (status 1).
+    # A feasible answer is always checked by its residual below; 'infeasible' is HiGHS's verdict (method recorded).
+    for method, lim in (("highs-ipm", 600.0), ("highs-ds", 600.0), ("highs", None)):
+        opts = {"time_limit": lim} if lim else {}
         res = linprog(np.zeros(nv), A_ub=-A[ge] if ge.any() else None, b_ub=-rhs[ge] if ge.any() else None,
                       A_eq=A[eq] if eq.any() else None, b_eq=rhs[eq] if eq.any() else None,
-                      bounds=[(None, None)] * nv, method=method)
+                      bounds=[(None, None)] * nv, method=method, options=opts)
         if res.status in (0, 2):
             break
+    sa_feasible.last_method = method
     if res.status == 2:
         return (False, None) if return_x else False
     if res.status != 0:
