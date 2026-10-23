@@ -2,199 +2,46 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-BOX 14 (Lead GO 01:51Z Oct 23, to ~05:00Z): N8a kill test DONE: DEAD END for the perfect tree (both rules), family L_k, see Dead ends.
-Reported 02:00Z as a hard-bench step-2 survivor, 02:45Z the crawl, then the kill. Nothing running. Tools: experiments/new/kl/ (kl.py,
-kl_init.py, bench.sh, randrun.py, climb.py, climbpad.py, shrink.py). NEXT (Lead decides): the quasi-polynomial trees (Algorithm 4 + chain
-covers) would only move the crawl to quasi-polynomial; not a polynomial route.
-BOX 13 (Lead 01:39Z Oct 23, SCREEN ONLY, to ~03:45Z): docs/new/N8-screen.md. Three candidates pass the screen rule, ranked: N8a Koh-Loho
-tree SI (arXiv 2108.13338) with a global pivot rule (authors leave the polynomial pivot rule open; quasi-poly worst case by construction;
-kill test = perfect tree on tc, where SPM on the same tree is exponential); N8b Sherali-Adams lift of the strategy+potential MIP (long
-shot); N8c N5 best-reply hysteresis (low leverage). Screened out: Schewe-LP IPM (doubly exponential coefficients), multi-switch LRC,
-optimal SI, lazy trees, discounted-reduction methods. No code. Waiting for the Lead's choice.
-SUCCESSOR 5 (Opus 5.5, D15/L37), BOX 12 (GO 07:18Z Oct 22, Lead box to ~10:45Z). N6 = IPM on the Jurdzinski-Savani P-matrix LCP of the
-induced discounted game: DEAD END (docs/new/N6-ipm.md §8; notebook "Dead ends"). Screen: proof route dead (HIJ kappa, Friedmann beta_G,
-HMZ Thm 6.5). Bench (experiments/new/ipm/results/*.csv): no answer on 7 of 13 hard families at small N, smallest counter_ortl N = 3 (n = 16,
-instances/n6/counter_ortl-3.pg), and on every random game with n >= 23; all produced answers correct. Obstruction §6 (path lost in
-coordinate space; Newton direction arb-certified; M certified P). Nothing running.
-Second half (Lead 08:02Z): N7 entropic temperature homotopy screened and benched: DEAD END (docs/new/N7-entropic.md). PARKED; nothing running.
-NEXT for this lane (Lead decides): a candidate must pass the HMZ principle (gamma-free argument) if it uses the discounted reduction.
+HANDOVER for successor 6 (written 2026-10-23 08:07Z by date -u; successor 5, Opus 5.5, context ~667k > 600k; PARKED for good, nothing running).
+Branch claude/l-new; last pushes this session: 35cf9a05 (N8d-barrier §4) on top of trunk cc01c7db merged (e51f473d). Earlier boxes of
+successor 5: 12 (N6 IPM), 12b (N7 entropic), 13 (N8 screen), 14 (N8a Koh-Loho), 15 (N8d single switch), 16/16b (N8d-R2 step 3).
 
-BOX 11 END (~00:48Z Oct 22, date -u; Lead box to ~02:35Z, parked early: all three routes answered). PARKED after the final report; nothing running.
-- P-N5-1P (N5-phase-bound-box10.md §1-§4 + §6 as A1) has TWO Fable signatures (R-N5-1P dfa87d0 SIGNED WITH GAPS G1-G9; R2-N5-1P f954070,
-  Lemma P SIGN, rest SIGN WITH GAPS wording); §7 answers G6-G9, N-2, N-3, G-1P-4, G-1P-7 (a300339). §1-§4 and §6 FROZEN: additions only.
-- (c) N5-brchanges-box11.md: no invariant for best-reply changes (three killed with instances; changes ≈ iterations). (b)-lite §5: fixed-τ frame
-  inapplicable to real runs. (2) N5-toggle-box11.md: requirements R1-R4, circularity §3, climbs ≤ 50 iterations at n ≤ 61, not built.
-NEXT for a successor: referee §C comparisons for P-N5-1P may bring questions (through the Lead); otherwise G-N5-TIME needs a new idea: a
-potential tied to N5's subset rule itself (optimum against the opponent's CURRENT strategy), not to either honest valuation.
-Traps this box: pkill/grep -f of a script name inside a command that itself names the script kills your own shell (bit twice, exit 144); a
-climb-produced file is not pinned until the climb ends (rel_g12 log line, referee G6); a fitness counting observations is steps + 1.
-BOX 11 (GO 23:33Z Oct 21, to ~02:35Z Oct 22): option (c), the best-reply-change count (K9's factor). Box 10 merged at trunk 26905f0; packet
-P-N5-1P = N5-phase-bound-box10.md §1-§4 pinned there (my head adds the SCOPE header line and §6 only). (c) RESULT 23:50Z: no usable invariant;
-docs/new/N5-brchanges-box11.md: (BR-NR-vertex), (BR-NR-global), (BR-λ) all FALSE with pinned instances (br/, instances/br11); changes ≈ iterations
-on adversarial instances (65 changes in 46 iterations at n = 33); toggle mechanism: sbe2_s21 (Odd never moves, σ̄ toggles among 4 states, 26 global
-returns after a seeded climb). Route (b) not started (Lead's condition). Waiting for the Lead's direction.
-BOX 10 END (successor 4, Fable 5.1; ~23:25Z Oct 21 by date -u; Lead box to ~01:05Z): both routes done, pushed; nothing running.
-- (i) docs/new/N5-tail-box10.md: gen(m) cannot be the tail's Odd chain (Fact B; searches ≤ 3 steps); real tails lift masks by downstream repairs.
-- (ii) docs/new/N5-phase-bound-box10.md: Lemma P + Theorem PH (λ-phase ≤ n−1 value-changing steps, tight) => switch-best / N5 on one-player
-  games O(n²m); K8 constant case closed for all G_c; VJ00 Prop. 7.4 proved for the arena-optimum rule. UNREFEREED. Checks: lemmaP_check.py
-  (all phases), f1_check.py, phase_vc.py: 0 violations. Two-player bridge (P-N5) FALSE (K1 stalls; seg_r16, seg_n24); value-changing Even moves
-  per segment-phase reach n+1 (vc_g25, n = 25): the one-player bound does not transfer; all counts ≈ n; G-N5-TIME open.
-- Tools: experiments/new/tail/ (tailsim, exsearch, genrule, abstractgate, masklift, lifttrace, phase_trace, phase_climb, phase_vc,
-  lemmaP_check, f1_check, segP_check, seg_climb, segtrace, seglen_odd); instances/phase, instances/seg10 (sha1 in tail/box10_instances.sha1).
-NEXT for a successor: (a) referee packet for N5-phase-bound-box10.md if the Lead routes it; (b) the two-player per-segment bound: no
-Lemma-P route (stalls); a potential must mix honest Ξσ with V_{σ,τ_k}; (c) best-reply changes along N5 runs (K9's other factor) stay the open
-potential; (d) Odd dual of (SEG-LEN): max 12 Odd moves per τ̄-segment-phase at n = 30 (seglen_odd.txt).
-Traps this box: a climb fitness that counts observations (steps + 1) looked like a phase of n steps; phase_vc.py counts steps. Importing a
-script with top-level code re-runs it (phase_trace.py needed a __main__ guard). Clock: my sense of time ran ~2x faster than date -u.
-(Earlier box-10 line and successor 3's box-9 resume point kept below.)
-BOX 10 (GO 22:03Z Oct 21; ends ~01:05Z Oct 22). Route (i) DONE 22:23Z (docs/new/N5-tail-box10.md): gen(m) cannot be the tail's Odd chain in the
-gadgeted Odd-CDAG family: exhaustive n=3 / random n=4..6 exploit searches give tails <= 3; Fact B (a vertex at Even's favourite target has
-no mask) kills gen's waiting bottom vertex; real tails lift masks by DOWNSTREAM repairs (tc2: 54 lifts, 42 fire; closures ~0). Tools in
-experiments/new/tail/. Route (ii) DONE 22:46Z: docs/new/N5-phase-bound-box10.md: Lemma P (after k in-phase steps every vertex dominates every simple path of ≤ k
-edges to every cycle node) => a λ-phase has ≤ n−1 value-changing steps (+ < m flat ones) => switch-best / N5 on ONE-PLAYER games is O(n²m):
-K8's constant case closed for all G_c; VJ00 Prop. 7.4 proved for the arena-optimum rule. Checks: lemmaP_check.py 0 violations (random n ≤ 10,
-climbed instances); longest phase found by climbs 46 at n=48 (< n). UNREFEREED. Two-player N5 (G-N5-TIME) still open.
-SUCCESSOR 4 (Fable 5.1, L36) started 2026-10-21 21:55Z (Lead brief). Handover check written (docs/agents/handover-checks/L-NEW.md);
-trunk 414b85e merged (5dce0be). WAITING for "go". Box 10 target: G-N5-TIME, (i) frozen-σ tail following gen(m) with τ̄'s exploits as
-masks (N5-SB-box9.md §5), or (ii) an in-phase cycle-building bound (§3). Nothing running; tools/oink/build and out/ must be rebuilt.
-(Successor 3's box 9 resume point kept below.)
-BOX 9 (Lead 2026-10-21 21:06Z; ends ~00:10Z Oct 22). Merged trunk a74d82f (dea2407).
-- docs/new/N5-SB-box9.md:
-  - Fact A (proved): I_{k+1} ∩ H_k = ∅.
-  - Edge-counting bounds and Conjectures R and R2 are REFUTED (instance in sb_conjR.txt).
-  - Lemma T inside phases. The in-phase cycle-building bound is still OPEN.
-- §5: N5's longest runs (seeded climbs, ≈ 2n, up to 73 at n = 36, instances/n5b9) are frozen-σ TAILS of Odd moves, gated by Odd's
-  improvements against τ̄ ≠ σ. That is the next killer design target.
-- Stamp trap again: "~21:40Z" was estimated; fixed to the commit time. ALWAYS run date -u before writing a stamp.
-- 8f0cc71: tail climbs (tail ≈ 1.4n) and one-vertex flip climbs (≤ 17 flips at n = 48, about n/3): linear. All instances checked.
-PARKED 21:51Z (date -u), context ~495k (handover at ~580k): nothing running.
-NEXT for a successor: (i) design the frozen-σ tail to follow gen(m), with masks from τ̄'s exploits (N5-SB-box9.md §5);
-or (ii) a bound on in-phase cycle building (§3). Start a fresh successor: this session is near its context limit.
-SUCCESSOR 3 (box 8, GO 00:32Z 2026-10-19; box end ~04:00Z). Resume point updated 01:42Z by date -u. Context ~360k at 01:42Z.
-DONE in box 8 (all pushed on claude/l-new; head 22b94e4 + this notebook):
-- 42ef86e handover check (5/5 per Lead).
-- de4b588 CDAG_n: (P*) and (P_strict) FALSE: 2^n-n-1 single Ω-strict VJ00 improvements, one-player, all ⊕
-  (docs/new/N5-K9-Pstrict-counter.md; p_strict/cdag.py checks each step with si.py; instances/cdag sha1-pinned). The Lead re-ran it
-  (00:52Z) and updated GAPS G-N5-TIME: K9's policy-free route CLOSED; N5 not killed. L-LIT T23 is checking the literature.
-- 29fed67 item (4): n5.py = n5b spec on all 2000 random games (experiments/new/rand2k/summary.txt).
-- a4a9e13 K8 constant-case closure (box 7) WITHDRAWN; Lemma S (switch-best ≤ h on ACYCLIC one-player games); N5 segment data.
-- 3a6078b K10 (docs/new/N5-K10-box8.md): emulating gen(m) inside N5 is not built. Lemma F (frozen τ ⇒ V_τ-monotone), Lemma G (direct
-  gifts ⇒ ≤ Σ(deg−1) strict Even moves per frozen period); masking load Θ(n); gift-gadget climb 5/7 iterations (n = 6/8);
-  segment climb 7/12/12 (n = 16/40/80); ch climb 23/30/28/50/39 (n = 16..96).
-- 98770e2 item (3) (docs/new/N5-K8-box8.md): Lemma NR (from R15 (c)+(d): σ and τ never return) closes K8's 2-periodic case;
-  alternating instance sbalt_n16 (N5 leaves at k = 2 because the flip-back edge is not in Iτ).
-- 22b94e4 Lemma T (switch-best tree propagation on one-player games with cycles); Conjecture SB1 (switch-best ≤ n steps on one-player
-  games; all-start data n ≤ 7, climbs to n = 64). OPEN: the ρ*-cycle tops (a top settles only when a ρ_k-cycle with that top exists in
-  the arena; its edges need not be improvements before it closes).
-- n5_cdag2p.py: N5 on two-player complete DAGs ≤ 5 iterations (n ≤ 12, 9,000 runs).
-- 01:58Z SB1 (≤ n) REFUTED by seeded climbs (11 at n = 10, 17 at n = 16, instances/sb1p/sb1_counter_n*.pg); revised SB1' = O(n), data ≤ n + 1 up to n = 64 (b59c44c + park commit).
-Resumed 02:15Z (Lead 02:04Z: continue SB1 cycle tops; box8-lemmas.md NOT to referees now, keep it current). 02:20Z (commit d757afb): §3d O(n³) phase route
-  recorded (reduction; the gap is cycle building inside a phase). PARKED 02:21Z by date -u, context ~400k; nothing running; next for a successor: in-phase cycle building (§3c/§3d of N5-K8-box8.md).
-NEXT (if time): the cycle-top part of SB1' (it would close K8's constant case fully and give "N5 is polynomial on one-player games").
-Traps this box: stale local branch again (6034271); docs/referee/R-N5K9.md lived on claude/referee, not trunk, at 00:32Z; the pgrep
-  waiter trap bit again; two doc stamps were estimated (corrected in 689515a): take every stamp from date -u or the commit time.
-(Successor 2's resume point kept below.)
-SUCCESSOR 2 PARKED at 2026-10-19 00:05Z by date -u, context ~530k. Boxes 4-7 are done. Every item is pushed; docs/new/README.md has the N5 row.
-N5 status: NOT killed. Gauntlet steps 2-3 passed earlier. Termination: two signatures (G-N5-TERM; R15 draft with CHECKER).
-K1-K9 are recorded:
-- K1-K7: N5-killer-box4.md §6 and N5-dlm-box5.md;
-- K8: N5-K8-box6.md;
-- K9: N5-oneplayer-box7.md, and the referee packet N5-K9-reading.md (conditional on VJ00 Prop. 7.4, pending L-LIT T22).
-Runtime statement for Q16: N5-runtime-statement.md.
-OPEN ITEMS for the successor (Lead 23:58Z):
-1. K8's 2-periodic case: an exponential switch-best run in which Odd's best reply toggles between two strategies (sb_flipback.py
-   and sb_tauvar.py are the tests).
-2. The potential to bound is the number of best-reply changes along N5's run (K9; n5_brchanges.py counts it; k9_sanity.py shows
-   exponential SSI / switch-all runs have exponentially many). The K9-respecting kill route is an adversary that raises it.
-   Climb with fitness = ch_O + ch_E.
-3. Run n5.py on L-COMP's 2,000 random games and compare counts with n5b.
-   - Regenerate (Lead correction 00:03Z): python3 experiments/harness/gen.py corpus out/rand2k 2000 20261018 --nmin 1 --nmax 120.
-     Check the sha1s against claude/l-comp results/random_*.csv (b49c9fc).
-   - n5b.py two-mode copy: git show origin/claude/l-comp:experiments/n5-second/n5b.py; it needs a COMPLETE --start file and
-     --mode spec|orig.
-Things to know: the scratchpad copy of n5b.py symlinks ../hard-families and ../harness. out/ and lock/ are gitignored (raw logs are
-copied into n5/box4, n5/box5). Never put a failing command (cp onto itself) inside a && chain before a commit: it silently drops
-the steps after it.
-Box 6 DONE:
-- K8 (docs/new/N5-K8-box6.md). The saddle identification τ_sb(k) = b_(k+1) is exact. N5 follows switch-best IF
-  OddStep(σ_k, b_(k+1)) = b_(k+2); with a best-reply Odd step that forces constant or 2-periodic Odd replies.
-- Friedmann: 2^N values, 0/39 flip-backs. Random games: flip-backs exist (6/82) but runs are short. One-player switch-best climbs:
-  ≤ n/2.
-- Running-time statement for Q16: docs/new/N5-runtime-statement.md (no polynomial-height potential in sight).
-- Tools: sb_flipback.py, sb_flip_rand.py, sb_oneplayer.py.
-NEXT (successor): the 2-periodic case of K8 (an exponential switch-best run where Odd toggles between two punishments), or a
-polynomial bound for one-player switch-best (would close K8's constant case).
-Box 5 DONE (docs/new/N5-dlm-box5.md):
-- The condition "N5 ≈ SSI iff τ̄ ⊆ A_σ" is shown. It fails almost everywhere on DLM's SSI paths.
-- N5's step applied to SSI's states only ADDS switches, exactly where the distraction withholds them.
-- Module (Odd blunder dummies on DLM's games): SSI stays exponential, N5 needs 2-15 iterations. n5.py, n5b spec and n5b orig agree on every row.
-- K6 written. NOT killed.
-- Tools: dlm_diag.py, dlm_agree.py, dlm_module.py.
-- L-COMP's n5b.py (claude/l-comp 29a6ed17) runs read-only from scratchpad/lcomp/n5-second/n5b.py, with symlinks to
-  experiments/hard-families and experiments/harness. Run it with --start FILE (a COMPLETE start pair) and --mode spec|orig.
-Box 5 part 2 (23:10Z by date -u):
-- Skip states characterised. Harmful skips can be forced in ≤ 88% of iterations, but runs stay ≤ n/2.
-- Switch-best coincidence lemma (τ = τ_sb ⇒ N5 step = switch-best step). On switchbestexp N5 follows switch-best's path for 13
-  iterations and then leaves it: τ_sb changes 2^N-ish times and N5's Odd step misses every change.
-- K7 written (N5-dlm-box5.md §7).
-- Tools: n5_skip.py, n5_adv4.py, n5_vs_sb.py, sb_traj.py, sb_tauvar.py.
-Attempt 9 (sb_follow.py): a fully followed switch-best run reaches only 37 < 58 under perturbation.
-G-N5-TERM reading: REFEREE-2 SIGNED WITH GAPS; N1-N4 applied at e7157417 (theorem unchanged); REFEREE pending.
-NEXT candidate for a successor (the sharpest remaining lead): a switch-best family whose arena reply τ_sb changes only in ways that
-OddStep(σ_k, ·) reproduces. Test it with sb_tauvar.py (misses at changes must be 0).
-NEXT: "N5 ⊇ SSI" is FALSE in general (random games, n5_superset.py); it holds on DLM only. Untried lead: exploit the states where
-N5 skips an SSI switch. Otherwise the box-4 NEXT items (a)-(d) below.
-Box 4 (kept):
-DONE, all pushed (docs/new/N5-killer-box4.md, G-N5-TERM-reading.md, N5-ssi-global.md additions):
-- SPEC vs A1-A10 (6014db7) and Q1-Q4 (7039eb5).
-- Deeptrap trace (even-N chain).
-- Stall lemma (proved, checked).
-- Locks: ≤ 2 from all starts; climbs 8 / 11 / 9 / 7.
-- Sandwich K4 proved.
-- K1-K5 obstruction.
-- Killer attempts 4, 4b, 4c (dummy gifts on switchallexp), 5 (label gadget) and 6 (per-bit gadget): all linear, all verified.
-- Cycling attack: no repeated state; Ξ-flat climb ≤ 2.
-- G-N5-TERM: repair proved as an unrefereed reading (Lemmas A, B + potential).
-- VJ00 Lemma 5.8 "2 ⇒ 1" fails at cycle nodes (instance, vj_bruteforce.py).
-- VJ00 opened, cost corrected.
-N5 NOT killed.
-NEXT for a successor:
-- (a) DLM-distraction module (caveat 1), not built. Condition: N5 ≈ SSI exactly when Even's best reply τ̄ to τ uses only
-  current-or-improving edges.
-- (b) A lock that reads the counter (K3). The lesson of 4c: ALL of Odd must stay frozen (K2), since any Odd improvement changes τ̄ and Iτ.
-- (c) Referees for G-N5-TERM-reading.md (Lemma B's multiset cancellation).
-- (d) L-LIT: check the VJ00 Lemma 5.8 observation against the CAV version.
-(Successor 1's handover notes kept below.)
-### DONE (all pushed on claude/l-new; docs/new/README.md has one row per approach)
-- Box 2: N1 gauntlet step 2 (N1-step2.md, step2/*.csv); S6 numbering rule not killed (S5S6-renum.md).
-- Box 3: N1 KILLED (N1-KILL.md, deep traps, gen_deeptrap.sh, instances/killer/); N2 KILLED (padded switchallexp, gen_padsae.sh);
-  N3 DEAD AS STATED (N3-blackwell-path.md, n3grid.cpp); deep-trap lemma (DEEP-TRAP-LEMMA.md, optional, gaps 1-2 closed);
-  N4 proposed only (N4N5-proposals.md; Lead: do not implement); N5 SSI-GLOBAL = STEP-2 SURVIVOR on data (N5-ssi-global.md:
-  SPEC section = the exact reference for L-COMP's independent second implementation; STEP-2 REPORT; killer attempts 1-2).
-### IN FLIGHT
-- Nothing running. L-COMP: independent N5 implementation from the SPEC section. REFEREE-2: N1-kill faithfulness check.
-### NEEDS
-- Lead: route the N5 killer design (below) to successor 2.
-### NEXT: N5 killer plan (what the global optimum ignores; the fallback trigger)
-- What N5 ignores: its Even step optimises against Odd's CURRENT τ (not τ̄ or the optimal Odd strategy), restricted to "keep or take
-  an improving edge". A gadget where τ is bad (DLM p. 15 "distracted by the opponent's bad strategy") makes the τ-optimal choice
-  among improving edges a WRONG move for the real valuation: e.g. Even prefers an improving edge into a region that Odd's current τ
-  leaves open but Odd will close next step; Odd symmetric. Goal: alternating distraction that resets a counter each round.
-- Fallback trigger: N5's selection keeps σ and τ when every improving switch is worse than staying against the opponent's current
-  strategy (non-sink games; random n = 11 example r00008). If a family forces this at EVERY step, N5 = classical switch-all SI, and
-  Friedmann's switchallexp counter behind the stall gadget would be exponential. Adversarial climbs reached 25-42% fallbacks
-  (n5_adv.py ... fb); the bench <= 4%.
-- Ideas: (1) per Friedmann bit, a stall gadget g_i whose improving switches lose against τ until bit i's lane is set; (2) make τ
-  oscillate (Odd's τ-step flips each iteration) so Even's τ-optimum flips too; (3) seed the climb with switchallexp + random
-  gadgets instead of random games; (4) climb with fitness = fallbacks on DLM-style sink games (Lemma 5 holds there, so fallbacks
-  are impossible on sink games: use non-sink).
-- Tools: n5.py (modes n5/ssi; run(g, mode, start, cap) importable), n5_adv.py (climb; fb mode), run_n5.sh (sweep, committed CSV
-  with sha1), check_sol2.py (Oink zlk + verify.py, 4 GB cap), summarize_n5.py / plot_n5.py, dlm_gen.py (DLM Tables 1-2),
-  gen_deeptrap.sh / gen_padsae.sh / pad_prio.py, anneal_c / n3grid / anneal_dbg (N1 family tools).
-- Open debts: VJ00 (Vöge-Jurdziński 2000) not opened by L-NEW (cited for Engine.evaluate's cost); the deeptrap oscillation of N5
-  (iterations 26 at N = 6, 15 at N = 7, 33 at N = 8; plain switchallexp is a smooth 2N): CAUSE UNKNOWN, not investigated;
-  hypothesis: the best-reward start is "all traps" (P is the top reward) and N5's trap release order depends on tie-breaks that
-  vary with N; check with a per-iteration trace (which edges each step switches).
+### DONE (successor 5; all pushed, all merged to trunk by the Lead)
+- N6 (IPM on the Jurdzinski-Savani P-LCP): DEAD (DE25; docs/new/N6-ipm.md). N7 (entropic temperature homotopy): DEAD (DE26; N7-entropic.md).
+  Screening principle from both: a method on the parity -> discounted reduction needs a gamma-free argument (HMZ 1008.0530 Thm 6.5; B21).
+- N8 screen (docs/new/N8-screen.md): N8a Koh-Loho tree SI ranked first; N8b Sherali-Adams lift and N8c N5-hysteresis not run.
+- N8a (Koh-Loho SI, perfect tree, rules switch-all and global): DEAD (DE28; N8a-kohloho.md §6-§7): L-RED R53 F_k/G_k/H_k and my L_k
+  (15-node core + k high even priorities: 3·n^(k+1) global, 4·n^(k+1) switch-all; instances/n8a/levels_2.pg, levels_3.pg).
+- N8d (same machinery, SINGLE switch; docs/new/N8d-single.md, rules frozen at d7fadfbf 03:21Z): R1 (lowest-id node) DEAD (DE29:
+  switchallexp dual ≈ 9·2^N, N = 1..10, verified; Lead re-ran N = 6, 7). R2 (uniform random node, largest-Tighten arc, seeded): STEP 2 data
+  polynomial-looking on all 13 hard families at growth sizes (§5 growth table; pivot slopes n^1.0-n^1.9), 10,000 random games verified,
+  crawl families F/G/H/L constant in k; L-COMP's kl2.py matches seed for seed; L-RED R54 found no kill (switchbestexp N 14/16 ≈ n^2.01).
+- N8d-R2 step 3: docs/new/N8d-barrier.md §0-§3 (draft) + §4 (T26 corrections C1, C2/C3, C4, C5; L-LIT's positioning sentence adopted).
+  L-LIT T26 = SIGN WITH CAVEATS C1-C7 (claude/l-lit docs/lit/T26-N8d-step3.md).
+
+### IN FLIGHT (owned by others; nothing of mine is running)
+- L-RED box 23: structural port of Friedmann's Random-Edge game G_n (thesis Thm 4.76) to R2 = T26 C6 = my U1. Port steps (T26 §2(b)):
+  (i) dual game (Friedmann's improver is player 0; Koh-Loho's is Odd -> R2's DUAL run), (ii) Lemma 4.74's start as tau_1, (iii) a
+  Lemma-4.75 analogue for every reachable (tau, mu). Decisive test is structural (admissible sets vs Table 4.17), not pivot counts.
+- L-COMP: kl2.py on switchbestexp N 18-22.
+### NEEDS (for the Lead; nothing for the owner)
+- Open for R2: U1 (G_n under R2), U2 (no upper bound beyond n·n^(d/2) on the perfect tree), U3 (a gadget keeping an odd cycle open under
+  EVERY single admissible switch), U4 (bench not built against tree labels). Step 4 would need a proof; none in sight.
+- Ideas noted, NOT started (Lead: do not start): succinct/Strahler-tree variant of Koh-Loho (bounded quasi-polynomially; the crawl
+  mechanism predicts quasi-polynomial, not polynomial); N8b Sherali-Adams lift (long shot); N8c N5-hysteresis (low leverage).
+
+### Code map (experiments/new/kl/; paper = Koh-Loho arXiv 2108.13338, map tables in N8a-kohloho.md §0 and N8d-single.md §1)
+- kl.py: Game (priorities compressed into [d], d even), klen/trunc (§2.1 p-truncation), violated (§2.2), tighten/lift/drop (§2.2, §3.1),
+  base_nodes (Def 3.3), dijkstra (Alg 2), label_setting (Alg 3, Thm 4.5), naive_lfp (Prop 2.5(i), fidelity oracle), rule_all /
+  rule_global (N8a rules, frozen §2), strategy_iteration (Alg 1), even_strategy + dual game for Odd's strategy, solve. Interface frozen.
+- kl_single.py: rule_r1, rule_r2 (N8d, frozen), strategy_iteration (Alg 1 with a rule function), solve (same columns as kl.py).
+- kl_init.py (other tau_1), bench.sh (families incl. famF/G/H via experiments/red/kl/famgen.py, famL via gen_lk.py; RULE all|global|r1|r2),
+  randrun.py (rand10k corpus: gen.py corpus out/kl/rand10k 10000 20261023 --nmin 1 --nmax 120, manifest sha1 c2b19244e676), climb.py,
+  climbpad.py, shrink.py, growth_table.py. Results in kl/results/*.csv; pinned instances in experiments/new/instances/n8a/.
+- experiments/new/ipm/: n6.py (track() default), n7.py, gen_hij.py, bench.sh (SOLVER=n6|n7).
+- Fidelity checks: kl/fidelity.txt (300 random games, 850 naive-lfp cross-checks, 0 failures).
+
+(Older resume points of successors 1-4 are in git history; the boxes they describe are summarised in docs/new/README.md.)
 
 ## Sources opened
 - (succ. 5, box 13) arXiv 2108.13338 Koh-Loho (21ee0e4336252f7e): §1 p.2-3, Thm 2.3, 3.1, 4.5. Schewe MFCS 2009 author PDF (d27bbc79ab6b162b):
@@ -312,6 +159,25 @@ NEXT for a successor:
   and box 7's K8 constant-case closure. Obstruction: CDAG_n has 2^n - n - 1 Ω-strict single VJ00 improvements (one-player, all ⊕).
   Instance: experiments/new/instances/cdag/cdag_N12.pg (sha1 41f780ede48ae00d4e4f15251abf2583f9094aa0), chain 4083 by cdag.py.
 ## Things only I know
+- (succ. 5, traps hit in boxes 12-16; read these first)
+  - Notifications: read ReadNotifications at EVERY milestone push. In box 14, six Lead messages sat unread for 1h14m; I kept climbing after
+    the Lead had handed climbs to L-RED (process slip, recorded in N8a §7).
+  - Self-kill: `awk '/bench.sh/'` or `pkill -f <name>` matches your own bash -c line (exit 144, bit again). Match argv fields:
+    `ps -eo pid,args | awk '$2=="python3" && $3 ~ /kl\.py$/'`. Background subshells relaunch the next job: kill the parent too.
+  - `cmd1 && (cmd2 &)` in a for loop: `for s in 1 2 3; do L=$(...); echo ... >> f & done` runs the $(...) SEQUENTIALLY; only the echo is
+    backgrounded. Wrap the whole body in ( ... ) &.
+  - bench.sh re-reads kl.py / n6.py per instance: never edit the solver while a bench runs (N6 mixed code versions once).
+  - Shared output paths race between parallel lanes (two modes wrote the same .sol; fixed by per-mode names).
+  - `rm -rf $VAR/$X` is blocked by the safety check; use fresh directories or "${VAR:?}"/"${X:?}".
+  - Foreground `sleep N; cmd` is blocked: use an until-loop with run_in_background, or a blocking until-loop under 600 s.
+  - Waiter shells hit their background time limit and are reported as "killed": harmless if they only watched files.
+  - IPM work (N6): a "jam" is first a step-rule bug (Armijo on max-norm proximity, infeasible/big-M starts, log-coordinate Newton all
+    jammed); certify the Newton direction (arb ball) and the matrix property before blaming kappa.
+  - Koh-Loho: the hard bench is NOT adversarial for tree labels; climbs found the crawl within an hour (Tighten's prefix successor +
+    recurring strategies = a base-n counter per tree level; padding with isolated vertices widens the perfect tree, extra high
+    priorities add levels).
+  - `date -u` was reliable; my sense of elapsed time was not (it ran far ahead of the clock).
+  - The Lead's trunk SHA in a brief may be newer than your fetch (612686b case): re-fetch before saying it does not exist.
 - (succ. 5) Kill processes by matching argv fields (`ps -eo pid,args | awk '$3 ~ /bench\.sh$/'`), never by a pattern that also appears in
   your own bash -c line: `awk '/bench.sh/'` killed my own shell (exit 144) again on 2026-10-22. Background subshells re-launch the next
   job: kill the parent subshell too.
