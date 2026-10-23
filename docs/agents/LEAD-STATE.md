@@ -805,3 +805,4 @@
 - 21:04Z (date -u) SWEEP (trigger 21:02Z): overage false; Lead $428 ~660k. Fleet idle; L-STRUCT PID 5687 to 01:30Z cap. No exceptions.
 - 22:04Z (date -u) SWEEP (trigger 22:03Z): overage false; Lead $429 ~663k. Fleet idle; L-STRUCT PID 5687 to 01:30Z cap. No exceptions.
 - 23:05Z (date -u) SWEEP (trigger 23:03Z): overage false (WATCHDOG 23:03Z: Lead ~668k, five_hour allowed); fleet idle; L-STRUCT PID 5687 to 01:30Z cap. WATCHDOG Lead-report rule narrowed (FAILED, >2h no update, >850k). No exceptions.
+- 2026-10-23 00:04Z (date -u) SWEEP (trigger 00:03Z): overage false; Lead $430 ~674k. Fleet idle; L-STRUCT PID 5687 to 01:30Z cap. No exceptions.
