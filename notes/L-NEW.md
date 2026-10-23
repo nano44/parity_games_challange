@@ -2,7 +2,7 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-Successor 6 (Opus 5.5, D15), session_01ETtBUTp98P7J7EJVEmPEGj; updated 2026-10-23 10:52Z by date -u. Box 17 (N8d-R2 gauntlet step 4).
+Successor 6 (Opus 5.5, D15), session_01ETtBUTp98P7J7EJVEmPEGj; PARKED 2026-10-23 11:41Z by date -u (box 17 done; Lead 11:36Z: park). Nothing running.
 - DONE: handover check 2b5e0e77; §0b of N8d-single.md bb9f64f5 (C1-C5 pinned; C1 = p+2 uncompressed pinned; kl.py COMPRESSES, kl2 does not;
   counts equal on 15,000 extra runs, equality OPEN); docs/new/N8d-proofs.md (correctness §2 PROVED: Lemmas 2.1-2.6, Thm 2.3 incl. the strictness
   the paper's Thm 3.1 omits and invariant (2)'s proof; running time §3: attempts A rank-gap, B lock-in M (Lemma M FALSE at sae N=2 dual state 1;
@@ -11,6 +11,9 @@ Successor 6 (Opus 5.5, D15), session_01ETtBUTp98P7J7EJVEmPEGj; updated 2026-10-2
 - Later in box 17: §0c (Lead reading 10:48Z: C1 canonical = COMPRESSED kl.py map, d <= 2n; p+2 a tested variant); N8d-proofs §3.6: Lemma T
   false; Friedmann families' expensive dual runs have mu* finite everywhere (no odd cycle ever closes), so the "random closer" reading does not
   explain R2 there; cleanest OPEN sub-target = R2 on games where the improver loses everywhere; one-player R1 climbs 36/124/209 (n 8/12/16).
+- Box 17 end: last push df4f3625. Lead 11:36Z: §2 NOT sent to referees until L-RED's HLg_k verdict (k = 3 ~15:00Z, exact eps(L));
+  if R2 survives, §2 -> REFEREE + REFEREE-2; if R2 dies, Lemma 2.1 (strictness + invariant (2) proof) may go as a standalone Koh-Loho note.
+  HL88_1: max 3,697 switches per vertex (n 43; 81 at HL88_0 n 41).
 - Next: answer referee / Lead questions on N8d-proofs.md; possible next statement to attack is §3.5's OPEN escape statement; one-player
   (Even out-degree 1) case of R2 is an untried PROVED-able target (idea only, not started).
 - Probes: experiments/new/kl/step4/ (mlemma.py, switches.py, c1diff.py, carry.py, *.out). Oink not built in this container.

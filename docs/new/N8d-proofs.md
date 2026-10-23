@@ -292,6 +292,8 @@ For any single admissible switch rule, along any run:
 - **Break 2 (DATA, same file): on Friedmann's families phase 1 is empty and phase 2 is the whole cost.**
   - switchallexp N = 2, 4 and switchbestexp N = 2, 3, dual runs (34-180 pivots): µ* has NO ⊤ vertex (top_in_mustar = 0).
   - The primal runs (2-4 pivots) make everything ⊤.
+  - Also at larger sizes (topcount.out, seed 1): µ* has no ⊤ in the dual runs of switchallexp N = 6, 8, 10 and switchbestexp N = 4, 6, 8,
+    where R1 takes 615 / 2,361 / 9,291 and 237 / 691 / 2,297 pivots and R2 142 / 283 / 500 and 264 / 830 / 879.
   - So the expensive runs are entirely runs in which Odd (the dual's improver) wins nowhere and no odd cycle ever closes. R1 is 2^Θ(n)
     exactly there (N8d-single.md §3), and R2 stays far below it on those families (DATA).
   - A proof must therefore explain R2 on games where the improver loses everywhere. This is the cleanest OPEN sub-target: **E[R2
@@ -324,7 +326,7 @@ For any single admissible switch rule, along any run:
 | A rank-gap fraction (§3.1) | min best-gain/Ψ = 6.0·10⁻⁴; µ* is ⊤ everywhere, so Ψ is dominated by ⊤-gaps | already broken (§3.1); HL_k adds nothing |
 | B Lemma M (§3.2) | 1,354 of 1,380 states have no M-raising candidate | yes, at almost every state |
 | B Lemma M_w | M rises 18 times; longest stretch without a rise = 1,354 pivots (all but the 26 rising or initial states) | yes: w would have to be ≈ the whole run, i.e. ≈ 34·n^{k+1} |
-| C switches per vertex (§3.3) | max 81, mean 72.6 per switching dual-Odd vertex (n = 41); 3.0 (c) holds at every switch | yes for any s(n) bound independent of k (data for k = 1 in hl88_1.out) |
+| C switches per vertex (§3.3) | max 81, mean 72.6 per switching dual-Odd vertex (n = 41); 3.0 (c) holds at every switch | yes: on HL88_1 (n = 43, k = 1; 63,686 pivots = R56's seed 1) max 3,697 and mean 3,352 switches per vertex (hl88_1.out); ×45 for +2 vertices, so s grows like the pivot count, ≈ n^{k+1} |
 | E Lemma T (§3.6) | µ* = ⊤ on all 41 vertices, so the whole run is phase 1; 1,354 states violate Lemma T | yes; HL_k is the opposite case to Friedmann's families (all-⊤ vs all-finite µ*), and both are slow for some rule |
 | D KS / Random-Edge (§3.4) | no template to begin with | n/a |
 
@@ -338,6 +340,7 @@ For any single admissible switch rule, along any run:
 - experiments/new/kl/step4/mlemma.py → mlemma.out: Lemma M per state; Ψ fractions; longest stretches without an M rise. Each run is
   asserted to have the same pivot count as kl_single.strategy_iteration.
 - experiments/new/kl/step4/switches.py → switches.out: per-vertex switch counts; 3.0 (c) checked on every switch.
+- topcount.out: ⊤-count of µ* on the larger Friedmann dual runs (R1 and R2).
 - hl88.out, hl88_1.out: probes on L-RED's HL88_0 / HL88_1 (experiments/red/kl24/instances/, read-only).
 - experiments/new/kl/step4/tlemma.py → tlemma.out (Lemma T, phases); oneplayer.py → oneplayer_random.out, op/ (climbs and R2 on them).
 - experiments/new/kl/step4/c1diff.py, carry.py → c1diff.out, carry.out: §0b's C1 comparison (kl_single.py vs kl2.py).

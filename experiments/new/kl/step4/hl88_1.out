@@ -1,0 +1,3 @@
+# HL88_1 sha1 d0b41ff986f4
+HL88_1.pg,primal,seed1,n=43,odd=21,pivots=0,max_sw=0,mean_sw=0.00,lemma_c_viol=0
+HL88_1.pg,dual,seed1,n=43,odd=22,pivots=63686,max_sw=3697,mean_sw=3351.89,lemma_c_viol=0
