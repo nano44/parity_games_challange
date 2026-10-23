@@ -172,6 +172,38 @@ Remaining open form (READING; the target for L-NEW's incompatibility attempt and
 - No construction attempted in this box meets that. Neither does any instance in the fleet's record (DLM: full-width jumps;
   climbs: width ≤ 3).
 
+## 7. Theorem W against L-NEW's frozen-τ* branch (Lead 23:28Z; docs/new/N5-time-box21.md §2.4, §3; 2026-10-23 ~23:35Z, date -u)
+Context:
+- L-NEW's Theorem B (PROVED, unrefereed) gives: N5 ≤ (C_τ+1)(F_E+1).
+- From (σ_0, τ*) with τ* honest-optimal, N5 IS the frozen run F_τ*.
+- So a kill needs no (R-a): one Even counter would do.
+- The proposed throttle: keep jump-ahead heads EXPLOITABLE, so that jump-ahead edges stay OUT of the honest gate Iσ (H1 false).
+
+Corollary W2 (PROVED given (P); Theorem W restricted to a frozen run).
+- Statement: an F_τ* run whose gate never exceeds k edges at a move has at most (2n(n−1)+1)·N_k(m_E) iterations. This counts
+  arena and fallback steps alike, since every step changes σ and applies a nonempty subset of Iσ.
+- Reason: the frozen run is an Even SI-type run with gate Iσ. Theorem W uses only that.
+- So a super-polynomial F_τ* family needs gates of width ≥ log(T/4n²)/log m_E at all but polynomially many moves.
+
+What this does to the design lead (READING).
+- Two throttles exist, and they act differently:
+  - Exclusion (L-NEW §3.1): the jump-ahead edge (x, z) is profitable against τ* but kept OUT of Iσ while z is exploitable.
+    Exclusion makes the gate NARROWER.
+  - Refusal (R58 §4-§5): the edge is IN Iσ but not profitable against τ*, because σ(x)'s side is exploitable and τ* is
+    generous there (bribe_cex_n15: an optimal τ* refuses 10 of 15 at no cost).
+- Exclusion alone (narrow gate, one edge opened per repair) gives at most (2n(n−1)+1)·N_k(m_E) iterations, by W2.
+  - DATA, fts_ph16 frozen run (22 iterations, n 16): 12 of 22 moves at gate width 1, the rest at width ≤ 5. Iterations 11-22 are
+    a width-1 repair chain: 4>11, 14>13, 0>14, 2>0, 7>2, …
+  - Such chains are capped by W2 at (2n²)(m_E + 1): polynomial.
+  - h1_hand: 2 moves, both at width 1.
+- So a frozen kill must keep the gate WIDE: ω(1) honest-improving edges at almost every move.
+  - Nearly all of them must be REFUSED against τ*. Refusal needs σ(x)'s head exploitable, with τ* generous there.
+  - The jump-ahead edges may be excluded or refused; the width has to come from refused edges.
+- Requirement for a CDAG_n + threat-gadget design: besides throttling the jumps, each counter state must present about
+  log T / log m honest improving edges that τ* does not reward. CDAG's 2^n − n − 1 Ω-strict single-switch improvements
+  (N5-K9-Pstrict-counter.md) are candidates for that supply only if they are honest-improving in the two-player game AND
+  τ*-unprofitable. Not built here.
+
 ## 6. Files (experiments/red/n5inj/, all read-only on experiments/new/n5.py, experiments/si/si.py, experiments/red/n5/n5tr.py)
 - injcheck.py G even|odd [SAMPLE SEED]: exhaustive (or sampled) check of the collisions σ ↦ Iσ and of Lemma 1's premise; |I|
   histogram.
@@ -183,5 +215,6 @@ Remaining open form (READING; the target for L-NEW's incompatibility attempt and
 - jumpclass.py G [START]: jump-ahead switches by edge class (§1).
 - bribe.py G [START] and bribebatch.py COUNT NMIN NMAX SEED: Conjecture BRIBE (§5).
 - stretch.py G [START] | random ...: longest one-sided stretch (§5).
+- widthclimb.py h SECONDS SEED OUT [KMIN] [--from G]: symmetric climb, fitness = wide refused moves, then iterations (results §8).
 - instances/bribe_cex_n15.pg: the BRIBE counterexample (sha1 392af465e390d3fb83003d1dc06163da891bdac9).
 - DLM games come from experiments/new/dlm_gen.py 1|2 n, with the start pair on stderr.
