@@ -2,9 +2,9 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-23 ~02:4xZ: PARKED after T25 docs/lit/T25-N8a-step3.md: N8a (Koh-Loho tree SI, rules global + switch-all) step 3 SIGNED
-WITH CAVEATS C1-C5 (no lower bound for KL under any rule; bench not adversarial for tree-SI; L-NEW mis-cites B6 for tc/SPM).
-Trunk merged (merge commit, origin/claude/vibrant-johnson-nxvvxo). Earlier: T18-T24. Next: Lead.
+2026-10-23 08:1xZ: PARKED after T26 docs/lit/T26-N8d-step3.md: N8d-R2 (KL tree SI, uniformly random single switch) step 3 SIGNED
+WITH CAVEATS 1-7 (Thm 4.78 missing; Lemma 4.75 one-sentence; R2 = Random-Edge on all of G_n; transfer = dualize + Lemma 4.74 start +
+Lemma 4.75 per (tau, mu); page 186 not 187). Before: T25 (N8a). Trunk merged with merge commits. Next: Lead.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -231,11 +231,17 @@ Trunk merged (merge commit, origin/claude/vibrant-johnson-nxvvxo). Earlier: T18-
 | van Dijk Two Counters (tvandijk.nl/pdf/2019tc.pdf), sha256 9d2da84949b2d4601a604d58f9477f3c5f6107e8466cb2c5b2d8b8236d539dad | §9.4 p.14: SPM etc. slow "not due to the design"; SI "only algorithm that can quickly and in polynomial time solve" tc | 2026-10-23 | T25 |
 | arXiv 2509.16075 v2 (Maat), sha256 69706649fed1fac9…; lohomath.github.io (publication list) | grep: no Koh-Loho / universal tree; list: no KL follow-up | 2026-10-23 | T25 |
 | WRONG (T25) | arXiv 1909.07659 is van Dijk-Rubbens FPI, not Two Counters (discarded) | 2026-10-23 | T25 |
+| Friedmann PhD thesis (edoc 13294), sha256 68748f5388a941514c353c09ccb30fc0e043357780aabf68d2789e08ea039c85; printed = PDF - 16 | p.45 player 0 = even; Table 4.4 p.96; §4.7.2 p.168; Thm 4.71 p.183 (O(n^4), Ω(2^n)), cycle lengths p.183; Table 4.19 p.184 (improver out-degree ≤ 2); Lemma 4.74, 4.75 (one-sentence justification, no appendix proof), Thm 4.76 p.186; §4.7.3 Improve_P p.187-189, Thm 4.78 p.189; Lemma 4.67-4.68 + Tables A.1-A.2 p.259-263 | 2026-10-23 | T26 |
+| arXiv 1410.7871 v1 (FHZ errata), sha256 d89ec8c329a4f11368ef85ded92138f4bf805cbfbe7d6a16bbfe28d94c02edf9 | p.1 "thus flawed"; p.2 Random-Edge "remains unaffected" | 2026-10-23 | T26 |
+| LIPIcs.ICALP.2016.51 (Hansen-Zwick), sha256 ac500016f9d73aed5ffca742e30b647fa34457bc70f61152331269f36fa96b6c | abstract: AUSO Random-Edge 2^Ω(√(n log n)) | 2026-10-23 | T26 |
+| LIPIcs.ESA.2026.140 (Dorfman-Kaplan-Zwick), sha256 981235e87b79b0eb1b9ceac81bec74d7c2d9c811863ac1693faf4a026122c1ca | abstract; p.2-3 related work; §5 Random-Edge upper bound | 2026-10-23 | T26 |
+| arXiv 1008.0530 v1 (HMZ) sha256 f53a6b51…; 1305.3944 (Avis-Friedmann) sha256 d1fafb8b…; 1210.2459 sha256 02fca6a4… | HMZ Thm 6.5; AF Thm 4; CGR abstract only | 2026-10-23 | T26 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
 
 ## Corrections log
+- 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.
 - 2026-10-23 (T25): docs/new/N8a-kohloho.md §3 says tc is exponential for progress-measure algorithms "BARRIERS B6"; B6 does not list SPM, van Dijk §9.4 p.14 says SPM slowness is not due to tc. Reported, not mine to edit.
 - 2026-10-18 (T18): N1-disc-anneal.md (L-NEW) has Friedmann's β_G with |V|; opened text has |V|³ (1106.0778 p.35). Reported, not mine to edit.
 - 2026-10-14: first draft cited priority promotion as arXiv 1608.04548; that id is an astrophysics paper (opened, wrong). Replaced by the CAV 2016 paper before push.
