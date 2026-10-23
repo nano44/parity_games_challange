@@ -203,7 +203,7 @@ HL_2 with L7 = L8 = L, base seed 3, W 300, J 1 (P_m = P(fail within m laps)):
 | 5 | 33 | 3.90822e-4 | 9.73922e-4 | 1.54919e-3 | 5.83e-4, 5.75e-4 | 5.75e-4 | ×10.8 | 4.8e-4 [2.1e-4, 9.4e-4] |
 | 6 | 37 | 2.75358e-5 | 6.7596e-5 | 1.06804e-4 | 4.01e-5, 3.92e-5 | 3.92e-5 | ×14.7 | 4.0e-5 [1.7e-5, 7.9e-5] |
 | 7 | 41 | 4.54663e-7 | 2.4664e-6 | 4.6071e-6 | 2.01e-6, 2.14e-6 | 2.1e-6 | ×18.3 | 1.5e-6 [3.8e-8, 8.3e-6] |
-| 8 | 45 | 7.89835e-8 | 1.80943e-7 | (running) | 1.02e-7, (running) | ≈ 1.0e-7 | ×20 | 2.5e-6 [6.3e-8, 1.4e-5] |
+| 8 | 45 | 7.89835e-8 | 1.80943e-7 | 2.79919e-7 | 1.02e-7, 0.99e-7 | 1.0e-7 | ×21 | 2.5e-6 [6.3e-8, 1.4e-5] |
 | 9 | 49 | 8.19561e-10 (one lap only, 793,088 states) | — | — | — | — | — | — |
 - States: L = 3..8 one-lap chains have 224 / 832 / 3,248 / 12,736 / 50,432 / 199,168 states (×4 per +1 of L). m-lap chains have
   about m times as many.
@@ -228,7 +228,7 @@ HL_2 with L7 = L8 = L, base seed 3, W 300, J 1 (P_m = P(fail within m laps)):
   multi-lap ε exceeds the one-lap ε by a growing factor: 1.4 / 1.5 / 1.4 / 4.7 at L = 4..7.
 - Reading:
   - ε(L) decays at least exponentially in L. The base is between 2 (the r = 1 race) and L + 1 (the full race).
-  - The measured ratio per +1 of L grows: ×10.8, ×14.7, ×18.3. That rules out a power law on this range, since the ratio of
+  - The measured ratio per +1 of L grows: ×10.8, ×14.7, ×18.3, ×21. That rules out a power law on this range, since the ratio of
     L^−a, ((L+1)/L)^a, DEcreases toward 1.
   - This is a reading of the chain, not a proof. The "≥ 2^−L" floor for the late-window race is the conservative case if the
     measured ratios ever stop growing.
