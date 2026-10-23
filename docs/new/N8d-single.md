@@ -154,3 +154,23 @@ reads "p + 3" on the primal input. Consequences, each labelled:
   affected: L-COMP's runs are themselves runs of the pinned map.
 - L-COMP box 2b (README "Box 2b", results-2b/): no τ_1 setting (first, last, random) and no tie-break flip (ids reversed) changes the
   growth class on switchallexp, switchbestexp or rand1k (power fits n^1.82 to n^2.14 throughout). C3's pin is therefore not a tuned choice.
+
+## 0c. C1 correction (Lead 10:48Z; written 2026-10-23 10:58Z by date -u; §0 and §0b unchanged)
+Lead reading (message 2026-10-23 10:48Z, TARGET.md §1 and D2 change 1), relayed as received: "the canonical C1 is the COMPRESSED map, as in
+kl.py's Game.__init__: the order- and parity-preserving compression into {1..d}, d even, with the compression charged to the algorithm";
+kl2.py's p+2 "is then an implementation variant". This replaces §0b's pin of C1 (§0b's table and data stand as written).
+- **Canonical C1** (pinned from now on): kl.py `Game.__init__` l.25-32. The sorted distinct priorities p_1 < p_2 < ... get values
+  c_1 < c_2 < ...: c_i = c_{i-1} + 1, or c_{i-1} + 2 when parity must be kept (c_0 = 0), so c_i ≡ p_i (mod 2) and c_1 ∈ {1, 2}. Then
+  d = max c + (max c mod 2). Same-parity neighbours are NOT merged, so d ≤ 2n and h = d/2 ≤ n (a game with n distinct even priorities
+  reaches d = 2n). The cost is one sort, O(n log n) comparisons of input priorities, charged to the algorithm. C4: the dual compresses
+  p + 1 the same way.
+- **Tested variant**: kl2.py, π = p + 2, d = the even ceiling. Its pivot counts equal the canonical counts on every tested row (DATA: L-COMP's
+  41,155 rows; my 15,000 runs, experiments/new/kl/step4/c1diff.out, carry.out). General equality is OPEN.
+  - The cheap proof the Lead suggested ("unused priority values add only tree components that are never touched") is FALSE for Tighten
+    VALUES. On the chain games of carry.py (n - 1 vertices of priority 1 in a path to an even vertex of priority 4 with a self-loop, plus one
+    back arc), Tighten carries out of a full digit. Under p + 2 the carry lands in the component of the absent priority 5 (input 3); under
+    compression it gives ⊤.
+  - The counts still agree on those games (the least fixed point is ⊤ there either way). Whether a STORED label can ever have a nonzero
+    absent component is OPEN.
+- Correctness (N8d-proofs.md §2) is map-independent. The running-time statements in N8d-proofs.md §3 are stated for the canonical map
+  (d ≤ 2n, h ≤ n). All §3 probes ran kl.py's Game (canonical) already.
