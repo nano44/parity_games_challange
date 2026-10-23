@@ -1,1 +1,3 @@
 family,N,n,seed,pivots,pivots_dual,verify,oink,secs
+tc,22,1562,2,1160,1246,verified,zielonka(oink zlk) OK strategies verifie,2163.6
+tc,22,1562,3,1204,1284,verified,zielonka(oink zlk) OK strategies verifie,2232.5
