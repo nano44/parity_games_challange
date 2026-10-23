@@ -4,8 +4,8 @@ Opus 5.5: the session's model was switched (get_session: user_switched_model cla
 The previous notebook (boxes 1-18) is in git at l-red 4f73e7a6: `git show 4f73e7a6:notes/L-RED.md`; boxes 16-18 handover at a5274bd6.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: box 23 ACTIVE (woken 2026-10-23 07:41Z): structural lower bound for N8d-R2 (R55). HANDOVER-READY: context is high (> 500k);
-a successor starts from R55 and the IN PROGRESS block below. Box 22: N8d-R2 SURVIVES (R54). Box 21: N8a DEAD by H_k (Lead re-runs 02:40Z / 02:46Z / 02:58Z). Box 19 merged trunk 18812f7; k-pools NEST* line CLOSED (Lead, D15 / L37). Box 20 = S growth on
+Status: PARKED after box 23 (2026-10-23 ~10:00Z): N8d-R2 still survives (R55); G_zeta faithful under VJ, R2 does not count on it.
+Context is high (> 500k): the NEXT wake should go to a FRESH successor (LANE-RESTART), starting from R55 §3-§4 and the block below. Box 21: N8a DEAD by H_k (Lead re-runs 02:40Z / 02:46Z / 02:58Z). Box 19 merged trunk 18812f7; k-pools NEST* line CLOSED (Lead, D15 / L37). Box 20 = S growth on
 two-player games: docs/red/R52-sgrowth.md, experiments/red/sgrow/.
 
 ## DONE (box 19; docs/red/R51-piecemap.md; tools experiments/red/nest16/piecemap.py, gatescan.py; evidence in experiments/red/nest16/maps/ and scans/)
@@ -27,13 +27,14 @@ two-player games: docs/red/R52-sgrowth.md, experiments/red/sgrow/.
   index (#14) before 7 closes at #15; a seventh level needs two recurring positions between 9 and 16, i.e. a longer post-block tail,
   which only a gate-type change (not a return) can add; gates from the innermost pieces replace D's block by E's instead of nesting.
 
-## IN PROGRESS box 23 (R55; produced on Opus 5.5)
+## DONE box 23 (R55; produced on Opus 5.5)
 - Literature: no random-node lower bound (thesis lists Random-Edge / Random-Facet only); FHZ STOC 2011 not openable (ACM paywall).
 - R2 failure points of the H_0 period (R55 §2); AND-join gate fails (ratchet: earlier raises pass the gate); instances/r2join_h0E_n14.pg.
 - Lap-count climbs (kclimb_r2l.py, min over 5 seeds of the top component reached): best 6 (mean 8.4) at n 22 after ~30 min; stopped.
-- G_zeta (Friedmann Table 4.19) built: experiments/red/gzeta/gzeta.py; R2 dual pivots n1 61, n2 405 ≈ #cycle vertices; cycles close
-  once, no counter. n 3 (1346 vertices) running in scratch b23/gz3_*.sh (~15+ min/seed, kl_single.py); results -> R55 §3b.
-- Open for a successor: (1) transcribe Table 4.17 and check the admissible sets state by state (Lead item iii); (2) a gate that separates
+- G_zeta (Friedmann Table 4.19) built: experiments/red/gzeta/gzeta.py; R2 dual pivots means 61.0 / 405.4 / 1475.0 at n 1/2/3 ≈ #cycle
+  vertices (cycles close once). FAITHFUL: VJ Random-Edge (vj_re.py) on the same games counts (57 / ~826 / ~5263, thousands of openings).
+- Open for a successor: (1) locate the first state where R2's admissible set departs from VJ's improving set (run both from the same
+  strategy, compare per step); (2) a gate that separates
   "switched this period" from earlier raises (comparison at a lower label component), or delay lanes that reset each lap.
 
 ## DONE box 22 (R54; produced on Opus 5.5)
