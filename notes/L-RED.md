@@ -4,7 +4,7 @@ Opus 5.5: the session's model was switched (get_session: user_switched_model cla
 The previous notebook (boxes 1-18) is in git at l-red 4f73e7a6: `git show 4f73e7a6:notes/L-RED.md`; boxes 16-18 handover at a5274bd6.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: box 21 (N8a, Koh-Loho SI) woken by the Lead 2026-10-23 02:08Z; KILL found and reported 02:31Z / 02:38Z / 02:56Z; waiting for the Lead. Box 19 merged trunk 18812f7; k-pools NEST* line CLOSED (Lead, D15 / L37). Box 20 = S growth on
+Status: PARKED after box 21 (2026-10-23 ~03:10Z): N8a (perfect tree, both frozen rules) DEAD by H_k (Lead re-runs 02:40Z / 02:46Z / 02:58Z). Box 19 merged trunk 18812f7; k-pools NEST* line CLOSED (Lead, D15 / L37). Box 20 = S growth on
 two-player games: docs/red/R52-sgrowth.md, experiments/red/sgrow/.
 
 ## DONE (box 19; docs/red/R51-piecemap.md; tools experiments/red/nest16/piecemap.py, gatescan.py; evidence in experiments/red/nest16/maps/ and scans/)
@@ -52,18 +52,14 @@ None. No process runs at box end.
 2. A different fourth part: E = nest5_n49 (a part with its own 5-level structure) above nest6min, then the recipe; n 124, ~40 s/eval.
 3. Re-read R50 §4 / §7 cross-part attributions with piecemap.py (file ids).
 ## Resume point
-Box 21 (N8a kill, R53) done and reported; waiting for the Lead. Before that: PARKED after box 20 (2026-10-22 ~10:30Z, date -u). Nothing in flight; no process runs. Wake only on a new named target from the Lead
-(a referee / lane hypothesis, or a new candidate such as an L-NEW step-2 survivor). Read first: R52 (S growth), R51 §4-§6, CLAUDE.md
-traps. Earlier resume points: `git show a5274bd6:notes/L-RED.md`, `git show 4f73e7a6:notes/L-RED.md`.
-Climb lessons (box 20, experiments/red/sgrow/oclimb.py):
-- Fitness from pinned Oink (F = max(even, odd iterations) − dominions) is a cheap proxy for the longest phase; confirm S afterwards
-  with smeasure.py (L-ALG's phase convention, both orders) and require Oink's count = S.
-- Padding to grow n: RANDOM pads (random priority, an incoming edge) create early dominions and collapse long phases (F ≤ 8 at
-  n 40-80). NEUTRAL pads (priority 0, one successor into the old game, no incoming edge) keep S and give the climb material.
-- Evaluation cost: Oink -v is ~8 ms at n 20 but 0.2-1.5 s on long-phase games at n ≥ 40 (tangles ≤ 88); budget by wall clock (--secs),
-  not by steps. Python smeasure takes ~4 min per game at n 80.
-- Two-job limit: pause a climb with kill -STOP / kill -CONT for a short measurement instead of starting a third job. Count jobs with
-  `ps -eo args | grep -c '^python3 .*oclimb'`; never pkill -f a pattern that occurs in your own shell's command line.
+PARKED after box 21 (2026-10-23 ~03:10Z, date -u). Nothing in flight; no process runs. Wake only on a new named target from the Lead.
+Box 21 state: R53 §1-§6 final (freeze §1-§6; corrections in new sections). Open follow-ups only if routed: (a) tree-SI on the succinct
+(JL17) tree or with single-switch rules is a NEW candidate (needs its own code from L-NEW; then re-run H_k / climb); (b) a proof of
+the H_k law for all k (period read off traces). Earlier resume points: box 20 text below in git (`git show 595ca267:notes/L-RED.md`),
+`git show a5274bd6:notes/L-RED.md`, `git show 4f73e7a6:notes/L-RED.md`.
+Climb lessons (box 20, oclimb.py; box 21, kclimb.py): fitness from the solver's own counter, confirm with the reference tool; pad
+NEUTRALLY (S growth) or with NEW TOP PRIORITIES (tree-level growth); budget by wall clock; pause a climb with kill -STOP / -CONT for
+short checks; count jobs with `ps -eo args | grep -c '^python3 .*<tool>'`; never pkill -f a pattern from your own command line.
 
 ## Sources opened
 - arXiv 2108.13338 (Z. K. Koh, G. Loho, "Beyond value iteration for parity games: strategy iteration with universal trees", LMCS 21(2)
@@ -85,6 +81,10 @@ dtl.cpp @ 8fbf0a7. Earlier opened sources are listed in `git show 4f73e7a6:notes
 - (SPP) "S ≤ |G'|" (longest phase at most the unsolved game at its start; R24's target, DATA only, never signed) is FALSE in oink
   order: s21_oink_n20 (experiments/red/sgrow/instances/, sha1 da164511784449b906663c190757fd78c057f97c), an Even phase of S 21 at
   |G'| 20 (pinned Oink even 21, odd 1, verified; Lead re-ran 10:24Z, CONFIRMED). Stable order on the same game: S 11. Excess +1, linear.
+- Rule-free transfer of the N8a lapping counter ("whatever the pivot rule picks among improving arcs"): FALSE on H_k. Single-switch
+  rules (lowest / highest index, random seeds 1, 2) solve H_0..H_2 in 9 / 5 / 5 / 17 iterations for every k (ksubset.py; R53 §6b item 4).
+  The counter needs simultaneous switching (class SA). Any-universal-tree transfer: READING, gap G1 = local second-child offsets below
+  the counted level (unary vertices of succinct trees), untested.
 - k-pools NEST* line (boxes 16-19) CLOSED by the Lead (D15 / L37, 07:34Z): NEST* plateaus at 6 (448 hand-built configurations and
   climbs), S linear (≤ 31 at n 101). Obstruction R51 §4: a seventh level needs a longer post-block stretch with no shallow first
   change; no edge class gives both. Killing instance k4u_n101 (37a45ff8a932bcc6e4a79d4848a0a57dbb82367a), scans 1-7.
