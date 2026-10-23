@@ -225,6 +225,12 @@ scan4_laps2_show260.txt.
   - These are not carry laps (node 1's low digit is 2, 20, 17, 12). They occur in the natural run (0 redraws before them) as lap
     starts already partly corrupted (an opposite-lane node left unreset).
   - The average over all 900 lap starts is 1.32e-2, against 1.07e-2 at the steady snapshot; the BAD laps contribute 3.5e-3 of it.
+- Natural runs, no redraws (base seeds 1, 2, 4, 5; results/eps/scan4_laps2_natural.txt):
+  - The base runs died at laps 46, 130, 4 and 75.
+  - Two of the deaths came right after a BAD lap start: seed 1, 0.1615 at lap 45, died at 46; seed 5, 0.2431 at lap 74, died at 75.
+  - So BAD lap starts are the main failure route at L = 4.
+  - Four runs are too few for a rate. The full-run estimates of §3a (L = 5-7), which include every route, agree with the steady
+    increments of §3b within their CIs.
 - So at L = 4 the natural per-lap ε is about 25% above the snapshot value.
 - Whether the BAD laps' frequency × ε shrinks at larger L at least as fast as the steady value is NOT measured. The m-lap
   increments of §3b include corrupted states reachable within m laps of the snapshot, but no scan was run at L ≥ 5.
