@@ -1,0 +1,5 @@
+family,N,sha1,n,d,h,rule,iterations,iterations_dual,checks,verify,secs,oink_check
+switchbestexp,1,8c56661373a0,35,42,21,all,1,20,0,verified,0.0,zielonka(oink zlk) OK strategies verified
+switchbestexp,2,b3d5bc293d1b,60,70,35,all,1,21,0,verified,0.1,zielonka(oink zlk) OK strategies verified
+switchbestexp,3,e1cd8f136e05,85,98,49,all,1,54,0,verified,0.6,zielonka(oink zlk) OK strategies verified
+switchbestexp,4,57b27b7476bc,110,126,63,all,1,60,0,verified,1.1,zielonka(oink zlk) OK strategies verified
