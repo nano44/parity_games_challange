@@ -300,3 +300,8 @@ N=7: 1,200, Oink-verified). Random-node rule R2 still measured. L-NEW independen
 ## 2026-10-23T04:30Z relayed: Lead 2026-10-23 04:29Z information (L37)
 N8d-R2 (one random node per step) looks polynomial so far: 10,000 random games + 13 hard families verified; mean steps ~n^1.9 on the two
 Friedmann families; Lead re-ran 3 largest points + 100 random games. Data, not a claim. L-RED attacking with random-pivot lower bounds.
+
+## 2026-10-23T05:34Z relayed: Lead 2026-10-23 05:34Z information (L37)
+N8d-R2 passes gauntlet step 2 on its first implementation: 10,000 random + 13 hard families at growth sizes, Zielonka-verified; fitted
+pivot growth n^1.0-n^1.9, no exponential family; Lead re-ran 5 points + 100 random. Running: L-COMP second implementation, L-RED attack
+with exponential random-pivot constructions. Data, not a claim. Landed: DE28 (N8a), DE29 (N8d-R1).
