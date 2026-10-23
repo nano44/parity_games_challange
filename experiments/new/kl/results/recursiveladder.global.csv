@@ -1,0 +1,6 @@
+family,N,sha1,n,d,h,rule,iterations,iterations_dual,checks,verify,secs,oink_check
+recursiveladder,2,2549b4f6f7df,10,10,5,global,3,0,0,verified,0.0,zielonka(oink zlk) OK strategies verified
+recursiveladder,4,8cbc70c5d006,20,16,8,global,3,3,0,verified,0.0,zielonka(oink zlk) OK strategies verified
+recursiveladder,6,f7462dbd701e,30,22,11,global,3,3,0,verified,0.0,zielonka(oink zlk) OK strategies verified
+recursiveladder,8,34e5062f0e9b,40,28,14,global,3,3,0,verified,0.0,zielonka(oink zlk) OK strategies verified
+recursiveladder,10,52916325f300,50,34,17,global,3,3,0,verified,0.0,zielonka(oink zlk) OK strategies verified
