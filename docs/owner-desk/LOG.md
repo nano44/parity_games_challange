@@ -305,3 +305,8 @@ Friedmann families; Lead re-ran 3 largest points + 100 random games. Data, not a
 N8d-R2 passes gauntlet step 2 on its first implementation: 10,000 random + 13 hard families at growth sizes, Zielonka-verified; fitted
 pivot growth n^1.0-n^1.9, no exponential family; Lead re-ran 5 points + 100 random. Running: L-COMP second implementation, L-RED attack
 with exponential random-pivot constructions. Data, not a claim. Landed: DE28 (N8a), DE29 (N8d-R1).
+
+## 2026-10-23T08:40Z relayed: Lead 2026-10-23 08:35Z information (L37)
+N8d-R2 passed gauntlet steps 2 and 3: independent second implementation agrees run for run (~83,000 runs, 0 incorrect); hardest family
+mean steps ~n^2 to n=760 (exponential fit ~10x worse); L-LIT signed step 3 with caveats (nearest threat Friedmann's Random-Edge
+construction, transfers only if Lemma 4.75 holds for tree labels). Next: L-RED builds Friedmann's game; step 4 waits. Data, not a claim.
