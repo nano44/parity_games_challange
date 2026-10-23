@@ -108,3 +108,62 @@ The switch sets differ from the very first state. Two mechanisms are responsible
   number of cuts.
 These are the per-state content of the Lemma 4.75 gap (T26 §2(b)(iii)): no tree-label analogue of "valuations ≈ potentials" can
 hold on G_zeta, because the label order differs from the VJ order at state 0 and at every lane reset.
+
+## 2. A counter R2 does not escape: R53's H_k with z-separated delay lanes (item 2; 2026-10-23 10:20-10:55Z, date -u)
+Code. Every pivot count comes from experiments/n8d-second/kl2fast.py. Paths:
+- Verified runs go through experiments/n8d-second/bench.py (L-COMP; read-only; `--impl kl2fast --no-r1`). It runs the primal and
+  dual R2 solve, checks regions against Oink zlk @ 8fbf0a7, and checks both strategies with experiments/harness/verify.py.
+- Exploration rows use experiments/red/kl24/r2mean.py (KLFast dual .run('r2', seed), the same call kl2.solve makes) and ktr.py
+  (switch-all trace, kl2 functions).
+- Cross-check against L-NEW's own experiments/new/kl/kl_single.py --rule r2 (unmodified): HL88_0 seeds 1-3 give 1380 / 1378 / 1390,
+  and HL88_1 seed 1 gives 63,686, all "verified". kl2fast gives the same numbers.
+
+### 2a. The gadget (fixes M2 in label space)
+experiments/red/kl24/lanegen.py G V L Z: node V (Even in G = the dual's Odd, R2's improver) with exit x and inward target y becomes
+the far end of a lane l_1 .. l_{L-1}, V. Each l_j has arcs {x, z_j}; z_j is a one-successor node of priority Z with arc to l_{j-1};
+l_1 has arcs {x, y}.
+- In the dual, z is a truncation at Z + 1. Z is chosen ABOVE the priority at which the exit rises at the lap's reset and BELOW the
+  counted component.
+- Once the exit rises, every lane node's direct exit beats its chain through z (the chain loses the rise), so ALL L nodes switch
+  out. The lane resets fully, as VJ's lanes do (§1b). Closing then runs as a frontier, one node per pivot.
+- Contrast: a plain lane (no z) does not reset (M2). On H_0 with a plain lane, R2 means are 32.7 / 39.7 at L = 4 / 8; with z
+  (Z = 23) they are 55.0 / 187.8 (30 seeds each).
+
+### 2b. Where R2 killed R53's counter, and the two lanes
+R53's 13-vertex H_0 (klmin_n13) laps with the dual period {3, 4, 8 -> 6}, {7: 2 -> 3}, {3: 6 -> 11, 7: 3 -> 2, 8: 6 -> 1},
+{4: 6 -> 8}. Its R2 failures:
+- (i) 7's lap move before phase A is complete (R55 §2). Fix: a lane on 7 (exit 2, target 3, open at the start, Z = 23).
+  - Z = 23 sits between the exit's reset rise (2's own priority 22) and the counted priority 28.
+  - With this lane alone, laps grow only linearly in L: on H_2, mean laps 7.5 / 12.5 / 24.0 at L = 8 / 16 / 24, 20 seeds.
+- (ii) found here (ktr.py, H2_L16 seed 3, iteration 21): in phase C, R2 picks 8: 6 -> 1 before any of 7's L lane nodes resets.
+  The closed lap then stands and µ jumps to TOP. Probability ≈ 1/(L+1) per lap, which matches the linear laps.
+  - Fix: a second lane on 8 (exit 6, target 1, closed at the start, Z = 23).
+  - With both lanes, every one of 20 seeds runs H_0's full counter: 7-lane 16 / 8-lane 4 gives 2008-2058 R2 pivots, against
+    switch-all 2132.
+- Family HL_k = experiments/red/kl24/hlgen.sh k 8 8: H_k (famgen.py H k) plus the lane of length 8 on 7 and the lane of length 8 on 8.
+  n = 41 + 2k.
+
+### 2c. Verified R2 runs (bench.py, kl2fast; results/hl88_k012.csv; every row status OK = regions == Oink zlk, strategies verified)
+| k | instance (experiments/red/kl24/instances/) | sha1 | n | R2 dual pivots, seeds 1-5 | mean | mean / n^{k+1} |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0 | HL88_0.pg | 8f710aef7abdcb1315da01ef52da4a25afabe144 | 41 | 1380, 1378, 1390, 1392, 1400 | 1,388 | 33.9 |
+| 1 | HL88_1.pg | d0b41ff986f4b1e365ce8027487b93590e679de6 | 43 | 63686, 63580, 63684, 63734, 63746 | 63,686 | 34.4 |
+| 2 | HL88_2.pg | 1c3c78895df68fd10690fd5ab5467f7f01546ee7 | 45 | 3139182, 3139646, 1230538, 3138968, 3139556 | 2,759,578 | 30.3 |
+| 3 | HL88_3.pg | 7a178aadf13e20e02c3d246e26fbaad41b6664b1 | 47 | running (bench, 2 jobs; ≈ 150M pivots per seed) | — | — |
+- Primal pivots are 0 on every row.
+- Ratios of the means: ×45.9 (k 0 -> 1) and ×43.3 (k 1 -> 2), about n per step of k.
+- A full counter run costs ≈ 34.4·n^{k+1} dual pivots: 1,388, 63,6xx and 3,139,xxx. R2 completes it on 14 of 15 runs; seed 3 at
+  k = 2 stops early (1.23M).
+- Law (DATA, k = 0..2): mean R2 dual pivots ≈ 34·n^{k+1} with n = 41 + 2k, i.e. n^{(n−39)/2}. That is SUPER-POLYNOMIAL growth of the
+  mean over 5 seeds, every output verified: the kill criterion's first clause, as data.
+
+### 2d. Caveats (what this does NOT yet show)
+- The lanes have FIXED length (8, 8). Some per-lap failure probability ε > 0 remains: one early stop in about 3.6·10^5 laps at k = 2.
+  - So for fixed lanes the expected count is eventually capped near 34/ε pivots. The super-polynomial law holds over k = 0..2 and
+    is expected to bend at larger k.
+  - A family that is super-polynomial for all k needs lane lengths growing with k, so that ε(L)·n^{k+1} → 0.
+  - L = O(k log n) suffices IF ε(L) decays exponentially in L. That is NOT measured: only L = 4 vs 8 for the 8-lane at k = 2
+    (L7 = 8: at L8 = 4, HL_2 with n 37 stopped early on 5/5 seeds, 61,582-254,556 pivots against a full ≈ 34·37^3 ≈ 1.7M, all verified, results/hl_k012.csv; at L8 = 8, 1/5).
+- Not shown: the remaining failure events and their exact probabilities (no proof); k = 3 is running.
+- Faithfulness: the candidate is run unmodified (kl2fast and kl_single agree seed for seed). The games are ordinary parity games
+  (Oink solves them).
