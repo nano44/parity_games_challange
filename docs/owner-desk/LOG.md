@@ -292,3 +292,7 @@ attacking it; step 3 found no known lower bound. No incorrect run.
 ## 2026-10-23T02:44Z relayed: Lead 2026-10-23 02:47Z required report (super-polynomial family)
 N8a DEAD END: L-RED family G_k kills the 'global' rule on the perfect universal tree, 8*n^L + 6 pivots (n^Theta(n)); Lead re-ran
 n=18 (2,598), n=20 (64,006), Oink-verified. Next: transfer to every universal tree. No incorrect run. L-NEW parking; fleet mostly idle.
+
+## 2026-10-23T03:49Z relayed: Lead 2026-10-23 03:51Z required report (exponential family)
+N8d (tree strategy iteration, one node at a time): index-order rule R1 EXPONENTIAL on switchallexp (~9*2^N pivots; Lead re-ran N=6: 615,
+N=7: 1,200, Oink-verified). Random-node rule R2 still measured. L-NEW independently found a second N8a kill family. No incorrect run.
