@@ -1,4 +1,4 @@
-# Draft RESULTS DE31-DE32 (Lead, 2026-10-23 19:42Z by date -u) — awaits CHECKER C24 re-diff (rev. 19:53Z: C24 E-1, N-1, N-2; checker 7280733)
+# Draft RESULTS DE31-DE32 (Lead, 2026-10-23 19:42Z by date -u) — LANDED in RESULTS Dead ends (CHECKER C24 Addendum 1 PASS, checker 38d92b8; lines 3-25 verbatim); was: awaits CHECKER C24 re-diff (rev. 19:53Z: C24 E-1, N-1, N-2; checker 7280733)
 
 - DE31 (2026-10-23): N9a = the fixed-level Sherali-Adams lift SA+_k of the 0-1 program ACYC for the query "Even wins every vertex"
   (L-NEW successor 7, box 18, (c) lane under D14/D15; docs/new/N9-screen.md §1; l-new 67884f3, eb4d33c; Lemma A (§1, PROVED by the lane,
