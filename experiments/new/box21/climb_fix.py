@@ -50,6 +50,26 @@ def fit_bestph(G):
     g = pg.Game(*G); Ed = Engine(dual(g)); t0 = tuple(Ed.initial("best"))
     if Ed.improving(t0, Ed.evaluate(t0)[0]): return 0
     states, _ = trace(g, check=False); return maxphase(g, states)
+def fit_oneodd(G):
+    """class C^1O: at most one Odd vertex has out-degree > 1. Fitness = canonical N5 iterations (best-reward start); 0 outside."""
+    if sum(1 for v in range(len(G[0])) if G[1][v] == 1 and len(G[2][v]) > 1) > 1: return 0
+    g = pg.Game(*G); states, _ = trace(g, check=False); return len(states) - 1
+def fit_seg1o(G):
+    """class C^1O, canonical N5: fitness = longest stretch of iterations with (θ = Ξ(o), w = W(o), tau) constant at the stretch's
+    start states, minus (n - 1). -999 outside the class."""
+    n = len(G[0]); odd = [v for v in range(n) if G[1][v] == 1 and len(G[2][v]) > 1]
+    if len(odd) != 1: return -999
+    o = odd[0]; g = pg.Game(*G); E = Engine(g); states, _ = trace(g, check=False)
+    from h1 import wvals
+    key = []
+    for s, t in states:
+        X = E.evaluate(s)[0]; Ed = Engine(dual(g)); Y = Ed.evaluate(t)[0]
+        key.append((X[o], wvals(g, s, t)[1][o], t, tuple(x[0] for x in X), tuple(y[0] for y in Y)))   # + joint λ
+    best = cur = 0
+    for k in range(1, len(states)):
+        cur = cur + 1 if k > 1 and key[k - 1] == key[k - 2] else 1
+        best = max(best, cur)
+    return best - (n - 1)
 def even_only(g, sigma, tau, cap=10 ** 5):
     E, Ed = Engine(g), Engine(dual(g)); k = 0
     while k < cap:
@@ -74,7 +94,7 @@ def fit_tany(G, K=6):
     return best
 if __name__ == "__main__":
     mode, n, seed, secs, out = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), float(sys.argv[4]), sys.argv[5]
-    fit = {"tstar": fit_tstar, "tany": fit_tany, "tstarph": fit_tstarph, "plainph": fit_plainph, "bestph": fit_bestph}[mode]
+    fit = {"tstar": fit_tstar, "tany": fit_tany, "tstarph": fit_tstarph, "plainph": fit_plainph, "bestph": fit_bestph, "oneodd": fit_oneodd, "seg1o": fit_seg1o}[mode]
     rng = random.Random(seed); G = randgame(rng, n); f = fit(G); t0 = time.time(); it = 0
     while time.time() - t0 < secs:
         H = mutate(rng, G); it += 1
