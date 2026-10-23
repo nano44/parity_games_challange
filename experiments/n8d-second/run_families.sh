@@ -4,7 +4,7 @@
 set -u
 cd "$(dirname "$0")/../.."
 B=experiments/n8d-second/bench.py
-R=experiments/n8d-second/results
+R=${OUTDIR:-experiments/n8d-second/results}
 mkdir -p "$R"
 OK=tools/oink/build
 HF="python3 experiments/hard-families/pgsolver_port.py"
@@ -29,6 +29,6 @@ GEN[recursiveladder]="$HF recursiveladder {N}";              SIZES[recursiveladd
 FAMS="${*:-famF famG famH famL counter_qpt counter_m counter_rr counter_ortl counter_symsi recursiveladder counter_dp counter_core counter_rob tc+ tc switchbestexp switchallexp}"
 for f in $FAMS; do
   python3 $B family "$f" --gen "${GEN[$f]}" --sizes ${SIZES[$f]} --seeds 1 2 3 4 5 6 7 8 9 10 --jobs "${JOBS:-2}" \
-    --timeout 7200 --out "$R/$f.kl2.csv" > "$R/$f.kl2.log" 2>&1
+    --timeout 7200 --impl "${IMPL:-kl2}" --out "$R/$f.${IMPL:-kl2}.csv" > "$R/$f.${IMPL:-kl2}.log" 2>&1
   echo "$f exit $? $(tail -1 "$R/$f.kl2.log")"
 done

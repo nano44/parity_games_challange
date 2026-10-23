@@ -2,11 +2,12 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-23 (successor 2, session_01TpuThMoeBcLB2T5KKeJpAa). Lead GO 05:41Z for STEP 2: second independent implementation of
-N8d-R2 (Koh-Loho SI, perfect tree, single switch) in experiments/n8d-second/. kl2.py FROZEN at the commit "L-COMP: N8d second
-implementation frozen" (written from arXiv 2108.13338v5 + N8d §0 only). Next: run bench.py on L-NEW's family sizes and on
-rand10k (gen.py corpus DIR 10000 20261023 --nmin 1 --nmax 120, manifest sha1 c2b19244e676), then compare with
-experiments/new/kl/results/*.r1.csv (exact) and *.r2*.csv (distributions).
+2026-10-23 ~07:45Z (successor 2, session_01TpuThMoeBcLB2T5KKeJpAa). N8d step 2 (second independent implementation) essentially
+DONE: experiments/n8d-second/ (kl2.py frozen c0dc7a21 from arXiv 2108.13338v5 + N8d §0 only; README "Results").
+0 wrong regions / strategies in 41,000+ runs; R1 AND R2-seed-1 equal to L-NEW per instance everywhere (rand10k 10,000/10,000;
+every family row); R2 means ~n^1..n^2, switchallexp to n = 287 slope 1.96. Last run: switchbestexp R2 N = 14, 16 (seeds 1-10).
+Next (if routed): larger switchbestexp/switchallexp sizes for the growth class; R2 under adversarial renumbering (the draw is
+over sorted ids, so renumbering changes R2's sequence but not its distribution).
 
 ## Queue (for the successor, after the running cells)
 0. sat-hard state (from the 2026-10-14 resume point): CEGAR-only s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT; CNFs lost
@@ -146,6 +147,14 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
   converge, clique bounds are always 1 (shared tail -> same limsup parity), annealing / state merging fail.
 - Never `pkill -f PATTERN` where PATTERN occurs in the current shell's own command line: it kills the shell (exit 144).
   List pids with `ps -eo pid,args | grep ...` first, then kill by pid.
+
+- N8d (2026-10-23): kl2.py needs about n*d/2 Tarjan runs per pivot (Phi_p for every even p); switchbestexp N = 14 (n = 360)
+  takes ~400 s per R2 run, N = 16 ~2x that. The naive-lifting oracle (--check) is exponential in d: use only n <= 16, d <= 6.
+- N8d: the R2 draw `random.Random(seed).choice(sorted candidates)` reproduces L-NEW's sequence exactly, so R2 seeds are
+  comparable per instance across the two codes.
+- famF/G/H/L: the added nodes are isolated Even self-loops with top priorities; pivot counts are constant in k by construction
+  (R1 and every R2 seed), so these families test only correctness, not growth. counter_core N and counter_dp 2N give identical
+  counts for every rule and seed.
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |

@@ -1,0 +1,111 @@
+switchallexp 1 r1  1 14 0.008 zlk OK
+switchallexp 1 r2 1 1 19 0.015 zlk OK
+switchallexp 1 r2 2 1 12 0.008 zlk OK
+switchallexp 1 r2 3 1 13 0.011 zlk OK
+switchallexp 1 r2 4 1 14 0.008 zlk OK
+switchallexp 1 r2 5 1 16 0.012 zlk OK
+switchallexp 1 r2 6 1 13 0.008 zlk OK
+switchallexp 1 r2 7 1 22 0.011 zlk OK
+switchallexp 1 r2 8 1 12 0.008 zlk OK
+switchallexp 1 r2 9 1 22 0.011 zlk OK
+switchallexp 1 r2 10 1 13 0.008 zlk OK
+switchallexp 2 r1  2 39 0.045 zlk OK
+switchallexp 2 r2 1 2 34 0.045 zlk OK
+switchallexp 2 r2 2 2 41 0.065 zlk OK
+switchallexp 2 r2 3 2 44 0.049 zlk OK
+switchallexp 2 r2 4 2 27 0.033 zlk OK
+switchallexp 2 r2 5 2 35 0.043 zlk OK
+switchallexp 2 r2 6 2 38 0.044 zlk OK
+switchallexp 2 r2 7 2 32 0.037 zlk OK
+switchallexp 2 r2 8 2 46 0.054 zlk OK
+switchallexp 2 r2 9 2 46 0.067 zlk OK
+switchallexp 2 r2 10 2 45 0.055 zlk OK
+switchallexp 3 r1  3 84 0.171 zlk OK
+switchallexp 3 r2 1 3 49 0.107 zlk OK
+switchallexp 3 r2 2 3 74 0.196 zlk OK
+switchallexp 3 r2 3 3 57 0.146 zlk OK
+switchallexp 3 r2 4 3 111 0.225 zlk OK
+switchallexp 3 r2 5 3 56 0.169 zlk OK
+switchallexp 3 r2 6 3 72 0.162 zlk OK
+switchallexp 3 r2 7 3 80 0.180 zlk OK
+switchallexp 3 r2 8 3 48 0.097 zlk OK
+switchallexp 3 r2 9 3 43 0.092 zlk OK
+switchallexp 3 r2 10 3 72 0.141 zlk OK
+switchallexp 4 r1  4 165 0.592 zlk OK
+switchallexp 4 r2 1 4 100 0.437 zlk OK
+switchallexp 4 r2 2 4 79 0.273 zlk OK
+switchallexp 4 r2 3 4 95 0.372 zlk OK
+switchallexp 4 r2 4 4 86 0.275 zlk OK
+switchallexp 4 r2 5 4 142 0.474 zlk OK
+switchallexp 4 r2 6 4 147 0.480 zlk OK
+switchallexp 4 r2 7 4 102 0.338 zlk OK
+switchallexp 4 r2 8 4 118 0.363 zlk OK
+switchallexp 4 r2 9 4 132 0.433 zlk OK
+switchallexp 4 r2 10 4 103 0.357 zlk OK
+switchallexp 5 r1  5 318 1.510 zlk OK
+switchallexp 5 r2 1 5 187 0.892 zlk OK
+switchallexp 5 r2 2 5 120 0.612 zlk OK
+switchallexp 5 r2 3 5 153 0.873 zlk OK
+switchallexp 5 r2 4 5 155 0.875 zlk OK
+switchallexp 5 r2 5 5 205 1.136 zlk OK
+switchallexp 5 r2 6 5 139 0.676 zlk OK
+switchallexp 5 r2 7 5 111 0.558 zlk OK
+switchallexp 5 r2 8 5 132 0.674 zlk OK
+switchallexp 5 r2 9 5 215 1.140 zlk OK
+switchallexp 5 r2 10 5 135 0.691 zlk OK
+switchallexp 6 r1  6 615 3.932 zlk OK
+switchallexp 6 r2 1 6 142 1.004 zlk OK
+switchallexp 6 r2 2 6 87 0.624 zlk OK
+switchallexp 6 r2 3 6 218 1.526 zlk OK
+switchallexp 6 r2 4 6 182 1.247 zlk OK
+switchallexp 6 r2 5 6 186 1.144 zlk OK
+switchallexp 6 r2 6 6 243 1.523 zlk OK
+switchallexp 6 r2 7 6 346 2.308 zlk OK
+switchallexp 6 r2 8 6 255 1.733 zlk OK
+switchallexp 6 r2 9 6 197 1.281 zlk OK
+switchallexp 6 r2 10 6 260 1.710 zlk OK
+switchallexp 7 r1  7 1200 9.990 zlk OK
+switchallexp 7 r2 1 7 208 1.867 zlk OK
+switchallexp 7 r2 2 7 139 1.189 zlk OK
+switchallexp 7 r2 3 7 313 2.593 zlk OK
+switchallexp 7 r2 4 7 417 3.530 zlk OK
+switchallexp 7 r2 5 7 357 2.954 zlk OK
+switchallexp 7 r2 6 7 499 4.337 zlk OK
+switchallexp 7 r2 7 7 345 2.886 zlk OK
+switchallexp 7 r2 8 7 289 2.634 zlk OK
+switchallexp 7 r2 9 7 267 2.337 zlk OK
+switchallexp 7 r2 10 7 225 2.007 zlk OK
+switchallexp 8 r1  8 2361 25.584 zlk OK
+switchallexp 8 r2 1 8 283 3.126 zlk OK
+switchallexp 8 r2 2 8 364 3.956 zlk OK
+switchallexp 8 r2 3 8 276 3.165 zlk OK
+switchallexp 8 r2 4 8 469 5.182 zlk OK
+switchallexp 8 r2 5 8 385 4.208 zlk OK
+switchallexp 8 r2 6 8 351 3.757 zlk OK
+switchallexp 8 r2 7 8 342 3.650 zlk OK
+switchallexp 8 r2 8 8 455 4.979 zlk OK
+switchallexp 8 r2 9 8 562 6.162 zlk OK
+switchallexp 8 r2 10 8 294 3.296 zlk OK
+switchallexp 9 r1  9 4674 64.334 zlk OK
+switchallexp 9 r2 1 9 343 4.971 zlk OK
+switchallexp 9 r2 2 9 599 8.451 zlk OK
+switchallexp 9 r2 3 9 558 7.724 zlk OK
+switchallexp 9 r2 4 9 572 7.765 zlk OK
+switchallexp 9 r2 5 9 310 4.189 zlk OK
+switchallexp 9 r2 6 9 417 5.513 zlk OK
+switchallexp 9 r2 7 9 547 7.441 zlk OK
+switchallexp 9 r2 8 9 563 7.863 zlk OK
+switchallexp 9 r2 9 9 465 6.451 zlk OK
+switchallexp 9 r2 10 9 291 4.093 zlk OK
+switchallexp 10 r1  10 9291 155.735 zlk OK
+switchallexp 10 r2 1 10 500 8.217 zlk OK
+switchallexp 10 r2 2 10 458 7.905 zlk OK
+switchallexp 10 r2 3 10 650 10.844 zlk OK
+switchallexp 10 r2 4 10 533 8.858 zlk OK
+switchallexp 10 r2 5 10 632 10.429 zlk OK
+switchallexp 10 r2 6 10 1002 16.349 zlk OK
+switchallexp 10 r2 7 10 659 11.011 zlk OK
+switchallexp 10 r2 8 10 634 11.016 zlk OK
+switchallexp 10 r2 9 10 643 10.916 zlk OK
+switchallexp 10 r2 10 10 613 10.519 zlk OK
+done: 0 failures

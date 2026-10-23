@@ -4,7 +4,7 @@ labelled ref=tl), strategies checked by experiments/harness/verify.py.
   bench.py family NAME --gen 'CMD {N}' --sizes N.. [--seeds 1..] [--timeout S] [--out CSV]
   bench.py corpus DIR [--seeds 1] [--jobs 4] [--out CSV]       (every *.pg in DIR, sorted by name)
 
-CSV: family,N,file,n,m,d,rule,seed,pivots_primal,pivots_dual,time,ref,status
+CSV: family,N,file,n,m,d,rule,seed,pivots_primal,pivots_dual,time,ref,status,impl (--impl kl2 | kl2fast)
 status: OK | MISMATCH (regions != reference) | BADSTRAT (verify.py rejects) | TIMEOUT | ERROR:<msg>."""
 import argparse
 import csv
@@ -25,7 +25,7 @@ import verify  # noqa: E402
 import kl2  # noqa: E402
 
 OINK = os.path.join(ROOT, "tools", "oink", "build", "oink")
-FIELDS = ["family", "N", "file", "n", "m", "d", "rule", "seed", "pivots_primal", "pivots_dual", "time", "ref", "status"]
+FIELDS = ["family", "N", "file", "n", "m", "d", "rule", "seed", "pivots_primal", "pivots_dual", "time", "ref", "status", "impl"]
 
 
 def oink_ref(path, g):
@@ -42,13 +42,14 @@ def oink_ref(path, g):
 
 def run_one(args):
     """(path, family, N, rule, seed, timeout) -> row. Runs kl2 in a child process for the timeout."""
-    path, family, N, rule, seed, timeout, ref, refname = args
+    path, family, N, rule, seed, timeout, ref, refname = args[:8]
+    impl = args[8] if len(args) > 8 else "kl2"
     g = pg.read(path)
-    row = dict(family=family, N=N, file=os.path.basename(path), n=g.n, m=g.m, d=len(set(g.prio)), rule=rule,
+    row = dict(impl=impl, family=family, N=N, file=os.path.basename(path), n=g.n, m=g.m, d=len(set(g.prio)), rule=rule,
                seed=seed if rule == "r2" else "", ref=refname)
     with tempfile.TemporaryDirectory() as td:
         out = os.path.join(td, "sol")
-        cmd = [sys.executable, os.path.join(HERE, "kl2.py"), path, out, "--rule", rule, "--seed", str(seed)]
+        cmd = [sys.executable, os.path.join(HERE, impl + ".py"), path, out, "--rule", rule, "--seed", str(seed)]
         t0 = time.time()
         try:
             r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
@@ -76,10 +77,10 @@ def run_one(args):
 
 
 def corpus_task(args):
-    path, rules, timeout = args
+    path, rules, timeout, impl = args
     g = pg.read(path)
     ref, refname = oink_ref(path, g)
-    return [run_one((path, "rand", "", rule, seed, timeout, ref, refname)) for rule, seed in rules]
+    return [run_one((path, "rand", "", rule, seed, timeout, ref, refname, impl)) for rule, seed in rules]
 
 
 def main():
@@ -93,6 +94,7 @@ def main():
     ap.add_argument("--timeout", type=float, default=1800)
     ap.add_argument("--jobs", type=int, default=4)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--impl", default="kl2", choices=["kl2", "kl2fast"], help="kl2.py (frozen) or kl2fast.py (C lfp)")
     a = ap.parse_args()
     rules = ([] if a.no_r1 else [("r1", 1)]) + [("r2", s) for s in a.seeds]
     bad = 0
@@ -107,7 +109,7 @@ def main():
                         subprocess.run(shlex.split(a.gen.replace("{N}", str(N))), stdout=f, check=True, cwd=ROOT)
                     g = pg.read(path)
                     ref, refname = oink_ref(path, g)
-                    tasks = [(path, a.target, N, rule, seed, a.timeout, ref, refname) for rule, seed in rules]
+                    tasks = [(path, a.target, N, rule, seed, a.timeout, ref, refname, a.impl) for rule, seed in rules]
                     with mp.Pool(a.jobs) as pool:
                         for row in pool.imap(run_one, tasks):
                             w.writerow(row); fo.flush()
@@ -118,7 +120,7 @@ def main():
             files = sorted(os.path.join(a.target, f) for f in os.listdir(a.target) if f.endswith(".pg"))
             k = 0
             with mp.Pool(a.jobs) as pool:
-                for rows in pool.imap(corpus_task, [(p, rules, a.timeout) for p in files], chunksize=4):
+                for rows in pool.imap(corpus_task, [(p, rules, a.timeout, a.impl) for p in files], chunksize=4):
                     for row in rows:
                         w.writerow(row)
                         bad += row["status"] not in ("OK", "TIMEOUT")

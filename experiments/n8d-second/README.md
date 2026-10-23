@@ -31,7 +31,27 @@ counts), the harness (experiments/harness/), Oink.
   ties smallest successor id (§0).
 - Least fixed point mu^{G_tau up}: Algorithm 3 (LabelSetting, §4.1) with line 3 kept (lifts applied in node-id order) and
   Algorithm 2 (Dijkstra, §4) with a lazy binary heap; Phi_p numbers the SCCs of H_p in Tarjan completion order (sink = 1).
-  By Theorem 4.3 the result is unique, so these choices cannot change pivot counts; `--check` compares with naive lifting.
+  By Thm 4.4 / Cor 4.3 (my count; labels thm:label-setting, cor:dijkstra) the result is unique, so these choices cannot change pivot counts; `--check` compares with naive lifting.
 
-## Results
-(filled after the freeze commit; see notes/L-COMP.md)
+## Results (2026-10-23, date -u; freeze commit c0dc7a21, runs 05:50-08:xxZ)
+Every run: regions == Oink zlk @ 8fbf0a7 (zlk never aborted; no tl fallback was needed) and strategies of both players
+verified by experiments/harness/verify.py. **0 MISMATCH, 0 BADSTRAT, 0 TIMEOUT, 0 ERROR in every file below.**
+
+| bench | runs | result vs L-NEW (experiments/new/kl/results) |
+| --- | --- | --- |
+| rand10k (`gen.py corpus DIR 10000 20261023 --nmin 1 --nmax 120`, manifest sha1 c2b19244e676 confirmed), R1 + R2 seeds 1-3 | 40,000 | R1: 10,000/10,000 equal per instance (primal and dual); R2 seed 1: 10,000/10,000 equal per instance |
+| 17 families at L-NEW's sizes (N8d §2), R1 + R2 seeds 1-10 | 1,155 | R1 equal on every row of every *.r1.csv; R2 seed 1 equal on every row of every *.r2.csv; L-NEW's extra seeds (growing/sbe/switchallexp .r2seeds.csv) equal on all 19 overlapping (family, N, seed) |
+| switchallexp R2 extension N = 12..20, seeds 1-10 | 50 | beyond L-NEW's sizes (their seeds 1-5 at N = 12, 14 equal) |
+| switchbestexp R2 extension N = 14, 16, seeds 1-10 | 20 | beyond L-NEW's sizes |
+
+Exact R2 agreement means the R2 draw is the same in both codes; the spec's unpinned candidate-list order was resolved the same
+way (increasing node id, `random.Random(seed).choice`). So the distributional comparison of the brief collapses to an exact one.
+The choices C1 (priority shift) and C3 (tau_1 = first successor) are consistent with L-NEW's (R1 agrees on all 10,000 + family instances; I did not read their code to confirm).
+
+R2 growth (mean of seeds 1-10, total pivots; tables in results/families.analysis.md): every family's local log-log slope against n
+stays <= 3.3 and the mean grows like n^1..n^2 on all families. The two steepest:
+- switchallexp (R1 doubles per N: dual 9,291 at N = 10, 33,157 for switchbestexp N = 12): R2 dual mean 212 (n = 91) -> 632 (147)
+  -> 952 (203) -> 1,456 (231) -> 1,798 (259) -> 2,007 (287); global slope n = 91..287: 1.96; ratio per 2 steps of N falls
+  (1.34, 1.13, 1.53, 1.24, 1.12). No sign of super-polynomial growth.
+- switchbestexp: R2 dual mean 584 (n = 160) -> 970 (210) -> 1,435 (260) -> 2,290 (310) -> 2,959 (360; seeds 1-10 range 1,670-4,025); slope 310 -> 360: 1.71. N = 16 (n = 410) pending.
+rand10k: R2 mean total pivots by n-bin 2.2 (n < 20), 7.3, 12.9, 18.3, 23.1, 29.8 (n 100-120): linear in n.
