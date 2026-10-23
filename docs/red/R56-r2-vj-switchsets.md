@@ -283,3 +283,75 @@ scan4_laps2_show260.txt.
   - Seed 3 stopped early at 1,230,538, verified OK. That is the same pivot as at k = 2, since both runs are identical up to the
     first level-2 carry.
   - The solvecheck re-runs of seeds 1-2 (hl88_k3_solvecheck.csv, header only) were stopped at 11:17Z in favour of HLg_3.
+
+## 4. Dead-end packet: N8d-R2 (written 2026-10-23 15:06Z by date -u; k = 3 row pending)
+Candidate: N8d-R2 (docs/new/N8d-single.md §0, frozen 03:21Z). Koh-Loho Algorithm 1 over the perfect (n, d/2)-universal tree; each
+step takes a uniformly random Odd node with an admissible arc and switches it to its largest-Tighten arc.
+Code: experiments/n8d-second/kl2fast.py (L-COMP; equal to L-NEW's kl_single.py seed for seed, checked here on HL88_0 seeds 1-3 and
+HL88_1 seed 1), run unmodified. The counted quantity is R2's dual pivots; primal pivots are 0 on every row.
+
+### 4a. The family (DATA; regenerable)
+- HLg_k = `experiments/red/kl24/hlgen.sh k L(k) L(k)`. It is R53's H_k (experiments/red/kl/famgen.py H k: klmin_n13 plus 2k
+  isolated self-loops with new top priorities) plus two z-separated delay lanes (experiments/red/kl24/lanegen.py):
+  - on node 7: length L, exit 2, inward target 3, open at the start;
+  - on node 8: length L, exit 6, inward target 1, closed at the start.
+  - z nodes: priority 23, owner Odd, one successor. Lane nodes: priority 1, owner Even.
+- Size n = 9 + 2k + 4L(k).
+- Schedule: L(k) = the least L ≥ 5 with ε̂(L)·n^{k+1} ≤ 0.05, where ε̂(L) = 2.2e-6·10^{−(L−7)}. Explicitly L = 5, 6, 8, 10 for
+  k = 0..3; asymptotically L(k) = Θ(k log k) (§3d).
+
+| k | L | n | sha1 |
+| --- | --- | --- | --- |
+| 0 | 5 | 29 | d2b96b4558248bf8f9248a5a6f0c20b569f8881c |
+| 1 | 6 | 35 | 2366cbadd9d592986143df8df1557b89b98bd59b |
+| 2 | 8 | 45 | 1c3c78895df68fd10690fd5ab5467f7f01546ee7 |
+| 3 | 10 | 55 | 9918e9b8463507401cf73a73a2945aa9bf5f23ac |
+
+### 4b. Verified runs (DATA)
+Check on every row: regions == Oink zlk @ 8fbf0a7 (-w 1), and both players' strategies pass experiments/harness/verify.py. Rows come
+from bench.py (--impl kl2fast --no-r1), except k = 3, which uses solvecheck.py (the same check in-process, without kl2's 10^7 pivot cap).
+
+| k | n | R2 dual pivots per seed | mean | full counter (≈ (4L+2)·n^{k+1}) | file |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 29 | 633, 623, 639, 643, 611 | 630 | 630 | results/hlg_k01.csv |
+| 1 | 35 | 32170, 32232, 32156, 32214, 32232 | 32,201 | 32,2xx | results/hlg_k01.csv |
+| 2 | 45 | 3139182, 3139646, 1230538, 3138968, 3139556 | 2,759,578 | 3,139,4xx | results/hl88_k012.csv |
+| 3 | 55 | PENDING: seeds 1-2 running in solvecheck.py since 11:17Z (est. 3.0-3.7e8 pivots at 15:06Z) | — | ≈ 42·55^4 ≈ 3.8e8 | results/hlg_k3.csv |
+- Growth of the mean: 630 → 32,201 → 2,759,578 (×51, ×86 per step of k; n 29 → 35 → 45). k = 3 pending.
+- Lead re-runs: HL88_0 / HLg rows (11:02Z), exactlap L = 5, 6 (12:25Z).
+
+### 4c. ε(L), the per-lap failure probability (DATA: exact chain; coverage caveats)
+- Steady per-lap ε (exact m-lap chain increments, HL_2, base seed 3, W 300, J 1): 6.2e-3, 5.75e-4, 3.92e-5, 2.1e-6, 1.0e-7 at
+  L = 4..8. Ratios ×10.8, ×14.7, ×18.3, ×21 (§3b).
+- One-lap values for L = 3..9: 1.70e-2, 4.35e-3, 3.91e-4, 2.75e-5, 4.55e-7, 7.90e-8, 8.2e-10.
+- Agreement with the full-run Poisson estimates wherever both exist (§3a).
+- Coverage caveats:
+  - one snapshot lap per L for the multi-lap chain;
+  - lap types: few distinct one-lap values at L = 4, 5, and the first lap after the start is not worse;
+  - every lap start scanned (two-lap chain) only at L = 4 (900 laps; average 1.32e-2 against the snapshot's 1.07e-2; 26 BAD starts
+    up to 0.24) and L = 5 (300 laps; average 9.0e-4 ≤ snapshot; worst 3.85e-3), §3b';
+  - L ≥ 9: one-lap only (L = 9) or extrapolated (L = 10).
+
+### 4d. Mechanism (READING)
+- R53's H_k is a lapping counter in label space: each period raises one label component by one, with a base-n carry through k + 1
+  levels. That gives n^{k+1} laps.
+- R2 killed it by two fatal early moves: 7's lap move before phase A, and 8's 6 -> 1 before 7 opens.
+- A delay lane on each fatal move makes the move need a lane-length run of sequential frontier picks.
+- The z truncations (priority 23, between the exit's reset rise 22 and the counted 28) make each lane reset fully every lap. This
+  repairs M2 (§1b): label-space truncation is idempotent, so without z a lane tail is tight with the shortcut and the lane never
+  unwinds.
+- A lap fails only if a frontier run of length L beats every remaining rescuer in the opposite lane. That costs (r+1)^−L with r
+  ≥ 1 rescuers, so ε(L) decays at least like 2^−L. The data show ratios that grow with L.
+- Hence choosing L(k) = Θ(k log k) keeps the expected number of failing laps ≤ 0.05 over n^{k+1} laps. The mean is then at least
+  0.95·(4L+2)·n^{k+1} = exp(Θ(n)).
+
+### 4e. Status labels
+- PROVED: nothing new. The family's correctness is checked per run, not proved. No theorem about R2 is claimed.
+- DATA (verified): the 4b table; the exact chains of 4c (deterministic computations from kl2fast's own functions); the full-run
+  ε estimates; the M1 / M2 per-state comparisons of §1.
+- READING: the mechanism 4d; the at-least-exponential decay of ε(L) beyond L = 8; the asymptotic schedule
+  L(k) = Θ(k log k); "mean = exp(Θ(n))" for k beyond the measured range.
+- Gaps for a proof:
+  - (G1) a bound ε(L) ≤ c·2^−L for EVERY lap type reachable in HLg_k, not just the sampled ones. BAD (partly corrupted) lap
+    starts dominate at L = 4 and no longer at L = 5; L ≥ 6 is not scanned;
+  - (G2) that lap failures are the only way R2 leaves the counter, which would give expected pivots ≥ (1 − Σ ε)·counter length.
