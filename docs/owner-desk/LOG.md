@@ -315,3 +315,9 @@ construction, transfers only if Lemma 4.75 holds for tree labels). Next: L-RED b
 N8d-R2 under serious attack: L-RED family HL_k (counter gadget + two delay lanes, n = 41+2k): mean steps ~34*n^(k+1) (1,388; 63,686;
 ~2.76M for k=0,1,2), all answers correct; Lead re-ran k=0,1 and part of k=2. Overturns the ~n^2 picture. Not yet a proven kill: fixed
 delay lanes cap growth via per-lap failure probability; L-RED measuring how it shrinks with lane length.
+
+## 2026-10-23T15:43Z relayed: Lead 2026-10-23 15:42Z required report (super-polynomial family)
+N8d-R2 DEAD: L-RED family HLg_k (n = 29/35/45/55), mean steps 630 / 32,201 / ~2.76M / ~389M (x51-141 per k, ~n^(k+1)), all correct;
+early-break probability falls exponentially with lane length (data + reading, not a proof). Lead re-ran smaller members; largest re-run
+in progress; CHECKER before DE30. Kept: unrefereed correctness proof for single-switch Koh-Loho SI. (c) lane without live candidate;
+Lead picks next direction (D15).
