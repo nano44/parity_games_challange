@@ -45,3 +45,27 @@ Status: DATA plus readings, unrefereed. Started 2026-10-23 07:41Z (date -u) on t
   extraction, and I did not transcribe the phase definitions by hand in this box. What the data shows: the run never reaches counter
   value 1 (cycles open at most a handful of times, no node switches more than 5 times), so the admissible sets have departed from Table
   4.17's by the end of the first increment at the latest. The exact first departing state is open.
+
+### 3b. n = 3 and the faithfulness check (Lead 08:39Z; 2026-10-23 09:59Z by date -u)
+- R2 dual pivots at n 3 (1346 vertices; kl_single.py, seeds 1-5; r2_gz3.txt; all check_sol2-verified): 1432, 1490, 1491, 1469, 1493 (mean 1475.0).
+- Faithfulness of gzeta.py and the start: classic strategy improvement for player 0 with Vöge-Jurdziński valuations under Random-Edge
+  (vj_re.py: L-SI's experiments/si/si.py Engine and its rule_random_edge, imported read-only; same all-0 start; regions vs Oink zlk;
+  vj_random_edge.txt):
+| n | vertices | VJ Random-Edge iterations, seeds 1-5 | VJ back-switches (cycle openings) | R2 dual pivots, seeds 1-5 (mean) |
+| --- | --- | --- | --- | --- |
+| 1 | 67 | 57, 57, 57, 57, 57 | 0 each | 63, 61, 60, 61, 60 (61.0) |
+| 2 | 389 | 824, 782, 828, 842, 854 | 225, 204, 227, 234, 240 | 405, 421, 389, 408, 404 (405.4) |
+| 3 | 1346 | 5420, 5192, 5270, 5214, 5218 | 2047, 1933, 1972, 1944, 1946 | 1432, 1490, 1491, 1469, 1493 (1475.0) |
+- Under VJ / Random-Edge the cycles open and close thousands of times and the count multiplies by ×14.5 then ×6.3 per bit: the generator
+  and start reproduce Friedmann's counter (in the reachable range; Thm 4.76's 2^n regime needs larger n). Under R2 on the same games the
+  pivots stay ≈ the number of cycle vertices (55 / 370 / 1320) with few openings (≤ 22 at n 2): R2 does not follow the counter.
+
+## 4. Status at box end (reading)
+- No kill of N8d-R2. On Friedmann's own Random-Edge game, R2 closes each cycle about once and stops (pivots ≈ |cycle vertices|, linear in
+  the game size), while VJ Random-Edge counts on the identical games. The transfer fails exactly where L-LIT T26 placed it (Lemma 4.75):
+  tree-label admissible sets do not track VJ improving-switch sets. The first departing state is NOT located; it is now checkable by
+  running VJ and R2 from the same strategy and comparing the switch sets step by step (Table 4.17 not needed).
+- Forced-chain gadgets: an AND-join gate fails because the ratchet lets earlier raises pass it (§2); lap-count climbs reached 6 laps at
+  n 22 (min over 5 seeds) against ~21 needed. Reason it blocks every gadget class tried (reading): a lapping counter needs a period whose
+  every R2-reachable order keeps the cycle open; in all gadgets seen, some node's lap move becomes admissible before its prerequisites,
+  and µ's history dependence makes min-gates useless for ordering within a period. Not a proof.
