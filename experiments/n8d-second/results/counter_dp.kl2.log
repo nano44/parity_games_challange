@@ -1,0 +1,67 @@
+counter_dp 2 r1  2 1 0.001 zlk OK
+counter_dp 2 r2 1 2 1 0.001 zlk OK
+counter_dp 2 r2 2 2 1 0.001 zlk OK
+counter_dp 2 r2 3 2 1 0.001 zlk OK
+counter_dp 2 r2 4 2 1 0.001 zlk OK
+counter_dp 2 r2 5 2 1 0.001 zlk OK
+counter_dp 2 r2 6 2 1 0.001 zlk OK
+counter_dp 2 r2 7 2 1 0.001 zlk OK
+counter_dp 2 r2 8 2 1 0.001 zlk OK
+counter_dp 2 r2 9 2 1 0.001 zlk OK
+counter_dp 2 r2 10 2 1 0.001 zlk OK
+counter_dp 4 r1  6 4 0.006 zlk OK
+counter_dp 4 r2 1 6 4 0.003 zlk OK
+counter_dp 4 r2 2 6 4 0.003 zlk OK
+counter_dp 4 r2 3 6 4 0.009 zlk OK
+counter_dp 4 r2 4 4 2 0.015 zlk OK
+counter_dp 4 r2 5 4 2 0.002 zlk OK
+counter_dp 4 r2 6 4 2 0.002 zlk OK
+counter_dp 4 r2 7 4 2 0.002 zlk OK
+counter_dp 4 r2 8 4 2 0.002 zlk OK
+counter_dp 4 r2 9 4 2 0.006 zlk OK
+counter_dp 4 r2 10 4 2 0.002 zlk OK
+counter_dp 8 r1  20 16 0.018 zlk OK
+counter_dp 8 r2 1 12 8 0.015 zlk OK
+counter_dp 8 r2 2 16 12 0.032 zlk OK
+counter_dp 8 r2 3 10 6 0.018 zlk OK
+counter_dp 8 r2 4 8 4 0.015 zlk OK
+counter_dp 8 r2 5 12 6 0.012 zlk OK
+counter_dp 8 r2 6 10 8 0.014 zlk OK
+counter_dp 8 r2 7 8 4 0.011 zlk OK
+counter_dp 8 r2 8 8 4 0.011 zlk OK
+counter_dp 8 r2 9 10 4 0.008 zlk OK
+counter_dp 8 r2 10 10 4 0.008 zlk OK
+counter_dp 12 r1  42 36 0.124 zlk OK
+counter_dp 12 r2 1 20 10 0.044 zlk OK
+counter_dp 12 r2 2 20 12 0.055 zlk OK
+counter_dp 12 r2 3 20 14 0.062 zlk OK
+counter_dp 12 r2 4 20 14 0.047 zlk OK
+counter_dp 12 r2 5 18 8 0.022 zlk OK
+counter_dp 12 r2 6 16 10 0.043 zlk OK
+counter_dp 12 r2 7 20 14 0.057 zlk OK
+counter_dp 12 r2 8 24 18 0.071 zlk OK
+counter_dp 12 r2 9 22 16 0.055 zlk OK
+counter_dp 12 r2 10 18 14 0.053 zlk OK
+counter_dp 16 r1  72 64 0.245 zlk OK
+counter_dp 16 r2 1 30 22 0.083 zlk OK
+counter_dp 16 r2 2 24 14 0.078 zlk OK
+counter_dp 16 r2 3 24 16 0.070 zlk OK
+counter_dp 16 r2 4 20 12 0.061 zlk OK
+counter_dp 16 r2 5 30 12 0.082 zlk OK
+counter_dp 16 r2 6 18 12 0.081 zlk OK
+counter_dp 16 r2 7 34 22 0.098 zlk OK
+counter_dp 16 r2 8 26 18 0.074 zlk OK
+counter_dp 16 r2 9 20 16 0.048 zlk OK
+counter_dp 16 r2 10 28 14 0.067 zlk OK
+counter_dp 20 r1  110 100 0.572 zlk OK
+counter_dp 20 r2 1 40 22 0.233 zlk OK
+counter_dp 20 r2 2 46 36 0.217 zlk OK
+counter_dp 20 r2 3 30 18 0.159 zlk OK
+counter_dp 20 r2 4 32 20 0.171 zlk OK
+counter_dp 20 r2 5 34 14 0.115 zlk OK
+counter_dp 20 r2 6 28 18 0.108 zlk OK
+counter_dp 20 r2 7 52 40 0.225 zlk OK
+counter_dp 20 r2 8 32 22 0.114 zlk OK
+counter_dp 20 r2 9 26 14 0.066 zlk OK
+counter_dp 20 r2 10 22 22 0.072 zlk OK
+done: 0 failures
