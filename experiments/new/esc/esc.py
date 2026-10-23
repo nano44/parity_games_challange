@@ -89,7 +89,12 @@ def esc_feasible(g, max_iter=500, tol=1e-7, taus=(), return_s=False):
             return (False, cuts, it + 1, None) if return_s else (False, cuts, it + 1)
         if res.status != 0:
             raise RuntimeError(f"LP status {res.status}")
-        s = res.x[:nE]
+        x = res.x
+        viol = max([0.0] + [float(np.dot(r_, x) - b_) for r_, b_ in zip(A_ub, b_ub)] +
+                   [abs(float(np.dot(r_, x) - b_)) for r_, b_ in zip(A_eq, b_eq)])
+        if viol > 1e-6:
+            raise RuntimeError(f"LP point violates its constraints by {viol}")
+        s = x[:nE]
         sval = lambda v, u: (s[eidx[(v, u)]] if (v, u) in eidx else 1.0)
         found = False
         for U0, clo in fams:

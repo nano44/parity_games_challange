@@ -10,7 +10,7 @@ one's failure (N10a -> N10b -> N10c); the table gives the order in which I would
 ## Ranking
 | rank | id | approach | L1 (progress) | L2 (one-player) | two-player test result (DATA) | cost |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | N10c | conditioning (self-reduction) on the N10b oracle | Even vertices fixed one by one (<= n steps; no potential) | exact, PROVED (Lemma D) | STUCK on 1 of 2,000 random games (r1569, n = 14); larger runs at §3(f) | done (1 h) |
+| 1 | N10c | conditioning (self-reduction) on the N10b oracle | Even vertices fixed one by one (<= n steps; no potential) | exact, PROVED (Lemma D) | STUCK on 1 of 8,000 random games (r1569, n = 14; 0 of 6,000 with n <= 10) and on counter_symsi N = 3 | done (1 h) |
 | 2 | N10b | ACYC + ESCAPE cuts, families ESC1 and ESC-tau (tau = rounded Odd-side REGION LP) | one LP with cutting planes (no potential) | exact, PROVED (Lemma B) | 3 gaps in 5,432 random queries; gaps on counter_symsi N = 2, 3 (Q3); 0 in 17,528 exhaustive (n = 3) | done (40 min) |
 | 3 | N10a | ACYC + ESC1 cuts only | as N10b | exact, PROVED (Lemma B) | 15 gaps in 800 random queries | done (30 min) |
 | 4 | N10d | ESC-tau with tau from a RECURSIVE call (exact separation for (U, tau)) | recursion | exact | not run: exact (U, tau) separation is the problem itself; recursion = Zielonka-type (B5 families) | > 3 h |
@@ -102,9 +102,20 @@ lapping counter), and N9c has no one-player exactness argument (L2).
   - random seeds 1000..2999 (n 3-14): 2,715 YES-instances solved, 1 STUCK; 716 NO answered NO; 9,200 oracle calls; 530 s
     (results/cond_rand2000.txt). STUCK: r1569, the Even query on G[W_E] = G (n = 14, Even wins every vertex; Oink zlk agrees):
     instances/cond_stuck_r1569_YE.pg (sha1 c7715537ff454341b3309ea058796c1f759c1ba6); cond.condition returns STUCK after 7 calls.
-  - random seeds 5000..10999 (n 4-10) and hard families + pinned games: running at this push (results/cond_rand6000_n4-10.txt,
-    results/cond_hard.txt).
-  Verdict: DEAD as stated (one STUCK yes-instance, n = 14). Not a region algorithm either: it answers only the "Even wins all"
+  - random seeds 5000..10999 (n 4-10): 8,022 YES-instances solved, 0 STUCK; 2,022 NO answered NO; 24,014 oracle calls; 734 s
+    (results/cond_rand6000_n4-10.txt).
+  - Where r1569 fails (trace1569.py, results/trace1569.txt): v = 2 -> 3 is accepted correctly; v = 7 -> 10 (LP value 0.967) is
+    accepted although the restricted game is lost by Even everywhere (Zielonka and Oink zlk: player 1 wins all 14 vertices);
+    the run is then STUCK at v = 10. That restricted game is an N10b gap at n = 14:
+    instances/esc_gap_from_r1569.pg (sha1 194a1ff6c5d83307f221180b39cdba11eb891c06). The oracle's LP point passes a residual check
+    (<= 1e-6, esc.py), so the gap is not a tolerance artefact of the final point.
+  - Hard families' smallest members + pinned games (condtest.py files, results/cond_hard.txt): STUCK on counter_symsi N = 3, the
+    Even query on G[W_E] (n = 32, Even wins every vertex; Oink zlk agrees): instances/cond_stuck_symsi3_YE.pg (sha1
+    4483eb7c813989cb79edf76c6e604367d39db75a). Every game before it in argument order (counter_core, _dp, _m, _ortl, _qpt, _rob,
+    _rr N <= 3 and counter_symsi N = 1, 2) finished without STUCK. The run was stopped at 20:58Z after about 49 min, so the games
+    after it (tc, tc+ N = 1, 2, switchallexp N = 3, pinned games) are NOT FINISHED. Re-run from the pinned file:
+    STUCK after 14 oracle calls, 770 s, with the residual check on (results/cond_symsi3_repro.txt).
+  Verdict: DEAD as stated (STUCK yes-instances r1569, n = 14, and counter_symsi N = 3, n = 32). Not a region algorithm either: it answers only the "Even wins all"
   query; regions would need a REGION version (OPEN, not built).
 
 ## 4. N10d (rank 4, not run)
