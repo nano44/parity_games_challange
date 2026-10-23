@@ -283,3 +283,8 @@ No incorrect run, no super-poly family, no overage. All working sessions parked.
 N8a (Koh & Loho strategy iteration over a universal tree, arXiv 2108.13338, 'global' pivot rule) passed the HARD-BENCH part of step 2
 on data: 13 families to n = 658, pivots small (tc <= 15, counter_symsi <= 16, switchbestexp <= 60), outputs verified; Lead re-ran 3.
 Caveats: bench untargeted; random part running; only quasi-poly bound known, no proof route. Running: L-NEW, L-RED attack, L-LIT step 3.
+
+## 2026-10-23T02:36Z relayed: Lead 2026-10-23 02:41Z required report (super-polynomial family)
+N8a switch-all pivot rule on the perfect universal tree: L-RED family with 4*n^L + 3 pivots (n^Theta(n)); Lead re-ran n=16 (16,387)
+and n=18 (419,907), Oink-verified. Switch-all is a dead end. N8a 'global' rule NOT killed (3/8 pivots on the same games); L-RED
+attacking it; step 3 found no known lower bound. No incorrect run.
