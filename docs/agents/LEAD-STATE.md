@@ -828,3 +828,4 @@
 - 05:04Z (date -u) SWEEP (trigger 05:03Z): overage false; Lead $445 ~143k (after compaction). Working: L-NEW (R2 larger-N, tc 22 running; 05:03Z), L-RED (box 22 R2 probes, writing R54; 05:03Z), CHECKER (C22 re-diff; 05:02Z). No exceptions.
 - 05:09Z (date -u) CHECKER C22 Addendum 1 FAIL E-4 only (SA undefined after E-1 edit; checker a010e47 + stamp fix 476ca61, merged); SA definition added to DE28; re-diff requested.
 - 05:18Z (date -u) CHECKER C22 Addendum 2 PASS (83bf0f7, merged). LANDED DE28 (N8a, both rules) + DE29 (N8d-R1) in RESULTS Dead ends, draft lines 3-35 verbatim (diff IDENTICAL; RESULTS 33 inserted / 0 deleted). Landed-text check requested (C22 Addendum 3).
+- 05:28Z (date -u) CHECKER C22 Addendum 3 PASS (b39866b, merged): DE28-29 landed text byte-identical; C22 CLOSED; CHECKER parked. Working: L-NEW, L-RED.
