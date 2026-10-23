@@ -296,3 +296,7 @@ n=18 (2,598), n=20 (64,006), Oink-verified. Next: transfer to every universal tr
 ## 2026-10-23T03:49Z relayed: Lead 2026-10-23 03:51Z required report (exponential family)
 N8d (tree strategy iteration, one node at a time): index-order rule R1 EXPONENTIAL on switchallexp (~9*2^N pivots; Lead re-ran N=6: 615,
 N=7: 1,200, Oink-verified). Random-node rule R2 still measured. L-NEW independently found a second N8a kill family. No incorrect run.
+
+## 2026-10-23T04:30Z relayed: Lead 2026-10-23 04:29Z information (L37)
+N8d-R2 (one random node per step) looks polynomial so far: 10,000 random games + 13 hard families verified; mean steps ~n^1.9 on the two
+Friedmann families; Lead re-ran 3 largest points + 100 random games. Data, not a claim. L-RED attacking with random-pivot lower bounds.
