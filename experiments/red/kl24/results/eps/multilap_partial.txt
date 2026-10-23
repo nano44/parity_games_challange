@@ -1,0 +1,7 @@
+L 5 LAPS 2: states 9280   exact P(fail) = 0.000973922   P(success) = 0.999026   sum = 1 
+L 5 LAPS 3: states 15312   exact P(fail) = 0.00154919   P(success) = 0.998451   sum = 1 
+L 6 LAPS 2: states 37088   exact P(fail) = 6.7596e-05   P(success) = 0.999932   sum = 1 
+L 6 LAPS 3: states 61440   exact P(fail) = 0.000106804   P(success) = 0.999893   sum = 1 
+L 7 LAPS 2: states 148288   exact P(fail) = 2.4664e-06   P(success) = 0.999998   sum = 1 
+L 7 LAPS 3: states 246144   exact P(fail) = 4.6071e-06   P(success) = 0.999995   sum = 1 
+L 8 LAPS 2: states 591488   exact P(fail) = 1.80943e-07   P(success) = 1   sum = 1 

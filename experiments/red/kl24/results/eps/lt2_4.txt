@@ -1,0 +1,7 @@
+  seed 1: base pivots 786, snapshots 0, trials 0, failures 0
+  seed 2: base pivots 2278, snapshots 2, trials 4000, failures 12
+  seed 3: base pivots 3230, snapshots 10, trials 20000, failures 119
+  seed 4: base pivots 54, snapshots 0, trials 0, failures 0
+  seed 5: base pivots 1282, snapshots 0, trials 0, failures 0
+  seed 6: base pivots 3202, snapshots 9, trials 18000, failures 71
+eq_4.pg n 29: pooled trials 42000 failures 202: eps 0.00481 95% CI [0.00415, 0.0055] (W 2000, every 7-th lap, T 2000 per snapshot)

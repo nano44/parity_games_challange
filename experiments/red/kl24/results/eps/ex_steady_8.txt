@@ -1,0 +1,10 @@
+eq_8.pg n 45: snapshot seed 3 pivot 326 (lap 1 after W 300); max frontier 90653; total states 199168
+  exact P(fail) = 7.89835e-08   P(success) = 1   sum = 1
+  failure mass 2.323e-08 from the pick 8->44 |cand| 9
+  failure mass 2.075e-08 from the pick 7->30 |cand| 10
+  failure mass 1.066e-08 from the pick 29->28 |cand| 11
+  failure mass 7.171e-09 from the pick 27->26 |cand| 12
+  failure mass 5.246e-09 from the pick 25->24 |cand| 13
+  failure mass 4.021e-09 from the pick 23->22 |cand| 14
+  failure mass 3.184e-09 from the pick 21->20 |cand| 15
+  failure mass 2.584e-09 from the pick 19->18 |cand| 16
