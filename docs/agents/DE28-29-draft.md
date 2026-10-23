@@ -1,4 +1,4 @@
-# Draft RESULTS DE28-DE29 (Lead, 2026-10-23 04:35Z by date -u) — awaits CHECKER C22 re-diff (rev. 04:52Z: C22 E-1..E-3, N-1..N-3; checker 2e60ce3; rev. 05:08Z: C22 Addendum 1 E-4, checker 476ca61)
+# Draft RESULTS DE28-DE29 (Lead, 2026-10-23 04:35Z by date -u) — LANDED in RESULTS Dead ends (CHECKER C22 Addendum 2 PASS, checker 83bf0f7; lines 3-35 verbatim); was: awaits CHECKER C22 re-diff (rev. 04:52Z: C22 E-1..E-3, N-1..N-3; checker 2e60ce3; rev. 05:08Z: C22 Addendum 1 E-4, checker 476ca61)
 
 - DE28 (2026-10-23): N8a = Koh-Loho strategy iteration over the perfect (n, d/2)-universal tree (Koh & Loho arXiv 2108.13338, Algorithm 1;
   pdf sha256 21ee0e43…), with either frozen rule "global" or "switch-all" (L-NEW, (c) lane under D14/D15; docs/new/N8a-kohloho.md §2
