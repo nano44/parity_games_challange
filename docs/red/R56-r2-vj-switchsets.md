@@ -232,9 +232,13 @@ scan4_laps2_show260.txt.
   - Four runs are too few for a rate. The full-run estimates of §3a (L = 5-7), which include every route, agree with the steady
     increments of §3b within their CIs.
 - So at L = 4 the natural per-lap ε is about 25% above the snapshot value.
-- Whether the BAD laps' frequency × ε shrinks at larger L at least as fast as the steady value is NOT measured. The m-lap
-  increments of §3b include corrupted states reachable within m laps of the snapshot, but no scan was run at L ≥ 5.
-  - This is the largest remaining coverage gap. In §4 it is gap G1.
+- L = 5 (2026-10-23 13:01-13:42Z; same scan, laps 1-300, 0 redraws; results/eps/scan5_laps2_cond300.txt):
+  - Distinct two-lap values: 6.74e-4 (129 laps), 9.74e-4 (141), and 30 laps between 8.0e-4 and 2.3e-3. Worst: 3.85e-3 at lap 137.
+  - Average over all 300 lap starts: 9.0e-4, at or below the snapshot value 9.74e-4.
+  - The worst lap shrinks from 0.243 (L 4) to 3.85e-3 (L 5), ×63, faster than the steady value (×11).
+  - So at L = 5 the BAD lap starts no longer dominate.
+- Not scanned: L ≥ 6. The trend from L = 4 to 5 says BAD laps decay faster than the steady ε; this is DATA at two points, not a
+  bound. In §4 it is gap G1.
 
 ### 3c. The mechanism (READING; the chain is the DATA)
 - MAXPATH=1 prints the most probable failing path. At L = 5 (one lap) it has probability 6^−5 = 1.286e-4 exactly:
