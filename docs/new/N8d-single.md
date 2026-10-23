@@ -74,3 +74,25 @@ Every output: verify.py OK and regions = Oink zlk (results/switchallexp.r1.csv; 
 switchbestexp under R1: dual 28, 71, 136, 237, 398, 691, 1,236, 2,297 for N = 1..8 (×1.8 per N at the top). So the single-switch
 lowest-index rule falls to Friedmann's families exactly as single-switch rules do on VJ valuations (B8): the tree labels do not help here.
 
+
+## 4. R2 (random node, seeded) — polynomial-looking so far (2026-10-23 ~04:20Z by date -u; DATA under D1, not a claim)
+- Crawl families (R53 F_k / G_k / H_k, N8a L_k): constant in k (seed 1: 13, 53, 5, 47 pivots), all verified (§2 table).
+- Random corpus (rand10k, gen.py corpus seed 20261023, n 1-120): 10,000 / 10,000 verified (verify.py) and = Oink zlk; max 82 primal, 95 dual
+  (results/rand10k.r2.csv). R1 for comparison: 10,000 / 10,000, max 71 / 79 (rand10k.r1.csv).
+- Hard bench, seed 1: §2 table; all 13 families verified, = Oink zlk.
+- Multi-seed on the growing families (dual pivots, every output verified, = Oink zlk; results/switchallexp.r2seeds.csv, growing.r2seeds.csv,
+  sbe.r2seeds.csv):
+| family | N (n) | seeds | dual pivots | mean |
+| --- | --- | --- | --- | --- |
+| switchallexp | 2 (35) / 4 (63) / 6 (91) / 8 (119) | 1-5 | | ≈ 37 / 100 / 168 / 374 |
+| switchallexp | 10 (147) | 1-5 | 500, 458, 650, 533, 632 | 555 |
+| switchallexp | 12 (175) | 1-5 | 689, 651, 1085, 836, 624 | 777 |
+| switchallexp | 14 (203) | 1-5 | 440, 701, 1009, 1016, 1318 | 897 |
+| switchbestexp | 6 (160) / 8 (210) / 10 (260) | 1-3 | 830, 406, 626 / 879, 994, 970 / 1714, 1729, 1207 | 621 / 948 / 1550 |
+| switchbestexp | 12 (310) | 1-2 (3 running) | 1980, 2054 | ≈ 2017 |
+| tc | 14 (658) | 1-3 | 370, 374, 520 (primal 344, 414, 450) | 421 |
+- Fitted log-log slopes against n (means): switchallexp 91 → 203: 1.9; switchbestexp 160 → 310: 1.8 (local slopes 1.6, 2.3, 1.5).
+  Compare R1 on switchallexp: ×2 per N (§3).
+- Pending at this writing: tc N = 18, 22; counter_rob N = 7, 9; counter_symsi N = 8, 10 (3 seeds each); switchbestexp N = 12 seed 3.
+- Caveat (stated now): R2 is a Random-Edge-type rule; on VJ valuations Random-Edge is exponential in expectation (Friedmann thesis Thm
+  4.76, BARRIERS B10) on games of size O(n^4); those games are not in this bench. A Random-Edge family is the obvious first attack.
