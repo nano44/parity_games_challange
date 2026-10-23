@@ -58,3 +58,22 @@ functions and asserts the same iteration count as kl.solve)
   extra priority value on any vertex, even an isolated one, adds a level.
 - The same family G_k is also super-polynomial under switch-all: dual pivots 81, 1,621, 40,001 = 5·n^{1+k} + 1 (k = 0, 1, 2; verified). So
   ONE family kills both frozen rules.
+
+## 5. A 13-vertex gadget for both rules, and its family H_k (2026-10-23 02:50Z, date -u)
+- klmin_n13 (experiments/red/kl/instances/klmin_n13.pg, sha1 b8a5b1bdb2f130adee4a20e70b5b5382932f1b4e; 13 vertices, 18 edges) = greedy
+  shrink of klglobal_n16 (experiments/red/kl/kshrink.py, criterion: dual pivots under global ≥ 4n; logs/kshrink_klglobal_n16.log).
+- H_k := klmin_n13 + 2k isolated self-loops (owner Even) with new top priorities (experiments/red/kl/famgen.py H k). n = 13 + 2k.
+| k | n | sha1 | dual pivots, global | dual pivots, switch-all | = |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 13 | b8a5b1bdb2f130adee4a20e70b5b5382932f1b4e | 52 | 52 | 4·13 |
+| 1 | 15 | 889e8e1d37ecfefac91362606d8e4b4dc9cbef45 | 900 | 900 | 4·15^2 |
+| 2 | 17 | c8a9fdffd5c74781f803a47da950829985457820 | 19,652 | 19,652 | 4·17^3 |
+| 3 | 19 | 7b7b2eccc6fdd1314614567455f814b9d8aace7f | 521,284 | 521,284 | 4·19^4 |
+- Primal pivots 0 on every row; every run verified by check_sol2.py (Oink zlk OK, strategies verified). Law: dual pivots = 4·n^{k+1} under
+  BOTH rules, i.e. (n)^{(n−11)/2}: super-polynomial. The global and switch-all traces are identical (logs/klmin_n13_dual_*_trace.txt).
+- Mechanism (dual, 52-pivot trace): a period of 4 pivots on dual Odd nodes 3, 4, 7, 8 (switch sets {3, 4, 8 → 6}, {7: 2 → 3},
+  {3: 6 → 11, 7: 3 → 2, 8: 6 → 1}, {4: 6 → 8}) raises the top label component by one per period (0 … 12 = n − 1, then ⊤). With the padding,
+  the counted component is no longer the top one and the base-n carry runs through all k + 1 counted levels.
+- Reading: in the dual, Odd's strategy repeats with period 4 while the forced-increase least fixed point climbs one leaf of the perfect
+  tree per period. Both rules see the same admissible arcs here: each pivot round has a unique admissible move per node, so the rule
+  does not matter; the cost is the size of the perfect tree's top levels, n^{k+1}.
