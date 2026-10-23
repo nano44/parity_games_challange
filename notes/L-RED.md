@@ -73,7 +73,9 @@ two-player games: docs/red/R52-sgrowth.md, experiments/red/sgrow/.
   super-linear signal. s21_oink_n20 (da164511…): S 21 > |G'| 20 in oink order (R24's (SPP) DATA bound broken by 1; stable 11).
 
 ## IN FLIGHT
-None. No process runs at box end.
+- Box 24 (extended by the Lead to ~15:30Z): HLg_3 R2 seeds 1-2 (solvecheck.py, results/hlg_k3.csv), started 11:17Z.
+  - On completion: fill the k = 3 row of R56 §4 from the draft in scratch (s4.md), then push and report to the Lead (kill decision).
+  - If they have not finished by the cutoff: stop them and report k = 3 as not run.
 
 ## NEXT (for the Lead to route; items 1-2 belong to the CLOSED k-pools line and stay only as history)
 1. Lengthening without shallow rises: start from k4L72r_n101 (S 31) and look for edges that stop the mixed piece at position 1
@@ -82,14 +84,12 @@ None. No process runs at box end.
 2. A different fourth part: E = nest5_n49 (a part with its own 5-level structure) above nest6min, then the recipe; n 124, ~40 s/eval.
 3. Re-read R50 §4 / §7 cross-part attributions with piecemap.py (file ids).
 ## Resume point
-PARKED after box 22 (2026-10-23 ~07:35Z, date -u). Nothing in flight; no process runs. Wake only on a new named target from the Lead.
-R53 §1-§6 and R54 §0-§4 final (freeze; corrections in new sections). If routed: (1) N8d-R2 needs N 18-22 x 5 seeds on switchbestexp,
-which needs a faster kl (per-pivot Python cost: ~19 min/seed at N 14, 28-58 min at N 16); (2) or a port of Friedmann's Random-Edge
-counter (thesis Thm 4.76, opened) to random-node / best-arc tree SI; (3) R2-robust counter: a period where EVERY candidate keeps the
-lapping cycle open (forced chain). Earlier resume points: `git show 866615f3:notes/L-RED.md` (box 21), `git show 595ca267:notes/L-RED.md`.
-Climb lessons (box 20, oclimb.py; box 21, kclimb.py): fitness from the solver's own counter, confirm with the reference tool; pad
-NEUTRALLY (S growth) or with NEW TOP PRIORITIES (tree-level growth); budget by wall clock; pause a climb with kill -STOP / -CONT for
-short checks; count jobs with `ps -eo args | grep -c '^python3 .*<tool>'`; never pkill -f a pattern from your own command line.
+Box 24 (2026-10-23, R56). Target N8d-R2. Pushed through 416e4116. Done so far:
+- §1: switch sets (M1, M2).
+- §2: HL_k (fixed lanes).
+- §3: exact ε(L) chain, lap scans, growing-lane family HLg_k.
+Open: the k = 3 rows, and §4 (the dead-end packet, asked by the Lead 12:25Z). If the Lead kills N8d-R2, CHECKER re-runs it at the
+exact commit. Earlier resume points: `git show 8acfa086:notes/L-RED.md`.
 
 ## Sources opened
 - arXiv 2108.13338 (Z. K. Koh, G. Loho, "Beyond value iteration for parity games: strategy iteration with universal trees", LMCS 21(2)
