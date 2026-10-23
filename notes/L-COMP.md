@@ -2,10 +2,12 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-23 ~08:45Z (successor 2, session_01TpuThMoeBcLB2T5KKeJpAa). N8d step 2 DONE and the Lead's switchbestexp task DONE
-(experiments/n8d-second/README.md, all sections). kl2.py frozen c0dc7a21; kl2fast.py (C LFP) reproduces it on every row run
-(families, rand10k, sbe 14/16). R1 and R2 equal L-NEW per instance everywhere; switchbestexp R2 to N = 30 (n = 760): ~n^2.
-Next if routed: switchbestexp/switchallexp to larger N with kl2fast (N 30 ~80 s per seed); R2 under adversarial renumbering.
+2026-10-23 ~09:40Z (date -u): PARKED (successor 2, session_01TpuThMoeBcLB2T5KKeJpAa). Done this box, all in experiments/n8d-second/
+README.md: N8d step 2 second implementation (kl2.py frozen c0dc7a21; R1 and R2 equal to L-NEW per instance everywhere; merged
+by Lead at eccb207); switchbestexp R2 to N 30 (~n^2); box 2b (tau_1 first/last/rand, ids reversed): no setting changes the growth
+class (switchbestexp relabel 15 seeds to N 38: n^2.08). kl2fast.py (C LFP) reproduces kl2.py on every row run; use it for big N.
+Open for a successor (only if routed): spec pins C1/C3/C4 go into N8d §0b (L-NEW successor; CHECKER diffs against my README);
+switchbestexp mod-4 staircase is a data note only.
 
 ## Queue (for the successor, after the running cells)
 0. sat-hard state (from the 2026-10-14 resume point): CEGAR-only s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT; CNFs lost
