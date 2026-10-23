@@ -1,0 +1,1 @@
+exhaustive n=2 P=3 k=1: 576 games, 1296 queries, 0 gaps, 5s
