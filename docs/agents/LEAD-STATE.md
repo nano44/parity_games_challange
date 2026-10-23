@@ -874,3 +874,4 @@
 - 16:17Z (date -u) L-NEW succ. 7 handover 9559f8d re-measured 5/5 (merged); GO box 18 (N9 screen). Working: L-NEW 7 (1/5).
 - 17:05Z (date -u) Container restarted (~17:05Z, uptime 0): Lead k 3 re-run (started 15:37Z) LOST. DECISION: DE30 takes C23 E-2 option 2 ('k = 3: lane rows only; not re-run by the Lead or CHECKER'); k 0-2 Lead re-runs + exact chain stand; k 3 seed-1 re-run relaunched (scratchpad/hl/hlg3_s1b.out) for a later addendum. SWEEP (trigger 17:04Z): overage false; Lead $466 ~536k. Working: L-NEW 7 (box 18: Sherali-Adams lift probe; 17:05Z, ~110k).
 - 17:15Z (date -u) CHECKER C23 Addendum 1 PASS (77a8ede, merged). LANDED DE30 (N8d-R2 dead on HLg_k) in RESULTS Dead ends, draft lines 3-32 verbatim (diff IDENTICAL; RESULTS 30 inserted / 0 deleted, after line 1153). Landed-text check requested (C23 Addendum 2).
+- 17:25Z (date -u) CHECKER C23 Addendum 2 PASS (bc6f261, merged): DE30 landed text byte-identical; C23 CLOSED. DE30 final.
