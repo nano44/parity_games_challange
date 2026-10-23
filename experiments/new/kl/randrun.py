@@ -4,7 +4,7 @@ check strategies with harness/verify.py and regions against Oink zlk (pinned bui
 Usage: randrun.py DIR rule start end out.csv"""
 import sys, os, csv, subprocess, tempfile
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "..", "harness"))
-import kl, pg, verify
+import kl, kl_single, pg, verify
 OINK = os.path.join(HERE, "..", "..", "..", "tools", "oink", "build", "oink")
 OINK = os.path.normpath(os.path.join(HERE, "..", "..", "..", "tools", "oink", "build", "oink"))
 d, rule, a, b, out = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), sys.argv[5]
@@ -14,7 +14,7 @@ with open(out, "w") as fo:
     for f in files:
         p = os.path.join(d, f)
         g = pg.parse("".join(l for l in open(p) if not l.lstrip().startswith("%")))
-        r = kl.solve(g, rule)
+        r = kl_single.solve(g, rule) if rule in ("r1", "r2") else kl.solve(g, rule)
         e = verify.check(g, r["win"], r["strat"])
         ref, name = None, "none"
         for solver in ("--zlk", "--tl"):

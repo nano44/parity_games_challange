@@ -2,7 +2,7 @@
 """N8d: Koh-Loho strategy iteration (kl.py machinery, unchanged) with the SINGLE-SWITCH pivot rules frozen in docs/new/N8d-single.md §0:
 R1 = lowest-id Odd node with an admissible arc, R2 = uniformly random such node (random.Random(seed) per Algorithm 1 run); the node
 switches to its largest-Tighten admissible arc (TOP largest; ties smallest successor id).
-Usage: kl_single.py game.pg --rule r1|r2 [--seed S] [--sol out.sol] -> n,d,h,rule,pivots,pivots_dual,verified,secs"""
+Usage: kl_single.py game.pg --rule r1|r2 [--seed S] [--sol out.sol] -> n,d,h,rule,pivots,pivots_dual,0,verified,secs (same columns as kl.py)"""
 import sys, os, time, random, argparse
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "..", "harness"))
 import kl, pg, verify
@@ -62,5 +62,5 @@ if __name__ == "__main__":
     g = pg.parse("".join(l for l in open(a.game) if not l.lstrip().startswith("%")))
     r = solve(g, a.rule, a.seed); errs = verify.check(g, r["win"], r["strat"])
     if a.sol: pg.write_sol(r["win"], a.sol, r["strat"])
-    print(",".join(str(x) for x in (r["n"], r["d"], r["h"], a.rule + ("" if a.rule == "r1" else f"s{a.seed}"), r["it"], r["it_dual"],
+    print(",".join(str(x) for x in (r["n"], r["d"], r["h"], a.rule + ("" if a.rule == "r1" else f"s{a.seed}"), r["it"], r["it_dual"], 0,
                                      "verified" if not errs else "VERIFY-FAIL:" + errs[0], r["secs"])))
