@@ -876,3 +876,4 @@
 - 17:15Z (date -u) CHECKER C23 Addendum 1 PASS (77a8ede, merged). LANDED DE30 (N8d-R2 dead on HLg_k) in RESULTS Dead ends, draft lines 3-32 verbatim (diff IDENTICAL; RESULTS 30 inserted / 0 deleted, after line 1153). Landed-text check requested (C23 Addendum 2).
 - 17:25Z (date -u) CHECKER C23 Addendum 2 PASS (bc6f261, merged): DE30 landed text byte-identical; C23 CLOSED. DE30 final.
 - 17:30Z (date -u) Container restarted again (~17:26Z, uptime 4 min): relaunched k 3 re-run lost too. DECISION: no further Lead k 3 re-run in this container (it restarts while idle; multi-hour jobs do not survive). DE30 stands as landed ('k = 3: lane rows only'). Note for future: long verification runs go to a lane session (which keeps its container while working), not the Lead.
+- 18:03Z (date -u) SWEEP (trigger 18:03Z): overage false; Lead $468 ~569k. Working: L-NEW 7 (box 18: N9b probe 1,943/2,000 games, 57 stuck; writing; 18:03Z). No exceptions.
