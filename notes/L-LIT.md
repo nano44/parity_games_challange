@@ -2,9 +2,9 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-22 08:2xZ: PARKED after T24 docs/lit/T24-HIJ-barrier.md: HIJ 1304.1888 statements verified (Thm 18, 19, 21, 22-25,
-§1.1); BARRIERS B21 added (κ-based IPM bounds n^Θ(d) for parity; never better than HMZ Thm 6.5). Trunk merged 823a9890.
-Earlier: T18-T23. Next: Lead.
+2026-10-23 ~02:4xZ: PARKED after T25 docs/lit/T25-N8a-step3.md: N8a (Koh-Loho tree SI, rules global + switch-all) step 3 SIGNED
+WITH CAVEATS C1-C5 (no lower bound for KL under any rule; bench not adversarial for tree-SI; L-NEW mis-cites B6 for tc/SPM).
+Trunk merged (merge commit, origin/claude/vibrant-johnson-nxvvxo). Earlier: T18-T24. Next: Lead.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -222,10 +222,20 @@ Earlier: T18-T23. Next: Lead.
 | arXiv 2212.00083 v1 §5 p.30 (MC94 construction described); 1003.3418 p.1 (MC94 2^n-1); 1208.5083 p.2; 1306.0386 p.4; 2606.29568 p.4 | Melekopoglou-Condon descriptions; deterministic-MDP remarks | 2026-10-19 | T23 |
 | NOT opened (T23) | Melekopoglou-Condon 1994; Zadeh 1973 (bad network problem); Hansen-Zwick 2010; Fearnley PhD thesis | 2026-10-19 | T23 |
 | arXiv 1304.1888 v2 (Hansen, Ibsen-Jensen, CiE 2013), sha256 01e4cde9b47f90cb9fc22072d0df68e1cf4a8bfd125b971f25690cf89952e6aa | abstract; §1.1 p.3-4 (rendered p.3); Def. 16 p.9; Thm 18 p.10; Thm 19 p.11; G_n p.12; Thm 21 p.13; Thm 23 p.16; Thm 24 p.18; Thm 25 p.19 | 2026-10-22 | T24 |
+| arXiv 2108.13338 v5 (Koh-Loho, LMCS 21(2:24) 2025), sha256 21ee0e4336252f7e6e1fcba7cb305b03f0950799610f324235eed5ecba15c9a9 | p.24:3 (n\|L(T)\| bound; pivot rule "left for future research"); Alg. 1 + Thm 3.1 p.24:9; Fig. 4 p.24:10; grep: no experiments | 2026-10-23 | T25 |
+| LIPIcs.MFCS.2022.63 (Koh-Loho MFCS), sha256 553cf18ceb25354040cd526021e3fa1287dc1791f822ec03b2b7c1e4d5754902 | p.63:3 same sentence | 2026-10-23 | T25 |
+| Ohlmann PhD thesis 2021 (pageperso.lis-lab.fr/pierre.ohlmann/contents/these.pdf; irif.fr copy returned HTML), sha256 a5c909cbdc4414f1ce7b91063c39c185037fc4e9657bea0c4dbed1c6984618f3 | printed = PDF - 2; p.17 "To date, no quasipolynomial strategy improvement"; Thm 9.1 p.167; Ch. 9 §2.3 p.170-171 (Fig. 9.2 non-positional; KL "seemingly contradicting", forced increase) | 2026-10-23 | T25 |
+| arXiv 0901.2731 v1 (Friedmann, SI "as we know it"), sha256 6c56adb207f384682a249ed8dfc629b48dd4b33889373b6106ac130d27dd8a58 | Thm 8 (13·2^n-9, locally optimizing); §6 (Schewe's globally optimizing, both variants; random start "without proof") | 2026-10-23 | T25 |
+| arXiv 1106.0778 (Friedmann), sha256 46c96f44775aa2b07cad20912cb325b177e38c94cb2e40297df66b6047679611 | §4 globally optimal policy; Thm 6.14, 8.4 | 2026-10-23 | T25 (re-open) |
+| arXiv 2401.07548 (Majumdar-Saglam-Thejaswini), sha256 33b041fc0a01aee2136441c7894482825c35acd7612e6a98acf507d0dbfcfa0a; arXiv 2503.17294 v1 sha256 32460e2c… | only citers of 2108.13338 in Semantic Scholar; PDF p.3 each: KL cited in passing | 2026-10-23 | T25 |
+| van Dijk Two Counters (tvandijk.nl/pdf/2019tc.pdf), sha256 9d2da84949b2d4601a604d58f9477f3c5f6107e8466cb2c5b2d8b8236d539dad | §9.4 p.14: SPM etc. slow "not due to the design"; SI "only algorithm that can quickly and in polynomial time solve" tc | 2026-10-23 | T25 |
+| arXiv 2509.16075 v2 (Maat), sha256 69706649fed1fac9…; lohomath.github.io (publication list) | grep: no Koh-Loho / universal tree; list: no KL follow-up | 2026-10-23 | T25 |
+| WRONG (T25) | arXiv 1909.07659 is van Dijk-Rubbens FPI, not Two Counters (discarded) | 2026-10-23 | T25 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
 
 ## Corrections log
+- 2026-10-23 (T25): docs/new/N8a-kohloho.md §3 says tc is exponential for progress-measure algorithms "BARRIERS B6"; B6 does not list SPM, van Dijk §9.4 p.14 says SPM slowness is not due to tc. Reported, not mine to edit.
 - 2026-10-18 (T18): N1-disc-anneal.md (L-NEW) has Friedmann's β_G with |V|; opened text has |V|³ (1106.0778 p.35). Reported, not mine to edit.
 - 2026-10-14: first draft cited priority promotion as arXiv 1608.04548; that id is an astrophysics paper (opened, wrong). Replaced by the CAV 2016 paper before push.
