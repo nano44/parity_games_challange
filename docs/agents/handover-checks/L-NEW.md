@@ -316,3 +316,44 @@ Nothing running; tools/oink/build and experiments/new/out/ (gitignored) are abse
   `git rev-parse HEAD origin/claude/l-new` before any work; fast-forward only; merge trunk, never rebase.
 - Also carried: timestamps only from `date -u` in the same command that writes them (this heading); push.sh output redirected to a
   file and `$?` printed, never piped; ReadNotifications at every milestone push (successor 5's box-14 slip).
+
+## 2026-10-23 16:05Z (successor 7, Opus 5.5 per owner D15 / Lead reading L37; every time from date -u)
+### 1. Branch, head, ahead/behind trunk
+- Branch claude/l-new. At start the local branch equalled origin/claude/l-new = 5961101a (no stale-branch case this time). Trunk
+  origin/claude/vibrant-johnson-nxvvxo = 03460c6c was 31 commits ahead of it; the trunk merge was a fast-forward (no merge commit
+  needed), so before this section HEAD = 03460c6c, 0 ahead / 0 behind trunk. After this section: 1 ahead (this commit), 0 behind.
+### 2. Open work and the next step of each
+Nothing running; tools/oink/build and experiments/new/out/ (gitignored) are absent and must be rebuilt before any bench run.
+- The (c) lane has no live candidate. N6 (DE25), N7 (DE26), N8a (DE28), N8d-R1 (DE29) dead. N8d-R2 killed on L-RED's HLg_k
+  (docs/red/R56-r2-vj-switchsets.md §4); DE30 is landing (CHECKER C23, draft docs/agents/DE30-draft.md), not mine.
+- Successor 6's carried items on N8d-R2 (N8d-proofs.md §2 correctness PROVED, unrefereed; §3 time OPEN): with R2 dead the Lead's
+  11:36Z ruling applies: Lemma 2.1 (strictness + invariant (2) proof) may go as a standalone Koh-Loho note. Next step: none unless
+  the Lead routes it.
+- Box 18 (after GO): docs/new/N9-screen.md, >= 3 untested approaches, each with barrier / evasion reading / cheapest falsification
+  test (< 2 h) / cost; rank; run test (c) on the top one or two; freeze nothing. Next step: read docs/lit/BARRIERS.md B1-B21 and
+  R53/R56 (lapping counter with delay lanes) before proposing anything.
+- G-N5-TIME open (no new statement); G-N1-LB optional, not routed. Neither is in box 18.
+### 3. docs/GAPS.md rows I own (`grep -n "L-NEW" docs/GAPS.md` at 03460c6c)
+- **G-N5-TIME** (major; owner "L-NEW (L-LIT T22; referees later)"; status **open**).
+- **G-N1-LB** (minor; owner "L-NEW (optional; not routed)"; status **open**).
+- **G-N5-TERM** (major; owner "L-NEW (L-COMP checks runs)"; status **closed**, RESULTS R15).
+- No GAPS row for N8d-R2 or for N9.
+### 4. The three owner rulings that most constrain me (verbatim from docs/DECISIONS.md), with index status
+1. D14 (DECISIONS-INDEX row D14 "active"):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+   The mandate for box 18's screen (untested approaches, my own included).
+2. D15 (DECISIONS-INDEX row D15 "active"):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+   Lead reading L37: main effort (c); no option questions to the owner; I decide inside the brief and report.
+3. D2 change 4 (DECISIONS-INDEX row D2 "active"):
+   > 4. 7b changed: a randomized (Las Vegas, expected polynomial) algorithm is labelled M4-R, not M3, and reported to me
+   >    at once like an M4 claim.
+   With D1 (index "active"): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+   including the fleet's own, as wrong until it passes the gauntlet below." Box 18 makes no running-time claims; any polynomial
+   belief goes to the Lead at once.
+### 5. One trap that bit this lane, and the check that now prevents it
+- Trap: unread Lead messages (successor 5, box 14: six Lead messages unread for 1h14m while I kept climbing after the Lead had
+  handed climbs to L-RED). Check: ReadNotifications at every milestone push and before starting each test run in box 18.
+- Also carried: stale-branch check (`git rev-parse HEAD origin/claude/l-new` after fetch, done above); self-kill by `pkill -f` /
+  `awk '/name/'` matching my own shell (match argv fields instead); push.sh output to a file, then `$?`.
