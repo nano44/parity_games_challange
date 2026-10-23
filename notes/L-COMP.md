@@ -2,12 +2,10 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-23 ~07:45Z (successor 2, session_01TpuThMoeBcLB2T5KKeJpAa). N8d step 2 (second independent implementation) essentially
-DONE: experiments/n8d-second/ (kl2.py frozen c0dc7a21 from arXiv 2108.13338v5 + N8d §0 only; README "Results").
-0 wrong regions / strategies in 41,000+ runs; R1 AND R2-seed-1 equal to L-NEW per instance everywhere (rand10k 10,000/10,000;
-every family row); R2 means ~n^1..n^2, switchallexp to n = 287 slope 1.96. Last run: switchbestexp R2 N = 14, 16 (seeds 1-10).
-Next (if routed): larger switchbestexp/switchallexp sizes for the growth class; R2 under adversarial renumbering (the draw is
-over sorted ids, so renumbering changes R2's sequence but not its distribution).
+2026-10-23 ~08:45Z (successor 2, session_01TpuThMoeBcLB2T5KKeJpAa). N8d step 2 DONE and the Lead's switchbestexp task DONE
+(experiments/n8d-second/README.md, all sections). kl2.py frozen c0dc7a21; kl2fast.py (C LFP) reproduces it on every row run
+(families, rand10k, sbe 14/16). R1 and R2 equal L-NEW per instance everywhere; switchbestexp R2 to N = 30 (n = 760): ~n^2.
+Next if routed: switchbestexp/switchallexp to larger N with kl2fast (N 30 ~80 s per seed); R2 under adversarial renumbering.
 
 ## Queue (for the successor, after the running cells)
 0. sat-hard state (from the 2026-10-14 resume point): CEGAR-only s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT; CNFs lost
@@ -155,6 +153,11 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 - famF/G/H/L: the added nodes are isolated Even self-loops with top priorities; pivot counts are constant in k by construction
   (R1 and every R2 seed), so these families test only correctness, not growth. counter_core N and counter_dp 2N give identical
   counts for every rule and seed.
+
+- kl2fast.py: speed came from keeping labels in C buffers across pivots and doing the admissible scan in C; a C LFP alone with
+  Python label conversion was only 5x. pypy3 (apt, 7.3.15) gives only 1.7x on kl2.py. The C .so builds into out/ (gitignored) on
+  first import; gcc must exist.
+- run_families.sh line "echo ... tail -1 $R/$f.kl2.log" prints a tail error with IMPL=kl2fast (cosmetic; exit codes are right).
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |

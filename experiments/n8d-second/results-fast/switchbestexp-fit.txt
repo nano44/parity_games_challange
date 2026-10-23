@@ -1,4 +1,4 @@
-rows 150, non-OK 0
+rows 190, non-OK 0
 N  1 n 35: seeds 10: mean 44.5 sd 8.5 min 30 max 57; seeds 1-5 mean 45.0 sd 8.5
 N  2 n 60: seeds 10: mean 123.9 sd 23.0 min 86 max 158; seeds 1-5 mean 134.4 sd 21.6
 N  3 n 85: seeds 10: mean 207.9 sd 23.2 min 163 max 236; seeds 1-5 mean 215.2 sd 19.1
@@ -14,23 +14,27 @@ N 16 n 410: seeds 10: mean 3826.6 sd 1140.3 min 1724 max 6049; seeds 1-5 mean 40
 N 18 n 460: seeds 10: mean 5150.8 sd 1177.7 min 3025 max 7390; seeds 1-5 mean 5161.8 sd 788.3
 N 20 n 510: seeds 10: mean 5986.8 sd 865.2 min 4548 max 7212; seeds 1-5 mean 5874.8 sd 809.6
 N 22 n 560: seeds 10: mean 6927.7 sd 831.5 min 5416 max 7826; seeds 1-5 mean 6941.2 sd 819.4
-Lead series (L-NEW N6-12, L-RED N14-16, mine seeds 1-5 N>=18): N 6..22: power law n^2.00 (SSR 0.0193); exponential 1.164^N (SSR 0.1801); better: power
-  means: N6=621, N8=948, N10=1550, N12=2069, N14=3014, N16=4052, N18=5162, N20=5875, N22=6941
-  ratio per +2N: 1.53, 1.64, 1.33, 1.46, 1.34, 1.27, 1.14, 1.18
+N 24 n 610: seeds 10: mean 9568.8 sd 1708.2 min 7613 max 13882; seeds 1-5 mean 9746.6 sd 723.4
+N 26 n 660: seeds 10: mean 8854.9 sd 1270.9 min 6814 max 11422; seeds 1-5 mean 8544.8 sd 379.7
+N 28 n 710: seeds 10: mean 13241.5 sd 2200.4 min 8946 max 16183; seeds 1-5 mean 14413.0 sd 1491.0
+N 30 n 760: seeds 10: mean 13690.8 sd 2877.3 min 10963 max 20988; seeds 1-5 mean 12985.6 sd 1691.1
+Lead series (L-NEW N6-12, L-RED N14-16, mine seeds 1-5 N>=18): N 6..30: power law n^2.03 (SSR 0.1055); exponential 1.133^N (SSR 0.5620); better: power
+  means: N6=621, N8=948, N10=1550, N12=2069, N14=3014, N16=4052, N18=5162, N20=5875, N22=6941, N24=9747, N26=8545, N28=14413, N30=12986
+  ratio per +2N: 1.53, 1.64, 1.33, 1.46, 1.34, 1.27, 1.14, 1.18, 1.40, 0.88, 1.69, 0.90
   ratio > 1.6 twice in a row: no
-mine, seeds 1-5: N 6..22: power law n^2.01 (SSR 0.0113); exponential 1.164^N (SSR 0.1941); better: power
-  means: N6=604, N8=971, N10=1512, N12=2166, N14=3014, N16=4052, N18=5162, N20=5875, N22=6941
-  ratio per +2N: 1.61, 1.56, 1.43, 1.39, 1.34, 1.27, 1.14, 1.18
+mine, seeds 1-5: N 6..30: power law n^2.03 (SSR 0.0966); exponential 1.133^N (SSR 0.5821); better: power
+  means: N6=604, N8=971, N10=1512, N12=2166, N14=3014, N16=4052, N18=5162, N20=5875, N22=6941, N24=9747, N26=8545, N28=14413, N30=12986
+  ratio per +2N: 1.61, 1.56, 1.43, 1.39, 1.34, 1.27, 1.14, 1.18, 1.40, 0.88, 1.69, 0.90
   ratio > 1.6 twice in a row: no
-mine, all seeds: N 6..22: power law n^2.03 (SSR 0.0125); exponential 1.166^N (SSR 0.2008); better: power
-  means: N6=584, N8=970, N10=1435, N12=2290, N14=2959, N16=3827, N18=5151, N20=5987, N22=6928
-  ratio per +2N: 1.66, 1.48, 1.60, 1.29, 1.29, 1.35, 1.16, 1.16
+mine, all seeds: N 6..30: power law n^2.05 (SSR 0.0543); exponential 1.134^N (SSR 0.5496); better: power
+  means: N6=584, N8=970, N10=1435, N12=2290, N14=2959, N16=3827, N18=5151, N20=5987, N22=6928, N24=9569, N26=8855, N28=13242, N30=13691
+  ratio per +2N: 1.66, 1.48, 1.60, 1.29, 1.29, 1.35, 1.16, 1.16, 1.38, 0.93, 1.50, 1.03
   ratio > 1.6 twice in a row: no
-mine, all seeds, N >= 10: N 10..22: power law n^2.04 (SSR 0.0115); exponential 1.137^N (SSR 0.0572); better: power
-  means: N10=1435, N12=2290, N14=2959, N16=3827, N18=5151, N20=5987, N22=6928
-  ratio per +2N: 1.60, 1.29, 1.29, 1.35, 1.16, 1.16
+mine, all seeds, N >= 10: N 10..30: power law n^2.07 (SSR 0.0525); exponential 1.114^N (SSR 0.1765); better: power
+  means: N10=1435, N12=2290, N14=2959, N16=3827, N18=5151, N20=5987, N22=6928, N24=9569, N26=8855, N28=13242, N30=13691
+  ratio per +2N: 1.60, 1.29, 1.29, 1.35, 1.16, 1.16, 1.38, 0.93, 1.50, 1.03
   ratio > 1.6 twice in a row: no
-mine, all seeds, N >= 14: N 14..22: power law n^1.96 (SSR 0.0048); exponential 1.113^N (SSR 0.0115); better: power
-  means: N14=2959, N16=3827, N18=5151, N20=5987, N22=6928
-  ratio per +2N: 1.29, 1.35, 1.16, 1.16
+mine, all seeds, N >= 14: N 14..30: power law n^2.06 (SSR 0.0471); exponential 1.100^N (SSR 0.0657); better: power
+  means: N14=2959, N16=3827, N18=5151, N20=5987, N22=6928, N24=9569, N26=8855, N28=13242, N30=13691
+  ratio per +2N: 1.29, 1.35, 1.16, 1.16, 1.38, 0.93, 1.50, 1.03
   ratio > 1.6 twice in a row: no
