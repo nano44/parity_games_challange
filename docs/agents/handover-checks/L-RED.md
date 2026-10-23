@@ -390,3 +390,53 @@ Box 14 plan (Lead); nothing starts before GO:
   never to a pipe (a timeout on `| sort | head` lost the 94-union scan).
 - Standing check (bit successors 8-10, not this one): `git fetch origin claude/l-red` then `git rev-parse HEAD origin/claude/l-red`
   must agree before any edit.
+
+# L-RED successor 12 handover check, 2026-10-23 10:10Z (date -u) (Opus 5.5, D15)
+
+## 1. Branch, head, ahead/behind trunk
+- Branch claude/l-red. On arrival the local checkout was STALE: local HEAD a5274bd6, origin/claude/l-red 8acfa086 (box 23 END).
+  Fast-forwarded to 8acfa086 (`git merge --ff-only origin/claude/l-red`), then merged trunk origin/claude/vibrant-johnson-nxvvxo
+  1075e90c with a merge commit (no rebase): head 1d753f84.
+- At 1d753f84: 6 ahead, 0 behind trunk 1075e90c (`git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`
+  = 6 0; merge-base = 1075e90c). This check commit makes it 7 ahead.
+
+## 2. Open work and the next step of each
+- Nothing in flight on arrival (0 python processes). Pinned Oink not built in this container; scripts/setup_oink.sh started in the
+  background (scratch log) for result verification.
+- Target N8d-R2 (docs/new/N8d-single.md §0; survives boxes 22-23, R54, R55). Box 24, nothing starts before GO:
+  - (1) Per-step comparison: run R2 (experiments/n8d-second/kl2fast.py) and VJ Random-Edge (experiments/red/gzeta/vj_re.py,
+    experiments/si/si.py Engine, read-only) on gz2 / gz3 from the same strategy; at each state compare R2's admissible-arc set
+    with VJ's improving-switch set; locate the first state where they differ and give the mechanism (Lemma 4.75 gap,
+    docs/lit/T26-N8d-step3.md). Next step: read R55 §3-§4, gzeta.py, vj_re.py, kl2fast.py; write a shared strategy encoding.
+  - (2) From that mechanism, a counter R2 cannot escape: a gate comparing a lower label component, or delay lanes that reset each
+    lap (R55 §4). Kill criteria: mean pivots over ≥ 5 seeds super-polynomial with every output verified, or any incorrect output.
+  - Closed / parked lines: k-pools NEST* (CLOSED, D15 / L37); N8a DEAD (R53, box 21).
+
+## 3. docs/GAPS.md rows I own
+- G-NEST (major, owner "L-RED (attacks + proof attempts); L-ALG successor if any"): OPEN. Class best NEST* 6 on 𝒞^1P (DATA);
+  the k-pools line is CLOSED by the Lead (L37); (NEST*-BOUNDED) neither refuted nor proved.
+- Attacker role (owner L-ALG, "L-RED attacks"): GAP-A (blocker, open), GAP-C (blocker, open). G-STR, G-DOM: closed.
+- No GAPS row names N8d / N8a (grep: none); N8d-R2 survivals are recorded in docs/red/R54, R55 and docs/NOW.md.
+
+## 4. The three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index row D1 "active"):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision.
+   (N8d-R2 surviving my boxes is not evidence of polynomiality; any kill must come from faithful, unmodified code with verified outputs.)
+2. D15 (index row D15 "active"; Lead reading L37 "active"):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+   (L37: L-RED is the cheap adversary; Opus 5.5; reports are information, no option questions to the owner.)
+3. D14 (index row D14 "active"):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+   (The (c) lane L-NEW produces the candidates I attack, N8d-R2 included; I read its files and never edit them.)
+- Also binding: D7 (index "active") "a" = continue at the current rate, stop on overage: at most 2 heavy jobs, no job outlives the box.
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap (box 19): fixd_stealentry.run renumbers vertices by priority, so tlog.py / partmask.py printed SOLVER indices that were read
+  as file ids; R50's A/B/C attributions had to be re-read. Check: every tool that reports vertices maps back through idx[i]
+  (piecemap.py, gatescan.py), and any cross-tool comparison asserts both tools see the same vertex ids on a known instance first.
+  For box 24 this applies directly: before comparing R2's admissible set with VJ's improving set, assert that kl2fast and si.py
+  number vertices and arcs identically on gz2 (round-trip a strategy through both encodings).
+- Also bit at this start (as for successors 8-10): stale local branch; `git rev-parse HEAD origin/claude/l-red` must agree after
+  fetch before any edit.

@@ -1,0 +1,4 @@
+r2 gz2.pg seed 1: steps 405; lane sizes A1 16, A2 16, B1 50, B2 200, C1 44, C2 44
+switches per lane: A1 16, A2 16, B1 50, B2 212, C1 54, C2 47
+closings per lane: A1 1, A2 1, B1 1, B2 1, C1 2, C2 1
+events: 3:w1->A1 4:w2->A2 5:w1->w2 62:close A1 72:close A2 145:close B1 228:close C1 229:u1->d1 232:w1->A1 233:open C1 339:close B2 383:close C2 384:u2->d2 385:w1->w2 386:open C2 388:u1->u2 393:close C1 394:u1->d1 395:open B2 403:w1->A1 404:open C1

@@ -1,0 +1,5 @@
+SUMMARY r2 gz1.pg seed 1: pivots 63 (= KLFast.run), states with A != I 64/64, first at state 0; {'A_minus_I': 41, 'I_minus_A': 62, 'pick_not_improving': 41, 'pick_worsening': 41}
+  classes A-I {'a->A': 2, 'w->A': 1, 'b->B': 2, 'a->a': 17, 'b->b': 31, 'c->r': 52, 'u->d': 3}
+  classes I-A {'c->c': 947, 'w->w': 62, 'c->B': 34, 'a->x': 391, 'b->s': 970, 'u->u': 4}
+  R2 picks {'w->A': 1, 'a->A': 1, 'b->B': 1, 'a->a': 7, 'b->b': 24, 'c->B': 1, 'c->c': 21, 'c->r': 6, 'u->d': 1}
+  R2 picks that lower VJ val {'w->A': 1, 'a->A': 1, 'b->B': 1, 'a->a': 7, 'b->b': 24, 'c->r': 6, 'u->d': 1}
