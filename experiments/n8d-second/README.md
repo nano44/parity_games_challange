@@ -75,3 +75,20 @@ Fits on log(mean): Lead series (L-NEW N 6-12, L-RED N 14-16, mine seeds 1-5 N >=
 0.180); N 6..30: n^2.03 (SSR 0.106) vs 1.133^N (SSR 0.562). Mine, 10 seeds, N 6..30: n^2.05 (SSR 0.054) vs 1.134^N (SSR 0.550);
 N 14..30: n^2.06 (SSR 0.047) vs 1.100^N (SSR 0.066). Ratio per +2N never > 1.6 twice in a row; N = 0 mod 4 sizes run higher than
 their neighbours (24, 28 vs 26, 30). Reading: about n^2 on this family. DATA, not a bound.
+
+## Box 2b (Lead 08:34Z): start strategy and tie-breaks, R2 seeds 1-5, kl2fast (results-2b/, box2b.sh, summary.md)
+Settings: first = tau_1 first successor (as frozen); last = tau_1 last successor (identical to "edges reversed in file order",
+checked on switchbestexp 8: both 0/1282 pivots, because arc ties are by successor id, not file order); rand = tau_1 drawn per Odd
+node by random.Random(7), independent of R2's seed; relabel = node ids reversed (v -> n-1-v), which flips every smallest-id
+tie-break (§0 arc ties) and keeps tau_1's arcs. Every output verified and = Oink zlk; 0 non-OK rows.
+Mean total pivots (primal + dual):
+| family | setting | sizes | means | fit |
+| --- | --- | --- | --- | --- |
+| switchallexp | first / last / rand / relabel | N 8..28 (n 119..399) | 363..3540 / 367..3991 / 434..3867 / 335..3749 | n^1.90 / n^1.99 / n^1.82 / n^1.90, power fits better in all four |
+| switchbestexp | first / last / rand | N 10..30 (n 260..760) | 1522..13016 / 1475..11298 / 1412..12948 | n^1.93 / n^1.92 / n^2.14, power better |
+| switchbestexp | relabel, 5 seeds | N 10..30 | 1471..13044 | n^2.09 (SSR 0.059) vs 1.118^N (SSR 0.053): tie at 5 seeds |
+| switchbestexp | relabel, 15 seeds | N 10..38 (n 260..960) | 1370, 2637, 4281, 6351, 9727, 12637, 17172, 19085 | n^2.08 (SSR 0.012) vs 1.098^N (SSR 0.217): power; +4N ratios track the n^2 prediction |
+| rand1k (first 1,000 rand10k games) | first / last / rand / relabel | n 1..120 | 16.67 / 17.07 / 16.29 / 16.99 (max 131 / 126 / 138 / 128) | - |
+No setting changes the growth class. Data note (Lead item 3): switchbestexp N = 0 mod 4 runs high (first setting, 10 seeds: N 22 -> 24
++2,641 (z +4.2), 24 -> 26 -714 (z -1.0), 26 -> 28 +4,387 (z +5.2), 28 -> 30 +449 (z +0.4)): the one inversion (24 > 26) is within
+1 SE, so variance explains it; the staircase itself (big steps into N = 0 mod 4, flat into N = 2 mod 4) is real at 10 seeds.

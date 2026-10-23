@@ -39,8 +39,13 @@ def arr(xs):
 
 
 class KLFast(kl2.KL):
-    def __init__(self, *a, **k):
-        super().__init__(*a, **k)
+    def __init__(self, prio, owner, succ, tau1="first"):
+        super().__init__(prio, owner, succ, "min" if tau1 == "min" else "first")
+        if tau1 == "last":                                    # box 2b: tau_1 = last successor in file order
+            self.tau = {v: self.succ[v][-1] for v in self.odd_nodes}
+        elif tau1.startswith("rand"):                         # box 2b: tau_1 drawn by its own generator, seed after 'rand'
+            r = random.Random(int(tau1[4:]))
+            self.tau = {v: r.choice(self.succ[v]) for v in self.odd_nodes}
         off, adj = [0], []
         for v in range(self.n):
             adj.extend(self.succ[v]); off.append(len(adj))
@@ -110,4 +115,20 @@ if __name__ == "__main__":
         selfcheck.kl2 = kl2
         selfcheck.main()
     else:
-        kl2.main()
+        # kl2.main with --tau1 extended to first | min | last | rand<S> (box 2b); kl2.py itself is unchanged
+        import argparse
+        import time
+        ap = argparse.ArgumentParser()
+        ap.add_argument("game"); ap.add_argument("out", nargs="?")
+        ap.add_argument("--rule", choices=["r1", "r2"], default="r1")
+        ap.add_argument("--seed", type=int, default=1)
+        ap.add_argument("--tau1", default="first")
+        ap.add_argument("--check", action="store_true")
+        a = ap.parse_args()
+        g = kl2.pg.read(a.game)
+        t0 = time.time()
+        win, strat, pp, pd = kl2.solve(g, a.rule, a.seed, a.tau1, a.check)
+        dt = time.time() - t0
+        if a.out:
+            kl2.pg.write_sol(win, a.out, strat)
+        sys.stderr.write(f"pivots_primal {pp} pivots_dual {pd} time {dt:.3f}\n")
