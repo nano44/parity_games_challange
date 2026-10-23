@@ -1,0 +1,5 @@
+gz n 3 seed 1: 1346,18,9,r2s1,0,1432,verified,3370.6 wall 3371 s | zielonka(oink zlk) OK strategies verified
+gz n 3 seed 2: 1346,18,9,r2s2,0,1490,verified,971.6 wall 972 s | zielonka(oink zlk) OK strategies verified
+gz n 3 seed 3: 1346,18,9,r2s3,0,1491,verified,938.1 wall 938 s | zielonka(oink zlk) OK strategies verified
+gz n 3 seed 4: 1346,18,9,r2s4,0,1469,verified,957.5 wall 958 s | zielonka(oink zlk) OK strategies verified
+gz n 3 seed 5: 1346,18,9,r2s5,0,1493,verified,991.9 wall 992 s | zielonka(oink zlk) OK strategies verified
