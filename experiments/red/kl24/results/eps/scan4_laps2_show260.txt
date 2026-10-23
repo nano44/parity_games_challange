@@ -1,0 +1,7 @@
+  lap 45: eps 0.04399, node 1 = 0.1.17.0.0.0, base-run redraws so far 0
+  lap 156: eps 0.04399, node 1 = 0.5.12.0.0.0, base-run redraws so far 0
+  lap 180: eps 0.04009, node 1 = 0.6.7.0.0.0, base-run redraws so far 0
+  lap 204: eps 0.2431, node 1 = 0.7.2.0.0.0, base-run redraws so far 0
+  lap 212: eps 0.04948, node 1 = 0.7.10.0.0.0, base-run redraws so far 0
+  lap 251: eps 0.1435, node 1 = 0.8.20.0.0.0, base-run redraws so far 0
+eq_4.pg n 29: scan of 260 laps from lap 1 (seed 3): max exact eps 0.2431 at lap 204 (node 1 = 0.7.2.0.0.0); distinct values (count): 0.2431 (1), 0.1435 (1), 0.04948 (1), 0.04399 (2), 0.04009 (1), 0.02175 (5), 0.01941 (3), 0.01758 (2), 0.01471 (1), 0.01335 (1), 0.01066 (121), 0.009991 (3), 0.009479 (5), 0.009083 (9), 0.007653 (104)

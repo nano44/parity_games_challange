@@ -182,8 +182,10 @@ if SCAN:
     # 3. scan mode: from the snapshot lap on, solve the chain at EVERY lap start of the same base run for SCAN laps
     vals = {}
     worst = (-1.0, None)
+    redraws = 0
     for lap in range(SCAN):
         st0 = key(tau)
+        rd_before = redraws
         p_fail, p_succ, nst, byfail, bestfail, maxheap = chain(dict(tau), lab1(), sum(ct))
         load(st0)
         f = float(p_fail)
@@ -191,6 +193,8 @@ if SCAN:
         vals[kq] = vals.get(kq, 0) + 1
         if f > worst[0]:
             worst = (f, laps + lap, ".".join(map(str, lab1()[:6])))
+        if f > float(os.environ.get("SHOWABOVE", "2")):
+            print(f"  lap {laps + lap}: eps {f:.4g}, node 1 = {'.'.join(map(str, lab1()[:6]))}, base-run redraws so far {redraws}")
         while True:                                   # advance the base run to the next lap start
             k = adm()
             if not k:
@@ -201,6 +205,8 @@ if SCAN:
                 i = vs.index(rng.choice(sorted(vs)))
                 if not COND:
                     break
+                if _try:
+                    redraws += 1
                 sv = key(tau); t1 = dict(tau); t1[vs[i]] = arcs[i]; D.c_lfp(t1, cm, ct)
                 bad = sum(ct) != tops or lab1() is None
                 load(sv)

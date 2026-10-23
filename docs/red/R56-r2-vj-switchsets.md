@@ -215,6 +215,21 @@ HL_2 with L7 = L8 = L, base seed 3, W 300, J 1 (P_m = P(fail within m laps)):
   - NOT covered: lap types near level-2 carries (every n² laps). The scan did not reach them, and the multi-lap chain was run from
     one snapshot per L.
 
+### 3b'. Two-lap exact ε at EVERY lap start of one long run (L = 4; 2026-10-23 12:19-13:01Z, date -u)
+Runs: exactlap.py with SCAN, LAPS=2, on HL_2 with L = 4 (n 29), base seed 3. Files: results/eps/scan4_laps2_cond900.txt and
+scan4_laps2_show260.txt.
+- Laps 1-900 (with COND = the base run redraws a pick that would fail at once; the first 260 laps needed 0 redraws):
+  - 745 of 900 lap starts have P(fail within 2 laps) = 7.65e-3 or 1.066e-2. The latter equals the steady snapshot of §3b.
+  - 66 have 0.9e-2 to 2.2e-2.
+  - 26 are BAD: 0.032 to 0.243. Examples: lap 204 (node 1 = 0.7.2) 0.2431; lap 251 (0.8.20) 0.1435; laps 45 and 156 0.044.
+  - These are not carry laps (node 1's low digit is 2, 20, 17, 12). They occur in the natural run (0 redraws before them) as lap
+    starts already partly corrupted (an opposite-lane node left unreset).
+  - The average over all 900 lap starts is 1.32e-2, against 1.07e-2 at the steady snapshot; the BAD laps contribute 3.5e-3 of it.
+- So at L = 4 the natural per-lap ε is about 25% above the snapshot value.
+- Whether the BAD laps' frequency × ε shrinks at larger L at least as fast as the steady value is NOT measured. The m-lap
+  increments of §3b include corrupted states reachable within m laps of the snapshot, but no scan was run at L ≥ 5.
+  - This is the largest remaining coverage gap. In §4 it is gap G1.
+
 ### 3c. The mechanism (READING; the chain is the DATA)
 - MAXPATH=1 prints the most probable failing path. At L = 5 (one lap) it has probability 6^−5 = 1.286e-4 exactly:
     25->1 of [7, 17, 19, 21, 23, 25]; 27->26 of [7, 17, 19, 21, 23, 27]; 29->28 of [7, 17, 19, 21, 23, 29];
