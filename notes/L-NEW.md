@@ -2,6 +2,11 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
+BOX 13 (Lead 01:39Z Oct 23, SCREEN ONLY, to ~03:45Z): docs/new/N8-screen.md. Three candidates pass the screen rule, ranked: N8a Koh-Loho
+tree SI (arXiv 2108.13338) with a global pivot rule (authors leave the polynomial pivot rule open; quasi-poly worst case by construction;
+kill test = perfect tree on tc, where SPM on the same tree is exponential); N8b Sherali-Adams lift of the strategy+potential MIP (long
+shot); N8c N5 best-reply hysteresis (low leverage). Screened out: Schewe-LP IPM (doubly exponential coefficients), multi-switch LRC,
+optimal SI, lazy trees, discounted-reduction methods. No code. Waiting for the Lead's choice.
 SUCCESSOR 5 (Opus 5.5, D15/L37), BOX 12 (GO 07:18Z Oct 22, Lead box to ~10:45Z). N6 = IPM on the Jurdzinski-Savani P-matrix LCP of the
 induced discounted game: DEAD END (docs/new/N6-ipm.md §8; notebook "Dead ends"). Screen: proof route dead (HIJ kappa, Friedmann beta_G,
 HMZ Thm 6.5). Bench (experiments/new/ipm/results/*.csv): no answer on 7 of 13 hard families at small N, smallest counter_ortl N = 3 (n = 16,
@@ -188,6 +193,9 @@ NEXT for a successor:
   vary with N; check with a per-iteration trace (which edges each step switches).
 
 ## Sources opened
+- (succ. 5, box 13) arXiv 2108.13338 Koh-Loho (21ee0e4336252f7e): §1 p.2-3, Thm 2.3, 3.1, 4.5. Schewe MFCS 2009 author PDF (d27bbc79ab6b162b):
+  §1 p.2, Cor. 6-8. arXiv 1305.3944 Avis-Friedmann (d1fafb8b5d0b822c): abstract, Thm 4. arXiv 1210.2459 CGR (02fca6a45515f2ec): abstract.
+  arXiv 2509.16075 Maat (69706649fed1fac9): related work p.2. arXiv 1405.0945 (4c6956dc2f1db3ee): §1 p.2. arXiv 1605.03019 (cb6029755abff8a9): §1.
 - (succ. 5) arXiv 2007.06558 v5 Cen et al. (sha256 23fddbc3f493d02e): Thm 1. arXiv 2105.15186 v3 Cen-Wei (a2da0da3164be410): Thm 3.
 - (succ. 5, 2026-10-22) arXiv 1304.1888 v2 HIJ (sha256 01e4cde9b47f90cb): §2.3 Def. 16, Thm 18; §3 Thm 19, Thm 21 (family G_n); §4 Thm 22-25;
   §1.1. arXiv 1708.01544 ABGJ (9608058cb6fa98a3): Thm A/B, Cor. 31, Remark 32, p.2-3 (bitlength of t exponential). de Klerk-Nagy,
