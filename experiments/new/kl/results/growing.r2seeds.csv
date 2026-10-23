@@ -1,0 +1,13 @@
+family,N,n,seed,pivots,pivots_dual,verify,oink
+switchbestexp,6,160,1,6,830,verified,zielonka(oink zlk) OK strategies verifie
+switchbestexp,6,160,2,6,406,verified,zielonka(oink zlk) OK strategies verifie
+switchbestexp,6,160,3,6,626,verified,zielonka(oink zlk) OK strategies verifie
+switchbestexp,8,210,1,8,879,verified,zielonka(oink zlk) OK strategies verifie
+switchbestexp,8,210,2,8,994,verified,zielonka(oink zlk) OK strategies verifie
+switchbestexp,8,210,3,8,970,verified,zielonka(oink zlk) OK strategies verifie
+switchbestexp,10,260,1,10,1714,verified,zielonka(oink zlk) OK strategies verifie
+switchbestexp,10,260,2,10,1729,verified,zielonka(oink zlk) OK strategies verifie
+switchbestexp,10,260,3,10,1207,verified,zielonka(oink zlk) OK strategies verifie
+tc,14,658,1,344,370,verified,zielonka(oink zlk) OK strategies verifie
+tc,14,658,2,414,374,verified,zielonka(oink zlk) OK strategies verifie
+tc,14,658,3,450,520,verified,zielonka(oink zlk) OK strategies verifie
