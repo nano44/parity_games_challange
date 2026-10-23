@@ -56,3 +56,39 @@ G_n (or a port of it) forces the same switch sets under tree labels; that is unk
   admissible switch is open.
 - U4. Data caveat (T25 C1): the bench families were built against other algorithms; the evidence is not adversarial for tree labels
   beyond R53/R54's families.
+
+## 4. T26 corrections (L-LIT T26 SIGN WITH CAVEATS, claude/l-lit docs/lit/T26-N8d-step3.md; applied 08:02Z by date -u; §0-§3 unchanged)
+- **C4, page fix.** Lemma 4.75 and Theorem 4.76 are on printed p.186 (PDF p.202) of the thesis, not p.187 (§0 and §1 say p.187; the same
+  slip is in R54 §0). Checked in L-NEW's copy (sha256 68748f5388a94151…): PDF p.202 carries both and is headed "186".
+- **C1, Theorem 4.78 added (the B10 row of §1 should be read with it).** Thesis §4.7.3 ("Switch Half and all that", printed p.187-189,
+  PDF p.203-205), Theorem 4.78 (printed p.189): "Policy iteration with oblivious randomized improvement rules for infinitary payoff games
+  requires expected subexponential time". The rules are Improve_P for a probabilistic positive integer selector P = (p_n), "for
+  simplicity, we assume binary out-degree here"; Random-Edge is p_n(1) = 1 (Algorithm 11, item 1). On binary out-degree games R2 IS this
+  Random-Edge instance (an improvable node has exactly one admissible arc, so node-uniform = edge-uniform and the largest-Tighten choice
+  is vacuous); off binary games R2 is node-uniform, not edge-uniform, and is not an Improve_P rule. Theorem 4.78's proof is a sketch
+  (p.187-188: the bound "transfers to all randomized multi-switch improvement rules due to the fact that the two kinds of competitions ...
+  are won with even higher probability").
+- **C2/C3, status of B10's parity side: "theorem, transfer sketched".** Theorem 4.76's parity transfer rests on Lemma 4.75, justified in
+  one sentence ("the valuations of the parity game nodes are essentially the same as the potentials in the MDP by dropping unimportant
+  O(1) terms") with no proof in Appendix A; its MDP twin Lemma 4.68 is proved (pp. 259-263, per T26). The MDP/LP rows (Thm 4.71, 4.73)
+  are proved. A port of G_n to R2 needs three steps (T26 §2(b)): (i) dualize (Friedmann's improver is player 0, Koh-Loho's is Odd: the
+  test is R2's DUAL run); (ii) use Lemma 4.74's start strategy as τ_1 (kl_single.py's default, first successor, is not it); (iii) a
+  Lemma-4.75 analogue for EVERY reachable (τ, µ) in each phase, since Koh-Loho's admissible set depends on µ, not only on τ. (i) and (ii)
+  are mechanical; (iii) is the substantive open step. (The structural test, C6, is L-RED box 23's; not run here.)
+- **C5, B14 row.** Add Hansen-Zwick, "Random-Edge Is Slower Than Random-Facet on Abstract Cubes", ICALP 2016, LIPIcs.ICALP.2016.51
+  (PDF sha256 ac500016f9d73aed…, opened 2026-10-23), abstract: AUSOs of the n-cube "on which Random-Edge performs an expected number of
+  2^{Ω(√(n log n))} steps", improving Matoušek-Szabó's 2^{Ω(n^{1/3})}. Still abstract cubes: not transferable to Koh-Loho runs (not cube
+  walks; strategies recur with larger µ, Koh-Loho §3).
+- **Positioning sentence: L-LIT's stronger form ADOPTED (replaces §2's sentence; §2 kept for the record).** I agree with T26 §3: the
+  selection rule is not the escape, only the valuation is.
+  > N8d-R2 lies outside every proved lower-bound framework we know of, for two reasons. First, every proved strategy-iteration lower
+  > bound fixes valuations that are a function of the current strategy (VJ, discounted or MDP values), and the construction controls
+  > their improving-switch sets; this covers B8-B12, Friedmann's Random-Edge bound (thesis Thm 4.76) and its oblivious-randomized
+  > extension (Thm 4.78). R2's switches are instead violations of a history-dependent, forced-increase least fixed point over a
+  > universal tree. Second, the universal-tree and separator bounds (B1-B3) bound only the value domain or tree-driven recursions,
+  > which bound Koh-Loho's pivots only from above. The selection rule itself is not the escape: on Friedmann's Random-Edge game G_n
+  > every improver node has out-degree 2 (T26 §2(a), Table 4.19), so R2 chooses exactly as Random-Edge does there. Hence Thm 4.76
+  > would apply to R2 if, on the dual of G_n from Lemma 4.74's start strategy, the admissible arcs at every reachable (τ, µ) were those
+  > of Table 4.17. That is Lemma 4.75 for tree labels, and it is open; Thm 4.76's own parity transfer rests on Lemma 4.75, which the
+  > thesis justifies in one sentence.
+- Unchanged and still applying: T25 C1 / T26 C7 (bench not built against tree labels beyond R53/R54; the switchbestexp ~n² fit is DATA).
