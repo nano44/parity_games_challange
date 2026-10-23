@@ -18,3 +18,4 @@
 | N10a | ACYC + ESC1 escape cuts (min-cut separation), box 19, N10-screen.md §1 | DEAD on data: one-player exact (Lemma B), 15 gaps / 800 two-player queries |
 | N10b | ACYC + ESC1 + ESC-tau cuts (tau from the Odd-side REGION LP), §2 | DEAD on data: 3 gaps / 5,432 random queries (smallest n = 8), counter_symsi N = 2, 3 |
 | N10c | conditioning on the N10b oracle, §3 | DEAD on data: one-sided; STUCK on yes-instances r1569 (n = 14; 1 in 8,000 random games) and counter_symsi N = 3 (n = 32) |
+| synthesis | (c) lane lessons L1-L3 and next-box recommendation (box 20, c-lane-synthesis.md) | written; lane parked |

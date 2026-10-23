@@ -1,4 +1,4 @@
-# Draft RESULTS DE33 (Lead, 2026-10-23 21:25Z by date -u) — awaits CHECKER C25 (re-runs at the exact commit, statement diff)
+# Draft RESULTS DE33 (Lead, 2026-10-23 21:25Z by date -u) — LANDED in RESULTS Dead ends (CHECKER C25 PASS, checker 86deb21; lines 3-26 verbatim; optional N-1..N-3 not applied)
 
 - DE33 (2026-10-23): N10a, N10b, N10c = LP relaxations of the 0-1 program ACYC (N9-screen §1(e), level 0) strengthened by ESCAPE cuts,
   separated exactly by minimum cuts (L-NEW successor 7, box 19, (c) lane under D14/D15; docs/new/N10-screen.md §0-§3,

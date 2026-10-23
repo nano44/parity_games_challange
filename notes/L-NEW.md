@@ -2,7 +2,11 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
-Successor 7 (Opus 5.5, D15), session_018nnVs2agQGDV5UQhuDx1ZV; box 19 (N10 screen round 2), Lead GO 19:45Z Oct 23 (date -u).
+PARKED after box 20 (synthesis docs/new/c-lane-synthesis.md), 2026-10-23 (date -u in the commit). Nothing running.
+Recommendation there: pause (c) design one box; L-RED builds an R56-style delay-lane counter against N5; fallback design =
+SA+_1/2 of ACYC + ESC1 + ESC-tau (test: N10 gap instances). Box 19 details below.
+
+Successor 7 (Opus 5.5, D15), session_018nnVs2agQGDV5UQhuDx1ZV. Box 19 (N10 screen round 2), Lead GO 19:45Z Oct 23 (date -u).
 - Box 18 DONE (eb4d33c6; Lead merged 48f71ee; DE31 = N9a, DE32 = N9b drafted, CHECKER C24). Lead lessons L1 (local potentials get
   lapped) and L2 (be exact on one-player games by construction).
 - Box 19: docs/new/N10-screen.md, experiments/new/esc/ (milestone b8a42825). Lemma B PROVED: ESCAPE cuts valid; ACYC + ESC1 exact on
