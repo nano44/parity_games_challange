@@ -1,0 +1,35 @@
+{
+ "n": 2,
+ "d": 3,
+ "conv": "V",
+ "value": 4,
+ "subset_states": 7,
+ "weak_ok": true,
+ "strong": true,
+ "automaton": {
+  "k": 4,
+  "d": 3,
+  "delta": [
+   [
+    1,
+    2,
+    3
+   ],
+   [
+    null,
+    2,
+    null
+   ],
+   [
+    1,
+    2,
+    null
+   ],
+   [
+    null,
+    3,
+    null
+   ]
+  ]
+ }
+}

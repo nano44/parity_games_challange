@@ -2,9 +2,9 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-19 ~01:1xZ: PARKED after T23 docs/lit/T23-CDAG-known.md: CDAG_n KNOWN IN A CLOSE FORM (FHZ 1410.7530 acyclic shortest
-paths, randomized single-switch, subexp; Melekopoglou-Condon 2^n-1 on stochastic MDPs); exact VJ/parity instance NOT FOUND.
-Earlier: T18-T22. Next: Lead.
+2026-10-22 08:2xZ: PARKED after T24 docs/lit/T24-HIJ-barrier.md: HIJ 1304.1888 statements verified (Thm 18, 19, 21, 22-25,
+§1.1); BARRIERS B21 added (κ-based IPM bounds n^Θ(d) for parity; never better than HMZ Thm 6.5). Trunk merged 823a9890.
+Earlier: T18-T23. Next: Lead.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -221,6 +221,7 @@ Earlier: T18-T22. Next: Lead.
 | arXiv 1410.7530 v1 (FHZ, shortest paths), sha256 c337feb64e808a3e… | abstract, §1 p.1-2 ("simplest form of deterministic 1-player games"), §9 p.33 | 2026-10-19 | T23 |
 | arXiv 2212.00083 v1 §5 p.30 (MC94 construction described); 1003.3418 p.1 (MC94 2^n-1); 1208.5083 p.2; 1306.0386 p.4; 2606.29568 p.4 | Melekopoglou-Condon descriptions; deterministic-MDP remarks | 2026-10-19 | T23 |
 | NOT opened (T23) | Melekopoglou-Condon 1994; Zadeh 1973 (bad network problem); Hansen-Zwick 2010; Fearnley PhD thesis | 2026-10-19 | T23 |
+| arXiv 1304.1888 v2 (Hansen, Ibsen-Jensen, CiE 2013), sha256 01e4cde9b47f90cb9fc22072d0df68e1cf4a8bfd125b971f25690cf89952e6aa | abstract; §1.1 p.3-4 (rendered p.3); Def. 16 p.9; Thm 18 p.10; Thm 19 p.11; G_n p.12; Thm 21 p.13; Thm 23 p.16; Thm 24 p.18; Thm 25 p.19 | 2026-10-22 | T24 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.

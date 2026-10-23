@@ -1,0 +1,6 @@
+family,N,sha1,n,nbin,d,bits,prec,it_cert,it_total,status,mu_final,secs,check
+recursiveladder,1,2acf8c744779,5,5,3,17,248,16,16,cert/c18/mu0,74649309999.53535,0.0,zielonka(oink zlk) OK strategies verified
+recursiveladder,2,2549b4f6f7df,10,10,8,40,448,100,100,cert/c41/mu9,4.7052523380280087e-07,0.0,zielonka(oink zlk) OK strategies verified
+recursiveladder,3,1242df63a7d7,15,16,11,59,616,58,58,cert/c60/mu0,1.891765928157757e+36,0.0,zielonka(oink zlk) OK strategies verified
+recursiveladder,4,8cbc70c5d006,20,22,14,79,776,221,221,cert/c80/mu16,1.4184785240530084e-11,0.1,zielonka(oink zlk) OK strategies verified
+recursiveladder,5,b9039ab6b656,25,28,17,100,944,98,98,cert/c100/mu0,2.32039569249983e+60,0.2,zielonka(oink zlk) OK strategies verified

@@ -1,0 +1,29 @@
+{
+ "n": 2,
+ "d": 1,
+ "conv": "S",
+ "mode": "weak",
+ "value": 2,
+ "k_start": 1,
+ "eager": false,
+ "solver": "cadical153",
+ "automaton": {
+  "k": 2,
+  "d": 1,
+  "delta": [
+   [
+    1
+   ],
+   [
+    null
+   ]
+  ]
+ },
+ "graphs": {
+  "evens": 1,
+  "odds": 1,
+  "used_even": 0,
+  "used_odd": 1
+ },
+ "seconds": 0.0
+}

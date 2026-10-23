@@ -1,0 +1,4 @@
+family,N,sha1,n,nbin,d,bits,prec,it_cert,it_total,status,mu_final,secs,check
+tc+,1,716ac479b46f,8,8,8,37,424,0,0,cert/c0/mu0,1.0,0.0,zielonka(oink zlk) OK strategies verified
+tc+,2,b462886dd1b7,24,26,16,93,888,None,846,stalled/c0/mu37,4.240965810105504e-84,1.2,no solution
+tc+,3,07c86e9a9f13,54,60,22,151,1368,None,835,stalled/c0/mu44,1.5845793011435792e-122,8.1,no solution

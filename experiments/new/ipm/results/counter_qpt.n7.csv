@@ -1,0 +1,4 @@
+family,N,sha1,n,nbin,d,bits,prec,it_cert,it_total,status,mu_final,secs,check
+counter_qpt,2,8adbaab6bdb5,4,4,4,18,256,1,1,cert/tau0,640000.0,0.0,zielonka(oink zlk) OK strategies verified
+counter_qpt,4,1b5d8a9b7f24,8,8,8,37,424,1,1,cert/tau0,352638738432.0,0.0,zielonka(oink zlk) OK strategies verified
+counter_qpt,8,8b497ea72767,16,16,16,80,784,1,1,cert/tau0,3.189059870763704e+24,0.0,zielonka(oink zlk) OK strategies verified

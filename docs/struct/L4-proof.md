@@ -1,7 +1,7 @@
 # L4: strong separators for vertex-priority games are super-polynomial on the diagonal (L-STRUCT write-up, 2026-10-14)
 
-Status: proof write-up for refereeing (two referees, Lead 20:46Z: the REFEREE proposed the split construction, so it
-is not the sole signer). Lead reading L7: L4 is a supporting lemma; T3 + L4 count as M3. Nothing here is a result
+Status: signed by the first referee (REFEREE, referee 9bf5301, after the two fixes of 1f5e004 applied at 50dc28b); the
+second, independent referee checks L4 together with T3 as one M3 package (Lead 21:35Z). Lead reading L7: L4 is a supporting lemma; T3 + L4 count as M3. Nothing here is a result
 until signed. Vocabulary: docs/struct/S1-statement.md (D1-D5, conventions E/S/V, Lemma 2), S3 D6 (diagonal).
 
 Attribution. The reduction below is L-LIT's Claim R (docs/lit/T6-S3.md, unrefereed there), which L-STRUCT derived

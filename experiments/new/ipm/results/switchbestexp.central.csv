@@ -1,0 +1,3 @@
+family,N,sha1,n,nbin,d,bits,prec,it_cert,it_total,status,mu_final,secs,check
+switchbestexp,1,8c56661373a0,35,48,42,255,2200,228,228,centre-fail/c1/mu0,7.41477745264973e+153,2.5,zielonka(oink zlk) OK strategies verified
+switchbestexp,2,b3d5bc293d1b,60,90,70,478,4000,305,305,centre-fail/c15/mu0,5.5754180035615413e+287,26.1,zielonka(oink zlk) OK strategies verified

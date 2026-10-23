@@ -1,0 +1,41 @@
+seed,n,d,nbin,bits,it_cert,it_total,status,check
+1,6,13,5,33,64,64,cert/c65/mu0,zielonka(oink zlk) OK strategies verified
+2,7,14,4,30,31,31,cert/c32/mu0,zielonka(oink zlk) OK strategies verified
+3,8,13,5,33,32,32,cert/c35/mu0,zielonka(oink zlk) OK strategies verified
+4,9,11,6,34,112,112,cert/c69/mu8,zielonka(oink zlk) OK strategies verified
+5,10,16,8,47,158,158,cert/c93/mu10,zielonka(oink zlk) OK strategies verified
+6,11,16,8,47,663,663,cert/c92/mu14,zielonka(oink zlk) OK strategies verified
+7,12,16,10,55,382,382,cert/c111/mu11,zielonka(oink zlk) OK strategies verified
+8,13,26,10,64,None,480,centre-fail/c1/mu0,no solution
+9,14,21,13,74,None,480,centre-fail/c1/mu0,no solution
+10,15,26,14,83,87,87,cert/c166/mu0,zielonka(oink zlk) OK strategies verified
+11,16,19,12,67,366,366,cert/c134/mu15,zielonka(oink zlk) OK strategies verified
+12,17,33,12,79,259,259,cert/c155/mu15,zielonka(oink zlk) OK strategies verified
+13,18,29,12,76,331,331,cert/c150/mu20,zielonka(oink zlk) OK strategies verified
+14,19,33,18,109,12,12,centre-fail/c1/mu0,zielonka(oink zlk) OK strategies verified
+15,20,39,15,98,441,441,cert/c197/mu17,zielonka(oink zlk) OK strategies verified
+16,21,43,16,106,343,343,cert/c213/mu0,zielonka(oink zlk) OK strategies verified
+17,22,38,13,87,316,316,cert/c172/mu17,zielonka(oink zlk) OK strategies verified
+18,23,36,18,112,917,917,centre-fail/c25/mu0,zielonka(oink zlk) OK strategies verified
+19,24,40,20,126,197,197,centre-fail/c1/mu0,zielonka(oink zlk) OK strategies verified
+20,25,47,18,120,None,216,centre-fail/c1/mu0,no solution
+21,26,44,17,112,None,12,centre-fail/c1/mu0,no solution
+22,27,43,22,139,None,229,centre-fail/c1/mu0,no solution
+23,28,47,25,159,None,11,centre-fail/c1/mu0,no solution
+24,29,50,23,150,None,218,centre-fail/c1/mu0,no solution
+25,30,55,25,165,None,348,centre-fail/c17/mu0,no solution
+26,5,8,3,21,40,40,cert/c41/mu0,zielonka(oink zlk) OK strategies verified
+27,6,8,3,21,77,77,cert/c42/mu3,zielonka(oink zlk) OK strategies verified
+28,7,13,6,36,133,133,cert/c71/mu8,zielonka(oink zlk) OK strategies verified
+29,8,15,5,34,68,68,cert/c69/mu0,zielonka(oink zlk) OK strategies verified
+30,9,13,5,33,121,121,cert/c65/mu7,zielonka(oink zlk) OK strategies verified
+31,10,14,9,49,95,95,cert/c97/mu0,zielonka(oink zlk) OK strategies verified
+32,11,21,8,51,215,215,cert/c101/mu10,zielonka(oink zlk) OK strategies verified
+33,12,18,9,53,137,137,cert/c105/mu0,zielonka(oink zlk) OK strategies verified
+34,13,21,11,65,152,152,cert/c129/mu0,zielonka(oink zlk) OK strategies verified
+35,14,22,9,57,167,167,cert/c112/mu11,zielonka(oink zlk) OK strategies verified
+36,15,25,13,78,336,336,cert/c154/mu15,zielonka(oink zlk) OK strategies verified
+37,16,28,13,80,114,114,cert/c161/mu0,zielonka(oink zlk) OK strategies verified
+38,17,29,12,76,225,225,cert/c152/mu14,zielonka(oink zlk) OK strategies verified
+39,18,36,13,86,None,903,stalled/c169/mu29,no solution
+40,19,26,15,88,None,480,centre-fail/c1/mu0,no solution
