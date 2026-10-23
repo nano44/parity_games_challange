@@ -4,7 +4,8 @@ Opus 5.5: the session's model was switched (get_session: user_switched_model cla
 The previous notebook (boxes 1-18) is in git at l-red 4f73e7a6: `git show 4f73e7a6:notes/L-RED.md`; boxes 16-18 handover at a5274bd6.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: PARKED after box 21 (2026-10-23 ~03:10Z): N8a (perfect tree, both frozen rules) DEAD by H_k (Lead re-runs 02:40Z / 02:46Z / 02:58Z). Box 19 merged trunk 18812f7; k-pools NEST* line CLOSED (Lead, D15 / L37). Box 20 = S growth on
+Status: PARKED after box 22 (2026-10-23 ~07:35Z): N8d-R2 SURVIVES (no kill; R54). Box 22 target was Koh-Loho tree SI, perfect tree,
+uniformly random single switch, kl_single.py @ l-new d7fadfb. Box 21: N8a DEAD by H_k (Lead re-runs 02:40Z / 02:46Z / 02:58Z). Box 19 merged trunk 18812f7; k-pools NEST* line CLOSED (Lead, D15 / L37). Box 20 = S growth on
 two-player games: docs/red/R52-sgrowth.md, experiments/red/sgrow/.
 
 ## DONE (box 19; docs/red/R51-piecemap.md; tools experiments/red/nest16/piecemap.py, gatescan.py; evidence in experiments/red/nest16/maps/ and scans/)
@@ -25,6 +26,14 @@ two-player games: docs/red/R52-sgrowth.md, experiments/red/sgrow/.
 - Obstruction (R51 §4): all 126 single returns keep S 25 and the identical prefix P[0..13]; after the block there is one free
   index (#14) before 7 closes at #15; a seventh level needs two recurring positions between 9 and 16, i.e. a longer post-block tail,
   which only a gate-type change (not a return) can add; gates from the innermost pieces replace D's block by E's instead of nesting.
+
+## DONE box 22 (R54; produced on Opus 5.5)
+- Fidelity of kl_single.py R2: OK (R54 §0). Friedmann thesis Thm 4.76 opened (Random-Edge; not ported: rule and valuation differ).
+- H_k under R2: mean 14.7 dual pivots over 200 seeds at k = 0 and k = 2 (identical histograms): the counter dies, laps are random and few.
+  Cause: one switch at a time lets a cycle-closing node move early; the least fixed point then jumps to ⊤.
+- R2 climbs (min over 5 seeds): only flat crawls (34 at n 14; 53 / 70 on a padded score), flat under padding.
+- switchbestexp under R2 (R54 §3): N 14 mean 3014, N 16 mean 4052 (5 seeds each), all verified; best fit n^2.01 (SSR 0.014) over
+  1.206^N (0.019); ratios 1.53, 1.64, 1.33, 1.46, 1.34; no knee. NO kill. Deciding needs N 18-22 x 5 seeds = a faster kl.
 
 ## DONE box 21 (R53; produced on Opus 5.5; target N8a = L-NEW's kl.py @ l-new 4fd179c8, run unmodified)
 - Super-polynomial pivot families for N8a on the perfect universal tree, BOTH frozen rules (docs/red/R53-n8a-counter.md):
@@ -52,11 +61,11 @@ None. No process runs at box end.
 2. A different fourth part: E = nest5_n49 (a part with its own 5-level structure) above nest6min, then the recipe; n 124, ~40 s/eval.
 3. Re-read R50 §4 / §7 cross-part attributions with piecemap.py (file ids).
 ## Resume point
-PARKED after box 21 (2026-10-23 ~03:10Z, date -u). Nothing in flight; no process runs. Wake only on a new named target from the Lead.
-Box 21 state: R53 §1-§6 final (freeze §1-§6; corrections in new sections). Open follow-ups only if routed: (a) tree-SI on the succinct
-(JL17) tree or with single-switch rules is a NEW candidate (needs its own code from L-NEW; then re-run H_k / climb); (b) a proof of
-the H_k law for all k (period read off traces). Earlier resume points: box 20 text below in git (`git show 595ca267:notes/L-RED.md`),
-`git show a5274bd6:notes/L-RED.md`, `git show 4f73e7a6:notes/L-RED.md`.
+PARKED after box 22 (2026-10-23 ~07:35Z, date -u). Nothing in flight; no process runs. Wake only on a new named target from the Lead.
+R53 §1-§6 and R54 §0-§4 final (freeze; corrections in new sections). If routed: (1) N8d-R2 needs N 18-22 x 5 seeds on switchbestexp,
+which needs a faster kl (per-pivot Python cost: ~19 min/seed at N 14, 28-58 min at N 16); (2) or a port of Friedmann's Random-Edge
+counter (thesis Thm 4.76, opened) to random-node / best-arc tree SI; (3) R2-robust counter: a period where EVERY candidate keeps the
+lapping cycle open (forced chain). Earlier resume points: `git show 866615f3:notes/L-RED.md` (box 21), `git show 595ca267:notes/L-RED.md`.
 Climb lessons (box 20, oclimb.py; box 21, kclimb.py): fitness from the solver's own counter, confirm with the reference tool; pad
 NEUTRALLY (S growth) or with NEW TOP PRIORITIES (tree-level growth); budget by wall clock; pause a climb with kill -STOP / -CONT for
 short checks; count jobs with `ps -eo args | grep -c '^python3 .*<tool>'`; never pkill -f a pattern from your own command line.
@@ -81,6 +90,9 @@ dtl.cpp @ 8fbf0a7. Earlier opened sources are listed in `git show 4f73e7a6:notes
 - (SPP) "S ≤ |G'|" (longest phase at most the unsolved game at its start; R24's target, DATA only, never signed) is FALSE in oink
   order: s21_oink_n20 (experiments/red/sgrow/instances/, sha1 da164511784449b906663c190757fd78c057f97c), an Even phase of S 21 at
   |G'| 20 (pinned Oink even 21, odd 1, verified; Lead re-ran 10:24Z, CONFIRMED). Stable order on the same game: S 11. Excess +1, linear.
+- R53 counter against N8d-R2 (random single switch): dies. H_k mean 14.7 dual pivots over 200 seeds at k = 0 and 2 (identical
+  histograms); a cycle-closing node is a candidate each period and R2 picks it with probability bounded below. Instance klmin_n13 / H_2.
+- Min-over-5-seeds R2 climbs (n 12-18, ~30 min): only crawls flat under padding (r2crawl_n14 34 primal; r2climb_h13 53 / 70 dual).
 - Rule-free transfer of the N8a lapping counter ("whatever the pivot rule picks among improving arcs"): FALSE on H_k. Single-switch
   rules (lowest / highest index, random seeds 1, 2) solve H_0..H_2 in 9 / 5 / 5 / 17 iterations for every k (ksubset.py; R53 §6b item 4).
   The counter needs simultaneous switching (class SA). Any-universal-tree transfer: READING, gap G1 = local second-child offsets below
