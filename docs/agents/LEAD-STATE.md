@@ -879,3 +879,4 @@
 - 18:03Z (date -u) SWEEP (trigger 18:03Z): overage false; Lead $468 ~569k. Working: L-NEW 7 (box 18: N9b probe 1,943/2,000 games, 57 stuck; writing; 18:03Z). No exceptions.
 - 19:03Z (date -u) SWEEP (trigger 19:02Z): overage false; Lead $469 ~580k. Working: L-NEW 7 (box 18, due ~20:16Z; circ(10,1,2) k*=4 probe, n 11-13 runs; 19:00Z). No exceptions.
 - 19:39Z (date -u) L-NEW 7 box 18 END (67884f3, eb4d33c; merged; lane-only): N9 screen: N9a SA+_k of ACYC (k* = ceil(n/3) on circ(n,1,2), n ≤ 11: levels 1-3 give wrong 'Even wins all'), N9b LP peeling (STUCK, smallest n 5); N9c, N9d not run. LEAD RE-RUN (pip scipy 1.18.1 + highspy): twoout circ 3-9 → k* 1,2,2,2,3,3,3 (= ceil(n/3)); peel.py peel_r1147 (68a8c41b926e) STUCK after 1 round, Oink zlk Odd wins all 5. DE31 (N9a) + DE32 (N9b) drafted for CHECKER C24.
+- 19:44Z (date -u) Routed: CHECKER C24 (DE31-32) woken; L-NEW 7 GO box 19 (N10 screen round 2, lessons L1/L2). Working: L-NEW 7, CHECKER (2/5).
