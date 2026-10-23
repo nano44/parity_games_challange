@@ -254,6 +254,44 @@ Where the R17 induction stops inside a stretch. Two different one-player inducti
 - A proof of (SEG-1O) has to count such deadlocks. A proof of (CH-1O) has to bound the releases. This is the exact point where
   the one-player argument stops on the smallest two-player class.
 
+### 3.7 With L-RED's Theorem W (R58 §2), and the σ̄-segment structure of frozen runs (written 23:44Z by date -u)
+- Theorem W (R58 §2, L-RED, unrefereed): conditional on (P), VJ00 Lemma 5.8 "1 ⇒ 2", the same premise as R15 G-N5T-3.
+  - Checked here line by line: Lemma 1 (equal improving sets ⇒ equal valuations, via (P) in G minus the common set), Lemma 2
+    (R15's φ bounds a flat stretch), and the counting.
+  - No gap found. It uses no property of the selection, so it applies verbatim to F_τ runs (R58 §7, Corollary W2).
+  - So a super-polynomial frozen run needs gate width ≥ log(T/4n²)/log m_E at all but polynomially many moves.
+- Widths on the long frozen runs (width.py; Even moves by |Iσ|):
+
+  | instance | n | Even moves | width 1 / 2 / 3 / 4..8 / ≥ 9 | gated G_τ-improving edges refused |
+  | --- | --- | --- | --- | --- |
+  | fts_ph16 (σ_0, τ*) | 16 | 22 | 12 / 2 / 5 / 3 / 0 | 2 |
+  | fts_best16 (canonical) | 16 | 28 | 11 / 2 / 10 / 3 / 2 | 12 |
+  | fts_g29 (σ_0, τ*) | 29 | 66 | 11 / 17 / 8 / 19 / 11 | 15 |
+  | oneodd_c24 (canonical) | 24 | 44 | 18 / 8 / 2 / 12 / 4 | 19 |
+
+  - The growth climb's run (fts_g29) is no longer a narrow repair chain: 30 of 66 moves are at width ≥ 4.
+- experiments/new/box21/instances/fts_g29.pg (n = 29, sha1 58b69e82e2981ace74603576ca7771ef933a9a54, start fts_g29.start; grow.py
+  from fts_ph16), N5 from (σ_0, τ*):
+  - 66 iterations (6 fallbacks), all in ONE joint λ-phase and all W-changing;
+  - one-player bound n − 1 = 28;
+  - Oink zlk OK, strategies verified. The plain run takes 18.
+- Where the excess comes from (READING with DATA).
+  - In a frozen run the only fresh coupling left is σ̄, Odd's best reply inside Even's honest valuation. While σ̄ = c is constant,
+    the gate is the improving set of the one-player game G_c, and the selection is against τ*.
+  - Split each phase at σ̄ changes. Segment lengths:
+    - fts_ph16: [3, 14, 2, 1, 2], with 4 σ̄ changes;
+    - fts_best16: [1, 1, 1, 2, 11, 4, 1, 2, 2, 3], with 9 changes;
+    - fts_g29: max 10, with 13 changes.
+    Every segment is ≤ n − 1.
+  - So the frozen runs are long because σ̄ changes often, not because segments are long. This is K9's decomposition
+    (N5-oneplayer-box7.md: iterations ≲ poly × (best-reply changes)) in its cleanest setting: τ is gone and σ̄ is the only
+    opponent.
+  - The open question for (FO*) is therefore the one box 11 left open (N5-brchanges-box11.md): how often can σ̄ change along
+    Even's honest chain? It has no valuation-level invariant (box 11) and no width bound beyond Theorem W.
+- Growth of the frozen-τ* phase excess (grow.py, fitness = phase length − (n − 1), vertices added on the way): 22 at n 16
+  (fts_ph16), 40 at n 22, 50 at n 25, 66 at n 29. The phase length is about 0.08·n² at each point so far. This is a climb's
+  envelope, not a family; superlinear growth is NOT established. Final numbers in §6.
+
 ## 4. The (ALT) side: R-a, R-b
 - Formal (R-a): C_τ (Odd's changes) super-polynomial. With Theorem B, a kill on this branch needs C_τ super-polynomial while
   every block is short.
