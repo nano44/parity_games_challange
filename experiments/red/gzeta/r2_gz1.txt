@@ -1,0 +1,5 @@
+gz n 1 seed 1: 67,10,5,r2s1,0,63,verified,0.1 wall 0 s | zielonka(oink zlk) OK strategies verified
+gz n 1 seed 2: 67,10,5,r2s2,0,61,verified,0.1 wall 0 s | zielonka(oink zlk) OK strategies verified
+gz n 1 seed 3: 67,10,5,r2s3,0,60,verified,0.1 wall 0 s | zielonka(oink zlk) OK strategies verified
+gz n 1 seed 4: 67,10,5,r2s4,0,61,verified,0.1 wall 1 s | zielonka(oink zlk) OK strategies verified
+gz n 1 seed 5: 67,10,5,r2s5,0,60,verified,0.1 wall 0 s | zielonka(oink zlk) OK strategies verified
