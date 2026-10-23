@@ -1,0 +1,1 @@
+random [0, 300, 3, 12] [N10b: ESC-tau]: 300 games, 800 queries, 0 gaps, 37s

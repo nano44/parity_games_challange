@@ -1,0 +1,3 @@
+GAP counter_symsi_2.pg Q3 n=22 cuts=25
+GAP counter_symsi_3.pg Q3 n=32 cuts=73
+files [N10b: ESC-tau]: 32 games, 72 queries, 2 gaps, 1414s
