@@ -1,0 +1,16 @@
+family,N,file,n,m,d,rule,seed,pivots_primal,pivots_dual,time,ref,status,impl,tau1
+HL88,0,HL88_0.pg,41,60,14,r2,1,0,1380,0.040,zlk,OK,kl2fast,first
+HL88,0,HL88_0.pg,41,60,14,r2,2,0,1378,0.065,zlk,OK,kl2fast,first
+HL88,0,HL88_0.pg,41,60,14,r2,3,0,1390,0.038,zlk,OK,kl2fast,first
+HL88,0,HL88_0.pg,41,60,14,r2,4,0,1392,0.065,zlk,OK,kl2fast,first
+HL88,0,HL88_0.pg,41,60,14,r2,5,0,1400,0.035,zlk,OK,kl2fast,first
+HL88,1,HL88_1.pg,43,62,16,r2,1,0,63686,2.129,zlk,OK,kl2fast,first
+HL88,1,HL88_1.pg,43,62,16,r2,2,0,63580,1.923,zlk,OK,kl2fast,first
+HL88,1,HL88_1.pg,43,62,16,r2,3,0,63684,1.753,zlk,OK,kl2fast,first
+HL88,1,HL88_1.pg,43,62,16,r2,4,0,63734,1.868,zlk,OK,kl2fast,first
+HL88,1,HL88_1.pg,43,62,16,r2,5,0,63746,2.006,zlk,OK,kl2fast,first
+HL88,2,HL88_2.pg,45,64,18,r2,1,0,3139182,116.511,zlk,OK,kl2fast,first
+HL88,2,HL88_2.pg,45,64,18,r2,2,0,3139646,114.946,zlk,OK,kl2fast,first
+HL88,2,HL88_2.pg,45,64,18,r2,3,0,1230538,43.722,zlk,OK,kl2fast,first
+HL88,2,HL88_2.pg,45,64,18,r2,4,0,3138968,107.266,zlk,OK,kl2fast,first
+HL88,2,HL88_2.pg,45,64,18,r2,5,0,3139556,104.309,zlk,OK,kl2fast,first
