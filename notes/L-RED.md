@@ -73,9 +73,7 @@ two-player games: docs/red/R52-sgrowth.md, experiments/red/sgrow/.
   super-linear signal. s21_oink_n20 (da164511…): S 21 > |G'| 20 in oink order (R24's (SPP) DATA bound broken by 1; stable 11).
 
 ## IN FLIGHT
-- Box 24 (extended by the Lead to ~15:30Z): HLg_3 R2 seeds 1-2 (solvecheck.py, results/hlg_k3.csv), started 11:17Z.
-  - On completion: fill the k = 3 row of R56 §4 from the draft in scratch (s4.md), then push and report to the Lead (kill decision).
-  - If they have not finished by the cutoff: stop them and report k = 3 as not run.
+None. HLg_3 seeds 1-2 finished at 15:31Z (verified, full counter); no process runs.
 
 ## NEXT (for the Lead to route; items 1-2 belong to the CLOSED k-pools line and stay only as history)
 1. Lengthening without shallow rises: start from k4L72r_n101 (S 31) and look for edges that stop the mixed piece at position 1
@@ -88,7 +86,7 @@ Box 24 (2026-10-23, R56). Target N8d-R2. Pushed through 416e4116. Done so far:
 - §1: switch sets (M1, M2).
 - §2: HL_k (fixed lanes).
 - §3: exact ε(L) chain, lap scans, growing-lane family HLg_k.
-Open: the k = 3 rows, and §4 (the dead-end packet, asked by the Lead 12:25Z). If the Lead kills N8d-R2, CHECKER re-runs it at the
+Done: §4, the dead-end packet with the k = 3 rows, at box end. Open: the Lead's kill call. If the Lead kills N8d-R2, CHECKER re-runs it at the
 exact commit. Earlier resume points: `git show 8acfa086:notes/L-RED.md`.
 
 ## Sources opened

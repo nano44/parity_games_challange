@@ -264,7 +264,7 @@ scan4_laps2_show260.txt.
 | 0 | 5 | 29 | d2b96b4558248bf8f9248a5a6f0c20b569f8881c | 633, 623, 639, 643, 611 | 630 | 5.75e-4 · 29 = 0.017 |
 | 1 | 6 | 35 | 2366cbadd9d592986143df8df1557b89b98bd59b | 32170, 32232, 32156, 32214, 32232 | 32,201 | 3.92e-5 · 1225 = 0.048 |
 | 2 | 8 | 45 | 1c3c78895df68fd10690fd5ab5467f7f01546ee7 (= HL88_2) | 3139182, 3139646, 1230538, 3138968, 3139556 | 2,759,578 | 1.0e-7 · 91,125 = 0.009 (observed: 1 early stop in 5 runs; P ≈ 4.5% under ε = 1e-7) |
-| 3 | 10 | 55 | 9918e9b8463507401cf73a73a2945aa9bf5f23ac | running (solvecheck.py, seeds 1-2) | — | ≤ 9.4e-10 · 9.15e6 = 0.009 (ε(10) extrapolated from ε(8) with the smallest measured ratio 10.8; not computed) |
+| 3 | 10 | 55 | 9918e9b8463507401cf73a73a2945aa9bf5f23ac | 388766970, 388771694 (seeds 1-2) | 388,769,332 | ≤ 9.4e-10 · 9.15e6 = 0.009 (ε(10) extrapolated from ε(8) with the smallest measured ratio 10.8; not computed) |
 - Verification:
   - k = 0, 1: bench.py, results/hlg_k01.csv.
   - k = 2: results/hl88_k012.csv.
@@ -284,7 +284,7 @@ scan4_laps2_show260.txt.
     first level-2 carry.
   - The solvecheck re-runs of seeds 1-2 (hl88_k3_solvecheck.csv, header only) were stopped at 11:17Z in favour of HLg_3.
 
-## 4. Dead-end packet: N8d-R2 (written 2026-10-23 15:06Z by date -u; k = 3 row pending)
+## 4. Dead-end packet: N8d-R2 (written 2026-10-23 15:06Z by date -u; k = 3 row filled 2026-10-23 15:31Z by date -u)
 Candidate: N8d-R2 (docs/new/N8d-single.md §0, frozen 03:21Z). Koh-Loho Algorithm 1 over the perfect (n, d/2)-universal tree; each
 step takes a uniformly random Odd node with an admissible arc and switches it to its largest-Tighten arc.
 Code: experiments/n8d-second/kl2fast.py (L-COMP; equal to L-NEW's kl_single.py seed for seed, checked here on HL88_0 seeds 1-3 and
@@ -316,8 +316,8 @@ from bench.py (--impl kl2fast --no-r1), except k = 3, which uses solvecheck.py (
 | 0 | 29 | 633, 623, 639, 643, 611 | 630 | 630 | results/hlg_k01.csv |
 | 1 | 35 | 32170, 32232, 32156, 32214, 32232 | 32,201 | 32,2xx | results/hlg_k01.csv |
 | 2 | 45 | 3139182, 3139646, 1230538, 3138968, 3139556 | 2,759,578 | 3,139,4xx | results/hl88_k012.csv |
-| 3 | 55 | PENDING: seeds 1-2 running in solvecheck.py since 11:17Z (est. 3.0-3.7e8 pivots at 15:06Z) | — | ≈ 42·55^4 ≈ 3.8e8 | results/hlg_k3.csv |
-- Growth of the mean: 630 → 32,201 → 2,759,578 (×51, ×86 per step of k; n 29 → 35 → 45). k = 3 pending.
+| 3 | 55 | 388766970, 388771694 (seeds 1-2 only: runtime ≈ 4.2 h per seed, Lead 11:20Z / 15:05Z) | 388,769,332 | ≈ 42·55^4 ≈ 3.84e8; both runs complete it | results/hlg_k3.csv |
+- Growth of the mean: 630 → 32,201 → 2,759,578 → 388,769,332 (×51, ×86, ×141 per step of k; n 29 → 35 → 45 → 55). Every run at k = 3 completes the full counter; mean / n^{k+1} = 21.7, 26.3, 30.3, 42.5 pivots per lap (≈ 4L + 2; k = 2 is lowered by its one early stop).
 - Lead re-runs: HL88_0 / HLg rows (11:02Z), exactlap L = 5, 6 (12:25Z).
 
 ### 4c. ε(L), the per-lap failure probability (DATA: exact chain; coverage caveats)
