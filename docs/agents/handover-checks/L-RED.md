@@ -440,3 +440,53 @@ Box 14 plan (Lead); nothing starts before GO:
   number vertices and arcs identically on gz2 (round-trip a strategy through both encodings).
 - Also bit at this start (as for successors 8-10): stale local branch; `git rev-parse HEAD origin/claude/l-red` must agree after
   fetch before any edit.
+
+# L-RED successor 13 handover check, 2026-10-23 22:50Z (date -u) (Opus 5.5, D15)
+
+## 1. Branch, head, ahead/behind trunk
+- Branch claude/l-red. On arrival local HEAD = origin/claude/l-red = 0d0b67a1 (box 25 handover); not stale this time.
+- At 0d0b67a1: 4 ahead, 12 behind trunk a4fb9957. Merged trunk origin/claude/vibrant-johnson-nxvvxo a4fb9957 with a merge commit
+  (no rebase): head 6995fd92, 5 ahead, 0 behind (`git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`
+  = 5 0). This check commit makes it 6 ahead.
+
+## 2. Open work and the next step of each
+- Nothing in flight on arrival (0 python processes). Pinned Oink not built in this container: scripts/setup_oink.sh started in the
+  background (scratch log), needed to verify any N5 output.
+- Box 26 target (after GO): N5 SSI-GLOBAL against R57 §6's kill requirement, a game meeting (R-a) two coupled honest counters and
+  (R-b) no jump-ahead switch in N5's joint optimum.
+  - Next step: read R57 §3-§6b, docs/new/N5-ssi-global.md (S1-S5), N5-dlm-box5.md §4 (K6), and the n = 32 seed
+    experiments/red/n5/instances/sym_h16_s1.pg; with perswitch.py / n5tr.py, list at each iteration of the 55-iteration run which
+    switches N5 takes that a one-step counter would withhold (the jump-aheads), and on which edge classes (counter edge, threat,
+    other). That says whether R-b fails there on edges a lane could guard (C1-C3).
+  - Then either a family with super-polynomial N5 iterations (Oink zlk + verify.py on every output, n5b agreeing) or a sharpened
+    O4 (conjecture or partial incompatibility argument, labelled READING / PROVED).
+  - L-NEW successor 8 works the opposite direction (incompatibility proof); I read its files only.
+- G-NEST, N8d-R2 (DEAD, DE30 draft), k-pools (CLOSED, L37): no open work from me; CHECKER C23 may ask about R56 §4.
+
+## 3. docs/GAPS.md rows I own
+- G-NEST (major, owner "L-RED (attacks + proof attempts); L-ALG successor if any"): OPEN. Class best NEST* 6; k-pools line CLOSED
+  by the Lead (L37); (NEST*-BOUNDED) neither refuted nor proved.
+- Attacker role (owner L-ALG, "L-RED attacks"): GAP-A (blocker, open), GAP-C (blocker, open).
+- G-N5-TIME (major, owner L-NEW; OPEN): not mine, but box 26 attacks it (R57 is L-RED's input to it).
+
+## 4. The three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index "active"):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision.
+   (N5 surviving my boxes is not evidence of polynomiality; a kill needs faithful, unmodified n5.py with verified outputs.)
+2. D15 (index "active"; Lead reading L37 "active"):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+   (L37: L-RED is the cheap adversary, Opus 5.5; reports are information, no option questions to the owner.)
+3. D14 (index "active"):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+   (The (c) lane L-NEW produces N5, the candidate I attack; I read its files and never edit them.)
+- Also binding: D7 (index "active"): continue at the current rate, stop on overage; at most 2 heavy jobs, no job outlives the box.
+
+## 5. One trap and the check that prevents it
+- Trap: a game built for R-a/R-b can easily make n5.py and n5b.py disagree on "iterations" (§6b: n5b "orig" mode gave 28 vs 34 at
+  n = 24), and a climb fitness read from one implementation can be an artefact of tie-breaking, not of N5. Check: every reported
+  iteration count is re-run with n5b in SPEC mode and must match exactly; the region/strategy output is checked against Oink zlk
+  + verify.py (and, on counter_m N = 41/42, against `--tl`, since zlk aborts there, CLAUDE.md Traps).
+- Standing check: `git fetch origin claude/l-red` then `git rev-parse HEAD origin/claude/l-red` must agree before any edit;
+  kill processes only by exact argv fields (`pkill -f` on a pattern in my own command line kills my shell).
