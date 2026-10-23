@@ -70,10 +70,12 @@ af340fd5...; agrees with L-COMP's CEGAR k = 10); s^V(5,6) ≥ 11 by S1 Lemma 2(a
 k = 10 UNSAT by Lemma P, CEGAR on 80 even + 40 odd graphs, 7 rounds, last solve 11913 s, 4004493 clauses;
 results/n5/weak_V_n5_d5_k10.json; SOLVER-ONLY: pysat CaDiCaL 1.5.3, no LRAT proof, as re-solving with a proof costs
 ~3.3 h and a proof of tens of GB); hence w^V(5,6) ≥ 11 as well. So no gap with w ≤ 10 at (5,5). No n = 5 upper bound:
-strong (5,5) k = 11 did not finish in 4 h (one solver call; k = 10 took 7 min), weak (5,5) k = 10 not in 2.5 h,
+strong (5,5) k = 11 undecided: one solver call ran from 07:58Z 2026-10-22 for at least 8 h 24 min (alive at 16:22Z),
+then was lost when the session's container restarted before the 01:30Z cap, with no result (k = 10 took 7 min, so the
+cost per extra state is > 70x here), weak (5,5) k = 10 took 4.5 h (UNSAT above),
 weak (5,6) k = 14 at ~20 min per CEGAR round after 67 rounds, strong (5,6) k = 13 > 30 min in one round. T3 at n = 5 is
-untested. A weak (5,5) separator with 10 states would certify a gap (w = 10 < 11 ≤ s); that query is the cheapest
-decisive one left.
+untested. A weak (5,5) separator with 10 states would have certified a gap (w = 10 < 11 ≤ s); it does not exist (solver-only).
+A gap now needs s ≥ 12 (strong k = 11 UNSAT) and a weak separator with 11 states.
 Observation (DATA, not a conjecture to pursue): every computed strong V value fits s^V(n,2h−1) = s^V(n,2h) =
 n + (h−1)(n−1) (n ≤ 4, h ≤ 3), which predicts s^V(5,5) = s^V(5,6) = 13. The formula is polynomial in n at d = n, so
 by L4 (s^V(n,n) ≥ n^Ω(lg n)) it must fail for large n: the computable cells are pre-asymptotic for s^V, and the same

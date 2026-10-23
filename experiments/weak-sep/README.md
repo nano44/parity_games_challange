@@ -61,7 +61,9 @@ refuted. Those cells need better engineering (spec in docs/struct/S1-statement.m
 in out/; result in results/n5/). By Lemma P (docs/struct/S3-statement.md §2), SAT at k <=> value <= k, so one query
 at k stands on its own. `lrat.sh N D CONV MODE K` rebuilds the UNSAT formula from the checkpoint, solves it with the
 cadical binary (apt cadical 1.7.4) and checks the LRAT proof with ../sat-hard/lrat_check.py. Result so far:
-s^V(5,5) >= 11 (results/n5/strong_V_n5_d5_k10.{json,lrat.log}). Costs: strong (5,5) k=10 420 s; k=11 > 4 h unfinished.
+s^V(5,5) >= 11 (results/n5/strong_V_n5_d5_k10.{json,lrat.log}, LRAT VERIFIED); w^V(5,5) >= 11 (weak k=10 UNSAT,
+results/n5/weak_V_n5_d5_k10.json, SOLVER-ONLY: no proof, not on a par with the LRAT bound). Costs: strong (5,5) k=10
+420 s; weak (5,5) k=10 16304 s; strong k=11 > 6 h unfinished. results/table.md lists every n = 5 bound with its label.
 
 ## Caveats
 - A value is exact only if the enumeration covers all graphs (theorem + brute-force coverage on small cases), the

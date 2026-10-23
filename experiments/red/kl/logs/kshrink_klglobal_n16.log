@@ -1,0 +1,53 @@
+start n 16 pivots 134
+del vertex 11 -> n 15 pivots 110
+del vertex 9 -> n 14 pivots 102
+del vertex 1 -> n 13 pivots 95
+del edge 0 1 pivots 95
+del edge 0 3 pivots 93
+del edge 0 4 pivots 93
+del edge 0 12 pivots 81
+del edge 1 2 pivots 81
+del edge 1 6 pivots 81
+del edge 2 1 pivots 81
+del edge 2 2 pivots 81
+del edge 2 3 pivots 80
+del edge 2 4 pivots 82
+del edge 2 7 pivots 81
+del edge 2 11 pivots 81
+del edge 2 12 pivots 81
+del edge 3 0 pivots 79
+del edge 3 2 pivots 79
+del edge 3 7 pivots 79
+del edge 4 0 pivots 81
+del edge 4 2 pivots 92
+del edge 4 4 pivots 92
+del edge 5 1 pivots 92
+del edge 5 2 pivots 92
+del edge 5 3 pivots 92
+del edge 5 5 pivots 92
+del edge 5 6 pivots 92
+del edge 5 7 pivots 91
+del edge 5 11 pivots 91
+del edge 6 2 pivots 79
+del edge 6 5 pivots 78
+del edge 6 7 pivots 78
+del edge 6 9 pivots 78
+del edge 6 10 pivots 79
+del edge 7 7 pivots 79
+del edge 8 0 pivots 78
+del edge 8 3 pivots 78
+del edge 8 4 pivots 78
+del edge 8 5 pivots 78
+del edge 8 10 pivots 78
+del edge 10 1 pivots 78
+del edge 10 2 pivots 78
+del edge 10 5 pivots 78
+del edge 10 12 pivots 78
+del edge 11 3 pivots 59
+del edge 11 6 pivots 59
+del edge 12 12 pivots 59
+del edge 6 11 pivots 52
+del edge 7 0 pivots 52
+del edge 11 4 pivots 52
+del edge 12 1 pivots 52
+final n 13 edges 18 pivots 52
