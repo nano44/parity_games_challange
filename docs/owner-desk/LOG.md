@@ -288,3 +288,7 @@ Caveats: bench untargeted; random part running; only quasi-poly bound known, no 
 N8a switch-all pivot rule on the perfect universal tree: L-RED family with 4*n^L + 3 pivots (n^Theta(n)); Lead re-ran n=16 (16,387)
 and n=18 (419,907), Oink-verified. Switch-all is a dead end. N8a 'global' rule NOT killed (3/8 pivots on the same games); L-RED
 attacking it; step 3 found no known lower bound. No incorrect run.
+
+## 2026-10-23T02:44Z relayed: Lead 2026-10-23 02:47Z required report (super-polynomial family)
+N8a DEAD END: L-RED family G_k kills the 'global' rule on the perfect universal tree, 8*n^L + 6 pivots (n^Theta(n)); Lead re-ran
+n=18 (2,598), n=20 (64,006), Oink-verified. Next: transfer to every universal tree. No incorrect run. L-NEW parking; fleet mostly idle.
