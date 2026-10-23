@@ -167,3 +167,94 @@ R53's 13-vertex H_0 (klmin_n13) laps with the dual period {3, 4, 8 -> 6}, {7: 2 
 - Not shown: the remaining failure events and their exact probabilities (no proof); k = 3 is running.
 - Faithfulness: the candidate is run unmodified (kl2fast and kl_single agree seed for seed). The games are ordinary parity games
   (Oink solves them).
+
+## 3. ε(L) settled structurally, and the growing-lane family (Lead 11:02Z / 11:20Z; 2026-10-23 11:05-11:40Z, date -u)
+### 3a. Full-run estimates (DATA; r2mean.py / bench rows; "early stop" = a run below 99% of the full count)
+| lanes L = L7 = L8 | game | seeds | early stops | laps observed | ε (ML) | 95% CI |
+| --- | --- | --- | --- | --- | --- | --- |
+| 5 | HL_1 (n 31) | 20 | 8 | 1.68e4 | 4.8e-4 | [2.1e-4, 9.4e-4] |
+| 6 | HL_1 (n 35) | 20 | 1 | 2.42e4 | 4.1e-5 | [1.0e-6, 2.3e-4] |
+| 7 | HL_1 (n 39) | 20 | 0 | 3.03e4 | 0 | [0, 1.2e-4] |
+| 6 | HL_2 (n 37) | 10 | 8 | 1.99e5 | 4.0e-5 | [1.7e-5, 7.9e-5] |
+| 7 | HL_2 (n 41) | 10 | 1 | 6.7e5 | 1.5e-6 | [3.8e-8, 8.3e-6] |
+| 8 | HL_2 (n 45) | 5 | 1 | 4.0e5 | 2.5e-6 | [6.3e-8, 1.4e-5] |
+- Over L = 5..8, a Poisson fit gives ε ≈ exp(4.50 − 2.44 L) (×11.5 per +1 of L; 95% profile CI ×6.2 to ×22.4).
+- A power law ε ∝ L^−14.4 fits as well (Δ log-likelihood 0.29). Statistics on this range cannot separate them, hence §3b.
+
+### 3b. Exact per-lap failure probability (DATA; experiments/red/kl24/exactlap.py)
+Method:
+- Snapshot. A lap-start snapshot is taken in a base R2 run: seed S, after W pivots, at the J-th increase of dual node 1's label (one
+  increase per lap).
+- Chain. From the snapshot, R2 is a finite absorbing Markov chain on states (laps done, τ, µ). Every transition uses kl2fast's own
+  candidate set (kl_adm) and arcs, then the C least fixed point. States are merged on equal (τ, µ) and lap count.
+- Order. µ strictly increases at every pivot, so states are processed in increasing order of Σ_v enc(µ(v)), a topological order,
+  and the result is exact. Fractions and doubles (FLOAT=1) agree to all printed digits at L = 4, 5.
+- FAIL = a new TOP label, no candidate, or node 1 not raised. SUCCESS (LAPS = m) = node 1's label has risen m times.
+- One-lap is not enough. A lap can end "successfully" in a CORRUPTED state, which then fails in a later lap.
+  - Example: HL88_2 seed 3 failed at pivot 1,230,538. Its lap 35,724 has exact one-lap ε = 2.05e-8.
+  - But in that lap the 8-lane closed while one 7-lane node (21) was still unreset, and 7 then closed early.
+  - The next lap (35,725) starts from that state and fails with exact probability 0.0731.
+- Remedy: the steady per-lap ε is the increment P(fail within m laps) − P(fail within m − 1 laps), once it is constant in m.
+
+HL_2 with L7 = L8 = L, base seed 3, W 300, J 1 (P_m = P(fail within m laps)):
+| L | n | P_1 (one lap) | P_2 | P_3 | increments P_2 − P_1, P_3 − P_2 | steady ε | ratio | full-run ε (§3a) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 4 | 29 | 4.35311e-3 | 1.06561e-2 | 1.68925e-2 | 6.30e-3, 6.24e-3 (P_4 − P_3 = 6.20e-3) | 6.2e-3 | — | — |
+| 5 | 33 | 3.90822e-4 | 9.73922e-4 | 1.54919e-3 | 5.83e-4, 5.75e-4 | 5.75e-4 | ×10.8 | 4.8e-4 [2.1e-4, 9.4e-4] |
+| 6 | 37 | 2.75358e-5 | 6.7596e-5 | 1.06804e-4 | 4.01e-5, 3.92e-5 | 3.92e-5 | ×14.7 | 4.0e-5 [1.7e-5, 7.9e-5] |
+| 7 | 41 | 4.54663e-7 | 2.4664e-6 | 4.6071e-6 | 2.01e-6, 2.14e-6 | 2.1e-6 | ×18.3 | 1.5e-6 [3.8e-8, 8.3e-6] |
+| 8 | 45 | 7.89835e-8 | 1.80943e-7 | (running) | 1.02e-7, (running) | ≈ 1.0e-7 | ×20 | 2.5e-6 [6.3e-8, 1.4e-5] |
+| 9 | 49 | 8.19561e-10 (one lap only, 793,088 states) | — | — | — | — | — | — |
+- States: L = 3..8 one-lap chains have 224 / 832 / 3,248 / 12,736 / 50,432 / 199,168 states (×4 per +1 of L). m-lap chains have
+  about m times as many.
+- The exact steady ε agrees with the independent full-run estimates (§3a) wherever both exist.
+- Lap-to-lap variation (one-lap ε along base seed 3, W 0; SCAN mode over 20 laps at L = 4; J list at L = 5):
+  - Only a few values occur. L = 4: {1.78, 3.05, 3.38, 3.81, 4.35}e-3. L = 5: {1.39, 3.06, 3.91}e-4.
+  - The snapshot used above (J 1, W 300) is the maximum among them.
+  - The FIRST lap after the start (W 0, J 1) is not worse: 3.05e-3 at L = 4, 1.39e-4 at L = 5.
+  - NOT covered: lap types near level-2 carries (every n² laps). The scan did not reach them, and the multi-lap chain was run from
+    one snapshot per L.
+
+### 3c. The mechanism (READING; the chain is the DATA)
+- MAXPATH=1 prints the most probable failing path. At L = 5 (one lap) it has probability 6^−5 = 1.286e-4 exactly:
+    25->1 of [7, 17, 19, 21, 23, 25]; 27->26 of [7, 17, 19, 21, 23, 27]; 29->28 of [7, 17, 19, 21, 23, 29];
+    31->30 of [7, 17, 19, 21, 23, 31]; 8->32 of [7, 8, 17, 19, 21, 23]
+  - The 8-lane (25 .. 31, then 8) closes toward 1 while all of 7's lane (17 .. 23 and 7) waits to reset.
+  - Any one of those, picked first, breaks the closed lap (R56 §2b (ii)).
+  - Each of the L + 1 fatal picks comes from a set of size L + 1.
+- The corrupted-state route (HL88_2 lap 35,724) is the same race, but late in the reset phase. When only r of 7's lane nodes are
+  still unreset, the 8-lane frontier competes with r rescuers, so a lane-length run of frontier picks costs about (r+1)^−L.
+  With r = 1 that is only about 2^−L. Such runs are rarer at the start of the window and dominate as L grows; this is why the
+  multi-lap ε exceeds the one-lap ε by a growing factor: 1.4 / 1.5 / 1.4 / 4.7 at L = 4..7.
+- Reading:
+  - ε(L) decays at least exponentially in L. The base is between 2 (the r = 1 race) and L + 1 (the full race).
+  - The measured ratio per +1 of L grows: ×10.8, ×14.7, ×18.3. That rules out a power law on this range, since the ratio of
+    L^−a, ((L+1)/L)^a, DEcreases toward 1.
+  - This is a reading of the chain, not a proof. The "≥ 2^−L" floor for the late-window race is the conservative case if the
+    measured ratios ever stop growing.
+
+### 3d. Growing-lane family HLg_k = hlgen.sh k L(k) L(k); n = 9 + 2k + 4L
+| k | L | n | sha1 (experiments/red/kl24/instances/HLg_k.pg) | R2 dual pivots, seeds 1-5 (verified) | mean | steady ε(L) · n^{k+1} |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0 | 5 | 29 | d2b96b4558248bf8f9248a5a6f0c20b569f8881c | 633, 623, 639, 643, 611 | 630 | 5.75e-4 · 29 = 0.017 |
+| 1 | 6 | 35 | 2366cbadd9d592986143df8df1557b89b98bd59b | 32170, 32232, 32156, 32214, 32232 | 32,201 | 3.92e-5 · 1225 = 0.048 |
+| 2 | 8 | 45 | 1c3c78895df68fd10690fd5ab5467f7f01546ee7 (= HL88_2) | 3139182, 3139646, 1230538, 3138968, 3139556 | 2,759,578 | 1.0e-7 · 91,125 = 0.009 (observed: 1 early stop in 5 runs; P ≈ 4.5% under ε = 1e-7) |
+| 3 | 10 | 55 | 9918e9b8463507401cf73a73a2945aa9bf5f23ac | running (solvecheck.py, seeds 1-2) | — | ≤ 9.4e-10 · 9.15e6 = 0.009 (ε(10) extrapolated from ε(8) with the smallest measured ratio 10.8; not computed) |
+- Verification:
+  - k = 0, 1: bench.py, results/hlg_k01.csv.
+  - k = 2: results/hl88_k012.csv.
+  - k = 3: results/hlg_k3.csv, from solvecheck.py, which is bench.py's check in-process; kl2's built-in 10^7 pivot cap stops
+    bench at k = 3.
+- Counter length: n^{k+1} laps. Pivots per lap from the full runs: 630/29 = 21.7, 32,201/35² = 26.3, 3,139,4xx/45³ = 34.4, about 4L + 2.
+- Schedule: L(k) = the least L ≥ 5 with ε̂(L)·n^{k+1} ≤ 0.05, where ε̂(L) = 2.2e-6·10^{−(L−7)} (the L = 7 value, extrapolated
+  with the smallest measured ratio). This gives 5, 6, 8, 10 for k = 0..3.
+- Asymptotics (READING):
+  - With any fixed ratio r per +1 of L, the schedule needs L(k) ≈ (k+1)·log_r(n) = Θ(k log k). Then n = 9 + 2k + 4L(k) =
+    Θ(k log k), polynomial in k.
+  - Mean pivots ≥ (1 − ε̂·n^{k+1})·(4L+2)·n^{k+1} = exp(Θ(k log k)) = exp(Θ(n)): super-polynomial.
+  - (L = 2k + 4 alone suffices only while r^2 > 10k + 25, i.e. up to k ≈ 30 at r = 18.)
+- Fixed lanes (8, 8) at k = 3 (HL88_3, n 47; results/hl88_k3.csv):
+  - Seeds 1-2 ended in "ERROR: pivot cap 10000000 reached". That is kl2's built-in cap, NOT an incorrect output.
+  - Seed 3 stopped early at 1,230,538, verified OK. That is the same pivot as at k = 2, since both runs are identical up to the
+    first level-2 carry.
+  - The solvecheck re-runs of seeds 1-2 (hl88_k3_solvecheck.csv, header only) were stopped at 11:17Z in favour of HLg_3.

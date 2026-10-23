@@ -4,7 +4,7 @@ Opus 5.5: the session's model was switched (get_session: user_switched_model cla
 The previous notebook (boxes 1-18) is in git at l-red 4f73e7a6: `git show 4f73e7a6:notes/L-RED.md`; boxes 16-18 handover at a5274bd6.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: PARKED after box 23 (2026-10-23 ~10:00Z): N8d-R2 still survives (R55); G_zeta faithful under VJ, R2 does not count on it.
+Box 24 (2026-10-23, successor 12, session_01QSEXqYujPY1RBkWy5SgeHa, Opus 5.5 / D15; GO 10:19Z): R56. Earlier status: PARKED after box 23 (2026-10-23 ~10:00Z): N8d-R2 still survives (R55); G_zeta faithful under VJ, R2 does not count on it.
 Context is high (> 500k): the NEXT wake should go to a FRESH successor (LANE-RESTART), starting from R55 §3-§4 and the block below. Box 21: N8a DEAD by H_k (Lead re-runs 02:40Z / 02:46Z / 02:58Z). Box 19 merged trunk 18812f7; k-pools NEST* line CLOSED (Lead, D15 / L37). Box 20 = S growth on
 two-player games: docs/red/R52-sgrowth.md, experiments/red/sgrow/.
 
@@ -26,6 +26,17 @@ two-player games: docs/red/R52-sgrowth.md, experiments/red/sgrow/.
 - Obstruction (R51 §4): all 126 single returns keep S 25 and the identical prefix P[0..13]; after the block there is one free
   index (#14) before 7 closes at #15; a seventh level needs two recurring positions between 9 and 16, i.e. a longer post-block tail,
   which only a gate-type change (not a return) can add; gates from the innermost pieces replace D's block by E's instead of nesting.
+
+## DONE box 24 (R56; produced on Opus 5.5; target N8d-R2, run unmodified: kl2fast, cross-checked with kl_single)
+- Item 1 (R56 §1; cmp.py, lanes.py; logs experiments/red/gzeta/box24/): R2 admissible vs VJ improving sets differ from STATE 0 on gz1-3.
+  - M1: labels count only the improver's even priorities and truncate at odd ones. A_i / B_i entries look better than under VJ:
+    extra arcs w->A, a->A, b->B, so the lanes close early.
+  - M2: truncation is idempotent, so lane tails are tight with the shortcut and lanes do not unwind. The first VJ step R2 cannot take
+    is a b-lane tail shortcut (gz2 steps 178-209, gz3 420). Not history (fresh lfp = history labels there).
+- Item 2 (R56 §2): HL_k = H_k + z-separated delay lanes on 7 (fatal lap move) and 8 (fatal 8:6->1 before 7's lane resets).
+  - R2 mean dual pivots 1,388 / 63,686 / 2,759,578 at n 41 / 43 / 45 (k 0-2, 5 seeds, all verified, bench.py): ≈ 34·n^{k+1}.
+  - Caveat: fixed lanes leave a per-lap failure ε(L): ε ≈ 5e-4 / 4e-5 / ~2.5e-6 at L 5 / 6 / 8. A family super-polynomial for all k
+    needs L growing with k.
 
 ## DONE box 23 (R55; produced on Opus 5.5)
 - Literature: no random-node lower bound (thesis lists Random-Edge / Random-Facet only); FHZ STOC 2011 not openable (ACM paywall).
@@ -116,6 +127,23 @@ dtl.cpp @ 8fbf0a7. Earlier opened sources are listed in `git show 4f73e7a6:notes
 - Lead: route NEXT 1-3 or close the k-pools line; referee routing of R51 only if a claim needs signing (it is DATA plus readings).
 
 ## Things only I know
+- Box 24 tools (experiments/red/kl24/, all import experiments/n8d-second/kl2fast + kl2 read-only):
+  - lanegen.py G V L Z [LPRIO] [TARGET] [closed]: z-separated delay lane on node V.
+  - hlgen.sh k L7 L8: HL_k family.
+  - ktr.py G all|r2: dual trace (switch-all or R2) with labels.
+  - r2mean.py G S: R2 dual pivots over seeds 1..S; LAPARC / LAPNODE give lap counts.
+  - solvecheck.py G seed [cap]: bench.py's check in-process, without kl2's 10^7 pivot cap (kl2.main cannot raise it; bench rows hit
+    "pivot cap 10000000 reached" at HL88_3).
+  - laptrial.py / laptrial2.py: one-lap Monte Carlo from snapshots.
+  - exactlap.py G S W J [MAXSTATES]: EXACT per-lap failure probability by the absorbing chain over (tau, mu) states, in potential
+    order; FLOAT=1 for doubles. About 4x more states per +1 of L: 224 / 832 / 3248 / 12736 at L 3-6.
+- Box 24 gzeta tools: experiments/red/gzeta/cmp.py (A vs I per state, r2|vj modes, STOP_AT_LOSS=1) and lanes.py (lane timeline).
+- Lap traps found in box 24:
+  - "tau returns to the snapshot tau" is NOT a lap boundary: in-lap order varies. Use "node 1's label increases".
+  - Several nodes are legitimately TOP from the start (the pads), so compare the TOP count with the snapshot's, never with 0.
+  - ε varies between laps. Single-snapshot Monte Carlo misleads; use exactlap over many J.
+- Killing processes: `pkill -f` / `grep | awk` on a pattern kills my own shell when my command line contains the pattern (exit 144,
+  twice in box 24). Select pids with awk on exact argv fields ($2 == "python3" && $3 == "path").
 - Box 21 (N8a): kl.py is fast (~0.4 ms per pivot at n ≤ 20; 0.05-0.2 s per solve on the hard bench), so climbs run ~500 steps/s at n 10.
   The first climb hit at n 16 found the 4·n^3 counter within 2 minutes; the law was found by PADDING with isolated new-top-priority
   self-loops (adds a tree level) vs same-priority pads (adds only base). Run L-NEW's files from a read-only `git archive` extract in

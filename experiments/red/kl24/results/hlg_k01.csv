@@ -1,0 +1,11 @@
+family,N,file,n,m,d,rule,seed,pivots_primal,pivots_dual,time,ref,status,impl,tau1
+HLg,0,HLg_0.pg,29,42,14,r2,1,0,633,0.014,zlk,OK,kl2fast,first
+HLg,0,HLg_0.pg,29,42,14,r2,2,0,623,0.020,zlk,OK,kl2fast,first
+HLg,0,HLg_0.pg,29,42,14,r2,3,0,639,0.013,zlk,OK,kl2fast,first
+HLg,0,HLg_0.pg,29,42,14,r2,4,0,643,0.025,zlk,OK,kl2fast,first
+HLg,0,HLg_0.pg,29,42,14,r2,5,0,611,0.013,zlk,OK,kl2fast,first
+HLg,1,HLg_1.pg,35,50,16,r2,1,0,32170,0.904,zlk,OK,kl2fast,first
+HLg,1,HLg_1.pg,35,50,16,r2,2,0,32232,0.846,zlk,OK,kl2fast,first
+HLg,1,HLg_1.pg,35,50,16,r2,3,0,32156,0.769,zlk,OK,kl2fast,first
+HLg,1,HLg_1.pg,35,50,16,r2,4,0,32214,0.775,zlk,OK,kl2fast,first
+HLg,1,HLg_1.pg,35,50,16,r2,5,0,32232,0.936,zlk,OK,kl2fast,first
