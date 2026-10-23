@@ -882,3 +882,4 @@
 - 19:44Z (date -u) Routed: CHECKER C24 (DE31-32) woken; L-NEW 7 GO box 19 (N10 screen round 2, lessons L1/L2). Working: L-NEW 7, CHECKER (2/5).
 - 19:52Z (date -u) CHECKER C24 FAIL E-1 only (DE31 scope: k ≤ 3 DATA, every fixed k READING; not Lasserre/SOS, not growing levels) (7280733, merged); all re-runs exact (circ 3-11 k* = ceil(n/3), robust 1.05, peel r1147/r26 STUCK, Oink, sha1s). Applied E-1 + N-1 (residual check) + N-2 (r26 sha1); re-diff requested.
 - 20:02Z (date -u) CHECKER C24 Addendum 1 PASS (38d92b8, merged). LANDED DE31 (N9a) + DE32 (N9b) in RESULTS Dead ends, draft lines 3-25 verbatim (RESULTS lines 1184-1206, +23/-0). Landed-text check requested (C24 Addendum 2).
+- 20:07Z (date -u) SWEEP (trigger 20:02Z): overage false; Lead $472 ~620k (compaction relied on, per standing decision). Working: L-NEW 7 (box 19: N10b 0 gaps on 800 queries, stress test on 2,000 larger games; 20:05Z, ~295k), CHECKER (C24 Addendum 2; 20:07Z, ~404k). No exceptions.
