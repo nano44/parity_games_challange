@@ -1,64 +1,54 @@
-# Handover check: L-COMP (successor session, 2026-10-15 18:32Z; LANE-RESTART step 3)
+# Handover check: L-COMP (successor 2, 2026-10-23 05:35Z by date -u)
 Every answer measured from the repository at the time of writing (commands given), not recalled from notes/L-COMP.md.
-Successor of session_014bbtNwaVKxFymHpXynjURn (handover 25a6e21).
+Successor of session_01Nd4XCMfDaYHsh1P6XTtRGz (parked; handover 7ac0d432 "L-COMP: park (N5 second implementation complete; notebook
+resume point)"). The previous answers (2026-10-15) are in git history of this file.
 
 ## 1. Branch, head, distance to trunk
-- Branch: `claude/l-comp`, tracking `origin/claude/l-comp`, working tree clean before this file.
-- Head: 25a6e21 ("L-COMP: notebook resume point after container restart") = `origin/claude/l-comp`.
-- Trunk `origin/claude/vibrant-johnson-nxvvxo` at feda157 ("Merge C3c notes applied", 2026-10-15 18:11Z).
-- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 12 ahead, 452 behind.
-- `git merge-base` = 5ba5d8b ("NOW: L-STRUCT correction at (4,6) V"). The 12 commits ahead are all sat-hard work since the last trunk merge
-  (48e2744 encoder/CEGAR/LRAT checker ... 2dde459 n=5 diagonal cells, c2e095f and 25a6e21 notebook). Trunk carries the n=5 numbers only as a
-  Lead note (docs/agents/LEAD-STATE.md:57), not the files.
-- `scripts/verify.sh` at 25a6e21 in this container (3 s): VERIFY PASS. doc shape PASS; experiment self-checks PASS (harness selftest, m2,
-  sat-hard SELFCHECK PASS with step 4 NOT RUN: no cadical binary); lean NOT RUN (no lean/lakefile); oink smoke NOT RUN (Oink not built here).
-  Consequence: harness selftest steps 3 and 6 (Oink cross-checks) were skipped too; Oink must be built (scripts/setup_oink.sh) before any DTL run.
+- Branch `claude/l-comp`, tracking `origin/claude/l-comp` (was at 7ac0d432, working tree clean).
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` fetched: 269edc63 ("Lead: C22 closed; roster", 2026-10-23 05:27Z).
+- `git merge origin/claude/vibrant-johnson-nxvvxo` was a fast-forward (trunk already contained 7ac0d432): head = 269edc63.
+- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 0 ahead, 0 behind (before this file's commit;
+  after it: 1 ahead, 0 behind).
+- Container: Oink not built (`tools/oink/build` absent), no background jobs (`pgrep -a python` empty), no timed wakes.
 
 ## 2. Open work and the next step of each
-- DTL gauntlet step 2, formal part (NOW.md "In flight": "formal 10,000-game run + L-COMP strategy check pending"; L22 pins
-  A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7, trace 0). Not started; waits for the Lead's go. Next step after go: build Oink
-  (setup_oink.sh pins 8fbf0a7), add registry entries oink-dtl-pin / oink-idtl-pin to experiments/harness/solvers.py with exactly those flags
-  (the existing `-raw` entries add `-w 1` but not `--no-loops`), confirm `-w 1` / no-trace is the pinned run, then corpus (gen.py 10,000 seeded),
-  rngame corpus, exhaustive tiny games, hard-families (largest finishing sizes), red/dtl generators and alg/instances/dtl_proof_c*.pg, all through
-  compare.py + verify.py; growth tables/plots under experiments/dtl-bench/.
-- Lead reading L15 (Q4): "When an L-COMP successor is next spawned for other work, it runs the original PGSolver binaries once (d3cd624) to diff
-  the hard-family ports; if the platform classifier still refuses, the ported generators plus the REFEREE check stand." This session is that
-  successor. Next step: one attempt after the DTL run (re-clone and build per notebook "Things only I know"); M1 does not depend on it.
-- sat-hard (L-STRUCT T3 support): parked (NOW roster: "successor only when T3 revives"). Measured state: results.md lines 52-55: w^V(5,5) >= 10,
-  s^V(5,5) >= 10, TARGET n=5 weak >= 9 with verified LRAT; s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT by CEGAR only, proofs pending; the CNFs
-  for those were in experiments/sat-hard/out/ (gitignored) and are GONE in this container (`ls experiments/sat-hard/out`: no such directory);
-  regenerate with diag.py per notebook. w^E(4,6) k=8 LRAT also pending. No cadical binary installed here. Next step: none until the Lead routes it.
-- counter_qpt growth class (N = 29..40, timeout 600) and counter_dtl (in Oink README, no source upstream): open, low priority, no step scheduled.
-- IN FLIGHT: nothing. No background jobs (`pgrep -a python` empty), no timed wakes (fresh container).
+- In flight: nothing. The N5 second implementation is DONE and merged (NOW.md roster line 26: b49c9fc).
+- N5 leftover: tc N = 26 was not compared in SPEC mode (notebook resume point; orig mode N = 26 verified, no reference). Next step: none
+  unless the Lead routes it (N5 step 2 declared complete by the Lead 2026-10-18 23:58Z).
+- STEP 2 of this box (Lead brief 05:36Z): second independent implementation of N8d-R2 (Koh-Loho, arXiv 2108.13338, Alg. 1, over the
+  perfect (n, d/2)-universal tree; pivot R2) plus deterministic R1 cross-check. Waits for GO. Next step after GO: build Oink
+  (scripts/setup_oink.sh, pinned 8fbf0a7), open the paper from arXiv (record version, sections), read docs/new/N8d-single.md §0 only,
+  write experiments/n8d-second/ from those two sources, freeze and commit before reading experiments/new/kl/*.py or the code-to-paper tables.
+- sat-hard (L-STRUCT T3 support): parked (notebook queue 0-3; CNFs gone with the container; regenerate with diag.py). No step until routed.
+- counter_qpt growth class (N = 29..40, timeout 600): open, low priority, not scheduled.
 
 ## 3. docs/GAPS.md rows owned by L-COMP
-None. On trunk feda157 the open table of docs/GAPS.md is empty; the only closed row (G1) is L-STRUCT's. `git grep -i l-comp` on trunk
-docs/GAPS.md returns nothing.
+None. `grep -n -i l-comp docs/GAPS.md` on 269edc63 returns one row, G-N5-TERM (closed list; owner L-NEW, "L-COMP checks runs"),
+closed 2026-10-19 by RESULTS R15. No open row names L-COMP.
 
-## 4. Three owner rulings that most constrain this lane (verbatim; status from docs/DECISIONS-INDEX.md on trunk)
-1. D2 (active), change 5 (also TARGET.md §5):
+## 4. Three owner rulings that most constrain this lane (verbatim; status from docs/DECISIONS-INDEX.md on 269edc63)
+1. D2 change 5 (D2: active):
    > 5. Gauntlet addition: every implementation also outputs positional strategies, and L-COMP verifies them on every
    >    test game.
-   Constraint: every DTL/idtl run on every test game must be strategy-checked by my harness (experiments/harness/verify.py), not by Oink's
-   built-in verifier; a run without a checked strategy is not evidence.
-2. D1 (active), docs/decisions/D001-launch-brief.md lines 25-26:
+   Constraint: my N8d-R2/R1 implementations output positional strategies for both players, and every output is checked by
+   experiments/harness/verify.py, not by the implementation's own claims.
+2. D2 change 4 (D2: active):
+   > 4. 7b changed: a randomized (Las Vegas, expected polynomial) algorithm is labelled M4-R, not M3, and reported to me
+   >    at once like an M4 claim.
+   Constraint: N8d-R2 is randomized; its pivot counts are random variables, so I report distributions (mean, spread per family and size)
+   and any super-polynomial growth of the expectation at once, never a single-seed number as a growth class.
+3. D1 (active), docs/decisions/D001-launch-brief.md:
    > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such
    > claim, including the fleet's own, as wrong until it passes the gauntlet below.
-   Constraint: step 2 is run to find a failure, independently of L-ALG/L-RED; any MISMATCH/BADSTRAT goes to the Lead at once with the shrunk
-   instance, and growth fits are reported as data, never as a polynomiality claim.
-3. D2 (active), change 1:
-   > 1. Section 1: priorities range over {0, ..., n} (d ≤ n + 1); the compression step stays charged to the algorithm.
-   Constraint: the input class and the cost model of the runtime measurements follow TARGET.md §1/§3 (bit cost; no preprocessing that Oink does
-   for free, hence --no-single --no-wcwc per L22); generated games with sparse priorities are run as given, compression counted in the run.
-Also binding, not counted: D1 "Never publish, post, email, submit or contact anyone outside the fleet." (no request to the Oink author for
-counter_dtl); Lead readings L22 (pinned command) and L24 (statement frozen; step-2 evidence is input, not a change to §0).
+   Constraint: step 2 is run to find a failure, independently of L-NEW: written from the paper and §0 only, any wrong region/strategy
+   from either implementation reported at once with the instance.
+Also binding: D14 (active; L-NEW is the (c) lane whose candidate I test) and D15/L37 (active; Opus 5.5; no option questions to the owner).
 
 ## 5. One trap that bit this lane, and the check that now prevents it
-Trap: a solver that never saw the game. In M1, Oink's preprocessing (single-parity and winner-controlled-cycle detection) solved counter_qpt and
-the PGSolver families outright, so the first "runtime" numbers measured the preprocessor, not the solver (notebook "Things only I know").
-The same trap applies to DTL: run with Oink defaults, the pinned algorithm is bypassed on exactly the families meant to stress it.
-Check now in place: experiments/harness/solvers.py:29-30 defines `oink-<s>-raw` = `--<s> -w 1 --no-single --no-wcwc`, and
-experiments/hard-families/run_all.sh:30-39 uses only the -raw entries for Oink. For DTL I add `--no-loops` (L22) in a separate pinned entry and
-record the exact command line with every result row, so each row is traceable to A_DTL as pinned. Second guard (same family of trap): the harness
-never trusts the solver's own verifier; compare.py + verify.py decide MISMATCH/BADSTRAT, and selftest step 4/5 prove they catch a region-wrong
-solver and each strategy defect class (run at every verify.sh).
+Trap: unspecified orders make "equal counts" meaningless. In the DTL step 2 (2026-10-15, notebook dead ends) a reimplementation from the
+written pseudocode could not reproduce Oink's tangle counts: four unpinned orders (sort, in-edge order, stored tangle order, SCC order)
+changed counts up to 8 per game while regions never changed; a count mismatch looked like a bug and was not.
+Check now: counts are compared exactly only where the spec pins every order; otherwise distributions are compared and the unpinned choice
+is named. For this box that is written into the brief: R1 (lowest index, deterministic) must match results/*.r1.csv per instance, and a
+mismatch is a finding traced to the spec line; R2 (uniform draw, candidate-list order unpinned by §0) is compared by mean and spread
+per family and size. Regions/strategies are always decided by verify.py and Oink zlk (labelled --tl where zlk aborts, counter_m N = 41, 42).
