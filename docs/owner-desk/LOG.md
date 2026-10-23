@@ -310,3 +310,8 @@ with exponential random-pivot constructions. Data, not a claim. Landed: DE28 (N8
 N8d-R2 passed gauntlet steps 2 and 3: independent second implementation agrees run for run (~83,000 runs, 0 incorrect); hardest family
 mean steps ~n^2 to n=760 (exponential fit ~10x worse); L-LIT signed step 3 with caveats (nearest threat Friedmann's Random-Edge
 construction, transfers only if Lemma 4.75 holds for tree labels). Next: L-RED builds Friedmann's game; step 4 waits. Data, not a claim.
+
+## 2026-10-23T11:07Z relayed: Lead 2026-10-23 11:05Z information (L37)
+N8d-R2 under serious attack: L-RED family HL_k (counter gadget + two delay lanes, n = 41+2k): mean steps ~34*n^(k+1) (1,388; 63,686;
+~2.76M for k=0,1,2), all answers correct; Lead re-ran k=0,1 and part of k=2. Overturns the ~n^2 picture. Not yet a proven kill: fixed
+delay lanes cap growth via per-lap failure probability; L-RED measuring how it shrinks with lane length.
