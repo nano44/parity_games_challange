@@ -1,6 +1,6 @@
 # N8d-R2: gauntlet step 4, written proofs (L-NEW successor 6, Opus 5.5; box 17 (b))
 Started 2026-10-23 10:49Z (date -u), on the Lead's GO of 10:19Z. Object: N8d-R2 = docs/new/N8d-single.md §0 (rules frozen at d7fadfbf)
-together with §0b (C1-C5 pinned at bb9f64f5). Under D1 every statement here is wrong until refereed. Each one carries a label:
+together with §0b (C1-C5 pinned at bb9f64f5) and §0c (C1 corrected to the COMPRESSED map, Lead reading 10:48Z). Under D1 every statement here is wrong until refereed. Each one carries a label:
 - **PROVED**: a full proof is written here; it still needs two referees.
 - **READING**: an argument or interpretation, not a proof.
 - **OPEN**: not known.
@@ -35,8 +35,9 @@ together with §0b (C1-C5 pinned at bb9f64f5). Under D1 every statement here is 
 
 ## 1. Setting (from §0 and §0b)
 - Input: a parity game with n vertices, max-parity, priorities p(v) ≥ 0. Write V_0 for Even's vertices and V_1 for Odd's.
-- Priority map (C1): π(v) = p(v) + 2 ∈ [d], where d is the least even number ≥ max π. The map preserves both order and parity, so every
-  infinite play has the same winner under π as under p.
+- Priority map (C1, canonical per §0c): π = the order- and parity-preserving compression of p into [d], d even (kl.py Game.__init__), so
+  d ≤ 2n and h ≤ n. The tested variant π = p + 2 (kl2.py) is covered by every statement of §2 as well. Both maps preserve order and
+  parity, so every infinite play has the same winner under π as under p.
 - Tree T (C2): the perfect n-ary tree of height h = d/2, M = {0, ..., n-1}. Leaves are h-tuples (ξ_{d-1}, ξ_{d-3}, ..., ξ_1). L̄ = L(T)
   ∪ {⊤} is ordered lexicographically, with ⊤ on top. ℒ is the lattice of labellings µ: V -> L̄, ordered pointwise.
 - Algorithm 1 with the single-switch rule R2. Start: µ_0 = min L(T) at every node and τ_1 = the first successor (C3). Initial step:
@@ -47,7 +48,7 @@ together with §0b (C1-C5 pinned at bb9f64f5). Under D1 every statement here is 
   Here G_τ↑ = {Lift_v : v ∈ V_0} ∪ {Lift_{vτ(v)} : v ∈ V_1}, and G↑ = {Lift_v : v ∈ V_0} ∪ {Lift_vw : v ∈ V_1, vw ∈ E}.
 - Least fixed point step: µ^{G_τ↑} is computed by Algorithm 3 (base-node lifts, then Algorithm 2). Theorem 4.5 makes this exact when
   the input µ has no loose arcs in G_τ. Lemma 2.1 (i) below shows the input always satisfies this.
-- Dual run (C4): owners swapped, priorities p + 1 (then C1, so p + 3 overall). C5 reads Even's strategy off the final labels.
+- Dual run (C4): owners swapped, priorities p + 1, then C1's compression. C5 reads Even's strategy off the final labels.
 - Throughout, "single admissible switch rule" means ANY rule that changes τ at exactly one Odd node v, to an admissible arc vw. R1, and R2
   under every seed, are such rules. The arc choice inside the node is irrelevant to §2.
 
@@ -110,7 +111,8 @@ Proof. G_τ↑ ⊆ G↑ for every τ, because the Even operators coincide and ea
 ∎
 
 ### Theorem 2.3 (termination, output, iteration bound, for every single admissible switch rule). PROVED
-Algorithm 1 with any single admissible switch rule terminates after at most n·n^h pivots, whatever the random choices. It returns µ*, the
+Algorithm 1 with any single admissible switch rule terminates after at most n·n^h pivots (≤ n^{n+1} under the canonical C1, h ≤ n),
+whatever the random choices. It returns µ*, the
 pointwise least labelling feasible in G.
 
 Proof.
@@ -181,7 +183,8 @@ Proof.
   number of pivots. That is §3.
 
 ## 3. Expected number of pivots (gauntlet step 4, second half): attempts and where each breaks
-Target statement, **OPEN**: for some polynomial q, for every game, E_seed[#pivots of R2] ≤ q(n). This is an M4-R statement (D2 change 4).
+Target statement, **OPEN**: for some polynomial q, for every game, E_seed[#pivots of R2] ≤ q(n), with C1 the canonical compressed map
+(d ≤ 2n), as for the TARGET.md §1 input (priorities in {0..n}). This is an M4-R statement (D2 change 4).
 I do not believe I have it; nothing below comes close. Each attempt is written as the claim it would need, the PROVED part, and the exact
 break with the instance that shows it.
 
@@ -195,7 +198,7 @@ For any single admissible switch rule, along any run:
   number of odd indices in [π(v), d-1]. In particular, an Odd vertex with π(v) = d - 1 switches at most n times, and one with
   π(v) = d at most once (straight to ⊤). Checked on every switch of 18 runs (experiments/new/kl/step4/switches.out, column lemma_c_viol = 0).
 - (d) At most n pivots turn some vertex to ⊤ for the first time; ⊤ is absorbing.
-- (e) Expected pivots ≤ n·n^h (Theorem 2.3). This is exponential in d, and the trivial bound.
+- (e) Expected pivots ≤ n·n^h ≤ n^{n+1} (Theorem 2.3, canonical C1). This is exponential, and the trivial bound.
 
 ### 3.1 Attempt A: a rank-gap potential dropping by an expected 1/poly fraction per pivot
 - Claim needed: Ψ(µ) = Σ_v (r(µ*(v)) − r(µ(v))) satisfies E[Ψ_{k+1} | past] ≤ (1 − 1/q(n)) Ψ_k. Then E[#pivots] ≤ q(n)·ln(n·n^h) + 1
