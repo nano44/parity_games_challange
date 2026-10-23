@@ -39,3 +39,22 @@ functions and asserts the same iteration count as kl.solve)
   touch the 'global' rule: 8 dual pivots on all three counter instances (the one-sided optimum closes the lapping cycle at once).
 - What it says about the paper: nothing against its theorems. The paper bounds the iterations by n·|L(T)| = n·n^{d/2} and leaves pivot
   rules open; this family shows the perfect-tree bound is nearly attained (n^{L}, L ≈ d/2 − const) by a natural rule.
+
+## 4. The global rule is killed too (2026-10-23 02:33Z, date -u)
+| instance | sha1 | n | d (kl) | global: primal / dual pivots | switch-all: primal / dual |
+| --- | --- | --- | --- | --- | --- |
+| klglobal_n16 (climb, global rule, 02:21Z) | 179b2cd059a54c3afe6a461c2dfb6c369537b416 | 16 | 20 | 11 / 134 = 8·16 + 6 | 6 / 81 = 5·16 + 1 |
+| klglobal_n18_lvl = n16 + 2 isolated self-loops, priorities 29, 30 (new top values) | cb9004b7af4bbac31e4c9443229ac25bc241a7bc | 18 | 22 | 11 / 2,598 = 8·18^2 + 6 | 6 / 1,621 = 5·18^2 + 1 |
+| klglobal_n20_lvl2 = n16 + 4 isolated self-loops, priorities 29-32 | 0ffbeaf10ccfba071c5db9c07c4c56ae417a01b9 | 20 | 24 | 11 / 64,006 = 8·20^3 + 6 | 6 / 40,001 = 5·20^3 + 1 |
+- All rows: kl.py --sol, check_sol2.py = Oink zlk OK, strategies verified. Both padded counts were PREDICTED and matched exactly.
+- Mechanism (logs/klglobal_n16_dual_global_trace_head_tail.txt): after 8 set-up pivots, a period of 8 pivots on dual Odd nodes 4, 5, 7, 8,
+  10, 11 repeats; each period raises the TOP label component by one (0 … 15, then ⊤): L = 1 on klglobal_n16. The global rule solves Odd's
+  one-player game against Even's counterstrategy σ read off µ, but σ itself moves with µ, so the one-sided optimum is re-taken every
+  period and the cycle stays open across periods.
+- Family G_k := klglobal_n16 + 2k isolated self-loops with new top priorities: n = 16 + 2k, L = 1 + k, dual pivots = 8·(16 + 2k)^{1+k} + 6
+  = n^{Θ(n)}: SUPER-POLYNOMIAL. Verified members k = 0, 1, 2.
+- So BOTH frozen rules of N8a-kohloho.md §2 have super-polynomial pivot families on the perfect universal tree. The common cause is the
+  perfect tree's base-n Tighten: a lapping cycle that the rule keeps open counts through every leaf of the tree's top L levels, and every
+  extra priority value on any vertex, even an isolated one, adds a level.
+- The same family G_k is also super-polynomial under switch-all: dual pivots 81, 1,621, 40,001 = 5·n^{1+k} + 1 (k = 0, 1, 2; verified). So
+  ONE family kills both frozen rules.
