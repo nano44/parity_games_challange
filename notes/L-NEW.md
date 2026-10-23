@@ -8,6 +8,9 @@ Successor 6 (Opus 5.5, D15), session_01ETtBUTp98P7J7EJVEmPEGj; updated 2026-10-2
   the paper's Thm 3.1 omits and invariant (2)'s proof; running time §3: attempts A rank-gap, B lock-in M (Lemma M FALSE at sae N=2 dual state 1;
   windowed form = state-wise target), C per-vertex switches (PROVED <= n^k(v); data grows ~n), D KS / Random-Edge (no template). Step 4 time half
   NOT passed.
+- Later in box 17: §0c (Lead reading 10:48Z: C1 canonical = COMPRESSED kl.py map, d <= 2n; p+2 a tested variant); N8d-proofs §3.6: Lemma T
+  false; Friedmann families' expensive dual runs have mu* finite everywhere (no odd cycle ever closes), so the "random closer" reading does not
+  explain R2 there; cleanest OPEN sub-target = R2 on games where the improver loses everywhere; one-player R1 climbs 36/124/209 (n 8/12/16).
 - Next: answer referee / Lead questions on N8d-proofs.md; possible next statement to attack is §3.5's OPEN escape statement; one-player
   (Even out-degree 1) case of R2 is an untried PROVED-able target (idea only, not started).
 - Probes: experiments/new/kl/step4/ (mlemma.py, switches.py, c1diff.py, carry.py, *.out). Oink not built in this container.

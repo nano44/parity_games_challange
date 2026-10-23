@@ -228,7 +228,8 @@ For any single admissible switch rule, along any run:
   is equivalent to the state-wise target up to the factor n(h+1). The potential buys a localisation, not a proof.
 - DATA on M_w: the longest stretch without an M rise on the actual R2 run is 14, 42, 62 pivots on switchbestexp N = 1, 2, 3 (n = 35, 60,
   85), roughly linear in n. On famG (R53's G_k, k = 1) M rises once in 53 pivots (mlemma.out). So any per-state progress event that is
-  monotone and of polynomial range must be "rare and late" on such runs. That is the shape an adversary would exploit.
+  monotone and of polynomial range must be "rare and late" on such runs. That is the shape an adversary would exploit, and HL_k does
+  (§3.7): on HL88_0, M rises 18 times in 1,380 pivots, and the longest stretch without a rise is 1,354.
 
 ### 3.3 Attempt C: few switches per vertex (the G_ζ observation; R56 M2)
 - Claim needed: every vertex switches at most s(n) times in expectation, s polynomial. Then E[#pivots] ≤ n·s(n).
@@ -239,7 +240,7 @@ For any single admissible switch rule, along any run:
 - **Break (DATA, experiments/new/kl/step4/switches.out, R2 dual, seeds 1-2).** Off G_ζ, vertices switch more and more as n grows:
   - switchallexp N = 2, 4, 6, 8, 10 (n = 35 .. 147): max switches per vertex 6/6, 11/8, 10/7, 15/17, 15/19.
   - switchbestexp N = 2, 4, 6, 8 (n = 60 .. 210): max 10/9, 11/14, 28/15, 27/24; mean over switching vertices 3.0 → 7-9.
-  This is consistent with s(n) ~ n (pivots ~ n², §5 of N8d-single.md), not with "about once".
+  On L-RED's HL88_0 (§3.7) the max is 81 and the mean 73 per switching vertex at n = 41. "About once" is specific to G_ζ.
   What a proof would need instead: a bound on how many DISTINCT values of µ(v)|_{π(v)} a vertex visits. These are base-n numbers with
   k(v) digits, and under switch-all on L_k a vertex visits n^k of them (N8a §6).
 - **OPEN**: whether R2's randomness bounds the visited values by a polynomial. This is the crawl question U3 of N8d-barrier.md §3 in
@@ -270,10 +271,13 @@ For any single admissible switch rule, along any run:
   probability ≥ 1/poly the next poly(n) R2 pivots raise M or raise some vertex's prefix at its top unmatched level.
   - I have no candidate argument for it. An adversary needs only one gadget that keeps an odd cycle open under every admissible single
     switch (U3), or one in which the cycle-closing candidates are an exponentially small fraction for exponentially long. The second is
-    possible in principle, because R2 is node-uniform: delay lanes with many candidate vertices dilute the closers. That is L-RED's current
-    line (Lead 10:41Z: about L laps, pivots about L², still polynomial).
+    possible in principle, because R2 is node-uniform: delay lanes with many candidate vertices dilute the closers. L-RED has since built
+    exactly this: HL_k (R56 §2, §3.7 below), R2 mean ≈ 34·n^{k+1}.
 - **Correction by §3.6 (DATA):** the cycle-closing escape does NOT explain R2 on Friedmann's families. There the long dual runs have
-  µ* finite everywhere, so no odd cycle is ever closed, yet R2 is ≈ n² where R1 is 2^Θ(n).
+  µ* finite everywhere, so no odd cycle is ever closed, yet R2's counts there are far below R1's 2^Θ(n).
+- **No growth-rate framing.** The earlier fits (≈ n^2 on switchbestexp, N8d-single.md §5) are DATA on those families only. HL_k gives R2
+  mean dual pivots ≈ 34·n^{k+1} (§3.7), so any expected-polynomial argument must fail on HL_k, up to the cap that fixed-length lanes
+  impose.
 - Step 4's running-time half is therefore **not passed**. N8d-R2 stays a step-2 / step-3 survivor with correctness PROVED (unrefereed),
   under D1.
 
@@ -289,7 +293,7 @@ For any single admissible switch rule, along any run:
   - switchallexp N = 2, 4 and switchbestexp N = 2, 3, dual runs (34-180 pivots): µ* has NO ⊤ vertex (top_in_mustar = 0).
   - The primal runs (2-4 pivots) make everything ⊤.
   - So the expensive runs are entirely runs in which Odd (the dual's improver) wins nowhere and no odd cycle ever closes. R1 is 2^Θ(n)
-    exactly there (N8d-single.md §3), and R2 ≈ n².
+    exactly there (N8d-single.md §3), and R2 stays far below it on those families (DATA).
   - A proof must therefore explain R2 on games where the improver loses everywhere. This is the cleanest OPEN sub-target: **E[R2
     pivots] ≤ poly(n) on games with µ* finite everywhere.** On those games every label stays finite and only Even-type truncation /
     counting happens (R56 M1).
@@ -306,10 +310,35 @@ For any single admissible switch rule, along any run:
   - Reading: even with one player, single-switch Koh-Loho SI is not polynomial for every admissible rule, as far as climbs show. A
     one-player theorem would have to use R2's randomness too.
 
+### 3.7 L-RED's HL_k (R56 §2, merged on trunk): which candidates it breaks
+- Family: R53's H_k plus two z-separated delay lanes of length 8; n = 41 + 2k (experiments/red/kl24/hlgen.sh k 8 8).
+- R2 mean dual pivots, seeds 1-5, verified (R56 §2c): 1,388 / 63,686 / 2,759,578 for k = 0, 1, 2, i.e. ≈ 34·n^{k+1}. k is the number
+  of extra high priorities.
+- Reading (L-RED / Lead): not a kill yet. With fixed lanes a per-lap failure probability ε caps the expectation, and L-RED is measuring
+  ε(L) and building growing lanes.
+- My probes on HL88_0 (sha1 8f710aef7abd), dual, seed 1, 1,380 pivots (experiments/new/kl/step4/hl88.out; switches on HL88_1 in
+  hl88_1.out):
+
+| candidate | HL88_0 result | broken by HL_k? |
+| --- | --- | --- |
+| A rank-gap fraction (§3.1) | min best-gain/Ψ = 6.0·10⁻⁴; µ* is ⊤ everywhere, so Ψ is dominated by ⊤-gaps | already broken (§3.1); HL_k adds nothing |
+| B Lemma M (§3.2) | 1,354 of 1,380 states have no M-raising candidate | yes, at almost every state |
+| B Lemma M_w | M rises 18 times; longest stretch without a rise = 1,354 pivots (all but the 26 rising or initial states) | yes: w would have to be ≈ the whole run, i.e. ≈ 34·n^{k+1} |
+| C switches per vertex (§3.3) | max 81, mean 72.6 per switching dual-Odd vertex (n = 41); 3.0 (c) holds at every switch | yes for any s(n) bound independent of k (data for k = 1 in hl88_1.out) |
+| E Lemma T (§3.6) | µ* = ⊤ on all 41 vertices, so the whole run is phase 1; 1,354 states violate Lemma T | yes; HL_k is the opposite case to Friedmann's families (all-⊤ vs all-finite µ*), and both are slow for some rule |
+| D KS / Random-Edge (§3.4) | no template to begin with | n/a |
+
+- Consequence (READING): every potential I tried fails on HL_0 already, at a fixed n = 41. The per-k growth then shows that none of them
+  can be repaired by a polynomial window.
+- What any surviving argument must use: the cap that ε(L) puts on laps, i.e. that a lane of FIXED length is escaped with constant
+  probability per lap. A bound of that kind would be in terms of the longest lane the game can host. Growing lanes (L-RED's next step)
+  would test exactly that. **OPEN**.
+
 ## 4. Files
 - experiments/new/kl/step4/mlemma.py → mlemma.out: Lemma M per state; Ψ fractions; longest stretches without an M rise. Each run is
   asserted to have the same pivot count as kl_single.strategy_iteration.
 - experiments/new/kl/step4/switches.py → switches.out: per-vertex switch counts; 3.0 (c) checked on every switch.
+- hl88.out, hl88_1.out: probes on L-RED's HL88_0 / HL88_1 (experiments/red/kl24/instances/, read-only).
 - experiments/new/kl/step4/tlemma.py → tlemma.out (Lemma T, phases); oneplayer.py → oneplayer_random.out, op/ (climbs and R2 on them).
 - experiments/new/kl/step4/c1diff.py, carry.py → c1diff.out, carry.out: §0b's C1 comparison (kl_single.py vs kl2.py).
 - Instances: generated by experiments/hard-families/pgsolver_port.py, experiments/red/kl/famgen.py and experiments/new/kl/gen_lk.py
