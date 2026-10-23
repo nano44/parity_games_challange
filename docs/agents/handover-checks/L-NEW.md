@@ -264,3 +264,55 @@ Reason for (ii) over (i):
 - Kill criteria: super-polynomial iteration growth or bit growth on any hard family (gauntlet step 2), or a screen showing a known
   barrier covers it; recorded as a dead end with the instance. If N6 dies at the screen, I fall back to (i) only with a concrete
   statement, otherwise to the next untested approach.
+
+## 2026-10-23 10:10Z (successor 6, Opus 5.5 per owner D15 / Lead reading L37; every time from date -u)
+Measured from the repository at writing time. Predecessor: successor 5 (session_019MJMHr7jYQTFT71mo82rZB, parked for good), handover
+notes/L-NEW.md @ d2aef052.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/l-new`. Local HEAD was STALE: 6b3dcd53, 349 commits behind origin/claude/l-new. After
+  `git fetch origin claude/vibrant-johnson-nxvvxo claude/l-new`: `git merge --ff-only origin/claude/l-new` -> d2aef052 (= origin).
+- `git rev-list --left-right --count d2aef052...origin/claude/vibrant-johnson-nxvvxo` -> 0 ahead, 34 behind (trunk = 1075e90c,
+  "Lead: sweep 10:03Z"); trunk already contains the handover. `git merge origin/claude/vibrant-johnson-nxvvxo` fast-forwarded (no merge
+  commit needed, no rebase) -> HEAD 1075e90c: 0 ahead, 0 behind; 1 ahead after this file's commit.
+
+### 2. Open work and the next step of each
+Nothing running; tools/oink/build and experiments/new/out/ (gitignored) are absent and must be rebuilt before any bench run.
+- Box 17 on N8d-R2 (docs/new/N8d-single.md §0, rules frozen at d7fadfbf), waits for GO:
+  (a) §0b, a NEW section (no edit to §0) pinning C1 priority map p+2, d = even ceiling, no compression; C3 τ_1 = first successor in
+      file order; C4 dual = owners swapped, p+1; cited to experiments/n8d-second/README.md. Next: read kl.py / kl_single.py and
+      the README side by side, quote line numbers.
+  (b) Gauntlet step 4 in docs/new/N8d-proofs.md: correctness (Koh-Loho arXiv 2108.13338v5 Thm 3.1 for any admissible single switch,
+      strategy extraction for both players) and an ATTEMPTED expected-polynomial pivot bound, each statement labelled PROVED /
+      READING / OPEN. Next: re-open 2108.13338v5 and write the correctness half against §0/§0b. Any randomized-polynomial belief is
+      reported to the Lead at once, before write-up (M4-R, D2 change 4).
+- Open N8d-R2 items carried from successor 5 (others' or unrouted): U1 (Friedmann's Random-Edge G_n under R2: L-RED box 23), U2
+  (no upper bound beyond n·n^(d/2) on the perfect tree: that is box 17 (b)'s running-time half), U3, U4.
+- G-N5-TIME: open, no new statement; not in box 17. G-N1-LB: optional, not routed.
+
+### 3. docs/GAPS.md rows I own (`grep -n "L-NEW" docs/GAPS.md` at 1075e90c)
+- **G-N5-TIME** (major; owner "L-NEW (L-LIT T22; referees later)"; status **open**).
+- **G-N1-LB** (minor; owner "L-NEW (optional; not routed)"; status **open**).
+- **G-N5-TERM** (major; owner "L-NEW (L-COMP checks runs)"; status **closed**, RESULTS R15).
+- No GAPS row exists for N8d-R2 (`grep -n N8d docs/GAPS.md` -> no match).
+
+### 4. The three owner rulings that most constrain me (verbatim from docs/DECISIONS.md), with index status
+1. D1 (docs/DECISIONS.md "## D1" key lines; DECISIONS-INDEX row D1 "active"):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   Binds box 17: every step-4 statement is PROVED (full proof), READING or OPEN; nothing is a result until refereed.
+2. D2 change 4 (docs/DECISIONS.md "## D2"; DECISIONS-INDEX row D2 "active"):
+   > 4. 7b changed: a randomized (Las Vegas, expected polynomial) algorithm is labelled M4-R, not M3, and reported to me
+   >    at once like an M4 claim.
+   R2 is randomized: an expected-polynomial pivot bound would be an M4-R claim, reported to the Lead at once, before any write-up.
+3. D14 (docs/DECISIONS.md "## D14"; DECISIONS-INDEX row D14 "active"):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+   The lane's mandate (with D15, index "active", "Be autonomous, reason about it", and Lead reading L37: main effort (c)). Also
+   binding (D1, "active"): "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision."
+
+### 5. One trap that bit this lane, and the check that now prevents it
+- Trap: a STALE local branch. It bit again at this start: the container checked out 6b3dcd53, 349 commits behind origin/claude/l-new
+  (d2aef052); working from it would have lost boxes 12-16 (N6-N8d) and the handover. Check: `git fetch` then
+  `git rev-parse HEAD origin/claude/l-new` before any work; fast-forward only; merge trunk, never rebase.
+- Also carried: timestamps only from `date -u` in the same command that writes them (this heading); push.sh output redirected to a
+  file and `$?` printed, never piped; ReadNotifications at every milestone push (successor 5's box-14 slip).
