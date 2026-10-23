@@ -1,0 +1,22 @@
+  lap 2: eps 0.04399, node 1 = 0.0.3.0.0.0, base-run redraws so far 0
+  lap 20: eps 0.1615, node 1 = 0.0.21.0.0.0, base-run redraws so far 0
+  lap 44: eps 0.06514, node 1 = 0.1.16.0.0.0, base-run redraws so far 0
+  lap 45: eps 0.1615, node 1 = 0.1.17.0.0.0, base-run redraws so far 0
+  base run ended / failed at lap 46
+eq_4.pg n 29: scan of 45 laps from lap 1 (seed 1): max exact eps 0.1615 at lap 20 (node 1 = 0.0.21.0.0.0); distinct values (count): 0.1615 (2), 0.06514 (1), 0.04399 (1), 0.02175 (1), 0.01941 (2), 0.01066 (18), 0.009083 (2), 0.007653 (18)
+  lap 32: eps 0.06514, node 1 = 0.1.4.0.0.0, base-run redraws so far 0
+  lap 41: eps 0.05639, node 1 = 0.1.13.0.0.0, base-run redraws so far 0
+  lap 65: eps 0.06514, node 1 = 0.2.8.0.0.0, base-run redraws so far 0
+  lap 80: eps 0.04948, node 1 = 0.2.23.0.0.0, base-run redraws so far 0
+  lap 86: eps 0.06514, node 1 = 0.3.0.0.0.0, base-run redraws so far 0
+  lap 103: eps 0.06514, node 1 = 0.3.17.0.0.0, base-run redraws so far 0
+  lap 108: eps 0.04948, node 1 = 0.3.22.0.0.0, base-run redraws so far 0
+  lap 125: eps 0.04009, node 1 = 0.4.10.0.0.0, base-run redraws so far 0
+  base run ended / failed at lap 130
+eq_4.pg n 29: scan of 129 laps from lap 1 (seed 2): max exact eps 0.06514 at lap 32 (node 1 = 0.1.4.0.0.0); distinct values (count): 0.06514 (4), 0.05639 (1), 0.04948 (2), 0.04009 (1), 0.02175 (1), 0.01941 (3), 0.01758 (4), 0.01756 (1), 0.01471 (1), 0.01335 (1), 0.01066 (42), 0.009991 (1), 0.009479 (2), 0.009083 (10), 0.007653 (55)
+  base run ended / failed at lap 4
+eq_4.pg n 29: scan of 3 laps from lap 1 (seed 4): max exact eps 0.01066 at lap 2 (node 1 = 0.0.3.0.0.0); distinct values (count): 0.01066 (2), 0.007653 (1)
+  lap 40: eps 0.2431, node 1 = 0.1.12.0.0.0, base-run redraws so far 0
+  lap 74: eps 0.2431, node 1 = 0.2.17.0.0.0, base-run redraws so far 0
+  base run ended / failed at lap 75
+eq_4.pg n 29: scan of 74 laps from lap 1 (seed 5): max exact eps 0.2431 at lap 40 (node 1 = 0.1.12.0.0.0); distinct values (count): 0.2431 (2), 0.02175 (3), 0.01941 (2), 0.01758 (2), 0.01756 (1), 0.01599 (1), 0.01471 (1), 0.01335 (2), 0.01066 (31), 0.009991 (1), 0.009479 (1), 0.009083 (1), 0.007653 (26)
