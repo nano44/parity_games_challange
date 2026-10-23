@@ -357,3 +357,39 @@ Nothing running; tools/oink/build and experiments/new/out/ (gitignored) are abse
   handed climbs to L-RED). Check: ReadNotifications at every milestone push and before starting each test run in box 18.
 - Also carried: stale-branch check (`git rev-parse HEAD origin/claude/l-new` after fetch, done above); self-kill by `pkill -f` /
   `awk '/name/'` matching my own shell (match argv fields instead); push.sh output to a file, then `$?`.
+
+## 2026-10-23 22:48Z (successor 8, Opus 5.5 per owner D15 / Lead reading L37; every time from date -u)
+### 1. Branch, head, ahead/behind trunk
+- Branch claude/l-new. Container started stale: local 5961101a, origin/claude/l-new 5e6ab2a1 (predecessor's handover). Fast-forwarded
+  to 5e6ab2a1, then merged trunk origin/claude/vibrant-johnson-nxvvxo = a4fb9957, which was 13 ahead / 0 behind l-new: a fast-forward,
+  no merge commit. Before this section HEAD = a4fb9957, 0 ahead / 0 behind trunk; after it 1 ahead (this commit), 0 behind.
+### 2. Open work and the next step of each
+Nothing running. tools/oink/build and experiments/new/out/ are absent (rebuild before any bench run).
+- Box 21 (after GO): proof attempt on G-N5-TIME in docs/new/N5-time-box21.md: turn L-RED R57's obstruction O1-O4 (no lapping, R15
+  Lemma NR; Odd's gate depends on tau alone; a kill needs (R-a) crossing counters and (R-b) no jump-ahead switch in N5's joint
+  optimum) into a bound on N5 iterations for two-player games, or locate exactly where it breaks. Next step: read
+  docs/new/N5-ssi-global.md, RESULTS R15/R17 and their proofs (N5-phase-bound-box10.md), R57, and why seg_r16 / vc_g25 break R17's
+  phase argument; then attack "(R-a) and (R-b) incompatible". Any polynomial-iterations belief goes to the Lead at once (D1).
+- Carried, not routed: N10 (box 19) dead as stated; box 20 synthesis docs/new/c-lane-synthesis.md (fallback design SA+_1/2 of ACYC +
+  ESC1 + ESC-tau, test on N10 gap instances); N8d-proofs.md Lemma 2.1 as a standalone note only if the Lead routes it.
+### 3. docs/GAPS.md rows I own (`grep -n "L-NEW" docs/GAPS.md` at a4fb9957)
+- **G-N5-TIME** (major; owner "L-NEW (L-LIT T22; referees later)"; status **open**) - box 21's target.
+- **G-N1-LB** (minor; owner "L-NEW (optional; not routed)"; status **open**).
+- **G-N5-TERM** (major; owner "L-NEW (L-COMP checks runs)"; status **closed**, RESULTS R15).
+### 4. The three owner rulings that most constrain me (verbatim from docs/DECISIONS.md), with index status
+1. D1 (DECISIONS-INDEX row D1 "active"; restated unchanged in L35 (3)):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   Box 21 is a running-time proof attempt: any bound I believe goes to the Lead at once, labelled READING until refereed.
+2. D14 (DECISIONS-INDEX row D14 "active"):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D15 (DECISIONS-INDEX row D15 "active"):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+   Lead reading L37: main effort (c); no option questions to the owner; I decide inside the brief and report.
+### 5. One trap, and the check that prevents it
+- Trap: proving a one-player statement and reading it as two-player (R17's phase argument fails on seg_r16 / vc_g25; K9's (P*)
+  looked fine until CDAG_n). Check: every lemma in box 21 is run, before it is labelled PROVED, against the two-player
+  counterexamples already pinned (seg_r16, seg_n24, vc_g25, R57's instances in experiments/red/n5/instances/) with N5's engine,
+  and the statement names which player's moves it bounds.
+- Also carried: stale-branch check (`git rev-parse HEAD origin/claude/l-new` after fetch: done above, the container WAS stale);
+  ReadNotifications at each milestone; push.sh output to a file, then `$?`.
