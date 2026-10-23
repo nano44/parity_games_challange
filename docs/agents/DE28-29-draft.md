@@ -1,4 +1,4 @@
-# Draft RESULTS DE28-DE29 (Lead, 2026-10-23 04:35Z by date -u) — awaits CHECKER C22 re-diff (rev. 04:52Z: C22 E-1..E-3, N-1..N-3; checker 2e60ce3)
+# Draft RESULTS DE28-DE29 (Lead, 2026-10-23 04:35Z by date -u) — awaits CHECKER C22 re-diff (rev. 04:52Z: C22 E-1..E-3, N-1..N-3; checker 2e60ce3; rev. 05:08Z: C22 Addendum 1 E-4, checker 476ca61)
 
 - DE28 (2026-10-23): N8a = Koh-Loho strategy iteration over the perfect (n, d/2)-universal tree (Koh & Loho arXiv 2108.13338, Algorithm 1;
   pdf sha256 21ee0e43…), with either frozen rule "global" or "switch-all" (L-NEW, (c) lane under D14/D15; docs/new/N8a-kohloho.md §2
@@ -17,7 +17,8 @@
   climbs one leaf per period through all leaves of the top L levels, and each extra priority value (even on an isolated vertex) adds a
   level. R53 §6b: PROVED Tighten = leftmost leaf below the successor (any ordered tree); PROVED the top L levels of an (ℓ, h)-universal
   tree are (ℓ, L)-universal; COMPUTED (kadmiss.py: at most one admissible arc per Odd node at every iteration on H_0..H_2), hence
-  PROVED by induction: every rule in SA gives the identical run on H_0..H_2; transfer to every
+  PROVED by induction: every rule in SA (switch every Odd node that has an admissible arc, to an admissible arc; R53 §6b
+  item 3) gives the identical run on H_0..H_2; transfer to every
   universal tree for SA rules is a READING with gaps G1 (succinct trees: local offsets), G2 (law DATA for k ≤ 3), G3 (rules outside SA not
   covered). REFUTED (computed, ksubset.py) for 'every pivot rule': four single-switch rules (lowest index, highest index, random seeds
   1, 2) solve H_0..H_2 in 9, 5, 5, 17 iterations (this led to N8d). Not touched: the paper's theorems
