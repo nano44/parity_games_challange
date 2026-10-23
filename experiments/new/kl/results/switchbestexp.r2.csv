@@ -1,0 +1,7 @@
+family,N,sha1,n,d,h,rule,iterations,iterations_dual,checks,verify,secs,oink_check
+switchbestexp,1,8c56661373a0,35,42,21,r2s1,1,44,0,verified,0.1,zielonka(oink zlk) OK strategies verified
+switchbestexp,2,b3d5bc293d1b,60,70,35,r2s1,2,99,0,verified,0.5,zielonka(oink zlk) OK strategies verified
+switchbestexp,3,e1cd8f136e05,85,98,49,r2s1,3,180,0,verified,2.0,zielonka(oink zlk) OK strategies verified
+switchbestexp,4,57b27b7476bc,110,126,63,r2s1,4,264,0,verified,5.4,zielonka(oink zlk) OK strategies verified
+switchbestexp,5,84913ba8d495,135,154,77,r2s1,5,514,0,verified,16.3,zielonka(oink zlk) OK strategies verified
+switchbestexp,6,7348edf1358d,160,182,91,r2s1,6,830,0,verified,38.8,zielonka(oink zlk) OK strategies verified

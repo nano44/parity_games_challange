@@ -1,0 +1,12 @@
+family,N,sha1,n,d,h,rule,iterations,iterations_dual,checks,verify,secs,oink_check
+tc,1,2ba267d33fc9,8,10,5,all,0,0,0,verified,0.0,zielonka(oink zlk) OK strategies verified
+tc,2,f290fb643361,22,14,7,all,3,3,0,verified,0.0,zielonka(oink zlk) OK strategies verified
+tc,3,2bce000cd077,42,18,9,all,4,4,0,verified,0.0,zielonka(oink zlk) OK strategies verified
+tc,4,d92e89fa6c1f,68,22,11,all,5,5,0,verified,0.0,zielonka(oink zlk) OK strategies verified
+tc,5,1edb30d541fc,100,26,13,all,6,6,0,verified,0.1,zielonka(oink zlk) OK strategies verified
+tc,6,530faa4328cf,138,30,15,all,7,7,0,verified,0.1,zielonka(oink zlk) OK strategies verified
+tc,7,e97a44605ff4,182,34,17,all,8,8,0,verified,0.2,zielonka(oink zlk) OK strategies verified
+tc,8,e3509c005a08,232,38,19,all,9,9,0,verified,0.3,zielonka(oink zlk) OK strategies verified
+tc,10,c6d4d3c04841,350,46,23,all,11,11,0,verified,1.0,zielonka(oink zlk) OK strategies verified
+tc,12,29f4bd4fffba,492,54,27,all,13,13,0,verified,2.1,zielonka(oink zlk) OK strategies verified
+tc,14,7aa857d131fe,658,62,31,all,15,15,0,verified,4.3,zielonka(oink zlk) OK strategies verified

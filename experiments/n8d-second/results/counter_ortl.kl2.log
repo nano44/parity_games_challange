@@ -1,0 +1,56 @@
+counter_ortl 2 r1  0 2 0.001 zlk OK
+counter_ortl 2 r2 1 0 2 0.001 zlk OK
+counter_ortl 2 r2 2 0 2 0.001 zlk OK
+counter_ortl 2 r2 3 0 2 0.001 zlk OK
+counter_ortl 2 r2 4 0 2 0.001 zlk OK
+counter_ortl 2 r2 5 0 2 0.001 zlk OK
+counter_ortl 2 r2 6 0 2 0.001 zlk OK
+counter_ortl 2 r2 7 0 2 0.001 zlk OK
+counter_ortl 2 r2 8 0 2 0.001 zlk OK
+counter_ortl 2 r2 9 0 2 0.001 zlk OK
+counter_ortl 2 r2 10 0 2 0.001 zlk OK
+counter_ortl 4 r1  0 4 0.004 zlk OK
+counter_ortl 4 r2 1 0 4 0.002 zlk OK
+counter_ortl 4 r2 2 0 4 0.005 zlk OK
+counter_ortl 4 r2 3 0 4 0.003 zlk OK
+counter_ortl 4 r2 4 0 4 0.007 zlk OK
+counter_ortl 4 r2 5 0 4 0.007 zlk OK
+counter_ortl 4 r2 6 0 4 0.003 zlk OK
+counter_ortl 4 r2 7 0 4 0.002 zlk OK
+counter_ortl 4 r2 8 0 4 0.003 zlk OK
+counter_ortl 4 r2 9 0 4 0.002 zlk OK
+counter_ortl 4 r2 10 0 4 0.006 zlk OK
+counter_ortl 6 r1  0 6 0.013 zlk OK
+counter_ortl 6 r2 1 0 6 0.021 zlk OK
+counter_ortl 6 r2 2 0 6 0.013 zlk OK
+counter_ortl 6 r2 3 0 6 0.009 zlk OK
+counter_ortl 6 r2 4 0 6 0.013 zlk OK
+counter_ortl 6 r2 5 0 6 0.005 zlk OK
+counter_ortl 6 r2 6 0 6 0.005 zlk OK
+counter_ortl 6 r2 7 0 6 0.005 zlk OK
+counter_ortl 6 r2 8 0 6 0.005 zlk OK
+counter_ortl 6 r2 9 0 6 0.010 zlk OK
+counter_ortl 6 r2 10 0 6 0.006 zlk OK
+counter_ortl 8 r1  0 8 0.031 zlk OK
+counter_ortl 8 r2 1 0 8 0.019 zlk OK
+counter_ortl 8 r2 2 0 8 0.014 zlk OK
+counter_ortl 8 r2 3 0 8 0.017 zlk OK
+counter_ortl 8 r2 4 0 8 0.013 zlk OK
+counter_ortl 8 r2 5 0 8 0.024 zlk OK
+counter_ortl 8 r2 6 0 8 0.011 zlk OK
+counter_ortl 8 r2 7 0 8 0.015 zlk OK
+counter_ortl 8 r2 8 0 8 0.017 zlk OK
+counter_ortl 8 r2 9 0 8 0.015 zlk OK
+counter_ortl 8 r2 10 0 8 0.015 zlk OK
+counter_ortl 10 r1  0 10 0.035 zlk OK
+counter_ortl 10 r2 1 0 10 0.021 zlk OK
+counter_ortl 10 r2 2 0 10 0.026 zlk OK
+counter_ortl 10 r2 3 0 10 0.016 zlk OK
+counter_ortl 10 r2 4 0 10 0.031 zlk OK
+counter_ortl 10 r2 5 0 10 0.025 zlk OK
+counter_ortl 10 r2 6 0 10 0.023 zlk OK
+counter_ortl 10 r2 7 0 10 0.016 zlk OK
+counter_ortl 10 r2 8 0 10 0.029 zlk OK
+counter_ortl 10 r2 9 0 10 0.040 zlk OK
+counter_ortl 10 r2 10 0 10 0.016 zlk OK
+done: 0 failures

@@ -1,0 +1,56 @@
+counter_symsi 1 r1  2 3 0.002 zlk OK
+counter_symsi 1 r2 1 2 3 0.002 zlk OK
+counter_symsi 1 r2 2 2 3 0.002 zlk OK
+counter_symsi 1 r2 3 2 3 0.007 zlk OK
+counter_symsi 1 r2 4 2 3 0.002 zlk OK
+counter_symsi 1 r2 5 2 3 0.003 zlk OK
+counter_symsi 1 r2 6 2 3 0.002 zlk OK
+counter_symsi 1 r2 7 2 3 0.006 zlk OK
+counter_symsi 1 r2 8 2 3 0.004 zlk OK
+counter_symsi 1 r2 9 2 3 0.002 zlk OK
+counter_symsi 1 r2 10 2 3 0.003 zlk OK
+counter_symsi 2 r1  7 7 0.037 zlk OK
+counter_symsi 2 r2 1 5 5 0.032 zlk OK
+counter_symsi 2 r2 2 5 4 0.016 zlk OK
+counter_symsi 2 r2 3 5 4 0.023 zlk OK
+counter_symsi 2 r2 4 8 5 0.023 zlk OK
+counter_symsi 2 r2 5 8 8 0.039 zlk OK
+counter_symsi 2 r2 6 8 8 0.015 zlk OK
+counter_symsi 2 r2 7 8 8 0.024 zlk OK
+counter_symsi 2 r2 8 8 8 0.017 zlk OK
+counter_symsi 2 r2 9 8 8 0.014 zlk OK
+counter_symsi 2 r2 10 8 6 0.012 zlk OK
+counter_symsi 3 r1  13 20 0.091 zlk OK
+counter_symsi 3 r2 1 20 12 0.070 zlk OK
+counter_symsi 3 r2 2 17 12 0.067 zlk OK
+counter_symsi 3 r2 3 15 16 0.073 zlk OK
+counter_symsi 3 r2 4 10 9 0.040 zlk OK
+counter_symsi 3 r2 5 8 6 0.034 zlk OK
+counter_symsi 3 r2 6 10 11 0.030 zlk OK
+counter_symsi 3 r2 7 9 6 0.040 zlk OK
+counter_symsi 3 r2 8 9 6 0.036 zlk OK
+counter_symsi 3 r2 9 8 8 0.048 zlk OK
+counter_symsi 3 r2 10 8 9 0.054 zlk OK
+counter_symsi 4 r1  24 42 0.223 zlk OK
+counter_symsi 4 r2 1 26 24 0.164 zlk OK
+counter_symsi 4 r2 2 20 18 0.131 zlk OK
+counter_symsi 4 r2 3 25 18 0.143 zlk OK
+counter_symsi 4 r2 4 22 24 0.159 zlk OK
+counter_symsi 4 r2 5 3 3 0.025 zlk OK
+counter_symsi 4 r2 6 29 13 0.162 zlk OK
+counter_symsi 4 r2 7 24 25 0.224 zlk OK
+counter_symsi 4 r2 8 15 22 0.127 zlk OK
+counter_symsi 4 r2 9 8 11 0.054 zlk OK
+counter_symsi 4 r2 10 27 25 0.132 zlk OK
+counter_symsi 6 r1  90 174 1.728 zlk OK
+counter_symsi 6 r2 1 36 33 0.436 zlk OK
+counter_symsi 6 r2 2 30 26 0.355 zlk OK
+counter_symsi 6 r2 3 7 6 0.067 zlk OK
+counter_symsi 6 r2 4 41 45 0.544 zlk OK
+counter_symsi 6 r2 5 61 37 0.589 zlk OK
+counter_symsi 6 r2 6 35 63 0.603 zlk OK
+counter_symsi 6 r2 7 54 56 0.626 zlk OK
+counter_symsi 6 r2 8 39 35 0.394 zlk OK
+counter_symsi 6 r2 9 50 42 0.553 zlk OK
+counter_symsi 6 r2 10 40 38 0.493 zlk OK
+done: 0 failures

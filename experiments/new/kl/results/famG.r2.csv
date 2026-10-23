@@ -1,0 +1,6 @@
+family,N,sha1,n,d,h,rule,iterations,iterations_dual,checks,verify,secs,oink_check
+famG,0,179b2cd059a5,16,20,10,r2s1,9,53,0,verified,0.0,zielonka(oink zlk) OK strategies verified
+famG,1,cb9004b7af4b,18,22,11,r2s1,9,53,0,verified,0.0,zielonka(oink zlk) OK strategies verified
+famG,2,0ffbeaf10ccf,20,24,12,r2s1,9,53,0,verified,0.0,zielonka(oink zlk) OK strategies verified
+famG,3,b2bf02504660,22,26,13,r2s1,9,53,0,verified,0.1,zielonka(oink zlk) OK strategies verified
+famG,4,cfcfd2b966cb,24,28,14,r2s1,9,53,0,verified,0.1,zielonka(oink zlk) OK strategies verified
