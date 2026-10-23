@@ -1,0 +1,67 @@
+counter_qpt 2 r1  0 0 0.000 zlk OK
+counter_qpt 2 r2 1 0 0 0.000 zlk OK
+counter_qpt 2 r2 2 0 0 0.000 zlk OK
+counter_qpt 2 r2 3 0 0 0.000 zlk OK
+counter_qpt 2 r2 4 0 0 0.000 zlk OK
+counter_qpt 2 r2 5 0 0 0.000 zlk OK
+counter_qpt 2 r2 6 0 0 0.000 zlk OK
+counter_qpt 2 r2 7 0 0 0.000 zlk OK
+counter_qpt 2 r2 8 0 0 0.000 zlk OK
+counter_qpt 2 r2 9 0 0 0.000 zlk OK
+counter_qpt 2 r2 10 0 0 0.000 zlk OK
+counter_qpt 4 r1  0 0 0.000 zlk OK
+counter_qpt 4 r2 1 0 0 0.000 zlk OK
+counter_qpt 4 r2 2 0 0 0.000 zlk OK
+counter_qpt 4 r2 3 0 0 0.000 zlk OK
+counter_qpt 4 r2 4 0 0 0.000 zlk OK
+counter_qpt 4 r2 5 0 0 0.000 zlk OK
+counter_qpt 4 r2 6 0 0 0.000 zlk OK
+counter_qpt 4 r2 7 0 0 0.000 zlk OK
+counter_qpt 4 r2 8 0 0 0.000 zlk OK
+counter_qpt 4 r2 9 0 0 0.000 zlk OK
+counter_qpt 4 r2 10 0 0 0.000 zlk OK
+counter_qpt 8 r1  0 0 0.011 zlk OK
+counter_qpt 8 r2 1 0 0 0.001 zlk OK
+counter_qpt 8 r2 2 0 0 0.001 zlk OK
+counter_qpt 8 r2 3 0 0 0.001 zlk OK
+counter_qpt 8 r2 4 0 0 0.001 zlk OK
+counter_qpt 8 r2 5 0 0 0.005 zlk OK
+counter_qpt 8 r2 6 0 0 0.001 zlk OK
+counter_qpt 8 r2 7 0 0 0.001 zlk OK
+counter_qpt 8 r2 8 0 0 0.001 zlk OK
+counter_qpt 8 r2 9 0 0 0.001 zlk OK
+counter_qpt 8 r2 10 0 0 0.001 zlk OK
+counter_qpt 12 r1  0 0 0.001 zlk OK
+counter_qpt 12 r2 1 0 0 0.005 zlk OK
+counter_qpt 12 r2 2 0 0 0.001 zlk OK
+counter_qpt 12 r2 3 0 0 0.001 zlk OK
+counter_qpt 12 r2 4 0 0 0.006 zlk OK
+counter_qpt 12 r2 5 0 0 0.001 zlk OK
+counter_qpt 12 r2 6 0 0 0.002 zlk OK
+counter_qpt 12 r2 7 0 0 0.001 zlk OK
+counter_qpt 12 r2 8 0 0 0.002 zlk OK
+counter_qpt 12 r2 9 0 0 0.005 zlk OK
+counter_qpt 12 r2 10 0 0 0.005 zlk OK
+counter_qpt 16 r1  0 0 0.002 zlk OK
+counter_qpt 16 r2 1 0 0 0.010 zlk OK
+counter_qpt 16 r2 2 0 0 0.006 zlk OK
+counter_qpt 16 r2 3 0 0 0.006 zlk OK
+counter_qpt 16 r2 4 0 0 0.002 zlk OK
+counter_qpt 16 r2 5 0 0 0.002 zlk OK
+counter_qpt 16 r2 6 0 0 0.002 zlk OK
+counter_qpt 16 r2 7 0 0 0.002 zlk OK
+counter_qpt 16 r2 8 0 0 0.006 zlk OK
+counter_qpt 16 r2 9 0 0 0.002 zlk OK
+counter_qpt 16 r2 10 0 0 0.002 zlk OK
+counter_qpt 20 r1  0 0 0.003 zlk OK
+counter_qpt 20 r2 1 0 0 0.003 zlk OK
+counter_qpt 20 r2 2 0 0 0.003 zlk OK
+counter_qpt 20 r2 3 0 0 0.003 zlk OK
+counter_qpt 20 r2 4 0 0 0.003 zlk OK
+counter_qpt 20 r2 5 0 0 0.007 zlk OK
+counter_qpt 20 r2 6 0 0 0.003 zlk OK
+counter_qpt 20 r2 7 0 0 0.003 zlk OK
+counter_qpt 20 r2 8 0 0 0.003 zlk OK
+counter_qpt 20 r2 9 0 0 0.003 zlk OK
+counter_qpt 20 r2 10 0 0 0.004 zlk OK
+done: 0 failures

@@ -1,0 +1,19 @@
+family,N,n,seed,pivots,pivots_dual,verify,oink,secs
+counter_rob,5,118,3,61,65,verified,zielonka(oink zlk) OK strategies verifie,1.0
+counter_rob,5,118,1,69,70,verified,zielonka(oink zlk) OK strategies verifie,1.2
+counter_rob,5,118,2,75,72,verified,zielonka(oink zlk) OK strategies verifie,1.2
+counter_rob,7,206,2,138,148,verified,zielonka(oink zlk) OK strategies verifie,6.8
+counter_rob,7,206,1,182,126,verified,zielonka(oink zlk) OK strategies verifie,7.5
+counter_rob,7,206,3,208,137,verified,zielonka(oink zlk) OK strategies verifie,8.2
+counter_rob,9,318,3,263,209,verified,zielonka(oink zlk) OK strategies verifie,30.0
+counter_rob,9,318,1,237,275,verified,zielonka(oink zlk) OK strategies verifie,31.7
+counter_rob,9,318,2,283,459,verified,zielonka(oink zlk) OK strategies verifie,43.7
+counter_symsi,6,62,3,7,6,verified,zielonka(oink zlk) OK strategies verifie,0.1
+counter_symsi,6,62,2,30,26,verified,zielonka(oink zlk) OK strategies verifie,0.3
+counter_symsi,6,62,1,36,33,verified,zielonka(oink zlk) OK strategies verifie,0.4
+counter_symsi,8,82,2,42,48,verified,zielonka(oink zlk) OK strategies verifie,0.9
+counter_symsi,8,82,1,53,76,verified,zielonka(oink zlk) OK strategies verifie,1.3
+counter_symsi,8,82,3,77,62,verified,zielonka(oink zlk) OK strategies verifie,1.4
+counter_symsi,10,102,3,70,54,verified,zielonka(oink zlk) OK strategies verifie,2.0
+counter_symsi,10,102,2,64,88,verified,zielonka(oink zlk) OK strategies verifie,2.6
+counter_symsi,10,102,1,93,130,verified,zielonka(oink zlk) OK strategies verifie,3.7

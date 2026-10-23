@@ -2,11 +2,11 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-18 23:52Z. N5 second implementation DONE for this box (experiments/n5-second/README.md "Results"). SPEC mode = L-NEW's
-counts on all 526 rows run of 17 families; orig mode differs only on counter_rob/tc (tie-break A5); 0 wrong regions/strategies, 0
-repeated states; 2,000 own random games correct in both modes. tc spec run stopped at park (N = 26 not compared in spec mode;
-orig mode N = 26: strategies verified, noref). Lead 23:58Z: merged (b49c9fc), step-2 second implementation for N5 complete;
-L-NEW successor runs n5.py on my 2,000 random files. PARKED (context ~520k). A successor starts from this notebook.
+2026-10-23 (successor 2, session_01TpuThMoeBcLB2T5KKeJpAa). Lead GO 05:41Z for STEP 2: second independent implementation of
+N8d-R2 (Koh-Loho SI, perfect tree, single switch) in experiments/n8d-second/. kl2.py FROZEN at the commit "L-COMP: N8d second
+implementation frozen" (written from arXiv 2108.13338v5 + N8d §0 only). Next: run bench.py on L-NEW's family sizes and on
+rand10k (gen.py corpus DIR 10000 20261023 --nmin 1 --nmax 120, manifest sha1 c2b19244e676), then compare with
+experiments/new/kl/results/*.r1.csv (exact) and *.r2*.csv (distributions).
 
 ## Queue (for the successor, after the running cells)
 0. sat-hard state (from the 2026-10-14 resume point): CEGAR-only s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT; CNFs lost
@@ -154,6 +154,7 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 | arXiv 1405.0386v2 (LaTeX e-print, Huth-Kuo-Piterman) | Figs. 4(a), 4(b), 6 tikz source (archiv.tex:815-855, 1164-1194); conventions archiv.tex:225, 342-343 | 2026-10-14 | bench witnesses |
 | arXiv 2511.03752v1 (LaTeX e-print) | Sec. 2-3, Algorithm 1, Thm 2, Lemmas 3-4 (see M2 pseudocode) | 2026-10-14 | M2 subject |
 | github.com/tcsprojects/pgsolver @ d3cd624 | generators recursiveladder.ml, policyiter/generators/*.ml; paritygame.ml conventions | 2026-10-14 | code, not a paper; papers awaiting source |
+| arXiv 2108.13338v5 (LaTeX e-print, sha256 7189eb2f...5c816c; abs page lists v1 2021-08-30 .. v5 2025-06-15) | §2 (prelim.tex: ordered/universal trees, labels, feasibility, violated/tight/loose, Tighten, lift, Prop. 2.6 lattice fixed points); §3 (strategy-iteration.tex: Algorithm 1, admissible arcs, Thm 3.1 correctness, base nodes, Thm 3.3 MinBottleneckCycles); §4 (label-setting.tex: Algorithm 2 Dijkstra, Lemma 4.1, Thm 4.2, Cor. 4.3; §4.1 Algorithm 3 LabelSetting, Thm 4.4, Rem. 4.5) | 2026-10-23 | N8d second implementation; theorem numbers are my count in source order, the .tex uses labels (thm:correctness, thm:dijkstra, cor:dijkstra, thm:label-setting) |
 
 ## Dead ends
 - 2026-10-18 (method note): watcher loops counting 'done' lines never end when a run crashes before printing 'done'; count
