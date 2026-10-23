@@ -2,3 +2,4 @@ gz2.pg seed 2: VJ Random-Edge iterations 782, back-switches to a 0-edge 204, reg
 gz2.pg seed 3: VJ Random-Edge iterations 828, back-switches to a 0-edge 227, regions == oink zlk True
 gz2.pg seed 4: VJ Random-Edge iterations 842, back-switches to a 0-edge 234, regions == oink zlk True
 gz2.pg seed 5: VJ Random-Edge iterations 854, back-switches to a 0-edge 240, regions == oink zlk True
+gz3.pg seed 1: VJ Random-Edge iterations 5420, back-switches to a 0-edge 2047, regions == oink zlk True
