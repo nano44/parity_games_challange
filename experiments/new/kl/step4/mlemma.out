@@ -1,0 +1,52 @@
+# sae1 sha1 9cd6d25bd9d3
+sae1.pg,dual,seed1,n=21,h=15,pivots=19,states_without_M_raise=7,M_raises_on_run=12,max_run_gap=7,min_bestgain_over_psi=0.0002792443438521366
+BAD,sae1.pg,dual,seed1,state1,cands=[4, 9, 11, 13, 14],M=98
+BAD,sae1.pg,dual,seed1,state2,cands=[4, 11, 13, 14],M=98
+BAD,sae1.pg,dual,seed1,state3,cands=[11, 13, 14],M=98
+# sae2 sha1 ca6e0b7d4745
+sae2.pg,dual,seed1,n=35,h=23,pivots=34,states_without_M_raise=17,M_raises_on_run=14,max_run_gap=15,min_bestgain_over_psi=4.419326709894219e-08
+BAD,sae2.pg,dual,seed1,state1,cands=[5, 11, 13, 15, 17, 19, 20, 26, 29],M=158
+BAD,sae2.pg,dual,seed1,state2,cands=[5, 11, 15, 17, 19, 20, 22, 26, 29],M=158
+BAD,sae2.pg,dual,seed1,state3,cands=[5, 13, 15, 17, 19, 20, 26, 29],M=158
+# sae3 sha1 3ad1b30a06c0
+sae3.pg,dual,seed1,n=49,h=31,pivots=49,states_without_M_raise=16,M_raises_on_run=19,max_run_gap=13,min_bestgain_over_psi=3.275383503109633e-12
+BAD,sae3.pg,dual,seed1,state1,cands=[6, 13, 15, 17, 19, 21, 23, 25, 26, 32, 34, 36, 43],M=218
+BAD,sae3.pg,dual,seed1,state2,cands=[6, 13, 17, 19, 21, 23, 25, 26, 28, 32, 34, 36, 43],M=218
+BAD,sae3.pg,dual,seed1,state3,cands=[6, 13, 17, 19, 21, 23, 25, 26, 28, 34, 36, 43],M=218
+# sae4 sha1 c94d98d3961a
+sae4.pg,dual,seed1,n=63,h=39,pivots=100,states_without_M_raise=17,M_raises_on_run=43,max_run_gap=14,min_bestgain_over_psi=6.828528761783633e-16
+BAD,sae4.pg,dual,seed1,state1,cands=[7, 15, 17, 19, 21, 23, 25, 27, 29, 31, 32, 38, 40, 42, 48, 50, 57],M=278
+BAD,sae4.pg,dual,seed1,state2,cands=[7, 15, 17, 19, 23, 25, 27, 29, 31, 32, 38, 40, 42, 44, 48, 50, 57],M=278
+BAD,sae4.pg,dual,seed1,state3,cands=[7, 15, 19, 23, 25, 27, 29, 31, 32, 34, 38, 40, 42, 44, 48, 50, 57],M=278
+# sbe1 sha1 8c56661373a0
+sbe1.pg,dual,seed1,n=35,h=22,pivots=44,states_without_M_raise=12,M_raises_on_run=22,max_run_gap=14,min_bestgain_over_psi=5.415768897562937e-05
+BAD,sbe1.pg,dual,seed1,state1,cands=[1, 4, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28],M=123
+BAD,sbe1.pg,dual,seed1,state2,cands=[1, 4, 12, 14, 16, 18, 20, 22, 24, 26, 28],M=123
+BAD,sbe1.pg,dual,seed1,state3,cands=[1, 4, 12, 14, 16, 18, 20, 22, 24, 28],M=123
+# sbe2 sha1 b3d5bc293d1b
+sbe2.pg,dual,seed1,n=60,h=36,pivots=99,states_without_M_raise=33,M_raises_on_run=29,max_run_gap=42,min_bestgain_over_psi=4.668165346225904e-11
+BAD,sbe2.pg,dual,seed1,state1,cands=[1, 4, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 50, 52, 54],M=204
+BAD,sbe2.pg,dual,seed1,state2,cands=[1, 4, 11, 12, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 50, 52],M=204
+BAD,sbe2.pg,dual,seed1,state3,cands=[1, 4, 11, 12, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 50, 51],M=204
+# sbe3 sha1 e1cd8f136e05
+sbe3.pg,dual,seed1,n=85,h=50,pivots=180,states_without_M_raise=59,M_raises_on_run=53,max_run_gap=62,min_bestgain_over_psi=6.546880050621802e-14
+BAD,sbe3.pg,dual,seed1,state1,cands=[1, 4, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 67, 69, 77, 79],M=285
+BAD,sbe3.pg,dual,seed1,state2,cands=[1, 4, 14, 16, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 57, 67, 69, 77, 79],M=285
+BAD,sbe3.pg,dual,seed1,state3,cands=[1, 4, 14, 16, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 50, 52, 54, 56, 57, 67, 69, 77, 79],M=285
+# famF sha1 9ffdb16158b7
+famF.pg,dual,seed1,n=18,h=11,pivots=13,states_without_M_raise=8,M_raises_on_run=3,max_run_gap=9,min_bestgain_over_psi=7.913846641189991e-07
+BAD,famF.pg,dual,seed1,state4,cands=[11],M=72
+BAD,famF.pg,dual,seed1,state5,cands=[9],M=72
+BAD,famF.pg,dual,seed1,state6,cands=[4],M=72
+# famG sha1 cb9004b7af4b
+famG.pg,dual,seed1,n=18,h=12,pivots=53,states_without_M_raise=51,M_raises_on_run=1,max_run_gap=52,min_bestgain_over_psi=0.00019293858066666232
+BAD,famG.pg,dual,seed1,state1,cands=[4, 5, 8, 10, 11],M=26
+BAD,famG.pg,dual,seed1,state2,cands=[4, 8, 10, 11],M=26
+BAD,famG.pg,dual,seed1,state3,cands=[8, 10, 11],M=26
+# famH sha1 889e8e1d37ec
+famH.pg,dual,seed1,n=15,h=10,pivots=5,states_without_M_raise=4,M_raises_on_run=1,max_run_gap=4,min_bestgain_over_psi=0.0003411636895924401
+BAD,famH.pg,dual,seed1,state1,cands=[3, 4],M=22
+BAD,famH.pg,dual,seed1,state2,cands=[4],M=22
+BAD,famH.pg,dual,seed1,state3,cands=[9],M=22
+# famL2 sha1 3c0092c4c3b5
+famL2.pg,dual,seed1,n=17,h=12,pivots=0,states_without_M_raise=0,M_raises_on_run=0,max_run_gap=0,min_bestgain_over_psi=None
