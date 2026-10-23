@@ -1,0 +1,9 @@
+switchbestexp N 14 seed 1: 360,406,203,r2s1,14,2942,verified,1132.2 wall 1133 s | zielonka(oink zlk) OK strategies verified
+switchbestexp N 14 seed 2: 360,406,203,r2s2,14,3039,verified,1173.3 wall 1173 s | zielonka(oink zlk) OK strategies verified
+switchbestexp N 14 seed 3: 360,406,203,r2s3,14,1670,verified,641.3 wall 641 s | zielonka(oink zlk) OK strategies verified
+switchbestexp N 14 seed 4: 360,406,203,r2s4,14,3395,verified,1320.7 wall 1321 s | zielonka(oink zlk) OK strategies verified
+switchbestexp N 14 seed 5: 360,406,203,r2s5,14,4025,verified,1644.4 wall 1645 s | zielonka(oink zlk) OK strategies verified
+switchbestexp N 16 seed 1: 410,462,231,r2s1,16,2963,verified,1660.2 wall 1661 s | zielonka(oink zlk) OK strategies verified
+switchbestexp N 16 seed 2: 410,462,231,r2s2,16,6049,verified,3511.1 wall 3511 s | zielonka(oink zlk) OK strategies verified
+switchbestexp N 16 seed 3: 410,462,231,r2s3,16,4530,verified,2612.7 wall 2613 s | zielonka(oink zlk) OK strategies verified
+switchbestexp N 16 seed 4: 410,462,231,r2s4,16,2941,verified,1914.2 wall 1914 s | zielonka(oink zlk) OK strategies verified
