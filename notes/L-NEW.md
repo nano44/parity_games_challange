@@ -2,6 +2,18 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point
+Successor 7 (Opus 5.5, D15), session_018nnVs2agQGDV5UQhuDx1ZV; box 18 (N9 screen), Lead GO 16:16Z Oct 23 (date -u).
+- DONE: handover check 9559f8d7; docs/new/N9-screen.md + experiments/new/sa/ (milestone push 67884f36). N9a = SA+_k lift of the
+  ACYC 0-1 program ("Even wins all"; Lemma A PROVED; coefficients <= n+1): levels 1-2 WRONG on one-player all-odd circ(n,1,2);
+  k* = ceil(n/3) at n = 3..11 (rotation-orbit reduction --sym, exact by convexity; prediction written 18:00Z before n = 10, 11,
+  both matched; n = 12 stopped after 50 min in the k = 4 LP); levels 1-3 wrong on circ(4), circ(7), circ(10), robust at +1.05. N9b = certified LP-guided peeling: STUCK on 57/2,000 random games
+  (smallest n = 5, peel_r1147.pg) and on counter_symsi N = 2, 3; sound by construction. N9c (simulation kernel), N9d (tropical
+  shadow vertex) screened, not run.
+- Next: report to the Lead; nothing frozen. Ideas only: SA+ on a stronger program (cycle/flow constraints) would face the same
+  functional-graph core; rounding by conditioning for N9b (not proposed).
+- Needs scipy + highspy (pip) and Oink (scripts/setup_oink.sh) in a fresh container.
+
+### Earlier resume point (successor 6, PARKED 2026-10-23 11:41Z)
 Successor 6 (Opus 5.5, D15), session_01ETtBUTp98P7J7EJVEmPEGj; PARKED 2026-10-23 11:41Z by date -u (box 17 done; Lead 11:36Z: park). Nothing running.
 - DONE: handover check 2b5e0e77; §0b of N8d-single.md bb9f64f5 (C1-C5 pinned; C1 = p+2 uncompressed pinned; kl.py COMPRESSES, kl2 does not;
   counts equal on 15,000 extra runs, equality OPEN); docs/new/N8d-proofs.md (correctness §2 PROVED: Lemmas 2.1-2.6, Thm 2.3 incl. the strictness
@@ -57,6 +69,9 @@ Successor 6 (Opus 5.5, D15), session_01ETtBUTp98P7J7EJVEmPEGj; PARKED 2026-10-23
 (Older resume points of successors 1-4 are in git history; the boxes they describe are summarised in docs/new/README.md.)
 
 ## Sources opened
+- (succ. 7, box 18) arXiv 1405.0945 v1 (4c6956dc2f1db3ee): §1 l.95-119 (SA level n exact). arXiv 1506.04184 Bodirsky-Mamino
+  (e0e0e34de549a4d8): abstract, §1 l.103-104, Thm 5.1 (NP ∩ co-NP; no bounded-width statement). C. Fritz PhD thesis Kiel 2006
+  (macau.uni-kiel.de d1644.pdf, fa1253460e9058c3): ch. 3 intro, §3.5 remark (simplify-then-solve slower than lifting).
 - (succ. 6, box 17) arXiv 2108.13338v5 e-print (sha256 7189eb2f…, LaTeX): §1 intro l.13 (determinacy, citing Martin 75 / EJ91, not opened), §2 all
   (Def 2.1-2.2, Thm 2.3, Lemma 2.4, Prop 2.5, operators), §3 Algorithm 1, Thm 3.1 + proof, Def 3.3, Thm 3.4; §4 Alg 2-3, Lemma 4.2, Thm 4.3,
   Cor 4.4, Thm 4.5, Rem 4.6; lmcs.cls l.685-699 (one counter per section). Kelner-Spielman STOC 2006 author PDF (sha256 3b5f68fe88c9cd46…):
@@ -137,6 +152,12 @@ Successor 6 (Opus 5.5, D15), session_01ETtBUTp98P7J7EJVEmPEGj; PARKED 2026-10-23
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 7, box 18) N9a SA+_k of ACYC (docs/new/N9-screen.md §1): levels 1, 2 wrong ("Even wins all") on one-player all-odd
+  circ(4,1,2), circ(7,1,2) (experiments/new/sa/instances/circ12_n7.pg sha1 4a1973a88a1311966ef5d2f5382221aef3d09c3e); k* grows
+  (1,2,2,2,3,3,3 at n 3..9). Obstruction: functional-graph acyclicity (every sigma closes a cycle) needs high-degree refutations.
+- (succ. 7, box 18) N9b certified LP peeling (§2): STUCK at round 1 on peel_r1147.pg (n = 5, sha1
+  68a8c41b926e2fd324b196c99c4c61ea6d2a91ed; Odd wins all): argmax rounding of the level-1 REGION optimum wins nowhere; also
+  r26 (n 6) where the LP value is exact (6.0) yet no rounded strategy wins: the optimum is a mixture.
 - (succ. 6, box 17) PROOF ROUTES for R2's expected pivots (not algorithm dead ends; N8d-R2 stays alive), docs/new/N8d-proofs.md §3:
   rank-gap potential (best candidate removes 6.8e-16 of the gap at switchallexp N=4 dual seed 1); Lemma M (lock-in prefixes) FALSE at
   switchallexp N=2 (sha1 ca6e0b7d4745…) dual seed 1 state 1 (9 candidates, none raises M); "switches about once" false off G_zeta (max 19 at
@@ -180,6 +201,14 @@ Successor 6 (Opus 5.5, D15), session_01ETtBUTp98P7J7EJVEmPEGj; PARKED 2026-10-23
   and box 7's K8 constant-case closure. Obstruction: CDAG_n has 2^n - n - 1 Ω-strict single VJ00 improvements (one-player, all ⊕).
   Instance: experiments/new/instances/cdag/cdag_N12.pg (sha1 41f780ede48ae00d4e4f15251abf2583f9094aa0), chain 4083 by cdag.py.
 ## Things only I know
+- (succ. 7) The pkill self-kill trap bit AGAIN (box 18, exit 144): `pkill -f "twoout.py circ 9 9"` matched my own bash -c line.
+  Use `ps -eo pid,args | awk '$2=="python3" && $4=="twoout.py"'` then kill the PID.
+- (succ. 7) Plain SA does not multiply the choice equality by continuous variables: (1 - s_a) f != s_b f as monomials. Pruning
+  multipliers by that identity WEAKENED the LP (K_3 at k = 1 turned feasible) until SA+ added sum_u q_{A+vu,x} = q_{A,x}.
+- (succ. 7) peel.py bug found and fixed before any result: a dict literal {r_u: 1, r_v: -1} with u = v (Odd self-loop) keeps only
+  -1, giving r_v <= 0. Any LP builder keyed by dicts needs the u != v guard; sanity = LP value >= |W| on every game.
+- (succ. 7) Rotation-orbit reduction (sa_feasible group=) cut circ(8) k = 3 from 1,541 s to 1 s with identical k*; it is exact
+  because the LP is convex and invariant (orbit-average of a feasible point is feasible).
 - (succ. 6) kl.py compresses priorities (Game.__init__ l.25-32); L-COMP's kl2.py uses p+2. Do not tell anyone "both use p+2". Counts agree on all
   data so far; a difference needs a Tighten carry out of a digit n-1 (N8d-single.md §0b).
 - (succ. 6) The container again started on a stale local branch (6b3dcd53, 349 behind origin/claude/l-new): fetch + compare before work.

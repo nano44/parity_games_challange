@@ -1,0 +1,4 @@
+circ(4,1,2) SA+_1 with strict 1.05: feasible=True
+circ(7,1,2) SA+_2 with strict 1.05: feasible=True
+circ(10,1,2) SA+_3 with strict 1.05: feasible=True
+circ(11,1,2) SA+_3 with strict 1.05: feasible=True

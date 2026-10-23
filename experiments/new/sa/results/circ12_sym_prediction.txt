@@ -1,0 +1,1 @@
+PREDICTION (written 18:00Z before the run): k*(circ(n,1,2)) = ceil(n/3): n=10 -> 4, n=11 -> 4, n=12 -> 4, n=13 -> 5

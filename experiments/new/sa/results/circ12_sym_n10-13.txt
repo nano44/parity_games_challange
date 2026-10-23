@@ -1,0 +1,4 @@
+circ(10,1,2) k*=4 (8s; infeasible verdict by highs-ipm)
+circ(11,1,2) k*=4 (14s; infeasible verdict by highs-ipm)
+STOPPED by L-NEW at 19:32Z after 50 min: circ(12,1,2) did not finish (k = 4 LP; IPM 600 s limit, then dual simplex); n = 13 not reached
+exit 143

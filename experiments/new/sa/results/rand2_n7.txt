@@ -1,0 +1,2 @@
+rand2(7,40) k*=3
+rand2 n=7 seeds 1..40: k* histogram {2: 39, 3: 1}
