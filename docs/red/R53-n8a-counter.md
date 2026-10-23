@@ -77,3 +77,47 @@ functions and asserts the same iteration count as kl.solve)
 - Reading: in the dual, Odd's strategy repeats with period 4 while the forced-increase least fixed point climbs one leaf of the perfect
   tree per period. Both rules see the same admissible arcs here: each pivot round has a unique admissible move per node, so the rule
   does not matter; the cost is the size of the perfect tree's top levels, n^{k+1}.
+
+## 6. Lead items (i) and (iii) (2026-10-23 03:05Z by date -u)
+### 6a. Generator (item (i))
+experiments/red/kl/gen_gk.py writes G_k, F_k and H_k from the three gadgets EMBEDDED in the script (no file reads). It reproduces every
+pinned member: G_0..G_2 = 179b2cd0…, cb9004b7…, 0ffbeaf1…; F_0, F_1 = b5269084…, 9ffdb161…; H_0..H_2 = b8a5b1bd…, 889e8e1d…, c8a9fdff….
+Smallest gadget: klmin_n13 (13 vertices, 18 edges; H_k).
+
+### 6b. Does the lapping counter transfer to every pivot rule and every universal tree? (item (iii))
+Answer: NO for "every pivot rule" (refuted on H_k); READING (with gaps) for "every universal tree", for the rules it does cover.
+1. PROVED (from the paper's definitions, §2.1-§2.2). In ANY ordered tree T of height h, for an arc vw with π(v) = p odd and µ(w) ≠ ⊤,
+   Tighten(µ, vw) is the leftmost leaf below the successor of µ(w)|_p in the left-to-right order of T's vertices at depth klen(p), and ⊤ if
+   µ(w)|_p is the last vertex at that depth. Proof: vw is non-violated iff ξ|_p > µ(w)|_p (§2.2); the set of such ξ is upward closed in
+   the leaf order; its least element is the leftmost leaf below the least depth-klen(p) vertex greater than µ(w)|_p, which is its
+   successor at that depth. So one "lap" that ends in such a Tighten advances the counting prefix by EXACTLY one vertex of depth klen(p).
+2. PROVED (truncation lemma). If T is (ℓ, h)-universal and L ≤ h, then T's top L levels form an (ℓ, L)-universal tree. Proof: let t have
+   height L and ≤ ℓ leaves, all at depth L; extend each leaf of t by a path to depth h, giving t' with the same leaves count, all at depth
+   h; t' embeds into T (Definition 2.2); an embedding maps edges to edges and the root's depth-h leaves to leaves, so it preserves depth,
+   and its restriction to t's vertices embeds t into T's top L levels (order kept, leaves at depth L mapped to depth-L vertices).
+   So T has at least as many depth-L vertices as the smallest (ℓ, L)-universal tree has leaves. With ℓ = n and B1 (docs/lit/BARRIERS.md
+   row B1, as stated there) that is quasi-polynomial once L grows linearly in n.
+3. COMPUTED on H_0, H_1, H_2 (logs/hk_admissible_and_subset_rules.txt, experiments/red/kl/kadmiss.py with kl.py's own functions): at every
+   iteration every Odd node of the dual has AT MOST ONE admissible arc, and both frozen rules switch exactly the set of Odd nodes that
+   have one. Hence (PROVED, by induction on iterations, since the least fixed point is deterministic) on H_0..H_2 EVERY rule in the class
+   SA := "switch every Odd node that has an admissible arc, to an admissible arc" produces the identical run, 4·n^{k+1} dual pivots.
+4. REFUTED for subset rules (computed, experiments/red/kl/ksubset.py; not frozen N8a rules): rules that switch ONE Odd node per iteration
+   (lowest index, highest index, uniformly random with seeds 1, 2) solve H_0, H_1, H_2 in 9, 5, 5, 17 iterations respectively, the SAME
+   counts for every k, with correct regions. The counter needs SIMULTANEOUS switching: switching all four nodes of a period at once is
+   what keeps the lapping cycle open; a single switch closes an odd cycle in G_τ, and the least fixed point then jumps to ⊤.
+   So the transfer "whatever the pivot rule picks among improving arcs" is FALSE on this family, and the counter does NOT close the
+   tree-SI line for all rules.
+5. READING (transfer to any universal tree, rules in SA). If the run of H_k on T is order-isomorphic, iteration by iteration, to its run
+   on the perfect tree, then by 1. each period advances the counted prefix by one depth-L vertex of T, by 2. there are at least
+   |smallest (n, L)-universal tree| such vertices, and the pivots are quasi-polynomial for L ≈ (n − 11)/2 (H_k has L = k + 1, n = 13 + 2k).
+   Gaps:
+   - G1 (main): order-isomorphism needs T to contain, below every depth-L vertex, the local offsets that H_k's labels use below the
+     counted level. On the perfect tree those components take the values 0 and 1, i.e. a first AND a second child at a few depths below.
+     A universal tree with unary vertices there (the succinct JL17 tree has them) has no second child; Tighten then carries to the next
+     depth-L vertex instead, and the period can change. Not tested: kl.py implements only the perfect tree, and the Lead asked for an
+     argument, not code.
+   - G2: the law 4·n^{k+1} is DATA for k ≤ 3 on the perfect tree (the period is read off traces), not proved for all k.
+   - G3: rules outside SA are not covered at all (item 4).
+- Bottom line for the gauntlet: N8a as frozen (perfect tree; global, switch-all) is DEAD (Lead re-runs 02:40Z, 02:46Z, 02:58Z). The
+  lapping counter kills every SA rule on the perfect tree for H_0..H_2. It does not by itself kill tree-SI with single-switch (or other
+  subset) rules, or on non-perfect universal trees; a candidate that changes either is a new candidate and would need its own attack.

@@ -1,0 +1,18 @@
+H0.pg global: iterations 52, max admissible arcs at one Odd node 1, iterations where switched set != nodes-with-admissible-arc 0, iterations with a switch to a non-admissible arc 0
+H0.pg all: iterations 52, max admissible arcs at one Odd node 1, iterations where switched set != nodes-with-admissible-arc 0, iterations with a switch to a non-admissible arc 0
+H1.pg global: iterations 900, max admissible arcs at one Odd node 1, iterations where switched set != nodes-with-admissible-arc 0, iterations with a switch to a non-admissible arc 0
+H1.pg all: iterations 900, max admissible arcs at one Odd node 1, iterations where switched set != nodes-with-admissible-arc 0, iterations with a switch to a non-admissible arc 0
+H2.pg global: iterations 19652, max admissible arcs at one Odd node 1, iterations where switched set != nodes-with-admissible-arc 0, iterations with a switch to a non-admissible arc 0
+H2.pg all: iterations 19652, max admissible arcs at one Odd node 1, iterations where switched set != nodes-with-admissible-arc 0, iterations with a switch to a non-admissible arc 0
+H0.pg dual first: iterations 9, regions == kl True
+H0.pg dual last: iterations 5, regions == kl True
+H0.pg dual rand:1: iterations 5, regions == kl True
+H0.pg dual rand:2: iterations 17, regions == kl True
+H1.pg dual first: iterations 9, regions == kl True
+H1.pg dual last: iterations 5, regions == kl True
+H1.pg dual rand:1: iterations 5, regions == kl True
+H1.pg dual rand:2: iterations 17, regions == kl True
+H2.pg dual first: iterations 9, regions == kl True
+H2.pg dual last: iterations 5, regions == kl True
+H2.pg dual rand:1: iterations 5, regions == kl True
+H2.pg dual rand:2: iterations 17, regions == kl True

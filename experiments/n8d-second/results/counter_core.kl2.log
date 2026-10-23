@@ -1,0 +1,56 @@
+counter_core 2 r1  6 4 0.008 zlk OK
+counter_core 2 r2 1 6 4 0.003 zlk OK
+counter_core 2 r2 2 6 4 0.007 zlk OK
+counter_core 2 r2 3 6 4 0.002 zlk OK
+counter_core 2 r2 4 4 2 0.002 zlk OK
+counter_core 2 r2 5 4 2 0.002 zlk OK
+counter_core 2 r2 6 4 2 0.006 zlk OK
+counter_core 2 r2 7 4 2 0.002 zlk OK
+counter_core 2 r2 8 4 2 0.002 zlk OK
+counter_core 2 r2 9 4 2 0.002 zlk OK
+counter_core 2 r2 10 4 2 0.002 zlk OK
+counter_core 4 r1  20 16 0.026 zlk OK
+counter_core 4 r2 1 12 8 0.026 zlk OK
+counter_core 4 r2 2 16 12 0.034 zlk OK
+counter_core 4 r2 3 10 6 0.017 zlk OK
+counter_core 4 r2 4 8 4 0.013 zlk OK
+counter_core 4 r2 5 12 6 0.016 zlk OK
+counter_core 4 r2 6 10 8 0.014 zlk OK
+counter_core 4 r2 7 8 4 0.008 zlk OK
+counter_core 4 r2 8 8 4 0.008 zlk OK
+counter_core 4 r2 9 10 4 0.010 zlk OK
+counter_core 4 r2 10 10 4 0.014 zlk OK
+counter_core 6 r1  42 36 0.116 zlk OK
+counter_core 6 r2 1 20 10 0.045 zlk OK
+counter_core 6 r2 2 20 12 0.043 zlk OK
+counter_core 6 r2 3 20 14 0.034 zlk OK
+counter_core 6 r2 4 20 14 0.045 zlk OK
+counter_core 6 r2 5 18 8 0.024 zlk OK
+counter_core 6 r2 6 16 10 0.076 zlk OK
+counter_core 6 r2 7 20 14 0.087 zlk OK
+counter_core 6 r2 8 24 18 0.080 zlk OK
+counter_core 6 r2 9 22 16 0.068 zlk OK
+counter_core 6 r2 10 18 14 0.034 zlk OK
+counter_core 8 r1  72 64 0.371 zlk OK
+counter_core 8 r2 1 30 22 0.134 zlk OK
+counter_core 8 r2 2 24 14 0.083 zlk OK
+counter_core 8 r2 3 24 16 0.097 zlk OK
+counter_core 8 r2 4 20 12 0.069 zlk OK
+counter_core 8 r2 5 30 12 0.083 zlk OK
+counter_core 8 r2 6 18 12 0.078 zlk OK
+counter_core 8 r2 7 34 22 0.092 zlk OK
+counter_core 8 r2 8 26 18 0.118 zlk OK
+counter_core 8 r2 9 20 16 0.095 zlk OK
+counter_core 8 r2 10 28 14 0.108 zlk OK
+counter_core 10 r1  110 100 0.765 zlk OK
+counter_core 10 r2 1 40 22 0.275 zlk OK
+counter_core 10 r2 2 46 36 0.190 zlk OK
+counter_core 10 r2 3 30 18 0.173 zlk OK
+counter_core 10 r2 4 32 20 0.172 zlk OK
+counter_core 10 r2 5 34 14 0.142 zlk OK
+counter_core 10 r2 6 28 18 0.155 zlk OK
+counter_core 10 r2 7 52 40 0.309 zlk OK
+counter_core 10 r2 8 32 22 0.162 zlk OK
+counter_core 10 r2 9 26 14 0.087 zlk OK
+counter_core 10 r2 10 22 22 0.116 zlk OK
+done: 0 failures
