@@ -886,3 +886,4 @@
 - 20:13Z (date -u) CHECKER C24 Addendum 2 PASS (98c9c1d, merged): DE31-32 landed text byte-identical; C24 CLOSED. Working: L-NEW 7 (box 19).
 - 21:04Z (date -u) SWEEP (trigger 21:04Z): overage false; Lead $474 ~641k. Working: L-NEW 7 (box 19, due ~22:45Z; N10c hard-family run; 21:03Z). No exceptions.
 - 21:28Z (date -u) L-NEW 7 box 19 END (b8a4282, 25b7ac2; merged; lane-only): N10 screen: ESCAPE cuts (Lemma B: exact on one-player games); N10a/N10b gaps, N10c STUCK on yes-instances (n 14, counter_symsi 3); N10d not run. LEAD RE-RUN (scipy, highspy, networkx): sha1s reproduced; N10b gap r1794 Q1 (cuts 0); N10a gaps Q1, Q2; N10c STUCK on symsi3_YE and r1569_YE; Oink zlk confirms truth. DE33 drafted for CHECKER C25.
+- 21:33Z (date -u) Routed: CHECKER C25 (DE33) woken; L-NEW 7 box 20 = (c)-lane synthesis + recommendation (writing only), then park. Working: L-NEW 7, CHECKER (2/5).
