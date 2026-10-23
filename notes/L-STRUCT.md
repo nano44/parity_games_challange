@@ -2,20 +2,11 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-PARKED 2026-10-22 13:59Z by the Lead (decision after the theory box; trunk 63bb844) until the two n = 5 jobs report or
-the cap 2026-10-23 01:30Z. No new box.
-- Running jobs (experiments/weak-sep/, logs out/<case>.log, PID files out/<case>.pid):
-  - PID 5687: `python3 n5.py 5 5 V strong 11`, started 07:58Z (one solver call since 07:58:24Z; not resumable).
-    UNSAT => s^V(5,5) >= 12: run lrat.sh 5 5 V strong 11 if the proof size allows, else record as solver-only.
-  - PID 12501: FINISHED 14:17Z, weak (5,5) k=10 UNSAT (solver-only) => w^V(5,5) >= 11; was `python3 n5.py 5 5 V weak 10 --batch 20`, started 09:47Z (round 7 solving since 10:58:45Z; checkpoint
-    out/ckpt_weak_V_n5_d5_k10.json). SAT => gap w = 10 < 11 <= s, T3 REFUTED: report to the Lead AT ONCE with the
-    witness sha1, its re-verification on the full families, and the LRAT path for s >= 11
-    (results/n5/strong_V_n5_d5_k10.lrat.log).
-- Watchers: background waiter (exits on RESULT/Traceback/process end, 2 h limit, re-arm when it expires); scheduled
-  self-reminder at 01:30Z (trig_01TzxFa9D4ubpWDsgtQPunEK).
-- Stop procedure at the cap: `ps -C python3 -o pid=,args=` to confirm the PIDs, then `kill 5687 12501` (never pkill -f);
-  record bounds and the cost obstruction in S3 §2; scripts/push.sh; report DONE/FINDINGS/NEEDS. The Lead then chooses
-  T6, the n = 2 o(d) family, or a full park.
+PARKED (Lead 2026-10-22 13:59Z). Cap reached 2026-10-23 01:30Z; no job running. Outcome of the n = 5 box:
+s^V(5,5) >= 11 (LRAT), w^V(5,5) >= 11 (SOLVER-ONLY), strong (5,5) k=11 undecided (ran >= 8h24m from 07:58Z, lost at a
+container restart before the cap, no result). T3 at n = 5 untested; a gap needs s >= 12 and a weak 11-state separator.
+Checkpoints in out/ (gitignored) may be lost with the container; regenerate with n5.py. Next: the Lead chooses T6, the
+n = 2 o(d) family, or a full park.
 - Lane files: docs/struct/S1-statement.md (definitions; refereed), S2-lower-bound-statement.md (T1 dead, DE2; T2 parked),
   S3-statement.md (T3 data conjecture), L4-proof.md (RESULTS R1, GAPS G1 closed: signatures 9bf5301, d76c9e1; G-L4-1 =
   CDFJLP Thm 5.1 black box), T3-proof-attempt.md (gaps and dead ends), S4-structure-note.md (facts on data).

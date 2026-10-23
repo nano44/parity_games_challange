@@ -46,3 +46,10 @@ ordered pair, V = vertex-labelled (TARGET.md). Columns: d = largest letter of th
 | 4 | 4 | 8 | 13 | 19 | 26 | 34 |
 | 5 | 5 | [10,11] | [16,19] | [23,29] | [31,41] | [40,55] |
 
+## n = 5 bounds from single-k queries (results/n5/; value >= k+1 by S3 Lemma P)
+
+| cell | query | answer | bound | certificate |
+| --- | --- | --- | --- | --- |
+| V (5,5) | strong k = 10 | UNSAT | s >= 11 | LRAT VERIFIED (strong_V_n5_d5_k10.lrat.log) |
+| V (5,5) | weak k = 10 | UNSAT | w >= 11 | SOLVER-ONLY (no proof) |
+
