@@ -2,9 +2,9 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-23 08:1xZ: PARKED after T26 docs/lit/T26-N8d-step3.md: N8d-R2 (KL tree SI, uniformly random single switch) step 3 SIGNED
-WITH CAVEATS 1-7 (Thm 4.78 missing; Lemma 4.75 one-sentence; R2 = Random-Edge on all of G_n; transfer = dualize + Lemma 4.74 start +
-Lemma 4.75 per (tau, mu); page 186 not 187). Before: T25 (N8a). Trunk merged with merge commits. Next: Lead.
+2026-10-24 13:1xZ: PARKED after T27 docs/lit/T27-untested.md: 4 untested candidates ranked; C1 = Ohlmann's symmetric recursive MPG
+algorithm (2603.07555) on parity-induced weights (prior 0.15), C2 GKK, C3 AESL (thesis Ch. 10), C4 k-priority parity separators.
+Before: T25 (N8a), T26 (N8d-R2). Trunk merged with merge commits. Next: Lead.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -236,6 +236,13 @@ Lemma 4.75 per (tau, mu); page 186 not 187). Before: T25 (N8a). Trunk merged wit
 | LIPIcs.ICALP.2016.51 (Hansen-Zwick), sha256 ac500016f9d73aed5ffca742e30b647fa34457bc70f61152331269f36fa96b6c | abstract: AUSO Random-Edge 2^Ω(√(n log n)) | 2026-10-23 | T26 |
 | LIPIcs.ESA.2026.140 (Dorfman-Kaplan-Zwick), sha256 981235e87b79b0eb1b9ceac81bec74d7c2d9c811863ac1693faf4a026122c1ca | abstract; p.2-3 related work; §5 Random-Edge upper bound | 2026-10-23 | T26 |
 | arXiv 1008.0530 v1 (HMZ) sha256 f53a6b51…; 1305.3944 (Avis-Friedmann) sha256 d1fafb8b…; 1210.2459 sha256 02fca6a4… | HMZ Thm 6.5; AF Thm 4; CGR abstract only | 2026-10-23 | T26 |
+| arXiv 2603.07555 v1 (Ohlmann, symmetric recursive MPG algorithm), sha256 292bde19b74fbe30d6d629264dab93f924da76711fe8a7583db3a0a67f4d1248 | §1 p.2 (candidate subexp, no bound); §3 p.5-7; Lemmas 4-7; §5 Alg. 1 p.11-12 ("no zero cycles"); §6.4-6.5, §7 p.19; v1 only; S2 citers 0 | 2026-10-24 | T27 |
+| Ohlmann thesis (sha256 a5c909cb…), further | Ch. 10: Fig. 10.4 + §3 p.179 (GKK), Thm 10.2 p.179, Thm 10.4 + O(2^(n/2)) proof p.186-189, §6.1 p.190 (ESL, Thm 10.6), §6.2 p.194 (AESL, termination open), §6.3 p.194-196 (random arenas only, code github.com/PierreOhl/parity_games_solving not opened), fn. 9 p.194; Ch. 11 p.201 (= JM20) | 2026-10-24 | T27 |
+| arXiv 2106.08854 abs page (Lahlou-Truffet) + 2408.14256 abs (Truffet) | v2 withdrawn 2024-08-27 (errors found by van Dijk); successor makes no P claim | 2026-10-24 | T27 |
+| arXiv 2610.15495 (Di Stasio-Vardi, EPTCS 454.8) sha256 ec6dc80e…; 2610.15480 (Żyndul, Lasso games) sha256 32911ed9…; 2501.18499 (Piedeleu) sha256 2cb58dec…; 2102.01440 (Lapauw et al.) sha256 39166a7e…; 2404.13687 (Hausmann) sha256 63c2ad33… | Thm 5.3 PDF p.13 + table p.14 (2^O(n)); abstract; abstract + Thm IV.1/IV.6; abstract + §1; abstract | 2026-10-24 | T27 |
+| arXiv 2104.05262 v8 (CFGO) sha256 b00ac9e8…; 1810.05106 v2 (Colcombet-Fijalkow) sha256 fec1bc1b… | Thm 7.5-7.6 (MP universal graphs); Thm 1-2 (safety only) | 2026-10-24 | T27 (re-open) |
+| arXiv API listing ti/abs "parity games", 80 newest (2026-10-24) | titles scanned | 2026-10-24 | T27 |
+| NOT opened (T27) | Beffara-Vorobyov LICS 2002 (title only); GKK 1988 original; Ohlmann's GitHub code | 2026-10-24 | T27 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
