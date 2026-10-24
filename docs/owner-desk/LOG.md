@@ -364,3 +364,8 @@ Relayed verbatim to the Lead, priority now.
 N5 lead, L-LIT untested-approach scan, L-COMP exhaustive small-game N5 search, new L-SI successor on an SI rule past N5's deadlock);
 CHECKER/referees on top when needed (peak 7-8 sessions, justified under D1); no idling; D7 holds. Owner's 13:04Z N5-proof instruction
 awaits the Lead's explicit reading.
+
+## 2026-10-24T13:18Z relayed: Lead 2026-10-24 13:22Z — D18 / L40 (trunk e227b02): all five lanes on proving N5's running time (L-NEW designer, L-RED
+adversary per lemma, L-COMP exhaustive tables, new L-SI operations-research lens (Ye; Hansen-Miltersen-Zwick strongly polynomial PI),
+L-LIT cross-field scan: USOs, Tarski fixed points, tropical algebra, potential reduction). DTL attack paused; Ohlmann's symmetric
+recursion queued. Labels PROVED / CONJECTURE / OPEN; assumptions one line each.
