@@ -983,3 +983,4 @@
 - 16:56Z merged claude/referee a1de721 (§C7, Corollary SIGNED; scope docs/referee/, notes/REFEREE.md); R20 draft rev. for C29 E-1; CHECKER C29 Addendum 1 next.
 - 17:02Z pushed 865a33a (verify PASS); CHECKER asked for C29 Addendum 1 (draft sha1 be12e26d).
 - 17:03Z hourly sweep: no overage (Lead 92k); L-NEW 10, L-RED 14, CHECKER 4 running; L-SI (563k) and L-COMP (587k) idle on background climbs, end reports due ~19:00Z/~18:40Z, successors at box end (near 600k); CI: all completed runs green, 2 in progress; M2 done, no owner line due. No messages.
+- 17:07Z merged claude/l-new 06b9282 (box 28 §5c: O(n⁴(1+X+O)) per phase, READING; scope OK); Lead re-ran eqcheck seed 2832 (1,296 runs) + sc32: 0 failures. Routed X to L-RED next box, X/O columns to L-COMP (if cheap); §5c referee packet after L-NEW final report.
