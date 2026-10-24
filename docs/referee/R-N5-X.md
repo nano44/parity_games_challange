@@ -161,3 +161,49 @@ instances carry the evidence. The Theorem X bound is far from tight on every ins
 | X-4 | Step 4 uses R20 (f)'s flat-fallback claim outside u* ≠ none throttled stretches | citation | CLOSED as a re-derivation (§3.3) |
 OPEN, not touched by any signature here: (X) crossings per phase, (NH') OTHER-touching transitions per phase, G-N5-TIME. TARGET.md diff:
 statements about the candidate N5 on 𝒞^1O (polynomial by other means), none about general parity games.
+
+## §C. Comparison with REFEREE-2 (R2-N5-X.md, referee-2 059f492; read after my report was pushed at 53c0c68c). Written from 18:44Z by date -u. (Opus 5.5, D15)
+### C1. Disagreements: none of substance
+| item | REFEREE | REFEREE-2 | note |
+|---|---|---|---|
+| F1 | SIGNED WITH GAPS (X-2: F = ∅, max(0, \|F\| − 1)) | SIGN (N-X-1: step 2 needs only Lemma G (a) at every state) | N-X-1 = my §1 answer to the Lead's question. X-2 is an edge case REFEREE-2 did not raise; trivial; kept as wording |
+| NF | SIGNED WITH GAPS (X-3: EQ case via XW + R15 (a)) | SIGN | R2's §2 cites "Lemma EQ's fallback argument", and its §4 EQ entry writes out exactly my X-3 sandwich. Same argument |
+| Theorem X | SIGNED WITH GAPS X-1, X-2, X-4 | SIGN WITH GAPS G-X-1; N-X-2, N-X-3 | X-1 = G-X-1 (C2, C3); X-4 = N-X-3; N-X-2 (F2 uses R19 (b) at one state; H2 suffices) is NEW to me and ACCEPTED (my §4 F2 entry noted "no (h) needed at k" but did not flag the k+1 citation) |
+| XW, EQ, FBL-N, F2, FB-W | SIGNED | SIGN (FB-W data vacuous) | agree; my data had no qualifying FB-W eviction either (I did not count them; R2's "vacuous" stands for both) |
+| §8 table | checked, READING | agree, READING | agree |
+### C2. Lemma TF vs my X-1 proof: both valid, each a substitute for the other
+- Mine (§3.2): H1 at k puts e_k = σ̄_k(o) in F, so θ_k = o ⊕ W_k(e_k). If W is unchanged on F, then θ_{k+1} ⊴ Ω_{σ_{k+1}, e_k}(o) =
+  o ⊕ W_{k+1}(e_k) = θ_k (θ is the minimum over exits), and R15 (a) gives ⊵. Uses (h) at k, R_{k+1} = R_k, and R15 (a).
+- TF (R2 §3.2): θ_j = min over F-exits of o ⊕ Ξ_j(e) at j = k and k+1. The minimiser lies in F by H1. Every R-exit value is ⊵ θ (θ is the
+  minimum over all exits) and differs from θ (its cycle node lies in R ∪ {o}, θ's in F), so it is ▷ θ. An unchanged Ξ = W on F then fixes both
+  minima. Uses (h) at both ends and R_{k+1} = R_k, and no R15 (a). I checked the cycle-node step: correct.
+- Same conclusion (a θ-change at a crossing-free transition with (h) is a change of Ξ = W on F). Mine needs (h) only at k; TF needs no
+  monotonicity. Either may be cited; in a sub-block (h) holds at both ends, so both apply.
+### C3. "R19 (f) as landed is TRUE" vs REFEREE-2's "FALSE": I CORRECT my sentence
+- R19 (f) reads "each piece has ≤ |R| − 1 resp. |F| − 1 value-changing transitions". The "resp." is a PER-PART claim. With "value-changing"
+  meaning Ξ or W, and θ free, the R-part claim is FALSE. I re-ran REFEREE-2's instance with my own probe: fbref_n48.pg (sha1
+  414231a27ba3…), transition 56 → 57, same phase, THR → THR, no fallback, R = {14} = {o} at both ends, w unchanged, θ changed. Ξ changes at
+  {3, 14, 16, 19} and W at {3, 16, 19}. So Ξ changes at an R-vertex with R-budget |R| − 1 = 0.
+- My §3.2 sentence "R19 (f) as LANDED is therefore true" is right only for the TOTAL (|R| − 1) + (|F| − 1), which is what Theorem X uses.
+  I withdraw it as a statement about R19 (f)'s per-part wording.
+- The clarified wording in docs/agents/R19-note-X1.md is CONFIRMED: "θ constant not needed, provided the R-part counts route (W) changes on R;
+  a θ-change under (h) at both ends is an F-change (Lemma TF = REFEREE X-1)". With it:
+  - the R-part counts W on R = π ⊕ w with w constant, i.e. 𝓡*-values (route changes), ≤ |R| − 1;
+  - the F-part counts Ξ = W on F, ≤ |F| − 1;
+  - every Ξ-or-W-changing transition is in one of the two (θ-changes in the F-part by TF / X-1).
+  One precision for the note: TF / X-1 also use R_{k+1} = R_k, which PIECE assumes. And "(h) at both ends" may be weakened to "(h) at k"
+  (my form).
+- The θ-constant reading of R19 (f) was correct as signed in R-N5-RE (θ constant there). The gap was only in N-RE-4's extension, which I
+  accepted in R-N5-RE §C3 without checking the count. That was my miss as well as REFEREE-2's.
+### C4. Joint gap map
+| REFEREE | REFEREE-2 | status |
+|---|---|---|
+| X-1 | G-X-1 | CLOSED by X-1 / Lemma TF (equivalent, C2); R19 (f) per-part wording amended by docs/agents/R19-note-X1.md (confirmed, C3) |
+| X-2 (F = ∅) | — | wording for L-NEW (fixes box 29); trivial |
+| X-3 (NF EQ case) | (R2 §4 EQ sandwich) | CLOSED; same argument |
+| X-4 | N-X-3 | covered: fixes §5 used as a re-derivation from NF's properties |
+| — | N-X-1 | remark, agreed (= my §1) |
+| — | N-X-2 | accepted: F2 uses R19 (b) at k+1 alone; H2 at k+1 with Lemma G (a) and (V1) suffices |
+Final verdicts unchanged: F1, NF and Theorem X SIGNED WITH GAPS (all closed); XW, EQ, FBL-N, F2 and FB-W SIGNED; the §8 table checked. Open:
+(X), (NH'), G-N5-TIME.
+§C ended 18:44Z by date -u.
