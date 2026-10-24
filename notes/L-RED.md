@@ -35,8 +35,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     on G_h.
   - Sources: L-LIT T30 (docs/lit/T30-elimination.md, trunk 4332f9f) and T31 (the construction spec, in progress). Open the paper
     yourself and record it in "Sources opened".
-- Possibly IN FLIGHT at handover: elimclimb n 32 (seed 81, scratch log eb32.log, ends ~15:08Z). Scratch does not persist; if
-  lost, rerun `experiments/red/n5inj/elimclimb.py 32 32 3000 81 OUT --from experiments/red/n5inj/instances/returns_rt32.pg`.
+- elimclimb n 32 (seed 81, from returns_rt32, 3,000 s) FINISHED 15:04Z: window stayed at 17 (phase 53), no improvement in
+  171,616 steps. The n 48 run (seed 82, from rt48) produced elimn_cex_n48 (window 49). Nothing in flight. PARKED 15:05Z
+  (Lead 14:37Z).
 
 ## Box 30 (2026-10-24 12:58Z GO; DTL until the 13:20Z redirect (D18 / L40), then N5)
 - DTL (ACYC), docs/red/R59-acyc.md §0-§3:
@@ -147,7 +148,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Tools: experiments/red/n5/n5tr.py, oddmoves.py, ssiedges.py, vjlane.py.
 
 ## IN FLIGHT
-See RESUME POINT (elimclimb n 32 may still be running at handover).
+None (2026-10-24 15:05Z by date -u). Parked.
 
 ## NEXT for N5 (box 26)
 - R58 §5 open form: (STRETCH) (one-sided stretches poly) and a family meeting (K1)-(K4). These need wide improving sets, held off
