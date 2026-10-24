@@ -28,6 +28,14 @@ experiments/new/box25/common.py (rand_c1o, odd_choice = FIRST Odd chooser: hence
 - Glob-based data can pull in out-of-class games; assert the class.
 - Random 𝒞^1O samples are nearly vacuous for throttled / route-form / re-entry structure; say so; named instances carry the evidence.
 
+## Resume point (successor 5, written 2026-10-24T22:47Z by date -u): P-N5-FB (pin 348393b, docs/si/P-N5-FB-box7.md sha1 9ece9994…)
+- docs/referee/R-N5-FB.md: Theorem FB SIGNED WITH GAPS FB-1 (M < ∞ at a fallback needs the best-target line, NOINF covers switched edges
+  only), FB-2 (phase-exit fallbacks, ≤ 1 per phase, 7 in named set); (T), MONO, NOINF, J1, OFF, TAME, Corollary, A SIGNED; COARSE-SI (a)
+  WITH ENG-1 (inherited engine point), V-1 (Prog is VJ00 p. 15), V-2; CAP WITH CAP-1: SPEC's σ̄ at a cycle node (FIX 2 DFS) is NOT a
+  minimiser (925 cases); closed: non-cycle-node σ̄ is a minimiser (case proof), λ(o) = o case direct. (JUMP-EQ) FALSE confirmed (x31_rx32
+  53 → 54, last carry 51, L 24). Tool scratch/fb_probe.py. NEXT: §C when R2-N5-FB exists (docs/referee-2/ NOT read for FB).
+- Lesson: "σ̄ minimises" (VJ00's definition) is not SPEC's σ̄ at cycle nodes; check every VJ00 property against si.py's actual choice.
+
 ## Resume point (successor 5, written 2026-10-24T21:32Z by date -u, Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh > file 2>&1; echo $?.
 - Handover check bfbf4642 (scored 5/5 by the Lead 21:1xZ). Local branch was stale (73b46eb8); fetched + ff; trunk cf66bff merged (4b6456dc).
