@@ -29,3 +29,5 @@
 | L38 | 2026-10-24 | Lead reading of D16: no idle fleet; self-generated directions; restart L-RED box 30 (DTL gap), L-NEW box 26 (N5 lead), L-LIT T27 (untested approaches) | active | docs/DECISIONS.md#d16 |
 | D17 | 2026-10-24 | Owner: "We have so much still of our weekly usage cap ... not on track to make the most of it" | active | docs/DECISIONS.md#d17 |
 | L39 | 2026-10-24 | Lead reading of D17: use the allowance; 5 working lanes (L-RED, L-NEW, L-LIT, L-COMP, new L-SI); gate roles (CHECKER, referees) above 5 with justification | active | docs/DECISIONS.md#d17 |
+| D18 | 2026-10-24 | Owner: "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from conjectures and open problems." | active | docs/DECISIONS.md#d18 |
+| L40 | 2026-10-24 | Lead reading of D18: all 5 lanes on N5 (L-NEW designer, L-RED adversary, L-COMP exhaustive, L-SI OR/MDP lens, L-LIT T28 cross-field techniques); DTL paused; labels PROVED/CONJECTURE/OPEN | active | docs/DECISIONS.md#d18 |

@@ -328,3 +328,26 @@ Lead reading L39 (2026-10-24 12:58Z by date -u):
     in addition to the five lanes, so that landing never waits and no lane is parked to make room. This is reported to the owner with this
     justification; the expected peak is 7-8 sessions.
 (4) Each finished box is followed by the next self-generated box from the queue in NOW (L38 (4)).
+
+## D18 (2026-10-24 ~13:04Z, owner via OWNER-DESK, after D16/D17)
+> Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+Lead reading L40 (2026-10-24 13:11Z by date -u):
+(1) Priority: N5's running time (G-N5-TIME), proof side. This narrows D13/L38 for now: the DTL attack (L-RED box 30) pauses; T27's
+    C1 (Ohlmann's symmetric recursive algorithm) goes to the queue, not to a lane.
+(2) All five lanes work on N5:
+    a. L-NEW 9 (designer): (TRUST) = θ-THETA re-entries (≤ n per θ-change, lane-proved) + ROUTE re-entries (one-player count) + θ-changes
+       per phase (CYC).
+    b. L-RED 13 (adversary for N5, D1 "designer and falsifier differ"): attack each candidate lemma L-NEW states; target super-polynomial
+       θ-changes inside one joint λ-phase.
+    c. L-COMP succ. 2: exhaustive small-n tables (max θ-changes per phase, ROUTE/THETA counts, in-phase max) to generate exact conjectures.
+    d. L-SI successor (cross-disciplinary, operations research): N5 through the discounted-game / MDP policy-iteration lens (Ye 2011,
+       Hansen-Miltersen-Zwick 2013, Scherrer's analyses): look for a potential or a combinatorial discount that bounds N5's phases.
+    e. L-LIT, T28 (cross-disciplinary scan): proof techniques from other areas mapped onto N5's objects (gate, trust, θ, λ-phases):
+       unique sink orientations / AUSO combinatorics, Tarski fixed points on lattices, max-plus / tropical algebra, potential reduction,
+       matroid or polytope path-length bounds; each with the exact N5 object it would bound.
+(3) Assumptions: lanes may make reasonable assumptions; each is stated in one line and labelled ASSUMPTION; nothing resting on one is
+    called PROVED.
+(4) Labels, strictly: PROVED (with who checked it: lane / referees / Lean), CONJECTURE (with the data behind it), OPEN. This extends the
+    existing [refereed-only] / DATA / READING scheme; reports to the owner use exactly these three words.
+(5) D17/L39 stand: five working lanes; CHECKER and referees run on top when a claim needs them.

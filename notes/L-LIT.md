@@ -2,9 +2,10 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-23 08:1xZ: PARKED after T26 docs/lit/T26-N8d-step3.md: N8d-R2 (KL tree SI, uniformly random single switch) step 3 SIGNED
-WITH CAVEATS 1-7 (Thm 4.78 missing; Lemma 4.75 one-sentence; R2 = Random-Edge on all of G_n; transfer = dualize + Lemma 4.74 start +
-Lemma 4.75 per (tau, mu); page 186 not 187). Before: T25 (N8a). Trunk merged with merge commits. Next: Lead.
+2026-10-24 ~14:2xZ: PARKED after T29 docs/lit/T29-routing-algebra-N5.md: DG ICNP 2018 translated to N5 (A1 single cycle node).
+Selection algebra = lex group Z^2 longest path: distributive (R17 V2), consistent, not increasing (I1/I2) but increasing after
+potential reweighting (Lemma B); DG Lemma 12/13 fail at o (sustained junk); gap = state-dependent gate filter -> CONJECTURE (H-E).
+T28 rank 1 downgraded (note added to T28). Next: Lead.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -236,6 +237,26 @@ Lemma 4.75 per (tau, mu); page 186 not 187). Before: T25 (N8a). Trunk merged wit
 | LIPIcs.ICALP.2016.51 (Hansen-Zwick), sha256 ac500016f9d73aed5ffca742e30b647fa34457bc70f61152331269f36fa96b6c | abstract: AUSO Random-Edge 2^Ω(√(n log n)) | 2026-10-23 | T26 |
 | LIPIcs.ESA.2026.140 (Dorfman-Kaplan-Zwick), sha256 981235e87b79b0eb1b9ceac81bec74d7c2d9c811863ac1693faf4a026122c1ca | abstract; p.2-3 related work; §5 Random-Edge upper bound | 2026-10-23 | T26 |
 | arXiv 1008.0530 v1 (HMZ) sha256 f53a6b51…; 1305.3944 (Avis-Friedmann) sha256 d1fafb8b…; 1210.2459 sha256 02fca6a4… | HMZ Thm 6.5; AF Thm 4; CGR abstract only | 2026-10-23 | T26 |
+| arXiv 2603.07555 v1 (Ohlmann, symmetric recursive MPG algorithm), sha256 292bde19b74fbe30d6d629264dab93f924da76711fe8a7583db3a0a67f4d1248 | §1 p.2 (candidate subexp, no bound); §3 p.5-7; Lemmas 4-7; §5 Alg. 1 p.11-12 ("no zero cycles"); §6.4-6.5, §7 p.19; v1 only; S2 citers 0 | 2026-10-24 | T27 |
+| Ohlmann thesis (sha256 a5c909cb…), further | Ch. 10: Fig. 10.4 + §3 p.179 (GKK), Thm 10.2 p.179, Thm 10.4 + O(2^(n/2)) proof p.186-189, §6.1 p.190 (ESL, Thm 10.6), §6.2 p.194 (AESL, termination open), §6.3 p.194-196 (random arenas only, code github.com/PierreOhl/parity_games_solving not opened), fn. 9 p.194; Ch. 11 p.201 (= JM20) | 2026-10-24 | T27 |
+| arXiv 2106.08854 abs page (Lahlou-Truffet) + 2408.14256 abs (Truffet) | v2 withdrawn 2024-08-27 (errors found by van Dijk); successor makes no P claim | 2026-10-24 | T27 |
+| arXiv 2610.15495 (Di Stasio-Vardi, EPTCS 454.8) sha256 ec6dc80e…; 2610.15480 (Żyndul, Lasso games) sha256 32911ed9…; 2501.18499 (Piedeleu) sha256 2cb58dec…; 2102.01440 (Lapauw et al.) sha256 39166a7e…; 2404.13687 (Hausmann) sha256 63c2ad33… | Thm 5.3 PDF p.13 + table p.14 (2^O(n)); abstract; abstract + Thm IV.1/IV.6; abstract + §1; abstract | 2026-10-24 | T27 |
+| arXiv 2104.05262 v8 (CFGO) sha256 b00ac9e8…; 1810.05106 v2 (Colcombet-Fijalkow) sha256 fec1bc1b… | Thm 7.5-7.6 (MP universal graphs); Thm 1-2 (safety only) | 2026-10-24 | T27 (re-open) |
+| arXiv API listing ti/abs "parity games", 80 newest (2026-10-24) | titles scanned | 2026-10-24 | T27 |
+| NOT opened (T27) | Beffara-Vorobyov LICS 2002 (title only); GKK 1988 original; Ohlmann's GitHub code | 2026-10-24 | T27 |
+| Daggitt-Griffin ICNP 2018 (cl.cam.ac.uk/~tgg22/publications/icnp_2018.pdf), sha256 376beef0cd5b17bc… | Def. 1-3, eq. (1)-(3), §V Q_n Θ(n²), Lemma 13 + Thm 1 p.11 (≤ n² iterations, Agda) | 2026-10-24 | T28 |
+| Griffin-Shepherd-Wilfong ToN 2002 (Princeton copy), sha256 82d4c2a00c511778… | Thm V.3, V.4 p.8; Thm V.9 p.10 | 2026-10-24 | T28 |
+| Sobrinho ToN 2005 (ENS copy), sha256 485afb236a5ddf7e… | abstract; Thm 1, Thm 2 p.5 | 2026-10-24 | T28 |
+| arXiv 2106.01184 v2 (Daggitt-Griffin) sha256 5a96dd3d… | abstract | 2026-10-24 | T28 |
+| arXiv 1208.5083 v2 (Post-Ye) sha256 c51876ebf5c3cdb0… | abstract; Lemma 3.4, 3.6 p.8; Thm 3.7 p.9 | 2026-10-24 | T28 |
+| arXiv 1306.0386 (Scherrer) sha256 391b6481…; 1310.4953 (Akian-Gaubert) sha256 ad0cf80f… | abstract, Thm 1-5 (Thm 5 p.4); abstract, Thm 5 p.9 | 2026-10-24 | T28 |
+| arXiv 1811.05115 v3 (Gajjar-Radhakrishnan) sha256 79208b4f… | abstract; Thm 1 p.2; §1 Carstensen/Gusfield statements (originals NOT opened); Thm 3 | 2026-10-24 | T28 |
+| BSV STACS 2003 (dbai.tuwien.ac.at/staff/vorobyov/stacs2003.pdf) sha256 b4439e9c…; arXiv cs/0606087 (GMRS) sha256 4b66f35d…; Matoušek KAM 2003-613 sha256 08cdfcb9… | Thm 20, 22 p.7, 23; Thm 8 p.7, §5 p.21; Thm 1 p.3 | 2026-10-24 | T28 |
+| arXiv 0912.2462 (AGG) sha256 72159bf0…; 1204.1086 (Pettie) sha256 3762a763… | abstract, Thm 1.4 p.4; Thm 1.2 p.5 | 2026-10-24 | T28 |
+| arXiv 1909.03210 (EPRY) sha256 f03c9ea0…; 2010.02618 (FPS) sha256 732602f8…; 2202.05913 (Chen-Li) sha256 3dc3148e… | Thm 3.2 p.8, Thm 4.1 p.13, §5; Thm 15 p.16; Thm 1 p.2 | 2026-10-24 | T28 |
+| NOT opened (T28) | Szabó-Welzl FOCS 2001; Topkis 1978; Milgrom-Shannon 1994; Carstensen 1983; Gusfield 1980; Ye 2011 original | 2026-10-24 | T28 |
+| github.com/MatthewDaggitt/agda-routing @ 241d45ae (git clone, read only) | Algebra.agda (sha256 cf2ffbf6…) l.100-115, 129-150, 171-184; Algebra/Core.agda l.55-65; Synchronous/PathVector/Convergence/Step6_Proof.agda (sha256 2ea6bad3…) l.43, l.112 | 2026-10-24 | T29 |
+| Daggitt-Griffin ICNP 2018, full read | Def. 1-2 p.2-3, semiring Θ(n) p.2, Lemma 4 p.7, Def. 4-5, Lemma 7, 10 p.9, Lemma 11-12, Def. 6 p.10, Lemma 13-14, Thm 1 p.11 | 2026-10-24 | T29 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
