@@ -14,7 +14,8 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN (docs/NOW.md line 14). Branch claude/refe
   says R2-N5-1OA exists (docs/referee-2/ not read). Lead 03:50Z: re-pin WITHDRAWN, signed object = 07f298d. §C written 03:51Z-04:05Z
   after R2-N5-1OA (referee-2 603cb3a): identical verdicts; accepted R2's tie-break-free count (G-1OA-2), N-3 (Lemma 1 holds on all C^1O),
   and G-1OA-6 first half (Lemma S (c)/(d) are S4a-only), which I had MISSED. Lesson: when a lemma's heading scopes a claim ("Arena
-  steps"), check the claim as the text states it over all k, not as the heading intends. PARKED.
+  steps"), check the claim as the text states it over all k, not as the heading intends. Lead 03:57Z: signed object = d78e54f after all;
+  §C2 written 04:01Z-04:08Z against R2 §7: B7 = N-4; N-5 (Lemma 3 length +1 for o) accepted as missed by me. PARKED.
 - Lesson: the lane's start files are named <name>.start, not <name>.pg.start; read both.
 
 ## Resume point (successor 3, written 2026-10-22T00:08Z by date -u, Fable 5.1 under L36; P-N5-1P, done)

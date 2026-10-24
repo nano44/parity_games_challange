@@ -12,7 +12,8 @@ N-5 (|π_v| + 1 + ℓ); verdict unchanged. L-RED's long-block instances block_bk
 Lead 03:44/03:50Z: re-pin WITHDRAWN, Addendum 1 cancelled (my §7 stays as a record); signed object = 07f298d text. §C vs REFEREE R-N5-1OA
 (9060b51, trunk 2177e79) written 03:56Z: full agreement; A1=G-1OA-2, A2=G-1OA-1, B2=G-1OA-3, B3=N-3, B4=G-1OA-5, B5/B6=§2(c)/Step 6, S2=G-1OA-6(b);
 B1, S1 accepted; only mine: Lemma S (c)/(d) for S4a steps only. (P): one-player form only (fact of the proof); route (a) read, sound on my reading,
-not refereed by me. PARKED.
+not refereed by me. Lead 03:57Z: signed object revised to d78e54f; §C2 (04:02Z) vs REFEREE §0/B7 (bb96f45, trunk 98f16c8): B7 = N-4;
+B2 = G-1OA-3, B4 = G-1OA-5 closed by the new text in both reports; only mine N-5; full agreement. PARKED.
 2026-10-22 00:10Z (successor 3, Fable 5.1, L36). P-N5-1P (docs/new/N5-phase-bound-box10.md §1-§4 @ trunk 26905f0): docs/referee-2/R2-N5-1P.md.
 SIGN: (V1)/(V2), Lemma P (G-1P-1 wording), Corollary 1 (N-1), Corollary 3 (remark). SIGN WITH GAPS: (F1)/(F2) (G-1P-4: VJ00 (11) on the dual, order
 reversal + (4)/(6) "⊵" half re-derived in §2), Theorem PH (G-1P-2 simultaneous flat switches, G-1P-3 stuck engine = N5 fallback; both
