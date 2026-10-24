@@ -4,7 +4,7 @@ import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "R2-N5-RE"))
 import re_check as rc
 g = rc.parse(open(sys.argv[1]).read()); k = int(sys.argv[2])
-o = [v for v in range(g.n) if g.owner[v] == 1 and len(g.succ[v]) > 1][0]
+oc = [v for v in range(g.n) if g.owner[v] == 1 and len(g.succ[v]) > 1]; assert len(oc) == 1, f'not C^1O: Odd choice vertices {oc}'; o = oc[0]
 def br(v, dual):
     def rr(w_):
         p = g.prio[w_] + (1 if dual else 0); r_ = p if p % 2 == 0 else -p

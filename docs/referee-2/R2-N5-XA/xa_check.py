@@ -194,7 +194,7 @@ def main():
             check_run(g, o, states, fbs, st, f"seed{seed}#{i}")
     else:
         path = sys.argv[2]; g = rc.parse(open(path).read())
-        o = [v for v in range(g.n) if g.owner[v] == 1 and len(g.succ[v]) > 1][0]
+        oc = [v for v in range(g.n) if g.owner[v] == 1 and len(g.succ[v]) > 1]; assert len(oc) == 1, f'not C^1O: Odd choice vertices {oc}'; o = oc[0]
         mode, start, runs = "own", None, 20
         for a in sys.argv[3:]:
             if a in ("own", "spec"): mode = a

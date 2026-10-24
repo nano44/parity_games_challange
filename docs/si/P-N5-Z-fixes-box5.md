@@ -31,3 +31,19 @@ L-SI successor 2 (Opus 5.5, D15/D18). Written 2026-10-24 20:45Z (date -u), at th
 ## 3. Additional WM data (§11)
 - L-RED's later files in experiments/red/xing/instances (x32_*, u1t_cex_n32; all in 𝒞^1O): WM 0 violations.
 - W-lowerings per longest phase: x32_waves48 19 (Z 4), x32_waves32 9 (Z 10), x32_nest40 1 (Z 2); 0 on the others.
+
+## 4. Referee items (relayed by the Lead 20:5xZ; both reports in, no NOT SIGNED). Lane answers
+- Z-1 = N-Z-1 (LV′). Accepted as the intended reading: the runs in §7's proof are maximal runs of ADJACENT crossing transitions with
+  the same pure sign, so a '±' transition ends a run.
+  - #runs ≤ Z + 1 still holds: each pure-sign change and each '±' adds at most one run, and each is counted once in Z.
+  - The bound X ≤ (n − 1)(Z + 1) + Z is unchanged.
+  - Read "ignoring '±'" instead, the monotonicity step fails, since a '±' transition can lower |R|.
+  - zcount.py's count of Z (it does not reset the previous pure sign at a '±') counts the same events. Its assert is the bound itself.
+- Z-2 (REFEREE). Accepted: a one-line second proof of NOFE.
+  - At a fallback, a switched F_k → R̄_k edge (y, z) is a gate edge from F. By R21 (c) FBL-N (ii) it is flat for W, with
+    y = λ_W(y) = λ_W(z).
+  - z ∈ R̄_k, so z's W-play reaches o and then follows o's W-play. Its cycle node y therefore lies on o's W-play, as its cycle node.
+  - This also gives the READING in P-N5-Z §4 ("y is a W-cycle node") as a proved statement.
+- Z-3 (REFEREE). Accepted, wording. In NOFE's proof, "σ_k y ∈ F_k by (F0)" means: y ∈ F_k and y keeps σ_k(y) as its state-k successor,
+  so σ_k(y) ∈ F_k at state k. It is a fact about state k only; no transition is involved.
+- N-Z-2 (REFEREE-2). s_rt32_final out of class: §1 above.
