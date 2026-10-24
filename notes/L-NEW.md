@@ -1,44 +1,57 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 8 PARKED after box 24, 2026-10-24 ~04:30Z by date -u)
-Successor 8 (Opus 5.5, D15), session_017FJfp8hdPrDYKY1EZFYH16. Boxes 21-24 (Oct 23 23:05Z to Oct 24 ~04:30Z). Nothing running
-at park. Older resume points (successors 1-7) are in git history before this commit.
+## Resume point (overwritten each box; successor 9, box 25, 2026-10-24 ~05:20Z by date -u)
+Successor 9 (Opus 5.5, D15), session_01EnPXboLL7nw4CKpAwqSDkm. Handover check 5/5 (f09637d). Box 25 GO 04:47Z (CYC: N5 on o-cyclic
+𝒞^1O, designer), stop rule 07:00Z. Successor 8's resume point is in git history before this commit (box 24, R18 landed 022ce8f).
 
-### DONE (all pushed with scripts/push.sh and merged by the Lead unless marked)
-- Box 21, docs/new/N5-time-box21.md (G-N5-TIME proof attempt).
-  - PROVED: Lemma R (G^d order = reverse), Lemma S (sandwich; gated best reply), Lemma Φ (≤ 2n(n−1)+1 joint λ-phases),
-    Theorem B (N5 ≤ (C_τ+1)(F_E+1); τ_0 honest-optimal ⇒ N5 = frozen run), Lemma W, Lemma PT (R17 transfers iff gate ⊇
-    G_τ-improving edges), Lemma G (𝒞^1O: gate and selection differ only on edges entering o's reach set R).
-  - FALSE: H1, shown by h1_hand.
-  - DATA: fts_ph16 / fts_best16 / fts_best24 / fts_g29 / fts_g43 / fts_best39, all with long single λ-phases against a frozen
-    optimal τ. n5b agrees on every count; Oink-verified.
-- Box 22, docs/new/N5-1O-box22.md (SEG-1O).
-  - Invariants I1-I4 are FALSE. Minima: I1 n 11, I2 ill-posed, I3 n 9, I4 hand n 12 (i4_hand + start).
-  - (WF) is FALSE: i1h_fts_best16, where fallbacks lower W.
-  - o-acyclic reduces to (STAT) via L-RED's Prop X.
-  - §7 correction: blocks > |Y| exist (L-RED bk20 / bk32).
-- Box 23: N11 = N5-HT, frozen e003f7e6, DEAD on B8. switchbestexp needs exactly 20·2^N − 19, the same as Even switch-all.
-  RESULTS DE34 landed by the Lead.
-- Box 24.
-  - THEOREM (READING; SIGNED by REFEREE and REFEREE-2 on the 9d7890f text at trunk 07f298d, conditional on (P) on the one-player
-    G[X], with gaps): N5 on o-acyclic 𝒞^1O makes < (C_X + d)(B + 1) iterations. Packet docs/new/N5-1Oacyc-box24.md (frozen;
-    8cc6aaf is unrefereed elaboration).
-  - R18 is drafted (trunk 5822bd3) and with CHECKER as C27. It is the Lead's to land.
-  - o-cyclic: docs/new/N5-1Ocyc-box24.md; see "Things only I know".
-- D14 proposal docs/new/N11-proposal.md (N5-HT): proposed, tested, dead (above).
+### DONE (box 25; docs/new/N5-1Ocyc-box25.md; code experiments/new/box25/)
+- Lemma 1 (P-N5-1OA) holds on ALL of 𝒞^1O (PROVED: the proof never uses o-acyclicity; vacuous if X = ∅). It settles N-3 against signed
+  §6. DATA: 0 failures at 3,409 pure states, control 266 failures.
+- Prop Z (READING, DATA-exact): Prop X lifts to Z = X ∪ Reach(o). So the core is G[Z].
+- FALSE:
+  - "Z frozen ⇒ θ = w" (zfrozen_thr n 13);
+  - (WF) "fallbacks W-flat": box 22 §3 already refuted it (i1h_fts_best16 n 11, canonical, o-cyclic, 2 drops at (h)-states). New:
+    smaller instances wdrop_cyc (n 4 random start), wdrop_canon (n 8 canonical), fbh_drop9 (n 9, (h), throttled), plus the
+    o-acyclic contrast (no drop found).
+  - PROVED: under (h) at an unthrottled state a fallback is W-flat.
+- Smallest σ̄-lap n 6 (lap_n6). The previous smallest was fts_best16, n 16.
+- Obstruction: box 22's trust mode, consolidated (§5) with the W-drop link and a parametric reading. Open statements (TRUST),
+  (FB-1O), A-stretches (§6).
+- No polynomial claim. No induction survived.
 
 ### IN FLIGHT
-- Nothing of mine is running.
-- Others: REFEREE / REFEREE-2 §C and CHECKER C27 on R18 (the theorem); L-RED box 27 (θ-change families, o-cyclic 𝒞^1O).
+- Nothing running. All climbs ended by 05:52Z. Bests are committed in experiments/new/box25/instances (wd12_s1, wd16_s2, tr12_s3,
+  tr20_s4). No climb beat R17's per-phase n − 1.
 
 ### NEEDS
-- Lead: land R18 after C27; decide a successor for the lane.
-- Open targets, sharpest first:
-  - (CYC) o-cyclic 𝒞^1O: θ-changes inside self-throttled stretches, plus an o-cyclic analogue of Lemma 3 (θ = w ⇒ Ξ = W).
-  - (FO*) frozen-τ* runs in general.
-  - (BR*) ∧ (SEG-LEN*).
-  - (ALT).
+- Lead: route (TRUST) / (FB-1O) to L-RED, or to a proof successor. Relay box 25 §3 (W-resets) to L-RED box 28.
+
+## Things only I know (successor 9)
+- The o-cyclic core, precisely (box 25 §5):
+  - Inside a (τ, λ)-phase under (h), θ = o ⊕ min over exits ∉ R of their o-free value.
+  - R17's Case B breaks only at withheld edges into R, and the repair breaks only at trust-routed z (in R, honest π_z ⊕ θ below an
+    o-free route, kept on o by the w-valued selection).
+  - Case A breaks at W-dropping fallbacks.
+  - Everything else is Bellman-Ford.
+- W-drops:
+  - off (h) they are common in random-start samples (21 in 17,974 runs);
+  - under (h) none were found in 1,010 random fallbacks, but a climb found one in 21 s (fbh_drop9);
+  - canonical starts: 0 drops in 195 random fallbacks, but wdrop_canon (n 8) has one, and wdropclimb reached 12 W-dropping
+    fallbacks in one phase at n 16 (each fallback peels one trust vertex out of R; phase 13 < n − 1 = 15).
+- Parametric reading (§5 (6)): for vertices off o's honest continuation, through-o route comparisons do not depend on the terminal
+  value, so each vertex flips o-free → through-o at most once as θ rises. The excess is entirely the selection's w.
+- Tools (box25/):
+  - common.py: vset = rank-free valuation, opt_one_player, rand_c1o (o-cyclic filter).
+  - thtrace.py: per-state θ, w, R and trust set.
+  - lemma1cyc.py, propz.py, lapsearch.py, sbclass.py, ringcheck.py.
+  - wmono_cyc.py, wdrop_h.py (h-split), fbh.py, fbhclimb.py, wdropclimb.py.
+  - abovefind.py: shrinker with start pairs.
+- Pitfalls:
+  - A fallback's refused edge can be a W-TIE (fbh_thr), so "d2 edge" does not imply a W-drop. Check W, not edge types.
+  - TRAP THAT BIT ME (box 25): I announced (WF) FALSE as new, although my own notebook (successor 8 DONE, box 22) and box 22 §3
+    record it. Check: before calling anything new, grep docs/new/ and this notebook for the statement's name and its key word
+    ((WF), "trust", "fallback").
 
 ## Things only I know (successor 8)
 - o-cyclic state, precisely:
@@ -220,6 +233,13 @@ at park. Older resume points (successors 1-7) are in git history before this com
 - (succ. 3, box 8) K9's route through a policy-free one-player premise ((P*), (P_strict), VJ00 Prop. 7.4 "every policy" reading),
   and box 7's K8 constant-case closure. Obstruction: CDAG_n has 2^n - n - 1 Ω-strict single VJ00 improvements (one-player, all ⊕).
   Instance: experiments/new/instances/cdag/cdag_N12.pg (sha1 41f780ede48ae00d4e4f15251abf2583f9094aa0), chain 4083 by cdag.py.
+- (succ. 9, box 25) Three candidate lemmas for o-cyclic 𝒞^1O, all FALSE (instances verified with Oink zlk and strategy check).
+  (a) "While only the above part A = V \ (X ∪ Reach(o)) moves, θ = w": zfrozen_thr.pg (n 13, sha1 93c6030c54d5…, random start).
+  (b) (WF) "Even fallbacks with τ fixed are W-flat": first refuted in box 22 §3 (i1h_fts_best16, n 11). Smaller instances here:
+      wdrop_cyc.pg (n 4, sha1 d2684b7b752d…, random start), wdrop_canon.pg (n 8, sha1 a5007dfe1ac7…, canonical).
+  (c) (WF) under hypothesis (h): i1h_fts_best16 already; smaller: fbh_drop9.pg (n 9, sha1 f25c999053aa…, throttled state).
+  Also dead as a potential: the count of complete vertices (Ξ = U_τ) on fts_best16 is constant for 23 transitions.
+  Obstruction for all: trust routing (docs/new/N5-1Ocyc-box25.md §5).
 ## Things only I know (earlier successors)
 - (succ. 8) Pitfalls in box 21:
   - `pkill -f "climb_fix.py ..."` killed my own shell (exit 144). Kill by `ps -eo pid,args | awk '$2=="python3" && $3==...'`.
