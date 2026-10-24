@@ -407,3 +407,28 @@ The fourth climb (seed x31_cu32) stalled at 2.
   - A polynomial bound needs a potential that this alternation spends. θ rises at every jump, but only θ ⊴ w is known, which leaves
     an exponential range.
 - Growth: J per phase 12 at n 32 here, 17 at n 48 (§10). No superlinear growth seen. Scale climbs at n 48-64 are running (§13).
+
+## 13. CONJECTURE (CL-S) and the reduction it would give
+- SCOPE RUN: a maximal run of in-phase transitions with (h) at k, H2 at k+1 and w constant (§9).
+- **(CL-S)** (CONJECTURE; L-SI succ. 3). Inside a scope run, the max gate levels M_k at its S4c fallbacks form a non-increasing
+  sequence, across non-tame jumps too. Each level M ≥ 0 occurs at ≤ n_E fallbacks, and M = −1 at ≤ n_E(n − 1).
+  - This is FB's per-run budget made to survive the jumps. It is the leaver-free, M-form of box 5's (CL) ("carry levels non-increasing
+    while w is constant").
+- DATA (experiments/si/coarse/clscope.py; the named set, all pinned jcl_*/rel_* climb bests, and L-RED's j7_n32 / j7_n48):
+  - 67 scope runs, 246 fallbacks, 0 violations of either part;
+  - max 33 fallbacks in one scope run (ccl_w48_n48); max 16 jumps in one scope run.
+- Caution: M_k itself CAN rise at an in-scope jump (run_x_inr2 24 → 30, fbref_cex_n32 25 → 30, x31_lem_t32 28 → 29, x32_waves48
+  45 → 47; scratch jclass). (CL-S) is only about the levels AT FALLBACKS.
+- Reduction (READING; each step PROVED given (CL-S)):
+  - (CL-S) ⇒ #fallbacks per scope run ≤ n·n_E + (n − 1)n_E = n_E(2n − 1).
+  - Corollary JD (§9) ⇒ J_in(S) ≤ |succ(o)| + |succ(o)|·n_E(2n − 1) per scope run.
+  - Every transition outside the scope runs is out of scope: (h) fails at k, H2 fails at k+1, or w changes. Hence
+    J ≤ (1 + N_out)·|succ(o)|(1 + n_E(2n − 1)) + N_out, with N_out := #out-of-scope in-phase transitions.
+  - Then Theorem FB bounds the fallbacks, and so (C), by poly(n)·(1 + N_out).
+  - N_out ≤ O + #w-changes + #transitions with an EQ endpoint lacking (h). O is R21's OTHER-touching count, OPEN as (NH′).
+  - So under (CL-S), (C) is polynomial whenever O and the w-changes are, i.e. (C) adds no new open quantity to R21/R23.
+- Status: (CL-S) OPEN, DATA only. Ideas for a proof (READING):
+  - At THR fallbacks with u* ≠ none, FBL (R20 (b)) leaves only R → F gate edges (plus flat cycle-node switches), and CLU bounds
+    their levels by rank(u*), which is non-increasing in a scope run.
+  - What is missing is that the β-flips at a level are not undone by a jump. A jump raises the values in R̄ (OFF), and so possibly
+    the β of R-tails.
