@@ -26,7 +26,7 @@
   - main report 0102170b: FAIL E-1; the R22 POST-LANDING NOTE PASS;
   - Add. 1 59a97995: PASS at a85316a;
   - Add. 2: R24 landed verbatim at trunk 7bcf681.
-- PARKED. Next: R25 (P-N5-FB, L-SI), once refereed.
+- C34 (R25 draft at trunk a2cf366, packet P-N5-FB): FAIL on E-1 ((d) Corollary's (C) bullet lacks 𝒞^1O) and E-2 ((c) NOINF claims all gate levels finite; that is FB-1). Re-runs EXACT.
 - Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs. In a worktree, symlink tools/oink/build.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 
