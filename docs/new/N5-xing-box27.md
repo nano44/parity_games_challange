@@ -191,7 +191,7 @@ Not covered: states where (h) fails, and the counts in (a), (d). Next targets:
 - (CYC') θ-changes and w-changes per phase. L-RED's data plateau at 16 θ-changes.
 - (NH) Non-(h) transitions. These include τ(o) closing a cycle at o, the setting of all box-25 W-drop instances.
 
-## 7. Lemma CR written out in full (L-NEW, 14:55Z; this upgrades CR from READING to PROVED-in-writing; a referee should check it)
+## 7. Lemma CR written out in full (L-NEW, written ~14:46Z by date -u; this upgrades CR from READING to PROVED-in-writing; a referee should check it)
 Setting.
 - S is a throttled (θ, w)-stretch with states k_0, k_0 + 1, …. τ, θ, w and the joint λ-map are constant, and (h) holds.
 - Ω := W = the valuation of the one-player game G_τ. Ω^c := COARSE(Ω), which equals COARSE(Ξ) by Lemma C.
@@ -224,3 +224,63 @@ Lemma CR follows as in R17 Theorem PH.
 With §7, Theorem XA's count (≤ n(n − 1) arena-type re-entries per throttled stretch) and §5's O(n³) per stretch are PROVED-in-writing,
 like CR. They depend on: the packet's Lemma G and PIECE (PIECE itself is a sketch in the packet), Lemma W (box 21 §2.5, signed in
 R18 (d) context), R15 (a), and R17 §1-§3.
+
+## 8. Whole-phase decomposition (L-NEW, written ~14:49Z by date -u)
+Lemma UT (PROVED, combining box 21 Lemma PT, R17 Lemma P / Theorem PH, Lemma G and box 25 §3). Take a maximal run of consecutive
+UNTHROTTLED (h)-states (θ = w at each) inside one joint λ-phase with τ fixed. θ = w may change along the run. Then the run has at most
+n − 1 value-changing transitions.
+Proof.
+- At every such state Ξ = W and the gate equals G_τ's improving set (Lemma G with θ = w). So box 21 Lemma PT's hypothesis
+  "A(ρ_j) ⊇ H_j" holds at every arena step, and PT does not require θ to be constant.
+- Fallbacks at these states are W-flat (box 25 §3, PROVED), so they change no W-value. Count only arena steps in Lemma P's induction.
+- W's cycle-node map equals Ξ's, which is constant in the joint phase.
+- So R17 Theorem PH gives ≤ n − 1 value-changing transitions. □
+Phase decomposition (READING; assumes (h) except where counted; uses §5 for throttled stretches). A joint λ-phase with τ fixed splits
+into:
+- maximal unthrottled runs: ≤ n − 1 value-changing transitions each (UT);
+- throttled (θ, w)-stretches: O(n³) value-changing transitions, crossings and non-flat fallbacks each (§5; PIECE; CR);
+- transitions at states where (h) fails;
+- flat transitions, at most 4n(n − 1) between value changes (R15 (d)).
+There are at most 2·(#θ-changes + #w-changes + #non-(h) transitions) + 1 runs and stretches. Hence
+    iterations per phase ≤ poly(n) · (1 + #θ-changes + #w-changes + #non-(h) transitions),
+and with Lemma Φ (phases) and τ-changes ≤ d − 1, N5 on o-cyclic 𝒞^1O is polynomial if:
+- (CYC') #θ-changes + #w-changes per joint λ-phase is poly(n), and
+- (NH) #non-(h) transitions per joint λ-phase is poly(n).
+DATA (phaseprofile.py, longest phases):
+
+| instance | n | longest phase | θ-changes | w-changes | (θ, w)-stretches | non-(h) transitions | throttled transitions |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| fts_best16 | 16 | 26 | 8 | 0 | 9 | 0 | 24 |
+| theta_tp32 | 32 | 41 | 16 | 0 | 17 | 0 | 39 |
+| theta_thc24 | 24 | 12 | 11 | 5 | 12 | 0 | 7 |
+| returns_rt48 | 48 | 78 | 3 | 0 | 4 | 0 | 67 |
+| returns_ph64 | 64 | 103 | 3 | 0 | 4 | 0 | 92 |
+
+- The long phases are a few long throttled stretches with no non-(h) transitions. L-RED's θ-change climbs plateau at 16
+  (R58 §11a).
+- stretchclimb.py (fitness = (θ, w)-stretches per phase): see §9.
+
+### 8b. θ-changes against a fixed w: the u*-levels (L-NEW, written 14:50Z by date -u)
+Lemma UD (PROVED, L-NEW). Inside a joint λ-phase, take consecutive throttled values θ_1 ◁ θ_2 ⊴ w with w fixed and the same cycle node
+(h). Let u*_i := the most relevant vertex of P(θ_i) Δ P(w), and v := the most relevant vertex of P(θ_1) Δ P(θ_2), if any. Then:
+- v is not more relevant than u*_1;
+- if v = u*_1, then u*_2 is strictly less relevant than u*_1 (or θ_2 = w);
+- if v is less relevant than u*_1, or P(θ_1) = P(θ_2), then u*_2 = u*_1.
+Proof.
+- Above u*_1, θ_1 and w agree.
+- If v were more relevant than u*_1, then θ_1, θ_2 and w would agree above v. θ_2 beats θ_1 at v, where θ_1 has w's status, so
+  θ_2 ▷ w, a contradiction.
+- If v = u*_1, θ_2 takes the better status at u*_1, which is w's, and agrees with w at and above u*_1.
+- Otherwise θ_2 agrees with θ_1 at and above u*_1. □
+Consequences.
+- Per value of w there are at most n "u*-levels", and at most n² over the w-values of a phase whose w changes ≤ n times.
+- Inside one (w, u*)-RUN (w and u* fixed, θ free to change below u*), Lemmas C, CR and XA hold verbatim. Their proofs use only
+  "θ and w agree above u*, and w is better at u*", never θ's constancy. So in a (w, u*)-run:
+  - coarse values freeze after n − 1 transitions;
+  - arena-type re-entries are at most n(n − 1).
+- Lemma FBF does NOT extend across θ-changes. A rising θ re-opens entering edges, which is exactly box 26's THETA re-entries, at most
+  n per θ-change.
+So (CYC') reduces to:
+- OPEN (CYC-u*): the number of θ-changes inside one (w, u*)-run, i.e. changes of θ strictly below u* while w and u* are fixed, plus
+  the number of w-changes per phase.
+DATA: θ-changes per phase plateau at 16 (L-RED), and returns_rt48 / ph64 have 3.
