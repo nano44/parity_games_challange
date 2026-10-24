@@ -1,0 +1,1 @@
+{'intervals_notH1_cth_ne_o': 1203, 'theta_changes': 5, 'theta_changes_without_F_change': 5} max theta-changes in one interval 1
