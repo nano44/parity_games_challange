@@ -1,54 +1,52 @@
-# Handover check: L-SI (successor 1, Opus 5.5 per owner D15 / Lead reading L37; written 2026-10-24 13:06Z by date -u)
-First answers for this lane (no previous file). Every answer is measured from the repository at writing time (commands named),
-not recalled. Predecessor: session_01HnGDSEHG3NHszV1y8ND6BF (Fable 5.1), parked 2026-10-15 ~17:10Z at l-si 0d48da26
-(notes/L-SI.md resume point, "box ended early on the Lead's 16:05Z sweep").
+# Handover check: L-SI (successor 2, Opus 5.5 per D15/L37; written 2026-10-24 17:35Z by date -u)
+Overwrites successor 1's check (96469356). Every answer measured from the repository in this container (commands named), not
+recalled. Predecessor: L-SI successor 1, parked 2026-10-24 ~17:35Z at l-si 6e5f64ad ("L-SI successor 1: handover notes").
 
 ### 1. Branch, head, ahead/behind trunk
-- Branch claude/l-si. After `git fetch origin claude/vibrant-johnson-nxvvxo claude/l-si`: local = origin/claude/l-si = 0d48da26
-  (container not stale; last commit 2026-10-15 17:07Z, "L-SI: end of box ...").
-- `git rev-list --left-right --count origin/claude/l-si...origin/claude/vibrant-johnson-nxvvxo`: 0 ahead, 2981 behind trunk b21be974.
-  merge-base = 0d48da26, i.e. l-si was an ancestor of trunk.
-- So `git merge origin/claude/vibrant-johnson-nxvvxo` (normal merge, no rebase) was a FAST-FORWARD: no merge commit was needed
-  or made. Before this file's commit HEAD = b21be974, 0 ahead / 0 behind; after it 1 ahead (this commit), 0 behind.
+- Branch claude/l-si. The local branch at container start was STALE (0d48da26, 2026-10-15). After
+  `git fetch origin claude/l-si claude/vibrant-johnson-nxvvxo`: origin/claude/l-si = 6e5f64ad; `git merge --ff-only origin/claude/l-si`
+  brought HEAD to 6e5f64ad (fast-forward, no merge commit).
+- `git rev-list --left-right --count origin/claude/l-si...origin/claude/vibrant-johnson-nxvvxo` = 3 0: 3 ahead, 0 behind trunk.
+  merge-base c371ffdf. The 3 commits: 8314ce9c (box 3 final), 78b5a9dc (merge trunk), 6e5f64ad (handover notes).
+  After this file's commit: 4 ahead, 0 behind (SHA in the message to the Lead).
 
 ### 2. Open work and the next step of each
-Nothing of mine is running (predecessor's IN FLIGHT: "Nothing runs; no searches open"). tools/oink/build and experiments/si/out/
-are absent in this container (gitignored; run scripts/setup_oink.sh before any Oink-verified run).
-- Predecessor's unfinished sweep: gated_switchbestexp N = 7..10 not run (out/fam_mem_fast.log stopped at the 17:10Z deadline).
-  Next step: only if a live candidate needs it; S1-S4, S7 are dead (RESULTS DE4, DE6, DE7, DE8).
-- S5 (Zadeh + index tie-break), S6 (Cunningham + index order): not killed, not defended. Status re-measured: L-NEW box 1
-  (docs/new/BOX1-REPORT.md §(i), docs/new/S5S6-renum.md) "NOT KILLED, not defended" after renumbering climbs. Not routed to me now.
-- S1 transfer lemma (L-RED R2-RAR): DE6 lists REFEREE-2 OK with fixes, second referee and L-LIT novelty check pending. Not mine.
-- Next box (after GO only; Lead brief "for context"): a NEW SI rule that gets past N5's trust-mode deadlock
-  (docs/new/N5-1O-box22.md §1.3-§1.4, docs/agents/N5-STANDDOWN.md) without collapsing to switch-all (RESULTS DE34: N11 = N5 with
-  an honest override at trust conflicts, dead at gauntlet step 2). First steps: read those, screen the rule against
-  docs/lit/BARRIERS.md and docs/si/README.md (state its defence against gates, pads, priorities, numbering), freeze it, then run
-  gated_*, fhz_padded, randomfacetsubexp, M_L and the N5 trust-mode instances first.
+Nothing runs (predecessor parked; no background jobs in this container). tools/oink/build is absent: scripts/setup_oink.sh must run
+before any Oink-verified citation (check_sol2.py, verify smoke).
+- Box 4 (Lead brief, after "go"): the proof side of (X) = crossing transitions per joint λ-phase (L-NEW box 28 §5c READING: N5 makes
+  O(n⁴(1 + X + O)) transitions per phase on o-cyclic one-Odd-choice games). Next step: classify crossings (active/passive,
+  entering/leaving R), find what each pays with, then look for an additive potential that rises at every INR/crossing and is not
+  restored by o-free progress (box 3 §3), or prove none of a natural kind exists; measure on experiments/si/orlens/instances
+  (16 files) and experiments/red/xing/instances.
+- OPEN from box 3 (notes/L-SI.md "OPEN"): (ELIM-poly), (LEVEL-poly) (data max m_r 11 at n 32, two nested counter digits in
+  lev_l_sc / lev_l_x, no third), (CYC-u*). Next step: none of mine unless box 4 reaches them; the kill design (a carry above 24/21
+  in lev_l_sc) is routed to L-RED.
+- Old queue (notes "Queue"): fhz_padded rerun for S5/S6 with --engine fast; keep experiments/si/check.sh green. Not in box 4;
+  check.sh is run by verify.sh on every push.
 
-### 3. docs/GAPS.md rows I own (`grep -n "L-SI" docs/GAPS.md` at b21be974)
-- None. No open or closed row names L-SI as owner (the only grep hits for "S5"/"S6" are G-S5-6, an L-ALG DTL row, unrelated).
-  Predecessor's unrefereed statements (Claim F', the MSF bound (n²+1)(n²+X+1), S7-proof-attempt gaps) are notebook items, not GAPS rows.
+### 3. docs/GAPS.md rows I own (`grep -n "L-SI" docs/GAPS.md` at 6e5f64ad: no hits)
+- None. The row this lane feeds is G-N5-TIME (owner L-NEW; status open); its 17:24Z update names (X) and (NH') OPEN, which is box 4's
+  target. My box 1-3 statements (Lemma U, E1-E6, D, VIS, VIS', LEN, CH, counter bound) are lane readings in docs/si/, PROVED by
+  L-SI successor 1, UNREFEREED, not GAPS rows.
 
 ### 4. The three owner rulings that most constrain me (verbatim), with index status
-1. D1 (docs/decisions/D001-launch-brief.md l.25-26; DECISIONS-INDEX row D1 "active"):
+1. D18 (docs/DECISIONS.md#d18 l.333; DECISIONS-INDEX row D18 "active"):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+   Lead reading L40 (active): every statement labelled PROVED (by whom) / CONJECTURE / OPEN; every ASSUMPTION in one line.
+2. D1 (docs/DECISIONS.md l.6-7; docs/decisions/D001-launch-brief.md; DECISIONS-INDEX row D1 "active"):
+   > Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision.
    > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
-   Any new SI rule is presumed wrong; it is frozen before any run and goes through TARGET.md §5.
-2. D14 (docs/DECISIONS.md#d14 l.245-246; DECISIONS-INDEX row D14 "active"):
-   > D
-   > You know it can also test prveiously not tested approaches, it can come up with it own as well
-   The licence for designing a lane-own rule; with L39 (2) it names this lane's box.
-3. D15 (docs/DECISIONS.md#d15 l.278; DECISIONS-INDEX row D15 "active"):
-   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
-   Lead reading L37 (active): Opus 5.5 for new sessions; no option questions to the owner; I decide inside the brief and report.
-   (Also binding: D17 / L39 (active), which created this successor; D7 stop on overage.)
+3. D16 (docs/DECISIONS.md#d16 l.300; DECISIONS-INDEX row D16 "active"):
+   > Then keep working as I told you to
+   Lead reading L38 (active): no idle fleet; the lane generates its own next direction.
+   (Also binding: D15 "Be autonomous, reason about it" (active, L37): no option questions to the owner.)
 
 ### 5. One trap, and the check that prevents it
-- Trap: a structural claim tested with a wrong classifier. Claim F was checked with a bit-level "cycle-creating" test that missed
-  less-relevant cycle vertices; L-RED's cf1/cf2 showed 2,649 of 3,563 cycle-creating switches misclassified, Claim F false as
-  stated, the msfa/msfc sweep withdrawn (notes/L-SI.md, NOW l.91). Related: Odd's final strategy by argmin-over-successors is wrong
-  (fails harness/verify.py on 3/600 random games and on switchallexp).
-- Check: every rule's output passes harness/verify.py and equals Zielonka regions (experiments/si/check.sh, run by verify.sh;
-  pinned killer counts in instances/pinned.txt); every structural claim is checked with the play notion and a violation counter on
-  random games plus L-RED-style adversarial instances before it is stated, and is labelled READING until refereed.
-- Also carried: stale container (fetch + `git rev-parse HEAD origin/claude/l-si` first; not stale this time); push.sh output to a
-  file, then `$?`; ReadNotifications at each milestone.
+- Trap: citing an unverified climb result. climb.py and sweep.py call elim_g WITHOUT the assert that ortrace.run_states matches
+  n5.run's (iterations, fallbacks) (notes "Things only I know"), so a climb "best" can come from a run that is not N5's run.
+  Related earlier trap: Odd's final strategy by argmin-over-successors is WRONG (fails verify.py on 3/600 random games and on
+  switchallexp); use the recorded restricted-graph counterstrategy.
+- Check: re-run any climb best with gaps.py (asserts equality with n5.run) and, per the box-4 rule, re-verify every cited instance
+  with experiments/new/n5.py, Oink zlk and check_sol2.py before citing it; pin it in an instances/ directory with its sha1.
+- Also carried: stale container (it was stale this time: fetch + ff before anything); push only via scripts/push.sh with output to a
+  file, then `$?`, never piped.
