@@ -329,3 +329,35 @@ Jump levels under (h) with w constant (scratch classification, 20 cases):
 - The 2 others (x31_rx32 k 53, x32_nest40 k 55) jump below u* and are followed at once by a jump at u*.
 - CONJECTURE (JU2): under (h) with w constant, a non-tame jump below rank(u*) is followed within one transition by a jump at rank(u*).
   Data 2/2, too thin to lean on.
+
+## 10. J-climbs (DATA, after the packet; experiments/si/coarse/jclimb.py)
+Fitness: (max J in one phase, total J, in-phase fallbacks). 4 climbs × 30 min, 22:0xZ-22:25Z. Bests are pinned in
+experiments/si/coarse/instances/. Each was re-verified with experiments/si/xing/reverify.sh (n5.py; zielonka (Oink zlk) OK;
+strategies verified) and is one-Odd-choice.
+
+| best (seed) | n | sha1 | n5 it/fb | max J / phase | J_in / J_out (dpot.py) | in-phase fallbacks | releases into D |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| jcl_zcl_cu_n48 (zcl_cu_n48) | 48 | 53c69d2d | 23/1 | 17 | 3 / 14 | 0 | 0 |
+| jcl_x31_cu32i (x31_cu32i) | 32 | 00e09994 | 16/1 | 12 | 12 / 0 | 0 | 0 |
+| jcl_lev_l_sc (lev_l_sc) | 32 | e5b430b2 | 23/9 | 7 | 4 / 3 | 9 | 0 |
+| jcl_x32_nest40 (x32_nest40) | 40 | fdb30eed | 36/23 | 5 | 1 / 4 | 21 | 0 |
+
+- |succ(o)| on the four bests: 18, 14, 9, 6 (row order). So J_in ≤ |succ(o)| everywhere, as Corollary JD gives with 0 releases.
+  jcl_x31_cu32i comes close: J_in 12 against |succ(o)| = 14.
+- On the four bests together: J_in 20, J_out 21, releases into D 0. Every lemma check passed with 0 violations:
+  - COARSE-SI (a) and its converse, MONO;
+  - FB (i)-(iv);
+  - J1 41/41; OFF 1,904; CAP 246; L = M at 30/30 carries;
+  - D1-D3, D2.
+- So J grows in the climbs in two ways:
+  - runs of consecutive exit jumps with no release between them (≤ |succ(o)| per scope run, Corollary JD);
+  - jumps at states where H2 fails. There ω itself is captured, so the D-argument does not apply. These are OTHER-touching
+    transitions, counted by R21's O, which is open separately as (NH').
+- READING: none of the climbs produced a jump paid by a release. The second climb round targets exactly that (JMODE=REL).
+
+### Reversal split (DATA, scratch script, named set)
+- '−' reversals: 62 at fallbacks, now bounded by FB, and 15 at arena steps.
+- '±' reversals: 30, all at arena steps.
+- '+' reversals: 80 at arena steps, 7 of them non-tame.
+- Max per phase: fb− 8, ar− 6, ar± 9.
+- So the rest of (Z), beyond (C), is the arena-step leaves and the '±' transitions (OPEN; next box).
