@@ -84,6 +84,23 @@ If D ≠ ∅, then σ̄_j(o) ≠ e for every later state j of the same run.
   u* between them: every Ξ_t(e), k ≤ t ≤ j, agrees with Ξ_k(e) at and above u*. The proof is steps 1, 2 and 4 with any t in
   place of k+1.
 
+**Lemma VIS′ (PROVED, L-SI, 15:40Z; the general form, without u*).** Same setting.
+- Let e = σ̄_k(o) enter R at k → k+1 with loop L = ρ ∪ {o}.
+- Let t := the most relevant vertex of (L↑c) \ P(Ξ_k(e)). If L↑c ⊆ P(Ξ_k(e)), then t := none.
+- If σ̄_j(o) = e at a later state j of the same joint λ-phase, with τ fixed and (h) at k, k+1 and j, then
+  v := top(P(θ_k) Δ P(θ_j)) exists and is at least as relevant as t.
+- In words: before e can be Odd's best reply again, θ itself must have changed at the level of the loop's new top vertex, or
+  higher.
+Proof.
+- As in VIS, steps 1 and 4: lev(Ξ_k(e), Ξ_j(e)) = lev(θ_k, θ_j) on path sets (o is in both θ's or in neither, and in neither Ξ).
+  So it is 1 + rank(v), or ≤ 0 if P(θ_k) = P(θ_j).
+- lev(Ξ_k(e), Ξ_{k+1}(e)) ≥ 1 + rank(t) when t ≠ none.
+- U (ii) gives 1 + rank(t) ≤ lev(Ξ_k(e), Ξ_j(e)). □
+- VIS is the special case: inside a (w, u*)-run, v is less relevant than u* (Lemma UD).
+- VIS′ needs neither w fixed nor a throttled state.
+Use: every repeated self-elimination of an exit is charged to a θ-change at level ≥ t. This does not count θ-changes by itself:
+a monotone lexicographic sequence can change at a fixed level many times. OPEN whether the charges can be made injective.
+
 DATA check (oneinr.py; 0 violations of the conclusion, as the proof requires):
 
 | instance | INR events in runs | visible | violations |

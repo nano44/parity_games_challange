@@ -11,13 +11,11 @@ summarised in docs/si/README.md. Handover check: docs/agents/handover-checks/L-S
   (i4_hand z = 9 states 0-2), HMZ's max-slack elimination fails (returns_rt48 77/78), N5 eliminates some edge almost every
   transition (non-eliminating runs <= 17 at n <= 64; switch-all control doubles 24/62/140/298); CONJECTURE (ELIM-n) => G-N5-TIME.
 - Code: experiments/si/orlens/ (ortrace, gaps, batch, elim, hmzL, returns, theta, stretchret, vi, climb). out/ is gitignored.
-### IN FLIGHT
-- Nothing running (all climbs ended 15:06Z). Oink built in tools/oink/build (8fbf0a7) in this container.
-- State at 15:10Z: (ELIM-n) FALSE (L-RED elimn_cex_n48, window 49 at n 48) -> (ELIM-poly) OPEN with proved implication;
-  (CYC-ELIM) FALSE (cycelim_cex_n32, s_tp32_final: 14 > d = 10); every-lap-retires FALSE (theta_tp32 states 4-9);
-  ELIM-CANCEL 28/28; PIECE phase-elimination FALSE. New envelopes: phase 59 at n 24, 35 theta-changes in a phase at n 32.
-### NEXT (if the Lead continues the box)
-- A potential for (a) that counts flat theta-changes; or an L-RED-style family from s_tp32_final (theta-changes 2n+ per phase).
+### IN FLIGHT (box 2, Lead GO 15:23Z, to ~18:00Z: (CYC-u*) through the OR lens)
+- docs/si/N5-OR-lens-box2.md: Lemma VIS and VIS' PROVED (visible self-eliminations retire an exit for the (w,u*)-run; a repeated
+  argmin after self-elimination needs a theta-change at the loop's top new level); FALSE per-exit bounds (inr2_n32, rise3_n32).
+- Climbs (climb.py --run --runmax/--runexcess): m_inr2, m_n16, m_n24, x_inr2 until ~16:12Z (out/*.log).
+- Trap met: run definition without (h) counted 'INR' at non-(h) states; thclass.hstate fixes it (use it in every run split).
 ### NEEDS
 - Lead: relay Lemmas U/E1-E5/D to L-RED / L-NEW; (ELIM-n) as an L-RED target (a phase with a non-eliminating window > n).
 

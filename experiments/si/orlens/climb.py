@@ -20,6 +20,7 @@ def fit(G):
     try:
         if RUN:
             nn, d, mr, mi, mt, other, ex = PX.run_g(pg.Game(*G), None, cap=400)
+            if "--runexcess" in sys.argv: return (mt - d, mt, d)   # theta-changes per (w, u*)-run beyond o's out-degree
             if "--runmax" in sys.argv: return (mt, mi, mr, d)   # theta-changes in one (w, u*)-run under (h)
             return (max(mi - 1, mr - 2, mt - 3 * d), mi, mr, mt)   # first entry > 0 = beats INR<=1, RISE<=2 or 3d per run
         if THETA:
