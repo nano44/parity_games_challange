@@ -275,8 +275,44 @@ Consequences:
 ## 9. Re-verification and files
 Re-verified in this box (reverify.sh: sha1, n5.py n5 iterations/fallbacks, check_sol2.py = Oink zlk (pinned 8fbf0a7) + verify.py
 strategies): all 16 files in experiments/si/orlens/instances, all 14 in experiments/red/xing/instances, box 28's oc16_s2, and
-nofe_cyc_n8. Every one: "zielonka(oink zlk) OK strategies verified". The sha1 prefixes and iteration counts are in the reverify
-output (§10 of notes/L-SI.md lists them).
+nofe_cyc_n8. Every one: "zielonka(oink zlk) OK strategies verified". Canonical start unless noted. nofe_cyc_n8 with its .start
+also gives 2/1.
+
+| instance | sha1 | n5.py iterations/fallbacks | Oink zlk + verify.py |
+| --- | --- | --- | --- |
+| cycelim_cex_n32 | c45edf91 | 31/1 | OK, verified |
+| elim24_p52 | 51f0c964 | 59/4 | OK, verified |
+| inr2_n32 | 9689990d | 32/1 | OK, verified |
+| lev_l_n20 | 47a4d340 | 23/0 | OK, verified |
+| lev_l_n28 | 827e01aa | 25/0 | OK, verified |
+| lev_l_sc | 86c17b07 | 54/2 | OK, verified |
+| lev_l_x | 6c365ff7 | 56/3 | OK, verified |
+| rise3_n32 | 4f45bbec | 30/1 | OK, verified |
+| run_m_inr2 | 8f45d1ea | 35/1 | OK, verified |
+| run_m_n24 | 27999f9a | 22/0 | OK, verified |
+| run_x_inr2 | 8a5a82a6 | 51/3 | OK, verified |
+| s_elim24_final | ddb99d6c | 66/4 | OK, verified |
+| s_rt32_final | 93ba6aa3 | 53/6 | OK, verified |
+| s_tp32_final | 67b0d3e7 | 43/2 | OK, verified |
+| thclimb_n12_s11 | e3b47b6e | 19/2 | OK, verified |
+| thclimb_n16_s12 | 6e0704b7 | 17/0 | OK, verified |
+| fbref_cex_n32 | 901674dc | 56/8 | OK, verified |
+| x31_cu16 | 5cd2d77d | 23/1 | OK, verified |
+| x31_cu24 | 80332de0 | 22/1 | OK, verified |
+| x31_cu32 | ab017611 | 49/1 | OK, verified |
+| x31_cu32i | 29145765 | 42/1 | OK, verified |
+| x31_cu48 | a04a96d1 | 46/1 | OK, verified |
+| x31_lem_e24 | 15c8211c | 54/4 | OK, verified |
+| x31_lem_t32 | 60c15284 | 65/6 | OK, verified |
+| x31_nh_e24 | 169ad022 | 20/0 | OK, verified |
+| x31_nh_r20 | 1fbb2add | 15/1 | OK, verified |
+| x31_re24 | 49eaf50e | 6/0 | OK, verified |
+| x31_ru24 | 8b8276f1 | 7/1 | OK, verified |
+| x31_rx32 | 4fe9ec0e | 55/3 | OK, verified |
+| x31_rx48 | 34b44d5d | 53/2 | OK, verified |
+| oc16_s2 | 859f564f | 26/3 | OK, verified |
+| nofe_cyc_n8 | f3868b39 | 2/1 | OK, verified |
+
 Files (experiments/si/xing/):
 - xclass.py (active/passive classification, asserts n5.run equality);
 - leaves.py (L, LV check, random mode);
