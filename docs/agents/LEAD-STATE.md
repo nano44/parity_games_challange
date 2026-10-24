@@ -927,3 +927,4 @@
 - 04:29Z (date -u) C27 Addendum 1 merged (checker 0638755, on b54d0fd); R18 draft N-4/N-5 wording applied. L-NEW 8 box 24 END + handover notes merged (l-new d4e1781; frozen packet untouched since 8cc6aaf, verified by diff); L-NEW 8 PARKED.
 - 04:34Z (date -u) L-NEW successor 9 created: session_01EnPXboLL7nw4CKpAwqSDkm (Opus 5.5, D15/L37; claude/l-new, depth 3000), handover check first. Working: L-NEW 9, L-RED 13, CHECKER (3 of 5).
 - 04:39Z (date -u) R18 LANDED in RESULTS Results after R17 (C27 PASS + Addenda 1-3, checker 7a140bc merged; draft lines 3-end verbatim, header 'checker PENDING' replaced by the checker SHAs in both draft and RESULTS as announced in the C27 request; blank separator line added before the entry; landed-text diff identical). GAPS G-N5-TIME updated. Landed-text check → CHECKER. Owner info (OWNER-DESK): R18, DE34, Fable-referee routing error.
+- 04:44Z (date -u) L-NEW 9 handover check 5/5 (17c2058 merged); GO box 25 (CYC) to ~07:50Z.
