@@ -12,3 +12,22 @@ R19's landed text is frozen; this dated note adds a step and changes no statemen
   Hence every Ξ-or-W-changing transition changes an 𝓡*-value or an 𝓕-value, and the R19 (f) count stands with θ free.
 - Status: R19 (f) as landed is TRUE (REFEREE, R-N5-X §3.2). This note is to be checked by REFEREE-2 (its §C on R-N5-X) and by CHECKER
   when the P-N5-X result is drafted. Until then it is "REFEREE-signed, REFEREE-2 pending".
+
+## Rev. 18:42Z (Lead, by date -u): REFEREE-2 R2-N5-X §3.2 (referee-2 059f492), G-X-1
+- REFEREE-2 finds the same gap independently, and sharper. If the R-part of R19 (f) is read as counting Ξ on R, the per-part bound
+  "≤ |R| − 1 on R" is FALSE with θ free.
+  - Instance: experiments/new/box28/instances/fbref_n48.pg (sha1 414231a2…), transition 56 → 57.
+    - Same phase, (h) at both ends, no fallback, w = (27, ∅, 2) constant, R = {o} = {14}.
+    - θ goes from (27, {28}, 9) to (27, {15, 28, 29}, 18).
+    - Ξ changes at 14 ∈ R with budget 0, and also at F-vertices 3, 16 and 19.
+  - Lead re-run, docs/referee-2/R2-N5-X/dump_tf.py at 059f492: exactly this output (same λ maps; Ξ changes [3, 14, 16, 19];
+    W changes [3, 16, 19]; switched Even (3: 10→6), (16: 33→44)).
+- Lemma TF (REFEREE-2, §3.2) is the same fact as REFEREE's X-1 closure: under (h) at both ends with R and τ constant, a θ-change is an
+  F-value change.
+- Lead reading (both referees agree on the substance): R19 (f) is TRUE when its R-part counts route changes (W on R, the route game
+  against the frozen terminal w, which is what the 𝓡 / 𝓡* construction measures) and θ-changes are charged to the F-part (TF / X-1).
+  Read with Ξ on R, the per-part split fails and only the total ≤ |R| − 1 + |F| − 1 holds.
+- Clarified wording, to be carried as a clarification item in the RESULTS entry for P-N5-X (R19's landed text stays frozen):
+  "θ constant not needed, provided the R-part counts route (W) changes on R; a θ-change under (h) at both ends is an F-change
+  (Lemma TF = REFEREE X-1)."
+- Status: REFEREE-2 proposed this wording; REFEREE's X-1 closure is the same argument. Both referees confirm the wording in their §C.
