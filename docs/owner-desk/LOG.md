@@ -346,3 +346,8 @@ CHECKER $39, L-NEW 8 $32, REFEREE (Fable) $31, L-RED 13 $24, REFEREE-2 (Fable) $
 Desk reading: the owner does not want the fleet idle. Standing instructions D13 ("Keep working on the dtl and also c"), D14 (untested
 approaches, the fleet's own included) and D15 ("Be autonomous, reason about it") apply: resume work and generate new directions
 autonomously instead of waiting for an outside idea. Relayed verbatim to the Lead, priority now.
+
+## 2026-10-24T12:51Z owner (spend/scope)
+> We have so much still of our weekly usage cap, like we are not on track to make the most of it
+Desk reading: the owner wants the fleet to use more of the weekly allowance (more parallel work), not save it. D7 (stop on paid
+overage) unchanged. Relayed verbatim to the Lead, priority now.
