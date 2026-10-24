@@ -178,3 +178,60 @@ Totals (run_all.sh; numbers from logs/totals.txt, written by totals.py over logs
   θ_{E+1} = θ_L is a strict route improvement over the last leave." The proof is §4.2, with (SG) of §4.3 as its one new step.
 - The packet's claim "Ξ_{L+1}(y) may equal Ξ_L(y)" in §6 is false. L-NEW's §6 bullet on (NC) should be replaced by a pointer to §4.2.
 - Nothing here bounds (CYC), (XING) or (FB-1O).
+
+## C. Comparison with REFEREE's R-N5-RE (docs/referee/R-N5-RE.md, referee 4457a9a, trunk 8001ee8; read after my pushes 3ee7b737 / c66da44a; written 14:57Z by date -u)
+### C.1 Agreement per item
+| item | REFEREE | REFEREE-2 (§1-§5) | agreement |
+| --- | --- | --- | --- |
+| (1) Lemma G (a)-(c) | SIGNED | SIGN | full |
+| (2) Lemma Wo | SIGNED (remark: no phase, τ fixed only for b) | SIGN (N-RE-2) | full; same remark |
+| (3) Lemma RM | SIGNED WITH GAPS (RM-1, closed) | SIGN | verdicts differ only by RM-1, a wording point I accept (C.2) |
+| (4) Lemma RE, Corollary RE | SIGNED WITH GAPS, (NC) not needed | SIGN WITH GAPS as written; SIGN without (NC) | full on the mathematics; my N-RE-3 is extra (C.2) |
+| (5) Lemma PIECE | SIGNED WITH GAPS (P-1 closed, P-2 open) | SIGN WITH GAPS (G-RE-3 closed, N-RE-4) | full |
+Both reports independently conclude that (NC) is unnecessary and that the packet's "flat leave" in its §6 cannot occur.
+### C.2 Gap map
+| REFEREE | REFEREE-2 | note |
+| --- | --- | --- |
+| RM-1 (route order across two states needs a terminal-free definition) | — (my §3 uses it silently: "Lemma G (c) makes this the route order for either terminal") | ACCEPTED. Its definition, (c, A_π, \|π\|) against the terminal (c, ∅, 0), is what my sentence needs. Closed by its §3 text |
+| RE-1 (step 2: false Caveat; (NC) unnecessary) | G-RE-1 + the (NC) row of my §7 | same finding. REFEREE calls the Caveat FALSE as an implication and backs this with 1,852 switches outside RE's exact setting. I called it unjustified and found 0 cases inside the setting. Its count is 0 inside the setting too. I accept "false as an implication" |
+| RE-2 (step 3: false justifying sentence) | G-RE-2 | same. Same repair by (V1) at L and L+1 with induction from y back to x |
+| P-1 (\|R\| − 1 is not PH verbatim on R ∪ K) | G-RE-3 | same gap, different repairs (C.4) |
+| P-2 (Consequence omits "inside one joint λ-phase") | N-RE-4, second half | same |
+| — | N-RE-1 (G (a) needs no (h)), N-RE-2 (Wo uses only the W-half of (h)) | wording; REFEREE's §1-§2 remarks say the same |
+| — | N-RE-3 (Corollary RE omits "τ constant on each leave-to-re-entry interval") | mine only. REFEREE's §4.4 checks the corollary "with hypotheses as stated". Lemma RE assumes τ constant, and the corollary's preamble says only "inside a joint λ-phase". I keep N-RE-3. Without the clause, the corollary needs a third class (τ-change in the interval) or the extra hypothesis |
+| — | N-RE-4, first half (θ constant is not needed in PIECE) | mine only; a remark, no effect on the statement |
+| — | N-RE-5 (which "new play" in (i)) | mine only; moot after the repair |
+### C.3 Is REFEREE's (V1)/(V2) replacement for RE step 2 my (SG)?
+Yes. Its §4.2 items 1-4 are my §4.2 step 2 line for line. It uses (V1) at L and L+1 (including y on its new cycle with top c ≠ y), the gate,
+R15 (a) at z, transitivity BEFORE any prefix, and one strict (V2). Its reading of the (i) ∧ (ii) case (the lengths are forced apart) is my §4.4.
+One difference in the general form. REFEREE requires that y be its own cycle node "neither before nor after". My (SG) (§4.3) requires only
+λ_k(y) ≠ y. When λ_{k+1}(y) ≠ λ_k(y), the cycle node changed, so the value changed, and R15 (a) makes the change strict. Mine is the slightly
+stronger form, and the two are consistent:
+- my data: 25,283 switches with λ_k(y) ≠ y, 0 non-strict;
+- REFEREE's negative control: 57 non-strict of 446 switches at vertices that are their own cycle node at L or L+1. My form implies that all
+  57 have λ_L(y) = y. I have not checked its log.
+RE needs only the common part.
+### C.4 REFEREE's contraction 𝓡* against my Lemma-P rerun (PIECE, |R| − 1)
+Both repairs are valid; they reach the same bound by different routes.
+- 𝓡*: o gets a self-loop and c's priority. I checked the order isomorphism:
+  - o-reaching values (c, A_π ∪ P(w), |π| + ℓ(w)) ↦ (o*, A_π, |π|). Whether o itself is in P(w) is the same for all of them, so symmetric
+    differences and length differences are unchanged.
+  - An internal cycle with top t compares to o* exactly as to c.
+  - In 𝓡, o's only edge is τ(o) ∈ F, so no internal cycle passes o.
+  So R17 Theorem PH applies VERBATIM on |R| vertices. This is the cleaner repair: it re-proves nothing.
+- Mine (§5) re-runs Lemma P on 𝓡 itself, with the base case at o. It needs a short re-check of Lemma P's cases A2/B1/B2, and in return no
+  change of game.
+I would cite 𝓡* in RESULTS, with my rerun as a second check.
+Data on tightness: REFEREE reports slack 0 for both split bounds. My logs have no stretch with vcR = |R| − 1 ≥ 1 or vcF = |F| − 1 ≥ 1
+(counters PIECE_R_tight / PIECE_F_tight absent = 0, over 2,836 stretches). So any slack-0 case it saw is either a trivial piece
+(|R| = 1 or |F| = 1) or one my generator does not reach. This is a data difference, not a disagreement on the proof.
+### C.5 Final verdicts (Opus 5.5, D15)
+| item | final verdict | open for L-NEW |
+| --- | --- | --- |
+| (1) Lemma G (a)-(c) | SIGN | — |
+| (2) Lemma Wo | SIGN | — |
+| (3) Lemma RM | SIGN (with RM-1 accepted as wording, closed) | — |
+| (4) Lemma RE | SIGN WITHOUT (NC), with the repaired step 2 = (SG) (both reports) and step 3 by (V1) | rewrite steps 2-3; delete (NC) and its §6 bullet |
+| (4) Corollary RE | SIGN WITH GAPS | N-RE-3: add "τ constant on each leave-to-re-entry interval"; delete "(NC) at every leave" |
+| (5) Lemma PIECE | SIGN WITH GAPS (P-1 = G-RE-3 closed by 𝓡* or by my Lemma-P rerun) | P-2 = N-RE-4: add "inside one joint λ-phase" to the Consequence |
+(NC) is closed by both referees independently, and so is the (NC) residue of G26-1. G-N5-TIME, (CYC), (XING) and (FB-1O) stay OPEN.
