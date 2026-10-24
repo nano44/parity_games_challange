@@ -1,39 +1,44 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 9 PARKED after box 27, 2026-10-24 15:40Z by date -u)
-Successor 9 (Opus 5.5, D15/D18), session_01EnPXboLL7nw4CKpAwqSDkm. Boxes 25-27 (Oct 24 04:47Z-15:33Z; parked 06:05Z-12:58Z). Nothing
-running at park. Older resume points are in git history.
+## Resume point (successor 10, WORKING box 28; written 2026-10-24 16:38Z by date -u)
+Successor 10 (Opus 5.5, D15/D18), session_0168YKVAbrcRjhbJ6XKi3JyU. Handover check 5/5 (b062a364, merged 4155cde). GO box 28 at 16:18Z,
+box to ~19:20Z. Successor 9's resume point is in git history (af823a23).
 
-### DONE (all pushed with scripts/push.sh and merged by the Lead)
-- Box 25: docs/new/N5-1Ocyc-box25.md.
-  - Lemma 1 holds on all of 𝒞^1O (it settled N-3).
-  - Prop Z: the reduction to X ∪ Reach(o).
-  - Smaller W-drop instances (first refuted by box 22).
-  - Smallest σ̄-lap, n 6.
-- Box 26: docs/new/N5-reentry-box26.md. The stand-down lead ("every re-entry is a route improvement") is FALSE. θ-only
-  re-entries exist; smallest thetare_n.pg, n 11.
-  - Lemmas G, Wo, RM, RE, PIECE are in packet docs/new/P-N5-RE-box26.md (pinned 52c7261). Both referees SIGNED it, with gaps; (NC) is
-    not needed. Drafted as RESULTS R19 (CHECKER C28).
-  - Never edit the pinned packet. Corrections live in docs/new/N5-xing-box27.md §9.
-- Box 27: docs/new/N5-xing-box27.md. Throttled crossings via a COARSE valuation (vertices above u* := top(P(θ) Δ P(w))).
-  - PROVED: Lemma C, FBL, FBF (FB-RE = 0), XA (per re-entry), UT, UD.
-  - PROVED-in-writing: Lemma CR (coarse R17).
-  - Packet docs/new/P-N5-XA-box27.md (sha1 832d0da2…) is PINNED at trunk b70aa59. Both referees started at 15:22Z.
-  - Reduction (READING, assumes (h)): N5 on o-cyclic 𝒞^1O is polynomial ⇐ (CYC') θ- and w-changes per joint λ-phase, plus (NH)
-    non-(h) transitions per phase, both poly(n).
+### DONE in box 28
+- docs/new/P-N5-XA-fixes-box28.md (pushed 4b1389c6): the referees' repairs for P-N5-XA written out. FBL is for u* ≠ none only
+  (u* = none OPEN); FBF holds for every u*; XA-3, XA-4, N-XA-1, N-XA-2; flat fallbacks pass PIECE; N-XA-3; the Corollary as signed.
+  One addition of mine: "value-changing" means a change of Ξ or W, because at a crossing a W-flat transition can change Ξ.
+- docs/new/N5-NH-box28.md:
+  - PROVED: Lemma XW (Ξ ⊴ W); Lemma EQ (runs with Ξ = W, (h) or not: ≤ n − 1 value-changing); Lemma FBL-N.
+  - READING: (NH) reduces to (NH') = transitions touching OTHER states ((h) fails and Ξ ≠ W).
+  - READING: the (w, u*)-run accounting. θ-changes cost nothing by themselves; what remains is (W) w-changes, (FB-run) non-flat
+    fallbacks per run, and (U0) u* = none runs.
+  - DATA: wd16_s2 and oc16_s2 phase anatomy; random and climb tables.
+  - §5b: Lemma FB-W (PROVED): post-freeze W-status evictees never re-enter. CONJECTURE FBRE-F, data nearly vacuous (wave shape
+    of rt48 / ph64).
+  - §5c (READING, the strongest form): per joint λ-phase, transitions are O(n⁴ (1 + X + O)), where X = crossing transitions and
+    O = OTHER-touching transitions. (CYC'), (W), (FB-run) and (U0) are subsumed. The open items are (X) and (NH').
+  - §6.4: eqcheck.py, 0 failures for XW / EQ / FBL-N.
 
-### IN FLIGHT (others)
-- REFEREE / REFEREE-2 successors 4 on P-N5-XA.
-- CHECKER C28 on R19.
-- L-RED 14 on (CYC') with sc32 as the seed.
-- L-SI box 2 on (CYC-u*).
+### IN FLIGHT (mine; experiments/new/box28/out/)
+- fbclimb.py seeded from inr2_n32 (non-flat fallbacks per run); FIT=p seeded from rt48 (FBRE-F attack); wclimb.py (w-changes at
+  throttled transitions); xclimb.py seeded from sc32 (X per phase: 37 at n 32 by 16:58Z). The OTHER climbs were stopped (16 at
+  n 16, 19 at n 24).
+- Kill only by pid (`ps -eo pid,args | awk '$3=="otherclimb.py"'`), never with pkill -f.
 
-### NEEDS / next (Lead routing 15:37Z)
-- Successor 10, box 28, proof side:
-  - first (NH): bound the transitions at non-(h) states per joint λ-phase, or reduce them;
-  - then (CYC') from the designer's angle.
-- Watch for referee gaps on P-N5-XA. Fix them in a NEW dated file, never in the pinned packet.
+### NEXT
+- Final climb numbers into N5-NH-box28.md §6. Check every best with `python3 n5.py n5 X.pg out/chk.sol` and then
+  `python3 check_sol2.py X.pg out/chk.sol`, from experiments/new/.
+- Try to bound (FB-run), or find a family where it grows superlinearly. Ask a referee to check the §5 table (C / CR / XA in a (w, u*)-run).
+
+## Things only I know (successor 10)
+- Ξ ⊴ W always (σ̄ is Odd's best counter-strategy). This one-liner makes EQ / THR / OTHER a partition, and gives θ ⊴ w.
+- Most non-(h) states are COINCIDENT (σ̄(o) = τ(o)), where Ξ = W and Lemma EQ applies. OTHER states have every clause pattern.
+- In every named (w, u*)-run all leaves are fallback leaves (ARE = 0). The re-entries are FBRE (inr2_n32 6, rise3 1, thetare_n 1).
+  sc32's runs have no re-entries at all.
+- The random C^1O generator almost never gives throttled runs. Climbs must be seeded (fbclimb.py's 5th argument).
+- The container clock (date -u) runs slower than my sense of time. Stamp only from date -u.
 
 ## Things only I know (successor 9)
 - Box 26/27 picture (READING; assumes (h)). Inside a joint λ-phase with τ fixed:

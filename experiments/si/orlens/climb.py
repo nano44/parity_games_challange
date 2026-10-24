@@ -9,15 +9,21 @@ sys.path.insert(0, os.path.join(HERE, "..", "..", "new", "box25")); sys.path.ins
 from common import rand_c1o
 from climb_fix import mutate
 sys.path.insert(0, HERE)
-import ortrace as OT, elim as EL, thetaelim as TE, perexit as PX
+import ortrace as OT, elim as EL, thetaelim as TE, perexit as PX, levels as LV
 pg = OT.pg
 ONEODD = "--anyodd" not in sys.argv
+LEVEL = "--level" in sys.argv   # fitness for (LEVEL-c)
 RUN = "--run" in sys.argv   # fitness for (RUN-3d): (max(INR-1, RISE-2, theta-per-run - 3d), INR, RISE, theta-per-run)
 THETA = "--theta" in sys.argv   # fitness = (window theta-changes - d, window theta-changes, theta-changes in that phase)
 def fit(G):
     n = len(G[0]); odd = [v for v in range(n) if G[1][v] == 1 and len(set(G[2][v])) > 1]
-    if (ONEODD and len(odd) != 1) or any(not s for s in G[2]): return (-99, -1, -1, -1) if RUN else ((-99, -1, -1) if THETA else (-1, -1))
+    if (ONEODD and len(odd) != 1) or any(not s for s in G[2]): return (-1, -1) if LEVEL else (-99, -1, -1, -1) if RUN else ((-99, -1, -1) if THETA else (-1, -1))
     try:
+        if LEVEL:
+            from collections import Counter
+            nn, seq = LV.run_g(pg.Game(*G), None, cap=400)
+            cnt = Counter(l for l, _ in seq if l >= 0)
+            return (max(cnt.values(), default=0), len(seq))   # max theta-changes at one path-set level, theta-changes
         if RUN:
             nn, d, mr, mi, mt, other, ex = PX.run_g(pg.Game(*G), None, cap=400)
             if "--runexcess" in sys.argv: return (mt - d, mt, d)   # theta-changes per (w, u*)-run beyond o's out-degree
@@ -28,7 +34,7 @@ def fit(G):
             d = len(set(G[2][odd[0]])) if odd else 0
             return (b[0] - d, b[0], b[1])   # (CYC-ELIM) is violated iff the first entry > 0
         _, it, rows = EL.elim_g(pg.Game(*G), None, 'n5', cap=400)
-    except Exception: return (-99, -1, -1, -1) if RUN else ((-99, -1, -1) if THETA else (-1, -1))
+    except Exception: return (-1, -1) if LEVEL else (-99, -1, -1, -1) if RUN else ((-99, -1, -1) if THETA else (-1, -1))
     r = max(rows, key=lambda q: (q["noelimrun_st"], q["trans"]))
     return (r["noelimrun_st"], r["trans"])
 if __name__ == "__main__":
