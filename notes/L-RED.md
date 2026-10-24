@@ -26,6 +26,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     - xclimb.py targets: lemmas, nh, cyc, cycu, reent, reentu, fbref. Needs LNEW_BOX25 = a worktree of l-new 1322d958 or later.
     - fbref.py, levels.py, nhwhy.py.
   - L-NEW box 28 tools: run them from a worktree of l-new 2a195b3 (experiments/new/box28/fbre.py), from inside that directory.
+- BOX 34 DONE (GO 21:07Z, END ~23:30Z; docs/red/R64-carries-J.md):
+  - (C) ≤ 8 (no growth); (CL) 0 violations (ccclimb.py).
+  - J per phase raised from 3 to 10 (j10_n24), 8 at n 32 / 48 (jclimb.py with L-SI tame.py at l-si 25d16cc8; LSI env = an l-si
+    worktree). Linear-looking. All verified.
+  - Context at box end ~445k. Handover planned at ~560k (Lead).
 - BOX 33 DONE (GO 20:0xZ, END ~21:05Z; docs/red/R63-u1-attack.md):
   - (U1-T) REFUTED as stated, u1t_cex_n32 (63dfd785; Lead re-ran, merged 9769dc3): 7 per vertex at one W-length; own-switch
     cascade 2→18→19→18. u1t_own6_n32 gives 6 own switches.
