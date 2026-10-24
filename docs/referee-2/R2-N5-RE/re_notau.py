@@ -50,7 +50,7 @@ def main():
             st, fb = rc.n5_spec(g, o, s, t) if mode == "spec" else rc.n5_own(g, o, s, t, rng)
             run(g, o, st, fb, c, bad, f"seed{seed}#{i}"); c["runs"] += 1
     else:
-        g = rc.parse(open(sys.argv[2]).read()); o = [v for v in range(g.n) if g.owner[v] == 1 and len(g.succ[v]) > 1][0]
+        g = rc.parse(open(sys.argv[2]).read()); oc = [v for v in range(g.n) if g.owner[v] == 1 and len(g.succ[v]) > 1]; assert len(oc) == 1, f'not C^1O: Odd choice vertices {oc}'; o = oc[0]
         mode = sys.argv[3] if len(sys.argv) > 3 else "own"; runs = int(sys.argv[4]) if len(sys.argv) > 4 else 30
         rng = random.Random(1)
         for r in range(1 if mode == "spec" else runs):
