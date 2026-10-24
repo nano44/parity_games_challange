@@ -144,7 +144,7 @@ Sources:
 | N-NH-2 | remark "c_θ = c_w … THR situation" | needs (h) |
 | N-NH-3 | reduction: boundary transitions of OTHER blocks | name them |
 
-## C. Comparison with REFEREE's R-N5-NH (referee 78d61b1, trunk f42ccad; read after my push 48da84a1; written 20:03Z by date -u)
+## C. Comparison with REFEREE's R-N5-NH (referee 78d61b1, trunk f42ccad; read after my push 48da84a1; written 20:01Z by date -u; first pushed in 8621a847 with a wrong stamp 20:03Z)
 ### C.1 Agreement per item
 | item | REFEREE | REFEREE-2 | agreement |
 | --- | --- | --- | --- |
