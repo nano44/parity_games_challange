@@ -1,11 +1,11 @@
-# Draft RESULTS R18 (Lead, 2026-10-24 04:05Z by date -u) — awaits CHECKER C27; lands in "## Results" after R17, before "## Dead ends"
+# Draft RESULTS R18 (Lead, 2026-10-24 04:05Z by date -u) (rev. 04:15Z: signed object d78e54f per both referees' §C2) — awaits CHECKER C27; lands in "## Results" after R17, before "## Dead ends"
 
 ### R18 [refereed-only] N5 on o-acyclic one-Odd-choice games: fewer than (C_X + d)(B + 1) iterations from any start, conditional on (P) for one-player games; and Proposition X (2026-10-24) — a bound on the candidate N5 itself on a subclass that is polynomial by other means (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C27.md, checker PENDING)
-- Objects (packet P-N5-1OA, signed object = trunk 07f298d): (A) docs/red/R58-n5-width.md §9, Proposition X and Corollary X1 (L-RED
-  successor 13, Opus 5.5; l-red f93e517); (B) docs/new/N5-1Oacyc-box24.md at l-new 9d7890f (L-NEW successor 8, Opus 5.5), with
-  Lemma R and Lemma S of docs/new/N5-time-box21.md §2.1-§2.2. Both referees also re-checked the rewritten, self-contained text
-  (trunk d78e54f, l-new 8cc6aaf, file sha1 d35502679af112e9fa31eb3af99e64fb4afda1ba; REFEREE §0, REFEREE-2 §7): every verdict
-  unchanged; that text is a record, not the signed object. N5 as specified in docs/new/N5-ssi-global.md (SPEC S1-S5; RESULTS R15).
+- Objects (packet P-N5-1OA, signed object = trunk d78e54f): (A) docs/red/R58-n5-width.md §9, Proposition X and Corollary X1 (L-RED
+  successor 13, Opus 5.5; l-red f93e517); (B) docs/new/N5-1Oacyc-box24.md at l-new 8cc6aaf, the self-contained text (file sha1
+  d35502679af112e9fa31eb3af99e64fb4afda1ba; L-NEW successor 8, Opus 5.5), with Lemma R and Lemma S of docs/new/N5-time-box21.md
+  §2.1-§2.2. Both referees first reviewed the earlier sketch (trunk 07f298d, l-new 9d7890f), then re-checked d78e54f (REFEREE §0,
+  REFEREE-2 §7) and signed it in §C2; verdicts are identical at both pins. N5 as specified in docs/new/N5-ssi-global.md (SPEC S1-S5; RESULTS R15).
   Source for (P): Vöge-Jurdziński, BRICS RS-00-48 (pdf sha256 485a12de…), Lemma 5.8 "1 ⇒ 2".
 - Setting: 𝒞^1O = games in which exactly one Odd vertex o has out-degree d > 1. X := the vertices with no path to o (so G[X] has no Odd
   choice), Y := V \ X, m_X := the number of edges inside X. o-acyclic := o lies on no cycle of the game graph. A transition of N5 is
@@ -40,13 +40,15 @@
   statY_12, i4_hand: Prop X exact in every case (also on 735 o-cyclic games), 1,531 changes of σ|X all pointwise optima, 83 pure
   transitions 0 violations. Both: block_bk20 / block_bk32 (blocks of 27 and 49), Lemmas 1-3 and the block identity at all 76 pure states,
   0 violations. Lead: statcheck.py fresh seeds 41/42 and bk20/bk32, 0 failures. Negative control fts_best16 fails as expected (all three).
-- Signatures: REFEREE docs/referee/R-N5-1OA.md (referee 9060b51; §0 re-pin bb96f45; §C 061052c): (A) SIGNED WITH GAPS A1-A2, Cor. X1
-  SIGNED as a reading, (B) SIGNED CONDITIONAL ON (P) WITH GAPS B1-B7, Lemma R SIGNED, Lemma S SIGNED WITH GAPS S1-S2. REFEREE-2
-  docs/referee-2/R2-N5-1OA.md (referee-2 603cb3a; §7 re-pin 3188622; logs d5d941a; §C 0ea3441): (A) SIGN WITH GAPS (G-1OA-1, -2, N-1),
-  Cor. X1 SIGN, (B) SIGN WITH GAPS conditional on (P) (G-1OA-3..5, N-2, N-3), Lemma R SIGN, Lemma S SIGN WITH GAPS (G-1OA-6). Both §C:
-  identical verdicts, no disagreement; joint gap map A1 = G-1OA-2 + N-1, A2 = G-1OA-1, B2 = G-1OA-3, B3 = N-3, B4 = G-1OA-5,
-  S2 = G-1OA-6 (second half), (P) = G-1OA-4; REFEREE accepted G-1OA-6 (first half) as missed by it; B1, B5, B6, S1 REFEREE only, B7 = N-4
-  (wording, d78e54f text). All closed as wording or by derivation in the reports except G-1OA-4 ((P), conditional) and G-N1 (DATA).
+- Signatures: REFEREE docs/referee/R-N5-1OA.md (referee 9060b51; §0 re-pin bb96f45; §C 061052c; §C2 73b46eb): (A) SIGNED WITH GAPS
+  A1-A2, Cor. X1 SIGNED as a reading, (B) SIGNED CONDITIONAL ON (P) WITH GAPS B7 (= N-4) and N-5 (B1-B6 closed or confirmed), Lemma R
+  SIGNED, Lemma S SIGNED WITH GAPS S1, S2, G-1OA-6 (first half). REFEREE-2 docs/referee-2/R2-N5-1OA.md (referee-2 603cb3a; §7 re-pin
+  3188622; logs d5d941a; §C 0ea3441; §C2 77f9cf7): (A) SIGN WITH GAPS (G-1OA-1, -2 closed; N-1), Cor. X1 SIGN, (B) SIGN WITH GAPS
+  conditional on (P) for one-player games (N-2, N-4 = B7, N-5; G-1OA-3, -5 closed by the d78e54f text), Lemma R SIGN, Lemma S SIGN WITH
+  GAPS (G-1OA-6; S1, S2). Both §C and §C2: identical verdicts at both pins, no disagreement; joint gap map A1 = G-1OA-2 + N-1,
+  A2 = G-1OA-1, B2 = G-1OA-3, B3 = N-3, B4 = G-1OA-5, B7 = N-4, S2 = G-1OA-6 (second half), (P) = G-1OA-4; each referee accepted one item
+  it missed (REFEREE: G-1OA-6 first half and N-5). Joint open list: G-1OA-4 ((P), conditional by design) and inherited DATA gap G-N1;
+  wording items G-1OA-1, G-1OA-2/N-1, G-1OA-6, N-2, N-4, N-5, S1.
 - TARGET.md diff: not a claim of TARGET.md section 1 (a subclass with one Odd choice vertex; no statement about general parity games).
   Gauntlet: partial step-4 lemma for N5 on a subclass. GAPS G-N5-TIME: o-acyclic 𝒞^1O closed conditional on (P) on landing; o-cyclic
   𝒞^1O and the general case open.
