@@ -14,6 +14,7 @@ Fitness (lexicographic): (violations, exercise) where exercise depends on --targ
   nest   : (counter digits, longest chain of path-set levels with m_r strictly increasing downwards, X of the phase); a digit is
            a level r with m_r >= 2 and 2 m_r >= 1 + T(>r). A k-digit binary counter has k - 1 such digits below its top
            (box 32 (b), L-SI box 3 design target)
+  waves  : (transitions in one phase where >= 3 vertices leave R ("peels"), X of that phase, digits)
   cycu   : (max θ-changes inside one (w, u*)-run, max θ-changes per phase)    ((CYC-u*), L-NEW §8b; lemma checks skipped in
            the fitness, run them on the bests)
   A (w, u*)-run: consecutive states of one joint λ-phase (phaseprofile.py's key) with (h), θ ◁ w, w fixed and u* (the most
@@ -97,8 +98,10 @@ def nest(g):
         for r in lv:                         # lv is top first; above = path-set θ-changes at levels > r
             if m[r] >= 2 and 2 * m[r] >= 1 + above: dig += 1
             above += m[r]
-        best = max(best, (dig, b[0], X)); a = i
+        peels = sum(1 for j in range(a, i - 1) if len(rows[j][2] - rows[j + 1][2]) >= 3)
+        best = max(best, (peels, X, dig) if WAVES else (dig, b[0], X)); a = i
     return best
+WAVES = False
 
 def measure(g):
     c = Counter()
@@ -121,14 +124,15 @@ def score(c, target):
     return (v, ex)
 
 def fit(G, target):
-    if target == "nest":
+    if target in ("nest", "waves"):
+        global WAVES; WAVES = target == "waves"
         n = len(G[0]); odd = [v for v in range(n) if G[1][v] == 1 and len(G[2][v]) > 1]
         if len(odd) != 1 or any(not x for x in G[2]): return (-1, -1, -1), None
         g = pg.Game(*G)
         if not any(w in split(g, odd[0]) for w in G[2][odd[0]]): return (-1, -1, -1), None
         try: b = nest(g)
         except Exception: return (-1, -1, -1), None
-        return b, {"digits": b[0], "chain": b[1], "X": b[2]}
+        return b, ({"peels": b[0], "X": b[1], "digits": b[2]} if WAVES else {"digits": b[0], "chain": b[1], "X": b[2]})
     if target == "fbref":
         import fbref
         n = len(G[0]); odd = [v for v in range(n) if G[1][v] == 1 and len(G[2][v]) > 1]
