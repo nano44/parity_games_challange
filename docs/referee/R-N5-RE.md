@@ -170,7 +170,7 @@ TARGET.md claim; TARGET.md diff: these are lemmas about the candidate N5 on 𝒞
 statements of TARGET.md §2.
 
 ## §C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-RE.md, referee-2 c66da44, trunk 8001ee8; read after my report was pushed at 4457a9a8)
-Written 2026-10-24 15:00Z-15:10Z by date -u. (Opus 5.5, D15).
+Written 2026-10-24 14:57Z-14:58Z by date -u (stamp corrected at 15:05Z: the first push 87beaa60 carried an estimated 15:00Z-15:10Z). (Opus 5.5, D15).
 ### C1. Agreement per item
 | item | REFEREE (§1-§5) | REFEREE-2 | agreement |
 |---|---|---|---|
