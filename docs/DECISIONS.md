@@ -314,3 +314,17 @@ Lead reading L38 (2026-10-24 12:50Z by date -u):
 (3) No spend limit was stated; D1/D7 (stop on paid overage and tell the owner) holds. Boxes stay about 3 h; the Lead re-runs every kill
     and claim as before.
 (4) Pacing: when a line is exhausted, the Lead routes the next self-generated direction from the queue in NOW instead of idling.
+
+## D17 (2026-10-24 ~12:57Z, owner via OWNER-DESK, right after D16)
+> We have so much still of our weekly usage cap, like we are not on track to make the most of it
+
+Lead reading L39 (2026-10-24 12:58Z by date -u):
+(1) Spend signal: the owner wants the weekly allowance used for parallel work. Saving money is not a reason to idle or to cut a line short
+    (this answers N5-STANDDOWN's "more boxes would mostly spend money"). D1/D7 (stop on paid overage) and the 5-working-lane cap stand.
+(2) Five working lanes from now: L-RED 13 (DTL gap, box 30), L-NEW 9 (N5 lead, box 26), L-LIT (T27 untested approaches), L-COMP succ. 2
+    (box 3: exhaustive small-game searches that the climbs cannot do), and a new L-SI successor on Opus (D15) (box: a new SI rule that
+    avoids N5's trust-mode deadlock without collapsing to switch-all, DE34's lesson).
+(3) Above 5 (D1 "unless you justify more to me"): CHECKER and the two referees are gate roles. When a kill or a claim needs them, they run
+    in addition to the five lanes, so that landing never waits and no lane is parked to make room. This is reported to the owner with this
+    justification; the expected peak is 7-8 sessions.
+(4) Each finished box is followed by the next self-generated box from the queue in NOW (L38 (4)).
