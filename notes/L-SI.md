@@ -19,7 +19,8 @@ by explicit path only). Oink built in this container (8fbf0a7).
 - NOFE first form (nofe_cyc_n8, sha1 f3868b39 + .start). (U*-DROP): 19/19 violations. (W-LAY) ≤ n−1 W-changes between W-lowerings:
   thclimb_n16_s12 (16 at n 16). Φ(R,θ,w) potentials: x31_re24/ru24. Φ(R-side only): lev_l_sc (R = ∅ at states 8 and 32).
 ### OPEN
-- (Z) reversals of R per joint λ-phase (data: ≤ 7 on 31 instances; climbs in box 4 §6); (NH'); (ELIM-poly), (LEVEL-poly), (CYC-u*) as
+- (Z) reversals of R per joint λ-phase, hard part (C) carries = evicting fallbacks (data: Z ≤ 7 on 31 named instances; climbs Z 18 /
+  carries 13 at n 32, Z 22 at n 48 with 0 carries; box 4 §6, §10); (NH'); (ELIM-poly), (LEVEL-poly), (CYC-u*) as
   before. G-N5-TIME OPEN.
 
 ## Previous resume point (successor 1, Opus 5.5 D15; PARKED 2026-10-24 ~17:35Z at ~563k context, Lead 17:3xZ; LANE-RESTART step 1)

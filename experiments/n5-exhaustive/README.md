@@ -119,3 +119,59 @@ Readings (DATA; CONJECTURE = exhaustive in the stated subset):
   such long phase seen has o on the play cycle and theta, w constant.
 - reentry.py classes: ROUTE dominates; THETA occurs (n 7, start pair); OTHER occurs already at n 5 from the canonical start.
 - Not done (Lead 17:1xZ, would need new runs): the X (crossing transitions) and O (OTHER-state transitions) columns; handed to box 5.
+
+## Box 5 (Lead GO 17:5xZ, D18; L-NEW box 28 §5c (X) and (NH')): X and O per joint lambda-phase (runs 17:52-19:56Z)
+Labels (L40): everything here is DATA (exact = exhaustive in the stated class), CONJECTURE (data behind it named) or OPEN; nothing is
+PROVED. Phase key (lambda_sigma, lambda_tau, tau(o)) as box25 phaseprofile.py (not exh.py's maxph key).
+- X = crossing transitions of a phase (R changes; R = vertices whose (sigma, tau)-play reaches o, box28 fbre.reach_o / thtrace.Rset);
+  O = transitions of the phase with an OTHER endpoint ((h) fails and Xi != W at some vertex). Columns max X, max O per run, with the
+  length of the phase attaining it (Xplen / Oplen) and X - n (Xmn). box4.py --no-reentry skips reentry.py (box 4 has those columns).
+- Definition check (xo_validate.py): box4.measure_ph's per-phase (first, last, X, O) and trace_fb's states equal L-NEW's
+  box28 xcount.phases_x on 33 instances: sc32 (X 30), theta_tp32 (22), fts_best16 (14), fbref_cex_n32 (28; sha1 901674dc), x32_sc32
+  (X 37 > n 32), oc16_s2 (O 16), box28/out/*, instances/*. ALL EQUAL.
+- O split (xo_split.py, from docs/new/N5-NH2-box29.md §0, §4-§5, l-new 670a63b): crossing-free interval = maximal run of states of a
+  phase with R constant; each OTHER-touching transition is CROSS, or FCH (Xi/W change on F = V \ R), RONLY (changes on R only) or
+  FLAT; WC = w-changes under not H1 and not H2; RONLY per OTHER block. Per-phase sums equal box29 rsplit.py / otherx.py.
+
+| table (results/box5/) | games / runs | max X per phase (phase length) | max O per phase (phase length) | X hist | O hist |
+| --- | --- | --- | --- | --- | --- |
+| n 4 canonical (full canonical subset) | 4,828,736 | 2 (2) | 1 (1) | 0: 4,773,310, 1: 55,330, 2: 96 | 0: 4,826,000, 1: 2,736 |
+| n 4 all starts (no forced, Even out-deg <= 2) | 704,000 / 7,340,032 | 3 (3) | 2 (2) | 0: 7,021,260, 1: 297,578, 2: 21,102, 3: 92 | 0: 7,323,452, 1: 16,576, 2: 4 |
+| n 5 canonical subset (as box 3: no forced, Even out-deg <= 2, o out-deg 2, o-cyclic; all 160 slices) | 68,764,800 | 2 (2) | 1 (1) | 0: 66,711,412, 1: 2,036,230, 2: 17,158 | 0: 68,703,572, 1: 61,228 |
+| random, canonical + 1 random start, 20,000 games per n, n 6..16 (box4_rnd_n_n_s5nn.json) | 16,888-18,358 games per n (2 runs each) | 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4 (n 6..16) | 1, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2 | | |
+
+Climbs (climb5.py; canonical start; mutation box21 climb_fix.mutate; one seed, 120 s per n unless stated; logs gitignored):
+- X from random starts: X = 3, 4, 4, 6, 7, 8, 9, 10, 11, 12, 13 at n 6..16 (= n - 3 from n 9 on; every witness has X = its phase
+  length). Never X > n (L-NEW's x32_sc32 has X 37 > n 32 by a targeted climb).
+- O from random starts: 2, 3, 4, 5, 11, 7, 8, 10, 10, 11, 12 at n 6..16 (noisy; two 300 s climbs at n 10 reached only 6).
+- O seeded chain (each n seeded with the previous best padded with Even self-loops; 240 s, 300 s from n 28): every instance is ONE
+  long phase in which every transition is OTHER-touching, pattern 23 (H1, not H2: o on the (sigma, tau)-play cycle, Xi(o) and W(o)
+  with different cycle nodes) at every state, tau constant, theta 1-2 changes, w none. All passed check_instance.py.
+
+| n | instance (sha1) | O = phase length | O/n | CROSS = X | FCH | RONLY | FLAT, WC | intervals | max FCH in an I (|F| - 1) | max RONLY in an I (|R| without o) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 10 | b5_o11 (db4fe55a) | 11 | 1.10 | 4 | 7 | 0 | 0, 0 | 4 | 4 (7) | 0 |
+| 12 | b5_os_n12 (7f626c27) | 16 | 1.33 | 6 | 10 | 0 | 0, 0 | 4 | 5 (8) | 0 |
+| 14 | b5_os_n14 (74e10e25) | 20 | 1.43 | 7 | 12 | 1 | 0, 0 | 5 | 7 (10) | 1 (6) |
+| 16 | b5_os_n16 (6297686b, vertex-minimal at O 24) | 24 | 1.50 | 9 | 13 | 2 | 0, 0 | 5 | 8 (11) | 2 (8) |
+| 20 | b5_os_n20 (655e787b, vertex-minimal at O 32) | 32 | 1.60 | 9 | 21 | 2 | 0, 0 | 8 | 10 (15) | 2 (11) |
+| 24 | b5_os_n24 (3aca1103) | 49 | 2.04 | 8 | 34 | 7 | 0, 0 | 8 | 14 (19) | 7 (16) |
+| 28 | b5_os_n28 (ea287f50) | 60 | 2.14 | 11 | 42 | 7 | 0, 0 | 10 | 13 (23) | 6 (19) |
+| 32 | b5_os_n32 (09b22134) | 67 | 2.09 | 9 | 50 | 8 | 0, 0 | 9 | 14 (27) | 8 (24) |
+| 40 | b5_os_n40 (00fc4562) | 77 | 1.93 | 16 | 55 | 6 | 0, 0 | 12 | 17 (35) | 2 (31) |
+(intervals = crossing-free intervals with at least one transition; the per-interval RONLY of a block equals that of its interval
+here: one OTHER block per interval.)
+
+Readings:
+- DATA (exact, in the subsets): max X per phase 2 / 3 / 2 and max O per phase 1 / 2 / 1 at n 4 canonical / n 4 all starts / n 5
+  subset; the maximum is always
+  attained by a phase of exactly that length (every transition crossing / OTHER-touching).
+- CONJECTURE (data: the tables, climbs n 6-16): X <= n - 3 for n >= 9 is NOT claimed (climb budget); X <= n seen everywhere except
+  L-NEW's targeted x32_sc32 (37 > 32). (X) stays OPEN.
+- DATA: O > n from n 10 on, O/n rising to about 2.1 at n 28 and falling to 1.93 at n 40 on the seeded chain: consistent with O ~ 2n
+  (linear), superlinear not seen; climb budget shrinks with n (iterations 86k at n 12, 5.7k at n 40), so this is a lower bound only.
+- DATA, against box 29: on every chain instance O = CROSS + FCH + RONLY (FLAT = WC = 0); FCH <= |F| - 1 per interval (Lemma F1°,
+  PROVED by L-NEW) and RONLY <= |R| per interval (CONJECTURE (OB_R), not refuted; max ratio 8/24). The growth of O is F-changes
+  times the number of crossing-free intervals (about X + 1), i.e. the (NH') <= (X) + F1° + (OB_R) shape; (NH') stays OPEN.
+- Box 4 column completed by the full n 5 subset (DATA, exact): max (CYC') = 4 (theta 2, w 2) in a phase of 2 iterations (theta and w both change at each transition; instances/b5_n5_cyc4_0.pg, canonical start, sha1 f42767ef, check_instance OK) (box 4's
+  44-slice partial had 2); max non-(h) per phase 3; longest phase 3; cyc hist {0: 68,612,254, 1: 11,954, 2: 140,572, 4: 20}.
