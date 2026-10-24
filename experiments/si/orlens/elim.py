@@ -34,9 +34,16 @@ def elim_g(g, st=None, mode='n5', cap=10 ** 5):
             for b in bs:
                 cur = 0 if b else cur + 1; best = max(best, cur)
             return best
+        tau = [states[k][1] for k in ph]; tlast = {}
+        for i, t in enumerate(tau):
+            for x in range(n):
+                if g.owner[x] == 1: tlast[(x, t[x])] = i
+        tel = [any(tau[i][x] != tau[i + 1][x] and tlast[(x, tau[i][x])] == i for x in range(n) if g.owner[x] == 1)
+               for i in range(len(ph) - 1)]
+        st = [a or b for a, b in zip(el, tel)]
         both = [a or b for a, b in zip(el, oel)]
         rows.append(dict(start=ph[0], trans=len(ph) - 1, elim=sum(el), noelimrun=longest(el), oelim=sum(oel),
-                         noelimrun_both=longest(both), used=len(used)))
+                         noelimrun_both=longest(both), noelimrun_st=longest(st), used=len(used)))
     return g.n, it, rows
 
 if __name__ == "__main__":

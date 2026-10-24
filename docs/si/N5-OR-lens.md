@@ -45,7 +45,11 @@ Sources opened, with sha256 prefixes of the PDFs:
   - With Lemma Φ it implies N5 < (2n(n−1)+1)·n·(m_E + 1) iterations, which is G-N5-TIME. This implication is PROVED (§5).
   - (ELIM-n) is not proved. I have no route to it. It is a reformulation, but one with a structural test that separates N5 from
     switch-all.
-- **For the brief's two targets ((CYC), θ-changes per phase; (TRUST)) the lens gives no bound.**
+- **For the brief's (CYC) target, a narrower CONJECTURE (CYC-ELIM) (§4.3), the Post-Ye Lemma 3.6 shape.**
+  - Every non-eliminating window contains ≤ c θ-changes. The data give c = 3.
+  - PROVED: (CYC-ELIM) implies θ-changes ≤ (c+1)(m+1) per phase, i.e. (CYC).
+  - On 𝒞^1O, Lemma G supplies L-LIT's LP(t) family; N5 prices with LP(θ) and selects with LP(w) (§3.3b).
+- **The gap-level potential itself gives no (CYC) or (TRUST) bound.**
   - θ-changes are almost all FLAT in gap level: theta_thc24 has 16 θ-changes in one phase, only 2 of which lower g(o).
   - So no level potential counts them (§4.3).
 
@@ -133,7 +137,7 @@ Proof: in Φ, g takes values in {−1, …, n}, and each value can only fall (E1
 - So the whole difficulty lies in FLAT transitions: values change only strictly below every vertex's gap level.
 - DATA (gaps.py): flat transitions dominate the long phases. returns_ph64: 91 of 103 transitions are flat. fts_g43: 91 of 120.
 
-DATA check of U and E1-E4 (gaps.py counts every violation): 0 violations on all 29 runs in the tables below.
+DATA check of U and E1-E4 (gaps.py counts every violation): 0 violations on all 29 runs where gaps.py ran: every N5 instance of §4.2, plus i3hn, cyc4, lap_n6, oneodd_c16 and two climb bests.
 
 ## 3. The contraction half has no lexicographic analogue
 ### 3.1 PROVED (L-SI): switch-all satisfies "Howard ≥ value iteration" (HMZ Lemma 5.3) in VJ valuations
@@ -144,12 +148,16 @@ Bellman operator on valuation vectors:
 T is monotone (F-pre, and a different cycle node is not affected by the prefix).
 
 **Lemma D.** Let σ_{k+1} be the switch-all successor of σ_k: each x with an improving edge takes the Ξ_k-best successor.
-Suppose x is not a cycle node and T(Ξ_k)(x) has x's cycle node, and the transition stays in one λ-phase. Then
-Ξ_{k+1}(x) ⊵ T(Ξ_k)(x).
+Suppose the transition k → k+1 stays in one λ-phase and x is not a cycle node. Then Ξ_{k+1}(x) ⊵ T(Ξ_k)(x).
 Proof:
-- Even x: σ_{k+1}(x) = z*, the ⊴-best successor, or x keeps σ_k(x), which is then already best. So
-  Ξ_{k+1}(x) = x ⊕ Ξ_{k+1}(z*) ⊵ x ⊕ Ξ_k(z*) = T(Ξ_k)(x), by F-bell, F-mono and F-pre.
-- Odd y: Ξ_{k+1}(y) = y ⊕ Ξ_{k+1}(σ̄_{k+1}(y)) ⊵ y ⊕ Ξ_k(σ̄_{k+1}(y)) ⊵ T(Ξ_k)(y). □
+- Even x: σ_{k+1}(x) = z*, the ⊴-best successor, or x keeps σ_k(x), which is then already best. Since the transition stays in
+  the phase, z* has x's cycle node.
+  So Ξ_{k+1}(x) = x ⊕ Ξ_{k+1}(z*) ⊵ x ⊕ Ξ_k(z*) = T(Ξ_k)(x), by F-bell, F-mono and F-pre. The prefix x ⊕ · preserves ⊴, so
+  x ⊕ Ξ_k(z*) is the maximum.
+- Odd y: T(Ξ_k)(y) ⊴ y ⊕ Ξ_k(σ̄_k(y)) = Ξ_k(y) ⊴ Ξ_{k+1}(y), by F-bell and F-mono.
+  This half holds for every rule. Only the Even half uses switch-all. □
+(vi.py checks the inequality wherever T(Ξ_k)(x) keeps x's cycle node. By the proof this covers every Even x and is harmless for
+Odd x.)
 
 **Corollary D1.** Along a switch-all run in which every honest valuation Ξ_k has the same single cycle node s at every vertex,
 Lemma D holds at every v ≠ s, and Ξ_k ⊵ T^k(Ξ_0) for all k. T is monotone, and T^k(Ξ_0) keeps cycle node s everywhere.
@@ -184,6 +192,25 @@ not used anywhere.
 - Two players break both halves:
   - Friedmann's sink games have every honest play reach the sink (τ_t ≤ n), yet switch-all is exponential (Corollary D1).
   - So Scherrer's transient-time bound does not extend to 2TBSG with best responses.
+
+### 3.3b The Post-Ye reading (L-LIT T28 rank 2, relayed by the Lead 13:42Z)
+- Post-Ye prove "Either the algorithm finishes or a new cycle is created after O(n²m log n) iterations" (Lemma 3.4). They also
+  prove that O(n log n) new cycles force an action out (Lemma 3.6, as L-LIT quotes it). Both are for ONE LP and highest-gain
+  pivots, deterministic MDPs, any discount.
+- L-LIT's first step asks for a parametrised LP(t) whose improving set at t = θ is N5's gate. On 𝒞^1O under (h), box 21's
+  Lemma G already gives it:
+  - LP(t) := the one-player game G^t, in which o is a terminal of value t. Under Jurdziński's reduction it is a deterministic
+    MDP.
+  - The honest gate is LP(θ)'s improving set, and the selection is LP(w)'s optimum over that set (box 25 §5 (1)).
+- In OR terms, an N5 stretch is a pricing / selection split with STALE prices:
+  - columns are priced by LP(θ);
+  - the restricted master is solved to optimality in LP(w), with w ⊵ θ.
+- Post-Ye's Lemma 3.4 analogue for a single LP is R17. Two-LP pricing breaks it at exactly two places, the two exception
+  types of Lemma G (d):
+  - withheld entering edges (d1);
+  - refused leaving edges at trust-routed vertices (d2 in the gate, rejected by LP(w)), as in §3.4.
+- Post-Ye's Lemma 3.6 analogue is (CYC-ELIM) in §4.3: DATA, not proved.
+- Akian-Gaubert (arXiv 1310.4953, Thm 5; L-LIT's γ-free hook) was NOT opened by me and is not used here.
 
 ### 3.4 N5 does not satisfy Howard ≥ VI; the exact failing step (DATA, vi.py)
 Lemma D's inequality, checked at every in-phase transition:
@@ -273,19 +300,85 @@ theta.py: for the phase with the most θ-changes, the count, how many of them lo
 - θ-changes are mostly flat in gap level. E1-E6 count at most n + 1 of them per phase. The rest happen below g(o)'s level, where
   no slack argument reaches.
 - E4 shows that σ̄(o) revisits only exits whose gap is at least their Odd-slack. It gives no count.
-- So the lens gives no bound on (CYC) or (TRUST) beyond what (ELIM-n) would give for the whole run.
+- So the gap-level potential gives no bound on (CYC) or (TRUST).
 - Trust events were not measured separately. L-NEW's trustcount.py covers them (box 25 §6).
+
+**θ-changes against eliminations, the Post-Ye Lemma 3.6 shape (DATA, thetaelim.py).**
+L-LIT T28 rank 2 (iii)(b) asks whether every O(n log n) θ-changes retire a gate edge for the rest of the phase. Measured: the
+largest number of θ-changes inside one window of consecutive non-eliminating transitions (σ- or τ-eliminations).
+
+| instance | n | θ-changes in the phase | max θ-changes in a non-eliminating window |
+| --- | --- | --- | --- |
+| fts_best16 | 16 | 8 | 1 |
+| theta_thf16 | 16 | 13 | 3 |
+| theta_thc24 / theta_tp40 | 24 / 40 | 16 / 16 | 0 / 0 |
+| returns_rt48 / returns_ph64 | 48 / 64 | 3 / 3 | 0 / 0 |
+| oneodd_c24, thetare_min, thetare_n, lap_n6, tr20_s4 | 24, 15, 11, 6, 20 | 1, 2, 2, 2, 0 | 0 |
+
+**CONJECTURE (CYC-ELIM).** On 𝒞^1O, every window of consecutive non-eliminating transitions inside a joint λ-phase contains at
+most c θ-changes, for a constant c. The data give c = 3.
+- PROVED (elementary): (CYC-ELIM) implies θ-changes ≤ (c + 1)·(m + 1) per joint λ-phase, which is (CYC) of box 24 §4.
+  - At most m eliminating transitions per phase, each changing θ at most once.
+  - At most c θ-changes between consecutive eliminating transitions.
+- (CYC-ELIM) is weaker than (ELIM-n). It is aimed at the brief's target. Climb: §6.
+
+### 4.4 Why N5's windows end, and two refinements that fail or do not separate (DATA)
+**Mechanism of the long windows** (elim.py traces):
+- returns_rt32, window 17 (states 3-19):
+  - Chain reversal at states 8-16: a chain of nine vertices, 17 → 5, 9 → 17, 22 → 9, …, 0 → 25. One vertex switches per
+    iteration, and each switch points at the vertex that switched before it.
+  - At states 45-55 the same chain sweeps back: each vertex returns to its old edge (17: 9 → 5 → 9).
+  - The first sweep is non-eliminating because the second one undoes it.
+  - The window starts after a fallback (state 7) and ends after another fallback (state 19). Its elimination comes at state 20.
+- returns_rt48: hub vertex 46 (successors 18, 37, 40) switches 14 times in the phase, cycling over all three edges. Eliminations
+  are sparse in the first half of the phase (7 in 40 transitions) and dense at its end.
+- So a kill of (ELIM-n) needs one lane swept back and forth ≥ 3 times, or a hub cycled, while nothing else retires an edge.
+  READING: this is a target for L-RED.
+
+**Refinement 1: "every return is paid by a gap drop" is FALSE** (retpay.py).
+A return of x to z (x leaves z at k and uses it again at j) need not see g(z) or g(x) drop in [k, j].
+
+| run | returns | paid by a drop of g(z) or g(x) |
+| --- | --- | --- |
+| N5, returns_rt48 | 83 | 10 |
+| N5, fts_g29 | 57 | 32 |
+| N5, fts_best16 | 11 | 10 |
+| switch-all, switchallexp N 3 | 377 | 146 |
+
+The unpaid returns all sit at the top level (g = n). The top-ranked vertex's membership in the path sets differs from T for
+almost the whole phase, so g is blind below it.
+
+**Refinement 2: recursive gap depth** (depth.py).
+- Definition. Split a phase at its non-flat transitions. Re-target each maximal flat run at its own last state, and recurse. D is
+  the recursion depth.
+- PROVED (elementary, from E6, which holds for any in-phase target Ξ_b): a phase with depth D has < (n(n+1)+1)^D
+  value-changing transitions.
+  - At every level there are ≤ n(n+1) non-flat transitions, so ≤ n(n+1)+1 flat runs.
+  - Every interval with a value change has a non-flat transition against its own end: its last value change.
+  - Value-flat transitions (Ξ unchanged) are not counted.
+- DATA, N5: depth ≤ 3 on all 22 named and pinned instances run.
+  - n ≤ 64: returns_ph64 3, returns_rt64 3, fts_g43 3, returns_rt48 3, frz40 3, phase2_pk48 3, fts_g29 3.
+  - Every other instance has depth 1-2.
+- DATA, switch-all on switchallexp N 3 / 4 / 5 / 6: depth 4 / 5 / 5 / 6.
+- READING: depth grows roughly like log(phase length) under BOTH rules (switch-all: 70 → 4, 630 → 6; N5: 26 → 2, 103 → 3).
+  So "depth ≤ c" separates the rules only weakly on this data, and it is not stated as a conjecture. It is the closest
+  lexicographic analogue of HMZ's "number of scales" log_{1/γ}(n²/(1−γ)): each recursion level is one scale, and the
+  contraction that would bound the levels is what §3 shows to be missing.
 
 ## 5. The open statement, and what it would give
 **CONJECTURE (ELIM-n).** In every joint λ-phase of an N5 run, among any n consecutive transitions at least one is eliminating:
-some Even vertex leaves an edge that it does not use again in that phase.
+some vertex leaves an edge of σ (Even) or τ (Odd) that it does not use again in that phase.
+- Counting τ as well matters only on games where Odd moves inside phases. The σ-only and σ-or-τ windows (elim.py columns
+  noelimrun and noelimrun_st) are equal on every instance checked except wide_h16 (two Odd choice vertices), where they are
+  2 and 0.
 - DATA: §4.2 (max 17 at n 32, 15 at n 64) and §6.
 - Not stated for fallback-free phases only. Fallbacks are included in every count above.
 
 **Proposition (PROVED, L-SI; elementary).** (ELIM-n) implies that N5 makes < (2n(n−1)+1)·n·(m_E + 1) iterations, where m_E is the
 number of Even edges.
+Here m_E is replaced by m, the number of edges, when τ-eliminations are counted.
 Proof:
-- In one phase, the eliminating transitions are at most m_E, because each one retires a distinct (phase, edge) pair.
+- In one phase, the eliminating transitions are at most m (resp. m_E), because each one retires a distinct (phase, edge) pair.
 - Between consecutive eliminating transitions there are at most n − 1 others. So a phase has ≤ n·(m_E + 1) − 1 transitions.
 - Lemma Φ (box 21 §2.3) gives at most 2n(n−1)+1 joint λ-phases. □
 So (ELIM-n) implies G-N5-TIME (gauntlet step 4, running time). It does NOT imply correctness, which is R15.
