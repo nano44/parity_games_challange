@@ -234,3 +234,22 @@ Sketch.
 - Readings:
   - Every R-only count stays ≤ |R|, and (OB) holds in every instance (CONJECTURES OB_R, OB).
   - U1 has real post-freeze activity (12 R-only changes at n 32), driven partly by W-ties. U1 stays OPEN.
+
+## 9. L-COMP's b5_os family (Lead relay 19:0xZ; ivsplit.py; written 19:3xZ by date -u) (DATA)
+- Instances: claude/l-comp 1993d744, experiments/n5-exhaustive/instances/b5_os_n{12,14,16,20,24}.pg, canonical start.
+  sha1: 7f626c27…, 74e10e25…, 6297686b…, 655e787b…, 3aca1103….
+- Every OTHER state is pattern 23 (H1 ∧ ¬H2), in route form in both frames (H1, and λ_W(o) = o).
+  - n 12, 14: c_θ higher, so Lemma P3′ covers them.
+  - n 16, 20, 24: c_w higher, i.e. case U1 (OPEN).
+- Per crossing-free interval: every interval is all-OTHER (TC (iii)); F-changes ≤ |F| − 1 (F1°) everywhere; R-only ≤ |R| everywhere;
+  w-changes 0.
+| instance | phase | crossings | F-changing | R-only (max per interval / its |R|) | OTHER-touching |
+| --- | --- | --- | --- | --- | --- |
+| b5_os_n12 | 16 | 6 | 10 | 0 | 16 |
+| b5_os_n14 | 20 | 7 | 12 | 1 (1 / 6) | 20 |
+| b5_os_n16 | 24 | 9 | 13 | 2 (2 / 8) | 24 |
+| b5_os_n20 | 32 | 9 | 21 | 2 (2 / 11) | 32 |
+| b5_os_n24 | 49 | 8 | 34 | 7 (7 / 16) | 49 |
+- Reading: O's growth on this family (O/n up to 2.04) is carried by crossings and F-changes. Crossings are charged to X (Theorem X);
+  F-changes are bounded per interval by F1°. (OB_R) holds here. On this family (NH') sits under (X), except that the R-only part
+  of n 16-24 is in U1, where the bound ≤ |R| is DATA, not proved.
