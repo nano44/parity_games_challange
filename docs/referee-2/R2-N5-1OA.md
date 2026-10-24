@@ -239,3 +239,61 @@ block of 27 and of 49 iterations respectively (= R58 §10b), τ fixed, no fallba
 and σ_{k+1} = N5's step on G_τ hold at all 27 + 49 pure states; 0 violations (logs/block_bk20.txt, block_bk32.txt, pushed at d5d941a9).
 These are the first instances where the lemmas are exercised across long blocks. R58's finding that blocks can exceed |Y| does not touch
 the theorem, which bounds blocks by B; agreed.
+
+## C. Comparison with REFEREE's R-N5-1OA (docs/referee/R-N5-1OA.md, referee 9060b51, trunk 2177e79; read after my pushes 603cb3a4 / 3188622e; written 03:56Z by date -u)
+Lead rulings read first (03:44Z, 03:50Z): the signed object is the 07f298d text; the 03:27Z re-pin to d78e54f is withdrawn and "Addendum 1" is
+cancelled. My §1-§6 are the signature on the 07f298d text, like REFEREE's; my §7 stays as a record of what the d78e54f rewrite changes (it closes
+G-1OA-3 and G-1OA-5 and adds nits N-4, N-5) and is not part of the signed object. Both referees worked on 07f298d.
+Verdicts, item by item (both "(Fable 5.1)"):
+| item | REFEREE | REFEREE-2 | agreement |
+| --- | --- | --- | --- |
+| (A) Prop X | SIGNED WITH GAPS A1, A2 (closed) | SIGN WITH GAPS G-1OA-1, G-1OA-2 (closed), N-1 | yes |
+| (A) Cor. X1 | SIGNED as a reading (superseded by (B)) | SIGN ("⇐ (SEG-1O)" a reading, superseded) | yes |
+| (B) theorem | SIGNED conditional on (P), gaps B1-B6 all closed | SIGN WITH GAPS conditional on (P); G-1OA-3, -5 closed (by argument, and by the d78e54f text), G-1OA-4 = (P) | yes |
+| (B) Lemma 1 / 2 / 3 / Step 5 / Step 6 | SIGNED (B1-B6) | SIGN (§2) | yes |
+| Lemma R | SIGNED | SIGN | yes |
+| Lemma S | SIGNED WITH GAPS S1, S2 | SIGN WITH GAPS G-1OA-6 | yes, with one point each the other did not list (below) |
+| R17 re-read (Case B at an arbitrary state; Cor. 2 from any start) | B2, B5 confirmed | §2 (c) confirmed | yes |
+Gap map (REFEREE → mine):
+- A1 (exactness of "is N5's run" is a SPEC tie-break statement; the five locality points checked against SPEC S1 (i)-(vi), FIX 2/4, Q2-Q4;
+  other tie-breaks give the valuation sequence only) = G-1OA-2 (I checked the same five points against si.py's code and added that the COUNT
+  is tie-break-free via (1b) + R17 Corollary 1). Same finding, two angles.
+- A2 (the "waits" case: S4c fires only when σ_new = σ AND τ_new = τ; the run cannot stop with Iσ|X ≠ ∅; G[X] stops at the same strategy) =
+  G-1OA-1 (prefix / whole run by termination). Same.
+- B1 (the three ways σ|X stays fixed, each a null G[X] step): not a numbered gap of mine; the same three cases are my Lemma 1 (i)-(iii) in §2.
+  Accepted as a numbered item.
+- B2 (Lemma 1's flat case is R-N5-1P §4 G4 / R2-N5-1P G-1P-5 at an arbitrary state, not Theorem PH) = G-1OA-3. Same, same pointers.
+- B3 (o-acyclicity enters at Lemma 2: θ = o ⊕ Ξ(a), w = o ⊕ Ξ(b), U_τ(e) = G[X]-optimum) = my N-3 (Lemma 1 holds on all of 𝒞^1O; only Lemma 2
+  needs the hypothesis; my §4 shows Lemma 1 at 225 pure states of o-cyclic games with 0 failures and Lemma 2 failing there). Same.
+- B4 (Iσ_k ≠ ∅ at a pure transition via the Odd fallback) = G-1OA-5. Same.
+- B5 (R17 Cor. 2 from any start) = my §2 (c), second item. Same.
+- B6 (slack: ≤ (C_X + d − 1)·B) = my Step 6 arithmetic (≤ (C_X + d − 1) + (C_X + d)(B − 1)); both < (C_X + d)(B + 1). Same.
+- S1 ((a)'s two halves are (11) on G and G^d; the asserted "⊵" halves of (4)/(6) are carried by R17 (a)): I did not list it; my §3 says the same
+  without an id (and the derivation is R2-N5-1P §2). Accepted.
+- S2 ((b) needs R15 (d): every N5 step is Switch_I of improvements) = the (b) half of G-1OA-6. Same.
+- Only mine: the (c)/(d) half of G-1OA-6: Lemma S (c) "σ_{k+1} maximises V_{·,τ_k} over A(σ_k)" and (d) hold for S4a steps only; an S4c fallback
+  step is in A(σ_k) but is not the optimum (box 21's own Lemma W: W can drop there). REFEREE signs (c)/(d) without this scoping. Not a
+  disagreement on mathematics (REFEREE's §4 text itself says "S4a's output"); the statement's wording should say so. (B) uses (a)-(b) only, so
+  nothing in the theorem is affected.
+- Only mine, nits: N-1 (G[X] must keep X's index order; REFEREE makes the same point inside A1), N-2 (Odd's S4b optimum is (11) itself; REFEREE's
+  Lemma 2 (iv) says exactly "directly, not even dualised"). Both already in REFEREE's text without ids.
+Disagreements: none on any verdict or step. One difference of emphasis: REFEREE's A1 keeps Prop X's exact form as a statement "under SPEC's
+tie-breaks"; I add that the bound needs no such clause. Both are right and compatible.
+On (P). I accept REFEREE's reading that (B) needs (P) only for one-player games: this is not a reading but a fact of the proof, (P) is invoked
+only in Lemma 1 on G[X], which is one-player (my G-1OA-4), so the condition is weaker than R58 Theorem W's two-player (P). On the discharge
+of the one-player (P) by R-N5-1P §3 route (a) (REFEREE's dualisation of VJ00 Lemma 5.5's proof): having now read it, I find it sound: (1) for σ
+with no improving edge in a one-player game, OverProg(Ωσ, e) holds on every edge (Prop. 5.1 on σ's edges; on the others Ξ(w) ⊴ Ξ(σ(v)) and
+Prop. 5.10 clause 2, whose content is the ⊵_ℓ-monotonicity of ⊕ v on multisets, (B ⊎ {v}) ∖_M (B′ ⊎ {v}) = B ∖_M B′ with both lengths + 1);
+(2) Lemma 5.9 for the one-player game by the mirror of Lemma 5.5's proof (Λ non-increasing along a play, constant ℓ on its cycle; Prop. 5.6,
+proved in the source, gives λ(P) ⪯ ℓ ⪯ Λ(v); in the equality case clause 2 along the prefix with Π(ℓ) = (∅, 0) gives Π(v) ⊵_ℓ (π(P), #(P))).
+This concurrence is a reading, not a refereed signature: route (a) was not in my packet and I ran no mechanical test of it beyond the (P)
+checks on G[X] in §4 (2,283 improvement-free strategies, all optimal) and REFEREE's L58 data (7,945 games). The fleet may discharge the
+one-player (P) on REFEREE's derivation plus this concurrence, or keep the conditional label; that is the Lead's call.
+Data (mine, beyond §4): L-RED's long-block instances block_bk20 / block_bk32 (trunk 7f351fc): one pure block of 27 / 49 iterations each
+(> |Y| = 21 / 33, as R58 §10b says), τ fixed, no fallback; Lemma 1, 2, 3, gate = G_τ's improving set and σ_{k+1} = N5's step on G_τ hold at all
+76 pure states; 0 violations (logs/block_bk20.txt, block_bk32.txt). REFEREE's data and mine are independent (REFEREE: engine states captured
+by wrapping Engine.evaluate, SPEC order coded with non-injective priorities, 2,707 pure transitions, 7,168 Prop X runs; mine: n5.py's loop
+replayed, R2-N5-1P definitions, 83 + 76 pure transitions, 1,882 Prop X games, 1,531 arena-optimum changes); both 0.
+Final verdicts (Fable 5.1), unchanged: (A) Prop X SIGN WITH GAPS (G-1OA-1, G-1OA-2 closed; N-1); Cor. X1 SIGN; (B) SIGN WITH GAPS conditional
+on (P) for one-player games (G-1OA-3, G-1OA-5 closed; G-1OA-4 = (P) conditional; N-2, N-3); Lemma R SIGN; Lemma S SIGN WITH GAPS (G-1OA-6;
+S1, S2 accepted). No step wrong. Joint open list: (P) (conditional, one-player form; discharge is the Lead's call) and wording items only.
