@@ -2,3 +2,4 @@
 results/box5/*.tasks/
 results/box5/*.partial.json
 results/box5/*.log
+results/box5/climb/
