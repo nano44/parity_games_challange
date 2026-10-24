@@ -366,3 +366,115 @@ Tool: blockcheck.py recomputes X, o-acyclicity and the blocks by L-NEW's definit
 - Box 27 result: NO KILL on 𝒞^1O. Route (a) gives θ-changes < n per phase; route (b) gives blocks > |Y| but ≤ |Y| − 1 per phase.
 - blockph_bp20.pg sha1 c0cb90699c1e7eb042af61c4bdee9b762477ef43
 - blockph_bp32.pg sha1 66c134cffcc92d1f63b8c3f4377c87ce8d84ca38
+
+## 11. Box 28: o-cyclic 𝒞^1O and the 2-choice fallback (DATA and READING; GO 2026-10-24 04:31Z, end ~06:20Z, date -u)
+Target (Lead): an N5 kill on o-cyclic 𝒞^1O, i.e. super-linearly many canonical iterations inside ONE joint λ-phase.
+- The o-acyclic case is settled: L-NEW's refereed theorem (docs/new/N5-1Oacyc-box24.md) plus Prop X, landing as RESULTS R18.
+  STAT-PH (§10c) is recorded only as a data conjecture.
+- Every instance below passes Oink zlk and verify.py. Each was re-run with n5.py from the canonical start.
+
+### 11a. θ-change climbs, padded (thetaclimb.py --from, padding with inert self-loop vertices; 3,600 s each)
+| seed | n | θ-changes in one phase (total) | iterations | longest λ-phase | max trust events per phase (L-NEW trustcount.py) | instance (sha1) |
+| --- | --- | --- | --- | --- | --- | --- |
+| theta_thf16 → | 32 | 16 (20) | 45 | 41 | 4 | instances/theta_tp32.pg (f3c241884b34…) |
+| theta_thc24 → | 40 | 16 (20) | 41 | 20 | — | instances/theta_tp40.pg (45b2bfd61427…) |
+| (box 27) theta_thf16 | 16 | 13 (15) | 20 | 18 | 2 | |
+| (box 27) theta_thc24 | 24 | 16 (19) | 29 | 18 | 0 | |
+
+- θ-changes per phase PLATEAU at 16 from n 24 to n 40.
+- theta_tp32 has a 41-iteration λ-phase at n 32 with one Odd choice vertex: above n − 1 = 31 but linear, about 1.3n.
+
+### 11b. Ring templates (ringsearch.py; fixed topology, random priorities, 2,000 trials each)
+- Template: a chain c_L → … → c_1 → o, with bail edges and o's exits on the chain.
+- Results: one lap only. The θ-changes in one phase are 4 / 2 at L 6 and 5 / 4 at L 10 (exits all / odd), about L/2.
+- READING: the plain absorbing ring reproduces the single lap of fts_best16 (exits absorbed into R one per step, σ̄(o) walking
+  along the chain).
+  - The second lap in fts_best16 / theta_thf16 needs a RESET WAVE: chain vertices switch away (iterations 9-11) and back (12-18),
+    one return each.
+  - No template here produces more than one lap.
+  - Nested rings, where each outer reset re-arms an inner lap more than once, were NOT built.
+
+### 11c. Fallback: at most 2 Odd choice vertices (phaseclimb.py K = 2; fitness = longest joint λ-phase; 3,000 s each)
+| n | longest λ-phase | iterations (fallbacks) | Odd choice vertices | instance (sha1) |
+| --- | --- | --- | --- | --- |
+| 32 | 53 | 56 (6) | 14, 28 | instances/phase2_pk32.pg (2db943015cd9…) |
+| 48 | 50 | 72 (8) | 14, 27 | instances/phase2_pk48.pg (83dead9bc3cd…) |
+
+- In-phase length is about 1.6n at n 32 and about 1.0n at n 48 (budget-limited), so linear.
+- L-NEW's frozen fts_g43, with 8 Odd choice vertices, remains the longest known: 121 iterations at n 43, about 2.8n.
+
+### 11d. Result
+- NO KILL on o-cyclic 𝒞^1O or with 2 Odd choice vertices.
+- Every measured in-phase quantity is linear or plateaus, for θ-changes, phase length and trust events alike.
+- The Lead's (TRUST) target: my instances have ≤ 4 trust events per phase. L-NEW's trustclimb reaches 29 at n 20 (box 25).
+- READING, what a kill still needs: a reset wave that re-arms the absorbing ring more than once per outer event, i.e. returns at
+  ring vertices that grow with depth. The only return mechanisms known are σ̄ lapping (one return per lap) and L-NEW's W-dropping
+  fallbacks (one peel each). Neither has been composed.
+
+## 12. Box 29: composing a reset wave with the absorbing ring (GO 2026-10-24 06:30Z; written 08:15Z, date -u)
+Target (Lead): a COMPOSED reset wave that re-arms the absorbing ring more than once per outer event, inside ONE joint λ-phase.
+- Success would be a family whose in-phase count grows super-linearly over ≥ 3 verified members.
+- Every instance below passes Oink zlk and verify.py (check_sol2.py), re-run with n5.py from the canonical start.
+
+### 12a. Re-rooted ring template (rootsearch.py --climb; chain c_L..c_1 → hub h → roots r_1..r_k → o; 1,200 s per run)
+| L | k roots | longest in-phase count |
+| --- | --- | --- |
+| 8 | 1 | 9 |
+| 8 | 4 | 10 |
+
+- The k = 4 trace: the hub chooses one root once (18 → 19); the chain then propagates once (2>18, 3>2, …, 9>8); no re-root.
+- WHY (READING, from L-NEW's Lemma G (c), box 21 §3.5):
+  - Between two routes that both run through o, the gate and the selection compare the same quantity, π_y vs π_z, independent
+    of θ and w.
+  - So a hub's re-root is a one-player move. The chain keeps its edges, its values rise along them, and no chain vertex switches.
+  - A re-root therefore re-arms nothing.
+- Replaying the chain needs chain vertices to RETURN through o-free routes (R → F → R).
+
+### 12b. Returns inside one phase (phasereturns.py, retcheck.py)
+| instance | n | Odd choice vertices | longest phase | max switches / returns at one vertex | R→F leaves in the phase | re-entries (θ overtook old w / route improved) |
+| --- | --- | --- | --- | --- | --- | --- |
+| fts_best16 | 16 | 1 | 26 | 6 / 3 | 4 | 0 / 2 |
+| theta_tp32 | 32 | 1 | 41 | 6 / 4 | 3 | 0 / 3 |
+| fts_best39 | 39 | 4 | 77 | 8 / 5 | — | — |
+| fts_g43 | 43 | 8 | 120 | 16 / 13 | — | — |
+| returns_rt48 (new) | 48 | 1 | 78 | 14 / 12 | 34 | 0 / 15 |
+| returns_rt64 (new) | 64 | 2 | 88 | 14 / 12 | — | — |
+| returns_ph64 (new) | 64 | 1 | 103 | 10 / 8 | — | — |
+
+- Instances: experiments/red/n5inj/instances/returns_rt48.pg (7e7ee1b354ad…), returns_rt64.pg (04c2f308ec50…),
+  returns_ph64.pg (562f3e36dba5…), returns_rt32.pg (307240c5b8a9…).
+- rt48 and ph64 are o-cyclic 𝒞^1O (one Odd choice vertex o = 14). rt64 kept a second Odd choice vertex.
+- Per-vertex resets DO grow under a climb aimed at them: 12 returns at one vertex and 34 R→F leaves in one phase of rt48, against
+  ≤ 5 and ≤ 4 on every earlier 𝒞^1O instance.
+- No re-entry into R ever came from θ overtaking the w at the leave: 0 of 20. All came from a route improvement inside R.
+
+### 12c. The in-phase count stays linear
+On o-cyclic 𝒞^1O the longest phase is:
+
+| instance | n | longest phase | per n |
+| --- | --- | --- | --- |
+| fts_best16 | 16 | 26 | 1.6n |
+| theta_tp32 | 32 | 41 | 1.3n |
+| returns_rt48 | 48 | 78 | 1.63n |
+| returns_ph64 | 64 | 103 | 1.61n |
+
+- Local exponent from 48 to 64: log(103/78)/log(64/48) = 0.97.
+- With 2 Odd choice vertices: 53 at n 32, 50 at n 48 (§11c), 88 at n 64.
+- These are climbs, not a family. There is no growth law, and no member is above about 1.65n.
+
+### 12d. Why the composition fails (READING, with the data of 12a-12c; for the stand-down note)
+- (i) A re-root does not re-arm. Routes through o are compared independently of θ and w (Lemma G (c)), so re-rooting is a
+  one-player move along unchanged chain edges. Smallest instance: rootsearch L 8, k 4 (n 27, regenerated by `rootsearch.py 8 4
+  all 1200 22 OUT --climb`): 10 in-phase iterations against 9 for k = 1.
+- (ii) Re-arming needs returns R → F → R. A leave needs the o-free value above π ⊕ w; a re-entry along the same successor needs
+  π' ⊕ θ above that o-free value. Since θ, w and o-free values only rise inside a τ-fixed phase, each re-entry needs either θ to
+  overtake the old w, or a strictly better route π' inside R.
+  - The data show only the second: 20 / 20 re-entries.
+  - Route improvements inside R are one-player moves (Lemma G (c)), so each re-arm consumes one-player progress inside R. A phase
+    holds polynomially much of that, but not in any proved per-phase form here.
+- (iii) Resets per vertex can be made large (12 at n 48), but the climbs that make them large do not lengthen the phase beyond
+  about 1.6n. The resets come from S4c fallbacks (14 in rt48 and in rt64) and from leaves, each followed by a short re-propagation,
+  not by a full ring replay.
+- Statement for the stand-down note: on o-cyclic 𝒞^1O the only re-arming mechanism observed is "route improvement inside R",
+  which is a one-player resource. A re-root via θ was never observed, and a re-root via the hub is θ-independent. No in-phase count
+  above about 1.65n was found up to n 64.
