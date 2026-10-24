@@ -37,7 +37,8 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with sc
   cases; fully optimal form holds and is the only one used), R-2 (VJ00 §6 (15), (22), Prop. 6.1 states only ONE shortest path survives:
   Lemma R is a strengthening); WC SIGNED; §6 READING correct. Tools: scratch/u1_probe.py (own trace, TBc/TB/R1/CASC/C1/U1/WC, arena_test),
   lemr_probe.py (hooked evaluate), casc_climb.py. DATA notes D-1 (|R| quoted as |R \ {o}|), D-2 (σ(10) switches once on u1t_cex_n32).
-  NEXT: §C when the Lead says R2-N5-U1 exists (docs/referee-2/ NOT read for U1).
+  §C written from 21:53Z (date -u) vs R2-N5-U1 (referee-2 28ddf6f): no verdict differs; C-1 downgraded to wording (R2 reading accepted); MISSED G-R-1 and
+  N-U1-3 (accepted; N-U1-3 closure proved via VJ00 Lemma 5.7 in G_tau, eqfb_check.py 0/322). PARKED.
 - Lesson: a lemma about "optimal edges" with set-valued ⊕ can fail where the optimal play from y passes x; test the formal statement on a
   3-vertex instance before signing, and check which form the later steps actually use.
 - Trap: `pkill -f <pattern>` / `pgrep -f` + kill from the Bash tool kills the tool's own shell (exit 144); list PIDs with ps and exclude grep.
