@@ -949,3 +949,4 @@
 - 13:11Z (date -u) D18 recorded; L40: all lanes on N5; L-RED redirected from DTL box 30 to N5 adversary; L-SI to OR/MDP lens; L-LIT T28. T27 merged-later (C1 queued). L-NEW box 26 checkpoint 1: named lead FALSE (THETA re-entries common; L-RED's retcheck mislabels); THETA ≤ n per θ-change (lane PROVED).
 - 13:18Z (date -u) Hourly sweep (13:02Z trigger) folded in: overage false; 5 lanes working (L-NEW, L-RED, L-COMP, L-LIT, L-SI new). NOW roster updated for D18/L40.
 - 13:24Z (date -u) L-SI successor handover 5/5 (9646935 merged); GO box 1 (OR lens on N5).
+- 13:30Z (date -u) L-COMP box 3 merged (l-comp 4c44c00). thetaA_n17 (1271767c…, 𝒞^1O, RANDOM start): Lead re-run n5.py 5 it / 0 fb, Oink OK verified; retcheck: 2 class-A re-entries (θ at re-entry ▷ w at leave) in phase 2..5. Lead note: class A needs w to rise (θ ⊴ w); the rise comes from σ at o's τ-successor 8 → likely L-NEW's WRISE class. Relayed to L-NEW and L-RED.
