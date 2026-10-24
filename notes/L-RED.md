@@ -31,7 +31,8 @@ O4 sharpened to O5 (K1-K4), Conjecture BRIBE FALSE (instance). Boxes 24-25 below
   - Re-entries: 20 / 20 by route improvement, 0 by θ overtaking w.
   - Returns per vertex climb to 12 (rt48), but in-phase stays ~1.6n up to n 64 (ph64: 103).
   - Instances: returns_rt32/rt48/rt64/ph64; all verified.
-- NEXT: none on N5 unless the Lead routes one (stand-down decision pending).
+- PARKED 2026-10-24 08:27Z (Lead): N5 line STANDS DOWN (docs/agents/N5-STANDDOWN.md quotes R58 §12d). Box 29 merged at trunk 1119482.
+  Wake only on a new named target.
 
 ## DONE box 26 (R58; 2026-10-23 23:06-23:20Z, date -u)
 - §1: jump-ahead switches (N5 switches SSI would not make) mostly use SSI counter edges: sym_h16 14/17, DLM1 n8 38/38.
