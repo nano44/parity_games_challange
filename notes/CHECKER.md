@@ -6,11 +6,11 @@
   - Add. 1 e5c46943: E-1..E-6 fixed, E-7 = the §A citation;
   - Add. 2 8f2ee01d: PASS at 1494ae1;
   - Add. 3: R19 landed verbatim at trunk 4155cde.
-- UNPARKED 16:20Z for C29 (R20 draft at trunk 7f42c69, packet P-N5-XA). FAIL on E-1 to E-3:
-  - E-1: REFEREE has not signed the Corollary (its C6 says READING, pending R2);
-  - E-2: (e) XA lacks "u* ≠ none";
-  - E-3: 44 stretches, not 43.
-  Re-runs EXACT (xa_check logs diff-identical; xa_probe and lane tools clean). Waiting for the revised draft and/or a REFEREE §C7.
+- C29 CLOSED 17:19Z (date -u):
+  - main report 5a395403: FAIL E-1..E-3;
+  - Add. 1 aa909fd0: PASS at 865a33a (REFEREE §C7 a1de721 signs the Corollary);
+  - Add. 2: R20 landed verbatim at trunk c33700c.
+- PARKED. Possible next: C30, the L-NEW box 28 §5c packet. Use the same five checks.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 
 ## Conventions (from C27, kept)
