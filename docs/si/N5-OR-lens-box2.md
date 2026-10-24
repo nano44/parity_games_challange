@@ -30,7 +30,7 @@ gaps.py asserts equal counts). Notation: docs/si/N5-OR-lens.md §1-§2 (lev, ⊕
   - Neither the parametric family LP(t) = G^t nor a USO face walk turns θ-changes into breakpoints of a fixed structure: θ is Odd's
     value against N5's CURRENT σ, not against Even's G^t-optimum (§3).
   - (CYC-u*) stays OPEN.
-- **DATA:** θ-changes per run, max 17 at n 32 with d = 11 (inr2_n32); climbs in §4.
+- **DATA:** θ-changes per run, max 42 in one (w, u*)-run at n 32 with d = 11 (run_x_inr2, Oink OK). Climbs in §4.
 
 ## 1. Setting and facts used
 ASSUMPTIONS (each one line):
@@ -149,8 +149,23 @@ numbers. rise3_n32: 12 INR events, 5 visible, 0 violations.
   - Iterating gives one level per "u*-like" vertex, n levels, and an n^depth bound, the same obstacle box 27 §8c names.
 
 ## 4. Climbs (DATA; climb.py --run, canonical start unless seeded; one Odd choice vertex)
-Fitness = θ-changes inside one (w, u*)-run under (h), then max INR per exit per run, then max rise per exit per run, then d.
-Running 15:27Z-16:12Z; results below when they end.
+Fitness (--runmax) = θ-changes inside one (w, u*)-run under (h), then max INR per exit per run, then max rise per exit per run, then d.
+--runexcess uses (θ-changes per run − d) instead. Runs 15:27Z-16:15Z, 2,400-2,700 s each. Final bests are in instances/; every one
+is Oink zlk OK with strategies verified, and Lemma VIS′ holds on all of them (visprime.py: 0 violations).
+
+| climb | n | d | θ-changes in one (w, u*)-run | θ-changes in the phase / phase length | instance (sha1) | n5.py iterations / fallbacks |
+| --- | --- | --- | --- | --- | --- | --- |
+| --runexcess, seeded from inr2_n32 | 32 | 11 | **42** | 43 / 49 | run_x_inr2.pg (8a5a82a6…) | 51 / 3 |
+| --runmax, seeded from inr2_n32 | 32 | 24 | 28 | 29 / 30 | run_m_inr2.pg (8f45d1ea…) | 35 / 1 |
+| --runmax, n 24 random | 24 | 24 | 18 | — | run_m_n24.pg (27999f9a…) | 22 / 0 |
+| --runmax, n 16 random | 16 | 16 | 11 | — | (out/ only) | — |
+
+- run_x_inr2: 42 θ-changes inside ONE (w, u*)-run at n 32 with d = 11. That is 3.8·d and 1.3·n.
+  - One exit (26) rises 4 times while it is the argmin.
+  - So no per-run bound of the form c·d with c ≤ 3 holds, and the per-run count is not controlled by d.
+  - The phase's 43 θ-changes are above the 35 of s_tp32_final, which was the largest per phase before this box.
+- READING: on these climbs, θ-changes per run and per phase grow at least linearly in n. (CYC-u*) is not refuted, since nothing
+  super-polynomial was seen, but the climbs show no constant-factor structure to exploit.
 
 ## 5. Files (experiments/si/orlens/)
 - thclass.py: θ-change classes; hstate(), the (h) test; ustar().
@@ -158,4 +173,5 @@ Running 15:27Z-16:12Z; results below when they end.
 - oneinr.py: Lemma VIS check.
 - perexit.py: per-exit INR / rise counts per run.
 - climb.py --run [--runmax]: climbs.
-- instances/inr2_n32.pg, instances/rise3_n32.pg.
+- instances/inr2_n32.pg, instances/rise3_n32.pg, instances/run_x_inr2.pg, instances/run_m_inr2.pg, instances/run_m_n24.pg.
+- visprime.py: Lemma VIS′ check.

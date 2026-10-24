@@ -14,7 +14,7 @@ summarised in docs/si/README.md. Handover check: docs/agents/handover-checks/L-S
 ### IN FLIGHT (box 2, Lead GO 15:23Z, to ~18:00Z: (CYC-u*) through the OR lens)
 - docs/si/N5-OR-lens-box2.md: Lemma VIS and VIS' PROVED (visible self-eliminations retire an exit for the (w,u*)-run; a repeated
   argmin after self-elimination needs a theta-change at the loop's top new level); FALSE per-exit bounds (inr2_n32, rise3_n32).
-- Climbs (climb.py --run --runmax/--runexcess): m_inr2, m_n16, m_n24, x_inr2 until ~16:12Z (out/*.log).
+- Climbs ended 16:15Z: run_x_inr2 (n 32, d 11) 42 theta-changes in one (w,u*)-run, 43 per phase; Oink OK. Nothing running.
 - Trap met: run definition without (h) counted 'INR' at non-(h) states; thclass.hstate fixes it (use it in every run split).
 ### NEEDS
 - Lead: relay Lemmas U/E1-E5/D to L-RED / L-NEW; (ELIM-n) as an L-RED target (a phase with a non-eliminating window > n).
