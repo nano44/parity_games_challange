@@ -1,0 +1,33 @@
+# R59: an attack on (ACYC), the only open hypothesis of RESULTS R4 (box 30, L-RED successor 13; Opus 5.5, D15 / L37; D16 / L38)
+Status: DATA, unrefereed. GO from the Lead at 2026-10-24 12:58Z (date -u). Target chosen: GAPS G-S5-6 (ACYC).
+
+## 0. Why this gap (choice and reason)
+The Lead offered three gaps: G-NEST, GAP-A via (CTX⁺)/(FIRED⁺-R), and G-S5-6 (ACYC). I chose (ACYC).
+- One verified instance would settle it: a single counterexample breaks R4's frame. G-NEST and GAP-A need a family with a law.
+- Its exact counterexample shape is written down (docs/alg/STEP5.md §6.1). It is a stored p-tangle t_X that Dom(prevV) accepts
+  using a vertex of old X or of an earlier top's part, whose new part N_X contains a tangle-graph cycle C. Every cycle of a
+  p-tangle is p-won, so C is a p-won cycle inside R made of new vertices only. Sub-case (b), where old X is used, is not excluded
+  by anything proved.
+- The earlier search has a specific blind spot I can address:
+  - It was random games and corpus runs (REFEREE-2, 32,026 runs).
+  - It climbed from strfam_S5_n46, the only corpus straddle (L-ALG dtl_yzclimb.py; L-RED box 6).
+  - Those climbs used a binary ACYC signal. Their fitness was (YZ excess, ACYC failures, |N|, straddles), with no gradient
+    toward a cycle inside N.
+- New here: a graded distance-to-counterexample, and mutations focused on the straddling tangles.
+
+## 1. Instruments (experiments/red/acyc/; L-ALG's Python reference of A_DTL, read-only)
+- sweep.py: random games through dtl_yzclimb.fitness.
+- probe.py: lists every straddling Dom acceptance (p, tangle, tpr, old part, new part N).
+- focusclimb.py: hill climb with fitness (ACYC failures, YZ excess, −gap, |N|, straddles).
+  - gap is the least number of vertices outside N on a tangle-graph cycle through a vertex of N; gap = 0 is exactly an ACYC
+    failure.
+  - Mutations follow L-ALG's dtl_fmclimb.mutate, with the vertex drawn from the straddling tangles with probability FOCUS.
+
+## 2. Data so far
+- The instrument fires on the known corpus straddle: strfam_S5_n46, stable order, gives fitness (0, 0, 1, 1). probe.py: p = 1,
+  tangle {6, 19, 7, 27} (internal ids), tpr 3, old part {6, 7, 27}, N = {19}.
+- Random games: 0 straddles at all in 40,000 games (n 6-16, priorities in 0..0.6n), in both orders (sweep.py, 11 s per 20,000).
+  Straddles need structure, so random sampling is not a usable search.
+- Focused climb test (60 s): |N| grows to 6, while gap stays at 1. Every cycle through N passes exactly one vertex outside N, an
+  old-X vertex.
+- Long climbs: §3.
