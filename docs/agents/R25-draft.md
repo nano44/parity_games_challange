@@ -1,4 +1,4 @@
-# Draft RESULTS R25 (Lead, 2026-10-24 23:0xZ by date -u) (rev.: REFEREE §C 2b78c6d; rev. 23:13Z: fixes file pinned; rev. 23:25Z: fixes part 2 cited; rev. 23:29Z: C34 E-1, E-2, N-1, N-2) — awaits CHECKER C34 Addendum 1; lands in "## Results" after R24, before "## Dead ends"
+# Draft RESULTS R25 (Lead, 2026-10-24 23:0xZ by date -u) (rev.: REFEREE §C 2b78c6d; rev. 23:13Z: fixes file pinned; rev. 23:25Z: fixes part 2 cited; rev. 23:29Z: C34 E-1, E-2, N-1, N-2) — LANDED in RESULTS Results 23:44Z (CHECKER C34 298e4b6 + Addenda 4278b5a, e9f7b67 PASS), after R24
 
 ### R25 [refereed-only] N5 inside a phase: coarse super-solutions (claim (T), COARSE-SI, TAME), the max gate level never rises at tame transitions (MONO, NOINF), fallbacks are bounded by non-tame transitions (Theorem FB), and on one-Odd-choice games every non-tame transition is an exit jump at o (J1, OFF, CAP) (2026-10-24) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C34.md, checker PENDING)
 - Object (packet P-N5-FB, pinned trunk 348393b, unchanged during review): docs/si/P-N5-FB-box7.md, sha1
