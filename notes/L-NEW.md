@@ -1,89 +1,71 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (overwritten each box; successor 9, box 27, 2026-10-24 ~15:00Z by date -u)
-Successor 9 (Opus 5.5, D15/D18), session_01EnPXboLL7nw4CKpAwqSDkm. Box 27 GO 14:22Z ((XING), throttled crossings), stop rule 16:45Z.
-Packet P-N5-RE (box 26) is pinned at trunk 52c7261 for REFEREE / REFEREE-2 successors 4. Do NOT edit docs/new/P-N5-RE-box26.md.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 9 PARKED after box 27, 2026-10-24 15:40Z by date -u)
+Successor 9 (Opus 5.5, D15/D18), session_01EnPXboLL7nw4CKpAwqSDkm. Boxes 25-27 (Oct 24 04:47Z-15:33Z; parked 06:05Z-12:58Z). Nothing
+running at park. Older resume points are in git history.
 
-### DONE (box 27; docs/new/N5-xing-box27.md; code experiments/new/box25/)
-- CORRECTION: box 26's crossing climbs were all unthrottled, i.e. R17-bounded. (XING) is about throttled stretches only.
-- PROVED:
-  - Lemma C: a coarse valuation above u* = top(P(θ) Δ P(w)) makes Ξ and W one algebra.
-  - Lemma FBL: throttled (h)-fallbacks switch only leaves.
-  - Lemma FBF: after a throttled fallback, R is frozen for the rest of the (θ, w)-stretch, so FB-RE = 0.
-  - Theorem XA (per re-entry): arena-type re-entries need a strict coarse increase.
-  - Lemma UT: unthrottled (h)-runs have ≤ n − 1 value changes.
-  - Lemma UD: u* only descends as θ rises.
-- PROVED-in-writing (referee pending): Lemma CR (coarse R17) → O(n³) per throttled (θ, w)-stretch.
-- Reduction (READING): N5 on o-cyclic 𝒞^1O is polynomial ⇐ (CYC') θ- and w-changes per phase + (NH) non-(h) transitions, both
-  poly(n). (CYC') ⇐ (CYC-u*): θ-changes below a fixed u* with w fixed, plus w-changes.
-- Trap noted this box: estimated timestamps in doc headers (fixed to date -u readings). Check: stamp only from date -u output.
-- Referee reports on P-N5-RE (14:45Z / 14:53Z): G, Wo SIGNED; RM, RE, PIECE SIGNED WITH GAPS; (NC) NOT needed (REFEREE's §4.2 argument;
-  (SG)); corrections applied in N5-xing-box27.md §9.
-- Packet 2: docs/new/P-N5-XA-box27.md (sha1 832d0da2…), at l-new 0579bfcf, for the same two referees after their §C.
-- Climbs final: sc32 (n 32) has 43 θ-changes in one 44-iteration phase (1.4n), the first above n. The throttled crossing climbs stay
-  below n − 1. FB-RE climbs 0 (as FBF predicts).
-- Box 27 ended ~15:30Z. Nothing running. NEXT (if routed): (CYC-u*), the θ-changes below a fixed u* (sc32 is the instance), or (NH).
+### DONE (all pushed with scripts/push.sh and merged by the Lead)
+- Box 25: docs/new/N5-1Ocyc-box25.md.
+  - Lemma 1 holds on all of 𝒞^1O (it settled N-3).
+  - Prop Z: the reduction to X ∪ Reach(o).
+  - Smaller W-drop instances (first refuted by box 22).
+  - Smallest σ̄-lap, n 6.
+- Box 26: docs/new/N5-reentry-box26.md. The stand-down lead ("every re-entry is a route improvement") is FALSE. θ-only
+  re-entries exist; smallest thetare_n.pg, n 11.
+  - Lemmas G, Wo, RM, RE, PIECE are in packet docs/new/P-N5-RE-box26.md (pinned 52c7261). Both referees SIGNED it, with gaps; (NC) is
+    not needed. Drafted as RESULTS R19 (CHECKER C28).
+  - Never edit the pinned packet. Corrections live in docs/new/N5-xing-box27.md §9.
+- Box 27: docs/new/N5-xing-box27.md. Throttled crossings via a COARSE valuation (vertices above u* := top(P(θ) Δ P(w))).
+  - PROVED: Lemma C, FBL, FBF (FB-RE = 0), XA (per re-entry), UT, UD.
+  - PROVED-in-writing: Lemma CR (coarse R17).
+  - Packet docs/new/P-N5-XA-box27.md (sha1 832d0da2…) is PINNED at trunk b70aa59. Both referees started at 15:22Z.
+  - Reduction (READING, assumes (h)): N5 on o-cyclic 𝒞^1O is polynomial ⇐ (CYC') θ- and w-changes per joint λ-phase, plus (NH)
+    non-(h) transitions per phase, both poly(n).
 
-### DONE (box 26; docs/new/N5-reentry-box26.md; code experiments/new/box25/reentry.py, routemono.py, routeclimb.py, shrink_theta.py)
-- The named lead ("every re-entry into R in a joint λ-phase is a route improvement") is FALSE.
-  - θ-only re-entries (w unchanged, route identical) are common: rt48 21 / 42, ph64 23 / 53, fts_best16 2 / 4.
-  - Smallest verified instance: thetare_n.pg, n 11 (sha1 64698459…).
-  - L-RED's 0 / 20 came from its class definitions (retcheck.py: class A is impossible while w is constant; class B is a
-    fall-through).
-- PROVED (θ-constant stretches with (h)): Lemma RM (routes never decrease); Lemma RE (every re-entry strictly improves the route),
-  modulo gap G26-1 (new cycle through x at the leave).
-- Hence re-entries per phase ≤ n·#θ-changes + Σ strict route increases per θ-stretch. (TRUST) ⇐ (CYC) + (ROUTE-BF), the latter
-  on throttled states only; unthrottled stretches are R17-bounded via Lemma PT.
+### IN FLIGHT (others)
+- REFEREE / REFEREE-2 successors 4 on P-N5-XA.
+- CHECKER C28 on R19.
+- L-RED 14 on (CYC') with sc32 as the seed.
+- L-SI box 2 on (CYC-u*).
 
-### DONE (box 25; docs/new/N5-1Ocyc-box25.md; code experiments/new/box25/)
-- Lemma 1 (P-N5-1OA) holds on ALL of 𝒞^1O (PROVED: the proof never uses o-acyclicity; vacuous if X = ∅). It settles N-3 against signed
-  §6. DATA: 0 failures at 3,409 pure states, control 266 failures.
-- Prop Z (READING, DATA-exact): Prop X lifts to Z = X ∪ Reach(o). So the core is G[Z].
-- FALSE:
-  - "Z frozen ⇒ θ = w" (zfrozen_thr n 13);
-  - (WF) "fallbacks W-flat": box 22 §3 already refuted it (i1h_fts_best16 n 11, canonical, o-cyclic, 2 drops at (h)-states). New:
-    smaller instances wdrop_cyc (n 4 random start), wdrop_canon (n 8 canonical), fbh_drop9 (n 9, (h), throttled), plus the
-    o-acyclic contrast (no drop found).
-  - PROVED: under (h) at an unthrottled state a fallback is W-flat.
-- Smallest σ̄-lap n 6 (lap_n6). The previous smallest was fts_best16, n 16.
-- Obstruction: box 22's trust mode, consolidated (§5) with the W-drop link and a parametric reading. Open statements (TRUST),
-  (FB-1O), A-stretches (§6).
-- No polynomial claim. No induction survived.
-
-### IN FLIGHT
-- Nothing running. All climbs ended by 05:52Z. Bests are committed in experiments/new/box25/instances (wd12_s1, wd16_s2, tr12_s3,
-  tr20_s4). No climb beat R17's per-phase n − 1.
-
-### NEEDS
-- PARKED 06:05Z by the Lead (box 25 merged on trunk ebbab26). (TRUST) is routed to L-RED box 28 as a kill target. The Lead
-  reassesses after box 28 (~07:35Z); this session stays the lane session and resumes on the Lead's word.
+### NEEDS / next (Lead routing 15:37Z)
+- Successor 10, box 28, proof side:
+  - first (NH): bound the transitions at non-(h) states per joint λ-phase, or reduce them;
+  - then (CYC') from the designer's angle.
+- Watch for referee gaps on P-N5-XA. Fix them in a NEW dated file, never in the pinned packet.
 
 ## Things only I know (successor 9)
-- The o-cyclic core, precisely (box 25 §5):
-  - Inside a (τ, λ)-phase under (h), θ = o ⊕ min over exits ∉ R of their o-free value.
-  - R17's Case B breaks only at withheld edges into R, and the repair breaks only at trust-routed z (in R, honest π_z ⊕ θ below an
-    o-free route, kept on o by the w-valued selection).
-  - Case A breaks at W-dropping fallbacks.
-  - Everything else is Bellman-Ford.
-- W-drops:
-  - off (h) they are common in random-start samples (21 in 17,974 runs);
-  - under (h) none were found in 1,010 random fallbacks, but a climb found one in 21 s (fbh_drop9);
-  - canonical starts: 0 drops in 195 random fallbacks, but wdrop_canon (n 8) has one, and wdropclimb reached 12 W-dropping
-    fallbacks in one phase at n 16 (each fallback peels one trust vertex out of R; phase 13 < n − 1 = 15).
-- Parametric reading (§5 (6)): for vertices off o's honest continuation, through-o route comparisons do not depend on the terminal
-  value, so each vertex flips o-free → through-o at most once as θ rises. The excess is entirely the selection's w.
-- Tools (box25/):
-  - common.py: vset = rank-free valuation, opt_one_player, rand_c1o (o-cyclic filter).
-  - thtrace.py: per-state θ, w, R and trust set.
-  - lemma1cyc.py, propz.py, lapsearch.py, sbclass.py, ringcheck.py.
-  - wmono_cyc.py, wdrop_h.py (h-split), fbh.py, fbhclimb.py, wdropclimb.py.
-  - abovefind.py: shrinker with start pairs.
+- Box 26/27 picture (READING; assumes (h)). Inside a joint λ-phase with τ fixed:
+  - UNTHROTTLED states (θ = w) are pure one-player G_τ (Lemma UT: ≤ n − 1 value changes per maximal unthrottled run, even as θ = w
+    moves).
+  - THROTTLED (θ ◁ w) (θ, w)-stretches are O(n³) via C / FBL / FBF / XA / CR / PIECE.
+  - So everything rests on how often θ or w changes, plus the non-(h) states.
+- The two-frame band (box 26 §7.3): F→R needs the honest test, R→F needs the W test, and in between a vertex keeps its side.
+  "Withheld" and "trust" are its two faces. Reweighting (Johnson / T29 Lemma B) cannot remove it. Coarsening above u* does.
+- (NH) start points:
+  - All box-25 W-drop instances at fallbacks off (h) have τ(o) closing a cycle at o (wdrop_cyc n 4, wd16_s2).
+  - In every long phase (fts_best16, tp32, rt48, ph64, sc32, elim24_p52), non-(h) transitions = 0 (phaseprofile.py). So (NH) may be
+    a boundary effect at phase starts.
+  - A first check: count non-(h) states per phase across climbs.
+- (CYC') start points:
+  - sc32.pg (n 32) has θ changing at every one of 43 transitions in one phase, with no w-change.
+  - Lemma UD: u* only descends when θ changes AT u*. In sc32, check how many θ-changes are at u* versus below it. That is (CYC-u*).
+  - Box 27 §8c sketches a recursion below u*: after the coarse freeze every vertex is one-sided.
+- Tools (experiments/new/box25/; all import common.py; random generator rand_c1o):
+  - reentry.py (ROUTE / WRISE / THETA classes), routemono.py, piececheck.py, crossings.py (throttled by default; --all);
+  - coarsecheck.py (C1 / C2 / C3, --withfb), fbedges.py, fbfcheck.py, phaseprofile.py;
+  - climbs: xingclimb.py (throttled), fbreclimb.py, stretchclimb.py, routeclimb.py, thetareclimb.py, shrink_theta.py.
 - Pitfalls:
-  - A fallback's refused edge can be a W-TIE (fbh_thr), so "d2 edge" does not imply a W-drop. Check W, not edge types.
-  - TRAP THAT BIT ME (box 25): I announced (WF) FALSE as new, although my own notebook (successor 8 DONE, box 22) and box 22 §3
-    record it. Check: before calling anything new, grep docs/new/ and this notebook for the statement's name and its key word
-    ((WF), "trust", "fallback").
+  - `cd dir && nohup cmd &` backgrounds the cd too, so later relative paths break. cd first, then nohup on its own line.
+  - pkill -f kills my own shell (hit again in box 27). Kill by `ps -eo pid,args | awk '$3=="script"'`.
+  - Measure THROTTLED quantities explicitly. Unthrottled regimes are already bounded and inflate the counts (box 26's mistake).
+  - Header timestamps only from date -u.
+- From box 25: the o-cyclic core (box 25 §5) holds. Inside a (τ, λ)-phase under (h), θ = o ⊕ min over exits ∉ R of their o-free
+  value. W-drops happen off (h) and at throttled (h)-fallbacks (fbh_drop9). A fallback's refused edge can be a W-tie (fbh_thr).
+- TRAPS THAT BIT ME:
+  - (box 25) I announced (WF) as new, although box 22 had it. Check: grep docs/new/ and this notebook before calling anything new.
+  - (box 26) My crossing climbs measured the unthrottled regime. Check: restrict to θ ◁ w.
 
 ## Things only I know (successor 8)
 - o-cyclic state, precisely:
