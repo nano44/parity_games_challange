@@ -54,3 +54,24 @@ Hence:
 ## Second option, noted, not ranked
 "N5 from a relaxation-guided τ_0" (Theorem B (c): an optimal τ_0 turns N5 into the frozen run). It is cheap but heuristic: it
 changes the start, not the worst case. It is not proposed as a (c) approach.
+
+## FREEZE (box 23, Lead GO 02:16Z Oct 24; written 02:16Z by date -u, BEFORE any run)
+The rule is frozen exactly as coded in experiments/new/n11/n5ht.py (sha1 598cc9000e293e2a6e59e0cc9b030dd0b4912604). Results cite the commit that adds this section.
+- S1-S3, S5: as N5 (N5-ssi-global.md SPEC; the same si.py engine, dual game, best-reward start, output Engine.regions(σ)).
+- S4a' (only if Iσ ≠ ∅):
+  1. σ_W := N5's S4a step, computed by the same code as n5.py.
+  2. For each Even x with at least one edge in Iσ, compute b(x) := max over (x, z) ∈ Iσ of (key(Ξσ(z)), z). Here key is si.py
+     Engine.key, "larger = better for Even", and Ξσ is the valuation at the CURRENT σ, not at σ_W.
+  3. x is a conflict iff key(Ξσ(σ_W(x))) < first component of b(x), a strict comparison of valuations.
+  4. For every conflict x, σ'(x) := the second component of b(x). Ties in valuation go to the larger index, the S4c rule.
+  5. Elsewhere σ'(x) := σ_W(x).
+- S4b' (only if Iτ ≠ ∅): the same on G^d, with τ_W := N5's S4b step and Ξτ, Iτ, Ed.key ("larger = better for Odd").
+- Both steps start from the same (σ, τ) and are applied together.
+- S4c (unchanged): if σ' = σ and τ' = τ, one switch-all fallback. Even goes first, choosing by max (key(Ξσ(w)), w); Odd only if
+  Iσ = ∅. The fallback is counted.
+- An iteration is a pass with Iσ ∪ Iτ ≠ ∅. Conflicts are counted (cE + cO per iteration).
+- Termination and correctness: σ' and τ' are σ and τ switched on subsets of Iσ and Iτ, so RESULTS R15 (c)-(d) apply.
+Faithfulness check (condition 2): run(..., ht=False) is N5. On a sample, (a) the ht=False traces must equal n5.run, and (b) every
+n5ht run with 0 conflicts in every iteration must give a trace equal to n5's. Both are asserted in n11/faith.py.
+Verification (condition 3): every reported run goes through experiments/new/check_sol2.py (Oink zlk regions, both strategies
+verified).
