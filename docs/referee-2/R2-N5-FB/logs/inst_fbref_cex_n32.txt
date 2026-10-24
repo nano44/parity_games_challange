@@ -1,0 +1,34 @@
+C1O_nontame: 5
+C1O_nontame lam(o)==o:False: 5
+CAP_checks: 15
+FB_tame_fallbacks_checked: 14
+LINK_sbar_minimiser: 700
+LINK_states: 140
+MONO_checks: 124
+M_rose_at_nontame: 11
+NC_fail_and_nontame: 11
+NC_fail_but_tame: 4
+NOINF_checks: 204
+NOINF_fallbacks: 14
+OFF_checks: 1757
+SIa_checks: 131
+SIa_converse_checks: 17
+SIb_hyp: 96
+T_checks: 2531
+T_checks_nontrivial: 432
+T_hyp_fails: 2077
+W_lowering_in_phase: 14
+fallbacks: 16
+phase_fallbacks: 14
+phases: 7
+runs: 5
+transitions: 135
+transitions NC=False tame=False inphase=False: 6
+transitions NC=False tame=False inphase=True: 5
+transitions NC=False tame=True inphase=False: 6
+transitions NC=False tame=True inphase=True: 4
+transitions NC=True tame=True inphase=False: 22
+transitions NC=True tame=True inphase=True: 92
+max_J_per_phase: 1
+max_fallbacks_in_block: 6
+RESULT OK violations=0

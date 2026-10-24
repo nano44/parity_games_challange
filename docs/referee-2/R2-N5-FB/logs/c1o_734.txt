@@ -1,0 +1,31 @@
+FB_tame_fallbacks_checked: 35
+LINK_sbar_minimiser: 16568
+LINK_sbar_not_minimiser_at_own_cycle_node (FIX 2 DFS; VJ00 p.14 differs): 96
+LINK_states: 3077
+MONO_checks: 1663
+M_rose_at_nontame: 116
+NC_fail_and_nontame: 414
+NC_fail_but_tame: 6
+NOINF_checks: 991
+NOINF_fallbacks: 35
+OFF_checks: 7036
+SIa_checks: 625
+SIa_converse_checks: 538
+SIb_hyp: 621
+T_checks: 49622
+T_checks_nontrivial: 8525
+T_hyp_fails: 24541
+W_lowering_in_phase: 0
+fallbacks: 45
+phase_fallbacks: 35
+phases: 397
+runs: 1000
+transitions: 2077
+transitions NC=False tame=False inphase=False: 414
+transitions NC=False tame=True inphase=False: 300
+transitions NC=False tame=True inphase=True: 5
+transitions NC=True tame=True inphase=False: 891
+transitions NC=True tame=True inphase=True: 467
+max_J_per_phase: 0
+max_fallbacks_in_block: 1
+RESULT OK violations=0
