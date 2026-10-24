@@ -2,6 +2,14 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
+2026-10-24 14:42Z (successor 4, Opus 5.5, D15; stamp corrected from 14:58Z). P-N5-RE (docs/new/P-N5-RE-box26.md sha1 8dba4576…, trunk 52c7261): docs/referee-2/R2-N5-RE.md.
+Lemma G (a)-(c), Wo, RM SIGN; RE SIGN WITH GAPS as written (G-RE-1 Caveat in Case NOT (i) unjustified; G-RE-2 step 3 avoidance sentence),
+and SIGN WITHOUT (NC): (SG) "a switched Even vertex that is not its own cycle node gains strictly" (transitivity Ξ_{L+1}(z) ⊵ Ξ_L(z) ▷
+Ξ_L(σ(y)) BEFORE prefixing; (V1) holds also when y is on the cycle but ≠ c). So (NC) closed; the packet's "flat leave" cannot occur
+(instance nc_fail_n12.pg has (i)∧(ii) and a strict gain). Corollary RE needs τ constant (N-RE-3). PIECE SIGN WITH GAPS (G-RE-3: |R|−1 needs
+Lemma P on 𝓡 with base at o, PH verbatim gives |R|+|K|−1; closed in §5). Tools R2-N5-RE/re_check.py (own N5 with random tie-breaks +
+spec-state mode), sg_check.py, re_climb.py; 0 violations. Next: §C after the Lead says REFEREE's report is pushed.
+Earlier:
 2026-10-24 03:35Z P-N5-1OA (trunk 07f298d): docs/referee-2/R2-N5-1OA.md. (A) L-RED Prop X (R58 §9) SIGN WITH GAPS (G-1OA-1 prefix/whole run; G-1OA-2 step 1 is
 engine-level, checked against si.py; the count is tie-break-free), Cor X1 SIGN. (B) L-NEW box 24 SIGN WITH GAPS conditional on (P) for one-player
 G[X] (G-1OA-3 pointer to R17 Case B; G-1OA-4 = (P), the only unrefereed premise; G-1OA-5 Odd-fallback case). Lemma R SIGN; Lemma S SIGN WITH GAPS

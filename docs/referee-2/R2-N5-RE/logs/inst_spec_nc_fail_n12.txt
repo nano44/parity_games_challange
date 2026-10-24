@@ -1,0 +1,19 @@
+Ga_checks: 15
+Gb_checks: 9
+Gc_checks: 41
+NC_FAILS(W): 1
+NC_FAILS(honest): 1
+RM_checks: 4
+Wo_checks: 1
+fallbacks: 0
+h_states: 2
+leave_class iwii: 1
+leaves_checked: 1
+runs: 1
+spec_steps_checked: 1
+states: 2
+switched_in_R_checks: 1
+transitions: 1
+example NC_fail_honest: nc_fail_n12.pg#0 L=0 x=5 y=5
+example NC_fail_W: nc_fail_n12.pg#0 L=0 x=5 y=5
+RESULT OK violations=0

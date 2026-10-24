@@ -1,0 +1,15 @@
+Ga_checks: 23
+Gb_checks: 4
+Gc_checks: 6
+RM_checks: 1
+Wo_checks: 2
+fallbacks: 1
+h_states: 3
+leave_class ----: 1
+leaves_checked: 1
+runs: 1
+spec_steps_checked: 1
+states: 3
+switched_in_R_checks: 1
+transitions: 2
+RESULT OK violations=0
