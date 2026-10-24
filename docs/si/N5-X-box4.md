@@ -214,7 +214,24 @@ leave, LL leave through a target that left; Z and its sign string):
   seed 502, canonical start: 1,650 games, Z ≤ 1. Random runs are nearly vacuous for (Z), as for every crossing statement so far.
 
 ## 6. Climbs on Z (DATA; lclimb.py, fitness (Z, X, T) of the best phase)
-Filled in at the end of the box (§9 has the final numbers and the re-verification).
+Four climbs at n 32, 30-50 min each, 18:00-18:50Z. Bests are pinned in experiments/si/xing/instances/; each was re-verified with
+reverify.sh (n5.py, Oink zlk OK, strategies verified).
+
+| best (seed) | sha1 | n5 it/fb | T | X | Z | carries (W-lowerings = evicting fallbacks) | θ-ch | w-ch | sign string of the longest phase |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| zcl_fb2_n32 (fbref_cex_n32) | b00b6b69 | 66/13 | 61 | 40 | **18** | 13 | 18 | 0 | `++++++-++++-+±-+++-++-++-+++-++-++------` |
+| zcl_rx_n32 (run_x_inr2) | a1318ea0 | 66/13 | 62 | 40 | 14 | 13 | 24 | 1 | `++-+++++++++++-+++++-+++-----+--++-+--++` |
+| zcl_fb1_n32 (fbref_cex_n32) | 947f3b78 | 71/10 | 65 | 47 | 11 | 10 | 15 | 0 | `+++++++++-+++++++++++++-++++++-++++++-++----+--` |
+| zcl_tp_n32 (s_tp32_final) | a9aab016 | 62/3 | 57 | 47 | 9 | 3 | 14 | 0 | `+(17)-+±-++-++-+(20)` |
+
+- In every reversal on the bests, the payers match §5 (revpay.py):
+  - '+−' reversals are fallbacks at THR states with nothing changed since the previous crossing;
+  - '−+' reversals are arena steps after a θ-change.
+- WM: 0 violations. W-lowerings = evicting fallbacks on all four.
+- Z went 7 → 18 at n 32 (Z < n). Carries per phase went 8 → 13, still below θ-changes + 1. Shape: the carries are spread out (short
+  increment runs between them), not nested blocks. This is the opposite of box 3's replay structure, whose single carry replays a
+  long block.
+- READING: Z is climbable to about n/2 at n 32 within 50 min. Growth with n is not measured yet (§10).
 
 ## 7. Natural potentials tested, and why each fails (PROVED-by-instance or DATA as labelled)
 Box 3 asked for a potential that rises at every INR/crossing and is not restored by o-free progress. Each candidate below is a
