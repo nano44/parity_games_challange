@@ -7,6 +7,8 @@ on R). Counts: switches; CASC-style violations with level := W-length (distance 
 import sys, os, random
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "box29"))
 from otherx import *
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from tbcheck import odd1
 
 def cyc(g, s, t, o):
     seq = [o]; x = o
@@ -17,7 +19,7 @@ def cyc(g, s, t, o):
         seq.append(x)
 
 def rows_nr(g, cap=10 ** 6):
-    E, Ed = Engine(g), Engine(dual(g)); o = odd_choice(g); s, t = start_pair(g, E, Ed, None); rows = []
+    E, Ed = Engine(g), Engine(dual(g)); o = odd1(g); s, t = start_pair(g, E, Ed, None); rows = []
     while len(rows) < cap:
         Xi, sb = E.evaluate(tuple(s)); U, _ = Ed.evaluate(tuple(t)); _, W = wvals(g, s, t)
         h1, h2 = not oncycle(g, s, sb, o), not oncycle(g, s, t, o)
