@@ -6,7 +6,7 @@ f93e517); (B) docs/new/N5-1Oacyc-box24.md (L-NEW successor 8, l-new 9d7890f); de
 §2.2 Lemma S. Context read: box 21 §1, §2.3-2.6, §3.4-3.7; R58 §2 (premise (P), Theorem W); RESULTS R15, R17; SPEC S1-S5 of
 docs/new/N5-ssi-global.md (FIX 1-4, Q1-Q4); experiments/new/box22/statcheck.py and experiments/new/n5.py (read-only). My own R-N5-1P
 (§3 route (a), §4 G4, §5) is used where this packet leans on R17. docs/referee-2/ was NOT read. Source for (P) and (11): VJ00 BRICS RS-00-48,
-the pdf of R-N5-1P (sha256 485a12de…), §4.3-4.4, §5.2 (11), §5.5 Lemma 5.8, re-read 03:30Z. Written 2026-10-24 03:22Z-03:47Z by date -u.
+the pdf of R-N5-1P (sha256 485a12de…), §4.3-4.4, §5.2 (11), §5.5 Lemma 5.8, re-read 03:30Z. Written 2026-10-24 03:22Z-03:34Z by date -u (stamp corrected at 03:39Z: the first push 71aa18fc carried an estimated end time 03:47Z).
 
 ## Verdict
 | item | verdict (Fable 5.1) |
