@@ -182,7 +182,9 @@ Proof.
   - Blocks of level ∞ or ⊥ contain no fallback (Step 2).
   - So a tame run has ≤ n·n_E + (n − 1)n_E = n_E(2n − 1) fallbacks.
   - There are ≤ J + 1 tame runs, and the J non-tame transitions add at most J more. □
-**Corollary (PROVED, from FB and WM, P-N5-Z §8; R23).** Inside a phase:
+**Corollary (PROVED, from FB and WM, P-N5-Z §8; R23).** [Scope, CHECKER C34 Addendum 1 / R25, 23:40Z: the W-lowering bound holds on
+every game; the (C) bound is 𝒞^1O only, because R and (C) are defined through o. fixes2 G-FB-3's "every game" is too wide for (C).]
+Inside a phase:
 - #W-lowering transitions ≤ n_E(2n − 1)(J + 1) + J;
 - (C) (the '+−' reversals at fallbacks) is at most that too.
 Hence (C) is polynomial in every phase with J ≤ poly(n). NEXT item 4 ("carries per level", the refill half of the counter) is Step 3:

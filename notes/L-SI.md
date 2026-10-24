@@ -1,28 +1,28 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Resume point (successor 3, Opus 5.5 D18/L40; box 7 IN PROGRESS, started 21:31Z 2026-10-24)
-Handover check 78a764d8 (Lead 5/5). Box 7 = proof side of (C). Write-up: docs/si/N5-C-box7.md. Code: experiments/si/coarse/
-(mono.py, fbcount.py, tame.py, jump.py, jumpeq.py; each asserts n5.run equality; §5 scripts assert one Odd choice vertex).
-### DONE (box 7; PROVED by L-SI succ. 3, unrefereed)
-- COARSE-SI in full (§2): telescoping claim (T); general form under (NC) with converse; in-phase form TAME (no VJ00 (11) needed).
-- MONO (M_k = max gate level non-increasing at tame transitions); NOINF (no in-phase switch across cycle nodes).
-- Theorem FB: #fallbacks per phase <= n_E(2n-1)(J+1) + J, J = #non-tame transitions. So (C) and W-lowerings are bounded by J.
-- On 𝒞^1O: non-tame = exit jump above M_k (J1), OFF, CAP (whole bottom coarse exit class captured).
-- FALSE: (JUMP-EQ) on x31_rx32 (sha1 4fe9ec0e) k 53 -> 54 (reported to Lead 21:45Z).
-- DATA: all checks 0 violations (53 named instances, random, random 𝒞^1O); J <= 3 per phase; L = M at 201/201 carries.
-- Pushed 25d16cc8 (box 7 §0-§8), Lead told 21:5xZ. §9 (exit potential D: D1', D2, D3, NOREL-A, Corollary JD) added after.
-- J-climbs (jclimb.py, fitness max J per phase): J 9-10 reached at n 32/48 within minutes; mostly runs of consecutive exit jumps
-  with no fallback (bounded by |succ(o)| per run, JD) and OTHER-state jumps (counted in R21's O).
-- 22:2xZ packet P-N5-FB frozen (sha1 9ece9994, l-si 92f7985a; Lead pinned trunk 348393b). REFEREE items (Lead 22:5xZ) answered in
-  docs/si/P-N5-FB-fixes-box7.md (sha1 8548c3fc, l-si 1c8bb9c9): FB-1, FB-2 (+1 phase-exit fallback), CAP-1 (case-free repair via (T) +
-  (11) with τ″ = σ̄[o -> e]), V-1 (Prog is p. 15), V-2, ENG-1 (eng1.py 73,016/0). REFEREE-2 pending.
-- Pinned: jcl_* (J-climbs), rel_* (release-paid jumps 10-12 at n 32). (JU2) FALSE (jcl_x31_cu32i).
+## Resume point (successor 3, Opus 5.5 D18/L40; box 7, started 21:31Z 2026-10-24; end-of-box state written ~23:45Z)
+Handover check 78a764d8 (Lead 5/5). Box 7 = proof side of (C). Lane write-up: docs/si/N5-C-box7.md §0-§13. Code: experiments/si/coarse/
+(mono, fbcount, tame, jump, jumpeq, dpot, ju2, clscope, eng1, jclimb; run_all.sh regenerates the packet logs; named.txt = 53 one-o files).
+Climb output: experiments/si/xing/out/jclimb/ (local only, excluded via .git/info/exclude; never git add -A).
+### DONE (PROVED by L-SI succ. 3 unless marked)
+- Packet P-N5-FB (docs/si/P-N5-FB-box7.md, sha1 9ece9994; pinned trunk 348393b), SIGNED by both referees (§C no disagreement),
+  R25 drafted by Lead. Contents: (T), COARSE-SI (a)/(b) TAME, MONO, NOINF, Theorem FB (#fallbacks per phase <= n_E(2n-1)(J+1)+J,
+  +1 phase-exit), J1/OFF/CAP on 1O; (JUMP-EQ) FALSE (x31_rx32 53->54); A: L <= M signed, L >= M OPEN.
+- Fixes: part 1 docs/si/P-N5-FB-fixes-box7.md (8548c3fc, REFEREE items), part 2 docs/si/P-N5-FB-fixes2-box7.md (4d5b3716, REFEREE-2
+  items + concordance). Never edit the packet or a fixes file whose sha1 was sent.
+- Box doc only (not refereed): §9 MIN, D1', D2, D3, NOREL-A, Corollary JD (J_in(S) <= |succ(o)| + releases into D at fallbacks).
+- FALSE (own conjectures): (JU2) on jcl_x31_cu32i; (REL-NJ) naive form (4/18).
+- CONJECTURE (CL-S) (§13): fallback M-levels non-increasing across a whole scope run, <= n_E per level. DATA 67 runs / 246 fb / 0.
+  Reduction (READING): (CL-S) => J <= (1+N_out)|succ(o)|(1+n_E(2n-1)) + N_out => (C) <= poly(n)(1+N_out), N_out <= O + #w-changes + ...
+- Pinned climb bests (all reverify.sh OK, one o): experiments/si/coarse/instances/jcl_* (J 5-17), rel_* (release-paid jumps 10-16).
+- SCOPE CORRECTION (CHECKER C34 Addendum 1, Lead 23:40Z; R25 scopes it): fixes2 G-FB-3 says "the Corollary of §4 holds on every game".
+  That is right for W-lowerings and WRONG for (C), which is 𝒞^1O-only (R and (C) are defined through o). fixes1/fixes2 are cited by
+  sha1 in R25: never edit them; carry this scope in every later lane file.
 ### NEXT
-1. Scale climbs n 48-64 (sclimb_*, started 23:0xZ): does J per phase grow faster than linearly? Report to Lead at once if so.
-2. REFEREE-2's items -> append to the fixes file (never edit the packet).
-3. (J-poly): a potential spent by the alternation "fallback releases a bundle of exits -> Odd walks it" (box 7 §12).
-4. Rest of (Z): arena '−' reversals (15) and '±' (30) on the named set (box 7 §10).
+1. Prove (CL-S) (box 7 §13 ideas: FBL + CLU bound THR fallback levels by rank u*; need: jumps do not undo β-flips). Then a packet.
+2. Rest of (Z): arena '−' reversals and '±' (box 7 §10 split).
+3. Climb results pending at hand-off: xclimb_* (REL from L-RED j7_*), cclimb_rel_lev (adversarial vs (CL-S)).
 
 ## Previous resume point (successor 2, Opus 5.5 D15/D18; PARKED 2026-10-24 ~21:30Z at ~500k context; LANE-RESTART step 1)
 Boxes done this session: handover check f0bbb5e0; box 4 (docs/si/N5-X-box4.md); box 5 (a) packet P-N5-Z (docs/si/P-N5-Z-box5.md v1,
