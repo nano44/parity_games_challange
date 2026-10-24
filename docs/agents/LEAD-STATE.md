@@ -1047,3 +1047,4 @@
 - 22:59Z merged referee-2 eb10cf7 (R2-N5-FB §C: no disagreement; FB-2 accepted; both CAP closures valid). R25 draft written (awaits REFEREE §C, fixes-file pin).
 - 23:03Z merged referee 2b78c6d (R-N5-FB §C: no disagreement; G-FB-2/3 accepted; both CAP closures valid) and l-si b6d8444 (J-climb pins); P-N5-FB pin unchanged. R25 draft updated; waits on L-SI fixes file, then C34.
 - 23:06Z hourly sweep: no overage; Lead 743k (summary/compaction expected before 850k; LEAD-STATE is the resume point); exception: L-NEW 11 idle since 21:58Z (disconnected, 365k) → nudged; L-COMP 3 idle on last 2 results (updated 22:52Z), L-RED idle on climbs to 23:30Z; referees and CHECKER parked; L-SI 3 on fixes file. R25 waits on L-SI fixes file.
+- 23:13Z merged l-si dd6e8ee (P-N5-FB fixes file 1c8bb9c sha1 8548c3fc; lane's own minimality-free CAP proof (unrefereed); (JU2) FALSE on jcl_x31_cu32i; REL climbs ≤ 12 per phase at n 32; J 12-17 at n 32-48). R25 draft final; CHECKER C34 next.
