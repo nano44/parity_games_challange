@@ -1,14 +1,40 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point
-2026-10-24 ~15:55Z (date -u), successor 2 (session_01TpuThMoeBcLB2T5KKeJpAa), end of box 3 (N5 exhaustive small-game searches;
-experiments/n5-exhaustive/README.md). Found: theta-driven re-entries exist (smallest thetaA_n6 from a start pair; thetaA_canon_n8
-from the canonical start); exhaustive n <= 4 (+ n 5 subset 57/160 slices) give exact small-n maxima; (b) trust-route growth false;
-SEG-1O / ELIM-n / H-E hold everywhere (SEG tight at n 5). Next if routed: finish the n 5 subset (exh.py 5 --no-forced
---even-maxdeg 2 --o-deg 2 --cyclic-only, ~70 min more on 3 cores; partial dump continues where tasks restart from scratch),
-n 5 all-starts on a tighter subset, apply L-NEW's reentry.py when it lands on claude/l-new.
-Earlier box (2026-10-23): N8d step 2 + switchbestexp + box 2b done (experiments/n8d-second/README.md).
+## Resume point / HANDOVER (LANE-RESTART step 1; successor 2 parks after box 4, 2026-10-24 ~17:40Z by date -u)
+Session session_01TpuThMoeBcLB2T5KKeJpAa (Opus 5.5), boxes this session: N8d step 2 + switchbestexp + box 2b (2026-10-23),
+box 3 and box 4 (2026-10-24). Lead asked to park at ~587k context after box 4.
+
+### DONE (all pushed on claude/l-comp; merged by the Lead up to box 3)
+- N8d-R2 second implementation: experiments/n8d-second/ (kl2.py frozen c0dc7a21; kl2fast.py C port reproduces it on every row);
+  R1/R2 equal to L-NEW per instance; switchbestexp R2 to N 30 ~ n^2; box 2b: tau_1 / tie-break settings do not change growth.
+- Box 3: experiments/n5-exhaustive/ (exh.py, rnd.py, shrink.py, check_instance.py, README.md): theta-driven re-entries exist
+  (thetaA_n6, thetaA_canon_n8, ...); exact small-n tables n <= 4 (+ n 5 subset partial); T28 (b) false; SEG-1O, ELIM-n, H-E hold.
+- Box 4: box4.py (CYC' = theta+w changes, NH = non-(h) transitions, phaseprofile.py convention, every phase; reentry.py classes);
+  tables n 4 canonical, n 4 all starts subset, n 5 subset partial, random streams; nh_n8 (smallest found: non-(h) throughout a
+  4-iteration phase, o on the play cycle, start pair). README "Box 4" section.
+
+### IN FLIGHT
+- Nothing after park (all background runs killed at park; partial JSONs copied to experiments/n5-exhaustive/results/).
+
+### NEEDS / next for a successor (box 5, Lead 17:1xZ)
+- Add X (crossing transitions: R changes) and O (transitions touching an OTHER state: (h) fails and Xi != W) per phase to
+  box4.measure (a few lines: R via thtrace.Rset per state, O via rows[k][3] and Xi[o] != W[o]) and re-run the small-n tables
+  (n 4 canonical ~10 min on 3 cores, n 4 all-starts subset ~35 min).
+- Finish the n 5 canonical subset (exh.py / box4.py exh 5 --no-forced --even-maxdeg 2 --o-deg 2 --cyclic-only; 160 (o, parity)
+  slices, ~2-3 min per slice per core with box4's reentry pass); there is no resume: rerun from scratch, or add a --slices option.
+
+### Things only I know
+- exh.py's canonical subset (ids in priority order, distinct priorities) is the only symmetry reduction; L-SI's Engine ranks by
+  (priority, id), so it is Engine-equivalent up to relabelling, but N5 id tie-breaks could differ on relabelled copies.
+- "max_*" excess columns in exh.py start at 0, so 0 means "<= 0"; rnd.py tracks true maxima (negative values are real).
+- box4 phases are keyed by (lambda_sigma, lambda_tau, tau(o)) (phaseprofile); exh.py's maxph uses joint lambda without tau(o)
+  (phases.py). The two give different phase lengths (n 4 all starts: 4 vs 3).
+- reentry.py re-runs N5 itself (n5x.step); box4 calls it only for runs with >= 2 iterations.
+- check_instance.py is the gate for any reported instance (n5.run counts, n5b SPEC full state sequence, Oink zlk, verify.py).
+- n5b.py has a trace hook (run(..., trace=list)) added 2026-10-24; behaviour unchanged.
+- Monitors that grep THETA lines from random streams at n >= 8 flood; filter by n.
+- kl2fast.py builds out/lfp.so with gcc on first import; out/ is gitignored.
 
 ## Queue (for the successor, after the running cells)
 0. sat-hard state (from the 2026-10-14 resume point): CEGAR-only s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT; CNFs lost
