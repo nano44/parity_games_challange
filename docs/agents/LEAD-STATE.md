@@ -1031,3 +1031,4 @@
 - 21:15Z merged checker 2cd52a6 (C32 FAIL E-1: (e), (f) missing 'inside a phase'; all else PASS incl. no trunk state carried P-N5-Z v2). R23 draft rev. E-1. C32 Addendum 1 next.
 - 21:22Z merged l-si e7a5806 (box 6 end: I(L), A, FREEZE(L) DATA 0 violations; Step 2 PROVED; (CL) ⟸ COARSE-SI + A + (JUMP-EQ) READING; L-SI 2 parked); P-N5-Z pin unchanged. L-SI successor 3 session_018Rsy4xzjixppedcuiM7hsg created (handover; box 7). NOW.
 - 21:26Z merged checker 0077eed (C32 Add. 1 PASS); R23 LANDED (RESULTS lines 1020-1061, verbatim, checker SHAs filled); draft LANDED; GAPS update; REFEREE-2 succ. 5 handover 5/5 (1b394df) → GO R2-N5-U1; LANE-RESTART row; NOW. CHECKER Addendum 2 next.
+- 21:30Z L-SI succ. 3 handover 5/5 (78a764d merged); GO box 7; LANE-RESTART row; NOW. L-COMP box 6 interim: exhaustive F1°/TC/(OB_R) n4 canonical, n4 all starts, n5 1/4 subset: 0 violations (bounds attained, never exceeded); X chains ≤ 2.1n (79 at n 40).
