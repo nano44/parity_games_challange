@@ -4,7 +4,7 @@ L-NEW successor 11 (Opus 5.5, D15/D18). Lead request 21:3xZ. Written 2026-10-24 
   file is unchanged). The packet is NOT edited; this file is its correction layer.
 - Sources:
   - REFEREE: docs/referee/R-N5-U1.md (claude/referee 257fa4c), §1-§7. No NOT SIGNED, no counterexample.
-  - REFEREE-2: pending (its successor is reviewing independently). Its items will be added in a new section.
+  - REFEREE-2: docs/referee-2/R2-N5-U1.md (claude/referee-2 28ddf6f), relayed by the Lead 21:5xZ; no NOT SIGNED. Its items: §7.
 - Rule: this file writes down the referees' repairs. A line of my own is marked "L-NEW".
 - Scope unchanged: lemmas about the candidate N5 (SPEC tie-breaks) on 𝒞^1O. Not a running-time bound, not a TARGET.md claim, not a
   step-4 pass. G-N5-TIME stays OPEN. NFB-O, the U2/U3 re-routings and (X) stay OPEN.
@@ -118,6 +118,78 @@ cycle node".
   transition 1 on.
 - From transition 1 on, its Ξ-changes are propagation only (REFEREE §7, confirmed). The refutation of U1-T is unaffected.
 
-## 6. Labels after this layer (REFEREE's signature, D18/L40)
-Once REFEREE-2 signs, TB, CASC, Lemma R (§1.1 form), Theorem U1 and Lemma WC would be PROVED (L-NEW; REFEREE, REFEREE-2), on 𝒞^1O,
-given f (Theorem U1, WC). Until then they are PROVED (L-NEW), signed by REFEREE.
+## 7. REFEREE-2's items (R2-N5-U1)
+### 7.1 G-TB-1 (TB step 2; CLOSED): REFEREE-2's (F1)-only proof, next to REFEREE's TB-1 (§2.1)
+Same chain W*(x) ⊵ W*(σ_k x) ⊕ x ⊵ W_k(σ_k x) ⊕ x = W_k(x) = W*(x), with y := σ_k(x).
+- The second and third relations hold: (F1) gives W* ⊵ W_k, ⊕ is monotone, and (V1) at k holds because x is not its own cycle node.
+- The first relation needs an argument only when x lies on y's W*-play; otherwise σ*[x → y] is an arena strategy with value
+  W*(y) ⊕ x at x, and (F1) applies. Let c be x's cycle node, and assume W*(x) = W_k(x).
+- (a) x on y's W*-path BEFORE c. Let Z := x → y → … → x, with top m. Z avoids c and x's W*-path after x.
+  - m ≻ c, m even: σ*[x → y] gives x the cycle node m, which beats c for Even, against (F1) at x.
+  - m ≻ c, m odd: since W_k(x) = W*(x), W_k(y) = (c, P* \ {x}, ℓ − 1). So W*(y).P \ W_k(y).P = Z ∩ (above c), whose top m is odd.
+    That gives W*(y) ◁ W_k(y), against (F1) at y.
+  - m ≺ c, c odd: cycle node m beats c for Even, against (F1) at x.
+  - m ≺ c, c even: W*(y) ⊕ x has W*(x)'s path set and a strictly larger length, so W*(y) ⊕ x ◁ W*(x), against the relation already shown.
+  So case (a) never occurs.
+- (b) x only on the cycle part of y's W*-play (after c). Let m := top of W*(y).P.
+  - If W*(y).P = ∅, σ*[x → y] realises W*(y) ⊕ x at x, and (F1) gives ⊴.
+  - Otherwise the new cycle has top m ≻ c. If m is even, (F1) at x is contradicted. If m is odd, W*(y) ⊕ x ◁ W*(x), because x's
+    path to c on the cycle has nothing above c. That contradicts the relation shown, so this sub-case does not occur.
+- So equality holds in every case that occurs, and σ_k(x) is fully optimal in H_k at x.
+- DATA (REFEREE-2): 277,668 step-2 instances in the batch. Case (a): 0. Cycle-only case: 27,336, equality every time. Climbs:
+  5,879,798 more, equality every time.
+- L-NEW: REFEREE's TB-1 and REFEREE-2's G-TB-1 close the same step by different case splits (REFEREE on the loop top and on the
+  monotonicity of · ⊕ x; REFEREE-2 on where x sits on y's play). Either suffices; both are recorded.
+### 7.2 G-R-1 (Lemma R step 1; CLOSED, wording)
+- The invariant "every surviving edge joins two vertices with the same membership in each processed set M_u" is false for the edges
+  out of u itself.
+  - Even likes u: u ∉ M, yet u keeps its edges INTO M.
+  - Odd likes u: u ∈ M, and its edges are not restricted.
+- Correct invariant: for a surviving edge x → y and every processed u ≠ x, [x ∈ M_u] = [y ∈ M_u].
+- That is what step 2 uses. When x = u′ is processed, x's own bit is on both sides, since the value via y is W*(y) ⊕ x. So for every u′
+  processed before u the two path sets agree at u′, and at u they differ against the optimiser.
+### 7.3 G-R-2 (= REFEREE's R-1; CLOSED by the §1.1 restatement)
+- The "(cycle node, path set)" reading with the formal ⊕ is FALSE as a sufficient condition for survival. REFEREE-2's instance:
+  tb_general.py seed 532, game #13, iteration 1, a dual-arena evaluation at cycle node 19. Edge 11 → 13 is deleted at step u = 11,
+  although W*(13) ⊕ 11 has W*(11)'s cycle node and path set; only the length differs.
+- Every self-loop u → u at an Even-liked u above c is another case.
+- DATA (REFEREE-2): 8,464 such deleted edges in the batch, all with u = x, 2,117 of them with x ≠ y. Climbs: 110,573 and 84,178.
+- The full-equality form (length included) is TRUE: for x = u, every y → c path in the restricted graph passes u, so
+  dist[y] ≥ dist[u] + 1 and the lengths differ. That is the §1.1 statement.
+- REFEREE-2 also notes that VJ00's text at Prop. 6.1 (p. 25) asserts the stronger "every shortest path survives", but its proof states only
+  clause 1 ("We omit considering the other case"). So Lemma R is the packet's own lemma, as in §1.2.
+### 7.4 N-U1-1 (Theorem U1 step 2; wording)
+- K is the number of post-freeze NON-FALLBACK transitions with a W-change on R. A fallback can change W in either direction and is
+  counted separately (the + f).
+- With this reading, K ≤ (f + 1)(|R| − 1)(|R| − 2) and the sum are right. Read literally, K could be off by ≤ f; the total is unaffected.
+### 7.5 N-U1-3 (§6 reading: EQ-state fallbacks in WC's f_I)
+- The gap: WC(I) ≤ (f_I + 1)|R|² counts ALL fallbacks in I. Under ¬H1 ∧ ¬H2, I contains EQ states (TC (iv)), and fallbacks occur
+  there (REFEREE-2: 110 in the batch and 20 in the climbs, all with w unchanged). §6 lists only "fallbacks at OTHER states".
+- Closure (L-NEW; REFEREE-2's proposed line, written as a proof; label PROVED (L-NEW), unrefereed until the referees check it).
+  - Claim: at a fallback transition k → k+1 inside a phase whose state k is EQ, W_{k+1} ⊵ W_k pointwise.
+  - Proof:
+    1. Inside a phase the fallback is Even's (SPEC S4c; FIX 3: τ_{k+1} = τ). It sets σ_{k+1}(v) to an edge of I_σ at every Even
+       v with an improving edge, and leaves the other Even vertices unchanged.
+    2. At an EQ state Ξ_k = W_k at every vertex. An edge (v, z) ∈ I_σ satisfies Ξ_k(z) ▷ Ξ_k(σ_k v), so W_k(z) ▷ W_k(σ_k v). It is
+       an improving edge of σ_k in the game G_τ (Odd fixed to τ), whose valuation of σ is exactly W (S1 applied to G_τ, where
+       Odd's counterstrategy is forced).
+    3. σ_{k+1} is σ_k with a set of improving switches of G_τ applied, at most one per vertex. By the strategy-improvement lemma for
+       Vöge-Jurdziński valuations (VJ00, the improvement theorem of §4-5; the same lemma under R15 (a)), applied to the game G_τ, the
+       new valuation dominates the old one pointwise: W_{k+1} ⊵ W_k.
+  - So an EQ-state fallback never lowers W, and in particular never lowers w. In Lemma WC's count it does not end a monotone stretch.
+    It is still a transition, and it may change w, at most once: it is then counted as one of the ≤ |R|² − 1 monotone changes.
+  - DATA (L-NEW, experiments/new/box31/eqfb.py): at every Even fallback from an EQ state, W against the old τ never drops at any
+    vertex. Random games n 4-14 (4,000, seed 71): 110 such fallbacks, 0 violations. Random o-cyclic 𝒞^1O n 6-16 (4,000, seed 72):
+    139, 0 violations.
+  - Restated §6 input: WC(I) ≤ (f^O_I + 1)|R|² + f^O_I, where f^O_I counts the fallbacks at OTHER states of I. So §6's list ("(X),
+    NFB-O, U2/U3") stands as written.
+  - L-NEW, caveat for the referees: step 3 cites the improvement lemma for an arbitrary game. G_τ is a parity game (Odd's vertices have
+    one successor each), so the lemma applies. I have not re-opened VJ00 for its theorem number in this box; the citation is VJ00 §4-5
+    as used throughout R15.
+### 7.6 N-U1-4 / N-U1-5 = D-2 / D-1 (§5 above); N-U1-2 (DATA note)
+- N-U1-2: the f > 0 and K > 0 branches of Theorem U1 are never exercised by REFEREE-2's data. The theorem rests on the proof there.
+
+## 8. Labels after this layer (both signatures, D18/L40)
+With both signatures (REFEREE R-N5-U1, REFEREE-2 R2-N5-U1; §C pending), TB, CASC, Lemma R (§1.1 form, invariant as in §7.2), Theorem U1
+and Lemma WC are PROVED (L-NEW; REFEREE, REFEREE-2), on 𝒞^1O, given f (Theorem U1, WC). §7.5's EQ-fallback claim is PROVED (L-NEW),
+unrefereed. §6 of the packet stays a READING.
