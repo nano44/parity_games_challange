@@ -17,6 +17,16 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   so CASC is now SIGN WITH GAPS; G-TB-1 = TB-1 (TB-1 (b) corrects my "⊕ monotone" wording); G-R-2 = R-1; R-2 = my VJ00 finding.
   N-U1-3 closed by R15 (a) applied in G_τ at EQ states. Withdrew "§6 uses only signed results". Stamp fix: §C header said 21:58Z,
   true 21:53Z. PARKED.
+- P-N5-FB (docs/si/P-N5-FB-box7.md sha1 9ece9994…, trunk 348393b; Lead 22:3xZ): report docs/referee-2/R2-N5-FB.md (22:47Z).
+  - FB SIGN WITH GAPS (G-FB-1: M<∞ needs the best-target line; G-FB-2: R21 (c) signed on 𝒞^1O only, transfers via S4c + FIX 3).
+  - Corollary SIGN WITH GAPS (G-FB-3: WM signed on 𝒞^1O; (F1) in G_τ transfers it).
+  - (T), SI (a) + converse, TAME, MONO, NOINF, J1, OFF, Remark SIGN.
+  - CAP SIGN WITH GAPS (G-FB-4: SPEC σ̄ = FIX 2 DFS at own-cycle-node Odd vertices is not VJ00's minimiser, 1,228 cases; coarse
+    minimality suffices).
+  - (JUMP-EQ) FALSE confirmed at x31_rx32 53→54; A confirmed (201/201).
+  - Lane logs reproduced byte-identically.
+  - Tools: docs/referee-2/R2-N5-FB/ (fb_check.py, a_check.py, fb_climb.py).
+  - NEXT: §C after REFEREE's R-N5-FB is pushed.
 
 ## HANDOVER (successor 4, session_01DDRfmJkBTC5uu5q62T2Dme, Opus 5.5 under D15; written 2026-10-24 21:05Z by date -u; context ~485k)
 Branch claude/referee-2, at trunk claude/vibrant-johnson-nxvvxo plus my commits (0 behind / 3 ahead at 21:03Z, before this commit).
