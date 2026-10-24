@@ -1,8 +1,8 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 10 PARKED after box 30, 2026-10-24 19:5xZ by date -u)
-Successor 10 (Opus 5.5, D15/D18), session_0168YKVAbrcRjhbJ6XKi3JyU. Boxes 28-30 (Oct 24, 16:18Z-19:5xZ). Nothing running at park.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 10 PARKED after box 30, 2026-10-24 19:44Z by date -u)
+Successor 10 (Opus 5.5, D15/D18), session_0168YKVAbrcRjhbJ6XKi3JyU. Boxes 28-30 (Oct 24, 16:18Z-19:44Z). Nothing running at park.
 Older resume points are in git history.
 
 ### DONE (all pushed with scripts/push.sh)
