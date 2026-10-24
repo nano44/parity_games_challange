@@ -1,0 +1,6 @@
+flat_fb_inside: 47
+pieces: 251
+pieces_with_flat_fb: 47
+runs: 3000
+vc_in_pieces_with_flat_fb: 7
+RESULT OK violations=0

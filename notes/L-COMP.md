@@ -2,12 +2,13 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-23 ~09:40Z (date -u): PARKED (successor 2, session_01TpuThMoeBcLB2T5KKeJpAa). Done this box, all in experiments/n8d-second/
-README.md: N8d step 2 second implementation (kl2.py frozen c0dc7a21; R1 and R2 equal to L-NEW per instance everywhere; merged
-by Lead at eccb207); switchbestexp R2 to N 30 (~n^2); box 2b (tau_1 first/last/rand, ids reversed): no setting changes the growth
-class (switchbestexp relabel 15 seeds to N 38: n^2.08). kl2fast.py (C LFP) reproduces kl2.py on every row run; use it for big N.
-Open for a successor (only if routed): spec pins C1/C3/C4 go into N8d §0b (L-NEW successor; CHECKER diffs against my README);
-switchbestexp mod-4 staircase is a data note only.
+2026-10-24 ~15:55Z (date -u), successor 2 (session_01TpuThMoeBcLB2T5KKeJpAa), end of box 3 (N5 exhaustive small-game searches;
+experiments/n5-exhaustive/README.md). Found: theta-driven re-entries exist (smallest thetaA_n6 from a start pair; thetaA_canon_n8
+from the canonical start); exhaustive n <= 4 (+ n 5 subset 57/160 slices) give exact small-n maxima; (b) trust-route growth false;
+SEG-1O / ELIM-n / H-E hold everywhere (SEG tight at n 5). Next if routed: finish the n 5 subset (exh.py 5 --no-forced
+--even-maxdeg 2 --o-deg 2 --cyclic-only, ~70 min more on 3 cores; partial dump continues where tasks restart from scratch),
+n 5 all-starts on a tighter subset, apply L-NEW's reentry.py when it lands on claude/l-new.
+Earlier box (2026-10-23): N8d step 2 + switchbestexp + box 2b done (experiments/n8d-second/README.md).
 
 ## Queue (for the successor, after the running cells)
 0. sat-hard state (from the 2026-10-14 resume point): CEGAR-only s^V(5,5) k=10 and TARGET n=5 strong k=8 UNSAT; CNFs lost
@@ -160,6 +161,11 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
   Python label conversion was only 5x. pypy3 (apt, 7.3.15) gives only 1.7x on kl2.py. The C .so builds into out/ (gitignored) on
   first import; gcc must exist.
 - run_families.sh line "echo ... tail -1 $R/$f.kl2.log" prints a tail error with IMPL=kl2fast (cosmetic; exit codes are right).
+
+- Box 3: exh.py's analyse() reruns Engine evaluations per state (Xi_sigma, Xi_tau, W, R, trust set, route lengths); ~0.2 ms per
+  trivial game, ~2-3 ms per run with >= 2 iterations. Full n 5 (7e9 games) is out of reach in Python; the canonical subset (ids in
+  priority order) is the only symmetry reduction used. Max fields initialised at 0 mean "<= 0" for excess columns.
+- Monitors on THETA lines flood when random streams at n >= 8 hit often; filter by n in the grep.
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |

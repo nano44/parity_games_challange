@@ -33,6 +33,23 @@ from pureY import split       # noqa: E402
 import trustcount             # noqa: E402
 
 
+from n5x import step as n5step, start_pair  # noqa: E402
+
+
+def trace_fb(g, start=None, cap=10 ** 6):
+    """n5x.trace's loop (= n5.py run), also returning the per-transition fallback flags."""
+    E, Ed = Engine(g), Engine(dual(g))
+    sigma, tau = start_pair(g, E, Ed, start)
+    states = [(tuple(sigma), tuple(tau))]; fbs = []
+    while len(states) - 1 < cap:
+        r = n5step(g, E, Ed, sigma, tau)
+        if r is None:
+            break
+        sigma, tau, Is, It, fb, _, _ = r; fbs.append(fb)
+        states.append((tuple(sigma), tuple(tau)))
+    return states, fbs
+
+
 def prios(par):
     out, p = [], -1
     for b in par:
@@ -71,7 +88,7 @@ def starts(g):
         yield ({v: pick[v] for v in range(g.n) if g.owner[v] == 0}, {v: pick[v] for v in range(g.n) if g.owner[v] == 1})
 
 
-def analyse(g, st, o):
+def analyse(g, st, o, fbs=None):
     """phases, theta-changes, trust, re-entries for a state list st. Returns a dict:
     maxph   longest joint lambda-phase in iterations (phases.py convention)
     thch    max number of theta changes (theta = Xi_sigma(o), Engine key) between consecutive states inside one phase
@@ -84,14 +101,24 @@ def analyse(g, st, o):
     tg_ok / tg_bad / tg_first  (T28 (b), Lead 13:42Z) trust-route growth: for z in T_k (box25 trust set: Even z in R_k with an
             honest-improving edge to a vertex outside R_k) and z in R_{k+1}, within one (tau(o), joint-lambda)-phase, is
             len_{k+1}(z) = len_k(z) + 1 (len = edges on z's (sigma, tau)-path to o)? counts and the first violation (k, z, len_k,
-            len_k+1); a z that leaves R ("flushed") is not counted"""
+            len_k+1); a z that leaves R ("flushed") is not counted
+    elim / elimx  (L-SI CONJECTURE (ELIM-n), Lead 14:00Z + 14:10Z correction) longest run of consecutive non-eliminating
+            transitions inside one joint lambda-phase, elim.py 'noelimrun_both' (a sigma edge or an Odd best-reply sbar edge
+            abandoned for good in the phase), and elim - (n - 1); elim_sigma = 'noelimrun' (sigma only), elim_st = sigma or tau
+    thel    thetaelim.py (L-SI (CYC-ELIM)): max theta-changes inside a non-eliminating window (sigma or tau)
+    E / hex (L-LIT CONJECTURE (H-E), Lead 14:00Z) over fallback-free (theta, w, tau, lambda)-constant stretches: E = number of
+            (step, arc) pairs where an R-entering Even arc (x not in R, z in R) changes admitted status (in I_sigma or not);
+            Emax = max E per stretch, stlen = longest such stretch (transitions), hex = max over stretches of
+            stlen - (E + 1)(n - 1) (positive = H-E bound exceeded, counting all transitions); needs fbs"""
     E, Ed = Engine(g), Engine(dual(g))
-    lam, th, ww, RR, TT, LL = [], [], [], [], [], []
+    lam, th, ww, RR, TT, LL, AD, SB = [], [], [], [], [], [], [], []
     for s, t in st:
-        X, _ = E.evaluate(s); U, _ = Ed.evaluate(t)
+        X, sbar = E.evaluate(s); U, _ = Ed.evaluate(t); SB.append(tuple(sbar))
         lam.append((tuple(x[0] for x in X), tuple(y[0] for y in U)))
         Eg, W = wvals(g, s, t); th.append(E.key(X[o])); ww.append(Eg.key(W[o])); R = Rset(g, s, t, o); RR.append(R)
-        TT.append({v for v, w in E.improving(s, X) if v in R and w not in R})
+        Is = E.improving(s, X)
+        TT.append({v for v, w in Is if v in R and w not in R})
+        AD.append({(v, w) for v, w in Is if v not in R and w in R})
         nxt = [s[v] if g.owner[v] == 0 else t[v] for v in range(g.n)]; L = {}
         for v in R:
             x, c = v, 0
@@ -149,12 +176,51 @@ def analyse(g, st, o):
                     if len(events) < 20:
                         events.append((pi, k, x, p, q, bool(A), leave[(x, q)]))
                 u.add(q)
+    # elim.py (L-SI 316ed69) windows over every phase: el = sigma edge abandoned for good; oel = Odd best reply sbar edge;
+    # tel = tau edge. elim = noelimrun (el), elimb = noelimrun_both (el or oel; Lead 14:10Z column), elimst = (el or tel);
+    # thel = thetaelim.py: max theta-changes inside a window of non-eliminating transitions (el or tel)
+    elimw = elimb = elimst = thel = 0
+    for a, b in runs:
+        ls, lo_, lt = {}, {}, {}
+        for i in range(a, b + 1):
+            for x in range(g.n):
+                if g.owner[x] == 0:
+                    ls[(x, st[i][0][x])] = i
+                else:
+                    lt[(x, st[i][1][x])] = i
+                    if SB[i][x] is not None and SB[i][x] >= 0:
+                        lo_[(x, SB[i][x])] = i
+        c1 = c2 = c3 = c4 = 0
+        for i in range(a, b):
+            el = any(st[i][0][x] != st[i + 1][0][x] and ls[(x, st[i][0][x])] == i for x in range(g.n) if g.owner[x] == 0)
+            oel = any(SB[i][x] != SB[i + 1][x] and lo_.get((x, SB[i][x])) == i for x in range(g.n) if g.owner[x] == 1)
+            tel = any(st[i][1][x] != st[i + 1][1][x] and lt[(x, st[i][1][x])] == i for x in range(g.n) if g.owner[x] == 1)
+            c1 = 0 if el else c1 + 1; c2 = 0 if (el or oel) else c2 + 1; c3 = 0 if (el or tel) else c3 + 1
+            c4 = 0 if (el or tel) else c4 + (th[i + 1] != th[i])
+            elimw, elimb, elimst, thel = max(elimw, c1), max(elimb, c2), max(elimst, c3), max(thel, c4)
+    Emax = stlen = 0; hexc = -10 ** 9
+    if fbs is not None:
+        key = [(th[k], ww[k], st[k][1], lam[k]) for k in range(len(st))]
+        k = 0
+        while k < len(st) - 1:
+            j = k                                       # stretch: transitions k..j-1 with constant key and no fallback
+            while j < len(st) - 1 and key[j + 1] == key[k] and not fbs[j]:
+                j += 1
+            if j > k:
+                Ec = sum(len(AD[i] ^ AD[i + 1]) for i in range(k, j))
+                Emax = max(Emax, Ec); stlen = max(stlen, j - k); hexc = max(hexc, (j - k) - (Ec + 1) * (g.n - 1))
+                k = j
+            else:
+                k += 1
     trust, tlen = trustcount.count(g, st)
     return dict(maxph=maxph, thch=thch, trust=trust, tlen=tlen, reA=reA, reB=reB, leaves=leaves, entries=entries,
-                reent=reA + reB, events=events, seg=seg, segx=seg - (g.n - 1), tg_ok=tg_ok, tg_bad=tg_bad, tg_first=tg_first)
+                reent=reA + reB, events=events, seg=seg, segx=seg - (g.n - 1), tg_ok=tg_ok, tg_bad=tg_bad, tg_first=tg_first,
+                elim=elimb, elimx=elimb - (g.n - 1), elim_sigma=elimw, elim_st=elimst, thel=thel, Emax=Emax, stlen=stlen,
+                hex=hexc)
 
 
-KEYS = ("max_it", "maxph", "thch", "trust", "reent", "segx")
+KEYS = ("max_it", "maxph", "thch", "trust", "reent", "segx", "elim", "elimx", "elim_sigma", "elim_st", "thel", "Emax", "stlen",
+        "hex")
 
 
 def blank():
@@ -173,13 +239,16 @@ def task(args):
             continue
         res["games"] += 1; res["cyc"] += cyc
         for stt in (starts(g) if a.all_starts else [None]):
-            st, fb = trace(g, stt, check=False)
+            st, fbs = trace_fb(g, stt); fb = sum(fbs)
             res["runs"] += 1
             it = len(st) - 1
             if it == 0:
                 res["hist_ph"][0] = res["hist_ph"].get(0, 0) + 1; res["hist_th"][0] = res["hist_th"].get(0, 0) + 1
                 continue
-            d = analyse(g, st, o); d["max_it"] = it
+            d = analyse(g, st, o, fbs); d["max_it"] = it
+            if d["elimx"] >= 1 or d["segx"] >= 1 or d["hex"] >= 1:
+                print("ALERT", {k: d[k] for k in ("elim", "elimx", "segx", "hex")}, dict(prio=g.prio, owner=g.owner,
+                      succ=g.succ, start=stt), flush=True)
             rec = dict(prio=g.prio, owner=g.owner, succ=g.succ, start=stt, it=it, fb=fb, cyc=cyc,
                        **{k: v for k, v in d.items() if k != "max_it"})
             res["hist_ph"][d["maxph"]] = res["hist_ph"].get(d["maxph"], 0) + 1
@@ -253,7 +322,10 @@ def main():
           f"max in-phase {tot['max_maxph']} (o-cyclic {tot['max_ph_cyc']}), max theta-changes/phase {tot['max_thch']} "
           f"(o-cyclic {tot['max_th_cyc']}), max trust/phase {tot['max_trust']}, leaves {tot['leaves']} entries {tot['entries']}, "
           f"re-entries A(theta-driven) {tot['reA']} B(route) {tot['reB']}, phase hist {tot['hist_ph']}, theta hist {tot['hist_th']}, "
-          f"trust-route growth ok {tot['tg_ok']} bad {tot['tg_bad']}, max SEG excess over n-1 {tot['max_segx']}, {tot['secs']} s")
+          f"trust-route growth ok {tot['tg_ok']} bad {tot['tg_bad']}, max SEG excess over n-1 {tot['max_segx']} (0 = none), "
+          f"max ELIM window (both) {tot['max_elim']} (excess over n-1 {tot['max_elimx']}, 0 = none; sigma-only {tot['max_elim_sigma']}, "
+          f"sigma-or-tau {tot['max_elim_st']}), max theta-changes in a non-elim window {tot['max_thel']}, max E per stretch {tot['max_Emax']}, "
+          f"longest stretch {tot['max_stlen']}, max H-E excess {tot['max_hex']} (0 = none), {tot['secs']} s")
 
 
 if __name__ == "__main__":

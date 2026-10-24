@@ -30,7 +30,7 @@ gaps.py asserts equal counts). Notation: docs/si/N5-OR-lens.md §1-§2 (lev, ⊕
   - Neither the parametric family LP(t) = G^t nor a USO face walk turns θ-changes into breakpoints of a fixed structure: θ is Odd's
     value against N5's CURRENT σ, not against Even's G^t-optimum (§3).
   - (CYC-u*) stays OPEN.
-- **DATA:** θ-changes per run, max 17 at n 32 with d = 11 (inr2_n32); climbs in §4.
+- **DATA:** θ-changes per run, max 42 in one (w, u*)-run at n 32 with d = 11 (run_x_inr2, Oink OK). Climbs in §4.
 
 ## 1. Setting and facts used
 ASSUMPTIONS (each one line):
@@ -84,6 +84,23 @@ If D ≠ ∅, then σ̄_j(o) ≠ e for every later state j of the same run.
   u* between them: every Ξ_t(e), k ≤ t ≤ j, agrees with Ξ_k(e) at and above u*. The proof is steps 1, 2 and 4 with any t in
   place of k+1.
 
+**Lemma VIS′ (PROVED, L-SI, 15:40Z; the general form, without u*).** Same setting.
+- Let e = σ̄_k(o) enter R at k → k+1 with loop L = ρ ∪ {o}.
+- Let t := the most relevant vertex of (L↑c) \ P(Ξ_k(e)). If L↑c ⊆ P(Ξ_k(e)), then t := none.
+- If σ̄_j(o) = e at a later state j of the same joint λ-phase, with τ fixed and (h) at k, k+1 and j, then
+  v := top(P(θ_k) Δ P(θ_j)) exists and is at least as relevant as t.
+- In words: before e can be Odd's best reply again, θ itself must have changed at the level of the loop's new top vertex, or
+  higher.
+Proof.
+- As in VIS, steps 1 and 4: lev(Ξ_k(e), Ξ_j(e)) = lev(θ_k, θ_j) on path sets (o is in both θ's or in neither, and in neither Ξ).
+  So it is 1 + rank(v), or ≤ 0 if P(θ_k) = P(θ_j).
+- lev(Ξ_k(e), Ξ_{k+1}(e)) ≥ 1 + rank(t) when t ≠ none.
+- U (ii) gives 1 + rank(t) ≤ lev(Ξ_k(e), Ξ_j(e)). □
+- VIS is the special case: inside a (w, u*)-run, v is less relevant than u* (Lemma UD).
+- VIS′ needs neither w fixed nor a throttled state.
+Use: every repeated self-elimination of an exit is charged to a θ-change at level ≥ t. This does not count θ-changes by itself:
+a monotone lexicographic sequence can change at a fixed level many times. OPEN whether the charges can be made injective.
+
 DATA check (oneinr.py; 0 violations of the conclusion, as the proof requires):
 
 | instance | INR events in runs | visible | violations |
@@ -132,8 +149,23 @@ numbers. rise3_n32: 12 INR events, 5 visible, 0 violations.
   - Iterating gives one level per "u*-like" vertex, n levels, and an n^depth bound, the same obstacle box 27 §8c names.
 
 ## 4. Climbs (DATA; climb.py --run, canonical start unless seeded; one Odd choice vertex)
-Fitness = θ-changes inside one (w, u*)-run under (h), then max INR per exit per run, then max rise per exit per run, then d.
-Running 15:27Z-16:12Z; results below when they end.
+Fitness (--runmax) = θ-changes inside one (w, u*)-run under (h), then max INR per exit per run, then max rise per exit per run, then d.
+--runexcess uses (θ-changes per run − d) instead. Runs 15:27Z-16:15Z, 2,400-2,700 s each. Final bests are in instances/; every one
+is Oink zlk OK with strategies verified, and Lemma VIS′ holds on all of them (visprime.py: 0 violations).
+
+| climb | n | d | θ-changes in one (w, u*)-run | θ-changes in the phase / phase length | instance (sha1) | n5.py iterations / fallbacks |
+| --- | --- | --- | --- | --- | --- | --- |
+| --runexcess, seeded from inr2_n32 | 32 | 11 | **42** | 43 / 49 | run_x_inr2.pg (8a5a82a6…) | 51 / 3 |
+| --runmax, seeded from inr2_n32 | 32 | 24 | 28 | 29 / 30 | run_m_inr2.pg (8f45d1ea…) | 35 / 1 |
+| --runmax, n 24 random | 24 | 24 | 18 | — | run_m_n24.pg (27999f9a…) | 22 / 0 |
+| --runmax, n 16 random | 16 | 16 | 11 | — | (out/ only) | — |
+
+- run_x_inr2: 42 θ-changes inside ONE (w, u*)-run at n 32 with d = 11. That is 3.8·d and 1.3·n.
+  - One exit (26) rises 4 times while it is the argmin.
+  - So no per-run bound of the form c·d with c ≤ 3 holds, and the per-run count is not controlled by d.
+  - The phase's 43 θ-changes are above the 35 of s_tp32_final, which was the largest per phase before this box.
+- READING: on these climbs, θ-changes per run and per phase grow at least linearly in n. (CYC-u*) is not refuted, since nothing
+  super-polynomial was seen, but the climbs show no constant-factor structure to exploit.
 
 ## 5. Files (experiments/si/orlens/)
 - thclass.py: θ-change classes; hstate(), the (h) test; ustar().
@@ -141,4 +173,5 @@ Running 15:27Z-16:12Z; results below when they end.
 - oneinr.py: Lemma VIS check.
 - perexit.py: per-exit INR / rise counts per run.
 - climb.py --run [--runmax]: climbs.
-- instances/inr2_n32.pg, instances/rise3_n32.pg.
+- instances/inr2_n32.pg, instances/rise3_n32.pg, instances/run_x_inr2.pg, instances/run_m_inr2.pg, instances/run_m_n24.pg.
+- visprime.py: Lemma VIS′ check.

@@ -1,6 +1,6 @@
-# Draft RESULTS R19 (Lead, 2026-10-24 15:15Z by date -u) (rev. 15:40Z: C28 E-1..E-6, N-2..N-7; REFEREE-2 §A) — awaits CHECKER C28 Addendum 1; lands in "## Results" after R18, before "## Dead ends"
+# Draft RESULTS R19 (Lead, 2026-10-24 15:15Z by date -u) (rev. 15:58Z: C28 Add. 1 E-7, N-8, N-9; rev. 15:40Z: C28 E-1..E-6, N-2..N-7; REFEREE-2 §A) — LANDED in RESULTS Results 16:14Z (CHECKER C28 + Addenda 1-2 PASS, checker 8f2ee01; lines 3-end verbatim with the checker SHA filled)
 
-### R19 [refereed-only] N5 on one-Odd-choice games: gate/selection structure (Lemma G), monotone w (Wo), monotone routes (RM), re-entry (RE) and two-run decomposition between crossings (PIECE) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C28.md, checker PENDING)
+### R19 [refereed-only] N5 on one-Odd-choice games: gate/selection structure (Lemma G), monotone w (Wo), monotone routes (RM), re-entry (RE) and two-run decomposition between crossings (PIECE) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C28.md, checker b53136d + Addenda e5c4694, 8f2ee01)
 - Object (packet P-N5-RE, pinned trunk 52c7261, unchanged during review): docs/new/P-N5-RE-box26.md, sha1
   8dba4576950d4888b90d4c0cc86217b9b8fec745 (L-NEW successor 9, Opus 5.5). The repairs both referees require are written in the
   referees' reports and applied by the lane in docs/new/N5-xing-box27.md §9 (not refereed as text; the signed statements are below).
@@ -15,7 +15,7 @@
   (c) Lemma RM: in a stretch with τ and θ constant and (h), routes of vertices staying in R never decrease (route order (c, A_π, |π|)
       without the terminal, RM-1).
   (d) Lemma RE, WITHOUT the packet's hypothesis (NC): inside one joint λ-phase, with (h) at L and at E+1 and τ constant on [L, E+1]
-      (the packet's hypothesis; both referees' later addenda, REFEREE §C3 and REFEREE-2 §A, read the τ hypothesis as unused), if x
+      (the packet's hypothesis; not needed: REFEREE §C3, REFEREE-2 §A), if x
       leaves R at L and next re-enters at E, then route_{E+1}(x) ▷ route_L(x) or
       θ_{E+1} ▷ θ_L. Proof as repaired by both referees: key step (SG) — at any N5 transition a switched Even vertex y with λ_L(y) ≠ y
       gains strictly (on all games, not only 𝒞^1O) (Ξ_{L+1}(z) ⊵ Ξ_L(z) ▷ Ξ_L(σ_L y), then one strict (V2)); the packet's step-2 caveat and step-3 sentence are
@@ -41,8 +41,8 @@
   violations.
 - Signatures: REFEREE docs/referee/R-N5-RE.md (referee 4457a9a; §C 87beaa6, a3d1f70): G, Wo, RM SIGNED; RE SIGNED WITH GAPS (closed),
   (NC) not needed; Corollary RE SIGNED WITH GAP N-RE-3 (τ-free reading §C3); PIECE SIGNED WITH GAPS (P-1 closed, P-2 wording). REFEREE-2
-  docs/referee-2/R2-N5-RE.md (referee-2 3ee7b73, c66da44; §C dd5aaa2): G, Wo, RM SIGN (RM-1 noted); RE SIGN without (NC); Corollary RE
-  SIGN WITH GAPS (N-RE-3, withdrawn in §A); PIECE SIGN WITH GAPS (P-1 closed, P-2 open as wording). Both §C: no disagreement; gap map RE-1 = G-RE-1,
+  docs/referee-2/R2-N5-RE.md (referee-2 3ee7b73, c66da44; §C dd5aaa2; §A 9d3f1fb): G, Wo, RM SIGN (RM-1 noted); RE SIGN without (NC); Corollary RE
+  SIGN WITH GAPS (N-RE-3), revised to SIGN in §A; PIECE SIGN WITH GAPS (P-1 closed, P-2 open as wording). Both §C: no disagreement; gap map RE-1 = G-RE-1,
   RE-2 = G-RE-2, P-1 = G-RE-3, P-2 = N-RE-4 (second half); (SG) = REFEREE §4.2. REFEREE-2's wording notes N-RE-1, -2, -5
   accepted by REFEREE (§C).
 - TARGET.md diff: not a claim of TARGET.md section 1. Gauntlet: partial step-4 lemmas for N5 on a subclass. GAPS G-N5-TIME: open.
