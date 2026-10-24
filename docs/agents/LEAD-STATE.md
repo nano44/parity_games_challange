@@ -991,3 +991,4 @@
 - 17:35Z L-SI parked (handover 6e5f64a, merged); L-SI successor 2 session_01Uat5ArD53GnDHorFDHrMnH created (handover check, then box 4 = (X) proof side); NOW roster updated.
 - 17:42Z L-SI succ. 2 handover check 5/5 (f0bbb5e, merged); GO box 4 = (X) proof side; LANE-RESTART row; NOW.
 - 17:47Z merged l-comp 298d2dc (box 4; scope OK); Lead re-run: b4_cyc6_1 canonical phase 4 it, θ 3 / w 3; nh_n8 (start) 4 non-(h) transitions, θ/w 0; both Oink zlk OK verified. L-COMP parked (~590k); successor 3 session_01BmytANWGKiHZhXK9QC2rB2 created (handover, then box 5 = X/O tables). NOW roster.
+- 17:53Z L-COMP succ. 3 handover 5/5 (0ef7701, merged); GO box 5; LANE-RESTART row; NOW.
