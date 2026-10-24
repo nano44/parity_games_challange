@@ -114,7 +114,7 @@ DATA, showing that the shape is tight on an exponential symmetric run (experimen
   then releases it.
 - Fixed optimal opponent (experiments/red/n5inj/frozen.py): N5 from a random σ with τ = an optimal Odd strategy (then
   It = ∅ for good) took at most 5 iterations on 400 random games (n 4-12, 20 starts each), and at most 6 / 8 / 11 on
-  sym_h8 / h12 / h16 (50 starts each).
+  sym_h8 / h12 / h16 (50 starts each). Random only: climbed frozen runs reach 43-86 (L-NEW box 21; see (K2), withdrawn).
 - Output checks: N5 outputs on dlm1_8 and dlm2_7 pass Oink zlk + verify.py (check_sol2.py). The sym_* instances were verified
   in R57 §6b.
 
@@ -135,14 +135,22 @@ DATA, showing that the shape is tight on an exponential symmetric run (experimen
 A super-polynomial N5 family (length T) must have all of the following.
 - (K1) PROVED given (P), Theorem W: all but 4n²·N_k(m) of each player's moves happen at |I| > k, for every k. Hence width
   ≥ log(T/8n²)/log m.
-- (K2) READING with DATA: both players move about T/poly times.
-  - With the opponent fixed at its optimum, runs are short: ≤ 11 iterations in §3, and R17 on one-player games.
-  - A fixed-opponent stretch bound is NOT proved for two-player games: G-N5-TIME, box-10 note vc_g25.
+- (K2) WITHDRAWN 2026-10-24 00:08Z (date -u); the original text is in git at 685174fb. It read: "both players move about T/poly
+  times; with the opponent fixed at its optimum, runs are short".
+  - That held on random games only (§3: ≤ 5 iterations; ≤ 11 on the sym seeds).
+  - It fails on climbed instances, all frozen-τ* runs:
+    - L-NEW fts_g29: 66 steps;
+    - fts_best24: 43 steps;
+    - an 86-step climb at n 33 (docs/new/N5-time-box21.md §0, §3.7).
+  - L-NEW's Theorem B (c) makes the frozen run a complete kill route. So "both players move" is NOT necessary, and a kill may
+    have τ frozen at τ* (§7).
+  - (K1) is unaffected and applies to frozen runs as Corollary W2.
 - (K3) READING, from (K1) and N5's definition: at those wide moves N5's joint optimum against the current opponent refuses
   nearly all honest improving edges (R-b at width ω(1)). Each refusal needs the opponent to be generous on the mover's current
   path (§4).
 - (K4) DATA, §1: the refused jump-ahead edges are counter edges (DLM 38/38; sym_h16 14/17). So lanes cannot be the mechanism
-  for (K3). The generosity must come from the opponent's own counter state, which is R-a.
+  for (K3). On the two-player branch, the generosity must come from the opponent's own counter state (R-a). On the frozen branch
+  (§7) it comes from an optimal τ*, which is generous to a suboptimal σ for free (bribe_cex_n15); there R-a is not needed.
 
 Partial incompatibility (PROVED given (P)): (R-a) + (R-b) at bounded width cannot give a super-polynomial run, whatever the
 mechanism. Every construction the fleet has tried is of that kind: DLM jumps at full width, and the symmetric climbs sit at
@@ -216,5 +224,93 @@ What this does to the design lead (READING).
 - bribe.py G [START] and bribebatch.py COUNT NMIN NMAX SEED: Conjecture BRIBE (§5).
 - stretch.py G [START] | random ...: longest one-sided stretch (§5).
 - widthclimb.py h SECONDS SEED OUT [KMIN] [--from G]: symmetric climb, fitness = wide refused moves, then iterations (results §8).
+- frozenclimb.py n SECONDS SEED OUT len|wide [KMIN]: frozen-τ* climb (§8b). phaselen.py G [START]: iterations per joint λ-phase.
+- instances/wide_h16.pg, frz24/32/40.pg + .start (§8).
 - instances/bribe_cex_n15.pg: the BRIBE counterexample (sha1 392af465e390d3fb83003d1dc06163da891bdac9).
 - DLM games come from experiments/new/dlm_gen.py 1|2 n, with the start pair on stderr.
+
+## 8. Climbs (DATA; 2026-10-23 23:20Z to 2026-10-24 01:36Z, date -u). Every best is checked: Oink zlk OK, strategies verified
+### 8a. widthclimb.py: symmetric games, n = 32
+Fitness: W = moves with mover |I| ≥ 4 that refuse ≥ 2 edges while the opponent has |I| ≥ 1; then iterations. 3,600 s per seed.
+
+| run | W | N5 iterations | longest joint λ-phase | instance |
+| --- | --- | --- | --- | --- |
+| from sym_h16_s1 (seed 1) | 72 (start 24) | 44 (start 55) | 23 | instances/wide_h16.pg (sha1 990ecbcf15ae…) |
+| random (seed 2) | 34 | 24 | — | not kept |
+
+- wide_h16: most moves sit at width 4-9; 245 / 238 declined-edge events (Even / Odd); longest one-sided stretch 2.
+- Raising width did NOT raise length: the climb traded iterations for W.
+- READING: on symmetric two-player games, holding wide refused sets is easy, but it does not lengthen runs.
+
+### 8b. frozenclimb.py: frozen-τ* runs, free games
+Start: σ_0 = S3 best-reward; τ* = Odd's switch-all SI optimum; Iτ* = ∅ is asserted. By L-NEW Theorem B (c), N5 is then the
+F_τ* run.
+- Mode 'len' fitness: iterations, then wide moves (|I| ≥ 3, ≥ 2 refused).
+- The n = 32 / 40 runs were cut at about 1,890 s of their 2,400 s, when a background-task limit stopped my session's wrapper
+  (not the program). The bests written by then are used.
+
+| n | budget | iterations (fallbacks) | longest joint λ-phase | Odd choice vertices | moves at gate width ≥ 3 | instance (sha1) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 24 | 2,700 s | 39 (4) | 11 | 1 | 39 / 39 | instances/frz24.pg + .start (f50c434b731a…) |
+| 24 'wide' mode | 2,700 s | 28 (0) | — | — | 26 at ≥ 4 | not kept |
+| 32 | ~1,870 s | 66 (8) | 28 | 3 | 60 / 66 | instances/frz32.pg + .start (b251897c9db0…) |
+| 40 | ~1,900 s | 90 (7) | 36 | 4 | 85 / 90 | instances/frz40.pg + .start (934e6dfa9965…) |
+
+Observations:
+- Iterations grow about 1.6n to 2.25n, linear at these budgets.
+- The longest λ-phase is 11 / 28 / 36, i.e. ≈ 0.9n. L-NEW's fts_g29 reaches 65 at n 29 in one phase, with a fitness aimed at
+  phases.
+- Frozen runs found by length alone live at WIDE gates: every move of frz24 refuses edges, with Odd's |I| = 0 throughout. So
+  Corollary W2's requirement is easy to meet; the hard part is length within one phase.
+- frz24 (one Odd choice vertex 19, so the game is in L-NEW's class 𝒞^1O):
+  - The 10-step backward propagation chain 4>16, 22>4, 6>22 + 7>6, 13>6, 5>13, 3>5, 8>3, 20>8, 14>20, 2>14 runs TWICE, at
+    iterations 2-11 and again at 29-38.
+  - σ̄(19) toggles 10 → 9 → 10 → 9.
+  - BUT the two laps lie in DIFFERENT joint λ-phases (cycle-node changes at iterations 12, 13, 26, 31; phase list
+    [1, 11, 1, 1, 8, 2, 2, 1, 1, 3, 8]).
+  - READING: lapping that needs a λ-phase change per lap is bounded by Lemma Φ (≤ 2n(n−1)+1 phases). So a kill must be
+    super-polynomial INSIDE one joint λ-phase, which is L-NEW's (SEG-1O)/(CH-1O) target, not across phases.
+- No kill. No instance shows growth beyond linear.
+
+## 9. Proposition X: on 𝒞^1O, the part of the game that cannot reach o is a one-player N5 run (PROVED, unrefereed; Lead routing 01:47Z)
+Setting:
+- 𝒞^1O: o is the only Odd vertex with out-degree > 1 (L-NEW box 21 §3.4). Any start pair.
+- X := {v : no path from v to o in the game graph}. X is closed under successors, o ∉ X, and every Odd vertex in X has one
+  successor. So G[X] is a game with no Odd choice, i.e. a one-player game in RESULTS R17's sense.
+
+Proposition X.
+- Statement: along N5's run on G, the sequence of DISTINCT restrictions σ|X (Even vertices of X) is N5's run on G[X] from
+  σ_0|X. Hence σ|X changes fewer than (|X|² − |X| + 1)(|X| + m_X) times (RESULTS R17).
+- Proof (from SPEC S1-S4):
+  1. Locality of valuations.
+     - Plays from x ∈ X stay in X, so the valuations Ξσ(x) and W(x) depend only on σ|X.
+     - In S1's procedure for a cycle node v ∈ X, the vertices of Y = V \ X never affect an X vertex:
+       - the cycle tests and the cycle-node DFS use successors only;
+       - for an Even-liked u ∈ Y, every X vertex of R reaches v without passing u, so it lies in M and loses no edge;
+       - for an Odd-liked u ∈ Y, no X vertex reaches u;
+       - in the BFS over predecessors, X vertices are discovered only from X vertices, so their relative FIFO order and their
+         choices are those of the BFS on G[X];
+       - a cycle node in Y kills no X vertex (X cannot reach it).
+     - So Ξσ, the gate Iσ and the W-optimum over A(σ), restricted to X, are those of G[X].
+     - S3's best-reward start is local.
+  2. Steps.
+     - An S4a step restricted to X is G[X]'s S4a step from σ|X.
+     - If that step is null, σ|X stays fixed: it waits, possibly while Y moves. It can then change only through a global S4c
+       fallback. That fallback is a switch-all on Iσ by the rule (Ξσ(w), w), whose X-part is G[X]'s own fallback. G[X] would
+       fall back at that state too, since its step depends on σ|X alone.
+  3. So every change of σ|X is G[X]'s next N5 step. R17 bounds the number of steps. □
+- DATA: experiments/red/n5inj/xlocal.py, 3,000 random 𝒞^1O games (n 5-14). In the 676 with o on no cycle, the sequence of
+  distinct σ|X equals the canonical N5 run of G[X] in all 676 cases, with no mismatch. The other 2,324 were skipped (o on a
+  cycle).
+
+Corollary X1, (CH-1O) on o-acyclic games.
+- Statement: if every successor of o lies in X, i.e. o lies on no cycle of the game graph, then:
+  - θ = Ξ(o), the minimum of o ⊕ Ξ(e) over o's exits e ∈ X, changes fewer than (|X|² − |X| + 1)(|X| + m_X) times;
+  - so does w = W(o) = o ⊕ W(τ(o)) between τ changes (at most d − 1 of those).
+- Consequence: by L-NEW's decomposition (N5-time-box21.md §3.6), N5 on o-acyclic 𝒞^1O is polynomial ⇐ (SEG-1O) alone.
+- READING: a 𝒞^1O kill must put o on a cycle of the game graph. The θ throttle must be fed by exits whose regions can route
+  back through o.
+- On the instances (checked): in fts_best16 (o = 5) and frz24 (o = 19) EVERY exit of o reaches o, and X = ∅. Both lie wholly
+  outside Corollary X1, as the corollary predicts for long runs.
+- Scope: Proposition X uses R17 as signed (N5 on games where Odd has out-degree 1 everywhere). The locality argument in step 1 is
+  mine and unrefereed.
