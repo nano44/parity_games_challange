@@ -114,7 +114,7 @@ DATA, showing that the shape is tight on an exponential symmetric run (experimen
   then releases it.
 - Fixed optimal opponent (experiments/red/n5inj/frozen.py): N5 from a random σ with τ = an optimal Odd strategy (then
   It = ∅ for good) took at most 5 iterations on 400 random games (n 4-12, 20 starts each), and at most 6 / 8 / 11 on
-  sym_h8 / h12 / h16 (50 starts each).
+  sym_h8 / h12 / h16 (50 starts each). Random only: climbed frozen runs reach 43-86 (L-NEW box 21; see (K2), withdrawn).
 - Output checks: N5 outputs on dlm1_8 and dlm2_7 pass Oink zlk + verify.py (check_sol2.py). The sym_* instances were verified
   in R57 §6b.
 
@@ -135,14 +135,22 @@ DATA, showing that the shape is tight on an exponential symmetric run (experimen
 A super-polynomial N5 family (length T) must have all of the following.
 - (K1) PROVED given (P), Theorem W: all but 4n²·N_k(m) of each player's moves happen at |I| > k, for every k. Hence width
   ≥ log(T/8n²)/log m.
-- (K2) READING with DATA: both players move about T/poly times.
-  - With the opponent fixed at its optimum, runs are short: ≤ 11 iterations in §3, and R17 on one-player games.
-  - A fixed-opponent stretch bound is NOT proved for two-player games: G-N5-TIME, box-10 note vc_g25.
+- (K2) WITHDRAWN 2026-10-24 00:08Z (date -u); the original text is in git at 685174fb. It read: "both players move about T/poly
+  times; with the opponent fixed at its optimum, runs are short".
+  - That held on random games only (§3: ≤ 5 iterations; ≤ 11 on the sym seeds).
+  - It fails on climbed instances, all frozen-τ* runs:
+    - L-NEW fts_g29: 66 steps;
+    - fts_best24: 43 steps;
+    - an 86-step climb at n 33 (docs/new/N5-time-box21.md §0, §3.7).
+  - L-NEW's Theorem B (c) makes the frozen run a complete kill route. So "both players move" is NOT necessary, and a kill may
+    have τ frozen at τ* (§7).
+  - (K1) is unaffected and applies to frozen runs as Corollary W2.
 - (K3) READING, from (K1) and N5's definition: at those wide moves N5's joint optimum against the current opponent refuses
   nearly all honest improving edges (R-b at width ω(1)). Each refusal needs the opponent to be generous on the mover's current
   path (§4).
 - (K4) DATA, §1: the refused jump-ahead edges are counter edges (DLM 38/38; sym_h16 14/17). So lanes cannot be the mechanism
-  for (K3). The generosity must come from the opponent's own counter state, which is R-a.
+  for (K3). On the two-player branch, the generosity must come from the opponent's own counter state (R-a). On the frozen branch
+  (§7) it comes from an optimal τ*, which is generous to a suboptimal σ for free (bribe_cex_n15); there R-a is not needed.
 
 Partial incompatibility (PROVED given (P)): (R-a) + (R-b) at bounded width cannot give a super-polynomial run, whatever the
 mechanism. Every construction the fleet has tried is of that kind: DLM jumps at full width, and the symmetric climbs sit at
