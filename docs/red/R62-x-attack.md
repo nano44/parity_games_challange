@@ -26,3 +26,24 @@ lev_l_sc (L-SI, sha1 86c17b07…, n 32), longest phase, states 8-54, 46 transiti
   L-NEW saw on its X-climb bests (box 28 §5c).
 - READING, what a third digit needs: under one carry above 24/21, TWO peel-carry-replay cycles of the (24/21)-block, each
   replaying the whole lower wave. X would then be about 4 waves; k digits would give about 2^(k−1) waves.
+
+## 2. (a) X over n, one seed family (DATA)
+- Family: for each n, the first random o-cyclic 𝒞^1O game from L-NEW's rand_c1o (forced 0, Random(1000 + n)) that xclimb.fit
+  accepts (experiments/red/xing/xseed.py).
+- Climb: L-NEW's experiments/new/box28/xclimb.py at l-new 07614f6e, UNMODIFIED. Fitness = max over phases of (X − O, phase length).
+  3,600 s each, 4 in parallel, 18:05-19:05Z.
+
+| n | best (sha1) | X − O | O | peels (≥ 3 leave at once) | N5 iterations / fallbacks (n5 = n5b) | X / n |
+| --- | --- | --- | --- | --- | --- | --- |
+| 16 | x32_rand16 (978dcd05…) | 13 | 0 | 0 | 15 / 1 | 0.81 |
+| 24 | x32_rand24 (730a0df9…) | 20 | 0 | 0 | 20 / 0 | 0.83 |
+| 32 | x32_rand32 (33f2e1fe…) | 29 | 0 | 0 | 29 / 0 | 0.91 |
+| 48 | x32_rand48 (86532180…) | 44 | 0 | 0 | 44 / 0 | 0.92 |
+| 64 | @@R64@@ | | | | | |
+
+- All verified: Oink zlk OK, strategies verified, and n5b (SPEC) agrees.
+- Fit: X ≈ n − 3 to n − 4. Log-log slope 16 → 48: log(44/13)/log 3 = 1.11, falling toward 1.
+- Shape: every best is ONE wave. Each iteration adds vertices to R, there are no peels, and X equals the whole run length. From
+  random seeds the climb finds only the trivial linear shape within an hour.
+- The multi-wave shape (X ≈ waves × wave size) appears only from structured seeds. L-NEW's bests (my count agrees: x32_sc32_final
+  X 54 with 3 peels, x48_rt48_final X 70 with 8 peels) and the wave climbs of §3 test it.
