@@ -1,34 +1,61 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 10, WORKING box 29; written 2026-10-24 18:3xZ by date -u)
-Successor 10 (Opus 5.5, D15/D18), session_0168YKVAbrcRjhbJ6XKi3JyU. Box 28 DONE (final report 18:05Z; head 23e8f932, merged 3cbf8d0;
-packet P-N5-X pinned at trunk afc88b0, sha1 b21d2d06; never edit it, repairs go into a fixes file). GO box 29 at 18:1xZ (about
-3 h): (NH') proof side.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 10 PARKED after box 30, 2026-10-24 19:5xZ by date -u)
+Successor 10 (Opus 5.5, D15/D18), session_0168YKVAbrcRjhbJ6XKi3JyU. Boxes 28-30 (Oct 24, 16:18Z-19:5xZ). Nothing running at park.
+Older resume points are in git history.
 
-### Box 28 (DONE): see docs/new/N5-NH-box28.md and P-N5-X-box28.md
-- Theorem X (READING): a phase has O(n⁴ (1 + X + O)) transitions.
-- PROVED: XW, EQ, FBL-N, NF, F1, F2, FB-W.
-- FALSE: FBRE-F (fbref_n48, and L-RED's fbref_cex_n32).
+### DONE (all pushed with scripts/push.sh)
+- Box 28: docs/new/N5-NH-box28.md and packet docs/new/P-N5-X-box28.md (pinned afc88b0). LANDED as RESULTS R21: Theorem X, a phase has
+  O(n⁴ (1 + X + O)) transitions; Lemmas XW, EQ, FBL-N, NF, F1, F2, FB-W. The repairs are in docs/new/P-N5-X-fixes-box29.md (REFEREE
+  X-1..X-4; REFEREE-2 G-X-1 = Lemma TF, N-X-1..3).
+  - Also docs/new/P-N5-XA-fixes-box28.md (became R20).
+  - FALSE: FBRE-F (fbref_n48, and L-RED's fbref_cex_n32).
+- Box 29: docs/new/N5-NH2-box29.md.
+  - PROVED: F1°, TC, P3′.
+  - READING: (NH') reduces to R-only changes in OTHER blocks + W-CYC.
+  - FALSE: WF0 (wf0_cex_n16).
+  - §9: L-COMP's b5_os family split. (OB_R) holds; everything is pattern 23 in route form; n12/14 are under P3′, n16-24 in U1.
+- Box 30:
+  - (a) Packet docs/new/P-N5-NH-box30.md, frozen at 4d3b60d1 (sha1 382c5143…), for the Lead to pin. NEVER edit it; repairs go into a
+    new fixes file.
+  - (b) docs/new/N5-U1-box30.md: in U1 the κ_w-freeze holds (PROVED). Post-freeze R-changes split into kind (L) (W-length,
+    ≤ (n − 2)|R| if no fallback) and kind (T) (W-tie V_mid cascades: the residual). CONJECTURE U1-T (≤ 2 per vertex per W-length).
+    Attack spec for L-RED.
 
-### Box 29 so far: docs/new/N5-NH2-box29.md
-- PROVED: F1° (F1 on crossing-free intervals with OTHER states); TC (H1 ⟺ λ_Ξ(o) ∈ F, H2 ⟺ τ(o) ∈ F, constant on crossing-free
-  intervals; OTHER blocks ≤ 1 except under ¬H1 ∧ ¬H2, where EQ ⟺ θ = w); P3′ (route form, honest cycle node higher: ≤ (n + 1)|R|
-  R-changes per piece).
-- READING: (NH') reduces to R-only changes in OTHER blocks plus w-changes under ¬H1 ∧ ¬H2. OPEN cases: U1 (route form, c_w higher;
-  V_mid), U2 (honest frame not route form), U3 (W frame not route form), W-CYC.
-- FALSE (WF0): wf0_cex_n16 (sha1 1de2ff5b…), a W-tie switch with an honest gain, in U1. The U1 conditional closure is void.
-- P-N5-X fixes: docs/new/P-N5-X-fixes-box29.md (REFEREE X-1..X-4; REFEREE-2 G-X-1 / Lemma TF, N-X-1..3). Repairs only; the
-  packet is never edited.
-- Box 29 final at ~19:20Z. Nothing running. Next: U1 (V_mid at W-ties), U2, U3, W-CYC; (OB_R) to prove.
+### IN FLIGHT (others)
+- Both referees on P-N5-NH once the Lead pins it.
+- L-RED: (X) superlinear; then U1 (kind-(T) cascades).
+- L-SI successor 2: (X) proof side.
+- L-COMP successor 3: X/O tables.
+
+### NEEDS / next
+- Successor 11, first: answer referee gaps on P-N5-NH in a NEW dated fixes file.
+- Then (X) or (NH') residuals as the Lead routes:
+  - U1 kind (T); U2 (honest frame not in route form); U3 (W frame not in route form); W-CYC;
+  - CONJECTURES OB_R, OB, NFB-O, U1-T.
 
 ## Things only I know (successor 10)
-- Ξ ⊴ W always (σ̄ is Odd's best counter-strategy). This one-liner makes EQ / THR / OTHER a partition, and gives θ ⊴ w.
-- Most non-(h) states are COINCIDENT (σ̄(o) = τ(o)), where Ξ = W and Lemma EQ applies. OTHER states have every clause pattern.
-- In every named (w, u*)-run all leaves are fallback leaves (ARE = 0). The re-entries are FBRE (inr2_n32 6, rise3 1, thetare_n 1).
-  sc32's runs have no re-entries at all.
-- The random C^1O generator almost never gives throttled runs. Climbs must be seeded (fbclimb.py's 5th argument).
-- The container clock (date -u) runs slower than my sense of time. Stamp only from date -u.
+- The structure that carries everything:
+  - Ξ ⊴ W always (XW).
+  - Off R, Ξ = W with no (h) (Lemma G (a)), so all F-dynamics is R17 on 𝓕 per crossing-free interval (F1°), whatever the state type.
+  - H1 ⟺ λ_Ξ(o) ∈ F and H2 ⟺ τ(o) ∈ F. Both are constant on crossing-free intervals (TC), so the "type" of a whole interval is
+    nearly fixed.
+- O-counts decompose exactly: OTHER-touching = crossings + F-changes + R-only. Every big O seen (26 at n 16, O/n = 2.04 on b5_os) is
+  mostly crossings + F-changes. R-only ≤ |R| in all data.
+- "Route form" (H1 or λ_Ξ(o) = o; H2 or λ_W(o) = o): values on R are π ⊕ terminal in that frame. In general each frame is "path to
+  its cycle node in the graph with o fixed to its exit" (a two-target route game). P3′ = the honest target higher.
+- U1 mechanism (wf0_cex_n16, iterations 16 and 20): Engine.evaluate's tie-break (first max in DFS / BFS, experiments/si/si.py
+  evaluate) is not "keep current". So S4a moves an R-vertex to a W-tied successor with a better V_mid set. The Lead confirmed this is
+  N5 as specified; a keep-on-ties variant would be a different algorithm (do not adopt).
+- Tools, experiments/new/box28: nhprof, fbre, xcount, eqcheck, fbclimb (FIT=p/v), xclimb, wclimb. experiments/new/box29: otherx,
+  rsplit, ivsplit (per-interval split), tccheck, oblock, dstat, throttle, odep, p3check, rfcheck, wflat, u1vertex, and climbs opclimb,
+  orclimb, u1climb, nfbclimb. Seed climbs from named instances: random C^1O almost never gives throttled or route-form pieces.
+- Pitfalls:
+  - The container clock (date -u) runs slowly. Stamp only from date -u.
+  - pkill -f kills my own shell: kill by pid from ps.
+  - push.sh takes several minutes while climbs load the CPU. Do not commit while it is running (verify reads the working tree).
+  - Check "freeze" indices with the right bound: a route path has ≤ |R| edges (box 29 off-by-one).
 
 ## Things only I know (successor 9)
 - Box 26/27 picture (READING; assumes (h)). Inside a joint λ-phase with τ fixed:
