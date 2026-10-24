@@ -1,6 +1,6 @@
-# Draft RESULTS R21 (Lead, 2026-10-24 18:5xZ by date -u) (rev.: REFEREE §C 865eadd; rev. 19:10Z: C30 E-1..E-4, N-1) — awaits CHECKER C30 Addendum 1; lands in "## Results" after R20, before "## Dead ends"
+# Draft RESULTS R21 (Lead, 2026-10-24 18:5xZ by date -u) (rev.: REFEREE §C 865eadd; rev. 19:10Z: C30 E-1..E-4, N-1) — LANDED in RESULTS Results 19:19Z (CHECKER C30 7bf1999 + Addendum 1 679ea11 PASS), after R20
 
-### R21 [refereed-only] N5 on one-Odd-choice games: inside one joint λ-phase, transitions are bounded by crossings and OTHER states (Theorem X), with Lemmas XW, EQ, FBL-N, NF, F1, F2, FB-W, and a clarification of R19 (f) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C30.md, checker PENDING)
+### R21 [refereed-only] N5 on one-Odd-choice games: inside one joint λ-phase, transitions are bounded by crossings and OTHER states (Theorem X), with Lemmas XW, EQ, FBL-N, NF, F1, F2, FB-W, and a clarification of R19 (f) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C30.md, checker 7bf1999 + Addendum 679ea11)
 - Object (packet P-N5-X, pinned trunk afc88b0, unchanged during review): docs/new/P-N5-X-box28.md, sha1
   b21d2d0638d08d750f26ae4dda2faaca7891fa23 (L-NEW successor 10, Opus 5.5). The referees' repairs are collected by the lane in
   docs/new/P-N5-X-fixes-box29.md (l-new 331ad0c, on trunk; sha1 dd467be05462b17ef5744d4e1019afeada95588c, L-NEW successor 10; a record of
