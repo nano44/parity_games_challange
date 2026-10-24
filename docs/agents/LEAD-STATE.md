@@ -1019,3 +1019,4 @@
 - 20:19Z CHECKER asked for C31 = R22 (sha1 39c483cd @ 9769dc3). L-SI GO box 5 (packet P-N5-Z, then carries (C)); L-NEW 11 told U1-T FALSE as stated; L-RED box 33 continues (own-switch cascades, (OB_R) in transitions), carries-nesting queued. NOW.
 - 20:23Z merged l-comp 409b52c (box 6 interim: X 67 > 2n at n 32, b6_xw_n32 30797478; Lead re-run n5 79/10 Oink OK verified, xcount phase 75 X 67 O 0) and l-red 9750289 (R63 §1b: U1-T cascade form also FALSE on u1t_cex_n32: own-switch revisits σ(6) 2→18→19→18 at one W-length). L-NEW 11 reports its own U1-T refutation (6162a26f, unpushed) + new Lemmas TB, CASC: told to test them on L-RED's revisits first.
 - 20:27Z merged checker c500832 (C31 FAIL E-1: '~100 named' → 78; all else PASS). R22 draft rev. E-1, N-1, N-2. C31 Addendum 1 next.
+- 20:31Z merged l-si 57dbb8b (P-N5-Z frozen, sha1 a027638f; scope OK); pinned here for both referees; NOW.
