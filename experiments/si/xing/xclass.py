@@ -34,6 +34,8 @@ def classify(g, rows, k, o):
     return S, act, passive
 
 def annotate(g, rows):
+    oc = [v for v in range(g.n) if g.owner[v] == 1 and len(g.succ[v]) > 1]
+    assert len(oc) == 1, f"not one-Odd-choice: Odd choice vertices {oc}"   # box 5: s_rt32_final has two (14, 28)
     o = odd_choice(g)
     for r in rows: r["R"] = reach_o(g, r["s"], r["t"], o)
     return o
