@@ -215,6 +215,10 @@ Proof.
   - Instance: experiments/new/box28/instances/fbref_n48.pg (n 48, sha1 414231a27ba3…, Oink zlk OK, strategies verified).
   - In one (w, u*)-run of 55 transitions, 10 vertices evicted at run index 48 ≥ 47 re-enter at index 54, after a θ-change at 53.
   - Lemma C and FB-W hold on the same run. All re-entering evictees have θ's status at u*.
+  - Independently refuted by L-RED: claude/l-red 799d0a9, experiments/red/xing/instances/fbref_cex_n32.pg (sha1 901674dc…), with
+    the eviction at index exactly n − 1. fbref_n48 evicts at index n, so the variant "freeze at index ≥ n" fails too. No variant
+    is kept; excluding θ-changes would make it FBF.
+  - Theorem X does not use (FBRE-F).
 - CONJECTURE (FBRE-1): a vertex re-enters after a fallback leave at most once per (w, u*)-run. DATA: max 1 everywhere, including a
   climb on exactly this quantity.
 - Data and scripts: N5-NH-box28.md §6, §6.4 (eqcheck.py: XW, EQ, FBL-N, 0 failures), §5c (xcount.py, xclimb.py); code in

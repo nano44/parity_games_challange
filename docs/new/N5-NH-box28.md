@@ -212,6 +212,15 @@ Proof.
     - Max FBRE of one vertex = 1, so CONJECTURE (FBRE-1) survives.
   - Obstruction: an eviction decided strictly below u* is undone by a θ-change strictly below u*. That is the recursion one level
     down (box 27 §8c, L-SI box 2-3), and FB-W cannot see it.
+  - Independent refutation by L-RED (relayed by the Lead, 17:3xZ): claude/l-red 799d0a9, experiments/red/xing/instances/fbref_cex_n32.pg
+    (sha1 901674dc…, n 32, canonical start; docs/red/R61-xing-attack.md §5b).
+    - There, one fallback at 35 → 36 evicts 33 vertices at run index exactly n − 1 = 31, θ changes at 37, and they re-enter at 38-39.
+    - Lead re-run with my fbre.py at 06b9282: 33 post-freeze FBRE.
+    - L-RED's caveat: index n − 1 sits on the boundary. fbref_n48 above evicts at run index 48 = n, strictly inside the freeze, so
+      the variant "freeze at index ≥ n" is FALSE too.
+  - No variant is kept. "Excluding re-entries after a θ-change" is vacuous: by FBF, no re-entry after a fallback leave can happen
+    without a θ-change in between.
+  - §5c / Theorem X (P-N5-X §7) does not depend on (FBRE-F). It uses XW, EQ, FBL-N, NF, F1, F2, Lemma G, PIECE, R17 and R15 (d).
 - Post-freeze, Lemma FB-W covers the W-status evictions. Post-freeze R-status evictions, where the eviction comparison
   h ▷ ρ ⊕ θ_L is decided strictly below u*, DO re-enter (fbref_n48). That is one level down: the n^depth recursion of box 27 §8c
   and L-SI box 2 §3.
