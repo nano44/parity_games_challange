@@ -1,0 +1,25 @@
+F1°_intervals_with_OTHER: 17
+G-NH-1_S4a_steps_notH2: 23
+G-NH-1_single_switch_checks: 2
+P3_pieces_nontrivial: 13
+P3_transitions: 23
+R1_checks: 1232
+R3_checks: 116
+TC_case_H1=False_H2=False: 157
+TC_case_H1=False_H2=True: 79
+TC_case_H1=True_H2=False: 87
+TC_case_H1=True_H2=True: 208
+TC_state_checks: 624
+intervals: 531
+intervals_multi: 50
+pieces: 489
+pieces_ct_above_cw: 110
+pieces_ct_eq_cw: 308
+pieces_cw_above_ct(U1): 71
+runs: 100
+transitions: 524
+Cor_max_pieces: 2
+P3_last_kappa_change: 2
+P3_max_count: 2
+P3_max_len: 3
+RESULT OK violations=0

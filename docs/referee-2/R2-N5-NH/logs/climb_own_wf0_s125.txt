@@ -1,0 +1,23 @@
+F1°_intervals_with_OTHER: 14
+G-NH-1_S4a_steps_notH2: 4
+P3_pieces_nontrivial: 3
+P3_transitions: 4
+R1_checks: 1278
+R3_checks: 14
+TC_case_H1=False_H2=False: 173
+TC_case_H1=False_H2=True: 99
+TC_case_H1=True_H2=False: 68
+TC_case_H1=True_H2=True: 211
+TC_state_checks: 628
+intervals: 551
+intervals_multi: 57
+pieces: 488
+pieces_ct_above_cw: 98
+pieces_ct_eq_cw: 307
+pieces_cw_above_ct(U1): 83
+runs: 100
+transitions: 528
+Cor_max_pieces: 3
+P3_max_count: 0
+P3_max_len: 2
+RESULT OK violations=0

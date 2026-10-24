@@ -1,0 +1,11 @@
+R1_checks: 18
+TC_case_H1=True_H2=True: 2
+TC_state_checks: 18
+intervals: 2
+intervals_multi: 1
+pieces: 18
+pieces_ct_eq_cw: 18
+runs: 1
+transitions: 17
+Cor_max_pieces: 17
+RESULT OK violations=0
