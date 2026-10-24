@@ -1,0 +1,212 @@
+# N5 on o-cyclic 𝒞^1O, box 28: non-(h) states (NH), and the (w, u*)-run accounting for (CYC')
+L-NEW successor 10 (Opus 5.5, D15/D18). Lead GO 2026-10-24 16:18Z (date -u), box to ~19:20Z. This file was started at 16:35Z (date -u).
+Labels (L40): PROVED (by whom; unrefereed unless stated), READING (proof sketch, or a combination whose parts are proved but whose
+assembly is not refereed), CONJECTURE (with data), OPEN, DATA.
+Scope: N5 (docs/new/N5-ssi-global.md SPEC S1-S5) on 𝒞^1O, inside one joint λ-phase with τ fixed. These are lemmas about the
+candidate. They are not a running-time bound, not a TARGET.md claim, and not a step-4 pass. G-N5-TIME stays OPEN.
+Notation: P-N5-RE §0 and P-N5-XA §0-§1 (R_k, F_k, π_v, θ := Ξ(o), w := W(o), (h), u*, COARSE). "(h) at k" has three clauses
+(P-N5-RE §0):
+- H1: the honest play from o (σ_k, σ̄_k) does not return to o;
+- H2: the W-play from o (σ_k, τ_k) does not return to o;
+- H3: Ξ_k(o) and W_k(o) have the same cycle node.
+Code: experiments/new/box28/ (nhprof.py, otherstat.py, otherclimb.py, fbre.py, fbclimb.py). They import box25/common.py.
+
+## 0. Results in short
+- PROVED (L-NEW): Lemma XW, Ξ_k ⊴ W_k pointwise at every state (§1). So θ ⊴ w always, and under (h) "throttled" is the same as
+  θ ≠ w.
+- PROVED (L-NEW, by the proof of box 27 Lemma UT): Lemma EQ (§2). A maximal run of states in one joint λ-phase (τ fixed) with
+  Ξ = W at each state has ≤ n − 1 value-changing transitions, **whether or not (h) holds**.
+  - This removes from (NH) every non-(h) state with Ξ = W. In random runs these are the large majority of non-(h) states (§6).
+- PROVED (L-NEW): Lemma FBL-N (§3), with no (h). At an Even fallback with τ fixed, every gate edge from F is flat. If o lies on
+  its W-cycle (¬H2), there is no F → R gate edge at all.
+- READING (assembly of proved pieces; §4): (NH) reduces to **(NH')**, the number of transitions with an endpoint in an OTHER state
+  (an OTHER state is one where (h) fails and Ξ ≠ W).
+- READING (assembly; §5): the (w, u*)-run accounting. Lemmas C, CR, XA and FBL (strong form) are proved state by state. So they
+  hold in a whole (w, u*)-run, where θ may change below u*. PIECE needs no θ-constancy (R19 (f)). Hence θ-changes cost nothing
+  by themselves. Under (h), and in throttled runs with u* ≠ none, N5's work per joint λ-phase is
+      poly(n) · (1 + #w-changes + Σ_runs #non-flat fallbacks in the run + #OTHER-touching transitions).
+  - **(CYC') is thereby replaced** by:
+    - (W): w-changes per joint λ-phase;
+    - (FB-run): non-flat fallbacks per (w, u*)-run;
+    - (U0): runs with u* = none.
+  - The count of θ-changes (sc32: 43 at n 32) does not enter.
+  - Honest limit: on climbed instances non-flat fallbacks per run grow with θ-changes (§6.3). So this is a sharper bookkeeping, not
+    yet an easier problem.
+- DATA (§6):
+  - OTHER-touching transitions per phase: ≤ 5 in random runs; climbs reach 16 at n 16 and 18 at n 24.
+  - Non-flat fallbacks per (w, u*)-run: ≤ 2 on the named instances. A climb seeded from L-SI's inr2_n32 reaches 11 at n 32
+    (still running).
+  - Random samples have almost no throttled runs, so the evidence for (FB-run) is the named instances and the climbs.
+- OPEN: (NH'), (W), (FB-run), (U0). G-N5-TIME stays OPEN.
+
+## 1. Lemma XW (PROVED, L-NEW): Ξ_k ⊴ W_k pointwise
+Statement. At every state k of any N5 run, and every vertex v, Ξ_k(v) ⊴ W_k(v). In particular θ_k ⊴ w_k.
+Proof.
+- Ξ_k = Ω_{σ_k, σ̄_k} and W_k = Ω_{σ_k, τ_k} are valuations in the same one-player game G_{σ_k}, where Even is fixed to σ_k and
+  Odd chooses.
+- σ̄_k is a pointwise-optimal counter-strategy for Odd in G_{σ_k}: VJ00 §5.2, Prop. 5.1 and Lemma 5.2 give Ω_σ = Θ_{σσ̄}
+  (eq. (11)); this is fact (F1) on the dual game, signed in RESULTS R17 (a).
+- So Ω_{σ_k, σ̄_k}(v) ⊴ Ω_{σ_k, τ}(v) for every Odd strategy τ, in particular τ_k. □
+Consequences.
+- Under (h), Lemma G gives "Ξ = W iff θ = w". So "throttled" (θ ◁ w) is the same as θ ≠ w.
+- With w fixed, once θ = w it stays θ = w: θ is non-decreasing (R15 (a)) and θ ⊴ w.
+
+## 2. Lemma EQ (PROVED, L-NEW, by box 27 Lemma UT's proof): runs with Ξ = W, (h) or not
+Statement. Let Q be a maximal run of consecutive states inside one joint λ-phase with τ fixed, such that Ξ_k = W_k pointwise at
+every k ∈ Q. Then Q has at most n − 1 value-changing transitions (both endpoints in Q).
+Proof. The proof is box 27 Lemma UT's, with Lemma G replaced by the hypothesis Ξ = W.
+- At k ∈ Q the gate Iσ_k = {(x, z) : Ξ_k(z) ▷ Ξ_k(σ_k(x))} equals G_τ's improving set at σ_k.
+  - So an S4a step is a switch-best step of the one-player game G_τ: the pointwise optimum of the arena {σ_k(x)} ∪ I(x)
+    (R17 setting).
+- At an S4c fallback (Even's, since τ is fixed), S4a returned σ_k, the arena optimum.
+  - By the flat-case analysis (R18 (c)), every gate edge is flat.
+  - Switching flat edges changes no valuation (box 25 §3, "a fallback at an unthrottled state is W-flat"; that proof uses only
+    Ξ = W at k).
+  - So W_{k+1} = W_k, and Lemma P's invariant is unchanged across the fallback (P-N5-XA-fixes §5, step 2).
+- W's cycle-node map equals Ξ's on Q, and Ξ's is constant in the joint λ-phase.
+- R17 Lemma P and Theorem PH, run in G_τ from the first state of Q, give ≤ n − 1 value-changing arena steps. Ξ = W on Q, so
+  "value-changing" means the same in both frames. □
+- Remark: Q may mix (h)-states (θ = w, box 27 UT) and non-(h) states, e.g. COINCIDENT ones (σ̄(o) = τ(o)), where the two plays are
+  the same.
+
+## 3. Lemma FBL-N (PROVED, L-NEW): fallbacks without (h)
+Statement. Let k → k+1 be an S4c fallback with τ_{k+1} = τ_k. Then:
+- (i) it is Even's, and σ_k is a pointwise optimum of the S4a arena in G_τ;
+- (ii) every gate edge (x, z) with x ∈ F_k is flat: x = λ_W(x), and z lies in x's W-region;
+- (iii) if o lies on its own (σ_k, τ_k)-cycle (¬H2 at k), then no gate edge goes from F_k to R_k;
+- (iv) every edge the fallback switches is a flat F → F or F → R edge, or starts in R_k. Under ¬H2 the flat F → R case is empty.
+Proof.
+- (i) S4c with τ unchanged means Iσ_k ≠ ∅, so the switch-all is Even's. S4a returned σ_k (R18 (d) Lemma S (c)).
+- (ii) x ∈ F_k: x's (σ, τ)-play avoids o, so σ_k(x) ∈ F_k and Ξ_k(σ_k x) = W_k(σ_k x) (Lemma G (a), which needs no (h): R19 (a),
+  N-RE-1). The edge is a gate edge, so Ξ_k(z) ▷ Ξ_k(σ_k x), and Lemma XW gives W_k(z) ⊵ Ξ_k(z). So the edge is W-improving. It
+  lies in the arena, at the arena optimum, so it is flat (R18 (c)).
+- (iii) Take a flat (x, z) with z ∈ R_k. Then λ_W(z) = x. Under ¬H2, z's W-play reaches o and then runs around o's W-cycle C, so
+  λ_W(z) ∈ C. Every vertex of C reaches o, so C ⊆ R_k. But x ∈ F_k, a contradiction.
+- (iv) follows from (ii) and (iii). □
+- What is NOT proved without (h): that R → R gate edges are absent at a fallback. Under (h) that is Lemma G (c). Under H1 alone, an
+  R → R gate edge is still route-improving (§4 note), but it need not be W-improving.
+
+## 4. Reduction of (NH) to (NH') (READING: an assembly of proved pieces; L-NEW)
+Partition of states inside a joint λ-phase with τ fixed:
+- EQ: Ξ = W. This holds at every (h)-state with θ = w (Lemma G), and at every non-(h) state with Ξ = W.
+- THR: (h) and θ ≠ w, equivalently (h) and Ξ ≠ W (Lemma G, Lemma XW).
+- OTHER: (h) fails and Ξ ≠ W.
+This is a partition. Under (h), Ξ ≠ W iff θ ≠ w: by Lemma G, off R Ξ = W, and on R the values are π ⊕ θ and π ⊕ w.
+Boundaries:
+- EQ ↔ THR: θ = w on one side and θ ≠ w on the other, so θ or w changes. With w fixed, THR → EQ happens once (θ reaches w and
+  stays there, §1), and EQ → THR is impossible.
+- THR ↔ THR (different (w, u*)-runs): w or u* changes. With w fixed, u* only moves down (box 27 Lemma UD, PROVED), and after
+  u* = none it stays none (L-NEW: a θ' with θ ◁ θ' ⊴ w and P(θ) = P(w) must have P(θ') = P(w), by the argument of UD). So at most
+  n + 1 runs per w-value between OTHER interruptions.
+- Anything ↔ OTHER: the transition touches an OTHER state.
+Count per joint λ-phase:
+- EQ runs: at most #w-changes + 2 + #OTHER-touching transitions. Each has ≤ n − 1 value-changing transitions (Lemma EQ).
+- (w, u*)-runs: at most (n + 1)(#w-changes + 1) + #OTHER-touching transitions. Each is bounded as in §5 (u* ≠ none) or is OPEN
+  (u* = none, (U0)).
+- OTHER-touching transitions: counted as themselves, (NH').
+- Value-preserving transitions come in runs of ≤ 4n(n − 1) (R15 (d)).
+So, given (U0) and the §5 bound: iterations per joint λ-phase ≤ poly(n) · (1 + #w-changes + #OTHER-touching transitions +
+Σ_runs N_fb(run)).
+- Note (H1 alone, used in §3): if H1 holds at k, then Ξ_k(v) = π_v ⊕ θ_k for v ∈ R_k. Lemma G (b)'s honest half uses only "o's
+  honest continuation does not return to o" (P-N5-RE §1 (b), proof). L-NEW reading of that proof.
+
+## 5. The (w, u*)-run accounting for (CYC') (READING: an assembly; L-NEW)
+A (w, u*)-RUN (L-SI box 2 §0; box 27 §8b) is a maximal run of consecutive states inside one joint λ-phase with:
+- τ, w and u* fixed, u* ≠ none;
+- θ ◁ w;
+- (h) at every state.
+θ may change, but only strictly below u* (Lemma UD).
+Which lemmas hold in a whole run, with θ varying (L-NEW; each proof was checked for where θ enters):
+| lemma | in a (w, u*)-run? | why |
+| --- | --- | --- |
+| Lemma C (P-N5-XA §2) | yes | per state: P(θ_k) and P(w) agree on V* because u* is the top of their difference at every state of the run; monotone by R15 (a) |
+| §1 setting (λ_W constant, u* on no route) | yes | per state (u* ∈ P(θ_k) Δ P(w) lies on o's honest play or W-play at k) |
+| Lemma CR (§5) | yes | Lemma P^c's induction uses Lemma C, (Cstrict), (F1) at each step, and a vacuous B-fallback (N-XA-1); never θ's constancy |
+| Theorem XA (§6) and its count | yes | step 4 uses only that u* is the top of P(θ_{E+1}) Δ P(w), which holds at every state of the run; step 5 uses Lemma C at L |
+| FBL strong form (fixes §1) | yes | a per-state statement at the fallback's state |
+| flat fallbacks pass PIECE (fixes §5) | yes | per state; a flat fallback changes no value, so θ is unchanged across it |
+| PIECE (R19 (f)) | yes | signed WITHOUT θ-constancy (N-RE-4): τ, w, R constant, (h), no non-flat fallback |
+| FBF (fixes §2) | NO | its induction needs Ξ_t(z) = Ξ_L(z) on R, i.e. θ constant. A rising θ re-opens entering edges |
+Count for one (w, u*)-run with u* ≠ none. Let N := its number of non-flat fallbacks.
+- Entries: first entries ≤ n. Re-entries after an S4a leave (ARE) ≤ n(n − 1) (XA in the run). Re-entries after a fallback leave
+  (FBRE) ≤ #fallback leaves ≤ n·N.
+- Leaves ≤ entries + n. Crossing transitions X ≤ 2·entries + n = O(n² + nN).
+- Every non-flat fallback contains a leave (FBL strong form).
+- Value-changing transitions ≤ (n − 1)(X + N + 1) = O(n³ + n²N): PIECE with flat fallbacks passing through, and the separators
+  counted once each.
+- All transitions ≤ (VC + 1)(4n(n − 1) + 1) (R15 (d)).
+So a run costs poly(n)·(1 + N). θ-changes appear nowhere in this count.
+- Status: the extension of C / CR / XA from P-N5-XA's θ-constant stretch to the (w, u*)-run is L-NEW's reading of their proofs (the
+  table). It was claimed in box 27 §8b, and no referee has checked it. Everything else in the count is signed (R19, P-N5-XA with
+  fixes).
+- What is left of (CYC'):
+  - **(W)**: w-changes per joint λ-phase. Lemma Wo makes w non-decreasing under (h); there is no count. DATA: 0 in the long phases,
+    5 in theta_thc24 (box 27 §8).
+  - **(FB-run)**: non-flat fallbacks per (w, u*)-run. Within one θ-value FBF shows R only shrinks after a fallback, so there are
+    ≤ |R| fallbacks per θ-stretch. A bound independent of θ-changes is OPEN.
+  - **(U0)**: u* = none runs (FBL unproved there; XA needs u* ≠ none). There is at most one per w-value (§4).
+- Why θ-changes stop mattering (READING): a rising θ only re-opens ENTRY edges (box 26's THETA re-entries, box 27 FBF). Entries
+  are paid either by first entries (≤ n), by XA (S4a leaves), or by an earlier fallback leave. Only the last needs the fallback
+  count. sc32 (43 θ-changes in one phase, θ changing at every transition) shows the effect: its runs have only first entries, no
+  re-entries at all, and ≤ 1 fallback (§6).
+
+## 6. Data (DATA, not proof)
+### 6.1 Non-(h) transitions (nhprof.py, otherstat.py)
+- Named instances (phaseprofile convention: a transition is non-(h) if (h) fails at either endpoint):
+  - fts_best16, sc32, thetare_n, i1h_fts_best16: 0 non-(h) transitions in their long phases.
+  - wd16_s2 (n 16, box 25): one phase of 12 transitions, all non-(h), H1 holds and H2, H3 fail ("23"), SPLIT (σ̄(o) ≠ τ(o)).
+    - 11 consecutive Even fallbacks.
+    - Each evicts ONE vertex from R (a chain 10 → 6, 0 → 10, 15 → 0, 13 → 15, …), changing Ξ and W at that vertex.
+    - Then an arena step jumps every value to a new cycle node, and the phase ends.
+    - The chain length (11) is < n. Box 25 §7's climb for this fitness gave 7 at n 12 and 12 at n 16.
+- Random o-cyclic 𝒞^1O (n 6-16; seeds 2801-2804, about 19,000 runs, canonical and random starts):
+  - non-(h) transitions per phase ≤ 5;
+  - SPLIT non-(h) transitions per phase ≤ 3;
+  - Ξ-changing non-(h) transitions per phase ≤ 5.
+- Clause patterns (otherstat.py, seeds 2811/2812, 5,263 runs), in state counts:
+  - non-(h) EQ states: 4,506 coincident "12" and 692 split "12";
+  - OTHER states: "13" 985, "3" 610, "23" 451, "123" 420, "12" 96.
+  So OTHER states occur with every clause pattern, including H1 ∧ H2 ∧ ¬H3 ("3"), where Lemma G (a)-(b) still hold but the cycle
+  nodes differ.
+### 6.2 OTHER-touching transitions per phase (otherclimb.py; canonical start; climb running at the time of writing)
+| n | seed | best (OTHER-touching, of them Ξ-changing, total) | at |
+| --- | --- | --- | --- |
+| 12 | 1 | (7, 6, 8) | 205 s (stopped at ~4 min to free a core) |
+| 16 | 2 | (16, 16, 24) | 155 s |
+| 20 | 3 | (8, 8, 16) | 171 s (stopped at ~4 min) |
+| 24 | 4 | (18, 18, 18) | 189 s |
+- The n 16 best (snapshot experiments/new/box28/instances/oc16_s2.pg, sha1 859f564f1276…, canonical start; n5.py 26 iterations,
+  3 fallbacks; check_sol2.py: Oink zlk OK, strategies verified; wd16_s2 re-checked the same way: 19 iterations, 14 fallbacks, OK): one phase of 16 transitions, all at "23" SPLIT states (H1, o on
+  its W-cycle), θ and w constant, 14 arena steps and 2 fallbacks, each changing 1-9 vertices. So OTHER phases are not only fallback
+  chains: arena steps in G_τ also run there, with W's cycle-node map not tied to the joint phase.
+### 6.3 (w, u*)-runs (fbre.py)
+| instance | run (states) | θ-changes | fallbacks | leaves by fallback / arena | re-entries FBRE / ARE | first entries |
+| --- | --- | --- | --- | --- | --- | --- |
+| sc32 | 7-25 | 17 | 1 | 19 / 0 | 0 / 0 | 16 |
+| sc32 | 28-46 | 18 | 0 | 0 / 0 | 0 / 0 | 21 |
+| fts_best16 | 2-16 | 3 | 2 | 4 / 0 | 0 / 0 | 2 |
+| inr2_n32 (L-SI) | 5-23 | 17 | 1 | 23 / 0 | 6 / 0 | 18 |
+| rise3_n32 (L-SI) | 5-18 | 12 | 1 | 21 / 0 | 1 / 0 | 16 |
+| thetare_n | 3-6 | 1 | 1 | 2 / 0 | 1 / 0 | 1 |
+- In every named run, all leaves are fallback leaves and ARE = 0. The re-entries are FBRE, bounded by fallback leaves ≤ n·N.
+- Random runs (seeds 2821/2822, 6,942 games, n 8-16): 12 (w, u*)-runs with a transition, 0 fallbacks. The samples are vacuous here,
+  as both referees found for P-N5-XA.
+- fbclimb.py (fitness: non-flat fallbacks in one (w, u*)-run, then FBRE, then θ-changes), seeded runs at n 32:
+  - from inr2_n32: (7, 2, 4) after 17 s, then (11, 21, 8) after 129 s;
+  - from sc32: (1, 22, 10) after 123 s.
+  Running at the time of writing; final numbers in §8.
+  - Reading of the (11, 21, 8) point: 11 non-flat fallbacks with 8 θ-changes, so some θ-stretches hold several fallbacks (FBF
+    allows ≤ |R| per θ-stretch).
+  - **So (FB-run) may be as hard as (CYC') itself.** The §5 accounting moves the open count from θ-changes to fallbacks. It does
+    not make it smaller in general. Its gain is on runs like sc32's, where θ changes at every transition but fallbacks are rare.
+
+## 7. Open items after box 28 (for the Lead's routing)
+- (NH') OPEN: OTHER-touching transitions per joint λ-phase. Sub-cases by clause:
+  - "23" (H1, o on its W-cycle): FBL-N (iii) holds, and the honest values on R are routes ⊕ θ. The W-values on R run to o's W-cycle,
+    not through o, so Lemma G (b)'s W half fails.
+  - "3" (H1, H2, different cycle nodes): Lemma G (a)-(b) hold, but the coarse equality of Lemma C fails at the cycle node.
+  - "13", "123", "12"-split: o on its honest cycle.
+- (W) OPEN: w-changes per joint λ-phase.
+- (FB-run) OPEN: non-flat fallbacks per (w, u*)-run.
+- (U0) OPEN: u* = none runs (FBL there, and XA's step 4).
+- The table in §5 (C / CR / XA in a (w, u*)-run) needs a referee check before the accounting is promoted.
