@@ -7,6 +7,8 @@ Fitness (lexicographic): (violations, exercise) where exercise depends on --targ
   lemmas : throttled (h)-fallbacks + fbf checked transitions + re-entries     (default)
   nh     : max over joint λ-phases of non-(h) transitions                     ((NH), L-NEW §8)
   cyc    : max over joint λ-phases of (θ, w)-stretches                        ((CYC'))
+  reent  : throttled re-entries into R inside one stretch (coarsecheck's count, cut at fallbacks + --withfb), then leaves; Theorem XA
+           data (referees on P-N5-XA: none observed)
   cycu   : (max θ-changes inside one (w, u*)-run, max θ-changes per phase)    ((CYC-u*), L-NEW §8b; lemma checks skipped in
            the fitness, run them on the bests)
   A (w, u*)-run: consecutive states of one joint λ-phase (phaseprofile.py's key) with (h), θ ◁ w, w fixed and u* (the most
@@ -63,6 +65,7 @@ def measure(g):
     c = Counter()
     coarsecheck.WITHFB = False; coarsecheck.run(g, None, c)
     c2 = Counter(); coarsecheck.WITHFB = True; coarsecheck.run(g, None, c2)
+    c["leaves_fb"] = c2["leaves_fb"]
     for k in ("C1_fail", "C2_fail", "C3_fail", "C3_fail_after_fb"): c[k + "_withfb"] = c2[k]
     c["reentries_withfb"] = c2["reentries"]
     fbfcheck.run(g, None, c); fbedges.run(g, None, c)
@@ -72,7 +75,8 @@ def measure(g):
 def score(c, target):
     v = sum(c[k] + c[k + "_withfb"] for k in VIOL)
     ex = {"lemmas": c["throttled_fallbacks"] + c["checked_transitions"] + c["reentries_withfb"],
-          "nh": c["max_nh_phase"], "cyc": c["max_stretches_phase"]}[target]
+          "nh": c["max_nh_phase"], "cyc": c["max_stretches_phase"],
+          "reent": (c["reentries"] + c["reentries_withfb"]) * 1000 + c["leaves_arena"] + c["leaves_fb"]}[target]
     return (v, ex)
 
 def fit(G, target):
