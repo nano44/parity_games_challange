@@ -176,7 +176,7 @@ Readings:
 - Box 4 column completed by the full n 5 subset (DATA, exact): max (CYC') = 4 (theta 2, w 2) in a phase of 2 iterations (theta and w both change at each transition; instances/b5_n5_cyc4_0.pg, canonical start, sha1 f42767ef, check_instance OK) (box 4's
   44-slice partial had 2); max non-(h) per phase 3; longest phase 3; cyc hist {0: 68,612,254, 1: 11,954, 2: 140,572, 4: 20}.
 
-## Box 6 (Lead GO 20:0xZ, D18): exact checks of referee packet P-N5-NH (c7981ee) and a seeded X chain (runs 20:10-23:xxZ)
+## Box 6 (Lead GO 20:0xZ, D18): exact checks of referee packet P-N5-NH (c7981ee) and a seeded X chain (runs 20:10-23:00Z)
 Labels (L40): DATA (exact = every run of the stated class) / CONJECTURE / OPEN. The statements checked are L-NEW's (PROVED by the
 lane, unrefereed: F1°, TC) and a CONJECTURE ((OB_R)); a 0-violation table is evidence for the referees, not a proof.
 box6.py checks per crossing-free interval I (definitions of P-N5-NH §0-§2):
@@ -192,7 +192,8 @@ box6.py checks per crossing-free interval I (definitions of P-N5-NH §0-§2):
 | n 5 subset, quarter 1 (game index = 0 mod 4) | 17,193,152 | 25,293,336 | 9,979,196 / 622,840 / 14,691,300 | 926 | 0 | 0, 0 |
 | n 5 subset, quarter 2 (= 1 mod 4) | 17,191,424 | 25,000,542 | 9,876,682 / 531,362 / 14,592,498 | 774 | 0 | 0, 0 |
 | n 5 subset, quarter 3 (= 2 mod 4) | 17,189,248 | 25,293,682 | 9,975,532 / 622,652 / 14,695,498 | 886 | 0 | 0, 0 |
-| n 5 subset, quarter 4 (= 3 mod 4) | Q4ROW |
+| n 5 subset, quarter 4 (= 3 mod 4) | 17,190,976 | 24,999,572 | 9,872,944 / 530,338 / 14,596,290 | 846 | 0 | 0, 0 |
+| n 5 subset, all four quarters = EXHAUSTIVE (68,764,800 runs, as box 5) | 68,764,800 | 100,587,132 | 39,704,354 / 2,307,192 / 58,575,586 | 3,432 | 0 | 0, 0 |
 Max slack 0 = the bound is attained somewhere and never exceeded.
 
 X chains (climb5.py X, raw X = crossing transitions per phase; canonical start; every instance check_instance OK):
@@ -201,6 +202,6 @@ X chains (climb5.py X, raw X = crossing transitions per phase; canonical start; 
 | one-wave, seed instances X_n16 (box 5, X 13), 300 s | 20: 17, 24: 21, 28: 25, 32: 29, 40: 36, 48: 37 (0.77-0.91n, 0 fallbacks) |
 | waves, seed L-RED x32_waves32 (sha1 a0565c6e, X 65), 360 s | 32: 67, 36: 67, 40: 69, 48: 73, 56: 74, 64: 74 (bests reuse the seed's run) |
 | waves, 1,500 s, seed b6_xw_n32 | 32: 75 (2.34n, b6_xl_n32, sha1 610a2da2), 40: 79 (1.98n), 48: 84 (1.75n) |
-| waves, 2,400 s, seed b6_xl_n32 | XL2ROW |
+| waves, 2,400 s, seed b6_xl_n32 | 32: 77 (2.41n, b6_xl2_n32, sha1 909c7371) |
 Readings (DATA): at fixed n, X rises with climb budget (n 32: 67 -> 75), so per-n maxima are budget-bound lower bounds and the n-trend
-of the wave chain is not readable from them. Max X/n seen 2.34 (n 32); no super-linear signal; (X) stays OPEN.
+of the wave chain is not readable from them. Max X/n seen 2.41 (n 32: 67 at 360 s, 75 at 1,500 s, 77 at 2,400 s); no super-linear signal; (X) stays OPEN.
