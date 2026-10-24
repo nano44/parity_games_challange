@@ -1,54 +1,50 @@
-# Handover check: L-COMP (successor 2, 2026-10-23 05:35Z by date -u)
-Every answer measured from the repository at the time of writing (commands given), not recalled from notes/L-COMP.md.
-Successor of session_01Nd4XCMfDaYHsh1P6XTtRGz (parked; handover 7ac0d432 "L-COMP: park (N5 second implementation complete; notebook
-resume point)"). The previous answers (2026-10-15) are in git history of this file.
+# Handover check: L-COMP (successor 3, Opus 5.5; written 2026-10-24T17:44Z by date -u)
+Every answer measured from the repository at the time of writing, not recalled from notes/L-COMP.md.
+Successor of session_01TpuThMoeBcLB2T5KKeJpAa (parked after box 4; handover 298d2dc6 "L-COMP box 4 done ... handover notes; park").
+The previous answers (2026-10-23) are in git history of this file.
 
 ## 1. Branch, head, distance to trunk
-- Branch `claude/l-comp`, tracking `origin/claude/l-comp` (was at 7ac0d432, working tree clean).
-- Trunk `origin/claude/vibrant-johnson-nxvvxo` fetched: 269edc63 ("Lead: C22 closed; roster", 2026-10-23 05:27Z).
-- `git merge origin/claude/vibrant-johnson-nxvvxo` was a fast-forward (trunk already contained 7ac0d432): head = 269edc63.
-- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 0 ahead, 0 behind (before this file's commit;
-  after it: 1 ahead, 0 behind).
-- Container: Oink not built (`tools/oink/build` absent), no background jobs (`pgrep -a python` empty), no timed wakes.
+- Branch `claude/l-comp`; local head at start = origin/claude/l-comp = 298d2dc6 (working tree clean; 298d2dc6 is an ancestor: checked).
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` fetched: d1326c4b ("Lead: NOW roster (L-SI successor 2)", 2026-10-24 17:35Z).
+- Before merging: `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 4 ahead (box 4 commits ee440b10,
+  2629ccae, eba6a9ae, 298d2dc6), 70 behind; merge-base 079fd1e7.
+- Merged trunk with a merge commit (no rebase): 7f1331cc. After it: 5 ahead, 0 behind (6 ahead after this file's commit).
+- Container: Oink not built (tools/oink/build absent), no python jobs running, no timed wakes.
 
 ## 2. Open work and the next step of each
-- In flight: nothing. The N5 second implementation is DONE and merged (NOW.md roster line 26: b49c9fc).
-- N5 leftover: tc N = 26 was not compared in SPEC mode (notebook resume point; orig mode N = 26 verified, no reference). Next step: none
-  unless the Lead routes it (N5 step 2 declared complete by the Lead 2026-10-18 23:58Z).
-- STEP 2 of this box (Lead brief 05:36Z): second independent implementation of N8d-R2 (Koh-Loho, arXiv 2108.13338, Alg. 1, over the
-  perfect (n, d/2)-universal tree; pivot R2) plus deterministic R1 cross-check. Waits for GO. Next step after GO: build Oink
-  (scripts/setup_oink.sh, pinned 8fbf0a7), open the paper from arXiv (record version, sections), read docs/new/N8d-single.md §0 only,
-  write experiments/n8d-second/ from those two sources, freeze and commit before reading experiments/new/kl/*.py or the code-to-paper tables.
-- sat-hard (L-STRUCT T3 support): parked (notebook queue 0-3; CNFs gone with the container; regenerate with diag.py). No step until routed.
-- counter_qpt growth class (N = 29..40, timeout 600): open, low priority, not scheduled.
+- In flight: nothing (predecessor stopped every run at 17:35Z; partial JSONs are in experiments/n5-exhaustive/results/).
+- Box 5 (routed in this brief, waits for "go"): X (crossing transitions, R changes) and O (OTHER-touching transitions: (h) fails and
+  Xi != W) per joint lambda-phase. Next step after go: build Oink (scripts/setup_oink.sh); read experiments/new/box28/fbre.py,
+  eqcheck.py and experiments/new/box25/phaseprofile.py; add X and O to box4.measure; cross-check counts against L-NEW's tools on
+  sc32, theta_tp32, fts_best16, fbref_cex_n32 (experiments/red/xing/instances/) before any table.
+- n 5 canonical subset (box 3/4): partial, no resume support. Next step: add --slices to box4.py exh and run the 160 (o, parity)
+  slices on 3 cores (part (b) of box 5).
+- sat-hard (L-STRUCT T3 support), counter_qpt growth class: parked/low priority, no step unless routed.
 
 ## 3. docs/GAPS.md rows owned by L-COMP
-None. `grep -n -i l-comp docs/GAPS.md` on 269edc63 returns one row, G-N5-TERM (closed list; owner L-NEW, "L-COMP checks runs"),
-closed 2026-10-19 by RESULTS R15. No open row names L-COMP.
+None. `git show origin/claude/vibrant-johnson-nxvvxo:docs/GAPS.md | grep -n -i l-comp` returns one row, G-N5-TERM (closed; owner L-NEW,
+"L-COMP checks runs"), closed 2026-10-19 by RESULTS R15. Box 5 feeds G-N5-TIME (owner L-NEW, open): its box-28 §5c note names (X)
+and (NH') as OPEN, with DATA "X <= n on named instances; climb X = 37 > n = 32".
 
-## 4. Three owner rulings that most constrain this lane (verbatim; status from docs/DECISIONS-INDEX.md on 269edc63)
-1. D2 change 5 (D2: active):
-   > 5. Gauntlet addition: every implementation also outputs positional strategies, and L-COMP verifies them on every
-   >    test game.
-   Constraint: my N8d-R2/R1 implementations output positional strategies for both players, and every output is checked by
-   experiments/harness/verify.py, not by the implementation's own claims.
-2. D2 change 4 (D2: active):
-   > 4. 7b changed: a randomized (Las Vegas, expected polynomial) algorithm is labelled M4-R, not M3, and reported to me
-   >    at once like an M4 claim.
-   Constraint: N8d-R2 is randomized; its pivot counts are random variables, so I report distributions (mean, spread per family and size)
-   and any super-polynomial growth of the expectation at once, never a single-seed number as a growth class.
-3. D1 (active), docs/decisions/D001-launch-brief.md:
-   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such
-   > claim, including the fleet's own, as wrong until it passes the gauntlet below.
-   Constraint: step 2 is run to find a failure, independently of L-NEW: written from the paper and §0 only, any wrong region/strategy
-   from either implementation reported at once with the instance.
-Also binding: D14 (active; L-NEW is the (c) lane whose candidate I test) and D15/L37 (active; Opus 5.5; no option questions to the owner).
+## 4. Three owner rulings that most constrain this lane (verbatim; status from docs/DECISIONS-INDEX.md on d1326c4b)
+1. D18 (active), docs/DECISIONS.md:333:
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+   Constraint (with Lead reading L40 (2)c, (4)): my box is exhaustive small-n tables for N5; every line I report is labelled
+   DATA (exact for the enumerated class) / CONJECTURE / OPEN, never PROVED; no questions to the owner.
+2. D16 (active), docs/DECISIONS.md:300:
+   > Then keep working as I told you to
+   Constraint (Lead reading L38): no idle lane; when a run is going I prepare the next step, and the box ends with a queue.
+3. D1 (active), docs/DECISIONS.md:6 (launch brief docs/decisions/D001-launch-brief.md:96):
+   > Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision.
+   Constraint: results go only to the repo via scripts/push.sh and to the Lead via send_message. Also from D1 (DECISIONS.md:7):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   so any instance with X > n or super-linear X/O at small n goes to the Lead at once, checked first (check_instance.py: n5b, Oink zlk, verify.py).
 
 ## 5. One trap that bit this lane, and the check that now prevents it
-Trap: unspecified orders make "equal counts" meaningless. In the DTL step 2 (2026-10-15, notebook dead ends) a reimplementation from the
-written pseudocode could not reproduce Oink's tangle counts: four unpinned orders (sort, in-edge order, stored tangle order, SCC order)
-changed counts up to 8 per game while regions never changed; a count mismatch looked like a bug and was not.
-Check now: counts are compared exactly only where the spec pins every order; otherwise distributions are compared and the unpinned choice
-is named. For this box that is written into the brief: R1 (lowest index, deterministic) must match results/*.r1.csv per instance, and a
-mismatch is a finding traced to the spec line; R2 (uniform draw, candidate-list order unpinned by §0) is compared by mean and spread
-per family and size. Regions/strategies are always decided by verify.py and Oink zlk (labelled --tl where zlk aborts, counter_m N = 41, 42).
+Trap: two phase conventions. Box 4 found that exh.py's maxph keys a phase by joint lambda only (box21 phases.py), while box4.py keys
+it by (lambda_sigma, lambda_tau, tau(o)) (box25 phaseprofile.py); on n 4 all starts they gave max phase lengths 4 vs 3. A per-phase
+maximum (X, O) under the wrong key would be a different number with the same name.
+Check now: box 5 uses phaseprofile.py's key only (the brief names it), the table header names the key, and before any table the
+X and O counts must equal L-NEW's fbre.py / eqcheck.py counts on the four pinned instances (sc32, theta_tp32, fts_best16,
+fbref_cex_n32; sha1 checked against 901674dc...). A mismatch is traced to a definition before any table is written.
+Second check carried over: a stale container (this one was 70 behind trunk) is caught by fetch + is-ancestor + merge before work.
