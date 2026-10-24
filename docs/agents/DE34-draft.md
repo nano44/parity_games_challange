@@ -1,4 +1,4 @@
-# Draft RESULTS DE34 (Lead, 2026-10-24 02:58Z by date -u) — awaits CHECKER C26
+# Draft RESULTS DE34 (Lead, 2026-10-24 by date -u) — LANDED in RESULTS Dead ends 03:16Z (CHECKER C26 PASS, checker 7347183; lines 3-28 verbatim, the whole entry; my C26 request said 'lines 3-35', the file ends at 28; optional N-1..N-4 not applied)
 
 - DE34 (2026-10-24): N11 = N5-HT, N5 (SSI-GLOBAL, docs/new/N5-ssi-global.md) with an honest override at trust conflicts (at
   each Even vertex x where N5's step is honestly worse than the best edge of Iσ, i.e. key(Ξσ(σ_W(x))) < max over (x, z) ∈ Iσ of
