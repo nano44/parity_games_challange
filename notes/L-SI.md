@@ -11,11 +11,9 @@ summarised in docs/si/README.md. Handover check: docs/agents/handover-checks/L-S
   (i4_hand z = 9 states 0-2), HMZ's max-slack elimination fails (returns_rt48 77/78), N5 eliminates some edge almost every
   transition (non-eliminating runs <= 17 at n <= 64; switch-all control doubles 24/62/140/298); CONJECTURE (ELIM-n) => G-N5-TIME.
 - Code: experiments/si/orlens/ (ortrace, gaps, batch, elim, hmzL, returns, theta, stretchret, vi, climb). out/ is gitignored.
-### IN FLIGHT (box 2, Lead GO 15:23Z, to ~18:00Z: (CYC-u*) through the OR lens)
-- docs/si/N5-OR-lens-box2.md: Lemma VIS and VIS' PROVED (visible self-eliminations retire an exit for the (w,u*)-run; a repeated
-  argmin after self-elimination needs a theta-change at the loop's top new level); FALSE per-exit bounds (inr2_n32, rise3_n32).
-- Climbs ended 16:15Z: run_x_inr2 (n 32, d 11) 42 theta-changes in one (w,u*)-run, 43 per phase; Oink OK. Nothing running.
-- Trap met: run definition without (h) counted 'INR' at non-(h) states; thclass.hstate fixes it (use it in every run split).
+### IN FLIGHT
+- Nothing running. Box 2 (N5-OR-lens-box2.md: VIS, VIS'; inr2/rise3/run_x_inr2) and box 3 (N5-OR-lens-box3.md: LEN, CH, counter
+  bound, multiplicative obstruction, LEVEL-poly; climbs lev_l_* max m_r 11 at n 32) done, reported 17:30Z.
 ### NEEDS
 - Lead: relay Lemmas U/E1-E5/D to L-RED / L-NEW; (ELIM-n) as an L-RED target (a phase with a non-eliminating window > n).
 
