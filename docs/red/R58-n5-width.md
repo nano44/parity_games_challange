@@ -224,5 +224,50 @@ What this does to the design lead (READING).
 - bribe.py G [START] and bribebatch.py COUNT NMIN NMAX SEED: Conjecture BRIBE (§5).
 - stretch.py G [START] | random ...: longest one-sided stretch (§5).
 - widthclimb.py h SECONDS SEED OUT [KMIN] [--from G]: symmetric climb, fitness = wide refused moves, then iterations (results §8).
+- frozenclimb.py n SECONDS SEED OUT len|wide [KMIN]: frozen-τ* climb (§8b). phaselen.py G [START]: iterations per joint λ-phase.
+- instances/wide_h16.pg, frz24/32/40.pg + .start (§8).
 - instances/bribe_cex_n15.pg: the BRIBE counterexample (sha1 392af465e390d3fb83003d1dc06163da891bdac9).
 - DLM games come from experiments/new/dlm_gen.py 1|2 n, with the start pair on stderr.
+
+## 8. Climbs (DATA; 2026-10-23 23:20Z to 2026-10-24 01:36Z, date -u). Every best is checked: Oink zlk OK, strategies verified
+### 8a. widthclimb.py: symmetric games, n = 32
+Fitness: W = moves with mover |I| ≥ 4 that refuse ≥ 2 edges while the opponent has |I| ≥ 1; then iterations. 3,600 s per seed.
+
+| run | W | N5 iterations | longest joint λ-phase | instance |
+| --- | --- | --- | --- | --- |
+| from sym_h16_s1 (seed 1) | 72 (start 24) | 44 (start 55) | 23 | instances/wide_h16.pg (sha1 990ecbcf15ae…) |
+| random (seed 2) | 34 | 24 | — | not kept |
+
+- wide_h16: most moves sit at width 4-9; 245 / 238 declined-edge events (Even / Odd); longest one-sided stretch 2.
+- Raising width did NOT raise length: the climb traded iterations for W.
+- READING: on symmetric two-player games, holding wide refused sets is easy, but it does not lengthen runs.
+
+### 8b. frozenclimb.py: frozen-τ* runs, free games
+Start: σ_0 = S3 best-reward; τ* = Odd's switch-all SI optimum; Iτ* = ∅ is asserted. By L-NEW Theorem B (c), N5 is then the
+F_τ* run.
+- Mode 'len' fitness: iterations, then wide moves (|I| ≥ 3, ≥ 2 refused).
+- The n = 32 / 40 runs were cut at about 1,890 s of their 2,400 s, when a background-task limit stopped my session's wrapper
+  (not the program). The bests written by then are used.
+
+| n | budget | iterations (fallbacks) | longest joint λ-phase | Odd choice vertices | moves at gate width ≥ 3 | instance (sha1) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 24 | 2,700 s | 39 (4) | 11 | 1 | 39 / 39 | instances/frz24.pg + .start (f50c434b731a…) |
+| 24 'wide' mode | 2,700 s | 28 (0) | — | — | 26 at ≥ 4 | not kept |
+| 32 | ~1,870 s | 66 (8) | 28 | 3 | 60 / 66 | instances/frz32.pg + .start (b251897c9db0…) |
+| 40 | ~1,900 s | 90 (7) | 36 | 4 | 85 / 90 | instances/frz40.pg + .start (934e6dfa9965…) |
+
+Observations:
+- Iterations grow about 1.6n to 2.25n, linear at these budgets.
+- The longest λ-phase is 11 / 28 / 36, i.e. ≈ 0.9n. L-NEW's fts_g29 reaches 65 at n 29 in one phase, with a fitness aimed at
+  phases.
+- Frozen runs found by length alone live at WIDE gates: every move of frz24 refuses edges, with Odd's |I| = 0 throughout. So
+  Corollary W2's requirement is easy to meet; the hard part is length within one phase.
+- frz24 (one Odd choice vertex 19, so the game is in L-NEW's class 𝒞^1O):
+  - The 10-step backward propagation chain 4>16, 22>4, 6>22 + 7>6, 13>6, 5>13, 3>5, 8>3, 20>8, 14>20, 2>14 runs TWICE, at
+    iterations 2-11 and again at 29-38.
+  - σ̄(19) toggles 10 → 9 → 10 → 9.
+  - BUT the two laps lie in DIFFERENT joint λ-phases (cycle-node changes at iterations 12, 13, 26, 31; phase list
+    [1, 11, 1, 1, 8, 2, 2, 1, 1, 3, 8]).
+  - READING: lapping that needs a λ-phase change per lap is bounded by Lemma Φ (≤ 2n(n−1)+1 phases). So a kill must be
+    super-polynomial INSIDE one joint λ-phase, which is L-NEW's (SEG-1O)/(CH-1O) target, not across phases.
+- No kill. No instance shows growth beyond linear.
