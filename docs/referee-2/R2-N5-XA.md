@@ -148,7 +148,7 @@ Sources:
 | N-XA-2 | XA count: ≤ n − 1 per vertex | remark |
 | N-XA-3 | Corollary: say that value-preserving transitions come in runs ≤ 4n(n − 1) (R15 (d)) | wording |
 
-## C. Comparison with REFEREE's R-N5-XA (docs/referee/R-N5-XA.md, referee f39972d, trunk e99a586; read after my push 9d3f1fb6; written 15:50Z by date -u)
+## C. Comparison with REFEREE's R-N5-XA (docs/referee/R-N5-XA.md, referee f39972d, trunk e99a586; read after my push 9d3f1fb6; written 15:47Z by date -u; first pushed in 4df15e63 with a wrong stamp 15:50Z)
 ### C.1 Agreement per item
 | item | REFEREE | REFEREE-2 (§1-§6) | agreement |
 | --- | --- | --- | --- |
