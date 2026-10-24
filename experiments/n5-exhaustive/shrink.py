@@ -2,7 +2,8 @@
 """Greedy shrink of a C^1O game + start pair while a property holds (default: some theta-driven (A) re-entry in a joint
 lambda-phase). Moves, repeated to a fixpoint: delete a vertex (redirecting nothing: edges into it are dropped; a vertex left
 without successors makes the move invalid), delete an edge, drop a vertex's start choice to another successor, lower a priority
-(compress). The start pair is restricted accordingly. Usage: shrink.py IN.pg IN.start|- OUT_PREFIX [--prop A|canonA]  (canonA: from the canonical start; pass - as start)"""
+(compress). The start pair is restricted accordingly. Usage: shrink.py IN.pg IN.start|- OUT_PREFIX [--prop A|canonA|noh|canonnoh] [--nohlen L]  (canon*: from the canonical start;
+pass - as start; noh: a joint (lambda, tau(o))-phase of >= L iterations (default 4) containing a non-(h) transition, box4.measure)"""
 import os
 import sys
 
@@ -11,12 +12,18 @@ import exh  # noqa: E402
 from exh import pg, trace  # noqa: E402
 
 
+NOHLEN = 4
+
+
 def prop(g, start, mode):
     try:
         if sum(1 for v in range(g.n) if g.owner[v] == 1 and len(g.succ[v]) > 1) != 1:
             return False
         o = exh.odd_choice(g)
-        st, _ = trace(g, None if mode == "canonA" else start, check=False)
+        st, _ = trace(g, None if mode.startswith("canon") else start, check=False)
+        if mode in ("noh", "canonnoh"):                         # box 4: a phase of >= NOHLEN iterations with a non-(h) transition
+            import box4
+            return len(st) > NOHLEN and box4.measure(g, st)["nohlen"] >= NOHLEN
         return len(st) > 2 and exh.analyse(g, st, o)["reA"] > 0
     except Exception:
         return False
@@ -47,7 +54,10 @@ def delete_vertex(g, start, x):
 
 def main():
     g = pg.read(sys.argv[1]); start = exh.readstart(sys.argv[2]) if sys.argv[2] != "-" else None; outp = sys.argv[3]
+    global NOHLEN
     mode = sys.argv[sys.argv.index("--prop") + 1] if "--prop" in sys.argv else "A"
+    if "--nohlen" in sys.argv:
+        NOHLEN = int(sys.argv[sys.argv.index("--nohlen") + 1])
     assert prop(g, start, mode), "property does not hold on the input"
     changed = True
     while changed:
@@ -82,8 +92,9 @@ def main():
       with open(outp + ".start", "w") as f:
         f.write("SIGMA0 " + " ".join(f"{v}:{w}" for v, w in sorted(start[0].items())) + "\n")
         f.write("TAU0 " + " ".join(f"{v}:{w}" for v, w in sorted(start[1].items())) + "\n")
-    st, _ = trace(g, start if mode != "canonA" else None, check=False)
-    print(f"shrunk to n {g.n}, m {sum(len(s) for s in g.succ)}: {exh.analyse(g, st, exh.odd_choice(g))}")
+    st, _ = trace(g, start if not mode.startswith("canon") else None, check=False)
+    import box4
+    print(f"shrunk to n {g.n}, m {sum(len(s) for s in g.succ)}: {box4.measure(g, st)}")
 
 
 if __name__ == "__main__":
