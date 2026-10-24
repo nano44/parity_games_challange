@@ -1,0 +1,135 @@
+  A_games = 1
+  A_max_changesX = 0
+  B_max_tau_changes = 0
+  L2_checks = 28
+  L3_checks = 28
+  VIOLATIONS = 120
+  blocks = 1
+  games = 1
+  games_ocyclic = 1
+  gate_checks = 28
+  iterations = 28
+  max_block = 28
+  pure_transitions = 28
+  step5_checks = 28
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 2: Xi(o)=(11, frozenset({10, 5, 14, 15}), 4) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 2
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 2
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 2: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 2 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 3: Xi(o)=(11, frozenset({10, 5, 15}), 3) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 3
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 3
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 3: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 3 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 4: Xi(o)=(11, frozenset({10, 4, 5}), 3) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 4
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 4
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 4: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 4 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 5: Xi(o)=(11, frozenset({10, 4, 5}), 3) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 5
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 5
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 5: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 5 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 6: Xi(o)=(11, frozenset({2, 10, 5}), 3) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 6
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 6
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 6: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 6 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 7: Xi(o)=(11, frozenset({2, 10, 5}), 3) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 7
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 7
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 7: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 7 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 8: Xi(o)=(11, frozenset({2, 10, 5}), 3) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 8
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 8
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 8: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure fallback step 8 is not flat / not in the flat situation
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 9: Xi(o)=(11, frozenset({2, 10, 5}), 3) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 9
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 9
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 9: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 9 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 10: Xi(o)=(11, frozenset({2, 10, 5}), 3) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 10
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 10
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 10: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 10 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 11: Xi(o)=(11, frozenset({2, 10, 5}), 3) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 11
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 11
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 11: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 11 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 12: Xi(o)=(11, frozenset({2, 10, 5}), 3) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 12
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 12
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 12: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 12 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 13: Xi(o)=(11, frozenset({2, 10, 5}), 3) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 13
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 13
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 13: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 13 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 14: Xi(o)=(11, frozenset({2, 10, 5}), 3) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 14
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 14
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 14: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 14 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 15: Xi(o)=(11, frozenset({2, 10, 5}), 3) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 15
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 15
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 15: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure fallback step 15 is not flat / not in the flat situation
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 16: Xi(o)=(11, frozenset({2, 10, 5}), 3) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 16
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 16
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 16: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 16 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 17: Xi(o)=(11, frozenset({0, 3, 4, 5, 7, 9, 14, 15}), 9) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 17
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 17
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 17: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 17 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 18: Xi(o)=(11, frozenset({0, 3, 4, 5, 7, 9, 14, 15}), 9) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 18
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 18
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 18: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 18 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 19: Xi(o)=(11, frozenset({0, 3, 4, 5, 7, 9, 14, 15}), 9) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 19
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 19
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 19: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 19 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 20: Xi(o)=(11, frozenset({0, 3, 4, 5, 7, 9, 14, 15}), 9) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 20
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 20
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 20: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 20 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 21: Xi(o)=(11, frozenset({0, 3, 4, 5, 7, 9, 15}), 8) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 21
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 21
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 21: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 21 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 22: Xi(o)=(11, frozenset({0, 3, 4, 5, 7, 9}), 6) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 22
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 22
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 22: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 22 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 23: Xi(o)=(11, frozenset({0, 3, 4, 5, 7, 9}), 6) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 23
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 23
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 23: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 23 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 24: Xi(o)=(11, frozenset({0, 2, 5, 7, 9}), 6) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 24
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 24
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 24: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 24 is not an arena optimum of G_tau
+  VIOLATION: [o-CYCLIC, negative control] Lemma 2 fails at pure state 25: Xi(o)=(11, frozenset({0, 2, 5, 7, 9}), 6) W(o)=(11, frozenset({9, 5}), 2)
+  VIOLATION: [o-CYCLIC, negative control] Lemma 3 fails at pure state 25
+  VIOLATION: [o-CYCLIC, negative control] gate != G_tau improving set at pure state 25
+  VIOLATION: [o-CYCLIC, negative control] step 5 fails at pure state 25: not N5's step on G_tau
+  VIOLATION: [o-CYCLIC, negative control] pure step 25 is not an arena optimum of G_tau
+RESULT violations=120 secs=0.1

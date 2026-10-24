@@ -1,0 +1,17 @@
+  A_exact_checks = 1
+  A_games = 1
+  A_max_changesX = 0
+  B_max_tau_changes = 1
+  L1_checks = 7
+  L2_checks = 7
+  L3_checks = 7
+  P_strategies = 1
+  blocks = 1
+  games = 1
+  games_oacyclic = 1
+  gate_checks = 7
+  iterations = 8
+  max_block = 7
+  pure_transitions = 7
+  step5_checks = 7
+RESULT violations=0 secs=0.0
