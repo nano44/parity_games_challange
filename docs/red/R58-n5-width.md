@@ -350,3 +350,19 @@ Tool: blockcheck.py recomputes X, o-acyclicity and the blocks by L-NEW's definit
   So the per-(block ∩ phase) quantity is the one to bound, or to break.
 - A follow-up climb with fitness "longest stretch inside block ∩ one λ-phase" (blockclimb.py --phase) runs from both instances
   to ~04:13Z; results in §10c.
+
+### 10c. Longest stretch inside one pure-Y block AND one λ-phase (blockclimb.py --phase, 2,400 s, seeded from 10b; date -u 03:33-04:10Z)
+| |Y| (incl. o) | n | longest stretch in block ∩ one phase | block (= whole run) | phases | instance (sha1) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 21 | 24 | 20 (start 10) | 25 | [1, 20, 1, 3] | instances/blockph_bp20.pg (see sha1 below) |
+| 33 | 36 | 31 (start 22) | 39 | [1, 31, 1, 1, 1, 1, 1, 1, 1] | instances/blockph_bp32.pg (see sha1 below) |
+
+- Both runs are o-acyclic, with no Odd move and no fallback. Oink zlk OK, strategies verified.
+- The climbs pushed the in-phase stretch to |Y| − 1 = 20 and to |Y| − 2 = 31, and not beyond.
+- Conjecture STAT-PH (READING, DATA only): inside one joint λ-phase, a pure-Y block of an o-acyclic 𝒞^1O run has at most
+  |Y| − 1 iterations. This is R17's n − 1 shape, with |Y| in place of n.
+- With Lemma Φ (≤ 2n(n−1)+1 phases), Proposition X and L-NEW's reduction (C_X + d)(B_Y + 1), STAT-PH would make N5 polynomial
+  on o-acyclic 𝒞^1O. No proof route is offered here; L-NEW's I1-I4 failures (box 22) show the per-path R17 template breaks.
+- Box 27 result: NO KILL on 𝒞^1O. Route (a) gives θ-changes < n per phase; route (b) gives blocks > |Y| but ≤ |Y| − 1 per phase.
+- blockph_bp20.pg sha1 c0cb90699c1e7eb042af61c4bdee9b762477ef43
+- blockph_bp32.pg sha1 66c134cffcc92d1f63b8c3f4377c87ce8d84ca38

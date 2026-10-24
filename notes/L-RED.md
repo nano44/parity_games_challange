@@ -12,6 +12,14 @@ O4 sharpened to O5 (K1-K4), Conjecture BRIBE FALSE (instance). Boxes 24-25 below
 - fts_best16 reading: o = 5's exits {2, 4, 9, 14, 15} sit on ONE σ-path 2→13→3→4→1→15→14→8→12→6→5 that returns to o (a ring).
   σ̄(o) walks along the ring 14→15→4→2 as the path improves (backward propagation); two laps in one phase.
 - Tools: thetaclimb.py (fitness = θ-changes inside one λ-phase; --from seed), cdagseed.py (CDAG_k + o seeds; short as built).
+- BOX 27 END (~04:15Z). R58 §10, NO KILL.
+  - (a) θ-climbs: 13 / 16 θ-changes in one phase at n 16 / 24 (< n).
+  - (b) pure-Y blocks: 27 / 49 at |Y| 21 / 33, so "block ≤ |Y|" (L-NEW data) is FALSE. But they hold only ≤ |Y| − 1 inside one
+    λ-phase (in-phase climbs reach 20 / 31).
+  - Conjecture STAT-PH (READING): in-phase pure-Y block ≤ |Y| − 1. With Prop X and L-NEW's reduction, it would give N5
+    polynomial on o-acyclic 𝒞^1O.
+  - Instances: theta_thf16, theta_thc24, block_bk20/32, blockph_bp20/32; all Oink zlk OK, strategies verified.
+- NEXT: a STAT-PH proof or break (static two-one-player-game problem); or the next named candidate (Lead: possibly L-NEW N11 = N5-HT).
 
 ## DONE box 26 (R58; 2026-10-23 23:06-23:20Z, date -u)
 - §1: jump-ahead switches (N5 switches SSI would not make) mostly use SSI counter edges: sym_h16 14/17, DLM1 n8 38/38.
@@ -72,7 +80,7 @@ O4 sharpened to O5 (K1-K4), Conjecture BRIBE FALSE (instance). Boxes 24-25 below
 - Tools: experiments/red/n5/n5tr.py, oddmoves.py, ssiedges.py, vjlane.py.
 
 ## IN FLIGHT
-None (2026-10-24 01:45Z by date -u).
+None (2026-10-24 04:12Z by date -u).
 
 ## NEXT for N5 (box 26)
 - R58 §5 open form: (STRETCH) (one-sided stretches poly) and a family meeting (K1)-(K4). These need wide improving sets, held off
