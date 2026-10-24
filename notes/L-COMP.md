@@ -1,6 +1,15 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 3, box 6 end, 2026-10-24 23:0xZ by date -u)
+### DONE box 6 (Lead GO 20:0xZ)
+- box6.py: exhaustive checks of P-N5-NH (c7981ee) F1°, TC (i)-(iv) and CONJECTURE (OB_R) per crossing-free interval; --every/--offset
+  sampling, resume. 0 violations on n 4 canonical, n 4 all starts and the WHOLE n 5 subset (4 quarters = 68,764,800 runs, 100,587,132
+  intervals, 3,432 OTHER blocks); F1° and (OB_R) attained (slack 0), never exceeded. n 4 canonical: (OB_R) vacuous.
+- X chains: one-wave ~0.8-0.9n; wave chain from L-RED x32_waves32; long climbs at n 32: X 67 / 75 / 77 at 360 / 1,500 / 2,400 s
+  (b6_xl2_n32, 2.41n); n 40: 79, n 48: 84. X rises with budget at fixed n: maxima are lower bounds. README "Box 6".
+### IN FLIGHT: nothing. Queue: longer X climbs (budget is the limit); a k-digit wave design is L-RED's target, not mine.
+
 ## Resume point (successor 3, session_01BmytANWGKiHZhXK9QC2rB2, Opus 5.5; box 5 = X / O per joint lambda-phase; 2026-10-24 by date -u)
 Handover check 0ef77018 (5/5, Lead GO 17:5xZ). Box 5 started 17:52Z.
 
