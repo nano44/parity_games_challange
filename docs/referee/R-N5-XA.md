@@ -199,3 +199,34 @@ at all, so G-XA-1 does not touch CR. Both data sets agree (R2: 0 coarse-strict g
 Joint open list: G-XA-1 for u* = none (FBL statement); XA-5 (pending R2 on C5). Wording for L-NEW: FBL "u* ≠ none"; XA-3, XA-4; N-XA-3.
 G-N5-TIME, (CYC), (XING), (FB-1O) stay OPEN.
 §C ended 15:47Z by date -u.
+
+## §C7. The Corollary in its final form (Lead 16:50Z; for R20 / CHECKER C29 E-1). Written from 16:48Z by date -u. (Opus 5.5, D15)
+Read: REFEREE-2 R2-N5-XA §C2.2-§C2.3 (referee-2 38af0df) and docs/new/P-N5-XA-fixes-box28.md §5-§6 (sha1 a7022bf57b028e538260c81530e69421436acc84),
+both at trunk 7f42c69 (merged here at cf20e42a).
+- Pieces pass through value-flat fallbacks (fixes §5): CHECKED. It is my §C5 argument; REFEREE-2 adds the equivalent view that the post-fallback
+  σ is another pointwise optimum of the arena at k (R17 (d) accepts any optimum), which I accept. Step 1 is right for u* ≠ none. FBL's strong
+  gate form makes every switched edge of a fallback without a leave a flat F → F edge. Distinct switched cycle nodes have disjoint regions, so W
+  (= Ξ on F) is unchanged on F. Nothing in R switches, so routes, θ, w and R are unchanged. A switch of c keeps c's new cycle in F, so (h) holds
+  at k+1.
+- The count (fixes §6 (i)-(iv)): checked line by line.
+  - Entries ≤ n + n(n − 1) (FBF: none after the first fallback; XA before it; first entries ≤ n).
+  - Leaves ≤ entries + n, so X ≤ 2n² + n.
+  - Non-flat fallbacks N ≤ #leaves ≤ n² + n: each contains a leave (FBL), and distinct fallbacks are distinct transitions.
+  - Value-changing transitions ≤ (n − 2)(X + N + 1) + X + N ≤ (n − 1)(X + N + 1) = O(n³). This uses PIECE with P-1 (𝓡*) and P-2 (one joint
+    λ-phase, given by S). Inside a piece R is constant, and "Ξ changes" ⟺ "W changes" (Lemma G (a) on F; G (b) on R with θ, w fixed).
+- (v) O(n⁵) and CHECKER's note: ACCEPTED. Fixes §6 defines value-preserving as "Ξ and W unchanged at every vertex".
+  - Under that definition a value-preserving transition leaves Ωσ = Ξ unchanged. Ωτ depends on τ alone, and τ is constant on S. So every maximal
+    run of value-preserving transitions is a run of the kind R15 (d) bounds, of length ≤ 4n(n − 1).
+  - R15 (d) itself needs only Ξ and Ωτ unchanged; requiring W unchanged as well only shortens the runs.
+  - Every transition is value-changing or value-preserving, and the preserving runs number ≤ #value-changing + 1. So all transitions number
+    ≤ (#value-changing + 1)(4n(n − 1) + 1) = O(n⁵).
+  - The fixes file's remark is also right: at a crossing transition, W-flat does not imply Ξ-flat. So "value-changing" must mean "Ξ or W changes",
+    as defined there.
+VERDICT (Opus 5.5, D15): Corollary SIGNED, in exactly this form:
+- hypotheses: a throttled stretch S with u* ≠ none and (h) at every state of S;
+- pieces pass through value-flat fallbacks (fixes §5);
+- O(n³) crossings, non-flat fallbacks and value-changing transitions (Ξ or W);
+- O(n⁵) transitions in all, via R15 (d), with value-preserving read as "Ξ and W unchanged".
+Not covered: u* = none stretches (FBL's u* = none gap, XA step 4), non-(h) states, and the number of throttled stretches per joint λ-phase.
+G-N5-TIME stays OPEN. With REFEREE-2 §C2.3 this gives two signatures on the same form; XA-5 is CLOSED.
+§C7 ended 16:48Z by date -u.

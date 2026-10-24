@@ -1,0 +1,1 @@
+games 3474, (w,u*)-runs with ≥ 1 transition 2, totals {'tc': 0, 'fb': 0, 'leaveA': 0, 'leaveF': 0, 'ARE': 0, 'FBRE': 0, 'first': 0}, max FBRE per run (0, None), max fallbacks per run (0, None)
