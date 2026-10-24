@@ -75,3 +75,45 @@ Faithfulness check (condition 2): run(..., ht=False) is N5. On a sample, (a) the
 n5ht run with 0 conflicts in every iteration must give a trace equal to n5's. Both are asserted in n11/faith.py.
 Verification (condition 3): every reported run goes through experiments/new/check_sol2.py (Oink zlk regions, both strategies
 verified).
+
+## RESULT (box 23; runs started 02:45Z, written 02:49Z by date -u): N11 = N5-HT is DEAD at the first kill test (B8)
+The frozen rule is the one in the FREEZE section above (commit e003f7e6; n5ht.py sha1 598cc900…).
+- Faithfulness (condition 2; faith.py 1500 12 31): 1,500 random games.
+  - (a) The ht=False traces equal N5's in all 1,500.
+  - (b) All 1,137 runs with 0 conflicts equal N5's trace.
+  - The other 363 runs had conflicts.
+- Kill tests. Every row is verified: Oink zlk regions, both strategies verified (check_sol2.py). Data in
+  experiments/new/n11/results/*.csv. Instances come from experiments/hard-families/pgsolver_port.py (deterministic) and
+  experiments/new/dlm_gen.py.
+
+| family | N | n | N5-HT iterations | conflicts (total) | N5 iterations |
+| --- | --- | --- | --- | --- | --- |
+| switchbestexp | 2 … 8 | 60 … 210 | 61, 141, 301, 621, 1261, 2541, 5101 | 53 … 17,882 | 32 … 77 |
+| switchallexp | 2 … 8 | 35 … 119 | 30, 70, 150, 310, 630, 1243, 2486 | 39 … 10,585 | 8 … 16 |
+| DLM family 1 (start pair) | 2 … 8 | 6 … 18 | 2 … 8 (= N) | 0 … 3 | 2 … 8 |
+| DLM family 2 (start pair) | 2 … 7 | 22 … 72 | 4, 7, 8, 11, 13, 17 | 0 … 18 | 4 … 13 |
+
+- Growth laws.
+  - switchbestexp (n = 25N + 10): exactly 20·2^N − 19 iterations for N = 2..8. That equals Even switch-all SI from σ_0 on the
+    same games (box 21 table: 61 / 141 / 301 / 621).
+  - switchallexp (n = 14N + 7): exactly 10·2^N − 10 for N = 2..6 (= Even switch-all from σ_0), then 1243 and 2486 at N = 7, 8.
+    The ratio is 2.0 per step.
+  - Both are exponential in n.
+- sha1 of three generated instances per family:
+
+  | N | switchbestexp | switchallexp |
+  | --- | --- | --- |
+  | 2 | b3d5bc29… | ca6e0b7d… |
+  | 4 | 57b27b74… | c94d98d3… |
+  | 8 | 7082e724… | 18c24624… |
+
+- Obstruction, exactly as the barrier screen warned (B8):
+  - On Friedmann's games the conflict set C is large at almost every iteration (17,882 conflicts in 5,101 iterations at
+    switchbestexp N = 8).
+  - The override is switch-all's own choice (max (Ξσ(z), z)) on C, so N5-HT replays Even switch-all SI and inherits its
+    exponential lower bound (Friedmann LMCS 7(3:19), Thm 6.14; switch-best game, Thm 8.4).
+  - N5's trust in τ is precisely what lets it escape these families. Removing the trust wherever it conflicts with an honest
+    improvement removes the escape.
+- The remaining steps (R56/R57 families, frozen climbs, I3/I4 invariant test) were not run: the approach is dead at step 1.
+- Lesson (READING): any repair of N5's trust-mode deadlock that falls back to the honest best edge on conflicts collapses to
+  switch-all on Friedmann's games. A deadlock repair must not use honest-greedy choices.

@@ -160,8 +160,11 @@ Box 21 §2.5 proved that fallback steps satisfy W_{k+1} ⊴ W_k, and left "fallb
   i4_hand the deadlock was held open by a lane in X; in (STAT) the lane would have to live in Y.
 - DATA:
   - pureY.py on 575 random o-acyclic 𝒞^1O games (n 5..16): the longest pure-Y block is ≤ |Y|.
-  - climbY.py (fitness = longest pure-Y block − |Y|; n 12 / 20 / 28; final numbers in the box-end message): best so far 0, i.e.
-    block = |Y|.
+  - climbY.py (fitness = longest pure-Y block − |Y|; 2,400 s each, finished 02:43Z): best 3 / 0 / 0 at n 12 / 20 / 28
+    (3.7 M / 3.5 M / 2.4 M mutations).
+  - The n 12 best is instances/statY_12.pg (sha1 0af6e62b…). Its whole canonical run is one pure-Y block: 8 iterations, |Y| = 5
+    (4 Even vertices). Oink zlk OK, strategies verified.
+  - So blocks above |Y| exist, but nothing beyond about 2·|Y| was found.
   - i4_hand: |Y| = 3, longest pure-Y block 1.
 - OPEN: (STAT). The o-on-a-cycle case keeps both (SEG-1O) and (CH-1O). L-RED's frz24 and fts_best16 have X = ∅, and the long
   laps live there.

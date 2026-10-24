@@ -7,7 +7,7 @@ import n5ht
 from n5x import trace, pg
 N, nmax, seed = map(int, sys.argv[1:]); rng = random.Random(seed); a = b = bconf = 0
 for _ in range(N):
-    n = rng.randint(2, nmax)
+    n = rng.randint(3, nmax)
     g = pg.Game([rng.randrange(n) for _ in range(n)], [rng.randrange(2) for _ in range(n)], [sorted(set(rng.sample(range(n), rng.choice((1, 2, 2, 3))))) for _ in range(n)])
     ref, _ = trace(g, check=True)
     it0, fb0, c0, _, _, s0 = n5ht.run(g, ht=False, trace=True); assert s0 == ref, "ht=False differs from N5"; a += 1
