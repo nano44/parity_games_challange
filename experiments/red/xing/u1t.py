@@ -47,18 +47,54 @@ def u1t(g, cap=400):
         k = j + 1
     return best
 
+def obr(g, start=None):
+    """CONJECTURE (OB_R) (docs/new/N5-NH2-box29.md 185): in a crossing-free interval, each OTHER block has <= |R| R-only
+    value-changing transitions. Segmentation = oblock.py's (phase, R constant, maximal runs of OTHER states); R-only = rsplit.py's
+    criterion (some value changes, all on R ∪ {o}). 'inner' counts transitions with both endpoints in the block; 'touch' also the
+    transition into and out of the block (rsplit's OTHER-touching). Returns the block maximising inner − |R|."""
+    rows, ph = profile(g, start); o = odd_choice(g)
+    for r in rows: r["R"] = reach_o(g, r["s"], r["t"], o); r["other"] = (not all(r["h"])) and r["Xk"] != r["Wk"]
+    def ronly(q):
+        a, b = rows[q], rows[q + 1]
+        if a["R"] != b["R"]: return 0
+        ch = [v for v in range(g.n) if a["Xk"][v] != b["Xk"][v] or a["Wk"][v] != b["Wk"][v]]
+        return int(bool(ch) and all(v in a["R"] or v == o for v in ch))
+    best = dict(excess=-10**9, inner=0, touch=0, R=0, block=None, blocks=0)
+    for (x, y) in ph:
+        k = x
+        while k <= y:
+            j = k
+            while j + 1 <= y and j + 1 < len(rows) and rows[j + 1]["R"] == rows[j]["R"]: j += 1
+            i = k
+            while i <= j:
+                if not rows[i]["other"]: i += 1; continue
+                b = i
+                while b + 1 <= j and rows[b + 1]["other"]: b += 1
+                inner = sum(ronly(q) for q in range(i, b)); touch = inner + (ronly(i - 1) if i > k else 0) + (ronly(b) if b < j else 0)
+                Rn = len(rows[i]["R"]); best["blocks"] += 1
+                if inner > 0 and (inner - Rn, touch) > (best["excess"], best["touch"] - best["R"]):    # only blocks with an R-only transition
+                    best.update(excess=inner - Rn, inner=inner, touch=touch, R=Rn, block=(i, b))
+                i = b + 1
+            k = j + 1
+    return best
+
 def fit(G):
+    BAD = (-10 ** 9,) * 3                          # below every real fitness (OB_R excesses are negative)
     n = len(G[0]); odd = [v for v in range(n) if G[1][v] == 1 and len(G[2][v]) > 1]
-    if len(odd) != 1 or any(not x for x in G[2]): return (-1, -1, -1), None
+    if len(odd) != 1 or any(not x for x in G[2]): return BAD, None
     g = pg.Game(*G)
-    if not any(w in split(g, odd[0]) for w in G[2][odd[0]]): return (-1, -1, -1), None
+    if not any(w in split(g, odd[0]) for w in G[2][odd[0]]): return BAD, None
+    if OBR:
+        try: b = obr(g)
+        except Exception: return BAD, None
+        return (b["excess"], b["touch"] - b["R"], b["inner"]), b
     try: b = u1t(g)
-    except Exception: return (-1, -1, -1), None
+    except Exception: return BAD, None
     return ((b["own"], b["maxvw"], b["kindT"]) if OWN else (b["maxvw"], b["kindT"], b["post"])), b
-OWN = "--own" in sys.argv
+OWN = "--own" in sys.argv; OBR = "--obr" in sys.argv
 
 if __name__ == "__main__":
-    a = [x for x in sys.argv[1:] if x != "--own"]
+    a = [x for x in sys.argv[1:] if x not in ("--own", "--obr")]
     if a[0] == "--climb":
         n, seed, secs, out, sp = int(a[1]), int(a[2]), float(a[3]), a[4], a[5]; rng = random.Random(seed)
         g = load(sp); G = [list(g.prio), list(g.owner), [list(x) for x in g.succ]]; f, c = fit(G); print("START", f, c, flush=True)
@@ -73,4 +109,4 @@ if __name__ == "__main__":
         print("FINAL", f, it, flush=True)
     else:
         for p in a:
-            g = load(p); print(os.path.basename(p), "n", g.n, u1t(g), flush=True)
+            g = load(p); print(os.path.basename(p), "n", g.n, u1t(g), "OB_R", obr(g), flush=True)
