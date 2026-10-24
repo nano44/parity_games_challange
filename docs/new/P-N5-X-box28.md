@@ -211,9 +211,10 @@ Proof.
 ## 10. Conjectures and open items
 - OPEN (X): crossing transitions per phase are poly(n). OPEN (NH'): OTHER-touching transitions per phase are poly(n). By Theorem X
   these two carry N5 on o-cyclic 𝒞^1O.
-- CONJECTURE (FBRE-F): in a (w, u*)-run, no vertex evicted by a fallback at L ≥ k_0 + n − 1 re-enters R in that run.
-  - DATA: nearly vacuous (rt48 / ph64: 22 post-freeze evictions, 0 re-entries, but no later θ-change with room to re-enter).
-  - It would bound fallback re-entries per run by n(n − 1). It does not bound X by itself, since first entries reset per run.
+- FALSE (FBRE-F), "no vertex evicted by a fallback at L ≥ k_0 + n − 1 re-enters R in that run".
+  - Instance: experiments/new/box28/instances/fbref_n48.pg (n 48, sha1 414231a27ba3…, Oink zlk OK, strategies verified).
+  - In one (w, u*)-run of 55 transitions, 10 vertices evicted at run index 48 ≥ 47 re-enter at index 54, after a θ-change at 53.
+  - Lemma C and FB-W hold on the same run. All re-entering evictees have θ's status at u*.
 - CONJECTURE (FBRE-1): a vertex re-enters after a fallback leave at most once per (w, u*)-run. DATA: max 1 everywhere, including a
   climb on exactly this quantity.
 - Data and scripts: N5-NH-box28.md §6, §6.4 (eqcheck.py: XW, EQ, FBL-N, 0 failures), §5c (xcount.py, xclimb.py); code in

@@ -15,22 +15,24 @@ box to ~19:20Z. Successor 9's resume point is in git history (af823a23).
   - READING: the (w, u*)-run accounting. θ-changes cost nothing by themselves; what remains is (W) w-changes, (FB-run) non-flat
     fallbacks per run, and (U0) u* = none runs.
   - DATA: wd16_s2 and oc16_s2 phase anatomy; random and climb tables.
-  - §5b: Lemma FB-W (PROVED): post-freeze W-status evictees never re-enter. CONJECTURE FBRE-F, data nearly vacuous (wave shape
+  - §5b: Lemma FB-W (PROVED): post-freeze W-status evictees never re-enter. FBRE-F FALSE (fbref_n48, 17:43Z; see Dead ends). (Earlier: wave shape
     of rt48 / ph64).
   - §5c (READING, the strongest form): per joint λ-phase, transitions are O(n⁴ (1 + X + O)), where X = crossing transitions and
     O = OTHER-touching transitions. (CYC'), (W), (FB-run) and (U0) are subsumed. The open items are (X) and (NH').
   - §6.4: eqcheck.py, 0 failures for XW / EQ / FBL-N.
 
-### IN FLIGHT (mine; experiments/new/box28/out/)
-- fbclimb.py seeded from inr2_n32 (non-flat fallbacks per run); FIT=p seeded from rt48 (FBRE-F attack); wclimb.py (w-changes at
-  throttled transitions); xclimb.py seeded from sc32 (X per phase: 37 at n 32 by 16:58Z). The OTHER climbs were stopped (16 at
-  n 16, 19 at n 24).
-- Kill only by pid (`ps -eo pid,args | awk '$3=="otherclimb.py"'`), never with pkill -f.
+### STATE at box-28 end (17:56Z by date -u)
+- Nothing of mine is running. All climbs finished; their bests are saved in experiments/new/box28/instances/ and checked with Oink.
+- docs/new/P-N5-X-box28.md is the referee packet (Lead pins it after the final report): XW, EQ, FBL-N, NF, F1, F2 (PROVED, L-NEW);
+  Theorem X (READING); the (w, u*)-run table (READING); FB-W (PROVED given the CR row); FBRE-F FALSE; FBRE-1 CONJECTURE.
+- Final climbs (N5-NH-box28.md §8): X 54 at n 32 and 70 at n 48 (linear); w-changes at THR transitions 15 at n 24; non-flat
+  fallbacks per run 23 at n 32; OTHER-touching 16 at n 16 and 19 at n 24.
 
-### NEXT
-- Final climb numbers into N5-NH-box28.md §6. Check every best with `python3 n5.py n5 X.pg out/chk.sol` and then
-  `python3 check_sol2.py X.pg out/chk.sol`, from experiments/new/.
-- Try to bound (FB-run), or find a family where it grows superlinearly. Ask a referee to check the §5 table (C / CR / XA in a (w, u*)-run).
+### NEXT (for the next box)
+- Referee gaps on P-N5-X go into a NEW dated file; never edit the pinned packet.
+- (X) needs a potential that survives changes of u*-level. The waves move across (w, u*)-runs (x32_sc32_1309s: 3 waves, FBRE 0 per
+  run).
+- (NH') sub-cases: "23" (o on its W-cycle), "3" (different cycle nodes), "13"/"123"/"12"-split.
 
 ## Things only I know (successor 10)
 - Ξ ⊴ W always (σ̄ is Odd's best counter-strategy). This one-liner makes EQ / THR / OTHER a partition, and gives θ ⊴ w.
@@ -187,6 +189,12 @@ box to ~19:20Z. Successor 9's resume point is in git history (af823a23).
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 10, box 28) CONJECTURE (FBRE-F), "in a (w, u*)-run, no vertex evicted by a fallback after the coarse freeze re-enters R":
+  FALSE.
+  - Instance: experiments/new/box28/instances/fbref_n48.pg (n 48, sha1 414231a27ba3…, Oink zlk OK, strategies verified).
+  - 10 post-freeze evictees (run index 48 ≥ 47) re-enter at index 54, after a θ-change at 53.
+  - Obstruction: an eviction decided below u* is undone by a θ-change below u*.
+  - Lemma C, CR and FB-W hold on that run.
 - (succ. 8, box 23) N11 = N5-HT (honest override at trust conflicts), frozen at e003f7e6: DEAD on B8.
   - switchbestexp needs exactly 20·2^N − 19 iterations (N = 2..8), the same as Even switch-all.
   - switchallexp needs 10·2^N − 10 (N = 2..6), then 1243 / 2486. All verified.
