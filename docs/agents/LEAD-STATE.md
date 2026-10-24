@@ -980,3 +980,4 @@
 - 16:32Z (date -u) R20 draft (P-N5-XA) docs/agents/R20-draft.md; L-NEW fixes file merged (a7022bf5…).
 - 16:41Z (date -u) L-SI box 3 merged (a6f4f42): charges MULTIPLICATIVE as a proof scheme (Lemma CH PROVED: SELF/OVER paid by o-free rise of argmin; payer resets at INR crossings); Lemma LEN PROVED; CONJECTURE (LEVEL-poly) m_r ≤ poly ⇒ (CYC); DATA: run_x_inr2 shows a 2-digit nested counter (high SELF events re-fix the same lower block) — kill design relayed to L-RED.
 - 16:47Z (date -u) C29 FAIL merged (checker 5a39540): E-1 (Corollary not signed by REFEREE: §C7 requested), E-2 (XA u* ≠ none), E-3 (44 stretches); E-2, E-3, N-1..N-3 fixed in R20 draft; signatures line updated after §C7.
+- 16:56Z merged claude/referee a1de721 (§C7, Corollary SIGNED; scope docs/referee/, notes/REFEREE.md); R20 draft rev. for C29 E-1; CHECKER C29 Addendum 1 next.

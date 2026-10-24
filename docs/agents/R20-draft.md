@@ -1,4 +1,4 @@
-# Draft RESULTS R20 (Lead, 2026-10-24 16:32Z by date -u) (rev. 16:47Z: C29 E-2, E-3, N-1..N-3; E-1 pending REFEREE §C7) — awaits CHECKER C29 Addendum 1; lands in "## Results" after R19, before "## Dead ends"
+# Draft RESULTS R20 (Lead, 2026-10-24 16:32Z by date -u) (rev. 16:47Z: C29 E-2, E-3, N-1..N-3; rev. 16:56Z: C29 E-1 via REFEREE §C7 a1de721) — awaits CHECKER C29 Addendum 1; lands in "## Results" after R19, before "## Dead ends"
 
 ### R20 [refereed-only] N5 on one-Odd-choice games, throttled stretches with a top difference (u* ≠ none): coarse monotonicity (C), fallbacks only evict (FBL), no entry after a fallback (FBF), coarse R17 (CR), strict re-entry (XA), and O(n³) value changes per stretch (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C29.md, checker PENDING)
 - Object (packet P-N5-XA, pinned trunk b70aa59, unchanged during review): docs/new/P-N5-XA-box27.md, sha1
@@ -33,9 +33,9 @@
   throttled stretch per 1,000 runs). REFEREE-2 xa_check.py (own code): 16,672 runs, 707 throttled stretches (longest 56), 576 fallbacks
   in S, 921 switched edges (all leaves), 0 violations; piece_flatfb.py: 1,052 pieces, 64 with a flat fallback, 0 violations (weak: 10
   value-changing steps in those 64).
-- Signatures: REFEREE docs/referee/R-N5-XA.md (referee f39972d; §C 1123baf): C SIGNED; FBL SIGNED for u* ≠ none, unproved for
-  u* = none; FBF SIGNED WITH GAPS (closed); CR SIGNED; XA SIGNED; Corollary closed by §C5 pending REFEREE-2. REFEREE-2
+- Signatures: REFEREE docs/referee/R-N5-XA.md (referee f39972d; §C 1123baf; §C7 a1de721): C SIGNED; FBL SIGNED for u* ≠ none, unproved for
+  u* = none; FBF SIGNED WITH GAPS (closed); CR SIGNED; XA SIGNED; Corollary SIGNED in §C7 (the form of R2 §C2.3 / fixes §5-§6; value-preserving = Ξ and W unchanged). REFEREE-2
   docs/referee-2/R2-N5-XA.md (referee-2 9d3f1fb; §C 4df15e6, stamp fix a8c7351; §C2 38af0df): §1, C, FBF, CR, XA SIGN; FBL SIGN WITH GAPS (u* = none
   unproved); Corollary SIGNED in §C2 for u* ≠ none via §C5. Joint gap map: XA-1 = G-XA-1 (a), (b) REFEREE-2 only (accepted); XA-2 =
-  G-XA-2 (closed); XA-3, XA-4 wording (accepted by REFEREE-2); XA-5 closed by §C5 (both); N-XA-1..3 accepted.
+  G-XA-2 (closed); XA-3, XA-4 wording (accepted by REFEREE-2); XA-5 CLOSED (REFEREE §C5 + §C7, REFEREE-2 §C2.3: two signatures on the same form); N-XA-1..3 accepted.
 - TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
