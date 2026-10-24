@@ -1,0 +1,8 @@
+WM_checks: 19
+phases: 2
+pm_transitions: 0
+runs: 1
+transitions: 20
+phase_max_X: 0
+phase_max_Z: 0
+RESULT OK violations=0

@@ -33,6 +33,7 @@ def rows_of(g, start):
     return E, o, rows
 
 def run(g, start, cnt):
+    assert sum(1 for v in range(g.n) if g.owner[v] == 1 and len(set(g.succ[v])) > 1) == 1, "not in C^1O: exactly one Odd choice vertex required"
     E, o, rows = rows_of(g, start); n = g.n
     for r in rows:
         cnt["XW_checks"] += n; cnt["XW_FAIL"] += sum(r["Xk"][v] > r["Wk"][v] for v in range(n))

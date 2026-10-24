@@ -1,0 +1,19 @@
+ACT_i: 756
+ACT_ii: 1988
+ACT_ii_cycle_alternative: 778
+LOOP_checks: 207
+NOFE_edges: 1
+NOFE_tail_is_W_cycle_node: 1
+NOFLE_cor_checks: 14
+StepK_checks: 35
+WM_checks: 1361
+W_lowering_fallbacks: 2
+fb_in_phase: 31
+phases: 11909
+pm_transitions: 1
+runs: 5000
+transitions: 8301
+literal_run_max: 4
+phase_max_X: 4
+phase_max_Z: 1
+RESULT OK violations=0

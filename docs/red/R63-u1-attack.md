@@ -22,5 +22,42 @@ R-vertex has ≤ 2 Ξ-changes per value of its W-length. Labels per L40. G-N5-TI
   - Counted as per-vertex changes (u1vertex's "total"), 88 > |R| = 28.
   - So (U1-T) as stated (per vertex per W-length) is refuted. (OB_R) holds or fails depending on whether it counts transitions or
     vertex-changes, and the box-30 note uses u1vertex's per-vertex total.
-  - The per-vertex count here comes from propagation, not from a W-tight cascade of the vertex's own switches (§3 of the spec).
-    A cascade of a vertex's OWN switches (σ(v) changing ≥ 3 times at one W-length) is not shown by this instance.
+  - Most of the per-vertex count comes from propagation. The own-switch (cascade) version is §1b.
+
+### 1b. The cascade form also fails: 3 OWN switches at one W-length (same instance; u1t.py 'own'; 20:14Z)
+- Vertex 6 (Even, successors 2, 9, 18, 19, 20, 27): W(6) = (cycle node 8, length 9) at every state 0-7.
+  - σ(6) goes 2 → 18 → 19 → 18 at transitions 1, 2 and 4.
+  - Ξ(6) keys: 2017488896 → 2018504704 → 2138565632 → 2139089920, strictly rising.
+  - So 3 own switches at one W-length, each W-flat at 6 and honest-improving, and the successor 18 is revisited.
+- Vertex 14 (Even): W(14) = (8, length 11) from state 1 on. σ(14) goes 25 → 5 → 28 → 25 at transitions 3, 5 and 6: 3 own switches,
+  revisiting 25.
+- This is the spec's §3 mechanism, a W-tight improvement process with revisits, at depth 3. Per-vertex counts 3 > 2.
+- Not shown: growth with the number of layers. A 2^k cascade would be the candidate kill. Climb: u1t.py --climb --own (running).
+
+## 2. Climbs (DATA; experiments/red/xing/u1t.py, 20:03-21:00Z, 4 cores)
+| climb (fitness) | seed | best (sha1) | result | N5 it. / fb (n5 = n5b) |
+| --- | --- | --- | --- | --- |
+| U1-T (max Ξ-changes per (vertex, W value)) | u1_n32 | u1t_cex_n32 (63dfd785…) | 7 per vertex at one W-length (piece of 7, total 88 > \|R\| 28) | 12 / 1 |
+| same, continued 2,400 s | u1_n32 | (a32, not pinned) | 7 / total 90: no growth beyond the piece length | — |
+| own switches (σ(v) at fixed W) | u1_n32 | u1t_own6_n32 (f6368500…) | **6 own switches of one vertex at one W-length**, in a piece of 6 transitions (u1vertex: max 6, total 26, \|R\| 24) | 9 / 1 |
+| (OB_R): R-only transitions − \|R\| per OTHER block | b5_os_n24 (L-COMP) | obr_eq_n24 (c5c01c88…) | 4 R-only transitions with \|R\| = 4: excess 0 (equality); rsplit agrees (Ronly 4, R 4) | 7 / 1 |
+| (OB_R) | u1t_cex_n32 | obr_n32 (bc1b2387…) | 15 vs \|R\| 18 (excess −3) | 22 / 2 |
+| (OB_R) | u1_n32 | (ob32u) | 10 vs 12 (excess −2) at 513 s | — |
+
+- All pinned bests verified: Oink zlk OK, strategies verified, and n5b agrees.
+- The per-vertex counts are capped by the piece length on every best (7 in 7, 6 in 6). The pieces are short because the U1 piece ends
+  at the next R or θ change. A counter that grows like 2^k needs long pieces, and none was found.
+
+## 3. (OB_R) in transitions: NOT refuted (DATA)
+- Over three climbs the best excess is 0 (equality, n 24). Typical values are −2 to −3 at n 32.
+- No block with more R-only transitions than |R|.
+- READING: the climbs reach equality but never pass it, which agrees with the PROVED U1 freeze (≤ |R| transitions before the κ_w
+  freeze). Post-freeze R-only transitions were not produced in any block where they would exceed the budget.
+
+## 4. Verdict (labels per L40)
+- (U1-T) FALSE as stated, both forms:
+  - propagation, §1: 7 per vertex at one W-length;
+  - own-switch cascade, §1b and §2: 3, then 6 own switches of one vertex at one W-length, with revisits.
+  The counts equal the piece length; no exponential growth is shown.
+- (OB_R) counted in transitions: holds on all data. Max excess 0, reached at n 24. CONJECTURE stands.
+- G-N5-TIME stays OPEN. No kill.
