@@ -191,3 +191,58 @@ Sources:
 | N-X-2 | F2 uses R19 (b) at one state | covered (H2 suffices) |
 | N-X-3 | fixes §5 used outside u* ≠ none | covered (NF's proof gives the property) |
 | — | FB-W | no data |
+
+## C. Comparison with REFEREE's R-N5-X (claude/referee 53c0c68, on trunk since 9aea5b6; read after my push 059f492a; written 18:43Z by date -u)
+### C.1 Agreement per item
+| item | REFEREE | REFEREE-2 | agreement |
+| --- | --- | --- | --- |
+| F1 | SIGNED WITH GAPS (X-2) | SIGN (N-X-1) | full. I accept X-2 (F = ∅: read max(0, \|F\| − 1)). I missed it, though my checker already used max(0, ·). REFEREE's §1 remark on step 2 = my N-X-1 |
+| NF | SIGNED WITH GAPS (X-3) | SIGN | full. I accept X-3 as wording. My §4 (EQ) uses the sandwich Ξ_k ⊴ Ξ_{k+1} ⊴ W_{k+1} = W_k = Ξ_k, which is X-3's line; the packet's citation of §2 does not show it |
+| Theorem X | SIGNED WITH GAPS (X-1, X-2, X-4) | SIGN WITH GAPS (G-X-1; N-X-2, N-X-3) | full on substance (C.2) |
+| XW, EQ, FBL-N, F2, FB-W | SIGNED | SIGN | full (FB-W: REFEREE notes the fallback hypothesis is not used; agreed) |
+| (w, u*)-run table | checked, every row right | agree | full |
+| Consequence (READING) | checked; τ-changes ≤ d − 1 by R15 (c) on G^d | not addressed | I accept REFEREE's check: R15 (c) makes τ's sequence strictly increasing, so τ(o) never repeats |
+No disagreement on any verdict.
+### C.2 Gap map (joint)
+| REFEREE | REFEREE-2 | note |
+| --- | --- | --- |
+| X-1 (θ-free PIECE count) | G-X-1 | the same gap, found independently. Wording difference only, see C.4 |
+| X-2 (F = ∅) | — | accepted; wording |
+| X-3 (NF EQ case) | — (covered in my §4) | accepted; wording |
+| X-4 (fixes §5 / R20 (f) outside u* ≠ none) | N-X-3 | the same: valid as a re-derivation from NF's classification, not as a citation |
+| §3.3 row "R19 (b): (h) at the state" | N-X-2 | the same point. R19 (b) as landed is phrased for consecutive states; at one state H2 suffices |
+| §1 remark (step 2 needs only Lemma G (a)) | N-X-1 | the same |
+### C.3 Is REFEREE's X-1 proof a valid substitute for my TF, or the reverse?
+- Both are valid, and REFEREE's needs less. I checked it.
+  - Under H1 at k, e_k := σ̄_k(o) has an o-free play, so e_k ∈ F_k, and θ_k = o ⊕ W_k(e_k).
+  - R is constant on the sub-block, so e_k ∈ F_{k+1}, and its play under σ_{k+1} still avoids o.
+  - If W is unchanged on F, then Lemma S (a) (θ is the minimum over exits) gives θ_{k+1} ⊴ o ⊕ W_{k+1}(e_k) = θ_k.
+  - R15 (a) gives θ_{k+1} ⊵ θ_k. So θ_{k+1} = θ_k. ✓
+- It uses H1 at k, R constant, and R15 (a).
+- My TF (§3.2) uses (h) at both ends and the fact that values with distinct cycle nodes differ (so the minimum over exits is attained only
+  in F). It does not use R15 (a).
+- REFEREE's proof is a valid substitute for TF and is shorter. TF is a valid substitute for it inside sub-blocks, where (h) holds at both
+  ends. I recommend citing REFEREE's form, with TF as the second check.
+### C.4 The clarified R19 (f) wording (docs/agents/R19-note-X1.md, the 18:28Z text in my tree)
+- I CONFIRM the note's missing step and its proof (= C.3).
+- One correction, on "R19 (f) as landed is TRUE". REFEREE and I differ only in how we read R19 (f)'s per-part sentence, "each piece has
+  ≤ |R| − 1 resp. |F| − 1 value-changing transitions".
+  - Read as 𝓡*-values (routes, i.e. W on R) and 𝓕-values: TRUE with θ free. A θ-change is charged to F by X-1.
+  - Read with Ξ on R counted on the R side: FALSE with θ free. fbref_n48 56 → 57 has R = {o}, so the R budget is 0, yet Ξ(o) = θ changes.
+    The Lead re-ran this with my dump_tf.py and got the same result.
+  - The TOTAL (|R| − 1) + (|F| − 1) is true either way.
+- Proposed wording for the note (replacing "R19 (f) as landed is TRUE"):
+  "R19 (f) holds with θ free in this form: the R-part bound counts route (𝓡*, i.e. W on R) changes; a θ-change at a transition with H1 at
+  its start and R constant changes W on F (REFEREE X-1) and is charged to the F-part; the total (|R| − 1) + (|F| − 1) counts transitions at
+  which Ξ or W changes. Read with Ξ on R counted in the R-part, the per-part bound fails with θ varying (fbref_n48, transition 56 → 57,
+  R = {o})."
+- Hypotheses of the missing step: H1 at k, R constant on the transition, τ constant, one joint λ-phase. (h) at k+1 is not needed for X-1.
+### C.5 Final verdicts (Opus 5.5, D15)
+| statement | final |
+| --- | --- |
+| (1) F1 | SIGN (X-2 wording accepted) |
+| (2) NF | SIGN (X-3 wording accepted) |
+| (3) Theorem X | SIGN WITH GAPS, all closed: G-X-1 = X-1 (REFEREE's proof, or TF); X-2; X-4 = N-X-3; N-X-2 |
+| (4) XW, EQ, FBL-N, F2, FB-W | SIGN (FB-W: no data in either report's runs that I know of; REFEREE does not report FB-W data) |
+| (5) table | agree |
+Joint open items: none in this packet. (X), (NH') and G-N5-TIME stay OPEN.
