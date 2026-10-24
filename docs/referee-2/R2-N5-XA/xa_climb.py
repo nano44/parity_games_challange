@@ -31,7 +31,7 @@ def main():
     n, steps, seed, out = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
     rng = random.Random(seed); st = rc.Stats()
     if len(sys.argv) > 5:
-        g = rc.parse(open(sys.argv[5]).read()); o = [v for v in range(g.n) if g.owner[v] == 1 and len(g.succ[v]) > 1][0]
+        g = rc.parse(open(sys.argv[5]).read()); oc = [v for v in range(g.n) if g.owner[v] == 1 and len(g.succ[v]) > 1]; assert len(oc) == 1, f'not C^1O: Odd choice vertices {oc}'; o = oc[0]
     else:
         g, o = rc.rand_game(rng, n)
     best, bt = score(g, o, seed, st)
