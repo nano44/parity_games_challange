@@ -18,7 +18,7 @@
   - main report c500832b: FAIL E-1;
   - Add. 1 4db6e4c0: PASS at b112bd5;
   - Add. 2: R22 landed verbatim at trunk 200a511.
-- PARKED. Next likely: P-N5-Z (L-SI, pinned fba7177) as R23.
+- C32 (R23 draft at trunk 64840ec, packet P-N5-Z): FAIL on E-1 only ((e) NOFL-E and (f) GAP drop "inside a phase"). Object history clean (v2 never in a trunk state). s_rt32_final excluded everywhere. Re-runs EXACT.
 - Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs. In a worktree, symlink tools/oink/build.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 
