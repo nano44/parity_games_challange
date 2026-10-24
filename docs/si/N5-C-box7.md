@@ -208,6 +208,8 @@ Inside a phase on 𝒞^1O, let k → k+1 be non-tame, with a := σ̄_k(o) and b 
   - Its cycle avoids o, and its top t has λ_k(t) = λ_{k+1}(t) = t.
   - Run (T) on that play alone; the proof of (T) only uses the edges of v's play. □
 - **CAP.** Every exit e ∈ succ(o) with lev(Ξ_k(a), Ξ_k(e)) ≤ M_k lies in R̄_{k+1}.
+  - [Superseded: this step used "b minimises Ξ_{k+1} over succ(o)", which fails for SPEC's σ̄ at cycle nodes (REFEREE CAP-1).
+    The repaired, case-free proof is in docs/si/P-N5-FB-fixes-box7.md, CAP-1.]
   - Ξ_{k+1}(e) ⊵ Ξ_{k+1}(b) (b minimises Ξ_{k+1} over succ(o); VJ00 p. 14) ⊵ Ξ_k(b) (R15 (a)).
   - By J1 and a's minimality, COARSE_{M}(Ξ_k b) ▷_M COARSE_M(Ξ_k a) = COARSE_M(Ξ_k e).
   - So COARSE_M(Ξ(e)) changes at k → k+1, and OFF puts e in R̄_{k+1}. □
@@ -291,9 +293,22 @@ Preliminaries (PROVED; P-N5-Z §0 conventions, Lemma G = R19 (a)):
   o.
 
 Lemmas:
+- **MIN.** (PROVED; added 22:5xZ after REFEREE item CAP-1. SPEC's σ̄ is not a minimiser at cycle nodes.) If H1 holds at k, then
+  λ_k(o) = c ≠ o, and a = σ̄_k(o) satisfies the following.
+  - (i) Ξ_k(a) ⊴ Ξ_k(e) for every exit e ∉ R̄_k.
+    - Let τ′ := σ̄_k[o → e]. The τ′-play from o is o, then e's H_k-play, which avoids o. So Θ_{σ_k τ′}(o) = o ⊕ Ξ_k(e).
+    - (11) gives o ⊕ Ξ_k(a) = Ξ_k(o) ⊴ o ⊕ Ξ_k(e). Apply (F-pre): o lies on neither path and is neither cycle node.
+  - (ii) Ξ_k(a) ◁ Ξ_k(e) for every exit e ∈ R_k.
+    - The τ′-play from o is the cycle C = (o, π_e), with top t. c ∉ C, so (11) gives reward(t) > reward(c).
+    - Case rank t > rank c: t is odd ⇒ reward(c) < reward(t) < 0 ⇒ c is odd and of higher rank. Impossible, so t is even, and
+      L := (π_e, o) has an even top above c.
+    - Case rank t < rank c: c even ⇒ reward(c) > reward(t). Impossible, so c is odd, and L has no vertex above c (longer is better
+      for Even at an odd c).
+    - Either way L ⊕ x ▷ x for x with cycle node c and L ∩ P(x) = ∅. So Ξ_k(e) = π_e ⊕ o ⊕ Ξ_k(a) = L ⊕ Ξ_k(a) ▷ Ξ_k(a), by (P2)
+      along the route.
 - **D1′.** If k → k+1 is non-tame and in scope, then a ∈ D_k.
   - ω is not captured (H2 at k+1), so CAP gives lev(Ξ_k a, Ξ_k ω) > M_k ≥ −1.
-  - With a's minimality this gives Ξ_k(a) ◁ Ξ_k(ω). And a ∉ R̄_k.
+  - With (MIN) below this gives Ξ_k(a) ◁ Ξ_k(ω). And a ∉ R̄_k.
 - **D2.** In scope, D_{k+1} ⊆ D_k ∪ Rel_k, where Rel_k := the exits in R_k ∖ R̄_{k+1} (exits RELEASED at k → k+1).
   - Take e ∈ D_{k+1} with e ∉ R̄_k. Then Ξ_k(e) ⊴ Ξ_{k+1}(e) (R15 (a)) ◁ Ξ_{k+1}(ω) = W_{k+1}(ω) = W_k(ω) = Ξ_k(ω).
 - **D3.** At a non-tame transition, a ∉ D_{k+1}: a ∈ R̄_{k+1} by CAP.
@@ -304,8 +319,7 @@ Lemmas:
     - on the parity of the top vertex of L above rank c;
     - if L has no vertex above rank c, on c's parity (the length grows by |L|).
     Never equality.
-  - a minimises Ξ_k over the exits (VJ00 p. 14), so Ξ_k(a) ◁ L ⊕ Ξ_k(a). Hence W_k(ω) ◁ L ⊕ W_k(ω) = π_e ⊕ w_k = W_k(e)
-    (G (b)).
+  - (MIN) gives Ξ_k(a) ◁ L ⊕ Ξ_k(a). Hence W_k(ω) ◁ L ⊕ W_k(ω) = π_e ⊕ w_k = W_k(e) (G (b)).
   - At an arena step, WM gives W_{k+1}(e) ⊵ W_k(e) ▷ W_k(ω) = Ξ_{k+1}(ω).
   - If e ∉ R̄_{k+1}, then Ξ_{k+1}(e) = W_{k+1}(e) (G (a)), so e ∉ D_{k+1}. □
 - **Corollary JD.** On a maximal run S of in-scope transitions,
@@ -361,3 +375,35 @@ strategies verified) and is one-Odd-choice.
 - '+' reversals: 80 at arena steps, 7 of them non-tame.
 - Max per phase: fb− 8, ar− 6, ar± 9.
 - So the rest of (Z), beyond (C), is the arena-step leaves and the '±' transitions (OPEN; next box).
+
+## 11. (JU2) is FALSE; the open core restated
+- (JU2) (§9) FALSE (DATA, re-verified pinned instance).
+  - Instance: jcl_x31_cu32i (experiments/si/coarse/instances, sha1 00e09994; n5 16/1; Oink zlk OK; strategies verified; one o).
+  - w constant with rank(u*) = 30 at states 5-8. θ jumps at levels 27, 22, 21, then 30; σ̄(o) goes 22 → 29 → 13 → 21 → 5.
+  - Over the named set, the J-bests and the REL-climb snapshots (experiments/si/coarse/ju2.py): 60 in-scope jumps; 40 at rank(u*),
+    20 below it; (JU2) holds at 10 of the 20.
+  - No jump lies above rank(u*). That is PROVED: θ_k ◁ θ_{k+1} ⊴ w (R21 (a) XW) and Lemma U (ii) (L-SI succ. 1).
+- So the sub-u* jumps run like a counter over Odd's exits. The u*-route does not bound J_in by itself.
+- What remains is exactly what Corollary JD leaves open: jumps whose argmin was put back into D by a fallback release (REL).
+
+## 12. Jumps paid by releases (DATA; REL climbs, fitness = #in-scope non-tame jumps whose argmin was released at an earlier fallback)
+4 climbs × 30 min, 22:3xZ-23:03Z. Bests pinned in experiments/si/coarse/instances/rel_*. Each re-verified with reverify.sh (n5.py;
+zielonka (Oink zlk) OK; strategies verified) and one-Odd-choice.
+
+| best (seed) | n | sha1 | n5 it/fb | release-paid jumps |
+| --- | --- | --- | --- | --- |
+| rel_lev_l_sc (lev_l_sc) | 32 | d49ab614 | 19/1 | 12 |
+| rel_x31_cu32i (x31_cu32i) | 32 | 7dc35abe | 19/1 | 11 |
+| rel_zcl_rx_n32 (zcl_rx_n32) | 32 | 034731ca | 21/3 | 10 |
+
+The fourth climb (seed x31_cu32) stalled at 2.
+- Totals on the three: J_in = 33, all 33 release-paid; 76 releases into D from only 5 in-phase fallbacks; max |D| 23; max J per phase 12.
+- All lemma checks: 0 violations. That covers COARSE-SI/MONO, FB (i)-(iv), J1, OFF 1,027, CAP 272, D1-D3, NOREL-A (0 arena releases),
+  and L = M (5/5).
+- READING. One fallback can release a whole bundle of exits into D, and then Odd walks through them, one non-tame jump per exit.
+  - So per tame run: fallbacks ≤ n_E(2n − 1) (FB), and each releases ≤ |succ(o)| exits. That is consistent with J_in ≈ |succ(o)|·#fallbacks.
+  - What the lemmas do not exclude is the alternation "fallback releases a bundle → Odd walks it → fallback releases again → …".
+    FB's budget is per tame run, and every jump starts a new run.
+  - A polynomial bound needs a potential that this alternation spends. θ rises at every jump, but only θ ⊴ w is known, which leaves
+    an exponential range.
+- Growth: J per phase 12 at n 32 here, 17 at n 48 (§10). No superlinear growth seen. Scale climbs at n 48-64 are running (§13).
