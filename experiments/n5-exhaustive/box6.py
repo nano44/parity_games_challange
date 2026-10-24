@@ -106,7 +106,7 @@ def exh_task(args):
     for gi, g in enumerate(exh.games(n, o, par, a)):
         if a.cyclic_only and not any(w in split(g, o) for w in g.succ[o]):
             continue
-        if gi % a.every:
+        if gi % a.every != a.offset:
             continue
         res["games"] += 1
         for stt in (exh.starts(g) if a.all_starts else [None]):
@@ -142,6 +142,7 @@ def main():
     ap.add_argument("--cyclic-only", action="store_true")
     ap.add_argument("--all-starts", action="store_true")
     ap.add_argument("--every", type=int, default=1, help="exh: keep every K-th game of each task (sample)")
+    ap.add_argument("--offset", type=int, default=0, help="exh with --every K: keep games with index = OFFSET mod K")
     ap.add_argument("--slices", default=None)
     ap.add_argument("--jobs", type=int, default=4)
     ap.add_argument("--out", default=None)
@@ -154,7 +155,7 @@ def main():
     n = int(a.args[0])
     tag = f"box6_n{n}" + ("_allstarts" if a.all_starts else "") + (f"_ed{a.even_maxdeg}" if a.even_maxdeg else "") + \
         (f"_od{a.o_deg}" if a.o_deg else "") + ("_nf" if a.no_forced else "") + ("_cyc" if a.cyclic_only else "") + \
-        (f"_every{a.every}" if a.every > 1 else "")
+        (f"_every{a.every}" if a.every > 1 else "") + (f"_off{a.offset}" if a.offset else "")
     tasks = [(n, o, par, a) for o in range(n) for par in itertools.product((0, 1), repeat=n)]
     lo_, hi_ = map(int, a.slices.split(":")) if a.slices else (0, len(tasks))
     tdir = a.out + "/" + tag + ".tasks"; os.makedirs(tdir, exist_ok=True)
