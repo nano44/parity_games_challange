@@ -218,6 +218,9 @@ Proof.
     L-SI box 2 §3.
 
 ## 5c. One quantity: crossings (READING: an assembly; L-NEW, written ~17:00Z by date -u)
+FINAL FORM: docs/new/P-N5-X-box28.md (referee packet, written 17:16Z-17:40Z), Theorem X with Lemmas NF, F1, F2. It
+replaces this sketch: step 5 is now Lemma NF, proved with no (h) at k+1, and the constants are explicit (≤ 3n² value-changing
+transitions per F-interval).
 Claim X. Inside one joint λ-phase with τ fixed, let:
 - X := the number of CROSSING transitions (R changes);
 - O := the number of transitions with an OTHER endpoint (§4).
@@ -277,6 +280,31 @@ the assembly, and step 2's extension of PIECE's F-part across w-changes and EQ s
   | oc16_s2 | 16 | 16 | 3 | 9 / 9 | 16 | 0 | 0 |
 
   - X ≤ n on every named instance.
+  - Anatomy of the X climb best at 513 s (X = 40, n 32, phase of 46 transitions, all THR until the last; 16 θ-changes, 0 w-changes):
+    - 21 arena steps, each adding ONE vertex to R;
+    - one fallback evicting all 23 vertices at once;
+    - 24 more arena steps adding one vertex each;
+    - the phase ends at an EQ state.
+    So X ≈ n · (number of re-entry WAVES), and each wave sits behind a fallback peel and a θ-change (FBF). It is the same wave
+    shape as rt48 / ph64 (§5b).
+  - X climb best at 1309 s (experiments/new/box28/instances/x32_sc32_1309s.pg, sha1 3e9ef741d5e9…, canonical start; n5.py 63
+    iterations, 3 fallbacks; check_sol2.py: Oink zlk OK, strategies verified) (X = 49, n 32, phase of 54 transitions, 24 θ-changes, 0 w-changes, 0 OTHER): THREE waves (peels of 24
+    and 10 vertices). Each wave lies in a DIFFERENT (w, u*)-run (u* = vertices 25, 18, 10, 17 by id), and FBRE = 0 in every run.
+    The re-entries of a wave are FIRST entries of the next run.
+  - **So per-run statements (XA, FBRE-F, FBRE-1) cannot bound X by themselves.** The waves move across u*-levels. The two
+    accountings feed each other:
+    - per run: crossings ≤ O(n²) + 2·FBRE;
+    - runs per phase ≤ (n + 2)(#w-changes + 1) + O (Lemma UD);
+    - w-changes at (h)-transitions ≤ (n − 1)·#F-intervals (Lemma F2 with F1);
+    - F-intervals ≤ 1 + X + O.
+    Each turn of this loop multiplies by poly(n), and the loop does not close. Bounding X needs a potential that survives the
+    change of u*-level.
+  - CONJECTURE (FBRE-1): in a (w, u*)-run, a vertex re-enters after a fallback leave at most once.
+    - DATA: max 1 on every named run.
+    - fbclimb.py FIT=v (fitness: max FBRE of one vertex in a run), seeded from inr2_n32, stayed at 1 for ~210 s while total FBRE
+      rose to 25.
+    - Alone it does not close (X): first entries reset in every (w, u*)-run, and runs per phase are counted through w-changes,
+      which §5c counts through X.
   - xclimb.py (fitness: crossing transitions minus OTHER-touching ones, in one phase), seeded from sc32: 33 > n = 32 after 29 s.
     Running; final numbers in §8.
 
