@@ -118,3 +118,27 @@ OPEN, untouched: (Z), (C), G-N5-TIME. TARGET.md diff: statements about the candi
   each glob I used. From box21 I used only fts_best16; from red/n5inj only theta_tp32, theta_thf16, returns_rt48 and returns_ph64. The
   out-of-class files there (fts_best24/39, fts_g29/43, fts_ph16; bribe_cex_n15, elimn_cex_n48, frz32/40, phase2_pk32/48, returns_rt32/64,
   wide_h16) were not in my runs. No correction is needed for R21/R22 from my side.
+
+## §C. Comparison with REFEREE-2 (R2-N5-Z.md, referee-2 1a5854b; read after my report was pushed at c818ef2c). Written from 20:55Z by date -u. (Opus 5.5, D15)
+### C1. Disagreements: none
+- Every statement is signed in both reports. Z-1 = N-Z-1, the same finding with the same repair: a '±' crossing breaks a run, the per-run
+  monotonicity step fails otherwise, and the inequality stands.
+- N-Z-2 = the class issue the Lead raised: both referees found s_rt32_final out of class independently. My data appendix (555cbeba) removes
+  it from my counts. REFEREE-2's checker refuses non-𝒞^1O games, as mine now does.
+- WM, one wording detail: REFEREE-2 covers "Iσ_k = ∅ inside a phase: S4a returns σ_k and W is unchanged". Inside a phase that case does not
+  occur as a transition: with Iσ_k = ∅ an N5 iteration must change τ (S4b or Odd's fallback), which ends the phase. Both readings give WM.
+- GAP: REFEREE-2 notes that the left inequality and Step (K) use only H2; (h) is needed only for the π′-form. I agree (my §4 says "H2 only"
+  for NOFL-E's argument).
+### C2. Z-2 (NOFE as a one-line corollary of R21 (c) FBL-N (ii))
+REFEREE-2 did not discuss it. Its data agrees: all 21 of its switched F → R̄ fallback edges have the tail on o's W-play AND as a W-cycle node,
+which is exactly the stronger statement FBL-N (ii) gives (λ_W(y) = y, λ_W(z) = y, z ∈ R̄ ⇒ y is o's W-cycle node). It is a remark: the packet's
+own proof is valid and independent. The lane may cite FBL-N (ii) as an alternative. Z-3 (the (F0) citation) is also mine alone; wording.
+### C3. Joint gap map
+| REFEREE | REFEREE-2 | status |
+|---|---|---|
+| Z-1 | N-Z-1 | wording; CLOSED by the adjacent / breaking reading |
+| data appendix (555cbeba) | N-Z-2 | s_rt32_final out of 𝒞^1O; removed from both referees' data; the lane relabels it |
+| Z-2 | — (data consistent) | remark: NOFE follows from FBL-N (ii), with the cycle-node strengthening |
+| Z-3 | — | wording |
+Final verdicts unchanged: all SIGNED (LV′ WITH GAP Z-1, closed). (Z), (C) and G-N5-TIME stay OPEN.
+§C ended 20:55Z by date -u.
