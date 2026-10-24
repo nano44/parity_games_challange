@@ -1,0 +1,36 @@
+CASC_runs_EQc: 197
+LR_edges: 40754
+LR_edges_optimiser: 30787
+LR_full_optimal: 33989
+LR_setopt_deleted u==x:True owner_x:1: 273
+LR_setopt_deleted_xney: 101
+TB_even: 15
+TB_key_checks: 23039
+TB_key_nontrivial: 318
+TB_odd: 1
+TB_step2 x_on_cycle_only: 2604
+TB_step2 x_on_play:False: 8755
+TB_step2 x_on_play:True: 2604
+U1_W_change_transitions: 0
+U1_pieces_checked: 517
+WC_fallback_in_I type=EQ notH1=True w_change=0: 47
+WC_intervals(notH1notH2): 2847
+WC_intervals(notH2): 3111
+fallbacks: 164
+intervals: 6613
+pieces_EQc: 4513
+pieces_EQc_nontrivial: 363
+pieces_P3: 259
+pieces_U1: 517
+runs: 3000
+transitions: 4214
+CASC_run_len_EQc: 2
+U1_last_kappa_w_change_minus_R: -2
+U1_max_K: 0
+U1_max_Rch: 0
+U1_max_len: 0
+WC_cw_changes_per_stretch: 1
+WC_max: 1
+example LR_setopt_deleted_xney: seed551#10@0 cyclenode=2 x=8 y=6 u=8
+example LR_setopt_deleted: seed551#10@0 cyclenode=2 x=8 y=6 u=8 val[x]=(2, 320, 3) ext=(2, 320, 5)
+RESULT OK violations=0

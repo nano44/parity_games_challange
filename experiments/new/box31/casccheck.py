@@ -32,7 +32,7 @@ def analyse(g, start, acc):
         if j > k:
             acc["pieces"] += 1; acc["U1pieces"] += rows[k]["U1"]; Rs = [v for v in rows[k]["R"] if v != o]
             if rows[k]["U1"]:   # Theorem U1: R-changing transitions vs |R| + f + K + (K + f + 1)(|R| - 2), K <= (f+1)(|R|-1)(|R|-2) (+ |R| pre-freeze)
-                nR = len(rows[k]["R"]); f = sum(rows[i]["fb"] for i in range(k, j)); Km = (f + 1) * (nR - 1) * (nR - 2)
+                nR = len(rows[k]["R"]) + 1; f = sum(rows[i]["fb"] for i in range(k, j)); Km = (f + 1) * (nR - 1) * (nR - 2)
                 Rall = Rs + [o]
                 ch = sum(1 for i in range(k, j) if any(rows[i][q][v] != rows[i + 1][q][v] for q in ("Xk", "Wk", "s") for v in Rall))
                 K = sum(1 for i in range(k, j) if any(rows[i]["Wk"][v] != rows[i + 1]["Wk"][v] for v in Rall))

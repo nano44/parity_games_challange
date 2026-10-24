@@ -1,0 +1,19 @@
+start 96
+8 112 {'U1_max_Rch': 6, 'WC_max': 0, 'CASC_max(step-level+2)': -2} 1 0 11
+16 122 {'U1_max_Rch': 6, 'WC_max': 0, 'CASC_max(step-level+2)': -2} 1 0 11
+33 134 {'U1_max_Rch': 6, 'WC_max': 1, 'CASC_max(step-level+2)': -2} 1 0 7
+39 135 {'U1_max_Rch': 6, 'WC_max': 1, 'CASC_max(step-level+2)': -2} 1 0 7
+56 143 {'U1_max_Rch': 6, 'WC_max': 1, 'CASC_max(step-level+2)': -2} 1 0 7
+126 161 {'U1_max_Rch': 6, 'WC_max': 1, 'CASC_max(step-level+2)': -2} 1 0 7
+131 163 {'U1_max_Rch': 6, 'WC_max': 1, 'CASC_max(step-level+2)': -2} 1 0 8
+139 164 {'U1_max_Rch': 6, 'WC_max': 1, 'CASC_max(step-level+2)': -2} 1 0 8
+178 171 {'U1_max_Rch': 6, 'WC_max': 1, 'CASC_max(step-level+2)': -2} 1 0 8
+250 174 {'U1_max_Rch': 6, 'WC_max': 1, 'CASC_max(step-level+2)': -2} 1 0 8
+255 175 {'U1_max_Rch': 6, 'WC_max': 1, 'CASC_max(step-level+2)': -2} 1 0 8
+273 176 {'U1_max_Rch': 6, 'WC_max': 1, 'CASC_max(step-level+2)': -2} 1 0 8
+297 193 {'U1_max_Rch': 6, 'WC_max': 2, 'CASC_max(step-level+2)': -2} 1 0 8
+306 194 {'U1_max_Rch': 6, 'WC_max': 2, 'CASC_max(step-level+2)': -2} 1 0 8
+390 198 {'U1_max_Rch': 6, 'WC_max': 2, 'CASC_max(step-level+2)': -2} 1 0 9
+397 206 {'U1_max_Rch': 6, 'WC_max': 2, 'CASC_max(step-level+2)': -2} 2 0 9
+TOTALS {'LR_edges': 329204, 'LR_full_optimal': 244971, 'LR_edges_optimiser': 289957, 'TB_key_checks': 187090, 'TB_step2 x_on_play:False': 90702, 'TB_key_nontrivial': 8472, 'TB_even': 2693, 'intervals': 5685, 'pieces_U1': 490, 'pieces_U1_nontrivial': 350, 'CASC_runs_U1': 338, 'CASC_switches_U1': 2045, 'U1_pieces_checked': 490, 'U1_nontrivial': 350, 'pieces_EQc': 1520, 'WC_intervals(notH2)': 3691, 'WC_intervals(notH1notH2)': 3337, 'runs': 1600, 'transitions': 7681, 'fallbacks': 374, 'TB_step2 x_on_play:True': 19273, 'U1_kappa_w_change_transitions': 302, 'LR_setopt_deleted u==x:True owner_x:1': 296, 'pieces_P3': 27, 'pieces_EQc_nontrivial': 35, 'CASC_runs_EQc': 26, 'TB_odd': 1}
+RESULT OK violations 0

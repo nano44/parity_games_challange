@@ -1,0 +1,16 @@
+LR_edges: 205514
+LR_edges_optimiser: 161808
+LR_full_optimal: 146508
+LR_setopt_deleted u==x:True owner_x:1: 6962
+LR_setopt_deleted_xney: 1574
+TB_even: 186
+TB_key_checks: 100946
+TB_key_nontrivial: 1784
+TB_odd: 228
+TB_step2 x_on_cycle_only: 8867
+TB_step2 x_on_play:False: 34129
+TB_step2 x_on_play:True: 8867
+arenas: 20000
+example LR_setopt_deleted_xney: ar541#0 cyclenode=5 x=3 y=1 u=3
+example LR_setopt_deleted: ar541#0 cyclenode=5 x=3 y=1 u=3 val[x]=(5, 256, 1) ext=(5, 256, 4)
+RESULT OK violations=0

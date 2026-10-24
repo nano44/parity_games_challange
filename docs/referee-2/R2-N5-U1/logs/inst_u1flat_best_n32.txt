@@ -1,0 +1,43 @@
+CASC_runs_EQc: 2
+CASC_runs_U1: 1
+CASC_switches_U1: 43
+LR_edges: 2652
+LR_edges_optimiser: 2603
+LR_full_optimal: 1718
+LR_setopt_deleted u==x:True owner_x:1: 2
+LR_setopt_deleted_xney: 2
+TB_even: 45
+TB_key_checks: 1304
+TB_key_nontrivial: 149
+TB_step2 x_on_cycle_only: 74
+TB_step2 x_on_play:False: 571
+TB_step2 x_on_play:True: 74
+U1_W_change_transitions: 0
+U1_nontrivial: 1
+U1_pieces_checked: 8
+WC_intervals(notH1notH2): 8
+WC_intervals(notH2): 14
+fallbacks: 6
+intervals: 46
+pieces_EQc: 25
+pieces_EQc_nontrivial: 2
+pieces_P3: 3
+pieces_U1: 8
+pieces_U1_nontrivial: 1
+runs: 10
+transitions: 50
+CASC_max(step-level+2): -3
+CASC_max_switches_one_vertex_in_run: 5
+CASC_run_len_EQc: 1
+CASC_run_len_U1: 5
+U1_last_kappa_w_change_minus_R: -2
+U1_max_K: 0
+U1_max_Rch: 5
+U1_max_len: 5
+U1_postfreeze_max_Xi_changes_one_vertex: 5
+WC_cw_changes_per_stretch: 0
+WC_max: 1
+example U1_long: u1flat_best_n32.pg#0 piece [0,5] |R|=29 c_theta=27 c_w=8 Rch=5 f=0
+example LR_setopt_deleted_xney: u1flat_best_n32.pg#3@0 cyclenode=8 x=6 y=2 u=6
+example LR_setopt_deleted: u1flat_best_n32.pg#3@0 cyclenode=8 x=6 y=2 u=6 val[x]=(8, 268435456, 1) ext=(8, 268435456, 7)
+RESULT OK violations=0
