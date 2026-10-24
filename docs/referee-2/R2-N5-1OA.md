@@ -1,5 +1,8 @@
 # R2-N5-1OA: second-referee check of Proposition X / Corollary X1 (L-RED) and the o-acyclic 𝒞^1O theorem (L-NEW box 24). REFEREE-2, 2026-10-24 03:35Z (date -u)
-Signature: (Fable 5.1). Packet P-N5-1OA (Lead 03:20Z), pinned at trunk claude/vibrant-johnson-nxvvxo 07f298d.
+Signature: (Fable 5.1). Packet P-N5-1OA (Lead 03:20Z), pinned at trunk claude/vibrant-johnson-nxvvxo 07f298d; RE-PINNED by the Lead
+(03:27Z, read by me after my 603cb3a4 push) at d78e54f, whose docs/new/N5-1Oacyc-box24.md (sha1 d3550267…) is a rewritten, self-contained
+packet. §1-§6 below were written against 07f298d; §7 re-checks every finding against the d78e54f text and says which version each refers
+to. (A), Lemmas R/S, R17, R15, the SPEC and the engine are identical at both pins (empty diff).
 
 Objects:
 - (A) docs/red/R58-n5-width.md §9 at 07f298d: Proposition X and Corollary X1 (L-RED successor 13, PROVED, unrefereed).
@@ -199,3 +202,40 @@ obstruction is then located exactly at Lemma 2: the exit a's honest value is not
 - On random 𝒞^1O games the lemmas' hypotheses are rarely exercised (≤ 3 consecutive pure transitions); the composed games exercise Prop X
   with long X runs (16 changes at |X| = 16) but their Y parts settle quickly. No instance with a long pure block on an o-acyclic game is
   in the fleet; the bound's slack is untested, which does not affect the proof.
+
+## 7. Re-pin d78e54f: the rewritten box 24 checked, finding by finding (03:49Z by date -u)
+The d78e54f text (sha1 d35502679af112e9fa31eb3af99e64fb4afda1ba) keeps the theorem, the six steps and the dependencies of the 07f298d
+sketch and writes out what the sketch pointed to. Checked line by line against §2 above:
+- §1 definitions ✓ (X closed under successors; G[X] one-player; pure / block / C_X / B as I used them). §2 theorem: the same statement,
+  now explicitly "assume (P) (§4)" and "from any start pair" ✓.
+- Step 1 ✓: now cites R15 (c) for "no τ value repeats" with the S4b/S4c switch description; "fewer than C_X + d − 1" ✓.
+- Step 2 (Lemma 1): the flat case is now PROVED IN PLACE, "the cases of R17's Lemma P, Case B, without its induction hypothesis", with
+  (★) Ω(x) ⪰ val_ρ̂(x) and the B1 split into "x not its own cycle node" (strict (V2)) and "x its own cycle node" (better cycle node c ≠ x);
+  this is the argument of my §2 (c). G-1OA-3 (the pointer gap) refers to the 07f298d text and is CLOSED by d78e54f. One wording nit
+  remains in B1 (x on c's cycle): the improvement list omits "P(π) = ∅, c even, |π| + 1 < ℓ(x)" (a shortcut), where val_ρ̂(x) =
+  (c, ∅, |π| + 1) ≻ Ω(x) contradicts (★) as well; this is R17's G-1P-1 again (N-4, d78e54f). The flat-switch iteration is now sequential
+  with the justification "the heads' paths avoid the switched vertices" (the G-1P-2 line) ✓; equivalently, ρ₁'s arena is contained in
+  ρ's and Ω_ρ₁ = Ω, so ρ₁ is again a pointwise optimum of its own arena and (★) re-applies. The Remark (only the VALUATION is
+  optimal; ρ need not be ≺-maximal; the R15 prio [0, 2, 4] instance) ✓ correct and useful. (P) is used in cases (a) and (b) exactly
+  as my G-1OA-4 says; unchanged, OPEN by design (conditional signature).
+- Step 3 (Lemma 2) ✓ as in §2; "F1 on the dual" for Odd's S4b optimum is still the N-2 wording (it is VJ00 (11) itself); the line "If
+  the iteration's S4a also changes σ, τ still changes, since both are applied (A6)" is right and closes a question I had not raised.
+- Step 4 (Lemma 3) ✓; the formula "(c, P(π_v) ∪ P(continuation), |π_v| + ℓ)" should read |π_v| + 1 + ℓ (o lies on the play between π_v
+  and the continuation, and o ∈ P iff o is more relevant than c), as my §2 has it; harmless, equal for both plays (N-5, d78e54f).
+- Step 5 ✓: "Iσ_k ≠ ∅. Otherwise S4c would have fallen back on Odd, or S4b would have moved τ." G-1OA-5 refers to 07f298d and is CLOSED by
+  d78e54f. "Every block has fewer than B transitions" from R17 Corollary 2 at an arbitrary start ✓ (§2 (c)).
+- Step 6 ✓: ≤ C_X + d − 1 blocks, total < (C_X + d)(B + 1).
+- §4 dependencies ✓: the list is complete (Prop X; (P) with its R15 G-N5T-3 status; Lemma R, Lemma S (a); R17 (a), (b), (c), (e); R15
+  (c)-(d); VJ00 (11)); RESULTS line numbers 730 / 624 verified at d78e54f. The sentence "The BFS-discovery-order point in [Prop X's] step 1
+  is taken from L-RED's text" is honest; my §1 (1c) checks that point against si.py.
+- §5 checks ✓ (the same numbers as 07f298d's; my §4 reproduces the negative control's 24 of 28). §6 scope ✓.
+Which finding refers to which version: G-1OA-1, G-1OA-2, N-1 concern Prop X (R58 §9, identical at both pins). G-1OA-3 and G-1OA-5 concern
+the 07f298d sketch and are closed by the d78e54f text. G-1OA-4 ((P)), N-2, N-3 concern both versions. N-4, N-5 are new nits on d78e54f.
+G-1OA-6 concerns box 21 §2.2 (identical at both pins). The verdict on (B) is unchanged: SIGN WITH GAPS, conditional on (P) for one-player
+games, with the open list now G-1OA-4 (by design), N-2, N-4, N-5 (wording).
+New data (Lead 03:38Z; trunk 7f351fc, pin unchanged): L-RED's o-acyclic instances with long pure blocks, experiments/red/n5inj/instances/
+block_bk20.pg (n 24, sha1 98dc1d8b…) and block_bk32.pg (n 36, sha1 439bff4e…), o's exits = 3 self-loop sinks = X. My oa_check.py: one
+block of 27 and of 49 iterations respectively (= R58 §10b), τ fixed, no fallback; Lemma 1, Lemma 2, Lemma 3, gate = G_τ's improving set
+and σ_{k+1} = N5's step on G_τ hold at all 27 + 49 pure states; 0 violations (logs/block_bk20.txt, block_bk32.txt, pushed at d5d941a9).
+These are the first instances where the lemmas are exercised across long blocks. R58's finding that blocks can exceed |Y| does not touch
+the theorem, which bounds blocks by B; agreed.

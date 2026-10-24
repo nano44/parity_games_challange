@@ -7,7 +7,9 @@ engine-level, checked against si.py; the count is tie-break-free), Cor X1 SIGN. 
 G[X] (G-1OA-3 pointer to R17 Case B; G-1OA-4 = (P), the only unrefereed premise; G-1OA-5 Odd-fallback case). Lemma R SIGN; Lemma S SIGN WITH GAPS
 (G-1OA-6: (c)/(d) for S4a steps only). R17 re-read: Case B at an arbitrary state and Corollary 2 from any start CONFIRMED. Own tool
 R2-N5-1OA/oa_check.py (+ compose.py): 1,147 random o-acyclic games + 20 composed long-X games + statY_12/i4_hand: 0 violations; Prop X exact on
-1,882 games; negative control fts_best16: Lemma 2 fails at 24/28 pure states (= the box). Next: §C after the Lead says REFEREE's R-N5-1OA is pushed.
+1,882 games; negative control fts_best16: Lemma 2 fails at 24/28 pure states (= the box). RE-PIN d78e54f (self-contained box 24) checked in §7 (03:49Z): G-1OA-3, G-1OA-5 closed by the new text; new nits N-4 (B1 third case),
+N-5 (|π_v| + 1 + ℓ); verdict unchanged. L-RED's long-block instances block_bk20/bk32 (7f351fc): 27 + 49 pure states, 0 violations.
+Next: §C after the Lead says REFEREE's R-N5-1OA is pushed.
 2026-10-22 00:10Z (successor 3, Fable 5.1, L36). P-N5-1P (docs/new/N5-phase-bound-box10.md §1-§4 @ trunk 26905f0): docs/referee-2/R2-N5-1P.md.
 SIGN: (V1)/(V2), Lemma P (G-1P-1 wording), Corollary 1 (N-1), Corollary 3 (remark). SIGN WITH GAPS: (F1)/(F2) (G-1P-4: VJ00 (11) on the dual, order
 reversal + (4)/(6) "⊵" half re-derived in §2), Theorem PH (G-1P-2 simultaneous flat switches, G-1P-3 stuck engine = N5 fallback; both
