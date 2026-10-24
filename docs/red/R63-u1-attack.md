@@ -22,5 +22,14 @@ R-vertex has ≤ 2 Ξ-changes per value of its W-length. Labels per L40. G-N5-TI
   - Counted as per-vertex changes (u1vertex's "total"), 88 > |R| = 28.
   - So (U1-T) as stated (per vertex per W-length) is refuted. (OB_R) holds or fails depending on whether it counts transitions or
     vertex-changes, and the box-30 note uses u1vertex's per-vertex total.
-  - The per-vertex count here comes from propagation, not from a W-tight cascade of the vertex's own switches (§3 of the spec).
-    A cascade of a vertex's OWN switches (σ(v) changing ≥ 3 times at one W-length) is not shown by this instance.
+  - Most of the per-vertex count comes from propagation. The own-switch (cascade) version is §1b.
+
+### 1b. The cascade form also fails: 3 OWN switches at one W-length (same instance; u1t.py 'own'; 20:14Z)
+- Vertex 6 (Even, successors 2, 9, 18, 19, 20, 27): W(6) = (cycle node 8, length 9) at every state 0-7.
+  - σ(6) goes 2 → 18 → 19 → 18 at transitions 1, 2 and 4.
+  - Ξ(6) keys: 2017488896 → 2018504704 → 2138565632 → 2139089920, strictly rising.
+  - So 3 own switches at one W-length, each W-flat at 6 and honest-improving, and the successor 18 is revisited.
+- Vertex 14 (Even): W(14) = (8, length 11) from state 1 on. σ(14) goes 25 → 5 → 28 → 25 at transitions 3, 5 and 6: 3 own switches,
+  revisiting 25.
+- This is the spec's §3 mechanism, a W-tight improvement process with revisits, at depth 3. Per-vertex counts 3 > 2.
+- Not shown: growth with the number of layers. A 2^k cascade would be the candidate kill. Climb: u1t.py --climb --own (running).
