@@ -86,3 +86,36 @@ subset, 24.5M games).
   CONJECTURE exhaustive to n <= 4 (subsets as stated).
 - CYC-ELIM: theta-changes inside a non-eliminating window: 0 in every exhaustive table and random run; 3 on theta_thf16.
 - H-E: stretch length <= (E + 1)(n - 1) on every run (no excess).
+
+## Box 4 (Lead 16:10Z, D18; docs/new/N5-xing-box27.md §8): (CYC'), (NH), reentry.py classes (box4.py; runs 16:10-17:35Z)
+Definitions exactly as experiments/new/box25/phaseprofile.py, applied to every phase (key (lambda_sigma, lambda_tau, tau(o))):
+cyc = theta-changes + w-changes per phase; noh = non-(h) transitions per phase; nohlen = longest phase containing a non-(h)
+transition; re-entry classes from reentry.py (ROUTE / WRISE / THETA / OTHER). box4.measure equals phaseprofile.py on fts_best16,
+theta_tp32, theta_thc24, sc32 (sc32: 43 / 0 / 0 in the long phase; one non-(h) transition in a 1-iteration phase, which phaseprofile
+does not print).
+| table (results/box4_*.json) | games / runs | max cyc (theta, w) | max noh | longest phase with noh > 0 | longest phase | re-entries ROUTE / WRISE / THETA / OTHER |
+| --- | --- | --- | --- | --- | --- | --- |
+| n 4 canonical (full canonical subset) | 4,828,736 | 2 (1, 1) | 2 | 2 | 2 | 0 / 0 / 0 / 0 |
+| n 4 all starts (no forced, Even out-deg <= 2) | 704,000 / 7,340,032 | 3 (2, 1) | 3 | 3 | 3 | 192 / 0 / 0 / 0 |
+| n 5 canonical subset (as box 3), 44 of 160 slices | 18,910,320 | 2 (1, 1) | 3 | 3 | 3 | 390 / 0 / 0 / 390 |
+| random all starts n 5..9 (6,000 games) | 1,826,258 | 4 (3, 2) | 4 | 4 | 4 | 161 / 6 / 5 / 0 |
+| random n 8..16, canonical + 1 random start (970,000 games) | 1,940,000 | 6 (3, 3) | 5 | 5 | 6 | 470 / 72 / 4 / 119 |
+cyc histograms: n 4 canonical {0: 4,826,000, 2: 2,736}; n 4 all starts {0: 7,271,012, 1: 23,594, 2: 45,322, 3: 104}.
+
+Checked instances (instances/, check_instance.py OK: n5b states equal, Oink zlk, verify.py):
+- nh_n8 (n 8, m 13, start pair, shrunk with shrink.py --prop noh): a 4-iteration phase with 4 non-(h) transitions, theta and w constant;
+  (h) fails because o lies on the play cycle (o 5 -> 7 -> 6 -> ... -> o) at every state. Could not shrink below n 8.
+- b4_nohlen5_0 (n 11, start pair): a 5-iteration phase with 5 non-(h) transitions (phaseprofile.py confirms).
+- b4_cyc6_0 / _1 (n 11 / n 12; _1 from the CANONICAL start): cyc 6 in one phase (_1: 3 theta + 3 w changes in a 4-iteration phase).
+- b4_n4all_cyc3_0 (n 4, start pair): cyc 3.
+- b4_theta_n7 (n 7, start pair): 5 THETA-class re-entries (pure throttle release, reentry.py -v), 1 ROUTE.
+- b4_n5_other_0 (n 5, CANONICAL start): 2 OTHER-class re-entries (reentry.py).
+Readings (DATA; CONJECTURE = exhaustive in the stated subset):
+- (CYC'): max theta+w changes per phase = 2 at n 4 canonical, 3 at n 4 all starts (CONJECTURE, exhaustive in the subsets); 2 on the
+  n 5 canonical subset (44/160 slices); random lower bounds 4 (n <= 9), 6 (n 11-12). Small n sits far below n; the low end of the law
+  does not decide "faster than n" (sc32: 43 at n 32).
+- (NH): non-(h) transitions per phase reach the phase length at small n: max 2 / 3 (n 4 canonical / all starts), 3 (n 5 subset); a
+  long phase made entirely of non-(h) transitions occurs at n 8 (nh_n8, 4 iterations) and n 11 (5 iterations), from start pairs. Every
+  such long phase seen has o on the play cycle and theta, w constant.
+- reentry.py classes: ROUTE dominates; THETA occurs (n 7, start pair); OTHER occurs already at n 5 from the canonical start.
+- Not done (Lead 17:1xZ, would need new runs): the X (crossing transitions) and O (OTHER-state transitions) columns; handed to box 5.
