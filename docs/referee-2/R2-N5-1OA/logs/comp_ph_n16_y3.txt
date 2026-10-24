@@ -1,0 +1,10 @@
+  A_change_checks = 14
+  A_changes_arena_optimum = 14
+  A_exact_checks = 1
+  A_games = 1
+  A_max_changesX = 14
+  B_max_tau_changes = 1
+  games = 1
+  games_oacyclic = 1
+  iterations = 14
+RESULT violations=0 secs=0.0

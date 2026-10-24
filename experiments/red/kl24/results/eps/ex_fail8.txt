@@ -1,0 +1,3 @@
+HL88_2 L8 seed3 W0 J 35725: HL88_2.pg n 45: snapshot seed 3 pivot 1230537 (lap 35725 after W 0); max frontier 90653; total states 244864   exact P(fail) = 0.0730926   P(success) = 0.926907   sum = 1 
+HL88_2 L8 seed3 W0 J 35724: HL88_2.pg n 45: snapshot seed 3 pivot 1230513 (lap 35724 after W 0); max frontier 90653; total states 199552   exact P(fail) = 2.05e-08   P(success) = 1   sum = 1 
+HL88_2 L8 seed3 W0 J 35723: HL88_2.pg n 45: snapshot seed 3 pivot 1230477 (lap 35723 after W 0); max frontier 90653; total states 199552   exact P(fail) = 2.05e-08   P(success) = 1   sum = 1 

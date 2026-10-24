@@ -1,0 +1,2 @@
+STUCK r1569 YE n=14
+2000 games: YES-instances solved 2715, STUCK 1; NO-instances answered NO 716; oracle calls 9200; 530s

@@ -1,0 +1,89 @@
+tc 1 r1  0 0 0.000 zlk OK
+tc 1 r2 1 0 0 0.000 zlk OK
+tc 1 r2 2 0 0 0.000 zlk OK
+tc 1 r2 3 0 0 0.000 zlk OK
+tc 1 r2 4 0 0 0.000 zlk OK
+tc 1 r2 5 0 0 0.000 zlk OK
+tc 1 r2 6 0 0 0.000 zlk OK
+tc 1 r2 7 0 0 0.000 zlk OK
+tc 1 r2 8 0 0 0.000 zlk OK
+tc 1 r2 9 0 0 0.000 zlk OK
+tc 1 r2 10 0 0 0.000 zlk OK
+tc 2 r1  4 4 0.001 zlk OK
+tc 2 r2 1 4 4 0.001 zlk OK
+tc 2 r2 2 4 4 0.001 zlk OK
+tc 2 r2 3 4 4 0.001 zlk OK
+tc 2 r2 4 4 4 0.001 zlk OK
+tc 2 r2 5 4 4 0.001 zlk OK
+tc 2 r2 6 4 4 0.001 zlk OK
+tc 2 r2 7 4 4 0.001 zlk OK
+tc 2 r2 8 4 4 0.001 zlk OK
+tc 2 r2 9 4 4 0.001 zlk OK
+tc 2 r2 10 4 4 0.001 zlk OK
+tc 4 r1  29 23 0.003 zlk OK
+tc 4 r2 1 25 23 0.005 zlk OK
+tc 4 r2 2 23 19 0.003 zlk OK
+tc 4 r2 3 21 23 0.005 zlk OK
+tc 4 r2 4 29 19 0.004 zlk OK
+tc 4 r2 5 23 23 0.005 zlk OK
+tc 4 r2 6 21 27 0.003 zlk OK
+tc 4 r2 7 21 21 0.003 zlk OK
+tc 4 r2 8 23 25 0.003 zlk OK
+tc 4 r2 9 21 19 0.002 zlk OK
+tc 4 r2 10 17 21 0.002 zlk OK
+tc 6 r1  68 68 0.015 zlk OK
+tc 6 r2 1 60 56 0.013 zlk OK
+tc 6 r2 2 68 46 0.012 zlk OK
+tc 6 r2 3 56 58 0.012 zlk OK
+tc 6 r2 4 58 52 0.012 zlk OK
+tc 6 r2 5 50 48 0.011 zlk OK
+tc 6 r2 6 64 52 0.015 zlk OK
+tc 6 r2 7 66 56 0.013 zlk OK
+tc 6 r2 8 52 52 0.020 zlk OK
+tc 6 r2 9 64 62 0.013 zlk OK
+tc 6 r2 10 58 74 0.025 zlk OK
+tc 8 r1  131 157 0.060 zlk OK
+tc 8 r2 1 95 107 0.044 zlk OK
+tc 8 r2 2 95 95 0.039 zlk OK
+tc 8 r2 3 103 107 0.043 zlk OK
+tc 8 r2 4 113 109 0.045 zlk OK
+tc 8 r2 5 101 91 0.042 zlk OK
+tc 8 r2 6 91 107 0.041 zlk OK
+tc 8 r2 7 97 111 0.044 zlk OK
+tc 8 r2 8 129 105 0.049 zlk OK
+tc 8 r2 9 141 117 0.049 zlk OK
+tc 8 r2 10 135 111 0.052 zlk OK
+tc 10 r1  208 308 0.162 zlk OK
+tc 10 r2 1 180 146 0.138 zlk OK
+tc 10 r2 2 194 164 0.127 zlk OK
+tc 10 r2 3 202 174 0.161 zlk OK
+tc 10 r2 4 206 218 0.196 zlk OK
+tc 10 r2 5 178 224 0.135 zlk OK
+tc 10 r2 6 202 180 0.180 zlk OK
+tc 10 r2 7 182 188 0.185 zlk OK
+tc 10 r2 8 226 178 0.127 zlk OK
+tc 10 r2 9 178 150 0.146 zlk OK
+tc 10 r2 10 168 194 0.119 zlk OK
+tc 12 r1  339 401 0.438 zlk OK
+tc 12 r2 1 279 297 0.308 zlk OK
+tc 12 r2 2 291 285 0.297 zlk OK
+tc 12 r2 3 323 253 0.326 zlk OK
+tc 12 r2 4 245 239 0.322 zlk OK
+tc 12 r2 5 323 279 0.373 zlk OK
+tc 12 r2 6 269 267 0.344 zlk OK
+tc 12 r2 7 301 287 0.344 zlk OK
+tc 12 r2 8 283 301 0.315 zlk OK
+tc 12 r2 9 251 241 0.259 zlk OK
+tc 12 r2 10 273 215 0.255 zlk OK
+tc 14 r1  722 488 0.915 zlk OK
+tc 14 r2 1 344 370 0.574 zlk OK
+tc 14 r2 2 414 374 0.618 zlk OK
+tc 14 r2 3 450 520 0.803 zlk OK
+tc 14 r2 4 470 468 0.726 zlk OK
+tc 14 r2 5 410 408 0.896 zlk OK
+tc 14 r2 6 444 324 0.816 zlk OK
+tc 14 r2 7 414 378 0.898 zlk OK
+tc 14 r2 8 326 364 0.768 zlk OK
+tc 14 r2 9 392 414 0.859 zlk OK
+tc 14 r2 10 352 422 0.974 zlk OK
+done: 0 failures

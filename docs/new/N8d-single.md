@@ -121,3 +121,56 @@ Completion of the §4 pending runs: tc N = 18 (n 1,062): primal 766, 708, 760 / 
 1,204 / dual 1,308, 1,246, 1,284 (about 2,200 s each); counter_rob N = 7, 9 and counter_symsi N = 8, 10 in growing2.r2seeds.csv; all verified.
 Reading: on every family the R2 pivot count grows like n^1 to n^2 over the sizes reached (largest whole-range slope: switchbestexp 1.9);
 no family shows the per-N doubling that killed R1. This is DATA under D1; L-RED attacks R2 next (Lead 04:26Z; B10 is the prior).
+
+## 0b. Choices pinned for step 4 (NEW section, 2026-10-23 10:43Z by date -u; §0 unchanged; Lead box 17 (a))
+Neither the paper (arXiv 2108.13338v5, e-print sha256 7189eb2f…, the copy L-COMP used) nor §0 fixes the following. They are pinned here
+as they are implemented, from the code at l-new 2b5e0e77 (experiments/new/kl/kl.py, kl_single.py) and L-COMP's
+experiments/n8d-second/kl2.py and README.md ("Choices where the paper and §0 are silent"). The proofs in docs/new/N8d-proofs.md use §0
+plus this section.
+| id | choice | L-NEW kl.py / kl_single.py | L-COMP kl2.py (README C1-C5) | same? |
+| --- | --- | --- | --- | --- |
+| C1 | priority map into [d], d even | **compressed**: kl.py `Game.__init__` l.25-32 maps the sorted distinct priorities order- and parity-preservingly onto the least values >= 1 (so p = 0 -> 2, and gaps are removed); d = max + (max mod 2) | **p + 2, no compression**: kl2.py l.83-85, d = least even >= max(p + 2) | **NO** (see below) |
+| C2 | tree | perfect n-ary tree of height h = d/2, M = {0..n-1} (kl.py l.33, 39; Tighten base n l.71-82) | same (README C2, kl2.py l.86-87) | yes |
+| C3 | τ_1 | first successor in file order, duplicate arcs dropped (kl.py l.35 `dict.fromkeys`, kl_single.py `strategy_iteration` first line after rng) | same (kl2.py l.82, 99-100; README C3) | yes |
+| C4 | dual game (Odd's strategy and region) | owners swapped, priorities p + 1, then C1's compression (kl.py l.23-24) | owners swapped, priorities p + 1, then C1's +2 (kl2.py l.324; README C4) | yes up to C1 |
+| C5 | Even's strategy read off µ* | at Even v with µ*(v) ≠ ⊤: non-violated arc with the least head label, ties smallest id (kl.py `even_strategy`, l.318-325) | same (kl2.py `even_strategy`; README C5) | yes on W_0 (kl.py also fills ⊤-labelled Even nodes; kl2 leaves them unset; neither is used by a winning-strategy check) |
+| R2 draw | candidate list and generator | Odd nodes with an admissible arc in increasing id (`candidates`), `random.Random(seed).choice`, fresh generator per Algorithm 1 run, primal and dual each | same (README "Pivot") | yes |
+| arc | arc of the chosen node | largest Tighten, ⊤ largest, ties smallest successor id (`best_arc`: strict > over sorted ids) | same (`best_arc`: `not le(t, best)` over sorted ids) | yes |
+
+**C1 is not the same in the two implementations** (the brief assumed it was; L-COMP's README says "consistent with L-NEW's ... I did not
+read their code to confirm"). Pinned for N8d-R2 from now on: **C1 = p + 2, d = the even ceiling, no compression** (kl2.py), because it is
+the uncompressed input map (D2 change 1 charges compression to the algorithm; with no compression there is nothing to charge) and C4 then
+reads "p + 3" on the primal input. Consequences, each labelled:
+- Correctness does not depend on C1 (PROVED, N8d-proofs.md §2): Theorem 3.1 and Theorem 2.3 of the paper hold for any π: V -> [d], d even,
+  and both maps preserve order and parity, hence the winner of every play.
+- Pivot counts: the two maps give the SAME counts on every instance compared (DATA): L-COMP's 40,000 rand10k rows (R1 and R2 seed 1) and all
+  1,155 family rows (README "Results"), and my 15,000 extra runs (experiments/new/kl/step4/c1diff.out: 9,000 runs on games with one odd
+  priority class of n - 1 nodes plus one far priority, where compression changes h, and 6,000 on random gapped priorities; 0 differences
+  in primal or dual pivots or regions; carry.out: chain games in which Tighten carries out of a full digit in both codes, equal counts).
+  Equality in general is OPEN. Where a difference would have to come from (READING): a Tighten carry out of a digit equal to n - 1 lands,
+  under compression, in the next PRESENT odd component (or gives ⊤), and under p + 2 in an absent component (never ⊤); comparisons of
+  such values in `best_arc` and in the least fixed point can then differ. This needs a stored or compared label with a digit n - 1.
+- So every R2 count in §2-§5 (kl.py) is a count for the pinned C1 only through this per-instance equality. The step-2 evidence is not
+  affected: L-COMP's runs are themselves runs of the pinned map.
+- L-COMP box 2b (README "Box 2b", results-2b/): no τ_1 setting (first, last, random) and no tie-break flip (ids reversed) changes the
+  growth class on switchallexp, switchbestexp or rand1k (power fits n^1.82 to n^2.14 throughout). C3's pin is therefore not a tuned choice.
+
+## 0c. C1 correction (Lead 10:48Z; written 2026-10-23 10:58Z by date -u; §0 and §0b unchanged)
+Lead reading (message 2026-10-23 10:48Z, TARGET.md §1 and D2 change 1), relayed as received: "the canonical C1 is the COMPRESSED map, as in
+kl.py's Game.__init__: the order- and parity-preserving compression into {1..d}, d even, with the compression charged to the algorithm";
+kl2.py's p+2 "is then an implementation variant". This replaces §0b's pin of C1 (§0b's table and data stand as written).
+- **Canonical C1** (pinned from now on): kl.py `Game.__init__` l.25-32. The sorted distinct priorities p_1 < p_2 < ... get values
+  c_1 < c_2 < ...: c_i = c_{i-1} + 1, or c_{i-1} + 2 when parity must be kept (c_0 = 0), so c_i ≡ p_i (mod 2) and c_1 ∈ {1, 2}. Then
+  d = max c + (max c mod 2). Same-parity neighbours are NOT merged, so d ≤ 2n and h = d/2 ≤ n (a game with n distinct even priorities
+  reaches d = 2n). The cost is one sort, O(n log n) comparisons of input priorities, charged to the algorithm. C4: the dual compresses
+  p + 1 the same way.
+- **Tested variant**: kl2.py, π = p + 2, d = the even ceiling. Its pivot counts equal the canonical counts on every tested row (DATA: L-COMP's
+  41,155 rows; my 15,000 runs, experiments/new/kl/step4/c1diff.out, carry.out). General equality is OPEN.
+  - The cheap proof the Lead suggested ("unused priority values add only tree components that are never touched") is FALSE for Tighten
+    VALUES. On the chain games of carry.py (n - 1 vertices of priority 1 in a path to an even vertex of priority 4 with a self-loop, plus one
+    back arc), Tighten carries out of a full digit. Under p + 2 the carry lands in the component of the absent priority 5 (input 3); under
+    compression it gives ⊤.
+  - The counts still agree on those games (the least fixed point is ⊤ there either way). Whether a STORED label can ever have a nonzero
+    absent component is OPEN.
+- Correctness (N8d-proofs.md §2) is map-independent. The running-time statements in N8d-proofs.md §3 are stated for the canonical map
+  (d ≤ 2n, h ≤ n). All §3 probes ran kl.py's Game (canonical) already.

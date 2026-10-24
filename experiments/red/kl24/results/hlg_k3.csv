@@ -1,0 +1,3 @@
+file,n,rule,seed,pivots_primal,pivots_dual,time,ref,status,impl
+HLg_3.pg,55,r2,2,0,388771694,15240.3,zlk,OK,kl2fast(solve cap 10000000000)
+HLg_3.pg,55,r2,1,0,388766970,15241.4,zlk,OK,kl2fast(solve cap 10000000000)

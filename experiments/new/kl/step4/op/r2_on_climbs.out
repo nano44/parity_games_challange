@@ -1,0 +1,8 @@
+climb_r1_n8.pg sha1 a32b4cdfb2b5
+ R1 primal 36 | R2 primal seeds1-30 mean 8.4 max 16 | d 10
+climb_r1_n12.pg sha1 271dbd3a459b
+ R1 primal 124 | R2 primal seeds1-30 mean 13.1 max 23 | d 14
+climb_r1_n16.pg sha1 d9e0ef883716
+ R1 primal 209 | R2 primal seeds1-30 mean 8.1 max 16 | d 16
+climb_r2_n12.pg sha1 890ae4b7d015
+ R1 primal 9 | R2 primal seeds1-30 mean 9.7 max 33 | d 12

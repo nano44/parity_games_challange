@@ -1,0 +1,4 @@
+family,N,file,n,m,d,rule,seed,pivots_primal,pivots_dual,time,ref,status,impl,tau1
+HL88,3,HL88_3.pg,47,66,20,r2,1,,,334.34,zlk,ERROR:RuntimeError: pivot cap 10000000 reached,kl2fast,first
+HL88,3,HL88_3.pg,47,66,20,r2,2,,,330.94,zlk,ERROR:RuntimeError: pivot cap 10000000 reached,kl2fast,first
+HL88,3,HL88_3.pg,47,66,20,r2,3,0,1230538,47.014,zlk,OK,kl2fast,first

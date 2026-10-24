@@ -1,146 +1,185 @@
-# L-RED notebook (independent adversary on A_DTL = `oink --dtl --no-single --no-wcwc --no-loops` @ 8fbf0a7)
-Box 19 (2026-10-22, successor 11, session_01Vq1xXP1gJphfvYS1UxA4td; GO 05:32Z, to ~08:30Z). Produced on Fable 5.1 (L36) to ~07:25Z, then on
-Opus 5.5: the session's model was switched (get_session: user_switched_model claude-opus-5-5, configured_model claude-fable-5-1).
-The previous notebook (boxes 1-18) is in git at l-red 4f73e7a6: `git show 4f73e7a6:notes/L-RED.md`; boxes 16-18 handover at a5274bd6.
+# L-RED notebook (independent adversary lane)
+Updated 2026-10-23 ~23:20Z (date -u) by successor 13 (session_01GhyuHegkNZEo8bet84n56c, Opus 5.5 under D15), box 26.
+Handover from successor 12 (session_01QSEXqYujPY1RBkWy5SgeHa) @ 0d0b67a. Previous notebook (boxes 1-23): `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
-Status: PARKED after box 22 (2026-10-23 ~07:35Z): N8d-R2 SURVIVES (no kill; R54). Box 22 target was Koh-Loho tree SI, perfect tree,
-uniformly random single switch, kl_single.py @ l-new d7fadfb. Box 21: N8a DEAD by H_k (Lead re-runs 02:40Z / 02:46Z / 02:58Z). Box 19 merged trunk 18812f7; k-pools NEST* line CLOSED (Lead, D15 / L37). Box 20 = S growth on
-two-player games: docs/red/R52-sgrowth.md, experiments/red/sgrow/.
+Status: boxes 26-29 done (last END ~08:20Z 2026-10-24): N5 NOT killed (R58 §1-§12). docs/red/R58-n5-width.md: Theorem W (PROVED given VJ00 L5.8 premise (P)),
+O4 sharpened to O5 (K1-K4), Conjecture BRIBE FALSE (instance). Boxes 24-25 below.
 
-## DONE (box 19; docs/red/R51-piecemap.md; tools experiments/red/nest16/piecemap.py, gatescan.py; evidence in experiments/red/nest16/maps/ and scans/)
-- Trap found: fixd_stealentry.run renumbers vertices by priority, so tlog.py / partmask.py print SOLVER indices, not file ids.
-  piecemap.py maps back. R50's D-vs-nest5 statements stand (D is the top band); its A/B/C letters from partmask should be re-read.
-- Per-search piece map of nest6min_n75 in both orders (identical P): the block #9-#12 is D's (16 O-rise {49}→{50}, 17 G-pair on
-  D[61], 16 → stable); the 8- and 7-levels re-close at #14/#15 as D pieces at the same positions after the chain re-indexes at #13
-  (D to the head, nest5 to the tail). Roles by variants (R51 §2): the gate builds a descending −1 ladder of A pieces (positions
-  10-14, ranks 8..4) that pushes D's block to 16-20 inside the 8-window and lengthens S 20 → 25; the two returns shape D's head ladder
-  after #13 so that positions 8 and 7 change first at #14/#15; each alone gives NEST* 5.
-- k = 4 by hand on nest6min ⊎ oseg (above), k4u_n101 (37a45ff8…, Oink-verified): the plain union already nests E's piece around D's
-  pair (16 ⊃ 18) but loses level 8: NEST* 6, S 25, both orders. 84 gates (D sources into 99/97/76, 4 priority slots: slot never
-  matters), 50 returns-on-gate, 126 single returns, 8 pairs/mirrors, 17 ladder-source gates, 120 head-ladder gates, 43 head-gate +
-  returns (448 in all): all NEST* ≤ 6. No NEST* 7.
-- Lengthening found (R51 §3h-§3i): 72→80 gives S 28 (k4L72_n101, f3097a66…), + 81→49 gives S 31 (k4L72r_n101, e84a57b6…), both
-  Oink-verified (even iterations = S), both orders identical, NEST* 5: the extra searches come after the old end or between new rises of
-  position 1, which close every deeper window.
-- Obstruction (R51 §4): all 126 single returns keep S 25 and the identical prefix P[0..13]; after the block there is one free
-  index (#14) before 7 closes at #15; a seventh level needs two recurring positions between 9 and 16, i.e. a longer post-block tail,
-  which only a gate-type change (not a return) can add; gates from the innermost pieces replace D's block by E's instead of nesting.
+## Box 27 (GO 01:52Z 2026-10-24, to ~04:55Z): 𝒞^1O family with super-linear iterations inside one λ-phase
+- Box 26 extension, 01:47Z offer: R58 §9 Proposition X (PROVED, uses R17), pushed at f93e5175. The part that cannot reach o runs
+  one-player N5. Corollary X1: (CH-1O) holds when o is on no cycle, so a kill needs o on a cycle.
+- fts_best16 reading: o = 5's exits {2, 4, 9, 14, 15} sit on ONE σ-path 2→13→3→4→1→15→14→8→12→6→5 that returns to o (a ring).
+  σ̄(o) walks along the ring 14→15→4→2 as the path improves (backward propagation); two laps in one phase.
+- Tools: thetaclimb.py (fitness = θ-changes inside one λ-phase; --from seed), cdagseed.py (CDAG_k + o seeds; short as built).
+- BOX 27 END (~04:15Z). R58 §10, NO KILL.
+  - (a) θ-climbs: 13 / 16 θ-changes in one phase at n 16 / 24 (< n).
+  - (b) pure-Y blocks: 27 / 49 at |Y| 21 / 33, so "block ≤ |Y|" (L-NEW data) is FALSE. But they hold only ≤ |Y| − 1 inside one
+    λ-phase (in-phase climbs reach 20 / 31).
+  - Conjecture STAT-PH (DATA conjecture only; Lead 04:31Z: not a target): in-phase pure-Y block ≤ |Y| − 1. o-acyclic 𝒞^1O is now
+    SETTLED by L-NEW's refereed theorem (N5-1Oacyc-box24.md: blocks are segments of N5 on G_τ, bounded by R17), with Prop X.
+    Lands as RESULTS R18.
+  - Instances: theta_thf16, theta_thc24, block_bk20/32, blockph_bp20/32; all Oink zlk OK, strategies verified.
+- BOX 28 (GO 04:31Z, END ~06:20Z): R58 §11, NO KILL on o-cyclic 𝒞^1O or with K = 2.
+  - θ-changes per phase plateau at 16 (n 24-40).
+  - Ring templates give one lap.
+  - K = 2 phase climbs: 53 at n 32, 50 at n 48 (linear).
+  - Trust events on my instances ≤ 4.
+  - Instances: theta_tp32/tp40, phase2_pk32/pk48; all verified.
+- BOX 29 (GO 06:30Z, END ~08:20Z): R58 §12, composition FAILS.
+  - Re-root via the hub is θ-independent (Lemma G (c)): k = 4 roots give 10 in-phase iterations vs 9.
+  - Re-entries: 20 / 20 by route improvement, 0 by θ overtaking w.
+  - Returns per vertex climb to 12 (rt48), but in-phase stays ~1.6n up to n 64 (ph64: 103).
+  - Instances: returns_rt32/rt48/rt64/ph64; all verified.
+- NEXT: none on N5 unless the Lead routes one (stand-down decision pending).
 
-## DONE box 22 (R54; produced on Opus 5.5)
-- Fidelity of kl_single.py R2: OK (R54 §0). Friedmann thesis Thm 4.76 opened (Random-Edge; not ported: rule and valuation differ).
-- H_k under R2: mean 14.7 dual pivots over 200 seeds at k = 0 and k = 2 (identical histograms): the counter dies, laps are random and few.
-  Cause: one switch at a time lets a cycle-closing node move early; the least fixed point then jumps to ⊤.
-- R2 climbs (min over 5 seeds): only flat crawls (34 at n 14; 53 / 70 on a padded score), flat under padding.
-- switchbestexp under R2 (R54 §3): N 14 mean 3014, N 16 mean 4052 (5 seeds each), all verified; best fit n^2.01 (SSR 0.014) over
-  1.206^N (0.019); ratios 1.53, 1.64, 1.33, 1.46, 1.34; no knee. NO kill. Deciding needs N 18-22 x 5 seeds = a faster kl.
+## DONE box 26 (R58; 2026-10-23 23:06-23:20Z, date -u)
+- §1: jump-ahead switches (N5 switches SSI would not make) mostly use SSI counter edges: sym_h16 14/17, DLM1 n8 38/38.
+  N5 is slower than SSI on the climbed games (55 vs 29).
+- §2 Theorem W (PROVED given (P) = VJ00 Lemma 5.8 "no improvement => maximum", via RESULTS R15 G-N5T-3).
+  - Lemma 1: I(σ1) = I(σ2) ⇒ Ξσ1 = Ξσ2.
+  - Lemma 2: flat stretches are at most 2n(n-1)+1 long (R15).
+  - Theorem: moves with |I| ≤ k number ≤ (2n(n-1)+1)·Σ_{j≤k} C(m, j), for ANY SI-type run.
+  - Corollary: width O(1) ⇒ polynomial; a run of length T needs width ≥ log(T/8n²)/log m.
+  - DATA: premise holds on 41,111 strategies of 2,000 random games plus sym_h8 exhaustive (0 violations; ties are common:
+    3,345 collisions with equal Ξ).
+  - SSI-DLM1 n = 8: Odd's moves by |I| = C(8, k) exactly (the bound's shape is tight).
+- §3: N5 widths on climbs / DLM. DLM: N5 takes the whole wide set. Climbs: 41/65 moves at width ≤ 3. Declines are mostly deferred,
+  then taken.
+- §5: O5 = (K1)-(K4). BRIBE false. Open: (STRETCH) plus a family with withdrawn generosity.
+- (K2) WITHDRAWN 00:08Z: frozen-τ* climbs are long (L-NEW: fts_g29 66, fts_best24 43; mine: frz40 90).
+- §7 (Lead 23:28Z, L-NEW Theorem B frozen branch): Corollary W2 says exclusion-only throttles are polynomial, so width must come
+  from refusals.
+- §8 climbs, all verified:
+  - widthclimb n 32: wide_h16, 44 iterations, W 72; width up, length down.
+  - frozenclimb, frz24/32/40: 39/66/90 iterations; longest λ-phase 11/28/36; ~all moves at gate width ≥ 3.
+  - frz24's two laps lie in different λ-phases, so they are bounded by Lemma Φ. A kill must be super-polynomial inside one
+    phase.
 
-## DONE box 21 (R53; produced on Opus 5.5; target N8a = L-NEW's kl.py @ l-new 4fd179c8, run unmodified)
-- Super-polynomial pivot families for N8a on the perfect universal tree, BOTH frozen rules (docs/red/R53-n8a-counter.md):
-  - H_k = klmin_n13 (13 vertices, 18 edges) + 2k isolated self-loops with new top priorities: dual pivots 4·n^{k+1} under global AND
-    switch-all (k = 0..3: 52, 900, 19,652, 521,284; all Oink-zlk-checked). Generator experiments/red/kl/famgen.py H k.
-  - F_k (klcount_n16, switch-all 4·n^{3+k}+3) and G_k (klglobal_n16, global 8·n^{1+k}+6, switch-all 5·n^{1+k}+1).
-- Mechanism: an open lapping cycle (the rule never closes it; the forced-increase least fixed point ratchets) raises one label component
-  by one per period; Tighten's base-n successor carries through every counted tree level; each extra priority value adds a level.
-- Tools: kclimb.py (graded pivot climb, kl.py imported unmodified), ktrace.py (trace from kl.py's own functions, asserts kl.solve's count),
-  kshrink.py (greedy gadget shrink), famgen.py.
+## DONE (box 24; docs/red/R56-r2-vj-switchsets.md §0-§4; head b0884407 before this handover)
+- §1, item 1: N8d-R2's admissible sets vs VJ Random-Edge's improving sets on G_zeta (gz1-3). They differ from STATE 0.
+  - M1: labels count only the improver's even priorities and truncate at odd ones, so entries into A_i / B_i look better than
+    under VJ.
+  - M2: truncation is idempotent, so lane tails are tight with the shortcut and lanes never unwind.
+  - The first VJ step R2 cannot take is a b-lane tail shortcut (gz2 steps 178-209, gz3 420). It is not history: the fresh lfp gives
+    the same.
+- §2: HL_k = R53's H_k plus z-separated delay lanes on node 7 (fatal lap move) and node 8 (fatal 8:6->1 before 7's lane resets).
+- §3: per-lap failure ε(L) by an EXACT absorbing chain on (laps, τ, µ). Steady multi-lap increments:
+  6.2e-3 / 5.75e-4 / 3.92e-5 / 2.1e-6 / 1.0e-7 at L = 4..8.
+  - Ratios ×10.8, ×14.7, ×18.3, ×21: at least exponential, not a power law.
+  - They agree with the full-run estimates.
+  - Lap scans over every lap start: L = 4 (900 laps) and L = 5 (300 laps).
+- §4: dead-end packet. Family HLg_k = `experiments/red/kl24/hlgen.sh k L L`, L = 5, 6, 8, 10, n = 9 + 2k + 4L.
 
-## DONE box 20 (R52; produced on Opus 5.5)
-- Structured families: tc S ≤ 3, tc+ S = N+1 ≈ log n, Oink counters S ≤ 3, lagfam S = D+7 ≈ n/7.
-- Climbs (oclimb.py, Oink proxy F = max(even, odd) − dominions; neutral padding to grow n): best S per n = 21/29/34/36/35 (oink order),
-  20/29/30/34/33 (stable) at n = 20/30/40/60/80; log-log slope 0.36 / 0.34. All Oink-verified, Oink count = S. No super-polynomial or
-  super-linear signal. s21_oink_n20 (da164511…): S 21 > |G'| 20 in oink order (R24's (SPP) DATA bound broken by 1; stable 11).
+  | k | n | mean R2 dual pivots | seeds |
+  | --- | --- | --- | --- |
+  | 0 | 29 | 630 | 5 |
+  | 1 | 35 | 32,201 | 5 |
+  | 2 | 45 | 2,759,578 | 5 |
+  | 3 | 55 | 388,769,332 | 2 |
+
+  - Every output is verified: regions == Oink zlk, strategies pass verify.py.
+  - kl_single.py equals kl2fast seed for seed.
+  - PROVED: nothing new. READING: the mechanism and the schedule L(k) = Θ(k log k).
+
+## DONE box 25 (R57; 2026-10-23 21:40-22:00Z, date -u)
+- n5.py is faithful to SPEC S1-S5 (READING).
+- On every counter family, N5's Odd moves about N times, early, then never; the rest is one Even pass over the lanes.
+  Examples: gz2 374 iterations at n 389; switchbestexp 62 at n 160; H_k and HLg_k 3 iterations.
+- DLM attempts: escape edges are counter edges. Pruning or laning them kills SSI's counter too (dl_*.pg verified).
+- Obstruction (R57 §4): no lapping (R15); the opponent is an improver, not a best-replier; a kill needs two coupled counters whose
+  shortcut edges are disjoint from counter edges.
+- Tools: experiments/red/n5/n5tr.py, oddmoves.py, ssiedges.py, vjlane.py.
 
 ## IN FLIGHT
-None. No process runs at box end.
+None (2026-10-24 08:20Z by date -u).
 
-## NEXT (for the Lead to route; items 1-2 belong to the CLOSED k-pools line and stay only as history)
-1. Lengthening without shallow rises: start from k4L72r_n101 (S 31) and look for edges that stop the mixed piece at position 1
-   (ABCDE[14,37,40,47,60,62,86,88,…]) from absorbing vertices between the block and the closes; score = NEST* of P restricted to
-   the stretch after the block, plus S.
-2. A different fourth part: E = nest5_n49 (a part with its own 5-level structure) above nest6min, then the recipe; n 124, ~40 s/eval.
-3. Re-read R50 §4 / §7 cross-part attributions with piecemap.py (file ids).
+## NEXT for N5 (box 26)
+- R58 §5 open form: (STRETCH) (one-sided stretches poly) and a family meeting (K1)-(K4). These need wide improving sets, held off
+  by NON-optimal opponent generosity that the opponent later withdraws.
+- An optimal opponent's generosity costs nothing (BRIBE counterexample), so it cannot be the mechanism.
+- Check L-NEW successor 8's docs/new/N5-time-box21.md as it lands: Theorem W may serve its incompatibility proof as the
+  bounded-width case.
+
+## NEXT for N5 (box 25 leftovers)
+- Prove or refute O4's incompatibility of R-a and R-b (R57 §6). Or build a game meeting both: a symmetric two-counter in which the
+  jump-ahead switches use edges disjoint from the counter edges and threats.
+- Seeds:
+  - experiments/red/n5/instances/sym_h16_s1.pg (55 iterations at n 32; both players alternate).
+  - DLM family 2 (experiments/new/dlm_gen.py 2 n).
+- Tools: n5tr.py (trace, SSI-type marks), perswitch.py (per-vertex switches and returns), symclimb.py, vjlane.py, ssiedges.py.
+
+## NEXT (for the Lead to route)
+1. Answer CHECKER C23 questions on R56 §4 / DE30, if any.
+2. Optional, only if a proof of the dead end is wanted. Close the gaps:
+   - (G1) a bound ε(L) ≤ c·2^−L for EVERY lap type reachable in HLg_k. Two-lap scans exist only at L = 4 (26 BAD lap starts of 900,
+     up to 0.24, from partial corruption) and L = 5 (worst 3.85e-3, ×63 smaller). L ≥ 6 is not scanned.
+   - (G2) that lap failures are the only way R2 leaves the counter, which would give mean ≥ (1 − Σε)·counter length.
+3. Other single-switch or randomized tree-SI rules: the same z-lane recipe applies to any rule whose failure is a race against a lane.
+
 ## Resume point
-PARKED after box 22 (2026-10-23 ~07:35Z, date -u). Nothing in flight; no process runs. Wake only on a new named target from the Lead.
-R53 §1-§6 and R54 §0-§4 final (freeze; corrections in new sections). If routed: (1) N8d-R2 needs N 18-22 x 5 seeds on switchbestexp,
-which needs a faster kl (per-pivot Python cost: ~19 min/seed at N 14, 28-58 min at N 16); (2) or a port of Friedmann's Random-Edge
-counter (thesis Thm 4.76, opened) to random-node / best-arc tree SI; (3) R2-robust counter: a period where EVERY candidate keeps the
-lapping cycle open (forced chain). Earlier resume points: `git show 866615f3:notes/L-RED.md` (box 21), `git show 595ca267:notes/L-RED.md`.
-Climb lessons (box 20, oclimb.py; box 21, kclimb.py): fitness from the solver's own counter, confirm with the reference tool; pad
-NEUTRALLY (S growth) or with NEW TOP PRIORITIES (tree-level growth); budget by wall clock; pause a climb with kill -STOP / -CONT for
-short checks; count jobs with `ps -eo args | grep -c '^python3 .*<tool>'`; never pkill -f a pattern from your own command line.
+Box 26 working (R58 pushed). Start from R58 §5 (O5, STRETCH) and the tools in experiments/red/n5inj/. Older resume points below.
+PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named target or on CHECKER questions.
+- R56 §0-§4 are final: freeze them; corrections go in new sections.
+- Start from R56 §4 and the tool list below.
 
 ## Sources opened
-- arXiv 2108.13338 (Z. K. Koh, G. Loho, "Beyond value iteration for parity games: strategy iteration with universal trees", LMCS 21(2)
-  2025, 24:1-24:35), PDF sha256 21ee0e4336252f7e6e1fcba7cb305b03f0950799610f324235eed5ecba15c9a9, opened 2026-10-23 (box 21): §2.1
-  perfect (ℓ, h)-universal tree and p-truncation, §2.2 feasibility / violated / tight / Tighten / lift, Proposition 2.5, Algorithm 1 and
-  Theorem 3.1 (iterations ≤ n·|L(T)|; pivot rules left open, intro p. 3).
-None new in boxes 16-18. The work cites only fleet-internal signed results (RESULTS R5, R8, R9, R11; P-C1P items; R16 draft) and
-dtl.cpp @ 8fbf0a7. Earlier opened sources are listed in `git show 4f73e7a6:notes/L-RED.md`.
+- Box 26: none opened. VJ00 Lemma 5.8 (premise (P) of R58) is cited through RESULTS R15 (referees opened BRICS RS-00-48,
+  sha256 485a12de…), not opened by me.
+- None new in box 24. Fleet-internal only: N8d-single.md §0, T26-N8d-step3.md, R53, R54, R55, n8d-second README, si.py.
+- Earlier opened sources (Friedmann thesis, Koh-Loho arXiv 2108.13338): `git show b0884407:notes/L-RED.md`.
 
-## Dead ends (box 19; each with the exact obstruction and the instance that killed it; earlier ones: `git show a5274bd6:notes/L-RED.md`)
-- Gate from the innermost-window pieces (D's 49, 50, 51, 52, 58, 59, 68) into the fourth part: E's block replaces D's (masking), NEST* 5
-  at best; k4g50_n101 (62cbc3e8…), scans/scan1_gate_oink.txt. Priority slot of the gate target never matters (4 slots, same P).
-- Gate into a copy vertex with an even self-loop (97, 76): phase collapse S 7-10; scan1.
-- Return edges on the plain union: only re-index the tail after #13; S 25 and prefix P[0..13] identical in all 126; never a new
-  recurring position; scans/scan3_returns_on_union_oink.txt. Pairs and triples the same (scan4).
-- Literal mirror of the k = 3 step onto nest6min ⊎ oseg: NEST* 4 (scan4; agrees with R50 §5 on nest6 ⊎ oseg).
-- Head-ladder gates (72→80 etc., + returns): lengthen S to 28 / 31 but NEST* 5; added searches are cut by new rises of position 1
-  (k4L72r_n101, three 1-rises at P indices 13, 19, 21); scans/scan6_*, scan7_*.
-- (SPP) "S ≤ |G'|" (longest phase at most the unsolved game at its start; R24's target, DATA only, never signed) is FALSE in oink
-  order: s21_oink_n20 (experiments/red/sgrow/instances/, sha1 da164511784449b906663c190757fd78c057f97c), an Even phase of S 21 at
-  |G'| 20 (pinned Oink even 21, odd 1, verified; Lead re-ran 10:24Z, CONFIRMED). Stable order on the same game: S 11. Excess +1, linear.
-- R53 counter against N8d-R2 (random single switch): dies. H_k mean 14.7 dual pivots over 200 seeds at k = 0 and 2 (identical
-  histograms); a cycle-closing node is a candidate each period and R2 picks it with probability bounded below. Instance klmin_n13 / H_2.
-- Min-over-5-seeds R2 climbs (n 12-18, ~30 min): only crawls flat under padding (r2crawl_n14 34 primal; r2climb_h13 53 / 70 dual).
-- Rule-free transfer of the N8a lapping counter ("whatever the pivot rule picks among improving arcs"): FALSE on H_k. Single-switch
-  rules (lowest / highest index, random seeds 1, 2) solve H_0..H_2 in 9 / 5 / 5 / 17 iterations for every k (ksubset.py; R53 §6b item 4).
-  The counter needs simultaneous switching (class SA). Any-universal-tree transfer: READING, gap G1 = local second-child offsets below
-  the counted level (unary vertices of succinct trees), untested.
-- k-pools NEST* line (boxes 16-19) CLOSED by the Lead (D15 / L37, 07:34Z): NEST* plateaus at 6 (448 hand-built configurations and
-  climbs), S linear (≤ 31 at n 101). Obstruction R51 §4: a seventh level needs a longer post-block stretch with no shallow first
-  change; no edge class gives both. Killing instance k4u_n101 (37a45ff8a932bcc6e4a79d4848a0a57dbb82367a), scans 1-7.
-- Plain union nest6min ⊎ oseg above: E's piece nests around D's pair (16 ⊃ 18) but level 8 is lost: NEST* 6, not 7 (k4u_n101).
+## Dead ends (box 26)
+- Steering symmetric climbs to wide refused sets (widthclimb, R58 §8a): W 24 -> 72 while iterations fell 55 -> 44. Width is
+  not the bottleneck.
+- Conjecture BRIBE (a mover refusing r improving edges faces an opponent with ≥ r/poly improving edges): FALSE.
+  - Instance: experiments/red/n5inj/instances/bribe_cex_n15.pg (sha1 392af465…). Even refuses 10 of 15, and Odd has It = ∅.
+  - Obstruction: an optimal τ* is not the best reply to a suboptimal σ, so its generosity costs Odd nothing.
+- Lane enforcement of R-b: jump-aheads use counter edges on the climbed games too (14/17), not only on DLM (R58 §1).
+
+## Dead ends (box 24; each with the obstruction and the instance)
+- Plain (no z) delay lanes against R2: lanes do not reset in label space (M2). On H_0 + plain lane, R2 means are 32.7 / 39.7 at
+  L 4 / 8, flat. Instances: lanegen.py klmin_n13 7 L none.
+- One lane only (on 7): laps grow only linearly in L (7.5 / 12.5 / 24.0 at L 8 / 16 / 24 on H_2). Killer: 8:6->1 picked before any
+  of 7's lane nodes resets, probability about 1/(L+1) per lap. Trace: H2_L16 seed 3, iteration 21 (ktr.py).
+- Fixed lanes (8, 8): super-polynomial over k = 0..2 only. ε > 0 caps the expectation near 34/ε; HL88_2 seed 3 stopped early at
+  1,230,538. This forced the growing-lane family.
+- One-lap exact ε understates the true ε: a lap can end "successfully" in a CORRUPTED state. Example: HL88_2 seed 3, lap 35,724
+  (one-lap ε 2e-8), then lap 35,725 with ε 0.073. Use the m-lap increments.
+- Earlier dead ends: `git show b0884407:notes/L-RED.md`.
 
 ## NEEDS
-- Lead: route NEXT 1-3 or close the k-pools line; referee routing of R51 only if a claim needs signing (it is DATA plus readings).
+- Lead: none open. CHECKER C23 may ask questions.
 
 ## Things only I know
-- Box 21 (N8a): kl.py is fast (~0.4 ms per pivot at n ≤ 20; 0.05-0.2 s per solve on the hard bench), so climbs run ~500 steps/s at n 10.
-  The first climb hit at n 16 found the 4·n^3 counter within 2 minutes; the law was found by PADDING with isolated new-top-priority
-  self-loops (adds a tree level) vs same-priority pads (adds only base). Run L-NEW's files from a read-only `git archive` extract in
-  scratch with a `tools` symlink to the repo's tools/ (check_sol2.py looks for ../../tools/oink/build/oink and ../out/).
-- Box 20: oclimb.py with Oink fitness is ~8 ms/step at n 20 but 0.2-1.5 s at n 40-80 on long-phase games; use --secs. Random padding
-  kills long phases (early dominions); pad neutrally (priority 0, one successor into the game). Pause a climb with kill -STOP / -CONT
-  to run a short measurement without a third job. smeasure.py at n 80 takes ~4 min per game (Python DTL).
-- SOLVER INDICES: fixd_stealentry.run renumbers vertices by priority (stable: sorted by (prio, v); oink: stdsort.oink_order). Chains,
-  tangles and escapes from the harness are in those indices. piecemap.py and gatescan.py map back (idx[i]); tlog.py, partmask.py,
-  learnpos.py do not. Part labels by vertex range are only safe after mapping (or for a part that is a priority band).
-- Box 19 tools (experiments/red/nest16/): piecemap.py G.pg cut... (per-search map, file ids; ~8 s at n 75, ~15 s at n 101);
-  gatescan.py BASE.pg E.pg OUTDIR CONFIGS.txt cut... (config lines 'move:v:prio;edge:u:v'; E placed above; ~25 s per config at n 101,
-  oink order). Scans and configs are committed in experiments/red/nest16/scans/, maps in maps/.
-- The shared shell's working directory races between parallel tool calls: use absolute paths everywhere; never `cd` and rely on it.
-- `pgrep -f` and `ps | grep` count the calling shell's own command line when it contains the pattern: count with
-  `ps -eo args | grep -c '^python3 .*gatescan.py'`. The 2-job limit was briefly exceeded once this box (3 jobs, no restart).
-- date -u said 05:53Z when I had estimated 06:12Z: always stamp with date -u, never estimate.
-- Tool entry points (all in experiments/red/nest16/; L-ALG modules through ../xctx/xscore.py, unmodified):
-  - starclimb.py: graded climb. `[FIT=seg|wrap|pool] DTL_ORDER=.. GROW=.. NMAX=.. starclimb.py climb 1 START.pg STEPS SEED OUT`,
-    or `starclimb.py G.pg` to score. FIT=pool runs DTL twice per evaluation (slow at n ≈ 100).
-  - crossclimb.py: cross-part-only climb. `CUTS=49,75 DTL_ORDER=oink crossclimb.py START.pg STEPS SEED OUT`. About 10 s/step at n 75-90.
-  - kcheck.sh G.pg: sha1 + P in both orders + pinned Oink -v (needs tools/oink/build/oink; run scripts/setup_oink.sh first in a
-    fresh container).
-  - table.py G.pg: n, S, |P|, I, NEST*, pools, and G-NEXT / G-ADJ violations with transition indices, both orders.
-  - pairunion.py B.pg OUT A.pg ...: B ⊎ A in placements above / below / inter. mergesearch.py: random interleavings.
-  - witness.py P...: NEST* witness chain. learnpos.py: learning positions per search. partmask.py G.pg cut...: part labels per
-    transition. gdiff.py / shrinkdiff.py / subsets.py: what a climb changed, and its minimal subset. lawscan.py, gnext1p.py,
-    segstat.py, segscan.py: law scans over the library.
-- Container limit: at most 2 Python jobs at n ≈ 75-100. With 3, the container was killed (exit 137). There were two restarts this
-  session (~01:2xZ and ~04:0xZ on 2026-10-22); climbs were resumed from saved bests, so step counts are lower bounds. Scratch
-  (/tmp/claude-0/.../scratchpad) survived both restarts, but do not rely on it in a new session.
-- Committed vs scratch: every instance in the table is committed in experiments/red/nest16/instances/. All climb logs (c*, k3*,
-  k4*, x*, y*), union seeds k3_*.pg / k4_*.pg / k4s_* / k4m_*, and the library-scan logs were scratch only and are NOT in the
-  repo. Their numbers are quoted in R49 / R50.
-- Pipes buffer output: a monitored `... | sort | head` shows nothing until it ends, and a timeout kills it with nothing printed
-  (this lost the 94-union scan). Write results to files.
-- date -u in the container can lag behind work done; always run date -u right before writing a timestamp.
-- Frozen text: R46 §1-§3 (pin 01d63d7), R47 §1-§5 (pin da63c40), R49 §1-§8, R50 §1-§7. Add new sections only.
+- Instruments (experiments/red/kl24/). All import experiments/n8d-second/kl2fast.py + kl2.py read-only; dual run = kl2.solve's.
+  - lanegen.py G V L Z [LPRIO] [TARGET] [closed]: z-separated lane on Even node V.
+    - The z priority must sit ABOVE the exit's lap-reset rise and BELOW the counted component: 23 between 22 and 28 for H_k.
+    - 'closed' = lane starts inward.
+  - hlgen.sh k L7 L8: HL_k = famgen H k + lane(7, L7, open, target 3) + lane(8, L8, closed, target 1). Reproduces the sha1s in R56.
+  - solvecheck.py G seed [cap]: bench.py's check (Oink zlk -w 1 + verify.py) in-process. Use it whenever a run can exceed 1e7
+    pivots: kl2.main has no cap option and its default 1e7 cap makes bench rows "ERROR: pivot cap".
+  - r2mean.py G S: R2 dual pivots over seeds 1..S. LAPARC=v:w / LAPNODE=v give lap counts.
+  - ktr.py G all|r2 [seed]: dual trace with labels (SHOW=nodes). Switch-all is pure Python: too slow beyond about 1e5 iterations.
+  - laptrial.py / laptrial2.py: one-lap Monte Carlo from snapshots. Superseded by exactlap, kept as a cross-check.
+  - exactlap.py G S W J [MAXSTATES]: EXACT failure probability from the lap-start snapshot (base seed S, W warm-up pivots, J-th
+    increase of dual node 1's label). Options:
+    - LAPS=m: failure within m laps. The steady ε is the increment.
+    - FLOAT=1: doubles.
+    - MAXPATH=1: most probable failing path.
+    - SCAN=N (+ COND=1 redraw, SHOWABOVE=x): the chain at every lap start of one base run.
+    - Costs: about 4x states per +1 of L; one lap at L 8 is 199k states (about 3 min); 3 laps at L 8 are 984k states (about 25 min).
+- G_zeta comparison: experiments/red/gzeta/cmp.py (r2|vj modes; STOP_AT_LOSS=1) and lanes.py (lane timeline).
+- Traps from box 26:
+  - `pkill -f` on a pattern that occurs in my own wait loop killed my shell again (exit 144).
+  - A nohup job started INSIDE a Bash call that the harness later times out is killed with it: frz32/frz40 were cut at
+    ~1,890 s. Start long jobs in their own run_in_background call.
+  - A wait loop using `pgrep -f "scripts/push.sh"` matches itself and never ends.
+- Traps from box 24:
+  - Lap boundary = node 1's label increases. τ at a lap event is NOT unique.
+  - Pads are TOP from the start: compare the TOP count with the snapshot's, never with 0.
+  - ε varies between laps: one snapshot can mislead by ×100. Scan, or use multi-lap increments.
+  - Killing processes: `pkill -f` or `grep | awk` on a pattern that occurs in my own command line kills my shell (exit 144, three
+    times). Select pids with awk on exact argv fields: $2=="python3" && $3=="<script path>".
+  - Speed: kl2fast runs at about 27k pivots/s at n 45-55. 4 cores, 16 GB; 4-5 jobs were fine this box.
+  - date -u was behind my own sense of elapsed time all box: always stamp with date -u (the Lead flagged a "12:2xZ" stamp).

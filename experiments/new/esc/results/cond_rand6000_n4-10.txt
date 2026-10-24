@@ -1,0 +1,1 @@
+6000 games: YES-instances solved 8022, STUCK 0; NO-instances answered NO 2022; oracle calls 24014; 734s

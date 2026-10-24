@@ -1,0 +1,16 @@
+r1,n_bin=1-10,max_primal_pivots=5
+r1,n_bin=11-20,max_primal_pivots=11
+r1,n_bin=21-30,max_primal_pivots=12
+r1,n_bin=31-40,max_primal_pivots=18
+r1,n_bin=41-50,max_primal_pivots=24
+r1,n_bin=51-60,max_primal_pivots=20
+r1,n_bin=61-70,max_primal_pivots=23
+r1,n_bin=71-80,max_primal_pivots=29
+r2,n_bin=1-10,max_primal_pivots=5
+r2,n_bin=11-20,max_primal_pivots=10
+r2,n_bin=21-30,max_primal_pivots=12
+r2,n_bin=31-40,max_primal_pivots=15
+r2,n_bin=41-50,max_primal_pivots=17
+r2,n_bin=51-60,max_primal_pivots=22
+r2,n_bin=61-70,max_primal_pivots=25
+r2,n_bin=71-80,max_primal_pivots=32

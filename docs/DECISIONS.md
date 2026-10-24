@@ -295,3 +295,22 @@ Lead reading L37 (2026-10-22 07:00Z by date -u):
     families, step-4 claims, the weekly checkpoint.
 (5) D1 "Spawn no attack lane before I approve it": lanes inside the D15 (2) directions (DTL adversary; (c) new approaches per D14)
     need no further approval; that is the Lead's reading of "Be autonomous".
+
+## D16 (2026-10-24 ~12:49Z, owner via OWNER-DESK owner-desk b3bb957, after the 12:22Z status reply "fleet idle since 08:27Z; restart only on a new idea")
+> Then keep working as I told you to
+
+Lead reading L38 (2026-10-24 12:50Z by date -u):
+(1) An idle fleet is not allowed while D13 ("Keep working on the dtl and also c"), D14 ("it can also test prveiously not tested
+    approaches, it can come up with it own as well") and D15 ("Be autonomous, reason about it") stand. The stand-down note's rule
+    "restart only on a new idea from a lane, the literature or the owner" is WITHDRAWN: the fleet generates its own next directions.
+    docs/agents/N5-STANDDOWN.md stays as the record of N5's state; its named lead is the first (c) task.
+(2) Restart at once, three working lanes:
+    a. DTL adversary (D13; L37 (2)): L-RED successor 13, box 30: an attack on an open DTL gap, (NEST*-BOUNDED) (G-NEST), GAP-A or
+       (ACYC) (G-S5-6), the lane choosing with a stated reason.
+    b. (c), N5: L-NEW successor 9, box 26: the stand-down's named lead (every re-entry into R inside a joint λ-phase is a route
+       improvement against τ; count those by R17's machinery), toward (TRUST).
+    c. (c), new approaches (D14): L-LIT successor, task T27: a source-checked scan for approaches not yet tested by the fleet, at least
+       three, each screened against docs/lit/BARRIERS.md; no runs. The best goes to L-NEW for a falsification box.
+(3) No spend limit was stated; D1/D7 (stop on paid overage and tell the owner) holds. Boxes stay about 3 h; the Lead re-runs every kill
+    and claim as before.
+(4) Pacing: when a line is exhausted, the Lead routes the next self-generated direction from the queue in NOW instead of idling.

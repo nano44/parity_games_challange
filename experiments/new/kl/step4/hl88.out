@@ -1,0 +1,5 @@
+# HL88_0 sha1 8f710aef7abd
+HL88_0.pg,dual,seed1,n=41,h=11,pivots=1380,states_without_M_raise=1354,M_raises_on_run=18,max_run_gap=1354,min_bestgain_over_psi=0.0006006004409080081
+HL88_0.pg,dual,seed1,pivots=1380,top_in_mustar=41,phase1_pivots<=1380,states_violating_T=1354,first_violation_state=1
+HL88_0.pg,primal,seed1,n=41,odd=21,pivots=0,max_sw=0,mean_sw=0.00,lemma_c_viol=0
+HL88_0.pg,dual,seed1,n=41,odd=20,pivots=1380,max_sw=81,mean_sw=72.63,lemma_c_viol=0

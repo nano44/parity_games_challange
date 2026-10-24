@@ -1,0 +1,2 @@
+eq_6.pg n 37: snapshot seed 3 pivot 304 (lap 1 after W 300); max frontier 5766; total states 12736
+  exact P(fail) = 2.75358e-05   P(success) = 0.999972   sum = 1

@@ -25,3 +25,5 @@
 | L36 | 2026-10-21 | Lead reading after the weekly-cap pause (2026-10-19 ~04:00Z to 2026-10-21 21:00Z) and the Fable reset: interrupted work finishes on its sessions; new sessions on Fable; no Opus referee signatures; Q18 open | superseded by L37 (3)/(4) only | docs/DECISIONS.md#l36 |
 | D15 | 2026-10-22 | Owner: Q18 (b) Opus 5.5 for lanes and referees; Q16 (b)+(c); "Be autonomous, reason about it": no more option questions | active | docs/DECISIONS.md#d15 |
 | L37 | 2026-10-22 | Lead reading of D15: Opus for new sessions/referees (label "(Opus 5.5, D15)"); DTL adversary only, main effort (c); owner keeps TARGET, external, overage, stop/restart, >5 sessions; reports are information | active | docs/DECISIONS.md#d15 |
+| D16 | 2026-10-24 | Owner: "Then keep working as I told you to" (after the idle status) | active | docs/DECISIONS.md#d16 |
+| L38 | 2026-10-24 | Lead reading of D16: no idle fleet; self-generated directions; restart L-RED box 30 (DTL gap), L-NEW box 26 (N5 lead), L-LIT T27 (untested approaches) | active | docs/DECISIONS.md#d16 |

@@ -2,6 +2,18 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
+2026-10-24 03:35Z P-N5-1OA (trunk 07f298d): docs/referee-2/R2-N5-1OA.md. (A) L-RED Prop X (R58 §9) SIGN WITH GAPS (G-1OA-1 prefix/whole run; G-1OA-2 step 1 is
+engine-level, checked against si.py; the count is tie-break-free), Cor X1 SIGN. (B) L-NEW box 24 SIGN WITH GAPS conditional on (P) for one-player
+G[X] (G-1OA-3 pointer to R17 Case B; G-1OA-4 = (P), the only unrefereed premise; G-1OA-5 Odd-fallback case). Lemma R SIGN; Lemma S SIGN WITH GAPS
+(G-1OA-6: (c)/(d) for S4a steps only). R17 re-read: Case B at an arbitrary state and Corollary 2 from any start CONFIRMED. Own tool
+R2-N5-1OA/oa_check.py (+ compose.py): 1,147 random o-acyclic games + 20 composed long-X games + statY_12/i4_hand: 0 violations; Prop X exact on
+1,882 games; negative control fts_best16: Lemma 2 fails at 24/28 pure states (= the box). RE-PIN d78e54f (self-contained box 24) checked in §7 (03:49Z): G-1OA-3, G-1OA-5 closed by the new text; new nits N-4 (B1 third case),
+N-5 (|π_v| + 1 + ℓ); verdict unchanged. L-RED's long-block instances block_bk20/bk32 (7f351fc): 27 + 49 pure states, 0 violations.
+Lead 03:44/03:50Z: re-pin WITHDRAWN, Addendum 1 cancelled (my §7 stays as a record); signed object = 07f298d text. §C vs REFEREE R-N5-1OA
+(9060b51, trunk 2177e79) written 03:56Z: full agreement; A1=G-1OA-2, A2=G-1OA-1, B2=G-1OA-3, B3=N-3, B4=G-1OA-5, B5/B6=§2(c)/Step 6, S2=G-1OA-6(b);
+B1, S1 accepted; only mine: Lemma S (c)/(d) for S4a steps only. (P): one-player form only (fact of the proof); route (a) read, sound on my reading,
+not refereed by me. Lead 03:57Z: signed object revised to d78e54f; §C2 (04:02Z) vs REFEREE §0/B7 (bb96f45, trunk 98f16c8): B7 = N-4;
+B2 = G-1OA-3, B4 = G-1OA-5 closed by the new text in both reports; only mine N-5; full agreement. PARKED.
 2026-10-22 00:10Z (successor 3, Fable 5.1, L36). P-N5-1P (docs/new/N5-phase-bound-box10.md §1-§4 @ trunk 26905f0): docs/referee-2/R2-N5-1P.md.
 SIGN: (V1)/(V2), Lemma P (G-1P-1 wording), Corollary 1 (N-1), Corollary 3 (remark). SIGN WITH GAPS: (F1)/(F2) (G-1P-4: VJ00 (11) on the dual, order
 reversal + (4)/(6) "⊵" half re-derived in §2), Theorem PH (G-1P-2 simultaneous flat switches, G-1P-3 stuck engine = N5 fallback; both
@@ -99,6 +111,7 @@ L4 (claude/l-struct 50dc28b, docs/struct/L4-proof.md). Do your own report before
 | arXiv 1410.7530 (FHZ shortest paths, e-print tex) | Table 1 (G_{n,r,s,t}), Def. 5.2 functional, B_0 = zero-edge trees, Thm 6.3 (Lower-RandomFacet.tex thm:main), intro lines 23-33, Conclude.tex open problem | 2026-10-15 | no remark on parity-game transfer |
 | arXiv 1410.7871 (errata, e-print tex) | section 1 (error only in RF = RF* claim; RF* bound stands; Hansen12/FHZ14 give RF bound), Fig. 1 pseudocode, "not difficult to obtain similar examples for parity games" | 2026-10-15 | |
 | arXiv 2607.06334 (Zwick RAR, e-print tex) | section 4 RAR steps 1-5, Appendix pseudocode (test (c -> b) in H) | 2026-10-15 | same recursion as RF |
+| docs/new/N5-1Oacyc-box24.md, docs/red/R58-n5-width.md §9, docs/new/N5-time-box21.md §2-§3 @ 07f298d | the P-N5-1OA objects and Lemmas R, S, G, Theorem B | 2026-10-24 | fleet documents, not sources; VJ00 (11) and R15/R17 as cited |
 | BRICS RS-00-48 (same pdf, re-downloaded 2026-10-21, sha256 verified) | §4.1-4.5, §5.1 (3)-(10) with the "⊵" half of (4)/(6) re-derived, §5.2 Prop. 5.1, Lemma 5.2, (11); §7 Prop. 7.4 (p. 27, no proof) | 2026-10-22 | used for (F1) in R2-N5-1P §2; Lemma 5.8 not used |
 | BRICS RS-00-48 (Vöge-Jurdziński, pdf sha256 485a12de432a2a8c...) | §3 P1/P2/I1/I2, Thm 3.1; §4.1-4.5 (Θ, E, E_ℓ, Ẽ_ℓ, ⊕, multiset MaxDiff); §5.1 (3)-(10); Prop 5.1, Lemma 5.2, (11); Prop 5.3-5.6, Lemma 5.5, 5.7, 5.8 (+proof), 5.9, Prop 5.10; §5.6 | 2026-10-18 | Lemma 5.8 2=>3 proof step false at cycle nodes; I1 and I2 fail (R2-N5T §4) |
 | TARGET.md v1.0 | section 1 vocabulary (max-parity, successor condition, priorities 0..n) | 2026-10-14 | T-A1 uses nothing about the priority range |

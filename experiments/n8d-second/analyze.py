@@ -73,7 +73,7 @@ def family(f):
     t1 = {r["N"]: r for r in rows(os.path.join(LN, f"{f}.r1.csv"))} if os.path.exists(os.path.join(LN, f"{f}.r1.csv")) else {}
     t2 = {r["N"]: r for r in rows(os.path.join(LN, f"{f}.r2.csv"))} if os.path.exists(os.path.join(LN, f"{f}.r2.csv")) else {}
     ts = {}
-    for name in ("growing.r2seeds.csv", "sbe.r2seeds.csv"):
+    for name in ("growing.r2seeds.csv", "sbe.r2seeds.csv", "switchallexp.r2seeds.csv"):
         for r in rows(os.path.join(LN, name), SEEDF):
             if r["family"] == f:
                 ts.setdefault(r["N"], set()).add((int(r["seed"]), int(r["pivots"]), int(r["pivots_dual"])))

@@ -1,0 +1,4 @@
+r2 gz1.pg seed 1: steps 63; lane sizes A1 8, B1 25, C1 22
+switches per lane: A1 8, B1 25, C1 28
+closings per lane: A1 1, B1 1, C1 1
+events: 1:w1->A1 19:close A1 34:close B1 56:close C1 57:open C1 60:u1->d1

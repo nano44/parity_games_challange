@@ -1,0 +1,9 @@
+start oracle True truth True
+  v=2 try u=3 (s=1.000): oracle True, truth True
+  v=7 try u=10 (s=0.967): oracle True, truth False
+FIRST WRONG ACCEPT at v=7 u=10: N10b gap written to /home/user/parity_games_challange/experiments/new/esc/instances/esc_gap_from_r1569.pg
+  v=8 try u=6 (s=1.000): oracle True, truth False
+  v=10 try u=1 (s=0.933): oracle False, truth False
+  v=10 try u=11 (s=0.067): oracle False, truth False
+  v=10 try u=9 (s=-0.000): oracle False, truth False
+STUCK at v=10

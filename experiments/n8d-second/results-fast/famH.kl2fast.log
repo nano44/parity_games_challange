@@ -1,0 +1,67 @@
+famH 0 r1  0 9 0.001 zlk OK
+famH 0 r2 1 0 5 0.001 zlk OK
+famH 0 r2 2 0 17 0.001 zlk OK
+famH 0 r2 3 0 7 0.001 zlk OK
+famH 0 r2 4 0 11 0.001 zlk OK
+famH 0 r2 5 0 35 0.001 zlk OK
+famH 0 r2 6 0 27 0.001 zlk OK
+famH 0 r2 7 0 7 0.001 zlk OK
+famH 0 r2 8 0 27 0.002 zlk OK
+famH 0 r2 9 0 3 0.000 zlk OK
+famH 0 r2 10 0 9 0.001 zlk OK
+famH 1 r1  0 9 0.001 zlk OK
+famH 1 r2 1 0 5 0.001 zlk OK
+famH 1 r2 2 0 17 0.001 zlk OK
+famH 1 r2 3 0 7 0.001 zlk OK
+famH 1 r2 4 0 11 0.001 zlk OK
+famH 1 r2 5 0 35 0.001 zlk OK
+famH 1 r2 6 0 27 0.001 zlk OK
+famH 1 r2 7 0 7 0.001 zlk OK
+famH 1 r2 8 0 27 0.001 zlk OK
+famH 1 r2 9 0 3 0.000 zlk OK
+famH 1 r2 10 0 9 0.001 zlk OK
+famH 2 r1  0 9 0.001 zlk OK
+famH 2 r2 1 0 5 0.001 zlk OK
+famH 2 r2 2 0 17 0.001 zlk OK
+famH 2 r2 3 0 7 0.010 zlk OK
+famH 2 r2 4 0 11 0.001 zlk OK
+famH 2 r2 5 0 35 0.001 zlk OK
+famH 2 r2 6 0 27 0.001 zlk OK
+famH 2 r2 7 0 7 0.001 zlk OK
+famH 2 r2 8 0 27 0.001 zlk OK
+famH 2 r2 9 0 3 0.001 zlk OK
+famH 2 r2 10 0 9 0.001 zlk OK
+famH 3 r1  0 9 0.001 zlk OK
+famH 3 r2 1 0 5 0.001 zlk OK
+famH 3 r2 2 0 17 0.001 zlk OK
+famH 3 r2 3 0 7 0.001 zlk OK
+famH 3 r2 4 0 11 0.001 zlk OK
+famH 3 r2 5 0 35 0.001 zlk OK
+famH 3 r2 6 0 27 0.001 zlk OK
+famH 3 r2 7 0 7 0.001 zlk OK
+famH 3 r2 8 0 27 0.002 zlk OK
+famH 3 r2 9 0 3 0.001 zlk OK
+famH 3 r2 10 0 9 0.001 zlk OK
+famH 4 r1  0 9 0.001 zlk OK
+famH 4 r2 1 0 5 0.001 zlk OK
+famH 4 r2 2 0 17 0.001 zlk OK
+famH 4 r2 3 0 7 0.001 zlk OK
+famH 4 r2 4 0 11 0.001 zlk OK
+famH 4 r2 5 0 35 0.001 zlk OK
+famH 4 r2 6 0 27 0.001 zlk OK
+famH 4 r2 7 0 7 0.001 zlk OK
+famH 4 r2 8 0 27 0.001 zlk OK
+famH 4 r2 9 0 3 0.001 zlk OK
+famH 4 r2 10 0 9 0.001 zlk OK
+famH 5 r1  0 9 0.001 zlk OK
+famH 5 r2 1 0 5 0.001 zlk OK
+famH 5 r2 2 0 17 0.001 zlk OK
+famH 5 r2 3 0 7 0.001 zlk OK
+famH 5 r2 4 0 11 0.001 zlk OK
+famH 5 r2 5 0 35 0.002 zlk OK
+famH 5 r2 6 0 27 0.001 zlk OK
+famH 5 r2 7 0 7 0.001 zlk OK
+famH 5 r2 8 0 27 0.001 zlk OK
+famH 5 r2 9 0 3 0.001 zlk OK
+famH 5 r2 10 0 9 0.001 zlk OK
+done: 0 failures

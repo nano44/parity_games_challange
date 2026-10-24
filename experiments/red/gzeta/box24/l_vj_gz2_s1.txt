@@ -1,0 +1,4 @@
+vj gz2.pg seed 1: steps 824; lane sizes A1 16, A2 16, B1 50, B2 200, C1 44, C2 44
+switches per lane: A1 48, A2 16, B1 150, B2 392, C1 132, C2 78
+closings per lane: A1 2, A2 1, B1 2, B2 1, C1 2, C2 1
+events: 105:close B1 189:close C1 194:u1->d1 271:w1->A1 321:close A1 538:close B2 582:close C2 585:u2->d2 586:u1->u2 587:w2->A2 588:open B1 590:open A1 667:close A2 668:w1->w2 669:open C1 762:close B1 806:close C1 808:u1->d1 809:w1->A1 824:close A1

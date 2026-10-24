@@ -1,0 +1,2 @@
+STUCK counter_symsi_3.pg YE n=32
+STOPPED by L-NEW at 20:58Z after about 49 min, before the summary line. Argument order: counter_core_1..3, counter_dp_1..3, counter_m_1..3, counter_ortl_1..3, counter_qpt_1..3, counter_rob_1..2, counter_rr_1..3, counter_symsi_1..3, tc+_1..2, tc_1..2, switchallexp_N3, sa/instances/peel_r*, esc/instances/*. Every game before counter_symsi_3 finished without STUCK (lines print in order); games after it: unknown.

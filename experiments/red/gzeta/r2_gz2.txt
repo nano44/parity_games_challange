@@ -1,0 +1,5 @@
+gz n 2 seed 1: 389,14,7,r2s1,0,405,verified,19.4 wall 19 s | zielonka(oink zlk) OK strategies verified
+gz n 2 seed 2: 389,14,7,r2s2,0,421,verified,19.9 wall 20 s | zielonka(oink zlk) OK strategies verified
+gz n 2 seed 3: 389,14,7,r2s3,0,389,verified,18.0 wall 18 s | zielonka(oink zlk) OK strategies verified
+gz n 2 seed 4: 389,14,7,r2s4,0,408,verified,39.3 wall 40 s | zielonka(oink zlk) OK strategies verified
+gz n 2 seed 5: 389,14,7,r2s5,0,404,verified,18.7 wall 18 s | zielonka(oink zlk) OK strategies verified
