@@ -340,3 +340,9 @@ Answered from trunk 8f039f1e (RESULTS R1-R18, DE1-DE34, NOW.md, N5-STANDDOWN.md)
 
 ## 2026-10-24T12:35Z relayed: Lead 2026-10-24 12:36Z — NOW.md refreshed (trunk 921e961); partial spend reading 12:30Z: Lead $506, OWNER-DESK $159,
 CHECKER $39, L-NEW 8 $32, REFEREE (Fable) $31, L-RED 13 $24, REFEREE-2 (Fable) $22, L-NEW 9 $11; no overage; last full total ~$2,050 (10-18).
+
+## 2026-10-24T12:42Z owner (instruction)
+> Then keep working as I told you to
+Desk reading: the owner does not want the fleet idle. Standing instructions D13 ("Keep working on the dtl and also c"), D14 (untested
+approaches, the fleet's own included) and D15 ("Be autonomous, reason about it") apply: resume work and generate new directions
+autonomously instead of waiting for an outside idea. Relayed verbatim to the Lead, priority now.
