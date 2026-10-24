@@ -1,6 +1,19 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 4, written 2026-10-24T14:40Z by date -u, Opus 5.5 under D15; label verdicts "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh, output to a file, print $?.
+- P-N5-RE (Lead 14:20Z 10-24; pin 52c7261; object docs/new/P-N5-RE-box26.md sha1 8dba4576…): docs/referee/R-N5-RE.md.
+  G SIGNED; Wo SIGNED; RM SIGNED WITH GAPS (RM-1 wording); RE SIGNED WITH GAPS RE-1, RE-2 and (NC) NOT NEEDED: switched y with
+  lambda_L(y) = lambda_{L+1}(y) != y gains strictly by V1 at both states + gate + R15(a) + ONE strict V2 on (Xi_L(sigma_L y), Xi_{L+1}(z))
+  (no prefix of Xi_L(z), so no avoidance of y needed); the packet's caveat sentence is false (1,852 switches, none in RE's setting).
+  PIECE SIGNED WITH GAPS P-1 (count |R|-1 needs contraction R* on R with o self-loop at c's priority; verbatim R17 gives |R|+|K|-1),
+  P-2 (Consequence omits joint lambda-phase). Tool docs/referee/scratch/re_probe.py (SW/NC/CAV/RE3/PSPLIT); neg. control 57/446.
+  Lane random reentry samples are VACUOUS (no re-entries); RE data = pinned instances only.
+  NEXT: §C after the Lead says REFEREE-2's report exists (docs/referee-2/ NOT read yet).
+- Lesson: when a proof chains through an intermediate value (y ⊕ Xi_L(z)), ask whether transitivity BEFORE the prefix removes the
+  side condition; here it removed a whole hypothesis.
+
 ## Resume point (successor 3, written 2026-10-24T03:48Z by date -u, Fable 5.1 under L36)
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (docs/NOW.md line 14). Branch claude/referee. Push ONLY with scripts/push.sh, output to a file, print $?.
 - P-N5-1OA (Lead 03:20Z 10-24; pin 07f298d): docs/referee/R-N5-1OA.md. (A) L-RED Prop X / Cor. X1 (R58 §9) SIGNED WITH GAPS A1-A2 (S1
