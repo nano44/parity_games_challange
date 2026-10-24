@@ -1,0 +1,20 @@
+step 3: fitness 4
+step 53: fitness 5
+step 61: fitness 6
+step 67: fitness 7
+step 78: fitness 19
+step 93: fitness 24
+step 107: fitness 54
+step 108: fitness 55
+step 145: fitness 59
+step 167: fitness 76
+step 182: fitness 78
+step 252: fitness 79
+step 259: fitness 80
+step 268: fitness 86
+step 339: fitness 88
+step 364: fitness 110
+step 396: fitness 114
+FINAL 114 {'P3_transitions': 6, 'P3_pieces_nontrivial': 3, 'G-NH-1_S4a_steps_notH2': 6, 'G-NH-1_single_switch_checks': 0, 'G-NH-1_single_switch_checks_x_on_W_cycle': 0, 'G-NH-1_R*_arena_not_optimal(notH2)': 0, 'R3_checks': 6, 'runs': 5}
+over the climb: {'P3_transitions': 476, 'P3_pieces_nontrivial': 282, 'G-NH-1_S4a_steps_notH2': 476, 'G-NH-1_single_switch_checks': 8, 'G-NH-1_single_switch_checks_x_on_W_cycle': 0, 'G-NH-1_R*_arena_not_optimal(notH2)': 0, 'R3_checks': 2224, 'runs': 2005}
+RESULT OK violations=0

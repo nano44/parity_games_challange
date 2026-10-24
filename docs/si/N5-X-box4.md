@@ -12,6 +12,13 @@ ASSUMPTIONS (one line each):
 - A2: one joint λ-phase (box 28 convention: (λ_Ξ, λ_U, τ(o)) constant), so τ is fixed.
 - A3: (h), or a named clause of it, only where a statement says so.
 
+## Correction (box 5, 2026-10-24 20:4xZ)
+- s_rt32_final (experiments/si/orlens/instances, sha1 93ba6aa3) is NOT in 𝒞^1O: it has Odd choice vertices 14 and 28. The box 28 tools
+  silently took the first one.
+- Every count below that says "31 instances" includes it. The in-class set has 30 instances. (U*-DROP) fails 15/15 on in-class
+  instances, not 19/19.
+- No lemma is affected. docs/si/P-N5-Z-box5.md carries the corrected counts. xclass.annotate now asserts one Odd choice vertex.
+
 ## 0. Results in short
 - PROVED (L-SI succ. 2): **Lemma ACT** (§2). Every crossing transition has an ACTIVE crosser, i.e. a switched vertex whose own
   membership changes:
@@ -51,7 +58,8 @@ ASSUMPTIONS (one line each):
   - DATA: on all 31 instances the W-lowering transitions are exactly the evicting fallbacks.
   - CONJECTURE (W-LAY), "≤ n − 1 W-changing transitions between W-lowerings", is FALSE: thclimb_n16_s12 has 16 at n 16. Trusted
     progress is gated by θ, because each θ-rise unblocks one entry.
-- OPEN: (Z) reversals of R per joint λ-phase; (NH′) as before. G-N5-TIME stays OPEN.
+- OPEN: (Z) reversals of R per joint λ-phase. Its hard part is (C), the number of carries (evicting fallbacks), §10. (NH′) as before.
+  G-N5-TIME stays OPEN.
 
 ## 1. Why crossings reduce to reversals (the idea in one paragraph)
 - READING. Entries come in monotone runs: R only grows until something evicts. Evictions are almost always fallbacks at throttled
@@ -231,7 +239,7 @@ reverify.sh (n5.py, Oink zlk OK, strategies verified).
 - Z went 7 → 18 at n 32 (Z < n). Carries per phase went 8 → 13, still below θ-changes + 1. Shape: the carries are spread out (short
   increment runs between them), not nested blocks. This is the opposite of box 3's replay structure, whose single carry replays a
   long block.
-- READING: Z is climbable to about n/2 at n 32 within 50 min. Growth with n is not measured yet (§10).
+- READING: Z is climbable to about n/2 at n 32 within 50 min. Growth with n: §10.
 
 ## 7. Natural potentials tested, and why each fails (PROVED-by-instance or DATA as labelled)
 Box 3 asked for a potential that rises at every INR/crossing and is not restored by o-free progress. Each candidate below is a
@@ -341,3 +349,22 @@ Files (experiments/si/xing/):
 - lclimb.py (climb on Z);
 - reverify.sh;
 - instances/nofe_cyc_n8.pg + .start.
+
+## 10. Z versus n (DATA; lclimb.py, 55 min each, 19:10-20:04Z; bests pinned and re-verified)
+| best (seed) | n | sha1 | n5 it/fb | T | X | Z | carries | how the reversals happen |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| zcl_cu_n24 (x31_cu24) | 24 | cf88f5ab | 21/0 | 20 | 14 | 11 | 0 | arena only; 7 '±'; T < n |
+| zcl_fb2_n32 continued 55 min (seed 14) | 32 | (no gain) | | 61 | 40 | 18 | 13 | carries (§6) |
+| zcl_cu_n48 (x31_cu48) | 48 | efe301af | 39/0 | 38 | 37 | 22 | 0 | arena only, mostly Ξ = W states; 9 '±'; T < n |
+| zcl_rx_n48 (x31_rx48) | 48 | 02f84cd0 | 30/0 | 28 | 27 | 18 | 0 | arena only; 9 '±'; T < n |
+Oink zlk OK and strategies verified for all three new files. WM: 0 violations.
+- READING: the climb found two mechanisms for Z.
+  - (i) **Carries**: W-lowering fallbacks at THR states. Max 13 per phase at n 32; none found at n 48 within the budget.
+  - (ii) **Arena reversals and '±' transitions** in phases where every transition changes W and the phase is shorter than n.
+- (ii) is the shape that Lemma EQ (box 28; ≤ n − 1 value-changing transitions per maximal Ξ = W run) and R20 (throttled stretches
+  with u* ≠ none) already bound piecewise.
+- So the quantity a proof must bound is the number of carries per joint λ-phase. Call it (C): W-lowering transitions. By WM these are
+  evicting fallbacks. Together with the EQ/THR pieces between carries, it is the whole of (Z).
+- No super-linear growth was seen. No climb exceeded Z = n/2 or carries = 13. Budgets were short and n ≤ 48: this is not evidence of a
+  polynomial bound.
+- OPEN (carry form): (C), the number of evicting fallbacks per joint λ-phase, is poly(n). Data: ≤ 13 (zcl_fb2_n32, zcl_rx_n32).

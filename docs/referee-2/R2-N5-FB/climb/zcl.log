@@ -1,0 +1,6 @@
+start 0
+11 102 1 0 2
+147 103 1 0 3
+158 104 1 0 4
+TOTALS {'LINK_sbar_minimiser': 95482, 'LINK_states': 11952, 'T_checks': 165816, 'T_checks_nontrivial': 29041, 'T_hyp_fails': 175752, 'transitions NC=False tame=False inphase=False': 1825, 'SIa_converse_checks': 2482, 'NC_fail_and_nontame': 1825, 'M_rose_at_nontame': 869, 'transitions NC=False tame=True inphase=True': 6, 'NC_fail_but_tame': 10, 'SIb_hyp': 4016, 'MONO_checks': 7727, 'NOINF_checks': 6844, 'OFF_checks': 79606, 'transitions NC=True tame=True inphase=True': 3523, 'SIa_checks': 4109, 'runs': 2400, 'transitions': 9552, 'fallbacks': 1455, 'phases': 2459, 'phase_fallbacks': 1445, 'W_lowering_in_phase': 67, 'transitions NC=False tame=True inphase=False': 1364, 'transitions NC=True tame=True inphase=False': 2834, 'NOINF_fallbacks': 1445, 'FB_tame_fallbacks_checked': 1445, 'LINK_sbar_not_minimiser_at_own_cycle_node (FIX 2 DFS; VJ00 p.14 differs)': 28}
+RESULT OK violations 0

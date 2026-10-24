@@ -1,0 +1,21 @@
+LR_edges: 4625
+LR_edges_optimiser: 4267
+LR_full_optimal: 4122
+LR_setopt_deleted u==x:True owner_x:1: 7
+TB_key_checks: 3746
+TB_key_nontrivial: 18
+TB_step2 x_on_cycle_only: 17
+TB_step2 x_on_play:False: 3231
+TB_step2 x_on_play:True: 17
+WC_intervals(notH1notH2): 4
+WC_intervals(notH2): 4
+fallbacks: 0
+intervals: 189
+pieces_EQc: 187
+pieces_P3: 2
+runs: 10
+transitions: 179
+WC_cw_changes_per_stretch: 0
+WC_max: 0
+example LR_setopt_deleted: x32_rand24.pg#3@0 cyclenode=4 x=0 y=0 u=0 val[x]=(4, 4194304, 1) ext=(4, 4194304, 2)
+RESULT OK violations=0

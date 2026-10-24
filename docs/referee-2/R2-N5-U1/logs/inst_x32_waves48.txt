@@ -1,0 +1,33 @@
+CASC_runs_EQc: 10
+LR_edges: 16179
+LR_edges_optimiser: 14931
+LR_full_optimal: 14642
+LR_setopt_deleted u==x:True owner_x:1: 4
+LR_setopt_deleted_xney: 3
+TB_even: 1
+TB_key_checks: 11595
+TB_key_nontrivial: 31
+TB_step2 x_on_cycle_only: 150
+TB_step2 x_on_play:False: 9870
+TB_step2 x_on_play:True: 150
+U1_W_change_transitions: 0
+U1_pieces_checked: 9
+WC_intervals(notH1notH2): 2
+WC_intervals(notH2): 10
+fallbacks: 41
+intervals: 297
+pieces_EQc: 279
+pieces_EQc_nontrivial: 10
+pieces_U1: 9
+runs: 10
+transitions: 312
+CASC_run_len_EQc: 2
+U1_last_kappa_w_change_minus_R: -2
+U1_max_K: 0
+U1_max_Rch: 0
+U1_max_len: 0
+WC_cw_changes_per_stretch: 0
+WC_max: 0
+example LR_setopt_deleted: x32_waves48.pg#6@0 cyclenode=27 x=28 y=28 u=28 val[x]=(27, 140737488355328, 2) ext=(27, 140737488355328, 3)
+example LR_setopt_deleted_xney: x32_waves48.pg#6@0 cyclenode=35 x=9 y=17 u=9
+RESULT OK violations=0

@@ -1,0 +1,15 @@
+ACT_i: 2
+NOFE_edges: 1
+NOFE_tail_is_W_cycle_node: 1
+NOFLE_cor_checks: 1
+StepK_checks: 1
+WM_checks: 1
+fb_in_phase: 1
+phases: 1
+pm_transitions: 0
+runs: 1
+transitions: 2
+literal_run_max: 2
+phase_max_X: 2
+phase_max_Z: 0
+RESULT OK violations=0

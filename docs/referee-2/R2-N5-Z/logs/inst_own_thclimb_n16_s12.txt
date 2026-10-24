@@ -1,0 +1,12 @@
+ACT_i: 143
+ACT_ii: 5
+ACT_ii_cycle_alternative: 1
+WM_checks: 161
+phases: 79
+pm_transitions: 0
+runs: 20
+transitions: 220
+literal_run_max: 10
+phase_max_X: 10
+phase_max_Z: 0
+RESULT OK violations=0

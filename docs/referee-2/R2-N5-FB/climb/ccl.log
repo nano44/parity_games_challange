@@ -1,0 +1,9 @@
+start 1553
+9 1554 15 0 54
+15 1557 15 0 57
+16 1568 15 0 68
+84 1571 15 0 71
+102 1582 15 0 82
+122 1590 15 0 90
+TOTALS {'LINK_sbar_minimiser': 218561, 'LINK_states': 52824, 'T_hyp_fails': 892327, 'T_checks': 876857, 'T_checks_nontrivial': 159633, 'transitions NC=False tame=True inphase=False': 2974, 'MONO_checks': 48437, 'transitions NC=True tame=True inphase=False': 6176, 'transitions NC=True tame=True inphase=True': 37688, 'SIa_checks': 39867, 'SIb_hyp': 39444, 'NOINF_checks': 61113, 'NOINF_fallbacks': 20840, 'OFF_checks': 821127, 'transitions NC=False tame=True inphase=True': 1599, 'SIa_converse_checks': 5522, 'NC_fail_but_tame': 1604, 'transitions NC=False tame=False inphase=False': 1979, 'NC_fail_and_nontame': 1987, 'M_rose_at_nontame': 1841, 'runs': 2400, 'transitions': 50424, 'fallbacks': 21018, 'phases': 2699, 'phase_fallbacks': 20840, 'W_lowering_in_phase': 20834, 'FB_tame_fallbacks_checked': 20840, 'LINK_sbar_not_minimiser_at_own_cycle_node (FIX 2 DFS; VJ00 p.14 differs)': 24, 'transitions NC=False tame=False inphase=True': 8, 'C1O_nontame': 8, 'C1O_nontame lam(o)==o:False': 8, 'CAP_checks': 24}
+RESULT OK violations 0

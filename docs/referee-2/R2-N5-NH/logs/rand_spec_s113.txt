@@ -1,0 +1,18 @@
+F1°_intervals_with_OTHER: 6
+R1_checks: 18179
+TC_case_H1=False_H2=False: 2865
+TC_case_H1=False_H2=True: 544
+TC_case_H1=True_H2=False: 389
+TC_case_H1=True_H2=True: 3556
+TC_iv_EQ_OTHER: 3
+TC_state_checks: 8029
+intervals: 7354
+intervals_multi: 618
+pieces: 5884
+pieces_ct_above_cw: 422
+pieces_ct_eq_cw: 4961
+pieces_cw_above_ct(U1): 501
+runs: 3000
+transitions: 5029
+Cor_max_pieces: 3
+RESULT OK violations=0

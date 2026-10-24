@@ -1,0 +1,32 @@
+CASC_runs_U1: 1
+LR_edges: 2929
+LR_edges_optimiser: 2572
+LR_full_optimal: 2510
+TB_key_checks: 2087
+TB_key_nontrivial: 14
+TB_step2 x_on_cycle_only: 338
+TB_step2 x_on_play:False: 1013
+TB_step2 x_on_play:True: 338
+U1_W_change_transitions: 12
+U1_kappa_w_change_transitions: 12
+U1_nontrivial: 2
+U1_pieces_checked: 5
+WC_intervals(notH1notH2): 10
+WC_intervals(notH2): 19
+fallbacks: 2
+intervals: 48
+pieces_EQc: 23
+pieces_P3: 1
+pieces_U1: 5
+pieces_U1_nontrivial: 2
+runs: 10
+transitions: 81
+CASC_run_len_U1: 1
+U1_last_kappa_w_change_minus_R: -3
+U1_max_K: 0
+U1_max_Rch: 12
+U1_max_len: 12
+WC_cw_changes_per_stretch: 0
+WC_max: 2
+example U1_long: c_u1n32_best.pg#0 piece [0,12] |R|=29 c_theta=27 c_w=8 Rch=12 f=0
+RESULT OK violations=0

@@ -1,0 +1,30 @@
+CASC_runs_EQc: 6
+LR_edges: 1386
+LR_edges_optimiser: 1226
+LR_full_optimal: 999
+LR_setopt_deleted u==x:True owner_x:1: 23
+LR_setopt_deleted_xney: 20
+TB_even: 1
+TB_key_checks: 819
+TB_key_nontrivial: 19
+TB_step2 x_on_cycle_only: 3
+TB_step2 x_on_play:False: 351
+TB_step2 x_on_play:True: 3
+U1_W_change_transitions: 0
+U1_pieces_checked: 5
+fallbacks: 0
+intervals: 30
+pieces_EQc: 30
+pieces_EQc_nontrivial: 6
+pieces_P3: 1
+pieces_U1: 5
+runs: 10
+transitions: 32
+CASC_run_len_EQc: 1
+U1_last_kappa_w_change_minus_R: -3
+U1_max_K: 0
+U1_max_Rch: 0
+U1_max_len: 0
+example LR_setopt_deleted_xney: b_cex_best.pg#1@0 cyclenode=8 x=15 y=0 u=15
+example LR_setopt_deleted: b_cex_best.pg#1@0 cyclenode=8 x=15 y=0 u=15 val[x]=(8, 2147483648, 1) ext=(8, 2147483648, 7)
+RESULT OK violations=0

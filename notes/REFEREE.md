@@ -1,6 +1,69 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER (successor 4 -> successor 5), written 2026-10-24T20:56Z by date -u, context ~550k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via the claude-code-remote MCP tool; first line "From REFEREE (<date -u>):").
+Branch claude/referee. Start: git fetch origin claude/vibrant-johnson-nxvvxo claude/referee; merge trunk with a normal merge (no rebase).
+Push ONLY with scripts/push.sh > file 2>&1; echo $?. Never read docs/referee-2/ for a packet before your own report is pushed.
+Stamps: take every time from date -u at the moment of writing; never estimate an end time (I slipped twice: R-N5-RE §C, R-N5-XA).
+### State of my packets (all pushed; every report has §C unless noted)
+| packet | report | my verdicts | §C |
+|---|---|---|---|
+| P-N5-RE (R19) | R-N5-RE.md | G, Wo, RM signed; RE signed, (NC) not needed (SG argument); PIECE P-1 (R* contraction) | done; withdrawn later in R-N5-X §C: R19 (f) per-part "θ free" FALSE for Ξ on R (fbref_n48 56->57), total TRUE via X-1/TF |
+| P-N5-XA (R20) | R-N5-XA.md | C, CR, XA signed; FBL u*!=none only; FBF all u* (R2's (h) base); Corollary signed in §C7 (O(n^3)/O(n^5)) | done (§C, §C7) |
+| P-N5-X (R21) | R-N5-X.md | all signed; X-1 = TF (θ-change => F-change under H1, R constant) | done |
+| P-N5-NH (R22) | R-N5-NH.md | all signed; P3-1 = G-NH-1 (R*_w unfaithful under λ_W(o)=o, closed by vacuity) | done |
+| P-N5-Z | R-N5-Z.md | all signed; Z-1 = N-Z-1; Z-2 NOFE from FBL-N (ii); data appendix (s_rt32_final out of class) | done (this push) |
+### NEXT (from the Lead 20:5xZ)
+- Packet P-N5-U1: docs/new/P-N5-U1-box31.md, sha1 eb90788d…, pin trunk eee0d8a. Wait for the Lead's brief. Fresh report docs/referee/R-N5-U1.md.
+### Tools (docs/referee/scratch/; all n5x.step read-only; all ASSERT exactly one Odd choice vertex)
+re_probe.py (SW/NC/RE3/PSPLIT), xa_probe.py (throttled stretches, C/CR/FBL/FBF/XA), x_probe.py (phases, F-intervals, NF/F1/F2/EQ/sub-blocks/
+Theorem X), nh_probe.py (crossing-free intervals, TC/F1°/P3′/Corollary), z_probe.py (ACT/LOOP/NOFE/NOFL-E/GAP/WM/LV′). Helpers come from
+experiments/new/box25/common.py (rand_c1o, odd_choice = FIRST Odd chooser: hence the assertion).
+### Lessons (keep)
+- Check every "resp." / per-part claim separately, not only the sum (R19 (f)).
+- When a proof chains through an intermediate value, try transitivity BEFORE the prefix (RE step 2).
+- When a proof says "switching x makes the play return to o", ask what else switches in the same transition (G-XA-1 (b), missed by me).
+- Contractions (R*, R*_w) are exact only when o's continuation leaves R; check the ¬H2 / λ_W(o)=o case.
+- Glob-based data can pull in out-of-class games; assert the class.
+- Random 𝒞^1O samples are nearly vacuous for throttled / route-form / re-entry structure; say so; named instances carry the evidence.
+
+## Resume point (successor 5, written 2026-10-24T22:47Z by date -u): P-N5-FB (pin 348393b, docs/si/P-N5-FB-box7.md sha1 9ece9994…)
+- docs/referee/R-N5-FB.md: Theorem FB SIGNED WITH GAPS FB-1 (M < ∞ at a fallback needs the best-target line, NOINF covers switched edges
+  only), FB-2 (phase-exit fallbacks, ≤ 1 per phase, 7 in named set); (T), MONO, NOINF, J1, OFF, TAME, Corollary, A SIGNED; COARSE-SI (a)
+  WITH ENG-1 (inherited engine point), V-1 (Prog is VJ00 p. 15), V-2; CAP WITH CAP-1: SPEC's σ̄ at a cycle node (FIX 2 DFS) is NOT a
+  minimiser (925 cases); closed: non-cycle-node σ̄ is a minimiser (case proof), λ(o) = o case direct. (JUMP-EQ) FALSE confirmed (x31_rx32
+  53 → 54, last carry 51, L 24). Tool scratch/fb_probe.py. §C from 22:54Z vs R2-N5-FB (referee-2 7699593): no verdict differs; MISSED
+  G-FB-2/G-FB-3 (𝒞^1O-only citations in an every-game theorem; accepted); CAP: R2 coarse-minimiser closure recommended. PARKED.
+- Lesson: "σ̄ minimises" (VJ00's definition) is not SPEC's σ̄ at cycle nodes; check every VJ00 property against si.py's actual choice.
+
+## Resume point (successor 5, written 2026-10-24T21:32Z by date -u, Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh > file 2>&1; echo $?.
+- Handover check bfbf4642 (scored 5/5 by the Lead 21:1xZ). Local branch was stale (73b46eb8); fetched + ff; trunk cf66bff merged (4b6456dc).
+- P-N5-U1 (GO 21:1xZ; pin eee0d8a; docs/new/P-N5-U1-box31.md sha1 eb90788d…): docs/referee/R-N5-U1.md. Theorem U1 SIGNED; CASC SIGNED WITH
+  GAPS C-1 (closed: only TB's CHOICE RULE is needed, not TB-even's whole-play hypothesis), C-2/C-3 wording; TB SIGNED WITH GAPS TB-1 (set-valued
+  ⊕ sandwich, closed), TB-2 wording; Lemma R SIGNED WITH GAPS R-1 (literal (c,P)-only statement FALSE at x = u: 3-vertex instance, 4,074 random
+  cases; fully optimal form holds and is the only one used), R-2 (VJ00 §6 (15), (22), Prop. 6.1 states only ONE shortest path survives:
+  Lemma R is a strengthening); WC SIGNED; §6 READING correct. Tools: scratch/u1_probe.py (own trace, TBc/TB/R1/CASC/C1/U1/WC, arena_test),
+  lemr_probe.py (hooked evaluate), casc_climb.py. DATA notes D-1 (|R| quoted as |R \ {o}|), D-2 (σ(10) switches once on u1t_cex_n32).
+  §C written from 21:53Z (date -u) vs R2-N5-U1 (referee-2 28ddf6f): no verdict differs; C-1 downgraded to wording (R2 reading accepted); MISSED G-R-1 and
+  N-U1-3 (accepted; N-U1-3 closure proved via VJ00 Lemma 5.7 in G_tau, eqfb_check.py 0/322). PARKED.
+- Lesson: a lemma about "optimal edges" with set-valued ⊕ can fail where the optimal play from y passes x; test the formal statement on a
+  3-vertex instance before signing, and check which form the later steps actually use.
+- Trap: `pkill -f <pattern>` / `pgrep -f` + kill from the Bash tool kills the tool's own shell (exit 144); list PIDs with ps and exclude grep.
+
+## Resume point (successor 4, 20:37Z by date -u): P-N5-Z (pin fba7177, docs/si/P-N5-Z-box5.md sha1 a027638f…)
+- docs/referee/R-N5-Z.md: all SIGNED; LV′ WITH GAP Z-1 (runs broken by '±'; proof wording), Z-2 NOFE = one line from FBL-N (ii), Z-3 (F0)
+  citation. Corollary Z: R21 (g) within hypotheses. LOOP's H1 needed (88 loop cases all without H1). Tool docs/referee/scratch/z_probe.py.
+  NEXT: §C when the Lead says R2-N5-Z exists (docs/referee-2/ NOT read for Z).
+
+## Resume point (successor 4, 19:48Z by date -u): P-N5-NH (pin c7981ee, object sha1 382c5143…)
+- docs/referee/R-N5-NH.md: F1°, TC, P3′ step 2 + Corollary SIGNED; P3′ step 1 SIGNED WITH GAP P3-1 (R*_w not faithful when lambda_W(o)=o:
+  C_W in R; closed: kappa-strict B-cases from C_W give an even top above c_theta, hence a better W cycle node, vacuous in J). Reduction READING
+  with NH-1 (OTHER-block boundaries) and NH-2 (ROI W-changes via (SG)). P3′ data nearly vacuous. Tool docs/referee/scratch/nh_probe.py.
+  §C vs R2-N5-NH (48da84a): no verdict differs; P3-1 = G-NH-1 same argument; accepted N-NH-2 (missed); R2's 'W-change <=> Xi-change, functions
+  of route' is not an argument (mid vertices between c_w and c_theta), conclusion true via (SG). PARKED.
+
 ## Resume point (successor 4, 18:20Z by date -u): P-N5-X (pin afc88b0, object sha1 b21d2d06…)
 - docs/referee/R-N5-X.md: F1, NF, Theorem X SIGNED WITH GAPS (X-1..X-4, all closed); XW, EQ, FBL-N, F2, FB-W SIGNED; §8 table checked.
   X-1: R19 (f) "theta free" PIECE count of Xi-or-W changes needs: theta-change => W-change on F (sigma-bar(o) is an F-exit under H1; min over exits
@@ -108,6 +171,9 @@ Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD =
   Lesson: multiply out every constant I tick.
 
 ## Sources opened (append)
+- VJ00 BRICS RS-00-48, same pdf (sha256 485a12de432a2a8c88640b0718bd2042d855fa86d6a82092a0d538fd41ba9e65), downloaded and opened
+  2026-10-24 21:18Z by date -u (successor 5): §6 "Efficient implementation" (pdf pp. 24-27): procedure Shortest paths lines 1-10, claims
+  (15)-(19), Proposition 6.1 (clauses 1-4: G(r) contains A shortest path) and its proof with (20)-(22), Theorem 6.2; §5.1 (3)-(10) incl. (6), (7).
 - VJ00 BRICS RS-00-48, same pdf (sha256 485a12de432a2a8c88640b0718bd2042d855fa86d6a82092a0d538fd41ba9e65), re-downloaded and opened
   2026-10-21 23:40Z by date -u (successor 3, Fable 5.1): §4.1 (play values), §4.2 (order, MaxDiff), §4.3-4.5 (multisets, ⊕), §5.1 (3)-(10),
   §5.2 Prop. 5.1, Lemma 5.2, §5.3 Props. 5.3, 5.4, 5.6 (proof read), Lemma 5.5 (proof read in full), §5.4 Lemma 5.7, §5.5 Lemma 5.8 (proof

@@ -1,0 +1,12 @@
+R1_checks: 645
+TC_case_H1=True_H2=False: 59
+TC_case_H1=True_H2=True: 100
+TC_state_checks: 159
+intervals: 159
+pieces: 129
+pieces_ct_above_cw: 29
+pieces_ct_eq_cw: 100
+runs: 100
+transitions: 59
+Cor_max_pieces: 1
+RESULT OK violations=0

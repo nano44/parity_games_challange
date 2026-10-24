@@ -1,7 +1,110 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point (successor 5, session_01VbMVVvPYCY47wY5MbtLG8w, Opus 5.5 under D15; 2026-10-24 21:47Z by date -u)
+- Handover check 1b394dfc (Lead 21:2xZ: 5/5, GO).
+- P-N5-U1 (docs/new/P-N5-U1-box31.md sha1 eb90788d…, trunk eee0d8a): report docs/referee-2/R2-N5-U1.md.
+  - Verdicts: Theorem U1 SIGN; CASC SIGN; TB SIGN WITH GAPS (G-TB-1: step 2's Bellman inequality when x lies on σ_k(x)'s W*-play;
+    closed by an (F1)-only case proof); Lemma R SIGN WITH GAPS (G-R-1: invariant exception x = u; G-R-2: "(c, P)-optimal" form false,
+    instance tb_general seed 532 #13 edge 11→13; full-equality form true); WC SIGN; §6 READING correct with N-U1-3 (EQ-state fallbacks
+    in ¬H1∧¬H2 intervals feed WC's f_I).
+  - VJ00 re-downloaded and opened (sha256 485a12de…): §6 Prop 6.1 clause 1 is existence only.
+  - Tools: docs/referee-2/R2-N5-U1/ (u1_check.py, tb_general.py, tb_arena.py, u1_climb.py, totals.py, run_all.sh).
+  - Data: batch 11,910 runs + 20,000 arenas; climbs 70,400 runs; 0 violations. Thin spots: K = 0 everywhere, no U1 fallback, CASC never
+    tight.
+- Oink built in this container (scripts/setup_oink.sh, 8fbf0a7).
+- Report pushed 28ddf6fa. §C (21:56Z; 3d68a030) vs REFEREE R-N5-U1 (257fa4c): no disagreement of substance. Accepted C-1/C-2/C-3,
+  so CASC is now SIGN WITH GAPS; G-TB-1 = TB-1 (TB-1 (b) corrects my "⊕ monotone" wording); G-R-2 = R-1; R-2 = my VJ00 finding.
+  N-U1-3 closed by R15 (a) applied in G_τ at EQ states. Withdrew "§6 uses only signed results". Stamp fix: §C header said 21:58Z,
+  true 21:53Z. PARKED.
+- P-N5-FB (docs/si/P-N5-FB-box7.md sha1 9ece9994…, trunk 348393b; Lead 22:3xZ): report docs/referee-2/R2-N5-FB.md (22:47Z).
+  - FB SIGN WITH GAPS (G-FB-1: M<∞ needs the best-target line; G-FB-2: R21 (c) signed on 𝒞^1O only, transfers via S4c + FIX 3).
+  - Corollary SIGN WITH GAPS (G-FB-3: WM signed on 𝒞^1O; (F1) in G_τ transfers it).
+  - (T), SI (a) + converse, TAME, MONO, NOINF, J1, OFF, Remark SIGN.
+  - CAP SIGN WITH GAPS (G-FB-4: SPEC σ̄ = FIX 2 DFS at own-cycle-node Odd vertices is not VJ00's minimiser, 1,228 cases; coarse
+    minimality suffices).
+  - (JUMP-EQ) FALSE confirmed at x31_rx32 53→54; A confirmed (201/201).
+  - Lane logs reproduced byte-identically.
+  - Tools: docs/referee-2/R2-N5-FB/ (fb_check.py, a_check.py, fb_climb.py).
+  - §C (22:55Z) vs REFEREE R-N5-FB (eb1ec3c): no disagreement. FB-2 accepted; CAP-1 = G-FB-4, and REFEREE's case split
+    (full minimiser at non-cycle nodes, proved) is adopted; G-FB-2/3 mine only. PARKED.
+
+## HANDOVER (successor 4, session_01DDRfmJkBTC5uu5q62T2Dme, Opus 5.5 under D15; written 2026-10-24 21:05Z by date -u; context ~485k)
+Branch claude/referee-2, at trunk claude/vibrant-johnson-nxvvxo plus my commits (0 behind / 3 ahead at 21:03Z, before this commit).
+REFEREE-2 owns no docs/GAPS.md rows (G-N5-TIME names "referees later").
+
+### DONE (this session; every report is docs/referee-2/<name>.md; every verdict labelled "(Opus 5.5, D15)")
+| packet | object (sha1) @ pin | report | report SHA | §C SHA (and later addenda) | outcome | landed |
+| --- | --- | --- | --- | --- | --- | --- |
+| P-N5-RE | docs/new/P-N5-RE-box26.md 8dba4576 @ 52c7261 | R2-N5-RE | 3ee7b737 (+ stamp c66da44a) | §C dd5aaa2c; §A 9d3f1fb6 | G, Wo, RM SIGN; RE SIGN without (NC) via (SG); PIECE SIGN WITH GAPS (G-RE-3 closed); N-RE-3 withdrawn (§A) | R19 |
+| P-N5-XA | docs/new/P-N5-XA-box27.md 832d0da2 @ b70aa59 | R2-N5-XA | 9d3f1fb6 | §C 4df15e63 (+ stamps a8c73512, 99998aad); §C2 38af0dff | C, CR, XA SIGN; FBL SIGN for u*≠none, unproved u*=none (G-XA-1 (b), mine, accepted by REFEREE); FBF SIGN; Corollary SIGN via §C5 | R20 |
+| P-N5-X | docs/new/P-N5-X-box28.md b21d2d06 @ afc88b0 | R2-N5-X | 059f492a | §C 3a581a5b | all SIGN; Theorem X SIGN WITH GAPS: G-X-1 = R19 (f) θ-free count (my N-RE-4 was incomplete), closed by Lemma TF / REFEREE X-1; R19 (f) clarification wording is mine (R21 (i)) | R21 |
+| P-N5-NH | docs/new/P-N5-NH-box30.md 382c5143 @ c7981ee | R2-N5-NH | 48da84a1 | §C 8621a847 (+ stamp e7578fe6) | TC, F1°, Corollary SIGN; P3′ step 1 SIGN WITH GAPS (G-NH-1 = P3-1, closed); reduction READING ok; withdrew my §1.3 converse (NH-2) | R22 |
+| P-N5-Z | docs/si/P-N5-Z-box5.md a027638f @ fba7177 | R2-N5-Z | 1a5854b3 | §C fde04482 | all SIGN; N-Z-1 = Z-1 ('±' breaks runs); N-Z-2 s_rt32_final not 𝒞^1O | pending (fixes docs/si/P-N5-Z-fixes-box5.md) |
+| tooling | — | — | 04611c5e | — | every N5 checker asserts exactly one Odd choice vertex | — |
+
+### IN FLIGHT
+None. Parked after R2-N5-Z §C (fde04482).
+
+### NEEDS
+- Lead: route N-Z-1 and N-Z-2 to docs/si/P-N5-Z-fixes-box5.md (the Lead said it will relay).
+- NEXT for my successor: packet P-N5-U1, docs/new/P-N5-U1-box31.md, sha1 eb90788d…, pin trunk eee0d8a. Do not read
+  docs/referee/R-N5-U1.md until your own report is pushed.
+
+### Things only I know
+- Tools (own code; no lane script imported except n5.py's functions in "spec" mode, which only produce N5's state sequence):
+  - docs/referee-2/R2-N5-RE/re_check.py: the base library.
+    - Game, play values (c, P, ℓ) by following plays, the VJ00/SPEC S1 key.
+    - Ξ = pointwise minimum over o's exits (asserted attained by one exit); U = Even's one-player optimum by switch-all SI.
+    - Iσ, Iτ.
+    - Own N5 (n5_own) with RANDOM tie-breaks in S4a, plus random value-preserving re-choices among optima (the lemmas use only (F1),
+      so they must hold for every optimum).
+    - n5_spec: n5.py's step functions, read-only.
+    - analyse() gives per-state Ξ, W, U, R (o included), π, (h), θ, w.
+    - rand_game builds o-cyclic 𝒞^1O by construction.
+    Its siblings: re_climb.py (mutate() is reused by every later climb), re_notau.py, dump_nc.py, totals.py (sums logs; any key with
+    "_max" is a max).
+  - R2-N5-XA/xa_check.py (coarse order, throttled stretches, FBL/FBF/CR/XA), xa_climb.py, piece_flatfb.py.
+  - R2-N5-X/x_check.py (XW, EQ, FBL-N, NF, F1, F2, TF, PIECE θ-free split, Theorem X bounds, (w, u*)-runs, FB-W), dump_tf.py
+    (the G-X-1 instance printer; the Lead re-ran it).
+  - R2-N5-NH/nh_check.py (F1°, TC, P3′ with the G-NH-1 probe: 𝓡*_w-arena optimum test and single-switch inequality), nh_climb.py.
+  - R2-N5-Z/z_check.py (Step (K), ACT, LOOP, NOFE, NOFL-E, GAP, WM, LV′ incl. the literal-run reading, Corollary Z), dbg_k.py.
+  - Each directory has a run_all.sh and logs/ (and climb/). Run each script from its own directory.
+- The one-o assert (04611c5e). Every inst path now refuses games without exactly one Odd choice vertex. Before that, the inst paths
+  silently took the first one.
+  - This bit once: s_rt32_final (Odd choices 14, 28) gave 14 false Step (K) "failures" under SPEC.
+  - Out-of-class files in the fleet (Lead 20:5xZ): box21 fts_best24/39, fts_g29/43, fts_ph16; si/orlens s_rt32_final; red/n5inj
+    bribe_cex_n15, elimn_cex_n48, frz32, frz40, phase2_pk32/48, returns_rt32/64, wide_h16.
+- Oink is built in this container only (scripts/setup_oink.sh); a fresh container must rebuild it before check_sol2.py.
+- Lessons.
+  - Random 𝒞^1O runs are nearly vacuous for the interesting configurations: θ-equal re-entries, throttled fallbacks, P3′ pieces,
+    FB-W evictions. Climbs seeded from the lane's instances are what produce them: tr20_s4 and c12_s54 for RE, wf0_cex_n16 for P3′.
+    Say so whenever data is thin.
+  - Check every "θ free" or "w free" extension at the COUNT level as well as at the gate level. My own N-RE-4 missed that Ξ on R moves
+    with θ (G-X-1).
+  - Prove a statement about a single switch before trusting a contraction (G-NH-1): contracted games are not faithful when o's
+    continuation runs through R (¬H2).
+  - Take `date -u` IMMEDIATELY before writing a stamp. I wrote stamps ahead of the clock three times (R2-N5-RE header, R2-N5-XA §C,
+    R2-N5-NH §C) and fixed each in a separate commit.
+  - Never pipe push.sh. I always redirected it to scratchpad/pushN.log and printed $?.
+
+## Archive: the notebook before this handover (verbatim)
+
 ## Resume point
+2026-10-24 20:42Z P-N5-Z (docs/si/P-N5-Z-box5.md sha1 a027638f…, trunk fba7177): docs/referee-2/R2-N5-Z.md. All SIGN: LV' (N-Z-1: runs
+must be adjacent among crossing transitions; '±' breaks them), Corollary Z (R21 (g) within hypotheses), NOFE strong, ACT, LOOP, NOFL-E, GAP,
+WM, Step (K). N-Z-2: s_rt32_final is NOT C^1O (Odd choices 14, 28); my checker falsely "failed" Step (K) on it before I added the C^1O
+guard. Tool R2-N5-Z/z_check.py. Context ~470k.
+§C (20:55Z) vs REFEREE R-N5-Z (c818ef2/555cbeb): full agreement; Z-1 = N-Z-1; accepted Z-2 (NOFE from FBL-N (ii)) and Z-3;
+class question: X/NH never ran on out-of-class files; all checkers assert one Odd choice (04611c5e). PARKED. Next packet P-N5-U1 (eee0d8a).
+Earlier:
+2026-10-24 19:49Z P-N5-NH (docs/new/P-N5-NH-box30.md sha1 382c5143…, trunk c7981ee): docs/referee-2/R2-N5-NH.md. TC, F1°, P3' steps 2-3,
+Corollary SIGN; P3' step 1 SIGN WITH GAPS (G-NH-1: "S4a optimum restricted to R is an R*_w-arena optimum" unjustified under not-H2,
+lambda_W(o)=o; closed: CR needs only B1 single-switch inequality; x not on C_W: real = contracted; x on C_W: vacuous, top of pi_z even
+above o would move lambda_W). Reduction READING correct. Tools R2-N5-NH/nh_check.py, nh_climb.py. Context ~440k.
+§C (20:01Z; stamp corrected from 20:03Z) vs REFEREE R-N5-NH (78d61b1): full agreement; P3-1 = G-NH-1, same proof; accepted sharper count, NH-2 (SG);
+withdrew my §1.3 converse (W-change on R need not be a Xi-change at that vertex). PARKED.
+Earlier:
 2026-10-24 18:34Z P-N5-X (docs/new/P-N5-X-box28.md sha1 b21d2d06…, trunk afc88b0): docs/referee-2/R2-N5-X.md. F1, NF, XW, EQ, FBL-N, F2,
 FB-W SIGN; table agree; Theorem X SIGN WITH GAPS: G-X-1 = R19 (f) "theta free" (my N-RE-4) misses Xi-changes on R from theta (fbref_n48
 56->57, R={o}); closed by Lemma TF (theta-change under (h) both ends => Xi-change on F, theta = min over F-exits). Amend R19 (f).
