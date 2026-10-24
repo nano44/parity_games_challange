@@ -122,7 +122,10 @@ Corollary (READING, since it uses Lemma CR; L-NEW). In a throttled (θ, w)-stret
   and by PIECE (packet §5):
       value-changing transitions(S) ≤ (n − 1)·(5n + 4n(n − 1) + 4·FB-RE(S) + 1).
 - So inside a throttled (θ, w)-stretch everything is polynomial except (FB-RE).
-OPEN (FB-RE): re-entries, inside one throttled (θ, w)-stretch, of vertices whose last leave was forced by a fallback.
+- (FB-RE) = 0 by Lemma FBF (§5, PROVED). The bound is therefore O(n²) crossings and fallbacks per throttled stretch (READING, via
+  Lemma CR).
+(FB-RE), as first stated (superseded by §5): re-entries, inside one throttled (θ, w)-stretch, of vertices whose last leave was forced
+by a fallback.
 - By Lemma RE each such re-entry strictly improves x's route (θ constant). It may do so below u*, with no coarse gain.
 - DATA (coarsecheck.py, reentry.py): 0 inside a stretch on every pinned instance.
   - returns_rt48: one throttled stretch of 40 transitions with 42 fallback leaves, 0 re-entries inside it.
@@ -132,7 +135,58 @@ OPEN (FB-RE): re-entries, inside one throttled (θ, w)-stretch, of vertices whos
 N5 on o-cyclic 𝒞^1O is polynomial if the following are poly(n) per joint λ-phase:
 - (a) (θ, w)-stretches, i.e. θ-changes plus w-changes. (CYC) and Lemma Wo: w is monotone, but its changes are not otherwise
   bounded.
-- (b') (FB-RE) per throttled stretch.
+- (b') (FB-RE) per throttled stretch. CLOSED by Lemma FBF (§5): it is 0.
 - (d) Transitions at states where (h) fails.
 Unthrottled stretches are bounded by Lemma PT + R17 (§0). Throttled stretches are bounded by §3 given (b').
 Fallbacks are no longer a separate item inside throttled (h)-stretches: §3 bounds the non-flat ones and R15 (d) the flat ones.
+
+## 5. Lemma FBF: after a throttled fallback, R is frozen for the rest of the stretch (PROVED, L-NEW, 14:42Z)
+Statement. Let an Even S4c fallback happen at transition L at a throttled (h)-state. Then for every later state t of the same
+(τ, joint-λ, θ, w)-stretch (with (h) at every state):
+- R_t ⊆ R_{L+1};
+- every v ∈ R_t has the same route as at L;
+- no vertex enters R at any transition in [L+1, t).
+Proof.
+1. At L the S4a arena optimum is σ_L (a stall). By (F1) no gate edge at L is W-improving. In particular, at L:
+   - (i) no R → R edge is in the gate: R → R edges are honest-improving iff route-improving iff W-improving (Lemma G (c));
+   - (ii) no F → R edge is in the gate: an honest-improving entering edge is W-improving, since w ⊵ θ.
+2. The fallback switches only leaves (Lemma FBL). A vertex of R_{L+1} has an unchanged path: had its path met an evicted vertex, it
+   would follow that vertex's new o-free path and be outside R. So the routes of R_{L+1} are the L-routes, with the same values
+   (θ and w are unchanged).
+3. Induction on t. Assume R_t ⊆ R_{L+1}, the routes are as at L, and no entry has happened.
+   - R → R edges (x, z) at t: route values are as at L, so (x, z) is route-improving at t iff at L. By (i) none is.
+   - F → R edges (y, z) at t, with z ∈ R_t: Ξ_t(z) = π_z ⊕ θ = Ξ_L(z).
+     - If y ∈ F_L, then along y's switches since L each new successor had strictly higher honest value at its switch, and R15 (a)
+       keeps those values from falling. So Ξ_t(σ_t(y)) ⊵ Ξ_L(σ_L(y)) ⊵ Ξ_L(z) by (ii).
+     - If y was evicted at L (y ∈ R_L), its new successor z* satisfies Ξ_L(z*) ▷ Ξ_L(σ_L(y)) (a gate edge). Also
+       Ξ_L(σ_L(y)) ⊵ Ξ_L(z) for every z ∈ R_L, by (i) applied to y. Then R15 (a) along y's later switches gives the same conclusion.
+     So no F → R edge is honest-improving at t, and none is in the gate.
+   - Every step switches only gate edges, arena or fallback alike. So no vertex of R switches to another R-vertex, and no vertex
+     enters R; R can only lose vertices. The routes of the remaining R-vertices are unchanged, and the hypothesis holds at t+1. □
+DATA (box25/fbfcheck.py): 0 entries and 0 route changes in 141 post-fallback transitions after 39 throttled fallbacks:
+- fts_best16, theta_tp32, returns_rt48, returns_ph64, i1h_fts_best16, theta_thf16, fbh_drop9;
+- the fbreclimb.py n 48 best.
+The FB-RE climbs (fbreclimb.py: n 16 seeded from fts_best16, n 48 seeded from returns_rt48) push throttled fallback leaves to 16 and
+74 per run, and the FB-RE count stays 0.
+
+Consequence (READING via Lemma CR; PROVED apart from CR). Take a throttled (θ, w)-stretch S under (h).
+- All entries and re-entries of S happen before S's first fallback. The re-entries there follow arena leaves, so each needs a strict
+  coarse increase (Theorem XA): at most n(n − 1) of them, by CR.
+- After the first fallback, R only shrinks: at most n leaves. Every later non-flat fallback contains a leave (FBL), so there are at
+  most n of them.
+- Value changes are bounded by PIECE between crossings. After the first fallback the F side runs R17 pieces separated by leaves:
+  ≤ n(n − 1).
+- Total: crossings(S) + fallbacks(S) + value-changing transitions(S) = O(n³).
+
+## 6. The reduction after box 27 (READING; assumes (h); L-NEW)
+N5 on o-cyclic 𝒞^1O makes poly(n) iterations if, per joint λ-phase, both of these are poly(n):
+- (a) the number of (θ, w)-stretches, i.e. θ-changes + w-changes;
+- (d) the number of transitions at states where (h) fails.
+Ingredients:
+- PROVED: Lemma Φ (≤ 2n(n − 1) + 1 phases); τ-changes ≤ d − 1; RM, RE, Wo, G (packet P-N5-RE); C, FBL, FBF, XA (this file).
+- READING: PIECE (packet §5) and CR (§1).
+- Unthrottled stretches: Lemma PT + R17.
+- Flat steps: R15 (d).
+Not covered: states where (h) fails, and the counts in (a), (d). Next targets:
+- (CYC') θ-changes and w-changes per phase. L-RED's data plateau at 16 θ-changes.
+- (NH) Non-(h) transitions. These include τ(o) closing a cycle at o, the setting of all box-25 W-drop instances.
