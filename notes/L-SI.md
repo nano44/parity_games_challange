@@ -5,6 +5,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 Handover check f0bbb5e0 (5/5, Lead). Box 4 doc: docs/si/N5-X-box4.md. Code: experiments/si/xing/ (each script asserts its run equals
 experiments/new/n5.py; climbs write to experiments/si/xing/out/, which is NOT covered by .gitignore's experiments/*/out/ pattern: add files
 by explicit path only). Oink built in this container (8fbf0a7).
+### Box 5 (GO 20:2xZ): (a) packet P-N5-Z v1 pinned (trunk fba7177, sha1 a027638f), referee items answered in
+docs/si/P-N5-Z-fixes-box5.md (Z-1, Z-2, Z-3, N-Z-2; s_rt32_final OUT OF CLASS, two Odd choice vertices). (b) docs/si/N5-C-box5.md:
+Lemma CLU PROVED; CONJECTURE (CL) carry levels non-increasing while w constant (0 violations, 118 carries + 3 adversarial climbs, carries
+up to 33/phase in drains); (H-VL) and per-vertex CL FALSE. Next: prove (CL) (§3b: only o-free progress and entries can raise the pending
+level) and bound carries per level. Pinned bests: experiments/si/xing/instances/zcl_*, ccl_*.
+- Never edit a file after sending its sha1 for pinning: the Lead pins at once; corrections go to a separate fixes file.
 ### DONE in box 4 (PROVED by L-SI successor 2, UNREFEREED)
 - Lemma ACT: every crossing transition has an active crosser (entry: switched F_k -> R̄_k edge; leave: switched R_k -> F_k edge or a new
   cycle inside R_k). Lemma LOOP: no such cycle inside a joint λ-phase when H1 holds at k.
