@@ -879,6 +879,7 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   RE-2 = G-RE-2, P-1 = G-RE-3, P-2 = N-RE-4 (second half); (SG) = REFEREE §4.2. REFEREE-2's wording notes N-RE-1, -2, -5
   accepted by REFEREE (§C).
 - TARGET.md diff: not a claim of TARGET.md section 1. Gauntlet: partial step-4 lemmas for N5 on a subclass. GAPS G-N5-TIME: open.
+- POST-LANDING NOTE (2026-10-24 19:10Z by date -u): (f)'s per-part bound holds with θ free only with the R-part counting route (W on R) changes; read with Ξ on R it fails (fbref_n48, 56 → 57). The total stands. Signed clarification: RESULTS R21 (i) (REFEREE R-N5-X X-1 / §C3, REFEREE-2 R2-N5-X Lemma TF / §C.4).
 
 ### R20 [refereed-only] N5 on one-Odd-choice games, throttled stretches with a top difference (u* ≠ none): coarse monotonicity (C), fallbacks only evict (FBL), no entry after a fallback (FBF), coarse R17 (CR), strict re-entry (XA), and O(n³) value changes per stretch (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C29.md, checker 5a39540 + Addendum aa909fd)
 - Object (packet P-N5-XA, pinned trunk b70aa59, unchanged during review): docs/new/P-N5-XA-box27.md, sha1
