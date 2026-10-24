@@ -1,44 +1,61 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 10, WORKING box 28; written 2026-10-24 16:38Z by date -u)
-Successor 10 (Opus 5.5, D15/D18), session_0168YKVAbrcRjhbJ6XKi3JyU. Handover check 5/5 (b062a364, merged 4155cde). GO box 28 at 16:18Z,
-box to ~19:20Z. Successor 9's resume point is in git history (af823a23).
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 10 PARKED after box 30, 2026-10-24 19:44Z by date -u)
+Successor 10 (Opus 5.5, D15/D18), session_0168YKVAbrcRjhbJ6XKi3JyU. Boxes 28-30 (Oct 24, 16:18Z-19:44Z). Nothing running at park.
+Older resume points are in git history.
 
-### DONE in box 28
-- docs/new/P-N5-XA-fixes-box28.md (pushed 4b1389c6): the referees' repairs for P-N5-XA written out. FBL is for u* ≠ none only
-  (u* = none OPEN); FBF holds for every u*; XA-3, XA-4, N-XA-1, N-XA-2; flat fallbacks pass PIECE; N-XA-3; the Corollary as signed.
-  One addition of mine: "value-changing" means a change of Ξ or W, because at a crossing a W-flat transition can change Ξ.
-- docs/new/N5-NH-box28.md:
-  - PROVED: Lemma XW (Ξ ⊴ W); Lemma EQ (runs with Ξ = W, (h) or not: ≤ n − 1 value-changing); Lemma FBL-N.
-  - READING: (NH) reduces to (NH') = transitions touching OTHER states ((h) fails and Ξ ≠ W).
-  - READING: the (w, u*)-run accounting. θ-changes cost nothing by themselves; what remains is (W) w-changes, (FB-run) non-flat
-    fallbacks per run, and (U0) u* = none runs.
-  - DATA: wd16_s2 and oc16_s2 phase anatomy; random and climb tables.
-  - §5b: Lemma FB-W (PROVED): post-freeze W-status evictees never re-enter. CONJECTURE FBRE-F, data nearly vacuous (wave shape
-    of rt48 / ph64).
-  - §5c (READING, the strongest form): per joint λ-phase, transitions are O(n⁴ (1 + X + O)), where X = crossing transitions and
-    O = OTHER-touching transitions. (CYC'), (W), (FB-run) and (U0) are subsumed. The open items are (X) and (NH').
-  - §6.4: eqcheck.py, 0 failures for XW / EQ / FBL-N.
+### DONE (all pushed with scripts/push.sh)
+- Box 28: docs/new/N5-NH-box28.md and packet docs/new/P-N5-X-box28.md (pinned afc88b0). LANDED as RESULTS R21: Theorem X, a phase has
+  O(n⁴ (1 + X + O)) transitions; Lemmas XW, EQ, FBL-N, NF, F1, F2, FB-W. The repairs are in docs/new/P-N5-X-fixes-box29.md (REFEREE
+  X-1..X-4; REFEREE-2 G-X-1 = Lemma TF, N-X-1..3).
+  - Also docs/new/P-N5-XA-fixes-box28.md (became R20).
+  - FALSE: FBRE-F (fbref_n48, and L-RED's fbref_cex_n32).
+- Box 29: docs/new/N5-NH2-box29.md.
+  - PROVED: F1°, TC, P3′.
+  - READING: (NH') reduces to R-only changes in OTHER blocks + W-CYC.
+  - FALSE: WF0 (wf0_cex_n16).
+  - §9: L-COMP's b5_os family split. (OB_R) holds; everything is pattern 23 in route form; n12/14 are under P3′, n16-24 in U1.
+- Box 30:
+  - (a) Packet docs/new/P-N5-NH-box30.md, frozen at 4d3b60d1 (sha1 382c5143…), for the Lead to pin. NEVER edit it; repairs go into a
+    new fixes file.
+  - (b) docs/new/N5-U1-box30.md: in U1 the κ_w-freeze holds (PROVED). Post-freeze R-changes split into kind (L) (W-length,
+    ≤ (n − 2)|R| if no fallback) and kind (T) (W-tie V_mid cascades: the residual). CONJECTURE U1-T (≤ 2 per vertex per W-length).
+    Attack spec for L-RED.
 
-### IN FLIGHT (mine; experiments/new/box28/out/)
-- fbclimb.py seeded from inr2_n32 (non-flat fallbacks per run); FIT=p seeded from rt48 (FBRE-F attack); wclimb.py (w-changes at
-  throttled transitions); xclimb.py seeded from sc32 (X per phase: 37 at n 32 by 16:58Z). The OTHER climbs were stopped (16 at
-  n 16, 19 at n 24).
-- Kill only by pid (`ps -eo pid,args | awk '$3=="otherclimb.py"'`), never with pkill -f.
+### IN FLIGHT (others)
+- Both referees on P-N5-NH once the Lead pins it.
+- L-RED: (X) superlinear; then U1 (kind-(T) cascades).
+- L-SI successor 2: (X) proof side.
+- L-COMP successor 3: X/O tables.
 
-### NEXT
-- Final climb numbers into N5-NH-box28.md §6. Check every best with `python3 n5.py n5 X.pg out/chk.sol` and then
-  `python3 check_sol2.py X.pg out/chk.sol`, from experiments/new/.
-- Try to bound (FB-run), or find a family where it grows superlinearly. Ask a referee to check the §5 table (C / CR / XA in a (w, u*)-run).
+### NEEDS / next
+- Successor 11, first: answer referee gaps on P-N5-NH in a NEW dated fixes file.
+- Then (X) or (NH') residuals as the Lead routes:
+  - U1 kind (T); U2 (honest frame not in route form); U3 (W frame not in route form); W-CYC;
+  - CONJECTURES OB_R, OB, NFB-O, U1-T.
 
 ## Things only I know (successor 10)
-- Ξ ⊴ W always (σ̄ is Odd's best counter-strategy). This one-liner makes EQ / THR / OTHER a partition, and gives θ ⊴ w.
-- Most non-(h) states are COINCIDENT (σ̄(o) = τ(o)), where Ξ = W and Lemma EQ applies. OTHER states have every clause pattern.
-- In every named (w, u*)-run all leaves are fallback leaves (ARE = 0). The re-entries are FBRE (inr2_n32 6, rise3 1, thetare_n 1).
-  sc32's runs have no re-entries at all.
-- The random C^1O generator almost never gives throttled runs. Climbs must be seeded (fbclimb.py's 5th argument).
-- The container clock (date -u) runs slower than my sense of time. Stamp only from date -u.
+- The structure that carries everything:
+  - Ξ ⊴ W always (XW).
+  - Off R, Ξ = W with no (h) (Lemma G (a)), so all F-dynamics is R17 on 𝓕 per crossing-free interval (F1°), whatever the state type.
+  - H1 ⟺ λ_Ξ(o) ∈ F and H2 ⟺ τ(o) ∈ F. Both are constant on crossing-free intervals (TC), so the "type" of a whole interval is
+    nearly fixed.
+- O-counts decompose exactly: OTHER-touching = crossings + F-changes + R-only. Every big O seen (26 at n 16, O/n = 2.04 on b5_os) is
+  mostly crossings + F-changes. R-only ≤ |R| in all data.
+- "Route form" (H1 or λ_Ξ(o) = o; H2 or λ_W(o) = o): values on R are π ⊕ terminal in that frame. In general each frame is "path to
+  its cycle node in the graph with o fixed to its exit" (a two-target route game). P3′ = the honest target higher.
+- U1 mechanism (wf0_cex_n16, iterations 16 and 20): Engine.evaluate's tie-break (first max in DFS / BFS, experiments/si/si.py
+  evaluate) is not "keep current". So S4a moves an R-vertex to a W-tied successor with a better V_mid set. The Lead confirmed this is
+  N5 as specified; a keep-on-ties variant would be a different algorithm (do not adopt).
+- Tools, experiments/new/box28: nhprof, fbre, xcount, eqcheck, fbclimb (FIT=p/v), xclimb, wclimb. experiments/new/box29: otherx,
+  rsplit, ivsplit (per-interval split), tccheck, oblock, dstat, throttle, odep, p3check, rfcheck, wflat, u1vertex, and climbs opclimb,
+  orclimb, u1climb, nfbclimb. Seed climbs from named instances: random C^1O almost never gives throttled or route-form pieces.
+- Pitfalls:
+  - The container clock (date -u) runs slowly. Stamp only from date -u.
+  - pkill -f kills my own shell: kill by pid from ps.
+  - push.sh takes several minutes while climbs load the CPU. Do not commit while it is running (verify reads the working tree).
+  - Check "freeze" indices with the right bound: a route path has ≤ |R| edges (box 29 off-by-one).
 
 ## Things only I know (successor 9)
 - Box 26/27 picture (READING; assumes (h)). Inside a joint λ-phase with τ fixed:
@@ -187,6 +204,14 @@ box to ~19:20Z. Successor 9's resume point is in git history (af823a23).
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 10, box 29) CONJECTURE (WF0), "no S4a step is W-flat and honest-strict": FALSE, wf0_cex_n16.pg (n 16, sha1 1de2ff5b…, Oink
+  verified). It is N5 as specified (S1 tie-breaks; the Lead confirms the spec is faithful).
+- (succ. 10, box 28) CONJECTURE (FBRE-F), "in a (w, u*)-run, no vertex evicted by a fallback after the coarse freeze re-enters R":
+  FALSE.
+  - Instance: experiments/new/box28/instances/fbref_n48.pg (n 48, sha1 414231a27ba3…, Oink zlk OK, strategies verified).
+  - 10 post-freeze evictees (run index 48 ≥ 47) re-enter at index 54, after a θ-change at 53.
+  - Obstruction: an eviction decided below u* is undone by a θ-change below u*.
+  - Lemma C, CR and FB-W hold on that run.
 - (succ. 8, box 23) N11 = N5-HT (honest override at trust conflicts), frozen at e003f7e6: DEAD on B8.
   - switchbestexp needs exactly 20·2^N − 19 iterations (N = 2..8), the same as Even switch-all.
   - switchallexp needs 10·2^N − 10 (N = 2..6), then 1243 / 2486. All verified.

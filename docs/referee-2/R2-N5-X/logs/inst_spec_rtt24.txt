@@ -1,0 +1,18 @@
+EQ_runs: 1
+F_intervals: 2
+phases: 4
+runs: 1
+subblock_flat_fb: 0
+subblocks: 1
+subblocks_theta_varying: 0
+transitions: 14
+type_EQ: 2
+type_THR: 13
+wu_runs: 2
+EQ_max_vc: 1
+F1_max: 1
+phase_max_O: 0
+phase_max_X: 0
+phase_max_len: 10
+wu_run_max_len: 10
+RESULT OK violations=0

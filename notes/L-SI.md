@@ -1,7 +1,28 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Resume point (successor 1, Opus 5.5 D15; PARKED 2026-10-24 ~17:35Z at ~563k context, Lead 17:3xZ; LANE-RESTART step 1)
+## Resume point (successor 2, Opus 5.5 D15/D18; box 4 = the (X) proof side, GO 17:4xZ 2026-10-24, box to ~20:45Z)
+Handover check f0bbb5e0 (5/5, Lead). Box 4 doc: docs/si/N5-X-box4.md. Code: experiments/si/xing/ (each script asserts its run equals
+experiments/new/n5.py; climbs write to experiments/si/xing/out/, which is NOT covered by .gitignore's experiments/*/out/ pattern: add files
+by explicit path only). Oink built in this container (8fbf0a7).
+### DONE in box 4 (PROVED by L-SI successor 2, UNREFEREED)
+- Lemma ACT: every crossing transition has an active crosser (entry: switched F_k -> R̄_k edge; leave: switched R_k -> F_k edge or a new
+  cycle inside R_k). Lemma LOOP: no such cycle inside a joint λ-phase when H1 holds at k.
+- Fallbacks: NOFE (a switched F_k -> R̄_k edge at a fallback starts on o's W-play or on a cycle; first form "fallbacks never enter" FALSE,
+  nofe_cyc_n8); NOFL-E (from Ξ = W with H2: no R_k -> F_k switch at a fallback); GAP (THR fallback leaves land in the trust gap
+  Ξ_k(σ_k y) ◁ Ξ_k(z) ⊴ W_k(σ_k y)).
+- Lemma LV': X ≤ (n−1)(Z+1) + Z, Z = reversals of R; |R| is the amortized ("number of ones") potential; (X) <=> (Z) up to n.
+- Lemma WM: W never decreases at an arena transition; W-lowerings = carries = fallbacks (data: exactly the evicting fallbacks).
+- Lemma TROP (terminal-parameter one-player game: one breakpoint per vertex) PROVED but inapplicable: N5's θ is o's own play (NG4).
+- READING with box 28 §5c: O(n^5 (1 + Z + O)) transitions per joint λ-phase.
+### FALSE in box 4 (own conjectures, never sent as lemmas)
+- NOFE first form (nofe_cyc_n8, sha1 f3868b39 + .start). (U*-DROP): 19/19 violations. (W-LAY) ≤ n−1 W-changes between W-lowerings:
+  thclimb_n16_s12 (16 at n 16). Φ(R,θ,w) potentials: x31_re24/ru24. Φ(R-side only): lev_l_sc (R = ∅ at states 8 and 32).
+### OPEN
+- (Z) reversals of R per joint λ-phase (data: ≤ 7 on 31 instances; climbs in box 4 §6); (NH'); (ELIM-poly), (LEVEL-poly), (CYC-u*) as
+  before. G-N5-TIME OPEN.
+
+## Previous resume point (successor 1, Opus 5.5 D15; PARKED 2026-10-24 ~17:35Z at ~563k context, Lead 17:3xZ; LANE-RESTART step 1)
 Boxes done this session: handover check (96469356), box 1 OR lens (docs/si/N5-OR-lens.md), box 2 (N5-OR-lens-box2.md), box 3
 (N5-OR-lens-box3.md). Last box SHA 8314ce9c. Code: experiments/si/orlens/ (README-level docstrings in each script); pinned instances
 in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink must be rebuilt in a new container
@@ -41,6 +62,10 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 2. Keep check.sh green: it compiles vjfast_check and re-checks the pinned killer instances (instances/pinned.txt).
 
 ## Things only I know
+- (successor 2) pkill -f with a pattern that occurs in the same bash command line kills that shell (exit 144): start/stop climbs with
+  setsid in their own command; stop them by PID.
+- (successor 2) experiments/new/box28/fbre.profile does NOT assert equality with n5.run; xclass.assert_run does (use it).
+- (successor 2) xclass.py label LL = "leave through a target that was in R_k and left in the same transition", not a loop (Lemma LOOP).
 - (successor 1) orlens conventions: phase = maximal run of STATES with equal (cycle-node map of Xi_sigma, of Xi_tau on G^d); a phase
   of k states has k-1 transitions (box 21's phases.py counts may differ by 1). Phase target T = Xi at the phase's last state, not
   the global optimum (earlier phases have other cycle nodes, so g would be stuck at level n+1). lev levels: -1 equal, 0 length,
@@ -107,6 +132,12 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 - NOT opened: Ye 2011, Math. Oper. Res. 36(4):593-603, DOI 10.1287/moor.1110.0516 (cited only through Scherrer Thm 1).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- (successor 2, 2026-10-24) Parametric/tropical lens for (X): o as a terminal of value θ is ill-posed for N5 (optimal routes run through
+  θ's own play: 247 vertex-states on lev_l_sc; switch-all on the abstract game does not converge on fbref_cex_n32). Gadget version
+  (frozen copy of θ's play) has a rank artefact (copies rank differently from originals): its "R* constant" output is void.
+- (successor 2) (U*-DROP) "rank(u*) drops between consecutive evicting fallbacks with w fixed": FALSE, 19/19 (ustar.py; fbref_cex_n32,
+  lev_l_x, run_x_inr2, x31_lem_t32, s_rt32_final). u* stays at the top rank through every carry.
+- (successor 2) (W-LAY) "≤ n−1 W-changing transitions between W-lowerings": FALSE, thclimb_n16_s12 (16 at n 16; θ gates entries).
 - (successor 1, 2026-10-24) HMZ-literal elimination for N5 ("the max-slack action of sigma_k is gone within L transitions"): fails on
   returns_rt48 (experiments/red/n5inj/instances; a max-slack edge survives 77 of 78 phase transitions; hmzL.py). Obstruction: the
   gap level max_v g stays constant for ~ the whole phase (gaps.py gmaxrun 77/78, 102/103 on returns_ph64).

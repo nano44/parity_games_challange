@@ -1,0 +1,29 @@
+EQ_runs: 1
+FBRE-F_reentries(theta status): 1
+FBW_theta_status_evictions(not covered): 15
+F_intervals: 9
+NF_checks: 9
+NF_nonflat_fb_crossing: 9
+R19f_literal_split_fails(Xi on R counted): 1
+R_Xi_change_without_route_change: 2
+TF_theta_change: 2
+fb_in_phase: 9
+phases: 4
+runs: 1
+subblock_flat_fb: 0
+subblocks: 9
+subblocks_theta_varying: 2
+transitions: 60
+type_EQ: 2
+type_OTHER: 2
+type_THR: 57
+wu_runs: 1
+wu_runs_theta_varying: 1
+EQ_max_vc: 1
+F1_max: 9
+phase_max_O: 0
+phase_max_X: 23
+phase_max_len: 57
+wu_run_max_len: 55
+example R19f_literal: fbref_n48.pg#0 sub-block 56..57: |R|=1 R-changes incl. Xi=1
+RESULT OK violations=0
