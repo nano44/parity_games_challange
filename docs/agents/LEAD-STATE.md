@@ -1042,3 +1042,4 @@
 - 22:28Z merged checker 59a9799 (C33 Add. 1 PASS); R24 LANDED verbatim (checker SHAs filled); draft LANDED; GAPS update; NOW. CHECKER Addendum 2 next.
 - 22:32Z merged l-si 92f7985 (P-N5-FB frozen, sha1 9ece9994; J-climbs J 12 at n 32, 17 at n 48, lane data); pinned here for both referees; NOW.
 - 22:38Z merged checker faf7b14 (C33 Add. 2 PASS, C33 closed; R22 note intact). NOW: CHECKER parked.
+- 22:50Z merged referee eb1ec3c (R-N5-FB: Theorem FB SIGNED WITH GAPS FB-1, FB-2 closed; (T), TAME, MONO, NOINF, J1, OFF, A SIGNED; COARSE-SI (a) SIGNED WITH GAPS (ENG-1 inherited, V-1 page, V-2); CAP SIGNED WITH GAP CAP-1 (SPEC σ̄ at cycle node not a minimiser, 925 cases; closed by cases); (JUMP-EQ) FALSE confirmed). Items relayed to L-SI 3 for P-N5-FB-fixes-box7.md.
