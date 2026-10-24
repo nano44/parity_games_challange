@@ -13,8 +13,7 @@ Handover check 0ef77018 (5/5, Lead GO 17:5xZ). Box 5 started 17:52Z.
 - Reported to the Lead at once: O > n (18:27Z), O/n rising (19:00Z), O split (19:13Z: F1° and (OB_R) hold; growth = F-changes).
 
 ### IN FLIGHT
-- n 5 canonical subset (box4.py exh 5 --no-forced --even-maxdeg 2 --o-deg 2 --cyclic-only --no-reentry --jobs 4 --out results/box5),
-  resumable: rerun the same command, finished tasks are read from results/box5/box4_n5_ed2_od2_nf_cyc.tasks/ (gitignored).
+- n 5 canonical subset: DONE 19:56Z (68,764,800 games, all 160 slices; results/box5/box4_n5_ed2_od2_nf_cyc.json).
 
 ### Things only I know (box 5)
 - L-NEW's |R| (reach_o) excludes o; thtrace.Rset (mine, xo_split) includes o. X is the same either way; for (OB_R) compare with

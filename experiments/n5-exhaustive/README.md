@@ -120,7 +120,7 @@ Readings (DATA; CONJECTURE = exhaustive in the stated subset):
 - reentry.py classes: ROUTE dominates; THETA occurs (n 7, start pair); OTHER occurs already at n 5 from the canonical start.
 - Not done (Lead 17:1xZ, would need new runs): the X (crossing transitions) and O (OTHER-state transitions) columns; handed to box 5.
 
-## Box 5 (Lead GO 17:5xZ, D18; L-NEW box 28 §5c (X) and (NH')): X and O per joint lambda-phase (runs 17:52-20:xxZ)
+## Box 5 (Lead GO 17:5xZ, D18; L-NEW box 28 §5c (X) and (NH')): X and O per joint lambda-phase (runs 17:52-19:56Z)
 Labels (L40): everything here is DATA (exact = exhaustive in the stated class), CONJECTURE (data behind it named) or OPEN; nothing is
 PROVED. Phase key (lambda_sigma, lambda_tau, tau(o)) as box25 phaseprofile.py (not exh.py's maxph key).
 - X = crossing transitions of a phase (R changes; R = vertices whose (sigma, tau)-play reaches o, box28 fbre.reach_o / thtrace.Rset);
@@ -137,7 +137,7 @@ PROVED. Phase key (lambda_sigma, lambda_tau, tau(o)) as box25 phaseprofile.py (n
 | --- | --- | --- | --- | --- | --- |
 | n 4 canonical (full canonical subset) | 4,828,736 | 2 (2) | 1 (1) | 0: 4,773,310, 1: 55,330, 2: 96 | 0: 4,826,000, 1: 2,736 |
 | n 4 all starts (no forced, Even out-deg <= 2) | 704,000 / 7,340,032 | 3 (3) | 2 (2) | 0: 7,021,260, 1: 297,578, 2: 21,102, 3: 92 | 0: 7,323,452, 1: 16,576, 2: 4 |
-| n 5 canonical subset (as box 3) | N5ROW |
+| n 5 canonical subset (as box 3: no forced, Even out-deg <= 2, o out-deg 2, o-cyclic; all 160 slices) | 68,764,800 | 2 (2) | 1 (1) | 0: 66,711,412, 1: 2,036,230, 2: 17,158 | 0: 68,703,572, 1: 61,228 |
 | random, canonical + 1 random start, 20,000 games per n, n 6..16 (box4_rnd_n_n_s5nn.json) | 16,888-18,358 games per n (2 runs each) | 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4 (n 6..16) | 1, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2 | | |
 
 Climbs (climb5.py; canonical start; mutation box21 climb_fix.mutate; one seed, 120 s per n unless stated; logs gitignored):
@@ -163,7 +163,8 @@ Climbs (climb5.py; canonical start; mutation box21 climb_fix.mutate; one seed, 1
 here: one OTHER block per interval.)
 
 Readings:
-- DATA (exact, in the subsets): max X per phase 2 / 3 and max O per phase 1 / 2 at n 4 canonical / all starts; the maximum is always
+- DATA (exact, in the subsets): max X per phase 2 / 3 / 2 and max O per phase 1 / 2 / 1 at n 4 canonical / n 4 all starts / n 5
+  subset; the maximum is always
   attained by a phase of exactly that length (every transition crossing / OTHER-touching).
 - CONJECTURE (data: the tables, climbs n 6-16): X <= n - 3 for n >= 9 is NOT claimed (climb budget); X <= n seen everywhere except
   L-NEW's targeted x32_sc32 (37 > 32). (X) stays OPEN.
@@ -172,3 +173,5 @@ Readings:
 - DATA, against box 29: on every chain instance O = CROSS + FCH + RONLY (FLAT = WC = 0); FCH <= |F| - 1 per interval (Lemma F1°,
   PROVED by L-NEW) and RONLY <= |R| per interval (CONJECTURE (OB_R), not refuted; max ratio 8/24). The growth of O is F-changes
   times the number of crossing-free intervals (about X + 1), i.e. the (NH') <= (X) + F1° + (OB_R) shape; (NH') stays OPEN.
+- Box 4 column completed by the full n 5 subset (DATA, exact): max (CYC') = 4 (theta 2, w 2) in a phase of 2 iterations (theta and w both change at each transition; instances/b5_n5_cyc4_0.pg, canonical start, sha1 f42767ef, check_instance OK) (box 4's
+  44-slice partial had 2); max non-(h) per phase 3; longest phase 3; cyc hist {0: 68,612,254, 1: 11,954, 2: 140,572, 4: 20}.
