@@ -221,3 +221,16 @@ Sketch.
   only exponentially small in n. So this view gives termination (as R15 does), not a polynomial bound.
 - Well-quasi-orders. A wqo argument on states would also prove only termination. It yields no polynomial height of the state
   sequence, so it cannot address G-N5-TIME by itself.
+
+## 8. Final climb numbers (DATA; canonical starts; every listed best checked with n5.py + check_sol2.py: Oink zlk OK, strategies verified)
+| climb | fitness | seed | n | final | instance (sha1) |
+| --- | --- | --- | --- | --- | --- |
+| opclimb.py | O′ in one phase | oc16_s2 | 16 | 20 (10 F-changes + 10 R-only, split by 2 crossings; each OTHER block ≤ n − 1) | out/op16_oc16.pg |
+| opclimb.py | same | random | 20 | 16 (all R-only, |R| = 19; stopped at ~4 min) | out/op20_r.pg |
+| opclimb.py | same | random | 32 | 26 (all F-changes, |R| = 1; stopped ~13 min) | out/op32_r.pg |
+| orclimb.py | R-only O′ in one phase | op20_r | 20 | 16 (no improvement over the seed) | — |
+| u1climb.py | R-only Ξ-changes after the κ-freeze in a U1 piece | op32_r | 32 | 12 (|R| = 27; 3 W-flat steps) | instances/u1_n32.pg (f9577ca9ce16…; n5.py 16 iterations, 1 fallback) |
+| nfbclimb.py | violations of NFB-O / WF0 | op16 | 16 | 2: **WF0 FALSE**; NFB-O 0 | instances/wf0_cex_n16.pg (1de2ff5bcfb4…) |
+- Readings:
+  - Every R-only count stays ≤ |R|, and (OB) holds in every instance (CONJECTURES OB_R, OB).
+  - U1 has real post-freeze activity (12 R-only changes at n 32), driven partly by W-ties. U1 stays OPEN.

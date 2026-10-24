@@ -17,7 +17,10 @@ packet P-N5-X pinned at trunk afc88b0, sha1 b21d2d06; never edit it, repairs go 
   R-changes per piece).
 - READING: (NH') reduces to R-only changes in OTHER blocks plus w-changes under ¬H1 ∧ ¬H2. OPEN cases: U1 (route form, c_w higher;
   V_mid), U2 (honest frame not route form), U3 (W frame not route form), W-CYC.
-- Climbs running: opclimb.py (O′) n 16 and 20; orclimb.py (R-only) n 20 (seeded from op20) and 32. Kill by pid only.
+- FALSE (WF0): wf0_cex_n16 (sha1 1de2ff5b…), a W-tie switch with an honest gain, in U1. The U1 conditional closure is void.
+- P-N5-X fixes: docs/new/P-N5-X-fixes-box29.md (REFEREE X-1..X-4; REFEREE-2 G-X-1 / Lemma TF, N-X-1..3). Repairs only; the
+  packet is never edited.
+- Box 29 final at ~19:20Z. Nothing running. Next: U1 (V_mid at W-ties), U2, U3, W-CYC; (OB_R) to prove.
 
 ## Things only I know (successor 10)
 - Ξ ⊴ W always (σ̄ is Odd's best counter-strategy). This one-liner makes EQ / THR / OTHER a partition, and gives θ ⊴ w.
@@ -174,6 +177,8 @@ packet P-N5-X pinned at trunk afc88b0, sha1 b21d2d06; never edit it, repairs go 
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 10, box 29) CONJECTURE (WF0), "no S4a step is W-flat and honest-strict": FALSE, wf0_cex_n16.pg (n 16, sha1 1de2ff5b…, Oink
+  verified). It is N5 as specified (S1 tie-breaks; the Lead confirms the spec is faithful).
 - (succ. 10, box 28) CONJECTURE (FBRE-F), "in a (w, u*)-run, no vertex evicted by a fallback after the coarse freeze re-enters R":
   FALSE.
   - Instance: experiments/new/box28/instances/fbref_n48.pg (n 48, sha1 414231a27ba3…, Oink zlk OK, strategies verified).
