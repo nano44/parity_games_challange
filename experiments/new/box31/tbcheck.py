@@ -10,6 +10,12 @@ import sys, os, random
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "box25"))
 from common import *
 
+def odd1(g):
+    """The unique Odd vertex with a choice; asserts the game is in C^1O (exactly one such vertex)."""
+    oc = [v for v in range(g.n) if g.owner[v] == 1 and len(g.succ[v]) > 1]
+    assert len(oc) == 1, f"not in C^1O: Odd choice vertices {oc}"
+    return oc[0]
+
 def play(g, s, t, v):
     seq = [v]; seen = {v}
     while True:
@@ -79,7 +85,7 @@ if __name__ == "__main__":
             if g is None: continue
             check_run(g, stats=st); done += 1
     else:
-        g = load(sys.argv[1]); check_run(g, readstart(sys.argv[2]) if len(sys.argv) > 2 else None, st, cap=10 ** 6)
+        g = load(sys.argv[1]); odd1(g); check_run(g, readstart(sys.argv[2]) if len(sys.argv) > 2 else None, st, cap=10 ** 6)
     print("TB", {k: v for k, v in st.items() if not k.startswith("ex")})
     for k in ("ex", "ex2"):
         if k in st: e = st[k]; print(k, "n", e[0].n, "prio", e[0].prio, "owner", e[0].owner, "succ", e[0].succ, "s", e[1], "t", e[2], "v", e[3:])
