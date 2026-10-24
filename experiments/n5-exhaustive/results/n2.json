@@ -1,0 +1,43 @@
+{
+ "games": 40,
+ "cyc": 40,
+ "runs": 40,
+ "reA": 0,
+ "reB": 0,
+ "leaves": 0,
+ "entries": 0,
+ "tg_ok": 0,
+ "tg_bad": 0,
+ "ex_tg": [],
+ "hist_ph": {
+  "0": 40
+ },
+ "hist_th": {
+  "0": 40
+ },
+ "max_ph_cyc": 0,
+ "max_th_cyc": 0,
+ "ex_A": [],
+ "ex_re": [],
+ "max_maxph": 0,
+ "max_thch": 0,
+ "max_trust": 0,
+ "max_reent": 0,
+ "max_segx": 0,
+ "max_it": 0,
+ "ex_max_it": [],
+ "ex_maxph": [],
+ "ex_thch": [],
+ "ex_trust": [],
+ "ex_reent": [],
+ "ex_segx": [],
+ "secs": 0.0,
+ "options": {
+  "n": 2,
+  "even_maxdeg": null,
+  "o_deg": null,
+  "no_forced": false,
+  "cyclic_only": false,
+  "all_starts": false
+ }
+}

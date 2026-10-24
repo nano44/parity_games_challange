@@ -1,0 +1,711 @@
+{
+ "games": 9600,
+ "cyc": 9000,
+ "runs": 9600,
+ "reA": 0,
+ "reB": 0,
+ "leaves": 0,
+ "entries": 0,
+ "tg_ok": 0,
+ "tg_bad": 0,
+ "ex_tg": [],
+ "hist_ph": {
+  "0": 8032,
+  "1": 1568
+ },
+ "hist_th": {
+  "0": 9600
+ },
+ "max_ph_cyc": 1,
+ "max_th_cyc": 0,
+ "ex_A": [],
+ "ex_re": [],
+ "max_maxph": 1,
+ "max_thch": 0,
+ "max_trust": 1,
+ "max_reent": 0,
+ "max_segx": 0,
+ "max_it": 1,
+ "ex_max_it": [
+  {
+   "prio": [
+    0,
+    2,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  }
+ ],
+ "ex_maxph": [
+  {
+   "prio": [
+    0,
+    2,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  }
+ ],
+ "ex_thch": [],
+ "ex_trust": [
+  {
+   "prio": [
+    0,
+    1,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  },
+  {
+   "prio": [
+    0,
+    1,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     1,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  },
+  {
+   "prio": [
+    0,
+    1,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  },
+  {
+   "prio": [
+    0,
+    1,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  },
+  {
+   "prio": [
+    0,
+    1,
+    3
+   ],
+   "owner": [
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     1,
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null
+  }
+ ],
+ "ex_reent": [],
+ "ex_segx": [],
+ "tasks_done": "24/24",
+ "secs": 0.5,
+ "options": {
+  "n": 3,
+  "even_maxdeg": null,
+  "o_deg": null,
+  "no_forced": false,
+  "cyclic_only": false,
+  "all_starts": false
+ }
+}
