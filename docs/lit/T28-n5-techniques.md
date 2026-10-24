@@ -17,6 +17,10 @@ Labels:
 - **READING** is L-LIT interpretation.
 - PDF pages unless marked. Ohlmann's thesis: printed page = PDF page − 2. sha256 values are in notes/L-LIT.md.
 
+**Update 2026-10-24 (T29).** Rank 1 is downgraded by docs/lit/T29-routing-algebra-N5.md §0. N5's selection algebra is distributive and
+consistent, so R17 is Daggitt-Griffin's distributive Θ(n) case, not their n² theorem. The gap is the state-dependent gate filter,
+now CONJECTURE (H-E).
+
 ## 0. The two N5 targets (restated from the lane files, not re-derived)
 Setting: o-cyclic 𝒞^1O, a τ-stretch (τ(o) = b) inside one joint λ-phase, the frozen run F_b, hypothesis (h).
 - **Gate.** The gate is the improving set of the one-player game G^θ, in which o is a terminal of value θ = Ξ(o).
