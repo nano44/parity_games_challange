@@ -85,3 +85,43 @@ Measured from the repository at the time of writing, not recalled.
   must be equal before anything else, then merge trunk with a merge (never rebase).
 - Proof-level trap (R-P3, G-STR): set-level arguments missed strategy-level effects. For P-N5T this means: for every switch the
   reading claims raises (Ω, φ), name which player's strategy changed and which node's valuation component moved.
+
+## successor 5 (2026-10-24T21:04Z by date -u; Opus 5.5 under D15/L37, label "(Opus 5.5, D15)"; predecessor successor 4, handover bbd3e7b2)
+Measured from the repository at the time of writing, not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee`. Local branch was STALE (73b46eb8, 2 behind origin). After `git fetch origin claude/referee
+  claude/vibrant-johnson-nxvvxo` and `git merge --ff-only origin/claude/referee`: HEAD = origin/claude/referee = bbd3e7b2.
+- `git rev-list --left-right --count origin/claude/referee...origin/claude/vibrant-johnson-nxvvxo` -> 2 ahead, 0 behind
+  (trunk 27f5d2e2 = merge-base). The 2 ahead: dcee2233 (R-N5-Z §C) and bbd3e7b2 (notebook handover). This file's commit adds one ahead.
+
+### 2. Open work and next step of each
+- In flight: none. Routed, waiting for GO: packet P-N5-U1, object docs/new/P-N5-U1-box31.md at pin eee0d8a (an ancestor of trunk
+  and of HEAD; `git show eee0d8a:docs/new/P-N5-U1-box31.md | sha1sum` = eb90788d2949050f316ed983fa56c34d7a1dd9c7, 200 lines: matches the brief).
+  Report: fresh docs/referee/R-N5-U1.md. Next step after GO, in the brief's order: §4 Theorem U1 (with the κ_w-freeze and the
+  transferred P3-1 repair), §3 CASC, §2 TB against N5 spec S1 and experiments/si/si.py, §1 Lemma R (open VJ00 myself, cite section),
+  §5 Lemma WC, §6 (NH') reduction (READING; signed inputs only). Instances u1t_cex_n32.pg (63dfd785) and u1t_cex2_n32.pg (6162a26f),
+  re-run with experiments/new/n5.py, Oink zlk, check_sol2.py; a probe that asserts exactly one Odd vertex with out-degree > 1.
+- All earlier packets (R19-R22, P-N5-Z) are signed with §C done (notebook table); nothing else open.
+- Before running probes: rebuild Oink (scripts/setup_oink.sh; tools/ is gitignored).
+
+### 3. docs/GAPS.md rows relevant to me (trunk 27f5d2e2)
+- REFEREE owns no row. The row my packets feed: G-N5-TIME, major, owner L-NEW ("referees later"), OPEN. Its last update (20:36Z):
+  RESULTS R22 landed; open per phase: X (≡ Z up to n, P-N5-Z under review), ROI in U1-U3, W-CYC; "(U1-T) FALSE as stated
+  (u1t_cex_n32)". P-N5-U1 is the U1 repair of that.
+- G-N5-TERM closed (RESULTS R15, signed by me and REFEREE-2 under D12). DTL rows GAP-A, GAP-C, G-S5-6 open but paused (D18/L40).
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index: active; full text docs/decisions/D001-launch-brief.md lines 25, 49):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index: active; Lead reading L37 active: referees on Opus 5.5, label "(Opus 5.5, D15)"):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index: active; Lead reading L40 active: labels PROVED (by whom) / CONJECTURE / OPEN, ASSUMPTION lines):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (R-N5-Z data appendix; notebook lesson "Glob-based data can pull in out-of-class games"): a glob over instance directories
+  pulled s_rt32_final, which is NOT in 𝒞^1O, into a 𝒞^1O check. Check: every probe asserts exactly one Odd vertex with out-degree > 1
+  before using an instance (scratch/*_probe.py, via box25 common.odd_choice = first Odd chooser); I keep that assert in the U1 probe.
+- Also again this restart: stale local branch (73b46eb8); check `git rev-parse HEAD origin/claude/referee` equal before any work.
