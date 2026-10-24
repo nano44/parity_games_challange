@@ -10,7 +10,7 @@ Notation: box 26 (docs/new/N5-reentry-box26.md) and the packet, §0-§1:
 - THROTTLED means θ ◁ w.
 Code: experiments/new/box25/ (coarsecheck.py, fbedges.py, crossings.py, xingclimb.py, xtrace.py).
 
-## 0. Corrections and additions to box 26 (dated 2026-10-24 14:45Z)
+## 0. Corrections and additions to box 26 (written ~14:31Z by date -u)
 - CORRECTION to box 26 §7.3 data and to the 14:12Z (XING) conjecture. The crossing climbs xc16, xc24, xcf20 and tr20_s4 have θ = w at
   every state of their long stretches, so they are UNTHROTTLED. There the band is empty, and the stretch is already bounded:
   - Lemma G with θ = w gives Ξ = W, and the gate is exactly G_τ's improving set;
@@ -284,3 +284,14 @@ So (CYC') reduces to:
 - OPEN (CYC-u*): the number of θ-changes inside one (w, u*)-run, i.e. changes of θ strictly below u* while w and u* are fixed, plus
   the number of w-changes per phase.
 DATA: θ-changes per phase plateau at 16 (L-RED), and returns_rt48 / ph64 have 3.
+
+### 8c. Next idea for (CYC-u*) (READING; not a result)
+After the coarse freeze in a (w, u*)-run, let x have its best R-option ρ and its o-free value h with coarse(ρ ⊕ θ) = coarse(h).
+Then one of the two frames decides at u* itself:
+- If h has w's status at u*: the honest frame prefers F at u*, so x can never ENTER R by the gate. It can only leave (arena or
+  fallback).
+- If h has θ's status at u*: the W frame prefers R at u*, so x never LEAVES by an arena step. It can enter (honest comparison below
+  u*) and can be evicted only by a fallback.
+- So below u* every vertex is one-sided, and its type changes only when h's status at u* changes.
+A recursion on the next differing level below u* is the natural continuation. Done naively, it gives n^depth, not a polynomial. A
+proof needs to show that the type changes, or the recursion depth, are bounded.

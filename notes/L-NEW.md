@@ -1,9 +1,23 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (overwritten each box; successor 9, box 26, 2026-10-24 ~13:10Z by date -u)
-Successor 9 (Opus 5.5, D15), session_01EnPXboLL7nw4CKpAwqSDkm. Box 26 GO 12:58Z (owner D16, Lead reading L38): the stand-down's
-named lead toward (TRUST), stop rule 15:15Z. Box 25 (below) was merged on trunk at ebbab26; parked 06:05Z, unparked 12:58Z.
+## Resume point (overwritten each box; successor 9, box 27, 2026-10-24 ~15:00Z by date -u)
+Successor 9 (Opus 5.5, D15/D18), session_01EnPXboLL7nw4CKpAwqSDkm. Box 27 GO 14:22Z ((XING), throttled crossings), stop rule 16:45Z.
+Packet P-N5-RE (box 26) is pinned at trunk 52c7261 for REFEREE / REFEREE-2 successors 4. Do NOT edit docs/new/P-N5-RE-box26.md.
+
+### DONE (box 27; docs/new/N5-xing-box27.md; code experiments/new/box25/)
+- CORRECTION: box 26's crossing climbs were all unthrottled, i.e. R17-bounded. (XING) is about throttled stretches only.
+- PROVED:
+  - Lemma C: a coarse valuation above u* = top(P(θ) Δ P(w)) makes Ξ and W one algebra.
+  - Lemma FBL: throttled (h)-fallbacks switch only leaves.
+  - Lemma FBF: after a throttled fallback, R is frozen for the rest of the (θ, w)-stretch, so FB-RE = 0.
+  - Theorem XA (per re-entry): arena-type re-entries need a strict coarse increase.
+  - Lemma UT: unthrottled (h)-runs have ≤ n − 1 value changes.
+  - Lemma UD: u* only descends as θ rises.
+- PROVED-in-writing (referee pending): Lemma CR (coarse R17) → O(n³) per throttled (θ, w)-stretch.
+- Reduction (READING): N5 on o-cyclic 𝒞^1O is polynomial ⇐ (CYC') θ- and w-changes per phase + (NH) non-(h) transitions, both
+  poly(n). (CYC') ⇐ (CYC-u*): θ-changes below a fixed u* with w fixed, plus w-changes.
+- Trap noted this box: estimated timestamps in doc headers (fixed to date -u readings). Check: stamp only from date -u output.
 
 ### DONE (box 26; docs/new/N5-reentry-box26.md; code experiments/new/box25/reentry.py, routemono.py, routeclimb.py, shrink_theta.py)
 - The named lead ("every re-entry into R in a joint λ-phase is a route improvement") is FALSE.
