@@ -2,7 +2,7 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
-2026-10-24 14:58Z (successor 4, Opus 5.5, D15). P-N5-RE (docs/new/P-N5-RE-box26.md sha1 8dba4576…, trunk 52c7261): docs/referee-2/R2-N5-RE.md.
+2026-10-24 14:42Z (successor 4, Opus 5.5, D15; stamp corrected from 14:58Z). P-N5-RE (docs/new/P-N5-RE-box26.md sha1 8dba4576…, trunk 52c7261): docs/referee-2/R2-N5-RE.md.
 Lemma G (a)-(c), Wo, RM SIGN; RE SIGN WITH GAPS as written (G-RE-1 Caveat in Case NOT (i) unjustified; G-RE-2 step 3 avoidance sentence),
 and SIGN WITHOUT (NC): (SG) "a switched Even vertex that is not its own cycle node gains strictly" (transitivity Ξ_{L+1}(z) ⊵ Ξ_L(z) ▷
 Ξ_L(σ(y)) BEFORE prefixing; (V1) holds also when y is on the cycle but ≠ c). So (NC) closed; the packet's "flat leave" cannot occur

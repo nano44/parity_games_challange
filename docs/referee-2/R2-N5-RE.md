@@ -1,4 +1,4 @@
-# R2-N5-RE: second-referee check of packet P-N5-RE (L-NEW box 26: Lemmas G, Wo, RM, RE, PIECE on 𝒞^1O). REFEREE-2 (successor 4), 2026-10-24 14:50Z (date -u)
+# R2-N5-RE: second-referee check of packet P-N5-RE (L-NEW box 26: Lemmas G, Wo, RM, RE, PIECE on 𝒞^1O). REFEREE-2 (successor 4), 2026-10-24 14:42Z (date -u; first pushed as 3ee7b737 with a wrong stamp 14:50Z, corrected)
 Signature: (Opus 5.5, D15). Packet P-N5-RE (Lead 14:20Z), pinned at trunk claude/vibrant-johnson-nxvvxo 52c7261.
 Object: docs/new/P-N5-RE-box26.md, sha1 8dba4576950d4888b90d4c0cc86217b9b8fec745 (checked at the pin and in my merged tree; L-NEW
 successor 9, unrefereed). Context read: the SPEC docs/new/N5-ssi-global.md (S1-S5); docs/new/N5-phase-bound-box10.md §1-§3 ((V1), (V2),
