@@ -1,0 +1,13 @@
+C_eq_checks: 432
+C_mono_checks: 234
+Pc_checks: 86
+S_single_state: 69
+S_stretches: 22
+S_transitions: 26
+S_ustar_none: 22
+runs: 100
+thr_states: 117
+transitions: 205
+S_max_len: 2
+XA_max_per_stretch: 0
+RESULT OK violations=0

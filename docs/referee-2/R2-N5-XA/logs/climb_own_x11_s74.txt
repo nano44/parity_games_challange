@@ -1,0 +1,17 @@
+C_eq_checks: 1606
+C_mono_checks: 803
+FBF_checks: 28
+FBL_leave: 30
+FBL_switched_edges: 30
+FB_in_S: 28
+S_single_state: 69
+S_stretches: 73
+S_transitions: 73
+S_ustar_some: 73
+XA_order_premise_false: 766
+runs: 100
+thr_states: 215
+transitions: 489
+S_max_len: 1
+XA_max_per_stretch: 0
+RESULT OK violations=0

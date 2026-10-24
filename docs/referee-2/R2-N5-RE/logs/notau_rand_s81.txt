@@ -1,0 +1,5 @@
+leaves: 398
+leaves_at_tau_change: 49
+runs: 6000
+tau_changes: 3622
+RESULT OK violations=0

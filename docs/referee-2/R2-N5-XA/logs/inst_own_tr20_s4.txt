@@ -1,0 +1,5 @@
+S_single_state: 7
+runs: 30
+thr_states: 7
+transitions: 409
+RESULT OK violations=0
