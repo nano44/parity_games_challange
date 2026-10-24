@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Box 26 climb against (XING): o-cyclic C^1O, canonical start. Fitness = (max crossings of one vertex inside one
-(τ, joint-λ, θ, w)-stretch with (h), max crossing transitions per such stretch). Usage: xingclimb.py n seed secs out [--from g.pg]"""
+(τ, joint-λ, θ, w)-stretch with (h) and θ ◁ w (throttled; unthrottled stretches are R17-bounded), max crossing transitions per such stretch). Usage: xingclimb.py n seed secs out [--from g.pg]"""
 from common import *
 from climb_fix import mutate
 from thtrace import Rset
@@ -10,7 +10,7 @@ def measure(g):
     E, Ed = Engine(g), Engine(dual(g)); o = odd_choice(g); s, t = start_pair(g, E, Ed, None); prev = None; per = Counter(); tot = bt = bv = 0; k = 0
     while k < 300:
         Xi, sb = E.evaluate(tuple(s)); U, _ = Ed.evaluate(tuple(t)); _, W = wvals(g, s, t)
-        h = not oncycle(g, s, sb, o) and not oncycle(g, s, t, o) and Xi[o][0] == W[o][0]
+        h = not oncycle(g, s, sb, o) and not oncycle(g, s, t, o) and Xi[o][0] == W[o][0] and E.key(Xi[o]) < E.key(W[o])
         cur = (((tuple(x[0] for x in Xi), tuple(y[0] for y in U), t[o]), E.key(Xi[o]), E.key(W[o])), h, Rset(g, s, t, o))
         if prev is not None:
             if prev[0] != cur[0] or not (prev[1] and cur[1]): per = Counter(); tot = 0
