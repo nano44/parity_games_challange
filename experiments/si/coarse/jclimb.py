@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """L-SI box 7: adversarial climb on J = #non-tame transitions per joint λ-phase (docs/si/N5-C-box7.md §7, OPEN (J-poly)).
-Fitness = (max J in one phase, total in-phase J, in-phase fallbacks); with JMODE=EXCESS, (J_in − |succ(o)|, J_in, releases into
-D) (dpot.py; tests the slack of Corollary JD). o-cyclic 𝒞^1O only (one Odd choice vertex, asserted; mutation
+Fitness = (max J in one phase, total in-phase J, in-phase fallbacks); with JMODE=REL, (#in-scope non-tame transitions whose argmin was
+released into D at an earlier fallback of the same scope run, J_in, releases into D) (dpot.py; the part of Corollary JD paid by releases). o-cyclic 𝒞^1O only (one Odd choice vertex, asserted; mutation
 operator and o-cyclicity test from experiments/new/box21/climb_fix.py and box25/pureY.py, read-only, as in xing/clclimb.py).
-Usage: [JMODE=EXCESS] jclimb.py seed secs OUT seed.pg      (writes OUT.pg on every improvement; re-verify bests with xing/reverify.sh)"""
+Usage: [JMODE=REL] jclimb.py seed secs OUT seed.pg      (writes OUT.pg on every improvement; re-verify bests with xing/reverify.sh)"""
 import sys, os, random, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tame import *
 from dpot import scan_d
-MODE = os.environ.get("JMODE", "J")   # J: (max J per phase, J, fb); EXCESS: (J_in - |succ(o)|, J_in, releases into D)
+MODE = os.environ.get("JMODE", "J")   # J: (max J per phase, J, fb); REL: (#jumps paid by a release (REL-NJ failures), J_in, releases)
 sys.path.insert(0, os.path.join(ROOT, "experiments/new/box21")); sys.path.insert(0, os.path.join(ROOT, "experiments/new/box25"))
 from climb_fix import mutate
 from pureY import split
@@ -19,9 +19,9 @@ def fit(G):
     g = pg.Game(*G)
     if not any(w in split(g, odd[0]) for w in G[2][odd[0]]): return (-10 ** 9, -1, -1)
     try:
-        if MODE == "EXCESS":
+        if MODE == "REL":
             c, _ = scan_d(g)
-            return (c["J_in"] - len(set(G[2][odd[0]])), c["J_in"], c["rel_fb"])
+            return (c["relnj_viol"], c["J_in"], c["rel_fb"])
         c, _ = scan_t(g)
         return (c["maxJ_phase"], c["J"], c["fb"])
     except AssertionError: raise
