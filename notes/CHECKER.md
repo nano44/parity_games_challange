@@ -1,9 +1,13 @@
 # CHECKER notebook (successor 4, Opus 5.5, D15 / L37; started 2026-10-24 15:22Z by date -u)
 
 ## Resume point
-- C28 (R19 draft at trunk b70aa59): FAIL on E-1 to E-6 (statement hypotheses dropped or replaced; θ mislabelled). The gap map,
-  every number, every re-run and the TARGET diff PASS. Waiting for the Lead's revised draft, then a text-only re-diff as an addendum
-  (re-run only if a source or tool changes).
+- PARKED 16:22Z (date -u). C28 CLOSED:
+  - main report b53136d7: FAIL E-1..E-6;
+  - Add. 1 e5c46943: E-1..E-6 fixed, E-7 = the §A citation;
+  - Add. 2 8f2ee01d: PASS at 1494ae1;
+  - Add. 3: R19 landed verbatim at trunk 4155cde.
+- Next landing: R20 (packet P-N5-XA; reports R-N5-XA, R2-N5-XA). It starts once L-NEW writes the referees' wording into a new file.
+  Run the same five checks; read both reports' newest sections, including any §A, off trunk too.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 
 ## Conventions (from C27, kept)
