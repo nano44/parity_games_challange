@@ -7,7 +7,7 @@ FBL SIGN WITH GAPS (G-XA-1: F->R case; for u* != none no F->R gate edge at all (
 statement unproved: (c,z), z in R_k minus R_{k+1}, not excluded); FBF SIGN WITH GAPS (G-XA-2 closed, incl. u*=none via (h) at t+1);
 CR's B-fallback vacuous (N-XA-1); XA count <= n-1 per vertex (N-XA-2); Corollary reading sound, add R15 (d) runs (N-XA-3). Tool
 R2-N5-XA/xa_check.py (on R2-N5-RE/re_check.py). 0 violations; no XA re-entry occurs in data. Also R2-N5-RE §A: tau-constant not needed
-(REFEREE §C3 right), N-RE-3 withdrawn (re_notau.py). §C (15:50Z) vs REFEREE R-N5-XA (f39972d, trunk e99a586): XA-1=G-XA-1(a); XA-2=G-XA-2, its best-key repair adopted (+ my (h) base);
+(REFEREE §C3 right), N-RE-3 withdrawn (re_notau.py). §C (15:47Z; stamp corrected from 15:50Z) vs REFEREE R-N5-XA (f39972d, trunk e99a586): XA-1=G-XA-1(a); XA-2=G-XA-2, its best-key repair adopted (+ my (h) base);
 accepted XA-3, XA-4 (missed); XA-5 accepted, my 'Corollary sound' withdrawn, closure proposed (pieces pass through leave-free fallbacks: sigma_{k+1}
 is another arena optimum). DISAGREEMENT: FBL statement for u*=none (mine: z's route can leave in the same fallback; REFEREE: survives). PARKED.
 Earlier:
