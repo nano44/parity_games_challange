@@ -12,6 +12,13 @@ ASSUMPTIONS (one line each):
 - A2: one joint λ-phase (box 28 convention: (λ_Ξ, λ_U, τ(o)) constant), so τ is fixed.
 - A3: (h), or a named clause of it, only where a statement says so.
 
+## Correction (box 5, 2026-10-24 20:4xZ)
+- s_rt32_final (experiments/si/orlens/instances, sha1 93ba6aa3) is NOT in 𝒞^1O: it has Odd choice vertices 14 and 28. The box 28 tools
+  silently took the first one.
+- Every count below that says "31 instances" includes it. The in-class set has 30 instances. (U*-DROP) fails 15/15 on in-class
+  instances, not 19/19.
+- No lemma is affected. docs/si/P-N5-Z-box5.md carries the corrected counts. xclass.annotate now asserts one Odd choice vertex.
+
 ## 0. Results in short
 - PROVED (L-SI succ. 2): **Lemma ACT** (§2). Every crossing transition has an ACTIVE crosser, i.e. a switched vertex whose own
   membership changes:

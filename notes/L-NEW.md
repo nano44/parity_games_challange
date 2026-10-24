@@ -1,39 +1,40 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 10 PARKED after box 30, 2026-10-24 19:44Z by date -u)
-Successor 10 (Opus 5.5, D15/D18), session_0168YKVAbrcRjhbJ6XKi3JyU. Boxes 28-30 (Oct 24, 16:18Z-19:44Z). Nothing running at park.
-Older resume points are in git history.
+## Resume point (successor 11, box 31; written 2026-10-24 20:26Z by date -u; overwritten at the next handover)
+Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Handover check a4db2c08 (5/5, Lead GO 20:0xZ).
 
-### DONE (all pushed with scripts/push.sh)
-- Box 28: docs/new/N5-NH-box28.md and packet docs/new/P-N5-X-box28.md (pinned afc88b0). LANDED as RESULTS R21: Theorem X, a phase has
-  O(n⁴ (1 + X + O)) transitions; Lemmas XW, EQ, FBL-N, NF, F1, F2, FB-W. The repairs are in docs/new/P-N5-X-fixes-box29.md (REFEREE
-  X-1..X-4; REFEREE-2 G-X-1 = Lemma TF, N-X-1..3).
-  - Also docs/new/P-N5-XA-fixes-box28.md (became R20).
-  - FALSE: FBRE-F (fbref_n48, and L-RED's fbref_cex_n32).
-- Box 29: docs/new/N5-NH2-box29.md.
-  - PROVED: F1°, TC, P3′.
-  - READING: (NH') reduces to R-only changes in OTHER blocks + W-CYC.
-  - FALSE: WF0 (wf0_cex_n16).
-  - §9: L-COMP's b5_os family split. (OB_R) holds; everything is pattern 23 in route form; n12/14 are under P3′, n16-24 in U1.
-- Box 30:
-  - (a) Packet docs/new/P-N5-NH-box30.md, frozen at 4d3b60d1 (sha1 382c5143…), for the Lead to pin. NEVER edit it; repairs go into a
-    new fixes file.
-  - (b) docs/new/N5-U1-box30.md: in U1 the κ_w-freeze holds (PROVED). Post-freeze R-changes split into kind (L) (W-length,
-    ≤ (n − 2)|R| if no fallback) and kind (T) (W-tie V_mid cascades: the residual). CONJECTURE U1-T (≤ 2 per vertex per W-length).
-    Attack spec for L-RED.
+### DONE (pushed with scripts/push.sh)
+- a0: docs/new/P-N5-NH-fixes-box30.md (b4fc3a4f): both referees' repairs of P-N5-NH (P3-1 = G-NH-1 two forms, sharper count,
+  N-NH-1/2/3, NH-1/2) + one L-NEW READING line (c_θ = c_w = o under ¬H1 ∧ ¬H2 gives only EQ states).
+- Box 31: docs/new/N5-U1T-box31.md.
+  - FALSE: U1-T (u1t_cex2_n32, sha1 6162a26f…; vertex 23 makes 5 Ξ-changes at one W-length; reported to the Lead 20:19Z).
+  - PROVED (L-NEW): Lemma R (VJ restriction keeps optimal edges), Lemma TB (tie-break potential), Lemma CASC (W-flat runs in
+    route form: level-ℓ vertex switches only at steps ≤ ℓ − 2), Theorem U1 (O((f+1)|R|³) per U1 piece, f = fallbacks), Lemma WC
+    (W-CYC: WC(I) ≤ (f_I + 1)|R|² under ¬H2), Lemma CASC-C (U2/U3 with the frame cycles frozen).
+  - OPEN: re-routings of the frame cycles through o at W-ties (U2/U3 residual); fallbacks at OTHER states (NFB-O).
 
 ### IN FLIGHT (others)
-- Both referees on P-N5-NH once the Lead pins it.
-- L-RED: (X) superlinear; then U1 (kind-(T) cascades).
-- L-SI successor 2: (X) proof side.
-- L-COMP successor 3: X/O tables.
+- Referees' §C on P-N5-NH. L-RED: (X), U1 kind (T) (now FALSE U1-T; CASC is the new target). L-SI: X → Z. L-COMP: X/O tables.
 
 ### NEEDS / next
-- Successor 11, first: answer referee gaps on P-N5-NH in a NEW dated fixes file.
-- Then (X) or (NH') residuals as the Lead routes:
-  - U1 kind (T); U2 (honest frame not in route form); U3 (W frame not in route form); W-CYC;
-  - CONJECTURES OB_R, OB, NFB-O, U1-T.
+- Referee packet for TB + CASC + Theorem U1 + WC if the Lead wants it (they are self-contained in N5-U1T-box31.md §2-§6).
+- U2/U3 residual: bound C-re-routings in W-flat runs (kind A/B split of R in U3, READING in §7); NFB-O.
+
+## Things only I know (successor 11)
+- The tie-break is the lever. S4a's choice among W-optimal arena edges is NOT arbitrary: odd c_w → min index (longest-path
+  recursion, first strict max), even c_w → lexmin root-first index sequence (BFS over preds in index order). The current edge is
+  always optimal when W stands still, so the choice can only move "down" (Lemma TB). Combined with the arena rule (only
+  honest-improving edges join) and route-additivity, a Howard-style layer induction gives CASC.
+- CASC needs ONE dependence order for both frames. Route form gives it (both values are π ⊕ terminal at o). Outside route form the
+  W root is c_w and the honest root is o or C_Ξ: the conflict sits exactly on the frame cycles through o (CASC-C).
+- Under ¬H2, w = (c_w, ∅, d): o is on its own W-cycle, so nothing before c_w beats it. That one line kills W-CYC (Lemma WC).
+- Tools, experiments/new/box31: tbcheck.py (TB on N5 runs; layered generator), tbarena.py (TB on random arenas: the fast test),
+  casccheck.py, runinfo.py (W-flat runs per piece), p3long.py (P3′ pieces), nrcheck.py (U2/U3, CASC-C, W-CYC), cascade.py (abstract
+  model), climbs cascclimb.py (modes thw / flat), nrclimb.py. out/ holds climb bests (not gitignored at this depth: copy finals to
+  instances/).
+- Pitfalls: my first message stamp (20:22Z) was 3 min ahead of date -u (20:19Z): stamp only from the command output, not a guess.
+  Random o-cyclic runs almost never reach W-flat runs or U2/U3; seed climbs from u1_n32 / b5_os_n14.
 
 ## Things only I know (successor 10)
 - The structure that carries everything:
@@ -204,6 +205,11 @@ Older resume points are in git history.
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 11, box 31) CONJECTURE (U1-T), "after the κ_w-freeze each R-vertex has ≤ 2 Ξ-changes per W-length value": FALSE.
+  - Instance: experiments/new/box31/instances/u1t_cex2_n32.pg (n 32, sha1 6162a26f…, n5.py 9 it / 1 fb, Oink zlk OK, strategies
+    verified). U1 piece 0..5 is one W-flat run; vertex 23 (level 9) switches at all 5 steps.
+  - Obstruction: the BFS tie-break (even c_w) lets lower-level improvements re-open tied honest-improving edges each step. Bounded
+    by CASC (≤ ℓ − 1 per run), so not superpolynomial.
 - (succ. 10, box 29) CONJECTURE (WF0), "no S4a step is W-flat and honest-strict": FALSE, wf0_cex_n16.pg (n 16, sha1 1de2ff5b…, Oink
   verified). It is N5 as specified (S1 tie-breaks; the Lead confirms the spec is faithful).
 - (succ. 10, box 28) CONJECTURE (FBRE-F), "in a (w, u*)-run, no vertex evicted by a fallback after the coarse freeze re-enters R":
