@@ -1,0 +1,23 @@
+Ga_checks: 763
+Gb_checks: 181
+Gc_checks: 2395
+PIECE_gateF: 49
+PIECE_gateR: 74
+PIECE_opt_checks: 6
+PIECE_stretches: 2
+RM_checks: 140
+Wo_checks: 20
+fallbacks: 3
+h_states: 22
+leave_class ----: 2
+leaves_checked: 2
+leaves_control: 30
+runs: 1
+spec_steps_checked: 41
+states: 45
+switched_in_R_checks: 5
+transitions: 44
+PIECE_max_(vc-bound+100): 80
+PIECE_max_len: 2
+PIECE_max_vc: 2
+RESULT OK violations=0

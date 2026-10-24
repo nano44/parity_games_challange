@@ -1,0 +1,6 @@
+SG_checks: 7500
+SG_checks_arena: 7500
+SG_checks_same_lambda: 2401
+control_own_cycle_node_flat: 346
+control_own_cycle_node_switches: 1860
+RESULT OK violations=0

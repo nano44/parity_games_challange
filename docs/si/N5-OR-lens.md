@@ -41,13 +41,17 @@ Sources opened, with sha256 prefixes of the PDFs:
   - Yet N5 eliminates SOME action almost every transition. On every instance named in the brief, plus L-RED's and L-NEW's
     pinned ones, the longest run of non-eliminating transitions inside a phase is at most 17, at n up to 64.
   - The switch-all control on switchallexp shows this run doubling with N (24, 62, 140, 298).
-- **CONJECTURE (ELIM-n) (§5): every n consecutive transitions of a joint λ-phase contain an eliminating one.**
-  - With Lemma Φ it implies N5 < (2n(n−1)+1)·n·(m_E + 1) iterations, which is G-N5-TIME. This implication is PROVED (§5).
-  - (ELIM-n) is not proved. I have no route to it. It is a reformulation, but one with a structural test that separates N5 from
+- **CONJECTURE (ELIM-n) (§5) was REFUTED at 14:37Z** (elimn_cex_n48, L-RED: a window of 49 at n 48). It is replaced by
+  **(ELIM-poly)**: every w(n) consecutive transitions of a joint λ-phase contain an eliminating one, for a polynomial w.
+  - With Lemma Φ it implies N5 < (2n(n−1)+1)·(m+1)·w(n) iterations, which is G-N5-TIME. This implication is PROVED (§5).
+  - (ELIM-poly) is not proved. I have no route to it. It is a reformulation, but one with a structural test that separates N5 from
     switch-all.
-- **For the brief's (CYC) target, a narrower CONJECTURE (CYC-ELIM) (§4.3), the Post-Ye Lemma 3.6 shape.**
-  - Every non-eliminating window contains ≤ c θ-changes. The data give c = 3.
-  - PROVED: (CYC-ELIM) implies θ-changes ≤ (c+1)(m+1) per phase, i.e. (CYC).
+- **For the brief's (CYC) target, a narrower CONJECTURE (CYC-ELIM) (§4.3), the Post-Ye Lemma 3.6 shape. REFUTED 14:49Z**
+  (cycelim_cex_n32: 10 θ-changes in one window with d = 7; 24 θ-changes in one phase at n 32). Only its consequence of (ELIM-poly)
+  survives.
+  - Every non-eliminating window contains ≤ d θ-changes (d = o's out-degree). The data give at most 5, tight at d = 5 on
+    theta_tp32 (L-RED, Lead 14:27Z).
+  - PROVED: (CYC-ELIM) implies θ-changes ≤ (d+1)(m+1) per phase, i.e. (CYC).
   - On 𝒞^1O, Lemma G supplies L-LIT's LP(t) family; N5 prices with LP(θ) and selects with LP(w) (§3.3b).
 - **The gap-level potential itself gives no (CYC) or (TRUST) bound.**
   - θ-changes are almost all FLAT in gap level: theta_thc24 has 16 θ-changes in one phase, only 2 of which lower g(o).
@@ -315,12 +319,32 @@ largest number of θ-changes inside one window of consecutive non-eliminating tr
 | returns_rt48 / returns_ph64 | 48 / 64 | 3 / 3 | 0 / 0 |
 | oneodd_c24, thetare_min, thetare_n, lap_n6, tr20_s4 | 24, 15, 11, 6, 20 | 1, 2, 2, 2, 0 | 0 |
 
+**REFUTED 2026-10-24 14:49Z (L-SI's own climb, s_tp32 seeded from theta_tp32): (CYC-ELIM) with constant d is FALSE.**
+- Instance: experiments/si/orlens/instances/cycelim_cex_n32.pg (n 32, sha1 c45edf91…, canonical start). One Odd choice vertex o = 0
+  with d = 7 exits {5, 9, 15, 24, 25, 27, 28}.
+- n5.py n5: 31 iterations, 1 fallback. Oink zlk OK, strategies verified (check_sol2.py, Oink 8fbf0a7).
+- One joint λ-phase of 26 transitions holds 24 θ-changes. One non-eliminating window holds 10 θ-changes, which is > d = 7.
+- laps.py: 15 σ̄-laps, 4 unretired.
+- The 24 θ-changes per phase at n 32 are above the earlier maximum of 16 (theta_tp32, theta_thc24).
+- Weakened form: a non-eliminating window holds at most as many θ-changes as it has transitions. So (ELIM-poly) still implies (CYC)
+  with θ-changes ≤ (m + 1)·w(n) per phase. No separate statement about θ remains.
+
+The original statement, kept for the record:
 **CONJECTURE (CYC-ELIM).** On 𝒞^1O, every window of consecutive non-eliminating transitions inside a joint λ-phase contains at
-most c θ-changes, for a constant c. The data give c = 3.
-- PROVED (elementary): (CYC-ELIM) implies θ-changes ≤ (c + 1)·(m + 1) per joint λ-phase, which is (CYC) of box 24 §4.
+most d θ-changes, where d is o's out-degree. The data give at most 3, with d = 5 on theta_thf16.
+- PROVED (elementary): (CYC-ELIM) implies θ-changes ≤ (d + 1)·(m + 1) per joint λ-phase, which is (CYC) of box 24 §4.
   - At most m eliminating transitions per phase, each changing θ at most once.
-  - At most c θ-changes between consecutive eliminating transitions.
-- (CYC-ELIM) is weaker than (ELIM-n). It is aimed at the brief's target. Climb: §6.
+  - At most d θ-changes between consecutive eliminating transitions.
+- Mechanism of the 3-θ-change window (theta_thf16, states 2-5):
+  - σ̄(o) walks the exits 15 → 1 → 4 → 2, then walks them again 2 → 4 → 1 → 15 → 1 → 4 → 2 at states 8-15.
+  - The ring vertices repeat the same switches on the second lap; e.g. 15 takes 5 → 14 at state 3 and again at state 13.
+  - So the first lap is non-eliminating and the last lap retires the edges.
+- The constant was first stated as 3 (14:04Z message). d is the honest scale: a window can hold one lap of the ring, and a ring
+  is at most o's exits.
+- Kill design for L-RED (READING): one ring lapped ≥ 3 times with identical switches and no retirement elsewhere. The middle lap's
+  window then holds about d θ-changes, and more laps give more. Box 25 §4's lap counts (fts_best16: 4 σ̄-returns, two full laps)
+  are the nearest data.
+- (CYC-ELIM) is weaker than (ELIM-poly). It is aimed at the brief's target. Climb: §6.
 
 ### 4.4 Why N5's windows end, and two refinements that fail or do not separate (DATA)
 **Mechanism of the long windows** (elim.py traces):
@@ -332,7 +356,7 @@ most c θ-changes, for a constant c. The data give c = 3.
   - The window starts after a fallback (state 7) and ends after another fallback (state 19). Its elimination comes at state 20.
 - returns_rt48: hub vertex 46 (successors 18, 37, 40) switches 14 times in the phase, cycling over all three edges. Eliminations
   are sparse in the first half of the phase (7 in 40 transitions) and dense at its end.
-- So a kill of (ELIM-n) needs one lane swept back and forth ≥ 3 times, or a hub cycled, while nothing else retires an edge.
+- (Written before 14:37Z.) So a kill of (ELIM-n) needs one lane swept back and forth ≥ 3 times, or a hub cycled, while nothing else retires an edge.
   READING: this is a target for L-RED.
 
 **Refinement 1: "every return is paid by a gap drop" is FALSE** (retpay.py).
@@ -365,7 +389,91 @@ almost the whole phase, so g is blind below it.
   lexicographic analogue of HMZ's "number of scales" log_{1/γ}(n²/(1−γ)): each recursion level is one scale, and the
   contraction that would bound the levels is what §3 shows to be missing.
 
+### 4.5 Lead checks of 14:23Z (pieces.py; trunk 4332f9f texts: docs/new/N5-reentry-box26.md §7.2, docs/new/P-N5-RE-box26.md §5, docs/lit/T30-elimination.md)
+**Check 1: does Lemma PIECE give an eliminating transition within ≤ n − 2 steps?**
+- A piece (P-N5-RE §5) is a maximal run of transitions in one joint λ-phase with:
+  - τ, θ, w constant;
+  - (h) at every state;
+  - no S4c fallback;
+  - R constant.
+- **In the PIECE sense: PROVED (L-SI), but vacuous.** If a piece's last transition switches any edge (a value-changing transition
+  does), that edge is absent from the piece's last state. So every piece with a value change contains a piece-eliminating
+  transition, and PIECE bounds a piece by n − 2 value-changing transitions. Neither fact says anything about the rest of the
+  phase.
+- **In the PHASE sense (this file's definition): FALSE.** Pieces with value changes and NO phase-eliminating transition, i.e. every
+  edge abandoned inside the piece is used again later in the phase:
+  - fts_best16: piece = transition 7 → 8. Vertex 3 leaves edge (3, 7) for 13 and re-adopts (3, 7) at state 11, inside the same
+    joint λ-phase (states 2-28). No fallback at 7.
+  - theta_tp32 (red/n5inj): piece states 9-19, 10 value-changing transitions, none phase-eliminating.
+  - returns_rt48: 4 of 14 pieces. returns_ph64: 4 of 16 pieces.
+  - 0 violations of the piece-sense statement on 22 runs.
+- Windows span several pieces and crossings: returns_rt48 has a non-eliminating window of 11 while its longest piece is 6;
+  returns_ph64 has 15 against 9.
+- So "(ELIM-n) ⇐ (XING) + (CYC) + (FB-1O)" does NOT follow from PIECE: a crossing can re-adopt an edge abandoned in an earlier
+  piece. The implication is OPEN.
+- (XING) + (CYC) + (FB-1O) + (d) bound the phase directly by L-NEW's §7.4 reduction, which does not need (ELIM-n).
+
+**Check 2: L-LIT T30's (ELIM-CANCEL).**
+- Tagged event (pieces.py): at transition k → k+1, all of the following hold:
+  - some Even x switches to z';
+  - the play from o under (σ_{k+1}, σ̄_k) returns to o through x, i.e. a mixed cycle closed by the Even switch;
+  - σ̄(o) changes.
+- HIT if the closing edge (x, z') is never re-adopted after it is first abandoned in the phase, or if o's old exit σ̄_k(o) is
+  never used by σ̄ again in the phase.
+- DATA: 28 cancellations on 22 one-Odd-choice runs, 28 hits, and BOTH parts hit every time.
+  - fts_best16 4, theta_thf16 4, theta_tp32 6, thclimb_n16 8;
+  - returns_rt48 1, returns_ph64 1, thetare_min 1, thetare_n 1, oneodd_c24 1, thclimb_n12 1;
+  - 0 on the other 12 runs.
+- CONJECTURE (ELIM-CANCEL) is not contradicted. The sample is small. Cancellations are rare outside the θ-lap instances.
+
+**(CYC-ELIM) is tight on theta_tp32.** Its non-eliminating window holds 5 θ-changes, and o's out-degree is d = 5. On theta_tp40,
+d = 4 and the window holds 0.
+
+### 4.6 Lead target (a), 14:45Z: (θ, w)-changes per phase and "every σ̄-lap retires an edge" (laps.py)
+A LAP is a return of σ̄(o) to an exit it left earlier in the same joint λ-phase. The lap is RETIRED if some transition between the
+departure and the return is eliminating.
+**"Every σ̄-lap retires an edge" (σ- or τ-edge, for the rest of the phase): FALSE.**
+- theta_tp32 (red/n5inj, n 32, canonical start, phase from state 4):
+  - σ̄(o) = 5, 15, 28, 5, 28, 24 at states 4-9.
+  - Returns to exit 5 at state 7 and to exit 28 at state 8.
+  - No transition 4 → 5 … 8 → 9 retires an edge. Every edge abandoned there is used again later in the phase. Fallback-free.
+- thclimb_n12_s11 (instances/, Oink OK): one unretired lap, states 3 → 5, exit 2.
+- Overall 45 of 48 laps on 17 runs are retired:
+  - fts_best16 4/4, theta_thf16 6/6, theta_thc24 6/6, theta_tp32 8/10, theta_tp40 6/6, thclimb_n12 5/6, thclimb_n16 7/7;
+  - lap_n6 1/1, lap_n9 1/1, elim24_p52 1/1;
+  - no laps on rt48, ph64, thetare_*, tr20_s4, xc24, oneodd_c24.
+- So the route "θ-changes ≤ d·(m+1) from one retirement per lap" does not exist in this form.
+- What survives is (CYC-ELIM) (§4.3): ≤ d θ-changes per non-eliminating window. It is tight on theta_tp32, whose window holds the
+  two unretired laps.
+
+**Counts per joint λ-phase (DATA).**
+- θ-changes: max 16 (theta_thc24, theta_tp32, theta_tp40, thclimb_n16).
+- w-changes: max 8 (theta_thc24, theta_tp40).
+- (θ, w)-pair changes: max 16.
+- θ-changes with σ̄(o) unchanged inside one non-eliminating window: max 1.
+
+**What E1-E5 give for (a) (PROVED, L-SI).**
+- By E6 at the single vertex o, the honest value θ = Ξ(o) can change its gap level against the phase target at most n + 1 times.
+- By E4, σ̄(o) uses an exit e only while g(e) ≥ s̄(o, e).
+- Under (h), w = o ⊕ Ξ(τ(o)) (L-NEW Lemma Wo), so the same applies to w at the vertex τ(o).
+- So at most 2(n + 1) pair changes per phase lower a gap level at o or τ(o). The rest are flat at both, and §4.3 shows most
+  θ-changes are flat (theta_thc24: 16 changes, 2 level drops).
+- The calculus does not count (a). OPEN.
+
 ## 5. The open statement, and what it would give
+**REFUTED 2026-10-24 14:37Z (L-RED R58 §13a, relayed by the Lead; re-run here 14:42Z): (ELIM-n) is FALSE.**
+- Instance: experiments/red/n5inj/instances/elimn_cex_n48.pg (sha1 d6062e86…), n 48, 3 Odd choice vertices, canonical start.
+- 92 iterations, 10 fallbacks (Lead re-run, Oink OK, strategies verified).
+- elim.py (unmodified) on its longest joint λ-phase (90 transitions): the non-eliminating window is 49 > n, for all three columns
+  (σ-only, σ-or-σ̄, σ-or-τ). 35 eliminating transitions; recursive depth 3.
+- The window is about 1.02n: linear, not super-polynomial. The statement survives only in weakened form.
+
+**CONJECTURE (ELIM-poly), replacing (ELIM-n).** There is a polynomial w(n) such that, in every joint λ-phase of an N5 run, every
+w(n) consecutive transitions contain an eliminating one (σ- or τ-edge abandoned and not used again in that phase).
+- DATA: max window 49 at n 48 (elimn_cex_n48), 17 at n 32, 15 at n 64, 12 at n 24 (elim24_p52). Consistent with w(n) = 2n.
+- Not one family; growth with n is not established.
+
+The original statement, kept for the record:
 **CONJECTURE (ELIM-n).** In every joint λ-phase of an N5 run, among any n consecutive transitions at least one is eliminating:
 some vertex leaves an edge of σ (Even) or τ (Odd) that it does not use again in that phase.
 - Counting τ as well matters only on games where Odd moves inside phases. The σ-only and σ-or-τ windows (elim.py columns
@@ -374,14 +482,15 @@ some vertex leaves an edge of σ (Even) or τ (Odd) that it does not use again i
 - DATA: §4.2 (max 17 at n 32, 15 at n 64) and §6.
 - Not stated for fallback-free phases only. Fallbacks are included in every count above.
 
-**Proposition (PROVED, L-SI; elementary).** (ELIM-n) implies that N5 makes < (2n(n−1)+1)·n·(m_E + 1) iterations, where m_E is the
-number of Even edges.
-Here m_E is replaced by m, the number of edges, when τ-eliminations are counted.
+**Proposition (PROVED, L-SI; elementary; restated 14:42Z for windows of any length).** If every w consecutive transitions of a
+joint λ-phase contain an eliminating one, then each phase has at most m + (m + 1)(w − 1) < (m + 1)·w transitions. So N5 makes
+< (2n(n−1)+1)·(m+1)·w iterations, with m the number of edges (m_E if only σ-eliminations are counted).
 Proof:
-- In one phase, the eliminating transitions are at most m (resp. m_E), because each one retires a distinct (phase, edge) pair.
-- Between consecutive eliminating transitions there are at most n − 1 others. So a phase has ≤ n·(m_E + 1) − 1 transitions.
+- In one phase, the eliminating transitions are at most m, because each one retires a distinct (phase, edge) pair.
+- There are at most m + 1 maximal runs of non-eliminating transitions, each of length ≤ w − 1.
 - Lemma Φ (box 21 §2.3) gives at most 2n(n−1)+1 joint λ-phases. □
-So (ELIM-n) implies G-N5-TIME (gauntlet step 4, running time). It does NOT imply correctness, which is R15.
+With w = n this is the earlier bound. (ELIM-poly) with w polynomial implies G-N5-TIME.
+So (ELIM-poly) implies G-N5-TIME (gauntlet step 4, running time). It does NOT imply correctness, which is R15.
 
 **Why this is not just "N5 is polynomial" restated (READING).**
 - It is a local, checkable statement: one window of n transitions in one phase.
@@ -389,11 +498,39 @@ So (ELIM-n) implies G-N5-TIME (gauntlet step 4, running time). It does NOT imply
 - The natural proof would be an N5-specific replacement for HMZ Lemma 6.4. The candidate fact: N5's selection is a full
   one-player OPTIMUM against τ over the gate, so a vertex that keeps oscillating must pay with a retirement elsewhere.
 - I have no argument for that. The obstacles are exactly the failures in §4.1 (the retired edge is not the max-slack one) and the
-  returns in §4.2 (abandoned ≠ retired). (ELIM-n) is OPEN.
+  returns in §4.2 (abandoned ≠ retired). (ELIM-n) is FALSE (14:37Z); (ELIM-poly) is OPEN.
 
-## 6. Climb against (ELIM-n) (DATA; climb.py, 2,400 s per seed, canonical start)
-Fitness = (longest non-eliminating run in one joint λ-phase, that phase's length). Interim at 13:44Z: n 12, 16, 20 reached 5
-(phases 7, 8, 11); n 24 reached 1. Final numbers: appended below when the climbs end (~14:19Z).
+## 6. Climbs (DATA; climb.py; canonical start; one Odd choice vertex, o-cyclic allowed; L-NEW's generator and mutations, read-only)
+**ELIM climbs.** First round, 13:39Z, with σ-ONLY eliminations (the definition sent to the Lead at 13:51Z):
+
+| n | seed | best (window, phase) |
+| --- | --- | --- |
+| 12 | 1 | (5, 7) |
+| 16 | 2 | (7, 9) |
+| 20 | 3 | (5, 11) |
+| 24 | 4 | (9, 12) |
+
+- These bests exploit transitions at which only τ moves. On elimclimb_n24 and elimclimb_n16 the σ-or-τ window is 0.
+- This is why §5 counts τ-edges. The 13:51Z climb figures are withdrawn.
+
+Second round, 13:59Z, σ-or-τ eliminations, 1,800 s each:
+- n 20, seed 21: (0, 11), with no non-eliminating window at all.
+- n 24, seed 22: **(12, 52)**.
+  - instances/elim24_p52.pg (n 24, m 80, sha1 51f0c964…, from out/elimst_n24_s22.pg).
+  - n5.py n5: 59 iterations, 4 fallbacks, matching ortrace and gaps.py's assert. Oink zlk OK, strategies verified (check_sol2.py, Oink 8fbf0a7 built in this
+    container). Lane phase counts are transitions; the Lead's phases.py may differ by 1.
+  - Its longest joint λ-phase has 52 transitions. That is 2.2n, above the 1.6n envelope of N5-STANDDOWN's table for o-cyclic
+    𝒞^1O (returns_ph64 104 at n 64).
+  - Its window is 12 ≤ n, so (ELIM-n) holds.
+  - 23 eliminating transitions; 46 edges used.
+  - θ-changes in the window ≤ 1 (o's out-degree d = 8; CYC-ELIM holds).
+  - Recursive depth 2; 6 pieces, longest 13; 1 cancellation (a hit).
+  - Note for L-RED and L-NEW: a phase of 52 at n 24 from a 30-minute climb, at a fitness that did not ask for long phases.
+
+**θ-window climbs** (fitness = θ-changes in a non-eliminating window, then θ-changes in that phase), 1,800 s each:
+- n 12, seed 11: (4, 12), with d = 7. instances/thclimb_n12_s11.pg; Oink zlk OK, strategies verified.
+- n 16, seed 12: (4, 16), with d = 10. instances/thclimb_n16_s12.pg; Oink zlk OK, strategies verified.
+- Both stay ≤ d, so (CYC-ELIM) holds.
 
 ## 7. Files (experiments/si/orlens/; read-only use of experiments/new/n5.py, experiments/si/si.py, new/box21, new/box25)
 - ortrace.py: N5 loop with states (asserts equality with n5.run), plus switch-all control mode; Lex (lev, ⊕).
@@ -406,6 +543,8 @@ Fitness = (longest non-eliminating run in one joint λ-phase, that phase's lengt
 - stretchret.py: returns inside (θ, w, τ, λ)-stretches.
 - vi.py: Lemma D check and value iteration.
 - climb.py: §6.
+- instances/ (tracked): elim24_p52.pg, thclimb_n12_s11.pg, thclimb_n16_s12.pg.
+- pieces.py (§4.5), thetaelim.py (§4.3), depth.py (§4.4), retpay.py (§4.4), sweep.py (random games).
 - out/: thetare_min.pg and thetare_n.pg (copied from l-new 0d6a93c, sha1 above), and the switchallexp_N4..7 instances from
   experiments/hard-families/pgsolver_port.py. The out/ files are not tracked except where named.
 - Reproduce (from experiments/): `python3 si/orlens/elim.py new/box21/instances/fts_best16.pg`;

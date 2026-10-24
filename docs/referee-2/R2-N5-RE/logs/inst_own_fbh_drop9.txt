@@ -1,0 +1,14 @@
+Ga_checks: 690
+Gb_checks: 120
+Gc_checks: 180
+RM_checks: 30
+Wo_checks: 60
+fallbacks: 30
+h_states: 90
+leave_class ----: 30
+leaves_checked: 30
+runs: 30
+states: 90
+switched_in_R_checks: 30
+transitions: 60
+RESULT OK violations=0

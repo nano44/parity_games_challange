@@ -1,0 +1,26 @@
+Ga_checks: 11353
+Gb_checks: 9500
+Gc_checks: 183718
+PIECE_gateF: 221
+PIECE_gateR: 2
+PIECE_opt_checks: 22
+PIECE_stretches: 2
+RE_reentries: 8
+RE_theta_changed: 8
+RE_theta_changed_route_not_better: 8
+RM_checks: 6914
+Wo_checks: 554
+fallbacks: 7
+h_states: 610
+leave_class ----: 11
+leaves_checked: 11
+leaves_control: 151
+runs: 30
+states: 681
+switched_in_R_checks: 96
+transitions: 651
+PIECE_max_(vc-bound+100): 80
+PIECE_max_len: 10
+PIECE_max_vc: 10
+example theta_re: theta_tp32.pg#0 RE x=7 L=19 E+1=44
+RESULT OK violations=0

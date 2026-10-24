@@ -1,0 +1,27 @@
+Ga_checks: 327
+Gb_checks: 124
+Gc_checks: 852
+PIECE_gateF: 187
+PIECE_gateR: 5
+PIECE_opt_checks: 16
+PIECE_stretches: 3
+RE_reentries: 4
+RE_theta_changed: 4
+RE_theta_changed_route_not_better: 2
+RM_checks: 69
+Wo_checks: 27
+fallbacks: 2
+h_states: 28
+leave_class ----: 4
+leaves_checked: 4
+leaves_control: 10
+runs: 1
+spec_steps_checked: 26
+states: 29
+switched_in_R_checks: 5
+transitions: 28
+PIECE_max_(vc-bound+100): 92
+PIECE_max_len: 6
+PIECE_max_vc: 6
+example theta_re: fts_best16.pg#0 RE x=0 L=8 E+1=28
+RESULT OK violations=0

@@ -1,0 +1,12 @@
+Ga_checks: 25
+Gb_checks: 11
+Gc_checks: 59
+RM_checks: 4
+Wo_checks: 2
+fallbacks: 0
+h_states: 3
+runs: 1
+spec_steps_checked: 2
+states: 3
+transitions: 2
+RESULT OK violations=0
