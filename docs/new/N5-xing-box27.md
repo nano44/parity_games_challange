@@ -65,7 +65,7 @@ Proof.
 - S4c switches every vertex that has a gate edge. □
 DATA (fbedges.py): every switched edge at the 36 throttled (h)-fallbacks of fts_best16, theta_tp32, returns_rt48, returns_ph64,
 i1h_fts_best16, fbh_drop9 and fbh_thr is a leave (D2 77, other 0). No such fallback in 15,000 random runs.
-Lemma CR (coarse R17; READING, L-NEW). It transcribes R17 Lemma P / Theorem PH into the coarse order. The fallback-step part of
+Lemma CR (coarse R17; L-NEW; written out in full in §7, PROVED-in-writing, referee check pending). It transcribes R17 Lemma P / Theorem PH into the coarse order. The fallback-step part of
 Case B is new and is proved below; the transcription of R17's Case B sub-cases (B1/B2, cycle creation) into the coarse order is
 argued, not written out. In a throttled (θ, w)-stretch (fallbacks allowed), coarse values change only at the first n − 1 transitions of the
 stretch.
@@ -184,9 +184,43 @@ N5 on o-cyclic 𝒞^1O makes poly(n) iterations if, per joint λ-phase, both of 
 - (d) the number of transitions at states where (h) fails.
 Ingredients:
 - PROVED: Lemma Φ (≤ 2n(n − 1) + 1 phases); τ-changes ≤ d − 1; RM, RE, Wo, G (packet P-N5-RE); C, FBL, FBF, XA (this file).
-- READING: PIECE (packet §5) and CR (§1).
+- PIECE (packet §5, a proof sketch there) and CR (written out in §7; referee check pending).
 - Unthrottled stretches: Lemma PT + R17.
 - Flat steps: R15 (d).
 Not covered: states where (h) fails, and the counts in (a), (d). Next targets:
 - (CYC') θ-changes and w-changes per phase. L-RED's data plateau at 16 θ-changes.
 - (NH) Non-(h) transitions. These include τ(o) closing a cycle at o, the setting of all box-25 W-drop instances.
+
+## 7. Lemma CR written out in full (L-NEW, 14:55Z; this upgrades CR from READING to PROVED-in-writing; a referee should check it)
+Setting.
+- S is a throttled (θ, w)-stretch with states k_0, k_0 + 1, …. τ, θ, w and the joint λ-map are constant, and (h) holds.
+- Ω := W = the valuation of the one-player game G_τ. Ω^c := COARSE(Ω), which equals COARSE(Ξ) by Lemma C.
+- Ω's cycle-node map is constant on S. For F-vertices it is Ξ's (Lemma G (a)); for R-vertices it is c, the cycle node of w and of θ.
+- For a simple path r = (x = r_0, …, r_L = u) of G_τ to a cycle node u of σ_{k_0}: value(r) := (u, P(r), L), as in R17 §2. Paths may
+  pass o; then they continue along τ(o).
+Claim (coarse Lemma P). For every j ≥ 0 with k_0 + j in S, every x and every such r with L ≤ j: Ω^c_{k_0+j}(x) ⪰ COARSE(value(r)).
+The coarse order compares cycle nodes first, then path sets above u*, ignoring length. (V1) and (V2) hold for it verbatim, with "more
+relevant than u*" added to the membership test of ⊕.
+Proof, by induction on j. The base j = 0 is R17's. Step: r = x → z → r', and the IH gives Ω^c(z) ⪰ COARSE(value(r')).
+- Case A_c: Ω^c(z) ⪯ Ω^c(σ(x)).
+  - A1 (x not its own cycle node): COARSE(value(r)) = COARSE(x ⊕ value(r')) ⪯ COARSE(x ⊕ Ω(σ(x))) = Ω^c(x), by coarse (V1)/(V2).
+    Then Ω^c is monotone (Lemma C) at every step, arena or fallback.
+  - A2 (x its own cycle node): as in R17, using cycle nodes only.
+- Case B_c: Ω^c(z) ≻ Ω^c(σ(x)). Coarse-strict implies fine-strict for Ξ and for W alike, so (x, z) is in the gate AND W-improving.
+  - At an ARENA step: σ̂ := σ[x → z] is an arena strategy, so (F1) gives Ω_{k+1}(x) ⊵ val_σ̂(x). Run R17's B1/B2 analysis for the fine
+    W-improving edge (x, z) in G_τ:
+    - every branch where "the phase ends" contradicts the constancy of Ω's cycle nodes on S;
+    - the remaining branches give val_σ̂(x) = x ⊕ Ω(z) (B1), or the flat case x = λ(x) (B2, D = ∅, handled as in R17 with cycle
+      nodes only).
+    Taking COARSE and using the IH with coarse (V2) gives Ω^c_{k+1}(x) ⪰ COARSE(value(r)).
+  - At a FALLBACK step (throttled, (h)): by Lemma FBL, (x, z) is a d2 edge with x ∈ R and z ∈ F, and x switches to its honest-best
+    gate edge z* ∈ F. The F side is unchanged up to flat cycle-node switches, which keep plays inside their regions, away from x ∈ R.
+    So z*'s path avoids x, and Ξ_{k+1}(x) = x ⊕ Ξ_{k+1}(z*) = x ⊕ Ξ_k(z*) ⊵ x ⊕ Ξ_k(z). Taking COARSE (Lemma C) and the IH gives the
+    claim. □
+Lemma CR follows as in R17 Theorem PH.
+- At j = n − 1 the claim covers every simple path.
+- Ω_t(x) is the value of x's actual play, a simple path to a phase cycle node. So Ω^c_t(x) ⪯ Ω^c_{k_0+n−1}(x) ⪯ Ω^c_t(x) for
+  t ≥ k_0 + n − 1, and coarse values are constant from k_0 + n − 1 on. □
+With §7, Theorem XA's count (≤ n(n − 1) arena-type re-entries per throttled stretch) and §5's O(n³) per stretch are PROVED-in-writing,
+like CR. They depend on: the packet's Lemma G and PIECE (PIECE itself is a sketch in the packet), Lemma W (box 21 §2.5, signed in
+R18 (d) context), R15 (a), and R17 §1-§3.
