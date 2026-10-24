@@ -1,0 +1,6 @@
+leaves: 1156
+reentries: 2
+runs: 100
+tau_changes: 48
+theta_equal: 2
+RESULT OK violations=0

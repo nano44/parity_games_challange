@@ -9,7 +9,7 @@ for p in sys.argv[1:]:
         k, v = line.rsplit(": ", 1)
         try: v = int(v)
         except ValueError: continue
-        if k.startswith("PIECE_max"): m[k] = max(m[k], v)
+        if k.startswith(("PIECE_max", "CR_last", "S_max", "XA_max")): m[k] = max(m[k], v)
         else: c[k] += v
 for k in sorted(c): print(f"{k}: {c[k]}")
 for k in sorted(m): print(f"{k}: {m[k]}")

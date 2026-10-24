@@ -1,0 +1,9 @@
+leaves: 175
+leaves_at_tau_change: 53
+reentries: 108
+reentries_tau_changed: 25
+runs: 100
+tau_changes: 76
+theta_equal: 108
+theta_equal_tau_changed: 25
+RESULT OK violations=0

@@ -1,0 +1,5 @@
+leaves: 52
+reentries: 49
+runs: 100
+tau_changes: 122
+RESULT OK violations=0

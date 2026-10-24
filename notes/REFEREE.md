@@ -1,6 +1,14 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 4, 2026-10-24T15:28Z by date -u): P-N5-XA
+- P-N5-XA (Lead 15:22Z; pin b70aa59; docs/new/P-N5-XA-box27.md sha1 832d0da2…): docs/referee/R-N5-XA.md. C SIGNED; FBL SIGNED WITH GAPS XA-1
+  (F->R "none" not proved: S4c sends c to its BEST gate edge, may be F; true for u*!=none since flat forces P(w)=empty, P(theta) odd top;
+  u*=none untested); FBF SIGNED WITH GAPS XA-2 (repair: after S4c, Xi_L(sigma_{L+1}(y)) >= Xi_L(z) for all successors z); P^c/CR SIGNED WITH
+  GAPS XA-3 (R17 B1 omission inherited), XA-4 (Odd x); XA SIGNED (no data: 0 re-entries anywhere); Corollary READING, XA-5 (flat fallbacks are
+  PIECE separators; R15(d) bound circular). Tool docs/referee/scratch/xa_probe.py. Random samples vacuous (throttled stretches ~1 in 1,000 runs).
+  NEXT: §C when the Lead says R2-N5-XA exists (docs/referee-2/ NOT read for XA).
+
 ## Resume point (successor 4, written 2026-10-24T14:40Z by date -u, Opus 5.5 under D15; label verdicts "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh, output to a file, print $?.
 - P-N5-RE (Lead 14:20Z 10-24; pin 52c7261; object docs/new/P-N5-RE-box26.md sha1 8dba4576…): docs/referee/R-N5-RE.md.
