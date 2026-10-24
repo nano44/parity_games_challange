@@ -18,6 +18,12 @@ Packet P-N5-RE (box 26) is pinned at trunk 52c7261 for REFEREE / REFEREE-2 succe
 - Reduction (READING): N5 on o-cyclic 𝒞^1O is polynomial ⇐ (CYC') θ- and w-changes per phase + (NH) non-(h) transitions, both
   poly(n). (CYC') ⇐ (CYC-u*): θ-changes below a fixed u* with w fixed, plus w-changes.
 - Trap noted this box: estimated timestamps in doc headers (fixed to date -u readings). Check: stamp only from date -u output.
+- Referee reports on P-N5-RE (14:45Z / 14:53Z): G, Wo SIGNED; RM, RE, PIECE SIGNED WITH GAPS; (NC) NOT needed (REFEREE's §4.2 argument;
+  (SG)); corrections applied in N5-xing-box27.md §9.
+- Packet 2: docs/new/P-N5-XA-box27.md (sha1 832d0da2…), at l-new 0579bfcf, for the same two referees after their §C.
+- Climbs final: sc32 (n 32) has 43 θ-changes in one 44-iteration phase (1.4n), the first above n. The throttled crossing climbs stay
+  below n − 1. FB-RE climbs 0 (as FBF predicts).
+- Box 27 ended ~15:30Z. Nothing running. NEXT (if routed): (CYC-u*), the θ-changes below a fixed u* (sc32 is the instance), or (NH).
 
 ### DONE (box 26; docs/new/N5-reentry-box26.md; code experiments/new/box25/reentry.py, routemono.py, routeclimb.py, shrink_theta.py)
 - The named lead ("every re-entry into R in a joint λ-phase is a route improvement") is FALSE.
