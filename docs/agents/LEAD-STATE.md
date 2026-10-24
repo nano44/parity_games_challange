@@ -942,3 +942,4 @@
 - 10:03Z (date -u) Hourly sweep (10:02Z trigger): overage false; no working lanes; no exceptions.
 - 11:03Z (date -u) Hourly sweep (11:02Z trigger): overage false; no working lanes; no exceptions.
 - 12:03Z (date -u) Hourly sweep (12:02Z trigger): overage false; no working lanes; no exceptions.
+- 12:30Z (date -u) NOW.md refreshed after OWNER-DESK flagged it stale (header 10-22, M4 row, spend 10-18): header rewritten (fleet idle, N5 stand-down, R18/DE34, DTL dormant), M4 row status appended, partial spend reading added.
