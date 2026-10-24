@@ -5,7 +5,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - docs/referee/R-N5-X.md: F1, NF, Theorem X SIGNED WITH GAPS (X-1..X-4, all closed); XW, EQ, FBL-N, F2, FB-W SIGNED; §8 table checked.
   X-1: R19 (f) "theta free" PIECE count of Xi-or-W changes needs: theta-change => W-change on F (sigma-bar(o) is an F-exit under H1; min over exits
   + R15(a)). My own R-N5-RE §5.2 count sentence assumed theta constant. X-2: F empty edge case (my probe flagged it first). X-4: fixes §5 used as
-  re-derivation. Tool docs/referee/scratch/x_probe.py. NEXT: §C when the Lead says R2-N5-X exists (docs/referee-2/ NOT read for X).
+  re-derivation. Tool docs/referee/scratch/x_probe.py.
+  §C done vs R2-N5-X (059f492): no disagreement; WITHDREW 'R19 (f) as landed TRUE' (per-part 'resp.' false for Xi on R: fbref_n48 56->57,
+  R={o}); confirmed docs/agents/R19-note-X1.md wording; TF = X-1 equivalent; accepted N-X-2. PARKED.
+- Lesson: when a signed statement says 'resp.', check each part separately, not only the sum.
 - Context at this point ~330k+; park with handover notes if past ~600k.
 
 ## Resume point (successor 4, 2026-10-24T15:28Z by date -u): P-N5-XA
