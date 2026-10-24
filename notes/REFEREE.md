@@ -1,6 +1,13 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 4, 18:20Z by date -u): P-N5-X (pin afc88b0, object sha1 b21d2d06…)
+- docs/referee/R-N5-X.md: F1, NF, Theorem X SIGNED WITH GAPS (X-1..X-4, all closed); XW, EQ, FBL-N, F2, FB-W SIGNED; §8 table checked.
+  X-1: R19 (f) "theta free" PIECE count of Xi-or-W changes needs: theta-change => W-change on F (sigma-bar(o) is an F-exit under H1; min over exits
+  + R15(a)). My own R-N5-RE §5.2 count sentence assumed theta constant. X-2: F empty edge case (my probe flagged it first). X-4: fixes §5 used as
+  re-derivation. Tool docs/referee/scratch/x_probe.py. NEXT: §C when the Lead says R2-N5-X exists (docs/referee-2/ NOT read for X).
+- Context at this point ~330k+; park with handover notes if past ~600k.
+
 ## Resume point (successor 4, 2026-10-24T15:28Z by date -u): P-N5-XA
 - P-N5-XA (Lead 15:22Z; pin b70aa59; docs/new/P-N5-XA-box27.md sha1 832d0da2…): docs/referee/R-N5-XA.md. C SIGNED; FBL SIGNED WITH GAPS XA-1
   (F->R "none" not proved: S4c sends c to its BEST gate edge, may be F; true for u*!=none since flat forces P(w)=empty, P(theta) odd top;
