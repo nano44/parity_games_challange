@@ -986,3 +986,4 @@
 - 17:07Z merged claude/l-new 06b9282 (box 28 §5c: O(n⁴(1+X+O)) per phase, READING; scope OK); Lead re-ran eqcheck seed 2832 (1,296 runs) + sc32: 0 failures. Routed X to L-RED next box, X/O columns to L-COMP (if cheap); §5c referee packet after L-NEW final report.
 - 17:13Z merged claude/checker aa909fd (C29 Add. 1 PASS; scope docs/checker/C29.md); R20 LANDED in RESULTS (lines 883-922, verbatim draft lines 3-end with checker SHAs filled); CHECKER Addendum 2 (landed-text check) next.
 - 17:18Z pushed c33700c (R20 landed); CHECKER asked for C29 Addendum 2 (RESULTS sha1 b3b620db).
+- 17:24Z merged claude/checker 9aaee71 (C29 Add. 2 PASS, C29 closed; scope docs/checker/C29.md, notes/CHECKER.md); R20 draft line 3 SHA mirrored (CHECKER optional N); GAPS G-N5-TIME update (R19, R20, §5c); NOW: CHECKER 4 parked.

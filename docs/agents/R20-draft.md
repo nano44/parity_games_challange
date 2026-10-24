@@ -1,6 +1,6 @@
 # Draft RESULTS R20 (Lead, 2026-10-24 16:32Z by date -u) (rev. 16:47Z: C29 E-2, E-3, N-1..N-3; rev. 16:56Z: C29 E-1 via REFEREE §C7 a1de721) — LANDED in RESULTS Results 17:13Z (CHECKER C29 5a39540 + Addendum 1 aa909fd PASS), after R19
 
-### R20 [refereed-only] N5 on one-Odd-choice games, throttled stretches with a top difference (u* ≠ none): coarse monotonicity (C), fallbacks only evict (FBL), no entry after a fallback (FBF), coarse R17 (CR), strict re-entry (XA), and O(n³) value changes per stretch (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C29.md, checker PENDING)
+### R20 [refereed-only] N5 on one-Odd-choice games, throttled stretches with a top difference (u* ≠ none): coarse monotonicity (C), fallbacks only evict (FBL), no entry after a fallback (FBF), coarse R17 (CR), strict re-entry (XA), and O(n³) value changes per stretch (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C29.md, checker 5a39540 + Addendum aa909fd)
 - Object (packet P-N5-XA, pinned trunk b70aa59, unchanged during review): docs/new/P-N5-XA-box27.md, sha1
   832d0da2b45bcc0850929b0f614bb1d9b19ed7b3 (L-NEW successor 9, Opus 5.5). The referees' repairs are collected by the lane in
   docs/new/P-N5-XA-fixes-box28.md (sha1 a7022bf5…, L-NEW successor 10; a record of the reports, not itself refereed text).
