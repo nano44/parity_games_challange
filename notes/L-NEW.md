@@ -18,8 +18,16 @@ attempt from R57 O1-O4), Lead GO 23:05Z Oct 23 (date -u); about 4 h.
   - fts_ph16 (start pair (σ_0, τ*)): 22 value-changing steps in one λ-phase, > n−1.
   - fts_best16 (canonical start, one Odd choice vertex, τ never moves): 27 in one phase; σ̄ laps twice over 4 exits.
 - Reading: R57's (R-a) is not necessary; a kill can live in Even's gate against frozen τ* (single-counter branch).
+- Later in box 21:
+  - fts_g29 (frozen τ*, n 29): 66 steps in one phase, 13 σ̄ changes.
+  - fts_best24 (canonical, n 24, τ frozen): one σ̄-segment of 33 value-changing moves > 23. This corrects milestone 2's claim
+    that segments are ≤ n−1.
+  - R58 Theorem W was checked; no gap, given (P).
 - Open pieces on 𝒞^1O: (SEG-1O), (CH-1O); the trust-mode deadlock is where both one-player inductions stop.
-- Climbs at box end: see N5-time-box21.md §6. Oink built in this container (tools/oink/build).
+- Box 21 DONE 01:35Z Oct 24 (date -u). Nothing running (climbs stopped). Final table in N5-time-box21.md §6:
+  - frozen-τ* envelope 121 steps in one λ-phase at n 43 (fts_g43); canonical 78 at n 39 (fts_best39);
+  - all instances agree with n5b and are Oink-verified.
+- Oink is built in this container (tools/oink/build); a new container must rerun scripts/setup_oink.sh.
 - Next if continued:
   - attempt (SEG-1O) with a deadlock count;
   - or (for L-RED) a single-counter design: CDAG skeleton in G_τ*, with R-entering jump-ahead edges throttled by one Odd

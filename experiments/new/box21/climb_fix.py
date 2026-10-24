@@ -6,6 +6,7 @@ mode tany : Even-only dynamics with an ARBITRARY frozen tau (Odd's step suppress
             against tau, S4c Even fallback if it stalls. The fitness is the max over K random taus (fixed per game).
 Usage: climb_fix.py MODE n seed secs outprefix"""
 import sys, random, time
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
 def randgame(rng, n):
     prio = [rng.randrange(n) for _ in range(n)]; owner = [rng.randrange(2) for _ in range(n)]
@@ -70,6 +71,27 @@ def fit_seg1o(G):
         cur = cur + 1 if k > 1 and key[k - 1] == key[k - 2] else 1
         best = max(best, cur)
     return best - (n - 1)
+def fit_laps1o(G):
+    """class C^1O with S3's tau_0 honest-optimal (so the canonical run is frozen): fitness = number of changes of the best reply
+    sigma-bar at o along the canonical run (0 outside)."""
+    n = len(G[0]); odd = [v for v in range(n) if G[1][v] == 1 and len(G[2][v]) > 1]
+    if len(odd) != 1: return 0
+    o = odd[0]; g = pg.Game(*G); E, Ed = Engine(g), Engine(dual(g)); t0 = tuple(Ed.initial("best"))
+    if Ed.improving(t0, Ed.evaluate(t0)[0]): return 0
+    states, _ = trace(g, check=False); sb = [E.evaluate(s)[1][o] for s, _ in states]
+    return sum(sb[k] != sb[k - 1] for k in range(1, len(sb)))
+def fit_segfz(G):
+    """canonical N5 with S3's tau_0 honest-optimal (frozen run): fitness = longest stretch with sigma-bar and the joint λ-map
+    constant (iterations, counted as in phases.py) minus (n - 1); -999 if tau_0 is not optimal."""
+    g = pg.Game(*G); E, Ed = Engine(g), Engine(dual(g)); t0 = tuple(Ed.initial("best"))
+    if Ed.improving(t0, Ed.evaluate(t0)[0]): return -999
+    states, _ = trace(g, check=False); key = []
+    for s, t in states:
+        X, sb = E.evaluate(s); key.append((tuple(sb), tuple(x[0] for x in X)))
+    best = cur = 0
+    for k in range(1, len(states)):
+        cur = cur + 1 if key[k] == key[k - 1] else 1; best = max(best, cur)
+    return best - (g.n - 1)
 def even_only(g, sigma, tau, cap=10 ** 5):
     E, Ed = Engine(g), Engine(dual(g)); k = 0
     while k < cap:
@@ -94,7 +116,7 @@ def fit_tany(G, K=6):
     return best
 if __name__ == "__main__":
     mode, n, seed, secs, out = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), float(sys.argv[4]), sys.argv[5]
-    fit = {"tstar": fit_tstar, "tany": fit_tany, "tstarph": fit_tstarph, "plainph": fit_plainph, "bestph": fit_bestph, "oneodd": fit_oneodd, "seg1o": fit_seg1o}[mode]
+    fit = {"tstar": fit_tstar, "tany": fit_tany, "tstarph": fit_tstarph, "plainph": fit_plainph, "bestph": fit_bestph, "oneodd": fit_oneodd, "seg1o": fit_seg1o, "laps1o": fit_laps1o, "segfz": fit_segfz}[mode]
     rng = random.Random(seed); G = randgame(rng, n); f = fit(G); t0 = time.time(); it = 0
     while time.time() - t0 < secs:
         H = mutate(rng, G); it += 1

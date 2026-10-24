@@ -3,6 +3,7 @@
 and the number of W-improving edges refused by the step (in the gate, W-improving, not taken). Usage: width.py game.pg [tstar]"""
 import sys
 from collections import Counter
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
 from h1 import wvals
 def main(path, mode=""):

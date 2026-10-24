@@ -3,6 +3,7 @@
 the one-player game G_tau* (play values W against tau*) also honest-improving (Iσ)? Counts violations.
 Usage: h1.py NGAMES nmin nmax seed"""
 import sys, random
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
 def wvals(g, sigma, tau):
     """W = Even-order valuation of the play under (sigma, tau): the S1 valuation in the arena where both are fixed."""

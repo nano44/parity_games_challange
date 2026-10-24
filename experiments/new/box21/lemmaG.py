@@ -4,6 +4,7 @@ sigma-path reaches o). Claim: every W-improving edge (x, z) outside the honest g
 gated edge that is not W-improving has sigma(x) in R and z not in R (when the cycle nodes of Ξ(o) and W(o) agree and o is on no
 cycle of either play). Usage: lemmaG.py game.pg [more.pg ...] | lemmaG.py --random N n seed"""
 import sys, random
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
 from h1 import wvals
 def reach(g, s, o):
@@ -12,8 +13,11 @@ def reach(g, s, o):
         x, seen = v, set()
         while x not in seen and x != o:
             seen.add(x)
-            if g.owner[x] == 1: break
-            x = s[x]
+            if g.owner[x] == 1:
+                if len(g.succ[x]) > 1: break          # (cannot happen: o is the only Odd choice vertex)
+                x = g.succ[x][0]                      # forced Odd vertex: follow its only edge
+            else:
+                x = s[x]
         if x == o: R.add(v)
     return R
 def check(g, states, t, out):

@@ -2,6 +2,7 @@
 """Box 21: per-iteration analysis of an N5 run (n5x.trace): which player moves, fallback, honest Ξσ/Ξτ change (value-changing),
 W = play values against the current tau change. Usage: anal.py game.pg [tstar]"""
 import sys
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
 def main(path, mode=""):
     g = load(path); E, Ed = Engine(g), Engine(dual(g))

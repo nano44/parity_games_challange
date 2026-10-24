@@ -1,5 +1,5 @@
 # N5 on two-player games: box 21, from R57's obstruction to a bound, and where it breaks
-L-NEW successor 8 (Opus 5.5, D15). Lead GO 2026-10-23 23:05Z; started 23:06Z; first draft 23:20Z, §3.4 23:29Z (date -u).
+L-NEW successor 8 (Opus 5.5, D15). Lead GO 2026-10-23 23:05Z; started 23:06Z; first draft 23:20Z, §3.4 23:29Z, final §6 01:34Z Oct 24 (date -u).
 Status: proof attempt on GAPS G-N5-TIME. Every statement is labelled PROVED, READING or OPEN; DATA is labelled as such.
 Not refereed. No polynomial bound is claimed. G-N5-TIME stays OPEN.
 Object: N5 = docs/new/N5-ssi-global.md SPEC S1-S5 (code experiments/new/n5.py, run unmodified). Sources: Vöge-Jurdziński BRICS
@@ -31,6 +31,11 @@ RS-00-48 (pdf sha256 485a12de…, as in RESULTS R15/R17); R57 = docs/red/R57-n5-
   selection. They disagree only on edges ENTERING the reach set R of o, through one monotone scalar θ = Ξ(o).
   - The remaining statements are (SEG-1O) and (CH-1O) (§3.6), and both fail to follow from R17 at the same "trust-mode
     deadlock".
+- Frozen runs split at changes of σ̄ (§3.7, DATA). Both factors can exceed linear:
+  - fts_g29 (n 29): 66 steps in one phase, from 13 σ̄ changes with segments ≤ 10;
+  - fts_best24 (n 24, canonical, τ frozen): 33 value-changing steps in ONE σ̄-segment, above n − 1.
+  - So (FO*) is K9's decomposition with τ removed, and neither of its factors is bounded.
+  - With R58's Theorem W (checked here, conditional on (P)), a long frozen run must also be wide.
 - Consequence for the obstruction (READING, §3.3): R57's requirement (R-a), counters in BOTH strategies, is not necessary for a
   kill. A single Even counter can live in Even's gate, whose best-replier σ̄ IS fresh every iteration, while τ = τ* never moves.
   So "(R-a) ∧ (R-b) incompatible", even if proved, would not bound N5. The open core is (FO*) (§5).
@@ -74,6 +79,10 @@ RESULTS R15 (a) on G and on G^d, with Lemma R.
 V_{σ^SSI_{k+1},τ_k} pointwise.
 - SSI's switched strategy (Iσ ∩ τ̄_k) lies in A(σ_k). This is the value form of K6 (N5-dlm-box5.md §4).
 - It says nothing about iteration counts. □
+DATA for (a) and Lemma R (sandwich_check.py, brute force over all strategies):
+- 400 random games, n ≤ 6, 1,610 vertex checks, 0 mismatches.
+- L_σ(v) equals the minimum over all τ' of V_{σ,τ'}(v).
+- The dual valuation's triple, read with G's key, equals the maximum over all σ' of V_{σ',τ}(v).
 
 ### 2.3 Lemma Φ (joint λ-phases)
 Each vertex's cycle node in L_σ changes at most n − 1 times in a run. The same holds for the cycle node in Ξ^d_τ.
@@ -101,6 +110,8 @@ Corollary.
 - N5 is polynomial ⇐ (FO) F_E ≤ poly(n) ∧ (ALT) C_τ ≤ poly(n).
 - An N5 run from a start pair (σ_0, τ*) with τ* honest-optimal is super-polynomial ⇔ the F_τ* run is.
 - With τ* equal to S3's best-reward start τ_0, that is the canonical run. □
+DATA for (a)-(b) (blockcheck.py): 1,500 random plain N5 runs (n 3..14), 1,465 τ-constant blocks; every block's σ-sequence is a
+prefix of F_τ from the block's first σ (0 mismatches).
 
 ### 2.5 Lemma W (W along a frozen run)
 In an F_τ run:
@@ -151,8 +162,7 @@ experiments/new/box21/instances/fts_ph16.pg (n = 16, sha1 55a21ee52e59cd13aa3070
   (x, path) pairs at step 15). Example at step 20: vertex 1 is below a 3-edge path to the cycle node 8.
 - The R17 count measured on σ̄-segments (box 10's measure) gives segments of [3, 14, 2, 1, 2]. So the excess is not a σ̄-segment
   effect. Every segment is ≤ 15; the excess comes from the gate across segments.
-Climb table (climb_fix.py, fitness = max N5 iterations inside one joint λ-phase of the run from (σ_0, τ*); filled at the box end):
-see §6.
+Climb table: §6.
 
 ### 3.3 What this does to R57's obstruction (READING)
 - O1 (no lapping) and O2's formal core (Iτ is a function of τ alone) are PROVED facts (R15, S2).
@@ -221,6 +231,8 @@ Corollary.
   (R15 (a)). An edge into R opens once that minimum is high enough.
 DATA (lemmaG.py):
 - fts_best16: 28 states; 80 withheld edges, all of type (d1); 30 extra edges, all of type (d2).
+- oneodd_c24 (n 24): 22 states satisfying (h); 82 withheld, all (d1); 2 extra, all (d2).
+- R follows forced Odd vertices (out-degree 1). That was fixed in lemmaG.py before these counts; the random games have none.
 - 2,000 random 𝒞^1O games (n 5..14, runs from (σ_0, τ*)): 2,246 states satisfying (h); 15 withheld, all (d1); 5 extra, all (d2).
 
 ### 3.6 𝒞^1O: what is left, and where the one-player induction stops (READING with DATA)
@@ -236,13 +248,13 @@ with #τ-changes ≤ d − 1 (§3.4) and #λ-changes ≤ 2n(n − 1) (Lemma Φ).
 Neither is proved.
 DATA (theta.py, canonical runs):
 
-| instance | n | iterations | θ-changes | w-changes | Odd moves | longest stretch |
+| instance | n | iterations | θ-changes | (w or λ)-changes | Odd moves | longest (θ, w, τ, λ)-stretch |
 | --- | --- | --- | --- | --- | --- | --- |
 | fts_best16 | 16 | 28 | 10 | 2 | 0 | 11 |
-| oneodd climb, n 16 | 16 | 33 | 9 | 3 | 0 | 11 |
-| oneodd climb, n 24 | 24 | 41 | 5 | 6 | 1 | 15 |
+| oneodd_c16 (climb_fix.py oneodd; sha1 827976e2…) | 16 | 36 | 11 | 18 | 2 | 5 |
+| oneodd_c24 (climb_fix.py oneodd; sha1 559434eb…) | 24 | 44 | 5 | 14 | 1 | 11 |
 
-The longest stretch is ≤ n − 1 in every case. A climb with fitness "longest stretch − (n − 1)" (climb_fix.py seg1o) is reported
+The longest stretch is ≤ n − 1 in every case. On 𝒞^1O the length comes from the number of stretches, not from long stretches. A climb with fitness "longest stretch − (n − 1)" (climb_fix.py seg1o) is reported
 in §6.
 Where the R17 induction stops inside a stretch. Two different one-player inductions both fail, each at one edge type of Lemma G (d).
 - (i) In W (G^w): Lemma P's Case B fails at a withheld entering edge (x, z) (type d1). Its repair would need the honest bound
@@ -251,6 +263,14 @@ Where the R17 induction stops inside a stretch. Two different one-player inducti
 - (ii) In Ξ (G^θ): that honest bound fails exactly at z ∈ R in "trust mode". There z's W-optimal route goes through o (because of
   w) while its honest value π_z ⊕ θ is below its best o-avoiding route. N5 keeps z in R because the selection trusts τ.
 - So x is withheld by z, and z stays in R until θ rises (the end of the stretch).
+- (iii) A third attempt (00:05Z by date -u): a joint induction.
+  - It carries, for o-paths r of ≤ k edges, "W_k(x) ⪰ π_r ⊕ θ" (W beats the HONEST value of every short o-path).
+  - It adds, for z ∈ R_k, "z's route to o is at least as good as every o-path of ≤ k edges" (route progress). Route progress
+    holds for R→R edges: Lemma G (c) makes them unthrottled, and the arena optimum is route-optimal among R-routes.
+  - The withheld case of the first statement reduces to the second: π_{r'} ⊕ θ ⪯ π_z ⊕ θ ⊴ W(σ(x)).
+  - It breaks one level down. The route of z may pass through y with y ∉ R_k because y's own entering edge is withheld. Then
+    z cannot follow that route, and route progress fails for z. The throttle propagates along routes.
+  - Recorded so that a successor does not repeat it.
 - A proof of (SEG-1O) has to count such deadlocks. A proof of (CH-1O) has to bound the releases. This is the exact point where
   the one-player argument stops on the smallest two-player class.
 
@@ -282,15 +302,26 @@ Where the R17 induction stops inside a stretch. Two different one-player inducti
     - fts_ph16: [3, 14, 2, 1, 2], with 4 σ̄ changes;
     - fts_best16: [1, 1, 1, 2, 11, 4, 1, 2, 2, 3], with 9 changes;
     - fts_g29: max 10, with 13 changes.
-    Every segment is ≤ n − 1.
-  - So the frozen runs are long because σ̄ changes often, not because segments are long. This is K9's decomposition
+    On these three every segment is ≤ n − 1, and the length comes from σ̄ changing often.
+  - BUT segments can be long too. experiments/new/box21/instances/fts_best24.pg (n = 24, sha1
+    af9ca6c63f91928718f121acc7722dd337780cfc; climb_fix.py bestph):
+    - canonical start; Odd has two choice vertices (11, 12); S3's τ_0 is honest-optimal, so τ never moves;
+    - 43 iterations (3 fallbacks), all in one joint λ-phase, all value-changing;
+    - σ̄ changes ONCE. The first σ̄-segment has 33 value-changing Even moves (32 by phases.py, which counts the iteration
+      that changes σ̄ in the next segment), above n − 1 = 23;
+    - n5.py 43 iterations; Oink zlk OK, strategies verified.
+    This is box 10's (SEG-LEN) failure (vc_g25: 26 > 24, with τ moving), now with τ frozen at the optimum and from the canonical
+    start. Inside a σ̄-segment the gate is G_c's improving set (c = σ̄), the selection is against τ ≠ c, and the K1 stalls of
+    box 10 §5 delay it.
+  - So in frozen runs both factors can exceed linear: the number of σ̄ changes (fts_g29: 13) and the segment length
+    (fts_best24: 33 > 23). This is K9's decomposition
     (N5-oneplayer-box7.md: iterations ≲ poly × (best-reply changes)) in its cleanest setting: τ is gone and σ̄ is the only
     opponent.
   - The open question for (FO*) is therefore the one box 11 left open (N5-brchanges-box11.md): how often can σ̄ change along
     Even's honest chain? It has no valuation-level invariant (box 11) and no width bound beyond Theorem W.
-- Growth of the frozen-τ* phase excess (grow.py, fitness = phase length − (n − 1), vertices added on the way): 22 at n 16
-  (fts_ph16), 40 at n 22, 50 at n 25, 66 at n 29. The phase length is about 0.08·n² at each point so far. This is a climb's
-  envelope, not a family; superlinear growth is NOT established. Final numbers in §6.
+- Growth of the frozen-τ* phase excess (grow.py, fitness = phase length − (n − 1), vertices added on the way): see the table in
+  §6. Phase length / n² falls from 0.086 (n 16) to 0.065 (n 43), and phase length / n rises from 1.4 to 2.8. That is a climb's
+  envelope, not a family. Superlinear growth is NOT established.
 
 ## 4. The (ALT) side: R-a, R-b
 - Formal (R-a): C_τ (Odd's changes) super-polynomial. With Theorem B, a kill on this branch needs C_τ super-polynomial while
@@ -305,6 +336,12 @@ Where the R17 induction stops inside a stretch. Two different one-player inducti
     are V_{σ_k,τ_k}, L, U and the gap U − L. L and U are monotone but count value changes, and there can be exponentially many.
     V_{σ_k,τ_k} is not monotone: Even's and Odd's steps pull it in opposite directions in the same iteration.
   - So no route from O1-O4 to a bound on C_τ is in sight. And by §3 such a bound would not suffice anyway without (FO).
+- Update after R58 (L-RED successor 13; checked in §3.7). Given (P), Theorem W settles the BOUNDED-WIDTH part of the
+  incompatibility: R-a + R-b at width O(1) gives poly(n) iterations, whatever the mechanism (R58 §5).
+  - What remains on the ALT side is wide moves, where the mover has ω(1) honest improving edges and N5's optimum refuses most
+    of them. That is L-RED's (STRETCH) + (K3).
+  - On the FO side the same width condition holds (Corollary W2). The frozen-τ* runs above are not narrow (§3.7), and their
+    excess comes from changes of σ̄.
 
 ## 5. OPEN statements, sharpest first
 - (FO*) For every game and every honest-optimal τ*, the F_τ* run (= N5 from (σ, τ*)) has poly(n) iterations.
@@ -318,6 +355,11 @@ Where the R17 induction stops inside a stretch. Two different one-player inducti
   Both are DATA-consistent and unproved.
 - (FO) The same for arbitrary frozen τ (needed for Theorem B with blocks).
 - (ALT) C_τ ≤ poly(n) in N5 runs.
+- (BR*) Along an F_τ* run, Odd's best reply σ̄ changes poly(n) times. DATA: 4 / 9 / 13 changes at n 16 / 16 / 29.
+  - (BR*) alone does not give (FO*). The other factor, the σ̄-segment length, is not ≤ n − 1 (fts_best24: 33 > 23, frozen,
+    canonical start).
+  - A segment bound poly(n) is OPEN (SEG-LEN*).
+  - (BR*) ∧ (SEG-LEN*) ⇒ (FO*).
 - (WF) Fallback steps of F_τ are W-flat (DATA 52/52).
 
 ## 6. Data and files
@@ -328,7 +370,38 @@ experiments/new/box21/ (read-only use of n5.py and si.py):
 - lemmaG.py: Lemma G check. theta.py: θ/w stretch analysis on 𝒞^1O. shrink.py: greedy shrinker.
 - anal.py, phases.py, wtrace.py, lamw.py: per-step analysis and the Lemma P check.
 - h1.py: random H1 rates. wmono.py: Lemma W data.
-- instances/: h1_hand, fts_ph16 (with start files), fts_best16 (canonical start).
+- segbatch.py: random segment and σ̄ statistics. width.py: gate widths. sandwich_check.py: brute-force check of Lemma S (a).
+  blockcheck.py: check of Theorem B (a)-(b).
+- instances/: h1_hand, fts_ph16, fts_g29 and fts_g43 (with start files, runs from (σ_0, τ*)); fts_best16, fts_best24 and
+  fts_best39 (canonical); oneodd_c16 and oneodd_c24 (𝒞^1O, canonical).
+- Every long instance below gives the same counts under L-COMP's independent n5b.py (--mode spec): fts_best16 28, fts_best24 43,
+  fts_best39 78, oneodd_c24 44, fts_ph16 22, fts_g29 66, fts_g43 121, h1_hand 2. Every one is Oink zlk OK with strategies
+  verified (check_sol2.py).
+
+Long single λ-phases (DATA; "one-player bound" = n − 1; all iterations value-changing unless noted):
+
+| instance | sha1 | n | start | iterations | longest joint λ-phase | σ̄ changes | longest σ̄-segment | source |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| fts_ph16 | 55a21ee5… | 16 | (σ_0, τ*) | 22 | 22 | 4 | 14 | climb_fix.py tstarph |
+| fts_best16 | 5534245f… | 16 | canonical (1 Odd choice vertex) | 28 | 27 | 9 | 11 | climb_fix.py bestph |
+| fts_best24 | af9ca6c6… | 24 | canonical (2) | 43 | 43 | 1 | 33 | climb_fix.py bestph |
+| fts_g29 | 58b69e82… | 29 | (σ_0, τ*) | 66 | 66 | 13 | 10 | grow.py |
+| fts_best39 | 2fdffe0a… | 39 | canonical (4) | 78 | 78 | 7 | 25 | grow.py GROW_FIT=bestph from fts_best24 |
+| fts_g43 | 53689242… | 43 | (σ_0, τ*) | 121 | 121 | 16 | 19 | grow.py from fts_g29 |
+
+- Growth-climb envelope, (σ_0, τ*), phase length at n: 22 / 16, 40 / 22, 50 / 25, 66 / 29, 86 / 33, 98 / 36, 101 / 36, 121 / 43.
+- Canonical (τ_0 optimal), from fts_best24: 43 / 24, 47 / 26, 78 / 39.
+- Fixed-size climbs (best fitness):
+  - frozen-τ* total N5 iterations: 19 / 47 / 45 / 42 at n 10 / 16 / 24 / 32;
+  - Even-only against an arbitrary frozen τ (not an N5 run): 22 / 26 at n 10 / 16;
+  - 𝒞^1O canonical total: 36 / 51 at n 16 / 24;
+  - 𝒞^1O σ̄ changes: 20 / 26 at n 16 / 24. At the mid-climb snapshot it was 19 changes in 19 iterations, i.e. about one per
+    iteration, so this fitness tracks run length.
+- Stretch climbs: (SEG-1O) seg1o at n 12 / 20, best stretch n − 2. Frozen σ̄-segment segfz at n 16: best segment n, i.e. one
+  above n − 1, after 1.1 M mutations. Random frozen runs (segbatch.py, 1,500 general + 1,500 𝒞^1O, n 6..24): no segment above
+  n − 1; at most 3-4 σ̄ changes.
+- Lemma P in G_τ* on fts_g43 (lamw.py, stopped at step 23 because exhaustive path enumeration explodes): 689,376 violating pairs
+  at step 23.
 Frozen τ* on Friedmann's families (fixtau.py; N5 from (σ_0, τ*) vs plain N5 vs Even switch-all from σ_0):
 
 | game | n | plain N5 | N5 from (σ_0, τ*) | Even switch-all from σ_0 |
@@ -338,4 +411,4 @@ Frozen τ* on Friedmann's families (fixtau.py; N5 from (σ_0, τ*) vs plain N5 v
 | vc_g25 / seg_r16 | 25/16 | 27/16 | 4/4 | 3/6 |
 | sym_h8_s1 / sym_h16_s1 | 16/32 | 25/55 | 4/6 | 5/13 |
 
-Frozen τ* is linear on all of these; the long frozen runs come from climbs (§3.2).
+Frozen τ* is linear on all of these. The long frozen runs come from climbs (§3.2 and the table above).
