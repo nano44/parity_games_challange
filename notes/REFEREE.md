@@ -1,6 +1,12 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 4, 19:48Z by date -u): P-N5-NH (pin c7981ee, object sha1 382c5143…)
+- docs/referee/R-N5-NH.md: F1°, TC, P3′ step 2 + Corollary SIGNED; P3′ step 1 SIGNED WITH GAP P3-1 (R*_w not faithful when lambda_W(o)=o:
+  C_W in R; closed: kappa-strict B-cases from C_W give an even top above c_theta, hence a better W cycle node, vacuous in J). Reduction READING
+  with NH-1 (OTHER-block boundaries) and NH-2 (ROI W-changes via (SG)). P3′ data nearly vacuous. Tool docs/referee/scratch/nh_probe.py.
+  NEXT: §C when the Lead says R2-N5-NH exists (docs/referee-2/ NOT read for NH).
+
 ## Resume point (successor 4, 18:20Z by date -u): P-N5-X (pin afc88b0, object sha1 b21d2d06…)
 - docs/referee/R-N5-X.md: F1, NF, Theorem X SIGNED WITH GAPS (X-1..X-4, all closed); XW, EQ, FBL-N, F2, FB-W SIGNED; §8 table checked.
   X-1: R19 (f) "theta free" PIECE count of Xi-or-W changes needs: theta-change => W-change on F (sigma-bar(o) is an F-exit under H1; min over exits
