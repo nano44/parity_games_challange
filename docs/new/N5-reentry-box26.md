@@ -247,7 +247,17 @@ This is lexicographic, not numeric. It is small when few vertices lie above u*, 
 DATA (box25/crossings.py), max crossings of ONE vertex per (θ, w)-stretch:
 - fts_best16 2, theta_tp32 1, rt48 2, ph64 2, rtt16 2, tr20_s4 3;
 - crossing transitions per stretch: up to 16 (tr20_s4, n 20).
-- Climb xingclimb.py (fitness = (max crossings of one vertex, max crossing transitions per stretch); n 16, n 24, and n 20 seeded from tr20_s4; 1,500 s each from 13:43Z). INTERIM at 13:45Z: (3, 12), (3, 19), (3, 17). Final numbers follow in a later push.
+- Climb xingclimb.py (fitness = (max crossings of one vertex, max crossing transitions per stretch); n 16, n 24, and n 20 seeded from tr20_s4; 1,500 s each from 13:43Z). FINAL (14:08Z), all Oink zlk OK, strategies verified:
+
+  | instance | n | max crossings of one vertex per stretch | crossing transitions per stretch | longest phase | sha1 |
+  | --- | --- | --- | --- | --- | --- |
+  | box25/instances/xc16.pg | 16 | 3 | 13 | 14 | bad0335fd7e3… |
+  | box25/instances/xc24.pg | 24 | 5 | 21 | 22 | fef437134508… |
+  | box25/instances/xcf20.pg (from tr20_s4) | 20 | 3 | 17 | 18 | bfde9fcd11eb… |
+
+  - Nearly every transition of these phases is a crossing transition, and every phase stays below n − 1. PIECE: 0 violations.
+  - Per-vertex crossings grow slowly (5 at n 24). Total crossings per stretch track the phase length, which is ≤ n − 2 here.
+  - CONJECTURE (XING), with this data: crossing transitions per (θ, w)-stretch ≤ n − 1.
 
 ### 7.4 The exact reduction (READING; assumes (h))
 N5 on o-cyclic 𝒞^1O is polynomial if each of the following is poly(n) per joint λ-phase:
@@ -263,3 +273,14 @@ Everything else is proved or refereed:
 Re-entries need no separate item: they are crossings, and by §3 they are at most n · #θ-changes + #ROUTE re-entries.
 OPEN: a proof of any of (a)-(d). The configuration that blocks all four is the band of §7.3. N5 moves a vertex across the band
 only after progress on the other side, and that progress is itself gated by other vertices' bands.
+
+### 7.5 The Lead's question (13:52Z): a potential that no crossing lowers
+- The honest valuation Ξ is such a potential (PROVED). It never decreases (R15 (a)). Every crossing strictly raises the crossing
+  vertex's honest value: Lemma RE step 3, and the mirror argument for entries, both under (NC) (docs/new/P-N5-RE-box26.md §4).
+- What it lacks is a polynomial HEIGHT. R17's count does not come from a potential but from Bellman-Ford layering (Lemma P:
+  after j steps every vertex dominates every path of ≤ j edges).
+- In a (θ, w)-stretch the layering holds inside each piece (PIECE) and breaks across a crossing at the band (§7.3). An F-vertex may
+  dominate an o-path only in W (withheld), and an R-vertex only in Ξ (trust).
+- So a proof of (XING) needs a layering invariant that is stated for the BAND: one that charges a path through a band vertex to that
+  vertex's side. None is known; this is the open core of (b).
+- The top-part refinement (§7.3) is the only per-vertex bound proved.
