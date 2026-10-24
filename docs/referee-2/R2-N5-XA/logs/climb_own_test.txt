@@ -1,0 +1,4 @@
+runs: 100
+thr_states: 0
+transitions: 102
+RESULT OK violations=0

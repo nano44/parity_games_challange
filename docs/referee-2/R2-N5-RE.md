@@ -235,3 +235,18 @@ Data on tightness: REFEREE reports slack 0 for both split bounds. My logs have n
 | (4) Corollary RE | SIGN WITH GAPS | N-RE-3: add "τ constant on each leave-to-re-entry interval"; delete "(NC) at every leave" |
 | (5) Lemma PIECE | SIGN WITH GAPS (P-1 = G-RE-3 closed by 𝓡* or by my Lemma-P rerun) | P-2 = N-RE-4: add "inside one joint λ-phase" to the Consequence |
 (NC) is closed by both referees independently, and so is the (NC) residue of G26-1. G-N5-TIME, (CYC), (XING) and (FB-1O) stay OPEN.
+
+## A. Addendum: Lemma RE needs no τ-constant hypothesis (REFEREE §C3 reading; Lead 15:22Z, optional; written 15:30Z by date -u)
+- Proof. Step 1 does not use τ constant. Membership in R depends only on whether the path reaches o, not on o's continuation. So if no vertex
+  of π^L_x switches, x ∈ R_{L+1} whatever τ does.
+  - A transition that changes τ is either an S4a ∥ S4b step, where σ's switches are still gate edges, or an Odd fallback (σ unchanged, so no
+    leave).
+  - Steps 2-5 use (h) at L and E+1, the phase at L → L+1, R15 (a) (which holds along any N5 run), (V1), (V2) and S2/S4. None of them uses
+    τ. So the "τ constant (step 1)" entry in my §4.2 list was wrong. I WITHDRAW it, and with it N-RE-3 (§7, §C.2, §C.5): Corollary RE is
+    right with the hypotheses as stated. REFEREE's reading is correct.
+- DATA (re_notau.py; τ condition dropped; phase over [L, E+1] and (h) at L and E+1 kept):
+  - 6,000 random runs (seed 81), plus c12_s54, tr20_s4, returns_rt48 and fts_best16 (100 own runs + 1 SPEC run each): 0 violations.
+  - 102 leaves at τ-changing transitions, all with a strict gain at y and at x.
+  - 25 re-entries with θ unchanged AND a τ-change inside the interval (c12_s54), all strict route improvements.
+  - Logs: R2-N5-RE/logs/notau_*.txt.
+- Revised final row: Corollary RE SIGN (with (NC) deleted). The open wording item for L-NEW is only P-2 = N-RE-4.

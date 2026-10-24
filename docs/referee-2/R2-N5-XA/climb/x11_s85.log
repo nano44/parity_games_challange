@@ -1,0 +1,16 @@
+step 0: fitness 0.8 S_transitions=0 FB_in_S=0 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 1: fitness 1.0 S_transitions=0 FB_in_S=0 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 14: fitness 1.2000000000000002 S_transitions=0 FB_in_S=0 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 22: fitness 2.4000000000000004 S_transitions=1 FB_in_S=0 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 58: fitness 3.6 S_transitions=2 FB_in_S=0 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 59: fitness 9.4 S_transitions=3 FB_in_S=1 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 71: fitness 16.0 S_transitions=4 FB_in_S=2 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 76: fitness 17.6 S_transitions=5 FB_in_S=2 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 181: fitness 25.6 S_transitions=7 FB_in_S=3 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 279: fitness 39.4 S_transitions=6 FB_in_S=6 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 290: fitness 41.2 S_transitions=7 FB_in_S=6 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 367: fitness 52.8 S_transitions=8 FB_in_S=8 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 836: fitness 65.0 S_transitions=10 FB_in_S=10 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+FINAL 65.0 {'FBF_checks': 10, 'FBL_leave': 10, 'FBL_switched_edges': 10, 'FB_in_S': 10, 'S_single_state': 10, 'S_stretches': 5, 'S_transitions': 10, 'S_ustar_some': 5}
+over the climb: 5005 runs, 1617 stretches, 2630 stretch transitions, 2193 fallbacks in S, 0 XA re-entries, 0 P^c checks, 0 F->R gate edges (u* none), 0 FBL other (u* none)
+RESULT OK violations=0

@@ -1,0 +1,11 @@
+step 32: fitness 0.6000000000000001 S_transitions=0 FB_in_S=0 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 45: fitness 0.8 S_transitions=0 FB_in_S=0 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 162: fitness 1.0 S_transitions=0 FB_in_S=0 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 211: fitness 1.2000000000000002 S_transitions=0 FB_in_S=0 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 215: fitness 1.6 S_transitions=0 FB_in_S=0 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 365: fitness 2.0 S_transitions=0 FB_in_S=0 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 619: fitness 2.2 S_transitions=1 FB_in_S=0 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+step 626: fitness 3.4000000000000004 S_transitions=2 FB_in_S=0 XA_reentry_after_arena_leave=0 gate_FR_at_fb(u*=none)=0 FBL_OTHER(u*=none)=0
+FINAL 3.4000000000000004 {'Pc_checks': 12, 'S_single_state': 3, 'S_stretches': 2, 'S_transitions': 2, 'S_ustar_none': 2}
+over the climb: 4005 runs, 129 stretches, 129 stretch transitions, 0 fallbacks in S, 0 XA re-entries, 798 P^c checks, 0 F->R gate edges (u* none), 0 FBL other (u* none)
+RESULT OK violations=0

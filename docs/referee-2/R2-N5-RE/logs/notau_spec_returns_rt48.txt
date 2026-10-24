@@ -1,0 +1,5 @@
+leaves: 26
+reentries: 6
+runs: 1
+tau_changes: 1
+RESULT OK violations=0

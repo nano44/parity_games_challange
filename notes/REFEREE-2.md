@@ -2,6 +2,13 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
+2026-10-24 15:33Z P-N5-XA (docs/new/P-N5-XA-box27.md sha1 832d0da2…, trunk b70aa59): docs/referee-2/R2-N5-XA.md. §1, Lemma C, CR, XA SIGN;
+FBL SIGN WITH GAPS (G-XA-1: F->R case; for u* != none no F->R gate edge at all (flat => P(w)=A_z=0 => theta >= w unless u*=none); u*=none
+statement unproved: (c,z), z in R_k minus R_{k+1}, not excluded); FBF SIGN WITH GAPS (G-XA-2 closed, incl. u*=none via (h) at t+1);
+CR's B-fallback vacuous (N-XA-1); XA count <= n-1 per vertex (N-XA-2); Corollary reading sound, add R15 (d) runs (N-XA-3). Tool
+R2-N5-XA/xa_check.py (on R2-N5-RE/re_check.py). 0 violations; no XA re-entry occurs in data. Also R2-N5-RE §A: tau-constant not needed
+(REFEREE §C3 right), N-RE-3 withdrawn (re_notau.py). Next: §C after the Lead says REFEREE's R-N5-XA is pushed.
+Earlier:
 2026-10-24 14:42Z (successor 4, Opus 5.5, D15; stamp corrected from 14:58Z). P-N5-RE (docs/new/P-N5-RE-box26.md sha1 8dba4576…, trunk 52c7261): docs/referee-2/R2-N5-RE.md.
 Lemma G (a)-(c), Wo, RM SIGN; RE SIGN WITH GAPS as written (G-RE-1 Caveat in Case NOT (i) unjustified; G-RE-2 step 3 avoidance sentence),
 and SIGN WITHOUT (NC): (SG) "a switched Even vertex that is not its own cycle node gains strictly" (transitivity Ξ_{L+1}(z) ⊵ Ξ_L(z) ▷
