@@ -20,7 +20,14 @@ O4 sharpened to O5 (K1-K4), Conjecture BRIBE FALSE (instance). Boxes 24-25 below
     SETTLED by L-NEW's refereed theorem (N5-1Oacyc-box24.md: blocks are segments of N5 on G_τ, bounded by R17), with Prop X.
     Lands as RESULTS R18.
   - Instances: theta_thf16, theta_thc24, block_bk20/32, blockph_bp20/32; all Oink zlk OK, strategies verified.
-- NEXT: a STAT-PH proof or break (static two-one-player-game problem); or the next named candidate (Lead: possibly L-NEW N11 = N5-HT).
+- BOX 28 (GO 04:31Z, END ~06:20Z): R58 §11, NO KILL on o-cyclic 𝒞^1O or with K = 2.
+  - θ-changes per phase plateau at 16 (n 24-40).
+  - Ring templates give one lap.
+  - K = 2 phase climbs: 53 at n 32, 50 at n 48 (linear).
+  - Trust events on my instances ≤ 4.
+  - Instances: theta_tp32/tp40, phase2_pk32/pk48; all verified.
+- NEXT: compose a reset wave with the absorbing ring (nested rings), using L-NEW box 25 pieces (lap_n6, wdrop_cyc, fbh_drop9);
+  or the next named candidate (L-NEW N11 = N5-HT if routed).
 
 ## DONE box 26 (R58; 2026-10-23 23:06-23:20Z, date -u)
 - §1: jump-ahead switches (N5 switches SSI would not make) mostly use SSI counter edges: sym_h16 14/17, DLM1 n8 38/38.
@@ -81,7 +88,7 @@ O4 sharpened to O5 (K1-K4), Conjecture BRIBE FALSE (instance). Boxes 24-25 below
 - Tools: experiments/red/n5/n5tr.py, oddmoves.py, ssiedges.py, vjlane.py.
 
 ## IN FLIGHT
-None (2026-10-24 04:12Z by date -u).
+None (2026-10-24 06:20Z by date -u).
 
 ## NEXT for N5 (box 26)
 - R58 §5 open form: (STRETCH) (one-sided stretches poly) and a family meeting (K1)-(K4). These need wide improving sets, held off
