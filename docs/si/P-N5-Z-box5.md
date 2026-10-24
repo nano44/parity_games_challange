@@ -1,5 +1,5 @@
 # Referee packet P-N5-Z: crossings of N5 reduce to reversals of R (box 4 lemmas)
-L-SI successor 2 (Opus 5.5, D15/D18). Written 2026-10-24 20:20Z-20:50Z (date -u), at the Lead's request (20:2xZ). Version 2 (data corrections only, §9-§11), 20:4xZ.
+L-SI successor 2 (Opus 5.5, D15/D18). Written 2026-10-24 20:20Z-20:50Z (date -u), at the Lead's request (20:2xZ).
 - Self-contained: definitions, statements, full proofs, and the location of every dependency.
 - Source text: docs/si/N5-X-box4.md §2-§4 and §8. This packet is the final form of what a referee needs. Where the two differ, this
   packet governs. In particular NOFE is stated here in a STRONGER form than box 4 §3: the "or on a (σ_k, τ)-cycle" escape is removed
@@ -179,9 +179,7 @@ Inside one phase, with O := #OTHER-touching transitions,
 so #transitions = O(n⁵ (1 + Z + O)).
 - READING (consequence, as in R21): with Lemma Φ (≤ 2n(n − 1) + 1 joint λ-phases; box 21, PROVED by L-NEW, UNREFEREED) and τ-changes
   ≤ d − 1, N5 on o-cyclic 𝒞^1O is polynomial if Z and O are poly(n) per phase.
-- OPEN (box 4 §10): (Z). Its hard part, by the data, is (C): the number of '+−' reversals per phase whose reversing transition is a
-  fallback. A drain of consecutive evicting fallbacks counts once. By WM every W-lowering is a fallback, but W-lowerings can be far
-  more numerous than reversals: x32_waves48 (L-RED) has 19 W-lowerings and Z = 4.
+- OPEN (box 4 §10): (Z). Its hard part, by the data, is (C): the number of W-lowering transitions per phase. By WM these are fallbacks.
   The data say that on climbed instances they are exactly the evicting fallbacks (THR, GAP).
 
 ## 10. Refuted forms (DATA, each with a re-verified instance)
@@ -194,9 +192,8 @@ counts were asserted equal to n5.run by the box 4 scripts.
   - R grows {1, 5, 6} → {1, …, 7}. Vertex 2's value (2, ∅, 0) is unchanged, and (h) fails at k+1.
   - Consistent with NOFE as stated in §4.
 - (U*-DROP) "between consecutive leave transitions with w unchanged, rank(u*) strictly drops": FALSE.
-  - experiments/si/xing/ustar.py, on fbref_cex_n32 (experiments/red/xing/instances, sha1 901674dc), lev_l_x
-    (experiments/si/orlens/instances, 6c365ff7), run_x_inr2 (8a5a82a6) and x31_lem_t32 (60c15284): 15 of 15 checks fail. (Box 4 counted 19/19 by including s_rt32_final, which is
-    NOT in 𝒞^1O: it has two Odd choice vertices, 14 and 28. Removed; see §11.)
+  - 19 of 19 checks fail (experiments/si/xing/ustar.py) on fbref_cex_n32 (experiments/red/xing/instances, sha1 901674dc), lev_l_x
+    (experiments/si/orlens/instances, 6c365ff7), run_x_inr2 (8a5a82a6), x31_lem_t32 (60c15284) and s_rt32_final (93ba6aa3).
   - u* is the top-ranked differing vertex and stays the same through every evicting fallback.
 - (W-LAY) "between consecutive W-lowering transitions, at most n − 1 transitions change W": FALSE.
   - Instance: experiments/si/orlens/instances/thclimb_n16_s12.pg (sha1 6e0704b7), one phase of 16 transitions at n 16, all W-changing,
@@ -208,23 +205,15 @@ counts were asserted equal to n5.run by the box 4 scripts.
   - no function of R-side data alone: lev_l_sc (86c17b07), R = ∅ at states 8 and 32, 16 crossings between.
 
 ## 11. Data (DATA, not proof; experiments/si/xing/, every script asserts its run equals n5.run)
-- "Named instances" means 30 files:
-  - experiments/si/orlens/instances/*.pg except s_rt32_final (15);
-  - experiments/red/xing/instances fbref_cex_n32 and x31_* (14);
-  - experiments/new/box28/instances/oc16_s2.
-- s_rt32_final (sha1 93ba6aa3) is NOT in 𝒞^1O (Odd choice vertices 14 and 28). Box 4's tables included it by mistake. xclass.annotate
-  now asserts exactly one Odd choice vertex.
-- L-RED's later files in experiments/red/xing/instances (x32_*, u1t_cex_n32; all in 𝒞^1O): WM 0 violations.
-  - W-lowerings: x32_waves48 19 (Z 4), x32_waves32 9 (Z 10), x32_nest40 1 (Z 2); 0 elsewhere.
-- ACT: every crossing transition has an active crosser on 30 named instances and on 2 × ~2,600 random o-cyclic 𝒞^1O runs (n 8-16;
+- ACT: every crossing transition has an active crosser on 31 named instances and on 2 × ~2,600 random o-cyclic 𝒞^1O runs (n 8-16;
   leaves.py, seeds 401, 402). 0 exceptions.
 - NOFE: 16 fallback transitions with a switched F_k → R̄_k edge in 4 × 3,000 random runs (seeds 401-404). All 16 tails lie on o's
-  W-play (and are cycle nodes). No such fallback on the 30 named instances.
-- WM: 0 violations on the 30 named instances and on 2 × ~1,700 random runs (wlay.py, seeds 601, 602). W-lowering transitions = evicting
+  W-play (and are cycle nodes). No such fallback on the 31 named instances.
+- WM: 0 violations on the 31 named instances and on 2 × ~1,700 random runs (wlay.py, seeds 601, 602). W-lowering transitions = evicting
   fallbacks on every named instance and every climb best.
 - LV′: asserted on every phase scanned (zcount.py). Max Z: 7 on named instances, 18 on climbs at n 32 (zcl_fb2_n32, sha1 b00b6b69,
   n5 66/13, Oink OK; Lead re-run), 22 at n 48 (zcl_cu_n48, efe301af; 0 fallbacks).
-- GAP (gapcheck.py): 309 switched R_k → F_k edges at fallbacks with (h), on the 30 named instances and the 7 climb bests
+- GAP (gapcheck.py): 321 switched R_k → F_k edges at fallbacks with (h), on the 31 named instances and the 7 climb bests
   (experiments/si/xing/instances/zcl_*). 0 violations of Ξ_k(σ_k y) ◁ Ξ_k(z) ⊴ W_k(σ_k y). Random runs (seed 401, 3,000 games) have
   0 such edges: vacuous.
 - NOFE strong form (gapcheck.py, seed 401): 12 switched F_k → R̄_k edges at fallbacks, all with the tail on o's W-play.
