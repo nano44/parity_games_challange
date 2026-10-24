@@ -10,15 +10,19 @@ appended) are replaced; they remain in history (`git show b28a0af3:docs/agents/h
 - `git merge --ff-only origin/claude/l-red` -> f9f0e7c7; then `git merge --no-edit origin/claude/vibrant-johnson-nxvvxo`
   (normal merge, no conflicts) -> 4bf07701. `git merge-base --is-ancestor f9f0e7c7 HEAD` true.
 - `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 15 ahead, 0 behind before this file's
-  commit (14 box-30 commits of the predecessor plus the merge commit); 16 ahead after it. `git merge-base` = 70f5f10a.
+  first commit 7b5ffff5 (14 box-30 commits of the predecessor plus the merge commit). `git merge-base` was 70f5f10a.
+- push.sh at 7b5ffff5: VERIFY PASS, push REJECTED (fetch first): the predecessor pushed its handover notebook cf55d3da meanwhile,
+  and trunk moved to 1017d2e1 (T31 spec, Lead). Re-fetched 14:40Z; `git merge origin/claude/l-red` -> 34f36024, `git merge
+  origin/claude/vibrant-johnson-nxvvxo` -> 41310610 (both normal merges, no conflicts). Then 5 ahead, 0 behind trunk 1017d2e1
+  (7b5ffff5, cf55d3da and the two merges, plus this amendment's commit: 6 after it). No rebase, amend or force-push.
 
 ## 2. Open work and the next step of each
-No process running in this container (`ps aux | grep -c python3` = the grep itself plus harness). Predecessor's notebook
-notes/L-RED.md was last changed at 1578a1a0 (08:25Z, "PARKED, wake only on a new named target"); at my 14:33Z fetch it does not
-yet cover box 30. Box 30 is recorded in docs/red/R58-n5-width.md §13 (f9f0e7c7). I re-fetch before the GO and fold the
-predecessor's handover in when it lands.
+No process running in this container (`ps aux | grep -c python3` = the grep itself plus harness). The predecessor's handover
+notebook landed at cf55d3da (notes/L-RED.md "RESUME POINT (for successor 14)"); it agrees with the Lead brief. Its one possibly
+in-flight job (elimclimb n 32, seed 81, ending ~15:08Z) ran in the predecessor's container, not mine; if its result is not pushed,
+rerun `experiments/red/n5inj/elimclimb.py 32 32 3000 81 OUT --from experiments/red/n5inj/instances/returns_rt32.pg` after GO.
 - (A) Box 30 cont., Lead brief (context only, not started): port Mei's mixed-cycle family Ĝ_h (arXiv 2610.27386, Thm 4 p.20)
-  to a parity game and run N5. Spec docs/lit/T31-mei-port.md (L-LIT) is NOT on trunk 70f5f10a yet (`ls docs/lit/T31*` empty).
+  to a parity game and run N5. Spec docs/lit/T31-mei-port.md (L-LIT dedbbe7e) is on trunk 1017d2e1 and merged here; T30 (docs/lit/T30-elimination.md) also.
   Next step after GO: read T31 and open the arXiv source myself; then the checklist: (1) Oink zlk + verify.py on the port;
   (2) Dantzig-SSI control, expect 2^h − 1 iterations; (3) N5 from both starts; (4) if N5 is short, redesign so N5's gate is a
   singleton.
@@ -28,6 +32,8 @@ predecessor's handover in when it lands.
   16 (n 24-64). Next: attack each new L-NEW lemma as it lands (L40 (2b)); target super-polynomial θ-changes in one joint
   λ-phase.
 - (D) CHECKER questions on R56 §4 / DE30, if any (notebook NEEDS).
+- (E) DTL (ACYC) attack, docs/red/R59-acyc.md §0-§3: no failure (gap = 1 throughout). PAUSED by L40 (1); next only on a Lead
+  route: richer straddle seeds (strfam_S6).
 
 ## 3. docs/GAPS.md rows I own
 - G-NEST (major, owner "L-RED (attacks + proof attempts); L-ALG successor if any"), status **open** (docs/GAPS.md line 9).
