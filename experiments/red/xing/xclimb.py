@@ -7,7 +7,12 @@ Fitness (lexicographic): (violations, exercise) where exercise depends on --targ
   lemmas : throttled (h)-fallbacks + fbf checked transitions + re-entries     (default)
   nh     : max over joint λ-phases of non-(h) transitions                     ((NH), L-NEW §8)
   cyc    : max over joint λ-phases of (θ, w)-stretches                        ((CYC'))
-Usage: xclimb.py n seed secs out [--from g.pg] [--target lemmas|nh|cyc]"""
+  cycu   : (max θ-changes inside one (w, u*)-run, max θ-changes per phase)    ((CYC-u*), L-NEW §8b; lemma checks skipped in
+           the fitness, run them on the bests)
+  A (w, u*)-run: consecutive states of one joint λ-phase (phaseprofile.py's key) with (h), θ ◁ w, w fixed and u* (the most
+  relevant vertex of P(θ) Δ P(w), coarsecheck.py's computation) fixed.
+Usage: xclimb.py n seed secs out [--from g.pg] [--pad N] [--target lemmas|nh|cyc|cycu]
+  --pad N: append inert Even vertices (priority 0, self-loop) up to N vertices, as thetaclimb.py does."""
 import sys, os, random, time
 B = os.environ.get("LNEW_BOX25") or sys.exit("set LNEW_BOX25")
 sys.path.insert(0, B)
@@ -35,6 +40,25 @@ def profile(g):
         s, t = list(r[0]), list(r[1]); k += 1
     return bnh, bst
 
+def cycu(g):
+    E, Ed = Engine(g), Engine(dual(g)); o = odd_choice(g); s, t = start_pair(g, E, Ed, None); prev = None; k = 0
+    run = ph = brun = bph = 0
+    while k < 400:
+        Xi, sb = E.evaluate(tuple(s)); U, _ = Ed.evaluate(tuple(t)); _, W = wvals(g, s, t)
+        h = not oncycle(g, s, sb, o) and not oncycle(g, s, t, o) and Xi[o][0] == W[o][0]
+        pk = (tuple(x[0] for x in Xi), tuple(y[0] for y in U), t[o]); th, w = E.key(Xi[o]), E.key(W[o])
+        d = Xi[o][1] ^ W[o][1]; us = (d.bit_length() - 1) if d else None
+        rk = (pk, w, us) if h and th < w else None
+        if prev is None or pk != prev[0]: ph = 0
+        elif th != prev[1]: ph += 1
+        if rk is None or prev is None or rk != prev[2]: run = 0
+        elif th != prev[1]: run += 1
+        brun, bph = max(brun, run), max(bph, ph); prev = (pk, th, rk)
+        r = step(g, E, Ed, s, t)
+        if r is None: break
+        s, t = list(r[0]), list(r[1]); k += 1
+    return brun, bph
+
 def measure(g):
     c = Counter()
     coarsecheck.WITHFB = False; coarsecheck.run(g, None, c)
@@ -52,6 +76,14 @@ def score(c, target):
     return (v, ex)
 
 def fit(G, target):
+    if target == "cycu":
+        n = len(G[0]); odd = [v for v in range(n) if G[1][v] == 1 and len(G[2][v]) > 1]
+        if len(odd) != 1 or any(not x for x in G[2]): return (-1, -1), None
+        g = pg.Game(*G)
+        if not any(w in split(g, odd[0]) for w in G[2][odd[0]]): return (-1, -1), None
+        try: a, b = cycu(g)
+        except Exception: return (-1, -1), None
+        return (a, b), {"cycu_run": a, "theta_changes_phase": b}
     n = len(G[0]); odd = [v for v in range(n) if G[1][v] == 1 and len(G[2][v]) > 1]
     if len(odd) != 1 or any(not s for s in G[2]): return (-1, -1), None
     g = pg.Game(*G)
@@ -64,7 +96,10 @@ if __name__ == "__main__":
     n, seed, secs, out = int(sys.argv[1]), int(sys.argv[2]), float(sys.argv[3]), sys.argv[4]; rng = random.Random(seed)
     target = sys.argv[sys.argv.index("--target") + 1] if "--target" in sys.argv else "lemmas"
     if "--from" in sys.argv:
-        g = load(sys.argv[sys.argv.index("--from") + 1]); n = g.n; G = [list(g.prio), list(g.owner), [list(x) for x in g.succ]]
+        g = load(sys.argv[sys.argv.index("--from") + 1]); G = [list(g.prio), list(g.owner), [list(x) for x in g.succ]]
+        if "--pad" in sys.argv:
+            for v in range(g.n, int(sys.argv[sys.argv.index("--pad") + 1])): G[0].append(0); G[1].append(0); G[2].append([v])
+        n = len(G[0])
         f, c = fit(G, target)
     else:
         while True:
