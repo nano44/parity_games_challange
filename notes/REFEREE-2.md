@@ -8,7 +8,9 @@ and SIGN WITHOUT (NC): (SG) "a switched Even vertex that is not its own cycle no
 Ξ_L(σ(y)) BEFORE prefixing; (V1) holds also when y is on the cycle but ≠ c). So (NC) closed; the packet's "flat leave" cannot occur
 (instance nc_fail_n12.pg has (i)∧(ii) and a strict gain). Corollary RE needs τ constant (N-RE-3). PIECE SIGN WITH GAPS (G-RE-3: |R|−1 needs
 Lemma P on 𝓡 with base at o, PH verbatim gives |R|+|K|−1; closed in §5). Tools R2-N5-RE/re_check.py (own N5 with random tie-breaks +
-spec-state mode), sg_check.py, re_climb.py; 0 violations. Next: §C after the Lead says REFEREE's report is pushed.
+spec-state mode), sg_check.py, re_climb.py; 0 violations. §C (14:57Z) vs REFEREE R-N5-RE (referee 4457a9a, trunk 8001ee8): full agreement; RE-1=G-RE-1, RE-2=G-RE-2, P-1=G-RE-3, P-2=N-RE-4;
+accepted RM-1 (wording); its §4.2 = my (SG) (mine slightly stronger: λ_k(y)≠y only); 𝓡* contraction valid, preferred over my Lemma-P rerun;
+only mine: N-RE-3 (Corollary RE needs τ constant). PARKED.
 Earlier:
 2026-10-24 03:35Z P-N5-1OA (trunk 07f298d): docs/referee-2/R2-N5-1OA.md. (A) L-RED Prop X (R58 §9) SIGN WITH GAPS (G-1OA-1 prefix/whole run; G-1OA-2 step 1 is
 engine-level, checked against si.py; the count is tie-break-free), Cor X1 SIGN. (B) L-NEW box 24 SIGN WITH GAPS conditional on (P) for one-player

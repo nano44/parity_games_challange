@@ -12,9 +12,12 @@ summarised in docs/si/README.md. Handover check: docs/agents/handover-checks/L-S
   transition (non-eliminating runs <= 17 at n <= 64; switch-all control doubles 24/62/140/298); CONJECTURE (ELIM-n) => G-N5-TIME.
 - Code: experiments/si/orlens/ (ortrace, gaps, batch, elim, hmzL, returns, theta, stretchret, vi, climb). out/ is gitignored.
 ### IN FLIGHT
-- Nothing running (climbs ended 14:29Z; Oink built in tools/oink/build at 8fbf0a7 in this container).
-- Lead 14:23Z checks answered in N5-OR-lens.md §4.5 (PIECE elimination: piece sense trivially PROVED, phase sense FALSE on
-  fts_best16 7->8 and theta_tp32 9-19; ELIM-CANCEL 28/28 hits). New instance elim24_p52 (n 24, phase 52 = 2.2n, Oink OK).
+- Nothing running (all climbs ended 15:06Z). Oink built in tools/oink/build (8fbf0a7) in this container.
+- State at 15:10Z: (ELIM-n) FALSE (L-RED elimn_cex_n48, window 49 at n 48) -> (ELIM-poly) OPEN with proved implication;
+  (CYC-ELIM) FALSE (cycelim_cex_n32, s_tp32_final: 14 > d = 10); every-lap-retires FALSE (theta_tp32 states 4-9);
+  ELIM-CANCEL 28/28; PIECE phase-elimination FALSE. New envelopes: phase 59 at n 24, 35 theta-changes in a phase at n 32.
+### NEXT (if the Lead continues the box)
+- A potential for (a) that counts flat theta-changes; or an L-RED-style family from s_tp32_final (theta-changes 2n+ per phase).
 ### NEEDS
 - Lead: relay Lemmas U/E1-E5/D to L-RED / L-NEW; (ELIM-n) as an L-RED target (a phase with a non-eliminating window > n).
 
