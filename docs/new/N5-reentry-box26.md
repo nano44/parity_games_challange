@@ -186,3 +186,80 @@ and one vertex's route improves 10 times, so the bound is nearly tight.
     improving while θ is frozen.
 - The smallest instance of the batch mechanism (one θ-change releasing several trust vertices) is still returns_rt48 / ph64
   (n 48 / 64); thetare_n has one release.
+
+## 7. Continuation after D18 / L40 (13:20Z): two one-player games, a hysteresis band, and the exact reduction
+Labels per L40: PROVED (by whom), READING (with proof sketch), CONJECTURE (with data), OPEN. One ASSUMPTION is used throughout:
+(h) at the states involved. Nothing below covers states where (h) fails.
+
+### 7.1 L-COMP's thetaA_n17 is WRISE, and WRISE needs no separate count
+- experiments/n5-exhaustive/instances/thetaA_n17.pg + .start (n 17, sha1 1271767c…, random start).
+- reentry.py: vertices 1 and 14 leave R by arena steps at 2 and re-enter at 5 on identical routes. Class WRISE: w rose through
+  vertex 8, o's τ-successor. θ = w at every state 2-5, with (h) holding, so this is the unthrottled one-player regime.
+- Any re-entry, WRISE included, that is not ROUTE has a θ-change in its interval. Under (h) at the leave and at the re-entry, if
+  θ_{E+1} = θ_L then Lemma RE's argument forces a strict route improvement. So §3's Corollary counts WRISE among the
+  n · #θ-changes.
+- Lemma Wo (PROVED, L-NEW). Under (h) at consecutive states, b = τ(o) ∉ R, since o's W-play does not return to o. So
+  w = o ⊕ W(b) = o ⊕ Ξ(b) by Lemma G (a), and w is non-decreasing by R15 (a). □
+
+### 7.2 Lemma PIECE (READING, proof sketch; L-NEW): between crossings, N5 is two independent R17 runs
+Setting: a stretch inside one joint λ-phase with τ, θ, w constant, (h) at every state, no S4c fallback, and R constant (no vertex
+crosses between R and F := V \ R).
+1. Closure. A vertex of R has its whole path to o inside R. A vertex of F has its play inside F: if it met R, it would reach o.
+2. Gate. On R → R edges the gate is the improving set of the ROUTE GAME (vertices R, o a terminal), by Lemma G (c). On F → F
+   edges it is the improving set of the O-FREE GAME on F, by Lemma G (a) and (d) (no exception applies).
+3. Selection. The arena optimum is pointwise. A vertex that stays in F gets the F-sub-arena optimum: F is closed under every
+   arena strategy that keeps it, and values agree. A vertex that stays in R gets the route-optimal choice, compared against the
+   common terminal w.
+4. So the R-part is an R17 arena run on the route game and the F-part one on the o-free game. Each is one-player.
+   - R17 Lemma P and Theorem PH (from any start, R17 Corollary 2) bound the value-changing steps by |R| − 1 and |F| − 1. In the
+     route game every play ends at the terminal, so it has one phase. The o-free game's cycle nodes are fixed in the joint phase.
+   - In total at most n − 2 value-changing transitions per piece. □ (sketch)
+DATA (box25/piececheck.py): 0 violations of "≤ n − 2". Longest piece 10 (theta_tp32 n 32, rtt24 n 24); 9 on ph64, 6 on rt48 and
+fts_best16; 16,000 random runs max 5.
+Consequence (READING): in a (τ, λ, θ, w)-stretch with (h) and no fallback,
+    value-changing transitions ≤ (n − 1) · (#crossing transitions + 1),
+where a crossing transition is one at which R changes. Box 21's (SEG-1O) therefore reduces to crossings.
+
+### 7.3 Crossings: a hysteresis band
+Under (h), inside a (θ, w)-stretch, a vertex x has a route value ρ (when x ∈ R) and an o-free value h (when x ∈ F):
+- F → R requires the gate: ρ ⊕ θ ▷ h. This implies the selection's ρ ⊕ w ▷ h, because w ⊵ θ.
+- R → F requires the selection: h ▷ ρ ⊕ w (or a fallback). This implies the gate's h ▷ ρ ⊕ θ.
+- Inside the band (ρ ⊕ θ ⊴ h ⊴ ρ ⊕ w), x keeps its side. This is the INERTIA of N5's two-valuation rule.
+  - "Withheld" (Lemma G (d1)) is the F-face of the band, and "trust mode" (box 22) its R-face.
+  - Since θ ◁ w exactly while throttled, the band is empty at unthrottled states.
+Necessary condition (PROVED, L-NEW, from R15 (a), Lemma RM and the two rules).
+- Let x enter at e_1, leave at l_1 by an ARENA step (its own or downstream of one), and re-enter at e_2, inside one
+  (θ, w)-stretch. Then:
+  - ρ(e_2) ⊕ θ ▷ h(e_2) ⊵ h(l_1 + 1) ⊵ ρ(l_1) ⊕ w ⊵ ρ(e_1) ⊕ w. The third step is (F1) against "keep the route"; the last is
+    Lemma RM.
+  - A FALLBACK leave gives only h ▷ ρ ⊕ θ (honest). Fallbacks bypass the band, which is why they are a separate item (c)
+    in §7.4.
+  - The honest value of x rises strictly at each crossing (as in Lemma RE).
+- So between consecutive entries of x, its route must JUMP THE BAND. With u* := the most relevant vertex of P(θ) Δ P(w) (the
+  vertex where w beats θ), ρ(e_2) must beat ρ(l_1) at a vertex more relevant than u*.
+- Similarly, consecutive leaves need o-free progress beyond the band.
+Refinement (PROVED, L-NEW, under (h)).
+- Let T(ρ) := P(ρ) ∩ {vertices more relevant than u*}. Routes are disjoint from o's two continuations, and P(θ), P(w) agree above
+  u*. So ρ_2 ⊕ θ ▷ ρ_1 ⊕ w forces T(ρ_2) ▷ T(ρ_1): at u* itself w wins, so equal top parts cannot jump the band.
+- Hence the number of entries of x in one (θ, w)-stretch with arena leaves is at most the number of distinct top parts T of x's
+  routes + 1.
+This is lexicographic, not numeric. It is small when few vertices lie above u*, but it gives no polynomial bound by itself.
+DATA (box25/crossings.py), max crossings of ONE vertex per (θ, w)-stretch:
+- fts_best16 2, theta_tp32 1, rt48 2, ph64 2, rtt16 2, tr20_s4 3;
+- crossing transitions per stretch: up to 16 (tr20_s4, n 20).
+- Climb xingclimb.py (fitness = (max crossings of one vertex, max crossing transitions per stretch); n 16, n 24, and n 20 seeded from tr20_s4; 1,500 s each from 13:43Z). INTERIM at 13:45Z: (3, 12), (3, 19), (3, 17). Final numbers follow in a later push.
+
+### 7.4 The exact reduction (READING; assumes (h))
+N5 on o-cyclic 𝒞^1O is polynomial if each of the following is poly(n) per joint λ-phase:
+- (a) θ-changes, i.e. (CYC). L-RED's plateau is 16; w-changes are monotone (Lemma Wo) but not otherwise bounded.
+- (b) Crossing transitions per (θ, w)-stretch, (XING).
+- (c) S4c fallbacks, (FB-1O).
+- (d) Transitions at states where (h) fails.
+Everything else is proved or refereed:
+- joint λ-phases ≤ 2n(n − 1) + 1 (Lemma Φ);
+- τ-changes ≤ d − 1 (R15 (c));
+- per piece ≤ n − 2 value-changing transitions (PIECE, READING);
+- flat transitions ≤ 4n(n − 1) between value changes (R15 (d)).
+Re-entries need no separate item: they are crossings, and by §3 they are at most n · #θ-changes + #ROUTE re-entries.
+OPEN: a proof of any of (a)-(d). The configuration that blocks all four is the band of §7.3. N5 moves a vertex across the band
+only after progress on the other side, and that progress is itself gated by other vertices' bands.
