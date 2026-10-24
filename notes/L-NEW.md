@@ -49,7 +49,11 @@ attempt from R57 O1-O4), Lead GO 23:05Z Oct 23 (date -u); about 4 h.
   - Depends on Prop X (L-RED), (P) and R17.
   - Key fact: a pure step forces θ = w, so a pure block is N5 on the one-player G_τ.
   - Checks: statcheck.py, 0 failures; the o-cyclic negative control fails, as it should.
-- Open next: the o-cyclic case.
+- o-cyclic case: docs/new/N5-1Ocyc-box24.md.
+  - Lemma 2' (PROVED under (H)): a throttle that survives a pure step needs an incomplete exit in Y.
+  - Obstruction = the self-throttling exit: its best route runs through o (fts_best16 24/24).
+  - Smallest case where Lemma 2 fails: cyc4 (n 4).
+  - Open: (CYC). Stop rule applied.
 
 ### Earlier resume point (successor 7)
 PARKED after box 20 (synthesis docs/new/c-lane-synthesis.md), 2026-10-23 (date -u in the commit). Nothing running.
