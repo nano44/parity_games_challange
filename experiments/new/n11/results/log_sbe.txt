@@ -1,0 +1,7 @@
+switchbestexp,2,60,61,0,53,32,zielonka(oink zlk) OK strategies verified
+switchbestexp,3,85,141,0,182,41,zielonka(oink zlk) OK strategies verified
+switchbestexp,4,110,301,0,519,47,zielonka(oink zlk) OK strategies verified
+switchbestexp,5,135,621,0,1343,55,zielonka(oink zlk) OK strategies verified
+switchbestexp,6,160,1261,0,3289,62,zielonka(oink zlk) OK strategies verified
+switchbestexp,7,185,2541,0,7767,68,zielonka(oink zlk) OK strategies verified
+switchbestexp,8,210,5101,0,17882,77,zielonka(oink zlk) OK strategies verified

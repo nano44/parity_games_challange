@@ -40,8 +40,16 @@ attempt from R57 O1-O4), Lead GO 23:05Z Oct 23 (date -u); about 4 h.
   - (WF) is FALSE: i1h_fts_best16, where fallbacks lower W and a vertex returns.
   - L-RED's Prop X was checked. o-acyclic 𝒞^1O reduces to (STAT) (pure-Y blocks; §6). DATA: blocks ≤ |Y|.
   - Stop rule applied; no fifth induction.
-- docs/new/N11-proposal.md: N5-HT (honest override at trust conflicts). Proposed, NOT run; awaiting Lead GO.
+- docs/new/N11-proposal.md: N5-HT. Box 23 (GO 02:16Z): frozen e003f7e6, then DEAD on B8 at 02:47Z (RESULT section).
 - Code: experiments/new/box22/ (stretchP, shrinkP, i1inst, smallsearch, showrun, pureY, climbY).
+
+### Box 24 (successor 8; Lead GO 03:05Z Oct 24; to ~05:40Z)
+- docs/new/N5-1Oacyc-box24.md: N5 on o-acyclic 𝒞^1O is polynomial, < (C_X + d)(B + 1).
+  - Status: READING, unrefereed, NOT landed; reported to the Lead 03:09Z.
+  - Depends on Prop X (L-RED), (P) and R17.
+  - Key fact: a pure step forces θ = w, so a pure block is N5 on the one-player G_τ.
+  - Checks: statcheck.py, 0 failures; the o-cyclic negative control fails, as it should.
+- Open next: the o-cyclic case.
 
 ### Earlier resume point (successor 7)
 PARKED after box 20 (synthesis docs/new/c-lane-synthesis.md), 2026-10-23 (date -u in the commit). Nothing running.
@@ -211,6 +219,11 @@ Successor 6 (Opus 5.5, D15), session_01ETtBUTp98P7J7EJVEmPEGj; PARKED 2026-10-23
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 8, box 23) N11 = N5-HT (honest override at trust conflicts), frozen at e003f7e6: DEAD on B8.
+  - switchbestexp needs exactly 20·2^N − 19 iterations (N = 2..8), the same as Even switch-all.
+  - switchallexp needs 10·2^N − 10 (N = 2..6), then 1243 / 2486. All verified.
+  - Obstruction: the conflict set is large, so the override replays switch-all.
+  - Data: experiments/new/n11/results/.
 - (succ. 8, box 21) Route "R17's Lemma P / Theorem PH for N5 against a frozen opponent" (Lemma PT): dead.
   - Obstruction: H1 is false. Edges improving in G_τ* are withheld by the honest gate while their head is exploitable.
   - Instances: experiments/new/box21/instances/h1_hand.pg (n 9), fts_ph16.pg (sha1 55a21ee5…; 22 > 15 in one λ-phase),

@@ -54,3 +54,66 @@ Hence:
 ## Second option, noted, not ranked
 "N5 from a relaxation-guided τ_0" (Theorem B (c): an optimal τ_0 turns N5 into the frozen run). It is cheap but heuristic: it
 changes the start, not the worst case. It is not proposed as a (c) approach.
+
+## FREEZE (box 23, Lead GO 02:16Z Oct 24; written 02:16Z by date -u, BEFORE any run)
+The rule is frozen exactly as coded in experiments/new/n11/n5ht.py (sha1 598cc9000e293e2a6e59e0cc9b030dd0b4912604). Results cite the commit that adds this section.
+- S1-S3, S5: as N5 (N5-ssi-global.md SPEC; the same si.py engine, dual game, best-reward start, output Engine.regions(σ)).
+- S4a' (only if Iσ ≠ ∅):
+  1. σ_W := N5's S4a step, computed by the same code as n5.py.
+  2. For each Even x with at least one edge in Iσ, compute b(x) := max over (x, z) ∈ Iσ of (key(Ξσ(z)), z). Here key is si.py
+     Engine.key, "larger = better for Even", and Ξσ is the valuation at the CURRENT σ, not at σ_W.
+  3. x is a conflict iff key(Ξσ(σ_W(x))) < first component of b(x), a strict comparison of valuations.
+  4. For every conflict x, σ'(x) := the second component of b(x). Ties in valuation go to the larger index, the S4c rule.
+  5. Elsewhere σ'(x) := σ_W(x).
+- S4b' (only if Iτ ≠ ∅): the same on G^d, with τ_W := N5's S4b step and Ξτ, Iτ, Ed.key ("larger = better for Odd").
+- Both steps start from the same (σ, τ) and are applied together.
+- S4c (unchanged): if σ' = σ and τ' = τ, one switch-all fallback. Even goes first, choosing by max (key(Ξσ(w)), w); Odd only if
+  Iσ = ∅. The fallback is counted.
+- An iteration is a pass with Iσ ∪ Iτ ≠ ∅. Conflicts are counted (cE + cO per iteration).
+- Termination and correctness: σ' and τ' are σ and τ switched on subsets of Iσ and Iτ, so RESULTS R15 (c)-(d) apply.
+Faithfulness check (condition 2): run(..., ht=False) is N5. On a sample, (a) the ht=False traces must equal n5.run, and (b) every
+n5ht run with 0 conflicts in every iteration must give a trace equal to n5's. Both are asserted in n11/faith.py.
+Verification (condition 3): every reported run goes through experiments/new/check_sol2.py (Oink zlk regions, both strategies
+verified).
+
+## RESULT (box 23; runs started 02:45Z, written 02:49Z by date -u): N11 = N5-HT is DEAD at the first kill test (B8)
+The frozen rule is the one in the FREEZE section above (commit e003f7e6; n5ht.py sha1 598cc900…).
+- Faithfulness (condition 2; faith.py 1500 12 31): 1,500 random games.
+  - (a) The ht=False traces equal N5's in all 1,500.
+  - (b) All 1,137 runs with 0 conflicts equal N5's trace.
+  - The other 363 runs had conflicts.
+- Kill tests. Every row is verified: Oink zlk regions, both strategies verified (check_sol2.py). Data in
+  experiments/new/n11/results/*.csv. Instances come from experiments/hard-families/pgsolver_port.py (deterministic) and
+  experiments/new/dlm_gen.py.
+
+| family | N | n | N5-HT iterations | conflicts (total) | N5 iterations |
+| --- | --- | --- | --- | --- | --- |
+| switchbestexp | 2 … 8 | 60 … 210 | 61, 141, 301, 621, 1261, 2541, 5101 | 53 … 17,882 | 32 … 77 |
+| switchallexp | 2 … 8 | 35 … 119 | 30, 70, 150, 310, 630, 1243, 2486 | 39 … 10,585 | 8 … 16 |
+| DLM family 1 (start pair) | 2 … 8 | 6 … 18 | 2 … 8 (= N) | 0 … 3 | 2 … 8 |
+| DLM family 2 (start pair) | 2 … 7 | 22 … 72 | 4, 7, 8, 11, 13, 17 | 0 … 18 | 4 … 13 |
+
+- Growth laws.
+  - switchbestexp (n = 25N + 10): exactly 20·2^N − 19 iterations for N = 2..8. That equals Even switch-all SI from σ_0 on the
+    same games (box 21 table: 61 / 141 / 301 / 621).
+  - switchallexp (n = 14N + 7): exactly 10·2^N − 10 for N = 2..6 (= Even switch-all from σ_0), then 1243 and 2486 at N = 7, 8.
+    The ratio is 2.0 per step.
+  - Both are exponential in n.
+- sha1 of three generated instances per family:
+
+  | N | switchbestexp | switchallexp |
+  | --- | --- | --- |
+  | 2 | b3d5bc29… | ca6e0b7d… |
+  | 4 | 57b27b74… | c94d98d3… |
+  | 8 | 7082e724… | 18c24624… |
+
+- Obstruction, exactly as the barrier screen warned (B8):
+  - On Friedmann's games the conflict set C is large at almost every iteration (17,882 conflicts in 5,101 iterations at
+    switchbestexp N = 8).
+  - The override is switch-all's own choice (max (Ξσ(z), z)) on C, so N5-HT replays Even switch-all SI and inherits its
+    exponential lower bound (Friedmann LMCS 7(3:19), Thm 6.14; switch-best game, Thm 8.4).
+  - N5's trust in τ is precisely what lets it escape these families. Removing the trust wherever it conflicts with an honest
+    improvement removes the escape.
+- The remaining steps (R56/R57 families, frozen climbs, I3/I4 invariant test) were not run: the approach is dead at step 1.
+- Lesson (READING): any repair of N5's trust-mode deadlock that falls back to the honest best edge on conflicts collapses to
+  switch-all on Friedmann's games. A deadlock repair must not use honest-greedy choices.
