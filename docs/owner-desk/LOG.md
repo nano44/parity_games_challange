@@ -355,3 +355,7 @@ overage) unchanged. Relayed verbatim to the Lead, priority now.
 ## 2026-10-24T12:58Z relayed: Lead 2026-10-24 12:58Z — D16 / L38 (trunk 6b428da): idling was a Lead error; "restart only on an outside idea" withdrawn;
 restarted 3 lanes (L-RED DTL attack, L-NEW N5 lead, L-LIT untested-approach scan). Sent before the owner's weekly-cap message (12:57Z),
 which awaits the Lead's reading.
+
+## 2026-10-24T13:04Z owner (scope instruction)
+> Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+Relayed verbatim to the Lead, priority now.
