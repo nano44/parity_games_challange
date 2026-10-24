@@ -1010,3 +1010,4 @@
 - 19:38Z merged l-new 4d3b60d (P-N5-NH frozen, sha1 382c5143; O′ split ivsplit.py on b5_os = L-COMP's xo_split numbers exactly; scope OK). P-N5-NH pinned at this merge for both referees.
 - 19:41Z P-N5-NH sent to REFEREE (R-N5-NH) and REFEREE-2 (R2-N5-NH); NOW.
 - 19:52Z merged l-new c1decb3 (box 30 final; L-NEW 10 parked; scope OK; P-N5-NH unchanged 382c5143). Lead re-run u1vertex.py u1_n32: post-freeze R-changes 13, max 2/vertex, W-flat 3, W decreases 0 (matches). L-NEW successor 11 session_01JjUBLJnxF38h9cjDCyZeZf created (handover; box 31). NOW.
+- 19:56Z merged referee 78d61b1 (R-N5-NH: P3′ SIGNED WITH GAP P3-1 closed by vacuity; TC, F1°, Corollary SIGNED; reduction checked; NH-1, NH-2) and referee-2 48da84a (R2-N5-NH: P3′ SIGN WITH GAPS, G-NH-1 = P3-1 closed by a direct single-switch proof; TC, F1°, Corollary SIGN; N-NH-1..3). Same gap found independently. §C requested from both; repairs to L-NEW 11 fixes file.
