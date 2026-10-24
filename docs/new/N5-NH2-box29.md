@@ -28,6 +28,10 @@ L-NEW successor 10 (Opus 5.5, D15/D18). Lead GO 2026-10-24 18:1xZ, about 3 h. Wr
 - DATA (§6): every R-only count seen is ≤ |R|. The climbs' large O′ counts are mostly F-changes, which F1° already bounds.
   - The best O′ climb at n 32 (26 O′ transitions) has |R| = 1.
   - The n 16 climb has 20 O′ = 10 F-changes + 10 R-only, split by 2 crossings.
+- FALSE (WF0) (§5): S4a can switch to a W-tied successor with an honest gain (wf0_cex_n16, Oink-verified). The conditional closure
+  of case U1 is void; U1 stays OPEN.
+- DATA: L-COMP's b5_o11 (n 10, O = 11) is pattern 23, not 3: 4 crossings + 7 O′, all 7 F-changes (|R| = 1), so R-only = 0.
+  Nothing of (NH') is left on it.
 - READING (§7), the outside views asked for in GO (c): the hitting-time view is exactly what makes P3′ work. Discounted limits and
   well-quasi-orders give termination only.
 
@@ -154,8 +158,19 @@ Sketch.
     with no W-change on R changes W nowhere (on F, Ξ = W), which (WF0) excludes.
   - CONJECTURE (NFB-O), DATA: 0 crossing-free fallbacks at OTHER states in all runs (seeds 2931/2932, 6,913 runs; all named and
     climbed instances).
-  - CONJECTURE (WF0), DATA (wflat.py): 0 W-flat honest-strict arena steps among 3,214 random arena steps (seed 2995) and on the
-    climbed instances (op32, op20, op16, x32_sc32_final).
+  - **FALSE (WF0)** (refuted 18:48Z by date -u, by my own attack climb nfbclimb.py; earlier DATA: 0 W-flat honest-strict arena steps
+    among 3,214 random arena steps, seed 2995, and on op32 / op20 / op16 / x32_sc32_final).
+    - Instance: experiments/new/box29/instances/wf0_cex_n16.pg (n 16, sha1 1de2ff5bcfb4…, canonical start; n5.py 40 iterations,
+      8 fallbacks; check_sol2.py: Oink zlk OK, strategies verified).
+    - At iterations 16 and 20, an S4a step switches one R-vertex to another R-successor of EQUAL W-value: 15: 9 → 0, and 12: 9 → 4,
+      both successors with W = (5, {2}, 4). W is unchanged at every vertex, and Ξ increases strictly at the switched vertex.
+    - The states are OTHER, pattern 23 (H1, ¬H2), in route form in both frames (H1; λ_W(o) = o = 5), with c_w = 5 more relevant than
+      c_θ = 3. So this is case U1.
+    - Mechanism, as predicted above: a V_mid improvement taken at a W-tie.
+    - Consequence: the conditional closure of U1 above has a false premise. U1 stays OPEN. NFB-O is still unrefuted: 0 violations of
+      it in the same climb.
+    - Same instance: (OB) holds (max excess −11), TC holds, and R-only O′ = 5 ≤ |R| = 7 in a phase with O = 26 (8 crossings, 13
+      F-changes, 5 R-only).
   - (WF0) is NOT guaranteed by the code. N5's S4a takes Even's choices from Engine.evaluate's counter-strategy on the dual of the
     restricted arena (experiments/si/si.py, evaluate: first maximal successor in DFS / BFS order), which has no preference for the
     current successor. So a W-tied switch with an honest gain is possible in principle.
