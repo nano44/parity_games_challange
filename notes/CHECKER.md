@@ -26,7 +26,12 @@
   - main report 0102170b: FAIL E-1; the R22 POST-LANDING NOTE PASS;
   - Add. 1 59a97995: PASS at a85316a;
   - Add. 2: R24 landed verbatim at trunk 7bcf681.
-- PARKED. Next: R25 (P-N5-FB, L-SI), once refereed.
+- C34 CLOSED 23:5xZ (date -u):
+  - main report 298e4b6d: FAIL E-1, E-2;
+  - Add. 1 4278b5a2: fixes part 2 PASS, E-1/E-2 still open;
+  - Add. 2 e9f7b674: PASS at 7666336;
+  - Add. 3: R25 landed verbatim at trunk 40ef7ed.
+- PARKED. Next likely: P-N5-U23 (L-NEW, pinned 7666336), with both referees.
 - Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs. In a worktree, symlink tools/oink/build.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 
