@@ -327,3 +327,9 @@ R18 [refereed-only] landed (CHECKER C27, trunk 022ce8f): N5 < (C_X + d)(B + 1) i
 no cycle; conditional on VJ00 Lemma 5.8 "1 => 2"; subclass already polynomial; G-N5-TIME open. DE34: N11 dead (20*2^N - 19 on
 switch-best). Process deviation (Lead error): R18 refereed by the two Fable sessions despite D15/L37; signatures stand (more capable
 model), deviation stated in R18; Fable referees parked for good; cost < $30. Running: L-RED 13 and L-NEW succ. 9 on the o-on-cycle case.
+
+## 2026-10-24T08:26Z relayed: Lead 2026-10-24 08:27Z information (L37)
+N5 line stood down (docs/agents/N5-STANDDOWN.md, trunk 1119482): correct and terminating (R15), polynomial on one-player (R17) and
+one-Odd-choice-off-cycle games (R18, conditional); open elsewhere. Nine adversary boxes, no slow family (~1.6n-2.8n per phase); four
+proof attempts stop at "trust mode" (TRUST). Lead limit reached. Restart lead: re-entries are one-player route improvements (20/20).
+Fleet: no working lanes; backstop hourly; no overage; Lead cost ~$503. Restart needs a new idea (lane, literature or owner).
