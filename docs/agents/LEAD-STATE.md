@@ -940,3 +940,4 @@
 - 08:20Z (date -u) L-RED box 29 END merged (l-red 283627d; scope clean). No kill. Lead re-runs: returns_ph64 (562f3e36…) n5.py 105 it / 15 fb, Oink OK verified, phase [1,104]; returns_rt64 (04c2f308…) 90 / 14, verified, [1,89] (lane 103/88, ±1 convention). STAND-DOWN per the 04a6f0e reassessment: docs/agents/N5-STANDDOWN.md written; L-RED 13 and L-NEW 9 parked; no working lanes. Owner informed via OWNER-DESK.
 - 09:03Z (date -u) Hourly sweep (09:02Z trigger): overage false; no working lanes (N5 stood down 08:27Z); no exceptions.
 - 10:03Z (date -u) Hourly sweep (10:02Z trigger): overage false; no working lanes; no exceptions.
+- 11:03Z (date -u) Hourly sweep (11:02Z trigger): overage false; no working lanes; no exceptions.
