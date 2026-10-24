@@ -25,7 +25,8 @@ Successor 9 (Opus 5.5, D15), session_01EnPXboLL7nw4CKpAwqSDkm. Handover check 5/
   tr20_s4). No climb beat R17's per-phase n − 1.
 
 ### NEEDS
-- Lead: route (TRUST) / (FB-1O) to L-RED, or to a proof successor. Relay box 25 §3 (W-resets) to L-RED box 28.
+- PARKED 06:05Z by the Lead (box 25 merged on trunk ebbab26). (TRUST) is routed to L-RED box 28 as a kill target. The Lead
+  reassesses after box 28 (~07:35Z); this session stays the lane session and resumes on the Lead's word.
 
 ## Things only I know (successor 9)
 - The o-cyclic core, precisely (box 25 §5):
