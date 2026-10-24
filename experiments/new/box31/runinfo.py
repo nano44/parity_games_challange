@@ -20,6 +20,6 @@ while k < len(rows):
                 if g.owner[v] == 0 and rows[i]["s"][v] != rows[i + 1]["s"][v]: per.setdefault(v, [rows[i]["Wl"][v] - rows[i]["Wl"][o], []])[1].append(i - a)
             i += 1
         if per and max(len(x[1]) for x in per.values()) >= mp:
-            print(f"piece {k}..{j} {kind} c_th {rows[k]['cth']} c_w {rows[k]['cw']} |R| {len(rows[k]['R'])} run {a}..{i} :",
+            print(f"piece {k}..{j} {kind} c_th {rows[k]['cth']} c_w {rows[k]['cw']} |R minus o| {len(rows[k]['R'])} run {a}..{i} :",
                   {v: (x[0], len(x[1]), x[1]) for v, x in per.items() if len(x[1]) >= mp})
     k = j + 1
