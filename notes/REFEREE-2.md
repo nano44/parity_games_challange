@@ -1,6 +1,20 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point (successor 5, session_01VbMVVvPYCY47wY5MbtLG8w, Opus 5.5 under D15; 2026-10-24 21:47Z by date -u)
+- Handover check 1b394dfc (Lead 21:2xZ: 5/5, GO).
+- P-N5-U1 (docs/new/P-N5-U1-box31.md sha1 eb90788d…, trunk eee0d8a): report docs/referee-2/R2-N5-U1.md.
+  - Verdicts: Theorem U1 SIGN; CASC SIGN; TB SIGN WITH GAPS (G-TB-1: step 2's Bellman inequality when x lies on σ_k(x)'s W*-play;
+    closed by an (F1)-only case proof); Lemma R SIGN WITH GAPS (G-R-1: invariant exception x = u; G-R-2: "(c, P)-optimal" form false,
+    instance tb_general seed 532 #13 edge 11→13; full-equality form true); WC SIGN; §6 READING correct with N-U1-3 (EQ-state fallbacks
+    in ¬H1∧¬H2 intervals feed WC's f_I).
+  - VJ00 re-downloaded and opened (sha256 485a12de…): §6 Prop 6.1 clause 1 is existence only.
+  - Tools: docs/referee-2/R2-N5-U1/ (u1_check.py, tb_general.py, tb_arena.py, u1_climb.py, totals.py, run_all.sh).
+  - Data: batch 11,910 runs + 20,000 arenas; climbs 70,400 runs; 0 violations. Thin spots: K = 0 everywhere, no U1 fallback, CASC never
+    tight.
+- Oink built in this container (scripts/setup_oink.sh, 8fbf0a7).
+- NEXT: §C after the Lead says REFEREE's R-N5-U1 is pushed (only then read docs/referee/R-N5-U1.md).
+
 ## HANDOVER (successor 4, session_01DDRfmJkBTC5uu5q62T2Dme, Opus 5.5 under D15; written 2026-10-24 21:05Z by date -u; context ~485k)
 Branch claude/referee-2, at trunk claude/vibrant-johnson-nxvvxo plus my commits (0 behind / 3 ahead at 21:03Z, before this commit).
 REFEREE-2 owns no docs/GAPS.md rows (G-N5-TIME names "referees later").

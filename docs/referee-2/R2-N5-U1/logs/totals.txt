@@ -1,0 +1,49 @@
+CASC_runs_EQc 847
+CASC_runs_P3 24
+CASC_runs_U1 164
+CASC_switches_U1 110
+LR_edges 704654
+LR_edges_optimiser 572469
+LR_full_optimal 579137
+LR_setopt_deleted u==x:True owner_x:1 8464
+LR_setopt_deleted_xney 2117
+TB_even 452
+TB_key_checks 426737
+TB_key_nontrivial 4194
+TB_odd 243
+TB_step2 x_on_cycle_only 27336
+TB_step2 x_on_play:False 250332
+TB_step2 x_on_play:True 27336
+U1_W_change_transitions 100
+U1_kappa_w_change_transitions 87
+U1_nontrivial 189
+U1_pieces_checked 1771
+U1_pieces_longer_than_R (post-freeze part nonempty) 55
+WC_cw_changes_per_stretch 3
+WC_fallback_in_I type=EQ notH1=True w_change=0 110
+WC_intervals(notH1notH2) 7328
+WC_intervals(notH2) 8571
+arenas 20000
+fallbacks 874
+intervals 22240
+odd_choice_vertices 17971
+pieces_EQc 16334
+pieces_EQc_nontrivial 1343
+pieces_P3 896
+pieces_P3_nontrivial 35
+pieces_U1 1771
+pieces_U1_nontrivial 189
+runs 11910
+transitions 26180
+MAX CASC_max(step-level+2) -2
+MAX CASC_max_switches_one_vertex_in_run 5
+MAX CASC_run_len_EQc 20
+MAX CASC_run_len_P3 6
+MAX CASC_run_len_U1 16
+MAX U1_last_kappa_w_change_minus_R -2
+MAX U1_max_K 0
+MAX U1_max_Rch 12
+MAX U1_max_len 16
+MAX U1_postfreeze_max_Xi_changes_one_vertex 7
+MAX WC_max 1
+RESULTS {'OK': 47}

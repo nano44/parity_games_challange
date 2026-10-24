@@ -1,0 +1,21 @@
+CASC_runs_EQc: 1
+LR_edges: 1866
+LR_edges_optimiser: 1805
+LR_full_optimal: 1401
+LR_setopt_deleted u==x:True owner_x:1: 27
+LR_setopt_deleted_xney: 1
+TB_key_checks: 1152
+TB_key_nontrivial: 12
+TB_step2 x_on_cycle_only: 18
+TB_step2 x_on_play:False: 406
+TB_step2 x_on_play:True: 18
+fallbacks: 8
+intervals: 62
+pieces_EQc: 60
+pieces_EQc_nontrivial: 9
+runs: 10
+transitions: 61
+CASC_run_len_EQc: 1
+example LR_setopt_deleted: x31_ru24.pg#0@0 cyclenode=6 x=9 y=9 u=9 val[x]=(6, 13951136, 9) ext=(6, 13951136, 10)
+example LR_setopt_deleted_xney: x31_ru24.pg#2@0 cyclenode=6 x=9 y=23 u=9
+RESULT OK violations=0

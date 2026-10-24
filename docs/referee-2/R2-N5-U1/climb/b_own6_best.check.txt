@@ -1,0 +1,25 @@
+CASC_runs_EQc: 1
+LR_edges: 1050
+LR_edges_optimiser: 709
+LR_full_optimal: 934
+LR_setopt_deleted u==x:True owner_x:1: 61
+LR_setopt_deleted_xney: 57
+TB_key_checks: 593
+TB_step2 x_on_cycle_only: 30
+TB_step2 x_on_play:False: 301
+TB_step2 x_on_play:True: 30
+WC_intervals(notH1notH2): 3
+WC_intervals(notH2): 3
+fallbacks: 0
+intervals: 40
+pieces_EQc: 32
+pieces_EQc_nontrivial: 1
+pieces_P3: 3
+runs: 10
+transitions: 31
+CASC_run_len_EQc: 1
+WC_cw_changes_per_stretch: 0
+WC_max: 0
+example LR_setopt_deleted_xney: b_own6_best.pg#0@0 cyclenode=6 x=18 y=4 u=18
+example LR_setopt_deleted: b_own6_best.pg#0@0 cyclenode=6 x=18 y=4 u=18 val[x]=(6, 1073741824, 4) ext=(6, 1073741824, 6)
+RESULT OK violations=0

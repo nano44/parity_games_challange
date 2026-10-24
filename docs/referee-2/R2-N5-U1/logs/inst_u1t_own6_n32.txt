@@ -1,0 +1,38 @@
+CASC_runs_U1: 1
+CASC_switches_U1: 13
+LR_edges: 1863
+LR_edges_optimiser: 1647
+LR_full_optimal: 1329
+LR_setopt_deleted u==x:True owner_x:1: 1
+TB_even: 18
+TB_key_checks: 969
+TB_key_nontrivial: 63
+TB_step2 x_on_cycle_only: 56
+TB_step2 x_on_play:False: 436
+TB_step2 x_on_play:True: 56
+U1_W_change_transitions: 1
+U1_nontrivial: 1
+U1_pieces_checked: 3
+WC_intervals(notH1notH2): 14
+WC_intervals(notH2): 17
+fallbacks: 2
+intervals: 35
+pieces_EQc: 16
+pieces_P3: 1
+pieces_U1: 3
+pieces_U1_nontrivial: 1
+runs: 10
+transitions: 40
+CASC_max(step-level+2): -2
+CASC_max_switches_one_vertex_in_run: 5
+CASC_run_len_U1: 5
+U1_last_kappa_w_change_minus_R: -6
+U1_max_K: 0
+U1_max_Rch: 6
+U1_max_len: 6
+U1_postfreeze_max_Xi_changes_one_vertex: 6
+WC_cw_changes_per_stretch: 0
+WC_max: 0
+example U1_long: u1t_own6_n32.pg#0 piece [0,6] |R|=25 c_theta=27 c_w=2 Rch=6 f=0
+example LR_setopt_deleted: u1t_own6_n32.pg#9@0 cyclenode=31 x=6 y=6 u=6 val[x]=(31, 2147483648, 7) ext=(31, 2147483648, 8)
+RESULT OK violations=0

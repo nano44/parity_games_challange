@@ -1,0 +1,40 @@
+CASC_runs_U1: 3
+CASC_switches_U1: 13
+LR_edges: 3034
+LR_edges_optimiser: 2651
+LR_full_optimal: 2206
+LR_setopt_deleted u==x:True owner_x:1: 10
+LR_setopt_deleted_xney: 2
+TB_even: 19
+TB_key_checks: 1710
+TB_key_nontrivial: 58
+TB_step2 x_on_cycle_only: 128
+TB_step2 x_on_play:False: 804
+TB_step2 x_on_play:True: 128
+U1_W_change_transitions: 2
+U1_nontrivial: 2
+U1_pieces_checked: 9
+WC_intervals(notH1notH2): 15
+WC_intervals(notH2): 24
+fallbacks: 2
+intervals: 60
+pieces_EQc: 23
+pieces_P3: 3
+pieces_U1: 9
+pieces_U1_nontrivial: 2
+runs: 10
+transitions: 70
+CASC_max(step-level+2): -2
+CASC_max_switches_one_vertex_in_run: 3
+CASC_run_len_U1: 4
+U1_last_kappa_w_change_minus_R: -3
+U1_max_K: 0
+U1_max_Rch: 7
+U1_max_len: 7
+U1_postfreeze_max_Xi_changes_one_vertex: 7
+WC_cw_changes_per_stretch: 0
+WC_max: 1
+example U1_long: u1t_cex_n32.pg#0 piece [0,7] |R|=29 c_theta=27 c_w=8 Rch=7 f=0
+example LR_setopt_deleted: u1t_cex_n32.pg#1@0 cyclenode=17 x=11 y=11 u=11 val[x]=(17, 16777216, 2) ext=(17, 16777216, 3)
+example LR_setopt_deleted_xney: u1t_cex_n32.pg#4@0 cyclenode=8 x=15 y=23 u=15
+RESULT OK violations=0
