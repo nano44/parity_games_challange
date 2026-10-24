@@ -1,0 +1,22 @@
+EQ_runs: 70
+F2_EQ_THR: 24
+F2_wchange: 52
+F_intervals: 21
+TF_theta_change: 52
+phases: 72
+runs: 20
+subblock_flat_fb: 0
+subblocks: 83
+subblocks_theta_varying: 0
+transitions: 172
+type_EQ: 83
+type_OTHER: 15
+type_THR: 94
+wu_runs: 89
+EQ_max_vc: 4
+F1_max: 16
+phase_max_O: 0
+phase_max_X: 0
+phase_max_len: 16
+wu_run_max_len: 1
+RESULT OK violations=0

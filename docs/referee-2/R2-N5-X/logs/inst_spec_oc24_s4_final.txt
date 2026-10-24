@@ -1,0 +1,11 @@
+EQ_runs: 1
+phases: 2
+runs: 1
+transitions: 20
+type_EQ: 1
+type_OTHER: 20
+EQ_max_vc: 0
+phase_max_O: 19
+phase_max_X: 0
+phase_max_len: 19
+RESULT OK violations=0
