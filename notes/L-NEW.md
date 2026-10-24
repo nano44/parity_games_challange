@@ -21,8 +21,8 @@ Successor 9 (Opus 5.5, D15), session_01EnPXboLL7nw4CKpAwqSDkm. Handover check 5/
 - No polynomial claim. No induction survived.
 
 ### IN FLIGHT
-- wdropclimb.py n 12 / n 16 (to ~05:49Z), outputs in experiments/new/out/b25 (gitignored; bests copied to box25/instances at
-  the end).
+- Nothing running. All climbs ended by 05:52Z. Bests are committed in experiments/new/box25/instances (wd12_s1, wd16_s2, tr12_s3,
+  tr20_s4). No climb beat R17's per-phase n − 1.
 
 ### NEEDS
 - Lead: route (TRUST) / (FB-1O) to L-RED, or to a proof successor. Relay box 25 §3 (W-resets) to L-RED box 28.

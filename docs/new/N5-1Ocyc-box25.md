@@ -245,8 +245,11 @@ Fix a τ-stretch (τ(o) = b; by Theorem B it is a prefix of the F_b run) and a j
     event, and it can exceed the phase length, since several vertices can enter T at once:
     - max per (τ, joint-λ)-phase: fts_best16 4 (phase of 27 states); theta_thf16 2; theta_thc24 0 (its θ-changes need no d2
       trust event); the n 16 wdropclimb best 12 (phase of 13 states, all fallbacks);
-    - 15,000 random o-cyclic canonical runs, n 5-16: max 3-6 per n, no growth visible.
-    - Trust events stay below n everywhere, and (TRUST) is not refuted.
+    - 15,000 random o-cyclic canonical runs, n 5-16: max 3-6 per n.
+    - Climb (trustclimb.py, §7): 14 at n 12, 29 at n 20. The events exceed n, but the phases stay within R17's n − 1 (11 iterations at
+      n 12, 17 at n 20), because several vertices enter T per transition.
+    - So trust EVENTS can grow beyond n, while the phase lengths, which are what matter, did not beat n − 1. (TRUST), stated in
+      transitions, is not refuted.
 - (FB-H) is FALSE at throttled states (fbh_drop9, §3). PROVED at unthrottled states.
 - (FB-1O) The number of fallbacks in one joint λ-phase of an F_b run is poly(n). Off (h) each fallback can reset W (§3). DATA: §7.
 - (CYC) of box 24 §4 (θ-changes inside throttled stretches) is implied by (TRUST) via §5 (2)-(4). READING.
@@ -266,7 +269,7 @@ Smallest instances, in one place:
 
 ## 7. Climbs (DATA; canonical starts; every best checked with Oink)
 - wdropclimb.py (fitness: W-dropping Even fallbacks inside one (τ, joint-λ)-phase, then the total; canonical start; o-cyclic 𝒞^1O
-  only), 2,400 s per seed, from 05:09Z. INTERIM numbers at 05:23Z; final numbers below if they change.
+  only), 2,400 s per seed, 05:09-05:49Z. FINAL: unchanged from the interim numbers (bests reached at 67 s and 154 s).
 
   | n | seed | W-drop fallbacks in one phase (total) | iterations (fallbacks) | phases | instance (sha1) |
   | --- | --- | --- | --- | --- | --- |
@@ -283,12 +286,22 @@ Smallest instances, in one place:
   with n ≤ 15 beats R17's per-phase bound in any climb. fts_best16 (n 16) stays the smallest known.
 - fbhclimb.py (fitness: W-drops at (h)-throttled fallbacks; random start in the genome): n 9 seed 1 hit after 21 s (fbh_drop9,
   §3); the n 12 run was stopped after that hit.
+- trustclimb.py (fitness: max trust events in one (τ, joint-λ)-phase, then the phase length; canonical start), 1,500 s per seed,
+  05:27-05:52Z. FINAL:
+
+  | n | seed | trust events in one phase | iterations (fallbacks) | phases | instance (sha1) |
+  | --- | --- | --- | --- | --- | --- |
+  | 12 | 3 | 14 | 11 (1) | [11] | box25/instances/tr12_s3.pg (fd28d880491f…) |
+  | 20 | 4 | 29 | 17 (0) | [17] | box25/instances/tr20_s4.pg (7beadfa84ebe…) |
+
+  - Both: Oink zlk OK, strategies verified; no W-drops.
+  - Phase lengths 11 ≤ n − 1 = 11 and 17 ≤ 19. No kill: many trust events, but no long phase.
 
 ## 8. Files (experiments/new/box25/)
 - common.py: helpers (rank-free valuations, one-player optimum, random 𝒞^1O generator).
 - lemma1cyc.py (§1), propz.py (§2), abovestretch.py / abovebig.py / abovefind.py (§2), complete.py (§5 (5)), thtrace.py (per-state
   θ, w, R, trust set), lapsearch.py (§4), sbclass.py (§4), ringcheck.py (§4), wmono_cyc.py / wdrop_find.py / wdrop_canon.py /
-  wdrop_h.py / fbh.py / fbhclimb.py (§3), trustcount.py (§6), wdropclimb.py (§7).
+  wdrop_h.py / fbh.py / fbhclimb.py (§3), trustcount.py (§6), wdropclimb.py / trustclimb.py (§7).
 - Instances: laps/lap_n6_s1_110421.pg, laps/lap_n9_s1_32427.pg, wdrop_cyc.pg + .start, wdrop_canon.pg, fbh_thr.pg + .start,
   fbh_drop9.pg + .start, zfrozen_thr.pg + .start, and the §7 climb bests under instances/.
 - Reproduce (from experiments/new/box25): `python3 lemma1cyc.py --random 3000 4 14 25`, `python3 propz.py --random 4000 4 16 31`,
