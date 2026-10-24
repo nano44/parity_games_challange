@@ -1,7 +1,7 @@
 # Referee report R-N5-1OA: N5 on o-acyclic one-Odd-choice games — Prop X / Cor. X1 (L-RED) and the (C_X + d)(B + 1) bound (L-NEW), with Lemmas R and S
 
 Referee: REFEREE (successor 3), Fable 5.1 (Lead reading L36). Packet P-N5-1OA: the Lead's message of 2026-10-24 03:20Z. Pin: trunk
-claude/vibrant-johnson-nxvvxo 07f298d, RE-PINNED by the Lead at 03:27Z to d78e54f (see §0; both merged here). Objects: (A) docs/red/R58-n5-width.md §9, Proposition X and Corollary X1 (L-RED, l-red
+claude/vibrant-johnson-nxvvxo 07f298d (the signed object, Lead reading 03:50Z; the 03:27Z re-pin to d78e54f was WITHDRAWN at 03:50Z; §0 keeps my check of that text as a record). Objects: (A) docs/red/R58-n5-width.md §9, Proposition X and Corollary X1 (L-RED, l-red
 f93e517); (B) docs/new/N5-1Oacyc-box24.md (L-NEW successor 8, l-new 9d7890f); dependencies docs/new/N5-time-box21.md §2.1 Lemma R and
 §2.2 Lemma S. Context read: box 21 §1, §2.3-2.6, §3.4-3.7; R58 §2 (premise (P), Theorem W); RESULTS R15, R17; SPEC S1-S5 of
 docs/new/N5-ssi-global.md (FIX 1-4, Q1-Q4); experiments/new/box22/statcheck.py and experiments/new/n5.py (read-only). My own R-N5-1P
@@ -185,3 +185,42 @@ independent of n5x/h1/pureY).
 | (P) | Lemma 1 (both cases) | VJ00 Lemma 5.8 "1 ⇒ 2" on the one-player game G[X] | CONDITIONAL as the Lead allows; the one-player form is re-derived in R-N5-1P §3 route (a) (REFEREE reading) and tested exhaustively there (L58, 7,945 games); the fleet may discharge it by that reading or keep the label |
 Inherited: G-N1 (engine = SPEC; DATA, +15,985 states here with 0 mismatches). Scope: a bound on N5 itself on a class that is polynomial by
 other means (d one-player games); o-cyclic 𝒞^1O (fts_best16, oneodd_c16/c24, frz24) is untouched: X may be empty, Lemma 2 has no analogue.
+
+## C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-1OA.md, referee-2 603cb3a, trunk 2177e79; read after my report was pushed at
+9060b516 / bb96f454; written 2026-10-24 03:51Z-03:55Z by date -u; stamp corrected at 03:57Z, the push 145058c4 carried an estimate 04:05Z). Signed object: the 07f298d texts (Lead reading 03:50Z); my §0 on the
+withdrawn d78e54f text stays as a record, and its B7 concerns that text and R17's own B1 wording only.
+Agreement per item: identical verdicts in every row. (A) Prop X SIGN WITH GAPS both; Cor. X1 SIGN both (both call "⇐ (SEG-1O)" a reading
+superseded by (B)); (B) SIGN WITH GAPS conditional on (P) both, (P) used only on the one-player game G[X] in Lemma 1; Lemma R SIGN both;
+Lemma S SIGN WITH GAPS both; the two R17 re-reads (Case B at an arbitrary state; Cor. 2 from any start) CONFIRMED both. No step wrong, both.
+Gap map (mine ↔ theirs):
+| mine | theirs | status after comparison |
+|---|---|---|
+| A1 (Prop X exact at strategy level = SPEC tie-break locality; checked step by step) | G-1OA-2, N-1 | SAME finding; R2 adds the sharper point that the COUNT is tie-break-free: every change of σ\|X is a strategy-changing pointwise-optimal arena step of G[X] or its terminal flat fallback, so R17 Cor. 1 bounds it for ANY optimum selection. I ACCEPT this: Prop X's bound does not depend on (1c), only the "is N5's run" identity does. N-1 (keep X's index order) = my relabelling remark |
+| A2 (S4c's condition; the run cannot stop with Iσ\|X ≠ ∅; G[X] stops at the same strategy) | G-1OA-1 | SAME content; R2 states it as "a prefix, and the whole run because N5 terminates (R15 (d))". I accept that wording |
+| B1 (three ways σ\|X stays fixed) | Lemma 1 cases (i)-(iii) in R2 §2, not listed as a gap | same argument, both |
+| B2 (flat case = arbitrary-state single-switch statement, R-N5-1P §4 G4, not Theorem PH) | G-1OA-3 | SAME; R2 adds that box 10's B1 text lacks the own-cycle-node split of the avoid-x case, which the arbitrary-state use needs; both our derivations have the split |
+| B3 (o-acyclicity enters at Lemma 2) | N-3 | SAME; R2 sharpens: Lemma 1 holds on ALL of 𝒞^1O (their DATA 225 o-cyclic pure states, 0 failures; my inst runs on the o-cyclic controls also had L1 0 failures at 37 checked states), so the o-cyclic obstruction sits exactly at Lemma 2. I accept |
+| B4 (Iσ_k ≠ ∅ at a pure transition needs the Odd-fallback case) | G-1OA-5 | SAME finding, same argument (S4b returns τ_k with Iτ ≠ ∅ ⇒ Odd's S4c switches o; box 21 Theorem B (a)) |
+| B5 (R17 Cor. 2 from any start) | §2 (c) CONFIRMED | same |
+| B6 (counting slack) | step 6 (R2: blocks ≤ C_X + d) | same conclusion: the stated bound holds |
+| (P) row | G-1OA-4 | SAME; R2 records that my R-N5-1P §3 route (a) derivation exists and that they have not refereed it; their DATA 2,283 improvement-free strategies all optimal |
+| S1 ((11)'s asserted halves via R17 (a)) | — | mine only (citation completeness); no disagreement |
+| S2 (Lemma S (b) needs R15 (d): σ_{k+1} = Switch_I(σ_k)) | G-1OA-6, second half | SAME |
+| — (MISSED by me) | G-1OA-6, first half: Lemma S (c)/(d) hold for S4a steps only, not for S4c fallback steps (box 21's Lemma W: W can drop there) | ACCEPTED. My §4 signed (c) as "S4a's output is the pointwise maximum", which is the true statement, but I did not flag that the text's "σ_{k+1} maximises V_{·,τ_k} over A(σ_k)" is false at fallback iterations (the fallback's σ_{k+1} ∈ A(σ_k) is not the optimum). (B) uses only Lemma S (a)-(b), so nothing signed in (B) is affected |
+| — | N-2 (Lemma 2 cites "(F1) in the dual" for S4b's optimum; it is VJ00 (11) itself) | I had the same remark inline (§3 Lemma 2 (iv): "(11), directly, not even dualised") without listing it; agreed as a nit |
+| B7 (d78e54f / R17 B1: omitted "c even, shorter" case) | — | concerns the withdrawn text and R17's wording (= R-N5-1P G2); not part of the 07f298d object |
+The two points the Lead named: G-1OA-5 is my B4, found independently by both with the same repair; G-1OA-6's S4a-only scoping of Lemma S
+(c)/(d) is R2's finding alone and is right; (b)'s Switch_I premise is my S2. Both are wording items for the RESULTS gap list (the lane
+texts are frozen, Lead 03:50Z).
+Data, side by side (independent code on both sides, n5.py unmodified on both): R2 1,147 random o-acyclic games + 1,315 o-cyclic controls +
+20 composed games with long X runs (16 changes at |X| = 16) + statY_12 + i4_hand; me 7,200 random o-acyclic runs with a generator biased to
+pure transitions (2,707 pure transitions, 2,380 blocks) + statY_12 + i4_hand + the o-cyclic controls. One thing R2's §6 says that is no
+longer so: "No instance with a long pure block on an o-acyclic game is in the fleet". L-RED's block_bk20 / block_bk32 (trunk 7f351fc,
+R58 §10; Lead data addendum 03:38Z, after R2's push) have single pure blocks of 27 and 49 iterations (49 > |Y| = 33); my probe: Lemmas 1-3
+at all 76 pure transitions, each block = n5.py's run on G_τ step for step, 0 violations (§0). These are the first sharp tests of Step 5.
+Disagreements: none. Final verdicts (Fable 5.1), unchanged: (A) Prop X SIGNED WITH GAPS A1-A2 (= G-1OA-1, -2, N-1; closed as wording,
+with R2's tie-break-free count accepted); Cor. X1 SIGNED (reading); (B) SIGNED CONDITIONAL ON (P) WITH GAPS B1-B6 (= G-1OA-3, -5, N-2, N-3;
+closed), with (P) = G-1OA-4 the only non-refereed premise, used on one-player G[X] only and re-derived in R-N5-1P §3 route (a) as a REFEREE
+reading; Lemma R SIGNED; Lemma S SIGNED WITH GAPS S1, S2 and R2's G-1OA-6 first half (accepted). Joint gap list for the RESULTS entry:
+G-1OA-1..6 with my A1, A2, B2, B3, S1, S2 folded in as above; all closed as wording or by derivation except (P) (conditional) and the
+inherited DATA gap G-N1.

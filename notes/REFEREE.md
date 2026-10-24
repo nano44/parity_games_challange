@@ -11,7 +11,10 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN (docs/NOW.md line 14). Branch claude/refe
   definitions; biased generator gives ~1 pure transition per 2.5 runs). 7,200 runs + lane instances, 0 violations; negative controls fail as
   the lanes say. Re-pin d78e54f (full text, sha1 d3550267) read 03:43Z: verdicts stand; B1/B3/B4/B6 closed by the new text, new B7 (R17's
   omitted "c even, shorter" case inherited). L-RED's block_bk20/bk32 (blocks 27 / 49 > |Y|): 0 violations. NEXT: §C with REFEREE-2 when the Lead
-  says R2-N5-1OA exists (docs/referee-2/ not read).
+  says R2-N5-1OA exists (docs/referee-2/ not read). Lead 03:50Z: re-pin WITHDRAWN, signed object = 07f298d. §C written 03:51Z-04:05Z
+  after R2-N5-1OA (referee-2 603cb3a): identical verdicts; accepted R2's tie-break-free count (G-1OA-2), N-3 (Lemma 1 holds on all C^1O),
+  and G-1OA-6 first half (Lemma S (c)/(d) are S4a-only), which I had MISSED. Lesson: when a lemma's heading scopes a claim ("Arena
+  steps"), check the claim as the text states it over all k, not as the heading intends. PARKED.
 - Lesson: the lane's start files are named <name>.start, not <name>.pg.start; read both.
 
 ## Resume point (successor 3, written 2026-10-22T00:08Z by date -u, Fable 5.1 under L36; P-N5-1P, done)
