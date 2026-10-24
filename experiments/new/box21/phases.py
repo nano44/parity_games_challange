@@ -2,6 +2,7 @@
 """Box 21: λ-phases of an N5 run (honest cycle-node maps of Ξσ and Ξτ), iterations per joint phase, best-reply (σ̄) changes.
 Usage: phases.py game.pg [tstar]"""
 import sys
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
 def main(path, mode=""):
     g = load(path); E, Ed = Engine(g), Engine(dual(g))

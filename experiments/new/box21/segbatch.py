@@ -3,6 +3,7 @@
 sigma-bar-segment ∩ joint-λ-phase (iterations), the number of sigma-bar changes, and checks segment <= n - 1.
 Usage: segbatch.py N nmin nmax seed [oneodd]"""
 import sys, random
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
 N, a, b, seed = map(int, sys.argv[1:5]); one = len(sys.argv) > 5; rng = random.Random(seed)
 worst = (-10 ** 9, None); maxbr = (0, None); viol = 0
