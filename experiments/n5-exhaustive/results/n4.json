@@ -1,0 +1,2379 @@
+{
+ "games": 4828736,
+ "cyc": 4529536,
+ "runs": 4828736,
+ "reA": 0,
+ "reB": 0,
+ "leaves": 17344,
+ "entries": 13136,
+ "tg_ok": 0,
+ "tg_bad": 0,
+ "ex_tg": [],
+ "hist_ph": {
+  "0": 2991460,
+  "1": 1779128,
+  "2": 58148
+ },
+ "hist_th": {
+  "0": 4825136,
+  "1": 3600
+ },
+ "max_ph_cyc": 2,
+ "max_th_cyc": 1,
+ "ex_A": [],
+ "ex_re": [],
+ "max_maxph": 2,
+ "max_thch": 1,
+ "max_trust": 2,
+ "max_reent": 0,
+ "max_segx": 0,
+ "max_elim": 1,
+ "max_elimx": 0,
+ "max_elim_sigma": 1,
+ "max_elim_st": 0,
+ "max_thel": 0,
+ "max_Emax": 2,
+ "max_stlen": 1,
+ "max_hex": 0,
+ "max_it": 3,
+ "ex_max_it": [
+  {
+   "prio": [
+    0,
+    2,
+    3,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     1
+    ],
+    [
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 3,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     1
+    ],
+    [
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     1,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 3,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     1
+    ],
+    [
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2,
+     3
+    ]
+   ],
+   "start": null,
+   "it": 3,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     1
+    ],
+    [
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ],
+   "start": null,
+   "it": 3,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     1
+    ],
+    [
+     3
+    ],
+    [
+     1,
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 3,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  }
+ ],
+ "ex_maxph": [
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     1,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 2,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 1,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 1,
+   "hex": -2
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 2,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 1,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 1,
+   "hex": -2
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     1,
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 2,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 1,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 1,
+   "hex": -2
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     1,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 2,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 1,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 1,
+   "hex": -2
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 2,
+   "thch": 0,
+   "trust": 1,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 1,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 1,
+   "hex": -2
+  }
+ ],
+ "ex_thch": [
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 1,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 1,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 1,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 1,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    1,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 1,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 1,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    1,
+    0,
+    1
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 1,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 1,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    1,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 1,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 1,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  }
+ ],
+ "ex_trust": [
+  {
+   "prio": [
+    0,
+    2,
+    3,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 2,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 2,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 2,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 2,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    3,
+    5
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     2,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 2,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 0,
+   "segx": -3,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  }
+ ],
+ "ex_reent": [],
+ "ex_segx": [],
+ "ex_elim": [
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": false,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 1,
+   "elimx": -2,
+   "elim_sigma": 1,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": false,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 1,
+   "elimx": -2,
+   "elim_sigma": 1,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": false,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 1,
+   "elimx": -2,
+   "elim_sigma": 1,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": false,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 1,
+   "elimx": -2,
+   "elim_sigma": 1,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    1,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": false,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 1,
+   "elimx": -2,
+   "elim_sigma": 1,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  }
+ ],
+ "ex_elimx": [],
+ "ex_elim_sigma": [
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": false,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 1,
+   "elimx": -2,
+   "elim_sigma": 1,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": false,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 1,
+   "elimx": -2,
+   "elim_sigma": 1,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": false,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 1,
+   "elimx": -2,
+   "elim_sigma": 1,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": false,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 1,
+   "elimx": -2,
+   "elim_sigma": 1,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    1,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": false,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 1,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 1,
+   "elimx": -2,
+   "elim_sigma": 1,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 0,
+   "hex": -1000000000
+  }
+ ],
+ "ex_elim_st": [],
+ "ex_thel": [],
+ "ex_Emax": [
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "succ": [
+    [
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 1,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 2,
+   "stlen": 1,
+   "hex": -8
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "succ": [
+    [
+     3
+    ],
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 1,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 2,
+   "stlen": 1,
+   "hex": -8
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "succ": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 1,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 2,
+   "stlen": 1,
+   "hex": -8
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "succ": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 1,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 2,
+   "stlen": 1,
+   "hex": -8
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "succ": [
+    [
+     1,
+     2
+    ],
+    [
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "start": null,
+   "it": 2,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 1,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 2,
+   "stlen": 1,
+   "hex": -8
+  }
+ ],
+ "ex_stlen": [
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 1,
+   "hex": -2
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 1,
+   "hex": -2
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     0
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 1,
+   "hex": -2
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     0
+    ],
+    [
+     3
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 1,
+   "hex": -2
+  },
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0
+    ]
+   ],
+   "start": null,
+   "it": 1,
+   "fb": 0,
+   "cyc": true,
+   "maxph": 1,
+   "thch": 0,
+   "trust": 0,
+   "tlen": 2,
+   "reA": 0,
+   "reB": 0,
+   "leaves": 0,
+   "entries": 0,
+   "reent": 0,
+   "events": [],
+   "seg": 1,
+   "segx": -2,
+   "tg_ok": 0,
+   "tg_bad": 0,
+   "tg_first": null,
+   "elim": 0,
+   "elimx": -3,
+   "elim_sigma": 0,
+   "elim_st": 0,
+   "thel": 0,
+   "Emax": 0,
+   "stlen": 1,
+   "hex": -2
+  }
+ ],
+ "ex_hex": [],
+ "tasks_done": "64/64",
+ "secs": 580.1,
+ "options": {
+  "n": 4,
+  "even_maxdeg": null,
+  "o_deg": null,
+  "no_forced": false,
+  "cyclic_only": false,
+  "all_starts": false
+ }
+}
