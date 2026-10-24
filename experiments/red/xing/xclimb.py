@@ -10,6 +10,7 @@ Fitness (lexicographic): (violations, exercise) where exercise depends on --targ
   reent  : throttled re-entries into R inside one stretch (coarsecheck's count, cut at fallbacks + --withfb), then leaves; Theorem XA
            data (referees on P-N5-XA: none observed)
   reentu : as reent, but only re-entries with u* ≠ none count first (Theorem XA's main case)
+  fbref  : (FBRE-F violations, post-freeze fallback evictions / waves / run length), fbref.py (L-NEW CONJECTURE, box 28 §5b)
   cycu   : (max θ-changes inside one (w, u*)-run, max θ-changes per phase)    ((CYC-u*), L-NEW §8b; lemma checks skipped in
            the fitness, run them on the bests)
   A (w, u*)-run: consecutive states of one joint λ-phase (phaseprofile.py's key) with (h), θ ◁ w, w fixed and u* (the most
@@ -18,7 +19,7 @@ Usage: xclimb.py n seed secs out [--from g.pg] [--pad N] [--target lemmas|nh|cyc
   --pad N: append inert Even vertices (priority 0, self-loop) up to N vertices, as thetaclimb.py does."""
 import sys, os, random, time
 B = os.environ.get("LNEW_BOX25") or sys.exit("set LNEW_BOX25")
-sys.path.insert(0, B)
+sys.path.insert(0, B); sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from collections import Counter
 from common import *
 from climb_fix import mutate
@@ -83,6 +84,15 @@ def score(c, target):
     return (v, ex)
 
 def fit(G, target):
+    if target == "fbref":
+        import fbref
+        n = len(G[0]); odd = [v for v in range(n) if G[1][v] == 1 and len(G[2][v]) > 1]
+        if len(odd) != 1 or any(not x for x in G[2]): return (-1, -1), None
+        g = pg.Game(*G)
+        if not any(w in split(g, odd[0]) for w in G[2][odd[0]]): return (-1, -1), None
+        try: o, _ = fbref.analyse(g, 400)
+        except Exception: return (-1, -1), None
+        return (o["VIOL"], o["post_ev"] * 100 + o["waves_max"] * 10 + min(o["max_run"], 9)), o
     if target == "cycu":
         n = len(G[0]); odd = [v for v in range(n) if G[1][v] == 1 and len(G[2][v]) > 1]
         if len(odd) != 1 or any(not x for x in G[2]): return (-1, -1), None
