@@ -1,0 +1,3 @@
+start 320
+TOTALS {'stretch_U23': 833, 'stretch_U23_nontrivial': 431, 'formula_states_U23': 2813, 'events_U23': 0, 'KW_U23': 169, 'wflat_runs_U23': 321, 'U3_subruns_U23': 321, 'U3_switch_A_U23': 7581, 'stretch_U3': 297, 'formula_states_U3': 1337, 'events_U3': 0, 'KW_U3': 19, 'runs': 2400, 'transitions': 14555, 'stretch_U2': 281, 'formula_states_U2': 282, 'events_U2': 0, 'KW_U2': 1, 'U3_subruns_kindB_empty_U23': 2, 'stretch_U3_nontrivial': 165, 'wflat_runs_U3': 168, 'U3_subruns_U3': 168, 'U3_switch_A_U3': 4352, 'stretch_U2_nontrivial': 1}
+RESULT OK violations 0

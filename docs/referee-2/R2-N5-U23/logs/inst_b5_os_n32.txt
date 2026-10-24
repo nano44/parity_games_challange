@@ -1,0 +1,10 @@
+KW_U2: 2
+events_U2: 0
+formula_states_U2: 7
+runs: 10
+stretch_U2: 4
+stretch_U2_nontrivial: 2
+transitions: 471
+wflat_runs_U2: 1
+max_Rch_U2: 2
+RESULT OK violations=0
