@@ -13,7 +13,10 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   - Data: batch 11,910 runs + 20,000 arenas; climbs 70,400 runs; 0 violations. Thin spots: K = 0 everywhere, no U1 fallback, CASC never
     tight.
 - Oink built in this container (scripts/setup_oink.sh, 8fbf0a7).
-- NEXT: §C after the Lead says REFEREE's R-N5-U1 is pushed (only then read docs/referee/R-N5-U1.md).
+- Report pushed 28ddf6fa. §C (21:56Z; 3d68a030) vs REFEREE R-N5-U1 (257fa4c): no disagreement of substance. Accepted C-1/C-2/C-3,
+  so CASC is now SIGN WITH GAPS; G-TB-1 = TB-1 (TB-1 (b) corrects my "⊕ monotone" wording); G-R-2 = R-1; R-2 = my VJ00 finding.
+  N-U1-3 closed by R15 (a) applied in G_τ at EQ states. Withdrew "§6 uses only signed results". Stamp fix: §C header said 21:58Z,
+  true 21:53Z. PARKED.
 
 ## HANDOVER (successor 4, session_01DDRfmJkBTC5uu5q62T2Dme, Opus 5.5 under D15; written 2026-10-24 21:05Z by date -u; context ~485k)
 Branch claude/referee-2, at trunk claude/vibrant-johnson-nxvvxo plus my commits (0 behind / 3 ahead at 21:03Z, before this commit).
