@@ -532,6 +532,21 @@ Second round, 13:59Z, σ-or-τ eliminations, 1,800 s each:
 - n 16, seed 12: (4, 16), with d = 10. instances/thclimb_n16_s12.pg; Oink zlk OK, strategies verified.
 - Both stay ≤ d, so (CYC-ELIM) holds.
 
+**Seeded climbs, 14:36-15:06Z (climb.py --seedgame; final bests copied to instances/*_final.pg; each Oink zlk OK, strategies verified):**
+
+| seed | fitness | final best | instance (sha1) | n5.py iterations / fallbacks |
+| --- | --- | --- | --- | --- |
+| elim24_p52 | (σ-or-τ window, phase) | window 13, phase 59 (2.5n at n 24) | s_elim24_final.pg (ddb99d6c…) | 66 / 4 |
+| returns_rt32 (--anyodd) | (σ-or-τ window, phase) | window 18, phase 49 at n 32 | s_rt32_final.pg (93ba6aa3…) | 53 / 6 |
+| theta_tp32 | (θ-in-window − d, θ-in-window, θ-changes) | 14 θ-changes in one window (d = 10); 35 θ-changes in one phase of 38 at n 32 | s_tp32_final.pg (67b0d3e7…) | 43 / 2 |
+| theta_thf16 | same | (0, 5, 16), no violation | — | — |
+
+- (ELIM-poly) windows stay ≤ 0.6n on these climbs (elimn_cex_n48's 49 at n 48 is the record).
+- s_tp32_final: 35 θ-changes in one joint λ-phase at n 32, more than 2n, against the 16 of the pinned θ instances. The window of
+  14 > d is a second refutation of (CYC-ELIM). Recursive depth 2.
+- Phases above 2n now exist on o-cyclic 𝒞^1O from 30-minute climbs: 59 at n 24 (s_elim24_final). These are climb envelopes, not
+  families.
+
 ## 7. Files (experiments/si/orlens/; read-only use of experiments/new/n5.py, experiments/si/si.py, new/box21, new/box25)
 - ortrace.py: N5 loop with states (asserts equality with n5.run), plus switch-all control mode; Lex (lev, ⊕).
 - gaps.py: E1-E4 checks, flat transitions, gap-max runs, returns.
@@ -543,7 +558,8 @@ Second round, 13:59Z, σ-or-τ eliminations, 1,800 s each:
 - stretchret.py: returns inside (θ, w, τ, λ)-stretches.
 - vi.py: Lemma D check and value iteration.
 - climb.py: §6.
-- instances/ (tracked): elim24_p52.pg, thclimb_n12_s11.pg, thclimb_n16_s12.pg.
+- instances/ (tracked): elim24_p52.pg, thclimb_n12_s11.pg, thclimb_n16_s12.pg, cycelim_cex_n32.pg, s_elim24_final.pg,
+  s_rt32_final.pg, s_tp32_final.pg. laps.py (§4.6).
 - pieces.py (§4.5), thetaelim.py (§4.3), depth.py (§4.4), retpay.py (§4.4), sweep.py (random games).
 - out/: thetare_min.pg and thetare_n.pg (copied from l-new 0d6a93c, sha1 above), and the switchallexp_N4..7 instances from
   experiments/hard-families/pgsolver_port.py. The out/ files are not tracked except where named.
