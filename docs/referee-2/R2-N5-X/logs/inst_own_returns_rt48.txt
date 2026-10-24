@@ -1,0 +1,28 @@
+EQ_runs: 59
+FBW_theta_status_evictions(not covered): 9
+F_intervals: 84
+NF_checks: 59
+NF_nonflat_fb_crossing: 59
+R19f_literal_split_fails(Xi on R counted): 11
+R_Xi_change_without_route_change: 11
+TF_theta_change: 11
+fb_in_phase: 59
+phases: 84
+runs: 20
+subblock_flat_fb: 0
+subblocks: 59
+subblocks_theta_varying: 11
+transitions: 736
+type_EQ: 451
+type_OTHER: 54
+type_THR: 251
+wu_runs: 11
+wu_runs_theta_varying: 6
+EQ_max_vc: 20
+F1_max: 6
+phase_max_O: 8
+phase_max_X: 29
+phase_max_len: 78
+wu_run_max_len: 66
+example R19f_literal: returns_rt48.pg#0 sub-block 42..43: |R|=1 R-changes incl. Xi=1
+RESULT OK violations=0

@@ -1,0 +1,28 @@
+EQ_runs: 40
+F2_wchange: 1
+F_intervals: 25
+NF_checks: 9
+NF_nonflat_fb_crossing: 9
+R19f_literal_split_fails(Xi on R counted): 11
+R_Xi_change_without_route_change: 20
+TF_theta_change: 21
+fb_in_phase: 9
+phases: 86
+runs: 20
+subblock_flat_fb: 0
+subblocks: 26
+subblocks_theta_varying: 15
+transitions: 310
+type_EQ: 74
+type_OTHER: 53
+type_THR: 203
+wu_runs: 51
+wu_runs_theta_varying: 31
+EQ_max_vc: 2
+F1_max: 6
+phase_max_O: 4
+phase_max_X: 14
+phase_max_len: 26
+wu_run_max_len: 14
+example R19f_literal: fts_best16.pg#0 sub-block 2..6: |R|=3 R-changes incl. Xi=3
+RESULT OK violations=0
