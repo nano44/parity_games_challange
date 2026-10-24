@@ -2,7 +2,7 @@
 """Greedy shrink of a C^1O game + start pair while a property holds (default: some theta-driven (A) re-entry in a joint
 lambda-phase). Moves, repeated to a fixpoint: delete a vertex (redirecting nothing: edges into it are dropped; a vertex left
 without successors makes the move invalid), delete an edge, drop a vertex's start choice to another successor, lower a priority
-(compress). The start pair is restricted accordingly. Usage: shrink.py IN.pg IN.start OUT_PREFIX [--prop A|canonA]"""
+(compress). The start pair is restricted accordingly. Usage: shrink.py IN.pg IN.start|- OUT_PREFIX [--prop A|canonA]  (canonA: from the canonical start; pass - as start)"""
 import os
 import sys
 
@@ -46,7 +46,7 @@ def delete_vertex(g, start, x):
 
 
 def main():
-    g = pg.read(sys.argv[1]); start = exh.readstart(sys.argv[2]); outp = sys.argv[3]
+    g = pg.read(sys.argv[1]); start = exh.readstart(sys.argv[2]) if sys.argv[2] != "-" else None; outp = sys.argv[3]
     mode = sys.argv[sys.argv.index("--prop") + 1] if "--prop" in sys.argv else "A"
     assert prop(g, start, mode), "property does not hold on the input"
     changed = True
@@ -63,7 +63,8 @@ def main():
                 if len(g.succ[v]) < 2:
                     continue
                 succ = [list(s) for s in g.succ]; succ[v].remove(w)
-                st = tuple({a: (b if not (a == v and b == w) else succ[v][0]) for a, b in side.items()} for side in start)
+                st = tuple({a: (b if not (a == v and b == w) else succ[v][0]) for a, b in side.items()} for side in start) \
+                    if start else None
                 h = pg.Game(g.prio, g.owner, succ)
                 if prop(h, st, mode):
                     g, start = h, st; changed = True; break
@@ -77,10 +78,11 @@ def main():
                 if prop(h, start, mode):
                     g = h; changed = True; break
     pg.write(g, outp + ".pg")
-    with open(outp + ".start", "w") as f:
+    if start:
+      with open(outp + ".start", "w") as f:
         f.write("SIGMA0 " + " ".join(f"{v}:{w}" for v, w in sorted(start[0].items())) + "\n")
         f.write("TAU0 " + " ".join(f"{v}:{w}" for v, w in sorted(start[1].items())) + "\n")
-    st, _ = trace(g, start, check=False)
+    st, _ = trace(g, start if mode != "canonA" else None, check=False)
     print(f"shrunk to n {g.n}, m {sum(len(s) for s in g.succ)}: {exh.analyse(g, st, exh.odd_choice(g))}")
 
 
