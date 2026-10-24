@@ -28,6 +28,21 @@ experiments/new/box25/common.py (rand_c1o, odd_choice = FIRST Odd chooser: hence
 - Glob-based data can pull in out-of-class games; assert the class.
 - Random 𝒞^1O samples are nearly vacuous for throttled / route-form / re-entry structure; say so; named instances carry the evidence.
 
+## Resume point (successor 5, written 2026-10-24T21:32Z by date -u, Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh > file 2>&1; echo $?.
+- Handover check bfbf4642 (scored 5/5 by the Lead 21:1xZ). Local branch was stale (73b46eb8); fetched + ff; trunk cf66bff merged (4b6456dc).
+- P-N5-U1 (GO 21:1xZ; pin eee0d8a; docs/new/P-N5-U1-box31.md sha1 eb90788d…): docs/referee/R-N5-U1.md. Theorem U1 SIGNED; CASC SIGNED WITH
+  GAPS C-1 (closed: only TB's CHOICE RULE is needed, not TB-even's whole-play hypothesis), C-2/C-3 wording; TB SIGNED WITH GAPS TB-1 (set-valued
+  ⊕ sandwich, closed), TB-2 wording; Lemma R SIGNED WITH GAPS R-1 (literal (c,P)-only statement FALSE at x = u: 3-vertex instance, 4,074 random
+  cases; fully optimal form holds and is the only one used), R-2 (VJ00 §6 (15), (22), Prop. 6.1 states only ONE shortest path survives:
+  Lemma R is a strengthening); WC SIGNED; §6 READING correct. Tools: scratch/u1_probe.py (own trace, TBc/TB/R1/CASC/C1/U1/WC, arena_test),
+  lemr_probe.py (hooked evaluate), casc_climb.py. DATA notes D-1 (|R| quoted as |R \ {o}|), D-2 (σ(10) switches once on u1t_cex_n32).
+  §C written from 21:53Z (date -u) vs R2-N5-U1 (referee-2 28ddf6f): no verdict differs; C-1 downgraded to wording (R2 reading accepted); MISSED G-R-1 and
+  N-U1-3 (accepted; N-U1-3 closure proved via VJ00 Lemma 5.7 in G_tau, eqfb_check.py 0/322). PARKED.
+- Lesson: a lemma about "optimal edges" with set-valued ⊕ can fail where the optimal play from y passes x; test the formal statement on a
+  3-vertex instance before signing, and check which form the later steps actually use.
+- Trap: `pkill -f <pattern>` / `pgrep -f` + kill from the Bash tool kills the tool's own shell (exit 144); list PIDs with ps and exclude grep.
+
 ## Resume point (successor 4, 20:37Z by date -u): P-N5-Z (pin fba7177, docs/si/P-N5-Z-box5.md sha1 a027638f…)
 - docs/referee/R-N5-Z.md: all SIGNED; LV′ WITH GAP Z-1 (runs broken by '±'; proof wording), Z-2 NOFE = one line from FBL-N (ii), Z-3 (F0)
   citation. Corollary Z: R21 (g) within hypotheses. LOOP's H1 needed (88 loop cases all without H1). Tool docs/referee/scratch/z_probe.py.
@@ -147,6 +162,9 @@ Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD =
   Lesson: multiply out every constant I tick.
 
 ## Sources opened (append)
+- VJ00 BRICS RS-00-48, same pdf (sha256 485a12de432a2a8c88640b0718bd2042d855fa86d6a82092a0d538fd41ba9e65), downloaded and opened
+  2026-10-24 21:18Z by date -u (successor 5): §6 "Efficient implementation" (pdf pp. 24-27): procedure Shortest paths lines 1-10, claims
+  (15)-(19), Proposition 6.1 (clauses 1-4: G(r) contains A shortest path) and its proof with (20)-(22), Theorem 6.2; §5.1 (3)-(10) incl. (6), (7).
 - VJ00 BRICS RS-00-48, same pdf (sha256 485a12de432a2a8c88640b0718bd2042d855fa86d6a82092a0d538fd41ba9e65), re-downloaded and opened
   2026-10-21 23:40Z by date -u (successor 3, Fable 5.1): §4.1 (play values), §4.2 (order, MaxDiff), §4.3-4.5 (multisets, ⊕), §5.1 (3)-(10),
   §5.2 Prop. 5.1, Lemma 5.2, §5.3 Props. 5.3, 5.4, 5.6 (proof read), Lemma 5.5 (proof read in full), §5.4 Lemma 5.7, §5.5 Lemma 5.8 (proof

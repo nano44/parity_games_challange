@@ -108,4 +108,76 @@ READING:
 
 ## 5. Adversarial climb against (CL) (clclimb.py; fitness (#CL violations, #carries); 25 min each from zcl_fb2_n32, x32_waves48,
 fbref_cex_n32)
-Results are entered at the end of the box.
+Three climbs, 25 min each, 20:37-21:02Z. Fitness was (#CL violations, #carries = W-lowerings). Bests pinned in
+experiments/si/xing/instances/, each re-verified with reverify.sh (n5.py, Oink zlk OK, strategies verified).
+
+| best (seed) | n | sha1 | n5 it/fb | T | X | Z | carries (W-lowerings) | CL violations | carry levels |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ccl_fb2_n32 (zcl_fb2_n32) | 32 | 92f0a04b | 33/23 | 28 | 25 | 2 | 23 | 0 | 31, 31, 30, 28 ×5, 26 ×15 |
+| ccl_fbx_n32 (fbref_cex_n32) | 32 | f5867fa6 | 31/24 | 27 | 25 | 2 | 24 | 0 | 31, 31, 28, 26 ×21 |
+| ccl_w48_n48 (x32_waves48) | 48 | a7056dea | 46/33 | 41 | 35 | 2 | 33 | 0 | 46 ×8, 45 ×25 |
+
+- (CL) survived: 0 violations in 3 × ~25,000-56,000 mutation steps (the first fitness component stayed 0).
+- The secondary fitness pushed W-lowerings to 33 per phase at n 48. All of them sit in DRAINS (sign strings `--++------…`, Z = 2):
+  consecutive fallbacks, each evicting a few vertices, with no re-entry in between.
+- This confirms the redefinition of (C) (P-N5-Z fixes file §2). W-lowerings can be numerous (24 at n 32, 33 at n 48; both below n − 1 here,
+  and a drain has ≤ n − 1 transitions because R strictly shrinks in it). The quantity
+  LV′ needs, the reversals, stayed at 2.
+- READING: the climb found no way to raise reversal-carries at the expense of (CL). That is weak evidence (the fitness did not target
+  reversals), not a proof.
+
+## 6. Box 6 (Lead GO 21:1xZ): the §3b gap. A reduction of (CL) to one jump statement
+Data scripts: experiments/si/xing/pending.py, freeze.py, gatelev.py. In-class instance set as in P-N5-Z fixes §1, plus the zcl_* and
+ccl_* climb bests. All runs are asserted equal to n5.run.
+
+### 6.1 DATA: what holds between carries (w constant)
+Notation: L is the level of the most recent carry. G(L) means "every gate edge (Ξ_k-improving Even edge) has level ≤ L".
+
+| statement | checks | violations |
+| --- | --- | --- |
+| I(L): at every state after a carry and before the next one, every honest-improving R→F edge has level ≤ L (pending.py) | 784 states | 0 |
+| A: a carry of level L changes every Ξ(v) only at levels ≤ L (freeze.py) | 198 carries | 0 |
+| FREEZE(L): every transition from a carry up to the LAST carry of the phase changes every Ξ(v) only at levels ≤ L (freeze.py) | 638 transitions | 0 |
+| G(L) at every state after a carry (gatelev.py) | 982 states | 11 states; all 13 offending edges are non-cycle-closing F→R entries |
+
+- After the last carry, FREEZE(L) does fail: 20 transitions change some Ξ above L.
+  - 19 of them land in a Ξ = W (θ = w) state.
+  - 1 lands in a THR state.
+  - None is followed by another carry at the same w.
+
+### 6.2 READING: the argument, and where it breaks
+- **Step 1 (COARSE-SI, READING).** Suppose G(L) holds at state k. Fix Odd to σ̄_k. In the one-player game G_{σ̄_k}, every Even edge's
+  improvement over Ξ_k has level ≤ L. So Ξ_k is an "L-coarse super-solution": telescoping along a play gives
+  COARSE_L(V(σ′, σ̄_k)) ⊴ COARSE_L(Ξ_k) for every Even σ′ whose (σ′, σ̄_k)-plays end in cycles of the (σ_k, σ̄_k)-graph.
+  - Since Ξ_{σ′} ⊴ V(σ′, σ̄_k) (Odd's best reply), and with R15 (a), COARSE_L(Ξ) cannot change at k → k+1 unless σ_{k+1} closes a
+    NEW cycle in G_{σ̄_k}.
+  - COARSE_L(v) := (cycle node, path vertices of rank > L), so "level > L" means "COARSE_L differs".
+  - Not refereed. The simple-path bookkeeping of the telescoping is not written out.
+- **Step 2 (PROVED, L-SI succ. 2).** If COARSE_L(Ξ) is constant at k → k+1, then G(L) at k implies G(L) at k+1.
+  - Take a gate edge (y, z) at k+1, and let u = σ_{k+1}(y). u is σ_k(y) or a gate target at k, so
+    COARSE_L(Ξ_k(u)) ⊵ COARSE_L(Ξ_k(σ_k y)).
+  - If COARSE_L(Ξ_k(z)) were above COARSE_L(Ξ_k(u)), then (y, z) would be a gate edge at k of level > L, against G(L).
+  - Both coarse values are unchanged at k+1, so (y, z) has level ≤ L at k+1.
+- **Step 3 (where it breaks; DATA, 4 of 4 first failures).** On fbref_cex_n32 (k 53), x31_lem_t32 (k 58), x32_waves48 (k 80) and
+  run_x_inr2 (k 49), G(L) holds at k and fails at k+1.
+  - At each, an INR happens: the argmin exit σ̄_k(o) enters R. So under σ̄_k the play from o closes a NEW cycle through o, the case
+    Step 1 excludes.
+  - Odd switches exits (24 → 9, 24 → 11, 3 → 34, 24 → 9), and θ jumps at level 30, 31, 47, 30, above L = 25, 28, 45, 24.
+  - In all four the new state has θ = w (Ξ = W). With w constant, θ = w persists (R21 XW3), and NOFL-E (P-N5-Z §5) then forbids
+    evictions at fallbacks. So no carry follows while w stays constant.
+- **Reduction (READING).** (CL) ⟸ Step 1 (written out) + A + (JUMP-EQ), where:
+  - CONJECTURE (JUMP-EQ): inside a phase with w constant, if an INR at k → k+1 raises θ at a level above the level of the most recent
+    carry, then θ_{k+1} = w.
+  - DATA: 4 of 4 first failures. Of the 20 post-carry above-L transitions, 19 land in θ = w. The one that lands in a THR state needs a
+    look before (JUMP-EQ) is stated as the final form.
+  - Why it might be true (heuristic only): after a carry all o-free exit values are coarse-frozen at level L, and w = o ⊕ Ξ(τ(o)) is
+    one of those exits. A jump above L means every exit below w at the coarse level has been captured by R.
+- What a proof of (C) would then need besides (CL): a bound on the carries at ONE level. In data these are separated by θ-changes
+  strictly below the level (§3), and Step 1 says those are the only changes possible. This is the "lower digits refill" half of the
+  counter. OPEN.
+
+### 6.3 Status
+- PROVED (L-SI succ. 2): Step 2 above; CLU (§2); the θ-monotonicity of pending levels (§3b).
+- READING: Step 1 (COARSE-SI), and the reduction (CL) ⟸ Step 1 + A + (JUMP-EQ).
+- CONJECTURE: (CL), A, FREEZE(L) (scoped), (JUMP-EQ). Data as in 6.1; 0 violations except where noted.
+- OPEN: (C); carries per level. G-N5-TIME stays OPEN.
