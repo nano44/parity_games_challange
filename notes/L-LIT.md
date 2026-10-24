@@ -2,9 +2,9 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-24 13:1xZ: PARKED after T27 docs/lit/T27-untested.md: 4 untested candidates ranked; C1 = Ohlmann's symmetric recursive MPG
-algorithm (2603.07555) on parity-induced weights (prior 0.15), C2 GKK, C3 AESL (thesis Ch. 10), C4 k-priority parity separators.
-Before: T25 (N8a), T26 (N8d-R2). Trunk merged with merge commits. Next: Lead.
+2026-10-24 13:5xZ: PARKED after T28 docs/lit/T28-n5-techniques.md (D18): 9 techniques ranked for N5 (CYC)/(TRUST); rank 1 =
+strictly-increasing path algebras / junk-route flushing (Daggitt-Griffin ICNP 2018 Thm 1, Lemma 13); rank 2 = Post-Ye 1208.5083.
+Before: T25-T27. Trunk merged with merge commits. Next: Lead.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -243,6 +243,17 @@ Before: T25 (N8a), T26 (N8d-R2). Trunk merged with merge commits. Next: Lead.
 | arXiv 2104.05262 v8 (CFGO) sha256 b00ac9e8…; 1810.05106 v2 (Colcombet-Fijalkow) sha256 fec1bc1b… | Thm 7.5-7.6 (MP universal graphs); Thm 1-2 (safety only) | 2026-10-24 | T27 (re-open) |
 | arXiv API listing ti/abs "parity games", 80 newest (2026-10-24) | titles scanned | 2026-10-24 | T27 |
 | NOT opened (T27) | Beffara-Vorobyov LICS 2002 (title only); GKK 1988 original; Ohlmann's GitHub code | 2026-10-24 | T27 |
+| Daggitt-Griffin ICNP 2018 (cl.cam.ac.uk/~tgg22/publications/icnp_2018.pdf), sha256 376beef0cd5b17bc… | Def. 1-3, eq. (1)-(3), §V Q_n Θ(n²), Lemma 13 + Thm 1 p.11 (≤ n² iterations, Agda) | 2026-10-24 | T28 |
+| Griffin-Shepherd-Wilfong ToN 2002 (Princeton copy), sha256 82d4c2a00c511778… | Thm V.3, V.4 p.8; Thm V.9 p.10 | 2026-10-24 | T28 |
+| Sobrinho ToN 2005 (ENS copy), sha256 485afb236a5ddf7e… | abstract; Thm 1, Thm 2 p.5 | 2026-10-24 | T28 |
+| arXiv 2106.01184 v2 (Daggitt-Griffin) sha256 5a96dd3d… | abstract | 2026-10-24 | T28 |
+| arXiv 1208.5083 v2 (Post-Ye) sha256 c51876ebf5c3cdb0… | abstract; Lemma 3.4, 3.6 p.8; Thm 3.7 p.9 | 2026-10-24 | T28 |
+| arXiv 1306.0386 (Scherrer) sha256 391b6481…; 1310.4953 (Akian-Gaubert) sha256 ad0cf80f… | abstract, Thm 1-5 (Thm 5 p.4); abstract, Thm 5 p.9 | 2026-10-24 | T28 |
+| arXiv 1811.05115 v3 (Gajjar-Radhakrishnan) sha256 79208b4f… | abstract; Thm 1 p.2; §1 Carstensen/Gusfield statements (originals NOT opened); Thm 3 | 2026-10-24 | T28 |
+| BSV STACS 2003 (dbai.tuwien.ac.at/staff/vorobyov/stacs2003.pdf) sha256 b4439e9c…; arXiv cs/0606087 (GMRS) sha256 4b66f35d…; Matoušek KAM 2003-613 sha256 08cdfcb9… | Thm 20, 22 p.7, 23; Thm 8 p.7, §5 p.21; Thm 1 p.3 | 2026-10-24 | T28 |
+| arXiv 0912.2462 (AGG) sha256 72159bf0…; 1204.1086 (Pettie) sha256 3762a763… | abstract, Thm 1.4 p.4; Thm 1.2 p.5 | 2026-10-24 | T28 |
+| arXiv 1909.03210 (EPRY) sha256 f03c9ea0…; 2010.02618 (FPS) sha256 732602f8…; 2202.05913 (Chen-Li) sha256 3dc3148e… | Thm 3.2 p.8, Thm 4.1 p.13, §5; Thm 15 p.16; Thm 1 p.2 | 2026-10-24 | T28 |
+| NOT opened (T28) | Szabó-Welzl FOCS 2001; Topkis 1978; Milgrom-Shannon 1994; Carstensen 1983; Gusfield 1980; Ye 2011 original | 2026-10-24 | T28 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
