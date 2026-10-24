@@ -10,7 +10,11 @@
   - main report 5a395403: FAIL E-1..E-3;
   - Add. 1 aa909fd0: PASS at 865a33a (REFEREE §C7 a1de721 signs the Corollary);
   - Add. 2: R20 landed verbatim at trunk c33700c.
-- PARKED. Possible next: C30, the L-NEW box 28 §5c packet. Use the same five checks.
+- C30 CLOSED 19:3xZ (date -u):
+  - main report 7bf19993: FAIL E-1..E-4;
+  - Add. 1 679ea117: PASS at f9c75d2, including the R19 POST-LANDING NOTE (RESULTS l.882);
+  - Add. 2: R21 landed verbatim at trunk e72db8d.
+- PARKED. Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 
 ## Conventions (from C27, kept)
@@ -18,7 +22,7 @@
 - Re-fetch referee, referee-2 and lane heads before a verdict; name any head that is off trunk.
 - Re-runs go in a detached worktree of the pin, scripts unmodified (scratchpad wt/); compare against the referees' logs with `diff`.
 - Report E- items (required) and N- items (optional) with fixes. Addenda go at the end of the same file, one per draft SHA.
-- Push: scripts/push.sh > file; echo $? (never piped). In this container Oink is not built, so verify prints Oink smoke NOT RUN.
+- Push: scripts/push.sh > file; echo $? (never piped). Oink built here at 19:0xZ by setup_oink.sh (a fresh container must rebuild it).
 
 ## Sources opened (for C28)
 - docs/new/P-N5-RE-box26.md @52c7261 (sha1 8dba4576…); docs/referee/R-N5-RE.md @a3d1f70; docs/referee-2/R2-N5-RE.md @dd5aaa2;

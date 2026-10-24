@@ -1,0 +1,25 @@
+EQ_runs: 10039
+F2_EQ_THR: 13
+FBLN_ii_checks: 28
+F_intervals: 1084
+NF_checks: 43
+control_nonflat_fb_touching_OTHER: 1
+fb_in_phase: 44
+phases: 14224
+runs: 6000
+subblock_flat_fb: 0
+subblocks: 49
+subblocks_theta_varying: 0
+transitions: 9824
+type_EQ: 11539
+type_OTHER: 3231
+type_THR: 1054
+wu_runs: 466
+wu_runs_theta_varying: 1
+EQ_max_vc: 3
+F1_max: 3
+phase_max_O: 2
+phase_max_X: 3
+phase_max_len: 3
+wu_run_max_len: 1
+RESULT OK violations=0

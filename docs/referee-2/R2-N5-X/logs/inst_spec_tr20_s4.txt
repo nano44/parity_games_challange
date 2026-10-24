@@ -1,0 +1,12 @@
+EQ_runs: 1
+F_intervals: 1
+phases: 1
+runs: 1
+transitions: 17
+type_EQ: 18
+EQ_max_vc: 17
+F1_max: 1
+phase_max_O: 0
+phase_max_X: 16
+phase_max_len: 17
+RESULT OK violations=0

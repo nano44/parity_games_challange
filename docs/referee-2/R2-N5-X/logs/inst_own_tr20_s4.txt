@@ -1,0 +1,16 @@
+EQ_runs: 38
+F_intervals: 17
+phases: 50
+runs: 20
+transitions: 272
+type_EQ: 278
+type_OTHER: 9
+type_THR: 5
+wu_runs: 3
+EQ_max_vc: 17
+F1_max: 1
+phase_max_O: 0
+phase_max_X: 16
+phase_max_len: 17
+wu_run_max_len: 0
+RESULT OK violations=0
