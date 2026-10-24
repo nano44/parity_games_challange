@@ -78,13 +78,39 @@ def analyse(g, st, o):
     trust   max trust events per (tau, joint-lambda)-phase (trustcount.count); tlen its longest phase (states)
     reA/reB re-entries (retcheck logic, every phase): A theta at re-entry > w at x's last leave (theta-driven), B otherwise
     leaves  Even switches R -> F inside phases; entries  switches F -> R; reent  re-entries (= reA + reB)
-    events  raw re-entry events (phase, k, x, from, to, theta_now > w_leave, k_leave), at most 20"""
+    events  raw re-entry events (phase, k, x, from, to, theta_now > w_leave, k_leave), at most 20
+    seg     (SEG-1O, Lead 13:42Z) longest run of consecutive transitions inside one joint lambda-phase without a theta change
+            (compare with n - 1)
+    tg_ok / tg_bad / tg_first  (T28 (b), Lead 13:42Z) trust-route growth: for z in T_k (box25 trust set: Even z in R_k with an
+            honest-improving edge to a vertex outside R_k) and z in R_{k+1}, within one (tau(o), joint-lambda)-phase, is
+            len_{k+1}(z) = len_k(z) + 1 (len = edges on z's (sigma, tau)-path to o)? counts and the first violation (k, z, len_k,
+            len_k+1); a z that leaves R ("flushed") is not counted"""
     E, Ed = Engine(g), Engine(dual(g))
-    lam, th, ww, RR = [], [], [], []
+    lam, th, ww, RR, TT, LL = [], [], [], [], [], []
     for s, t in st:
         X, _ = E.evaluate(s); U, _ = Ed.evaluate(t)
         lam.append((tuple(x[0] for x in X), tuple(y[0] for y in U)))
-        Eg, W = wvals(g, s, t); th.append(E.key(X[o])); ww.append(Eg.key(W[o])); RR.append(Rset(g, s, t, o))
+        Eg, W = wvals(g, s, t); th.append(E.key(X[o])); ww.append(Eg.key(W[o])); R = Rset(g, s, t, o); RR.append(R)
+        TT.append({v for v, w in E.improving(s, X) if v in R and w not in R})
+        nxt = [s[v] if g.owner[v] == 0 else t[v] for v in range(g.n)]; L = {}
+        for v in R:
+            x, c = v, 0
+            while x != o:
+                x = nxt[x]; c += 1
+            L[v] = c
+        LL.append(L)
+    tg_ok = tg_bad = 0; tg_first = None
+    for k in range(len(st) - 1):
+        if lam[k] != lam[k + 1] or st[k][1][o] != st[k + 1][1][o]:
+            continue
+        for z in TT[k]:
+            if z in RR[k + 1]:
+                if LL[k + 1][z] == LL[k][z] + 1:
+                    tg_ok += 1
+                else:
+                    tg_bad += 1
+                    if tg_first is None:
+                        tg_first = (k, z, LL[k][z], LL[k + 1][z])
     runs, a0 = [], 0
     for i in range(1, len(st) + 1):
         if i == len(st) or lam[i] != lam[i - 1]:
@@ -98,6 +124,12 @@ def analyse(g, st, o):
         cnt[ph[k]] = cnt.get(ph[k], 0) + 1
     maxph = max(cnt.values()) if cnt else 0
     thch = max((sum(th[k] != th[k - 1] for k in range(a + 1, b + 1)) for a, b in runs), default=0)
+    seg = 0
+    for a, b in runs:
+        cur = 0
+        for k in range(a + 1, b + 1):
+            cur = 0 if th[k] != th[k - 1] else cur + 1
+            seg = max(seg, cur)
     reA = reB = leaves = entries = 0; events = []
     for pi, (a, b) in enumerate(runs):                  # retcheck logic, applied to every phase
         used, leave = {}, {}
@@ -119,14 +151,15 @@ def analyse(g, st, o):
                 u.add(q)
     trust, tlen = trustcount.count(g, st)
     return dict(maxph=maxph, thch=thch, trust=trust, tlen=tlen, reA=reA, reB=reB, leaves=leaves, entries=entries,
-                reent=reA + reB, events=events)
+                reent=reA + reB, events=events, seg=seg, segx=seg - (g.n - 1), tg_ok=tg_ok, tg_bad=tg_bad, tg_first=tg_first)
 
 
-KEYS = ("max_it", "maxph", "thch", "trust", "reent")
+KEYS = ("max_it", "maxph", "thch", "trust", "reent", "segx")
 
 
 def blank():
-    return dict(games=0, cyc=0, runs=0, reA=0, reB=0, leaves=0, entries=0, hist_ph={}, hist_th={}, max_ph_cyc=0,
+    return dict(games=0, cyc=0, runs=0, reA=0, reB=0, leaves=0, entries=0, tg_ok=0, tg_bad=0, ex_tg=[], hist_ph={}, hist_th={},
+                max_ph_cyc=0,
                 max_th_cyc=0, ex_A=[], ex_re=[], **{"max_" + k: 0 for k in KEYS[1:]}, max_it=0,
                 **{"ex_" + k: [] for k in KEYS})
 
@@ -160,8 +193,10 @@ def task(args):
                     res["ex_" + k].append(rec)
             if cyc:
                 res["max_ph_cyc"] = max(res["max_ph_cyc"], d["maxph"]); res["max_th_cyc"] = max(res["max_th_cyc"], d["thch"])
-            for k in ("reA", "reB", "leaves", "entries"):
+            for k in ("reA", "reB", "leaves", "entries", "tg_ok", "tg_bad"):
                 res[k] += d[k]
+            if d["tg_bad"] and len(res["ex_tg"]) < 5:
+                res["ex_tg"].append(rec)
             if d["reA"] and len(res["ex_A"]) < 50:
                 res["ex_A"].append(rec)
             if d["reent"] and len(res["ex_re"]) < 20:
@@ -184,10 +219,16 @@ def main():
     tasks = [(n, o, par, a) for o in range(n) for par in itertools.product((0, 1), repeat=n)]
     t0 = time.time()
     tot = blank()
+    os.makedirs(a.out, exist_ok=True)
+    tag = f"n{n}" + ("_allstarts" if a.all_starts else "") + (f"_ed{a.even_maxdeg}" if a.even_maxdeg else "") + \
+        (f"_od{a.o_deg}" if a.o_deg else "") + ("_nf" if a.no_forced else "") + ("_cyc" if a.cyclic_only else "")
+    done = 0
     with mp.Pool(a.jobs) as pool:
         for r in pool.imap_unordered(task, tasks):
-            for k in ("games", "cyc", "runs", "reA", "reB", "leaves", "entries"):
+            done += 1
+            for k in ("games", "cyc", "runs", "reA", "reB", "leaves", "entries", "tg_ok", "tg_bad"):
                 tot[k] += r[k]
+            tot["ex_tg"] = (tot["ex_tg"] + r["ex_tg"])[:5]
             for k in ("max_ph_cyc", "max_th_cyc"):
                 tot[k] = max(tot[k], r[k])
             for h in ("hist_ph", "hist_th"):
@@ -200,19 +241,19 @@ def main():
                 elif r[mk] == tot[mk]:
                     tot["ex_" + k] = (tot["ex_" + k] + r["ex_" + k])[:5]
             tot["ex_A"] = (tot["ex_A"] + r["ex_A"])[:200]; tot["ex_re"] = (tot["ex_re"] + r["ex_re"])[:50]
+            tot["tasks_done"] = f"{done}/{len(tasks)}"
+            with open(os.path.join(a.out, tag + ".partial.json"), "w") as f:
+                json.dump(tot, f, default=str)
     tot["secs"] = round(time.time() - t0, 1)
     tot["options"] = {k: v for k, v in vars(a).items() if k not in ("out", "jobs")}
     tot["hist_ph"] = dict(sorted(tot["hist_ph"].items())); tot["hist_th"] = dict(sorted(tot["hist_th"].items()))
-    os.makedirs(a.out, exist_ok=True)
-    tag = f"n{n}" + ("_allstarts" if a.all_starts else "") + (f"_ed{a.even_maxdeg}" if a.even_maxdeg else "") + \
-        (f"_od{a.o_deg}" if a.o_deg else "") + ("_nf" if a.no_forced else "") + ("_cyc" if a.cyclic_only else "")
     with open(os.path.join(a.out, tag + ".json"), "w") as f:
         json.dump(tot, f, indent=1, default=str)
     print(f"{tag}: games {tot['games']} (o-cyclic {tot['cyc']}), runs {tot['runs']}, max iterations {tot['max_it']}, "
           f"max in-phase {tot['max_maxph']} (o-cyclic {tot['max_ph_cyc']}), max theta-changes/phase {tot['max_thch']} "
           f"(o-cyclic {tot['max_th_cyc']}), max trust/phase {tot['max_trust']}, leaves {tot['leaves']} entries {tot['entries']}, "
           f"re-entries A(theta-driven) {tot['reA']} B(route) {tot['reB']}, phase hist {tot['hist_ph']}, theta hist {tot['hist_th']}, "
-          f"{tot['secs']} s")
+          f"trust-route growth ok {tot['tg_ok']} bad {tot['tg_bad']}, max SEG excess over n-1 {tot['max_segx']}, {tot['secs']} s")
 
 
 if __name__ == "__main__":
