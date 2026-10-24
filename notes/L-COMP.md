@@ -15,7 +15,8 @@ box 3 and box 4 (2026-10-24). Lead asked to park at ~587k context after box 4.
   4-iteration phase, o on the play cycle, start pair). README "Box 4" section.
 
 ### IN FLIGHT
-- Nothing after park (all background runs killed at park; partial JSONs copied to experiments/n5-exhaustive/results/).
+- Nothing (all background runs stopped 17:35Z; partial JSONs copied to experiments/n5-exhaustive/results/; box 4 written up in
+  experiments/n5-exhaustive/README.md "Box 4").
 
 ### NEEDS / next for a successor (box 5, Lead 17:1xZ)
 - Add X (crossing transitions: R changes) and O (transitions touching an OTHER state: (h) fails and Xi != W) per phase to
