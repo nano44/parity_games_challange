@@ -982,3 +982,4 @@
 - 16:47Z (date -u) C29 FAIL merged (checker 5a39540): E-1 (Corollary not signed by REFEREE: §C7 requested), E-2 (XA u* ≠ none), E-3 (44 stretches); E-2, E-3, N-1..N-3 fixed in R20 draft; signatures line updated after §C7.
 - 16:56Z merged claude/referee a1de721 (§C7, Corollary SIGNED; scope docs/referee/, notes/REFEREE.md); R20 draft rev. for C29 E-1; CHECKER C29 Addendum 1 next.
 - 17:02Z pushed 865a33a (verify PASS); CHECKER asked for C29 Addendum 1 (draft sha1 be12e26d).
+- 17:03Z hourly sweep: no overage (Lead 92k); L-NEW 10, L-RED 14, CHECKER 4 running; L-SI (563k) and L-COMP (587k) idle on background climbs, end reports due ~19:00Z/~18:40Z, successors at box end (near 600k); CI: all completed runs green, 2 in progress; M2 done, no owner line due. No messages.
