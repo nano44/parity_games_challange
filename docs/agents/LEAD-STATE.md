@@ -947,3 +947,4 @@
 - 12:58Z (date -u) D17 recorded; L39: 5 working lanes (+ L-COMP box 3, + new L-SI successor), gate roles above 5 justified.
 - 13:05Z (date -u) L-COMP succ. 2 box 3 GO (exhaustive N5); L-SI successor created session_018gVYmVeemURjv647XRxNJ1 (Opus, handover check first). Working: L-RED, L-NEW, L-LIT, L-COMP, L-SI (5 of 5).
 - 13:11Z (date -u) D18 recorded; L40: all lanes on N5; L-RED redirected from DTL box 30 to N5 adversary; L-SI to OR/MDP lens; L-LIT T28. T27 merged-later (C1 queued). L-NEW box 26 checkpoint 1: named lead FALSE (THETA re-entries common; L-RED's retcheck mislabels); THETA ≤ n per θ-change (lane PROVED).
+- 13:18Z (date -u) Hourly sweep (13:02Z trigger) folded in: overage false; 5 lanes working (L-NEW, L-RED, L-COMP, L-LIT, L-SI new). NOW roster updated for D18/L40.
