@@ -8,7 +8,7 @@ Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Handover che
 - a0: docs/new/P-N5-NH-fixes-box30.md (b4fc3a4f): both referees' repairs of P-N5-NH (P3-1 = G-NH-1 two forms, sharper count,
   N-NH-1/2/3, NH-1/2) + one L-NEW READING line (c_θ = c_w = o under ¬H1 ∧ ¬H2 gives only EQ states).
 - Box 31: docs/new/N5-U1T-box31.md.
-  - FALSE: U1-T (u1t_cex_n32, sha1 6162a26f…; vertex 23 makes 5 Ξ-changes at one W-length; reported to the Lead 20:19Z).
+  - FALSE: U1-T (u1t_cex2_n32, sha1 6162a26f…; vertex 23 makes 5 Ξ-changes at one W-length; reported to the Lead 20:19Z).
   - PROVED (L-NEW): Lemma R (VJ restriction keeps optimal edges), Lemma TB (tie-break potential), Lemma CASC (W-flat runs in
     route form: level-ℓ vertex switches only at steps ≤ ℓ − 2), Theorem U1 (O((f+1)|R|³) per U1 piece, f = fallbacks), Lemma WC
     (W-CYC: WC(I) ≤ (f_I + 1)|R|² under ¬H2), Lemma CASC-C (U2/U3 with the frame cycles frozen).
@@ -206,7 +206,7 @@ Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Handover che
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
 - (succ. 11, box 31) CONJECTURE (U1-T), "after the κ_w-freeze each R-vertex has ≤ 2 Ξ-changes per W-length value": FALSE.
-  - Instance: experiments/new/box31/instances/u1t_cex_n32.pg (n 32, sha1 6162a26f…, n5.py 9 it / 1 fb, Oink zlk OK, strategies
+  - Instance: experiments/new/box31/instances/u1t_cex2_n32.pg (n 32, sha1 6162a26f…, n5.py 9 it / 1 fb, Oink zlk OK, strategies
     verified). U1 piece 0..5 is one W-flat run; vertex 23 (level 9) switches at all 5 steps.
   - Obstruction: the BFS tie-break (even c_w) lets lower-level improvements re-open tied honest-improving edges each step. Bounded
     by CASC (≤ ℓ − 1 per run), so not superpolynomial.

@@ -11,7 +11,7 @@ CONJECTURE, FALSE, OPEN, DATA. Every PROVED here is L-NEW's, unrefereed.
 ## Summary
 | item | label | where |
 | --- | --- | --- |
-| U1-T (≤ 2 Ξ-changes per R-vertex per W-length value, after the κ_w-freeze) | **FALSE** (u1t_cex_n32) | §1 |
+| U1-T (≤ 2 Ξ-changes per R-vertex per W-length value, after the κ_w-freeze) | **FALSE** (u1t_cex2_n32) | §1 |
 | Lemma R: VJ's restricted graph keeps every optimal edge | PROVED | §2 |
 | Lemma TB: S4a's tie-break is a monotone potential (min index if c odd; lexmin root-first BFS sequence if c even) | PROVED | §3 |
 | Lemma CASC: in a W-flat run of a route-form piece, a level-ℓ R-vertex switches only at run steps ≤ ℓ − 2 | PROVED | §4 |
@@ -22,8 +22,13 @@ CONJECTURE, FALSE, OPEN, DATA. Every PROVED here is L-NEW's, unrefereed.
 | Abstract cascade model: run length ≤ L − 1 always; per-vertex switches reach ℓ − 2 | DATA (model) | §8 |
 
 ## 1. FALSE: U1-T
+- First refutation: L-RED, experiments/red/xing/instances/u1t_cex_n32.pg (l-red 959184d9, sha1 63dfd785…; Lead re-run 12 / 1,
+  Oink OK). Mechanism there (L-RED, Lead 20:19Z): mostly propagation (Ξ(10) rises at all 7 transitions through downstream route
+  changes while σ(10) is fixed), plus own-switch revisits (vertex 6: σ 2 → 18 → 19 → 18; vertex 14: 25 → 5 → 28 → 25). My instance
+  below, found independently, is renamed u1t_cex2_n32 (Lead 20:23Z); it refutes the own-switch version too (vertex 23 switches at
+  every step of one W-flat run). TB and CASC on L-RED's instance: §10.
 - Statement refuted (N5-U1-box30.md §2): "after the κ_w-freeze, each R-vertex has ≤ 2 Ξ-changes per value of its W-length".
-- Instance: experiments/new/box31/instances/u1t_cex_n32.pg (n 32, sha1 6162a26f6f87788b345854887bf0ed35b502e637). Found by
+- Instance: experiments/new/box31/instances/u1t_cex2_n32.pg (n 32, sha1 6162a26f6f87788b345854887bf0ed35b502e637). Found by
   experiments/new/box31/cascclimb.py (mode flat, seed 3, seeded from box29/instances/u1_n32.pg).
 - Checks: n5.py 9 iterations, 1 fallback (not inside the piece); check_sol2.py "zielonka(oink zlk) OK strategies verified";
   box21 trace() == n5.run.
@@ -77,7 +82,7 @@ Proof.
    vertex of v's old play and Lemma R, that play is a surviving shortest path, so the tree path of v (= its σ_{k+1}-play) is lex ≤
    it, and ≠ since σ_{k+1}(v) ≠ σ_k(v). □
 - DATA: tbarena.py 20,000 random arenas (seed 51, half layered): TB-odd 511 cases, TB-even 998, 0 violations. tbcheck.py on N5 runs
-  (4,000 random games seed 311, 4,000 random o-cyclic 𝒞^1O seed 312, 101 named instances, u1t_cex_n32): 0 violations.
+  (4,000 random games seed 311, 4,000 random o-cyclic 𝒞^1O seed 312, 101 named instances, u1t_cex2_n32): 0 violations.
 - Remark (the "lexicographic perturbation" reading of the brief): S4a's choice is the optimum of the arena for the perturbed
   objective (W, then the tie-break key); TB says the perturbation is never lost while W stands still.
 
@@ -106,7 +111,7 @@ Proof.
 4. So S_ℓ ≤ ℓ − 1, which is the statement. □
 - The proof uses only: route form (Ξ and W on R are route-additive with constant terminal values θ, w), W flat on R, TB, the
   arena rule. It holds in U1, in P3′ pieces and with c_θ = c_w alike.
-- DATA (casccheck.py): u1t_cex_n32 35 switches, wf0_cex_n16, u1_n32, 101 named instances: 0 violations. Climb cascclimb.py
+- DATA (casccheck.py): u1t_cex2_n32 35 switches, wf0_cex_n16, u1_n32, 101 named instances: 0 violations. Climb cascclimb.py
   (mode flat, every candidate checked, ~10⁵ candidates): 0 violations.
 
 ## 5. Theorem U1 (PROVED [f], L-NEW): U1 pieces are polynomial
@@ -185,7 +190,7 @@ by scripts/setup_oink.sh in this container) on 2026-10-24, finished before 20:27
 | --- | --- | --- | --- |
 | box29/instances/wf0_cex_n16.pg | 1de2ff5bcfb4 | 40 / 8 | zielonka(oink zlk) OK strategies verified |
 | box29/instances/u1_n32.pg | f9577ca9ce16 | 16 / 1 | same |
-| box31/instances/u1t_cex_n32.pg (§1) | 6162a26f6f87 | 9 / 1 | same |
+| box31/instances/u1t_cex2_n32.pg (§1) | 6162a26f6f87 | 9 / 1 | same |
 | box31/instances/u1flat_best_n32.pg (flat climb final) | 4a3c81223a32 | 10 / 2 | same |
 | box31/instances/p3long_n14.pg (thw climb final) | 887cd20ac358 | 10 / 0 | same |
 | box31/instances/nr_u23_n32.pg (nrclimb final) | d96f5603c625 | 14 / 1 | same |
@@ -200,3 +205,19 @@ Further data (DATA):
   vertex in a run, longest W-flat run 7; CASC-C: 0 violations; TB: 34 cases, 0 violations.
 - Named instances (box2x/instances, box29/out, n5-exhaustive, red/xing, box31): 155 route-form pieces (43 U1), 124 W-flat runs,
   CASC 0 violations; 72 intervals under ¬H1 ∧ ¬H2, max WC(I) = 1; 17 stretches outside route form, 0 CASC-C violations.
+
+## 10. TB and CASC on L-RED's instance (Lead request 20:23Z)
+experiments/red/xing/instances/u1t_cex_n32.pg (sha1 63dfd7850222…), canonical start. tbcheck.py: 17 TB-even cases, 0 violations.
+casccheck.py: one U1 piece 0..7 (c_θ = 27, c_w = 8, |R| = 28), W-flat runs = transitions 1..2 and 3..7 (transitions 0 and 2 change W
+on R, kind (L)), 13 switches, 0 CASC violations (vertex 14, level 9: run steps 0, 2, 3 ≤ 7; vertex 6, level 7: steps 0 and 1).
+Why the revisit 18 → 19 → 18 at vertex 6 does not contradict TB. TB's potential is not σ(v) but v's whole route key pk(v), the
+root-first index sequence from c_w = 8. Along the run (states 0, 2, 3, 5; W(6) = (8, length 9) throughout):
+- state 0, σ(6) = 2:  (26, 27, 13, 23, 24, 30, 21, 2, 6)
+- state 2, σ(6) = 18: (26, 27, 13, 23, 24, 30, 4, 18, 6)     21 → 4 at position 7
+- state 3, σ(6) = 19: (26, 27, 13, 23, 7, 0, 16, 19, 6)      24 → 7 at position 5
+- state 5, σ(6) = 18: (26, 27, 13, 23, 7, 0, 1, 18, 6)       16 → 1 at position 7
+Strictly lex-decreasing at every switch. Between states 2 and 5 the route of 18 itself moved down (prefix (…, 24, 30, 4) to
+(…, 7, 0, 1)), so "18" at state 5 is a lex-smaller route than "18" at state 2; the comparison 18 vs 19 changed because Ξ and keys
+below changed, exactly the case TB allows. Vertex 14 (W-length 11 throughout states 1-7): pk goes (…, 21, 2, 6, 25, 14) →
+(…, 16, 19, 3, 5, 14) → (…, 1, 18, 6, 28, 14) → (…, 1, 18, 6, 25, 14), again strictly decreasing at each switch (the last step at the
+same prefix, 28 → 25).
