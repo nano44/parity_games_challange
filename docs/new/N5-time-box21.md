@@ -360,7 +360,8 @@ Where the R17 induction stops inside a stretch. Two different one-player inducti
     canonical start).
   - A segment bound poly(n) is OPEN (SEG-LEN*).
   - (BR*) ∧ (SEG-LEN*) ⇒ (FO*).
-- (WF) Fallback steps of F_τ are W-flat (DATA 52/52).
+- (WF) Fallback steps of F_τ are W-flat (DATA 52/52). FALSE: box 22 (docs/new/N5-1O-box22.md §3, i1h_fts_best16, n 11). Fallbacks strictly
+  lower W, and a vertex returns inside one λ-phase.
 
 ## 6. Data and files
 experiments/new/box21/ (read-only use of n5.py and si.py):
