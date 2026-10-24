@@ -147,3 +147,77 @@ Sources:
 | N-XA-1 | CR case B-fallback is vacuous | remark |
 | N-XA-2 | XA count: ≤ n − 1 per vertex | remark |
 | N-XA-3 | Corollary: say that value-preserving transitions come in runs ≤ 4n(n − 1) (R15 (d)) | wording |
+
+## C. Comparison with REFEREE's R-N5-XA (docs/referee/R-N5-XA.md, referee f39972d, trunk e99a586; read after my push 9d3f1fb6; written 15:50Z by date -u)
+### C.1 Agreement per item
+| item | REFEREE | REFEREE-2 (§1-§6) | agreement |
+| --- | --- | --- | --- |
+| §1 setting, Lemma C | checked / SIGNED | SIGN | full |
+| FBL | SIGNED WITH GAPS (XA-1; "the statement survives") | SIGN WITH GAPS (G-XA-1; statement unproved for u* = none) | same gap. ONE DISAGREEMENT on whether the statement survives for u* = none (C.3) |
+| FBF | SIGNED WITH GAPS (XA-2, closed by the best-key repair) | SIGN WITH GAPS (G-XA-2, closed by the (h) patch) | full; its repair is better (C.4) |
+| Lemma P^c / CR | SIGNED WITH GAPS (XA-3, XA-4 wording) | SIGN (N-XA-1) | full on the mathematics. I accept XA-3 and XA-4 (missed by me); its B-fallback text is consistent with my N-XA-1 |
+| XA and its count | SIGNED, no data | SIGN, no end-to-end data | full (both: ≤ n − 1 per vertex; 0 re-entries observed) |
+| Corollary (READING) | not signed; XA-5 | "sound as a READING" | I WITHDRAW "sound": XA-5 is right, and my N-XA-3 does not resolve it. A closure is proposed in C.5 |
+### C.2 Gap map
+| REFEREE | REFEREE-2 | note |
+| --- | --- | --- |
+| XA-1 (FBL F → R: c's best gate edge may go to F) | G-XA-1 (a) | same. For u* ≠ none both give the same D = A_z ∪ P(w) = ∅ argument |
+| — | G-XA-1 (b) (z's route can leave R in the same fallback) | mine only; the source of the disagreement in C.3 |
+| XA-2 (FBF step 1) | G-XA-2 | same gap, different repairs (C.4) |
+| XA-3 (P^c B1 omits "P(π) = ∅, c′ even, shorter"; inherited from R17) | — | ACCEPTED. I missed it. The same chain as (β) closes it; wording |
+| XA-4 (P^c Case A for Odd vertices) | — | ACCEPTED; wording |
+| — | N-XA-1 (B-fallback vacuous) | mine only. REFEREE's §5 treats B-fallback as an R → F edge and concludes correctly. By its own §3 (every W-improving gate edge at a fallback is flat), no non-flat W-improving R → F gate edge exists either, so the case is empty. Both texts are correct; there is no conflict |
+| — | N-XA-2 (≤ n − 1 per vertex) | REFEREE's §6 states the same |
+| XA-5 (flat fallbacks separate PIECE pieces; the count is circular) | N-XA-3 | see C.5 |
+### C.3 Disagreement: does FBL's STATEMENT survive for u* = none?
+- REFEREE: "a switched F → R edge must start at c and would break (h) at k+1, as the packet says."
+- Mine (G-XA-1 (b)): S4c switches every vertex that has a gate edge in the same step, and the vertices of π_z ⊆ R_k have gate edges only to
+  F (leaves). So a vertex p of π_z can leave in the same fallback. Then c → z → … → p → q ∈ F → … does not return to o at k+1, and (h) at
+  k+1 is not contradicted. The switched edge (c, z) is then neither a leave nor a flat F → F edge, against FBL's classification.
+- I see no argument excluding this when u* = none. Neither referee has an instance (12 resp. 44 u* = none stretches, no fallback inside).
+  So I keep "unproved for u* = none".
+- The disagreement has no effect downstream:
+  - FBF holds for every u* (C.4);
+  - CR's B-fallback is vacuous;
+  - XA and the Corollary assume u* ≠ none, where FBL is proved in the strong gate form.
+- Proposed wording for L-NEW: restrict FBL to u* ≠ none, or add the third type (c, z), z ∈ R_k \ R_{k+1}.
+### C.4 REFEREE's FBF repair
+- The repair: after S4c, Ξ_L(σ_{L+1}(y)) ⊵ Ξ_L(z) for every successor z of y, by the best-key choice; then induction from L+1. I checked it.
+  - y without a gate edge: σ_{L+1}(y) = σ_L(y), and no successor is better.
+  - y with a gate edge: z* has the maximal key among y's gate edges, and every non-gate z has Ξ_L(z) ⊴ Ξ_L(σ_L(y)) ◁ Ξ_L(z*).
+  - Then Ξ_t(σ_t(y)) ⊵ Ξ_{L+1}(σ_{L+1}(y)) ⊵ Ξ_L(σ_{L+1}(y)) ⊵ Ξ_L(z) = Ξ_t(z) for z ∈ R_t. So for t ≥ L+1 there is no gate edge into R_t
+    for ANY y, c included. ✓
+- This is stronger than my patch, which only kept c ∉ R_{t+1} by (h). I adopt it for the induction.
+- One addition. Its base (the transition L → L+1) cites "FBL's statement, which holds". For u* = none that statement is what C.3 leaves
+  open, so the base should use my (h) patch instead:
+  - if c switched into R at L and c ∈ R_{L+1}, o's W-play at L+1 would reach c (w's cycle node) and return to o, against (h) at L+1;
+  - so c ∉ R_{L+1}, and the "largest switched index" step never needs the excluded edge.
+  With this base, FBF holds for every u*. CLOSED.
+### C.5 XA-5 and my N-XA-3
+- N-XA-3 does NOT resolve XA-5. It bounds runs of value-preserving transitions by 4n(n − 1), but the PIECE count of value-changing
+  transitions uses ALL fallbacks as separators. So #flat fallbacks ≤ 4n(n − 1)(#value-changing + 1) and #value-changing ≤
+  (n − 1)(#crossings + #fallbacks + 1) feed each other: circular, as REFEREE says. My §6 sentence "In total: O(n³) …" is withdrawn as written.
+- Proposed closure, along REFEREE's suggested route. I wrote it here; neither referee has checked it yet. Inside S with u* ≠ none, let k → k+1
+  be a fallback with no leave.
+  - By FBL, every switched edge is a flat F → F edge, and the regions of distinct switched x are disjoint. So W_{k+1} = W_k and Ξ_{k+1} = Ξ_k
+    (on F, Ξ = W; on R, nothing changed).
+  - σ_k is a pointwise optimum of the S4a arena (S4a returned it), and σ_{k+1} has the same values and switches only along gate edges. So
+    σ_{k+1} is ALSO a pointwise optimum of that arena, and of each piece arena:
+    - on 𝓕, the switched edges are 𝓕-improving (Lemma G (a));
+    - on 𝓡, nothing changed.
+  - R17's count (Lemma P, Theorem PH, and the 𝓡* form of P-1) allows ANY pointwise arena optimum at each step (R17 (d)). So the transition is
+    a legitimate (value-flat) step of both piece runs.
+  - So PIECE's step 4 holds across leave-free fallbacks. A piece may be taken as a maximal run without crossings and without NON-FLAT
+    fallbacks, still with ≤ n − 2 value-changing transitions.
+  - Then #value-changing ≤ (n − 1)(#crossings + #non-flat fallbacks + 1) = O(n³), with no circularity. Value-preserving transitions come in
+    runs ≤ 4n(n − 1) (R15 (d)), so all transitions of S number O(n⁵). This last part is my N-XA-3.
+  Status: XA-5 stays OPEN until L-NEW writes this (or a referee signs it). It is a READING item in any case.
+### C.6 Final verdicts (Opus 5.5, D15)
+| item | final verdict | open for L-NEW |
+| --- | --- | --- |
+| §1, Lemma C | SIGN | — |
+| FBL | SIGN WITH GAPS: proved (strong gate form) for u* ≠ none; unproved for u* = none (C.3, disagreement with REFEREE on that sentence) | restrict to u* ≠ none, or add the third edge type |
+| FBF | SIGN (G-XA-2 = XA-2 closed by REFEREE's best-key repair with my (h) base, every u*) | rewrite step 1 |
+| Lemma P^c / CR | SIGN (XA-3, XA-4 accepted as wording, closed; N-XA-1) | the two wording lines |
+| Theorem XA, count | SIGN | — |
+| Corollary | READING, not signed; XA-5 open (C.5 proposes the closure) | write C.5's "pieces pass through leave-free fallbacks", or bound flat fallbacks otherwise |
