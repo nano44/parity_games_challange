@@ -206,7 +206,7 @@ signatures (D18/L40): TB, CASC, R, U1, WC would be PROVED (L-NEW; REFEREE, and R
 G-N5-TIME OPEN.
 
 ## §C. Comparison with REFEREE-2 (R2-N5-U1, claude/referee-2 28ddf6f)
-Written 2026-10-24 21:56Z onward by date -u, after my report (257fa4c6) was pushed and the Lead said R2-N5-U1 exists (21:5xZ). R2 did not
+Written 2026-10-24 21:53Z onward by date -u, after my report (257fa4c6) was pushed and the Lead said R2-N5-U1 exists (21:5xZ). R2 did not
 read my report. No verdict differs: both sign U1, CASC, WC; both sign TB and Lemma R with closed gaps; both read §6 as a correct READING.
 ### C.1 Disagreements (Lead item 1)
 - C-1 vs R2's outright CASC SIGN: not a disagreement in substance. My C-1 is about the packet's sentence "TB applies with c = c_w" in
