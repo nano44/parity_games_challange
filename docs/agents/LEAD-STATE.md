@@ -992,3 +992,4 @@
 - 17:42Z L-SI succ. 2 handover check 5/5 (f0bbb5e, merged); GO box 4 = (X) proof side; LANE-RESTART row; NOW.
 - 17:47Z merged l-comp 298d2dc (box 4; scope OK); Lead re-run: b4_cyc6_1 canonical phase 4 it, θ 3 / w 3; nh_n8 (start) 4 non-(h) transitions, θ/w 0; both Oink zlk OK verified. L-COMP parked (~590k); successor 3 session_01BmytANWGKiHZhXK9QC2rB2 created (handover, then box 5 = X/O tables). NOW roster.
 - 17:53Z L-COMP succ. 3 handover 5/5 (0ef7701, merged); GO box 5; LANE-RESTART row; NOW.
+- 18:03Z hourly sweep: no overage (Lead 232k); L-NEW 10 (126k, n48 X climb), L-SI 2 (117k), L-COMP 3 (189k) working; exception: L-RED 14 idle since 17:43Z after box 31 (49ee0ec merged) -> GO box 32 = attack (X); NOW. M2 done; no owner line due.
