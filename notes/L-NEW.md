@@ -14,6 +14,10 @@ Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Handover che
     (W-CYC: WC(I) ≤ (f_I + 1)|R|² under ¬H2), Lemma CASC-C (U2/U3 with the frame cycles frozen).
   - OPEN: re-routings of the frame cycles through o at W-ties (U2/U3 residual); fallbacks at OTHER states (NFB-O).
 
+- After the box: P-N5-U1 frozen (d8d6e1d0, sha1 eb90788d) and LANDED as R24 with both signatures; fixes file
+  docs/new/P-N5-U1-fixes-box31.md (REFEREE §1-§5, REFEREE-2 §7, labels §8). Box 31 (b): docs/new/N5-U23-box31.md, with CASC-U2 PROVED
+  (no freezing needed in U2) and CASC-U3 PROVED on event-free sub-runs. OPEN: (E) events, i.e. kind crossings and c_w switches in U3;
+  (K_W) W-changes on R outside route form. Instance u3ev_n16: all 8 U3 W-flat switches are events.
 ### IN FLIGHT (others)
 - Referees' §C on P-N5-NH. L-RED: (X), U1 kind (T) (now FALSE U1-T; CASC is the new target). L-SI: X → Z. L-COMP: X/O tables.
 
