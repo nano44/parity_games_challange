@@ -325,11 +325,15 @@ From REFEREE (docs/referee/R-N5-RE.md) and REFEREE-2 (docs/referee-2/R2-N5-RE.md
   All are below n − 1.
 - FB-RE (fbreclimb.py; seeded from fts_best16 / returns_rt48; 30 min), FINAL: 0 re-entries after fallback leaves, with up to 23 / 84
   throttled fallback leaves per run. Lemma FBF predicts the 0.
-- (θ, w)-stretches per phase (stretchclimb.py), interim:
-  - box25/instances/sc32.pg (n 32, seeded from theta_tp32, sha1 in the commit): 32 θ-changes in one 35-iteration phase, 0 w-changes,
-    0 non-(h) transitions. That is twice L-RED's plateau of 16, and linear in n so far. Oink zlk OK, strategies verified.
-  - n 24 from random: 17.
-  (CYC') is the open count; this is the sharpest instance for L-RED.
+- (θ, w)-stretches per phase (stretchclimb.py, 40 min each), FINAL (15:29Z):
+  - box25/instances/sc32.pg (n 32, seeded from theta_tp32, sha1 c3859ab58964…): ONE 44-iteration phase (1.4n) with 43 θ-changes,
+    0 w-changes, 0 non-(h) transitions, all throttled.
+    - Every (θ, w)-stretch has length 1: θ changes at every transition.
+    - This is the first instance with more θ-changes in one phase than n (L-RED's plateau was 16).
+    - Oink zlk OK, strategies verified.
+  - box25/instances/sc24.pg (n 24, random seed, sha1 53c3eabf5c5e…): 20 θ- and 20 w-changes, all UNTHROTTLED (θ = w moving together).
+    This is Lemma UT's regime: 20 iterations ≤ n − 1.
+  (CYC') is the open count. sc32 is the sharpest instance for L-RED: is θ-changes / n growing, or linear?
 - L-SI's elim24_p52 (experiments/si/orlens/instances/elim24_p52.pg, n 24, one Odd choice vertex 18): its 52-iteration phase (2.2n) is 5
   throttled (θ, w)-stretches with 4 θ-changes and 0 non-(h) transitions. The excess lives inside stretches, which §5 / packet §7 bound
   polynomially (O(n³) each).
