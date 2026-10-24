@@ -1,7 +1,7 @@
 """L-RED box 30 (produced on Opus 5.5): hill climb against L-SI's CONJECTURE (ELIM-n) (docs/si/N5-OR-lens.md): find a joint
 lambda-phase of a canonical N5 run with a run of NON-ELIMINATING transitions longer than n. Measure: L-SI's
-experiments/si/orlens/elim.py elim_g UNMODIFIED (noelimrun = longest run of transitions in which every Even edge sigma abandons is
-used again later in the phase). Games: any (at most K Odd vertices with a choice; K = n allows all), mutations as phaseclimb.py.
+experiments/si/orlens/elim.py elim_g UNMODIFIED (noelimrun_both = longest run of transitions in which every sigma-edge and every Odd
+best-reply edge abandoned is used again later in the phase; L-SI 316ed69 corrected definition). Games: any (at most K Odd vertices with a choice; K = n allows all), mutations as phaseclimb.py.
 Fitness: (max noelimrun over phases, its phase length, -edges). Prints REFUTED when noelimrun > n and stops.
 Usage: elimclimb.py n K SECONDS SEED OUT [--from G.pg]"""
 import os, random, sys, time
@@ -27,8 +27,9 @@ def score(G):
         _, it, rows = EL.elim_g(g, None, 'n5', cap=20000)
     except Exception:
         return (-1, 0, 0)
-    r = max(rows, key=lambda q: (q["noelimrun"], q["trans"]))
-    return (r["noelimrun"], r["trans"], -sum(len(x) for x in g.succ))
+    key = "noelimrun_both"            # L-SI 316ed69 definition: sigma- OR Odd-best-reply-edge elimination (Lead 14:10Z)
+    r = max(rows, key=lambda q: (q[key], q["trans"]))
+    return (r[key], r["trans"], -sum(len(x) for x in g.succ))
 
 
 def rand_game():
