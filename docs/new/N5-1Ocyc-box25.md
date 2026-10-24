@@ -130,12 +130,14 @@ Where it happens (box25/wdrop_h.py, fbh.py, fbhclimb.py).
   - n 8-20, random starts, seed 93: 636 of 1,032 satisfy (h); 1 is at a throttled state; none lowers W.
   - That one: box25/fbh_thr.pg + .start (n 9, o = 1). State 1: θ ◁ w, Iσ = {(7, 4)}, an edge leaving R (type d2). Its W is a TIE:
     W(4) = W(o) = (3, ∅, 1). So the fallback is W-flat. Oink zlk OK, strategies verified.
-- PROVED (given P-N5-1OA's flat-case analysis, R17 (F1)): under (h) at an unthrottled state (θ = w), a fallback is W-flat.
-  - By Lemma G (a)-(b) with θ = w, Ξ = W everywhere. By Lemma G (d), the gate is exactly G_τ's improving set.
+- PROVED (uses Lemma G (a)-(b), R17 (F1) and P-N5-1OA's flat-case analysis; NOT (P)): under (h) at an unthrottled state (θ = w),
+  a fallback is W-flat.
+  - By Lemma G (a)-(b) with θ = w, Ξ = W everywhere. So the gate (Ξ-improving edges) is exactly G_τ's improving set.
   - S4a's arena is the arena of the one-player game G_τ over {σ(x)} ∪ I(x). It returned σ.
   - So, by the case analysis of P-N5-1OA Step 2 (b) (B1/B2, run in G_τ with valuation W; it uses only (F1) and the order), every
     improving edge is flat: x = λ(x), and z lies in x's region.
-  - Switching flat edges changes no valuation (R17 Theorem PH, last paragraph). □
+  - The fallback switches at most one edge per vertex, each of them flat. Switching flat edges changes no valuation (R17 Theorem
+    PH, last paragraph; P-N5-1OA Step 2, "Flat switches"). □
 - FALSE (FB-H), "under (h), every fallback is W-flat". It was already refuted by box 22's i1h_fts_best16 (n 11, canonical; 2 drops
   at (h)-states). A smaller instance is box25/fbh_drop9.pg + .start (n 9, sha1 f25c9990…, random start; found in 21 s by
   fbhclimb.py, n 9, seed 1).
@@ -238,7 +240,9 @@ Fix a τ-stretch (τ(o) = b; by Theorem B it is a prefix of the F_b run) and a j
   trust-routed (§5 (3)) is poly(n).
   - (TRUST) plus a per-stretch R17 bound with no trust events, (SEG-1O) of box 21 §3.6, would bound F_b runs, and with Theorem B
     (C_τ ≤ d − 1) N5 on 𝒞^1O. READING; neither half is proved.
-  - DATA (box25/trustcount.py; a trust event = a vertex entering T_k = {z ∈ R_k : some honest-improving edge (z, y), y ∉ R_k}):
+  - DATA (box25/trustcount.py). It counts trust EVENTS = (state, vertex) pairs where a vertex enters
+    T_k = {z ∈ R_k : some honest-improving edge (z, y), y ∉ R_k}. That is an upper bound on the number of transitions with a trust
+    event, and it can exceed the phase length, since several vertices can enter T at once:
     - max per (τ, joint-λ)-phase: fts_best16 4 (phase of 27 states); theta_thf16 2; theta_thc24 0 (its θ-changes need no d2
       trust event); the n 16 wdropclimb best 12 (phase of 13 states, all fallbacks);
     - 15,000 random o-cyclic canonical runs, n 5-16: max 3-6 per n, no growth visible.
