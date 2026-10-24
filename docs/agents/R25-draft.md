@@ -1,10 +1,12 @@
-# Draft RESULTS R25 (Lead, 2026-10-24 23:0xZ by date -u) (rev.: REFEREE §C 2b78c6d; rev. 23:13Z: fixes file pinned) — awaits CHECKER C34; lands in "## Results" after R24, before "## Dead ends"
+# Draft RESULTS R25 (Lead, 2026-10-24 23:0xZ by date -u) (rev.: REFEREE §C 2b78c6d; rev. 23:13Z: fixes file pinned; rev. 23:25Z: fixes part 2 cited) — awaits CHECKER C34; lands in "## Results" after R24, before "## Dead ends"
 
 ### R25 [refereed-only] N5 inside a phase: coarse super-solutions (claim (T), COARSE-SI, TAME), the max gate level never rises at tame transitions (MONO, NOINF), fallbacks are bounded by non-tame transitions (Theorem FB), and on one-Odd-choice games every non-tame transition is an exit jump at o (J1, OFF, CAP) (2026-10-24) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C34.md, checker PENDING)
 - Object (packet P-N5-FB, pinned trunk 348393b, unchanged during review): docs/si/P-N5-FB-box7.md, sha1
   9ece9994a1251f904935048a605495cd325946e7 (L-SI successor 3, Opus 5.5). The referees' repairs are collected by the lane in
-  docs/si/P-N5-FB-fixes-box7.md (l-si 1c8bb9c, on trunk; sha1 8548c3fc56eebc56e82d099d7c378bd481d79a5d, L-SI successor 3; a record,
-  not itself refereed text; its third, minimality-free CAP proof is the lane's and unrefereed).
+  docs/si/P-N5-FB-fixes-box7.md (part 1, REFEREE's items; l-si 1c8bb9c, on trunk; sha1 8548c3fc56eebc56e82d099d7c378bd481d79a5d)
+  and docs/si/P-N5-FB-fixes2-box7.md (part 2, REFEREE-2's items and a concordance of both reports; l-si 8d0b180, on trunk; sha1
+  4d5b3716731285eb629e8d92fca5b01b756a6d1f), both L-SI successor 3; records, not themselves refereed text; the lane's third,
+  minimality-free CAP proof (part 1) is unrefereed.
   Setting: N5 (SPEC docs/new/N5-ssi-global.md) on any game unless marked 𝒞^1O; a PHASE is a joint λ-phase with τ constant, and "a
   transition of the phase" has both ends in the phase (FB-2); lev(a, b) := the level at which two valuations first differ; COARSE_L
   keeps a valuation's cycle node and its path-set part above level L; M_k := the max gate-edge level at k; a transition is TAME if
