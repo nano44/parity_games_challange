@@ -1,0 +1,29 @@
+Ga_checks: 30634
+Gb_checks: 16714
+Gc_checks: 508074
+PIECE_gateF: 7684
+PIECE_gateR: 922
+PIECE_opt_checks: 422
+PIECE_stretches: 84
+RE_reentries: 255
+RE_theta_changed: 255
+RE_theta_changed_route_not_better: 134
+RM_checks: 14267
+Wo_checks: 895
+fallbacks: 69
+h_states: 943
+leave_class ----: 609
+leaves_checked: 609
+leaves_control: 220
+leaves_control_no_gain: 14
+leaves_control_no_gain h=False inphase=False: 14
+runs: 30
+states: 1054
+switched_in_R_checks: 521
+transitions: 1024
+PIECE_max_(vc-bound+100): 60
+PIECE_max_len: 6
+PIECE_max_vc: 6
+example theta_re: returns_rt48.pg#0 RE x=1 L=32 E+1=44
+example control_no_gain: returns_rt48.pg#20 L=1 x=3 h=False inphase=False
+RESULT OK violations=0

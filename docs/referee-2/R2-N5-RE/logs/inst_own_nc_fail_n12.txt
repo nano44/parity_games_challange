@@ -1,0 +1,26 @@
+Ga_checks: 490
+Gb_checks: 290
+Gc_checks: 1310
+NC_FAILS(W): 25
+NC_FAILS(honest): 25
+PIECE_gateF: 16
+PIECE_gateR: 4
+PIECE_opt_checks: 8
+PIECE_stretches: 4
+RM_checks: 140
+Wo_checks: 35
+fallbacks: 1
+h_states: 65
+leave_class --ii: 5
+leave_class iwii: 25
+leaves_checked: 30
+runs: 30
+states: 65
+switched_in_R_checks: 30
+transitions: 35
+PIECE_max_(vc-bound+100): 90
+PIECE_max_len: 1
+PIECE_max_vc: 0
+example NC_fail_honest: nc_fail_n12.pg#0 L=0 x=5 y=5
+example NC_fail_W: nc_fail_n12.pg#0 L=0 x=5 y=5
+RESULT OK violations=0
