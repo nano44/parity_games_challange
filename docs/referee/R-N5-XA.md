@@ -137,3 +137,65 @@ vertex with the top odd priority, aimed at u* = none) 8,000 seed 2713, 8,000 see
 | XA-5 | Corollary: flat fallbacks as separators | READING | open for L-NEW |
 Not covered (the packet says so): states without (h); u* = none in XA. G-N5-TIME stays OPEN. TARGET.md diff: lemmas about the candidate N5 on
 𝒞^1O (polynomial by other means), not statements of TARGET.md §2.
+
+## §C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-XA.md, referee-2 9d3f1fb, trunk e99a586; read after my report was pushed at f39972d3)
+Started 2026-10-24 15:47Z by date -u (end stamp at the bottom of this section). (Opus 5.5, D15).
+### C1. Agreement per item
+| item | REFEREE (§1-§7) | REFEREE-2 | agreement |
+|---|---|---|---|
+| §1 setting | checked | SIGN | yes |
+| Lemma C | SIGNED | SIGN | yes |
+| FBL | SIGNED WITH GAPS XA-1 (statement "survives") | SIGN WITH GAPS G-XA-1 (statement unproved for u* = none) | same gap, and R2 is right where we differ (C2) |
+| FBF | SIGNED WITH GAPS XA-2 (closed by the best-key repair) | SIGN WITH GAPS G-XA-2 (closed by an (h) argument) | yes; my repair alone has an incomplete base for u* = none, R2's (h) argument completes it (C3) |
+| P^c / CR | SIGNED WITH GAPS XA-3, XA-4 (wording) | SIGN (N-XA-1) | yes; N-XA-1 accepted (C4) |
+| Theorem XA | SIGNED, ≤ n − 1 per vertex | SIGN (N-XA-2, the same per-vertex count) | yes |
+| Corollary | READING, gap XA-5 | sound as READING (N-XA-3) | agree it is sound in shape; N-XA-3 does not close XA-5 (C5) |
+### C2. XA-1 vs G-XA-1: R2's part (b) is a step I MISSED
+- (a) (c's best gate edge may lie in F) = my XA-1. Same finding.
+- (b) If c does switch to z ∈ R_k, a vertex of π_z can leave R in the same fallback, so c → z need not lead back to o at k+1 and (h) at k+1 is
+  not contradicted. Then the switched edge (c, z), z ∈ R_k \ R_{k+1}, is neither a leave nor a flat F → F edge. My §3 said "a switched F → R edge
+  must start at c and would break (h) at k+1, as the packet says": that sentence is WRONG for this configuration. I WITHDRAW "the statement of
+  FBL survives" for u* = none. ACCEPTED: FBL's statement is proved for u* ≠ none and unproved for u* = none (no instance known to either referee:
+  R2 44 u* = none stretches with 0 fallbacks, mine 12 with 0).
+- The u* ≠ none repair is the SAME in both reports: an F → R gate edge at a throttled fallback is W-improving, hence flat, so D = A_z ∪ P(w) = ∅;
+  the gate then needs P(θ) empty or with an even top; an even top contradicts θ ◁ w, and P(θ) = ∅ = P(w) is u* = none. So for u* ≠ none there is
+  no F → R gate edge at all (the stronger gate form), and FBL holds.
+### C3. XA-2 vs G-XA-2: R2's u* = none closure is sound, and it is needed by my repair
+- R2's argument: c is w's cycle node and w is constant, so o's W-play at every state t of S reaches c; if c ∈ R_t, c's path leads back to o and o's
+  W-play returns to o, against (h) at t. So c ∉ R_t for every state of S. Checked: SOUND (it uses only (h), the constancy of w and of λ_W, §1).
+- With it, FBF holds for every u*: the only possible gate edges into R start at c (C2), and c never lies on a path in R_{t+1}, so the "largest
+  switched p_i" step never meets the excluded edge (p_i ≠ c); for y ≠ c the packet's induction works as written.
+- My XA-2 repair (S4c best-key: Ξ_L(σ_{L+1}(y)) ⊵ Ξ_L(z) for all successors z) handles the induction from L+1 on, but I took its BASE (the
+  fallback L → L+1 itself) from FBL's statement, which C2 shows is unproved for u* = none. R2's (h) argument supplies that base (c ∉ R_{L+1}, so
+  any path of R_{L+1} has no switched vertex pointing into R_L). So G-XA-2 = XA-2 is CLOSED for every u* by R2's argument; my best-key form is an
+  alternative for the inductive step only.
+### C4. N-XA-1 (CR's B-fallback case is vacuous): ACCEPTED
+At a fallback σ_k is the arena optimum in G_τ, so every W-improving gate edge is flat (x = λ(x)), and a flat edge is coarse-equal. A coarse-strict
+gate edge is W-improving (Cstrict with Lemma C), so it cannot exist at a fallback. In particular an R → F gate edge at a fallback is never
+W-improving (x ∈ R is not its own cycle node). My §5 B-fallback chain is correct but covers an empty case; with N-XA-1, CR does not depend on FBL
+at all, so G-XA-1 does not touch CR. Both data sets agree (R2: 0 coarse-strict gate edges at 576 throttled fallbacks).
+### C5. N-XA-3 vs XA-5: N-XA-3 does NOT resolve XA-5; a short argument does (the referee's, for R2 to check)
+- N-XA-3 bounds RUNS of value-preserving transitions by 4n(n − 1) (R15 (d)). That turns a bound on value-changing transitions into a bound on all
+  transitions, which is right and should be stated. But XA-5 is about the value-changing count itself: PIECE (P-N5-RE §5) assumes "no S4c fallback"
+  inside a piece, so flat fallbacks are separators in (n − 1)·(#crossings + #fallbacks + 1). The number of flat fallbacks is bounded only by
+  4n(n − 1)·(#value-changing + 1), and inserting it is circular. R2's §6 text says "PIECE then bounds the value-changing transitions between
+  events" without saying whether flat fallbacks are events; read either way, the circularity is not addressed.
+- Closure (referee's sketch). PIECE's count runs R17's Lemma P on 𝓡* and 𝓕, whose invariant ("Ω_k(x) ⪰ value(r) for every simple r of ≤ j edges",
+  j = number of ARENA steps so far) is a statement about VALUES. A flat fallback inside a throttled stretch changes no Ξ and no W value (its switched
+  vertices are cycle nodes in F with disjoint regions, and o's plays stop at their first visit of c), and it neither crosses nor touches R. So the
+  invariant holds unchanged after it, and the next arena step's induction step (cases A, B1, B2) uses only the values and σ at that state, (V1) and
+  (F1) for that step's arena optimum, all of which hold with the post-fallback σ. Hence PIECE's pieces may contain flat fallbacks, with the count
+  n − 2 applying to arena steps; flat fallbacks need not be separators, the circularity disappears, and with N-XA-3 every transition of S is
+  polynomially bounded. Status: closes XA-5 in my reading; it is new text, so it needs REFEREE-2's check before the Corollary is promoted.
+### C6. Final verdicts (Opus 5.5, D15)
+| item | final |
+|---|---|
+| §1 setting, Lemma C | SIGNED |
+| Lemma FBL | SIGNED for u* ≠ none, in the stronger gate form (no F → R gate edge), repair identical in both reports; UNPROVED for u* = none (G-XA-1 = XA-1 + R2's (b)); wording for L-NEW: add "u* ≠ none" or the third edge type |
+| Lemma FBF | SIGNED WITH GAPS, all closed: G-XA-2 = XA-2, by R2's (h) argument (c ∉ R_t on S) for every u*; my best-key form an alternative inductive step |
+| Lemma P^c / CR | SIGNED (XA-3, XA-4 wording, closed; N-XA-1: B-fallback vacuous, so CR is independent of FBL) |
+| Theorem XA | SIGNED; count ≤ n − 1 per vertex, ≤ n(n − 1) in S (N-XA-2); NO end-to-end data in either report (R2's order-core check, 6,446 pairs, supports steps 4-5) |
+| Corollary (u* ≠ none) | READING, not signed; XA-5 open until REFEREE-2 checks the C5 closure; N-XA-3 wording to add |
+Joint open list: G-XA-1 for u* = none (FBL statement); XA-5 (pending R2 on C5). Wording for L-NEW: FBL "u* ≠ none"; XA-3, XA-4; N-XA-3.
+G-N5-TIME, (CYC), (XING), (FB-1O) stay OPEN.
+§C ended 15:47Z by date -u.

@@ -7,7 +7,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   u*=none untested); FBF SIGNED WITH GAPS XA-2 (repair: after S4c, Xi_L(sigma_{L+1}(y)) >= Xi_L(z) for all successors z); P^c/CR SIGNED WITH
   GAPS XA-3 (R17 B1 omission inherited), XA-4 (Odd x); XA SIGNED (no data: 0 re-entries anywhere); Corollary READING, XA-5 (flat fallbacks are
   PIECE separators; R15(d) bound circular). Tool docs/referee/scratch/xa_probe.py. Random samples vacuous (throttled stretches ~1 in 1,000 runs).
-  NEXT: §C when the Lead says R2-N5-XA exists (docs/referee-2/ NOT read for XA).
+  §C 15:47Z-15:47Z vs R2-N5-XA (referee-2 9d3f1fb): I MISSED R2's G-XA-1 (b) (c's switch into R can coincide with z's route leaving, so (h)
+  at k+1 holds and FBL's statement is unproved for u*=none); withdrew "statement survives". R2's (h) argument (c never in R_t on S) closes FBF for
+  all u* and supplies my repair's base. N-XA-1 accepted (CR fallback case vacuous). N-XA-3 does not close XA-5; my closure: PIECE's Lemma P
+  invariant is about values, flat fallbacks preserve it (pending R2). PARKED.
+- Lesson: when a proof says "switching x to z makes the play return to o", ask what else switches in the same transition.
 
 ## Resume point (successor 4, written 2026-10-24T14:40Z by date -u, Opus 5.5 under D15; label verdicts "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh, output to a file, print $?.
