@@ -39,8 +39,14 @@ Code: experiments/new/box28/ (nhprof.py, otherstat.py, otherclimb.py, fbre.py, f
   - Random samples have almost no throttled runs, so the evidence for (FB-run) is the named instances and the climbs.
 - PROVED (L-NEW): Lemma FB-W (§5b). After the coarse freeze, a vertex that a fallback sends to an F-option with w's status at u*
   never re-enters R in that run.
-- CONJECTURE (FBRE-F) (§5b; 22 post-freeze evictions on returns_rt48 / ph64, 0 re-entries): no post-freeze fallback evictee re-enters. With it, (CYC') reduces to (W) + (U0).
-- OPEN: (NH'), (W), (FB-run) = FBRE, (U0). G-N5-TIME stays OPEN.
+- CONJECTURE (FBRE-F) (§5b; data nearly vacuous: 22 post-freeze evictions on returns_rt48 / ph64, 0 re-entries, but no later θ-change with room to re-enter): no post-freeze fallback evictee re-enters. With it, (CYC') reduces to (W) + (U0).
+- READING (assembly; §5c, the strongest form): inside a joint λ-phase, N5 makes O(n⁴ (1 + X + O)) transitions, where X = crossing
+  transitions (R changes) and O = OTHER-touching transitions. θ-changes, w-changes and u* drop out. So (CYC'), (W), (FB-run) and
+  (U0) are all subsumed by **(X)**.
+  - Its ingredients are XW, EQ, FBL-N, Lemma G, PIECE (F-part read across w-changes), R17 and R15 (d). It does not use C, CR, XA
+    or FBF.
+  - DATA: X ≤ n on every named instance; a climb reached X = 33 > n = 32 within 30 s (§5c, §8).
+- OPEN: (X) and (NH') per joint λ-phase. G-N5-TIME stays OPEN.
 
 ## 1. Lemma XW (PROVED, L-NEW): Ξ_k ⊴ W_k pointwise
 Statement. At every state k of any N5 run, and every vertex v, Ξ_k(v) ⊴ W_k(v). In particular θ_k ⊴ w_k.
@@ -177,15 +183,32 @@ Proof.
 - For t > L: Ξ_t(x) ⊵ Ξ_{L+1}(x), with the same coarse part. By the same argument it has w's status at u*. But if x ∈ R_t, then
   Ξ_t(x) = ρ_t ⊕ θ_t (Lemma G (b)) has θ's status. So x ∉ R_t. □
 - This is box 27 §8c's "one-sided" observation, made exact for fallback leaves.
+- Dependency: the coarse freeze in a (w, u*)-run is Lemma CR extended to θ-varying runs (§5 table, L-NEW's reading, unrefereed).
+  For a θ-constant throttled stretch, FB-W rests on signed CR alone.
+- Same argument, two more post-freeze facts (L-NEW):
+  - (i) no arena step k → k+1 moves an R-vertex x to an F-vertex z with Ξ_{k+1}(z) of θ's status at u*.
+    - Otherwise W_{k+1}(x) = x ⊕ Ξ_{k+1}(z) would have the same (frozen) coarse part as W_k(x) = ρ ⊕ w, with θ's status at u*
+      against w's.
+    - So W_{k+1}(x) ◁ W_k(x), against Lemma W (arena steps never lower W);
+  - (ii) an arena leave to an F-option with w's status is never followed by a re-entry, by the proof above.
+  - DATA: ARE = 0 and arena leaves = 0 in every named run (§6.3).
 - DATA (fbre.py, the named instances and both climb snapshots):
   - 31 FBRE events in all (inr2_n32 6, rise3_n32 1, thetare_n 1, the FIT=v climb snapshot 23). Every one is a vertex evicted with θ's status at u* ("R-status").
   - 0 re-entries of W-status evictees, even before the freeze.
   - Every one of the 31 had its eviction BEFORE the freeze (eviction index < n − 1 in the run).
 - CONJECTURE (FBRE-F): in a (w, u*)-run, no vertex evicted by a fallback after the coarse freeze re-enters R in that run.
-  - DATA: L-RED's returns_rt48 (run of 66 transitions > n − 1 = 47) and returns_ph64 (run of 91 > 63) have 11 post-freeze fallback
-    evictions each, and none of the 22 evicted vertices re-enters. Their 11 resp. 13 FBRE events all come from pre-freeze
-    evictions.
+  - DATA, NEARLY VACUOUS (corrected 16:47Z by date -u). L-RED's returns_rt48 (run of 66 transitions > n − 1 = 47) and returns_ph64
+    (run of 91 > 63) have 11 post-freeze fallback evictions each, and none of the 22 evicted vertices re-enters. But their runs
+    have a WAVE shape:
+    - a fallback peel empties R completely;
+    - θ changes, and the evictees re-enter in a burst of 2-3 arena steps;
+    - a second peel empties R again, partly after the freeze;
+    - θ changes once more, and the run ends 3 transitions later (in ph64 because θ reaches w).
+    So after the post-freeze evictions there is no θ-change with room for a re-entry. Their 11 resp. 13 FBRE events are the
+    second-wave re-entries of first-wave (pre-freeze) evictees.
   - The other named and climbed runs are shorter than n − 1, so they cannot test it.
+  - The wave picture: every wave needs a θ-change, so FBRE ≤ n · #θ-changes in the run. (FBRE-F) says the waves stop at the
+    freeze. A run with three or more waves straddling the freeze would test it.
   - Small support. fbclimb.py FIT=p (fitness: post-freeze FBRE, then post-freeze evictions), seeded from returns_rt48, is the
     attack; result in §8.
   - If (FBRE-F) holds: FBRE ≤ (pre-freeze fallback leaves) ≤ n(n − 1); then N ≤ O(n²), and a (w, u*)-run costs poly(n)
@@ -193,6 +216,69 @@ Proof.
   - Post-freeze, Lemma FB-W already covers the W-status evictions. The open case is post-freeze R-status evictions, where the
     eviction comparison h ▷ ρ ⊕ θ_L is decided strictly below u*. That is one level down: the n^depth recursion of box 27 §8c and
     L-SI box 2 §3.
+
+## 5c. One quantity: crossings (READING: an assembly; L-NEW, written ~17:00Z by date -u)
+Claim X. Inside one joint λ-phase with τ fixed, let:
+- X := the number of CROSSING transitions (R changes);
+- O := the number of transitions with an OTHER endpoint (§4).
+Then the phase has O(n⁴ · (1 + X + O)) transitions. θ-changes, w-changes and u* do not appear. So N5 on o-cyclic 𝒞^1O is
+polynomial if X and O are poly(n) per joint λ-phase: Lemma Φ (≤ 2n(n − 1) + 1 phases, PROVED box 21) and τ-changes ≤ d − 1.
+Ingredients: Lemma XW, Lemma EQ, Lemma FBL-N (§1-§3); Lemma G (a)-(c) (R19 (a)); PIECE (R19 (f)); R17 Lemma P / Theorem PH;
+R15 (d). Not needed: C, CR, XA, FBF. Those bound parts of X itself (§5, §5b).
+Sketch.
+1. F-INTERVALS: maximal intervals of consecutive states in the phase with no OTHER state, no crossing transition and no non-flat
+   fallback. F is constant on an F-interval.
+2. (F1) In an F-interval the values on F (Ξ = W there, Lemma G (a), no (h) needed) change at ≤ |F| − 1 transitions.
+   - At THR states the F → F gate edges are exactly the W-improving ones (Lemma G (a)). At EQ states the gate is G_τ's improving
+     set.
+   - A transition without crossing maps F into F. So σ_{k+1}|F is an 𝓕-arena strategy whose values dominate the 𝓕-arena optimum,
+     hence is one (F1).
+   - Fallbacks inside the interval switch only flat F → F edges. At EQ states this is the proof of Lemma EQ. At (h)-states:
+     R → R gate edges do not exist (Lemma G (c) at an arena optimum), every F-edge is flat (FBL-N (ii)), and any other switched
+     edge would be a crossing. So F-values do not change at fallbacks, and Lemma P's invariant carries over (fixes §5, step 2).
+   - λ on F is Ξ's, fixed in the phase. R17 Lemma P / PH on 𝓕 give ≤ |F| − 1 value-changing transitions.
+   - This is PIECE's F-part, read across w-changes, θ-changes and EQ states without (h). L-NEW reading; PIECE was signed with w
+     constant.
+3. (F2) In an F-interval, EQ → THR transitions number ≤ |F| − 1.
+   - At such a transition k → k+1, (h) at k+1 gives τ(o) ∈ F_{k+1} = F_k. So o's W-play at k does not return to o (H2 at k), and
+     w_k = o ⊕ Ξ_k(τ(o)), which holds at k+1 too.
+   - θ_k = w_k (EQ) and θ_{k+1} ⊵ θ_k (R15 (a)). If w_{k+1} = w_k, then θ_{k+1} ⊵ w_{k+1}, so θ_{k+1} = w_{k+1} (XW), against THR.
+   - So Ξ(τ(o)) changed: an F-value change, counted by (F1).
+   - THR → EQ transitions alternate with them, so an F-interval has ≤ 2|F| + 1 blocks (maximal EQ runs and THR runs).
+4. EQ blocks: ≤ n − 1 value-changing transitions each (Lemma EQ).
+   THR blocks: w-changes inside them are F-value changes (w = o ⊕ Ξ(τ(o)) under (h)). So they cut the blocks into ≤ (n − 1) +
+   #blocks PIECE intervals per F-interval (τ, w, R constant, (h), no non-flat fallback; θ free by R19 (f); flat fallbacks pass,
+   step 2). Each has ≤ n − 2 value-changing transitions.
+5. #F-intervals ≤ 1 + 2X + 2O.
+   - Every non-flat fallback outside an OTHER-touching transition is a crossing transition.
+     - At EQ states, fallbacks are flat.
+     - At THR states, a non-flat switched edge is a leave, or c's flat F → R edge. That edge puts c into R or makes a vertex of
+       π_z leave, and either is a crossing (P-N5-XA-fixes §1, "Why").
+6. Value-changing transitions ≤ (1 + 2X + 2O) · O(n²) + X + O. Value-preserving runs are ≤ 4n(n − 1) long (R15 (d)). So there are
+   O(n⁴ (1 + X + O)) transitions. □ (sketch)
+Status: READING. Every ingredient is PROVED (L-NEW, unrefereed: XW, EQ, FBL-N) or SIGNED (Lemma G, PIECE, R17, R15). Not refereed:
+the assembly, and step 2's extension of PIECE's F-part across w-changes and EQ states without (h).
+- Consequence for routing: (CYC') and (W) are subsumed. The open quantities for o-cyclic 𝒞^1O are:
+  - **(X)**: crossing transitions per joint λ-phase;
+  - **(NH')**: OTHER-touching transitions per joint λ-phase.
+- What bounds parts of (X) already, inside (w, u*)-runs (§5, §5b): first entries ≤ n per run; re-entries after S4a leaves ≤ n(n − 1)
+  per run (XA); non-flat fallbacks ≤ entries + n. FBRE is the open part, and the per-run first entries add up over the runs.
+- DATA (xcount.py; longest phases):
+
+  | instance | n | phase length | X (crossing transitions) | entries / leaves | O | θ-changes | w-changes |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | fts_best16 | 16 | 26 | 14 | 14 / 4 | 0 | 8 | 0 |
+  | sc32 | 32 | 44 | 30 | 45 / 19 | 0 | 43 | 0 |
+  | theta_tp32 | 32 | 41 | 22 | 28 / 4 | 0 | 16 | 0 |
+  | returns_rt48 | 48 | 78 | 29 | 55 / 43 | 0 | 3 | 0 |
+  | returns_ph64 | 64 | 103 | 30 | 78 / 56 | 0 | 3 | 0 |
+  | inr2_n32 | 32 | 27 | 14 | 43 / 23 | 0 | 19 | 0 |
+  | wd16_s2 | 16 | 12 | 12 | 0 / 12 | 12 | 0 | 0 |
+  | oc16_s2 | 16 | 16 | 3 | 9 / 9 | 16 | 0 | 0 |
+
+  - X ≤ n on every named instance.
+  - xclimb.py (fitness: crossing transitions minus OTHER-touching ones, in one phase), seeded from sc32: 33 > n = 32 after 29 s.
+    Running; final numbers in §8.
 
 ## 6. Data (DATA, not proof)
 ### 6.1 Non-(h) transitions (nhprof.py, otherstat.py)
@@ -244,7 +330,21 @@ Proof.
   - **So (FB-run) may be as hard as (CYC') itself.** The §5 accounting moves the open count from θ-changes to fallbacks. It does
     not make it smaller in general. Its gain is on runs like sc32's, where θ changes at every transition but fallbacks are rare.
 
+### 6.4 Mechanical checks of Lemmas XW, EQ and FBL-N (eqcheck.py; DATA)
+- Named instances: wd16_s2, oc16_s2, sc32, returns_rt48, returns_ph64, inr2_n32, fts_best16, fts_ph16, theta_tp32.
+- Random runs: seeds 2831 (random starts) and 2832 (canonical), 5,284 runs, n 6-14.
+| check | count | failures |
+| --- | --- | --- |
+| XW: Ξ ⊴ W at every vertex of every state | 144,367 random + 16,192 named | 0 |
+| EQ: Ξ-changing transitions in a maximal Ξ = W run ≤ n − 1 | 9,026 random runs + 18 named | 0 (max excess over n − 1: −3) |
+| FBL-N (ii): gate edges from F at Even fallbacks (τ unchanged) are flat | 211 edges at 245 fallbacks | 0 |
+| FBL-N (iii): no F → R gate edge at a fallback when ¬H2 | same | 0 |
+- Weak spot: the EQ runs seen are short (excess ≤ −3). A climb on the EQ-run length would test Lemma EQ harder; the proof does not
+  depend on data.
+
 ## 7. Open items after box 28 (for the Lead's routing)
+- **(X) OPEN, the main item** (§5c): crossing transitions per joint λ-phase. Data: X ≤ n named; the climb is above n (§8). The
+  (w, u*)-run lemmas (XA, FBF, FB-W) bound parts of it; FBRE and the per-run first entries are what remain.
 - (NH') OPEN: OTHER-touching transitions per joint λ-phase. Sub-cases by clause:
   - "23" (H1, o on its W-cycle): FBL-N (iii) holds, and the honest values on R are routes ⊕ θ. The W-values on R run to o's W-cycle,
     not through o, so Lemma G (b)'s W half fails.

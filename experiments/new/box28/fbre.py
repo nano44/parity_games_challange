@@ -43,7 +43,8 @@ def stats(k, j, rows):
             if fb and st["u"] is not None:
                 u = st["u"]; z = rows[i + 1]["s"][v]; wst = (u in rows[i]["Pz"][z]) == (u in rows[i]["Pw"])
                 stat[v] = ("W" if wst else "R", i - k)
-                if i - k >= len(rows[k]["s"]) - 1: st["evict_postfreeze"] = st.get("evict_postfreeze", 0) + 1
+                if i - k >= len(rows[k]["s"]) - 1:
+                    st["evict_postfreeze"] = st.get("evict_postfreeze", 0) + 1; st.setdefault("first_post_evict", i)
         for v in B - A:
             if v not in seen: st["first"] += 1; seen.add(v)
             elif last.get(v) == "F":
@@ -51,6 +52,8 @@ def stats(k, j, rows):
                 st[key] = st.get(key, 0) + 1
                 st["FBRE"] += 1; pv[v] = pv.get(v, 0) + 1; st["maxFBREv"] = max(st["maxFBREv"], pv[v])
             else: st["ARE"] += 1
+    if "first_post_evict" in st:
+        st["tc_after_post_evict"] = sum(1 for i in range(st["first_post_evict"], j) if rows[i]["th"] != rows[i + 1]["th"])
     st["evictW"] = sum(1 for v in stat if stat[v][0] == "W"); st["evictR"] = sum(1 for v in stat if stat[v][0] == "R")
     return st
 

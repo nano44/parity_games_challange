@@ -15,10 +15,16 @@ box to ~19:20Z. Successor 9's resume point is in git history (af823a23).
   - READING: the (w, u*)-run accounting. θ-changes cost nothing by themselves; what remains is (W) w-changes, (FB-run) non-flat
     fallbacks per run, and (U0) u* = none runs.
   - DATA: wd16_s2 and oc16_s2 phase anatomy; random and climb tables.
+  - §5b: Lemma FB-W (PROVED): post-freeze W-status evictees never re-enter. CONJECTURE FBRE-F, data nearly vacuous (wave shape
+    of rt48 / ph64).
+  - §5c (READING, the strongest form): per joint λ-phase, transitions are O(n⁴ (1 + X + O)), where X = crossing transitions and
+    O = OTHER-touching transitions. (CYC'), (W), (FB-run) and (U0) are subsumed. The open items are (X) and (NH').
+  - §6.4: eqcheck.py, 0 failures for XW / EQ / FBL-N.
 
 ### IN FLIGHT (mine; experiments/new/box28/out/)
-- otherclimb.py n 16 seed 2 and n 24 seed 4 (OTHER-touching transitions per phase).
-- fbclimb.py seeded from inr2_n32 and from sc32 (non-flat fallbacks per (w, u*)-run). 2400 s each, started ~16:30Z.
+- fbclimb.py seeded from inr2_n32 (non-flat fallbacks per run); FIT=p seeded from rt48 (FBRE-F attack); wclimb.py (w-changes at
+  throttled transitions); xclimb.py seeded from sc32 (X per phase: 37 at n 32 by 16:58Z). The OTHER climbs were stopped (16 at
+  n 16, 19 at n 24).
 - Kill only by pid (`ps -eo pid,args | awk '$3=="otherclimb.py"'`), never with pkill -f.
 
 ### NEXT

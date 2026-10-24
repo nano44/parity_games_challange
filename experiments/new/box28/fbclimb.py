@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Box 28 (FB-run) climb: o-cyclic C^1O, canonical N5 start. Fitness = max over (w, u*)-runs (fbre.py definition, u* ≠ None) of the
 number of NON-FLAT fallbacks (fallbacks that change Ξ or W), then FBRE in that run, then θ-changes.
-With env FIT=p: re-entries of POST-freeze fallback evictees (CONJECTURE FBRE-F says 0), then post-freeze evictions, then run length.
+With env FIT=p: re-entries of POST-freeze fallback evictees (CONJECTURE FBRE-F says 0), then θ-changes after the first post-freeze eviction (re-entry chances), then post-freeze evictions.
 With env FIT=v: max FBRE of one vertex in one run, then FBRE, then non-flat fallbacks. Usage: fbclimb.py n seed secs out [seed.pg]  (with seed.pg: start the climb from that game; n is then its size)"""
 import sys, os, random, time
 from fbre import *
@@ -14,7 +14,7 @@ def fbfit(g, start=None):
         nf = sum(1 for i in range(k, j) if rows[i]["fb"] and (rows[i]["Xk"] != rows[i + 1]["Xk"] or rows[i]["Wk"] != rows[i + 1]["Wk"]))
         s = stats(k, j, rows)
         post = s["FBRE"] - sum(v for kk, v in s.items() if kk.startswith("FBRE_") and kk.endswith("prefreeze"))
-        if os.environ.get("FIT") == "p": best = max(best, (post, s.get("evict_postfreeze", 0), j - k))
+        if os.environ.get("FIT") == "p": best = max(best, (post, s.get("tc_after_post_evict", 0), s.get("evict_postfreeze", 0)))
         else: best = max(best, (s["maxFBREv"], s["FBRE"], nf) if os.environ.get("FIT") == "v" else (nf, s["FBRE"], s["tc"]))
     return best
 
