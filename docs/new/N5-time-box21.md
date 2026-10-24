@@ -79,6 +79,10 @@ RESULTS R15 (a) on G and on G^d, with Lemma R.
 V_{σ^SSI_{k+1},τ_k} pointwise.
 - SSI's switched strategy (Iσ ∩ τ̄_k) lies in A(σ_k). This is the value form of K6 (N5-dlm-box5.md §4).
 - It says nothing about iteration counts. □
+DATA for (a) and Lemma R (sandwich_check.py, brute force over all strategies):
+- 400 random games, n ≤ 6, 1,610 vertex checks, 0 mismatches.
+- L_σ(v) equals the minimum over all τ' of V_{σ,τ'}(v).
+- The dual valuation's triple, read with G's key, equals the maximum over all σ' of V_{σ',τ}(v).
 
 ### 2.3 Lemma Φ (joint λ-phases)
 Each vertex's cycle node in L_σ changes at most n − 1 times in a run. The same holds for the cycle node in Ξ^d_τ.
@@ -106,6 +110,8 @@ Corollary.
 - N5 is polynomial ⇐ (FO) F_E ≤ poly(n) ∧ (ALT) C_τ ≤ poly(n).
 - An N5 run from a start pair (σ_0, τ*) with τ* honest-optimal is super-polynomial ⇔ the F_τ* run is.
 - With τ* equal to S3's best-reward start τ_0, that is the canonical run. □
+DATA for (a)-(b) (blockcheck.py): 1,500 random plain N5 runs (n 3..14), 1,465 τ-constant blocks; every block's σ-sequence is a
+prefix of F_τ from the block's first σ (0 mismatches).
 
 ### 2.5 Lemma W (W along a frozen run)
 In an F_τ run:
