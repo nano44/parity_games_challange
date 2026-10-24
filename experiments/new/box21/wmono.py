@@ -2,6 +2,7 @@
 """Box 21: is W = V_{sigma, tau} (play values against the frozen tau) monotone along frozen-tau N5 runs, including S4c fallback
 steps? Random games, runs from (sigma_0, tau*). Usage: wmono.py NGAMES nmin nmax seed"""
 import sys, random
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
 from h1 import wvals
 rng = random.Random(int(sys.argv[4])); N, a, b = map(int, sys.argv[1:4]); dec = {"arena": 0, "fallback": 0}; steps = {"arena": 0, "fallback": 0}; ex = None

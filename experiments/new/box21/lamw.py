@@ -3,6 +3,7 @@
 W-changing steps per λ_W-phase, and the one-player Lemma P check in G_tau* (simple paths <= k edges to a cycle node of the phase start).
 Writes the start file (n5.py --start format) next to the game. Usage: lamw.py game.pg"""
 import sys
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
 from h1 import wvals
 def paths_ok(g, tau, sig_start, sig_k, k, Eg0):

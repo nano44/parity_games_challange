@@ -243,13 +243,13 @@ with #τ-changes ≤ d − 1 (§3.4) and #λ-changes ≤ 2n(n − 1) (Lemma Φ).
 Neither is proved.
 DATA (theta.py, canonical runs):
 
-| instance | n | iterations | θ-changes | w-changes | Odd moves | longest stretch |
+| instance | n | iterations | θ-changes | (w or λ)-changes | Odd moves | longest (θ, w, τ, λ)-stretch |
 | --- | --- | --- | --- | --- | --- | --- |
 | fts_best16 | 16 | 28 | 10 | 2 | 0 | 11 |
-| oneodd climb, n 16 | 16 | 33 | 9 | 3 | 0 | 11 |
-| oneodd climb, n 24 | 24 | 41 | 5 | 6 | 1 | 15 |
+| oneodd_c16 (climb_fix.py oneodd; sha1 827976e2…) | 16 | 36 | 11 | 18 | 2 | 5 |
+| oneodd_c24 (climb_fix.py oneodd; sha1 559434eb…) | 24 | 44 | 5 | 14 | 1 | 11 |
 
-The longest stretch is ≤ n − 1 in every case. A climb with fitness "longest stretch − (n − 1)" (climb_fix.py seg1o) is reported
+The longest stretch is ≤ n − 1 in every case. On 𝒞^1O the length comes from the number of stretches, not from long stretches. A climb with fitness "longest stretch − (n − 1)" (climb_fix.py seg1o) is reported
 in §6.
 Where the R17 induction stops inside a stretch. Two different one-player inductions both fail, each at one edge type of Lemma G (d).
 - (i) In W (G^w): Lemma P's Case B fails at a withheld entering edge (x, z) (type d1). Its repair would need the honest bound
@@ -258,6 +258,14 @@ Where the R17 induction stops inside a stretch. Two different one-player inducti
 - (ii) In Ξ (G^θ): that honest bound fails exactly at z ∈ R in "trust mode". There z's W-optimal route goes through o (because of
   w) while its honest value π_z ⊕ θ is below its best o-avoiding route. N5 keeps z in R because the selection trusts τ.
 - So x is withheld by z, and z stays in R until θ rises (the end of the stretch).
+- (iii) A third attempt (00:05Z by date -u): a joint induction.
+  - It carries, for o-paths r of ≤ k edges, "W_k(x) ⪰ π_r ⊕ θ" (W beats the HONEST value of every short o-path).
+  - It adds, for z ∈ R_k, "z's route to o is at least as good as every o-path of ≤ k edges" (route progress). Route progress
+    holds for R→R edges: Lemma G (c) makes them unthrottled, and the arena optimum is route-optimal among R-routes.
+  - The withheld case of the first statement reduces to the second: π_{r'} ⊕ θ ⪯ π_z ⊕ θ ⊴ W(σ(x)).
+  - It breaks one level down. The route of z may pass through y with y ∉ R_k because y's own entering edge is withheld. Then
+    z cannot follow that route, and route progress fails for z. The throttle propagates along routes.
+  - Recorded so that a successor does not repeat it.
 - A proof of (SEG-1O) has to count such deadlocks. A proof of (CH-1O) has to bound the releases. This is the exact point where
   the one-player argument stops on the smallest two-player class.
 

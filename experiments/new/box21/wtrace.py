@@ -3,6 +3,7 @@
 W-improving edges missing from the gate Iσ (H1 violations), and whether W already equals the optimum W* (= Ξ* by saddle reading).
 Usage: wtrace.py game.pg"""
 import sys
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
 from h1 import wvals
 def main(path):

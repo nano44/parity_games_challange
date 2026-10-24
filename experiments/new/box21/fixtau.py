@@ -4,6 +4,7 @@ tau* = the final tau of the plain N5 run. sigma_0 = the plain run's sigma_0. Pri
 and Even switch-all SI (si.py rule_switch_all) from the same sigma_0, for comparison.
 Usage: fixtau.py game.pg [--start file]"""
 import sys
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
 def main(path, startf=None):
     g = load(path); st = readstart(startf) if startf else None

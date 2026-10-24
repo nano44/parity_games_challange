@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Box 21: growth climb for the frozen-tau* phase EXCESS = (max N5 iterations in one joint λ-phase from (sigma_0, tau*)) - (n - 1).
 Mutations of climb_fix.py plus 'add a vertex' (random priority/owner, 1-3 successors, 1-2 in-edges). Accept if excess >= current.
-Usage: grow.py seed.pg seed secs out nmax"""
-import sys, random, time
+Usage: grow.py seed.pg seed secs out nmax   (GROW_FIT=bestph: canonical run, counted only if S3's tau_0 is honest-optimal)"""
+import sys, os, random, time
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
-from climb_fix import mutate, fit_tstarph
+from climb_fix import mutate, fit_tstarph, fit_bestph
+FIT = fit_bestph if os.environ.get("GROW_FIT") == "bestph" else fit_tstarph
 def tolist(g): return [list(g.prio), list(g.owner), [list(s) for s in g.succ]]
 def addv(rng, G):
     prio, owner, succ = [list(G[0]), list(G[1]), [list(s) for s in G[2]]]; n = len(prio)
@@ -13,7 +15,7 @@ def addv(rng, G):
         u = rng.randrange(n); succ[u] = sorted(set(succ[u]) | {n})
     return [prio, owner, succ]
 def ex(G):
-    try: return fit_tstarph(G) - (len(G[0]) - 1)
+    try: return FIT(G) - (len(G[0]) - 1)
     except Exception: return -10 ** 9
 if __name__ == "__main__":
     G = tolist(load(sys.argv[1])); rng = random.Random(int(sys.argv[2])); secs = float(sys.argv[3]); out = sys.argv[4]; nmax = int(sys.argv[5])

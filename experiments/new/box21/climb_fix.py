@@ -6,6 +6,7 @@ mode tany : Even-only dynamics with an ARBITRARY frozen tau (Odd's step suppress
             against tau, S4c Even fallback if it stalls. The fitness is the max over K random taus (fixed per game).
 Usage: climb_fix.py MODE n seed secs outprefix"""
 import sys, random, time
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
 def randgame(rng, n):
     prio = [rng.randrange(n) for _ in range(n)]; owner = [rng.randrange(2) for _ in range(n)]

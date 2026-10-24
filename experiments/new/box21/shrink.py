@@ -4,6 +4,7 @@
 Moves: drop an edge (out-degree > 1); delete a vertex (redirect its in-edges to its first successor; renumber).
 Usage: shrink.py in.pg out.pg TARGET"""
 import sys
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
 from climb_fix import fit_tstarph
 def tolist(g): return [list(g.prio), list(g.owner), [list(s) for s in g.succ]]

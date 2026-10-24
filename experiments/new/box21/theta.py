@@ -2,6 +2,7 @@
 """Box 21, games with one Odd choice vertex o: along the canonical N5 run print the throttle θ = Ξ(o), w = W(o) (vs the current tau),
 Odd moves, the number of θ-changes, w-changes and the longest stretch with (θ, w, tau) constant. Usage: theta.py game.pg [-v]"""
 import sys
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))  # box21 -I: find sibling modules
 from n5x import *
 from h1 import wvals
 def main(path, verbose=False):
