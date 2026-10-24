@@ -227,3 +227,62 @@ FINDINGS
 NEEDS
 - Lead: route G-FB-1..4 and N-FB-1 to L-SI's fixes file for P-N5-FB.
 - Lead: tell me when REFEREE's R-N5-FB is pushed, for §C.
+
+## §C. Comparison with REFEREE's R-N5-FB (referee eb1ec3c, on trunk; read after my report 7699593d was pushed)
+Written 2026-10-24 22:55Z (date -u), at the Lead's request (22:5xZ). Signature (Opus 5.5, D15).
+### C.1 Disagreements: none
+| statement | REFEREE | REFEREE-2 | after §C |
+| --- | --- | --- | --- |
+| Theorem FB | SIGNED WITH GAPS FB-1, FB-2 | SIGN WITH GAPS G-FB-1, G-FB-2 | SIGN WITH GAPS: FB-1 = G-FB-1; FB-2 accepted (C.2); G-FB-2 mine only |
+| Corollary | SIGNED | SIGN WITH GAPS G-FB-3 | unchanged; G-FB-3 is a scope remark, mine only |
+| (T) | SIGNED | SIGN | same |
+| COARSE-SI (a) + converse | SIGNED WITH GAPS ENG-1, V-1, V-2 | SIGN (+ N-FB-1) | accepted: ENG-1 = my §2.3 code-link note; V-1 = N-FB-1; V-2 = my §1 remark that (P3) keeps half of clause 3 |
+| TAME, MONO, NOINF, J1, OFF | SIGNED | SIGN | same |
+| CAP | SIGNED WITH GAP CAP-1 | SIGN WITH GAPS G-FB-4 | CAP-1 = G-FB-4; both closures valid (C.3) |
+| (JUMP-EQ) FALSE; A | CONFIRMED; SIGNED | CONFIRMED; PROVED part SIGN | same |
+### C.2 FB-2: accepted
+- "Transitions of the phase" must be k → k+1 with both states in the phase. At a phase-exit transition λ or τ changes, so NOINF and the
+  Even-fallback fact do not apply, and a fallback there is not counted by the proof.
+- At most one such transition per phase, so including it adds +1.
+- My checker already counted in-phase transitions only: 635 in-phase fallbacks of 834 in my batch. The others lie outside phases or at
+  exits. But I did not flag the wording. Accepted.
+### C.3 CAP: both closures are valid
+- REFEREE, case λ(o) ≠ o: SPEC's σ̄(v) is a FULL minimiser at every non-cycle-node Odd v. I re-checked the proof:
+  - When u's play avoids v, (11) gives v ⊕ Ξ(σ̄ v) ⊴ v ⊕ Ξ(u), and ⊕ v is monotone because v is in neither path set.
+  - When u's play passes v, every sub-case of the extra set D is either impossible by (11) or gives Ξ(u) ▷ Ξ(σ̄ v): a top below c, or an
+    odd top above c, gives Odd a better cycle.
+  - This is the Odd-side mirror of my G-TB-1 closure in R2-N5-U1 §3.2. It upgrades my "DATA only" line (111,062 cases) to a proof, and
+    I adopt it.
+- REFEREE, case λ(o) = o: λ_k(e) = λ_k(a) = o (lev ≤ M_k < ∞ keeps cycle nodes; (P1) on (o, a)). In the phase λ_{k+1}(e) = o, so
+  e's honest play at k+1 reaches o. On 𝒞^1O that is e ∈ R̄_{k+1}. Correct, needs no minimality, and is shorter than mine.
+- Mine (both cases at once): CAP uses only COARSE_M with M ≥ −1, which drops lengths.
+  - SPEC's σ̄(o) is a COARSE_{−1}-minimiser: at a cycle node by Prog clause 3 on the H-edge plus VJ00 (10); at a non-cycle node, now by
+    REFEREE's proof.
+  - So both coarse inequalities in CAP's proof hold. Valid; it rests on the code link Ξ = Θ_H (ENG-1), as REFEREE's does through (P1).
+- Both repairs close CAP-1 = G-FB-4. REFEREE's case split is the cleaner text for the fixes file.
+- Data agrees: neither of us saw an in-phase non-tame transition with λ(o) = o (mine: 0 of 2,834), so that case rests on the proof.
+### C.4 Items only one of us raised
+- Only mine:
+  - G-FB-2: §4 is claimed for every game, but R21 (c) FBL-N (i) is signed on 𝒞^1O. SPEC S4c + FIX 3 give the fact on any game.
+  - G-FB-3: the same for R23 (g) WM in the Corollary's W-lowering bullet; (F1) in G_τ transfers it.
+  - Both are scope-of-citation gaps, closed in one line. REFEREE's reading does not contradict them.
+- Only REFEREE: FB-2 (accepted); ENG-1 and V-2 as named items, which I had as notes.
+### C.5 Joint gap map
+| REFEREE | REFEREE-2 | status |
+| --- | --- | --- |
+| FB-1 | G-FB-1 | same; closed (best-target line) |
+| FB-2 | — | accepted; closed (wording: both ends in the phase; +1 if an exit fallback is included) |
+| — | G-FB-2 | mine only; closed (R21 (c) scope; S4c + FIX 3) |
+| — | G-FB-3 | mine only; closed (R23 (g) scope; (F1) in G_τ) |
+| ENG-1 | §2.3 code-link note | same (inherited R15 G-N5T-1, DATA) |
+| V-1 | N-FB-1 | same (Prog on p. 15) |
+| V-2 | §1 remark | same (unused half of clause 3) |
+| CAP-1 | G-FB-4 | same gap; both closures valid; REFEREE's case split preferred for the text |
+Final verdicts after §C (Opus 5.5, D15):
+- Theorem FB: SIGN WITH GAPS (G-FB-1 = FB-1, FB-2, G-FB-2; closed).
+- Corollary: SIGN WITH GAPS (G-FB-3; closed).
+- (T), TAME, MONO, NOINF, J1, OFF, Remark: SIGN.
+- COARSE-SI (a) + converse: SIGN (ENG-1, V-1, V-2 accepted as notes).
+- CAP: SIGN WITH GAPS (G-FB-4 = CAP-1; closed).
+- (JUMP-EQ) FALSE: confirmed. A: PROVED part signed.
+- G-N5-TIME and (J-poly) stay OPEN.

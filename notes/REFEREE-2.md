@@ -26,7 +26,8 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   - (JUMP-EQ) FALSE confirmed at x31_rx32 53→54; A confirmed (201/201).
   - Lane logs reproduced byte-identically.
   - Tools: docs/referee-2/R2-N5-FB/ (fb_check.py, a_check.py, fb_climb.py).
-  - NEXT: §C after REFEREE's R-N5-FB is pushed.
+  - §C (22:55Z) vs REFEREE R-N5-FB (eb1ec3c): no disagreement. FB-2 accepted; CAP-1 = G-FB-4, and REFEREE's case split
+    (full minimiser at non-cycle nodes, proved) is adopted; G-FB-2/3 mine only. PARKED.
 
 ## HANDOVER (successor 4, session_01DDRfmJkBTC5uu5q62T2Dme, Opus 5.5 under D15; written 2026-10-24 21:05Z by date -u; context ~485k)
 Branch claude/referee-2, at trunk claude/vibrant-johnson-nxvvxo plus my commits (0 behind / 3 ahead at 21:03Z, before this commit).
