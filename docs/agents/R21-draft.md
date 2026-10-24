@@ -1,4 +1,4 @@
-# Draft RESULTS R21 (Lead, 2026-10-24 18:5xZ by date -u) — awaits REFEREE §C on R-N5-X, then CHECKER C30; lands in "## Results" after R20, before "## Dead ends"
+# Draft RESULTS R21 (Lead, 2026-10-24 18:5xZ by date -u) (rev.: REFEREE §C 865eadd) — awaits CHECKER C30; lands in "## Results" after R20, before "## Dead ends"
 
 ### R21 [refereed-only] N5 on one-Odd-choice games: inside one joint λ-phase, transitions are bounded by crossings and OTHER states (Theorem X), with Lemmas XW, EQ, FBL-N, NF, F1, F2, FB-W, and a clarification of R19 (f) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C30.md, checker PENDING)
 - Object (packet P-N5-X, pinned trunk afc88b0, unchanged during review): docs/new/P-N5-X-box28.md, sha1
@@ -41,9 +41,9 @@
   or the Theorem X bound. REFEREE-2 x_check.py (own code): 15,378 runs, 37,235 phases, 3,558 F-intervals, 753 sub-blocks (211 with θ
   varying), 1,735 (w, u*)-runs, 0 violations of any packet statement; the per-part R19 (f) reading with Ξ on R fails in 111 sub-blocks
   (item (i)). Lane eqcheck.py: 0 failures (Lead re-run, seed 2832, 1,296 runs).
-- Signatures: REFEREE docs/referee/R-N5-X.md (referee 53c0c68; §C PENDING): F1 SIGNED WITH GAPS (X-2); NF SIGNED WITH GAPS (X-3);
+- Signatures: REFEREE docs/referee/R-N5-X.md (referee 53c0c68; §C 865eadd): F1 SIGNED WITH GAPS (X-2); NF SIGNED WITH GAPS (X-3);
   Theorem X SIGNED WITH GAPS, all closed (X-1 closed in §3.2, X-4 valid as re-derivation); XW, EQ, FBL-N, F2, FB-W SIGNED; table
-  checked as a READING. REFEREE-2 docs/referee-2/R2-N5-X.md (referee-2 059f492; §C 3a581a5): F1, NF SIGN; Theorem X SIGN WITH GAPS
+  checked as a READING; §C: no disagreement of substance, N-X-2 accepted, X-1 and TF equivalent, its "R19 (f) as landed TRUE" withdrawn for the wording, item (i) wording confirmed (precision: R_{k+1} = R_k, (h) at k suffices). REFEREE-2 docs/referee-2/R2-N5-X.md (referee-2 059f492; §C 3a581a5): F1, NF SIGN; Theorem X SIGN WITH GAPS
   (G-X-1 closed by Lemma TF); XW, EQ, FBL-N, F2, FB-W SIGN; table agreed; §C: no disagreement, X-2 and X-3 accepted, X-1 accepted as a
   substitute for TF, item (i) wording proposed. Joint gap map: X-1 = G-X-1 (closed); X-2, X-3 wording; X-4 = N-X-3 (re-derivation);
   N-X-1 = REFEREE §1 remark; N-X-2 = REFEREE §3.3 R19 (b) row. Nothing open in the packet.

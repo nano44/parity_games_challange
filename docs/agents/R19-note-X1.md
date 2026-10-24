@@ -31,3 +31,13 @@ R19's landed text is frozen; this dated note adds a step and changes no statemen
   "θ constant not needed, provided the R-part counts route (W) changes on R; a θ-change under (h) at both ends is an F-change
   (Lemma TF = REFEREE X-1)."
 - Status: REFEREE-2 proposed this wording; REFEREE's X-1 closure is the same argument. Both referees confirm the wording in their §C.
+
+## Rev. 18:54Z (Lead, by date -u): both §C in; wording CONFIRMED
+- REFEREE §C (referee 865eadd) withdraws "R19 (f) as landed is TRUE" as a statement about the wording. Its own re-run of fbref_n48
+  56 → 57 gives R = {14} = {o}, Ξ changes {3, 14, 16, 19}, W changes {3, 16, 19}. It confirms the clarified wording.
+- REFEREE-2 §C (referee-2 3a581a5) confirms the wording, and proposed it.
+- Precision (REFEREE): X-1 and TF also use R_{k+1} = R_k, which PIECE assumes, and need (h) at k only.
+- Final wording (carried as R21 (i)): "R19 (f) holds with θ free in this form: the R-part bound counts route (𝓡*, i.e. W on R) changes;
+  a θ-change at a transition with H1 at its start and R constant changes W on F (REFEREE X-1) and is charged to the F-part; the total
+  (|R| − 1) + (|F| − 1) counts transitions at which Ξ or W changes. Read with Ξ on R counted in the R-part, the per-part bound fails
+  with θ varying (fbref_n48, transition 56 → 57, R = {o})."
