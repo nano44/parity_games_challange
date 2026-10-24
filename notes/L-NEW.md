@@ -43,6 +43,14 @@ attempt from R57 O1-O4), Lead GO 23:05Z Oct 23 (date -u); about 4 h.
 - docs/new/N11-proposal.md: N5-HT. Box 23 (GO 02:16Z): frozen e003f7e6, then DEAD on B8 at 02:47Z (RESULT section).
 - Code: experiments/new/box22/ (stretchP, shrinkP, i1inst, smallsearch, showrun, pureY, climbY).
 
+### Box 24 (successor 8; Lead GO 03:05Z Oct 24; to ~05:40Z)
+- docs/new/N5-1Oacyc-box24.md: N5 on o-acyclic 𝒞^1O is polynomial, < (C_X + d)(B + 1).
+  - Status: READING, unrefereed, NOT landed; reported to the Lead 03:09Z.
+  - Depends on Prop X (L-RED), (P) and R17.
+  - Key fact: a pure step forces θ = w, so a pure block is N5 on the one-player G_τ.
+  - Checks: statcheck.py, 0 failures; the o-cyclic negative control fails, as it should.
+- Open next: the o-cyclic case.
+
 ### Earlier resume point (successor 7)
 PARKED after box 20 (synthesis docs/new/c-lane-synthesis.md), 2026-10-23 (date -u in the commit). Nothing running.
 Recommendation there: pause (c) design one box; L-RED builds an R56-style delay-lane counter against N5; fallback design =
