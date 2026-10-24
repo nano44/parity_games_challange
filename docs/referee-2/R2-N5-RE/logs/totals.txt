@@ -1,0 +1,34 @@
+Ga_checks: 770554
+Gb_checks: 164560
+Gc_checks: 2447720
+NC_FAILS(W): 31
+NC_FAILS(honest): 31
+PIECE_gateF: 61116
+PIECE_gateR: 15863
+PIECE_opt_checks: 7664
+PIECE_stretches: 2836
+RE_reentries: 1321
+RE_theta_changed: 921
+RE_theta_changed_route_not_better: 392
+RE_theta_equal: 400
+RM_checks: 70714
+Wo_checks: 19019
+Wo_drop_nonh(control): 4
+fallbacks: 1031
+h_states: 44273
+leave_class ----: 4278
+leave_class --ii: 1000
+leave_class iwii: 31
+leaves_checked: 5309
+leaves_control: 48697
+leaves_control_no_gain: 3356
+leaves_control_no_gain h=False inphase=False: 391
+leaves_control_no_gain h=False inphase=True: 2965
+runs: 31827
+spec_steps_checked: 6724
+states: 92052
+switched_in_R_checks: 4955
+transitions: 60225
+PIECE_max_(vc-bound+100): 97
+PIECE_max_len: 10
+PIECE_max_vc: 10

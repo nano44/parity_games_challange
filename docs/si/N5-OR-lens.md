@@ -41,12 +41,14 @@ Sources opened, with sha256 prefixes of the PDFs:
   - Yet N5 eliminates SOME action almost every transition. On every instance named in the brief, plus L-RED's and L-NEW's
     pinned ones, the longest run of non-eliminating transitions inside a phase is at most 17, at n up to 64.
   - The switch-all control on switchallexp shows this run doubling with N (24, 62, 140, 298).
-- **CONJECTURE (ELIM-n) (§5): every n consecutive transitions of a joint λ-phase contain an eliminating one.**
-  - With Lemma Φ it implies N5 < (2n(n−1)+1)·n·(m_E + 1) iterations, which is G-N5-TIME. This implication is PROVED (§5).
-  - (ELIM-n) is not proved. I have no route to it. It is a reformulation, but one with a structural test that separates N5 from
+- **CONJECTURE (ELIM-n) (§5) was REFUTED at 14:37Z** (elimn_cex_n48, L-RED: a window of 49 at n 48). It is replaced by
+  **(ELIM-poly)**: every w(n) consecutive transitions of a joint λ-phase contain an eliminating one, for a polynomial w.
+  - With Lemma Φ it implies N5 < (2n(n−1)+1)·(m+1)·w(n) iterations, which is G-N5-TIME. This implication is PROVED (§5).
+  - (ELIM-poly) is not proved. I have no route to it. It is a reformulation, but one with a structural test that separates N5 from
     switch-all.
 - **For the brief's (CYC) target, a narrower CONJECTURE (CYC-ELIM) (§4.3), the Post-Ye Lemma 3.6 shape.**
-  - Every non-eliminating window contains ≤ d θ-changes (d = o's out-degree). The data give at most 3.
+  - Every non-eliminating window contains ≤ d θ-changes (d = o's out-degree). The data give at most 5, tight at d = 5 on
+    theta_tp32 (L-RED, Lead 14:27Z).
   - PROVED: (CYC-ELIM) implies θ-changes ≤ (d+1)(m+1) per phase, i.e. (CYC).
   - On 𝒞^1O, Lemma G supplies L-LIT's LP(t) family; N5 prices with LP(θ) and selects with LP(w) (§3.3b).
 - **The gap-level potential itself gives no (CYC) or (TRUST) bound.**
@@ -329,7 +331,7 @@ most d θ-changes, where d is o's out-degree. The data give at most 3, with d = 
 - Kill design for L-RED (READING): one ring lapped ≥ 3 times with identical switches and no retirement elsewhere. The middle lap's
   window then holds about d θ-changes, and more laps give more. Box 25 §4's lap counts (fts_best16: 4 σ̄-returns, two full laps)
   are the nearest data.
-- (CYC-ELIM) is weaker than (ELIM-n). It is aimed at the brief's target. Climb: §6.
+- (CYC-ELIM) is weaker than (ELIM-poly). It is aimed at the brief's target. Climb: §6.
 
 ### 4.4 Why N5's windows end, and two refinements that fail or do not separate (DATA)
 **Mechanism of the long windows** (elim.py traces):
@@ -341,7 +343,7 @@ most d θ-changes, where d is o's out-degree. The data give at most 3, with d = 
   - The window starts after a fallback (state 7) and ends after another fallback (state 19). Its elimination comes at state 20.
 - returns_rt48: hub vertex 46 (successors 18, 37, 40) switches 14 times in the phase, cycling over all three edges. Eliminations
   are sparse in the first half of the phase (7 in 40 transitions) and dense at its end.
-- So a kill of (ELIM-n) needs one lane swept back and forth ≥ 3 times, or a hub cycled, while nothing else retires an edge.
+- (Written before 14:37Z.) So a kill of (ELIM-n) needs one lane swept back and forth ≥ 3 times, or a hub cycled, while nothing else retires an edge.
   READING: this is a target for L-RED.
 
 **Refinement 1: "every return is paid by a gap drop" is FALSE** (retpay.py).
@@ -415,6 +417,19 @@ almost the whole phase, so g is blind below it.
 d = 4 and the window holds 0.
 
 ## 5. The open statement, and what it would give
+**REFUTED 2026-10-24 14:37Z (L-RED R58 §13a, relayed by the Lead; re-run here 14:42Z): (ELIM-n) is FALSE.**
+- Instance: experiments/red/n5inj/instances/elimn_cex_n48.pg (sha1 d6062e86…), n 48, 3 Odd choice vertices, canonical start.
+- 92 iterations, 10 fallbacks (Lead re-run, Oink OK, strategies verified).
+- elim.py (unmodified) on its longest joint λ-phase (90 transitions): the non-eliminating window is 49 > n, for all three columns
+  (σ-only, σ-or-σ̄, σ-or-τ). 35 eliminating transitions; recursive depth 3.
+- The window is about 1.02n: linear, not super-polynomial. The statement survives only in weakened form.
+
+**CONJECTURE (ELIM-poly), replacing (ELIM-n).** There is a polynomial w(n) such that, in every joint λ-phase of an N5 run, every
+w(n) consecutive transitions contain an eliminating one (σ- or τ-edge abandoned and not used again in that phase).
+- DATA: max window 49 at n 48 (elimn_cex_n48), 17 at n 32, 15 at n 64, 12 at n 24 (elim24_p52). Consistent with w(n) = 2n.
+- Not one family; growth with n is not established.
+
+The original statement, kept for the record:
 **CONJECTURE (ELIM-n).** In every joint λ-phase of an N5 run, among any n consecutive transitions at least one is eliminating:
 some vertex leaves an edge of σ (Even) or τ (Odd) that it does not use again in that phase.
 - Counting τ as well matters only on games where Odd moves inside phases. The σ-only and σ-or-τ windows (elim.py columns
@@ -423,14 +438,15 @@ some vertex leaves an edge of σ (Even) or τ (Odd) that it does not use again i
 - DATA: §4.2 (max 17 at n 32, 15 at n 64) and §6.
 - Not stated for fallback-free phases only. Fallbacks are included in every count above.
 
-**Proposition (PROVED, L-SI; elementary).** (ELIM-n) implies that N5 makes < (2n(n−1)+1)·n·(m_E + 1) iterations, where m_E is the
-number of Even edges.
-Here m_E is replaced by m, the number of edges, when τ-eliminations are counted.
+**Proposition (PROVED, L-SI; elementary; restated 14:42Z for windows of any length).** If every w consecutive transitions of a
+joint λ-phase contain an eliminating one, then each phase has at most m + (m + 1)(w − 1) < (m + 1)·w transitions. So N5 makes
+< (2n(n−1)+1)·(m+1)·w iterations, with m the number of edges (m_E if only σ-eliminations are counted).
 Proof:
-- In one phase, the eliminating transitions are at most m (resp. m_E), because each one retires a distinct (phase, edge) pair.
-- Between consecutive eliminating transitions there are at most n − 1 others. So a phase has ≤ n·(m_E + 1) − 1 transitions.
+- In one phase, the eliminating transitions are at most m, because each one retires a distinct (phase, edge) pair.
+- There are at most m + 1 maximal runs of non-eliminating transitions, each of length ≤ w − 1.
 - Lemma Φ (box 21 §2.3) gives at most 2n(n−1)+1 joint λ-phases. □
-So (ELIM-n) implies G-N5-TIME (gauntlet step 4, running time). It does NOT imply correctness, which is R15.
+With w = n this is the earlier bound. (ELIM-poly) with w polynomial implies G-N5-TIME.
+So (ELIM-poly) implies G-N5-TIME (gauntlet step 4, running time). It does NOT imply correctness, which is R15.
 
 **Why this is not just "N5 is polynomial" restated (READING).**
 - It is a local, checkable statement: one window of n transitions in one phase.
@@ -438,7 +454,7 @@ So (ELIM-n) implies G-N5-TIME (gauntlet step 4, running time). It does NOT imply
 - The natural proof would be an N5-specific replacement for HMZ Lemma 6.4. The candidate fact: N5's selection is a full
   one-player OPTIMUM against τ over the gate, so a vertex that keeps oscillating must pay with a retirement elsewhere.
 - I have no argument for that. The obstacles are exactly the failures in §4.1 (the retired edge is not the max-slack one) and the
-  returns in §4.2 (abandoned ≠ retired). (ELIM-n) is OPEN.
+  returns in §4.2 (abandoned ≠ retired). (ELIM-n) is FALSE (14:37Z); (ELIM-poly) is OPEN.
 
 ## 6. Climbs (DATA; climb.py; canonical start; one Odd choice vertex, o-cyclic allowed; L-NEW's generator and mutations, read-only)
 **ELIM climbs.** First round, 13:39Z, with σ-ONLY eliminations (the definition sent to the Lead at 13:51Z):

@@ -1,0 +1,25 @@
+Ga_checks: 1571
+Gb_checks: 703
+Gc_checks: 6439
+PIECE_gateF: 30
+PIECE_opt_checks: 12
+PIECE_stretches: 6
+RE_reentries: 12
+RE_theta_changed: 12
+RE_theta_changed_route_not_better: 6
+RM_checks: 71
+Wo_checks: 103
+fallbacks: 9
+h_states: 139
+leave_class ----: 21
+leaves_checked: 21
+leaves_control: 125
+runs: 30
+states: 176
+switched_in_R_checks: 15
+transitions: 146
+PIECE_max_(vc-bound+100): 88
+PIECE_max_len: 1
+PIECE_max_vc: 1
+example theta_re: thetare_min.pg#0 RE x=6 L=3 E+1=6
+RESULT OK violations=0

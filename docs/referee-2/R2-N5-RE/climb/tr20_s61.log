@@ -1,0 +1,12 @@
+step 9: fitness 65 RE_theta_equal=0 NC=0 leaves=65 piece=0
+step 10: fitness 67 RE_theta_equal=0 NC=0 leaves=67 piece=0
+step 12: fitness 73 RE_theta_equal=0 NC=0 leaves=73 piece=0
+step 45: fitness 74 RE_theta_equal=0 NC=0 leaves=74 piece=0
+step 55: fitness 76 RE_theta_equal=0 NC=0 leaves=76 piece=0
+step 211: fitness 157 RE_theta_equal=2 NC=0 leaves=47 piece=0
+step 511: fitness 158 RE_theta_equal=2 NC=0 leaves=47 piece=1
+step 557: fitness 183 RE_theta_equal=2 NC=0 leaves=73 piece=0
+step 566: fitness 186 RE_theta_equal=2 NC=0 leaves=76 piece=0
+FINAL 186 {'RE_reentries': 2, 'RE_theta_equal': 2, 'RE_theta_changed': 0, 'NC_FAILS(honest)': 0, 'leaves_checked': 76, 'PIECE_stretches': 0} PIECE_max_vc 0
+checked over the whole climb: 3005 runs, 24517 transitions, 130 theta-equal re-entries, 0 NC-failing leaves
+RESULT OK violations=0
