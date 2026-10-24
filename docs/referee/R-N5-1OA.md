@@ -225,7 +225,7 @@ reading; Lemma R SIGNED; Lemma S SIGNED WITH GAPS S1, S2 and R2's G-1OA-6 first 
 G-1OA-1..6 with my A1, A2, B2, B3, S1, S2 folded in as above; all closed as wording or by derivation except (P) (conditional) and the
 inherited DATA gap G-N1.
 
-## C2. Addendum (Lead 03:57Z; written 04:01Z-04:08Z by date -u): the signed object is the d78e54f text; REFEREE-2's §7 (referee-2 3188622,
+## C2. Addendum (Lead 03:57Z; written 04:01Z-04:05Z by date -u; stamp corrected at 04:06Z, push 986b1f28 carried an estimate 04:08Z): the signed object is the d78e54f text; REFEREE-2's §7 (referee-2 3188622,
 trunk 98f16c8) read
 Both referees have now checked both texts. Against R2's §7 and its full gap list G-1OA-1..6, N-1..N-5, with the d78e54f text as the object:
 | mine | theirs | status |
