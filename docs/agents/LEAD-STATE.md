@@ -1040,3 +1040,4 @@
 - 22:07Z merged referee 5054e81 (R-N5-U1 §C), referee-2 cab4e7d (R2-N5-U1 §C), l-new 61a36b9 (fixes file §7); P-N5-U1 pin unchanged. Both §C: no disagreement; N-U1-3 closure proved by both. R24 draft written; CHECKER C33 next. NOW.
 - 22:19Z merged checker 0102170 (C33 FAIL E-1: R2 N-U1-3 closure is §C.4 not §C.3; all else PASS incl. R22 post-landing note) and l-comp d4af436 (X 75 = 2.34n at n 32, b6_xl_n32 610a2da2; Lead re-run n5 85/10 Oink OK verified, one Odd choice, xcount phase 81 X 75 O 0; X rises with climb budget, per-n maxima budget-bound). R24 draft rev. E-1, N-1. C33 Addendum 1 next.
 - 22:28Z merged checker 59a9799 (C33 Add. 1 PASS); R24 LANDED verbatim (checker SHAs filled); draft LANDED; GAPS update; NOW. CHECKER Addendum 2 next.
+- 22:32Z merged l-si 92f7985 (P-N5-FB frozen, sha1 9ece9994; J-climbs J 12 at n 32, 17 at n 48, lane data); pinned here for both referees; NOW.
