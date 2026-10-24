@@ -14,7 +14,8 @@
   - main report 7bf19993: FAIL E-1..E-4;
   - Add. 1 679ea117: PASS at f9c75d2, including the R19 POST-LANDING NOTE (RESULTS l.882);
   - Add. 2: R21 landed verbatim at trunk e72db8d.
-- PARKED. Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs.
+- C31 (R22 draft at trunk 9769dc3, packet P-N5-NH): FAIL on E-1 only (REFEREE's named instances: 78, not ~100). Re-runs EXACT. Waiting for the revised draft.
+- Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs. In a worktree, symlink tools/oink/build.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 
 ## Conventions (from C27, kept)

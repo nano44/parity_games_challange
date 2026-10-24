@@ -1,7 +1,29 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point / HANDOVER (LANE-RESTART step 1; successor 2 parks after box 4, 2026-10-24 ~17:40Z by date -u)
+## Resume point (successor 3, session_01BmytANWGKiHZhXK9QC2rB2, Opus 5.5; box 5 = X / O per joint lambda-phase; 2026-10-24 by date -u)
+Handover check 0ef77018 (5/5, Lead GO 17:5xZ). Box 5 started 17:52Z.
+
+### DONE (pushed on claude/l-comp)
+- box4.py: X (crossing transitions), O (OTHER-touching), Xmn (X - n), Xplen/Oplen; --slices + resume (OUT/TAG.tasks/<i>.json);
+  --no-reentry. xo_validate.py: equal to L-NEW box28 xcount.py on 33 instances (4 pinned ones included). shrink.py --prop X/O/canonX/
+  canonO --thr T. climb5.py (X/O hill climb, optional SEED.pg padded to n). xo_split.py (box 29 split per crossing-free interval).
+- Tables: n 4 canonical (X 2, O 1), n 4 all starts (X 3, O 2), random n 6-16 (X <= 4, O <= 3), climbs n 6-16, seeded O chain
+  n 10-40 (b5_o11, b5_os_n12..n40: O = phase length, 11 .. 77, O/n peaks 2.14 at n 28). README "Box 5".
+- Reported to the Lead at once: O > n (18:27Z), O/n rising (19:00Z), O split (19:13Z: F1° and (OB_R) hold; growth = F-changes).
+
+### IN FLIGHT
+- n 5 canonical subset: DONE 19:56Z (68,764,800 games, all 160 slices; results/box5/box4_n5_ed2_od2_nf_cyc.json).
+
+### Things only I know (box 5)
+- L-NEW's |R| (reach_o) excludes o; thtrace.Rset (mine, xo_split) includes o. X is the same either way; for (OB_R) compare with
+  |R| without o.
+- box29 scripts live on claude/l-new only; run them from a git-archive copy with PYTHONPATH=experiments/new:experiments/si:
+  experiments/harness and symlinks box25/box28 next to box29 (python -I breaks their sibling imports).
+- Climbs are very seed-dependent (O at n 10: 11 once, 6 twice at 300 s); seeding from the previous best is what made the O chain.
+- Every O-chain phase is pattern 23 throughout, tau constant: the long phases are Even-only improvement runs at fixed tau.
+
+## Previous resume point (successor 2, kept for its "Things only I know"; LANE-RESTART step 1; successor 2 parks after box 4, 2026-10-24 ~17:40Z by date -u)
 Session session_01TpuThMoeBcLB2T5KKeJpAa (Opus 5.5), boxes this session: N8d step 2 + switchbestexp + box 2b (2026-10-23),
 box 3 and box 4 (2026-10-24). Lead asked to park at ~587k context after box 4.
 
