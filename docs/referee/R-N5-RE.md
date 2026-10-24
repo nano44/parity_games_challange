@@ -168,3 +168,56 @@ seed 2612 --randstart, n 4-14; random two-player games 4,000 seed 2613, 4,000 se
 Not covered (the packet says so, §6 of it): non-(h) states, CYC, XING, FB-1O. G-N5-TIME stays OPEN. Nothing here is a running-time bound or a
 TARGET.md claim; TARGET.md diff: these are lemmas about the candidate N5 on 𝒞^1O (a subclass solvable in polynomial time by other means), not
 statements of TARGET.md §2.
+
+## §C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-RE.md, referee-2 c66da44, trunk 8001ee8; read after my report was pushed at 4457a9a8)
+Written 2026-10-24 15:00Z-15:10Z by date -u. (Opus 5.5, D15).
+### C1. Agreement per item
+| item | REFEREE (§1-§5) | REFEREE-2 | agreement |
+|---|---|---|---|
+| G (a)-(c) | SIGNED | SIGN (N-RE-1: (a) needs no (h)) | yes; N-RE-1 accepted (my §1 (a) uses no (h) either) |
+| Wo | SIGNED | SIGN (N-RE-2: only the W-half of (h)) | yes; N-RE-2 accepted (my §2 remarks say the same about the phase) |
+| RM | SIGNED WITH GAPS RM-1 (wording) | SIGN | yes on substance. R2's "Lemma G (c) makes this the route order for either terminal" uses G (c) across two states, which is exactly RM-1's point; it is a one-line definition, so I now count RM-1 as a NOTE, not a gap: final SIGNED |
+| RE (with or without (NC)) | SIGNED WITH GAPS RE-1, RE-2; (NC) not needed | SIGN WITH GAPS G-RE-1, G-RE-2 as stated; SIGN without (NC) (own proof) | yes |
+| Corollary RE | checked; "(NC) at every leave" deletable | SIGN WITH GAPS N-RE-3 (τ constant on each interval) | see C3 |
+| PIECE | SIGNED WITH GAPS P-1, P-2 | SIGN WITH GAPS G-RE-3, N-RE-4 | yes; see C2, C3 |
+No disagreement on any verdict.
+### C2. Gap map
+- RE-1 = G-RE-1 (the Caveat; transitivity before the prefix). Same finding, same repair. Data differ only in where the case was looked for:
+  R2 counted 0 leaves with z's L-path through y in RE's setting; I also found 0 in RE's setting, and 1,852 such switches outside it (§6.2).
+- RE-2 = G-RE-2 (step 3's avoidance sentence). Same finding, same repair ((V1) at L and L+1, induction from y to x).
+- (NC): both CLOSED, both by the same argument. R2's instance nc_fail_n12.pg is the (NC) configuration in RE's exact setting. My probe,
+  run unmodified on it (start nc_fail_n12.start), gives NCR_case 1, strict 1, RE3 1/1. My own samples had 494 (NC) configurations, none in
+  RE's setting, so R2's instance is the stronger evidence and I cite it.
+- P-1 = G-RE-3 (the count |R| − 1). Same finding, two different repairs, both valid in my reading: mine contracts 𝓡 to 𝓡* (o becomes a self-loop
+  with c's priority; an order isomorphism on R's values, then Theorem PH verbatim with |R| vertices); R2's re-runs Lemma P on 𝓡 with its base
+  case at o. I checked R2's route: the base Ω_0(o) = value(r) holds because o's edge and K are fixed; A2 and the "x on c's cycle" sub-case are
+  vacuous (c's cycle lies in K); in B2 every alternative creates a cycle inside R, i.e. a crossing. Either repair closes the gap.
+- P-2 = second half of N-RE-4 (the Consequence needs "inside one joint λ-phase"). Same.
+- Mine not in R2: none beyond RM-1 (now a note). R2's not in mine: N-RE-1, N-RE-2 (accepted, wording), N-RE-3 (C3), first half of N-RE-4 (C3),
+  N-RE-5 ("new play" honest or W: moot after the repair; I agree).
+### C3. R2's additions
+- (SG) vs my §4.2: the SAME argument (V1 at both states, the gate, R15 (a), transitivity before the prefix, one strict V2). R2's statement is
+  slightly sharper than my "general form": it needs only λ_k(y) ≠ y, handling λ_{k+1}(y) ≠ λ_k(y) by R15 (a) (a changed value that is ⊵ is ▷).
+  I checked that branch and accept the sharper form. Data agree: R2 25,283 switches, I 17,473, 0 non-strict in both; both negative controls
+  show non-strict switches at cycle nodes (R2 1,159 / 6,260, I 57 / 446).
+- N-RE-3 (Corollary RE needs τ constant on each interval). The corollary's preamble indeed says only "inside a joint λ-phase", and the joint
+  λ-phase as defined (box 21 §2.3) does not fix τ, while Lemma RE's statement does. So as written, the corollary uses Lemma RE outside its
+  hypotheses: ACCEPTED as a needed wording fix. My own reading, which goes further: Lemma RE's proof does not use τ constant at all. Step 1:
+  R membership depends on σ only (π_x stops at o, other Odd vertices are forced). Step 2: a vertex y switched by N5 moved along an edge of Iσ_L,
+  whether or not τ also changes in that transition (S4a and S4b are computed from the same state; S4c changes σ only if Iσ ≠ ∅). Steps 3-5:
+  (V1), (V2), R15 (a) and Lemma G (b) at L and E+1 do not involve τ. R2 lists "τ constant (step 1)"; I do not see a use there. DATA: 41 leaves
+  at τ-changing transitions inside a joint λ-phase with (h) at L (random 𝒞^1O, 8,000 games, seeds 2621/2622), 0 non-strict. Either fix makes the
+  corollary correct; adding the clause is the safe one, and dropping τ from both statements needs R2's check of this paragraph.
+- N-RE-4 first half (PIECE does not need θ constant): AGREED. Step 3 uses Lemma G (c) at each state separately, and 𝓡's terminal is w, not θ.
+  w constant is needed.
+### C4. Final verdicts (Opus 5.5, D15)
+| item | final |
+|---|---|
+| (1) Lemma G (a)-(c) | SIGNED |
+| (2) Lemma Wo | SIGNED |
+| (3) Lemma RM | SIGNED (note RM-1: route order across states = comparison against (c, ∅, 0)) |
+| (4) Lemma RE | SIGNED WITH GAPS RE-1 = G-RE-1, RE-2 = G-RE-2, both closed by the repaired proof (§4.2-§4.3 = R2 §4.2); (NC) NOT NEEDED, residue of G26-1 CLOSED by two referees |
+| (4) Corollary RE | SIGNED WITH GAP N-RE-3 (add "τ constant on each leave-to-re-entry interval", or drop τ from Lemma RE after R2 checks C3) ; (NC) clause deleted |
+| (5) Lemma PIECE | SIGNED WITH GAPS P-1 = G-RE-3 (closed, two repairs), P-2 = N-RE-4 (Consequence: add the joint λ-phase; θ constant may be dropped) |
+Joint open list for L-NEW (wording only): N-RE-3, N-RE-4, packet §6's "(NC)" bullet replaced by a pointer to the repaired proof.
+G-N5-TIME, (CYC), (XING), (FB-1O) stay OPEN.
