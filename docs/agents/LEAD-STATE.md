@@ -1009,3 +1009,4 @@
 - 19:30Z merged checker bd2a709 (C30 Add. 2 PASS, C30 closed; scope docs/checker/C30.md, notes/CHECKER.md); GAPS wording per CHECKER optional N (τ-constant phase); NOW: CHECKER parked.
 - 19:38Z merged l-new 4d3b60d (P-N5-NH frozen, sha1 382c5143; O′ split ivsplit.py on b5_os = L-COMP's xo_split numbers exactly; scope OK). P-N5-NH pinned at this merge for both referees.
 - 19:41Z P-N5-NH sent to REFEREE (R-N5-NH) and REFEREE-2 (R2-N5-NH); NOW.
+- 19:52Z merged l-new c1decb3 (box 30 final; L-NEW 10 parked; scope OK; P-N5-NH unchanged 382c5143). Lead re-run u1vertex.py u1_n32: post-freeze R-changes 13, max 2/vertex, W-flat 3, W decreases 0 (matches). L-NEW successor 11 session_01JjUBLJnxF38h9cjDCyZeZf created (handover; box 31). NOW.
