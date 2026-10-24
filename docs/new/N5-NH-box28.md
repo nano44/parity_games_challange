@@ -39,7 +39,8 @@ Code: experiments/new/box28/ (nhprof.py, otherstat.py, otherclimb.py, fbre.py, f
   - Random samples have almost no throttled runs, so the evidence for (FB-run) is the named instances and the climbs.
 - PROVED (L-NEW): Lemma FB-W (§5b). After the coarse freeze, a vertex that a fallback sends to an F-option with w's status at u*
   never re-enters R in that run.
-- CONJECTURE (FBRE-F) (§5b; data nearly vacuous: 22 post-freeze evictions on returns_rt48 / ph64, 0 re-entries, but no later θ-change with room to re-enter): no post-freeze fallback evictee re-enters. With it, (CYC') reduces to (W) + (U0).
+- FALSE (FBRE-F) (§5b): post-freeze fallback evictees DO re-enter. fbref_n48 (n 48, Oink-verified) has 10 such re-entries in one
+  (w, u*)-run.
 - READING (assembly; §5c, the strongest form): inside a joint λ-phase, N5 makes O(n⁴ (1 + X + O)) transitions, where X = crossing
   transitions (R changes) and O = OTHER-touching transitions. θ-changes, w-changes and u* drop out. So (CYC'), (W), (FB-run) and
   (U0) are all subsumed by **(X)**.
@@ -192,32 +193,42 @@ Proof.
     - So W_{k+1}(x) ◁ W_k(x), against Lemma W (arena steps never lower W);
   - (ii) an arena leave to an F-option with w's status is never followed by a re-entry, by the proof above.
   - DATA: ARE = 0 and arena leaves = 0 in every named run (§6.3).
-- DATA (fbre.py, the named instances and both climb snapshots):
+- DATA before fbref_n48 (fbre.py, the named instances and both climb snapshots):
   - 31 FBRE events in all (inr2_n32 6, rise3_n32 1, thetare_n 1, the FIT=v climb snapshot 23). Every one is a vertex evicted with θ's status at u* ("R-status").
   - 0 re-entries of W-status evictees, even before the freeze.
   - Every one of the 31 had its eviction BEFORE the freeze (eviction index < n − 1 in the run).
-- CONJECTURE (FBRE-F): in a (w, u*)-run, no vertex evicted by a fallback after the coarse freeze re-enters R in that run.
-  - DATA, NEARLY VACUOUS (corrected 16:47Z by date -u). L-RED's returns_rt48 (run of 66 transitions > n − 1 = 47) and returns_ph64
-    (run of 91 > 63) have 11 post-freeze fallback evictions each, and none of the 22 evicted vertices re-enters. But their runs
-    have a WAVE shape:
-    - a fallback peel empties R completely;
-    - θ changes, and the evictees re-enter in a burst of 2-3 arena steps;
-    - a second peel empties R again, partly after the freeze;
-    - θ changes once more, and the run ends 3 transitions later (in ph64 because θ reaches w).
-    So after the post-freeze evictions there is no θ-change with room for a re-entry. Their 11 resp. 13 FBRE events are the
-    second-wave re-entries of first-wave (pre-freeze) evictees.
-  - The other named and climbed runs are shorter than n − 1, so they cannot test it.
-  - The wave picture: every wave needs a θ-change, so FBRE ≤ n · #θ-changes in the run. (FBRE-F) says the waves stop at the
-    freeze. A run with three or more waves straddling the freeze would test it.
-  - Small support. fbclimb.py FIT=p (fitness: post-freeze FBRE, then post-freeze evictions), seeded from returns_rt48, is the
-    attack; result in §8.
-  - If (FBRE-F) holds: FBRE ≤ (pre-freeze fallback leaves) ≤ n(n − 1); then N ≤ O(n²), and a (w, u*)-run costs poly(n)
-    unconditionally (under (h), u* ≠ none). (CYC') would then reduce to (W) and (U0).
-  - Post-freeze, Lemma FB-W already covers the W-status evictions. The open case is post-freeze R-status evictions, where the
-    eviction comparison h ▷ ρ ⊕ θ_L is decided strictly below u*. That is one level down: the n^depth recursion of box 27 §8c and
-    L-SI box 2 §3.
+- **FALSE (FBRE-F)** (refuted 17:43Z by date -u; it was conjectured at 16:42Z): "in a (w, u*)-run, no vertex evicted by a fallback
+  after the coarse freeze re-enters R in that run".
+  - Instance: experiments/new/box28/instances/fbref_n48.pg (n 48, sha1 414231a27ba3…, canonical start). Found by fbclimb.py FIT=p
+    seeded from returns_rt48.
+  - n5.py: 60 iterations, 9 fallbacks; check_sol2.py: Oink zlk OK, strategies verified.
+  - One (w, u*)-run, states 3-58 (55 transitions), with w, u* (vertex 28), τ, (h) and θ ◁ w constant at every state.
+    - A fallback at run index 48 ≥ n − 1 = 47 (state 51 ≥ k_0 + n − 1 = 50) evicts 10 vertices: 35, 4, 5, 37, 39, 40, 22, 23, 25,
+      31.
+    - θ changes at index 53, and all 10 re-enter at index 54.
+  - Consistency checks on the same run:
+    - Lemma C: 0 failures. Coarse values never change in the run, so CR holds trivially.
+    - Every one of its 33 FBRE events (23 pre-freeze, 10 post-freeze) is a θ-status ("R-status") evictee, as Lemma FB-W requires.
+    - Max FBRE of one vertex = 1, so CONJECTURE (FBRE-1) survives.
+  - Obstruction: an eviction decided strictly below u* is undone by a θ-change strictly below u*. That is the recursion one level
+    down (box 27 §8c, L-SI box 2-3), and FB-W cannot see it.
+  - Independent refutation by L-RED (relayed by the Lead, 17:3xZ): claude/l-red 799d0a9, experiments/red/xing/instances/fbref_cex_n32.pg
+    (sha1 901674dc…, n 32, canonical start; docs/red/R61-xing-attack.md §5b).
+    - There, one fallback at 35 → 36 evicts 33 vertices at run index exactly n − 1 = 31, θ changes at 37, and they re-enter at 38-39.
+    - Lead re-run with my fbre.py at 06b9282: 33 post-freeze FBRE.
+    - L-RED's caveat: index n − 1 sits on the boundary. fbref_n48 above evicts at run index 48 = n, strictly inside the freeze, so
+      the variant "freeze at index ≥ n" is FALSE too.
+  - No variant is kept. "Excluding re-entries after a θ-change" is vacuous: by FBF, no re-entry after a fallback leave can happen
+    without a θ-change in between.
+  - §5c / Theorem X (P-N5-X §7) does not depend on (FBRE-F). It uses XW, EQ, FBL-N, NF, F1, F2, Lemma G, PIECE, R17 and R15 (d).
+- Post-freeze, Lemma FB-W covers the W-status evictions. Post-freeze R-status evictions, where the eviction comparison
+  h ▷ ρ ⊕ θ_L is decided strictly below u*, DO re-enter (fbref_n48). That is one level down: the n^depth recursion of box 27 §8c
+  and L-SI box 2 §3.
 
 ## 5c. One quantity: crossings (READING: an assembly; L-NEW, written ~17:00Z by date -u)
+FINAL FORM: docs/new/P-N5-X-box28.md (referee packet, written 17:16Z-17:40Z), Theorem X with Lemmas NF, F1, F2. It
+replaces this sketch: step 5 is now Lemma NF, proved with no (h) at k+1, and the constants are explicit (≤ 3n² value-changing
+transitions per F-interval).
 Claim X. Inside one joint λ-phase with τ fixed, let:
 - X := the number of CROSSING transitions (R changes);
 - O := the number of transitions with an OTHER endpoint (§4).
@@ -277,6 +288,31 @@ the assembly, and step 2's extension of PIECE's F-part across w-changes and EQ s
   | oc16_s2 | 16 | 16 | 3 | 9 / 9 | 16 | 0 | 0 |
 
   - X ≤ n on every named instance.
+  - Anatomy of the X climb best at 513 s (X = 40, n 32, phase of 46 transitions, all THR until the last; 16 θ-changes, 0 w-changes):
+    - 21 arena steps, each adding ONE vertex to R;
+    - one fallback evicting all 23 vertices at once;
+    - 24 more arena steps adding one vertex each;
+    - the phase ends at an EQ state.
+    So X ≈ n · (number of re-entry WAVES), and each wave sits behind a fallback peel and a θ-change (FBF). It is the same wave
+    shape as rt48 / ph64 (§5b).
+  - X climb best at 1309 s (experiments/new/box28/instances/x32_sc32_1309s.pg, sha1 3e9ef741d5e9…, canonical start; n5.py 63
+    iterations, 3 fallbacks; check_sol2.py: Oink zlk OK, strategies verified) (X = 49, n 32, phase of 54 transitions, 24 θ-changes, 0 w-changes, 0 OTHER): THREE waves (peels of 24
+    and 10 vertices). Each wave lies in a DIFFERENT (w, u*)-run (u* = vertices 25, 18, 10, 17 by id), and FBRE = 0 in every run.
+    The re-entries of a wave are FIRST entries of the next run.
+  - **So per-run statements (XA, FBRE-F, FBRE-1) cannot bound X by themselves.** The waves move across u*-levels. The two
+    accountings feed each other:
+    - per run: crossings ≤ O(n²) + 2·FBRE;
+    - runs per phase ≤ (n + 2)(#w-changes + 1) + O (Lemma UD);
+    - w-changes at (h)-transitions ≤ (n − 1)·#F-intervals (Lemma F2 with F1);
+    - F-intervals ≤ 1 + X + O.
+    Each turn of this loop multiplies by poly(n), and the loop does not close. Bounding X needs a potential that survives the
+    change of u*-level.
+  - CONJECTURE (FBRE-1): in a (w, u*)-run, a vertex re-enters after a fallback leave at most once.
+    - DATA: max 1 on every named run.
+    - fbclimb.py FIT=v (fitness: max FBRE of one vertex in a run), seeded from inr2_n32, stayed at 1 for ~210 s while total FBRE
+      rose to 25.
+    - Alone it does not close (X): first entries reset in every (w, u*)-run, and runs per phase are counted through w-changes,
+      which §5c counts through X.
   - xclimb.py (fitness: crossing transitions minus OTHER-touching ones, in one phase), seeded from sc32: 33 > n = 32 after 29 s.
     Running; final numbers in §8.
 
@@ -353,6 +389,24 @@ the assembly, and step 2's extension of PIECE's F-part across w-changes and EQ s
 - (W) OPEN: w-changes per joint λ-phase.
 - (FB-run) OPEN: non-flat fallbacks per (w, u*)-run. This is equivalent, up to poly(n), to FBRE (§5b).
   - Lemma FB-W (PROVED): post-freeze W-status evictees never re-enter.
-  - CONJECTURE (FBRE-F): post-freeze evictees never re-enter. It would close (FB-run).
+  - (FBRE-F) is FALSE (fbref_n48).
 - (U0) OPEN: u* = none runs (FBL there, and XA's step 4).
 - The table in §5 (C / CR / XA in a (w, u*)-run) needs a referee check before the accounting is promoted.
+
+## 8. Final climb numbers (DATA; canonical starts; every listed best checked with n5.py + check_sol2.py: Oink zlk OK, strategies verified)
+| climb | fitness | seed instance | n | final best | instance (sha1) |
+| --- | --- | --- | --- | --- | --- |
+| otherclimb.py | OTHER-touching transitions in one phase | random | 16 | 16 (all Ξ-changing; 24 in total) | instances/oc16_s2.pg (859f564f1276…) |
+| otherclimb.py | same | random | 24 | 19 (stopped ~16:55Z) | instances/oc24_s4_final.pg (11e569928f58…) |
+| fbclimb.py | non-flat fallbacks in one (w, u*)-run | inr2_n32 | 32 | 23 (FBRE 0, 12 θ-changes; 25 leaves, 23 first entries) | instances/fb32_inr2_final.pg (9381946b22ed…) |
+| fbclimb.py FIT=p | post-freeze FBRE in one run | returns_rt48 | 48 | **10: refutes (FBRE-F)** (§5b) | instances/fbref_n48.pg (414231a27ba3…) |
+| fbclimb.py FIT=v | max FBRE of one vertex in one run | inr2_n32 | 32 | 1 (total FBRE 25; stopped at ~4 min) | — (snapshot not kept) |
+| wclimb.py | w-changes at THR-touching (h)-transitions in one phase | theta_thc24 | 24 | 15 (θ-changes 16; 17 iterations) | instances/w24b_thc24_final.pg (6a211047db99…) |
+| xclimb.py | crossing transitions (minus OTHER-touching) in one phase | sc32 | 32 | 54 (phase of 72 transitions, 17 θ-changes, 0 w-changes) | instances/x32_sc32_final.pg (c871404fbabc…) |
+| xclimb.py | same | returns_rt48 | 48 | 70 (phase of 110 transitions, 5 θ-changes, 0 w-changes; 21 fallbacks in the run) | instances/x48_rt48_final.pg (cff46249005e…) |
+- Readings:
+  - All growth seen is linear in n: X ≈ 1.7n at n 32 and 1.46n at n 48; phase length ≈ 2.25n and 2.3n. No superlinear family is claimed.
+  - The w-climb's 15 at n 24 is consistent with Lemma F2: w-changes are F-value changes, ≤ |F| − 1 per F-interval.
+  - The non-flat-fallback climb is consistent with "fallbacks ≤ leaves ≤ entries + n".
+- An earlier wclimb.py run (out/w24_thc24_unthrottled_fitness.*) counted w-changes at UNTHROTTLED transitions and reached 16. Those
+  lie inside one Ξ = W run, so they are harmless by Lemma EQ, and the fitness was corrected.
