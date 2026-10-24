@@ -351,3 +351,7 @@ autonomously instead of waiting for an outside idea. Relayed verbatim to the Lea
 > We have so much still of our weekly usage cap, like we are not on track to make the most of it
 Desk reading: the owner wants the fleet to use more of the weekly allowance (more parallel work), not save it. D7 (stop on paid
 overage) unchanged. Relayed verbatim to the Lead, priority now.
+
+## 2026-10-24T12:58Z relayed: Lead 2026-10-24 12:58Z — D16 / L38 (trunk 6b428da): idling was a Lead error; "restart only on an outside idea" withdrawn;
+restarted 3 lanes (L-RED DTL attack, L-NEW N5 lead, L-LIT untested-approach scan). Sent before the owner's weekly-cap message (12:57Z),
+which awaits the Lead's reading.
