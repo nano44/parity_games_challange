@@ -108,4 +108,20 @@ READING:
 
 ## 5. Adversarial climb against (CL) (clclimb.py; fitness (#CL violations, #carries); 25 min each from zcl_fb2_n32, x32_waves48,
 fbref_cex_n32)
-Results are entered at the end of the box.
+Three climbs, 25 min each, 20:37-21:02Z. Fitness was (#CL violations, #carries = W-lowerings). Bests pinned in
+experiments/si/xing/instances/, each re-verified with reverify.sh (n5.py, Oink zlk OK, strategies verified).
+
+| best (seed) | n | sha1 | n5 it/fb | T | X | Z | carries (W-lowerings) | CL violations | carry levels |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ccl_fb2_n32 (zcl_fb2_n32) | 32 | 92f0a04b | 33/23 | 28 | 25 | 2 | 23 | 0 | 31, 31, 30, 28 ×5, 26 ×15 |
+| ccl_fbx_n32 (fbref_cex_n32) | 32 | f5867fa6 | 31/24 | 27 | 25 | 2 | 24 | 0 | 31, 31, 28, 26 ×21 |
+| ccl_w48_n48 (x32_waves48) | 48 | a7056dea | 46/33 | 41 | 35 | 2 | 33 | 0 | 46 ×8, 45 ×25 |
+
+- (CL) survived: 0 violations in 3 × ~25,000-56,000 mutation steps (the first fitness component stayed 0).
+- The secondary fitness pushed W-lowerings to 33 per phase at n 48. All of them sit in DRAINS (sign strings `--++------…`, Z = 2):
+  consecutive fallbacks, each evicting a few vertices, with no re-entry in between.
+- This confirms the redefinition of (C) (P-N5-Z fixes file §2). W-lowerings can be numerous (24 at n 32, 33 at n 48; both below n − 1 here,
+  and a drain has ≤ n − 1 transitions because R strictly shrinks in it). The quantity
+  LV′ needs, the reversals, stayed at 2.
+- READING: the climb found no way to raise reversal-carries at the expense of (CL). That is weak evidence (the fitness did not target
+  reversals), not a proof.
