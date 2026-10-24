@@ -1,0 +1,34 @@
+LR_edges: 2197
+LR_edges_optimiser: 1624
+LR_full_optimal: 1888
+LR_setopt_deleted u==x:True owner_x:1: 4
+LR_setopt_deleted_xney: 4
+TB_key_checks: 1277
+TB_key_nontrivial: 17
+TB_step2 x_on_cycle_only: 113
+TB_step2 x_on_play:False: 591
+TB_step2 x_on_play:True: 113
+U1_W_change_transitions: 6
+U1_kappa_w_change_transitions: 6
+U1_nontrivial: 1
+U1_pieces_checked: 5
+WC_intervals(notH1notH2): 21
+WC_intervals(notH2): 27
+fallbacks: 1
+intervals: 51
+pieces_EQc: 18
+pieces_P3: 6
+pieces_U1: 5
+pieces_U1_nontrivial: 1
+runs: 10
+transitions: 61
+U1_last_kappa_w_change_minus_R: -5
+U1_max_K: 0
+U1_max_Rch: 6
+U1_max_len: 6
+WC_cw_changes_per_stretch: 0
+WC_max: 1
+example LR_setopt_deleted_xney: b_cex2_best.pg#0@0 cyclenode=8 x=23 y=0 u=23
+example LR_setopt_deleted: b_cex2_best.pg#0@0 cyclenode=8 x=23 y=0 u=23 val[x]=(8, 444596224, 9) ext=(8, 444596224, 12)
+example U1_long: b_cex2_best.pg#0 piece [1,7] |R|=28 c_theta=27 c_w=8 Rch=6 f=0
+RESULT OK violations=0

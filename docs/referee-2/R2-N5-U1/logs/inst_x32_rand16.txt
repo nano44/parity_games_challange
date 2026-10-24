@@ -1,0 +1,20 @@
+LR_edges: 2237
+LR_edges_optimiser: 2114
+LR_full_optimal: 1889
+TB_key_checks: 1624
+TB_key_nontrivial: 2
+TB_step2 x_on_cycle_only: 12
+TB_step2 x_on_play:False: 1331
+TB_step2 x_on_play:True: 12
+WC_intervals(notH1notH2): 5
+WC_intervals(notH2): 7
+fallbacks: 10
+intervals: 126
+pieces_EQc: 116
+pieces_EQc_nontrivial: 10
+pieces_P3: 5
+runs: 10
+transitions: 126
+WC_cw_changes_per_stretch: 0
+WC_max: 0
+RESULT OK violations=0

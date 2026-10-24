@@ -1,0 +1,45 @@
+CASC_runs_EQc: 2
+CASC_runs_U1: 14
+CASC_switches_U1: 2
+LR_edges: 1994
+LR_edges_optimiser: 1966
+LR_full_optimal: 1755
+LR_setopt_deleted u==x:True owner_x:1: 15
+LR_setopt_deleted_xney: 5
+TB_even: 2
+TB_key_checks: 1446
+TB_key_nontrivial: 2
+TB_step2 x_on_cycle_only: 79
+TB_step2 x_on_play:False: 937
+TB_step2 x_on_play:True: 79
+U1_W_change_transitions: 3
+U1_kappa_w_change_transitions: 3
+U1_nontrivial: 14
+U1_pieces_checked: 51
+U1_pieces_longer_than_R (post-freeze part nonempty): 4
+WC_intervals(notH1notH2): 20
+WC_intervals(notH2): 57
+fallbacks: 20
+intervals: 80
+pieces_EQc: 31
+pieces_EQc_nontrivial: 2
+pieces_P3: 1
+pieces_U1: 51
+pieces_U1_nontrivial: 14
+runs: 10
+transitions: 125
+CASC_max(step-level+2): -3
+CASC_max_switches_one_vertex_in_run: 1
+CASC_run_len_EQc: 2
+CASC_run_len_U1: 3
+U1_last_kappa_w_change_minus_R: -2
+U1_max_K: 0
+U1_max_Rch: 4
+U1_max_len: 4
+U1_postfreeze_max_Xi_changes_one_vertex: 1
+WC_cw_changes_per_stretch: 0
+WC_max: 0
+example LR_setopt_deleted_xney: wf0_cex_n16.pg#0@2 cyclenode=9 x=10 y=13 u=10
+example LR_setopt_deleted: wf0_cex_n16.pg#0@2 cyclenode=9 x=10 y=13 u=10 val[x]=(9, 272, 3) ext=(9, 272, 5)
+example U1_long: wf0_cex_n16.pg#0 piece [13,17] |R|=8 c_theta=3 c_w=5 Rch=4 f=0
+RESULT OK violations=0
