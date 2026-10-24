@@ -478,3 +478,23 @@ On o-cyclic 𝒞^1O the longest phase is:
 - Statement for the stand-down note: on o-cyclic 𝒞^1O the only re-arming mechanism observed is "route improvement inside R",
   which is a one-player resource. A re-root via θ was never observed, and a re-root via the hub is θ-independent. No in-phase count
   above about 1.65n was found up to n 64.
+
+### 12e. Correction to §12d (ii) (2026-10-24 13:20Z, date -u; from L-NEW box 26 checkpoint 1, relayed by the Lead)
+- retcheck.py's class A ("θ at re-entry ▷ w at the leave") cannot occur while w is constant, because θ ⊴ w (Lemma S). Class B
+  was the fall-through, so "20 / 20 re-entries by route improvement" is WRONG.
+- With L-NEW's classifier (experiments/new/box25/reentry.py), THETA re-entries are common. These are re-entries where w is
+  unchanged, the route is the same, and only θ rose:
+
+  | instance | ROUTE re-entries | THETA re-entries |
+  | --- | --- | --- |
+  | fts_best16 | 2 | 2 |
+  | theta_tp32 | 0 | 4 |
+  | rt48 | 21 | 21 |
+  | ph64 | 30 | 23 |
+
+  The smallest partial release is thetare_min.pg (n 15).
+- §12d (ii) should therefore read: a re-entry along the same successor needs θ to rise past the leave threshold (THETA), or a
+  better route inside R (ROUTE). Both occur.
+- L-NEW proves (lane, unrefereed) that THETA re-entries per phase are at most n × (θ-changes in the phase). So the decisive
+  quantity is the number of θ-changes per phase (§11a: plateau at 16 for n 24-40).
+- §12d (i) and (iii) stand.
