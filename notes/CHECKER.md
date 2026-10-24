@@ -10,7 +10,12 @@
   - main report 5a395403: FAIL E-1..E-3;
   - Add. 1 aa909fd0: PASS at 865a33a (REFEREE §C7 a1de721 signs the Corollary);
   - Add. 2: R20 landed verbatim at trunk c33700c.
-- PARKED. Possible next: C30, the L-NEW box 28 §5c packet. Use the same five checks.
+- C30 (R21 draft at trunk 7c4d8bd, packet P-N5-X): FAIL on four items:
+  - E-1: the fixes file is not on trunk;
+  - E-2: b5_o11 is not on trunk;
+  - E-3: 42 named instances, not 45;
+  - E-4: a POST-LANDING NOTE is needed under R19.
+  Re-runs EXACT. Oink was built in this container at 8fbf0a7. Waiting for the revised draft.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 
 ## Conventions (from C27, kept)
