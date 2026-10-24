@@ -1006,3 +1006,6 @@
 - 19:19Z merged checker 679ea11 (C30 Add. 1 PASS; scope docs/checker/C30.md); R21 LANDED in RESULTS (lines 924-973, verbatim draft lines 3-end with checker SHAs; diff-checked); draft marked LANDED; GAPS G-N5-TIME update; NOW. L-COMP O split (l-comp 14baaee3, off trunk): R-only ≤ |R| in every interval, O growth = F-changes × intervals; (OB_R) holds on the chain. CHECKER Addendum 2 next.
 - 19:23Z pushed e72db8d (R21 landed; RESULTS sha1 a92694c2); CHECKER asked for C30 Addendum 2.
 - 19:26Z merged l-new 6325221 (box 29 final; scope OK; packet P-N5-X unchanged); Lead re-run u1_n32 (f9577ca9) n5 16/1, Oink OK verified. L-NEW GO box 30 (packet P-N5-NH; (OB_R) in U1; handover after). L-RED told: U1 and (Z) as post-box-32 targets. NOW.
+- 19:30Z merged checker bd2a709 (C30 Add. 2 PASS, C30 closed; scope docs/checker/C30.md, notes/CHECKER.md); GAPS wording per CHECKER optional N (τ-constant phase); NOW: CHECKER parked.
+- 19:38Z merged l-new 4d3b60d (P-N5-NH frozen, sha1 382c5143; O′ split ivsplit.py on b5_os = L-COMP's xo_split numbers exactly; scope OK). P-N5-NH pinned at this merge for both referees.
+- 19:41Z P-N5-NH sent to REFEREE (R-N5-NH) and REFEREE-2 (R2-N5-NH); NOW.
