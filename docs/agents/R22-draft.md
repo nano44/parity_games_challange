@@ -1,4 +1,4 @@
-# Draft RESULTS R22 (Lead, 2026-10-24 20:1xZ by date -u) (rev.: REFEREE-2 §C 8621a84 + stamp fix e7578fe; (U1-T) FALSE as stated) — awaits CHECKER C31; lands in "## Results" after R21, before "## Dead ends"
+# Draft RESULTS R22 (Lead, 2026-10-24 20:1xZ by date -u) (rev.: REFEREE-2 §C 8621a84 + stamp fix e7578fe; (U1-T) FALSE as stated; rev. 20:27Z: C31 E-1, N-1, N-2) — awaits CHECKER C31 Addendum 1; lands in "## Results" after R21, before "## Dead ends"
 
 ### R22 [refereed-only] N5 on one-Odd-choice games: crossing-free intervals with OTHER states (F1°), the clauses of (h) on them (TC), and route frames with the honest cycle node higher (P3′) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C31.md, checker PENDING)
 - Object (packet P-N5-NH, pinned trunk c7981ee, unchanged during review): docs/new/P-N5-NH-box30.md, sha1
@@ -15,8 +15,8 @@
       every state of I is OTHER; (iv) under ¬H1 ∧ ¬H2, a state of I is EQ iff θ = w, and every EQ → OTHER transition inside I changes w.
   (c) Lemma P3′: let J ⊆ I be a (θ, w)-piece (both frames in route form: honest by H1 or λ_Ξ(o) = o, W by H2 or λ_W(o) = o; θ, w
       constant) with c_θ = λ_Ξ(o) strictly more relevant than c_w = λ_W(o). Then the transitions of J with a Ξ-change at some vertex of
-      R number at most (n + 1)|R| (REFEREE: also ≤ |R| + (|R| − 2)(|R| − 1)). Step 1 (coarse freeze, R20 (d) CR run on the route game
-      𝓡*_w) uses only B1's single-switch inequality at κ-strict cases, proved directly by both referees; the packet's sentence "S4a's
+      R number at most (n + 1)|R| (both referees: also ≤ |R| + (|R| − 2)(|R| − 1)). Step 1 (coarse freeze, R20 (d) CR run on the route game
+      𝓡*_w) uses only the single-switch (F1) inequality at κ-strict B-cases, proved directly by both referees; the packet's sentence "S4a's
       optimum restricted to R is an optimum of 𝓡*_w's arena" is UNPROVED under ¬H2 with λ_W(o) = o, not refuted, and not needed
       (P3-1 = G-NH-1; for x on o's W-cycle a κ-strict edge would move x's W cycle node off o inside J, so that case is vacuous).
   (d) Corollary: under H2 on I, I has ≤ max(1, |F|) pieces (θ via R21 (i) / X-1, w via R19 (b) under H2, F1°).
@@ -32,7 +32,7 @@
   u1vertex max 7 per vertex, total 88; (OB_R) counted per vertex fails there (88 > 28), counted in transitions it holds (7 ≤ 28)). (iii) P3′'s data is thin: REFEREE 901 qualifying pieces, longest 6 transitions; REFEREE-2 1,017 nontrivial
   pieces from climbs, 1,871 S4a steps under ¬H2 with 0 mismatches. P3′ rests on the proof. (iv) DATA on O (not signed): L-COMP's chain
   of whole-OTHER phases reaches O = 77 at n 40 (≈ 2n; pattern 23, crossings + F-changes + R-only ≤ |R|; Lead re-run).
-- Data (DATA, not proof): REFEREE nh_probe.py: ~100 named instances + 8,784 random runs, 20,840 crossing-free intervals, 0 failures of
+- Data (DATA, not proof): REFEREE nh_probe.py: 78 named instances (by REFEREE's §5 globs) + 8,784 random runs, 20,840 crossing-free intervals, 0 failures of
   F1°, TC, the Corollary (11,213 intervals) or (SG) (6,942). REFEREE-2 nh_check.py (own code): 12,064 runs, 34,842 crossing-free
   intervals (184 with OTHER states), 39,250 TC state checks, 151,926 (R1) checks, 0 violations.
 - Signatures: REFEREE docs/referee/R-N5-NH.md (referee 78d61b1; §C 68e314c): P3′ step 1 SIGNED WITH GAP P3-1 (closed by vacuity), step 2
