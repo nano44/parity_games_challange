@@ -321,3 +321,9 @@ N8d-R2 DEAD: L-RED family HLg_k (n = 29/35/45/55), mean steps 630 / 32,201 / ~2.
 early-break probability falls exponentially with lane length (data + reading, not a proof). Lead re-ran smaller members; largest re-run
 in progress; CHECKER before DE30. Kept: unrefereed correctness proof for single-switch Koh-Loho SI. (c) lane without live candidate;
 Lead picks next direction (D15).
+
+## 2026-10-24T04:44Z relayed: Lead 2026-10-24 04:44Z information (L37)
+R18 [refereed-only] landed (CHECKER C27, trunk 022ce8f): N5 < (C_X + d)(B + 1) iterations on games with exactly one Odd choice vertex on
+no cycle; conditional on VJ00 Lemma 5.8 "1 => 2"; subclass already polynomial; G-N5-TIME open. DE34: N11 dead (20*2^N - 19 on
+switch-best). Process deviation (Lead error): R18 refereed by the two Fable sessions despite D15/L37; signatures stand (more capable
+model), deviation stated in R18; Fable referees parked for good; cost < $30. Running: L-RED 13 and L-NEW succ. 9 on the o-on-cycle case.
