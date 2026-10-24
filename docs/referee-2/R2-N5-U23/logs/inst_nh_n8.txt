@@ -1,0 +1,9 @@
+KW_U23: 16
+events_U23: 0
+formula_states_U23: 36
+runs: 10
+stretch_U23: 14
+stretch_U23_nontrivial: 10
+transitions: 27
+max_Rch_U23: 4
+RESULT OK violations=0

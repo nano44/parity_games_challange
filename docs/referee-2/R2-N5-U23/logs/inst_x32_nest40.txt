@@ -1,0 +1,20 @@
+KW_U2: 0
+KW_U23: 0
+KW_U3: 0
+events_U2: 0
+events_U23: 0
+events_U3: 0
+formula_states_U2: 19
+formula_states_U23: 7
+formula_states_U3: 7
+runs: 10
+stretch_U2: 10
+stretch_U23: 7
+stretch_U2_nontrivial: 2
+stretch_U3: 7
+transitions: 288
+wflat_runs_U2: 2
+max_Rch_U2: 0
+max_Rch_U23: 0
+max_Rch_U3: 0
+RESULT OK violations=0

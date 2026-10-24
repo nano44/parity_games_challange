@@ -28,6 +28,13 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   - Tools: docs/referee-2/R2-N5-FB/ (fb_check.py, a_check.py, fb_climb.py).
   - §C (22:55Z) vs REFEREE R-N5-FB (eb1ec3c): no disagreement. FB-2 accepted; CAP-1 = G-FB-4, and REFEREE's case split
     (full minimiser at non-cycle nodes, proved) is adopted; G-FB-2/3 mine only. PARKED.
+- P-N5-U23 (docs/new/P-N5-U23-box31.md sha1 ee3e5d1e…, trunk 7666336; Lead 23:37Z): report docs/referee-2/R2-N5-U23.md (23:47Z).
+  - CASC-U2 + Corollary SIGN; CASC-U3 kinds/events, (i), (iii), Corollary SIGN.
+  - (ii) SIGN WITH GAPS (G-U23-1: T = max(L_B − 1, 0); L_B undefined for empty kind B).
+  - Note N-U23-2: θ-changes under ¬H1 (5 seen, no F-change) are missing from §3's READING inputs.
+  - Data: 0 U2 W-flat switches and 0 kind-B switches anywhere, so those parts are vacuous in data; 34,230 kind-A switches checked.
+  - Tools: docs/referee-2/R2-N5-U23/.
+  - NEXT: §C after REFEREE's report.
 
 ## HANDOVER (successor 4, session_01DDRfmJkBTC5uu5q62T2Dme, Opus 5.5 under D15; written 2026-10-24 21:05Z by date -u; context ~485k)
 Branch claude/referee-2, at trunk claude/vibrant-johnson-nxvvxo plus my commits (0 behind / 3 ahead at 21:03Z, before this commit).
