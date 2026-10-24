@@ -1,0 +1,9 @@
+F1°_intervals_with_OTHER: 4
+TC_case_H1=False_H2=False: 2
+TC_case_H1=True_H2=False: 4
+TC_state_checks: 27
+intervals: 6
+intervals_multi: 4
+runs: 1
+transitions: 26
+RESULT OK violations=0
