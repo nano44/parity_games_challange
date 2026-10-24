@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Box 5 lower bounds: hill climb on o-cyclic C^1O games of fixed n, canonical N5 start, fitness = (max X per phase, its phase
 length) or (max O, ...) from box4.measure (same definitions as the tables; mutation = box21 climb_fix.mutate, accept >=).
-Usage: climb5.py X|O n seed secs OUTPREFIX   (writes OUTPREFIX.pg at every strict improvement; last line FINAL fit)"""
+Usage: climb5.py X|O n seed secs OUTPREFIX [SEED.pg]  (SEED.pg: start from that game, padded to n with Even self-loop vertices of
+priority 0; writes OUTPREFIX.pg at every strict improvement; last line FINAL fit)"""
 import os
 import random
 import sys
@@ -34,7 +35,11 @@ def fit(G, f):
 def main():
     f, n, seed, secs, outp = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), float(sys.argv[4]), sys.argv[5]
     rng = random.Random(seed)
-    while True:
+    if len(sys.argv) > 6:
+        g = pg.read(sys.argv[6]); k = n - g.n
+        G = [list(g.prio) + [0] * k, list(g.owner) + [0] * k, [list(x) for x in g.succ] + [[g.n + i] for i in range(k)]]
+        fg = fit(G, f); assert fg[0] >= 0, "seed game not in the class"
+    while len(sys.argv) <= 6:
         g = rand_c1o(rng, n, n, forced=0.0)
         if g is not None:
             G = [list(g.prio), list(g.owner), [list(x) for x in g.succ]]; fg = fit(G, f)
