@@ -385,3 +385,25 @@ strategies verified) and is one-Odd-choice.
   - No jump lies above rank(u*). That is PROVED: θ_k ◁ θ_{k+1} ⊴ w (R21 (a) XW) and Lemma U (ii) (L-SI succ. 1).
 - So the sub-u* jumps run like a counter over Odd's exits. The u*-route does not bound J_in by itself.
 - What remains is exactly what Corollary JD leaves open: jumps whose argmin was put back into D by a fallback release (REL).
+
+## 12. Jumps paid by releases (DATA; REL climbs, fitness = #in-scope non-tame jumps whose argmin was released at an earlier fallback)
+4 climbs × 30 min, 22:3xZ-23:03Z. Bests pinned in experiments/si/coarse/instances/rel_*. Each re-verified with reverify.sh (n5.py;
+zielonka (Oink zlk) OK; strategies verified) and one-Odd-choice.
+
+| best (seed) | n | sha1 | n5 it/fb | release-paid jumps |
+| --- | --- | --- | --- | --- |
+| rel_lev_l_sc (lev_l_sc) | 32 | d49ab614 | 19/1 | 12 |
+| rel_x31_cu32i (x31_cu32i) | 32 | 7dc35abe | 19/1 | 11 |
+| rel_zcl_rx_n32 (zcl_rx_n32) | 32 | 034731ca | 21/3 | 10 |
+
+The fourth climb (seed x31_cu32) stalled at 2.
+- Totals on the three: J_in = 33, all 33 release-paid; 76 releases into D from only 5 in-phase fallbacks; max |D| 23; max J per phase 12.
+- All lemma checks: 0 violations. That covers COARSE-SI/MONO, FB (i)-(iv), J1, OFF 1,027, CAP 272, D1-D3, NOREL-A (0 arena releases),
+  and L = M (5/5).
+- READING. One fallback can release a whole bundle of exits into D, and then Odd walks through them, one non-tame jump per exit.
+  - So per tame run: fallbacks ≤ n_E(2n − 1) (FB), and each releases ≤ |succ(o)| exits. That is consistent with J_in ≈ |succ(o)|·#fallbacks.
+  - What the lemmas do not exclude is the alternation "fallback releases a bundle → Odd walks it → fallback releases again → …".
+    FB's budget is per tame run, and every jump starts a new run.
+  - A polynomial bound needs a potential that this alternation spends. θ rises at every jump, but only θ ⊴ w is known, which leaves
+    an exponential range.
+- Growth: J per phase 12 at n 32 here, 17 at n 48 (§10). No superlinear growth seen. Scale climbs at n 48-64 are running (§13).
