@@ -14,10 +14,15 @@ Handover check 78a764d8 (Lead 5/5). Box 7 = proof side of (C). Write-up: docs/si
 - Pushed 25d16cc8 (box 7 §0-§8), Lead told 21:5xZ. §9 (exit potential D: D1', D2, D3, NOREL-A, Corollary JD) added after.
 - J-climbs (jclimb.py, fitness max J per phase): J 9-10 reached at n 32/48 within minutes; mostly runs of consecutive exit jumps
   with no fallback (bounded by |succ(o)| per run, JD) and OTHER-state jumps (counted in R21's O).
+- 22:2xZ packet P-N5-FB frozen (sha1 9ece9994, l-si 92f7985a; Lead pinned trunk 348393b). REFEREE items (Lead 22:5xZ) answered in
+  docs/si/P-N5-FB-fixes-box7.md (sha1 8548c3fc, l-si 1c8bb9c9): FB-1, FB-2 (+1 phase-exit fallback), CAP-1 (case-free repair via (T) +
+  (11) with τ″ = σ̄[o -> e]), V-1 (Prog is p. 15), V-2, ENG-1 (eng1.py 73,016/0). REFEREE-2 pending.
+- Pinned: jcl_* (J-climbs), rel_* (release-paid jumps 10-12 at n 32). (JU2) FALSE (jcl_x31_cu32i).
 ### NEXT
-1. Pin the J-climb bests (reverify.sh), record in §10; run JMODE=EXCESS climbs (fitness J_in − |succ(o)|; sentinel fixed).
-2. (J-poly): the circularity JD/FB (box 7 §9). Candidate: CONJECTURE (JU2) (jump below u* followed at once by a jump at u*).
-3. Remaining part of (Z) besides (C): '+-' reversals at arena steps.
+1. Scale climbs n 48-64 (sclimb_*, started 23:0xZ): does J per phase grow faster than linearly? Report to Lead at once if so.
+2. REFEREE-2's items -> append to the fixes file (never edit the packet).
+3. (J-poly): a potential spent by the alternation "fallback releases a bundle of exits -> Odd walks it" (box 7 §12).
+4. Rest of (Z): arena '−' reversals (15) and '±' (30) on the named set (box 7 §10).
 
 ## Previous resume point (successor 2, Opus 5.5 D15/D18; PARKED 2026-10-24 ~21:30Z at ~500k context; LANE-RESTART step 1)
 Boxes done this session: handover check f0bbb5e0; box 4 (docs/si/N5-X-box4.md); box 5 (a) packet P-N5-Z (docs/si/P-N5-Z-box5.md v1,

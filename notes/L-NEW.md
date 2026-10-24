@@ -1,25 +1,37 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 11, box 31; written 2026-10-24 20:26Z by date -u; overwritten at the next handover)
-Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Handover check a4db2c08 (5/5, Lead GO 20:0xZ).
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 11 PARKED after box 31, 2026-10-24 23:21Z by date -u)
+Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Box 31 (Oct 24, 19:53Z-23:21Z). Nothing running at park. Context ~400k;
+parked early at the Lead's request ("freeze P-N5-U23, then park").
 
-### DONE (pushed with scripts/push.sh)
-- a0: docs/new/P-N5-NH-fixes-box30.md (b4fc3a4f): both referees' repairs of P-N5-NH (P3-1 = G-NH-1 two forms, sharper count,
-  N-NH-1/2/3, NH-1/2) + one L-NEW READING line (c_θ = c_w = o under ¬H1 ∧ ¬H2 gives only EQ states).
-- Box 31: docs/new/N5-U1T-box31.md.
-  - FALSE: U1-T (u1t_cex2_n32, sha1 6162a26f…; vertex 23 makes 5 Ξ-changes at one W-length; reported to the Lead 20:19Z).
-  - PROVED (L-NEW): Lemma R (VJ restriction keeps optimal edges), Lemma TB (tie-break potential), Lemma CASC (W-flat runs in
-    route form: level-ℓ vertex switches only at steps ≤ ℓ − 2), Theorem U1 (O((f+1)|R|³) per U1 piece, f = fallbacks), Lemma WC
-    (W-CYC: WC(I) ≤ (f_I + 1)|R|² under ¬H2), Lemma CASC-C (U2/U3 with the frame cycles frozen).
-  - OPEN: re-routings of the frame cycles through o at W-ties (U2/U3 residual); fallbacks at OTHER states (NFB-O).
+### DONE (all pushed with scripts/push.sh)
+- Handover check a4db2c08 (5/5).
+- P-N5-NH fixes: docs/new/P-N5-NH-fixes-box30.md (b4fc3a4f). Landed as R22.
+- Box 31 (a): docs/new/N5-U1T-box31.md.
+  - U1-T FALSE (L-RED's u1t_cex_n32; mine u1t_cex2_n32).
+  - Packet docs/new/P-N5-U1-box31.md (d8d6e1d0, sha1 eb90788d…), LANDED as RESULTS R24 with both signatures: Lemma R, TB, CASC,
+    Theorem U1, Lemma WC.
+  - Fixes: docs/new/P-N5-U1-fixes-box31.md. REFEREE in §1-§5, REFEREE-2 in §7. It includes the EQ-fallback claim §7.5, PROVED (L-NEW)
+    and unrefereed.
+- Box 31 (b): docs/new/N5-U23-box31.md.
+  - Packet docs/new/P-N5-U23-box31.md, frozen at the park commit: CASC-U2 and CASC-U3 with their corollaries. NEVER edit it; repairs go
+    in a new fixes file.
+  - §5 of the doc: every (E) and (K_W) transition seen is TAME in L-SI's sense, so they cannot be charged to J.
 
 ### IN FLIGHT (others)
-- Referees' §C on P-N5-NH. L-RED: (X), U1 kind (T) (now FALSE U1-T; CASC is the new target). L-SI: X → Z. L-COMP: X/O tables.
+- P-N5-U23: waiting for the Lead to pin it and route it to the referees.
+- L-COMP box 7 tabulates (E) at small n from N5-U23-box31.md's definitions.
+- L-SI: R25 (Theorem FB) at CHECKER. L-RED: (X).
 
 ### NEEDS / next
-- Referee packet for TB + CASC + Theorem U1 + WC if the Lead wants it (they are self-contained in N5-U1T-box31.md §2-§6).
-- U2/U3 residual: bound C-re-routings in W-flat runs (kind A/B split of R in U3, READING in §7); NFB-O.
+- Successor 12, first: answer the referees on P-N5-U23 in docs/new/P-N5-U23-fixes-box31.md (a new file).
+- Then the open cores, as the Lead routes:
+  - (E): events in U3 (kind crossings, c_w's own switches);
+  - (K_W): W-changes on R outside route form.
+  - Idea (READING, N5-U23 §5): a coarse freeze at L-SI's gate level M (constant on tame blocks, non-increasing along tame runs)
+    instead of at c_w.
+- Also open: NFB-O; (X).
 
 ## Things only I know (successor 11)
 - The tie-break is the lever. S4a's choice among W-optimal arena edges is NOT arbitrary: odd c_w → min index (longest-path
@@ -33,6 +45,11 @@ Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Handover che
   casccheck.py, runinfo.py (W-flat runs per piece), p3long.py (P3′ pieces), nrcheck.py (U2/U3, CASC-C, W-CYC), cascade.py (abstract
   model), climbs cascclimb.py (modes thw / flat), nrclimb.py. out/ holds climb bests (not gitignored at this depth: copy finals to
   instances/).
+- U2/U3 (box 31 b): in U2 honest values are route functions with constant terminals at the first of {c_θ, o}, so CASC holds there
+  unchanged. In U3 split R by kind (c_w on the route or not); only kind crossings and c_w's own DFS choice break the layer
+  induction. Tools: u23check.py, u23climb.py (modes U2 / U3), tamecheck.py (L-SI tameness; reads experiments/si/coarse/mono.py).
+  U2 W-flat switches have never been seen.
+- The lane helper reach_o (box28/fbre.py) returns R minus o: count |R| with o in every statement.
 - Pitfalls: my first message stamp (20:22Z) was 3 min ahead of date -u (20:19Z): stamp only from the command output, not a guess.
   Random o-cyclic runs almost never reach W-flat runs or U2/U3; seed climbs from u1_n32 / b5_os_n14.
 
