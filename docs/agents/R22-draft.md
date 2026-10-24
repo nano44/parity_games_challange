@@ -1,4 +1,4 @@
-# Draft RESULTS R22 (Lead, 2026-10-24 20:1xZ by date -u) — awaits REFEREE-2 §C on R2-N5-NH, then CHECKER C31; lands in "## Results" after R21, before "## Dead ends"
+# Draft RESULTS R22 (Lead, 2026-10-24 20:1xZ by date -u) (rev.: REFEREE-2 §C 8621a84 + stamp fix e7578fe; (U1-T) FALSE as stated) — awaits CHECKER C31; lands in "## Results" after R21, before "## Dead ends"
 
 ### R22 [refereed-only] N5 on one-Odd-choice games: crossing-free intervals with OTHER states (F1°), the clauses of (h) on them (TC), and route frames with the honest cycle node higher (P3′) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C31.md, checker PENDING)
 - Object (packet P-N5-NH, pinned trunk c7981ee, unchanged during review): docs/new/P-N5-NH-box30.md, sha1
@@ -26,8 +26,10 @@
   raises Ξ on R by (SG), NH-2). With R21, N5 on o-cyclic 𝒞^1O is polynomial if X, ROI and WC are poly(n) per phase. P3′ bounds ROI on
   its pieces.
 - Honest limits: (i) SUBCLASS 𝒞^1O; a bound on N5 itself. (ii) Open: (X); ROI outside P3′'s case, i.e. U1 (route form, c_w higher), U2
-  (honest frame not in route form), U3 (W frame not in route form); W-CYC. CONJECTURES (OB), (OB_R), (NFB-O), (U1-T) (L-NEW, data only);
-  WF0 FALSE (wf0_cex_n16). (iii) P3′'s data is thin: REFEREE 901 qualifying pieces, longest 6 transitions; REFEREE-2 1,017 nontrivial
+  (honest frame not in route form), U3 (W frame not in route form); W-CYC. CONJECTURES (OB), (OB_R) (counted in transitions), (NFB-O) (L-NEW, data only);
+  WF0 FALSE (wf0_cex_n16); (U1-T) FALSE as stated (L-RED u1t_cex_n32, l-red 959184d9, sha1 63dfd785; one piece of 7 transitions,
+  |R| = 28, a vertex with 7 Ξ-changes at one W-length by propagation along its fixed σ-path; Lead re-run n5 12/1, Oink OK verified,
+  u1vertex max 7 per vertex, total 88; (OB_R) counted per vertex fails there (88 > 28), counted in transitions it holds (7 ≤ 28)). (iii) P3′'s data is thin: REFEREE 901 qualifying pieces, longest 6 transitions; REFEREE-2 1,017 nontrivial
   pieces from climbs, 1,871 S4a steps under ¬H2 with 0 mismatches. P3′ rests on the proof. (iv) DATA on O (not signed): L-COMP's chain
   of whole-OTHER phases reaches O = 77 at n 40 (≈ 2n; pattern 23, crossings + F-changes + R-only ≤ |R|; Lead re-run).
 - Data (DATA, not proof): REFEREE nh_probe.py: ~100 named instances + 8,784 random runs, 20,840 crossing-free intervals, 0 failures of
@@ -36,7 +38,9 @@
 - Signatures: REFEREE docs/referee/R-N5-NH.md (referee 78d61b1; §C 68e314c): P3′ step 1 SIGNED WITH GAP P3-1 (closed by vacuity), step 2
   and count SIGNED, Corollary SIGNED, TC SIGNED, F1° SIGNED, reduction checked (NH-1, NH-2); §C: no verdict differs, P3-1 = G-NH-1 (same
   argument, each a substitute), N-NH-2 accepted, R2's §1.3 W ⇔ Ξ remark should cite (SG). REFEREE-2 docs/referee-2/R2-N5-NH.md
-  (referee-2 48da84a; §C PENDING): P3′ step 1 SIGN WITH GAPS (G-NH-1, closed by a direct single-switch proof), steps 2-3 SIGN, Corollary
-  SIGN, TC SIGN, F1° SIGN, reduction correct as a READING (N-NH-1..3). Joint gap map: P3-1 = G-NH-1 (CLOSED); NH-1 = N-NH-3 (wording);
+  (referee-2 48da84a; §C 8621a84, stamp fix e7578fe): P3′ step 1 SIGN WITH GAPS (G-NH-1, closed by a direct single-switch proof), steps 2-3 SIGN, Corollary
+  SIGN, TC SIGN, F1° SIGN, reduction correct as a READING (N-NH-1..3); §C: no verdict differs, sharper count accepted, NH-2 accepted and its own §1.3
+  "W-change ⇔ Ξ-change on R" converse withdrawn (W ⇒ Ξ fails at a single vertex; the transition-level claim holds by (SG)), P3-1's
+  closure and its single-switch proof are the same proof. Joint gap map: P3-1 = G-NH-1 (CLOSED); NH-1 = N-NH-3 (wording);
   NH-2 ((SG) step); N-NH-1 (cite X-1 / R21 (i)); N-NH-2 (THR remark needs (h)).
 - TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
