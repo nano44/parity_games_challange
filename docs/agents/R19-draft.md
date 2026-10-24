@@ -1,6 +1,6 @@
-# Draft RESULTS R19 (Lead, 2026-10-24 15:15Z by date -u) (rev. 15:58Z: C28 Add. 1 E-7, N-8, N-9; rev. 15:40Z: C28 E-1..E-6, N-2..N-7; REFEREE-2 §A) — awaits CHECKER C28 Addendum 1; lands in "## Results" after R18, before "## Dead ends"
+# Draft RESULTS R19 (Lead, 2026-10-24 15:15Z by date -u) (rev. 15:58Z: C28 Add. 1 E-7, N-8, N-9; rev. 15:40Z: C28 E-1..E-6, N-2..N-7; REFEREE-2 §A) — LANDED in RESULTS Results 16:14Z (CHECKER C28 + Addenda 1-2 PASS, checker 8f2ee01; lines 3-end verbatim with the checker SHA filled)
 
-### R19 [refereed-only] N5 on one-Odd-choice games: gate/selection structure (Lemma G), monotone w (Wo), monotone routes (RM), re-entry (RE) and two-run decomposition between crossings (PIECE) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C28.md, checker PENDING)
+### R19 [refereed-only] N5 on one-Odd-choice games: gate/selection structure (Lemma G), monotone w (Wo), monotone routes (RM), re-entry (RE) and two-run decomposition between crossings (PIECE) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C28.md, checker b53136d + Addenda e5c4694, 8f2ee01)
 - Object (packet P-N5-RE, pinned trunk 52c7261, unchanged during review): docs/new/P-N5-RE-box26.md, sha1
   8dba4576950d4888b90d4c0cc86217b9b8fec745 (L-NEW successor 9, Opus 5.5). The repairs both referees require are written in the
   referees' reports and applied by the lane in docs/new/N5-xing-box27.md §9 (not refereed as text; the signed statements are below).

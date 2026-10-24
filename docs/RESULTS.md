@@ -833,6 +833,93 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   Gauntlet: partial step-4 lemma for N5 on a subclass. GAPS G-N5-TIME: o-acyclic 𝒞^1O closed conditional on (P) on landing; o-cyclic
   𝒞^1O and the general case open.
 
+### R19 [refereed-only] N5 on one-Odd-choice games: gate/selection structure (Lemma G), monotone w (Wo), monotone routes (RM), re-entry (RE) and two-run decomposition between crossings (PIECE) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C28.md, checker b53136d + Addenda e5c4694, 8f2ee01)
+- Object (packet P-N5-RE, pinned trunk 52c7261, unchanged during review): docs/new/P-N5-RE-box26.md, sha1
+  8dba4576950d4888b90d4c0cc86217b9b8fec745 (L-NEW successor 9, Opus 5.5). The repairs both referees require are written in the
+  referees' reports and applied by the lane in docs/new/N5-xing-box27.md §9 (not refereed as text; the signed statements are below).
+  N5 as in docs/new/N5-ssi-global.md (SPEC S1-S5; RESULTS R15). Setting: 𝒞^1O (exactly one Odd vertex o of out-degree d > 1),
+  o-acyclic or not; θ := Ξ(o) (Even's honest value at o, against Odd's best reply), w := W(o) (the value N5's selection trusts at o); R := the vertices whose
+  current play reaches o; (h) the packet's regularity hypothesis (P-N5-RE §1), assumed only where a claim says so.
+- Claims signed (both referees "(Opus 5.5, D15)", L37):
+  (a) Lemma G (a)-(c): off R, Ξ = W (no (h) needed, N-RE-1); under (h), on R, Ξ = π ⊕ θ and W = π ⊕ w with π the route to o, and
+      the route order is the same whether o is valued at θ or at w; hence an edge inside R is in Iσ iff it is route-improving iff it is
+      W-improving.
+  (b) Lemma Wo: under (h) at consecutive states k, k+1 with τ_{k+1} = τ_k, τ(o) ∉ R, w = o ⊕ Ξ(τ(o)), and w_{k+1} ⊵ w_k.
+  (c) Lemma RM: in a stretch with τ and θ constant and (h), routes of vertices staying in R never decrease (route order (c, A_π, |π|)
+      without the terminal, RM-1).
+  (d) Lemma RE, WITHOUT the packet's hypothesis (NC): inside one joint λ-phase, with (h) at L and at E+1 and τ constant on [L, E+1]
+      (the packet's hypothesis; not needed: REFEREE §C3, REFEREE-2 §A), if x
+      leaves R at L and next re-enters at E, then route_{E+1}(x) ▷ route_L(x) or
+      θ_{E+1} ▷ θ_L. Proof as repaired by both referees: key step (SG) — at any N5 transition a switched Even vertex y with λ_L(y) ≠ y
+      gains strictly (on all games, not only 𝒞^1O) (Ξ_{L+1}(z) ⊵ Ξ_L(z) ▷ Ξ_L(σ_L y), then one strict (V2)); the packet's step-2 caveat and step-3 sentence are
+      false as written (RE-1 = G-RE-1, RE-2 = G-RE-2) and are replaced. Gap G26-1 is CLOSED; the packet's §6 "flat leave" is excluded by the proof;
+      nc_fail_n12.pg (REFEREE-2) exhibits the (NC) configuration with a strict gain.
+  (e) Corollary RE: with (h) at every leave and re-entry state (REFEREE §4.4), re-entries per joint λ-phase ≤ n·#θ-changes +
+      #(route-improving re-entries). REFEREE-2 raised N-RE-3 (τ constant per interval) and withdrew it in R2-N5-RE §A (Lemma RE's
+      proof never uses τ constant; 25 re-entries with a τ-change inside the interval, all strict); REFEREE §C3 reads the same.
+  (f) Lemma PIECE: in one joint λ-phase, in a stretch with τ, w, R constant, (h), no fallback (θ constant not needed, N-RE-4), N5 runs two independent R17
+      arena runs, the route game on R with o's frozen continuation as terminal and the o-free game on F; with the contraction 𝓡* (o a
+      self-loop with c's priority; REFEREE) or Lemma P re-run with base case at o (REFEREE-2) each piece has ≤ |R| − 1 resp. |F| − 1
+      value-changing transitions (P-1 = G-RE-3). The packet's Consequence (a count over a whole stretch) is a READING, not signed
+      (REFEREE §5.4); it needs "inside one joint λ-phase" (P-2).
+- Honest limits: (i) SUBCLASS (𝒞^1O) that is polynomial by other means; a bound on N5 itself, not on parity games. (ii) These lemmas
+  do NOT bound N5 on o-cyclic 𝒞^1O: the open items are (CYC') θ- and w-changes per joint λ-phase and (NH) non-(h) transitions
+  (L-NEW box 27 reduction, READING; its Lemmas C, FBL, FBF, CR, XA are in a second packet, P-N5-XA, under review). (iii) Data caveat:
+  the lane's random re-entry samples are vacuous (737 leaves, 0 re-entries; REFEREE); RE's support is the proof plus the referees' own
+  checks. (iv) Code link G-N1 (inherited): n5.py agrees with the referees' definitions on all tested runs, DATA.
+- Data (DATA, not proof): REFEREE (re_probe.py): 17,473 switches of non-cycle-node vertices, 0 non-strict (494 (NC) cases); 512 leaves
+  (RE step 3), 0 violations; PIECE split bounds 480 transitions, 0 violations; negative control (cycle-node switches): 57/446 non-strict.
+  REFEREE-2 (own checker from the definitions): 31,827 runs, 60,225 transitions, 0 violations; 1,321 re-entries (the 400 with θ unchanged
+  are strict; 921 have a θ-change); (SG) 25,283 switches; all 3,356 non-strict leaves at non-(h) states. L-RED 13: RM/RE attacks on rt48/ph64 climbs, 0
+  violations.
+- Signatures: REFEREE docs/referee/R-N5-RE.md (referee 4457a9a; §C 87beaa6, a3d1f70): G, Wo, RM SIGNED; RE SIGNED WITH GAPS (closed),
+  (NC) not needed; Corollary RE SIGNED WITH GAP N-RE-3 (τ-free reading §C3); PIECE SIGNED WITH GAPS (P-1 closed, P-2 wording). REFEREE-2
+  docs/referee-2/R2-N5-RE.md (referee-2 3ee7b73, c66da44; §C dd5aaa2; §A 9d3f1fb): G, Wo, RM SIGN (RM-1 noted); RE SIGN without (NC); Corollary RE
+  SIGN WITH GAPS (N-RE-3), revised to SIGN in §A; PIECE SIGN WITH GAPS (P-1 closed, P-2 open as wording). Both §C: no disagreement; gap map RE-1 = G-RE-1,
+  RE-2 = G-RE-2, P-1 = G-RE-3, P-2 = N-RE-4 (second half); (SG) = REFEREE §4.2. REFEREE-2's wording notes N-RE-1, -2, -5
+  accepted by REFEREE (§C).
+- TARGET.md diff: not a claim of TARGET.md section 1. Gauntlet: partial step-4 lemmas for N5 on a subclass. GAPS G-N5-TIME: open.
+
+### R20 [refereed-only] N5 on one-Odd-choice games, throttled stretches with a top difference (u* ≠ none): coarse monotonicity (C), fallbacks only evict (FBL), no entry after a fallback (FBF), coarse R17 (CR), strict re-entry (XA), and O(n³) value changes per stretch (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C29.md, checker 5a39540 + Addendum aa909fd)
+- Object (packet P-N5-XA, pinned trunk b70aa59, unchanged during review): docs/new/P-N5-XA-box27.md, sha1
+  832d0da2b45bcc0850929b0f614bb1d9b19ed7b3 (L-NEW successor 9, Opus 5.5). The referees' repairs are collected by the lane in
+  docs/new/P-N5-XA-fixes-box28.md (sha1 a7022bf5…, L-NEW successor 10; a record of the reports, not itself refereed text).
+  Setting as in R19 (𝒞^1O, θ, w, R, (h)); a throttled stretch S: τ, joint λ-phase, θ, w constant, θ ◁ w, (h) at every state of S;
+  u* := the most relevant vertex of P(θ) Δ P(w); COARSE(v) := (cycle node, path vertices more relevant than u*).
+- Claims signed (both referees "(Opus 5.5, D15)", L37):
+  (a) Lemma C: in S, COARSE(Ξ) = COARSE(W) at every vertex, and it is non-decreasing along S, fallbacks included.
+  (b) Lemma FBL, FOR u* ≠ none only, in the strong form: at a throttled S4c fallback state there is no F→R and no R→R gate edge, so
+      the fallback switches only leaves (R→F edges), apart from flat cycle-node switches. For u* = none FBL is UNPROVED (a switched
+      F→R edge whose target's route leaves R in the same fallback is not excluded; no instance known; G-XA-1 (b), found by REFEREE-2,
+      accepted by REFEREE).
+  (c) Lemma FBF, for every u*: after a throttled fallback at L, for the rest of S no vertex enters R and no vertex in R changes its
+      route (base: c ∉ R_t on S, REFEREE-2; inductive step: best-key choice of S4c, REFEREE).
+  (d) Lemma CR: R17's Lemma P / Theorem PH transcribed to the coarse order (B1/B2 in full; the omitted case "P(π) = ∅, c′ even,
+      shorter" (XA-3) and Odd vertices in Case A (XA-4) added); coarse values change only in the first n − 1 transitions of S. CR does
+      not depend on FBL: the fallback case is vacuous (N-XA-1).
+  (e) Theorem XA, for u* ≠ none: a re-entry into R after an arena (non-fallback) leave inside S is a strict coarse increase; ≤ n − 1 such re-entries
+      per vertex (N-XA-2), ≤ n(n − 1) per stretch.
+  (f) Corollary, for u* ≠ none with (h) at every state of S: pieces (PIECE, R19 (f)) pass through value-flat fallbacks (σ_{k+1} is
+      another optimum of the arena; REFEREE §C5 = REFEREE-2 §C.5/§C2.2), hence S has O(n³) crossings, non-flat fallbacks and
+      value-changing transitions, and O(n⁵) transitions in all (value-preserving = Ξ and W unchanged; such runs ≤ 4n(n−1), R15 (d), N-XA-3).
+- Honest limits: (i) SUBCLASS 𝒞^1O, polynomial by other means; a bound on N5 itself. (ii) This bounds ONE throttled stretch with
+  u* ≠ none. Open for G-N5-TIME on 𝒞^1O: the number of (θ, w)-stretches per joint λ-phase ((CYC'): θ- and w-changes; climbs reach 43
+  θ-changes in one phase at n 32 (sc32, above n); whether growth is linear is OPEN), non-(h) transitions ((NH)), stretches with u* = none, and FBL for u* = none. (iii)
+  "Value-changing" in (f): the lane's fixes file §6 defines it as "Ξ or W changes" (a crossing can change Ξ with W flat); that
+  definition is the lane's, not checked by a referee; inside a piece the two readings coincide. (iv) No data for (e): 0 re-entries
+  inside throttled stretches in every sample (lane, both referees); the claim rests on the proof.
+- Data (DATA, not proof): REFEREE xa_probe.py: 25 named instances + 26,483 random runs, 44 throttled stretches (32 with u* ≠ none, 12 with u* = none), 41 throttled fallbacks
+  (all u* ≠ none), 151 post-fallback states, 0 failures of C, coarse monotonicity, CR, FBL, FBF; random samples nearly vacuous (~1
+  throttled stretch per 1,000 runs). REFEREE-2 xa_check.py (own code): 16,672 runs, 707 throttled stretches (longest 56), 576 fallbacks
+  in S, 921 switched edges (all leaves), 0 violations; piece_flatfb.py: 1,052 pieces, 64 with a flat fallback, 0 violations (weak: 10
+  value-changing steps in those 64).
+- Signatures: REFEREE docs/referee/R-N5-XA.md (referee f39972d; §C 1123baf; §C7 a1de721): C SIGNED; FBL SIGNED for u* ≠ none, unproved for
+  u* = none; FBF SIGNED WITH GAPS (closed); CR SIGNED; XA SIGNED; Corollary SIGNED in §C7 (the form of R2 §C2.3 / fixes §5-§6; value-preserving = Ξ and W unchanged). REFEREE-2
+  docs/referee-2/R2-N5-XA.md (referee-2 9d3f1fb; §C 4df15e6, stamp fix a8c7351; §C2 38af0df): §1, C, FBF, CR, XA SIGN; FBL SIGN WITH GAPS (u* = none
+  unproved); Corollary SIGNED in §C2 for u* ≠ none via §C5. Joint gap map: XA-1 = G-XA-1 (a), (b) REFEREE-2 only (accepted); XA-2 =
+  G-XA-2 (closed); XA-3, XA-4 wording (accepted by REFEREE-2); XA-5 CLOSED (REFEREE §C5 + §C7, REFEREE-2 §C2.3: two signatures on the same form); N-XA-1..3 accepted.
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).

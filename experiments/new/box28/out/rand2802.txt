@@ -1,0 +1,4 @@
+runs 3493; phases by #non-(h) transitions {0: 8643, 1: 398, 2: 58, 3: 4, 5: 1}; failing-clause counts over endpoint states {'12': 968, '-': 79, '23': 9, '123': 4, '3': 2}
+phases by #Ξ-changing non-(h) transitions {0: 8749, 1: 314, 2: 37, 3: 3, 5: 1}
+max Ξ-changing non-(h) transitions in one phase: 5 (n 7, phase 0..5)
+max non-(h) transitions in one phase: 5 (n 7, phase 0..5)
