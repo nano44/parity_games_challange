@@ -297,3 +297,22 @@ replayed, R2-N5-1P definitions, 83 + 76 pure transitions, 1,882 Prop X games, 1,
 Final verdicts (Fable 5.1), unchanged: (A) Prop X SIGN WITH GAPS (G-1OA-1, G-1OA-2 closed; N-1); Cor. X1 SIGN; (B) SIGN WITH GAPS conditional
 on (P) for one-player games (G-1OA-3, G-1OA-5 closed; G-1OA-4 = (P) conditional; N-2, N-3); Lemma R SIGN; Lemma S SIGN WITH GAPS (G-1OA-6;
 S1, S2 accepted). No step wrong. Joint open list: (P) (conditional, one-player form; discharge is the Lead's call) and wording items only.
+
+## C2. Signed object revised to d78e54f (Lead 03:57Z); comparison with REFEREE's §0 and B7 (referee bb96f45, trunk 98f16c8; written 04:02Z by date -u)
+Lead ruling read after §C: both referees have checked both texts, so the signed object for the RESULTS entry is the d78e54f text (sha1
+d3550267…). My signature on d78e54f is §1-§6 as re-checked in §7; REFEREE's is its report with §0. Comparison of the version maps:
+- REFEREE §0: B1, B2, B3, B4, B6 CLOSED by the new text; A1, A2, S1, S2 unchanged; new B7. Mine (§7): G-1OA-3 and G-1OA-5 closed by the
+  new text; G-1OA-1, -2, -6, N-1, N-2, N-3 unchanged; new N-4, N-5. Mapping: B2 = G-1OA-3 and B4 = G-1OA-5 (both closed the same way); B1, B3,
+  B6 were REFEREE's numbered items whose content my §2 carried without ids (closed in the new text, agreed); REFEREE's remark that the
+  Lemma 1 parenthetical "(Any global S4c fallback would have switched X's improving edges …)" presumes Iσ|X ≠ ∅ is the same observation as
+  my §7 Step 2 note (the other branch covers Iσ|X = ∅).
+- B7 = N-4 exactly (d78e54f Lemma 1 (b), B1 "x on c's cycle": the omitted improvement case "P(π) = ∅, c even, |π| + 1 < ℓ(x)"; same
+  contradiction with (★); = R17's G2 / G-1P-1 inherited). Same item, same status (wording, closed).
+- Only mine: N-5 (d78e54f Lemma 3's length formula "|π_v| + ℓ" should be "|π_v| + 1 + ℓ", the vertex o being on the play; harmless, equal for
+  both plays). Only REFEREE's: none beyond B1/B3/B6 as numbering.
+- Data: REFEREE's probe on block_bk20 / block_bk32 (one block of 27 / 49, L1/L2/L3 at all 76 pure transitions, BLK, 0 violations) and mine
+  (§7, §C: the same 27 / 49, the same 76 pure states, 0 violations) agree, independently.
+Final verdicts (Fable 5.1) for the d78e54f text, the signed object: (A) Prop X SIGN WITH GAPS (G-1OA-1, G-1OA-2 closed; N-1); Cor. X1 SIGN;
+(B) SIGN WITH GAPS conditional on (P) for one-player games, no step wrong; remaining items wording only: N-2 (Odd's S4b optimum is (11)
+itself), N-4 = B7 (B1 third case), N-5 (Lemma 3 length); G-1OA-3, G-1OA-5 closed by the text itself; Lemma R SIGN; Lemma S SIGN WITH GAPS
+(G-1OA-6; S1, S2). (P): one-player form only, as in §C. No disagreement with REFEREE on any item at either pin.
