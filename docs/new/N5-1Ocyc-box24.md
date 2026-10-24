@@ -76,3 +76,22 @@ Open statement for a successor or for L-RED's θ-change families:
 - (CYC) is not enough on its own. In o-cyclic games, the analogue of P-N5-1OA's Lemma 3 (θ = w ⇒ Ξ = W everywhere) also needs a
   proof, because o's continuation may re-enter Y. With both, Prop X and R17 would give the 𝒞^1O bound by the same block count
   (READING).
+
+## 5. Box-24 end data (2026-10-24 04:22Z by date -u). New section; the frozen packet N5-1Oacyc-box24.md is not touched.
+- Referee aid for P-N5-1OA (Lead 03:21Z suggestion). climbPure.py maximises pure transitions on o-acyclic 𝒞^1O and checks
+  L1 / L2 / L3 at every improvement; 45 min each.
+
+  | n | pure transitions (one block) | instance | sha1 | improvements with L1/L2/L3 failures |
+  | --- | --- | --- | --- | --- |
+  | 14 | 18 | box22/instances/pure_14.pg | 41d22650… | 0 |
+  | 22 | 33 | box22/instances/pure_22.pg | f7ba3897… | 0 |
+
+  Both instances are Oink zlk OK with strategies verified.
+- o-cyclic cycclimb.py (longest pure run inside one joint λ-phase − (n − 1)), final, 1,500 s each:
+  - n 8: −1; n 10: 0; n 12: −2; n 14: −5.
+  - So no o-cyclic instance with n ≤ 14 beats R17's per-phase bound. fts_best16 (n 16) remains the smallest known.
+- L-RED R58 §10 (via the Lead 03:38Z): the ring reading of fts_best16.
+  - o's exits lie on one σ-path back to o, and σ̄(o) walks along it.
+  - θ-change climbs stay below n (13 at n 16, 16 at n 24).
+  - A super-linear θ-count would need nested rings; none is built.
+- REFEREE-2 (via the Lead 03:51Z): Lemma 1 holds on all of 𝒞^1O, and the o-cyclic break is exactly Lemma 2. This agrees with §1-§2.
