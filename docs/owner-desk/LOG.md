@@ -337,3 +337,6 @@ Fleet: no working lanes; backstop hourly; no overage; Lead cost ~$503. Restart n
 ## 2026-10-24T12:23Z owner (progress question)
 > Give me a status update
 Answered from trunk 8f039f1e (RESULTS R1-R18, DE1-DE34, NOW.md, N5-STANDDOWN.md). Relayed verbatim to the Lead.
+
+## 2026-10-24T12:35Z relayed: Lead 2026-10-24 12:36Z — NOW.md refreshed (trunk 921e961); partial spend reading 12:30Z: Lead $506, OWNER-DESK $159,
+CHECKER $39, L-NEW 8 $32, REFEREE (Fable) $31, L-RED 13 $24, REFEREE-2 (Fable) $22, L-NEW 9 $11; no overage; last full total ~$2,050 (10-18).
