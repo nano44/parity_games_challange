@@ -314,3 +314,39 @@ Corollary X1, (CH-1O) on o-acyclic games.
   outside Corollary X1, as the corollary predicts for long runs.
 - Scope: Proposition X uses R17 as signed (N5 on games where Odd has out-degree 1 everywhere). The locality argument in step 1 is
   mine and unrefereed.
+
+## 10. Box 27: 𝒞^1O climbs (DATA; GO 2026-10-24 01:52Z, date -u). Every best is checked: Oink zlk OK, strategies verified
+Target (Lead): a 𝒞^1O family with super-linearly many canonical N5 iterations inside ONE joint λ-phase.
+Two routes:
+- (a) o on a cycle: θ = Ξ(o) changes often (Corollary X1 requires the cycle).
+- (b) o-acyclic: a long pure-Y block, i.e. a stretch with σ|X and τ fixed (L-NEW box 22 §6-§7, static problem (STAT)).
+
+### 10a. θ-changes inside one λ-phase (thetaclimb.py; canonical start; 3,000 s per seed)
+| seed | n | θ-changes in one phase (total) | iterations | longest λ-phase | instance (sha1) |
+| --- | --- | --- | --- | --- | --- |
+| fts_best16 (start: 8 in one phase) | 16 | 13 (15) | 20 | 18 | instances/theta_thf16.pg (90ed13cf9e2c…) |
+| oneodd_c24 (start: θ-changes 5) | 24 | 16 (19) | 29 | 18 | instances/theta_thc24.pg (12a303c9a778…) |
+| random, n 20 / 28 (stopped at ~8 min) | 20 / 28 | 8 / 6 | 15 / 21 | — | not kept |
+
+- θ-changes per phase stay below n.
+- Mechanism seen in fts_best16, READING:
+  - o's exits sit on one σ-path that returns to o (a "ring"), and σ̄(o) walks along it as the path improves.
+  - Each lap needs the ring's entry value to improve.
+  - A super-linear count would need nested rings, with each outer improvement re-arming an inner lap more than once. Not built.
+
+### 10b. Pure-Y blocks on o-acyclic 𝒞^1O (blockclimb.py; o's exits are 3 self-loop sinks = X; canonical start)
+Tool: blockcheck.py recomputes X, o-acyclicity and the blocks by L-NEW's definition.
+
+| |Y| (incl. o) | n | pure-Y block | longest stretch inside block ∩ one λ-phase | λ-phases in the block | instance (sha1) |
+| --- | --- | --- | --- | --- | --- |
+| 21 | 24 | 27 | 10 | 11 | instances/block_bk20.pg (98dc1d8bced1…) |
+| 33 | 36 | 49 | 22 | 28 | instances/block_bk32.pg (439bff4eb16e…) |
+
+- FINDING (DATA): L-NEW's data bound "every pure-Y block ≤ |Y|" (575 random games; climbY best = |Y|) is FALSE: 27 > 21 and
+  49 > 33.
+  - Both runs: no Odd move, no fallback, τ fixed, X fixed. The whole run is ONE pure-Y block.
+- But each block crosses many λ-phases. Inside one phase the stretch is 10 / 22, below |Y|.
+- READING: (STAT) blocks can exceed |Y| only through λ-phase changes, i.e. cycle-node changes inside Y, at most 2n(n−1)+1 of them.
+  So the per-(block ∩ phase) quantity is the one to bound, or to break.
+- A follow-up climb with fitness "longest stretch inside block ∩ one λ-phase" (blockclimb.py --phase) runs from both instances
+  to ~04:13Z; results in §10c.

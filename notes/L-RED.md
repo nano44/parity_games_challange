@@ -6,6 +6,13 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 Status: box 26 (GO 23:06Z; END ~01:45Z 2026-10-24): N5 NOT killed. docs/red/R58-n5-width.md: Theorem W (PROVED given VJ00 L5.8 premise (P)),
 O4 sharpened to O5 (K1-K4), Conjecture BRIBE FALSE (instance). Boxes 24-25 below.
 
+## Box 27 (GO 01:52Z 2026-10-24, to ~04:55Z): 𝒞^1O family with super-linear iterations inside one λ-phase
+- Box 26 extension, 01:47Z offer: R58 §9 Proposition X (PROVED, uses R17), pushed at f93e5175. The part that cannot reach o runs
+  one-player N5. Corollary X1: (CH-1O) holds when o is on no cycle, so a kill needs o on a cycle.
+- fts_best16 reading: o = 5's exits {2, 4, 9, 14, 15} sit on ONE σ-path 2→13→3→4→1→15→14→8→12→6→5 that returns to o (a ring).
+  σ̄(o) walks along the ring 14→15→4→2 as the path improves (backward propagation); two laps in one phase.
+- Tools: thetaclimb.py (fitness = θ-changes inside one λ-phase; --from seed), cdagseed.py (CDAG_k + o seeds; short as built).
+
 ## DONE box 26 (R58; 2026-10-23 23:06-23:20Z, date -u)
 - §1: jump-ahead switches (N5 switches SSI would not make) mostly use SSI counter edges: sym_h16 14/17, DLM1 n8 38/38.
   N5 is slower than SSI on the climbed games (55 vs 29).
