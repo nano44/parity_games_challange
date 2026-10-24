@@ -1,0 +1,28 @@
+Ga_checks: 159880
+Gb_checks: 22140
+Gc_checks: 89480
+PIECE_gateF: 4743
+PIECE_gateR: 268
+PIECE_opt_checks: 1298
+PIECE_stretches: 622
+RM_checks: 2434
+Wo_checks: 3487
+Wo_drop_nonh(control): 1
+fallbacks: 93
+h_states: 9721
+leave_class ----: 339
+leave_class --ii: 253
+leaves_checked: 592
+leaves_control: 12073
+leaves_control_no_gain: 737
+leaves_control_no_gain h=False inphase=False: 56
+leaves_control_no_gain h=False inphase=True: 681
+runs: 8000
+states: 21781
+switched_in_R_checks: 522
+transitions: 13781
+PIECE_max_(vc-bound+100): 97
+PIECE_max_len: 2
+PIECE_max_vc: 2
+example control_no_gain: seed13#178 L=1 x=0 h=False inphase=True
+RESULT OK violations=0

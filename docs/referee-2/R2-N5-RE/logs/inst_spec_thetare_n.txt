@@ -1,0 +1,20 @@
+Ga_checks: 57
+Gb_checks: 20
+Gc_checks: 92
+RE_reentries: 2
+RE_theta_changed: 2
+RE_theta_changed_route_not_better: 1
+RM_checks: 2
+Wo_checks: 6
+fallbacks: 1
+h_states: 7
+leave_class ----: 2
+leaves_checked: 2
+leaves_control: 9
+runs: 1
+spec_steps_checked: 6
+states: 8
+switched_in_R_checks: 2
+transitions: 7
+example theta_re: thetare_n.pg#0 RE x=4 L=3 E+1=6
+RESULT OK violations=0

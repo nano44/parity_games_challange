@@ -1,0 +1,7 @@
+Ga_checks: 1090
+fallbacks: 31
+leaves_control: 30
+runs: 30
+states: 160
+transitions: 130
+RESULT OK violations=0

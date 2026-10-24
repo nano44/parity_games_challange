@@ -1,0 +1,7 @@
+SG_checks: 5181
+SG_checks_arena: 5178
+SG_checks_fallback: 3
+SG_checks_same_lambda: 1531
+control_own_cycle_node_flat: 232
+control_own_cycle_node_switches: 1226
+RESULT OK violations=0

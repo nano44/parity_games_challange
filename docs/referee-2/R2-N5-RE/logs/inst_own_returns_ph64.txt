@@ -1,0 +1,26 @@
+Ga_checks: 63870
+Gb_checks: 27004
+Gc_checks: 1056970
+PIECE_gateF: 26557
+PIECE_gateR: 2529
+PIECE_opt_checks: 1148
+PIECE_stretches: 166
+RE_reentries: 490
+RE_theta_changed: 490
+RE_theta_changed_route_not_better: 174
+RM_checks: 23763
+Wo_checks: 1327
+fallbacks: 135
+h_states: 1372
+leave_class ----: 767
+leaves_checked: 767
+leaves_control: 390
+runs: 30
+states: 1453
+switched_in_R_checks: 597
+transitions: 1423
+PIECE_max_(vc-bound+100): 47
+PIECE_max_len: 9
+PIECE_max_vc: 9
+example theta_re: returns_ph64.pg#0 RE x=1 L=44 E+1=60
+RESULT OK violations=0

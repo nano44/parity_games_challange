@@ -1,0 +1,27 @@
+step 201: fitness 3 RE_theta_equal=0 NC=0 leaves=3 piece=0
+step 206: fitness 4 RE_theta_equal=0 NC=0 leaves=4 piece=0
+step 224: fitness 6 RE_theta_equal=0 NC=0 leaves=6 piece=0
+step 226: fitness 8 RE_theta_equal=0 NC=0 leaves=8 piece=0
+step 230: fitness 10 RE_theta_equal=0 NC=0 leaves=10 piece=0
+step 231: fitness 11 RE_theta_equal=0 NC=0 leaves=11 piece=0
+step 232: fitness 14 RE_theta_equal=0 NC=0 leaves=14 piece=0
+step 290: fitness 15 RE_theta_equal=0 NC=0 leaves=15 piece=0
+step 346: fitness 16 RE_theta_equal=0 NC=0 leaves=16 piece=0
+step 353: fitness 21 RE_theta_equal=0 NC=0 leaves=21 piece=0
+step 397: fitness 28 RE_theta_equal=0 NC=0 leaves=28 piece=0
+step 430: fitness 35 RE_theta_equal=0 NC=0 leaves=35 piece=0
+step 455: fitness 37 RE_theta_equal=0 NC=0 leaves=37 piece=0
+step 464: fitness 38 RE_theta_equal=0 NC=0 leaves=38 piece=0
+step 517: fitness 40 RE_theta_equal=0 NC=0 leaves=40 piece=0
+step 694: fitness 42 RE_theta_equal=0 NC=0 leaves=40 piece=2
+step 1284: fitness 80 RE_theta_equal=1 NC=0 leaves=25 piece=0
+step 1298: fitness 139 RE_theta_equal=2 NC=0 leaves=29 piece=0
+step 1329: fitness 142 RE_theta_equal=2 NC=0 leaves=32 piece=0
+step 1342: fitness 237 RE_theta_equal=4 NC=0 leaves=17 piece=0
+step 1346: fitness 349 RE_theta_equal=6 NC=0 leaves=19 piece=0
+step 1361: fitness 678 RE_theta_equal=12 NC=0 leaves=18 piece=0
+step 1378: fitness 900 RE_theta_equal=16 NC=0 leaves=20 piece=0
+step 1416: fitness 903 RE_theta_equal=16 NC=0 leaves=23 piece=0
+FINAL 903 {'RE_reentries': 16, 'RE_theta_equal': 16, 'RE_theta_changed': 0, 'NC_FAILS(honest)': 0, 'leaves_checked': 23, 'PIECE_stretches': 0} PIECE_max_vc 0
+checked over the whole climb: 7505 runs, 17000 transitions, 1074 theta-equal re-entries, 0 NC-failing leaves
+RESULT OK violations=0
