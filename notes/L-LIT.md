@@ -2,9 +2,10 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-24 13:5xZ: PARKED after T28 docs/lit/T28-n5-techniques.md (D18): 9 techniques ranked for N5 (CYC)/(TRUST); rank 1 =
-strictly-increasing path algebras / junk-route flushing (Daggitt-Griffin ICNP 2018 Thm 1, Lemma 13); rank 2 = Post-Ye 1208.5083.
-Before: T25-T27. Trunk merged with merge commits. Next: Lead.
+2026-10-24 ~14:2xZ: PARKED after T29 docs/lit/T29-routing-algebra-N5.md: DG ICNP 2018 translated to N5 (A1 single cycle node).
+Selection algebra = lex group Z^2 longest path: distributive (R17 V2), consistent, not increasing (I1/I2) but increasing after
+potential reweighting (Lemma B); DG Lemma 12/13 fail at o (sustained junk); gap = state-dependent gate filter -> CONJECTURE (H-E).
+T28 rank 1 downgraded (note added to T28). Next: Lead.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -254,6 +255,8 @@ Before: T25-T27. Trunk merged with merge commits. Next: Lead.
 | arXiv 0912.2462 (AGG) sha256 72159bf0…; 1204.1086 (Pettie) sha256 3762a763… | abstract, Thm 1.4 p.4; Thm 1.2 p.5 | 2026-10-24 | T28 |
 | arXiv 1909.03210 (EPRY) sha256 f03c9ea0…; 2010.02618 (FPS) sha256 732602f8…; 2202.05913 (Chen-Li) sha256 3dc3148e… | Thm 3.2 p.8, Thm 4.1 p.13, §5; Thm 15 p.16; Thm 1 p.2 | 2026-10-24 | T28 |
 | NOT opened (T28) | Szabó-Welzl FOCS 2001; Topkis 1978; Milgrom-Shannon 1994; Carstensen 1983; Gusfield 1980; Ye 2011 original | 2026-10-24 | T28 |
+| github.com/MatthewDaggitt/agda-routing @ 241d45ae (git clone, read only) | Algebra.agda (sha256 cf2ffbf6…) l.100-115, 129-150, 171-184; Algebra/Core.agda l.55-65; Synchronous/PathVector/Convergence/Step6_Proof.agda (sha256 2ea6bad3…) l.43, l.112 | 2026-10-24 | T29 |
+| Daggitt-Griffin ICNP 2018, full read | Def. 1-2 p.2-3, semiring Θ(n) p.2, Lemma 4 p.7, Def. 4-5, Lemma 7, 10 p.9, Lemma 11-12, Def. 6 p.10, Lemma 13-14, Thm 1 p.11 | 2026-10-24 | T29 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
