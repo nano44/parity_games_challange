@@ -31,6 +31,11 @@ RS-00-48 (pdf sha256 485a12de…, as in RESULTS R15/R17); R57 = docs/red/R57-n5-
   selection. They disagree only on edges ENTERING the reach set R of o, through one monotone scalar θ = Ξ(o).
   - The remaining statements are (SEG-1O) and (CH-1O) (§3.6), and both fail to follow from R17 at the same "trust-mode
     deadlock".
+- Frozen runs split at changes of σ̄ (§3.7, DATA). Both factors can exceed linear:
+  - fts_g29 (n 29): 66 steps in one phase, from 13 σ̄ changes with segments ≤ 10;
+  - fts_best24 (n 24, canonical, τ frozen): 33 value-changing steps in ONE σ̄-segment, above n − 1.
+  - So (FO*) is K9's decomposition with τ removed, and neither of its factors is bounded.
+  - With R58's Theorem W (checked here, conditional on (P)), a long frozen run must also be wide.
 - Consequence for the obstruction (READING, §3.3): R57's requirement (R-a), counters in BOTH strategies, is not necessary for a
   kill. A single Even counter can live in Even's gate, whose best-replier σ̄ IS fresh every iteration, while τ = τ* never moves.
   So "(R-a) ∧ (R-b) incompatible", even if proved, would not bound N5. The open core is (FO*) (§5).
@@ -221,6 +226,8 @@ Corollary.
   (R15 (a)). An edge into R opens once that minimum is high enough.
 DATA (lemmaG.py):
 - fts_best16: 28 states; 80 withheld edges, all of type (d1); 30 extra edges, all of type (d2).
+- oneodd_c24 (n 24): 22 states satisfying (h); 82 withheld, all (d1); 2 extra, all (d2).
+- R follows forced Odd vertices (out-degree 1). That was fixed in lemmaG.py before these counts; the random games have none.
 - 2,000 random 𝒞^1O games (n 5..14, runs from (σ_0, τ*)): 2,246 states satisfying (h); 15 withheld, all (d1); 5 extra, all (d2).
 
 ### 3.6 𝒞^1O: what is left, and where the one-player induction stops (READING with DATA)
@@ -282,8 +289,19 @@ Where the R17 induction stops inside a stretch. Two different one-player inducti
     - fts_ph16: [3, 14, 2, 1, 2], with 4 σ̄ changes;
     - fts_best16: [1, 1, 1, 2, 11, 4, 1, 2, 2, 3], with 9 changes;
     - fts_g29: max 10, with 13 changes.
-    Every segment is ≤ n − 1.
-  - So the frozen runs are long because σ̄ changes often, not because segments are long. This is K9's decomposition
+    On these three every segment is ≤ n − 1, and the length comes from σ̄ changing often.
+  - BUT segments can be long too. experiments/new/box21/instances/fts_best24.pg (n = 24, sha1
+    af9ca6c63f91928718f121acc7722dd337780cfc; climb_fix.py bestph):
+    - canonical start; Odd has two choice vertices (11, 12); S3's τ_0 is honest-optimal, so τ never moves;
+    - 43 iterations (3 fallbacks), all in one joint λ-phase, all value-changing;
+    - σ̄ changes ONCE. The first σ̄-segment has 33 value-changing Even moves (32 by phases.py, which counts the iteration
+      that changes σ̄ in the next segment), above n − 1 = 23;
+    - n5.py 43 iterations; Oink zlk OK, strategies verified.
+    This is box 10's (SEG-LEN) failure (vc_g25: 26 > 24, with τ moving), now with τ frozen at the optimum and from the canonical
+    start. Inside a σ̄-segment the gate is G_c's improving set (c = σ̄), the selection is against τ ≠ c, and the K1 stalls of
+    box 10 §5 delay it.
+  - So in frozen runs both factors can exceed linear: the number of σ̄ changes (fts_g29: 13) and the segment length
+    (fts_best24: 33 > 23). This is K9's decomposition
     (N5-oneplayer-box7.md: iterations ≲ poly × (best-reply changes)) in its cleanest setting: τ is gone and σ̄ is the only
     opponent.
   - The open question for (FO*) is therefore the one box 11 left open (N5-brchanges-box11.md): how often can σ̄ change along
@@ -305,6 +323,12 @@ Where the R17 induction stops inside a stretch. Two different one-player inducti
     are V_{σ_k,τ_k}, L, U and the gap U − L. L and U are monotone but count value changes, and there can be exponentially many.
     V_{σ_k,τ_k} is not monotone: Even's and Odd's steps pull it in opposite directions in the same iteration.
   - So no route from O1-O4 to a bound on C_τ is in sight. And by §3 such a bound would not suffice anyway without (FO).
+- Update after R58 (L-RED successor 13; checked in §3.7). Given (P), Theorem W settles the BOUNDED-WIDTH part of the
+  incompatibility: R-a + R-b at width O(1) gives poly(n) iterations, whatever the mechanism (R58 §5).
+  - What remains on the ALT side is wide moves, where the mover has ω(1) honest improving edges and N5's optimum refuses most
+    of them. That is L-RED's (STRETCH) + (K3).
+  - On the FO side the same width condition holds (Corollary W2). The frozen-τ* runs above are not narrow (§3.7), and their
+    excess comes from changes of σ̄.
 
 ## 5. OPEN statements, sharpest first
 - (FO*) For every game and every honest-optimal τ*, the F_τ* run (= N5 from (σ, τ*)) has poly(n) iterations.
@@ -318,6 +342,11 @@ Where the R17 induction stops inside a stretch. Two different one-player inducti
   Both are DATA-consistent and unproved.
 - (FO) The same for arbitrary frozen τ (needed for Theorem B with blocks).
 - (ALT) C_τ ≤ poly(n) in N5 runs.
+- (BR*) Along an F_τ* run, Odd's best reply σ̄ changes poly(n) times. DATA: 4 / 9 / 13 changes at n 16 / 16 / 29.
+  - (BR*) alone does not give (FO*). The other factor, the σ̄-segment length, is not ≤ n − 1 (fts_best24: 33 > 23, frozen,
+    canonical start).
+  - A segment bound poly(n) is OPEN (SEG-LEN*).
+  - (BR*) ∧ (SEG-LEN*) ⇒ (FO*).
 - (WF) Fallback steps of F_τ are W-flat (DATA 52/52).
 
 ## 6. Data and files

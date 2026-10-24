@@ -12,8 +12,11 @@ def reach(g, s, o):
         x, seen = v, set()
         while x not in seen and x != o:
             seen.add(x)
-            if g.owner[x] == 1: break
-            x = s[x]
+            if g.owner[x] == 1:
+                if len(g.succ[x]) > 1: break          # (cannot happen: o is the only Odd choice vertex)
+                x = g.succ[x][0]                      # forced Odd vertex: follow its only edge
+            else:
+                x = s[x]
         if x == o: R.add(v)
     return R
 def check(g, states, t, out):
