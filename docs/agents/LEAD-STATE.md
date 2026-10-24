@@ -944,3 +944,9 @@
 - 12:03Z (date -u) Hourly sweep (12:02Z trigger): overage false; no working lanes; no exceptions.
 - 12:30Z (date -u) NOW.md refreshed after OWNER-DESK flagged it stale (header 10-22, M4 row, spend 10-18): header rewritten (fleet idle, N5 stand-down, R18/DE34, DTL dormant), M4 row status appended, partial spend reading added.
 - 12:51Z (date -u) D16 recorded (owner via OWNER-DESK b3bb957): "Then keep working as I told you to". Lead reading L38: the idle stand-down rule is withdrawn; restart L-RED box 30 (DTL gap), L-NEW box 26 (N5 lead), L-LIT T27 (untested approaches). Lead error acknowledged: idling the fleet at 08:27Z conflicted with D13/D14.
+- 12:58Z (date -u) D17 recorded; L39: 5 working lanes (+ L-COMP box 3, + new L-SI successor), gate roles above 5 justified.
+- 13:05Z (date -u) L-COMP succ. 2 box 3 GO (exhaustive N5); L-SI successor created session_018gVYmVeemURjv647XRxNJ1 (Opus, handover check first). Working: L-RED, L-NEW, L-LIT, L-COMP, L-SI (5 of 5).
+- 13:11Z (date -u) D18 recorded; L40: all lanes on N5; L-RED redirected from DTL box 30 to N5 adversary; L-SI to OR/MDP lens; L-LIT T28. T27 merged-later (C1 queued). L-NEW box 26 checkpoint 1: named lead FALSE (THETA re-entries common; L-RED's retcheck mislabels); THETA ≤ n per θ-change (lane PROVED).
+- 13:18Z (date -u) Hourly sweep (13:02Z trigger) folded in: overage false; 5 lanes working (L-NEW, L-RED, L-COMP, L-LIT, L-SI new). NOW roster updated for D18/L40.
+- 13:24Z (date -u) L-SI successor handover 5/5 (9646935 merged); GO box 1 (OR lens on N5).
+- 13:30Z (date -u) L-COMP box 3 merged (l-comp 4c44c00). thetaA_n17 (1271767c…, 𝒞^1O, RANDOM start): Lead re-run n5.py 5 it / 0 fb, Oink OK verified; retcheck: 2 class-A re-entries (θ at re-entry ▷ w at leave) in phase 2..5. Lead note: class A needs w to rise (θ ⊴ w); the rise comes from σ at o's τ-successor 8 → likely L-NEW's WRISE class. Relayed to L-NEW and L-RED.

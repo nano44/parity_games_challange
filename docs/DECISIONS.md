@@ -314,3 +314,40 @@ Lead reading L38 (2026-10-24 12:50Z by date -u):
 (3) No spend limit was stated; D1/D7 (stop on paid overage and tell the owner) holds. Boxes stay about 3 h; the Lead re-runs every kill
     and claim as before.
 (4) Pacing: when a line is exhausted, the Lead routes the next self-generated direction from the queue in NOW instead of idling.
+
+## D17 (2026-10-24 ~12:57Z, owner via OWNER-DESK, right after D16)
+> We have so much still of our weekly usage cap, like we are not on track to make the most of it
+
+Lead reading L39 (2026-10-24 12:58Z by date -u):
+(1) Spend signal: the owner wants the weekly allowance used for parallel work. Saving money is not a reason to idle or to cut a line short
+    (this answers N5-STANDDOWN's "more boxes would mostly spend money"). D1/D7 (stop on paid overage) and the 5-working-lane cap stand.
+(2) Five working lanes from now: L-RED 13 (DTL gap, box 30), L-NEW 9 (N5 lead, box 26), L-LIT (T27 untested approaches), L-COMP succ. 2
+    (box 3: exhaustive small-game searches that the climbs cannot do), and a new L-SI successor on Opus (D15) (box: a new SI rule that
+    avoids N5's trust-mode deadlock without collapsing to switch-all, DE34's lesson).
+(3) Above 5 (D1 "unless you justify more to me"): CHECKER and the two referees are gate roles. When a kill or a claim needs them, they run
+    in addition to the five lanes, so that landing never waits and no lane is parked to make room. This is reported to the owner with this
+    justification; the expected peak is 7-8 sessions.
+(4) Each finished box is followed by the next self-generated box from the queue in NOW (L38 (4)).
+
+## D18 (2026-10-24 ~13:04Z, owner via OWNER-DESK, after D16/D17)
+> Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+Lead reading L40 (2026-10-24 13:11Z by date -u):
+(1) Priority: N5's running time (G-N5-TIME), proof side. This narrows D13/L38 for now: the DTL attack (L-RED box 30) pauses; T27's
+    C1 (Ohlmann's symmetric recursive algorithm) goes to the queue, not to a lane.
+(2) All five lanes work on N5:
+    a. L-NEW 9 (designer): (TRUST) = θ-THETA re-entries (≤ n per θ-change, lane-proved) + ROUTE re-entries (one-player count) + θ-changes
+       per phase (CYC).
+    b. L-RED 13 (adversary for N5, D1 "designer and falsifier differ"): attack each candidate lemma L-NEW states; target super-polynomial
+       θ-changes inside one joint λ-phase.
+    c. L-COMP succ. 2: exhaustive small-n tables (max θ-changes per phase, ROUTE/THETA counts, in-phase max) to generate exact conjectures.
+    d. L-SI successor (cross-disciplinary, operations research): N5 through the discounted-game / MDP policy-iteration lens (Ye 2011,
+       Hansen-Miltersen-Zwick 2013, Scherrer's analyses): look for a potential or a combinatorial discount that bounds N5's phases.
+    e. L-LIT, T28 (cross-disciplinary scan): proof techniques from other areas mapped onto N5's objects (gate, trust, θ, λ-phases):
+       unique sink orientations / AUSO combinatorics, Tarski fixed points on lattices, max-plus / tropical algebra, potential reduction,
+       matroid or polytope path-length bounds; each with the exact N5 object it would bound.
+(3) Assumptions: lanes may make reasonable assumptions; each is stated in one line and labelled ASSUMPTION; nothing resting on one is
+    called PROVED.
+(4) Labels, strictly: PROVED (with who checked it: lane / referees / Lean), CONJECTURE (with the data behind it), OPEN. This extends the
+    existing [refereed-only] / DATA / READING scheme; reports to the owner use exactly these three words.
+(5) D17/L39 stand: five working lanes; CHECKER and referees run on top when a claim needs them.
