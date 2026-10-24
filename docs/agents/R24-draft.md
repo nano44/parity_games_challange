@@ -1,6 +1,6 @@
-# Draft RESULTS R24 (Lead, 2026-10-24 22:1xZ by date -u) (rev. 22:19Z: C33 E-1, N-1) — awaits CHECKER C33 Addendum 1; lands in "## Results" after R23, before "## Dead ends"
+# Draft RESULTS R24 (Lead, 2026-10-24 22:1xZ by date -u) (rev. 22:19Z: C33 E-1, N-1) — LANDED in RESULTS Results 22:28Z (CHECKER C33 0102170 + Addendum 1 59a9799 PASS), after R23
 
-### R24 [refereed-only] N5 on one-Odd-choice games: S4a keeps every fully optimal edge (R), its tie-break is a monotone potential (TB), W-flat runs are short (CASC), U1 pieces have polynomially many R-changing transitions given their fallbacks (Theorem U1), and w-changes under ¬H2 (WC) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C33.md, checker PENDING)
+### R24 [refereed-only] N5 on one-Odd-choice games: S4a keeps every fully optimal edge (R), its tie-break is a monotone potential (TB), W-flat runs are short (CASC), U1 pieces have polynomially many R-changing transitions given their fallbacks (Theorem U1), and w-changes under ¬H2 (WC) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C33.md, checker 0102170 + Addendum 59a9799)
 - Object (packet P-N5-U1, pinned trunk eee0d8a, unchanged during review): docs/new/P-N5-U1-box31.md, sha1
   eb90788d2949050f316ed983fa56c34d7a1dd9c7 (L-NEW successor 11, Opus 5.5). The referees' repairs are collected by the lane in
   docs/new/P-N5-U1-fixes-box31.md (l-new 61a36b9, on trunk; sha1 88675ab782df24a63426756674579e7336c1508c; a record, not itself
