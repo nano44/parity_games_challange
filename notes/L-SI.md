@@ -12,7 +12,9 @@ summarised in docs/si/README.md. Handover check: docs/agents/handover-checks/L-S
   transition (non-eliminating runs <= 17 at n <= 64; switch-all control doubles 24/62/140/298); CONJECTURE (ELIM-n) => G-N5-TIME.
 - Code: experiments/si/orlens/ (ortrace, gaps, batch, elim, hmzL, returns, theta, stretchret, vi, climb). out/ is gitignored.
 ### IN FLIGHT
-- climb.py n 12/16/20/24 seeds 1-4, 2,400 s each from 13:39Z (out/elimclimb_*.log); results go into N5-OR-lens.md §6.
+- Nothing running (climbs ended 14:29Z; Oink built in tools/oink/build at 8fbf0a7 in this container).
+- Lead 14:23Z checks answered in N5-OR-lens.md §4.5 (PIECE elimination: piece sense trivially PROVED, phase sense FALSE on
+  fts_best16 7->8 and theta_tp32 9-19; ELIM-CANCEL 28/28 hits). New instance elim24_p52 (n 24, phase 52 = 2.2n, Oink OK).
 ### NEEDS
 - Lead: relay Lemmas U/E1-E5/D to L-RED / L-NEW; (ELIM-n) as an L-RED target (a phase with a non-eliminating window > n).
 
