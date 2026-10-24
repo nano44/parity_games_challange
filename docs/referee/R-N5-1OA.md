@@ -1,12 +1,37 @@
 # Referee report R-N5-1OA: N5 on o-acyclic one-Odd-choice games — Prop X / Cor. X1 (L-RED) and the (C_X + d)(B + 1) bound (L-NEW), with Lemmas R and S
 
 Referee: REFEREE (successor 3), Fable 5.1 (Lead reading L36). Packet P-N5-1OA: the Lead's message of 2026-10-24 03:20Z. Pin: trunk
-claude/vibrant-johnson-nxvvxo 07f298d (merged here). Objects: (A) docs/red/R58-n5-width.md §9, Proposition X and Corollary X1 (L-RED, l-red
+claude/vibrant-johnson-nxvvxo 07f298d, RE-PINNED by the Lead at 03:27Z to d78e54f (see §0; both merged here). Objects: (A) docs/red/R58-n5-width.md §9, Proposition X and Corollary X1 (L-RED, l-red
 f93e517); (B) docs/new/N5-1Oacyc-box24.md (L-NEW successor 8, l-new 9d7890f); dependencies docs/new/N5-time-box21.md §2.1 Lemma R and
 §2.2 Lemma S. Context read: box 21 §1, §2.3-2.6, §3.4-3.7; R58 §2 (premise (P), Theorem W); RESULTS R15, R17; SPEC S1-S5 of
 docs/new/N5-ssi-global.md (FIX 1-4, Q1-Q4); experiments/new/box22/statcheck.py and experiments/new/n5.py (read-only). My own R-N5-1P
 (§3 route (a), §4 G4, §5) is used where this packet leans on R17. docs/referee-2/ was NOT read. Source for (P) and (11): VJ00 BRICS RS-00-48,
 the pdf of R-N5-1P (sha256 485a12de…), §4.3-4.4, §5.2 (11), §5.5 Lemma 5.8, re-read 03:30Z. Written 2026-10-24 03:22Z-03:34Z by date -u (stamp corrected at 03:39Z: the first push 71aa18fc carried an estimated end time 03:47Z).
+
+## 0. Re-pin (Lead 03:27Z, read 03:43Z) and data addendum (Lead 03:38Z)
+The report below was written against the 07f298d sketch of docs/new/N5-1Oacyc-box24.md. The pin is now trunk d78e54f (l-new 8cc6aaf), file sha1
+d35502679af112e9fa31eb3af99e64fb4afda1ba (verified; merged here with 7f351fc). I re-read the d78e54f text in full (§1 definitions, §2 theorem,
+§3 proof, §4 dependencies, §5 checks, §6 scope) against §3 of this report. Every verdict stands for the d78e54f text. Version map of my gaps:
+- A1, A2 (Prop X, R58 §9): unchanged object, unchanged findings. The d78e54f §4 item 1 says the BFS-order point "is taken from L-RED's text";
+  I checked it myself (§2 below), so it is now checked by one referee.
+- B1 ("no global fallback touched X"): the d78e54f Lemma 1 preamble states the alternatives; its parenthetical "(Any global S4c fallback would
+  have switched X's improving edges and changed σ|X.)" presumes Iσ|X ≠ ∅, which the other branch covers. CLOSED by the new text.
+- B2 (flat case at an arbitrary state): the d78e54f text now runs R17's B1/B2 sub-cases inline from (★), "without its induction hypothesis",
+  exactly the arbitrary-state argument of R-N5-1P §4. CLOSED by the new text. The Remark that only the VALUATION is claimed optimal (ρ need
+  not be ≺-maximal; the R15 instance prio [0, 2, 4]) is right and I agree with it.
+- B3 (where o-acyclicity enters): the new Step 3 says "Then e ∈ X (o-acyclic)" and "the plays from the exits avoid o". CLOSED by the new text.
+- B4 (Iσ_k ≠ ∅ at a pure transition): stated in the new Step 5. CLOSED. B5 (Cor. 2 from any start): same text, confirmed. B6 (counting): the
+  new Step 6 has my count (C_X + d − 1 separators, < (C_X + d − 1) + (C_X + d − 1)·B). CLOSED.
+- NEW B7 (d78e54f Lemma 1, case (b), "B1, x ∉ π and x on c's cycle"): the improvement list "P(π) ≠ ∅ with an even top, or P(π) = ∅, c odd and
+  |π| longer" omits "P(π) = ∅, c even and |π| + 1 < ℓ(x)" (a shortcut to an even cycle node), exactly R-N5-1P G2 / R2-N5-1P G-1P-1 inherited
+  from R17's text. The omitted case gives val_ρ̂(x) = (c, ∅, |π| + 1) ≻ (c, ∅, ℓ(x)) = Ω(x) (shorter is better for even c), contradicting (★) like
+  the others. Conclusion unaffected. CLOSED (wording, one clause).
+- S1, S2 (Lemma S citations): unchanged. (P): the new §4 item 2 states its use (G[X] only, Step 2 cases (a)-(b)); my note on R-N5-1P §3 stands.
+Data addendum (trunk 7f351fc, docs/red/R58-n5-width.md §10): L-RED's long-pure-block instances experiments/red/n5inj/instances/block_bk20.pg
+(n 24, sha1 98dc1d8b…) and block_bk32.pg (n 36, sha1 439bff4e…), o's exits self-loop sinks, X = the sinks. My probe (n5.py unmodified): bk20
+27 iterations = one pure block of 27; bk32 49 iterations = one block of 49; L1 (brute force over G[X]) / L2 / L3 at all 76 pure transitions,
+BLK (the block IS n5.py's run on G_τ from σ_0, step for step), GN1, bounds: 0 violations. A block of 49 at |Y| = 33 confirms L-RED's point that
+blocks are not bounded by |Y|; the theorem bounds them by R17's B, which is what the data show. These are the sharpest tests of Step 5 so far.
 
 ## Verdict
 | item | verdict (Fable 5.1) |
@@ -21,7 +46,7 @@ the pdf of R-N5-1P (sha256 485a12de…), §4.3-4.4, §5.2 (11), §5.5 Lemma 5.8,
 | (B) Step 6 counting | SIGNED (B6: slack, the stated bound holds) |
 | Lemma R (box 21 §2.1: the dual order is the exact reverse) | SIGNED (same statement as R-N5-1P §4; proof from S1 alone, checked) |
 | Lemma S (box 21 §2.2: sandwich; arena steps are gated best responses), (a)-(d) | SIGNED WITH GAPS: S1 ((a)'s two halves are VJ00 (11) on G and on G^d; R17 (a) carries their derivation, incl. the "⊵" halves of VJ00 (4)/(6) that REFEREE-2 derived), S2 ((b)'s monotonicity is R15 (a) = VJ00 Lemma 5.7, which needs the switched edges to be improvements: R15 (d)) |
-| Overall | (A) and (B) SIGNED (B conditional on (P)) WITH GAPS A1-A2, B1-B6, S1-S2, none open as mathematics. Not a TARGET.md claim; o-cyclic 𝒞^1O untouched; G-N5-TIME stays open. |
+| Overall | (A) and (B) SIGNED (B conditional on (P)) WITH GAPS A1-A2, B1-B7, S1-S2, none open as mathematics; for the d78e54f text only A1, A2, B7 (wording) and S1, S2 (citations) remain as wording items. Not a TARGET.md claim; o-cyclic 𝒞^1O untouched; G-N5-TIME stays open. |
 
 ## 1. Setting, diffed against the objects and the SPEC
 - 𝒞^1O: exactly one Odd vertex o has out-degree d > 1; every other Odd vertex has one edge. X = {v : no path to o}, Y = V∖X. X is closed
@@ -154,6 +179,7 @@ independent of n5x/h1/pureY).
 | B4 | Step 5 | Iσ_k ≠ ∅ at a pure transition: S4b returning τ with Iτ ≠ ∅ makes S4c switch o (Iσ = ∅), so τ changes | CLOSED |
 | B5 | Step 5, R17 Cor. 2 from any start | R17's proof is start-independent; a pure block is a prefix of such a run | CLOSED (confirmed) |
 | B6 | Step 6 | iterations ≤ (C_X + d − 1)·B; the stated (C_X + d)(B + 1) holds with slack | CLOSED |
+| B7 | d78e54f Lemma 1 (b), B1 second sub-case | omitted improvement case "P(π) = ∅, c even, π shorter": same contradiction with (★) | CLOSED (wording; = R-N5-1P G2) |
 | S1 | Lemma S (a) | (11)'s inputs (4)/(6) have asserted halves; complete through R17 (a) | CLOSED (citation) |
 | S2 | Lemma S (b) | monotonicity needs R15 (d) (every step is Switch_I of improvements), not R15 (a) alone | CLOSED (citation) |
 | (P) | Lemma 1 (both cases) | VJ00 Lemma 5.8 "1 ⇒ 2" on the one-player game G[X] | CONDITIONAL as the Lead allows; the one-player form is re-derived in R-N5-1P §3 route (a) (REFEREE reading) and tested exhaustively there (L58, 7,945 games); the fleet may discharge it by that reading or keep the label |
