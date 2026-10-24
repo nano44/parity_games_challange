@@ -46,8 +46,8 @@ Sources opened, with sha256 prefixes of the PDFs:
   - (ELIM-n) is not proved. I have no route to it. It is a reformulation, but one with a structural test that separates N5 from
     switch-all.
 - **For the brief's (CYC) target, a narrower CONJECTURE (CYC-ELIM) (§4.3), the Post-Ye Lemma 3.6 shape.**
-  - Every non-eliminating window contains ≤ c θ-changes. The data give c = 3.
-  - PROVED: (CYC-ELIM) implies θ-changes ≤ (c+1)(m+1) per phase, i.e. (CYC).
+  - Every non-eliminating window contains ≤ d θ-changes (d = o's out-degree). The data give at most 3.
+  - PROVED: (CYC-ELIM) implies θ-changes ≤ (d+1)(m+1) per phase, i.e. (CYC).
   - On 𝒞^1O, Lemma G supplies L-LIT's LP(t) family; N5 prices with LP(θ) and selects with LP(w) (§3.3b).
 - **The gap-level potential itself gives no (CYC) or (TRUST) bound.**
   - θ-changes are almost all FLAT in gap level: theta_thc24 has 16 θ-changes in one phase, only 2 of which lower g(o).
@@ -316,10 +316,19 @@ largest number of θ-changes inside one window of consecutive non-eliminating tr
 | oneodd_c24, thetare_min, thetare_n, lap_n6, tr20_s4 | 24, 15, 11, 6, 20 | 1, 2, 2, 2, 0 | 0 |
 
 **CONJECTURE (CYC-ELIM).** On 𝒞^1O, every window of consecutive non-eliminating transitions inside a joint λ-phase contains at
-most c θ-changes, for a constant c. The data give c = 3.
-- PROVED (elementary): (CYC-ELIM) implies θ-changes ≤ (c + 1)·(m + 1) per joint λ-phase, which is (CYC) of box 24 §4.
+most d θ-changes, where d is o's out-degree. The data give at most 3, with d = 5 on theta_thf16.
+- PROVED (elementary): (CYC-ELIM) implies θ-changes ≤ (d + 1)·(m + 1) per joint λ-phase, which is (CYC) of box 24 §4.
   - At most m eliminating transitions per phase, each changing θ at most once.
-  - At most c θ-changes between consecutive eliminating transitions.
+  - At most d θ-changes between consecutive eliminating transitions.
+- Mechanism of the 3-θ-change window (theta_thf16, states 2-5):
+  - σ̄(o) walks the exits 15 → 1 → 4 → 2, then walks them again 2 → 4 → 1 → 15 → 1 → 4 → 2 at states 8-15.
+  - The ring vertices repeat the same switches on the second lap; e.g. 15 takes 5 → 14 at state 3 and again at state 13.
+  - So the first lap is non-eliminating and the last lap retires the edges.
+- The constant was first stated as 3 (14:04Z message). d is the honest scale: a window can hold one lap of the ring, and a ring
+  is at most o's exits.
+- Kill design for L-RED (READING): one ring lapped ≥ 3 times with identical switches and no retirement elsewhere. The middle lap's
+  window then holds about d θ-changes, and more laps give more. Box 25 §4's lap counts (fts_best16: 4 σ̄-returns, two full laps)
+  are the nearest data.
 - (CYC-ELIM) is weaker than (ELIM-n). It is aimed at the brief's target. Climb: §6.
 
 ### 4.4 Why N5's windows end, and two refinements that fail or do not separate (DATA)
