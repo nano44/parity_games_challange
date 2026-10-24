@@ -88,3 +88,37 @@ is UNREFEREED, as the packet says.
 | --- | --- | --- |
 | N-Z-1 | LV′: "consecutive" must mean adjacent among crossing transitions ('±' breaks runs) | wording; with it the proof is right |
 | N-Z-2 | s_rt32_final is not 𝒞^1O (Odd choices at 14 and 28) | data note for the lane (§10, box 4 tables) |
+
+## C. Comparison with REFEREE's R-N5-Z (referee c818ef2, data appendix 555cbeb; trunk 27f5d2e; read after my push 1a5854b3; written 20:55Z by date -u)
+### C.1 Agreement per item
+| item | REFEREE | REFEREE-2 | agreement |
+| --- | --- | --- | --- |
+| LV′ | SIGNED WITH GAP Z-1 ('±' must break runs) | SIGN (N-Z-1) | full: Z-1 = N-Z-1, the same reading. REFEREE classes it as a gap, I as wording; with the adjacent reading both sign |
+| Corollary Z | SIGNED | SIGN | full (R21 (g) within its hypotheses) |
+| NOFE, strong form | SIGNED (Z-2 remark, Z-3 wording) | SIGN | full. Both accepted, see C.2 |
+| Step (K), ACT, LOOP, NOFL-E, GAP, WM | SIGNED | SIGN | full |
+| s_rt32_final | removed in the appendix; no verdict change | N-Z-2 | the same finding, independently |
+No disagreement.
+### C.2 Z-2 and Z-3
+- Z-2, ACCEPTED. R21 (c) FBL-N (ii) (signed) says every gate edge from F at a fallback with τ fixed has λ_W(y) = y and λ_W(z) = y. For
+  z ∈ R̄, z's W-play reaches o and then follows o's W-play, so its cycle node y lies on o's W-play. This is a valid one-line proof of
+  NOFE's strong form, and it gives the extra fact that y is a W-cycle node. That matches my data: all 21 tails were W-cycle nodes.
+  The packet's direct proof (Cases A/B via Step (K)) is also correct. The two are alternatives.
+- Z-3, ACCEPTED. "σ_k y ∈ F_k" holds because y ∈ F_k and y's o-free play passes σ_k y, a fact about state k alone. (F0) is about an edge
+  kept across k → k+1, so citing it is wrong. Wording.
+### C.3 Lead's class question (20:5xZ), extended list
+- x_check (R2-N5-X) and nh_check (R2-N5-NH) did NOT run on any out-of-class file: the six named first, nor red/n5inj's bribe_cex_n15,
+  elimn_cex_n48, frz32, frz40, phase2_pk32, phase2_pk48, returns_rt32, returns_rt64, wide_h16. The same holds for R2-N5-RE and R2-N5-XA.
+- I checked every run_all.sh and every log name. The n5inj files I used are theta_tp32, theta_thf16, returns_rt48 and returns_ph64, all
+  with exactly one Odd choice vertex.
+- All checkers now assert exactly one Odd choice vertex (04611c5e). The only contact anywhere was s_rt32_final in R2-N5-Z (N-Z-2),
+  skipped in the logs and excluded from the totals.
+### C.4 Joint gap map
+| REFEREE | REFEREE-2 | status |
+| --- | --- | --- |
+| Z-1 | N-Z-1 | wording / gap: '±' breaks runs; closed with that reading |
+| Z-2 | — | remark accepted: NOFE also follows from FBL-N (ii) |
+| Z-3 | — | wording accepted |
+| appendix (s_rt32_final removed) | N-Z-2 | the same data note; the lane's fixes file records it |
+Final verdicts (Opus 5.5, D15), unchanged: every statement SIGN. N-Z-1 and N-Z-2 go to docs/si/P-N5-Z-fixes-box5.md (the Lead relays).
+(Z), (C) and G-N5-TIME stay OPEN.
