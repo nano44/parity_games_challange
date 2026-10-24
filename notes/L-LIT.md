@@ -2,10 +2,9 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-24 ~14:2xZ: PARKED after T29 docs/lit/T29-routing-algebra-N5.md: DG ICNP 2018 translated to N5 (A1 single cycle node).
-Selection algebra = lex group Z^2 longest path: distributive (R17 V2), consistent, not increasing (I1/I2) but increasing after
-potential reweighting (Lemma B); DG Lemma 12/13 fail at o (sustained junk); gap = state-dependent gate filter -> CONJECTURE (H-E).
-T28 rank 1 downgraded (note added to T28). Next: Lead.
+2026-10-24 ~14:4xZ: PARKED (context ~500k, Lead's instruction) after T31 docs/lit/T31-mei-port.md: Mei Ĝ_h ported to parity
+(n = 8h+3, d = 8h+2; split-edge cost vertices; W layered by level, k below W-level 2 and decreasing in i). Mei Lemmas 2,4,5,6 PROVED-S;
+Dantzig-SSI 2^h-1 PROVED-S; N5 deviates at k = 0 (gate = all h levels) -> CONJECTURE O(h). Before: T25-T30. Successor: start from Lead.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -257,6 +256,15 @@ T28 rank 1 downgraded (note added to T28). Next: Lead.
 | NOT opened (T28) | Szabó-Welzl FOCS 2001; Topkis 1978; Milgrom-Shannon 1994; Carstensen 1983; Gusfield 1980; Ye 2011 original | 2026-10-24 | T28 |
 | github.com/MatthewDaggitt/agda-routing @ 241d45ae (git clone, read only) | Algebra.agda (sha256 cf2ffbf6…) l.100-115, 129-150, 171-184; Algebra/Core.agda l.55-65; Synchronous/PathVector/Convergence/Step6_Proof.agda (sha256 2ea6bad3…) l.43, l.112 | 2026-10-24 | T29 |
 | Daggitt-Griffin ICNP 2018, full read | Def. 1-2 p.2-3, semiring Θ(n) p.2, Lemma 4 p.7, Def. 4-5, Lemma 7, 10 p.9, Lemma 11-12, Def. 6 p.10, Lemma 13-14, Thm 1 p.11 | 2026-10-24 | T29 |
+| arXiv 2610.27386 v1 (Mei, 19 Oct 2026) sha256 5b3265d3eb1c5b8a… | abstract; p.2 contributions + "prevents the cycle-creation arguments"; §3 p.5 (cancellation, two cost scales); Thm 1 p.11; Thm 4 p.20; Prop 2, Thm 5 p.21 | 2026-10-24 | T30 |
+| arXiv 2606.29568 v1 (Mei-Sun-Ye) sha256 8bbb42f6834b6738… | Def. 7 p.6; Lemma 6, 9; Lemma 10, 11 p.15; Thm 1 p.16 | 2026-10-24 | T30 (re-open) |
+| arXiv 2609.40147 v2 (Zhong-Ye) sha256 dafeb81816af6582… | Thm 2.1-2.3 p.3; Thm 7.1 p.31 + proof (eq. 7.1); MK cite p.2 | 2026-10-24 | T30 (re-open) |
+| arXiv 1101.3820 v1 (Kitahara-Mizuno) sha256 b5b02b5d8e1be50f… | abstract; Lemma 3.1, 3.2 p.6; Thm 3.2 p.8 | 2026-10-24 | T30 |
+| arXiv 1003.3418 v1 (Fearnley) sha256 0964f029581ae02e… | §4.2, Prop. 8 + reset p.8; Thm 17-18 p.12 | 2026-10-24 | T30 (re-open) |
+| arXiv 2212.00083 v1 (Christ-Yannakakis) sha256 ab6b525118aadbb3… | §5 p.30 (MC94 construction) | 2026-10-24 | T30 (re-open) |
+| HMZ 1008.0530 Lemma 6.1-6.4 p.11; Post-Ye 1208.5083 Lemma 3.5-3.6 p.8, Thm 3.7 p.9; Scherrer 1306.0386 Lemma 8 p.6, Lemma 4-5, 9, Thm 6-7 | re-read | 2026-10-24 | T30 |
+| NOT opened (T30) | HKZ SODA 2014 (SIAM HTML); Madani-Thorup-Zwick TALG 2010; Kitahara-Mizuno 1101.3821 (HTML); Mukherjee-Kalyanakrishnan; Melekopoglou-Condon 1994 original | 2026-10-24 | T30 |
+| arXiv 2610.27386 v1 (Mei), full §2-§3, §5.1 | Def. 1, Alg. 1 p.4; §3.1 eq. (3) + Table 1 p.5 (rendered as image); eq. (4)-(8) p.6; Lemma 2 p.6; Lemma 3-5 p.7-9; Lemma 6 p.9; Lemma 7 p.10; Thm 1 + pattern p.11; Table 2 p.12; Alg. 2 p.18; eq. (35), Thm 4 p.20 | 2026-10-24 | T31 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
