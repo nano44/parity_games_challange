@@ -136,3 +136,32 @@ Box 21 §2.5 proved that fallback steps satisfy W_{k+1} ⊴ W_k, and left "fallb
 - showrun.py: per-state dump (σ, θ, w, R, Ξ, W, Iσ).
 - instances/: i1_min (n 11; an I1 deadlock with (h) failing: Ξ(o) and W(o) end in different cycles), i1h_fts_best16
   ((WF) counterexample), i1hn_fts_best16, i1hn_oneodd_c24, i3hn, n9_i2, i4_hand(+start).
+
+## 6. With L-RED's Proposition X (R58 §9): o-acyclic 𝒞^1O reduces to a STATIC problem (PROVED given Prop X; DATA)
+- Prop X (L-RED, unrefereed; checked here at the level of its proof):
+  - X := the vertices with no path to o.
+  - Along N5, the distinct restrictions σ|X form N5's run on G[X], a game with no Odd choice, so R17 bounds them.
+  - I checked step 1 (locality of S1's procedure for X cycle nodes) and step 2 (an X-null S4a step waits; a global S4c fallback
+    acts on X as G[X]'s own fallback). No gap found. The BFS-order point in step 1 is taken from L-RED's argument as written.
+- Corollary X1 (L-RED): if o lies on no cycle, θ and w change poly(n) times, so (CH-1O) holds.
+- My i4_hand (§1.4) is o-acyclic: o's exits e* and ℓ1 cannot reach o. So in the o-acyclic case the open half is the stretch
+  bound, and the per-path invariants I1-I4 fail there too.
+- Block decomposition (PROVED; elementary). On o-acyclic 𝒞^1O, split the run at the iterations that change σ|X or τ:
+  - #iterations ≤ (C_X + d) · (B_Y + 1);
+  - C_X < (|X|² − |X| + 1)(|X| + m_X) (Prop X), and τ changes ≤ d − 1 times (box 21 §3.4);
+  - B_Y is the longest "pure-Y block", i.e. consecutive iterations in which σ|X and τ are fixed.
+- In a pure-Y block every X value is frozen, so θ, w and all terminal values seen from Y = V \ X are constants. The block is the
+  following STATIC problem:
+  - (STAT) A one-player graph on Y. Its terminals are the X vertices (fixed values, the same in both games) and o.
+  - Two one-player games differ only in o's terminal value: K^θ (honest) and K^w, with θ ⊴ w.
+  - The gate is K^θ's improving set; each step is the K^w-optimum over the gate (with S4c's honest switch-all if null).
+  - o-acyclic 𝒞^1O is polynomial ⇐ every (STAT) run has poly(|Y|) steps.
+- (STAT) is cleaner than (SEG-1O) in one respect: θ never rises inside a block, so a deadlock (§1.4) never resolves there. In
+  i4_hand the deadlock was held open by a lane in X; in (STAT) the lane would have to live in Y.
+- DATA:
+  - pureY.py on 575 random o-acyclic 𝒞^1O games (n 5..16): the longest pure-Y block is ≤ |Y|.
+  - climbY.py (fitness = longest pure-Y block − |Y|; n 12 / 20 / 28; final numbers in the box-end message): best so far 0, i.e.
+    block = |Y|.
+  - i4_hand: |Y| = 3, longest pure-Y block 1.
+- OPEN: (STAT). The o-on-a-cycle case keeps both (SEG-1O) and (CH-1O). L-RED's frz24 and fts_best16 have X = ∅, and the long
+  laps live there.
