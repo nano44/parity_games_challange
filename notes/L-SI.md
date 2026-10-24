@@ -1,7 +1,22 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Resume point (successor 2, Opus 5.5 D15/D18; PARKED 2026-10-24 ~21:30Z at ~500k context; LANE-RESTART step 1)
+## Resume point (successor 3, Opus 5.5 D18/L40; box 7 IN PROGRESS, started 21:31Z 2026-10-24)
+Handover check 78a764d8 (Lead 5/5). Box 7 = proof side of (C). Write-up: docs/si/N5-C-box7.md. Code: experiments/si/coarse/
+(mono.py, fbcount.py, tame.py, jump.py, jumpeq.py; each asserts n5.run equality; §5 scripts assert one Odd choice vertex).
+### DONE (box 7; PROVED by L-SI succ. 3, unrefereed)
+- COARSE-SI in full (§2): telescoping claim (T); general form under (NC) with converse; in-phase form TAME (no VJ00 (11) needed).
+- MONO (M_k = max gate level non-increasing at tame transitions); NOINF (no in-phase switch across cycle nodes).
+- Theorem FB: #fallbacks per phase <= n_E(2n-1)(J+1) + J, J = #non-tame transitions. So (C) and W-lowerings are bounded by J.
+- On 𝒞^1O: non-tame = exit jump above M_k (J1), OFF, CAP (whole bottom coarse exit class captured).
+- FALSE: (JUMP-EQ) on x31_rx32 (sha1 4fe9ec0e) k 53 -> 54 (reported to Lead 21:45Z).
+- DATA: all checks 0 violations (53 named instances, random, random 𝒞^1O); J <= 3 per phase; L = M at 201/201 carries.
+### NEXT
+1. Push box 7; message Lead with SHA.
+2. (J-poly): bound non-tame transitions per phase (route in box 7 §7: re-release of captured exits). Climb on fitness J.
+3. Remaining part of (Z) besides (C): '+-' reversals at arena steps.
+
+## Previous resume point (successor 2, Opus 5.5 D15/D18; PARKED 2026-10-24 ~21:30Z at ~500k context; LANE-RESTART step 1)
 Boxes done this session: handover check f0bbb5e0; box 4 (docs/si/N5-X-box4.md); box 5 (a) packet P-N5-Z (docs/si/P-N5-Z-box5.md v1,
 pinned trunk fba7177, sha1 a027638f; R23 with CHECKER as C32; lane fixes docs/si/P-N5-Z-fixes-box5.md incl. referee items Z-1..Z-3,
 N-Z-2); box 5 (b) + box 6 (docs/si/N5-C-box5.md §1-§6). Code: experiments/si/xing/ (every script asserts n5.run equality and
@@ -85,6 +100,9 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 2. Keep check.sh green: it compiles vjfast_check and re-checks the pinned killer instances (instances/pinned.txt).
 
 ## Things only I know
+- (successor 3) pgrep -f with a pattern from the same command line never ends (it matches its own shell): wait on a log line instead.
+- (successor 3) The predecessor's carry level L (leavers) equals M_k (max gate level) at every carry seen; use M_k, it is the one with
+  proofs (MONO, FB).
 - (successor 2) Never edit a file after sending its sha1 for pinning; corrections go to a separate fixes file (Lead rule, 20:4xZ).
 - (successor 2) Background watchers: wait on a file condition (e.g. 'FINAL' in logs), never on pgrep -f of a pattern in the same command line.
 - (successor 2) pkill -f with a pattern that occurs in the same bash command line kills that shell (exit 144): start/stop climbs with
@@ -111,6 +129,10 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
   p.2: an alternative 2^Ω~(m^{1/3}) lower bound for the original Random-Facet on MDPs (the published form is 1410.7530).
 
 ## Sources opened (arXiv id or DOI, theorem/section)
+- (successor 3) Vöge-Jurdziński, "A Discrete Strategy Improvement Algorithm for Solving Parity Games", BRICS RS-00-48, pdf from
+  www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, sha256 485a12de… (same file as R15), opened 2026-10-24 21:35Z: p. 13-14 Remark (closed
+  semiring), (6)-(10); p. 14 definition of σ̄ (minimises Ω_σ over successors) and of Prog (conditions 1-3); p. 15 Lemma 5.2
+  (locally progressive ⟺ Θ_στ; cycle node = max of the cycle); p. 16 (11) Ω_σ = Θ_σσ̄ and Θ_σσ̄ ⊴ Θ_στ for all τ.
 - Friedmann, "An exponential lower bound for the latest deterministic strategy iteration algorithms", LMCS 7(3:19) 2011,
   arXiv 1106.0778 (PDF opened 2026-10-15). Section 3: valuations, arena A_{G,σ}, improvement policy (conditions (1),(2)),
   Thm 3.2 (strict improvement), Thm 3.3 (regions from a non-improvable σ). Section 4: Lemma 4.1 (locally optimizing policy in
@@ -157,6 +179,9 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 - NOT opened: Ye 2011, Math. Oper. Res. 36(4):593-603, DOI 10.1287/moor.1110.0516 (cited only through Scherrer Thm 1).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- (successor 3) CONJECTURE (JUMP-EQ) (box 6 §6.2) FALSE: experiments/red/xing/instances/x31_rx32.pg (sha1 4fe9ec0e), transition
+  53 -> 54: w constant since the carry at level 24, σ̄(o) 24 -> 31 (INR), θ rises at level 25, lands THR with θ ≠ w; θ = w only at 55.
+  Re-verified n5 55/3, Oink zlk OK, strategies verified. Not needed: Theorem FB (box 7 §4).
 - (successor 2, 2026-10-24) Parametric/tropical lens for (X): o as a terminal of value θ is ill-posed for N5 (optimal routes run through
   θ's own play: 247 vertex-states on lev_l_sc; switch-all on the abstract game does not converge on fbref_cex_n32). Gadget version
   (frozen copy of θ's play) has a rank artefact (copies rank differently from originals): its "R* constant" output is void.
