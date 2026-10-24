@@ -130,3 +130,45 @@ op20_r / op16_oc16 (rfcheck: "κ-freeze fails 0"). P3′ rests on the proof.
 | NH-2 | Consequence: ROI counts W-changes too | one line (READING) | closed by (SG) |
 OPEN, untouched: U1-U3, W-CYC, (NH'), (X), G-N5-TIME. Conjectures OB_R, OB, NFB-O and FALSE WF0: context only, not checked. TARGET.md diff:
 statements about the candidate N5 on 𝒞^1O, none about general parity games.
+
+## §C. Comparison with REFEREE-2 (R2-N5-NH.md, referee-2 48da84a; read after my report was pushed at 78d61b1d). Written from 20:01Z by date -u. (Opus 5.5, D15)
+### C1. Disagreements (the Lead's item (1))
+No verdict differs. Two points of detail:
+- Step-2 count. The packet gives ≤ (n + 1)|R|, REFEREE-2 ≤ |R| + (n − 2)|R| + |R|, mine ≤ |R| + (|R| − 2)(|R| − 1). All three are valid upper
+  bounds. Mine uses |π_v| ≤ |R| − 1 and excludes o (Ξ(o) = θ is constant on J); it is the sharpest, and nothing depends on the difference.
+- REFEREE-2 §1.3 adds: "in a piece, a W-change on R is a Ξ-change on R and conversely, since both are functions of the route with fixed
+  terminals". As an ARGUMENT this does not hold. Ξ(v) depends on (κ(π_v), |π_v|) and W(v) on (A_w(π_v), |π_v|). A route change that moves a
+  vertex lying strictly between c_w and c_θ, with κ and the length unchanged, changes W(v) and not Ξ(v). The TRANSITION-level conclusion
+  ("a transition with a W-change on R also has a Ξ-change on R") is still TRUE, by my NH-2. A route change needs a switch of some y ∈ R,
+  and (SG) (R19 (d)) raises Ξ(y) strictly, since λ_Ξ(y) = c_θ ≠ y. So R2's remark should cite (SG) instead of "functions of the route". The
+  converse direction is fine, but for a different reason: θ is constant on J, so a Ξ-change on R is a route (κ or length) change, which
+  needs a switch on R.
+### C2. P3-1 vs G-NH-1 (item (2)): the same argument; each is a valid substitute
+- Both reports isolate the same unjustified sentence ("S4a's optimum restricted to R is an optimum of 𝓡*_w's arena" under ¬H2,
+  λ_W(o) = o). Both close it the same way. CR needs (F1) only at B1's single κ-strict switch. For x ∈ C_W, κ(π_{σ_k x}) = ∅ (C_W lies below
+  o ≺ c_θ), so κ(π_z) has an even top t ≻ c_θ. σ̂'s cycle then has top t, a better cycle node than o, so (F1) would move x off c_w inside J:
+  vacuous.
+- REFEREE-2 writes out the branch x ∉ C_W under ¬H2 (σ̂ touches neither C_W nor π_z, so real value = contracted value). My §1.3 left it
+  implicit; I ACCEPT it as the explicit form.
+- REFEREE-2's data: the sentence itself held at all 1,871 S4a steps tested under ¬H2. My §1.3 said "the global claim may fail"; that was a
+  possibility, not an instance. The joint position: the sentence is UNPROVED, not refuted, and CR does not need it.
+### C3. REFEREE-2's notes
+- N-NH-1 (Corollary, θ part: cite R21 (i) / X-1, not only "θ = o ⊕ min over F-exits"): AGREED. My §1.5 already used TF / X-1.
+- N-NH-2 ("c_θ = c_w with both frames in route form … THR situation" needs (h)): ACCEPTED, MISSED by me. Under ¬H1 ∧ ¬H2 with c_θ = c_w = o,
+  the states are EQ or OTHER (TC (iv)), not THR, and PIECE as signed does not cover them. It is a remark in the packet, not a claim.
+- N-NH-3 = my NH-1.
+### C4. Joint gap map (item (3))
+| REFEREE | REFEREE-2 | status |
+|---|---|---|
+| P3-1 | G-NH-1 | CLOSED by the same vacuity argument (both §1.3/§1.2); R2's x ∉ C_W branch included; the packet's sentence UNPROVED, not needed |
+| NH-1 | N-NH-3 | wording: name the ≤ 2(1 + WC(I)) OTHER-block boundary transitions |
+| NH-2 | (R2 §1.3 remark) | the W-change ⇒ Ξ-change step is by (SG), not "functions of the route" (C1) |
+| (§1.5 used X-1) | N-NH-1 | wording: cite R21 (i) / X-1 in the Corollary |
+| — | N-NH-2 | accepted: the THR remark needs (h) |
+Final verdicts unchanged:
+- P3′ step 1: SIGNED WITH GAP P3-1 = G-NH-1, closed.
+- P3′ steps 2-3, the Corollary, TC (i)-(iv) and F1°: SIGNED.
+- The reduction: correct as a READING (NH-1, NH-2).
+- DATA for P3′: thin in both reports (mine nearly vacuous; R2's climbs give 1,017 nontrivial pieces, the longest in the batch 4 transitions).
+(NH'), (X), U1-U3, W-CYC and G-N5-TIME stay OPEN.
+§C ended 20:01Z by date -u.
