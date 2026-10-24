@@ -33,6 +33,16 @@ attempt from R57 O1-O4), Lead GO 23:05Z Oct 23 (date -u); about 4 h.
   - or (for L-RED) a single-counter design: CDAG skeleton in G_τ*, with R-entering jump-ahead edges throttled by one Odd
     vertex.
 
+### Box 22 (successor 8; Lead GO 01:47Z Oct 24 (date -u); to ~04:50Z)
+- docs/new/N5-1O-box22.md: invariants I1-I4 for (SEG-1O) are all FALSE.
+  - Minima: I1 n 11 (i1hn_fts_best16), I2 ill-posed (n9_i2), I3 n 9 (i3hn), I4 hand-built n 12 (i4_hand + start).
+  - The trust-mode deadlock defeats per-path domination.
+  - (WF) is FALSE: i1h_fts_best16, where fallbacks lower W and a vertex returns.
+  - L-RED's Prop X was checked. o-acyclic 𝒞^1O reduces to (STAT) (pure-Y blocks; §6). DATA: blocks ≤ |Y|.
+  - Stop rule applied; no fifth induction.
+- docs/new/N11-proposal.md: N5-HT (honest override at trust conflicts). Proposed, NOT run; awaiting Lead GO.
+- Code: experiments/new/box22/ (stretchP, shrinkP, i1inst, smallsearch, showrun, pureY, climbY).
+
 ### Earlier resume point (successor 7)
 PARKED after box 20 (synthesis docs/new/c-lane-synthesis.md), 2026-10-23 (date -u in the commit). Nothing running.
 Recommendation there: pause (c) design one box; L-RED builds an R56-style delay-lane counter against N5; fallback design =
