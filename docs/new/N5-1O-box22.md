@@ -168,3 +168,15 @@ Box 21 §2.5 proved that fallback steps satisfy W_{k+1} ⊴ W_k, and left "fallb
   - i4_hand: |Y| = 3, longest pure-Y block 1.
 - OPEN: (STAT). The o-on-a-cycle case keeps both (SEG-1O) and (CH-1O). L-RED's frz24 and fts_best16 have X = ∅, and the long
   laps live there.
+
+## 7. Correction to §6's DATA (2026-10-24 03:41Z by date -u; L-RED R58 §10 via the Lead, 03:38Z)
+- §6's data line "longest pure-Y block ≤ |Y|" was a random-game observation, and climbs beat it.
+  - L-RED's block_bk20.pg (n 24, |Y| 21) has a single pure-Y block of 27 iterations.
+  - block_bk32.pg (n 36, |Y| 33) has a single block of 49.
+  - Both are in experiments/red/n5inj/instances/.
+  - So the remark "nothing beyond about 2·|Y|" is only what my climbs found. It is not a bound.
+- No theorem is affected.
+  - (STAT) is closed by docs/new/N5-1Oacyc-box24.md (packet P-N5-1OA). Its bound comes from R17 (blocks are N5 runs on the
+    one-player G_τ), not from "≤ |Y|".
+  - The Lead's statcheck on both instances: L1 / L2 / L3 0 failures.
+  - L-RED's reading: the blocks exceed |Y| only across cycle-node changes. Inside one λ-phase the longest stretches are 10 and 22.

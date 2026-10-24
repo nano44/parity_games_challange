@@ -30,27 +30,28 @@ def check(g, st, cnt):
         cnt["blocks"] += 1; cnt["maxblock"] = max(cnt["maxblock"], j - k)
         if [x[0] for x in hs[: j - k + 1]] != [x[0] for x in st[k: j + 1]]: cnt["L3_fail"] += 1
         k = j
-RS = "--randstart" in sys.argv
-if RS: sys.argv.remove("--randstart")
-cnt = {"pure": 0, "L1_fail": 0, "L2_fail": 0, "blocks": 0, "L3_fail": 0, "maxblock": 0, "games": 0}
-a = sys.argv[1:]
-if a[0] == "--random":
-    N, lo, hi, seed = map(int, a[1:5]); rng = random.Random(seed)
-    for i in range(N):
-        n = rng.randint(lo, hi); owner = [0] * n; o = rng.randrange(n); owner[o] = 1
-        for v in range(n):
-            if v != o and rng.random() < 0.15: owner[v] = 1          # forced Odd vertices (out-degree 1 below)
-        succ = [sorted(set(rng.sample(range(n), rng.choice((1, 2, 2, 3))))) for _ in range(n)]
-        for v in range(n):
-            if owner[v] == 1 and v != o: succ[v] = succ[v][:1]
-        succ[o] = sorted(set(rng.sample(range(n), rng.choice((2, 3)))))
-        g = pg.Game([rng.randrange(n + 3) for _ in range(n)], owner, succ); Ys = split(g, o)
-        if any(w in Ys for w in succ[o]): continue
-        start = None
-        if RS:
-            start = ({v: rng.choice(succ[v]) for v in range(n) if owner[v] == 0}, {o: rng.choice(succ[o])})
-        cnt["games"] += 1; st, _ = trace(g, start, check=False); check(g, st, cnt)
-else:
-    for p in a:
-        g = load(p); st, _ = trace(g); cnt["games"] += 1; check(g, st, cnt)
-print(cnt)
+if __name__ == "__main__":
+    RS = "--randstart" in sys.argv
+    if RS: sys.argv.remove("--randstart")
+    cnt = {"pure": 0, "L1_fail": 0, "L2_fail": 0, "blocks": 0, "L3_fail": 0, "maxblock": 0, "games": 0}
+    a = sys.argv[1:]
+    if a[0] == "--random":
+        N, lo, hi, seed = map(int, a[1:5]); rng = random.Random(seed)
+        for i in range(N):
+            n = rng.randint(lo, hi); owner = [0] * n; o = rng.randrange(n); owner[o] = 1
+            for v in range(n):
+                if v != o and rng.random() < 0.15: owner[v] = 1          # forced Odd vertices (out-degree 1 below)
+            succ = [sorted(set(rng.sample(range(n), rng.choice((1, 2, 2, 3))))) for _ in range(n)]
+            for v in range(n):
+                if owner[v] == 1 and v != o: succ[v] = succ[v][:1]
+            succ[o] = sorted(set(rng.sample(range(n), rng.choice((2, 3)))))
+            g = pg.Game([rng.randrange(n + 3) for _ in range(n)], owner, succ); Ys = split(g, o)
+            if any(w in Ys for w in succ[o]): continue
+            start = None
+            if RS:
+                start = ({v: rng.choice(succ[v]) for v in range(n) if owner[v] == 0}, {o: rng.choice(succ[o])})
+            cnt["games"] += 1; st, _ = trace(g, start, check=False); check(g, st, cnt)
+    else:
+        for p in a:
+            g = load(p); st, _ = trace(g); cnt["games"] += 1; check(g, st, cnt)
+    print(cnt)
