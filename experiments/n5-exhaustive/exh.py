@@ -102,16 +102,18 @@ def analyse(g, st, o, fbs=None):
             honest-improving edge to a vertex outside R_k) and z in R_{k+1}, within one (tau(o), joint-lambda)-phase, is
             len_{k+1}(z) = len_k(z) + 1 (len = edges on z's (sigma, tau)-path to o)? counts and the first violation (k, z, len_k,
             len_k+1); a z that leaves R ("flushed") is not counted
-    elim / elimx  (L-SI CONJECTURE (ELIM-n), Lead 14:00Z) longest run of consecutive non-eliminating transitions inside one
-            joint lambda-phase (experiments/si/orlens/elim.py 'noelimrun', Even edges), and elim - (n - 1)
+    elim / elimx  (L-SI CONJECTURE (ELIM-n), Lead 14:00Z + 14:10Z correction) longest run of consecutive non-eliminating
+            transitions inside one joint lambda-phase, elim.py 'noelimrun_both' (a sigma edge or an Odd best-reply sbar edge
+            abandoned for good in the phase), and elim - (n - 1); elim_sigma = 'noelimrun' (sigma only), elim_st = sigma or tau
+    thel    thetaelim.py (L-SI (CYC-ELIM)): max theta-changes inside a non-eliminating window (sigma or tau)
     E / hex (L-LIT CONJECTURE (H-E), Lead 14:00Z) over fallback-free (theta, w, tau, lambda)-constant stretches: E = number of
             (step, arc) pairs where an R-entering Even arc (x not in R, z in R) changes admitted status (in I_sigma or not);
             Emax = max E per stretch, stlen = longest such stretch (transitions), hex = max over stretches of
             stlen - (E + 1)(n - 1) (positive = H-E bound exceeded, counting all transitions); needs fbs"""
     E, Ed = Engine(g), Engine(dual(g))
-    lam, th, ww, RR, TT, LL, AD = [], [], [], [], [], [], []
+    lam, th, ww, RR, TT, LL, AD, SB = [], [], [], [], [], [], [], []
     for s, t in st:
-        X, _ = E.evaluate(s); U, _ = Ed.evaluate(t)
+        X, sbar = E.evaluate(s); U, _ = Ed.evaluate(t); SB.append(tuple(sbar))
         lam.append((tuple(x[0] for x in X), tuple(y[0] for y in U)))
         Eg, W = wvals(g, s, t); th.append(E.key(X[o])); ww.append(Eg.key(W[o])); R = Rset(g, s, t, o); RR.append(R)
         Is = E.improving(s, X)
@@ -174,17 +176,28 @@ def analyse(g, st, o, fbs=None):
                     if len(events) < 20:
                         events.append((pi, k, x, p, q, bool(A), leave[(x, q)]))
                 u.add(q)
-    elimw = 0                                           # elim.py noelimrun over every phase
+    # elim.py (L-SI 316ed69) windows over every phase: el = sigma edge abandoned for good; oel = Odd best reply sbar edge;
+    # tel = tau edge. elim = noelimrun (el), elimb = noelimrun_both (el or oel; Lead 14:10Z column), elimst = (el or tel);
+    # thel = thetaelim.py: max theta-changes inside a window of non-eliminating transitions (el or tel)
+    elimw = elimb = elimst = thel = 0
     for a, b in runs:
-        lastuse = {}
+        ls, lo_, lt = {}, {}, {}
         for i in range(a, b + 1):
             for x in range(g.n):
                 if g.owner[x] == 0:
-                    lastuse[(x, st[i][0][x])] = i
-        cur = 0
+                    ls[(x, st[i][0][x])] = i
+                else:
+                    lt[(x, st[i][1][x])] = i
+                    if SB[i][x] is not None and SB[i][x] >= 0:
+                        lo_[(x, SB[i][x])] = i
+        c1 = c2 = c3 = c4 = 0
         for i in range(a, b):
-            el = any(st[i][0][x] != st[i + 1][0][x] and lastuse[(x, st[i][0][x])] == i for x in range(g.n) if g.owner[x] == 0)
-            cur = 0 if el else cur + 1; elimw = max(elimw, cur)
+            el = any(st[i][0][x] != st[i + 1][0][x] and ls[(x, st[i][0][x])] == i for x in range(g.n) if g.owner[x] == 0)
+            oel = any(SB[i][x] != SB[i + 1][x] and lo_.get((x, SB[i][x])) == i for x in range(g.n) if g.owner[x] == 1)
+            tel = any(st[i][1][x] != st[i + 1][1][x] and lt[(x, st[i][1][x])] == i for x in range(g.n) if g.owner[x] == 1)
+            c1 = 0 if el else c1 + 1; c2 = 0 if (el or oel) else c2 + 1; c3 = 0 if (el or tel) else c3 + 1
+            c4 = 0 if (el or tel) else c4 + (th[i + 1] != th[i])
+            elimw, elimb, elimst, thel = max(elimw, c1), max(elimb, c2), max(elimst, c3), max(thel, c4)
     Emax = stlen = 0; hexc = -10 ** 9
     if fbs is not None:
         key = [(th[k], ww[k], st[k][1], lam[k]) for k in range(len(st))]
@@ -202,10 +215,12 @@ def analyse(g, st, o, fbs=None):
     trust, tlen = trustcount.count(g, st)
     return dict(maxph=maxph, thch=thch, trust=trust, tlen=tlen, reA=reA, reB=reB, leaves=leaves, entries=entries,
                 reent=reA + reB, events=events, seg=seg, segx=seg - (g.n - 1), tg_ok=tg_ok, tg_bad=tg_bad, tg_first=tg_first,
-                elim=elimw, elimx=elimw - (g.n - 1), Emax=Emax, stlen=stlen, hex=hexc)
+                elim=elimb, elimx=elimb - (g.n - 1), elim_sigma=elimw, elim_st=elimst, thel=thel, Emax=Emax, stlen=stlen,
+                hex=hexc)
 
 
-KEYS = ("max_it", "maxph", "thch", "trust", "reent", "segx", "elim", "elimx", "Emax", "stlen", "hex")
+KEYS = ("max_it", "maxph", "thch", "trust", "reent", "segx", "elim", "elimx", "elim_sigma", "elim_st", "thel", "Emax", "stlen",
+        "hex")
 
 
 def blank():
@@ -308,7 +323,8 @@ def main():
           f"(o-cyclic {tot['max_th_cyc']}), max trust/phase {tot['max_trust']}, leaves {tot['leaves']} entries {tot['entries']}, "
           f"re-entries A(theta-driven) {tot['reA']} B(route) {tot['reB']}, phase hist {tot['hist_ph']}, theta hist {tot['hist_th']}, "
           f"trust-route growth ok {tot['tg_ok']} bad {tot['tg_bad']}, max SEG excess over n-1 {tot['max_segx']} (0 = none), "
-          f"max ELIM window {tot['max_elim']} (excess over n-1 {tot['max_elimx']}, 0 = none), max E per stretch {tot['max_Emax']}, "
+          f"max ELIM window (both) {tot['max_elim']} (excess over n-1 {tot['max_elimx']}, 0 = none; sigma-only {tot['max_elim_sigma']}, "
+          f"sigma-or-tau {tot['max_elim_st']}), max theta-changes in a non-elim window {tot['max_thel']}, max E per stretch {tot['max_Emax']}, "
           f"longest stretch {tot['max_stlen']}, max H-E excess {tot['max_hex']} (0 = none), {tot['secs']} s")
 
 

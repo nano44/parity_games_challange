@@ -40,7 +40,7 @@ def main():
             st, fbs = trace_fb(g, start); runs += 1
             d = per.setdefault(g.n, dict(runs=0, max_it=0, max_ph=0, max_th=0, max_trust=0, reA=0, reB=0, leaves=0, entries=0,
                                          tg_ok=0, tg_bad=0, max_segx=-10 ** 9, max_elim=0, max_elimx=-10 ** 9, max_E=0,
-                                         max_hex=-10 ** 9, ex_ph=None, ex_th=None, ex_seg=None, ex_tg=None, ex_elim=None))
+                                         max_hex=-10 ** 9, max_thel=0, ex_ph=None, ex_th=None, ex_seg=None, ex_tg=None, ex_elim=None))
             d["runs"] += 1
             if len(st) < 3:
                 continue
@@ -56,7 +56,7 @@ def main():
             d["max_E"] = max(d["max_E"], a["Emax"]); d["max_hex"] = max(d["max_hex"], a["hex"])
             if a["elim"] > d["max_elim"]:
                 d["max_elim"] = a["elim"]; d["ex_elim"] = rec
-            d["max_elimx"] = max(d["max_elimx"], a["elimx"])
+            d["max_elimx"] = max(d["max_elimx"], a["elimx"]); d["max_thel"] = max(d["max_thel"], a["thel"])
             if a["elimx"] >= 1 or a["hex"] >= 1:
                 print("ALERT ELIM/H-E:", "CANONICAL" if start is None else "start", rec, flush=True)
             if a["segx"] > 0:
@@ -75,7 +75,8 @@ def main():
           f"max theta-changes/phase by n {dict((n, d['max_th']) for n, d in sorted(per.items()))}, "
           f"trust-route growth ok {tot('tg_ok')} bad {tot('tg_bad')}, max SEG excess {max(d['max_segx'] for d in per.values())}, "
           f"max ELIM window by n {dict((n, d['max_elim']) for n, d in sorted(per.items()))}, max ELIM excess "
-          f"{max(d['max_elimx'] for d in per.values())}, max H-E excess {max(d['max_hex'] for d in per.values())}, "
+          f"{max(d['max_elimx'] for d in per.values())}, max theta-changes in non-elim window "
+          f"{max(d['max_thel'] for d in per.values())}, max H-E excess {max(d['max_hex'] for d in per.values())}, "
           f"{res['secs']} s")
 
 
