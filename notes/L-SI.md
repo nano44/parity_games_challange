@@ -1,21 +1,39 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Resume point (successor 1, Opus 5.5 D15; box 1 "N5 through the OR lens", Lead GO 13:27Z, box to ~16:30Z; written 13:48Z)
-Predecessor's 2026-10-15 handover (S1-S7, engine, obstruction map) is in git history at l-si 0d48da26; its DONE items stand and are
-summarised in docs/si/README.md. Handover check: docs/agents/handover-checks/L-SI.md (96469356, 5/5).
-### DONE (box 1)
-- docs/si/N5-OR-lens.md: correspondence Ye/HMZ <-> N5 in a joint lambda-phase; PROVED Lemmas U, E1-E5, Theorem E6 (ultrametric
-  gap levels, action elimination for Even edges and Odd best-reply exits; rule-independent), Lemma D + Corollary D1 (switch-all
-  satisfies Howard >= VI in VJ valuations, so lexicographic VI is exponentially slow: no contraction); DATA: N5 violates Howard >= VI
-  (i4_hand z = 9 states 0-2), HMZ's max-slack elimination fails (returns_rt48 77/78), N5 eliminates some edge almost every
-  transition (non-eliminating runs <= 17 at n <= 64; switch-all control doubles 24/62/140/298); CONJECTURE (ELIM-n) => G-N5-TIME.
-- Code: experiments/si/orlens/ (ortrace, gaps, batch, elim, hmzL, returns, theta, stretchret, vi, climb). out/ is gitignored.
-### IN FLIGHT
-- Nothing running. Box 2 (N5-OR-lens-box2.md: VIS, VIS'; inr2/rise3/run_x_inr2) and box 3 (N5-OR-lens-box3.md: LEN, CH, counter
-  bound, multiplicative obstruction, LEVEL-poly; climbs lev_l_* max m_r 11 at n 32) done, reported 17:30Z.
-### NEEDS
-- Lead: relay Lemmas U/E1-E5/D to L-RED / L-NEW; (ELIM-n) as an L-RED target (a phase with a non-eliminating window > n).
+## Resume point (successor 1, Opus 5.5 D15; PARKED 2026-10-24 ~17:35Z at ~563k context, Lead 17:3xZ; LANE-RESTART step 1)
+Boxes done this session: handover check (96469356), box 1 OR lens (docs/si/N5-OR-lens.md), box 2 (N5-OR-lens-box2.md), box 3
+(N5-OR-lens-box3.md). Last box SHA 8314ce9c. Code: experiments/si/orlens/ (README-level docstrings in each script); pinned instances
+in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink must be rebuilt in a new container
+(scripts/setup_oink.sh) before check_sol2.py / the verify Oink smoke.
+### DONE — statements and status (all PROVED by L-SI successor 1, UNREFEREED unless noted)
+- Box 1 (N5-OR-lens.md §2-§3): Lemma U (lev ultrametric); E1 (gap level monotone in a joint lambda-phase vs target T = Xi at phase
+  end); E2/E3 (a used Even edge certifies its slack; gone for the phase once g < s); E4 (Odd best-reply exits, same); E5 (gap <= max
+  slack on the play); E6 (<= n(n+1) non-flat transitions per phase, any SI rule); Lemma D + Corollary D1 (switch-all satisfies
+  Howard >= VI in VJ valuations, yet exponential in one phase on switchallexp: no lexicographic contraction); (ELIM-poly) =>
+  N5 < (2n(n-1)+1)(m+1)w(n); recursive depth D => < (n(n+1)+1)^D value-changing transitions.
+- Box 2 (N5-OR-lens-box2.md): Lemma VIS (in a (w,u*)-run, a self-elimination (INR) of the argmin exit whose loop rho+{o} adds a
+  vertex above u* retires that exit from sbar(o) for the run; <= d visible INRs per run) and VIS' (general form: after e enters R
+  with loop top-new vertex t, e is sbar(o) again only if theta changed at level >= t). Data checks 0 violations.
+- Box 3 (N5-OR-lens-box3.md): Lemma LEN (<= n-1 length-only theta-changes between path-set changes); Lemma CH (a SELF/OVER
+  theta-change at level r is paid by a rise of the argmin exit's o-free value at level >= r); counter bound m_r <= 1 + sum_{r'>r}
+  m_{r'}; hence #theta-changes <= n(1 + sum_r m_r).
+### FALSE / refuted (instances pinned)
+- (ELIM-n): L-RED elimn_cex_n48 (window 49 at n 48). (CYC-ELIM) with constant d: cycelim_cex_n32, s_tp32_final. 'every sbar-lap
+  retires an edge': theta_tp32 states 4-9. 'one INR per exit per run': inr2_n32. 'RISE <= 2 per exit per run': rise3_n32,
+  run_x_inr2 (4). PIECE does not give phase-sense elimination: fts_best16 7->8, theta_tp32 9-19. HMZ max-slack elimination:
+  returns_rt48 (77/78). N5 satisfies Howard >= VI: i4_hand z = 9.
+### The multiplicative obstruction (box 3 §3) and the potential a successor should look for
+- SELF/OVER are paid (CH) by o-free progress of exits, a one-player resource (R17 layering in G[F]) that only holds inside a PIECE
+  (R constant). Every INR is a theta-change AND a crossing, so it ends the piece and resets that resource (layering fails at
+  trust-routed vertices, box 21 §3.6 (ii)). VIS' charges repeated INRs to higher theta-changes, up to d exits per change.
+  => T(>=r) <= poly*(1+T(>r)): multiplicative, depth = levels used.
+- Additive would need (i) a potential that RISES AT EVERY INR / crossing and is NOT restored by o-free progress, or (ii) m_r <=
+  poly without the '+T(>r)' term. Lead's box 4 for the successor: (i) for crossings (X) (L-NEW box 28 §5c: transitions per phase
+  O(n^4(1 + X + O))).
+### OPEN
+- (ELIM-poly), (LEVEL-poly) (data: max m_r 11 at n 32, lev_l_sc/lev_l_x: two nested counter digits, no third), (CYC-u*).
+- Kill design (routed to L-RED): a carry above 24/21 in lev_l_sc that replays the two-digit block.
 
 ## Queue (for a successor)
 1. Rerun `python3 experiments/si/families.py --engine fast --rules zadeh,cunningham --families fhz_padded --sizes 2..12`
