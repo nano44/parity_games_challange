@@ -276,3 +276,56 @@ DATA (experiments/si/coarse/jump.py, named set):
 - experiments/si/coarse/jump.py: J1, OFF, CAP, L vs M.
 - experiments/si/coarse/jumpeq.py: (JUMP-EQ) exactly as stated in box 6.
 - Every script asserts its run against experiments/new/n5.py run() (iterations and fallbacks). §5 asserts exactly one Odd choice vertex.
+
+## 9. Toward (J-poly): the exit potential D (𝒞^1O; PROVED parts by L-SI succ. 3, unrefereed)
+Setting:
+- ω := τ(o), the trusted exit, constant in a phase.
+- At a state with H2, D_k := {e ∈ succ(o) ∖ R̄_k : Ξ_k(e) ◁ Ξ_k(ω)}: the free exits strictly below the trusted one.
+- SCOPE: an in-phase transition k → k+1 is in scope if (h) holds at k, H2 holds at k+1, and w_{k+1} = w_k.
+- J_in := #non-tame transitions in scope; J_out := the rest.
+
+Preliminaries (PROVED; P-N5-Z §0 conventions, Lemma G = R19 (a)):
+- Under H2, ω ∉ R̄_k, so Ξ_k(ω) = W_k(ω) (G (a)), and w_k = o ⊕ W_k(ω) by (P2) in the (σ_k, τ)-graph.
+- So "w constant" gives W_{k+1}(ω) = W_k(ω). (F-pre applies: o lies on neither path.)
+- Under H1, a := σ̄_k(o) ∉ R̄_k. a's honest play avoids o, and on 𝒞^1O whether a play reaches o does not depend on Odd's choices before
+  o.
+
+Lemmas:
+- **D1′.** If k → k+1 is non-tame and in scope, then a ∈ D_k.
+  - ω is not captured (H2 at k+1), so CAP gives lev(Ξ_k a, Ξ_k ω) > M_k ≥ −1.
+  - With a's minimality this gives Ξ_k(a) ◁ Ξ_k(ω). And a ∉ R̄_k.
+- **D2.** In scope, D_{k+1} ⊆ D_k ∪ Rel_k, where Rel_k := the exits in R_k ∖ R̄_{k+1} (exits RELEASED at k → k+1).
+  - Take e ∈ D_{k+1} with e ∉ R̄_k. Then Ξ_k(e) ⊴ Ξ_{k+1}(e) (R15 (a)) ◁ Ξ_{k+1}(ω) = W_{k+1}(ω) = W_k(ω) = Ξ_k(ω).
+- **D3.** At a non-tame transition, a ∉ D_{k+1}: a ∈ R̄_{k+1} by CAP.
+- **NOREL-A.** In scope, an S4a (arena) transition releases no exit into D: Rel_k ∩ D_{k+1} = ∅.
+  - Let e ∈ R_k be an exit and c the common cycle node (H3). By G (b), Ξ_k(e) = π_e ⊕ θ_k = L ⊕ Ξ_k(a), where L := π_e followed by o.
+    L is disjoint from P(Ξ_k a) and from P(W_k ω): both plays avoid R̄_k.
+  - Whether L ⊕ x ▷ x or L ⊕ x ◁ x, for x with cycle node c and L disjoint from P(x), depends only on L and c:
+    - on the parity of the top vertex of L above rank c;
+    - if L has no vertex above rank c, on c's parity (the length grows by |L|).
+    Never equality.
+  - a minimises Ξ_k over the exits (VJ00 p. 14), so Ξ_k(a) ◁ L ⊕ Ξ_k(a). Hence W_k(ω) ◁ L ⊕ W_k(ω) = π_e ⊕ w_k = W_k(e)
+    (G (b)).
+  - At an arena step, WM gives W_{k+1}(e) ⊵ W_k(e) ▷ W_k(ω) = Ξ_{k+1}(ω).
+  - If e ∉ R̄_{k+1}, then Ξ_{k+1}(e) = W_{k+1}(e) (G (a)), so e ∉ D_{k+1}. □
+- **Corollary JD.** On a maximal run S of in-scope transitions,
+      J_in(S) ≤ |succ(o)| + Σ_{fallbacks k ∈ S} |Rel_k ∩ D_{k+1}|.
+  - Each non-tame transition removes its argmin a from D (D1′, D3).
+  - D gains only released exits (D2), and only at fallbacks (NOREL-A).
+- READING: this does not close (J-poly). Fallbacks per tame run are ≤ n_E(2n − 1) (FB), so JD and FB together give only the circular
+  pair J ≤ d + d·#fb and #fb ≤ C(J + 1).
+  - What would close it: a statement that most fallback releases cannot feed a non-tame capture.
+  - The naive form is FALSE (DATA): (REL-NJ) "an exit released into D at a fallback is never the argmin of a later non-tame transition
+    in the same scope run". It fails at 4 of 18 in-scope non-tame transitions: lev_l_sc k 34 (exit 8), x31_cu32 k 28 (exit 8),
+    x31_cu32i k 36 (exit 3) and k 38 (exit 6).
+  - Own probe, never stated as a lemma.
+DATA (experiments/si/coarse/dpot.py, named set):
+- D1 at THR states: 1,476/0. D1′: 18/0. D2: 1,708/0. D3: 18/0.
+- Releases into D: 199 at fallbacks, 0 at arena steps (NOREL-A).
+- J_in = 18. J_out = 5: 3 at OTHER states of zcl_cu_n48, and 2 at w-changes (x31_rx48 k 50, zcl_rx_n32 k 64).
+- max |D| = 22 (run_m_inr2, n 32).
+Jump levels under (h) with w constant (scratch classification, 20 cases):
+- θ jumps exactly at rank(u*) in 18 of 20. So u* drops strictly, or θ reaches w, and there are at most n such jumps per w-value.
+- The 2 others (x31_rx32 k 53, x32_nest40 k 55) jump below u* and are followed at once by a jump at u*.
+- CONJECTURE (JU2): under (h) with w constant, a non-tame jump below rank(u*) is followed within one transition by a jump at rank(u*).
+  Data 2/2, too thin to lean on.
