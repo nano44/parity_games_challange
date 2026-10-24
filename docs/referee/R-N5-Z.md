@@ -106,3 +106,15 @@ o-cyclic 𝒞^1O, 4,000 seed 3101 and 4,000 seed 3102 --randstart, n 6-16 (6,843
 | Z-2 | NOFE also follows from R21 (c) FBL-N (ii) | remark | — |
 | Z-3 | NOFE: "σ_k y ∈ F_k by (F0)" is a state-k fact | wording | CLOSED |
 OPEN, untouched: (Z), (C), G-N5-TIME. TARGET.md diff: statements about the candidate N5 on 𝒞^1O, none about general parity games.
+
+## Data correction (Lead 20:4xZ / 20:5xZ; written 20:45Z by date -u)
+- experiments/si/orlens/instances/s_rt32_final.pg (sha1 93ba6aa3) is NOT in 𝒞^1O: it has 2 Odd choice vertices (14, 28). My §5 named set
+  included it via the si/orlens glob, and z_probe.py took the first Odd choice vertex (common.odd_choice), so its rows are out of class.
+- Corrected §5 counts without it (its row was ACT (ii) 5, GAP 12, WM 43, 1 LV phase with X = 5, Z = 0):
+  ACT (i) 1,126 / (ii) 855; NOFE 17; GAP 511; WM 3,957; LV′ 595 phases (max X 78, max Z 22, unchanged). 0 failures, as before.
+- No verdict changes: data is not proof. Every probe in docs/referee/scratch/ (re_, xa_, x_, nh_, z_probe.py) now asserts exactly one Odd
+  choice vertex before running (re_probe.py only in its 𝒞^1O mode).
+- Class check of my earlier reports: every named file in R-N5-RE, R-N5-XA, R-N5-X and R-N5-NH has exactly one Odd choice vertex. I scanned
+  each glob I used. From box21 I used only fts_best16; from red/n5inj only theta_tp32, theta_thf16, returns_rt48 and returns_ph64. The
+  out-of-class files there (fts_best24/39, fts_g29/43, fts_ph16; bribe_cex_n15, elimn_cex_n48, frz32/40, phase2_pk32/48, returns_rt32/64,
+  wide_h16) were not in my runs. No correction is needed for R21/R22 from my side.
