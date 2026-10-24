@@ -52,7 +52,16 @@ or with many non-(h) transitions (NH). Labels per L40. No running-time claim. G-
 - θ-changes inside one (w, u*)-run reach about 2n/3 and do not grow faster than n. Per phase they reach 1.25n.
 - n 48 is limited by the budget: the padded seed gains little in 1,800 s. Continuation runs are in §2b.
 
-### 2b. Continuations (PENDING: climbs from run_x_inr2 at n 32 / 48 running until ~17:20Z, date -u)
+### 2b. Continuations from L-SI's run_x_inr2 (42 per run at n 32), cycu, about 2,100-2,400 s each
+| n | best | θ-changes in one (w, u*)-run | per phase | N5 iterations (n5 = n5b) | sha1 |
+| --- | --- | --- | --- | --- | --- |
+| 32 | x31_rx32 | 48 | 49 | 55 | 4fe9ec0e… |
+| 48 (padded) | x31_rx48 | 44 | 46 | 53 | 34b44d5d… |
+| 48 (continuation of x31_cu48) | cu48b, not pinned | 25 | 49 | 56 | b5dced14… |
+
+- All verified: Oink zlk OK, strategies verified, and n5b agrees.
+- The n 64 padded climb was stopped by me after about 15 min, when it reached 43 per run, no gain over its seed. Padding does not help
+  within these budgets: θ-changes per run stay at about 1.5n (n 32) and below n (n 48).
 - All four bests: 0 lemma violations, max non-(h) per phase 1.
 
 ## 3. (NH) (DATA and READING)
@@ -64,10 +73,11 @@ or with many non-(h) transitions (NH). Labels per L40. No running-time claim. G-
 ## 4. Throttled re-entries: the first data for Theorem XA (DATA; Lead 15:48Z: "Theorem XA has no data")
 - x31_re24 (n 24, sha1 49eaf50e…; reent climb from x31_lem_e24, 1,800 s): 33 throttled re-entries inside one stretch, after arena
   leaves. All 33 have u* = none (P(θ) = P(w), only lengths differ), which is XA's side case. N5: 6 iterations, n5b agrees, Oink OK.
-- x31_ru24 (n 24, sha1 d4be0710…; reentu climb, which rewards u* ≠ none, seeded from re24): 20 throttled re-entries with
-  u* ≠ none after arena leaves, in one stretch of 3 transitions, with 0 C3 failures.
+- x31_ru24 (n 24, final best sha1 8b8276f1…; reentu climb, which rewards u* ≠ none, seeded from re24): 27 throttled re-entries with
+  u* ≠ none after arena leaves, in one stretch, with 0 C3 failures. N5: 7 iterations, 1 fallback (n5b agrees). An intermediate
+  best (d4be0710…) had 20.
   - So Theorem XA's claim (strict coarse rise at each re-entry) holds on 20 real instances of its main case.
-  - N5: 7 iterations, n5b agrees, Oink zlk OK, strategies verified. coarsecheck.py (both cuts) reproduces the 20.
+  - Intermediate best d4be0710: N5 7 iterations, n5b agrees, Oink zlk OK, strategies verified; coarsecheck.py (both cuts) reproduces its 20.
 - These are data for the referees, not a kill: the runs are short.
 
 ## 5. (FBRE-F) (L-NEW CONJECTURE, docs/new/N5-NH-box28.md §5b @ l-new 2a195b3)
@@ -82,10 +92,30 @@ or with many non-(h) transitions (NH). Labels per L40. No running-time claim. G-
 | run_x_inr2 (L-SI) | 32 | 47 | 8 | 0 | 3 |
 | x31_lem_e24 | 24 | 50 | 2 | 0 | 4 |
 | x31_lem_t32 | 32 | 52 | 2 | 0 | 5 |
-| fb32 climb (PENDING, ends ~17:20Z) | 32 | | | | |
+| **fbref_cex_n32** (fbref climb from run_x_inr2, 1,217 s to the best) | 32 | 49 | 33 | **33** | 8 |
 
 - "Waves" counts fallback transitions that evict at least one vertex inside one run. rt48 / ph64 have many small ones, not just two.
-- No violation. Seeds for a ≥ 3-wave straddle exist: x31_lem_e24 and x31_lem_t32 have 4-5 waves across the freeze.
+- Before the last climb: no violation on the named instances.
+
+### 5b. (FBRE-F) is FALSE as stated (one verified instance; 2026-10-24 ~17:25Z, date -u)
+- Instance: experiments/red/xing/instances/fbref_cex_n32.pg (sha1 901674dc9d960ed737bc424055cffc7c329e88d8). n 32, one Odd choice
+  vertex, canonical start. Found by xclimb.py --target fbref (seed 61) from L-SI's run_x_inr2.
+- Checks:
+  - n5.py: 56 iterations, 8 fallbacks. n5b.py (SPEC): 56 / 8, agreeing.
+  - Oink zlk OK, strategies verified (check_sol2.py).
+- Measured by TWO instruments that agree:
+  - mine (fbref.py): one (w, u*)-run of states 4-53 (49 transitions > n − 1 = 31), 33 post-freeze fallback evictions, and all 33
+    evictees re-enter R inside the run (VIOL 33);
+  - L-NEW's own experiments/new/box28/fbre.py at l-new 2a195b3, UNMODIFIED: run states (4, 53), FBRE 66, FBRE_Rstatus_prefreeze 33,
+    evict_postfreeze 33. So 33 re-entries come from post-freeze evictions, which is L-NEW's FIT=p count (FBRE minus prefreeze).
+    evictW 0, evictR 27: R-status evictions, the case Lemma FB-W leaves open.
+- Mechanism: one fallback at transition 35 → 36 evicts the 33 vertices. θ changes at state 37. The evictees re-enter at states 38-39.
+  θ-changes in the run occur at states 12, 16, 21, 27, 28, 34, 37.
+- CAVEAT (exact scope): the eviction is at run index 35 − 4 = 31 = n − 1, exactly the freeze boundary, under the convention that both
+  L-NEW's fbre.py and box 28 §5b use ("eviction index < n − 1" = pre-freeze). A variant that starts the post-freeze window at index
+  ≥ n, or one excluding re-entries after a θ-change, is NOT refuted by this instance.
+- What breaks: the step "(FBRE-F) ⇒ FBRE ≤ pre-freeze fallback leaves", in L-NEW's reduction of (CYC') to (W) + (U0) (§5b), loses its
+  premise. G-N5-TIME stays OPEN; the instance is short (56 iterations), so it is not a kill.
 
 ## 6. m_r: θ-changes per level in the longest phase (experiments/red/xing/levels.py; Lead 16:45Z, L-SI box 3 k-digit target)
 - Level of a θ-change = VJ rank of the most relevant vertex of P(θ_k) Δ P(θ_{k+1}); "len" = only the length changed.
@@ -113,8 +143,8 @@ or with many non-(h) transitions (NH). Labels per L40. No running-time claim. G-
 ## 7. Verdict for box 31 (labels per L40)
 - Mei port: no kill (R60).
 - L-NEW lemmas C, FBL, FBF, XA (and CR's C2 consequence): no counterexample. DATA on 12 climbed and named instances, n ≤ 48.
-- (FBRE-F): no counterexample. DATA: 34+ post-freeze evictions over six instances, 0 re-entries.
-- (CYC-u*): θ-changes in one (w, u*)-run reach about 43-44 at n 32-48, i.e. at most about 1.35n, with no growth from 32 to 48. m_r ≤ 6.
+- (FBRE-F): FALSE as stated, by fbref_cex_n32 (§5b; at the boundary index n − 1; both instruments agree).
+- (CYC-u*): θ-changes in one (w, u*)-run reach 48 at n 32 (1.5n) and 44 at n 48. No growth with n inside these budgets. m_r ≤ 6.
   CONJECTURE (data only): θ-changes per (w, u*)-run are O(n). No super-linear family found.
 - (NH): only SB+TAU non-(h) states, in short phases.
 - G-N5-TIME stays OPEN.
