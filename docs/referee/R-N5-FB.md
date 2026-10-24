@@ -150,3 +150,52 @@ COARSE-SI (a) + converse SIGNED WITH GAPS ENG-1 (inherited), V-1, V-2 (citations
 CAP SIGNED WITH GAP CAP-1 (closed); (JUMP-EQ) FALSE CONFIRMED; A (L ≤ M_k at tame carries) SIGNED. Labels after two signatures
 (D18/L40): these become PROVED (L-SI succ. 3; REFEREE, and REFEREE-2 if it signs), §2-§4 on all parity games, §5 on 𝒞^1O. Theorem FB
 bounds fallbacks per phase by poly(n)·(J + 1); (J-poly), (C), G-N5-TIME OPEN.
+
+## §C. Comparison with REFEREE-2 (R2-N5-FB, claude/referee-2 7699593)
+Written 2026-10-24 22:54Z onward by date -u, after my report (eb1ec3cc) was pushed and the Lead said R2-N5-FB exists (22:5xZ). R2 did not
+read my report. No verdict differs: both sign every statement (Theorem FB, Corollary and CAP with closed gaps), both confirm the (JUMP-EQ)
+refutation and sign A's PROVED part.
+### C.1 Disagreements (Lead item 1)
+- None on any verdict. FB-1 = G-FB-1 (same one-line closure: the best-target choice carries a level-∞ gate edge to the switched edge).
+  V-1 = N-FB-1. NOINF: R2's one-line (P1) chain = mine. ENG-1: R2 records the same dependency under TAME ("the R15 code link",
+  re-checked at every state); we agree it is inherited, not new.
+- FB-2 (phase-exit fallbacks) is mine only. R2 does not raise it. I keep it as a wording note: FB's step (2) uses NOINF (λ_{k+1} = λ_k)
+  and τ constant, which fail at a phase's exit transition, so "transitions of the phase" must have both ends in the phase (≤ 1 extra
+  fallback per phase otherwise; 7 such in the named set). R2's FB totals count in-phase fallbacks (635 batch), consistent with this
+  reading. I ask R2 to confirm the wording.
+### C.2 G-FB-2 and G-FB-3 (Lead item 2): MISSED by me, ACCEPTED
+- G-FB-2: Theorem FB is claimed for every game (§0), but step (2) cites R21 (c) FBL-N (i), signed on 𝒞^1O. R2's transfer is correct on
+  any game: an Odd fallback happens only if Iσ = ∅ and then switches some Odd v to an Iτ edge ≠ τ(v) (SPEC S4c, FIX 3), so τ changes,
+  which cannot happen inside a phase. Hence every in-phase fallback is Even's, Iσ_i ≠ ∅. CLOSED.
+- G-FB-3: the Corollary's W-lowering bullet cites R23 (g) WM, signed on 𝒞^1O. On any game: in a phase τ is fixed, an S4a step returns an
+  optimum of the one-player arena of G_τ that contains σ_k, so W_{k+1} ⊵ W_k (R17 (F1), a one-player statement); W drops only at
+  fallbacks. CLOSED. The (C) bullet is a 𝒞^1O statement (reversals of R̄) and is fine as cited.
+- I checked the scope of every other citation in §2-§4: R15 (a), (d) are general-game; VJ00 is general. Only these two were 𝒞^1O-signed.
+### C.3 CAP (Lead item 3): both closures are valid; R2's should go in
+- Mine (§4.2): split on λ(o). λ(o) ≠ o: SPEC's σ̄(o) is a full minimiser (case proof via (11)); λ(o) = o: any exit with finite level to a has
+  cycle node o and stays in R̄_{k+1} because λ is constant in the phase.
+- R2's (G-FB-4): CAP uses minimality only through COARSE_M with M ≥ −1 (a non-tame transition has M_k ∉ {⊥, ∞}), and COARSE_{−1} drops
+  lengths. At an own cycle node o, Prog clause 3 on (o, b) gives λ(b) = o and P(b) = ∅. VJ00 (10) (same cycle-node class) and (3) (other
+  classes have larger reward) give COARSE_{−1}(Ξ u) ⊵ (o, ∅) for every u ∈ succ(o). So the DFS choice is a COARSE_M-minimiser for every
+  M ≥ −1, and the packet's proof runs verbatim. I re-derived both steps. VALID.
+- Which goes in: R2's. It is one argument for both cases, keeps the packet's proof text, and states the reusable fact ("σ̄ minimises Ξ up to
+  length at own cycle nodes, fully elsewhere"). My case split stays as an independent second proof. R2's instance (general701 #16, u = 8,
+  σ̄ = 1 with Ξ(1) = (8, ∅, 1) vs Ξ(6) = (8, ∅, 2)) and my counts (925 non-minimiser cases, all at cycle nodes; 0 in 61,968 non-cycle-node
+  checks) agree with R2's 1,228 / 111,062.
+### C.4 Joint gap map (Lead item 4)
+| statement | REFEREE | REFEREE-2 | joint status | repair for L-SI's fixes file |
+|---|---|---|---|---|
+| Theorem FB | SIGNED WITH GAPS FB-1, FB-2 | SIGN WITH GAPS G-FB-1, G-FB-2 | SIGNED by both; FB-1 = G-FB-1 closed; G-FB-2 (R2) closed; FB-2 (REFEREE) wording, R2 to confirm | step (2): add the best-target line for M < ∞; replace the R21 (c) citation by "SPEC S4c + FIX 3: an Odd fallback changes τ"; say "transitions with both ends in the phase" |
+| Corollary | SIGNED | SIGN WITH GAPS G-FB-3 | SIGNED by both; G-FB-3 closed | W-lowering bullet: "(F1) in G_τ at S4a steps (R17)" instead of R23 (g) on general games |
+| Claim (T) | SIGNED | SIGN | SIGNED by both | — |
+| COARSE-SI (a) + converse | SIGNED WITH GAPS ENG-1, V-1, V-2 | SIGN (N-FB-1) | SIGNED by both; ENG-1 = R2's code-link note (inherited) | Prog citation p. 15; quote VJ00 clause 3 in full |
+| TAME (b) | SIGNED | SIGN (code-link note) | SIGNED by both | — |
+| MONO, NOINF | SIGNED | SIGN | SIGNED by both | NOINF: the one-line (P1) chain |
+| J1, OFF | SIGNED | SIGN | SIGNED by both | — |
+| CAP | SIGNED WITH GAP CAP-1 | SIGN WITH GAPS G-FB-4 | SIGNED by both; CAP-1 = G-FB-4, closed | R2's coarse-minimiser line: "σ̄(o) is a COARSE_{−1}-minimiser (Prog clause 3, VJ00 (3), (10)); CAP uses only COARSE_M, M ≥ −1" |
+| §5 Remark | SIGNED | SIGN (one line added) | SIGNED by both | R2's line: a bad cycle avoiding o is an H_{k+1}-cycle, topped by a λ fixed point |
+| (JUMP-EQ) | FALSE confirmed | FALSE confirmed | FALSE (DATA, two independent re-runs) | — |
+| A | L ≤ M_k at tame carries SIGNED; L = M_k DATA 201/201 | same | SIGNED by both (PROVED part); L ≥ M_k OPEN | — |
+Labels after two signatures (D18/L40): (T), COARSE-SI (a)/(b), MONO, NOINF, Theorem FB and its Corollary are PROVED (L-SI succ. 3;
+REFEREE and REFEREE-2, Opus 5.5, D15) on every parity game; J1, OFF, CAP on 𝒞^1O. (JUMP-EQ) FALSE. (J-poly), (C), G-N5-TIME OPEN.
+CHECKER pending.

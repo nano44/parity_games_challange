@@ -33,7 +33,8 @@ experiments/new/box25/common.py (rand_c1o, odd_choice = FIRST Odd chooser: hence
   only), FB-2 (phase-exit fallbacks, ≤ 1 per phase, 7 in named set); (T), MONO, NOINF, J1, OFF, TAME, Corollary, A SIGNED; COARSE-SI (a)
   WITH ENG-1 (inherited engine point), V-1 (Prog is VJ00 p. 15), V-2; CAP WITH CAP-1: SPEC's σ̄ at a cycle node (FIX 2 DFS) is NOT a
   minimiser (925 cases); closed: non-cycle-node σ̄ is a minimiser (case proof), λ(o) = o case direct. (JUMP-EQ) FALSE confirmed (x31_rx32
-  53 → 54, last carry 51, L 24). Tool scratch/fb_probe.py. NEXT: §C when R2-N5-FB exists (docs/referee-2/ NOT read for FB).
+  53 → 54, last carry 51, L 24). Tool scratch/fb_probe.py. §C from 22:54Z vs R2-N5-FB (referee-2 7699593): no verdict differs; MISSED
+  G-FB-2/G-FB-3 (𝒞^1O-only citations in an every-game theorem; accepted); CAP: R2 coarse-minimiser closure recommended. PARKED.
 - Lesson: "σ̄ minimises" (VJ00's definition) is not SPEC's σ̄ at cycle nodes; check every VJ00 property against si.py's actual choice.
 
 ## Resume point (successor 5, written 2026-10-24T21:32Z by date -u, Opus 5.5 under D15; label "(Opus 5.5, D15)")
