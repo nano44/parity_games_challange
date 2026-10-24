@@ -1,0 +1,10 @@
+ACT_i: 2
+ACT_ii: 9
+WM_checks: 95
+phases: 114
+pm_transitions: 0
+runs: 20
+transitions: 189
+phase_max_X: 0
+phase_max_Z: 0
+RESULT OK violations=0

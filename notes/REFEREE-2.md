@@ -2,6 +2,11 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
+2026-10-24 20:42Z P-N5-Z (docs/si/P-N5-Z-box5.md sha1 a027638f…, trunk fba7177): docs/referee-2/R2-N5-Z.md. All SIGN: LV' (N-Z-1: runs
+must be adjacent among crossing transitions; '±' breaks them), Corollary Z (R21 (g) within hypotheses), NOFE strong, ACT, LOOP, NOFL-E, GAP,
+WM, Step (K). N-Z-2: s_rt32_final is NOT C^1O (Odd choices 14, 28); my checker falsely "failed" Step (K) on it before I added the C^1O
+guard. Tool R2-N5-Z/z_check.py. Context ~470k. Next: §C.
+Earlier:
 2026-10-24 19:49Z P-N5-NH (docs/new/P-N5-NH-box30.md sha1 382c5143…, trunk c7981ee): docs/referee-2/R2-N5-NH.md. TC, F1°, P3' steps 2-3,
 Corollary SIGN; P3' step 1 SIGN WITH GAPS (G-NH-1: "S4a optimum restricted to R is an R*_w-arena optimum" unjustified under not-H2,
 lambda_W(o)=o; closed: CR needs only B1 single-switch inequality; x not on C_W: real = contracted; x on C_W: vacuous, top of pi_z even
