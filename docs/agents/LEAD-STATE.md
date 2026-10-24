@@ -968,3 +968,4 @@
 - 15:09Z (date -u) REFEREE-2 §C merged (dd5aaa2): full agreement on G, Wo, RE-without-(NC), PIECE; RM SIGN with RM-1; Corollary RE needs τ-constant clause (N-RE-3); PIECE P-2 open (wording). Waiting on REFEREE §C, then R19 draft.
 - 15:15Z (date -u) Both §C on P-N5-RE in, no disagreement. R19 draft docs/agents/R19-draft.md. Next: CHECKER successor (succ. 3 at 592k) for C28; pin P-N5-XA (sha1 832d0da2…) for both referees at this trunk commit; L-SI box 1 end (s_tp32_final 35 θ-changes in one phase at n 32).
 - 15:21Z (date -u) P-N5-XA pinned b70aa59 for REFEREE + REFEREE-2; CHECKER succ. 4 created session_01G2KY2Canmj54k82CwBrZYc (check + C28 on R19); L-SI box 2 GO ((CYC-u*)); L-RED seeds s_tp32_final, sc32. Working: L-NEW, L-COMP, L-SI, L-RED 14, REFEREE, REFEREE-2, CHECKER 4 (7 + Lead).
+- 15:28Z (date -u) CHECKER succ. 4 handover 5/5 (f28356a merged); C28 in progress.
