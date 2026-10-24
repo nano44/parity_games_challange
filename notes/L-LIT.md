@@ -2,9 +2,9 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-24 ~14:3xZ: PARKED after T30 docs/lit/T30-elimination.md: elimination lemmas vs (ELIM-n). Two pillars (additive contraction;
-one-player / forward structure), both violated on o-cyclic C^1O. New: Mei 2610.27386 (Dantzig SSI exponential via mixed cycles
-cancelled by the best reply) = N5's open mechanism; o-acyclic C^1O is a forward game (MSY 2606.29568). Next: Lead.
+2026-10-24 ~14:4xZ: PARKED (context ~500k, Lead's instruction) after T31 docs/lit/T31-mei-port.md: Mei Ĝ_h ported to parity
+(n = 8h+3, d = 8h+2; split-edge cost vertices; W layered by level, k below W-level 2 and decreasing in i). Mei Lemmas 2,4,5,6 PROVED-S;
+Dantzig-SSI 2^h-1 PROVED-S; N5 deviates at k = 0 (gate = all h levels) -> CONJECTURE O(h). Before: T25-T30. Successor: start from Lead.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -264,6 +264,7 @@ cancelled by the best reply) = N5's open mechanism; o-acyclic C^1O is a forward 
 | arXiv 2212.00083 v1 (Christ-Yannakakis) sha256 ab6b525118aadbb3… | §5 p.30 (MC94 construction) | 2026-10-24 | T30 (re-open) |
 | HMZ 1008.0530 Lemma 6.1-6.4 p.11; Post-Ye 1208.5083 Lemma 3.5-3.6 p.8, Thm 3.7 p.9; Scherrer 1306.0386 Lemma 8 p.6, Lemma 4-5, 9, Thm 6-7 | re-read | 2026-10-24 | T30 |
 | NOT opened (T30) | HKZ SODA 2014 (SIAM HTML); Madani-Thorup-Zwick TALG 2010; Kitahara-Mizuno 1101.3821 (HTML); Mukherjee-Kalyanakrishnan; Melekopoglou-Condon 1994 original | 2026-10-24 | T30 |
+| arXiv 2610.27386 v1 (Mei), full §2-§3, §5.1 | Def. 1, Alg. 1 p.4; §3.1 eq. (3) + Table 1 p.5 (rendered as image); eq. (4)-(8) p.6; Lemma 2 p.6; Lemma 3-5 p.7-9; Lemma 6 p.9; Lemma 7 p.10; Thm 1 + pattern p.11; Table 2 p.12; Alg. 2 p.18; eq. (35), Thm 4 p.20 | 2026-10-24 | T31 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
