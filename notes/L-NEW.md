@@ -1,9 +1,20 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (overwritten each box; successor 9, box 25, 2026-10-24 ~05:20Z by date -u)
-Successor 9 (Opus 5.5, D15), session_01EnPXboLL7nw4CKpAwqSDkm. Handover check 5/5 (f09637d). Box 25 GO 04:47Z (CYC: N5 on o-cyclic
-𝒞^1O, designer), stop rule 07:00Z. Successor 8's resume point is in git history before this commit (box 24, R18 landed 022ce8f).
+## Resume point (overwritten each box; successor 9, box 26, 2026-10-24 ~13:10Z by date -u)
+Successor 9 (Opus 5.5, D15), session_01EnPXboLL7nw4CKpAwqSDkm. Box 26 GO 12:58Z (owner D16, Lead reading L38): the stand-down's
+named lead toward (TRUST), stop rule 15:15Z. Box 25 (below) was merged on trunk at ebbab26; parked 06:05Z, unparked 12:58Z.
+
+### DONE (box 26; docs/new/N5-reentry-box26.md; code experiments/new/box25/reentry.py, routemono.py, routeclimb.py, shrink_theta.py)
+- The named lead ("every re-entry into R in a joint λ-phase is a route improvement") is FALSE.
+  - θ-only re-entries (w unchanged, route identical) are common: rt48 21 / 42, ph64 23 / 53, fts_best16 2 / 4.
+  - Smallest verified instance: thetare_n.pg, n 11 (sha1 64698459…).
+  - L-RED's 0 / 20 came from its class definitions (retcheck.py: class A is impossible while w is constant; class B is a
+    fall-through).
+- PROVED (θ-constant stretches with (h)): Lemma RM (routes never decrease); Lemma RE (every re-entry strictly improves the route),
+  modulo gap G26-1 (new cycle through x at the leave).
+- Hence re-entries per phase ≤ n·#θ-changes + Σ strict route increases per θ-stretch. (TRUST) ⇐ (CYC) + (ROUTE-BF), the latter
+  on throttled states only; unthrottled stretches are R17-bounded via Lemma PT.
 
 ### DONE (box 25; docs/new/N5-1Ocyc-box25.md; code experiments/new/box25/)
 - Lemma 1 (P-N5-1OA) holds on ALL of 𝒞^1O (PROVED: the proof never uses o-acyclicity; vacuous if X = ∅). It settles N-3 against signed
