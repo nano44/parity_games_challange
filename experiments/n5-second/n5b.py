@@ -211,7 +211,7 @@ class N5:
         """Optimal counterstrategy of si's Odd player (A5)."""
         return [si.best(valu, v) if si.pl[v] == ODD else -1 for v in range(si.g.n)]
 
-    def run(self, sigma=None, tau=None, max_iter=100000):
+    def run(self, sigma=None, tau=None, max_iter=100000, trace=None):
         g = self.g
         sigma = sigma or self.SG.initial_strategy_by_best_reward()                  # Even vertices: successor, Odd: -1
         tau = tau or self.SD.initial_strategy_by_best_reward()                      # on the dual: original Odd vertices
@@ -222,6 +222,8 @@ class N5:
             if key in seen_states:
                 raise RepeatedState(f"(sigma, tau) repeated at iteration {it}")
             seen_states.add(key)
+            if trace is not None:                    # box 3 hook (2026-10-24): record every state; no effect on the run
+                trace.append(key)
             vs = self.ev(self.SG, sigma); vt = self.ev(self.SD, tau)
             Is, It = self.improving(self.SG, sigma, vs), self.improving(self.SD, tau, vt)
             if not Is and not It:                                                    # step 1
