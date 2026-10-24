@@ -1,10 +1,26 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Resume point (successor 2, Opus 5.5 D15/D18; box 4 = the (X) proof side, GO 17:4xZ 2026-10-24, box to ~20:45Z)
-Handover check f0bbb5e0 (5/5, Lead). Box 4 doc: docs/si/N5-X-box4.md. Code: experiments/si/xing/ (each script asserts its run equals
-experiments/new/n5.py; climbs write to experiments/si/xing/out/, which is NOT covered by .gitignore's experiments/*/out/ pattern: add files
-by explicit path only). Oink built in this container (8fbf0a7).
+## Resume point (successor 2, Opus 5.5 D15/D18; PARKED 2026-10-24 ~21:30Z at ~500k context; LANE-RESTART step 1)
+Boxes done this session: handover check f0bbb5e0; box 4 (docs/si/N5-X-box4.md); box 5 (a) packet P-N5-Z (docs/si/P-N5-Z-box5.md v1,
+pinned trunk fba7177, sha1 a027638f; R23 with CHECKER as C32; lane fixes docs/si/P-N5-Z-fixes-box5.md incl. referee items Z-1..Z-3,
+N-Z-2); box 5 (b) + box 6 (docs/si/N5-C-box5.md §1-§6). Code: experiments/si/xing/ (every script asserts n5.run equality and
+one-Odd-choice). Climb output experiments/si/xing/out/ is excluded locally via .git/info/exclude (NOT .gitignore; never git add -A).
+### DONE (box 6)
+- (CL) reduced (READING) to Step 1 COARSE-SI (write out the telescoping) + A (carry changes ≤ its level; DATA 198/0) + CONJECTURE
+  (JUMP-EQ) (an INR jump above the last carry level lands in θ = w; DATA 4/4 first failures, 19/20 post-carry jumps).
+- Step 2 PROVED: COARSE_L(Ξ) constant at k->k+1 and G(L) at k => G(L) at k+1.
+- DATA: I(L) 784/0, FREEZE(L) scoped 638/0, G(L) fails at 11 states (all F->R entries, after INR jumps).
+### NEXT (for a successor), in order
+1. Write Step 1 (COARSE-SI) as a full proof: L-coarse super-solution in G_{σ̄_k}, telescoping, simple-path bookkeeping (VAL), and
+   the exact cycle-closing exclusion.
+2. Look at the one post-carry jump landing in THR (find it with freeze.py's pre-scope variant: ex entries 'F' after lastc), then try
+   to prove (JUMP-EQ).
+3. Prove A (carry changes Ξ only at levels ≤ L): evictees ≤ their eviction level (CLU), passive vertices inherit, F-switches flat
+   (R21 (c) FBL-N (ii)), θ via exits.
+4. Then (C) needs "carries per level": refills are θ-changes strictly below the level (data §3).
+L-RED box 34 is nesting carries with '+−' fallback reversals as fitness (Lead 21:1xZ).
+
 ### Box 5 (GO 20:2xZ): (a) packet P-N5-Z v1 pinned (trunk fba7177, sha1 a027638f), referee items answered in
 docs/si/P-N5-Z-fixes-box5.md (Z-1, Z-2, Z-3, N-Z-2; s_rt32_final OUT OF CLASS, two Odd choice vertices). (b) docs/si/N5-C-box5.md:
 Lemma CLU PROVED; CONJECTURE (CL) carry levels non-increasing while w constant (0 violations, 118 carries + 3 adversarial climbs, carries
@@ -69,6 +85,8 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 2. Keep check.sh green: it compiles vjfast_check and re-checks the pinned killer instances (instances/pinned.txt).
 
 ## Things only I know
+- (successor 2) Never edit a file after sending its sha1 for pinning; corrections go to a separate fixes file (Lead rule, 20:4xZ).
+- (successor 2) Background watchers: wait on a file condition (e.g. 'FINAL' in logs), never on pgrep -f of a pattern in the same command line.
 - (successor 2) pkill -f with a pattern that occurs in the same bash command line kills that shell (exit 144): start/stop climbs with
   setsid in their own command; stop them by PID.
 - (successor 2) experiments/new/box28/fbre.profile does NOT assert equality with n5.run; xclass.assert_run does (use it).
