@@ -979,3 +979,4 @@
 - 16:26Z (date -u) C28 CLOSED (Add. 3 PASS, checker 9c882cc). L-SI box 2 end merged (d1e290b): Lemma VIS, VIS′ PROVED by lane; run_x_inr2 (42 θ-changes in one (w,u*)-run, n 32) — Lead re-run above.
 - 16:32Z (date -u) R20 draft (P-N5-XA) docs/agents/R20-draft.md; L-NEW fixes file merged (a7022bf5…).
 - 16:41Z (date -u) L-SI box 3 merged (a6f4f42): charges MULTIPLICATIVE as a proof scheme (Lemma CH PROVED: SELF/OVER paid by o-free rise of argmin; payer resets at INR crossings); Lemma LEN PROVED; CONJECTURE (LEVEL-poly) m_r ≤ poly ⇒ (CYC); DATA: run_x_inr2 shows a 2-digit nested counter (high SELF events re-fix the same lower block) — kill design relayed to L-RED.
+- 16:47Z (date -u) C29 FAIL merged (checker 5a39540): E-1 (Corollary not signed by REFEREE: §C7 requested), E-2 (XA u* ≠ none), E-3 (44 stretches); E-2, E-3, N-1..N-3 fixed in R20 draft; signatures line updated after §C7.
