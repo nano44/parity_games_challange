@@ -16,8 +16,9 @@ O4 sharpened to O5 (K1-K4), Conjecture BRIBE FALSE (instance). Boxes 24-25 below
   - (a) θ-climbs: 13 / 16 θ-changes in one phase at n 16 / 24 (< n).
   - (b) pure-Y blocks: 27 / 49 at |Y| 21 / 33, so "block ≤ |Y|" (L-NEW data) is FALSE. But they hold only ≤ |Y| − 1 inside one
     λ-phase (in-phase climbs reach 20 / 31).
-  - Conjecture STAT-PH (READING): in-phase pure-Y block ≤ |Y| − 1. With Prop X and L-NEW's reduction, it would give N5
-    polynomial on o-acyclic 𝒞^1O.
+  - Conjecture STAT-PH (DATA conjecture only; Lead 04:31Z: not a target): in-phase pure-Y block ≤ |Y| − 1. o-acyclic 𝒞^1O is now
+    SETTLED by L-NEW's refereed theorem (N5-1Oacyc-box24.md: blocks are segments of N5 on G_τ, bounded by R17), with Prop X.
+    Lands as RESULTS R18.
   - Instances: theta_thf16, theta_thc24, block_bk20/32, blockph_bp20/32; all Oink zlk OK, strategies verified.
 - NEXT: a STAT-PH proof or break (static two-one-player-game problem); or the next named candidate (Lead: possibly L-NEW N11 = N5-HT).
 

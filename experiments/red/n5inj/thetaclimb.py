@@ -2,7 +2,7 @@
 one successor) for MANY CHANGES of the throttle theta = Xi_sigma(o) inside one joint lambda-phase (L-NEW box 21 Lemma G, §3.5-§3.6;
 Lead routing 01:47Z). Run: canonical N5 (S3 best-reward start), via declines.states (n5.py replica, counts asserted = n5.run).
 Fitness (lexicographic): max over joint lambda-phases of the theta-changes inside that phase; then total theta-changes; then
-iterations; then fewer edges. Writes OUT_best.pg on every improvement. Usage: thetaclimb.py n SECONDS SEED OUT [--from G.pg]  (--from: start from G, whose Odd choice vertex is relabelled to 0)"""
+iterations; then fewer edges. Writes OUT_best.pg on every improvement. Usage: thetaclimb.py n SECONDS SEED OUT [--from G.pg]  (--from: start from G, whose Odd choice vertex is relabelled to 0; G may be smaller than n: padded with inert self-loop vertices)"""
 import os, random, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import declines  # noqa: E402
@@ -71,11 +71,13 @@ def write(G):
 
 def load(path):
     g0 = pg.parse("".join(l for l in open(path) if not l.lstrip().startswith("%")))
-    assert g0.n == n
-    o = [v for v in range(n) if g0.owner[v] == 1 and len(set(g0.succ[v])) > 1][0]
-    perm = list(range(n)); perm[0], perm[o] = o, 0          # swap o and 0
-    pr = [g0.prio[perm[v]] for v in range(n)]; ow = [g0.owner[perm[v]] for v in range(n)]
-    su = [sorted({perm[w] for w in g0.succ[perm[v]]}) for v in range(n)]
+    m0 = g0.n; assert m0 <= n
+    o = [v for v in range(m0) if g0.owner[v] == 1 and len(set(g0.succ[v])) > 1][0]
+    perm = list(range(m0)); perm[0], perm[o] = o, 0          # swap o and 0
+    pr = [g0.prio[perm[v]] for v in range(m0)]; ow = [g0.owner[perm[v]] for v in range(m0)]
+    su = [sorted({perm[w] for w in g0.succ[perm[v]]}) for v in range(m0)]
+    for v in range(m0, n):                                   # padding: new Even vertices with a self-loop (inert until mutated)
+        pr.append(0); ow.append(0); su.append([v])
     return fix((pr, ow, su))
 
 
