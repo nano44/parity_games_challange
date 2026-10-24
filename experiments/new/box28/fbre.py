@@ -22,6 +22,7 @@ def runs_of(g, start=None):
         r["u"] = max(d, key=lambda v: E.rank[v]) if d else None
         r["R"] = reach_o(g, r["s"], r["t"], o)
         r["thr"] = all(r["h"]) and r["th"] != r["w"]
+        r["Pz"] = [vset(E, Xi[z])[1] for z in range(g.n)]; r["Pw"] = b[1]; r["E"] = E
     for (x, y) in ph:
         k = x
         while k <= y:
@@ -32,17 +33,25 @@ def runs_of(g, start=None):
     return out
 
 def stats(k, j, rows):
-    st = dict(states=(k, j), u=rows[k]["u"], tc=0, fb=0, leaveA=0, leaveF=0, ARE=0, FBRE=0, first=0)
-    last, seen = {}, set(rows[k]["R"])
+    st = dict(states=(k, j), u=rows[k]["u"], tc=0, fb=0, leaveA=0, leaveF=0, ARE=0, FBRE=0, first=0, maxFBREv=0)
+    last, seen, pv, stat = {}, set(rows[k]["R"]), {}, {}
     for i in range(k, j):
         A, B = rows[i]["R"], rows[i + 1]["R"]; fb = rows[i]["fb"]
         st["tc"] += rows[i]["th"] != rows[i + 1]["th"]; st["fb"] += bool(fb)
         for v in A - B:
             last[v] = "F" if fb else "A"; st["leaveF" if fb else "leaveA"] += 1
+            if fb and st["u"] is not None:
+                u = st["u"]; z = rows[i + 1]["s"][v]; wst = (u in rows[i]["Pz"][z]) == (u in rows[i]["Pw"])
+                stat[v] = ("W" if wst else "R", i - k)
+                if i - k >= len(rows[k]["s"]) - 1: st["evict_postfreeze"] = st.get("evict_postfreeze", 0) + 1
         for v in B - A:
             if v not in seen: st["first"] += 1; seen.add(v)
-            elif last.get(v) == "F": st["FBRE"] += 1
+            elif last.get(v) == "F":
+                c, at = stat.get(v, ("?", -1)); key = f"FBRE_{c}status" + ("_prefreeze" if at < len(rows[k]["s"]) - 1 else "")
+                st[key] = st.get(key, 0) + 1
+                st["FBRE"] += 1; pv[v] = pv.get(v, 0) + 1; st["maxFBREv"] = max(st["maxFBREv"], pv[v])
             else: st["ARE"] += 1
+    st["evictW"] = sum(1 for v in stat if stat[v][0] == "W"); st["evictR"] = sum(1 for v in stat if stat[v][0] == "R")
     return st
 
 if __name__ == "__main__":

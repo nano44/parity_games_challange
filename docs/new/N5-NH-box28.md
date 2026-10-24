@@ -37,7 +37,10 @@ Code: experiments/new/box28/ (nhprof.py, otherstat.py, otherclimb.py, fbre.py, f
   - Non-flat fallbacks per (w, u*)-run: ≤ 2 on the named instances. A climb seeded from L-SI's inr2_n32 reaches 11 at n 32
     (still running).
   - Random samples have almost no throttled runs, so the evidence for (FB-run) is the named instances and the climbs.
-- OPEN: (NH'), (W), (FB-run), (U0). G-N5-TIME stays OPEN.
+- PROVED (L-NEW): Lemma FB-W (§5b). After the coarse freeze, a vertex that a fallback sends to an F-option with w's status at u*
+  never re-enters R in that run.
+- CONJECTURE (FBRE-F) (§5b; 22 post-freeze evictions on returns_rt48 / ph64, 0 re-entries): no post-freeze fallback evictee re-enters. With it, (CYC') reduces to (W) + (U0).
+- OPEN: (NH'), (W), (FB-run) = FBRE, (U0). G-N5-TIME stays OPEN.
 
 ## 1. Lemma XW (PROVED, L-NEW): Ξ_k ⊴ W_k pointwise
 Statement. At every state k of any N5 run, and every vertex v, Ξ_k(v) ⊴ W_k(v). In particular θ_k ⊴ w_k.
@@ -150,6 +153,47 @@ So a run costs poly(n)·(1 + N). θ-changes appear nowhere in this count.
   count. sc32 (43 θ-changes in one phase, θ changing at every transition) shows the effect: its runs have only first entries, no
   re-entries at all, and ≤ 1 fallback (§6).
 
+## 5b. Fallback re-entries: what is left of (FB-run) (L-NEW, written ~16:42Z by date -u)
+Bookkeeping in a (w, u*)-run with u* ≠ none:
+- N (non-flat fallbacks) ≤ leaves ≤ entries + n;
+- entries ≤ n (first) + n(n − 1) (ARE, by XA) + FBRE;
+- FBRE ≤ n · (max FBRE of one vertex).
+So **(FB-run) is equivalent, up to poly(n), to bounding FBRE**, the re-entries of vertices that a fallback evicted. The climb
+anatomy (§6.3) shows it: 19 non-flat fallbacks in one run at n 32 form one peeling chain inside a single θ-stretch, after a
+θ-rising segment of first entries. R only shrinks there (FBF), so the chain is bounded by entries.
+
+Lemma FB-W (PROVED, L-NEW; unrefereed). Let S be a (w, u*)-run with u* ≠ none and first state k_0. Let a fallback at L ≥ k_0 + n − 1
+(after the coarse freeze, Lemma CR in the run, §5) evict x from R, switching x to z*. If Ξ_L(z*) has **w's status at u***
+(u* ∈ P(Ξ_L(z*)) iff u* ∈ P(w)), then x enters R at no later transition of S.
+Proof.
+- Status facts. Values with the same cycle node that agree above u* and differ at u* are ordered by their status at u*, and
+  w's status is the better one (w ▷ θ is decided at u*). Every R-value ρ ⊕ θ_t (t ∈ S) has θ's status at u*: u* is on no route
+  (§1, per state), x ≠ u*, and u* ∈ P(θ_t) Δ P(w) at every state of the run.
+- The cycle node is c throughout: λ_Ξ(x) = c is fixed in the joint phase, and x ⊕ Ξ(z*) has the cycle node λ(z*) = λ(x).
+- After the freeze, COARSE(Ξ(v)) is constant for every v. So Ξ_{L+1}(z*) ⊵ Ξ_L(z*) (R15 (a)) agrees with it above u*. If its
+  status at u* were θ's, it would be strictly smaller. So it also has w's status.
+- Ξ_{L+1}(x) = x ⊕ Ξ_{L+1}(z*) (V1; x is not its own cycle node), so it has w's status at u*, and its coarse part is x's frozen
+  one.
+- For t > L: Ξ_t(x) ⊵ Ξ_{L+1}(x), with the same coarse part. By the same argument it has w's status at u*. But if x ∈ R_t, then
+  Ξ_t(x) = ρ_t ⊕ θ_t (Lemma G (b)) has θ's status. So x ∉ R_t. □
+- This is box 27 §8c's "one-sided" observation, made exact for fallback leaves.
+- DATA (fbre.py, the named instances and both climb snapshots):
+  - 31 FBRE events in all (inr2_n32 6, rise3_n32 1, thetare_n 1, the FIT=v climb snapshot 23). Every one is a vertex evicted with θ's status at u* ("R-status").
+  - 0 re-entries of W-status evictees, even before the freeze.
+  - Every one of the 31 had its eviction BEFORE the freeze (eviction index < n − 1 in the run).
+- CONJECTURE (FBRE-F): in a (w, u*)-run, no vertex evicted by a fallback after the coarse freeze re-enters R in that run.
+  - DATA: L-RED's returns_rt48 (run of 66 transitions > n − 1 = 47) and returns_ph64 (run of 91 > 63) have 11 post-freeze fallback
+    evictions each, and none of the 22 evicted vertices re-enters. Their 11 resp. 13 FBRE events all come from pre-freeze
+    evictions.
+  - The other named and climbed runs are shorter than n − 1, so they cannot test it.
+  - Small support. fbclimb.py FIT=p (fitness: post-freeze FBRE, then post-freeze evictions), seeded from returns_rt48, is the
+    attack; result in §8.
+  - If (FBRE-F) holds: FBRE ≤ (pre-freeze fallback leaves) ≤ n(n − 1); then N ≤ O(n²), and a (w, u*)-run costs poly(n)
+    unconditionally (under (h), u* ≠ none). (CYC') would then reduce to (W) and (U0).
+  - Post-freeze, Lemma FB-W already covers the W-status evictions. The open case is post-freeze R-status evictions, where the
+    eviction comparison h ▷ ρ ⊕ θ_L is decided strictly below u*. That is one level down: the n^depth recursion of box 27 §8c and
+    L-SI box 2 §3.
+
 ## 6. Data (DATA, not proof)
 ### 6.1 Non-(h) transitions (nhprof.py, otherstat.py)
 - Named instances (phaseprofile convention: a transition is non-(h) if (h) fails at either endpoint):
@@ -207,6 +251,8 @@ So a run costs poly(n)·(1 + N). θ-changes appear nowhere in this count.
   - "3" (H1, H2, different cycle nodes): Lemma G (a)-(b) hold, but the coarse equality of Lemma C fails at the cycle node.
   - "13", "123", "12"-split: o on its honest cycle.
 - (W) OPEN: w-changes per joint λ-phase.
-- (FB-run) OPEN: non-flat fallbacks per (w, u*)-run.
+- (FB-run) OPEN: non-flat fallbacks per (w, u*)-run. This is equivalent, up to poly(n), to FBRE (§5b).
+  - Lemma FB-W (PROVED): post-freeze W-status evictees never re-enter.
+  - CONJECTURE (FBRE-F): post-freeze evictees never re-enter. It would close (FB-run).
 - (U0) OPEN: u* = none runs (FBL there, and XA's step 4).
 - The table in §5 (C / CR / XA in a (w, u*)-run) needs a referee check before the accounting is promoted.
