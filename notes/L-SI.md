@@ -22,6 +22,14 @@ summarised in docs/si/README.md. Handover check: docs/agents/handover-checks/L-S
 2. Keep check.sh green: it compiles vjfast_check and re-checks the pinned killer instances (instances/pinned.txt).
 
 ## Things only I know
+- (successor 1) orlens conventions: phase = maximal run of STATES with equal (cycle-node map of Xi_sigma, of Xi_tau on G^d); a phase
+  of k states has k-1 transitions (box 21's phases.py counts may differ by 1). Phase target T = Xi at the phase's last state, not
+  the global optimum (earlier phases have other cycle nodes, so g would be stuck at level n+1). lev levels: -1 equal, 0 length,
+  1+rank, n+1 cycle node. 'eliminating' = an edge of sigma (or tau, noelimrun_st) abandoned at that transition and absent from
+  every later state of the phase; transitions where only tau moves count as non-eliminating in the sigma-only column.
+- (successor 1) ortrace.run_states copies n5.run's loop; gaps.analyse asserts (iterations, fallbacks) == n5.run's; climb.py and
+  sweep.py call elim_g without that assert (speed). Re-check any climb best with gaps.py before citing it.
+- (successor 1) The name trace.py shadows the stdlib module 'trace': keep ortrace.py.
 - Engine conventions: priorities made injective by rank (p' = 2·rank + parity, rank by (pr, index)); path component a bitmask
   over ranks; comparison key = (reward of cycle node, signed weight Σ ±2^rank, ±length). Odd's final strategy = the
   restricted-graph counterstrategy recorded during evaluation (the argmin-over-successors shortcut is WRONG: it fails
