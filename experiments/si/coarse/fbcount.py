@@ -90,6 +90,6 @@ if __name__ == "__main__":
         print("random", seed, cnt, T, EX[:5])
     else:
         for p in sys.argv[1:]:
-            g = load(p); c, ex = scan(g); add(c)
+            g = load(p); assert odd_choice(g) is not None, f"{p}: not one-Odd-choice"; c, ex = scan(g); add(c)
             print(f"{os.path.basename(p):22s} n {g.n:3d}", c, ex[:3])
         print("TOTAL", T)

@@ -11,9 +11,12 @@ Handover check 78a764d8 (Lead 5/5). Box 7 = proof side of (C). Write-up: docs/si
 - On 𝒞^1O: non-tame = exit jump above M_k (J1), OFF, CAP (whole bottom coarse exit class captured).
 - FALSE: (JUMP-EQ) on x31_rx32 (sha1 4fe9ec0e) k 53 -> 54 (reported to Lead 21:45Z).
 - DATA: all checks 0 violations (53 named instances, random, random 𝒞^1O); J <= 3 per phase; L = M at 201/201 carries.
+- Pushed 25d16cc8 (box 7 §0-§8), Lead told 21:5xZ. §9 (exit potential D: D1', D2, D3, NOREL-A, Corollary JD) added after.
+- J-climbs (jclimb.py, fitness max J per phase): J 9-10 reached at n 32/48 within minutes; mostly runs of consecutive exit jumps
+  with no fallback (bounded by |succ(o)| per run, JD) and OTHER-state jumps (counted in R21's O).
 ### NEXT
-1. Push box 7; message Lead with SHA.
-2. (J-poly): bound non-tame transitions per phase (route in box 7 §7: re-release of captured exits). Climb on fitness J.
+1. Pin the J-climb bests (reverify.sh), record in §10; run JMODE=EXCESS climbs (fitness J_in − |succ(o)|; sentinel fixed).
+2. (J-poly): the circularity JD/FB (box 7 §9). Candidate: CONJECTURE (JU2) (jump below u* followed at once by a jump at u*).
 3. Remaining part of (Z) besides (C): '+-' reversals at arena steps.
 
 ## Previous resume point (successor 2, Opus 5.5 D15/D18; PARKED 2026-10-24 ~21:30Z at ~500k context; LANE-RESTART step 1)
@@ -101,6 +104,8 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 
 ## Things only I know
 - (successor 3) pgrep -f with a pattern from the same command line never ends (it matches its own shell): wait on a log line instead.
+- (successor 3) Bitten again 22:0xZ by `for p in $(pgrep -f "jclimb.py 95")`: it killed my own shell (exit 144). List with
+  `ps -eo pid,args | grep "[j]climb"` (the bracket stops self-match), then `kill <pid>` by number in a separate command.
 - (successor 3) The predecessor's carry level L (leavers) equals M_k (max gate level) at every carry seen; use M_k, it is the one with
   proofs (MONO, FB).
 - (successor 2) Never edit a file after sending its sha1 for pinning; corrections go to a separate fixes file (Lead rule, 20:4xZ).

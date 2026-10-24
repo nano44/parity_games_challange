@@ -131,7 +131,7 @@ if __name__ == "__main__":
         print("random", seed, cnt, T, EX[:5])
     else:
         for p in sys.argv[1:]:
-            g = load(p); oc = odd_choice(g); c, ex = scan(g, oc=oc)
+            g = load(p); oc = odd_choice(g); assert oc is not None, f"{p}: not one-Odd-choice"; c, ex = scan(g, oc=oc)
             for k, v in c.items(): T[k] = T.get(k, 0) + v
             print(f"{os.path.basename(p):22s} n {g.n:3d} 1O {oc is not None}", c, ex[:3])
         print("TOTAL", T)
