@@ -943,3 +943,4 @@
 - 11:03Z (date -u) Hourly sweep (11:02Z trigger): overage false; no working lanes; no exceptions.
 - 12:03Z (date -u) Hourly sweep (12:02Z trigger): overage false; no working lanes; no exceptions.
 - 12:30Z (date -u) NOW.md refreshed after OWNER-DESK flagged it stale (header 10-22, M4 row, spend 10-18): header rewritten (fleet idle, N5 stand-down, R18/DE34, DTL dormant), M4 row status appended, partial spend reading added.
+- 12:51Z (date -u) D16 recorded (owner via OWNER-DESK b3bb957): "Then keep working as I told you to". Lead reading L38: the idle stand-down rule is withdrawn; restart L-RED box 30 (DTL gap), L-NEW box 26 (N5 lead), L-LIT T27 (untested approaches). Lead error acknowledged: idling the fleet at 08:27Z conflicted with D13/D14.
