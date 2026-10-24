@@ -1,4 +1,4 @@
-# Draft RESULTS R23 (Lead, 2026-10-24 21:1xZ by date -u) — awaits CHECKER C32; lands in "## Results" after R22, before "## Dead ends"
+# Draft RESULTS R23 (Lead, 2026-10-24 21:1xZ by date -u) (rev. 21:15Z: C32 E-1) — awaits CHECKER C32 Addendum 1; lands in "## Results" after R22, before "## Dead ends"
 
 ### R23 [refereed-only] N5 on one-Odd-choice games: crossings have active crossers (ACT, LOOP), what fallbacks can switch (NOFE, NOFL-E, GAP), W never drops at arena steps (WM), and crossings are bounded by reversals of R (LV′, Corollary Z) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C32.md, checker PENDING)
 - Object (packet P-N5-Z, pinned trunk fba7177, unchanged during review; a post-pin edit on the lane branch was reverted to the pinned
@@ -16,9 +16,9 @@
       leaver. (H1 is needed: REFEREE's probe saw the cycle alternative 88 times, all without H1.)
   (d) Lemma NOFE, strong form: at an S4c fallback inside a phase, every switched edge y → z with y ∈ F_k and z ∈ R̄_k has y on o's
       W-play at k. (Also a one-line corollary of R21 (c) FBL-N (ii): y is a W-cycle node on o's W-play; Z-2.)
-  (e) Lemma NOFL-E and Corollary: at a fallback from a state with Ξ = W and H2, no switched edge goes R → F; with H1 ∧ H2 such a
+  (e) Lemma NOFL-E and Corollary: at a fallback inside a phase from a state with Ξ = W and H2, no switched edge goes R → F; with H1 ∧ H2 such a
       fallback has no leave.
-  (f) Lemma GAP: at a fallback with (h) at k, every switched edge y → z with y ∈ R_k, z ∈ F_k satisfies
+  (f) Lemma GAP: at a fallback inside a phase with (h) at k, every switched edge y → z with y ∈ R_k, z ∈ F_k satisfies
       Ξ_k(σ_k y) ◁ Ξ_k(z) ⊴ W_k(σ_k y) (the evicted target lies in the trust gap).
   (g) Lemma WM and Corollary: inside a phase, W_{k+1} ⊵ W_k pointwise at every transition that is not an S4c fallback; so every
       W-decrease is at a fallback.
