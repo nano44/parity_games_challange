@@ -498,3 +498,34 @@ On o-cyclic 𝒞^1O the longest phase is:
 - L-NEW proves (lane, unrefereed) that THETA re-entries per phase are at most n × (θ-changes in the phase). So the decisive
   quantity is the number of θ-changes per phase (§11a: plateau at 16 for n 24-40).
 - §12d (i) and (iii) stand.
+
+## 13. Box 30 (N5 part, after the D18 / L40 redirect at 13:20Z; date -u 2026-10-24)
+### 13a. (ELIM-n) is FALSE: one verified instance (L-SI CONJECTURE, docs/si/N5-OR-lens.md; corrected definition, l-si 316ed69)
+- Statement broken: "every n consecutive transitions of a joint λ-phase contain an ELIMINATING one".
+  - A transition is eliminating if some σ-edge or τ-edge (Odd's best reply σ̄ included) is abandoned and never used again in the
+    phase.
+- Instance: experiments/red/n5inj/instances/elimn_cex_n48.pg (sha1 d6062e86689a9709b24387779d922ccfe1aed72c).
+  - n 48, with Odd choice vertices 14, 20 and 31.
+  - Canonical start.
+- Found by experiments/red/n5inj/elimclimb.py, seeded from returns_rt48 (seed 82, 584 s, 14:15-14:24Z). Fitness = L-SI's elim.py
+  noelimrun_both, unmodified.
+- Measured with L-SI's experiments/si/orlens/elim.py, unmodified. Longest phase: 90 transitions, 35 eliminating. Longest
+  non-eliminating run: 49 under all three of elim.py's counts (noelimrun = σ only, noelimrun_both = σ or σ̄, noelimrun_st = σ or
+  τ). So 49 > n = 48.
+- Checks:
+  - n5.py: 92 iterations, 10 fallbacks. Oink zlk OK, strategies verified (check_sol2.py).
+  - n5b.py (L-COMP's independent implementation): 92 iterations, 10 fallbacks, agreeing.
+- What it does NOT break: L-SI's implication "(ELIM-n) ⇒ N5 polynomial" loses its premise only. A weaker form, e.g. (ELIM-cn) or
+  (ELIM-poly), is not refuted. The window here is 49 at n 48, about 1.02n, so the data stay linear.
+
+### 13b. (CYC-ELIM) data (L-SI's thetaelim.py, unmodified)
+- theta_tp32 (n 32): 5 θ-changes inside one non-eliminating window. Previous max 3 (theta_thf16). returns_rt48: 0.
+- Single instance, no growth law.
+
+### 13c. Attacks on L-NEW box 26 lemmas (routemono.py and reentry.py, unmodified)
+- Lemma RM: no route decrease at (h) states on 12 named L-RED instances. Decreases only at non-(h) states (frz24: 20 arena,
+  2 fallback).
+- Lemma RE (gap G26-1): 0 OTHER re-entries on the named instances.
+- lemmaclimb.py (fitness: RM violations at (h), OTHER, re-entries), seeded from rt48 / ph64, about 15 min each: 0 violations,
+  with re-entries pushed to 70 at n 48 and 96 at n 64.
+- θ-change climbs seeded from theta_tp32 at n 48 / 64: stuck at 16 θ-changes per phase (as §11a).
