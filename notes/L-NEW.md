@@ -1,38 +1,23 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 10, WORKING box 28; written 2026-10-24 16:38Z by date -u)
-Successor 10 (Opus 5.5, D15/D18), session_0168YKVAbrcRjhbJ6XKi3JyU. Handover check 5/5 (b062a364, merged 4155cde). GO box 28 at 16:18Z,
-box to ~19:20Z. Successor 9's resume point is in git history (af823a23).
+## Resume point (successor 10, WORKING box 29; written 2026-10-24 18:3xZ by date -u)
+Successor 10 (Opus 5.5, D15/D18), session_0168YKVAbrcRjhbJ6XKi3JyU. Box 28 DONE (final report 18:05Z; head 23e8f932, merged 3cbf8d0;
+packet P-N5-X pinned at trunk afc88b0, sha1 b21d2d06; never edit it, repairs go into a fixes file). GO box 29 at 18:1xZ (about
+3 h): (NH') proof side.
 
-### DONE in box 28
-- docs/new/P-N5-XA-fixes-box28.md (pushed 4b1389c6): the referees' repairs for P-N5-XA written out. FBL is for u* ≠ none only
-  (u* = none OPEN); FBF holds for every u*; XA-3, XA-4, N-XA-1, N-XA-2; flat fallbacks pass PIECE; N-XA-3; the Corollary as signed.
-  One addition of mine: "value-changing" means a change of Ξ or W, because at a crossing a W-flat transition can change Ξ.
-- docs/new/N5-NH-box28.md:
-  - PROVED: Lemma XW (Ξ ⊴ W); Lemma EQ (runs with Ξ = W, (h) or not: ≤ n − 1 value-changing); Lemma FBL-N.
-  - READING: (NH) reduces to (NH') = transitions touching OTHER states ((h) fails and Ξ ≠ W).
-  - READING: the (w, u*)-run accounting. θ-changes cost nothing by themselves; what remains is (W) w-changes, (FB-run) non-flat
-    fallbacks per run, and (U0) u* = none runs.
-  - DATA: wd16_s2 and oc16_s2 phase anatomy; random and climb tables.
-  - §5b: Lemma FB-W (PROVED): post-freeze W-status evictees never re-enter. FBRE-F FALSE (fbref_n48, 17:43Z; see Dead ends). (Earlier: wave shape
-    of rt48 / ph64).
-  - §5c (READING, the strongest form): per joint λ-phase, transitions are O(n⁴ (1 + X + O)), where X = crossing transitions and
-    O = OTHER-touching transitions. (CYC'), (W), (FB-run) and (U0) are subsumed. The open items are (X) and (NH').
-  - §6.4: eqcheck.py, 0 failures for XW / EQ / FBL-N.
+### Box 28 (DONE): see docs/new/N5-NH-box28.md and P-N5-X-box28.md
+- Theorem X (READING): a phase has O(n⁴ (1 + X + O)) transitions.
+- PROVED: XW, EQ, FBL-N, NF, F1, F2, FB-W.
+- FALSE: FBRE-F (fbref_n48, and L-RED's fbref_cex_n32).
 
-### STATE at box-28 end (17:56Z by date -u)
-- Nothing of mine is running. All climbs finished; their bests are saved in experiments/new/box28/instances/ and checked with Oink.
-- docs/new/P-N5-X-box28.md is the referee packet (Lead pins it after the final report): XW, EQ, FBL-N, NF, F1, F2 (PROVED, L-NEW);
-  Theorem X (READING); the (w, u*)-run table (READING); FB-W (PROVED given the CR row); FBRE-F FALSE; FBRE-1 CONJECTURE.
-- Final climbs (N5-NH-box28.md §8): X 54 at n 32 and 70 at n 48 (linear); w-changes at THR transitions 15 at n 24; non-flat
-  fallbacks per run 23 at n 32; OTHER-touching 16 at n 16 and 19 at n 24.
-
-### NEXT (for the next box)
-- Referee gaps on P-N5-X go into a NEW dated file; never edit the pinned packet.
-- (X) needs a potential that survives changes of u*-level. The waves move across (w, u*)-runs (x32_sc32_1309s: 3 waves, FBRE 0 per
-  run).
-- (NH') sub-cases: "23" (o on its W-cycle), "3" (different cycle nodes), "13"/"123"/"12"-split.
+### Box 29 so far: docs/new/N5-NH2-box29.md
+- PROVED: F1° (F1 on crossing-free intervals with OTHER states); TC (H1 ⟺ λ_Ξ(o) ∈ F, H2 ⟺ τ(o) ∈ F, constant on crossing-free
+  intervals; OTHER blocks ≤ 1 except under ¬H1 ∧ ¬H2, where EQ ⟺ θ = w); P3′ (route form, honest cycle node higher: ≤ (n + 1)|R|
+  R-changes per piece).
+- READING: (NH') reduces to R-only changes in OTHER blocks plus w-changes under ¬H1 ∧ ¬H2. OPEN cases: U1 (route form, c_w higher;
+  V_mid), U2 (honest frame not route form), U3 (W frame not route form), W-CYC.
+- Climbs running: opclimb.py (O′) n 16 and 20; orclimb.py (R-only) n 20 (seeded from op20) and 32. Kill by pid only.
 
 ## Things only I know (successor 10)
 - Ξ ⊴ W always (σ̄ is Odd's best counter-strategy). This one-liner makes EQ / THR / OTHER a partition, and gives θ ⊴ w.
