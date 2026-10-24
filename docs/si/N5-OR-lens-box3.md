@@ -19,7 +19,8 @@ Notation and lemmas: docs/si/N5-OR-lens.md (lev, ⊕, Lemma U), docs/si/N5-OR-le
 - **Data say the factor per level is small.**
   - No path-set level carries more than 5 θ-changes on the pinned and climbed instances. The counter bound allows
     #(level r) ≤ 1 + #(levels > r).
-  - Climbs against a constant per level: §4.
+  - Climbs (§4) push max m_r to 11 at n 32 (lev_l_sc, lev_l_x; Oink OK), with level 19 re-fixed after every higher change and a
+    block replayed after a carry: two nested counter digits, no third.
 - **PROVED reductions (L-SI):**
   - Lemma LEN: between consecutive path-set changes of θ there are at most n length-only θ-changes. On sc32, 25 of 43 θ-changes are
     length-only.
@@ -120,9 +121,28 @@ Per-level counts on the instances (ldepth.py):
 | theta_thf16 | 16 | 13 | 13 | 7 | 4 |
 | fts_best16 | 16 | 8 | 8 | 5 | 2 |
 
-Climbs (climb.py --level: fitness = (max m_r, θ-changes); 3,000 s from 16:34Z): seeded from run_x_inr2 and sc32, and random n 20
-and 28. Interim at 16:35Z: max m_r 7 (sc32 seed) and 6 (run_x_inr2 seed). Final numbers below when they end.
+Climbs (climb.py --level: fitness = (max m_r, θ-changes), 3,000 s each, 16:34-17:24Z). Final bests are in instances/, each with
+Oink zlk OK and strategies verified:
 
+| climb | n | d | θ-changes (phase) | path-set changes | max m_r | instance (sha1) | n5.py iterations / fallbacks |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| seeded from sc32 | 32 | 15 | 45 | 37 | **11** | lev_l_sc.pg (86c17b07…) | 54 / 2 |
+| seeded from run_x_inr2 | 32 | 14 | 51 | 28 | **11** | lev_l_x.pg (6c365ff7…) | 56 / 3 |
+| random n 28 | 28 | 11 | 24 | 19 | 7 | lev_l_n28.pg (827e01aa…) | 25 / 0 |
+| random n 20 | 20 | 15 | 22 | 13 | 4 | lev_l_n20.pg (47a4d340…) | 23 / 0 |
+
+- lev_l_sc, the level sequence of the longest phase (level + class initial):
+  19S 30I 19O 26O 19O 31O 19O 29O 19O 26O 19O 12O 20I 12I -1I 19I -1I -1I 17I 14I 16I 13I -1I 24O 21O 30I 19O 29O 19O 26O 19O 12O
+  20I 12I -1I 19I -1I -1I 17I 14I 16I 13I -1I 28I 23I.
+  - Level 19 alternates with the higher levels 26, 29, 30, 31: it is re-fixed after EVERY higher change. That is the counter
+    bound m_19 ≤ 1 + m_{>19} attained, the low digit of a counter.
+  - The whole block from "30I 19O 29O …" to "13I" occurs twice, after the carries 24O 21O.
+  - This is the multiplicative structure of §3 seen directly: the inner block is replayed after a higher carry.
+- READING: max m_r rose from 5 to 11 at n 32 in 50 minutes of climbing, about n/3. That is not a small constant.
+  - Two nested digits are visible (low digit at level 19; block replay after 24/21).
+  - No third nesting level was found. (LEVEL-poly) is neither refuted nor supported beyond linear growth.
+  - A kill would need the block replay to nest: a carry above 24/21 that replays the two-digit block. That is the design target
+    for L-RED.
 ## 5. Files (experiments/si/orlens/)
 - levels.py: (level, class) sequence and per-level counts.
 - ldepth.py: per-level maxima and counter-nesting depth.
