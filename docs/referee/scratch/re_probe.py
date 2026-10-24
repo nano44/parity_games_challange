@@ -39,6 +39,7 @@ def rand_gen(rng, lo, hi):
                    [sorted(set(rng.sample(range(n), min(n, rng.choice((1, 2, 2, 3)))))) for _ in range(n)])
 
 def run(g, start, cnt, c1o):
+    assert not c1o or sum(1 for v in range(g.n) if g.owner[v] == 1 and len(set(g.succ[v])) > 1) == 1, "not in C^1O: exactly one Odd choice vertex required"
     E, Ed = Engine(g), Engine(dual(g)); s, t = start_pair(g, E, Ed, start); o = odd_choice(g) if c1o else None
     rows = []
     while True:

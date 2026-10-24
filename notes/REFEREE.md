@@ -1,6 +1,11 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 4, 20:37Z by date -u): P-N5-Z (pin fba7177, docs/si/P-N5-Z-box5.md sha1 a027638f…)
+- docs/referee/R-N5-Z.md: all SIGNED; LV′ WITH GAP Z-1 (runs broken by '±'; proof wording), Z-2 NOFE = one line from FBL-N (ii), Z-3 (F0)
+  citation. Corollary Z: R21 (g) within hypotheses. LOOP's H1 needed (88 loop cases all without H1). Tool docs/referee/scratch/z_probe.py.
+  NEXT: §C when the Lead says R2-N5-Z exists (docs/referee-2/ NOT read for Z).
+
 ## Resume point (successor 4, 19:48Z by date -u): P-N5-NH (pin c7981ee, object sha1 382c5143…)
 - docs/referee/R-N5-NH.md: F1°, TC, P3′ step 2 + Corollary SIGNED; P3′ step 1 SIGNED WITH GAP P3-1 (R*_w not faithful when lambda_W(o)=o:
   C_W in R; closed: kappa-strict B-cases from C_W give an even top above c_theta, hence a better W cycle node, vacuous in J). Reduction READING
