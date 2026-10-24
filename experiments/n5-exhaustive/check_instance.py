@@ -59,9 +59,10 @@ def check(g, start, name):
     ref, rtag = zlk(path, g.n)
     errs = verify.check(g, win, ws)
     o = exh.odd_choice(g)
-    maxph, trust, tlen, reA, reB = exh.analyse(g, st, o) if len(st) > 1 else (0, 0, 0, 0, 0)
+    A = exh.analyse(g, st, o) if len(st) > 1 else dict(maxph=0, thch=0, trust=0, reA=0, reB=0)
+    maxph, thch, trust, reA, reB = A["maxph"], A["thch"], A["trust"], A["reA"], A["reB"]
     ok = same and (itb, fbb) == (it, fb5) and win == ref and not errs
-    print(f"{name} sha1 {sha[:12]} n {g.n} it {it} fb {fb5} maxph {maxph} trust {trust} reA {reA} reB {reB} | "
+    print(f"{name} sha1 {sha[:12]} n {g.n} it {it} fb {fb5} maxph {maxph} thch {thch} trust {trust} reA {reA} reB {reB} | "
           f"n5b states equal {same} ({itb},{fbb}) | regions = oink {rtag}: {win == ref} | verify: {'OK' if not errs else errs[:2]} "
           f"| {'OK' if ok else 'FAIL'}")
     return ok, sha

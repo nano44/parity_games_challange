@@ -10,7 +10,8 @@ vertices (Even with any non-empty successor set, or forced Odd with one successo
 Options restrict the space for larger n (stated in the output): --even-maxdeg K, --o-deg K (exact), --no-forced, --cyclic-only.
 
 Per game: N5 trace from the canonical start (n5x.trace = n5.py's loop; box21) or from every start pair (--all-starts).
-Measured: iterations; joint lambda-phases (box21 phases.py: lambda = cycle nodes of Xi_sigma and Xi_tau), longest phase in
+Measured: iterations; max theta-changes inside one joint lambda-phase (Lead 13:20Z addendum, (CYC)); raw leave/entry
+events; joint lambda-phases (box21 phases.py: lambda = cycle nodes of Xi_sigma and Xi_tau), longest phase in
 iterations; trust events per (tau, joint-lambda)-phase (box25 trustcount.count); every re-entry into R inside every joint
 lambda-phase, classified as in L-RED retcheck.py: A = theta at re-entry > w at x's last leave from y ("theta-driven"),
 B = otherwise ("route improvement").
@@ -71,7 +72,13 @@ def starts(g):
 
 
 def analyse(g, st, o):
-    """phases, trust, re-entries for a state list st."""
+    """phases, theta-changes, trust, re-entries for a state list st. Returns a dict:
+    maxph   longest joint lambda-phase in iterations (phases.py convention)
+    thch    max number of theta changes (theta = Xi_sigma(o), Engine key) between consecutive states inside one phase
+    trust   max trust events per (tau, joint-lambda)-phase (trustcount.count); tlen its longest phase (states)
+    reA/reB re-entries (retcheck logic, every phase): A theta at re-entry > w at x's last leave (theta-driven), B otherwise
+    leaves  Even switches R -> F inside phases; entries  switches F -> R; reent  re-entries (= reA + reB)
+    events  raw re-entry events (phase, k, x, from, to, theta_now > w_leave, k_leave), at most 20"""
     E, Ed = Engine(g), Engine(dual(g))
     lam, th, ww, RR = [], [], [], []
     for s, t in st:
@@ -90,8 +97,9 @@ def analyse(g, st, o):
     for k in range(1, len(st)):
         cnt[ph[k]] = cnt.get(ph[k], 0) + 1
     maxph = max(cnt.values()) if cnt else 0
-    reA = reB = 0
-    for a, b in runs:                                   # retcheck logic, applied to every phase
+    thch = max((sum(th[k] != th[k - 1] for k in range(a + 1, b + 1)) for a, b in runs), default=0)
+    reA = reB = leaves = entries = 0; events = []
+    for pi, (a, b) in enumerate(runs):                  # retcheck logic, applied to every phase
         used, leave = {}, {}
         for k in range(a, b):
             s, s2, R = st[k][0], st[k + 1][0], RR[k]
@@ -100,21 +108,32 @@ def analyse(g, st, o):
                     continue
                 p, q = s[x], s2[x]; u = used.setdefault(x, {s[x]})
                 if p in R and q not in R:
-                    leave[(x, p)] = k
+                    leave[(x, p)] = k; leaves += 1
+                if p not in R and q in R:
+                    entries += 1
                 if q in u and q in R and p not in R and (x, q) in leave:
-                    if th[k] > ww[leave[(x, q)]]:
-                        reA += 1
-                    else:
-                        reB += 1
+                    A = th[k] > ww[leave[(x, q)]]
+                    reA += A; reB += not A
+                    if len(events) < 20:
+                        events.append((pi, k, x, p, q, bool(A), leave[(x, q)]))
                 u.add(q)
     trust, tlen = trustcount.count(g, st)
-    return maxph, trust, tlen, reA, reB
+    return dict(maxph=maxph, thch=thch, trust=trust, tlen=tlen, reA=reA, reB=reB, leaves=leaves, entries=entries,
+                reent=reA + reB, events=events)
+
+
+KEYS = ("max_it", "maxph", "thch", "trust", "reent")
+
+
+def blank():
+    return dict(games=0, cyc=0, runs=0, reA=0, reB=0, leaves=0, entries=0, hist_ph={}, hist_th={}, max_ph_cyc=0,
+                max_th_cyc=0, ex_A=[], ex_re=[], **{"max_" + k: 0 for k in KEYS[1:]}, max_it=0,
+                **{"ex_" + k: [] for k in KEYS})
 
 
 def task(args):
     n, o, par, a = args
-    res = dict(games=0, cyc=0, runs=0, max_it=0, max_ph=0, max_trust=0, reA=0, reB=0, ex_ph=[], ex_it=[], ex_A=[],
-               ex_trust=[], hist_ph={}, max_ph_cyc=0)
+    res = blank()
     for g in games(n, o, par, a):
         cyc = any(w in split(g, o) for w in g.succ[o])
         if a.cyclic_only and not cyc:
@@ -125,22 +144,28 @@ def task(args):
             res["runs"] += 1
             it = len(st) - 1
             if it == 0:
-                res["hist_ph"][0] = res["hist_ph"].get(0, 0) + 1
+                res["hist_ph"][0] = res["hist_ph"].get(0, 0) + 1; res["hist_th"][0] = res["hist_th"].get(0, 0) + 1
                 continue
-            maxph, trust, tlen, reA, reB = analyse(g, st, o)
-            rec = dict(prio=g.prio, owner=g.owner, succ=g.succ, start=stt, it=it, fb=fb, maxph=maxph, trust=trust,
-                       reA=reA, reB=reB, cyc=cyc)
-            res["hist_ph"][maxph] = res["hist_ph"].get(maxph, 0) + 1
-            for key, val, lst in (("max_ph", maxph, "ex_ph"), ("max_it", it, "ex_it"), ("max_trust", trust, "ex_trust")):
-                if val > res[key]:
-                    res[key] = val; res[lst] = [rec]
-                elif val == res[key] and len(res[lst]) < 5:
-                    res[lst].append(rec)
+            d = analyse(g, st, o); d["max_it"] = it
+            rec = dict(prio=g.prio, owner=g.owner, succ=g.succ, start=stt, it=it, fb=fb, cyc=cyc,
+                       **{k: v for k, v in d.items() if k != "max_it"})
+            res["hist_ph"][d["maxph"]] = res["hist_ph"].get(d["maxph"], 0) + 1
+            res["hist_th"][d["thch"]] = res["hist_th"].get(d["thch"], 0) + 1
+            for k in KEYS:
+                val = d[k] if k != "max_it" else it
+                mk = k if k == "max_it" else "max_" + k
+                if val > res[mk]:
+                    res[mk] = val; res["ex_" + k] = [rec]
+                elif val == res[mk] and val > 0 and len(res["ex_" + k]) < 5:
+                    res["ex_" + k].append(rec)
             if cyc:
-                res["max_ph_cyc"] = max(res["max_ph_cyc"], maxph)
-            res["reA"] += reA; res["reB"] += reB
-            if reA and len(res["ex_A"]) < 50:
+                res["max_ph_cyc"] = max(res["max_ph_cyc"], d["maxph"]); res["max_th_cyc"] = max(res["max_th_cyc"], d["thch"])
+            for k in ("reA", "reB", "leaves", "entries"):
+                res[k] += d[k]
+            if d["reA"] and len(res["ex_A"]) < 50:
                 res["ex_A"].append(rec)
+            if d["reent"] and len(res["ex_re"]) < 20:
+                res["ex_re"].append(rec)
     return res
 
 
@@ -158,32 +183,36 @@ def main():
     n = a.n
     tasks = [(n, o, par, a) for o in range(n) for par in itertools.product((0, 1), repeat=n)]
     t0 = time.time()
-    tot = dict(games=0, cyc=0, runs=0, max_it=0, max_ph=0, max_trust=0, reA=0, reB=0, ex_ph=[], ex_it=[], ex_A=[],
-               ex_trust=[], hist_ph={}, max_ph_cyc=0)
+    tot = blank()
     with mp.Pool(a.jobs) as pool:
         for r in pool.imap_unordered(task, tasks):
-            for k in ("games", "cyc", "runs", "reA", "reB"):
+            for k in ("games", "cyc", "runs", "reA", "reB", "leaves", "entries"):
                 tot[k] += r[k]
-            tot["max_ph_cyc"] = max(tot["max_ph_cyc"], r["max_ph_cyc"])
-            for k, v in r["hist_ph"].items():
-                tot["hist_ph"][k] = tot["hist_ph"].get(k, 0) + v
-            for key, lst in (("max_ph", "ex_ph"), ("max_it", "ex_it"), ("max_trust", "ex_trust")):
-                if r[key] > tot[key]:
-                    tot[key] = r[key]; tot[lst] = r[lst][:5]
-                elif r[key] == tot[key]:
-                    tot[lst] = (tot[lst] + r[lst])[:5]
-            tot["ex_A"] = (tot["ex_A"] + r["ex_A"])[:200]
+            for k in ("max_ph_cyc", "max_th_cyc"):
+                tot[k] = max(tot[k], r[k])
+            for h in ("hist_ph", "hist_th"):
+                for k, v in r[h].items():
+                    tot[h][k] = tot[h].get(k, 0) + v
+            for k in KEYS:
+                mk = k if k == "max_it" else "max_" + k
+                if r[mk] > tot[mk]:
+                    tot[mk] = r[mk]; tot["ex_" + k] = r["ex_" + k][:5]
+                elif r[mk] == tot[mk]:
+                    tot["ex_" + k] = (tot["ex_" + k] + r["ex_" + k])[:5]
+            tot["ex_A"] = (tot["ex_A"] + r["ex_A"])[:200]; tot["ex_re"] = (tot["ex_re"] + r["ex_re"])[:50]
     tot["secs"] = round(time.time() - t0, 1)
     tot["options"] = {k: v for k, v in vars(a).items() if k not in ("out", "jobs")}
-    tot["hist_ph"] = dict(sorted(tot["hist_ph"].items()))
+    tot["hist_ph"] = dict(sorted(tot["hist_ph"].items())); tot["hist_th"] = dict(sorted(tot["hist_th"].items()))
     os.makedirs(a.out, exist_ok=True)
     tag = f"n{n}" + ("_allstarts" if a.all_starts else "") + (f"_ed{a.even_maxdeg}" if a.even_maxdeg else "") + \
         (f"_od{a.o_deg}" if a.o_deg else "") + ("_nf" if a.no_forced else "") + ("_cyc" if a.cyclic_only else "")
     with open(os.path.join(a.out, tag + ".json"), "w") as f:
         json.dump(tot, f, indent=1, default=str)
     print(f"{tag}: games {tot['games']} (o-cyclic {tot['cyc']}), runs {tot['runs']}, max iterations {tot['max_it']}, "
-          f"max in-phase {tot['max_ph']} (o-cyclic {tot['max_ph_cyc']}), max trust/phase {tot['max_trust']}, "
-          f"re-entries A(theta-driven) {tot['reA']} B(route) {tot['reB']}, phase histogram {tot['hist_ph']}, {tot['secs']} s")
+          f"max in-phase {tot['max_maxph']} (o-cyclic {tot['max_ph_cyc']}), max theta-changes/phase {tot['max_thch']} "
+          f"(o-cyclic {tot['max_th_cyc']}), max trust/phase {tot['max_trust']}, leaves {tot['leaves']} entries {tot['entries']}, "
+          f"re-entries A(theta-driven) {tot['reA']} B(route) {tot['reB']}, phase hist {tot['hist_ph']}, theta hist {tot['hist_th']}, "
+          f"{tot['secs']} s")
 
 
 if __name__ == "__main__":

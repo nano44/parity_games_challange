@@ -28,18 +28,21 @@ def main():
               {v: rng.choice(g.succ[v]) for v in range(g.n) if g.owner[v] == 1})
         for start in (st0, sp):
             st, fb = trace(g, start, check=False); runs += 1
-            d = per.setdefault(g.n, dict(runs=0, max_it=0, max_ph=0, max_trust=0, reA=0, reB=0, ex_ph=None))
+            d = per.setdefault(g.n, dict(runs=0, max_it=0, max_ph=0, max_th=0, max_trust=0, reA=0, reB=0, leaves=0, entries=0,
+                                         ex_ph=None, ex_th=None))
             d["runs"] += 1
             if len(st) < 3:
                 continue
-            maxph, trust, tlen, reA, reB = exh.analyse(g, st, o)
-            rec = dict(prio=g.prio, owner=g.owner, succ=g.succ, start=start, it=len(st) - 1, maxph=maxph, trust=trust,
-                       reA=reA, reB=reB)
-            d["max_it"] = max(d["max_it"], len(st) - 1); d["max_trust"] = max(d["max_trust"], trust)
-            d["reA"] += reA; d["reB"] += reB
-            if maxph > d["max_ph"]:
-                d["max_ph"] = maxph; d["ex_ph"] = rec
-            if reA:
+            a = exh.analyse(g, st, o)
+            rec = dict(prio=g.prio, owner=g.owner, succ=g.succ, start=start, it=len(st) - 1, **a)
+            d["max_it"] = max(d["max_it"], len(st) - 1); d["max_trust"] = max(d["max_trust"], a["trust"])
+            for k in ("reA", "reB", "leaves", "entries"):
+                d[k] += a[k]
+            if a["maxph"] > d["max_ph"]:
+                d["max_ph"] = a["maxph"]; d["ex_ph"] = rec
+            if a["thch"] > d["max_th"]:
+                d["max_th"] = a["thch"]; d["ex_th"] = rec
+            if a["reA"]:
                 exA.append(rec)
                 print("THETA-DRIVEN re-entry:", rec, flush=True)
     res = dict(games=games, runs=runs, secs=round(time.time() - t0, 1), seed=seed, n_range=[lo, hi],
@@ -47,7 +50,8 @@ def main():
     json.dump(res, open(out, "w"), indent=1, default=str)
     tot = lambda k: sum(d[k] for d in per.values())
     print(f"rnd seed {seed} n {lo}..{hi}: games {games} runs {runs}, re-entries A {tot('reA')} B {tot('reB')}, "
-          f"max in-phase by n {dict((n, d['max_ph']) for n, d in sorted(per.items()))}, {res['secs']} s")
+          f"max in-phase by n {dict((n, d['max_ph']) for n, d in sorted(per.items()))}, "
+          f"max theta-changes/phase by n {dict((n, d['max_th']) for n, d in sorted(per.items()))}, {res['secs']} s")
 
 
 if __name__ == "__main__":

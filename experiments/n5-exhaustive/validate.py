@@ -15,6 +15,6 @@ for path in sys.argv[1:]:
     for i in range(1, len(st) + 1):
         if i == len(st) or lam[i] != lam[i - 1]: runs.append((a0, i - 1)); a0 = i
     a, b = max(runs, key=lambda r: r[1] - r[0])
-    _, _, _, rA, rB = exh.analyse(g, st[a:b + 1], o)    # longest phase only (one lambda value -> one run)
+    x = exh.analyse(g, st[a:b + 1], o); rA, rB = x['reA'], x['reB']    # longest phase only (one lambda value -> one run)
     allr = exh.analyse(g, st, o)
-    print(rc); print(f"   exh longest phase {a}..{b}: A {rA} B {rB}; all phases: maxph {allr[0]} trust {allr[1]} A {allr[3]} B {allr[4]}")
+    print(rc); print(f"   exh longest phase {a}..{b}: A {rA} B {rB}; all phases: maxph {allr['maxph']} thch {allr['thch']} trust {allr['trust']} A {allr['reA']} B {allr['reB']}")
