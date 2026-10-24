@@ -3,11 +3,15 @@ PURE-Y BLOCK on o-acyclic C^1O. Games: o = 0 (the only Odd choice vertex) has ex
 no choices, so sigma|X never changes and theta is constant once tau is), Y = the other vertices (Even, or Odd with one successor),
 whose edges may enter o. So after tau's last change the canonical N5 run is ONE pure-Y block: L-NEW's static problem (STAT).
 Fitness: (iterations after tau's last change, iterations, -edges). Run via declines.states (n5.py replica, counts asserted).
-Usage: blockclimb.py NY K SECONDS SEED OUT [--from G.pg (must have this layout: o = 0, sinks 1..K)]"""
+Usage: blockclimb.py NY K SECONDS SEED OUT [--from G.pg (must have this layout: o = 0, sinks 1..K)] [--phase]
+--phase: fitness = (longest stretch inside the block AND inside one joint lambda-phase, block, -edges)."""
 import os, random, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import declines  # noqa: E402
 import pg  # noqa: E402
+import n5  # noqa: E402
+from si import Engine  # noqa: E402
+PHASE = "--phase" in sys.argv
 ny, K, secs, seed, out = int(sys.argv[1]), int(sys.argv[2]), float(sys.argv[3]), int(sys.argv[4]), sys.argv[5]
 n = 1 + K + ny; rng = random.Random(seed)
 Y = list(range(1 + K, n))
@@ -53,6 +57,14 @@ def score(G):
     except Exception:
         return (-1, 0, 0)
     last = max([k for k in range(1, len(seq)) if seq[k][1] != seq[k - 1][1]], default=0)
+    if PHASE:
+        E, Ed = Engine(g), Engine(n5.dual(g))
+        lam = [(tuple(x[0] for x in E.evaluate(s)[0]), tuple(y[0] for y in Ed.evaluate(t)[0])) for s, t, _, _ in seq]
+        best = cur = 0
+        for k in range(last + 1, len(seq)):
+            cur = cur + 1 if lam[k] == lam[k - 1] else 1
+            best = max(best, cur)
+        return (best, len(seq) - 1 - last, -sum(len(x) for x in g.succ))
     return (len(seq) - 1 - last, len(seq) - 1, -sum(len(x) for x in g.succ))
 
 
