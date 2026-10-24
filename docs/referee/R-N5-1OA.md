@@ -187,7 +187,7 @@ Inherited: G-N1 (engine = SPEC; DATA, +15,985 states here with 0 mismatches). Sc
 other means (d one-player games); o-cyclic 𝒞^1O (fts_best16, oneodd_c16/c24, frz24) is untouched: X may be empty, Lemma 2 has no analogue.
 
 ## C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-1OA.md, referee-2 603cb3a, trunk 2177e79; read after my report was pushed at
-9060b516 / bb96f454; written 2026-10-24 03:51Z-04:05Z by date -u). Signed object: the 07f298d texts (Lead reading 03:50Z); my §0 on the
+9060b516 / bb96f454; written 2026-10-24 03:51Z-03:55Z by date -u; stamp corrected at 03:57Z, the push 145058c4 carried an estimate 04:05Z). Signed object: the 07f298d texts (Lead reading 03:50Z); my §0 on the
 withdrawn d78e54f text stays as a record, and its B7 concerns that text and R17's own B1 wording only.
 Agreement per item: identical verdicts in every row. (A) Prop X SIGN WITH GAPS both; Cor. X1 SIGN both (both call "⇐ (SEG-1O)" a reading
 superseded by (B)); (B) SIGN WITH GAPS conditional on (P) both, (P) used only on the one-player game G[X] in Lemma 1; Lemma R SIGN both;
