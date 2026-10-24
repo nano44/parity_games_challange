@@ -2,6 +2,11 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point
+2026-10-24 18:34Z P-N5-X (docs/new/P-N5-X-box28.md sha1 b21d2d06…, trunk afc88b0): docs/referee-2/R2-N5-X.md. F1, NF, XW, EQ, FBL-N, F2,
+FB-W SIGN; table agree; Theorem X SIGN WITH GAPS: G-X-1 = R19 (f) "theta free" (my N-RE-4) misses Xi-changes on R from theta (fbref_n48
+56->57, R={o}); closed by Lemma TF (theta-change under (h) both ends => Xi-change on F, theta = min over F-exits). Amend R19 (f).
+FB-W data vacuous. Tool R2-N5-X/x_check.py; Oink built here (setup_oink.sh). Context ~400k. Next: §C when REFEREE's R-N5-X is pushed.
+Earlier:
 2026-10-24 15:33Z P-N5-XA (docs/new/P-N5-XA-box27.md sha1 832d0da2…, trunk b70aa59): docs/referee-2/R2-N5-XA.md. §1, Lemma C, CR, XA SIGN;
 FBL SIGN WITH GAPS (G-XA-1: F->R case; for u* != none no F->R gate edge at all (flat => P(w)=A_z=0 => theta >= w unless u*=none); u*=none
 statement unproved: (c,z), z in R_k minus R_{k+1}, not excluded); FBF SIGN WITH GAPS (G-XA-2 closed, incl. u*=none via (h) at t+1);

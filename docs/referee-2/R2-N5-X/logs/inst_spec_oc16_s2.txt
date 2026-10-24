@@ -1,0 +1,13 @@
+EQ_runs: 1
+control_nonflat_fb_touching_OTHER: 2
+fb_in_phase: 2
+phases: 3
+runs: 1
+transitions: 26
+type_EQ: 1
+type_OTHER: 26
+EQ_max_vc: 0
+phase_max_O: 16
+phase_max_X: 3
+phase_max_len: 16
+RESULT OK violations=0

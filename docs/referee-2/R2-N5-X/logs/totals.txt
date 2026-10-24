@@ -1,0 +1,31 @@
+EQ_runs: 26070
+F2_EQ_THR: 58
+F2_wchange: 64
+FBLN_ii_checks: 179
+FBRE-F_reentries(theta status): 50
+FBW_theta_status_evictions(not covered): 167
+F_intervals: 3558
+NF_checks: 795
+NF_nonflat_fb_crossing: 591
+R19f_literal_split_fails(Xi on R counted): 111
+R_Xi_change_without_route_change: 253
+TF_theta_change: 317
+control_nonflat_fb_touching_OTHER: 10
+fb_in_phase: 805
+phases: 37235
+runs: 15378
+subblock_flat_fb: 0
+subblocks: 753
+subblocks_theta_varying: 211
+transitions: 32607
+type_EQ: 32205
+type_OTHER: 9093
+type_THR: 6687
+wu_runs: 1735
+wu_runs_theta_varying: 198
+EQ_max_vc: 25
+F1_max: 16
+phase_max_O: 19
+phase_max_X: 70
+phase_max_len: 110
+wu_run_max_len: 97

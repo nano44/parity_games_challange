@@ -1,0 +1,16 @@
+EQ_runs: 2
+NF_checks: 1
+NF_nonflat_fb_crossing: 1
+fb_in_phase: 1
+phases: 4
+runs: 1
+transitions: 4
+type_EQ: 2
+type_THR: 3
+wu_runs: 2
+EQ_max_vc: 0
+phase_max_O: 0
+phase_max_X: 1
+phase_max_len: 1
+wu_run_max_len: 1
+RESULT OK violations=0
