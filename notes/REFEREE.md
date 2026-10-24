@@ -10,7 +10,11 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with sc
   PIECE SIGNED WITH GAPS P-1 (count |R|-1 needs contraction R* on R with o self-loop at c's priority; verbatim R17 gives |R|+|K|-1),
   P-2 (Consequence omits joint lambda-phase). Tool docs/referee/scratch/re_probe.py (SW/NC/CAV/RE3/PSPLIT); neg. control 57/446.
   Lane random reentry samples are VACUOUS (no re-entries); RE data = pinned instances only.
-  NEXT: §C after the Lead says REFEREE-2's report exists (docs/referee-2/ NOT read yet).
+  §C written 14:57Z (referee 87beaa60 + stamp fix) against R2-N5-RE (referee-2 c66da44, trunk 8001ee8): no disagreement. RE-1=G-RE-1,
+  RE-2=G-RE-2, P-1=G-RE-3 (R2 repairs via Lemma P base at o; mine via R*), P-2=N-RE-4. Accepted R2's sharper (SG) (only lambda_k(y) != y),
+  N-RE-1..5; RM-1 downgraded to a note. My reading: Lemma RE does not use tau constant (41 leaves at tau-changing transitions, strict);
+  N-RE-3 accepted as the safe wording fix. R2's nc_fail_n12 = (NC) in RE's setting, strict under my probe. PARKED.
+- Lesson: take the §C stamp from date -u BEFORE writing it; never estimate an end time.
 - Lesson: when a proof chains through an intermediate value (y ⊕ Xi_L(z)), ask whether transitivity BEFORE the prefix removes the
   side condition; here it removed a whole hypothesis.
 
