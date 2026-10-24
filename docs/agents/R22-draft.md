@@ -1,6 +1,6 @@
-# Draft RESULTS R22 (Lead, 2026-10-24 20:1xZ by date -u) (rev.: REFEREE-2 §C 8621a84 + stamp fix e7578fe; (U1-T) FALSE as stated; rev. 20:27Z: C31 E-1, N-1, N-2) — awaits CHECKER C31 Addendum 1; lands in "## Results" after R21, before "## Dead ends"
+# Draft RESULTS R22 (Lead, 2026-10-24 20:1xZ by date -u) (rev.: REFEREE-2 §C 8621a84 + stamp fix e7578fe; (U1-T) FALSE as stated; rev. 20:27Z: C31 E-1, N-1, N-2) — LANDED in RESULTS Results 20:36Z (CHECKER C31 c500832 + Addendum 1 4db6e4c PASS), after R21
 
-### R22 [refereed-only] N5 on one-Odd-choice games: crossing-free intervals with OTHER states (F1°), the clauses of (h) on them (TC), and route frames with the honest cycle node higher (P3′) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C31.md, checker PENDING)
+### R22 [refereed-only] N5 on one-Odd-choice games: crossing-free intervals with OTHER states (F1°), the clauses of (h) on them (TC), and route frames with the honest cycle node higher (P3′) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C31.md, checker c500832 + Addendum 4db6e4c)
 - Object (packet P-N5-NH, pinned trunk c7981ee, unchanged during review): docs/new/P-N5-NH-box30.md, sha1
   382c514300fe056d5d95b836f359b78b1374eabe (L-NEW successor 10, Opus 5.5). The referees' repairs are collected by the lane in
   docs/new/P-N5-NH-fixes-box30.md (l-new b4fc3a4, on trunk; sha1 2d7e366a2e9782d98ff1598c6eb460af8f46ac57, L-NEW successor 11; a record
