@@ -221,3 +221,57 @@ Sources:
 | Lemma P^c / CR | SIGN (XA-3, XA-4 accepted as wording, closed; N-XA-1) | the two wording lines |
 | Theorem XA, count | SIGN | — |
 | Corollary | READING, not signed; XA-5 open (C.5 proposes the closure) | write C.5's "pieces pass through leave-free fallbacks", or bound flat fallbacks otherwise |
+
+## C2. REFEREE's §C (docs/referee/R-N5-XA.md §C1-§C6, referee 1123baf, trunk 1494ae1); written 16:06Z by date -u
+### C2.1 Settled
+REFEREE §C2 accepts G-XA-1 (b) and withdraws "the statement of FBL survives". REFEREE §C3 accepts my u* = none closure of FBF, and §C4
+accepts N-XA-1. So the disagreement of C.3 is RESOLVED. The joint position:
+- FBL is SIGNED for u* ≠ none in the strong gate form (both reports give the same repair), and UNPROVED for u* = none.
+- FBF is SIGNED for every u*. Its base is my (h) argument (c ∉ R_t on S). The inductive step can be taken either way (packet, or REFEREE's
+  best-key form).
+- CR does not depend on FBL.
+### C2.2 REFEREE's §C5 (XA-5 closure): checked, SIGN
+REFEREE's §C5 is the argument of my C.5, put in terms of Lemma P's invariant. I checked each step:
+- A flat fallback inside S with u* ≠ none changes no value and touches neither R nor (h).
+  - FBL (strong form) makes every switched edge a flat F → F edge (x = λ(x), z ∈ F in x's region). The regions of distinct switched x are
+    disjoint, so W and Ξ are unchanged on F.
+  - On R nothing switches.
+  - If c itself switches, its new cycle lies in F (z ∈ F does not reach o). So o's plays still stop at their first visit of c, θ and w are
+    unchanged, and o is on no cycle: (h) is preserved.
+  - No F vertex is redirected towards o, so R is unchanged.
+- Lemma P's invariant is a statement about values at the current state (R17 §2: Ω_k(x) ⪰ value(r) for simple r with ≤ j edges), and its
+  induction step k → k+1 uses only:
+  - the values and the strategy at k;
+  - (V1) for that strategy;
+  - (F1) for the arena of that step, which is built from Iσ_k and the CURRENT σ_k.
+  It never uses how σ_k arose. So after a flat fallback the invariant holds with the same j, and the next arena step's case analysis (A1, A2,
+  B1 incl. XA-3, B2) runs with the post-fallback σ. The same holds on 𝓕 and on 𝓡* (P-1 form).
+- Alternative view (my C.5): σ_{k+1} is another pointwise optimum of the arena at k (same values, switches along gate edges, which on F are
+  𝓕-improving by Lemma G (a)). R17 accepts any optimum, so the flat fallback is a value-flat switch-best step. Both views give the same
+  conclusion.
+- Hence: pieces may contain flat fallbacks. Each piece (maximal run without crossings and without NON-FLAT fallbacks) has ≤ (|R| − 1) +
+  (|F| − 1) ≤ n − 2 value-changing transitions. The circularity of XA-5 is gone. CLOSED.
+- DATA (piece_flatfb.py; pieces as above, i.e. PIECE's setting with value-flat fallbacks allowed inside; no throttle required):
+  - 8,000 own and 3,000 SPEC random runs, plus returns_rt48, theta_tp32, fts_best16, rtt24, c12_s54 (50 own runs each): 1,052 pieces, 0
+    violations of either split bound.
+  - 64 of these pieces contain a flat fallback (64 flat fallbacks).
+  - Weak evidence: those pieces have few value-changing steps (10 in all). Throttled stretches had no flat fallbacks in my data (all 576
+    fallbacks contained leaves).
+### C2.3 The Corollary: can be promoted
+With C2.2, the Corollary's argument is complete for a throttled stretch S with u* ≠ none and (h) at every state:
+- entries ≤ n + n(n − 1) (FBF, XA), leaves ≤ entries + n, so crossing transitions are O(n²);
+- non-flat fallbacks ≤ leave-containing transitions, O(n²) (FBL);
+- value-changing transitions ≤ (n − 1)(#crossing transitions + #non-flat fallbacks + 1) = O(n³) (PIECE through flat fallbacks);
+- every run of value-preserving transitions has length ≤ 4n(n − 1) (R15 (d), N-XA-3), so S has O(n⁵) transitions in all.
+I SIGN the Corollary in this form: O(n³) crossings, non-flat fallbacks and value-changing transitions, O(n⁵) transitions, per throttled stretch
+with u* ≠ none. Required text for L-NEW: C2.2 (pieces pass flat fallbacks) and N-XA-3. Not covered: u* = none stretches, non-(h) states,
+the number of throttled stretches, (CYC), (XING), (FB-1O). G-N5-TIME stays OPEN.
+### C2.4 Final verdicts (Opus 5.5, D15), superseding C.6
+| item | final |
+| --- | --- |
+| §1, Lemma C | SIGN |
+| FBL | SIGN for u* ≠ none (strong gate form); UNPROVED for u* = none (joint position) |
+| FBF | SIGN, every u* |
+| Lemma P^c / CR | SIGN (XA-3, XA-4 wording; N-XA-1) |
+| Theorem XA, count ≤ n(n − 1) (≤ n − 1 per vertex) | SIGN (no end-to-end data) |
+| Corollary, u* ≠ none | SIGN with C2.2 and N-XA-3 written in: O(n³) value-changing transitions, crossings and non-flat fallbacks; O(n⁵) transitions |
