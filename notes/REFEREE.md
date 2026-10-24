@@ -28,6 +28,30 @@ experiments/new/box25/common.py (rand_c1o, odd_choice = FIRST Odd chooser: hence
 - Glob-based data can pull in out-of-class games; assert the class.
 - Random 𝒞^1O samples are nearly vacuous for throttled / route-form / re-entry structure; say so; named instances carry the evidence.
 
+## Resume point (successor 5, written 2026-10-24T22:47Z by date -u): P-N5-FB (pin 348393b, docs/si/P-N5-FB-box7.md sha1 9ece9994…)
+- docs/referee/R-N5-FB.md: Theorem FB SIGNED WITH GAPS FB-1 (M < ∞ at a fallback needs the best-target line, NOINF covers switched edges
+  only), FB-2 (phase-exit fallbacks, ≤ 1 per phase, 7 in named set); (T), MONO, NOINF, J1, OFF, TAME, Corollary, A SIGNED; COARSE-SI (a)
+  WITH ENG-1 (inherited engine point), V-1 (Prog is VJ00 p. 15), V-2; CAP WITH CAP-1: SPEC's σ̄ at a cycle node (FIX 2 DFS) is NOT a
+  minimiser (925 cases); closed: non-cycle-node σ̄ is a minimiser (case proof), λ(o) = o case direct. (JUMP-EQ) FALSE confirmed (x31_rx32
+  53 → 54, last carry 51, L 24). Tool scratch/fb_probe.py. §C from 22:54Z vs R2-N5-FB (referee-2 7699593): no verdict differs; MISSED
+  G-FB-2/G-FB-3 (𝒞^1O-only citations in an every-game theorem; accepted); CAP: R2 coarse-minimiser closure recommended. PARKED.
+- Lesson: "σ̄ minimises" (VJ00's definition) is not SPEC's σ̄ at cycle nodes; check every VJ00 property against si.py's actual choice.
+
+## Resume point (successor 5, written 2026-10-24T21:32Z by date -u, Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh > file 2>&1; echo $?.
+- Handover check bfbf4642 (scored 5/5 by the Lead 21:1xZ). Local branch was stale (73b46eb8); fetched + ff; trunk cf66bff merged (4b6456dc).
+- P-N5-U1 (GO 21:1xZ; pin eee0d8a; docs/new/P-N5-U1-box31.md sha1 eb90788d…): docs/referee/R-N5-U1.md. Theorem U1 SIGNED; CASC SIGNED WITH
+  GAPS C-1 (closed: only TB's CHOICE RULE is needed, not TB-even's whole-play hypothesis), C-2/C-3 wording; TB SIGNED WITH GAPS TB-1 (set-valued
+  ⊕ sandwich, closed), TB-2 wording; Lemma R SIGNED WITH GAPS R-1 (literal (c,P)-only statement FALSE at x = u: 3-vertex instance, 4,074 random
+  cases; fully optimal form holds and is the only one used), R-2 (VJ00 §6 (15), (22), Prop. 6.1 states only ONE shortest path survives:
+  Lemma R is a strengthening); WC SIGNED; §6 READING correct. Tools: scratch/u1_probe.py (own trace, TBc/TB/R1/CASC/C1/U1/WC, arena_test),
+  lemr_probe.py (hooked evaluate), casc_climb.py. DATA notes D-1 (|R| quoted as |R \ {o}|), D-2 (σ(10) switches once on u1t_cex_n32).
+  §C written from 21:53Z (date -u) vs R2-N5-U1 (referee-2 28ddf6f): no verdict differs; C-1 downgraded to wording (R2 reading accepted); MISSED G-R-1 and
+  N-U1-3 (accepted; N-U1-3 closure proved via VJ00 Lemma 5.7 in G_tau, eqfb_check.py 0/322). PARKED.
+- Lesson: a lemma about "optimal edges" with set-valued ⊕ can fail where the optimal play from y passes x; test the formal statement on a
+  3-vertex instance before signing, and check which form the later steps actually use.
+- Trap: `pkill -f <pattern>` / `pgrep -f` + kill from the Bash tool kills the tool's own shell (exit 144); list PIDs with ps and exclude grep.
+
 ## Resume point (successor 4, 20:37Z by date -u): P-N5-Z (pin fba7177, docs/si/P-N5-Z-box5.md sha1 a027638f…)
 - docs/referee/R-N5-Z.md: all SIGNED; LV′ WITH GAP Z-1 (runs broken by '±'; proof wording), Z-2 NOFE = one line from FBL-N (ii), Z-3 (F0)
   citation. Corollary Z: R21 (g) within hypotheses. LOOP's H1 needed (88 loop cases all without H1). Tool docs/referee/scratch/z_probe.py.
@@ -147,6 +171,9 @@ Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD =
   Lesson: multiply out every constant I tick.
 
 ## Sources opened (append)
+- VJ00 BRICS RS-00-48, same pdf (sha256 485a12de432a2a8c88640b0718bd2042d855fa86d6a82092a0d538fd41ba9e65), downloaded and opened
+  2026-10-24 21:18Z by date -u (successor 5): §6 "Efficient implementation" (pdf pp. 24-27): procedure Shortest paths lines 1-10, claims
+  (15)-(19), Proposition 6.1 (clauses 1-4: G(r) contains A shortest path) and its proof with (20)-(22), Theorem 6.2; §5.1 (3)-(10) incl. (6), (7).
 - VJ00 BRICS RS-00-48, same pdf (sha256 485a12de432a2a8c88640b0718bd2042d855fa86d6a82092a0d538fd41ba9e65), re-downloaded and opened
   2026-10-21 23:40Z by date -u (successor 3, Fable 5.1): §4.1 (play values), §4.2 (order, MaxDiff), §4.3-4.5 (multisets, ⊕), §5.1 (3)-(10),
   §5.2 Prop. 5.1, Lemma 5.2, §5.3 Props. 5.3, 5.4, 5.6 (proof read), Lemma 5.5 (proof read in full), §5.4 Lemma 5.7, §5.5 Lemma 5.8 (proof

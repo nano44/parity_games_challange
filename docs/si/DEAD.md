@@ -90,3 +90,13 @@ Iteration tables: docs/si/RESULTS.md (generated); raw logs experiments/si/out/ (
   N = 5 (ratios 2.04, 2.02); N = 8 exceeded the 900 s limit (> 10^6 evaluations). The run coincides with steepest's
   (S3: 106, 233, 1103 at N = 3..5), i.e. on this family the count order and the steepest-gain order agree. Unconditional,
   no pads needed; regression numbers pinned: instances/randomfacetsubexp_N5.pg, most-improved 1103 (check.sh).
+- (JUMP-EQ) (box 6, docs/si/N5-C-box5.md §6.2; CONJECTURE of L-SI succ. 2), FALSE, L-SI succ. 3 box 7 (2026-10-24 21:45Z):
+  experiments/red/xing/instances/x31_rx32.pg (sha1 4fe9ec0e, 𝒞^1O, o = 0), transition 53 -> 54. w is constant since the carry
+  at level 24; σ̄(o) goes 24 -> 31 (an INR); θ rises at level 25 > 24 and lands in a THR state with θ ≠ w. θ reaches w only at
+  state 55. Re-verified: n5.py 55 iterations / 3 fallbacks; Oink zlk OK; strategies verified. Superseded by Theorem FB
+  (docs/si/N5-C-box7.md §4), which bounds the fallbacks without it. Script: experiments/si/coarse/jumpeq.py.
+- (JU2) (L-SI succ. 3, box 7 §9 CONJECTURE: under (h) with w constant, a non-tame jump below rank(u*) is followed at once by a jump at
+  rank(u*)), FALSE: experiments/si/coarse/instances/jcl_x31_cu32i.pg (sha1 00e09994, 𝒞^1O; n5 16/1, Oink zlk OK, strategies
+  verified). w is constant and rank(u*) = 30 on states 5-8. θ jumps at levels 27 (5 -> 6), 22 (6 -> 7), 21 (7 -> 8), then 30 (8 -> 9);
+  σ̄(o) goes 22 -> 29 -> 13 -> 21 -> 5. Over the named set plus climb bests: 10 of 20 sub-u* jumps fail (JU2) (ju2.py). The
+  sub-u* jumps run like a counter over Odd's exits; without releases they are bounded by |succ(o)| per scope run (Corollary JD).

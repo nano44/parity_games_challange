@@ -1,0 +1,41 @@
+{
+ "games": 17191424,
+ "runs": 17191424,
+ "bad": {
+  "F1": 0,
+  "TC4": 0,
+  "TC3": 0,
+  "OBR": 0,
+  "OBRincl": 0
+ },
+ "tested": {
+  "I": 25000542,
+  "F1": 25000542,
+  "TC1": 25000542,
+  "TC4": 14592498,
+  "TC2": 9876682,
+  "TC3": 531362,
+  "OBR": 774
+ },
+ "slack": {
+  "F1": 0,
+  "OBR": 0
+ },
+ "ex": {},
+ "tasks_done": "160/160",
+ "secs": 2259.8,
+ "options": {
+  "mode": "exh",
+  "args": [
+   "5"
+  ],
+  "even_maxdeg": 2,
+  "o_deg": 2,
+  "no_forced": true,
+  "cyclic_only": true,
+  "all_starts": false,
+  "every": 4,
+  "offset": 1,
+  "slices": null
+ }
+}

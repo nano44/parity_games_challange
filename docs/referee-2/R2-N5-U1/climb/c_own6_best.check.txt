@@ -1,0 +1,31 @@
+LR_edges: 1261
+LR_edges_optimiser: 965
+LR_full_optimal: 1042
+TB_even: 5
+TB_key_checks: 700
+TB_key_nontrivial: 24
+TB_step2 x_on_cycle_only: 46
+TB_step2 x_on_play:False: 369
+TB_step2 x_on_play:True: 46
+U1_W_change_transitions: 5
+U1_nontrivial: 1
+U1_pieces_checked: 2
+WC_intervals(notH1notH2): 14
+WC_intervals(notH2): 17
+fallbacks: 1
+intervals: 26
+pieces_EQc: 9
+pieces_P3: 1
+pieces_U1: 2
+pieces_U1_nontrivial: 1
+runs: 10
+transitions: 33
+U1_last_kappa_w_change_minus_R: -25
+U1_max_K: 0
+U1_max_Rch: 5
+U1_max_len: 5
+U1_postfreeze_max_Xi_changes_one_vertex: 1
+WC_cw_changes_per_stretch: 0
+WC_max: 1
+example U1_long: c_own6_best.pg#0 piece [0,5] |R|=26 c_theta=27 c_w=2 Rch=5 f=0
+RESULT OK violations=0

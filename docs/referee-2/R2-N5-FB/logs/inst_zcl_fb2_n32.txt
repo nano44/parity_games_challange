@@ -1,0 +1,30 @@
+FB_tame_fallbacks_checked: 37
+LINK_sbar_minimiser: 414
+LINK_states: 207
+MONO_checks: 197
+M_rose_at_nontame: 5
+NC_fail_and_nontame: 5
+NC_fail_but_tame: 19
+NOINF_checks: 362
+NOINF_fallbacks: 37
+OFF_checks: 4512
+SIa_checks: 221
+SIa_converse_checks: 37
+SIb_hyp: 174
+T_checks: 3885
+T_checks_nontrivial: 457
+T_hyp_fails: 2931
+W_lowering_in_phase: 37
+fallbacks: 38
+phase_fallbacks: 37
+phases: 7
+runs: 5
+transitions: 202
+transitions NC=False tame=False inphase=False: 5
+transitions NC=False tame=True inphase=False: 4
+transitions NC=False tame=True inphase=True: 19
+transitions NC=True tame=True inphase=False: 19
+transitions NC=True tame=True inphase=True: 155
+max_J_per_phase: 0
+max_fallbacks_in_block: 11
+RESULT OK violations=0

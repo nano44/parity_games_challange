@@ -1,0 +1,40 @@
+CASC_runs_EQc: 9
+CASC_runs_U1: 52
+LR_edges: 15459
+LR_edges_optimiser: 14511
+LR_full_optimal: 14113
+LR_setopt_deleted u==x:True owner_x:1: 1
+LR_setopt_deleted_xney: 1
+TB_key_checks: 11411
+TB_key_nontrivial: 20
+TB_step2 x_on_cycle_only: 253
+TB_step2 x_on_play:False: 9453
+TB_step2 x_on_play:True: 253
+U1_W_change_transitions: 43
+U1_kappa_w_change_transitions: 43
+U1_nontrivial: 59
+U1_pieces_checked: 100
+U1_pieces_longer_than_R (post-freeze part nonempty): 23
+WC_intervals(notH1notH2): 23
+WC_intervals(notH2): 113
+fallbacks: 62
+intervals: 118
+pieces_EQc: 24
+pieces_EQc_nontrivial: 9
+pieces_P3: 4
+pieces_U1: 100
+pieces_U1_nontrivial: 59
+runs: 10
+transitions: 471
+CASC_run_len_EQc: 2
+CASC_run_len_U1: 14
+U1_last_kappa_w_change_minus_R: -2
+U1_max_K: 0
+U1_max_Rch: 8
+U1_max_len: 14
+WC_cw_changes_per_stretch: 0
+WC_max: 0
+example U1_long: b5_os_n32.pg#0 piece [0,8] |R|=6 c_theta=21 c_w=7 Rch=0 f=0
+example LR_setopt_deleted_xney: b5_os_n32.pg#7@0 cyclenode=7 x=1 y=29 u=1
+example LR_setopt_deleted: b5_os_n32.pg#7@0 cyclenode=7 x=1 y=29 u=1 val[x]=(7, 134217728, 1) ext=(7, 134217728, 4)
+RESULT OK violations=0
