@@ -1008,3 +1008,4 @@
 - 19:26Z merged l-new 6325221 (box 29 final; scope OK; packet P-N5-X unchanged); Lead re-run u1_n32 (f9577ca9) n5 16/1, Oink OK verified. L-NEW GO box 30 (packet P-N5-NH; (OB_R) in U1; handover after). L-RED told: U1 and (Z) as post-box-32 targets. NOW.
 - 19:30Z merged checker bd2a709 (C30 Add. 2 PASS, C30 closed; scope docs/checker/C30.md, notes/CHECKER.md); GAPS wording per CHECKER optional N (τ-constant phase); NOW: CHECKER parked.
 - 19:38Z merged l-new 4d3b60d (P-N5-NH frozen, sha1 382c5143; O′ split ivsplit.py on b5_os = L-COMP's xo_split numbers exactly; scope OK). P-N5-NH pinned at this merge for both referees.
+- 19:41Z P-N5-NH sent to REFEREE (R-N5-NH) and REFEREE-2 (R2-N5-NH); NOW.
