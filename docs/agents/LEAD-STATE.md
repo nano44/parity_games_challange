@@ -944,3 +944,6 @@
 - 12:03Z (date -u) Hourly sweep (12:02Z trigger): overage false; no working lanes; no exceptions.
 - 12:30Z (date -u) NOW.md refreshed after OWNER-DESK flagged it stale (header 10-22, M4 row, spend 10-18): header rewritten (fleet idle, N5 stand-down, R18/DE34, DTL dormant), M4 row status appended, partial spend reading added.
 - 12:51Z (date -u) D16 recorded (owner via OWNER-DESK b3bb957): "Then keep working as I told you to". Lead reading L38: the idle stand-down rule is withdrawn; restart L-RED box 30 (DTL gap), L-NEW box 26 (N5 lead), L-LIT T27 (untested approaches). Lead error acknowledged: idling the fleet at 08:27Z conflicted with D13/D14.
+- 12:58Z (date -u) D17 recorded; L39: 5 working lanes (+ L-COMP box 3, + new L-SI successor), gate roles above 5 justified.
+- 13:05Z (date -u) L-COMP succ. 2 box 3 GO (exhaustive N5); L-SI successor created session_018gVYmVeemURjv647XRxNJ1 (Opus, handover check first). Working: L-RED, L-NEW, L-LIT, L-COMP, L-SI (5 of 5).
+- 13:11Z (date -u) D18 recorded; L40: all lanes on N5; L-RED redirected from DTL box 30 to N5 adversary; L-SI to OR/MDP lens; L-LIT T28. T27 merged-later (C1 queued). L-NEW box 26 checkpoint 1: named lead FALSE (THETA re-entries common; L-RED's retcheck mislabels); THETA ≤ n per θ-change (lane PROVED).
