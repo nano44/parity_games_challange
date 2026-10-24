@@ -1,0 +1,2 @@
+SKIPPED: not C^1O (Odd choice vertices [14, 28]); the packet's lemmas do not apply
+RESULT OK violations=0 (skipped)

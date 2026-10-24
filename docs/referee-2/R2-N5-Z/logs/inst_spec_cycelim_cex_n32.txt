@@ -1,0 +1,16 @@
+ACT_i: 19
+ACT_ii: 3
+GAP_edges: 4
+LOOP_checks: 1
+StepK_checks: 4
+WM_checks: 25
+W_lowering_fallbacks: 1
+fb_in_phase: 1
+phases: 6
+pm_transitions: 0
+runs: 1
+transitions: 31
+literal_run_max: 11
+phase_max_X: 19
+phase_max_Z: 2
+RESULT OK violations=0
