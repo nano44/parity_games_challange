@@ -143,3 +143,51 @@ Sources:
 | N-NH-1 | Corollary, θ part | cite R21 (i) / X-1 |
 | N-NH-2 | remark "c_θ = c_w … THR situation" | needs (h) |
 | N-NH-3 | reduction: boundary transitions of OTHER blocks | name them |
+
+## C. Comparison with REFEREE's R-N5-NH (referee 78d61b1, trunk f42ccad; read after my push 48da84a1; written 20:03Z by date -u)
+### C.1 Agreement per item
+| item | REFEREE | REFEREE-2 | agreement |
+| --- | --- | --- | --- |
+| P3′ step 1 | SIGNED WITH GAPS (P3-1, closed) | SIGN WITH GAPS (G-NH-1, closed) | full: same gap, same closure (C.2) |
+| P3′ step 2 and count | SIGNED; sharper bound ≤ \|R\| + (\|R\| − 2)(\|R\| − 1) | SIGN | full. I accept the sharper bound: \|π_v\| ≤ \|R\| − 1 gives ≤ \|R\| − 2 moves per v ≠ o, and Ξ(o) = θ is fixed |
+| Corollary | SIGNED | SIGN (N-NH-1) | full. REFEREE's §1.5 cites TF / X-1 for θ, which is my N-NH-1 |
+| TC, F1° | SIGNED | SIGN | full |
+| Reduction (READING) | checked (NH-1, NH-2) | correct (N-NH-3) | full. NH-1 = N-NH-3. I accept NH-2 and correct my §1.3 (C.3) |
+| remark "c_θ = c_w … THR" | — | N-NH-2 | mine only (wording) |
+No disagreement on any verdict.
+### C.2 P3-1's closure against my single-switch proof: the same argument
+- Both reduce CR's use of 𝓡*_w to the (F1) instances in the κ-strict B-cases:
+  - x ∉ C_W: σ̂ leaves o's W-continuation alone, so the real value is the contracted value;
+  - x ∈ C_W: κ(π_{σ_k x}) = ∅, so a κ-strict target has an even top t above c_θ, the real cycle's top is t, and (F1) would move λ_W(x)
+    off c_w = o inside J. So the case is vacuous;
+  - B2 (x ∈ π_z): the cycle stays inside R, so contracted = real.
+- REFEREE spells out why the cycle's top is exactly t (C_W arcs are ≤ o, and π_z's vertices outside κ are below c_θ). My §1.2 has this as
+  "the C_W part is below o and t is the top of π_z". These are not substitutes but the same proof. REFEREE adds that the global sentence
+  "may fail" (an 𝓡*_w optimum may take a κ-tie edge from C_W). That is consistent with my "unproved, not refuted".
+- Its proposed wording for L-NEW ("every B-case (F1) instance holds: under H2 by PIECE's argument; under λ_W(o) = o by P3-1's vacuity") is
+  right. I endorse it.
+- Data on the vacuous case: neither probe saw a κ-strict gate edge from C_W into R inside a piece (REFEREE: 268 such pieces; mine: 0 of
+  75 single-switch checks). My climbs give the stronger P3′ data: 1,017 nontrivial pieces and 1,871 S4a steps under ¬H2, every one an
+  𝓡*_w-arena optimum. REFEREE's probe has 901 pieces, longest 6.
+### C.3 NH-2, and a correction to my §1.3
+- My §1.3 said: "In a piece, a W-change on R is a Ξ-change on R and conversely, since both are functions of the route with fixed terminals."
+  - "Ξ-change ⇒ W-change" at a vertex is right: κ ⊆ A_w, and the length is shared.
+  - "W-change ⇒ Ξ-change" at the same vertex is WRONG when c_θ is above c_w. A route change that alters only the vertices between c_w and
+    c_θ, at equal length, changes W(v) but not Ξ(v). I WITHDRAW that half.
+- REFEREE's NH-2 gives the right statement at the level of transitions. An R-only W-change needs a route change (w is constant), hence a
+  switch of some y ∈ R. (SG) (R19 (d); λ_Ξ(y) = c_θ ≠ y) makes Ξ(y) rise strictly. So every R-only value-changing transition is a
+  Ξ-change on R, and P3′'s count bounds ROI on its pieces. ✓ I accept NH-2 as the replacement.
+### C.4 Joint gap map
+| REFEREE | REFEREE-2 | status |
+| --- | --- | --- |
+| P3-1 | G-NH-1 | CLOSED (same proof); wording for L-NEW as in REFEREE §1.3 |
+| (sharper count, §1.4) | — | accepted (remark) |
+| NH-1 | N-NH-3 | wording (READING) |
+| NH-2 | (my withdrawn §1.3 converse) | closed by (SG); REFEREE's line replaces mine |
+| §1.5 θ via TF / X-1 | N-NH-1 | the same citation note |
+| — | N-NH-2 | wording (remark needs (h)) |
+Final verdicts (Opus 5.5, D15), unchanged:
+- P3′: step 1 SIGN WITH GAPS (closed); steps 2-3 SIGN.
+- Corollary, TC, F1°: SIGN.
+- Reduction: correct as a READING, with NH-1 and NH-2.
+(NH'), (X), U1-U3, W-CYC and G-N5-TIME stay OPEN.

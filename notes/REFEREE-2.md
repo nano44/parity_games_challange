@@ -5,7 +5,9 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 2026-10-24 19:49Z P-N5-NH (docs/new/P-N5-NH-box30.md sha1 382c5143…, trunk c7981ee): docs/referee-2/R2-N5-NH.md. TC, F1°, P3' steps 2-3,
 Corollary SIGN; P3' step 1 SIGN WITH GAPS (G-NH-1: "S4a optimum restricted to R is an R*_w-arena optimum" unjustified under not-H2,
 lambda_W(o)=o; closed: CR needs only B1 single-switch inequality; x not on C_W: real = contracted; x on C_W: vacuous, top of pi_z even
-above o would move lambda_W). Reduction READING correct. Tools R2-N5-NH/nh_check.py, nh_climb.py. Context ~440k. Next: §C.
+above o would move lambda_W). Reduction READING correct. Tools R2-N5-NH/nh_check.py, nh_climb.py. Context ~440k.
+§C (20:03Z) vs REFEREE R-N5-NH (78d61b1): full agreement; P3-1 = G-NH-1, same proof; accepted sharper count, NH-2 (SG);
+withdrew my §1.3 converse (W-change on R need not be a Xi-change at that vertex). PARKED.
 Earlier:
 2026-10-24 18:34Z P-N5-X (docs/new/P-N5-X-box28.md sha1 b21d2d06…, trunk afc88b0): docs/referee-2/R2-N5-X.md. F1, NF, XW, EQ, FBL-N, F2,
 FB-W SIGN; table agree; Theorem X SIGN WITH GAPS: G-X-1 = R19 (f) "theta free" (my N-RE-4) misses Xi-changes on R from theta (fbref_n48
