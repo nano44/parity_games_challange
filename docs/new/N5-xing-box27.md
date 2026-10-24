@@ -10,7 +10,7 @@ Notation: box 26 (docs/new/N5-reentry-box26.md) and the packet, §0-§1:
 - THROTTLED means θ ◁ w.
 Code: experiments/new/box25/ (coarsecheck.py, fbedges.py, crossings.py, xingclimb.py, xtrace.py).
 
-## 0. Corrections and additions to box 26 (dated 2026-10-24 14:45Z)
+## 0. Corrections and additions to box 26 (written ~14:31Z by date -u)
 - CORRECTION to box 26 §7.3 data and to the 14:12Z (XING) conjecture. The crossing climbs xc16, xc24, xcf20 and tr20_s4 have θ = w at
   every state of their long stretches, so they are UNTHROTTLED. There the band is empty, and the stretch is already bounded:
   - Lemma G with θ = w gives Ξ = W, and the gate is exactly G_τ's improving set;
@@ -284,3 +284,52 @@ So (CYC') reduces to:
 - OPEN (CYC-u*): the number of θ-changes inside one (w, u*)-run, i.e. changes of θ strictly below u* while w and u* are fixed, plus
   the number of w-changes per phase.
 DATA: θ-changes per phase plateau at 16 (L-RED), and returns_rt48 / ph64 have 3.
+
+### 8c. Next idea for (CYC-u*) (READING; not a result)
+After the coarse freeze in a (w, u*)-run, let x have its best R-option ρ and its o-free value h with coarse(ρ ⊕ θ) = coarse(h).
+Then one of the two frames decides at u* itself:
+- If h has w's status at u*: the honest frame prefers F at u*, so x can never ENTER R by the gate. It can only leave (arena or
+  fallback).
+- If h has θ's status at u*: the W frame prefers R at u*, so x never LEAVES by an arena step. It can enter (honest comparison below
+  u*) and can be evicted only by a fallback.
+- So below u* every vertex is one-sided, and its type changes only when h's status at u* changes.
+A recursion on the next differing level below u* is the natural continuation. Done naively, it gives n^depth, not a polynomial. A
+proof needs to show that the type changes, or the recursion depth, are bounded.
+
+## 9. Referee corrections to P-N5-RE, applied here (the pinned packet is not edited; written 15:08Z by date -u)
+From REFEREE (docs/referee/R-N5-RE.md) and REFEREE-2 (docs/referee-2/R2-N5-RE.md):
+- RE §4 step 2: RE-1. The caveat sentence is false: vertices on z's path between z and y may switch too. Replace step 2 by REFEREE's
+  argument (R-N5-RE §4.2):
+  - (V1) at L and L+1 (y is its own cycle node at neither state);
+  - the gate gives Ξ_L(z) ▷ Ξ_L(σ_L y), and R15 (a) gives Ξ_{L+1}(z) ⊵ Ξ_L(z);
+  - one strict (V2) on (Ξ_L(σ_L y), Ξ_{L+1}(z)), whose paths both avoid y by (V1).
+  This covers every case. Hypothesis (NC) is NOT needed: G26-1 is CLOSED.
+  - General form (SG; both referees): at any N5 transition, a switched Even vertex that is its own cycle node neither before nor after
+    gains strictly.
+  - REFEREE-2: the (NC) configurations occur (nc_fail_n12.pg, plus 31 more cases) and always with a strict gain. The packet §6's "flat
+    leave" cannot occur.
+- RE §4 step 3: RE-2. The justifying sentence is false (a play can pass a vertex twice). The conclusion holds by the same argument
+  applied along the prefix: (V1) at both states, then strict (V2) (R-N5-RE §4.3).
+- Corollary RE: (NC) is dropped. N-RE-3 (REFEREE-2): τ must be constant on each interval (L, E+1].
+- PIECE:
+  - P-1: the count |R| − 1 needs REFEREE's contraction 𝓡*, with o a self-loop carrying c's priority (R-N5-RE §5.3). R17 verbatim on
+    𝓡 gives 2n − 3. REFEREE-2's G-RE-3 closes it differently: re-run Lemma P with the base case at o.
+  - P-2 / N-RE-4: the Consequence needs "inside one joint λ-phase". REFEREE-2 also notes that PIECE does not need θ constant.
+  §7 above and packet P-N5-XA §7 use PIECE in this corrected form.
+- Data note (REFEREE): my random reentry.py samples have 0 re-entries (737 leaves). RE's class data rest on the pinned instances.
+
+## 10. Box-27 climbs (DATA; every best checked: Oink zlk OK, strategies verified)
+- Throttled crossings (xingclimb.py, throttled stretches only; 40 min each), FINAL:
+  - max crossings of one vertex per throttled stretch: 3 (n 16), 4 (n 24), 3 (n 32);
+  - crossing transitions per throttled stretch: 10, 18, 23, and 25 (n 32 seeded from theta_tp32).
+  All are below n − 1.
+- FB-RE (fbreclimb.py; seeded from fts_best16 / returns_rt48; 30 min), FINAL: 0 re-entries after fallback leaves, with up to 23 / 84
+  throttled fallback leaves per run. Lemma FBF predicts the 0.
+- (θ, w)-stretches per phase (stretchclimb.py), interim:
+  - box25/instances/sc32.pg (n 32, seeded from theta_tp32, sha1 in the commit): 32 θ-changes in one 35-iteration phase, 0 w-changes,
+    0 non-(h) transitions. That is twice L-RED's plateau of 16, and linear in n so far. Oink zlk OK, strategies verified.
+  - n 24 from random: 17.
+  (CYC') is the open count; this is the sharpest instance for L-RED.
+- L-SI's elim24_p52 (experiments/si/orlens/instances/elim24_p52.pg, n 24, one Odd choice vertex 18): its 52-iteration phase (2.2n) is 5
+  throttled (θ, w)-stretches with 4 θ-changes and 0 non-(h) transitions. The excess lives inside stretches, which §5 / packet §7 bound
+  polynomially (O(n³) each).
