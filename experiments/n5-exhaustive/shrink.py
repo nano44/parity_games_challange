@@ -2,8 +2,8 @@
 """Greedy shrink of a C^1O game + start pair while a property holds (default: some theta-driven (A) re-entry in a joint
 lambda-phase). Moves, repeated to a fixpoint: delete a vertex (redirecting nothing: edges into it are dropped; a vertex left
 without successors makes the move invalid), delete an edge, drop a vertex's start choice to another successor, lower a priority
-(compress). The start pair is restricted accordingly. Usage: shrink.py IN.pg IN.start|- OUT_PREFIX [--prop A|canonA|noh|canonnoh] [--nohlen L]  (canon*: from the canonical start;
-pass - as start; noh: a joint (lambda, tau(o))-phase of >= L iterations (default 4) containing a non-(h) transition, box4.measure)"""
+(compress). The start pair is restricted accordingly. Usage: shrink.py IN.pg IN.start|- OUT_PREFIX [--prop A|canonA|noh|canonnoh|X|canonX|O|canonO] [--nohlen L] [--thr T]  (canon*: from the canonical start;
+pass - as start; noh: a joint (lambda, tau(o))-phase of >= L iterations (default 4) containing a non-(h) transition, box4.measure; X / O: max crossing / OTHER-touching transitions per phase >= T, box 5)"""
 import os
 import sys
 
@@ -13,6 +13,7 @@ from exh import pg, trace  # noqa: E402
 
 
 NOHLEN = 4
+THR = 1
 
 
 def prop(g, start, mode):
@@ -21,6 +22,9 @@ def prop(g, start, mode):
             return False
         o = exh.odd_choice(g)
         st, _ = trace(g, None if mode.startswith("canon") else start, check=False)
+        if mode in ("X", "canonX", "O", "canonO"):                # box 5: max X (or O) per phase >= THR
+            import box4
+            return len(st) > 1 and box4.measure(g, st)[mode[-1]] >= THR
         if mode in ("noh", "canonnoh"):                         # box 4: a phase of >= NOHLEN iterations with a non-(h) transition
             import box4
             return len(st) > NOHLEN and box4.measure(g, st)["nohlen"] >= NOHLEN
@@ -54,7 +58,9 @@ def delete_vertex(g, start, x):
 
 def main():
     g = pg.read(sys.argv[1]); start = exh.readstart(sys.argv[2]) if sys.argv[2] != "-" else None; outp = sys.argv[3]
-    global NOHLEN
+    global NOHLEN, THR
+    if "--thr" in sys.argv:
+        THR = int(sys.argv[sys.argv.index("--thr") + 1])
     mode = sys.argv[sys.argv.index("--prop") + 1] if "--prop" in sys.argv else "A"
     if "--nohlen" in sys.argv:
         NOHLEN = int(sys.argv[sys.argv.index("--nohlen") + 1])

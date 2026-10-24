@@ -1,9 +1,10 @@
-# Draft RESULTS R21 (Lead, 2026-10-24 18:5xZ by date -u) (rev.: REFEREE §C 865eadd) — awaits CHECKER C30; lands in "## Results" after R20, before "## Dead ends"
+# Draft RESULTS R21 (Lead, 2026-10-24 18:5xZ by date -u) (rev.: REFEREE §C 865eadd; rev. 19:10Z: C30 E-1..E-4, N-1) — LANDED in RESULTS Results 19:19Z (CHECKER C30 7bf1999 + Addendum 1 679ea11 PASS), after R20
 
-### R21 [refereed-only] N5 on one-Odd-choice games: inside one joint λ-phase, transitions are bounded by crossings and OTHER states (Theorem X), with Lemmas XW, EQ, FBL-N, NF, F1, F2, FB-W, and a clarification of R19 (f) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C30.md, checker PENDING)
+### R21 [refereed-only] N5 on one-Odd-choice games: inside one joint λ-phase, transitions are bounded by crossings and OTHER states (Theorem X), with Lemmas XW, EQ, FBL-N, NF, F1, F2, FB-W, and a clarification of R19 (f) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C30.md, checker 7bf1999 + Addendum 679ea11)
 - Object (packet P-N5-X, pinned trunk afc88b0, unchanged during review): docs/new/P-N5-X-box28.md, sha1
   b21d2d0638d08d750f26ae4dda2faaca7891fa23 (L-NEW successor 10, Opus 5.5). The referees' repairs are collected by the lane in
-  docs/new/P-N5-X-fixes-box29.md (a record of the reports, not itself refereed text).
+  docs/new/P-N5-X-fixes-box29.md (l-new 331ad0c, on trunk; sha1 dd467be05462b17ef5744d4e1019afeada95588c, L-NEW successor 10; a record of
+  the reports, not itself refereed text).
   Setting as in R19 (𝒞^1O, θ, w, R, (h)). A PHASE is a joint λ-phase with τ constant. F := V \ R. A CROSSING transition changes R.
   State types: EQ (Ξ = W pointwise), THR ((h) and Ξ ≠ W), OTHER ((h) fails and Ξ ≠ W); an OTHER-touching transition has an OTHER
   endpoint. VALUE-CHANGING: Ξ or W changes at some vertex.
@@ -27,16 +28,17 @@
       bound counts route (𝓡*, i.e. W on R) changes; a θ-change at a transition with H1 at its start and R constant changes W on F
       (REFEREE X-1, via Lemma S (a) and R15 (a); REFEREE-2 Lemma TF as a second proof) and is charged to the F-part; the total
       (|R| − 1) + (|F| − 1) counts transitions at which Ξ or W changes. Read with Ξ on R counted in the R-part, the per-part bound fails
-      with θ varying (fbref_n48, transition 56 → 57, R = {o}).
+      with θ varying (fbref_n48, transition 56 → 57, R = {o}). (Wording: REFEREE-2 §C.4; REFEREE §C3 confirms its content.) A
+      POST-LANDING NOTE under R19 points here.
 - Also checked, not a claim: the (w, u*)-run table (which R20 lemmas survive θ-changes: all except FBF), checked by both as a READING.
 - Consequence (READING, not signed): with Lemma Φ (≤ 2n(n − 1) + 1 joint λ-phases; box 21, PROVED by the lane, UNREFEREED) and
   τ-changes ≤ d − 1 (R15 (c) on G^d, checked by REFEREE), N5 on o-cyclic 𝒞^1O is polynomial if (X) and (NH') hold: X and O are poly(n)
   per phase.
 - Honest limits: (i) SUBCLASS 𝒞^1O, polynomial by other means; a bound on N5 itself. (ii) Theorem X moves the open part of G-N5-TIME on
   𝒞^1O to two counts, and both exceed n in data: X = 54 at n 32 and 70 at n 48 (L-NEW climbs, Lead re-run); O = 11 at n 10 (L-COMP
-  b5_o11, Lead re-run) and 19 at n 24 (L-NEW). (X) and (NH') are OPEN; no growth law beyond linear is established either way.
+  experiments/n5-exhaustive/instances/b5_o11.pg, l-comp 67471f7b, on trunk; sha1 db4fe55a…; Lead re-run) and 19 at n 24 (L-NEW). (X) and (NH') are OPEN; no growth law beyond linear is established either way.
   (iii) The phase count (Lemma Φ) is unrefereed. (iv) (FBRE-F) is FALSE (L-RED fbref_cex_n32; L-NEW fbref_n48); not used here.
-- Data (DATA, not proof): REFEREE x_probe.py: 45 named instances + 8,731 random runs, 1,947 phases (max length 110, X up to 70, O up to
+- Data (DATA, not proof): REFEREE x_probe.py: 42 named instances + 8,731 random runs, 1,947 phases (max length 110, X up to 70, O up to
   19), 0 failures of XW, NF (121), F1 (1,592 intervals), F2 (33), EQ (1,464 blocks), sub-block ≤ n − 2 (136), θ-change ⇒ F-change (176),
   or the Theorem X bound. REFEREE-2 x_check.py (own code): 15,378 runs, 37,235 phases, 3,558 F-intervals, 753 sub-blocks (211 with θ
   varying), 1,735 (w, u*)-runs, 0 violations of any packet statement; the per-part R19 (f) reading with Ξ on R fails in 111 sub-blocks
