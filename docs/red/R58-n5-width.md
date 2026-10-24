@@ -271,3 +271,46 @@ Observations:
   - READING: lapping that needs a λ-phase change per lap is bounded by Lemma Φ (≤ 2n(n−1)+1 phases). So a kill must be
     super-polynomial INSIDE one joint λ-phase, which is L-NEW's (SEG-1O)/(CH-1O) target, not across phases.
 - No kill. No instance shows growth beyond linear.
+
+## 9. Proposition X: on 𝒞^1O, the part of the game that cannot reach o is a one-player N5 run (PROVED, unrefereed; Lead routing 01:47Z)
+Setting:
+- 𝒞^1O: o is the only Odd vertex with out-degree > 1 (L-NEW box 21 §3.4). Any start pair.
+- X := {v : no path from v to o in the game graph}. X is closed under successors, o ∉ X, and every Odd vertex in X has one
+  successor. So G[X] is a game with no Odd choice, i.e. a one-player game in RESULTS R17's sense.
+
+Proposition X.
+- Statement: along N5's run on G, the sequence of DISTINCT restrictions σ|X (Even vertices of X) is N5's run on G[X] from
+  σ_0|X. Hence σ|X changes fewer than (|X|² − |X| + 1)(|X| + m_X) times (RESULTS R17).
+- Proof (from SPEC S1-S4):
+  1. Locality of valuations.
+     - Plays from x ∈ X stay in X, so the valuations Ξσ(x) and W(x) depend only on σ|X.
+     - In S1's procedure for a cycle node v ∈ X, the vertices of Y = V \ X never affect an X vertex:
+       - the cycle tests and the cycle-node DFS use successors only;
+       - for an Even-liked u ∈ Y, every X vertex of R reaches v without passing u, so it lies in M and loses no edge;
+       - for an Odd-liked u ∈ Y, no X vertex reaches u;
+       - in the BFS over predecessors, X vertices are discovered only from X vertices, so their relative FIFO order and their
+         choices are those of the BFS on G[X];
+       - a cycle node in Y kills no X vertex (X cannot reach it).
+     - So Ξσ, the gate Iσ and the W-optimum over A(σ), restricted to X, are those of G[X].
+     - S3's best-reward start is local.
+  2. Steps.
+     - An S4a step restricted to X is G[X]'s S4a step from σ|X.
+     - If that step is null, σ|X stays fixed: it waits, possibly while Y moves. It can then change only through a global S4c
+       fallback. That fallback is a switch-all on Iσ by the rule (Ξσ(w), w), whose X-part is G[X]'s own fallback. G[X] would
+       fall back at that state too, since its step depends on σ|X alone.
+  3. So every change of σ|X is G[X]'s next N5 step. R17 bounds the number of steps. □
+- DATA: experiments/red/n5inj/xlocal.py, 3,000 random 𝒞^1O games (n 5-14). In the 676 with o on no cycle, the sequence of
+  distinct σ|X equals the canonical N5 run of G[X] in all 676 cases, with no mismatch. The other 2,324 were skipped (o on a
+  cycle).
+
+Corollary X1, (CH-1O) on o-acyclic games.
+- Statement: if every successor of o lies in X, i.e. o lies on no cycle of the game graph, then:
+  - θ = Ξ(o), the minimum of o ⊕ Ξ(e) over o's exits e ∈ X, changes fewer than (|X|² − |X| + 1)(|X| + m_X) times;
+  - so does w = W(o) = o ⊕ W(τ(o)) between τ changes (at most d − 1 of those).
+- Consequence: by L-NEW's decomposition (N5-time-box21.md §3.6), N5 on o-acyclic 𝒞^1O is polynomial ⇐ (SEG-1O) alone.
+- READING: a 𝒞^1O kill must put o on a cycle of the game graph. The θ throttle must be fed by exits whose regions can route
+  back through o.
+- On the instances (checked): in fts_best16 (o = 5) and frz24 (o = 19) EVERY exit of o reaches o, and X = ∅. Both lie wholly
+  outside Corollary X1, as the corollary predicts for long runs.
+- Scope: Proposition X uses R17 as signed (N5 on games where Odd has out-degree 1 everywhere). The locality argument in step 1 is
+  mine and unrefereed.
