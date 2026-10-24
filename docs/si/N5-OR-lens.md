@@ -46,7 +46,9 @@ Sources opened, with sha256 prefixes of the PDFs:
   - With Lemma Φ it implies N5 < (2n(n−1)+1)·(m+1)·w(n) iterations, which is G-N5-TIME. This implication is PROVED (§5).
   - (ELIM-poly) is not proved. I have no route to it. It is a reformulation, but one with a structural test that separates N5 from
     switch-all.
-- **For the brief's (CYC) target, a narrower CONJECTURE (CYC-ELIM) (§4.3), the Post-Ye Lemma 3.6 shape.**
+- **For the brief's (CYC) target, a narrower CONJECTURE (CYC-ELIM) (§4.3), the Post-Ye Lemma 3.6 shape. REFUTED 14:49Z**
+  (cycelim_cex_n32: 10 θ-changes in one window with d = 7; 24 θ-changes in one phase at n 32). Only its consequence of (ELIM-poly)
+  survives.
   - Every non-eliminating window contains ≤ d θ-changes (d = o's out-degree). The data give at most 5, tight at d = 5 on
     theta_tp32 (L-RED, Lead 14:27Z).
   - PROVED: (CYC-ELIM) implies θ-changes ≤ (d+1)(m+1) per phase, i.e. (CYC).
@@ -317,6 +319,17 @@ largest number of θ-changes inside one window of consecutive non-eliminating tr
 | returns_rt48 / returns_ph64 | 48 / 64 | 3 / 3 | 0 / 0 |
 | oneodd_c24, thetare_min, thetare_n, lap_n6, tr20_s4 | 24, 15, 11, 6, 20 | 1, 2, 2, 2, 0 | 0 |
 
+**REFUTED 2026-10-24 14:49Z (L-SI's own climb, s_tp32 seeded from theta_tp32): (CYC-ELIM) with constant d is FALSE.**
+- Instance: experiments/si/orlens/instances/cycelim_cex_n32.pg (n 32, sha1 c45edf91…, canonical start). One Odd choice vertex o = 0
+  with d = 7 exits {5, 9, 15, 24, 25, 27, 28}.
+- n5.py n5: 31 iterations, 1 fallback. Oink zlk OK, strategies verified (check_sol2.py, Oink 8fbf0a7).
+- One joint λ-phase of 26 transitions holds 24 θ-changes. One non-eliminating window holds 10 θ-changes, which is > d = 7.
+- laps.py: 15 σ̄-laps, 4 unretired.
+- The 24 θ-changes per phase at n 32 are above the earlier maximum of 16 (theta_tp32, theta_thc24).
+- Weakened form: a non-eliminating window holds at most as many θ-changes as it has transitions. So (ELIM-poly) still implies (CYC)
+  with θ-changes ≤ (m + 1)·w(n) per phase. No separate statement about θ remains.
+
+The original statement, kept for the record:
 **CONJECTURE (CYC-ELIM).** On 𝒞^1O, every window of consecutive non-eliminating transitions inside a joint λ-phase contains at
 most d θ-changes, where d is o's out-degree. The data give at most 3, with d = 5 on theta_thf16.
 - PROVED (elementary): (CYC-ELIM) implies θ-changes ≤ (d + 1)·(m + 1) per joint λ-phase, which is (CYC) of box 24 §4.
@@ -415,6 +428,37 @@ almost the whole phase, so g is blind below it.
 
 **(CYC-ELIM) is tight on theta_tp32.** Its non-eliminating window holds 5 θ-changes, and o's out-degree is d = 5. On theta_tp40,
 d = 4 and the window holds 0.
+
+### 4.6 Lead target (a), 14:45Z: (θ, w)-changes per phase and "every σ̄-lap retires an edge" (laps.py)
+A LAP is a return of σ̄(o) to an exit it left earlier in the same joint λ-phase. The lap is RETIRED if some transition between the
+departure and the return is eliminating.
+**"Every σ̄-lap retires an edge" (σ- or τ-edge, for the rest of the phase): FALSE.**
+- theta_tp32 (red/n5inj, n 32, canonical start, phase from state 4):
+  - σ̄(o) = 5, 15, 28, 5, 28, 24 at states 4-9.
+  - Returns to exit 5 at state 7 and to exit 28 at state 8.
+  - No transition 4 → 5 … 8 → 9 retires an edge. Every edge abandoned there is used again later in the phase. Fallback-free.
+- thclimb_n12_s11 (instances/, Oink OK): one unretired lap, states 3 → 5, exit 2.
+- Overall 45 of 48 laps on 17 runs are retired:
+  - fts_best16 4/4, theta_thf16 6/6, theta_thc24 6/6, theta_tp32 8/10, theta_tp40 6/6, thclimb_n12 5/6, thclimb_n16 7/7;
+  - lap_n6 1/1, lap_n9 1/1, elim24_p52 1/1;
+  - no laps on rt48, ph64, thetare_*, tr20_s4, xc24, oneodd_c24.
+- So the route "θ-changes ≤ d·(m+1) from one retirement per lap" does not exist in this form.
+- What survives is (CYC-ELIM) (§4.3): ≤ d θ-changes per non-eliminating window. It is tight on theta_tp32, whose window holds the
+  two unretired laps.
+
+**Counts per joint λ-phase (DATA).**
+- θ-changes: max 16 (theta_thc24, theta_tp32, theta_tp40, thclimb_n16).
+- w-changes: max 8 (theta_thc24, theta_tp40).
+- (θ, w)-pair changes: max 16.
+- θ-changes with σ̄(o) unchanged inside one non-eliminating window: max 1.
+
+**What E1-E5 give for (a) (PROVED, L-SI).**
+- By E6 at the single vertex o, the honest value θ = Ξ(o) can change its gap level against the phase target at most n + 1 times.
+- By E4, σ̄(o) uses an exit e only while g(e) ≥ s̄(o, e).
+- Under (h), w = o ⊕ Ξ(τ(o)) (L-NEW Lemma Wo), so the same applies to w at the vertex τ(o).
+- So at most 2(n + 1) pair changes per phase lower a gap level at o or τ(o). The rest are flat at both, and §4.3 shows most
+  θ-changes are flat (theta_thc24: 16 changes, 2 level drops).
+- The calculus does not count (a). OPEN.
 
 ## 5. The open statement, and what it would give
 **REFUTED 2026-10-24 14:37Z (L-RED R58 §13a, relayed by the Lead; re-run here 14:42Z): (ELIM-n) is FALSE.**
