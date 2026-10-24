@@ -26,6 +26,13 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     - xclimb.py targets: lemmas, nh, cyc, cycu, reent, reentu, fbref. Needs LNEW_BOX25 = a worktree of l-new 1322d958 or later.
     - fbref.py, levels.py, nhwhy.py.
   - L-NEW box 28 tools: run them from a worktree of l-new 2a195b3 (experiments/new/box28/fbre.py), from inside that directory.
+- BOX 32 DONE (GO ~18:03Z, END ~20:05Z; docs/red/R62-x-attack.md): attack on (X).
+  - Random seed family (L-NEW xclimb unmodified): X = 13/20/29/44/55 at n 16/24/32/48/64; X ≈ 0.86n; one wave each.
+  - Structured wave climbs: X = 65 at n 32 (record; L-NEW's was 54) and 78 at n 48. About 3-4 waves; X ≤ 2n.
+  - lev_l_sc's digit-2 replay is a crossing wave (peel + carry + replay). No third digit (nest40: one low digit).
+  - CONJECTURE (data): X per phase O(n). No kill.
+  - Next targets offered by the Lead (19:3xZ), pick one: L-NEW U1 / (OB_R) (seed experiments/new/box29/instances/u1_n32.pg,
+    l-new 63252214), or L-SI (Z) R-reversals (zcl_fb2_n32, l-si bfd6700, Z 18 at n 32; X ≤ (n−1)(Z+1)+Z).
 - NEXT (for successor or next box):
   - (FBRE-F') with the window at index ≥ n, or excluding re-entries after a θ-change: climb fbref with the boundary moved (edit
     fbref.py's `a - i >= g.n - 1`).

@@ -11,6 +11,10 @@ Fitness (lexicographic): (violations, exercise) where exercise depends on --targ
            data (referees on P-N5-XA: none observed)
   reentu : as reent, but only re-entries with u* ≠ none count first (Theorem XA's main case)
   fbref  : (FBRE-F violations, post-freeze fallback evictions / waves / run length), fbref.py (L-NEW CONJECTURE, box 28 §5b)
+  nest   : (counter digits, longest chain of path-set levels with m_r strictly increasing downwards, X of the phase); a digit is
+           a level r with m_r >= 2 and 2 m_r >= 1 + T(>r). A k-digit binary counter has k - 1 such digits below its top
+           (box 32 (b), L-SI box 3 design target)
+  waves  : (transitions in one phase where >= 3 vertices leave R ("peels"), X of that phase, digits)
   cycu   : (max θ-changes inside one (w, u*)-run, max θ-changes per phase)    ((CYC-u*), L-NEW §8b; lemma checks skipped in
            the fitness, run them on the bests)
   A (w, u*)-run: consecutive states of one joint λ-phase (phaseprofile.py's key) with (h), θ ◁ w, w fixed and u* (the most
@@ -24,6 +28,7 @@ from collections import Counter
 from common import *
 from climb_fix import mutate
 from wdrop_h import oncycle
+from thtrace import Rset
 import coarsecheck, fbfcheck, fbedges
 VIOL = ("C1_fail", "C2_fail", "C3_fail", "C3_fail_after_fb", "ENTRY_AFTER_FB", "ROUTE_CHANGE_AFTER_FB", "OTHER", "fb_without_leave")
 
@@ -63,6 +68,41 @@ def cycu(g):
         s, t = list(r[0]), list(r[1]); k += 1
     return brun, bph
 
+def nest(g):
+    """per joint λ-phase: m_r = θ-changes at path-set level r (top of P(θ_k) Δ P(θ_{k+1}) by VJ rank); longest chain r_1 > r_2 > ...
+    with m strictly increasing downwards; X = transitions where R (vertices whose (σ, τ)-play reaches o, o excluded) changes.
+    digits = #levels r with m_r >= 2 and 2 m_r >= 1 + T(>r) (T = path-set θ-changes above r): a level re-fixed after about every
+    higher change (a counter digit). Returns the best (digits, chain length, X) over phases."""
+    E, Ed = Engine(g), Engine(dual(g)); o = odd_choice(g); s, t = start_pair(g, E, Ed, None); rows = []; k = 0
+    while k < 400:
+        Xi, _ = E.evaluate(tuple(s)); U, _ = Ed.evaluate(tuple(t))
+        R = frozenset(v for v in Rset(g, s, t, o) if v != o)
+        rows.append(((tuple(x[0] for x in Xi), tuple(y[0] for y in U), t[o]), Xi[o], R))
+        r = step(g, E, Ed, s, t)
+        if r is None: break
+        s, t = list(r[0]), list(r[1]); k += 1
+    best = (0, 0, 0); a = 0
+    for i in range(1, len(rows) + 1):
+        if i < len(rows) and rows[i][0] == rows[a][0]: continue
+        m = Counter(); X = 0
+        for j in range(a + 1, i):
+            x, y = rows[j - 1][1], rows[j][1]; X += rows[j - 1][2] != rows[j][2]
+            if x[0] == y[0] and x[1] != y[1]: m[(x[1] ^ y[1]).bit_length() - 1] += 1
+        lv = sorted(m, reverse=True); L = {}; S = {}
+        for idx, r in enumerate(lv):        # chain ending at r (going down): previous level higher with smaller m
+            L[r], S[r] = 1, m[r]
+            for q in lv[:idx]:
+                if m[q] < m[r] and (L[q] + 1, S[q] + m[r]) > (L[r], S[r]): L[r], S[r] = L[q] + 1, S[q] + m[r]
+        b = max(((L[r], S[r]) for r in lv), default=(0, 0))
+        above = 0; dig = 0
+        for r in lv:                         # lv is top first; above = path-set θ-changes at levels > r
+            if m[r] >= 2 and 2 * m[r] >= 1 + above: dig += 1
+            above += m[r]
+        peels = sum(1 for j in range(a, i - 1) if len(rows[j][2] - rows[j + 1][2]) >= 3)
+        best = max(best, (peels, X, dig) if WAVES else (dig, b[0], X)); a = i
+    return best
+WAVES = False
+
 def measure(g):
     c = Counter()
     coarsecheck.WITHFB = False; coarsecheck.run(g, None, c)
@@ -84,6 +124,15 @@ def score(c, target):
     return (v, ex)
 
 def fit(G, target):
+    if target in ("nest", "waves"):
+        global WAVES; WAVES = target == "waves"
+        n = len(G[0]); odd = [v for v in range(n) if G[1][v] == 1 and len(G[2][v]) > 1]
+        if len(odd) != 1 or any(not x for x in G[2]): return (-1, -1, -1), None
+        g = pg.Game(*G)
+        if not any(w in split(g, odd[0]) for w in G[2][odd[0]]): return (-1, -1, -1), None
+        try: b = nest(g)
+        except Exception: return (-1, -1, -1), None
+        return b, ({"peels": b[0], "X": b[1], "digits": b[2]} if WAVES else {"digits": b[0], "chain": b[1], "X": b[2]})
     if target == "fbref":
         import fbref
         n = len(G[0]); odd = [v for v in range(n) if G[1][v] == 1 and len(G[2][v]) > 1]
