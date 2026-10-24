@@ -204,3 +204,60 @@ Lemma TB SIGNED WITH GAPS TB-1 (closed), TB-2 (wording); Lemma R SIGNED WITH GAP
 closed), R-2 (citation; closed); Lemma WC SIGNED; §6 reduction checked as a READING (correct; unsigned inputs named). Labels after two
 signatures (D18/L40): TB, CASC, R, U1, WC would be PROVED (L-NEW; REFEREE, and REFEREE-2 if it signs), on 𝒞^1O, given f (U1, WC).
 G-N5-TIME OPEN.
+
+## §C. Comparison with REFEREE-2 (R2-N5-U1, claude/referee-2 28ddf6f)
+Written 2026-10-24 21:56Z onward by date -u, after my report (257fa4c6) was pushed and the Lead said R2-N5-U1 exists (21:5xZ). R2 did not
+read my report. No verdict differs: both sign U1, CASC, WC; both sign TB and Lemma R with closed gaps; both read §6 as a correct READING.
+### C.1 Disagreements (Lead item 1)
+- C-1 vs R2's outright CASC SIGN: not a disagreement in substance. My C-1 is about the packet's sentence "TB applies with c = c_w" in
+  CASC step 1. Read literally, it invokes TB-even, whose hypothesis covers o's W-continuation in F. R2 reads the same step as pointing to
+  TB's key-minimum form (steps 2-5 + Lemma R), which holds at every Even v that is not its own cycle node. That is exactly my closure.
+  I ACCEPT R2's reading and downgrade C-1 to a wording note (cite "TB's choice rule", not "TB applies"). CASC: SIGNED; notes C-1, C-2, C-3.
+- R2's batch and climbs are much larger than mine (9.05 M key-minimum checks, 70,400 climb runs). They agree with mine on every overlapping
+  point: CASC never tight (latest switch at step ℓ − 4, both of us); max 5 switches of one vertex in a run (u1t_cex2_n32 vertex 23); max 12
+  R-changing transitions per U1 piece; WC max 1-2.
+### C.2 Same gaps? (Lead item 2)
+- TB-1 = G-TB-1: the same gap (step 2's first inequality is not a Bellman inequality when x lies on σ_k(x)'s optimal play). The repair is
+  the same: add the case argument. The arguments differ in shape but agree case by case. R2: "x on y's path before c" is impossible, and
+  "x only on the cycle part" holds or is impossible. Mine: the formal inequality holds at an optimum whenever the loop's top does not give
+  Even a better cycle, and the one non-monotone case of · ⊕ x (x ∈ P*(y) \ P_k(y)) forces an even cycle through x. R2's DATA (0
+  "before c" cases in 277,668; 27,336 "cycle-only", equality every time) confirms both. I accept R2's 4-case form as the one to
+  route (it uses (F1) only).
+- R-1 = G-R-2: the same gap (the "(cycle node, path set)" statement with set-valued ⊕ is false; all failing edges have u = x) and the same
+  repair (state Lemma R for fully optimal edges). R2's counts (8,464 batch, all u = x) match my classification (4,074, all with x above c and y's
+  play through x, i.e. x = u). R2 adds self-loops u → u as instances; correct.
+- G-R-1: MISSED by me, ACCEPTED. The step-1 invariant "every surviving edge joins vertices with equal membership in each processed M_u" is
+  false for edges out of u itself. Even likes u: u ∉ M keeps its edges into M. Odd likes u: u ∈ M is not restricted. In my 3-vertex
+  instance, u → c survives with u ∉ M_u ∋ c. R2's form "for every processed u ≠ x" is what step 2 uses. Closed (wording).
+- R-2 (citation) = R2 §4.1: same finding (VJ00 Prop. 6.1 clause 1 is existence only; Lemma R is the packet's own). R2 cites report pages 22-25;
+  my "pdf pp. 24-27" are the same pages (pdf offset 2). R2 also notes VJ00's prose claim (16) and the omitted R− case; I accept that remark.
+- TB-2 (exclude c from "v's play to c"): mine only, wording. R2 reads the proof as using vertices before c; no conflict.
+- N-U1-1 (K counts non-fallback transitions): accepted. My §1.2 counted K over S4a steps; the packet's text should say so.
+- N-U1-2 (K > 0 and f > 0 branches unexercised): accepted; my probe did not measure K, and my U1 pieces had f = 0. The theorem rests on
+  the proof.
+- N-U1-4 = my D-2, N-U1-5 = my D-1: identical findings.
+### C.3 N-U1-3 (Lead item 3): MISSED by me; R2's closure ACCEPTED, and proved here
+- R2's point: WC's f_I counts every fallback in I. Under ¬H1 ∧ ¬H2 the interval contains EQ states (TC (iv)), and fallbacks occur there.
+  §6 lists only "fallbacks at OTHER states". Correct; I checked §6's input list and missed it.
+- Closure (proof). Let k → k+1 be an Even fallback from an EQ state with τ unchanged (FIX 3). At EQ, Ξ_k = W_k at every vertex. So Iσ_k = {(v, z) :
+  W_k(z) ▷ W_k(σ_k v)}, which is exactly the improving set of σ_k in the one-player game G_τ, whose honest valuation is W (Odd has no
+  choice in G_τ). The fallback switches a subset of these edges (S4c), so σ_{k+1} improves σ_k in G_τ, and VJ00 Lemma 5.7 (= Lemma A of R15,
+  signed, any game) in G_τ gives W_{k+1} ⊵ W_k pointwise, in particular w non-decreasing. So EQ-state fallbacks do not split WC's
+  monotone stretches. Under ¬H1 ∧ ¬H2 there is no THR state ((h) needs H1). So WC holds with f_I := the number of OTHER-state fallbacks
+  in I, and §6's input list "fallbacks at OTHER states" is then complete. R2 asked "either prove that line or add it to the inputs": the
+  line is proved here, and R2's re-check is asked for (single signature until then).
+- DATA (scratch/eqfb_check.py, own trace): fallbacks from EQ states with τ unchanged: 188 + 123 (random 𝒞^1O, seeds 701, 702; 4,000 + 1,500
+  runs) + 6 + 5 (named box29, box31, red/xing). W non-decreasing at every vertex in all of them, w unchanged in all. 0 failures.
+### C.4 Joint gap map (Lead item 4)
+| statement | REFEREE | REFEREE-2 | joint status | repair for the fixes file |
+|---|---|---|---|---|
+| Theorem U1 | SIGNED | SIGN | SIGNED by both | N-U1-1: "K = post-freeze NON-FALLBACK transitions with a W-change on R" |
+| Lemma CASC | SIGNED (C-1 wording after §C), C-2, C-3 wording | SIGN | SIGNED by both | step 1: "by TB's choice rule (steps 3-5, Lemma R)"; step 2: "levels ≤ ℓ(z)"; transitions of J have both ends in J |
+| Lemma TB | SIGNED WITH GAPS TB-1, TB-2 | SIGN WITH GAPS G-TB-1 | SIGNED by both; TB-1 = G-TB-1 closed | add R2 §3.2's 4-case argument to step 2; TB-even hypothesis "vertices before c" |
+| Lemma R | SIGNED WITH GAPS R-1, R-2 | SIGN WITH GAPS G-R-1, G-R-2 | SIGNED by both; R-1 = G-R-2, G-R-1 (R2 only) closed | statement for FULLY optimal edges (W*(y) ⊕ x = W*(x)); step 1 invariant "for every processed u ≠ x"; cite VJ00 §6 (15), (22), Prop. 6.1 as existence only |
+| Lemma WC | SIGNED | SIGN | SIGNED by both | N-U1-3: f_I may be restricted to OTHER-state fallbacks (proved in §C.3; R2 to confirm) |
+| §6 reduction | READING, correct | READING, correct, N-U1-3 | READING (not signed) | input list complete after §C.3; unsigned inputs: P-N5-NH §4 assembly (READING), fixes §4 one-liner (checked by both) |
+| §7 / §8 data | D-1, D-2 | N-U1-4, N-U1-5 | same notes | \|R\| counts o (29/29/25); σ(10) switches once at transition 0 |
+Labels after two signatures (D18/L40): Lemmas R, TB, CASC, WC and Theorem U1 are PROVED (L-NEW; REFEREE and REFEREE-2, both Opus 5.5,
+D15) on 𝒞^1O, with U1 and WC given the fallback counts. N-U1-3's sharpening (OTHER-state fallbacks only) is PROVED by REFEREE (§C.3),
+pending REFEREE-2. CHECKER pending. G-N5-TIME, (X), NFB-O, U2/U3 OPEN.
