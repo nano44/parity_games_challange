@@ -31,6 +31,10 @@ def analyse(g, start, acc):
             kap = [tuple(frozenset(route(r["nxt"], v, o)) & Vhi for v in Rs) for r in rows[k:j + 1]]
             last = max([i for i in range(1, len(kap)) if kap[i] != kap[i - 1]] or [0])
             post = sum(rows[i]["Xk"] != rows[i + 1]["Xk"] for i in range(k + last, j))
+            Rset = rows[k]["R"] | {o}
+            postR = sum(any(rows[i]["Xk"][v] != rows[i + 1]["Xk"][v] for v in Rset) and all(rows[i]["Xk"][v] == rows[i + 1]["Xk"][v] for v in range(g.n) if v not in Rset) for i in range(k + last, j))
+            acc[which + ": R-only Ξ-changing after κ-freeze"] = acc.get(which + ": R-only Ξ-changing after κ-freeze", 0) + postR
+            acc[which + ": max R-only after freeze minus |R|"] = max(acc.get(which + ": max R-only after freeze minus |R|", -99), postR - len(Rs))
             for key, val in ((which + ": runs", 1), (which + ": κ-freeze fails (> |R|)", int(last > len(Rs))),
                              (which + ": Ξ-changing after κ-freeze", post), (which + ": run transitions", j - k)):
                 acc[key] = acc.get(key, 0) + val

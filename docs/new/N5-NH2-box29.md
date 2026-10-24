@@ -143,10 +143,23 @@ Sketch.
 - P3′ bounds ROI on its pieces. The rest is §5.
 
 ## 5. What is left of (NH'), exactly (OPEN)
-- (U1) Route form in both frames with c_w more relevant than c_θ. After the coarse freeze, the honest order compares the route
-  vertices between c_θ and c_w (V_mid); the W order compares only lengths. A bound needs either:
-  - "no crossing-free fallback at OTHER states" (DATA: 0 seen, §6) together with a bound on W-tie switches; or
-  - a V_mid potential.
+- (U1) Route form in both frames with c_w more relevant than c_θ. After the coarse freeze (step 2 of P3′ holds with κ := route
+  vertices above c_w), the honest order compares the route vertices between c_θ and c_w (V_mid); the W order compares only
+  lengths.
+  - READING (conditional closure, L-NEW): U1 pieces have ≤ |R| + (n − 1)|R| R-only Ξ-changes if both of these hold:
+    - (NFB-O) no crossing-free S4c fallback occurs at an OTHER state;
+    - (WF0) no S4a step leaves W unchanged at every vertex while changing Ξ.
+  - Reason: with no fallback, every transition is an arena step, and W is non-decreasing (Lemma W). On R, W(v) = π_v ⊕ w, whose
+    coarse part is frozen, so W moves only through route lengths, monotonically: ≤ (n − 1)|R| W-changes on R. An R-only Ξ-change
+    with no W-change on R changes W nowhere (on F, Ξ = W), which (WF0) excludes.
+  - CONJECTURE (NFB-O), DATA: 0 crossing-free fallbacks at OTHER states in all runs (seeds 2931/2932, 6,913 runs; all named and
+    climbed instances).
+  - CONJECTURE (WF0), DATA (wflat.py): 0 W-flat honest-strict arena steps among 3,214 random arena steps (seed 2995) and on the
+    climbed instances (op32, op20, op16, x32_sc32_final).
+  - (WF0) is NOT guaranteed by the code. N5's S4a takes Even's choices from Engine.evaluate's counter-strategy on the dual of the
+    restricted arena (experiments/si/si.py, evaluate: first maximal successor in DFS / BFS order), which has no preference for the
+    current successor. So a W-tied switch with an honest gain is possible in principle.
+  - u1climb.py (fitness: R-only Ξ-changes after the κ-freeze in a U1 piece) is the attack; result in §8.
 - (U2) Honest frame not in route form: ¬H1 with λ_Ξ(o) ≠ o (patterns 13, 123, 12 with the honest cycle node elsewhere on the
   honest cycle). Honest values are then paths to c_θ in the graph with o fixed to σ̄(o). Vertices reaching c_θ before o and those
   reaching o first are valued differently.
