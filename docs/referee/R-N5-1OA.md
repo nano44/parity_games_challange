@@ -1,7 +1,7 @@
 # Referee report R-N5-1OA: N5 on o-acyclic one-Odd-choice games — Prop X / Cor. X1 (L-RED) and the (C_X + d)(B + 1) bound (L-NEW), with Lemmas R and S
 
 Referee: REFEREE (successor 3), Fable 5.1 (Lead reading L36). Packet P-N5-1OA: the Lead's message of 2026-10-24 03:20Z. Pin: trunk
-claude/vibrant-johnson-nxvvxo 07f298d (the signed object, Lead reading 03:50Z; the 03:27Z re-pin to d78e54f was WITHDRAWN at 03:50Z; §0 keeps my check of that text as a record). Objects: (A) docs/red/R58-n5-width.md §9, Proposition X and Corollary X1 (L-RED, l-red
+claude/vibrant-johnson-nxvvxo 07f298d for the sketch I refereed first; the SIGNED OBJECT for the RESULTS entry is the d78e54f text (Lead reading 03:57Z, after both referees checked both texts; §0 is my check of it; §C and §C2 compare with REFEREE-2). Objects: (A) docs/red/R58-n5-width.md §9, Proposition X and Corollary X1 (L-RED, l-red
 f93e517); (B) docs/new/N5-1Oacyc-box24.md (L-NEW successor 8, l-new 9d7890f); dependencies docs/new/N5-time-box21.md §2.1 Lemma R and
 §2.2 Lemma S. Context read: box 21 §1, §2.3-2.6, §3.4-3.7; R58 §2 (premise (P), Theorem W); RESULTS R15, R17; SPEC S1-S5 of
 docs/new/N5-ssi-global.md (FIX 1-4, Q1-Q4); experiments/new/box22/statcheck.py and experiments/new/n5.py (read-only). My own R-N5-1P
@@ -224,3 +224,25 @@ closed), with (P) = G-1OA-4 the only non-refereed premise, used on one-player G[
 reading; Lemma R SIGNED; Lemma S SIGNED WITH GAPS S1, S2 and R2's G-1OA-6 first half (accepted). Joint gap list for the RESULTS entry:
 G-1OA-1..6 with my A1, A2, B2, B3, S1, S2 folded in as above; all closed as wording or by derivation except (P) (conditional) and the
 inherited DATA gap G-N1.
+
+## C2. Addendum (Lead 03:57Z; written 04:01Z-04:08Z by date -u): the signed object is the d78e54f text; REFEREE-2's §7 (referee-2 3188622,
+trunk 98f16c8) read
+Both referees have now checked both texts. Against R2's §7 and its full gap list G-1OA-1..6, N-1..N-5, with the d78e54f text as the object:
+| mine | theirs | status |
+|---|---|---|
+| A1, A2 (Prop X; R58 §9 identical at both pins) | G-1OA-1, G-1OA-2, N-1 | as in §C: same findings; R2's tie-break-free count accepted |
+| B1, B3, B4, B6 | G-1OA-3, G-1OA-5 (07f298d only) | both sides: CLOSED by the d78e54f text itself (Lemma 1 preamble and in-place case analysis; Step 5's Odd-fallback sentence; Step 6's count) |
+| B2 (flat case at an arbitrary state) | G-1OA-3 | CLOSED by d78e54f, which proves it in place from (★); R2 adds the equivalent view "ρ₁ is again a pointwise optimum of its own arena, so (★) re-applies", which I accept as the cleaner justification of the sequential flat switches |
+| B5 | §2 (c) | CONFIRMED both |
+| B7 (d78e54f Lemma 1 (b), B1: omitted "c even, shorter" case) | N-4 | SAME finding (= R17's G2 / G-1P-1 inherited), same conclusion: contradicts (★) too; wording |
+| — (MISSED by me) | N-5: Lemma 3's formula "(c, P(π_v) ∪ P(continuation), \|π_v\| + ℓ)" should read \|π_v\| + 1 + ℓ (o lies between π_v and the continuation; o ∈ P iff o is more relevant than c) | ACCEPTED; harmless, the same for both plays, so Lemma 3's conclusion stands |
+| (P) row | G-1OA-4 | same: the only non-refereed premise, one-player G[X] only, cases (a) and (b); R-N5-1P §3 route (a) derivation noted by both |
+| inline in §3 Lemma 2 (iv) | N-2 ("(F1) in the dual" is (11) itself) | same, nit |
+| B3 (o-acyclicity enters at Lemma 2) | N-3 (Lemma 1 holds on all of 𝒞^1O) | same, accepted (§C) |
+| S1, S2 | G-1OA-6 (both halves) | S2 = second half; first half (Lemma S (c)/(d) for S4a steps only) accepted as missed by me (§C); S1 mine only |
+Data: both referees ran L-RED's block_bk20 / bk32 with independent code and found the same: single blocks of 27 and 49, all lemmas at every
+pure state, the block = N5 on G_τ, 0 violations.
+Disagreements: none. Final verdicts for the d78e54f object (Fable 5.1): (A) Prop X SIGNED WITH GAPS A1-A2 (= G-1OA-1, -2, N-1; wording);
+Cor. X1 SIGNED (reading); (B) SIGNED CONDITIONAL ON (P) WITH GAPS B7 (= N-4) and N-5 (wording), B1-B6 closed by the text or confirmed;
+Lemma R SIGNED; Lemma S SIGNED WITH GAPS S1, S2 and G-1OA-6 first half (wording). Joint open list for the RESULTS entry: (P) = G-1OA-4
+(conditional, by design), wording items G-1OA-1, G-1OA-2/N-1, G-1OA-6, N-2, N-4 (= B7), N-5, S1; inherited DATA gap G-N1.
