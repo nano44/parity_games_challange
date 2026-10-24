@@ -359,3 +359,8 @@ which awaits the Lead's reading.
 ## 2026-10-24T13:04Z owner (scope instruction)
 > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
 Relayed verbatim to the Lead, priority now.
+
+## 2026-10-24T13:11Z relayed: Lead 2026-10-24 13:10Z — D17 / L39 (trunk b21be97): allowance used for parallel work; 5 lanes (L-RED DTL attack, L-NEW
+N5 lead, L-LIT untested-approach scan, L-COMP exhaustive small-game N5 search, new L-SI successor on an SI rule past N5's deadlock);
+CHECKER/referees on top when needed (peak 7-8 sessions, justified under D1); no idling; D7 holds. Owner's 13:04Z N5-proof instruction
+awaits the Lead's explicit reading.
