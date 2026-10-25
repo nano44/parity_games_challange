@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Box 39 (L-RED successor 16): hill-climb on 𝒞^1O, counter = rx16.analyse (own checker). Mutations: soclimb.mutate.
   rise: (RISE-LAST events rfb0, other failures, consecutive in-scope fallback pairs checked, fallbacks)
+  rise2: (rfb0, other failures, θ-changes at S4a steps between consecutive in-scope fallbacks, pairs checked)
+  tev : (TEV failures, post-rise states checked, pre-rise states whose threat meets Ev, fallback pairs)
   xrun: (failures, max SN-prefix crossings of one fallback-free run − (n − 1), exit crossings, fallbacks)
   rst : (failures, max #(h)-runs − (1 + toggles + f) per phase, max #(h)-runs, fallback restarts)
 A hit (rfb0 > 0, maxpre > n − 1, any failure) is saved as OUT_viol.pg. Invalid sentinel −10^9 (trap 1).
@@ -19,6 +21,8 @@ def fit(G, mode):
     except Exception: return NEG, None
     fails = sum(v for k, v in r["C"].items() if k != "RISE")
     if mode == "rise": f = (r["rfb0"], fails, r["rfbchk"], r["fb"])
+    elif mode == "rise2": f = (r["rfb0"], fails, r["thin"], r["rfbchk"])
+    elif mode == "tev": f = (r["C"].get("TEV", 0), r["tev"], r["tevmeetpre"], r["rfbchk"])
     elif mode == "xrun": f = (fails + r["rfb0"], r["maxpre"] - (r["n"] - 1), r["exitx"], r["fb"])
     else: f = (fails + r["rfb0"], r["maxslack"], r["maxruns"], r["rst_fb"])
     return f, r
