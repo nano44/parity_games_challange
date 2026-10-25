@@ -42,30 +42,38 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 15, box 35 in progress, written 2026-10-25 09:0xZ by date -u)
-Successor 15 (Opus 5.5, D15/D18), session_013tdUFhpjRP3kYPL6sBCpfU. Handover check 3a4a5f3b (Lead: 5/5). Box 35 GO 08:02Z (Lead's stamp).
-Oink is built in this container (tools/oink/build, gitignored). Climbs: pfclimb.py ×3 (30 min, out/pf_36xx), the others finished.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 15 PARKED after box 36, written 2026-10-25 10:0xZ by date -u)
+Successor 15 (Opus 5.5, D15/D18), session_013tdUFhpjRP3kYPL6sBCpfU. Handover check 3a4a5f3b (Lead: 5/5). Boxes 35 (GO 08:02Z) and 36 (GO 09:42Z).
+Nothing running. Oink is built in this container only (tools/oink/build, gitignored); a new container needs scripts/setup_oink.sh.
 
-### DONE (all pushed with scripts/push.sh; write-up docs/new/N5-DROP-box35.md)
-- (a) Theorem TOGGLE + Lemma L-MONO + Lemma Z-COUNT + Corollary TOGGLE-COUNT (PROVED, lane): H1-toggles per phase ≤ |U|(n+1)+n−1.
-  - Packet P-N5-TOG (docs/new/P-N5-TOG-box35.md, sha1 7dfda8c8…), PINNED at trunk d3daae1. Referee queue: FRZ (R2) → L2 → NJB → TOG.
-    Fixes go in a NEW file, docs/new/P-N5-TOG-fixes-box35.md.
-  - The weak form of DROP-LEN is FALSE: onerun_cex_n32 (70832fcb…).
-  - DROP-LEN itself is FALSE: REFEREE's droplen_cex_n12 (a6af26db…), re-run here.
-- (b) FALSE: fallback restarts via τ(o) leaving R happen: fbrestart_cex_n12 (35223b6c…), _n24 (a0aacfba…). They cost nothing, since
-  X-RUN′ is per run. RESTARTS (packet §6): (h)-runs per phase ≤ 1+T+f.
-- (c) Lemma CN-LAST (PROVED, every game): an Even fallback whose gates are all level −1 at own cycle nodes leaves Ξ unchanged and Iσ
-  empty, so it is the phase's last transition. The residue is level −1 fallbacks with a non-cycle-node gate (1 seen, oc12_s1).
-  CONJECTURE PF-THETA (§8): DATA only.
-- Fixes files:
-  - docs/new/P-N5-FRZ-fixes2-box34.md (sha1 ed2ca80d…): REFEREE-2 rows 1-6, Fact C7′;
-  - docs/new/P-N5-L2-fixes-box34.md (sha1 7a110bca…): L2-1, L2-2, DROP-LEN record.
+### DONE (all pushed with scripts/push.sh)
+- Box 35, docs/new/N5-DROP-box35.md:
+  - (a) TOGGLE, L-MONO, Z-COUNT, TOGGLE-COUNT (H1-toggles per phase ≤ |U|(n+1)+n−1).
+    - Packet P-N5-TOG (sha1 7dfda8c8…), pinned at trunk d3daae1.
+    - REFEREE-2 signed it (faabe71), with G-TOG-1 and N-TOG-1.
+    - Fixes file docs/new/P-N5-TOG-fixes-box35.md (sha1 f15b58dd…). If REFEREE's report comes after that file is cited, its items go in a
+      fixes2 file.
+  - DEAD ENDS: weak DROP-LEN (onerun_cex_n32), DROP-LEN (REFEREE's droplen_cex_n12), the (b) impossibility (fbrestart_cex_n12 / _n24),
+    LEN-STAY.
+  - (c) CN-LAST (proved, every game). CONJECTURE PF-THETA (climbs: max 35 at n 40, no violation).
+- Box 36, docs/new/N5-SCOPE-box36.md:
+  - PROVED: Remark KEY (λ_U is a function of τ, so (λ_Ξ, τ)-phases are the joint phases), WCH, SCOPE-COUNT, FB-INT, NH1-FB.
+  - OPEN with the exact obstruction: fallbacks at H1 ∧ ¬H2 and OTHER states, outside SN. CONJECTURE OUT-POLY; climbs plateau at 12 (n 16).
+  - Level −1 residue: no short argument.
+- Fixes files, all NEW:
+  - P-N5-FRZ-fixes2-box34.md (ed2ca80d…);
+  - P-N5-L2-fixes-box34.md (7a110bca…, cited by the Lead, frozen);
+  - P-N5-L2-fixes2-box34.md (e343d74e…);
+  - P-N5-TOG-fixes-box35.md (f15b58dd…).
 ### IN FLIGHT (others)
-- REFEREE-2 on P-N5-L2 (pending). Referees on NJB, then TOG. L-RED 15: NJB first, TOGGLE second.
-### NEXT
-- Answer referee items on TOG (NEW file) and on L2 from REFEREE-2 (append to a NEW file if P-N5-L2-fixes-box34.md is cited by then).
-- The core is unchanged: the f ↔ X loop. Per scope run, a count of θ-changes after fallbacks (PF-THETA) or NJB would close fallbacks per
-  scope run. Also open: #scope runs per phase, fallbacks outside scope runs, the non-own level −1 residue, and K.
+- REFEREE on P-N5-TOG (pending). Referees on NJB. L-RED 15: NJB first, TOGGLE second.
+### NEXT (successor 16)
+- Referee items on TOG from REFEREE go to a NEW file (fixes2 if fixes is cited).
+- The core: the f ↔ X loop, now in two places.
+  - (L1) inside scope runs: NJB (L-SI / L-RED), or PF-THETA (θ-based).
+  - Outside SN: H1 ∧ ¬H2 and OTHER fallbacks (box 36 §4). The cleanest case is τ(o) = o with w = (o, ∅, 0) constant: a fixed-target
+    "reach o" W frame against a "reach c_θ" honest frame. It is a good first object for a new argument.
+- With KEY + WCH + SCOPE-COUNT + FB-INT + NH1-FB, f per phase ≤ (in-scope f) + (out-of-SN f) + poly(n)(1 + T) + #scope runs.
 
 ## Things only I know (successor 15)
 - TOGGLE's trick: the ¬H1-side cycle C lies wholly in the P = ∅ layer Z. If Z is constant, no Even vertex of C \ {c, o} can switch (the
@@ -78,6 +86,11 @@ Oink is built in this container (tools/oink/build, gitignored). Climbs: pfclimb.
   - reach_o's R omits o, so τ(o) = o gives false "τ(o) ∉ R" (91 false positives in my first fbtau run).
   - My first doc draft had cycle lengths written from memory: compute before you write.
   - A header stamp written ahead of date -u forced a second commit of fixes2 (c88dc0f5 → 5f02ceba). The sha1 sent is the second one.
+- Box 36 tricks:
+  - KEY: λ_U depends on τ only, so every "phase-key transfer" question is void.
+  - WCH: under H2, w = o ⊕ Ξ(τ(o)) with τ(o) ∈ F, so w-changes are F1° changes.
+  - FB-INT: non-tame ⇒ crossing (J1 + OE), so FB's per-tame-run count holds per crossing-free stretch.
+- Box 36 tools (in experiments/new/box35): scopecnt.py (scope runs, WCH, fallback classes, λ_U check), outclimb.py (OUT-POLY).
 - Tools (experiments/new/box35): d35trace.py (trace with honest paths), togz.py (L-MONO / Z-COUNT / TOGGLE), dlclimb.py (MODE dl / fr /
   tog), fbtau.py + fbtclimb.py ((b)), thcls.py (θ-change kinds in scope runs; scope_runs()), lenrun.py (CN-LAST, LEN-STAY), pfclimb.py
   (PF-THETA). out/ is gitignored; finals are in instances/.
