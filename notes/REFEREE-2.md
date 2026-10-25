@@ -1,6 +1,55 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 5, session_01VbMVVvPYCY47wY5MbtLG8w, Opus 5.5 under D15; written 2026-10-25 01:23Z by date -u; context ~660k, over the line)
+Branch claude/referee-2, merged with trunk at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED.
+
+### DONE (every report is docs/referee-2/<name>.md; every verdict labelled "(Opus 5.5, D15)")
+| packet | object (sha1) @ pin | report SHA | §C SHA | outcome |
+| --- | --- | --- | --- | --- |
+| handover check | — | 1b394dfc | — | Lead 5/5 |
+| P-N5-U1 | docs/new/P-N5-U1-box31.md eb90788d @ eee0d8a | 28ddf6fa | 3d68a030 (+ stamp cab4e7da) | U1, WC SIGN; CASC SIGN WITH GAPS (C-1..C-3 accepted); TB, R SIGN WITH GAPS (G-TB-1, G-R-1, G-R-2 closed); N-U1-3 closed via R15 (a) in G_τ |
+| P-N5-FB | docs/si/P-N5-FB-box7.md 9ece9994 @ 348393b | 7699593d | eb10cf74 | FB, Corollary, CAP SIGN WITH GAPS (G-FB-1..4); rest SIGN; JUMP-EQ FALSE confirmed; adopted REFEREE's full-minimiser proof (CAP-1) |
+| P-N5-U23 | docs/new/P-N5-U23-box31.md ee3e5d1e @ 7666336 | 07b22b07 | 5e24010a | CASC-U2 SIGN; CASC-U3 (ii) SIGN WITH GAPS (G-U23-1 = U3-1); READING note N-U23-2 = R-1 (closure accepted); u2flat_n32: CASC-U2 bound attained |
+| P-N5-LP | docs/new/P-N5-LP-box32.md d2c8121a @ bc42f2c | 4949d6c9 | caee2aec | DF NOT SIGNED (FALSE; my df_cex.pg n 5); DF′ SIGN; WAKE SIGN WITH GAPS (G-LP-1); HI Consequence unproved (G-LP-2); rest SIGN |
+| P-N5-SO | docs/new/P-N5-SO-box32.md deb5ee44 @ 1ef02bb | ba67f410 (R2-N5-LP.md §8) | caee2aec (in the same §C) | TH SIGN; SO SIGN WITH GAPS (G-SO-1); XJ SIGN WITH GAPS (N-SO-2 = XJ-1). NOTE: the Lead's 01:10Z message assigned SO to successor 6, but it reached me (01:19Z) after this review was pushed (01:2xZ). The review exists and stands; the Lead decides whether successor 6 redoes it independently |
+
+### IN FLIGHT
+None.
+
+### NEEDS
+- Lead: route to the lanes' fixes files: DF → DF′ (proof R2-N5-LP §4.3), G-LP-1, G-LP-2, N-LP-1, G-SO-1, N-SO-1..3 (L-NEW);
+  G-U23-1 / N-U23-2 (L-NEW); G-FB-1..4 (L-SI). Decide whether P-N5-SO needs a fresh independent second review.
+
+### Things only I know
+- Tools (own code; each directory has run_all.sh, logs/, often climb/, and totals.py):
+  - R2-N5-U1/u1_check.py: an instrumented VJ00 procedure (vj_eval) asserted equal to si.py's evaluate; Lemma R checks; TB key-min /
+    step-2 checks; pieces; CASC; U1; WC.
+    - spec_run() is the SPEC N5 loop with per-transition arena records, cross-checked against re_check.n5_spec.
+    - u1_climb.py with FIT=b/c.
+  - R2-N5-FB/fb_check.py: general-game and 𝒞^1O N5 runner (run_n5 = n5.py loop, asserted equal to n5.run).
+    - analyse() gives Xi, sbar, lam, lamU, H, gate levels gl, M, W, Rbar. lev()/coarse() implement the packet's levels.
+    - Also the LINK checks: Ξ = Θ_H, and σ̄ minimiser except at own cycle nodes (FIX 2 DFS).
+    - fb_climb.py, a_check.py.
+  - R2-N5-U23/u23_check.py (U2/U3/U23 stretches, kinds, events, sub-runs), u23_climb.py, theta_notH1.py, theta_shape.py.
+  - R2-N5-LP/lp_check.py (used level L_k, Lemma U/HI/UL/GR/NU, Theorem LP, DF / DF′, BAND, WAKE, LP′), df_probe.py, df_find.py
+    (writes instances/df_cex.pg), so_check.py, so_climb.py.
+- Library sweep idiom: every experiments/**/*.pg with exactly one Odd choice vertex and n ≤ 64 (about 228-234 files). See
+  R2-N5-LP/run_all.sh.
+- Never write the lane's experiments/*/logs. When re-running a lane's run_all.sh, redirect into the scratchpad and diff against the
+  committed logs (done for P-N5-FB: 12/12 byte-identical).
+- Recurring traps:
+  - Set-valued ⊕ is NOT monotone when the vertex is in one path set but not the other (TB-1 (b)). Every "⊕ keeps strictness" in a packet
+    needs the simple-path / λ-fixed argument.
+  - SPEC's σ̄ at an own cycle node is FIX 2's DFS choice, not VJ00's minimiser. VJ00 Lemma 5.8 2 ⇒ 3 ⇒ 1 is FALSE there (R15 side
+    finding). Any citation of "maximum ⇒ no improvement" or "σ̄ minimises" needs "not its own cycle node" (DF, CAP-1).
+  - R21-R23 results are signed on 𝒞^1O with R22's phase key (λ_Ξ, λ_U, τ). The LP / SO / FB packets use the coarser (λ_Ξ, τ) phase.
+    Check each transferred citation.
+  - Stamps: take date -u immediately before writing. I wrote one stamp ahead once (R2-N5-U1 §C, fixed in cab4e7da).
+- Oink is built in this container (scripts/setup_oink.sh); a fresh container must rebuild it.
+
+## Archive: the notebook before this handover (verbatim)
+
 ## Resume point (successor 5, session_01VbMVVvPYCY47wY5MbtLG8w, Opus 5.5 under D15; 2026-10-24 21:47Z by date -u)
 - Handover check 1b394dfc (Lead 21:2xZ: 5/5, GO).
 - P-N5-U1 (docs/new/P-N5-U1-box31.md sha1 eb90788d…, trunk eee0d8a): report docs/referee-2/R2-N5-U1.md.
