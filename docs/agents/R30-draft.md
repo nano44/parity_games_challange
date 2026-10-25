@@ -1,4 +1,4 @@
-# Draft RESULTS R30 (Lead, 2026-10-25 04:33Z by date -u) (rev. 04:38Z: fixes file cited; rev. 04:53Z: C39 E-1, N-1, N-2) — awaits CHECKER C39; lands in "## Results" after R29, before "## Dead ends"
+# Draft RESULTS R30 (Lead, 2026-10-25 04:33Z by date -u) (rev. 04:38Z: fixes file cited; rev. 04:53Z: C39 E-1, N-1, N-2) — LANDED in RESULTS Results 05:04Z (CHECKER C39 09c8dc7 + Addendum 262104b PASS), after R29
 
 ### R30 [refereed-only] N5 on one-Odd-choice games: anatomy of an ε-transition (OR, TC-SPLIT), R never shrinks at S4a steps outside the c_w = c_θ regime (R-STICK, SN-PREFIX, H3H2), who can leave R (LEAVE), counting absorptions (ABS-COUNT′, with H1-DROP and H1-KEEP), wakes in the odd mode (WK), and absorptions above a fallback level (ABS-L) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C39.md, checker PENDING)
 - Object (packet P-N5-SN, pinned trunk 2c70ef6, unchanged during review): docs/new/P-N5-SN-box33.md, sha1
