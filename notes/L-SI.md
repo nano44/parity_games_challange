@@ -10,7 +10,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   stretch), LEN, KIND-MONO, CASC-B, CW-INT, Theorem RUN (Ξ-changes on R per fallback-free run of a stretch O(Δ r⁴)), Corollary PHASE
   (T per phase poly given f). So (K_W), (E), K closed per stretch; assembly READING: N5 on 𝒞^1O poly IF FBPOLY + PHI + this note are signed.
 - FROZEN (sha1 sent to Lead): docs/si/N5-KW-box15.md 5ebbb3b6 (l-si 2685ea67, 20:51Z); docs/si/P-N5-PHI-fixes-box14.md 29936b3d
-  (l-si dfa14399, 20:59Z); docs/si/P-N5-KW-box15.md c0b0111f (l-si bf1ed0f7, 21:46Z; packet, Lead GO 21:22Z). New text goes in NEW files.
+  (l-si dfa14399, 20:59Z); docs/si/P-N5-KW-box15.md c0b0111f (l-si bf1ed0f7, 21:46Z; packet, Lead GO 21:22Z); docs/si/P-N5-KW-addendum-box15.md 8d6bfb3c (l-si 47c4e7a2, 21:55Z; K units). New text goes in NEW files.
 - NEXT: P-N5-KW referee items → NEW docs/si/P-N5-KW-fixes-box15.md. NEEDB fixes (R2-N5-NEEDB pending) → NEW docs/si/P-N5-NEEDB-fixes-box13.md.
   FX fixes (REFEREE signed R-N5-FX 843ba1f8; REFEREE-2 next) → NEW docs/si/P-N5-FX-fixes-box14.md.
 - DATA: experiments/si/kw15/kwcheck.py (library + extras), kwclimb.py (random, climbs kind / wonce / long); logs in kw15/logs/.
