@@ -42,6 +42,10 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
     R2-N5-LP/instances/df_cex.pg (n 5, sha1 0a98e1b7). DF′ (λ(y) ≠ y) SIGN via R15 (a)/(b) + F1 + R19 (a).
   - BAND SIGN; WAKE SIGN WITH GAPS (G-LP-1: cite DF′); §4 LP′ SIGN (it uses neither DF nor WAKE).
   - Tools: R2-N5-LP/lp_check.py, df_probe.py, df_find.py. NEXT: §C after REFEREE's report.
+- P-N5-SO (docs/new/P-N5-SO-box32.md sha1 deb5ee44…, trunk 1ef02bb; Lead 01:00Z): combined into R2-N5-LP.md §8 (01:15Z).
+  - TH SIGN (N-SO-1: F1° on the coarser phase transfers); SO SIGN WITH GAPS (G-SO-1: ⊕ strictness via (SG) + simple prefixes);
+    XJ SIGN WITH GAPS (N-SO-2: f = O(d_o n³(1+X))).
+  - Climbs 12,000 runs: S_o − d_o(Θ+1) ≤ −1, J − S_o ≤ 0. Tools so_check.py, so_climb.py.
 
 ## HANDOVER (successor 4, session_01DDRfmJkBTC5uu5q62T2Dme, Opus 5.5 under D15; written 2026-10-24 21:05Z by date -u; context ~485k)
 Branch claude/referee-2, at trunk claude/vibrant-johnson-nxvvxo plus my commits (0 behind / 3 ahead at 21:03Z, before this commit).
