@@ -1,0 +1,1 @@
+TOTAL {'blocks': 9, 'fb': 38, 'evict': 71, 'L1': 20, 'max_L1': 15, 'max_fb': 10, 'D': 0, 'lvl_blocks': 10}

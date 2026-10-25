@@ -22,8 +22,8 @@ L-NEW successor 14 (Opus 5.5, D15/D18). Box 34 GO by the Lead 04:52Z (Lead's sta
    constant. On an interval where they differ, r = ℓ exactly.
 4. **Lemma BLOCK (PROVED).** On such an r = ℓ interval (ℓ ≥ 0), a vertex that leaves R at an S4a step never re-enters R in that
    interval. So in a fallback-free part of the interval each vertex crosses at most twice, and each exit is released at most once.
-5. **Theorem X-RUN (PROVED).** In a fallback-free run of a phase whose SN prefix has H1 at every state, the SN prefix has at most
-   C·(d_o + 1)·n² crossing transitions (C an absolute constant, §5). Hence REL_run, ε_{H1} per run and X_SN per run are polynomial,
+5. **Theorem X-RUN (PROVED).** In a fallback-free run of a phase whose SN prefix has H1 at every state, the SN prefix has O((d_o + 1)·n³)
+   crossing transitions (P-N5-FRZ §6: ≤ 13 (d_o + 1) n³). Hence REL_run, ε_{H1} per run and X_SN per run are polynomial,
    and per phase X ≤ (f + 1)·poly(n) + f on that part. This answers the brief's "bound X_SN or REL" PER FALLBACK-FREE RUN.
 6. **What stays open (OPEN, sharpened).** R28's f ≤ n_E(2n − 1)(X + 1) + X and item 5's X ≤ (f + 1)·poly(n) make f and X
    polynomially equivalent per phase. The loop of box 33 §4 is still open, but now it is localized (§6). Theorem FREEZE survives
@@ -132,8 +132,8 @@ Proof.
 
 ## 5. Theorem X-RUN (PROVED, L-NEW succ. 14)
 Statement. Let Q be a fallback-free run of a phase. Suppose its SN prefix P (Corollary SN-PREFIX) has H1 at every state. Then the
-crossing transitions inside P number at most (n − 1) + (2n + 2)·6(d_o + 1)·n + 2n(n + 1) + (d_o + 1)n·(n − 1). So they are
-O((d_o + 1) n²). In particular:
+crossing transitions inside P number O((d_o + 1) n³) (≤ 13 (d_o + 1) n³). Packet P-N5-FRZ §6 governs; there the ℓ = −1
+and ⊥ levels cost n³, and the count below is superseded. In particular:
 - REL_Q ≤ d_o times that (every release is in P: R-STICK);
 - ε_{H1}(Q) ≤ d_o + REL_Q (ABS-COUNT in its signed form; d_o − 1 + REL_Q when Q's last H1 ε-transition has O ≥ 0, ABS-COUNT′);
 - by SN-PREFIX, Q has at most n − 1 more crossings after P.
@@ -149,7 +149,7 @@ gives F(ℓ_0) := k_P + n − 1 (FREEZE). Induct downward on the level ℓ, with
   with θ = w before F(⊥) are short (< n − 1 transitions each). After F(⊥) there is no crossing (§4, ℓ = ⊥).
 - If some F(ℓ) never happens, the remaining states lie in ≤ 2d_o + 1 intervals of the level above, and the same counts apply. □
 - Reading against the brief. X_SN per fallback-free run (on its H1 part) and REL per run are now polynomial. Per phase they are
-  (f + 1)·O((d_o + 1)n²) and d_o·(f + 1)·O((d_o + 1)n²). The ¬H1 SN states (329 steps in the library, prefix_nonh_steps) are not
+  (f + 1)·O((d_o + 1)n³) and d_o·(f + 1)·O((d_o + 1)n³). The ¬H1 SN states (329 steps in the library, prefix_nonh_steps) are not
   covered: LEAVE and H3H2 need H1.
 - Phase-level corollary (READING, from R27 Corollary LP′ / R28 Corollary OX): on o-cyclic 𝒞^1O with H1 on every SN prefix, a phase
   makes poly(n)·(1 + f + K) transitions. Here f is the number of fallbacks of the phase and K the number of wakes.
@@ -197,3 +197,22 @@ gives F(ℓ_0) := k_P + n − 1 (FREEZE). Induct downward on the level ℓ, with
 - wsnclimb.py (w-changes between (h) states in one phase, seeds sc24 / sc32): 21 at n 24 (sc24 starts at 20: an unthrottled, R17-type
   run with R mostly empty) and 17 at n 32. Both are below n.
 - Every named instance above has exactly one Odd vertex with out-degree > 1; the scripts assert it.
+
+## 9. The loop inside a scope run: drain and refill (DATA, READING; written 05:47Z by date -u)
+- Mechanism (DATA, box34/fbclus.py). x48_rt48_final.pg (experiments/new/box28/instances, sha1 cff46249…, n 48, d_o 3) has one scope run,
+  states 2-111, with r = 47 until 99:
+  - Refill: R grows one vertex per S4a step (states 2-18, 63-82).
+  - Drain: fallbacks at one level evict R in pieces, with no entry in between (level 45 at 19, 25, 31, 41, 46, 53, 55, 59, 61; level
+    44 at 83-97).
+  - Then θ rises at exactly the drain level (45 at 62, 44 at 98), R refills, and the next drain is one level lower (CLS1).
+  - At 99 θ jumps to level 47 = r: the run's θ catches w.
+  b6_xw_n56.pg (sha1 in data/fbentry_lib.txt) shows the same pattern with levels 43, 42, 41, 41, 41, 40, 39, 39, 36.
+- So "≤ 1 fallback cluster per level per scope run" (CL1) is FALSE: 47 scope runs violate it, up to 9 clusters at one level
+  (x48_rt48_final). But the repeated clusters at one level are drains: R only shrinks between them, so one drain has ≤ |R| ≤ n
+  non-flat fallbacks.
+- E1 (PROVED, it is R20's FBF): inside a scope run, no vertex enters R after a fallback until θ changes. w is fixed in a scope run, so
+  the stretch after the fallback is a (θ, w)-stretch until θ moves, and FBF applies. DATA: 1,874 entries after fallbacks in scope
+  runs, each preceded by a θ-change since the last fallback (box34/fbenter.py).
+- READING (FBL needs u* ≠ none, i.e. r ≥ 0): per scope run, non-flat fallbacks ≤ n·(1 + number of θ-changes in the run). Between two θ-changes, after the first fallback R only shrinks (E1), and each non-flat THR fallback evicts a vertex (FBL). With item 6 of the
+  Summary, per scope run the open count is the θ-changes after fallbacks (L-SI's "θ per scope run", P-N5-CLS §7). In the data they come
+  at the drain level (93 of the 394 transitions right after a cluster change θ at exactly the cluster level; the other 301 do not; data/fbclus_lib.txt).

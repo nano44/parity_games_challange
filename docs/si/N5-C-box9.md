@@ -228,3 +228,34 @@ Proof.
   - Bests: instances/box9/cl9_heq_b (n 32, 7535a99c), cl9_rep_a (n 40, 9d31fb39), cl9_rep_b (n 48, 8efbbc9e; a 37-fallback block).
   - All re-verified (Oink zlk OK).
 - Packet: docs/si/P-N5-FBW-box9.md (Lead 05:28Z).
+
+## 7. Bridge to L-NEW box 34 (L1): the per-level count inside a frozen r = ℓ block (Lead relay 05:40Z)
+Setting: docs/new/N5-REL-box34.md §3-§6 (L-NEW succ. 14; lane PROVED, unrefereed; read, not edited). Let I be a maximal run of
+consecutive (h) states of a phase with r = ℓ ≥ 0, after a FREEZE window at ℓ. So COARSE_ℓ(Ξ) is constant on I (FREEZE (a)). w may
+change inside I. Fallbacks are allowed.
+
+**Proposition PL-I (PROVED, L-SI succ. 4; uses L-NEW's FREEZE, unrefereed).**
+- (i) The fallback levels inside I are non-increasing and ≤ ℓ.
+- (ii) I has at most n_E fallbacks at level ℓ.
+- (iii) For M < ℓ, the level-M fallbacks of I satisfy N_M ≤ n_E(1 + D_M), with D_M ≤ (d_o − 1) + REL_M (Theorem PL, with I in place
+  of the scope run).
+- Hence I has at most n_E(1 + ℓ·d_o + REL(I)) fallbacks, and so at most n times that many fallback evictions and (L1) re-entries.
+Proof: the scope-run hypothesis "w constant" is used in §2-§3 only through Fact R (r non-increasing). On I, r = ℓ is constant, so
+Fact R is trivial there. Each remaining ingredient uses only (h) at both ends of each transition, inside a phase:
+- CLS1's induction: FBL + CLU in the case r ≤ L; the OFFGATE / NL (iii) chain in the case r > L.
+- FBW-S, FLAT-ALL, STRETCH, PL (b).
+- ABS-L's proof (P-N5-SN §8): it uses (A_j), NL (i)-(ii), CAP-1 and (h).
+All hold on I.
+- (i) follows from CLS1's induction and FBW-S (M ≤ r = ℓ).
+- (ii) FREEZE makes COARSE_ℓ(Ξ) constant on all of I, so STRETCH applies to I as one stretch.
+- (iii) is PL (a)-(c) with r = ℓ > M. □
+- Consequence: NJB (on I) gives D_M = 0. Then I has ≤ n_E(ℓ + 1) fallbacks and ≤ n·n_E(ℓ + 1) evictions, so (L1) is polynomial per
+  frozen block.
+  - So L-NEW's (L1) and my NJB are the same open piece, seen from the run side and from the fallback-level side.
+  - The residue is: absorptions at levels in (M, ℓ] inside a level-M sub-block of I.
+- DATA (frzblk.py; logs/box9/frz_*.txt; own engine path, n5.run asserted). Frozen r = ℓ blocks containing fallbacks:
+  - NAMED + pinned bests + box 9 climbs: 9 blocks, 38 fallbacks, 71 evictions, 20 (L1) re-entries (max 15 in one block).
+  - box34/lib.txt: 20 blocks, 112 fallbacks, 203 evictions, 42 (L1) re-entries.
+  - D_M = 0 in all 10 + 25 level sub-blocks. 0 failures of (i), (ii), (iii).
+- So in the data, (L1) re-entries occur (42), but the fallbacks that produce them are already bounded by n_E per level. NJB holds in
+  every frozen block seen.
