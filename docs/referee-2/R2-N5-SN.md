@@ -190,3 +190,54 @@ fallback ↔ absorption loop; G-N5-TIME.
 - exitr_cex_n16: packet form holds (max excess −1); 13 H1 ε-transitions, 6 H1 leaves, all as LEAVE states.
 - Verdicts unchanged. G-SN-1 (a) stays a proof gap: the statement is unrefuted and tight on epsseg_cex_n48. A repair would show that, inside
   a phase, the state after an H1 ε-transition again has an exit in F (or H1). The mechanism seen at 25 → 26 needs the phase to end there.
+
+## §C. Comparison with REFEREE (R-N5-SN, referee 59a886d; trunk merged as 760889dc). Written 2026-10-25 04:10Z onward by date -u
+Order: my report (ddbecafc) and §A (91d95e84) were pushed before I opened docs/referee/R-N5-SN.md (Lead 04:08Z). REFEREE did not read mine.
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | agree? |
+| --- | --- | --- | --- |
+| WM phase-key transfer | VALID | VALID | yes; same three-step reading of the proof |
+| OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2 | SIGNED | SIGN | yes |
+| LEAVE | SIGNED WITH GAP SN-3 (wording) | SIGN | yes on substance; accept SN-3 (my report repeated the packet's "vacuous" for r_s = ⊥) |
+| ABS-COUNT | SIGNED WITH GAPS SN-1, SN-2 | SIGN WITH GAPS G-SN-1 (a), (b) | yes: the same two gaps, the same repaired forms (d_o + REL_run; d_o(f + 1) + REL + f), the same status for the (d_o − 1) form (OPEN / CONJECTURE, tight, 0 counterexamples) |
+| WK | SIGNED (vacuous) | SIGN, note N-SN-1 (vacuous) | yes |
+| ABS-L | SIGNED (premise signed, R29) | SIGN as CONDITIONAL, met on R29 | yes; R29 has since LANDED (Lead 03:52Z), so the condition is met |
+| §9 | not signed | not signed | yes |
+No disagreement of substance. Neither report has a counterexample.
+### C.2 Item by item
+- SN-1 = G-SN-1 (a).
+  - Both reports locate the gap in "it ends ≤ d_o − 1" (H1 not given at the run's last state), and both prove m ≤ d_o + REL_run.
+  - REFEREE's climbs score "H1 ε-transition into a ¬H1 state" directly and find 0. My §A shows the event once at a phase EXIT
+    (epsseg_cex_n48, 25 → 26, all 17 exits in R, ¬H1), outside any run. So the mechanism exists; inside a phase it has not been seen.
+  - Joint repair: the proved forms, plus "(d_o − 1) + REL_run when H1 holds at the run's last state"; the unconditional (d_o − 1) form
+    is OPEN.
+- SN-2 = G-SN-1 (b): ε-transitions at fallbacks are in no run; + f. Same. Both have 0 such transitions in data.
+- SN-3: accept. For r_s = ⊥ the existence half still holds. I re-checked REFEREE's line:
+  - q's route changes before o, so some Even p on the old route switches;
+  - p lies in R_s and c_θ ∈ F_s (H1), so p ≠ c_θ and p precedes λ(q) on q's new path;
+  - λ(p) = c_θ ≠ p, so the change is relevant.
+- N-SN-1 (mine only, WK): the odd-mode case needs y ⊕ strictly monotone between W(z) and W(a). REFEREE's §7 chain
+  "y ⊕ W(z) ◁ y ⊕ W(a)" uses it silently. My §7 gives the reason (y lies on neither W-path). One sentence (row 4).
+  - REFEREE's remark on WK's loose last sentence ("the cycle node of W(a) = W(z), or of the strictly better a"): agreed, wording, folded
+    into row 4.
+- Data: consistent.
+  - REFEREE (canonical start, 243 files at d1091416): ε 327, all H1; H1 leaves 637.
+  - Mine (3 starts, 245 files incl. box33 and red/so instances): ε 725, all H1; H1 leaves 1,853.
+  - Both: WK hypothesis never met; ABS-L absorption branch never met (REFEREE 153 θ-changes in windows, all ≤ L; mine 0 above L);
+    0 ¬H1 ε-transitions; 0 ε at fallbacks.
+  - My climbs (47,200 runs) add 867,072 R-STICK checks and 39,461 crossings after a prefix, where REFEREE's library has 89. This answers
+    REFEREE's "thin after the prefix" note.
+### C.3 Joint gap map (one fixes-file line per row)
+| row | REFEREE | REFEREE-2 | fixes-file line |
+| --- | --- | --- | --- |
+| 1 | SN-1 | G-SN-1 (a) | §6: "#H1-ε per fallback-free run ≤ d_o + REL_run (proved); ≤ (d_o − 1) + REL_run if H1 holds at the run's last state; the unconditional (d_o − 1) form is OPEN (an H1 ε-transition into a ¬H1 state is not excluded; seen once at a phase exit, epsseg_cex_n48 25 → 26; tight on epsseg_cex_n48)" |
+| 2 | SN-2 | G-SN-1 (b) | §6 per phase: "+ f for ε-transitions at fallback transitions" (with row 1: d_o(f + 1) + REL + f) |
+| 3 | SN-3 | — (accepted) | §5: replace "if r_s = ⊥ the claim is empty" by "if r_s = ⊥, a relevant change still exists: some Even p on q's old route before o switches; it precedes λ(q) = c_θ ∈ F_s on q's H_{s+1}-path, and λ(p) ≠ p" |
+| 4 | (§7 wording remark) | N-SN-1 | §7: "y ⊕ is strictly monotone between W(z) and W(a): y ∈ R constant, so z's and a's plays reach o without passing y, and after o y can lie only on o's W-cycle, below c_w; the mode is set by c_w, the common W-cycle node of a and z" |
+### C.4 Labels after two signatures (D18/L40)
+PROVED (L-NEW successor 13; REFEREE and REFEREE-2, Opus 5.5, D15), pending CHECKER, on 𝒞^1O inside a phase:
+- OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, LEAVE (row 3), WK (row 4);
+- ABS-COUNT in the rows 1-2 form;
+- ABS-L (premises in R29, landed).
+CONJECTURE (OPEN): ABS-COUNT's unconditional (d_o − 1) form. OPEN: REL, X_SN, K per phase; G-N5-TIME. Not a TARGET.md claim; not a
+step-4 pass.
