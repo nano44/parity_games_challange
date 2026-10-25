@@ -1497,3 +1497,17 @@
 - 22:26Z: Merged checker 1351f017 (C57 PASS, R48; optional N-1..N-3; loop witness reproduced from its start pair with L-RED's tool). Applied N-1 (κ-PFZ count differs by convention) and N-2 (R72 added at l-red 6e28e4f1). Asked for C57 Addendum 1.
 - 22:36Z: Merged checker 6b15a543 (C57 Add. 1 PASS). LANDED R48 (P-N5-FBPOLY), checker 6b15a543, cmp OK. GAPS line 11 UPDATE: fallbacks per phase closed on 𝒞^1O.
 - 22:42Z: Pre-drafted docs/agents/R49-draft.md (P-N5-NEEDB; added at l-si 3ea0f5f9, pinned trunk e6ee6130). Placeholders: FIXES-PENDING, REFEREE-CONFIRM-PENDING, REFEREE-SC-PENDING, REFEREE-SC-SUMMARY-PENDING. To CHECKER C58 after REFEREE 11's §C and L-SI's fixes file.
+- 22:47Z: Read 14 notifications (21:46-22:35Z). Hourly sweep (trigger 22:04Z, run late): no overage; WATCHDOG 22:03Z: CHECKER at 681k, the only threshold crossed. Actions:
+  - CHECKER 7 told to finish C57 Add. 2, then write its handover and park; successor 8 follows.
+  - L-RED 18 is RUNNING on the K red-team (its need_input summary is stale; my 21:46Z route reached it).
+  - Merged referee 7dbd5118: §C NEEDB identical; N-NEEDB-5 CONFIRMED, so "THR ⇒ M ≥ 0" is FALSE as stated; N-NEEDB-4 NOT reproduced, because the witness_xg_12004 start pair is invalid.
+  - L-SI 34e5225a reproduced N-NEEDB-5 independently. GO to L-SI for the NEEDB fixes file and DEAD.md.
+  - REFEREE-2 12 asked to write §C NEEDB and fix the witness start pair, then continue KW (§C FBPOLY 75372604 + 6ff47e58 done).
+  - L-NEW 22 box 43 first pass (eb273ebc, 8029d6c8):
+    - Lemma DUAL (N5 on G mirrors N5^OF on G^d).
+    - Theorem MIRROR: 𝒞^1E reduces to 𝒞^1O, assuming the per-phase bounds hold from any start pair and for N5^OF.
+    - Corollary Φ-kO; ENDGAME.
+    - The per-vertex Φ-1O count fails beyond 𝒞^1O (retf_n6, frontier 𝒞^{≥2E,≥2O}).
+    - Exhaustive n = 4 shows no growth.
+    - Decision: packet P-N5-DUAL (MIRROR as an implication with an explicit hypothesis table), and continue Route Δ.
+  - R49 (NEEDB) draft: REFEREE §C filled; it waits for the fixes file and REFEREE-2's §C.

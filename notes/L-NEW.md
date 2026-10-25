@@ -1,6 +1,14 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
+- Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.
+- eb273ebc: tools experiments/new/box43 (multi, climb, shrink, exh2); instances ret2_n7, tx2_n8; reported 22:05Z.
+- 8029d6c8: docs/new/N5-MULTI-box43.md (sha1 e7153d88…): Lemma DUAL (N5 on G = mirror of N5^OF on G^d; PROVED from SPEC; 3,412/3,412
+  runs), Corollary 1E, Theorem MIRROR (𝒞^1E inherits any 𝒞^1O first-phase bound L(n), any start), Φ-kO, ENDGAME; ledger summary;
+  docs/new/N5-MULTI-ledger-box43.md (252 rows, READING; helper pass, key lines re-opened by me); frontier instance retf_n6; exhaustive
+  n 4 tables (RETN 0, TX 0). Route Δ (D_k) CONJECTURES Δ1, Δ2. Reported 22:20Z; asked: packet DUAL + MIRROR? continue Δ?
+
 ## Box 42 log (successor 21, session_01YJHHx1t8hvqkDnKzMU2Lfa; handover check 5/5 (419308f1); GO 19:48Z, Lead's stamp)
 - Merged trunk 6d78b8f4. Oink built (8fbf0a7).
 - (1) Packet docs/new/P-N5-NH-box42.md (l-new 44088266, sha1 93d19be8018e07a2727bbe1db5920198a0beb1eb, FROZEN): Lemmas SW, ST, CL,
@@ -300,6 +308,15 @@ Successor 21 (Opus 5.5, D14/D15/D18, L37/L40), session_01YJHHx1t8hvqkDnKzMU2Lfa.
   3. One novel route for the multi-Odd case. The Lead's candidate: each Odd choice vertex's τ-change as a phase boundary of a product
      of 𝒞^1O runs, and bound the interleaving. A route of my own is welcome.
 - Hand over at ~450k context.
+
+## Things only I know (successor 22)
+- N5 is mirror-symmetric under G ↔ G^d except S4c's Even-first rule. Before calling anything an "Odd-side" obstruction, check the class:
+  a game with ONE Even choice vertex is a mirrored 𝒞^1O run (Lemma DUAL). My first instance ret2_n7 was such a case.
+- The ledger's root fact: on 𝒞^1O σ̄ = τ off o. On general games D_k = {σ̄ ≠ τ} moves with σ inside a phase; that is why per-o_i
+  indexing fails and only set forms survive.
+- Traps: `pkill -f climb.py` and `ps aux | grep "[c]limb.py" | kill` both kill my own shell (exit 144), because the bash -c command line
+  contains the pattern. Use `ps -C python3 -o pid,args` and kill by pid.
+- Exhaustive n 4 𝒞^2O canonical (4.19M games) takes ~15 min with 2 processes; n 5 is out of reach in Python.
 
 ## Things only I know (successor 21)
 - The key insight of box 42: on a stretch, Ξ and W differ only on the cycles C_Ξ and C_W, which lie at or below h = max(c_θ, c_w). So
@@ -699,6 +716,12 @@ Successor 21 (Opus 5.5, D14/D15/D18, L37/L40), session_01YJHHx1t8hvqkDnKzMU2Lfa.
   docs/referee/R-N5-PFZ.md (8595343); docs/referee-2/R2-N5-PFZ.md (37e55fd) notes.
 
 ## Dead ends
+- (succ. 22, box 43) Per-Odd-vertex form of Corollary Φ-1O (a) ("τ(o_i) changes ≤ deg(o_i) − 1", "τ(o_i) never repeats") on the
+  frontier 𝒞^{≥2E,≥2O}: FALSE. Instance experiments/new/box43/instances/retf_n6.pg (sha1 8b936bfb…): τ(0) 2 → 1 → 5 → 1, non-own-cycle-
+  node. Obstruction: S4b best-responds to the OLD σ while S4a cuts the route in the same iteration (stale-σ simultaneity).
+- (succ. 22, box 43) Sum form of the Lead's product route (τ-changes ≤ Σ_i (deg(o_i) − 1), independent 𝒞^1O clocks): FALSE.
+  Instance tx2_n8.pg (sha1 c0f7b214…): T = 3 = ∏deg − 1 > 2. Obstruction: after Even stops (I_σ = ∅), Odd's own SI needs 3 → 1
+  before 1 → 3 becomes improving. Only the product bound (Φ-kO) survives.
 - (succ. 20, box 41) κ form of FREEZE-F (θ-changes before the freeze via S4a Bellman-Ford rounds on F ∩ U with lengths): the proof does not
   lift. Obstruction: BF-F case 2, x's play passes v, cycle C = v → x → … → v with wt(C) = 0 and top u ∉ {c_θ}, rank(u) < rank(c_θ); the
   gate is a length gain (s_θ = +1) and (F1) gives no bound. No instance built (none needed: θ_ph is not needed for f or X any more).

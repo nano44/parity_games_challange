@@ -28,24 +28,28 @@
   conjectures RISE-DROP, GATE-ABOVE, FEED (FALSE, recorded in RESULTS R40-R43 and docs/si/DEAD.md). The CONJECTURE "in scope, THR ⇒ M ≥ 0"
   (docs/si/N5-LV3-box12.md §4-§5; RESULTS R41, R43, not signed) is FALSE (N-NEEDB-5): docs/referee-2/R2-N5-LV2/climb/block_9501.pg
   (sha1 1b5b76fd), from the start pair in block_9501.txt, state 1: (h), θ = (5, {9}, 3) ◁ w = (5, ∅, 1), r = 10, M = −1, gates (10, 1),
-  (10, 3), (10, 8), all (β) (rank o 2 < rank c 9), k → k+1 in scope; reproduced on REFEREE-2's three traces, REFEREE-CONFIRM-PENDING. From
+  (10, 3), (10, 8), all (β) (rank o 2 < rank c 9), k → k+1 in scope; reproduced on REFEREE-2's three traces, confirmed on REFEREE's engine (§C C.3, referee 7dbd5118) and on L-SI's
+  (experiments/si/needb5/repro.py, l-si 34e5225a). From
   the canonical start the run has no such state (RESULTS R43 limit (iii)). At this counterexample NEED-β holds: 𝒫 uses the (β) gate
   (10, 8), case (B).
 - Honest limits: (i) SUBCLASS 𝒞^1O except (b). (ii) These lemmas locate the (β) gate of any M = −1 fallback and reduce case (i) to INTO;
   they bound no count, so G-N5-TIME stays open. (iii) Thin data: XG's hypothesis is VACUOUS in both referees' batch data and occurs 7 times
-  only in REFEREE-2's climbs (witness saved); NEED-β's cases (A1), (A2′), (A2″), (A2*) never occur in setting (LV+) (every (LV+) state in
+  only in REFEREE-2's climbs (witness saved, not reproduced by REFEREE, N-NEEDB-4); NEED-β's cases (A1), (A2′), (A2″), (A2*) never occur in setting (LV+) (every (LV+) state in
   data is case (B)), so they rest on their proofs; random 𝒞^1O games reach neither (LV+) nor a rise.
 - Data (DATA, not proof; one Odd choice vertex asserted on every game): REFEREE (own needb_probe.py on rl_engine): P-N5-RHO's 412-file list
   (253 𝒞^1O) from SPEC S3's start and with 4 random start pairs, REFEREE-2's 145 climb outputs, 1,400 random-start runs on the LV2
   witnesses and beta2_n11, and block_9501 from its own start pair: in-scope THR fallbacks with r ≥ 0 985 + 398 + 434 + 1, setting (LV+)
   exactly once (block_9501, (β) gate (10, 8)), NEED-β's stronger form (NEEDB-N4: 𝒫 uses a gate that is not Ξ-exceptional, at every THR
-  fallback with (h) and r ≥ 0) at each of them (REFEREE's §3 count: 1,817 checks), XG 0 cases, OLD-THREAT 510 exit checks, INTO 52 / 52, ANTI 100,000 random checks; 0 failures. REFEREE-2
+  fallback with (h) and r ≥ 0) at each of them, XG 0 cases, OLD-THREAT 510 exit checks, INTO 52 / 52, ANTI 100,000 random checks; 0 failures. REFEREE-2
   (own needb_check.py): 5,904 library runs and 3,000 random runs, 0 violations; six climbs: 297,752 (LV+) states, every one case (B) with a
   (β) gate on 𝒫, XG hypothesis 7 times, OLD-THREAT 57,988 exit checks at 38,664 post-rise states, INTO 1,492 / 1,492, case (i) 0, 0
   violations; mutation controls xg, otc, b0, anti fire, otf does not.
-- Signatures: REFEREE docs/referee/R-N5-NEEDB.md (referee 008ad8ab, successor 10; §C REFEREE-SC-PENDING, successor 11): XG, ANTI (+
+- Signatures: REFEREE docs/referee/R-N5-NEEDB.md (referee 008ad8ab, successor 10; §C 7dbd5118, successor 11): XG, ANTI (+
   ANTI-Ξ, ANTI-W), NEED-β (B), (A1), (A2′), (A2″), (A2*), OLD-THREAT, the reduction SIGNED; notes NEEDB-N1..N4; no gaps. REFEREE-2
   docs/referee-2/R2-N5-NEEDB.md (referee-2 ef433d32, successor 12): all SIGN; notes N-NEEDB-1..5; no gap. REFEREE-2 discloses that, after
   its verdicts and notes were written, a repository grep printed two lines reporting REFEREE's verdict (LEAD-STATE, RESULTS R43); it changed
-  nothing after that and did not open docs/referee/. §C (both): REFEREE-SC-SUMMARY-PENDING.
+  nothing after that and did not open docs/referee/. §C (REFEREE): verdicts identical; joint gap map empty;
+  NEEDB-N2 = N-NEEDB-2; N-NEEDB-1 = REFEREE's IN-DATA line; N-NEEDB-3 accepted; N-NEEDB-5 confirmed; N-NEEDB-4 accepted as REFEREE-2's
+  data but NOT reproduced by REFEREE (the saved start pair of witness_xg_12004 is not a strategy pair of that game).
+  §C (REFEREE-2): R2SC-PENDING.
 - TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
