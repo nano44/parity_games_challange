@@ -81,7 +81,7 @@ Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2
   RL → R37 at CHECKER.
 - Packet P-N5-ENT docs/si/P-N5-ENT-box11.md (4fd22be7). No (P): FZ, BF, RB, WALK, CYC-EV, TEV-FB. CONDITIONAL on (P) via EV+ only:
   ENT-X, NJB-A, D1 (D_M ≤ 1), PL-S″ (≤ 2·n·n_E fallbacks of level ≥ 0 per scope run). With P1 landed, the condition goes once ENT is
-  signed. Status when I left: routed by the Lead? (I did not see a referee report on it.)
+  signed. Status when I left: with REFEREE-2 9 (Lead 13:54Z); no report seen yet.
 - docs/si/N5-STR-box11.md (c7b9c671), N5-STR2-box11.md (b6ed9476): straddle obstruction (NL's (K*) at r = L), CONJECTURE NL= (0 failures
   in 743 steps), reading NJB ⇐ (P) ∧ NL=, and an NL= kill shape (passed to L-RED 16 by the Lead). Off the critical path (Lead agrees).
 - docs/si/N5-LV-box11.md (407c5520), N5-LV2-box11.md (94ac2469); packet P-N5-LV docs/si/P-N5-LV-box11.md (d0d797f0): LV-SHAPE;
@@ -105,7 +105,18 @@ Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2
   - `git log -- <path>` takes > 120 s here;
   - several Lead messages crossed with my files: always check whether a sha1 was already sent before deciding "same file or new
     file".
-### NEXT (for a successor)
+### Update 14:01Z (date -u)
+- P-N5-LV (d0d797f0) PINNED at trunk 601df6e, queued for both referees after P-N5-NEB. Its addendum
+  docs/si/P-N5-LV-addendum-box11.md (a15a8871, l-si 84974fe) holds the NL= material as not to sign. The (β) bound is already in packet §4.
+- R36 (P-N5-P1) LANDED at 601df6e (CHECKER C45 PASS). (P) is discharged for one-player games. So P-N5-ENT's conditions go away once ENT
+  and P-N5-RL (R37) land.
+- Trap (mine): the P-N5-LV header stamp "~14:00Z" was ahead of date -u (13:48Z). Stamp headers with `date -u` at writing time, never with
+  an estimate.
+### NEXT (for a successor; Lead's queue 13:54Z)
+1. docs/si/P-N5-ENT-fixes-box11.md (NEW) when REFEREE-2 9 reports on P-N5-ENT (4fd22be7). P-N5-LV fixes (NEW file) when referee items
+   arrive.
+2. Research: REL(S) at level −1 (a length analogue of ENT-SHAPE), the u* = none THR fallbacks, and NJB / ENT (straddle; NL=).
+(older numbering below kept for context)
 1. Referee items on P-N5-ENT / P-N5-LV → NEW fixes files.
 2. Level −1: (a) u* = none THR fallbacks (r = −1; NL at L = −1 unavailable); (b) a length-based ENT-SHAPE to drop REL(S) at level −1;
    (c) or kill "THR ⇒ M ≥ 0" via a (β)-fallback (P-N5-LV §1/§5).
