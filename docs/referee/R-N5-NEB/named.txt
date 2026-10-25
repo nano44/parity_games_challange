@@ -1,0 +1,41 @@
+BAND_gate_strict_later         4
+BAND_gate_viol_later           4
+BAND_rise_viol                 4
+BAND_runs                      2
+CASEB_gates                    12
+CHAIN_chk                      6
+HIGH_chk                       3
+HNfb_states                    18
+LOWR_c_events                  2
+LOWR_runs                      8
+LOWR_steps                     14
+NOENT_RRgates_present          50
+NOENT_runs                     4
+NOENT_runs_tauo!=o             4
+NOENT_states                   21
+OUT1_XHN_total                 9
+OUT1_fHN_total                 8
+OUT1_phases                    7
+RISE_events                    7
+RISE_gates                     8
+breaks                         6
+breaks_A!=                     2
+breaks_B!=                     2
+breaks_B=                      2
+breaks_charged_low             2
+breaks_charged_rise            4
+fbclass_A_cw!=o_tauo!=o        2
+fbclass_A_cw=o_tauo!=o         4
+fbclass_B_cw!=o_tauo!=o        4
+fbclass_B_cw=o_tauo=o          8
+games                          6
+stretches                      11
+FAILS 0
+EX ('experiments/new/box38/instances/tauw_A_cex_n24.pg', 'BANDrise', 4, 12, 11)
+EX ('experiments/new/box38/instances/tauw_A_cex_n24.pg', 'BANDrise', 4, 12, 16)
+EX ('experiments/new/box38/instances/tauw_A_cex_n24.pg', 'BANDgate', 4, 13, 3, 11, 23, 21)
+EX ('experiments/new/box38/instances/tauw_A_cex_n24.pg', 'BANDgate', 4, 13, 7, 16, 23, 21)
+EX ('experiments/new/box38/instances/tauw_A_cex_n24.pg', 'BANDrise', 10, 12, 11)
+EX ('experiments/new/box38/instances/tauw_A_cex_n24.pg', 'BANDrise', 10, 12, 16)
+EX ('experiments/new/box38/instances/tauw_A_cex_n24.pg', 'BANDgate', 10, 13, 3, 11, 23, 21)
+EX ('experiments/new/box38/instances/tauw_A_cex_n24.pg', 'BANDgate', 10, 13, 7, 16, 23, 21)

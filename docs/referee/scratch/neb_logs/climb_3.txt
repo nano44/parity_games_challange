@@ -1,0 +1,10 @@
+CHAIN_chk                  582582
+HIGH_chk                   17
+RISE_events                420323
+best_score                 28
+breaks                     408624
+breaks_A!=                 2
+breaks_B!=                 408622
+iters                      272014
+FAILS 0
+exit 0
