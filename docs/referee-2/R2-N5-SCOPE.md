@@ -177,3 +177,35 @@ Eight climbs of 1,200 s (run_climbs.sh; 4 starts per evaluation, starts 2-3 with
 - N-SC-3: FB-INT. Cite "the proof of R28 (c) (ii)" for the pointwise fact (the packet already re-derives it).
 - N-SC-4: NH1-FB. T is the count here and the bound in P-N5-TOG §4. Name them differently.
 - O-1: §7.2. Add "+ X_out" to f_out; the evicting fallbacks are crossings.
+
+## §C. Comparison with REFEREE's R-N5-SCOPE (written 2026-10-25 12:2xZ by date -u, after my report 6d6e4bcf was pushed)
+Read: docs/referee/R-N5-SCOPE.md at trunk (fb6089bf + 560ff4c4, REFEREE successor 7). Nothing else in docs/referee/ was read.
+- Verdicts: identical. All six statements SIGNED by both (Opus 5.5, D15), with no gaps; §7 not signed by either. No verdict differs.
+- Premises: both name RESTARTS / TOGGLE-COUNT (P-N5-TOG, landing as R34) and R-CONST (R33 (e)) as the only non-landed or newly landed
+  premises. Both confirm the header's citation correction (R-CONST = P-N5-L2 §5).
+- Proof readings agree point by point:
+  - KEY via Ed.evaluate(τ);
+  - WCH via (V1) at o, Lemma G (a) and F1°;
+  - SCOPE-COUNT's two injective cases;
+  - FB-INT's chain J1 → LP §4 step 3 → E_k ≤ M_k → OE;
+  - NH1-FB's run count;
+  - CN-LAST (i)-(iii).
+  REFEREE §5's remark "several runs in one crossing-free stretch are only over-counted" is the same reading as my §5.
+- Items only in my report (notes, not verdicts; REFEREE neither raises nor contradicts them):
+  - N-SC-1: the dependency status is stale (R33 was landed when the packet was written).
+  - N-SC-2: WCH's proof gives Ξ(τ(o)) changes at EVERY such transition, crossings included.
+  - N-SC-3: FB-INT's "non-tame ⇒ crossing" is the content of R28 (c)(ii)'s proof, not its signed statement.
+  - N-SC-4: "T" is the count here and the bound in P-N5-TOG §4.
+  - O-1: §7.2's f_out bound needs "+ X_out", because evicting fallbacks are crossings outside every FB-INT stretch.
+  - The Lead has routed all five to L-NEW successor 17 (12:08Z).
+- Items only in REFEREE's report: §0's line-by-line check of the five "(filled in)" steps. I checked the same steps inside my §2-§6 and
+  agree.
+- DATA (different N5 implementations, so the counts are not comparable one-to-one):
+  - REFEREE traces = n5.run (SPEC); mine = my own N5 with any arena optimum.
+  - CN-LAST's τ-change branch: REFEREE 2 / 1,422, mine 5 / 317 (batch) and 401,570 / 555,510 (FIT cnl climbs). Both see it.
+  - Non-cycle-node level −1 controls: REFEREE 1 (oc12_s1), mine 59, 49 of them on general games.
+  - Max fallbacks per crossing-free stretch: REFEREE 1 (climbs aimed at scope runs, NH1 and WCH), mine 1 batch / 4 climbs (FIT fb).
+    Both are far below n_E(2n − 1).
+  - Max WCH per phase: both 20 (sc24).
+  - Oink: REFEREE names its Oink re-runs as skipped. I ran mine (552 / 552 𝒞^1O, 574 / 574 general, 16 / 16 climb bests).
+- Joint gap map: empty. Joint note list for L-NEW: N-SC-1..4 and O-1 (mine); REFEREE adds none.
