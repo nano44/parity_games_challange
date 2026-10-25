@@ -1,0 +1,9 @@
+MIR_A_chk                            46
+MOFC_chk                             129
+PHIK_chk                             300
+games                                300
+max_len                              5
+runs                                 300
+runs_with_two_sided                  0
+two_sided_fb                         0
+FAILS 0
