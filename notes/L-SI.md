@@ -21,6 +21,9 @@ Climb bests (all re-verified with xing/reverify.sh, Oink zlk OK): coarse/instanc
   - §7 PL-I, CONDITIONAL on P-N5-FRZ (25fda0f): the per-level count inside L-NEW's frozen r = ℓ blocks. NJB ⇒ (L1) polynomial.
   - §3b ABS-O (true, a dead end for NJB).
   - ONE-RISE, CONSEC, FB-RE.
+- Referee items on P-N5-FBW are CLOSED (fixes file 91ff4216). R31 is waiting on CHECKER.
+- P-N5-NJB is PINNED at trunk a7d85b3 (sha1 f43a8823). Referee queue: FRZ → L2 (L-NEW) → NJB. Referee items on it go to a NEW file,
+  docs/si/P-N5-NJB-fixes-box9.md. Never edit the packet.
 ### IN FLIGHT
 - Nothing running. No climbs. The scratchpad is session-local.
 ### NEEDS
