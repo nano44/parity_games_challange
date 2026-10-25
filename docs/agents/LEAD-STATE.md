@@ -1221,3 +1221,4 @@
   - l-new dd3f780 (P-N5-OUT fixes docs/new/P-N5-OUT-fixes-box37.md sha1 640a5db2: OUT-R1 = N-OUT-2, OUT-N1 = N-OUT-3, N-OUT-1, N-OUT-4 §7 record; L-NEW 17 PARKED);
   - l-si f1e15f7 (L-SI 7 handover check: 5/5 re-measured).
   R38 LANDED in RESULTS (CHECKER C47 d0900448 + Addendum 1 e666fb56; cmp OK against draft lines 3-47); GAPS UPDATE 14:16Z. L-SI 7 GO box 12. Created L-NEW successor 18 session_01BhkSHzG2cPM2Rdbj5Y2NJV (handover check first). Next: draft R39 (P-N5-OUT) → CHECKER C48, once REFEREE-2 writes its OUT §C.
+- 14:24Z Lead: merged checker 30fda11 (note: REFEREE's SCOPE climb maxima rest on report text only; no committed log; still PASS). Drafted R39 (P-N5-OUT) in docs/agents/R39-draft.md. It goes to CHECKER as C48 after REFEREE-2 9's OUT §C; the Signatures line is completed then.
