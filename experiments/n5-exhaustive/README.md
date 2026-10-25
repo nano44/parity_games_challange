@@ -237,6 +237,7 @@ lane data quantities (J, K, S_o, E, K_W); 0 violations is evidence, not proof.
 | n 4 all starts | 7,340,032 | 0 | 2 | 4 / 0 / 0 / 0 / 0 | 848 / 0 / 145,098, 832 | 0 | 1 | 2 |
 | n 5 subset quarter 1 (index = 0 mod 4) | 17,193,152 | 0 | 1 | none | 4 / 0 / 308,550, 10,240 | 0 | 1 | 2 |
 | n 5 subset quarter 2 (index = 1 mod 4) | 17,191,424 | 0 | 1 | 0 / 4 / 0 / 0 / 0 | 6 / 0 / 365,930, 13,902 | 0 | 1 | 2 |
+| n 5 subset quarter 3 (index = 2 mod 4) | 17,189,248 | 0 | 1 | none | 6 / 0 / 308,472, 10,210 | 0 | 1 | 2 |
 Readings (DATA): CASC is vacuous through n 5 (no R-switch inside a W-flat run); J <= 1, K = 0, S_o <= 2, E <= 1, K_W <= 2 at n 4 and on n 5 quarter 1 (S_o <= 1 there).
 
 ## Box 8 (Lead GO 04:56Z / order 05:18Z, D18): R28 (OE, OX), R29 (CLS), R30 in landing (SN + fixes §2b) on the exact small-n classes
