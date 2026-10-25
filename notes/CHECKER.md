@@ -61,7 +61,7 @@
   oc12_s1 10/1 (k 6, M −1, ¬H1, gates 0→7, 7→8); REFEREE scope_probe lib @fb6089b = §8 exactly; REFEREE-2 6 logs IDENTICAL.
   Worktree wtS47 = fb6089b. Next: Add. 1 on the Lead's revision; landed checks R36, R37, R38.
 - 14:07Z: C45 Add. 1: R36 landed verbatim at 601df6ed, C45 CLOSED. C46 Add. 1: R37 landed verbatim at da5bac3a (after R36), C46 CLOSED.
-  Open: C47 (R38) FAIL E-1, waiting for the Lead's revision.
+  C47 Add. 1 14:12Z: PASS at fa7d1231 (773af264; E-1 fixed, N-2, N-3 applied). Next: R38 landed-text check.
 - Worktree wt45 = fb1dfb9 (scratchpad), tools/oink/build symlinked. Scratch tools46/run1.sh = n5 + check_sol2 + odd-choice count.
 - Queue (Lead 13:48Z brief stamp): C45 = R36 (P-N5-P1), C46 = R37 (P-N5-RL), C47 = R38 (P-N5-SCOPE): draft docs/agents/R38-draft.md @ trunk 314d220,
   sha1 f3b27c34…; packet docs/new/P-N5-SCOPE-box36.md c3f5ed37 (l-new 8483279, pin 8998ee6); fixes e2550755 (l-new eb5477a);
