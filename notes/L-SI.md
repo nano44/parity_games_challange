@@ -12,6 +12,9 @@ file when REFEREE-2 9's R2-N5-ENT SHA is relayed (priority); (1) level −1: (c)
   last Even fallback), Corollary EV-G (FREE-FREEZE + STALE-GATE), Theorem ENT-X_{−1} and Corollary LV-PL′ (≤ n·n_E + 1 THR fallbacks
   with M = −1, r ≥ 0 per scope run; no REL, no d_o), CONDITIONAL on P-N5-LV §1-§4 (in review). STALE-GATE replaces ENT-SHAPE (4)'s bit.
   DATA: STALE-GATE 72,589 checks, EV-G 39,406, 0 failures (experiments/si/lv/stale.py).
+- (a) done as a lane write-up: docs/si/N5-LV5-box12.md. PROVED: Lemma SAND (COARSE_{−1}(θ) frozen once r = −1), FLAT-ALL_{−1}^{none}
+  (LV-SHAPE + H1 at k+1 replace FBL), Theorem LV-NONE (≤ n·n_E + 1 u* = none fallbacks per scope run), Corollary SCOPE-FB (≤ 4·n·n_E + 3
+  fallbacks per scope run; CONDITIONAL on P-N5-ENT PL-S″, P-N5-LV, N5-LV4).
 - Things only I know (box 12): random 𝒞^1O games (n ≤ 18) give NO in-scope THR fallback; only the corpus instances do. A THR fallback
   needs (o, x0) ∉ Iτ, i.e. Even's best reply to τ from x0 is at least as good as from t (R37 BL Step 0/1). That is the lever: ANTI-Ξ
   turns "Even's best reply avoids (β) gates" into "U(x0) ⊴ Ξ(x0)", against THR.
