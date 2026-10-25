@@ -1,4 +1,4 @@
-# Draft RESULTS R26 (Lead, 2026-10-25 00:1xZ by date -u) (rev. 00:34Z: fixes file cited) — awaits CHECKER C35; lands in "## Results" after R25, before "## Dead ends"
+# Draft RESULTS R26 (Lead, 2026-10-25 00:1xZ by date -u) (rev. 00:34Z: fixes file cited) — LANDED in RESULTS Results 00:48Z (CHECKER C35 3653d4a PASS), after R25
 
 ### R26 [refereed-only] N5 on one-Odd-choice games: W-flat runs outside route form are short (CASC-U2 for U2 stretches; CASC-U3 for U3 and U23 stretches, between events), with counting corollaries given fallbacks, W-changes and events (2026-10-25) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C35.md, checker PENDING)
 - Object (packet P-N5-U23, pinned trunk 7666336, unchanged during review): docs/new/P-N5-U23-box31.md, sha1
