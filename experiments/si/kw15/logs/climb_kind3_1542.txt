@@ -1,0 +1,28 @@
+climb FIT=kind3 seed=1542 n=32 iterations=66419 improvements=5 best_fitness=12
+BEST counters: {'AGREE states': 18, 'FRZ state checks': 3, 'cw>cth notH2 runs (any length)': 1, 'post-freeze runs': 2, 'runs': 3, 'runs cth>=cw H2 H1': 2, 'runs cw>cth notH2 notH1': 1, 'runs shorter than freeze': 1, 'traces': 3, 'transitions': 23}
+BEST maxima: {'max post-freeze length': 2, 'max kappa-freeze delay (t - k0)': 0, 'max kappa-freeze delay / (|Rbar|-1)': 0, 'max Xi-changes on R / run': 12, 'max W-changes on R / run': 11, 'max run length': 12, 'max cw>cth notH2 run length': 12}
+TOTAL AGREE states                              667880
+TOTAL FRZ state checks                          61450
+TOTAL Xi-flat S4a transitions                   539
+TOTAL climb evaluations                         66221
+TOTAL cw>cth notH2 runs (any length)            43562
+TOTAL post-freeze runs                          60697
+TOTAL runs                                      180481
+TOTAL runs cth>=cw H2 H1                        73409
+TOTAL runs cth>=cw H2 notH1                     14
+TOTAL runs cth>=cw notH2 notH1                  61125
+TOTAL runs cw>cth H2 H1                         4
+TOTAL runs cw>cth H2 notH1                      2366
+TOTAL runs cw>cth notH2 H1                      11
+TOTAL runs cw>cth notH2 notH1                   43552
+TOTAL runs shorter than freeze                  119784
+TOTAL traces                                    198663
+TOTAL transitions                               1048128
+TOTALMAX max W-changes on R / run               12
+TOTALMAX max Xi-changes on R / run              12
+TOTALMAX max cw>cth notH2 run length            12
+TOTALMAX max kappa-freeze delay (t - k0)        0
+TOTALMAX max kappa-freeze delay / (|Rbar|-1)    0
+TOTALMAX max post-freeze length                 8
+TOTALMAX max run length                         12
+KWCLIMB PASS

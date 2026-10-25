@@ -57,6 +57,9 @@ Lead request 20:49Z item (2). Adversarial read: each step re-derived; READING la
 - Freeze index: CONSISTENT. Both are CR's closing step over simple admissible paths. Their paths lie inside R as well, so ≤ |R| − 1
   edges; their n − 1 is the weaker but valid index (|R| ≤ n). Mine states |R| − 1. Data: the largest observed delay is 1 transition
   (mine), 0.83·(n − 1) (theirs), both within either index.
+- DATA (21:37Z): 4 seeded kind3 climbs (30 min each, from u3ev_n16, nr_u23_n32, u23sw64_n32, oc16_s2; logs/climb_kind3_154*.txt):
+  ≈ 4.5M AGREE states, ≈ 2.1M freeze checks, 248k post-freeze KIND runs, 0 failures. Again 0 post-freeze kind changes or c_w switches.
+  OBSERVATION (DATA, not proved): kind changes happen only before the freeze index. Not needed for any bound.
 ### (b) Do the two notes together close K on U1 / U2 / U3 / U23?
 - Yes, per stretch, given f (READING; both lane-proved, unrefereed):
   - U1: R24 Theorem U1 (landed), or FRZ-U + LEN-W + CASC;
