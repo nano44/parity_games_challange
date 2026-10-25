@@ -88,3 +88,32 @@ Not a claim of TARGET.md §2. These are lemmas about N5 on 𝒞^1O inside scope 
 G-N5-TIME stays OPEN". PL-S″ bounds fallbacks of level ≥ 0 per scope run only.
 
 Signed: REFEREE (successor 8) (Opus 5.5, D15).
+
+## §C. Comparison with REFEREE-2 (written 2026-10-25 14:33Z by date -u; REFEREE successor 8 (Opus 5.5, D15))
+- Compared against: the FINAL docs/referee-2/R2-N5-ENT.md at referee-2 b7df84b8 (trunk d39644c), named by the Lead at 14:33Z (Lead's
+  stamp). I read it after this report (55a3f6fb) was pushed.
+- Verdicts: identical.
+  - Both referees sign FZ, BF, RB, WALK (a)-(c), CYC-EV and TEV-FB, without (P). R2 also signs the §0 facts (Σ1)-(Σ6); I checked them
+    in my §1.
+  - Both sign ENT-X, NJB-A, D1 and PL-S″ CONDITIONAL ON (P), with (P) entering only through EV+.
+  - Neither signs §6.
+- Joint gap map: empty. R2's notes:
+
+| R2 note | what it says | checked | this lane | joint status |
+| --- | --- | --- | --- | --- |
+| N-ENT-1 | ENT's CYC-EV has the RL-fixes conclusion under a weaker hypothesis, (Σ) + rise without M_k = L; its proof uses only M_k ≤ L (CLS2), so ENT's form implies RL's | correct. My R-N5-RL A2 noted the same ("does not use M_k = L"), and so does the packet's §3 setting line | same reading | ACCEPTED (note) |
+| N-ENT-2 | §7's "vacuous everywhere" is too strong: NJB-A's hypothesis (an interval with r > M throughout) occurs, 698 / 601 / 701 times, all clean | correct. A (Σ) pair is exactly NJB-A's hypothesis. My own data has 262 + 377 + 15 such pairs, all clean (0 rises). D1 and PL-S″ concern every block, so they are non-vacuous as statements too. Only CYC-EV, TEV-FB and ENT-X (which need a rise) are vacuous | MISSED: my §4 repeated the lane's "§3-§5 have vacuous hypotheses". Corrected here: vacuous only for CYC-EV, TEV-FB and ENT-X; NJB-A's conclusion is exercised (clean) at 654 pairs | ACCEPTED (wording, packet §7 and my §4) |
+| N-ENT-3 | §0's status of the RL report is stale | packet §0: "REFEREE-2's report is pending". RL has since converged (R2 30dc5f54, §C 88571b0) and landed as R37 | not flagged | ACCEPTED (note) |
+
+- Fixes-file lines (L-SI, P-N5-ENT; none blocks a signature):
+  - N-ENT-1: §3, note that CYC-EV and TEV-FB need only M_k ≤ L, so they imply the RL-fixes form.
+  - N-ENT-2: §7 thin spot: "vacuous" → "vacuous for CYC-EV, TEV-FB, ENT-X; NJB-A / D1 hypotheses occur (all clean)".
+  - N-ENT-3: §0: P-N5-RL status → RESULTS R37.
+- R36 lifts the (P) condition: yes.
+  - ENT-X, NJB-A, D1 and PL-S″ use (P) only through EV+ (R37). EV+ uses it only through FREE-FREEZE ⇐ BL (c), i.e. (P) on the one-player
+    game G_τ[F_k].
+  - R36 (d) states P1 exactly for G[X], G_τ and G_τ[F_k].
+  - So with R36 and R37 landed, all four are PROVED without condition, as R37 recorded for EV, EV+ and TEV-RED′.
+  - This adds no running-time bound: G-N5-TIME stays open (level −1 fallbacks; the straddling interval of NJB).
+- Joint state: P-N5-ENT §1-§5 is signed by both referees (Opus 5.5, D15), pending CHECKER. Its labels are PROVED (§1-§3), and PROVED
+  after R36 (§4-§5).
