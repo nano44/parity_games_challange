@@ -92,5 +92,6 @@ Proof.
   - 41,484 non-optimal strategies all have an improving edge.
   - The other 761 are optimal strategies that still have an improving edge: the own-cycle-node length-only case of FBW Step 2 /
     CN-LAST, which P1 does not need.
-- Seed 5102 (n 8-12): logs/p1check_5102.txt.
+- Seed 5102: 1,500 games, n 8-12, 90,705 strategies (games with more than 4,000 strategies skipped). 1,930 have no improving edge,
+  and every one is optimal: 0 violations.
 - Independent data: R-N5-1P §6 (REFEREE): 7,945 games with n ≤ 6, 8,813 improvement-free strategies, 0 failures. R18: REFEREE-2, 2,283.
