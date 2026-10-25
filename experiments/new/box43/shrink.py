@@ -2,7 +2,7 @@
 """Box 43 greedy shrink of a C^kO game keeping a property of the N5 run from the best-reward start (or the given .start):
   TX   T > sum_i (deg(o_i) - 1)   (tau changes exceed the per-vertex C^1O count, Corollary Phi-1O (a) summed over Odd choice vertices)
   RET  some tau(o_i) returns to an earlier value; RETN: the same by a switch with o_i not its own lambda^U cycle node
-  TJ>=m  at least m tau-changing transitions inside one joint lambda-run
+  TJ>=m  at least m tau-changing transitions inside one joint lambda-run;  P>=m  a phase with at least m transitions
 Moves: delete a vertex (its in-edges dropped; a vertex left without successors gets a self-loop), delete an edge, lower a priority.
 Usage: shrink.py in.pg out.pg PROP [m]"""
 import sys, os
@@ -21,6 +21,7 @@ def prop(g, P, m):
     if P == "RET": return returns(g, states) > 0
     if P == "RETN": return returns_n(g, states, lamU) > 0
     if P == "TJ": return M["TJ"] >= m
+    if P == "P": return M["maxP"] >= m
 
 def cands(g):
     n = g.n

@@ -13,3 +13,10 @@ All outputs are DATA. Engine: box21/n5x.py step (= SPEC S1-S5; n5x.trace(check=T
   5 -> {5,6}); Even cuts it in the same iteration (4 -> 4).
 - instances/tx2_n8.pg (sha1 c0f7b214e4e50720ea2d3082b181959f4aaa9f86): C^2O, Odd choice vertices 1 and 3 (out-degree 2). n5.py: iterations=3
   fallback=0. tau = (3,2) -> (0,2) -> (0,1) -> (3,1): all 4 joint strategies, T = 3 > sum (deg - 1) = 2. Even idle after step 1.
+- instances/retf_n6.pg (sha1 8b936bfbc78d3d16ab17ed7bfedf1f7db05da73d): FRONTIER (Even choice 4, 5; Odd choice 0, 1). n5.py: iterations=3
+  fallback=0. tau(0): 2 -> 1 -> 5 -> 1 (non-own-cycle-node return). Smallest frontier return found (exhaustive n 4: none).
+- mirror.py (Lemma DUAL check), dualsym.py, dblfb.py (two-sided fallbacks), dset.py (disagreement set D_k per phase).
+  Runs (2026-10-25 ~22:15Z): mirror.py --list ../box41/lib41.txt: 412 runs, 15 with two-sided fallbacks, 0 violations;
+  mirror.py --rand 3000 4 14 11: 0 violations. dblfb.py --list lib41: 781 fallbacks, 54 two-sided (15 runs).
+  dset.py --list lib41: 1O maxD 1, D-changes/phase 10; frontier (135 runs) maxD 106, D-changes/phase 5.
+- results/: exh2 tables (n 3 canonical / all starts, n 4 canonical (+ RETN), n 4 frontier).

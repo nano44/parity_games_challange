@@ -8,6 +8,7 @@ Per run, measures (all DATA):
   dtau            distinct tau's on the run (R15 (c),(d) on G^d: no tau repeats, so dtau = T + 1)
   TJ              max tau-changing transitions inside one joint lambda-run
   P, maxP, maxF   phases ((lambda, tau) constant), longest phase (transitions inside it), max fallbacks inside one phase
+  TS, SS          longest run of consecutive transitions changing tau only (sigma unchanged) / sigma only (tau unchanged)
   prodeg          prod over Odd choice vertices of deg(o_i)  (bound dtau <= prodeg)
 Usage: multi.py file.pg [file.pg ...] [--check]     multi.py --rand COUNT NLO NHI K SEED [--forced F]"""
 import sys, os, random
@@ -46,6 +47,12 @@ def measure(g, states, lam, lamU, fbs):
         if lam[i] != lam[i + 1] or tch[i]: P += 1; plen = 0; pf = 0
         else: plen += 1; pf += fbs[i]
         maxP = max(maxP, plen); maxF = max(maxF, pf)
+    TS = SS = cs = ct = 0
+    for i in range(K):
+        sch = states[i][0] != states[i + 1][0]
+        ct = ct + 1 if (tch[i] and not sch) else 0; cs = cs + 1 if (sch and not tch[i]) else 0
+        TS = max(TS, ct); SS = max(SS, cs)
+    m.update(TS=TS, SS=SS)
     p = 1
     for o in O: p *= len(g.succ[o])
     m.update(J=J, TJ=TJ, P=P, maxP=maxP, maxF=maxF, prodeg=p)
@@ -66,7 +73,7 @@ def rand_ckO(rng, lo, hi, k, forced=0.15):
         if len(succ[v]) < 2: return None
     return pg.Game([rng.randrange(n + 3) for _ in range(n)], owner, succ)
 
-def fmt(m): return " ".join(f"{a}={m[a]}" for a in ("n", "k", "it", "fb", "J", "T", "Tv", "TJ", "P", "maxP", "maxF", "prodeg"))
+def fmt(m): return " ".join(f"{a}={m[a]}" for a in ("n", "k", "it", "fb", "J", "T", "Tv", "TJ", "TS", "SS", "P", "maxP", "maxF", "prodeg"))
 
 if __name__ == "__main__":
     a = sys.argv[1:]
@@ -78,7 +85,7 @@ if __name__ == "__main__":
             g = rand_ckO(rng, lo, hi, k, forced)
             if g is None: continue
             m = measure(g, *run(g))
-            for key in ("it", "T", "TJ", "maxP", "maxF"):
+            for key in ("it", "T", "TJ", "TS", "SS", "maxP", "maxF"):
                 if key not in best or m[key] > best[key][0]: best[key] = (m[key], fmt(m))
         for key, (v, s) in best.items(): print(f"max {key} = {v}: {s}")
     else:
