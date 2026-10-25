@@ -8,6 +8,10 @@ file when REFEREE-2 9's R2-N5-ENT SHA is relayed (priority); (1) level −1: (c)
 - (c) done as a lane write-up: docs/si/N5-LV3-box12.md. PROVED: Lemma XG, Lemma ANTI (via R36 P1), Corollary NEED-β (cases B, A1, A2′,
   A2″). OPEN: case A2*; "THR ⇒ M ≥ 0" stays CONJECTURE. DATA: 3,936 in-scope THR fallbacks (run + perturbed start pairs), all M ≥ 0.
   Scripts experiments/si/lv/ (betasearch.py, xg.py, probe.py, hand9.py), logs experiments/si/lv/logs/.
+- (b) done as a lane write-up: docs/si/N5-LV4-box12.md. PROVED: Lemma STALE-GATE (every game: a gate's target changed its Ξ since the
+  last Even fallback), Corollary EV-G (FREE-FREEZE + STALE-GATE), Theorem ENT-X_{−1} and Corollary LV-PL′ (≤ n·n_E + 1 THR fallbacks
+  with M = −1, r ≥ 0 per scope run; no REL, no d_o), CONDITIONAL on P-N5-LV §1-§4 (in review). STALE-GATE replaces ENT-SHAPE (4)'s bit.
+  DATA: STALE-GATE 72,589 checks, EV-G 39,406, 0 failures (experiments/si/lv/stale.py).
 - Things only I know (box 12): random 𝒞^1O games (n ≤ 18) give NO in-scope THR fallback; only the corpus instances do. A THR fallback
   needs (o, x0) ∉ Iτ, i.e. Even's best reply to τ from x0 is at least as good as from t (R37 BL Step 0/1). That is the lever: ANTI-Ξ
   turns "Even's best reply avoids (β) gates" into "U(x0) ⊴ Ξ(x0)", against THR.
