@@ -49,7 +49,7 @@
 - Honest limits: (i) SUBCLASS 𝒞^1O, inside a phase; Corollary PHASE is conditional on f. (ii) Thin data: KIND-MONO is VACUOUS after the
   freeze in all data (REFEREE: 0 post-freeze kind changes in 2.46 M post-freeze U3 / U23 transitions; L-RED R73; both lanes); W-ONCE has 2
   checks on REFEREE's engine; CASC-B's hypothesis is exercised on REFEREE's engine (Addendum 1, cascb_witness.pg, within its bound) and 10 times in
-  REFEREE-2's climbs (its bound reached with slack 0), never in L-RED's R73 data (being re-checked); the c_w-odd branches are empty by PAR. (iii) FRZ-U's index |R| − 1 and CW-INT's deg(c_w) − 1 are attained in
+  REFEREE-2's climbs (its bound reached with slack 0), and once in L-RED's R73 §7 random runs (l-red db07e8e4, slack −2, not pinned); the c_w-odd branches are empty by PAR. (iii) FRZ-U's index |R| − 1 and CW-INT's deg(c_w) − 1 are attained in
   data (L-RED R73: frzu_tight_n14, cw11_n24).
 - Data (DATA, not proof; one Odd choice vertex asserted on every game): REFEREE (own kw_probe.py, kw_climb.py on rl_engine): library 253
   games × 4 starts and climbs (2.24 M evaluations): Corollary PHASE inequalities 2.77 M phases, H-PATH 21.9 M vertex-states, PAR 5.1 M

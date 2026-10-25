@@ -1532,3 +1532,4 @@
   - Routed: REFEREE-2 (§C NEEDB first, then KW, then handover if > ~470k); L-RED (re-run REFEREE's cascb_witness.pg on kw18; R73 discrepancy); L-COMP (status nudge).
   - R49 draft updated for Addendum A.
 - 23:28Z: Merged referee-2 8a47fd92 (R2-N5-KW: all SIGN, no gap, N-KW-1..6) and l-com de0ca760 (Q4 78/160 alive). Asked both referees for §C KW, and REFEREE-2 also for §C NEEDB. Pre-drafted docs/agents/R50-draft.md (P-N5-KW + addendum; placeholders FIXES / RSC / R2SC / CSUM). PLAN: after R50 lands, a short assembly packet (𝒞^1O polynomial iteration bound from R47 + R48 + R50 + per-iteration bit cost), refereed like any packet.
+- 23:36Z: Merged l-red db07e8e4 (R73 §7: RUN ratio ≤ 0.0123 of Δr⁴; CASC-B regime reached once in random runs; post-freeze KIND-MONO still vacuous with long post-freeze runs; PAR 838k more states). R50 draft updated.
