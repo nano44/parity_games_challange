@@ -1,4 +1,4 @@
-# Draft RESULTS R41 (Lead, 2026-10-25 16:56Z by date -u) — to CHECKER C50
+# Draft RESULTS R41 (Lead, 2026-10-25 16:56Z by date -u) (rev. 17:13Z: C50 E-1, N-1) — to CHECKER C50
 
 ### R41 [refereed-only] N5 on one-Odd-choice games: in-scope THR fallbacks of level −1 have three gate shapes (LV-SHAPE), a fallback without an R → F gate ends its phase (LV-CN, LV-COUNT), and those with r ≥ 0 number at most n·n_E·(d_o + REL(S)) per scope run (FLAT-ALL_{−1}, STRETCH_{−1}, PL_{−1}, LV-PL) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C50.md, checker PENDING)
 - Object (packet P-N5-LV, added at l-si b7f18fe, pinned trunk 601df6e, unchanged during review): docs/si/P-N5-LV-box11.md, sha1
@@ -10,7 +10,7 @@
   b_k(y); θ, w, r; R̄ / R / F; routes π; (h); THR; u*; c, the common cycle node of θ and w; x0 := σ̄_k(o)). SETTING (LV): k is an
   in-scope S4c fallback, THR at k, and M_k = −1 (so every gate at k has level −1). The LEVEL −1 BLOCK of S is the set of its fallbacks
   f_1 < … < f_N with M = −1 and r ≥ 0; D_{−1}, REL_{−1} as in R31 PL and R35 at level −1.
-- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P):
+- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P) (the packet labels §1 "(no (P))"; for §2-§4 this holds by its §0 dependency list):
   (a) Proposition LV-SHAPE: in setting (LV), for a gate (y, z) with s := σ_k(y), exactly one of: (α) s, z ∈ F_k and y is its own Ξ- and
       W-cycle node; (γ) s ∈ F_k, z ∈ R̄_k, r_k = −1, y = c and P(W_k z) = ∅; (β) y ∈ R_k, z ∈ F_k, rank o < rank c,
       π^k_s ∩ V_{>c} = ∅ and P(Ξ_k z) = P(θ_k), and if r_k ≥ 0 also W_k(s) ▷ W_k(z) at level r_k. The case s, z ∈ R̄_k does not occur.
@@ -20,7 +20,8 @@
       CN-LAST is RESULTS R38 (f), with exactly LV-CN's hypotheses (LV-N1; REFEREE's verdict, REFEREE-2's §C).
   (c) Lemma FLAT-ALL_{−1}: at a fallback k of a scope run with M_k = −1, r_k ≥ 0 and (h) at k and k + 1, R31 FLAT-ALL (i)-(iv) hold with
       M := −1. Part (i) uses FBL, the phase and H1 at k + 1 (R31 FBW-1), not H2 (N-LV-1, citation, both referees).
-  (d) Lemma STRETCH_{−1}: if COARSE_{−1}(Ξ_t v) is the same for all t ∈ [s, e] and every v, each Even y is a level −1 tail at most n
+  (d) Lemma STRETCH_{−1}: if [s, e] are consecutive states of a scope run S and COARSE_{−1}(Ξ_t v) is the same for all t ∈ [s, e] and
+      every v, each Even y is a level −1 tail at most n
       times among the fallbacks k of S with s ≤ k ≤ e and M_k = −1 (LV-N2 = N-LV-2: "k ≤ e", which PL_{−1} (a)'s last run needs; the
       packet's "k < e" is repaired; the bound n stays).
   (e) Theorem PL_{−1}: (a) N ≤ n·n_E·(1 + D_{−1}); (b) the first COARSE_{−1}(Ξ) change j of a dirty interval is an S4a step with
