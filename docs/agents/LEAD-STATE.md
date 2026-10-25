@@ -1526,3 +1526,8 @@
   - FRZ-U is self-contained (no transfer of R20 CR needed). CASC-B's use of R26 (c) is checked.
   - Addendum 1: CASC-B's hypothesis is exercised (cascb_witness.pg, within bound). KIND-MONO is still vacuous after the freeze.
   - Told L-RED to focus its constructions on a post-freeze kind change.
+- 23:21Z: Read 12 notifications. Hourly sweep (trigger 23:03Z): WATCHDOG 23:03Z reports no overage; CHECKER's 681k alert resolved by the handover; REFEREE-2 12 at 449k; L-COMP idle 63 min.
+  - Merged referee-2 1a9a0407 (Addendum A, XG witness fixed: rng-free, pinned σ*), checker abc914c2/4cad8cb1 (C58 prep: Oink built, landed.py, NEEDB re-runs IDENTICAL), l-new 85969a3b, referee, l-red, l-comp.
+  - L-NEW DATA: every exponential-SI family (Friedmann switchall/switchbest, tc, tc+, counter_*) is in the frontier class 𝒞^{≥2E,≥2O}; only counter_ortl (𝒞^1O) and counter_qpt (one-player) are covered. Route Δ climbs: TJ and D_k changes ≤ n so far; a size-scaling test is running.
+  - Routed: REFEREE-2 (§C NEEDB first, then KW, then handover if > ~470k); L-RED (re-run REFEREE's cascb_witness.pg on kw18; R73 discrepancy); L-COMP (status nudge).
+  - R49 draft updated for Addendum A.

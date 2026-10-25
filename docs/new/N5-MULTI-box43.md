@@ -144,6 +144,29 @@ Whether n 5 has a RETN or TX instance (n 5 is too large for exhaustive enumerati
 mechanisms seen (stale-σ simultaneity; Odd-internal improvement after Even stops) give one extra τ-change per instance; no
 composition of them into a family was found.
 
+### 3.5 Do 𝒞^1O ∪ 𝒞^1E contain the known hard families? NO (DATA, Lead's ask 23:02Z)
+experiments/new/box43/famcount.py (Oink 8fbf0a7 generators; PGSolver ports in experiments/hard-families/pgsolver_port.py), N = 2, 4, 8,
+results/famcount_N2_4_8.txt. Choice vertices (out-degree ≥ 2), Even / Odd:
+| family | N 2 | N 4 | N 8 | class |
+| --- | --- | --- | --- | --- |
+| tc | 6 / 7 | 25 / 26 | 99 / 100 | frontier |
+| tc+ | 6 / 6 | 40 / 40 | 288 / 288 | frontier |
+| counter_symsi | 9 / 9 | 17 / 17 | 33 / 33 | frontier |
+| counter_rr | 4 / 4 | 8 / 8 | 16 / 16 | frontier |
+| counter_dp | 2 / 3 | 4 / 5 | 8 / 9 | frontier |
+| counter_m | 3 / 3 | 6 / 6 | 12 / 12 | frontier |
+| counter_core | 4 / 5 | 8 / 9 | 16 / 17 | frontier |
+| counter_rob | 13 / 12 | 38 / 35 | 124 / 117 | frontier |
+| counter_ortl | 4 / 1 | 8 / 1 | 16 / 1 | 𝒞^1O |
+| counter_qpt | 1 / 0 | 3 / 0 | 7 / 0 | one-player (no Odd choice; N 2 is also 𝒞^1E) |
+| switchallexp (Friedmann, PGSolver port) | 22 / 2 | 40 / 4 | 76 / 8 | frontier (Odd choice = N) |
+| switchbestexp (Friedmann, PGSolver port) | 38 / 2 | 70 / 4 | 134 / 8 | frontier (Odd choice = N) |
+| recursiveladder | 4 / 5 | 9 / 10 | 19 / 20 | frontier |
+So only counter_ortl (𝒞^1O) and counter_qpt (one-player, R17) lie in 𝒞^1O ∪ 𝒞^1E. Every family on which classic strategy improvement
+is exponential in the fleet's bench (switchallexp, switchbestexp) and every other Oink counter family is frontier, with both choice
+counts growing in N. Friedmann's two families have exactly N Odd choice vertices, all of out-degree 2 (checked at N = 8): by Φ-kO their phase count is ≤ n(n − 1) + 2^N, so
+Φ-kO alone says nothing useful there. (N5 itself is linear on all of them: experiments/new/n5/per_family_summary.txt.)
+
 ## 4. Routes (item 3)
 ### 4.1 Route MIRROR (mine; PROVED as an implication, §1.3)
 Covers 𝒞^1O ∪ 𝒞^1E with one proof program. Cross-field reading (D18): the game-theoretic duality G ↔ G^d acts on N5 as an exact

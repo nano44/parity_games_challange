@@ -316,3 +316,15 @@ OUTp = docs/new/P-N5-OUT-box37.md; NEBp = docs/new/P-N5-NEB-box38.md.
 ## Counts (252 rows, R16 excluded; counted by awk on column 5)
 - All: V 49, V1P 7, I 10, S 12, F 46, FI 97, U 31.
 - RESULTS R15-R47 only: V 42, V1P 7, I 9, S 12, F 35, FI 80, U 31. Packets (FBP, FX, KW15, KW42, NH42): V 7, I 1, F 11, FI 17.
+
+## Roots on the dual side (Lead's ask 23:02Z; READING, L-NEW 22, 23:10Z by date -u)
+On 𝒞^1E, Lemma DUAL (P-N5-DUAL) turns the N5 run on G into the N5^OF run on G^d ∈ 𝒞^1O, whose one Odd choice vertex is e. All four
+roots are then HYPOTHESES THAT HOLD, not obstacles: in G's terms they read
+- HP′: Even's best reply τ̄ (to τ) equals σ off e (every Even vertex but e is forced);
+- RT′: one route terminal, e: U = π ⊕ θ′ and the (σ, τ)-value = π ⊕ w′ on the vertices whose play meets e (RT is Even's);
+- FO′: Even vertices other than e are forced;
+- TD′: σ is fixed by σ(e) (MIRROR (a): ≤ d_e − 1 σ-changes).
+So MIRROR avoids none of the four roots; it needs none of them to be removed. The only new obligation on the dual side is the tie
+rule: every 𝒞^1O item must hold for N5^OF, which MIRROR (c) reduces to "for N5, from any start pair" (P-N5-DUAL §2, to check).
+On the frontier 𝒞^{≥2E,≥2O} all four roots fail on BOTH sides (D_k for Odd, its mirror for Even).
+
