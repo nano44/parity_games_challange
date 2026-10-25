@@ -1,0 +1,20 @@
+F1o_intervals: 34
+SO_frozen_key_checks: 1
+SO_keymin_checks: 41
+SO_theta_fixed_transitions: 1
+TH_H1_cases: 8
+TH_notH1_cases: 0
+phases: 4
+phases_checked: 4
+runs: 3
+sum_J: 0
+sum_S_o: 40
+sum_Theta: 40
+max(J - S_o): -2
+max(S_o - d_o(Theta+1)): -43
+max_J: 0
+max_S_o: 19
+max_Theta: 19
+max_X: 15
+max_f: 0
+RESULT OK violations=0

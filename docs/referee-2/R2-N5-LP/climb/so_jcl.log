@@ -1,0 +1,9 @@
+start -1800
+111 -1700 {'max_Theta': 0, 'max_S_o': 0, 'max_J': 0, 'max_X': 0, 'max_f': 0, 'max(S_o - d_o(Theta+1))': -17, 'max(J - S_o)': 0}
+162 -1597 {'max_Theta': 0, 'max_S_o': 1, 'max_J': 0, 'max_X': 1, 'max_f': 0, 'max(S_o - d_o(Theta+1))': -16, 'max(J - S_o)': 0}
+198 -1596 {'max_Theta': 0, 'max_S_o': 1, 'max_J': 0, 'max_X': 1, 'max_f': 0, 'max(S_o - d_o(Theta+1))': -16, 'max(J - S_o)': 0}
+300 -1496 {'max_Theta': 0, 'max_S_o': 1, 'max_J': 0, 'max_X': 1, 'max_f': 0, 'max(S_o - d_o(Theta+1))': -15, 'max(J - S_o)': 0}
+311 -1397 {'max_Theta': 1, 'max_S_o': 1, 'max_J': 0, 'max_X': 1, 'max_f': 0, 'max(S_o - d_o(Theta+1))': -14, 'max(J - S_o)': 0}
+416 -1396 {'max_Theta': 0, 'max_S_o': 1, 'max_J': 0, 'max_X': 1, 'max_f': 0, 'max(S_o - d_o(Theta+1))': -14, 'max(J - S_o)': -1}
+TOTALS {'runs': 2000, 'phases': 1722, 'phases_checked': 1703, 'TH_notH1_cases': 0, 'F1o_intervals': 1928, 'SO_keymin_checks': 2178, 'SO_theta_fixed_transitions': 1701, 'SO_frozen_key_checks': 1906, 'sum_S_o': 1317, 'sum_J': 172, 'sum_Theta': 477, 'TH_H1_cases': 216, 'phases_lam_o_eq_o': 19, 'SO_relevant_changes_theta_fixed': 939}
+RESULT OK violations 0
