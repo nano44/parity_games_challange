@@ -1,4 +1,4 @@
-# Draft RESULTS R43 (Lead, 2026-10-25 19:09Z by date -u) (rev. 19:24Z: C52 E-1, E-2, N-1..N-4) — to CHECKER C52
+# Draft RESULTS R43 (Lead, 2026-10-25 19:09Z by date -u) (rev. 19:24Z: C52 E-1, E-2, N-1..N-4) — to CHECKER C52 — LANDED in RESULTS Results 19:40Z (CHECKER C52 1c86563f + Addendum 1 707b402e PASS), after R42
 
 ### R43 [refereed-only] N5 on one-Odd-choice games: a gate target always changes value after an Even fallback (STALE-GATE, every game), level −1 fallbacks need no REL (ENT-X_{−1}, LV-PL′), the u* = none fallbacks are counted (SAND, FLAT-ALL_{−1}^{none}, LV-NONE), and every scope run has at most 4·n·n_E + 3 fallbacks (SCOPE-FB) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C52.md, checker PENDING)
 - Object (packet P-N5-LV2, added at l-si ed936af1, pinned trunk 283bcb6, unchanged during review): docs/si/P-N5-LV2-box12.md, sha1
