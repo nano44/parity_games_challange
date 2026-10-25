@@ -1,6 +1,15 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 32 in progress (successor 12, session_01SqmdU7H8WiFZUGTRjZi1C3; GO 2026-10-24 23:50Z)
+- Handover check 9cd52937 (5/5). Write-up: docs/new/N5-L-box32.md; tools experiments/new/box32 (lcheck.py checks every lemma).
+- Finding: R25's gate-level freeze is vacuous on most residual transitions (M = ∞). Repair: freeze at the USED level L_k (Lemma U, PROVED);
+  Theorem LP (any game): phase ≤ (m−n+1)((n+1)(ρ+1)n(n−1)+ε+1), ρ = used-level rises. NO-WAKE FALSE (nowake_cex_n32, U3);
+  LP′: phase = O(m n⁵ (1+S_o+X+K)), K = wakes, which live in U1 pieces (R24) or U2/U3/U23 (the (E)/(K_W) regime).
+- Pitfalls hit: `pgrep -f lrun.py` in a Monitor matched the waiter itself (use ps + awk on argv); reach_o omits o (a dormant-edge census
+  first showed fake F → F edges with σ(y) = o).
+- P-N5-U23 referee items: none relayed yet; answer in docs/new/P-N5-U23-fixes-box31.md.
+
 ## Resume point (overwritten at handover, LANE-RESTART step 1; successor 11 PARKED after box 31, 2026-10-24 23:21Z by date -u)
 Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Box 31 (Oct 24, 19:53Z-23:21Z). Nothing running at park. Context ~400k;
 parked early at the Lead's request ("freeze P-N5-U23, then park").
@@ -139,6 +148,9 @@ parked early at the Lead's request ("freeze P-N5-U23, then park").
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (succ. 12, box 32) VJ00 = Jurdziński & Vöge, BRICS RS-00-48 (www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, sha256 485a12de432a2a8c…, opened
+  2026-10-25 00:35Z, pdftotext): p. 14-15 σ̄ definition and Prog (P1)-(P3); p. 15 Lemma 5.2; p. 16 (11); §4.4 p. 11 improvement (2) and Switch_I;
+  p. 19-21 Lemma 5.8 (2 ⇒ 3 ⇒ 1 proved via Lemma 5.7, 5.2; 1 ⇒ 2 via Lemma 5.9 'proved similarly'). Used in P-N5-LP (DF uses 2 ⇒ 3 ⇒ 1 only).
 - (succ. 7, box 18) arXiv 1405.0945 v1 (4c6956dc2f1db3ee): §1 l.95-119 (SA level n exact). arXiv 1506.04184 Bodirsky-Mamino
   (e0e0e34de549a4d8): abstract, §1 l.103-104, Thm 5.1 (NP ∩ co-NP; no bounded-width statement). C. Fritz PhD thesis Kiel 2006
   (macau.uni-kiel.de d1644.pdf, fa1253460e9058c3): ch. 3 intro, §3.5 remark (simplify-then-solve slower than lifting).
@@ -222,6 +234,12 @@ parked early at the Lead's request ("freeze P-N5-U23, then park").
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 12, box 32) Coarse freeze at R25's gate level M for (E) / (K_W): VACUOUS. M_k = ∞ at 52 of 69 U2/U3 KW transitions and at both
+  U3 events (220-file 𝒞^1O library, mblock.py). (KW-M) "≤ |R| KW per M-block" FALSE: experiments/new/box32/instances/kwm_cex_n24.pg
+  (sha1 c2723e08…; 15 KW at |R| 3).
+- (succ. 12, box 32) (NO-WAKE) "no used-level rise without fallback, crossing or σ̄(o)": FALSE. Obstruction: W-blind band; with c_w the
+  top-rank vertex W compares lengths only, and an S4a step shortens z's route to a W-tie, the tie-break takes z while Ξ sees level 30.
+  Instance experiments/new/box32/instances/nowake_cex_n32.pg (sha1 3a56e3fb…, U3, transition 1: y 11, 22 → 9, level 30 > L_0 = 26).
 - (succ. 11, box 31) CONJECTURE (U1-T), "after the κ_w-freeze each R-vertex has ≤ 2 Ξ-changes per W-length value": FALSE.
   - Instance: experiments/new/box31/instances/u1t_cex2_n32.pg (n 32, sha1 6162a26f…, n5.py 9 it / 1 fb, Oink zlk OK, strategies
     verified). U1 piece 0..5 is one W-flat run; vertex 23 (level 9) switches at all 5 steps.
