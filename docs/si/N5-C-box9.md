@@ -335,3 +335,22 @@ Proof.
 - Status: NJB stays a CONJECTURE.
   - PROVED reductions: PL (to absorptions), MINSET (to emptying Mn), NO-RF-OLD (after an emptying, only entrant tails can be evicted).
   - Nothing here rests on FREEZE. §7's PL-I does rest on it, and is CONDITIONAL on P-N5-FRZ (pinned 25fda0f).
+
+## 11. The r-drop blocks (Lead item 2): PL (c) holds for every block
+**Lemma RDROP (PROVED, L-SI succ. 4).** In a level-M block (M ≥ 0) of a scope run S, let j be the first transition of a dirty
+interval at which COARSE_M(Ξ) changes. Then r_j > M. So every interval whose states all have r ≤ M is clean.
+Proof. By PL (b), lev(θ_j, θ_{j+1}) = O_j > M. In S, w_{j+1} = w_j, so θ_j ◁ θ_{j+1} ⊴ w_j (R15 (a), XW). (C5) then gives
+lev(θ_j, θ_{j+1}) ≤ lev(θ_j, w_j) = r_j. □
+**Theorem PL (c′) (PROVED).** For EVERY level-M block of a scope run (M ≥ 0), D_M ≤ (d_o − 1) + REL_M, hence N_M ≤ n_E·(d_o + REL_M).
+The hypothesis "r > M on the block" is not needed.
+Proof.
+- Fact R makes r non-increasing on S. Let P be the maximal prefix of [f_1, f_N] on which r > M.
+- By RDROP, every dirty interval has its first break inside P. Each such break is an absorption (PL (b)), and distinct dirty
+  intervals give distinct absorptions.
+- On P, CLS1's (A)-chain and NL (ii) hold, so no exit leaves R at an S4a step of P.
+- N_x (the number of exits in R) rises by 1 at each absorption. It falls only at the block's fallbacks inside P, by at most REL_M in
+  total. Under H1 (scope), N_x ≤ d_o − 1.
+- Hence the absorptions in P number ≤ (d_o − 1) + REL_M. This needs neither ABS-L nor r > M after P. □
+- Consequence: Corollary PL-S holds for every scope run: #fallbacks at levels ≥ 0 ≤ n_E·(n·d_o + REL(S)). The OPEN item
+  "r-drop blocks" (§4, P-N5-FBW §6) is CLOSED. Not in the frozen packet; for a fixes file if the referees want it.
+- DATA consistency: 6 / 13 / 1 r-drop blocks (NAMED / LIB / climbs), all with B = 0 (§3, §5).
