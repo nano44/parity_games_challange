@@ -1,0 +1,16 @@
+FB_afterfb 66
+FB_afterfb_Frise 0
+FB_afterfb_Rrise 0
+FB_afterfb_entry 0
+FB_before 39
+FB_before_Frise 0
+FB_before_Rrise 3
+FB_before_entry 0
+S4A_afterfb 216
+S4A_afterfb_Frise 216
+S4A_afterfb_Rrise 0
+S4A_afterfb_entry 0
+S4A_before 205
+S4A_before_Frise 65
+S4A_before_Rrise 106
+S4A_before_entry 52

@@ -35,20 +35,58 @@ Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2
    experiments/si/xing/out/ does NOT exist in this container (`cat .git/info/exclude` shows only the template); so never
    `git add -A`, add files by name.
 
-## Resume point (successor 5, box 10; session_018GWc3YukyLgRhrrYJdrzHm; Lead GO 09:33Z)
-- (a) DONE: docs/si/P-N5-NJB-fixes-box9.md (l-si 32c2393, sha1 6a337748): NJB-1, NJB-2, NJB-L1 (the climb data were summed under one name).
-  R2-N5-NJB not seen yet; its items go to a fixes2 file.
-- (b) IN PROGRESS: docs/si/N5-RL-box10.md. New angle: Even's nominal game G_τ vs the robust Ξ ("blocked" edges).
-  - PROVED: BL-FORM (blocked edges are F → R̄, in the reverse window), CONF-MONO, EQ-END (with L-NEW's CN-LAST).
-  - PROVED CONDITIONAL on (P) (VJ00 Lemma 5.8 "1 ⇒ 2", R18's premise):
-    - BL (a THR fallback has a blocked edge; free values = confined optimum; the threat is nominally deficient);
-    - FREE-FREEZE (after a THR fallback k0, a free value whose play stays in F_k0 is frozen exactly for the rest of the phase);
-    - Proposition EV (an NJB violation's gate target z has its play in the k0-evicted region).
-  - FALSE (DATA): BL-X.
-  - DATA: after a rise there is never a fallback anywhere later in the run.
-  - Scripts: experiments/si/riselast/ (rlprobe, rltrace, blocked, blf, ffreeze, rlclimb). Climbs rl_a/b/c (seeds 10001-10003, 40 min)
-    were running at 10:2xZ.
-- Trap: `pgrep -f <pattern>` inside an until-loop matches the loop's own command line and never ends. Wait on files instead.
+## Resume point (successor 5, box 10; PARKED 2026-10-25 ~11:50Z per Lead 11:44Z; LANE-RESTART step 1; session_018GWc3YukyLgRhrrYJdrzHm)
+Handover check 6be8831 (Lead 5/5). Write-ups: docs/si/N5-RL-box10.md (box 10 b), docs/si/N5-P1-box10.md (box 10b). Code:
+experiments/si/riselast/ (rlprobe, rltrace, blocked, blf, ffreeze, threv, rlclimb; logs/; instances/rl_{a,b,c}.pg) and
+experiments/si/p1/ (p1check.py; logs/).
+### DONE (all sha1s cited to the Lead, so FROZEN: further text goes in NEW files)
+- (a) P-N5-NJB fixes:
+  - part 1: docs/si/P-N5-NJB-fixes-box9.md, sha1 6a337748 (NJB-1, NJB-2, NJB-L1);
+  - part 2: docs/si/P-N5-NJB-fixes2-box9.md, sha1 647386fb (G-NJB-1 survivor form, which supersedes part 1's (b) and (c) texts;
+    N-NJB-1 withdrawn; (5′) with both branches; concordance).
+  - Both referees' §Cs agree. R35 (NJB) cites 647386fb, at CHECKER C44 (Lead 11:30Z).
+- Packet P-N5-RL: docs/si/P-N5-RL-box10.md (l-si 01d69ac), sha1 0a3c70cb. Unrefereed; the Lead routes it.
+  - PROVED: BL-FORM (+ R-SAME), BL (a) and (d), CONF-MONO, MERGE.
+  - CONDITIONAL on (P): BL (b), (c), (e), FREE-FREEZE, EV, EV+, TEV-RED.
+  - EQ-END is CONDITIONAL on CN-LAST (P-N5-SCOPE §6, in review).
+  - Not to sign: TEV, RISE-LAST, NJB / ENT, and BL-X (FALSE).
+- Packet P-N5-P1: docs/si/P-N5-P1-box10.md (l-si 6ba9a69), sha1 b98ca794. Lemma P1 = (P) for one-player games, PROVED (L-SI succ. 5),
+  unrefereed.
+  - Contents: Lemma B (the set/multiset bridge), Lemma M, Steps 1-6, the hypothesis match with R18 (§4), and a READING on what it
+    discharges (R18 G-1OA-4; P-N5-RL's conditional items; NOT the two-player G-N5T-3).
+  - DATA: 0 violations over 136,286 strategies.
+### IN FLIGHT
+- Nothing running. Climbs finished. The scratchpad is session-local.
+### NEEDS
+- None from the owner. The Lead routes P-N5-RL and P-N5-P1 to both referees. L-RED 16 has TEV and the one configuration (TEV-RED) as
+  its item (5).
+### Things only I know
+- The angle that worked: inside a phase Odd is fixed (e* = τ(o)), so Even plays a one-player game G_τ.
+  - W are the nominal values and Ξ the robust ones. S4a = nominal optimisation restricted to robust gates.
+  - A fallback = the gated optimisation is stuck. A blocked edge is W-improving but not a gate, and it always runs F → R̄.
+  - Odd's side does the work in BL: if σ_k were nominally optimal, then (o, x0) ∈ Iτ and S4b would move τ.
+- The free values at a THR fallback are Even's optimum CONFINED to F (BL (c)). So after the fallback, the only free values that can
+  move are those whose play passes through R̄_k0 (FREE-FREEZE). Every NJB reduction comes from this.
+- Remaining configuration for NJB (TEV-RED (5)), at the second fallback k:
+  - e and u_e = σ_k0(e) are both evicted at k0 and both free at k;
+  - e is re-routed to a frozen f ∈ F_k0 of class (c, A);
+  - the threat collects B ∖ A before e.
+  - Natural sub-case: e is an evicted TAIL with target f. Not attempted yet.
+- The BL climbs (score = window gate + blocked edge + no W-improving gate after a rise) stalled at 7. A blocked edge is always present
+  after a rise; a window gate never appears. So the TEV / ENT side is the obstruction, not the blocked-edge side.
+- Lemma P1's device: path MULTISETS make prefixing monotone (sets are not: x on top of P Δ P′). The referees will check Lemma B.
+- Process trap: once a sha1 is sent, the file is frozen (Lead 11:30Z). I had to make fixes2 additive once (8ceee866 → 647386fb).
+- Script traps:
+  - `pgrep -f pattern` inside an until-loop matches the loop's own command line and never exits. Wait on files.
+  - experiments/si/xing/reverify.sh writes to xing/out/, which is not ignored in a fresh container. Write solutions to the scratchpad
+    instead (as in riselast/logs/climb_bests_verify.txt).
+### NEXT (for a successor)
+1. Exclude TEV-RED's configuration, starting with the sub-case "e is an evicted tail with target f". Or take L-RED 16's counterexample
+   if one lands.
+2. RISE-LAST at levels ℓ < L, or after r ≤ L (no ENT-SHAPE bit argument there).
+3. The two-player VJ00 Lemma 5.8 (R15's G-N5T-3). P1's Step 5 does not transfer as it stands: Odd chooses, so Step 1 fails at Odd
+   vertices.
+4. Referee items on P-N5-RL / P-N5-P1 go in NEW fixes files. Never edit the packets.
 
 ## Resume point (successor 4, box 9; PARKED 2026-10-25 ~07:55Z per Lead 07:10Z; LANE-RESTART step 1; session_019zCLqPUCjkJxMD4vZoJ8TA)
 Handover check 1cef5052 (Lead 5/5). Box 9 write-up: docs/si/N5-C-box9.md §1-§13. Code: experiments/si/coarse/ fbw.py, reltrace.py,
