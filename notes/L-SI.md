@@ -37,7 +37,8 @@ Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2
 
 ## Resume point (successor 5, box 10; session_018GWc3YukyLgRhrrYJdrzHm; Lead GO 09:33Z)
 - (a) DONE: docs/si/P-N5-NJB-fixes-box9.md (l-si 32c2393, sha1 6a337748): NJB-1, NJB-2, NJB-L1 (the climb data were summed under one name).
-  R2-N5-NJB not seen yet (checked 09:34Z); its items go to a fixes2 file.
+  R2-N5-NJB (referee-2 8681e3f2) arrived later: docs/si/P-N5-NJB-fixes2-box9.md (G-NJB-1 survivor form SUPERSEDES part 1's (b), (c)
+  texts; N-NJB-1 withdrawn; concordance). Joint: (5) NOT SIGNED, (5′) and survivor (c) signed by both.
 - (b) docs/si/N5-RL-box10.md. Angle: Even's nominal one-player game G_τ (Odd fixed to e* = τ(o)) against the robust Ξ.
   - BLOCKED edge = W-improving but not a gate.
   - PROVED:
