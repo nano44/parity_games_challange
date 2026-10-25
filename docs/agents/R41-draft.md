@@ -1,4 +1,4 @@
-# Draft RESULTS R41 (Lead, 2026-10-25 16:56Z by date -u) (rev. 17:13Z: C50 E-1, N-1) — to CHECKER C50
+# Draft RESULTS R41 (Lead, 2026-10-25 16:56Z by date -u) (rev. 17:13Z: C50 E-1, N-1) — to CHECKER C50 — LANDED in RESULTS Results 17:35Z (CHECKER C50 e88836a3 + Addendum 1 3031cc69 PASS), after R40
 
 ### R41 [refereed-only] N5 on one-Odd-choice games: in-scope THR fallbacks of level −1 have three gate shapes (LV-SHAPE), a fallback without an R → F gate ends its phase (LV-CN, LV-COUNT), and those with r ≥ 0 number at most n·n_E·(d_o + REL(S)) per scope run (FLAT-ALL_{−1}, STRETCH_{−1}, PL_{−1}, LV-PL) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C50.md, checker PENDING)
 - Object (packet P-N5-LV, added at l-si b7f18fe, pinned trunk 601df6e, unchanged during review): docs/si/P-N5-LV-box11.md, sha1
