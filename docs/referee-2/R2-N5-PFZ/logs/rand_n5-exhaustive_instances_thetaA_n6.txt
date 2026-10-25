@@ -1,0 +1,9 @@
+FACT_A_states: 8
+NCA_identity_states: 8
+PFZ_b_runs: 7
+runs: 3
+states: 8
+theta_runs: 7
+max_fallbacks_in_theta_run: 0
+max_fallbacks_minus_U_plus_1_U>=3: 0
+RESULT OK violations=0

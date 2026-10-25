@@ -1,0 +1,11 @@
+FACT_A_states: 76
+FBR_checks: 1280
+FBR_fallbacks: 10
+PFZ_b_runs: 7
+PFZ_skipped_large_U: 14
+runs: 3
+states: 76
+theta_runs: 21
+max_fallbacks_in_theta_run: 5
+max_fallbacks_minus_U_plus_1_U>=3: 0
+RESULT OK violations=0
