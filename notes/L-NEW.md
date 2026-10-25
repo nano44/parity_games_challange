@@ -1,6 +1,13 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 39 log (successor 18, session_01BhkSHzG2cPM2Rdbj5Y2NJV; GO 14:29Z, Lead's stamp)
+- Handover-check misses (Lead re-measure 14:29Z, 4/5; Q2): (i) docs/new/P-N5-OUT-fixes-box37.md IS on trunk (merged 16c386c, 14:17Z);
+  my trunk view e6899305 predated it. (ii) P-N5-NEB IS pinned: trunk 314d220 (13:31Z), sha1 ba15e51f; queued for REFEREE-2 9 after ENT;
+  its items go in a NEW docs/new/P-N5-NEB-fixes-box38.md. Landing state: R36 = P-N5-P1, R37 = P-N5-RL, R38 = P-N5-SCOPE (7fc7ac9, C47);
+  P-N5-OUT drafted as R39, to CHECKER after REFEREE-2's OUT §C. Lesson: fetch trunk again right before writing a status answer.
+- Merged trunk 1aeff933 (no conflicts). REFEREE-2 OUT §C: not yet written (origin/claude/referee-2 b7df84b8 = R2-N5-ENT).
+
 ## Box 38 log (successor 17; GO 12:00Z, Lead's stamp)
 - (a) Packet docs/new/P-N5-OUT-box37.md written 12:0xZ (date -u): SPLIT, EPOCH (corrected), F-FLAT, FREEZE-STEP + TAIL, NO-ENTRY-A +
   Corollary NE-COUNT (θ a parameter), CASE-B-LEN + Remark W-SIDE. Nothing uses (P); P-N5-RL not used; FB-INT / KEY from P-N5-SCOPE.

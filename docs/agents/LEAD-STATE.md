@@ -1232,3 +1232,16 @@
 - 14:45Z Lead: merged referee 4efa2a6 (ENT §C d6b8aef: identical verdicts, gap map empty, N-ENT-1..3 ACCEPTED (N-ENT-2 missed by REFEREE); R36 lift YES: ENT-X, NJB-A, D1, PL-S″ use (P) only via EV+ ⇐ FREE-FREEZE ⇐ BL (c), on G_τ[F_k], which R36 (d) covers; REFEREE 8 PARKED). Created REFEREE successor 9 session_01VsZYJ8FiTSj5Kazk715ZP7 (handover check, then NEB, then LV). P-N5-ENT converged; R40 draft waits for L-SI 7's ENT fixes file.
 - 14:51Z Lead: merged referee 0d3a61a (REFEREE 9 handover check 5/5, re-measured). GO NEB, then LV. The optional SCOPE climb log re-run is not routed: R38 has landed and CHECKER recorded the point.
 - 14:55Z Lead: merged checker 3d6dcbc (C48 = R39 FAIL: E-1 (NO-ENTRY-A's ≡ clause quantified on z ∈ R̄_t), E-2 (W-SIDE Case 1 / Case 2), E-3 (N-OUT-4 attribution: only REFEREE-2 reproduces the breaks); data sums confirmed; re-runs exact). R39 draft revised with all three fixes as given. Also merged l-si 5e9a2a2 (N5-LV3-box12, sha1 20ba05d7: Lemma XG, Lemma ANTI, Corollary NEED-β (one OPEN subcase A2*); "THR ⇒ M ≥ 0" stays CONJECTURE with an exact kill shape; DATA 3,936 in-scope THR fallbacks, all M ≥ 0). Kill shape relayed to L-RED 16.
+- 15:00Z Lead: merged l-new 7932260. Box 39 interim, docs/new/N5-RW-box39.md, working doc (lane PROVED, unrefereed). Idea: Bellman-Ford dominance above T* = max(rank c_θ, rank c_w).
+  - Proved: BF (renamed BF-RW at the Lead's request; it clashes with ENT's BF), FREEZE-M, FREEZE-X, ROUTE-LEN, W-POT, CW-COUNT. Rises per block are polynomial up to TIE steps (OPEN).
+  - Exact obstruction: the bounds are per entry, and every break is an entry, so the charging is circular.
+  - Told L-NEW 18 that REFEREE-2's OUT §C exists (2a9e8db) and found the fixes correct. No fixes2 is needed.
+- 15:05Z Lead: hourly sweep 15:03Z.
+  - Health: no overage; Lead ~265k after compaction. L-COMP 4 (243k) idle on box7w n 5 Q4 (Q3 clean). L-RED 16 (400k) idle on the n 5 subset run (10.1 M / 81 M). L-SI 7, L-NEW 18, REFEREE 9, REFEREE-2 9 and CHECKER 6 all reported within the hour. No exceptions.
+  - Merged l-si 689f7b6 (N5-LV4-box12, sha1 9d1b90f4; lane PROVED, unrefereed):
+    - STALE-GATE (every game): a gate target at a later state has Ξ changed since the fallback k0.
+    - EV-G; ENT-X_{−1}, COND. P-N5-LV §3; LV-PL′ (≤ n·n_E + 1 THR M = −1, r ≥ 0 fallbacks per scope run), COND. P-N5-LV §1-§4.
+    - DATA: 72,589 + 39,406 checks, 0 failures.
+  - Merged l-red 9cf2302 and l-comp 0dd4457.
+  - L-SI 7 had not seen the 14:33Z and 14:46Z ENT relays; re-sent. Order: the ENT fixes file NOW, then packet P-N5-LV4-box12, then u* = none.
+- 15:10Z Lead: merged checker 0be9380 (C48 Addendum 1: R39 PASS at 9639fa2) and l-new a29bd8a (box 39 §11, lane PROVED, unrefereed: Lemma FBF / Theorem P-FREEZE: every in-phase Even fallback is a Bellman-Ford round on U = λ⁻¹(c_θ) for the signed P-weight, so P(Ξ) freezes on U after |U| − 1 fallbacks of a θ-run; Theorem BRK-POLY: B_S ≤ θ_S + (θ_S + 1)(n² − 1) for every HN stretch, any τ(o), any c_w; DATA 714 θ-runs, 0 failures). R39 LANDED in RESULTS (CHECKER C48 3d6dcbc8 + Addendum 1 d22ddb69; cmp OK against draft lines 3-67); GAPS UPDATE 15:09Z. P-N5-PFZ routed (packet, then referee queue NEB → PFZ → LV → LV4).
