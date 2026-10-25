@@ -23,6 +23,9 @@ Labels (L40): PROVED (by whom), READING, CONJECTURE, FALSE, OPEN, DATA. Every PR
 | (NO-WAKE) "away from fallbacks and crossings, S4a never takes a dormant edge above the previous used level" | FALSE (instances/nowake_cex_n32.pg, a U3 state) | §4 |
 | Lemma WAKE: a wake goes R → R (a wake into F is a crossing); in route form it lies in a U1 piece (covered by R24 Theorem U1) | PROVED | §4 |
 | Corollary LP′: each phase on 𝒞^1O has O(m·n⁵·(1 + S_o + X + K)) transitions (S_o = relevant σ̄(o) changes, X = crossings, K = wakes), with R25 FB and J1 | PROVED | §4 |
+| Lemma TH: θ-changes per phase ≤ (n − 1) + n(X + 1) + X | PROVED | §4b |
+| Lemma SO: relevant σ̄(o) changes ≤ d_o(Θ + 1) (with θ fixed, σ̄(o) moves only when its exit stops being a minimiser) | PROVED | §4b |
+| Corollary XJ: S_o, J and the fallbacks are O(poly(n)(1 + X)); a phase has O(m n⁷ (1 + X) + m n⁵ K) transitions | PROVED (given R22, R24, R25) | §4b |
 | What this does to (NH'), (E), (K_W), J, NFB-O | READING | §5 |
 
 ## 0. The gate-level freeze is vacuous where it is needed (DATA)
@@ -191,6 +194,46 @@ Proof.
   own cycle node o changes no Ξ value, Lemma U, so it cannot be non-tame).
 - (iv) Hence T ≤ (m − n + 1)·((n + 1)(2f + S_o + 2X + K + 1)·n(n − 1) + S_o + 1) = O(m·n⁵·(1 + S_o + X + K)).
 
+## 4b. S_o, J and the fallbacks reduce to X (PROVED, L-NEW; 𝒞^1O; unrefereed; written after P-N5-LP was frozen)
+Setting: a phase on 𝒞^1O; d_o := |succ(o)|; Θ := the number of transitions of the phase that change θ = Ξ(o); X := crossings.
+If λ_Ξ(o) = o, θ = (o, ∅, 0) is constant and no σ̄(o) change is relevant; so assume λ_Ξ(o) ≠ o (fixed in the phase).
+**Lemma TH.** Θ ≤ (n − 1) + n(X + 1) + X.
+Proof.
+- H1 is constant on each crossing-free interval (R22 (b) TC (i)), so a θ-change at a crossing is counted by X. Take a crossing-free θ-change
+  k → k+1.
+- ¬H1 at k: o lies on its honest cycle, whose top is c_θ, so θ = (c_θ, ∅, d) with d ∈ [0, n − 1] (REFEREE's R-1, P-N5-U23 fixes §6). c_θ is
+  fixed in the phase and θ is monotone (R15 (a)), so d moves in one direction: ≤ n − 1 such changes in the whole phase.
+- H1 at k: σ̄_k(o) =: x0 is a full Ξ_k-minimiser over succ(o) (λ(o) ≠ o; R25 CAP-1, REFEREE's case split), and θ_k = o ⊕ Ξ_k(x0) (P2).
+  x0's honest play never returns to o (H1), so it equals its (σ_k, τ)-play, which therefore never reaches o: x0 ∈ F_k = F_{k+1}. Let
+  x1 := σ̄_{k+1}(o). If Ξ_{k+1}(x0) = Ξ_k(x0), then Ξ_{k+1}(x1) ⊴ Ξ_{k+1}(x0) = Ξ_k(x0) ⊴ Ξ_k(x1) ⊴ Ξ_{k+1}(x1) (minimisers; R15 (a)), so
+  θ_{k+1} = o ⊕ Ξ_{k+1}(x1) = θ_k. So a θ-change changes Ξ at x0 ∈ F: it is one of the ≤ max(0, |F| − 1) F-changing transitions of its
+  crossing-free interval (R22 (a) F1°). There are ≤ X + 1 intervals. □
+**Lemma SO.** S_o ≤ Θ + (d_o − 1)(Θ + 1) ≤ d_o(Θ + 1). More precisely: at a relevant σ̄(o) change with θ unchanged, the old choice is no
+longer a minimiser.
+Proof.
+- Fix a maximal run of the phase with θ constant, and μ with o ⊕ μ = θ (⊕ is injective for a fixed cycle node). T_k := {x ∈ succ(o) :
+  Ξ_k(x) = μ}, the full minimisers (μ = min, since σ̄_k(o) ∈ T_k by CAP-1). T only shrinks along the run: x ∈ T_{k+1} gives Ξ_k(x) ⊴
+  Ξ_{k+1}(x) = μ ⊴ Ξ_k(x).
+- The choice inside T. By RESULTS R24 Lemma R, σ̄_k(o) is chosen among the fully optimal successors, i.e. T_k: in the longest-path mode
+  (Ω(λ(o)) even) the first in list order, i.e. the smallest index; in the BFS mode (Ω(λ(o)) odd) the first discovered, i.e. the
+  lexicographically least root-first index sequence of its BFS-tree path (R24 Lemma TB step 5).
+- Keys are frozen on T_k ∩ T_{k+1}. For x ∈ T_k, x ≠ o, and x's H_k-path to c := λ(o) avoids o: if it passed o, then Ξ_k(x) = (path) ⊕ θ,
+  and Ξ_k(x) = μ with o ⊕ μ = θ would make μ strictly longer than itself. Every vertex on that path other than o has one successor in the
+  graph G_σ of Engine.evaluate (Even: σ; Odd: forced), so the BFS-tree path of x is this path. If some vertex of it switches at k, take the
+  first one, p (an Even vertex with λ(p) = c ≠ p): its new successor is a strictly better gate-edge target (R15 (d)), so Ξ_{k+1}(p) ▷ Ξ_k(p)
+  (P2, R15 (a), ⊕ keeps strictness), and then Ξ_{k+1}(x) = (the unchanged prefix) ⊕ Ξ_{k+1}(p) ▷ Ξ_k(x), so x ∉ T_{k+1}. Hence for
+  x ∈ T_k ∩ T_{k+1} the path, and so the key, is the same at k and k+1. (In the longest-path mode the key is the index anyway.)
+- So if σ̄_k(o) =: s0 ∈ T_{k+1}, it is still the key-minimum of T_{k+1} ⊆ T_k (keys of distinct exits differ: they end in the exit), and
+  σ̄_{k+1}(o) = s0. A relevant change with θ fixed therefore removes s0 from T: ≤ d_o − 1 per run. There are Θ + 1 runs, and ≤ Θ changes
+  at θ-changes. □
+**Corollary XJ (PROVED, L-NEW, given RESULTS R22 (a)-(b), R24 Lemma R / TB, R25 CAP-1, FB and J1).** In a phase on 𝒞^1O:
+- S_o ≤ d_o·(2n + (n + 1)X) and J ≤ S_o (P-N5-LP §4 step 3), so f ≤ n_E(2n − 1)(J + 1) + J = O(n³(1 + X)) (R25 Theorem FB).
+- With P-N5-LP Corollary LP′: T = O(m·n⁷·(1 + X) + m·n⁵·K).
+- So (J-poly) (R25's open core), NFB-O and the fallback count all follow from (X); per phase the open cores of o-cyclic 𝒞^1O are now X
+  (≡ Z up to a factor n, R23 LV′) and K, the wakes, which live in U1 pieces (R24) and in U2 / U3 / U23 stretches ((E), (K_W)).
+- DATA (socheck.py, LIB, 255 phases): 0 failures of Lemma TH (incl. its two cases), Lemma SO (incl. "the old choice leaves T"), and J ≤ S_o.
+  Maxima: Θ 51 and S_o 49 at n 32 (lev_l_x, d_o 14, X 21); J 17 ≤ S_o 18 at n 48 (jcl_zcl_cu_n48, d_o 18, X 17).
+
 ## 5. What this does to the open cores (READING, L-NEW)
 - The hoped-for merge fails. Had NO-WAKE held, Corollary LP′ would have replaced (E), (K_W), NFB-O and J by S_o next to X. With
   nowake_cex_n32 the wakes K stay, and they sit exactly in the U2 / U3 / U23 regime of (E) and (K_W): a wake there is a W-change on R or a
@@ -206,9 +249,10 @@ Proof.
   - (a) The W-length regime. In nowake_cex_n32 W's comparison is pure length, monotone between fallbacks (R24 TB step 1), with ties broken
     by TB-even's lex order. A wake at y either strictly raises W(y) (a length step, ≤ n − 1 per y while the W path sets stay fixed) or is a
     W-tie switch under TB. Counting wakes by (W path set of y, length of y, TB key) may bound K per W-path-set class. OPEN.
-  - (b) S_o. At a relevant change σ̄(o) is a full Ξ-minimiser over succ(o) (R25 CAP-1, REFEREE's case split). While θ = Ξ(o) stands still,
-    the set of exits attaining the minimum only shrinks (Ξ is monotone). So S_o ≤ (d_o + tie-break changes)·(θ-changes + 1). The θ-changes are
-    the TRUST / THETA quantity of boxes 22-25. OPEN. DATA: S_o up to 49 at n 32 (§6).
+  - (b) S_o: DONE in §4b (Lemma TH, Lemma SO, Corollary XJ). The tie-break changes are 0 (keys of tied exits are frozen), and the θ-changes
+    are F-changes or crossings (H1) or a monotone length (¬H1). So S_o, J and the fallbacks reduce to X.
+- After §4b the per-phase open cores of o-cyclic 𝒞^1O are X (≡ Z up to a factor n, R23 LV′) and K (wakes: OPEN in U2 / U3 / U23, bounded in
+  U1 pieces by R24).
 - Theorem LP holds on every game; DF, BAND, WAKE and LP′ are 𝒞^1O-specific. On ≥ 2 Odd choice vertices ε counts all of Odd's honest
   changes.
 
