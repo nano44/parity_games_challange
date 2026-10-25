@@ -1,0 +1,6 @@
+ANTI_W_checks: 14
+ANTI_Xi_checks: 14
+runs: 4
+states: 63
+RESULT OK violations=0
+experiments/new/box28/out/w24_thc24_unthrottled_fitness.pg exit 0

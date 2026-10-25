@@ -1,0 +1,4 @@
+2668
+VIOLATION own:fl_n16_y4.pg#0 FRZU at 1 x=18 (k0=0, r=7)
+VIOLATION own:rel_g16_y4.pg#0 FRZU at 1 x=18 (k0=0, r=7)
+VIOLATION own:rel_g16_y4.pg#0 FRZU at 2 x=18 (k0=0, r=7)

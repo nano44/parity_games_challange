@@ -1,0 +1,21 @@
+A0_checks: 970
+FACTB_pairs: 3714
+KWS_stretches: 93
+PAR_states_cw_above_cth: 7
+PHASE_checked: 20
+RUNS_runs: 1
+RUN_case_a: 1
+phases: 20
+runs: 3
+states: 94
+states_checked: 94
+stretches: 93
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 31
+max_Trel_per_phase: 31
+max_f_per_phase: 23
+max_freeze_delay: 0
+max_stretches_per_phase: 31
+RESULT OK violations=0
+docs/referee-2/R2-N5-CLS/climb/gt_b_best.pg exit 0

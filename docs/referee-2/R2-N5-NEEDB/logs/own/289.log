@@ -1,0 +1,10 @@
+ANTI_W_checks: 3
+ANTI_W_exceptional_used: 2
+ANTI_W_with_exceptional_edges: 2
+ANTI_Xi_checks: 3
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 15
+RESULT OK violations=0
+experiments/new/box28/out/nh_r2801.pg.pg exit 0

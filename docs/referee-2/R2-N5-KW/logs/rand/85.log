@@ -1,0 +1,21 @@
+A0_checks: 954
+FACTB_pairs: 6324
+KWS_stretches: 74
+PAR_states_cw_above_cth: 9
+PHASE_checked: 14
+RUNS_runs: 2
+RUN_case_b: 2
+phases: 14
+runs: 3
+states: 77
+states_checked: 77
+stretches: 74
+max_KW_per_stretch: 0
+max_RUN_ratio_case_b_x1000: 0
+max_T_per_phase: 22
+max_Trel_per_phase: 22
+max_f_per_phase: 1
+max_freeze_delay: 0
+max_stretches_per_phase: 23
+RESULT OK violations=0
+docs/referee-2/R2-N5-NJB/climb/best_norf_75.pg exit 0

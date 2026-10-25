@@ -1,0 +1,15 @@
+A0_checks: 3
+KWS_stretches: 35
+PHASE_checked: 11
+phases: 11
+runs: 3
+states: 35
+states_checked: 35
+stretches: 35
+max_KW_per_stretch: 0
+max_T_per_phase: 16
+max_Trel_per_phase: 16
+max_f_per_phase: 0
+max_stretches_per_phase: 17
+RESULT OK violations=0
+experiments/new/box28/instances/w24b_thc24_final.pg exit 0

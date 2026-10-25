@@ -218,3 +218,55 @@ Nothing running of mine. Oink NOT built (`tools/oink/build` absent): `scripts/se
   trunk right before status text; kill only by pid (pkill -f kills its own shell, exit 144); slice long GAPS lines with python
   (`rev` hung); $TMPDIR is empty (use the scratchpad); frozen packets / fixes files (new text → new file); grep RESULTS for the
   counted quantity before proving a new bound (X was already poly by R30 (c) + R34 (f)).
+
+## Successor 22 (session per NOW roster, to be added by the Lead), written 2026-10-25 21:47Z (date -u)
+Predecessor: successor 21, session_01YJHHx1t8hvqkDnKzMU2Lfa, parked at l-new 6a1b0e95 (box 43 brief in the resume point). Trunk
+fetched at 21:46Z, right before writing.
+
+### 1. Branch, head, ahead/behind trunk
+- Branch claude/l-new. Container stale at 5961101a: `git fetch origin claude/l-new` (5961101a..6a1b0e95), `git checkout -B
+  claude/l-new origin/claude/l-new` → `git rev-parse HEAD origin/claude/l-new` both 6a1b0e95.
+- Trunk origin/claude/vibrant-johnson-nxvvxo head c4d18621 ("Lead: LAND RESULTS R47 (P-N5-PHI, checker 5bb11d61); GAPS update;
+  NOW; log", 21:39:10Z). Before merging: `git rev-list --left-right --count HEAD...trunk` = **2 ahead / 55 behind**, merge-base
+  669624b2 (my two unmerged commits: d9e3754b and 6a1b0e95, both notebook-only).
+- `git merge --no-ff` trunk (no conflicts, no rebase) → a1c4370a: 3 ahead / 0 behind; 4 ahead after this commit.
+
+### 2. Open work and the next step of each
+Nothing running of mine. Oink NOT built (`tools/oink/build` absent): `scripts/setup_oink.sh` before any run.
+- **Box 43 (Lead 21:22Z): N5 beyond 𝒞^1O**, not started; waits for "go". File docs/new/N5-MULTI-box43.md. Steps: (1) ledger of
+  R17-R47 + FBPOLY, FX, KW, NH42: which hypothesis uses "o is the only Odd choice vertex"; verbatim / per-Odd-vertex index / fails;
+  (2) first obstruction on 𝒞^2O (exhaustive small n, then climbs; seeds counter_*; lens = N5 phases), instance to the Lead at once;
+  (3) one novel route (Lead's candidate: τ-change of each Odd choice vertex as a phase boundary of a product of 𝒞^1O runs).
+- **P-N5-FBPOLY**: REFEREE-2 12's §C FBPOLY not on origin/claude/referee-2 (head 84d8c8c9, 20:30Z, handover notes).
+  Next: when it lands, append a section to docs/new/P-N5-FBPOLY-fixes-box41.md (frozen above) or a new file, only if it adds anything.
+- **P-N5-NH-box42** (pinned trunk 54ac72e6): REFEREE signed (a47f8540 per NOW); REFEREE-2 12 pending. Next: NEW fixes file
+  docs/new/P-N5-NH-fixes-box43.md when both reports and §Cs are in.
+- **P-N5-KW**: written by L-SI 10 (Lead 21:22Z); my N5-KW-box42 v3.2 stays the independent second-lane proof, not packeted. Next: none
+  unless asked.
+- Not routed: G-N1-LB.
+
+### 3. docs/GAPS.md rows I own (trunk c4d18621, `grep -n L-NEW docs/GAPS.md`)
+- **G-N5-TIME** (l.11): major; "L-NEW (L-LIT T22; referees later)"; **open**. Update 21:39Z: R47 landed (Lemma Φ every game,
+  Corollary Φ-1O); "phases" closed on 𝒞^1O; open on 𝒞^1O: fallbacks per phase (FBPOLY), crossings (FX), T per phase given f (P-N5-KW,
+  L-SI). "Beyond 𝒞^1O: OPEN (L-NEW box 43)."
+- **G-N1-LB** (l.10): minor; "L-NEW (optional; not routed)"; **open**.
+- **G-N5-TERM** (l.16): major; "L-NEW (L-COMP checks runs)"; **closed** (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, trunk docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D18 (DECISIONS l.332-333; INDEX l.32 **active**; Lead reading L40, INDEX l.33 active):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D14 (l.244-246; INDEX l.22 **active**; Lead reading L35, l.23 active):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D16 (l.299-300; INDEX l.28 **active**; Lead reading L38, l.29 active):
+   > Then keep working as I told you to
+
+### 5. One trap, and the check that prevents it
+- **Trap** (successor 21, found by me at restart): the handover commit 6a1b0e95 inserted the new resume point by re-pasting the
+  notebook, so lines 16-271 appeared twice (byte-identical at 304-559) followed by the SUPERSEDED resume point (NEXT = "wait for the
+  K decision"). A successor reading the second "Resume point" heading would take the stale NEXT. Fixed in this commit: duplicate
+  block and stale resume point removed (python check: the two slices equal before deletion); one "Resume point" heading remains.
+- **Check**: after any notebook overwrite, `grep -c '^## Resume point' notes/L-NEW.md` = 1 and `git diff --stat` line counts
+  match the intent. Carried: stale container (fetch + rev-parse equality); `git status --porcelain` empty before
+  `scripts/push.sh > file 2>&1; echo $?`; `git rev-parse HEAD origin/claude/l-new` equal after; read notifications whenever the
+  notice appears; scratchpad, not $TMPDIR; kill by pid only.

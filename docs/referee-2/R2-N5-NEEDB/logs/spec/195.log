@@ -1,0 +1,4 @@
+runs: 4
+states: 9
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/b4_theta_n7.pg exit 0

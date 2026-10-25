@@ -1,0 +1,22 @@
+A0_checks: 652
+FACTB_pairs: 5280
+HPATH_checks: 29
+KWS_stretches: 46
+PAR_states_cw_above_cth: 4
+PHASE_checked: 14
+RUNS_runs: 1
+RUN_case_a: 1
+phases: 14
+runs: 3
+states: 47
+states_checked: 47
+stretches: 46
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 2
+max_T_per_phase: 20
+max_Trel_per_phase: 20
+max_f_per_phase: 0
+max_freeze_delay: 0
+max_stretches_per_phase: 21
+RESULT OK violations=0
+experiments/red/xing/instances/x31_cu32i.pg exit 0

@@ -1,0 +1,10 @@
+ANTI_W_checks: 16
+ANTI_W_exceptional_used: 8
+ANTI_W_with_exceptional_edges: 13
+ANTI_Xi_checks: 16
+ANTI_Xi_exceptional_used: 12
+ANTI_Xi_with_exceptional_edges: 13
+runs: 4
+states: 55
+RESULT OK violations=0
+docs/referee-2/R2-N5-RHO/climb/best_rho_9702.pg exit 0

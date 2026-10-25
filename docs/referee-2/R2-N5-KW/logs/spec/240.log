@@ -1,0 +1,23 @@
+A0_checks: 100
+FACTB_pairs: 159
+FRZU_checks: 7
+KWS_stretches: 49
+LEN_runs_after_f0: 2
+PAR_states_cw_above_cth: 5
+PHASE_checked: 35
+RUNS_runs: 5
+RUN_case_a: 5
+phases: 35
+runs: 3
+states: 58
+states_checked: 58
+stretches: 49
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 111
+max_T_per_phase: 12
+max_Trel_per_phase: 12
+max_f_per_phase: 2
+max_freeze_delay: 1
+max_stretches_per_phase: 8
+RESULT OK violations=0
+experiments/new/box21/instances/oneodd_c16.pg exit 0

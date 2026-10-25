@@ -1,0 +1,17 @@
+A0_checks: 2247
+FACTB_pairs: 8581
+KWS_stretches: 109
+PAR_states_cw_above_cth: 2
+PHASE_checked: 9
+phases: 9
+runs: 3
+states: 109
+states_checked: 109
+stretches: 109
+max_KW_per_stretch: 0
+max_T_per_phase: 37
+max_Trel_per_phase: 37
+max_f_per_phase: 0
+max_stretches_per_phase: 38
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/b6_xs_n48.pg exit 0

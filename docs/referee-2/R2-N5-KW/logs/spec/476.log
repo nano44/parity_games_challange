@@ -1,0 +1,23 @@
+A0_checks: 141
+FACTB_pairs: 139
+FRZU_checks: 126
+KWS_stretches: 33
+LEN_runs_after_f0: 11
+PAR_states_cw_above_cth: 5
+PHASE_checked: 22
+RUNS_runs: 11
+RUN_case_a: 11
+phases: 22
+runs: 3
+states: 96
+states_checked: 96
+stretches: 33
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 52
+max_Trel_per_phase: 52
+max_f_per_phase: 4
+max_freeze_delay: 0
+max_stretches_per_phase: 9
+RESULT OK violations=0
+experiments/si/orlens/instances/elim24_p52.pg exit 0

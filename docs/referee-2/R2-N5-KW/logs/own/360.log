@@ -1,0 +1,17 @@
+A0_checks: 1198
+FACTB_pairs: 14882
+KWS_stretches: 65
+PAR_states_cw_above_cth: 42
+PHASE_checked: 13
+phases: 13
+runs: 3
+states: 65
+states_checked: 65
+stretches: 65
+max_KW_per_stretch: 0
+max_T_per_phase: 18
+max_Trel_per_phase: 18
+max_f_per_phase: 0
+max_stretches_per_phase: 19
+RESULT OK violations=0
+experiments/red/so/instances/exitr_cex_n48.pg exit 0

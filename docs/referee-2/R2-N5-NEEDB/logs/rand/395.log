@@ -1,0 +1,15 @@
+ANTIW_blocked_edges: 154
+ANTI_W_checks: 36
+ANTI_Xi_checks: 36
+OT_exit_checks: 6
+OT_post_rise_states: 2
+OT_rises: 2
+RECORD_M>=0_P_uses_R_to_F_gate: 13
+RECORD_inscope_THR_r>=0_M>=0: 13
+THR_inphase_fallbacks: 13
+THR_optima_tested: 13
+XG_R_to_F_optimal_edges: 23
+runs: 4
+states: 117
+RESULT OK violations=0
+experiments/red/xing/instances/fbref_cex_n32.pg exit 0

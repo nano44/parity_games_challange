@@ -1,0 +1,18 @@
+A0_checks: 153
+FACTB_pairs: 389
+HPATH_checks: 24
+KWS_stretches: 31
+PAR_states_cw_above_cth: 3
+PHASE_checked: 13
+phases: 13
+runs: 3
+states: 31
+states_checked: 31
+stretches: 31
+max_KW_per_stretch: 0
+max_T_per_phase: 8
+max_Trel_per_phase: 8
+max_f_per_phase: 0
+max_stretches_per_phase: 9
+RESULT OK violations=0
+experiments/red/so/instances/xrun8_n10.pg exit 0

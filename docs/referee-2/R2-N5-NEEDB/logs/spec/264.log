@@ -1,0 +1,10 @@
+ANTI_W_checks: 26
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 26
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 2
+runs: 4
+states: 54
+RESULT OK violations=0
+experiments/new/box25/instances/xc16.pg exit 0

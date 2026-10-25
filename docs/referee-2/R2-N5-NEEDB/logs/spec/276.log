@@ -1,0 +1,6 @@
+ANTI_W_checks: 21
+ANTI_Xi_checks: 21
+runs: 4
+states: 57
+RESULT OK violations=0
+experiments/new/box28/instances/oc16_s2.pg exit 0

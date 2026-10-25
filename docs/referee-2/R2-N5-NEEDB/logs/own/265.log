@@ -1,0 +1,6 @@
+ANTI_W_checks: 20
+ANTI_Xi_checks: 20
+runs: 4
+states: 74
+RESULT OK violations=0
+experiments/new/box25/instances/xc24.pg exit 0

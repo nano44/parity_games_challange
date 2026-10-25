@@ -1,0 +1,15 @@
+A0_checks: 28
+KWS_stretches: 8
+PHASE_checked: 6
+phases: 6
+runs: 3
+states: 8
+states_checked: 8
+stretches: 8
+max_KW_per_stretch: 0
+max_T_per_phase: 1
+max_Trel_per_phase: 1
+max_f_per_phase: 0
+max_stretches_per_phase: 2
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/n5s_maxph_0.pg exit 0

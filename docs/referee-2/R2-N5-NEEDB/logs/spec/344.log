@@ -1,0 +1,10 @@
+ANTI_W_checks: 5
+ANTI_W_exceptional_used: 2
+ANTI_W_with_exceptional_edges: 2
+ANTI_Xi_checks: 5
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 2
+runs: 4
+states: 14
+RESULT OK violations=0
+experiments/red/kl/instances/r2join_h0E_n14.pg exit 0

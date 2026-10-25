@@ -1,0 +1,17 @@
+A0_checks: 609
+FACTB_pairs: 3561
+KWS_stretches: 73
+PAR_states_cw_above_cth: 8
+PHASE_checked: 16
+phases: 16
+runs: 3
+states: 73
+states_checked: 73
+stretches: 73
+max_KW_per_stretch: 0
+max_T_per_phase: 19
+max_Trel_per_phase: 19
+max_f_per_phase: 0
+max_stretches_per_phase: 20
+RESULT OK violations=0
+experiments/si/orlens/instances/run_m_n24.pg exit 0

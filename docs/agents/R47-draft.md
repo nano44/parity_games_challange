@@ -1,4 +1,4 @@
-# Draft RESULTS R47 (Lead, 2026-10-25 20:56Z by date -u; renumbered from R46 at 21:05Z; fixes-file line filled 21:10Z) (rev. 21:27Z: C56 N-1) — to CHECKER C56
+# Draft RESULTS R47 (Lead, 2026-10-25 20:56Z by date -u; renumbered from R46 at 21:05Z; fixes-file line filled 21:10Z) (rev. 21:27Z: C56 N-1) — to CHECKER C56 — LANDED in RESULTS Results 21:39Z (CHECKER C56 d0ab0c01 + Addendum 1 5bb11d61 PASS), after R46
 
 ### R47 [refereed-only] N5: cycle nodes only rise and Odd's dual cycle nodes only fall along a run, so every run has at most 2n(n − 1) + 1 joint λ-runs (Lemma Φ, every game), and on one-Odd-choice games τ changes at most deg(o) − 1 times and a run has at most n(n − 1) + deg(o) phases (Corollary Φ-1O) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C56.md, checker PENDING)
 - Object (packet P-N5-PHI, added at l-si af3a3b5a, pinned trunk 02ad3f88, unchanged during review): docs/si/P-N5-PHI-box14.md, sha1

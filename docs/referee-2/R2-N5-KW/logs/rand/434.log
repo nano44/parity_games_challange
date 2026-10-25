@@ -1,0 +1,24 @@
+A0_checks: 3143
+FACTB_pairs: 24702
+HPATH_checks: 36
+KWS_stretches: 156
+PAR_states_cw_above_cth: 13
+PHASE_checked: 19
+RUNS_runs: 6
+RUN_case_a: 5
+RUN_case_b: 1
+phases: 19
+runs: 3
+states: 163
+states_checked: 163
+stretches: 156
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_RUN_ratio_case_b_x1000: 0
+max_T_per_phase: 84
+max_Trel_per_phase: 84
+max_f_per_phase: 19
+max_freeze_delay: 0
+max_stretches_per_phase: 80
+RESULT OK violations=0
+experiments/red/xing/instances/x32_waves48.pg exit 0

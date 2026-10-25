@@ -1,0 +1,20 @@
+A0_checks: 22
+FACTB_pairs: 43
+KWS_stretches: 7
+PHASE_checked: 4
+RUNS_runs: 1
+RUN_case_a: 1
+phases: 4
+runs: 3
+states: 8
+states_checked: 8
+stretches: 7
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 62
+max_T_per_phase: 3
+max_Trel_per_phase: 3
+max_f_per_phase: 0
+max_freeze_delay: 1
+max_stretches_per_phase: 3
+RESULT OK violations=0
+docs/referee-2/R2-N5-FRZ/climb/best_low_21.pg exit 0

@@ -1,0 +1,6 @@
+ANTI_W_checks: 34
+ANTI_Xi_checks: 34
+runs: 4
+states: 99
+RESULT OK violations=0
+experiments/new/box35/instances/pf_best_3623.pg exit 0

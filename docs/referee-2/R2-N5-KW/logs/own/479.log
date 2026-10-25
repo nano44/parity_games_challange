@@ -1,0 +1,23 @@
+A0_checks: 272
+FACTB_pairs: 799
+FRZU_checks: 3
+KWS_stretches: 74
+LEN_runs_after_f0: 1
+PAR_states_cw_above_cth: 1
+PHASE_checked: 12
+RUNS_runs: 1
+RUN_case_a: 1
+phases: 12
+runs: 3
+states: 76
+states_checked: 76
+stretches: 74
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 22
+max_Trel_per_phase: 22
+max_f_per_phase: 0
+max_freeze_delay: 0
+max_stretches_per_phase: 23
+RESULT OK violations=0
+experiments/si/orlens/instances/lev_l_n28.pg exit 0

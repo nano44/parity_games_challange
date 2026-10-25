@@ -1,0 +1,10 @@
+ANTI_W_checks: 10
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 10
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 31
+RESULT OK violations=0
+experiments/red/xing/instances/u23sw64_n32.pg exit 0

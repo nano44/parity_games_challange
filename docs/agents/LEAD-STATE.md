@@ -1477,3 +1477,58 @@
 - DECISION (Lead): P-N5-KW is written by L-SI 10 from N5-KW-box15, with L-NEW's additions (PAR, the H-PATH sentence, an inline SW (b), the B3 split, route-form = piece, the CASC-B prefix argument). Reasons: the assembly needs only landed results plus FBPOLY and PHI; KIND-MONO is stronger; the pre-freeze part has at most |R| − 1 transitions. N5-KW-box42 stays as the independent second lane proof.
 - L-NEW 21 moves to box 43: N5 beyond 𝒞^1O. A ledger of which lemmas use "one Odd choice vertex", the first obstruction on 𝒞^2O, and a novel route (D18).
 - 21:27Z: Merged checker d0ab0c01 (C56 PASS, R47 PHI; optional N-1 on the S1/S2 sentence). Applied N-1 verbatim to the R47 draft, since landing must match a checked draft; asked CHECKER for C56 Addendum 1.
+- 21:39Z: Merged checker 437af08f (C55 Addendum 1: R46 landed verbatim; C55 CLOSED) and 5bb11d61 (C56 Addendum 1 PASS, R47 rev. 72595bc2). LANDED R47 (P-N5-PHI): RESULTS lines 2324-2360, checker 5bb11d61, cmp OK. GAPS line 11 UPDATE: phases closed on 𝒞^1O.
+- 21:44Z: Pre-drafted docs/agents/R48-draft.md (P-N5-FBPOLY; added at l-new 4a17f8e1, pinned trunk 42d8c3a9; fixes c016c190). It waits for REFEREE-2 12's §C FBPOLY (placeholder R2C-PENDING). To CHECKER C57.
+- 21:46Z: Hourly sweep (trigger 21:03Z, run late, after landings).
+  - No overage. Lead context 689k; compaction handles it.
+  - REFEREE-2 12 (297k): NEEDB climbs to ~21:50Z. L-SI 10 (346k): drafting P-N5-KW. L-COMP 4 (258k): Q3 to ~21:55Z.
+  - CI green on every head. No owner line (M2 done).
+- Exceptions handled:
+  - L-NEW 21 PARKED at ~450k (resume point 6a1b0e95). Created L-NEW successor 22 (session_0136C96DnQn2qLgCGtvgLp6f) for box 43.
+  - L-RED 18 R72 (9812efa7): no kill of FX or FBPOLY in 8.5 M random runs; loop kind on exsw_loop_n15.pg (e38329f8; Lead re-run from the canonical start: one Odd choice vertex, n5 1/0, Oink zlk OK); K linear (kchain, kt6_n58); all wakes at U3. Routed: L-RED box 43 = the K red-team; the Ks/Kt wording point to L-SI for P-N5-KW.
+  - Merged l-red. Added R72 to the R48 draft data line.
+- 21:54Z: Merged checker 135d8366 (C56 Addendum 2: R47 landed verbatim at c4d18621; C56 CLOSED), referee 5efec8b0 (REFEREE 11 K prep: kw_probe and kw_climb, 0 failures), l-new b4f064b4 (L-NEW 22 handover check 5/5; notebook duplicate block removed, verified: only the superseded NEXT block was lost) and l-si 6fb0cd55. GO to L-NEW 22 for box 43.
+- 22:01Z: Merged referee-2 ef433d32 (R2-N5-NEEDB: all SIGN, no gap; N-NEEDB-1..5; XG reached 7 times in climbs; FINDING N-NEEDB-5: the CONJECTURE "in scope, THR ⇒ M ≥ 0" is FALSE on block_9501.pg from its saved start pair, state 1, M = −1 with three (β) gates; from the canonical S3 start no such state exists). Merged l-si bf1ed0f7 + 47c4e7a2.
+- PINNED at this commit:
+  - packet P-N5-KW, docs/si/P-N5-KW-box15.md, sha1 c0b0111fcc2259e4ed9d43647bc4fa08cec452a5 (L-SI 10, l-si bf1ed0f7): W-ONCE, Facts A/B, FRZ-U, LEN, PAR, H-PATH, KIND-MONO, CASC-B, CW-INT, E-SEG, RUN, KW-S, PHASE (conditional on f);
+  - its addendum docs/si/P-N5-KW-addendum-box15.md, sha1 8d6bfb3c32d80ed7040df4ae2dee56bb9bb9b5bd (l-si 47c4e7a2: units are transitions; switches ≤ n · transitions; R72 data).
+  - They go to both referees as one review unit. REFEREE 11: §C NEEDB, then KW. REFEREE-2 12: §C FBPOLY, then KW, then FX, then NH42 (KW moved ahead of FX and NH42, since its assembly needs neither).
+- 22:12Z: Merged referee-2 75372604: §C FBPOLY vs R-N5-FBPOLY, identical, joint gap map closed by the agreed repairs, FBP-N2 accepted. R48 (FBPOLY) draft completed. Self-check: the title's uniform bound fails at |U| = 1 (it gives 0, while FB-POLY (c) allows 1), so the title now states o ≠ c_θ and o = c_θ separately. Sent to CHECKER C57.
+- 22:26Z: Merged checker 1351f017 (C57 PASS, R48; optional N-1..N-3; loop witness reproduced from its start pair with L-RED's tool). Applied N-1 (κ-PFZ count differs by convention) and N-2 (R72 added at l-red 6e28e4f1). Asked for C57 Addendum 1.
+- 22:36Z: Merged checker 6b15a543 (C57 Add. 1 PASS). LANDED R48 (P-N5-FBPOLY), checker 6b15a543, cmp OK. GAPS line 11 UPDATE: fallbacks per phase closed on 𝒞^1O.
+- 22:42Z: Pre-drafted docs/agents/R49-draft.md (P-N5-NEEDB; added at l-si 3ea0f5f9, pinned trunk e6ee6130). Placeholders: FIXES-PENDING, REFEREE-CONFIRM-PENDING, REFEREE-SC-PENDING, REFEREE-SC-SUMMARY-PENDING. To CHECKER C58 after REFEREE 11's §C and L-SI's fixes file.
+- 22:47Z: Read 14 notifications (21:46-22:35Z). Hourly sweep (trigger 22:04Z, run late): no overage; WATCHDOG 22:03Z: CHECKER at 681k, the only threshold crossed. Actions:
+  - CHECKER 7 told to finish C57 Add. 2, then write its handover and park; successor 8 follows.
+  - L-RED 18 is RUNNING on the K red-team (its need_input summary is stale; my 21:46Z route reached it).
+  - Merged referee 7dbd5118: §C NEEDB identical; N-NEEDB-5 CONFIRMED, so "THR ⇒ M ≥ 0" is FALSE as stated; N-NEEDB-4 NOT reproduced, because the witness_xg_12004 start pair is invalid.
+  - L-SI 34e5225a reproduced N-NEEDB-5 independently. GO to L-SI for the NEEDB fixes file and DEAD.md.
+  - REFEREE-2 12 asked to write §C NEEDB and fix the witness start pair, then continue KW (§C FBPOLY 75372604 + 6ff47e58 done).
+  - L-NEW 22 box 43 first pass (eb273ebc, 8029d6c8):
+    - Lemma DUAL (N5 on G mirrors N5^OF on G^d).
+    - Theorem MIRROR: 𝒞^1E reduces to 𝒞^1O, assuming the per-phase bounds hold from any start pair and for N5^OF.
+    - Corollary Φ-kO; ENDGAME.
+    - The per-vertex Φ-1O count fails beyond 𝒞^1O (retf_n6, frontier 𝒞^{≥2E,≥2O}).
+    - Exhaustive n = 4 shows no growth.
+    - Decision: packet P-N5-DUAL (MIRROR as an implication with an explicit hypothesis table), and continue Route Δ.
+  - R49 (NEEDB) draft: REFEREE §C filled; it waits for the fixes file and REFEREE-2's §C.
+- 22:54Z: Merged:
+  - checker 111afad7: C57 Addendum 2 (R48 landed verbatim; C57 CLOSED) and CHECKER 7's HANDOVER; it is parked. Created CHECKER successor 8 (session_017WsSD8yWCujUTXzQv5cc2r).
+  - l-si 863ca636: P-N5-NEEDB fixes, sha1 0e5f24af.
+  - l-si adf80994: DEAD.md, "THR ⇒ M ≥ 0" FALSE as stated; S3 form kept as a WEAK conjecture.
+  - l-red 896aea76: R73, no kill of either K note in 4.27 M runs; FRZ-U |R| − 1 and CW-INT attained; CASC-B and post-freeze KIND-MONO regimes unreached.
+  R49 draft: fixes filled; it waits only on REFEREE-2's §C NEEDB.
+  Routing: L-RED box 44, constructions entering the CASC-B and KIND-MONO regimes, then DUAL / MIRROR. R73 sent to REFEREE 11 as data for KW.
+- 23:00Z: Merged checker a0aa2651: CHECKER 8 handover check 5/5, GO; C58 waits for the final R49 draft.
+- Merged l-new b15856e8. PINNED at this commit: packet P-N5-DUAL, docs/new/P-N5-DUAL-box43.md, sha1 a51f7c30c267a4c02088cf2c849388e28c4121fa (L-NEW 22, 150 lines). Contents: Lemma DUAL, Theorem MIRROR as an implication under an explicit hypothesis (H-OF), Corollary Φ-kO, ENDGAME, and a start / N5^OF table to check.
+- Queued for both referees after P-N5-KW. REFEREE 11: KW, then DUAL. REFEREE-2 12: §C NEEDB, KW, FX, NH42, DUAL.
+- 23:06Z: Merged referee 56ac6538 + 1d6cbf32: R-N5-KW.
+  - Verdict: all SIGNED; E-SEG SIGNED WITH GAP KW-1 (a counting definition, one-line repair, no downstream bound changes); notes KW-N1..N5.
+  - FRZ-U is self-contained (no transfer of R20 CR needed). CASC-B's use of R26 (c) is checked.
+  - Addendum 1: CASC-B's hypothesis is exercised (cascb_witness.pg, within bound). KIND-MONO is still vacuous after the freeze.
+  - Told L-RED to focus its constructions on a post-freeze kind change.
+- 23:21Z: Read 12 notifications. Hourly sweep (trigger 23:03Z): WATCHDOG 23:03Z reports no overage; CHECKER's 681k alert resolved by the handover; REFEREE-2 12 at 449k; L-COMP idle 63 min.
+  - Merged referee-2 1a9a0407 (Addendum A, XG witness fixed: rng-free, pinned σ*), checker abc914c2/4cad8cb1 (C58 prep: Oink built, landed.py, NEEDB re-runs IDENTICAL), l-new 85969a3b, referee, l-red, l-comp.
+  - L-NEW DATA: every exponential-SI family (Friedmann switchall/switchbest, tc, tc+, counter_*) is in the frontier class 𝒞^{≥2E,≥2O}; only counter_ortl (𝒞^1O) and counter_qpt (one-player) are covered. Route Δ climbs: TJ and D_k changes ≤ n so far; a size-scaling test is running.
+  - Routed: REFEREE-2 (§C NEEDB first, then KW, then handover if > ~470k); L-RED (re-run REFEREE's cascb_witness.pg on kw18; R73 discrepancy); L-COMP (status nudge).
+  - R49 draft updated for Addendum A.
+- 23:28Z: Merged referee-2 8a47fd92 (R2-N5-KW: all SIGN, no gap, N-KW-1..6) and l-com de0ca760 (Q4 78/160 alive). Asked both referees for §C KW, and REFEREE-2 also for §C NEEDB. Pre-drafted docs/agents/R50-draft.md (P-N5-KW + addendum; placeholders FIXES / RSC / R2SC / CSUM). PLAN: after R50 lands, a short assembly packet (𝒞^1O polynomial iteration bound from R47 + R48 + R50 + per-iteration bit cost), refereed like any packet.

@@ -1,0 +1,21 @@
+A0_checks: 783
+FACTB_pairs: 7987
+KWS_stretches: 23
+PAR_states_cw_above_cth: 2
+PHASE_checked: 17
+RUNS_runs: 4
+RUN_case_a: 4
+phases: 17
+runs: 3
+states: 27
+states_checked: 27
+stretches: 23
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 6
+max_Trel_per_phase: 6
+max_f_per_phase: 1
+max_freeze_delay: 1
+max_stretches_per_phase: 7
+RESULT OK violations=0
+experiments/red/so/instances/tevlast_cex_n40.pg exit 0

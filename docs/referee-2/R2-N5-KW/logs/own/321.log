@@ -1,0 +1,21 @@
+A0_checks: 1397
+FACTB_pairs: 11976
+KWS_stretches: 95
+PAR_states_cw_above_cth: 2
+PHASE_checked: 18
+RUNS_runs: 3
+RUN_case_a: 3
+phases: 18
+runs: 3
+states: 107
+states_checked: 107
+stretches: 95
+max_KW_per_stretch: 2
+max_RUN_ratio_case_a_x1000: 16
+max_T_per_phase: 51
+max_Trel_per_phase: 51
+max_f_per_phase: 4
+max_freeze_delay: 2
+max_stretches_per_phase: 50
+RESULT OK violations=0
+experiments/new/box35/instances/pf_best_3622.pg exit 0

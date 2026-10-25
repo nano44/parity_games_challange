@@ -1,0 +1,4 @@
+2745
+VIOLATION own:rel_g12_y1.pg#0@0 PAR c_w odd
+VIOLATION own:rel_g12_y1.pg#2@0 PAR c_w odd
+VIOLATION own:rel_g12_y4.pg#0@0 PAR c_w odd

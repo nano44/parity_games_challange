@@ -1,0 +1,27 @@
+FA_chk                             31701
+FB_chk                             51493
+FRZD_hist_00                       518
+FRZD_hist_01                       21
+FRZD_hist_02                       3
+FRZD_hist_03                       1
+FRZD_max                           3
+FRZ_chk                            287
+MON_chk                            2669
+RUN_chk                            543
+RUN_maxNX                          3
+corner_postfrz_runs_cw_eq_ct       268
+corner_postfrz_runs_o_eq_ct        50
+corner_postfrz_runs_r2             6
+corner_postfrz_runs_selfloop_o     59
+corner_runs_cw_eq_ct               542
+corner_runs_o_eq_ct                128
+corner_runs_r2                     78
+corner_runs_selfloop_o             112
+games                              3000
+runs                               543
+u3_runs                            1
+FAILS 0
+EX ('FRZD', 'rand125', 1, 1, 25, 1)
+EX ('FRZD', 'rand1468', 0, 2, 16, 2)
+EX ('FRZD', 'rand2978', 0, 3, 24, 3)
+EXIT 0

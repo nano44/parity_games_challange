@@ -1,0 +1,35 @@
+climb FIT=casc seed=13003 n=29 iterations=6618 improvements=33 best_fitness=12660.0
+BEST-INSTANCE counters: {'A0_checks': 1670, 'FACTB_pairs': 10504, 'HPATH_checks': 1222, 'KWS_stretches': 11, 'PAR_states_cw_above_cth': 45, 'PHASE_checked': 10, 'RECORD_kind_change_transitions': 11, 'RECORD_kind_change_transitions_cw_above': 39, 'RECORD_runs_cw_above_notH2': 3, 'RUNS_runs': 4, 'RUN_case_a': 1, 'RUN_case_c': 3, 'phases': 10, 'runs': 4, 'states': 61, 'states_checked': 61, 'stretches': 11}
+BEST-INSTANCE maxima: {'max_KW_per_stretch': 14, 'max_RUN_ratio_case_a_x1000': 14, 'max_T_per_phase': 14, 'max_Trel_per_phase': 14, 'max_freeze_delay': 14, 'max_stretches_per_phase': 2}
+A0_checks: 9146040
+FACTB_pairs: 58048260
+FRZU_checks: 2663
+HPATH_checks: 1988416
+KWS_stretches: 82572
+LEN_runs_after_f0: 537
+PAR_states_cw_above_cth: 75221
+PHASE_checked: 71081
+RECORD_cw_switches_cw_above: 3
+RECORD_kind_change_transitions: 73118
+RECORD_kind_change_transitions_cw_above: 53650
+RECORD_runs_cw_above_notH2: 6533
+RUNS_runs: 31419
+RUN_case_a: 24873
+RUN_case_b: 13
+RUN_case_c: 6533
+climb_evaluations: 6612
+phases: 71081
+runs: 26448
+states: 343977
+states_checked: 343977
+stretches: 82572
+max_KW_per_stretch: 24
+max_RUN_ratio_case_a_x1000: 30
+max_RUN_ratio_case_b_x1000: 0
+max_RUN_ratio_case_c_x1000: 0
+max_T_per_phase: 24
+max_Trel_per_phase: 24
+max_f_per_phase: 0
+max_freeze_delay: 24
+max_stretches_per_phase: 16
+RESULT OK violations=0

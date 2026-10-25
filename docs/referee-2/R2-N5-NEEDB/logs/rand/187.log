@@ -1,0 +1,6 @@
+ANTI_W_checks: 2
+ANTI_Xi_checks: 2
+runs: 4
+states: 6
+RESULT OK violations=0
+experiments/m2/counterexamples/strat_s2_12v.pg exit 0

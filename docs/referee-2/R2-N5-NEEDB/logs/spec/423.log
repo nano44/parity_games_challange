@@ -1,0 +1,10 @@
+ANTI_W_checks: 8
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 2
+ANTI_Xi_checks: 8
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 2
+runs: 4
+states: 26
+RESULT OK violations=0
+experiments/red/xing/instances/x31_re24.pg exit 0

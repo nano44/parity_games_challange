@@ -1,0 +1,18 @@
+A0_checks: 1097
+FACTB_pairs: 12088
+HPATH_checks: 55
+KWS_stretches: 60
+PAR_states_cw_above_cth: 8
+PHASE_checked: 16
+phases: 16
+runs: 3
+states: 60
+states_checked: 60
+stretches: 60
+max_KW_per_stretch: 0
+max_T_per_phase: 20
+max_Trel_per_phase: 20
+max_f_per_phase: 1
+max_stretches_per_phase: 21
+RESULT OK violations=0
+experiments/si/coarse/instances/rel_x31_rx48.pg exit 0
