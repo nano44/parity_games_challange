@@ -221,10 +221,20 @@ Proof.
   - outsn_rand.txt: seed 3701, 20,000 games; no OUT stretch;
   - epoch_lib.txt, epoch_rand.txt;
   - rfrozen_lib.txt.
-- Climb logs are in experiments/new/out/box37 (gitignored). Results so far (11:0xZ):
-  - sepclimb (breaks without a θ / w change): 0 found in every run. Epochs reached 5 (seed 3711, b5_os_n40) and 3 (seed 3712).
-  - rfclimb (all modes): ROUTE-FROZEN refuted (§5).
-  - rfclimb MODE=ent (NO-ENTRY): runs in progress, 0 so far.
+- Climb logs are in experiments/new/out/box37 (gitignored). Final results (11:41Z by date -u; 25 min per run unless stated):
+  - sepclimb MODE=sep (breaks without a θ / w change):
+    - seed 3711 (b5_os_n40): FINAL (0, 8, 5) after 75,165 mutations: 8 epochs, every break θ-separated;
+    - seed 3712 (b5_os_n12): FINAL (0, 3, 2) after 606,389 mutations;
+    - seed 3713 (wd16_s2): stopped by me at about 4 min to free a CPU, with no improvement. Not a result.
+  - sepclimb MODE=ep, seed 3714: FINAL (2, −1, 0) after 833,219 mutations; no growth.
+  - rfclimb all-rises mode: ROUTE-FROZEN refuted by seed 3722 (§5). Seeds 3721 and 3723 were stopped once the refutation was in.
+  - rfclimb MODE=ent (NO-ENTRY):
+    - seed 3731 (rfroz_cex_n16): FINAL (0, 19) after 217,044 mutations;
+    - seed 3732 (b5_os_n40): FINAL (0, 70) after 19,126;
+    - seed 3733 (frz24): FINAL (0, 0) after 741,575.
+  - rfclimb MODE=ent2 (case-B seeds b5_os_n12, b5_o11, b5_os_n14; seeds 3741-3743): FINAL (0, 0) after 2.0-3.2 M mutations each.
+    These climbs never produced a post-fallback R-rise either (§10).
+  - So 0 NO-ENTRY violations in every climb. The case-B precondition was never reached.
 
 ## 9. Theorem NO-ENTRY-A (PROVED, L-NEW succ. 16; 𝒞^1O, τ(o) = o, rank(o) > rank(c_θ))
 Setting.
@@ -294,3 +304,27 @@ Proof.
   - case A: 288 checked states, case B: 33; 57 later fallbacks;
   - 0 failures of (i), (ii) and (iii) in either case. (ii) holds in case B too, though the proof covers only case A.
   - rfroz_cex_n16 is case A (rank(o) = 12 > rank(c_θ) = 2). Its post-fallback R-rises are at levels 8-11 < 12, as the proof requires.
+
+## 10. Case B (c_θ more relevant than o, τ(o) = o): what is proved, and the exact shape of a violation (OPEN)
+- c_θ is odd. reward(o) > reward(c_θ) (XW), and an even c_θ more relevant than o would have the larger reward.
+- PROVED (L-NEW succ. 16): at an HN fallback state a in case B, every R → R gate (v, z) is honest length-only (lev = −1), with z's route
+  longer than σ_a(v)'s. Proof.
+  - Suppose the honest top difference u lies above c_θ.
+    - Then rank(u) > rank(c_θ) > rank(o), so the W frame (threshold o) sees the same top u with the same verdict.
+    - The switch would raise W at v, by the same two cases as §9 BASE (the cycle case gives cycle node u, which is even since the gate
+      is Even-improving, with reward(u) > reward(o)). That contradicts FBL-N (i).
+  - So the routes agree above c_θ, and the honest gate is decided by length. c_θ is odd, so the longer route is better for Even.
+  - Non-improvement for W then needs one of two things:
+    - a W-unfavourable top difference with rank between rank(o) and rank(c_θ);
+    - no such difference, and Ω(o) even (W prefers the shorter route).
+    Both parities of o are possible in case B: with c_θ odd, −p′(o) > −p′(c_θ), so an odd o also satisfies reward(o) > reward(c_θ).
+- So R-rises at a case-B fallback are length-only. A post-fallback entry would therefore need:
+  - an F-vertex y with an edge to some z ∈ R̄, and P(Ξ_a(σ_a y)) = P(Ξ_a(z)) = (π_z ∩ V_{>c_θ}) ∪ P(θ);
+  - a honest length of σ_a(y) strictly between z's lengths before and after the fallback.
+  SEP-o is not available: o is below c_θ and not in P(θ).
+- DATA:
+  - inva.py: 33 case-B post-fallback states, 0 failures of (i), (ii) or of the frozen-values check;
+  - gadget.py (one added Even vertex, every (v, f, priority)) on b5_o11, b5_os_n12, b5_os_n14, wdrop_canon: 0 violations;
+  - NO-ENTRY climbs from case-B seeds (MODE=ent2, seeds 3741-3743): no post-fallback R-rise found at all within the first 8 min. The
+    precondition (a length-only R → R gate at a case-B fallback) is itself rare.
+- CONJECTURE NO-ENTRY-B: the case-B statement of §9. Not proved.

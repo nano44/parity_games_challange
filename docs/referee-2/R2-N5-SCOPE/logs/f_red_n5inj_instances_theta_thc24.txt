@@ -1,0 +1,22 @@
+KEY_tau_const_transitions: 78
+NH1_caseA: 0
+NH1_caseB: 0
+NH1_fallbacks: 0
+SCOPE_case1: 1
+SCOPE_case2: 5
+SCOPE_scope_runs: 6
+WCH_H2_states: 85
+WCH_transitions: 16
+fallbacks: 0
+phases: 5
+runs: 3
+transitions: 82
+max_NH1_fallbacks_per_phase: 0
+max_WCH_per_crossing_free_interval: 5
+max_WCH_per_phase: 5
+max_fallbacks_per_crossing_free_run: 0
+max_h_runs_per_phase: 1
+max_out_of_SN_fallbacks_per_phase: 0
+max_scope_case2_per_phase: 1
+max_scope_runs_per_phase: 2
+RESULT OK violations=0

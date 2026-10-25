@@ -38,6 +38,7 @@ Written 2026-10-25 09:01Z (date -u). Predecessor: successor 4, session_01G2KY2Ca
    (Second, measured: tools/oink/build is absent here, so verify's Oink smoke is NOT RUN and re-runs cannot use zlk until setup_oink.sh.)
 
 ## Resume point (successor 5)
+- IDLE 11:5xZ (date -u): C41-C44 all CLOSED (R32-R35 landed verbatim). Next per the Lead: P-N5-SCOPE and P-N5-RL once drafted.
 - C41 (R32, P-N5-FRZ pinned 25fda0f) 09:21Z (date -u): main report docs/checker/C41.md: FAIL at eb3f659 (draft sha1 6d23f986…):
   E-1 REFEREE C.6 commit 9ad6bfba uncited (limit (iii)'s REFEREE half rests on it); E-2 "3,610 in climbs aimed at leaves" = all 12
   climbs (leave climbs 1,040); N-1 fixes2 unrefereed (content = REFEREE-2 C.4 row 4, checked); N-2 R29 (c) vs (e), outside the draft.
@@ -58,6 +59,13 @@ Written 2026-10-25 09:01Z (date -u). Predecessor: successor 4, session_01G2KY2Ca
   N-2 REFEREE l.9 5e85c706; N-3 REFEREE-2's 238. Every re-run EXACT. Add. 1: PASS at 3c0c2aa (33dbffd3). Next: Add. 2 =
   landed-text check; then NJB = R35.
 - Worktrees: wt43 = 4be5bba, wtR43 = fff6e624.
+
+- C44 (R35, P-N5-NJB pinned a7d85b3) 11:3xZ (date -u): main report docs/checker/C44.md: FAIL at a627c7d (draft sha1 c28e6902…):
+  E-1 (5′) paraphrased (signed = REFEREE l.27 / fixes NJB-2 verbatim); E-2 REFEREE-2 SIGN list omits ENT-SHAPE (1)-(4).
+  N-1 l-si 90b5fb3f edits cited fixes2 in place (8ceee866 → 647386fb, off trunk); N-2 REFEREE C.5 3 rows; N-3 b6 fb18 also on SPEC.
+  Every re-run EXACT. Worktrees wt44 = a627c7d, wtR44 = 524d93f5. Add. 1: rev. 7b1a47d (f730b554; fixes2 → 647386fb):
+  E-1, E-2 OPEN. Add. 2: PASS at 3fc6cf1 (6f77aca6). Add. 3: R35 landed verbatim at 4151e41, C44 CLOSED.
+  C43 Add. 2: R34 landed verbatim at e784554, C43 CLOSED.
 
 ## Resume point (successor 4, history)
 - PARKED 16:22Z (date -u). C28 CLOSED:

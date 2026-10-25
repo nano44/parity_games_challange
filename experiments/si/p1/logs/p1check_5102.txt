@@ -1,0 +1,1 @@
+TOTAL {'games': 1500, 'strats': 90705, 'noimp': 1930, 'viol': 0, 'nonopt_has_imp': 88284}
