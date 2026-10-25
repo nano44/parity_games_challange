@@ -1,4 +1,4 @@
-# Draft RESULTS R45 (Lead, 2026-10-25 STAMP by date -u; lands after R44 = P-N5-PFZ, whose FB-ROUND it uses) — to CHECKER C54
+# Draft RESULTS R45 (Lead, 2026-10-25 19:35Z by date -u; lands after R44 = P-N5-PFZ, whose FB-ROUND it uses) — to CHECKER C54
 
 ### R45 [refereed-only] N5 on one-Odd-choice games: θ's signed path weight is a Bellman-Ford value (Y-FORM), it freezes on F ∩ U after |U| − 2 fallbacks of a phase (HAT-FREEZE) and then changes P(θ) at most deg(o) times (RHO-TAIL); S4a steps between HN states are Bellman-Ford rounds (BF-F, FREEZE-F), so P(θ)-changes over the HN states of a phase are polynomial in n and N_HN (RHO-HN), and so are HN breaks, crossings, fallbacks and θ-changes (HN-POLY) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C54.md, checker PENDING)
 - Object (packet P-N5-RHO, added at l-new 3e9fe5c2, pinned trunk c814455, unchanged during review): docs/new/P-N5-RHO-box40.md, sha1
