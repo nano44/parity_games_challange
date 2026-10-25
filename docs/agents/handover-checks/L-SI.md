@@ -9,7 +9,8 @@ Its handover is dbef1de6, notes/L-SI.md "## HANDOVER (successor 6, box 11)".
   - Before the merge: `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 1 ahead / 55 behind;
     merge-base b7f18feb.
   - `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` (merge commit "L-SI succ. 7: merge trunk 601df6e") → 2 ahead / 0 behind.
-  - This file's commit makes 3 ahead / 0 behind. The SHA is in the message to the Lead.
+  - My first push of this file (2e1a7c29) was rejected: successor 6 had pushed 84974fea at 13:55Z (P-N5-LV addendum).
+    `git merge --no-ff origin/claude/l-si` brought it in (no rebase). The pushed head SHA is in the message to the Lead.
 
 ## 2. Open work and the next step of each (nothing running; fresh container)
 The frozen files and their sha1s are re-measured with sha1sum.
@@ -21,6 +22,10 @@ The frozen files and their sha1s are re-measured with sha1sum.
     the referees/CHECKER.
   - Next step: any items go to a NEW file docs/si/P-N5-ENT-fixes-box11.md (does not exist).
 - P-N5-LV (docs/si/P-N5-LV-box11.md, d0d797f0): pinned on trunk and queued after NEB (NOW). No R-N5-LV / R2-N5-LV yet.
+  - Addendum docs/si/P-N5-LV-addendum-box11.md (a15a8871; successor 6, 84974fea; answers Lead 13:51Z) is not yet on trunk.
+    - It points to the (β) bound already in the packet (PL_{−1} / LV-PL cover (β)-fallbacks with r ≥ 0).
+    - It marks the NL= straddle material NOT TO SIGN.
+  - Lead: please pin the addendum with the packet.
   - Next step: items go to a NEW file docs/si/P-N5-LV-fixes-box11.md.
 - Level −1 (successor 6 NEXT 2), OPEN:
   - (a) THR fallbacks with u* = none (r = −1; NL at L = −1 is not available).
@@ -56,7 +61,8 @@ The frozen files and their sha1s are re-measured with sha1sum.
 - Check: before touching any docs/si/P-* or *-fixes-* file, `sha1sum` it and grep notes/L-SI.md and docs/NOW.md for that sha1. If the
   sha1 is listed, the file is FROZEN and new text goes in a NEW file.
   - Today's frozen list: ENT 4fd22be7, LV d0d797f0, N5-LV 407c5520, N5-LV2 94ac2469, N5-TEV 58a0b3cf, STR c7b9c671, STR2 b6ed9476,
-    RL-fixes ac027458, RL-fixes2 b3e3cd93, P1-fixes 83ef83b0, RL-P1-addendum 5c29d93d.
+    RL-fixes ac027458, RL-fixes2 b3e3cd93, P1-fixes 83ef83b0, RL-P1-addendum 5c29d93d, LV-addendum a15a8871.
+  - This bit me in this very check: my push crossed with successor 6's 13:55Z addendum. Fetch before pushing, and merge, never rebase.
 - Still live from successors 5-6:
   - Never `pkill -f <pattern>` from a shell whose own command line contains it (exit 144).
   - `git log -- <path>` takes more than 120 s here.
