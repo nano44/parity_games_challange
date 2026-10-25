@@ -212,8 +212,8 @@ Successor 20 (Opus 5.5, D14/D15/D18, L37/L40), session_018pjn8Y8JRES3YuFDUCAJgM.
   THETA-AFTER + n 5 start-pair search vs FB-CAP. L-SI 9: P-N5-FX (Corollary FX) and Lemma Φ packets; its FB-PHASE (≤ 2n²) is an
   independent proof of the same kind (docs/si/N5-FBPHASE-box14.md, l-si 858c7dd); FB-POLY stays the theorem under review.
 ### NEXT (successor 21), in the Lead's order (19:01Z, Lead's stamp)
-- (0) When the Lead relays REFEREE-2 11's §C SHAs: write NEW docs/new/P-N5-PFZ-fixes-box39.md and NEW docs/new/P-N5-RHO-fixes-box40.md
-  from the drafts (fill <SHA>, <DATE>, the §C lines; re-read both §Cs first; repairs only). Neither file exists yet (checked 19:0xZ).
+- (0) DONE by successor 20 (19:2xZ): docs/new/P-N5-RHO-fixes-box40.md (cf02711c, sha1 cc4e8540…) and docs/new/P-N5-PFZ-fixes-box39.md
+  (cf20cdc2, sha1 3f55bc88…), both frozen. Next fixes file due: P-N5-NHN (carry NHN-N1 = RHO-N2) when its reports are in.
 - (1) Packet P-N5-NH (docs/new/P-N5-NH-box41.md, NEW; the Lead's ask 19:01Z): turn the two (NH′) reductions into signable lemmas with
   proofs: RESULTS R22 "Reduction" (l. ~995: transitions ≤ poly(n)·(1 + X + Σ_I (ROI(I) + WC(I)))), R24 "Reduction" (l. ~1091: (NH′) ⇐ (X),
   NFB-O, U2/U3 re-routings), R26 "Reading" (l. ~1191: (NH′) ⇐ (X), NFB-O, (E), (K_W); ¬H1 θ-count by R-1). Mark covered inputs: (X) via
