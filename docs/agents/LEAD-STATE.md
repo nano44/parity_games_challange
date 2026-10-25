@@ -1236,3 +1236,11 @@
   - Proved: BF (renamed BF-RW at the Lead's request; it clashes with ENT's BF), FREEZE-M, FREEZE-X, ROUTE-LEN, W-POT, CW-COUNT. Rises per block are polynomial up to TIE steps (OPEN).
   - Exact obstruction: the bounds are per entry, and every break is an entry, so the charging is circular.
   - Told L-NEW 18 that REFEREE-2's OUT §C exists (2a9e8db) and found the fixes correct. No fixes2 is needed.
+- 15:05Z Lead: hourly sweep 15:03Z.
+  - Health: no overage; Lead ~265k after compaction. L-COMP 4 (243k) idle on box7w n 5 Q4 (Q3 clean). L-RED 16 (400k) idle on the n 5 subset run (10.1 M / 81 M). L-SI 7, L-NEW 18, REFEREE 9, REFEREE-2 9 and CHECKER 6 all reported within the hour. No exceptions.
+  - Merged l-si 689f7b6 (N5-LV4-box12, sha1 9d1b90f4; lane PROVED, unrefereed):
+    - STALE-GATE (every game): a gate target at a later state has Ξ changed since the fallback k0.
+    - EV-G; ENT-X_{−1}, COND. P-N5-LV §3; LV-PL′ (≤ n·n_E + 1 THR M = −1, r ≥ 0 fallbacks per scope run), COND. P-N5-LV §1-§4.
+    - DATA: 72,589 + 39,406 checks, 0 failures.
+  - Merged l-red 9cf2302 and l-comp 0dd4457.
+  - L-SI 7 had not seen the 14:33Z and 14:46Z ENT relays; re-sent. Order: the ENT fixes file NOW, then packet P-N5-LV4-box12, then u* = none.
