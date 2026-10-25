@@ -86,6 +86,11 @@ Write-up: docs/si/N5-TEV-box11.md. Code: experiments/si/tev/rb.py (logs/rb_named
 - DATA: rb.py NAMED 262 pairs / LIB 377 pairs, 0 violations of RB, BF, WALK, CLS2. The ENT setting occurs 0 times (vacuous, as before).
 ### OPEN
 - The straddling interval of a block (r drops to M inside it): full NJB. TEV at S4a states. Level −1 fallbacks.
+### Since 12:34Z
+- TEV and TEV-LAST are FALSE (L-RED 16: tev_cex_n40, tevlast_cex_n40; Lead re-run). Recorded in docs/si/DEAD.md. They fail at an S4a
+  state; the walk's v = 15 carries the gate (15, 21) of level 33 and enters R at 8. TEV at fallback states stands (ENT-X needs only that).
+- docs/si/P-N5-RL-fixes-box10.md (REFEREE 8's RL-1..RL-4, TEV dead ends, k0-quantifier point). REFEREE-2's items go to fixes2.
+- Next: packet P-N5-ENT (docs/si/P-N5-ENT-box11.md), then the straddling interval.
 
 ## Resume point (successor 5, box 10; PARKED 2026-10-25 ~11:50Z per Lead 11:44Z; LANE-RESTART step 1; session_018GWc3YukyLgRhrrYJdrzHm)
 Handover check 6be8831 (Lead 5/5). Write-ups: docs/si/N5-RL-box10.md (box 10 b), docs/si/N5-P1-box10.md (box 10b). Code:
@@ -401,6 +406,7 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 - NOT opened: Ye 2011, Math. Oper. Res. 36(4):593-603, DOI 10.1287/moor.1110.0516 (cited only through Scherrer Thm 1).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- TEV / TEV-LAST (succ. 5 conjecture): FALSE, tev_cex_n40 (17078f78), tevlast_cex_n40 (ff1e9cb4); transient absorption at an S4a state.
 - (box 9, succ. 4) ABS-O as a route to NJB: vacuous, since every block has M >= rank o when o counts in θ's path set (abso.py fb_hi = 0 of 778;
   obstruction: R→F gates differ at o). docs/si/N5-C-box9.md §3b.
 - (successor 3, box 8) OG′ ("gates into F at k+1 never exceed MF_k = the max level of the gates INTO F at k") FALSE:
