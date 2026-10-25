@@ -1,0 +1,14 @@
+C567_checks: 90
+NL_(j,L)_checks: 9
+NL_admissible_with_R_nonempty: 9
+NL_no_admissible_L(S4a,(h)): 4
+NL_no_admissible_L_with_leave: 4
+NL_transitions_with_admissible_L: 9
+OFFG_checks: 6
+runs: 3
+scope_runs: 4
+scope_transitions: 13
+transitions: 27
+transitions_in_phase: 13
+max_fallbacks_per_scope_run: 0
+RESULT OK violations=0

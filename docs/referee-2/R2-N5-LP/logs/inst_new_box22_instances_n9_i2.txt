@@ -1,0 +1,19 @@
+C1O_phases: 3
+HI_checks: 32
+HI_cons_M=L: 4
+NU_transitions: 1
+U_checks: 5
+eps: 0
+own_cycle_node_switch_above_L: 1
+own_cycle_node_switches: 1
+phases: 3
+rises: 0
+runs: 3
+transitions: 5
+transitions_in_phase: 5
+max_K: 0
+max_NU_run: 1
+max_S_o: 0
+max_T_phase: 2
+max_rho: 0
+RESULT OK violations=0

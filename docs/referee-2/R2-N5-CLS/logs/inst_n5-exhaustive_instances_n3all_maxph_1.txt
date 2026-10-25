@@ -1,0 +1,11 @@
+C567_checks: 90
+CN_checks: 1
+runs: 3
+scope_fallbacks: 1
+scope_fallbacks_theta=w: 1
+scope_runs: 1
+scope_transitions: 1
+transitions: 3
+transitions_in_phase: 1
+max_fallbacks_per_scope_run: 1
+RESULT OK violations=0

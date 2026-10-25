@@ -1,0 +1,6 @@
+ABSC'_checks: 3
+ABSC'_runs_with_H1_eps: 3
+H1_eps: 24
+KEEP_checks: 24
+runs: 3
+RESULT OK violations=0

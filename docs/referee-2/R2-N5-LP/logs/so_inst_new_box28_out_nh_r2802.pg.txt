@@ -1,0 +1,4 @@
+phases: 1
+phases_lam_o_eq_o: 1
+runs: 3
+RESULT OK violations=0

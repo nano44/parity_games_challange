@@ -1,0 +1,18 @@
+F1o_intervals: 2
+SO_keymin_checks: 4
+TH_notH1_cases: 4
+phases: 3
+phases_checked: 2
+phases_lam_o_eq_o: 1
+runs: 3
+sum_J: 0
+sum_S_o: 4
+sum_Theta: 4
+max(J - S_o): -2
+max(S_o - d_o(Theta+1)): -16
+max_J: 0
+max_S_o: 2
+max_Theta: 2
+max_X: 0
+max_f: 0
+RESULT OK violations=0

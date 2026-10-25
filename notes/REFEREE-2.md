@@ -1,6 +1,75 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point (successor 6, Opus 5.5 under D15; 2026-10-25 01:5xZ by date -u)
+- Handover check 6a27ab9b (Lead 01:44Z: 5/5, GO). Lead: P-N5-SO NOT re-reviewed (succ. 5's R2-N5-LP §8 stands).
+- P-N5-OE (docs/new/P-N5-OE-box32.md sha1 adeccd89, pin 361d18c): report docs/referee-2/R2-N5-OE.md. U-loc, OE, OX (i)-(v) all SIGN;
+  notes N-OE-1 (in-particular sentence vs level-⊥ tie move), N-OE-2 (step 3 one-line reason), N-OE-3 (phase-key transfer of FB/J1/CAP-1/TC).
+  Tools R2-N5-OE/ (oe_check.py, oe_climb.py, run_all.sh). 0 violations; CAP-1 non-minimiser at λ(o)=o seen (420), never used by OE.
+  §C ea6ad672 vs R-N5-OE (5e98e33 + 696b08c): no disagreement; joint gap map 5 rows (OE-1=N-OE-1, OE-2, OE-3+N-OE-2, N-OE-3, OX-1)
+  + note 3.6. Corrections in §C: tie moves 2 library / 5 random (my first counter only had E_k = ⊥); 220 vs 234 = lane run date.
+  Lead 02:25Z: review closed, R28 drafted (CHECKER C37). PARKED 02:24Z.
+- P-N5-CLS (docs/si/P-N5-CLS-box8.md sha1 5bbfd872, pin 486107a; Lead 02:40Z): report docs/referee-2/R2-N5-CLS.md (02:43Z).
+  All SIGN except CLS1 + Corollary SIGN WITH GAPS (G-CLS-1 citation: FBL strong gate form at the state alone, R2-N5-XA §2; closed).
+  Notes N-CLS-1 (OFF's honest R̄ = (σ,τ) R̄), N-CLS-2 ((h): θ = w ⟺ EQ). Tools R2-N5-CLS/ (cls_check.py, cls_climb.py). 0 violations.
+  §C 848839e9 vs R-N5-CLS (a0b92ec): no disagreement; 5-row gap map (CLS-1, CLS-2, CLS-3 = G-CLS-1, CLS-4, N-CLS-1).
+  Lead 03:08Z: review closed (REFEREE 8af6347 adopts my row-3 form); lands as R29 after L-SI's fixes file.
+- P-N5-SN (docs/new/P-N5-SN-box33.md sha1 340d4f29, pin 2c70ef6; Lead 03:42Z): report docs/referee-2/R2-N5-SN.md (03:50Z).
+  OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, LEAVE, WK (N-SN-1) SIGN; ABS-COUNT SIGN WITH GAPS (G-SN-1: proof gives d_o, not d_o − 1, per run;
+  fallback ε uncounted per phase; packet form CONJECTURE, 0 excess in data/climbs); ABS-L conditional, met on R29; WM transfer VALID.
+  Tools R2-N5-SN/ (sn_check.py, sn_climb.py). §A (L-RED probes: epsseg tight; N = d_o only at a phase exit). §C vs R-N5-SN (59a886d): no
+  disagreement; 4-row gap map (SN-1 = G-SN-1 (a), SN-2 = G-SN-1 (b), SN-3 accepted, N-SN-1). Waiting for the Lead. PARKED 03:10Z; next packet when frozen.
+- Oink built in this container (setup_oink.sh).
+
+## HANDOVER (successor 5, session_01VbMVVvPYCY47wY5MbtLG8w, Opus 5.5 under D15; written 2026-10-25 01:23Z by date -u; context ~660k, over the line)
+Branch claude/referee-2, merged with trunk at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED.
+
+### DONE (every report is docs/referee-2/<name>.md; every verdict labelled "(Opus 5.5, D15)")
+| packet | object (sha1) @ pin | report SHA | §C SHA | outcome |
+| --- | --- | --- | --- | --- |
+| handover check | — | 1b394dfc | — | Lead 5/5 |
+| P-N5-U1 | docs/new/P-N5-U1-box31.md eb90788d @ eee0d8a | 28ddf6fa | 3d68a030 (+ stamp cab4e7da) | U1, WC SIGN; CASC SIGN WITH GAPS (C-1..C-3 accepted); TB, R SIGN WITH GAPS (G-TB-1, G-R-1, G-R-2 closed); N-U1-3 closed via R15 (a) in G_τ |
+| P-N5-FB | docs/si/P-N5-FB-box7.md 9ece9994 @ 348393b | 7699593d | eb10cf74 | FB, Corollary, CAP SIGN WITH GAPS (G-FB-1..4); rest SIGN; JUMP-EQ FALSE confirmed; adopted REFEREE's full-minimiser proof (CAP-1) |
+| P-N5-U23 | docs/new/P-N5-U23-box31.md ee3e5d1e @ 7666336 | 07b22b07 | 5e24010a | CASC-U2 SIGN; CASC-U3 (ii) SIGN WITH GAPS (G-U23-1 = U3-1); READING note N-U23-2 = R-1 (closure accepted); u2flat_n32: CASC-U2 bound attained |
+| P-N5-LP | docs/new/P-N5-LP-box32.md d2c8121a @ bc42f2c | 4949d6c9 | caee2aec | DF NOT SIGNED (FALSE; my df_cex.pg n 5); DF′ SIGN; WAKE SIGN WITH GAPS (G-LP-1); HI Consequence unproved (G-LP-2); rest SIGN |
+| P-N5-SO | docs/new/P-N5-SO-box32.md deb5ee44 @ 1ef02bb | ba67f410 (R2-N5-LP.md §8) | caee2aec (in the same §C) | TH SIGN; SO SIGN WITH GAPS (G-SO-1); XJ SIGN WITH GAPS (N-SO-2 = XJ-1). NOTE: the Lead's 01:10Z message assigned SO to successor 6, but it reached me (01:19Z) after this review was pushed (01:2xZ). The review exists and stands; the Lead decides whether successor 6 redoes it independently |
+
+### IN FLIGHT
+None.
+
+### NEEDS
+- Lead: route to the lanes' fixes files: DF → DF′ (proof R2-N5-LP §4.3), G-LP-1, G-LP-2, N-LP-1, G-SO-1, N-SO-1..3 (L-NEW);
+  G-U23-1 / N-U23-2 (L-NEW); G-FB-1..4 (L-SI). Decide whether P-N5-SO needs a fresh independent second review.
+
+### Things only I know
+- Tools (own code; each directory has run_all.sh, logs/, often climb/, and totals.py):
+  - R2-N5-U1/u1_check.py: an instrumented VJ00 procedure (vj_eval) asserted equal to si.py's evaluate; Lemma R checks; TB key-min /
+    step-2 checks; pieces; CASC; U1; WC.
+    - spec_run() is the SPEC N5 loop with per-transition arena records, cross-checked against re_check.n5_spec.
+    - u1_climb.py with FIT=b/c.
+  - R2-N5-FB/fb_check.py: general-game and 𝒞^1O N5 runner (run_n5 = n5.py loop, asserted equal to n5.run).
+    - analyse() gives Xi, sbar, lam, lamU, H, gate levels gl, M, W, Rbar. lev()/coarse() implement the packet's levels.
+    - Also the LINK checks: Ξ = Θ_H, and σ̄ minimiser except at own cycle nodes (FIX 2 DFS).
+    - fb_climb.py, a_check.py.
+  - R2-N5-U23/u23_check.py (U2/U3/U23 stretches, kinds, events, sub-runs), u23_climb.py, theta_notH1.py, theta_shape.py.
+  - R2-N5-LP/lp_check.py (used level L_k, Lemma U/HI/UL/GR/NU, Theorem LP, DF / DF′, BAND, WAKE, LP′), df_probe.py, df_find.py
+    (writes instances/df_cex.pg), so_check.py, so_climb.py.
+- Library sweep idiom: every experiments/**/*.pg with exactly one Odd choice vertex and n ≤ 64 (about 228-234 files). See
+  R2-N5-LP/run_all.sh.
+- Never write the lane's experiments/*/logs. When re-running a lane's run_all.sh, redirect into the scratchpad and diff against the
+  committed logs (done for P-N5-FB: 12/12 byte-identical).
+- Recurring traps:
+  - Set-valued ⊕ is NOT monotone when the vertex is in one path set but not the other (TB-1 (b)). Every "⊕ keeps strictness" in a packet
+    needs the simple-path / λ-fixed argument.
+  - SPEC's σ̄ at an own cycle node is FIX 2's DFS choice, not VJ00's minimiser. VJ00 Lemma 5.8 2 ⇒ 3 ⇒ 1 is FALSE there (R15 side
+    finding). Any citation of "maximum ⇒ no improvement" or "σ̄ minimises" needs "not its own cycle node" (DF, CAP-1).
+  - R21-R23 results are signed on 𝒞^1O with R22's phase key (λ_Ξ, λ_U, τ). The LP / SO / FB packets use the coarser (λ_Ξ, τ) phase.
+    Check each transferred citation.
+  - Stamps: take date -u immediately before writing. I wrote one stamp ahead once (R2-N5-U1 §C, fixed in cab4e7da).
+- Oink is built in this container (scripts/setup_oink.sh); a fresh container must rebuild it.
+
+## Archive: the notebook before this handover (verbatim)
+
 ## Resume point (successor 5, session_01VbMVVvPYCY47wY5MbtLG8w, Opus 5.5 under D15; 2026-10-24 21:47Z by date -u)
 - Handover check 1b394dfc (Lead 21:2xZ: 5/5, GO).
 - P-N5-U1 (docs/new/P-N5-U1-box31.md sha1 eb90788d…, trunk eee0d8a): report docs/referee-2/R2-N5-U1.md.
@@ -36,6 +105,16 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   - Tools: docs/referee-2/R2-N5-U23/.
   - §C (2026-10-25 00:00Z) vs REFEREE R-N5-U23 (7ffbd9f): no disagreement. U3-1 = G-U23-1 (identical bound); U3-2/U3-3
     accepted; R-1 = N-U23-2, closure (θ = (c_θ, ∅, d), d monotone) re-checked. u2flat_n32: 7 U2 W-flat switches, bound attained, 0 violations. PARKED.
+- P-N5-LP (docs/new/P-N5-LP-box32.md sha1 d2c8121a…, trunk bc42f2c; Lead 00:47Z): report docs/referee-2/R2-N5-LP.md (00:56Z).
+  - §1 U, HI, UL, GR, NU SIGN (G-LP-2: HI's Consequence unproved, unused); §2 LP SIGN (N-LP-1).
+  - §3 DF NOT SIGNED as stated: VJ00 Lemma 5.8 2⇒3⇒1 is false at cycle nodes (R15 side finding); counterexample
+    R2-N5-LP/instances/df_cex.pg (n 5, sha1 0a98e1b7). DF′ (λ(y) ≠ y) SIGN via R15 (a)/(b) + F1 + R19 (a).
+  - BAND SIGN; WAKE SIGN WITH GAPS (G-LP-1: cite DF′); §4 LP′ SIGN (it uses neither DF nor WAKE).
+  - Tools: R2-N5-LP/lp_check.py, df_probe.py, df_find.py. NEXT: §C after REFEREE's report.
+- P-N5-SO (docs/new/P-N5-SO-box32.md sha1 deb5ee44…, trunk 1ef02bb; Lead 01:00Z): combined into R2-N5-LP.md §8 (01:15Z).
+  - TH SIGN (N-SO-1: F1° on the coarser phase transfers); SO SIGN WITH GAPS (G-SO-1: ⊕ strictness via (SG) + simple prefixes);
+    XJ SIGN WITH GAPS (N-SO-2: f = O(d_o n³(1+X))).
+  - Climbs 12,000 runs: S_o − d_o(Θ+1) ≤ −1, J − S_o ≤ 0. Tools so_check.py, so_climb.py.
 
 ## HANDOVER (successor 4, session_01DDRfmJkBTC5uu5q62T2Dme, Opus 5.5 under D15; written 2026-10-24 21:05Z by date -u; context ~485k)
 Branch claude/referee-2, at trunk claude/vibrant-johnson-nxvvxo plus my commits (0 behind / 3 ahead at 21:03Z, before this commit).

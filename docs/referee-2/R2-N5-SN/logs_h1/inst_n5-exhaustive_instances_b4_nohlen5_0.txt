@@ -1,0 +1,4 @@
+DROP_divergences: 1
+DROP_transitions(H1 -> notH1 in phase): 1
+runs: 3
+RESULT OK violations=0
