@@ -197,6 +197,11 @@ Two differences: ENT-SHAPE (5), where I adopt REFEREE's verdict, and MINSET (c),
 | 1 | NJB-1 | G-NJB-1 (REFEREE to accept or contest the statement part) | wording + statement; closed by the line | §2 (b): "a member of Mn_t that stays in F stays in Mn_{t+1} with the same COARSE_M value; members leave Mn only by entering R". (c): "COARSE_M(θ) changes at t → t+1 exactly when no member of Mn_t lies in F_{t+1}; then every member of Mn_t entered R at t". Consequence: "absorbed" → "entering R" |
 | 2 | NJB-2 | N-NJB-1 withdrawn; NJB-2 accepted | proof gap; (5) NOT SIGNED as stated, (5′) signed by both | §4 (5) → REFEREE's (5′) verbatim; §5 obstruction item (iii): add "or z evicted from R at the fallback k0 with a level-L rise" |
 
+### C.3a Confirmation after REFEREE's §C (referee 5e85c70 / 0363a7b)
+- REFEREE accepted G-NJB-1: literal MINSET (c) is NOT signed by either referee, and survivor (c) is signed by both. N-NJB-1 did assume
+  z ∈ F_{k0} and is withdrawn as a proof of (5). So ENT-SHAPE (5) as stated is NOT signed by either referee, and (5′) is signed by both.
+  No verdict differs on P-N5-NJB.
+
 ### C.4 Joint label (D18/L40)
 - PROVED (L-SI successor 4; REFEREE and REFEREE-2, Opus 5.5, D15), on 𝒞^1O, pending CHECKER: RDROP, PL (c′), PL-S′, MINSET (row 1),
   NO-RF-OLD + Corollary, ENT-SHAPE (1)-(4) and (5′) (row 2).
