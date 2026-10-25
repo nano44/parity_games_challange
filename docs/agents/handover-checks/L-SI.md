@@ -1,3 +1,63 @@
+# Handover check: L-SI (successor 10, written 2026-10-25T19:15Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; the commands are given. Predecessor: successor 9, session_018jN1MJkw56F58G3qcfcuZA.
+Its handover is fe58fbab, notes/L-SI.md "## HANDOVER (successor 9, box 14)".
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. `git fetch origin claude/l-si` moved origin 0d48da26 → fe58fbab (stale clone again);
+  `git checkout -B claude/l-si origin/claude/l-si`; `git rev-parse HEAD origin/claude/l-si` → both fe58fbab.
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` = 0ea336ed (Lead 19:09Z "R43 draft (P-N5-LV2) → CHECKER C52").
+  - Before merging: `git rev-list --left-right --count HEAD...trunk` → 5 ahead / 37 behind; merge-base 858c7dd5.
+    The 5 ahead are succ. 9's 0d04e208, af3a3b5a (P-N5-PHI), 7f76709c (ledger v2), e31e966c (handover), fe58fbab (P-N5-FX).
+  - `git merge --no-ff` of trunk (no rebase) → 6 ahead / 0 behind. This file is the next commit; pushed SHA goes to the Lead.
+
+## 2. Open work and the next step of each (nothing running: `pgrep -a python` empty; fresh container)
+Frozen (sha1 sent to the Lead), re-measured with sha1sum: P-N5-PHI 35e79ec1, P-N5-FX aa227b0b, N5-LEDGER-v2 8ab27359,
+N5-LEDGER (v1) c54e8560, N5-FBPHASE f7aaa624, P-N5-NEEDB 7471aef3 (and every earlier list in this file).
+PHI, FX, LEDGER-v2 are NOT on trunk yet (`git show trunk:<file>` empty); FBPHASE, LEDGER v1, NEEDB are, with the same sha1.
+- P-N5-NEEDB fixes (succ. 9 NEXT 2): REFEREE succ. 10 report docs/referee/R-N5-NEEDB.md is ON TRUNK (008ad8ab, 18:52Z): all of
+  §1-§4.2 SIGNED, no gaps, notes NEEDB-N1 (wording), N2 (precision), N3 (notation), N4 (stronger statement, DATA, no change asked).
+  REFEREE-2's R2-N5-NEEDB is not on trunk (REFEREE-2 succ. 11 queue ends "→ NHN → NEEDB", NOW l.42).
+  - Next step: when REFEREE-2 reports (or on the Lead's word), write NEW docs/si/P-N5-NEEDB-fixes-box13.md (does not exist) with
+    N1-N3 and L-RED R71's INTO wording note (restrict INTO to Iσ_t ≠ ∅ or to fallback states).
+- P-N5-PHI (35e79ec1): no referee report on trunk. Next step: Lead routes it; items go to a NEW fixes file.
+- P-N5-FX (aa227b0b): Corollary FX X ≤ n(f + X_SN) + n − 1, CONDITIONAL on P-N5-FBPOLY (L-NEW). No report. Next step: same.
+- FB-PHASE: lane cross-check of FB-POLY only, not packeted (Lead 18:57Z). Nothing to do unless a referee asks.
+- K, the single open count on 𝒞^1O (ledger v2 §3; READING): wakes at U2 / U3 / U23 states, i.e. (E) (kind changes of R-vertices and
+  c_w switches per W-flat run of U3 / U23 stretches) and (K_W) (non-fallback W-changes on R). OPEN.
+  - Next step, if the Lead routes it: start at HN (U3) states, using BF-F for F-side rounds and SPLIT for R-monotonicity between
+    evictions; try an L-MONO analogue for c_w.
+- I wait for "go"; the choice among these is the Lead's.
+
+## 3. docs/GAPS.md rows I own
+- None (`git show trunk:docs/GAPS.md | grep -n L-SI` → no row with owner L-SI).
+- I work under G-N5-TIME (l.11): major, owner L-NEW (L-LIT T22; referees later), status open. Last update 17:41Z (R42 LANDED); open
+  list: RW_S, θ_ph / ρ, Q states, scope runs per phase / X, S4a steps, phases. NOW l.2: "NO polynomial bound for N5 is proved."
+- G-N5-TERM (l.16): closed (R15).
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems."
+  - Lead reading L40 (index l.33: active): L-SI is the OR/MDP lens on N5.
+- D1 (index l.5: active; DECISIONS.md l.7, full text docs/decisions/D001-launch-brief.md):
+  "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own,
+  as wrong until it passes the gauntlet below." / "Never publish, post, email, submit or contact anyone outside the fleet. Anything
+  external is my decision."
+- D16 (DECISIONS.md l.300; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap (box 14): crossed work. Lead relayed L-NEW's FB-POLY (18:37Z) while successor 9 was proving FB-PHASE; the second proof cost a
+  box segment and was demoted to a cross-check. Same family: a referee report can land on trunk while the notebook still says
+  "once both referees report" (R-N5-NEEDB, 18:52Z, found only by this check).
+  - Check: ReadNotifications, and `git fetch` trunk + `git ls-tree -r --name-only trunk docs/referee docs/referee-2 docs/new | grep
+    <packet>`, before starting any proof or fixes file, and after every push.
+- Still live: stale clone (fetch + `rev-parse HEAD origin/claude/l-si` before reading); frozen files (sha1sum + grep notes, NOW,
+  LEAD-STATE before editing docs/si/P-* or *-fixes-*); never `git add -A`; never pipe scripts/push.sh; stamp times from date -u in
+  the same command.
+
+---
+
 # Handover check: L-SI (successor 9, written 2026-10-25T18:12Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; the commands are given. Predecessor: successor 8, session_013kZp65x9TKU9AqPZdMYGpm.
 Its handover is e683a4c0, notes/L-SI.md "## HANDOVER (successor 8, box 13)".
