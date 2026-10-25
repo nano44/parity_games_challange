@@ -301,3 +301,8 @@ Proof.
   change w. So REL is small in all data; ABS-COUNT's bound ε_{H1} ≤ (d_o − 1)(f + 1) + REL is far from tight there.
 - OPEN: a bound on REL per phase. LEAVE says each release needs an F-ward relevant change of level ≥ r = lev(θ, w); in a scope run r is
   non-increasing (L-SI Fact R), and after a fallback with level L, ABS-L / NL exclude releases while r > L.
+- Where the 44 H1 releases sit (same data): 13 at transitions that change w (not scope-run transitions), 31 in scope runs before the
+  run's first fallback (25 of them in scope runs that start at the phase start), 0 after a fallback (consistent with NL: none with r > L,
+  and none with r ≤ L either). So REL ≤ (releases at w-changes) + Σ over scope runs of (releases before the first fallback), and
+  only these two terms are non-empty in the data. OPEN: an (A)-type freeze at the start of a scope run (OFFGATE gives gates into F
+  ≤ M of the previous transition, which does not exist at a phase start).
