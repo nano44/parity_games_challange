@@ -269,37 +269,36 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 20 at the end of box 41, written 2026-10-25 19:1xZ by date -u; context ~370k)
-Successor 20 (Opus 5.5, D14/D15/D18, L37/L40), session_018pjn8Y8JRES3YuFDUCAJgM. Handover check 5/5 (48078dd0). GO box 41 at 18:15Z.
-### DONE (all pushed with scripts/push.sh; sha1s reported = frozen where a packet)
-- Packet docs/new/P-N5-FBPOLY-box41.md (4a17f8e1, sha1 de244dcd3592b04eca2080a0efe10a7c0b2e5301): κ-FB-ROUND, κ-HAT-FREEZE, κ-PFZ,
-  κ-Y-FORM, EXIT-SWITCH, FREEZE-EXIT, CN-ONLY, THETA-AFTER, Theorem FB-POLY (f ≤ 1 + (|U| − 2)(deg_U(o) + |U|) per phase; FB-CAP at
-  |U| = 2). PINNED trunk 42d8c3a9 (Lead 18:51Z), queued for both referees. FB-CAP for |U| ≥ 3 OPEN (§7: FB-CAP-1/2).
-- Working docs: docs/new/N5-FBPOLY-box41.md (source; sha1 7a7087f7 reported), docs/new/N5-XOUT-box41.md (X-OUT; §2 citation fixed
-  19:0xZ (NE-COUNT (c) is case A only → TOGGLE-COUNT with HN = H1); §5 Q-EPOCH resolved via FB-POLY + X-OUT), docs/new/N5-MAP-box41.md
-  (READING: X per phase poly via R30 (c) + R34 (e),(f); (NH′) left with (E), (K_W); κ-FREEZE-F obstruction).
-- Lead decisions: P-N5-XOUT NO (L-SI 9 packets Corollary FX = the same X bound, as P-N5-FX); X-OUT, Q-EPOCH stay working docs.
-- Scripts experiments/new/box41: fbpoly.py, xout.py, lib41.txt (412-file list). Drafts (NOT fixes files) of the two fixes files:
-  experiments/new/box41/drafts/DRAFT-P-N5-RHO-fixes-box40.md, DRAFT-P-N5-PFZ-fixes-box39.md (placeholders <SHA>, <DATE>, <summary>).
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 21, box 42, written 2026-10-25 21:1xZ by date -u)
+Successor 21 (Opus 5.5, D14/D15/D18, L37/L40), session_01YJHHx1t8hvqkDnKzMU2Lfa. Handover check 5/5 (419308f1). GO box 42 19:48Z.
+### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)
+- Packet docs/new/P-N5-NH-box42.md (44088266, sha1 93d19be8…): Theorem NH. PINNED trunk 54ac72e6 (Lead 20:12Z), queued for both referees.
+- Working doc docs/new/N5-KW-box42.md v3.2 (31776c5c, sha1 349d553c…): WLAG, ABOVE-h, CSTRICT, KW-FREEZE, KW, NR′, PAR, H-PATH, DIR,
+  KC, CASC-B, CW (corrected), E-HI; §6 READING (conditional): T per phase poly(n)(1 + X + f). Not a packet.
+- Fixes files (5e1b5ea0): docs/new/P-N5-FBPOLY-fixes-box41.md (sha1 c016c190…), docs/new/P-N5-NHN-fixes-box40.md (sha1 d1460ffe…).
+- Cross-read of L-SI 10's docs/si/N5-KW-box15.md (669624b2; section above): rely on all; L-SI's packet first, plus PAR, H-PATH, SW (b).
+- Scripts experiments/new/box42: nhcheck, wlag, kwprof, kwfreeze, kwfreeze2, evprof, evcheck, evstress, sicross (README lists runs).
 ### IN FLIGHT (others)
-- REFEREE-2 11 writes its §Cs on PFZ and RHO; the Lead relays the SHAs. REFEREE §Cs are in: PFZ main 4859e63, PFZ-ext ed8bc207 (PFZ-1
-  repair in full), RHO 06d6e6d (RHO-N1..N3; RHO-N2 = NHN-N1: τ(o) = o line must cite R34 (e) with HN = H1, not R39 (f) (c)).
-- P-N5-FBPOLY: both referees (queued). P-N5-NHN (pinned 0bb175d): referees after RHO. L-RED 17: post-freeze regime + FREEZE-EXIT /
-  THETA-AFTER + n 5 start-pair search vs FB-CAP. L-SI 9: P-N5-FX (Corollary FX) and Lemma Φ packets; its FB-PHASE (≤ 2n²) is an
-  independent proof of the same kind (docs/si/N5-FBPHASE-box14.md, l-si 858c7dd); FB-POLY stays the theorem under review.
-### NEXT (successor 21), in the Lead's order (19:01Z, Lead's stamp)
-- (0) DONE by successor 20 (19:2xZ): docs/new/P-N5-RHO-fixes-box40.md (cf02711c, sha1 cc4e8540…) and docs/new/P-N5-PFZ-fixes-box39.md
-  (cf20cdc2, sha1 3f55bc88…), both frozen. Next fixes file due: P-N5-NHN (carry NHN-N1 = RHO-N2) when its reports are in.
-- (1) Packet P-N5-NH (docs/new/P-N5-NH-box41.md, NEW; the Lead's ask 19:01Z): turn the two (NH′) reductions into signable lemmas with
-  proofs: RESULTS R22 "Reduction" (l. ~995: transitions ≤ poly(n)·(1 + X + Σ_I (ROI(I) + WC(I)))), R24 "Reduction" (l. ~1091: (NH′) ⇐ (X),
-  NFB-O, U2/U3 re-routings), R26 "Reading" (l. ~1191: (NH′) ⇐ (X), NFB-O, (E), (K_W); ¬H1 θ-count by R-1). Mark covered inputs: (X) via
-  FX / FB-POLY + R30 (c) + R34 (e),(f); NFB-O via FB-POLY. Sources: docs/new/P-N5-NH-box30.md + fixes (box 30 assembly, its §4),
-  docs/new/N5-NH-box28.md, N5-NH2-box29.md. Too big for successor 20's remaining context (> 40k); hence here.
-- (2) K (wakes per phase; RESULTS R27 (e)-(h): T = O(m·n⁷(1 + X) + m·n⁵·K) per phase (XJ)), equivalently (E) and (K_W) (R26). The Lead's
-  ask: does the κ-freeze / FB-POLY structure bound K? If not, the exact obstruction and a candidate instance. Read first: R26, R27,
-  docs/si/N5-FBPHASE-box14.md §9, docs/si/N5-LEDGER-box14.md §4, docs/new/N5-K-box33.md §5, §11 (K-chain: K = Θ(n) per phase is
-  possible, experiments/new/box33/instances/kchain32.pg; mechanism = one layer per S4a step, i.e. Bellman-Ford).
+- Both referees on P-N5-NH-box42. REFEREE-2's §C on P-N5-FBPOLY still to come (successor 12): append a section to the FBPOLY fixes file
+  if it adds anything (the file is frozen above that point: new text = appended section, as the Lead allowed, or a new file).
+- L-SI 10 cross-reading my N5-KW-box42 (Lead asked it the same). L-RED 18: K growth survey.
+### NEXT (successor 22)
+- Wait for the Lead's decision on the K packet (L-SI's with my three additions, or a joint one). If asked to write a packet from
+  N5-KW-box42, freeze it as a new file docs/new/P-N5-KW-box4x.md.
+- Fixes file for P-N5-NH-box42 when both reports and §Cs are in.
 - Hand over at ~450k context.
+
+## Things only I know (successor 21)
+- The key insight of box 42: on a stretch, Ξ and W differ only on the cycles C_Ξ and C_W, which lie at or below h = max(c_θ, c_w). So
+  CR's coarse freeze (threshold h) works on every fallback-free run with no route-form or event condition. L-SI found the same
+  (FRZ-U) independently, in parallel.
+- Lemma PAR: c_w ≻ c_θ forces c_w even (R21 XW). Every "odd c_w" branch in K arguments is vacuous; no data ever had one.
+- A W-change after an S4a step needs an honest rise at the previous step (WLAG; the new edge (y, z) has Ξ_k(z) ▷ Ξ_{k−1}(z)).
+- c_w's own switches change no W-value on R (A2 lies on no W-path to c_w), but they do change kind-A honest values.
+- Pitfall (this session): after the Lead's GO, notifications queued for ~1 h unread while I worked. Call ReadNotifications whenever
+  the system notice appears; the Lead had sent the NH pin, routing and the fixes-file GO in that time.
+- The library almost never reaches the post-freeze regime: most checks of post-freeze claims (KIND-MONO, KW-FREEZE (b) tails) are
+  vacuous or thin in the data. Random starts (evstress, sicross --starts) add pre-freeze coverage only.
 
 ## Things only I know (successor 20)
 - FB-POLY's key new step is EXIT-SWITCH: in-phase λ_{k+1} = λ_k forces some switched u ∈ U ∖ T to have a target whose OLD honest play
