@@ -8,6 +8,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   runs), Corollary 1E, Theorem MIRROR (𝒞^1E inherits any 𝒞^1O first-phase bound L(n), any start), Φ-kO, ENDGAME; ledger summary;
   docs/new/N5-MULTI-ledger-box43.md (252 rows, READING; helper pass, key lines re-opened by me); frontier instance retf_n6; exhaustive
   n 4 tables (RETN 0, TX 0). Route Δ (D_k) CONJECTURES Δ1, Δ2. Reported 22:20Z; asked: packet DUAL + MIRROR? continue Δ?
+- Lead 22:48Z: YES packet; YES Route Δ (RT = open core; climbs for D-changes/phase and TJ from lib41 frontier seeds).
+- b15856e8: packet docs/new/P-N5-DUAL-box43.md (sha1 a51f7c30…, FROZEN): DUAL, MIRROR (implication, (H-OF) explicit), Φ-kO, ENDGAME;
+  §2 start / N5^OF table (to check). Reported 22:53Z. Pitfall: a stray `git checkout <trunk> --` detached HEAD (restored, tree clean).
+- Seeded climbs (cl7): wide_h16 (TJ), sym_h8 (TJ), frz40 (Dch), mei_h4 (TJ). Mei family from both starts: N5 linear (it = h − 1 ... h + 1).
 
 ## Box 42 log (successor 21, session_01YJHHx1t8hvqkDnKzMU2Lfa; handover check 5/5 (419308f1); GO 19:48Z, Lead's stamp)
 - Merged trunk 6d78b8f4. Oink built (8fbf0a7).
@@ -716,10 +720,10 @@ Successor 21 (Opus 5.5, D14/D15/D18, L37/L40), session_01YJHHx1t8hvqkDnKzMU2Lfa.
   docs/referee/R-N5-PFZ.md (8595343); docs/referee-2/R2-N5-PFZ.md (37e55fd) notes.
 
 ## Dead ends
-- (succ. 22, box 43) Per-Odd-vertex form of Corollary Φ-1O (a) ("τ(o_i) changes ≤ deg(o_i) − 1", "τ(o_i) never repeats") on the
+- (succ. 22, box 43; DATA, not a dead end of anything signed, Lead 22:48Z) Per-Odd-vertex form of Corollary Φ-1O (a) ("τ(o_i) changes ≤ deg(o_i) − 1", "τ(o_i) never repeats") on the
   frontier 𝒞^{≥2E,≥2O}: FALSE. Instance experiments/new/box43/instances/retf_n6.pg (sha1 8b936bfb…): τ(0) 2 → 1 → 5 → 1, non-own-cycle-
   node. Obstruction: S4b best-responds to the OLD σ while S4a cuts the route in the same iteration (stale-σ simultaneity).
-- (succ. 22, box 43) Sum form of the Lead's product route (τ-changes ≤ Σ_i (deg(o_i) − 1), independent 𝒞^1O clocks): FALSE.
+- (succ. 22, box 43; DATA, a killed route form, nothing signed) Sum form of the Lead's product route (τ-changes ≤ Σ_i (deg(o_i) − 1), independent 𝒞^1O clocks): FALSE.
   Instance tx2_n8.pg (sha1 c0f7b214…): T = 3 = ∏deg − 1 > 2. Obstruction: after Even stops (I_σ = ∅), Odd's own SI needs 3 → 1
   before 1 → 3 becomes improving. Only the product bound (Φ-kO) survives.
 - (succ. 20, box 41) κ form of FREEZE-F (θ-changes before the freeze via S4a Bellman-Ford rounds on F ∩ U with lengths): the proof does not
