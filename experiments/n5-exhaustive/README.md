@@ -248,6 +248,7 @@ Phase key = the checkers' (lambda_Xi, tau). Validated on epsseg_cex_n48 (= sn_ch
 | box8 (start-pair rows: REFEREE-2 checkers) | runs | violations | max J | max K | max X | max eps | max rho | max T | max X_SN | max REL |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | n 4 canonical | 4,828,736 | 0 | 1 | 0 | 2 | 1 | 0 | 2 | 1 | 3 |
+| n 4 all starts (even max-deg 2, no forced) | 7,340,032 | 0 | 1 | 0 | 3 | 1 | 1 | 3 | 2 | 3 |
 BOX8ROW
 
 | box8 (REFEREE probes, canonical start only) | runs | FAIL counters | max J | max K | max X | max eps | max rho | max T |
@@ -260,3 +261,8 @@ phases (16 non-tame, all crossings, J = X); CN 120,082; TRANSFER 4,752; H3H2 6,8
 H1-DROP 6,752 (all P(theta_k) empty); OR / ABS-COUNT' 16 eps-transitions (all H1, all ABS-COUNT' tight). VACUOUS at n 4 canonical (no
 instance of the hypothesis): R-STICK (no checks), NL (34,624 S4a (h) transitions, none with an admissible L), CLS1 / FBL / CLU (scope
 fallbacks all theta = w, none with r >= 0), WK, ABS-L, crossings after an SN prefix (0).
+Teeth (n 4 all starts): U-loc 4,018,288; OE 663,958 off-crossing (15,604 relevant sigma-bar(o) changes; 2,508 level-BOT tie moves, info);
+S2 39,484 / S3 36,680 / S4 2,804; OX 939,808 phases (1,536 non-tame, all crossings; rho total 4); CN 449,502; TRANSFER 28,746; OFFGATE
+18,560; NL 25,732 (j, L) checks on 9,780 transitions; R-STICK 3,288; LEAVE (H1) 47,698 (72 tight); crossings after an SN prefix 900
+(max 1 per run); H1-DROP 152,650; OR / ABS-COUNT' 1,536 (828 tight). Still VACUOUS: CLS1 / FBL / CLU (all 79,112 scope fallbacks have
+theta = w), WK (K = 0: no wake), ABS-L.
