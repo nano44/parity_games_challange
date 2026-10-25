@@ -145,3 +145,32 @@ Iteration tables: docs/si/RESULTS.md (generated); raw logs experiments/si/out/ (
   - Exact obstruction: eviction cascades. An evicted vertex becomes a (β) target for its R-predecessor, one layer per fallback, with
     COARSE_{−1}(Ξ) and λ_Ξ fixed (FLAT-ALL_{−1}^{none}). The step 0 → 1 is a fallback, not an S4a step, so "the next S4a step changes λ_Ξ"
     has nothing to act on. LV-NONE (≤ n·n_E + 1) is unaffected; this instance exercises its N = 2 step.
+
+## Box 15 (L-SI succ. 10, 2026-10-25 22:48Z by date -u; Lead GO 22:48Z)
+- "In scope, THR ⇒ M ≥ 0" (CONJECTURE of docs/si/N5-LV3-box12.md §4-§5, l.157, sha1 20ba05d7; docs/si/N5-LEDGER-box14.md §4 item 4,
+  sha1 c54e8560; P-N5-NEEDB §5, not signed). FALSE as stated.
+  - Instance: docs/referee-2/R2-N5-LV2/climb/block_9501.pg (sha1 1b5b76fd986487549fe0a35da79f68f5f0d19b3f), n 11, o = 7, one Odd choice
+    vertex.
+  - Start pair (docs/referee-2/R2-N5-LV2/climb/block_9501.txt): σ0 = [9, 2, 9, 1, 0, 5, 2, 8, 3, 5, 7], τ0 = [9, 2, 9, 1, 0, 5, 2, 5, 0, 5, 3]
+    (Even / Odd entries used). The run has 5 states, with one fallback, at 1 → 2.
+  - State 1 (an in-phase Even S4c fallback):
+    - (h); θ = (5, {9}, 3) ◁ w = (5, ∅, 1), so THR, with r = lev(θ, w) = 10 ≥ 0;
+    - M = −1;
+    - gates (10, 1), (10, 3), (10, 8), all of level −1, all R → F, i.e. (β);
+    - rank o = 2 < rank c_θ = 9 (c_θ = 5);
+    - in scope: λ_Ξ and τ are the same at state 2, H2 holds at 2, and w_2 = w_1.
+    - This is exactly the counterexample shape N5-LV3 §4 wrote down.
+  - Exact obstruction: nothing excludes an in-scope THR fallback whose only gates are level −1 (β) exits R → F. NEED-β (signed) only
+    locates the (β) gate on Even's best reply (case B; here (10, 8)); it does not exclude one.
+  - Confirmed on three independent engines:
+    - REFEREE-2 N-NEEDB-5 (R2-N5-NEEDB.md, referee-2 ef433d32; own / spec / rand traces);
+    - REFEREE §C.3 (R-N5-NEEDB.md, referee 7dbd5118; rl_engine);
+    - L-SI experiments/si/needb5/repro.py (l-si 34e5225a; n5.py's SPEC loop on si.py; log experiments/si/needb5/saved.txt).
+    - Not run: Oink verification of the instance (not built in this container).
+  - Nothing signed depends on it (P-N5-NEEDB §5 and N5-LV3 §4-§5 are unsigned). LV-NONE and SCOPE-FB already bound these fallbacks per scope
+    run.
+- What survives, as a WEAK CONJECTURE only: "from SPEC S3's start, in scope, THR ⇒ M ≥ 0".
+  - From S3's start the same game has 4 states, one fallback (at state 0, ¬H1, not THR), and no counterexample state
+    (experiments/si/needb5/s3.txt; REFEREE §C.3; RESULTS R43 limit (iii)).
+  - Weak, because SPEC allows any start pair, and a run from S3 passes through states that are themselves start pairs. So the S3 form
+    restricts only which (σ, τ) are reachable. No current bound needs it.

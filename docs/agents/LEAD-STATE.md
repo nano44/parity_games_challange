@@ -1497,3 +1497,32 @@
 - 22:26Z: Merged checker 1351f017 (C57 PASS, R48; optional N-1..N-3; loop witness reproduced from its start pair with L-RED's tool). Applied N-1 (κ-PFZ count differs by convention) and N-2 (R72 added at l-red 6e28e4f1). Asked for C57 Addendum 1.
 - 22:36Z: Merged checker 6b15a543 (C57 Add. 1 PASS). LANDED R48 (P-N5-FBPOLY), checker 6b15a543, cmp OK. GAPS line 11 UPDATE: fallbacks per phase closed on 𝒞^1O.
 - 22:42Z: Pre-drafted docs/agents/R49-draft.md (P-N5-NEEDB; added at l-si 3ea0f5f9, pinned trunk e6ee6130). Placeholders: FIXES-PENDING, REFEREE-CONFIRM-PENDING, REFEREE-SC-PENDING, REFEREE-SC-SUMMARY-PENDING. To CHECKER C58 after REFEREE 11's §C and L-SI's fixes file.
+- 22:47Z: Read 14 notifications (21:46-22:35Z). Hourly sweep (trigger 22:04Z, run late): no overage; WATCHDOG 22:03Z: CHECKER at 681k, the only threshold crossed. Actions:
+  - CHECKER 7 told to finish C57 Add. 2, then write its handover and park; successor 8 follows.
+  - L-RED 18 is RUNNING on the K red-team (its need_input summary is stale; my 21:46Z route reached it).
+  - Merged referee 7dbd5118: §C NEEDB identical; N-NEEDB-5 CONFIRMED, so "THR ⇒ M ≥ 0" is FALSE as stated; N-NEEDB-4 NOT reproduced, because the witness_xg_12004 start pair is invalid.
+  - L-SI 34e5225a reproduced N-NEEDB-5 independently. GO to L-SI for the NEEDB fixes file and DEAD.md.
+  - REFEREE-2 12 asked to write §C NEEDB and fix the witness start pair, then continue KW (§C FBPOLY 75372604 + 6ff47e58 done).
+  - L-NEW 22 box 43 first pass (eb273ebc, 8029d6c8):
+    - Lemma DUAL (N5 on G mirrors N5^OF on G^d).
+    - Theorem MIRROR: 𝒞^1E reduces to 𝒞^1O, assuming the per-phase bounds hold from any start pair and for N5^OF.
+    - Corollary Φ-kO; ENDGAME.
+    - The per-vertex Φ-1O count fails beyond 𝒞^1O (retf_n6, frontier 𝒞^{≥2E,≥2O}).
+    - Exhaustive n = 4 shows no growth.
+    - Decision: packet P-N5-DUAL (MIRROR as an implication with an explicit hypothesis table), and continue Route Δ.
+  - R49 (NEEDB) draft: REFEREE §C filled; it waits for the fixes file and REFEREE-2's §C.
+- 22:54Z: Merged:
+  - checker 111afad7: C57 Addendum 2 (R48 landed verbatim; C57 CLOSED) and CHECKER 7's HANDOVER; it is parked. Created CHECKER successor 8 (session_017WsSD8yWCujUTXzQv5cc2r).
+  - l-si 863ca636: P-N5-NEEDB fixes, sha1 0e5f24af.
+  - l-si adf80994: DEAD.md, "THR ⇒ M ≥ 0" FALSE as stated; S3 form kept as a WEAK conjecture.
+  - l-red 896aea76: R73, no kill of either K note in 4.27 M runs; FRZ-U |R| − 1 and CW-INT attained; CASC-B and post-freeze KIND-MONO regimes unreached.
+  R49 draft: fixes filled; it waits only on REFEREE-2's §C NEEDB.
+  Routing: L-RED box 44, constructions entering the CASC-B and KIND-MONO regimes, then DUAL / MIRROR. R73 sent to REFEREE 11 as data for KW.
+- 23:00Z: Merged checker a0aa2651: CHECKER 8 handover check 5/5, GO; C58 waits for the final R49 draft.
+- Merged l-new b15856e8. PINNED at this commit: packet P-N5-DUAL, docs/new/P-N5-DUAL-box43.md, sha1 a51f7c30c267a4c02088cf2c849388e28c4121fa (L-NEW 22, 150 lines). Contents: Lemma DUAL, Theorem MIRROR as an implication under an explicit hypothesis (H-OF), Corollary Φ-kO, ENDGAME, and a start / N5^OF table to check.
+- Queued for both referees after P-N5-KW. REFEREE 11: KW, then DUAL. REFEREE-2 12: §C NEEDB, KW, FX, NH42, DUAL.
+- 23:06Z: Merged referee 56ac6538 + 1d6cbf32: R-N5-KW.
+  - Verdict: all SIGNED; E-SEG SIGNED WITH GAP KW-1 (a counting definition, one-line repair, no downstream bound changes); notes KW-N1..N5.
+  - FRZ-U is self-contained (no transfer of R20 CR needed). CASC-B's use of R26 (c) is checked.
+  - Addendum 1: CASC-B's hypothesis is exercised (cascb_witness.pg, within bound). KIND-MONO is still vacuous after the freeze.
+  - Told L-RED to focus its constructions on a post-freeze kind change.

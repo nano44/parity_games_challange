@@ -95,3 +95,45 @@ wrote their checks in notes/CHECKER.md; this one is here as the brief asks. Ever
   split, and false referee attributions ("both referees reproduce", "R2 does not address"). Check: diff every draft clause against the
   packet + fixes verbatim, and read every attribution sentence against both reports AND both §Cs before PASS.
 - Also bit me already: `git status` said "up to date" on a stale clone (52a1e489); the check is fetch, then `git rev-parse HEAD origin/<branch>`.
+
+## Handover check (successor 8)
+Written 2026-10-25 22:54Z (date -u). CHECKER successor 8 (Opus 5.5, D15), this session. Predecessor: successor 7, handover 111afad7
+(notes/CHECKER.md "## HANDOVER (successor 7 → successor 8)"). Every answer measured from the repository; commands named.
+
+### 1. Branch, head, ahead/behind trunk
+- `git fetch origin claude/checker`: moved origin/claude/checker 52a1e489..111afad7 (clone started stale again). `git checkout -B claude/checker
+  origin/claude/checker`; `git rev-parse HEAD origin/claude/checker` = 111afad7 both.
+- Trunk = claude/vibrant-johnson-nxvvxo, head a4bf4050 (Lead hourly sweep: REFEREE §C NEEDB, l-new box 43, l-si repro, R49 draft update).
+  Before merging: `git rev-list --left-right --count HEAD...trunk` = 4 ahead (111afad7, df63cbca, 0b2f6950, d88502d2), 13 behind; merge-base
+  063ecc73. 111afad7 is NOT yet on trunk (`merge-base --is-ancestor`: no).
+- `git merge --no-ff trunk` (no rebase) = cbbaa81a → 5 ahead, 0 behind. This file's commit makes 6 ahead, 0 behind.
+
+### 2. Open work and the next step of each
+- C50-C57 CLOSED (R41-R48 landed; table in the handover). Counter: next check C58. In flight: none.
+- C58 = R49 (P-N5-NEEDB). Draft docs/agents/R49-draft.md on trunk a4bf4050, sha1 e8415438, header "REFEREE's §C and the fixes file to be
+  filled"; it still carries FIXES-PENDING (l.6) and "§C (REFEREE-2): R2SC-PENDING" (l.54); REFEREE §C cited 7dbd5118. Packet
+  docs/si/P-N5-NEEDB-box13.md sha1 7471aef3. NOT READY: wait for the Lead's final draft sha1. Next: the six-step method of the handover
+  (pins over --full-history, report-version diffs, cited SHAs ancestor + show --stat, full read and clause diff, data traced to logs,
+  re-runs in detached worktrees incl. N-NEEDB-5 / experiments/si/needb5, report docs/checker/C58.md), then the landed check.
+- Then FX, NH42, KW, DUAL as they converge (Lead's queue).
+- Tools: Oink not built in this container (tools/ absent) — scripts/setup_oink.sh after "go", before the first re-run; landed.py to
+  rewrite in the scratchpad from the handover listing.
+
+### 3. docs/GAPS.md rows I own
+- `awk -F'|' '$4 ~ /CHECKER/' docs/GAPS.md`: none. Landing side: G-N5-TIME (major, L-NEW, open, l.11), last UPDATE 22:36Z (R48 landed, C57 +
+  Add. 1). R49 will append to it: old row minus " |" a prefix of the new one, status open.
+
+### 4. The three owner rulings that most constrain me, verbatim (docs/DECISIONS.md, `grep -n -F`), with index status
+- D1 (l.7; DECISIONS-INDEX l.5 "active"): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+  including the fleet's own, as wrong until it passes the gauntlet below."
+- D15 (l.278; index l.26 "active", Lead reading L37 l.27): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+- D18 (l.333; index l.32 "active", Lead reading L40 l.33): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where
+  needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+- For the gate: nothing lands stronger than both signatures (D1); label "(Opus 5.5, D15)"; PROVED / CONJECTURE / OPEN / FALSE exact (L40).
+
+### 5. One trap, and the check that prevents it
+- Trap (successor 6, found by successor 7 at 17:07Z): addenda written with Write OVERWROTE the main reports of C47, C48, C49 (restored from
+  d0900448, 3d6dcbc8, 2b540583). Check: every addendum is appended (`cat >>`), and before each push `git diff --stat` on docs/checker/ shows
+  only insertions for an existing C-file (`git diff HEAD -- docs/checker/C5x.md | grep -c '^-[^-]'` = 0).
+- Also: stale clone with "up to date" (fetch + rev-parse check above); hand-typed stamps (every stamp from `date -u` in the writing command).

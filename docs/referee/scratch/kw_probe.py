@@ -55,6 +55,7 @@ def run_game(g, cnt, name):
         while j < T and st[j]["key"] == st[j + 1]["key"]: j += 1
         phases.append((k, j)); k = j + 1
     for (p0, p1) in phases:
+        phase_counts(g, st, o, p0, p1, cnt, name)
         # WONCE
         for x in range(p0, p1 - 1):
             if st[x]["fb"] or st[x + 1]["fb"]: continue
@@ -83,6 +84,13 @@ def run_game(g, cnt, name):
                     if a["Xi"][v][0] != ct or above(g, a["Xi"][v][1], rk) != km | CX: fail(cnt, "FA_Xi", name, x, v)
                     if a["W"][v][0] != cw or above(g, a["W"][v][1], rk) != km | CW: fail(cnt, "FA_W", name, x, v)
                     cnt["FA_chk"] += 1
+                if g.rank[cw] > g.rank[ct]:
+                    cnt["PAR_chk"] += 1
+                    if g.prio[cw] % 2: fail(cnt, "PAR", name, x)
+                    if (not H2) and cw != o:
+                        for v in R - {o}:
+                            cnt["HPATH_chk"] += 1
+                            if bool(a["Xi"][v][1] >> g.rank[cw] & 1) != (cw in routes[x][v]): fail(cnt, "HPATH", name, x, v)
                 Rl = sorted(R)
                 for i, y in enumerate(Rl):
                     for z in Rl[i + 1:]:
@@ -98,6 +106,11 @@ def run_game(g, cnt, name):
                 y = x
                 while y < s1 and not st[y]["fb"]: y += 1
                 runs.append((x, y)); x = y
+            fst = sum(st[x]["fb"] for x in range(s0, s1))
+            KWs = sum((not st[x]["fb"]) and any(st[x]["W"][v] != st[x + 1]["W"][v] for v in R) for x in range(s0, s1))
+            cnt["KWS_chk"] += 1; cnt["KWS_max"] = max(cnt["KWS_max"], KWs)
+            if KWs > (fst + 1) * (1 + (r - 1) ** 2 + max(0, g.n - r - 1)): fail(cnt, "KWS", name, s0, KWs)
+            if len(runs) > fst + 1: fail(cnt, "KWS_runs", name, s0)
             for (k0, kT) in runs:
                 cnt["runs"] += 1
                 tags = []
@@ -117,8 +130,8 @@ def run_game(g, cnt, name):
                 last = k0
                 for x in range(k0, kT):
                     if kap[x] != kap[x + 1]: last = x + 1
-                if last - k0 > cnt["FRZD_max"]: EX.append(("FRZD", name, k0, last - k0, r, kT - k0))
                 cnt["FRZD_max"] = max(cnt["FRZD_max"], last - k0)
+                if kT >= f0: cnt["FRZD_postrun_max"] = max(cnt["FRZD_postrun_max"], last - k0)  # the lane's kwcheck measure
                 cnt["FRZD_hist_%02d" % min(last - k0, 99)] += 1
                 if last > max(k0, f0): fail(cnt, "FRZ", name, k0, last, r)
                 cnt["FRZ_chk"] += max(0, kT - f0)
@@ -140,6 +153,7 @@ def run_game(g, cnt, name):
                 eQ = NB = Ecw = 0
                 if u3:
                     cnt["u3_runs"] += 1
+                    cnt["u3_postfrz_trs"] += len(post)
                     for v in R - {o}:
                         seq = [kind[x][v] for x in range(max(k0, f0), kT + 1)]
                         chg = sum(seq[i] != seq[i + 1] for i in range(len(seq) - 1))
@@ -174,6 +188,16 @@ def run_game(g, cnt, name):
                                         if j > len(routes[xx][v]) - 2: fail(cnt, "CASCB", name, xx, v, j)
                             z = e + 1 if e < y else y
                         x = y + 1 if y < kT else kT
+                    x = max(k0, f0)
+                    while x < kT:
+                        if any(st[x]["W"][v] != st[x + 1]["W"][v] for v in R): x += 1; continue
+                        y = x
+                        while y < kT and all(st[y]["W"][v] == st[y + 1]["W"][v] for v in R): y += 1
+                        eq = sum(any(kind[z][v] != kind[z + 1][v] for v in R - {o}) for z in range(x, y))
+                        nb_all = sum(any(sw(z, v) and not kind[z][v] for v in R - {o, cw}) for z in range(x, y))
+                        cnt["ESEG_Q"] += 1
+                        if nb_all > (eq + 1) * max(0, r - 2): fail(cnt, "ESEG_i_asstated", name, x)
+                        x = y
                     for xx in post:
                         if any(kind[xx][v] != kind[xx + 1][v] for v in R - {o}): eQ += 1
                         elif any(sw(xx, v) and not kind[xx][v] for v in R - {o, cw}): NB += 1
@@ -190,6 +214,40 @@ def run_game(g, cnt, name):
                 cnt["RUN_chk"] += 1
                 cnt["RUN_maxNX"] = max(cnt["RUN_maxNX"], NX)
                 if NX > B: fail(cnt, "RUN", name, k0, NX, B)
+
+
+def phase_counts(g, st, o, p0, p1, cnt, name):
+    """Corollary PHASE's inequalities on one phase (all transition counts)."""
+    n = g.n; m = sum(len(x) for x in g.succ); do = len(g.succ[o]); Dl = max(len(x) for x in g.succ)
+    trs = range(p0, p1)
+    f = sum(st[x]["fb"] for x in trs)
+    X = sum(st[x]["Rb"] != st[x + 1]["Rb"] for x in trs)
+    Th = sum(st[x]["Xi"][o] != st[x + 1]["Xi"][o] for x in trs)
+    Wc = sum(st[x]["W"][o] != st[x + 1]["W"][o] for x in trs)
+    bnd = sum(st[x]["Rb"] != st[x + 1]["Rb"] or st[x]["Xi"][o] != st[x + 1]["Xi"][o] or st[x]["W"][o] != st[x + 1]["W"][o] for x in trs)
+    Nst = 1 + bnd
+    NX = sum(st[x]["Xi"] != st[x + 1]["Xi"] for x in trs)
+    So = Trel = 0
+    for x in trs:
+        a, b = st[x], st[x + 1]
+        rodd = a["sb"][o] != b["sb"][o] and a["Xi"][o][0] != o
+        So += rodd
+        rev = any(g.owner[y] == 0 and a["s"][y] != b["s"][y] and a["Xi"][y][0] != y for y in range(n))
+        Trel += rodd or rev
+    T = p1 - p0
+    TH = n * n + 2 * n - 1
+    chk = [("PH_LP", T <= (m - n + 1) * (Trel + 1)), ("PH_Trel", Trel <= So + NX),
+           ("PH_NXi", NX <= f + (Nst - 1) + (X + 1) * (n - 1) + (Nst + f) * 3 * Dl * n ** 4),
+           ("PH_Nst", Nst <= 1 + X + Th + Wc), ("PH_Wch", Wc <= (f + X + 1) * n * n),
+           ("PH_X", X <= (f + 1) * (n - 1) + f + 13 * (do + 1) * n ** 3 * (f + 1 + TH) + TH),
+           ("PH_So", So <= do * (Th + 1))]
+    if st[p0]["Xi"][o][0] != o: chk.append(("PH_Theta", Th <= (n - 1) + n * (X + 1) + X))
+    else: chk.append(("PH_Theta0", Th == 0))
+    for key, ok in chk:
+        cnt[key + "_chk"] += 1
+        if not ok: fail(cnt, key, name, p0)
+    for key, val in (("T", T), ("Trel", Trel), ("NXi", NX), ("Nst", Nst), ("f", f), ("X", X), ("So", So)):
+        cnt["PHmax_" + key] = max(cnt["PHmax_" + key], val)
 
 
 def main(a):
