@@ -1,6 +1,44 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Handover check (successor 6)
+Session session_01WZRciyMqz1LNWwdFoeq2AP (Opus 5.5; D14, D15, D18, L37, L40). Written 2026-10-25 ~12:05Z (date -u).
+1. Branch claude/l-si. Commands: `git fetch origin`; `git status` showed local head 0d48da2 (the box-0 Fable head), and
+   `git rev-list --left-right --count HEAD...origin/claude/l-si` gave 0 / 4179. `git merge --ff-only origin/claude/l-si` then gave
+   head 84d11cd (successor 5's handover). `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` gave
+   0 ahead / 41 behind trunk 48a8a4c. `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` gave 5c97049 (1 ahead / 0 behind
+   before this commit). Trunk is claude/vibrant-johnson-nxvvxo (`git remote show origin` → HEAD branch); there is no `main`.
+2. Open work (from successor 5's resume point below, `ls docs/si docs/referee docs/referee-2`, and the trunk log):
+   - P-N5-RL (docs/si/P-N5-RL-box10.md, sha1 0a3c70cb; pinned trunk 2fb698d per NOW): in review. REFEREE succ. 8 is WORKING on
+     R-N5-RL (NOW roster); no R-N5-RL / R2-N5-RL file exists yet on trunk or on origin/claude/referee(-2). Next step: wait for
+     relayed items; they go to a NEW file docs/si/P-N5-RL-fixes-box10.md (does not exist yet).
+   - P-N5-P1 (docs/si/P-N5-P1-box10.md, sha1 b98ca794; pinned trunk 48a8a4c "Lead: P-N5-P1 pinned"): unrefereed. Next step: same,
+     items to docs/si/P-N5-P1-fixes-box10.md (does not exist yet).
+   - TEV / NJB = ENT: CONJECTURE. Next step (box 11 (a)): exclude TEV-RED's configuration (P-N5-RL §6 Consequence), starting with
+     the sub-case "e is an evicted tail with target f", or give the exact obstruction and an instance shape for L-RED 16.
+   - Successor 5's NEXT 2 (RISE-LAST at levels < L / after r ≤ L) and NEXT 3 (two-player VJ00 Lemma 5.8, R15's G-N5T-3): not started.
+   - Nothing running (fresh container).
+3. GAPS (docs/GAPS.md row 11, read with python, last part): G-N5-TIME, major, owner L-NEW, OPEN. Update 11:51Z: R35 (P-N5-NJB +
+   fixes, fixes2; CHECKER C44) LANDED: RDROP, PL (c′), PL-S′, MINSET (survivor form), NO-RF-OLD, ENT-SHAPE (1)-(4), (5′); literal MINSET
+   (c) and ENT-SHAPE (5) NOT signed. "Open: NJB = ENT (CONJECTURE; lane reductions EV/EV+/TEV-RED in review as P-N5-RL), REL(S), level
+   −1 fallbacks, out-of-scope fallbacks (P-N5-SCOPE in review; lane NO-ENTRY-A), θ-changes per HN stretch. Lane (unrefereed): Lemma P1
+   = (P) for one-player games." L-SI owns no GAPS row.
+4. Rulings (docs/DECISIONS.md, verbatim; status from docs/DECISIONS-INDEX.md):
+   - D1 (index: active; full text docs/decisions/D001-launch-brief.md). Key lines: "A claimed polynomial algorithm is far more likely
+     to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below." and
+     "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision."
+   - D16 (index: active): "Then keep working as I told you to"
+   - D18 (index: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from
+     areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed,
+     state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open
+     problems."
+5. Traps found:
+   - `pkill -f <pattern>` run from a Bash call whose own command line contains <pattern> kills that shell (exit 144). The same
+     family as successor 5's pgrep trap. Never pkill by a pattern that is in the calling command.
+   - `git log -- <path>` on this repo did not finish within 120 s (big history); read the file itself, or use a bounded
+     `git log -n 1 <commit>`.
+   - Still live: the fresh clone's local branch is the old box-0 head (4179 behind); fetch + fast-forward before reading notes.
+
 ## Handover check (successor 5)
 Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2026-10-25 ~09:25Z (date -u).
 1. Branch claude/l-si. Commands: `git fetch origin`; `git status` (local branch was 3924 behind origin/claude/l-si);
