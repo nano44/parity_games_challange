@@ -19,6 +19,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   - ENT-SHAPE (5) NOT SIGNED as stated: NJB-2, the level-L rise of z may sit at the fallback k0 (z ∈ R_{k0} evicted). Seen
     locally 1,159× in the library, hand-checked on cycelim_cex_n32 fb 15. (5′) signed.
   - Tool: scratch/njb_probe.py. D_M = 0 everywhere (thin).
+- §Cs (09:45-09:46Z): L2 §C 5e85c706 (no verdict differs; L2-2 REFEREE-only; N-L2-2 via Lemma X-RUN° accepted). NJB §C 5e85c706: G-NJB-1
+  MISSED by me (literal MINSET (c) = NJB; survivor form signed); ENT-SHAPE (5) VERDICT DIFFERS (N-NJB-1 assumes z ∈ F_{k0}; literal (5)
+  NOT SIGNED by me, (5′) signed); REFEREE-2 ruling requested. Stamps first estimated, corrected 0363a7be.
+- P-N5-TOG (pin d3daae1, sha1 7dfda8c8…): docs/referee/R-N5-TOG.md fff6e624. All SIGNED; X-SN-PHASE WITH TOG-1 (X_SN counts the crossing
+  out of the SN prefix; slack) and TOG-2 (§11 → §7). Tools scratch/tog_probe.py, tog_climb.py. NEXT: TOG §C when R2-N5-TOG exists.
+- Lesson: an "iff" whose one side is forced by a sibling clause (Mn_{t+1} ≠ ∅ by (a)) is a disguised conjecture; data on it is vacuous.
+- Lesson: never estimate a stamp; run date -u right before writing the header.
 - NEXT: §C for L2 and NJB when the R2 reports exist; L-NEW / L-SI fixes files.
 - Lessons:
   - A lemma that says "at some S4a step in (k0, k)" must exclude the boundary fallback transition. Check where the vertex is AT k0 (NJB-2).
