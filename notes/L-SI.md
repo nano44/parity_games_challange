@@ -15,9 +15,15 @@ file when REFEREE-2 9's R2-N5-ENT SHA is relayed (priority); (1) level −1: (c)
 - (a) done as a lane write-up: docs/si/N5-LV5-box12.md. PROVED: Lemma SAND (COARSE_{−1}(θ) frozen once r = −1), FLAT-ALL_{−1}^{none}
   (LV-SHAPE + H1 at k+1 replace FBL), Theorem LV-NONE (≤ n·n_E + 1 u* = none fallbacks per scope run), Corollary SCOPE-FB (≤ 4·n·n_E + 3
   fallbacks per scope run; CONDITIONAL on P-N5-ENT PL-S″, P-N5-LV, N5-LV4).
+- (0) DONE: docs/si/P-N5-ENT-fixes-box11.md FROZEN sha1 72d052b5 (l-si b6b8f85b). Lead drafting R40.
+- Packet P-N5-LV2 (docs/si/P-N5-LV2-box12.md; Lead GO 15:16Z/15:19Z): LV4 + LV5 in one packet. The one-part draft P-N5-LV4-box12.md
+  (79281d48) was never reported; removed in the LV2 commit.
 - Things only I know (box 12): random 𝒞^1O games (n ≤ 18) give NO in-scope THR fallback; only the corpus instances do. A THR fallback
   needs (o, x0) ∉ Iτ, i.e. Even's best reply to τ from x0 is at least as good as from t (R37 BL Step 0/1). That is the lever: ANTI-Ξ
   turns "Even's best reply avoids (β) gates" into "U(x0) ⊴ Ξ(x0)", against THR.
+  - Trap (bit me again at ~15:22Z): `pkill -f scopefb.py...` killed my own shell (exit 144). Kill by PID from `ps aux | grep "[x]"`.
+  - Trap: Lead messages arrive only via ReadNotifications; I missed two relays (14:33Z, 14:46Z) for ~35 min. Call ReadNotifications after
+    every push.
 
 ## Handover check (successor 6)
 Session session_01WZRciyMqz1LNWwdFoeq2AP (Opus 5.5; D14, D15, D18, L37, L40). Written 2026-10-25 ~12:05Z (date -u).
