@@ -43,7 +43,12 @@ Measured from the repository (commands named). Written here, not in docs/agents/
   P^c_l (N-FRZ-2 = REFEREE FRZ-1, N-FRZ-3 = FRZ-2), FREEZE, RATCHET, BLOCK (vacuous in data), SUB SIGN; X-RUN SIGN WITH GAPS G-FRZ-1
   (= FRZ-3, closed; transition leaving P). Fixes file 168de464 read after verdicts. Tools R2-N5-FRZ/ (frz_check.py on R2-N5-RE/re_check.py,
   own N5 with any arena optimum; oink_xcheck 468/468). 0 violations: 16,434 batch runs, 1,485,828 climb runs. No freeze at l in {-1, bot}.
-- NEXT: §C FBW (R-N5-FBW + REFEREE §C a04615b5; Lead asks to confirm/contest FBW-1: FLAT-ALL (i) avoids o by H1 at k+1, not H2), then §C FRZ.
+- §C FBW bc2e7b72 (appended to R2-N5-FBW.md): no verdict differs; FBW-1 CONFIRMED (honest cycle, H1 at k+1; my lane's §3 said H2);
+  FBW-2 = N-FBW-1. Probe R2-N5-FBW/fbw1_probe.py (thin: 7 random cases).
+- §C FRZ (appended to R2-N5-FRZ.md): only the P^c label differs (adopted REFEREE's SIGNED WITH GAPS FRZ-1/2); FRZ-1..3 = N-FRZ-2/3, G-FRZ-1;
+  rows 4-5 mine (N-FRZ-1 ARENA citation, N-FRZ-4 definitions); row 6 REFEREE's NL phase-key transfer ACCEPTED (my miss).
+  Asked: did REFEREE's 30 BLOCK runs contain any S4a leave?
+- NEXT: wait for the Lead.
 - Trap: background jobs over 30 min are killed (first climb wave lost its second half). Give run_in_background a long timeout.
 
 ## HANDOVER (successor 6, Opus 5.5 under D15; written 2026-10-25 ~06:1xZ; context ~575k; Lead 06:08Z: finish FBW, hand over, park)
