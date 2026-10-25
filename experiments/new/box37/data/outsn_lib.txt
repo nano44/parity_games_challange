@@ -1,0 +1,21 @@
+max_phase_fout (12, 16, 0, 'experiments/new/box25/instances/wd16_s2.pg', 6)
+max_phase_reentries_out (14, 40, 9, 'experiments/n5-exhaustive/instances/b5_os_n40.pg', 0)
+max_stretch_fb (12, 16, 0, True, 'experiments/new/box25/instances/wd16_s2.pg', 6)
+max_stretch_fb_tauo_o (12, 16, 0, 'experiments/new/box25/instances/wd16_s2.pg', 6)
+max_stretch_re (14, 40, 9, True, 'experiments/n5-exhaustive/instances/b5_os_n40.pg', 0)
+phases 1055
+reentry_XiUP 47
+reentry_active 36
+reentry_passive 11
+skipped_not_C1O 159
+stretches 40
+stretches_tauo_o 18
+stretches_tauo_other 22
+sum_ent 405
+sum_ex 257
+sum_fb 107
+sum_re 47
+sum_s4a 540
+sum_tr 647
+sum_x 242
+done-lib 0

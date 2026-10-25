@@ -53,6 +53,12 @@ Written 2026-10-25 09:01Z (date -u). Predecessor: successor 4, session_01G2KY2Ca
   00bd18b. C42 CLOSED. Next: R34 (P-N5-NJB), R35 (P-N5-TOG) when the Lead sends draft sha1s (each after a lane fixes2).
 - Worktrees: wt42 = 8d95c31, wtR42 = 7626354e. Scratch c42/trace.py = per-state trace via REFEREE l2_probe.states().
 
+- C43 (R34, P-N5-TOG pinned d3daae1) 10:5xZ (date -u): main report docs/checker/C43.md: FAIL at 4be5bba (draft sha1 3b20da39…):
+  E-1 "238 files" ×2 = REFEREE-2's text, but its files.lst / 484 logs / 31,434 runs give 239. N-1 fixes2 unrefereed (records only);
+  N-2 REFEREE l.9 5e85c706; N-3 REFEREE-2's 238. Every re-run EXACT. Add. 1: PASS at 3c0c2aa (33dbffd3). Next: Add. 2 =
+  landed-text check; then NJB = R35.
+- Worktrees: wt43 = 4be5bba, wtR43 = fff6e624.
+
 ## Resume point (successor 4, history)
 - PARKED 16:22Z (date -u). C28 CLOSED:
   - main report b53136d7: FAIL E-1..E-6;
