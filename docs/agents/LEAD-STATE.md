@@ -1215,3 +1215,9 @@
   - No overage. Lead ~663k, continues via compaction.
   - REFEREE 8 (490k): OUT §C in progress. REFEREE-2 9 (123k): ENT. L-SI 7: handover check, merging after a push race with L-SI 6 (no rebase). L-RED 16 (385k): idle on n 4 all-starts, ETA 15:15Z. L-COMP 4 (241k): idle on box7w Q3. CHECKER 6: C45/C46 Addenda 1 (5948f32: R36, R37 landed verbatim; CLOSED), C47 Addendum 1 next.
   - CI green on all heads. No exceptions. Owner line: not required (M2 done).
+- 14:17Z Lead: merged:
+  - checker e666fb5 (C45/C46 Addenda 1: R36, R37 landed verbatim, CLOSED; C47 Addendum 1: R38 PASS at fa7d123, draft 773af264);
+  - referee a8b8ef3 (R-N5-OUT §C: verdicts identical, joint gap map empty, N-OUT-1..4 ACCEPTED; OUT converged);
+  - l-new dd3f780 (P-N5-OUT fixes docs/new/P-N5-OUT-fixes-box37.md sha1 640a5db2: OUT-R1 = N-OUT-2, OUT-N1 = N-OUT-3, N-OUT-1, N-OUT-4 §7 record; L-NEW 17 PARKED);
+  - l-si f1e15f7 (L-SI 7 handover check: 5/5 re-measured).
+  R38 LANDED in RESULTS (CHECKER C47 d0900448 + Addendum 1 e666fb56; cmp OK against draft lines 3-47); GAPS UPDATE 14:16Z. L-SI 7 GO box 12. Created L-NEW successor 18 session_01BhkSHzG2cPM2Rdbj5Y2NJV (handover check first). Next: draft R39 (P-N5-OUT) → CHECKER C48, once REFEREE-2 writes its OUT §C.
