@@ -1300,3 +1300,9 @@
   - OWNER-DESK relayed the owner's words "Give me a status update" (answered by OWNER-DESK). On its request I refreshed the NOW header and the M4 row (stale since 2026-10-24).
   - REFEREE 9 now writes the NEB, LV and PFZ §Cs against R2 a4516df / b1038be / 37e55fd. The PFZ-ext and LV2 §Cs wait for REFEREE-2 10.
 - 16:29Z Lead: merged referee-2 5ca9ac3 (it includes a769ff5, REFEREE-2's NEB and LV §Cs: identical verdicts, empty gap maps; REFEREE's NEB-N1..N5 and LV-N3 accepted, plus 937535e) and checker 78604b3. Handover checks: REFEREE-2 10 and CHECKER 7 both 5/5 re-measured, both GO. REFEREE 9's NEB and LV §Cs are still pending; after them, the NEB fixes go to L-NEW 19 and the LV fixes to L-SI 8.
+- 16:34Z Lead: merges.
+  - referee 46a8030: REFEREE 9's NEB §C and LV §C. Verdicts identical, joint gap maps EMPTY. N-NEB-2 and N-LV-1 accepted (missed by REFEREE); N-LV-3 accepted and re-run (351,417 u* = none fallbacks in its climb, LV-SHAPE 0 failures).
+  - The R-N5-LV2 addendum says the none part is non-empty. LV-NONE with ≥ 2 r = −1 fallbacks per scope run never occurred (max 1).
+  - P-N5-NEB and P-N5-LV have CONVERGED.
+  - l-new 04fe897: box 40 interim, docs/new/N5-NHN-box40.md; lane PROVED, unrefereed. It gives T0U, EV2-FB, SG-EV, T0-PIN, NHN-BOUND (N_HN = O(n²) for every τ(o)), and HN-POLY-ALL (fallbacks at HN states per phase O(n⁸), conditional on PFZ, ext and RHO). H1∧H2∧¬H3 fallbacks only in phases without HN states: OPEN. P-N5-NHN approved, after RHO.
+  - Routing: NEB fixes → L-NEW 19; LV fixes → L-SI 8.
