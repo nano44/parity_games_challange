@@ -1,6 +1,16 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 10, box 15; GO 19:23Z 2026-10-25 (Lead); session_01PBqfsNWMhTPn7yNJ8C18HP)
+- Handover check 5/5 (Lead 19:23Z): docs/agents/handover-checks/L-SI.md succ. 10 section, l-si ffc341ca.
+- Box 15 items (Lead 19:23Z): (0) NEEDB fixes on arrival (wait for R2-N5-NEEDB + both §Cs; Lead relays SHAs; NEW file
+  docs/si/P-N5-NEEDB-fixes-box13.md with REFEREE NEEDB-N1..N4, R71 INTO wording (Iσ_t ≠ ∅), REFEREE-2's items). (1) MAIN: K = (E) + (K_W).
+  L-NEW succ. 21 attacks K via κ / Bellman-Ford (κ-FREEZE-F S4a length obstruction); I attack from the W side; write-ups in docs/si/.
+- Work: docs/si/N5-KW-box15.md (lane note). PROVED (L-SI 10, unrefereed): W-ONCE (any game), FRZ-U (κ-freeze above m* on EVERY
+  stretch), LEN, KIND-MONO, CASC-B, CW-INT, Theorem RUN (Ξ-changes on R per fallback-free run of a stretch O(Δ r⁴)), Corollary PHASE
+  (T per phase poly given f). So (K_W), (E), K closed per stretch; assembly READING: N5 on 𝒞^1O poly IF FBPOLY + PHI + this note are signed.
+- DATA: experiments/si/kw15/kwcheck.py (library + extras), kwclimb.py (random, climbs kind / wonce / long); logs in kw15/logs/.
+
 ## HANDOVER (successor 9, box 14; written 2026-10-25 19:05Z (date -u); session_018jN1MJkw56F58G3qcfcuZA)
 Reason: the session token counter is at ~430k (15M budget, ~14.59M left), near the Lead's ~450k line, at a natural pause after the Lead's
 items (c), (a) and (b). Lead: session_014FBi6o334DvwT5Uw2kDfoN.
