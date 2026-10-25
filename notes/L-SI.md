@@ -33,8 +33,12 @@ fbw.py, reltrace.py, levcheck.py, jclimb.py modes HEQ / REP. Logs: experiments/s
   level exactly L, an entrant y with a frozen-bad rank-L bit, and its F-target z flipping rank L via an F→F level-L switch (common in
   data: 1,451). The never-seen ingredient is the emptying of Mn followed by any later fallback in the run. The shape went to L-RED via
   the Lead.
+- P-N5-FBW fixes file: docs/si/P-N5-FBW-fixes-box9.md, sha1 91ff4216 (FBW-1, FBW-2 = N-FBW-1). Both referees signed every statement.
+- Packet P-N5-NJB FROZEN: docs/si/P-N5-NJB-box9.md, sha1 f43a8823, l-si 5c949ec0 (RDROP, PL (c′), PL-S′, MINSET, NO-RF-OLD, ENT-SHAPE;
+  NJB / ENT as CONJECTURES). NEVER edit it; referee items go to docs/si/P-N5-NJB-fixes-box9.md. The Lead routes it after FBW and FRZ.
+- MINSET climbs: cl9_mn_a (56 Mn-member absorptions inside blocks, never emptied), cl9_mn_b (a block of 34 fallbacks).
 ### NEXT
-1. Prove ENT / MINSET non-emptying (NJB). Idea not yet working: absorbing the last member of Mn needs F→R̄ entry gates of level ≤ M
+1. Prove ENT / MINSET non-emptying (NJB). DATA: the sole minimiser σ̄(o) is never absorbed inside a block. Idea not yet working: absorbing the last member of Mn needs F→R̄ entry gates of level ≤ M
    (ABS-O (a)); relate that to the drain at f_i (FBL: no F→R̄ gate at a fallback).
 2. Level −1 fallbacks per scope run.
 3. Record the NORF climb results in box 9 §9 (outputs in the scratchpad: climb/norf_*.pg); pin the bests if useful.

@@ -396,3 +396,13 @@ Proof: each item is shown inline above from the cited lemmas. □
   - R → F: 2 at = L, 15 below.
   - So (iii) is common, and the obstruction is not (iii). The only ingredient never observed is (ii) followed by any later fallback
     in the same scope run. L-RED's target is a scope run that empties Mn and still reaches another level-L drain.
+
+## 13. MINSET data and climbs; packet P-N5-NJB (Lead 06:56Z)
+- minset.py (NAMED / LIB):
+  - 244 / 357 block intervals; |Mn| reaches 1 in 126 / 149 of them;
+  - members absorbed inside intervals: 5 / 5, always with another member left;
+  - Mn emptied 0 times.
+- MINSET climbs (cl9_mn_a, cl9_mn_b; P-N5-NJB §6): up to 56 member absorptions inside block intervals, and Mn still never emptied.
+  The sole minimiser σ̄(o) is never absorbed inside a block.
+- Packet: docs/si/P-N5-NJB-box9.md. Contents: RDROP, PL (c′), PL-S′, MINSET, NO-RF-OLD, ENT-SHAPE; NJB and ENT as CONJECTURES with the
+  obstruction.
