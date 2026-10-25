@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """L-SI succ. 10, box 15: random C^1O games and hill-climbs for kwcheck.py's checks (REFEREE-2's games, mutations and tracer, read only).
   kwclimb.py random N nmin nmax seed          N random o-cyclic C^1O games (RC.rand_game), S3 start + 2 random starts, SPEC mode
-  kwclimb.py climb FIT seed nmin nmax secs    hill-climb; FIT: kind (c_w > c_theta, not H2 runs: post-freeze length, kind changes,
+  kwclimb.py climb FIT seed nmin nmax secs [seed.pg]   hill-climb; FIT: kind (c_w > c_theta, not H2 runs: post-freeze length, kind changes,
                                               c_w switches), wonce (Xi-flat non-fallback pairs), long (Xi-changes on R per run)
 Any check failure stops and dumps the game to kw15/climb/viol_<FIT>_<seed>.pg; the best game goes to kw15/climb/best_<FIT>_<seed>.pg."""
 import sys, os, random, time
@@ -28,6 +28,9 @@ def fitness(C, M, fit):
         return 20 * C["WONCE checks"] + M["max Xi-changes on R / run"]
     if fit == "kind2":
         return 50 * C["KIND changes"] + 30 * M["max c_w switches / run"] + 10 * C["KIND runs"] + 4 * M["max cw>cth notH2 run length"] + 2 * C["cw>cth notH2 runs (any length)"]
+    if fit == "kind3":
+        return (100 * C["KIND changes"] + 60 * M["max c_w switches / run"] + 30 * C["KIND runs c_w odd"] + 10 * M["max KIND post-freeze length"]
+                + 5 * C["KIND runs"] + 3 * C["cw>cth notH2 runs c_w odd (any length)"] + M["max cw>cth notH2 run length"])
     if fit == "wonce2":
         return 20 * C["WONCE checks"] + 3 * C["Xi-flat S4a transitions"]
     if fit == "long":
@@ -46,9 +49,12 @@ def main():
         print("FAILURES (first 20):", allbad[:20]); print("KWCHECK", "PASS" if not allbad else "FAIL"); return
     fit, seed, nmin, nmax, secs = sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5]), float(sys.argv[6])
     rng = random.Random(seed); os.makedirs(os.path.join(HERE, "climb"), exist_ok=True)
-    while True:
-        g, o = RC.rand_game(rng, rng.randint(nmin, nmax))
-        if FCL.ok(g, o): break
+    if len(sys.argv) > 7:
+        g = RC.parse(open(sys.argv[7]).read()); o = FC.odd_vertex(g)
+    else:
+        while True:
+            g, o = RC.rand_game(rng, rng.randint(nmin, nmax))
+            if FCL.ok(g, o): break
     C, M, bad = evaluate(g, o, seed); best = fitness(C, M, fit); bestCM = (C, M)
     tot, totM = Counter(), Counter(); t0 = time.time(); it = acc = 0
     while time.time() - t0 < secs:
