@@ -36,6 +36,12 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   - Tools: docs/referee-2/R2-N5-U23/.
   - §C (2026-10-25 00:00Z) vs REFEREE R-N5-U23 (7ffbd9f): no disagreement. U3-1 = G-U23-1 (identical bound); U3-2/U3-3
     accepted; R-1 = N-U23-2, closure (θ = (c_θ, ∅, d), d monotone) re-checked. u2flat_n32: 7 U2 W-flat switches, bound attained, 0 violations. PARKED.
+- P-N5-LP (docs/new/P-N5-LP-box32.md sha1 d2c8121a…, trunk bc42f2c; Lead 00:47Z): report docs/referee-2/R2-N5-LP.md (00:56Z).
+  - §1 U, HI, UL, GR, NU SIGN (G-LP-2: HI's Consequence unproved, unused); §2 LP SIGN (N-LP-1).
+  - §3 DF NOT SIGNED as stated: VJ00 Lemma 5.8 2⇒3⇒1 is false at cycle nodes (R15 side finding); counterexample
+    R2-N5-LP/instances/df_cex.pg (n 5, sha1 0a98e1b7). DF′ (λ(y) ≠ y) SIGN via R15 (a)/(b) + F1 + R19 (a).
+  - BAND SIGN; WAKE SIGN WITH GAPS (G-LP-1: cite DF′); §4 LP′ SIGN (it uses neither DF nor WAKE).
+  - Tools: R2-N5-LP/lp_check.py, df_probe.py, df_find.py. NEXT: §C after REFEREE's report.
 
 ## HANDOVER (successor 4, session_01DDRfmJkBTC5uu5q62T2Dme, Opus 5.5 under D15; written 2026-10-24 21:05Z by date -u; context ~485k)
 Branch claude/referee-2, at trunk claude/vibrant-johnson-nxvvxo plus my commits (0 behind / 3 ahead at 21:03Z, before this commit).

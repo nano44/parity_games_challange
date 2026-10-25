@@ -31,7 +31,11 @@
   - Add. 1 4278b5a2: fixes part 2 PASS, E-1/E-2 still open;
   - Add. 2 e9f7b674: PASS at 7666336;
   - Add. 3: R25 landed verbatim at trunk 40ef7ed.
-- PARKED. Next likely: P-N5-U23 (L-NEW, pinned 7666336), with both referees.
+- C35 (R26, P-N5-U23 pinned 7666336) 00:4xZ (date -u):
+  - main report docs/checker/C35.md: PASS at 37a4a06 (draft sha1 abd35e40…); optional N-1 (limit (v) "~90" relayed only via fixes §5;
+    L-RED R65 off trunk 1c2f1d8f), N-2 (no change);
+  - Add. 1: R26 landed verbatim at trunk eb8e22e. C35 CLOSED.
+- PARKED. Next likely: P-N5-LP (pinned bc42f2c), with both referees.
 - Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs. In a worktree, symlink tools/oink/build.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 

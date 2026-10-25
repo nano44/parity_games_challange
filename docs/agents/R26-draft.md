@@ -1,9 +1,10 @@
-# Draft RESULTS R26 (Lead, 2026-10-25 00:1xZ by date -u) — awaits the P-N5-U23 fixes file, then CHECKER C35; lands in "## Results" after R25, before "## Dead ends"
+# Draft RESULTS R26 (Lead, 2026-10-25 00:1xZ by date -u) (rev. 00:34Z: fixes file cited) — LANDED in RESULTS Results 00:48Z (CHECKER C35 3653d4a PASS), after R25
 
 ### R26 [refereed-only] N5 on one-Odd-choice games: W-flat runs outside route form are short (CASC-U2 for U2 stretches; CASC-U3 for U3 and U23 stretches, between events), with counting corollaries given fallbacks, W-changes and events (2026-10-25) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C35.md, checker PENDING)
 - Object (packet P-N5-U23, pinned trunk 7666336, unchanged during review): docs/new/P-N5-U23-box31.md, sha1
   ee3e5d1ef95623d3f5e08a34af416fa6b2d09186 (L-NEW successor 11, Opus 5.5). The referees' repairs are collected by the lane in
-  docs/new/P-N5-U23-fixes-box31.md (FIXES PENDING: l-new SHA, sha1; L-NEW successor 12; a record, not itself refereed text).
+  docs/new/P-N5-U23-fixes-box31.md (l-new 0274bd5, on trunk; sha1 870c63a35ceafbd6d8cf94ea9b43923002c68ca6, L-NEW successor 12; a
+  record, not itself refereed text).
   Setting as in R22 and R24 (𝒞^1O; a PHASE is a joint λ-phase with τ constant; R ∋ o, F := V \ R; route form). A STRETCH is a
   maximal run of states of a phase with R, θ, w constant; a W-FLAT RUN is a maximal run of consecutive non-fallback transitions of a
   stretch with W unchanged at every vertex of R. U2: ¬H1 and c_θ := λ_Ξ(o) ≠ o, with the W frame in route form; U3: ¬H2 and

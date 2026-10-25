@@ -1,0 +1,25 @@
+BAND_checks: 4
+C1O_phases: 725
+DF_as_stated_fails own_cycle_node=True: 26
+DF_checks: 44
+GRb_checks: 288
+HI_checks: 4705
+HI_cons_M=L: 642
+HI_cons_M>L: 1
+NU_transitions: 151
+UL_checks: 255
+U_checks: 794
+eps: 1
+own_cycle_node_switch_above_L: 151
+own_cycle_node_switches: 178
+phases: 725
+rises: 0
+runs: 3000
+transitions: 4356
+transitions_in_phase: 794
+max_K: 0
+max_NU_run: 2
+max_S_o: 1
+max_T_phase: 3
+max_rho: 0
+RESULT OK violations=0

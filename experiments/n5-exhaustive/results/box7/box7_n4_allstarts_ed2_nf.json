@@ -1,0 +1,92 @@
+{
+ "games": 704000,
+ "runs": 7340032,
+ "bad": {
+  "CASC": 0,
+  "U1": 0,
+  "TB": 0,
+  "MONO": 0,
+  "FB": 0,
+  "WM": 0,
+  "LV": 0,
+  "LVr": 0
+ },
+ "tested": {
+  "CASCruns": 140668,
+  "CASCswitches": 0,
+  "U1pieces": 100,
+  "TBodd": 576,
+  "TBeven": 17068,
+  "MONOphases": 8337228,
+  "FB": 8337228,
+  "WM": 694116,
+  "LV": 939808
+ },
+ "mx": {
+  "maxrunlen": 2,
+  "maxJ": 1,
+  "maxfb": 1,
+  "maxJ_over_tr": 1,
+  "LV": 0,
+  "maxZ": 1
+ },
+ "ex": {},
+ "ex_maxJ": [
+  {
+   "prio": [
+    0,
+    2,
+    4,
+    6
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "start": [
+    {
+     "1": 1,
+     "2": 1,
+     "3": 1
+    },
+    {
+     "0": 2
+    }
+   ],
+   "J": 1
+  }
+ ],
+ "tasks_done": "64/64",
+ "secs": 2495.1,
+ "options": {
+  "mode": "exh",
+  "args": [
+   "4"
+  ],
+  "even_maxdeg": 2,
+  "o_deg": null,
+  "no_forced": true,
+  "cyclic_only": false,
+  "all_starts": true,
+  "every": 1,
+  "offset": 0
+ }
+}

@@ -1,0 +1,20 @@
+C1O_phases: 3
+DF_checks: 218
+GRb_checks: 146
+HI_checks: 2760
+HI_cons_M=L: 62
+HI_cons_M>L: 27
+UL_checks: 92
+U_checks: 92
+eps: 3
+phases: 3
+rises: 6
+runs: 3
+transitions: 100
+transitions_in_phase: 92
+max_K: 0
+max_NU_run: 0
+max_S_o: 49
+max_T_phase: 55
+max_rho: 3
+RESULT OK violations=0
