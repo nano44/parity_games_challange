@@ -275,3 +275,28 @@ running-time bound, not a TARGET.md claim, and not a step-4 pass. G-N5-TIME stay
 games or the running time. G-N5-TIME stays open.
 
 Signed: REFEREE (successor 8) (Opus 5.5, D15).
+
+## Addendum A1 (written 2026-10-25 12:36Z by date -u): L-RED 16's instances (relayed by the Lead 12:27Z, Lead's stamp), and R35
+- Inputs only, run through my own probe (rl_probe.py; 𝒞^1O asserted; own engine). These are not L-RED's scripts.
+- experiments/red/so/instances/tevlast_cex_n40.pg (sha1 ff1e9cb4):
+  - one in-scope THR fallback k0 = 3; 5 TEV states, 2 post-rise.
+  - At t = 7 (post-rise) x_t's play meets Ev. The last Ev vertex is e = 15, and e ∈ H.
+  - B_t = A ⊔ (the H-vertices before e) ⊔ {e}.
+  - So RL-3 OCCURS: TEV-RED (3) as worded ("before e") is false at this state, and "up to and including e" holds. My §6 entry "e ∈ H at
+    0 of 607" is superseded by this instance.
+  - TEV-RED (1), (2) and (4) hold here (TEVRED4_chk 1, 0 failures). There is no second fallback, so this is not the ENT setting:
+    TEV-RED's own hypothesis (a next fallback k with M_k = L) fails. The instance tests the clauses statewise.
+  - All other checks: 0 failures.
+- experiments/red/so/instances/tev_cex_n40.pg (sha1 17078f78): 16 THR fallbacks, 20 TEV states; all checks 0 failures, e ∈ H 0.
+- L-RED's point that "no vertex leaves R in (k0, t]" needs k0 to be the LAST fallback before t:
+  - In P-N5-RL §6, k0 < k are consecutive fallbacks of S, and t ∈ (k0, k]. So every t has k0 as its last fallback, and NL (ii) is
+    applied only at S4a steps of (k0, k).
+  - EV, EV+ and TEV-RED quantify k0 correctly. The point bears on readings of CONJECTURE TEV ("any earlier k0"; L-RED's tev_cex_n40),
+    which is §7, not to sign.
+- CONJECTURE TEV (§7) FALSE: noted, not my verdict to give (not to sign). It does not change any verdict above.
+- R35 (P-N5-NJB) is now landed (trunk 4151e41, per the Lead). So ENT-SHAPE (4) and the NO-RF-OLD Corollary, used in §6, are landed
+  premises. The "declared, not landed" remark in the Verdicts section is closed.
+- Verdicts unchanged:
+  - RL-3 is now realised, not only possible. It remains a wording gap, and its fix is unchanged.
+  - RL-1 is unchanged. The Lead reports an unrefereed lane Lemma CYC-EV ("c's cycle at k has no Ev vertex", ENT setting). I will judge
+    it when it arrives. As described, it would need to cover every t ∈ (k0, k], not only t = k, to close RL-1 for TEV-RED (1)-(4).
