@@ -5,7 +5,8 @@ released into D at an earlier fallback of the same scope run, J_in, releases int
 operator and o-cyclicity test from experiments/new/box21/climb_fix.py and box25/pureY.py, read-only, as in xing/clclimb.py).
 Box 9: JMODE=HEQ (FBW violations; in-scope u* = none / EQ fallbacks; Even fallbacks), JMODE=REP (reltrace.py violations;
 tail repeats + θ-changes above M inside a level-M block; block fallbacks).
-Usage: [JMODE=REL|CLS|CLS2|RF|HEQ|REP] jclimb.py seed secs OUT seed.pg      (writes OUT.pg on every improvement; re-verify bests with xing/reverify.sh)"""
+JMODE=NORF (norf.py violations + fallbacks after a rise; states checked after a rise; rises).
+Usage: [JMODE=REL|CLS|CLS2|RF|HEQ|REP|NORF] jclimb.py seed secs OUT seed.pg      (writes OUT.pg on every improvement; re-verify bests with xing/reverify.sh)"""
 import sys, os, random, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tame import *
@@ -15,6 +16,7 @@ from cls2 import scan2
 from rfinv import scan_r
 from fbw import scan_w
 from reltrace import scan_rel
+from norf import scan_n
 MODE = os.environ.get("JMODE", "J")   # J: (max J per phase, J, fb); REL: (#jumps paid by a release (REL-NJ failures), J_in, releases)
 sys.path.insert(0, os.path.join(ROOT, "experiments/new/box21")); sys.path.insert(0, os.path.join(ROOT, "experiments/new/box25"))
 from climb_fix import mutate
@@ -44,6 +46,9 @@ def fit(G):
             c, _ = scan_rel(g, "climb")
             v = sum(c.get(k, 0) for k in ("absl_viol", "rela_viol", "flat_viol", "onerise_viol", "consec_viol"))
             return (v, max(c.get("max_rep", 0) - 1, 0) + c.get("blk_A", 0), c.get("blk_fb", 0))
+        if MODE == "NORF":
+            c, _ = scan_n(g, "climb")
+            return (c.get("old_viol", 0) + c.get("new_viol", 0) + c.get("fb_after_rise", 0), c.get("chk", 0), c.get("rises", 0))
         if MODE == "REL":
             c, _ = scan_d(g)
             return (c["relnj_viol"], c["J_in"], c["rel_fb"])

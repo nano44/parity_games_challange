@@ -18,12 +18,16 @@ fbw.py, reltrace.py, levcheck.py, jclimb.py modes HEQ / REP. Logs: experiments/s
 - Lemma ABS-O (PROVED): the cycle an absorption closes has, above max(g, rank c), only vertices of P(Ξ_j x0); so rank o ≤ max(g, rank c).
   DEAD END as a route to NJB: every in-scope R→F gate has level >= rank o when rank o > rank c, so no block has M < rank o (0 / 778).
 - CONJECTURE NJ-INT (stronger than NJB): no θ-change above L = M_k0 between consecutive in-scope fallbacks with r > L. DATA 562 / 0.
+- Packet P-N5-FBW FROZEN: docs/si/P-N5-FBW-box9.md, sha1 88337bd6, l-si cd42f088; Lead PINNED at trunk e69772b, with both referees.
+  NEVER edit it; referee items go to docs/si/P-N5-FBW-fixes-box9.md.
+- §7 (cda41216): PL-I, the bridge to L-NEW box 34 (L1). PL holds inside frozen r = ℓ blocks without w constant; NJB => (L1) polynomial.
+- §8: Lemma NO-RF-OLD (PROVED): after a θ-change above L in an interval with r > L, vertices already in R have no gate into F.
+  So the next evicting fallback's tails are all entrants (CONJECTURE ENT). DATA: 54 rises above L after a fallback, all after the
+  run's last fallback; NORF climbs (seeds 9201/9202, 20 min each, from 06:01Z) reached 16 / 23 post-rise states, 0 violations.
 ### NEXT
-1. CONJECTURE NJB (no absorption above M strictly inside a level-M block) => ≤ n_E fallbacks per level (second half of (CL-S)).
-   Attack: an exit released at a level-M fallback, re-absorbed above M later in the block, needs its value to drop below the
-   minimiser's at a level > M; use FLAT-ALL (ii) + ONE-RISE on o's exits.
+1. Prove ENT (entrant tails after a rise above L). That closes NJ-INT, then NJB, then (L1).
 2. Blocks where r drops to M (NL / ABS-L unavailable); level −1 fallbacks.
-3. If the Lead asks: a packet P-N5-FBW (FBW, FBW-S, CLS2, FLAT-ALL, STRETCH, PL). NEVER edit P-N5-CLS / fixes files.
+3. Record the NORF climb results in box 9 §9 (outputs in the scratchpad: climb/norf_*.pg); pin the bests if useful.
 
 ## Resume point (successor 3, box 8; superseded by box 9; PARKED 2026-10-25 ~02:35Z at ~500k context after freezing P-N5-CLS; LANE-RESTART step 1)
 IN FLIGHT: nothing running (all climbs finished; outputs in experiments/si/xing/out/jclimb/, local only).
