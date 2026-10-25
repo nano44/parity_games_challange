@@ -1331,3 +1331,4 @@
   - RISE-DROP is FALSE (tevlast7_n32: r stays > L after the rise, no fallback).
   - New CONJECTURE GATE-ABOVE: after a rise, M_t > L while r > L.
   - Drafted R41 = P-N5-LV, sha1 23dc8498, for CHECKER C50. R42 will be P-N5-NEB once its fixes file lands; this renumbers the 16:32Z plan.
+- 17:02Z Lead: merged l-new e535e61 (P-N5-NEB fixes, docs/new/P-N5-NEB-fixes-box38.md, sha1 15434c1c; NEB-N5 explained: the stated command reproduces the referees' totals, and the lane withdraws inv2_all.txt). Drafted R42 = P-N5-NEB for CHECKER C51 (queued after C50 = R41).
