@@ -7,5 +7,5 @@ python3 -c "import sys; sys.path.insert(0,'experiments/red/so'); import sox; g=s
 python3 experiments/new/n5.py n5 "$g" $out/a.sol
 python3 experiments/n5-second/n5b.py "$g" $out/b.sol
 python3 experiments/new/check_sol2.py "$g" $out/a.sol
-python3 experiments/red/so/sox.py "$g" | head -1
+python3 experiments/red/so/sox.py "$g" | grep -v "^TOTAL"
 rm -rf $out
