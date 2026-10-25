@@ -4,7 +4,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ## Box 32 in progress (successor 12, session_01SqmdU7H8WiFZUGTRjZi1C3; GO 2026-10-24 23:50Z)
 - Handover check 9cd52937 (5/5). Write-up: docs/new/N5-L-box32.md; tools experiments/new/box32 (lcheck.py checks every lemma).
 - Finding: R25's gate-level freeze is vacuous on most residual transitions (M = ∞). Repair: freeze at the USED level L_k (Lemma U, PROVED);
-  Theorem LP (any game): phase ≤ (m−n+1)((n+1)(ρ+1)n(n−1)+ε+1), ρ = used-level rises. CONJECTURE NO-WAKE ⇒ phase = O(m n⁵ (1+S_o+X)).
+  Theorem LP (any game): phase ≤ (m−n+1)((n+1)(ρ+1)n(n−1)+ε+1), ρ = used-level rises. NO-WAKE FALSE (nowake_cex_n32, U3);
+  LP′: phase = O(m n⁵ (1+S_o+X+K)), K = wakes, which live in U1 pieces (R24) or U2/U3/U23 (the (E)/(K_W) regime).
 - Pitfalls hit: `pgrep -f lrun.py` in a Monitor matched the waiter itself (use ps + awk on argv); reach_o omits o (a dormant-edge census
   first showed fake F → F edges with σ(y) = o).
 - P-N5-U23 referee items: none relayed yet; answer in docs/new/P-N5-U23-fixes-box31.md.
@@ -230,6 +231,12 @@ parked early at the Lead's request ("freeze P-N5-U23, then park").
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 12, box 32) Coarse freeze at R25's gate level M for (E) / (K_W): VACUOUS. M_k = ∞ at 52 of 69 U2/U3 KW transitions and at both
+  U3 events (220-file 𝒞^1O library, mblock.py). (KW-M) "≤ |R| KW per M-block" FALSE: experiments/new/box32/instances/kwm_cex_n24.pg
+  (sha1 c2723e08…; 15 KW at |R| 3).
+- (succ. 12, box 32) (NO-WAKE) "no used-level rise without fallback, crossing or σ̄(o)": FALSE. Obstruction: W-blind band; with c_w the
+  top-rank vertex W compares lengths only, and an S4a step shortens z's route to a W-tie, the tie-break takes z while Ξ sees level 30.
+  Instance experiments/new/box32/instances/nowake_cex_n32.pg (sha1 3a56e3fb…, U3, transition 1: y 11, 22 → 9, level 30 > L_0 = 26).
 - (succ. 11, box 31) CONJECTURE (U1-T), "after the κ_w-freeze each R-vertex has ≤ 2 Ξ-changes per W-length value": FALSE.
   - Instance: experiments/new/box31/instances/u1t_cex2_n32.pg (n 32, sha1 6162a26f…, n5.py 9 it / 1 fb, Oink zlk OK, strategies
     verified). U1 piece 0..5 is one W-flat run; vertex 23 (level 9) switches at all 5 steps.
