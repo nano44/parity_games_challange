@@ -1487,3 +1487,4 @@
   - L-NEW 21 PARKED at ~450k (resume point 6a1b0e95). Created L-NEW successor 22 (session_0136C96DnQn2qLgCGtvgLp6f) for box 43.
   - L-RED 18 R72 (9812efa7): no kill of FX or FBPOLY in 8.5 M random runs; loop kind on exsw_loop_n15.pg (e38329f8; Lead re-run from the canonical start: one Odd choice vertex, n5 1/0, Oink zlk OK); K linear (kchain, kt6_n58); all wakes at U3. Routed: L-RED box 43 = the K red-team; the Ks/Kt wording point to L-SI for P-N5-KW.
   - Merged l-red. Added R72 to the R48 draft data line.
+- 21:54Z: Merged checker 135d8366 (C56 Addendum 2: R47 landed verbatim at c4d18621; C56 CLOSED), referee 5efec8b0 (REFEREE 11 K prep: kw_probe and kw_climb, 0 failures), l-new b4f064b4 (L-NEW 22 handover check 5/5; notebook duplicate block removed, verified: only the superseded NEXT block was lost) and l-si 6fb0cd55. GO to L-NEW 22 for box 43.
