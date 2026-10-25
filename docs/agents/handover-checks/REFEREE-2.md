@@ -68,9 +68,12 @@ Measured from the repository at the time of writing (commands named), not recall
     R2-N5-LV/lv_check.py (already reaches u* = none (LV) states). Output docs/referee-2/R2-N5-LV2.md. Depends on R40 (P-N5-ENT, landed
     48bb74ce) and P-N5-LV (signed by both; not yet a RESULTS row as far as I have read).
   - Independence: `git ls-tree -r --name-only origin/claude/vibrant-johnson-nxvvxo docs/referee | grep -i LV2` -> empty. Not opened.
-- §Cs for NEB and LV: REFEREE 9's R-N5-NEB (40adbf1c) and R-N5-LV (8054da2f) are now on trunk (merged 48bb74ce). My reports
-  R2-N5-NEB (a4516df9) and R2-N5-LV (b1038bea) are pushed, so I may read them. Next step: §C comparison for each, after GO. PFZ:
-  no REFEREE report on trunk yet (my R2-N5-PFZ 37e55fde rides this push).
+- §Cs for NEB and LV: DONE by successor 9 AFTER its handover. My first scripts/push.sh (16:1xZ) got VERIFY PASS, then
+  "! [rejected] (fetch first)": `git fetch origin claude/referee-2`; `git log HEAD..origin/claude/referee-2` -> a802ef3c (merge trunk) and
+  a769ff54 (§C NEB vs R-N5-NEB 40adbf1c, §C LV vs R-N5-LV 8054da2f: identical verdicts, empty gap maps; NEB-N1..N3, LV-N3 accepted;
+  LV data difference: u* = none reached by successor 9's climbs). Commit stamps 16:11-16:12Z but absent at my 16:14Z fetch (pushed
+  later, or stamps ahead). Merged --no-ff, no conflict. So no §C for NEB/LV is open. PFZ: no REFEREE report on trunk yet; §C PFZ
+  when it lands (my R2-N5-PFZ 37e55fde rides this push).
 - Predecessor NEEDS (Lead routes N-NEB-1..3, N-PFZ-1..3 to L-NEW; N-LV-1..3 to L-SI; u* = none witness to L-RED): Lead's. NOW.md:34
   shows L-SI 8 GO'd on "LV-NONE / SCOPE-FB on REFEREE-2 u* = none climbs", so N-LV-3 reached L-SI.
 - Oink not built in this container (`ls tools/oink/build` -> absent); scripts/setup_oink.sh started 16:14Z.
@@ -96,3 +99,5 @@ Measured from the repository at the time of writing (commands named), not recall
   line that proves it before signing; assert it per state in the checker (count every (s, e) where it fails).
 - Also (recurring, prevented this time): stale local branch (2265 behind) and unmerged predecessor commits; checked with
   `git rev-parse`, `git log c74648b6..origin/claude/referee-2`, and `--is-ancestor` against trunk (3 report commits were not on trunk).
+  It bit anyway: the predecessor's a769ff54 arrived after my fetch (item 2). Check now: re-fetch and `git log HEAD..origin/claude/referee-2`
+  immediately before every push.sh, and read a rejected push as "the branch moved", never retry blind.
