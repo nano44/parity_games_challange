@@ -10,24 +10,26 @@ Its handover is dbef1de6, notes/L-SI.md "## HANDOVER (successor 6, box 11)".
     merge-base b7f18feb.
   - `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` (merge commit "L-SI succ. 7: merge trunk 601df6e") → 2 ahead / 0 behind.
   - My first push of this file (2e1a7c29) was rejected: successor 6 had pushed 84974fea at 13:55Z (P-N5-LV addendum).
-    `git merge --no-ff origin/claude/l-si` brought it in (no rebase). The pushed head SHA is in the message to the Lead.
+    `git merge --no-ff origin/claude/l-si` brought it in (no rebase).
+  - The second push was rejected too: successor 6's handover update 95fb6d0c (14:01Z) had landed while verify ran (~9 min). Merged it
+    the same way. The pushed head SHA is in the message to the Lead.
 
 ## 2. Open work and the next step of each (nothing running; fresh container)
 The frozen files and their sha1s are re-measured with sha1sum.
 - P-N5-ENT (docs/si/P-N5-ENT-box11.md, 4fd22be7):
   - REFEREE succ. 8 report docs/referee/R-N5-ENT.md is on trunk. It signs §1-§3 (FZ, BF, RB, WALK, CYC-EV, TEV-FB). It signs §4-§5
     (ENT-X, NJB-A, D1, PL-S″) CONDITIONAL ON (P). There are no gaps and §6 is not signed.
-  - R2-N5-ENT: not on trunk or on origin/claude/referee-2. REFEREE-2 succ. 9 is WORKING on it (NOW roster).
+  - R2-N5-ENT: not on trunk or on origin/claude/referee-2. It is with REFEREE-2 succ. 9 (NOW roster; Lead 13:54Z per successor 6's
+    14:01Z update).
   - Since R36 has LANDED (Lemma P1 = (P) for one-player games), the (P) condition should lift once ENT lands. READING, to be confirmed by
     the referees/CHECKER.
   - Next step: any items go to a NEW file docs/si/P-N5-ENT-fixes-box11.md (does not exist).
 - P-N5-LV (docs/si/P-N5-LV-box11.md, d0d797f0): pinned on trunk and queued after NEB (NOW). No R-N5-LV / R2-N5-LV yet.
-  - Addendum docs/si/P-N5-LV-addendum-box11.md (a15a8871; successor 6, 84974fea; answers Lead 13:51Z) is not yet on trunk.
+  - Addendum docs/si/P-N5-LV-addendum-box11.md (a15a8871; successor 6, 84974fea; answers Lead 13:51Z) is on trunk too (`git cat-file -e`).
     - It points to the (β) bound already in the packet (PL_{−1} / LV-PL cover (β)-fallbacks with r ≥ 0).
     - It marks the NL= straddle material NOT TO SIGN.
-  - Lead: please pin the addendum with the packet.
   - Next step: items go to a NEW file docs/si/P-N5-LV-fixes-box11.md.
-- Level −1 (successor 6 NEXT 2), OPEN:
+- Level −1 (successor 6 NEXT 2; Lead's queue 13:54Z, research item 2), OPEN:
   - (a) THR fallbacks with u* = none (r = −1; NL at L = −1 is not available).
   - (b) A length-based ENT-SHAPE, to drop REL(S) from LV-PL ≤ n·n_E·(d_o + REL(S)).
   - (c) Or exclude a (β)-fallback, giving "THR ⇒ M ≥ 0" in scope (P-N5-LV §1/§5).
