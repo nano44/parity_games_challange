@@ -171,3 +171,54 @@ Measured from the repository at the time of writing (commands named), not recall
   handover adds the Lead's 17:56Z items). Merged --no-ff. Effect on answer 2, §C PFZ: the Lead asks whether BRK-POLY′ (i) would be
   SIGNED once REFEREE's repair is in the fixes file; REFEREE's repair (refined θ-LEN ≤ |A_low| − [o low] per P-epoch; ρ_S ≥ 1 forces a
   high u ≠ o; θ_S ≤ (ρ_S+1)(|U|−2) − 1) is to be checked by me independently (pfzx_check.py: count length moves vs |A_low|).
+
+## successor 12 (2026-10-25T20:26Z by date -u; Opus 5.5 under D15/L37; predecessor successor 11 session_01VrcXfBuNYKJ3uBUc7ETARQ, handover a41f2c13 + late push ea5cc217)
+Measured from the repository at the time of writing (commands named), not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee-2`. Local branch at container start was STALE (2621 behind origin). `git fetch origin claude/referee-2`;
+  `git checkout -B claude/referee-2 origin/claude/referee-2`; `git rev-parse HEAD origin/claude/referee-2` -> both ea5cc217
+  (succ. 11's C.5 addendum, pushed after its a41f2c13 handover; `git log a41f2c13..` shows 9761ff10 merge + ea5cc217).
+- Trunk claude/vibrant-johnson-nxvvxo (docs/NOW.md:15) at 27b1cc0a (fetched 20:26Z). Before merge:
+  `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 3 ahead, 9 behind (merge-base 04b5c1fd).
+  `git merge-base --is-ancestor`: 04b5c1fd (NHN), 2fef7c4a (FBPOLY), b621f9af (PHI) ON trunk; a41f2c13 (NHN §C + handover) and
+  ea5cc217 (PFZ C.5) NOT on trunk.
+- `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` -> ab0dac71 (no conflict): 4 ahead, 0 behind. This file's commit adds one.
+
+### 2. Open work and next step of each (Lead's 20:2xZ queue, which supersedes the handover's)
+- DONE after the handover: PFZ fixes §1 diff = C.5 (ea5cc217), BRK-POLY′ (i)-(iii) signed unconditionally. This also answers the
+  GAPS G-N5-TIME UPDATE 19:40Z/20:15Z correction ("C.2 ... conditional on its own diff of the fixes text ... CHECKER C53 E-1"):
+  ea5cc217 rides this push to trunk.
+- 1. P-N5-NEEDB: docs/si/P-N5-NEEDB-box13.md `sha1sum` -> 7471aef3 (= pin). Not started. Next: read packet + cited results, build
+  R2-N5-NEEDB/ on R2-N5-LV2/lv2_check.py (+ files.lst 492 𝒞^1O), batch + climbs + mutation control; write R2-N5-NEEDB.md.
+- 2. §C FBPOLY vs docs/referee/R-N5-FBPOLY.md (sha1 e4389a59 in this tree; referee 3de7cab): mine 2fef7c4a is pushed, so readable.
+  Next: diff verdicts and notes (my N-FBP-1/2/4) with REFEREE's; write §C into R2-N5-FBPOLY.md.
+- 3. §C PHI vs docs/referee/R-N5-PHI.md (sha1 1df761ea; referee 843ba1f8): mine b621f9af pushed. Same procedure, R2-N5-PHI.md.
+- 4. P-N5-FX: docs/si/P-N5-FX-box14.md sha1 aa227b0b (= pin). Not started. INDEPENDENCE: `ls docs/referee | grep -i fx` ->
+  R-N5-FX.md EXISTS; I do not open it (nor `git log` it) before my R2-N5-FX.md is pushed. Conditional on FBPOLY.
+- 5. P-N5-NH-box42: docs/new/P-N5-NH-box42.md sha1 93d19be8 (pinned by Lead 54ac72e6). Not started. `ls docs/referee | grep -i nh`
+  -> R-N5-NH.md EXISTS (also R-N5-NHN.md, already read by succ. 11 for its §C); R-N5-NH.md stays unopened until mine is pushed.
+- Also present and NOT to be opened before my report: docs/referee/R-N5-NEEDB.md (item 1).
+- Oink: `ls tools/oink/build` -> absent in this container; scripts/setup_oink.sh started 20:26Z (log in my scratchpad).
+
+### 3. docs/GAPS.md rows
+- `grep -n 'REFEREE-2\|G-N5-TIME' docs/GAPS.md`: REFEREE-2 owns no row. Relevant: G-N5-TIME | major | L-NEW (L-LIT T22; referees
+  later) | open (docs/GAPS.md:11); latest UPDATE 20:15Z corrects 19:40Z's R44 status (my C.2 signature pending its fixes diff = now
+  C.5 ea5cc217). GAP-A (L-ALG) open, not routed to me.
+
+### 4. Three owner rulings that most constrain me (verbatim), with DECISIONS-INDEX status
+1. D1 (docs/DECISIONS-INDEX.md:5: active), docs/DECISIONS.md:7-8:
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index:26 active; L37 index:27 active, label "(Opus 5.5, D15)"), docs/DECISIONS.md:278:
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index:32 active; L40 index:33 active), docs/DECISIONS.md:333:
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (bit successors 9, 10, 11, and again here: ea5cc217 landed after the a41f2c13 handover): a HANDOVER section is not the branch
+  head, and a predecessor may push after it. Check: `git log <handover SHA>..origin/claude/referee-2` at start (done: 9761ff10,
+  ea5cc217), and `git fetch origin claude/referee-2 && git log HEAD..origin/claude/referee-2` right before every push.sh.
+- Independence hazard live now: REFEREE's R-N5-NEEDB.md, R-N5-FX.md and R-N5-NH.md are already in docs/referee/ for three packets I
+  have not reported. Check: before opening any docs/referee/ file, confirm my own R2 report for that packet is in
+  `git log origin/claude/referee-2 -- docs/referee-2/`; list file names only, never `git log` subjects on docs/referee/.
