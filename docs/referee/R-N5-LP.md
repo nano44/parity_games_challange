@@ -154,3 +154,28 @@ of my HEAD). L-NEW successor 12. Written 2026-10-25 01:02Z by date -u. docs/refe
 REFEREE (successor 5), Opus 5.5 (D15), 2026-10-25: Lemma TH SIGNED WITH GAP SO-1 (dependency on my single-signed full-minimiser proof);
 Lemma SO SIGNED (key-frozen step verified); Corollary XJ SIGNED WITH GAP XJ-1 (f = O(n⁴(1 + X))). G-N5-TIME OPEN; open cores per phase:
 X and K.
+
+## §C. Comparison with REFEREE-2 (R2-N5-LP, referee-2 4949d6c; Part 1 = P-N5-LP only)
+Written 2026-10-25 01:13Z by date -u, after my report (4957b2cc, Part 2 dcb41198) was pushed and the Lead said R2-N5-LP exists (01:10Z).
+No verdict differs: both NOT SIGN Lemma DF (FALSE) with independent counterexamples (mine df_cex.pg n 11, sha1 a128663e; R2's n 5, sha1
+0a98e1b7; Lead re-ran both: n5 2/1, Oink OK), both sign DF′, both find the same WAKE and HI-Consequence gaps, and both sign U, UL, GR, NU,
+Theorem LP, BAND and Corollary LP′.
+- DF′: R2's hypothesis is "y not its own cycle node at k+1" and its proof uses R15 Lemmas A and B with (F1). Mine is "y not its own
+  W-cycle node at k+1", proved via R24's G-TB-1 Bellman argument. Both suffice for WAKE: off R, Ξ = W gives λ_W(y) = λ_Ξ(y) (R19 (a)), and
+  on R, a ∈ R is immediate. Equivalent where used; route either.
+- N-LP-1 (R2 only): MISSED by me, ACCEPTED. Theorem LP step 4's "y ⊕ keeps order and strictness between values of one cycle node" is
+  false for set-valued ⊕ in general (R24 TB-1 (b)). It holds where it is used: in a level −1 run all values involved share one path set.
+  Wording.
+- ENG-1 noted by both under Lemma U.
+- Part 2 (P-N5-SO) is mine only; the Lead has moved its second review to my successor.
+
+| statement | REFEREE | REFEREE-2 | joint | fixes-file line (L-NEW) |
+|---|---|---|---|---|
+| Lemma U | SIGNED (ENG-1) | SIGN (ENG-1) | SIGNED by both | — |
+| Lemma HI / Consequence | SIGNED / HI-1 | SIGN / G-LP-2 | HI-1 = G-LP-2 | Consequence: "M_{k+1} ≤ M_k"; equality only if a level-M_k gate edge sits at a non-switched or non-own-cycle-node vertex |
+| UL, GR, NU | SIGNED | SIGN | SIGNED by both | — |
+| Theorem LP | SIGNED | SIGN (N-LP-1) | SIGNED by both | step 4: "here all values have one path set, so y ⊕ keeps order and strictness" |
+| Lemma DF | NOT SIGNED, FALSE | NOT SIGNED, FALSE | FALSE (two counterexamples) | replace DF by DF′ ("y not its own (W-)cycle node at k+1"); drop the VJ00 Lemma 5.8 citation |
+| BAND | SIGNED | SIGN | SIGNED by both | — |
+| WAKE | W-1 | G-LP-1 | W-1 = G-LP-1, closed | cite DF′; one line on why its y qualifies |
+| Corollary LP′ | SIGNED | SIGN | SIGNED by both | — |
