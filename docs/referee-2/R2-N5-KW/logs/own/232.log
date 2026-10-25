@@ -1,0 +1,16 @@
+A0_checks: 29
+FACTB_pairs: 19
+KWS_stretches: 12
+PHASE_checked: 7
+phases: 7
+runs: 3
+states: 12
+states_checked: 12
+stretches: 12
+max_KW_per_stretch: 0
+max_T_per_phase: 3
+max_Trel_per_phase: 3
+max_f_per_phase: 0
+max_stretches_per_phase: 4
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/thetaA_canon_n12.pg exit 0

@@ -1,0 +1,17 @@
+A0_checks: 96
+FACTB_pairs: 169
+KWS_stretches: 25
+PAR_states_cw_above_cth: 2
+PHASE_checked: 12
+phases: 12
+runs: 3
+states: 25
+states_checked: 25
+stretches: 25
+max_KW_per_stretch: 0
+max_T_per_phase: 5
+max_Trel_per_phase: 5
+max_f_per_phase: 4
+max_stretches_per_phase: 6
+RESULT OK violations=0
+experiments/new/box38/instances/nebc_cex_n14.pg exit 0

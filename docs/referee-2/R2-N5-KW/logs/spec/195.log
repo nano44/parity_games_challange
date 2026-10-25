@@ -1,0 +1,16 @@
+A0_checks: 18
+FACTB_pairs: 18
+KWS_stretches: 7
+PHASE_checked: 5
+phases: 5
+runs: 3
+states: 7
+states_checked: 7
+stretches: 7
+max_KW_per_stretch: 0
+max_T_per_phase: 2
+max_Trel_per_phase: 1
+max_f_per_phase: 0
+max_stretches_per_phase: 3
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/b4_theta_n7.pg exit 0

@@ -1,0 +1,22 @@
+A0_checks: 1599
+FACTB_pairs: 8105
+HPATH_checks: 457
+KWS_stretches: 96
+PAR_states_cw_above_cth: 19
+PHASE_checked: 22
+RUNS_runs: 1
+RUN_case_b: 1
+phases: 22
+runs: 3
+states: 97
+states_checked: 97
+stretches: 96
+max_KW_per_stretch: 0
+max_RUN_ratio_case_b_x1000: 0
+max_T_per_phase: 27
+max_Trel_per_phase: 27
+max_f_per_phase: 21
+max_freeze_delay: 0
+max_stretches_per_phase: 28
+RESULT OK violations=0
+experiments/si/coarse/instances/jcl_x32_nest40.pg exit 0

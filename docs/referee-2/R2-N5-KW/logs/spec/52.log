@@ -1,0 +1,23 @@
+A0_checks: 518
+FACTB_pairs: 3149
+FRZU_checks: 12
+KWS_stretches: 96
+LEN_runs_after_f0: 6
+PAR_states_cw_above_cth: 3
+PHASE_checked: 11
+RUNS_runs: 8
+RUN_case_a: 8
+phases: 11
+runs: 3
+states: 104
+states_checked: 104
+stretches: 96
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 42
+max_Trel_per_phase: 42
+max_f_per_phase: 3
+max_freeze_delay: 0
+max_stretches_per_phase: 39
+RESULT OK violations=0
+docs/referee-2/R2-N5-LP/climb/fix_lev_best.pg exit 0

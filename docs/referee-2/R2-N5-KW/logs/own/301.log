@@ -1,0 +1,25 @@
+A0_checks: 284
+FACTB_pairs: 653
+FRZU_checks: 27
+KWS_stretches: 51
+LEN_runs_after_f0: 5
+PAR_states_cw_above_cth: 61
+PHASE_checked: 27
+RUNS_runs: 15
+RUN_case_a: 3
+RUN_case_b: 12
+phases: 27
+runs: 3
+states: 84
+states_checked: 84
+stretches: 51
+max_KW_per_stretch: 3
+max_RUN_ratio_case_a_x1000: 5
+max_RUN_ratio_case_b_x1000: 9
+max_T_per_phase: 24
+max_Trel_per_phase: 24
+max_f_per_phase: 7
+max_freeze_delay: 3
+max_stretches_per_phase: 12
+RESULT OK violations=0
+experiments/new/box29/out/nfb16.pg exit 0

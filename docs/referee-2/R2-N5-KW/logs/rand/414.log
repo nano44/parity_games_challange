@@ -1,0 +1,18 @@
+A0_checks: 276
+FACTB_pairs: 807
+HPATH_checks: 45
+KWS_stretches: 54
+PAR_states_cw_above_cth: 10
+PHASE_checked: 15
+phases: 15
+runs: 3
+states: 54
+states_checked: 54
+stretches: 54
+max_KW_per_stretch: 0
+max_T_per_phase: 21
+max_Trel_per_phase: 21
+max_f_per_phase: 1
+max_stretches_per_phase: 22
+RESULT OK violations=0
+experiments/red/xing/instances/x31_cu16.pg exit 0

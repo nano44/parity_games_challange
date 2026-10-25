@@ -1,0 +1,22 @@
+A0_checks: 255
+FACTB_pairs: 547
+HPATH_checks: 55
+KWS_stretches: 13
+PAR_states_cw_above_cth: 4
+PHASE_checked: 10
+RUNS_runs: 2
+RUN_case_a: 2
+phases: 10
+runs: 3
+states: 15
+states_checked: 15
+stretches: 13
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 1
+max_T_per_phase: 2
+max_Trel_per_phase: 2
+max_f_per_phase: 0
+max_freeze_delay: 1
+max_stretches_per_phase: 3
+RESULT OK violations=0
+experiments/new/box31/instances/u1t_cex2_n32.pg exit 0

@@ -9,6 +9,10 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - Tools R2-N5-NEEDB/ (needb_check.py, needb_climb.py with START = seed's .txt start pair; NB_MUT=nob|anti|otc|otf|xg|b0).
 - Independence slip (disclosed in the report): a repo-wide grep printed LEAD-STATE.md l. 1410 / RESULTS R43 lines on REFEREE's R-N5-NEEDB
   after my verdicts were written. Trap: never grep docs/agents/ or RESULTS for an unreported packet; restrict grep to the packet's own dirs.
+- §C FBPOLY 75372604 (+ 6ff47e58), in R48. NEEDB Addendum A 1a9a0407 (REFEREE C.4: witness start pairs were the seed's; fixed, xg_witness.py).
+- R2-N5-KW (P-N5-KW c0b0111f + addendum 8d6bfb3c): all SIGN; N-KW-1..6. Tools R2-N5-KW/ (kw_check.py, kw_climb.py; KW_MUT=frz0|casc|par).
+- Traps (new): totals.py summed max_* keys across files (fixed: maxima); a pattern-kill matched my own shell via heredoc text (write
+  scripts with the Write tool, never kill by a pattern that appears in the command); climb dump() must save the pairs evaluate() ran.
 - Oink built in this container (20:2xZ).
 
 ## HANDOVER (successor 11, session_01VrcXfBuNYKJ3uBUc7ETARQ, Opus 5.5 under D15; written 2026-10-25 20:1xZ by date -u; context ~420k)

@@ -1,0 +1,24 @@
+A0_checks: 59
+FRZU_checks: 74
+KWS_stretches: 17
+LEN_runs_after_f0: 9
+PAR_states_cw_above_cth: 15
+PHASE_checked: 8
+RUNS_runs: 9
+RUN_case_a: 8
+RUN_case_b: 1
+phases: 8
+runs: 3
+states: 62
+states_checked: 62
+stretches: 17
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_RUN_ratio_case_b_x1000: 0
+max_T_per_phase: 22
+max_Trel_per_phase: 22
+max_f_per_phase: 0
+max_freeze_delay: 0
+max_stretches_per_phase: 5
+RESULT OK violations=0
+experiments/red/so/instances/so_sorl_n32.pg exit 0

@@ -1,0 +1,26 @@
+A0_checks: 419
+FACTB_pairs: 2526
+FRZU_checks: 2
+HPATH_checks: 56
+KWS_stretches: 41
+LEN_runs_after_f0: 1
+PAR_states_cw_above_cth: 11
+PHASE_checked: 15
+RUNS_runs: 2
+RUN_case_a: 1
+RUN_case_b: 1
+phases: 15
+runs: 3
+states: 45
+states_checked: 45
+stretches: 41
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_RUN_ratio_case_b_x1000: 0
+max_T_per_phase: 15
+max_Trel_per_phase: 15
+max_f_per_phase: 1
+max_freeze_delay: 0
+max_stretches_per_phase: 16
+RESULT OK violations=0
+experiments/new/box28/out/fb32_sc32.pg exit 0

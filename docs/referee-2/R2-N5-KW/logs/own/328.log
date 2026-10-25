@@ -1,0 +1,18 @@
+A0_checks: 234
+FACTB_pairs: 203
+HPATH_checks: 200
+KWS_stretches: 29
+PAR_states_cw_above_cth: 18
+PHASE_checked: 13
+phases: 13
+runs: 3
+states: 29
+states_checked: 29
+stretches: 29
+max_KW_per_stretch: 0
+max_T_per_phase: 8
+max_Trel_per_phase: 8
+max_f_per_phase: 4
+max_stretches_per_phase: 9
+RESULT OK violations=0
+experiments/new/box38/instances/tauw_B_cex_n24.pg exit 0

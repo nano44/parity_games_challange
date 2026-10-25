@@ -1,0 +1,18 @@
+A0_checks: 102
+FACTB_pairs: 246
+HPATH_checks: 43
+KWS_stretches: 16
+PAR_states_cw_above_cth: 4
+PHASE_checked: 10
+phases: 10
+runs: 3
+states: 16
+states_checked: 16
+stretches: 16
+max_KW_per_stretch: 0
+max_T_per_phase: 2
+max_Trel_per_phase: 2
+max_f_per_phase: 1
+max_stretches_per_phase: 3
+RESULT OK violations=0
+docs/referee/R-N5-NEB/band_base_cex.pg exit 0

@@ -1,0 +1,22 @@
+A0_checks: 1748
+FACTB_pairs: 20161
+HPATH_checks: 36
+KWS_stretches: 122
+PAR_states_cw_above_cth: 1
+PHASE_checked: 11
+RUNS_runs: 1
+RUN_case_a: 1
+phases: 11
+runs: 3
+states: 123
+states_checked: 123
+stretches: 122
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 76
+max_Trel_per_phase: 76
+max_f_per_phase: 10
+max_freeze_delay: 0
+max_stretches_per_phase: 76
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/b6_xw_n40.pg exit 0

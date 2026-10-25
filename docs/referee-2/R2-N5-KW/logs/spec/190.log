@@ -1,0 +1,17 @@
+A0_checks: 56
+FACTB_pairs: 149
+KWS_stretches: 10
+PAR_states_cw_above_cth: 4
+PHASE_checked: 7
+phases: 7
+runs: 3
+states: 10
+states_checked: 10
+stretches: 10
+max_KW_per_stretch: 0
+max_T_per_phase: 2
+max_Trel_per_phase: 2
+max_f_per_phase: 0
+max_stretches_per_phase: 3
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/b4_cyc6_0.pg exit 0

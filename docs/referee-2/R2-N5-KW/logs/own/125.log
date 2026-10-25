@@ -1,0 +1,16 @@
+A0_checks: 315
+FACTB_pairs: 1318
+KWS_stretches: 23
+PHASE_checked: 16
+phases: 16
+runs: 3
+states: 23
+states_checked: 23
+stretches: 23
+max_KW_per_stretch: 0
+max_T_per_phase: 4
+max_Trel_per_phase: 4
+max_f_per_phase: 0
+max_stretches_per_phase: 5
+RESULT OK violations=0
+docs/referee-2/R2-N5-SN/climb/leave_a_best.pg exit 0

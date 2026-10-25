@@ -1,0 +1,22 @@
+A0_checks: 1137
+FACTB_pairs: 6151
+HPATH_checks: 28
+KWS_stretches: 68
+PAR_states_cw_above_cth: 1
+PHASE_checked: 15
+RUNS_runs: 2
+RUN_case_a: 2
+phases: 15
+runs: 3
+states: 74
+states_checked: 74
+stretches: 68
+max_KW_per_stretch: 5
+max_RUN_ratio_case_a_x1000: 5
+max_T_per_phase: 28
+max_Trel_per_phase: 28
+max_f_per_phase: 25
+max_freeze_delay: 5
+max_stretches_per_phase: 29
+RESULT OK violations=0
+experiments/red/so/instances/farrise25_n32.pg exit 0

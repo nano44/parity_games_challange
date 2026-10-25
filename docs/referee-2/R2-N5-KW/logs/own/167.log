@@ -1,0 +1,17 @@
+A0_checks: 8
+FACTB_pairs: 2
+KWS_stretches: 13
+PAR_states_cw_above_cth: 1
+PHASE_checked: 12
+phases: 12
+runs: 3
+states: 13
+states_checked: 13
+stretches: 13
+max_KW_per_stretch: 0
+max_T_per_phase: 1
+max_Trel_per_phase: 1
+max_f_per_phase: 1
+max_stretches_per_phase: 2
+RESULT OK violations=0
+docs/referee-2/R2-N5-XA/climb/xn9_s81.pg exit 0
