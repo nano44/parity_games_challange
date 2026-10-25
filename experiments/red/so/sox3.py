@@ -6,7 +6,8 @@ For every scope run S, every fallback k0 of S with L := M_{k0} (L may be ⊥ / �
 t* := the last state <= k with r_s > L for all s in [k0+1, t*], and every S4a step j in (k0, t*) with COARSE_L(θ_{j+1}) != COARSE_L(θ_j):
   NORF  at every t in [j+1, t*]: no gate (y, z) with y in R_j ∩ R_t and z in F_t;
   ENT   if t* = k and M_k >= 0: no gate (y, z) at k with y in R_k minus R_j and z in F_k   [CONJECTURE].
-Also reported: rises, post-rise states with r > L ('win'), windows that reach the next fallback ('reach'), ENT checks done.
+Also reported: rfb0 (rises of COARSE_L(θ) before a next fallback, any r), rfb (rises in an r > L window with a next fallback),
+gap (max of t* − k over those; 0 = the window reaches the fallback), rises, post-rise states with r > L ('win'), windows that reach the next fallback ('reach'), ENT checks done.
 Usage: sox3.py game.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -40,7 +41,7 @@ def analyse(g, cap=5000):
     r = [lev(Xi[k][o], Wv[k][o]) for k in range(N)]
     C, ex = {}, {}
     def bad(nm, k): C[nm] = C.get(nm, 0) + 1; ex.setdefault(nm, k)
-    st = dict(runs=0, rises=0, win=0, reach=0, entchk=0, maxwin=0)
+    st = dict(runs=0, rises=0, win=0, reach=0, entchk=0, maxwin=0, rfb=0, gap=-10 ** 9)
     k = 0
     while k < N - 1:
         if not scope[k]: k += 1; continue
@@ -55,10 +56,14 @@ def analyse(g, cap=5000):
             last = kn if kn is not None else e + 1          # states of S run to e + 1
             ts = k0
             while ts + 1 <= last and r[ts + 1] > L: ts += 1
+            if kn is not None:
+                for j in range(k0 + 1, kn):
+                    if not FB[j] and coarse(Xi[j + 1][o], L) != coarse(Xi[j][o], L): st["rfb0"] = st.get("rfb0", 0) + 1
             if ts <= k0: continue
             for j in range(k0 + 1, ts):
                 if FB[j] or coarse(Xi[j + 1][o], L) == coarse(Xi[j][o], L): continue
                 st["rises"] += 1; st["win"] += ts - j; st["maxwin"] = max(st["maxwin"], ts - j)
+                if kn is not None: st["rfb"] += 1; st["gap"] = max(st["gap"], ts - kn)
                 for t in range(j + 1, ts + 1):
                     for y, z in gates[t]:
                         if y in R[j] and y in R[t] and z not in R[t]: bad("NORF", (j, t, y, z))
@@ -77,7 +82,7 @@ if __name__ == "__main__":
         g = sox.load(f)
         if len(sox.oddchoice(g)) != 1: continue
         r = analyse(g)
-        print(os.path.basename(f), {k: r[k] for k in ("n", "it", "fb", "runs", "rises", "win", "maxwin", "reach", "entchk")}, "FAILS", r["C"] or 0, r["ex"] or "", flush=True)
+        print(os.path.basename(f), {k: r[k] for k in ("n", "it", "fb", "runs", "rises", "win", "maxwin", "reach", "entchk", "rfb", "gap")}, "FAILS", r["C"] or 0, r["ex"] or "", flush=True)
         for k in ("rises", "win", "reach", "entchk"): tot[k] = tot.get(k, 0) + r[k]
         for k, v in r["C"].items(): tot[k] = tot.get(k, 0) + v
         tot["files"] = tot.get("files", 0) + 1
