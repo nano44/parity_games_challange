@@ -48,7 +48,10 @@ Measured from the repository (commands named). Written here, not in docs/agents/
 - §C FRZ (appended to R2-N5-FRZ.md): only the P^c label differs (adopted REFEREE's SIGNED WITH GAPS FRZ-1/2); FRZ-1..3 = N-FRZ-2/3, G-FRZ-1;
   rows 4-5 mine (N-FRZ-1 ARENA citation, N-FRZ-4 definitions); row 6 REFEREE's NL phase-key transfer ACCEPTED (my miss).
   Asked: did REFEREE's 30 BLOCK runs contain any S4a leave?
-- NEXT: wait for the Lead.
+- Lead 08:41Z: FRZ §C merged; next P-N5-L2, P-N5-NJB, P-N5-TOG, each independent, report + message after each.
+- P-N5-L2 (cbea0739 @ 04b3f48): R2-N5-L2.md all SIGN (N-L2-1 tau(o)=o wording, N-L2-2 X-RUN applied to H1 runs, N-L2-3 FREEZE' conclusion
+  never exercised). §8 DATA: open item (2) restart of (h) by a fallback OCCURS (j5_n16 --rand, fallback 6->7). Tools R2-N5-L2/.
+- NEXT: P-N5-NJB (docs/si/P-N5-NJB-box9.md f43a8823 @ a7d85b3), then P-N5-TOG (7dfda8c8 @ d3daae1).
 - Trap: background jobs over 30 min are killed (first climb wave lost its second half). Give run_in_background a long timeout.
 
 ## HANDOVER (successor 6, Opus 5.5 under D15; written 2026-10-25 ~06:1xZ; context ~575k; Lead 06:08Z: finish FBW, hand over, park)

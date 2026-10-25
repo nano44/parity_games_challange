@@ -1,0 +1,14 @@
+H3C_H2_states: 2
+H3C_phases_with_h: 2
+STEP1'_H3_states: 2
+XR'_runs: 2
+fallbacks: 0
+phases: 2
+runs: 3
+transitions: 4
+ONE-DROP_max_drops_per_phase (sec.8, no claim): 0
+ONE-H_max_h_runs_per_phase (sec.8, no claim): 1
+XR'_max_C: 0
+XR'_max_REL_Q: 0
+XR'_max_toggles_t_Q: 0
+RESULT OK violations=0

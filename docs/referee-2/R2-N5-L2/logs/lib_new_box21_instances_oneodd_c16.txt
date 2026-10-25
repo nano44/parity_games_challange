@@ -1,0 +1,10 @@
+H3C_H2_states: 25
+RC_notH1_pairs: 1
+RC_notH1_states: 2
+fallbacks: 4
+phases: 4
+runs: 3
+transitions: 55
+HI_max_theta_changes_on_I: 0
+ONE-DROP_max_drops_per_phase (sec.8, no claim): 0
+RESULT OK violations=0
