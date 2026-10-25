@@ -1,0 +1,14 @@
+MINSET_a_states: 5
+MINSET_d_fallbacks: 10
+MINSET_intervals: 5
+blocks: 7
+blocks_with_r<=M_somewhere (PL (c) hypothesis fails; PL (c') covers): 5
+fallbacks: 17
+runs: 3
+scope_fallbacks: 17
+scope_runs: 4
+transitions: 131
+MINSET_max_|Mn|: 3
+max_D_M: 0
+max_block_N: 5
+RESULT OK violations=0

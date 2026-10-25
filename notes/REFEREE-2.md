@@ -1,6 +1,79 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Handover check (successor 8, Opus 5.5 under D15/L37; 2026-10-25 11:0xZ by date -u)
+Predecessor successor 7 session_01CE1xQNfGUgtJg9A7SWAkuE (parked, 8681e3f2). Measured from the repository; commands named.
+
+1. Branch, head, distance to trunk.
+   - `git status`, `git log --oneline -1` at container start: local claude/referee-2 at 77f9cf71 (STALE, third time).
+   - `git fetch origin`; `git rev-parse HEAD origin/claude/referee-2` -> 77f9cf71 vs 8681e3f2; `git merge --ff-only origin/claude/referee-2` -> 8681e3f2.
+   - Trunk = claude/vibrant-johnson-nxvvxo (docs/NOW.md:15). `git fetch origin claude/vibrant-johnson-nxvvxo`;
+     `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 0 ahead, 25 behind (trunk 8998ee6d).
+   - `git merge --no-ff -m ... origin/claude/vibrant-johnson-nxvvxo` -> merge commit 63ff0909; count -> 1 ahead, 0 behind. This notebook commit adds one.
+2. Open work, next step of each.
+   - Successor 7's IN FLIGHT: none. Its NEEDS (Lead routes FRZ rows 4-5, NJB rows 1-2, TOG rows 1-2 to lanes): Lead's, not mine.
+   - Task after GO: independent review of P-N5-SCOPE. `sha1sum docs/new/P-N5-SCOPE-box36.md` -> c3f5ed3788f0853939d247dbcfb970334c9dcf7d;
+     `git show 8998ee6d:docs/new/P-N5-SCOPE-box36.md | sha1sum` and the same at origin/claude/l-new -> same sha1 (pin and lane agree);
+     `git log -- <file>` -> one commit 8483279d (L-NEW box 37 (a)). Statements §1 KEY, §2 WCH, §3 SCOPE-COUNT, §4 FB-INT, §5 NH1-FB, §6 CN-LAST; §7 not to sign.
+     Next step: read packet + SPEC (docs/new/N5-ssi-global.md) + RESULTS R15, R18, R19, R22, R25, R28, R30-R33 + P-N5-TOG; build
+     docs/referee-2/R2-N5-SCOPE/ on R2-N5-TOG/tog_check.py and R2-N5-FRZ/frz_check.py (one-Odd-choice assert on every 𝒞^1O game);
+     write docs/referee-2/R2-N5-SCOPE.md.
+   - Oink: `ls tools/oink/build` -> absent; must run scripts/setup_oink.sh in this container.
+3. GAPS rows. `grep -n 'G-N5-TIME\|REFEREE-2' docs/GAPS.md`: REFEREE-2 owns no row. Relevant: G-N5-TIME | major | L-NEW | open (docs/GAPS.md:11);
+   its last update (10:37Z) records R33 landed and "lane (unrefereed) box 36: scope runs per phase and ¬H1 fallbacks polynomial in (T, f, X)";
+   that is P-N5-SCOPE (SCOPE-COUNT, NH1-FB). Open there: (L1) (NJB / RISE-LAST), out-of-SN fallbacks (OUT-POLY CONJECTURE), ¬H1 SN states, f per phase.
+4. Owner rulings verbatim (docs/DECISIONS.md), status from docs/DECISIONS-INDEX.md (`grep -n` on both):
+   - D1 (index line 5: active), DECISIONS.md:7-8:
+     > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+     > Never downgrade the referee to save money.
+   - D15 (index line 26: active), DECISIONS.md:278:
+     > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+   - D18 (index line 32: active), DECISIONS.md:333:
+     > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+5. Trap found: "merge trunk with a merge commit" is NOT what a plain `git merge` does here. After the ff to 8681e3f2 the branch was 0 ahead
+   of trunk, so `git merge` fast-forwarded silently (HEAD = 8998ee6d, no merge commit). I reset the LOCAL, unpushed ref back to 8681e3f2
+   (`git reset --hard 8681e3f2`; nothing pushed was touched) and merged with `--no-ff` (63ff0909). Use `--no-ff` whenever the branch is 0 ahead.
+   Also (independence): `git log origin/claude/referee -- docs/referee/R-N5-SCOPE.md` -> empty, and `ls docs/referee/ | grep -i scope` -> empty;
+   REFEREE's report does not exist yet. I will not open docs/referee/ or notes/REFEREE.md until R2-N5-SCOPE.md is pushed.
+
+## HANDOVER (successor 7, session_01CE1xQNfGUgtJg9A7SWAkuE, Opus 5.5 under D15; written 2026-10-25 10:33Z by date -u; context ~460k; Lead 10:31Z: PARK)
+Branch claude/referee-2, merged with trunk at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this commit.
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
+| packet | object (sha1) @ pin | report SHA | §C / addenda SHA | outcome |
+| --- | --- | --- | --- | --- |
+| handover check | — | 8e3e6188 / de9ff970 | — | Lead 5/5 |
+| P-N5-FRZ | docs/new/P-N5-FRZ-box34.md 39df373c @ 25fda0f | 20a73ca1 | §C f546b43c | all SIGN; X-RUN SIGN WITH GAPS G-FRZ-1 (= FRZ-3); N-FRZ-1..4; joint 6-row map; P^c label aligned to REFEREE (FRZ-1/2) |
+| P-N5-FBW §C | (successor 6's report 25962855) | — | bc2e7b72 | no verdict differs; FBW-1 CONFIRMED (H1 not H2) |
+| P-N5-L2 | docs/new/P-N5-L2-box34.md cbea0739 @ 04b3f48 | 388caf6c | §C 21429c91 | all SIGN; L2-1 = N-L2-1; L2-2 (REFEREE only) accepted; §8 (2) restart occurs (j5_n16) |
+| P-N5-NJB | docs/si/P-N5-NJB-box9.md f43a8823 @ a7d85b3 | 45eae593 | §C 21429c91, e65cbcdd, §C.3a 16d27d1c | joint: literal MINSET (c) NOT signed (G-NJB-1, REFEREE accepted), survivor (c) signed; ENT-SHAPE (5) NOT signed (NJB-2; my N-NJB-1 withdrawn, assumed z ∈ F_{k0}), (5′) signed; NJB-1 accepted |
+| P-N5-TOG | docs/new/P-N5-TOG-box35.md 7dfda8c8 @ d3daae1 | faabe716 (+881e288a) | Addendum A 16d27d1c; §C (this commit) | all SIGN; X-SN-PHASE SIGN WITH GAPS G-TOG-1 = TOG-1 (occurs on SPEC trace: b4_cyc6_0 0->1), N-TOG-1 = TOG-2; no verdict differs |
+### IN FLIGHT
+None. Next packet P-N5-SCOPE (L-NEW 16) not ready; successor takes it.
+### NEEDS
+- Lead: route the joint fixes lines (FRZ rows 4-5 to L-NEW; NJB rows 1-2 to L-SI 5; TOG rows 1-2 to L-NEW 15) if not yet done.
+### Things only I know
+- Tools added this session (own code, chained on my lane's R2-N5-RE/re_check.py; each dir has run_all.sh, logs/, climb/, totals_*.txt):
+  - R2-N5-FRZ/frz_check.py: own N5 run_n5 (S4a = ANY arena optimum: deterministic switch-all SI, or --rand random-subset SI + random
+    value-preserving re-choices; S4b Odd pointwise best; S4c as SPEC), analyse() (Xi, W, H1-H3, (h), r, R/Rbar/F, gates, MF), checks for
+    FRZ (Fact 0, ARENA, Steps 1-2, P^c exhaustive n <= 10 / sampled, FREEZE, RATCHET, BLOCK, X-RUN sub-counts, SUB). frz_climb.py (mutate,
+    ok, dump reused by all later climbs), oink_xcheck.py (468/468 vs Oink zlk), h2need.py. totals.py (shared). FRZ_WINF env = mutation test.
+  - R2-N5-L2/l2_check.py (+ l2_climb.py, restart_probe.py); R2-N5-NJB/njb_check.py (scope runs, blocks, MINSET survivor + literal,
+    NORF, ENT) (+ njb_climb.py, entp_probe.py); R2-N5-TOG/tog_check.py (+ tog_climb.py, xsn_exit_probe.py, xsn_exit_spec.py);
+    R2-N5-FBW/fbw1_probe.py.
+  - My N5 differs from SPEC only in S4a's optimum choice: data from it must be attributed as "my N5". SPEC-trace data: only via
+    re_check.n5_spec (imports n5.py read-only) and only when the Lead asks (done once, xsn_exit_spec.py, Lead 10:06Z).
+- Recurring traps seen this session:
+  - The same boundary transition (from an SN prefix's last state) was missed three times by the lanes (FRZ-3, X-RUN′ text, TOG-1): any
+    count "with both ends in P" used for releases or X_SN needs +1 per run (closed each time by slack ≥ 1 in X-RUN's count).
+  - A statement whose defining set is nonempty by a sibling clause (MINSET (c) vs (a)) can secretly assert the conjecture; read every
+    "iff X = ∅" against the clause that makes X nonempty.
+  - "No leave" facts start at k0+1, never at the fallback k0 itself (NJB-2; my N-NJB-1 error).
+  - Citations of R29 lemmas need the phase-key transfer check ((λ_Ξ, λ_U, τ) -> (λ_Ξ, τ)); I missed it once (FRZ row 6).
+  - Literal readings "In a phase: every state k with … at k+1" must be in-phase (L2-2, missed by me).
+  - Background jobs > 30 min are killed: give run_in_background a long timeout (5400000).
+  - Local branch is stale at container start (77f9cf71 twice): fetch, ff to origin/claude/referee-2, merge trunk.
+- Oink built in this container (scripts/setup_oink.sh, 8fbf0a7); a fresh container must rebuild it.
+
 ## Handover check (successor 7, session_01CE1xQNfGUgtJg9A7SWAkuE, Opus 5.5 under D15/L37; 2026-10-25 07:00Z by date -u)
 Predecessor successor 6 session_01H9qTdDhPBiSG4S7P1SkFjD. Correction at push time: its handover DID land (320e4b9d, seen on a second
 `git fetch` when push.sh was rejected); merged below, and its HANDOVER section is the handover.
@@ -51,7 +124,15 @@ Measured from the repository (commands named). Written here, not in docs/agents/
 - Lead 08:41Z: FRZ §C merged; next P-N5-L2, P-N5-NJB, P-N5-TOG, each independent, report + message after each.
 - P-N5-L2 (cbea0739 @ 04b3f48): R2-N5-L2.md all SIGN (N-L2-1 tau(o)=o wording, N-L2-2 X-RUN applied to H1 runs, N-L2-3 FREEZE' conclusion
   never exercised). §8 DATA: open item (2) restart of (h) by a fallback OCCURS (j5_n16 --rand, fallback 6->7). Tools R2-N5-L2/.
-- NEXT: P-N5-NJB (docs/si/P-N5-NJB-box9.md f43a8823 @ a7d85b3), then P-N5-TOG (7dfda8c8 @ d3daae1).
+- P-N5-NJB (f43a8823 @ a7d85b3): R2-N5-NJB.md. All SIGN; MINSET (c) SIGN WITH GAPS G-NJB-1 (literal Mn_{t+1} never empty by (a) =>
+  literal (c) = NJB; proof gives survivor form Mn_t ∩ F_{t+1}); N-NJB-1 (ENT-SHAPE (5): fallback k0 does not move Xi(z)). Data: D_M = 0,
+  no fallback after a rise (Corollary, ENT-SHAPE vacuous). Tools R2-N5-NJB/.
+- P-N5-TOG (7dfda8c8 @ d3daae1): R2-N5-TOG.md. All SIGN; X-SN-PHASE SIGN WITH GAPS G-TOG-1 (SN-prefix exit crossing, occurs: 310 batch;
+  bound survives by X-RUN slack); N-TOG-1 (§11 -> §7). Tools R2-N5-TOG/.
+- §C L2 (appended to R2-N5-L2.md): no substantive difference; L2-1 = N-L2-1; L2-2 accepted (I missed it: H1-INT (b) in-phase only).
+- §C NJB (appended to R2-N5-NJB.md): ENT-SHAPE (5) -> NOT SIGNED as stated (REFEREE NJB-2 right; my N-NJB-1 assumed z ∈ F_{k0}, unproved;
+  withdrawn); (5′) signed. MINSET (c): kept G-NJB-1 (literal Mn_{t+1} never empty), asked REFEREE to reconcile; NJB-1 accepted.
+- NEXT: §C TOG when REFEREE's TOG report lands; else wait for the Lead.
 - Trap: background jobs over 30 min are killed (first climb wave lost its second half). Give run_in_background a long timeout.
 
 ## HANDOVER (successor 6, Opus 5.5 under D15; written 2026-10-25 ~06:1xZ; context ~575k; Lead 06:08Z: finish FBW, hand over, park)

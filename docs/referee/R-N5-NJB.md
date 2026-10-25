@@ -15,7 +15,7 @@ R20 (b) FBL, R21 (a) XW.
 | §1 Lemma RDROP | PROVED (L-SI succ. 4) | SIGNED (DATA vacuous: no dirty interval anywhere) |
 | §1 Theorem PL (c′) | PROVED | SIGNED |
 | §1 Corollary PL-S′ | PROVED | SIGNED |
-| §2 Lemma MINSET (a)-(d) + Consequence | PROVED | SIGNED WITH GAP NJB-1 (wording: in (b), (c) and the Consequence, "absorption" / "absorbed" must mean "enters R". R30's absorption, defined in the packet's §0, is the entry of x0 = σ̄(o) only. Several members can enter R at one step, and a member other than σ̄(o) can enter, so the R30 reading makes (c)'s "every member … has been absorbed" false. DATA: 4 named-set steps of each kind). Closed |
+| §2 Lemma MINSET (a)-(d) + Consequence | PROVED | [§C: (c) as written is NOT signed (G-NJB-1, missed here, accepted); survivor form signed] SIGNED WITH GAP NJB-1 (wording: in (b), (c) and the Consequence, "absorption" / "absorbed" must mean "enters R". R30's absorption, defined in the packet's §0, is the entry of x0 = σ̄(o) only. Several members can enter R at one step, and a member other than σ̄(o) can enter, so the R30 reading makes (c)'s "every member … has been absorbed" false. DATA: 4 named-set steps of each kind). Closed |
 | §3 Lemma NO-RF-OLD | PROVED | SIGNED |
 | §3 Corollary | PROVED | SIGNED (DATA vacuous) |
 | §4 Lemma ENT-SHAPE (1)-(4) | PROVED | SIGNED |
@@ -175,3 +175,84 @@ Fixes-file lines (one per gap):
   - D_M = 0 in every block of every set, so RDROP and PL (c′)'s dirty-interval content is vacuous.
   - The NO-RF-OLD Corollary and ENT-SHAPE's full setting never occur.
   - MINSET (c)'s "emptied" branch never fires (Mn is never emptied inside an interval). The lemmas rest on the proofs.
+
+## §C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-NJB.md, referee-2 45eae593, read from origin/claude/referee-2). REFEREE successor 7, written 2026-10-25 09:46Z by date -u (stamp corrected from an estimated 09:49Z)
+Signature (Opus 5.5, D15). I opened R2-N5-NJB only after my report (524d93f5) was pushed. Also read: L-SI's fixes file
+docs/si/P-N5-NJB-fixes-box9.md (l-si 32c2393), sha1 6a3377482739a9dd5fdfcddc82314c9304ff94ec (checked). It carries my NJB-1 and NJB-2
+lines verbatim, and lane item NJB-L1 (data only).
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| RDROP, PL (c′), PL-S′, NO-RF-OLD + Corollary | SIGNED | SIGN | signed by both |
+| MINSET (a), (b), (d) | SIGNED (with NJB-1, wording) | SIGN ((b) in the survivor reading) | signed by both; rows 1-2 |
+| MINSET (c) | SIGNED (with NJB-1). I wrote "(c) correct as written": WRONG, see C.2 | SIGN WITH GAPS G-NJB-1 (statement) | CHANGED HERE: I adopt G-NJB-1. Literal (c) is NOT signed (it is equivalent to NJB on the interval); the survivor form is signed by both. Joint label SIGNED WITH GAPS NJB-1, G-NJB-1 |
+| ENT-SHAPE (1)-(4) | SIGNED | SIGN | signed by both |
+| ENT-SHAPE (5) as stated | NOT SIGNED (NJB-2) | SIGN (N-NJB-1 closes the fallback case) | VERDICT DIFFERS (C.3). I keep NOT SIGNED for the literal (5). (5′) (fixes 6a337748 NJB-2) is signed by me; REFEREE-2 to rule on (5′) |
+| §5 | not signed | not signed | — |
+
+### C.2 G-NJB-1: missed by me, accepted
+- Mn_{t+1} is defined against θ_{t+1}. By (a) at t+1 (t+1 in the interval, r > M), σ̄_{t+1}(o) ∈ Mn_{t+1}, so Mn_{t+1} ≠ ∅ always.
+- Literal (c), "COARSE_M(θ) changes at t → t+1 exactly when Mn_{t+1} = ∅", therefore says COARSE_M(θ) never changes inside the interval.
+  On the r > M part that is NJB itself (PL (b)), the open CONJECTURE of §5. The proof does not prove it.
+- What the proof proves is REFEREE-2's survivor form: COARSE_M(θ) changes iff Mn_t ∩ F_{t+1} = ∅.
+  - My §2 (b) argument is exactly this survivor argument ("a member that stays free keeps its value … so x ∈ Mn_{t+1}").
+  - I then wrongly called (c) "correct as written".
+- My probe's MSc check tested the LITERAL form and could not fail while NJB holds in the data: Mn_{t+1} was never empty and COARSE_M(θ)
+  never changed (MS_emptied 0).
+- Lesson: a statement whose defining set is nonempty by a sibling clause must be read against that clause before signing; a data check
+  of an "iff" that is vacuous on one side tests nothing.
+- L-SI's fixes file still has the literal (c), with my NJB-1 wording ("entered R"). So the fixes2 file must carry G-NJB-1's line (row 2).
+
+### C.3 ENT-SHAPE (5): NJB-2 against N-NJB-1, reconciled
+- N-NJB-1 (REFEREE-2 §4) argues that the fallback k0 → k0+1 does not move Ξ(z): "z ∈ F_{k0} ∩ F_{k0+1}, so z's honest play stays in F and
+  meets no R tail".
+  - That argument is correct for z ∈ F_{k0}. My §4.2 gives the same one for that case.
+- But nothing in the packet, in R2-N5-NJB or in my reading gives z ∈ F_{k0}.
+  - The facts available are z ∈ F_s for s ∈ [k0 + 1, k] (NL (ii), no leave at the S4a steps) and COARSE_L(Ξ z) constant on [k0, k]
+    (OFF at k0 needs only z ∉ R̄_{k0+1}).
+  - At k0 itself z may lie in R_{k0} and be evicted by the fallback (an R → F switch on z's route).
+- In that case the level-L rise can sit at k0 → k0+1:
+  - the hand-checked instance cycelim_cex_n32.pg fallback 15 (§4.2);
+  - 569 named / 1,159 library local configurations (§5).
+  - (4) still holds, and (A_{k0+1}) admits the resulting level-L gate into F.
+- So N-NJB-1 closes the branch z ∈ F_{k0} and leaves the branch z ∈ R_{k0} open. The packet's (5) asserts the rise is at an S4a step in
+  (k0, k) in both branches, and no proof covers the second.
+- Decision (REFEREE, Opus 5.5, D15):
+  - ENT-SHAPE (5) AS STATED stays NOT SIGNED.
+  - (5′) (both branches) is SIGNED, as is (5) under the added hypothesis z ∈ F_{k0} (that is N-NJB-1).
+  - I ask REFEREE-2 (via the Lead) to rule on whether N-NJB-1 assumed z ∈ F_{k0}. If it did, both referees would sign (5′) and neither
+    the literal (5).
+- Impact: none on any count. ENT-SHAPE is descriptive (the shape of a potential NJB violation), and its full setting is vacuous in all
+  data of both referees. The (iii-b) branch is now in the obstruction list (fixes 6a337748, NJB-2).
+
+### C.4 Items found by one referee only, and data
+- NJB-1 (REFEREE only; "absorbed" vs "entered R"). REFEREE-2 did not raise it. Its survivor repair of (b) says "members of Mn_t leave F
+  only by absorption", which repeats the loose usage. The lane's fixes file adopted "entry into R", and row 1 keeps it.
+- NJB-L1 (lane): the packet's §6 summed two climb files under one name. Data only; no statement depends on it.
+- Data agree. In all sets of both referees: D_M = 0, Mn never emptied, no fallback after a COARSE_L θ-rise, and the full ENT setting
+  never occurs. REFEREE-2's counts come from its N5 with arbitrary S4a optima; mine from the SPEC trace.
+
+### C.5 Joint gap map (one fixes-file line per row)
+| row | REFEREE | REFEREE-2 | kind / status | fixes-file line |
+| --- | --- | --- | --- | --- |
+| 1 | NJB-1 | — | wording, closed | §2 (b), (c), Consequence: "entry into R" / "entered R" for "absorption" / "absorbed" (fixes 6a337748 NJB-1) |
+| 2 | missed, accepted | G-NJB-1 | statement, closed by repair | §2 (c): "COARSE_M(θ) changes at t → t+1 exactly when Mn_t ∩ F_{t+1} = ∅; then every member of Mn_t has entered R at t"; §2 (b): "Mn_t ∩ F_{t+1} ⊆ Mn_{t+1}, with the same COARSE_M values" (REFEREE-2's line, with row 1's wording; for the fixes2 file) |
+| 3 | NJB-2 | N-NJB-1 (branch z ∈ F_{k0} only) | statement; literal (5) NOT SIGNED by REFEREE; (5′) signed by REFEREE | §4 (5′) as in fixes 6a337748 NJB-2. N-NJB-1's sentence is the proof of its branch s ≠ k0 when z ∈ F_{k0} |
+
+### C.6 Joint label (D18/L40)
+- PROVED (L-SI successor 4, repaired by successor 5; REFEREE and REFEREE-2, Opus 5.5, D15), pending CHECKER:
+  - RDROP, PL (c′), PL-S′;
+  - MINSET (a), (b), (d) and survivor-(c) (rows 1-2);
+  - NO-RF-OLD + Corollary, ENT-SHAPE (1)-(4).
+- ENT-SHAPE (5′): signed by REFEREE. REFEREE-2 to confirm (C.3). The literal (5) is not signed by REFEREE.
+- CONJECTURE: NJB, ENT. OPEN: level −1 fallbacks per scope run, REL(S), G-N5-TIME.
+- Thin: D_M = 0 everywhere. RDROP, PL (c′)'s dirty content, the NO-RF-OLD Corollary and ENT-SHAPE's full setting are never exercised.
+- Not a TARGET.md claim; the TARGET.md diff is empty.
+
+Signed: REFEREE successor 7 (Opus 5.5, D15).
+
+### C.7 Converged state (written 2026-10-25 10:33Z by date -u, after REFEREE-2 §C.2 / §C.3a, referee-2 21429c9 + 16d27d1)
+- REFEREE-2 withdraws N-NJB-1 as a proof of (5): it assumed z ∈ F_{k0}.
+- Both referees: ENT-SHAPE (5) as stated NOT SIGNED, (5′) SIGNED; literal MINSET (c) NOT SIGNED, survivor-(c) SIGNED.
+- No verdict differs on P-N5-NJB. Joint label as in C.6, with (5′) now signed by both.

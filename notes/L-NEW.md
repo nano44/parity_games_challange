@@ -1,6 +1,51 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Handover check (successor 16)
+Successor 16 (Opus 5.5, D14/D15/D18, L37/L40), session_01LLCK4ctQmkMq2huT44SU7d, written 2026-10-25 10:2xZ by date -u (clock read
+10:18:49Z at start). Predecessor: successor 15, session_013tdUFhpjRP3kYPL6sBCpfU, parked at l-new ec77ad1c. Every answer measured; commands named.
+1. **Branch / head / trunk distance.** `git fetch origin`; `git status`: local claude/l-new "behind 'origin/claude/l-new' by 1359
+   commits" (STALE clone again). `git merge --ff-only origin/claude/l-new` → ec77ad1c. Trunk = origin/claude/vibrant-johnson-nxvvxo
+   (`git remote show origin` HEAD branch; docs/NOW.md l.15). `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`
+   = 1 ahead / 34 behind trunk aef92047 ("Lead: PF-THETA linear form refuted (re-run); log"); merge-base b5b8e663.
+   `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` (no conflicts, no rebase) → merge commit f8419305: 2 ahead / 0 behind;
+   First push.sh: VERIFY PASS but push REJECTED (exit 1, "fetch first"): parked successor 15 had pushed a670161b at 10:18:52Z (Lead
+   request: PF-THETA linear FALSE recorded). `git fetch origin claude/l-new`; `git merge --no-ff origin/claude/l-new` (clean) → merged;
+   `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` after this commit: see the push log in the message.
+2. **Open work and next step** (sources: resume point below, `sha1sum`, `ls docs/new`, `git ls-tree origin/claude/referee{,-2}`,
+   `git log origin/claude/referee`, `git log HEAD..trunk`).
+   - P-N5-TOG: `sha1sum docs/new/P-N5-TOG-box35.md` = 7dfda8c8… (pinned trunk d3daae1). REFEREE-2 signed (R2-N5-TOG faabe716) and
+     wrote Addendum A (16d27d1c: G-TOG-1 DATA attribution; SPEC witness b4_cyc6_0 0→1, 19 files). Fixes file
+     P-N5-TOG-fixes-box35.md sha1 f15b58dd… (cited → frozen). REFEREE succ. 7 (session_01TWT1diK1Z9x2eK56iBVbZu): no R-N5-TOG on
+     origin/claude/referee yet; scratch tog_probe.py/tog_climb.py at 785e79b7 (09:58Z) = review in progress. Next: when relayed,
+     its items + the Addendum-A attribution row go in NEW docs/new/P-N5-TOG-fixes2-box35.md (does not exist yet).
+   - Box 37 (a) packet P-N5-SCOPE: docs/new/P-N5-SCOPE-box36.md does NOT exist yet (the working doc N5-SCOPE-box36.md, sha1
+     ad7282d7…, does; do not overwrite it). Next after GO: write the packet (KEY, WCH, SCOPE-COUNT, FB-INT, NH1-FB, CN-LAST from
+     N5-DROP-box35.md §7; not-to-sign OUT-POLY, out-of-SN obstruction, PF-THETA linear form FALSE), send sha1.
+   - PF-THETA (linear form) is now FALSE: L-RED fa3085e2, experiments/red/so/instances/pftheta_cex_n32.pg (`sha1sum` = 9f526135…);
+     Lead re-run aef92047. My notebook still lists PF-THETA as a live CONJECTURE (box 35 (c)): the packet and the dead-end list must say FALSE.
+   - Box 37 (b) research: OUT-POLY at H1 ∧ ¬H2 / H1 ∧ H2 ∧ ¬H3 fallbacks, first τ(o) = o (w = (o, ∅, 0) constant).
+   - Nothing of mine is running (`ps aux`). Oink is NOT built in this container (`ls tools/oink/build`: no such directory): first
+     research step after GO is `scripts/setup_oink.sh`.
+3. **GAPS** (`grep -n G-N5-TIME docs/GAPS.md`: line 11): G-N5-TIME, major, owner "L-NEW (L-LIT T22; referees later)", status **open**.
+   Latest update: R32 [refereed-only] landed 09:48Z (P-N5-FRZ + fixes, fixes2; CHECKER C41). "Open: (L1) (NJB / RISE-LAST / PF-THETA,
+   CONJECTURES), f per phase outside scope runs. In review: P-N5-L2 (both referees signed), P-N5-NJB (both reports in), P-N5-TOG."
+   The row does not yet record PF-THETA linear form FALSE (aef92047) nor box 36 (KEY…NH1-FB). R33 (P-N5-L2) is a draft only
+   (docs/agents/R33-draft.md; `grep "^### R33" docs/RESULTS.md` empty). Also mine: G-N1-LB (minor, optional, open).
+4. **Rulings verbatim** (docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md):
+   - D14 (l.244; index l.22 **active**; Lead reading L35): "D" / "You know it can also test prveiously not tested approaches, it can
+     come up with it own as well"
+   - D16 (l.299; index l.28 **active**; Lead reading L38): "Then keep working as I told you to"
+   - D18 (l.332; index l.32 **active**; Lead reading L40): "Focus on N5 and work toward proving it. Explore novel approaches, especially
+     by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable
+     assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from
+     conjectures and open problems."
+5. **Trap found.** (i) The stale clone, worse than last time: local claude/l-new was 1359 commits behind origin (successor 15 saw
+   1157); working from it would have hidden boxes 35-36, all fixes files and the handover. Check: `git fetch` + `git status` before
+   anything. (ii) The resume point (successor 15, 10:0xZ) still calls PF-THETA a CONJECTURE (its Dead ends got a670161b later), but L-RED refuted the linear form at
+   10:05Z (fa3085e2, commit time): the notebook is one fact stale at hand-over; anything reusing box 35 (c) must cite pftheta_cex_n32. (iii) Two
+   near-identical names: P-N5-SCOPE-box36.md (new packet) vs N5-SCOPE-box36.md (working doc).
+
 ## Handover check (successor 15)
 Successor 15 (Opus 5.5, D15/D18/L40), written 2026-10-25 07:5xZ by date -u (container clock read 07:50:41Z; the Lead's brief is
 stamped 07:53Z, so the clock is again slow). Predecessor: successor 14, session_014oGq98MdJvpgrVXNA7rNvA, handover 5351fbf2.
@@ -42,30 +87,38 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 15, box 35 in progress, written 2026-10-25 09:0xZ by date -u)
-Successor 15 (Opus 5.5, D15/D18), session_013tdUFhpjRP3kYPL6sBCpfU. Handover check 3a4a5f3b (Lead: 5/5). Box 35 GO 08:02Z (Lead's stamp).
-Oink is built in this container (tools/oink/build, gitignored). Climbs: pfclimb.py ×3 (30 min, out/pf_36xx), the others finished.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 15 PARKED after box 36, written 2026-10-25 10:0xZ by date -u)
+Successor 15 (Opus 5.5, D15/D18), session_013tdUFhpjRP3kYPL6sBCpfU. Handover check 3a4a5f3b (Lead: 5/5). Boxes 35 (GO 08:02Z) and 36 (GO 09:42Z).
+Nothing running. Oink is built in this container only (tools/oink/build, gitignored); a new container needs scripts/setup_oink.sh.
 
-### DONE (all pushed with scripts/push.sh; write-up docs/new/N5-DROP-box35.md)
-- (a) Theorem TOGGLE + Lemma L-MONO + Lemma Z-COUNT + Corollary TOGGLE-COUNT (PROVED, lane): H1-toggles per phase ≤ |U|(n+1)+n−1.
-  - Packet P-N5-TOG (docs/new/P-N5-TOG-box35.md, sha1 7dfda8c8…), PINNED at trunk d3daae1. Referee queue: FRZ (R2) → L2 → NJB → TOG.
-    Fixes go in a NEW file, docs/new/P-N5-TOG-fixes-box35.md.
-  - The weak form of DROP-LEN is FALSE: onerun_cex_n32 (70832fcb…).
-  - DROP-LEN itself is FALSE: REFEREE's droplen_cex_n12 (a6af26db…), re-run here.
-- (b) FALSE: fallback restarts via τ(o) leaving R happen: fbrestart_cex_n12 (35223b6c…), _n24 (a0aacfba…). They cost nothing, since
-  X-RUN′ is per run. RESTARTS (packet §6): (h)-runs per phase ≤ 1+T+f.
-- (c) Lemma CN-LAST (PROVED, every game): an Even fallback whose gates are all level −1 at own cycle nodes leaves Ξ unchanged and Iσ
-  empty, so it is the phase's last transition. The residue is level −1 fallbacks with a non-cycle-node gate (1 seen, oc12_s1).
-  CONJECTURE PF-THETA (§8): DATA only.
-- Fixes files:
-  - docs/new/P-N5-FRZ-fixes2-box34.md (sha1 ed2ca80d…): REFEREE-2 rows 1-6, Fact C7′;
-  - docs/new/P-N5-L2-fixes-box34.md (sha1 7a110bca…): L2-1, L2-2, DROP-LEN record.
+### DONE (all pushed with scripts/push.sh)
+- Box 35, docs/new/N5-DROP-box35.md:
+  - (a) TOGGLE, L-MONO, Z-COUNT, TOGGLE-COUNT (H1-toggles per phase ≤ |U|(n+1)+n−1).
+    - Packet P-N5-TOG (sha1 7dfda8c8…), pinned at trunk d3daae1.
+    - REFEREE-2 signed it (faabe71), with G-TOG-1 and N-TOG-1.
+    - Fixes file docs/new/P-N5-TOG-fixes-box35.md (sha1 f15b58dd…). If REFEREE's report comes after that file is cited, its items go in a
+      fixes2 file.
+  - DEAD ENDS: weak DROP-LEN (onerun_cex_n32), DROP-LEN (REFEREE's droplen_cex_n12), the (b) impossibility (fbrestart_cex_n12 / _n24),
+    LEN-STAY.
+  - (c) CN-LAST (proved, every game). CONJECTURE PF-THETA (climbs: max 35 at n 40, no violation).
+- Box 36, docs/new/N5-SCOPE-box36.md:
+  - PROVED: Remark KEY (λ_U is a function of τ, so (λ_Ξ, τ)-phases are the joint phases), WCH, SCOPE-COUNT, FB-INT, NH1-FB.
+  - OPEN with the exact obstruction: fallbacks at H1 ∧ ¬H2 and OTHER states, outside SN. CONJECTURE OUT-POLY; climbs plateau at 12 (n 16).
+  - Level −1 residue: no short argument.
+- Fixes files, all NEW:
+  - P-N5-FRZ-fixes2-box34.md (ed2ca80d…);
+  - P-N5-L2-fixes-box34.md (7a110bca…, cited by the Lead, frozen);
+  - P-N5-L2-fixes2-box34.md (e343d74e…);
+  - P-N5-TOG-fixes-box35.md (f15b58dd…).
 ### IN FLIGHT (others)
-- REFEREE-2 on P-N5-L2 (pending). Referees on NJB, then TOG. L-RED 15: NJB first, TOGGLE second.
-### NEXT
-- Answer referee items on TOG (NEW file) and on L2 from REFEREE-2 (append to a NEW file if P-N5-L2-fixes-box34.md is cited by then).
-- The core is unchanged: the f ↔ X loop. Per scope run, a count of θ-changes after fallbacks (PF-THETA) or NJB would close fallbacks per
-  scope run. Also open: #scope runs per phase, fallbacks outside scope runs, the non-own level −1 residue, and K.
+- REFEREE on P-N5-TOG (pending). Referees on NJB. L-RED 15: NJB first, TOGGLE second.
+### NEXT (successor 16)
+- Referee items on TOG from REFEREE go to a NEW file (fixes2 if fixes is cited).
+- The core: the f ↔ X loop, now in two places.
+  - (L1) inside scope runs: NJB (L-SI / L-RED), or PF-THETA (θ-based).
+  - Outside SN: H1 ∧ ¬H2 and OTHER fallbacks (box 36 §4). The cleanest case is τ(o) = o with w = (o, ∅, 0) constant: a fixed-target
+    "reach o" W frame against a "reach c_θ" honest frame. It is a good first object for a new argument.
+- With KEY + WCH + SCOPE-COUNT + FB-INT + NH1-FB, f per phase ≤ (in-scope f) + (out-of-SN f) + poly(n)(1 + T) + #scope runs.
 
 ## Things only I know (successor 15)
 - TOGGLE's trick: the ¬H1-side cycle C lies wholly in the P = ∅ layer Z. If Z is constant, no Even vertex of C \ {c, o} can switch (the
@@ -78,6 +131,11 @@ Oink is built in this container (tools/oink/build, gitignored). Climbs: pfclimb.
   - reach_o's R omits o, so τ(o) = o gives false "τ(o) ∉ R" (91 false positives in my first fbtau run).
   - My first doc draft had cycle lengths written from memory: compute before you write.
   - A header stamp written ahead of date -u forced a second commit of fixes2 (c88dc0f5 → 5f02ceba). The sha1 sent is the second one.
+- Box 36 tricks:
+  - KEY: λ_U depends on τ only, so every "phase-key transfer" question is void.
+  - WCH: under H2, w = o ⊕ Ξ(τ(o)) with τ(o) ∈ F, so w-changes are F1° changes.
+  - FB-INT: non-tame ⇒ crossing (J1 + OE), so FB's per-tame-run count holds per crossing-free stretch.
+- Box 36 tools (in experiments/new/box35): scopecnt.py (scope runs, WCH, fallback classes, λ_U check), outclimb.py (OUT-POLY).
 - Tools (experiments/new/box35): d35trace.py (trace with honest paths), togz.py (L-MONO / Z-COUNT / TOGGLE), dlclimb.py (MODE dl / fr /
   tog), fbtau.py + fbtclimb.py ((b)), thcls.py (θ-change kinds in scope runs; scope_runs()), lenrun.py (CN-LAST, LEN-STAY), pfclimb.py
   (PF-THETA). out/ is gitignored; finals are in instances/.
@@ -328,6 +386,10 @@ Oink is built in this container (tools/oink/build, gitignored). Climbs: pfclimb.
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 15, box 36, recorded while parked at the Lead's request 10:20Z) LINEAR PF-THETA (≤ n θ-changes under one fallback level): FALSE.
+  experiments/red/so/instances/pftheta_cex_n32.pg (sha1 9f526135…, L-RED 15, l-red deb9366, climbed from pf_best_3621). n 32, o = 0,
+  one scope run with one fallback (level 31), then 33 θ-changes > n. Lane re-run: n5 38 iterations / 1 fallback, check_sol2 zlk OK
+  strategies verified, pfclimb.fit (33, 1). Scope: all within ONE fallback-free run after one fallback, so the poly form survives.
 - (succ. 15, box 35) Weak DROP-LEN "≤ 1 drop per fallback-free run": FALSE. experiments/new/box35/instances/onerun_cex_n32.pg (sha1
   70832fcb…, n 32, o 27): 0 fallbacks, drops at 2→3 and 7→8, both S4a σ(13) switches into o; θ length 10 → 7 between them.
 - (succ. 15, box 35) DROP-LEN "θ changes between two drops": FALSE (REFEREE succ. 7). docs/referee/R-N5-L2/droplen_cex_n12.pg (sha1
