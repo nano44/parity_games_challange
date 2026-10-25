@@ -12,6 +12,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   2(|U| − 2)), HN-POLY-ALL, Remark H3-IN-HN; lane PROVED. The Lead's literal inequality is trivially true but not polynomial via WCH
   (WCH counts w-changes, not H2-toggles). Interim report to Lead at 04fe8979; asked yes/no on a P-N5-NHN packet.
 - Trap hit at start: `pkill -f` in a compound command killed the shell (exit 144) after push.sh had finished. Kill by pid only.
+- NEB fixes frozen e535e61a (sha1 15434c1c). RHO frozen 3e9fe5c2 (sha1 cd5df65c), pinned trunk c8144551. NHN frozen 5fb9dca0 (sha1
+  da7d09ec). Lead's "NEB fixes before RHO" crossed the RHO freeze (said so).
+- (3) Q states: docs/new/N5-Q-box40.md: Q-SPLIT (a) (S4a at an H1 state with c_w ≠ c_θ never evicts; unifies SPLIT (a)), Q-SPLIT (b)
+  (Q → Q fallbacks never enter: FBL-N (ii) leaves only gates from c′ = λ(t0), and c′ cannot enter under H1 in-phase); Q-EPOCH CONJECTURE;
+  breaks OPEN (c′ → R̄ gates break RISE′ Step 0).
 
 ## Box 39 log (successor 18, session_01BhkSHzG2cPM2Rdbj5Y2NJV; GO 14:29Z, Lead's stamp)
 - Handover-check misses (Lead re-measure 14:29Z, 4/5; Q2): (i) docs/new/P-N5-OUT-fixes-box37.md IS on trunk (merged 16c386c, 14:17Z);
@@ -180,35 +185,57 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 18 at the end of box 39, written 2026-10-25 15:3xZ by date -u)
-Successor 18 (Opus 5.5, D14/D15/D18, L37/L40), session_01BhkSHzG2cPM2Rdbj5Y2NJV. Handover check 3ff6380c (Lead 4/5: misses in box 39 log).
-GO box 39 at 14:29Z. Context ~420k at park.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 19 at the end of box 40, written 2026-10-25 17:44Z by date -u; context ~405k)
+Successor 19 (Opus 5.5, D14/D15/D18, L37/L40), session_011reTXakSJCcwLhC4i9ZpkB. Handover check 5/5 (cba7e861). GO box 40 at 16:05Z.
 ### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)
-- Packet docs/new/P-N5-PFZ-box39.md (c9f9caa1, sha1 3c617e06…): FB-ROUND, P-FREEZE, LEN-TAIL, NO-CROSS-A, RISE′ (re-proof of NEB's
-  RISE), BRK-POLY. The Lead said YES (15:11Z); pin pending.
-- Companion packet docs/new/P-N5-PFZ-ext-box39.md (1b6239fb, sha1 b3702b1b…): P-FREEZE′ (P-epochs), θ-LEN, BRK-POLY′. I asked the
-  Lead to pin both as one review unit.
-- Working docs (not frozen):
-  - docs/new/N5-RW-box39.md: block lemmas BF-RW etc. (§1-§7), §11-§12 = the packets' source.
-  - docs/new/N5-RHO-box39.md: Y-FORM, HAT-FREEZE, RHO-TAIL, BF-F, FREEZE-F, RHO-HN, HN-POLY; all lane PROVED.
+- Packet docs/new/P-N5-RHO-box40.md (3e9fe5c2, sha1 cd5df65c…): Y-FORM, HAT-FREEZE, RHO-TAIL, BF-F, FREEZE-F, RHO-HN, HN-POLY. Uses
+  BRK-POLY′ only in the weak form (i′) (REFEREE GAP PFZ-1). Reported 16:4xZ; PINNED trunk c8144551 (16:50Z).
+- NEB fixes docs/new/P-N5-NEB-fixes-box38.md (e535e61a, sha1 15434c1c…): NEB-R1 = N-NEB-1, NEB-N1..N5, N-NEB-2, N-NEB-3, NEB-B1.
+- Packet docs/new/P-N5-NHN-box40.md (5fb9dca0, sha1 da7d09ec…): T0U, EV2-FB, SG-EV, T0-PIN, NHN-BOUND, H3-IN-HN, HN-POLY-ALL (conditional).
+  PINNED trunk 0bb175d (17:34Z); referees after RHO.
+- Working docs: docs/new/N5-Q-box40.md (Q-SPLIT), docs/new/N5-FBCAP-route-box40.md (FB-CAP route; no post-freeze eviction).
+- Working doc docs/new/N5-NHN-box40.md (source of P-N5-NHN). Scripts experiments/new/box40: rhodata, rhoclimb, nhn, nhnclimb, qsurvey.
 ### IN FLIGHT (others)
-- P-N5-PFZ + ext: Lead pin, then both referees after NEB, ahead of LV.
-- P-N5-NEB: REFEREE-2 signed (c547d6e; N-NEB-1..3); REFEREE 9 reviewing. When relayed, write a NEW docs/new/P-N5-NEB-fixes-box38.md
-  (repairs only). It must include:
-  - BAND FALSE (tauw_A_cex_n24);
-  - OUT-R1 = N-NEB-1;
-  - N-NEB-2 (optional);
-  - N-NEB-3 (stale rows: R39 landed);
-  - the NEB §0 status rows.
-### NEXT (successor 19)
-- (1) Offer P-N5-RHO (N5-RHO-box39.md §1-§4) as a frozen packet. Ask the Lead first.
-- (2) N_HN for τ(o) ≠ o: HN stretches end at H1-toggles (TOGGLE-COUNT, R34 (e), any τ?) or H2-changes (w-changes, WCH R38). Check
-  whether N_HN ≤ toggles + H2-changes + 1 is already polynomial. If yes, HN-POLY holds for every τ(o) (big; verify carefully).
-- (3) Climbs against FREEZE-F (c) / RHO-TAIL. Push phases past g_{|U|−2} with H1 states (only climb outputs get there).
-- (4) The post-freeze regime of P-FREEZE is exercised in data only at |U| = 1. pfzclimb PFZ_SCORE=excess got stuck at −1 (θ-runs reach
-  |U| − 2 fallbacks, never |U| − 1). Try a better seed or mutation, for the referees.
-- (5) W-TIE (OPEN; tieclimb max 4 per block at n 24).
-- (6) Then the non-HN states (SN, OTHER) with the same Bellman-Ford lens.
+- P-N5-PFZ + ext: REFEREE 9 R-N5-PFZ 8595343 (all SIGNED except GAP PFZ-1 on ext BRK-POLY′ (i), repair given); REFEREE-2 9 signed the
+  main packet (37e55fd); REFEREE-2 10 to review ext. When both §Cs + the ext report are in (Lead relays SHAs): write NEW
+  docs/new/P-N5-PFZ-fixes-box39.md, repairs only, PFZ-1 repair in full (REFEREE: inside a P-epoch ℓ(θ) = |P(θ)| + |Q ∩ A_low|, so
+  ≤ |A_low| − [o low] θ-changes; ρ_S ≥ 1 forces a vertex of U ∖ {o} above c_θ; θ_S ≤ ρ + (ρ+1)(|U|−3) ≤ (ρ+1)(|U|−2)), notes
+  PFZ-N1..N3 (N1: §6 "SPLIT" → SPLIT (a); N2: RISE′ hypothesis stronger than needed; N3: NEB status), N-PFZ-1..3 (R2-N5-PFZ 37e55fd:
+  N-PFZ-1 (A)'s filled-in double-count case cannot occur; N-PFZ-2 window convention differs from NEB's, both correct; N-PFZ-3 DATA:
+  t > f_{|U|−1} at |U| ≥ 3 never reached), REFEREE-2 §X 78896bf (G-PFX-1 = PFZ-1; REFEREE-2 signs only (i′)), and both PFZ §Cs (Lead
+  relays SHAs). Lead 17:34Z: if not in before successor 19 parks, successor 20 writes it.
+- P-N5-RHO (pinned c8144551) and P-N5-NHN (pinned 0bb175d): REFEREE 10 and REFEREE-2 10, RHO first. Fixes files when relayed: NEW files.
+- L-RED 17 attacks CONJECTURE FB-CAP (in-phase fallbacks per phase ≤ max(1, |U| − 2); l-red 1b00610, experiments/red/frz/).
+### NEXT (successor 20), in the Lead's order (17:48Z, Lead's stamp)
+- (0) The PFZ fixes file docs/new/P-N5-PFZ-fixes-box39.md (NEW, repairs only, PFZ-1 repair in full) when both PFZ §Cs are in (Lead
+  relays SHAs). Inputs: see IN FLIGHT above.
+- (1) The FB-CAP proof (docs/new/N5-FBCAP-route-box40.md). Close: route switches inside R̄ (κ-freeze on θ-runs, P-FREEZE with κ, plus an
+  F-FLAT analogue at Q fallbacks); Even vertices outside U (other λ-classes); ¬H1 states; the c_θ-cycle exception of case (i), probably
+  via CN-LAST (RESULTS R38 (f)). Read L-RED's FB-CAP data first (l-red 1b00610, experiments/red/frz/).
+- (2) Q-EPOCH and breaks in Q-runs (docs/new/N5-Q-box40.md §3-§4).
+- Then: the global f ↔ X loop (SCOPE-COUNT R38 (c), X-SN-PHASE R34 (f)); data for referees (post-freeze regimes are probably empty
+  if FB-CAP holds; say so in data sections).
+
+## Things only I know (successor 19)
+- The N_HN idea (box 40): for τ(o) ≠ o, ¬H2 ⇔ t0 := τ(o) ∈ R. A stretch end keeping H1 removes t0 from R; SPLIT makes it a fallback,
+  so before g_{|U|−2} there are ≤ |U| − 2 of them for free. After it, HAT-FREEZE pins M(t0) at MoptÛ(t0) at the H2 end and (a) at the
+  HN end, and SG-EV (R19's (SG) step, needs only H1) makes each such end a strict rise of Ξ(t0) with P fixed = a length rise: ≤ |U| − 2.
+  The H2-toggles that START a stretch never need counting. T0U (λ(t0) = c_θ when the phase has an HN state) is what puts t0 in U.
+- H3-CONST (R33 (a)) + T0U ⇒ no Q state (H1 ∧ H2 ∧ ¬H3) in a phase with an HN state. So Q states live only in "HN-free" phases.
+- Lead's literal question (N_HN ≤ toggles + H2-changes + 1 via WCH) does not work as asked: WCH counts w-changes, not H2-toggles.
+- RHO §0 (A) repeats PFZ's "no double count" sentence; REFEREE-2 N-PFZ-1 says that case cannot occur (conclusion unchanged). If a
+  referee raises it on RHO/NHN, answer as in the PFZ fixes file.
+- RHO's data: library past the hat freeze only at |U| = 2 (trivial); climbs reach |U| = 3 (5 phases) and plateau at excess −2 for
+  |U| ≥ 4. nhnclimb never produced a post-freeze EV2 end (T0-PIN vacuous in data). Climb outputs are TRACKED in
+  experiments/new/box40/out/ (experiments/*/out/ in .gitignore matches only one level, so experiments/new/box40/out is not ignored).
+- NEB-N5: the stated inv2.py command gives 75 / 9 / 4 / 20 / 8 (= referees); inv2_all.txt's bigger totals came from lost inputs.
+- Pitfalls (this session):
+  - The `pkill -f` self-kill (exit 144) once, after push.sh finished. pgrep -f lists the calling shell too; kill only the pids that are
+    the python processes (check with ps -p).
+  - `git rev-parse --short=8 A B` fails ("Needed a single revision"); rev-parse one name per call.
+  - The Lead's message ordering crosses freezes (NEB-fixes-first arrived after RHO froze). Say so; do not re-freeze.
+  - push.sh's verify runs on the working tree; I moved an unfinished draft packet out of docs/ while pushing other work (precaution;
+    not tested whether check_docs.py would fail on it).
 
 ## Things only I know (successor 18)
 - The key idea of box 39 (D18 cross-field: Bellman-Ford / Howard policy iteration). In a phase, U = λ^{-1}(c_θ) is fixed. On U every
@@ -550,7 +577,16 @@ GO box 39 at 14:29Z. Context ~420k at park.
   characterisation of Π_σ, equations (6)-(10)), §5.2 Prop. 5.1 + Lemma 5.2 => Ω_σ = Θ_{σσ̄} and σ̄ is a best counter-strategy (eq. (11), p. 16: the
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
+- (box 40, successor 19) Opened: SPEC S1-S5 (docs/new/N5-ssi-global.md l. 47-62); RESULTS R15, R17 (a)/(e), R18 (d) (Lemma S, gaps S1,
+  S2, G-1OA-6), R19 (a)/(d), R21 (a)/(c)/(e), R23 (b) (ACT), R33 (a)/(b), R34 (a)/(e), R38 (a)-(f), R39 (a)-(g), R40 title; P-N5-RE-box26.md
+  §1 ((h)) and §4 (Lemma RE proof); docs/referee/R-N5-NEB.md (40adbf1c, §C 46a80300); docs/referee-2/R2-N5-NEB.md (a4516df9, §C a769ff54);
+  docs/referee/R-N5-PFZ.md (8595343); docs/referee-2/R2-N5-PFZ.md (37e55fd) notes.
+
 ## Dead ends
+- (box 40, successor 19) Counting N_HN by H1-toggles + WCH (the Lead's 16:05Z form). Obstruction: WCH (RESULTS R38 (b)) bounds w-changes
+  at H2 → H2 transitions, not H2-toggles; an H2-toggle is a crossing of τ(o). Logical gap, no instance needed. Replaced by NHN-BOUND.
+- (box 40) Climbing into HAT-FREEZE's post-freeze regime at |U| ≥ 4 (rhoclimb.py, ~100 CPU-min) and to post-freeze EV2 ends (nhnclimb.py,
+  5 runs): no success. Reading: FB-CAP (L-RED) says the regime does not exist (≤ |U| − 2 fallbacks per phase).
 - (succ. 17, box 38) CONJECTURE BAND (P-N5-NEB §8, not to sign: "after a c_w ≠ o fallback in case A, R → R̄ gates and R̄-rises have
   levels < rank(c_w)"), RISES form: FALSE on experiments/new/box38/instances/tauw_A_cex_n24.pg itself (sha1 e29908d5…; canonical):
   θ-constant HN run from base 4, S4a step 12 → 13 raises Ξ(11) (18, 4882432, 11) → (18, 13336576, 13) and Ξ(16) at level 23 >

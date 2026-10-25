@@ -10,6 +10,14 @@
 - Repair 17:07Z: successor 6 had OVERWRITTEN C47.md, C48.md, C49.md with each addendum (main reports only in history d0900448, 3d6dcbc8,
   2b540583). Restored as main + Add. 1 + Add. 2 (non-blank content checked equal to the three committed versions). RULE: addenda are
   APPENDED (cat >> or Edit), never written with Write.
+- C51 = R42 = P-N5-NEB. 17:18Z docs/checker/C51.md FAIL at f463d0d (draft 773c229c): E-1 (a) drops "t+1 ∈ S"; E-2 (c) drops "an Even fallback
+  a → a+1 is taken at a" (R39 (e) has it); E-3 (e) drops a's setting + "t+1 ∈ S"; E-4 LOW defined "length-only" (signed: both values in C_θ);
+  E-5 ≡_o, ≡_B, eviction state, LR_S, RW_S undefined. Lead points (1)-(4) PASS (84 = 75 + 9 / 835; 3,336,298; premises). Re-runs EXACT:
+  band_base 6/1, tauw_A 16/3, tauw_B 10/4, nebc 9/5, bandclimb.score (4, 5, 2); REFEREE neb_probe lib37 / lane set / band_base IDENTICAL;
+  REFEREE-2 neb_check 12 inst + rnd_own_3 IDENTICAL. Worktree wt51 = f463d0d. Next: Add. 1 on each revision (C50, C51), landed checks.
+- 17:47Z: C50 CLOSED (Add. 1 3031cc69 PASS at 1c0f54e; Add. 2 R41 landed d0cc0ab8). C51 CLOSED (Add. 1 bd08936b PASS at 0bb175d; Add. 2 R42
+  landed f090ec9e). Landed check = scratchpad landed.py <land> <draft commit> <checker sha> <Rnn> (lost with the container; ~30 lines).
+  Queue (Lead 17:45Z): P-N5-PFZ (+ ext), P-N5-LV2, P-N5-RHO, P-N5-NHN after their §Cs. Idle until a draft sha1 arrives.
 - Commands: n5 = `python3 n5.py n5 <f> <sol>` + `check_sol2.py <f> <sol>` from experiments/new; REFEREE `python3 -I
   docs/referee/scratch/lv_probe.py <files>` from the root; REFEREE-2 `lv_check.py inst <f> 3 own|rand|spec` and `random N lo hi seed m`
   from docs/referee-2/R2-N5-LV/ with ../../../ paths.

@@ -167,3 +167,36 @@ Referee: REFEREE (successor 9, session_01VsZYJ8FiTSj5Kazk715ZP7), Opus 5.5 (owne
     (ENT-X_{−1}, LV-PL′) stays empty.
 - So FLAT-ALL_{−1}^{none} and SAND are exercised non-vacuously. LV-NONE with N ≥ 2, ENT-X_{−1} and LV-PL′'s block rest on their proofs.
   No verdict changes. (Opus 5.5, D15)
+
+## §C. Comparison with REFEREE-2: docs/referee-2/R2-N5-LV2.md at referee-2 a551debf (sha1 5d66ad3f…, the same on trunk f090ec9e)
+Written 2026-10-25T17:48Z by date -u by REFEREE successor 10 (session_01J4kmfDqtZdanh3RSCxChyD), after the Lead's word of 17:34Z (Lead's
+stamp) that a551debf is final. The report above (b454ca32 + Addendum 46a80300) is my predecessor's and was pushed before R2-N5-LV2 was
+opened. (Opus 5.5, D15).
+- Verdicts: identical. Both referees sign all eight items:
+  - STALE-GATE, EV-G, SAND, FLAT-ALL_{−1}^{none}: unconditional.
+  - ENT-X_{−1}, LV-PL′, LV-NONE: with their P-N5-LV conditions, signed by both.
+  - SCOPE-FB: conditional on (C-ENT), (C-LV), (C-PKT) exactly as stated.
+  - Neither signs §9-§10. No gap on either side.
+- Joint gap map: EMPTY.
+
+| item | REFEREE-2 | REFEREE | outcome |
+| --- | --- | --- | --- |
+| EV-G's premise FREE-FREEZE (R37 (c)) is CONDITIONAL on (P) | N-LV2-1: name R36 in §0 / §2 | verdict column of §2: "(P) discharged by R36" | same; accepted as a fixes-file line |
+| §3 (c) "Ξ_k(z) = ρ ⊕ Ξ_k(q) (the play is simple before its cycle)" when q could lie on c's cycle | N-LV2-2: read it as the P-set identity P(Ξ_k z) ∩ H = (ρ ∩ H) ⊔ P(Ξ_k q), which holds either way; the cycle case also contradicts CYC-EV | LV2-N1: cite CYC-EV, which puts q on the pre-c path, so the literal identity holds | compatible; either fix suffices; the lane may state both in one line |
+| statuses of P-N5-LV, CN-LAST | — | LV2-N2 | stands |
+| STRETCH_{−1} at e = f_{N−1} + 1, N-LV-1 / N-LV-2 not inherited | §4 (Lead's ask): not inherited, k + 1 ≤ e | §4, §7: same | identical |
+| none part / level −1 block in data | N-LV2-3: none reached 237,033 times; block 645 times (no witness saved); max 1 of each per scope run, so LV-NONE / LV-PL′ with N ≥ 2 vacuous | Addendum: none reached (351,417 FLAT-ALL^{none} checks, max 1 per run); block empty | consistent at the time; superseded for none, see below |
+
+- NEW DATA after both reports (the Lead's 16:50Z note):
+  - L-RED 16's experiments/red/so/instances/beta2_n11.pg (sha1 bdea2a23) has ONE scope run with TWO in-scope THR fallbacks with r = −1
+    from the canonical start.
+  - My own engine (scratch/lv2_probe.py, no lane code; log scratch/lv2_logs_beta2.log) agrees:
+    - SFB_none 2, NONE_runs_with_2plus 1;
+    - FLAT-ALL_{−1}^{none} (i)-(iv) held at both, with M = −1 at both;
+    - SAND 3 checks, EV-G 4, STALE-GATE 6; 0 failures.
+  - So LV-NONE's counting step (N ≥ 2) is exercised for the first time, at N = 2 against n·n_E + 1. The Lead's re-run with L-SI
+    scopefb.py gives the same 2 (fb_r=-1 2).
+  - REFEREE-2's candidate CONJECTURE in N-LV2-3 ("an in-scope THR fallback with M = −1 is the last fallback of its scope run") is FALSE
+    on this instance: its first r = −1 fallback has M = −1 (FBW-S) and is followed by a second in the same scope run.
+  - The level −1 block with r ≥ 0 (ENT-X_{−1}, LV-PL′) still has no saved witness. It rests on the proofs.
+- No verdict of mine changes. (Opus 5.5, D15)

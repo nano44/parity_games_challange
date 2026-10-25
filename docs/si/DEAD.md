@@ -122,3 +122,16 @@ Iteration tables: docs/si/RESULTS.md (generated); raw logs experiments/si/out/ (
     (checked). The threat through Ev is absorbed back at the next S4a step. This is the transient case predicted in N5-TEV-box11.md §5.
   - What survives: TEV at FALLBACK states (N5-TEV-box11.md §3 Remarks, PROVED, no (P)), which is the only form NJB in the ENT setting needs
     (Theorem ENT-X, CONDITIONAL on (P)). Neither instance has a second fallback after the rise, so NJB / ENT are not refuted.
+
+## Box 13 (L-SI succ. 8, 2026-10-25 ~17:10Z by date -u; details docs/si/N5-RISE-box13.md §3; script experiments/si/lv13/oldthreat.py)
+- RISE-DROP ("after a rise at j, r_{j+1} ≤ L while S continues"). FALSE.
+  - Instance: experiments/red/so/instances/tevlast7_n32.pg (sha1 d905038c), S3 start, own trace: k0 = 11, L = 26, rise at j = 17;
+    r = 30 / 27 > L on states 18-40 (in-scope S4a), then EQ.
+  - Exact obstruction: the rise level can be below r_j, and an absorption chain of gates into R̄ keeps S going with r > L.
+- GATE-ABOVE ("post-rise state with r > L ⇒ M_t > L"). FALSE.
+  - Instance: experiments/red/so/instances/rise_thin51_n40.pg (sha1 47aaf46e), S3 / own: k0 = 72, L = 33, j = 75, t = 76, M_76 = 32.
+  - Exact obstruction: the gates there are into R̄ at level 32 < L; nothing forces their level above L.
+- FEED ("post-rise state with r > L ⇒ some F → R̄ gate"). FALSE.
+  - Instance: experiments/red/so/instances/tevlast11_n40.pg (sha1 8421ab30), S3 / own: k0 = 5, L = 33, j = 8, t = 22.
+  - Exact obstruction: the only gate is the route improvement (16, 23), R → R̄.
+- What survives: CONJECTURE INTO (some gate into R̄), 425 / 425 library states, which with FBL excludes case (i) of the rise claim.
