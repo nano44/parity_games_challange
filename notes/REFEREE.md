@@ -1,6 +1,82 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Handover check (successor 7), written 2026-10-25T08:12Z by date -u (Opus 5.5 under D15; session_01TWT1diK1Z9x2eK56iBVbZu)
+1. Branch, head, distance to trunk. Commands: `git fetch origin claude/referee claude/vibrant-johnson-nxvvxo`; `git status -sb`;
+   `git merge --ff-only origin/claude/referee`; `git merge --no-edit origin/claude/vibrant-johnson-nxvvxo`; `git rev-parse --short=8 <ref>`;
+   `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`.
+   - Local claude/referee started STALE at 73b46eb8, 1002 behind origin/claude/referee. Fast-forwarded to 451b2922 (predecessor's handover).
+   - Merged trunk 5071ce71 with a merge commit: head 6b665e27 before this commit; 2 ahead / 0 behind trunk (the handover commit + the merge).
+     After this commit: 3 ahead / 0 behind.
+2. Open work and next step (from the successor-6 HANDOVER section above and the Lead's 08:07Z brief; `grep -n "^## " notes/REFEREE.md`):
+   - P-N5-FRZ §C (task 2): waits for REFEREE-2 successor 7's R2-N5-FRZ. `git fetch origin claude/referee-2`: head de9ff970 (handover merge,
+     pin check 25fda0f); no R2-N5-FRZ file name under docs/referee-2/ (names listed only; contents not read). Next: the Lead's word, then §C in
+     docs/referee/R-N5-FRZ.md (every differing verdict + joint gap map).
+   - P-N5-L2 (task 1, after GO): object docs/new/P-N5-L2-box34.md at pin 04b3f48. `git show 04b3f48:docs/new/P-N5-L2-box34.md | sha1sum` =
+     cbea07392521bcdfbce137ba361bb581f9df11d7 (matches the brief; same on trunk 5071ce71). Statements §1-§7 (H3-CONST, H2-STICK, G′, FREEZE′,
+     R-CONST, H1-INT, X-RUN′); §8 not to sign. Next: own probe on scratch/frz_probe.py + sn_probe.py (one-Odd-chooser assertion), packet
+     instances oneh_cex_n32 / onedrop_cex_n32, library, random, climbs; report docs/referee/R-N5-L2.md.
+   - P-N5-NJB (task 3): docs/si/P-N5-NJB-box9.md, pin a7d85b3, sha1 f43a8823… (not yet verified by me). Next: after L2.
+   - Oink: built by scripts/setup_oink.sh at 8fbf0a7 into tools/oink/build (exit 0).
+3. GAPS rows relevant to me (`git show origin/claude/vibrant-johnson-nxvvxo:docs/GAPS.md | grep G-N5-TIME`):
+   - G-N5-TIME | major | owner L-NEW (L-LIT T22; referees later) | **open** | N5 SSI-GLOBAL makes polynomially many iterations (gauntlet
+     step 4, running time). The referees' part: each lane packet toward it (R15-R30 landed; P-N5-FRZ signed by me, R2 pending; P-N5-L2,
+     P-N5-NJB queued). P-N5-L2 itself says "G-N5-TIME stays OPEN". Related, closed: G-N5-TERM (closed by R15).
+4. Owner rulings, verbatim (`git show origin/claude/vibrant-johnson-nxvvxo:docs/DECISIONS.md`), with DECISIONS-INDEX status
+   (`grep -E "^\| *D(1|15|18) " docs/DECISIONS-INDEX.md`):
+   - D1 (index: **active**, 2026-10-14): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+     including the fleet's own, as wrong until it passes the gauntlet below." and "Never downgrade the referee to save money."
+   - D15 (index: **active**, 2026-10-22): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+     (Lead reading L37 (1): referees on Opus 5.5; signatures labelled "(Opus 5.5, D15)").
+   - D18 (index: **active**, 2026-10-24): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas
+     from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+     them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+5. Trap found: clocks disagree across sessions. The Lead's brief is stamped 08:07Z, but my first `date -u` after receiving it read
+   08:04:24Z, and the predecessor's handover (stamped 08:04Z) reached origin only after that. A peer's stamp is not my clock: every
+   time in my files comes from `date -u` at writing, and ordering questions are settled by commit order (git log), not by stamps.
+   Also confirmed again: the container starts on a stale local branch (73b46eb8, 1002 behind); check HEAD == origin/claude/referee first.
+   Also: the playbook puts handover checks in docs/agents/handover-checks/ (a Lead-only path where successors 5-6 wrote); the Lead's
+   brief puts this one here in notes/REFEREE.md, and I followed the brief.
+
+## HANDOVER (successor 6 -> successor 7), written 2026-10-25T08:04Z by date -u, context ~570k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):").
+Branch claude/referee. Start: git fetch origin claude/referee claude/vibrant-johnson-nxvvxo; check HEAD == origin/claude/referee (stale
+containers happened at every restart); merge trunk with a normal merge. Push ONLY with scripts/push.sh > file 2>&1; echo $?.
+Build Oink first (scripts/setup_oink.sh, ~1-2 min). Never read docs/referee-2/ for a packet before your own report is pushed.
+Objects not yet on trunk: read from origin/claude/<lane> by SHA (happened 3 times: l-new fixes, l-red instances, referee-2 report).
+### DONE (successor 6; all pushed; every report with §C unless noted)
+| packet | report | verdicts | §C |
+|---|---|---|---|
+| handover check | docs/agents/handover-checks/REFEREE.md (109721d3) | 5/5 | — |
+| P-N5-OE (R28) | R-N5-OE.md 5e98e33c | U-loc, OE (OE-1..3 wording/closed), OX signed | 84748819 (= R2; N-OE-3 phase key MISSED by me) |
+| P-N5-CLS (R29) | R-N5-CLS.md a0b92ecd | all signed; CLS-1..4 wording/closed; OG′ FALSE confirmed | 8af63475 (CLS-3 = G-CLS-1, R2's form adopted) |
+| P-N5-SN (R30) | R-N5-SN.md 59a886d1 (+addenda 58dd6e86, 2f465ff1) | all signed; SN-1 ABS-COUNT d_o−1 form unproved (proved d_o+REL); fixes §2b H1-DROP/H1-KEEP/ABS-COUNT′ SIGNED (closes SN-1 except O_k = −1) | 3d49e0af (SN-1/2 = G-SN-1 (a)/(b)) |
+| P-N5-FBW | R-N5-FBW.md 9a94dc7b | P-OPT VALID; all signed; FBW-1 (H1 not H2), FBW-2 (STRETCH k ≤ e) | a04615b5 (FBW-2 = N-FBW-1; FBW-1 kept against R2's text) |
+| P-N5-FRZ | R-N5-FRZ.md 3a520ce7 (+Addendum 3171efc7: fixes l-new 1dc42ba close FRZ-1..3) | all signed; FRZ-1 (γ omitted again), FRZ-2, FRZ-3 (REL_Q boundary transition) | IN FLIGHT |
+### IN FLIGHT
+- FRZ §C: needs R2-N5-FRZ from REFEREE-2 successor 7 (session_01CE1xQNfGUgtJg9A7SWAkuE); the Lead will say when it exists. Compare against
+  R-N5-FRZ.md verdict table + addendum; joint gap map, one fixes-file line per row.
+### NEXT (in this order; Lead 08:06Z)
+1. P-N5-L2: docs/new/P-N5-L2-box34.md, sha1 cbea0739…, pinned trunk 04b3f48 (L-NEW 14). FREEZE′ and X-RUN′ rest on P-N5-FRZ (my R-N5-FRZ).
+2. P-N5-NJB: docs/si/P-N5-NJB-box9.md, sha1 f43a8823…, pinned trunk a7d85b3 (L-SI 4). NJB was a CONJECTURE in P-N5-FBW §6 (D_M = 0 in all data).
+### Tools (docs/referee/scratch/; all assert exactly one Odd choice vertex where 𝒞^1O is meant; own N5 trace u1_probe.trace = n5.run)
+- oe_probe.py (U-loc/OE/OX; lib|rand|randb), cls_probe.py (CLS: C5-C7, TRANSFER, OFFGATE, CN, NL, CLS1; fine phase key), sn_probe.py
+  (OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, LEAVE, ABS-COUNT/′, WK, ABS-L, H1-DROP/KEEP), absc_climb.py (FIT=h1drop), fbw_probe.py (P-OPT
+  single-switch + control, FBW, FBW-S, CLS2, FLAT-ALL, STRETCH, PL), frz_probe.py (NL-MF, Fact 0, ARENA, Steps 1-2, FREEZE, RATCHET, BLOCK,
+  X-RUN, SUB). 'lib' = every experiments/**/*.pg in 𝒞^1O with n ≤ 64 (252 files at 83bf81a1).
+- Phase keys: SN/OE/FRZ packets use (λ_Ξ, τ); scope runs / CLS / FBW use (λ_Ξ, λ_U, τ). Check every citation's signed key (WM, NL transfer fine).
+### Traps and lessons (keep)
+- Stale local branch at start; objects referenced "on trunk" may not be merged yet: fetch the lane branch and check the SHA.
+- Stamp times from date -u at writing (I slipped once, fixed in 696b08ce).
+- Counting proofs "ends ≤ B": check the END state satisfies B's hypothesis (SN-1).
+- A lemma signed for a TRANSITION inside a run: check both ends are inside (CLS-3 = G-CLS-1).
+- "Including the repaired cases X": check the text actually carries each repair (FRZ-1, XA-3 (γ) omitted twice).
+- Count tails as vertices, not gates (my first STRETCH check double-counted).
+- "λ(o) ≠ o" is not "o off a cycle"; minimiser (CAP-1) and DF-trap checks at own cycle nodes for every minimiser / VJ00 5.8 step.
+- Cycle through a switched own cycle node: the honest cycle; o is excluded by H1, not H2 (FBW-1).
+- Random 𝒞^1O games are nearly vacuous for crossings, freezes (no n-state (h) windows), wakes, dirty intervals: name the thin spots.
+- Bash: never pkill -f/pgrep -f with the pattern in the same shell (kills the tool shell); kill PIDs from ps.
+
 ## Resume point (successor 6): P-N5-FRZ (Lead 05:58Z; pin 25fda0f; docs/new/P-N5-FRZ-box34.md sha1 39df373c…; L-NEW succ. 14)
 - docs/referee/R-N5-FRZ.md (from 06:16Z by date -u): all SIGNED; P^c_ℓ WITH FRZ-1 ((γ) omitted again = R20 XA-3), FRZ-2 (B-fallback B1
   own-cycle-node x: strictness by cycle node, not (V2)); X-RUN WITH FRZ-3 (REL_Q misses the transition leaving P; bound survives by slack).
