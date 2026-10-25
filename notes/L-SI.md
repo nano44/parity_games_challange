@@ -29,6 +29,10 @@ fbw.py, reltrace.py, levcheck.py, jclimb.py modes HEQ / REP. Logs: experiments/s
 - §11 (bb8ed9ed): Lemma RDROP (a first break needs r > M, by (C5)); PL (c′): D_M ≤ d_o − 1 + REL_M for EVERY block. The r-drop
   blocks are CLOSED, and PL-S holds for every scope run. Not in the frozen packet; for its fixes file if wanted.
 - PL-I (§7) is CONDITIONAL on P-N5-FRZ (pinned 25fda0f).
+- §12 (8bb11345, 23ceaa0d): ENT attempt (60-minute time-box), outcome (b). Lemma ENT-SHAPE: a violation needs the next fallback at
+  level exactly L, an entrant y with a frozen-bad rank-L bit, and its F-target z flipping rank L via an F→F level-L switch (common in
+  data: 1,451). The never-seen ingredient is the emptying of Mn followed by any later fallback in the run. The shape went to L-RED via
+  the Lead.
 ### NEXT
 1. Prove ENT / MINSET non-emptying (NJB). Idea not yet working: absorbing the last member of Mn needs F→R̄ entry gates of level ≤ M
    (ABS-O (a)); relate that to the drain at f_i (FBL: no F→R̄ gate at a fallback).
