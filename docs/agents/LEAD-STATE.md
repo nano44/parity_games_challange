@@ -1448,3 +1448,4 @@
     - GAP FBP-2: (b) for o = c_θ.
     - Both repairs are given; both statements are true.
     - The post-freeze regime is unreached even in 3.82 M climbs.
+- 19:59Z Lead: merged checker cc21c36. C54 = R45 FAIL. E-1: FREEZE-F (a) dropped "from z to c_θ". E-2: G_Û and G[A] undefined. R45 revised with E-1, E-2 and N-1. It is independent of C53 E-1, since it uses only (i′).
