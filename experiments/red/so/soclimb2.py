@@ -47,6 +47,9 @@ def fit(G, mode):
         f = (pf, mx(lambda x: x["reabs"]), mx(lambda x: x["blkrel"]), mx(lambda x: x["blockfb"]))
     elif mode == "xrun":  # crossings inside the c_w = c_θ prefix of one fallback-free run, minus (n − 1)
         f = (fails, mx(lambda x: x["maxpre"]) - (g.n - 1), mx(lambda x: x["XSN"]), 0)
+    elif mode == "mn":    # P-N5-NJB MINSET: NJB / proved failures, sole-minimiser absorptions inside a block, −min |Mn|, Mn-member absorptions
+        pf = sum(v for k, v in r["C"].items() if k not in ("EXITR", "ORX"))
+        f = (pf, mx(lambda x: x["soleabs"]), -min((x["minmn"] for x in rs), default=10 ** 9), mx(lambda x: x["mnabs"]))
     elif mode == "xsn": f = (fails, mx(lambda x: x["XSN"]), mx(lambda x: x["X"]), 0)
     elif mode == "post": f = (fails, mx(lambda x: x["maxpost"]), mx(lambda x: x["X"]), 0)
     return f, r

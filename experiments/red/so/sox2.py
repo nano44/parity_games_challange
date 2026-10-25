@@ -135,7 +135,7 @@ def analyse(g, cap=5000):
         maxseg = max((len(v) for v in seg.values()), default=0)
         # ABS-L on scope runs
         scope = [H1[k] and H2[k] and cw[k] == cth and H2[k + 1] and Wv[k + 1][o] == Wv[k][o] for k in range(a, b + 1)]
-        k = a; absl_checked = 0; nblocks = 0; blockfb = 0; nrel = 0; reabs_ = 0
+        k = a; absl_checked = 0; nblocks = 0; blockfb = 0; nrel = 0; reabs_ = 0; minmn = 10 ** 9; mnabs = 0; soleabs = 0
         while k <= b:
             if not scope[k - a]: k += 1; continue
             j = k
@@ -154,6 +154,14 @@ def analyse(g, cap=5000):
                         if t == f1 or FB[t]:
                             if ch: bad("FLATALL", t)
                         elif ch: bad("NJB", t)
+                    for t in range(f1 + 1, fN):      # MINSET guide (P-N5-NJB §2): Mn_t = free exits whose o ⊕ Ξ has θ's COARSE_M
+                        if FB[t]: continue
+                        th = sox.coarse(Xi[t][o], Mb)
+                        Mn = [x for x in set(g.succ[o]) if x != o and x not in R[t] and sox.coarse(E.extend(o, Xi[t][x]), Mb) == th]
+                        minmn = min(minmn, len(Mn))
+                        ab = [x for x in Mn if x in R[t + 1]]
+                        mnabs += len(ab)
+                        if len(Mn) == 1 and ab: soleabs += 1
                     rel = set()
                     for t in fbs[bi:bj]:
                         rel |= {x for x in set(g.succ[o]) if x != o and x in R[t] and x not in R[t + 1]}
@@ -175,7 +183,7 @@ def analyse(g, cap=5000):
                 if cnt > d_o - 1: bad("ABSL_cnt", k0)
             k = j + 1
         rows.append(dict(a=a, b=b, T=b - a + 1, X=X, XSN=XSN, REL=REL, RELe=RELe, f=f, eps=len(eps), epsSN=epsSN, maxseg=maxseg, maxpost=maxpost, maxpre=maxpre,
-                         absl=absl_checked, d_o=d_o, nblocks=nblocks, blockfb=blockfb, blkrel=nrel, reabs=reabs_))
+                         absl=absl_checked, d_o=d_o, nblocks=nblocks, blockfb=blockfb, blkrel=nrel, reabs=reabs_, minmn=minmn, mnabs=mnabs, soleabs=soleabs))
     return dict(n=n, o=o, it=len(FB), fb=sum(FB), rows=rows, C=C, ex=ex)
 
 if __name__ == "__main__":
@@ -184,7 +192,7 @@ if __name__ == "__main__":
         g = sox.load(f)
         if len(sox.oddchoice(g)) != 1: print(os.path.basename(f), "SKIP not C^1O"); continue
         r = analyse(g); rs = r["rows"]
-        m = {k: max((x[k] for x in rs), default=0) for k in ("X", "XSN", "REL", "RELe", "f", "eps", "epsSN", "maxseg", "maxpost", "maxpre", "absl", "nblocks", "blockfb", "blkrel", "reabs")}
+        m = {k: max((x[k] for x in rs), default=0) for k in ("X", "XSN", "REL", "RELe", "f", "eps", "epsSN", "maxseg", "maxpost", "maxpre", "absl", "nblocks", "blockfb", "blkrel", "reabs", "mnabs", "soleabs")}
         for k, v in m.items():
             if v > mx.get(k, (0,))[0]: mx[k] = (v, os.path.basename(f))
         print(os.path.basename(f), f"n {r['n']} o {r['o']} it {r['it']} fb {r['fb']} phases {len(rs)} max", m, "FAILS", r["C"] or 0, r["ex"] or "", flush=True)
