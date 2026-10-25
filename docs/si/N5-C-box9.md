@@ -234,7 +234,7 @@ Setting: docs/new/N5-REL-box34.md §3-§6 (L-NEW succ. 14; lane PROVED, unrefere
 consecutive (h) states of a phase with r = ℓ ≥ 0, after a FREEZE window at ℓ. So COARSE_ℓ(Ξ) is constant on I (FREEZE (a)). w may
 change inside I. Fallbacks are allowed.
 
-**Proposition PL-I (PROVED, L-SI succ. 4; uses L-NEW's FREEZE, unrefereed).**
+**Proposition PL-I (PROVED, L-SI succ. 4; CONDITIONAL on L-NEW's Theorem FREEZE, packet P-N5-FRZ pinned 25fda0f, under review).**
 - (i) The fallback levels inside I are non-increasing and ≤ ℓ.
 - (ii) I has at most n_E fallbacks at level ℓ.
 - (iii) For M < ℓ, the level-M fallbacks of I satisfy N_M ≤ n_E(1 + D_M), with D_M ≤ (d_o − 1) + REL_M (Theorem PL, with I in place
@@ -305,3 +305,52 @@ k is an R → F edge (FBL; FBW-S gives r_k ≥ M_k ≥ 0). Its tail entered R af
 - Together: 44 post-rise states with r > L, 0 R → F gates (logs/box9/norf_climb.txt).
 - Reading: the climbs keep r > L for many states after a rise, but they do not produce a second fallback. Every R → F gate stays
   absent, including entrant tails. ENT remains a CONJECTURE: 53 states checked in total, 0 failures.
+
+## 10. NJB on L-NEW's drain/refill instances, and the exact reformulation (Lead relays 05:58Z, 06:04Z)
+- DATA: x48_rt48_final (experiments/new/box28/instances) and b6_xw_n56 (experiments/n5-exhaustive/instances):
+  - 8 level blocks, 30 fallbacks, up to 12 in one block;
+  - B = 0 (no COARSE_M change inside a block), 0 tail repeats, FBW 30 fallbacks / 93 gates with 0 failures, 2 rises above L after a
+    fallback and no fallback after either.
+  - L-NEW's repeated same-level clusters (its §8, up to 9 at one level) lie inside one of my blocks. Its "θ rises at exactly level M"
+    between drains is a COARSE_{M−1} change, which STRETCH allows. NJB survives there.
+**Lemma MINSET (PROVED, L-SI succ. 4).** Let S be a scope run, (f_i, f_{i+1}) an interval of a level-M block with r > M on it, and
+Mn_t := {exits x ∈ F_t : COARSE_M(o ⊕ Ξ_t x) = COARSE_M(θ_t)}.
+- (a) COARSE_M(θ_t) = min over the exits x ∈ F_t of COARSE_M(o ⊕ Ξ_t x), and Mn_t ≠ ∅.
+- (b) Inside the interval, Mn only loses members, and only by absorption into R. Its members keep their COARSE_M value (NL (i)).
+- (c) COARSE_M(θ) changes inside the interval exactly when Mn becomes empty. At that step the last members are absorbed, which is
+  the absorption of PL (b).
+- (d) At a fallback f_i of the block, Mn can only gain members: by FLAT-ALL (ii)-(iii), no COARSE_M value moves, and F only grows.
+Proof.
+- (a): CAP-1 (σ̄(o) is a full Ξ-minimiser over succ(o)), H1 (σ̄(o) ∈ F) and (P2) at o. An exit in R has o on its play, and its value
+  is ⊵ θ anyway.
+- (b): NL (ii) (no leave, so F only shrinks, by entries) and NL (i) (values off R̄ frozen above M).
+- (c): an exit of Mn left in F keeps the minimum at COARSE_M(θ). Conversely, if Mn empties, the minimum over F-exits is strictly
+  above.
+- (d): as stated. □
+- So NJB ⇔ "inside a level-M block, Mn is never emptied by absorptions". |Mn| ≤ d_o, and Mn regains members only from releases at
+  the block's fallbacks.
+  - This is the fallback-level form of L-NEW's REL: an emptying needs every COARSE_M-minimal free exit to be absorbed between two
+    level-M drains.
+  - With ABS-O (a), each such absorption closes a cycle through o whose vertices above max(M, rank c) lie in P(Ξ x0).
+- Status: NJB stays a CONJECTURE.
+  - PROVED reductions: PL (to absorptions), MINSET (to emptying Mn), NO-RF-OLD (after an emptying, only entrant tails can be evicted).
+  - Nothing here rests on FREEZE. §7's PL-I does rest on it, and is CONDITIONAL on P-N5-FRZ (pinned 25fda0f).
+
+## 11. The r-drop blocks (Lead item 2): PL (c) holds for every block
+**Lemma RDROP (PROVED, L-SI succ. 4).** In a level-M block (M ≥ 0) of a scope run S, let j be the first transition of a dirty
+interval at which COARSE_M(Ξ) changes. Then r_j > M. So every interval whose states all have r ≤ M is clean.
+Proof. By PL (b), lev(θ_j, θ_{j+1}) = O_j > M. In S, w_{j+1} = w_j, so θ_j ◁ θ_{j+1} ⊴ w_j (R15 (a), XW). (C5) then gives
+lev(θ_j, θ_{j+1}) ≤ lev(θ_j, w_j) = r_j. □
+**Theorem PL (c′) (PROVED).** For EVERY level-M block of a scope run (M ≥ 0), D_M ≤ (d_o − 1) + REL_M, hence N_M ≤ n_E·(d_o + REL_M).
+The hypothesis "r > M on the block" is not needed.
+Proof.
+- Fact R makes r non-increasing on S. Let P be the maximal prefix of [f_1, f_N] on which r > M.
+- By RDROP, every dirty interval has its first break inside P. Each such break is an absorption (PL (b)), and distinct dirty
+  intervals give distinct absorptions.
+- On P, CLS1's (A)-chain and NL (ii) hold, so no exit leaves R at an S4a step of P.
+- N_x (the number of exits in R) rises by 1 at each absorption. It falls only at the block's fallbacks inside P, by at most REL_M in
+  total. Under H1 (scope), N_x ≤ d_o − 1.
+- Hence the absorptions in P number ≤ (d_o − 1) + REL_M. This needs neither ABS-L nor r > M after P. □
+- Consequence: Corollary PL-S holds for every scope run: #fallbacks at levels ≥ 0 ≤ n_E·(n·d_o + REL(S)). The OPEN item
+  "r-drop blocks" (§4, P-N5-FBW §6) is CLOSED. Not in the frozen packet; for a fixes file if the referees want it.
+- DATA consistency: 6 / 13 / 1 r-drop blocks (NAMED / LIB / climbs), all with B = 0 (§3, §5).
