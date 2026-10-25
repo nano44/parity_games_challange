@@ -1345,3 +1345,4 @@
   - CONJECTURE NONE-LAST (DATA 4 / 4).
   - Lead re-ran rise_thin51_n40 (line below).
   - INTO and case (ii) go to L-RED 17.
+- 17:24Z Lead: rise_thin51_n40 re-run: one Odd choice vertex; n5 78/7; Oink zlk OK, strategies verified. The GATE-ABOVE state itself is on L-SI's trace from the S3 start, which I did not re-trace.
