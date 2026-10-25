@@ -15,7 +15,7 @@ Build Oink first (scripts/setup_oink.sh). Stamps: take every time from date -u a
 | P-N5-LP + P-N5-SO | R-N5-LP.md (Part 1 LP, Part 2 SO) | LP: Lemma DF NOT SIGNED, FALSE (docs/referee/R-N5-LP/df_cex.pg, n 11: own W-cycle node + FIX 2 = the VJ00 5.8 "2⇒3" gap); DF′ signed; WAKE via DF′ (W-1); rest signed (HI-1). SO: TH (SO-1 = dependency on my full-minimiser proof), SO signed (key-frozen step verified), XJ (XJ-1: f = O(n⁴(1+X)), not n³) | §C done (vs R2 4949d6c): no verdict differs; N-LP-1 accepted (missed). P-N5-SO second review moved to successor 6 by the Lead |
 ### NEXT for successor 6
 - P-N5-SO (docs/new/P-N5-SO-box32.md @ 1ef02bb, sha1 deb5ee44): the Lead moved its review to successor 6. My own Part 2 of R-N5-LP
-  (dcb41198) is a review already: TH (SO-1 dependency on my R-N5-FB §4.2 full-minimiser proof), SO signed, XJ (XJ-1). Ask the Lead whether
+  (dcb41198) is a review already: TH (SO-1 CLOSED: R2-N5-FB §C.3 adopted my proof), SO signed, XJ (XJ-1). Ask the Lead whether
   successor 6 writes a fresh report or a §C of Part 2.
 ### Tools (docs/referee/scratch/; all assert exactly one Odd choice vertex where 𝒞^1O is meant)
 u1_probe.py (own trace = n5.py loop asserted equal to n5.run; states(); TB/CASC/U1/WC; arena_test), lemr_probe.py (hooked evaluate),
