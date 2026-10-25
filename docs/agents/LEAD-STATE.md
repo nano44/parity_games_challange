@@ -1116,3 +1116,4 @@
 - 04:49Z Lead: L-SI 4 (1cef505) and L-NEW 14 (ce400ff) handover 5/5 each, merged; GO both.
 - 04:53Z Lead: C39 FAIL E-1 (checker 09c8dc7: epsseg_cex_n48 re-absorption at 14, not 13; same off-by-one in L-NEW notebook l.258 and N5-K-box33.md l.297). R30 draft rev.: E-1, N-1 (L-RED data via Lead relay + C39 re-run), N-2 (sample names). Addendum 1 requested. L-COMP 4 handover 5/5 (cd3b5ff), GO.
 - 05:04Z Lead: C39 Addendum 1 PASS @ 91582c0 (checker 262104b) → R30 LANDED (lines 3-end verbatim, 'checker 09c8dc7 + Addendum 262104b'); GAPS append; NOW.
+- 05:09Z Lead: hourly sweep 05:04Z: no overage; L-RED 15 (282k) finishing box 37 (R67), L-COMP 4 (131k) on box 8 tables, L-SI 4 (101k) on box 9, L-NEW 14 (107k) on box 34 REL climbs, CHECKER on C39 Addendum 2; referees parked. Lead context ~694k (continues via summary/compaction; LEAD-STATE current). No exception.
