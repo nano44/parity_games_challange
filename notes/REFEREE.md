@@ -10,7 +10,7 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with sc
   honest cycle, ¬H1: R-N5-FB §4.2 re-derived, holds; closed), OE-3 (cite C1/C3); Corollary OX (i)-(v) SIGNED (OX-1 wording, FB-2 scope).
   Tool scratch/oe_probe.py (lib | rand | randb). Library numbers equal the lane's oddlev.py exactly (436/11/857/279/235).
   §C written 02:06Z-02:11Z (date -u) vs R2-N5-OE (ca6e5bd): no verdict differs; OE-1 = N-OE-1; MISSED N-OE-3 (phase key (λ_Ξ, τ) vs
-  R25's (λ_Ξ, λ_U, τ): transfers valid, accepted); joint gap map 6 rows; pushed 84748819. PARKED; next packet from the Lead.
+  R25's (λ_Ξ, λ_U, τ): transfers valid, accepted); joint gap map 6 rows; pushed 84748819. Lead 02:25Z: merged, review closed, R28 with CHECKER C37. PARKED. NEXT: P-N5-CLS (L-SI succ. 3: OFFGATE, CN, TRANSFER, NL, CLS1), Lead sends it pinned; fresh report docs/referee/R-N5-CLS.md.
 - Lesson (again): check the SETTING (phase key) each citation was signed under, not only the class.
 - Lesson: "λ(o) ≠ o" (o not its own cycle node) is not "o off a cycle"; check the ¬H1 case of every minimiser citation separately.
 
