@@ -163,3 +163,47 @@ occurred in my data either (0 batch, 0 climb), so EV, EV+ and TEV-RED rest on th
 - N-RL-2: EV: add the case "q after c on the cycle" (the conclusion holds, §6.1).
 - N-RL-3: EV setting facts: "top of A Δ B even and in B" only after A ⊆ B.
 - FREE-FREEZE: the hypothesis "(h) at t" can be dropped.
+
+## §C. Comparison with REFEREE's R-N5-RL (written 2026-10-25 12:46Z by date -u, after my report 30dc5f54 was pushed)
+Read: docs/referee/R-N5-RL.md at trunk (report b7419da, §8.1 257c3d8; REFEREE successor 8). Nothing else in docs/referee/ was read.
+### C.1 Joint gap map
+| REFEREE | mine | item | reconciled verdict (Opus 5.5, D15) |
+| --- | --- | --- | --- |
+| RL-1 | G-RL-1 | TEV-RED (1): "the last Ev vertex" / f's play in F_{k0} need no Ev vertex on x_t's (= c's) cycle | same gap. Label CHANGED, see C.2: TEV-RED NOT SIGNED as stated; TEV-RED′ SIGN CONDITIONAL ON (P) |
+| RL-2 | — (my miss) | MERGE stated for "ℓ ≥ −1", which includes ∞; at ℓ = ∞, (c) has no common vertex and "both plays end in c's cycle" is false | ACCEPTED. MERGE: SIGN WITH GAP RL-2 (scope: −1 ≤ ℓ < ∞). Every use (EV, EV+) is at a finite L, so §6 is unaffected. My rl_check.py skipped level-∞ gates silently (`l >= INF: continue`), and I did not flag the statement. I re-checked with my own N5: inr2_n32, state 0, gate (6, 29) has level ∞, with the plays of 29 ([29, 16]) and x0 = 27 ([27, 31, 18, 2]) disjoint; my deterministic library runs have 168 level-∞ window gates at (h) states, all with disjoint plays |
+| RL-3 | G-RL-2 | TEV-RED (3) and the Consequence's third bullet: "before e" → "up to and including e" | same. L-RED 16's tevlast_cex_n40 (my N5: e = 15 ∈ H, B_t ∖ A = {e}) shows the worded form fails outside the ENT setting. REFEREE: e ∈ H at 0 of 607 meeting states in its data |
+| RL-4 | — (my miss) | EV: the level-L window gate's EXISTENCE is P-N5-NJB §3's Corollary to NO-RF-OLD (FB step (2) + FBL), not ENT-SHAPE, which assumes the gate | ACCEPTED (citation). I checked ENT-SHAPE's first line ("Let (y, z) be a level-L gate at k with …") and the Corollary ("If M_k = L, a level-L tail exists … and it is an entrant") |
+| remark | N-RL-2 | EV's "Ξ_k(z) = ρ ⊕ Ξ_k(q)" if q is on the cycle after c: the conclusion holds on H-parts (A = π_q ∩ H = ∅) | same argument in both |
+| remark (EQ-END) | — | S's end state has (h), not only H2, when θ = w | accepted (true; not needed for the statement) |
+| — | N-RL-1 | MERGE (c): read plays as paths up to the first visit of c | mine only (wording); compatible with RL-2 |
+| — | N-RL-3 | "top of A Δ B even and in B" only after EV | mine only (wording) |
+| — | FREE-FREEZE note | "(h) at t" is not needed | mine only |
+### C.2 Verdict changes in this report
+- TEV-RED: from "SIGN CONDITIONAL ON (P) WITH GAPS (G-RL-1, G-RL-2)" to NOT SIGNED as stated. I adopt REFEREE's form.
+  - With G-RL-1 the stated lemma has a case its proof does not cover, and nothing excludes it.
+  - With G-RL-2 its clause (3), as worded, is false whenever e ∈ H.
+  - A gap of that kind is not a signature with gaps (D1: never soften a verdict); my draft label was too soft.
+- TEV-RED′ (TEV-RED plus the hypothesis "no Ev vertex lies on the cycle of x_t's σ_t-play", with (3) read "up to and including e"):
+  SIGN CONDITIONAL ON (P). My §6.2 check of (1)-(5) covers exactly this form.
+- Consequence (the reduction): NOT SIGNED as stated. It holds when TEV-RED′'s hypothesis holds at t = k.
+- MERGE: from SIGN to SIGN WITH GAP RL-2 (scope −1 ≤ ℓ < ∞).
+- All other verdicts are unchanged and agree with REFEREE's: R-SAME, BL-FORM, BL (a), (d), CONF-MONO SIGN; BL (b), (c), (e),
+  FREE-FREEZE, EV (with RL-4), EV+ SIGN CONDITIONAL ON (P); EQ-END SIGN CONDITIONAL ON CN-LAST.
+- Labels: both reports find every packet label exact.
+- REFEREE adds that the labels depend on R35 landing with ENT-SHAPE (1)-(4) and the NO-RF-OLD Corollary as signed. I accept this.
+### C.3 DATA comparison (different engines: REFEREE's own SPEC N5, which reproduces n5.py's counts; mine = any arena optimum)
+- Both see 0 cases of an Ev vertex on c's cycle, and 0 ENT settings, in batch and climbs: REFEREE 3 × 1,500 s; mine 4 × 1,200 s with
+  1,583,748 runs.
+- The RL-1 precondition A = ∅:
+  - REFEREE: 37 of 376 NAMED and 95 of 526 LIB in-scope fallbacks;
+  - mine: 0 in my batch (my N5's traces), 507,929 in climbs.
+  - The second step (c switched into R̄_{k0}, or a later switch of C_t into Ev) was reached by neither.
+- FREE-FREEZE on LIB: REFEREE 177,919, the packet's figure. Mine is 640,338 over a different input set and starts.
+- Oink: REFEREE 234 + 75 + 3 climb bests; mine 552 (SCOPE library) + 8 climb bests + tevlast_cex_n40.
+### C.4 Joint fixes lines for L-SI (one per gap; union of both reports)
+- RL-1 = G-RL-1 (TEV-RED (1), Consequence): prove Ev ∩ C_t = ∅ for t ∈ (k0, k], or carry the hypothesis (TEV-RED′), or treat the
+  cycle case (A = ∅) separately.
+- RL-2 (MERGE): "level −1 ≤ ℓ < ∞".
+- RL-3 = G-RL-2 (TEV-RED (3), Consequence bullet 3): "up to and including e".
+- RL-4 (EV): cite P-N5-NJB §3's Corollary for the gate's existence.
+- Wording, mine: N-RL-1 (MERGE paths up to c), N-RL-2 (EV, q after c), N-RL-3 (top of A Δ B after EV), FREE-FREEZE's unused "(h) at t".
