@@ -1557,6 +1557,106 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   REFEREE-2 only); N-FRZ-4 (wording: d_o, crossing, leave defined in fixes2; REFEREE-2 only); NL phase key (REFEREE only; accepted).
 - TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
 
+### R33 [refereed-only] N5 on one-Odd-choice games: how (h)-runs end and restart (H3-CONST, H2-STICK), the frames at H3 states without H1 (Lemma G′), the freeze through ¬H1 states (FREEZE′), R̄ constant at ¬H1 states (R-CONST), the single empty-path interval (H1-INT), and crossings per fallback-free run without an H1 hypothesis (Theorem X-RUN′) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C42.md, checker 639ff523)
+- Object (packet P-N5-L2, added at l-new 1afccb5, pinned trunk 04b3f48, unchanged during review): docs/new/P-N5-L2-box34.md, sha1
+  cbea07392521bcdfbce137ba361bb581f9df11d7 (L-NEW successor 14, Opus 5.5). The referees' repairs are collected by the lane in
+  docs/new/P-N5-L2-fixes-box34.md (l-new 97c3b4e, sha1 7a110bca8d52b532d531c0836547b2d22b7437cd, L-NEW successor 15: L2-1, L2-2) and
+  docs/new/P-N5-L2-fixes2-box34.md (l-new ea78e9b, sha1 e343d74e1502e7c75ca5c40fd79350a3b8662b26, L-NEW successor 15: N-L2-1 = L2-1;
+  N-L2-2 as Lemma X-RUN°: any set of consecutive (h) states of one fallback-free run has ≤ 13(d_o+1)n³ crossing transitions with both
+  ends in it); both on trunk; repairs only.
+  Setting as in RESULTS R30-R32 (𝒞^1O; phase with λ_Ξ and τ constant; R, R̄, F, θ, w, c_θ, c_w, H1-H3, (h), r, SN prefix, windows,
+  FREEZE, X-RUN). U := λ^{-1}(c_θ) (a phase constant). An H1-TOGGLE is a transition at which H1 changes.
+- Claims signed (both referees "(Opus 5.5, D15)", L37):
+  (a) Lemma H3-CONST: in a phase, at every H2 state c_w = λ(τ(o)); so H3 holds at all H2 states of the phase or at none, and if the
+      phase has an (h) state, then (h) ⟺ H1 ∧ H2 at every state of the phase.
+  (b) Lemma H2-STICK: at an S4a transition s → s+1 of a phase with H1 and ¬H2 at s, ¬H2 holds at s+1 (the case τ(o) = o, where
+      "τ(o) ∈ R_s" is false since R excludes o, is trivial: L2-1 = N-L2-1, wording, closed).
+  (c) Lemma G′: at a phase state with H3 and ¬H1 (c := c_θ = c_w): ¬H2 holds and c ∈ R̄; a vertex of R̄ whose (σ, τ)-play visits c
+      before o has Ξ = W; any other has Ξ = π_v ⊕ θ and W = π_v ⊕ w, with π_v disjoint from P(θ), P(w) and c.
+  (d) Theorem FREEZE′ (premise RESULTS R32 FREEZE, with FRZ-1, FRZ-2): FREEZE holds with "(h)" replaced by "H3" in the window and "H2"
+      replaced by "H2 or H3" in the conclusion (b) and in the range of t.
+  (e) Lemma R-CONST: at every ¬H1 state of a phase, R̄ = U; so no transition between two ¬H1 states of a phase is a crossing.
+  (f) Lemma H1-INT: in a phase, the states with P(θ) = ∅ form one interval I_∅; every ¬H1 state lies in I_∅, and so does every state k
+      such that k → k+1 is a transition of the phase with H1 at k and ¬H1 at k+1 (the packet's reading with k+1 outside the phase is
+      FALSE: docs/referee/R-N5-L2/exitdrop_n3.pg, sha1 73c7a21b…, n 3; L2-2, wording, closed); on I_∅, θ changes only in length,
+      monotonically, at most n − 1 times.
+  (g) Theorem X-RUN′ (premise RESULTS R32 X-RUN, with FRZ-3): for a fallback-free run Q of a phase with SN prefix P and t_Q H1-toggles
+      with both ends in P, P has ≤ 13(d_o + 1)n³(t_Q + 1) + t_Q crossing transitions with both ends in P, and REL_Q ≤ d_o(C + 1) with C
+      that number; no hypothesis on H1. X-RUN's proof uses only "consecutive (h) states of one fallback-free run" (N-L2-2, accepted by
+      REFEREE; Lemma X-RUN° in fixes2).
+- Refuted (§8, not signed; lane and referee instances, each re-run by the Lead: n5, Oink zlk OK strategies verified, one Odd choice
+  vertex): CONJECTURE ONE-H ("the (h) states of a phase are consecutive") FALSE, experiments/new/box34/instances/oneh_cex_n32.pg (sha1
+  51dab086…); CONJECTURE ONE-DROP ("≤ 1 H1 → ¬H1 transition per phase") FALSE, experiments/new/box34/instances/onedrop_cex_n32.pg
+  (5793d5a3…, n5 6/1); CONJECTURE DROP-LEN ("θ changes between two drops of a phase") FALSE, docs/referee/R-N5-L2/droplen_cex_n12.pg
+  (REFEREE; a6af26db…, n 12, n5 4/0, one phase, θ constant, drops at 1→2 and 3→4); its weaker form "≤ 1 drop per fallback-free run"
+  FALSE, experiments/new/box35/instances/onerun_cex_n32.pg (L-NEW successor 15; 70832fcb…, n5 8/0). The open item "(h) restarted by a
+  fallback at an H1 ∧ ¬H2 state that moves τ(o) out of R" OCCURS: experiments/new/box35/instances/fbrestart_cex_n12.pg (35223b6c…, n5
+  5/2) and fbrestart_cex_n24.pg (a0aacfba…, 23/3) (L-NEW successor 15, SPEC trace); REFEREE-2 also saw it with its own N5 (j5_n16).
+- Honest limits: (i) SUBCLASS 𝒞^1O, inside a phase. (ii) FREEZE′ and X-RUN′ rest on R32. (iii) X-RUN′ is per fallback-free run and
+  in terms of t_Q; the H1-toggle count, f per phase, (L1) and fallbacks outside scope runs are OPEN here, so G-N5-TIME stays open.
+  (iv) DATA is thin for FREEZE′'s new content: no n-state H3 window containing a ¬H1 state with a later state of its phase was found by
+  either referee (REFEREE-2's climbs reached 668,549 such windows at n ≤ 10, all ending at the phase end; REFEREE's FIT=frz climbs (random starts and three library seeds)
+  reached none). (v) Lane work after the pin (P-N5-TOG, CN-LAST, box 36) is not part of the claims; its box-35 instances appear only as
+  DATA under Refuted.
+- Data (DATA, not proof; one Odd choice vertex asserted on every game): REFEREE l2_probe.py and companions (own code): library 258
+  files (319 phases, 7,155 states) and random 30,000 + 15,000 games, 0 failures of §1-§7; P^c_ℓ on windows containing ¬H1 states:
+  library 491 windows / 2,097 checks, random 267,221 windows / 641,105 checks, 0 failures. REFEREE-2 (own code): 27,444 batch runs and
+  6 climbs (2,416,844 runs), 0 violations; G′ frames checked per vertex at H3 ∧ ¬H1 states; P^c_ℓ on H3 windows with ¬H1 states about
+  17 M path comparisons (11.3 M exhaustive).
+- Signatures: REFEREE docs/referee/R-N5-L2.md (referee 7626354, successor 7; addenda 524d93f (climbs), d3ccb9c (fixes 7a110bca
+  checked); §C ce24106 + 0363a7b): H3-CONST, G′, FREEZE′, R-CONST, X-RUN′ SIGNED; H2-STICK SIGNED WITH GAP L2-1; H1-INT SIGNED WITH GAP
+  L2-2; both closed. REFEREE-2 docs/referee-2/R2-N5-L2.md (referee-2 388caf6, successor 7; §C 21429c9): H3-CONST, H2-STICK
+  (N-L2-1), G′, FREEZE′, R-CONST, H1-INT, X-RUN′ (N-L2-2) SIGN; notes N-L2-1..3; in §C adopts REFEREE's labels and accepts L2-2 (missed).
+  §C: no verdict differs. Joint gap map (REFEREE §C, REFEREE-2 §C), 4 rows: L2-1 = N-L2-1 (wording, closed); L2-2 (wording, closed;
+  REFEREE only); N-L2-2 (X-RUN°, accepted); N-L2-3 (DATA thin, FREEZE′).
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
+### R34 [refereed-only] N5 on one-Odd-choice games: H1-toggles per phase are polynomial (L-MONO, Z-COUNT, Theorem TOGGLE, TOGGLE-COUNT), so crossings in SN prefixes per phase are polynomial in f (X-SN-PHASE) and (h)-runs per phase are at most 1 + T + f (RESTARTS) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C43.md, checker 36905e57)
+- Object (packet P-N5-TOG, added at l-new 3e45aed, pinned trunk d3daae1, unchanged during review): docs/new/P-N5-TOG-box35.md, sha1
+  7dfda8c88a0e9b752156f4faec726d8dccc20ccb (L-NEW successor 15, Opus 5.5). The referees' repairs are collected by the lanes in
+  docs/new/P-N5-TOG-fixes-box35.md (l-new b5b8e66, sha1 f15b58dddf232d810fab277010e29ae5187d382d, L-NEW successor 15: G-TOG-1, N-TOG-1)
+  and docs/new/P-N5-TOG-fixes2-box35.md (l-new e570bc6, sha1 698539a9e525c467a46ebd59b1785dc0be98c113, L-NEW successor 16: TOG-1 =
+  G-TOG-1 and TOG-2 = N-TOG-1 with REFEREE's tighter record line; the DATA attribution of G-TOG-1; §7's DROP-LEN line out of date);
+  both on trunk; repairs only.
+  Setting as in RESULTS R30-R33 (𝒞^1O; phase with λ_Ξ and τ constant; c := λ(o), U := λ^{-1}(c); H1; next_k(v) := σ_k(v) for Even v,
+  σ̄_k(v) for Odd v; (M) := RESULTS R15 (a)). An H1-TOGGLE is a transition inside a phase at which H1 changes; a DROP is one from H1 to ¬H1.
+  Z_k := {(v, length of Ξ_k(v)) : v ∈ U, P(Ξ_k v) = ∅}.
+- Claims signed (both referees "(Opus 5.5, D15)", L37):
+  (a) Fact (F): if x lies on the cycle of c's H_k-play and λ_k(c) = c, then Ξ_k(x) = (c, ∅, dist_k(x → c)); if x ≠ c and λ_k(x) = c,
+      then Ξ_k(x) = x ⊕ Ξ_k(next_k x). (Separately signed by REFEREE-2; used by REFEREE in its setting.)
+  (b) Lemma L-MONO: for c = λ(o) ≠ o in a phase, the length L_k of the cycle of c's H_k-play is non-increasing if Ω(c) is even and
+      non-decreasing if Ω(c) is odd, strictly whenever σ(c) changes; so σ(c) changes at most n − 1 times per phase.
+  (c) Lemma Z-COUNT: Z_k ≠ Z_{k+1} at no more than |U|(n + 1) transitions of a phase.
+  (d) Theorem TOGGLE: at an H1-toggle k → k+1 inside a phase with c ≠ o, if Z_{k+1} = Z_k then next_{k+1}(c) ≠ next_k(c), so c ∈ V_E
+      and σ(c) changes.
+  (e) Corollary TOGGLE-COUNT: H1-toggles per phase ≤ T := |U|(n + 1) + n − 1 ≤ n² + 2n − 1, and drops ≤ ⌈T/2⌉; no toggles when c = o.
+  (f) Corollary X-SN-PHASE (premise RESULTS R33 X-RUN′, hence R32): X_SN per phase ≤ 13(d_o + 1)n³(f + 1 + T) + T, with no hypothesis
+      on H1. X_SN also counts the S4a crossing from each run's last SN-prefix state out of the prefix, which X-RUN′ (a) does not; X-RUN°
+      gives ≤ 13(d_o + 1)n³ − 1 crossings per H1 run, and the slack covers it, so the stated bound stands (TOG-1 = G-TOG-1, accounting,
+      closed). The packet cites X-RUN′ as "P-N5-L2 §11"; it is §7 (TOG-2 = N-TOG-1, citation, closed).
+  (g) Corollary RESTARTS (premises RESULTS R33 H2-STICK, H3-CONST and RESULTS R30 H3H2): a phase has at most 1 + T + f maximal (h)-runs;
+      a restart is an H1-toggle or an Even S4c fallback.
+- Not signed (packet §7): CONJECTURE DROP-LEN is listed there as open; it is FALSE (RESULTS R33, droplen_cex_n12), and so is its
+  per-run form (onerun_cex_n32, RESULTS R33). OPEN: (L1), the f ↔ X loop, K.
+- Honest limits: (i) SUBCLASS 𝒞^1O, inside a phase. (ii) X-SN-PHASE and RESTARTS are polynomial GIVEN f; f per phase, (L1) and the
+  out-of-SN fallbacks are OPEN, so G-N5-TIME stays open. (iii) DATA is thin against the bounds: at most 6 toggles per phase in the
+  library and 5 in climbs against T ≈ n²; max X_SN 91 per phase (library). (iv) TOG-1's boundary crossing occurs on the SPEC trace
+  (REFEREE: 26 library files, one per file, e.g. experiments/n5-exhaustive/instances/b4_cyc6_0.pg 0→1, and 88 random; REFEREE-2 19 of
+  its 239 files (the report text says 238); L-RED 26 files, e.g. experiments/red/so/instances/so_sor5_n24.pg 21→22); REFEREE-2's counts 310 batch / 246,038 climb
+  come from its own N5 (another S4a optimum) only. (v) Lane work after the pin (box 36, P-N5-SCOPE) is not part of this entry.
+- Data (DATA, not proof; one Odd choice vertex asserted on every game): REFEREE tog_probe.py, tog_climb.py (own trace = n5.run):
+  library 272 files, random 30,000 + 15,000 games, 2 climbs (714 improvements re-checked), 0 failures; library toggles 29, random 329 +
+  132, each with Z changed or σ(c) switched; c = o phases have no toggle. REFEREE-2 (own code): 31,434 batch runs (239 files and
+  random) and 4 climbs (1.75 M runs), 0 violations; every toggle with Z unchanged changed next(c) at an Even c. Re-runs of
+  onerun_cex_n32 (8/0), fbrestart_cex_n12 (5/2), fbrestart_cex_n24 (23/3) agree (REFEREE, REFEREE-2, Lead); Lead re-ran b4_cyc6_0 (2/0)
+  and so_sor5_n24 (23/0), Oink zlk OK strategies verified, one Odd choice vertex.
+- Signatures: REFEREE docs/referee/R-N5-TOG.md (referee fff6e62, successor 7; §C 49dc13b): L-MONO, Z-COUNT, TOGGLE, TOGGLE-COUNT,
+  RESTARTS SIGNED; X-SN-PHASE SIGNED WITH GAPS TOG-1, TOG-2 (closed). REFEREE-2 docs/referee-2/R2-N5-TOG.md (referee-2 faabe71, successor
+  7; Addendum A 16d27d1; §C 8681e3f): (F), L-MONO, Z-COUNT, TOGGLE, TOGGLE-COUNT, RESTARTS SIGN; X-SN-PHASE SIGN WITH GAPS G-TOG-1;
+  note N-TOG-1. §C: no verdict differs. Joint gap map (REFEREE §C, REFEREE-2 §C), 2 rows: TOG-1 = G-TOG-1 (accounting, closed); TOG-2 =
+  N-TOG-1 (citation, closed).
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).

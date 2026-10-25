@@ -37,18 +37,42 @@ Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2
 
 ## Resume point (successor 5, box 10; session_018GWc3YukyLgRhrrYJdrzHm; Lead GO 09:33Z)
 - (a) DONE: docs/si/P-N5-NJB-fixes-box9.md (l-si 32c2393, sha1 6a337748): NJB-1, NJB-2, NJB-L1 (the climb data were summed under one name).
-  R2-N5-NJB not seen yet; its items go to a fixes2 file.
-- (b) IN PROGRESS: docs/si/N5-RL-box10.md. New angle: Even's nominal game G_τ vs the robust Ξ ("blocked" edges).
-  - PROVED: BL-FORM (blocked edges are F → R̄, in the reverse window), CONF-MONO, EQ-END (with L-NEW's CN-LAST).
+  R2-N5-NJB (referee-2 8681e3f2) arrived later: docs/si/P-N5-NJB-fixes2-box9.md (G-NJB-1 survivor form SUPERSEDES part 1's (b), (c)
+  texts; N-NJB-1 withdrawn; concordance). Joint: (5) NOT SIGNED, (5′) and survivor (c) signed by both.
+- (b) docs/si/N5-RL-box10.md. Angle: Even's nominal one-player game G_τ (Odd fixed to e* = τ(o)) against the robust Ξ.
+  - BLOCKED edge = W-improving but not a gate.
+  - PROVED:
+    - BL-FORM (blocked edges are F → R̄, in the reverse window, cycle node c);
+    - R-SAME; CONF-MONO; the merge-point form of a window gate;
+    - EQ-END (with L-NEW's CN-LAST: the EQ branch of RISE-LAST is harmless).
   - PROVED CONDITIONAL on (P) (VJ00 Lemma 5.8 "1 ⇒ 2", R18's premise):
-    - BL (a THR fallback has a blocked edge; free values = confined optimum; the threat is nominally deficient);
-    - FREE-FREEZE (after a THR fallback k0, a free value whose play stays in F_k0 is frozen exactly for the rest of the phase);
-    - Proposition EV (an NJB violation's gate target z has its play in the k0-evicted region).
+    - BL (a THR fallback has a blocked edge; free values = confined optimum; threat deficient);
+    - FREE-FREEZE (after a THR fallback k0, a free vertex whose play stays in F_k0 is frozen exactly for the rest of the phase);
+    - EV and EV+ (in an NJB violation both z's play and the new threat's play meet Ev := F_{k0+1} ∖ F_k0);
+    - TEV-RED (the last Ev vertex e on the threat's play is Even, u_e = σ_k0(e) has a low route, and at the ENT fallback u_e ∈ Ev ∩ F_k).
+  - CONJECTURE TEV (after a rise the threat's play avoids Ev; with EV+ it implies NJB). DATA: 0 of 117 post-rise states.
   - FALSE (DATA): BL-X.
   - DATA: after a rise there is never a fallback anywhere later in the run.
-  - Scripts: experiments/si/riselast/ (rlprobe, rltrace, blocked, blf, ffreeze, rlclimb). Climbs rl_a/b/c (seeds 10001-10003, 40 min)
-    were running at 10:2xZ.
-- Trap: `pgrep -f <pattern>` inside an until-loop matches the loop's own command line and never ends. Wait on files instead.
+  - Scripts and logs: experiments/si/riselast/ (rlprobe, rltrace, blocked, blf, ffreeze, threv, rlclimb).
+  - Climbs rl_a/b/c (seeds 10001-10003, 40 min, done): 0 violations; best score 7 (never a window gate after a rise); bests pinned
+    and verified (Oink zlk OK).
+- Packet P-N5-RL (docs/si/P-N5-RL-box10.md, l-si 01d69ac, sha1 0a3c70cb) FROZEN, sent to the Lead 11:17Z. Never edit it; fixes go in a
+  new file.
+- Box 10b: docs/si/N5-P1-box10.md, Lemma P1 = (P) for one-player games, PROVED (L-SI succ. 5), elementary.
+  - It uses path multisets and no VJ00 lemma. It discharges R18's G-1OA-4 and P-N5-RL's condition, once signed.
+  - DATA: experiments/si/p1/p1check.py, 0 violations.
+- NEXT (for me or a successor), in order:
+  0. Lemma P1 to the referees (Lead decides packet form).
+  1. Exclude TEV-RED's residual configuration: e and u_e both evicted at k0 and both free at k; e re-routed to a frozen f of class
+     (c, A); the threat passes e after collecting B ∖ A. Natural sub-case: e an evicted tail with target f.
+  2. RISE-LAST at levels ℓ < L, or after r ≤ L (no ENT-SHAPE bit argument there).
+  3. BL makes every THR fallback need a blocked edge. Is there a count of "blocked → unblocked" events per scope run? It would be a
+     counting route that avoids NJB.
+- Traps:
+  - `pgrep -f <pattern>` inside an until-loop matches the loop's own command line and never ends. Wait on files instead.
+  - (P) is a premise, not a landed result. Label every use of BL / FREE-FREEZE as CONDITIONAL.
+  - Once a file's sha1 is sent to the Lead it is CITED and FROZEN (Lead 11:30Z). Further text goes in a NEW file. Frozen now: NJB fixes
+    6a337748, fixes2 647386fb, P-N5-RL 0a3c70cb, N5-P1-box10 5fb4f908.
 
 ## Resume point (successor 4, box 9; PARKED 2026-10-25 ~07:55Z per Lead 07:10Z; LANE-RESTART step 1; session_019zCLqPUCjkJxMD4vZoJ8TA)
 Handover check 1cef5052 (Lead 5/5). Box 9 write-up: docs/si/N5-C-box9.md §1-§13. Code: experiments/si/coarse/ fbw.py, reltrace.py,

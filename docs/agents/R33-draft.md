@@ -1,4 +1,4 @@
-# Draft RESULTS R33 (Lead, 2026-10-25 10:12Z by date -u) (rev. 10:27Z: C42 E-1, E-2, N-1, N-2) — to CHECKER C42
+# Draft RESULTS R33 (Lead, 2026-10-25 10:12Z by date -u) (rev. 10:27Z: C42 E-1, E-2, N-1, N-2) — to CHECKER C42 — LANDED in RESULTS Results 10:37Z (CHECKER C42 e8a1daf + Addendum 639ff523 PASS), after R32
 
 ### R33 [refereed-only] N5 on one-Odd-choice games: how (h)-runs end and restart (H3-CONST, H2-STICK), the frames at H3 states without H1 (Lemma G′), the freeze through ¬H1 states (FREEZE′), R̄ constant at ¬H1 states (R-CONST), the single empty-path interval (H1-INT), and crossings per fallback-free run without an H1 hypothesis (Theorem X-RUN′) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C42.md, checker PENDING)
 - Object (packet P-N5-L2, added at l-new 1afccb5, pinned trunk 04b3f48, unchanged during review): docs/new/P-N5-L2-box34.md, sha1

@@ -6,7 +6,7 @@ successor 15. Written 2026-10-25 10:19Z onward by date -u.
 Every verdict is labelled (Opus 5.5, D15). Labels (D18/L40): PROVED (by whom) / CONJECTURE / OPEN. Independent of REFEREE-2:
 docs/referee-2/R2-N5-TOG.md not read.
 Premises from my own lane:
-- R-N5-L2 (X-RUN′, H2-STICK with L2-1, H3-CONST), signed by both referees, §C at 5e85c706.
+- R-N5-L2 (X-RUN′, H2-STICK with L2-1, H3-CONST), signed by both referees, §C at ce241061 (corrected from 5e85c706, which is the NJB §C; CHECKER N-2).
 - R-N5-FRZ (X-RUN, X-RUN°'s source), signed by both, at CHECKER as R32.
 
 ## Verdicts
@@ -152,6 +152,58 @@ Fixes-file lines (one per gap):
 - PROVED (L-NEW successor 15; signed by REFEREE (Opus 5.5, D15), second referee pending), on 𝒞^1O inside a (λ_Ξ, τ) phase:
   - L-MONO, Z-COUNT, TOGGLE, TOGGLE-COUNT, RESTARTS;
   - X-SN-PHASE (TOG-1, TOG-2; premise X-RUN′ / R32).
+- FALSE (DATA): DROP-LEN, "≤ 1 drop per fallback-free run", "a fallback at H1 ∧ ¬H2 never takes τ(o) out of R".
+- OPEN: (L1), f ↔ X, K, G-N5-TIME.
+- Not a TARGET.md claim; the TARGET.md diff is empty.
+
+Signed: REFEREE successor 7 (Opus 5.5, D15).
+
+## §C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-TOG.md, referee-2 faabe71 + Addendum A 16d27d1, on trunk). REFEREE successor 7, written 2026-10-25 10:33Z by date -u
+Signature (Opus 5.5, D15). I opened R2-N5-TOG only after my report (fff6e624) was pushed. Also read: L-NEW's fixes file
+docs/new/P-N5-TOG-fixes-box35.md (l-new b5b8e66, on trunk), sha1 f15b58dddf232d810fab277010e29ae5187d382d (checked with sha1sum).
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| (F) | checked inside §1-§3 (no separate row) | SIGN | signed by both |
+| L-MONO, Z-COUNT, TOGGLE, TOGGLE-COUNT, RESTARTS | SIGNED | SIGN | signed by both |
+| X-SN-PHASE | SIGNED WITH GAPS TOG-1, TOG-2 | SIGN WITH GAPS G-TOG-1, N-TOG-1 | signed by both; TOG-1 = G-TOG-1, TOG-2 = N-TOG-1 |
+| §7 | not signed | not signed | — |
+- No verdict differs. Both gaps were found independently, with the same repair.
+
+### C.2 Item by item
+- TOG-1 = G-TOG-1 (X_SN also counts the S4a crossing from each SN prefix's last state; the bound survives by the slack inside X-RUN°'s
+  count).
+  - My fixes line gives per run ≤ (t_Q + 1)(13(d_o + 1)n³ − 1) + t_Q + 1 = 13(d_o + 1)n³(t_Q + 1). REFEREE-2's line and the fixes file
+    give ≤ 13(d_o + 1)n³(t_Q + 1) + t_Q.
+  - Both are valid and both sum to the stated bound. The fixes file's §1 carries the full arithmetic, which I re-checked:
+    7(d_o + 1)n³ − 6(d_o + 1)n² − n + 1 ≥ d_o + 1 for n ≥ 1. CLOSED.
+- TOG-2 = N-TOG-1 ("§11" → "§7"; §11 was N5-REL-box34's numbering). The fixes file carries it. CLOSED.
+- DATA attribution, as the Lead asked:
+  - My counts come from MY OWN TRACE: u1_probe.trace, the n5.py loop recorded, asserted equal to n5.run's iteration and fallback
+    counts on every game. That is the SPEC trace.
+  - My "26 library" is 26 S4a crossings out of an SN prefix in 26 library files, one per file. The files include b4_cyc6_0, b4_n4all_cyc3_0,
+    b5_n5_cyc4_0, n4_thch_0, epsseg_cex_n16/n48, exitr_cex_n16/n48, so_th_n32 and zcl_rx_n32. This equals L-RED 16's 26 files.
+  - REFEREE-2's SPEC count of 19 is over its 238-file TOG batch set; my library is 272 files.
+  - My "88 random" (62 + 26) is likewise from my SPEC trace on rand / randb.
+  - REFEREE-2's 310 / 246,038 come from its own N5 with other S4a optima (Addendum A). That is a different trace, and the statements
+    agree.
+- (F) as its own row (REFEREE-2 only): I checked (F) at each use (L-MONO, TOGGLE Step 1). No difference.
+- Data agree. In all data of both referees: TOGGLE's "Z unchanged ⇒ next(c) changes at an Even c" holds every time, and the counts are far
+  below T. REFEREE-2's climbs reached at most 3 toggles per phase in its variant, mine 5 (SPEC), and the library 6.
+- My §7 note (DROP-LEN listed as a CONJECTURE although FALSE): the Lead records it in the R-entry. No row needed.
+
+### C.3 Joint gap map (one fixes-file line per row)
+| row | REFEREE | REFEREE-2 | kind / status | fixes-file line |
+| --- | --- | --- | --- | --- |
+| 1 | TOG-1 | G-TOG-1 | accounting, closed (occurs on the SPEC trace: 26 library files) | §5: fixes f15b58dd §1 (C_P + 1 ≤ 13(d_o + 1)n³(t_Q + 1) + t_Q via X-RUN°'s count ≤ 13(d_o + 1)n³ − 1 per (h)-run) |
+| 2 | TOG-2 | N-TOG-1 | citation, closed | §0, §5: "P-N5-L2 §11" → "P-N5-L2 §7" (fixes f15b58dd §1) |
+
+### C.4 Joint label (D18/L40)
+- PROVED (L-NEW successor 15; REFEREE and REFEREE-2, Opus 5.5, D15), on 𝒞^1O inside a (λ_Ξ, τ) phase, pending CHECKER:
+  - (F), L-MONO, Z-COUNT, TOGGLE, TOGGLE-COUNT;
+  - RESTARTS (premises H2-STICK, H3-CONST: P-N5-L2, both referees);
+  - X-SN-PHASE (rows 1-2; premise X-RUN′, hence R32).
 - FALSE (DATA): DROP-LEN, "≤ 1 drop per fallback-free run", "a fallback at H1 ∧ ¬H2 never takes τ(o) out of R".
 - OPEN: (L1), f ↔ X, K, G-N5-TIME.
 - Not a TARGET.md claim; the TARGET.md diff is empty.

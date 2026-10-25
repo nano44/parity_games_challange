@@ -1,6 +1,74 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Handover check (successor 8), written 2026-10-25T11:33Z by date -u (Opus 5.5 under D15; session_01YRPeH49wEXXq7vW5qK35Gz)
+1. Branch, head, distance to trunk. Commands: `git status`; `git fetch origin`; `git ls-remote --symref origin HEAD` (trunk =
+   claude/vibrant-johnson-nxvvxo at 2fb698da); `git rev-parse HEAD origin/claude/referee <trunk>`;
+   `git rev-list --left-right --count HEAD...<ref>`; `git merge --ff-only origin/claude/referee`; `git merge --no-ff <trunk>`.
+   - Local claude/referee started STALE at 73b46eb8 (0 ahead / 1254 behind origin/claude/referee 560ff4c4; 1283 behind trunk).
+   - Fast-forwarded to 560ff4c4 (successor 7's handover): then 0 ahead / 29 behind trunk 2fb698da.
+   - Merged trunk with --no-ff: d0a950fd, 1 ahead / 0 behind before this commit; 2 ahead / 0 behind after it.
+   - Packet object: `git show 2fb698d:docs/si/P-N5-RL-box10.md | sha1sum` = 0a3c70cbf873b2e011a5a00be54d38926f7861f1 (matches the brief;
+     same on origin/claude/l-si, last touched there at 01d69ac3).
+   - Oink: scripts/setup_oink.sh built 8fbf0a7 into tools/oink/build, exit 0.
+2. Open work and next step (successor 7 HANDOVER above; Lead brief 11:36Z):
+   - P-N5-SCOPE §C: my report R-N5-SCOPE.md (fb6089b / 560ff4c) all SIGNED, no gaps. `git ls-tree --name-only origin/claude/referee-2
+     docs/referee-2/` shows R2-N5-SCOPE.md exists, but head 1f8a9109 calls it a "draft ... climbs pending" (names and commit subject only;
+     contents not read). Next: wait for the Lead's word that the final R2-N5-SCOPE exists; then §C in docs/referee/R-N5-SCOPE.md.
+   - P-N5-RL (after GO): docs/si/P-N5-RL-box10.md (sha1 0a3c70cb…, pin 2fb698d, L-SI succ. 5). Next: read packet §0 (P), RESULTS R18
+     and R25-R35, SPEC; own probe docs/referee/scratch/rl_probe.py (asserts exactly one Odd vertex of out-degree > 1); check that each
+     "conditional" label is exact (conditions used but not declared = gaps); report docs/referee/R-N5-RL.md. No R2-N5-RL read before.
+3. GAPS rows (`grep -n G-N5-TIME docs/GAPS.md`): G-N5-TIME | major | owner L-NEW (L-LIT T22; referees later) | **open** | N5 SSI-GLOBAL
+   makes polynomially many iterations (gauntlet step 4). Latest UPDATE 11:18Z: R34 (P-N5-TOG) LANDED; "Open as before; in review:
+   P-N5-NJB (CHECKER), P-N5-SCOPE (both referees)". Related, closed: G-N5-TERM (R15).
+4. Owner rulings verbatim (`grep -n -F` in docs/DECISIONS.md) with DECISIONS-INDEX status (`grep -nE "^\| *D(1|15|18) *\|"`):
+   - D1 (index: **active**, 2026-10-14; DECISIONS.md l.7): "A claimed polynomial algorithm is far more likely to be wrong than right.
+     Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+   - D15 (index: **active**, 2026-10-22; l.278): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous,
+     reason about it"
+   - D18 (index: **active**, 2026-10-24; l.333): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+     connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+     where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+     open problems."
+5. Trap found: a DRAFT of the second referee's report already sits on origin/claude/referee-2 under the final file name
+   (docs/referee-2/R2-N5-SCOPE.md, head 1f8a9109 "draft ... climbs pending"). "The file exists" is not "the report is final": a §C
+   written against it could compare with verdicts that change. I wait for the Lead's word and pin the R2 SHA I compare against.
+   Also again: the clone started stale (73b46eb8, 1254 behind origin/claude/referee); and trunk is not `main` but the remote HEAD
+   claude/vibrant-johnson-nxvvxo (`git ls-remote --symref origin HEAD`).
+
+## HANDOVER (successor 7 -> successor 8), written 2026-10-25T11:09Z by date -u (stamp corrected from an estimated 11:10Z), context ~530k by the Lead's WATCHDOG (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
+Branch claude/referee. Start: git fetch origin claude/referee claude/vibrant-johnson-nxvvxo; CHECK HEAD == origin/claude/referee (the
+container started stale at 73b46eb8 for successors 5, 6, 7); merge trunk with a normal merge. Push ONLY with scripts/push.sh > file 2>&1;
+echo $?. Build Oink first (scripts/setup_oink.sh). Never read docs/referee-2/R2-<packet> before your own report is pushed.
+### DONE (successor 7; all pushed; every report has §C unless noted)
+| packet | report | my verdicts | §C / state |
+| --- | --- | --- | --- |
+| handover check | notes/REFEREE.md "Handover check (successor 7)" (3e86cb10) | 5/5 | — |
+| P-N5-L2 (R33 landed) | R-N5-L2.md 7626354e (+524d93f5 climbs, d3ccb9cd fixes check) | all SIGNED; L2-1 (τ(o) = o wording), L2-2 (H1-INT (b) phase exits, exitdrop_n3); FINDING DROP-LEN FALSE (droplen_cex_n12) | §C ce241061 (4 rows, no verdict differs) |
+| P-N5-FRZ (R32) | predecessor's R-N5-FRZ.md; my §C 1f13a6f9 + C.6 9ad6bfba | N-FRZ-1 MISSED by my lane, accepted; BLOCK vacuous in all data | converged |
+| P-N5-NJB (R35 waits on L-SI fixes2) | R-N5-NJB.md 524d93f5 | MINSET NJB-1 wording; G-NJB-1 MISSED by me (literal (c) = NJB); ENT-SHAPE (5) NOT SIGNED, (5′) SIGNED (NJB-2) | §C 5e85c706 + C.7 49dc13bf: converged, REFEREE-2 withdrew N-NJB-1 |
+| P-N5-TOG (R34 at CHECKER) | R-N5-TOG.md fff6e624 | all SIGNED; X-SN-PHASE WITH TOG-1 (crossing out of the SN prefix; slack), TOG-2 (§11 → §7) | §C 49dc13bf (2 rows); fixes f15b58dd + fixes2 698539a9 consistent |
+| P-N5-SCOPE (pin 8998ee6, sha1 c3f5ed37) | R-N5-SCOPE.md (this commit) | all SIGNED, no gaps | §C OPEN: when REFEREE-2 successor 8's R2-N5-SCOPE exists |
+### IN FLIGHT / NEXT
+- SCOPE §C (Lead will say when R2-N5-SCOPE exists). My climbs scope_climb.py seeds 91/92 finished: 0 failures over 766,585 candidates,
+  maxima (3, 0, 3) / (4, 0, 4); recorded in R-N5-SCOPE §8.
+- Nothing else open on my side. CHECKER N-2 (R-N5-TOG l.9 cited the L2 §C as 5e85c706; it is ce241061) fixed in this commit.
+### Tools (docs/referee/scratch/, own code; every probe asserts exactly one Odd choice vertex where 𝒞^1O is meant; own trace = n5.run)
+l2_probe.py (L2 checks), l2_pc.py (P^c_ℓ path enumeration, NEG=1 control), l2_exitdrop.py, l2_climb.py (frz|tog|h2s), l2_oink.py (N5 regions
+vs Oink --zlk -v), njb_probe.py (RDROP, PL (c′), MINSET, NORF, ENTP pattern), tog_probe.py + tog_climb.py, scope_probe.py (KEY, WCH, SC,
+FBI, NH1, CN-LAST; `gen` = general games) + scope_climb.py; frz_probe.py has §C counters (BLOCK_S4a_leaves, LEAVE_h_afterF, XRUN_*).
+### Traps and lessons (keep)
+- Stale local branch at start; peers' stamps are not my clock (Lead 08:07Z vs my 08:04Z); order by git, stamp by date -u at the moment
+  of writing. I estimated two §C stamps and one notebook stamp and had to correct them: run date -u right before the header.
+- An "iff" whose one side is forced nonempty by a sibling clause is a disguised conjecture (G-NJB-1); data on it is vacuous.
+- "At some S4a step in (k0, k)": check where the vertex is AT k0; fallback evictions sit at the boundary (NJB-2).
+- "In a phase" clauses about k and k+1: test phase-exit transitions (L2-2).
+- Accounting with "both ends in P" versus counts "at states of P": the boundary transition recurs (FRZ-3, TOG-1).
+- Check SHAs you cite against git log (I cited the NJB §C SHA for the L2 §C: CHECKER N-2).
+- Random 𝒞^1O games are nearly vacuous for freezes, blocks, dirty intervals; name the thin spots; library + climbs carry the evidence.
+- Bash: never pkill -f / pgrep -f with the pattern in the same shell.
+
 ## Resume point (successor 7), written 2026-10-25T09:07Z by date -u (stamp corrected from 09:05Z) (Opus 5.5, D15; session_01TWT1diK1Z9x2eK56iBVbZu)
 - Handover check 3e86cb10 (Lead 5/5, 08:20Z).
 - P-N5-L2 (pin 04b3f48, sha1 cbea0739…): docs/referee/R-N5-L2.md (7626354e; climb addendum 524d93f5).
@@ -19,6 +87,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   - ENT-SHAPE (5) NOT SIGNED as stated: NJB-2, the level-L rise of z may sit at the fallback k0 (z ∈ R_{k0} evicted). Seen
     locally 1,159× in the library, hand-checked on cycelim_cex_n32 fb 15. (5′) signed.
   - Tool: scratch/njb_probe.py. D_M = 0 everywhere (thin).
+- §Cs (09:45-09:46Z): L2 §C ce241061 (earlier written as 5e85c706 = NJB §C; corrected) (no verdict differs; L2-2 REFEREE-only; N-L2-2 via Lemma X-RUN° accepted). NJB §C 5e85c706: G-NJB-1
+  MISSED by me (literal MINSET (c) = NJB; survivor form signed); ENT-SHAPE (5) VERDICT DIFFERS (N-NJB-1 assumes z ∈ F_{k0}; literal (5)
+  NOT SIGNED by me, (5′) signed); REFEREE-2 ruling requested. Stamps first estimated, corrected 0363a7be.
+- P-N5-TOG (pin d3daae1, sha1 7dfda8c8…): docs/referee/R-N5-TOG.md fff6e624. All SIGNED; X-SN-PHASE WITH TOG-1 (X_SN counts the crossing
+  out of the SN prefix; slack) and TOG-2 (§11 → §7). Tools scratch/tog_probe.py, tog_climb.py. NEXT: TOG §C when R2-N5-TOG exists.
+- Lesson: an "iff" whose one side is forced by a sibling clause (Mn_{t+1} ≠ ∅ by (a)) is a disguised conjecture; data on it is vacuous.
+- Lesson: never estimate a stamp; run date -u right before writing the header.
 - NEXT: §C for L2 and NJB when the R2 reports exist; L-NEW / L-SI fixes files.
 - Lessons:
   - A lemma that says "at some S4a step in (k0, k)" must exclude the boundary fallback transition. Check where the vertex is AT k0 (NJB-2).

@@ -251,3 +251,8 @@ lines verbatim, and lane item NJB-L1 (data only).
 - Not a TARGET.md claim; the TARGET.md diff is empty.
 
 Signed: REFEREE successor 7 (Opus 5.5, D15).
+
+### C.7 Converged state (written 2026-10-25 10:33Z by date -u, after REFEREE-2 §C.2 / §C.3a, referee-2 21429c9 + 16d27d1)
+- REFEREE-2 withdraws N-NJB-1 as a proof of (5): it assumed z ∈ F_{k0}.
+- Both referees: ENT-SHAPE (5) as stated NOT SIGNED, (5′) SIGNED; literal MINSET (c) NOT SIGNED, survivor-(c) SIGNED.
+- No verdict differs on P-N5-NJB. Joint label as in C.6, with (5′) now signed by both.
