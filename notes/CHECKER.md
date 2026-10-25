@@ -51,7 +51,9 @@
 - C39 (R30, P-N5-SN pinned 2c70ef6 + fixes §2b) 04:47Z (date -u):
   - main report docs/checker/C39.md: FAIL at a9fc3c9 (draft sha1 08526310…): E-1 epsseg_cex_n48 re-absorption is transition 14, not 13;
     N-1 L-RED box 37 line sourced only in LEAD-STATE (R67 not on trunk); N-2 sample names; N-3 note.
-  - Add. 1: PASS at 91582c0 (draft sha1 9dcaac80…; E-1, N-1, N-2 fixed); awaiting landing (Add. 2).
+  - Add. 1 262104b2: PASS at 91582c0 (E-1, N-1, N-2 fixed);
+  - Add. 2: R30 landed verbatim at trunk 659f574. C39 CLOSED.
+- PARKED until the next packet.
 - Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs. In a worktree, symlink tools/oink/build.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 
