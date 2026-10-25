@@ -1299,3 +1299,4 @@
     - R-N5-LV2 b454ca3: all SIGNED with conditions, no gaps. Note LV2-N1. It accepts N-LV-1 (missed in its LV report).
   - OWNER-DESK relayed the owner's words "Give me a status update" (answered by OWNER-DESK). On its request I refreshed the NOW header and the M4 row (stale since 2026-10-24).
   - REFEREE 9 now writes the NEB, LV and PFZ §Cs against R2 a4516df / b1038be / 37e55fd. The PFZ-ext and LV2 §Cs wait for REFEREE-2 10.
+- 16:29Z Lead: merged referee-2 5ca9ac3 (it includes a769ff5, REFEREE-2's NEB and LV §Cs: identical verdicts, empty gap maps; REFEREE's NEB-N1..N5 and LV-N3 accepted, plus 937535e) and checker 78604b3. Handover checks: REFEREE-2 10 and CHECKER 7 both 5/5 re-measured, both GO. REFEREE 9's NEB and LV §Cs are still pending; after them, the NEB fixes go to L-NEW 19 and the LV fixes to L-SI 8.
