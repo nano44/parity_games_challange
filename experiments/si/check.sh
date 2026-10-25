@@ -6,6 +6,8 @@ set -euo pipefail
 cd "$(dirname "$0")"
 python3 -I xcheck.py --tiny | tail -1 | grep -q "XCHECK PASS"
 echo "xcheck --tiny: PASS"
+python3 -I coarse/levcheck.py | grep -q "LEVCHECK PASS"
+echo "coarse levcheck (level ∞ sentinel): PASS"
 if command -v g++ >/dev/null; then
   # compile to a separate name: the lane's long runs use ./vjfast and must not see it replaced mid-run
   g++ -O2 -std=c++17 -o vjfast_check vjfast.cpp && FAST_BIN=./vjfast_check python3 -I xcheck_fast.py --games 40 --nmax 10 | tail -1 | grep -q "XCHECK-FAST PASS" && echo "vjfast vs si.py (40 games): PASS"
