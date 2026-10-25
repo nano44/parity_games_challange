@@ -1436,3 +1436,4 @@
   - R43 LANDED in RESULTS (CHECKER C52 1c86563f + Addendum 1 707b402e); cmp OK against draft lines 3-52; GAPS UPDATE 19:40Z.
   - L-RED 17 PARKED: no kill of FB-CAP, FB-POLY, FB-PHASE or FX in 8.6 M runs at n 5 and 6.5 M at n 4 (all start pairs). FB-CAP equality at |U| = 4: fbcap_eq_u4_n11 (39beb8b8; trivial).
   - Created L-RED successor 18 (session_01D6HqejxBahRiMjurWjAtzT).
+- 19:45Z Lead: merged l-new 419308f (L-NEW 21 handover 5/5; GO) and referee-2 b621f9a (R2-N5-PHI: Lemma Φ (a)-(c) and Φ-1O (a), (b) all SIGN, no gap; R18's S1/S2 do not threaten U-monotonicity; λ and λ^U checked, 3.2 M checks each). REFEREE-2 has also finished its NHN paper check (all SIGN); its FB-POLY report is due ~20:0xZ.
