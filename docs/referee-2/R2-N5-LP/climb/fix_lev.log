@@ -1,0 +1,11 @@
+start 49
+77 59 {'max_Theta': 50, 'max_S_o': 49, 'max_J': 1, 'max_X': 21, 'max_f': 3, 'max(S_o - d_o(Theta+1))': -171, 'max(J - S_o)': -10}
+141 63 {'max_Theta': 35, 'max_S_o': 33, 'max_J': 1, 'max_X': 17, 'max_f': 3, 'max(S_o - d_o(Theta+1))': -236, 'max(J - S_o)': -15}
+145 73 {'max_Theta': 35, 'max_S_o': 33, 'max_J': 1, 'max_X': 17, 'max_f': 3, 'max(S_o - d_o(Theta+1))': -92, 'max(J - S_o)': -5}
+170 93 {'max_Theta': 33, 'max_S_o': 33, 'max_J': 1, 'max_X': 15, 'max_f': 3, 'max(S_o - d_o(Theta+1))': -117, 'max(J - S_o)': -9}
+264 103 {'max_Theta': 33, 'max_S_o': 33, 'max_J': 1, 'max_X': 16, 'max_f': 3, 'max(S_o - d_o(Theta+1))': -13, 'max(J - S_o)': 0}
+404 121 {'max_Theta': 30, 'max_S_o': 31, 'max_J': 1, 'max_X': 16, 'max_f': 3, 'max(S_o - d_o(Theta+1))': -13, 'max(J - S_o)': 0}
+414 131 {'max_Theta': 30, 'max_S_o': 31, 'max_J': 1, 'max_X': 16, 'max_f': 3, 'max(S_o - d_o(Theta+1))': -168, 'max(J - S_o)': -13}
+418 132 {'max_Theta': 31, 'max_S_o': 32, 'max_J': 1, 'max_X': 16, 'max_f': 3, 'max(S_o - d_o(Theta+1))': -13, 'max(J - S_o)': 0}
+TOTALS {'runs': 2000, 'phases': 2435, 'phases_checked': 2323, 'TH_H1_cases': 20712, 'TH_notH1_cases': 1, 'F1o_intervals': 12299, 'SO_keymin_checks': 36857, 'SO_theta_fixed_transitions': 9934, 'SO_frozen_key_checks': 10120, 'sum_S_o': 26097, 'sum_J': 1289, 'sum_Theta': 26923, 'SO_relevant_changes_theta_fixed': 1204, 'phases_lam_o_eq_o': 112}
+RESULT OK violations 0

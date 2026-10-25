@@ -1,0 +1,7 @@
+start 3
+4 6
+5 9
+28 10
+84 11
+TOTALS {'runs': 3200, 'transitions': 15007, 'C567_checks': 96000, 'transitions_in_phase': 6986, 'NL_no_admissible_L(S4a,(h))': 2406, 'scope_runs': 2159, 'scope_transitions': 6000, 'OFFG_checks': 1233, 'NL_no_admissible_L_with_leave': 1456, 'NL_transitions_with_admissible_L': 3688, 'NL_admissible_with_R_nonempty': 3686, 'NL_(j,L)_checks': 4063, 'CN_checks': 113, 'TRANS_checks': 1680, 'scope_fallbacks': 4, 'scope_fallbacks_theta=w': 4}
+RESULT OK violations 0

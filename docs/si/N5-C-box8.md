@@ -188,3 +188,115 @@ Arena-step '−' and '±' reversals (Z's part beyond (C)), by regime:
 - Earlier, a CLS climb in box 7 (cls_rel_lev): 0.
 - READING: the open case of (H-B1), an arena leave whose target carries a gate above L, did not arise under direct pressure. Weak
   evidence: the climbs never reached the precondition "arena leave after a fallback" at all.
+
+## 10. Lemma EQ-STRETCH (PROVED, from R17): the EQ part of (Z) is polynomial
+EQ state: Ξ_k = W_k pointwise (R21 state types). An EQ RUN is a maximal run x..y of consecutive EQ states inside a phase on 𝒞^1O.
+**Lemma EQ-STRETCH.** An EQ run has y − x < n + m transitions.
+Proof.
+- At an EQ state the gates Iσ_k (Ξ-improving edges) are exactly the VJ00 improving edges of σ_k in the one-player game G_τ (Odd fixed
+  to τ, which is constant in the phase): the valuation of σ in G_τ is W.
+- N5's Even step S4a is the arena optimum against τ, over {σ_k(v)} ∪ Iσ_k(v). This is the switch-best step of R17 on G_τ.
+- An in-phase S4c is Even's (fixes2 G-FB-2) and switches by (Ξ-key, index) = (W-key, index). That is N5's fallback on G_τ (R17 (e)).
+- So x..y is a segment of N5's run on the one-player game G_τ from σ_x. R17 (e) covers any start, since its bound is per λ-phase
+  (R17 (c)).
+- λ of that run is λ_W = λ_Ξ (EQ), which is constant in the phase. So the segment lies in one λ-phase of the one-player run, and
+  R17 (c) gives fewer than n + m steps. □
+**Lemma EQ-PERSIST (PROVED).** If k is EQ, (h) holds at k+1 and w_{k+1} = w_k, then k+1 is EQ.
+- Proof: θ_{k+1} ⊴ w_{k+1} = w_k = θ_k ⊴ θ_{k+1} (R21 (a) XW; R15 (a)), so θ_{k+1} = w_{k+1}.
+- R19 (a) Lemma G gives Ξ = π ⊕ θ = π ⊕ w = W on R_{k+1} under (h), and Ξ = W off R. □
+**Corollary (PROVED).** Inside a phase, the crossing transitions with both endpoints EQ (in particular their reversals) number fewer
+than (n + m)(1 + #w-changes + #transitions whose target lacks (h)).
+- An EQ run ends only at a w-change, at a target lacking (h), or at the phase end (EQ-PERSIST).
+- So with R23 LV′, the EQ part of (Z) is polynomial in n·(1 + w-changes + non-(h) transitions), with no X.
+DATA (experiments/si/coarse/eqrun.py, the named set + every pinned climb best + L-RED j7_*; each EQ run recomputed with N5 on G_τ):
+- 278 phases, 108 EQ runs, 287 in-run transitions, all 287 equal to N5's step on G_τ;
+- longest EQ run 56 transitions (< n + m); 0 run-count violations.
+
+## 11. Where (Z) stands after box 8
+Each reversal of R is at one of four places.
+- (i) A fallback. Bounded by Theorem FB (R25) by poly(1 + J). J is bounded non-circularly through (CL-S) (§5, OPEN at (H-B1) arena
+  leaves), or through P-N5-SO by poly(1 + X), which is circular for (X).
+- (ii) A transition inside an EQ run. PROVED poly(n)·(1 + w-changes + non-(h)) (§10).
+- (iii) An out-of-scope transition: OTHER-touching or a w-change. These are R21's O and the w-changes, OPEN as (NH′).
+- (iv) An arena transition at a THR state with (h), no fallback before it at that w: 25 of the 45 arena reversals (§7). OPEN.
+  - This is R20's throttled regime. R20 bounds value changes per throttled stretch (O(n³)), but the stretch count is the θ-change
+    count, and TH bounds it only via X.
+- So the open core of (X) on 𝒞^1O: THR arena reversals (iv) per scope run, (H-B1) at arena leaves for (i), and O / w-changes (iii).
+- DATA (scratch classification, same set): the 29 THR in-scope arena reversals all lie at a θ-change (12) or within n − 1 transitions
+  after one (17). None is later.
+  - READING: (iv) behaves like R20 CR ("coarse values change only in the first n − 1 transitions of a throttled stretch"). So
+    (iv) ≲ n·(1 + Θ_scope), with Θ_scope = θ-changes in scope runs (up to 51 per phase on lev_l_x-type instances).
+  - So (iv) is the θ-change count again. This is the circularity "θ-changes ↔ crossings" of box 3 and of L-NEW's TH. A
+    non-circular bound on Θ per scope run is the single open quantity behind (iv).
+
+## 12. Box 8b (Lead "go" 02:00Z): (H-B1) removed. The first half of (CL-S) at THR fallbacks, PROVED
+Setting: a scope run S on 𝒞^1O (§0). Write r_j := rank(u*_j) when θ_j ◁ w_j with u* ≠ none; r_j := −1 when θ_j ◁ w_j with
+u* = none; r_j := −2 at EQ (θ_j = w_j).
+**Fact R (PROVED).** r is non-increasing along S. w is constant on S and θ is non-decreasing (R15 (a)), with θ ⊴ w (R21 (a)). For
+θ ◁ θ′ ⊴ w, Lemma U (ii) (L-SI succ. 1) gives lev(θ′, w) ≤ lev(θ, w).
+
+**Lemma NL (PROVED; no hypothesis beyond (A)).** Let j → j+1 be an S4a (non-fallback) transition of S, let L < ∞ satisfy r_j > L,
+and assume (A) at j (every gate into F_j has level ≤ L). Then:
+- (i) COARSE_L(Ξ_{j+1} v) = COARSE_L(Ξ_j v) for every v ∉ R̄_{j+1};
+- (ii) the transition has no leave (R_j ⊆ R̄_{j+1});
+- (iii) (A) holds at j+1.
+Proof.
+- (i) Suppose some v ∉ R̄_{j+1} violates (i). Choose one whose H_{j+1}-play p_0 = v, p_1, … reaches its cycle node c_v in the fewest
+  steps.
+  - The play avoids o, Odd is forced off o, and its cycle's top t has λ_j(t) = λ_{j+1}(t) = t (phase). If v = c_v, then
+    Ξ(v) = (v, ∅, 0) at both states. So v ≠ c_v, and p_1 satisfies (i) by minimality.
+  - The step "(T) (iii)" of R25 then gives (i) at v unless (E) fails at v: v switched to q := p_1 along a gate of level > L.
+  - By (A) at j, q ∉ F_j. Since q ∉ R̄_{j+1} and q ≠ o, q ∈ R_j ∖ R̄_{j+1}: q is a LEAVER that satisfies (i).
+  - Now R19 (a) Lemma G, for q ∈ R_j under (h) at j: Ξ_j(q) = π_q ⊕ θ_j and W_j(q) = π_q ⊕ w_j. π_q avoids the paths of θ_j and w_j
+    (H1, H2), so lev(π_q ⊕ θ_j, π_q ⊕ w_j) = r_j > L. Hence COARSE_L(Ξ_j q) ◁_L COARSE_L(W_j q).
+  - Off R̄_{j+1}, Lemma G (a) gives W_{j+1}(q) = Ξ_{j+1}(q). WM (R23 (g); an S4a step) gives W_{j+1}(q) ⊵ W_j(q).
+  - Combining with (i) at q: COARSE_L(Ξ_j q) = COARSE_L(Ξ_{j+1} q) = COARSE_L(W_{j+1} q) ⊵_L COARSE_L(W_j q) ▷_L COARSE_L(Ξ_j q).
+    Contradiction. So (i) holds everywhere off R̄_{j+1}.
+- (ii) If q ∈ R_j ∖ R̄_{j+1} existed, (i) at q and the last three bullets give the same contradiction.
+- (iii) Let (y, z) be a gate at j+1 with z ∈ F_{j+1}. By (ii) z ∈ F_j, and by (i) COARSE_L(Ξ z) is unchanged. If its level were > L,
+  TRANSFER (§5) would make (y, z) a gate at j of level > L into F_j, against (A). □
+
+**Theorem CLS1 (PROVED, L-SI succ. 3): the first half of (CL-S) without (H-B1).** Let k0 < k1 be S4c fallbacks of S, and let k1 be
+THR with u* ≠ none. Then M_{k1} ≤ min{M_k : k a fallback of S, k ≤ k0}.
+Proof. Induction on the fallbacks of S. Let k0 be the last fallback before k1 and L := M_{k0}; by induction L is the minimum so far,
+and L < ∞ (R25 NOINF, fixes FB-1).
+- Case r_{k1} ≤ L. FBL (R20 (b), THR with u* ≠ none) leaves only R → F switched edges and flat cycle-node switches.
+  - CLU bounds the R → F levels by r_{k1} ≤ L. Cycle-node switches have level −1 ≤ L (CN).
+  - So M_{k1} ≤ L.
+- Case r_{k1} > L. By Fact R, r_j > L for all j ∈ [k0, k1]. So every state of [k0, k1] is THR with u* ≠ none, and every fallback in
+  between is such a fallback. Show (A) for L at every j ∈ [k0+1, k1]:
+  - j = k0 + 1: OFFGATE (§1), since M_{k0} = L.
+  - j → j+1 an S4a step: Lemma NL (iii).
+  - j → j+1 a fallback (k0 < j < k1): its M_j ≤ L by the induction, so OFFGATE gives (A) at j+1.
+  - At k1, M_{k1} is attained by switched edges (R25 FB step (2)).
+    - Those into F_{k1} have level ≤ L by (A).
+    - Those into R̄_{k1} are excluded by FBL, except cycle-node switches (level −1).
+    - So M_{k1} ≤ L. □
+- Remarks.
+  - (H-B1) is no longer needed for THR fallbacks with u* ≠ none. These are all 260 non-EQ in-scope fallbacks in the data.
+  - For EQ and THR-with-u* = none fallbacks, Theorem CL-S-RED's (H-EQ) remains, now with the F → F case (§3 (e)) added: such fallbacks
+    have R → F levels ≤ r ≤ −1 (CLU), and only their other switched edges need a hypothesis.
+  - Lemma AL (§6) is now unconditional at THR states (it is NL (ii)).
+  - DATA consistency: the 4 arena leaves after a fallback all had r_j ≤ L (§6).
+
+**The second half (the per-level count) reduces to θ-changes (PROVED reduction; the bound itself OPEN).**
+- For an Even y, b(y) := Ξ(σ_k(y)) is ⊴-non-decreasing along the whole run: σ moves along gates, and Ξ is monotone (R15 (a), (d)).
+- At a fallback of level M, each tail with a level-M gate has b(y) rise at level exactly M (R25 FB step (2)). With COARSE_M(b(y)) fixed,
+  the rank-M membership can flip upwards only once.
+- So y is a level-M tail at two fallbacks only if COARSE_M(b(y)) strictly rose in between. Then
+      #fallbacks of S at level M ≤ Σ_y (1 + #{changes of COARSE_M(Ξ(σ y)) on S}).
+- For an R-tail, Ξ(σ y) = π′ ⊕ θ (Lemma G (b)). Its COARSE_M changes when θ changes above M, when the route of σ(y) changes above M,
+  or when y switches above M. DATA (box 8 §5, R-ROUTE 10,293 / 0): route changes above L do not occur outside θ's own level.
+- Hence, on the data's evidence (READING): fallbacks per level per scope run ≲ n_E(1 + Θ_{>M}(S)), with Θ_{>M}(S) = #θ-changes above
+  level M on S. That is item 2 again.
+
+## 13. Item 2 (Θ per scope run without X): where it stands (READING; no lemma this box)
+Write T(≥ℓ) := #θ-changes on S at levels ≥ ℓ.
+- A θ-change at level ℓ is tame (ℓ ≤ M_j) or a jump (ℓ > M_j; R25 J1).
+- Jumps are bounded by Corollary JD (box 7 §9; PROVED) by |succ(o)| + the releases at evicting fallbacks.
+- Fallbacks at level M are bounded by §12's reduction, ≤ n_E(1 + T(>M)).
+- Tame changes at level ℓ ≤ M come from o-free progress below M (R25 MONO freezes everything above M).
+- So the natural recursion is T(≥ℓ) ≤ poly(n)·(1 + T(>ℓ)). That is box 3's multiplicative counter (docs/si/N5-OR-lens-box3.md §3),
+  now with the fallback and jump terms made explicit. It gives n^{O(depth)}, not a polynomial.
+- What would break it: a lower-digit count that is additive, i.e. tame θ-changes below M bounded independently of T(>M). In the data the
+  climbs never exceed 51 θ-changes per phase at n 32 (lev_l_x). OPEN.

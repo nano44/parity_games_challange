@@ -1,0 +1,181 @@
+{
+ "games": 4828736,
+ "runs": 4828736,
+ "c": {
+  "wakes": 0,
+  "nw_checked": 0,
+  "NOWAKE_FAIL": 0,
+  "census_mismatch": 0,
+  "U2_st": 0,
+  "U3_st": 0,
+  "U23_st": 70454,
+  "U2_sw": 0,
+  "U3_sw": 576,
+  "U2_viol": 0,
+  "U3i_viol": 0,
+  "U3ii_viol": 0,
+  "U3iii_viol": 0,
+  "cor_viol": 0,
+  "phases": 188320
+ },
+ "mx": {
+  "maxKW": 1,
+  "maxE": 1,
+  "maxf": 1,
+  "maxchg": 2,
+  "maxK": 0,
+  "maxSo": 1,
+  "maxslack": -4
+ },
+ "ex": {
+  "maxKW": [
+   {
+    "prio": [
+     0,
+     2,
+     4,
+     6
+    ],
+    "owner": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "succ": [
+     [
+      2,
+      3
+     ],
+     [
+      0
+     ],
+     [
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "start": null,
+    "v": 1
+   }
+  ],
+  "maxE": [
+   {
+    "prio": [
+     0,
+     2,
+     4,
+     6
+    ],
+    "owner": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "succ": [
+     [
+      2,
+      3
+     ],
+     [
+      0
+     ],
+     [
+      3
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "start": null,
+    "v": 1
+   }
+  ],
+  "maxK": [
+   {
+    "prio": [
+     0,
+     2,
+     4,
+     6
+    ],
+    "owner": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "succ": [
+     [
+      0,
+      1
+     ],
+     [
+      0
+     ],
+     [
+      0
+     ],
+     [
+      0
+     ]
+    ],
+    "start": null,
+    "v": 0
+   }
+  ],
+  "maxSo": [
+   {
+    "prio": [
+     0,
+     2,
+     4,
+     6
+    ],
+    "owner": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "succ": [
+     [
+      2,
+      3
+     ],
+     [
+      1
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      1
+     ]
+    ],
+    "start": null,
+    "v": 1
+   }
+  ]
+ },
+ "secs": 764.2,
+ "options": {
+  "mode": "exh",
+  "args": [
+   "4"
+  ],
+  "even_maxdeg": null,
+  "o_deg": null,
+  "no_forced": false,
+  "cyclic_only": false,
+  "all_starts": false,
+  "every": 1,
+  "offset": 0
+ }
+}

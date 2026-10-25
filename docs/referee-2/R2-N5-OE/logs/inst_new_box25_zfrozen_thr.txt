@@ -1,0 +1,5 @@
+CAP1_checks(lam(o)!=o): 7
+CAP1_info_states(lam(o)=o): 1
+runs: 3
+transitions: 5
+RESULT OK violations=0
