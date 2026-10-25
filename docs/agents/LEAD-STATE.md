@@ -1320,3 +1320,4 @@
     - s4c8_n13 2cf723a7: n5 12/8.
     - farrise25_n32 8941d1c9: n5 35/28.
   - Created REFEREE successor 10 (session_01J4kmfDqtZdanh3RSCxChyD) and L-RED successor 17 (session_01DJB52MMkzsddv3hXsMpos5).
+- 16:46Z Lead: merged referee b5887e6. REFEREE 10 handover check scores 5/5 (re-measured). GO: it is idle until REFEREE-2 10's LV2 report and PFZ-ext section land; RHO and NHN follow when pinned.
