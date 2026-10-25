@@ -1306,3 +1306,17 @@
   - P-N5-NEB and P-N5-LV have CONVERGED.
   - l-new 04fe897: box 40 interim, docs/new/N5-NHN-box40.md; lane PROVED, unrefereed. It gives T0U, EV2-FB, SG-EV, T0-PIN, NHN-BOUND (N_HN = O(n²) for every τ(o)), and HN-POLY-ALL (fallbacks at HN states per phase O(n⁸), conditional on PFZ, ext and RHO). H1∧H2∧¬H3 fallbacks only in phases without HN states: OPEN. P-N5-NHN approved, after RHO.
   - Routing: NEB fixes → L-NEW 19; LV fixes → L-SI 8.
+- 16:39Z Lead: merges, re-runs and new sessions.
+  - Merged referee 4859e63: PFZ main §C (identical, gap map empty; ext and PFZ-1 pending REFEREE-2 10). REFEREE 9 PARKED at ~490k.
+  - Merged l-red 9589ffa: R70, box 40 DONE. L-RED 16 PARKED.
+    - NL= FALSE, plus nleq33_n48.
+    - Exhaustive n ≤ 5: all targets vacuous.
+    - beta2_n11: two (β) / r = −1 fallbacks in one scope run.
+    - LV-NONE best 2 vs bound 67; SCOPE-FB best 8 vs 627.
+    - "No fallback after a rise" survives: farrise25_n32, 25 rises.
+  - Lead re-runs (one Odd choice vertex; n5 and Oink zlk OK, strategies verified on each):
+    - beta2_n11 bdea2a23: n5 4/2. L-SI scopefb.py from the canonical start finds 2 r = −1 fallbacks in 1 scope run, so LV-NONE is no longer vacuous.
+    - nleq33_n48 a1ebd2e0: n5 40/1.
+    - s4c8_n13 2cf723a7: n5 12/8.
+    - farrise25_n32 8941d1c9: n5 35/28.
+  - Created REFEREE successor 10 (session_01J4kmfDqtZdanh3RSCxChyD) and L-RED successor 17 (session_01DJB52MMkzsddv3hXsMpos5).
