@@ -58,3 +58,56 @@ first research step after GO is `scripts/setup_oink.sh`.
   has run slow vs the Lead's stamps); push.sh output to a file, then `$?`; ReadNotifications after every push (successor 17 missed
   three Lead messages); `pkill -f` inside a compound command kills the shell itself (run it alone, or kill by pid); in box-37 tools,
   skip non-𝒞^1O library files; experiments/new/out/ is gitignored, experiments/new/boxNN/out/ is not.
+
+# Handover check: L-NEW (successor 19, Opus 5.5 per D15 / L37; session started 2026-10-25 15:45:30Z by date -u)
+New section; successor 18's answers above stay as history. Each answer measured from the repository at writing (commands named).
+Predecessor: successor 18, session_01BhkSHzG2cPM2Rdbj5Y2NJV, parked at l-new 79c706da (handover). Clock: `date -u` 15:46:30Z.
+
+### 1. Branch, head, ahead/behind trunk
+- Branch claude/l-new. Container fresh this time at 5961101a (stale view): `git fetch origin claude/l-new` (5961101a..79c706da),
+  `git checkout -B claude/l-new origin/claude/l-new` → `git rev-parse HEAD origin/claude/l-new` both 79c706da.
+- Trunk origin/claude/vibrant-johnson-nxvvxo (NOW l.15) head 23544b8a ("Lead: R40 draft rev. (C49 E-1, N-1, N-2); log", 15:40:17Z).
+  Before merging: `git rev-list --left-right --count HEAD...trunk` = **1 ahead / 74 behind**, merge-base 1b6239fb (trunk merged
+  l-new up to the PFZ-ext commit, not the handover commit 79c706da).
+- `git merge --no-ff` trunk (no conflicts, no rebase) → edcc2b17: 2 ahead / 0 behind; 3 ahead after this commit, until the Lead's next.
+
+### 2. Open work and the next step of each
+Nothing running (`ps aux | grep python`: none of mine). Oink NOT built (`tools/oink/build` absent): `scripts/setup_oink.sh` first
+if a step needs it.
+- **P-N5-PFZ** (docs/new/P-N5-PFZ-box39.md, sha1 3c617e06… re-measured) PINNED at trunk 283bcb67 (15:29Z); **P-N5-PFZ-ext**
+  (docs/new/P-N5-PFZ-ext-box39.md, sha1 b3702b1b… re-measured) PINNED at trunk c61ecc4e (15:35Z), one review unit with PFZ.
+  REFEREE 9 queue (NOW l.37): NEB → PFZ → LV → LV2. Next: referee items, when relayed, go in a NEW docs/new/P-N5-PFZ-fixes-box39.md.
+- **P-N5-NEB** (sha1 ba15e51f…, pinned 314d220): REFEREE-2 signed (c547d6e; N-NEB-1..3); REFEREE 9 reviewing now (NOW l.37).
+  Next: when relayed, write NEW docs/new/P-N5-NEB-fixes-box38.md (does not exist; checked) with BAND FALSE (tauw_A_cex_n24),
+  OUT-R1 = N-NEB-1, N-NEB-2 (optional), N-NEB-3 (stale rows: R39 has landed, 15:09Z), and the §0 status rows.
+- **P-N5-OUT**: LANDED as RESULTS R39 (C48 closed). Nothing open.
+- **Research (D18) after GO**, resume-point order: (1) offer P-N5-RHO (docs/new/N5-RHO-box39.md §1-§4) as a frozen packet, asking
+  the Lead first; (2) N_HN for τ(o) ≠ o: is N_HN ≤ H1-toggles (R34) + H2-changes (WCH, R38) + 1 polynomial? if yes HN-POLY for every
+  τ(o); (3) climbs against FREEZE-F (c) / RHO-TAIL; (4) post-freeze regime of P-FREEZE beyond |U| = 1 in data (for the referees);
+  (5) W-TIE (OPEN); (6) SN / OTHER states with the Bellman-Ford lens. Tools experiments/new/box39 (climb outputs were gitignored: lost).
+- Not routed: G-N1-LB.
+
+### 3. docs/GAPS.md rows I own (`git show trunk:docs/GAPS.md | grep -n L-NEW`)
+- **G-N5-TIME** (l.11): major; "L-NEW (L-LIT T22; referees later)"; **open**. Latest update 15:09Z: R39 LANDED (P-N5-OUT). "Open:
+  θ_ph, HN stretches for τ(o) ≠ o, OTHER states, NJB = ENT (P-N5-ENT converged, landing next), REL(S), level −1. Lane (unrefereed):
+  P-FREEZE / BRK-POLY (L-NEW 18), STALE-GATE / LV-PL′ (L-SI 7)." (R40 = P-N5-ENT is a draft at CHECKER C49, not landed.)
+- **G-N1-LB** (l.10): minor; "L-NEW (optional; not routed)"; **open**.
+- **G-N5-TERM** (l.16): major; "L-NEW (L-COMP checks runs)"; **closed** (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, trunk docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D18 (DECISIONS l.332-333; INDEX l.32 **active**; Lead reading L40):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D14 (l.244-246; INDEX l.22 **active**; Lead reading L35):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D16 (l.299-300; INDEX l.28 **active**; Lead reading L38):
+   > Then keep working as I told you to
+
+### 5. One trap, and the check that prevents it
+- **Trap**: a status answer written from a trunk view that is minutes old (successor 18 lost a point for it: the OUT fixes file and
+  the NEB pin were on trunk already). Here the same: PFZ / PFZ-ext were pinned at 15:29Z / 15:35Z, after the predecessor's handover
+  text ("pin pending"), and R39 had landed.
+- **Check**: `git fetch origin claude/vibrant-johnson-nxvvxo` right before writing any status, then `git log --since` on trunk for
+  Lead commits and sha1sum of each packet named. Also carried: stale container (fetch + rev-parse equality); `pkill -f` inside a
+  compound command kills the shell (kill by pid from a separate command; re-grep edits after exit 144); grep trunk docs for every new
+  lemma name before use (BF / FBF clashes); ReadNotifications after every push; push.sh output to a file, then `$?`.
