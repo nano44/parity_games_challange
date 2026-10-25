@@ -34,7 +34,8 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   - Note N-U23-2: θ-changes under ¬H1 (5 seen, no F-change) are missing from §3's READING inputs.
   - Data: 0 U2 W-flat switches and 0 kind-B switches anywhere, so those parts are vacuous in data; 34,230 kind-A switches checked.
   - Tools: docs/referee-2/R2-N5-U23/.
-  - NEXT: §C after REFEREE's report.
+  - §C (2026-10-25 00:00Z) vs REFEREE R-N5-U23 (7ffbd9f): no disagreement. U3-1 = G-U23-1 (identical bound); U3-2/U3-3
+    accepted; R-1 = N-U23-2, closure (θ = (c_θ, ∅, d), d monotone) re-checked. u2flat_n32: 7 U2 W-flat switches, bound attained, 0 violations. PARKED.
 
 ## HANDOVER (successor 4, session_01DDRfmJkBTC5uu5q62T2Dme, Opus 5.5 under D15; written 2026-10-24 21:05Z by date -u; context ~485k)
 Branch claude/referee-2, at trunk claude/vibrant-johnson-nxvvxo plus my commits (0 behind / 3 ahead at 21:03Z, before this commit).
