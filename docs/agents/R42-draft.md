@@ -1,4 +1,4 @@
-# Draft RESULTS R42 (Lead, 2026-10-25 17:02Z by date -u) (rev. 17:29Z: C51 E-1..E-5, N-2, N-3, N-4) — to CHECKER C51
+# Draft RESULTS R42 (Lead, 2026-10-25 17:02Z by date -u) (rev. 17:29Z: C51 E-1..E-5, N-2, N-3, N-4) — to CHECKER C51 — LANDED in RESULTS Results 17:41Z (CHECKER C51 b603d852 + Addendum 1 bd08936b PASS), after R41
 
 ### R42 [refereed-only] N5 on one-Odd-choice games: after an HN fallback with θ constant, a new F → R̄ gate needs an R̄-rise (RISE; high in case A, HIGH-RISE), no vertex enters R when o tops its W-cycle in case A (NO-ENTRY-A′), case-B gates are length-only and their failures need a low rise (CASE-B-LEN′, LOW-RISE′), so every break of an HN stretch is paid by a θ-change or an R̄-rise (Theorem BRK), and for τ(o) = o the out-of-SN fallbacks per phase are polynomial in θ-changes and H1-toggles (OUT-1) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C51.md, checker PENDING)
 - Object (packet P-N5-NEB, added at l-new 8ca3571, pinned trunk 314d220, unchanged during review): docs/new/P-N5-NEB-box38.md, sha1
