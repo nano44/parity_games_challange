@@ -1,0 +1,18 @@
+start 54
+0 61
+7 65
+13 66
+14 67
+55 68
+124 74
+201 77
+208 80
+268 81
+370 83
+730 85
+843 86
+1172 88
+1258 94
+1346 95
+TOTALS {'runs': 6000, 'transitions': 135021, 'CAP1_checks(lam(o)!=o)': 140773, 'phases': 7067, 'transitions_in_phase': 114352, 'ULOC_checks': 3659264, 'ULOC_strictly_below_L_k': 3217872, 'OE_checks(no crossing)': 79865, 'OE_relevant_sbar(o)_changes(no crossing)': 67059, 'S2_checks': 89740, 'S3_checks(H1 at k)': 89543, 'OE_crossings': 34487, 'OE_crossings_with_O>E': 6265, 'OX_phases': 7067, 'nontame_transitions': 6096, 'eps_total': 6265, 'J_total': 6096, 'rises_total': 9968, 'K_total': 0, 'f_total': 8296, 'phases_J_eq_X>0': 138, 'S4_checks(not H1 at k)': 197, 'S4_checks_offcross': 197, 'CAP1_info_states(lam(o)=o)': 248, 'CAP1_info_nonminimiser(lam(o)=o)': 62}
+RESULT OK violations 0

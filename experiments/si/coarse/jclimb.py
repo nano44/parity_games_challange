@@ -3,12 +3,14 @@
 Fitness = (max J in one phase, total in-phase J, in-phase fallbacks); with JMODE=REL, (#in-scope non-tame transitions whose argmin was
 released into D at an earlier fallback of the same scope run, J_in, releases into D) (dpot.py; the part of Corollary JD paid by releases). o-cyclic 𝒞^1O only (one Odd choice vertex, asserted; mutation
 operator and o-cyclicity test from experiments/new/box21/climb_fix.py and box25/pureY.py, read-only, as in xing/clclimb.py).
-Usage: [JMODE=REL|CLS] jclimb.py seed secs OUT seed.pg      (writes OUT.pg on every improvement; re-verify bests with xing/reverify.sh)"""
+Usage: [JMODE=REL|CLS|CLS2|RF] jclimb.py seed secs OUT seed.pg      (writes OUT.pg on every improvement; re-verify bests with xing/reverify.sh)"""
 import sys, os, random, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tame import *
 from dpot import scan_d
 from clscope import scan_c
+from cls2 import scan2
+from rfinv import scan_r
 MODE = os.environ.get("JMODE", "J")   # J: (max J per phase, J, fb); REL: (#jumps paid by a release (REL-NJ failures), J_in, releases)
 sys.path.insert(0, os.path.join(ROOT, "experiments/new/box21")); sys.path.insert(0, os.path.join(ROOT, "experiments/new/box25"))
 from climb_fix import mutate
@@ -23,6 +25,13 @@ def fit(G):
         if MODE == "CLS":   # adversarial against CONJECTURE (CL-S): (violations, fallbacks in scope runs, jumps in one scope run)
             c, _ = scan_c(g, "climb")
             return (c["mono_viol"] + c["perlevel_viol"], c["fb"], c["maxJ_run"])
+        if MODE == "CLS2":  # (CL-S) violations, then MF rises inside scope runs (the mechanism that could break it), then fallbacks
+            c, _ = scan_c(g, "climb"); c2, _ = scan2(g, "climb")
+            return (c["mono_viol"] + c["perlevel_viol"], c["maxgap"], c["fb"] + c2.get("MF_up", 0))
+        if MODE == "RF":    # invariant violations, then preconditions of the open case (high gates into R̄, arena leaves) after a fallback
+            c, _ = scan_c(g, "climb"); r, _ = scan_r(g, "climb")
+            v = c["mono_viol"] + c["perlevel_viol"] + r.get("RF_viol", 0) + r.get("FF_viol", 0) + r.get("F_viol", 0) + r.get("LEAVE_viol", 0)
+            return (v, min(r.get("highRbar", 0), 20) + 5 * min(r.get("leave_ar", 0), 4), c["fb"])
         if MODE == "REL":
             c, _ = scan_d(g)
             return (c["relnj_viol"], c["J_in"], c["rel_fb"])

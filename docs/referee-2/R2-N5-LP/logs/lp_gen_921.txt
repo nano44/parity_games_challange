@@ -1,0 +1,18 @@
+GRb_checks: 86
+HI_checks: 1187
+HI_cons_M=L: 254
+NU_transitions: 117
+UL_checks: 80
+U_checks: 371
+eps: 0
+own_cycle_node_switch_above_L: 118
+own_cycle_node_switches: 128
+phases: 356
+rises: 0
+runs: 3000
+transitions: 4079
+transitions_in_phase: 371
+max_NU_run: 1
+max_T_phase: 2
+max_rho: 0
+RESULT OK violations=0

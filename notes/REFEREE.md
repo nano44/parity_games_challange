@@ -1,6 +1,45 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 6, written 2026-10-25T01:5xZ, pushed 5e98e33c at 01:56Z by date -u; stamp corrected 01:56Z; Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh > file 2>&1; echo $?.
+- Handover check 109721d3 (Lead 5/5, 01:44Z). Local was stale (73b46eb8); predecessor's SO-1 addendum 2a0cb306 merged (afa95369).
+  Lead: no §C on P-N5-SO needed (both reviews + R2's §C caee2ae on trunk; fixes cae3bb5b). Oink built at tools/oink (8fbf0a7).
+- P-N5-OE (GO 01:44Z; pin 361d18c; docs/new/P-N5-OE-box32.md sha1 adeccd89…): docs/referee/R-N5-OE.md. U-loc SIGNED; OE SIGNED WITH GAPS
+  OE-1 ("In particular": only level-≠⊥ changes excluded; tie changes occur off crossings, library 2 / random 50), OE-2 (CAP-1 at o on its
+  honest cycle, ¬H1: R-N5-FB §4.2 re-derived, holds; closed), OE-3 (cite C1/C3); Corollary OX (i)-(v) SIGNED (OX-1 wording, FB-2 scope).
+  Tool scratch/oe_probe.py (lib | rand | randb). Library numbers equal the lane's oddlev.py exactly (436/11/857/279/235).
+  NEXT: §C when the Lead says REFEREE-2's R2-N5-OE exists (docs/referee-2/ NOT read for OE).
+- Lesson: "λ(o) ≠ o" (o not its own cycle node) is not "o off a cycle"; check the ¬H1 case of every minimiser citation separately.
+
+## HANDOVER (successor 5 -> successor 6), written 2026-10-25T01:08Z by date -u, context ~525k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via the claude-code-remote MCP tool; first line "From REFEREE (<date -u>):").
+Branch claude/referee. Start: git fetch origin claude/vibrant-johnson-nxvvxo claude/referee; merge trunk with a normal merge (no rebase).
+Push ONLY with scripts/push.sh > file 2>&1; echo $?. Never read docs/referee-2/ for a packet before your own report is pushed.
+Build Oink first (scripts/setup_oink.sh). Stamps: take every time from date -u at the moment of writing (I slipped once: R-N5-U1 §C).
+### State of my packets (all pushed)
+| packet | report | my verdicts | §C |
+|---|---|---|---|
+| P-N5-U1 (R24) | R-N5-U1.md | U1, WC signed; CASC, TB, R signed with gaps (R-1 = G-R-2: Lemma R literal (c,P) form false at x = u) | done; N-U1-3 closure proved by me |
+| P-N5-FB (R25) | R-N5-FB.md | all signed; CAP-1 (SPEC's σ̄ at an own cycle node is NOT a minimiser; full minimiser elsewhere, my §4.2 proof) | done |
+| P-N5-U23 | R-N5-U23.md (+ App. A u2flat_n32) | CASC-U2 signed; CASC-U3 with gaps U3-1 (= G-U23-1, L_B = 0), U3-2, U3-3; R-1 (θ-changes under ¬H1 ≤ n − 1) closes N-U23-2 | done (R2 to confirm R-1) |
+| P-N5-LP + P-N5-SO | R-N5-LP.md (Part 1 LP, Part 2 SO) | LP: Lemma DF NOT SIGNED, FALSE (docs/referee/R-N5-LP/df_cex.pg, n 11: own W-cycle node + FIX 2 = the VJ00 5.8 "2⇒3" gap); DF′ signed; WAKE via DF′ (W-1); rest signed (HI-1). SO: TH (SO-1 = dependency on my full-minimiser proof), SO signed (key-frozen step verified), XJ (XJ-1: f = O(n⁴(1+X)), not n³) | §C done (vs R2 4949d6c): no verdict differs; N-LP-1 accepted (missed). P-N5-SO second review moved to successor 6 by the Lead |
+### NEXT for successor 6
+- P-N5-SO (docs/new/P-N5-SO-box32.md @ 1ef02bb, sha1 deb5ee44): the Lead moved its review to successor 6. My own Part 2 of R-N5-LP
+  (dcb41198) is a review already: TH (SO-1 CLOSED: R2-N5-FB §C.3 adopted my proof), SO signed, XJ (XJ-1). Ask the Lead whether
+  successor 6 writes a fresh report or a §C of Part 2.
+### Tools (docs/referee/scratch/; all assert exactly one Odd choice vertex where 𝒞^1O is meant)
+u1_probe.py (own trace = n5.py loop asserted equal to n5.run; states(); TB/CASC/U1/WC; arena_test), lemr_probe.py (hooked evaluate),
+casc_climb.py, fb_probe.py (lev/coarse/play_value; FB/CAP/SBMIN), eqfb_check.py, u23_probe.py + u23_climb.py, lp_probe.py (U/HI/UL/GR/NU/LP/DF),
+so_probe.py (TH/SO). Library sweep = every experiments/**/*.pg in 𝒞^1O with n ≤ 64 (234 files now).
+### Lessons (keep)
+- VJ00 Lemma 5.8 "maximum ⇒ no improvement" (2⇒3) is BROKEN at own cycle nodes (length-only improvements); any lane citing it: test own cycle nodes.
+- SPEC's σ̄ = VJ00's minimiser only away from own cycle nodes (FIX 2 DFS there). "Fully optimal" must include lengths (Lemma R).
+- Every-game theorems that cite 𝒞^1O-signed results (R21, R23): check the scope of each citation (missed G-FB-2/3).
+- Boundary cases of max-over-empty-set (L_B = 0) and own-cycle-node exclusions: test them explicitly.
+- Bash: pkill -f / pgrep -f with the pattern in the same shell kills the tool shell (exit 144).
+
+
 ## HANDOVER (successor 4 -> successor 5), written 2026-10-24T20:56Z by date -u, context ~550k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via the claude-code-remote MCP tool; first line "From REFEREE (<date -u>):").
 Branch claude/referee. Start: git fetch origin claude/vibrant-johnson-nxvvxo claude/referee; merge trunk with a normal merge (no rebase).
@@ -27,6 +66,13 @@ experiments/new/box25/common.py (rand_c1o, odd_choice = FIRST Odd chooser: hence
 - Contractions (R*, R*_w) are exact only when o's continuation leaves R; check the ¬H2 / λ_W(o)=o case.
 - Glob-based data can pull in out-of-class games; assert the class.
 - Random 𝒞^1O samples are nearly vacuous for throttled / route-form / re-entry structure; say so; named instances carry the evidence.
+
+## Resume point (successor 5, written 2026-10-25T00:56Z by date -u): P-N5-LP (pin bc42f2c, docs/new/P-N5-LP-box32.md sha1 d2c8121a…)
+- docs/referee/R-N5-LP.md: U, HI (Consequence gap HI-1), UL, GR, NU, Theorem LP, BAND, Corollary LP′ SIGNED; WAKE WITH GAP W-1 (closed
+  via DF′); Lemma DF NOT SIGNED, FALSE: docs/referee/R-N5-LP/df_cex.pg (n 11, sha1 a128663e…; y = 7 own W-cycle node keeps 4 by FIX 2,
+  (7, 8) gate at k+1, 4 ∉ R) = the VJ00 Lemma 5.8 "2 ⇒ 3" gap of R-N5T; DF′ (y not own W-cycle node) SIGNED. Tool scratch/lp_probe.py.
+  NEXT: §C when R2-N5-LP exists. Context ~500k: HANDOVER after §C (successor 6 from this notebook).
+- Lesson: any lane citation of VJ00 Lemma 5.8 "maximum ⇒ no improvement" is the broken direction; test it at own cycle nodes first.
 
 ## Resume point (successor 5, written 2026-10-24T23:45Z by date -u): P-N5-U23 (pin 7666336, docs/new/P-N5-U23-box31.md sha1 ee3e5d1e…)
 - docs/referee/R-N5-U23.md: CASC-U2 + Corollary SIGNED (data vacuous: no U2 W-flat switch anywhere); CASC-U3 (i)/(iii) SIGNED WITH GAPS

@@ -17,7 +17,7 @@ def rows_w(g):
         h1, h2 = not oncycle(g, s, sb, o), not oncycle(g, s, t, o); U, _ = Ed.evaluate(tuple(t))
         M = max([lev(Xi[s[y]], Xi[z]) for y, z in Is]) if Is else -3
         rows.append(dict(ph=(tuple(x[0] for x in Xi), tuple(y[0] for y in U), t[o]), R=reach_o(g, s, t, o), th=E.key(Xi[o]),
-                         w=E.key(W[o]), rfX=h1 or Xi[o][0] == o, rfW=h2 or W[o][0] == o, cw=W[o][0], Xi=Xi, W=W, M=M, s=list(s),
+                         w=E.key(W[o]), h1=h1, rfX=h1 or Xi[o][0] == o, rfW=h2 or W[o][0] == o, cw=W[o][0], Xi=Xi, W=W, M=M, s=list(s),
                          nxt=[s[v] if g.owner[v] == 0 else t[v] for v in range(g.n)], fb=0))
         r = step(g, E, Ed, s, t)
         if r is None: break
