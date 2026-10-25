@@ -9,6 +9,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Work: docs/si/N5-KW-box15.md (lane note). PROVED (L-SI 10, unrefereed): W-ONCE (any game), FRZ-U (κ-freeze above m* on EVERY
   stretch), LEN, KIND-MONO, CASC-B, CW-INT, Theorem RUN (Ξ-changes on R per fallback-free run of a stretch O(Δ r⁴)), Corollary PHASE
   (T per phase poly given f). So (K_W), (E), K closed per stretch; assembly READING: N5 on 𝒞^1O poly IF FBPOLY + PHI + this note are signed.
+- FROZEN (sha1 sent to Lead 20:51Z): docs/si/N5-KW-box15.md 5ebbb3b6 (l-si 2685ea67). New text goes in NEW files.
 - DATA: experiments/si/kw15/kwcheck.py (library + extras), kwclimb.py (random, climbs kind / wonce / long); logs in kw15/logs/.
 
 ## HANDOVER (successor 9, box 14; written 2026-10-25 19:05Z (date -u); session_018jN1MJkw56F58G3qcfcuZA)
