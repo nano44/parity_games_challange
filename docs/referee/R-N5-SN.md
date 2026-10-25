@@ -188,3 +188,12 @@ equal to n5.run; every game asserted in 𝒞^1O; phase key (λ_Ξ, τ), scope ru
 - SN-2: §6 per phase: "+ f for ε-transitions at fallback transitions" (with SN-1: d_o(f + 1) + REL + f).
 - SN-3: §5: replace "if r_s = ⊥ the claim is empty" with "if r_s = ⊥, a relevant change still exists: some Even p on q's old route
   before o switches; it precedes λ(q) = c_θ ∈ F_s on q's H_{s+1}-path, and λ(p) ≠ p".
+
+## Addendum (written 2026-10-25 04:02Z by date -u): L-RED probes relayed by the Lead (03:52Z message, read 04:01Z after my report)
+- epsseg_cex_n48.pg (experiments/red/so/instances, sha1 b4c7dcb0…; n5.py 26 / 1; check_sol2.py "zielonka(oink zlk) OK strategies verified";
+  one Odd choice vertex asserted): 17 ε-transitions, all H1. ABS-COUNT holds with the REL term: max excess 0, i.e. #H1-ε ≤ (d_o − 1) + REL_run
+  in each run, with REL ≥ 1 where the count exceeds d_o − 1 (exit 33 released at an S4a step and re-absorbed, as L-RED says). OR, TC-SPLIT,
+  R-STICK, SN-PREFIX, LEAVE (1 leave), H3H2: 0 failures.
+- exitr_cex_n16.pg (sha1 6971211e…; n5.py 10 / 0; Oink OK, strategies verified): 5 ε (H1), 2 leaves; 0 failures, excess 0.
+- Neither instance has an H1 ε-transition into a ¬H1 state, so SN-1 is unchanged: proved bound d_o + REL_run, the (d_o − 1) form OPEN. Verdicts
+  unchanged.
