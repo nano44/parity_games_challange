@@ -128,3 +128,52 @@ DATA (experiments/si/coarse/rfinv.py, the named set + every pinned climb best + 
 - (B1) 588 leaves checked, 0 violations: 584 leaves at fallbacks, 4 at arena steps.
 - In-scope fallbacks by kind: 260 THR with u* ≠ none, 4 EQ, 0 THR with u* = none.
 - Gates into R̄ of level > L after a fallback ("highRbar"): 15 states. None of their targets left R while the gate stood.
+
+## 6. Lemma AL (PROVED under (A) and FRZ at the transition): arena-step leaves after a fallback need rank u* ≤ L
+In a scope run, after a fallback (L as in §5), let j → j+1 be an S4a step at a THR state with u* ≠ none. Suppose (A) holds at j and
+FRZ holds at j → j+1 (both follow from (H-B1), §5). If rank(u*_j) > L, then j → j+1 has no leave.
+Proof.
+- Under H1, every leave has an active leaver s ∈ R_j with t := σ_{j+1}(s) ∈ F_j (R23 (b), (c)). (s, t) is a gate at j (R15 (d)),
+  so its level is ≤ L by (A).
+- s ∉ R̄_{j+1}, so W_{j+1}(s) = s ⊕ W_{j+1}(t) (s is not a W-cycle node in a phase) and W_{j+1}(t) = Ξ_{j+1}(t) (R19 (a)).
+- WM (R23 (g)): W_{j+1}(s) ⊵ W_j(s) = π_s ⊕ w = s ⊕ π′ ⊕ w, with π′ the route of σ_j(s). By (F-pre), Ξ_{j+1}(t) ⊵ π′ ⊕ w.
+- FRZ: COARSE_L(Ξ_j t) = COARSE_L(Ξ_{j+1} t) ⊵_L COARSE_L(π′ ⊕ w).
+- rank(u*) > L, so COARSE_L(π′ ⊕ θ) ◁_L COARSE_L(π′ ⊕ w): they differ at u* ∉ π′.
+- Hence COARSE_L(Ξ_j t) ▷_L COARSE_L(Ξ_j σ_j s), so the gate (s, t) has level > L. Contradiction. □
+DATA (rfinv.py): 4 arena leaves after a fallback in scope; all have rank(u*_j) ≤ L.
+
+## 7. Item (2): the arena reversals of (Z) (DATA; scratch classification on the named set + pinned bests + j7_*)
+Arena-step '−' and '±' reversals (Z's part beyond (C)), by regime:
+
+| sign | scope | fallback earlier at the same w? | state | count |
+| --- | --- | --- | --- | --- |
+| ± | in scope | no | THR | 18 |
+| ± | in scope | no | EQ | 10 |
+| − | in scope | no | THR | 7 |
+| − | in scope | no | EQ | 4 |
+| − | w changes | no | EQ | 2 |
+| ± | in scope | yes | THR | 2 |
+| − | in scope | yes | THR | 2 |
+
+- READING:
+  - The arena reversals live almost entirely BEFORE the first fallback at the current w: 39 of 45. After a fallback, AL leaves room
+    only once u* has dropped to the fallback level.
+  - So the rest of (Z) is a fallback-free question: R-reversals driven by arena steps alone, i.e. o-free progress against trust. That
+    is the regime of R21's F-intervals and R22's F1°.
+  - No lemma for it this box. OPEN.
+
+## 8. Independent check of L-NEW's P-N5-SO (Lead request 01:00Z), and what (CL-S) still adds
+- Ran experiments/new/box32/socheck.py UNMODIFIED (trunk 1ef02bb2, merged into l-si) on:
+  - all 12 pinned lane climb bests (experiments/si/coarse/instances/: jcl_*, rel_*, rel2_*, rel_j7_*, cls_rel_lev): 16 phases;
+  - the 53-file named set plus the 6 box 8 climb outputs: 73 phases.
+- Result (DATA): no failure key printed. That is: no J > S_o, no SO bound failure, no TH bound failure, and no TH_H1 / shape /
+  SO-tiebreak failure.
+  - Largest: J 18 ≤ S_o 19 ≤ d_o(Θ + 1) with Θ 19, X 20 (rel2_x31_rx48, n 48, d_o 28).
+  - On the named set: max S_o 49, Θ 51 (lev_l_x, n 32, X 21).
+- What (CL-S) adds (READING). SO with TH gives J ≤ poly(n)(1 + X), and through R25 FB the same bound on fallbacks and (C).
+  - But X is what (C) is meant to bound: R23 LV′ gives X ≤ (n − 1)(Z + 1) + Z, and (C) is a part of Z. So for proving (X) the SO
+    route to (C) is circular.
+  - (CL-S) (box 7 §13; box 8 §5) bounds J, and so (C), by poly(n)(1 + N_out), with N_out ≤ O + #w-changes + …, and no X. It is the
+    non-circular route for (C) inside (Z).
+  - Recommendation: keep (CL-S) with its open (H-B1) at arena leaves. Its use is (Z), not (J-poly) as such.
+- The rest of (Z), arena '−' and '±' reversals (§7), is the remaining core.

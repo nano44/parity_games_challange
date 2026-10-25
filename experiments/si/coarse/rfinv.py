@@ -4,7 +4,7 @@ least fallback level M so far in the run. Checks at every later in-scope state j
   (RF-INV) every gate R_j -> F_j has level <= L;   (FF-INV) every gate F_j -> F_j has level <= L;
   (F-FREEZE) z ∈ F_j ∩ F_{j+1} keeps COARSE_L(Ξ);   (R-ROUTE) z ∈ R_j ∩ R_{j+1} changes above L only at θ's change level;
   (LEAVE) leavers change only at levels <= L;   (B1) no gate of level > L into a vertex that leaves R at that transition.
-Also counts in-scope fallbacks by state kind (THR with u* ≠ none / THR with u* = none / EQ).
+(AL) an arena-step leave after a fallback has rank u*_j <= L. Also counts in-scope fallbacks by state kind (THR with u* ≠ none / THR with u* = none / EQ).
 Counts the preconditions of the open case: gates INTO R̄_j of level > L ("highRbar"), and arena-step leaves, after a fallback.
 Usage: rfinv.py game.pg ..."""
 import sys, os
@@ -44,6 +44,9 @@ def scan_r(g, name):
                     if lz > L and lz != lt: C["R_viol"] += 1; ex.append((name, "R", i, z, lz, lt, L))
                 elif inA:
                     C["leave_" + ("fb" if a["fb"] else "ar")] += 1
+                    if not a["fb"]:      # Lemma AL: an arena leave after a fallback needs rank u*_j <= L
+                        us = lev(a["Xi"][o], a["W"][o]); C["AL_chk"] += 1
+                        if us > L: C["AL_viol"] += 1; ex.append((name, "AL", i, z, us, L))
                     hi = [l for y, zz, l in a["gl"] if zz == z and l > L]       # (B1): no gate of level > L into a leaving vertex
                     C["B1_chk"] += 1
                     if hi: C["B1_viol"] += 1; ex.append((name, "B1", i, z, max(hi), L))
