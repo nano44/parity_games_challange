@@ -1,0 +1,6 @@
+fallbacks: 3
+runs: 3
+scope_fallbacks: 0
+scope_runs: 3
+transitions: 22
+RESULT OK violations=0

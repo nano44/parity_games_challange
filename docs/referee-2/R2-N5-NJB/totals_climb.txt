@@ -1,0 +1,18 @@
+MINSET_a_states 177469
+MINSET_d_fallbacks 197202
+MINSET_intervals 169506
+MINSET_members_absorbed 32871
+NORF_post_rise_states 107336
+NORF_rises_above_L_after_fallback 6687
+blocks 111085
+blocks_with_r<=M_somewhere (PL (c) hypothesis fails; PL (c') covers) 2613
+climb_evaluations 442313
+fallbacks 462601
+runs 1769252
+scope_fallbacks 397612
+scope_runs 393442
+transitions 3644730
+MAX MINSET_max_|Mn| 23
+MAX max_D_M 0
+MAX max_block_N 37
+RESULTS {'OK': 8}

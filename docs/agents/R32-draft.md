@@ -1,4 +1,4 @@
-# Draft RESULTS R32 (Lead, 2026-10-25 09:10Z by date -u) (rev. 09:20Z: REFEREE §C C.6 9ad6bfb cited = C41 E-1; rev. 09:31Z: C41 E-2; rev. 09:40Z: C41 N-3) — to CHECKER C41
+# Draft RESULTS R32 (Lead, 2026-10-25 09:10Z by date -u) (rev. 09:20Z: REFEREE §C C.6 9ad6bfb cited = C41 E-1; rev. 09:31Z: C41 E-2; rev. 09:40Z: C41 N-3) — to CHECKER C41 — LANDED in RESULTS Results 09:48Z (CHECKER C41 22ba41d + Addenda d43a322, 7f5df64, 1670d0d4 PASS), after R31
 
 ### R32 [refereed-only] N5 on one-Odd-choice games: a coarse freeze that survives θ-changes, w-changes and fallbacks (Theorem FREEZE, with Fact 0, ARENA, P^c_ℓ, RATCHET, BLOCK), polynomially many crossings per fallback-free run with an H1 SN prefix (Theorem X-RUN), and R20's subrun machinery with θ free (Theorem SUB) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C41.md, checker PENDING)
 - Object (packet P-N5-FRZ, added at l-new edbccb6, pinned trunk 25fda0f, unchanged during review): docs/new/P-N5-FRZ-box34.md, sha1
