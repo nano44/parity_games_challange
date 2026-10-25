@@ -154,11 +154,11 @@ def analyse(g, cap=5000):
                         if t == f1 or FB[t]:
                             if ch: bad("FLATALL", t)
                         elif ch: bad("NJB", t)
-                    for t in range(f1 + 1, fN):      # MINSET guide (P-N5-NJB §2): Mn_t = free exits whose o ⊕ Ξ has θ's COARSE_M
-                        if FB[t]: continue
-                        th = sox.coarse(Xi[t][o], Mb)
+                    for t in range(f1 + 1, fN + 1):  # MINSET guide (P-N5-NJB §2): Mn_t = free exits whose o ⊕ Ξ has θ's COARSE_M
+                        th = sox.coarse(Xi[t][o], Mb)  # (min over states f1+1 .. fN as minset.py; absorptions at non-fallback t < fN)
                         Mn = [x for x in set(g.succ[o]) if x != o and x not in R[t] and sox.coarse(E.extend(o, Xi[t][x]), Mb) == th]
                         minmn = min(minmn, len(Mn))
+                        if FB[t] or t == fN: continue
                         ab = [x for x in Mn if x in R[t + 1]]
                         mnabs += len(ab)
                         if len(Mn) == 1 and ab: soleabs += 1
