@@ -1,6 +1,41 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Handover check (successor 8, Opus 5.5 under D15/L37; 2026-10-25 11:0xZ by date -u)
+Predecessor successor 7 session_01CE1xQNfGUgtJg9A7SWAkuE (parked, 8681e3f2). Measured from the repository; commands named.
+
+1. Branch, head, distance to trunk.
+   - `git status`, `git log --oneline -1` at container start: local claude/referee-2 at 77f9cf71 (STALE, third time).
+   - `git fetch origin`; `git rev-parse HEAD origin/claude/referee-2` -> 77f9cf71 vs 8681e3f2; `git merge --ff-only origin/claude/referee-2` -> 8681e3f2.
+   - Trunk = claude/vibrant-johnson-nxvvxo (docs/NOW.md:15). `git fetch origin claude/vibrant-johnson-nxvvxo`;
+     `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 0 ahead, 25 behind (trunk 8998ee6d).
+   - `git merge --no-ff -m ... origin/claude/vibrant-johnson-nxvvxo` -> merge commit 63ff0909; count -> 1 ahead, 0 behind. This notebook commit adds one.
+2. Open work, next step of each.
+   - Successor 7's IN FLIGHT: none. Its NEEDS (Lead routes FRZ rows 4-5, NJB rows 1-2, TOG rows 1-2 to lanes): Lead's, not mine.
+   - Task after GO: independent review of P-N5-SCOPE. `sha1sum docs/new/P-N5-SCOPE-box36.md` -> c3f5ed3788f0853939d247dbcfb970334c9dcf7d;
+     `git show 8998ee6d:docs/new/P-N5-SCOPE-box36.md | sha1sum` and the same at origin/claude/l-new -> same sha1 (pin and lane agree);
+     `git log -- <file>` -> one commit 8483279d (L-NEW box 37 (a)). Statements §1 KEY, §2 WCH, §3 SCOPE-COUNT, §4 FB-INT, §5 NH1-FB, §6 CN-LAST; §7 not to sign.
+     Next step: read packet + SPEC (docs/new/N5-ssi-global.md) + RESULTS R15, R18, R19, R22, R25, R28, R30-R33 + P-N5-TOG; build
+     docs/referee-2/R2-N5-SCOPE/ on R2-N5-TOG/tog_check.py and R2-N5-FRZ/frz_check.py (one-Odd-choice assert on every 𝒞^1O game);
+     write docs/referee-2/R2-N5-SCOPE.md.
+   - Oink: `ls tools/oink/build` -> absent; must run scripts/setup_oink.sh in this container.
+3. GAPS rows. `grep -n 'G-N5-TIME\|REFEREE-2' docs/GAPS.md`: REFEREE-2 owns no row. Relevant: G-N5-TIME | major | L-NEW | open (docs/GAPS.md:11);
+   its last update (10:37Z) records R33 landed and "lane (unrefereed) box 36: scope runs per phase and ¬H1 fallbacks polynomial in (T, f, X)";
+   that is P-N5-SCOPE (SCOPE-COUNT, NH1-FB). Open there: (L1) (NJB / RISE-LAST), out-of-SN fallbacks (OUT-POLY CONJECTURE), ¬H1 SN states, f per phase.
+4. Owner rulings verbatim (docs/DECISIONS.md), status from docs/DECISIONS-INDEX.md (`grep -n` on both):
+   - D1 (index line 5: active), DECISIONS.md:7-8:
+     > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+     > Never downgrade the referee to save money.
+   - D15 (index line 26: active), DECISIONS.md:278:
+     > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+   - D18 (index line 32: active), DECISIONS.md:333:
+     > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+5. Trap found: "merge trunk with a merge commit" is NOT what a plain `git merge` does here. After the ff to 8681e3f2 the branch was 0 ahead
+   of trunk, so `git merge` fast-forwarded silently (HEAD = 8998ee6d, no merge commit). I reset the LOCAL, unpushed ref back to 8681e3f2
+   (`git reset --hard 8681e3f2`; nothing pushed was touched) and merged with `--no-ff` (63ff0909). Use `--no-ff` whenever the branch is 0 ahead.
+   Also (independence): `git log origin/claude/referee -- docs/referee/R-N5-SCOPE.md` -> empty, and `ls docs/referee/ | grep -i scope` -> empty;
+   REFEREE's report does not exist yet. I will not open docs/referee/ or notes/REFEREE.md until R2-N5-SCOPE.md is pushed.
+
 ## HANDOVER (successor 7, session_01CE1xQNfGUgtJg9A7SWAkuE, Opus 5.5 under D15; written 2026-10-25 10:33Z by date -u; context ~460k; Lead 10:31Z: PARK)
 Branch claude/referee-2, merged with trunk at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this commit.
 ### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
