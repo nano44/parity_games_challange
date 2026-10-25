@@ -1,0 +1,26 @@
+## library_own (295 logs)
+  RECORD_inscope_fallbacks_THR_r>=0_M>=0: 1300
+  runs: 885
+  states: 16977
+## library_rand (295 logs)
+  RECORD_inscope_fallbacks_THR_r>=0_M>=0: 1065
+  runs: 885
+  states: 16452
+## library_spec (295 logs)
+  RECORD_inscope_fallbacks_EQ_M=-1: 35
+  RECORD_inscope_fallbacks_THR_r>=0_M>=0: 1305
+  runs: 885
+  states: 17238
+## random_own (3 logs)
+  RECORD_inscope_fallbacks_THR_r>=0_M>=0: 1
+  runs: 22000
+  states: 54037
+## random_rand (3 logs)
+  RECORD_inscope_fallbacks_EQ_M=-1: 50
+  runs: 22000
+  states: 54412
+## random_spec (2 logs)
+  RECORD_inscope_fallbacks_EQ_M=-1: 311
+  RECORD_inscope_fallbacks_THR_r>=0_M>=0: 1
+  runs: 20000
+  states: 47845

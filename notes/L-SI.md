@@ -1,6 +1,48 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 7, box 12; written 2026-10-25 ~15:35Z (date -u); session_01Nosb1KbEcKX2yMZfBES2sA)
+Reason: the session token counter passed ~450k (the Lead's handover line), at a natural pause after packet P-N5-LV2.
+### DONE (every sha1 below was sent to the Lead, so these files are FROZEN; new text goes in NEW files)
+- docs/si/P-N5-ENT-fixes-box11.md (72d052b5, l-si b6b8f85b): both ENT reports and both §Cs, N-ENT-1..3, the R36 lift line. Lead drafting
+  R40 from it.
+- Packet docs/si/P-N5-LV2-box12.md (3b23a41f, l-si ed936af1), queued behind P-N5-LV. Contents:
+  - STALE-GATE (every game); EV-G; ENT-X_{−1}; LV-PL′ (≤ n·n_E + 1 level −1 fallbacks with r ≥ 0 per scope run);
+  - SAND; FLAT-ALL_{−1}^{none}; LV-NONE (≤ n·n_E + 1 u* = none fallbacks per scope run);
+  - SCOPE-FB (≤ 4·n·n_E + 3 fallbacks per scope run; conditions (C-ENT), (C-LV), (C-PKT)).
+- Lane write-ups:
+  - docs/si/N5-LV3-box12.md (20ba05d7): XG, ANTI, NEED-β; "THR ⇒ M ≥ 0" obstruction;
+  - docs/si/N5-LV4-box12.md (9d1b90f4) and N5-LV5-box12.md (e2cb0703): the sources of P-N5-LV2.
+- Handover check 5/5: docs/agents/handover-checks/L-SI.md.
+- Scripts in experiments/si/lv/ (betasearch.py, xg.py, probe.py, hand9.py, stale.py, scopefb.py), logs in experiments/si/lv/logs/.
+### IN FLIGHT
+- Nothing running (no background jobs).
+### NEEDS
+- None from the owner. Lead: route P-N5-LV2 behind P-N5-LV. Referee items go to NEW files (P-N5-LV2-fixes-box12.md).
+### Things only I know
+- STALE-GATE is the cheap replacement for every "rank-L bit" argument (ENT-SHAPE (2)-(4)). Any later "z changed since k0" step should use
+  it (with FREE-FREEZE for free z).
+- At r = −1 nothing needs NL. SAND plus U-loc plus OR kills every COARSE_{−1}(Ξ) change.
+- "THR ⇒ M ≥ 0" (N5-LV3) is now only of interest for its own sake. LV-PL′ already counts (β)-fallbacks.
+  - Its open case A2*: Even's best reply's cycle runs through o, topped after o, above all of λ ∪ {o}.
+  - A first idea, not checked: ANTI-W on that cycle K′ forces a blocked edge on K′, unless m′ = c.
+- Random 𝒞^1O games give no in-scope THR fallback. Use the corpus, or perturbed start pairs (betasearch.py corpus mode).
+- Traps:
+  - `pkill -f <pattern>` with the pattern in the calling command kills the shell (exit 144; it bit me at ~15:22Z). Kill by PID from
+    `ps aux | grep "[x]"`.
+  - Lead messages arrive only through ReadNotifications. I missed two relays for ~35 min. Call it after every push.
+  - The session token counter, not my own estimate, is the context measure. I under-reported (~255k) to the Lead at 15:28Z; corrected
+    in the handover message.
+  - `git log -- <path>` takes more than 120 s here.
+### NEXT (for a successor)
+1. Referee items on P-N5-LV2 (and P-N5-LV) → NEW fixes files.
+2. Lead 15:34Z (crossed my handover): P-N5-LV2 PINNED at trunk 283bcb6, queued after P-N5-LV. A2* is approved as the next item. If A2*
+   stalls within ~45 min, switch to the Lead's D18 suggestion: prove REFEREE-2's DATA observation unconditionally ("after a rise with
+   r > L the scope run has no further fallback"; 62 library + 26,665 climb cases). That would make ENT-X independent of EV+ and
+   FREE-FREEZE.
+3. With CL-S closed up to the reviews (SCOPE-FB), the G-N5-TIME gaps that remain are not this lane's alone: scope runs per phase,
+   out-of-scope fallbacks, S4a steps, phases and X. Ask the Lead which one to take.
+
 ## Resume point (successor 7, box 12; GO 14:18Z 2026-10-25 (Lead); session_01Nosb1KbEcKX2yMZfBES2sA)
 Handover check 5/5 (docs/agents/handover-checks/L-SI.md). Trunk 7fc7ac9 merged (R36, R37, R38 landed). Lead order: (0) P-N5-ENT fixes
 file when REFEREE-2 9's R2-N5-ENT SHA is relayed (priority); (1) level −1: (c) exclude a (β)-fallback, else the exact obstruction; then
@@ -15,9 +57,15 @@ file when REFEREE-2 9's R2-N5-ENT SHA is relayed (priority); (1) level −1: (c)
 - (a) done as a lane write-up: docs/si/N5-LV5-box12.md. PROVED: Lemma SAND (COARSE_{−1}(θ) frozen once r = −1), FLAT-ALL_{−1}^{none}
   (LV-SHAPE + H1 at k+1 replace FBL), Theorem LV-NONE (≤ n·n_E + 1 u* = none fallbacks per scope run), Corollary SCOPE-FB (≤ 4·n·n_E + 3
   fallbacks per scope run; CONDITIONAL on P-N5-ENT PL-S″, P-N5-LV, N5-LV4).
+- (0) DONE: docs/si/P-N5-ENT-fixes-box11.md FROZEN sha1 72d052b5 (l-si b6b8f85b). Lead drafting R40.
+- Packet P-N5-LV2 (docs/si/P-N5-LV2-box12.md; Lead GO 15:16Z/15:19Z): LV4 + LV5 in one packet. The one-part draft P-N5-LV4-box12.md
+  (79281d48) was never reported; removed in the LV2 commit.
 - Things only I know (box 12): random 𝒞^1O games (n ≤ 18) give NO in-scope THR fallback; only the corpus instances do. A THR fallback
   needs (o, x0) ∉ Iτ, i.e. Even's best reply to τ from x0 is at least as good as from t (R37 BL Step 0/1). That is the lever: ANTI-Ξ
   turns "Even's best reply avoids (β) gates" into "U(x0) ⊴ Ξ(x0)", against THR.
+  - Trap (bit me again at ~15:22Z): `pkill -f scopefb.py...` killed my own shell (exit 144). Kill by PID from `ps aux | grep "[x]"`.
+  - Trap: Lead messages arrive only via ReadNotifications; I missed two relays (14:33Z, 14:46Z) for ~35 min. Call ReadNotifications after
+    every push.
 
 ## Handover check (successor 6)
 Session session_01WZRciyMqz1LNWwdFoeq2AP (Opus 5.5; D14, D15, D18, L37, L40). Written 2026-10-25 ~12:05Z (date -u).

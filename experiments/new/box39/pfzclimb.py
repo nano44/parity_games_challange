@@ -2,7 +2,8 @@
 """Box 39: hill climb AGAINST Theorem P-FREEZE (docs/new/N5-RW-box39.md §11). Canonical start. Score = (FAIL, lastP, fb): FAIL = #FBF/PFZ
 failures (any > 0 is a counterexample candidate, saved), lastP = max over θ-constant phase runs of the #fallbacks completed
 before the last P-change on U (the theorem: ≤ |U| − 1; a run with more counts as FAIL), fb = max fallbacks in one θ-run. Mutations as box38/nebclimb.py
-MODE=TAU. Usage: pfzclimb.py seed.pg rseed minutes outdir"""
+MODE=TAU. Env PFZ_SCORE=excess: score = (FAIL, max over θ-runs with |U| ≥ 3 of #fallbacks − (|U| − 1), lastP): pushes runs into the
+post-freeze regime. Usage: pfzclimb.py seed.pg rseed minutes outdir"""
 import sys, os, random, time, io, contextlib
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "box38"))
 os.environ.setdefault("MODE", "TAU")
@@ -16,6 +17,7 @@ def score(g):
     fail = acc.get("FAIL_FBF", 0) + acc.get("FAIL_PFZ", 0) + acc.get("post_freeze_crossings", 0) * 0
     late = acc.get("_late", -99); fb = acc.get("max_fb_in_run", (0,))[0]
     fail += 1 if late > 0 else 0
+    if os.environ.get("PFZ_SCORE") == "excess": return (fail, acc.get("_excess", -99), acc.get("_lastP", 0))
     return (fail, acc.get("_lastP", 0), fb)
 
 if __name__ == "__main__":

@@ -238,7 +238,10 @@ lane data quantities (J, K, S_o, E, K_W); 0 violations is evidence, not proof.
 | n 5 subset quarter 1 (index = 0 mod 4) | 17,193,152 | 0 | 1 | none | 4 / 0 / 308,550, 10,240 | 0 | 1 | 2 |
 | n 5 subset quarter 2 (index = 1 mod 4) | 17,191,424 | 0 | 1 | 0 / 4 / 0 / 0 / 0 | 6 / 0 / 365,930, 13,902 | 0 | 1 | 2 |
 | n 5 subset quarter 3 (index = 2 mod 4) | 17,189,248 | 0 | 1 | none | 6 / 0 / 308,472, 10,210 | 0 | 1 | 2 |
-Readings (DATA): CASC is vacuous through n 5 (no R-switch inside a W-flat run); J <= 1, K = 0, S_o <= 2, E <= 1, K_W <= 2 at n 4 and on n 5 quarter 1 (S_o <= 1 there).
+| n 5 subset quarter 4 (index = 3 mod 4) | 17,190,976 | 0 | 1 | 0 / 12 / 0 / 0 / 0 | 4 / 0 / 365,956, 13,932 | 0 | 1 | 2 |
+| n 5 subset, all 4 quarters | 68,764,800 | 0 | 1 | 0 / 16 / 0 / 0 / 0 | 20 / 0 / 1,348,908, 48,284 | 0 | 1 | 2 |
+Readings (DATA, exact on these classes): CASC is vacuous through n 5 (no R-switch inside a W-flat run); J <= 1, K = 0 (no wake at all),
+S_o <= 2, E <= 1, K_W <= 2 at n 4 and on the WHOLE n 5 subset (S_o <= 1 there); 0 violations of every box 7 check on all of it (box 7 complete).
 
 ## Box 8 (Lead GO 04:56Z / order 05:18Z, D18): R28 (OE, OX), R29 (CLS), R30 in landing (SN + fixes §2b) on the exact small-n classes
 Labels (L40): DATA (exact = every run of the stated class); 0 violations is evidence, not proof. box8.py calls the referees' checkers
