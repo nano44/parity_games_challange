@@ -88,6 +88,10 @@ def phase(g, E, st, p0, p1, cnt, o, do, name):
             if run_ == n and F is None: F = t
         if F is None or lastH2 is None or lastH2 < F: continue
         cnt["FREEZE_windows"] += 1
+        if l >= 0:  # §C count (Lead 08:41Z / R2-N5-FRZ C.3 (i)): S4a leaves at (h) states t >= F of the phase
+            for t in Ps:
+                if t >= F and t < p1 and st[t]["h"] and not st[t]["fb"]:
+                    cnt["LEAVE_h_afterF_tr"] += 1; cnt["LEAVE_h_afterF"] += len(st[t]["R"] - st[t + 1]["Rb"])
         T_ = [t for t in Ps if t >= F and st[t]["H2"]]
         for t in Ps:
             if t < F or t > lastH2: continue
@@ -112,6 +116,7 @@ def phase(g, E, st, p0, p1, cnt, o, do, name):
                 I = range(t, u + 1); cnt["BLOCK_runs"] += 1; left = set()
                 for s in range(t, u):
                     if not st[s]["fb"]:
+                        cnt["BLOCK_S4a_leaves"] += len(st[s]["R"] - st[s + 1]["Rb"])  # §C count (R2-N5-FRZ C.3 (i))
                         left |= st[s]["R"] - st[s + 1]["Rb"]
                     if left & st[s + 1]["R"]: cnt["BLOCK_FAIL"] += 1; EX.append((name, "BLOCK", s, l))
                 t = u + 1
@@ -151,6 +156,9 @@ def xrun(g, E, st, p0, p1, cnt, o, do, name):
         cross = [t for t in P[:-1] if st[t]["R"] != st[t + 1]["R"]]
         Fb = Fl(BOT)
         if Fb is not None and any(t >= Fb for t in cross): cnt["XRUN_afterbot_FAIL"] += 1; EX.append((name, "XRUN_bot", Fb))
+        if Fb is not None: cnt["XRUN_afterbot_tr"] += len([t for t in P[:-1] if t >= Fb])  # §C count (R2-N5-FRZ C.3 (ii))
+        if Fl(-1) is not None: cnt["XRUN_seg_m1_runs"] += 1
+        cnt["XRUN_leaves_from_last_P"] += len(st[P[-1]]["R"] - st[P[-1] + 1]["Rb"]) if P[-1] < Q[-1] else 0
         for l in range(0, n):
             a, b = Fl(l), Fl(l - 1)
             if a is None: continue
