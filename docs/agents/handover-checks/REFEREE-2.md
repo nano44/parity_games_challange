@@ -74,6 +74,11 @@ Measured from the repository at the time of writing (commands named), not recall
   LV data difference: u* = none reached by successor 9's climbs). Commit stamps 16:11-16:12Z but absent at my 16:14Z fetch (pushed
   later, or stamps ahead). Merged --no-ff, no conflict. So no §C for NEB/LV is open. PFZ: no REFEREE report on trunk yet; §C PFZ
   when it lands (my R2-N5-PFZ 37e55fde rides this push).
+- P-N5-PFZ-ext (docs/new/P-N5-PFZ-ext-box39.md): `sha1sum` -> b3702b1b…d2a; same at pin c61ecc4. To sign: P-FREEZE′, θ-LEN,
+  BRK-POLY′. Not started (predecessor's 937535e5, a second late push, merged --no-ff). Lead wants it as a new section of
+  docs/referee-2/R2-N5-PFZ.md. Next step: read it; base checker R2-N5-PFZ/pfz_check.py theta_run(), keyed by P(θ) (lane's PFZ_KEY=P).
+- Added to LV2 by the Lead (via 937535e5): count r = -1 THR in-scope fallbacks PER SCOPE RUN on the u* = none climbs, to test LV-NONE
+  (<= n·n_E + 1 per scope run) and SCOPE-FB; lv_check.py needs a per-run maximum (mxu()).
 - Predecessor NEEDS (Lead routes N-NEB-1..3, N-PFZ-1..3 to L-NEW; N-LV-1..3 to L-SI; u* = none witness to L-RED): Lead's. NOW.md:34
   shows L-SI 8 GO'd on "LV-NONE / SCOPE-FB on REFEREE-2 u* = none climbs", so N-LV-3 reached L-SI.
 - Oink not built in this container (`ls tools/oink/build` -> absent); scripts/setup_oink.sh started 16:14Z.
