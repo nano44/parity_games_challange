@@ -12,6 +12,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - (c) NO-ENTRY-B FALSE (nebc_cex_n14, canonical; neb_cex_n11, start pair). PROVED instead (docs/new/N5-NEB-box38.md): Lemma LOW-RISE,
   Theorem BRK-B (B_S ≤ θ_S + (n−2)²(θ_S+1), τ(o) = o), Corollary OUT-1 (τ(o) = o out-of-SN fallbacks poly in θ_ph, T_ph; both cases).
   Tools box38: rrgate, statesamp, neb_aug, neb_run, nebclimb, lowrise (data/lowrise_lib.txt: 0 failures).
+- (c) τ(o) ≠ o (docs/new/N5-TAUW-box38.md): PROVED Lemma RISE (any case: break ⇒ θ-change or R̄-rise), HIGH-RISE (case A: the rise
+  is at lev ≥ rank(o)), NO-ENTRY-A′ / BRK-B′ (c_w = o at the fallback, any τ(o); new W-case: switched v on C_W), Corollary BRK-ALL.
+  FALSE: NO-ENTRY when c_w ≠ o (tauw_A_cex_n24 e29908d5…, tauw_B_cex_n24 c0ad4f0c…, canonical). Obstruction: band (rank(o), rank(c_w))
+  invisible to W (fbrestart_cex_n24 state 10, gates at rank 19, band (12, 21)). OPEN: R̄-rises after c_w ≠ o fallbacks; θ_ph.
 
 ## Handover check (successor 17)
 Successor 17 (Opus 5.5, D14/D15/D18, L37/L40), session_01ESR6bpU1r4ZjFsMExZtFpq, written 2026-10-25 11:5xZ by date -u (clock read
@@ -468,6 +472,10 @@ container only; a new container needs scripts/setup_oink.sh.
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 17, box 38 (c)) NO-ENTRY for τ(o) ≠ o with c_w ≠ o (both cases): FALSE, canonical start. experiments/new/box38/instances/
+  tauw_A_cex_n24.pg (sha1 e29908d546d62e64903b41aa987351c3b3c68a62; case A; n5 16 it / 3 fb; Oink OK) and tauw_B_cex_n24.pg (sha1
+  c0ad4f0ca6ce9a35d3c89b377e686eef58dc3845; case B; n5 10 it / 4 fb; Oink OK). Obstruction: W's threshold is c_w, so honest R → R̄ gates at
+  levels in (rank(o), rank(c_w)) survive Step (K) at a fallback, and R̄-values rise there (tauw_A: high rise at rank 19 in band (17, 21)).
 - (succ. 17, box 38 (c)) CONJECTURE NO-ENTRY-B (τ(o) = o, case B: no entry after an HN fallback while θ is constant): FALSE, canonical
   start. experiments/new/box38/instances/nebc_cex_n14.pg (sha1 399119afb8741f3689081389e70729891937df7b; nebclimb seed 3835 from
   b5_os_n14). n 14, o = 7, rank(o) 6 < rank(c_θ = 12) 8. n5 9 iterations / 5 fallbacks; Oink zlk OK, strategies verified. Fallback at 1
