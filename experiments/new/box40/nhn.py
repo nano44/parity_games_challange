@@ -5,13 +5,15 @@
 - every EV2 end is an Even S4c fallback evicting t0 (FAIL_SPLIT), with a strict rise Ξ_k(t0) ◁ Ξ_{k+1}(t0) (FAIL_SG).
 - EV2 ends that are the j-th in-phase fallback with j ≥ |U| − 1 ("post"): M_k(t0) = M_{k+1}(t0) (FAIL_PIN), = MoptÛ(t0) (exact
   DFS, |U| ≤ 18; FAIL_MOPT), the rise is length-only (FAIL_LEN); post EV2 ends per phase ≤ |U| − 2 (FAIL_POST).
+- H3-IN-HN: every H2 state of the phase has c_w = c_θ (FAIL_H3).
 - N_HN ≤ 1 + #DROP + #EV2 (FAIL_NHN1); N_HN ≤ ⌈T/2⌉ + 2|U| − 3, T = |U|(n + 1) + n − 1 (FAIL_NHN).
 DATA only. Usage: nhn.py game.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(HERE, "..", "box39")); sys.path.insert(0, os.path.join(HERE, "..", "box38"))
+sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "box39")); sys.path.insert(0, os.path.join(HERE, "..", "box38"))
 from neb_run import *
 from rho import mopt_hat
+from qsurvey import wcyc_node
 
 def fail(acc, k, *info): bump(acc, k); print(k, *info, flush=True)
 
@@ -29,6 +31,10 @@ def analyse(g, acc, name):
         hi = E.rank[ct]; wt = lambda v: (E.weight(E.bit[v]) if E.rank[v] > hi else 0); M = lambda t: E.weight(rows[t]["Xi"][t0][1])
         fbs = [k for k in range(a, b) if rows[k]["fb"]]; fbi = {k: j + 1 for j, k in enumerate(fbs)}
         drops = ev2 = post = 0; mo = None
+        for t in range(a, b + 1):
+            if rows[t]["h2"]:
+                bump(acc, "H3_checks")
+                if wcyc_node(g, E, rows[t]["s"], rows[t]["t"], o) != ct: fail(acc, "FAIL_H3", name, t)
         for k in range(a, b):
             if rows[k]["h1"] and not rows[k + 1]["h1"]: drops += 1
             if HN[k] and rows[k + 1]["h1"] and rows[k + 1]["h2"]:
