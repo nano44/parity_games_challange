@@ -1,5 +1,54 @@
 # Handover check: REFEREE
 
+## successor 11 (2026-10-25T21:00Z by date -u; Opus 5.5 under D15/L37, label "(Opus 5.5, D15)"; predecessor successor 10, handover 1c6c3448)
+Measured from the repository at the time of writing, not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee`. Local branch started STALE at 73b46eb8 again (`git rev-list --count 73b46eb8..1c6c3448` = 1952).
+  `git fetch origin claude/referee`; `git checkout -B claude/referee origin/claude/referee`: HEAD = origin/claude/referee = 1c6c3448
+  (checked with `git rev-parse`).
+- Trunk = remote HEAD `claude/vibrant-johnson-nxvvxo` (`git ls-remote --symref origin HEAD`) at f23b9c4b ("Lead: R47 draft (P-N5-NHN)
+  pending fixes file; log"). Before merging: 2 ahead / 21 behind trunk, merge-base 39dee725. The 2 ahead: 271ac79f (trunk merge),
+  1c6c3448 (handover).
+- Merged trunk with `git merge --no-ff` (1c8a1fa3): 3 ahead / 0 behind before this file's commit.
+- Oink: scripts/setup_oink.sh built 8fbf0a7 into tools/oink/build, exit 0.
+
+### 2. Open work and next step (notebook "HANDOVER (successor 10 -> successor 11)")
+- §C on P-N5-NEEDB: my report docs/referee/R-N5-NEEDB.md (008ad8ab; all SIGNED, no gaps; notes NEEDB-N1..N4). Next: when REFEREE-2
+  successor 12 pushes R2-N5-NEEDB and the Lead sends its SHA, write §C in R-N5-NEEDB.md (verdict comparison, joint gap map,
+  accept/reject notes).
+- §C on P-N5-FX: my report docs/referee/R-N5-FX.md (843ba1f8; SIGNED, (b) conditional on FBPOLY (+ FBP-1 repair for F*); FX-N1).
+  Next: same, after R2-N5-FX and the Lead's SHA. Check whether R2's (b) condition matches mine.
+- §C on P-N5-NH-box42: my report docs/referee/R-N5-NH42.md (a47f8540; all SIGNED, no gaps; NH42-N1..N3). Next: same, after R2's report.
+- Then the K packet (P-N5-KW) when the Lead routes it. On trunk now (unrefereed, not yet routed): L-SI box 15 N5-KW note
+  (experiments/si/kw15/), L-NEW N5-KW-box42 v3 (b9ee6918: Theorem E-HI). Not started by me.
+- Checked on trunk f23b9c4b: no docs/referee-2/R2-N5-{NEEDB,FX,NH42}* yet (`git ls-tree`), so nothing to compare; I have not opened
+  any R2 file for these packets. Order per the predecessor: NEEDB -> (R2's §C FBPOLY) -> FX -> NH42.
+
+### 3. docs/GAPS.md rows relevant to me (trunk f23b9c4b)
+- REFEREE owns no row. The row my packets feed: G-N5-TIME (l.11), major, owner L-NEW (L-LIT T22; "referees later"), **open**. Last
+  UPDATE 20:36Z: R44 (P-N5-PFZ + ext + fixes) and R45 (P-N5-RHO + fixes) LANDED [refereed-only]; "Still open for G-N5-TIME: N_HN for
+  τ(o) ≠ o (P-N5-NHN ...), fallbacks per phase (P-N5-FBPOLY), phases (P-N5-PHI), crossings (P-N5-FX), the NH count (P-N5-NH-box42),
+  and K." (Trunk also carries Lead drafts R46 (PHI) and R47 (NHN) pending fixes files, not yet in this row.)
+- G-N5-TERM (l.16) closed (RESULTS R15). DTL rows (GAP-A l.6, etc.) open but paused (D18/L40).
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index l.5: **active**; DECISIONS.md l.7-8):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index l.26: **active**; DECISIONS.md l.278):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index l.32: **active**; DECISIONS.md l.333):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (successor 10, FBP-1 / FBP-2): a bound's proof silently assumed the generic case (no self-loop at o; o ≠ c_θ). Check: in every
+  bound, test the corner cases explicitly with my own probe: self-loop at o, o = c_θ, |U| = 2; and for every hypothesis a packet
+  calls vacuous or unreached, report my own count with the file set, never the packet's word (N-ENT-2, N-NEB-2 lessons).
+- Process trap (successor 10): `pkill -f` in the same shell killed its own wait loop (exit 144). Check: never pkill -f from the shell
+  that runs the loop; keep each Bash wait < 600 s.
+- Again this restart: the clone started stale (73b46eb8); checked `git rev-parse HEAD origin/claude/referee` equal before any work.
+
 ## successor 10 (2026-10-25T16:41Z by date -u; Opus 5.5 under D15/L37, label "(Opus 5.5, D15)"; predecessor successor 9, handover 4859e63e)
 Measured from the repository at the time of writing, not recalled.
 
