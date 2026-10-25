@@ -128,3 +128,30 @@ Setting: in scope, THR, M_k = −1, so every gate has level −1 (gates are stri
   - They are exactly the fallbacks that PL_{−1} / LV-PL do not count (r ≥ 0 is required). They are therefore the live part of §5's OPEN
     item, and a concrete target for L-RED and L-SI: count (β)-fallbacks with r = −1 per scope run.
   - LV-SHAPE, which has no r ≥ 0 hypothesis, holds on all of them.
+
+## §C. Comparison with REFEREE's R-N5-LV (written 2026-10-25 16:12Z by date -u, after my report b1038bea was pushed and merged)
+Read: docs/referee/R-N5-LV.md on trunk (REFEREE successor 9, report 8054da2f).
+- Verdicts are identical. Both sign LV-SHAPE, LV-CN, LV-COUNT, FLAT-ALL_{−1}, STRETCH_{−1}, PL_{−1} (a)-(c) and LV-PL, and neither signs
+  §5 or the addendum.
+  - REFEREE notes that CN-LAST is landed (RESULTS R38 (f)), so LV-CN / LV-COUNT are unconditional. I agree: CN-LAST's hypotheses are
+    LV-CN's verbatim. My "CONDITIONAL ON CN-LAST" is discharged by R38.
+- No gap in either report, so the joint gap map is empty.
+- Notes map:
+| REFEREE | REFEREE-2 | content | status |
+| --- | --- | --- | --- |
+| LV-N1 | (my status line on CN-LAST) | R-SAME / BL (R37) and CN-LAST (R38) are landed; §0 / §2 statuses stale | agreed |
+| LV-N2 | N-LV-2 | STRETCH_{−1} must hold for k ≤ e; PL_{−1} (a) needs it for the run ending at f_N | same; agreed |
+| LV-N3 | (in my §4: "the fallbacks joined by clean intervals form ≤ 1 + D_{−1} groups") | "[f_1, f_N] splits into at most 1 + D runs" is false when a dirty interval has several COARSE changes; read it as runs containing block fallbacks | ACCEPTED; I used the repaired form and should have flagged it |
+| — | N-LV-1 | FLAT-ALL_{−1} (i) cites H2; R31's FBW-1 says H1 at k + 1 | mine only (citation); REFEREE checked the same proof step |
+| — | N-LV-3 | the u* = none (LV) setting is reachable | mine only (DATA); see below |
+- Data, the one real difference:
+  - REFEREE's data and its three 20-minute climbs found 0 in-scope THR fallbacks with M = −1, and called the climb weak evidence.
+  - My random-seeded climbs reached 173,371 such states, all with u* = none (r = −1). LV-SHAPE held at all 1,037,743 of their gates.
+  - The witness best_lv_9401.pg (sha1 4b74cd84) was re-run by the Lead: one Odd choice vertex, n5 5 / 1, Oink zlk OK, strategies
+    verified.
+  - So the setting of §1-§2 is NOT vacuous for r = −1. The r ≥ 0 part (FLAT-ALL_{−1}, STRETCH_{−1}, PL_{−1}, LV-PL) is vacuous in both
+    referees' data.
+- NL= (the addendum's CONJECTURE, not to sign) is now FALSE (L-RED nleq_cex_n48, sha1 e72e4034, Lead re-run). No signed item uses it:
+  §1-§4 never cite NL at r_j = L. REFEREE checked this too.
+- Joint state: all signable statements of P-N5-LV are signed by both referees (Opus 5.5, D15), unconditional after R38. No gap.
+  Fixes-file lines for L-SI: LV-N1..N3, N-LV-1..N-LV-3.

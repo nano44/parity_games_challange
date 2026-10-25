@@ -1,0 +1,13 @@
+EVG_chk                      34389
+SAND_chk                     181
+SFB_EQ                       11
+SFB_ge0                      788
+SFB_max_per_run              37
+STALE_chk                    70267
+games                        402
+games_c1o                    288
+not_c1o_stale_only           114
+scope_runs                   236
+skip_big                     45
+FAILS 0
+exit 0
