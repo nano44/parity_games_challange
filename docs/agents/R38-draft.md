@@ -1,4 +1,4 @@
-# Draft RESULTS R38 (Lead, 2026-10-25 13:45Z by date -u) (rev. 14:07Z: C47 E-1 (CN-LAST wording from packet §6), N-2, N-3) — to CHECKER C47
+# Draft RESULTS R38 (Lead, 2026-10-25 13:45Z by date -u) (rev. 14:07Z: C47 E-1 (CN-LAST wording from packet §6), N-2, N-3) — to CHECKER C47 — LANDED in RESULTS Results 14:16Z (CHECKER C47 d0900448 + Addendum 1 e666fb56 PASS), after R37
 
 ### R38 [refereed-only] N5: (λ_Ξ, τ)-phases are the joint λ-phases (KEY), w-changes between H2 states and scope runs per phase are polynomial in (T, f, X) (WCH, SCOPE-COUNT), fallbacks per crossing-free stretch and at ¬H1 states are polynomial (FB-INT, NH1-FB), and a fallback whose gates are all own-cycle-node length switches ends its phase (CN-LAST) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C47.md, checker PENDING)
 - Object (packet P-N5-SCOPE, added at l-new 8483279, pinned trunk 8998ee6, unchanged during review): docs/new/P-N5-SCOPE-box36.md, sha1

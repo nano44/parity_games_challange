@@ -151,3 +151,27 @@ running-time bound … G-N5-TIME stays OPEN". No statement about general games.
 - OUT-N1 (dependency table): KEY and FB-INT are signed by both referees (no longer "IN REVIEW").
 
 Signed: REFEREE (successor 8) (Opus 5.5, D15).
+
+## §C. Comparison with REFEREE-2 (written 2026-10-25 14:07Z by date -u; REFEREE successor 8 (Opus 5.5, D15))
+- Compared against: the FINAL docs/referee-2/R2-N5-OUT.md at referee-2 dfcaae67 (merged to trunk 9f83566), named by the Lead at 14:03Z
+  (Lead's stamp). I read it after this report (fa086876) was pushed.
+- Verdicts: identical. Both referees sign SPLIT, EPOCH (corrected; both note that "+ X_S" is needed), F-FLAT, FREEZE-STEP, TAIL,
+  NO-ENTRY-A, NE-COUNT (a)-(c), CASE-B-LEN and W-SIDE. Neither signs §7.
+  - R2 treats W-SIDE's "Consequence" as a READING. So do I: the packet labels it READING, and my "Remark W-SIDE" signature covers the
+    remark, not the Consequence.
+- No gap in either report. Joint gap map: empty. R2's notes:
+
+| R2 note | what it says | checked | this lane | joint status |
+| --- | --- | --- | --- | --- |
+| N-OUT-1 | FBL-N's R contains o, so FBL-N (iii) already excludes the target o; the "(filled in)" step is redundant but correct | P-N5-X-box28.md §0 l.35: "R_k: the vertices whose (σ_k, τ_k)-play reaches o, with o ∈ R_k by convention". Correct | I checked the filled-in step as correct (§1) but did not see that it is redundant | ACCEPTED (note) |
+| N-OUT-2 | Step (K) is stated "inside a phase", and NO-ENTRY-A BASE (and CASE-B-LEN) allow a + 1 to leave it. Cite FBL-N (i) + F1, or require a + 1 ∈ S | the same point as my OUT-R1. R2 also applies it to CASE-B-LEN, which has the same "a fallback is taken at a" hypothesis, and which I did not flag | OUT-R1 (BASE only) | ACCEPTED, extended to CASE-B-LEN (note) |
+| N-OUT-3 | the KEY / FB-INT status column is stale | = my OUT-N1 | found | ACCEPTED (note) |
+| N-OUT-4 | §7's CONJECTURES NO-ENTRY-B and NO-ENTRY (τ(o) ≠ o) are FALSE: nebc_cex_n14, tauw_A_cex_n24, tauw_B_cex_n24 (lane box 38) | §7 is not to sign. DATA (own out_probe.py, inputs only; sha1 399119af, e29908d5, c0ad4f0c): every signed check holds on all three, with 0 failures (SPLIT 12 / 11, F-FLAT 11, FREEZE-STEP 4, CASE-B-LEN 4, 5 stretches) | I recorded NO-ENTRY-B's falsity (per the Lead) only | ACCEPTED (record); no signed item is affected |
+
+- Fixes-file lines (L-NEW, P-N5-OUT; none blocks a signature):
+  - N-OUT-1: SPLIT (b) / F-FLAT Step 1: mark the o-target step as already covered by FBL-N (iii) (o ∈ R there).
+  - N-OUT-2 = OUT-R1: cite FBL-N (i) + F1 (or Step (K)'s proof) in NO-ENTRY-A BASE and CASE-B-LEN.
+  - N-OUT-3 = OUT-N1: KEY / FB-INT status → signed by both referees.
+  - N-OUT-4: §7: NO-ENTRY-B and NO-ENTRY (τ(o) ≠ o) → FALSE (the three instances).
+- Joint state: all of §1-§6's signable statements are PROVED (L-NEW succ. 16 / 17) and signed by both referees (Opus 5.5, D15), with
+  no (P), pending CHECKER.
