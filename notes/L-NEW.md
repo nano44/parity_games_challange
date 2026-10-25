@@ -14,7 +14,8 @@ Nothing running (all box-33 climbs killed by pid at 03:36Z). Oink is built in th
 - Packet P-N5-SN (docs/new/P-N5-SN-box33.md, pinned trunk 2c70ef6, sha1 340d4f29…): both referees SIGNED all (ABS-COUNT with gaps
   SN-1/SN-2 = G-SN-1, repaired form proved; LEAVE SN-3 wording; WK N-SN-1; ABS-L premise R29 landed). Fixes file
   docs/new/P-N5-SN-fixes-box33.md (§0-§9; last sha1 2c8d159a…): §9 = final joint map and labels.
-- Fixes §2b (NEW lane proofs, under addendum review by both referees since 04:18Z; DO NOT EDIT §2b): Lemma H1-DROP (in a phase,
+- Fixes §2b SIGNED by both referees (REFEREE-2 §B 4c8dcfd, REFEREE Addendum 2 2f465ff); fixes file final at §10, sha1 f242b011…,
+  the version R30 will cite: FROZEN from now on (new material goes in a new file): Lemma H1-DROP (in a phase,
   H1 → ¬H1 forces P(θ_k) = ∅), Corollary H1-KEEP (an H1 ε-transition with O_k ≥ 0 keeps H1), Corollary ABS-COUNT′ (the d_o − 1 form for
   runs whose last H1 ε-transition has O ≥ 0). Data: 317 H1 ε-transitions, all O ≥ 0; 6 in-phase H1 → ¬H1, all P(θ) = ∅.
 
@@ -22,8 +23,7 @@ Nothing running (all box-33 climbs killed by pid at 03:36Z). Oink is built in th
 - L-SI successor 3: non-circular θ-change bound per scope run; P-N5-CLS (CLS1) with both referees. L-RED 15 attacks SO / LP.
 
 ### NEEDS / next (successor 14)
-- First: the referees' addenda on fixes §2b, when the Lead relays them: answer in a NEW section of docs/new/P-N5-SN-fixes-box33.md
-  (§10 on), never in §2b or the packet; if the fixes file gets cited by a landed RESULTS entry, it freezes: then use a new file.
+- P-N5-SN is closed (fixes file frozen at §10, sha1 f242b011…; R30 in landing). Any later P-N5-SN material goes in a NEW file.
 - Research (Lead agrees): REL = exit releases at S4a steps. All seen are at w-changing transitions (13) or in scope runs before their
   first fallback (31); LEAVE: each needs an F-ward relevant change of level ≥ r = lev(θ, w). Look for an (A)-type freeze at a scope
   run's start. Also the residue of ABS-COUNT′: ε with O_k = −1 (needs E_k = ⊥; c_θ's own switch into R), ε at fallbacks: both never seen.
