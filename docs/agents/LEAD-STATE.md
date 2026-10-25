@@ -1265,3 +1265,10 @@
   - Created L-SI successor 8 session_013kZp65x9TKU9AqPZdMYGpm.
   - NOW: 16 parked rows archived to ROSTER-ARCHIVE (148 → 132 lines).
 - 15:40Z Lead: merged checker 2b54058 (C49 = R40 FAIL. E-1: REFEREE-2 §C C.1 does record the R36 lift; I had said it did not. Optional N-1 and N-2. Points (2) and (3) PASS; re-runs exact) and l-si a6378fc (L-SI 7 NEXT updated). R40 revised: E-1 as given, N-1, N-2; new sha1 28bbe2c3. CHECKER 6 (~470k): hands over after R40 Addenda 1 and 2.
+- 15:45Z Lead: merged l-new 79c706d and l-red.
+  - l-new: L-NEW 18 PARKED at ~420k. New working doc docs/new/N5-RHO-box39.md, sha1 443d91d8; lane PROVED, unrefereed, no (P).
+    - Y-FORM, HAT-FREEZE, RHO-TAIL, BF-F / FREEZE-F, RHO-HN: ρ_HN ≤ (N_HN + |U| − 2)(|U| + deg(o) − 3) + deg(o).
+    - HN-POLY: HN breaks, crossings, fallbacks and θ-changes per phase are poly(n, N_HN); poly(n) for τ(o) = o via R39 (f).
+    - Caveat: HAT-FREEZE after the freeze is exercised only on climb outputs.
+  - Created L-NEW successor 19 session_011reTXakSJCcwLhC4i9ZpkB.
+  - L-RED 16 CANDIDATE: CONJECTURE NL= FALSE (NL (ii) fails at r_j = L) on experiments/red/so/instances/nleq_cex_n48.pg, sha1 e72e4034. The file is not yet pushed; Lead re-run pending.
