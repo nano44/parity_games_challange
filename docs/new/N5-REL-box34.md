@@ -216,3 +216,48 @@ gives F(ℓ_0) := k_P + n − 1 (FREEZE). Induct downward on the level ℓ, with
 - READING (FBL needs u* ≠ none, i.e. r ≥ 0): per scope run, non-flat fallbacks ≤ n·(1 + number of θ-changes in the run). Between two θ-changes, after the first fallback R only shrinks (E1), and each non-flat THR fallback evicts a vertex (FBL). With item 6 of the
   Summary, per scope run the open count is the θ-changes after fallbacks (L-SI's "θ per scope run", P-N5-CLS §7). In the data they come
   at the drain level (93 of the 394 transitions right after a cluster change θ at exactly the cluster level; the other 301 do not; data/fbclus_lib.txt).
+
+## 10. (L2): how (h)-runs end and restart; ¬H1 SN states (written 06:05Z onward by date -u)
+**Lemma H3-CONST (PROVED, L-NEW succ. 14).** In a phase, at every H2 state c_w = λ(τ(o)). So H3 holds at all H2 states of the phase or at
+none. If the phase has one (h) state, then at every state of it (h) ⟺ H1 ∧ H2.
+Proof. Under H2, τ(o) ∈ F, and o's W-play continues along τ(o)'s W-play, which stays in F, where W = Ξ (R19 (a)). So c_w = τ(o)'s W-cycle
+node = λ(τ(o)). τ and λ are constant in a phase, and so is c_θ = λ(o). □
+- This gives RATCHET (a)'s "c_w = c_θ at H2 states" without a freeze.
+**Lemma H2-STICK (PROVED, L-NEW succ. 14).** At an S4a transition s → s+1 of a phase with H1 and ¬H2 at s, ¬H2 holds at s+1.
+Proof.
+- ¬H2: τ(o) ∈ R_s. Its W-cycle node is c_w(s), the top of o's W-cycle, which passes o, so c_w(s) ∈ R̄_s.
+- λ(τ(o)) = c_θ: τ(o)'s honest play agrees with its (σ, τ)-play up to o. Under H1, c_θ ∈ F_s (Fact 0's argument uses only H1).
+- So the two cycle nodes differ, and R30 (c) R-STICK keeps τ(o) in R_{s+1}. □
+- So inside a phase with H1 throughout, the (h) states of each fallback-free run form a prefix of the run. An (h)-run can restart only
+  at a fallback, or after a state without H1.
+**CONJECTURE ONE-H ("the (h) states of a phase are consecutive"): FALSE.**
+- Instance: experiments/new/box34/instances/oneh_cex_n32.pg (sha1 51dab08664031c9d34b38de04ba99f255926e14b; n 32, o = 27, d_o 4; climb
+  hrclimb.py from u1flat_best_n32).
+  - Verified: n5.py n5 gives 3 iterations, 1 fallback; check_sol2.py gives "zielonka(oink zlk) OK strategies verified"; exactly one
+    Odd vertex with out-degree > 1.
+  - The phase is states 1-3. State 1 is (h), with R = {19}. State 2 is ¬H1 ∧ ¬H2 ∧ H3: R̄ is everything, both cycles pass o, and
+    their common top is c_θ = c_w = 13. The fallback 2 → 3 returns to (h), with R = {19}.
+- Also a random game (seed 3461, game 2863 of 30,000 at n 5-14) has 2 (h)-runs in one phase. Library: max 1 (h)-run in each of
+  1,272 phases (data/hruns_lib.txt).
+- The interruptions seen: 36 in the library, 107 in the random sample. All are ¬H2 (with ¬H3 or with ¬H1); none is ¬H1 with H2.
+**Lemma G′ (PROVED, L-NEW succ. 14): the frames at an H3 state without H1.** Let k be a phase state with H3 and ¬H1, and put c := c_θ = c_w.
+- Then ¬H2, and c ∈ R̄_k: o lies on its honest cycle, whose vertices all reach o; H2 would put c_w in F.
+- For v ∈ R̄_k, call v c-FIRST if its (σ_k, τ)-play reaches c before o, and o-FIRST otherwise (o itself is o-first).
+- c-first v: Ξ_k(v) = W_k(v), the value of the same path v ⇝ c.
+- o-first v: Ξ_k(v) = π_v ⊕ θ_k and W_k(v) = π_v ⊕ w_k. Here π_v is v's route to o. It is disjoint from both paths of o and from c:
+  meeting σ̄(o)'s or τ(o)'s path to c would make v c-first.
+- On F_k, Ξ = W (R19 (a)). Hence lev(Ξ_k v, W_k v) ≤ r_k := lev(θ_k, w_k) for all v, by (C7).
+**Theorem FREEZE′ (PROVED, L-NEW succ. 14; no data, see below).** Theorem FREEZE (P-N5-FRZ §3) holds with "(h)" replaced by "H3" in the
+window, and "H2" replaced by "H2 or H3" in (b) and in its range.
+Proof. Read P-N5-FRZ §3 with these changes.
+- Step 1 at H3 states without H1 is Lemma G′.
+- Fact 0 at H3 states: the W-cycle node of v ∈ R̄ is c_w = c_θ = λ(v). Honest cycle nodes are in F, or (¬H1) equal c, whose W-value
+  is (c, ∅, 0) because c tops its W-cycle. That covers the base and the cases of P^c that use Fact 0.
+- Step 2: WM and R15 (a) as before.
+- Step 3 needs c_w to be an honest cycle node. That holds under H2 (c_w ∈ F) and under H3 (c_w = c_θ = λ(o)). □
+- DATA: none. No window of n consecutive H3 states containing a ¬H1 state occurs in the library (MODE=H3 freeze.py gives the same 183
+  freezes, all (h) windows; data/freezeH3_lib.txt) or in 20,000 random games at n 4-9.
+- OPEN: RATCHET and BLOCK at ¬H1 SN states. A c-first vertex has Ξ = W, so BLOCK's "BAD bit in R" fails for it; re-entries as c-first
+  vertices are not excluded. Under ¬H1, θ = o ⊕ Ξ(σ̄(o)) with σ̄(o) c-first (if c ≠ o), so RATCHET (b)'s counting of θ still applies.
+- So for (L2) the restart mechanisms are: (i) a fallback at a ¬H2 state that takes τ(o) out of R; (ii) a passage through ¬H1 ∧ ¬H2 ∧ H3
+  states (oneh_cex_n32). FREEZE′ already covers windows through (ii). (i) remains OPEN.
