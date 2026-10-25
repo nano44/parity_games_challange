@@ -21,9 +21,15 @@ L-NEW successor 13 (Opus 5.5, D15/D18). Box 33 GO by the Lead 02:06Z (Lead's sta
 5. **Lemma WK (PROVED, L-NEW succ. 13, from RESULTS R24 Lemma R / TB).** At a wake y: a → z whose W-cycle node is odd and y is not its own
    W-cycle node, W changes at a or at z (both in R) at the same transition. So in the odd mode every wake is a transition with a W-change
    on R; wakes with W unchanged at a and z exist only in the BFS (even) mode.
-6. **K data.** The library (234 files) has 1 wake (nowake_cex_n32). Three wake climbs (box33/kclimb.py, ~9·10⁴ candidates each so far)
-   reach K = 2 in one phase (consecutive transitions, rising wake levels 26 → 29), never more. Every wake seen is in U3 / U23 with
-   c_w the top-rank vertex (the length-only band of Lemma KW-LEN), BFS mode.
+6. **Lemma R-STICK, Corollary SN-PREFIX, Lemma SN-ORDER (PROVED, L-NEW succ. 13; §8).** At an S4a step R can lose a vertex only
+   when c_w = c_θ; in a run without fallbacks those states form a prefix, so after it R only grows (≤ n − 1 crossings). The crossing
+   problem lives in the SN regime c_w = c_θ, where (under H1) both frames order R-vertices identically. This proves EXIT-R for the 30
+   ε-transitions with c_w(k+1) ≠ c_θ; 249 remain conjectural.
+7. **K data, and the K-chain family (§11).** The library has 1 wake. Climbs reached K = 2. The explicit family kchain.py K (n = 11K + 14,
+   verified with Oink) has K − 1 wakes in ONE phase at consecutive transitions with rising levels: K per phase is Θ(n), not O(1). N5
+   stays fast there (K + 2 iterations). Every wake seen is U3 / U23, length-only band, BFS mode.
+8. **Refuted (§10).** H-RE (re-absorbing the same exit needs r to drop): FALSE on b6_xl_n48.
+9. **Tool bug (§11).** mono.py's lev() uses 99 for ∞: wrong on n ≥ 100 (library unaffected). box33/biglev.py patches it.
 
 ## 1. Lemma OR (PROVED, L-NEW succ. 13; 𝒞^1O; inside a phase)
 Statement. Let k → k+1 be a phase transition with O_k > E_k. Put c := λ(o) (≠ o: O_k is defined only then), x0 := σ̄_k(o),
@@ -111,7 +117,7 @@ Proof.
   mode, length-only band, U3 or U23); 4 with a W-change at a or z, 1 (U23, climb from nr_u23_n32) with W unchanged at a and z.
 - K per phase (box33/kclimb.py, fitness = max K in one phase, total K, finite dormant R → R edges; seeds nowake_cex_n32, nr_u23_n32,
   u1flat_best_n32, n 32): best K = 2 per phase (two consecutive transitions, wake levels rising 26 → 29 and 18 → 19). REFEREE-2's
-  K = 1 in all its data stands as the norm. CONJECTURE-level only: wakes per phase stay O(1) in reachable data; no statement.
+  K = 1 in random and library data. "Wakes per phase stay O(1)" is FALSE: the K-chain family (§11) has K − 1 wakes in one phase at n = 11K + 14.
 - READING: with Lemma KW-LEN, in the length-only band (c_w above every vertex of R, which is where every wake so far lives) the odd-mode
   wakes are ≤ (f + 1)·|R|·(n − 1) per stretch; the BFS-mode ones are W-flat switches of CASC-U3 sub-runs (≤ 2|R| − 4 steps each) or ride on
   W-changes. So in that band K is bounded given f and the events (E). (E) stays OPEN.
@@ -127,3 +133,123 @@ Proof.
   riseclass.py (X-rises by attainer), orise2.py (Lemma OR checks), orx.py (EXIT-R / ORX; EPS=1 for all ε-transitions), orxclimb.py.
   lib.txt = the 234-file library list used here.
 - Instances re-used: nowake_cex_n32 (sha1 3a56e3fb…), jcl_zcl_cu_n48 (sha1 53c69d2d…). No new named instance in this note.
+
+## 8. R never shrinks at an S4a step unless c_w = c_θ (PROVED, L-NEW succ. 13; written 02:41Z by date -u)
+Notation: c_θ := λ_Ξ(o) (fixed in the phase), c_w(s) := λ_W(o) at state s. For x ∈ R_s, λ_Ξ(x) = c_θ and λ_W(x) = c_w(s): x's
+(σ_s, τ)-play reaches o, its H_s-play agrees with it up to o (on 𝒞^1O the two graphs differ only at o), and both then follow o's play.
+Distinct cycle nodes compare by rew alone, and rew is injective (si.py l.42-44: pp = 2·rank + parity; rew = ±pp), as is Even's order
+on cycle nodes in VJ00.
+
+**Lemma R-STICK.** At an S4a transition s → s+1 (no fallback) of a phase, every x ∈ R_s with λ_W(x) ≠ λ_Ξ(x) lies in R_{s+1}. Hence if
+c_w(s) ≠ c_θ, then R_s ⊆ R_{s+1}.
+Proof. Suppose x ∈ R_s ∩ F_{s+1}. Off R, Ξ = W (RESULTS R19 (a) Lemma G (a)), so W_{s+1}(x) = Ξ_{s+1}(x), of cycle node λ_Ξ(x) =: c (fixed in
+the phase). W_s(x) has cycle node c′ := λ_W(x) ≠ c. At an S4a step W_{s+1} ⊵ W_s (the arena contains σ_s; R24 TB step 1, R17 (F1)), so
+rew(c) > rew(c′). But Ξ_s(x) (cycle node c) ⊴ W_s(x) (cycle node c′) by (XW) (VJ00 (11)), so rew(c) < rew(c′). Contradiction. □
+
+**Corollary SN-PREFIX.** In a run of consecutive non-fallback transitions of a phase, the states with c_w = c_θ form a prefix of the run,
+and after that prefix R never loses a vertex until the run ends. So every crossing after the prefix adds a vertex to R: at most n − 1
+of them per such run, and the crossings of a phase number at most (f + 1)(n − 1) + f + X_SN, where X_SN counts the S4a crossings at
+states with c_w = c_θ.
+Proof. W(o) is non-decreasing along the run (as above), so rew(c_w) is non-decreasing; and rew(c_w) ≥ rew(c_θ) at every state by (XW) at
+o, with equality iff c_w = c_θ (rew injective). So c_w = c_θ holds on an initial part of the run only. After it, R-STICK at every step. □
+- Consequence for §2: EXIT-R is PROVED for every ε-transition k with c_w(k+1) ≠ c_θ (x0 ∈ R_{k+1} by Lemma OR (a), then R-STICK to the end
+  of the run). It stays a CONJECTURE when c_w(k+1) = c_θ (249 of the 279 ε-transitions; the other 30 are covered).
+- DATA (box33/sn.py; 0 failures of R-STICK and of the prefix property): library 894 fallback-free runs, crossings at S4a steps 2,473 at
+  c_w = c_θ states vs 61 after the prefix (max 12 per run, jcl_zcl_cu_n48 at n 48; max 55 in the prefix, x32_rand64 at n 64); random
+  (sn.py --rand 2000 8 24 3302) 172 vs 0. Every S4a exit release of §2's data is at c_w = c_θ (45 of 45).
+
+**Lemma SN-ORDER (PROVED, L-NEW succ. 13).** Under H1 at a state with c_w = c_θ =: c, both frames are in route form, and for x, y ∈ R
+lev(Ξ(x), Ξ(y)) = lev(W(x), W(y)) with the same direction: the two frames order R-vertices identically. They can disagree only when an
+R-vertex is compared with an F-vertex.
+Proof. Under H1, c ∈ F (o is on no honest cycle). o's W-play ends on the cycle of c ⊆ F, so o is not on its W-cycle (H2). In route form
+(R22 / R24 (R1)) Ξ(x) = π_x ⊕ θ and W(x) = π_x ⊕ w, where π_x ⊆ R \ {o} is x's route and the paths of θ and w lie in F ∪ {o}. So
+P(Ξ(x)) = (π_x ∩ V_{>c}) ⊔ P(θ) and P(W(x)) = (π_x ∩ V_{>c}) ⊔ P(w), with lengths |π_x| + |θ| and |π_x| + |w|. For x, y ∈ R the symmetric
+differences of the path sets are (π_x Δ π_y) ∩ V_{>c} in both frames, the length differences are equal, and the cycle node (which fixes
+the length direction) is c in both. □
+- Reading: the crossing problem of a phase (X, hence the X-charged carries) lives entirely in the SN regime c_w = c_θ, where the two
+  frames agree on R and differ only by the terminal values θ ⊴ w at o. There Lemma BAND's band (rank c_θ, rank c_w) is empty, so route-form
+  wakes cannot occur. Leaving R at p needs an F-option ⊵ π_q ⊕ w (the optimistic value); joining R needs only π_r ⊕ θ ▷ the F-value (the
+  pessimistic one). An absorption (§1) is Even closing a loop p → r → … → o → x0 → … → p whose top above c is good for Even in the honest
+  frame; Odd leaves the loop at o.
+
+## 9. θ-changes are Even-driven or absorptions; the link to L-SI's CLS1 (Lead question 02:42Z; written 02:50Z by date -u)
+**Lemma TC-SPLIT (PROVED, L-NEW succ. 13; 𝒞^1O, inside a phase).** At every phase transition k → k+1 with θ_{k+1} ≠ θ_k: either
+lev(θ_k, θ_{k+1}) ≤ E_k, or k is an ε-transition and lev(θ_k, θ_{k+1}) = O_k (Lemma OR (c)).
+Proof. If λ(o) = o, θ = (o, ∅, 0) never changes. Else let x0 := σ̄_k(o), x1 := σ̄_{k+1}(o); θ_k = o ⊕ Ξ_k(x0), θ_{k+1} = o ⊕ Ξ_{k+1}(x1), and o
+lies on neither path (functional graph, as in Lemma OE step 2), so lev(θ_k, θ_{k+1}) = lev(Ξ_k(x0), Ξ_{k+1}(x1)) (L-SI (C7)). x1's
+H_{k+1}-path avoids o, so its relevant changes are Even ones of level ≤ E_k, and U-loc gives lev(Ξ_k(x1), Ξ_{k+1}(x1)) ≤ E_k. If x0 = x1 that
+is the claim. Otherwise lev(Ξ_k(x0), Ξ_k(x1)) = O_k, and by (C6) lev(θ_k, θ_{k+1}) ≤ max(O_k, E_k): ≤ E_k if O_k ≤ E_k, and = O_k if
+O_k > E_k (Lemma OR (c)). □
+- DATA (box33/scopecov.py, library): 1,573 θ-changes in phases, 0 failures; 279 are ε-transitions, 1,294 have level ≤ E_k.
+
+**Lemma ABS-L (PROVED, L-NEW succ. 13, from L-SI's Lemma NL (P-N5-CLS §5; unrefereed) and CAP-1).** Let S be a scope run (P-N5-CLS §0),
+k0 < k fallbacks of S with no fallback between them, L := M_{k0}, and r_j := lev(θ_j, w_j) > L for j ∈ [k0+1, k] (CLS1's case 2; there
+(A_j) holds for L at every j ∈ [k0+1, k], CLS1's proof). Then at every transition j ∈ [k0+1, k−1] with lev(θ_j, θ_{j+1}) > L:
+- (i) σ̄(o) changes, x0 := σ̄_j(o) → x1, and lev(θ_j, θ_{j+1}) = lev(Ξ_j(x0), Ξ_j(x1)) = O_j > L;
+- (ii) x0 ∈ F_j ∩ R̄_{j+1} (an absorption);
+- (iii) x0 ∈ R̄_t for every t ∈ [j+1, k].
+Hence there are at most d_o − 1 θ-changes above L in (k0, k).
+Proof.
+- (h) holds at j and j+1, so H1: σ̄(o) ∈ F at both (Lemma OR (b)'s argument). If σ̄(o) did not change, x0 ∉ R̄_{j+1} and NL (i) freezes
+  COARSE_L(Ξ(x0)), so lev(θ_j, θ_{j+1}) ≤ L by (C7). So it changes. x1 ∉ R̄_{j+1}, so NL (i) freezes COARSE_L(Ξ(x1)).
+- If x0 ∉ R̄_{j+1}, both are frozen above L. CAP-1 at j and j+1 (Ξ_j(x0) ⊴ Ξ_j(x1), Ξ_{j+1}(x1) ⊴ Ξ_{j+1}(x0)) then forces
+  lev(Ξ_j(x0), Ξ_j(x1)) ≤ L (a strict order above L would persist, (C1)-(C3)), and (C6) gives lev(θ_j, θ_{j+1}) ≤ L. So x0 ∈ R̄_{j+1}.
+  x0 ∈ F_j by H1. (i): Ξ_{j+1}(x1) agrees with Ξ_j(x1) above L, so the level > L is lev(Ξ_j(x0), Ξ_j(x1)).
+- (iii): NL (ii) at each S4a step of [j+1, k−1]: R_t ⊆ R̄_{t+1}.
+- Count: each such j absorbs the current minimiser, a distinct exit (absorbed exits stay in R̄ and σ̄(o) ∈ F under H1), and one exit
+  is in F at every state. □
+- So EXIT-R is PROVED on CLS1 case-2 intervals (for all absorptions there, not only ε-transitions). Coverage of the 279 library
+  ε-transitions: 30 by R-STICK (c_w ≠ c_θ), 64 in case-2 intervals (ABS-L), 45 in scope runs before their first fallback, 139 in scope
+  runs where r ≤ L somewhere in the interval, 1 outside scope runs. 185 remain CONJECTURE.
+- Note: once r_j ≤ L, θ has no change above L for the rest of the scope run: θ_j ⊴ θ_{j+1} ⊴ w with lev(θ_j, w) ≤ L gives
+  lev(θ_j, θ_{j+1}) ≤ L ((C5)).
+- Answers to the Lead's questions (READING):
+  - (a) Segmentation: EXIT-R is per fallback-free run; CLS1 is per scope run ((h) and w constant), which contains fallbacks. A scope run
+    lies in the SN regime (H3: c_w = c_θ), exactly where R-STICK is silent; L-SI's NL (ii) is the SN / THR / (A) analogue of R-STICK. Inside
+    a scope run, EXIT-R's segments are the gaps between its fallbacks; on case-2 gaps ABS-L proves it.
+  - (b) Yes, on case-2 gaps: every θ-change above L is an absorption of the current minimiser exit (ABS-L (i)-(ii)); in general
+    (TC-SPLIT) θ-changes above Even's own level E_k are exactly the ε-absorptions. So L-SI's per-level count becomes: between consecutive
+    fallbacks at level M, at most d_o − 1 θ-changes above M, each an absorption. It does not close by itself: fallbacks release absorbed
+    exits (FBL: THR fallbacks switch R → F edges), and a released exit can be absorbed again in the same scope run. DATA: 673 absorptions
+    (σ̄(o) changes with x0 entering R) in scope runs; the same exit up to 5 times in one scope run (b6_xl_n48, exit 28). The open count
+    per level is now: releases of absorbed exits at level-M fallbacks (OPEN).
+
+## 10. Refuted: H-RE (FALSE, DATA)
+- H-RE "inside a scope run, between two absorptions of the same exit, r = lev(θ, w) strictly drops": FALSE. b6_xl_n48
+  (experiments/n5-exhaustive/instances/b6_xl_n48.pg; in the library): exit 28 is absorbed at transitions 70 (θ-level 38) and 88 (θ-level 33)
+  with r = 39 at both. 25 failures in the library (box33/hre.py), 161 re-absorptions in scope runs in all.
+- Also false at phase level: "between two absorptions of the same exit, θ changes above the first absorption's level" (9 failures; the
+  same pair). Re-absorption at a LOWER level needs no higher θ-change.
+- The b6_xl_n48 scope run shows the counter shape: after each fallback θ rises at level r (so r drops by 1: 43 → 39), and exit 28 is
+  re-absorbed once per such epoch, at level 33 (transitions 3, 25, 48, 70, 88). Absorptions per exit per scope run: up to 5 in the
+  library. Climb (box33/reabsclimb.py, seed b6_xl_n48, fitness = max absorptions of one exit in one phase): 5 → 5 after ~1.6·10⁴
+  candidates (max absorptions in one phase 9 → 12). No growth found.
+
+## 11. K is linear per phase: the K-chain family (DATA, verified; L-NEW succ. 13, written 03:08Z by date -u)
+- FINDING: wakes per phase are not O(1). experiments/new/box33/kchain.py K builds a 𝒞^1O game of n = 11K + 14 vertices on which N5,
+  from the canonical start, has ONE phase with K − 1 wakes at consecutive transitions 1, …, K − 1, with rising wake levels.
+- Construction (U3, the length-only band of Lemma KW-LEN, BFS mode): a top vertex T (even) on o's W-cycle o → t_1 → … → t_6 → T → o, and
+  every route passes T, so W compares lengths only. Odd's honest reply at o is x (cycle o → x → o, c_θ = x); x has a dormant edge to r,
+  whose short route (Ξ-worse) keeps Odd's τ(o) honest-optimal (no S4b switch). Gadget i: y_i chooses between A_i (short, Ξ-poor) and
+  Z_i → h_i → p_i (long, with the even vertex h_i of rank ℓ_i); p_i has a shortcut to y_{i−1}. When y_{i−1} wakes (Ξ rises at level
+  ℓ_{i−1}), the shortcut (p_i, y_{i−1}) becomes an honest gate; the next S4a step takes it (shorter), which makes Z_i shorter than A_i,
+  and y_i switches to Z_i at level ℓ_i > ℓ_{i−1} = L_{previous}: a wake. Lengths: a_i = D_{i−1} + 3, q_i = D_{i−1}, D_i = D_{i−1} + 4.
+- Mechanism in words: a distance improvement propagates one layer per S4a step through honest gates, and each layer releases one
+  dormant high edge. The honest frame sees each h_i all along; W (lengths to T) sees it only when the route catches up.
+- Verified (instances in experiments/new/box33/instances/, out/ is gitignored):
+| instance | sha1 | n | N5 iterations / fallbacks | wakes in one phase | Oink | one Odd choice vertex |
+| --- | --- | --- | --- | --- | --- | --- |
+| kchain4.pg | 2be32f30… | 58 | 6 / 1 | 3 | zlk OK, strategies verified | yes (o = 18) |
+| kchain10.pg | 4af3726f… | 124 | 12 / 1 | 9 | zlk OK, strategies verified | yes (o = 42) |
+| kchain32.pg | 63c5b0dd… | 366 | 34 / 1 | 31 | zlk OK, strategies verified | yes (o = 130) |
+  - n5.py run equals the box21 trace and the box32 rows (asserted state by state). check_sol2.py with Oink built at 8fbf0a7.
+  - lcheck.py (through box33/biglev.py, see below) on kchain10 / kchain32: 0 failures of Lemma U, HI, UL, GR, Theorem LP; in the phase
+    T = 32, f = 0, X = 0, ρ = 31, all 31 rises caused by wakes (kchain32). So Corollary OX (iii)'s K term is the whole of ρ here.
+  - Every wake is BFS mode, U3 / U23 by the box32 classifier, length-only band, with W changing at z (Lemma WK's odd-mode statement is
+    not exercised).
+- What it does NOT show: N5 is fast on this family (iterations = K + 2). K = Θ(n) per phase is still polynomial; the open question for
+  G-N5-TIME is whether K, X and the fallbacks can multiply, not whether one of them is linear.
+- TOOL BUG FOUND (inherited, not mine to fix in place): experiments/si/coarse/mono.py lev() returns 99 for ∞, so on games with n ≥ 100
+  a rank ≥ 99 reads as ∞ (lcheck.py reported 42 false "L = ∞" failures on kchain10 / kchain32). All library data (n ≤ 64) is unaffected.
+  box33/biglev.py runs any box32 / box33 tool with ∞ = 10⁶; the numbers above for n ≥ 100 use it. The si/coarse owner (L-SI) may want
+  the same fix in mono.py.
