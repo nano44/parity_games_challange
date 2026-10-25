@@ -1,0 +1,5 @@
+LENSTAY_COARSE_FAIL 1
+ex_lc ('rand3553_3208', 3, 3)
+lev-1_even_fb_allown 680
+max_trans_after_M-1 3
+phases_with_M-1 5678
