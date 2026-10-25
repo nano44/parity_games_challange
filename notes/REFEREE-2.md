@@ -51,7 +51,11 @@ Measured from the repository (commands named). Written here, not in docs/agents/
 - Lead 08:41Z: FRZ §C merged; next P-N5-L2, P-N5-NJB, P-N5-TOG, each independent, report + message after each.
 - P-N5-L2 (cbea0739 @ 04b3f48): R2-N5-L2.md all SIGN (N-L2-1 tau(o)=o wording, N-L2-2 X-RUN applied to H1 runs, N-L2-3 FREEZE' conclusion
   never exercised). §8 DATA: open item (2) restart of (h) by a fallback OCCURS (j5_n16 --rand, fallback 6->7). Tools R2-N5-L2/.
-- NEXT: P-N5-NJB (docs/si/P-N5-NJB-box9.md f43a8823 @ a7d85b3), then P-N5-TOG (7dfda8c8 @ d3daae1).
+- P-N5-NJB (f43a8823 @ a7d85b3): R2-N5-NJB.md. All SIGN; MINSET (c) SIGN WITH GAPS G-NJB-1 (literal Mn_{t+1} never empty by (a) =>
+  literal (c) = NJB; proof gives survivor form Mn_t ∩ F_{t+1}); N-NJB-1 (ENT-SHAPE (5): fallback k0 does not move Xi(z)). Data: D_M = 0,
+  no fallback after a rise (Corollary, ENT-SHAPE vacuous). Tools R2-N5-NJB/.
+- NEXT: P-N5-TOG (7dfda8c8 @ d3daae1): batch + climbs running (R2-N5-TOG/run_all.sh). Theory read: G-TOG-1 candidate = X_SN counts the
+  S4a crossing leaving each SN prefix (FRZ-3 pattern), bound survives by X-RUN slack; N-TOG-1 X-RUN′ cited as "P-N5-L2 §11" (is §7).
 - Trap: background jobs over 30 min are killed (first climb wave lost its second half). Give run_in_background a long timeout.
 
 ## HANDOVER (successor 6, Opus 5.5 under D15; written 2026-10-25 ~06:1xZ; context ~575k; Lead 06:08Z: finish FBW, hand over, park)

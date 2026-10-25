@@ -1,0 +1,17 @@
+climb FIT=norf seed=75 n=32 iterations=3426 improvements=6 best_fitness=272.0
+BEST-INSTANCE counters: {'NORF_post_rise_states': 72, 'NORF_rises_above_L_after_fallback': 4, 'blocks': 4, 'fallbacks': 8, 'runs': 4, 'scope_fallbacks': 4, 'scope_runs': 4, 'transitions': 112}
+BEST-INSTANCE maxima: {'max_block_N': 1}
+MINSET_d_fallbacks: 10
+NORF_post_rise_states: 64564
+NORF_rises_above_L_after_fallback: 3966
+blocks: 4266
+blocks_with_r<=M_somewhere (PL (c) hypothesis fails; PL (c') covers): 75
+climb_evaluations: 3426
+fallbacks: 9535
+runs: 13704
+scope_fallbacks: 4278
+scope_runs: 12760
+transitions: 231121
+max_D_M: 0
+max_block_N: 3
+RESULT OK violations=0

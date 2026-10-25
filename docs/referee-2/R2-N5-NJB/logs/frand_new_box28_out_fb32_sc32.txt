@@ -1,0 +1,9 @@
+blocks: 1
+fallbacks: 2
+runs: 3
+scope_fallbacks: 1
+scope_runs: 1
+transitions: 31
+max_D_M: 0
+max_block_N: 1
+RESULT OK violations=0

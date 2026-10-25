@@ -1,0 +1,11 @@
+MINSET_d_fallbacks: 108
+blocks: 3
+blocks_with_r<=M_somewhere (PL (c) hypothesis fails; PL (c') covers): 3
+fallbacks: 111
+runs: 3
+scope_fallbacks: 111
+scope_runs: 3
+transitions: 134
+max_D_M: 0
+max_block_N: 37
+RESULT OK violations=0
