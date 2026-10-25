@@ -1,0 +1,16 @@
+CLS2_THR_u*!=none: 17
+CLS2_fallbacks: 17
+FBWS_fallbacks: 17
+FBW_gates: 55
+FLAT_checks: 17
+PL_blocks: 8
+PL_c_blocks: 2
+PL_dirty_intervals: 0
+POPT_single_switch_checks: 667
+STRETCH_tail_checks: 26
+even_fallbacks: 17
+runs: 3
+scope_runs: 4
+transitions: 141
+max_block_size: 5
+RESULT OK violations=0

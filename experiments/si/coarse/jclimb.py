@@ -6,7 +6,8 @@ operator and o-cyclicity test from experiments/new/box21/climb_fix.py and box25/
 Box 9: JMODE=HEQ (FBW violations; in-scope u* = none / EQ fallbacks; Even fallbacks), JMODE=REP (reltrace.py violations;
 tail repeats + θ-changes above M inside a level-M block; block fallbacks).
 JMODE=NORF (norf.py violations + fallbacks after a rise; states checked after a rise; rises).
-Usage: [JMODE=REL|CLS|CLS2|RF|HEQ|REP|NORF] jclimb.py seed secs OUT seed.pg      (writes OUT.pg on every improvement; re-verify bests with xing/reverify.sh)"""
+JMODE=MINSET (NJB violations = Mn emptied inside a block; Mn absorptions + intervals reaching |Mn| = 1; intervals).
+Usage: [JMODE=REL|CLS|CLS2|RF|HEQ|REP|NORF|MINSET] jclimb.py seed secs OUT seed.pg      (writes OUT.pg on every improvement; re-verify bests with xing/reverify.sh)"""
 import sys, os, random, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tame import *
@@ -17,6 +18,7 @@ from rfinv import scan_r
 from fbw import scan_w
 from reltrace import scan_rel
 from norf import scan_n
+from minset import scan_m
 MODE = os.environ.get("JMODE", "J")   # J: (max J per phase, J, fb); REL: (#jumps paid by a release (REL-NJ failures), J_in, releases)
 sys.path.insert(0, os.path.join(ROOT, "experiments/new/box21")); sys.path.insert(0, os.path.join(ROOT, "experiments/new/box25"))
 from climb_fix import mutate
@@ -49,6 +51,9 @@ def fit(G):
         if MODE == "NORF":
             c, _ = scan_n(g, "climb")
             return (c.get("old_viol", 0) + c.get("new_viol", 0) + c.get("fb_after_rise", 0), c.get("chk", 0), c.get("rises", 0))
+        if MODE == "MINSET":
+            c, _ = scan_m(g, "climb")
+            return (c.get("njb_viol", 0) + c.get("minset_c_mismatch", 0), 5 * c.get("absorbed", 0) + c.get("min_le1", 0), c.get("intervals", 0))
         if MODE == "REL":
             c, _ = scan_d(g)
             return (c["relnj_viol"], c["J_in"], c["rel_fb"])

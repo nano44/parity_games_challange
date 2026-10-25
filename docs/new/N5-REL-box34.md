@@ -261,3 +261,86 @@ Proof. Read P-N5-FRZ §3 with these changes.
   vertices are not excluded. Under ¬H1, θ = o ⊕ Ξ(σ̄(o)) with σ̄(o) c-first (if c ≠ o), so RATCHET (b)'s counting of θ still applies.
 - So for (L2) the restart mechanisms are: (i) a fallback at a ¬H2 state that takes τ(o) out of R; (ii) a passage through ¬H1 ∧ ¬H2 ∧ H3
   states (oneh_cex_n32). FREEZE′ already covers windows through (ii). (i) remains OPEN.
+- (Superseded by §11: at ¬H1 states R̄ is a phase constant, so the c-first re-entry concern above does not arise between ¬H1 states.)
+
+## 11. ¬H1 states: R is constant there, and they sit in one interval (written 06:15Z onward by date -u)
+**Lemma R-CONST (PROVED, L-NEW succ. 14).** Let U := λ^{-1}(c_θ), a phase constant. At every ¬H1 state k of the phase, R̄_k = U.
+Proof.
+- (⊆) For v ∈ R̄_k, v's honest play agrees with its (σ_k, τ)-play up to o (on 𝒞^1O the graphs differ only at o). Then it follows o's
+  honest play, so λ(v) = λ(o) = c_θ.
+- (⊇) Let λ(v) = c_θ. In the functional graph H_k, the cycle that contains c_θ is unique. Under ¬H1 it is o's honest cycle, since o
+  lies on its own honest cycle and that cycle's top is λ(o) = c_θ.
+  - So v's honest play enters that cycle and passes o.
+  - Up to that first visit of o it equals the (σ_k, τ)-play, so v ∈ R̄_k. □
+- Corollary: a transition between two ¬H1 states of a phase is never a crossing. In the SN regime the ¬H1 states cost crossings only
+  at the transitions where H1 changes. (This answers §10's OPEN item on BLOCK at ¬H1 SN states: no BLOCK is needed there.)
+**Lemma H1-INT (PROVED, L-NEW succ. 14).** In a phase, the states with P(θ) = ∅ form one interval I_∅ (in time). Every ¬H1 state, and
+every state k with H1 at k and ¬H1 at k+1, lies in I_∅. On I_∅, θ = (c_θ, ∅, ℓ_k) changes only in its length, so it changes at most n − 1
+times there.
+Proof.
+- Interval. θ is non-decreasing (R15 (a)) with constant cycle node. VJ00's order compares path sets before lengths, by the signed
+  weight Σ ±2^rank, which is injective, with weight(∅) = 0.
+  - So for a < k < b with P(θ_a) = P(θ_b) = ∅: 0 ≤ weight P(θ_k) ≤ 0, hence P(θ_k) = ∅.
+- ¬H1 states. θ is o's value on its own honest cycle: the path from o to the top c_θ along the cycle. Every vertex of that cycle
+  other than c_θ is less relevant than c_θ, so P(θ) = ∅ (also if c_θ = o).
+- States before a drop: R30 (f) H1-DROP gives P(θ_k) = ∅.
+- Lengths. A length lies in [0, n − 1], and θ is monotone, so its length moves in one direction. □
+**Theorem X-RUN′ (PROVED, L-NEW succ. 14): X-RUN without the H1 hypothesis.** Let Q be a fallback-free run of a phase and P its SN prefix.
+Let t_Q be the number of transitions of P at which H1 changes. Then P has at most 13 (d_o + 1) n³ (t_Q + 1) + t_Q crossing transitions.
+Proof.
+- Split P into maximal runs of H1 states and of ¬H1 states. There are ≤ t_Q + 1 runs of each kind.
+- Inside a ¬H1 run there is no crossing (R-CONST). The H1-changing transitions contribute ≤ t_Q.
+- An H1 run of P consists of consecutive (h) states of a fallback-free run (H1 ∧ H3 ⇒ (h), R30 (d)). The proof of X-RUN (P-N5-FRZ §6)
+  uses only that: its windows, RATCHET, BLOCK and the level count all take place inside a run of consecutive (h) states without
+  fallbacks. So it gives ≤ 13 (d_o + 1) n³ per H1 run. □
+- So X_SN per fallback-free run is polynomial in n and the H1-toggles of its SN prefix. All ¬H1 states of the phase, and every state
+  just before a drop, lie in the single interval I_∅ (H1-INT).
+**CONJECTURE ONE-DROP (OPEN; DATA).** In a phase there is at most one transition from H1 to ¬H1.
+- DATA (box34/h1tog.py):
+  - library + experiments/red + experiments/si/coarse + oneh_cex_n32: 1,274 phases, 1,043 ¬H1 states, max 1 drop and max 2 H1-toggles
+    per phase (b4_n5_other_0, n 5);
+  - random: 20,000 games at n 4-14 (seed 3481), 40,037 phases, 23,308 ¬H1 states, max 1 drop, max 1 toggle per phase;
+  - R-CONST and the I_∅ interval: 0 failures in all of it (data/h1tog_lib.txt).
+- With ONE-DROP, t_Q ≤ 2 per phase, and X-RUN′ gives X_SN ≤ (f + 1)·poly(n) per phase with no hypothesis on H1.
+
+## 12. What remains open of (L2) if ONE-DROP holds (for the Lead's next packet; written 06:58Z by date -u)
+Assume CONJECTURE ONE-DROP (§11) together with X-RUN′ (§11, lane PROVED). Then:
+- Settled, per fallback-free run Q:
+  - P (Q's SN prefix) has at most 3 H1-runs: one drop, at most one regain before it and one after it.
+  - So X_SN(Q) ≤ 3·13(d_o + 1)n³ + 2, and REL_Q ≤ d_o(X_SN(Q) + 1) (FRZ-3), with no H1 hypothesis.
+  - Per phase: X ≤ (f + 1)(39(d_o + 1)n³ + n + 2) + f.
+- What is left of (L2), as a list:
+  1. ONE-DROP itself (CONJECTURE). DATA:
+     - library, experiments/red and experiments/si/coarse (1,274 phases): max 1 drop per phase, max 2 H1-toggles;
+     - random (40,037 phases): max 1 drop per phase, max 1 H1-toggle;
+     - climbs dropclimb.py: max 1 drop per phase, up to 3 H1-toggles (result line below).
+     Known facts that a proof can use (all lane PROVED, §11): every drop starts in the P(θ) = ∅ interval I_∅ (R30 H1-DROP + H1-INT); on
+     I_∅, θ = (c_θ, ∅, ℓ) changes only in length; at ¬H1 states R̄ = λ^{-1}(c_θ) (R-CONST).
+  2. Restart mechanism (i): a fallback at an H1 ∧ ¬H2 state that moves τ(o) out of R, after which (h) returns by H3-CONST. OPEN, never seen
+     (0 cases in the library, the random sample and the hrclimb.py climbs). H2-STICK rules it out at S4a steps.
+  3. Restart mechanism (ii): (h) → ¬H1 ∧ ¬H2 ∧ H3 → (h). It costs no crossing inside the ¬H1 part (R-CONST). Under ONE-DROP it happens at
+     most once per phase. Both observed restarts are of this kind: oneh_cex_n32 (back through a fallback) and the random game seed 3461 /
+     2863 (n 12, states 0-2, back through S4a steps).
+  4. Short (h)-runs (fewer than n states) never contain a FREEZE window. They cost ≤ n transitions each, so ≤ n per restart. Items 2-3
+     bound how many there are.
+- Not part of (L2), and still the real core (OPEN): the f-dependence. X-RUN′ is per fallback-free run. Across fallbacks, FREEZE and
+  RATCHET survive, but BLOCK covers only S4a leaves. What remains is (L1): re-entries after fallback evictions below r inside frozen
+  r = ℓ blocks. Inside a scope run these equal the θ-changes after fallbacks (§9). With (L1) bounded and items 1-2 settled, per phase X
+  would be poly(n), and then f and J are poly(n) as well (R28 Corollary OX). Together with K, that would make a phase polynomial
+  (R27 Corollary LP′).
+
+## 13. ONE-DROP is FALSE; what survives (written 07:31Z by date -u)
+- DEAD END: CONJECTURE ONE-DROP (§11) is FALSE.
+  - Instance: experiments/new/box34/instances/onedrop_cex_n32.pg (sha1 5793d5a3303fd8c180dd7d0b8105e2d6961af1cd; n 32, o = 27,
+    succ(o) = {3, 17}; climb dropclimb.py seed 3502 from oneh_cex_n32).
+  - Verified: n5.py n5 gives 6 iterations, 1 fallback; check_sol2.py gives "zielonka(oink zlk) OK strategies verified"; exactly one
+    Odd vertex with out-degree > 1.
+  - The phase is states 2-6, with c_θ = 13. H1 at 2, ¬H1 at 3 (|R| 31), H1 at 4-5, ¬H1 at 6. The drops are 2 → 3 (an S4a step) and
+    5 → 6 (an S4c fallback).
+  - θ = (13, ∅, 10) at 2-3 and (13, ∅, 8) at 4-6: θ changes in length between the two drops, inside I_∅ (H1-INT).
+- What survives (CONJECTURE DROP-LEN, OPEN): between two drops of a phase, θ changes. With H1-INT (θ changes ≤ n − 1 times on I_∅), that
+  would give ≤ n drops per phase, ≤ 2n + 1 H1-toggles, and, via X-RUN′, X_SN ≤ (f + 1)(2n + 2)·13(d_o + 1)n³ + 2n + 1 per phase with no
+  H1 hypothesis. A weaker form that is also open: at most one drop per fallback-free run (here the second drop is at a fallback).
+- §12's item 1 now reads "DROP-LEN (or one drop per fallback-free run)", and its per-phase bound "3 H1-runs" reads "≤ 2(drops) + 1".
+  Item 3 (restarts through ¬H1 states) becomes ≤ the number of drops per phase. DATA: climbs dc4 (b4_n5_other_0, 10.9M steps) and dc6
+  (so_th_n32): max 1 drop per phase; dc5: 2.
