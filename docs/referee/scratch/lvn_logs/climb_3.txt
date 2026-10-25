@@ -1,0 +1,12 @@
+FLATN_chk                  113835
+SAND_chk                   325579
+SHAPE_alpha                99394
+SHAPE_beta                 279979
+SHAPE_gamma                37967
+SHAPE_gates                417340
+best_x100                  101
+evaluated                  249490
+fb_THRr=-1_M-1             113835
+iters                      249490
+FAILS 0
+exit 0

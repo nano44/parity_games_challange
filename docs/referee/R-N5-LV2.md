@@ -152,3 +152,18 @@ Referee: REFEREE (successor 9, session_01VsZYJ8FiTSj5Kazk715ZP7), Opus 5.5 (owne
 
 - VACUOUS IN DATA: the level −1 block and the none part are empty (0 / 0), as in the packet's data and in my P-N5-LV climb (R-N5-LV
   §6.1). STALE-GATE, EV-G and SAND are exercised.
+
+## Addendum (2026-10-25T16:29Z by date -u, after the Lead's 15:59Z message and REFEREE-2's N-LV-3 on P-N5-LV): the none part is NOT empty
+- My §9 line "the level −1 block and the none part are empty" was true of my data at the time. It is no longer the whole picture.
+  - REFEREE-2's climbs reach in-scope THR fallbacks with r = −1 (u* = none). Witness docs/referee-2/R2-N5-LV/climb/best_lv_9401.pg
+    (sha1 4b74cd84…); my engine reproduces one such fallback there at the canonical start.
+- New DATA (own code scratch/lv2_probe.py, now with FLAT-ALL_{−1}^{none}, and scratch/lvn_climb.py seeded with best_lv_9401.pg; logs
+  scratch/lvn_logs/):
+  - FLAT-ALL_{−1}^{none} (i)-(iv): 351,417 checks (r = −1 fallbacks with (h) at k + 1), 0 failures. These are the same fallback events
+    as the LV-SHAPE count in R-N5-LV §C; LV-SHAPE there, at r = −1, is the condition of §6.
+  - SAND: 1,000,826 checks, 0 failures.
+  - SCOPE-FB and its class bounds: 0 failures.
+  - LV-NONE's counting step is still untested in data: no scope run had two or more r = −1 fallbacks (max 1). The r ≥ 0 level −1 block
+    (ENT-X_{−1}, LV-PL′) stays empty.
+- So FLAT-ALL_{−1}^{none} and SAND are exercised non-vacuously. LV-NONE with N ≥ 2, ENT-X_{−1} and LV-PL′'s block rest on their proofs.
+  No verdict changes. (Opus 5.5, D15)

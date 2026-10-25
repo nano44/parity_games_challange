@@ -59,6 +59,19 @@ def c1o(g, cnt, name):
             elif a["M"] == -1: cl["m1"] += 1
             else: cl["ge0"] += 1
         for kk, v in cl.items(): cnt["SFB_" + kk] += v
+        # FLAT-ALL_-1^none at in-scope THR fallbacks with r = -1 and (h) at k+1; LV-NONE count per run
+        for k in S:
+            a, b = st[k], st[k + 1]
+            if not (a["fb"] and a["Is"] and a["Xi"][o] != a["W"][o] and a["r"] == -1): continue
+            if a["M"] != -1: cnt["NONE_M_FAIL"] += 1
+            if not b["h"]: cnt["FLATN_no_h_next"] += 1; continue
+            cnt["FLATN_chk"] += 1
+            i1 = a["F"] <= b["F"] and all(z in a["Rb"] and (z == o or P.route(b["nx"], z, o) == P.route(a["nx"], z, o)) for z in b["Rb"])
+            i2 = P.coarse(b["Xi"][o], -1) == P.coarse(a["Xi"][o], -1)
+            i3 = all(P.coarse(b["Xi"][v], -1) == P.coarse(a["Xi"][v], -1) for v in range(n))
+            i4 = b["M"] <= -1
+            if not (i1 and i2 and i3 and i4): cnt["FLATN_FAIL"] += 1; EX.append((name, "FLATN", k, i1, i2, i3, i4))
+        if cl["none"] >= 2: cnt["NONE_runs_with_2plus"] += 1
         tot = sum(cl.values()); cnt["SFB_max_per_run"] = max(cnt["SFB_max_per_run"], tot)
         if tot > 4 * n * nE + 3: cnt["SFB_FAIL"] += 1; EX.append((name, "SFB", S[0], tot))
         if cl["ge0"] > 2 * n * nE or cl["m1"] > n * nE + 1 or cl["none"] > n * nE + 1 or cl["EQ"] > 1:
