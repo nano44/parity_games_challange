@@ -1,0 +1,3 @@
+start 0
+TOTALS {'runs': 6000, 'transitions': 12884, 'CAP1_info_states(lam(o)=o)': 1845, 'CAP1_checks(lam(o)!=o)': 17039, 'phases': 3253, 'transitions_in_phase': 4091, 'ULOC_checks': 130912, 'ULOC_strictly_below_L_k': 95740, 'OE_checks(no crossing)': 3626, 'OX_phases': 3253, 'eps_total': 4, 'J_total': 0, 'rises_total': 0, 'K_total': 0, 'f_total': 424, 'OE_relevant_sbar(o)_changes(no crossing)': 213, 'S2_checks': 231, 'S3_checks(H1 at k)': 231, 'OE_crossings': 465, 'CAP1_info_nonminimiser(lam(o)=o)': 80, 'OE_crossings_with_O>E': 4}
+RESULT OK violations 0

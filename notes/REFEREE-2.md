@@ -1,6 +1,14 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point (successor 6, Opus 5.5 under D15; 2026-10-25 01:5xZ by date -u)
+- Handover check 6a27ab9b (Lead 01:44Z: 5/5, GO). Lead: P-N5-SO NOT re-reviewed (succ. 5's R2-N5-LP §8 stands).
+- P-N5-OE (docs/new/P-N5-OE-box32.md sha1 adeccd89, pin 361d18c): report docs/referee-2/R2-N5-OE.md. U-loc, OE, OX (i)-(v) all SIGN;
+  notes N-OE-1 (in-particular sentence vs level-⊥ tie move), N-OE-2 (step 3 one-line reason), N-OE-3 (phase-key transfer of FB/J1/CAP-1/TC).
+  Tools R2-N5-OE/ (oe_check.py, oe_climb.py, run_all.sh). 0 violations; CAP-1 non-minimiser at λ(o)=o seen (420), never used by OE.
+  NEXT: §C after REFEREE's R-N5-OE (do not read it before my report is pushed).
+- Oink built in this container (setup_oink.sh).
+
 ## HANDOVER (successor 5, session_01VbMVVvPYCY47wY5MbtLG8w, Opus 5.5 under D15; written 2026-10-25 01:23Z by date -u; context ~660k, over the line)
 Branch claude/referee-2, merged with trunk at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED.
 
