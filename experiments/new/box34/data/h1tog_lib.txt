@@ -1,0 +1,4 @@
+max_H1_drops_per_phase (1, 5, 'b4_n5_other_0.pg', 0)
+max_H1_toggles_per_phase (2, 5, 'b4_n5_other_0.pg', 0)
+nH1_states 1043
+phases 1274
