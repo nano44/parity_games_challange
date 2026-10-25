@@ -13,7 +13,8 @@ L-NEW successor 13 (Opus 5.5, D15/D18). Box 33 GO by the Lead 02:06Z (Lead's sta
 2. **What X is charged for (DATA, 234-file library).** All non-tame transitions (235) and 146 of the 148 rises with a crossing in their
    interval are ε-transitions (O-rises); the other 2 are Even-attained R → R rises. Every one is an H1 → H1 S4a step. So the "weaker X
    target" of the Lead's brief is, in the data, the count of exit absorptions plus 2 rises.
-3. **CONJECTURE EXIT-R (0 failures on 279 ε-transitions).** An exit absorbed at an ε-transition stays in R until the next fallback
+3. **EXIT-R: FALSE (L-RED exitr_cex_n48, §13); it was a CONJECTURE with 0 failures on the 279 library ε-transitions.** Survivor: ABS-COUNT (§13).
+   Original statement: An exit absorbed at an ε-transition stays in R until the next fallback
    transition or the end of the phase. With Lemma OR it gives ε ≤ (d_o − 1)(f + 1) per phase (under H1), hence J ≤ ε ≤ (d_o − 1)(f + 1).
    Absorbed exits that do leave R leave only at (tame) fallbacks: 37 of 37.
 4. **The loop that remains (OPEN).** R25 Theorem FB gives f ≤ n_E(2n − 1)(J + 1) + J, and EXIT-R gives J ≤ (d_o − 1)(f + 1). The two are
@@ -59,7 +60,7 @@ Proof.
   jcl_zcl_cu_n48 (J 17 = X 17 = ε 17) is this, cleanly: in its long phase σ̄(o) walks through 17 of its 18 exits, absorbing each into R;
   R grows from 1 to 41 vertices, and no exit ever leaves R.
 
-## 2. CONJECTURE EXIT-R and its consequence
+## 2. CONJECTURE EXIT-R and its consequence (EXIT-R FALSE: §13)
 Statement (CONJECTURE). If k is an ε-transition with old exit x0, then x0 ∈ R_t for every t from k+1 up to the next fallback transition
 of the phase (or the end of the phase).
 Consequence (PROVED from EXIT-R, L-NEW succ. 13). Under H1 every σ̄(o) lies in F ((b)'s argument at every state), so an exit in R is not
@@ -158,7 +159,7 @@ o, with equality iff c_w = c_θ (rew injective). So c_w = c_θ holds on an initi
   c_w = c_θ states vs 61 after the prefix (max 12 per run, jcl_zcl_cu_n48 at n 48; max 55 in the prefix, x32_rand64 at n 64); random
   (sn.py --rand 2000 8 24 3302) 172 vs 0. Every S4a exit release of §2's data is at c_w = c_θ (45 of 45).
 
-**Lemma SN-ORDER (PROVED, L-NEW succ. 13).** Under H1 at a state with c_w = c_θ =: c, both frames are in route form, and for x, y ∈ R
+**Lemma SN-ORDER (the order part is RESULTS R19 (a) under (h); mine is only H1 ∧ H3 ⇒ H2, P-N5-SN §4).** Under H1 at a state with c_w = c_θ =: c, both frames are in route form, and for x, y ∈ R
 lev(Ξ(x), Ξ(y)) = lev(W(x), W(y)) with the same direction: the two frames order R-vertices identically. They can disagree only when an
 R-vertex is compared with an F-vertex.
 Proof. Under H1, c ∈ F (o is on no honest cycle). o's W-play ends on the cycle of c ⊆ F, so o is not on its W-cycle (H2). In route form
@@ -274,3 +275,21 @@ Proof.
   they are at c_w = c_θ states.
 - Random robustness of §8-§9 (seeds 3401-3403, 4,800 games, n 8-48; out/randcheck.txt): R-STICK and SN-PREFIX 0 failures (552
   crossings in SN prefixes, 1 after); TC-SPLIT 0 failures on 371 θ-changes (2 ε); Lemma OR 0 failures (1 O-rise).
+
+## 13. EXIT-R is FALSE (L-RED box 37); what survives (written 03:31Z by date -u)
+- DEAD END: CONJECTURE EXIT-R (ε form) and ORX are FALSE. experiments/red/so/instances/exitr_cex_n48.pg (L-RED, l-red 9783ab7; sha1
+  7a663df25ba44e15022ad94fe5f0709662dbca8d; n 48, o = 0, d_o 18; Lead re-run n5 22/1, Oink OK verified, one Odd choice vertex). Phase =
+  transitions 4-20, no fallback. ε-transition 4 absorbs x0 = 13; at the S4a step 5 → 6 Even 13 switches 8 → 17 and leaves R; exit 13 is
+  absorbed again at 9. box33/orx.py (EPS=1): EXITR_FAIL (4, 5, 13), ORX_FAIL (4, 9, 13). States 3-7 are (h) / SN (c_w = c_θ = 2), r = 47,
+  45, 44, 43, then θ = w at 7, c_w ≠ c_θ from 8. The leave is in an (h) state before any fallback of its scope run (not a CLS1 case-2 gap),
+  and it obeys Lemma LEAVE (a relevant change of level ≥ r = 44 on 13's new path; leave.py 0 failures). The O-rise restriction of
+  EXIT-R has no counterexample yet; ε ≤ (d_o − 1)(f + 1) holds there (16 ≤ 17).
+- What survives, PROVED (L-NEW succ. 13): **Corollary ABS-COUNT.** In a fallback-free run of a phase, the ε-transitions under H1 number
+  at most (d_o − 1) + REL_run, where REL_run := the exits leaving R at S4a steps of the run; and every such release happens at an (h)
+  state of the run's SN prefix via a relevant change of level ≥ r (Lemmas LEAVE, R-STICK, SN-PREFIX). Per phase:
+  ε_{H1} ≤ (d_o − 1)(f + 1) + REL, REL := exit releases at S4a steps.
+  Proof. Under H1 σ̄(o) ∈ F, so at most d_o − 1 exits are in R at any state. Each H1 ε-transition moves the current minimiser exit from F
+  to R (Lemma OR (a)-(b)). The number of exits in R starts ≥ 0, ends ≤ d_o − 1, rises by ≥ 1 at each H1 ε-transition, and falls only when
+  exits leave R, which inside the run happens only at S4a steps. □ (ε under ¬H1: 0 in all data; not covered.)
+- So the form I pursue now: bound REL, the exit releases inside SN prefixes. In the data REL is tiny (library: 45 exit releases at S4a
+  steps in all; exitr_cex_n48: 1).

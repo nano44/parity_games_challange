@@ -262,6 +262,10 @@ experiments/new/box33/out (gitignored); kill by pid (ps -eo pid,args | awk '$3==
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 13, box 33) CONJECTURE EXIT-R (ε form) and ORX: FALSE (L-RED box 37). experiments/red/so/instances/exitr_cex_n48.pg (sha1
+  7a663df2…, n 48, o = 0): ε-transition 4 absorbs exit 13, Even 13 leaves R at the S4a step 5 → 6 (an (h) state before any fallback of
+  its scope run), exit 13 re-absorbed at 9. Obstruction: releases inside SN prefixes outside CLS1 case-2 gaps. Survivor: ABS-COUNT
+  (ε_{H1} ≤ (d_o − 1)(f + 1) + REL), N5-K-box33 §13.
 - (succ. 13, box 33) H-RE "re-absorbing the same exit inside a scope run needs r = lev(θ, w) to drop": FALSE. b6_xl_n48 (library),
   exit 28 absorbed at transitions 70 and 88 with r = 39 at both (box33/hre.py, 25 failures). Also "wakes per phase stay O(1)" (data
   norm, never a claim): FALSE by the K-chain family, experiments/new/box33/instances/kchain32.pg (n 366, sha1 63c5b0dd…, 31 wakes in
