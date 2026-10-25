@@ -1,6 +1,43 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Handover check (successor 7), written 2026-10-25T08:12Z by date -u (Opus 5.5 under D15; session_01TWT1diK1Z9x2eK56iBVbZu)
+1. Branch, head, distance to trunk. Commands: `git fetch origin claude/referee claude/vibrant-johnson-nxvvxo`; `git status -sb`;
+   `git merge --ff-only origin/claude/referee`; `git merge --no-edit origin/claude/vibrant-johnson-nxvvxo`; `git rev-parse --short=8 <ref>`;
+   `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`.
+   - Local claude/referee started STALE at 73b46eb8, 1002 behind origin/claude/referee. Fast-forwarded to 451b2922 (predecessor's handover).
+   - Merged trunk 5071ce71 with a merge commit: head 6b665e27 before this commit; 2 ahead / 0 behind trunk (the handover commit + the merge).
+     After this commit: 3 ahead / 0 behind.
+2. Open work and next step (from the successor-6 HANDOVER section above and the Lead's 08:07Z brief; `grep -n "^## " notes/REFEREE.md`):
+   - P-N5-FRZ §C (task 2): waits for REFEREE-2 successor 7's R2-N5-FRZ. `git fetch origin claude/referee-2`: head de9ff970 (handover merge,
+     pin check 25fda0f); no R2-N5-FRZ file name under docs/referee-2/ (names listed only; contents not read). Next: the Lead's word, then §C in
+     docs/referee/R-N5-FRZ.md (every differing verdict + joint gap map).
+   - P-N5-L2 (task 1, after GO): object docs/new/P-N5-L2-box34.md at pin 04b3f48. `git show 04b3f48:docs/new/P-N5-L2-box34.md | sha1sum` =
+     cbea07392521bcdfbce137ba361bb581f9df11d7 (matches the brief; same on trunk 5071ce71). Statements §1-§7 (H3-CONST, H2-STICK, G′, FREEZE′,
+     R-CONST, H1-INT, X-RUN′); §8 not to sign. Next: own probe on scratch/frz_probe.py + sn_probe.py (one-Odd-chooser assertion), packet
+     instances oneh_cex_n32 / onedrop_cex_n32, library, random, climbs; report docs/referee/R-N5-L2.md.
+   - P-N5-NJB (task 3): docs/si/P-N5-NJB-box9.md, pin a7d85b3, sha1 f43a8823… (not yet verified by me). Next: after L2.
+   - Oink: built by scripts/setup_oink.sh at 8fbf0a7 into tools/oink/build (exit 0).
+3. GAPS rows relevant to me (`git show origin/claude/vibrant-johnson-nxvvxo:docs/GAPS.md | grep G-N5-TIME`):
+   - G-N5-TIME | major | owner L-NEW (L-LIT T22; referees later) | **open** | N5 SSI-GLOBAL makes polynomially many iterations (gauntlet
+     step 4, running time). The referees' part: each lane packet toward it (R15-R30 landed; P-N5-FRZ signed by me, R2 pending; P-N5-L2,
+     P-N5-NJB queued). P-N5-L2 itself says "G-N5-TIME stays OPEN". Related, closed: G-N5-TERM (closed by R15).
+4. Owner rulings, verbatim (`git show origin/claude/vibrant-johnson-nxvvxo:docs/DECISIONS.md`), with DECISIONS-INDEX status
+   (`grep -E "^\| *D(1|15|18) " docs/DECISIONS-INDEX.md`):
+   - D1 (index: **active**, 2026-10-14): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+     including the fleet's own, as wrong until it passes the gauntlet below." and "Never downgrade the referee to save money."
+   - D15 (index: **active**, 2026-10-22): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+     (Lead reading L37 (1): referees on Opus 5.5; signatures labelled "(Opus 5.5, D15)").
+   - D18 (index: **active**, 2026-10-24): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas
+     from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+     them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+5. Trap found: clocks disagree across sessions. The Lead's brief is stamped 08:07Z, but my first `date -u` after receiving it read
+   08:04:24Z, and the predecessor's handover (stamped 08:04Z) reached origin only after that. A peer's stamp is not my clock: every
+   time in my files comes from `date -u` at writing, and ordering questions are settled by commit order (git log), not by stamps.
+   Also confirmed again: the container starts on a stale local branch (73b46eb8, 1002 behind); check HEAD == origin/claude/referee first.
+   Also: the playbook puts handover checks in docs/agents/handover-checks/ (a Lead-only path where successors 5-6 wrote); the Lead's
+   brief puts this one here in notes/REFEREE.md, and I followed the brief.
+
 ## HANDOVER (successor 6 -> successor 7), written 2026-10-25T08:04Z by date -u, context ~570k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):").
 Branch claude/referee. Start: git fetch origin claude/referee claude/vibrant-johnson-nxvvxo; check HEAD == origin/claude/referee (stale
