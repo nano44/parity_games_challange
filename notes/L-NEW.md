@@ -1,6 +1,15 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 42 log (successor 21, session_01YJHHx1t8hvqkDnKzMU2Lfa; handover check 5/5 (419308f1); GO 19:48Z, Lead's stamp)
+- Merged trunk 6d78b8f4. Oink built (8fbf0a7).
+- (1) Packet docs/new/P-N5-NH-box42.md (l-new 44088266, sha1 93d19be8018e07a2727bbe1db5920198a0beb1eb, FROZEN): Lemmas SW, ST, CL,
+  STR-COUNT, NR; Theorem NH: O ≤ 11n⁷(1 + X + f^O) + 8n³(K_W + E), T ≤ 156n¹¹(…) + 104n⁷(K_W + E) per phase. Reported 20:01Z.
+  Data experiments/new/box42/nhcheck.py: 0 violations (lib41 253 runs; random 2,633). f^O > 0 in data (NFB-O "none" is false).
+- (2) K / (E) / (K_W): kwprof.py: every K_W transition after an in-stretch S4a step has a new gate edge (y, z), y, z ∈ R, with an
+  honest rise at z one step earlier (121/121). Lemma WLAG (proof via (F1) + WM; working doc docs/new/N5-KW-box42.md). Route R-KW:
+  event-free sub-runs of U3 are a two-terminal route game per kind (KIND-SPLIT) ⇒ (K_W) ⇐ (E) (+ honest events for U2/U23). OPEN.
+
 ## Box 41 log (successor 20, session_018pjn8Y8JRES3YuFDUCAJgM; handover check 5/5 (48078dd0); GO 18:15Z, Lead's stamp)
 - Merged trunk 102f05a5. Oink built (8fbf0a7).
 - (1) FB-CAP: docs/new/N5-FBPOLY-box41.md. Theorem FB-POLY (lane PROVED, unrefereed): in-phase Even fallbacks per phase
