@@ -187,3 +187,35 @@ therefore rest on their proofs alone.
 - N-ENT-2: §7's "vacuous hypotheses everywhere" overstates the case for NJB-A / D1 / PL-S″. Their hypotheses (blocks and intervals with
   r > M) occur, and the data confirm them. Only the dirty / ENT case is unreached.
 - N-ENT-3: §0's status of REFEREE-2's R2-N5-RL is stale (report 30dc5f54, §C 88571b03, Addendum A db9d66a8).
+
+## §C. Comparison with REFEREE's R-N5-ENT (written 2026-10-25 14:36Z by date -u, after my report b7df84b8 was pushed)
+Read: docs/referee/R-N5-ENT.md as on trunk (55a3f6f; 90 lines, no §C yet). No ENT fixes file exists yet (`ls docs/si | grep -i ent-fix`
+is empty).
+### C.1 Verdicts
+They are identical:
+- FZ, BF, RB, WALK (a)-(c), CYC-EV and TEV-FB: SIGN, with no (P);
+- ENT-X, NJB-A, D1 and PL-S″: SIGN CONDITIONAL ON (P), with (P) entering only through EV+;
+- §6 not signed.
+No gap in either report, so the joint gap map is empty. Both reports name the same premises (R15, R19, R29, R31, R35) and EV+'s chain
+EV ⇐ FREE-FREEZE ⇐ BL (c) ⇐ (P). Both note that TEV-RED is not used, and that with P1 landed §4-§5 become unconditional.
+### C.2 Notes map
+| REFEREE | REFEREE-2 | content | status |
+| --- | --- | --- | --- |
+| §2 "It uses a rise and (Σ4) only. It does not use M_k = L"; §1 "RB is the step that needs k to be a fallback state, through (Σ4)" | N-ENT-1 | CYC-EV / TEV-FB need (Σ) + rise, not M_k = L; so ENT's CYC-EV implies the RL-fixes CYC-EV | same content. REFEREE says it of TEV-FB, I say it of CYC-EV, and both proofs use M_k ≤ L only in RB. Agreed |
+| §4 thin spot: "CYC-EV, TEV-FB, ENT-X and §5 have vacuous hypotheses in data" | N-ENT-2 | for §5 this is too strong: NJB-A's hypothesis (intervals with r > M throughout) occurs and holds (698 / 601 / 701 library; 122,272 climb), and D1's and PL-S″'s objects (blocks) occur (287 / 273 / 290). Only the dirty case, i.e. the ENT setting, is unreached | a wording difference, not a verdict. I keep N-ENT-2 as a note for the RESULTS entry's DATA line |
+| — | N-ENT-3 | §0's REFEREE-2 status is stale | mine only (status) |
+| §3 "There is no circularity: TEV-FB does not use EV+ or any (P) item" | §5 "(P) enters only through EV+. §1-§3 are unconditional" | the same point | agreed |
+| disclosure: §1-§3 seen before as the RL fixes source (R-N5-RL Addendum A2) | (none) | independence | noted. My predecessor's R2-N5-RL Addendum A checked the RL-fixes CYC-EV. I re-checked the ENT text on its own (§2-§4) and diffed the two statements (N-ENT-1) |
+### C.3 Data, side by side (DATA, not proof)
+- tev_cex_n40, on independent engines: REFEREE 15 (Σ)-pairs, FZ 414, BF 19, RB 16, WALK 19; mine (own trace) 15 / 414 / 19 / 16 / 19.
+  The counts are identical, and we explain the packet's single "RB / BF" column the same way (it counts RB).
+- Both reports, and the lane: no (Σ)-pair with a rise anywhere.
+- Mine only:
+  - every rise after a fallback with r > L (62 library, 26,665 climb) is followed by NO further fallback of its scope run;
+  - rise_end.py's breakdown of how S ends;
+  - the control "without a rise, x_k's play meets Ev" (64 / 60 / 65);
+  - the ENT_MUT=nor control.
+  These are DATA only. The first suggests an unconditional route to "(Σ) + rise is empty", if someone can prove it.
+### C.4 Joint state
+All ten signable statements are signed by both referees (Opus 5.5, D15): six unconditional, four CONDITIONAL ON (P). No gap. Notes for
+L-SI: N-ENT-1, N-ENT-2, N-ENT-3 (none blocks a signature).
