@@ -241,3 +241,47 @@ PROVED (L-NEW successor 13; REFEREE and REFEREE-2, Opus 5.5, D15), pending CHECK
 - ABS-L (premises in R29, landed).
 CONJECTURE (OPEN): ABS-COUNT's unconditional (d_o − 1) form. OPEN: REL, X_SN, K per phase; G-N5-TIME. Not a TARGET.md claim; not a
 step-4 pass.
+
+## §B. Addendum: L-NEW's repair of G-SN-1 (a), P-N5-SN fixes §2b (Lead 04:18Z). Written 2026-10-25 04:18Z by date -u
+Object: docs/new/P-N5-SN-fixes-box33.md at claude/l-new 0883157, file sha1 e5394445d40d1dd39491c07771fbcf94ef9a41a2 (checked with
+git show 0883157:… | sha1sum).
+- NOTE: this version is NOT on trunk at my merge 8eebb4ac. Trunk carries a1cb553's version (sha1 7a95f45f…), which has no §2b. I reviewed
+  the l-new object named by the Lead.
+- Independence: REFEREE's view of §2b not read (none on my tree). Own code: R2-N5-SN/h1_check.py, h1_climb.py, logs_h1/.
+| statement | verdict (Opus 5.5, D15) | notes |
+| --- | --- | --- |
+| Lemma H1-DROP | SIGN | — |
+| Corollary H1-KEEP | SIGN | — |
+| Corollary ABS-COUNT′ | SIGN | closes G-SN-1 (a) except for runs whose last H1 ε-transition has O = −1 (the ε⁽⁻¹⁾ term) |
+- H1-DROP.
+  - λ(o) = c ≠ o: λ(o) = o would put o on its honest cycle at k, against H1.
+  - The walk c = q_0 → … → q_m = o along the H_{k+1}-cycle C. Every y ∈ C has P = ∅ at k+1. A first divergence exists, because c's H_k-play
+    is the o-free cycle C_k.
+  - Divergent vertices are Even (Odd vertices ≠ o are forced), and their new successor is a gate target (R15 (d)).
+  - Old successors:
+    - at the first divergence, s_t lies on C_k (the path from c agrees up to q_t), so P = ∅;
+    - at a later one, Ξ_k(q_{t′+1}) = (q_{t′+1} … q_t) ⊕ Ξ_k(s_t) by (P2) at vertices with λ = c ≠ themselves, and the path set only grows,
+      so P(Ξ_k(s_t)) = ∅ from the inductive P(Ξ_k(q_{t′+1})) = ∅.
+  - New successors: Ξ_k(s_t) ◁ Ξ_k(q_{t+1}) ⊴ Ξ_{k+1}(q_{t+1}), with one cycle node c (λ_k(s_t) = λ_k(q_t) by (P1); phase). The outer two
+    have P = ∅, so their lev is ≤ −1, and (C5) gives P(Ξ_k(q_{t+1})) = ∅. This includes q_{t+1} = o, with Ξ_{k+1}(o) = θ_{k+1} on C.
+  - Last divergence: q_{j+1}'s H_k-path is q_{j+1} … q_{m−1}, o, then o's H_k-play. It is simple: if o's H_k-play revisited some q_i with
+    i > j, it would return to o, against H1 at k. So P(θ_k) ⊆ P(Ξ_k(q_{j+1})) = ∅. ✓
+- H1-KEEP.
+  - x1 ∈ C, so P(Ξ_{k+1}(x1)) = ∅. Its H_{k+1}-path avoids o, so U-loc with L = E_k gives P(Ξ_k(x1)) ∩ V_{>E_k} = ∅.
+  - The top difference of rank O_k > E_k (O_k ≥ 0) therefore lies in P(Ξ_k(x0)) ⊆ P(θ_k), since o ⊕ only adds. That contradicts H1-DROP. ✓
+  - The excluded case O_k = −1 forces E_k = ⊥ (no relevant Even change). Correct.
+- ABS-COUNT′. N_{k*+1} ≤ d_o − 1 by H1 at k*+1 (σ̄(o) ∈ F), and the count from the run's start to k*+1 gives (d_o − 1) + REL_run.
+  - Per phase: + 1 for each run whose last H1 ε-transition has O = −1 (the d_o form there), + f for ε at fallbacks. ✓
+  - The remaining OPEN parts are exactly ε⁽⁻¹⁾ and fallback ε-transitions.
+- DATA (0 failures):
+  - library (245 files × 3 starts) + random 𝒞^1O 5,500 games: 32 in-phase H1 → ¬H1 transitions, all with P(θ_k) = ∅; 33 divergences,
+    claim true at all; 728 H1 ε-transitions, all O ≥ 0, H1 kept at all; ABS-COUNT′ 236 runs, 35 tight.
+  - L-RED probes: epsseg_cex_n16 (sha1 8d83f7c2, read from claude/l-red, not yet on trunk at my tree): 12 H1 ε (3 starts), 0 failures.
+    epsseg_cex_n48, exitr_cex_n48 / n16: 0 failures.
+  - Climbs (h1_climb.py, 42,000 runs):
+    - FIT=drop from b4_theta_n7 and a random seed: 15,716 in-phase H1 → ¬H1 transitions, 43,713 divergences, all with P(θ_k) = ∅ and the
+      claim true.
+    - FIT=om1 from epsseg_cex_n16 and a random seed: 18,669 H1 ε-transitions, 0 with O = −1.
+  - So ε⁽⁻¹⁾ = 0 in all data; that term rests on the statement only.
+- Joint gap map update for row 1 (§C.3): with §2b, "ABS-COUNT′: (d_o − 1) + REL_run per run when the run's last H1 ε-transition has
+  O ≥ 0 (PROVED); per phase (d_o − 1)(f + 1) + REL + f + ε⁽⁻¹⁾; OPEN: ε⁽⁻¹⁾ (never observed) and fallback ε-transitions (never observed)".
