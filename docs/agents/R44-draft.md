@@ -1,4 +1,4 @@
-# Draft RESULTS R44 (Lead, 2026-10-25 19:35Z by date -u) (rev. 20:26Z: C53 E-1 by route (a), E-2, N-1, N-2) — to CHECKER C53
+# Draft RESULTS R44 (Lead, 2026-10-25 19:35Z by date -u) (rev. 20:26Z: C53 E-1 by route (a), E-2, N-1, N-2) — to CHECKER C53 — LANDED in RESULTS Results 20:36Z (CHECKER C53 7f4570b0 + Addendum 1 053a74f0 PASS), after R43
 
 ### R44 [refereed-only] N5 on one-Odd-choice games: every in-phase Even fallback is a Bellman-Ford round on U = λ⁻¹(c_θ) (FB-ROUND), so on a θ-run (and on a P-epoch) P(Ξ) freezes on U after |U| − 1 fallbacks (P-FREEZE, P-FREEZE′), later U-rises are length rises and, in case A, not crossings (LEN-TAIL, NO-CROSS-A), θ changes at most |U| − 2 times inside a P-epoch (θ-LEN), and breaks per HN stretch are polynomial in θ-changes (BRK-POLY, via RISE′) and in P(θ)-changes (BRK-POLY′) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C53.md, checker PENDING)
 - Objects (one review unit; both unchanged during review): packet P-N5-PFZ, docs/new/P-N5-PFZ-box39.md, sha1
