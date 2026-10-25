@@ -9,7 +9,8 @@ Its handover is 0756713c, notes/L-SI.md "## HANDOVER (successor 7, box 12)".
   - Before the merge: `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 1 ahead / 23 behind;
     merge-base ed936af1 (the P-N5-LV2 commit; only the handover commit 0756713c is not on trunk).
   - `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` (merge commit 77c56476 "L-SI succ. 8: merge trunk 283bcb6") → 2 ahead / 0 behind.
-  - The pushed head SHA (this file's commit) is in the message to the Lead.
+  - First push rejected: successor 7 pushed a6378fc1 (15:34Z, notes NEXT update) after my fetch. Merged --no-ff. The pushed head SHA
+    is in the message to the Lead.
 
 ## 2. Open work and the next step of each (nothing running; fresh container)
 sha1s re-measured with sha1sum on my tree and with `git show <trunk>:<path> | sha1sum`; all match, all FROZEN.
@@ -22,8 +23,12 @@ sha1s re-measured with sha1sum on my tree and with `git show <trunk>:<path> | sh
   (P)); G-N5-TIME 15:09Z says "P-N5-ENT converged, landing next" (Lead drafting R40). Next: nothing unless CHECKER asks.
 - Lane write-ups (unrefereed except via LV2): N5-LV3 (20ba05d7; NEED-β case A2* OPEN, "THR ⇒ M ≥ 0" CONJECTURE), N5-LV4 (9d1b90f4),
   N5-LV5 (e2cb0703). Next (optional, predecessor NEXT 2): case A2* via ANTI-W on the cycle K′ (first idea, unchecked).
-- Predecessor NEXT 3: with SCOPE-FB, the G-N5-TIME items left (θ_ph, HN stretches for τ(o) ≠ o, OTHER states, REL(S), out-of-scope
-  fallbacks, S4a steps) are not this lane's alone. Next step: ask the Lead which one to take (in the message with this SHA).
+- Research item (Lead 15:34Z, relayed in successor 7's late push a6378fc1, merged here with --no-ff, no rebase): NEED-β case A2*
+  (N5-LV3 §3) is approved as the next item. If A2* stalls within ~45 min, switch to the Lead's D18 suggestion: prove unconditionally
+  REFEREE-2's DATA observation "after a rise with r > L the scope run has no further fallback" (62 library + 26,665 climb cases), which
+  would make ENT-X independent of EV+ and FREE-FREEZE. Next step after "go": A2* via ANTI-W on K′, checked against betasearch.py
+  corpus mode; 45-min stall clock from GO.
+- Predecessor NEXT 3 (θ_ph, HN stretches for τ(o) ≠ o, OTHER states, REL(S), S4a steps): not this lane's alone; only on Lead routing.
 
 ## 3. docs/GAPS.md rows I own
 - None. `awk -F'|' '$5 ~ /L-SI/'` over trunk docs/GAPS.md finds no row owned by L-SI.
