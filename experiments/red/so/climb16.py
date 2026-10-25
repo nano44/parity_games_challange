@@ -7,19 +7,27 @@
   conf: (TEVCONF, TEVLAST failures, fallback pairs, TEV-LAST states)
   tx  : tevx16 (N5-TEV-box11 in (Σ)): (failures, (Σ) pairs with a COARSE_L(θ) change, RB + WALK checks, (Σ) pairs)
   nleq: nleq16 (CONJECTURE NL=): (NL= failures at r_j = L, r = L steps checked, r = L steps without (A_j), r > L steps)
+  far : (fallbacks after a rise with r > L in one scope run, such rises, fallback pairs, fallbacks)
   xrun: (failures, max SN-prefix crossings of one fallback-free run − (n − 1), exit crossings, fallbacks)
   rst : (failures, max #(h)-runs − (1 + toggles + f) per phase, max #(h)-runs, fallback restarts)
 A hit (rfb0 > 0, maxpre > n − 1, any failure) is saved as OUT_viol.pg. Invalid sentinel −10^9 (trap 1).
 Usage: climb16.py mode seed secs OUT (seed.pg | --rand n)"""
 import sys, os, random, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-import sox, rx16, tevx16, nleq16, pg
+import sox, rx16, tevx16, nleq16, ex16, pg
 from soclimb import mutate, dump
 NEG = (-10 ** 9,) * 4
 
 def fit(G, mode):
     g = pg.Game(*G)
     if any(not s for s in G[2]) or len(sox.oddchoice(g)) != 1: return NEG, None
+    if mode == "far":   # REFEREE-2 'Reachability': a fallback after a rise (r > L) in one scope run
+        try:
+            S, FB, E = ex16.trace(g, cap=3000); p = ex16.full(g, S, FB, E)
+        except AssertionError: raise
+        except Exception: return NEG, None
+        far = ex16.full.far; r = dict(it=len(FB), fb=sum(FB), C={"FAR": far[1]} if far[1] else {}, ex={"FAR": far[2]}, n=g.n)
+        return (far[1], far[0], p[0], sum(FB)), r
     try: r = (tevx16 if mode == "tx" else nleq16 if mode == "nleq" else rx16).analyse(g, cap=3000)
     except AssertionError: raise
     except Exception: return NEG, None
