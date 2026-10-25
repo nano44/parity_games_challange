@@ -32,7 +32,11 @@ R̄-rises after c_w ≠ o evictions with θ fixed ... Look for a count of route 
 8. **Obstruction (exact; why this does not bound RW_S yet).** Every count above is per reset (per entry), and every break is an entry.
    RISE's charging (B_S ≤ θ_S + RR_S) is therefore circular with these bounds: rise counting alone cannot bound breaks. An entry itself has
    to pay, for example through an EXIT-UP potential (§7, (E1)/(E2), OPEN).
-9. **DATA.** Lemma BF (and BF-X across 177 crossings) is checked at every transition of every block (library, all box-37/38 instances, climbs): 0 failures. FREEZE: the
+9. **Theorem P-FREEZE and BRK-POLY (PROVED, §11; supersedes 7-8 for counting breaks).** In a θ-constant run of a phase, the
+   fallbacks are Bellman-Ford rounds on U = λ^{-1}(c_θ), so P is frozen on U after |U| − 1 fallbacks. Every break consumes its own fallback (its
+   eviction), so B_S ≤ θ_S + (θ_S + 1)(n² − 1) for every HN stretch, any τ(o), any c_w; in case A, B_S ≤ θ_S + (θ_S + 1)(|U| − 1). With EPOCH,
+   crossings and fallbacks per HN stretch are polynomial in n and θ_S. OPEN as before: θ_S, HN stretches per phase (τ(o) ≠ o), OTHER states.
+10. **DATA.** Lemma BF (and BF-X across 177 crossings) is checked at every transition of every block (library, all box-37/38 instances, climbs): 0 failures. FREEZE: the
    last M-rise is always at an index < n − 1 (max 13 at n = 24). F1 monotonicity of W at S4a: 0 failures. TIE steps exist (library: 2;
    climb: 4 in one block at n = 24). Random 𝒞^1O games give no HN blocks (20,110 games, n 6..16).
 
@@ -254,3 +258,93 @@ G[R̄_t] and Mopt_t are as in §2, for the set R̄_t.
   - 391 (1, 2, 19); 392 (0, 0, 17); 393 (4, 6, 18); 394 (1, 1, 14).
 - No candidate in any climb failed Lemma BF, FREEZE-M or F1 (a failure is scored at the maximum and would show as (1000000, 0, 0)).
 - TIE steps do accumulate in one block (4 at n = 24). Whether they can grow superpolynomially is the OPEN TIE question of §4.
+
+## 11. Theorem P-FREEZE: fallbacks are Bellman-Ford rounds on U = λ^{-1}(c_θ); breaks per HN stretch are polynomial in θ_S (PROVED, L-NEW succ. 18; 𝒞^1O; written 15:0xZ by date -u)
+This section supersedes the obstruction of §6-§7 for B_S. The circularity there came from counting rises per entry. Here the clock is the
+fallbacks, and every break consumes a fallback (its eviction, SPLIT (b)).
+- Setting.
+  - Θ = [a, b] is a run of consecutive states of one phase with θ constant. Nothing is assumed about H1, H2, c_w or τ(o).
+  - U := λ^{-1}(c_θ), constant on the phase (λ is a phase constant), with o ∈ U and c_θ ∈ U.
+  - Terminals: o and c_θ.
+  - M_t(z) := the signed weight of P(Ξ_t z), the whole path set (P ⊆ V_{>c_θ} for values with cycle node c_θ).
+  - wt(v) := sgn(v)·2^rank(v) if rank(v) > rank(c_θ), else 0.
+  - G_U: vertex set U; every Even v ∈ U ∖ {c_θ} keeps all its edges into U; every Odd v ∈ U ∖ {o, c_θ} keeps its forced edge; o and
+    c_θ are sinks.
+  - Mopt(z) := max{wt(p ∖ {end}) + M(end) : p a simple path in G_U from z to a terminal}, with M(o) := wt(P(θ)) (constant on Θ) and
+    M(c_θ) = 0.
+- Facts (all LANDED; no (P)):
+  - (A) Additivity. For z ∈ U ∖ {c_θ} and every state t, M_t(z) = wt(z) + M_t(next_t(z)), with next_t(z) ∈ U. Here next_t = σ_t at
+    Even, the forced edge at Odd z ≠ o, and σ̄_t at o.
+    Proof: (V1) (R17 (a)), since λ(z) = c_θ ≠ z. ⊕ adds z iff rank(z) > rank(c_θ); a vertex on c_θ's cycle has rank < rank(c_θ),
+    so its weight is 0 and no double count arises. The successor has the same cycle node, so it is in U.
+  - (M1′) For y, z ∈ U at one state, Ξ_t(y) ⊴ Ξ_t(z) ⇒ M_t(y) ≤ M_t(z). (Same cycle node c_θ; the order compares the signed weight of
+    P next, §0 of P-N5-OUT.)
+  - (M2′) For z ∈ U, M_{t+1}(z) ≥ M_t(z) at every transition of the phase (R15 (a), same cycle node).
+  - (UB) M_t(z) ≤ Mopt(z). Proof: z's honest play, up to its first visit of a terminal, is a simple path in G_U. Before o, the honest
+    play and the (σ_t, ·)-play agree, and Odd vertices other than o are forced (𝒞^1O). By (A), M_t(z) is that path's weight plus M of
+    its end. (V1) at o gives M(o) = wt(P(θ)) when the path ends at o; P(c_θ) = ∅ when it ends at c_θ.
+- **Lemma FBF (PROVED).** At every fallback transition k → k+1 of Θ, for every Even v ∈ U ∖ {c_θ} and every successor x ∈ U of v:
+  M_{k+1}(v) ≥ wt(v) + M_k(x).
+  Proof.
+  - If Ξ_k(x) ⊴ Ξ_k(σ_k v): by (M1′) and (A), wt(v) + M_k(x) ≤ wt(v) + M_k(σ_k v) = M_k(v) ≤ M_{k+1}(v) (M2′).
+  - Otherwise (v, x) ∈ Iσ_k. S4c sets σ_{k+1}(v) = x* with Ξ_k(x*) ⊵ Ξ_k(x).
+    - The transition is in the phase, so λ_{k+1}(v) = c_θ ≠ v, and (A) at k+1 gives M_{k+1}(v) = wt(v) + M_{k+1}(x*), with x* ∈ U.
+    - So M_{k+1}(v) ≥ wt(v) + M_k(x*) ≥ wt(v) + M_k(x), by (M2′) and (M1′). □
+  - Remark. This is the fallback being a Howard (switch-all-to-best) round. S4a steps are not used, except that they never lower M (M2′).
+- **Theorem P-FREEZE (PROVED).** Let f_1 < f_2 < … be the fallback transitions of Θ.
+  - (a) For every j and every state t ∈ Θ with t > f_j (t ≥ a when j = 0), every z ∈ U and every simple path p in G_U from z to a
+    terminal with ≤ j edges: M_t(z) ≥ wt(p ∖ {end}) + M(end).
+  - (b) Hence M_t = Mopt on U, and P(Ξ_t z) is constant on U, for every state t > f_{|U|−1} of Θ. (When |U| = 1 this holds on all of Θ.)
+  Proof.
+  - (a) Induction on j. For j = 0, p has 0 edges, z is a terminal, and M_t(z) = M(end) (θ constant; P(c_θ) = ∅).
+  - j − 1 → j. Write p = z · p′, with p′ from x, ≤ j − 1 edges.
+    - Odd z: x is its forced successor. By (A), M_t(z) = wt(z) + M_t(x) ≥ wt(z) + wt(p′ ∖ {end}) + M(end), by the hypothesis at t.
+    - Even z: put k := f_j < t. By FBF at k and the hypothesis at the state k > f_{j−1},
+      M_{k+1}(z) ≥ wt(z) + M_k(x) ≥ wt(p ∖ {end}) + M(end). Then M_t(z) ≥ M_{k+1}(z) by (M2′).
+  - (b) Simple paths in G_U have ≤ |U| − 1 edges, so (a) and (UB) give M_t = Mopt. The signed weight is injective on sets of vertices
+    above c_θ (distinct powers of 2), so P is constant. □
+- **Corollary LEN-TAIL (PROVED).** On the states of Θ after f_{|U|−1}, every U-rise (z ∈ U with Ξ_t(z) ◁ Ξ_{t+1}(z)) is a length rise.
+  Put s_θ := +1 if Ω(c_θ) is odd, −1 if even, and Ψ_t := Σ_{z∈U} s_θ·ℓ(Ξ_t z), with ℓ ∈ [0, |U| − 1] the honest distance to c_θ. Then
+  Ψ is non-decreasing there and rises at every transition with a U-rise. So at most |U|(|U| − 1) transitions of Θ after f_{|U|−1}
+  carry a U-rise.
+- **Corollary NO-CROSS-A (PROVED; case A).** If rank(o) > rank(c_θ), no transition of Θ between two H1 states after f_{|U|−1} is a
+  crossing.
+  Proof: under H1, R̄_t ⊆ U (SPLIT (a)'s proof). SEP-o (P-N5-OUT §5) gives, for z ∈ U, z ∈ R̄_t iff o ∈ P(Ξ_t z). P is frozen on U. □
+- **Theorem BRK-POLY (PROVED).** For every HN stretch S of a phase on 𝒞^1O, for any τ(o) and any c_w:
+  - B_S ≤ θ_S + (θ_S + 1)(|U| − 1 + |U|(|U| − 1)) ≤ θ_S + (θ_S + 1)(n² − 1);
+  - in case A, B_S ≤ θ_S + (θ_S + 1)(|U| − 1).
+  Proof.
+  - Every break has a window [a, k]: a is its eviction, which is a fallback transition (SPLIT (b)), and k its entry. Windows of distinct
+    breaks are disjoint. By RISE (N5-TAUW §1, in P-N5-NEB) each window has a θ-change in (a, k] or an R̄-rise at a transition of [a, k)
+    with θ constant on [a, t + 1].
+  - At most θ_S breaks are of the first kind.
+  - Breaks of the second kind lie in one θ-run Θ of S each (S meets ≤ θ_S + 1 θ-runs). In Θ, those whose eviction is one of
+    f_1, …, f_{|U|−1} number ≤ |U| − 1.
+  - For every other break of Θ, a ≥ f_{|U|}, so its rise transition t → t+1 has t > f_{|U|−1}. By LEN-TAIL, at most |U|(|U| − 1)
+    such transitions exist. In case A there are none, since such a break's eviction a > f_{|U|−1} would be a crossing after the freeze,
+    against NO-CROSS-A.
+  - Sum over the θ-runs. □
+- Consequences (PROVED, with P-N5-OUT §2 EPOCH, corrected form):
+  - X_S ≤ 2(n − 1)(B_S + 1) and f_S ≤ K(X_S + 1) + X_S. So the crossings and fallbacks of an HN stretch are O(n³·K·(θ_S + 1)), for
+    every τ(o) and every c_w.
+  - This removes the RW_S term of BRK-ALL (N5-TAUW §7) and makes BAND / NO-ENTRY for c_w ≠ o unnecessary for counting.
+  - What stays OPEN in the N5-OUT programme:
+    - (i) θ_S / θ_ph, the θ-changes per stretch / phase;
+    - (ii) HN stretches per phase for τ(o) ≠ o;
+    - (iii) OTHER states;
+    - and of course the S4a steps between fallbacks (iterations, not fallbacks).
+- What this theorem does NOT give.
+  - No bound on S4a steps: before f_{|U|−1}, any number of S4a transitions can occur.
+  - No bound on θ-changes: P-FREEZE restarts at every θ-change.
+  - Not a running-time bound for N5. G-N5-TIME stays OPEN.
+- DATA (pfreeze.py; library 270 𝒞^1O files + box-37/38 instances + box-39 climb outputs):
+  - 714 θ-constant runs, 4,197 transitions, 674 fallbacks; FBF checked at every fallback for every Even v ∈ U ∖ {c_θ} and every
+    successor x ∈ U: FAIL_FBF 0.
+  - P-changes on U never after the (|U| − 1)-th fallback: FAIL_PFZ 0. Post-freeze crossings 0, post-freeze breaks 0.
+  - Max fallbacks in one θ-run: 25 (experiments/red/so/instances/njb_reabs65_n48.pg, n 48, |U| 48).
+  - pfzclimb.py (climb against the theorem; score = (failures, fallbacks before the last P-change, fallbacks per θ-run)): running, §12.
+- Relation to earlier lane work.
+  - NO-ENTRY-A′ / NE-COUNT (c_w = o, case A) give breaks ≤ θ-changes; BRK-POLY's case-A form is weaker by the factor |U| − 1 but needs
+    no assumption on c_w.
+  - LOW-RISE / BRK-B ((n − 2)² per θ-run, c_w = o) are of the same shape as LEN-TAIL.
+  - FREEZE-M / FREEZE-X (§2, §7) are the S4a-side analogues on R̄ with threshold T*. P-FREEZE needs no S4a analysis at all.
