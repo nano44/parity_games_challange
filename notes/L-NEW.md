@@ -8,7 +8,7 @@ Oink built in this container (tools/oink/build). Climbs running in experiments/n
 ### DONE (box 34)
 - docs/new/N5-REL-box34.md: Corollary NL-MF; Fact 0 / Lemma ARENA (SN regime = value iteration in G_τ, withheld F→R̄ edges, gain ≤ r);
   Theorem FREEZE (R20 P^c/CR on a window of n (h)-states with r ≤ ℓ; freeze lasts to the phase's last H2 state, through θ-, w-changes
-  and fallbacks); Corollary RATCHET; Lemma BLOCK; Theorem X-RUN (SN-prefix crossings per fallback-free run O((d_o+1)n²), H1 part);
+  and fallbacks); Corollary RATCHET; Lemma BLOCK; Theorem X-RUN (SN-prefix crossings per fallback-free run O((d_o+1)n³), H1 part; packet P-N5-FRZ);
   Theorem SUB (R20 C/P^c/CR/XA on (w, r)-subruns); FBF FALSE with θ moving (1,442 entries after fallbacks; b6_xl2_n32). All lane PROVED,
   unrefereed. Tools + data in experiments/new/box34 (data/ committed, out/ gitignored).
 
