@@ -19,7 +19,7 @@ lane's prior work; REFEREE-2's R2-N5-FRZ does not exist yet, so FREEZE′ and X-
 | §5 Lemma R-CONST | PROVED | SIGNED |
 | §6 Lemma H1-INT | PROVED | SIGNED WITH GAP L2-2 (wording: in (b), "every state k with H1 at k and ¬H1 at k+1" holds only for a transition k → k+1 INSIDE the phase, which is what R30 (f) gives; read literally with k+1 outside the phase it is FALSE: docs/referee/R-N5-L2/exitdrop_n3.pg). Closed by that reading |
 | §7 Theorem X-RUN′ | PROVED (rests on P-N5-FRZ §6, FRZ-3) | SIGNED (premise P-N5-FRZ: REFEREE signed, REFEREE-2 pending) |
-| §8 ONE-H FALSE, ONE-DROP FALSE, DROP-LEN OPEN, open list | not to sign | not signed. oneh_cex_n32 and onedrop_cex_n32 re-run with my own trace and Oink (§8 below) |
+| §8 ONE-H FALSE, ONE-DROP FALSE, DROP-LEN OPEN, open list | not to sign | not signed. oneh_cex_n32 and onedrop_cex_n32 re-run with my own trace and Oink. FINDING: DROP-LEN and its weaker per-run form are FALSE (docs/referee/R-N5-L2/droplen_cex_n12.pg: two drops in one fallback-free run, θ constant; §8) |
 
 Fixes-file lines (one per gap):
 - L2-1 (§2 H2-STICK, wording): add "If τ(o) = o, ¬H2 holds at every state with this τ, in particular at s+1; assume τ(o) ≠ o below." before "¬H2 at s: τ(o) ∈ R_s".
@@ -234,7 +234,25 @@ Fixes-file lines (one per gap):
   - θ = (13, ∅, 10) at 2-3 and (13, ∅, 8) at 4-6.
   - ONE-DROP is false, as the packet says.
 - Every L2 check on both instances: 0 failures.
-- DROP-LEN (OPEN, not reviewed): DATA only, l2_probe counts consecutive in-phase drops with θ unchanged between them (§9).
+- FINDING against §8's OPEN CONJECTURE DROP-LEN ("between two drops of a phase, θ changes") and against its weaker form ("at most one
+  drop per fallback-free run"): both are FALSE on docs/referee/R-N5-L2/droplen_cex_n12.pg.
+  - Instance: sha1 a6af26db3f75540aa0f519cf0420b890fd2d4cc9; n 12, o = 0, d_o = 10; found by my climb l2_climb.py FIT=tog, seed 21.
+  - N5 (own trace = n5.run): 4 iterations, 0 fallbacks. Oink `--zlk -v` verified, regions agree. One Odd choice vertex asserted.
+  - All 5 states form ONE phase, which is one fallback-free run. Its SN prefix is all 5 states (c_w = c_θ = 2 throughout).
+  - H1 at states 1 and 3; ¬H1 at states 0, 2 and 4. Drops 1 → 2 and 3 → 4 (S4a steps), t_Q = 4.
+  - θ = w = (2, ∅, 1) at every state.
+  - Mechanism: only σ(2) changes (0 → 1 → 7 → 9 → 10). Vertex 2 is c_θ, its own cycle node (priority 13, odd), and τ(o) = σ̄(o) = 2.
+    Each switch of σ(2) lengthens or rearranges the odd cycle through 2 without changing any value. o lies on the cycle exactly when
+    σ(2)'s play returns to o.
+  - Every signed L2 statement holds on it:
+    - R-CONST: R̄ = λ^{-1}(2) = V at the ¬H1 states, no crossing between them;
+    - H1-INT: I_∅ = all states, the length is constant;
+    - X-RUN′: 4 crossing transitions, all at toggles, ≤ t_Q.
+  - So DROP-LEN's consequence "≤ n drops and ≤ 2n + 1 H1-toggles per phase" cannot come from θ-changes. Drops and toggles must be
+    counted differently, for example by flat switches at c_θ.
+  - Not reviewed here: L-NEW successor 15's TOGGLE (docs/new/N5-DROP-box35.md, after the pin). Whoever reviews it should run this
+    instance against it.
+- DATA: library and random have no DROP-LEN case (§9); the climb found one within minutes.
 
 ## 9. DATA summary (DATA, not proof)
 - Packet instances: §8.
@@ -253,6 +271,12 @@ Fixes-file lines (one per gap):
 - Phase exits (l2_exitdrop.py, for L2-2 and §2's "of a phase"):
   - library: 83 exit drops, 43 with P(θ_k) ≠ ∅; 106 S4a exits with H1 ∧ ¬H2, 26 regaining H2;
   - random 5,000: 278 exit drops, 198 with P(θ_k) ≠ ∅.
+- Climbs (l2_climb.py, own code; every candidate asserted 𝒞^1O, every hit re-run through l2_probe):
+  - FIT=tog (seed 21, n 5-12): t_Q up to 4 → droplen_cex_n12 (§8); 0 L2 failures.
+  - FIT=h2s (seed 31): up to 8 non-self-loop H2-STICK cases per game; 0 failures.
+  - FIT=frz from random n 3-8 (seeds 11-13, 2, 1): best fitness −1, no n-state window through a ¬H1 state.
+  - FIT=frz seeded from thclimb_n12_s11, fts_best16 and j5_n16 (seeds 41-43): no hit at the time of this push; final numbers in an
+    addendum.
 - Thin spots (named):
   - FREEZE′'s new content is unexercised: no H3 window of n states contains a ¬H1 state, and no H3 ∧ ¬H2 state follows a window.
   - P^c_ℓ on ¬H1 windows is tested only for N ≤ 3.
