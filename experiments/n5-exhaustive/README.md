@@ -237,3 +237,26 @@ lane data quantities (J, K, S_o, E, K_W); 0 violations is evidence, not proof.
 | n 4 all starts | 7,340,032 | 0 | 2 | 4 / 0 / 0 / 0 / 0 | 848 / 0 / 145,098, 832 | 0 | 1 | 2 |
 | n 5 subset quarter 1 (index = 0 mod 4) | 17,193,152 | 0 | 1 | none | 4 / 0 / 308,550, 10,240 | 0 | 1 | 2 |
 Readings (DATA): CASC is vacuous through n 5 (no R-switch inside a W-flat run); J <= 1, K = 0, S_o <= 2, E <= 1, K_W <= 2 at n 4 and on n 5 quarter 1 (S_o <= 1 there).
+
+## Box 8 (Lead GO 04:56Z / order 05:18Z, D18): R28 (OE, OX), R29 (CLS), R30 in landing (SN + fixes §2b) on the exact small-n classes
+Labels (L40): DATA (exact = every run of the stated class); 0 violations is evidence, not proof. box8.py calls the referees' checkers
+UNMODIFIED: REFEREE-2 oe_check / cls_check / sn_check / h1_check.check_run with the run's start pair (all rows), REFEREE oe_probe /
+cls_probe / sn_probe.run (canonical start only: their trace has no start argument; reported in their own rows, Lead 05:18Z). Own code:
+per-phase maxima read as deltas of the checkers' counters (J, K, X, eps, rho, T, X_SN); REL recomputed with sn_check's formula.
+Phase key = the checkers' (lambda_Xi, tau). Validated on epsseg_cex_n48 (= sn_check inst mode: X_SN 5, crossings after prefix 13; REL 1).
+
+| box8 (start-pair rows: REFEREE-2 checkers) | runs | violations | max J | max K | max X | max eps | max rho | max T | max X_SN | max REL |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| n 4 canonical | 4,828,736 | 0 | 1 | 0 | 2 | 1 | 0 | 2 | 1 | 3 |
+BOX8ROW
+
+| box8 (REFEREE probes, canonical start only) | runs | FAIL counters | max J | max K | max X | max eps | max rho | max T |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| n 4 canonical | 4,828,736 | 0 | 1 | 0 | 2 | 1 | 0 | 2 |
+BOX8PROW
+
+Teeth (n 4 canonical, REFEREE-2 counters): U-loc 780,352 checks; OE 139,566 off-crossing transitions (16 crossings with O > E); OX 188,320
+phases (16 non-tame, all crossings, J = X); CN 120,082; TRANSFER 4,752; H3H2 6,818,268 states; LEAVE (H1) 17,344; CHOICE 80,027;
+H1-DROP 6,752 (all P(theta_k) empty); OR / ABS-COUNT' 16 eps-transitions (all H1, all ABS-COUNT' tight). VACUOUS at n 4 canonical (no
+instance of the hypothesis): R-STICK (no checks), NL (34,624 S4a (h) transitions, none with an admissible L), CLS1 / FBL / CLU (scope
+fallbacks all theta = w, none with r >= 0), WK, ABS-L, crossings after an SN prefix (0).
