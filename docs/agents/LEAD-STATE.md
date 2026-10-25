@@ -1324,3 +1324,10 @@
 - 16:50Z Lead: merged l-new 3e9fe5c and l-red 4194c09.
   - P-N5-RHO docs/new/P-N5-RHO-box40.md, sha1 cd5df65c, is PINNED at this commit. To sign: Y-FORM, HAT-FREEZE, RHO-TAIL, BF-F, FREEZE-F, RHO-HN, HN-POLY. No (P). It uses only the weak BRK-POLY′ (i′), so it does not depend on PFZ-1. Post-freeze data reaches only |U| ≤ 3 (10 checks).
   - L-RED 17 handover check: 5/5 re-measured. GO box 41.
+- 16:56Z Lead: merged l-si 6480a0f.
+  - New: P-N5-LV fixes docs/si/P-N5-LV-fixes-box11.md, sha1 b75ab1fc.
+  - New: L-SI 8 box 13 data. LV-NONE max 1 per scope run in its climbs.
+  - New: OLD-THREAT, lane PROVED.
+  - RISE-DROP is FALSE (tevlast7_n32: r stays > L after the rise, no fallback).
+  - New CONJECTURE GATE-ABOVE: after a rise, M_t > L while r > L.
+  - Drafted R41 = P-N5-LV, sha1 23dc8498, for CHECKER C50. R42 will be P-N5-NEB once its fixes file lands; this renumbers the 16:32Z plan.
