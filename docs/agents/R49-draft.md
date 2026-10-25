@@ -36,7 +36,9 @@
   (10, 8), case (B).
 - Honest limits: (i) SUBCLASS 𝒞^1O except (b). (ii) These lemmas locate the (β) gate of any M = −1 fallback and reduce case (i) to INTO;
   they bound no count, so G-N5-TIME stays open. (iii) Thin data: XG's hypothesis is VACUOUS in both referees' batch data and occurs 7 times
-  only in REFEREE-2's climbs (witness saved, not reproduced by REFEREE, N-NEEDB-4); NEED-β's cases (A1), (A2′), (A2″), (A2*) never occur in setting (LV+) (every (LV+) state in
+  only in REFEREE-2's climbs (N-NEEDB-4: its first saved start pair was invalid, so REFEREE could not
+  reproduce it, §C C.4; REFEREE-2's Addendum A, referee-2 1a9a0407, pins a valid start pair and an optimal σ*, and its rng-free
+  xg_witness.py gives RESULT OK; the hypothesis holds for some optimal σ*, not for the deterministic one); NEED-β's cases (A1), (A2′), (A2″), (A2*) never occur in setting (LV+) (every (LV+) state in
   data is case (B)), so they rest on their proofs; random 𝒞^1O games reach neither (LV+) nor a rise.
 - Data (DATA, not proof; one Odd choice vertex asserted on every game): REFEREE (own needb_probe.py on rl_engine): P-N5-RHO's 412-file list
   (253 𝒞^1O) from SPEC S3's start and with 4 random start pairs, REFEREE-2's 145 climb outputs, 1,400 random-start runs on the LV2
@@ -48,10 +50,12 @@
   violations; mutation controls xg, otc, b0, anti fire, otf does not.
 - Signatures: REFEREE docs/referee/R-N5-NEEDB.md (referee 008ad8ab, successor 10; §C 7dbd5118, successor 11): XG, ANTI (+
   ANTI-Ξ, ANTI-W), NEED-β (B), (A1), (A2′), (A2″), (A2*), OLD-THREAT, the reduction SIGNED; notes NEEDB-N1..N4; no gaps. REFEREE-2
-  docs/referee-2/R2-N5-NEEDB.md (referee-2 ef433d32, successor 12): all SIGN; notes N-NEEDB-1..5; no gap. REFEREE-2 discloses that, after
+  docs/referee-2/R2-N5-NEEDB.md (referee-2 ef433d32, successor 12; Addendum A 1a9a0407: witness start pairs corrected,
+  four lines of §1 / §6 marked "corrected in Addendum A", no verdict change): all SIGN; notes N-NEEDB-1..5; no gap. REFEREE-2 discloses that, after
   its verdicts and notes were written, a repository grep printed two lines reporting REFEREE's verdict (LEAD-STATE, RESULTS R43); it changed
   nothing after that and did not open docs/referee/. §C (REFEREE): verdicts identical; joint gap map empty;
   NEEDB-N2 = N-NEEDB-2; N-NEEDB-1 = REFEREE's IN-DATA line; N-NEEDB-3 accepted; N-NEEDB-5 confirmed; N-NEEDB-4 accepted as REFEREE-2's
-  data but NOT reproduced by REFEREE (the saved start pair of witness_xg_12004 is not a strategy pair of that game).
+  data but NOT reproduced by REFEREE (the saved start pair of witness_xg_12004 is not a strategy pair of that game); corrected in
+  REFEREE-2's Addendum A (1a9a0407).
   §C (REFEREE-2): R2SC-PENDING.
 - TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
