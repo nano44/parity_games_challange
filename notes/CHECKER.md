@@ -39,6 +39,9 @@
   IDENTICAL @843ba1f8, rand 8000 seed 7 IDENTICAL (seed found by trial); R2 phi_check 6 logs IDENTICAL. Worktree wtR56 = 843ba1f8.
 - 21:43Z: C55 CLOSED (R46 landed 90d6c5d3), C56 CLOSED (Add. 1 5bb11d61 PASS at 903b3e91; R47 landed c4d18621). Queue (Lead 21:41Z):
   P-N5-FBPOLY after REFEREE-2 12's §C; then NEEDB, FX, NH42; P-N5-KW being packeted. Idle until a draft sha1 arrives.
+- C57 = R48 = P-N5-FBPOLY. 22:19Z docs/checker/C57.md PASS at a0e70234 (draft bc4efa25); N-1 κ-PFZ convention, N-2 R72 adding commit
+  6e28e4f1, N-3 R2 heading fix 6ff47e58 off trunk. REFEREE fbpoly_probe lib IDENTICAL @3de7cab7; R2 4 logs IDENTICAL, tauw_B differs only by
+  2 later max-only records; exsw_loop_n15 loop kind reproduced with L-RED fbx18.py --start. Worktree wtR57 = 3de7cab7.
 - Commands: n5 = `python3 n5.py n5 <f> <sol>` + `check_sol2.py <f> <sol>` from experiments/new; REFEREE `python3 -I
   docs/referee/scratch/lv_probe.py <files>` from the root; REFEREE-2 `lv_check.py inst <f> 3 own|rand|spec` and `random N lo hi seed m`
   from docs/referee-2/R2-N5-LV/ with ../../../ paths.
