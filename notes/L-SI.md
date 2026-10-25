@@ -1,6 +1,40 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Handover check (successor 5)
+Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2026-10-25 ~09:25Z (date -u).
+1. Branch claude/l-si. Commands: `git fetch origin`; `git status` (local branch was 3924 behind origin/claude/l-si);
+   `git pull --ff-only origin claude/l-si` → head 72ecba6 (= successor 4's handover head); `git rev-list --left-right --count
+   HEAD...origin/claude/vibrant-johnson-nxvvxo` → 0 ahead / 94 behind trunk 2edf33e; `git merge-base` → 72ecba6.
+   Then `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` → a719414 (1 ahead / 0 behind before this commit).
+2. Open work (from the HANDOVER above, `docs/si/`, trunk `docs/referee/R-N5-NJB.md`):
+   - P-N5-NJB (docs/si/P-N5-NJB-box9.md, sha1 f43a8823 on both branch and trunk, pinned trunk a7d85b3): FROZEN. REFEREE succ. 7
+     report R-N5-NJB.md (trunk) has NJB-1 (MINSET wording) and NJB-2 (ENT-SHAPE (5) not signed; (5′) signed). Next step:
+     new file docs/si/P-N5-NJB-fixes-box9.md (does not exist yet). R2-N5-NJB: not on trunk nor on origin/claude/referee-2
+     (`git ls-tree -r origin/claude/referee-2 --name-only | grep -i njb` → nothing in docs/referee-2/).
+   - NJB = ENT (MINSET form) CONJECTURE: next step a proof or the exact obstruction, using (5′); read L-RED 15 (climbs) and
+     L-NEW 15 PF-THETA (docs/new/N5-DROP-box35.md §8) without editing them.
+   - Successor 4's NEXT 2: level −1 fallbacks per scope run; REL per scope run. Not started.
+   - Nothing running (successor 4: no climbs; scratchpad was session-local).
+3. GAPS (trunk docs/GAPS.md, `git show <trunk>:docs/GAPS.md | grep -n G-N5`): G-N5-TIME, major, owner L-NEW, OPEN. Its last
+   update (08:50Z): R31 LANDED (P-N5-FBW + fixes, CHECKER C40); "Open: NJB (D_M = 0; = ENT/MINSET, CONJECTURE), REL, level −1
+   fallbacks. In review: P-N5-FRZ, P-N5-L2, P-N5-NJB, P-N5-TOG. ONE-DROP, DROP-LEN FALSE." G-N5-TERM closed (R15).
+   L-SI owns no GAPS row.
+4. Rulings (trunk docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md):
+   - D1 (index: active), key lines verbatim: "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every
+     such claim, including the fleet's own, as wrong until it passes the gauntlet below." and "Never publish, post, email, submit
+     or contact anyone outside the fleet. Anything external is my decision."
+   - D16 (index: active): "Then keep working as I told you to"
+   - D18 (index: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from
+     areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed,
+     state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open
+     problems."
+5. Trap found: the fresh clone's local claude/l-si was 3924 commits behind origin (an old head 0d48da2 of the Fable session);
+   reading notes/L-SI.md before `git fetch` + fast-forward would have given the box-0 handover. Check: `git rev-list --count
+   HEAD..origin/claude/l-si` = 0 before reading. Second trap (inherited, still live): successor 4's .git/info/exclude for
+   experiments/si/xing/out/ does NOT exist in this container (`cat .git/info/exclude` shows only the template); so never
+   `git add -A`, add files by name.
+
 ## Resume point (successor 4, box 9; PARKED 2026-10-25 ~07:55Z per Lead 07:10Z; LANE-RESTART step 1; session_019zCLqPUCjkJxMD4vZoJ8TA)
 Handover check 1cef5052 (Lead 5/5). Box 9 write-up: docs/si/N5-C-box9.md §1-§13. Code: experiments/si/coarse/ fbw.py, reltrace.py,
 norf.py, minset.py, frzblk.py, abso.py, ffprobe.py, levcheck.py; jclimb.py modes HEQ / REP / NORF / MINSET. Logs: coarse/logs/box9/.

@@ -275,11 +275,21 @@ Fixes-file lines (one per gap):
   - FIT=tog (seed 21, n 5-12): t_Q up to 4 → droplen_cex_n12 (§8); 0 L2 failures.
   - FIT=h2s (seed 31): up to 8 non-self-loop H2-STICK cases per game; 0 failures.
   - FIT=frz from random n 3-8 (seeds 11-13, 2, 1): best fitness −1, no n-state window through a ¬H1 state.
-  - FIT=frz seeded from thclimb_n12_s11, fts_best16 and j5_n16 (seeds 41-43): no hit at the time of this push; final numbers in an
-    addendum.
+  - FIT=frz seeded from thclimb_n12_s11, fts_best16 and j5_n16 (seeds 41-43, 30 min each; 560,747 / 321,659 / 360,557 steps): best
+    fitness −2, no hit. (Final numbers added at 09:02Z by date -u, after the first push 7626354e.)
 - Thin spots (named):
   - FREEZE′'s new content is unexercised: no H3 window of n states contains a ¬H1 state, and no H3 ∧ ¬H2 state follows a window.
   - P^c_ℓ on ¬H1 windows is tested only for N ≤ 3.
   - X-RUN′'s bounds are far above every observed count.
   - Random 𝒞^1O games give no windows at all.
   - H2-STICK's non-self-loop case has 120 library cases plus the climb.
+
+## Addendum (written 2026-10-25 09:17Z by date -u): L-NEW's fixes file
+- Object: docs/new/P-N5-L2-fixes-box34.md on trunk eb3f659, sha1 7a110bca8d52b532d531c0836547b2d22b7437cd (checked with sha1sum after
+  merging trunk). The packet itself is unchanged.
+- L2-1: the inserted sentence is my fixes-file line, verbatim. CLOSED.
+- L2-2: the replacement clause is my fixes-file line, verbatim. CLOSED.
+- §2 of the file records the DROP-LEN finding with my instance and the lane's re-run: 4 iterations, 0 fallbacks, Oink OK; the same
+  states and drops as in my §8.
+- Its references to P-N5-TOG / TOGGLE are outside this review. I have not reviewed TOGGLE.
+- Labels: every REFEREE gap on P-N5-L2 is closed. The verdict table stands. FREEZE′ and X-RUN′ still depend on P-N5-FRZ (R32, at CHECKER).

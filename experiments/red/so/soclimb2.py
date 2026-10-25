@@ -5,6 +5,9 @@
   seg : (failures of the proved lemmas, as exr; EXIT-R / ORX failures only as a last key)
   small: (EXIT-R fails?, max ε, ε in SN) for small n
   jb  : (proved-lemma failures, max J − (d_o − 1)(f + 1), max ε)
+  xsnf: (proved-lemma failures, max X_SN over phases with f >= 1, X there)   rel: (.., max REL per phase, max ε)
+  jbf : (.., max J − (d_o − 1)(f + 1) over phases with J >= 1 and f >= 1, J there)
+  njb : (proved-lemma + NJB failures, max re-absorptions of block-released exits inside a block, releases, block size)
   xsn : (fails, max X_SN per phase, max X)        post: (fails, max crossings after the SN prefix of a run, max X)
 Usage: soclimb2.py mode seed secs OUT (seed.pg | --rand n)"""
 import sys, os, random, time
@@ -31,6 +34,22 @@ def fit(G, mode):
         r1 = sox.analyse(g, cap=3000); fr = {x["a"]: x["f"] for x in rs}
         f = (pf + sum(r1["C"].values()), max((x["J"] - (x["d_o"] - 1) * (fr.get(x["a"], 0) + 1) for x in r1["rows"] if x["J"] >= 1), default=-10 ** 9),
              mx(lambda x: x["eps"]), 0)
+    elif mode in ("xsnf", "jbf", "rel"):   # box 38; proved-lemma failures first (EXITR / ORX refuted, not counted)
+        pf = sum(v for k, v in r["C"].items() if k not in ("EXITR", "ORX"))
+        if mode == "xsnf": f = (pf, max((x["XSN"] for x in rs if x["f"] >= 1), default=-10 ** 9), max((x["X"] for x in rs if x["f"] >= 1), default=-10 ** 9), 0)
+        elif mode == "rel": f = (pf, mx(lambda x: x["RELe"]), mx(lambda x: x["eps"]), mx(lambda x: x["REL"]))   # RELe: releases of ε-absorbed exits
+        else:
+            r1 = sox.analyse(g, cap=3000); fr = {x["a"]: x["f"] for x in rs}
+            f = (pf + sum(r1["C"].values()), max((x["J"] - (x["d_o"] - 1) * (fr.get(x["a"], 0) + 1) for x in r1["rows"] if x["J"] >= 1 and fr.get(x["a"], 0) >= 1), default=-10 ** 9),
+                 max((x["J"] for x in r1["rows"] if fr.get(x["a"], 0) >= 1), default=-10 ** 9), 0)
+    elif mode == "njb":   # box 38: NJB / FLATALL failures first, then re-absorptions of block-released exits, releases, block fallbacks
+        pf = sum(v for k, v in r["C"].items() if k not in ("EXITR", "ORX"))
+        f = (pf, mx(lambda x: x["reabs"]), mx(lambda x: x["blkrel"]), mx(lambda x: x["blockfb"]))
+    elif mode == "xrun":  # crossings inside the c_w = c_θ prefix of one fallback-free run, minus (n − 1)
+        f = (fails, mx(lambda x: x["maxpre"]) - (g.n - 1), mx(lambda x: x["XSN"]), 0)
+    elif mode == "mn":    # P-N5-NJB MINSET: NJB / proved failures, sole-minimiser absorptions inside a block, −min |Mn|, Mn-member absorptions
+        pf = sum(v for k, v in r["C"].items() if k not in ("EXITR", "ORX"))
+        f = (pf, mx(lambda x: x["soleabs"]), mx(lambda x: x["mnabs"]), -min((x["minmn"] for x in rs), default=10 ** 9))   # mnabs before min|Mn| (trap 2)
     elif mode == "xsn": f = (fails, mx(lambda x: x["XSN"]), mx(lambda x: x["X"]), 0)
     elif mode == "post": f = (fails, mx(lambda x: x["maxpost"]), mx(lambda x: x["X"]), 0)
     return f, r

@@ -28,6 +28,17 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - My CONJECTURE (J-SEG): J <= (d_o-1)(f+1), at equality on 3 instances.
   - Tools: sox2.py, soclimb2.py (exr / seg / small / jb / xsn / post).
   - vrun.sh runs n5b with --mode spec (the default orig mode is L-COMP's A5 tie-break and differs; R66 §7 correction).
+- BOX 38 (GO 05:18Z; docs/red/R68-xsn-njb-ent.md). NO KILL.
+  - X_SN is linear: ≤ 0.83n per fallback-free run. My CONJECTURE XSN-RUN: ≤ n − 1 per run.
+  - NJB / ENT / MINSET / TOGGLE: 0 failures.
+  - My CONJECTURE RISE-LAST: no COARSE_L(θ) rise between in-scope fallbacks of one scope run; rfb0 = 0 on 257 files and every climb.
+  - Tools:
+    - sox2.py: REL, RELe, NJB blocks, Mn, maxpre.
+    - sox3.py: NO-RF-OLD, ENT.
+    - sox4.py: TOGGLE.
+    - soclimb2.py modes xsnf / jbf / rel / njb / xrun / mn; soclimb3.py (ENT); soclimb4.py (TOGGLE).
+  - Trap 2 again: the mn fitness traded absorptions for |Mn| = 1.
+  - Trap: sox's min |Mn| first skipped fallback states. minset.py includes the state of the next fallback; aligned.
 - Next (if routed): K growth (hand-built wake chain, U1 pieces); X per phase (the remaining open core with K).
 - Trap (box 36): the j fitness J − S_o reached a degenerate 0 (J = S_o = 0); fixed by counting only phases with J >= 1 (trap 2 again).
 - Trap (box 36): killing by `ps | awk $12..` failed (the column was wrong). Use `ps -eo pid,etimes,args` and kill the pid itself.
