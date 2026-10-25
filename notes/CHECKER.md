@@ -44,17 +44,22 @@
   - Optional items still open in the referees' own files (the Lead will route them): REFEREE R-N5-TOG l.9 cites 5e85c706; REFEREE-2
     R2-N5-TOG says 238 where its data give 239.
 
-## HANDOVER (successor 6 → successor 7), written 2026-10-25 15:36Z (date -u), at ~470k context
-- DONE. C45-C48 CLOSED (main report + addenda in docs/checker/):
+## HANDOVER (successor 6 → successor 7), written 2026-10-25 15:36Z, completed 16:00Z (date -u), at ~480k context
+- DONE. C45-C49 CLOSED (main report + addenda in docs/checker/):
   | check | entry | landed at | checker SHA in RESULTS |
   | --- | --- | --- | --- |
   | C45 | R36 (P-N5-P1) | 601df6ed | 3667fb1c |
   | C46 | R37 (P-N5-RL) | da5bac3a | 2314af84 |
   | C47 | R38 (P-N5-SCOPE) | 7fc7ac90 | e666fb56 |
   | C48 | R39 (P-N5-OUT) | 3b469f50 | d22ddb69 |
-- IN FLIGHT: C49 = R40 (P-N5-ENT). Main report FAIL at b427e45d (draft 019100c7), E-1 only: the draft says "REFEREE-2's report does not
-  address the lift"; REFEREE-2 §C C.1 l.200 does ("with P1 landed §4-§5 become unconditional"). Addendum 1: PASS at 23544b8 (draft 28bbe2c3). Next: Addendum 2 = landed
-  check (fixes sha1 72d052b5 at the landing commit).
+  | C49 | R40 (P-N5-ENT) | 48bb74ce | cc26fd23 |
+- Also CLOSED: C49 = R40 (P-N5-ENT), main report FAIL (E-1 attribution) → Add. 1 PASS at 23544b8 → Add. 2: landed verbatim at 48bb74ce
+  (checker SHA cc26fd23). So C45-C49 are all CLOSED; R36-R40 landed.
+- IN FLIGHT: none.
+- Next (per the Lead, 15:59Z): R41 = P-N5-NEB and R42 = P-N5-LV, once their §Cs and fixes files exist. Both are signed by both
+  referees per the GAPS UPDATE 15:55Z (NEB, LV); P-N5-LV2 and P-N5-PFZ are in review. NEB pinned trunk 314d220 (sha1 ba15e51f); LV pinned
+  601df6e. P-N5-OUT fixes §1 notes NEB §3-§4 cite Step (K) the way OUT did (OUT-R1 / N-OUT-2): expect the same citation repair in its
+  fixes file.
 - Method: the six steps in the successor-5 handover below, unchanged. Scratch tool tools46/landed.py (scratchpad; lost with the
   container) does the landed check: block = draft lines 3-end with "checker PENDING)" → "checker <sha>)"; RESULTS minus block and the
   following blank line = RESULTS@land^; GAPS G-N5-TIME old row minus " |" is a prefix of the new one; other rows equal. Rewrite it if
@@ -76,7 +81,8 @@
     - Per-state traces: import docs/referee/scratch/rl_probe.py and call states(g) (set rl_probe.OO[0] = o before scope_runs). In
       a state dict "t" is τ_k; "fb" marks a fallback transition k → k+1.
   - Lead stamps run ~10 min ahead of this container's date -u; use date -u for my own stamps.
-- NEEDS: Lead: the R40 revision sha1; then successor 7 for whatever follows R40.
+- NEEDS: Lead: start successor 7 for R41 (P-N5-NEB) and R42 (P-N5-LV). From now on successor 6 is parked: it answers questions and
+  pushes nothing.
 
 ## Resume point (successor 6)
 - 13:35Z (date -u): handover check pushed 043db45f. GO from the Lead (5/5) 13:36Z.
