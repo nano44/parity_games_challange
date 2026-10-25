@@ -92,7 +92,7 @@ def analyse(g, cap=5000):
                 if Wv[k][x][0] != Xi[k][x][0] and x not in R[k + 1]: bad("RSTICK", k)
             if cw[k] != cth and not R[k] <= R[k + 1]: bad("RSTICK2", k)
         # SN-PREFIX on maximal fallback-free runs
-        k = a; maxpost = 0; runs = []
+        k = a; maxpost = 0; maxpre = 0; runs = []
         while k <= b:
             if FB[k]: k += 1; continue
             j = k
@@ -101,6 +101,8 @@ def analyse(g, cap=5000):
             p = 0
             while p < len(eq) and eq[p]: p += 1
             if any(eq[p:]): bad("PREFIX", k)
+            pre = sum(R[s] != R[s + 1] for s in st[:p] if s < st[-1])
+            maxpre = max(maxpre, pre)
             post = 0
             for s in st[p:-1]:
                 if not R[s] <= R[s + 1]: bad("PREFR", s)
@@ -172,7 +174,7 @@ def analyse(g, cap=5000):
                     if any(x0 not in R[u] for u in range(t + 1, k1 + 1)): bad("ABSL_iii", t)
                 if cnt > d_o - 1: bad("ABSL_cnt", k0)
             k = j + 1
-        rows.append(dict(a=a, b=b, T=b - a + 1, X=X, XSN=XSN, REL=REL, RELe=RELe, f=f, eps=len(eps), epsSN=epsSN, maxseg=maxseg, maxpost=maxpost,
+        rows.append(dict(a=a, b=b, T=b - a + 1, X=X, XSN=XSN, REL=REL, RELe=RELe, f=f, eps=len(eps), epsSN=epsSN, maxseg=maxseg, maxpost=maxpost, maxpre=maxpre,
                          absl=absl_checked, d_o=d_o, nblocks=nblocks, blockfb=blockfb, blkrel=nrel, reabs=reabs_))
     return dict(n=n, o=o, it=len(FB), fb=sum(FB), rows=rows, C=C, ex=ex)
 
@@ -182,7 +184,7 @@ if __name__ == "__main__":
         g = sox.load(f)
         if len(sox.oddchoice(g)) != 1: print(os.path.basename(f), "SKIP not C^1O"); continue
         r = analyse(g); rs = r["rows"]
-        m = {k: max((x[k] for x in rs), default=0) for k in ("X", "XSN", "REL", "RELe", "f", "eps", "epsSN", "maxseg", "maxpost", "absl", "nblocks", "blockfb", "blkrel", "reabs")}
+        m = {k: max((x[k] for x in rs), default=0) for k in ("X", "XSN", "REL", "RELe", "f", "eps", "epsSN", "maxseg", "maxpost", "maxpre", "absl", "nblocks", "blockfb", "blkrel", "reabs")}
         for k, v in m.items():
             if v > mx.get(k, (0,))[0]: mx[k] = (v, os.path.basename(f))
         print(os.path.basename(f), f"n {r['n']} o {r['o']} it {r['it']} fb {r['fb']} phases {len(rs)} max", m, "FAILS", r["C"] or 0, r["ex"] or "", flush=True)

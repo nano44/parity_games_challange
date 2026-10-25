@@ -45,6 +45,8 @@ def fit(G, mode):
     elif mode == "njb":   # box 38: NJB / FLATALL failures first, then re-absorptions of block-released exits, releases, block fallbacks
         pf = sum(v for k, v in r["C"].items() if k not in ("EXITR", "ORX"))
         f = (pf, mx(lambda x: x["reabs"]), mx(lambda x: x["blkrel"]), mx(lambda x: x["blockfb"]))
+    elif mode == "xrun":  # crossings inside the c_w = c_θ prefix of one fallback-free run, minus (n − 1)
+        f = (fails, mx(lambda x: x["maxpre"]) - (g.n - 1), mx(lambda x: x["XSN"]), 0)
     elif mode == "xsn": f = (fails, mx(lambda x: x["XSN"]), mx(lambda x: x["X"]), 0)
     elif mode == "post": f = (fails, mx(lambda x: x["maxpost"]), mx(lambda x: x["X"]), 0)
     return f, r
