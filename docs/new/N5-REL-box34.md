@@ -197,3 +197,22 @@ gives F(ℓ_0) := k_P + n − 1 (FREEZE). Induct downward on the level ℓ, with
 - wsnclimb.py (w-changes between (h) states in one phase, seeds sc24 / sc32): 21 at n 24 (sc24 starts at 20: an unthrottled, R17-type
   run with R mostly empty) and 17 at n 32. Both are below n.
 - Every named instance above has exactly one Odd vertex with out-degree > 1; the scripts assert it.
+
+## 9. The loop inside a scope run: drain and refill (DATA, READING; written 05:47Z by date -u)
+- Mechanism (DATA, box34/fbclus.py). x48_rt48_final.pg (experiments/new/box28/instances, sha1 cff46249…, n 48, d_o 3) has one scope run,
+  states 2-111, with r = 47 until 99:
+  - Refill: R grows one vertex per S4a step (states 2-18, 63-82).
+  - Drain: fallbacks at one level evict R in pieces, with no entry in between (level 45 at 19, 25, 31, 41, 46, 53, 55, 59, 61; level
+    44 at 83-97).
+  - Then θ rises at exactly the drain level (45 at 62, 44 at 98), R refills, and the next drain is one level lower (CLS1).
+  - At 99 θ jumps to level 47 = r: the run's θ catches w.
+  b6_xw_n56.pg (sha1 in data/fbentry_lib.txt) shows the same pattern with levels 43, 42, 41, 41, 41, 40, 39, 39, 36.
+- So "≤ 1 fallback cluster per level per scope run" (CL1) is FALSE: 47 scope runs violate it, up to 9 clusters at one level
+  (x48_rt48_final). But the repeated clusters at one level are drains: R only shrinks between them, so one drain has ≤ |R| ≤ n
+  non-flat fallbacks.
+- E1 (PROVED, it is R20's FBF): inside a scope run, no vertex enters R after a fallback until θ changes. w is fixed in a scope run, so
+  the stretch after the fallback is a (θ, w)-stretch until θ moves, and FBF applies. DATA: 1,874 entries after fallbacks in scope
+  runs, each preceded by a θ-change since the last fallback (box34/fbenter.py).
+- READING (FBL needs u* ≠ none, i.e. r ≥ 0): per scope run, non-flat fallbacks ≤ n·(1 + number of θ-changes in the run). Between two θ-changes, after the first fallback R only shrinks (E1), and each non-flat THR fallback evicts a vertex (FBL). With item 6 of the
+  Summary, per scope run the open count is the θ-changes after fallbacks (L-SI's "θ per scope run", P-N5-CLS §7). In the data they come
+  at the drain level (93 of the 394 transitions right after a cluster change θ at exactly the cluster level; the other 301 do not; data/fbclus_lib.txt).
