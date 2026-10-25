@@ -1488,3 +1488,8 @@
   - L-RED 18 R72 (9812efa7): no kill of FX or FBPOLY in 8.5 M random runs; loop kind on exsw_loop_n15.pg (e38329f8; Lead re-run from the canonical start: one Odd choice vertex, n5 1/0, Oink zlk OK); K linear (kchain, kt6_n58); all wakes at U3. Routed: L-RED box 43 = the K red-team; the Ks/Kt wording point to L-SI for P-N5-KW.
   - Merged l-red. Added R72 to the R48 draft data line.
 - 21:54Z: Merged checker 135d8366 (C56 Addendum 2: R47 landed verbatim at c4d18621; C56 CLOSED), referee 5efec8b0 (REFEREE 11 K prep: kw_probe and kw_climb, 0 failures), l-new b4f064b4 (L-NEW 22 handover check 5/5; notebook duplicate block removed, verified: only the superseded NEXT block was lost) and l-si 6fb0cd55. GO to L-NEW 22 for box 43.
+- 22:01Z: Merged referee-2 ef433d32 (R2-N5-NEEDB: all SIGN, no gap; N-NEEDB-1..5; XG reached 7 times in climbs; FINDING N-NEEDB-5: the CONJECTURE "in scope, THR ⇒ M ≥ 0" is FALSE on block_9501.pg from its saved start pair, state 1, M = −1 with three (β) gates; from the canonical S3 start no such state exists). Merged l-si bf1ed0f7 + 47c4e7a2.
+- PINNED at this commit:
+  - packet P-N5-KW, docs/si/P-N5-KW-box15.md, sha1 c0b0111fcc2259e4ed9d43647bc4fa08cec452a5 (L-SI 10, l-si bf1ed0f7): W-ONCE, Facts A/B, FRZ-U, LEN, PAR, H-PATH, KIND-MONO, CASC-B, CW-INT, E-SEG, RUN, KW-S, PHASE (conditional on f);
+  - its addendum docs/si/P-N5-KW-addendum-box15.md, sha1 8d6bfb3c32d80ed7040df4ae2dee56bb9bb9b5bd (l-si 47c4e7a2: units are transitions; switches ≤ n · transitions; R72 data).
+  - They go to both referees as one review unit. REFEREE 11: §C NEEDB, then KW. REFEREE-2 12: §C FBPOLY, then KW, then FX, then NH42 (KW moved ahead of FX and NH42, since its assembly needs neither).
