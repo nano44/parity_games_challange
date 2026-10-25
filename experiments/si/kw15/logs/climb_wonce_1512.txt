@@ -1,0 +1,23 @@
+climb FIT=wonce seed=1512 n=17 iterations=91143 improvements=15 best_fitness=15
+BEST counters: {'AGREE states': 41, 'runs': 3, 'runs cth>=cw notH2 notH1': 3, 'runs shorter than freeze': 3, 'traces': 3, 'transitions': 40}
+BEST maxima: {'max Xi-changes on R / run': 15, 'max W-changes on R / run': 15, 'max run length': 15}
+TOTAL AGREE states                              2265868
+TOTAL FRZ state checks                          2414
+TOTAL climb evaluations                         91068
+TOTAL post-freeze runs                          3521
+TOTAL runs                                      250651
+TOTAL runs cth>=cw H2 H1                        844
+TOTAL runs cth>=cw notH2 H1                     1
+TOTAL runs cth>=cw notH2 notH1                  249780
+TOTAL runs cw>cth notH2 H1                      12
+TOTAL runs cw>cth notH2 notH1                   14
+TOTAL runs shorter than freeze                  247130
+TOTAL traces                                    273204
+TOTAL transitions                               2438329
+TOTALMAX max W-changes on R / run               15
+TOTALMAX max Xi-changes on R / run              15
+TOTALMAX max kappa-freeze delay (t - k0)        0
+TOTALMAX max kappa-freeze delay / (|Rbar|-1)    0
+TOTALMAX max post-freeze length                 12
+TOTALMAX max run length                         15
+KWCLIMB PASS

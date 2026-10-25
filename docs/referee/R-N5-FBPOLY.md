@@ -172,3 +172,48 @@ docs/referee/scratch/fbpoly_logs/.
 - FBP-N4 (data): the per-vertex form of FREEZE-EXIT (no c_θ-kind switch at j ≥ |U| − 1; no o-kind switch at i ≥ |U| − 1) held at every
   switched vertex. Its hypotheses never occur, so this adds nothing beyond the proof. EXIT-SWITCH's "loop" kind never occurs (0 of
   2,635 switched vertices of U ∖ T in the (L)+random-starts run, which includes the canonical runs).
+
+## §C. Comparison with REFEREE-2: docs/referee-2/R2-N5-FBPOLY.md at referee-2 2fef7c4a (sha1 6a460eb2…)
+Written 2026-10-25T20:19Z by date -u, after the Lead's word of 20:15Z (Lead's stamp) that 2fef7c4a is final. I opened R2-N5-FBPOLY only
+after my report (3de7cab7) was pushed. (Opus 5.5, D15).
+- Verdicts: identical in substance.
+  - Both referees sign κ-FB-ROUND, κ-HAT-FREEZE (a)-(c), κ-PFZ, κ-Y-FORM, EXIT-SWITCH, FREEZE-EXIT, CN-ONLY, THETA-AFTER and FB-POLY
+    (a)-(d). Neither signs §7-§8 or the §6 Remarks.
+  - Both found the same two defects in §6's bookkeeping, independently, with the same repair:
+    - my GAP FBP-1 = REFEREE-2's N-FBP-2 ((a)'s end bound and deg_U(o) ≤ n − 1 with a self-loop at o; use |succ(o) ∩ Û|);
+    - my GAP FBP-2 = REFEREE-2's N-FBP-1 ((b)'s proof assumes o ≠ c_θ; at o = c_θ, |U| = 2 the other vertex can never switch).
+  - The only difference is the label: I wrote "SIGNED WITH GAP", REFEREE-2 wrote "SIGN" with a note.
+- The Lead's question: do my FBP-1 and FBP-2 repairs stand as written? Yes, both, unchanged.
+  - REFEREE-2's suggested lines are the same arguments:
+    - FBP-1: THETA-AFTER's V_H is indexed by y ∈ succ(o) ∩ Û, so f ≤ 1 + (|U| − 2)(|succ(o) ∩ Û| + |U|) ≤ 1 + (n − 2)(2n − 1).
+    - FBP-2: at o = c_θ, |U| = 2, next(x) ∈ {o} at every state, so S_U = ∅ and (d) gives f ≤ 1.
+  - REFEREE-2's data confirm that both cases occur: 84 of its 492 games have a self-loop at o, 3 have succ(o) = V, and there are 7,357
+    phases with o = c_θ, |U| = 2 (max f 1).
+- Label reconciliation:
+  - Each repair is one line, and both referees agree on the statements and the repairs. I accept that the lane carries both as fixes-file
+    lines; with them in the fixes file, I sign FB-POLY (a) and (b) without a gap.
+  - Until they are filed, the joint form is: (a)'s middle bound and (c), (d) as written; (a)'s end bound and (b) with the stated
+    one-line proofs.
+  - No disagreement remains.
+- Joint gap map: one row, closed by an agreed repair (FBP-1 = N-FBP-2; FBP-2 = N-FBP-1). Nothing open.
+
+| item | REFEREE-2 | REFEREE | outcome |
+| --- | --- | --- | --- |
+| (a) end bound, self-loop at o | N-FBP-2 (note) | GAP FBP-1 + repair; FBP-N1 | same finding, same repair; fixes-file line |
+| (b) at o = c_θ, \|U\| = 2 | N-FBP-1 (note) | GAP FBP-2 + repair | same finding, same repair; fixes-file line |
+| (YB) from z = o uses the lasso argument, not (SP′)'s "up to the first T-vertex" | (§0: (YB) via (SP′), ✓) | FBP-N2 (wording) | stands as wording; REFEREE-2 reads (SP′)'s proof the same way |
+| FBL-N (ii) reading "x = λ_W(x), λ_W(z) = x" | accepted, with the N5-NH / OUT / NEB precedents | checked against P-N5-X §3 l. 78 (the landed packet's own words) | agreed |
+| EXIT-SWITCH's "loop" branch for SOME switched vertex | N-FBP-4: occurs; witness climb/loop_4102.pg (sha1 016473b4) | my library data had 0 | ACCEPTED, re-run on my engine (below); §7's "never occurs in data" is out of date |
+| FREEZE-EXIT / THETA-AFTER regime | N-FBP-3: unreached (batch + climbs); FX slack down to 0 for kind c_θ in a climb | unreached (3.82M climb candidates, best one fallback short) | identical; both: a target for L-RED |
+| per-vertex FREEZE-EXIT form (FX) | checked; mutation could not be shown to bite | checked (FBP-N4) | identical |
+| consequences (f removed from SCOPE-COUNT / EPOCH / X-SN-PHASE) | reading, not signed | FBP-N3, not signed | identical |
+
+- N-FBP-4 re-run (own engine, scratch/fbpoly_probe.py; game copied from 2fef7c4a, sha1 016473b411a6…):
+  - From REFEREE-2's start pair (σ0 = [3, 1, 1, 2, 5, 1, 2, 1], τ0 = [3, 1, 0, 5, 5, 1, 2, 0]): 1 fallback, S_U ≠ ∅, switched kinds c_θ 1
+    and loop 1. EXIT-SWITCH holds (a non-loop vertex exists). 0 failures.
+  - With 300 random start pairs on the same game: 35 fallbacks, kinds c_θ 35, loop 24. 0 failures.
+  - So the excluded branch is common for single vertices on this game, and EXIT-SWITCH's "some u exits" is what holds.
+  - My own earlier "loop 0" came from the library at canonical and 4 random starts only.
+- REFEREE-2 records a bug in its own checker during a climb (o = c_θ against Û instead of G_U), fixed before its data. Its batch was
+  unaffected (the bug could only add violations). My probe treats o = c_θ separately (FE_c_eq_o, i ≤ |U| − 1); no such issue.
+- No verdict of mine changes. (Opus 5.5, D15)
