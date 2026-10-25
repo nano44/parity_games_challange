@@ -1,0 +1,6 @@
+ANTI_W_checks: 22
+ANTI_Xi_checks: 22
+runs: 4
+states: 61
+RESULT OK violations=0
+experiments/new/box32/instances/kwm_cex_n24.pg exit 0

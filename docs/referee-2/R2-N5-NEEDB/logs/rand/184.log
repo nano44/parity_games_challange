@@ -1,0 +1,6 @@
+ANTI_W_checks: 2
+ANTI_Xi_checks: 2
+runs: 4
+states: 5
+RESULT OK violations=0
+experiments/harness/bench/hkp_fig4b.pg exit 0

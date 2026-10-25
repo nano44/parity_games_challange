@@ -1,0 +1,10 @@
+ANTI_W_checks: 2
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 2
+ANTI_Xi_checks: 2
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 2
+runs: 4
+states: 10
+RESULT OK violations=0
+docs/referee/R-N5-L2/droplen_cex_n12.pg exit 0

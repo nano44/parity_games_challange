@@ -1,0 +1,8 @@
+ANTI_W_checks: 11
+ANTI_Xi_checks: 11
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 36
+RESULT OK violations=0
+experiments/new/box25/instances/wd12_s1.pg exit 0

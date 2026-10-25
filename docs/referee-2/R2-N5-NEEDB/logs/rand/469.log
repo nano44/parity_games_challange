@@ -1,0 +1,10 @@
+ANTI_W_checks: 22
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 2
+ANTI_Xi_checks: 22
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 2
+runs: 4
+states: 83
+RESULT OK violations=0
+experiments/si/orlens/instances/lev_l_sc.pg exit 0

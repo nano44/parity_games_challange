@@ -1,6 +1,23 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 11), written 2026-10-25T21:29Z by date -u (Opus 5.5, D15; session_01VH2ckvgGP9CGkb8Suno5f1)
+- Handover check 6c22a63c: Lead 5/5, GO (Lead stamp 21:22Z). Trunk merged at 0c02a09b (trunk e4c76bf7).
+- Queue: §Cs NEEDB -> FX -> NH42 when REFEREE-2 succ. 12 pushes each report and the Lead sends the SHA (none on trunk at e4c76bf7;
+  not opened). Then P-N5-KW (L-SI 10, from docs/si/N5-KW-box15.md sha1 5ebbb3b6..., with L-NEW 21 additions); wait for the pin.
+- K prep (not a report; no verdict until the packet is pinned):
+  - Read box15 §1-§10 and premises R20 (d), R21 (a), R22 (a), R23 (g), R24, R26 (incl. P-N5-U23-box31 §1-§2 proof text), R27 (a), (d), (g),
+    R19 (d) (SG: every N5 transition, a switched Even y with λ(y) ≠ y gains strictly).
+  - First pass, my own re-derivation: W-ONCE, Fact A, Fact B, FRZ-U (P^c cases A, B1-B3, final step), LEN ranges, KIND-MONO, CW-INT,
+    CASC-B (R26 (c) step 2 uses only "kinds constant" + §1 step 4; kind-B keys share the prefix (A1 reversed, o) at each step) all
+    hold as far as I see. To redo carefully on the pinned text: B1's x ∉ C_W case under H2; E-SEG summation; Corollary PHASE's
+    stretch/run counts (N_st + f runs); (K_W) for m* = c_θ (W-ONCE′ + F1° per run).
+  - Data-claim mismatch to raise: box15 §10 says "Largest actual freeze delay: 1 transition". My kw_probe: κ changes as late as step 40
+    of a 40-transition run (experiments/red/xing/instances/kw_n48.pg, r = 48; also kw25_n32 25, block_bk32 21): within the bound
+    r − 1, but not "1". Probably a different measure; ask what it is.
+  - Tool scratch/kw_probe.py (WONCE, FA, FB, MON, FRZ, LEN, KIND, CWINT, CASCB, RUN; corner counters). Library: 253 C^1O games,
+    424 runs, 0 failures; WONCE only 2 checks (thin), u3 runs 20. Logs scratch/kw_logs/.
+
 ## HANDOVER (successor 10 -> successor 11), written 2026-10-25T20:48Z by date -u, context ~575k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
 Branch claude/referee. Start: git fetch origin; trunk = remote HEAD claude/vibrant-johnson-nxvvxo; CHECK HEAD == origin/claude/referee

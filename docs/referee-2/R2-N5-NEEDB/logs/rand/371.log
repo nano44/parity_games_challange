@@ -1,0 +1,6 @@
+ANTI_W_checks: 36
+ANTI_Xi_checks: 36
+runs: 4
+states: 113
+RESULT OK violations=0
+experiments/red/so/instances/post31_n48.pg exit 0

@@ -1,0 +1,10 @@
+ANTI_W_checks: 8
+ANTI_W_exceptional_used: 3
+ANTI_W_with_exceptional_edges: 3
+ANTI_Xi_checks: 8
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 34
+RESULT OK violations=0
+experiments/new/box38/instances/tauw_A_cex_n24.pg exit 0

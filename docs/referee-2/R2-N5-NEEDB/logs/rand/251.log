@@ -1,0 +1,6 @@
+ANTI_W_checks: 25
+ANTI_Xi_checks: 25
+runs: 4
+states: 93
+RESULT OK violations=0
+experiments/new/box22/instances/pure_22.pg exit 0

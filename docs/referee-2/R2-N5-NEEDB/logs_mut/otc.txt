@@ -1,0 +1,6 @@
+686
+VIOLATIONS: 2
+VIOLATION own:best_blk_9204.pg#0 OT exit 11 not in R_t at t=21 (k0=16, L=34)
+VIOLATION own:best_blk_9204.pg#1 OT exit 11 not in R_t at t=13 (k0=8, L=34)
+VIOLATIONS: 4
+VIOLATION own:best_rise_9201.pg#0 OT exit 18 not in R_t at t=13 (k0=10, L=27)

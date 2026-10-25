@@ -1,0 +1,17 @@
+ANTIW_blocked_edges: 18
+ANTI_W_checks: 37
+ANTI_Xi_checks: 37
+INTO_holds: 54
+INTO_states_r>L: 54
+OT_exit_checks: 57
+OT_post_rise_states: 57
+OT_rises: 3
+RECORD_M>=0_P_uses_R_to_F_gate: 3
+RECORD_inscope_THR_r>=0_M>=0: 3
+THR_inphase_fallbacks: 3
+THR_optima_tested: 3
+XG_R_to_F_optimal_edges: 3
+runs: 4
+states: 113
+RESULT OK violations=0
+docs/referee-2/R2-N5-NJB/climb/best_norf_75.pg exit 0

@@ -1,0 +1,10 @@
+ANTI_W_checks: 18
+ANTI_W_exceptional_used: 8
+ANTI_W_with_exceptional_edges: 9
+ANTI_Xi_checks: 18
+ANTI_Xi_exceptional_used: 10
+ANTI_Xi_with_exceptional_edges: 17
+runs: 4
+states: 39
+RESULT OK violations=0
+docs/referee/scratch/neb_logs/c3/best_913.pg exit 0

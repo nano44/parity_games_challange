@@ -1,0 +1,8 @@
+ANTI_W_checks: 23
+ANTI_Xi_checks: 23
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 67
+RESULT OK violations=0
+experiments/new/box28/instances/oc24_s4_final.pg exit 0

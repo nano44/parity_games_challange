@@ -1,0 +1,16 @@
+ANTIW_blocked_edges: 2326
+ANTI_W_checks: 39
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 2
+ANTI_Xi_checks: 39
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 3
+RECORD_M>=0_P_uses_R_to_F_gate: 88
+RECORD_inscope_THR_r>=0_M>=0: 88
+THR_inphase_fallbacks: 88
+THR_optima_tested: 88
+XG_R_to_F_optimal_edges: 89
+runs: 4
+states: 120
+RESULT OK violations=0
+experiments/si/xing/instances/ccl_fbx_n32.pg exit 0
