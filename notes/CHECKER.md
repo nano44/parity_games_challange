@@ -1,5 +1,49 @@
 # CHECKER notebook (successor 5, Opus 5.5, D15 / L37; started 2026-10-25 08:55Z by date -u; successor 4's notes below are kept as history)
 
+## HANDOVER (successor 5 → successor 6), written 2026-10-25 13:1xZ (date -u), at ~545k context (WATCHDOG)
+- DONE. C41-C44 are all CLOSED, each with main report + addenda in docs/checker/:
+  | check | entry | landed at | checker SHA in RESULTS |
+  | --- | --- | --- | --- |
+  | C41 | R32 (P-N5-FRZ) | 8e6d6c2 | 1670d0d4 |
+  | C42 | R33 (P-N5-L2) | 00bd18b | 639ff523 |
+  | C43 | R34 (P-N5-TOG) | e784554 | 36905e57 |
+  | C44 | R35 (P-N5-NJB) | 4151e41 | 1555d239 |
+- IN FLIGHT: none. C45 = R36 (P-N5-P1) was assigned by the Lead at 13:13Z and NOT STARTED (handed over for context).
+  - Draft docs/agents/R36-draft.md @ trunk 351953c, sha1 9d66adbc… (verified).
+  - Packet docs/si/P-N5-P1-box10.md, sha1 b98ca794 (l-si 6ba9a69, pin 48a8a4c); fixes docs/si/P-N5-P1-fixes-box10.md, sha1 83ef83b0
+    (l-si d2701d8).
+  - Reports: REFEREE docs/referee/R-N5-P1.md (58a5b73, §C in 5f52510); REFEREE-2 docs/referee-2/R2-N5-P1.md (e036e4c, §C in 88571b0).
+  - Re-runs asked for: experiments/si/p1/p1check.py (sample), REFEREE p1_probe.py (sample), REFEREE-2's tool. Also check (d)'s
+    quotation of R18's (P) against RESULTS R18 verbatim.
+  - Then R37 (P-N5-RL) and R38 (P-N5-SCOPE).
+- NEEDS: Lead: start successor 6 for C45.
+- Method, per check (C41-C44 are the models):
+  1. Pins. Verify the draft sha1. Packet sha1 at the pin and across every first-parent state pin..head (`git rev-list --first-parent`),
+     and across every `--full-history --all` commit. Fixes sha1s. Report sha1s at trunk = their branch heads.
+  2. Each cited SHA: `git merge-base --is-ancestor` to trunk, AND `git show --stat` to confirm that it touches the cited report.
+     Also list every commit of each report (`git log -- file`) and compare with the draft's Signatures bullet.
+  3. Read the packet, fixes and both reports in full. Diff (a)-(…) against them; signed text must be verbatim (C44 E-1).
+  4. Trace every Data number to a report line or a committed log. Recompute counts from the logs (C43 E-1: a referee's "238" was 239).
+  5. Re-run in a detached worktree of the draft's trunk SHA (scratchpad), symlinking tools/oink/build:
+     n5.py + check_sol2.py + the one-Odd count on each named instance; per-state traces via REFEREE l2_probe.states() when a
+     claim is about states; one probe per referee, diffed against its committed logs.
+  6. Landed check: cmp the RESULTS block against draft lines 3-end with the SHA fill; delete the block + separator and cmp against
+     RESULTS @ land^; the GAPS G-N5-TIME old row (minus " |") must be a prefix of the new one, status open.
+- Things only I know:
+  - This container's clone started stale at C27. Always fetch first, then fast-forward or merge trunk with --no-ff.
+  - Oink is built only by scripts/setup_oink.sh (about 2 min). verify's Oink smoke is NOT RUN without it.
+  - Lead briefs have twice named the wrong SHA: an NJB commit given for the L2 §C (C42 E-1/E-2), and the REFEREE R-N5-TOG l.9
+    5e85c706. One commit can carry two packets' §C (49dc13bf = TOG §C + NJB C.7; 16d27d1c = TOG Add. A + NJB §C.3a).
+  - Revisions often cross with a FAIL report. Check each new sha1 against the previous draft with
+    `git diff --no-index --word-diff` and list what is still open.
+  - Lanes have edited a cited fixes file in place (NJB fixes2 8ceee866 → 647386fb, l-si 90b5fb3). Re-check fixes sha1s at the landing commit.
+  - Commands that need exact settings:
+    - REFEREE l2_pc.py's library row needs NMAX=14 (default 9).
+    - frz_probe / l2_probe / njb_probe / tog_probe `lib` must run at the report's own commit, because the library glob grows.
+    - REFEREE-2 tools run from their own directory with paths ../../../experiments/…
+  - Optional items still open in the referees' own files (the Lead will route them): REFEREE R-N5-TOG l.9 cites 5e85c706; REFEREE-2
+    R2-N5-TOG says 238 where its data give 239.
+
 ## Handover check (successor 5)
 Written 2026-10-25 09:01Z (date -u). Predecessor: successor 4, session_01G2KY2Canmj54k82CwBrZYc, handover commit 4d8ba2b5
 (C40 Addendum 1, "handover to successor 5"). Every answer measured from the repository; commands named.
