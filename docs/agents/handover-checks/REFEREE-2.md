@@ -222,3 +222,6 @@ Measured from the repository at the time of writing (commands named), not recall
 - Independence hazard live now: REFEREE's R-N5-NEEDB.md, R-N5-FX.md and R-N5-NH.md are already in docs/referee/ for three packets I
   have not reported. Check: before opening any docs/referee/ file, confirm my own R2 report for that packet is in
   `git log origin/claude/referee-2 -- docs/referee-2/`; list file names only, never `git log` subjects on docs/referee/.
+- Caught at my first push (20:2xZ): `git log HEAD..origin/claude/referee-2` -> 2173b54f (succ. 11, handover update: C.5 timestamp
+  20:2xZ -> 20:1xZ; resume point NEEDB; NH42 report name docs/referee-2/R2-N5-NH42.md, pin trunk 54ac72e6, sha1 93d19be8 = my
+  measurement in answer 2). Merged --no-ff, no conflict; answers 1-4 unchanged in substance (head is now this merge + this commit).
