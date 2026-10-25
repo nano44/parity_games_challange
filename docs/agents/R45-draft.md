@@ -1,4 +1,4 @@
-# Draft RESULTS R45 (Lead, 2026-10-25 19:35Z by date -u; lands after R44 = P-N5-PFZ, whose FB-ROUND it uses) — to CHECKER C54
+# Draft RESULTS R45 (Lead, 2026-10-25 19:35Z by date -u; lands after R44 = P-N5-PFZ, whose FB-ROUND it uses) (rev. 19:59Z: C54 E-1, E-2, N-1) — to CHECKER C54 — LANDED in RESULTS Results 20:36Z (CHECKER C54 cc21c361 + Addendum 1 21f7d9b9 PASS), after R44
 
 ### R45 [refereed-only] N5 on one-Odd-choice games: θ's signed path weight is a Bellman-Ford value (Y-FORM), it freezes on F ∩ U after |U| − 2 fallbacks of a phase (HAT-FREEZE) and then changes P(θ) at most deg(o) times (RHO-TAIL); S4a steps between HN states are Bellman-Ford rounds (BF-F, FREEZE-F), so P(θ)-changes over the HN states of a phase are polynomial in n and N_HN (RHO-HN), and so are HN breaks, crossings, fallbacks and θ-changes (HN-POLY) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C54.md, checker PENDING)
 - Object (packet P-N5-RHO, added at l-new 3e9fe5c2, pinned trunk c814455, unchanged during review): docs/new/P-N5-RHO-box40.md, sha1
@@ -7,8 +7,9 @@
   RHO-N1, RHO-N2, RHO-N3, N-RHO-1, N-RHO-2); on trunk; repairs only.
   Setting as in RESULTS R39, R42 and R44 (𝒞^1O; phase; HN states and stretches; θ, c_θ; R_k, R̄_k, F_k; g_1 < g_2 < … the in-phase Even
   S4c fallback transitions of the phase). U := λ^{-1}(c_θ), Û := U ∖ {o}; wt(v) := sgn(v)·2^rank(v) if rank(v) > rank(c_θ), else 0;
-  M_t(z) := wt(P(Ξ_t z)) for z ∈ U; G_Û the graph on Û with c_θ a sink, and MoptÛ(z) the maximum of wt(p ∖ {c_θ}) over simple paths p
-  of G_Û from z to c_θ; Y_t := succ(o) ∩ U ∩ F_t; deg(o) the out-degree of o; N_HN the number of HN stretches of the phase; ρ_HN (ρ_S)
+  M_t(z) := wt(P(Ξ_t z)) for z ∈ U; G_Û is the graph on Û in which every Even v ∈ Û ∖ {c_θ} keeps its edges into Û, every Odd
+  v ∈ Û ∖ {c_θ} keeps its forced edge if it lies in Û, and c_θ is a sink; MoptÛ(z) := max{wt(p ∖ {c_θ}) : p a simple path in G_Û from z
+  to c_θ} (undefined if there is none); for A ⊆ U ∖ {o} with c_θ ∈ A, G[A] is defined in the same way on A; Y_t := succ(o) ∩ U ∩ F_t; deg(o) the out-degree of o; N_HN the number of HN stretches of the phase; ρ_HN (ρ_S)
   the number of transitions of the phase (of S) with both ends HN at which P(θ) changes.
 - Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P):
   (a) Lemma Y-FORM: at an H1 state t, σ̄_t(o) ∈ Y_t and M_t(o) = wt(o) + min_{y ∈ Y_t} M_t(y); at a ¬H1 state, P(θ_t) = ∅.
@@ -19,8 +20,9 @@
   (c) Theorem RHO-TAIL: in a phase with |U| ≥ 2, at most deg(o) transitions t → t+1 with t > g_{|U|−2} change P(θ).
   (d) Lemma BF-F: at an in-phase S4a transition k → k+1 with H1 ∧ ¬H2 at k and k+1, M_{k+1}(v) ≥ wt(v) + M_k(x) for every Even
       v ∈ U ∩ F_{k+1}, v ≠ c_θ, and every successor x ∈ U of v.
-  (e) Theorem FREEZE-F: on a run [s, e] of consecutive HN states of one phase with no fallback transition, (a) M_t(z) ≥ wt(p ∖ {c_θ}) for
-      z ∈ F_t ∩ U and simple paths p in G[F_t ∩ U] with ≤ t − s edges; (b) M is constant on F ∩ U from s + |U| − 2 on; (c) at most
+  (e) Theorem FREEZE-F: on a run [s, e] of consecutive HN states of one phase with no fallback transition, (a) for t ∈ [s, e], z ∈ F_t ∩ U and
+      every simple path p in G[F_t ∩ U] from z to c_θ with ≤ t − s edges, M_t(z) ≥ wt(p ∖ {c_θ}); (b) for t ≤ t′ in [s + |U| − 2, e] and
+      z ∈ F_{t′} ∩ U, M_{t′}(z) = M_t(z); (c) at most
       max(|U| − 2, 0) + deg(o) − 1 transitions of [s, e] change P(θ).
   (f) Theorem RHO-HN: for one phase with |U| ≥ 2, ρ_HN ≤ (N_HN + |U| − 2)(|U| + deg(o) − 3) + deg(o) (its proof gives the sharper
       (N_HN + |U| − 3)(|U| + deg(o) − 3) + deg(o); N-RHO-1).

@@ -1,0 +1,12 @@
+N_HN_total: 1
+T0U_a_states: 21
+TOO_phases_with_HN_caseA: 3
+drops: 0
+phases: 12
+phases_tau(o)!=o: 6
+phases_tau(o)!=o_with_HN: 1
+phases_tau(o)=o: 6
+runs: 3
+max_EV2_ends_per_phase: 0
+max_N_HN: 1
+RESULT OK violations=0
