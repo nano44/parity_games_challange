@@ -1,0 +1,4 @@
+T1_cases: 171535
+T2_cases: 17507
+T3_cases: 162147
+RESULT OK violations=0
