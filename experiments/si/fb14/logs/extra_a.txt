@@ -1,0 +1,24 @@
+fb (h) crossing pre                      644
+fb (h) post                              2
+fb (h) pre                               657
+fb HN crossing pre                       122
+fb HN pre                                122
+fb Q crossing pre                        3
+fb Q pre                                 3
+fb notH1 crossing pre                    5
+fb notH1 pre                             9
+files                                    210
+phases with fb                           126
+skipped (not C^1O)                       56
+sw (h) post ffO+cyc                      2
+sw (h) pre ev                            947
+sw (h) pre ffO+cyc                       1
+sw (h) pre ffU+cyc                       8
+sw (h) pre fr+cyc                        5
+sw HN pre ev                             157
+sw HN pre rr                             63
+sw Q pre ev                              5
+sw notH1 pre rr+cyc                      9
+traces                                   420
+MAX {'max fb-(|U|-2)': 1, 'max fb/phase': 36, 'max (h)-fb/phase': 36}
+EXAMPLES post ev/fr/ffU: []
