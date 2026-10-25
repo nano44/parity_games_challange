@@ -1,0 +1,10 @@
+HN_stretches: 1
+LOW2_steps: 7
+OUT1_phases: 1
+bases_caseB_cw=o_tau=o: 3
+breaks_caseB_cw=o: 1
+runs: 3
+states: 22
+max_LR_S: 0
+max_breaks_per_stretch: 1
+RESULT OK violations=0
