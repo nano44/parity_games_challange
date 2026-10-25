@@ -117,3 +117,11 @@ Proof.
 - So the count did not grow past the seed's value in either climb. It is below n in both cases, and the margin did not shrink. This is weak
   evidence for OUT-POLY with a linear constant. Climbs are local, and the obstruction (§4) is unchanged. The climb bests are in out/
   (gitignored); they were not copied, since they show no new maximum.
+
+## 8. Note (added while parked, at the Lead's request 10:20Z): the linear PF-THETA is FALSE (DATA, verified)
+- experiments/red/so/instances/pftheta_cex_n32.pg (sha1 9f526135e272fabcb38c1cc24a99a4418717f7ed; L-RED 15, climbed from pf_best_3621).
+  - It has 33 θ-changes after its only fallback, inside one scope run, at n 32.
+  - Re-run here: n5.py n5 38 / 1; check_sol2.py "zielonka(oink zlk) OK strategies verified"; pfclimb.fit (33, 1).
+- Scope of the kill: all 33 are in ONE fallback-free run. There the per-run machinery already gives a poly(n) bound: X-RUN (crossings)
+  plus R27 TH (≤ n θ-changes per crossing-free interval). So only the constant 1 dies. The poly form of PF-THETA (N5-DROP-box35 §8) is
+  untouched.
