@@ -17,7 +17,8 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - P-N5-SN (docs/new/P-N5-SN-box33.md sha1 340d4f29, pin 2c70ef6; Lead 03:42Z): report docs/referee-2/R2-N5-SN.md (03:50Z).
   OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, LEAVE, WK (N-SN-1) SIGN; ABS-COUNT SIGN WITH GAPS (G-SN-1: proof gives d_o, not d_o − 1, per run;
   fallback ε uncounted per phase; packet form CONJECTURE, 0 excess in data/climbs); ABS-L conditional, met on R29; WM transfer VALID.
-  Tools R2-N5-SN/ (sn_check.py, sn_climb.py). NEXT: §C after REFEREE's R-N5-SN. PARKED 03:10Z; next packet when frozen.
+  Tools R2-N5-SN/ (sn_check.py, sn_climb.py). §A (L-RED probes: epsseg tight; N = d_o only at a phase exit). §C vs R-N5-SN (59a886d): no
+  disagreement; 4-row gap map (SN-1 = G-SN-1 (a), SN-2 = G-SN-1 (b), SN-3 accepted, N-SN-1). Waiting for the Lead. PARKED 03:10Z; next packet when frozen.
 - Oink built in this container (setup_oink.sh).
 
 ## HANDOVER (successor 5, session_01VbMVVvPYCY47wY5MbtLG8w, Opus 5.5 under D15; written 2026-10-25 01:23Z by date -u; context ~660k, over the line)
