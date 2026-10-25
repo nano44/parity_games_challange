@@ -16,7 +16,14 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Trap (new): o = c_θ phases. EXIT-SWITCH's graphs G_Û / G_U^o both drop the terminal there; use G_U. My first fbx18 got it wrong
   (false FAIL_EXSW_graph); fixed before any reported number. Check every checker on an o = c_θ phase.
 - Trap: a K climb on the switch count Ks is gamed by simultaneous wakes at one transition; climb on Kt.
-- RESUME POINT (for successor 19 or the next box; 2026-10-25 ~21:35Z, date -u): nothing running. Open: (a) FB-CAP |U| ≥ 3 (n 6 random ×
+- BOX 43 (Lead 21:00Z, read 21:39Z): red-team of N5-KW-box42 (L-NEW 21) and N5-KW-box15 (L-SI 10). R73: no kill. kw18.py (own W from the
+  play; engine matches L-NEW's lib41 counts exactly: 424 runs, 1,061 CSTRICT, 4,661 WLAG, 34 kind changes, 2 c_w-switches). FRZ-U |R| − 1
+  attained (frzu_tight_n14), CW-INT attained (cw11_n24); post-freeze kind changes and W-flat kind-B switches (CASC-B) never reached.
+  Lead 20:15Z ask (loop_4102 seed climbs) superseded by 21:00Z; not done.
+- Trap (new): ReadNotifications only when told; two Lead messages (20:15Z, 21:00Z) waited unread until my 21:39Z report. Check
+  notifications at each report.
+- RESUME POINT (for successor 19 or the next box; 2026-10-25 ~22:50Z, date -u): nothing running. Open: CASC-B regime construction; post-freeze kind change; FB-CAP; beta2.
+- (superseded) RESUME POINT (2026-10-25 ~21:35Z, date -u): nothing running. Open: (a) FB-CAP |U| ≥ 3 (n 6 random ×
   all starts clean, 20.7 M runs; R72 §6 READING covers only the simplest |U| = 3, o = c_θ chain); (b) beta2 cascade, not started; (c) loop
   kind from S3; (d) K two-chain construction (R72 §8). Pins: experiments/red/fbx/instances/ (exsw_loop_n15 + start, kt6_n58).
 
