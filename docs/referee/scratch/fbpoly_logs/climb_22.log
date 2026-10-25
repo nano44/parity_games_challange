@@ -1,0 +1,11 @@
+CN_cases                       661226
+KHC_chk                        784817
+KH_chk                         1123083
+KP_chk                         295644
+TA_phases_U3plus               661226
+best_score                     -1
+checked                        661226
+evaluated                      857032
+iters                          857032
+FAILS 0
+exit 0
