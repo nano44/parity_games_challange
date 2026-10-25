@@ -1,0 +1,18 @@
+FRZ'_a_checks: 14
+FRZ'_b_checks: 14
+FRZ'_freezes: 2
+H3C_H2_states: 76
+H3C_phases_with_h: 5
+STEP1'_H3_states: 76
+STEP2'_checks: 492
+XR'_runs: 6
+fallbacks: 1
+phases: 5
+runs: 3
+transitions: 82
+ONE-DROP_max_drops_per_phase (sec.8, no claim): 0
+ONE-H_max_h_runs_per_phase (sec.8, no claim): 1
+XR'_max_C: 16
+XR'_max_REL_Q: 0
+XR'_max_toggles_t_Q: 0
+RESULT OK violations=0
