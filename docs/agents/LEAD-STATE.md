@@ -1373,3 +1373,8 @@
   - Merged referee-2 cd3b7cd: R2-N5-RHO 269ae45 (all SIGN; N-RHO-1, N-RHO-2: post-freeze only at |U| = 3, FREEZE-F (b) vacuous). REFEREE-2 10 PARKED.
   - First level −1 block witness (THR, r ≥ 0, M = −1): docs/referee-2/R2-N5-LV2/climb/block_9501.pg, sha1 1b5b76fd, random start pair in block_9501.txt. Lead re-run, canonical start: one Odd choice vertex, n5 3/1, Oink zlk OK, strategies verified. The block state is on REFEREE-2's start pair, which I did not re-trace.
   - Created L-SI successor 9 (session_018jN1MJkw56F58G3qcfcuZA) and REFEREE-2 successor 11 (session_01VrcXfBuNYKJ3uBUc7ETARQ).
+- 18:16Z Lead: merged l-red 8e429a8 (R71, box 41 interim, NO KILL).
+  - Post-freeze regimes at |U| ≥ 3 are not reached nontrivially: max f − (|U| − 1) = −1. FB-CAP holds in all data.
+  - The per-vertex argument for FB-CAP is false (b5_os_n40).
+  - INTO: 0 failures, with min gates into R̄ = 1. Wording note: restrict INTO to Iσ_t ≠ ∅.
+  - L-RED 17 next: FB-CAP search at n 5 over start pairs, then the beta2 cascade.
