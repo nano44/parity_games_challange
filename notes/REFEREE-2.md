@@ -12,7 +12,8 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - P-N5-CLS (docs/si/P-N5-CLS-box8.md sha1 5bbfd872, pin 486107a; Lead 02:40Z): report docs/referee-2/R2-N5-CLS.md (02:43Z).
   All SIGN except CLS1 + Corollary SIGN WITH GAPS (G-CLS-1 citation: FBL strong gate form at the state alone, R2-N5-XA §2; closed).
   Notes N-CLS-1 (OFF's honest R̄ = (σ,τ) R̄), N-CLS-2 ((h): θ = w ⟺ EQ). Tools R2-N5-CLS/ (cls_check.py, cls_climb.py). 0 violations.
-  §C vs R-N5-CLS (a0b92ec): no disagreement; 5-row gap map (CLS-1, CLS-2, CLS-3 = G-CLS-1, CLS-4, N-CLS-1). Waiting for the Lead.
+  §C 848839e9 vs R-N5-CLS (a0b92ec): no disagreement; 5-row gap map (CLS-1, CLS-2, CLS-3 = G-CLS-1, CLS-4, N-CLS-1).
+  Lead 03:08Z: review closed (REFEREE 8af6347 adopts my row-3 form); lands as R29 after L-SI's fixes file. PARKED 03:10Z; next packet when frozen.
 - Oink built in this container (setup_oink.sh).
 
 ## HANDOVER (successor 5, session_01VbMVVvPYCY47wY5MbtLG8w, Opus 5.5 under D15; written 2026-10-25 01:23Z by date -u; context ~660k, over the line)
