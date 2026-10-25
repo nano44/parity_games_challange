@@ -64,6 +64,10 @@
   C47 Add. 1 14:12Z: PASS at fa7d1231 (773af264; E-1 fixed, N-2, N-3 applied). C47 Add. 2 14:22Z: R38 landed verbatim at 7fc7ac90; C47 CLOSED.
   Next: C48 = R39 (P-N5-OUT), when the Lead drafts it (after REFEREE-2 9's OUT §C). Known: REFEREE OUT §C a8b8ef3; fixes
   docs/new/P-N5-OUT-fixes-box37.md 640a5db2 (l-new dd3f780).
+- C48 (R39, P-N5-OUT) 14:52Z: docs/checker/C48.md FAIL at efa00f59 (draft e6eeb791): E-1 (e) NO-ENTRY-A last clause unquantified
+  (signed: z ∈ R̄_t, ≡); E-2 (g) W-SIDE stated for every gate (signed: Case 1 + separate Case 2 clause); E-3 "both referees reproduce
+  a break" (only REFEREE-2). Data and REFEREE sums (127, 391, 121, 88/889) PASS. Re-runs EXACT: 5 instances, nebc trace, REFEREE
+  lib37/named @fa08687 + cex, REFEREE-2 15 logs. Worktrees wt48 = efa00f59, wtR48 = fa086876.
 - Worktree wt45 = fb1dfb9 (scratchpad), tools/oink/build symlinked. Scratch tools46/run1.sh = n5 + check_sol2 + odd-choice count.
 - Queue (Lead 13:48Z brief stamp): C45 = R36 (P-N5-P1), C46 = R37 (P-N5-RL), C47 = R38 (P-N5-SCOPE): draft docs/agents/R38-draft.md @ trunk 314d220,
   sha1 f3b27c34…; packet docs/new/P-N5-SCOPE-box36.md c3f5ed37 (l-new 8483279, pin 8998ee6); fixes e2550755 (l-new eb5477a);
