@@ -1,0 +1,7 @@
+H3C_H2_states: 3
+fallbacks: 1
+phases: 1
+runs: 3
+transitions: 13
+ONE-DROP_max_drops_per_phase (sec.8, no claim): 0
+RESULT OK violations=0

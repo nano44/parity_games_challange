@@ -1,6 +1,96 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Handover check (successor 7, session_01CE1xQNfGUgtJg9A7SWAkuE, Opus 5.5 under D15/L37; 2026-10-25 07:00Z by date -u)
+Predecessor successor 6 session_01H9qTdDhPBiSG4S7P1SkFjD. Correction at push time: its handover DID land (320e4b9d, seen on a second
+`git fetch` when push.sh was rejected); merged below, and its HANDOVER section is the handover.
+Measured from the repository (commands named). Written here, not in docs/agents/ (Lead-owned), per the Lead's 07:04Z brief.
+
+1. Branch, head, distance to trunk.
+   - `git rev-parse HEAD origin/claude/referee-2` after `git fetch origin claude/referee-2 claude/vibrant-johnson-nxvvxo`:
+     local 77f9cf71 (STALE again), origin 25962855 (succ. 6's R2-N5-FBW). `git merge --ff-only origin/claude/referee-2` -> 25962855.
+   - `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 2 ahead, 34 behind (trunk b0dd1616).
+     Merged trunk with a merge commit ee25bcec -> 3 ahead, 0 behind; this notebook commit adds one more.
+2. Open work, next step of each.
+   - Task 1 (after GO): independent review of P-N5-FRZ, docs/new/P-N5-FRZ-box34.md. `sha1sum` -> 39df373c17d91f942ad2cb15244cd779ca7abda1
+     (matches the pin); last change edbccb69 (`git log -- <file>`); f10d381 is an ancestor of HEAD (`git merge-base --is-ancestor`).
+     Pin check: the file is ABSENT at f10d381 (`git cat-file -e f10d381:docs/new/P-N5-FRZ-box34.md` -> 128); f10d381 is an ancestor of
+     the trunk pin commit 25fda0f3 ("Lead: P-N5-FRZ pinned"), where the blob equals HEAD's (67a871c7). So the object is at 25fda0f or later.
+     Fixes file docs/new/P-N5-FRZ-fixes-box34.md sha1 168de464adab5c56945bc5587f4f0ad3262a1fcd (read only after judging the packet).
+     Next step: read the packet + SPEC S1-S5 + RESULTS R17-R30, build R2-N5-FRZ/ on R2-N5-SN/CLS/FBW code (one-Odd-choice assert), run
+     packet instances, library sweep, random, climbs on long r <= l (h)-windows; write docs/referee-2/R2-N5-FRZ.md.
+   - Task 2 (after FRZ pushed): §C for P-N5-FBW (vs docs/referee/R-N5-FBW.md) and §C for P-N5-FRZ (vs R-N5-FRZ.md + Addendum).
+   - Oink was NOT built in this container (`ls tools/oink/build` absent); scripts/setup_oink.sh started.
+3. GAPS rows. `grep -n REFEREE-2 docs/GAPS.md`: REFEREE-2 owns none. Relevant: G-N5-TIME | major | L-NEW | open (docs/GAPS.md:11):
+   N5 makes polynomially many iterations; P-N5-FRZ (X-RUN: O((d_o+1)n^3) crossings per fallback-free run with an H1 SN prefix) is
+   under this row. G-N5-TERM closed (R15).
+4. Owner rulings verbatim (docs/DECISIONS.md), index status from docs/DECISIONS-INDEX.md:
+   - D1 (index: active), DECISIONS.md:7-8:
+     > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+     > Never downgrade the referee to save money.
+   - D15 (index: active; L37 active), DECISIONS.md:278:
+     > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+   - D18 (index: active; L40 active), DECISIONS.md:333:
+     > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+5. Trap found this session: independence exposure. `ls docs/referee/` after the trunk merge shows R-N5-FRZ.md (3a520ce7) and
+   R-N5-FBW.md already on my tree, before my FRZ report exists. Check: I do not open docs/referee/R-N5-FRZ.md or notes/REFEREE.md
+   until R2-N5-FRZ.md is pushed (only `ls`/`git log` on them so far). Also the container branch was stale again (77f9cf71):
+   always compare `git rev-parse HEAD origin/claude/referee-2` after fetch.
+
+## Resume point (successor 7, session_01CE1xQNfGUgtJg9A7SWAkuE, Opus 5.5 under D15; 2026-10-25 08:2xZ by date -u)
+- Handover check de9ff970 (Lead 07:13Z: 5/5, GO). Pin of P-N5-FRZ is trunk 25fda0f (not f10d381; Lead confirmed).
+- P-N5-FRZ (docs/new/P-N5-FRZ-box34.md sha1 39df373c): report docs/referee-2/R2-N5-FRZ.md. NL-MF, Fact 0, ARENA (N-FRZ-1 citation),
+  P^c_l (N-FRZ-2 = REFEREE FRZ-1, N-FRZ-3 = FRZ-2), FREEZE, RATCHET, BLOCK (vacuous in data), SUB SIGN; X-RUN SIGN WITH GAPS G-FRZ-1
+  (= FRZ-3, closed; transition leaving P). Fixes file 168de464 read after verdicts. Tools R2-N5-FRZ/ (frz_check.py on R2-N5-RE/re_check.py,
+  own N5 with any arena optimum; oink_xcheck 468/468). 0 violations: 16,434 batch runs, 1,485,828 climb runs. No freeze at l in {-1, bot}.
+- §C FBW bc2e7b72 (appended to R2-N5-FBW.md): no verdict differs; FBW-1 CONFIRMED (honest cycle, H1 at k+1; my lane's §3 said H2);
+  FBW-2 = N-FBW-1. Probe R2-N5-FBW/fbw1_probe.py (thin: 7 random cases).
+- §C FRZ (appended to R2-N5-FRZ.md): only the P^c label differs (adopted REFEREE's SIGNED WITH GAPS FRZ-1/2); FRZ-1..3 = N-FRZ-2/3, G-FRZ-1;
+  rows 4-5 mine (N-FRZ-1 ARENA citation, N-FRZ-4 definitions); row 6 REFEREE's NL phase-key transfer ACCEPTED (my miss).
+  Asked: did REFEREE's 30 BLOCK runs contain any S4a leave?
+- Lead 08:41Z: FRZ §C merged; next P-N5-L2, P-N5-NJB, P-N5-TOG, each independent, report + message after each.
+- P-N5-L2 (cbea0739 @ 04b3f48): R2-N5-L2.md all SIGN (N-L2-1 tau(o)=o wording, N-L2-2 X-RUN applied to H1 runs, N-L2-3 FREEZE' conclusion
+  never exercised). §8 DATA: open item (2) restart of (h) by a fallback OCCURS (j5_n16 --rand, fallback 6->7). Tools R2-N5-L2/.
+- NEXT: P-N5-NJB (docs/si/P-N5-NJB-box9.md f43a8823 @ a7d85b3), then P-N5-TOG (7dfda8c8 @ d3daae1).
+- Trap: background jobs over 30 min are killed (first climb wave lost its second half). Give run_in_background a long timeout.
+
+## HANDOVER (successor 6, Opus 5.5 under D15; written 2026-10-25 ~06:1xZ; context ~575k; Lead 06:08Z: finish FBW, hand over, park)
+Branch claude/referee-2, merged with trunk at each packet pin. REFEREE-2 owns no docs/GAPS.md rows. PARKED.
+### DONE (every report is docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
+| packet | object (sha1) @ pin | report SHA | §C / addenda SHA | outcome |
+| --- | --- | --- | --- | --- |
+| handover check | — | 6a27ab9b | — | Lead 5/5 |
+| P-N5-OE | docs/new/P-N5-OE-box32.md adeccd89 @ 361d18c | ca6e5bd1 | §C ea6ad672 | U-loc, OE, OX all SIGN (notes N-OE-1..3); R28 |
+| P-N5-CLS | docs/si/P-N5-CLS-box8.md 5bbfd872 @ 486107a | ffe10e1b | §C 848839e9 | all SIGN; CLS1 SIGN WITH GAPS (G-CLS-1 citation, closed); R29 |
+| P-N5-SN | docs/new/P-N5-SN-box33.md 340d4f29 @ 2c70ef6 | ddbecafc | §A 91d95e84, §C 80d2e457, §B 4c8dcfd0 (fixes §2b at l-new 0883157, e5394445: H1-DROP, H1-KEEP, ABS-COUNT′ SIGN) | all SIGN; ABS-COUNT SIGN WITH GAPS G-SN-1 (closed by §2b except ε⁽⁻¹⁾ and fallback ε) |
+| P-N5-FBW | docs/si/P-N5-FBW-box9.md 88337bd6 @ e69772b | 25962855 | §C NOT YET (REFEREE's R-N5-FBW not seen) | P-OPT VALID (G-1OA-6 is about σ_{k+1}); FBW, FBW-S, CLS2, FLAT-ALL, STRETCH (N-FBW-1: "k < e" → "k ≤ e"), PL, PL-S all SIGN |
+### IN FLIGHT
+- R2-N5-FBW §C: write when the Lead says R-N5-FBW is on trunk (do not read it before; my report 25962855 is pushed).
+### NEEDS
+- Lead: R-N5-FBW → §C (successor 7 may write it from my report).
+- Lead: the fixes file version with §2b (l-new 0883157) and L-RED's epsseg_cex_n16 were NOT on trunk when I reviewed them (§B).
+- P-N5-FRZ (docs/new/P-N5-FRZ-box34.md, sha1 39df373c…, pin 25fda0f, L-NEW succ. 14) goes to successor 7 (Lead 06:08Z). Lead's hints:
+  climb FREEZE's "through fallbacks" and X-RUN's count hardest.
+### Things only I know
+- Tools added this session (each dir has run_all.sh, logs/, climb/, totals.py; run from the dir):
+  - R2-N5-OE/oe_check.py (U-loc smallest L, OE, CAP-1 full minimiser, OX), oe_climb.py.
+  - R2-N5-CLS/cls_check.py (C5-C7 random triples, TRANSFER, CN, OFFGATE, Fact R, CLU, FBL strong form, NL at every admissible L, CLS1 with
+    the (A_j) chain); cls_climb.py. cls_check.prefix(E, pi, x) = pi ⊕ x in si.py representation.
+  - R2-N5-SN/sn_check.py (OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, LEAVE, ABS-COUNT both forms, WK, odd-mode choice rule, ABS-L),
+    sn_climb.py; h1_check.py / h1_climb.py (H1-DROP divergence claim, H1-KEEP, ABS-COUNT′).
+  - R2-N5-FBW/fbw_check.py (P-OPT by re-running S4a's arena and all single switches, FBW, FBW-S, CLS2, FLAT-ALL, STRETCH with k ≤ e, PL,
+    PL-S), fbw_climb.py (FIT=dirty on 𝒞^1O, FIT=fbw on general games with its own mutation).
+- Library sweep idiom (≈245-252 files): every experiments/**/*.pg with exactly one Odd vertex of out-degree > 1 (set of successors), n ≤ 64,
+  plus named instance dirs at larger n; 3 starts per file. Phase key used throughout: (λ_Ξ, τ).
+- Recurring traps seen this session:
+  - Counters that only count a sub-case (my first OE tie-move counter counted only E_k = ⊥; corrected in R2-N5-OE §C). Name each
+    counter by exactly what it counts.
+  - Packet "ends ≤ d_o − 1"-type counting: check what holds at the LAST state of the run (G-SN-1).
+  - Citations of FBL at "a stretch of length 1": only the u* ≠ none strong gate form is statewise (G-CLS-1).
+  - Fixes-file objects can be on the lane branch but not on trunk: verify the sha1 and say where the object lives.
+  - Stamp: take date -u immediately before writing (my 01:34Z message was really 01:37Z).
+- Oink is built in this container (scripts/setup_oink.sh); a fresh container must rebuild it.
+
 ## Resume point (successor 6, Opus 5.5 under D15; 2026-10-25 01:5xZ by date -u)
 - Handover check 6a27ab9b (Lead 01:44Z: 5/5, GO). Lead: P-N5-SO NOT re-reviewed (succ. 5's R2-N5-LP §8 stands).
 - P-N5-OE (docs/new/P-N5-OE-box32.md sha1 adeccd89, pin 361d18c): report docs/referee-2/R2-N5-OE.md. U-loc, OE, OX (i)-(v) all SIGN;

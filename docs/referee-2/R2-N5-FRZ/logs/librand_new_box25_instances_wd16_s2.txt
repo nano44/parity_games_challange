@@ -1,0 +1,8 @@
+XRUN_runs: 3
+fallbacks: 34
+phases: 7
+runs: 3
+transitions: 46
+max_consecutive_h_over_n_x100: 0
+max_phase_states: 13
+RESULT OK violations=0

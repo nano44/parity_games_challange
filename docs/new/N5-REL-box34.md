@@ -302,3 +302,45 @@ Proof.
   - random: 20,000 games at n 4-14 (seed 3481), 40,037 phases, 23,308 ¬H1 states, max 1 drop, max 1 toggle per phase;
   - R-CONST and the I_∅ interval: 0 failures in all of it (data/h1tog_lib.txt).
 - With ONE-DROP, t_Q ≤ 2 per phase, and X-RUN′ gives X_SN ≤ (f + 1)·poly(n) per phase with no hypothesis on H1.
+
+## 12. What remains open of (L2) if ONE-DROP holds (for the Lead's next packet; written 06:58Z by date -u)
+Assume CONJECTURE ONE-DROP (§11) together with X-RUN′ (§11, lane PROVED). Then:
+- Settled, per fallback-free run Q:
+  - P (Q's SN prefix) has at most 3 H1-runs: one drop, at most one regain before it and one after it.
+  - So X_SN(Q) ≤ 3·13(d_o + 1)n³ + 2, and REL_Q ≤ d_o(X_SN(Q) + 1) (FRZ-3), with no H1 hypothesis.
+  - Per phase: X ≤ (f + 1)(39(d_o + 1)n³ + n + 2) + f.
+- What is left of (L2), as a list:
+  1. ONE-DROP itself (CONJECTURE). DATA:
+     - library, experiments/red and experiments/si/coarse (1,274 phases): max 1 drop per phase, max 2 H1-toggles;
+     - random (40,037 phases): max 1 drop per phase, max 1 H1-toggle;
+     - climbs dropclimb.py: max 1 drop per phase, up to 3 H1-toggles (result line below).
+     Known facts that a proof can use (all lane PROVED, §11): every drop starts in the P(θ) = ∅ interval I_∅ (R30 H1-DROP + H1-INT); on
+     I_∅, θ = (c_θ, ∅, ℓ) changes only in length; at ¬H1 states R̄ = λ^{-1}(c_θ) (R-CONST).
+  2. Restart mechanism (i): a fallback at an H1 ∧ ¬H2 state that moves τ(o) out of R, after which (h) returns by H3-CONST. OPEN, never seen
+     (0 cases in the library, the random sample and the hrclimb.py climbs). H2-STICK rules it out at S4a steps.
+  3. Restart mechanism (ii): (h) → ¬H1 ∧ ¬H2 ∧ H3 → (h). It costs no crossing inside the ¬H1 part (R-CONST). Under ONE-DROP it happens at
+     most once per phase. Both observed restarts are of this kind: oneh_cex_n32 (back through a fallback) and the random game seed 3461 /
+     2863 (n 12, states 0-2, back through S4a steps).
+  4. Short (h)-runs (fewer than n states) never contain a FREEZE window. They cost ≤ n transitions each, so ≤ n per restart. Items 2-3
+     bound how many there are.
+- Not part of (L2), and still the real core (OPEN): the f-dependence. X-RUN′ is per fallback-free run. Across fallbacks, FREEZE and
+  RATCHET survive, but BLOCK covers only S4a leaves. What remains is (L1): re-entries after fallback evictions below r inside frozen
+  r = ℓ blocks. Inside a scope run these equal the θ-changes after fallbacks (§9). With (L1) bounded and items 1-2 settled, per phase X
+  would be poly(n), and then f and J are poly(n) as well (R28 Corollary OX). Together with K, that would make a phase polynomial
+  (R27 Corollary LP′).
+
+## 13. ONE-DROP is FALSE; what survives (written 07:31Z by date -u)
+- DEAD END: CONJECTURE ONE-DROP (§11) is FALSE.
+  - Instance: experiments/new/box34/instances/onedrop_cex_n32.pg (sha1 5793d5a3303fd8c180dd7d0b8105e2d6961af1cd; n 32, o = 27,
+    succ(o) = {3, 17}; climb dropclimb.py seed 3502 from oneh_cex_n32).
+  - Verified: n5.py n5 gives 6 iterations, 1 fallback; check_sol2.py gives "zielonka(oink zlk) OK strategies verified"; exactly one
+    Odd vertex with out-degree > 1.
+  - The phase is states 2-6, with c_θ = 13. H1 at 2, ¬H1 at 3 (|R| 31), H1 at 4-5, ¬H1 at 6. The drops are 2 → 3 (an S4a step) and
+    5 → 6 (an S4c fallback).
+  - θ = (13, ∅, 10) at 2-3 and (13, ∅, 8) at 4-6: θ changes in length between the two drops, inside I_∅ (H1-INT).
+- What survives (CONJECTURE DROP-LEN, OPEN): between two drops of a phase, θ changes. With H1-INT (θ changes ≤ n − 1 times on I_∅), that
+  would give ≤ n drops per phase, ≤ 2n + 1 H1-toggles, and, via X-RUN′, X_SN ≤ (f + 1)(2n + 2)·13(d_o + 1)n³ + 2n + 1 per phase with no
+  H1 hypothesis. A weaker form that is also open: at most one drop per fallback-free run (here the second drop is at a fallback).
+- §12's item 1 now reads "DROP-LEN (or one drop per fallback-free run)", and its per-phase bound "3 H1-runs" reads "≤ 2(drops) + 1".
+  Item 3 (restarts through ¬H1 states) becomes ≤ the number of drops per phase. DATA: climbs dc4 (b4_n5_other_0, 10.9M steps) and dc6
+  (so_th_n32): max 1 drop per phase; dc5: 2.
