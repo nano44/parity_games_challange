@@ -12,7 +12,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
     with RL-3 ("before e" -> "up to and including e").
 - Tools (own engine, NO lane imports; Lead 11:36Z rule): scratch/rl_engine.py (SPEC S1-S5 from the text), rl_probe.py,
   rl_oink.py (regions vs Oink zlk, 309/309), rl_climb.py; logs scratch/rl_logs/.
-- NEXT: climbs (3 x 1500 s) -> §8.1; push; message the Lead; §C RL when R2-N5-RL exists; SCOPE §C on the Lead's word (final R2 SHA).
+- DONE: climbs (0 hits) -> §8.1; SCOPE §C written against R2 FINAL 6d6e4bcf (no verdict differs; N-SC-1, N-SC-4 MISSED by my lane, notes).
+- NEXT: message the Lead; P-N5-P1 (docs/si/P-N5-P1-box10.md, sha1 b98ca794, pin 48a8a4c; scrutinise Lemma B and P1 Step 5); §C RL when R2-N5-RL exists.
 - Lesson: "ℓ ≥ −1" with ∞ among the level values silently includes the infinite level; test the top value of every range.
 - Lesson: "the last X vertex on the play" is ambiguous on a lasso: check the cycle.
 

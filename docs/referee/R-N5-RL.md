@@ -248,7 +248,16 @@ Conditions, checked for exactness (task (1)):
   results in §8.1.
 
 ### 8.1 Climb results
-(filled in below when the climbs end)
+(added 2026-10-25 12:24Z by date -u)
+- Three climbs of 1,500 s, seeds 88001-88003. Starts: zcl_fb1_n32, b6_xl_n32 (A = ∅ at both of its fallbacks) and x32_waves32 (all
+  inputs only). 57,605 + 116,920 + 55,167 candidates; every candidate was asserted to be in 𝒞^1O.
+- Best fitness 139.5, 142.1 and 120.2. These come from the gradient terms only (Ev vertices draining into C_t, A = ∅). There was 0
+  hit with Ev on C_t, and 0 with Ev on x_t's cycle.
+- Bests: scratch/rl_climb_out/rlc_best_88001.pg (n 32, sha1 ad0086a7, 41 iterations / 4 fallbacks), rlc_best_88002.pg (cd40c400,
+  20 / 2), rlc_best_88003.pg (32002c12, 25 / 1).
+  - Own probe: all checks, 0 failures; 24 and 13 TEV states with the threat through Ev, none post-rise.
+  - Final regions agree with Oink --zlk on all three.
+- Reading: the RL-1 case is not reached by local search from these starts. This is DATA and does not close RL-1; the proof must.
 
 ## Fixes-file lines (one per gap; L-SI)
 - RL-1 (§6 TEV-RED (1), proof gap): "the last Ev vertex e" and "f's play lies in F_{k0}" need that no Ev vertex lies on the cycle of
