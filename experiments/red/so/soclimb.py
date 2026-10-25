@@ -3,6 +3,7 @@
 Fitness (lexicographic, failures of any sox sub-claim first):
   tie : (fails, max θ-fixed relevant σ̄(o) changes in one θ-run, max per phase of θ-fixed changes, max pure tie-break moves)
   j   : (fails, max (J − S_o), max J)            k : (fails, max K, max J)
+  sor : (fails, max #θ-runs with >= 2 θ-fixed changes, max θ-fixed changes, max Θ)
   th  : (fails, max Θ, max X)                    so: (fails, max S_o − Θ, max S_o)
 Mutations keep exactly one Odd vertex with out-degree > 1 (others are rejected). Invalid sentinel −10^9 (trap 1).
 Usage: soclimb.py mode seed secs OUT [seed.pg | --rand n]"""
@@ -34,6 +35,7 @@ def fit(G, mode):
     if mode == "tie": f = (fails, mx(lambda x: x["maxrun"]), mx(lambda x: x["fixch"]), mx(lambda x: x["tiepure"]))
     elif mode == "j": f = (fails, max((x["J"] - x["So"] for x in rs if x["J"] >= 1), default=-10 ** 9), mx(lambda x: x["J"]), 0)   # trap 2: J >= 1 only
     elif mode == "k": f = (fails, mx(lambda x: x["K"]), mx(lambda x: x["J"]), 0)
+    elif mode == "sor": f = (fails, mx(lambda x: x["nruns2"]), mx(lambda x: x["fixch"]), mx(lambda x: x["Th"]))
     elif mode == "th": f = (fails, mx(lambda x: x["Th"]), mx(lambda x: x["X"]), 0)
     elif mode == "so": f = (fails, mx(lambda x: x["So"] - x["Th"]), mx(lambda x: x["So"]), 0)
     return f, r

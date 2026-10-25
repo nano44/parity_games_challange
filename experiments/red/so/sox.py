@@ -113,7 +113,7 @@ def analyse(g, cap=5000):
         phases.append((k, j)); k = j + 1
     rows = []
     for (a, b) in phases:
-        Th = So = X = J = Kw = 0; run_changes = 0; prev_rel = None; maxrun = 0; tiepure = 0; fixch = 0
+        Th = So = X = J = Kw = 0; run_changes = 0; prev_rel = None; maxrun = 0; tiepure = 0; fixch = 0; runs = []
         c = lam[a][o]; lamo = c != o
         Ms = {}
         for k in range(a, b + 1):
@@ -138,7 +138,7 @@ def analyse(g, cap=5000):
                     mk = min(key(Xi[kk][x]) for x in g.succ[o])
                     if key(Xi[kk][sb[kk][o]]) != mk or E.extend(o, Xi[kk][sb[kk][o]]) != Xi[kk][o]: bad("CAP1", kk)
                 if th0 != th1:
-                    Th += 1; run_changes = 0
+                    Th += 1; runs.append(run_changes); run_changes = 0
                     if not cross:
                         if H1[k]:
                             x0 = sb[k][o]
@@ -157,10 +157,11 @@ def analyse(g, cap=5000):
                     if not T1 <= T0: bad("TSHRINK", k)
                     for x in T0 & T1:
                         if x != o and hpath(k, x, c) != hpath(k + 1, x, c): bad("KEY", k)
+        runs.append(run_changes)
         if Th > (n - 1) + n * (X + 1) + X: bad("TH", a)
         if So > Th + (d_o - 1) * (Th + 1): bad("SO", a)
         if J > So: bad("JSO", a)
-        rows.append(dict(a=a, b=b, T=b - a + 1, Th=Th, So=So, X=X, J=J, K=Kw, maxrun=maxrun, tiepure=tiepure, fixch=fixch, d_o=d_o,
+        rows.append(dict(a=a, b=b, T=b - a + 1, Th=Th, So=So, X=X, J=J, K=Kw, maxrun=maxrun, tiepure=tiepure, fixch=fixch, nruns2=sum(r >= 2 for r in runs), d_o=d_o,
                          fb=sum(FB[a:b + 1])))
     return dict(n=n, o=o, it=len(FB), fb=sum(FB), rows=rows, C=C, ex=ex)
 
