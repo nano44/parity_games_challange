@@ -88,6 +88,10 @@ def phase(g, E, st, p0, p1, cnt, o, do, name):
             if run_ == n and F is None: F = t
         if F is None or lastH2 is None or lastH2 < F: continue
         cnt["FREEZE_windows"] += 1
+        if l >= 0:  # §C count (Lead 08:41Z / R2-N5-FRZ C.3 (i)): S4a leaves at (h) states t >= F of the phase
+            for t in Ps:
+                if t >= F and t < p1 and st[t]["h"] and not st[t]["fb"]:
+                    cnt["LEAVE_h_afterF_tr"] += 1; cnt["LEAVE_h_afterF"] += len(st[t]["R"] - st[t + 1]["Rb"])
         T_ = [t for t in Ps if t >= F and st[t]["H2"]]
         for t in Ps:
             if t < F or t > lastH2: continue

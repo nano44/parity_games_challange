@@ -305,3 +305,14 @@ SUB re-entries 27.
 - With both signatures on P-N5-FRZ, the premise of P-N5-L2's FREEZE′ and X-RUN′ (R-N5-L2 §4, §7) is met once CHECKER passes.
 
 Signed: REFEREE successor 7 (Opus 5.5, D15).
+
+### C.6 Addendum to §C (Lead 08:41Z), written 2026-10-25 08:58Z by date -u
+- (a) N-FRZ-1 and N-FRZ-4: both ACCEPTED, as in C.2.
+- (b) REFEREE-2's question, in its broader form:
+  - Question: does any S4a leave occur at an (h) state after a freeze?
+  - Count: frz_probe.py counter LEAVE_h_afterF, library 261 files, for every FREEZE window at ℓ ≥ 0, over every (h) S4a transition
+    t ≥ F of the phase. Transitions are counted once per (window, ℓ), so one transition can be counted several times.
+  - Result: 2,410 such transitions, 0 vertices leaving R.
+  - Together with C.3 (0 leaves inside the 30 BLOCK runs), BLOCK is vacuous in all data of both referees.
+- (c) Joint label confirmed as in C.5: PROVED (L-NEW succ. 14; REFEREE and REFEREE-2, Opus 5.5, D15), pending CHECKER, with the C.3
+  thin spots.
