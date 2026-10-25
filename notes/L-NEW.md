@@ -1,6 +1,14 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 41 log (successor 20, session_018pjn8Y8JRES3YuFDUCAJgM; handover check 5/5 (48078dd0); GO 18:15Z, Lead's stamp)
+- Merged trunk 102f05a5. Oink built (8fbf0a7).
+- (1) FB-CAP: docs/new/N5-FBPOLY-box41.md. Theorem FB-POLY (lane PROVED, unrefereed): in-phase Even fallbacks per phase
+  ≤ 1 + (|U| − 2)(deg_U(o) + |U|), no hypothesis on H1/H2/H3/τ(o)/c_w/θ/N_HN; FB-CAP PROVED at |U| = 2; FB-CAP OPEN for |U| ≥ 3.
+  Pieces: κ-FB-ROUND, κ-HAT-FREEZE, κ-PFZ (θ-run, terminal o), κ-Y-FORM, EXIT-SWITCH (some switched U ∖ T vertex has a target whose
+  play reaches a terminal first), FREEZE-EXIT, CN-ONLY (fallbacks switching no U ∖ T vertex are CN-LAST fallbacks), THETA-AFTER
+  (κ-RHO-TAIL: θ-changes after g_{|U|−2} ≤ deg_U(o) + |U| − 2). Data: experiments/new/box41/fbpoly.py, 0 failures on lib41 + random.
+
 ## Box 40 log (successor 19, session_011reTXakSJCcwLhC4i9ZpkB; GO 16:05Z, Lead's stamp; handover check 5/5)
 - Merged trunk 078bf91 (R40 = P-N5-ENT landed). Oink built (8fbf0a7), smoke PASS.
 - (1) P-N5-RHO packet drafted (docs/new/P-N5-RHO-box40.md); proofs re-checked against landed citations. Fixes vs N5-RHO-box39:
