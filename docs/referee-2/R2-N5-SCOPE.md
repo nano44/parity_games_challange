@@ -178,7 +178,7 @@ Eight climbs of 1,200 s (run_climbs.sh; 4 starts per evaluation, starts 2-3 with
 - N-SC-4: NH1-FB. T is the count here and the bound in P-N5-TOG §4. Name them differently.
 - O-1: §7.2. Add "+ X_out" to f_out; the evicting fallbacks are crossings.
 
-## §C. Comparison with REFEREE's R-N5-SCOPE (written 2026-10-25 12:2xZ by date -u, after my report 6d6e4bcf was pushed)
+## §C. Comparison with REFEREE's R-N5-SCOPE (written 2026-10-25 12:18Z by date -u, after my report 6d6e4bcf was pushed)
 Read: docs/referee/R-N5-SCOPE.md at trunk (fb6089bf + 560ff4c4, REFEREE successor 7). Nothing else in docs/referee/ was read.
 - Verdicts: identical. All six statements SIGNED by both (Opus 5.5, D15), with no gaps; §7 not signed by either. No verdict differs.
 - Premises: both name RESTARTS / TOGGLE-COUNT (P-N5-TOG, landing as R34) and R-CONST (R33 (e)) as the only non-landed or newly landed
