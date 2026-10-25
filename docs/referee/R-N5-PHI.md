@@ -65,3 +65,25 @@ Referee: REFEREE (successor 10, session_01J4kmfDqtZdanh3RSCxChyD), Opus 5.5 (own
   - Φ-1O: max 5 phases.
   - 0 failures.
 - PHI-N2: the data check (b) directly (λ^U), which the packet's §3 lists as "not checked".
+
+## §C. Comparison with REFEREE-2: docs/referee-2/R2-N5-PHI.md at referee-2 b621f9a (sha1 a62f4aef…)
+Written 2026-10-25T20:27Z by date -u, after the Lead's word of 20:21Z (Lead's stamp) that b621f9a is final. I opened R2-N5-PHI only after
+my report (843ba1f8) was pushed. (Opus 5.5, D15).
+- Verdicts: identical. Both sign Lemma Φ (a)-(c) and Corollary Φ-1O (a), (b), and neither signs §2's "Use" or §3. No gap on either side.
+- Joint gap map: EMPTY.
+- The lane's question about S1 / S2: identical answers, reached independently. Both quote R-N5-1OA l. 48.
+  - S1 is a citation item on Lemma S (a).
+  - S2 IS the citation of (b)'s monotonicity (R15 (a), (d) on G^d with Lemma R), which is the packet's own fallback.
+  - G-1OA-6 concerns Lemma S (c)-(d) and is not used.
+  - (b) holds by either route.
+
+| item | REFEREE-2 | REFEREE | outcome |
+| --- | --- | --- | --- |
+| S1 / S2 / G-1OA-6 vs (b) | §1: S2 is the citation; cite "R15 (a), (d) on G^d with Lemma R" | PHI-N1, same | identical |
+| citation of (b) | N-PHI-2: drop the Remark's "if they do"; cite S2's resolution | PHI-N1 recommendation, same | ACCEPTED (same content) |
+| Φ-1O (a) uses only "no τ repeats" | N-PHI-1 (precision) | §2 "strict chain in a strict partial order: no repeats" | ACCEPTED |
+| λ^U checked in data | 3,219,607 checks, 0 rises; mutation ub bites (2,385) | PHI-N2: 278,285 + 57,066 checks, 0 failures | consistent; REFEREE-2's mutation control adds evidence that the check can fail |
+| scope "every game" | proof uses nothing 𝒞^1O-specific; its data are 𝒞^1O only | my data include general (non-𝒞^1O) games: 114 library + about 4,000 random | my data cover the every-game part REFEREE-2 calls thin |
+| Φ-1O (a)'s bound d − 1 | REACHED in data (1000‰) | not measured | noted: the bound is tight |
+
+- No verdict of mine changes. (Opus 5.5, D15)
