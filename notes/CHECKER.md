@@ -50,6 +50,11 @@
   '1 ⇒ 2' vs R18's "1 ⇒ 2"; N-2 'discharged' = joint reading; N-3 (a)/(b) fixed cycle node; N-4 MERGE keeps RL-2 not repeated.
   Re-runs 7/7 IDENTICAL (lane 5101/5102, REFEREE p1_probe 6102/6103 from scratch/, REFEREE-2 p1_check 6101/6102 + mutation.py from its dir).
   Next: landed check when R36 lands; C46 = R37 (instances re-run already: rl_a/b/c 35/2 33/2 30/3, tev_cex 27/16, tevlast 11/1, inr2 32/1, all Oink OK, 1 Odd choice).
+- C46 (R37, P-N5-RL) 13:55Z: docs/checker/C46.md PASS at fb1dfb9 (draft 3ee56629; unchanged at eb866134), conditional on R36 landing first.
+  No E-items. N-1 FREE-FREEZE without (h) at t (covered); N-2 MERGE "FALSE"/N-RL-1; N-3 TEV FALSE = lane/L-RED record; N-4 gap map
+  omits EQ-END remark + k0 row; N-5 R2 drafts 592128a4/fa0273de uncited; N-6 R2's 168 level-inf gates has no committed log.
+  Re-runs EXACT: 6 instances; traces inr2 (0,6,29), tevlast (3,7,15), tev_cex (4,23); REFEREE named/lib @b7419da IDENTICAL;
+  REFEREE-2 6 batch logs IDENTICAL + tev_probe. Worktree wtR46 = b7419da. Scratch tools46/trace46.py (uses rl_probe.states()).
 - Worktree wt45 = fb1dfb9 (scratchpad), tools/oink/build symlinked. Scratch tools46/run1.sh = n5 + check_sol2 + odd-choice count.
 - Queue (Lead 13:48Z brief stamp): C45 = R36 (P-N5-P1), C46 = R37 (P-N5-RL), C47 = R38 (P-N5-SCOPE): draft docs/agents/R38-draft.md @ trunk 314d220,
   sha1 f3b27c34…; packet docs/new/P-N5-SCOPE-box36.md c3f5ed37 (l-new 8483279, pin 8998ee6); fixes e2550755 (l-new eb5477a);
