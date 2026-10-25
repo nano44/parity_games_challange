@@ -206,19 +206,15 @@ Successor 19 (Opus 5.5, D14/D15/D18, L37/L40), session_011reTXakSJCcwLhC4i9ZpkB.
   relays SHAs). Lead 17:34Z: if not in before successor 19 parks, successor 20 writes it.
 - P-N5-RHO (pinned c8144551) and P-N5-NHN (pinned 0bb175d): REFEREE 10 and REFEREE-2 10, RHO first. Fixes files when relayed: NEW files.
 - L-RED 17 attacks CONJECTURE FB-CAP (in-phase fallbacks per phase ≤ max(1, |U| − 2); l-red 1b00610, experiments/red/frz/).
-### NEXT (successor 20)
-- (1) Q states (start: docs/new/N5-Q-box40.md, Q-SPLIT PROVED): H1 ∧ H2 ∧ ¬H3, only in phases with no HN state (H3-IN-HN), where t0 = τ(o) ≠ o, λ(t0) =: c′ ≠ c_θ, and every state is Q or
-  ¬H1. This is the last out-of-SN piece. DATA (qsurvey.py, library): 165 phases with Q states, 186 Q states, only 2 Q fallbacks (both
-  evictions), 0 S4a steps at Q states with a leave. Ideas: a Q-SPLIT (S4a at Q never evicts? R̄ vertices have W cycle node c′ with
-  reward(c′) > reward(c_θ) by XW); fallbacks at Q are Bellman-Ford rounds (FB-ROUND holds), HAT-FREEZE applies on F ∩ U; ¬H1 parts by
-  NH1-FB; Q-runs ≤ ⌈T/2⌉ + 1 per phase (H1-toggles). Try: Q fallbacks per Q-run ≤ poly via EPOCH-type breaks + a T0-PIN analogue.
-- (1b) FB-CAP route (docs/new/N5-FBCAP-route-box40.md): κ = (M, s_θ·ℓ) Bellman-Ford freeze; after g_{|U|−2} no eviction at an in-phase
-  fallback (PROVED) and no F∩U → F∩U switch except around c_θ's cycle (PROVED modulo that case); OPEN: route switches inside R̄, vertices
-  outside U, ¬H1. Tightens NHN to N_HN ≤ 1 + ⌈T/2⌉ + |U| − 2. Read L-RED l-red 1b00610 (experiments/red/frz/) first.
-- (2) The global loop: f enters SCOPE-COUNT (R38 (c)) and X-SN-PHASE (R34 (f)); with HN fallbacks now O(n⁸), check whether the f ↔ X
-  loop closes (fallbacks at (h) states: R40 PL-S″ per scope run).
-- (3) Data for referees: post-freeze EV2 ends (T0-PIN) and HAT-FREEZE at |U| ≥ 4 are not reached (climbs plateau). Better mutations
-  or hand-built instances.
+### NEXT (successor 20), in the Lead's order (17:48Z, Lead's stamp)
+- (0) The PFZ fixes file docs/new/P-N5-PFZ-fixes-box39.md (NEW, repairs only, PFZ-1 repair in full) when both PFZ §Cs are in (Lead
+  relays SHAs). Inputs: see IN FLIGHT above.
+- (1) The FB-CAP proof (docs/new/N5-FBCAP-route-box40.md). Close: route switches inside R̄ (κ-freeze on θ-runs, P-FREEZE with κ, plus an
+  F-FLAT analogue at Q fallbacks); Even vertices outside U (other λ-classes); ¬H1 states; the c_θ-cycle exception of case (i), probably
+  via CN-LAST (RESULTS R38 (f)). Read L-RED's FB-CAP data first (l-red 1b00610, experiments/red/frz/).
+- (2) Q-EPOCH and breaks in Q-runs (docs/new/N5-Q-box40.md §3-§4).
+- Then: the global f ↔ X loop (SCOPE-COUNT R38 (c), X-SN-PHASE R34 (f)); data for referees (post-freeze regimes are probably empty
+  if FB-CAP holds; say so in data sections).
 
 ## Things only I know (successor 19)
 - The N_HN idea (box 40): for τ(o) ≠ o, ¬H2 ⇔ t0 := τ(o) ∈ R. A stretch end keeping H1 removes t0 from R; SPLIT makes it a fallback,
