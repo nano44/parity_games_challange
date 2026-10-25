@@ -1,6 +1,39 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Handover check (successor 7, session_01CE1xQNfGUgtJg9A7SWAkuE, Opus 5.5 under D15/L37; 2026-10-25 07:00Z by date -u)
+Predecessor successor 6 session_01H9qTdDhPBiSG4S7P1SkFjD; its handover commit did not land, so its resume line below is the handover.
+Measured from the repository (commands named). Written here, not in docs/agents/ (Lead-owned), per the Lead's 07:04Z brief.
+
+1. Branch, head, distance to trunk.
+   - `git rev-parse HEAD origin/claude/referee-2` after `git fetch origin claude/referee-2 claude/vibrant-johnson-nxvvxo`:
+     local 77f9cf71 (STALE again), origin 25962855 (succ. 6's R2-N5-FBW). `git merge --ff-only origin/claude/referee-2` -> 25962855.
+   - `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 2 ahead, 34 behind (trunk b0dd1616).
+     Merged trunk with a merge commit ee25bcec -> 3 ahead, 0 behind; this notebook commit adds one more.
+2. Open work, next step of each.
+   - Task 1 (after GO): independent review of P-N5-FRZ, docs/new/P-N5-FRZ-box34.md. `sha1sum` -> 39df373c17d91f942ad2cb15244cd779ca7abda1
+     (matches the pin); last change edbccb69 (`git log -- <file>`); f10d381 is an ancestor of HEAD (`git merge-base --is-ancestor`).
+     Fixes file docs/new/P-N5-FRZ-fixes-box34.md sha1 168de464adab5c56945bc5587f4f0ad3262a1fcd (read only after judging the packet).
+     Next step: read the packet + SPEC S1-S5 + RESULTS R17-R30, build R2-N5-FRZ/ on R2-N5-SN/CLS/FBW code (one-Odd-choice assert), run
+     packet instances, library sweep, random, climbs on long r <= l (h)-windows; write docs/referee-2/R2-N5-FRZ.md.
+   - Task 2 (after FRZ pushed): §C for P-N5-FBW (vs docs/referee/R-N5-FBW.md) and §C for P-N5-FRZ (vs R-N5-FRZ.md + Addendum).
+   - Oink was NOT built in this container (`ls tools/oink/build` absent); scripts/setup_oink.sh started.
+3. GAPS rows. `grep -n REFEREE-2 docs/GAPS.md`: REFEREE-2 owns none. Relevant: G-N5-TIME | major | L-NEW | open (docs/GAPS.md:11):
+   N5 makes polynomially many iterations; P-N5-FRZ (X-RUN: O((d_o+1)n^3) crossings per fallback-free run with an H1 SN prefix) is
+   under this row. G-N5-TERM closed (R15).
+4. Owner rulings verbatim (docs/DECISIONS.md), index status from docs/DECISIONS-INDEX.md:
+   - D1 (index: active), DECISIONS.md:7-8:
+     > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+     > Never downgrade the referee to save money.
+   - D15 (index: active; L37 active), DECISIONS.md:278:
+     > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+   - D18 (index: active; L40 active), DECISIONS.md:333:
+     > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+5. Trap found this session: independence exposure. `ls docs/referee/` after the trunk merge shows R-N5-FRZ.md (3a520ce7) and
+   R-N5-FBW.md already on my tree, before my FRZ report exists. Check: I do not open docs/referee/R-N5-FRZ.md or notes/REFEREE.md
+   until R2-N5-FRZ.md is pushed (only `ls`/`git log` on them so far). Also the container branch was stale again (77f9cf71):
+   always compare `git rev-parse HEAD origin/claude/referee-2` after fetch.
+
 ## Resume point (successor 6, Opus 5.5 under D15; 2026-10-25 01:5xZ by date -u)
 - Handover check 6a27ab9b (Lead 01:44Z: 5/5, GO). Lead: P-N5-SO NOT re-reviewed (succ. 5's R2-N5-LP §8 stands).
 - P-N5-OE (docs/new/P-N5-OE-box32.md sha1 adeccd89, pin 361d18c): report docs/referee-2/R2-N5-OE.md. U-loc, OE, OX (i)-(v) all SIGN;
