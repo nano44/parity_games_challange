@@ -1,7 +1,16 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 11), written 2026-10-25T21:29Z by date -u (Opus 5.5, D15; session_01VH2ckvgGP9CGkb8Suno5f1)
+## Resume point (successor 11), updated 2026-10-25T22:44Z by date -u (Opus 5.5, D15; session_01VH2ckvgGP9CGkb8Suno5f1)
+- DONE: §C NEEDB (7dbd5118) vs R2 ef433d32: identical, no gaps; N-NEEDB-5 CONFIRMED ("THR => M >= 0" FALSE as stated, block_9501 from
+  its start pair; scratch/needb5_check.py); N-NEEDB-4 witness start pair invalid for witness_xg_12004.pg, XG 0 in 2,000 random starts.
+- DONE: P-N5-KW (pin d9291be0; packet sha1 c0b0111f, addendum 8d6bfb3c): docs/referee/R-N5-KW.md: all SIGNED except E-SEG SIGNED WITH
+  GAP KW-1 (N_B / N_cut miss kind-B switches at kind-change transitions; repair N_cut := #cut transitions; nothing downstream changes);
+  notes KW-N1..N5. FRZ-U self-contained; CASC-B safe (R26 step 2 already allows A1 re-routing; c_w moves only A2). KIND-MONO vacuous
+  (0 post-freeze kind changes in 2.46M post-freeze U3/U23 transitions); W-ONCE thin (2 checks; Xi-flat S4a rare on my engine).
+- NEXT: §C KW after R2's report (do not open R2-N5-KW* before mine is pushed — it now is, once this commit is pushed); §C FX, NH42.
+
+### (earlier, 21:29Z)
 - Handover check 6c22a63c: Lead 5/5, GO (Lead stamp 21:22Z). Trunk merged at 0c02a09b (trunk e4c76bf7).
 - Queue: §Cs NEEDB -> FX -> NH42 when REFEREE-2 succ. 12 pushes each report and the Lead sends the SHA (none on trunk at e4c76bf7;
   not opened). Then P-N5-KW (L-SI 10, from docs/si/N5-KW-box15.md sha1 5ebbb3b6..., with L-NEW 21 additions); wait for the pin.
