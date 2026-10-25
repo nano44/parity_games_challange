@@ -10,3 +10,6 @@
   - kwprof.py: K_W / E profile in OTHER U2 / U3 / U23 stretches (121 / 121 new gate edges with y, z ∈ R and Ξ(z) rising one step earlier).
   - kwfreeze.py (Lemma CLS-CONST, Theorem KW-FREEZE (a)-(c), Corollary KW-E): lib41 5,532 sub-runs, 0 violations; `--rand 3000 6 16
     4204 --randstart`: 7,514 sub-runs, 0 violations.
+  - kwfreeze2.py (version 2 of N5-KW-box42: CSTRICT for all successor pairs; KW-FREEZE on every fallback-free run, no event
+    condition): lib41 424 runs, 1,061 strict cases, 0 violations (latest coarse change at 0.83·(n − 1)); `--rand 3000 6 16 4205
+    --randstart`: 480 runs, 923 strict cases, 0 violations.

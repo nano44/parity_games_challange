@@ -1,178 +1,197 @@
-# N5 on 𝒞^1O, box 42 (2): W lags Ξ by one step (WLAG), and between events W freezes coarsely (KW-FREEZE), so (K_W) ⇐ (E*)
+# N5 on 𝒞^1O, box 42 (2): W lags Ξ by one step (WLAG); on every fallback-free run of a stretch both frames freeze coarsely (KW-FREEZE), so (K_W) holds given f, and (E) is needed only on U3 / U23 stretches with c_w even and above c_θ
 L-NEW successor 21 (Opus 5.5, D15/D18, L37/L40), session_01YJHHx1t8hvqkDnKzMU2Lfa. Working doc (not a packet; the Lead decides any
 freeze). Started 20:05Z by date -u, at the Lead's request of 19:48Z (Lead's stamp): "(2) K, meaning (E) and (K_W), via the κ lens.
-Repair κ-FREEZE-F's S4a length case, or find a different charging."
+Repair κ-FREEZE-F's S4a length case, or find a different charging." Version 2, 20:3xZ: the first version (l-new 0c0d439e, sha1
+1889d56f…) needed event-free sub-runs; this version proves CSTRICT for every pair of successors, so events are not needed for the
+freeze. It supersedes version 1 where they differ.
 - Labels (D18/L40): PROVED (L-NEW succ. 21, unrefereed), CONJECTURE, OPEN, DATA, READING.
 - Scope: the candidate N5 (SPEC docs/new/N5-ssi-global.md) on 𝒞^1O, inside one phase (λ_Ξ and τ constant). §1 holds on every game.
   Nothing here is a running-time bound for N5, a TARGET.md claim or a step-4 pass. G-N5-TIME stays OPEN.
-- Answer to the Lead's ask, in one line: I did not repair κ-FREEZE-F. I found a different charging: R20's coarse freeze CR, run on
-  G_τ with the two W-terminals o and c_w and restricted to class-respecting paths, freezes W coarsely on every event-free,
-  fallback-free sub-run of ANY stretch. That bounds the W-changes on R by the events and fallbacks: (K_W) ⇐ (E*), where E* adds the
-  honest-frame events (switches across c_θ) to R26's (E). The open core is now the events alone.
+- Answer to the Lead's ask, in one line: κ-FREEZE-F is not repaired. A different charging closes (K_W) given f. RESULTS R20's coarse
+  freeze CR is run on G_τ with threshold h := the more relevant of c_θ and c_w. Both frames agree above h on every pair of R-routes,
+  because they differ only on the cycles C_Ξ and C_W, which lie at or below h. So W and Ξ freeze coarsely on every fallback-free run
+  of a stretch. The events (E) remain needed only on U3 / U23 stretches with c_w even and strictly above c_θ.
 
 ## Summary
 | item | statement | label |
 | --- | --- | --- |
 | §1 Lemma WLAG | inside a phase, if k − 1 → k and k → k+1 are S4a steps and W_{k+1} ≠ W_k, then some y has z := σ_{k+1}(y) outside the arena H_{k−1}, and Ξ_k(z) ▷ Ξ_{k−1}(z) | PROVED (every game) |
-| §2 Lemma CLS-CONST | on a sub-run (no fallback, no event) every class CLS(v) is constant | PROVED |
-| §2 Lemma CSTRICT | same-class successors: a COARSE_h-strict W-comparison is an honest strict comparison with the same sign | PROVED |
-| §3 Theorem KW-FREEZE | on a sub-run Σ: (a) COARSE_h(W) on R is constant from transition n − 1 of Σ on; (b) if c_θ ≻ c_w, the path set of Ξ on R is constant from there too; (c) Σ has ≤ n² − 1 transitions with a W-change on R | PROVED |
-| §4 Corollary KW-E | a stretch S has K_S ≤ E*_S + (E*_S + f_S + 1)(n² − 1) | PROVED |
-| §4 READING | with Theorem NH (P-N5-NH-box42): T per phase ≤ poly(n)·(1 + X + f + E*) | READING |
-| §5 | (E*) per phase | OPEN |
+| §2 Lemma ABOVE-h | on a stretch, for v ∈ R: W(v)'s and Ξ(v)'s path sets above h are π_v ∩ ↑h plus a constant set | PROVED |
+| §2 Lemma CSTRICT | on a stretch, for x ∈ R ∖ {o} and successors z, a ∈ R: a COARSE_h-strict W-comparison is an honest strict comparison with the same sign | PROVED |
+| §3 Theorem KW-FREEZE | on a fallback-free run ϱ of a stretch: (a) COARSE_h(W) and COARSE_h(Ξ) on R are constant from transition n − 1 of ϱ on; (b) ≤ n + 2n·\|R\| + N_F(ϱ) transitions of ϱ change W on R (N_F(ϱ): transitions of ϱ with a Ξ-change on F; the N_F term only if c_θ ≻ c_w); (c) if c_θ ⪰ c_w, ≤ (n − 1) + 2n·\|R\| change Ξ on R; (d) if c_w ≻ c_θ and c_w is odd, ≤ (n − 1) + 2n(m + n) + #(c_w-switches) change Ξ on R | PROVED |
+| §4 Corollary KW | every stretch S has K_S ≤ (f_S + 1)(n + 2n\|R\|) + N_F(S) ≤ 3n²(f_S + 1) + n; so (K_W) per phase ≤ 3n²(f + #stretches) + n(X + 1) | PROVED |
+| §4 Corollary NR′ | Ξ-changes on R per stretch, without K_W or E, except U3 / U23 with c_w even and c_w ≻ c_θ | PROVED |
+| §4 READING | with Theorem NH (P-N5-NH-box42): O and T per phase ≤ poly(n)·(1 + X + f + E_even) | READING |
+| §5 | (E_even): events in U3 / U23 stretches with c_w even, c_w ≻ c_θ | OPEN |
 | §6 | DATA | DATA |
 
-## 0. Objects (as in docs/new/P-N5-NH-box42.md §0, which is frozen; restated where needed)
-- Phase, R (o ∈ R), F, crossing, stretch (R, θ, w constant), π_v (v's σ-route before its first visit of o), H1, H2, c_θ := λ_Ξ(o),
-  c_w := λ_W(o), (V1), ⊵, SPEC S4a (σ_{k+1} := the optimum of the arena H_k = {σ_k(y)} ∪ gate_k(y) in G_τ, SPEC tie-breaks), S4c, gate:
-  (y, z) with Ξ_k(z) ▷ Ξ_k(σ_k(y)) (Iσ_k, SPEC S2; code si.py improving()).
-- SPECIALS of a stretch: S := {c_θ, if ¬H1 and c_θ ≠ o} ∪ {c_w, if ¬H2 and c_w ≠ o}. These are the tops, inside R ∖ {o}, of the
-  frames that are not in route form (Lemma SW step 3 of P-N5-NH-box42: under ¬H1 the honest cycle C_Ξ ⊆ R has top c_θ; under ¬H2,
-  C_W ⊆ R has top c_w). S = ∅ on route-form pieces; S = {c_θ} on U2, {c_w} on U3, {c_θ, c_w} on U23 (possibly one vertex, U3-3).
-- CLASS of v ∈ R ∖ {o}: CLS(v) := S ∩ π_v. On U3 this is R26's kind (A iff c_w ∈ CLS(v)).
-- EVENT transition (of a stretch): some Even y ∈ R ∖ {o} switches (σ_{k+1}(y) ≠ σ_k(y)) and either y ∈ S or CLS_{k+1}(y) ≠ CLS_k(y).
-  On U3 these are exactly R26 (c)'s events (a kind change of the switcher, or a switch of c_w). E*_S := #transitions of S containing an
-  event; E* := Σ over the stretches of the phase.
-- SUB-RUN: a maximal run of consecutive transitions of a stretch with no fallback and no event.
-- W-TERMINAL of v ∈ R ∖ {o}: t(v) := c_w if c_w ∈ CLS(v), else o. Honest terminal: c_θ if c_θ ∈ CLS(v), else o.
-- h := the more relevant of c_θ and c_w (they differ unless S is the single vertex c_θ = c_w of U3-3; then h := c_w).
-  COARSE_h(c, P, ℓ) := (c, P ∩ ↑h), with ↑h the vertices strictly more relevant than h. COARSE_h is order-preserving on valuations with
-  one cycle node: if a ⊴ b then COARSE_h(a) ⪯ COARSE_h(b) (the top of P_a Δ P_b decides both, or lies below h and COARSE_h ties).
-- Signed results used: R15 (a) MONO; R17 (F1) (in G_τ); R19 (d) (SG); R20 (d) Lemma P^c / CR (P-N5-XA-box27.md §5, with
-  P-N5-XA-fixes-box28.md); R23 WM (W never drops at S4a steps; on every game by R25's G-FB-3); RESULTS R22 (b) TC (i); and Lemma SW of
-  docs/new/P-N5-NH-box42.md (in review: P-N5-NH-box42 sha1 93d19be8…; its proof is short and restated in §2 where used).
+## 0. Objects (as in docs/new/P-N5-NH-box42.md §0, frozen; restated where needed)
+- Phase, R (o ∈ R), F, crossing, stretch (R, θ, w constant), π_v (v's σ-route before its first visit of o; π_o := ∅), H1, H2,
+  c_θ := λ_Ξ(o), c_w := λ_W(o), (V1), ⊵. SPEC S4a: σ_{k+1} := the optimum of the arena H_k = {σ_k(y)} ∪ gate_k(y) in G_τ, with SPEC
+  tie-breaks. Gate: (y, z) with Ξ_k(z) ▷ Ξ_k(σ_k(y)) (Iσ_k, SPEC S2; code si.py improving()).
+- On a stretch: every vertex of R has W cycle node c_w and honest cycle node c_θ (all R-plays continue with o's play).
+  - Under ¬H1, o lies on its honest cycle C_Ξ ⊆ R, whose top is c_θ. Under ¬H2, o lies on its W-cycle C_W ⊆ R, whose top is c_w
+    (P-N5-NH-box42 Lemma SW, step 3).
+  - Under H1, o's honest play enters F and stays there; under H2, o's W-play does (TC (i)).
+- h := the more relevant of c_θ and c_w (h := c_θ if they are equal). ↑h := the vertices strictly more relevant than h.
+  COARSE_h(c, P, ℓ) := (c, P ∩ ↑h). With one cycle node c, COARSE_h is order-preserving: if a ⊴ b, then COARSE_h(a) ⪯ COARSE_h(b)
+  (the top of P_a Δ P_b decides both orders, or it lies at or below h and COARSE_h ties).
+- A RUN of a stretch: a maximal run of consecutive transitions of the stretch with no fallback. Its transitions are S4a steps.
+- Classes, for §5: specials S := {c_θ, if ¬H1 and c_θ ≠ o} ∪ {c_w, if ¬H2 and c_w ≠ o}; CLS(v) := S ∩ π_v. An EVENT transition has a
+  switching Even y ∈ R ∖ {o} with y ∈ S or CLS(y) changed. On U3 these are RESULTS R26 (c)'s events.
+- Signed results used: R15 (a) MONO; R17 (F1) (in G_τ); R19 (d) (SG); R20 (d) Lemma P^c / CR (docs/new/P-N5-XA-box27.md §5, with
+  docs/new/P-N5-XA-fixes-box28.md); R23 WM (W never drops at S4a steps; on every game by R25's G-FB-3); R24 (b) Lemma TB (any game);
+  R22 (b) TC (i). Lemma SW of docs/new/P-N5-NH-box42.md (in review, sha1 93d19be8…): on a stretch Ξ and W on R are functions of the
+  routes and θ, w; a change of Ξ or W on R needs a switch of an Even vertex of R.
 
 ## 1. Lemma WLAG (PROVED, every game): W moves one step behind Ξ
 Statement. Inside a phase let k − 1 → k and k → k+1 be S4a steps (no fallback) with W_{k+1} ≠ W_k. Then some Even y has
-z := σ_{k+1}(y) ∉ H_{k−1}(y), and Ξ_k(z) ▷ Ξ_{k−1}(z). In particular Ξ_k ≠ Ξ_{k−1}: the transition k − 1 → k changes Ξ.
+z := σ_{k+1}(y) ∉ H_{k−1}(y), and Ξ_k(z) ▷ Ξ_{k−1}(z). In particular the transition k − 1 → k changes Ξ.
 Proof.
-1. τ is the same at k − 1, k, k+1. σ_k is the optimum of the arena H_{k−1} in the one-player game G_τ, and σ_{k+1} that of H_k (S4a).
+1. τ is the same at k − 1, k and k+1. σ_k is the optimum of the arena H_{k−1} in the one-player game G_τ, and σ_{k+1} is that of H_k
+   (S4a).
 2. If σ_{k+1}(y) ∈ H_{k−1}(y) for every Even y, then σ_{k+1} is a strategy of the arena H_{k−1}, so (F1) gives W_k ⊵ W_{k+1}
    pointwise. WM gives W_{k+1} ⊵ W_k. So W_{k+1} = W_k, against the hypothesis. Hence some y has z := σ_{k+1}(y) ∉ H_{k−1}(y).
-3. z ∈ H_k(y) and z ≠ σ_{k−1}(y), z not a gate target of y at k − 1. Since σ_k(y) ∈ H_{k−1}(y) ∌ z, also z ≠ σ_k(y), so (y, z) is a
-   gate edge at k: Ξ_k(z) ▷ Ξ_k(σ_k(y)).
-4. Not a gate at k − 1: Ξ_{k−1}(z) ⊴ Ξ_{k−1}(σ_{k−1}(y)).
+3. z ∈ H_k(y). σ_k(y) ∈ H_{k−1}(y) and z ∉ H_{k−1}(y), so z ≠ σ_k(y), and (y, z) is a gate edge at k: Ξ_k(z) ▷ Ξ_k(σ_k(y)).
+4. z ∉ H_{k−1}(y): z ≠ σ_{k−1}(y) and Ξ_{k−1}(z) ⊴ Ξ_{k−1}(σ_{k−1}(y)).
    - If σ_k(y) = σ_{k−1}(y) =: a: Ξ_k(z) ▷ Ξ_k(a) ⊵ Ξ_{k−1}(a) ⊵ Ξ_{k−1}(z) (MONO).
-   - If σ_k(y) ≠ σ_{k−1}(y): σ_k(y) ∈ H_{k−1}(y) is then a gate target at k − 1, so Ξ_{k−1}(σ_k(y)) ▷ Ξ_{k−1}(σ_{k−1}(y)) ⊵ Ξ_{k−1}(z),
-     and Ξ_k(z) ▷ Ξ_k(σ_k(y)) ⊵ Ξ_{k−1}(σ_k(y)) (MONO).
+   - Otherwise σ_k(y) ∈ H_{k−1}(y) is a gate target at k − 1: Ξ_{k−1}(σ_k(y)) ▷ Ξ_{k−1}(σ_{k−1}(y)) ⊵ Ξ_{k−1}(z), and
+     Ξ_k(z) ▷ Ξ_k(σ_k(y)) ⊵ Ξ_{k−1}(σ_k(y)) (MONO).
    Either way Ξ_k(z) ▷ Ξ_{k−1}(z). □
-- Consequences.
-  - On 𝒞^1O inside a stretch: z ∈ R if y ∈ R (R is constant), and z ∈ F if y ∈ F; in the second case k − 1 → k is an F-change, at most
-    |F| − 1 of them per crossing-free interval (RESULTS R22 F1°).
-  - Charging each W-changing S4a step k → k+1 to its predecessor k − 1 → k (an injective map): per phase, #(transitions with
-    W_{k+1} ≠ W_k) ≤ #(Ξ-changing transitions) + 2f + 1 (the steps that follow a fallback or open the phase, and the fallbacks
-    themselves). It explains the cascades (K-chain, box 33 §11): every W-change needs a fresh honest rise one step before. It bounds
-    nothing alone: the honest rise can itself come from the W-change before it.
+- Consequence. Charge each W-changing S4a step k → k+1 to its predecessor k − 1 → k (an injective map). Per phase:
+  #(transitions with W_{k+1} ≠ W_k) ≤ #(Ξ-changing transitions) + 2f + 1. These are the steps that follow a fallback or open the
+  phase, and the fallbacks themselves. This explains the cascades (K-chain, docs/new/N5-K-box33.md §11): every W-change needs a fresh
+  honest rise one step before. It bounds nothing alone. §3 is the bound.
 - DATA (experiments/new/box42/wlag.py): lib41 253 runs, 4,661 W-changing S4a steps after an S4a step, 0 violations (z ∈ R 2,609,
-  z ∈ F 2,052); random 𝒞^1O n 6-16 with random starts (seed 4203): 98, 0 violations. kwprof.py: inside OTHER U2 / U3 / U23 stretches,
-  121 / 121 such new edges have y, z ∈ R.
+  z ∈ F 2,052); random 𝒞^1O n 6-16 with random starts (seed 4203): 98, 0 violations.
 
-## 2. Classes on a sub-run (PROVED)
-### Lemma CLS-CONST
-Statement. On a sub-run Σ of a stretch, CLS(v) is constant for every v ∈ R ∖ {o}, and so is the W-terminal t(v).
-Proof. Induction along Σ. At a transition k → k+1 of Σ let v ∈ R ∖ {o}. If no vertex of π_v^k switches, π_v^{k+1} = π_v^k. Otherwise
-let y be the first vertex of π_v^k that switches. y ∉ S (no event), so π_v^{k+1} = (the part of π_v^k before y) · π_y^{k+1}, and
-CLS_{k+1}(y) = CLS_k(y) (no event). The part before y is unchanged and contains the same specials. So CLS_{k+1}(v) = CLS_k(v). (R26's
-U3-2, written for every class.) □
-- Hence on Σ: CLS(σ(v)) = CLS(v) ∖ {v} for every Even v ∈ R ∖ {o} and every state of Σ.
-### Values on a stretch (restating P-N5-NH-box42 Lemma SW, with the classes)
-For v ∈ R ∖ {o} at a state of a stretch:
-- W(v) = (c_w, P_w(p), |p|) if c_w ∈ CLS(v), where p is the part of π_v before c_w and P_w(p) its vertices more relevant than c_w;
-  W(v) = π_v ⊕ w otherwise, and P(w) is disjoint from π_v (under H2, P(w) ⊆ {o} ∪ F; under ¬H2, P(w) = ∅).
-- Ξ(v) = (c_θ, A_θ(p′), |p′|) if c_θ ∈ CLS(v), where p′ is the part of π_v before c_θ; Ξ(v) = π_v ⊕ θ otherwise (P(θ) ⊆ {o} ∪ F under
-  H1, P(θ) = ∅ under ¬H1).
-- Terminal values are constant on the stretch: W(o) = w, W(c_w) = (c_w, ∅, 0) (c_w ∈ S tops C_W ⊆ R), θ, (c_θ, ∅, 0).
+## 2. The two frames agree above h (PROVED)
+### Lemma ABOVE-h
+Statement. On a stretch there are constant sets K_W, K_Ξ ⊆ ↑h (K_W := P(w) ∩ ↑h under H2, ∅ under ¬H2; K_Ξ := P(θ) ∩ ↑h under H1,
+∅ under ¬H1) such that for every v ∈ R:
+    P(W(v)) ∩ ↑h = (π_v ∩ ↑h) ⊔ K_W   and   P(Ξ(v)) ∩ ↑h = (π_v ∩ ↑h) ⊔ K_Ξ.
+Proof. W frame; the honest frame is the same with θ, c_θ, H1, C_Ξ.
+- H2: v's W-play is π_v, then o's W-play, which enters F and never meets π_v. o is not its own W-cycle node, so iterating (V1) gives
+  W(v) = π_v ⊕ w. Every vertex of π_v ∩ ↑h is above c_w, so P(W(v)) = (π_v ∩ ↑c_w) ⊔ P(w). Intersect with ↑h (h ⪰ c_w).
+- ¬H2, c_w ∉ π_v: v's W-path to c_w is π_v, then o's path to c_w along C_W. The C_W vertices are ⪯ c_w ⪯ h. So
+  P(W(v)) ∩ ↑h = π_v ∩ ↑h.
+- ¬H2, c_w ∈ π_v: the W-path is the part p of π_v before c_w. The rest of π_v is c_w and then c_w's σ-route to o, an arc of C_W
+  (c_w's route follows C_W back to o), all ⪯ c_w ⪯ h. So π_v ∩ ↑h = p ∩ ↑h = P(W(v)) ∩ ↑h.
+- v = o: π_o = ∅ and P(w) ∩ ↑h = K_W (under ¬H2, w = (c_w, ∅, d), so P(w) = ∅). □
 ### Lemma CSTRICT
-Statement. Let k be a state of a sub-run, x an Even vertex of R ∖ {o} with x not a W-terminal, a := σ_k(x), and z ∈ R a successor of x
-with CLS(z) = CLS(a) (z = t(x) allowed when a's class is empty and t(x) = o, or when z = c_w = t(x)). If COARSE_h(W_k(z)) ≻
-COARSE_h(W_k(a)), then Ξ_k(z) ▷ Ξ_k(a): (x, z) is a gate edge at k.
+Statement. At a state of a stretch, let x ∈ R ∖ {o} be Even, a := σ(x), and z ∈ R another successor of x. If COARSE_h(W(z)) ≻
+COARSE_h(W(a)), then Ξ(z) ▷ Ξ(a). So (x, z) is a gate edge, and it is W-improving.
 Proof.
-1. Same class: the routes π_z and π_a contain the same specials. If the class is empty, both end at o. Otherwise let s be the first
-   special on π_z. Then s is also the first special on π_a: if the other special s′ came first on π_a, then s′ ∈ π_s and s ∈ π_{s′}
-   would make the σ-routes of s and s′ a cycle avoiding o, which routes do not have. After s both routes are π_s.
-2. Write q_z, q_a for the parts of π_z, π_a before s (the whole routes if the class is empty). The two routes are simple, so q_z, q_a
-   are disjoint from the common rest. In each frame the two values have the same cycle node and terminal, and they differ only through
-   q_z vs q_a: W through the vertices of q_z Δ q_a more relevant than c_w and through |q_z| − |q_a|; Ξ through those more relevant
-   than c_θ and through the same length difference. (The terminal parts and P(w), P(θ) are common and disjoint from q_z ∪ q_a.)
-3. COARSE_h-strict means: the top t of the W-difference (q_z Δ q_a) ∩ ↑c_w lies above h, and favours z (t ∈ q_z even, or t ∈ q_a odd).
-   t ≻ h ⪰ c_θ, so t is in the honest difference. Any vertex u of the honest difference with u ≻ t is above h ⪰ c_w, so it is in the
-   W-difference, against t being its top. So t also tops the honest difference and decides it the same way: Ξ_k(z) ▷ Ξ_k(a). □
+1. W(z) and W(a) have the same cycle node c_w. By ABOVE-h, P(W(z)) ∩ ↑h and P(W(a)) ∩ ↑h differ exactly by D := (π_z Δ π_a) ∩ ↑h.
+   COARSE_h-strictness says D ≠ ∅ and its top t favours z: t ∈ π_z with t even, or t ∈ π_a with t odd.
+2. Ξ(z) and Ξ(a) have the same cycle node c_θ. Their path sets differ by a set D′ whose part in ↑h is again D (ABOVE-h). Every vertex
+   of D′ ∖ D is ⪯ h ≺ t. So t is the top of D′, and it decides the honest comparison the same way: Ξ(z) ▷ Ξ(a). □
+- This is RESULTS R22's (R3) and R24's swapped (R3) without the route-form hypothesis. Outside route form the two frames differ only
+  on C_Ξ ∪ C_W, which lies at or below h.
 
 ## 3. Theorem KW-FREEZE (PROVED)
-Statement. Let Σ = (k_0 → … → k_0 + L) be a sub-run of a stretch of a phase of N5 on 𝒞^1O. Then:
-- (a) COARSE_h(W_t(v)) = COARSE_h(W_{k_0+n−1}(v)) for every v ∈ R and every state t of Σ with t ≥ k_0 + n − 1;
-- (b) if c_θ ≻ c_w, then also the path set of Ξ_t(v) is constant on R for t ≥ k_0 + n − 1;
-- (c) at most n² − 1 transitions of Σ change W at some vertex of R; precisely ≤ (n − 1) + |R|(n − 1) if c_w ≻ c_θ and
-  ≤ (n − 1) + |R|(|R| − 2) if c_θ ≻ c_w.
-Proof of (a): R20's CR on G_τ, on class-respecting paths.
-1. Setting of CR (P-N5-XA §5): Ω := W (the valuation of G_τ), Ω^c := COARSE_h(W). On the stretch W's cycle node is c_w at every vertex
-   of R (all R-plays end in o's W-play), and λ_Ξ = λ_W on F is fixed in the phase: W's cycle-node map is constant on Σ (CR's §1 fact).
-   Every transition of Σ is an S4a step (no fallback), so CR's (B-fallback) case is not needed.
-2. Class-respecting paths: for x ∈ R ∖ {o}, a simple path r = (x = r_0, …, r_L) of G_τ inside R with r_L = t(x), no earlier r_i a
-   W-terminal, and CLS(r_{i+1}) = CLS(r_i) ∖ {r_i} for i < L. value(r) := r ⊕ W(t(x)) (the terminal value is constant on the stretch).
-   Every current route (to its W-terminal) is class-respecting (Lemma CLS-CONST), and W_t(x) = value(current route).
-3. Lemma P^c restricted to class-respecting r: for every j and every x, r with |r| ≤ j and k_0 + j ∈ Σ:
-   Ω^c_{k_0+j}(x) ⪰ COARSE_h(value(r)). The proof is CR's, step by step:
-   - Base (j = 0, r = (u), u a W-terminal): W(u) is constant (above).
-   - Monotonicity of Ω^c (CR's "Lemma C" use): W is ⊵-non-decreasing at S4a steps (WM) and COARSE_h is order-preserving with one
-     cycle node (§0). (V1c), (V2c), (Cmono) are properties of ⊕ and COARSE_h; r′ and σ_k(x)'s W-path avoid x.
-   - Odd vertices of R ∖ {o} are forced: Ω^c_{k+1}(x) = x ⊕_c Ω^c_{k+1}(z) ⪰ x ⊕_c Ω^c_k(z), and the IH.
-   - Case A_c (Ω^c_k(z) ⪯ Ω^c_k(σ_k(x))): CR's A1 verbatim. A2 (x its own W-cycle node) happens only for x = c_w, a W-terminal (base).
-   - Case B_c (Ω^c_k(z) ≻ Ω^c_k(σ_k(x))): r is class-respecting, so CLS(z) = CLS(x) ∖ {x} = CLS(σ_k(x)) (Lemma CLS-CONST). Lemma CSTRICT
-     replaces CR's (Cstrict): (x, z) is a gate edge, and it is W-improving. Then CR's (B-arena) verbatim: σ̂ := σ_k[x → z] is an arena
-     strategy, (F1) gives Ω_{k+1}(x) ⊵ val_σ̂(x) in G_τ, and the sub-cases B1 (x ∉ π, off or on c_w's cycle C_W: (α) contradicts the
-     constant W cycle-node map at k+1, which lies in Σ's stretch; (β) is the main case) and B2 (x ∈ π) are statements about G_τ and W
-     only.
-4. CR's closing step: every class-respecting r has ≤ n − 1 edges (simple). For t ≥ k_0 + n − 1 in Σ, W_t(x) = value(r_t) for x's
-   current route r_t, so COARSE_h(value(r_t)) ⪯ Ω^c_{k_0+n−1}(x) ⪯ Ω^c_t(x) = COARSE_h(value(r_t)). Equality throughout. □
-Proof of (b) (c_θ ≻ c_w, so h = c_θ). Induction on |CLS(v)|, using (a) for every vertex.
-- CLS(v) = ∅: W(v) = π_v ⊕ w and Ξ(v) = π_v ⊕ θ. COARSE_h(W(v)) = (A_θ(π_v)) ⊔ (P(w) ∩ ↑c_θ), the second part constant. So A_θ(π_v),
-  the honest path set minus the constant P(θ), is constant.
-- c_θ ∈ CLS(v), c_θ first special on π_v (or the only one): Ξ(v)'s path set is A_θ(p′) with p′ the part before c_θ. W(v)'s path set
-  restricted to ↑c_θ is A_θ(p′) ⊔ (W(c_θ)'s path set ∩ ↑c_θ) (π_v = p′ · π_{c_θ} up to the W-terminal, which is common). Both W-parts
-  are frozen by (a), so A_θ(p′) is.
-- c_w ∈ CLS(v), c_w first: the honest path continues past c_w. Its set is A_θ(p) ∪ ({c_w} ∩ ↑c_θ = ∅) ∪ (the honest path set of
-  σ(c_w)) with p the part before c_w. A_θ(p) = COARSE_h part of W(v) (frozen by (a)); σ(c_w) is constant on Σ (c_w ∈ S does not
-  switch) and |CLS(σ(c_w))| < |CLS(v)|: frozen by induction. □
-Proof of (c).
-- Transitions before k_0 + n − 1: at most n − 1.
-- c_w ≻ c_θ (h = c_w): after k_0 + n − 1, COARSE_h(W(v)) = (c_w, P(W(v))) (every vertex of a path set is above the cycle node), so
-  W(v) moves only through its length, ⊵-monotonically (WM). That length is |p| (c_w ∈ CLS(v)) or |π_v| + ℓ(w) with ℓ(w) constant, and
-  |p|, |π_v| ∈ [1, |R| − 1]: at most |R| − 2 ≤ n − 1 changes per vertex. So ≤ |R|(n − 1) transitions with a W-change on R.
-- c_θ ≻ c_w (h = c_θ): after k_0 + n − 1, a transition with a W-change on R has a switch of some Even y ∈ R ∖ {o} (Lemma SW (b),
-  P-N5-NH-box42). y's honest value is (c_θ, frozen set by (b), length of y's honest path to its honest terminal, plus a constant).
-  λ_Ξ(y) = c_θ ≠ y, so (SG) makes Ξ(y) rise strictly at each switch of y; with the set frozen and the terminal value constant, Ξ(y)
-  then moves only through that length, monotonically in the direction fixed by c_θ's parity (MONO). The length lies in [1, |R| − 1]:
-  ≤ |R| − 2 switches of y. So ≤ |R|(|R| − 2) such transitions.
-- Both are ≤ (n − 1) + n(n − 1) = n² − 1. □
+Statement. Let ϱ = (k_0 → … → k_0 + L) be a run (no fallback) of a stretch of a phase of N5 on 𝒞^1O. Then:
+- (a) for every v ∈ R and every state t ≥ k_0 + n − 1 of ϱ: COARSE_h(W_t(v)) = COARSE_h(W_{k_0+n−1}(v)) and
+  COARSE_h(Ξ_t(v)) = COARSE_h(Ξ_{k_0+n−1}(v));
+- (b) at most (n − 1) + 2n|R| transitions of ϱ change W at some vertex of R if c_w ⪰ c_θ, and at most n + 2n|R| + N_F(ϱ) if
+  c_θ ≻ c_w, where N_F(ϱ) counts the transitions of ϱ with a Ξ-change at some vertex of F;
+- (c) if c_θ ⪰ c_w, at most (n − 1) + 2n|R| transitions of ϱ change Ξ at some vertex of R;
+- (d) if c_w ≻ c_θ and c_w has odd priority, at most (n − 1) + 2n(m + n) + #(switches of c_w in ϱ) transitions of ϱ change Ξ at some
+  vertex of R (m = #edges); under H2 c_w ∈ F does not switch on R's account and the last term is dropped (see the proof).
+Proof of (a): R20's CR on G_τ, with COARSE_h and Lemma CSTRICT.
+1. CR's setting (P-N5-XA-box27 §5): Ω := W, the valuation of G_τ; Ω^c := COARSE_h(W). W's cycle-node map is constant on ϱ: c_w on R,
+   and λ_W = λ_Ξ on F, which is fixed in the phase. Every transition of ϱ is an S4a step, so CR's (B-fallback) case does not arise.
+2. Paths. W-TERMINALS: o, with the constant value w, and, under ¬H2 with c_w ≠ o, the vertex c_w, with the constant value (c_w, ∅, 0).
+   For x ∈ R ∖ {o}, an ADMISSIBLE path is a simple path r = (x = r_0, …, r_L) of G_τ inside R with r_L a W-terminal and no earlier
+   r_i a W-terminal; value(r) := r ⊕ W(r_L), by iterated ⊕ ((V1) algebra). x's current W-play up to its first W-terminal is
+   admissible, and W_t(x) = value(that path) (ABOVE-h's case analysis: π_x ⊕ w, or the part before c_w ⊕ (c_w, ∅, 0)).
+3. Lemma P^c, restricted to admissible paths: for every j, every x ∈ R ∖ {o} and every admissible r from x with |r| ≤ j and
+   k_0 + j ∈ ϱ, Ω^c_{k_0+j}(x) ⪰ COARSE_h(value(r)). The proof is CR's induction on j, step by step:
+   - Base: r = (u) with u a W-terminal; W(u) is constant on the stretch.
+   - Monotonicity of Ω^c (CR's use of Lemma C): WM and COARSE_h order-preserving (§0).
+   - (V1c), (V2c), (Cmono): x ⊕_c is monotone on COARSE_h-values whenever x lies in neither path set above h. If x ⪯ h, x ⊕ does not
+     touch the part above h. If x ≻ h, then x ∉ C_Ξ ∪ C_W, so x is not in P(w) or P(θ). x ∉ r′ (r is simple), and x ∉ σ_k(x)'s W-play
+     (x is not its own W-cycle node: the only one in R is c_w, a W-terminal).
+   - Odd vertices of R ∖ {o} are forced: Ω^c_{k+1}(x) = x ⊕_c Ω^c_{k+1}(z) ⪰ x ⊕_c Ω^c_k(z), then the IH.
+   - Case A_c (Ω^c_k(z) ⪯ Ω^c_k(σ_k(x))): CR's A1 verbatim. A2 (x its own W-cycle node) is only x = c_w, a W-terminal (base case).
+   - Case B_c (Ω^c_k(z) ≻ Ω^c_k(σ_k(x))): z ∈ R (r lies in R). Lemma CSTRICT replaces CR's (Cstrict): (x, z) is a gate edge and
+     W-improving. Then CR's (B-arena) verbatim. σ̂ := σ_k[x → z] is an arena strategy, and (F1) gives Ω_{k+1}(x) ⊵ val_σ̂(x) in G_τ.
+     Sub-cases:
+     - B1, x not on c_w's cycle: the main case.
+     - B1, x on C_W: (α) contradicts the constant W cycle-node map at k+1 (k+1 is a state of the stretch); (β) is the main case.
+     - B2, x on z's W-path.
+     All three are statements about G_τ and W only.
+4. CR's closing step. An admissible path is simple, so it has ≤ n − 1 edges. For t ≥ k_0 + n − 1 in ϱ:
+   COARSE_h(value(r_t)) ⪯ Ω^c_{k_0+n−1}(x) ⪯ Ω^c_t(x) = COARSE_h(value(r_t)), where r_t is x's current admissible path. Equality
+   throughout. For v = o, W(o) = w is constant.
+5. The honest half. By ABOVE-h, COARSE_h(Ξ(v)) = (c_θ, (π_v ∩ ↑h) ⊔ K_Ξ). COARSE_h(W(v)) = (c_w, (π_v ∩ ↑h) ⊔ K_W) determines
+   π_v ∩ ↑h, because K_W is constant and disjoint from π_v. So COARSE_h(Ξ(v)) is constant whenever COARSE_h(W(v)) is. □
+Proof of (b), (c), (d). Count from state k_0 + n − 1 on; the first n − 1 transitions give the (n − 1) term.
+- Length ranges. W(v)'s length is that of v's W-path to c_w: |π_v| + ℓ(w) or |p|. With ℓ(w) ≤ n − 1 constant, it lies in an
+  interval of fewer than 2n integers. The same holds for Ξ(v) with ℓ(θ).
+- (b) If c_w ⪰ c_θ (h = c_w), every vertex of P(W(v)) is above c_w, so by (a) the whole of P(W(v)) is constant. W(v) is
+  ⊵-non-decreasing at S4a steps (WM), so its length moves monotonically: < 2n changes per vertex, ≤ 2n|R| transitions.
+  If c_θ ≻ c_w, use Lemma WLAG: every W-changing transition k → k+1 of ϱ other than the first has its predecessor k − 1 → k in ϱ,
+  and that predecessor changes Ξ (on R or on F). Distinct W-changing transitions have distinct predecessors. So the W-changing
+  transitions number ≤ 1 + #(Ξ-changing transitions of ϱ) ≤ 1 + ((n − 1) + 2n|R|) + N_F(ϱ), by (c).
+- (c) If c_θ ⪰ c_w (h = c_θ), every vertex of P(Ξ(v)) is above c_θ, so by (a) P(Ξ(v)) is constant. Ξ(v) is ⊵-non-decreasing (MONO),
+  so its length moves monotonically: < 2n changes per vertex. A transition that changes Ξ on R changes it at some vertex:
+  ≤ 2n|R| transitions. (Switches of c_θ itself, an own honest cycle node under ¬H1, change no honest value on R: honest paths to
+  c_θ never use c_θ's return arc. So they need no count here.)
+- (d) c_w ≻ c_θ, c_w odd. Let y ∈ R ∖ {o} be Even with y ≠ c_w; y is not its own W-cycle node (the only one in R is c_w). By R24
+  Lemma TB (TB-odd), every switch of y at which W(y) is unchanged lowers σ(y)'s index strictly. W(y) changes < 2n times on ϱ after
+  state k_0 + n − 1 ((b)'s argument, h = c_w). Between two changes of W(y), y switches ≤ deg(y) − 1 times. So y switches
+  ≤ 2n·deg(y) + 2n times; summed over y, ≤ 2n(m + n) switches. A Ξ-change on R needs a switch of an Even vertex of R (Lemma SW).
+  - y = c_w: c_w is its own W-cycle node, so TB does not apply to it. Under ¬H2, c_w ∈ R; its switches keep W(c_w) = (c_w, ∅, 0) and
+    re-route C_W's return arc A2 below c_w, which lies on no W-path to c_w, so they change no W-value on R; they can change Ξ on R
+    (kind-A routes run through A2). They are counted separately: the term #(switches of c_w in ϱ). Under H2, c_w ∈ F is not in R and
+    is not counted. □
 
-## 4. Corollary KW-E (PROVED) and the reduction (READING)
-Corollary KW-E. A stretch S with f_S fallback transitions and E*_S event transitions has
-    K_S ≤ E*_S + (E*_S + f_S + 1)(n² − 1)
-non-fallback transitions with a W-change on R.
-Proof. The fallback and event transitions cut S into ≤ E*_S + f_S + 1 sub-runs. A non-fallback W-changing transition is an event
-transition (≤ E*_S) or lies in a sub-run (Theorem KW-FREEZE (c)). □
-- Remark. On route-form pieces S = ∅, there are no events, and KW-E gives K ≤ (f + 1)(n² − 1): a second proof of the order of R24
-  Theorem U1's K (which is ≤ (f + 1)(|R| − 1)(|R| − 2) there).
-READING (not to sign). Theorem NH (P-N5-NH-box42 (b), (c)) with K_W ≤ Σ_S K_S ≤ E* + (E* + f + #stretches)(n² − 1) and E ≤ E* (R26's
-events are E*-events: on U3 / U23, c_w ∈ S) gives, per phase,
-    O and T ≤ poly(n)·(1 + X + f + E*),
-using #stretches ≤ N ≤ n²(2X + 2 + f^O) (P-N5-NH-box42 STR-COUNT). With P-N5-FX and P-N5-FBPOLY (in review), X and f are polynomial,
-so on 𝒞^1O: T per phase is polynomial if (E*) is. With P-N5-PHI (in review) the phase count is polynomial. So along this route the
-whole open core of G-N5-TIME on 𝒞^1O is (E*): event transitions per phase.
+## 4. Corollaries (PROVED) and the reduction (READING)
+Corollary KW. Let a stretch S have f_S fallback transitions. Then
+    K_S ≤ (f_S + 1)(n + 2n|R|) + N_F(S) ≤ 3n²(f_S + 1) + n
+non-fallback transitions change W on R (N_F(S): transitions of S with a Ξ-change on F, ≤ |F| − 1 by RESULTS R22 F1°). Per phase:
+K_W ≤ 3n²(f + #stretches) + n(X + 1), with #stretches ≤ n²(2X + 2 + f^O) (P-N5-NH-box42 STR-COUNT (d)).
+Proof. S has ≤ f_S + 1 runs; apply Theorem KW-FREEZE (b) to each, and sum N_F over the runs of one crossing-free interval (F1°). □
+- So (K_W) holds given f and X. Both are polynomial by P-N5-FBPOLY and P-N5-FX (in review).
+Corollary NR′. Let S be a stretch with f_S fallbacks, and N_R(S) the transitions of S with a Ξ-change on R.
+- If c_θ ⪰ c_w (P3′; U2, U3, U23 with c_θ ⪰ c_w): N_R(S) ≤ f_S + (f_S + 1)((n − 1) + 2n|R|).
+- If c_w ≻ c_θ and c_w is odd: N_R(S) ≤ f_S + (f_S + 1)((n − 1) + 2n(m + n)) + #(c_w-switches in S).
+  - Under H2 (U1, U2): the last term is 0.
+  - Under ¬H2 (U3, U23): c_w-switches are R26 events; their number is OPEN.
+- U1: RESULTS R24 Theorem U1 (given f). U2: RESULTS R26 (b), with K_S from Corollary KW.
+- Left: U3 and U23 with c_w ≻ c_θ: by RESULTS R26 (d), with K_S from Corollary KW and E_S. E_S is needed when c_w is even; when c_w
+  is odd, only the c_w-switches are.
+READING (not to sign). Feed Corollaries KW and NR′ into Theorem NH (P-N5-NH-box42 (a): Lemma NR's per-class bounds replaced by NR′
+where sharper). Then O and T per phase are ≤ poly(n)·(1 + X + f + E_hi), where E_hi := the event transitions of U3 / U23 stretches
+with c_w ≻ c_θ. With P-N5-FX, P-N5-FBPOLY and P-N5-PHI (in review), N5 on 𝒞^1O is polynomial if E_hi is polynomial per phase. For c_w
+odd only the c_w-switches count. So along this route the open core of G-N5-TIME on 𝒞^1O is:
+- (E_hi): kind changes (across c_w) and c_w-switches in U3 / U23 stretches with c_w ≻ c_θ, for c_w even;
+- plus c_w-switches alone, for c_w odd.
 
-## 5. (E*) (OPEN)
-- (E*) := the number of transitions per phase containing an event: a switch of a special vertex (c_θ under ¬H1, c_w under ¬H2, when
-  they are not o), or a switch that moves the switching vertex's route across a special (CLS changes).
-- What is known: R26 left (E) open; nothing bounds E* yet. K-chain (box 33 §11) has K linear in n with few events.
-- First observations (DATA, §6): E* per stretch ≤ 34 on the library, ≤ 2 on random runs.
-- Plan (next): (i) characterise events with WLAG / KW-FREEZE: an event at a sub-run's end is an S4a switch whose new target is of
-  another class, so it is a gate edge whose W-value beats the current one; does COARSE_h(W) rise strictly at an event (so events are
-  charged to coarse rises, which are monotone between fallbacks)? (ii) data on the instance with E* = 34; (iii) climbs for E*.
+## 5. (E_hi) (OPEN)
+- Where it lives. U3 / U23 stretches with c_w ≻ c_θ. After the freeze (KW-FREEZE (a)), W moves only through lengths (< 2n|R|
+  W-changing transitions per run). What remains are W-flat runs: switches at W-ties.
+  - CASC-U3 (RESULTS R26 (c)) bounds a W-flat run between events.
+  - Events are W-tie switches across c_w (a kind change at equal W-value: same set above c_w, same length to c_w), or c_w's own
+    re-routings of A2.
+- What is known. TB-odd kills W-tie cycling at non-cycle-node vertices when c_w is odd. For c_w even (BFS mode, where the K-chain
+  lives), TB-even's lexicographic key is the only potential, and it needs W unchanged along the whole old play.
+- Next. (i) A W-tie kind change at y keeps W(y) and lowers pk(y) (TB-even), if W is unchanged along y's old play. Is the number of
+  kind changes per W-flat run ≤ |R|? (ii) c_w-switches: each re-routes A2 at a W-tie of c_w. Are they bounded by the honest
+  rises on A2 (WLAG-type)? (iii) Data: where the library's E* = 34 sits (c_w parity, c_w vs c_θ).
 
 ## 6. DATA (experiments/new/box42/; one Odd choice vertex asserted, other files skipped)
-- kwfreeze.py checks Lemma CLS-CONST, Theorem KW-FREEZE (a), (b), (c) and Corollary KW-E on every stretch of every phase:
-  - lib41 (253 runs): 5,058 stretches with S = ∅, 293 with |S| = 1, 40 with |S| = 2; 5,532 sub-runs; violations 0; latest coarse
-    change at sub-run index 20; max W-changing transitions in a sub-run 21; max E*_S 34; ΣK_S 498, ΣE* 130.
-  - random 𝒞^1O n 6-16, random starts (seed 4204, 2,605 runs): 7,514 sub-runs, violations 0 (max E*_S 2).
-- wlag.py (Lemma WLAG): see §1. kwprof.py: profile of K_W transitions in OTHER stretches (§1).
+- kwfreeze2.py (version 2 statements). It checks:
+  - Lemma CSTRICT at every state of every stretch, for every Even x ∈ R ∖ {o} and every pair of successors in R;
+  - Theorem KW-FREEZE (a) for W and Ξ, from run index n − 1;
+  - (b) on every run;
+  - (c) when c_θ ≻ c_w.
+  Results:
+  - lib41 (253 runs): 424 fallback-free runs, 1,061 COARSE_h-strict cases, all honest-strict. Violations 0. Latest coarse change at
+    0.83·(n − 1) into a run (the n − 1 index is nearly reached). Max W-changing transitions in a run: 40.
+  - Random 𝒞^1O n 6-16, random starts (seed 4205, 2,561 runs): 480 runs, 923 strict cases. Violations 0.
+- kwfreeze.py (version 1, event-free sub-runs; kept). lib41: 5,532 sub-runs, violations 0, max E*_S 34. Random (seed 4204): 7,514
+  sub-runs, violations 0.
+- wlag.py (Lemma WLAG): §1. kwprof.py: inside OTHER U2 / U3 / U23 stretches, 121 / 121 W-changes after an in-stretch S4a step have
+  their new edge inside R, with an honest rise at its head one step earlier.
