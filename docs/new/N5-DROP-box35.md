@@ -22,8 +22,10 @@ L-NEW successor 15 (Opus 5.5, D15/D18). Box 35 GO by the Lead at 08:02Z (Lead's 
    N5-REL-box34 (ONE-DROP, refuted in §13 there) and DROP-LEN, as far as these were needed for the count.
 5. **The weak form of DROP-LEN is FALSE (DATA, verified).** Two drops occur in ONE fallback-free run: onerun_cex_n32 (§3). θ changes between
    the two drops there, so DROP-LEN itself survives. DROP-LEN stays CONJECTURE (§4). After item 4 it is no longer needed for the count.
-6. **(b) A fallback restart via τ(o) leaving R (OPEN; DATA §5):** 0 cases. All 104 in-phase fallbacks at H1 ∧ ¬H2 in the library, and 1
-   in 20,000 random games, keep ¬H2 at the next state.
+6. **(b) is FALSE (DATA, verified).** A fallback at an H1 ∧ ¬H2 state CAN take τ(o) out of R and restart (h) inside the phase:
+   fbrestart_cex_n12 (n 12) and fbrestart_cex_n24 (§5). This costs nothing extra in the count. Such a restart sits at a fallback, so it
+   begins a new fallback-free run, and X-RUN′ already counts per run. (L2) is now closed up to the factor (f + 1): restarts ≤ T + f, and
+   short (h)-runs cost ≤ n(T + f + 1) transitions per phase. What is left is the core (L1), the f ↔ X loop.
 
 ## 1. Lemma L-MONO (PROVED, L-NEW succ. 15)
 Statement. Let c = λ(o) ≠ o in a phase. Let L_k be the length of the cycle of c's H_k-play (c lies on it, since λ(c) = c). If Ω(c) is even, then
@@ -105,14 +107,32 @@ with Σ t_Q ≤ T := n² + 2n − 1: X_SN ≤ 13(d_o + 1)n³(f + 1 + T) + T per 
 - Climbs (dlclimb.py MODE=dl, fitness = max drops inside one θ-constant stretch): seeds onedrop_cex_n32, oneh_cex_n32 and onerun_cex_n32.
   Results in §6.
 
-## 5. (b): a fallback restart at H1 ∧ ¬H2 taking τ(o) out of R (OPEN; DATA)
-- Data (experiments/new/box35/fbtau.py; data/fbtau_lib.txt, data/fbtau_rand.txt):
-  - Library: 104 in-phase S4c fallbacks at H1 ∧ ¬H2 states. In 91 of them τ(o) = o (a self-loop: o is its own W-cycle, and no fallback can
-    change that). In the other 13, τ(o) stays in R. 104 / 104 have H1 ∧ ¬H2 at s + 1.
-  - Random (20,000 games, n 4-14, seed 3552): 1 such fallback; τ(o) stays in R.
-- Pitfall (my first run): reach_o's R omits o. With τ(o) = o, "τ(o) ∉ R" is a false positive (91 at first). Fixed: test τ(o) ∉ R ∪ {o}.
-- Easy half (PROVED, L-NEW succ. 15). If τ(o) = o, ¬H2 holds at every state of the phase, so no restart of kind (i) can happen. τ is
-  constant in a phase.
-- The S4a proof (H2-STICK via R-STICK) uses WM, which fails at S4c. A proof attempt at fallbacks is in §6.
+## 5. (b): a fallback restart at H1 ∧ ¬H2 taking τ(o) out of R: it HAPPENS (DEAD END for "impossible"; DATA, verified)
+- First survey (experiments/new/box35/fbtau.py; data/fbtau_lib.txt, data/fbtau_rand.txt):
+  - Library: 104 in-phase S4c fallbacks at H1 ∧ ¬H2 states, 0 events.
+    - In 91 of them τ(o) = o: o is its own W-cycle. τ is constant in a phase, so ¬H2 then holds throughout the phase (PROVED, trivial).
+    - In the other 13, τ(o) stays in R. In frz24 (L-RED) at s = 20, the W-cycle vertex 22 switches into F, but 7 (earlier on the cycle)
+      switches to a shortcut inside R, so τ(o)'s play no longer passes 22.
+  - Random (20,000 games, n 4-14, seed 3552): 1 such fallback, 0 events.
+  - Pitfall in my first run: reach_o's R omits o. With τ(o) = o, the test "τ(o) ∉ R" gives a false positive (91 at first). Fixed: test
+    τ(o) ∉ R ∪ {o}.
+- Climb (fbtclimb.py; fitness = (events, such fallbacks with a W-cycle switch, such fallbacks)): events within seconds from both seeds.
+- DEAD END: "a fallback at an H1 ∧ ¬H2 state never takes τ(o) out of R" is FALSE.
+  - Instance experiments/new/box35/instances/fbrestart_cex_n12.pg (sha1 35223b6c46750b2c1c961d68485025a9a5e69d87; n 12, o = 9,
+    succ(o) = {4, 10}; climb seed 3612 from experiments/new/box25/instances/wd12_s1.pg).
+    - Verified: n5.py n5 gives 5 iterations and 2 fallbacks. check_sol2.py gives "zielonka(oink zlk) OK strategies verified". Only 9 is an
+      Odd vertex with out-degree > 1.
+  - Second instance fbrestart_cex_n24.pg (sha1 a0aacfba3581c1c921e9b2090711b4ac536305f7; n 24, o = 19; seed 3611 from frz24). Verified the
+    same way: 23 iterations, 3 fallbacks, zlk OK.
+  - Mechanism in fbrestart_cex_n12. The phase is states 0-3, with τ(o) = 10 and c_θ = 4 (self-loop, Ω 8).
+    - State 2: H1 ∧ ¬H2. o's W-cycle is 9 → 10 → 1 → 2 → 9, and its top is o itself (c_w = 9: Ω 8, ranked above 4), so w = (9, ∅, 0).
+    - Iσ = {(1, 3), (6, 3)}. The edge 1 → 3 leads into F (3 → 7 → 11 → 5 → 4). It is honest-improving:
+      Ξ(3) = (4, {3072}, 4) ▷ Ξ(2) = (4, {256}, 2). It is W-worsening: W(3) = (4, …) ◁ W(2) = (9, ∅, 1). So S4a withholds it (σ is optimal
+      in its arena against τ), S4b leaves τ, and the fallback S4c takes it.
+    - State 3: τ(o)'s play 10 → 1 → 3 → … → 4 avoids o. So H2 holds, c_w = c_θ = 4, and (h) holds, in the same phase (key λ_Ξ, λ_U, τ(o)).
+- Consequence for (L2) (PROVED, given X-RUN′ and TOGGLE-COUNT).
+  - Such a restart is at a fallback, so it opens a new fallback-free run. X-RUN′ bounds each run whatever its start.
+  - So (h)-run restarts per phase are ≤ T + f (kind (ii) ≤ the toggles, kind (i) ≤ f), and short (h)-runs cost ≤ n(T + f + 1) transitions.
+  - Every (L2) item is now ≤ poly(n)·(f + 1) per phase. The open core is (L1) and the f ↔ X loop (R28 f ≤ n_E(2n − 1)(X + 1) + X).
 
 ## 6. Work log (DATA; filled in as the box runs)
