@@ -133,3 +133,36 @@ Nothing here is a running-time bound. G-N5-TIME stays OPEN.
 - FB-CAP: a proof (L-NEW), or an n ≥ 5 exhaustive or start-pair search (L-RED).
 - The INTO wording at gate-free states (§4).
 - (4) LV-NONE / SCOPE-FB: not started this box.
+
+## 7. Addendum (box 41 continued, 18:18Z-19:35Z, date -u; Lead routes 18:18Z, 18:37Z, 18:58Z)
+New targets: FB-CAP by n = 5 start-pair search (route (a)); N5-FBPOLY-box41.md (L-NEW 20, sha1 7a7087f7): FREEZE-EXIT, THETA-AFTER,
+FB-POLY; N5-FBPHASE-box14.md (L-SI 9, sha1 f7aaa624): FB-PHASE, Corollary FX. **No kill of any of them.**
+- Tools (experiments/red/frz/):
+  - fbcap17.py: fast per-phase counter (own copy of ex16.trace that records λ_Ξ, σ, τ); FB-CAP slack, FB-PHASE slack, X and FX slack
+    per phase. Modes: exhaustive (ex16 space, every start pair) and random n = N games × every start pair.
+  - fbpoly17.py: exact checker of N5-FBPOLY §2-§6 and N5-FBPHASE §4-§5:
+    - CN-ONLY, EXIT-SWITCH (with switch kinds), FREEZE-EXIT (hypothesis counter);
+    - THETA-AFTER: slack against deg_U(o) + |U| − 2, on every phase with ≥ |U| − 2 fallbacks, so FB-CAP equality phases exercise it;
+    - FB-POLY, FB-PHASE, FX (c_w from the (σ, τ) cycle).
+  - fbpclimb17.py: climbs on THETA-AFTER slack (default) or FX slack (OBJ=fx); START=1 puts the start pair in the genome.
+- Data (0 FAIL of every check everywhere):
+  | space | runs | FB-CAP max slack (by \|U\|) | FB-PHASE max slack | max X / FX max slack |
+  | --- | --- | --- | --- | --- |
+  | n 5 random games × every start pair (v1, seed 5) | 6,156,227 | 0 at \|U\| ≤ 3, −1 at 4 and 5 | – | – |
+  | n 5 random games × every start pair (v2, seed 6; running) | 2,414,920 | 0 / −1 (4) / −2 (5) | −6 | 3 / −2 |
+  | n 4 exhaustive, every start pair (v1 3,919,104 + v2 2,612,736; running) | – | 0 at \|U\| ≤ 3, −1 at 4 | −5 | 2 / −2 |
+  | library (431 files, S3; fbpoly17) | 1,076 phases | 0 | – | – |
+  Library fbpoly17 counts: CN-ONLY 26, EXIT-SWITCH kinds ct 1,680 / o 28 / loop 0. THETA-AFTER: 31 phases, 5 of them at |U| ≥ 3,
+  max slack −1. FREEZE-EXIT: hypothesis 0 times.
+- FB-CAP equality at |U| = 4 (first time; shrink17 hat GMIN 2 from beta2_n11): experiments/red/frz/instances/fbcap_eq_u4_n11.pg,
+  sha1 39beb8b8856d4f818848b33c2c39e62b85e196df, S3 start.
+  - A phase with |U| = 4 and g = 2. HAT-FREEZE (c) is reached past g_2, with H1 (1 state, 3 HFc checks).
+  - It is TRIVIAL (nothing below MoptÛ at the phase start), and P-FREEZE's excess is −1 there.
+- THETA-AFTER climbs (fbpclimb17 from fbcap_eq_u4_n11, canonical and start-pair): stuck at slack −1.
+- FX climb (OBJ=fx, start-pair genome): X = 8 with slack −2, the tightest seen.
+  - Instance: experiments/red/frz/instances/fx2_n11.pg, sha1 9bb47bb33ceef2cd8c9d7181365a9901e6f82d20; start pair in fx2_n11.start.json.
+  - FX's proof (R-STICK between kind-1/2 crossings) is short and looks tight-able; slack 0 would not refute it.
+- INTO climbs (§4) finished: min #gates into R̄ = 1 (rise_thin51, tevlast11); the start-pair climb from tevlast7 reached no rise.
+- FB-CAP shrinks (GMIN 2, |U| ≥ 4): b5_os_n40 → 11 fallbacks at |U| = 16 (slack −3); rise_fb38_n48 → 39 at |U| = 46 (−5);
+  njb → 32 at 46 (−12); beta2 → equality at |U| = 4.
+- Not done: (b) the beta2 cascade climb (≥ 3 r = −1 fallbacks in one scope run).
