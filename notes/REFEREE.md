@@ -1,6 +1,24 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 9), written 2026-10-25T15:28Z by date -u (Opus 5.5, D15; session_01VsZYJ8FiTSj5Kazk715ZP7)
+- Handover check 0d3a61a1 (docs/agents/handover-checks/REFEREE.md "successor 9"): Lead 5/5 (14:51Z Lead stamp), merged 53ad44e.
+- GO 14:51Z: review P-N5-NEB (docs/new/P-N5-NEB-box38.md, pin 314d220, sha1 ba15e51f…), then P-N5-LV (docs/si/P-N5-LV-box11.md,
+  pin 601df6e, sha1 d0d797f0…; addendum sha1 a15a8871…). Both sha1s verified. Oink built at 8fbf0a7.
+- NEB: docs/referee/R-N5-NEB.md. All of §1-§7 SIGNED, no gaps.
+  - Notes: NEB-R1 (= OUT-R1, (K) at a phase-exiting a), NEB-N1 (SPLIT (b) → (a)), NEB-N2 (FBL-N at a itself), NEB-N3 (LR wording),
+    NEB-N4 (R38 status), NEB-N5 (§9 base totals not reproduced: 75/9/4/20/8 on lib37 + instances/*.pg, lane's own inv2.py agrees
+    per file).
+  - NEB-B1: BAND FALSE in the rises form (lane), the gates form later (tauw_A state 13), and the gates form at the base
+    (R-N5-NEB/band_base_cex.pg sha1 468edac8…, level 19 = rank(c_w); the strict search is running).
+  - Tools: scratch/neb_probe.py, neb_climb.py, band_find.py; logs R-N5-NEB/, scratch/neb_logs/.
+- LV: docs/referee/R-N5-LV.md (draft). All SIGNED; CN-LAST condition discharged by R38. Notes LV-N1..N3. The setting is VACUOUS in data
+  (0 in-scope THR M = −1 fallbacks in 288 games). Tools: scratch/lv_probe.py, lv_climb.py (climb running, logs scratch/lv_logs/).
+- NEXT: finish §9.1 / §6.1, push both, send the SHAs to the Lead; then the §Cs when REFEREE-2's NEB / LV are final (never read
+  R2-N5-NEB / R2-N5-LV before my report is pushed).
+- Lesson: random C^1O games are useless for HN-stretch lemmas (0 breaks in 4,600); mutation climbs from the counterexample seeds reach
+  every hypothesis.
+
 ## HANDOVER (successor 8 -> successor 9), written 2026-10-25T13:11Z by date -u, context ~510k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
 Branch claude/referee. Start: git fetch origin; trunk = remote HEAD claude/vibrant-johnson-nxvvxo (`git ls-remote --symref origin HEAD`);

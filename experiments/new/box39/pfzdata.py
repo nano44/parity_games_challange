@@ -16,6 +16,9 @@ import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "box38"))
 from neb_run import *
 
+# PFZ_KEY=P: runs are P-epochs (P(θ) constant; P-N5-PFZ-ext) instead of θ-runs
+KEY = (lambda th: th[:2]) if os.environ.get("PFZ_KEY") == "P" else (lambda th: th)
+
 def simple_bf(g, U, term, wt, j, start):
     """max over simple paths from start to a terminal in G_U with ≤ j edges of wt(path minus end) + term[end]; None if none."""
     best = [None]
@@ -37,7 +40,7 @@ def analyse(g, acc, name):
     runs = []; a = 0
     while a < N:
         b = a
-        while b + 1 < N and rows[b + 1]["ph"] == rows[a]["ph"] and rows[b + 1]["th"] == rows[a]["th"]: b += 1
+        while b + 1 < N and rows[b + 1]["ph"] == rows[a]["ph"] and KEY(rows[b + 1]["th"]) == KEY(rows[a]["th"]): b += 1
         runs.append((a, b)); a = b + 1
     run_of = {}
     for (a, b) in runs:
@@ -59,6 +62,10 @@ def analyse(g, acc, name):
                     lhs, rhs = M(X1[v]), wt(v) + M(X0[x])
                     bump(acc, f"FBR_branch{br}"); bump(acc, f"FBR_branch{br}_tight" if lhs == rhs else f"FBR_branch{br}_strict")
                     if lhs < rhs: bump(acc, "FAIL_FBR"); print("FBR", name, k, v, x)
+        if b > a:
+            thc = sum(1 for q in range(a, b) if rows[q]["th"] != rows[q + 1]["th"]); bump(acc, "theta_changes_in_runs", thc)
+            if thc: bump(acc, "runs_with_theta_change")
+            if thc > max(len(U) - 2, 0): bump(acc, "FAIL_THLEN"); print("THLEN", name, a, b, thc, len(U))
         if len(U) <= 18 and fbs:
             term = {o: M(rows[a]["Xi"][o]), ct: 0}
             for j in range(1, len(fbs) + 1):
