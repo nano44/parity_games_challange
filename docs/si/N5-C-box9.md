@@ -175,9 +175,34 @@ at most n·n_E fallbacks of level ≥ 0.
   - CONSEC: consecutive fallbacks of a block have disjoint level-M tail sets (STRETCH on a clean interval; ONE-RISE + FB-FLAT
     otherwise). Checks: 177 / 357.
   - In the data no vertex is ever a level-M tail twice in one block (max_rep 1).
+- Stronger CONJECTURE NJ-INT: between any two consecutive fallbacks k0 < k of a scope run with r > L := M_{k0} on (k0, k], θ does
+  not change above L. NJ-INT implies NJB.
+  - DATA: 185 (named) + 377 (library) such intervals, 0 θ-changes above L. This matches REFEREE-2's 583 / 0 for ABS-L
+    (P-N5-SN fixes §4): ABS-L is vacuous in all data.
 - A weaker form, FB-RE (PROVED: a tail is evicted R → F and fallbacks never add to R̄, FLAT-ALL (i)): N ≤ #tails + #re-entries into
   R at S4a steps of previously evicted tails. It is far from tight: 249 re-entries on the named set, none followed by a second
   level-M tail appearance.
+
+## 3b. Lemma ABS-O (PROVED; an attempt on NJB that turned out vacuous)
+Statement. Let j → j+1 be an in-phase transition with H1 at j at which σ̄(o) changes from x0, and x0 ∈ F_j ∩ R_{j+1} (an
+absorption). Put c := λ(o), and let g be the max gate level of the Even switches on x0's H_{j+1}-path s_0 = x0, …, s_{m−1}, o.
+- (a) Every vertex of A := {s_0, …, s_{m−1}, o} of rank > max(g, rank c) lies in P(Ξ_j x0).
+- (b) In particular, rank o ≤ max(g, rank c).
+Proof.
+- No s_t is an H_j-cycle node. If one were, it would be one at j+1 too (phase), and x0's path would end on its cycle before o,
+  whereas Lemma OR (a) puts o on the path before c.
+- For an unswitched s_t, (P2) gives Ξ_j(s_t) = s_t ⊕ Ξ_j(s_{t+1}) exactly (Odd vertices other than o are forced).
+- For a switched s_t, (P2) gives Ξ_j(s_t) = s_t ⊕ Ξ_j(σ_j s_t), and lev(Ξ_j σ_j s_t, Ξ_j s_{t+1}) ≤ g.
+- COARSE_g(s ⊕ a) is a function of COARSE_g(a) (formal ⊕: union, length + 1). At o, Ξ_j(o) = o ⊕ Ξ_j(x0) (P2).
+- Composing around the closed walk x0 → … → o → x0 gives COARSE_g(Ξ_j x0) = COARSE_g(A ⊕ Ξ_j x0), with ⊕ as formal union. That is (a).
+- Under H1, x0's H_j-play is the tail of o's honest play, so o ∉ P(Ξ_j x0). That is (b). □
+- DATA (abso.py; logs/box9/abso_*.txt): 462 + 715 absorptions; for the 172 + 298 with rank o > rank c, g ≥ rank o every time.
+- Why it does not help NJB. When rank o > rank c, every gate R → F has level ≥ rank o: Ξ(σ y) = π ⊕ θ contains o, and an F-value
+  does not. So every evicting fallback, and hence every block, has M ≥ rank o.
+  - ABS-O would exclude absorptions inside a block only when rank o > M; that case never arises (abso.py: 0 of 778 in-scope
+    fallbacks have rank o > max(M, rank c)).
+  - So ABS-O is a true but vacuous route to NJB. I record it as a dead end for that purpose.
+  - Obstruction: the cycle closed by an absorption contains o, but o sits below every evicting level.
 
 ## 4. What remains (labels)
 - PROVED this box (L-SI succ. 4, unrefereed):
@@ -198,4 +223,176 @@ at most n·n_E fallbacks of level ≥ 0.
   - jclimb.py modes HEQ (FBW violations, then in-scope u* = none / EQ fallbacks, then fallbacks) and REP (reltrace violations, then
     tail repeats + θ-changes above M inside blocks, then block fallbacks).
 - Logs: experiments/si/coarse/logs/box9/ (fbw_named, fbw_lib, fbw_rand902, rel_named, rel_lib, and the 15 re-run logs of §1).
-- Climbs (05:0xZ-05:3xZ, 30 min each; seeds 9101-9104): results in §6 when finished.
+- Climbs (05:11Z-05:41Z, 30 min each; seeds 9101-9104): 0 violations; HEQ reached 1 in-scope EQ fallback, 0 with u* = none; REP 0
+  repeats and 0 θ-changes above M in blocks.
+  - Bests: instances/box9/cl9_heq_b (n 32, 7535a99c), cl9_rep_a (n 40, 9d31fb39), cl9_rep_b (n 48, 8efbbc9e; a 37-fallback block).
+  - All re-verified (Oink zlk OK).
+- Packet: docs/si/P-N5-FBW-box9.md (Lead 05:28Z).
+
+## 7. Bridge to L-NEW box 34 (L1): the per-level count inside a frozen r = ℓ block (Lead relay 05:40Z)
+Setting: docs/new/N5-REL-box34.md §3-§6 (L-NEW succ. 14; lane PROVED, unrefereed; read, not edited). Let I be a maximal run of
+consecutive (h) states of a phase with r = ℓ ≥ 0, after a FREEZE window at ℓ. So COARSE_ℓ(Ξ) is constant on I (FREEZE (a)). w may
+change inside I. Fallbacks are allowed.
+
+**Proposition PL-I (PROVED, L-SI succ. 4; CONDITIONAL on L-NEW's Theorem FREEZE, packet P-N5-FRZ pinned 25fda0f, under review).**
+- (i) The fallback levels inside I are non-increasing and ≤ ℓ.
+- (ii) I has at most n_E fallbacks at level ℓ.
+- (iii) For M < ℓ, the level-M fallbacks of I satisfy N_M ≤ n_E(1 + D_M), with D_M ≤ (d_o − 1) + REL_M (Theorem PL, with I in place
+  of the scope run).
+- Hence I has at most n_E(1 + ℓ·d_o + REL(I)) fallbacks, and so at most n times that many fallback evictions and (L1) re-entries.
+Proof: the scope-run hypothesis "w constant" is used in §2-§3 only through Fact R (r non-increasing). On I, r = ℓ is constant, so
+Fact R is trivial there. Each remaining ingredient uses only (h) at both ends of each transition, inside a phase:
+- CLS1's induction: FBL + CLU in the case r ≤ L; the OFFGATE / NL (iii) chain in the case r > L.
+- FBW-S, FLAT-ALL, STRETCH, PL (b).
+- ABS-L's proof (P-N5-SN §8): it uses (A_j), NL (i)-(ii), CAP-1 and (h).
+All hold on I.
+- (i) follows from CLS1's induction and FBW-S (M ≤ r = ℓ).
+- (ii) FREEZE makes COARSE_ℓ(Ξ) constant on all of I, so STRETCH applies to I as one stretch.
+- (iii) is PL (a)-(c) with r = ℓ > M. □
+- Consequence: NJB (on I) gives D_M = 0. Then I has ≤ n_E(ℓ + 1) fallbacks and ≤ n·n_E(ℓ + 1) evictions, so (L1) is polynomial per
+  frozen block.
+  - So L-NEW's (L1) and my NJB are the same open piece, seen from the run side and from the fallback-level side.
+  - The residue is: absorptions at levels in (M, ℓ] inside a level-M sub-block of I.
+- DATA (frzblk.py; logs/box9/frz_*.txt; own engine path, n5.run asserted). Frozen r = ℓ blocks containing fallbacks:
+  - NAMED + pinned bests + box 9 climbs: 9 blocks, 38 fallbacks, 71 evictions, 20 (L1) re-entries (max 15 in one block).
+  - box34/lib.txt: 20 blocks, 112 fallbacks, 203 evictions, 42 (L1) re-entries.
+  - D_M = 0 in all 10 + 25 level sub-blocks. 0 failures of (i), (ii), (iii).
+- So in the data, (L1) re-entries occur (42), but the fallbacks that produce them are already bounded by n_E per level. NJB holds in
+  every frozen block seen.
+
+## 8. NJB attempt (Lead GO 05:53Z): after a rise above L, old R-vertices have no gate into F
+Data first (scratch probes, then norf.py).
+- After an in-scope fallback, 54 θ-changes above L := the last fallback level occur in NAMED + LIB. All are absorptions.
+- All 54 lie after the LAST fallback of their scope run: no fallback follows any of them.
+- In the 110 later in-scope states there is no R → F gate at all, although every one of those states has gates. r drops to ≤ L at
+  101 of them.
+So the mechanism that would violate NJ-INT / NJB (a rise above L, then another evicting fallback) never starts.
+
+**Lemma NO-RF-OLD (PROVED, L-SI succ. 4).** Let S be a scope run, k0 a fallback of S with L := M_{k0}, and t* ≤ the next fallback of
+S, with r_s > L for s ∈ [k0+1, t*]. Let j ∈ (k0, t*) be an S4a step with COARSE_L(θ_{j+1}) ≠ COARSE_L(θ_j). Then for every
+t ∈ [j+1, t*], no gate (y, z) at t has y ∈ R_j ∩ R_t and z ∈ F_t.
+Proof.
+- (A_s) for L holds on [k0+1, t*] (OFFGATE at k0 + 1, then NL (iii); R29 (c), (e)), and NL (i)-(ii) hold at its S4a steps.
+- Suppose (y, z) is such a gate. By (A_t) its level is ≤ L, so COARSE_L(Ξ_t z) = COARSE_L(b_t y) =: ζ.
+- z ∈ F_s for all s ∈ [k0+1, t]: a vertex of R_s would have to leave R before t, and there is no leave (NL (ii)). So COARSE_L(Ξ_s z) =
+  ζ on [k0+1, t] (NL (i)).
+- b_j(y) ⊴ b_t(y). If COARSE_L(b_j y) ◁_L ζ = COARSE_L(Ξ_j z), then (y, z) is a gate at j of level > L into F_j, against (A_j). So
+  COARSE_L(b_j y) = ζ ((C1), (C3)).
+- For s ∈ {j, t}, y ∈ R_s, so b_s(y) = ρ_s ⊕ θ_s with ρ_s ⊆ R_s, the route of σ_s(y) (Lemma G (b)). Hence P(b_s y) = (ρ_s ∩ V_{>c}) ⊔
+  P(θ_s), with c = c_θ.
+- z's H_s-play avoids o and stays in F_s, so P(Ξ_s z) ⊆ F_s.
+- COARSE_L = (cycle node, P ∩ V_{>L}), and COARSE_L(b_s y) = ζ = COARSE_L(Ξ_s z). So ρ_s has no vertex above max(L, rank c), and
+  P(θ_s) ∩ V_{>L} = P(Ξ_s z) ∩ V_{>L}, for s = j and s = t.
+- The right side is the same at j and t, so COARSE_L(θ_j) = COARSE_L(θ_t). With θ_j ⊴ θ_{j+1} ⊴ θ_t (R15 (a)) this gives
+  COARSE_L(θ_{j+1}) = COARSE_L(θ_j), against the choice of j. □
+**Corollary (PROVED).** In that setting, let the next fallback k = t* of S have level M_k ≥ 0. Then every non-flat switched edge at
+k is an R → F edge (FBL; FBW-S gives r_k ≥ M_k ≥ 0). Its tail entered R after j: y ∈ R_k ∖ R_j.
+- So NJ-INT, and hence NJB, reduce to one statement. CONJECTURE ENT: at such a fallback, no R → F gate has a tail that entered R
+  after a θ-change above L in (k0, k).
+- What an entrant tail must satisfy (PROVED by the same computation, with Z := P(Ξ_t z) ∩ V_{>L}): COARSE_L(b(y)) is constant from
+  j to t, across y's entry into R. From its entry step e onward, COARSE_L(θ) already equals (c, Z). So the entrant arrives only after
+  θ has finished rising above L, and its route carries no vertex above L.
+- DATA (norf.py; logs/box9/norf_*.txt): NAMED + pinned + climbs 12 rises, LIB 33 rises. States checked after a rise with r > L:
+  3 + 6. 0 violations of NO-RF-OLD or ENT, and 0 fallbacks after a rise. This data is THIN; r usually drops to ≤ L right after the rise.
+- Climbs: jclimb.py JMODE=NORF, 2 × 20 min (seeds 9201-9202, from x31_rx32 and jcl_lev_l_sc). Results in §9.
+
+## 9. NORF climbs (DATA; 06:01Z-06:21Z, 20 min each, seeds 9201-9202)
+- Fitness: (NO-RF-OLD / ENT violations + fallbacks after a rise, post-rise states checked with r > L, rises).
+- Final: (0, 21, 1) from x31_rx32 and (0, 23, 1) from jcl_lev_l_sc. Every climb step kept 0 violations and 0 fallbacks after a rise.
+- Bests pinned in experiments/si/coarse/instances/box9/. Both re-verified with xing/reverify.sh (Oink zlk OK, strategies verified):
+  - cl9_norf_a (n 32, sha1 33580f22, 35 iterations / 2 fallbacks);
+  - cl9_norf_b (n 32, a90ad304, 32 / 2).
+- Together: 44 post-rise states with r > L, 0 R → F gates (logs/box9/norf_climb.txt).
+- Reading: the climbs keep r > L for many states after a rise, but they do not produce a second fallback. Every R → F gate stays
+  absent, including entrant tails. ENT remains a CONJECTURE: 53 states checked in total, 0 failures.
+
+## 10. NJB on L-NEW's drain/refill instances, and the exact reformulation (Lead relays 05:58Z, 06:04Z)
+- DATA: x48_rt48_final (experiments/new/box28/instances) and b6_xw_n56 (experiments/n5-exhaustive/instances):
+  - 8 level blocks, 30 fallbacks, up to 12 in one block;
+  - B = 0 (no COARSE_M change inside a block), 0 tail repeats, FBW 30 fallbacks / 93 gates with 0 failures, 2 rises above L after a
+    fallback and no fallback after either.
+  - L-NEW's repeated same-level clusters (its §8, up to 9 at one level) lie inside one of my blocks. Its "θ rises at exactly level M"
+    between drains is a COARSE_{M−1} change, which STRETCH allows. NJB survives there.
+**Lemma MINSET (PROVED, L-SI succ. 4).** Let S be a scope run, (f_i, f_{i+1}) an interval of a level-M block with r > M on it, and
+Mn_t := {exits x ∈ F_t : COARSE_M(o ⊕ Ξ_t x) = COARSE_M(θ_t)}.
+- (a) COARSE_M(θ_t) = min over the exits x ∈ F_t of COARSE_M(o ⊕ Ξ_t x), and Mn_t ≠ ∅.
+- (b) Inside the interval, Mn only loses members, and only by absorption into R. Its members keep their COARSE_M value (NL (i)).
+- (c) COARSE_M(θ) changes inside the interval exactly when Mn becomes empty. At that step the last members are absorbed, which is
+  the absorption of PL (b).
+- (d) At a fallback f_i of the block, Mn can only gain members: by FLAT-ALL (ii)-(iii), no COARSE_M value moves, and F only grows.
+Proof.
+- (a): CAP-1 (σ̄(o) is a full Ξ-minimiser over succ(o)), H1 (σ̄(o) ∈ F) and (P2) at o. An exit in R has o on its play, and its value
+  is ⊵ θ anyway.
+- (b): NL (ii) (no leave, so F only shrinks, by entries) and NL (i) (values off R̄ frozen above M).
+- (c): an exit of Mn left in F keeps the minimum at COARSE_M(θ). Conversely, if Mn empties, the minimum over F-exits is strictly
+  above.
+- (d): as stated. □
+- So NJB ⇔ "inside a level-M block, Mn is never emptied by absorptions". |Mn| ≤ d_o, and Mn regains members only from releases at
+  the block's fallbacks.
+  - This is the fallback-level form of L-NEW's REL: an emptying needs every COARSE_M-minimal free exit to be absorbed between two
+    level-M drains.
+  - With ABS-O (a), each such absorption closes a cycle through o whose vertices above max(M, rank c) lie in P(Ξ x0).
+- Status: NJB stays a CONJECTURE.
+  - PROVED reductions: PL (to absorptions), MINSET (to emptying Mn), NO-RF-OLD (after an emptying, only entrant tails can be evicted).
+  - Nothing here rests on FREEZE. §7's PL-I does rest on it, and is CONDITIONAL on P-N5-FRZ (pinned 25fda0f).
+
+## 11. The r-drop blocks (Lead item 2): PL (c) holds for every block
+**Lemma RDROP (PROVED, L-SI succ. 4).** In a level-M block (M ≥ 0) of a scope run S, let j be the first transition of a dirty
+interval at which COARSE_M(Ξ) changes. Then r_j > M. So every interval whose states all have r ≤ M is clean.
+Proof. By PL (b), lev(θ_j, θ_{j+1}) = O_j > M. In S, w_{j+1} = w_j, so θ_j ◁ θ_{j+1} ⊴ w_j (R15 (a), XW). (C5) then gives
+lev(θ_j, θ_{j+1}) ≤ lev(θ_j, w_j) = r_j. □
+**Theorem PL (c′) (PROVED).** For EVERY level-M block of a scope run (M ≥ 0), D_M ≤ (d_o − 1) + REL_M, hence N_M ≤ n_E·(d_o + REL_M).
+The hypothesis "r > M on the block" is not needed.
+Proof.
+- Fact R makes r non-increasing on S. Let P be the maximal prefix of [f_1, f_N] on which r > M.
+- By RDROP, every dirty interval has its first break inside P. Each such break is an absorption (PL (b)), and distinct dirty
+  intervals give distinct absorptions.
+- On P, CLS1's (A)-chain and NL (ii) hold, so no exit leaves R at an S4a step of P.
+- N_x (the number of exits in R) rises by 1 at each absorption. It falls only at the block's fallbacks inside P, by at most REL_M in
+  total. Under H1 (scope), N_x ≤ d_o − 1.
+- Hence the absorptions in P number ≤ (d_o − 1) + REL_M. This needs neither ABS-L nor r > M after P. □
+- Consequence: Corollary PL-S holds for every scope run: #fallbacks at levels ≥ 0 ≤ n_E·(n·d_o + REL(S)). The OPEN item
+  "r-drop blocks" (§4, P-N5-FBW §6) is CLOSED. Not in the frozen packet; for a fixes file if the referees want it.
+- DATA consistency: 6 / 13 / 1 r-drop blocks (NAMED / LIB / climbs), all with B = 0 (§3, §5).
+
+## 12. ENT, time-boxed attempt (Lead 06:34Z): outcome (b), the exact obstruction and the shape of a violation
+Setting. S is a scope run, k0 a fallback of S with L := M_{k0} ≥ 0, and j ∈ (k0, k) the S4a step where θ first changes above L
+(Mn empties, §10). k is the next fallback of S, and r > L on [k0+1, k]. v_L is the vertex of rank L, and β is the rank-L bit of §4
+(good / bad for Even).
+- By CLS1 (R29 (f)), M_k ≤ L always. The Lead's suggested angle (switched levels at k are ≤ L = M_{k0}) therefore holds, but it does
+  not by itself help the per-level count. A violation of NJB needs the next fallback k to have level EXACTLY L.
+- If M_k < L, the block of level L ends at k0 and the rise is not inside it. Per-level count PL then charges the interval to no block
+  of level L.
+**Lemma ENT-SHAPE (PROVED, L-SI succ. 4).** Suppose M_k = L. Let (y, z) be a level-L gate at k with y ∈ R_k and z ∈ F_k (it exists by
+FBL and R25 FB step (2)). Then:
+- (1) y entered R after j (NO-RF-OLD), with COARSE_L(b(y)) = (c, Z) constant on [k0+1, k] and no vertex above L on its route (§8).
+- (2) β(b_t y) is bad for all t ∈ [k0, k]. Reason: b is non-decreasing with constant COARSE_L (FLAT-ALL (iii) across k0), and b_k(y)
+  is bad because (y, z) has level exactly L.
+- (3) y is not a level-L tail at k0. Otherwise b_{k0+1}(y) would be good (STRETCH step (3)), against (2).
+- (4) β(Ξ_{k0} z) is bad, and β(Ξ_k z) is good. Reason: COARSE_L(Ξ z) is frozen on [k0, k] (OFF at k0, NL (i) after). If z had been
+  good at k0, (y, z) would have been a level-L gate at k0, making y a level-L tail at k0, against (3). So z's honest value rises at
+  level EXACTLY L at some S4a step in (k0, k), while z stays in F.
+- (5) That rise of an F-vertex at level L needs a switch of level exactly L on z's F-play at that step. The gate is into F, of
+  level ≤ L by (A), and U-loc bounds every other change by L.
+Proof: each item is shown inline above from the cited lemmas. □
+- The step that fails. Nothing proved so far forbids an F → F switch of level exactly L inside the interval. (A) allows level L into
+  F, and NL (i) freezes only above L. So the chain "Mn empties (rise above L) → an entrant y with a frozen-bad rank-L bit → its F-target
+  z gains rank L → next fallback at level L" is not excluded.
+- What a counterexample must contain (for L-RED; all inside one scope run, in-phase, (h) throughout, w constant):
+  - (i) a level-L fallback k0;
+  - (ii) the full absorption of Mn (every COARSE_L-minimal free exit absorbed at S4a steps), raising θ above L while r stays > L;
+  - (iii) after that, an F-vertex z whose play gains (or loses) v_L at an S4a step through an F → F switch of level L;
+  - (iv) a vertex y that enters R after (ii) with an edge to z, whose successor value has the same COARSE_L as z's and the bad rank-L
+    bit;
+  - (v) a second fallback at level L, with (y, z) a level-L gate.
+  - DATA: no instance has even (ii) followed by any fallback (§8-§9: 54 + 44 post-rise states, 0 R → F gates).
+- Next (per the Lead's instruction): the r-drop blocks, already CLOSED in §11. So the per-level count has exactly one open piece, the
+  chain above.
+- DATA for step (iii) (ffprobe.py; logs/box9/ffprobe.txt; NAMED + pinned + climbs + LIB): Even switches at S4a steps after an in-scope
+  fallback, by kind and by level relative to L.
+  - F → F: 1,451 at level = L, 1,968 below.
+  - F → R̄: 337 at = L, 2,026 below, 73 above.
+  - R → R̄: 1 at = L, 273 below, 14 above.
+  - R → F: 2 at = L, 15 below.
+  - So (iii) is common, and the obstruction is not (iii). The only ingredient never observed is (ii) followed by any later fallback
+    in the same scope run. L-RED's target is a scope run that empties Mn and still reaches another level-L drain.

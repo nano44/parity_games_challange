@@ -1,0 +1,8 @@
+FBW_case_b: 1
+FBW_gates: 1
+FBW_l>delta: 1
+POPT_single_switch_checks: 8
+even_fallbacks: 1
+runs: 3
+transitions: 10
+RESULT OK violations=0

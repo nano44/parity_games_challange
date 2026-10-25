@@ -1,0 +1,15 @@
+start 0
+90 2
+102 3
+114 4
+3124 7
+3162 66
+3167 73
+3293 85
+3322 96
+3608 116
+3616 136
+3725 137
+3828 167
+TOTALS {'runs': 16000, 'transitions': 43756, 'odd_fallbacks': 132, 'even_fallbacks': 11834, 'POPT_single_switch_checks': 76251, 'FBW_gates': 16257, 'FBW_case_b': 11161, 'FBW_l>delta': 11161, 'FBW_tight_l>=0': 4739}
+RESULT OK violations 0

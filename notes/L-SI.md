@@ -15,12 +15,29 @@ fbw.py, reltrace.py, levcheck.py, jclimb.py modes HEQ / REP. Logs: experiments/s
 ### DATA
 - FBW: named 272 fb / 837 gates, library 694 / 2,384, random 141 fb: 0 failures. In-scope u* = none fallbacks: 0 anywhere.
 - reltrace: 75 + 169 blocks; COARSE_M breaks inside blocks 0, gates above M inside blocks 0, tail repeats per block 0.
+- Lemma ABS-O (PROVED): the cycle an absorption closes has, above max(g, rank c), only vertices of P(Ξ_j x0); so rank o ≤ max(g, rank c).
+  DEAD END as a route to NJB: every in-scope R→F gate has level >= rank o when rank o > rank c, so no block has M < rank o (0 / 778).
+- CONJECTURE NJ-INT (stronger than NJB): no θ-change above L = M_k0 between consecutive in-scope fallbacks with r > L. DATA 562 / 0.
+- Packet P-N5-FBW FROZEN: docs/si/P-N5-FBW-box9.md, sha1 88337bd6, l-si cd42f088; Lead PINNED at trunk e69772b, with both referees.
+  NEVER edit it; referee items go to docs/si/P-N5-FBW-fixes-box9.md.
+- §7 (cda41216): PL-I, the bridge to L-NEW box 34 (L1). PL holds inside frozen r = ℓ blocks without w constant; NJB => (L1) polynomial.
+- §8: Lemma NO-RF-OLD (PROVED): after a θ-change above L in an interval with r > L, vertices already in R have no gate into F.
+  So the next evicting fallback's tails are all entrants (CONJECTURE ENT). DATA: 54 rises above L after a fallback, all after the
+  run's last fallback; NORF climbs (seeds 9201/9202, 20 min each, from 06:01Z) reached 16 / 23 post-rise states, 0 violations.
+- §10 (dd5fa250): NJB holds on L-NEW's x48_rt48_final / b6_xw_n56. Lemma MINSET (PROVED): NJB <=> the set Mn of COARSE_M-minimal
+  free exits is never emptied by absorptions inside a level-M block (Mn gains members only by releases at the block's fallbacks).
+- §11 (bb8ed9ed): Lemma RDROP (a first break needs r > M, by (C5)); PL (c′): D_M ≤ d_o − 1 + REL_M for EVERY block. The r-drop
+  blocks are CLOSED, and PL-S holds for every scope run. Not in the frozen packet; for its fixes file if wanted.
+- PL-I (§7) is CONDITIONAL on P-N5-FRZ (pinned 25fda0f).
+- §12 (8bb11345, 23ceaa0d): ENT attempt (60-minute time-box), outcome (b). Lemma ENT-SHAPE: a violation needs the next fallback at
+  level exactly L, an entrant y with a frozen-bad rank-L bit, and its F-target z flipping rank L via an F→F level-L switch (common in
+  data: 1,451). The never-seen ingredient is the emptying of Mn followed by any later fallback in the run. The shape went to L-RED via
+  the Lead.
 ### NEXT
-1. CONJECTURE NJB (no absorption above M strictly inside a level-M block) => ≤ n_E fallbacks per level (second half of (CL-S)).
-   Attack: an exit released at a level-M fallback, re-absorbed above M later in the block, needs its value to drop below the
-   minimiser's at a level > M; use FLAT-ALL (ii) + ONE-RISE on o's exits.
-2. Blocks where r drops to M (NL / ABS-L unavailable); level −1 fallbacks.
-3. If the Lead asks: a packet P-N5-FBW (FBW, FBW-S, CLS2, FLAT-ALL, STRETCH, PL). NEVER edit P-N5-CLS / fixes files.
+1. Prove ENT / MINSET non-emptying (NJB). Idea not yet working: absorbing the last member of Mn needs F→R̄ entry gates of level ≤ M
+   (ABS-O (a)); relate that to the drain at f_i (FBL: no F→R̄ gate at a fallback).
+2. Level −1 fallbacks per scope run.
+3. Record the NORF climb results in box 9 §9 (outputs in the scratchpad: climb/norf_*.pg); pin the bests if useful.
 
 ## Resume point (successor 3, box 8; superseded by box 9; PARKED 2026-10-25 ~02:35Z at ~500k context after freezing P-N5-CLS; LANE-RESTART step 1)
 IN FLIGHT: nothing running (all climbs finished; outputs in experiments/si/xing/out/jclimb/, local only).
@@ -241,6 +258,8 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 - NOT opened: Ye 2011, Math. Oper. Res. 36(4):593-603, DOI 10.1287/moor.1110.0516 (cited only through Scherrer Thm 1).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- (box 9, succ. 4) ABS-O as a route to NJB: vacuous, since every block has M >= rank o when o counts in θ's path set (abso.py fb_hi = 0 of 778;
+  obstruction: R→F gates differ at o). docs/si/N5-C-box9.md §3b.
 - (successor 3, box 8) OG′ ("gates into F at k+1 never exceed MF_k = the max level of the gates INTO F at k") FALSE:
   experiments/red/xing/instances/x31_re24.pg (sha1 49eaf50e, 𝒞^1O), transition 1 -> 2: MF_1 = -1, while gate (4, 8) at state 2
   has level 22. At state 1, 4 and 8 are in R (the level-22 gate is (8, 14), R -> R); at the arena step R collapses from 21 vertices
