@@ -1,7 +1,10 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Resume point (successor 3, box 8; Lead GO 00:18Z 2026-10-25; R25 LANDED trunk 40ef7ed from P-N5-FB)
+## Resume point (successor 3, box 8; PARKED 2026-10-25 ~01:35Z at ~450k context; LANE-RESTART step 1)
+IN FLIGHT: nothing running (all climbs finished; outputs in experiments/si/xing/out/jclimb/, local only).
+NEEDS: none. Lead pinned P-N5-FB (R25 landed trunk 40ef7ed); fixes1 8548c3fc / fixes2 4d5b3716 are cited by sha1: never edit them.
+(Box 8 header: Lead GO 00:18Z 2026-10-25; R25 LANDED trunk 40ef7ed from P-N5-FB.)
 Box 8 write-up: docs/si/N5-C-box8.md. Code: experiments/si/coarse/cls2.py, rfinv.py (+ jclimb modes CLS2, RF).
 ### DONE (PROVED by L-SI succ. 3, unrefereed)
 - OFFGATE (gates into F never exceed M_k, at every in-phase transition incl. jumps); CN (in-phase cycle-node switches have level -1);
