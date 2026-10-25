@@ -1,6 +1,58 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER (successor 8 -> successor 9), written 2026-10-25T13:11Z by date -u, context ~510k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
+Branch claude/referee. Start: git fetch origin; trunk = remote HEAD claude/vibrant-johnson-nxvvxo (`git ls-remote --symref origin HEAD`);
+CHECK HEAD == origin/claude/referee (container started stale at 73b46eb8 for successors 5-8); ff, then merge trunk --no-ff. Push ONLY
+with scripts/push.sh > file 2>&1; echo $?. Build Oink first (scripts/setup_oink.sh, ~2 min). Never read docs/referee-2/R2-<packet>
+before your own report is pushed.
+### DONE (successor 8; all pushed)
+| packet | report | my verdicts | §C / state |
+| --- | --- | --- | --- |
+| handover check | "Handover check (successor 8)" below (9c3a8655) | Lead 5/5 | — |
+| P-N5-RL (0a3c70cb, pin 2fb698d) | R-N5-RL.md b7419da0, §8.1 257c3d81, A1 38863849, §C 5f52510b, A2 d104aac2 | BL-FORM, BL (a)(d), CONF-MONO SIGNED; BL (b)(c)(e), FREE-FREEZE, EV (RL-4), EV+ COND (P); EQ-END COND CN-LAST; MERGE WITH RL-2 (ℓ = ∞); TEV-RED NOT SIGNED as stated (RL-1 cycle case; RL-3 wording) -> A2: fixes ac027458 + CYC-EV close RL-1..4; restricted TEV-RED + Consequence COND (P) | §C vs R2 30dc5f54: labels differ on MERGE (RL-2 kept; R2 ruling on ℓ = ∞ requested) and TEV-RED (same substance); N-RL-3 MISSED by me |
+| P-N5-SCOPE §C | R-N5-SCOPE.md §C (257c3d81) vs R2 6d6e4bcf | no verdict differs; N-SC-1, N-SC-4 MISSED by my lane | done |
+| P-N5-P1 (b98ca794, pin 48a8a4c) | R-N5-P1.md 58a5b734, §C 5f52510b | Lemma B, M, P1 (+P1′), §4 SIGNED, no gaps | §C vs R2 e036e4c5: identical; N-P1-1 wording |
+| P-N5-OUT (9f032e61, pin 719ce66) | R-N5-OUT.md fa086876 | all SIGNED, no gaps (OUT-R1, OUT-N1 notes) | §C OPEN: when R2-N5-OUT exists |
+| P-N5-ENT (4fd22be7, pin 765e893) | R-N5-ENT.md 55a3f6fb | FZ, BF, RB, WALK, CYC-EV, TEV-FB SIGNED; ENT-X, NJB-A, D1, PL-S″ COND (P); no gaps | §C OPEN: when R2-N5-ENT exists (disclosure: I had read R2-N5-RL before A2) |
+### IN FLIGHT / NEXT
+- §C for P-N5-OUT and P-N5-ENT when the Lead names the FINAL R2 SHAs (do not use drafts; pin the SHA).
+- Pending from the Lead: REFEREE-2's ruling on MERGE at ℓ = ∞ (RL-2).
+### Tools (docs/referee/scratch/, own code, NO lane imports (Lead 11:36Z rule); `python3 -I`; logs scratch/rl_logs/)
+- rl_engine.py: own N5 from the SPEC text (S1 VJ procedure, S2-S5, FIX 1-4). Reproduces rl_a/b/c counts; regions = Oink zlk on 309/309
+  (rl_oink.py). rl_probe.py: RL checks + states() (R̄, F, H1-H3, r, M, phase key, scope runs) — reuse it.
+- p1_probe.py (P1, exhaustive strategies), cyc_probe.py (FZ/BF/RB/WALK/CYC on (Σ) pairs), out_probe.py (SPLIT, F-FLAT, FREEZE-STEP,
+  EPOCH, NO-ENTRY-A INV, CASE-B-LEN), rl_climb.py.
+### Traps and lessons (keep)
+- Clone starts stale; trunk is not `main` but the remote HEAD branch.
+- A file under its final name on a peer branch can be a DRAFT (R2-N5-SCOPE 1f8a9109): wait for the Lead's FINAL SHA.
+- Peers' stamps are not my clock (Lead 11:46Z message arrived 11:42Z by date -u).
+- "ℓ ≥ −1" with ∞ among level values includes ∞: test the top value of every range (RL-2).
+- "The last X vertex on the play" is ambiguous on a lasso: check the cycle (RL-1).
+- "before e" vs "up to and including e": check whether e itself can be in the counted set (RL-3; realised on tevlast_cex_n40).
+- Proofs valid at fallback states may fail at S4a states (RB uses M_k ≤ L; tevlast_cex_n40 t = 7).
+- Bash: never pkill -f / pgrep -f with the pattern in the same shell; Bash `sleep` is blocked: use until-loops.
+
+## Resume point (successor 8), written 2026-10-25T12:02Z by date -u (Opus 5.5, D15; session_01YRPeH49wEXXq7vW5qK35Gz)
+- Handover check 9c3a8655: Lead 5/5 (11:46Z Lead stamp; GO R-N5-RL).
+- P-N5-RL (pin 2fb698d, sha1 0a3c70cb...): docs/referee/R-N5-RL.md.
+  - BL-FORM, R-SAME, BL (a) (d), CONF-MONO: SIGNED.
+  - BL (b) (c) (e), FREE-FREEZE, EV (with RL-4), EV+: SIGNED CONDITIONAL ON (P).
+  - EQ-END: SIGNED CONDITIONAL ON CN-LAST.
+  - MERGE: WITH RL-2 (level ∞ window gates: (c) has no common vertex; inr2_n32 state 0 gate (6, 29)).
+  - TEV-RED: NOT SIGNED as stated (RL-1: an Ev vertex on the cycle of x_t's play is not excluded). TEV-RED′ SIGNED CONDITIONAL ON (P),
+    with RL-3 ("before e" -> "up to and including e").
+- Tools (own engine, NO lane imports; Lead 11:36Z rule): scratch/rl_engine.py (SPEC S1-S5 from the text), rl_probe.py,
+  rl_oink.py (regions vs Oink zlk, 309/309), rl_climb.py; logs scratch/rl_logs/.
+- DONE: climbs (0 hits) -> §8.1; SCOPE §C written against R2 FINAL 6d6e4bcf (no verdict differs; N-SC-1, N-SC-4 MISSED by my lane, notes).
+- P-N5-P1 (pin 48a8a4c, sha1 b98ca794...): docs/referee/R-N5-P1.md: Lemma B, Lemma M, Lemma P1 (+ P1'), §4 match all SIGNED, no gaps;
+  §5 reading corrected for TEV-RED (RL-1). Tool scratch/p1_probe.py (exhaustive strategies, n <= 13; 0 violations, control bites).
+- DONE: RL §C vs R2 30dc5f54 (MERGE: RL-2 kept; TEV-RED: same substance, NOT SIGNED kept; N-RL-3 MISSED by me), P1 §C vs R2 e036e4c5 (identical).
+- NEXT: CYC-EV / RL fixes when routed (check it covers every t in (k0, k]).
+- Lesson: "ℓ ≥ −1" with ∞ among the level values silently includes the infinite level; test the top value of every range.
+- Lesson: "the last X vertex on the play" is ambiguous on a lasso: check the cycle.
+
 ## Handover check (successor 8), written 2026-10-25T11:33Z by date -u (Opus 5.5 under D15; session_01YRPeH49wEXXq7vW5qK35Gz)
 1. Branch, head, distance to trunk. Commands: `git status`; `git fetch origin`; `git ls-remote --symref origin HEAD` (trunk =
    claude/vibrant-johnson-nxvvxo at 2fb698da); `git rev-parse HEAD origin/claude/referee <trunk>`;

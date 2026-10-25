@@ -1,0 +1,41 @@
+climb FIT=fb seed=92 n=11 iterations=191753 improvements=5 best_fitness=920.0
+BEST-INSTANCE counters: {'CLS_H1_notH2': 1, 'CLS_NH1': 4, 'CNL_control_noncycle_tail (i)=False (ii)=False (iii)=False': 5, 'CNL_level-1_Even_fallbacks': 5, 'KEY_tau_const_transitions': 16, 'NH1_caseA': 4, 'NH1_fallbacks': 4, 'RCONST_notH1_states': 7, 'SCOPE_case1': 1, 'SCOPE_scope_runs': 1, 'WCH_H2_states': 5, 'fallbacks': 5, 'phases': 4, 'runs': 4, 'transitions': 19}
+BEST-INSTANCE maxima: {'max_NH1_fallbacks_per_phase': 4, 'max_caseA_fallbacks_per_notH1_run': 4, 'max_fallbacks_per_crossing_free_run': 4, 'max_h_runs_per_phase': 1, 'max_out_of_SN_fallbacks_per_phase': 1, 'max_scope_runs_per_phase': 1}
+CLS_END_notH2: 76
+CLS_H1_notH2: 34262
+CLS_IN: 1862
+CLS_NH1: 251064
+CLS_OTHER: 90
+CNL_control_noncycle_tail (i)=False (ii)=False (iii)=False: 265933
+CNL_control_noncycle_tail (i)=False (ii)=False (iii)=True: 12900
+CNL_hyp_followed_by_stop: 15524
+CNL_hyp_followed_by_tau_change: 185
+CNL_hypothesis_cases: 15709
+CNL_level-1_Even_fallbacks: 294542
+FBINT_nontame: 239
+KEY_tau_const_transitions: 1770529
+NH1_caseA: 248869
+NH1_caseB: 2195
+NH1_fallbacks: 251064
+RCONST_notH1_states: 924484
+SCOPE_case1: 70874
+SCOPE_case2: 1012
+SCOPE_scope_runs: 71886
+WCH_H2_states: 876937
+WCH_at_crossings: 955
+WCH_transitions: 7740
+climb_evaluations: 191136
+fallbacks: 310681
+phases: 456645
+runs: 764544
+transitions: 2440536
+max_NH1_fallbacks_per_phase: 4
+max_WCH_per_crossing_free_interval: 2
+max_WCH_per_phase: 2
+max_caseA_fallbacks_per_notH1_run: 4
+max_fallbacks_per_crossing_free_run: 4
+max_h_runs_per_phase: 2
+max_out_of_SN_fallbacks_per_phase: 4
+max_scope_case2_per_phase: 1
+max_scope_runs_per_phase: 2
+RESULT OK violations=0

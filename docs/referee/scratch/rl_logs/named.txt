@@ -1,0 +1,35 @@
+BLF_edges                23968
+BL_F1_chk                3760
+BL_blocked_on_x0play     335
+BL_d_exits               983
+BL_fb                    376
+BL_step0_chk             1871
+EQ_fb_after              5
+EQ_runs                  80
+EQ_runs_eq               61
+FF_chk                   93125
+MG_gates                 4626
+MG_gates_levINF          50
+MG_levINF_plays_disjoint 50
+RSAME_chk                289528
+TEV_e_in_H               0
+TEV_k0                   376
+TEV_k0_A_empty           37
+TEV_k0_Ev_classc0        37
+TEV_k0_Ev_nonempty       376
+TEV_meet                 182
+TEV_meet_post            0
+TEV_states               732
+TEV_states_post          111
+games                    75
+h_states                 2345
+states                   2723
+FAILS 0
+EX ('experiments/si/orlens/instances/inr2_n32.pg', 'MG_INF_disjoint', 0, 6, 29)
+EX ('experiments/si/orlens/instances/inr2_n32.pg', 'MG_INF_disjoint', 0, 8, 1)
+EX ('experiments/si/orlens/instances/inr2_n32.pg', 'MG_INF_disjoint', 0, 19, 29)
+EX ('experiments/si/orlens/instances/inr2_n32.pg', 'MG_INF_disjoint', 0, 20, 16)
+EX ('experiments/si/orlens/instances/inr2_n32.pg', 'MG_INF_disjoint', 0, 23, 11)
+EX ('experiments/si/orlens/instances/inr2_n32.pg', 'MG_INF_disjoint', 0, 23, 29)
+EXCOUNT MG_INF_disjoint 50
+exit 0

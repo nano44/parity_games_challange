@@ -1,0 +1,16 @@
+CTRL_imp             182614
+CTRL_imp_nonopt      181895
+ENG_chk              28856
+LB_chk               200000
+LB_set_chk           65597
+LM_chk               134904
+ORD_chk              350830
+P1_impfree           2471
+S3_chk               40104
+S5_c0_in_C           8535
+S5_chk               13942
+games                2000
+imp_but_opt          719
+strategies           185085
+FAILS 0
+exit 0

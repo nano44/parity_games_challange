@@ -1,6 +1,44 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Handover check (successor 6)
+Session session_01WZRciyMqz1LNWwdFoeq2AP (Opus 5.5; D14, D15, D18, L37, L40). Written 2026-10-25 ~12:05Z (date -u).
+1. Branch claude/l-si. Commands: `git fetch origin`; `git status` showed local head 0d48da2 (the box-0 Fable head), and
+   `git rev-list --left-right --count HEAD...origin/claude/l-si` gave 0 / 4179. `git merge --ff-only origin/claude/l-si` then gave
+   head 84d11cd (successor 5's handover). `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` gave
+   0 ahead / 41 behind trunk 48a8a4c. `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` gave 5c97049 (1 ahead / 0 behind
+   before this commit). Trunk is claude/vibrant-johnson-nxvvxo (`git remote show origin` → HEAD branch); there is no `main`.
+2. Open work (from successor 5's resume point below, `ls docs/si docs/referee docs/referee-2`, and the trunk log):
+   - P-N5-RL (docs/si/P-N5-RL-box10.md, sha1 0a3c70cb; pinned trunk 2fb698d per NOW): in review. REFEREE succ. 8 is WORKING on
+     R-N5-RL (NOW roster); no R-N5-RL / R2-N5-RL file exists yet on trunk or on origin/claude/referee(-2). Next step: wait for
+     relayed items; they go to a NEW file docs/si/P-N5-RL-fixes-box10.md (does not exist yet).
+   - P-N5-P1 (docs/si/P-N5-P1-box10.md, sha1 b98ca794; pinned trunk 48a8a4c "Lead: P-N5-P1 pinned"): unrefereed. Next step: same,
+     items to docs/si/P-N5-P1-fixes-box10.md (does not exist yet).
+   - TEV / NJB = ENT: CONJECTURE. Next step (box 11 (a)): exclude TEV-RED's configuration (P-N5-RL §6 Consequence), starting with
+     the sub-case "e is an evicted tail with target f", or give the exact obstruction and an instance shape for L-RED 16.
+   - Successor 5's NEXT 2 (RISE-LAST at levels < L / after r ≤ L) and NEXT 3 (two-player VJ00 Lemma 5.8, R15's G-N5T-3): not started.
+   - Nothing running (fresh container).
+3. GAPS (docs/GAPS.md row 11, read with python, last part): G-N5-TIME, major, owner L-NEW, OPEN. Update 11:51Z: R35 (P-N5-NJB +
+   fixes, fixes2; CHECKER C44) LANDED: RDROP, PL (c′), PL-S′, MINSET (survivor form), NO-RF-OLD, ENT-SHAPE (1)-(4), (5′); literal MINSET
+   (c) and ENT-SHAPE (5) NOT signed. "Open: NJB = ENT (CONJECTURE; lane reductions EV/EV+/TEV-RED in review as P-N5-RL), REL(S), level
+   −1 fallbacks, out-of-scope fallbacks (P-N5-SCOPE in review; lane NO-ENTRY-A), θ-changes per HN stretch. Lane (unrefereed): Lemma P1
+   = (P) for one-player games." L-SI owns no GAPS row.
+4. Rulings (docs/DECISIONS.md, verbatim; status from docs/DECISIONS-INDEX.md):
+   - D1 (index: active; full text docs/decisions/D001-launch-brief.md). Key lines: "A claimed polynomial algorithm is far more likely
+     to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below." and
+     "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision."
+   - D16 (index: active): "Then keep working as I told you to"
+   - D18 (index: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from
+     areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed,
+     state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open
+     problems."
+5. Traps found:
+   - `pkill -f <pattern>` run from a Bash call whose own command line contains <pattern> kills that shell (exit 144). The same
+     family as successor 5's pgrep trap. Never pkill by a pattern that is in the calling command.
+   - `git log -- <path>` on this repo did not finish within 120 s (big history); read the file itself, or use a bounded
+     `git log -n 1 <commit>`.
+   - Still live: the fresh clone's local branch is the old box-0 head (4179 behind); fetch + fast-forward before reading notes.
+
 ## Handover check (successor 5)
 Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2026-10-25 ~09:25Z (date -u).
 1. Branch claude/l-si. Commands: `git fetch origin`; `git status` (local branch was 3924 behind origin/claude/l-si);
@@ -35,44 +73,142 @@ Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2
    experiments/si/xing/out/ does NOT exist in this container (`cat .git/info/exclude` shows only the template); so never
    `git add -A`, add files by name.
 
-## Resume point (successor 5, box 10; session_018GWc3YukyLgRhrrYJdrzHm; Lead GO 09:33Z)
-- (a) DONE: docs/si/P-N5-NJB-fixes-box9.md (l-si 32c2393, sha1 6a337748): NJB-1, NJB-2, NJB-L1 (the climb data were summed under one name).
-  R2-N5-NJB (referee-2 8681e3f2) arrived later: docs/si/P-N5-NJB-fixes2-box9.md (G-NJB-1 survivor form SUPERSEDES part 1's (b), (c)
-  texts; N-NJB-1 withdrawn; concordance). Joint: (5) NOT SIGNED, (5′) and survivor (c) signed by both.
-- (b) docs/si/N5-RL-box10.md. Angle: Even's nominal one-player game G_τ (Odd fixed to e* = τ(o)) against the robust Ξ.
-  - BLOCKED edge = W-improving but not a gate.
-  - PROVED:
-    - BL-FORM (blocked edges are F → R̄, in the reverse window, cycle node c);
-    - R-SAME; CONF-MONO; the merge-point form of a window gate;
-    - EQ-END (with L-NEW's CN-LAST: the EQ branch of RISE-LAST is harmless).
-  - PROVED CONDITIONAL on (P) (VJ00 Lemma 5.8 "1 ⇒ 2", R18's premise):
-    - BL (a THR fallback has a blocked edge; free values = confined optimum; threat deficient);
-    - FREE-FREEZE (after a THR fallback k0, a free vertex whose play stays in F_k0 is frozen exactly for the rest of the phase);
-    - EV and EV+ (in an NJB violation both z's play and the new threat's play meet Ev := F_{k0+1} ∖ F_k0);
-    - TEV-RED (the last Ev vertex e on the threat's play is Even, u_e = σ_k0(e) has a low route, and at the ENT fallback u_e ∈ Ev ∩ F_k).
-  - CONJECTURE TEV (after a rise the threat's play avoids Ev; with EV+ it implies NJB). DATA: 0 of 117 post-rise states.
-  - FALSE (DATA): BL-X.
-  - DATA: after a rise there is never a fallback anywhere later in the run.
-  - Scripts and logs: experiments/si/riselast/ (rlprobe, rltrace, blocked, blf, ffreeze, threv, rlclimb).
-  - Climbs rl_a/b/c (seeds 10001-10003, 40 min, done): 0 violations; best score 7 (never a window gate after a rise); bests pinned
-    and verified (Oink zlk OK).
-- Packet P-N5-RL (docs/si/P-N5-RL-box10.md, l-si 01d69ac, sha1 0a3c70cb) FROZEN, sent to the Lead 11:17Z. Never edit it; fixes go in a
-  new file.
-- Box 10b: docs/si/N5-P1-box10.md, Lemma P1 = (P) for one-player games, PROVED (L-SI succ. 5), elementary.
-  - It uses path multisets and no VJ00 lemma. It discharges R18's G-1OA-4 and P-N5-RL's condition, once signed.
-  - DATA: experiments/si/p1/p1check.py, 0 violations.
-- NEXT (for me or a successor), in order:
-  0. Lemma P1 to the referees (Lead decides packet form).
-  1. Exclude TEV-RED's residual configuration: e and u_e both evicted at k0 and both free at k; e re-routed to a frozen f of class
-     (c, A); the threat passes e after collecting B ∖ A. Natural sub-case: e an evicted tail with target f.
-  2. RISE-LAST at levels ℓ < L, or after r ≤ L (no ENT-SHAPE bit argument there).
-  3. BL makes every THR fallback need a blocked edge. Is there a count of "blocked → unblocked" events per scope run? It would be a
-     counting route that avoids NJB.
+## HANDOVER (successor 6, box 11; written 2026-10-25 ~13:50Z (date -u) at ~440k; session_01WZRciyMqz1LNWwdFoeq2AP)
+### DONE (every sha1 below was sent to the Lead, so these files are FROZEN; new text goes in NEW files)
+- docs/si/N5-TEV-box11.md (58a0b3cf): lane write-up of ENT-X.
+- docs/si/P-N5-RL-fixes-box10.md (ac027458), docs/si/P-N5-RL-fixes2-box10.md (b3e3cd93), docs/si/P-N5-P1-fixes-box10.md (83ef83b0),
+  docs/si/P-N5-RL-P1-addendum-box10.md (5c29d93d). Both referees signed CYC-EV + TEV-RED′ in their addenda (Lead 13:13Z). P1 → R36,
+  RL → R37 at CHECKER.
+- Packet P-N5-ENT docs/si/P-N5-ENT-box11.md (4fd22be7). No (P): FZ, BF, RB, WALK, CYC-EV, TEV-FB. CONDITIONAL on (P) via EV+ only:
+  ENT-X, NJB-A, D1 (D_M ≤ 1), PL-S″ (≤ 2·n·n_E fallbacks of level ≥ 0 per scope run). With P1 landed, the condition goes once ENT is
+  signed. Status when I left: with REFEREE-2 9 (Lead 13:54Z); no report seen yet.
+- docs/si/N5-STR-box11.md (c7b9c671), N5-STR2-box11.md (b6ed9476): straddle obstruction (NL's (K*) at r = L), CONJECTURE NL= (0 failures
+  in 743 steps), reading NJB ⇐ (P) ∧ NL=, and an NL= kill shape (passed to L-RED 16 by the Lead). Off the critical path (Lead agrees).
+- docs/si/N5-LV-box11.md (407c5520), N5-LV2-box11.md (94ac2469); packet P-N5-LV docs/si/P-N5-LV-box11.md (d0d797f0): LV-SHAPE;
+  LV-CN / LV-COUNT (CN-LAST); FLAT-ALL_{−1}, STRETCH_{−1}, PL_{−1}, LV-PL ≤ n·n_E·(d_o + REL(S)). The packet supersedes LV2's "+1".
+- Dead ends: TEV, TEV-LAST (docs/si/DEAD.md).
+- Scripts: experiments/si/tev/ rb.py, straddle.py, nleq.py, lvm1.py; logs in experiments/si/tev/logs/.
+### IN FLIGHT
+- Nothing running.
+### NEEDS
+- None from the owner. Lead: route P-N5-ENT and P-N5-LV to the referees; referee items go to NEW fixes files.
+### Things only I know
+- The device behind ENT-X: a free vertex that was in R at k0 and whose old successor is back in R̄ at the next fallback cannot see a
+  COARSE_L change there (Lemma RB). Otherwise that edge is a gate of level > L, which CLS2 forbids at a fallback. Walking the old route
+  to the first R̄ vertex turns this into "B ⊆ A" whenever the walked route is low. At S4a states the same gate is allowed. That is
+  exactly why TEV fails at S4a states (tevlast_cex_n40: v = 15, gate (15, 21) of level 33, re-enters R at 8) and holds at fallbacks.
+- P-N5-RL's §6 silently assumed the Ev vertex is on the pre-c path. CYC-EV fixes it at t = k only.
+- R31's level-≥0 proofs use M ≥ 0 only through "THR with u* ≠ none". That is how the level −1 count came for free. The rank-L bit (STRETCH
+  step 2, ENT-SHAPE (4)) is the part that does not transfer; lengths replace it in STRETCH, but nothing replaces it in ENT-SHAPE.
 - Traps:
-  - `pgrep -f <pattern>` inside an until-loop matches the loop's own command line and never ends. Wait on files instead.
-  - (P) is a premise, not a landed result. Label every use of BL / FREE-FREEZE as CONDITIONAL.
-  - Once a file's sha1 is sent to the Lead it is CITED and FROZEN (Lead 11:30Z). Further text goes in a NEW file. Frozen now: NJB fixes
-    6a337748, fixes2 647386fb, P-N5-RL 0a3c70cb, N5-P1-box10 5fb4f908.
+  - `pkill -f <pattern>` kills the calling shell when the pattern is in its own command line;
+  - `git log -- <path>` takes > 120 s here;
+  - several Lead messages crossed with my files: always check whether a sha1 was already sent before deciding "same file or new
+    file".
+### Update 14:01Z (date -u)
+- P-N5-LV (d0d797f0) PINNED at trunk 601df6e, queued for both referees after P-N5-NEB. Its addendum
+  docs/si/P-N5-LV-addendum-box11.md (a15a8871, l-si 84974fe) holds the NL= material as not to sign. The (β) bound is already in packet §4.
+- R36 (P-N5-P1) LANDED at 601df6e (CHECKER C45 PASS). (P) is discharged for one-player games. So P-N5-ENT's conditions go away once ENT
+  and P-N5-RL (R37) land.
+- Trap (mine): the P-N5-LV header stamp "~14:00Z" was ahead of date -u (13:48Z). Stamp headers with `date -u` at writing time, never with
+  an estimate.
+### NEXT (for a successor; Lead's queue 13:54Z)
+1. docs/si/P-N5-ENT-fixes-box11.md (NEW) when REFEREE-2 9 reports on P-N5-ENT (4fd22be7). P-N5-LV fixes (NEW file) when referee items
+   arrive.
+2. Research: REL(S) at level −1 (a length analogue of ENT-SHAPE), the u* = none THR fallbacks, and NJB / ENT (straddle; NL=).
+(older numbering below kept for context)
+1. Referee items on P-N5-ENT / P-N5-LV → NEW fixes files.
+2. Level −1: (a) u* = none THR fallbacks (r = −1; NL at L = −1 unavailable); (b) a length-based ENT-SHAPE to drop REL(S) at level −1;
+   (c) or kill "THR ⇒ M ≥ 0" via a (β)-fallback (P-N5-LV §1/§5).
+3. NL= (straddle) only if cheap; it buys a factor 2.
+
+## Resume point (successor 6, box 11; GO 12:12Z 2026-10-25; session_01WZRciyMqz1LNWwdFoeq2AP)
+Write-up: docs/si/N5-TEV-box11.md. Code: experiments/si/tev/rb.py (logs/rb_named.txt, logs/rb_lib.txt).
+### DONE
+- Theorem ENT-X (PROVED CONDITIONAL on (P), only via P-N5-RL EV+): the ENT setting is empty, i.e. TEV-RED's configuration cannot occur.
+  The device is Lemma RB + Corollary WALK (unconditional): walk e's k0-route to the first vertex back in R̄_k; the predecessor carries a gate
+  of level > L unless the walked part of the route is high; e's route after e is low (TEV-RED (2), re-proved without FREE-FREEZE).
+- Lemma CYC-EV (no (P)): in (Σ) after a rise, c's cycle at k has no Ev vertex. This fills the "first/last Ev vertex is on the pre-c path"
+  point that P-N5-RL §6 uses silently. If a referee raises it, it goes in P-N5-RL-fixes-box10.md.
+- TEV at fallback states: PROVED, no (P). Corollaries (CONDITIONAL on (P)): NJB-A, D1 (D_M ≤ 1 for every block), PL-S″ (≤ 2·n·n_E
+  fallbacks of level ≥ 0 per scope run, with no REL(S)).
+- DATA: rb.py NAMED 262 pairs / LIB 377 pairs, 0 violations of RB, BF, WALK, CLS2. The ENT setting occurs 0 times (vacuous, as before).
+### OPEN
+- The straddling interval of a block (r drops to M inside it): full NJB. TEV at S4a states. Level −1 fallbacks.
+### Since 12:34Z
+- TEV and TEV-LAST are FALSE (L-RED 16: tev_cex_n40, tevlast_cex_n40; Lead re-run). Recorded in docs/si/DEAD.md. They fail at an S4a
+  state; the walk's v = 15 carries the gate (15, 21) of level 33 and enters R at 8. TEV at fallback states stands (ENT-X needs only that).
+- docs/si/P-N5-RL-fixes-box10.md (REFEREE 8's RL-1..RL-4, TEV dead ends, k0-quantifier point). REFEREE-2's items go to fixes2.
+- Next: packet P-N5-ENT (docs/si/P-N5-ENT-box11.md), then the straddling interval.
+### Since 12:45Z (all pushed; every sha1 below was sent to the Lead, so the files are FROZEN)
+- P-N5-ENT packet 4fd22be7. RL fixes2 b3e3cd93; P1 fixes 83ef83b0; RL/P1 addendum 5c29d93d. Lead 13:13Z: both referees signed CYC-EV +
+  TEV-RED′ in addenda; P1 at CHECKER as R36, RL next as R37.
+- Straddle: N5-STR-box11 (c7b9c671: obstruction = NL's (K*) at r = L; CONJECTURE NL=, 0 failures in 743 steps; reading NJB ⇐ (P) ∧ NL=),
+  N5-STR2-box11 (b6ed9476: bypass gate (p, e*) of level L admissible at r = L; kill shape for L-RED). Off the critical path (Lead agrees).
+- Level −1 (Lead GO 13:13Z): docs/si/N5-LV-box11.md. LV-SHAPE (PROVED): an in-scope THR M = −1 fallback has only (α) F→F own-cycle-node
+  gates, (γ) F→R̄ at y = c (r = −1 only), or (β) R→F level −1 gates (need rank o < rank c). LV-CN (CONDITIONAL on CN-LAST): no (β) ⇒ the
+  fallback is the phase's last transition. DATA: 1,032 THR in scope, all M ≥ 0; 0 with u* = none.
+- docs/si/N5-LV2-box11.md (13:50Z): R31's FLAT-ALL uses M ≥ 0 only to get THR u* ≠ none, so it holds at level −1 with r ≥ 0; STRETCH_{−1}
+  (PROVED: ≤ n repeats per tail per constant-COARSE_{−1} stretch, lengths). READING LV-PL: level −1 THR fallbacks with r ≥ 0 per scope
+  run ≤ n·n_E·(d_o + 1 + REL(S)). OPEN: u* = none fallbacks (r = −1), a length-based ENT-SHAPE (to drop REL at level −1).
+### NEXT (for a successor)
+0. Turn LV-PL into a packet: re-prove FLAT-ALL / PL (a)-(b) / RDROP / PL (c′) at M = −1 line by line (U-loc at L = −1 first).
+1. "THR ⇒ M ≥ 0" in scope: exclude a (β)-fallback (N5-LV §3 kill shape), or count (β)-fallbacks per scope run (needs a level −1 STRETCH /
+   FLAT-ALL).
+2. If L-RED kills RB / WALK / ENT-X, re-examine §2 of P-N5-ENT first (Lemma BF's "v not on its successor's pre-c path").
+
+## Resume point (successor 5, box 10; PARKED 2026-10-25 ~11:50Z per Lead 11:44Z; LANE-RESTART step 1; session_018GWc3YukyLgRhrrYJdrzHm)
+Handover check 6be8831 (Lead 5/5). Write-ups: docs/si/N5-RL-box10.md (box 10 b), docs/si/N5-P1-box10.md (box 10b). Code:
+experiments/si/riselast/ (rlprobe, rltrace, blocked, blf, ffreeze, threv, rlclimb; logs/; instances/rl_{a,b,c}.pg) and
+experiments/si/p1/ (p1check.py; logs/).
+### DONE (all sha1s cited to the Lead, so FROZEN: further text goes in NEW files)
+- (a) P-N5-NJB fixes:
+  - part 1: docs/si/P-N5-NJB-fixes-box9.md, sha1 6a337748 (NJB-1, NJB-2, NJB-L1);
+  - part 2: docs/si/P-N5-NJB-fixes2-box9.md, sha1 647386fb (G-NJB-1 survivor form, which supersedes part 1's (b) and (c) texts;
+    N-NJB-1 withdrawn; (5′) with both branches; concordance).
+  - Both referees' §Cs agree. R35 (NJB) cites 647386fb, at CHECKER C44 (Lead 11:30Z).
+- Packet P-N5-RL: docs/si/P-N5-RL-box10.md (l-si 01d69ac), sha1 0a3c70cb. Unrefereed; the Lead routes it.
+  - PROVED: BL-FORM (+ R-SAME), BL (a) and (d), CONF-MONO, MERGE.
+  - CONDITIONAL on (P): BL (b), (c), (e), FREE-FREEZE, EV, EV+, TEV-RED.
+  - EQ-END is CONDITIONAL on CN-LAST (P-N5-SCOPE §6, in review).
+  - Not to sign: TEV, RISE-LAST, NJB / ENT, and BL-X (FALSE).
+- Packet P-N5-P1: docs/si/P-N5-P1-box10.md (l-si 6ba9a69), sha1 b98ca794. Lemma P1 = (P) for one-player games, PROVED (L-SI succ. 5),
+  unrefereed.
+  - Contents: Lemma B (the set/multiset bridge), Lemma M, Steps 1-6, the hypothesis match with R18 (§4), and a READING on what it
+    discharges (R18 G-1OA-4; P-N5-RL's conditional items; NOT the two-player G-N5T-3).
+  - DATA: 0 violations over 136,286 strategies.
+### IN FLIGHT
+- Nothing running. Climbs finished. The scratchpad is session-local.
+### NEEDS
+- None from the owner. The Lead routes P-N5-RL and P-N5-P1 to both referees. L-RED 16 has TEV and the one configuration (TEV-RED) as
+  its item (5).
+### Things only I know
+- The angle that worked: inside a phase Odd is fixed (e* = τ(o)), so Even plays a one-player game G_τ.
+  - W are the nominal values and Ξ the robust ones. S4a = nominal optimisation restricted to robust gates.
+  - A fallback = the gated optimisation is stuck. A blocked edge is W-improving but not a gate, and it always runs F → R̄.
+  - Odd's side does the work in BL: if σ_k were nominally optimal, then (o, x0) ∈ Iτ and S4b would move τ.
+- The free values at a THR fallback are Even's optimum CONFINED to F (BL (c)). So after the fallback, the only free values that can
+  move are those whose play passes through R̄_k0 (FREE-FREEZE). Every NJB reduction comes from this.
+- Remaining configuration for NJB (TEV-RED (5)), at the second fallback k:
+  - e and u_e = σ_k0(e) are both evicted at k0 and both free at k;
+  - e is re-routed to a frozen f ∈ F_k0 of class (c, A);
+  - the threat collects B ∖ A before e.
+  - Natural sub-case: e is an evicted TAIL with target f. Not attempted yet.
+- The BL climbs (score = window gate + blocked edge + no W-improving gate after a rise) stalled at 7. A blocked edge is always present
+  after a rise; a window gate never appears. So the TEV / ENT side is the obstruction, not the blocked-edge side.
+- Lemma P1's device: path MULTISETS make prefixing monotone (sets are not: x on top of P Δ P′). The referees will check Lemma B.
+- Process trap: once a sha1 is sent, the file is frozen (Lead 11:30Z). I had to make fixes2 additive once (8ceee866 → 647386fb).
+- Script traps:
+  - `pgrep -f pattern` inside an until-loop matches the loop's own command line and never exits. Wait on files.
+  - experiments/si/xing/reverify.sh writes to xing/out/, which is not ignored in a fresh container. Write solutions to the scratchpad
+    instead (as in riselast/logs/climb_bests_verify.txt).
+### NEXT (for a successor)
+1. Exclude TEV-RED's configuration, starting with the sub-case "e is an evicted tail with target f". Or take L-RED 16's counterexample
+   if one lands.
+2. RISE-LAST at levels ℓ < L, or after r ≤ L (no ENT-SHAPE bit argument there).
+3. The two-player VJ00 Lemma 5.8 (R15's G-N5T-3). P1's Step 5 does not transfer as it stands: Odd chooses, so Step 1 fails at Odd
+   vertices.
+4. Referee items on P-N5-RL / P-N5-P1 go in NEW fixes files. Never edit the packets.
 
 ## Resume point (successor 4, box 9; PARKED 2026-10-25 ~07:55Z per Lead 07:10Z; LANE-RESTART step 1; session_019zCLqPUCjkJxMD4vZoJ8TA)
 Handover check 1cef5052 (Lead 5/5). Box 9 write-up: docs/si/N5-C-box9.md §1-§13. Code: experiments/si/coarse/ fbw.py, reltrace.py,
@@ -335,6 +471,7 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 - NOT opened: Ye 2011, Math. Oper. Res. 36(4):593-603, DOI 10.1287/moor.1110.0516 (cited only through Scherrer Thm 1).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- TEV / TEV-LAST (succ. 5 conjecture): FALSE, tev_cex_n40 (17078f78), tevlast_cex_n40 (ff1e9cb4); transient absorption at an S4a state.
 - (box 9, succ. 4) ABS-O as a route to NJB: vacuous, since every block has M >= rank o when o counts in θ's path set (abso.py fb_hi = 0 of 778;
   obstruction: R→F gates differ at o). docs/si/N5-C-box9.md §3b.
 - (successor 3, box 8) OG′ ("gates into F at k+1 never exceed MF_k = the max level of the gates INTO F at k") FALSE:

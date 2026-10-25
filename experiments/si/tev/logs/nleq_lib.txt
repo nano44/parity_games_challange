@@ -1,0 +1,5 @@
+TOTAL {'steps': 1348, 'r_eq_L': 385, 'r_lt_L': 963, 'nl2_fail': 4}
+   ('zcl_fb2_n32.pg', 'nl2', 28, 29, 27)
+   ('zcl_fb2_n32.pg', 'nl2', 29, 29, 27)
+   ('zcl_tp_n32.pg', 'nl2', 25, 31, 29)
+   ('zcl_tp_n32.pg', 'nl2', 26, 31, 29)

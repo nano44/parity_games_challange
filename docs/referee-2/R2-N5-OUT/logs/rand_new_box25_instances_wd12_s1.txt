@@ -1,0 +1,21 @@
+TRACE rand
+FFLAT_cases: 14
+FREEZE_H1_theta_equal_steps: 14
+FREEZE_hyp_cases_fb: 14
+HN_inphase_transitions: 14
+HN_stretches: 3
+SPLIT_b_cases: 14
+STEPK_gate_edges: 14
+TAIL_starts: 16
+TAIL_steps: 56
+breaks: 0
+fallbacks_in_stretches: 14
+fallbacks_in_stretches_that_are_crossings: 14
+inphase_fallbacks: 14
+runs: 3
+states: 24
+max_X_S: 7
+max_breaks_per_stretch: 0
+max_f_S: 7
+max_fallbacks_per_crossing_free_run: 0
+RESULT OK violations=0

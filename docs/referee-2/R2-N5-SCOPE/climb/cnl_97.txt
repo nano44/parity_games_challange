@@ -1,0 +1,15 @@
+climb FIT=cnl seed=97 n=9 iterations=289798 improvements=13 best_fitness=960.0
+BEST-INSTANCE counters: {'CNL_control_noncycle_tail (i)=False (ii)=False (iii)=False': 8, 'CNL_hyp_followed_by_tau_change': 4, 'CNL_hypothesis_cases': 4, 'CNL_level-1_Even_fallbacks': 12, 'gen_fallbacks': 13, 'gen_runs': 4, 'gen_transitions': 28}
+BEST-INSTANCE maxima: {}
+CNL_control_noncycle_tail (i)=False (ii)=False (iii)=False: 405575
+CNL_control_noncycle_tail (i)=False (ii)=False (iii)=True: 18405
+CNL_control_noncycle_tail (i)=False (ii)=True (iii)=True: 48794
+CNL_hyp_followed_by_stop: 28855
+CNL_hyp_followed_by_tau_change: 249446
+CNL_hypothesis_cases: 278301
+CNL_level-1_Even_fallbacks: 751075
+climb_evaluations: 289798
+gen_fallbacks: 1008467
+gen_runs: 1159192
+gen_transitions: 5078171
+RESULT OK violations=0

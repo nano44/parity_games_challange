@@ -109,3 +109,16 @@ Iteration tables: docs/si/RESULTS.md (generated); raw logs experiments/si/out/ (
   block only when rank o > M. That never happens: when rank o > rank c, every R -> F gate differs at o, so its level is ≥ rank o,
   and every evicting fallback has M ≥ rank o. Instance: all of them (abso.py: 0 of 778 in-scope fallbacks have
   rank o > max(M, rank c)). Obstruction: o sits below every evicting level.
+- CONJECTURE TEV (L-SI succ. 5, P-N5-RL §7 / docs/si/N5-RL-box10.md §5; "after an in-scope THR fallback k0 of level L ≥ 0, every later
+  post-rise state t with r > L on [k0+1, t] has the threat's play disjoint from Ev"), FALSE (L-RED 16, Lead re-run 12:27Z), both forms:
+  - any earlier k0: experiments/red/so/instances/tev_cex_n40.pg (sha1 17078f78; n5 27 iterations / 16 fallbacks; Oink OK). k0 = 4 (THR,
+    L = 33, r = 38, Ev = {5, 8, 12, 15}); 15 more level-33 fallbacks; at t = 23 the threat x_23 = 5 ∈ Ev. With k0 the last fallback
+    before t (19, also 18, 11) the threat avoids Ev.
+  - TEV-LAST (k0 the last fallback before t): experiments/red/so/instances/tevlast_cex_n40.pg (sha1 ff1e9cb4; n5 11 / 1; Oink zlk OK,
+    strategies verified). k0 = 3 (THR, L = 32, r = 38), Ev = {5, 9, 12, 15, 16, 24}; COARSE_32(θ) rises at 6 -> 7; at t = 7 the threat's
+    play is 5 -> 15 -> 35 -> 26 -> 28 -> 11. L-SI succ. 6 re-ran threv.py (thr_ev_rise 1, example (3, 7, 32)).
+  - Exact obstruction: an S4a state is not a fallback, so gates of level > L into R̄ are allowed there (M_7 = 33 > L). The walk of
+    docs/si/N5-TEV-box11.md (Corollary WALK) from e = 15 ends at v = 15 with the gate (15, 21) of level 33 at t = 7, and 15 enters R at 8
+    (checked). The threat through Ev is absorbed back at the next S4a step. This is the transient case predicted in N5-TEV-box11.md §5.
+  - What survives: TEV at FALLBACK states (N5-TEV-box11.md §3 Remarks, PROVED, no (P)), which is the only form NJB in the ENT setting needs
+    (Theorem ENT-X, CONDITIONAL on (P)). Neither instance has a second fallback after the rise, so NJB / ENT are not refuted.

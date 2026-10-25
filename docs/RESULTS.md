@@ -1657,6 +1657,162 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   N-TOG-1 (citation, closed).
 - TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
 
+### R35 [refereed-only] N5 on one-Odd-choice games: the per-level fallback count holds for every block (RDROP, PL (c′), PL-S′), the minimum free-exit set governs θ above a block level (MINSET, survivor form), only entrant tails can be evicted after a rise (NO-RF-OLD), and the shape a violation of the per-level conjecture must take (ENT-SHAPE (1)-(4), (5′)) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C44.md, checker 1555d239)
+- Object (packet P-N5-NJB, added at l-si 5c949ec, pinned trunk a7d85b3, unchanged during review): docs/si/P-N5-NJB-box9.md, sha1
+  f43a8823b3b50399dacb387697bdb433373ea671 (L-SI successor 4, Opus 5.5). The referees' repairs are collected by the lane in
+  docs/si/P-N5-NJB-fixes-box9.md (l-si 32c2393, sha1 6a3377482739a9dd5fdfcddc82314c9304ff94ec, L-SI successor 5: NJB-1, NJB-2, NJB-L1)
+  and docs/si/P-N5-NJB-fixes2-box9.md (l-si 90b5fb3, sha1 647386fb8f77cf9a7909bb4d0beed517e4b50e83, L-SI successor 5: G-NJB-1, which
+  supersedes part 1's (b), (c) texts; N-NJB-1 withdrawn; (5′) with both branches; concordance); both on trunk; repairs only.
+  Setting as in RESULTS R29 and R31 (scope runs, r, M_k, COARSE_L, (C1)-(C7), gates, b_k(y), THR / EQ, FBL, OFFGATE, NL, CLS1, FBW-S,
+  CLS2, FLAT-ALL, STRETCH, PL (a)-(b)) on 𝒞^1O. A BLOCK of a scope run at level M ≥ 0 is its set of fallbacks f_1 < … < f_N at level M;
+  an INTERVAL is (f_i, f_{i+1}); it is DIRTY if COARSE_M(Ξ) changes inside it; D_M := #dirty intervals; REL_M, REL(S) as in R31. For t in
+  an interval with r > M: Mn_t := {exits x ∈ F_t : COARSE_M(o ⊕ Ξ_t x) = COARSE_M(θ_t)}.
+- Claims signed (both referees "(Opus 5.5, D15)", L37):
+  (a) Lemma RDROP: the first COARSE_M(Ξ)-change j of a dirty interval of a level-M block has r_j > M. Theorem PL (c′): for every level-M
+      block of a scope run (M ≥ 0), D_M ≤ (d_o − 1) + REL_M, so N ≤ n_E(d_o + REL_M), with no hypothesis on r. Corollary PL-S′: for
+      every scope run S, the fallbacks of S at levels ≥ 0 number at most n_E(n·d_o + REL(S)) (R31's PL-S without its hypothesis).
+  (b) Lemma MINSET (a), (b), (d) and survivor (c): (a) COARSE_M(θ_t) is the minimum of COARSE_M(o ⊕ Ξ_t x) over the exits x ∈ F_t,
+      attained at σ̄_t(o); (b) a member of Mn_t that stays in F stays in Mn_{t+1} with the same COARSE_M value, and members leave Mn
+      only by entering R; (c) COARSE_M(θ) changes at t → t+1 exactly when no member of Mn_t lies in F_{t+1}, and then every member of
+      Mn_t entered R at t; (d) at a fallback of the block Mn can only gain members. The packet's literal (c) ("exactly when
+      Mn_{t+1} = ∅") is NJB itself, since Mn_{t+1} ∋ σ̄_{t+1}(o) by (a); it is NOT signed (G-NJB-1, statement; joint with NJB-1,
+      "absorbed" read as "entered R", wording; fixes2).
+  (c) Lemma NO-RF-OLD: for a fallback k0 of a scope run S with L := M_{k0}, t* ≤ the next fallback of S, r > L on [k0+1, t*], and an S4a
+      step j ∈ (k0, t*) with COARSE_L(θ_{j+1}) ≠ COARSE_L(θ_j), no gate (y, z) at t ∈ [j+1, t*] has y ∈ R_j ∩ R_t and z ∈ F_t.
+      Corollary: if t* = k is the next fallback with M_k ≥ 0, every non-flat switched edge at k is R → F with an entrant tail
+      y ∈ R_k ∖ R_j.
+  (d) Lemma ENT-SHAPE (1)-(4), (5′): with M_k = L ≥ 0 and a level-L gate (y, z) at k, y ∈ R_k, z ∈ F_k: (1) y is an entrant and
+      COARSE_L(b_t y) is constant on [k0, k]; (2) y's rank-L bit is bad on [k0, k]; (3) y was not a level-L tail at k0; (4) z has frozen
+      COARSE_L and its rank-L bit goes from bad at k0 to good at k; (5′) z's honest value rises at level exactly L at some transition s ∈ [k0, k). Either s = k0 and z ∈ R_{k0} ∩ F_{k0+1} (z
+      leaves R at the fallback), or s is an S4a step in (k0, k) with z ∈ F_s ∩ F_{s+1}. In the second case U-loc and (A_s) leave only Even
+      switches of level ≤ L on z's F-play, so the rise needs a switch of level exactly L on that play. The packet's (5) (the flip at an S4a step in (k0, k) with z ∈ F) is NOT SIGNED: z ∈ R_{k0} may be evicted at the
+      fallback k0 with the flip at k0 → k0+1 (NJB-2; hand-checked by REFEREE on experiments/si/orlens/instances/cycelim_cex_n32.pg,
+      fallback 15, L = 31, z = 7; the local configuration occurs 569 named / 1,159 library times in REFEREE's data and 278 times in
+      REFEREE-2's own N5, e.g. b6_xl2_n32 fallback 18, level 31, y = 3, z = 23). REFEREE-2's N-NJB-1 (the fallback is excluded) assumed
+      z ∈ F_{k0} and is withdrawn; it proves that branch of (5′).
+- Not signed (packet §5): CONJECTURE NJB (no COARSE_M change strictly inside a level-M block; gives ≤ n_E fallbacks per level) and
+  CONJECTURE ENT (no entrant tail at the next fallback after a rise above L); the obstruction, with §5 (iii) split into (iii-a) an F → F
+  level-L switch in (k0, k) and (iii-b) z ∈ R_{k0} evicted at k0 (fixes 6a337748).
+- Honest limits: (i) SUBCLASS 𝒞^1O. (ii) PL (c′) and PL-S′ bound fallbacks of level ≥ 0 per scope run GIVEN REL; NJB / ENT, REL(S),
+  level −1 fallbacks and the out-of-scope fallbacks are OPEN, so G-N5-TIME stays open. (iii) DATA is vacuous for the substance of
+  RDROP and PL (c′) (D_M = 0 in every block for both referees, including dirty-aimed and Mn-aimed climbs) and for NO-RF-OLD's Corollary
+  and ENT-SHAPE (0 fallbacks after a rise in both referees' data and climbs). (iv) Lane work after the pin (docs/si/N5-RL-box10.md:
+  BL, FREE-FREEZE, EV, EV+, TEV-RED, conditional on (P); CONJECTURE TEV; L-RED's CONJECTURE RISE-LAST) is not part of this entry.
+- Data (DATA, not proof; one Odd choice vertex asserted on every game): REFEREE njb_probe.py (own code): named 72 files, library 261
+  files, 6,000 random games, 0 failures; D_M = 0 in every block; Mn never emptied; random games produce no level ≥ 0 block; Oink re-runs
+  of experiments/si/coarse/instances/box9/cl9_mn_a, cl9_mn_b, cl9_norf_a, cl9_norf_b agree (n5 39/15, 41/35, 35/2, 32/2). REFEREE-2
+  (own code): 15,446 batch runs (241 library + named files and random) and 8 climbs (1.77 M runs), 0 violations; 32,871 Mn members
+  entered R in climbs, Mn never emptied; 6,687 rises in climbs, none followed by a fallback. Lead re-ran cl9_mn_a and cl9_mn_b (Oink
+  zlk OK strategies verified, one Odd choice vertex).
+- Signatures: REFEREE docs/referee/R-N5-NJB.md (referee 524d93f, successor 7; §C 5e85c70 + 0363a7b; C.7 49dc13b): RDROP, PL (c′),
+  PL-S′, NO-RF-OLD + Corollary, ENT-SHAPE (1)-(4) SIGNED; MINSET SIGNED WITH GAP NJB-1; ENT-SHAPE (5) NOT SIGNED as stated, (5′)
+  SIGNED (NJB-2); in §C accepts G-NJB-1 (missed): literal MINSET (c) NOT SIGNED, survivor (c) SIGNED. REFEREE-2
+  docs/referee-2/R2-N5-NJB.md (referee-2 45eae59, successor 7; §C 21429c9 + e65cbcd; §C.3a 16d27d1): RDROP, PL (c′), PL-S′, MINSET (a),
+  (b), (d), NO-RF-OLD + Corollary, ENT-SHAPE (1)-(4) SIGN; MINSET (c) SIGN WITH GAPS G-NJB-1 (survivor form); in §C withdraws N-NJB-1 and accepts NJB-1,
+  NJB-2: ENT-SHAPE (5) NOT SIGNED, (5′) SIGN. §C: no verdict differs after both §Cs. Joint gap map (REFEREE-2 §C.3, fixes2
+  concordance): row 1 NJB-1 + G-NJB-1 (wording + statement, closed by the survivor line); row 2 NJB-2 ((5) not signed, (5′) signed by
+  both; N-NJB-1 withdrawn).
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
+### R36 [refereed-only] The one-player premise (P) holds: in a one-player game a positional Even strategy with no improving edge is optimal (Lemma P1, via a set/multiset bridge, Lemma B), which discharges R18's G-1OA-4 (2026-10-25) — a lemma used by N5's analysis (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C45.md, checker 3667fb1c)
+- Object (packet P-N5-P1, added at l-si 6ba9a69, pinned trunk 48a8a4c, unchanged during review): docs/si/P-N5-P1-box10.md, sha1
+  b98ca7941264affe4bfe79cb72b744d2ab158e07 (L-SI successor 5, Opus 5.5). The referees' notes are collected by the lane in
+  docs/si/P-N5-P1-fixes-box10.md (l-si d2701d8, sha1 83ef83b0e3a9c2df7c76d8d6f8096564db0618bf, L-SI successor 6: N-P1-1; REFEREE's §5
+  correction) and docs/si/P-N5-RL-P1-addendum-box10.md §3 (l-si f5b39de, sha1 5c29d93d54f133edd4a8fb9e43c331067b8c6b2e: P1's joint
+  state); on trunk; repairs only.
+  Setting: SPEC S1 (VJ00 play values (c, P, ℓ) and Even's order ⊴, with lengths at cycle nodes), S2 (improving edge). A ONE-PLAYER game
+  is a game in which every non-Even vertex has one successor. V_σ is the play valuation of a positional Even strategy σ.
+- Claims signed (both referees "(Opus 5.5, D15)", L37):
+  (a) Lemma B: the extended order on path MULTISETS (lexicographic on signed multiplicity vectors, then length by the parity of the
+      cycle node) is a total order; on sets it coincides with SPEC S1's order; real play values are sets (the play is simple before its
+      first visit of the cycle node). Multisets occur only inside chains whose two ends are real values.
+  (b) Lemma M: prefixing x ⊕ · is strictly monotone in the extended order.
+  (c) Lemma P1 (Steps 1-6): if σ is a positional Even strategy of a one-player game H with no improving edge (no Even edge (x, y) with
+      V_σ(y) ▷ V_σ(σ(x))), then V_σ(v) ⊵ V_{σ′}(v) for every positional Even strategy σ′ and every vertex v. Corollary P1′: V_σ is then
+      the pointwise maximum over positional Even strategies (R17 F1's W*). The trivial cases m = 0 in Step 4 and b = 0 in Step 6 are
+      named in the fixes file (N-P1-1, wording, closed).
+  (d) Hypothesis match: R18's premise (P) ("CONDITIONAL on (P) for one-player games (G-1OA-4, open by design): VJ00 Lemma 5.8 '1 ⇒ 2',
+      used only in Lemma 1 on G[X]") and P-N5-RL §0's (P) are exactly the statement of Lemma P1 on the one-player games G[X], G_τ and
+      G_τ[F_k]. So R18's condition G-1OA-4 is discharged.
+- Reading (both referees, not signed as such): P1 discharges (P) for one-player games only. It does NOT discharge the two-player VJ00
+  Lemma 5.8 (R15's G-N5T-3). For P-N5-RL (in review) it removes the (P) condition from BL (b), (c), (e), FREE-FREEZE, EV, EV+ and
+  TEV-RED′; the packet's original TEV-RED stays NOT SIGNED as stated (RL-1 is independent of (P)); EQ-END keeps
+  its CN-LAST condition (REFEREE §5 correction).
+- Honest limits: (i) one-player games only. (ii) This entry discharges a premise of R18; it adds no bound on N5's running time.
+- Data (DATA, not proof): REFEREE p1_probe.py (own engine): 8,000 random one-player games (n ≤ 13), every positional strategy
+  enumerated, 9,083 improvement-free strategies, 0 violations of P1; control: 266,806 strategies with an improving edge are non-optimal;
+  ~2.35 M order / Lemma B / M pairs, 0 failures. REFEREE-2 (own code): 28,973 one-player games, 1,030,157 strategies, 0 violations;
+  Lemma B against SPEC S1 on 46,356,800 real-value pairs, 0 mismatches; mutation tests (a flipped odd rule; a coarse "improving" without
+  lengths) fail as expected. Lane: p1check.py, 136,286 strategies, 0 violations.
+- Signatures: REFEREE docs/referee/R-N5-P1.md (referee 58a5b73, successor 8; §C 5f52510): Lemma B (a)-(c), Lemma M, Lemma P1 (Steps 1-6)
+  and Corollary P1′, §4 hypothesis match SIGNED; no gaps. REFEREE-2 docs/referee-2/R2-N5-P1.md (referee-2 e036e4c, successor 8; §C
+  88571b0): Lemma B, Lemma M, Lemma P1, §4 SIGN; note N-P1-1. §C: no verdict differs.
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
+### R37 [refereed-only] N5 on one-Odd-choice games: blocked edges at a fallback (BL-FORM, BL), the confined optimum and the free freeze (CONF-MONO, FREE-FREEZE), the end of a scope run at θ = w (EQ-END), and where a violation of the per-level conjecture must live (EV, EV+, TEV-RED′) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C46.md, checker 2314af84)
+- Object (packet P-N5-RL, added at l-si 01d69ac, pinned trunk 2fb698d, unchanged during review): docs/si/P-N5-RL-box10.md, sha1
+  0a3c70cbf873b2e011a5a00be54d38926f7861f1 (L-SI successor 5, Opus 5.5). The referees' repairs are in docs/si/P-N5-RL-fixes-box10.md
+  (l-si 1f107bf, sha1 ac0274586a3b715d8725bc5226e3b32572edf017, L-SI successor 6: RL-1 with Lemma CYC-EV and the replacement TEV-RED,
+  RL-2, RL-3, RL-4; this file contains new proof text, signed by both referees in addenda) and docs/si/P-N5-RL-fixes2-box10.md (l-si
+  d2701d8, sha1 b3e3cd93f21cb61e019cb975afa428292a75d983, L-SI successor 6: REFEREE-2's items and the concordance) and
+  docs/si/P-N5-RL-P1-addendum-box10.md (l-si f5b39de, sha1 5c29d93d54f133edd4a8fb9e43c331067b8c6b2e, L-SI successor 6: the joint
+  verdicts; it governs where it differs from the fixes files); all on trunk. By Lead ruling (12:58Z), the CYC-EV text in fixes
+  ac027458 is not landed under this entry: CYC-EV is a to-sign item of P-N5-ENT (signed there by REFEREE, R-N5-ENT 55a3f6f).
+  Setting as in RESULTS R31 and R35 (𝒞^1O; phase; (h); THR; scope run S; gates and gate levels; M_k; COARSE_L; R̄ / R / F; b_k(y)). G_τ
+  is the one-player game "Odd fixed to τ" and G_τ[F] its restriction to a closed F; an Even edge is BLOCKED if it is W-improving and not
+  a gate. THE ENT SETTING: S a scope run, k0 < k consecutive fallbacks of S with M_{k0} = M_k = L ≥ 0, r > L on [k0+1, k], and an S4a
+  step in (k0, k) that changes COARSE_L(θ) (a RISE); Ev := F_{k0+1} ∖ F_{k0}; A, B := the parts of P(θ_{k0}), P(θ_k) in
+  H := V_{>max(L, rank c)}. (P) := for one-player games, a positional Even strategy with no improving edge is optimal (R18's premise
+  G-1OA-4; discharged by RESULTS R36).
+- Claims signed (both referees "(Opus 5.5, D15)", L37); every "CONDITIONAL on (P)" item is unconditional given RESULTS R36:
+  (a) Lemma R-SAME and Lemma BL-FORM: at a state with (h), the order of π ⊕ a against π′ ⊕ a (routes in R) is the same for a ∈ {θ, w};
+      every blocked edge (v, u) has σ_k(v) ∈ F_k, u ∈ R̄_k, π_u ⊕ θ_k ⊴ Ξ_k(σ_k v) ◁ π_u ⊕ w_k, and Ξ_k(σ_k v) has cycle node c.
+  (b) Lemma BL at an in-phase THR S4c fallback k with (h) (x0 := σ̄_k(o)): (a) σ_k is not optimal in G_τ; (d) x0 is nominally deficient,
+      and so is every free exit x with o ⊕ Ξ_k(x) ◁ w_k; and, CONDITIONAL on (P): (b) some Even edge is blocked at k; (c) on F_k,
+      W_k = Opt(G_τ[F_k]); (e) every optimal G_τ-play from x0 leaves F_k along an Even edge into R̄_k.
+  (c) Lemma CONF-MONO: for closed F′ ⊆ F, Opt(G_τ[F′]) ⊴ Opt(G_τ[F]) on F′. Lemma FREE-FREEZE (CONDITIONAL on (P)): if k0 is an
+      in-phase THR S4c fallback with (h), t > k0 a state of the same phase, z ∈ F_t and z's (σ_t, τ)-play lies in F_{k0}, then
+      Ξ_t(z) = Ξ_{k0}(z) (the packet's "(h) at t" is not needed).
+  (d) Corollary EQ-END (CONDITIONAL on CN-LAST, P-N5-SCOPE §6): if θ_t = w at a state t of a scope run S, every later state of S is EQ,
+      and S has at most one S4c fallback after t, the last transition of its phase.
+  (e) Lemma MERGE′ (packet: MERGE): for a window gate (y, z) of level −1 ≤ ℓ < ∞ at a state with (h), y's route has no vertex of
+      H := V_{>max(ℓ, rank c)}, COARSE_ℓ(Ξ z) = COARSE_ℓ(π ⊕ θ), o ∉ H, and before their first common vertex the σ-plays of z and x0
+      contain no vertex of H. The packet's range "ℓ ≥ −1" includes ∞, where it is FALSE: level-∞ window gates with disjoint plays exist,
+      e.g. experiments/si/orlens/instances/inr2_n32.pg, state 0, gate (6, 29) (RL-2, both referees).
+  (f) In the ENT setting, CONDITIONAL on (P): Proposition EV (the σ_k-play of the level-L gate target z meets Ev; with q its first Ev
+      vertex, ρ the play before q and π_q q's route at k0: A ⊆ B and B ∖ A = (ρ ∪ π_q) ∩ H; the window gate exists by RESULTS R35's
+      NO-RF-OLD Corollary, RL-4); Proposition EV+ (the σ_k-play of the new threat x_k := σ̄_k(o) also meets Ev).
+  (g) Proposition TEV-RED′ (CONDITIONAL on (P)): for t ∈ (k0, k] after the rise with x_t's σ_t-play meeting Ev and NO Ev VERTEX ON
+      THAT PLAY'S CYCLE (the added hypothesis, RL-1), with e the last Ev vertex on the play's prefix before its first visit of c, f := σ_t(e), u_e := σ_{k0}(e), B_t := P(θ_t) ∩ H: (1) e is Even, f's play lies in
+      F_{k0}, Ξ_t(f) = Ξ_{k0}(f); (2) u_e's route at k0 has no vertex in H and COARSE_L(Ξ_{k0} u_e) = COARSE_L(θ_{k0}); (3) B_t = A ⊔ (the
+      H-vertices of x_t's play up to and including e) (RL-3); (4) if u_e ∈ R̄_t, (e, u_e) is a gate of level > L at t; (5) at t = k,
+      u_e ∈ Ev ∩ F_k. Consequence (CONDITIONAL on (P), RL-3 wording, WITH the added hypothesis at t = k): if the per-level conjecture fails
+      in the ENT setting and no Ev vertex lies on the cycle of the threat's σ_k-play, then at k the threat's play passes an Even e with e and u_e both evicted at k0 and both free at k, e re-routed to a frozen f ∈ F_{k0} of class
+      (c, A), and B ∖ A on the threat's play up to and including e.
+- Not signed: the packet's TEV-RED as stated (RL-1 = G-RL-1: an Ev vertex may lie on the cycle of x_t's play, and the packet does not
+  exclude it; RL-3 = G-RL-2: "before e" is false when e ∈ H, which occurs on experiments/red/so/instances/tevlast_cex_n40.pg at
+  k0 = 3, t = 7, e = 15) and its Consequence as stated (without the hypothesis); packet §7: CONJECTURE TEV FALSE in both forms (tev_cex_n40, sha1 17078f78;
+  tevlast_cex_n40, sha1 ff1e9cb4; L-RED successor 16; Lead re-run: one Odd choice vertex, n5 27/16 and 11/1, Oink zlk OK strategies
+  verified), CONJECTURES RISE-LAST and NJB / ENT, BL-X FALSE (lane data).
+- Honest limits: (i) SUBCLASS 𝒞^1O. (ii) EV, EV+, TEV-RED′ (4)-(5) and the Consequence are about the ENT setting, which occurs in NO data
+  of either referee or the lane: they are vacuous in data and rest on their proofs. (iii) These results narrow where a violation of the per-level conjecture NJB must live;
+  NJB itself and G-N5-TIME stay OPEN. (iv) Lane work after the pin (P-N5-ENT with CYC-EV, N5-STR-box11) is not part of this entry.
+- Data (DATA, not proof; one Odd choice vertex asserted on every game): REFEREE own engine from the SPEC text: 309 library + named
+  games, agreeing with Oink zlk on all; FREE-FREEZE 93,125 + 177,919 checks, BL 376 + 526 THR fallbacks, BL-FORM 74,710 blocked edges,
+  R-SAME 944k pairs, 0 failures; the lane's climb bests rl_a / rl_b / rl_c reproduced (35/2, 33/2, 30/3); REFEREE-2 own N5: batch 566 logs / 45,680 runs and
+  climbs 1,583,748 runs, 0 violations; 168 level-∞ window gates, all with disjoint plays.
+- Signatures: REFEREE docs/referee/R-N5-RL.md (referee b7419da, successor 8; climbs 257c3d8; Addendum A1 3886384; §C 5f52510; Addendum
+  A2 d104aac on the fixes; 6d480e7 records the Lead ruling: A2's CYC-EV rows superseded for this landing): BL-FORM + R-SAME, BL (a), (d), CONF-MONO SIGNED; BL (b), (c), (e), FREE-FREEZE, EV (RL-4), EV+ SIGNED
+  CONDITIONAL ON (P); EQ-END SIGNED CONDITIONAL ON CN-LAST; MERGE SIGNED WITH GAP RL-2; TEV-RED NOT SIGNED as stated, TEV-RED′
+  SIGNED CONDITIONAL ON (P) with RL-3; A2's checks of the RL-2..4 texts stand. REFEREE-2 docs/referee-2/R2-N5-RL.md (referee-2 30dc5f5, successor 8; §C 88571b0; Addendum A db9d66a on the fixes): R-SAME,
+  BL-FORM, BL (a), (d), CONF-MONO SIGN; BL (b), (c), (e), FREE-FREEZE, EV (N-RL-2, N-RL-3), EV+ SIGN CONDITIONAL ON (P); EQ-END SIGN
+  CONDITIONAL ON CN-LAST; in §C MERGE SIGN WITH GAP RL-2 (missed) and TEV-RED NOT SIGNED as stated, TEV-RED′ SIGN CONDITIONAL ON (P);
+  (its Addendum A db9d66a also signs CYC-EV, which lands with P-N5-ENT). §C: no verdict differs after both §Cs.
+  Joint gap map (both §Cs; fixes2 concordance): RL-1 = G-RL-1 (proof gap; closed by TEV-RED′'s added hypothesis); RL-2
+  (with N-RL-1; MERGE range, closed); RL-3 = G-RL-2 (wording, closed); RL-4 (citation, closed); N-RL-2, N-RL-3 and the FREE-FREEZE
+  "(h) at t" remark (wording).
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).

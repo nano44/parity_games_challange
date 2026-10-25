@@ -1,6 +1,121 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point (successor 9, session_0163ejRshYhYxVW2CD2XUEB2, Opus 5.5 under D15; 2026-10-25 13:5xZ by date -u)
+- Handover check ba6fac1b (Lead 13:35Z by its stamp: 5/5, GO for R2-N5-OUT then R2-N5-ENT; REFEREE's R-N5-OUT fa08687 / R-N5-ENT 55a3f6f
+  are on trunk: NOT to be read before mine are pushed).
+- P-N5-OUT (docs/new/P-N5-OUT-box37.md sha1 9f032e61 @ trunk 719ce66): docs/referee-2/R2-N5-OUT.md. All SIGN (SPLIT, EPOCH corrected,
+  F-FLAT, FREEZE-STEP + TAIL, NO-ENTRY-A, NE-COUNT, CASE-B-LEN + W-SIDE); notes N-OUT-1 (FBL-N (iii) already has o in R), N-OUT-2 (Step (K)
+  cited "inside a phase", BASE needs only FBL-N (i) + F1), N-OUT-3 (stale status), N-OUT-4 (§7 NO-ENTRY-B / τ≠o NO-ENTRY FALSE per lane box 38,
+  reproduced in all 3 traces). Tools R2-N5-OUT/ (out_check.py on R2-N5-FRZ; traces own / rand / spec). Batch 66,655 runs, climbs 741,432
+  runs, 0 violations. spec_s3.py reproduces the lane's fbsplit numbers exactly. Mutation controls theta / caseB / nohyp all caught.
+- NEXT: P-N5-ENT (docs/si/P-N5-ENT-box11.md sha1 4fd22be7 @ 765e893). Then §C of each after the Lead says so.
+- Trap: experiments/new/box38 instances (post-pin lane cex of §7 conjectures) are in the library; the checker records them, does not fail.
+
+## Handover check (successor 9, session_0163ejRshYhYxVW2CD2XUEB2, Opus 5.5 under D15/L37; 2026-10-25 13:01Z by date -u)
+Predecessor successor 8 session_018vPA5mmjjVjrRV4KqAJfFk (parked). Measured from the repository; commands named.
+
+1. Branch, head, distance to trunk.
+   - `git status`, `git log --oneline -3` at container start: local claude/referee-2 at 77f9cf71 (STALE, fourth time; the notebook had no
+     successor-8 HANDOVER section).
+   - `git fetch origin`; `git rev-parse HEAD origin/claude/referee-2` -> 77f9cf71 vs db9d66a8; `git merge --ff-only origin/claude/referee-2` -> db9d66a8.
+   - Trunk = claude/vibrant-johnson-nxvvxo (docs/NOW.md:15). `git fetch origin claude/vibrant-johnson-nxvvxo`;
+     `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 2 ahead, 10 behind (trunk 2c3a7677).
+     The 2 ahead: d347d8f1 (merge trunk) and db9d66a8 (R2-N5-RL Addendum A), both after the 88571b03 that trunk merged (3e6cd80e).
+   - `git merge --no-ff -m ... origin/claude/vibrant-johnson-nxvvxo` -> merge commit bddffda0; count -> 3 ahead, 0 behind. This notebook commit adds one.
+2. Open work, next step of each.
+   - Successor 8's HANDOVER (12:48Z) says IN FLIGHT: none. Not true of its head: db9d66a8 (12:54Z, after the handover) adds R2-N5-RL
+     Addendum A (CYC-EV SIGN; replacement TEV-RED and Consequence SIGN CONDITIONAL ON (P)), read at the Lead's 12:49Z request.
+     `git merge-base --is-ancestor db9d66a8 origin/claude/vibrant-johnson-nxvvxo` -> no: Addendum A is NOT on trunk.
+     Next step: Lead merges claude/referee-2 (it rides this push).
+   - Successor 8's NEEDS (Lead routes RL-1..4 and N-P1-1 to L-SI): Lead's, not mine.
+   - Task 1 after GO, P-N5-OUT: `sha1sum docs/new/P-N5-OUT-box37.md` -> 9f032e61…aba; `git show 719ce66:<file> | sha1sum` and
+     `git show origin/claude/l-new:<file> | sha1sum` -> same. Next: read packet, P-N5-SCOPE (KEY, FB-INT), SPEC; build R2-N5-OUT/ on
+     R2-N5-SCOPE/scope_check.py; write docs/referee-2/R2-N5-OUT.md.
+   - Task 2 after GO, P-N5-ENT: `sha1sum docs/si/P-N5-ENT-box11.md` -> 4fd22be7…0d0; same at 765e893 and at origin/claude/l-si.
+     Next: read packet, EV+ in P-N5-RL, L-RED tev_cex_n40 / tevlast_cex_n40 (from lane branches if not on trunk); reachability of the
+     (Σ) + rise hypotheses; write docs/referee-2/R2-N5-ENT.md. Note: CYC-EV is in the ENT sign list and successor 8 signed a CYC-EV in
+     Addendum A (of docs/si/P-N5-RL-fixes-box10.md); I re-check the ENT text on its own and diff the two statements.
+   - Independence: `ls docs/referee/ | grep -i 'N5-OUT\|N5-ENT'` and `git ls-tree -r --name-only origin/claude/referee docs/referee |
+     grep -i 'N5-OUT\|N5-ENT'` -> empty. Not opened.
+   - Oink: `ls tools/oink/build` -> absent; scripts/setup_oink.sh started (13:01Z).
+3. GAPS rows. `grep -n 'G-N5-TIME\|REFEREE-2' docs/GAPS.md`: REFEREE-2 owns no row. Relevant: G-N5-TIME | major | L-NEW | open (docs/GAPS.md:11);
+   last update R35 (11:51Z): open NJB = ENT (CONJECTURE; lane reductions EV/EV+/TEV-RED = P-N5-RL), REL(S), level −1 fallbacks,
+   out-of-scope fallbacks (P-N5-SCOPE; lane NO-ENTRY-A), θ-changes per HN stretch. Task 1 (NO-ENTRY-A, out-of-scope) and task 2
+   (ENT) are both on this row's open list.
+4. Owner rulings verbatim (docs/DECISIONS.md), status from docs/DECISIONS-INDEX.md (`grep -n` on both):
+   - D1 (index line 5: active), DECISIONS.md:7-8:
+     > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+     > Never downgrade the referee to save money.
+   - D15 (index line 26: active), DECISIONS.md:278:
+     > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+   - D18 (index line 32: active), DECISIONS.md:333:
+     > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+5. Trap found: a HANDOVER section is not the head. Successor 8's handover (written 12:48Z, "IN FLIGHT: None", committed 88571b03) was
+   followed by db9d66a8 (12:54Z) on the same branch; trunk merged only 88571b03. Reading the notebook alone, or trusting trunk to hold
+   my branch, would lose Addendum A. Check `git log <handover SHA>..origin/claude/referee-2` and `git merge-base --is-ancestor` against
+   trunk, not the handover's own words. (The stale local ref at container start, 77f9cf71, is the same trap one level down.)
+   Second instance, same session: my first scripts/push.sh (13:1xZ) got VERIFY PASS and then "! [rejected] (fetch first)". Successor 8
+   had pushed 7ed07fe5 (committed 12:57Z, a DONE-table row for Addendum A) after my 13:00Z fetch. `git fetch origin claude/referee-2`;
+   `git log HEAD..origin/claude/referee-2` -> 7ed07fe5 only (1 line in this notebook); merged with --no-ff, no conflict. So the
+   predecessor's branch can still move during the handover check: re-fetch right before pushing. Correction to item 2: with 7ed07fe5
+   the handover table does list Addendum A (db9d66a8); "IN FLIGHT: None" is then true; it is still not on trunk.
+
+## HANDOVER (successor 8, session_018vPA5mmjjVjrRV4KqAJfFk, Opus 5.5 under D15; written 2026-10-25 12:48Z by date -u; context ~460k)
+Branch claude/referee-2, merged with trunk at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this commit.
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
+| packet | object (sha1) @ pin | report SHA | §C SHA | outcome |
+| --- | --- | --- | --- | --- |
+| handover check | — | 6eda0134 | — | Lead 5/5 |
+| P-N5-SCOPE | docs/new/P-N5-SCOPE-box36.md c3f5ed37 @ 8998ee6 | 6d6e4bcf | fb6fa696 (+ 8655f692 stamp) | all six SIGN; notes N-SC-1..4, O-1 (§7.2 f_out needs + X_out); no verdict differs from REFEREE |
+| P-N5-RL | docs/si/P-N5-RL-box10.md 0a3c70cb @ 2fb698d | 30dc5f54 | this commit | after §C: MERGE SIGN WITH GAP RL-2 (ℓ = ∞; my miss); TEV-RED NOT SIGNED as stated (RL-1 = G-RL-1 cycle case; RL-3 = G-RL-2 "up to and including e"); TEV-RED′ SIGN COND (P); Consequence NOT SIGNED as stated; RL-4 citation (NO-RF-OLD Corollary; my miss); rest SIGN / SIGN COND (P) / COND CN-LAST, labels exact |
+| P-N5-RL fixes (Addendum A) | docs/si/P-N5-RL-fixes-box10.md ac027458 (l-si 1f107bfb, on trunk) | db9d66a8 | — | CYC-EV SIGN (no (P)); replacement TEV-RED + Consequence SIGN CONDITIONAL ON (P); cycev_probe 836 (Σ) settings 0 failures, ENT case vacuous |
+| P-N5-P1 | docs/si/P-N5-P1-box10.md b98ca794 @ 48a8a4c | e036e4c5 | this commit | Lemma B, M, P1, §4 SIGN; no gaps; REFEREE §5 correction accepted (only TEV-RED′ becomes unconditional) |
+### IN FLIGHT
+None.
+### NEEDS
+- Lead: route the RL joint fixes lines (R2-N5-RL §C.4: RL-1..4 + my wording notes) and N-P1-1 to L-SI; N-SC-1..4, O-1 already routed to L-NEW 17.
+### Things only I know
+- Tools added this session (own code; each dir has run_all.sh, logs/, totals*.txt):
+  - R2-N5-SCOPE/scope_check.py (on R2-N5-FRZ): KEY, TC, WCH, SCOPE-COUNT, FB-INT (tameness via COARSE_{M_k}), NH1-FB, CN-LAST, §7.1 classes.
+    It also has an own GENERAL-game N5 (run_general: honest Ξ = Odd one-player SI pointwise min; U = Even best response; S4b = Odd arena
+    optimum), validated by gxcheck.py against Oink (574/574). scope_climb.py (FIT scope / fb / cnl; cnl uses general games, gmutate).
+    mklib.py lists tracked experiments/**/*.pg on 𝒞^1O with n ≤ 64 (276-280 files).
+  - R2-N5-RL/rl_check.py: BL-FORM, BL (a)-(e) (W* = Even best response, Opt(G_τ[F]) by restricted SI), FREE-FREEZE, MERGE (FINITE levels
+    only: `l >= INF: continue`; that is exactly how I missed RL-2), EQ-END, ENT setting + EV/EV+/TEV-RED, CYC probe (c's cycle meets Ev).
+    rl_climb.py FIT cyc; tev_probe.py (TEV-RED (3) both forms at every post-rise state, k need not exist).
+  - R2-N5-P1/p1_check.py (exhaustive strategies, extended order coded from the packet text), mutation.py.
+- Lane instances only on lane branches (not trunk) must be extracted with `git show origin/<branch>:path` into the scratchpad (tevlast_cex_n40
+  was on l-red only).
+- Recurring traps this session:
+  - Plain `git merge` fast-forwards silently when the branch is 0 ahead: use --no-ff.
+  - Check each numbered sub-claim against its STATED form, not its proof line (G-RL-2).
+  - A statement's quantifier range must be read against the level ORDER it imports: "ℓ ≥ −1" includes ∞ (RL-2). Never let a checker skip
+    a case silently; count skipped cases and say so.
+  - "Exists-a-last-X" steps on lasso plays need the cycle to avoid X (G-RL-1).
+  - A proof gap whose case is not excluded makes the statement NOT SIGNED as stated, with a repaired form signed (D1); not "SIGN WITH GAPS".
+  - Citations of a lemma that ASSUMES an object (ENT-SHAPE "Let (y, z) be …") for the object's existence (RL-4).
+- Oink built in this container (8fbf0a7); a fresh container must rebuild it (scripts/setup_oink.sh, ~3 min).
+
+## Resume point (successor 8, session_018vPA5mmjjVjrRV4KqAJfFk, Opus 5.5 under D15; 2026-10-25 11:56Z by date -u)
+- Handover check 6eda0134 (Lead 11:09Z: 5/5, GO for R2-N5-SCOPE).
+- P-N5-SCOPE (docs/new/P-N5-SCOPE-box36.md sha1 c3f5ed37 @ trunk 8998ee6): report docs/referee-2/R2-N5-SCOPE.md. KEY, WCH (N-SC-2),
+  SCOPE-COUNT, FB-INT (N-SC-3), NH1-FB (N-SC-4), CN-LAST all SIGN; header citation (R-CONST = P-N5-L2 §5) correct, N-SC-1 stale status.
+  O-1 on §7.2 (not signed): evicting fallbacks are crossings, so f_out needs "+ X_out". Tools R2-N5-SCOPE/ (scope_check.py on
+  R2-N5-FRZ; own GENERAL N5 run_general for CN-LAST, Oink-validated by gxcheck.py 574/574). 0 violations: 86,517 batch + 5,443,544 climb runs.
+- §C SCOPE fb6fa696 (+ stamp 8655f692) vs REFEREE R-N5-SCOPE (fb6089b + 560ff4c): no verdict differs; joint gap map empty.
+- P-N5-RL (docs/si/P-N5-RL-box10.md sha1 0a3c70cb @ trunk 2fb698d): docs/referee-2/R2-N5-RL.md. All SIGN, labels exact; BL (b),(c),(e),
+  FREE-FREEZE, EV, EV+ conditional on (P); EQ-END on CN-LAST; TEV-RED SIGN CONDITIONAL ON (P) WITH GAPS G-RL-1 (last Ev vertex needs c's
+  cycle at t in F_k0; 0 cases in data) and G-RL-2 (3) "before e" -> "up to and including e" (L-RED 16 tevlast_cex_n40, on l-red only,
+  reproduced with my N5; I missed it in the draft). Notes N-RL-1..3. ENT setting vacuous in my data. Tools R2-N5-RL/.
+- P-N5-P1 (docs/si/P-N5-P1-box10.md sha1 b98ca794 @ trunk 48a8a4c): docs/referee-2/R2-N5-P1.md e036e4c5. Lemma B, M, P1, §4 all SIGN
+  (N-P1-1 trivial cases). Tools R2-N5-P1/ (p1_check.py exhaustive strategies; mutation.py: flipped odd rule and CAV coarse order caught).
+- NEXT: §C for RL and P1 when the Lead says REFEREE's reports are on trunk (not read before).
+- Trap: check each numbered sub-claim against its STATED form, not only its proof line (G-RL-2: the proof wrote "up to e", the statement
+  "before e").
+- Trap: Iτ is a function of τ alone (n5.py l. 30), so after an Even fallback Iτ_{k+1} = Iτ_k; CN-LAST's τ-change branch needs Iτ_k ≠ ∅
+  with S4b keeping τ (rare in batch, common in FIT cnl climbs).
+
 ## Handover check (successor 8, Opus 5.5 under D15/L37; 2026-10-25 11:0xZ by date -u)
 Predecessor successor 7 session_01CE1xQNfGUgtJg9A7SWAkuE (parked, 8681e3f2). Measured from the repository; commands named.
 
