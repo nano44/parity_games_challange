@@ -244,7 +244,7 @@ Oink built in this container (tools/oink/build). Climbs running in experiments/n
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
 - (succ. 13, box 33) "ε_{H1} ≤ (d_o − 1)(f + 1) per phase": FALSE (L-RED fdd801b). experiments/red/so/instances/epsseg_cex_n48.pg (sha1
-  b4c7dcb0…): f = 0, 17 H1 ε-transitions, d_o 17 (exit 33 absorbed at 7, released at the S4a step 8 → 9, re-absorbed at 13). ABS-COUNT
+  b4c7dcb0…): f = 0, 17 H1 ε-transitions, d_o 17 (exit 33 absorbed at 7, released at the S4a step 8 → 9, re-absorbed at 14; correction 05:31Z, CHECKER C39). ABS-COUNT
   (with REL) holds with equality.
 - (succ. 13, box 33) CONJECTURE EXIT-R (ε form) and ORX: FALSE (L-RED box 37). experiments/red/so/instances/exitr_cex_n48.pg (sha1
   7a663df2…, n 48, o = 0): ε-transition 4 absorbs exit 13, Even 13 leaves R at the S4a step 5 → 6 (an (h) state before any fallback of
