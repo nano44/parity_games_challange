@@ -1,0 +1,8 @@
+BLFORM_blocked_edges: 12
+EQEND_fallbacks_after: 0
+EQEND_runs_with_eq: 2
+MERGE_window_gates: 17
+fallbacks: 1
+runs: 3
+transitions: 83
+RESULT OK violations=0

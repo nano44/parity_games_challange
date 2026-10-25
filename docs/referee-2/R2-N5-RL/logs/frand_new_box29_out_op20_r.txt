@@ -1,0 +1,5 @@
+MERGE_window_gates: 3
+fallbacks: 0
+runs: 3
+transitions: 48
+RESULT OK violations=0

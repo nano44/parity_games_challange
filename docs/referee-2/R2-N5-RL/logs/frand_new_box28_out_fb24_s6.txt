@@ -1,0 +1,5 @@
+BLFORM_blocked_edges: 4
+fallbacks: 0
+runs: 3
+transitions: 10
+RESULT OK violations=0
