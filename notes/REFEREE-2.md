@@ -3,14 +3,15 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 
 ## HANDOVER (successor 10, session_012VrKctzqedu9x1gVAMchV7, Opus 5.5 under D15; written 2026-10-25 17:3xZ by date -u; context ~390k)
 Branch claude/referee-2, merged with trunk (--no-ff) before each push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push
-(Lead: hand over at ~450k; the §Cs are left to successor 11 so that each is read with a fresh context).
+(Lead: hand over at ~450k; parked at ~415k after c2c326c7; the §Cs and NHN are left to successor 11).
 ### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
 | packet | object (sha1) @ pin | report SHA | §C | outcome |
 | --- | --- | --- | --- | --- |
 | handover check | — | 5ca9ac38 | — | Lead 5/5 (16:32Z) |
 | P-N5-LV2 | docs/si/P-N5-LV2-box12.md 3b23a41f @ 283bcb6 | a551debf | NOT DONE | all SIGN; N-LV2-1 (R36 status), N-LV2-2 (wording, also in R37 (f) EV), N-LV2-3 (DATA) |
 | P-N5-PFZ-ext | docs/new/P-N5-PFZ-ext-box39.md b3702b1b @ c61ecc4 | 78896bfc (§X of R2-N5-PFZ.md) | NOT DONE | P-FREEZE′, θ-LEN SIGN; BRK-POLY′ (i) NOT SIGNED as stated, G-PFX-1, (i′) SIGN |
-| P-N5-RHO | docs/new/P-N5-RHO-box40.md cd5df65c @ c814455 | see the push after this section | NOT DONE | all SIGN; N-RHO-1 (wording) |
+| P-N5-RHO | docs/new/P-N5-RHO-box40.md cd5df65c @ c814455 | 269ae45a | NOT DONE | all SIGN; N-RHO-1 (wording), N-RHO-2 (DATA) |
+| LV2 addendum | level −1 block witness (Lead 17:48Z ask) | f2209fa4 | — | R2-N5-LV2/climb/block_9501.pg sha1 1b5b76fd (r 10, M −1, 3 (β) gates; own = SPEC); start pair in block_9501.txt |
 ### IN FLIGHT / NEXT (successor 11)
 - §C PFZ: compare R2-N5-PFZ (successor 9's §1-§6 AND my §X) with REFEREE's R-N5-PFZ (referee 8595343, covers both files per the Lead).
   P-N5-RHO l. 10-11 / 213-214 quotes "REFEREE's GAP PFZ-1" on (i) with a repair "(θ_S ≤ (ρ_S + 1)(|U| − 2))" (the packet's wording):
