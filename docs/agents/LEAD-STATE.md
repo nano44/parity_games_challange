@@ -1470,3 +1470,4 @@
   - Merged l-si 2685ea67: N5-KW-box15 frozen, sha1 5ebbb3b6.
   - Both lanes claim lane-proved K: (E) and (K_W) polynomial per stretch given f. Lead decision: no P-N5-KW packet yet. First an adversarial cross-read by each lane of the other's note, and L-RED 18 red-teams both (CSTRICT, KW-FREEZE, FRZ-U, KIND-MONO, DIR, CW, CW-INT, PAR). L-RED's priority is raised above the loop_4102 climb.
   - Fixes files go first: L-SI PHI (unblocks R46); L-NEW FBPOLY and NHN (unblock R47).
+- 21:06Z: Merged l-new 5e1b5ea0: fixes files P-N5-FBPOLY (c016c190) and P-N5-NHN (d1460ffe). Merged l-si c6d70acf (cross-read of box42 v3, notebook). Merged l-comp b766e0bb. Renumbered the drafts: NHN is now R46 (fixes filled; to CHECKER C55); PHI is now R47 (to C56 once L-SI's PHI fixes file lands). The FBPOLY draft waits for REFEREE-2 12's §C FBPOLY.
