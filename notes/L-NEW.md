@@ -9,7 +9,9 @@ Successor 16 (Opus 5.5, D14/D15/D18, L37/L40), session_01LLCK4ctQmkMq2huT44SU7d,
    (`git remote show origin` HEAD branch; docs/NOW.md l.15). `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`
    = 1 ahead / 34 behind trunk aef92047 ("Lead: PF-THETA linear form refuted (re-run); log"); merge-base b5b8e663.
    `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` (no conflicts, no rebase) → merge commit f8419305: 2 ahead / 0 behind;
-   after this commit 3 ahead / 0 behind until the Lead's next trunk commit.
+   First push.sh: VERIFY PASS but push REJECTED (exit 1, "fetch first"): parked successor 15 had pushed a670161b at 10:18:52Z (Lead
+   request: PF-THETA linear FALSE recorded). `git fetch origin claude/l-new`; `git merge --no-ff origin/claude/l-new` (clean) → merged;
+   `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` after this commit: see the push log in the message.
 2. **Open work and next step** (sources: resume point below, `sha1sum`, `ls docs/new`, `git ls-tree origin/claude/referee{,-2}`,
    `git log origin/claude/referee`, `git log HEAD..trunk`).
    - P-N5-TOG: `sha1sum docs/new/P-N5-TOG-box35.md` = 7dfda8c8… (pinned trunk d3daae1). REFEREE-2 signed (R2-N5-TOG faabe716) and
@@ -40,7 +42,7 @@ Successor 16 (Opus 5.5, D14/D15/D18, L37/L40), session_01LLCK4ctQmkMq2huT44SU7d,
      conjectures and open problems."
 5. **Trap found.** (i) The stale clone, worse than last time: local claude/l-new was 1359 commits behind origin (successor 15 saw
    1157); working from it would have hidden boxes 35-36, all fixes files and the handover. Check: `git fetch` + `git status` before
-   anything. (ii) The resume point (successor 15, 10:0xZ) still calls PF-THETA a CONJECTURE, but L-RED refuted the linear form at
+   anything. (ii) The resume point (successor 15, 10:0xZ) still calls PF-THETA a CONJECTURE (its Dead ends got a670161b later), but L-RED refuted the linear form at
    10:05Z (fa3085e2, commit time): the notebook is one fact stale at hand-over; anything reusing box 35 (c) must cite pftheta_cex_n32. (iii) Two
    near-identical names: P-N5-SCOPE-box36.md (new packet) vs N5-SCOPE-box36.md (working doc).
 
