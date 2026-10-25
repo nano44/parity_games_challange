@@ -1,0 +1,6 @@
+KEY_tau_const_transitions: 1
+WCH_H2_states: 5
+fallbacks: 0
+runs: 3
+transitions: 3
+RESULT OK violations=0
