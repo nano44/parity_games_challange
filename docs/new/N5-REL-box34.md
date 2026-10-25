@@ -328,3 +328,19 @@ Assume CONJECTURE ONE-DROP (§11) together with X-RUN′ (§11, lane PROVED). Th
   r = ℓ blocks. Inside a scope run these equal the θ-changes after fallbacks (§9). With (L1) bounded and items 1-2 settled, per phase X
   would be poly(n), and then f and J are poly(n) as well (R28 Corollary OX). Together with K, that would make a phase polynomial
   (R27 Corollary LP′).
+
+## 13. ONE-DROP is FALSE; what survives (written 07:31Z by date -u)
+- DEAD END: CONJECTURE ONE-DROP (§11) is FALSE.
+  - Instance: experiments/new/box34/instances/onedrop_cex_n32.pg (sha1 5793d5a3303fd8c180dd7d0b8105e2d6961af1cd; n 32, o = 27,
+    succ(o) = {3, 17}; climb dropclimb.py seed 3502 from oneh_cex_n32).
+  - Verified: n5.py n5 gives 6 iterations, 1 fallback; check_sol2.py gives "zielonka(oink zlk) OK strategies verified"; exactly one
+    Odd vertex with out-degree > 1.
+  - The phase is states 2-6, with c_θ = 13. H1 at 2, ¬H1 at 3 (|R| 31), H1 at 4-5, ¬H1 at 6. The drops are 2 → 3 (an S4a step) and
+    5 → 6 (an S4c fallback).
+  - θ = (13, ∅, 10) at 2-3 and (13, ∅, 8) at 4-6: θ changes in length between the two drops, inside I_∅ (H1-INT).
+- What survives (CONJECTURE DROP-LEN, OPEN): between two drops of a phase, θ changes. With H1-INT (θ changes ≤ n − 1 times on I_∅), that
+  would give ≤ n drops per phase, ≤ 2n + 1 H1-toggles, and, via X-RUN′, X_SN ≤ (f + 1)(2n + 2)·13(d_o + 1)n³ + 2n + 1 per phase with no
+  H1 hypothesis. A weaker form that is also open: at most one drop per fallback-free run (here the second drop is at a fallback).
+- §12's item 1 now reads "DROP-LEN (or one drop per fallback-free run)", and its per-phase bound "3 H1-runs" reads "≤ 2(drops) + 1".
+  Item 3 (restarts through ¬H1 states) becomes ≤ the number of drops per phase. DATA: climbs dc4 (b4_n5_other_0, 10.9M steps) and dc6
+  (so_th_n32): max 1 drop per phase; dc5: 2.
