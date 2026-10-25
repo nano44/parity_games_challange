@@ -14,10 +14,13 @@ Box 8 write-up: docs/si/N5-C-box8.md. Code: experiments/si/coarse/cls2.py, rfinv
 - OFFGATE 7,134/0; CN 7/0; (A) 0; FRZ 28,311/0; R-ROUTE 10,293/0; LV 588/0; (B1) 588/0; AL 4/0; in-scope fallbacks 260 THRu, 4 EQ,
   0 THR u*=none. OG' (MF form) FALSE on x31_re24 1->2 (mass arena leave carries a level-22 gate into F).
 - Arena reversals of (Z): 39/45 occur before the first fallback at the current w (box 8 §7).
-### NEXT
-1. (B1) at arena-step leaves (4 in data) and THR u*=none fallbacks (0 in data); then the per-level count of (CL-S) across jumps.
-2. If both close: packet P-N5-CLS (hypotheses incl. N_out; bound J <= (1+N_out)|succ(o)|(1+n_E(2n-1)) + N_out).
-3. Fallback-free R-reversals (box 8 §7).
+- Box 8 later: P-N5-SO check (socheck.py unmodified, 0 failures, box 8 §8); adversarial climbs vs (CL-S) 0 violations (§9);
+  Lemma EQ-STRETCH (EQ runs < n+m transitions, from R17) + EQ-PERSIST (§10); (Z) map (§11): fallbacks (FB + CL-S/SO), EQ runs
+  (PROVED poly), out-of-scope (O, w-changes), THR arena reversals (all within n-1 of a θ-change: reduce to Θ_scope).
+### NEXT (for a successor)
+1. (H-B1) at arena-step leaves (box 8 §5): the case "p switches into q that leaves R in the same step, at level > L".
+2. A non-circular bound on θ-changes per scope run (Θ_scope). (iv) and (via TH) X both reduce to it.
+3. If 1 closes: per-level count across jumps, then packet P-N5-CLS (hypotheses: H-KIND, H-EQ, N_out definition).
 
 ## Resume point (successor 3, box 7; superseded by the box 8 point above; Opus 5.5 D18/L40; started 21:31Z 2026-10-24; end-of-box ~23:45Z)
 Handover check 78a764d8 (Lead 5/5). Box 7 = proof side of (C). Lane write-up: docs/si/N5-C-box7.md §0-§13. Code: experiments/si/coarse/

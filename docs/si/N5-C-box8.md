@@ -222,3 +222,9 @@ Each reversal of R is at one of four places.
   - This is R20's throttled regime. R20 bounds value changes per throttled stretch (O(n³)), but the stretch count is the θ-change
     count, and TH bounds it only via X.
 - So the open core of (X) on 𝒞^1O: THR arena reversals (iv) per scope run, (H-B1) at arena leaves for (i), and O / w-changes (iii).
+- DATA (scratch classification, same set): the 29 THR in-scope arena reversals all lie at a θ-change (12) or within n − 1 transitions
+  after one (17). None is later.
+  - READING: (iv) behaves like R20 CR ("coarse values change only in the first n − 1 transitions of a throttled stretch"). So
+    (iv) ≲ n·(1 + Θ_scope), with Θ_scope = θ-changes in scope runs (up to 51 per phase on lev_l_x-type instances).
+  - So (iv) is the θ-change count again. This is the circularity "θ-changes ↔ crossings" of box 3 and of L-NEW's TH. A
+    non-circular bound on Θ per scope run is the single open quantity behind (iv).
