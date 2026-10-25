@@ -1,4 +1,4 @@
-# Draft RESULTS R47 (Lead, 2026-10-25 20:56Z by date -u; renumbered from R46 at 21:05Z; fixes-file line filled 21:10Z) — to CHECKER C56
+# Draft RESULTS R47 (Lead, 2026-10-25 20:56Z by date -u; renumbered from R46 at 21:05Z; fixes-file line filled 21:10Z) (rev. 21:27Z: C56 N-1) — to CHECKER C56
 
 ### R47 [refereed-only] N5: cycle nodes only rise and Odd's dual cycle nodes only fall along a run, so every run has at most 2n(n − 1) + 1 joint λ-runs (Lemma Φ, every game), and on one-Odd-choice games τ changes at most deg(o) − 1 times and a run has at most n(n − 1) + deg(o) phases (Corollary Φ-1O) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C56.md, checker PENDING)
 - Object (packet P-N5-PHI, added at l-si af3a3b5a, pinned trunk 02ad3f88, unchanged during review): docs/si/P-N5-PHI-box14.md, sha1
@@ -15,8 +15,9 @@
   (a) Lemma Φ (every game): (a) reward(λ_{k+1}(v)) ≥ reward(λ_k(v)) for every v and k, with equality iff λ_{k+1}(v) = λ_k(v) (RESULTS
       R15 (a), (d)); (b) reward(λ^U_{k+1}(v)) ≤ reward(λ^U_k(v)), with equality iff λ^U_{k+1}(v) = λ^U_k(v) (RESULTS R18 (d) Lemma S (b));
       (c) along a run at most n(n − 1) transitions change λ and at most n(n − 1) change λ^U, so a run has at most 2n(n − 1) + 1 joint
-      λ-runs. R18's gaps S1, S2 do not touch (b): S1 concerns Lemma S (a), and S2 is (b)'s own citation, R15 (a), (d) applied on G^d
-      with R18 (d) Lemma R (PHI-N1 = N-PHI-2, citation, both referees); G-1OA-6 concerns Lemma S (c)-(d) and is not used.
+      λ-runs. S1 does not touch (b) (it concerns Lemma S (a)), and S2 is (b)'s own citation, a citation item and not open
+      mathematics: R15 (a), (d) applied on G^d with R18 (d) Lemma R (PHI-N1 = N-PHI-2, citation, both referees); G-1OA-6 concerns
+      Lemma S (c)-(d) and is not used.
   (b) Corollary Φ-1O (𝒞^1O): (a) along any N5 run τ changes at most d − 1 times (the τ's form a strict ≺_{G^d}-chain by R15 (c), (d)
       on G^d, so no τ repeats; N-PHI-1); (b) a run has at most n(n − 1) + d phases.
 - Not signed (packet §2 "Use", §3): the READING that with Φ-1O a polynomial bound for N5 on 𝒞^1O needs only a polynomial bound on the
