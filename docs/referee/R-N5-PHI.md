@@ -83,7 +83,7 @@ my report (843ba1f8) was pushed. (Opus 5.5, D15).
 | citation of (b) | N-PHI-2: drop the Remark's "if they do"; cite S2's resolution | PHI-N1 recommendation, same | ACCEPTED (same content) |
 | Φ-1O (a) uses only "no τ repeats" | N-PHI-1 (precision) | §2 "strict chain in a strict partial order: no repeats" | ACCEPTED |
 | λ^U checked in data | 3,219,607 checks, 0 rises; mutation ub bites (2,385) | PHI-N2: 278,285 + 57,066 checks, 0 failures | consistent; REFEREE-2's mutation control adds evidence that the check can fail |
-| scope "every game" | proof uses nothing 𝒞^1O-specific; its data are 𝒞^1O only | my data include general (non-𝒞^1O) games: 114 library + about 4,000 random | my data cover the every-game part REFEREE-2 calls thin |
+| scope "every game" | proof uses nothing 𝒞^1O-specific; its data are 𝒞^1O only | my data include general (non-𝒞^1O) games: 114 library + 3,005 random | my data cover the every-game part REFEREE-2 calls thin |
 | Φ-1O (a)'s bound d − 1 | REACHED in data (1000‰) | not measured | noted: the bound is tight |
 
 - No verdict of mine changes. (Opus 5.5, D15)
