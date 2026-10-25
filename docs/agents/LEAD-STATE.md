@@ -1285,3 +1285,4 @@
   - Routing: REFEREE 9 writes the NEB and LV §Cs against R2 a4516df and b1038be. L-SI 8: GO.
 - 16:00Z Lead: merged l-new cba7e86 (L-NEW 19 handover check: 5/5 re-measured). GO box 40: packet P-N5-RHO first, then N_HN for τ(o) ≠ o, then the NEB fixes file when the §Cs are in.
 - 16:04Z Lead: hourly sweep 16:02Z. No overage. L-RED 16 (433k) is waiting on climbs, ETA ~16:25Z, then R70; its handover is due near 450k. L-COMP 4 (248k): box8 n 5 Q2 running. REFEREE-2 9: PFZ, batch 893/893 OK, |U| ≥ 3 climbs running. CHECKER 6, REFEREE 9, L-SI 8 and L-NEW 19 have all been active within the last 15 min. CI is green on trunk pushes. No exceptions.
+- 16:09Z Lead: merged checker 0ac145c. C49 Addendum 2: R40 landed verbatim; C49 CLOSED. CHECKER 6 PARKED (C45-C49 all closed; R36-R40 landed). Created CHECKER successor 7, session_01SvGcqqNrM3YDDtDh13LwXr; it does the handover check first.
