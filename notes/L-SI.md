@@ -9,7 +9,59 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Work: docs/si/N5-KW-box15.md (lane note). PROVED (L-SI 10, unrefereed): W-ONCE (any game), FRZ-U (κ-freeze above m* on EVERY
   stretch), LEN, KIND-MONO, CASC-B, CW-INT, Theorem RUN (Ξ-changes on R per fallback-free run of a stretch O(Δ r⁴)), Corollary PHASE
   (T per phase poly given f). So (K_W), (E), K closed per stretch; assembly READING: N5 on 𝒞^1O poly IF FBPOLY + PHI + this note are signed.
+- FROZEN (sha1 sent to Lead 20:51Z): docs/si/N5-KW-box15.md 5ebbb3b6 (l-si 2685ea67). New text goes in NEW files.
 - DATA: experiments/si/kw15/kwcheck.py (library + extras), kwclimb.py (random, climbs kind / wonce / long); logs in kw15/logs/.
+
+## Cross-read of L-NEW 21's docs/new/N5-KW-box42.md (v3, l-new b9ee6918, on trunk) against my N5-KW-box15 (5ebbb3b6); written 21:01Z (date -u)
+Lead request 20:49Z item (2). Adversarial read: each step re-derived; READING labels mine. The two notes were written independently
+(theirs started 20:05Z by their stamp; my W-ONCE / FRZ-U were drafted 19:35-20:30Z, pushed in 823b8773 at ~20:15Z).
+### (a) Lemma by lemma
+| theirs | mine | verdict (L-SI 10) |
+| --- | --- | --- |
+| §1 WLAG | §2 W-ONCE | RELY. Steps 2-4 checked. WLAG is slightly stronger (it names z ∉ H_{k−1}(y) with Ξ_k(z) ▷ Ξ_{k−1}(z)); W-ONCE is its contrapositive with "Ξ-flat". Same arena-shrink idea. |
+| §2 ABOVE-h | §3 Fact A | RELY. Same case analysis. The honest ¬H1 case rests on "c_θ's σ-route is C_Ξ's return arc" (Odd vertices but o forced); c_θ = o falls under ¬H1 with K_Ξ = ∅, consistent with mine. |
+| §2 CSTRICT | §3 Fact B | RELY (theirs restricts to successors of one x; that is all P^c needs). |
+| §3 KW-FREEZE (a) | §3 FRZ-U | RELY, with one wording point. Their paths end at the first W-terminal (o or c_w); mine end at o only. Both work. In their B1 "x on C_W, (β) main case": under COARSE_h-strictness (β) cannot occur, since σ(x) on C_W has an empty path set above h, so coarse-strict forces (α). So (β) is vacuous, not "the main case". Harmless. Mine writes B2 / B3 out explicitly; a referee may use either. |
+| §3 (b), (c) | §4 LEN, §7 (K_W) | RELY. Same counts (theirs < 2n per vertex, mine r − 2). (b)'s c_θ ≻ c_w branch is WLAG + (c) + F1°, as mine. |
+| §3 (d) (c_w ≻ c_θ, c_w odd: TB-odd lowers σ(y)'s index at W-flat switches) | not in mine | RELY. TB (R24 (b)) applies: y ≠ c_w, W cycle node c_w odd, S4a without fallback. A nice shortcut; my E-SEG covers both parities without it. |
+| §4 Corollary KW per phase | §7 | RELY per stretch. The per-phase line cites #stretches ≤ n²(2X + 2 + f^O) from P-N5-NH-box42 STR-COUNT (IN REVIEW). Mine counts stretches by landed results only: N_st ≤ 1 + X + Θ + W_ch (R27 (g) TH; R24 (e) WC; H2: w = o ⊕ Ξ(τ(o)) and F1°). |
+| §5 H-PATH | §5 KIND-MONO step 1 | RELY. |
+| §5 DIR (no change away from P at W-flat transitions) | §5 KIND-MONO (≤ 1 kind change per vertex post-freeze, any transition) | RELY on both. They are different proofs. DIR needs W-flatness and no freeze. KIND-MONO needs the freeze and no W-flatness. DIR step 2's cancellation of "⊕ x" is fine also when x is below c_w (only lengths move). |
+| §5 KC | — | RELY (counting from DIR). |
+| §5 CASC-B | §5 CASC-B | RELY: same lemma, same justification. |
+| §5 CW | §5 CW-INT | RELY: same lemma (theirs adds f_S for fallback switches of c_w, correct). |
+| §5 E-HI | §5 E-SEG | RELY. |
+| §6 assembly via Theorem NH (P-N5-NH-box42, IN REVIEW) | §8 Corollary PHASE via Theorem LP (R27 (d), LANDED) + (SG) + F1° | Both READINGs are correct as far as I checked. Mine needs no in-review packet besides FBPOLY (f), and FX is not needed either (X from R30 (c) given f). |
+- Doubts with an exact step: none of substance. Only (i) the (β) wording in KW-FREEZE (a) B1, and (ii) the in-review dependency of their
+  per-phase assembly (STR-COUNT / Theorem NH), which my LP route avoids.
+- Data: theirs exercise kind changes (820 kind-change transitions, 6 c_w switches on evstress) where mine were vacuous. The c_w odd
+  branch is unexercised in both.
+  - My kwcheck on their 10 qualifying games × 150 random starts (experiments/si/kw15/logs/qual10_r150.txt, list qual10.lst):
+    - 1,510 traces, 313 runs with c_w ≻ c_θ under ¬H2, 0 failures.
+    - Only 18 of those runs reach the freeze point (most are shorter than |R| − 1), and 0 post-freeze kind changes or c_w switches.
+    - So their kind changes happen BEFORE my freeze index. DIR covers them; KIND-MONO is vacuous there. That is no contradiction:
+      KIND-MONO claims nothing before the freeze.
+### (b) Do the two notes together close K on U1 / U2 / U3 / U23?
+- Yes, per stretch, given f (READING; both lane-proved, unrefereed):
+  - U1: R24 Theorem U1 (landed), or FRZ-U + LEN-W + CASC;
+  - U2: CASC-U2 (landed) + KW / LEN-W;
+  - U3 / U23 with c_θ ⪰ c_w: LEN-Ξ / KW-FREEZE (c);
+  - U3 / U23 with c_w ≻ c_θ: E-SEG / E-HI (+ R26 (d)).
+- K itself ≤ T_rel, which Corollary PHASE bounds.
+- Left (all outside both notes):
+  - f per phase: P-N5-FBPOLY in review; FB-PHASE is the second, lane-only proof;
+  - phases: P-N5-PHI, signed by both, fixes 29936b3d;
+  - referee signatures on the KW lemmas and on one assembly.
+  - Nothing left inside a stretch.
+### (c) Which packet first
+- Recommendation (READING): ONE packet built from L-NEW's §1-§5 (P-N5-KW).
+  - It has the exercised data (kind changes, c_w switches).
+  - It has the c_w-odd TB shortcut.
+- My N5-KW-box15 goes with it as the independent second proof (as FB-PHASE did for FB-POLY), for a referee's cross-check of the freeze
+  (B2 / B3 written out) and of KIND-MONO vs DIR.
+- My §8 Corollary PHASE (Theorem LP route, landed premises + FBPOLY only) as a short second packet, or as an appendix to theirs. It
+  makes the per-phase assembly independent of P-N5-NH-box42.
+- If the Lead prefers mine first: it is frozen (5ebbb3b6) and self-contained except for R26 (c) (ii), (iii).
 
 ## HANDOVER (successor 9, box 14; written 2026-10-25 19:05Z (date -u); session_018jN1MJkw56F58G3qcfcuZA)
 Reason: the session token counter is at ~430k (15M budget, ~14.59M left), near the Lead's ~450k line, at a natural pause after the Lead's
