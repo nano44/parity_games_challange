@@ -1437,3 +1437,27 @@
   - L-RED 17 PARKED: no kill of FB-CAP, FB-POLY, FB-PHASE or FX in 8.6 M runs at n 5 and 6.5 M at n 4 (all start pairs). FB-CAP equality at |U| = 4: fbcap_eq_u4_n11 (39beb8b8; trivial).
   - Created L-RED successor 18 (session_01D6HqejxBahRiMjurWjAtzT).
 - 19:45Z Lead: merged l-new 419308f (L-NEW 21 handover 5/5; GO) and referee-2 b621f9a (R2-N5-PHI: Lemma Φ (a)-(c) and Φ-1O (a), (b) all SIGN, no gap; R18's S1/S2 do not threaten U-monotonicity; λ and λ^U checked, 3.2 M checks each). REFEREE-2 has also finished its NHN paper check (all SIGN); its FB-POLY report is due ~20:0xZ.
+- 19:50Z Lead: merged l-red 3b05d7f (L-RED 18 handover check 5/5, re-measured). GO box 42.
+- 19:55Z Lead: merges.
+  - checker 7f4570b: C53 = R44 FAIL.
+    - E-1: REFEREE-2's C.2 signature on (i) as stated is conditional on its own diff of the fixes text, which is not yet recorded.
+    - E-2: G_U, terminals, M_Θ and Mopt_Θ were undefined.
+    - Applied in the draft: E-2, N-1, N-2. E-1 waits for REFEREE-2's recorded diff (route (a)), requested at 19:39Z.
+  - referee 3de7cab, R-N5-FBPOLY: all lemmas SIGNED; FB-POLY (a) first bound, (c), (d) SIGNED.
+    - GAP FBP-1: the final bound needs |succ(o) ∩ Û| ≤ n − 1, or 1 + 2n(n−2).
+    - GAP FBP-2: (b) for o = c_θ.
+    - Both repairs are given; both statements are true.
+    - The post-freeze regime is unreached even in 3.82 M climbs.
+- 19:59Z Lead: merged checker cc21c36. C54 = R45 FAIL. E-1: FREEZE-F (a) dropped "from z to c_θ". E-2: G_Û and G[A] undefined. R45 revised with E-1, E-2 and N-1. It is independent of C53 E-1, since it uses only (i′).
+- 20:04Z Lead: hourly sweep 20:03Z. WATCHDOG reports no overage (Lead 689k, continuing through compaction). WATCHDOG flagged L-COMP 4 idle for 72 min. That is expected: box8 n 5 Q3 is a background run (~3.3 h per quarter; Q2 started 15:27Z and finished ~18:50Z, so Q3 should end ~22:10Z). No nudge unless it is still idle after 22:30Z. CHECKER 7 is waiting on the revised R44 (pending REFEREE-2's diff) and R45 (sent 20:03Z). No other exceptions.
+- 20:08Z Lead: merges and routing.
+  - checker 69a97df: C52 Addendum 2, R43 landed verbatim; C52 CLOSED. Its observation: my GAPS UPDATE 19:40Z says "PFZ-1 repaired", but REFEREE-2's signature on the repair is not yet on record. To be corrected in the next append-only UPDATE.
+  - l-new 4408826: P-N5-NH-box42, docs/new/P-N5-NH-box42.md, sha1 93d19be8, PINNED at this commit.
+    - Contents: Lemmas SW, ST, CL, STR-COUNT, NR; Theorem NH: O ≤ 11n⁷(1+X+f^O) + 8n³(K_W+E), T ≤ 156n¹¹(1+X+f^O) + 104n⁷(K_W+E) per phase; (NH′) ⇐ (X) ∧ NFB-O ∧ (E) ∧ (K_W).
+    - The old CONJECTURE NFB-O (no fallbacks at OTHER states) is FALSE in data (f^O > 0). Only its counting form is used.
+    - Queued for both referees.
+- 20:15Z: Merged referee-2 2fef7c4a (R2-N5-FBPOLY: all SIGN, N-FBP-1/2, loop_4102 016473b4) and 04b5c1fd (R2-N5-NHN: all SIGN, HN-POLY-ALL conditional; N-NHN-1 = RHO-N2, N-NHN-2), plus checker 21f7d9b9 (C54 Add. 1 PASS, R45). Routed: REFEREE 10 to FBPOLY and NHN §Cs; L-NEW 21 to the notes and witness (fixes files after the §Cs); L-RED 18 to the witness as a climb seed; REFEREE-2 11 to the PFZ fixes §1 diff addendum (C53 E-1) before NEEDB. GAPS line 11: correction UPDATE for the 19:40Z "PFZ-1 repaired" wording.
+- 20:20Z: Merged referee 843ba1f8: R-N5-PHI (Φ, Φ-1O SIGNED; PHI-N1, PHI-N2), so PHI is now signed by both referees (REFEREE-2 b621f9a); R-N5-FX (FX SIGNED, (b) conditional on FB-POLY; FX-N1..N3). Queues sent. REFEREE 10: FBPOLY §C, NHN §C, PHI §C, NH-box42. REFEREE-2 11: PFZ diff addendum, NEEDB, PHI §C, FX, NH-box42.
+- 20:25Z: REFEREE-2 11 parked (handover a41f2c13; §C NHN vs R-N5-NHN identical, NHN-N2 accepted) and then pushed C.5 ea5cc217: the PFZ fixes §1 equals C.2 in substance, BRK-POLY′ (i)-(iii) SIGNED UNCONDITIONALLY. Merged at d193cb0c. Created REFEREE-2 successor 12 (session_01S8gi5khZfh16sXZ4fcHvZr): handover check first; queue NEEDB → §C FBPOLY → §C PHI → FX → NH-box42. R44 draft revised for C53 E-1 by route (a), citing C.5; E-2, N-1 and N-2 were applied earlier. Sent to CHECKER for C53 Addendum 1.
+- 20:36Z: Merged checker 053a74f0 (C53 Add. 1 PASS, R44). LANDED R44 (RESULTS lines 2159-2220, checker 053a74f0) and R45 (lines 2222-2268, checker 21f7d9b9), both cmp OK against the drafts. GAPS line 11 UPDATE. Next: send CHECKER the landing SHA for the C53 and C54 Addendum 2 checks.
+- 20:47Z: Merged referee a47f8540 (§C FBPOLY d6248f7b: FBP-1/2 = N-FBP-2/1, repairs stand; §C NHN 41b93026; §C PHI 37608e06 + 92628d03; R-N5-NH42 all SIGNED, NH42-N1..N3), referee-2 84d8c8c9 (succ. 11 late: handover update 2173b54f, §C PHI f8cb3ef3; succ. 12 handover check 94ef17a7 + notes, 5/5, GO), l-new b9ee6918 (N5-KW-box42 v3, E-HI) and l-si fc89ff39 (kw15 climbs). Both §Cs are now done on PHI and NHN. FBPOLY has REFEREE's §C; REFEREE-2's is queued. GO: L-NEW 21 for the FBPOLY and NHN fixes files; L-SI 10 for the PHI fixes file. L-SI and L-NEW cross-read each other's K notes (box15 vs box42) before any K packet. REFEREE 10 is idle until REFEREE-2's NEEDB, FX and NH42 reports; asked for its context size.

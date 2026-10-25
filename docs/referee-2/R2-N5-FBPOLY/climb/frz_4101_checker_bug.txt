@@ -1,0 +1,36 @@
+VIOLATION rand:r2 EXIT p_u leaves its graph at 2
+VIOLATION rand:r2 EXIT p_u leaves its graph at 2
+climb FIT=frz seed=4101 n=10 iterations=151838 improvements=12 best_fitness=8.0
+BEST-INSTANCE counters: {'AK_checks': 178, 'CN_fallbacks': 2, 'EXIT_fallbacks': 8, 'EXIT_kind_ct': 15, 'KH_a': 44, 'KH_b': 69, 'KP_checks': 93, 'KY_states': 29, 'RECORD_TA_phases_U>=3': 2, 'SW_fallbacks': 10, 'TA_phases': 2, 'YB_states': 1, 'fallbacks': 10, 'phases': 13, 'phases_o=c': 1, 'runs': 4, 'states': 30}
+BEST-INSTANCE maxima: {'max_FBCAP_excess_plus_1000': 1000, 'max_FB_a_slack_minus_1000': 996, 'max_f_minus_U_plus_2_U>=3_plus_1000': 1000, 'max_f_per_phase': 2}
+AK_checks: 6462286
+CN_fallbacks: 58225
+EXIT_fallbacks: 34261
+EXIT_kind_ct: 39774
+EXIT_kind_loop: 2
+EXIT_kind_o: 357
+KH_a: 106805
+KH_b: 1882521
+KH_c: 11094
+KP_checks: 1329088
+KY_states: 738332
+RECORD_TA_phases_U>=3: 33624
+RECORD_phases_o=c_U=2: 28091
+SW_fallbacks: 92486
+TA_phases: 61054
+VIOLATIONS: 2
+YB_states: 877236
+climb_evaluations: 147582
+fallbacks: 92486
+phases: 1376412
+phases_o=c: 384475
+runs: 590328
+states: 1615568
+max_FBCAP_excess_plus_1000: 1000
+max_FB_a_slack_minus_1000: 1000
+max_TA_changes: 0
+max_TA_changes_U>=3: 0
+max_f_minus_U_plus_2_U>=3_plus_1000: 1000
+max_f_o=c_U=2: 1
+max_f_per_phase: 2
+RESULT FAIL violations=2

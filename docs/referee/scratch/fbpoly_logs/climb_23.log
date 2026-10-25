@@ -1,0 +1,14 @@
+BEST 243 -3
+BEST 278 -2
+BEST 440 -1
+CN_cases                       1309286
+KHC_chk                        1492115
+KH_chk                         2140710
+KP_chk                         489990
+TA_phases_U3plus               1309286
+best_score                     -1
+checked                        1309286
+evaluated                      1822599
+iters                          1822599
+FAILS 0
+exit 0

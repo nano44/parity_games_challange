@@ -22,6 +22,14 @@
   scope run"; batch max 37); E-2 block_9501's block fallback is only from R2's start pair (canonical: none), REFEREE's reproduction is in
   R-N5-NEEDB 008ad8ab. Statements (a)-(h) PASS; Lead points (1), (2), (4) PASS. Re-runs EXACT (beta2 4/2, scopefb 2, lv2_probe @b454ca3
   IDENTICAL, R2 8 logs IDENTICAL). Worktrees wt52 = 0ea336ed, wtR52 = b454ca3.
+- C52 Add. 1 707b402e PASS at 70deed32. C53 = R44 = P-N5-PFZ + ext. 19:44Z docs/checker/C53.md FAIL at db711979 (draft 4d7cea5b):
+  E-1 (g): REFEREE-2's C.2 signs (i)-(iii) as stated "subject to its text in the fixes file" (R2 l.239-242, C.4 l.274); fixes cf20cdc2
+  (19:24Z) postdates C.2 (19:09Z); no R2 diff on record. E-2: G_U, terminals, M_Θ, Mopt_Θ undefined. Repair math checked. Re-runs:
+  REFEREE lane_set IDENTICAL @85953433; R2 logs 6 + logs_r 6 IDENTICAL; logs_x lack the (i)-excess record (old script; N-4).
+  Worktrees wt53 = db711979, wtR53 = 85953433, wtX53 = 78896bfc. Next: C54 = R45 (P-N5-RHO, draft bb174474 @ db711979).
+- C54 = R45 = P-N5-RHO. 19:52Z docs/checker/C54.md FAIL at db711979 (draft bb174474): E-1 (e) FREEZE-F (a) drops "from z to c_θ"; E-2
+  G_Û's edges and G[A] undefined. RHO-N2 repair PASS; HN-POLY needs only (i′) + (ii) first inequality (independent of C53 E-1). Re-runs:
+  REFEREE rho_probe lib @59278313 = lib2.log IDENTICAL; R2 rho_check 6 logs IDENTICAL. Worktree wtR54 = 59278313.
 - Commands: n5 = `python3 n5.py n5 <f> <sol>` + `check_sol2.py <f> <sol>` from experiments/new; REFEREE `python3 -I
   docs/referee/scratch/lv_probe.py <files>` from the root; REFEREE-2 `lv_check.py inst <f> 3 own|rand|spec` and `random N lo hi seed m`
   from docs/referee-2/R2-N5-LV/ with ../../../ paths.
