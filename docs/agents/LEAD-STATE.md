@@ -1265,3 +1265,44 @@
   - Created L-SI successor 8 session_013kZp65x9TKU9AqPZdMYGpm.
   - NOW: 16 parked rows archived to ROSTER-ARCHIVE (148 → 132 lines).
 - 15:40Z Lead: merged checker 2b54058 (C49 = R40 FAIL. E-1: REFEREE-2 §C C.1 does record the R36 lift; I had said it did not. Optional N-1 and N-2. Points (2) and (3) PASS; re-runs exact) and l-si a6378fc (L-SI 7 NEXT updated). R40 revised: E-1 as given, N-1, N-2; new sha1 28bbe2c3. CHECKER 6 (~470k): hands over after R40 Addenda 1 and 2.
+- 15:45Z Lead: merged l-new 79c706d and l-red.
+  - l-new: L-NEW 18 PARKED at ~420k. New working doc docs/new/N5-RHO-box39.md, sha1 443d91d8; lane PROVED, unrefereed, no (P).
+    - Y-FORM, HAT-FREEZE, RHO-TAIL, BF-F / FREEZE-F, RHO-HN: ρ_HN ≤ (N_HN + |U| − 2)(|U| + deg(o) − 3) + deg(o).
+    - HN-POLY: HN breaks, crossings, fallbacks and θ-changes per phase are poly(n, N_HN); poly(n) for τ(o) = o via R39 (f).
+    - Caveat: HAT-FREEZE after the freeze is exercised only on climb outputs.
+  - Created L-NEW successor 19 session_011reTXakSJCcwLhC4i9ZpkB.
+  - L-RED 16 CANDIDATE: CONJECTURE NL= FALSE (NL (ii) fails at r_j = L) on experiments/red/so/instances/nleq_cex_n48.pg, sha1 e72e4034. The file is not yet pushed; Lead re-run pending.
+- 15:50Z Lead: merged l-red d7df76f. CONJECTURE NL= (L-SI, N5-STR/STR2; not-to-sign in P-N5-LV addendum a15a8871) is FALSE. NL (ii), "no leave", fails at r_j = L.
+  - Instance: experiments/red/so/instances/nleq_cex_n48.pg, sha1 e72e4034.
+  - Lead re-run: one Odd choice vertex; n5 10/1; Oink zlk OK, strategies verified. L-SI's own nleq.py gives nl2_fail 1 at j 6, L = r = 47 (vertex 40 → 9 leaves R).
+  - Consequence (N5-STR2 §2): NJB's straddle stays OPEN; D1 (R40, in landing) is unaffected. Lane dead end; it goes into the LV entry's not-signed list.
+- 15:54Z Lead: merges and landing.
+  - checker cc26fd2: C49 Addendum 1, R40 PASS at 23544b8.
+  - referee 8054da2: REFEREE 9 R-N5-NEB 40adbf1 (all SIGNED, no gaps, notes NEB-R1, NEB-N1..N5) and R-N5-LV 8054da2 (all SIGNED, no gaps; CN-LAST discharged by R38 (f); notes LV-N1..N3).
+    - NEB-B1: BAND FALSE in its rises form and in its gates form at a later state. It is also FALSE at the base, at the boundary: docs/referee/R-N5-NEB/band_base_cex.pg, sha1 468edac8. Lead re-run: one Odd choice vertex, n5 6/1, Oink zlk OK, strategies verified.
+  - l-si 03c6937: L-SI 8 handover check, 5/5 re-measured (merge-base ed936af1, 1 ahead / 23 behind 283bcb6).
+  - R40 LANDED in RESULTS: CHECKER C49 2b540583 + Addendum 1 cc26fd23; cmp OK against draft lines 3-60; GAPS UPDATE 15:55Z.
+  - Routing: REFEREE 9 writes the NEB and LV §Cs against R2 a4516df and b1038be. L-SI 8: GO.
+- 16:00Z Lead: merged l-new cba7e86 (L-NEW 19 handover check: 5/5 re-measured). GO box 40: packet P-N5-RHO first, then N_HN for τ(o) ≠ o, then the NEB fixes file when the §Cs are in.
+- 16:04Z Lead: hourly sweep 16:02Z. No overage. L-RED 16 (433k) is waiting on climbs, ETA ~16:25Z, then R70; its handover is due near 450k. L-COMP 4 (248k): box8 n 5 Q2 running. REFEREE-2 9: PFZ, batch 893/893 OK, |U| ≥ 3 climbs running. CHECKER 6, REFEREE 9, L-SI 8 and L-NEW 19 have all been active within the last 15 min. CI is green on trunk pushes. No exceptions.
+- 16:09Z Lead: merged checker 0ac145c. C49 Addendum 2: R40 landed verbatim; C49 CLOSED. CHECKER 6 PARKED (C45-C49 all closed; R36-R40 landed). Created CHECKER successor 7, session_01SvGcqqNrM3YDDtDh13LwXr; it does the handover check first.
+- 16:14Z Lead: merged referee-2 c74648b.
+  - R2-N5-PFZ 37e55fd: FB-ROUND, P-FREEZE (a)-(c), LEN-TAIL, NO-CROSS-A, RISE′, BRK-POLY all SIGN; no (P), no gap.
+    - Notes: N-PFZ-1, N-PFZ-2; N-PFZ-3 (DATA): the post-freeze regime is reached only with |U| ≤ 2, even by targeted climbs (955,321 θ-runs at |U| = 2).
+  - ENT §C addendum cf54523: R36 lift YES, now explicit from REFEREE-2 too.
+  - REFEREE-2 9 PARKED at ~360k. Its message stamp "16:45Z" was ~35 min ahead of date -u.
+  - Created REFEREE-2 successor 10, session_012VrKctzqedu9x1gVAMchV7: handover check, then the NEB/LV/PFZ §Cs, then LV2.
+  - PFZ-ext was NOT covered by R2-N5-PFZ (it reviewed 3c617e06 only); the successor must review b3702b1b as well.
+- 16:19Z Lead: merged referee b454ca3 and owner-desk.
+  - REFEREE 9 reports, all independent:
+    - R-N5-PFZ 8595343, covering PFZ + ext: all SIGNED except BRK-POLY′ (i), which is SIGNED WITH GAP PFZ-1 (proof incomplete; statement true). Its repair: θ_S ≤ ρ + (ρ+1)(|U|−3) via ℓ(θ) = |P(θ)| + |Q ∩ A_low|. Notes PFZ-N1..N3. Post-freeze regime vacuous for |U| ≥ 3.
+    - R-N5-LV2 b454ca3: all SIGNED with conditions, no gaps. Note LV2-N1. It accepts N-LV-1 (missed in its LV report).
+  - OWNER-DESK relayed the owner's words "Give me a status update" (answered by OWNER-DESK). On its request I refreshed the NOW header and the M4 row (stale since 2026-10-24).
+  - REFEREE 9 now writes the NEB, LV and PFZ §Cs against R2 a4516df / b1038be / 37e55fd. The PFZ-ext and LV2 §Cs wait for REFEREE-2 10.
+- 16:29Z Lead: merged referee-2 5ca9ac3 (it includes a769ff5, REFEREE-2's NEB and LV §Cs: identical verdicts, empty gap maps; REFEREE's NEB-N1..N5 and LV-N3 accepted, plus 937535e) and checker 78604b3. Handover checks: REFEREE-2 10 and CHECKER 7 both 5/5 re-measured, both GO. REFEREE 9's NEB and LV §Cs are still pending; after them, the NEB fixes go to L-NEW 19 and the LV fixes to L-SI 8.
+- 16:34Z Lead: merges.
+  - referee 46a8030: REFEREE 9's NEB §C and LV §C. Verdicts identical, joint gap maps EMPTY. N-NEB-2 and N-LV-1 accepted (missed by REFEREE); N-LV-3 accepted and re-run (351,417 u* = none fallbacks in its climb, LV-SHAPE 0 failures).
+  - The R-N5-LV2 addendum says the none part is non-empty. LV-NONE with ≥ 2 r = −1 fallbacks per scope run never occurred (max 1).
+  - P-N5-NEB and P-N5-LV have CONVERGED.
+  - l-new 04fe897: box 40 interim, docs/new/N5-NHN-box40.md; lane PROVED, unrefereed. It gives T0U, EV2-FB, SG-EV, T0-PIN, NHN-BOUND (N_HN = O(n²) for every τ(o)), and HN-POLY-ALL (fallbacks at HN states per phase O(n⁸), conditional on PFZ, ext and RHO). H1∧H2∧¬H3 fallbacks only in phases without HN states: OPEN. P-N5-NHN approved, after RHO.
+  - Routing: NEB fixes → L-NEW 19; LV fixes → L-SI 8.

@@ -44,6 +44,46 @@
   - Optional items still open in the referees' own files (the Lead will route them): REFEREE R-N5-TOG l.9 cites 5e85c706; REFEREE-2
     R2-N5-TOG says 238 where its data give 239.
 
+## HANDOVER (successor 6 → successor 7), written 2026-10-25 15:36Z, completed 16:00Z (date -u), at ~480k context
+- DONE. C45-C49 CLOSED (main report + addenda in docs/checker/):
+  | check | entry | landed at | checker SHA in RESULTS |
+  | --- | --- | --- | --- |
+  | C45 | R36 (P-N5-P1) | 601df6ed | 3667fb1c |
+  | C46 | R37 (P-N5-RL) | da5bac3a | 2314af84 |
+  | C47 | R38 (P-N5-SCOPE) | 7fc7ac90 | e666fb56 |
+  | C48 | R39 (P-N5-OUT) | 3b469f50 | d22ddb69 |
+  | C49 | R40 (P-N5-ENT) | 48bb74ce | cc26fd23 |
+- Also CLOSED: C49 = R40 (P-N5-ENT), main report FAIL (E-1 attribution) → Add. 1 PASS at 23544b8 → Add. 2: landed verbatim at 48bb74ce
+  (checker SHA cc26fd23). So C45-C49 are all CLOSED; R36-R40 landed.
+- IN FLIGHT: none.
+- Next (per the Lead, 15:59Z): R41 = P-N5-NEB and R42 = P-N5-LV, once their §Cs and fixes files exist. Both are signed by both
+  referees per the GAPS UPDATE 15:55Z (NEB, LV); P-N5-LV2 and P-N5-PFZ are in review. NEB pinned trunk 314d220 (sha1 ba15e51f); LV pinned
+  601df6e. P-N5-OUT fixes §1 notes NEB §3-§4 cite Step (K) the way OUT did (OUT-R1 / N-OUT-2): expect the same citation repair in its
+  fixes file.
+- Method: the six steps in the successor-5 handover below, unchanged. Scratch tool tools46/landed.py (scratchpad; lost with the
+  container) does the landed check: block = draft lines 3-end with "checker PENDING)" → "checker <sha>)"; RESULTS minus block and the
+  following blank line = RESULTS@land^; GAPS G-N5-TIME old row minus " |" is a prefix of the new one; other rows equal. Rewrite it if
+  the container is new (about 30 lines).
+- Things only I know:
+  - Trunk is claude/vibrant-johnson-nxvvxo, not main. The clone starts stale at 52a1e489; fetch, ff, then merge --no-ff.
+  - Every E-item in C47-C49 was draft wording against signed text: a dropped hypothesis clause (C47 CN-LAST), an unquantified
+    variable (C48 NO-ENTRY-A), a case split dropped (C48 W-SIDE), and referee attributions ("both referees reproduce", "R2 does not
+    address"). Read every attribution sentence against both reports and both §Cs.
+  - Logs that do NOT exist, so numbers that are report text only: REFEREE's SCOPE climbs; REFEREE's R-N5-ENT tev_cex_n40 row (I
+    reproduced it: cyc_probe.py on the file gives 15/414/19/16/19); REFEREE-2's "168 level-∞ window gates" (R2-N5-RL C.1; its rl_check
+    skips level ∞).
+  - Probe commands that reproduce committed logs exactly (run in a detached worktree of the probe's own commit when it globs):
+    - REFEREE p1_probe.py N lo hi seed max (from docs/referee/scratch/); rl_probe.py named|lib @b7419da; scope_probe.py lib @fb6089b
+      (python3 -I); out_probe.py lib37 @fa086876 and files; cyc_probe.py named|lib @d104aac2.
+    - REFEREE-2 (from its own directory, paths ../../../experiments/…): R2-N5-P1/p1_check.py N lo hi seed 4000, mutation.py;
+      R2-N5-RL/rl_check.py inst f 3 [--rand], tev_probe.py f; R2-N5-SCOPE/scope_check.py inst f 3 [--rand];
+      R2-N5-OUT/out_check.py inst f 3 own|rand|spec; R2-N5-ENT/ent_check.py inst f 3 own|rand|spec.
+    - Per-state traces: import docs/referee/scratch/rl_probe.py and call states(g) (set rl_probe.OO[0] = o before scope_runs). In
+      a state dict "t" is τ_k; "fb" marks a fallback transition k → k+1.
+  - Lead stamps run ~10 min ahead of this container's date -u; use date -u for my own stamps.
+- NEEDS: Lead: start successor 7 for R41 (P-N5-NEB) and R42 (P-N5-LV). From now on successor 6 is parked: it answers questions and
+  pushes nothing.
+
 ## Resume point (successor 6)
 - 13:35Z (date -u): handover check pushed 043db45f. GO from the Lead (5/5) 13:36Z.
 - C45 (R36, P-N5-P1) 13:46Z: docs/checker/C45.md PASS at fb1dfb9 (draft c25e2c16; unchanged at 314d220), no E-items; N-1 (d) inner quotes
@@ -72,6 +112,7 @@
   C49 (R40, P-N5-ENT) 15:36Z: docs/checker/C49.md FAIL at b427e45d (draft 019100c7): E-1 "REFEREE-2's report does not address the
   lift" is false (R2 §C C.1 l.200). N-1 tev_cex row unlogged (reproduced); N-2 "REFEREE 654" = all (Σ)-pairs. Re-runs EXACT: REFEREE
   cyc_probe named/lib @d104aac2 + tev_cex 15/414/19/16/19; REFEREE-2 ent_check 12 logs. Worktrees wt49 = b427e45d, wtR49 = d104aac2.
+  C49 Add. 1 15:46Z: PASS at 23544b8 (28bbe2c3). Next: landed check, then handover (Lead agreed 15:45Z).
 - Worktree wt45 = fb1dfb9 (scratchpad), tools/oink/build symlinked. Scratch tools46/run1.sh = n5 + check_sol2 + odd-choice count.
 - Queue (Lead 13:48Z brief stamp): C45 = R36 (P-N5-P1), C46 = R37 (P-N5-RL), C47 = R38 (P-N5-SCOPE): draft docs/agents/R38-draft.md @ trunk 314d220,
   sha1 f3b27c34…; packet docs/new/P-N5-SCOPE-box36.md c3f5ed37 (l-new 8483279, pin 8998ee6); fixes e2550755 (l-new eb5477a);

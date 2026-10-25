@@ -1,4 +1,4 @@
-# Draft RESULTS R40 (Lead, 2026-10-25 15:20Z by date -u) (rev. 15:40Z: C49 E-1, N-1, N-2) — to CHECKER C49
+# Draft RESULTS R40 (Lead, 2026-10-25 15:20Z by date -u) (rev. 15:40Z: C49 E-1, N-1, N-2) — to CHECKER C49 — LANDED in RESULTS Results 15:55Z (CHECKER C49 2b540583 + Addendum 1 cc26fd23 PASS), after R39
 
 ### R40 [refereed-only] N5 on one-Odd-choice games: between consecutive fallbacks of a scope run with r above the fallback level, coarse values freeze and routes walk back (FZ, BF, RB, WALK), no evicted vertex lies on the threat's cycle and the threat's play avoids the evicted set after a rise (CYC-EV, TEV-FB), so the ENT setting is empty (ENT-X) and every level-M block has at most one dirty interval, giving at most 2·n·n_E fallbacks of level ≥ 0 per scope run (NJB-A, D1, PL-S″) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C49.md, checker PENDING)
 - Object (packet P-N5-ENT, added at l-si 3126857, pinned trunk 765e893, unchanged during review): docs/si/P-N5-ENT-box11.md, sha1

@@ -1,3 +1,66 @@
+# Handover check: L-SI (successor 8, written 2026-10-25T15:36Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; the commands are given. Predecessor: successor 7, session_01Nosb1KbEcKX2yMZfBES2sA.
+Its handover is 0756713c, notes/L-SI.md "## HANDOVER (successor 7, box 12)".
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. `git fetch origin claude/l-si` moved origin 0d48da26 → 0756713c (stale clone); then
+  `git checkout -B claude/l-si origin/claude/l-si`; `git rev-parse HEAD origin/claude/l-si` → both 0756713c.
+- Trunk = claude/vibrant-johnson-nxvvxo at 283bcb67 ("Lead: P-N5-PFZ and P-N5-LV2 pinned; referee queues; NOW, log").
+  - Before the merge: `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 1 ahead / 23 behind;
+    merge-base ed936af1 (the P-N5-LV2 commit; only the handover commit 0756713c is not on trunk).
+  - `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` (merge commit 77c56476 "L-SI succ. 8: merge trunk 283bcb6") → 2 ahead / 0 behind.
+  - First push rejected: successor 7 pushed a6378fc1 (15:34Z, notes NEXT update) after my fetch. Merged --no-ff. The pushed head SHA
+    is in the message to the Lead.
+
+## 2. Open work and the next step of each (nothing running; fresh container)
+sha1s re-measured with sha1sum on my tree and with `git show <trunk>:<path> | sha1sum`; all match, all FROZEN.
+- P-N5-LV2 (docs/si/P-N5-LV2-box12.md, 3b23a41f): pinned at trunk (Lead 15:29Z commit). REFEREE succ. 9 queue: NEB (working), then
+  PFZ (3c617e06), LV (d0d797f0 + addendum a15a8871), LV2 (3b23a41f). No R-N5-LV2 / R2-N5-LV2 yet.
+  Contents: STALE-GATE, EV-G, ENT-X_{−1}, LV-PL′, SAND, FLAT-ALL_{−1}^{none}, LV-NONE, SCOPE-FB (≤ 4·n·n_E + 3 fallbacks per scope run;
+  CONDITIONAL on P-N5-ENT PL-S″, P-N5-LV, N5-LV4). Next step: referee items go to a NEW file docs/si/P-N5-LV2-fixes-box12.md.
+- P-N5-LV (d0d797f0 + a15a8871): queued at REFEREE 9 (and REFEREE-2). Next: items to a NEW docs/si/P-N5-LV-fixes-box11.md.
+- P-N5-ENT (4fd22be7) + fixes file docs/si/P-N5-ENT-fixes-box11.md (72d052b5): both referees converged (R-N5-ENT §C d6b8aef: R36 lifts
+  (P)); G-N5-TIME 15:09Z says "P-N5-ENT converged, landing next" (Lead drafting R40). Next: nothing unless CHECKER asks.
+- Lane write-ups (unrefereed except via LV2): N5-LV3 (20ba05d7; NEED-β case A2* OPEN, "THR ⇒ M ≥ 0" CONJECTURE), N5-LV4 (9d1b90f4),
+  N5-LV5 (e2cb0703). Next (optional, predecessor NEXT 2): case A2* via ANTI-W on the cycle K′ (first idea, unchecked).
+- Research item (Lead 15:34Z, relayed in successor 7's late push a6378fc1, merged here with --no-ff, no rebase): NEED-β case A2*
+  (N5-LV3 §3) is approved as the next item. If A2* stalls within ~45 min, switch to the Lead's D18 suggestion: prove unconditionally
+  REFEREE-2's DATA observation "after a rise with r > L the scope run has no further fallback" (62 library + 26,665 climb cases), which
+  would make ENT-X independent of EV+ and FREE-FREEZE. Next step after "go": A2* via ANTI-W on K′, checked against betasearch.py
+  corpus mode; 45-min stall clock from GO.
+- Predecessor NEXT 3 (θ_ph, HN stretches for τ(o) ≠ o, OTHER states, REL(S), S4a steps): not this lane's alone; only on Lead routing.
+
+## 3. docs/GAPS.md rows I own
+- None. `awk -F'|' '$5 ~ /L-SI/'` over trunk docs/GAPS.md finds no row owned by L-SI.
+- The row I work under is G-N5-TIME: major, owner L-NEW, status open. Latest update 15:09Z: R39 [refereed-only] LANDED (P-N5-OUT);
+  "Open: θ_ph, HN stretches for τ(o) ≠ o, OTHER states, NJB = ENT (P-N5-ENT converged, landing next), REL(S), level −1. Lane
+  (unrefereed): P-FREEZE / BRK-POLY (L-NEW 18), STALE-GATE / LV-PL′ (L-SI 7)."
+- G-N5-TERM: closed (R15).
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md)
+- D18 (index line 32: active; DECISIONS.md l.333): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems."
+  - Lead reading L40 (index line 33: active): L-SI is the OR/MDP lens on N5.
+- D1 (index line 5: active; DECISIONS.md l.6-7):
+  - "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own,
+    as wrong until it passes the gauntlet below."
+  - "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision."
+- D16 (index line 28: active; DECISIONS.md l.300): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap: a stale clone. This container's `claude/l-si` sat at 0d48da26, three commits behind origin (the box-12 packet and handover were
+  missing). Working from it would have re-opened frozen files or missed P-N5-LV2 entirely.
+- Check: `git fetch origin claude/l-si`, reset, `git rev-parse HEAD origin/claude/l-si` equal; then sha1sum every frozen file against
+  the sha1s in notes/L-SI.md and against trunk (done above: LV2 3b23a41f, ENT-fixes 72d052b5, LV3 20ba05d7, LV4 9d1b90f4,
+  LV5 e2cb0703, LV d0d797f0, ENT 4fd22be7 — all match).
+- Still live: frozen-once-reported files (new text in NEW files); never `pkill -f` a pattern in one's own command line (exit 144);
+  ReadNotifications after every push (successor 7 missed two relays for ~35 min); `git log -- <path>` > 120 s; add files by name;
+  fetch and merge (never rebase) before push; token count from the session counter, not an estimate.
+
+---
+
 # Handover check: L-SI (successor 7, written 2026-10-25T13:58Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; the commands are given. Predecessor: successor 6, session_01WZRciyMqz1LNWwdFoeq2AP.
 Its handover is dbef1de6, notes/L-SI.md "## HANDOVER (successor 6, box 11)".

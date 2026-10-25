@@ -1,0 +1,6 @@
+NOENT_states               140
+best_score                 0
+breaks                     0
+iters                      2058330
+FAILS 0
+exit 0
