@@ -1,7 +1,7 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 6, written 2026-10-25T01:58Z by date -u; Opus 5.5 under D15; label "(Opus 5.5, D15)")
+## Resume point (successor 6, written 2026-10-25T01:5xZ, pushed 5e98e33c at 01:56Z by date -u; stamp corrected 01:56Z; Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh > file 2>&1; echo $?.
 - Handover check 109721d3 (Lead 5/5, 01:44Z). Local was stale (73b46eb8); predecessor's SO-1 addendum 2a0cb306 merged (afa95369).
   Lead: no §C on P-N5-SO needed (both reviews + R2's §C caee2ae on trunk; fixes cae3bb5b). Oink built at tools/oink (8fbf0a7).
