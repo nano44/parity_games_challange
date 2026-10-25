@@ -53,6 +53,7 @@ Branch claude/referee-2, merged with trunk at each packet. REFEREE-2 owns no doc
 | handover check | — | 6eda0134 | — | Lead 5/5 |
 | P-N5-SCOPE | docs/new/P-N5-SCOPE-box36.md c3f5ed37 @ 8998ee6 | 6d6e4bcf | fb6fa696 (+ 8655f692 stamp) | all six SIGN; notes N-SC-1..4, O-1 (§7.2 f_out needs + X_out); no verdict differs from REFEREE |
 | P-N5-RL | docs/si/P-N5-RL-box10.md 0a3c70cb @ 2fb698d | 30dc5f54 | this commit | after §C: MERGE SIGN WITH GAP RL-2 (ℓ = ∞; my miss); TEV-RED NOT SIGNED as stated (RL-1 = G-RL-1 cycle case; RL-3 = G-RL-2 "up to and including e"); TEV-RED′ SIGN COND (P); Consequence NOT SIGNED as stated; RL-4 citation (NO-RF-OLD Corollary; my miss); rest SIGN / SIGN COND (P) / COND CN-LAST, labels exact |
+| P-N5-RL fixes (Addendum A) | docs/si/P-N5-RL-fixes-box10.md ac027458 (l-si 1f107bfb, on trunk) | db9d66a8 | — | CYC-EV SIGN (no (P)); replacement TEV-RED + Consequence SIGN CONDITIONAL ON (P); cycev_probe 836 (Σ) settings 0 failures, ENT case vacuous |
 | P-N5-P1 | docs/si/P-N5-P1-box10.md b98ca794 @ 48a8a4c | e036e4c5 | this commit | Lemma B, M, P1, §4 SIGN; no gaps; REFEREE §5 correction accepted (only TEV-RED′ becomes unconditional) |
 ### IN FLIGHT
 None.
