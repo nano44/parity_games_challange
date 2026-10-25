@@ -167,3 +167,7 @@ Measured from the repository at the time of writing (commands named), not recall
   18:10Z, after its cd3b7cd0 handover and absent at my 18:11Z fetch. Merged --no-ff, no conflict.
 - So answer 1's head is now this merge, and answer 2's LV2 item changes: N-LV2-3's conjecture to L-RED is closed (withdrawn); the
   §C LV2 must cover Addendum B too. The trap in answer 5 bit a third successor, exactly as described; the check caught it.
+- Second push attempt (18:1xZ): rejected again. `git log HEAD..origin/claude/referee-2` -> 2fef675c (succ. 10, stamped 18:13Z: notebook
+  handover adds the Lead's 17:56Z items). Merged --no-ff. Effect on answer 2, §C PFZ: the Lead asks whether BRK-POLY′ (i) would be
+  SIGNED once REFEREE's repair is in the fixes file; REFEREE's repair (refined θ-LEN ≤ |A_low| − [o low] per P-epoch; ρ_S ≥ 1 forces a
+  high u ≠ o; θ_S ≤ (ρ_S+1)(|U|−2) − 1) is to be checked by me independently (pfzx_check.py: count length moves vs |A_low|).
