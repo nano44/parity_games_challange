@@ -261,5 +261,22 @@ Premises for "polynomial per phase" (each with its status):
    so every transition of a phase is a run transition, a fallback, or a stretch boundary.
 6. LEN's length ranges: ¬H2 W-length is the distance to c_w along the W-play, inside R, so ≤ r − 1. ¬H1 honest length is likewise ≤ r − 1.
 
-## 10. DATA (experiments/si/kw15/; REFEREE-2's SPEC-mode tracer read only; every game asserted 𝒞^1O)
-See §10 in the commit that adds the logs (filled in after the runs; this section is DATA, not proof).
+## 10. DATA (experiments/si/kw15/; REFEREE-2's SPEC-mode tracer read only; every game asserted 𝒞^1O; DATA, not proof)
+- Scripts:
+  - kwcheck.py checks, per trace: WONCE, AGREE (Fact A's formulas for both frames above m*), FRZ (freeze from k0 + |R| − 1), LEN, KIND
+    (≤ 1 change per vertex and the direction) and CWINT.
+  - kwclimb.py: random o-cyclic 𝒞^1O games (RC.rand_game) and hill-climbs (FCL mutations).
+- Corpus 1: every .pg file in experiments/ and docs/ (1,101 files; 600 𝒞^1O; S3 start + 2 random starts). Logs: logs/all_r2_c0..3.txt.
+  - 1,502 runs, 6,151 AGREE states, 1,334 FRZ state checks: 0 failures.
+  - Largest actual freeze delay: 1 transition (bound |R| − 1).
+- Corpus 2: 3,000 random games, n 6-40 (logs/random_3000.txt): 0 failures. Nearly vacuous: runs of ≤ 4 transitions.
+- Climbs (seconds 2400 / 1500; logs/climb_*.txt), totals over all evaluated games:
+  - ≈ 8.6M AGREE states and ≈ 2.8M FRZ state checks: 0 failures.
+  - WONCE: 849k checks over 1.5M Ξ-flat S4a transitions (wonce2 climbs): 0 failures.
+  - KIND / CWINT: 481k post-freeze runs with c_w ≻ c_θ and ¬H2 (kind2 climbs): 0 failures.
+- VACUITY (honest):
+  - No post-freeze kind change and no post-freeze c_w switch was observed anywhere. So KIND-MONO's direction claim and CW-INT have NO
+    data support; they rest on their proofs.
+  - Longest post-freeze part of a run: 23 transitions (library). Max Ξ-changes on R in one run: 40 (library); in climbs 25 at n 29.
+- Not run: an independent tracer (all traces are REFEREE-2's SPEC mode), and a check of Theorem RUN's numeric bound per run. The bound
+  is far above the observed maxima, so such a check would be vacuous.
