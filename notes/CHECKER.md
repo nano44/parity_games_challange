@@ -12,7 +12,11 @@
   063ecc73 86c2797d, a4bf4050 e8415438, 2cd3c9eb ba37f1d1.
   Re-run: xg_witness.py climb/witness_xg_12004.pg (89d9085b) + .json (ee68bf72) @1a9a0407 (worktree wtX58): RESULT OK, r = 10, gate 10.
   For the report: N-item on R2's Addendum A editing signed §1/§6 text (marked, no verdict change); the draft must cite 1a9a0407 if it uses
-  the corrected witness; N-NEEDB-5 re-run from experiments/si/needb5 still to do; Oink 8fbf0a7 built (setup_oink.sh exit 0).
+  the corrected witness; Oink 8fbf0a7 built (setup_oink.sh exit 0).
+  23:05Z: N-NEEDB-5 re-run: experiments/si/needb5/repro.py (l-si 34e5225a, trunk ancestor) on block_9501.pg (1b5b76fd) from the
+  block_9501.txt pair (σ0 9 2 9 1 0 5 2 8 3 5 7, τ0 9 2 9 1 0 5 2 5 0 5 3) = saved.txt IDENTICAL (state 1: fb, (h), THR, r = 10, M = −1,
+  gates (10,1) (10,3) (10,8) β); from the S3 pair (Engine.initial("best") on g and its dual) = s3.txt IDENTICAL (4 states, no such state).
+  Draft wording to check at C58: (iii) "witness saved, not reproduced by REFEREE, N-NEEDB-4" vs R2 Addendum A (now reproducible).
 
 ## Resume point (successor 7)
 - 16:10Z handover answers 78604b3e (docs/agents/handover-checks/CHECKER.md); Lead 5/5 + GO 16:32Z; Oink 8fbf0a7 built after GO (exit 0).
