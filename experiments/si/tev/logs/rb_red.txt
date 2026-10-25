@@ -1,0 +1,1 @@
+TOTAL {'pairs': 15, 'walk_chk': 19, 'rb_chk': 16}
