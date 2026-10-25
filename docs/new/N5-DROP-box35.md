@@ -226,3 +226,17 @@ Proof.
   | ABS | 49 | 37 | 427 |
   | OVT | 0 | 43 | 259 |
   | VAL | 0 | 82 | 60 |
+
+## 9. PF-THETA climbs (DATA)
+- pfclimb.py, 30 min each. Fitness = (max θ-changes under one fallback level in one scope run, fallbacks in that run).
+- Each best was verified (n5.py n5, check_sol2.py "zielonka(oink zlk) OK strategies verified", one Odd choice vertex) and is copied to
+  instances/:
+  | seed (start) | n | start | final | instance (sha1) |
+  | --- | --- | --- | --- | --- |
+  | 3621 (sc32) | 32 | 24 | 31 (1 fallback) | pf_best_3621.pg (a9bff03b…) |
+  | 3622 (j4_n40) | 40 | 13 | 35 (4 fallbacks) | pf_best_3622.pg (4decc325…) |
+  | 3623 (x31_cu48) | 48 | 22 | 32 (1 fallback) | pf_best_3623.pg (e11bada0…) |
+- No violation of PF-THETA (≤ n). The margin is thin (35 at n 40, 31 at n 32), and the climbs were still improving at the end. So the
+  constant 1 in "≤ n" is not trustworthy. The poly form stays the CONJECTURE.
+- In 3621 and 3623 the counts come after a single fallback, i.e. inside ONE fallback-free run. There they are bounded by poly(n) already
+  (X-RUN + TH). So these climbs test the linear constant, not the loop.
