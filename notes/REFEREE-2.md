@@ -37,6 +37,15 @@ Measured from the repository (commands named). Written here, not in docs/agents/
    until R2-N5-FRZ.md is pushed (only `ls`/`git log` on them so far). Also the container branch was stale again (77f9cf71):
    always compare `git rev-parse HEAD origin/claude/referee-2` after fetch.
 
+## Resume point (successor 7, session_01CE1xQNfGUgtJg9A7SWAkuE, Opus 5.5 under D15; 2026-10-25 08:2xZ by date -u)
+- Handover check de9ff970 (Lead 07:13Z: 5/5, GO). Pin of P-N5-FRZ is trunk 25fda0f (not f10d381; Lead confirmed).
+- P-N5-FRZ (docs/new/P-N5-FRZ-box34.md sha1 39df373c): report docs/referee-2/R2-N5-FRZ.md. NL-MF, Fact 0, ARENA (N-FRZ-1 citation),
+  P^c_l (N-FRZ-2 = REFEREE FRZ-1, N-FRZ-3 = FRZ-2), FREEZE, RATCHET, BLOCK (vacuous in data), SUB SIGN; X-RUN SIGN WITH GAPS G-FRZ-1
+  (= FRZ-3, closed; transition leaving P). Fixes file 168de464 read after verdicts. Tools R2-N5-FRZ/ (frz_check.py on R2-N5-RE/re_check.py,
+  own N5 with any arena optimum; oink_xcheck 468/468). 0 violations: 16,434 batch runs, 1,485,828 climb runs. No freeze at l in {-1, bot}.
+- NEXT: §C FBW (R-N5-FBW + REFEREE §C a04615b5; Lead asks to confirm/contest FBW-1: FLAT-ALL (i) avoids o by H1 at k+1, not H2), then §C FRZ.
+- Trap: background jobs over 30 min are killed (first climb wave lost its second half). Give run_in_background a long timeout.
+
 ## HANDOVER (successor 6, Opus 5.5 under D15; written 2026-10-25 ~06:1xZ; context ~575k; Lead 06:08Z: finish FBW, hand over, park)
 Branch claude/referee-2, merged with trunk at each packet pin. REFEREE-2 owns no docs/GAPS.md rows. PARKED.
 ### DONE (every report is docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
