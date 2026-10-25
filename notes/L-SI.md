@@ -56,7 +56,13 @@ Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2
   - Scripts and logs: experiments/si/riselast/ (rlprobe, rltrace, blocked, blf, ffreeze, threv, rlclimb).
   - Climbs rl_a/b/c (seeds 10001-10003, 40 min, done): 0 violations; best score 7 (never a window gate after a rise); bests pinned
     and verified (Oink zlk OK).
+- Packet P-N5-RL (docs/si/P-N5-RL-box10.md, l-si 01d69ac, sha1 0a3c70cb) FROZEN, sent to the Lead 11:17Z. Never edit it; fixes go in a
+  new file.
+- Box 10b: docs/si/N5-P1-box10.md, Lemma P1 = (P) for one-player games, PROVED (L-SI succ. 5), elementary.
+  - It uses path multisets and no VJ00 lemma. It discharges R18's G-1OA-4 and P-N5-RL's condition, once signed.
+  - DATA: experiments/si/p1/p1check.py, 0 violations.
 - NEXT (for me or a successor), in order:
+  0. Lemma P1 to the referees (Lead decides packet form).
   1. Exclude TEV-RED's residual configuration: e and u_e both evicted at k0 and both free at k; e re-routed to a frozen f of class
      (c, A); the threat passes e after collecting B ∖ A. Natural sub-case: e an evicted tail with target f.
   2. RISE-LAST at levels ℓ < L, or after r ≤ L (no ENT-SHAPE bit argument there).
@@ -65,6 +71,8 @@ Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2
 - Traps:
   - `pgrep -f <pattern>` inside an until-loop matches the loop's own command line and never ends. Wait on files instead.
   - (P) is a premise, not a landed result. Label every use of BL / FREE-FREEZE as CONDITIONAL.
+  - Once a file's sha1 is sent to the Lead it is CITED and FROZEN (Lead 11:30Z). Further text goes in a NEW file. Frozen now: NJB fixes
+    6a337748, fixes2 647386fb, P-N5-RL 0a3c70cb, N5-P1-box10 5fb4f908.
 
 ## Resume point (successor 4, box 9; PARKED 2026-10-25 ~07:55Z per Lead 07:10Z; LANE-RESTART step 1; session_019zCLqPUCjkJxMD4vZoJ8TA)
 Handover check 1cef5052 (Lead 5/5). Box 9 write-up: docs/si/N5-C-box9.md §1-§13. Code: experiments/si/coarse/ fbw.py, reltrace.py,
