@@ -36,7 +36,10 @@ Reason: the session token counter passed ~450k (the Lead's handover line), at a 
   - `git log -- <path>` takes more than 120 s here.
 ### NEXT (for a successor)
 1. Referee items on P-N5-LV2 (and P-N5-LV) → NEW fixes files.
-2. Optional: NEED-β case A2* (N5-LV3 §3), or "THR ⇒ M ≥ 0" for its own sake.
+2. Lead 15:34Z (crossed my handover): P-N5-LV2 PINNED at trunk 283bcb6, queued after P-N5-LV. A2* is approved as the next item. If A2*
+   stalls within ~45 min, switch to the Lead's D18 suggestion: prove REFEREE-2's DATA observation unconditionally ("after a rise with
+   r > L the scope run has no further fallback"; 62 library + 26,665 climb cases). That would make ENT-X independent of EV+ and
+   FREE-FREEZE.
 3. With CL-S closed up to the reviews (SCOPE-FB), the G-N5-TIME gaps that remain are not this lane's alone: scope runs per phase,
    out-of-scope fallbacks, S4a steps, phases and X. Ask the Lead which one to take.
 
