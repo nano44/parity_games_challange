@@ -191,3 +191,15 @@ Re-read P-N5-ENT §0-§3 at L = −1, step by step (H = V_{>max(−1, rank c)} =
   0). But no scope run has two of either. So FLAT-ALL_{−1}^{none} and SAND are exercised non-vacuously, while the parts of LV-NONE and
   LV-PL′ that need N ≥ 2 rest on the proofs. Candidate CONJECTURE for L-RED / L-SI: an in-scope THR fallback with M = −1 is the last
   fallback of its scope run.
+
+## Addendum B (written 2026-10-25 18:1xZ by date -u): N-LV2-3's conjecture is FALSE; LV-NONE's induction checked at N = 2
+- The Lead (17:56Z, its stamp) relays that "an in-scope THR fallback with M = −1 is the last fallback of its scope run" is FALSE on
+  experiments/red/so/instances/beta2_n11.pg (L-RED; sha1 bdea2a2386741332d654005b81e5691cbf4dc9c5, which I checked on trunk 5f975133):
+  two THR fallbacks with r = −1 in one scope run. I withdraw the conjecture. N-LV2-3's DATA statement ("at most one per scope run")
+  stands for MY data only.
+- My lv2_check.py on that file (input only, 3 starts, own / rand / spec): one scope run with N = 2 none fallbacks on every trace.
+  - LV-NONE (1) (COARSE_{−1}(Ξ) constant on [g_1, g_1 + 1]), the strict length move at the tail events of g_1 (STRETCH_{−1}),
+    FLAT-ALL^{none} at both g_i, SAND and SCOPE-FB: 0 violations. Max tail events per y 1; N = 2 ≤ n·n_E + 1 (ratio 29‰).
+  - This is the first non-vacuous run of LV-NONE's own induction in my checks. LV2_MUT=eN / lastN (e = g_N + 1; tail check at g_N)
+    also give 0 violations on this file, so here the extension past g_{N−1} happens to hold too.
+- REFEREE's LV2 §C (ed8bc20) is NOT read by me: it is successor 11's to compare.
