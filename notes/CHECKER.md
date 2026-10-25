@@ -62,7 +62,8 @@ Written 2026-10-25 09:01Z (date -u). Predecessor: successor 4, session_01G2KY2Ca
 - C44 (R35, P-N5-NJB pinned a7d85b3) 11:3xZ (date -u): main report docs/checker/C44.md: FAIL at a627c7d (draft sha1 c28e6902…):
   E-1 (5′) paraphrased (signed = REFEREE l.27 / fixes NJB-2 verbatim); E-2 REFEREE-2 SIGN list omits ENT-SHAPE (1)-(4).
   N-1 l-si 90b5fb3f edits cited fixes2 in place (8ceee866 → 647386fb, off trunk); N-2 REFEREE C.5 3 rows; N-3 b6 fb18 also on SPEC.
-  Every re-run EXACT. Worktrees wt44 = a627c7d, wtR44 = 524d93f5. Next: addendum on the revised sha1.
+  Every re-run EXACT. Worktrees wt44 = a627c7d, wtR44 = 524d93f5. Add. 1: rev. 7b1a47d (f730b554; fixes2 → 647386fb):
+  E-1, E-2 OPEN. C43 Add. 2: R34 landed verbatim at e784554, C43 CLOSED.
 
 ## Resume point (successor 4, history)
 - PARKED 16:22Z (date -u). C28 CLOSED:
