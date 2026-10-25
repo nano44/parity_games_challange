@@ -31,9 +31,17 @@ L-SI successor 5 (Opus 5.5, D15/D18, L37/L40). Started 2026-10-25 09:40Z (date -
   - A fallback after a rise therefore needs three things at one state: a blocked edge, a window gate (R → F) and no W-improving gate.
   - The EQ branch of RISE-LAST is harmless: at most one more fallback, the phase's last (Corollary EQ-END, using L-NEW's lane-proved
     CN-LAST).
-  - DATA: no fallback ever follows a rise, in the whole rest of the run, not only in its scope run. 35 / 39 (lib) and 18 / 20 (named)
-    rises close the top gap (lt = r).
-  - RISE-LAST itself stays a CONJECTURE. The exact point where the proof stops is in §5.
+  - Lemma FREE-FREEZE (PROVED CONDITIONAL on (P)): after a THR fallback k0, for the rest of the phase, a free vertex whose play stays
+    inside F_{k0} keeps its value exactly.
+  - Propositions EV, EV+, TEV-RED (PROVED CONDITIONAL on (P)): in any NJB / ENT violation, both the gate target's play and the new
+    threat's play run through the region Ev evicted at k0. At the second fallback, the last Ev vertex e on the threat's play is Even,
+    and its k0-successor is evicted too and still free.
+  - So NJB follows from CONJECTURE TEV ("after a rise, the threat's play avoids Ev"), and in fact from excluding the one configuration
+    of §5. DATA: TEV 0 failures in 117 post-rise states.
+  - DATA: no fallback ever follows a rise, in the whole rest of the run, not only in its scope run.
+    - 35 / 39 (lib) and 18 / 20 (named) rises close the top gap (lt = r).
+    - The BL-based climbs never produce a window gate after a rise.
+  - RISE-LAST, NJB and ENT stay CONJECTURES. The exact point where the proof stops is in §5.
 
 ## 1. Lemma BL-FORM (PROVED, L-SI succ. 5; every state with (h))
 Let k be a state with (h). Call an Even edge (v, u) with u ≠ σ_k(v) W-IMPROVING if W_k(u) ▷ W_k(σ_k v). Call it BLOCKED if it is
@@ -207,7 +215,23 @@ Proof.
 - Climbs (rlclimb.py, a new fitness built from BL). After a rise, an in-scope state t scores
   3·[RF_t > 0] + 3·[blocked_t > 0] + (5 − min(W-improving gates, 5)). 11 means Even's side of a fallback is complete.
   - Fitness = (RISE-LAST violations, best score, post-rise in-scope states, rises).
-  - 3 × 40 min, seeds 10001-10003, from cl9_norf_a, cl9_norf_b, x31_rx32. Results: §4c.
+  - 3 × 40 min (2,400 s each, 10:10Z-10:50Z), seeds 10001-10003, from cl9_norf_a, cl9_norf_b, x31_rx32. 102,279 / 145,421 /
+    129,075 mutants tried.
+  - Result: 0 violations. The best score stayed at 7 in all three: a blocked edge and at most one W-improving gate after the rise,
+    but NEVER a window gate (RF = 0 at every post-rise state). The climbs then only raised the secondary keys (post-rise states,
+    rises).
+  - Final fitness: rl_a (0, 7, 25, 13); rl_b (0, 7, 25, 2); rl_c (0, 7, 20, 16).
+  - Bests in experiments/si/riselast/instances/, each re-verified (n5.py, check_sol2.py: Oink zlk OK, strategies verified;
+    logs/climb_bests_verify.txt):
+
+| best | n | sha1 | iterations / fallbacks | rises (fallbacks after) | post-rise states, threat meets Ev | FREE-FREEZE checks (viol.) |
+| --- | --- | --- | --- | --- | --- | --- |
+| rl_a | 32 | 11bfdb71 | 35 / 2 | (all three) 31 (0) | (all three) 64, 0 | (all three) 1,212 (0) |
+| rl_b | 32 | eeac0522 | 33 / 2 | | | |
+| rl_c | 32 | 04ff3de5 | 30 / 3 | | | |
+
+  - Reading: in these climbs the obstacle to a post-rise fallback is not the blocked edge (always present) but the window gate (never
+    present). That is the ENT / TEV side, consistent with Propositions EV, EV+ and TEV-RED.
 
 ## 5. Where the proof stops (the exact obstruction, THR branch)
 - Known ingredients:
@@ -217,11 +241,9 @@ Proof.
   - the free values are frozen above L (NL (i)) while r > L, and they are Even's confined optimum at each THR fallback (BL-F1).
 - Missing: a reason why Even cannot become stuck again. Stuck means that the gated nominal optimisation has no W-improving gate while
   a window gate and a blocked edge coexist.
-  - CONF-MONO freezes every free value when F_k ⊆ F_{k0}. Then a window gate (y, z) at k has z with the same free value as at k0, and y
-    must be an entrant after the rise (NO-RF-OLD).
-  - With the frozen value, ENT-SHAPE (4)'s rank-L bit flip of z needs z to be a vertex that is free at k but not at k0 (an evicted
-    vertex, branch (iii-b) of the fixes file). When F_k ⊆ F_{k0} it can only come from (iii-b).
-  - I have not excluded the case F_k ⊄ F_{k0}: vertices evicted at k0 that stay free until k and carry a free value that is new at k.
+  - If F_k ⊆ F_{k0}, CONF-MONO freezes every free value from k0 to k. Then ENT-SHAPE (4)'s bit flip of z is impossible, so there is no
+    NJB violation.
+  - What is left is the region evicted at k0. EV, EV+ and TEV-RED below locate the violation there.
 - **Proposition EV (PROVED CONDITIONAL on (P), L-SI succ. 5).** Take a violation of NJB in the ENT setting: S a scope run, k0 < k
   consecutive fallbacks of S with M_{k0} = M_k = L ≥ 0, r > L on [k0+1, k], and a COARSE_L(θ) rise in between. Let (y, z) be the
   level-L gate at k of ENT-SHAPE. Then z's σ_k-play meets the EVICTED REGION Ev := F_{k0+1} ∖ F_{k0}: vertices that were in R̄_{k0},
@@ -243,6 +265,61 @@ Proof.
     - The rise makes the top of B ∖ A even.
     - So the vertices by which θ rose (on the new threat's free play) are exactly high vertices on z's way into Ev, or on q's old route
       at k0.
+- **Proposition EV+ (PROVED CONDITIONAL on (P), L-SI succ. 5).** In the same setting, the new threat's play also meets Ev. That is, the
+  σ_k-play of x_k := σ̄_k(o) passes through a vertex of F_{k0+1} ∖ F_{k0}.
+  - Proof. Let h be the top vertex of B ∖ A; the set is non-empty, since A ⊆ B and B ≠ A. Write H for "above max(L, rank c)".
+    - The plays of z and x_k merge at their first common vertex m. Both have the same H-part, by the merge-point form (§3) at level L.
+      Their prefixes before m are disjoint, so they have no H-vertex. Every H-vertex of z's play lies on the common suffix from m.
+    - If h ∈ ρ: h lies on the common suffix, and q comes after h on z's play. So q is on x_k's play, and q ∈ Ev.
+    - If h ∈ π_q: h ∈ B means h lies on x_k's play (h ≠ o, since routes avoid o), so h ∈ F_k. Also h ∈ π_q ⊆ R_{k0}, and
+      F_k ⊆ F_{k0+1}. So h ∈ Ev. □
+  - Reading. After the rise, Odd's best threat runs through the region the fallback k0 evicted. Above L it looks like the old threat
+    with one more stretch through Ev: B = A ⊔ D, where D (with an even top) is the set of H-vertices on x_k's way into and through Ev.
+  - A refutation of NJB therefore needs Odd's new threat to be built from the evicted region.
+- **CONJECTURE TEV (L-SI succ. 5, DATA).** After an in-scope THR fallback k0 of level L ≥ 0, at every later state t of the scope run
+  that comes after a COARSE_L(θ) rise and has r > L on [k0+1, t], the threat's σ_t-play avoids Ev.
+  - With EV+, TEV implies NJB and ENT.
+  - DATA (threv.py; logs/threv_{named,lib,rise4}.txt). Before a rise the threat's play meets Ev often: NAMED 179 of 662 states, LIB 425
+    of 1,353. After a rise it never does: 0 of 47 post-rise states with r > L in NAMED (all on the NORF climb bests), 0 of 6 in LIB,
+    0 of 64 on this box's climb bests (§4).
+    Post-rise states are thin, as in R-N5-NJB §5.
+- **Proposition TEV-RED (PROVED CONDITIONAL on (P), L-SI succ. 5).** Setting of TEV, and suppose the threat's σ_t-play meets Ev. Let e
+  be the LAST Ev vertex on it, f := σ_t(e), u_e := σ_{k0}(e), and B := the part of P(θ_t) above max(L, rank c). Then:
+  - (1) e is Even, and f's play lies in F_{k0}, so Ξ_t(f) = Ξ_{k0}(f) (FREE-FREEZE);
+  - (2) u_e's route at k0 has no vertex above max(L, rank c), and COARSE_L(Ξ_{k0} u_e) = COARSE_L(θ_{k0}) = (c, A);
+  - (3) B = A ⊔ (the vertices of the threat's play before e that lie above max(L, rank c)). So θ rose by vertices met BEFORE the last Ev
+    vertex;
+  - (4) if u_e ∈ R̄_t, then (e, u_e) is a gate of level > L at t. So:
+    - t is not a fallback with M_t ≤ L (in particular not the k of ENT);
+    - at an S4a step t, e enters R at t + 1, provided e is not on the σ_t-play of e* = τ(o).
+  - (5) hence at a fallback k of the ENT setting, u_e ∈ Ev ∩ F_k: e's old successor was evicted too and is still free.
+  Proof.
+  - (1)
+    - No vertex leaves R at the S4a steps of (k0, t] (NL (ii), r > L). So F_t ⊆ F_{k0+1} = F_{k0} ⊔ Ev, and every vertex after e on
+      the play lies in F_{k0}.
+    - If e were Odd, its only successor would be its k0-successor, which lies in R̄_{k0} because e ∈ R_{k0}. That successor is not in
+      F_{k0}, a contradiction.
+    - FREE-FREEZE applies to f.
+  - (2)
+    - COARSE_L(b(e)) is constant on [k0, t]: FLAT-ALL (iii) in b-form at k0 (R31; for a tail, its target has the gate's COARSE_L),
+      then NL (i), since e ∈ F on [k0+1, t].
+    - So COARSE_L(Ξ_{k0} f) = COARSE_L(b_t e) = COARSE_L(b_{k0} e) = COARSE_L(π_{u_e} ⊕ θ_{k0}).
+    - P(Ξ_{k0} f) ⊆ F_{k0} and π_{u_e} ⊆ R_{k0}, so π_{u_e} has no vertex above max(L, rank c). o is not above it either: o ∈ A would
+      put o on f's free play.
+  - (3) Ξ_t(x_t) = (play up to e) ⊕ Ξ_{k0}(f), with COARSE_L(Ξ_{k0} f) = (c, A) by (2).
+  - (4)
+    - Ξ_t(u_e) = π′ ⊕ θ_t. Its part above L is π′_H ∪ B, which strictly contains A (B ⊇ A by (3), B ≠ A by the rise). And
+      Ξ_t(u_e) ⊵ Ξ_{k0}(u_e) ≈_L b_t(e) (R15 (a)). So Ξ_t(u_e) ▷ b_t(e) at a level > L: a gate.
+    - At an S4a step with e off e*'s play: the switched strategy σ_t[e ↦ u_e] gives e the value e ⊕ π′ ⊕ w. Its play runs u_e → o → e*
+      and never returns to e: u_e's route avoids e, since e ∈ F_t, and so does e*'s play. The arena optimum dominates it (F1 in the
+      arena). That value lies above Ξ_t(e) at a level > L, since r > L. NL (i) forbids this while e stays free, so e ∈ R̄_{t+1}.
+      (If e is on e*'s play, the switched play closes a cycle through o, and this bullet is not claimed.)
+  - (5) By (4), with M_k = L. □
+- So TEV, and with it NJB, would follow from excluding one configuration at the fallback k:
+  - an Even vertex e and its k0-successor u_e, both evicted at k0 and both still free at k;
+  - e re-routed to a frozen vertex f ∈ F_{k0} of class (c, A);
+  - the new threat's play passing through e, after collecting the rise vertices B ∖ A.
+  - DATA: never seen (TEV data above).
 - Target for L-RED (sharpened), in the order the events must happen:
   - a fallback k0 evicts a region Ev;
   - a rise follows (Mn emptied);
@@ -256,7 +333,8 @@ Proof.
 - PROVED (L-SI succ. 5, unrefereed): BL-FORM; R-SAME; merge-point form of a window gate; CONF-MONO; Corollary EQ-END (using CN-LAST,
   L-NEW lane-proved).
 - PROVED CONDITIONAL on (P) (= R18's premise, VJ00 Lemma 5.8 "1 ⇒ 2" for one-player games): Lemma BL (a)-(e), the use of CONF-MONO in
-  §2, Lemma FREE-FREEZE (§2b), and Proposition EV (§5: an NJB violation's gate target has its play in the k0-evicted region).
-- CONJECTURE: RISE-LAST (L-RED), NJB, ENT (L-SI succ. 4).
+  §2, Lemma FREE-FREEZE (§2b), Propositions EV and EV+ (§5: in an NJB violation both the gate target's play and the new threat's play
+  meet the k0-evicted region), Proposition TEV-RED (§5: the one remaining configuration).
+- CONJECTURE: RISE-LAST (L-RED), NJB, ENT (L-SI succ. 4), TEV (L-SI succ. 5; with EV+ it implies NJB).
 - FALSE (DATA): BL-X (a blocked tail on x0's current play).
 - OPEN: RISE-LAST's THR branch; PF-THETA (L-NEW); REL(S); level −1 THR fallbacks (none seen in scope).
