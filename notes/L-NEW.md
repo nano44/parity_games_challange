@@ -1,6 +1,51 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Handover check (successor 17)
+Successor 17 (Opus 5.5, D14/D15/D18, L37/L40), session_01ESR6bpU1r4ZjFsMExZtFpq, written 2026-10-25 11:5xZ by date -u (clock read
+11:47:14Z at start, 11:48:13Z later; the Lead's brief is stamped 11:50Z, so the container clock is slow again). Predecessor: successor 16,
+session_01LLCK4ctQmkMq2huT44SU7d, parked at l-new 0b5ec987. Every answer measured; commands named.
+1. **Branch / head / trunk distance.** `git status` at start: local claude/l-new at 5961101a (successor 6's park!) and "up to date" only
+   because origin had not been fetched. `git fetch origin claude/l-new` → origin 5961101a..0b5ec987; `git merge --ff-only
+   origin/claude/l-new` → 0b5ec987. Trunk = origin/claude/vibrant-johnson-nxvvxo (`git ls-remote --symref origin HEAD`; there is no
+   `main`, `git fetch origin main` fails). `git fetch origin claude/vibrant-johnson-nxvvxo`; `git rev-list --left-right --count
+   HEAD...origin/claude/vibrant-johnson-nxvvxo` = 1 ahead / 66 behind trunk 06f57bca ("Lead: REFEREE 8 GO; NOW, LANE-RESTART, log").
+   `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` (no conflicts, no rebase) → merge commit 371bb5e8: 2 ahead / 0 behind;
+   after this commit 3 ahead / 0 behind until the Lead's next commit.
+2. **Open work and next step** (sources: resume point below, `sha1sum`, `ls docs/new`, `git fetch origin claude/referee
+   claude/referee-2`, `git log`/`git show` on them, `ps aux`).
+   - P-N5-SCOPE: `sha1sum docs/new/P-N5-SCOPE-box36.md` = c3f5ed37… (pin trunk 8998ee6). REFEREE succ. 7 has SIGNED all six, no
+     gaps (docs/referee/R-N5-SCOPE.md fb6089bf + §8 560ff4c4, on trunk). REFEREE-2 succ. 8 draft on origin/claude/referee-2 1f8a9109
+     (`git show origin/claude/referee-2:docs/referee-2/R2-N5-SCOPE.md`): all SIGN, notes N-SC-1..4, observation O-1 on §7.2 (not to
+     sign), climbs pending. Next: when the Lead relays items, answer them in NEW docs/new/P-N5-SCOPE-fixes-box36.md (does not exist;
+     plus the two known nits of the resume point if raised).
+   - Box 38 (a) P-N5-OUT: docs/new/P-N5-OUT-box37.md does NOT exist (the working doc N5-OUT-box37.md, sha1 45ef62a1…, does; do not
+     overwrite it). Next after GO: write the packet (SPLIT, EPOCH, F-FLAT, FREEZE-STEP, NO-ENTRY-A + Corollary, §10 case-B lemma; θ
+     a parameter; dependencies marked R-entry / P-N5-SCOPE / P-N5-RL = L-SI's docs/si/P-N5-RL-box10.md; (P) uses CONDITIONAL).
+   - Box 38 (c) research: NO-ENTRY-B (N5-OUT §10 shape), then τ(o) ≠ o with threshold c_w.
+   - Nothing of mine running (`ps aux`: no python). Oink NOT built (`ls tools/oink/build`: no such directory); `scripts/setup_oink.sh`
+     started in the background (log in the scratchpad) so research can start at GO.
+3. **GAPS** (`grep -n G-N5-TIME docs/GAPS.md`: line 11): G-N5-TIME, major, owner "L-NEW (L-LIT T22; referees later)", status **open**.
+   Latest update in the row: 11:18Z R34 [refereed-only] LANDED (P-N5-TOG + fixes, fixes2; CHECKER C43): L-MONO, Z-COUNT, TOGGLE,
+   TOGGLE-COUNT, X-SN-PHASE, RESTARTS; "Open as before; in review: P-N5-NJB (CHECKER), P-N5-SCOPE (both referees)". Open list:
+   (L1) (NJB / RISE-LAST CONJECTURES), out-of-SN fallbacks (OUT-POLY CONJECTURE), ¬H1 SN states, f per phase. The row does not yet
+   mention box 37 (N5-OUT: SPLIT…NO-ENTRY-A, ROUTE-FROZEN FALSE). Also mine: G-N1-LB (minor, optional, not routed, open).
+4. **Rulings verbatim** (docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md):
+   - D14 (l.244; index **active**; Lead reading L35): "D" / "You know it can also test prveiously not tested approaches, it can come
+     up with it own as well"
+   - D16 (l.299; index **active**; Lead reading L38): "Then keep working as I told you to"
+   - D18 (l.332; index **active**; Lead reading L40): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+     connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable
+     assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from
+     conjectures and open problems."
+5. **Trap found.** (i) The stale clone, and quietly so: `git status` said "up to date with origin/claude/l-new" at 5961101a (box 17,
+   successor 6) because nothing had been fetched; 20 boxes were invisible. Only `git fetch` exposes it. (ii) REFEREE-2's observation
+   O-1 (draft 1f8a9109) bears on box 38 (a): out-of-SN evicting fallbacks are themselves crossings, so they lie outside every FB-INT
+   stretch and P-N5-SCOPE §7.2's "f_out ≤ n_E(2n−1)(X_out+1)" needs "+ X_out" (wd16_s2). The resume point's Corollary bound
+   "(⌈T/2⌉+1)·n_E(2n−1)(2(n−1)(θ+1)+1)" must be re-derived with that term before it goes into P-N5-OUT. (iii) Name pairs:
+   P-N5-OUT-box37.md (new packet) vs N5-OUT-box37.md (working doc); P-N5-RL is L-SI's (docs/si/), not mine. (iv) No `main`: trunk is
+   claude/vibrant-johnson-nxvvxo.
+
 ## Handover check (successor 16)
 Successor 16 (Opus 5.5, D14/D15/D18, L37/L40), session_01LLCK4ctQmkMq2huT44SU7d, written 2026-10-25 10:2xZ by date -u (clock read
 10:18:49Z at start). Predecessor: successor 15, session_013tdUFhpjRP3kYPL6sBCpfU, parked at l-new ec77ad1c. Every answer measured; commands named.
