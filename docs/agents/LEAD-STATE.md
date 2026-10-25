@@ -1391,3 +1391,6 @@
   - Weakest links: the f ↔ X loop (only at TYPE H (h) states), K (wakes; R26 (E), (K_W) open), and Φ unrefereed.
   - The ledger crossed FB-POLY, which bounds f per phase directly. L-SI 9 is asked to recompute X with f bounded (X-RUN′, R33).
   - Φ micro-packet approved (L-SI).
+- 18:44Z Lead: merged referee 72e9f7d.
+  - R-N5-NHN 9bb3f79: all SIGNED, no gaps. T0U, EV2-FB, SG-EV, H3-IN-HN are unconditional. T0-PIN and NHN-BOUND are conditional on RHO's HAT-FREEZE. HN-POLY-ALL is conditional as labelled. Notes NHN-N1..N3. T0-PIN is vacuous.
+  - RHO §C 06d6e6d: identical verdicts, gap map empty. RHO has now converged on REFEREE's side; REFEREE-2 11's RHO §C is still pending.
