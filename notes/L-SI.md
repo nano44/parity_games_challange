@@ -1,7 +1,10 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Resume point (successor 3, box 8; Lead GO 00:18Z 2026-10-25; R25 LANDED trunk 40ef7ed from P-N5-FB)
+## Resume point (successor 3, box 8; PARKED 2026-10-25 ~01:35Z at ~450k context; LANE-RESTART step 1)
+IN FLIGHT: nothing running (all climbs finished; outputs in experiments/si/xing/out/jclimb/, local only).
+NEEDS: none. Lead pinned P-N5-FB (R25 landed trunk 40ef7ed); fixes1 8548c3fc / fixes2 4d5b3716 are cited by sha1: never edit them.
+(Box 8 header: Lead GO 00:18Z 2026-10-25; R25 LANDED trunk 40ef7ed from P-N5-FB.)
 Box 8 write-up: docs/si/N5-C-box8.md. Code: experiments/si/coarse/cls2.py, rfinv.py (+ jclimb modes CLS2, RF).
 ### DONE (PROVED by L-SI succ. 3, unrefereed)
 - OFFGATE (gates into F never exceed M_k, at every in-phase transition incl. jumps); CN (in-phase cycle-node switches have level -1);
@@ -14,10 +17,13 @@ Box 8 write-up: docs/si/N5-C-box8.md. Code: experiments/si/coarse/cls2.py, rfinv
 - OFFGATE 7,134/0; CN 7/0; (A) 0; FRZ 28,311/0; R-ROUTE 10,293/0; LV 588/0; (B1) 588/0; AL 4/0; in-scope fallbacks 260 THRu, 4 EQ,
   0 THR u*=none. OG' (MF form) FALSE on x31_re24 1->2 (mass arena leave carries a level-22 gate into F).
 - Arena reversals of (Z): 39/45 occur before the first fallback at the current w (box 8 §7).
-### NEXT
-1. (B1) at arena-step leaves (4 in data) and THR u*=none fallbacks (0 in data); then the per-level count of (CL-S) across jumps.
-2. If both close: packet P-N5-CLS (hypotheses incl. N_out; bound J <= (1+N_out)|succ(o)|(1+n_E(2n-1)) + N_out).
-3. Fallback-free R-reversals (box 8 §7).
+- Box 8 later: P-N5-SO check (socheck.py unmodified, 0 failures, box 8 §8); adversarial climbs vs (CL-S) 0 violations (§9);
+  Lemma EQ-STRETCH (EQ runs < n+m transitions, from R17) + EQ-PERSIST (§10); (Z) map (§11): fallbacks (FB + CL-S/SO), EQ runs
+  (PROVED poly), out-of-scope (O, w-changes), THR arena reversals (all within n-1 of a θ-change: reduce to Θ_scope).
+### NEXT (for a successor)
+1. (H-B1) at arena-step leaves (box 8 §5): the case "p switches into q that leaves R in the same step, at level > L".
+2. A non-circular bound on θ-changes per scope run (Θ_scope). (iv) and (via TH) X both reduce to it.
+3. If 1 closes: per-level count across jumps, then packet P-N5-CLS (hypotheses: H-KIND, H-EQ, N_out definition).
 
 ## Resume point (successor 3, box 7; superseded by the box 8 point above; Opus 5.5 D18/L40; started 21:31Z 2026-10-24; end-of-box ~23:45Z)
 Handover check 78a764d8 (Lead 5/5). Box 7 = proof side of (C). Lane write-up: docs/si/N5-C-box7.md §0-§13. Code: experiments/si/coarse/
@@ -207,6 +213,10 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 - NOT opened: Ye 2011, Math. Oper. Res. 36(4):593-603, DOI 10.1287/moor.1110.0516 (cited only through Scherrer Thm 1).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- (successor 3, box 8) OG′ ("gates into F at k+1 never exceed MF_k = the max level of the gates INTO F at k") FALSE:
+  experiments/red/xing/instances/x31_re24.pg (sha1 49eaf50e, 𝒞^1O), transition 1 -> 2: MF_1 = -1, while gate (4, 8) at state 2
+  has level 22. At state 1, 4 and 8 are in R (the level-22 gate is (8, 14), R -> R); at the arena step R collapses from 21 vertices
+  to {12}, carrying the high level into F. The true form is OFFGATE (bound M_k, all gates). Box 8 §1.
 - (successor 3) CONJECTURE (JUMP-EQ) (box 6 §6.2) FALSE: experiments/red/xing/instances/x31_rx32.pg (sha1 4fe9ec0e), transition
   53 -> 54: w constant since the carry at level 24, σ̄(o) 24 -> 31 (INR), θ rises at level 25, lands THR with θ ≠ w; θ = w only at 55.
   Re-verified n5 55/3, Oink zlk OK, strategies verified. Not needed: Theorem FB (box 7 §4).

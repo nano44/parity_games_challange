@@ -1,58 +1,54 @@
-# Handover check: L-NEW (successor 12, Opus 5.5 per owner D15 / Lead reading L37; written 2026-10-24 23:37Z by date -u)
-This file replaces the previous answers. Successors 1-11's answers are in git history before this commit. Each answer was
-measured from the repository when written (commands named), not recalled. Predecessor: successor 11,
-session_01JjUBLJnxF38h9cjDCyZeZf, parked after box 31 (notes/L-NEW.md resume point 23:21Z, 0d7f7057).
+# Handover check: L-NEW (successor 13, Opus 5.5 per owner D15 / Lead reading L37; written 2026-10-25 01:53Z by date -u)
+This file replaces the previous answers (successors 1-12 are in git history before this commit). Each answer was measured from
+the repository when written (commands named), not recalled. Predecessor: successor 12, session_01SqmdU7H8WiFZUGTRjZi1C3,
+parked after box 32 (notes/L-NEW.md resume point, d72e7086).
 
 ### 1. Branch, head, ahead/behind trunk
-- Branch claude/l-new. The container was STALE again: local HEAD was 5961101a (successor 6), "behind by 759". `git fetch origin`
-  moved origin/claude/l-new to 0d7f7057; `git merge --ff-only origin/claude/l-new` fast-forwarded local to it.
-- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` gave 0 ahead / 15 behind trunk 76663365
-  ("Lead: ... P-N5-U23 pinned; l-new 0d7f705 and l-red 0243539 merged"); merge-base = 0d7f7057 (trunk already holds my head).
-- Merged trunk with a merge commit (4ceef47b, `--no-ff`, no conflicts; no rebase). After it: 1 ahead / 0 behind. After this
-  file's commit: 2 ahead / 0 behind (until the Lead's next trunk commit).
+- Branch claude/l-new. The container was STALE again: local HEAD 5961101a (successor 6), "behind 896". `git fetch origin`
+  moved origin/claude/l-new to d72e7086; `git merge --ff-only origin/claude/l-new` fast-forwarded local; `git rev-parse HEAD
+  origin/claude/l-new` both d72e7086.
+- Before merging: `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 2 ahead / 14 behind trunk
+  e8c26f30 ("Lead: R27 draft (P-N5-LP + P-N5-SO) for C36; NOW"); merge-base bb32e467. The one lane commit not on trunk is
+  d72e7086 (handover notebook).
+- Merged trunk with a merge commit (d7705c00, `--no-ff`, no conflicts; no rebase): 3 ahead / 0 behind. After this file's
+  commit: 4 ahead / 0 behind (until the Lead's next trunk commit).
 
 ### 2. Open work and the next step of each
-Nothing of mine is running except scripts/setup_oink.sh (started 23:36Z; tools/oink/build was absent; needed for --zlk and
-check_sol2.py re-verification).
-- **P-N5-U23** (docs/new/P-N5-U23-box31.md: CASC-U2, CASC-U3 and corollaries), pinned at trunk 76663365; `sha1sum` = ee3e5d1e…,
-  matches NOW (REFEREE succ. 5 R-N5-U23 and REFEREE-2 succ. 5 R2-N5-U23, both WORKING 23:30Z); `git diff 7666336 HEAD` on it is
-  empty. Next step: when the Lead relays their items, answer them in a NEW file docs/new/P-N5-U23-fixes-box31.md; never edit the
-  packet. This has priority over research.
-- **Research after GO**: the open cores of (NH') on 𝒞^1O named in docs/new/N5-U23-box31.md:
-  (E) = events in U3 (kind crossings, c_w's own DFS switches), (K_W) = W-changes on R outside route form.
-  First step (successor 11's READING, §5): all 78/78 residual transitions are TAME (L-SI), and on tame blocks COARSE_M(Ξ) is constant
-  with M non-increasing (RESULTS R25 in landing: TAME, MONO; CHECKER C34 addendum on the R25 draft). So try a coarse freeze at the
-  gate level M instead of at c_w: re-run experiments/new/box31/tamecheck.py and u23check.py on the climb bests, check that (E) and
-  (K_W) events are exactly the M-drops or are bounded by |R| per M-value, then try the layer induction (CASC) with M as the frozen
-  frame. Then NFB-O, (X) as the Lead routes. Re-verify every cited instance with experiments/new/n5.py, Oink --zlk, check_sol2.py;
-  every 𝒞^1O instance checked to have exactly one Odd vertex of out-degree > 1.
-- Others (from notes / NOW): L-COMP box 7 tabulates (E) at small n; L-SI R25 (Theorem FB) at CHECKER; L-RED (X), box 34 done
-  (J 10 at n 24).
-- Not routed: OB_R, OB, NFB-O (CONJECTURES), G-N1-LB.
+Nothing of mine is running (successor 12 killed all climbs at park).
+- **P-N5-OE** (docs/new/P-N5-OE-box32.md: Lemma U-loc, Lemma OE, Corollary OX), pinned at trunk 361d18c; `sha1sum` = adeccd89…,
+  matches NOW; `git diff 361d18c HEAD` on it is empty. With REFEREE succ. 6 (R-N5-OE) and REFEREE-2 succ. 6 (R2-N5-OE), both
+  WORKING 01:42Z per NOW. Next step: when the Lead relays their items, answer them in a NEW file
+  docs/new/P-N5-OE-fixes-box32.md; never edit the packet. Known soft spot: OE uses the full-minimiser property of σ̄(o)
+  (CAP-1); cite it as P-N5-SO-fixes §1 does. Priority over research.
+- **Research after GO** (o-cyclic 𝒞^1O, per phase; after R25-R27, R27 = LP + SO in landing at C36): open quantities X
+  (crossings, ≡ Z up to n by R23) and K (wakes in U2/U3/U23 stretches; seen only as U3, length-only W band, W-tie switches).
+  Next steps: (a) bound K (start from Lemma KW-LEN, N5-L-box32 §5; (E) is what remains there); (b) the weaker target than (X):
+  rises of the used level with a crossing in their interval + non-tame crossings (what X is charged for in Corollary OX).
+  Tools in experiments/new/box32 (lcheck, socheck, oddlev, orise, wakeinfo, rrclimb, lemclimb). Every cited instance
+  re-verified (n5.py, Oink --zlk, check_sol2.py) and checked to have exactly one Odd vertex of out-degree > 1.
+- Not routed: OB_R, OB (CONJECTURES), G-N1-LB.
 
-### 3. docs/GAPS.md rows I own (`grep -n "L-NEW" docs/GAPS.md` at 4ceef47b)
-- **G-N5-TIME** (l.11): major; owner "L-NEW (L-LIT T22; referees later)"; status **open**. Last update 22:28Z: R24 landed
-  (Theorem U1, O((f+1)|R|³) per U1 piece given f fallbacks); L-SI fallbacks ≤ n_E(2n−1)(J+1)+J, open core (J-poly); open per
-  phase: Z (X), U2/U3 (my P-N5-U23 in review), NFB-O.
+### 3. docs/GAPS.md rows I own (`git show origin/claude/vibrant-johnson-nxvvxo:docs/GAPS.md | grep -n L-NEW`)
+- **G-N5-TIME** (l.11): major; owner "L-NEW (L-LIT T22; referees later)"; status **open**. Latest updates: R25 (23:44Z, Theorem
+  FB), R26 (00:48Z, CASC-U2/U3 on 𝒞^1O given f, K_W, E); L-NEW box 32 (P-N5-LP pinned bc42f2c, Theorem LP / Corollary LP′),
+  now R27 draft with P-N5-SO at CHECKER C36.
 - **G-N1-LB** (l.10): minor; owner "L-NEW (optional; not routed)"; status **open**.
 - **G-N5-TERM** (l.16): major; owner "L-NEW (L-COMP checks runs)"; status **closed** (RESULTS R15).
 
 ### 4. The three owner rulings that most constrain me (verbatim), with their index status
 1. D18 (docs/DECISIONS.md l.333; DECISIONS-INDEX row D18 "active"; Lead reading L40 "active", L-NEW = designer):
    > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
-2. D1 (docs/DECISIONS.md l.6-7, full text docs/decisions/D001-launch-brief.md; DECISIONS-INDEX row D1 "active"):
+2. D1 (docs/DECISIONS.md l.6-7; DECISIONS-INDEX row D1 "active"):
    > Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision.
    > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
-   For me: a bound I believe is a READING until refereed; L-RED attacks it.
-3. D14 (docs/DECISIONS.md l.245-246; DECISIONS-INDEX row D14 "active"):
-   > D
+   For me: a bound I believe is a READING / lane PROVED until two referees sign; L-RED attacks it.
+3. D14 (docs/DECISIONS.md l.246; DECISIONS-INDEX row D14 "active"):
    > You know it can also test prveiously not tested approaches, it can come up with it own as well
 
 ### 5. One trap, and the check that prevents it
-- **Trap**: the stale container. It bit again here: local claude/l-new at 5961101a, 759 commits behind origin (also successors
-  6, 8, 10, 11). Working from it would have hidden boxes 17-31 and the pinned packet.
-- **Check**: `git fetch origin`, then `git merge --ff-only origin/claude/l-new` and `git rev-parse HEAD origin/claude/l-new` equal
+- **Trap**: the stale container. It bit again here: local claude/l-new at 5961101a, 896 commits behind origin (also successors
+  6, 8, 10-12). Working from it would have hidden boxes 17-32 and the pinned P-N5-OE packet.
+- **Check**: `git fetch origin`, `git merge --ff-only origin/claude/l-new`, `git rev-parse HEAD origin/claude/l-new` equal
   before any work; pinned packets checked by `sha1sum` against NOW and an empty `git diff <pin> HEAD`.
-- **Also carried**: freeze / per-vertex bounds stated with their exact quantity (a route path has ≤ |R| edges; reach_o returns R
-  minus o); push.sh output to a file, then `$?`; stamps only from date -u (successor 11's first stamp was 3 min ahead); kill by
-  pid, never pkill -f.
+- **Also carried**: stamps only from date -u (container clock slow); push.sh output to a file, then `$?`; kill by pid, never
+  pkill -f; reach_o omits o (count |R| with o); ReadNotifications after every push (Lead relays queue unseen).

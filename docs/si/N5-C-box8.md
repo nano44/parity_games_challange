@@ -188,3 +188,43 @@ Arena-step '−' and '±' reversals (Z's part beyond (C)), by regime:
 - Earlier, a CLS climb in box 7 (cls_rel_lev): 0.
 - READING: the open case of (H-B1), an arena leave whose target carries a gate above L, did not arise under direct pressure. Weak
   evidence: the climbs never reached the precondition "arena leave after a fallback" at all.
+
+## 10. Lemma EQ-STRETCH (PROVED, from R17): the EQ part of (Z) is polynomial
+EQ state: Ξ_k = W_k pointwise (R21 state types). An EQ RUN is a maximal run x..y of consecutive EQ states inside a phase on 𝒞^1O.
+**Lemma EQ-STRETCH.** An EQ run has y − x < n + m transitions.
+Proof.
+- At an EQ state the gates Iσ_k (Ξ-improving edges) are exactly the VJ00 improving edges of σ_k in the one-player game G_τ (Odd fixed
+  to τ, which is constant in the phase): the valuation of σ in G_τ is W.
+- N5's Even step S4a is the arena optimum against τ, over {σ_k(v)} ∪ Iσ_k(v). This is the switch-best step of R17 on G_τ.
+- An in-phase S4c is Even's (fixes2 G-FB-2) and switches by (Ξ-key, index) = (W-key, index). That is N5's fallback on G_τ (R17 (e)).
+- So x..y is a segment of N5's run on the one-player game G_τ from σ_x. R17 (e) covers any start, since its bound is per λ-phase
+  (R17 (c)).
+- λ of that run is λ_W = λ_Ξ (EQ), which is constant in the phase. So the segment lies in one λ-phase of the one-player run, and
+  R17 (c) gives fewer than n + m steps. □
+**Lemma EQ-PERSIST (PROVED).** If k is EQ, (h) holds at k+1 and w_{k+1} = w_k, then k+1 is EQ.
+- Proof: θ_{k+1} ⊴ w_{k+1} = w_k = θ_k ⊴ θ_{k+1} (R21 (a) XW; R15 (a)), so θ_{k+1} = w_{k+1}.
+- R19 (a) Lemma G gives Ξ = π ⊕ θ = π ⊕ w = W on R_{k+1} under (h), and Ξ = W off R. □
+**Corollary (PROVED).** Inside a phase, the crossing transitions with both endpoints EQ (in particular their reversals) number fewer
+than (n + m)(1 + #w-changes + #transitions whose target lacks (h)).
+- An EQ run ends only at a w-change, at a target lacking (h), or at the phase end (EQ-PERSIST).
+- So with R23 LV′, the EQ part of (Z) is polynomial in n·(1 + w-changes + non-(h) transitions), with no X.
+DATA (experiments/si/coarse/eqrun.py, the named set + every pinned climb best + L-RED j7_*; each EQ run recomputed with N5 on G_τ):
+- 278 phases, 108 EQ runs, 287 in-run transitions, all 287 equal to N5's step on G_τ;
+- longest EQ run 56 transitions (< n + m); 0 run-count violations.
+
+## 11. Where (Z) stands after box 8
+Each reversal of R is at one of four places.
+- (i) A fallback. Bounded by Theorem FB (R25) by poly(1 + J). J is bounded non-circularly through (CL-S) (§5, OPEN at (H-B1) arena
+  leaves), or through P-N5-SO by poly(1 + X), which is circular for (X).
+- (ii) A transition inside an EQ run. PROVED poly(n)·(1 + w-changes + non-(h)) (§10).
+- (iii) An out-of-scope transition: OTHER-touching or a w-change. These are R21's O and the w-changes, OPEN as (NH′).
+- (iv) An arena transition at a THR state with (h), no fallback before it at that w: 25 of the 45 arena reversals (§7). OPEN.
+  - This is R20's throttled regime. R20 bounds value changes per throttled stretch (O(n³)), but the stretch count is the θ-change
+    count, and TH bounds it only via X.
+- So the open core of (X) on 𝒞^1O: THR arena reversals (iv) per scope run, (H-B1) at arena leaves for (i), and O / w-changes (iii).
+- DATA (scratch classification, same set): the 29 THR in-scope arena reversals all lie at a θ-change (12) or within n − 1 transitions
+  after one (17). None is later.
+  - READING: (iv) behaves like R20 CR ("coarse values change only in the first n − 1 transitions of a throttled stretch"). So
+    (iv) ≲ n·(1 + Θ_scope), with Θ_scope = θ-changes in scope runs (up to 51 per phase on lev_l_x-type instances).
+  - So (iv) is the θ-change count again. This is the circularity "θ-changes ↔ crossings" of box 3 and of L-NEW's TH. A
+    non-circular bound on Θ per scope run is the single open quantity behind (iv).
