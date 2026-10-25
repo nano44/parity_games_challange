@@ -136,3 +136,24 @@ Tools (docs/referee/scratch/, own code on rl_engine.py, `python3 -I`; logs docs/
   j ≥ |U| − 1 was found, so T0-PIN and NHN-BOUND (a)'s second branch stay VACUOUS in my data as well.
 - NHN-N3 (data): T0-PIN and (a)'s late branch rest on their proofs. I checked those line by line (§4, §5). The bound of §5 is far from
   approached (max N_HN 4 against ⌈T/2⌉ + 2|U| − 3 in the hundreds).
+
+## §C. Comparison with REFEREE-2: docs/referee-2/R2-N5-NHN.md at referee-2 04b5c1fd (sha1 040de8eb…)
+Written 2026-10-25T20:19Z by date -u by REFEREE successor 10, after the Lead's word of 20:15Z (Lead's stamp) that 04b5c1fd is final. I opened
+R2-N5-NHN only after my report (9bb3f79d) was pushed. (Opus 5.5, D15).
+- Verdicts: identical.
+  - Both sign T0U, EV2-FB, SG-EV, T0-PIN, NHN-BOUND (a), (b) and H3-IN-HN with its bookkeeping consequence.
+  - Both sign HN-POLY-ALL conditional exactly as labelled (P-N5-PFZ §1; P-N5-PFZ-ext BRK-POLY′ (i′), (ii); P-N5-RHO §2, §6).
+  - Neither signs §8-§9 or "What this closes". No gap on either side.
+- Joint gap map: EMPTY.
+
+| item | REFEREE-2 | REFEREE | outcome |
+| --- | --- | --- | --- |
+| τ(o) = o lines (§5 remark, §7 first line) cite R39 (f) (c), landed for case A only | N-NHN-1 | NHN-N1 (and RHO-N2 on P-N5-RHO) | identical; cite R34 (e) with HN = H1 (or §5 (b)'s own argument). Both have case-B data: REFEREE-2 1,885 phases, mine 13 library phases |
+| §0 / §7 statuses out of date ("in review", "REFEREE-2 10 to review") | N-NHN-2: PFZ, PFZ-ext ((i′), (ii); (i) as stated now also signed with the PFZ-1 repair, R2-N5-PFZ §C) and RHO are signed by both | my verdict row lists the conditions with their status at my writing | ACCEPTED. With REFEREE-2's acceptance of the PFZ-1 repair, (i) as stated is jointly signed, given the repair text in the fixes file. §7 needs only (i′) |
+| "there" in §6's Consequence | — (its §6 reads it as "a phase containing a Q state", the reading I give) | NHN-N2 (wording) | stands as a wording note; no substance differs |
+| T0-PIN / NHN-BOUND (a) second branch | VACUOUS (0 EV2 ends at j ≥ \|U\| − 1, none even at j = \|U\| − 2); pin1 mutation 0 | VACUOUS (lib + 1.88M climb candidates) | identical: rests on the proof, checked by both |
+| EV2-FB, SG-EV exercised | 45 EV2 ends (library + climb outputs); SG-EV hypothesis = EV2 ends | 8 (lib + lane climbs) + 1,022,295 checks in my climbs | consistent |
+| DROPs ending an HN stretch | 8 drops in all | 0 in the library; 35 in my climbs | consistent; both exercise (b)'s DROP branch |
+| mutation controls | nhn ("1 +" dropped) bites (10) | none run | REFEREE-2's control adds to the evidence |
+
+- No verdict of mine changes. (Opus 5.5, D15)

@@ -1,0 +1,28 @@
+AGREE states                                  2020
+CWINT intervals                               4
+FRZ state checks                              408
+KIND runs                                     4
+files                                         137
+post-freeze runs                              145
+runs                                          425
+runs cth>=cw H2 H1                            198
+runs cth>=cw H2 notH1                         10
+runs cth>=cw notH2 H1                         17
+runs cth>=cw notH2 notH1                      64
+runs cw>cth H2 notH1                          18
+runs cw>cth notH2 H1                          110
+runs cw>cth notH2 notH1                       8
+runs shorter than freeze                      280
+skipped (not C^1O)                            135
+traces                                        411
+transitions                                   5779
+MAX max W-changes on R / run                  32
+MAX max Xi-changes on R / run                 32
+MAX max c_w switches / run                    0
+MAX max kappa-freeze delay (t - k0)           1
+MAX max kappa-freeze delay / (|Rbar|-1)       0.167
+MAX max kind changes / run                    0
+MAX max post-freeze length                    23
+MAX max run length                            32
+FAILURES (first 20): []
+KWCHECK PASS

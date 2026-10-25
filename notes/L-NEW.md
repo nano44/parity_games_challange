@@ -1,6 +1,82 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 42 log (successor 21, session_01YJHHx1t8hvqkDnKzMU2Lfa; handover check 5/5 (419308f1); GO 19:48Z, Lead's stamp)
+- Merged trunk 6d78b8f4. Oink built (8fbf0a7).
+- (1) Packet docs/new/P-N5-NH-box42.md (l-new 44088266, sha1 93d19be8018e07a2727bbe1db5920198a0beb1eb, FROZEN): Lemmas SW, ST, CL,
+  STR-COUNT, NR; Theorem NH: O ≤ 11n⁷(1 + X + f^O) + 8n³(K_W + E), T ≤ 156n¹¹(…) + 104n⁷(K_W + E) per phase. Reported 20:01Z.
+  Data experiments/new/box42/nhcheck.py: 0 violations (lib41 253 runs; random 2,633). f^O > 0 in data (NFB-O "none" is false).
+- (2) docs/new/N5-KW-box42.md (working doc; v1 0c0d439e, v2 60dd9380, v3 b9ee6918 sha1 f7c63764 reported 20:45Z; v3.1 = CW fix):
+  WLAG (every game), ABOVE-h, CSTRICT (all successor pairs), KW-FREEZE (CR on G_τ, W-terminals o and c_w, threshold h), Corollaries
+  KW ((K_W) given f) and NR′; §5 E-HI (H-PATH, DIR, KC, CASC-B, CW): events bounded by K_S, f_S. §6 READING: T per phase
+  ≤ poly(n)(1 + X + f); with FX, FBPOLY, PHI N5 on 𝒞^1O polynomial (CONDITIONAL; unrefereed). Asked the Lead for packet P-N5-KW.
+  Data box42/wlag.py, kwprof.py, kwfreeze.py, kwfreeze2.py, evprof.py, evcheck.py, evstress.py: 0 violations. Gap: no odd-c_w
+  stretch with c_w ≻ c_θ in any data (DIR odd branch, KW-FREEZE (d) untested).
+
+## Cross-read of L-SI 10's docs/si/N5-KW-box15.md against my docs/new/N5-KW-box42.md (Lead's ask 20:49Z; written 21:0xZ by date -u)
+Both notes reach the same conclusion by parallel routes: (K_W) and (E) are polynomial per stretch given f, on every class. I read L-SI's
+note as a referee would, step by step. Data for its two claims that my checkers did not cover: experiments/new/box42/sicross.py.
+(a) What I would rely on, and what I doubt (exact steps)
+- W-ONCE (§2): RELY. It is my WLAG's contrapositive at the level of the whole valuation. Step 2 (A_{k+1}(v) ⊆ A_k(v) when Ξ_{k+1} = Ξ_k)
+  is right, including the case z = σ_k(v). Step 3 uses (F1) on both arenas and WM. Same proof as mine.
+- Fact A (§3): RELY. It is my ABOVE-h. Its ¬H1 bullet ("vertices after c_θ on π_v lie on C_Θ") is correct: after c_θ, π_v is π_{c_θ}, the
+  return arc of C_Θ. The ¬H2 bullet ("A1, A2 less relevant than c_w") is correct.
+- Fact B (§3): RELY. It is my CSTRICT (it phrases it as κ(π_y) ≠ κ(π_z); my phrasing is COARSE_h-strict W; the same statement).
+- FRZ-U (§3): RELY. Its P^c runs on routes to o with κ = route ∩ V_{>m*}, not on W-values to two W-terminals as mine does. That is
+  cleaner than my version, and it is valid because both frames' coarse parts are κ(π_v) plus a constant (Fact A). I checked its cases:
+  - B1 (x ∉ π_z, x ∉ C_W): val_σ̂(x) = x ⊕ W_k(z) needs z's W-play to avoid x. It does: π_z, then o's W-continuation in C_W or F.
+  - B2 (x ∈ π_z): the new cycle Z avoids o, and its top is t ∈ κ(Z), even, above c_w. Contradiction with x's W cycle node c_w at k+1 ✓.
+  - B3 (x ∈ C_W, ¬H2): the case split is not written out, but both sub-cases are fine. If x ∈ A2, o's σ̂-play is A1, c_w, A2 to x, then
+    z, π_z, o: a cycle through c_w and t, top t. If x ∈ A1, the cycle is A1 to x, then z, π_z, o, without c_w but with t. Either way
+    the top t is even and above c_w. A one-line case split would help a referee.
+  - The freeze index r − 1 is sharper than my n − 1. DATA: sicross.py FRZU, 0 violations (below).
+- LEN (§4): RELY. It is my KW-FREEZE (b), (c). Its length ranges are right: ¬H2 W-length ≤ r − 1, H2 |π_v| + ℓ(w).
+- KIND-MONO (§5): RELY; it is STRONGER than my DIR + KC. Post-freeze, P(Ξ(v)) ∩ V_{>c_w} is constant, and c_w ∈ P(Ξ(v)) iff v is kind A.
+  So a kind change makes c_w the top of Ξ(v)'s path-set difference, and R15 (a) fixes the direction at EVERY transition of the run, not
+  only at W-flat ones. So each vertex changes kind at most once per post-freeze run.
+  - Two precisions:
+    - "c_w ∈ P(Ξ(v)) ⟺ kind A" needs, under ¬H1, that c_w precedes c_θ on π_v. This is my H-PATH: c_w ∉ C_Θ, because c_θ tops
+      C_Θ and c_w ≻ c_θ. Fact A's ¬H1 bullet gives it implicitly; say it.
+    - The odd direction (A → B) is vacuous by my Lemma PAR (c_w ≻ c_θ forces c_w even, from R21 XW). KIND-MONO should state B → A only.
+  - DATA: sicross.py KM, 0 violations (below).
+- CASC-B (§5): RELY, with the same caveat in both notes. It is my CASC-B, word for word in substance. Both of us read R26 (c) step 2 as
+  not using c_w's static choice. L-SI's weak point 3 (the TB-even key prefix (A1 reversed, o) can change between steps) is answered:
+  at each step the prefix is common to all kind-B candidates, and a lex comparison with equal prefixes is decided by the suffixes.
+  A referee should still re-read R26's §1 step 4 induction for any use of the frozen c_w.
+- CW-INT (§5): RELY. Same as my corrected CW. Its first bullet ("σ(c_w) is kind B at every state") is right because R is constant on
+  the stretch. A kind-A target at a transition with simultaneous kind changes would need a kind change, which CW-INT's interval excludes.
+- E-SEG / Theorem RUN (§5, §6): RELY on the logic. Σ_Q e(Q) ≤ r − 2 follows from KIND-MONO. RUN's U1 case uses R24 (c) CASC, which is
+  stated for W-flat runs of a PIECE; a route-form stretch is a piece (my P-N5-NH-box42 Lemma CL (b)). Cite that. The U2 case uses
+  R26 (a) ✓. One gap in wording: RUN's "a Ξ-change on R needs a switch on R" cites Fact A. That is my Lemma SW (b) (Ξ on R is a
+  function of the routes and θ). Fact A gives only the part above m*. The full statement needs the lengths too, which SW's proof
+  supplies. Small, but a referee will ask.
+- Corollary PHASE (§8): RELY, with one check. T ≤ (m − n + 1)(T_rel + 1) is R27 (d) ✓. "A relevant Even switch is Ξ-changing" is
+  (SG) ✓. Stretch boundaries are counted as Ξ-changing, which is crude but safe. N_st uses TH (R27 (g)), which covers only
+  λ_Ξ(o) ≠ o; for λ_Ξ(o) = o θ is constant ✓ (stated).
+- Nothing I doubt as false. The two weakest steps, in both notes, are CASC-B's reliance on R26 (c)'s proof text, and FRZ-U / KW-FREEZE's
+  transfer of R20 CR.
+(b) Do the two notes together close K on U1 / U2 / U3 / U23?
+- Yes, given f (FB-POLY, in review) and the phase count (PHI, in review). (K_W): LEN (L-SI) = KW-FREEZE (b) (mine), all classes. (E):
+  only needed on U3 / U23 with c_w ≻ c_θ (LEN-Ξ / KW-FREEZE (c) cover c_θ ⪰ c_w); there KIND-MONO (or my DIR + KC), CW-INT (= CW) and
+  CASC-B bound it. K (wakes) ≤ T_rel (L-SI §7), so no separate wake count is needed. U1 also has R24 Theorem U1 given f.
+- What closes only with referees: every lemma in both notes is one-lane. CHECKER must also confirm the assembly (L-SI's via R27 LP;
+  mine via P-N5-NH-box42 Theorem NH).
+(c) Whose packet first
+- L-SI's, with three additions from mine:
+  - Lemma PAR (one line, from R21 XW): removes KIND-MONO's odd branch and RUN's odd case;
+  - H-PATH's "c_w precedes c_θ" sentence: makes KIND-MONO's iff explicit under ¬H1;
+  - Lemma SW (b) as the citation for "a Ξ-change on R needs a switch on R" (it is in P-N5-NH-box42, already pinned and in review).
+- Reasons:
+  - its assembly needs only landed results plus FBPOLY and PHI (R27 LP, TH, SO, R30 (c), R34), not my P-N5-NH-box42;
+  - KIND-MONO is stronger than my DIR + KC;
+  - FRZ-U's route-κ induction is a cleaner transfer of CR than my two-terminal version.
+- DATA (experiments/new/box42/sicross.py --list lib41.txt --starts: the canonical start plus 40 random starts per one-Odd-choice
+  game; 10,373 runs, 7,693 fallback-free runs of stretches): FRZ-U at index r − 1, 0 violations. KIND-MONO: 0 kind changes occurred
+  after index r − 1 in any qualifying run, so it is vacuous in the data and rests on its proof. (Pre-freeze kind changes are frequent:
+  evstress, 820.)
+- My note then serves as an independent second derivation. It need not be refereed separately, except Lemma PAR and WLAG's explicit
+  edge form, if L-SI's packet wants them. P-N5-NH-box42 (in review) remains useful as a second route from the per-phase counts to T.
+
 ## Box 41 log (successor 20, session_018pjn8Y8JRES3YuFDUCAJgM; handover check 5/5 (48078dd0); GO 18:15Z, Lead's stamp)
 - Merged trunk 102f05a5. Oink built (8fbf0a7).
 - (1) FB-CAP: docs/new/N5-FBPOLY-box41.md. Theorem FB-POLY (lane PROVED, unrefereed): in-phase Even fallbacks per phase

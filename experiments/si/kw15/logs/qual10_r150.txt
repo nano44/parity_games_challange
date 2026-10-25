@@ -1,0 +1,29 @@
+AGREE states                                  5368
+CWINT intervals                               18
+FRZ state checks                              629
+KIND runs                                     18
+Xi-flat S4a transitions                       39
+cw>cth notH2 runs (any length)                313
+files                                         10
+post-freeze runs                              373
+runs                                          1319
+runs cth>=cw H2 H1                            501
+runs cth>=cw H2 notH1                         5
+runs cth>=cw notH2 notH1                      481
+runs cw>cth H2 notH1                          19
+runs cw>cth notH2 H1                          134
+runs cw>cth notH2 notH1                       179
+runs shorter than freeze                      946
+traces                                        1510
+transitions                                   12130
+MAX max W-changes on R / run                  15
+MAX max Xi-changes on R / run                 15
+MAX max c_w switches / run                    0
+MAX max cw>cth notH2 run length               14
+MAX max kappa-freeze delay (t - k0)           0
+MAX max kappa-freeze delay / (|Rbar|-1)       0
+MAX max kind changes / run                    0
+MAX max post-freeze length                    5
+MAX max run length                            15
+FAILURES (first 20): []
+KWCHECK PASS
