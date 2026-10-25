@@ -10,3 +10,5 @@ results/box6/climb/
 results/box7/*.tasks/
 results/box7/*.partial.json
 results/box7/*.log
+results/box8/*.partial.json
+results/box8/*.log

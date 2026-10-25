@@ -20,6 +20,14 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     - TH is far from tight.
   - READING: SO's tie-break key is a function of the H-path alone in si.py (longest-path mode: ascending ids; BFS mode:
     length-lex order of root-first id sequences). ⊕ strictness at the first switching vertex p holds because p is in neither value.
+- BOX 37 (GO 03:13Z; docs/red/R67-exitr-attack.md): adversary on L-NEW box 33 (N5-K-box33.md §2/§8/§9 at l-new fb157c31).
+  - CONJECTURE EXIT-R FALSE (exitr_cex_n16 / n48); its consequence ε_H1 <= (d_o-1)(f+1) FALSE (epsseg_cex_n16: 6 > 5;
+    epsseg_cex_n48: 17 > 16); ORX (EPS=1) FALSE.
+  - Confirmed by L-NEW's own orx.py, run from a worktree of l-new fb157c31: EPS=1 python3 orx.py <pg> in experiments/new/box33.
+  - R-STICK, SN-PREFIX, OR, TC-SPLIT, ABS-L: 0 failures.
+  - My CONJECTURE (J-SEG): J <= (d_o-1)(f+1), at equality on 3 instances.
+  - Tools: sox2.py, soclimb2.py (exr / seg / small / jb / xsn / post).
+  - vrun.sh runs n5b with --mode spec (the default orig mode is L-COMP's A5 tie-break and differs; R66 §7 correction).
 - Next (if routed): K growth (hand-built wake chain, U1 pieces); X per phase (the remaining open core with K).
 - Trap (box 36): the j fitness J − S_o reached a degenerate 0 (J = S_o = 0); fixed by counting only phases with J >= 1 (trap 2 again).
 - Trap (box 36): killing by `ps | awk $12..` failed (the column was wrong). Use `ps -eo pid,etimes,args` and kill the pid itself.
