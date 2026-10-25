@@ -74,7 +74,7 @@ Proof.
 ## 6. Corollary HN-POLY-ALL (PROVED; conditional on P-N5-PFZ, P-N5-PFZ-ext and P-N5-RHO, all in review or offered)
 For every τ(o) and every phase: N_HN = O(n²) (NHN-BOUND, or R39 (f) for τ(o) = o), so by P-N5-RHO §6 (RHO-HN, HN-POLY):
 - ρ_HN ≤ (N_HN + |U| − 2)(|U| + deg(o) − 3) + deg(o) = O(n³);
-- Σ_S θ_S ≤ (ρ_HN + N_HN)(n − 2) = O(n⁴); Σ_S B_S ≤ (ρ_HN + N_HN)(2n² − 1) = O(n⁵);
+- Σ_S θ_S ≤ ρ_HN + (ρ_HN + N_HN)(n − 2) = O(n⁴) (BRK-POLY′ in the weak form (i′), REFEREE GAP PFZ-1); Σ_S B_S ≤ (ρ_HN + N_HN)(2n² − 1) = O(n⁵);
 - crossings at HN states Σ_S X_S + (stretch exits) = O(n⁶); fallbacks at HN states ≤ K(Σ_S X_S + N_HN) + Σ_S X_S + N_HN = O(n⁸)
   (K = n_E(2n − 1)).
 This closes, conditionally, the out-of-SN fallbacks AT HN STATES ("HN stretches for τ(o) ≠ o" in G-N5-TIME's open list after R39).

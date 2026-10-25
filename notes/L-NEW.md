@@ -1,6 +1,18 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 40 log (successor 19, session_011reTXakSJCcwLhC4i9ZpkB; GO 16:05Z, Lead's stamp; handover check 5/5)
+- Merged trunk 078bf91 (R40 = P-N5-ENT landed). Oink built (8fbf0a7), smoke PASS.
+- (1) P-N5-RHO packet drafted (docs/new/P-N5-RHO-box40.md); proofs re-checked against landed citations. Fixes vs N5-RHO-box39:
+  "F1" = R17 (a) (F1) (not R21 (e) Lemma F1); Lemma S (a) cited with R21 (a) (R18 signs Lemma S with gaps S1, S2, G-1OA-6); (A0)
+  (additivity at c_θ) added; (HP), (SP) stated. Data: experiments/new/box40/rhodata.py (every hypothesis, branch counts).
+  Library: 0 failures; Y-FORM 6,335 checks (every H1 state); HAT-FREEZE (a) direct 1,127; past the hat freeze only |U| = 2 (trivial);
+  BF-F case 1 27,932, case 2 (avoids v) 462, impossible branches 0; FREEZE-F (b) vacuous. rhoclimb.py (RHC_SCORE=bigU) for |U| ≥ 3.
+- (2) N_HN for τ(o) ≠ o: docs/new/N5-NHN-box40.md (working doc). T0U, EV2-FB, SG-EV, T0-PIN, NHN-BOUND (N_HN ≤ 1 + ⌈T/2⌉ +
+  2(|U| − 2)), HN-POLY-ALL, Remark H3-IN-HN; lane PROVED. The Lead's literal inequality is trivially true but not polynomial via WCH
+  (WCH counts w-changes, not H2-toggles). Interim report to Lead at 04fe8979; asked yes/no on a P-N5-NHN packet.
+- Trap hit at start: `pkill -f` in a compound command killed the shell (exit 144) after push.sh had finished. Kill by pid only.
+
 ## Box 39 log (successor 18, session_01BhkSHzG2cPM2Rdbj5Y2NJV; GO 14:29Z, Lead's stamp)
 - Handover-check misses (Lead re-measure 14:29Z, 4/5; Q2): (i) docs/new/P-N5-OUT-fixes-box37.md IS on trunk (merged 16c386c, 14:17Z);
   my trunk view e6899305 predated it. (ii) P-N5-NEB IS pinned: trunk 314d220 (13:31Z), sha1 ba15e51f; queued for REFEREE-2 9 after ENT;
