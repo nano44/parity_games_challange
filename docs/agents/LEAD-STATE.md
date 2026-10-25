@@ -1244,3 +1244,4 @@
     - DATA: 72,589 + 39,406 checks, 0 failures.
   - Merged l-red 9cf2302 and l-comp 0dd4457.
   - L-SI 7 had not seen the 14:33Z and 14:46Z ENT relays; re-sent. Order: the ENT fixes file NOW, then packet P-N5-LV4-box12, then u* = none.
+- 15:10Z Lead: merged checker 0be9380 (C48 Addendum 1: R39 PASS at 9639fa2) and l-new a29bd8a (box 39 §11, lane PROVED, unrefereed: Lemma FBF / Theorem P-FREEZE: every in-phase Even fallback is a Bellman-Ford round on U = λ⁻¹(c_θ) for the signed P-weight, so P(Ξ) freezes on U after |U| − 1 fallbacks of a θ-run; Theorem BRK-POLY: B_S ≤ θ_S + (θ_S + 1)(n² − 1) for every HN stretch, any τ(o), any c_w; DATA 714 θ-runs, 0 failures). R39 LANDED in RESULTS (CHECKER C48 3d6dcbc8 + Addendum 1 d22ddb69; cmp OK against draft lines 3-67); GAPS UPDATE 15:09Z. P-N5-PFZ routed (packet, then referee queue NEB → PFZ → LV → LV4).
