@@ -48,6 +48,8 @@ def main():
             break
         if s2.c["RECORD_fallbacks_j>=|U|-1_U>=3"] and not os.path.exists(os.path.join(HERE, "climb", f"frz_hit_{seed}.pg")):
             FCL.dump(h, os.path.join(HERE, "climb", f"frz_hit_{seed}.pg")); print("hypothesis reached: fallback g_j, j >= |U| - 1, |U| >= 3")
+        if s2.c["EXIT_kind_loop"] and not os.path.exists(os.path.join(HERE, "climb", f"loop_{seed}.pg")):
+            FCL.dump(h, os.path.join(HERE, "climb", f"loop_{seed}.pg")); print("EXIT kind loop reached at evaluation", it, flush=True)
         if f >= best:
             if f > best: acc += 1
             g, best, st = h, f, s2

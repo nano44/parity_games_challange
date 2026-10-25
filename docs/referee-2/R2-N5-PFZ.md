@@ -273,3 +273,23 @@ I re-derived the repair from the packet's §0 definitions (P-N5-PFZ §0 l. 35-58
   vacuous beyond |U| ≤ 2. REFEREE's 599 in-epoch θ-changes vs my 5,052 (library + random): 0 failures of the refined count on both sides.
 - No other verdict of mine changes. Joint gap map for both files: G-PFX-1 = PFZ-1, CLOSED by the repair in C.2, subject to its
   text in the fixes file. (Opus 5.5, D15)
+
+### C.5 Addendum: diff of the PFZ fixes file §1 against C.2 (REFEREE-2 successor 11, written 2026-10-25 20:2xZ by date -u)
+Signature: (Opus 5.5, D15). Lead requests 19:39Z, 19:58Z and 20:15Z (Lead's stamps; CHECKER C53 E-1). Object:
+docs/new/P-N5-PFZ-fixes-box39.md, sha1 3f55bc882b08d97508d98eda1c3a9f6aeaa0c99c, the same at l-new cf20cdc2 and on trunk
+(`git show <ref>:<file> | sha1sum`). I diffed its §1 step by step against C.2 above.
+| step | C.2 | fixes §1 | diff |
+| --- | --- | --- | --- |
+| the gap | the ρ_S joining transitions are uncounted; the proof gives (i′) | same | equal |
+| Q, A_low, A_high; ℓ = \|P\| + \|Q ∩ A_low\| | Q ⊆ A by (V1), simple, contains o; P = Q ∩ V_{>c_θ} | Q simple in U ((SP)), contains o; P(θ) = Q ∩ A_high | equal in substance (the same fact, cited via (SP) instead of (V1)) |
+| refined θ-LEN | ≤ \|A_low\| − [o ∈ A_low] = \|U\| − 2 − \|A_high ∖ {o}\| per epoch, by R15 (a) monotonicity with c, P fixed | the same bound and the same identity; "ℓ moves monotonically" | equal. Monotone plus a change at each θ-change gives distinct values, which is all that is used |
+| high vertex | ρ_S ≥ 1 ⇒ u ∈ A_high ∖ {o}, since o ∈ P iff rank o > rank c_θ is fixed | the same | equal |
+| count | ≤ ρ_S + 1 segments, each inside one P-epoch; θ_S ≤ (ρ_S + 1)(\|U\| − 2) − 1 for ρ_S ≥ 1; θ-LEN for ρ_S = 0 | the same | equal |
+| (ii) middle bound, (iii) 2n − 3 | the same algebra | the same algebra | equal |
+| o = c_θ | stated: θ constant, θ_S = ρ_S = 0 | the repair is stated "o ≠ c_θ"; the case o = c_θ is not mentioned | omission, not a mismatch: there θ is constant and (i) is θ-LEN's first case |
+| uniformity over epochs | U constant on the phase (P-N5-PFZ §0 l. 52), so the bound \|U\| − 3 holds in every epoch of S | not stated | omission, not a mismatch: it follows from the packet's definition of U |
+- Verdict (Opus 5.5, D15): the fixes text matches C.2 in substance, and in every step that carries the argument. BRK-POLY′ (i), (ii)
+  and (iii) are SIGNED UNCONDITIONALLY as stated, with the fixes §1 repair as the proof of (i). The condition named in C.2 ("the repair
+  must appear in the lane's PFZ fixes file; I will diff that text") is discharged.
+- For the lane (optional, wording): add one line for o = c_θ (θ constant) and one for "U is constant on the phase" to the repair's
+  setting. Neither changes a verdict.

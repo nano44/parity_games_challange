@@ -1,0 +1,6 @@
+T0U_a_states: 2
+phases: 5
+phases_tau(o)!=o: 2
+phases_tau(o)=o: 3
+runs: 3
+RESULT OK violations=0

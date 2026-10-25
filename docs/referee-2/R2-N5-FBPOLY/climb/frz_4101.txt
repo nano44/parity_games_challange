@@ -1,0 +1,35 @@
+climb FIT=frz seed=4101 n=10 iterations=243563 improvements=13 best_fitness=12.0
+BEST-INSTANCE counters: {'AK_checks': 144, 'CN_fallbacks': 2, 'EXIT_fallbacks': 12, 'EXIT_kind_ct': 12, 'KH_a': 64, 'KH_b': 49, 'KP_checks': 142, 'KY_states': 30, 'RECORD_TA_phases_U>=3': 2, 'SW_fallbacks': 14, 'TA_phases': 2, 'fallbacks': 14, 'phases': 12, 'runs': 4, 'states': 30}
+BEST-INSTANCE maxima: {'max_FBCAP_excess_plus_1000': 1000, 'max_FB_a_slack_minus_1000': 996, 'max_FX_ct_j_minus_lim_plus_1000': 998, 'max_f_minus_U_plus_2_U>=3_plus_1000': 1000, 'max_f_per_phase': 3}
+AK_checks: 14681612
+CN_fallbacks: 82750
+EXIT_fallbacks: 275897
+EXIT_kind_ct: 337678
+EXIT_kind_loop: 29
+EXIT_kind_o: 1137
+KH_a: 1171648
+KH_b: 4974608
+KH_c: 11210
+KP_checks: 4518750
+KY_states: 2183767
+RECORD_TA_phases_U>=3: 55935
+RECORD_phases_o=c_U=2: 45212
+SW_fallbacks: 358647
+TA_phases: 103652
+YB_states: 1085829
+climb_evaluations: 237033
+fallbacks: 358647
+phases: 2476805
+phases_o=c: 562510
+runs: 948132
+states: 3269596
+max_FBCAP_excess_plus_1000: 1000
+max_FB_a_slack_minus_1000: 1000
+max_FX_ct_j_minus_lim_plus_1000: 1000
+max_FX_o_i_minus_lim_plus_1000: 997
+max_TA_changes: 0
+max_TA_changes_U>=3: 0
+max_f_minus_U_plus_2_U>=3_plus_1000: 1000
+max_f_o=c_U=2: 1
+max_f_per_phase: 3
+RESULT OK violations=0
