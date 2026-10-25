@@ -1,0 +1,10 @@
+RECORD_rise_after_fallback_with_r_gt_L: 1
+RECORD_rise_with_no_next_fallback_in_S: 1
+blocks: 1
+runs: 3
+scope_runs: 3
+states: 95
+max_D_M: 0
+max_block_size: 1
+max_fallbacks_ge0_per_scope_run: 1
+RESULT OK violations=0

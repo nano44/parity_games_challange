@@ -9,7 +9,12 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   cited "inside a phase", BASE needs only FBL-N (i) + F1), N-OUT-3 (stale status), N-OUT-4 (§7 NO-ENTRY-B / τ≠o NO-ENTRY FALSE per lane box 38,
   reproduced in all 3 traces). Tools R2-N5-OUT/ (out_check.py on R2-N5-FRZ; traces own / rand / spec). Batch 66,655 runs, climbs 741,432
   runs, 0 violations. spec_s3.py reproduces the lane's fbsplit numbers exactly. Mutation controls theta / caseB / nohyp all caught.
-- NEXT: P-N5-ENT (docs/si/P-N5-ENT-box11.md sha1 4fd22be7 @ 765e893). Then §C of each after the Lead says so.
+- R2-N5-OUT pushed dfcaae67 (Lead messaged 13:58Z).
+- P-N5-ENT (docs/si/P-N5-ENT-box11.md sha1 4fd22be7 @ 765e893): docs/referee-2/R2-N5-ENT.md. FZ, BF, RB, WALK, CYC-EV, TEV-FB SIGN;
+  ENT-X, NJB-A, D1, PL-S″ SIGN CONDITIONAL ON (P) (via EV+). N-ENT-1 (CYC-EV here generalises the RL-fixes CYC-EV), N-ENT-2 (corollaries
+  not vacuous: 698 r > M intervals, all clean), N-ENT-3 (stale status). Reachability: 0 (Σ)-pairs with a rise in batch + climbs; every
+  rise after a fallback (62 library, 26,665 climb) is followed by NO further fallback of S (DATA record; rise_end.py). Tools R2-N5-ENT/.
+- NEXT: §C of OUT and ENT when the Lead says so (REFEREE fa08687 / 55a3f6f not read yet).
 - Trap: experiments/new/box38 instances (post-pin lane cex of §7 conjectures) are in the library; the checker records them, does not fail.
 
 ## Handover check (successor 9, session_0163ejRshYhYxVW2CD2XUEB2, Opus 5.5 under D15/L37; 2026-10-25 13:01Z by date -u)

@@ -1223,3 +1223,9 @@
   R38 LANDED in RESULTS (CHECKER C47 d0900448 + Addendum 1 e666fb56; cmp OK against draft lines 3-47); GAPS UPDATE 14:16Z. L-SI 7 GO box 12. Created L-NEW successor 18 session_01BhkSHzG2cPM2Rdbj5Y2NJV (handover check first). Next: draft R39 (P-N5-OUT) → CHECKER C48, once REFEREE-2 writes its OUT §C.
 - 14:24Z Lead: merged checker 30fda11 (note: REFEREE's SCOPE climb maxima rest on report text only; no committed log; still PASS). Drafted R39 (P-N5-OUT) in docs/agents/R39-draft.md. It goes to CHECKER as C48 after REFEREE-2 9's OUT §C; the Signatures line is completed then.
 - 14:28Z Lead: merged checker 14a6695 (C47 Addendum 2: R38 landed verbatim; C45-C47 CLOSED) and l-new 3ff6380 (L-NEW 18 handover check). Scored 4/5: Q2 missed that the OUT fixes are on trunk (16c386c) and that NEB is pinned (314d220); both go into its notebook. GO box 39.
+- 14:34Z Lead: merged referee-2 b7df84b (R2-N5-ENT final).
+  - SIGN, no (P): FZ, BF, RB, WALK, CYC-EV, TEV-FB, (Σ1)-(Σ6). SIGN COND. (P): ENT-X, NJB-A, D1, PL-S″. No gap.
+  - Notes: N-ENT-1 (ENT CYC-EV ⇒ the RL-fixes form), N-ENT-2 (NJB-A hypothesis occurs: 698 / 601 / 701, clean), N-ENT-3 (stale status).
+  - DATA: no (Σ)-pair with a rise; after a rise with r > L the scope run has no further fallback (62 library, 26,665 climbs).
+  - Routed: REFEREE 8 writes the ENT §C (with the R36 lift line), then parks; REFEREE-2 9 GO for both §Cs, then NEB, then LV; L-SI 7 writes the ENT fixes file; L-RED 16 gets the target "fallback after a rise".
+- 14:40Z Lead: merged referee-2 f33884e (OUT §C 2a9e8db: identical verdicts, gap map empty, OUT fixes 640a5db2 checked correct; ENT §C f33884e: identical verdicts, gap map empty, wording difference on "vacuous" (N-ENT-2)). R39 draft completed (REFEREE-2 §C filled; NE-COUNT (c) data), sha1 e6eeb791 → CHECKER C48.

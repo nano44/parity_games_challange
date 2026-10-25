@@ -267,3 +267,47 @@ DATA (library):
   §C fb6fa696; REFEREE per the table); landing is pending (no RESULTS row yet on trunk fb1dfb92).
 - N-OUT-4: §7's CONJECTURES NO-ENTRY-B and NO-ENTRY (τ(o) ≠ o) are FALSE (lane box 38). The frozen packet still lists them as
   conjectures. The RESULTS entry should carry the FALSE status.
+
+## §C. Comparison with REFEREE's R-N5-OUT, and the lane's fixes file (written 2026-10-25 14:32Z by date -u, after my report dfcaae67 was pushed and merged)
+Read: docs/referee/R-N5-OUT.md at trunk 7fc7ac9 (report fa08687, §C a8b8ef3), and docs/new/P-N5-OUT-fixes-box37.md (sha1
+640a5db215e7d5e2bcdc3b335ae5e4972fed1fb2; it agrees on my tree and at origin/claude/l-new; L-NEW succ. 17, l-new dd3f780).
+### C.1 Verdicts
+They are identical. Both referees sign SPLIT, EPOCH (corrected; both say "+ X_S" is needed), F-FLAT, FREEZE-STEP, TAIL, NO-ENTRY-A,
+NE-COUNT (a)-(c), CASE-B-LEN and W-SIDE. Neither signs §7 or W-SIDE's "Consequence" (READING). No gap in either report, so the joint
+gap map is empty.
+### C.2 Notes map
+| REFEREE | REFEREE-2 | content | status |
+| --- | --- | --- | --- |
+| OUT-R1 | N-OUT-2 | (K) / Step (K) is stated "inside a phase"; BASE uses it at a only, and a+1 may leave the phase when b = a. FBL-N (i) + F1 suffices. REFEREE's §C extends it to CASE-B-LEN, as in my N-OUT-2 | agreed; citation; fixes §1 |
+| OUT-N1 | N-OUT-3 | KEY / FB-INT status stale | agreed; status; fixes §2 |
+| — | N-OUT-1 | FBL-N (iii) already covers the target o (o ∈ R in P-N5-X) | accepted by REFEREE's §C; record; fixes map |
+| NO-ENTRY-B FALSE (in its §7 row) | N-OUT-4 | §7 conjectures FALSE: NO-ENTRY-B (nebc_cex_n14) and NO-ENTRY for τ(o) ≠ o (tauw_A/B_cex_n24) | agreed; record; fixes §3 |
+Nothing is only REFEREE's that I would reject, and nothing is only mine that REFEREE rejects.
+### C.3 Data, side by side (DATA, not proof)
+- REFEREE's lib37 counts are counts on its own engine (rl_engine) from the canonical start: 113 stretches, 11 breaks (8 A + 3 B),
+  25 / 12 τ(o) = o phases, every in-stretch fallback a crossing. They agree with the lane's §8 and with my spec_s3.py run (115 / 11 /
+  25 / 12 with rfroz_cex_n16 included, and 107 / 107 crossings).
+- REFEREE did not test NE-COUNT (c)'s per-phase bounds in data (its §7, "checked as arithmetic"). I did:
+  - case-A τ(o) = o phases, every trace;
+  - N_HN ≤ ⌊T_ph/2⌋ + 1, the f_HN and X_HN bounds, and T_ph ≤ T*: 0 violations.
+  So the two reports complement each other there.
+- CASE-B-LEN thin spot (REFEREE: 4 checks, all on nebc_cex_n14). My climbs add 1,291,962 checks, with both W-SIDE cases (§9).
+### C.4 The lane's fixes file (P-N5-OUT-fixes-box37.md), checked item by item
+- §1 (OUT-R1 = N-OUT-2): the repair is to read "against Step (K)" in §5 BASE (ii) and §6 as FBL-N (i) (R21 (c)) + F1 (R17 (a)), using
+  only τ_{a+1} = τ_a. That is exactly my N-OUT-2, and it is Step (K)'s own proof (P-N5-Z §1). Correct.
+  - Its forward pointer (P-N5-NEB §3-§4 cite Step (K) the same way) is noted for my NEB review.
+- §2 (OUT-N1 = N-OUT-3): the SHAs I can check are mine, and they are right (R2-N5-SCOPE 6d6e4bcf, §C fb6fa696). REFEREE's (fb6089bf,
+  257c3d81) are as its own report states. Correct.
+- Map row N-OUT-1: recorded with no change of text, which is what I asked for. Correct.
+- §3 (N-OUT-4). I checked:
+  - the sha1s of nebc_cex_n14, tauw_A_cex_n24 and tauw_B_cex_n24;
+  - its "c_w ≠ o" qualification, with my own code on all three traces: every θ-constant entry after an HN eviction on tauw_A has
+    τ(o) = 9, c_w = 7 ≠ o, case A; on tauw_B, τ(o) = 2, c_w = 7 ≠ o, case B;
+  - nebc_cex_n14's break: case B with c_w = o, both under SPEC (τ(o) = o) and under my own N5 (τ(o) = 3).
+  So "NO-ENTRY for τ(o) ≠ o is FALSE when c_w ≠ o, in both cases" and "NO-ENTRY-B is FALSE" match my data.
+  - Its "what survives" lines cite P-N5-NEB, which is not reviewed yet (next in my queue). I neither sign nor reject them here.
+- The fixes file changes no statement or verdict, and none of my verdicts changes.
+### C.5 Joint state
+All §1-§6 signable statements of P-N5-OUT are PROVED (L-NEW succ. 16/17) and signed by both referees (Opus 5.5, D15), with no (P) and no
+open gap. The citation and status repairs are in the fixes file. §7's two conjectures are FALSE (record), and the RESULTS entry should
+say so.
