@@ -22,8 +22,8 @@ L-NEW successor 14 (Opus 5.5, D15/D18). Box 34 GO by the Lead 04:52Z (Lead's sta
    constant. On an interval where they differ, r = ℓ exactly.
 4. **Lemma BLOCK (PROVED).** On such an r = ℓ interval (ℓ ≥ 0), a vertex that leaves R at an S4a step never re-enters R in that
    interval. So in a fallback-free part of the interval each vertex crosses at most twice, and each exit is released at most once.
-5. **Theorem X-RUN (PROVED).** In a fallback-free run of a phase whose SN prefix has H1 at every state, the SN prefix has at most
-   C·(d_o + 1)·n² crossing transitions (C an absolute constant, §5). Hence REL_run, ε_{H1} per run and X_SN per run are polynomial,
+5. **Theorem X-RUN (PROVED).** In a fallback-free run of a phase whose SN prefix has H1 at every state, the SN prefix has O((d_o + 1)·n³)
+   crossing transitions (P-N5-FRZ §6: ≤ 13 (d_o + 1) n³). Hence REL_run, ε_{H1} per run and X_SN per run are polynomial,
    and per phase X ≤ (f + 1)·poly(n) + f on that part. This answers the brief's "bound X_SN or REL" PER FALLBACK-FREE RUN.
 6. **What stays open (OPEN, sharpened).** R28's f ≤ n_E(2n − 1)(X + 1) + X and item 5's X ≤ (f + 1)·poly(n) make f and X
    polynomially equivalent per phase. The loop of box 33 §4 is still open, but now it is localized (§6). Theorem FREEZE survives
@@ -132,8 +132,8 @@ Proof.
 
 ## 5. Theorem X-RUN (PROVED, L-NEW succ. 14)
 Statement. Let Q be a fallback-free run of a phase. Suppose its SN prefix P (Corollary SN-PREFIX) has H1 at every state. Then the
-crossing transitions inside P number at most (n − 1) + (2n + 2)·6(d_o + 1)·n + 2n(n + 1) + (d_o + 1)n·(n − 1). So they are
-O((d_o + 1) n²). In particular:
+crossing transitions inside P number O((d_o + 1) n³) (≤ 13 (d_o + 1) n³). Packet P-N5-FRZ §6 governs; there the ℓ = −1
+and ⊥ levels cost n³, and the count below is superseded. In particular:
 - REL_Q ≤ d_o times that (every release is in P: R-STICK);
 - ε_{H1}(Q) ≤ d_o + REL_Q (ABS-COUNT in its signed form; d_o − 1 + REL_Q when Q's last H1 ε-transition has O ≥ 0, ABS-COUNT′);
 - by SN-PREFIX, Q has at most n − 1 more crossings after P.
@@ -149,7 +149,7 @@ gives F(ℓ_0) := k_P + n − 1 (FREEZE). Induct downward on the level ℓ, with
   with θ = w before F(⊥) are short (< n − 1 transitions each). After F(⊥) there is no crossing (§4, ℓ = ⊥).
 - If some F(ℓ) never happens, the remaining states lie in ≤ 2d_o + 1 intervals of the level above, and the same counts apply. □
 - Reading against the brief. X_SN per fallback-free run (on its H1 part) and REL per run are now polynomial. Per phase they are
-  (f + 1)·O((d_o + 1)n²) and d_o·(f + 1)·O((d_o + 1)n²). The ¬H1 SN states (329 steps in the library, prefix_nonh_steps) are not
+  (f + 1)·O((d_o + 1)n³) and d_o·(f + 1)·O((d_o + 1)n³). The ¬H1 SN states (329 steps in the library, prefix_nonh_steps) are not
   covered: LEAVE and H3H2 need H1.
 - Phase-level corollary (READING, from R27 Corollary LP′ / R28 Corollary OX): on o-cyclic 𝒞^1O with H1 on every SN prefix, a phase
   makes poly(n)·(1 + f + K) transitions. Here f is the number of fallbacks of the phase and K the number of wakes.
@@ -197,3 +197,67 @@ gives F(ℓ_0) := k_P + n − 1 (FREEZE). Induct downward on the level ℓ, with
 - wsnclimb.py (w-changes between (h) states in one phase, seeds sc24 / sc32): 21 at n 24 (sc24 starts at 20: an unthrottled, R17-type
   run with R mostly empty) and 17 at n 32. Both are below n.
 - Every named instance above has exactly one Odd vertex with out-degree > 1; the scripts assert it.
+
+## 9. The loop inside a scope run: drain and refill (DATA, READING; written 05:47Z by date -u)
+- Mechanism (DATA, box34/fbclus.py). x48_rt48_final.pg (experiments/new/box28/instances, sha1 cff46249…, n 48, d_o 3) has one scope run,
+  states 2-111, with r = 47 until 99:
+  - Refill: R grows one vertex per S4a step (states 2-18, 63-82).
+  - Drain: fallbacks at one level evict R in pieces, with no entry in between (level 45 at 19, 25, 31, 41, 46, 53, 55, 59, 61; level
+    44 at 83-97).
+  - Then θ rises at exactly the drain level (45 at 62, 44 at 98), R refills, and the next drain is one level lower (CLS1).
+  - At 99 θ jumps to level 47 = r: the run's θ catches w.
+  b6_xw_n56.pg (sha1 in data/fbentry_lib.txt) shows the same pattern with levels 43, 42, 41, 41, 41, 40, 39, 39, 36.
+- So "≤ 1 fallback cluster per level per scope run" (CL1) is FALSE: 47 scope runs violate it, up to 9 clusters at one level
+  (x48_rt48_final). But the repeated clusters at one level are drains: R only shrinks between them, so one drain has ≤ |R| ≤ n
+  non-flat fallbacks.
+- E1 (PROVED, it is R20's FBF): inside a scope run, no vertex enters R after a fallback until θ changes. w is fixed in a scope run, so
+  the stretch after the fallback is a (θ, w)-stretch until θ moves, and FBF applies. DATA: 1,874 entries after fallbacks in scope
+  runs, each preceded by a θ-change since the last fallback (box34/fbenter.py).
+- READING (FBL needs u* ≠ none, i.e. r ≥ 0): per scope run, non-flat fallbacks ≤ n·(1 + number of θ-changes in the run). Between two θ-changes, after the first fallback R only shrinks (E1), and each non-flat THR fallback evicts a vertex (FBL). With item 6 of the
+  Summary, per scope run the open count is the θ-changes after fallbacks (L-SI's "θ per scope run", P-N5-CLS §7). In the data they come
+  at the drain level (93 of the 394 transitions right after a cluster change θ at exactly the cluster level; the other 301 do not; data/fbclus_lib.txt).
+
+## 10. (L2): how (h)-runs end and restart; ¬H1 SN states (written 06:05Z onward by date -u)
+**Lemma H3-CONST (PROVED, L-NEW succ. 14).** In a phase, at every H2 state c_w = λ(τ(o)). So H3 holds at all H2 states of the phase or at
+none. If the phase has one (h) state, then at every state of it (h) ⟺ H1 ∧ H2.
+Proof. Under H2, τ(o) ∈ F, and o's W-play continues along τ(o)'s W-play, which stays in F, where W = Ξ (R19 (a)). So c_w = τ(o)'s W-cycle
+node = λ(τ(o)). τ and λ are constant in a phase, and so is c_θ = λ(o). □
+- This gives RATCHET (a)'s "c_w = c_θ at H2 states" without a freeze.
+**Lemma H2-STICK (PROVED, L-NEW succ. 14).** At an S4a transition s → s+1 of a phase with H1 and ¬H2 at s, ¬H2 holds at s+1.
+Proof.
+- ¬H2: τ(o) ∈ R_s. Its W-cycle node is c_w(s), the top of o's W-cycle, which passes o, so c_w(s) ∈ R̄_s.
+- λ(τ(o)) = c_θ: τ(o)'s honest play agrees with its (σ, τ)-play up to o. Under H1, c_θ ∈ F_s (Fact 0's argument uses only H1).
+- So the two cycle nodes differ, and R30 (c) R-STICK keeps τ(o) in R_{s+1}. □
+- So inside a phase with H1 throughout, the (h) states of each fallback-free run form a prefix of the run. An (h)-run can restart only
+  at a fallback, or after a state without H1.
+**CONJECTURE ONE-H ("the (h) states of a phase are consecutive"): FALSE.**
+- Instance: experiments/new/box34/instances/oneh_cex_n32.pg (sha1 51dab08664031c9d34b38de04ba99f255926e14b; n 32, o = 27, d_o 4; climb
+  hrclimb.py from u1flat_best_n32).
+  - Verified: n5.py n5 gives 3 iterations, 1 fallback; check_sol2.py gives "zielonka(oink zlk) OK strategies verified"; exactly one
+    Odd vertex with out-degree > 1.
+  - The phase is states 1-3. State 1 is (h), with R = {19}. State 2 is ¬H1 ∧ ¬H2 ∧ H3: R̄ is everything, both cycles pass o, and
+    their common top is c_θ = c_w = 13. The fallback 2 → 3 returns to (h), with R = {19}.
+- Also a random game (seed 3461, game 2863 of 30,000 at n 5-14) has 2 (h)-runs in one phase. Library: max 1 (h)-run in each of
+  1,272 phases (data/hruns_lib.txt).
+- The interruptions seen: 36 in the library, 107 in the random sample. All are ¬H2 (with ¬H3 or with ¬H1); none is ¬H1 with H2.
+**Lemma G′ (PROVED, L-NEW succ. 14): the frames at an H3 state without H1.** Let k be a phase state with H3 and ¬H1, and put c := c_θ = c_w.
+- Then ¬H2, and c ∈ R̄_k: o lies on its honest cycle, whose vertices all reach o; H2 would put c_w in F.
+- For v ∈ R̄_k, call v c-FIRST if its (σ_k, τ)-play reaches c before o, and o-FIRST otherwise (o itself is o-first).
+- c-first v: Ξ_k(v) = W_k(v), the value of the same path v ⇝ c.
+- o-first v: Ξ_k(v) = π_v ⊕ θ_k and W_k(v) = π_v ⊕ w_k. Here π_v is v's route to o. It is disjoint from both paths of o and from c:
+  meeting σ̄(o)'s or τ(o)'s path to c would make v c-first.
+- On F_k, Ξ = W (R19 (a)). Hence lev(Ξ_k v, W_k v) ≤ r_k := lev(θ_k, w_k) for all v, by (C7).
+**Theorem FREEZE′ (PROVED, L-NEW succ. 14; no data, see below).** Theorem FREEZE (P-N5-FRZ §3) holds with "(h)" replaced by "H3" in the
+window, and "H2" replaced by "H2 or H3" in (b) and in its range.
+Proof. Read P-N5-FRZ §3 with these changes.
+- Step 1 at H3 states without H1 is Lemma G′.
+- Fact 0 at H3 states: the W-cycle node of v ∈ R̄ is c_w = c_θ = λ(v). Honest cycle nodes are in F, or (¬H1) equal c, whose W-value
+  is (c, ∅, 0) because c tops its W-cycle. That covers the base and the cases of P^c that use Fact 0.
+- Step 2: WM and R15 (a) as before.
+- Step 3 needs c_w to be an honest cycle node. That holds under H2 (c_w ∈ F) and under H3 (c_w = c_θ = λ(o)). □
+- DATA: none. No window of n consecutive H3 states containing a ¬H1 state occurs in the library (MODE=H3 freeze.py gives the same 183
+  freezes, all (h) windows; data/freezeH3_lib.txt) or in 20,000 random games at n 4-9.
+- OPEN: RATCHET and BLOCK at ¬H1 SN states. A c-first vertex has Ξ = W, so BLOCK's "BAD bit in R" fails for it; re-entries as c-first
+  vertices are not excluded. Under ¬H1, θ = o ⊕ Ξ(σ̄(o)) with σ̄(o) c-first (if c ≠ o), so RATCHET (b)'s counting of θ still applies.
+- So for (L2) the restart mechanisms are: (i) a fallback at a ¬H2 state that takes τ(o) out of R; (ii) a passage through ¬H1 ∧ ¬H2 ∧ H3
+  states (oneh_cex_n32). FREEZE′ already covers windows through (ii). (i) remains OPEN.

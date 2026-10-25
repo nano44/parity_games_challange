@@ -1,0 +1,8 @@
+after_freeze_interrupt_nH2nH3 7
+max_hruns_after_freeze (0, 3, 'dtr_fig1.pg', 0)
+max_hruns_per_phase (1, 12, 'strat_s2_12v.pg', 1)
+phases 1272
+phases_with_freeze 76
+pre_freeze_interrupt_nH1nH2 3
+pre_freeze_interrupt_nH1nH2nH3 1
+pre_freeze_interrupt_nH2nH3 25
