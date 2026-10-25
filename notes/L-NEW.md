@@ -384,6 +384,10 @@ Nothing running. Oink is built in this container only (tools/oink/build, gitigno
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 15, box 36, recorded while parked at the Lead's request 10:20Z) LINEAR PF-THETA (≤ n θ-changes under one fallback level): FALSE.
+  experiments/red/so/instances/pftheta_cex_n32.pg (sha1 9f526135…, L-RED 15, l-red deb9366, climbed from pf_best_3621). n 32, o = 0,
+  one scope run with one fallback (level 31), then 33 θ-changes > n. Lane re-run: n5 38 iterations / 1 fallback, check_sol2 zlk OK
+  strategies verified, pfclimb.fit (33, 1). Scope: all within ONE fallback-free run after one fallback, so the poly form survives.
 - (succ. 15, box 35) Weak DROP-LEN "≤ 1 drop per fallback-free run": FALSE. experiments/new/box35/instances/onerun_cex_n32.pg (sha1
   70832fcb…, n 32, o 27): 0 fallbacks, drops at 2→3 and 7→8, both S4a σ(13) switches into o; θ length 10 → 7 between them.
 - (succ. 15, box 35) DROP-LEN "θ changes between two drops": FALSE (REFEREE succ. 7). docs/referee/R-N5-L2/droplen_cex_n12.pg (sha1
