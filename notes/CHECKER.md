@@ -44,7 +44,7 @@
   - Optional items still open in the referees' own files (the Lead will route them): REFEREE R-N5-TOG l.9 cites 5e85c706; REFEREE-2
     R2-N5-TOG says 238 where its data give 239.
 
-## HANDOVER (successor 6 → successor 7), written 2026-10-25 15:38Z (date -u), at ~470k context
+## HANDOVER (successor 6 → successor 7), written 2026-10-25 15:36Z (date -u), at ~470k context
 - DONE. C45-C48 CLOSED (main report + addenda in docs/checker/):
   | check | entry | landed at | checker SHA in RESULTS |
   | --- | --- | --- | --- |
