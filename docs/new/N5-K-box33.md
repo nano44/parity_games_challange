@@ -21,7 +21,11 @@ L-NEW successor 13 (Opus 5.5, D15/D18). Box 33 GO by the Lead 02:06Z (Lead's sta
 5. **Lemma WK (PROVED, L-NEW succ. 13, from RESULTS R24 Lemma R / TB).** At a wake y: a → z whose W-cycle node is odd and y is not its own
    W-cycle node, W changes at a or at z (both in R) at the same transition. So in the odd mode every wake is a transition with a W-change
    on R; wakes with W unchanged at a and z exist only in the BFS (even) mode.
-6. **K data.** The library (234 files) has 1 wake (nowake_cex_n32). Three wake climbs (box33/kclimb.py, ~9·10⁴ candidates each so far)
+6. **Lemma R-STICK, Corollary SN-PREFIX, Lemma SN-ORDER (PROVED, L-NEW succ. 13; §8).** At an S4a step R can lose a vertex only
+   when c_w = c_θ; in a run without fallbacks those states form a prefix, so after it R only grows (≤ n − 1 crossings). The crossing
+   problem lives in the SN regime c_w = c_θ, where (under H1) both frames order R-vertices identically. This proves EXIT-R for the 30
+   ε-transitions with c_w(k+1) ≠ c_θ; 249 remain conjectural.
+7. **K data.** The library (234 files) has 1 wake (nowake_cex_n32). Three wake climbs (box33/kclimb.py, ~9·10⁴ candidates each so far)
    reach K = 2 in one phase (consecutive transitions, rising wake levels 26 → 29), never more. Every wake seen is in U3 / U23 with
    c_w the top-rank vertex (the length-only band of Lemma KW-LEN), BFS mode.
 
@@ -127,3 +131,41 @@ Proof.
   riseclass.py (X-rises by attainer), orise2.py (Lemma OR checks), orx.py (EXIT-R / ORX; EPS=1 for all ε-transitions), orxclimb.py.
   lib.txt = the 234-file library list used here.
 - Instances re-used: nowake_cex_n32 (sha1 3a56e3fb…), jcl_zcl_cu_n48 (sha1 53c69d2d…). No new named instance in this note.
+
+## 8. R never shrinks at an S4a step unless c_w = c_θ (PROVED, L-NEW succ. 13; written 02:41Z by date -u)
+Notation: c_θ := λ_Ξ(o) (fixed in the phase), c_w(s) := λ_W(o) at state s. For x ∈ R_s, λ_Ξ(x) = c_θ and λ_W(x) = c_w(s): x's
+(σ_s, τ)-play reaches o, its H_s-play agrees with it up to o (on 𝒞^1O the two graphs differ only at o), and both then follow o's play.
+Distinct cycle nodes compare by rew alone, and rew is injective (si.py l.42-44: pp = 2·rank + parity; rew = ±pp), as is Even's order
+on cycle nodes in VJ00.
+
+**Lemma R-STICK.** At an S4a transition s → s+1 (no fallback) of a phase, every x ∈ R_s with λ_W(x) ≠ λ_Ξ(x) lies in R_{s+1}. Hence if
+c_w(s) ≠ c_θ, then R_s ⊆ R_{s+1}.
+Proof. Suppose x ∈ R_s ∩ F_{s+1}. Off R, Ξ = W (RESULTS R19 (a) Lemma G (a)), so W_{s+1}(x) = Ξ_{s+1}(x), of cycle node λ_Ξ(x) =: c (fixed in
+the phase). W_s(x) has cycle node c′ := λ_W(x) ≠ c. At an S4a step W_{s+1} ⊵ W_s (the arena contains σ_s; R24 TB step 1, R17 (F1)), so
+rew(c) > rew(c′). But Ξ_s(x) (cycle node c) ⊴ W_s(x) (cycle node c′) by (XW) (VJ00 (11)), so rew(c) < rew(c′). Contradiction. □
+
+**Corollary SN-PREFIX.** In a run of consecutive non-fallback transitions of a phase, the states with c_w = c_θ form a prefix of the run,
+and after that prefix R never loses a vertex until the run ends. So every crossing after the prefix adds a vertex to R: at most n − 1
+of them per such run, and the crossings of a phase number at most (f + 1)(n − 1) + f + X_SN, where X_SN counts the S4a crossings at
+states with c_w = c_θ.
+Proof. W(o) is non-decreasing along the run (as above), so rew(c_w) is non-decreasing; and rew(c_w) ≥ rew(c_θ) at every state by (XW) at
+o, with equality iff c_w = c_θ (rew injective). So c_w = c_θ holds on an initial part of the run only. After it, R-STICK at every step. □
+- Consequence for §2: EXIT-R is PROVED for every ε-transition k with c_w(k+1) ≠ c_θ (x0 ∈ R_{k+1} by Lemma OR (a), then R-STICK to the end
+  of the run). It stays a CONJECTURE when c_w(k+1) = c_θ (249 of the 279 ε-transitions; the other 30 are covered).
+- DATA (box33/sn.py; 0 failures of R-STICK and of the prefix property): library 894 fallback-free runs, crossings at S4a steps 2,473 at
+  c_w = c_θ states vs 61 after the prefix (max 12 per run, jcl_zcl_cu_n48 at n 48; max 55 in the prefix, x32_rand64 at n 64); random
+  (sn.py --rand 2000 8 24 3302) 172 vs 0. Every S4a exit release of §2's data is at c_w = c_θ (45 of 45).
+
+**Lemma SN-ORDER (PROVED, L-NEW succ. 13).** Under H1 at a state with c_w = c_θ =: c, both frames are in route form, and for x, y ∈ R
+lev(Ξ(x), Ξ(y)) = lev(W(x), W(y)) with the same direction: the two frames order R-vertices identically. They can disagree only when an
+R-vertex is compared with an F-vertex.
+Proof. Under H1, c ∈ F (o is on no honest cycle). o's W-play ends on the cycle of c ⊆ F, so o is not on its W-cycle (H2). In route form
+(R22 / R24 (R1)) Ξ(x) = π_x ⊕ θ and W(x) = π_x ⊕ w, where π_x ⊆ R \ {o} is x's route and the paths of θ and w lie in F ∪ {o}. So
+P(Ξ(x)) = (π_x ∩ V_{>c}) ⊔ P(θ) and P(W(x)) = (π_x ∩ V_{>c}) ⊔ P(w), with lengths |π_x| + |θ| and |π_x| + |w|. For x, y ∈ R the symmetric
+differences of the path sets are (π_x Δ π_y) ∩ V_{>c} in both frames, the length differences are equal, and the cycle node (which fixes
+the length direction) is c in both. □
+- Reading: the crossing problem of a phase (X, hence the X-charged carries) lives entirely in the SN regime c_w = c_θ, where the two
+  frames agree on R and differ only by the terminal values θ ⊴ w at o. There Lemma BAND's band (rank c_θ, rank c_w) is empty, so route-form
+  wakes cannot occur. Leaving R at p needs an F-option ⊵ π_q ⊕ w (the optimistic value); joining R needs only π_r ⊕ θ ▷ the F-value (the
+  pessimistic one). An absorption (§1) is Even closing a loop p → r → … → o → x0 → … → p whose top above c is good for Even in the honest
+  frame; Odd leaves the loop at o.
