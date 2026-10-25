@@ -1,0 +1,22 @@
+climb FIT=long seed=1513 n=29 iterations=28914 improvements=24 best_fitness=325
+BEST counters: {'AGREE states': 71, 'runs': 3, 'runs cth>=cw notH2 notH1': 3, 'runs shorter than freeze': 3, 'traces': 3, 'transitions': 73}
+BEST maxima: {'max Xi-changes on R / run': 25, 'max W-changes on R / run': 25, 'max run length': 25}
+TOTAL AGREE states                              1159632
+TOTAL FRZ state checks                          5707
+TOTAL climb evaluations                         28903
+TOTAL post-freeze runs                          1906
+TOTAL runs                                      89280
+TOTAL runs cth>=cw H2 H1                        1162
+TOTAL runs cth>=cw notH2 notH1                  88052
+TOTAL runs cw>cth notH2 H1                      15
+TOTAL runs cw>cth notH2 notH1                   51
+TOTAL runs shorter than freeze                  87374
+TOTAL traces                                    86709
+TOTAL transitions                               1233678
+TOTALMAX max W-changes on R / run               25
+TOTALMAX max Xi-changes on R / run              25
+TOTALMAX max kappa-freeze delay (t - k0)        0
+TOTALMAX max kappa-freeze delay / (|Rbar|-1)    0
+TOTALMAX max post-freeze length                 16
+TOTALMAX max run length                         25
+KWCLIMB PASS

@@ -27,6 +27,8 @@ def scan(g, o, A, fbs, C, M, bad, tag):
     T = len(fbs); n = g.n
     inph = [OC.key(A[k], o) == OC.key(A[k + 1], o) for k in range(T)]
     # WONCE
+    for k in range(T):
+        if inph[k] and not fbs[k] and A[k + 1].Xi == A[k].Xi: C["Xi-flat S4a transitions"] += 1
     for k in range(T - 1):
         if inph[k] and inph[k + 1] and not fbs[k] and not fbs[k + 1]:
             if A[k + 1].Xi == A[k].Xi:
@@ -44,6 +46,8 @@ def scan(g, o, A, fbs, C, M, bad, tag):
         ms = ct if g.rank[ct] >= g.rank[cw] else cw
         R = S0.Rr; Rb = S0.Rbar
         C["runs"] += 1; C[f"runs {'cth>=cw' if ms == ct else 'cw>cth'} {'H2' if S0.H2 else 'notH2'} {'H1' if S0.H1 else 'notH1'}"] += 1
+        if ms == cw and cw != ct and not S0.H2 and cw != o:
+            C["cw>cth notH2 runs (any length)"] += 1; M["max cw>cth notH2 run length"] = max(M["max cw>cth notH2 run length"], b - a)
         kap = lambda S, v: above(g, S.pi[v], ms)
         for t in range(a, b + 1):
             S = A[t]; C["AGREE states"] += 1

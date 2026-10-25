@@ -26,6 +26,10 @@ def fitness(C, M, fit):
         return 50 * C["KIND changes"] + 30 * M["max c_w switches / run"] + 10 * C["KIND runs"] + 5 * M["max post-freeze length"]
     if fit == "wonce":
         return 20 * C["WONCE checks"] + M["max Xi-changes on R / run"]
+    if fit == "kind2":
+        return 50 * C["KIND changes"] + 30 * M["max c_w switches / run"] + 10 * C["KIND runs"] + 4 * M["max cw>cth notH2 run length"] + 2 * C["cw>cth notH2 runs (any length)"]
+    if fit == "wonce2":
+        return 20 * C["WONCE checks"] + 3 * C["Xi-flat S4a transitions"]
     if fit == "long":
         return 10 * M["max Xi-changes on R / run"] + 3 * M["max W-changes on R / run"] + M["max post-freeze length"]
 
