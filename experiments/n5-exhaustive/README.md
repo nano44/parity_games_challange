@@ -227,7 +227,9 @@ lane data quantities (J, K, S_o, E, K_W); 0 violations is evidence, not proof.
 | n 4 all starts | 7,340,032 | 694,116 / 939,808 / 8,337,228 | 140,668, 0 | 17,068 / 576 | 100 | 0 (LV' tight) | 1 | 1 |
 | n 5 subset quarter 1 (index = 0 mod 4) | 17,193,152 | 1,055,200 / 1,299,248 / 8,817,118 | 135,610, 0 | 6,604 / 42 | 92 | 0 | 1 | 1 |
 | n 5 subset quarter 2 (index = 1 mod 4) | 17,191,424 | 1,131,306 / 1,396,338 / 8,592,786 | 143,352, 0 | 6,948 / 124 | 98 | 0 | 1 | 1 |
-| n 5 subset quarters 3-4 | running at park time (results/box7/box7_n5_..._off2/off3; resumable) |
+| n 5 subset quarter 3 (index = 2 mod 4) | 17,189,248 | 1,053,568 / 1,297,684 / 8,821,224 | 135,696, 0 | 6,608 / 42 | 52 | 0 | 1 | 1 |
+| n 5 subset quarter 4 (index = 3 mod 4) | 17,190,976 | 1,132,668 / 1,397,614 / 8,593,598 | 144,150, 0 | 6,934 / 126 | 100 | 0 | 1 | 1 |
+| n 5 subset, all 4 quarters | 68,764,800 | 4,372,742 / 5,390,884 / 34,824,726 | 558,808, 0 | 27,094 / 334 | 342 | 0 | 1 | 1 |
 
 | box7w table | runs | max K | max S_o | rises fallback / sigma_bar(o) / crossing / wake / other | U2 / U3 / U23 stretches, switches | violations | max E | max K_W |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
