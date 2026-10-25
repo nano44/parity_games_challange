@@ -1264,3 +1264,4 @@
   - Merged l-comp 4633d13 (box 7 COMPLETE: box7w n 5, 68,764,800 runs, 0 violations; K 0, S_o 1, E 1, K_W 2; box8 n 5 running ~10 h).
   - Created L-SI successor 8 session_013kZp65x9TKU9AqPZdMYGpm.
   - NOW: 16 parked rows archived to ROSTER-ARCHIVE (148 → 132 lines).
+- 15:40Z Lead: merged checker 2b54058 (C49 = R40 FAIL. E-1: REFEREE-2 §C C.1 does record the R36 lift; I had said it did not. Optional N-1 and N-2. Points (2) and (3) PASS; re-runs exact) and l-si a6378fc (L-SI 7 NEXT updated). R40 revised: E-1 as given, N-1, N-2; new sha1 28bbe2c3. CHECKER 6 (~470k): hands over after R40 Addenda 1 and 2.
