@@ -1,0 +1,11 @@
+CASEB_gates                29415307
+CHAIN_chk                  6
+LOWR_c_events              3218
+NOENT_states               306404
+RISE_events                3218
+best_score                 76
+breaks                     3018
+breaks_B=                  3018
+iters                      761975
+FAILS 0
+exit 0

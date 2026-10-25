@@ -1,0 +1,9 @@
+BAND_gate_viol_at_base         1
+BAND_runs                      1
+HNfb_states                    1
+breaks                         0
+fbclass_A_cw!=o_tauo!=o        1
+games                          1
+stretches                      1
+FAILS 0
+EX ('docs/referee/R-N5-NEB/band_base_cex.pg', 'BANDgate', 2, 2, 5, 14, 19, 19)
