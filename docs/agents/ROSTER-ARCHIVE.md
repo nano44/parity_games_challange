@@ -1,0 +1,19 @@
+# Roster archive (Lead)
+Retired roster rows moved verbatim out of docs/NOW.md to keep it within the 150-line doc-shape limit. Sessions here are parked for good, paused or superseded; a row moves back only if the session is reused.
+
+## Moved 01:37Z Oct 25 (date -u)
+| Role | Session id | Branch | Model | Effort | State | Reason |
+| --- | --- | --- |
+| REFEREE (old) | session_01Ki9osXiyYf9heTLNk3FKED | claude/referee | fable-5-1 | high | parked (handover f179ae0); keep 1 week |
+| L-COMP (old) | session_014bbtNwaVKxFymHpXynjURn | claude/l-comp | opus-5-5 | high | parked (handover 25a6e21; successor only when T3 revives or a new claim needs the bench) | n=5 diagonal cells cost 1-2 h/k; low value while T3 is parked |
+| L-LOWER (old) | session_01U5n8mgXxgyGzvuUzxHbiKx | claude/l-lower | fable-5-1 | high | parked (handover f0e5e8f) | Replaced for cost (492k context) |
+| L-ALG (old) | session_01WN44zjFXZSqaL5SwsoDn7d | claude/l-alg | fable-5-1 | high | parked (handover 1017502) | D5/L18 algorithm lane |
+| L-ALG (Fable, paused) | session_01Aoj1NEAPu4ibQ3VbNXaXVY | claude/l-alg | fable-5-1 | high | NOT RESUMED (L36): stale since 2026-10-16 (20+ boxes of Opus L-ALG work since); proof lane parked; successor from notes/L-ALG.md if the owner reopens the proof lane | Fresh mind for GAP-A; designer and falsifier differ |
+| L-RED (succ. 11, Opus since 07:25Z) | session_01Vq1xXP1gJphfvYS1UxA4td | claude/l-red | opus-5-5 | high | PARKED FOR GOOD 10:03Z Oct 23 (date -u) at ~630k: box 23 END (8acfa08, merged): R55: G_ζ faithful (VJ Random-Edge counts: 57/~826/~5,263), R2 does not (61.0/405.4/1,475.0); R2 survives; successor 12 | D13/L34/L36: DTL adversary |
+| L-RED (succ. 12, Opus) | session_01QSEXqYujPY1RBkWy5SgeHa | claude/l-red | opus-5-5 | high | PARKED FOR GOOD 22:47Z Oct 23 (date -u) at ~630k (0d0b67a, merged): box 25 DONE: R57 (N5 not killed; O1-O4; kill requirement R-a + R-b; symmetric climbs 25/34/55 linear) | D15/L37: adversary for N8d-R2 |
+| L-NEW (succ. 5, Opus) | session_019MJMHr7jYQTFT71mo82rZB | claude/l-new | opus-5-5 | high | PARKED FOR GOOD 08:12Z Oct 23 (date -u) at ~670k: box 16b DONE (35cf9a0: N8d-barrier §4 T26 corrections); handover notes/L-NEW.md d2aef05; successor 6 from it when the (c) lane next needs a designer | D14/D15/L37: (c) main effort |
+| REFEREE (succ. 3, Fable) | session_01CGiY8GsNvXLWdnkLYpgxTM | claude/referee | fable-5-1 | high | PARKED FOR GOOD 04:10Z Oct 24 (date -u): R-N5-1OA + §0 + §C done (061052c, merged): identical verdicts with REFEREE-2 ; Fable, succeeded on Opus per L37 (1) for the next packet (Lead routing error recorded in LEAD-STATE) | L36: Fable referees after the reset; never downgraded |
+| REFEREE-2 (succ. 3, Fable) | session_01PAw7VL2ViLm3Yb4SdRcnPR | claude/referee-2 | fable-5-1 | high | PARKED FOR GOOD 04:10Z Oct 24 (date -u): R2-N5-1OA + §7 + §C done (0ea3441, merged): identical verdicts with REFEREE ; Fable, succeeded on Opus per L37 (1) for the next packet (Lead routing error recorded in LEAD-STATE) | L36; independent second referee |
+| CHECKER (succ.) | session_01QBZ7EKhfZqmY1MkdxmNnHq | claude/checker | opus-5-5 | high | PARKED FOR GOOD 01:17Z (date -u) at ~590k: C20 PASS (3001bb1, merged); successor (Fable) for the R17 landed-text check; handover in its last message (C16-C20 SHAs, conventions) | Landing gate; predecessor at ~725k parked |
+| L-RED (old) | session_017WLo5xfMxRZ4f6n2Su6274 | claude/l-red | fable-5-1 | high | parked (handover 5a30e98; successor on next L-RED task) | Designer and falsifier must differ (D1); referees kept clean for step 4 |
+| L-RED (Fable, paused) | session_0117Yy21tGGz9s1zzLfBdUKC | claude/l-red | fable-5-1 | high | PAUSED by Fable weekly limit ~01:23Z (last 0bedda5, R9 v4); resumes after reset 2026-10-21 21:00Z unless the owner decides otherwise | Independent adversary; never designs |

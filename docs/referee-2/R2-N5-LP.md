@@ -240,3 +240,35 @@ vertex. I have not read docs/referee/ for this packet.
 Combined DONE (P-N5-LP + P-N5-SO): LP §1-§2 and LP′ SIGN; DF NOT SIGNED as stated (df_cex.pg), DF′ SIGN; WAKE SIGN WITH GAPS; TH SIGN; SO
 SIGN WITH GAPS (closed); XJ SIGN WITH GAPS (N-SO-2). NEEDS: Lead: route DF′, G-LP-1, G-LP-2, N-LP-1, G-SO-1, N-SO-1..3 to L-NEW's fixes files;
 tell me when REFEREE's reports are pushed, for §C.
+
+## §C. Comparison with REFEREE's R-N5-LP (referee 4957b2c, on trunk; read after my reports 4949d6c9 and ba67f410 were pushed)
+Written 2026-10-25 01:19Z (date -u). Kept short at the Lead's request. Signature (Opus 5.5, D15).
+### C.1 Verdicts: no disagreement of substance
+| statement | REFEREE | REFEREE-2 |
+| --- | --- | --- |
+| LP §1 U, HI, UL, GR, NU; §2 LP | SIGNED (HI Consequence: gap HI-1) | SIGN (HI Consequence: G-LP-2) |
+| LP §3 DF | NOT SIGNED, FALSE (own df_cex.pg, n 11) | NOT SIGNED, FALSE (own df_cex.pg, n 5) |
+| LP §3 DF′ (y not its own W-cycle node) | SIGNED (Bellman + R24 G-TB-1) | SIGN (R15 (a) + (F1) + R15 (b) Lemma B) |
+| LP §3 BAND | SIGNED | SIGN |
+| LP §3 WAKE | SIGNED WITH GAP W-1 | SIGN WITH GAPS G-LP-1 |
+| LP §4 LP′ | SIGNED | SIGN |
+| SO Lemma TH | SIGNED WITH GAP SO-1 | SIGN (N-SO-1) |
+| SO Lemma SO | SIGNED | SIGN WITH GAPS G-SO-1 (closed) |
+| SO Corollary XJ | SIGNED WITH GAP XJ-1 | SIGN WITH GAPS N-SO-2 |
+- DF: same failing step (VJ00 Lemma 5.8, 2 ⇒ 3 ⇒ 1, at own cycle nodes) and same repair. Two independent counterexamples. The two DF′
+  proofs differ in route but are both valid: REFEREE's goes through the Bellman inequality, mine through Lemma A/B.
+- SO-1: REFEREE asks me to check its full-minimiser proof (σ̄(o) minimises Ξ over succ(o) when λ(o) ≠ o). I did, and adopted it, in
+  R2-N5-FB §C.3. So that dependency carries two signatures: CLOSED.
+- XJ-1 = N-SO-2 (f = O(n⁴(1 + X))).
+- G-SO-1 is mine only. REFEREE's key-frozen check gives the same closure ("⊕ p strictly monotone: p is in neither path set"), so we agree.
+### C.2 Joint gap map
+| REFEREE | REFEREE-2 | status |
+| --- | --- | --- |
+| DF FALSE | DF NOT SIGNED (df_cex.pg) | same; DF′ signed by both |
+| HI-1 | G-LP-2 | same (Consequence unproved for switched own cycle nodes; unused) |
+| W-1 | G-LP-1 | same (WAKE cites DF′); closed |
+| — | N-LP-1 | mine only (⊕ order phrase in LP step 4); nit |
+| SO-1 | R2-N5-FB §C.3 | closed (two signatures on the full-minimiser proof) |
+| XJ-1 | N-SO-2 | same |
+| — | G-SO-1, N-SO-1, N-SO-3 | mine only; closed / notes |
+Final (Opus 5.5, D15): as in my §§ above. G-N5-TIME OPEN; open cores per phase: X and K.

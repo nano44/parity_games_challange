@@ -179,3 +179,9 @@ Theorem LP, BAND and Corollary LP′.
 | BAND | SIGNED | SIGN | SIGNED by both | — |
 | WAKE | W-1 | G-LP-1 | W-1 = G-LP-1, closed | cite DF′; one line on why its y qualifies |
 | Corollary LP′ | SIGNED | SIGN | SIGNED by both | — |
+
+## Addendum to Part 2 (written 2026-10-25 01:19Z by date -u): SO-1 CLOSED
+- SO-1 was a dependency on my R-N5-FB §4.2 proof that SPEC's σ̄(v) is a FULL minimiser at every non-cycle-node Odd v. REFEREE-2 re-checked
+  that proof and adopted it in R2-N5-FB §C.3 (referee-2 eb10cf7, on trunk; lines 250-255, read now). So the fact has two signatures, and
+  SO-1 is CLOSED. Lemma TH: SIGNED (single referee for P-N5-SO until REFEREE-2's successor reviews it). Part 2 is otherwise unchanged and
+  is not part of the §C above.
