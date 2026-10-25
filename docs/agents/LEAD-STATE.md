@@ -1171,3 +1171,4 @@
 - 10:35Z Lead: L-NEW 16 handover 5/5 (ae5513d), GO box 37 (TOG fixes2 first, then P-N5-SCOPE, then OUT-POLY). Merged referee cb9577f (probes 785e79b).
 - 10:40Z Lead: merged checker 639ff52 (C42 Add. 1 PASS on 8d9d6590) and referee-2 8681e3f (TOG §C: no verdict differs; REFEREE-2 7 PARKED ~460k). R33 LANDED in RESULTS (draft lines 3-end verbatim with 'checker 639ff523', cmp IDENTICAL 53 lines from 1560, before Dead ends); GAPS G-N5-TIME append-only UPDATE (incl. N-4: ¬H1 SN states; PF-THETA linear FALSE; box 36); NOW.
 - 10:50Z Lead: merged referee 49dc13b (TOG §C: no verdict differs; NJB C.7 converged; REFEREE TOG data = SPEC trace) and l-new e570bc6 (P-N5-TOG-fixes2 sha1 698539a9). R34 (P-N5-TOG) drafted → CHECKER C43. REFEREE 7 (~300k): standby for P-N5-SCOPE (L-NEW 16 writing).
+- 10:53Z Lead: merged checker 289f032 (C42 Add. 2: R33 landed verbatim; C42 CLOSED; C41 N-4 resolved). C43 = R34 (TOG) sent (numbering: TOG R34, NJB R35).
