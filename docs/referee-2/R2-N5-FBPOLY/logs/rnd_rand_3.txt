@@ -1,0 +1,25 @@
+AK_checks: 95509
+CN_fallbacks: 4
+KH_a: 3
+KH_b: 3861
+KP_checks: 1443
+KY_states: 4290
+RECORD_TA_phases_U>=3: 1
+RECORD_phases_o=c_U=2: 141
+RECORD_phases_skipped_large_U: 3325
+SW_fallbacks: 4
+TA_phases: 91
+YB_states: 2266
+fallbacks: 4
+phases: 5464
+phases_o=c: 1058
+runs: 2000
+states: 6556
+max_FBCAP_excess_plus_1000: 1000
+max_FB_a_slack_minus_1000: 999
+max_TA_changes: 0
+max_TA_changes_U>=3: 0
+max_f_minus_U_plus_2_U>=3_plus_1000: 1000
+max_f_o=c_U=2: 0
+max_f_per_phase: 1
+RESULT OK violations=0

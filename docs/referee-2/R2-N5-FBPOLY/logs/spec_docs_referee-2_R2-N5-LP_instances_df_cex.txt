@@ -1,0 +1,14 @@
+AK_checks: 1
+CN_fallbacks: 3
+RECORD_phases_o=c_U=2: 1
+SW_fallbacks: 3
+YB_states: 8
+fallbacks: 3
+phases: 4
+phases_o=c: 4
+runs: 3
+states: 8
+max_FBCAP_excess_plus_1000: 1000
+max_f_o=c_U=2: 0
+max_f_per_phase: 1
+RESULT OK violations=0

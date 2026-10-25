@@ -7,7 +7,7 @@ import sys, os, random, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "so"))
 import sox, pg
 from soclimb import mutate, dump
-KIND = os.environ.get("KIND", "pf"); UMIN = int(os.environ.get("UMIN", "4"))
+KIND = os.environ.get("KIND", "pf"); UMIN = int(os.environ.get("UMIN", "4")); GMIN = int(os.environ.get("GMIN", "0"))
 BAD = (-10 ** 9, 0, 0, 0)
 
 def runs(g, cap=3000):
@@ -29,13 +29,17 @@ def score(G):
         while b + 1 < N and X[b + 1][0] == X[a][0] and X[b + 1][2] == X[a][2]: b += 1
         ct = X[a][1][0]; u = sum(1 for z in X[a][0] if z == ct)
         if u >= UMIN:
-            if KIND == "hat": f = sum(FB[k] for k in range(a, b)); best = max(best, (f - (u - 2), f, -u))
+            if KIND == "hat":
+                f = sum(FB[k] for k in range(a, b))
+                if f >= GMIN: best = max(best, (f - (u - 2), f, -u))
             else:
                 s0 = a
                 while s0 <= b:
                     e0 = s0
                     while e0 + 1 <= b and X[e0 + 1][1] == X[s0][1]: e0 += 1
-                    f = sum(FB[k] for k in range(s0, e0)); best = max(best, (f - (u - 1), f, -u)); s0 = e0 + 1
+                    f = sum(FB[k] for k in range(s0, e0))
+                    if f >= GMIN: best = max(best, (f - (u - 1), f, -u))
+                    s0 = e0 + 1
         a = b + 1
     return best + (-g.n,)
 

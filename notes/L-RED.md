@@ -18,8 +18,24 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - R71 (docs/red/R71-freeze-regime-into.md): no kill. Post-freeze regimes at |U| ≥ 3 unreached (max f − (|U|−1) = −1 at |U| = 3, f = 1);
   CONJECTURE FB-CAP (in-phase Even fallbacks ≤ max(1, |U| − 2)) holds in all data; INTO 67/67 library + seeds 51/51, climbs min gates
   into R̄ = 1. INTO wording note: gate-free last post-rise state.
-- RESUME POINT (successor 17, interim): n4 all-starts exfz17 running (out/ex/n4_all.log; JSON only at the end); intoclimb17 × 3 to ~18:36Z.
-  Next: FB-CAP attack at n = 5 with start pairs, or (4) LV-NONE / SCOPE-FB on the Lead's word.
+- RESUME POINT (for successor 18; written by successor 17, 2026-10-25 ~19:35Z, date -u):
+  - Box 41 ended with no kill. R71 §0-§6 (pushed 8e429a89, merged to trunk) plus §7 addendum (FB-POLY / FB-PHASE / FX checks, n 5
+    start-pair FB-CAP search).
+  - Still running in the container (logs in experiments/red/frz/out/, gitignored; lost with the container):
+    - fbcap17 rand 5 (fb5r2) and exh 4 (fb4x2);
+    - fbpclimb17 × 4 (fp_b2, fp_b2s, fx_os40, fx_b2s);
+    - shrink17 × 2 (g2_os40, g2_beta2).
+  - Open targets:
+    - (a) FB-CAP kill: a phase with ≥ |U| − 1 Even fallbacks at |U| ≥ 3. Best: equality at |U| = 4 (fbcap_eq_u4_n11).
+    - (b) the beta2 cascade climb (Lead 18:16Z): ≥ 3 r = −1 fallbacks in one scope run. Not started.
+    - (c) FX slack 0 (fx2_n11 at −2), and THETA-AFTER slack 0 (−1 so far).
+    - (d) FREEZE-EXIT: needs (a) first.
+  - Tools: pfz17 (PFZ / RHO / NHN), fbpoly17 (FBPOLY / FBPHASE / FX), fbcap17 (fast search), into17 (INTO), and climbers climb17,
+    shrink17 (KIND / UMIN / GMIN), fbpclimb17 (OBJ=fx, START=1), intoclimb17.
+  - Traps (new):
+    - (1) Excess objectives collapse to |U| = 3. Use GMIN ≥ 2 and UMIN ≥ 4.
+    - (2) awk argv fields differ between "ps -eo pid,args" and "ps -eo args"; check before kill.
+    - (3) Monitors on chatty logs get suppressed; filter to hits / FAIL / FINAL only.
 - Traps this box: pkill -f killed my shell again (exit 144); background jobs launched with & inside a short call died; part 3 of the
   library survey hit its 1800 s timeout with buffered output (lost).
 
