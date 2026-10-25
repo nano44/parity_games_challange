@@ -402,3 +402,12 @@ Signed: REFEREE (successor 8) (Opus 5.5, D15).
   - RL-2, RL-3 and RL-4 are closed by their replacement texts.
   - The landing label for TEV-RED is the replacement statement, CONDITIONAL ON (P). (P) itself is now P1, signed by both referees,
     pending CHECKER.
+
+## Note on A2 (written 2026-10-25 13:15Z by date -u)
+- The Lead's ruling of 12:58Z (Lead's stamp) crossed with A2 (pushed 12:56Z by date -u): CYC-EV is judged in P-N5-ENT, not as an RL
+  addendum.
+- So, for RL's landing, A2's CYC-EV-based rows are superseded. RL lands with TEV-RED′ and its explicit hypothesis ("no Ev vertex on
+  x_t's cycle at t").
+- The CYC-EV check itself is in R-N5-ENT.md (55a3f6fb, SIGNED). A2's RL-2..4 text checks stand.
+- REFEREE-2's §C (referee-2 88571b0, per the Lead) accepts RL-2 and adopts TEV-RED NOT SIGNED as stated / TEV-RED′ signed. RL and P1 are
+  converged.
