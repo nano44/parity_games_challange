@@ -1,0 +1,7 @@
+C567_checks: 90
+OFFG_checks: 74
+TRANS_checks: 643
+runs: 3
+transitions: 50
+transitions_in_phase: 35
+RESULT OK violations=0

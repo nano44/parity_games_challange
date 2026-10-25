@@ -1,0 +1,20 @@
+C567_checks: 90
+CLS1_case_r<=L: 1
+CLS1_checks: 1
+CLS1_first_fallback(vacuous): 1
+CLU_checks: 4
+NL_(j,L)_checks: 160
+NL_admissible_with_R_nonempty: 11
+NL_no_admissible_L(S4a,(h)): 27
+NL_transitions_with_admissible_L: 12
+OFFG_checks: 59
+TRANS_checks: 586
+runs: 3
+scope_fallbacks: 2
+scope_fallbacks_THR_u*!=none: 2
+scope_runs: 4
+scope_transitions: 39
+transitions: 50
+transitions_in_phase: 41
+max_fallbacks_per_scope_run: 2
+RESULT OK violations=0

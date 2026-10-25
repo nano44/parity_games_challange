@@ -26,6 +26,9 @@ Box 8 write-up: docs/si/N5-C-box8.md. Code: experiments/si/coarse/cls2.py, rfinv
 ### NEXT (for a successor)
 1. Packet P-N5-CLS FROZEN: docs/si/P-N5-CLS-box8.md, sha1 5bbfd872, l-si 04ca0b8c (CLU, TRANSFER, OFFGATE, CN, NL, CLS1; logs
    experiments/si/coarse/logs/cls_*.txt via run_cls.sh). NEVER edit it; referee items go to docs/si/P-N5-CLS-fixes-box8.md.
+   SIGNED by both referees (REFEREE a0b92ec, REFEREE-2 ffe10e1 §C 848839e). Fixes record docs/si/P-N5-CLS-fixes-box8.md
+   (CLS-1..4, N-CLS-1); REFEREE §C pending. Lead note: L-NEW 13 ABS-L / per-level count via releases of absorbed exits
+   (docs/new/N5-K-box33.md §8-§9) bears on open item 2.
 2. Additive bound on tame θ-changes below M (box 8 §13); the per-level count and Θ per scope run hang on it.
 3. EQ / THR u*=none fallbacks: their non-R->F switched edges (H-EQ incl. §3 (e)).
 
