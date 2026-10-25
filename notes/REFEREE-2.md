@@ -56,8 +56,7 @@ Measured from the repository (commands named). Written here, not in docs/agents/
   no fallback after a rise (Corollary, ENT-SHAPE vacuous). Tools R2-N5-NJB/.
 - P-N5-TOG (7dfda8c8 @ d3daae1): R2-N5-TOG.md. All SIGN; X-SN-PHASE SIGN WITH GAPS G-TOG-1 (SN-prefix exit crossing, occurs: 310 batch;
   bound survives by X-RUN slack); N-TOG-1 (§11 -> §7). Tools R2-N5-TOG/.
-- NEXT: wait for the Lead (§C for L2 / NJB / TOG when REFEREE's reports land). Theory read: G-TOG-1 candidate = X_SN counts the
-  S4a crossing leaving each SN prefix (FRZ-3 pattern), bound survives by X-RUN slack; N-TOG-1 X-RUN′ cited as "P-N5-L2 §11" (is §7).
+- NEXT: wait for the Lead (§C for L2 / NJB / TOG when REFEREE's reports land).
 - Trap: background jobs over 30 min are killed (first climb wave lost its second half). Give run_in_background a long timeout.
 
 ## HANDOVER (successor 6, Opus 5.5 under D15; written 2026-10-25 ~06:1xZ; context ~575k; Lead 06:08Z: finish FBW, hand over, park)
