@@ -6,7 +6,10 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - P-N5-OE (docs/new/P-N5-OE-box32.md sha1 adeccd89, pin 361d18c): report docs/referee-2/R2-N5-OE.md. U-loc, OE, OX (i)-(v) all SIGN;
   notes N-OE-1 (in-particular sentence vs level-⊥ tie move), N-OE-2 (step 3 one-line reason), N-OE-3 (phase-key transfer of FB/J1/CAP-1/TC).
   Tools R2-N5-OE/ (oe_check.py, oe_climb.py, run_all.sh). 0 violations; CAP-1 non-minimiser at λ(o)=o seen (420), never used by OE.
-  NEXT: §C after REFEREE's R-N5-OE (do not read it before my report is pushed).
+  §C ea6ad672 vs R-N5-OE (5e98e33 + 696b08c): no disagreement; joint gap map 5 rows (OE-1=N-OE-1, OE-2, OE-3+N-OE-2, N-OE-3, OX-1)
+  + note 3.6. Corrections in §C: tie moves 2 library / 5 random (my first counter only had E_k = ⊥); 220 vs 234 = lane run date.
+  Lead 02:25Z: review closed, R28 drafted (CHECKER C37). PARKED 02:24Z.
+  NEXT (Lead will send pinned): P-N5-CLS (L-SI succ. 3: OFFGATE, CN, TRANSFER, NL, CLS1). Do not read docs/referee/ for it before my report.
 - Oink built in this container (setup_oink.sh).
 
 ## HANDOVER (successor 5, session_01VbMVVvPYCY47wY5MbtLG8w, Opus 5.5 under D15; written 2026-10-25 01:23Z by date -u; context ~660k, over the line)

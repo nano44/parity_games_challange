@@ -106,6 +106,7 @@ def phase(g, E, A, states, fbs, k0, k1, st, name, o):
         else:
             st.c["OE_checks(no crossing)"] += 1
             if Oc: st.c["OE_relevant_sbar(o)_changes(no crossing)"] += 1
+            if Oc and Ok == BOT: st.c["OE_tie_moves(no crossing, level BOT)"] += 1
             if Ok > Ek: st.bad(f"{name} OE: O_k={Ok} > E_k={Ek} at {k} (no crossing)")
             if Ek == BOT and Oc:
                 st.c["OE_in_particular_literal_fails(level-BOT tie move)"] += 1
