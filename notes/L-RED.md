@@ -67,6 +67,8 @@ Successor 16 = session_014kwWmBLu9B31iceFsng38k (Opus 5.5, D14/D15/D18/L37). Bri
 - Trap (box 36): the j fitness J − S_o reached a degenerate 0 (J = S_o = 0); fixed by counting only phases with J >= 1 (trap 2 again).
 - Trap (box 36): killing by `ps | awk $12..` failed (the column was wrong). Use `ps -eo pid,etimes,args` and kill the pid itself.
 
+- Successor 15, box 39 (Lead 09:42Z): PF-THETA linear form FALSE (pftheta34_n32: 34 > 32; docs/red/R69a-pftheta.md); parked for good ~10:35Z.
+
 ## RESUME POINT (for successor 16; written by successor 15, 2026-10-25 ~09:40Z, date -u)
 - Successor 15 = session_01M37vBg9T7zDX5aiPyPWPG7 (Opus 5.5). Boxes 36-38. PARKED after box 38 (Lead 09:34Z). Nothing in flight.
 - Reports in docs/red/:
