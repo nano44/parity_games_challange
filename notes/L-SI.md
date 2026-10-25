@@ -91,6 +91,18 @@ Write-up: docs/si/N5-TEV-box11.md. Code: experiments/si/tev/rb.py (logs/rb_named
   state; the walk's v = 15 carries the gate (15, 21) of level 33 and enters R at 8. TEV at fallback states stands (ENT-X needs only that).
 - docs/si/P-N5-RL-fixes-box10.md (REFEREE 8's RL-1..RL-4, TEV dead ends, k0-quantifier point). REFEREE-2's items go to fixes2.
 - Next: packet P-N5-ENT (docs/si/P-N5-ENT-box11.md), then the straddling interval.
+### Since 12:45Z (all pushed; every sha1 below was sent to the Lead, so the files are FROZEN)
+- P-N5-ENT packet 4fd22be7. RL fixes2 b3e3cd93; P1 fixes 83ef83b0; RL/P1 addendum 5c29d93d. Lead 13:13Z: both referees signed CYC-EV +
+  TEV-RED′ in addenda; P1 at CHECKER as R36, RL next as R37.
+- Straddle: N5-STR-box11 (c7b9c671: obstruction = NL's (K*) at r = L; CONJECTURE NL=, 0 failures in 743 steps; reading NJB ⇐ (P) ∧ NL=),
+  N5-STR2-box11 (b6ed9476: bypass gate (p, e*) of level L admissible at r = L; kill shape for L-RED). Off the critical path (Lead agrees).
+- Level −1 (Lead GO 13:13Z): docs/si/N5-LV-box11.md. LV-SHAPE (PROVED): an in-scope THR M = −1 fallback has only (α) F→F own-cycle-node
+  gates, (γ) F→R̄ at y = c (r = −1 only), or (β) R→F level −1 gates (need rank o < rank c). LV-CN (CONDITIONAL on CN-LAST): no (β) ⇒ the
+  fallback is the phase's last transition. DATA: 1,032 THR in scope, all M ≥ 0; 0 with u* = none.
+### NEXT (for a successor)
+1. "THR ⇒ M ≥ 0" in scope: exclude a (β)-fallback (N5-LV §3 kill shape), or count (β)-fallbacks per scope run (needs a level −1 STRETCH /
+   FLAT-ALL).
+2. If L-RED kills RB / WALK / ENT-X, re-examine §2 of P-N5-ENT first (Lemma BF's "v not on its successor's pre-c path").
 
 ## Resume point (successor 5, box 10; PARKED 2026-10-25 ~11:50Z per Lead 11:44Z; LANE-RESTART step 1; session_018GWc3YukyLgRhrrYJdrzHm)
 Handover check 6be8831 (Lead 5/5). Write-ups: docs/si/N5-RL-box10.md (box 10 b), docs/si/N5-P1-box10.md (box 10b). Code:
