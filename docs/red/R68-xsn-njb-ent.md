@@ -46,7 +46,8 @@ NO KILL. 0 failures of NJB, FLAT-ALL (iii), NO-RF-OLD, ENT and J-SEG, and of eve
 - The climb seeded from b6_xl_n48 (f 9) raised X_SN from 75 to 91 at n 48. Per-run X_SN there: 19, 23, 10, 9, 2, 7, 1, 7, 0, 14.
 - CONJECTURE (L-RED, data): (XSN-RUN) at most n − 1 crossings inside the c_w = c_θ prefix of one fallback-free run. With SN-PREFIX
   (≤ n − 1 after the prefix) this would give X ≤ 2(n − 1)(f + 1) + f per phase: X is linear in f + 1, and the open core of X is f.
-  - xrun climbs on per-run prefix crossings − (n − 1), at n 12 and n 20: §6.
+  - xrun climbs (per-run prefix crossings − (n − 1); 680 k evaluations at n 12, 253 k at n 20): the maximum is n − 3 (9 at n 12,
+    17 at n 20). The bound n − 1 is never reached.
 
 ## 3. J-SEG (DATA)
 - No library phase with f ≥ 1 and J ≥ 1 comes within less than 1 of the bound. The closest are fbv32_inr2 and two box25 files (d_o 2,
@@ -76,7 +77,7 @@ NO KILL. 0 failures of NJB, FLAT-ALL (iii), NO-RF-OLD, ENT and J-SEG, and of eve
 ## 6. NO-RF-OLD and ENT (DATA)
 - Library and all my instances (257 files): 6 rises with an r > L window, 8 post-rise states, 0 failures.
   - rfb0 = 0: no file has a COARSE_L(θ) rise between an in-scope fallback and the next in-scope fallback of its scope run.
-- ENT climbs: 0 failures; rfb0 stayed 0 throughout.
+- ENT climbs (4, about 2.05 M evaluations): 0 failures; rfb0 stayed 0 throughout.
   - From cl9_norf_a and cl9_norf_b: the window stayed at 21-24 states, ending at the end of the scope run.
   - From njb_reabs54_n32 and njb_reabs65_n48 (many fallbacks).
   - From so_k2_n32.
