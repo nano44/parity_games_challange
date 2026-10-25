@@ -1478,3 +1478,18 @@
 - L-NEW 21 moves to box 43: N5 beyond 𝒞^1O. A ledger of which lemmas use "one Odd choice vertex", the first obstruction on 𝒞^2O, and a novel route (D18).
 - 21:27Z: Merged checker d0ab0c01 (C56 PASS, R47 PHI; optional N-1 on the S1/S2 sentence). Applied N-1 verbatim to the R47 draft, since landing must match a checked draft; asked CHECKER for C56 Addendum 1.
 - 21:39Z: Merged checker 437af08f (C55 Addendum 1: R46 landed verbatim; C55 CLOSED) and 5bb11d61 (C56 Addendum 1 PASS, R47 rev. 72595bc2). LANDED R47 (P-N5-PHI): RESULTS lines 2324-2360, checker 5bb11d61, cmp OK. GAPS line 11 UPDATE: phases closed on 𝒞^1O.
+- 21:44Z: Pre-drafted docs/agents/R48-draft.md (P-N5-FBPOLY; added at l-new 4a17f8e1, pinned trunk 42d8c3a9; fixes c016c190). It waits for REFEREE-2 12's §C FBPOLY (placeholder R2C-PENDING). To CHECKER C57.
+- 21:46Z: Hourly sweep (trigger 21:03Z, run late, after landings).
+  - No overage. Lead context 689k; compaction handles it.
+  - REFEREE-2 12 (297k): NEEDB climbs to ~21:50Z. L-SI 10 (346k): drafting P-N5-KW. L-COMP 4 (258k): Q3 to ~21:55Z.
+  - CI green on every head. No owner line (M2 done).
+- Exceptions handled:
+  - L-NEW 21 PARKED at ~450k (resume point 6a1b0e95). Created L-NEW successor 22 (session_0136C96DnQn2qLgCGtvgLp6f) for box 43.
+  - L-RED 18 R72 (9812efa7): no kill of FX or FBPOLY in 8.5 M random runs; loop kind on exsw_loop_n15.pg (e38329f8; Lead re-run from the canonical start: one Odd choice vertex, n5 1/0, Oink zlk OK); K linear (kchain, kt6_n58); all wakes at U3. Routed: L-RED box 43 = the K red-team; the Ks/Kt wording point to L-SI for P-N5-KW.
+  - Merged l-red. Added R72 to the R48 draft data line.
+- 21:54Z: Merged checker 135d8366 (C56 Addendum 2: R47 landed verbatim at c4d18621; C56 CLOSED), referee 5efec8b0 (REFEREE 11 K prep: kw_probe and kw_climb, 0 failures), l-new b4f064b4 (L-NEW 22 handover check 5/5; notebook duplicate block removed, verified: only the superseded NEXT block was lost) and l-si 6fb0cd55. GO to L-NEW 22 for box 43.
+- 22:01Z: Merged referee-2 ef433d32 (R2-N5-NEEDB: all SIGN, no gap; N-NEEDB-1..5; XG reached 7 times in climbs; FINDING N-NEEDB-5: the CONJECTURE "in scope, THR ⇒ M ≥ 0" is FALSE on block_9501.pg from its saved start pair, state 1, M = −1 with three (β) gates; from the canonical S3 start no such state exists). Merged l-si bf1ed0f7 + 47c4e7a2.
+- PINNED at this commit:
+  - packet P-N5-KW, docs/si/P-N5-KW-box15.md, sha1 c0b0111fcc2259e4ed9d43647bc4fa08cec452a5 (L-SI 10, l-si bf1ed0f7): W-ONCE, Facts A/B, FRZ-U, LEN, PAR, H-PATH, KIND-MONO, CASC-B, CW-INT, E-SEG, RUN, KW-S, PHASE (conditional on f);
+  - its addendum docs/si/P-N5-KW-addendum-box15.md, sha1 8d6bfb3c32d80ed7040df4ae2dee56bb9bb9b5bd (l-si 47c4e7a2: units are transitions; switches ≤ n · transitions; R72 data).
+  - They go to both referees as one review unit. REFEREE 11: §C NEEDB, then KW. REFEREE-2 12: §C FBPOLY, then KW, then FX, then NH42 (KW moved ahead of FX and NH42, since its assembly needs neither).
