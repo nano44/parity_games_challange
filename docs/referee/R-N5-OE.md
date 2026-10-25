@@ -151,3 +151,56 @@ own N5 trace u1_probe.trace asserted equal to n5.run on every game; every game a
 - OE-2: §2 step 1: cite CAP-1 as R-N5-FB §4.2 (λ(o) ≠ o, valid also when o lies on its honest cycle, case ¬H1); no text change needed.
 - OE-3: §2 step 3: "decide the comparison" → "by (C1) and (C3), Ξ_{k+1}(x0) ◁ Ξ_{k+1}(x1)".
 - OX-1: §3: "f and T count transitions with both ends in the phase (R25 FB-2)".
+
+## §C. Comparison with REFEREE-2 (R2-N5-OE, referee-2 ca6e5bd, on trunk 1d35e8e9); written 2026-10-25 02:06Z onward by date -u
+Read only after my report was pushed (5e98e33c) and the Lead said R2-N5-OE exists (02:06Z).
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| Lemma U-loc | SIGNED | SIGN | SIGNED by both |
+| Lemma OE | SIGNED WITH GAPS OE-1, OE-2 (closed), OE-3 | SIGN, notes N-OE-1, N-OE-2, N-OE-3 | SIGNED by both; no gap of substance |
+| Corollary OX (i)-(v) | SIGNED (OX-1 wording) | SIGN (N-OE-3 for (iv)) | SIGNED by both |
+| Reading | not signed | not signed (correct as a reading) | not signed |
+No verdict differs. Neither referee found a counterexample or a false step.
+
+### C.2 Item by item
+- OE-1 = N-OE-1. The same point: "In particular" excludes level-⊥ tie moves of σ̄(o), and the proof does not. The two data statements agree
+  once matched:
+  - REFEREE-2's counter (0) is the sentence's literal case, a tie move with E_k = ⊥. Mine is also 0 there.
+  - My "library 2, random 50" counts tie moves off crossings with E_k ≠ ⊥. These do not touch the sentence; they only show that tie moves
+    exist.
+  Same repair (REFEREE-2 writes "level ≥ −1", I write "level ≠ ⊥"; these are the same set).
+- OE-2 (CAP-1 at o on its honest cycle, ¬H1): REFEREE-2 did not list it. Its §2 says CAP-1 holds "at an Odd vertex with λ ≠ itself", which
+  is the same scope; its data has 4,598 ¬H1 changes. No disagreement. Kept as a closed citation line.
+- OE-3 ~ part of N-OE-2's area: REFEREE-2 justifies step 3's comparison by "level and direction are functions of the COARSE_{E_k} values (as in
+  Lemma HI)"; I cite (C1) and (C3). Either closes it. Wording.
+- N-OE-2 (the reason for "x0's honest play does not return to o"): I checked this in my §2.1 step 3, from H1's definition (N5-NH-box28 l. 9),
+  but did not list it as an item. Accepted as a wording line.
+- N-OE-3 (phase key): MISSED by me. The packet's phase is (λ_Ξ, τ) constant. R21-R23 and R25 are stated under the finer key (λ_Ξ, λ_U, τ).
+  - P-N5-FB l. 47 says "Only 'λ_Ξ and τ constant' is used" (read now).
+  - J1, CAP-1 and TC (i) "H1 ⟺ λ_Ξ(o) ∈ F" are statewise.
+  - So the transfers are valid. I accept REFEREE-2's check of FB's proof. My own support is data only: my probe uses the coarse key
+    throughout, and (iv) had 0 failures.
+  - Lesson repeated from R-N5-FB (G-FB-2/3): check the setting each citation was signed under, not only the class.
+- OX-1 (f and T over transitions with both ends in the phase, R25 FB-2): REFEREE-2 did not list it. Its (iv) applies FB as signed, which
+  includes FB-2. No disagreement. Wording.
+- Data: on the 234-file library at the canonical start, three implementations give identical counts: REFEREE-2 logs1, my oe_probe.py, and
+  the lane's oddlev.py (crossing-free σ̄(o) changes 436 H1 + 11 ¬H1; O_k > E_k 279, all crossings; non-tame 235, all crossings).
+  - REFEREE-2's batch is larger than mine (3 starts per file, and climbs with 4,598 ¬H1 changes). It covers my thin spot, the ¬H1 branch.
+  - Both of us see K = 1 only (nowake_cex_n32). The wake term of (iii) is barely exercised.
+
+### C.3 Joint gap map (one fixes-file line per row)
+| row | REFEREE | REFEREE-2 | status | fixes-file line |
+| --- | --- | --- | --- | --- |
+| 1 | OE-1 | N-OE-1 | wording | §2 "In particular": "σ̄(o) makes no relevant change of level ≠ ⊥ (O_k = ⊥)"; a tie move is not excluded (0 seen with E_k = ⊥) |
+| 2 | OE-2 | (§2 scope, same) | closed | §2 step 1: cite CAP-1 = R-N5-FB §4.2 / R2-N5-FB §C.3, valid for λ(o) ≠ o including o on its honest cycle (¬H1) |
+| 3 | OE-3 | (N-OE-2 area, §2 step 3) | wording | §2 step 3: "by (C1) and (C3) (equivalently: level and direction are functions of the COARSE_{E_k} values, as in Lemma HI), Ξ_{k+1}(x0) ◁ Ξ_{k+1}(x1)" |
+| 4 | — | N-OE-2 | wording | §2 step 3: "H1: o lies on no honest cycle; x0's honest play is the tail of o's, so it never visits o" |
+| 5 | — (missed) | N-OE-3 | closed | header: "phase = (λ_Ξ, τ) constant; R25 FB uses only λ_Ξ and τ constant (P-N5-FB l. 47); J1, CAP-1, TC (i) are statewise" |
+| 6 | OX-1 | — | wording | §3: "f and T count transitions with both ends in the phase (R25 FB-2; a phase-exit fallback adds ≤ 1)" |
+
+### C.4 Joint label (D18/L40)
+- PROVED (L-NEW successor 12; REFEREE and REFEREE-2, Opus 5.5, D15), pending CHECKER: Lemma U-loc on every game inside a phase; Lemma OE
+  (with row 1's wording) and Corollary OX (i)-(v) on 𝒞^1O.
+- OPEN: X and K per phase; G-N5-TIME.
