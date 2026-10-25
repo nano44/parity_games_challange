@@ -1,6 +1,44 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 7, session_01CE1xQNfGUgtJg9A7SWAkuE, Opus 5.5 under D15; written 2026-10-25 10:33Z by date -u; context ~460k; Lead 10:31Z: PARK)
+Branch claude/referee-2, merged with trunk at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this commit.
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
+| packet | object (sha1) @ pin | report SHA | §C / addenda SHA | outcome |
+| --- | --- | --- | --- | --- |
+| handover check | — | 8e3e6188 / de9ff970 | — | Lead 5/5 |
+| P-N5-FRZ | docs/new/P-N5-FRZ-box34.md 39df373c @ 25fda0f | 20a73ca1 | §C f546b43c | all SIGN; X-RUN SIGN WITH GAPS G-FRZ-1 (= FRZ-3); N-FRZ-1..4; joint 6-row map; P^c label aligned to REFEREE (FRZ-1/2) |
+| P-N5-FBW §C | (successor 6's report 25962855) | — | bc2e7b72 | no verdict differs; FBW-1 CONFIRMED (H1 not H2) |
+| P-N5-L2 | docs/new/P-N5-L2-box34.md cbea0739 @ 04b3f48 | 388caf6c | §C 21429c91 | all SIGN; L2-1 = N-L2-1; L2-2 (REFEREE only) accepted; §8 (2) restart occurs (j5_n16) |
+| P-N5-NJB | docs/si/P-N5-NJB-box9.md f43a8823 @ a7d85b3 | 45eae593 | §C 21429c91, e65cbcdd, §C.3a 16d27d1c | joint: literal MINSET (c) NOT signed (G-NJB-1, REFEREE accepted), survivor (c) signed; ENT-SHAPE (5) NOT signed (NJB-2; my N-NJB-1 withdrawn, assumed z ∈ F_{k0}), (5′) signed; NJB-1 accepted |
+| P-N5-TOG | docs/new/P-N5-TOG-box35.md 7dfda8c8 @ d3daae1 | faabe716 (+881e288a) | Addendum A 16d27d1c; §C (this commit) | all SIGN; X-SN-PHASE SIGN WITH GAPS G-TOG-1 = TOG-1 (occurs on SPEC trace: b4_cyc6_0 0->1), N-TOG-1 = TOG-2; no verdict differs |
+### IN FLIGHT
+None. Next packet P-N5-SCOPE (L-NEW 16) not ready; successor takes it.
+### NEEDS
+- Lead: route the joint fixes lines (FRZ rows 4-5 to L-NEW; NJB rows 1-2 to L-SI 5; TOG rows 1-2 to L-NEW 15) if not yet done.
+### Things only I know
+- Tools added this session (own code, chained on my lane's R2-N5-RE/re_check.py; each dir has run_all.sh, logs/, climb/, totals_*.txt):
+  - R2-N5-FRZ/frz_check.py: own N5 run_n5 (S4a = ANY arena optimum: deterministic switch-all SI, or --rand random-subset SI + random
+    value-preserving re-choices; S4b Odd pointwise best; S4c as SPEC), analyse() (Xi, W, H1-H3, (h), r, R/Rbar/F, gates, MF), checks for
+    FRZ (Fact 0, ARENA, Steps 1-2, P^c exhaustive n <= 10 / sampled, FREEZE, RATCHET, BLOCK, X-RUN sub-counts, SUB). frz_climb.py (mutate,
+    ok, dump reused by all later climbs), oink_xcheck.py (468/468 vs Oink zlk), h2need.py. totals.py (shared). FRZ_WINF env = mutation test.
+  - R2-N5-L2/l2_check.py (+ l2_climb.py, restart_probe.py); R2-N5-NJB/njb_check.py (scope runs, blocks, MINSET survivor + literal,
+    NORF, ENT) (+ njb_climb.py, entp_probe.py); R2-N5-TOG/tog_check.py (+ tog_climb.py, xsn_exit_probe.py, xsn_exit_spec.py);
+    R2-N5-FBW/fbw1_probe.py.
+  - My N5 differs from SPEC only in S4a's optimum choice: data from it must be attributed as "my N5". SPEC-trace data: only via
+    re_check.n5_spec (imports n5.py read-only) and only when the Lead asks (done once, xsn_exit_spec.py, Lead 10:06Z).
+- Recurring traps seen this session:
+  - The same boundary transition (from an SN prefix's last state) was missed three times by the lanes (FRZ-3, X-RUN′ text, TOG-1): any
+    count "with both ends in P" used for releases or X_SN needs +1 per run (closed each time by slack ≥ 1 in X-RUN's count).
+  - A statement whose defining set is nonempty by a sibling clause (MINSET (c) vs (a)) can secretly assert the conjecture; read every
+    "iff X = ∅" against the clause that makes X nonempty.
+  - "No leave" facts start at k0+1, never at the fallback k0 itself (NJB-2; my N-NJB-1 error).
+  - Citations of R29 lemmas need the phase-key transfer check ((λ_Ξ, λ_U, τ) -> (λ_Ξ, τ)); I missed it once (FRZ row 6).
+  - Literal readings "In a phase: every state k with … at k+1" must be in-phase (L2-2, missed by me).
+  - Background jobs > 30 min are killed: give run_in_background a long timeout (5400000).
+  - Local branch is stale at container start (77f9cf71 twice): fetch, ff to origin/claude/referee-2, merge trunk.
+- Oink built in this container (scripts/setup_oink.sh, 8fbf0a7); a fresh container must rebuild it.
+
 ## Handover check (successor 7, session_01CE1xQNfGUgtJg9A7SWAkuE, Opus 5.5 under D15/L37; 2026-10-25 07:00Z by date -u)
 Predecessor successor 6 session_01H9qTdDhPBiSG4S7P1SkFjD. Correction at push time: its handover DID land (320e4b9d, seen on a second
 `git fetch` when push.sh was rejected); merged below, and its HANDOVER section is the handover.
