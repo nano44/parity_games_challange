@@ -8,13 +8,14 @@
   tx  : tevx16 (N5-TEV-box11 in (Σ)): (failures, (Σ) pairs with a COARSE_L(θ) change, RB + WALK checks, (Σ) pairs)
   nleq: nleq16 (CONJECTURE NL=): (NL= failures at r_j = L, r = L steps checked, r = L steps without (A_j), r > L steps)
   far : (fallbacks after a rise with r > L in one scope run, such rises, fallback pairs, fallbacks)
+  lv  : lv16 (N5-LV-box11): ((β)-fallbacks, in-scope THR fallbacks with M = -1, LVX / LVCN failures, THR fallbacks)
   xrun: (failures, max SN-prefix crossings of one fallback-free run − (n − 1), exit crossings, fallbacks)
   rst : (failures, max #(h)-runs − (1 + toggles + f) per phase, max #(h)-runs, fallback restarts)
 A hit (rfb0 > 0, maxpre > n − 1, any failure) is saved as OUT_viol.pg. Invalid sentinel −10^9 (trap 1).
 Usage: climb16.py mode seed secs OUT (seed.pg | --rand n)"""
 import sys, os, random, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-import sox, rx16, tevx16, nleq16, ex16, pg
+import sox, rx16, tevx16, nleq16, ex16, lv16, pg
 from soclimb import mutate, dump
 NEG = (-10 ** 9,) * 4
 
@@ -28,9 +29,10 @@ def fit(G, mode):
         except Exception: return NEG, None
         far = ex16.full.far; r = dict(it=len(FB), fb=sum(FB), C={"FAR": far[1]} if far[1] else {}, ex={"FAR": far[2]}, n=g.n)
         return (far[1], far[0], p[0], sum(FB)), r
-    try: r = (tevx16 if mode == "tx" else nleq16 if mode == "nleq" else rx16).analyse(g, cap=3000)
+    try: r = (tevx16 if mode == "tx" else nleq16 if mode == "nleq" else lv16 if mode == "lv" else rx16).analyse(g, cap=3000)
     except AssertionError: raise
     except Exception: return NEG, None
+    if mode == "lv": return (r["beta_fb"], r["lv"], sum(r["C"].values()), r["thr"]), r
     if mode == "nleq": return (sum(v for k, v in r["C"].items() if k.startswith("EQ") or k == "LEAVE_SHAPE"), r["eq"], r["eq_noA"], r["gt"]), r
     if mode == "tx": return (sum(r["C"].values()), r["rise_pairs"], r["rb"] + r["walk"], r["pairs"]), r
     fails = sum(v for k, v in r["C"].items() if k != "RISE")
@@ -43,7 +45,7 @@ def fit(G, mode):
     else: f = (fails + r["rfb0"], r["maxslack"], r["maxruns"], r["rst_fb"])
     return f, r
 
-def hit(r): return bool(set(r["C"]) - {"TEV", "TEVLAST"}) or r.get("maxpre", 0) > r["n"] - 1   # TEV refuted: tev_cex_n40, tevlast_cex_n40
+def hit(r): return bool(set(r["C"]) - {"TEV", "TEVLAST"}) or r.get("maxpre", 0) > r["n"] - 1 or r.get("lv", 0) > 0   # TEV refuted: tev_cex_n40, tevlast_cex_n40
 
 if __name__ == "__main__":
     mode, seed, secs, out = sys.argv[1], int(sys.argv[2]), float(sys.argv[3]), sys.argv[4]; rng = random.Random(seed)
