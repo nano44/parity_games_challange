@@ -1378,3 +1378,4 @@
   - The per-vertex argument for FB-CAP is false (b5_os_n40).
   - INTO: 0 failures, with min gates into R̄ = 1. Wording note: restrict INTO to Iσ_t ≠ ∅.
   - L-RED 17 next: FB-CAP search at n 5 over start pairs, then the beta2 cascade.
+- 18:21Z Lead: merged l-si 6918233 (L-SI 9 handover 5/5; GO box 14: G-N5-TIME ledger, then X per phase) and referee-2 2fef675 (R2-N5-LV2 Addendum B eed4efd: N-LV2-3 conjecture withdrawn, FALSE on beta2_n11; LV-NONE's N = 2 induction step checked on 3 traces, 0 violations).
