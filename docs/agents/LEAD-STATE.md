@@ -1438,3 +1438,13 @@
   - Created L-RED successor 18 (session_01D6HqejxBahRiMjurWjAtzT).
 - 19:45Z Lead: merged l-new 419308f (L-NEW 21 handover 5/5; GO) and referee-2 b621f9a (R2-N5-PHI: Lemma Φ (a)-(c) and Φ-1O (a), (b) all SIGN, no gap; R18's S1/S2 do not threaten U-monotonicity; λ and λ^U checked, 3.2 M checks each). REFEREE-2 has also finished its NHN paper check (all SIGN); its FB-POLY report is due ~20:0xZ.
 - 19:50Z Lead: merged l-red 3b05d7f (L-RED 18 handover check 5/5, re-measured). GO box 42.
+- 19:55Z Lead: merges.
+  - checker 7f4570b: C53 = R44 FAIL.
+    - E-1: REFEREE-2's C.2 signature on (i) as stated is conditional on its own diff of the fixes text, which is not yet recorded.
+    - E-2: G_U, terminals, M_Θ and Mopt_Θ were undefined.
+    - Applied in the draft: E-2, N-1, N-2. E-1 waits for REFEREE-2's recorded diff (route (a)), requested at 19:39Z.
+  - referee 3de7cab, R-N5-FBPOLY: all lemmas SIGNED; FB-POLY (a) first bound, (c), (d) SIGNED.
+    - GAP FBP-1: the final bound needs |succ(o) ∩ Û| ≤ n − 1, or 1 + 2n(n−2).
+    - GAP FBP-2: (b) for o = c_θ.
+    - Both repairs are given; both statements are true.
+    - The post-freeze regime is unreached even in 3.82 M climbs.

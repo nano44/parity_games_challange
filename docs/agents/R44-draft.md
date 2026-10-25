@@ -10,7 +10,10 @@
   breaks B_S; θ_S the θ-changes of S). U := λ⁻¹(c_θ) (constant on a phase); wt(v) := sgn(v)·2^rank(v) if rank(v) > rank(c_θ), else 0
   (sgn = +1 for even, −1 for odd priority); M_t(z) := wt(P(Ξ_t z)) for z ∈ U. A θ-RUN is a maximal run of states of a phase with θ
   constant, and f_1 < f_2 < … are its in-run Even S4c fallback transitions. A P-EPOCH is a maximal run of states of a phase with P(θ)
-  constant; ρ_S is the number of transitions of S at which P(θ) changes. A U-RISE is a strict rise of Ξ at some z ∈ U.
+  constant; ρ_S is the number of transitions of S at which P(θ) changes. A U-RISE is a strict rise of Ξ at some z ∈ U. The
+  TERMINALS are o and c_θ. G_U is the graph on U in which every Even v ∈ U ∖ {c_θ} keeps all its edges into U, every Odd
+  v ∈ U ∖ {o, c_θ} keeps its forced edge, and o and c_θ are sinks. For a θ-run Θ, M_Θ(o) := wt(P(θ)) and M_Θ(c_θ) := 0, and
+  Mopt_Θ(z) := max{wt(p ∖ {end}) + M_Θ(end) : p a simple path in G_U from z to a terminal}; M_Π and Mopt_Π are the same on a P-epoch Π.
 - Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P):
   (a) Lemma FB-ROUND: at an in-phase Even S4c fallback k → k+1, M_{k+1}(v) ≥ wt(v) + M_k(x) for every Even v ∈ U ∖ {c_θ} and every
       successor x ∈ U of v (with the facts (A) additivity, (M1′), (M2′) of packet §1).
@@ -24,7 +27,8 @@
       t → t+1 with a ≤ t < k, θ constant on [a, t+1] and t+1 ∈ S, carries an R̄-rise.
   (e) Theorem BRK-POLY: for every HN stretch S, any τ(o) and any c_w, B_S ≤ θ_S + (θ_S + 1)(|U| − 1 + |U|(|U| − 1)) ≤ θ_S +
       (θ_S + 1)(n² − 1); in case A, B_S ≤ θ_S + (θ_S + 1)(|U| − 1).
-  (f) Theorem P-FREEZE′ (ext §1): (b)-(c) hold verbatim on P-epochs (only M(o) = wt(P(θ)) is used). Lemma θ-LEN (ext §2): a P-epoch has
+  (f) Theorem P-FREEZE′ (ext §1): P-FREEZE (a)-(c), LEN-TAIL and NO-CROSS-A hold verbatim on P-epochs, with Θ, M_Θ, Mopt_Θ replaced by
+      Π, M_Π, Mopt_Π (only M(o) = wt(P(θ)) is used). Lemma θ-LEN (ext §2): a P-epoch has
       at most max(|U| − 2, 0) θ-changes.
   (g) Theorem BRK-POLY′ (ext §3), for every HN stretch S, any τ(o) and any c_w: (i) θ_S ≤ (ρ_S + 1)·max(|U| − 2, 0); (ii) B_S ≤ θ_S +
       (ρ_S + 1)(|U| − 1 + |U|(|U| − 1)) ≤ (ρ_S + 1)(|U|² + |U| − 3) ≤ (ρ_S + 1)(2n² − 1); (iii) in case A, B_S ≤ θ_S + (ρ_S + 1)(|U| − 1) ≤
@@ -32,7 +36,7 @@
       P(θ) itself changes, which are θ-changes too (gap PFZ-1 = G-PFX-1, found independently by both referees); as written it gives
       only (i′) θ_S ≤ ρ_S + (ρ_S + 1)·max(|U| − 2, 0). (i)-(iii) are signed as stated with REFEREE's repair as the proof of (i)
       (fixes §1): a refined θ-LEN, ≤ |A_low| − [o ∈ A_low] = |U| − 2 − |A_high ∖ {o}| θ-changes per P-epoch, and ρ_S ≥ 1 forces some
-      u ∈ A_high ∖ {o} (o's membership in P(θ) is fixed on the phase), so θ_S ≤ (ρ_S + 1)(|U| − 2) − 1.
+      u ∈ A_high ∖ {o} (o's membership in P(θ) is fixed on the phase), so θ_S ≤ (ρ_S + 1)(|U| − 2) − 1 for ρ_S ≥ 1 (for ρ_S = 0, θ-LEN gives θ_S ≤ max(|U| − 2, 0)).
 - Not signed (packets' "Not to sign"): W-TIE steps (OPEN); the block lemmas of docs/new/N5-RW-box39.md (BF-RW, FREEZE-M, FREEZE-X,
   ROUTE-LEN, W-POT, CW-COUNT; lane, not routed); OPEN: θ_S / θ_ph, ρ per phase (lane packet P-N5-RHO, in review), HN stretches per phase
   for τ(o) ≠ o (lane packet P-N5-NHN, in review), OTHER states, S4a steps between fallbacks (P-FREEZE is not an iteration bound).
