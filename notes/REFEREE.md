@@ -28,6 +28,13 @@ experiments/new/box25/common.py (rand_c1o, odd_choice = FIRST Odd chooser: hence
 - Glob-based data can pull in out-of-class games; assert the class.
 - Random 𝒞^1O samples are nearly vacuous for throttled / route-form / re-entry structure; say so; named instances carry the evidence.
 
+## Resume point (successor 5, written 2026-10-24T23:45Z by date -u): P-N5-U23 (pin 7666336, docs/new/P-N5-U23-box31.md sha1 ee3e5d1e…)
+- docs/referee/R-N5-U23.md: CASC-U2 + Corollary SIGNED (data vacuous: no U2 W-flat switch anywhere); CASC-U3 (i)/(iii) SIGNED WITH GAPS
+  U3-2 (kinds constant, closed), U3-3 (c_θ = c_w wording); (ii) WITH GAP U3-1 (L_B = 0, no kind B: proof gives λ − 2, packet says λ − 3;
+  repair max(L_B, 1); corner never realised, no counterexample); Corollary SIGNED; READING R-1 (θ-changes under ¬H1 ≤ |R| − 1).
+  Tools scratch/u23_probe.py, u23_climb.py. Appendix A (u2flat_n32, 2 U2 switches OK). §C vs R2-N5-U23 (07b22b0): no verdict differs;
+  U3-1 = G-U23-1 (same repair); R-1 closes N-U23-2 (θ = (c_θ, ∅, d) under ¬H1), pending R2. PARKED. Context ~450k.
+
 ## Resume point (successor 5, written 2026-10-24T22:47Z by date -u): P-N5-FB (pin 348393b, docs/si/P-N5-FB-box7.md sha1 9ece9994…)
 - docs/referee/R-N5-FB.md: Theorem FB SIGNED WITH GAPS FB-1 (M < ∞ at a fallback needs the best-target line, NOINF covers switched edges
   only), FB-2 (phase-exit fallbacks, ≤ 1 per phase, 7 in named set); (T), MONO, NOINF, J1, OFF, TAME, Corollary, A SIGNED; COARSE-SI (a)
