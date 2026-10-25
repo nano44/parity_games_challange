@@ -163,3 +163,59 @@ experiments/si/coarse/; own N5 trace asserted equal to n5.run; phase key (λ_Ξ,
 - CLS-3: §6: "FBL (R20 (b)) at the single state k1: its proof is statewise given that the fallback is Even's (τ unchanged in the phase)
   (R-N5-XA §3)".
 - CLS-4: §6 Corollary: drop "evicting", or cite its definition (every in-scope fallback with u* ≠ none is THR).
+
+## §C. Comparison with REFEREE-2 (R2-N5-CLS, referee-2 ffe10e1, on trunk 372f4578); written 2026-10-25 02:57Z onward by date -u
+Read only after my report was pushed (a0b92ecd) and the Lead said R2-N5-CLS exists (02:55Z).
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| (C5)-(C7), Fact R, CLU | SIGNED | SIGN | SIGNED by both |
+| TRANSFER (every game) | SIGNED | SIGN | SIGNED by both |
+| OFFGATE | SIGNED WITH GAP CLS-1 (wording) | SIGN (N-CLS-1) | SIGNED by both |
+| CN | SIGNED WITH GAP CLS-2 (wording) | SIGN | SIGNED by both |
+| Lemma NL | SIGNED | SIGN | SIGNED by both |
+| Theorem CLS1 + Corollary | SIGNED WITH GAPS CLS-3 (closed), CLS-4 (wording) | SIGN WITH GAPS G-CLS-1 (closed), N-CLS-2 | SIGNED by both |
+| §7 OG′ | FALSE, confirmed | reproduced | FALSE (x31_re24, 1 → 2) |
+No verdict differs. Neither referee found a counterexample or a false step. We agree on the OG′ instance to the vertex: MF_1 = −1, M_1 = 23,
+gate (4, 8) of level 22 at state 2, |R| 21 → 1.
+
+### C.2 Item by item
+- CLS-3 = G-CLS-1, the same citation point. REFEREE-2 states it more exactly, and I adopt its form.
+  - R20 (b) signs FBL for a transition with BOTH ends in a throttled stretch (θ, w, τ constant, (h) at every state). In a scope run,
+    k1 + 1 need only have H2 and w_{k1+1} = w_{k1}; θ may change. So the literal statement does not apply, and "a stretch of length 1"
+    does not repair it.
+  - What CLS1 uses is the strong gate form at the state k1 alone: no F → R and no R → R gate edge, so the switched edges are R → F or
+    own-cycle-node ones. That form is R20 (b)'s signed strong form. Its proof (R-N5-XA §3 step 2 with XA-1's u* ≠ none argument;
+    R2-N5-XA §2) uses only state k1 and the fact that S4a returned σ_{k1}.
+  - I said the same in substance ("FBL's proof is statewise"). The cited object should be the strong gate form at k1, as REFEREE-2 writes.
+  - CLOSED.
+- N-CLS-1 (OFF's R̄): REFEREE-2 calls OFF's R̄ honest reachability. P-N5-FB l. 48 defines R̄ by (σ, τ)-plays (as in R23). OFF's proof
+  argues through "v's H_{k+1}-play avoids o", and l. 49 notes the two coincide on 𝒞^1O. So the sets are equal, as REFEREE-2 says, and one
+  clause in the packet suffices. I did not list it; accepted as wording.
+- N-CLS-2 (exhaustive kinds: under (h), θ = w ⟺ EQ): same as my §1 "State kinds under (h) are exhaustive" (Lemma G (a), (b); my KIND check,
+  0 failures). I did not list it as an item; accepted as a one-line addition to (β).
+- CLS-1 (OFFGATE's M_k = ⊥ clause): REFEREE-2's §3 says the same in its text ("M_k = ⊥ cannot occur at an in-phase transition") without
+  listing it. Joint wording line.
+- CLS-2 ("Even y" in CN) and CLS-4 ("evicting" undefined): REFEREE-2 did not list them. Neither is disputed. Wording.
+- Data: REFEREE-2's batch is larger (3 starts per file and climbs: CLS1 22,158 comparisons in climbs, NL 60,799 (j, L) checks). We agree
+  on the thin spots: no u* = none fallback anywhere, so (β) rests on Fact R; CN has few library cases.
+  - Its default phase key is the coarser (λ_Ξ, τ) (a stronger test), with a fine-key run. Mine is the packet's (λ_Ξ, λ_U, τ). Both give
+    0 failures.
+  - Neither of us ran the lane's scripts.
+
+### C.3 Joint gap map (one fixes-file line per row)
+| row | REFEREE | REFEREE-2 | status | fixes-file line |
+| --- | --- | --- | --- | --- |
+| 1 | CLS-3 | G-CLS-1 | closed (citation) | §6: "FBL = R20 (b) strong gate form (R-N5-XA §3 / R2-N5-XA §2) at the fallback state k1 alone: no F → R and no R → R gate edge; switched edges are R → F or own-cycle-node switches" (replaces "a single fallback state is a throttled stretch of length 1") |
+| 2 | (§1 KIND) | N-CLS-2 | wording | §6 (β): "under (h), θ = w ⟺ EQ (Lemma G (a), (b)), so every in-scope fallback is THR (r ≥ 0 or r = −1) or EQ (r = ⊥)" |
+| 3 | — | N-CLS-1 | wording | §3: "R̄ as in R25 OFF (P-N5-FB l. 48-49: (σ, τ)-reachability = honest reachability on 𝒞^1O)" |
+| 4 | CLS-1 | (§3 text) | wording | §3: "M_k ≥ −1 at every in-phase transition (no gate ⇒ σ unchanged ⇒ τ changes)"; delete the M_k = ⊥ clause |
+| 5 | CLS-2 | — | wording | §4: "an Even y with λ_k(y) = y switches to z" |
+| 6 | CLS-4 | — | wording | §6 Corollary: drop "evicting", or cite its definition |
+
+### C.4 Joint label (D18/L40)
+- PROVED (L-SI successor 3; REFEREE and REFEREE-2, Opus 5.5, D15), pending CHECKER:
+  - on every game: (C5)-(C7), TRANSFER, and CN inside a phase;
+  - on 𝒞^1O: Fact R, CLU, OFFGATE, NL, Theorem CLS1 and its Corollary.
+- FALSE: OG′. OPEN: (H-EQ); ≤ n_E fallbacks per level; θ-changes per scope run; G-N5-TIME.

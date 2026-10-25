@@ -1,6 +1,20 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 3, box 7, 2026-10-25 by date -u) -- HANDOVER
+### DONE box 7 (Lead GO 23:2xZ; amended 00:28Z: (c) via L-RED u23x.py; 00:33Z: NO-WAKE false, table K and S_o instead)
+- box7.py (R23 WM/LV', R24 CASC/TB/U1, R25 FB/MONO, J): n 4 canonical, n 4 all starts, n 5 quarter 1: 0 violations, max J 1.
+- box7w.py (K, S_o, rise causes, u23x P-N5-U23, E, K_W): n 4 canonical and all starts: 0 violations; max K 0, S_o 2, E 1, K_W 2.
+- README "Box 7" (rows Q234ROW / W5ROW to fill).
+### IN FLIGHT (resumable; rerun the same command, finished tasks are reused from results/box7/<tag>.tasks/, gitignored)
+- scratchpad run7x.sh: box7w.py exh 5 ... --every 4 --offset 0, then box7.py exh 5 ... --every 4 --offset 1, 2, 3
+  (options: --no-forced --even-maxdeg 2 --o-deg 2 --cyclic-only --jobs 4 --out results/box7). ~1.5 h / ~2 h per quarter on 4 cores.
+### Things only I know (box 7)
+- nowake.py / mblock.rows_w and u23x.rows_x hard-code start_pair(..., None); box7w rebinds the module-level name start_pair.
+- u23x.rows_x caps runs at 400 states (fine for n <= 5).
+- A container restart loses the .tasks caches only if the directory is lost; they are gitignored, so a new container restarts the
+  n 5 quarters from zero.
+
 ## Resume point (successor 3, box 6 end, 2026-10-24 23:0xZ by date -u)
 ### DONE box 6 (Lead GO 20:0xZ)
 - box6.py: exhaustive checks of P-N5-NH (c7981ee) F1°, TC (i)-(iv) and CONJECTURE (OB_R) per crossing-free interval; --every/--offset
