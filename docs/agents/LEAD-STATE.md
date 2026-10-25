@@ -1531,3 +1531,4 @@
   - L-NEW DATA: every exponential-SI family (Friedmann switchall/switchbest, tc, tc+, counter_*) is in the frontier class 𝒞^{≥2E,≥2O}; only counter_ortl (𝒞^1O) and counter_qpt (one-player) are covered. Route Δ climbs: TJ and D_k changes ≤ n so far; a size-scaling test is running.
   - Routed: REFEREE-2 (§C NEEDB first, then KW, then handover if > ~470k); L-RED (re-run REFEREE's cascb_witness.pg on kw18; R73 discrepancy); L-COMP (status nudge).
   - R49 draft updated for Addendum A.
+- 23:28Z: Merged referee-2 8a47fd92 (R2-N5-KW: all SIGN, no gap, N-KW-1..6) and l-com de0ca760 (Q4 78/160 alive). Asked both referees for §C KW, and REFEREE-2 also for §C NEEDB. Pre-drafted docs/agents/R50-draft.md (P-N5-KW + addendum; placeholders FIXES / RSC / R2SC / CSUM). PLAN: after R50 lands, a short assembly packet (𝒞^1O polynomial iteration bound from R47 + R48 + R50 + per-iteration bit cost), refereed like any packet.
