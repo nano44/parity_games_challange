@@ -24,8 +24,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - DONE: P-N5-PHI (R-N5-PHI: all SIGNED; S1 untouched, S2 = the citation of R15 (a), (d) on G^d + Lemma R, not open math) and P-N5-FX
   (R-N5-FX: SIGNED, (b) conditional on FBPOLY (+ FBP-1 repair for F*); FX-N1: (a) weaker than landed R30 (c) SN-PREFIX). Tool phifx_probe.py.
 - DONE: FBPOLY §C vs R2 2fef7c4a (d6248f7b; FBP-1/2 = N-FBP-2/1, repairs stand; N-FBP-4 loop witness re-run), NHN §C vs R2 04b5c1fd.
-- NEXT: P-N5-NH-box42 (trunk 54ac72e6, docs/new/P-N5-NH-box42.md sha1 93d19be8; SW, ST, CL, STR-COUNT, NR, Theorem NH) -> R-N5-NH42.md.
-  §Cs for NEEDB, PHI, FX after REFEREE-2's reports. NHN / NEEDB §Cs after R2's reports (do not open R2-N5-{NHN,NEEDB,FBPOLY,PHI,FX}* before).
+- DONE: PHI §C vs R2 b621f9a (identical). P-N5-NH-box42 (54ac72e6, sha1 93d19be8): R-N5-NH42.md all SIGNED, no gaps; notes NH42-N1..N3;
+  my engine reproduces the lane's library K_W / E / class counts exactly. Tool nh42_probe.py.
+- NEXT: §Cs for NEEDB, FX, NH42 after REFEREE-2's reports and the Lead's SHAs. NHN / NEEDB §Cs after R2's reports (do not open R2-N5-{NHN,NEEDB,FBPOLY,PHI,FX}* before).
 
 ## HANDOVER (successor 9 -> successor 10), written 2026-10-25T16:35Z by date -u, context ~490k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
