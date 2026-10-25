@@ -289,3 +289,14 @@ and L < ∞ (R25 NOINF, fixes FB-1).
   or when y switches above M. DATA (box 8 §5, R-ROUTE 10,293 / 0): route changes above L do not occur outside θ's own level.
 - Hence, on the data's evidence (READING): fallbacks per level per scope run ≲ n_E(1 + Θ_{>M}(S)), with Θ_{>M}(S) = #θ-changes above
   level M on S. That is item 2 again.
+
+## 13. Item 2 (Θ per scope run without X): where it stands (READING; no lemma this box)
+Write T(≥ℓ) := #θ-changes on S at levels ≥ ℓ.
+- A θ-change at level ℓ is tame (ℓ ≤ M_j) or a jump (ℓ > M_j; R25 J1).
+- Jumps are bounded by Corollary JD (box 7 §9; PROVED) by |succ(o)| + the releases at evicting fallbacks.
+- Fallbacks at level M are bounded by §12's reduction, ≤ n_E(1 + T(>M)).
+- Tame changes at level ℓ ≤ M come from o-free progress below M (R25 MONO freezes everything above M).
+- So the natural recursion is T(≥ℓ) ≤ poly(n)·(1 + T(>ℓ)). That is box 3's multiplicative counter (docs/si/N5-OR-lens-box3.md §3),
+  now with the fallback and jump terms made explicit. It gives n^{O(depth)}, not a polynomial.
+- What would break it: a lower-digit count that is additive, i.e. tame θ-changes below M bounded independently of T(>M). In the data the
+  climbs never exceed 51 θ-changes per phase at n 32 (lev_l_x). OPEN.

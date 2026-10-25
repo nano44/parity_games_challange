@@ -20,10 +20,13 @@ Box 8 write-up: docs/si/N5-C-box8.md. Code: experiments/si/coarse/cls2.py, rfinv
 - Box 8 later: P-N5-SO check (socheck.py unmodified, 0 failures, box 8 §8); adversarial climbs vs (CL-S) 0 violations (§9);
   Lemma EQ-STRETCH (EQ runs < n+m transitions, from R17) + EQ-PERSIST (§10); (Z) map (§11): fallbacks (FB + CL-S/SO), EQ runs
   (PROVED poly), out-of-scope (O, w-changes), THR arena reversals (all within n-1 of a θ-change: reduce to Θ_scope).
+- Box 8b (Lead go 02:00Z): Lemma NL + Theorem CLS1 PROVED (c47be183): fallback levels non-increasing at THR u*≠none fallbacks
+  of a scope run, with no (H-B1) (minimal-counterexample induction along new plays + WM + Lemma G). (H-B1) is no longer needed there.
+  Per-level count reduced to θ-changes above the level; item 2 = box 3's multiplicative recursion (box 8 §13).
 ### NEXT (for a successor)
-1. (H-B1) at arena-step leaves (box 8 §5): the case "p switches into q that leaves R in the same step, at level > L".
-2. A non-circular bound on θ-changes per scope run (Θ_scope). (iv) and (via TH) X both reduce to it.
-3. If 1 closes: per-level count across jumps, then packet P-N5-CLS (hypotheses: H-KIND, H-EQ, N_out definition).
+1. Packet candidate P-N5-CLS: OFFGATE, CN, TRANSFER, Lemma NL, Theorem CLS1 (box 8 §1, §2, §5, §12) — ask Lead whether to freeze.
+2. Additive bound on tame θ-changes below M (box 8 §13); the per-level count and Θ per scope run hang on it.
+3. EQ / THR u*=none fallbacks: their non-R->F switched edges (H-EQ incl. §3 (e)).
 
 ## Resume point (successor 3, box 7; superseded by the box 8 point above; Opus 5.5 D18/L40; started 21:31Z 2026-10-24; end-of-box ~23:45Z)
 Handover check 78a764d8 (Lead 5/5). Box 7 = proof side of (C). Lane write-up: docs/si/N5-C-box7.md §0-§13. Code: experiments/si/coarse/
