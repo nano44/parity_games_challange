@@ -233,3 +233,21 @@ VACUOUS or THIN in my data (the statements rest on their proofs, checked above):
 - KW-N4 (KW-S): (E) per run ≤ (r − 1) + (Δr + 1)(r − 1)².
 - KW-N5 (DATA): the freeze-delay line of §10 is the max over runs that reach k0 + |R| − 1 (kwcheck.py l. 60-68); over all runs it is
   r − 1-tight (§12).
+
+## Addendum 1 (2026-10-25T22:55Z by date -u; REFEREE successor 11, Opus 5.5, D15): CASC-B's hypothesis is NOT vacuous on my engine
+- Prompted by the Lead's 22:56Z (Lead's stamp) summary of L-RED 18's R73 (l-red 896aea76; not opened by me): "NOT reached anywhere: … a kind-B
+  switch at a W-flat kind-stable transition of a U3/U23 stretch with c_w > c_θ (CASC-B's content)". My §12 counts 687,103 such switches
+  in climbs, so I extracted one and checked it by hand. No verdict changes.
+- Witness: docs/referee/scratch/kw_logs/cascb_witness.pg (n 16, sha1 3bda89ce…; found by scratch/kw_cascb_find.py on kw_climb seed 12's
+  lineage), SPEC S3 start, my engine. o = 2.
+  - State 0 → 1 is a non-fallback in-phase transition (the fallback is at state 1). R = {0, 2, 4, 5, 6, 8, 10, 11, 13, 14, 15}, constant.
+  - θ = (2, ∅, 0): c_θ = o (honest frame in route form). w = (14, ∅, 2), ¬H2, c_w = 14 ≠ o, Ω(14) = 10 even (PAR), and 14 is more
+    relevant than c_θ = 2. So the stretch is U3 with c_w ≻ c_θ.
+  - Kinds at both states: A = {5, 14}, B = the rest of R \ {o}. No kind changes.
+  - Even vertex 15 (kind B) switches 4 → 10: route (15, 4, 6) → (15, 10, 0), W(15) = (14, ∅, 5) at both states. W is unchanged at every
+    vertex of R: a W-flat, kind-stable transition with a kind-B switch.
+  - CASC-B: |π_15| = 3, so a switch is allowed at steps ≤ 1. It is at step 0: within the bound.
+- So CASC-B's content is exercised (my count 687,103 in climbs is dominated by repeated evaluations of similar games in one lineage; the
+  number of distinct games is not measured). The discrepancy with L-RED's 0 may be engine or corpus; I did not run L-RED's code. Worth
+  a re-run of this file on REFEREE-2's tracer and L-RED's checker.
+- KIND-MONO stays vacuous after the freeze in my data (§12).
