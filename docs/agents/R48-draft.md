@@ -56,7 +56,10 @@
   κ-HAT-FREEZE (a) 4,646,931, (c) 3,140,099, κ-PFZ 1,197,169 exact checks); 0 failures. REFEREE-2 (own fbpoly_check.py): 4,428 library
   runs and 64,000 random 𝒞^1O runs, 159,383 phases (7,357 with o = c_θ and |U| = 2, max f 1), 8,643 fallbacks, (Aκ) 3,001,987,
   κ-Y-FORM 139,928, κ-PFZ 104,199 exact checks; climbs 1,922,112 runs (31 loop-kind switched vertices); 0 violations. Lane fbpoly.py:
-  (L) and 13,364 random runs, 0 failures.
+  (L) and 13,364 random runs, 0 failures. L-RED successor 18 (docs/red/R72-fx-fbpoly-k.md, l-red 9812efa7; own fbx18.py from the
+  frozen texts): library and 8,546,164 random runs, 0 FAIL; the loop kind at 10 of 1,709 switched vertices of U ∖ T (witness
+  experiments/red/fbx/instances/exsw_loop_n15.pg, sha1 e38329f8, from the start pair in exsw_loop_n15.start.json; Lead re-run from the canonical start, where the run has no
+  fallback: one Odd choice vertex, n5 1/0, Oink zlk OK strategies verified); FREEZE-EXIT's hypothesis never reached.
 - Signatures: REFEREE docs/referee/R-N5-FBPOLY.md (referee 3de7cab, successor 10; §C d6248f7b): κ-FB-ROUND, κ-HAT-FREEZE (a)-(c),
   κ-PFZ, κ-Y-FORM, EXIT-SWITCH, FREEZE-EXIT, CN-ONLY, THETA-AFTER, FB-POLY (a) first bound, (c), (d) SIGNED; FB-POLY (a) end bound
   SIGNED WITH GAP FBP-1 and (b) SIGNED WITH GAP FBP-2, each repaired in one line; in §C, with both repairs in the fixes file, FB-POLY (a)
