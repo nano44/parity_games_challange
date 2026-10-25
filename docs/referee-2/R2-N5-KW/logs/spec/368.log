@@ -1,0 +1,22 @@
+A0_checks: 1270
+FACTB_pairs: 12453
+HPATH_checks: 18
+KWS_stretches: 106
+PAR_states_cw_above_cth: 10
+PHASE_checked: 21
+RUNS_runs: 2
+RUN_case_a: 2
+phases: 21
+runs: 3
+states: 110
+states_checked: 110
+stretches: 106
+max_KW_per_stretch: 2
+max_RUN_ratio_case_a_x1000: 20
+max_T_per_phase: 47
+max_Trel_per_phase: 47
+max_f_per_phase: 4
+max_freeze_delay: 2
+max_stretches_per_phase: 46
+RESULT OK violations=0
+experiments/red/so/instances/pft40_n40.pg exit 0

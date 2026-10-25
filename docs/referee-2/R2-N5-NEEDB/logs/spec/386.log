@@ -1,0 +1,10 @@
+ANTI_W_checks: 11
+ANTI_W_exceptional_used: 11
+ANTI_W_with_exceptional_edges: 11
+ANTI_Xi_checks: 11
+ANTI_Xi_exceptional_used: 8
+ANTI_Xi_with_exceptional_edges: 11
+runs: 4
+states: 29
+RESULT OK violations=0
+experiments/red/so/instances/tog6a_n32.pg exit 0

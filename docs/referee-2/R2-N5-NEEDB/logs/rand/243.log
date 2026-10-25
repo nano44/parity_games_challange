@@ -1,0 +1,6 @@
+ANTI_W_checks: 5
+ANTI_Xi_checks: 5
+runs: 4
+states: 20
+RESULT OK violations=0
+experiments/new/box22/instances/i1_min.pg exit 0

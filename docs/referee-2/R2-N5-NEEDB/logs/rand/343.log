@@ -1,0 +1,4 @@
+runs: 4
+states: 5
+RESULT OK violations=0
+experiments/red/k4b/gad5.pg exit 0

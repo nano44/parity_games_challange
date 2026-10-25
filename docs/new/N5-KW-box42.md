@@ -174,6 +174,14 @@ Written 20:4xZ by date -u. Setting: S is a stretch with ¬H2 and c_w ≠ o (U3 o
 c_w ∈ π_v (c_w itself is kind A); o counts as kind B (π_o = ∅). The PREFERRED kind P is A if c_w is even, B if c_w is odd. A W-FLAT
 transition is a non-fallback transition with W unchanged at every vertex of R; the others are the K_S W-changing ones and the f_S
 fallbacks.
+### Lemma PAR (added 20:5xZ)
+On any state of a phase on 𝒞^1O: if c_w ≻ c_θ, then c_w has even priority.
+Proof. RESULTS R21 (a) Lemma XW: Ξ ⊴ W pointwise, so θ = Ξ(o) ⊴ W(o) = w. Valuations compare the rewards of their cycle nodes
+first, so reward(c_θ) ≤ reward(c_w). If c_w were odd, then reward(c_w) = −p′(c_w) < 0. If c_θ is even, reward(c_θ) > 0. If c_θ is
+odd, reward(c_θ) = −p′(c_θ) > −p′(c_w), since c_w ≻ c_θ. Either way reward(c_θ) > reward(c_w), a contradiction. □
+- Consequences: P = A in every stretch where §5 applies, and DIR's odd branch is vacuous. Theorem KW-FREEZE (d) (c_w ≻ c_θ, c_w odd) is
+  vacuous as well; it is kept only as stated. This explains the "no odd-c_w stretch" observation in §7.
+
 ### Lemma H-PATH
 For v ∈ R (o included): c_w ∈ P(Ξ(v)) iff KIND(v) = A.
 Proof. c_w ≻ c_θ, so c_w ∉ C_Ξ (c_θ tops C_Ξ; under H1, C_Ξ ⊆ F and c_w ∈ R). v's honest path to c_θ is the part of π_v before c_θ if
@@ -221,17 +229,24 @@ R26's sub-runs exclude c_w's switches as well. On Γ they are allowed, and they 
 Switches of kind-A vertices to kind-A targets also leave kind B alone. A re-routing of A1 by kind-A vertices at W-ties changes the
 shared prefix for all kind-B candidates at once, so it does not change their order. □
 ### Lemma CW
-c_w's switches in S number ≤ f_S + (deg(c_w) − 1)(1 + B_S + κ_S), where B_S is the number of transitions of S with a switch of a
-kind-B vertex.
+c_w's switches in S number ≤ deg(c_w)·(1 + B_S + κ_S + f_S), where B_S is the number of transitions of S with a switch of a kind-B
+vertex. (Corrected 20:5xZ: the first wording, f_S + (deg(c_w) − 1)(1 + B_S + κ_S), missed c_w-switches at transitions that also
+contain a kind-B switch or a kind change.)
 Proof.
-1. Inside S, c_w's targets are kind B or o. A kind-A target's route passes c_w, so c_w's route would no longer reach o: a crossing.
-2. At a non-fallback switch of c_w, the new target is a gate target: Ξ_k(z) ▷ Ξ_k(σ_k(c_w)).
-3. The honest values of kind-B vertices and of o depend only on σ along kind-B routes and on θ (Lemma SW, θ constant). So they change
-   only at transitions with a switch of a kind-B vertex, or with a kind change (a vertex entering or leaving kind B).
-4. Between two such transitions, the values of c_w's possible targets are fixed. Each switch moves σ(c_w) to a strictly better one, so
-   there are ≤ deg(c_w) − 1 switches. □
+1. Let T* be the set of transitions of S that are fallbacks, contain a switch of a kind-B vertex, or contain a kind change:
+   |T*| ≤ f_S + B_S + κ_S.
+2. Take a transition k → k+1 ∉ T* at which c_w switches, to z. Kinds do not change at it.
+   - If z were kind A at k, it would be kind A at k+1, and its route would pass c_w. Then c_w's route at k+1 would cycle back to c_w
+     and miss o, so c_w would leave R: a crossing, impossible inside S.
+   - So z, like σ_k(c_w), is kind B or o.
+   - z is a gate target: Ξ_k(z) ▷ Ξ_k(σ_k(c_w)).
+3. The honest values of kind-B vertices and of o depend only on σ along kind-B routes and on θ (Lemma SW, θ constant). On a maximal
+   run of transitions outside T*, no kind-B vertex switches and no kind changes, so these values are fixed.
+4. Along such a run each c_w-switch moves σ(c_w) to a strictly better target among ≤ deg(c_w) candidates: ≤ deg(c_w) − 1 switches per
+   run. There are ≤ |T*| + 1 runs, and at most |T*| c_w-switches inside T*. Total ≤ |T*| + (deg(c_w) − 1)(|T*| + 1)
+   ≤ deg(c_w)(1 + |T*|). □
 ### Theorem E-HI
-E_S ≤ κ_S + f_S + (deg(c_w) − 1)(1 + B_S + κ_S), with B_S ≤ (Q + κ_S)(|R| − 1) and κ_S ≤ (|R| + 1)Q − 1, Q = K_S + f_S + 1.
+E_S ≤ κ_S + deg(c_w)(1 + B_S + κ_S + f_S), with B_S ≤ (Q + κ_S)(|R| − 1) and κ_S ≤ (|R| + 1)Q − 1, Q = K_S + f_S + 1.
 Proof.
 - An event is a kind change of the switcher (counted in κ_S) or a switch of c_w (Lemma CW).
 - B_S: the W-flat, kind-change-free runs Γ number ≤ Q + κ_S. Each has kind-B switches at ≤ |R| − 2 of its steps (CASC-B; π_v ⊆
@@ -277,5 +292,5 @@ Proof.
     5,411 strict cases, violations 0.
   - `--climb lib41.txt 120 4208` (edge / priority mutations, fitness = events): 1,200 candidates, best 15 events; violations 0 in both
     checkers.
-- Not exercised by any data: c_w odd with c_w ≻ c_θ (no such stretch occurred), so DIR's odd branch and KW-FREEZE (d) rest on the
-  proofs alone.
+- No data has c_w odd with c_w ≻ c_θ: such states do not exist (Lemma PAR, from RESULTS R21 XW). evcheck.py --rand on four more seeds
+  (4301-4304, n 8-22, random starts, 20,321 runs): violations 0, no odd stretch.

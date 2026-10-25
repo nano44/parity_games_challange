@@ -1,0 +1,22 @@
+A0_checks: 432
+FACTB_pairs: 2753
+HPATH_checks: 73
+KWS_stretches: 16
+PAR_states_cw_above_cth: 19
+PHASE_checked: 11
+RUNS_runs: 1
+RUN_case_b: 1
+phases: 11
+runs: 3
+states: 31
+states_checked: 31
+stretches: 16
+max_KW_per_stretch: 15
+max_RUN_ratio_case_b_x1000: 2
+max_T_per_phase: 15
+max_Trel_per_phase: 15
+max_f_per_phase: 0
+max_freeze_delay: 15
+max_stretches_per_phase: 3
+RESULT OK violations=0
+experiments/red/xing/instances/obr_n32.pg exit 0

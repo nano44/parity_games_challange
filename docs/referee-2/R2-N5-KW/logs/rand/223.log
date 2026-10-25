@@ -1,0 +1,16 @@
+A0_checks: 10
+FACTB_pairs: 4
+KWS_stretches: 10
+PHASE_checked: 7
+phases: 7
+runs: 3
+states: 10
+states_checked: 10
+stretches: 10
+max_KW_per_stretch: 0
+max_T_per_phase: 1
+max_Trel_per_phase: 1
+max_f_per_phase: 0
+max_stretches_per_phase: 2
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/n4_maxph_0.pg exit 0

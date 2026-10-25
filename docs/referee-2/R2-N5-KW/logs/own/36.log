@@ -1,0 +1,24 @@
+A0_checks: 1372
+FACTB_pairs: 12027
+FRZU_checks: 14
+HPATH_checks: 27
+KWS_stretches: 87
+LEN_runs_after_f0: 4
+PAR_states_cw_above_cth: 1
+PHASE_checked: 23
+RUNS_runs: 17
+RUN_case_a: 17
+phases: 23
+runs: 3
+states: 118
+states_checked: 118
+stretches: 87
+max_KW_per_stretch: 3
+max_RUN_ratio_case_a_x1000: 8
+max_T_per_phase: 42
+max_Trel_per_phase: 42
+max_f_per_phase: 4
+max_freeze_delay: 3
+max_stretches_per_phase: 28
+RESULT OK violations=0
+docs/referee-2/R2-N5-FRZ/climb/best_block_13.pg exit 0

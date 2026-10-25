@@ -1,0 +1,16 @@
+A0_checks: 236
+FACTB_pairs: 972
+KWS_stretches: 44
+PHASE_checked: 8
+phases: 8
+runs: 3
+states: 44
+states_checked: 44
+stretches: 44
+max_KW_per_stretch: 0
+max_T_per_phase: 18
+max_Trel_per_phase: 18
+max_f_per_phase: 1
+max_stretches_per_phase: 19
+RESULT OK violations=0
+experiments/red/n5inj/instances/theta_thf16.pg exit 0

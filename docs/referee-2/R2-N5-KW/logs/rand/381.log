@@ -1,0 +1,22 @@
+A0_checks: 83
+FRZU_checks: 98
+KWS_stretches: 12
+LEN_runs_after_f0: 6
+PAR_states_cw_above_cth: 3
+PHASE_checked: 8
+RUNS_runs: 6
+RUN_case_a: 6
+phases: 8
+runs: 3
+states: 61
+states_checked: 61
+stretches: 12
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 19
+max_Trel_per_phase: 19
+max_f_per_phase: 0
+max_freeze_delay: 0
+max_stretches_per_phase: 3
+RESULT OK violations=0
+experiments/red/so/instances/so_tie15_n32.pg exit 0

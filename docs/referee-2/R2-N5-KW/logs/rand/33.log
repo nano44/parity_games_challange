@@ -1,0 +1,21 @@
+A0_checks: 1959
+FACTB_pairs: 10313
+KWS_stretches: 142
+PAR_states_cw_above_cth: 43
+PHASE_checked: 59
+RUNS_runs: 1
+RUN_case_b: 1
+phases: 59
+runs: 3
+states: 145
+states_checked: 145
+stretches: 142
+max_KW_per_stretch: 0
+max_RUN_ratio_case_b_x1000: 0
+max_T_per_phase: 35
+max_Trel_per_phase: 35
+max_f_per_phase: 34
+max_freeze_delay: 0
+max_stretches_per_phase: 36
+RESULT OK violations=0
+docs/referee-2/R2-N5-FBW/climb/dirty_a_best.pg exit 0

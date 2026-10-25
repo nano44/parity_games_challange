@@ -1,0 +1,3 @@
+start pair VALID on this game (corrected 2026-10-25 22:5xZ, REFEREE-2 succ. 12; the earlier file held the climb seed's pair): S3 start of this game; (LV+) at the own trace
+sigma0 = [9, 9, 3, 6, 0, 6, 0, 0, 1, 5, 3]
+tau0 = [9, 9, 9, 6, 9, 4, 0, 4, 7, 9, 2]

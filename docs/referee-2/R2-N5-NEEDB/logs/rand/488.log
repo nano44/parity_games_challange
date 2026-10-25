@@ -1,0 +1,16 @@
+ANTIW_blocked_edges: 220
+ANTI_W_checks: 45
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 45
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+RECORD_M>=0_P_uses_R_to_F_gate: 15
+RECORD_inscope_THR_r>=0_M>=0: 15
+THR_inphase_fallbacks: 15
+THR_optima_tested: 15
+XG_R_to_F_optimal_edges: 40
+runs: 4
+states: 148
+RESULT OK violations=0
+experiments/si/xing/instances/zcl_fb1_n32.pg exit 0

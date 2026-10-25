@@ -1,0 +1,6 @@
+ANTI_W_checks: 7
+ANTI_Xi_checks: 7
+runs: 4
+states: 23
+RESULT OK violations=0
+docs/referee-2/R2-N5-NEB/climb/best_cwo_9303.pg exit 0

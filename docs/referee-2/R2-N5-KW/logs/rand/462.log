@@ -1,0 +1,23 @@
+A0_checks: 12
+FACTB_pairs: 2
+FRZU_checks: 33
+KWS_stretches: 7
+LEN_runs_after_f0: 3
+PAR_states_cw_above_cth: 3
+PHASE_checked: 7
+RUNS_runs: 3
+RUN_case_a: 3
+phases: 7
+runs: 3
+states: 37
+states_checked: 37
+stretches: 7
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 11
+max_Trel_per_phase: 11
+max_f_per_phase: 0
+max_freeze_delay: 0
+max_stretches_per_phase: 1
+RESULT OK violations=0
+experiments/si/kw15/climb/best_kind_1511.pg exit 0

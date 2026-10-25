@@ -1,0 +1,18 @@
+A0_checks: 194
+FACTB_pairs: 581
+HPATH_checks: 49
+KWS_stretches: 35
+PAR_states_cw_above_cth: 6
+PHASE_checked: 13
+phases: 13
+runs: 3
+states: 35
+states_checked: 35
+stretches: 35
+max_KW_per_stretch: 0
+max_T_per_phase: 16
+max_Trel_per_phase: 16
+max_f_per_phase: 0
+max_stretches_per_phase: 17
+RESULT OK violations=0
+experiments/si/orlens/instances/thclimb_n16_s12.pg exit 0

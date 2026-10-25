@@ -1,14 +1,93 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
+- Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.
+- eb273ebc: tools experiments/new/box43 (multi, climb, shrink, exh2); instances ret2_n7, tx2_n8; reported 22:05Z.
+- 8029d6c8: docs/new/N5-MULTI-box43.md (sha1 e7153d88…): Lemma DUAL (N5 on G = mirror of N5^OF on G^d; PROVED from SPEC; 3,412/3,412
+  runs), Corollary 1E, Theorem MIRROR (𝒞^1E inherits any 𝒞^1O first-phase bound L(n), any start), Φ-kO, ENDGAME; ledger summary;
+  docs/new/N5-MULTI-ledger-box43.md (252 rows, READING; helper pass, key lines re-opened by me); frontier instance retf_n6; exhaustive
+  n 4 tables (RETN 0, TX 0). Route Δ (D_k) CONJECTURES Δ1, Δ2. Reported 22:20Z; asked: packet DUAL + MIRROR? continue Δ?
+- Lead 22:48Z: YES packet; YES Route Δ (RT = open core; climbs for D-changes/phase and TJ from lib41 frontier seeds).
+- b15856e8: packet docs/new/P-N5-DUAL-box43.md (sha1 a51f7c30…, FROZEN): DUAL, MIRROR (implication, (H-OF) explicit), Φ-kO, ENDGAME;
+  §2 start / N5^OF table (to check). Reported 22:53Z. Pitfall: a stray `git checkout <trunk> --` detached HEAD (restored, tree clean).
+- Seeded climbs (cl7): wide_h16 (TJ), sym_h8 (TJ), frz40 (Dch), mei_h4 (TJ). Mei family from both starts: N5 linear (it = h − 1 ... h + 1).
+
 ## Box 42 log (successor 21, session_01YJHHx1t8hvqkDnKzMU2Lfa; handover check 5/5 (419308f1); GO 19:48Z, Lead's stamp)
 - Merged trunk 6d78b8f4. Oink built (8fbf0a7).
 - (1) Packet docs/new/P-N5-NH-box42.md (l-new 44088266, sha1 93d19be8018e07a2727bbe1db5920198a0beb1eb, FROZEN): Lemmas SW, ST, CL,
   STR-COUNT, NR; Theorem NH: O ≤ 11n⁷(1 + X + f^O) + 8n³(K_W + E), T ≤ 156n¹¹(…) + 104n⁷(K_W + E) per phase. Reported 20:01Z.
   Data experiments/new/box42/nhcheck.py: 0 violations (lib41 253 runs; random 2,633). f^O > 0 in data (NFB-O "none" is false).
-- (2) K / (E) / (K_W): kwprof.py: every K_W transition after an in-stretch S4a step has a new gate edge (y, z), y, z ∈ R, with an
-  honest rise at z one step earlier (121/121). Lemma WLAG (proof via (F1) + WM; working doc docs/new/N5-KW-box42.md). Route R-KW:
-  event-free sub-runs of U3 are a two-terminal route game per kind (KIND-SPLIT) ⇒ (K_W) ⇐ (E) (+ honest events for U2/U23). OPEN.
+- (2) docs/new/N5-KW-box42.md (working doc; v1 0c0d439e, v2 60dd9380, v3 b9ee6918 sha1 f7c63764 reported 20:45Z; v3.1 = CW fix):
+  WLAG (every game), ABOVE-h, CSTRICT (all successor pairs), KW-FREEZE (CR on G_τ, W-terminals o and c_w, threshold h), Corollaries
+  KW ((K_W) given f) and NR′; §5 E-HI (H-PATH, DIR, KC, CASC-B, CW): events bounded by K_S, f_S. §6 READING: T per phase
+  ≤ poly(n)(1 + X + f); with FX, FBPOLY, PHI N5 on 𝒞^1O polynomial (CONDITIONAL; unrefereed). Asked the Lead for packet P-N5-KW.
+  Data box42/wlag.py, kwprof.py, kwfreeze.py, kwfreeze2.py, evprof.py, evcheck.py, evstress.py: 0 violations. Gap: no odd-c_w
+  stretch with c_w ≻ c_θ in any data (DIR odd branch, KW-FREEZE (d) untested).
+
+## Cross-read of L-SI 10's docs/si/N5-KW-box15.md against my docs/new/N5-KW-box42.md (Lead's ask 20:49Z; written 21:0xZ by date -u)
+Both notes reach the same conclusion by parallel routes: (K_W) and (E) are polynomial per stretch given f, on every class. I read L-SI's
+note as a referee would, step by step. Data for its two claims that my checkers did not cover: experiments/new/box42/sicross.py.
+(a) What I would rely on, and what I doubt (exact steps)
+- W-ONCE (§2): RELY. It is my WLAG's contrapositive at the level of the whole valuation. Step 2 (A_{k+1}(v) ⊆ A_k(v) when Ξ_{k+1} = Ξ_k)
+  is right, including the case z = σ_k(v). Step 3 uses (F1) on both arenas and WM. Same proof as mine.
+- Fact A (§3): RELY. It is my ABOVE-h. Its ¬H1 bullet ("vertices after c_θ on π_v lie on C_Θ") is correct: after c_θ, π_v is π_{c_θ}, the
+  return arc of C_Θ. The ¬H2 bullet ("A1, A2 less relevant than c_w") is correct.
+- Fact B (§3): RELY. It is my CSTRICT (it phrases it as κ(π_y) ≠ κ(π_z); my phrasing is COARSE_h-strict W; the same statement).
+- FRZ-U (§3): RELY. Its P^c runs on routes to o with κ = route ∩ V_{>m*}, not on W-values to two W-terminals as mine does. That is
+  cleaner than my version, and it is valid because both frames' coarse parts are κ(π_v) plus a constant (Fact A). I checked its cases:
+  - B1 (x ∉ π_z, x ∉ C_W): val_σ̂(x) = x ⊕ W_k(z) needs z's W-play to avoid x. It does: π_z, then o's W-continuation in C_W or F.
+  - B2 (x ∈ π_z): the new cycle Z avoids o, and its top is t ∈ κ(Z), even, above c_w. Contradiction with x's W cycle node c_w at k+1 ✓.
+  - B3 (x ∈ C_W, ¬H2): the case split is not written out, but both sub-cases are fine. If x ∈ A2, o's σ̂-play is A1, c_w, A2 to x, then
+    z, π_z, o: a cycle through c_w and t, top t. If x ∈ A1, the cycle is A1 to x, then z, π_z, o, without c_w but with t. Either way
+    the top t is even and above c_w. A one-line case split would help a referee.
+  - The freeze index r − 1 is sharper than my n − 1. DATA: sicross.py FRZU, 0 violations (below).
+- LEN (§4): RELY. It is my KW-FREEZE (b), (c). Its length ranges are right: ¬H2 W-length ≤ r − 1, H2 |π_v| + ℓ(w).
+- KIND-MONO (§5): RELY; it is STRONGER than my DIR + KC. Post-freeze, P(Ξ(v)) ∩ V_{>c_w} is constant, and c_w ∈ P(Ξ(v)) iff v is kind A.
+  So a kind change makes c_w the top of Ξ(v)'s path-set difference, and R15 (a) fixes the direction at EVERY transition of the run, not
+  only at W-flat ones. So each vertex changes kind at most once per post-freeze run.
+  - Two precisions:
+    - "c_w ∈ P(Ξ(v)) ⟺ kind A" needs, under ¬H1, that c_w precedes c_θ on π_v. This is my H-PATH: c_w ∉ C_Θ, because c_θ tops
+      C_Θ and c_w ≻ c_θ. Fact A's ¬H1 bullet gives it implicitly; say it.
+    - The odd direction (A → B) is vacuous by my Lemma PAR (c_w ≻ c_θ forces c_w even, from R21 XW). KIND-MONO should state B → A only.
+  - DATA: sicross.py KM, 0 violations (below).
+- CASC-B (§5): RELY, with the same caveat in both notes. It is my CASC-B, word for word in substance. Both of us read R26 (c) step 2 as
+  not using c_w's static choice. L-SI's weak point 3 (the TB-even key prefix (A1 reversed, o) can change between steps) is answered:
+  at each step the prefix is common to all kind-B candidates, and a lex comparison with equal prefixes is decided by the suffixes.
+  A referee should still re-read R26's §1 step 4 induction for any use of the frozen c_w.
+- CW-INT (§5): RELY. Same as my corrected CW. Its first bullet ("σ(c_w) is kind B at every state") is right because R is constant on
+  the stretch. A kind-A target at a transition with simultaneous kind changes would need a kind change, which CW-INT's interval excludes.
+- E-SEG / Theorem RUN (§5, §6): RELY on the logic. Σ_Q e(Q) ≤ r − 2 follows from KIND-MONO. RUN's U1 case uses R24 (c) CASC, which is
+  stated for W-flat runs of a PIECE; a route-form stretch is a piece (my P-N5-NH-box42 Lemma CL (b)). Cite that. The U2 case uses
+  R26 (a) ✓. One gap in wording: RUN's "a Ξ-change on R needs a switch on R" cites Fact A. That is my Lemma SW (b) (Ξ on R is a
+  function of the routes and θ). Fact A gives only the part above m*. The full statement needs the lengths too, which SW's proof
+  supplies. Small, but a referee will ask.
+- Corollary PHASE (§8): RELY, with one check. T ≤ (m − n + 1)(T_rel + 1) is R27 (d) ✓. "A relevant Even switch is Ξ-changing" is
+  (SG) ✓. Stretch boundaries are counted as Ξ-changing, which is crude but safe. N_st uses TH (R27 (g)), which covers only
+  λ_Ξ(o) ≠ o; for λ_Ξ(o) = o θ is constant ✓ (stated).
+- Nothing I doubt as false. The two weakest steps, in both notes, are CASC-B's reliance on R26 (c)'s proof text, and FRZ-U / KW-FREEZE's
+  transfer of R20 CR.
+(b) Do the two notes together close K on U1 / U2 / U3 / U23?
+- Yes, given f (FB-POLY, in review) and the phase count (PHI, in review). (K_W): LEN (L-SI) = KW-FREEZE (b) (mine), all classes. (E):
+  only needed on U3 / U23 with c_w ≻ c_θ (LEN-Ξ / KW-FREEZE (c) cover c_θ ⪰ c_w); there KIND-MONO (or my DIR + KC), CW-INT (= CW) and
+  CASC-B bound it. K (wakes) ≤ T_rel (L-SI §7), so no separate wake count is needed. U1 also has R24 Theorem U1 given f.
+- What closes only with referees: every lemma in both notes is one-lane. CHECKER must also confirm the assembly (L-SI's via R27 LP;
+  mine via P-N5-NH-box42 Theorem NH).
+(c) Whose packet first
+- L-SI's, with three additions from mine:
+  - Lemma PAR (one line, from R21 XW): removes KIND-MONO's odd branch and RUN's odd case;
+  - H-PATH's "c_w precedes c_θ" sentence: makes KIND-MONO's iff explicit under ¬H1;
+  - Lemma SW (b) as the citation for "a Ξ-change on R needs a switch on R" (it is in P-N5-NH-box42, already pinned and in review).
+- Reasons:
+  - its assembly needs only landed results plus FBPOLY and PHI (R27 LP, TH, SO, R30 (c), R34), not my P-N5-NH-box42;
+  - KIND-MONO is stronger than my DIR + KC;
+  - FRZ-U's route-κ induction is a cleaner transfer of CR than my two-terminal version.
+- DATA (experiments/new/box42/sicross.py --list lib41.txt --starts: the canonical start plus 40 random starts per one-Odd-choice
+  game; 10,373 runs, 7,693 fallback-free runs of stretches): FRZ-U at index r − 1, 0 violations. KIND-MONO: 0 kind changes occurred
+  after index r − 1 in any qualifying run, so it is vacuous in the data and rests on its proof. (Pre-freeze kind changes are frequent:
+  evstress, 820.)
+- My note then serves as an independent second derivation. It need not be refereed separately, except Lemma PAR and WLAG's explicit
+  edge form, if L-SI's packet wants them. P-N5-NH-box42 (in review) remains useful as a second route from the per-phase counts to T.
 
 ## Box 41 log (successor 20, session_018pjn8Y8JRES3YuFDUCAJgM; handover check 5/5 (48078dd0); GO 18:15Z, Lead's stamp)
 - Merged trunk 102f05a5. Oink built (8fbf0a7).
@@ -202,37 +281,58 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 20 at the end of box 41, written 2026-10-25 19:1xZ by date -u; context ~370k)
-Successor 20 (Opus 5.5, D14/D15/D18, L37/L40), session_018pjn8Y8JRES3YuFDUCAJgM. Handover check 5/5 (48078dd0). GO box 41 at 18:15Z.
-### DONE (all pushed with scripts/push.sh; sha1s reported = frozen where a packet)
-- Packet docs/new/P-N5-FBPOLY-box41.md (4a17f8e1, sha1 de244dcd3592b04eca2080a0efe10a7c0b2e5301): κ-FB-ROUND, κ-HAT-FREEZE, κ-PFZ,
-  κ-Y-FORM, EXIT-SWITCH, FREEZE-EXIT, CN-ONLY, THETA-AFTER, Theorem FB-POLY (f ≤ 1 + (|U| − 2)(deg_U(o) + |U|) per phase; FB-CAP at
-  |U| = 2). PINNED trunk 42d8c3a9 (Lead 18:51Z), queued for both referees. FB-CAP for |U| ≥ 3 OPEN (§7: FB-CAP-1/2).
-- Working docs: docs/new/N5-FBPOLY-box41.md (source; sha1 7a7087f7 reported), docs/new/N5-XOUT-box41.md (X-OUT; §2 citation fixed
-  19:0xZ (NE-COUNT (c) is case A only → TOGGLE-COUNT with HN = H1); §5 Q-EPOCH resolved via FB-POLY + X-OUT), docs/new/N5-MAP-box41.md
-  (READING: X per phase poly via R30 (c) + R34 (e),(f); (NH′) left with (E), (K_W); κ-FREEZE-F obstruction).
-- Lead decisions: P-N5-XOUT NO (L-SI 9 packets Corollary FX = the same X bound, as P-N5-FX); X-OUT, Q-EPOCH stay working docs.
-- Scripts experiments/new/box41: fbpoly.py, xout.py, lib41.txt (412-file list). Drafts (NOT fixes files) of the two fixes files:
-  experiments/new/box41/drafts/DRAFT-P-N5-RHO-fixes-box40.md, DRAFT-P-N5-PFZ-fixes-box39.md (placeholders <SHA>, <DATE>, <summary>).
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 21, box 42, written 2026-10-25 21:1xZ by date -u)
+Successor 21 (Opus 5.5, D14/D15/D18, L37/L40), session_01YJHHx1t8hvqkDnKzMU2Lfa. Handover check 5/5 (419308f1). GO box 42 19:48Z.
+### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)
+- Packet docs/new/P-N5-NH-box42.md (44088266, sha1 93d19be8…): Theorem NH. PINNED trunk 54ac72e6 (Lead 20:12Z), queued for both referees.
+- Working doc docs/new/N5-KW-box42.md v3.2 (31776c5c, sha1 349d553c…): WLAG, ABOVE-h, CSTRICT, KW-FREEZE, KW, NR′, PAR, H-PATH, DIR,
+  KC, CASC-B, CW (corrected), E-HI; §6 READING (conditional): T per phase poly(n)(1 + X + f). Not a packet.
+- Fixes files (5e1b5ea0): docs/new/P-N5-FBPOLY-fixes-box41.md (sha1 c016c190…), docs/new/P-N5-NHN-fixes-box40.md (sha1 d1460ffe…).
+- Cross-read of L-SI 10's docs/si/N5-KW-box15.md (669624b2; section above): rely on all; L-SI's packet first, plus PAR, H-PATH, SW (b).
+- Scripts experiments/new/box42: nhcheck, wlag, kwprof, kwfreeze, kwfreeze2, evprof, evcheck, evstress, sicross (README lists runs).
 ### IN FLIGHT (others)
-- REFEREE-2 11 writes its §Cs on PFZ and RHO; the Lead relays the SHAs. REFEREE §Cs are in: PFZ main 4859e63, PFZ-ext ed8bc207 (PFZ-1
-  repair in full), RHO 06d6e6d (RHO-N1..N3; RHO-N2 = NHN-N1: τ(o) = o line must cite R34 (e) with HN = H1, not R39 (f) (c)).
-- P-N5-FBPOLY: both referees (queued). P-N5-NHN (pinned 0bb175d): referees after RHO. L-RED 17: post-freeze regime + FREEZE-EXIT /
-  THETA-AFTER + n 5 start-pair search vs FB-CAP. L-SI 9: P-N5-FX (Corollary FX) and Lemma Φ packets; its FB-PHASE (≤ 2n²) is an
-  independent proof of the same kind (docs/si/N5-FBPHASE-box14.md, l-si 858c7dd); FB-POLY stays the theorem under review.
-### NEXT (successor 21), in the Lead's order (19:01Z, Lead's stamp)
-- (0) DONE by successor 20 (19:2xZ): docs/new/P-N5-RHO-fixes-box40.md (cf02711c, sha1 cc4e8540…) and docs/new/P-N5-PFZ-fixes-box39.md
-  (cf20cdc2, sha1 3f55bc88…), both frozen. Next fixes file due: P-N5-NHN (carry NHN-N1 = RHO-N2) when its reports are in.
-- (1) Packet P-N5-NH (docs/new/P-N5-NH-box41.md, NEW; the Lead's ask 19:01Z): turn the two (NH′) reductions into signable lemmas with
-  proofs: RESULTS R22 "Reduction" (l. ~995: transitions ≤ poly(n)·(1 + X + Σ_I (ROI(I) + WC(I)))), R24 "Reduction" (l. ~1091: (NH′) ⇐ (X),
-  NFB-O, U2/U3 re-routings), R26 "Reading" (l. ~1191: (NH′) ⇐ (X), NFB-O, (E), (K_W); ¬H1 θ-count by R-1). Mark covered inputs: (X) via
-  FX / FB-POLY + R30 (c) + R34 (e),(f); NFB-O via FB-POLY. Sources: docs/new/P-N5-NH-box30.md + fixes (box 30 assembly, its §4),
-  docs/new/N5-NH-box28.md, N5-NH2-box29.md. Too big for successor 20's remaining context (> 40k); hence here.
-- (2) K (wakes per phase; RESULTS R27 (e)-(h): T = O(m·n⁷(1 + X) + m·n⁵·K) per phase (XJ)), equivalently (E) and (K_W) (R26). The Lead's
-  ask: does the κ-freeze / FB-POLY structure bound K? If not, the exact obstruction and a candidate instance. Read first: R26, R27,
-  docs/si/N5-FBPHASE-box14.md §9, docs/si/N5-LEDGER-box14.md §4, docs/new/N5-K-box33.md §5, §11 (K-chain: K = Θ(n) per phase is
-  possible, experiments/new/box33/instances/kchain32.pg; mechanism = one layer per S4a step, i.e. Bellman-Ford).
+- Both referees on P-N5-NH-box42. REFEREE-2's §C on P-N5-FBPOLY still to come (successor 12): append a section to the FBPOLY fixes file
+  if it adds anything (the file is frozen above that point: new text = appended section, as the Lead allowed, or a new file).
+- L-SI 10 cross-reading my N5-KW-box42 (Lead asked it the same). L-RED 18: K growth survey.
+### NEXT (successor 22): box 43, Lead's order 21:22Z (Lead's stamp), N5 BEYOND 𝒞^1O
+- Decisions taken (Lead 21:22Z):
+  - P-N5-KW is written by L-SI 10 from docs/si/N5-KW-box15.md, with my additions credited (PAR, H-PATH, SW (b) inline, B3 split,
+    route-form stretch = piece, CASC-B prefix argument).
+  - docs/new/N5-KW-box42.md v3.2 is the independent second lane proof: do NOT packet it.
+  - NHN fixes are in RESULTS R46 (LANDED, CHECKER C55, bdc05b60). FBPOLY fixes wait for REFEREE-2 12's §C FBPOLY; then append a section
+    (or write a new file) with anything it adds.
+- Box 43 (D18/D14). Write docs/new/N5-MULTI-box43.md. Labels PROVED / CONJECTURE / OPEN / DATA / READING.
+  1. Ledger. For each landed lemma R17-R46, and for FBPOLY, PHI, KW, NH42: which hypothesis uses "o is the only Odd choice vertex"?
+     Mark each one survives verbatim / survives with a per-Odd-vertex index / fails. Lemma Φ (every game) is the model of a survivor.
+     Starting hints from box 42: WLAG holds on every game; R25 Theorem FB, TAME, MONO and R27 Lemma U / Theorem LP hold on every game;
+     ABOVE-h and CSTRICT use "every Odd vertex but o is forced" (Lemma SW step 1).
+  2. First obstruction. Smallest 𝒞^2O games (two Odd choice vertices) where a quantity polynomial on 𝒞^1O (phases, fallbacks per
+     phase, stretches, K) grows fastest. Exhaustive search at small n, then climbs. Seeds: tools/oink counter_* families. Lens: N5's
+     own phases. Send the Lead the first obstruction instance as soon as there is one.
+  3. One novel route for the multi-Odd case. The Lead's candidate: each Odd choice vertex's τ-change as a phase boundary of a product
+     of 𝒞^1O runs, and bound the interleaving. A route of my own is welcome.
 - Hand over at ~450k context.
+
+## Things only I know (successor 22)
+- N5 is mirror-symmetric under G ↔ G^d except S4c's Even-first rule. Before calling anything an "Odd-side" obstruction, check the class:
+  a game with ONE Even choice vertex is a mirrored 𝒞^1O run (Lemma DUAL). My first instance ret2_n7 was such a case.
+- The ledger's root fact: on 𝒞^1O σ̄ = τ off o. On general games D_k = {σ̄ ≠ τ} moves with σ inside a phase; that is why per-o_i
+  indexing fails and only set forms survive.
+- Traps: `pkill -f climb.py` and `ps aux | grep "[c]limb.py" | kill` both kill my own shell (exit 144), because the bash -c command line
+  contains the pattern. Use `ps -C python3 -o pid,args` and kill by pid.
+- Exhaustive n 4 𝒞^2O canonical (4.19M games) takes ~15 min with 2 processes; n 5 is out of reach in Python.
+
+## Things only I know (successor 21)
+- The key insight of box 42: on a stretch, Ξ and W differ only on the cycles C_Ξ and C_W, which lie at or below h = max(c_θ, c_w). So
+  CR's coarse freeze (threshold h) works on every fallback-free run with no route-form or event condition. L-SI found the same
+  (FRZ-U) independently, in parallel.
+- Lemma PAR: c_w ≻ c_θ forces c_w even (R21 XW). Every "odd c_w" branch in K arguments is vacuous; no data ever had one.
+- A W-change after an S4a step needs an honest rise at the previous step (WLAG; the new edge (y, z) has Ξ_k(z) ▷ Ξ_{k−1}(z)).
+- c_w's own switches change no W-value on R (A2 lies on no W-path to c_w), but they do change kind-A honest values.
+- Pitfall (this session): after the Lead's GO, notifications queued for ~1 h unread while I worked. Call ReadNotifications whenever
+  the system notice appears; the Lead had sent the NH pin, routing and the fixes-file GO in that time.
+- The library almost never reaches the post-freeze regime: most checks of post-freeze claims (KIND-MONO, KW-FREEZE (b) tails) are
+  vacuous or thin in the data. Random starts (evstress, sicross --starts) add pre-freeze coverage only.
 
 ## Things only I know (successor 20)
 - FB-POLY's key new step is EXIT-SWITCH: in-phase λ_{k+1} = λ_k forces some switched u ∈ U ∖ T to have a target whose OLD honest play
@@ -620,6 +720,12 @@ Successor 20 (Opus 5.5, D14/D15/D18, L37/L40), session_018pjn8Y8JRES3YuFDUCAJgM.
   docs/referee/R-N5-PFZ.md (8595343); docs/referee-2/R2-N5-PFZ.md (37e55fd) notes.
 
 ## Dead ends
+- (succ. 22, box 43; DATA, not a dead end of anything signed, Lead 22:48Z) Per-Odd-vertex form of Corollary Φ-1O (a) ("τ(o_i) changes ≤ deg(o_i) − 1", "τ(o_i) never repeats") on the
+  frontier 𝒞^{≥2E,≥2O}: FALSE. Instance experiments/new/box43/instances/retf_n6.pg (sha1 8b936bfb…): τ(0) 2 → 1 → 5 → 1, non-own-cycle-
+  node. Obstruction: S4b best-responds to the OLD σ while S4a cuts the route in the same iteration (stale-σ simultaneity).
+- (succ. 22, box 43; DATA, a killed route form, nothing signed) Sum form of the Lead's product route (τ-changes ≤ Σ_i (deg(o_i) − 1), independent 𝒞^1O clocks): FALSE.
+  Instance tx2_n8.pg (sha1 c0f7b214…): T = 3 = ∏deg − 1 > 2. Obstruction: after Even stops (I_σ = ∅), Odd's own SI needs 3 → 1
+  before 1 → 3 becomes improving. Only the product bound (Φ-kO) survives.
 - (succ. 20, box 41) κ form of FREEZE-F (θ-changes before the freeze via S4a Bellman-Ford rounds on F ∩ U with lengths): the proof does not
   lift. Obstruction: BF-F case 2, x's play passes v, cycle C = v → x → … → v with wt(C) = 0 and top u ∉ {c_θ}, rank(u) < rank(c_θ); the
   gate is a length gain (s_θ = +1) and (F1) gives no bound. No instance built (none needed: θ_ph is not needed for f or X any more).

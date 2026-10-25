@@ -255,12 +255,16 @@ Phase key = the checkers' (lambda_Xi, tau). Validated on epsseg_cex_n48 (= sn_ch
 | n 4 canonical | 4,828,736 | 0 | 1 | 0 | 2 | 1 | 0 | 2 | 1 | 3 |
 | n 4 all starts (even max-deg 2, no forced) | 7,340,032 | 0 | 1 | 0 | 3 | 1 | 1 | 3 | 2 | 3 |
 | n 5 subset quarter 1 (box 7 class, index = 0 mod 4) | 17,193,152 | 0 | 1 | 0 | 2 | 1 | 0 | 3 | 2 | 2 |
+| n 5 subset quarter 2 (index = 1 mod 4) | 17,191,424 | 0 | 1 | 0 | 2 | 1 | 1 | 3 | 2 | 2 |
+| n 5 subset quarter 3 (index = 2 mod 4) | 17,189,248 | 0 | 1 | 0 | 2 | 1 | 0 | 3 | 2 | 2 |
 BOX8ROW
 
 | box8 (REFEREE probes, canonical start only) | runs | FAIL counters | max J | max K | max X | max eps | max rho | max T |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | n 4 canonical | 4,828,736 | 0 | 1 | 0 | 2 | 1 | 0 | 2 |
 | n 5 subset quarter 1 | 17,193,152 | 0 (OGP_viol 1,476 = the refuted OG', counted by cls_probe, not a failure) | 1 | 0 | 2 | 1 | 0 | 3 |
+| n 5 subset quarter 2 | 17,191,424 | 0 (OGP_viol 1,186, info) | 1 | 0 | 2 | 1 | 1 | 3 |
+| n 5 subset quarter 3 | 17,189,248 | 0 (OGP_viol 1,484, info) | 1 | 0 | 2 | 1 | 0 | 3 |
 BOX8PROW
 
 Teeth (n 4 canonical, REFEREE-2 counters): U-loc 780,352 checks; OE 139,566 off-crossing transitions (16 crossings with O > E); OX 188,320
@@ -278,3 +282,8 @@ TRANSFER 26,370; OFFGATE 12,132; NL 1,948 (j, L) checks; R-STICK 178; LEAVE (H1)
 H1-DROP 39,852; OR / ABS-COUNT' 520 (all tight). Still VACUOUS: CLS1 / FBL / CLU (60,430 scope fallbacks, all theta = w), WK (K = 0), ABS-L.
 Examples: X_SN 2 at prio [0,2,4,5,7] owner [1,0,0,0,0] succ [[2,4],[1],[0,3],[1,2],[1]] (canonical start); REL 2 at prio [0,2,4,6,8]
 owner [1,0,0,0,0] succ [[2,4],[0],[4],[0],[2,3]] (canonical start).
+Teeth (n 5 quarter 2): U-loc 7,234,290; OE 912,022; non-tame 952 (all crossings); CN 595,048; TRANSFER 28,326; OFFGATE 11,980; NL 2,072;
+R-STICK 232; LEAVE 235,934; crossings after prefix 398; ABS-COUNT' 952 (all tight). Still VACUOUS: CLS1 / FBL / CLU (62,100 scope
+fallbacks, all theta = w), WK, ABS-L.
+Teeth (n 5 quarter 3): U-loc 6,719,810; OE 844,228; non-tame 448 (all crossings); CN 552,284; TRANSFER 26,118; OFFGATE 11,982; NL 1,614;
+R-STICK 182; LEAVE 200,550; crossings after prefix 308; ABS-COUNT' 448 (all tight). Still VACUOUS: CLS1 / FBL / CLU (60,402, all theta = w), WK, ABS-L.

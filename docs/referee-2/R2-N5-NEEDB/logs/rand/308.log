@@ -1,0 +1,6 @@
+ANTI_W_checks: 14
+ANTI_Xi_checks: 14
+runs: 4
+states: 45
+RESULT OK violations=0
+experiments/new/box31/instances/p3long_n14.pg exit 0

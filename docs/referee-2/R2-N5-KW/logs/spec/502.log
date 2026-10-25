@@ -1,0 +1,17 @@
+A0_checks: 1304
+FACTB_pairs: 11484
+KWS_stretches: 81
+PAR_states_cw_above_cth: 1
+PHASE_checked: 11
+phases: 11
+runs: 3
+states: 81
+states_checked: 81
+stretches: 81
+max_KW_per_stretch: 0
+max_T_per_phase: 28
+max_Trel_per_phase: 28
+max_f_per_phase: 0
+max_stretches_per_phase: 29
+RESULT OK violations=0
+experiments/si/xing/instances/zcl_rx_n48.pg exit 0

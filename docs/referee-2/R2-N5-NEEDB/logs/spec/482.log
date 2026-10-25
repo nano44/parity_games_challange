@@ -1,0 +1,12 @@
+ANTIW_blocked_edges: 883
+ANTI_W_checks: 33
+ANTI_Xi_checks: 33
+RECORD_M>=0_P_uses_R_to_F_gate: 81
+RECORD_inscope_THR_r>=0_M>=0: 81
+THR_inphase_fallbacks: 81
+THR_optima_tested: 145
+XG_R_to_F_optimal_edges: 157
+runs: 4
+states: 122
+RESULT OK violations=0
+experiments/si/xing/instances/ccl_fb2_n32.pg exit 0

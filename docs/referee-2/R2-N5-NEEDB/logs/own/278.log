@@ -1,0 +1,10 @@
+ANTI_W_checks: 19
+ANTI_W_exceptional_used: 2
+ANTI_W_with_exceptional_edges: 2
+ANTI_Xi_checks: 19
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 2
+runs: 4
+states: 48
+RESULT OK violations=0
+experiments/new/box28/instances/w24b_thc24_final.pg exit 0

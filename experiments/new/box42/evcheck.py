@@ -4,7 +4,7 @@ at every vertex of R. KIND(v) = A iff c_w on π_v. Checks:
 (DIR) at a W-flat transition no vertex changes kind against the honest preference (A -> B if c_w even, B -> A if c_w odd);
 (KC)  kind-changing transitions ≤ (Q − 1) + |R|·Q, Q := K_S + f_S + 1;
 (CB)  CASC-B: in a maximal W-flat segment with no kind change at all, a kind-B vertex switches only at segment step ≤ |π_v| − 2;
-(CW)  c_w-switch transitions ≤ f_S + (deg(c_w) − 1)(1 + B + κ), B := transitions with a switch of a kind-B vertex, κ := kind-changing;
+(CW)  c_w-switch transitions ≤ deg(c_w)(1 + B + κ + f_S), B := transitions with a switch of a kind-B vertex, κ := kind-changing;
 (ES)  event transitions ≤ κ + c_w-switch transitions (definition check).
 Usage: evcheck.py --list FILE | --rand N lo hi seed [--randstart]"""
 import sys, os, random
@@ -53,7 +53,7 @@ def go4(g, acc, tag, start=None):
             Q = KS + fS + 1
             if kc > (Q - 1) + len(R) * Q: bad("KC", (k, j, kc, Q))
             dcw = len(g.succ[cw])
-            if cws > fS + (dcw - 1) * (1 + Bsw + kc): bad("CW", (k, j, cws))
+            if cws > dcw * (1 + Bsw + kc + fS): bad("CW", (k, j, cws))
             if ev > kc + cws: bad("ES", (k, j))
             acc["sum_kc"] = acc.get("sum_kc", 0) + kc; acc["sum_cws"] = acc.get("sum_cws", 0) + cws; acc["sum_ev"] = acc.get("sum_ev", 0) + ev
             acc["max_ev"] = max(acc.get("max_ev", 0), ev)

@@ -1,0 +1,15 @@
+ANTIW_W_improving_exceptional_gates: 2
+ANTIW_blocked_edges: 1
+ANTI_W_checks: 9
+ANTI_W_exceptional_used: 4
+ANTI_W_with_exceptional_edges: 5
+ANTI_Xi_checks: 9
+ANTI_Xi_exceptional_used: 4
+ANTI_Xi_with_exceptional_edges: 5
+THR_inphase_fallbacks: 1
+THR_optima_tested: 1
+XG_R_to_F_optimal_edges: 1
+runs: 4
+states: 20
+RESULT OK violations=0
+docs/referee-2/R2-N5-LV2/climb/best_none_9501.pg exit 0

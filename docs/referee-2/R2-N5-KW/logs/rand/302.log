@@ -1,0 +1,25 @@
+A0_checks: 178
+FACTB_pairs: 511
+FRZU_checks: 44
+KWS_stretches: 24
+LEN_runs_after_f0: 6
+PAR_states_cw_above_cth: 49
+PHASE_checked: 12
+RUNS_runs: 7
+RUN_case_a: 3
+RUN_case_b: 4
+phases: 12
+runs: 3
+states: 56
+states_checked: 56
+stretches: 24
+max_KW_per_stretch: 10
+max_RUN_ratio_case_a_x1000: 0
+max_RUN_ratio_case_b_x1000: 8
+max_T_per_phase: 22
+max_Trel_per_phase: 22
+max_f_per_phase: 2
+max_freeze_delay: 10
+max_stretches_per_phase: 5
+RESULT OK violations=0
+experiments/new/box29/out/op16_oc16.pg exit 0

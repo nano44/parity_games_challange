@@ -1,0 +1,10 @@
+ANTI_W_checks: 20
+ANTI_W_exceptional_used: 12
+ANTI_W_with_exceptional_edges: 15
+ANTI_Xi_checks: 20
+ANTI_Xi_exceptional_used: 7
+ANTI_Xi_with_exceptional_edges: 7
+runs: 4
+states: 51
+RESULT OK violations=0
+experiments/new/box35/instances/fbrestart_cex_n24.pg exit 0

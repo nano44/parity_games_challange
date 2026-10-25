@@ -1,0 +1,21 @@
+ANTIW_blocked_edges: 30
+ANTI_W_checks: 12
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 12
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+INTO_holds: 2
+INTO_states_r>L: 2
+OT_exit_checks: 9
+OT_post_rise_states: 3
+OT_rises: 1
+RECORD_M>=0_P_uses_R_to_F_gate: 1
+RECORD_inscope_THR_r>=0_M>=0: 1
+THR_inphase_fallbacks: 1
+THR_optima_tested: 1
+XG_R_to_F_optimal_edges: 4
+runs: 4
+states: 34
+RESULT OK violations=0
+experiments/red/so/instances/tevlast_cex_n40.pg exit 0

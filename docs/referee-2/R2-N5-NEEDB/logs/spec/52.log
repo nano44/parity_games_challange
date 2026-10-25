@@ -1,0 +1,17 @@
+ANTIW_blocked_edges: 92
+ANTI_W_checks: 36
+ANTI_Xi_checks: 36
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+OT_exit_checks: 36
+OT_post_rise_states: 3
+OT_rises: 3
+RECORD_M>=0_P_uses_R_to_F_gate: 8
+RECORD_inscope_THR_r>=0_M>=0: 8
+THR_inphase_fallbacks: 8
+THR_optima_tested: 8
+XG_R_to_F_optimal_edges: 10
+runs: 4
+states: 122
+RESULT OK violations=0
+docs/referee-2/R2-N5-LP/climb/fix_lev_best.pg exit 0

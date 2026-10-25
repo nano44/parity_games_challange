@@ -1,0 +1,20 @@
+climb FIT=lv seed=12002 n=12 iterations=108721 improvements=14 best_fitness=80.0
+BEST-INSTANCE counters: {'ANTIW_blocked_edges': 102, 'ANTI_W_checks': 10, 'ANTI_Xi_checks': 10, 'RECORD_M>=0_P_uses_R_to_F_gate': 20, 'RECORD_inscope_THR_r>=0_M>=0': 20, 'THR_inphase_fallbacks': 20, 'THR_optima_tested': 20, 'XG_R_to_F_optimal_edges': 22, 'runs': 4, 'states': 32}
+BEST-INSTANCE maxima: {}
+ANTIW_W_improving_exceptional_gates: 1
+ANTIW_blocked_edges: 683368
+ANTI_W_checks: 511306
+ANTI_W_exceptional_used: 26028
+ANTI_W_with_exceptional_edges: 33789
+ANTI_Xi_checks: 511306
+ANTI_Xi_exceptional_used: 26917
+ANTI_Xi_with_exceptional_edges: 35272
+RECORD_M>=0_P_uses_R_to_F_gate: 268082
+RECORD_inscope_THR_r>=0_M>=0: 268082
+THR_inphase_fallbacks: 268101
+THR_optima_tested: 271112
+XG_R_to_F_optimal_edges: 310303
+climb_evaluations: 104936
+runs: 419744
+states: 1838556
+RESULT OK violations=0

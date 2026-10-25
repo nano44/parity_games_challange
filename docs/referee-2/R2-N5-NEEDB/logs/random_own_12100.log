@@ -1,0 +1,9 @@
+ANTI_W_checks: 2165
+ANTI_W_exceptional_used: 500
+ANTI_W_with_exceptional_edges: 613
+ANTI_Xi_checks: 2165
+ANTI_Xi_exceptional_used: 496
+ANTI_Xi_with_exceptional_edges: 622
+runs: 3000
+states: 7413
+RESULT OK violations=0

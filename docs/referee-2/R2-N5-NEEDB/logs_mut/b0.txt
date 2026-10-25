@@ -1,0 +1,14 @@
+ANTIW_blocked_edges: 2
+ANTI_W_checks: 4
+ANTI_Xi_checks: 4
+NEEDB_LVplus_states: 1
+NEEDB_case_B: 1
+NEEDB_gates_beta: 3
+THR_inphase_fallbacks: 1
+THR_optima_tested: 1
+VIOLATIONS: 1
+XG_R_to_F_optimal_edges: 1
+runs: 4
+states: 17
+VIOLATION own:block_9501.pg#0 NEEDB no (beta) gate on P at 1 (case B)
+RESULT FAIL violations=1

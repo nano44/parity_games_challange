@@ -1,0 +1,22 @@
+A0_checks: 991
+FACTB_pairs: 7159
+HPATH_checks: 190
+KWS_stretches: 58
+PAR_states_cw_above_cth: 10
+PHASE_checked: 22
+RUNS_runs: 2
+RUN_case_a: 2
+phases: 22
+runs: 3
+states: 60
+states_checked: 60
+stretches: 58
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 1
+max_T_per_phase: 22
+max_Trel_per_phase: 22
+max_f_per_phase: 16
+max_freeze_delay: 0
+max_stretches_per_phase: 22
+RESULT OK violations=0
+experiments/red/so/instances/tev_cex_n40.pg exit 0

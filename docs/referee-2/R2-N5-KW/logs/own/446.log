@@ -1,0 +1,20 @@
+A0_checks: 1242
+FACTB_pairs: 16389
+KWS_stretches: 66
+PHASE_checked: 16
+RUNS_runs: 1
+RUN_case_a: 1
+phases: 16
+runs: 3
+states: 67
+states_checked: 67
+stretches: 66
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 1
+max_T_per_phase: 18
+max_Trel_per_phase: 18
+max_f_per_phase: 0
+max_freeze_delay: 1
+max_stretches_per_phase: 19
+RESULT OK violations=0
+experiments/si/coarse/instances/jcl_zcl_cu_n48.pg exit 0

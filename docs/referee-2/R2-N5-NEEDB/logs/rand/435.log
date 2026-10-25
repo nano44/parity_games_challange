@@ -1,0 +1,10 @@
+ANTI_W_checks: 33
+ANTI_W_exceptional_used: 2
+ANTI_W_with_exceptional_edges: 3
+ANTI_Xi_checks: 33
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 3
+runs: 4
+states: 115
+RESULT OK violations=0
+experiments/si/coarse/instances/box9/cl9_heq_b.pg exit 0

@@ -1,0 +1,15 @@
+A0_checks: 94
+KWS_stretches: 9
+PHASE_checked: 6
+phases: 6
+runs: 3
+states: 9
+states_checked: 9
+stretches: 9
+max_KW_per_stretch: 0
+max_T_per_phase: 1
+max_Trel_per_phase: 0
+max_f_per_phase: 0
+max_stretches_per_phase: 2
+RESULT OK violations=0
+experiments/si/kw15/climb/best_wonce2_1524.pg exit 0

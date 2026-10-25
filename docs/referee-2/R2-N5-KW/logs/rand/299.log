@@ -1,0 +1,24 @@
+A0_checks: 500
+FACTB_pairs: 556
+HPATH_checks: 22
+KWS_stretches: 14
+PAR_states_cw_above_cth: 14
+PHASE_checked: 12
+RUNS_runs: 3
+RUN_case_a: 2
+RUN_case_b: 1
+phases: 12
+runs: 3
+states: 25
+states_checked: 25
+stretches: 14
+max_KW_per_stretch: 9
+max_RUN_ratio_case_a_x1000: 1
+max_RUN_ratio_case_b_x1000: 0
+max_T_per_phase: 9
+max_Trel_per_phase: 9
+max_f_per_phase: 0
+max_freeze_delay: 0
+max_stretches_per_phase: 3
+RESULT OK violations=0
+experiments/new/box29/instances/u1_n32.pg exit 0
