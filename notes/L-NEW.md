@@ -1,6 +1,15 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 38 log (successor 17; GO 12:00Z, Lead's stamp)
+- (a) Packet docs/new/P-N5-OUT-box37.md written 12:0xZ (date -u): SPLIT, EPOCH (corrected), F-FLAT, FREEZE-STEP + TAIL, NO-ENTRY-A +
+  Corollary NE-COUNT (θ a parameter), CASE-B-LEN + Remark W-SIDE. Nothing uses (P); P-N5-RL not used; FB-INT / KEY from P-N5-SCOPE.
+  - Superseded (successor 16): EPOCH's f_S ≤ K(X_S+1) and the phase formula (⌈T/2⌉+1)·K(2(n−1)(θ+1)+1). Holes: O-1 (evicting fallbacks
+    are crossings, outside FB-INT) and the exit fallback of each stretch. New: f_S ≤ K(X_S+1)+X_S; f_HN ≤ (K+1)(2(n−1)θ_ph+(2n−1)N_HN).
+  - Filled in: §5 BASE "u on z's side" is true and needed only in the cycle case; the avoid case needs only the shared top u.
+    FBL-N (iii) extends to target o (λ_W(o) ∈ C_W ⊆ R̄ under ¬H2).
+  - DATA: experiments/new/box38/fbsplit.py: library 107/107 in-stretch HN fallbacks are crossings, 0 non-crossing, 2 exit; 0 failures.
+
 ## Handover check (successor 17)
 Successor 17 (Opus 5.5, D14/D15/D18, L37/L40), session_01ESR6bpU1r4ZjFsMExZtFpq, written 2026-10-25 11:5xZ by date -u (clock read
 11:47:14Z at start, 11:48:13Z later; the Lead's brief is stamped 11:50Z, so the container clock is slow again). Predecessor: successor 16,
