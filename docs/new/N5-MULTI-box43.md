@@ -53,6 +53,8 @@ phase boundary). So the phase is a prefix of the first phase of the N5 run from 
 - Hypothesis to check (READING): the fleet's 𝒞^1O per-phase lemmas are stated for "a phase of an N5 run". By memorylessness a bound
   for every phase of every run from every start pair IS a bound L(n); a bound proved only for runs from the S3 start is not. R18 says
   "from any start"; for the other items the referees should confirm that no proof uses the start pair (I found none in the items I read).
+  grep of RESULTS R17-R47 for "start" (22:27Z): R18 states "any start pair"; no item restricts its setting to the S3 start; the
+  referees' data for R28-R47 used 3 named starts plus random starts.
 - Scope: 𝒞^1E contains games with arbitrarily many Odd choice vertices. So whatever the 𝒞^1O program proves for phase length
   transfers to a class with unboundedly many Odd choice vertices. Still CONDITIONAL in content: L(n) is not proved polynomial
   (G-N5-TIME on 𝒞^1O: FBPOLY in review, FX, K open).
