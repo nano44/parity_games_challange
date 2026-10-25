@@ -1,11 +1,12 @@
 # R69: RISE-LAST, XSN-RUN, RESTARTS and TEV (L-RED successor 16, box 39; GO 2026-10-25 09:55Z, date -u)
-Targets (Lead 09:46Z brief, 09:55Z split, 10:06Z exitx, 11:14Z TEV):
+Targets (Lead 09:46Z brief, 09:55Z split, 10:06Z exitx, 11:14Z TEV, 12:34Z / 12:54Z N5-TEV-box11 = P-N5-ENT):
 - (1) PF-THETA: routed to successor 15 (Lead 09:55Z). Not climbed here; my counter pfx.py is a cross-check only (§1).
 - (2) RISE-LAST (R68 §6): no COARSE_L(θ) change at an S4a step strictly between consecutive in-scope fallbacks k0 < k of a scope run,
   L = M_{k0}.
 - (3) XSN-RUN (R68 §2): at most n − 1 crossings in the c_w = c_θ prefix of one fallback-free run.
 - (4) P-N5-TOG §6 RESTARTS (docs/new/P-N5-TOG-box35.md, trunk): maximal (h)-runs per phase ≤ 1 + T + f.
 - (5) L-SI succ. 5's CONJECTURE TEV and the TEV-RED configuration (docs/si/N5-RL-box10.md §5, l-si 90b5fb3f).
+- (6) L-SI succ. 6's N5-TEV-box11 (P-N5-ENT): FZ, BF, RB, WALK, CYC-EV, TEV-FB.
 𝒞^1O only: exactly one Odd vertex with out-degree > 1, asserted in every checker. Labels per L40. G-N5-TIME stays OPEN.
 
 ## 0. Result
@@ -17,6 +18,8 @@ Targets (Lead 09:46Z brief, 09:55Z split, 10:06Z exitx, 11:14Z TEV):
     needs a wording fix: "before e" → "up to and including e" (§5).
 - RISE-LAST, XSN-RUN, RESTARTS (+ H3-CONST, H2-STICK, the restart classification): 0 failures on 292 library paths and every
   climb. NO KILL.
+- N5-TEV-box11 / P-N5-ENT: FZ, BF, RB and WALK have 0 failures on 498 (Σ) pairs and in 2 climbs. CYC-EV and TEV-FB are vacuous,
+  because no (Σ) pair has a rise (§5c).
 - XSN-RUN's margin is 1 at small n: 8 at n 10 (xrun8_n10.pg), and that 8 includes the prefix-exit crossing. The prefix-internal
   maximum seen is n − 3 at every size.
 - G-TOG-1 (Lead 10:06Z): on the SPEC trace the prefix-exit crossing exists (26 in 269 distinct files, at most 1 per phase). On
@@ -34,7 +37,9 @@ Targets (Lead 09:46Z brief, 09:55Z split, 10:06Z exitx, 11:14Z TEV):
   - TEV and TEVLAST (§5).
 - climb16.py: modes rise / rise2 / tev / tevl / xrun / rst; mutations soclimb.mutate. pfclimb16.py: written for PF-THETA, not run
   (routed away).
-- Data: data16/rx16_lib.txt (303 rows, before the TEV columns), data16/rx16_tev_lib.txt (292 distinct files, all columns).
+- tevx16.py: N5-TEV-box11 in (Σ) (§5c). tevred16.py / tevred16b.py: TEV-RED (1)-(4) and the §5 lane reading at TEV failures.
+- Data: data16/rx16_lib.txt (303 rows, before the TEV columns), data16/rx16_tev_lib.txt (292 paths, all columns),
+  data16/tevx16_lib.txt.
 
 ## 2. RISE-LAST (DATA)
 - Library: 292 paths, 681 consecutive in-scope fallback pairs with M_{k0} ≠ ∞, rfb0 = 0.
@@ -127,13 +132,44 @@ Targets (Lead 09:46Z brief, 09:55Z split, 10:06Z exitx, 11:14Z TEV):
       e included, holds. Fix: "before e" → "up to and including e".
 - TEVCONF (configuration (5): a TEVLAST failure at an in-scope fallback state t): conf climbs, §5b.
 
-## 5b. Configuration (5) climbs (DATA)
-(filled at box end)
+## 5b. TEV-LAST and configuration (5) climbs (DATA)
+| climb (mode) | seed | n | best | instance |
+| --- | --- | --- | --- | --- |
+| tevl | tev_cex_n40 | 40 | first TEVLAST failures at it 233 | tevlast_cex_n40.pg (ff1e9cb4…) |
+| tevl | rl_a (L-SI) | 32 | 7 TEVLAST failures in one file | tevlast7_n32.pg (d905038c…) |
+| tevl | rise_thin51_n40 | 40 | 0 failures (TEV-LAST states 1) | – |
+| conf | tevlast_cex_n40 | 40 | 0 TEVCONF; 11 TEVLAST failures | tevlast11_n40.pg (8421ab30…) |
+| conf | tev_cex_n40 | 40 | 0 TEVCONF (27 fallbacks) | – |
+
+- tevlast7_n32 and tevlast11_n40 are verified: n5 = n5b --mode spec (41/2 and 36/2), Oink zlk OK, strategies verified.
+- tevred16b.py runs at EVERY TEVLAST failure (20 failures on tevlast_cex / tevlast7 / tevlast11 / one more climb best).
+  - All of them are at S4a states, never at a fallback.
+  - TEV-RED (1) holds at all 20.
+  - TEV-RED (4) holds at all 4 where u_e ∈ R̄_t: the gate (e, u_e) of level > L exists, and e is back in R̄ at t + 1.
+  - At 16 of them u_e ∈ Ev ∖ R̄_t: e and u_e are both evicted and free. That is configuration (5)'s shape, but at an S4a state, which
+    TEV-FB does not cover.
+- N5-TEV-box11 §5 lane reading ("not checked by data" there): WALK's v from v0 = the first and the last Ev vertex on the threat's
+  play. 23 walks. Every one has the gate (v, a_j) of level > L at t, and v ∈ R̄_{t+1} (never on e*'s play). 0 failures. So the reading
+  "a threat through Ev is absorbed back, one route vertex per step" matches the data.
+- TEVCONF (configuration (5) at a fallback) needs a rise inside a (Σ) pair, i.e. a RISE-LAST violation. None was found.
+
+## 5c. N5-TEV-box11 / P-N5-ENT (l-si 3f08db7, sha1 58a0b3cf; pinned as P-N5-ENT 4fd22be7) (DATA)
+- tevx16.py, my own checker from the text, works in (Σ): consecutive in-scope fallbacks k0 < k, L = M_{k0} ≥ 0, r > L on [k0+1, k].
+  It checks S3, S4, FZ, BF, RB, WALK (a) / (b) / (c), CYC-EV and TEV-FB.
+- Library (294 files): 498 (Σ) pairs, 0 failures. Checked instances: FZ 13,173; BF 1,247; RB 708; WALK 1,296; WALK (c) 1,274.
+  CYC-EV on all pairs (stronger than stated): 0 failures.
+- No (Σ) pair has a COARSE_L(θ) change. So CYC-EV in its setting and TEV-FB are vacuous on all data, as L-SI's §6 says.
+- tx climbs (fitness: failures, rise pairs, RB + WALK checks, pairs): from b6_xl2_n32 133 checks at 10 pairs (88,388 evaluations);
+  from tev_cex_n40 119 checks at 17 pairs (66,710 evaluations). 0 failures, 0 rise pairs.
+- The suggested target (a (Σ) pair containing a rise; by TEV-FB it must end at a fallback with M_k < L) was not reached. It is the same
+  event as a RISE-LAST violation.
+
 
 ## 6. Labels
 - CANDIDATE COUNTEREXAMPLES (until the Lead re-runs): TEV as written (tev_cex_n40) and TEV-LAST (tevlast_cex_n40).
 - WORDING: TEV-RED (3) "before e" → "up to and including e" (tevlast_cex_n40).
-- DATA, 0 failures: TEVCONF (configuration (5)), RISE-LAST, XSN-RUN, RESTARTS (PROVED in lane, given H2-STICK, H3-CONST, H3H2), H3-CONST and H2-STICK
+- DATA, 0 failures: TEVCONF (configuration (5)); N5-TEV-box11 FZ / BF / RB / WALK (CYC-EV and TEV-FB vacuous); its §5 lane
+  reading (23 walks); RISE-LAST, XSN-RUN, RESTARTS (PROVED in lane, given H2-STICK, H3-CONST, H3H2), H3-CONST and H2-STICK
   (PROVED in lane), PF-THETA cross-check (no climbing).
 - CONJECTURE (L-RED): RISE-LAST, XSN-RUN (unchanged); data pattern "prefix-internal crossings ≤ n − 3".
 - OPEN: NJB (its route via TEV is gone; via configuration (5) it stands), X per phase, f, G-N5-TIME.

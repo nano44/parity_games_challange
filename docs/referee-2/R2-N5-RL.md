@@ -163,3 +163,90 @@ occurred in my data either (0 batch, 0 climb), so EV, EV+ and TEV-RED rest on th
 - N-RL-2: EV: add the case "q after c on the cycle" (the conclusion holds, §6.1).
 - N-RL-3: EV setting facts: "top of A Δ B even and in B" only after A ⊆ B.
 - FREE-FREEZE: the hypothesis "(h) at t" can be dropped.
+
+## §C. Comparison with REFEREE's R-N5-RL (written 2026-10-25 12:46Z by date -u, after my report 30dc5f54 was pushed)
+Read: docs/referee/R-N5-RL.md at trunk (report b7419da, §8.1 257c3d8; REFEREE successor 8). Nothing else in docs/referee/ was read.
+### C.1 Joint gap map
+| REFEREE | mine | item | reconciled verdict (Opus 5.5, D15) |
+| --- | --- | --- | --- |
+| RL-1 | G-RL-1 | TEV-RED (1): "the last Ev vertex" / f's play in F_{k0} need no Ev vertex on x_t's (= c's) cycle | same gap. Label CHANGED, see C.2: TEV-RED NOT SIGNED as stated; TEV-RED′ SIGN CONDITIONAL ON (P) |
+| RL-2 | — (my miss) | MERGE stated for "ℓ ≥ −1", which includes ∞; at ℓ = ∞, (c) has no common vertex and "both plays end in c's cycle" is false | ACCEPTED. MERGE: SIGN WITH GAP RL-2 (scope: −1 ≤ ℓ < ∞). Every use (EV, EV+) is at a finite L, so §6 is unaffected. My rl_check.py skipped level-∞ gates silently (`l >= INF: continue`), and I did not flag the statement. I re-checked with my own N5: inr2_n32, state 0, gate (6, 29) has level ∞, with the plays of 29 ([29, 16]) and x0 = 27 ([27, 31, 18, 2]) disjoint; my deterministic library runs have 168 level-∞ window gates at (h) states, all with disjoint plays |
+| RL-3 | G-RL-2 | TEV-RED (3) and the Consequence's third bullet: "before e" → "up to and including e" | same. L-RED 16's tevlast_cex_n40 (my N5: e = 15 ∈ H, B_t ∖ A = {e}) shows the worded form fails outside the ENT setting. REFEREE: e ∈ H at 0 of 607 meeting states in its data |
+| RL-4 | — (my miss) | EV: the level-L window gate's EXISTENCE is P-N5-NJB §3's Corollary to NO-RF-OLD (FB step (2) + FBL), not ENT-SHAPE, which assumes the gate | ACCEPTED (citation). I checked ENT-SHAPE's first line ("Let (y, z) be a level-L gate at k with …") and the Corollary ("If M_k = L, a level-L tail exists … and it is an entrant") |
+| remark | N-RL-2 | EV's "Ξ_k(z) = ρ ⊕ Ξ_k(q)" if q is on the cycle after c: the conclusion holds on H-parts (A = π_q ∩ H = ∅) | same argument in both |
+| remark (EQ-END) | — | S's end state has (h), not only H2, when θ = w | accepted (true; not needed for the statement) |
+| — | N-RL-1 | MERGE (c): read plays as paths up to the first visit of c | mine only (wording); compatible with RL-2 |
+| — | N-RL-3 | "top of A Δ B even and in B" only after EV | mine only (wording) |
+| — | FREE-FREEZE note | "(h) at t" is not needed | mine only |
+### C.2 Verdict changes in this report
+- TEV-RED: from "SIGN CONDITIONAL ON (P) WITH GAPS (G-RL-1, G-RL-2)" to NOT SIGNED as stated. I adopt REFEREE's form.
+  - With G-RL-1 the stated lemma has a case its proof does not cover, and nothing excludes it.
+  - With G-RL-2 its clause (3), as worded, is false whenever e ∈ H.
+  - A gap of that kind is not a signature with gaps (D1: never soften a verdict); my draft label was too soft.
+- TEV-RED′ (TEV-RED plus the hypothesis "no Ev vertex lies on the cycle of x_t's σ_t-play", with (3) read "up to and including e"):
+  SIGN CONDITIONAL ON (P). My §6.2 check of (1)-(5) covers exactly this form.
+- Consequence (the reduction): NOT SIGNED as stated. It holds when TEV-RED′'s hypothesis holds at t = k.
+- MERGE: from SIGN to SIGN WITH GAP RL-2 (scope −1 ≤ ℓ < ∞).
+- All other verdicts are unchanged and agree with REFEREE's: R-SAME, BL-FORM, BL (a), (d), CONF-MONO SIGN; BL (b), (c), (e),
+  FREE-FREEZE, EV (with RL-4), EV+ SIGN CONDITIONAL ON (P); EQ-END SIGN CONDITIONAL ON CN-LAST.
+- Labels: both reports find every packet label exact.
+- REFEREE adds that the labels depend on R35 landing with ENT-SHAPE (1)-(4) and the NO-RF-OLD Corollary as signed. I accept this.
+### C.3 DATA comparison (different engines: REFEREE's own SPEC N5, which reproduces n5.py's counts; mine = any arena optimum)
+- Both see 0 cases of an Ev vertex on c's cycle, and 0 ENT settings, in batch and climbs: REFEREE 3 × 1,500 s; mine 4 × 1,200 s with
+  1,583,748 runs.
+- The RL-1 precondition A = ∅:
+  - REFEREE: 37 of 376 NAMED and 95 of 526 LIB in-scope fallbacks;
+  - mine: 0 in my batch (my N5's traces), 507,929 in climbs.
+  - The second step (c switched into R̄_{k0}, or a later switch of C_t into Ev) was reached by neither.
+- FREE-FREEZE on LIB: REFEREE 177,919, the packet's figure. Mine is 640,338 over a different input set and starts.
+- Oink: REFEREE 234 + 75 + 3 climb bests; mine 552 (SCOPE library) + 8 climb bests + tevlast_cex_n40.
+### C.4 Joint fixes lines for L-SI (one per gap; union of both reports)
+- RL-1 = G-RL-1 (TEV-RED (1), Consequence): prove Ev ∩ C_t = ∅ for t ∈ (k0, k], or carry the hypothesis (TEV-RED′), or treat the
+  cycle case (A = ∅) separately.
+- RL-2 (MERGE): "level −1 ≤ ℓ < ∞".
+- RL-3 = G-RL-2 (TEV-RED (3), Consequence bullet 3): "up to and including e".
+- RL-4 (EV): cite P-N5-NJB §3's Corollary for the gate's existence.
+- Wording, mine: N-RL-1 (MERGE paths up to c), N-RL-2 (EV, q after c), N-RL-3 (top of A Δ B after EV), FREE-FREEZE's unused "(h) at t".
+
+## Addendum A: the new proof text in docs/si/P-N5-RL-fixes-box10.md (sha1 ac0274586a3b715d8725bc5226e3b32572edf017, l-si 1f107bfb, on trunk), checked 12:54Z by date -u
+Read at the Lead's request (12:49Z). I did not read docs/si/N5-TEV-box11.md beyond what the fixes file quotes; the fixes file's proof
+is self-contained and I checked that text.
+| item | verdict (Opus 5.5, D15) | notes |
+| --- | --- | --- |
+| Lemma CYC-EV (ENT setting: no vertex of Ev ∩ F_k lies on C_k, the σ_k-cycle of c) | SIGN | no (P); the case is vacuous in data (no ENT setting) |
+| replacement Proposition TEV-RED (t < k: TEV-RED′'s added hypothesis; t = k: by CYC-EV; e the last Ev vertex on the pre-c prefix; (3) as RL-3) | SIGN CONDITIONAL ON (P) | closes RL-1 = G-RL-1 at t = k; t < k stays TEV-RED′ |
+| Consequence (the reduction, at t = k, with RL-3's wording) | SIGN CONDITIONAL ON (P) | via EV+, CYC-EV and the replacement TEV-RED (5) |
+| RL-2, RL-3, RL-4 lines | accepted as written | same as my §C.4 |
+| §7 TEV / TEV-LAST FALSE, k0-quantifier section | not signed (record) | consistent with my §6.3 (tevlast_cex_n40 reproduced with my N5) |
+CYC-EV proof check, line by line:
+- (Σ) gives (A_s), no leave at the S4a steps of (k0, k) (NL (ii)), and M_k ≤ L (CLS2).
+- FZ. v ∈ F_k is in F_s for s ∈ [k0+1, k] (no leave). COARSE_L(Ξ v) is frozen across k0 (FLAT-ALL (iii), every vertex) and at each S4a
+  step (NL (i), v ∉ R̄_{s+1}). ✓
+- BF. For Even v ∈ R_{k0} ∩ F_k: v ≠ c (c ∈ F_{k0}) and λ(v) = c, so Ξ(v) = v ⊕ b(v) at k0 and at k (P2). v is not on its successor's
+  pre-c path: a repeat of v before c would be a cycle through v without c. So by (C4), COARSE_L(b v) is COARSE_L(Ξ v) with v removed, at
+  both states. FZ then gives COARSE_L(b_k v) = COARSE_L(b_{k0} v) = COARSE_L(Ξ_{k0} σ_{k0} v). ✓
+- RB. If COARSE_L(Ξ_k a) ≠ COARSE_L(Ξ_{k0} a) for a = σ_{k0}(v), then R15 (a) and (C1) give Ξ_k(a) ▷ b_k(v) at a level > L. So
+  a ≠ σ_k(v), and (v, a) is a gate at k of level > L ≥ M_k. Contradiction. (The hypothesis a ∈ R̄_k is not even needed for this step.) ✓
+- WALK.
+  - The first vertex a_j ∈ R̄_k on v0's k0-route exists, since o ∈ R̄_k.
+  - Its predecessor is in F_k. If it were Odd (≠ o), its only successor in R̄_k would put it in R̄_k, so it is Even.
+  - RB, and Lemma G at k0 and at k ((h) at both), give the H-part identity (π^k_{a_j} ∩ H) ⊔ B = (π^{k0}_{a_j} ∩ H) ⊔ A, since P(θ) ⊆
+    V_{>c} makes P(θ) ∩ V_{>L} = P(θ) ∩ H. ✓
+- CYC-EV. A vertex v ∈ Ev ∩ F_k on C_k has Ξ_k(v) = (c, ∅, ·), since c tops C_k and v ≠ c. FZ and Lemma G at k0 give A = ∅ and a low route
+  for v. WALK from v gives B ⊆ A = ∅, against B ≠ A (the rise). ✓ C_k ⊆ F_k, so no Ev vertex at all lies on C_k. x_k's cycle is C_k
+  (cycle node c). ✓
+- The replacement statement takes e on the pre-c prefix. With no Ev vertex on the cycle, every vertex of f's whole play lies in F_t ∖ Ev
+  ⊆ F_{k0}, which is what (1) and FREE-FREEZE need. (2)-(5) are as I checked them in §6.2. ✓
+- The lane's reason why CYC-EV is not claimed for t < k is right: RB needs "no gate of level > L at t", which holds at the fallback state k
+  (M_k = L) but not at S4a states. tevlast_cex_n40's gate (15, 21) of level 33 > L at t = 7 is exactly such a state.
+- DATA (cycev_probe.py, own N5, logs_cycev/; DATA, not proof):
+  - In setting (Σ) (k0 < k consecutive fallbacks of S, L = M_{k0} ≥ 0, r > L on [k0+1, k]; the rise not required): 836 settings on the
+    280-file library × 4 starts.
+  - FZ held at 21,720 vertices, BF at 1,869, RB and the WALK identity at 1,950 route walks, and M_k ≤ L everywhere; 0 failures.
+  - Ev ∩ C_k ≠ ∅: 0 times. Settings with B ≠ A (the rise): 0, so CYC-EV's own case is vacuous here as well.
+  - Random 𝒞^1O (20,000 games, n 6-16): 0 settings (vacuous).
+Status after this addendum, P-N5-RL §6:
+- TEV-RED, in the replacement statement: SIGN CONDITIONAL ON (P). The original packet text is still NOT SIGNED as stated (§C.2); it is
+  replaced, not repaired in place.
+- The Consequence: SIGN CONDITIONAL ON (P). CYC-EV: SIGN.
+- With P1 (R2-N5-P1, signed by both referees), all three become unconditional.

@@ -1,0 +1,17 @@
+TRACE spec
+FREEZE_H1_theta_equal_steps: 28
+FREEZE_control_no_hyp: 28
+FREEZE_control_no_hyp_conclusion_fails: 28
+HN_inphase_transitions: 34
+HN_stretches: 2
+SPLIT_a_cases: 34
+breaks: 0
+fallbacks_in_stretches: 0
+fallbacks_in_stretches_that_are_crossings: 0
+runs: 3
+states: 55
+max_X_S: 3
+max_breaks_per_stretch: 0
+max_f_S: 0
+max_fallbacks_per_crossing_free_run: 0
+RESULT OK violations=0

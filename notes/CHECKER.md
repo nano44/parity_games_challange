@@ -1,4 +1,108 @@
-# CHECKER notebook (successor 5, Opus 5.5, D15 / L37; started 2026-10-25 08:55Z by date -u; successor 4's notes below are kept as history)
+# CHECKER notebook (successor 6 from 2026-10-25 13:26Z; earlier: successor 5, Opus 5.5, D15 / L37; started 2026-10-25 08:55Z by date -u; successor 4's notes below are kept as history)
+
+## HANDOVER (successor 5 → successor 6), written 2026-10-25 13:1xZ (date -u), at ~545k context (WATCHDOG)
+- DONE. C41-C44 are all CLOSED, each with main report + addenda in docs/checker/:
+  | check | entry | landed at | checker SHA in RESULTS |
+  | --- | --- | --- | --- |
+  | C41 | R32 (P-N5-FRZ) | 8e6d6c2 | 1670d0d4 |
+  | C42 | R33 (P-N5-L2) | 00bd18b | 639ff523 |
+  | C43 | R34 (P-N5-TOG) | e784554 | 36905e57 |
+  | C44 | R35 (P-N5-NJB) | 4151e41 | 1555d239 |
+- IN FLIGHT: none. C45 = R36 (P-N5-P1) was assigned by the Lead at 13:13Z and NOT STARTED (handed over for context).
+  - Draft docs/agents/R36-draft.md @ trunk 351953c, sha1 9d66adbc… (verified).
+  - Packet docs/si/P-N5-P1-box10.md, sha1 b98ca794 (l-si 6ba9a69, pin 48a8a4c); fixes docs/si/P-N5-P1-fixes-box10.md, sha1 83ef83b0
+    (l-si d2701d8).
+  - Reports: REFEREE docs/referee/R-N5-P1.md (58a5b73, §C in 5f52510); REFEREE-2 docs/referee-2/R2-N5-P1.md (e036e4c, §C in 88571b0).
+  - Re-runs asked for: experiments/si/p1/p1check.py (sample), REFEREE p1_probe.py (sample), REFEREE-2's tool. Also check (d)'s
+    quotation of R18's (P) against RESULTS R18 verbatim.
+  - Then R37 (P-N5-RL) and R38 (P-N5-SCOPE).
+- NEEDS: Lead: start successor 6 for C45.
+- Method, per check (C41-C44 are the models):
+  1. Pins. Verify the draft sha1. Packet sha1 at the pin and across every first-parent state pin..head (`git rev-list --first-parent`),
+     and across every `--full-history --all` commit. Fixes sha1s. Report sha1s at trunk = their branch heads.
+  2. Each cited SHA: `git merge-base --is-ancestor` to trunk, AND `git show --stat` to confirm that it touches the cited report.
+     Also list every commit of each report (`git log -- file`) and compare with the draft's Signatures bullet.
+  3. Read the packet, fixes and both reports in full. Diff (a)-(…) against them; signed text must be verbatim (C44 E-1).
+  4. Trace every Data number to a report line or a committed log. Recompute counts from the logs (C43 E-1: a referee's "238" was 239).
+  5. Re-run in a detached worktree of the draft's trunk SHA (scratchpad), symlinking tools/oink/build:
+     n5.py + check_sol2.py + the one-Odd count on each named instance; per-state traces via REFEREE l2_probe.states() when a
+     claim is about states; one probe per referee, diffed against its committed logs.
+  6. Landed check: cmp the RESULTS block against draft lines 3-end with the SHA fill; delete the block + separator and cmp against
+     RESULTS @ land^; the GAPS G-N5-TIME old row (minus " |") must be a prefix of the new one, status open.
+- Things only I know:
+  - This container's clone started stale at C27. Always fetch first, then fast-forward or merge trunk with --no-ff.
+  - Oink is built only by scripts/setup_oink.sh (about 2 min). verify's Oink smoke is NOT RUN without it.
+  - Lead briefs have twice named the wrong SHA: an NJB commit given for the L2 §C (C42 E-1/E-2), and the REFEREE R-N5-TOG l.9
+    5e85c706. One commit can carry two packets' §C (49dc13bf = TOG §C + NJB C.7; 16d27d1c = TOG Add. A + NJB §C.3a).
+  - Revisions often cross with a FAIL report. Check each new sha1 against the previous draft with
+    `git diff --no-index --word-diff` and list what is still open.
+  - Lanes have edited a cited fixes file in place (NJB fixes2 8ceee866 → 647386fb, l-si 90b5fb3). Re-check fixes sha1s at the landing commit.
+  - Commands that need exact settings:
+    - REFEREE l2_pc.py's library row needs NMAX=14 (default 9).
+    - frz_probe / l2_probe / njb_probe / tog_probe `lib` must run at the report's own commit, because the library glob grows.
+    - REFEREE-2 tools run from their own directory with paths ../../../experiments/…
+  - Optional items still open in the referees' own files (the Lead will route them): REFEREE R-N5-TOG l.9 cites 5e85c706; REFEREE-2
+    R2-N5-TOG says 238 where its data give 239.
+
+## Resume point (successor 6)
+- 13:35Z (date -u): handover check pushed 043db45f. GO from the Lead (5/5) 13:36Z.
+- C45 (R36, P-N5-P1) 13:46Z: docs/checker/C45.md PASS at fb1dfb9 (draft c25e2c16; unchanged at 314d220), no E-items; N-1 (d) inner quotes
+  '1 ⇒ 2' vs R18's "1 ⇒ 2"; N-2 'discharged' = joint reading; N-3 (a)/(b) fixed cycle node; N-4 MERGE keeps RL-2 not repeated.
+  Re-runs 7/7 IDENTICAL (lane 5101/5102, REFEREE p1_probe 6102/6103 from scratch/, REFEREE-2 p1_check 6101/6102 + mutation.py from its dir).
+  Next: landed check when R36 lands; C46 = R37 (instances re-run already: rl_a/b/c 35/2 33/2 30/3, tev_cex 27/16, tevlast 11/1, inr2 32/1, all Oink OK, 1 Odd choice).
+- C46 (R37, P-N5-RL) 13:55Z: docs/checker/C46.md PASS at fb1dfb9 (draft 3ee56629; unchanged at eb866134), conditional on R36 landing first.
+  No E-items. N-1 FREE-FREEZE without (h) at t (covered); N-2 MERGE "FALSE"/N-RL-1; N-3 TEV FALSE = lane/L-RED record; N-4 gap map
+  omits EQ-END remark + k0 row; N-5 R2 drafts 592128a4/fa0273de uncited; N-6 R2's 168 level-inf gates has no committed log.
+  Re-runs EXACT: 6 instances; traces inr2 (0,6,29), tevlast (3,7,15), tev_cex (4,23); REFEREE named/lib @b7419da IDENTICAL;
+  REFEREE-2 6 batch logs IDENTICAL + tev_probe. Worktree wtR46 = b7419da. Scratch tools46/trace46.py (uses rl_probe.states()).
+- Worktree wt45 = fb1dfb9 (scratchpad), tools/oink/build symlinked. Scratch tools46/run1.sh = n5 + check_sol2 + odd-choice count.
+- Queue (Lead 13:48Z brief stamp): C45 = R36 (P-N5-P1), C46 = R37 (P-N5-RL), C47 = R38 (P-N5-SCOPE): draft docs/agents/R38-draft.md @ trunk 314d220,
+  sha1 f3b27c34…; packet docs/new/P-N5-SCOPE-box36.md c3f5ed37 (l-new 8483279, pin 8998ee6); fixes e2550755 (l-new eb5477a);
+  REFEREE fb6089b + 560ff4c, §C 257c3d8 (also RL climb numbers); REFEREE-2 6d6e4bc, §C fb6fa69; re-runs wd16_s2 (O-1),
+  oc12_s1 (CN-LAST residue), pftheta_cex_n32 (§7 dead end), referee probe samples.
+
+## Handover check (successor 6)
+Written 2026-10-25 13:26Z (date -u). CHECKER successor 6 (Opus 5.5, D15 / L37), session_01XuHZ95RA84WV7mhDqDjRQ4. Predecessor:
+successor 5, session_012hVNR58N2BoF9EB98pS6HX, handover commit 2694199d. Every answer measured from the repository; commands named.
+
+1. Branch, head, distance to trunk.
+   - Container started on claude/checker at 52a1e489 (C27 Add. 4); `git status`: "up to date with 'origin/claude/checker'" (stale ref again).
+   - Trunk = claude/vibrant-johnson-nxvvxo (docs/NOW.md l.14; `git remote show origin` HEAD branch). There is no `main` (`git fetch origin main`:
+     "couldn't find remote ref main").
+   - `git fetch origin claude/vibrant-johnson-nxvvxo claude/checker`; trunk fb1dfb92. `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`:
+     0 ahead, 1392 behind; `git merge-base --is-ancestor HEAD <trunk>`: yes; handover 2694199d is on trunk.
+   - `git merge --ff-only <trunk>` → fb1dfb92; `git merge --no-ff <trunk>` → "Already up to date" (no merge commit possible: 0 ahead).
+     This file's commit makes 1 ahead, 0 behind.
+2. Open work and next step.
+   - C41-C44 CLOSED (handover table; docs/checker/C41.md..C44.md). Nothing in flight from successor 5.
+   - C45 = R36 (P-N5-P1): NOT STARTED. `sha1sum` at fb1dfb92: docs/agents/R36-draft.md c25e2c16… (= Lead brief), packet b98ca794…,
+     fixes 83ef83b0…, addendum docs/si/P-N5-RL-P1-addendum-box10.md 5c29d93d…. `git log -- docs/agents/R36-draft.md`: 351953cc, fb1dfb92.
+     Next: after GO, the six-step method (pins, cited SHAs with `git show --stat`, read in full, data trace, re-runs in a detached
+     worktree of fb1dfb9, then landed check), report docs/checker/C45.md.
+   - C46 = R37 (P-N5-RL): draft docs/agents/R37-draft.md 3ee56629… (= brief); packet 0a3c70cb…, fixes ac027458…, fixes2 b3e3cd93… (= brief).
+     Next: after R36 lands; same method plus the named re-runs; report docs/checker/C46.md.
+   - Later: R38 (P-N5-SCOPE). No docs/agents/R38-draft.md yet (`ls`). Note: the L-NEW fixes file the Lead waits for already exists:
+     docs/new/P-N5-SCOPE-fixes-box36.md, sha1 e2550755…, l-new eb5477a2 (on trunk). Then OUT and ENT.
+   - Branch heads 13:26Z (`git fetch` + `git merge-base --is-ancestor`): referee 6d480e7d on trunk; referee-2 ba6fac1b on trunk;
+     l-new eb5477a2 on trunk; l-si 6cb8a22c OFF trunk (1 commit: docs/si/N5-STR2-box11.md only, not a cited file).
+   - Oink: tools/ absent at start; scripts/setup_oink.sh run 13:2xZ, exit 0 (log in scratchpad).
+3. GAPS rows. `awk -F'|' '$4 ~ /CHECKER/' docs/GAPS.md`: none; CHECKER owns no row. Relevant on the landing side: G-N5-TIME (major,
+   L-NEW, open). Last UPDATE 11:51Z (R35 landed, CHECKER C44): "Open: NJB = ENT (CONJECTURE; lane reductions EV/EV+/TEV-RED in review as
+   P-N5-RL), REL(S), level −1 fallbacks, out-of-scope fallbacks (P-N5-SCOPE in review; lane NO-ENTRY-A), θ-changes per HN stretch. Lane
+   (unrefereed): Lemma P1 = (P) for one-player games." R36 and R37 each add one append-only UPDATE; landed check: old row (minus " |")
+   is a prefix of the new one, status stays open.
+4. Owner rulings verbatim (docs/DECISIONS.md, `grep -n -F`), status from docs/DECISIONS-INDEX.md (`grep -E "^\| *(D1|D15|D18|L37|L40) "`):
+   - D1 (DECISIONS.md l.7; index "active"): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such
+     claim, including the fleet's own, as wrong until it passes the gauntlet below."
+   - D15 (l.278; index D15 "active", L37 "active"): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+   - D18 (l.333; index D18 "active", L40 "active"): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+     connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+     where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+   For the gate: nothing landed stronger than both signatures (D1); "(Opus 5.5, D15)" labels (L37); PROVED / CONJECTURE / OPEN exact (L40).
+5. Trap found. The R36 draft sha1 that successor 5 recorded as "verified" (9d66adbc… @ 351953c) is stale: the Lead revised the draft at
+   fb1dfb92 (now c25e2c16…). A successor working from the handover's sha1 would check the wrong text. Check: `git log -- <draft>` and
+   `sha1sum` at the brief's trunk SHA, never the handover's number. (Also: trunk is not `main`; and this container's `date -u` read
+   13:26Z while the Lead's brief is stamped 13:35Z, so stamps across sessions can disagree by minutes.)
 
 ## Handover check (successor 5)
 Written 2026-10-25 09:01Z (date -u). Predecessor: successor 4, session_01G2KY2Canmj54k82CwBrZYc, handover commit 4d8ba2b5

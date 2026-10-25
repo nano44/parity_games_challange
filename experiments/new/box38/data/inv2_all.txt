@@ -1,0 +1,14 @@
+A_cw!=o_tauo!=o_INVi_fail 4
+A_cw!=o_tauo!=o_VIOLATION 18
+A_cw!=o_tauo!=o_bases 6
+A_cw=o_tauo!=o_bases 13
+A_cw=o_tauo=o_bases 75
+B_cw!=o_tauo!=o_INVi_fail 18
+B_cw!=o_tauo!=o_NO_lowrise 18
+B_cw!=o_tauo!=o_VIOLATION 60
+B_cw!=o_tauo!=o_bases 27
+B_cw=o_tauo=o_INVi_fail 10
+B_cw=o_tauo=o_VIOLATION 12
+B_cw=o_tauo=o_bases 34
+ex_A_cw!=o_tauo!=o_highrise (1, 24, 'experiments/new/box38/instances/tauw_A_cex_n24.pg', 4, 4, 3, 19, 17, 21)
+skipped_not_C1O 159
