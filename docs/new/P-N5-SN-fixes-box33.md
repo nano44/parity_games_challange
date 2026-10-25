@@ -122,3 +122,15 @@ No verdict differs. The rows of §8 stand, with these final readings:
 Labels after both reports (D18/L40): PROVED (L-NEW successor 13; REFEREE and REFEREE-2, Opus 5.5, D15), pending CHECKER: Lemma OR,
 TC-SPLIT, R-STICK, Corollary SN-PREFIX, Lemma H3H2, Lemma LEAVE (with §7), Corollary ABS-COUNT in the repaired form (2), Lemma WK (with
 §3), Lemma ABS-L. CONJECTURE: ABS-COUNT with d_o − 1 unconditionally. Under review: §2b. OPEN: REL per phase; G-N5-TIME.
+
+## 10. §2b verdicts (REFEREE-2 §B 4c8dcfd; REFEREE Addendum 2 2f465ff; Lead relay 04:31Z; added 04:32Z by date -u). Final section.
+- Lemma H1-DROP, Corollary H1-KEEP, Corollary ABS-COUNT′ (§2b, unchanged): SIGNED by both referees.
+- Joint row 1 (SN-1 = G-SN-1 (a)), final wording of both: "(d_o − 1) + REL_run PROVED for every fallback-free run whose last H1 ε-transition
+  has O ≥ 0; otherwise d_o + REL_run; per phase (d_o − 1)(f + 1) + REL + f + ε⁽⁻¹⁾". SN-1 is reduced to the O_k = −1 case; SN-2 (ε at
+  fallback transitions) stays as the + f. Neither case has ever been observed.
+- REFEREE's §C (3d49e0a) rows are those of §9: SN-1, SN-2, N-SN-1 (its Bellman route via R24 G-TB-1 also closes it), SN-3 (optional;
+  true in both readings), ABS-L with "CONDITIONAL" dropped (premise R29, cf6801e).
+- Final labels (D18/L40): PROVED (L-NEW successor 13; REFEREE and REFEREE-2, Opus 5.5, D15), pending CHECKER: Lemma OR, TC-SPLIT,
+  R-STICK, Corollary SN-PREFIX, Lemma H3H2, Lemma LEAVE (§7), Lemma WK (§3), Lemma ABS-L, Corollary ABS-COUNT (§2 form), Lemma H1-DROP,
+  Corollary H1-KEEP, Corollary ABS-COUNT′ (row 1 above). OPEN: ε-transitions with O_k = −1 and at fallbacks (never seen); REL per phase;
+  G-N5-TIME.
