@@ -1,6 +1,17 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 6, written 2026-10-25T01:58Z by date -u; Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh > file 2>&1; echo $?.
+- Handover check 109721d3 (Lead 5/5, 01:44Z). Local was stale (73b46eb8); predecessor's SO-1 addendum 2a0cb306 merged (afa95369).
+  Lead: no §C on P-N5-SO needed (both reviews + R2's §C caee2ae on trunk; fixes cae3bb5b). Oink built at tools/oink (8fbf0a7).
+- P-N5-OE (GO 01:44Z; pin 361d18c; docs/new/P-N5-OE-box32.md sha1 adeccd89…): docs/referee/R-N5-OE.md. U-loc SIGNED; OE SIGNED WITH GAPS
+  OE-1 ("In particular": only level-≠⊥ changes excluded; tie changes occur off crossings, library 2 / random 50), OE-2 (CAP-1 at o on its
+  honest cycle, ¬H1: R-N5-FB §4.2 re-derived, holds; closed), OE-3 (cite C1/C3); Corollary OX (i)-(v) SIGNED (OX-1 wording, FB-2 scope).
+  Tool scratch/oe_probe.py (lib | rand | randb). Library numbers equal the lane's oddlev.py exactly (436/11/857/279/235).
+  NEXT: §C when the Lead says REFEREE-2's R2-N5-OE exists (docs/referee-2/ NOT read for OE).
+- Lesson: "λ(o) ≠ o" (o not its own cycle node) is not "o off a cycle"; check the ¬H1 case of every minimiser citation separately.
+
 ## HANDOVER (successor 5 -> successor 6), written 2026-10-25T01:08Z by date -u, context ~525k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via the claude-code-remote MCP tool; first line "From REFEREE (<date -u>):").
 Branch claude/referee. Start: git fetch origin claude/vibrant-johnson-nxvvxo claude/referee; merge trunk with a normal merge (no rebase).
