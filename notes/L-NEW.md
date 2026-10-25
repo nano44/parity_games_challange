@@ -2,16 +2,18 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Box 32 in progress (successor 12, session_01SqmdU7H8WiFZUGTRjZi1C3; GO 2026-10-24 23:50Z)
-- DONE (pushed): handover 9cd52937; milestone 4f2e8e34; NO-WAKE FALSE ee763e68; P-N5-U23 fixes file 0274bd53 (sha1 870c63a3…, for R26);
-  packet P-N5-LP 04845d18 (sha1 d2c8121a…); write-up §4b 0eb0abd5; packet P-N5-SO dacf9506 (sha1 deb5ee44…). Both packets sent for pinning.
-- Write-up docs/new/N5-L-box32.md; tools experiments/new/box32 (lcheck.py = all §1-§2 lemmas; socheck.py = TH/SO/J; dormant.py,
-  rrdorm.py, wgap.py; climbs rrclimb.py (wakes), nwclimb.py, mblockclimb.py; out/ is NOT gitignored at this depth: never `git add` it).
-- State of the cores (per phase, o-cyclic 𝒞^1O): Theorem LP ⇒ T ≤ poly·(1 + carries); carries = fallbacks + crossings + σ̄(o) + wakes K;
-  σ̄(o) ≤ d_o(Θ+1), Θ ≤ poly(1+X), J ≤ S_o ⇒ fallbacks ≤ poly(1+X). So only X and K remain. K: 0 in library, 2 max in climbs (rrclimb ~1.6·10⁵
-  candidates); wakes are R → R, in U1 pieces (R24 bounds) or U2/U3/U23 (W-blind band: W compares lengths only when c_w is the top vertex).
-- Pitfalls hit: `pgrep -f X` inside a Monitor matches the waiter itself (use ps + awk on argv); reach_o omits o; Lead relays can queue
-  unseen while I work: call ReadNotifications after each push.
-- Next: bound K (wakes) in U2/U3/U23 (kwlev.py measures W-change levels there); then (X) is the last core.
+- DONE (pushed): handover 9cd52937; milestone 4f2e8e34; NO-WAKE FALSE ee763e68; P-N5-U23 fixes 0274bd53 (sha1 870c63a3…; R26 LANDED eb8e22e);
+  P-N5-LP 04845d18 (sha1 d2c8121a…, pinned bc42f2c; both referees: all signed except DF FALSE → DF′); P-N5-LP fixes 459660c3 (sha1 af17cce0…);
+  P-N5-SO dacf9506 (sha1 deb5ee44…, pinned 1ef02bb, to referees' successors); P-N5-OE db35220e (sha1 adeccd89…, sent for pinning).
+- Write-up docs/new/N5-L-box32.md (§0-§6, 4b, 4c). Tools experiments/new/box32 (lcheck.py = LP lemmas; socheck.py = TH/SO/J;
+  oddlev.py = Lemma OE; orise.py; dormant.py, rrdorm.py, wgap.py, kwlev.py, wakeinfo.py; climbs rrclimb.py (wakes), lemclimb.py, nwclimb.py,
+  mblockclimb.py; out/ is gitignored by experiments/new/box32/.gitignore).
+- State (per phase, o-cyclic 𝒞^1O): T = O(m n⁵ (1 + X + K)) (P-N5-OE Corollary OX, unrefereed). Only X (≡ Z) and K (wakes) remain.
+  K: 0 in library; climbs (~7·10⁵ candidates) max 2 per run; every wake is U3, length-only regime (c_w top), W(y) unchanged (W-tie switch).
+- Expect: §C items on P-N5-LP; referee items on P-N5-SO / P-N5-OE → NEW fixes files, never edit packets.
+- Pitfalls hit: `pgrep -f X` in a Monitor matches the waiter (use ps + awk on argv); reach_o omits o; Lead relays queue unseen while I work
+  (ReadNotifications after each push); my P-N5-LP §0 overstated VJ00 Lemma 5.8 2 ⇒ 3 (false at cycle nodes: R15 side finding) — check
+  R15's side findings before citing VJ00 directions.
 
 ## Resume point (overwritten at handover, LANE-RESTART step 1; successor 11 PARKED after box 31, 2026-10-24 23:21Z by date -u)
 Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Box 31 (Oct 24, 19:53Z-23:21Z). Nothing running at park. Context ~400k;
