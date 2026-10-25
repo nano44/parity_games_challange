@@ -213,6 +213,10 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 - NOT opened: Ye 2011, Math. Oper. Res. 36(4):593-603, DOI 10.1287/moor.1110.0516 (cited only through Scherrer Thm 1).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- (successor 3, box 8) OG′ ("gates into F at k+1 never exceed MF_k = the max level of the gates INTO F at k") FALSE:
+  experiments/red/xing/instances/x31_re24.pg (sha1 49eaf50e, 𝒞^1O), transition 1 -> 2: MF_1 = -1, while gate (4, 8) at state 2
+  has level 22. At state 1, 4 and 8 are in R (the level-22 gate is (8, 14), R -> R); at the arena step R collapses from 21 vertices
+  to {12}, carrying the high level into F. The true form is OFFGATE (bound M_k, all gates). Box 8 §1.
 - (successor 3) CONJECTURE (JUMP-EQ) (box 6 §6.2) FALSE: experiments/red/xing/instances/x31_rx32.pg (sha1 4fe9ec0e), transition
   53 -> 54: w constant since the carry at level 24, σ̄(o) 24 -> 31 (INR), θ rises at level 25, lands THR with θ ≠ w; θ = w only at 55.
   Re-verified n5 55/3, Oink zlk OK, strategies verified. Not needed: Theorem FB (box 7 §4).

@@ -1,4 +1,4 @@
-# Draft RESULTS R27 (Lead, 2026-10-25 01:47Z by date -u) — awaits CHECKER C36; lands in "## Results" after R26, before "## Dead ends"
+# Draft RESULTS R27 (Lead, 2026-10-25 01:47Z by date -u) (rev. 02:01Z: C36 E-1, E-2, N-1, N-2) — awaits CHECKER C36 Addendum 1; lands in "## Results" after R26, before "## Dead ends"
 
 ### R27 [refereed-only] N5 inside a phase: the used-level freeze and a carry bound (Lemma U, HI, UL, GR, NU, Theorem LP), dormant edges and wakes on one-Odd-choice games (DF′, BAND, WAKE), and on those games σ̄(o)-changes, non-tame transitions and fallbacks per phase reduce to θ-changes and crossings (TH, SO, Corollaries LP′, XJ) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C36.md, checker PENDING)
 - Objects (pinned, unchanged during review): packet P-N5-LP docs/new/P-N5-LP-box32.md, sha1 d2c8121a0089add13c9417080cfb57620f592c88,
@@ -18,8 +18,8 @@
   (a) Lemma U (used-level freeze; any game, inside a phase): L_k < ∞ and COARSE_{L_k}(Ξ_{k+1}(v)) = COARSE_{L_k}(Ξ_k(v)) for every v; an
       NU transition leaves Ξ unchanged. (R25 TAME's proof with M_k replaced by L_k; checked line by line by REFEREE.)
   (b) Lemma HI: with L := L_k ≠ ⊥ and y an Even vertex that is not an own cycle node switched at k, for every ℓ > L, (y, z) is a gate edge
-      of level ℓ at k iff at k+1. Its Consequence holds as M_{k+1} ≤ M_k; "=" is unproved when the level-M_k gate edges sit at switched own
-      cycle nodes (HI-1 = G-LP-2); unused downstream.
+      of level ℓ at k iff at k+1. Its Consequence: "≤" (M_{k+1} ≤ M_k) by REFEREE's HI-1 argument (single signature; REFEREE-2 G-LP-2:
+      unproved as written); unused downstream.
   (c) Lemma UL (L_k = ℓ ≥ 0 is never attained by a relevant switch of the rank-ℓ vertex u_ℓ), Lemma GR (ℓ-goodness: (a) if L_k = ⊥ or
       L_k ≤ ℓ then G_ℓ(k) ⊆ G_ℓ(k+1); (b) if L_k = ℓ is attained by a relevant Even switch of y then y ∉ G_ℓ(k), y ∈ G_ℓ(k+1)), Lemma NU (a
       run of consecutive NU transitions has ≤ Σ_{y Even}(deg(y) − 1) ≤ m − n transitions).
@@ -55,21 +55,22 @@
 - Honest limits: (i) Lemma U, HI, UL, GR, NU and Theorem LP hold on every game; DF′, BAND, WAKE, LP′, TH, SO and XJ are on 𝒞^1O.
   (ii) Theorem LP bounds nothing by itself: it moves the count to rises (carries) and ε. (iii) X and K per phase are OPEN, so G-N5-TIME
   stays open; the phase count (Lemma Φ) is unrefereed. (iv) The bounds are loose in d_o and n; the data show neither a growth law nor
-  tightness beyond J = S_o (REFEREE-2). (v) DATA on K: every wake found (L-NEW climbs) is a U3 W-tie switch in the length-only regime,
-  max 2 per run (lane DATA, not re-checked by the referees).
+  tightness beyond J = S_o (REFEREE-2). (v) DATA on K: nowake_cex_n32 has one wake, a U3 W-tie switch in the length-only regime
+  (P-N5-LP §5); L-NEW's climbs found at most 2 wakes per run (docs/new/N5-L-box32.md, lane DATA, not re-checked by the referees).
 - Data (DATA, not proof; every probe asserts one Odd choice vertex where 𝒞^1O): REFEREE lp_probe.py (own code): 228 library 𝒞^1O files
   (5,482 in-phase transitions), 4,500 random 𝒞^1O runs, 1,500 random general games: 0 failures of §1-§2; DF 170 failures (all own W-cycle
   nodes), DF′ 0; so_probe.py: 234 library files (257 phases with λ(o) ≠ o) + 3,000 random runs: 0 failures of TH, SO, XJ (max Θ 51,
   S_o 49). REFEREE-2 (own code): 8,284 runs on LP, 0 violations of the signed statements (176 DF failures, all own-cycle-node length-only
   edges); SO batch 4,502 runs + 6 climbs (12,000 fully checked runs aimed at S_o − d_o(Θ + 1), J − S_o and θ-fixed σ̄(o) changes): 0
   violations, best margins −1 and 0; 3,915 relevant σ̄(o) changes with θ fixed, the old choice leaving the minimiser set every time.
-  L-SI socheck.py on its climb bests and the named set: 0 failures (max J 18 ≤ S_o 19, n 48); Lead socheck on jcl_zcl_cu_n48: J 17 ≤ S_o
+  L-NEW's socheck.py, run unmodified by L-SI (docs/si/N5-C-box8.md §8), on L-SI's climb bests and the named set: 0 failures (max J 18 ≤ S_o 19, n 48); Lead socheck on jcl_zcl_cu_n48: J 17 ≤ S_o
   18 = d_o.
 - Signatures: REFEREE docs/referee/R-N5-LP.md (referee 4957b2c; Part 2 = P-N5-SO dcb4119; §C bb6f60f; SO-1 addendum 2a0cb30): U, UL, GR,
   NU, Theorem LP, BAND, LP′ SIGNED; HI SIGNED, Consequence WITH GAP HI-1; DF NOT SIGNED (FALSE), DF′ SIGNED; WAKE SIGNED WITH GAP W-1
   (closed); SO SIGNED; TH SIGNED (SO-1 closed in the addendum); XJ SIGNED WITH GAP XJ-1. REFEREE-2 docs/referee-2/R2-N5-LP.md (referee-2
   4949d6c; §8 = P-N5-SO ba67f41; combined §C caee2ae): U, HI, UL, GR, NU SIGN (HI Consequence G-LP-2); Theorem LP SIGN (N-LP-1); DF NOT
   SIGNED, DF′ SIGN; BAND SIGN; WAKE SIGN WITH GAPS (G-LP-1, closed); LP′ SIGN; TH SIGN (N-SO-1); SO SIGN WITH GAPS (G-SO-1, closed;
-  N-SO-3); XJ SIGN WITH GAPS (N-SO-2). §C: no disagreement. Joint gap map (REFEREE §C, REFEREE-2 §C.2): DF FALSE, DF′ signed by both;
+  N-SO-3); XJ SIGN WITH GAPS (N-SO-2). §C (REFEREE: P-N5-LP; REFEREE-2: both): no disagreement. Joint gap map: P-N5-LP rows REFEREE §C and REFEREE-2 §C.2; P-N5-SO rows
+  REFEREE-2 §C.1-§C.2 only (REFEREE compared Part 1 only; both referees signed P-N5-SO independently with gaps listed): DF FALSE, DF′ signed by both;
   HI-1 = G-LP-2; W-1 = G-LP-1 (closed); N-LP-1 (wording); SO-1 (closed, two signatures); XJ-1 = N-SO-2; G-SO-1 (closed), N-SO-1, N-SO-3.
 - TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.

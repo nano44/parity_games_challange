@@ -1,0 +1,29 @@
+CAP1_checks(lam(o)!=o): 100
+J_total: 13
+K_total: 0
+OE_checks(no crossing): 48
+OE_crossings: 38
+OE_crossings_with_O>E: 15
+OE_relevant_sbar(o)_changes(no crossing): 11
+OX_phases: 7
+S2_checks: 32
+S3_checks(H1 at k): 32
+ULOC_checks: 2752
+ULOC_strictly_below_L_k: 2353
+eps_total: 15
+f_total: 2
+nontame_transitions: 13
+phases: 7
+phases_J_eq_X>0: 1
+rises_total: 9
+runs: 3
+transitions: 97
+transitions_in_phase: 86
+max(J-X)+1000: 1000
+max(eps-X)+1000: 1000
+max_J: 8
+max_T_phase: 50
+max_X: 22
+max_eps: 8
+max_rho: 6
+RESULT OK violations=0
