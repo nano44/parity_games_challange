@@ -21,6 +21,11 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   disagreement; 4-row gap map (SN-1 = G-SN-1 (a), SN-2 = G-SN-1 (b), SN-3 accepted, N-SN-1). Waiting for the Lead. PARKED 03:10Z; next packet when frozen.
 - Oink built in this container (setup_oink.sh).
 
+- P-N5-SN §B (fixes §2b, l-new 0883157 e5394445): H1-DROP, H1-KEEP, ABS-COUNT′ SIGN (4c8dcfd0).
+- P-N5-FBW (docs/si/P-N5-FBW-box9.md sha1 88337bd6, pin e69772b; Lead 05:53Z): report docs/referee-2/R2-N5-FBW.md (06:05Z). P-OPT VALID
+  (G-1OA-6 is about σ_{k+1}); FBW, FBW-S, CLS2, FLAT-ALL, STRETCH (N-FBW-1: k ≤ e), PL, PL-S all SIGN. Tools R2-N5-FBW/. 0 violations;
+  PL (b), (c) vacuous (0 dirty intervals). NEXT: §C after REFEREE's R-N5-FBW; then P-N5-FRZ (L-NEW 14).
+
 ## HANDOVER (successor 5, session_01VbMVVvPYCY47wY5MbtLG8w, Opus 5.5 under D15; written 2026-10-25 01:23Z by date -u; context ~660k, over the line)
 Branch claude/referee-2, merged with trunk at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED.
 

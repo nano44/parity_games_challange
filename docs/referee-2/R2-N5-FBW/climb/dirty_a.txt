@@ -1,0 +1,4 @@
+start 37
+488 38
+TOTALS {'runs': 2400, 'transitions': 80742, 'even_fallbacks': 48395, 'POPT_single_switch_checks': 2322962, 'FBW_gates': 86580, 'FBW_tight_l>=0': 60301, 'FBWS_fallbacks': 47387, 'scope_runs': 2564, 'CLS2_fallbacks': 47387, 'CLS2_THR_u*!=none': 47383, 'FLAT_checks': 47383, 'STRETCH_tail_checks': 49476, 'PL_blocks': 1486, 'PL_dirty_intervals': 0, 'FBW_case_b': 7, 'FBW_l>delta': 7, 'CLS2_EQ': 4}
+RESULT OK violations 0
