@@ -1,0 +1,5 @@
+best_score                 0
+fb_EQ_M-1                  30773
+iters                      663555
+FAILS 0
+exit 0

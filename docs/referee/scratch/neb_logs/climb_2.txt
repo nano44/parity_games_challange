@@ -1,0 +1,14 @@
+BAND_gate_viol_at_base     2848
+BAND_gate_viol_later       8169
+BAND_rise_viol             5925
+CHAIN_chk                  516959
+HIGH_chk                   37299
+NOENT_states               20
+RISE_events                449666
+best_score                 28
+breaks                     421126
+breaks_A!=                 15212
+breaks_B!=                 405914
+iters                      243979
+FAILS 0
+exit 0

@@ -1,0 +1,203 @@
+{
+ "games": 17190976,
+ "runs": 17190976,
+ "c": {
+  "wakes": 0,
+  "nw_checked": 4378,
+  "NOWAKE_FAIL": 0,
+  "census_mismatch": 0,
+  "U2_st": 4,
+  "U3_st": 0,
+  "U23_st": 365956,
+  "U2_sw": 0,
+  "U3_sw": 13932,
+  "U2_viol": 0,
+  "U3i_viol": 0,
+  "U3ii_viol": 0,
+  "U3iii_viol": 0,
+  "cor_viol": 0,
+  "phases": 1397614,
+  "rise_sigmabar_o": 12
+ },
+ "mx": {
+  "maxKW": 2,
+  "maxE": 1,
+  "maxf": 1,
+  "maxchg": 3,
+  "maxK": 0,
+  "maxSo": 1,
+  "maxslack": -4
+ },
+ "ex": {
+  "maxKW": [
+   {
+    "prio": [
+     0,
+     2,
+     3,
+     4,
+     5
+    ],
+    "owner": [
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "succ": [
+     [
+      1,
+      3
+     ],
+     [
+      4
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0
+     ]
+    ],
+    "start": null,
+    "v": 2
+   }
+  ],
+  "maxE": [
+   {
+    "prio": [
+     0,
+     2,
+     4,
+     6,
+     8
+    ],
+    "owner": [
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "succ": [
+     [
+      3,
+      4
+     ],
+     [
+      0
+     ],
+     [
+      0
+     ],
+     [
+      4
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "start": null,
+    "v": 1
+   }
+  ],
+  "maxK": [
+   {
+    "prio": [
+     0,
+     2,
+     4,
+     6,
+     8
+    ],
+    "owner": [
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "succ": [
+     [
+      0,
+      4
+     ],
+     [
+      0
+     ],
+     [
+      0
+     ],
+     [
+      0
+     ],
+     [
+      0
+     ]
+    ],
+    "start": null,
+    "v": 0
+   }
+  ],
+  "maxSo": [
+   {
+    "prio": [
+     0,
+     2,
+     4,
+     6,
+     8
+    ],
+    "owner": [
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "succ": [
+     [
+      3,
+      4
+     ],
+     [
+      0
+     ],
+     [
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2
+     ]
+    ],
+    "start": null,
+    "v": 1
+   }
+  ]
+ },
+ "secs": 3301.7,
+ "options": {
+  "mode": "exh",
+  "args": [
+   "5"
+  ],
+  "even_maxdeg": 2,
+  "o_deg": 2,
+  "no_forced": true,
+  "cyclic_only": true,
+  "all_starts": false,
+  "every": 4,
+  "offset": 3
+ }
+}

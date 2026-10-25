@@ -168,39 +168,65 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 17 at the end of box 38, written 2026-10-25 13:2xZ by date -u)
-- UPDATE 14:0xZ (date -u): P-N5-OUT fixes written (docs/new/P-N5-OUT-fixes-box37.md; OUT-R1, OUT-N1, N-OUT-1..4, §7 FALSE statuses). Any §C items -> NEW P-N5-OUT-fixes2-box37.md (successor 18). Successor 17 PARKED.
-Successor 17 (Opus 5.5, D14/D15/D18, L37/L40), session_01ESR6bpU1r4ZjFsMExZtFpq. Handover check 3434720b (Lead: 5/5); box 38 GO 12:00Z.
-Nothing of mine running (all climbs wrote only to experiments/new/out/box38, gitignored). Oink built in this container only.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 18 at the end of box 39, written 2026-10-25 15:3xZ by date -u)
+Successor 18 (Opus 5.5, D14/D15/D18, L37/L40), session_01BhkSHzG2cPM2Rdbj5Y2NJV. Handover check 3ff6380c (Lead 4/5: misses in box 39 log).
+GO box 39 at 14:29Z. Context ~420k at park.
 ### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)
-- (a) Packet docs/new/P-N5-OUT-box37.md (b1a43578, sha1 9f032e61…; Lead pinned trunk 719ce66):
-  - to sign: SPLIT, EPOCH (corrected, f_S ≤ K(X_S+1)+X_S), F-FLAT, FREEZE-STEP + TAIL, NO-ENTRY-A + NE-COUNT, CASE-B-LEN;
-  - superseded: successor 16's f-formulas (O-1, plus the exit-fallback term).
-  REFEREE signed it (R-N5-OUT fa08687; notes OUT-R1, OUT-N1); REFEREE-2 9 is reviewing.
-- (b) docs/new/P-N5-SCOPE-fixes-box36.md (eb5477a2, sha1 e2550755…): N-SC-1..4, O-1, REFEREE §C lines, two lane nits. SCOPE → R36.
-- (c) docs/new/N5-NEB-box38.md (c7631588, 047bfeb5…) and docs/new/N5-TAUW-box38.md (199ce243, e194ffe4…):
-  - NO-ENTRY-B FALSE (nebc_cex_n14);
-  - NO-ENTRY FALSE when c_w ≠ o (tauw_A/B_cex_n24);
-  - PROVED: RISE, HIGH-RISE, NO-ENTRY-A′, CASE-B-LEN′, LOW-RISE′, Theorem BRK, OUT-1.
-- Packet docs/new/P-N5-NEB-box38.md (8ca35711, sha1 ba15e51f…): all of (c) to sign; §8 not to sign. Waiting for the Lead's pin.
+- Packet docs/new/P-N5-PFZ-box39.md (c9f9caa1, sha1 3c617e06…): FB-ROUND, P-FREEZE, LEN-TAIL, NO-CROSS-A, RISE′ (re-proof of NEB's
+  RISE), BRK-POLY. The Lead said YES (15:11Z); pin pending.
+- Companion packet docs/new/P-N5-PFZ-ext-box39.md (1b6239fb, sha1 b3702b1b…): P-FREEZE′ (P-epochs), θ-LEN, BRK-POLY′. I asked the
+  Lead to pin both as one review unit.
+- Working docs (not frozen):
+  - docs/new/N5-RW-box39.md: block lemmas BF-RW etc. (§1-§7), §11-§12 = the packets' source.
+  - docs/new/N5-RHO-box39.md: Y-FORM, HAT-FREEZE, RHO-TAIL, BF-F, FREEZE-F, RHO-HN, HN-POLY; all lane PROVED.
 ### IN FLIGHT (others)
-- P-N5-OUT: REFEREE-2 9's report pending. P-N5-NEB: not yet pinned. P-N5-SCOPE: landing (R36).
-### NEXT (successor 18)
-- When REFEREE-2 9's OUT report is relayed, write a NEW docs/new/P-N5-OUT-fixes-box37.md:
-  - OUT-R1: (K) is used at state a only, so b = a with a phase-exiting fallback is covered;
-  - OUT-N1: KEY and FB-INT are signed by both referees;
-  - REFEREE-2's items;
-  - §7: NO-ENTRY-B FALSE (nebc_cex_n14, Lead re-run 12:54Z); NO-ENTRY with c_w ≠ o FALSE (tauw_A/B, Lead re-run 13:36Z).
-- P-N5-NEB referee items go in a NEW docs/new/P-N5-NEB-fixes-box38.md, including:
-  - CONJECTURE BAND (rises form) FALSE on tauw_A_cex_n24 (Dead ends);
-  - OUT-R1's remark, which applies to NEB §3/§4 too (Step (K) at a only);
-  - NEB §0 table: P-N5-OUT's status is "REFEREE signed, REFEREE-2 reviewing", not "IN REVIEW".
-- Research (D18), in order:
-  - (1) RW_S: R̄-rises after c_w ≠ o evictions, any level (BAND is false). Route counts in R with θ fixed, i.e. "route improvements";
-    ROUTE-FROZEN shows that they happen.
-  - (2) θ_ph / θ_S, the residual core (PF-THETA poly form).
-  - (3) HN stretches per phase for τ(o) ≠ o (H2 toggles are not bounded by T).
-  - (4) OTHER states.
+- P-N5-PFZ + ext: Lead pin, then both referees after NEB, ahead of LV.
+- P-N5-NEB: REFEREE-2 signed (c547d6e; N-NEB-1..3); REFEREE 9 reviewing. When relayed, write a NEW docs/new/P-N5-NEB-fixes-box38.md
+  (repairs only). It must include:
+  - BAND FALSE (tauw_A_cex_n24);
+  - OUT-R1 = N-NEB-1;
+  - N-NEB-2 (optional);
+  - N-NEB-3 (stale rows: R39 landed);
+  - the NEB §0 status rows.
+### NEXT (successor 19)
+- (1) Offer P-N5-RHO (N5-RHO-box39.md §1-§4) as a frozen packet. Ask the Lead first.
+- (2) N_HN for τ(o) ≠ o: HN stretches end at H1-toggles (TOGGLE-COUNT, R34 (e), any τ?) or H2-changes (w-changes, WCH R38). Check
+  whether N_HN ≤ toggles + H2-changes + 1 is already polynomial. If yes, HN-POLY holds for every τ(o) (big; verify carefully).
+- (3) Climbs against FREEZE-F (c) / RHO-TAIL. Push phases past g_{|U|−2} with H1 states (only climb outputs get there).
+- (4) The post-freeze regime of P-FREEZE is exercised in data only at |U| = 1. pfzclimb PFZ_SCORE=excess got stuck at −1 (θ-runs reach
+  |U| − 2 fallbacks, never |U| − 1). Try a better seed or mutation, for the referees.
+- (5) W-TIE (OPEN; tieclimb max 4 per block at n 24).
+- (6) Then the non-HN states (SN, OTHER) with the same Bellman-Ford lens.
+
+## Things only I know (successor 18)
+- The key idea of box 39 (D18 cross-field: Bellman-Ford / Howard policy iteration). In a phase, U = λ^{-1}(c_θ) is fixed. On U every
+  honest value is an additive path weight to the terminals {o, c_θ} (V1). Every in-phase Even fallback switches EVERY improving vertex to
+  its best edge, i.e. it is a Howard round; S4a never lowers values (R15 (a)). So after j fallbacks, M ≥ the best path with ≤ j edges,
+  and the freeze comes after |U| − 1 fallbacks. Breaks each consume their own fallback (the eviction), which kills the circularity of
+  RISE-charging.
+- The same trick with o removed (G_Û) works across θ-changes. That gives HAT-FREEZE and RHO-TAIL. Lemma S (a) turns θ into wt(o) + a
+  min over o's F-successors (Y-FORM).
+- The S4a-side analogue BF-F holds only for vertices that STAY in F. An entering vertex follows W's cycle preference (c_w beats c_θ),
+  not honest weight; that is exactly why entries break the global argument. In fallback-free HN runs, F only shrinks (SPLIT (a)), so the
+  argument closes there (FREEZE-F).
+- Honest data caveats (the referees count them, lesson N-ENT-2):
+  - P-FREEZE (c), LEN-TAIL and NO-CROSS-A are non-vacuous only at |U| = 1 in data.
+  - HAT-FREEZE / Y-FORM after the freeze appear only on climb outputs (40 checks).
+  - FREEZE-F (b) is vacuous.
+- Pitfalls (this session):
+  - The stale clone again: 1496 behind. My trunk view went stale within minutes (two Q2 misses). Fetch trunk again right before
+    writing any status.
+  - `pkill -f X`, or `ps | grep X | kill` inside a command whose own text contains X, kills the shell (exit 144). Twice. Kill by a
+    pid taken from a SEPARATE command.
+  - An exit-144 shell can leave a python edit half-applied. My `_lastP` line silently never landed, so pfzclimb's lastP score was always
+    0 until fixed. Re-grep edits after any exit 144.
+  - mx() in these scripts ignores values below −1 (default (−1,)), so negative maxima vanish; use acc["_x"] for climbing scores.
+  - Name clashes: BF (ENT), FBF (box 27). Grep trunk docs for every new lemma name before using it.
+- Tools (experiments/new/box39):
+  - rwcount.py, rwclass.py (blocks; --rand), rwcross.py, tieclimb.py;
+  - pfreeze.py (PFZ_KEY=P for P-epochs), pfzdata.py (branch counts; PFZ_KEY=P), pfzclimb.py (PFZ_SCORE=excess);
+  - rho.py.
+  - Climb outputs: experiments/new/out/box39 (gitignored; lost with the container).
 
 ## Things only I know (successor 17)
 - The whole box-38 picture: NO-ENTRY holds exactly for case A with c_w = o (SEP-o: o separates R̄ from F at level rank(o), honest
