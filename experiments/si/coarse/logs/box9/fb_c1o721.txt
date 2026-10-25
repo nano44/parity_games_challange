@@ -1,0 +1,1 @@
+c1o 721 2147 {'tr': 968, 'fb': 119, 'inr': 20, 'blocks': 822, 'maxfb_block': 1, 'viol_i': 0, 'viol_ii': 0, 'viol_iii': 0, 'viol_iv': 0, 'phases': 4388, 'worst_ratio': 1.0, 'max_fb_phase': 1, 'max_inr_phase': 2} []
