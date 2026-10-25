@@ -8,7 +8,7 @@
   Lemma GR:  at an Even-attained L_k = l >= 0, the attaining y goes from l-bad to l-good; G_l never loses a vertex at a transition with L_k <= l.
   Theorem LP: per phase T <= (m - n + 1)(T_rel + 1), T_rel <= (n + 1)(rho + 1) n (n - 1) + eps, rho = rises in the relevant subsequence,
              eps = relevant transitions whose level is attained only by Odd changes.
-  CONJECTURE NO-WAKE: consecutive relevant transitions k < k' (only NU between), no fallback in [k, k'], R constant on [k, k'+1]:
+  (NO-WAKE), FALSE (instances/nowake_cex_n32.pg; a failure = a WAKE, K counts them): consecutive relevant transitions k < k' (only NU between), no fallback in [k, k'], R constant on [k, k'+1]:
              every relevant Even switch at k' has level <= L_k.
   Census per phase: T, NU, f, S_o (σ̄(o) changes), S_o_rel (those with λ(o) != o), X (R changes), rho, eps, and rises split by cause (fallback / σ̄(o) / crossing / other).
 Usage: lcheck.py game.pg ... | --rand N lo hi seed"""
@@ -64,7 +64,7 @@ def check(g, acc, name):
         j = k
         while j + 1 < len(info) and info[j + 1] is not None: j += 1
         ph = info[k:j + 1]; T = len(ph); rel = [i for i, x in enumerate(ph) if x["L"] != -2]
-        rho = eps = 0; cause = {}
+        rho = eps = wakes = 0; cause = {}
         for t in range(len(rel)):
             x = ph[rel[t]]
             if all(s[0] == "O" for s in x["src"]): eps += 1
@@ -76,7 +76,7 @@ def check(g, acc, name):
             nofb = not any(s["fb"] for s in seg); nox = not any(s["x"] for s in seg)
             if nofb and nox:
                 bump(acc, "NW_checked")
-                if Ev > p["L"]: bump(acc, "NOWAKE_FAIL"); acc.setdefault("ex_NW", (name, k + rel[t]))
+                if Ev > p["L"]: bump(acc, "NOWAKE_FAIL"); acc.setdefault("ex_NW", (name, k + rel[t])); wakes += 1
             if x["L"] > p["L"]:
                 rho += 1
                 c_ = "fb" if not nofb else ("so" if Ev <= p["L"] else ("x" if not nox else "OTHER"))
@@ -85,7 +85,7 @@ def check(g, acc, name):
         if Trel > (n + 1) * (rho + 1) * n * (n - 1) + eps: bump(acc, "LP_FAIL_rel")
         if T > (m - n + 1) * (Trel + 1): bump(acc, "LP_FAIL_nu")
         if eps > Sor: bump(acc, "EPS_GT_SOrel")
-        if rho > 2 * f + Sor + 2 * X: bump(acc, "RHO_GT_2f_SOrel_2X")
+        if rho > 2 * f + Sor + 2 * X + wakes: bump(acc, "RHO_GT_2f_SOrel_2X_K")
         for key, val in (("max_T", T), ("max_rho", rho), ("max_So", So), ("max_So_rel", Sor), ("max_nu", nu), ("max_X", X)):
             if val > acc.get(key, (0,))[0]: acc[key] = (val, dict(n=n, T=T, nu=nu, f=f, So=So, So_rel=Sor, X=X, rho=rho, eps=eps), name)
         k = j + 1

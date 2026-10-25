@@ -1,4 +1,4 @@
-# N5 on 𝒞^1O, box 32: the coarse freeze at the USED level, and one conjecture (NO-WAKE) that would merge the open cores
+# N5 on 𝒞^1O, box 32: the coarse freeze at the USED level; NO-WAKE (would have merged the open cores) is FALSE in U3
 L-NEW successor 12 (Opus 5.5, D15/D18). GO 2026-10-24 23:50Z (Lead); first version pushed 2026-10-25 00:1xZ by date -u (container clock
   runs slow; stamps only from date -u).
 Labels (L40): PROVED (by whom), READING, CONJECTURE, FALSE, OPEN, DATA. Every PROVED here is L-NEW's, unrefereed.
@@ -20,8 +20,9 @@ Labels (L40): PROVED (by whom), READING, CONJECTURE, FALSE, OPEN, DATA. Every PR
 | Theorem LP: a phase has T ≤ (m − n + 1)(T_rel + 1) transitions, T_rel ≤ (n + 1)(ρ + 1)·n(n − 1) + ε (ρ = rises of the used level, ε = Odd-only levels) | PROVED | §2 |
 | Lemma DF (𝒞^1O): after an S4a step a dormant gate edge (y, z) has σ(y) ∈ R (never F → F, never F → R) | PROVED | §3 |
 | Lemma BAND (𝒞^1O, both frames in route form): a dormant R-R gate edge has its Ξ-level strictly between rank c_θ and rank c_w | PROVED | §3 |
-| CONJECTURE NO-WAKE: away from fallbacks and crossings, S4a never takes a dormant edge above the previous used level | CONJECTURE (DATA: 0 failures) | §4 |
-| Corollary: NO-WAKE ⇒ each phase on 𝒞^1O has O(m·n⁵·(1 + S_o + X)) transitions (S_o = σ̄(o) changes, X = crossings), with R25 FB and J1 | PROVED given NO-WAKE | §4 |
+| (NO-WAKE) "away from fallbacks and crossings, S4a never takes a dormant edge above the previous used level" | FALSE (instances/nowake_cex_n32.pg, a U3 state) | §4 |
+| Lemma WAKE: a wake goes R → R (a wake into F is a crossing); in route form it lies in a U1 piece (covered by R24 Theorem U1) | PROVED | §4 |
+| Corollary LP′: each phase on 𝒞^1O has O(m·n⁵·(1 + S_o + X + K)) transitions (S_o = relevant σ̄(o) changes, X = crossings, K = wakes), with R25 FB and J1 | PROVED | §4 |
 | What this does to (NH'), (E), (K_W), J, NFB-O | READING | §5 |
 
 ## 0. The gate-level freeze is vacuous where it is needed (DATA)
@@ -149,35 +150,67 @@ Proof.
 - So in route form a dormant R-R edge needs the U1 order (c_w more relevant than c_θ) and lies in the band between them. In P3′ pieces
   (c_θ more relevant) there is none. This is the two-frame band of box 26 §7.3, now localised on edges.
 
-## 4. CONJECTURE NO-WAKE and its consequence
-**CONJECTURE NO-WAKE (L-NEW).** On 𝒞^1O, let k < k′ be consecutive relevant transitions of one phase (only NU transitions between) with no
-fallback in [k, k′] and R constant on [k, k′ + 1]. Then every relevant Even switch at k′ has level ≤ L_k.
-- In words: away from fallbacks and crossings, S4a never wakes a dormant edge. A rise of the used level then comes only from σ̄(o).
-- DATA: §6 (0 failures on every checked step of the 220-file library, 3,000 random 𝒞^1O runs and the climbs of §6).
-- Why it might be true (READING). Waking (y, z) at k′ needs W*(z) to overtake W*(σ_{k′}(y)) in the new arena. By Lemma HI every edge that
-  enters the arena between k and k′ has Ξ-level ≤ L_k. Lemma DF puts the dormant edge on R; Lemma BAND (route form) puts it in the band
-  (c_θ, c_w) with equal W path sets, where W compares lengths only; and in the U1 order every R-route difference visible to W is visible to
-  Ξ at the same level, so new edges of Ξ-level ≤ L_k change W only at levels ≤ L_k or in length. A proof needs a coarse one-player optimality
-  lemma (no edge W-improving above L ⇒ the arena optimum keeps COARSE_L(W)) and the mixed cases (one of a, z in F; U2 / U3 / U23). OPEN.
-**Corollary (PROVED given NO-WAKE, L-NEW).** On 𝒞^1O, in a phase with f fallbacks, S_o transitions that change σ̄(o) and X crossings:
+## 4. Wakes
+A WAKE is a relevant Even switch at k′ of level > L_k, where k < k′ are consecutive relevant transitions of one phase (only NU transitions
+between) with no fallback in [k, k′] and R constant on [k, k′ + 1]. K := the number of transitions k′ of the phase with a wake.
+**(NO-WAKE), K = 0, is FALSE (L-NEW, box 32).** It held on every library step (§6), and climbs on dormant-edge pressure did not break it,
+but the climb rrclimb.py (fitness: failures, then dormant R → R edges outside route form) broke it in ~10³ candidates from
+u1flat_best_n32: experiments/new/box32/instances/nowake_cex_n32.pg (n 32, sha1 3a56e3fb94f3c84684d01fc87ff3c7e9a8d7eb3f, one Odd choice
+vertex o = 27; n5.py 9 iterations, 2 fallbacks; check_sol2.py "zielonka(oink zlk) OK strategies verified").
+- Transitions 0 and 1 are S4a steps of one phase with R constant (|R| = 30). The state is U3: the honest frame is in route form with
+  c_θ = o (rank 15), and c_w = vertex 13 is the TOP-rank vertex (rank 31).
+- L_0 = 26. At transition 1, y = 11 switches 22 → 9 at Ξ-level 30 (> 26). (11, 9) is a gate edge at 0 and at 1 (Lemma HI), so S4a declined
+  it at 0.
+- Mechanism: with c_w the top vertex every W path set is empty, so W compares LENGTHS only (W(22) = (13, ∅, 7), W(9) = (13, ∅, 9) at 0 and
+  1). At transition 1 the same S4a step shortens 9's route (switches at 14 and 15), W(9) becomes (13, ∅, 7) = W(22), and the tie-break takes
+  9. The honest frame meanwhile sees the level-30 difference all along. This is the W-blind band of Lemma BAND, pushed to its extreme
+  (nothing above c_w), outside route form.
+**Lemma WAKE (PROVED, L-NEW).** Let y: a → z be a wake at k′ (definition above; level ℓ > L_k). Then
+a ∈ R and z ∈ R.
+Proof.
+- (y, z) is a gate edge at k′ of level ℓ > L_k. Going back through the NU transitions between k and k′ (Ξ is fixed there and only own
+  cycle nodes switch; y is not an own cycle node, since its
+  switch is relevant) and through k itself, Lemma HI makes it a gate edge of the same level at every step of [k, k′]; in particular it is
+  an edge of the arena H_{k′−1}, and the transition k′ − 1 → k′ is an S4a step. Lemma DF at that step: a = σ_{k′}(y) ∈ R.
+- If z ∈ F_{k′} = F_{k′+1} (R is constant), then y's σ_{k′+1}-play enters F and never reaches o, so y ∉ R_{k′+1}. But y ∈ R_{k′} (its
+  play passes a ∈ R) and R_{k′} = R_{k′+1}. So z ∈ R. □
+- So every wake is an R → R switch at a vertex y ∈ R. (Wakes into F are crossings, counted by X: the one such rise in the library,
+  fbref_cex_n32 transition 52, is of this kind.)
+- Route form (both frames), by Lemma BAND: a woken R → R edge has level ℓ ∈ (rank c_θ, rank c_w), so the state is in the U1 order, i.e. in
+  a U1 piece, and the wake is an R-changing transition of that piece, of which RESULTS R24 Theorem U1 allows O((f + 1)|R|³).
+- Outside route form, a wake is an R-changing transition of a U2 / U3 / U23 stretch, i.e. one of the transitions counted by the
+  consequences of CASC-U2 / CASC-U3 (N5-U23-box31.md §1-§2: ≤ f + K_W + E + (K_W + f + E + 1)(2|R| − 3) per stretch). So K is bounded
+  by the existing open cores (E) and (K_W), and nowake_cex_n32 shows it is not 0.
+- DATA (rrdorm.py, LIB): finite dormant R → R edges occur at 40 checked steps: 35 in route form, ALL in the band with c_w above c_θ
+  (u1flat_best_n32 and others), 5 in U23 (nr_u23_n32), c_w above c_θ. None is woken in the library.
+**Corollary LP′ (PROVED, L-NEW).** On 𝒞^1O, in a phase with f fallbacks, S_o relevant σ̄(o) changes (λ(o) ≠ o), X crossings and K wakes:
 - (i) ε ≤ S_o: an Odd-only used level is a relevant Odd change, and every Odd vertex but o has one successor.
-- (ii) ρ ≤ 2f + S_o + 2X. A rise between consecutive relevant k < k′ has a fallback in [k, k′] (each transition lies in ≤ 2 such intervals),
-  or a crossing in [k, k′] (≤ 2X), or else, by NO-WAKE, its new level comes from σ̄(o) at k′ (≤ S_o).
-- (iii) With RESULTS R25: f ≤ n_E(2n − 1)(J + 1) + J (Theorem FB) and J ≤ S_o (J1: a non-tame transition switches σ̄(o)).
-- (iv) Hence T ≤ (m − n + 1)·((n + 1)(2f + S_o + 2X + 1)·n(n − 1) + S_o + 1) = O(m·n⁵·(1 + S_o + X)).
+- (ii) ρ ≤ 2f + S_o + 2X + K. A rise between consecutive relevant k < k′ has a fallback in [k, k′] (each transition lies in ≤ 2 such
+  intervals), or a crossing in [k, k′] (≤ 2X), or its new level comes from σ̄(o) at k′ (≤ S_o), or else it is a wake.
+- (iii) With RESULTS R25: f ≤ n_E(2n − 1)(J + 1) + J (Theorem FB) and J ≤ S_o (J1: a non-tame transition switches σ̄(o); a σ̄(o) change at an
+  own cycle node o changes no Ξ value, Lemma U, so it cannot be non-tame).
+- (iv) Hence T ≤ (m − n + 1)·((n + 1)(2f + S_o + 2X + K + 1)·n(n − 1) + S_o + 1) = O(m·n⁵·(1 + S_o + X + K)).
 
 ## 5. What this does to the open cores (READING, L-NEW)
-- R21 bounds a phase by O(n⁴(1 + X + O)); (NH') splits O into (E), (K_W), NFB-O and J (N5-U23 §3, R24, R25). Under NO-WAKE, Theorem LP
-  replaces all of them by ONE quantity, S_o, the number of σ̄(o) changes per phase, next to X. (E) events, W-changes on R, fallbacks and J
-  are no longer separate cores: they are bounded through the used level.
-- What remains for o-cyclic 𝒞^1O, per phase: (1) NO-WAKE (CONJECTURE); (2) S_o (OPEN; DATA: up to 49 at n 32, §6); (3) X (OPEN; ≡ Z up to
-  a factor n by R23 LV′).
-- S_o has structure of its own. At a relevant change (λ(o) ≠ o) σ̄(o) is a full Ξ-minimiser over succ(o) (R25 CAP-1, REFEREE's case split);
-  while θ = Ξ(o) stands still, the set of exits attaining the minimum only shrinks (Ξ is monotone). So S_o ≤ (d_o + tie-break changes)·(θ-
-  changes + 1), and the θ-changes are the TRUST/THETA quantity of boxes 22-25. Bounding the tie-break changes is the analogue of R24 Lemma TB
-  for the honest frame. OPEN.
-- Theorem LP holds on every game; NO-WAKE and DF / BAND are the only 𝒞^1O-specific parts. On ≥ 2 Odd choice vertices ε counts all of
-  Odd's honest changes.
+- The hoped-for merge fails. Had NO-WAKE held, Corollary LP′ would have replaced (E), (K_W), NFB-O and J by S_o next to X. With
+  nowake_cex_n32 the wakes K stay, and they sit exactly in the U2 / U3 / U23 regime of (E) and (K_W): a wake there is a W-change on R or a
+  W-flat switch, decided by W lengths and S4a's tie-break while Ξ sees a high level. So box 32 does not close (E) or (K_W); it locates them
+  more sharply: the W-blind band (nothing of the honest difference is visible to W above c_w).
+- What box 32 does give:
+  - Theorem LP on every game: inside a phase the transitions are polynomial in the number of used-level carries. It is the counter
+    picture as an inequality, with no 𝒞^1O assumption.
+  - On 𝒞^1O, each carry has one of five named causes: a fallback, a crossing, σ̄(o), a wake in a U1 piece (R24), or a wake in U2 / U3 / U23.
+  - The gate-level freeze of R25 is vacuous in U2 / U3 (M = ∞). Any future freeze argument there has to use the used level, or W's own
+    order.
+- Where to push next (READING):
+  - (a) The W-length regime. In nowake_cex_n32 W's comparison is pure length, monotone between fallbacks (R24 TB step 1), with ties broken
+    by TB-even's lex order. A wake at y either strictly raises W(y) (a length step, ≤ n − 1 per y while the W path sets stay fixed) or is a
+    W-tie switch under TB. Counting wakes by (W path set of y, length of y, TB key) may bound K per W-path-set class. OPEN.
+  - (b) S_o. At a relevant change σ̄(o) is a full Ξ-minimiser over succ(o) (R25 CAP-1, REFEREE's case split). While θ = Ξ(o) stands still,
+    the set of exits attaining the minimum only shrinks (Ξ is monotone). So S_o ≤ (d_o + tie-break changes)·(θ-changes + 1). The θ-changes are
+    the TRUST / THETA quantity of boxes 22-25. OPEN. DATA: S_o up to 49 at n 32 (§6).
+- Theorem LP holds on every game; DF, BAND, WAKE and LP′ are 𝒞^1O-specific. On ≥ 2 Odd choice vertices ε counts all of Odd's honest
+  changes.
 
 ## 6. DATA (experiments/new/box32; 𝒞^1O asserted on every file; the traces are box31/u23check.py's rows (box29/otherx.py step);
   (iterations, fallbacks) equal experiments/new/n5.py run() on every 11th LIB file, 20 of 20)
@@ -193,14 +226,21 @@ fallback in [k, k′] and R constant on [k, k′ + 1]. Then every relevant Even 
   n 64 (x32_rand64); level −1 runs ≤ 8 (frz24). In every phase T/(1 + f + S_o + X) ≤ 26 (op32_r, n 32: a phase with f = S_o = X = 0).
 - Dormant edges (dormant.py, LIB, the 1,637 NO-WAKE-type steps; o counted in R): finite level R → F 1,167, R → R 40; level ∞ R → F 644;
   F → F 0, F → R 0 (Lemma DF). 572 steps carry a finite dormant edge. None is ever woken.
+- W-gaps of the finite R → F dormant edges (wgap.py, LIB): g = lev(W(z), W(a)) > L_k for 979, ≤ L_k for 180, W(z) = W(a) for 8; W(z) ⊴ W(a)
+  always (Lemma DF). (Not needed after Lemma WAKE, which excludes R → F wakes without a crossing outright.)
 - Climbs against NO-WAKE (nwclimb.py, fitness (failures, steps with a dormant edge, checked steps); seeds x48_rt48_final, lev_l_x,
-  x31_rx32, fbref_cex_n32; ~10⁴-2·10⁴ candidates each at this writing, still running): 0 failures; pressure up to 86 of 87 checked steps
-  with a dormant edge (rt48 seed). (nwclimb uses the first definition of L, own cycle nodes included; NU transitions are rare, above.)
+  x31_rx32, fbref_cex_n32; 2-4·10⁴ candidates each, stopped): 0 failures; pressure up to 108 of 109 checked steps with a dormant edge
+  (rt48 seed), but most of that pressure is level-∞ or R → F dormant edges, which can never wake (NOINF; Lemma WAKE). (nwclimb uses the
+  first definition of L, own cycle nodes included; NU transitions are rare, above.)
+- rrclimb.py (fitness: NO-WAKE failures, finite dormant R → R edges outside route form, all finite dormant R → R edges): from
+  u1flat_best_n32 a failure after ~10³ candidates (nowake_cex_n32, §4); runs from nr_u23_n32, u3ev_n16, oc24_s4 continue (§7 for later
+  numbers).
 - §0 counterexample to (KW-M): experiments/new/box32/instances/kwm_cex_n24.pg, sha1 c2723e082c93aab617d81e63e821d3199e7cb189, n 24, one
   Odd choice vertex (2); n5.py: 21 iterations, 0 fallbacks; check_sol2.py: "zielonka(oink zlk) OK strategies verified"; mblock.py: a U3
   M-block (M = 21) with 15 KW transitions at |R| = 3 (|R| counts o).
 - §0 tables: mblock.py on LIB; usedlev.py first showed the rises (129 of 5,355 with the first definition, fallbacks excluded).
 
 ## 7. Stamps and files
-- experiments/new/box32: c1o_list.py, mblock.py, mblockclimb.py, usedlev.py, lrun.py, rises.py, nowake.py, nwclimb.py, lcheck.py (the
+- experiments/new/box32: c1o_list.py, mblock.py, mblockclimb.py, usedlev.py, lrun.py, rises.py, nowake.py, nwclimb.py, dormant.py,
+  wgap.py, rrdorm.py, lcheck.py (the
   consolidated checker of every lemma of §1-§4). instances/: climb results cited here.
