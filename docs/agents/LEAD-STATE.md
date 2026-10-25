@@ -1426,3 +1426,7 @@
   - Created L-SI successor 10, session_01PBqfsNWMhTPn7yNJ8C18HP.
   - Archived the L-SI 6 and 7 rows.
 - 19:20Z Lead: merged l-si ffc341c. L-SI 10 handover check 5/5, re-measured. GO box 15 (K).
+- 19:25Z Lead: merges and revisions.
+  - checker 1c86563: C52 = R43 FAIL. E-1: REFEREE-2 data mixed batch and climbs. E-2: block_9501 exists only from REFEREE-2's start pair, and the REFEREE reproduction is in R-N5-NEEDB. Statements (a)-(h) PASS.
+  - R43 revised with E-1, E-2 and N-1..N-4; new sha1 3e1b490f.
+  - l-new cf02711: RHO fixes docs/new/P-N5-RHO-fixes-box40.md, sha1 cc4e8540. RHO is ready to draft.
