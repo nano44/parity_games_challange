@@ -162,3 +162,64 @@ File sets:
   - (LV+) occurs once, case (B) only.
   - A2″ and A2* never occur, even in the general form. So the A2 sub-arguments rest on their proofs, which I checked line by line.
   - My OLD-THREAT sample (131 post-rise states) is smaller than the lane's (562).
+
+## §C. Comparison with REFEREE-2 (R2-N5-NEEDB.md, referee-2 ef433d32, REFEREE-2 successor 12) (Opus 5.5, D15)
+Written 2026-10-25T22:08Z by date -u, by REFEREE successor 11 (session_01VH2ckvgGP9CGkb8Suno5f1). Routing: the Lead's message of 22:04Z
+(Lead's stamp). My report above (successor 10, referee 008ad8ab) was pushed before I opened R2-N5-NEEDB.md. Object unchanged: both
+reports checked docs/si/P-N5-NEEDB-box13.md, sha1 7471aef3, at the pin e6ee613(0).
+
+### C.1 Verdicts: identical
+| statement | REFEREE | REFEREE-2 |
+| --- | --- | --- |
+| §1 Lemma XG | SIGNED (NEEDB-N1 wording) | SIGN (N-NEEDB-4 DATA) |
+| §2 Lemma ANTI; ANTI-Ξ, ANTI-W | SIGNED | SIGN |
+| §3 NEED-β (B), (A1), (A2′), (A2″) | SIGNED | SIGN (N-NEEDB-1 status) |
+| §3 NEED-β (A2*) | SIGNED | SIGN |
+| §4.1 OLD-THREAT | SIGNED | SIGN (N-NEEDB-3 citation) |
+| §4.2 INTO ⇒ no case-(i) fallback | SIGNED (NEEDB-N2, NEEDB-N3) | SIGN (N-NEEDB-2 wording) |
+| §5 | not signed | not signed (N-NEEDB-5 FINDING on a §5 CONJECTURE) |
+Neither report has a gap. No statement is NOT SIGNED by either.
+
+### C.2 Joint note map (one fixes-file line per row)
+| REFEREE | REFEREE-2 | ruling |
+| --- | --- | --- |
+| NEEDB-N2 (the case-(i) fallback must be the FIRST fallback of S after k0; a later one implies the first is case (i)) | N-NEEDB-2 (read "case (i)" as the NEXT fallback of S after k0) | SAME finding. Fixes line: "k := the next fallback of S after k0". |
+| "IN DATA" line: (LV+) occurs once, block_9501 from its start pair; the packet's "vacuous" row is out of date since f2209fa4 | N-NEEDB-1 (status: (LV+) is non-empty, witness exercised) | SAME. Fixes line: replace the "vacuous" row by the witness (block_9501.pg sha1 1b5b76fd + block_9501.txt). |
+| NEEDB-N3 (FBL's landed R is today's R̄; the packet's "no F → R̄, R → R̄" is the landed statement) | stated in R2's background (P-N5-XA's R_k contains o) and used in §4.2 | SAME reading; wording only. |
+| NEEDB-N1 ("In particular M_k ≥ r_k" holds only when such a y exists) | — | REFEREE only; wording. Stands. |
+| NEEDB-N4 (general form: at every THR in-scope fallback with r ≥ 0 the σ*-play from x0 uses a non-exceptional gate; 1,818 checks, 0 failures) | RECORD in §3 DATA: at all M ≥ 0 in-scope THR r ≥ 0 fallbacks the σ*-play from x0 uses an R → F gate | Compatible; REFEREE-2's record is a stronger data statement (an R → F gate is in particular not Ξ-exceptional). Neither is a signed claim. |
+| — | N-NEEDB-3 ((C4), not (C7), passes equal COARSE_L values through o ⊕ in the sandwich) | ACCEPTED. (C4) (P-N5-FB §1; R-N5-FB §1.1) says COARSE_L(u ⊕ x) is a function of u and COARSE_L(x), which is the step used. Citation only. |
+| XG vacuous in my data (0) | N-NEEDB-4 (DATA: XG's hypothesis reached 7 times in climb 12004; witness_xg_12004.pg sha1 89d9085b) | ACCEPTED as REFEREE-2's data, NOT REPRODUCED by me (C.4). |
+| — | N-NEEDB-5 (FINDING: §5 CONJECTURE "in scope, THR ⇒ M ≥ 0" FALSE on block_9501 from its saved start pair) | CONFIRMED on my engine (C.3). |
+
+### C.3 N-NEEDB-5 re-checked on my own engine: the CONJECTURE "in scope, THR ⇒ M ≥ 0" is FALSE as stated
+- Tool: scratch/needb5_check.py (rl_engine / rl_probe only; no REFEREE-2 or lane code). Log: scratch/needb_logs/needb5_check.log.
+- Game docs/referee-2/R2-N5-LV2/climb/block_9501.pg, sha1 1b5b76fd986487549fe0a35da79f68f5f0d19b3f (checked), o = 7. Start pair from
+  block_9501.txt: σ0 = [9, 2, 9, 1, 0, 5, 2, 8, 3, 5, 7], τ0 = [9, 2, 9, 1, 0, 5, 2, 5, 0, 5, 3]. 5 states, one fallback, at state 1.
+- State 1, on my engine: (h) holds; θ = (5, {9}, 3) (mask 1024 = rank 10) ◁ w = (5, ∅, 1): THR; r = 10 ≥ 0; M = −1; in phase with
+  state 2, H2 at 2, w_2 = w_1: in scope. Its gates are (10, 1), (10, 3), (10, 8), all of level −1, all with y ∈ R and z ∈ F: (β).
+  rank o = 2 < rank c = 9 (c = 5). This is exactly the counterexample shape that N5-LV3-box12.md §4 (sha1 20ba05d7) writes down.
+- The CONJECTURE (N5-LV3 l.157, P-N5-NEEDB §5) has no start-pair restriction. SPEC S3 reads "Start (unless a start pair is given)",
+  and N5-LV3 §5's own data use perturbed start pairs ("SPEC allows a start pair"). So the conjecture as stated is FALSE.
+- From SPEC S3's own start the same game has 4 states, one fallback at state 0, and no in-scope THR fallback with r ≥ 0 and M < 0.
+  A "from the S3 start" form is not refuted by this instance (REFEREE-2 says the same). That form is not what the lane stated.
+- Nothing signed depends on the conjecture: P-N5-NEEDB §5 is not signed by either referee, and NEED-β holds at this state (case B, the
+  σ*-play from x0 uses the (β) gate (10, 8): my predecessor's run, §6 table, needb_logs/block_9501_ownstart.log).
+- Recommended record (the Lead's call): DEAD (L-SI docs/si/DEAD.md) for "in scope, THR ⇒ M ≥ 0" as stated, with this instance and start
+  pair; the S3-start form, if the lane keeps it, as a new CONJECTURE.
+
+### C.4 N-NEEDB-4's witness does not reproduce on my engine as saved
+- witness_xg_12004.txt gives the start pair of the climb SEED (block_9501's). It is NOT a strategy pair of witness_xg_12004.pg: 10 of the
+  11 entries are not successors of their vertex (e.g. vertex 1 Even, σ0(1) = 2 ∉ succ(1) = {5, 7}). My probe cannot run from it.
+- On my engine, witness_xg_12004.pg from 2,000 uniformly random start pairs (needb_probe.py RANDSTARTS=2000; log
+  needb_logs/witness_xg_12004_rand2000.log): XG's hypothesis 0 times (XG and XGalt); (LV+) 219 times, all case B; 0 failures.
+- REFEREE-2 says its count needs the climb's own evaluate(…, "lv", 12004) (its rng and its choice among optima). XG's hypothesis depends
+  on which optimal σ* is taken, so a mismatch is possible without either engine being wrong. Not a gap: XG is SIGNED by both on its proof.
+- Fixes-file line asked: save the start pair actually used for the 7 XG cases (or the optimum chosen), so the witness can be re-run.
+
+### C.5 Result
+- P-N5-NEEDB: every statement to sign is SIGNED by both referees, no gaps. Notes for the fixes file: NEEDB-N2 = N-NEEDB-2 (next
+  fallback), N-NEEDB-1 (witness replaces "vacuous"), N-NEEDB-3 ((C4)), NEEDB-N1, NEEDB-N3 (wording), C.4 (witness start pair).
+- FINDING outside the signed set: the §5 CONJECTURE "in scope, THR ⇒ M ≥ 0" is FALSE as stated (C.3), confirmed by both referees on
+  independent engines.
+- Not a running-time bound, not a TARGET.md claim, not a step-4 pass. G-N5-TIME stays OPEN.
