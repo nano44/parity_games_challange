@@ -12,6 +12,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   2(|U| − 2)), HN-POLY-ALL, Remark H3-IN-HN; lane PROVED. The Lead's literal inequality is trivially true but not polynomial via WCH
   (WCH counts w-changes, not H2-toggles). Interim report to Lead at 04fe8979; asked yes/no on a P-N5-NHN packet.
 - Trap hit at start: `pkill -f` in a compound command killed the shell (exit 144) after push.sh had finished. Kill by pid only.
+- NEB fixes frozen e535e61a (sha1 15434c1c). RHO frozen 3e9fe5c2 (sha1 cd5df65c), pinned trunk c8144551. NHN frozen 5fb9dca0 (sha1
+  da7d09ec). Lead's "NEB fixes before RHO" crossed the RHO freeze (said so).
+- (3) Q states: docs/new/N5-Q-box40.md: Q-SPLIT (a) (S4a at an H1 state with c_w ≠ c_θ never evicts; unifies SPLIT (a)), Q-SPLIT (b)
+  (Q → Q fallbacks never enter: FBL-N (ii) leaves only gates from c′ = λ(t0), and c′ cannot enter under H1 in-phase); Q-EPOCH CONJECTURE;
+  breaks OPEN (c′ → R̄ gates break RISE′ Step 0).
 
 ## Box 39 log (successor 18, session_01BhkSHzG2cPM2Rdbj5Y2NJV; GO 14:29Z, Lead's stamp)
 - Handover-check misses (Lead re-measure 14:29Z, 4/5; Q2): (i) docs/new/P-N5-OUT-fixes-box37.md IS on trunk (merged 16c386c, 14:17Z);
@@ -196,11 +201,14 @@ Successor 19 (Opus 5.5, D14/D15/D18, L37/L40), session_011reTXakSJCcwLhC4i9ZpkB.
   PFZ-N1..N3 (N1: §6 "SPLIT" → SPLIT (a); N2: RISE′ hypothesis stronger than needed; N3: NEB status), N-PFZ-1..3 (read R2-N5-PFZ).
 - P-N5-RHO, P-N5-NHN: Lead pins, then referees. Fixes files when relayed: NEW files only.
 ### NEXT (successor 20)
-- (1) Q states: H1 ∧ H2 ∧ ¬H3, only in phases with no HN state (H3-IN-HN), where t0 = τ(o) ≠ o, λ(t0) =: c′ ≠ c_θ, and every state is Q or
+- (1) Q states (start: docs/new/N5-Q-box40.md, Q-SPLIT PROVED): H1 ∧ H2 ∧ ¬H3, only in phases with no HN state (H3-IN-HN), where t0 = τ(o) ≠ o, λ(t0) =: c′ ≠ c_θ, and every state is Q or
   ¬H1. This is the last out-of-SN piece. DATA (qsurvey.py, library): 165 phases with Q states, 186 Q states, only 2 Q fallbacks (both
   evictions), 0 S4a steps at Q states with a leave. Ideas: a Q-SPLIT (S4a at Q never evicts? R̄ vertices have W cycle node c′ with
   reward(c′) > reward(c_θ) by XW); fallbacks at Q are Bellman-Ford rounds (FB-ROUND holds), HAT-FREEZE applies on F ∩ U; ¬H1 parts by
   NH1-FB; Q-runs ≤ ⌈T/2⌉ + 1 per phase (H1-toggles). Try: Q fallbacks per Q-run ≤ poly via EPOCH-type breaks + a T0-PIN analogue.
+- (1b) FB-CAP route (docs/new/N5-FBCAP-route-box40.md): κ = (M, s_θ·ℓ) Bellman-Ford freeze; after g_{|U|−2} no eviction at an in-phase
+  fallback (PROVED) and no F∩U → F∩U switch except around c_θ's cycle (PROVED modulo that case); OPEN: route switches inside R̄, vertices
+  outside U, ¬H1. Tightens NHN to N_HN ≤ 1 + ⌈T/2⌉ + |U| − 2. Read L-RED l-red 1b00610 (experiments/red/frz/) first.
 - (2) The global loop: f enters SCOPE-COUNT (R38 (c)) and X-SN-PHASE (R34 (f)); with HN fallbacks now O(n⁸), check whether the f ↔ X
   loop closes (fallbacks at (h) states: R40 PL-S″ per scope run).
 - (3) Data for referees: post-freeze EV2 ends (T0-PIN) and HAT-FREEZE at |U| ≥ 4 are not reached (climbs plateau). Better mutations
