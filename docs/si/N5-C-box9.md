@@ -175,9 +175,34 @@ at most n·n_E fallbacks of level ≥ 0.
   - CONSEC: consecutive fallbacks of a block have disjoint level-M tail sets (STRETCH on a clean interval; ONE-RISE + FB-FLAT
     otherwise). Checks: 177 / 357.
   - In the data no vertex is ever a level-M tail twice in one block (max_rep 1).
+- Stronger CONJECTURE NJ-INT: between any two consecutive fallbacks k0 < k of a scope run with r > L := M_{k0} on (k0, k], θ does
+  not change above L. NJ-INT implies NJB.
+  - DATA: 185 (named) + 377 (library) such intervals, 0 θ-changes above L. This matches REFEREE-2's 583 / 0 for ABS-L
+    (P-N5-SN fixes §4): ABS-L is vacuous in all data.
 - A weaker form, FB-RE (PROVED: a tail is evicted R → F and fallbacks never add to R̄, FLAT-ALL (i)): N ≤ #tails + #re-entries into
   R at S4a steps of previously evicted tails. It is far from tight: 249 re-entries on the named set, none followed by a second
   level-M tail appearance.
+
+## 3b. Lemma ABS-O (PROVED; an attempt on NJB that turned out vacuous)
+Statement. Let j → j+1 be an in-phase transition with H1 at j at which σ̄(o) changes from x0, and x0 ∈ F_j ∩ R_{j+1} (an
+absorption). Put c := λ(o), and let g be the max gate level of the Even switches on x0's H_{j+1}-path s_0 = x0, …, s_{m−1}, o.
+- (a) Every vertex of A := {s_0, …, s_{m−1}, o} of rank > max(g, rank c) lies in P(Ξ_j x0).
+- (b) In particular, rank o ≤ max(g, rank c).
+Proof.
+- No s_t is an H_j-cycle node. If one were, it would be one at j+1 too (phase), and x0's path would end on its cycle before o,
+  whereas Lemma OR (a) puts o on the path before c.
+- For an unswitched s_t, (P2) gives Ξ_j(s_t) = s_t ⊕ Ξ_j(s_{t+1}) exactly (Odd vertices other than o are forced).
+- For a switched s_t, (P2) gives Ξ_j(s_t) = s_t ⊕ Ξ_j(σ_j s_t), and lev(Ξ_j σ_j s_t, Ξ_j s_{t+1}) ≤ g.
+- COARSE_g(s ⊕ a) is a function of COARSE_g(a) (formal ⊕: union, length + 1). At o, Ξ_j(o) = o ⊕ Ξ_j(x0) (P2).
+- Composing around the closed walk x0 → … → o → x0 gives COARSE_g(Ξ_j x0) = COARSE_g(A ⊕ Ξ_j x0), with ⊕ as formal union. That is (a).
+- Under H1, x0's H_j-play is the tail of o's honest play, so o ∉ P(Ξ_j x0). That is (b). □
+- DATA (abso.py; logs/box9/abso_*.txt): 462 + 715 absorptions; for the 172 + 298 with rank o > rank c, g ≥ rank o every time.
+- Why it does not help NJB. When rank o > rank c, every gate R → F has level ≥ rank o: Ξ(σ y) = π ⊕ θ contains o, and an F-value
+  does not. So every evicting fallback, and hence every block, has M ≥ rank o.
+  - ABS-O would exclude absorptions inside a block only when rank o > M; that case never arises (abso.py: 0 of 778 in-scope
+    fallbacks have rank o > max(M, rank c)).
+  - So ABS-O is a true but vacuous route to NJB. I record it as a dead end for that purpose.
+  - Obstruction: the cycle closed by an absorption contains o, but o sits below every evicting level.
 
 ## 4. What remains (labels)
 - PROVED this box (L-SI succ. 4, unrefereed):
@@ -198,4 +223,8 @@ at most n·n_E fallbacks of level ≥ 0.
   - jclimb.py modes HEQ (FBW violations, then in-scope u* = none / EQ fallbacks, then fallbacks) and REP (reltrace violations, then
     tail repeats + θ-changes above M inside blocks, then block fallbacks).
 - Logs: experiments/si/coarse/logs/box9/ (fbw_named, fbw_lib, fbw_rand902, rel_named, rel_lib, and the 15 re-run logs of §1).
-- Climbs (05:0xZ-05:3xZ, 30 min each; seeds 9101-9104): results in §6 when finished.
+- Climbs (05:11Z-05:41Z, 30 min each; seeds 9101-9104): 0 violations; HEQ reached 1 in-scope EQ fallback, 0 with u* = none; REP 0
+  repeats and 0 θ-changes above M in blocks.
+  - Bests: instances/box9/cl9_heq_b (n 32, 7535a99c), cl9_rep_a (n 40, 9d31fb39), cl9_rep_b (n 48, 8efbbc9e; a 37-fallback block).
+  - All re-verified (Oink zlk OK).
+- Packet: docs/si/P-N5-FBW-box9.md (Lead 05:28Z).

@@ -15,6 +15,9 @@ fbw.py, reltrace.py, levcheck.py, jclimb.py modes HEQ / REP. Logs: experiments/s
 ### DATA
 - FBW: named 272 fb / 837 gates, library 694 / 2,384, random 141 fb: 0 failures. In-scope u* = none fallbacks: 0 anywhere.
 - reltrace: 75 + 169 blocks; COARSE_M breaks inside blocks 0, gates above M inside blocks 0, tail repeats per block 0.
+- Lemma ABS-O (PROVED): the cycle an absorption closes has, above max(g, rank c), only vertices of P(Ξ_j x0); so rank o ≤ max(g, rank c).
+  DEAD END as a route to NJB: every in-scope R→F gate has level >= rank o when rank o > rank c, so no block has M < rank o (0 / 778).
+- CONJECTURE NJ-INT (stronger than NJB): no θ-change above L = M_k0 between consecutive in-scope fallbacks with r > L. DATA 562 / 0.
 ### NEXT
 1. CONJECTURE NJB (no absorption above M strictly inside a level-M block) => ≤ n_E fallbacks per level (second half of (CL-S)).
    Attack: an exit released at a level-M fallback, re-absorbed above M later in the block, needs its value to drop below the
@@ -241,6 +244,8 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 - NOT opened: Ye 2011, Math. Oper. Res. 36(4):593-603, DOI 10.1287/moor.1110.0516 (cited only through Scherrer Thm 1).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- (box 9, succ. 4) ABS-O as a route to NJB: vacuous, since every block has M >= rank o when o counts in θ's path set (abso.py fb_hi = 0 of 778;
+  obstruction: R→F gates differ at o). docs/si/N5-C-box9.md §3b.
 - (successor 3, box 8) OG′ ("gates into F at k+1 never exceed MF_k = the max level of the gates INTO F at k") FALSE:
   experiments/red/xing/instances/x31_re24.pg (sha1 49eaf50e, 𝒞^1O), transition 1 -> 2: MF_1 = -1, while gate (4, 8) at state 2
   has level 22. At state 1, 4 and 8 are in R (the level-22 gate is (8, 14), R -> R); at the arena step R collapses from 21 vertices
