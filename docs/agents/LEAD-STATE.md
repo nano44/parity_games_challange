@@ -1265,3 +1265,24 @@
   - Created L-SI successor 8 session_013kZp65x9TKU9AqPZdMYGpm.
   - NOW: 16 parked rows archived to ROSTER-ARCHIVE (148 → 132 lines).
 - 15:40Z Lead: merged checker 2b54058 (C49 = R40 FAIL. E-1: REFEREE-2 §C C.1 does record the R36 lift; I had said it did not. Optional N-1 and N-2. Points (2) and (3) PASS; re-runs exact) and l-si a6378fc (L-SI 7 NEXT updated). R40 revised: E-1 as given, N-1, N-2; new sha1 28bbe2c3. CHECKER 6 (~470k): hands over after R40 Addenda 1 and 2.
+- 15:45Z Lead: merged l-new 79c706d and l-red.
+  - l-new: L-NEW 18 PARKED at ~420k. New working doc docs/new/N5-RHO-box39.md, sha1 443d91d8; lane PROVED, unrefereed, no (P).
+    - Y-FORM, HAT-FREEZE, RHO-TAIL, BF-F / FREEZE-F, RHO-HN: ρ_HN ≤ (N_HN + |U| − 2)(|U| + deg(o) − 3) + deg(o).
+    - HN-POLY: HN breaks, crossings, fallbacks and θ-changes per phase are poly(n, N_HN); poly(n) for τ(o) = o via R39 (f).
+    - Caveat: HAT-FREEZE after the freeze is exercised only on climb outputs.
+  - Created L-NEW successor 19 session_011reTXakSJCcwLhC4i9ZpkB.
+  - L-RED 16 CANDIDATE: CONJECTURE NL= FALSE (NL (ii) fails at r_j = L) on experiments/red/so/instances/nleq_cex_n48.pg, sha1 e72e4034. The file is not yet pushed; Lead re-run pending.
+- 15:50Z Lead: merged l-red d7df76f. CONJECTURE NL= (L-SI, N5-STR/STR2; not-to-sign in P-N5-LV addendum a15a8871) is FALSE. NL (ii), "no leave", fails at r_j = L.
+  - Instance: experiments/red/so/instances/nleq_cex_n48.pg, sha1 e72e4034.
+  - Lead re-run: one Odd choice vertex; n5 10/1; Oink zlk OK, strategies verified. L-SI's own nleq.py gives nl2_fail 1 at j 6, L = r = 47 (vertex 40 → 9 leaves R).
+  - Consequence (N5-STR2 §2): NJB's straddle stays OPEN; D1 (R40, in landing) is unaffected. Lane dead end; it goes into the LV entry's not-signed list.
+- 15:54Z Lead: merges and landing.
+  - checker cc26fd2: C49 Addendum 1, R40 PASS at 23544b8.
+  - referee 8054da2: REFEREE 9 R-N5-NEB 40adbf1 (all SIGNED, no gaps, notes NEB-R1, NEB-N1..N5) and R-N5-LV 8054da2 (all SIGNED, no gaps; CN-LAST discharged by R38 (f); notes LV-N1..N3).
+    - NEB-B1: BAND FALSE in its rises form and in its gates form at a later state. It is also FALSE at the base, at the boundary: docs/referee/R-N5-NEB/band_base_cex.pg, sha1 468edac8. Lead re-run: one Odd choice vertex, n5 6/1, Oink zlk OK, strategies verified.
+  - l-si 03c6937: L-SI 8 handover check, 5/5 re-measured (merge-base ed936af1, 1 ahead / 23 behind 283bcb6).
+  - R40 LANDED in RESULTS: CHECKER C49 2b540583 + Addendum 1 cc26fd23; cmp OK against draft lines 3-60; GAPS UPDATE 15:55Z.
+  - Routing: REFEREE 9 writes the NEB and LV §Cs against R2 a4516df and b1038be. L-SI 8: GO.
+- 16:00Z Lead: merged l-new cba7e86 (L-NEW 19 handover check: 5/5 re-measured). GO box 40: packet P-N5-RHO first, then N_HN for τ(o) ≠ o, then the NEB fixes file when the §Cs are in.
+- 16:04Z Lead: hourly sweep 16:02Z. No overage. L-RED 16 (433k) is waiting on climbs, ETA ~16:25Z, then R70; its handover is due near 450k. L-COMP 4 (248k): box8 n 5 Q2 running. REFEREE-2 9: PFZ, batch 893/893 OK, |U| ≥ 3 climbs running. CHECKER 6, REFEREE 9, L-SI 8 and L-NEW 19 have all been active within the last 15 min. CI is green on trunk pushes. No exceptions.
+- 16:09Z Lead: merged checker 0ac145c. C49 Addendum 2: R40 landed verbatim; C49 CLOSED. CHECKER 6 PARKED (C45-C49 all closed; R36-R40 landed). Created CHECKER successor 7, session_01SvGcqqNrM3YDDtDh13LwXr; it does the handover check first.

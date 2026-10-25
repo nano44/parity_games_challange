@@ -377,3 +377,13 @@ fallbacks, and every break consumes a fallback (its eviction, SPLIT (b)).
 - DATA (pfreeze.py with PFZ_KEY=P; same library, instances and climb outputs as §11): 872 P-epochs (runs with > 1 state), 4,749
   transitions, 704 fallbacks. FAIL_FBF 0, FAIL_PFZ 0, FAIL_THLEN (θ-changes > |U| in a P-epoch) 0. Post-freeze crossings 0, breaks 0.
   Max θ-changes in one P-epoch: 11 (pftheta_cex_n32.pg, n 32, |U| 32).
+
+## 13. Final climb results (DATA; stopped at 15:3xZ by date -u, at the handover)
+- tieclimb.py (W-TIE): max W-TIE in one block 4 (seed 393 from tauw_A_cex_n24, 134,664 iterations); 3 (392, kwm_cex_n24); 1 (391,
+  394). No Lemma BF-RW / FREEZE-M / F1 failure in any candidate.
+- pfzclimb.py (against P-FREEZE; score (failures, fallbacks before the last P-change, fallbacks per θ-run)):
+  - seed 3971 from fb32_inr2_final.pg reached (0, 26, 26): a P-change after 26 fallbacks of one θ-run at n 32, still ≤ |U| − 1;
+  - seeds 3951 and 3952: 0 failures (their lastP score was inert, see the notebook pitfall).
+  - PFZ_SCORE=excess (seeds 3961, 3962): stuck at −1, i.e. θ-runs with |U| ≥ 3 reach |U| − 2 fallbacks but never |U| − 1.
+  - 0 failures in every climb.
+- Climb outputs are in experiments/new/out/box39 (gitignored); they are lost with the container.
