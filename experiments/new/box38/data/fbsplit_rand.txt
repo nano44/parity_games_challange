@@ -1,0 +1,11 @@
+HN_stretches 872
+f_crossing 0
+f_exit 0
+f_noncrossing 0
+max_X_S (1, 8, 0, 0, 'rand3801_18187', 0)
+max_f_HN_phase_A (0, 13, 1, 0, 0, 'rand3801_2654')
+max_f_HN_phase_B (0, 12, 1, 0, 0, 'rand3801_3')
+max_f_S (0, 13, 0, 0, 'rand3801_1', 1)
+max_fb_per_crossing_free_run (0, 13, 'rand3801_1', 1)
+phases_tauo_o_A 12
+phases_tauo_o_B 137
