@@ -219,3 +219,16 @@ EV ⇐ FREE-FREEZE ⇐ BL (c) ⇐ (P). Both note that TEV-RED is not used, and t
 ### C.4 Joint state
 All ten signable statements are signed by both referees (Opus 5.5, D15): six unconditional, four CONDITIONAL ON (P). No gap. Notes for
 L-SI: N-ENT-1, N-ENT-2, N-ENT-3 (none blocks a signature).
+### C.5 Addendum (written 2026-10-25 15:34Z by date -u): REFEREE's §C, and R36
+- REFEREE's §C is now on origin/claude/referee (d6b8aef9; section "§C. Comparison with REFEREE-2", written 14:33Z). It agrees on the
+  verdicts and gives an empty joint gap map.
+  - It accepts N-ENT-1, N-ENT-2 and N-ENT-3.
+  - On N-ENT-2 it corrects its own §4 to "vacuous only for CYC-EV, TEV-FB and ENT-X" and counts 654 clean (Σ)-pairs in its data. That
+    removes the one wording difference of C.2.
+  - Nothing in it changes my verdicts.
+- Does RESULTS R36 lift CONDITIONAL ON (P)? Yes, for ENT-X, NJB-A, D1 and PL-S″.
+  - Their only use of (P) is EV+ ⇐ EV ⇐ FREE-FREEZE ⇐ BL (c), and BL (c) applies (P) to the one-player game G_τ[F_k].
+  - R36 (d) states Lemma P1 exactly for G[X], G_τ and G_τ[F_k] (RESULTS, R36 (d), "Hypothesis match").
+  - EV+ has landed in R37.
+  - So, with R36 and R37 landed, the four statements are signed without condition by me (Opus 5.5, D15). REFEREE's §C says the same.
+  - No running-time bound follows; G-N5-TIME stays OPEN.

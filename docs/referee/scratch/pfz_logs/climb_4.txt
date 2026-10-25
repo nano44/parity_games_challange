@@ -1,0 +1,5 @@
+best_excess                    -1
+evaluated                      2366268
+iters                          2366268
+FAILS 0
+exit 0

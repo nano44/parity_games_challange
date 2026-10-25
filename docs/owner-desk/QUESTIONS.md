@@ -1,4 +1,7 @@
 # Owner questions (OWNER-DESK; most decision-relevant first)
+Standing instruction D15 / L37 (2026-10-22): the owner is NOT asked option, model, allocation or reassessment questions; the Lead
+decides and reports. Still the owner's: TARGET.md changes; anything external (D11); paid overage (stop and tell); restart after an
+owner "stop"; more than 5 working sessions. Reports continue as information only.
 Standing Lead reading L12 (D4): the fleet decides process, method and result classification itself; the owner is asked only about
 scope, spend, anything external, and TARGET.md.
 Source: docs/NOW.md "Owner questions open" (trunk d580fcd) and the Lead's brief to OWNER-DESK (2026-10-15).
@@ -180,4 +183,53 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
   contact); (b) keep only the cheap adversarial lane on GAP-A, no proof lane; (c) a new candidate or approach (needs an owner direction).
 - Lead recommendation: (a) now, plus (b) until the Fable reset 2026-10-21 21:00Z, then stop unless (b) finds a long-phase family.
 - Urgency: decision needed; the fleet is idle until the owner chooses.
-- Status: open
+- Status: closed, D13 / Lead reading L34: DTL continues on both sides (L-ALG proof, L-RED attack) at the D7 rate; (a) not chosen;
+  (c) needs a direction (Q15); next reassessment at the Fable reset 2026-10-21 21:00Z.
+
+## Q15: direction for option (c), run alongside DTL (one lane, Opus until the reset)
+- id: Q15 (Lead, 2026-10-18 08:57Z; D1 "Spawn no attack lane before I approve it")
+- Options: A. strategy improvement rules S5/S6 (Zadeh/Cunningham with index tie-breaks; only SI rules neither killed nor defended;
+  cheap, fast verdict, likely negative). B. deterministic weak separators (rank 1; diagonal at n = 5 and growth; high leverage, low
+  probability, SAT-heavy; better on Fable after the reset). C. lower bounds for symbolic algorithms (negative direction; no algorithm).
+  D. Lead's choice.
+- Lead recommendation: A now, then B after the reset.
+- Status: closed, D14 / Lead reading L35 (trunk ff4e60c; owner addendum: the fleet may test untested approaches and its own ideas):
+  new lane L-NEW (Opus) - kill test of S5/S6, then up to three own untested approaches; weak separators queued after the Fable reset.
+
+## Q16: early L32 reassessment of DTL (decision requested)
+- id: Q16 (Lead, 2026-10-18 22:29Z)
+- Background: L-ALG tried the last two GAP-A proof routes; both failed at a named step (docs/alg/GAP-A-STATUS.md); L-ALG parked.
+  L-RED disproved five statements those routes rested on within an hour (pinned games n = 20-63, Lead re-ran). DTL never wrong, no slow
+  family; R4-R14 stand; L-RED: kills close proof routes, not steps to a lower bound. Open: (CTX+), needs a compounding counter.
+  N5 ((c) lane): steps 2-3 passed with caveats; second implementation agrees; six killer attempts failed; termination repaired
+  (unrefereed); no running-time proof.
+- Options: (a) bank and write up DTL as an open candidate (mostly done); (b) keep only the cheap adversarial lane on DTL (compounding
+  counter), no proof lane; (c) put the effort into a new approach (N5 already running). Or a combination / own direction.
+- Lead recommendation: (b) + (c): L-RED on the counter, DTL proof lane parked, proof effort to N5 gauntlet step 4; re-ask at the
+  Fable reset 2026-10-21 21:00Z. Until answered, D13 continues as is.
+- Addendum (Lead, 2026-10-19 00:21Z): R15 [refereed-only] landed: N5 always terminates (two referees, CHECKER); repairs a strictness
+  claim in Voege-Jurdzinski 2000 that fails at cycles. N5 running time reduced (unrefereed, K9) to (P) polynomial one-player SI and (CH)
+  polynomially many opponent best-reply changes; referees checking; L-NEW on (P).
+- Addendum 2 (Lead, 2026-10-19 03:32Z): R16 [refereed-only, Opus D12] landed: on the one-player-like subclass C^1P, DTL searches
+  <= n^O(d) with d = NEST*; GAP-A there reduces to ONE named statement (NEST*-BOUNDED), no proof route (L32 half met); data max 3.
+  Lead recommendation updated: (b)+(c) plus a proof attempt on (NEST*-BOUNDED). Fleet paused 2026-10-19 ~03:33Z-2026-10-21 21:00Z
+  by the weekly cap (no overage); reassessment point reached at the reset.
+- Status: closed, D15 / Lead reading L37 (trunk 0f33c77): DTL adversarial side only (L-RED), no DTL proof lane, NEST* proof attempt
+  dropped; main effort (c) under D14 (N5, untested approaches incl. weak separators).
+
+## Q17: Jens Voege's PhD thesis (optional)
+- id: Q17 (Lead, 2026-10-19 00:21Z; optional, not blocking)
+- Background: statement (P) (polynomial one-player strategy improvement) is stated without proof in Voege-Jurdzinski 2000 Prop. 7.4;
+  Friedmann's thesis attributes a proof (switch-all only) to Voege's PhD thesis (RWTH Aachen, 2000). The host refuses access from the
+  fleet's container.
+- Ask: if the owner can obtain a copy, place it in the repository (any path) and tell OWNER-DESK; L-LIT checks the proof. The fleet
+  contacts no one.
+- Status: closed, dropped (Lead, L37): not needed; would require an external act by the owner.
+
+## Q18: which models after the reset (D8, D12 were tied to it)
+- id: Q18 (Lead, 2026-10-21 21:06Z)
+- Options: (a) back to Fable 5.1 for new lanes and referees, as before D8; (b) stay on Opus 5.5 for lanes and referees; (c) Fable for
+  referees, Opus for lanes.
+- Interim (Lead reading L36): sessions cut off by the cap (L-RED on NEST*-BOUNDED, CHECKER on R16) finish on Opus; L-NEW resumes on its
+  existing session; any NEW session starts on Fable 5.1; no Opus referee signs unless D12 is extended. Working sessions 3 of 5.
+- Status: closed, D15 / L37: lanes and referees on Opus 5.5, labelled "(Opus 5.5, D15)"; R17's Fable signatures stand.
