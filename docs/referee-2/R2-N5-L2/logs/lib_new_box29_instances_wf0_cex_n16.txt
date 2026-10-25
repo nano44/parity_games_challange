@@ -1,0 +1,10 @@
+H2S_steps: 33
+RC_notH1_pairs: 9
+RC_notH1_states: 12
+fallbacks: 18
+phases: 7
+runs: 3
+transitions: 81
+HI_max_theta_changes_on_I: 0
+ONE-DROP_max_drops_per_phase (sec.8, no claim): 0
+RESULT OK violations=0
