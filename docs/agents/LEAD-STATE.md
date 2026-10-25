@@ -1364,3 +1364,4 @@
   - R-N5-RHO 5927831: all SIGNED, no gaps. HN-POLY is conditional on (i′). Notes RHO-N1..N3. Climbs: 685k post-freeze phases at |U| = 3, 1.16 M HAT-FREEZE (c) checks, 0 failures; |U| ≥ 4 post-freeze not reached.
   - PFZ-ext §C ed8bc20: identical; PFZ-1 = G-PFX-1. Reconciliation YES: REFEREE's re-derived repair proves (i) as stated. Once it is in the fixes file, REFEREE-2 can sign (i).
   - LV2 §C ed8bc20: identical, gap map empty. beta2_n11 confirmed on REFEREE's engine: 2 none fallbacks in one scope run, so LV-NONE's N ≥ 2 step is exercised. REFEREE-2's CONJECTURE "an M = −1 THR fallback is the last fallback of its scope run" is FALSE on beta2_n11, and so is L-SI's NONE-LAST.
+- 17:57Z Lead: merged checker 67cfee6 (C51 Addendum 2: R42 landed verbatim; C51 CLOSED) and l-new 688c2d4 (L-NEW 19 PARKED at ~407k). Created L-NEW successor 20, session_018pjn8Y8JRES3YuFDUCAJgM. The L-NEW 18 row was removed from NOW; it was parked and is superseded.
