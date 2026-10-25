@@ -1,4 +1,4 @@
-# Draft RESULTS R35 (Lead, 2026-10-25 11:20Z by date -u) (rev. 11:29Z: fixes2 re-issued as 647386fb at 90b5fb3; rev. 11:42Z: C44 E-1, E-2) — to CHECKER C44
+# Draft RESULTS R35 (Lead, 2026-10-25 11:20Z by date -u) (rev. 11:29Z: fixes2 re-issued as 647386fb at 90b5fb3; rev. 11:42Z: C44 E-1, E-2) — to CHECKER C44 — LANDED in RESULTS Results 11:51Z (CHECKER C44 8b56990 + Addenda 3910d93, 1555d239 PASS), after R34
 
 ### R35 [refereed-only] N5 on one-Odd-choice games: the per-level fallback count holds for every block (RDROP, PL (c′), PL-S′), the minimum free-exit set governs θ above a block level (MINSET, survivor form), only entrant tails can be evicted after a rise (NO-RF-OLD), and the shape a violation of the per-level conjecture must take (ENT-SHAPE (1)-(4), (5′)) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C44.md, checker PENDING)
 - Object (packet P-N5-NJB, added at l-si 5c949ec, pinned trunk a7d85b3, unchanged during review): docs/si/P-N5-NJB-box9.md, sha1
