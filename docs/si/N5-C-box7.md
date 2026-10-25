@@ -182,7 +182,9 @@ Proof.
   - Blocks of level ∞ or ⊥ contain no fallback (Step 2).
   - So a tame run has ≤ n·n_E + (n − 1)n_E = n_E(2n − 1) fallbacks.
   - There are ≤ J + 1 tame runs, and the J non-tame transitions add at most J more. □
-**Corollary (PROVED, from FB and WM, P-N5-Z §8; R23).** Inside a phase:
+**Corollary (PROVED, from FB and WM, P-N5-Z §8; R23).** [Scope, CHECKER C34 Addendum 1 / R25, 23:40Z: the W-lowering bound holds on
+every game; the (C) bound is 𝒞^1O only, because R and (C) are defined through o. fixes2 G-FB-3's "every game" is too wide for (C).]
+Inside a phase:
 - #W-lowering transitions ≤ n_E(2n − 1)(J + 1) + J;
 - (C) (the '+−' reversals at fallbacks) is at most that too.
 Hence (C) is polynomial in every phase with J ≤ poly(n). NEXT item 4 ("carries per level", the refill half of the counter) is Step 3:
@@ -407,3 +409,46 @@ The fourth climb (seed x31_cu32) stalled at 2.
   - A polynomial bound needs a potential that this alternation spends. θ rises at every jump, but only θ ⊴ w is known, which leaves
     an exponential range.
 - Growth: J per phase 12 at n 32 here, 17 at n 48 (§10). No superlinear growth seen. Scale climbs at n 48-64 are running (§13).
+
+## 13. CONJECTURE (CL-S) and the reduction it would give
+- SCOPE RUN: a maximal run of in-phase transitions with (h) at k, H2 at k+1 and w constant (§9).
+- **(CL-S)** (CONJECTURE; L-SI succ. 3). Inside a scope run, the max gate levels M_k at its S4c fallbacks form a non-increasing
+  sequence, across non-tame jumps too. Each level M ≥ 0 occurs at ≤ n_E fallbacks, and M = −1 at ≤ n_E(n − 1).
+  - This is FB's per-run budget made to survive the jumps. It is the leaver-free, M-form of box 5's (CL) ("carry levels non-increasing
+    while w is constant").
+- DATA (experiments/si/coarse/clscope.py; the named set, all pinned jcl_*/rel_* climb bests, and L-RED's j7_n32 / j7_n48):
+  - 67 scope runs, 246 fallbacks, 0 violations of either part;
+  - max 33 fallbacks in one scope run (ccl_w48_n48); max 16 jumps in one scope run.
+- Caution: M_k itself CAN rise at an in-scope jump (run_x_inr2 24 → 30, fbref_cex_n32 25 → 30, x31_lem_t32 28 → 29, x32_waves48
+  45 → 47; scratch jclass). (CL-S) is only about the levels AT FALLBACKS.
+- Reduction (READING; each step PROVED given (CL-S)):
+  - (CL-S) ⇒ #fallbacks per scope run ≤ n·n_E + (n − 1)n_E = n_E(2n − 1).
+  - Corollary JD (§9) ⇒ J_in(S) ≤ |succ(o)| + |succ(o)|·n_E(2n − 1) per scope run.
+  - Every transition outside the scope runs is out of scope: (h) fails at k, H2 fails at k+1, or w changes. Hence
+    J ≤ (1 + N_out)·|succ(o)|(1 + n_E(2n − 1)) + N_out, with N_out := #out-of-scope in-phase transitions.
+  - Then Theorem FB bounds the fallbacks, and so (C), by poly(n)·(1 + N_out).
+  - N_out ≤ O + #w-changes + #transitions with an EQ endpoint lacking (h). O is R21's OTHER-touching count, OPEN as (NH′).
+  - So under (CL-S), (C) is polynomial whenever O and the w-changes are, i.e. (C) adds no new open quantity to R21/R23.
+- Status: (CL-S) OPEN, DATA only. Ideas for a proof (READING):
+  - At THR fallbacks with u* ≠ none, FBL (R20 (b)) leaves only R → F gate edges (plus flat cycle-node switches), and CLU bounds
+    their levels by rank(u*), which is non-increasing in a scope run.
+  - What is missing is that the β-flips at a level are not undone by a jump. A jump raises the values in R̄ (OFF), and so possibly
+    the β of R-tails.
+
+## 14. Last climbs of the box (DATA; 23:3xZ-00:08Z; pinned in experiments/si/coarse/instances/, all reverify.sh OK, one o)
+Scope (CHECKER C34 Add. 1): every statement here about (C), R, D or exits is 𝒞^1O-only.
+
+| best (mode, seed) | n | sha1 | n5 it/fb | result |
+| --- | --- | --- | --- | --- |
+| rel_x31_rx48 (REL, x31_rx48) | 48 | 26f0294e | 24/1 | 16 release-paid jumps |
+| rel2_x31_rx48 (REL, rel_x31_rx48) | 48 | c332f376 | 26/1 | 18 release-paid jumps |
+| rel_j7_n48 (REL, L-RED j7_n48 c593e43c) | 48 | 4add18b8 | 23/1 | 14 |
+| rel_j7_n32 (REL, L-RED j7_n32 78ec52e8) | 32 | 5857a253 | 22/1 | 12 |
+| cls_rel_lev (CLS: adversarial against (CL-S), from rel_lev_l_sc) | 32 | 6cdadbb0 | 26/15 | 0 (CL-S) violations; 15 fallbacks in scope runs |
+
+- Release-paid jumps per phase: 12 at n 32, 18 at n 48 (REL climbs, 30 min each). No superlinear growth seen.
+- J-mode scale climbs: J 12 at n 48 from x31_cu48. The n 64 seed (x32_rand64) and zcl_rx_n48 did not improve in 30 min.
+- On the four new REL/CLS bests every check has 0 violations:
+  - FB (i)-(iv); J1 44/44; OFF 1,860; CAP 542; L = M 18/18;
+  - D1-D3; NOREL-A (0 arena releases among 67);
+  - (CL-S) (5 scope runs, 18 fallbacks, max 15 in one run).

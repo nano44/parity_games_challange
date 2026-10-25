@@ -3,11 +3,12 @@
 Fitness = (max J in one phase, total in-phase J, in-phase fallbacks); with JMODE=REL, (#in-scope non-tame transitions whose argmin was
 released into D at an earlier fallback of the same scope run, J_in, releases into D) (dpot.py; the part of Corollary JD paid by releases). o-cyclic 𝒞^1O only (one Odd choice vertex, asserted; mutation
 operator and o-cyclicity test from experiments/new/box21/climb_fix.py and box25/pureY.py, read-only, as in xing/clclimb.py).
-Usage: [JMODE=REL] jclimb.py seed secs OUT seed.pg      (writes OUT.pg on every improvement; re-verify bests with xing/reverify.sh)"""
+Usage: [JMODE=REL|CLS] jclimb.py seed secs OUT seed.pg      (writes OUT.pg on every improvement; re-verify bests with xing/reverify.sh)"""
 import sys, os, random, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tame import *
 from dpot import scan_d
+from clscope import scan_c
 MODE = os.environ.get("JMODE", "J")   # J: (max J per phase, J, fb); REL: (#jumps paid by a release (REL-NJ failures), J_in, releases)
 sys.path.insert(0, os.path.join(ROOT, "experiments/new/box21")); sys.path.insert(0, os.path.join(ROOT, "experiments/new/box25"))
 from climb_fix import mutate
@@ -19,6 +20,9 @@ def fit(G):
     g = pg.Game(*G)
     if not any(w in split(g, odd[0]) for w in G[2][odd[0]]): return (-10 ** 9, -1, -1)
     try:
+        if MODE == "CLS":   # adversarial against CONJECTURE (CL-S): (violations, fallbacks in scope runs, jumps in one scope run)
+            c, _ = scan_c(g, "climb")
+            return (c["mono_viol"] + c["perlevel_viol"], c["fb"], c["maxJ_run"])
         if MODE == "REL":
             c, _ = scan_d(g)
             return (c["relnj_viol"], c["J_in"], c["rel_fb"])
