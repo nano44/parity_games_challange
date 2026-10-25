@@ -1112,3 +1112,4 @@
 - 04:28Z Lead: merged referee 2f465ff (R-N5-SN Addendum 2 on §2b: H1-DROP, H1-KEEP, ABS-COUNT′ SIGNED) and l-new 189ff49 (fixes §8). §2b now signed by both → R30 uses ABS-COUNT′. L-NEW asked for final §9 (REFEREE §C rows + both §2b addenda), then handover.
 - 04:33Z Lead: R30 draft (P-N5-SN + fixes §2b) written; awaits L-NEW final fixes §9 SHA, then C39.
 - 04:38Z Lead: merged l-new 938e9ef (P-N5-SN fixes final 9de7820 sha1 f242b0118a30cf3362cda59e48787cc0bd1768b2 incl. §9 and §10; §2b byte-identical to the reviewed 0883157 version; L-NEW 13 PARKED ~530k) and l-comp 9e53a0e (box 7 park: n 5 Q2 0 violations; Q3-4 running unattended). R30 draft cites fixes → C39.
+- 04:43Z Lead: created successors: L-NEW 14 session_014oGq98MdJvpgrVXNA7rNvA, L-COMP 4 session_01AiLCefKYn3CkbJsYJtY5aR, L-SI 4 session_019zCLqPUCjkJxMD4vZoJ8TA (handover checks first). C39 (R30) requested.
