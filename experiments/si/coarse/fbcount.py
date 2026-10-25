@@ -4,7 +4,7 @@ transitions into BLOCKS: maximal runs of consecutive transitions with NC (mono.p
 β(y) := key of COARSE_{M-1}(Ξ(σ(y))) (full key when M = -1). Checks:
   (i) β(y) is non-decreasing inside a block (at every transition of the block);
   (ii) at every fallback transition of a block, some y with a level-M gate edge has β(y) strictly increased;
-  (iii) every in-phase fallback has M < 99;
+  (iii) every in-phase fallback has M < INF (mono.INF; 99 before box 9);
   (iv) #fallbacks in a block <= #Even vertices (M >= 0) or <= #Even·(n-1) (M = -1).
 Reports per instance: fallbacks in phases, NC failures (INRs) in phases, blocks, max fallbacks per block, and the bound 2n²(1 + I).
 Usage: fbcount.py game.pg ...   |   fbcount.py --random|--c1o SEED COUNT NMIN NMAX"""
@@ -42,7 +42,7 @@ def scan(g, start=None):
             a, b = out[i], out[i + 1]; c["tr"] += 1; nc = nc_at(i)
             if a["fb"]:
                 fbp += 1
-                if a["M"] >= 99: c["viol_iii"] += 1; ex.append(("iii", i))
+                if a["M"] >= INF: c["viol_iii"] += 1; ex.append(("iii", i))
             if not nc: inr += 1; blk = None; continue
             if blk is None or blk != a["M"]:
                 if bfb: c["maxfb_block"] = max(c["maxfb_block"], bfb)
