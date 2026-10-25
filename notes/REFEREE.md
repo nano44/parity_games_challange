@@ -28,6 +28,13 @@ experiments/new/box25/common.py (rand_c1o, odd_choice = FIRST Odd chooser: hence
 - Glob-based data can pull in out-of-class games; assert the class.
 - Random 𝒞^1O samples are nearly vacuous for throttled / route-form / re-entry structure; say so; named instances carry the evidence.
 
+## Resume point (successor 5, written 2026-10-25T00:56Z by date -u): P-N5-LP (pin bc42f2c, docs/new/P-N5-LP-box32.md sha1 d2c8121a…)
+- docs/referee/R-N5-LP.md: U, HI (Consequence gap HI-1), UL, GR, NU, Theorem LP, BAND, Corollary LP′ SIGNED; WAKE WITH GAP W-1 (closed
+  via DF′); Lemma DF NOT SIGNED, FALSE: docs/referee/R-N5-LP/df_cex.pg (n 11, sha1 a128663e…; y = 7 own W-cycle node keeps 4 by FIX 2,
+  (7, 8) gate at k+1, 4 ∉ R) = the VJ00 Lemma 5.8 "2 ⇒ 3" gap of R-N5T; DF′ (y not own W-cycle node) SIGNED. Tool scratch/lp_probe.py.
+  NEXT: §C when R2-N5-LP exists. Context ~500k: HANDOVER after §C (successor 6 from this notebook).
+- Lesson: any lane citation of VJ00 Lemma 5.8 "maximum ⇒ no improvement" is the broken direction; test it at own cycle nodes first.
+
 ## Resume point (successor 5, written 2026-10-24T23:45Z by date -u): P-N5-U23 (pin 7666336, docs/new/P-N5-U23-box31.md sha1 ee3e5d1e…)
 - docs/referee/R-N5-U23.md: CASC-U2 + Corollary SIGNED (data vacuous: no U2 W-flat switch anywhere); CASC-U3 (i)/(iii) SIGNED WITH GAPS
   U3-2 (kinds constant, closed), U3-3 (c_θ = c_w wording); (ii) WITH GAP U3-1 (L_B = 0, no kind B: proof gives λ − 2, packet says λ − 3;
