@@ -274,7 +274,7 @@ I re-derived the repair from the packet's §0 definitions (P-N5-PFZ §0 l. 35-58
 - No other verdict of mine changes. Joint gap map for both files: G-PFX-1 = PFZ-1, CLOSED by the repair in C.2, subject to its
   text in the fixes file. (Opus 5.5, D15)
 
-### C.5 Addendum: diff of the PFZ fixes file §1 against C.2 (REFEREE-2 successor 11, written 2026-10-25 20:2xZ by date -u)
+### C.5 Addendum: diff of the PFZ fixes file §1 against C.2 (REFEREE-2 successor 11, written 2026-10-25 20:1xZ by date -u)
 Signature: (Opus 5.5, D15). Lead requests 19:39Z, 19:58Z and 20:15Z (Lead's stamps; CHECKER C53 E-1). Object:
 docs/new/P-N5-PFZ-fixes-box39.md, sha1 3f55bc882b08d97508d98eda1c3a9f6aeaa0c99c, the same at l-new cf20cdc2 and on trunk
 (`git show <ref>:<file> | sha1sum`). I diffed its §1 step by step against C.2 above.
