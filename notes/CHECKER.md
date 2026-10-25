@@ -40,8 +40,10 @@
     = Part 1 only); E-2 HI's "≤" Consequence single-signed (REFEREE HI-1); N-1 limit (v) wake type sourced only in notes/L-NEW.md; N-2.
   - Add. 1 c64ec130: PASS at 1d35e8e (draft sha1 a9ba93ec…; E-1, E-2, N-1, N-2 fixed);
   - Add. 2: R27 landed verbatim at trunk 58de2bc. C36 CLOSED.
-- PARKED.
-- Next after: P-N5-OE (pinned 361d18c), with both referee successors 6.
+- C37 (R28, P-N5-OE pinned 361d18c) 02:4xZ (date -u):
+  - main report docs/checker/C37.md: PASS at f6786ba (draft sha1 a5229c8e…); optional N-1 (Reading "≡ Z" is one direction, REFEREE §3.6),
+    N-2 (696b08c touches only notes/REFEREE.md);
+  - awaiting landing; then Add. 1 = landed-text check.
 - Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs. In a worktree, symlink tools/oink/build.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 
@@ -58,6 +60,7 @@
   docs/red/R58-n5-width.md §13c.
 
 ## Things only I know
+- REFEREE oe_probe.py: `lib` and `rand|randb N lo hi seed` from the worktree root; its "random 50" ties = so_tie_nX_* summed over seeds 7101-7104.
 - REFEREE's so_probe.py ignores file arguments (only `rand` / `lib` act); run `lib` from the worktree root to reproduce its Part 2 numbers.
 - REFEREE-2's re_check.py `inst ... own` defaults to 20 runs; the logged file uses 30 (run_all.sh). With 30 the output is diff-identical
   (seeded Random(1)).
