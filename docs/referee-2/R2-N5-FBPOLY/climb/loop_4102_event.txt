@@ -1,0 +1,6 @@
+loop_4102.pg: REFEREE-2 succ. 11 witness of EXIT-SWITCH's 'loop' kind (DATA): a switched u in U \ T whose k-honest play from x*_u returns to u before T.
+n 8 o 2 succ(o) [0, 1, 7]
+trace r=2 mode=rand start sigma0=[3, 1, 1, 2, 5, 1, 2, 1] tau0=[3, 1, 0, 5, 5, 1, 2, 0]
+fallback k=1: c_theta=1 |U|=8 U=[0, 1, 2, 3, 4, 5, 6, 7] H1=True
+  switched u 3 x* 7 k-play from x* [7, 0] first of T or u: 3 kind loop
+  switched u 7 x* 4 k-play from x* [4, 5] first of T or u: 1 kind ct
