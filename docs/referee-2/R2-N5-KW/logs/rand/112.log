@@ -1,0 +1,23 @@
+A0_checks: 428
+FACTB_pairs: 822
+FRZU_checks: 32
+KWS_stretches: 48
+LEN_runs_after_f0: 3
+PAR_states_cw_above_cth: 16
+PHASE_checked: 33
+RUNS_runs: 5
+RUN_case_a: 5
+phases: 33
+runs: 3
+states: 64
+states_checked: 64
+stretches: 48
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 3
+max_T_per_phase: 14
+max_Trel_per_phase: 14
+max_f_per_phase: 5
+max_freeze_delay: 1
+max_stretches_per_phase: 10
+RESULT OK violations=0
+docs/referee-2/R2-N5-RL/climb/best_cyc_63.pg exit 0

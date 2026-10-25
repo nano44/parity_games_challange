@@ -1,0 +1,24 @@
+A0_checks: 854
+FACTB_pairs: 7285
+HPATH_checks: 809
+KWS_stretches: 19
+PAR_states_cw_above_cth: 42
+PHASE_checked: 13
+RECORD_kind_change_transitions_cw_above: 33
+RECORD_runs_cw_above_notH2: 4
+RUNS_runs: 4
+RUN_case_c: 4
+phases: 13
+runs: 3
+states: 52
+states_checked: 52
+stretches: 19
+max_KW_per_stretch: 13
+max_RUN_ratio_case_c_x1000: 0
+max_T_per_phase: 17
+max_Trel_per_phase: 17
+max_f_per_phase: 0
+max_freeze_delay: 13
+max_stretches_per_phase: 4
+RESULT OK violations=0
+experiments/new/box32/instances/kwm_cex_n24.pg exit 0

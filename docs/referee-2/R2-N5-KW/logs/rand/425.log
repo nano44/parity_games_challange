@@ -1,0 +1,24 @@
+A0_checks: 326
+FACTB_pairs: 2795
+FRZU_checks: 2
+HPATH_checks: 50
+KWS_stretches: 56
+LEN_runs_after_f0: 1
+PAR_states_cw_above_cth: 7
+PHASE_checked: 17
+RUNS_runs: 3
+RUN_case_a: 3
+phases: 17
+runs: 3
+states: 61
+states_checked: 61
+stretches: 56
+max_KW_per_stretch: 2
+max_RUN_ratio_case_a_x1000: 2
+max_T_per_phase: 26
+max_Trel_per_phase: 26
+max_f_per_phase: 2
+max_freeze_delay: 2
+max_stretches_per_phase: 26
+RESULT OK violations=0
+experiments/red/xing/instances/x31_rx32.pg exit 0

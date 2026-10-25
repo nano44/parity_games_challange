@@ -1,0 +1,25 @@
+A0_checks: 906
+FACTB_pairs: 6551
+FRZU_checks: 208
+KWS_stretches: 41
+LEN_runs_after_f0: 10
+PAR_states_cw_above_cth: 130
+PHASE_checked: 13
+RUNS_runs: 19
+RUN_case_a: 4
+RUN_case_b: 15
+phases: 13
+runs: 3
+states: 151
+states_checked: 151
+stretches: 41
+max_KW_per_stretch: 8
+max_RUN_ratio_case_a_x1000: 2
+max_RUN_ratio_case_b_x1000: 0
+max_T_per_phase: 67
+max_Trel_per_phase: 67
+max_f_per_phase: 8
+max_freeze_delay: 8
+max_stretches_per_phase: 12
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/b5_os_n32.pg exit 0

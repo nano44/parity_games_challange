@@ -1,0 +1,21 @@
+A0_checks: 2778
+FACTB_pairs: 5534
+KWS_stretches: 136
+PAR_states_cw_above_cth: 9
+PHASE_checked: 29
+RUNS_runs: 6
+RUN_case_a: 6
+phases: 29
+runs: 3
+states: 146
+states_checked: 146
+stretches: 136
+max_KW_per_stretch: 5
+max_RUN_ratio_case_a_x1000: 3
+max_T_per_phase: 45
+max_Trel_per_phase: 45
+max_f_per_phase: 36
+max_freeze_delay: 5
+max_stretches_per_phase: 39
+RESULT OK violations=0
+experiments/red/so/instances/rise_fb38_n48.pg exit 0

@@ -1,0 +1,18 @@
+A0_checks: 35
+FACTB_pairs: 51
+HPATH_checks: 14
+KWS_stretches: 5
+PAR_states_cw_above_cth: 2
+PHASE_checked: 5
+phases: 5
+runs: 3
+states: 5
+states_checked: 5
+stretches: 5
+max_KW_per_stretch: 0
+max_T_per_phase: 0
+max_Trel_per_phase: 0
+max_f_per_phase: 0
+max_stretches_per_phase: 1
+RESULT OK violations=0
+experiments/m2/counterexamples/ce1_8v_shrunk.pg exit 0

@@ -1,0 +1,22 @@
+A0_checks: 54
+FACTB_pairs: 254
+FRZU_checks: 4
+KWS_stretches: 17
+LEN_runs_after_f0: 2
+PHASE_checked: 17
+RUNS_runs: 2
+RUN_case_a: 2
+phases: 17
+runs: 3
+states: 19
+states_checked: 19
+stretches: 17
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 1
+max_Trel_per_phase: 1
+max_f_per_phase: 0
+max_freeze_delay: 0
+max_stretches_per_phase: 1
+RESULT OK violations=0
+docs/referee-2/R2-N5-PFZ/climb/best_brki_9602.pg exit 0

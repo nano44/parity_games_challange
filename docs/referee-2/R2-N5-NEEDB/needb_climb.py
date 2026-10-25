@@ -20,21 +20,29 @@ def fitness(st, fit):
 
 START = None   # the seed game's saved start pair (climb seed .txt), used as an extra run while it is valid for the mutated game
 
+LAST = {}     # id(game) -> the start pairs evaluate() ran on it, as (label, mode, sigma0, tau0)
+
 def evaluate(g, o, fit, seed):
-    st = FC.Stats(); rng = random.Random(seed)
+    st = FC.Stats(); rng = random.Random(seed); runs = []
     if START and all(START[0][v] in g.succ[v] and START[1][v] in g.succ[v] for v in range(g.n)):
+        runs.append(("start", "own", list(START[0]), list(START[1])))
         A, fbs = OC.run_trace(g, o, START[0], START[1], rng, "own"); EC.check_run(g, o, A, fbs, st, "own:start", rng)
     for r in range(4):
         s, t = FC.s3_start(g) if r == 0 else RC.rand_start(rng, g)
         mode = "own" if r < 2 else "rand"
+        runs.append((f"r{r}", mode, list(s), list(t)))
         A, fbs = OC.run_trace(g, o, s, t, rng, mode); EC.check_run(g, o, A, fbs, st, f"{mode}:r{r}", rng)
+    LAST[id(g)] = runs
     return fitness(st, fit), st
 
 def dump(h, path):
+    """the game, plus the start pairs evaluate() actually ran on it (the first one as sigma0 / tau0 for inst mode)"""
     FCL.dump(h, path)
-    if START:
-        with open(os.path.splitext(path)[0] + ".txt", "w") as fh:
-            fh.write(f"start pair (from the climb seed's .txt; used as run 'own:start')\nsigma0 = {START[0]}\ntau0 = {START[1]}\n")
+    runs = LAST.get(id(h), [])
+    with open(os.path.splitext(path)[0] + ".txt", "w") as fh:
+        fh.write("start pairs evaluate() ran on this game, in order (label, trace); rand traces also depend on the rng\n")
+        for lab, mode, s0, t0 in runs: fh.write(f"# {lab} {mode}: {s0} {t0}\n")
+        if runs: fh.write(f"sigma0 = {runs[0][2]}\ntau0 = {runs[0][3]}\n")
 
 def main():
     fit, seed, nmin, nmax, secs = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), float(sys.argv[5])

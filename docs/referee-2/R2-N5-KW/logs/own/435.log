@@ -1,0 +1,23 @@
+A0_checks: 1215
+FACTB_pairs: 2678
+HPATH_checks: 431
+KWS_stretches: 86
+PAR_states_cw_above_cth: 28
+PHASE_checked: 86
+RECORD_runs_cw_above_notH2: 1
+RUNS_runs: 1
+RUN_case_c: 1
+phases: 86
+runs: 3
+states: 87
+states_checked: 87
+stretches: 86
+max_KW_per_stretch: 1
+max_RUN_ratio_case_c_x1000: 0
+max_T_per_phase: 1
+max_Trel_per_phase: 1
+max_f_per_phase: 0
+max_freeze_delay: 0
+max_stretches_per_phase: 1
+RESULT OK violations=0
+experiments/si/coarse/instances/box9/cl9_heq_b.pg exit 0

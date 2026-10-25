@@ -1,0 +1,24 @@
+A0_checks: 3169
+FACTB_pairs: 45240
+FRZU_checks: 64
+HPATH_checks: 88
+KWS_stretches: 95
+LEN_runs_after_f0: 6
+PAR_states_cw_above_cth: 2
+PHASE_checked: 14
+RUNS_runs: 19
+RUN_case_a: 19
+phases: 14
+runs: 3
+states: 173
+states_checked: 173
+stretches: 95
+max_KW_per_stretch: 5
+max_RUN_ratio_case_a_x1000: 6
+max_T_per_phase: 103
+max_Trel_per_phase: 103
+max_f_per_phase: 15
+max_freeze_delay: 4
+max_stretches_per_phase: 33
+RESULT OK violations=0
+experiments/red/n5inj/instances/returns_ph64.pg exit 0

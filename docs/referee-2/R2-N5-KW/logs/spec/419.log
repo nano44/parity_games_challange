@@ -1,0 +1,23 @@
+A0_checks: 211
+FACTB_pairs: 806
+FRZU_checks: 113
+KWS_stretches: 21
+LEN_runs_after_f0: 6
+PAR_states_cw_above_cth: 3
+PHASE_checked: 16
+RUNS_runs: 8
+RUN_case_a: 8
+phases: 16
+runs: 3
+states: 91
+states_checked: 91
+stretches: 21
+max_KW_per_stretch: 6
+max_RUN_ratio_case_a_x1000: 30
+max_T_per_phase: 50
+max_Trel_per_phase: 50
+max_f_per_phase: 4
+max_freeze_delay: 6
+max_stretches_per_phase: 5
+RESULT OK violations=0
+experiments/red/xing/instances/x31_lem_e24.pg exit 0

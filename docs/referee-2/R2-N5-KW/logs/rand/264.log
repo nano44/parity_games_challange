@@ -1,0 +1,17 @@
+A0_checks: 296
+FACTB_pairs: 904
+KWS_stretches: 41
+PAR_states_cw_above_cth: 1
+PHASE_checked: 7
+phases: 7
+runs: 3
+states: 41
+states_checked: 41
+stretches: 41
+max_KW_per_stretch: 0
+max_T_per_phase: 13
+max_Trel_per_phase: 13
+max_f_per_phase: 0
+max_stretches_per_phase: 14
+RESULT OK violations=0
+experiments/new/box25/instances/xc16.pg exit 0

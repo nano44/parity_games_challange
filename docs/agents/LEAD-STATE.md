@@ -1521,3 +1521,14 @@
 - 23:00Z: Merged checker a0aa2651: CHECKER 8 handover check 5/5, GO; C58 waits for the final R49 draft.
 - Merged l-new b15856e8. PINNED at this commit: packet P-N5-DUAL, docs/new/P-N5-DUAL-box43.md, sha1 a51f7c30c267a4c02088cf2c849388e28c4121fa (L-NEW 22, 150 lines). Contents: Lemma DUAL, Theorem MIRROR as an implication under an explicit hypothesis (H-OF), Corollary Φ-kO, ENDGAME, and a start / N5^OF table to check.
 - Queued for both referees after P-N5-KW. REFEREE 11: KW, then DUAL. REFEREE-2 12: §C NEEDB, KW, FX, NH42, DUAL.
+- 23:06Z: Merged referee 56ac6538 + 1d6cbf32: R-N5-KW.
+  - Verdict: all SIGNED; E-SEG SIGNED WITH GAP KW-1 (a counting definition, one-line repair, no downstream bound changes); notes KW-N1..N5.
+  - FRZ-U is self-contained (no transfer of R20 CR needed). CASC-B's use of R26 (c) is checked.
+  - Addendum 1: CASC-B's hypothesis is exercised (cascb_witness.pg, within bound). KIND-MONO is still vacuous after the freeze.
+  - Told L-RED to focus its constructions on a post-freeze kind change.
+- 23:21Z: Read 12 notifications. Hourly sweep (trigger 23:03Z): WATCHDOG 23:03Z reports no overage; CHECKER's 681k alert resolved by the handover; REFEREE-2 12 at 449k; L-COMP idle 63 min.
+  - Merged referee-2 1a9a0407 (Addendum A, XG witness fixed: rng-free, pinned σ*), checker abc914c2/4cad8cb1 (C58 prep: Oink built, landed.py, NEEDB re-runs IDENTICAL), l-new 85969a3b, referee, l-red, l-comp.
+  - L-NEW DATA: every exponential-SI family (Friedmann switchall/switchbest, tc, tc+, counter_*) is in the frontier class 𝒞^{≥2E,≥2O}; only counter_ortl (𝒞^1O) and counter_qpt (one-player) are covered. Route Δ climbs: TJ and D_k changes ≤ n so far; a size-scaling test is running.
+  - Routed: REFEREE-2 (§C NEEDB first, then KW, then handover if > ~470k); L-RED (re-run REFEREE's cascb_witness.pg on kw18; R73 discrepancy); L-COMP (status nudge).
+  - R49 draft updated for Addendum A.
+- 23:28Z: Merged referee-2 8a47fd92 (R2-N5-KW: all SIGN, no gap, N-KW-1..6) and l-com de0ca760 (Q4 78/160 alive). Asked both referees for §C KW, and REFEREE-2 also for §C NEEDB. Pre-drafted docs/agents/R50-draft.md (P-N5-KW + addendum; placeholders FIXES / RSC / R2SC / CSUM). PLAN: after R50 lands, a short assembly packet (𝒞^1O polynomial iteration bound from R47 + R48 + R50 + per-iteration bit cost), refereed like any packet.

@@ -1,0 +1,22 @@
+A0_checks: 110
+FACTB_pairs: 919
+FRZU_checks: 2
+KWS_stretches: 20
+LEN_runs_after_f0: 1
+PHASE_checked: 14
+RUNS_runs: 1
+RUN_case_a: 1
+phases: 14
+runs: 3
+states: 21
+states_checked: 21
+stretches: 20
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 4
+max_Trel_per_phase: 4
+max_f_per_phase: 0
+max_freeze_delay: 0
+max_stretches_per_phase: 5
+RESULT OK violations=0
+experiments/red/xing/instances/x31_ru24.pg exit 0

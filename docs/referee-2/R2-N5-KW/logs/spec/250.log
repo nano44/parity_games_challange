@@ -1,0 +1,22 @@
+A0_checks: 17
+FACTB_pairs: 24
+FRZU_checks: 6
+KWS_stretches: 35
+LEN_runs_after_f0: 1
+PHASE_checked: 35
+RUNS_runs: 1
+RUN_case_a: 1
+phases: 35
+runs: 3
+states: 40
+states_checked: 40
+stretches: 35
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 5
+max_Trel_per_phase: 5
+max_f_per_phase: 0
+max_freeze_delay: 0
+max_stretches_per_phase: 1
+RESULT OK violations=0
+experiments/new/box22/instances/pure_14.pg exit 0

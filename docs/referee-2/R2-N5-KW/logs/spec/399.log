@@ -1,0 +1,25 @@
+A0_checks: 1139
+FACTB_pairs: 8450
+FRZU_checks: 44
+HPATH_checks: 183
+KWS_stretches: 69
+LEN_runs_after_f0: 5
+PAR_states_cw_above_cth: 8
+PHASE_checked: 13
+RECORD_kind_change_transitions: 6
+RUNS_runs: 14
+RUN_case_a: 14
+phases: 13
+runs: 3
+states: 99
+states_checked: 99
+stretches: 69
+max_KW_per_stretch: 2
+max_RUN_ratio_case_a_x1000: 20
+max_T_per_phase: 46
+max_Trel_per_phase: 46
+max_f_per_phase: 1
+max_freeze_delay: 2
+max_stretches_per_phase: 30
+RESULT OK violations=0
+experiments/red/xing/instances/j7_n32.pg exit 0

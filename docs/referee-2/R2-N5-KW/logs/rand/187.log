@@ -1,0 +1,15 @@
+A0_checks: 12
+KWS_stretches: 4
+PHASE_checked: 4
+phases: 4
+runs: 3
+states: 4
+states_checked: 4
+stretches: 4
+max_KW_per_stretch: 0
+max_T_per_phase: 0
+max_Trel_per_phase: 0
+max_f_per_phase: 0
+max_stretches_per_phase: 1
+RESULT OK violations=0
+experiments/m2/counterexamples/strat_s2_12v.pg exit 0

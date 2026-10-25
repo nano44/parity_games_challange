@@ -1,0 +1,24 @@
+A0_checks: 735
+FACTB_pairs: 1171
+HPATH_checks: 574
+KWS_stretches: 42
+PAR_states_cw_above_cth: 31
+PHASE_checked: 20
+RECORD_kind_change_transitions_cw_above: 2
+RECORD_runs_cw_above_notH2: 5
+RUNS_runs: 5
+RUN_case_c: 5
+phases: 20
+runs: 3
+states: 52
+states_checked: 52
+stretches: 42
+max_KW_per_stretch: 3
+max_RUN_ratio_case_c_x1000: 0
+max_T_per_phase: 7
+max_Trel_per_phase: 7
+max_f_per_phase: 1
+max_freeze_delay: 3
+max_stretches_per_phase: 8
+RESULT OK violations=0
+experiments/red/n5inj/instances/frz24.pg exit 0

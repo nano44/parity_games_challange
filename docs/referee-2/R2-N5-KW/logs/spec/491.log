@@ -1,0 +1,18 @@
+A0_checks: 1345
+FACTB_pairs: 2579
+HPATH_checks: 56
+KWS_stretches: 93
+PAR_states_cw_above_cth: 10
+PHASE_checked: 20
+phases: 20
+runs: 3
+states: 93
+states_checked: 93
+stretches: 93
+max_KW_per_stretch: 0
+max_T_per_phase: 28
+max_Trel_per_phase: 28
+max_f_per_phase: 1
+max_stretches_per_phase: 29
+RESULT OK violations=0
+experiments/si/riselast/instances/rl_b.pg exit 0

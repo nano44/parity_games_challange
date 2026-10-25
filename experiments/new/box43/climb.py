@@ -2,7 +2,8 @@
 """Box 43 climber: mutate a C^kO game (k fixed Odd choice vertices) to maximise an N5 measure from multi.py (DATA).
 Objective (lexicographic): --obj T (tau-changing transitions), it, TJ, maxP, ret (max per-vertex tau(o_i) value returns).
 Start pair: best-reward (SPEC S3), or with --starts also a start pair in the genome.
-Usage: climb.py K NMAX STEPS SEED OBJ OUTDIR [--starts] [--deg2 (every Odd choice vertex has out-degree exactly 2)] [--frontier (with objective Dch/RDch: Even has >= 2 choice vertices)]"""
+Usage: climb.py K NMAX STEPS SEED OBJ OUTDIR [--starts] [--deg2 (every Odd choice vertex has out-degree exactly 2)] [--frontier (with objective Dch/RDch: Even has >= 2 choice vertices)]
+       [--seed FILE (start from this game; K is then its number of Odd choice vertices)]"""
 import sys, os, random, json, hashlib
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from multi import run, measure, rand_ckO, odd_choices, pg
@@ -100,6 +101,9 @@ if __name__ == "__main__":
     DEG2 = "--deg2" in sys.argv; FRONT = "--frontier" in sys.argv
     os.makedirs(OUT, exist_ok=True); rng = random.Random(SEED)
     g = None
+    if "--seed" in sys.argv:
+        from n5x import load
+        g = load(sys.argv[sys.argv.index("--seed") + 1]); NMAX = max(NMAX, g.n)
     while g is None or (DEG2 and any(len(g.succ[o]) != 2 for o in odd_choices(g))): g = rand_ckO(rng, K + 2, max(K + 3, NMAX // 2), K)
     O = odd_choices(g); st = [s[0] for s in g.succ] if starts else None
     best, bm = score(g, st, OBJ)
