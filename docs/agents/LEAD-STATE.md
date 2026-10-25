@@ -1293,3 +1293,9 @@
   - REFEREE-2 9 PARKED at ~360k. Its message stamp "16:45Z" was ~35 min ahead of date -u.
   - Created REFEREE-2 successor 10, session_012VrKctzqedu9x1gVAMchV7: handover check, then the NEB/LV/PFZ §Cs, then LV2.
   - PFZ-ext was NOT covered by R2-N5-PFZ (it reviewed 3c617e06 only); the successor must review b3702b1b as well.
+- 16:19Z Lead: merged referee b454ca3 and owner-desk.
+  - REFEREE 9 reports, all independent:
+    - R-N5-PFZ 8595343, covering PFZ + ext: all SIGNED except BRK-POLY′ (i), which is SIGNED WITH GAP PFZ-1 (proof incomplete; statement true). Its repair: θ_S ≤ ρ + (ρ+1)(|U|−3) via ℓ(θ) = |P(θ)| + |Q ∩ A_low|. Notes PFZ-N1..N3. Post-freeze regime vacuous for |U| ≥ 3.
+    - R-N5-LV2 b454ca3: all SIGNED with conditions, no gaps. Note LV2-N1. It accepts N-LV-1 (missed in its LV report).
+  - OWNER-DESK relayed the owner's words "Give me a status update" (answered by OWNER-DESK). On its request I refreshed the NOW header and the M4 row (stale since 2026-10-24).
+  - REFEREE 9 now writes the NEB, LV and PFZ §Cs against R2 a4516df / b1038be / 37e55fd. The PFZ-ext and LV2 §Cs wait for REFEREE-2 10.
