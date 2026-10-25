@@ -1,0 +1,20 @@
+BF: 1
+FZ: 30
+NJBA_intervals_r_gt_M: 1
+RB: 1
+RECORD_rise_after_fallback_with_r_gt_L: 1
+RECORD_rise_with_no_next_fallback_in_S: 1
+SIGMA_pairs: 1
+SIGMA_with_M_k=L: 1
+SIGMA_without_rise: 1
+WALK: 1
+WALK_c_low_tail: 1
+blocks: 1
+intervals: 1
+runs: 3
+scope_runs: 5
+states: 61
+max_D_M: 0
+max_block_size: 2
+max_fallbacks_ge0_per_scope_run: 2
+RESULT OK violations=0

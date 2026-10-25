@@ -1,5 +1,47 @@
 # Handover check: REFEREE
 
+## successor 9 (2026-10-25T14:45Z by date -u; Opus 5.5 under D15/L37, label "(Opus 5.5, D15)"; predecessor successor 8, handover 4efa2a6f)
+Measured from the repository at the time of writing, not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee`. Local branch started STALE (1505 behind origin/claude/referee). `git fetch origin claude/referee` and
+  `git checkout -B claude/referee origin/claude/referee`: HEAD = origin/claude/referee = 4efa2a6f (checked with `git rev-parse`).
+- Trunk = remote HEAD `claude/vibrant-johnson-nxvvxo` (`git ls-remote --symref origin HEAD`) at efa00f59 (Lead: R39 draft -> C48).
+  Before merging: 3 ahead / 8 behind trunk (merge-base 1aeff933). The 8 behind: REFEREE-2 succ. 9's R2-N5-ENT (b7df84b8), OUT §C
+  (2a9e8db0), ENT §C (f33884e6), their merges, and Lead commits 3a086cca, efa00f59.
+- Merged trunk with `git merge --no-ff` (00bea06f): 4 ahead / 0 behind before this file's commit (merge-base efa00f59).
+
+### 2. Open work and next step of each
+- Nothing in flight. Successor 8's table: RL (R37), P1 (R36), SCOPE (R38), OUT (R39 draft, CHECKER C48), ENT all signed with §C done;
+  REFEREE-2's OUT and ENT §Cs (2a9e8db0, f33884e6) report identical verdicts and an empty gap map, so nothing returns to me from them.
+- Next: wait for the Lead's GO and next packet brief. On a new packet: verify the packet sha1 at its pin, build Oink
+  (scripts/setup_oink.sh; not yet built in this container), reuse own tools in docs/referee/scratch/ (rl_engine.py, rl_probe.py, NO
+  lane imports), report under docs/referee/R-<packet>.md before reading any docs/referee-2/R2-<packet>.
+- Small item seen in LEAD-STATE 14:24Z (CHECKER 30fda11): my lane's SCOPE climb maxima rest on report text only, no committed log.
+  If the Lead wants it, I can re-run the SCOPE climbs and commit the log under docs/referee/ (not started; awaiting routing).
+
+### 3. docs/GAPS.md rows relevant to me (trunk efa00f59)
+- REFEREE owns no row. The row my packets feed: G-N5-TIME | major | owner L-NEW (L-LIT T22; referees later) | **open**. Latest
+  UPDATE 14:16Z: R38 (P-N5-SCOPE) LANDED; open: out-of-SN fallbacks (OUT-POLY CONJECTURE; P-N5-OUT signed by both referees, landing
+  next = R39), NJB = ENT, REL(S), level −1. Related closed: G-N5-TERM (R15). DTL rows (GAP-A, GAP-C, G-S5-6, G-NEST) open but paused (D18/L40).
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index l.5: **active**, 2026-10-14; DECISIONS.md l.7): "A claimed polynomial algorithm is far more likely to be wrong than right.
+   Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+2. D15 (index l.26: **active**, 2026-10-22; DECISIONS.md l.278): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me.
+   Be autonomous, reason about it"
+3. D18 (index l.32: **active**, 2026-10-24; DECISIONS.md l.333): "Focus on N5 and work toward proving it. Explore novel approaches,
+   especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable
+   assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from
+   conjectures and open problems."
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (successor 8, N-ENT-2, missed by me, caught by REFEREE-2): copying a packet's "vacuous in data" line. REFEREE-2 found the NJB-A
+  hypothesis actually occurs (698 / 601 / 701 cases). Check: for every hypothesis a packet calls vacuous or unreached, count its
+  occurrences with my own probe and report the count, never the packet's word.
+- Also again this restart: the clone started stale (1505 behind origin/claude/referee); checked `git rev-parse HEAD origin/claude/referee`
+  equal before any work.
+
 ## successor 6 (2026-10-25T01:24Z by date -u; Opus 5.5 under D15/L37, label "(Opus 5.5, D15)"; predecessor successor 5, handover bb6f60f5)
 Measured from the repository at the time of writing, not recalled.
 

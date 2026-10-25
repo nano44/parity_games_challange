@@ -14,11 +14,12 @@ before your own report is pushed.
 | P-N5-RL (0a3c70cb, pin 2fb698d) | R-N5-RL.md b7419da0, §8.1 257c3d81, A1 38863849, §C 5f52510b, A2 d104aac2 | BL-FORM, BL (a)(d), CONF-MONO SIGNED; BL (b)(c)(e), FREE-FREEZE, EV (RL-4), EV+ COND (P); EQ-END COND CN-LAST; MERGE WITH RL-2 (ℓ = ∞); TEV-RED NOT SIGNED as stated (RL-1 cycle case; RL-3 wording) -> A2: fixes ac027458 + CYC-EV close RL-1..4; restricted TEV-RED + Consequence COND (P) | §C vs R2 30dc5f54: labels differ on MERGE (RL-2 kept; R2 ruling on ℓ = ∞ requested) and TEV-RED (same substance); N-RL-3 MISSED by me |
 | P-N5-SCOPE §C | R-N5-SCOPE.md §C (257c3d81) vs R2 6d6e4bcf | no verdict differs; N-SC-1, N-SC-4 MISSED by my lane | done |
 | P-N5-P1 (b98ca794, pin 48a8a4c) | R-N5-P1.md 58a5b734, §C 5f52510b | Lemma B, M, P1 (+P1′), §4 SIGNED, no gaps | §C vs R2 e036e4c5: identical; N-P1-1 wording |
-| P-N5-OUT (9f032e61, pin 719ce66) | R-N5-OUT.md fa086876 | all SIGNED, no gaps (OUT-R1, OUT-N1 notes) | §C OPEN: when R2-N5-OUT exists |
-| P-N5-ENT (4fd22be7, pin 765e893) | R-N5-ENT.md 55a3f6fb | FZ, BF, RB, WALK, CYC-EV, TEV-FB SIGNED; ENT-X, NJB-A, D1, PL-S″ COND (P); no gaps | §C OPEN: when R2-N5-ENT exists (disclosure: I had read R2-N5-RL before A2) |
+| P-N5-OUT (9f032e61, pin 719ce66) | R-N5-OUT.md fa086876 | all SIGNED, no gaps (OUT-R1, OUT-N1 notes) | §C a8b8ef3e vs R2 dfcaae67: identical; N-OUT-1..4 accepted (N-OUT-1 and N-OUT-2's CASE-B-LEN part MISSED by me) |
+| P-N5-ENT (4fd22be7, pin 765e893) | R-N5-ENT.md 55a3f6fb | FZ, BF, RB, WALK, CYC-EV, TEV-FB SIGNED; ENT-X, NJB-A, D1, PL-S″ COND (P) -> lifted by R36; no gaps | §C d6b8aef9 vs R2 b7df84b8: identical; N-ENT-1..3 accepted (N-ENT-2 'vacuous' overstatement MISSED by me) |
 ### IN FLIGHT / NEXT
-- §C for P-N5-OUT and P-N5-ENT when the Lead names the FINAL R2 SHAs (do not use drafts; pin the SHA).
-- Pending from the Lead: REFEREE-2's ruling on MERGE at ℓ = ∞ (RL-2).
+- Nothing open. RL (R37), P1 (R36), SCOPE, OUT and ENT all converged with REFEREE-2 (RL-2 accepted by R2 at 88571b0).
+- PARKED by the Lead's plan (13:35Z): successor 9 starts from this table and the Lead's next brief.
+- Lesson (N-ENT-2): do not copy a packet's "vacuous in data" line; check which hypotheses actually occur.
 ### Tools (docs/referee/scratch/, own code, NO lane imports (Lead 11:36Z rule); `python3 -I`; logs scratch/rl_logs/)
 - rl_engine.py: own N5 from the SPEC text (S1 VJ procedure, S2-S5, FIX 1-4). Reproduces rl_a/b/c counts; regions = Oink zlk on 309/309
   (rl_oink.py). rl_probe.py: RL checks + states() (R̄, F, H1-H3, r, M, phase key, scope runs) — reuse it.
