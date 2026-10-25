@@ -164,3 +164,57 @@ Nothing running (`ps aux`: no python / oink of mine). Oink NOT built (`tools/oin
   Also carried: stale container (fetch + rev-parse equality); fetch trunk right before any status text; push.sh output to a file,
   then `$?`; packets and cited fixes files frozen once sha1 reported (new text → new file); grep trunk docs for every new lemma
   name. New this session: `rev` on a 15 kB GAPS line hung at 99% CPU (killed by pid); slice long lines with python instead.
+
+## Successor 21 (this session), written 2026-10-25 19:36Z (date -u)
+Predecessor: successor 20, session_018pjn8Y8JRES3YuFDUCAJgM, parked at l-new a3efded7 (handover). Trunk fetched at 19:35Z, right
+before writing.
+
+### 1. Branch, head, ahead/behind trunk
+- Branch claude/l-new. Container stale at 5961101a: `git fetch origin claude/l-new` (5961101a..a3efded7), `git checkout -B
+  claude/l-new origin/claude/l-new` → `git rev-parse HEAD origin/claude/l-new` both a3efded7.
+- Trunk origin/claude/vibrant-johnson-nxvvxo (NOW l.15) head 6d78b8f4 ("Lead: R45 draft (P-N5-RHO), held until R44 (PFZ); log",
+  19:30:12Z). Before merging: `git rev-list --left-right --count HEAD...trunk` = **3 ahead / 10 behind**, merge-base b67831cd
+  (trunk merged l-new up to the PFZ fixes draft, 2f4cad19; not cf20cdc2 (PFZ fixes file) nor a3efded7 (handover)).
+- `git merge --no-ff` trunk (no conflicts, no rebase) → 27d35bc0: 4 ahead / 0 behind; 5 ahead after this commit.
+
+### 2. Open work and the next step of each
+Nothing running of mine. Oink NOT built (`tools/oink/build` absent): `scripts/setup_oink.sh` before any run.
+- **P-N5-PFZ + ext**: both referees' reports and both §Cs are in (REFEREE-2 11 §C 212f88ec: identical, G-PFX-1 = PFZ-1, BRK-POLY′
+  (i)-(iii) SIGNED with REFEREE's repair). Fixes file docs/new/P-N5-PFZ-fixes-box39.md (cf20cdc2, sha1 3f55bc88…) frozen. Lead
+  drafts R44. Next for me: none unless CHECKER/Lead returns a defect (then a NEW file).
+- **P-N5-RHO**: fixes file docs/new/P-N5-RHO-fixes-box40.md (cf02711c, sha1 cc4e8540…) frozen, merged on trunk; R45 draft held
+  until R44 (trunk 6d78b8f4). Next: none unless returned.
+- **P-N5-NHN** (pinned 0bb175d): no report on origin/claude/referee (head 008ad8ab = NEEDB) nor referee-2 (head fa71c133 = FBPOLY
+  batch). Next: NEW fixes file when relayed; must carry NHN-N1 = RHO-N2 (τ(o) = o line cites R34 (e) with HN = H1).
+- **P-N5-FBPOLY** (sha1 de244dcd…, pinned 42d8c3a9): REFEREE-2 11 batch in (fa71c133: 1,484 logs, 0 violations), report follows;
+  REFEREE not yet. Next: NEW fixes file after both reports.
+- **Research (D18) after GO**, Lead's order 19:01Z: (1) packet P-N5-NH (docs/new/P-N5-NH-box41.md, new): signable lemmas with proofs
+  for the (NH′) reductions R22 / R24 / R26, marking (X) as covered via FX / FB-POLY + R30 (c) + R34 (e),(f), NFB-O via FB-POLY;
+  sources P-N5-NH-box30.md + fixes, N5-NH-box28.md, N5-NH2-box29.md. (2) K (wakes per phase, R27 (XJ)) ≡ (E), (K_W) (R26): does the
+  κ-freeze / FB-POLY structure bound K? Else the exact obstruction + instance (cf. K-chain, box33 kchain32.pg). Also open: FB-CAP for
+  |U| ≥ 3 (lane conjecture; FB-POLY gives a poly bound regardless), κ-FREEZE-F.
+- Not routed: G-N1-LB.
+
+### 3. docs/GAPS.md rows I own (trunk 6d78b8f4, `grep -n L-NEW docs/GAPS.md`)
+- **G-N5-TIME** (l.11): major; "L-NEW (L-LIT T22; referees later)"; **open**. Latest update 17:41Z (R42 landed); "Open: RW_S, θ_ph /
+  ρ (lane P-N5-PFZ / RHO / NHN in review), Q states, scope runs per phase / X, S4a steps, phases." CONJECTURES (DATA): FB-CAP, INTO.
+- **G-N1-LB** (l.10): minor; "L-NEW (optional; not routed)"; **open**.
+- **G-N5-TERM** (l.16): major; "L-NEW (L-COMP checks runs)"; **closed** (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, trunk docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D18 (DECISIONS l.332-333; INDEX l.32 **active**; Lead reading L40, INDEX l.33 active):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D14 (l.244-246; INDEX l.22 **active**; Lead reading L35, l.23 active):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D16 (l.299-300; INDEX l.28 **active**; Lead reading L38, l.29 active):
+   > Then keep working as I told you to
+
+### 5. One trap, and the check that prevents it
+- **Trap** (successor 20): push.sh started before `git commit`; verify ran on the uncommitted tree while the commit landed between
+  verify and push, so what was verified was not exactly what was pushed.
+- **Check**: `git status --porcelain` empty and `git log -1` = the intended commit BEFORE `scripts/push.sh > file 2>&1; echo $?`;
+  after the push, `git rev-parse HEAD origin/claude/l-new` equal. Carried: stale container (fetch + rev-parse equality); fetch
+  trunk right before status text; kill only by pid (pkill -f kills its own shell, exit 144); slice long GAPS lines with python
+  (`rev` hung); $TMPDIR is empty (use the scratchpad); frozen packets / fixes files (new text → new file); grep RESULTS for the
+  counted quantity before proving a new bound (X was already poly by R30 (c) + R34 (f)).
