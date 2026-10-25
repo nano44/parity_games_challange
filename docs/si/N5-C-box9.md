@@ -388,3 +388,11 @@ Proof: each item is shown inline above from the cited lemmas. □
   - DATA: no instance has even (ii) followed by any fallback (§8-§9: 54 + 44 post-rise states, 0 R → F gates).
 - Next (per the Lead's instruction): the r-drop blocks, already CLOSED in §11. So the per-level count has exactly one open piece, the
   chain above.
+- DATA for step (iii) (ffprobe.py; logs/box9/ffprobe.txt; NAMED + pinned + climbs + LIB): Even switches at S4a steps after an in-scope
+  fallback, by kind and by level relative to L.
+  - F → F: 1,451 at level = L, 1,968 below.
+  - F → R̄: 337 at = L, 2,026 below, 73 above.
+  - R → R̄: 1 at = L, 273 below, 14 above.
+  - R → F: 2 at = L, 15 below.
+  - So (iii) is common, and the obstruction is not (iii). The only ingredient never observed is (ii) followed by any later fallback
+    in the same scope run. L-RED's target is a scope run that empties Mn and still reaches another level-L drain.
