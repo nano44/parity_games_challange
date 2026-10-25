@@ -1,6 +1,69 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 8, box 13; written 2026-10-25 18:04Z (date -u); session_013kZp65x9TKU9AqPZdMYGpm)
+Reason: session token counter at ~390k used (15M budget, ~14.61M left) after the Lead's "climb report, then hand over" (17:55Z), at a
+natural pause. Lead: session_014FBi6o334DvwT5Uw2kDfoN.
+### DONE (every sha1 below went to the Lead, so these files are FROZEN; new text goes in NEW files)
+- docs/si/P-N5-LV-fixes-box11.md, b75ab1fc (l-si 6480a0f0). RESULTS R41 (P-N5-LV) LANDED d0cc0ab.
+- docs/si/P-N5-LV2-fixes-box12.md, f76fd1d1 (l-si 680c0294). REFEREE b454ca3 + Add. 46a8030 + §C ed8bc207; REFEREE-2 a551deb.
+- Packet docs/si/P-N5-NEEDB-box13.md, 7471aef3 (l-si 3ea0f5f9). Contents:
+  - XG, ANTI, NEED-β (all cases, A2* by me);
+  - OLD-THREAT;
+  - the reduction INTO ⇒ no case (i) fallback.
+  - Not routed to referees yet at handover.
+- Lane write-ups: docs/si/N5-RISE-box13.md (3b8fea13), docs/si/N5-A2STAR-box13.md (2a85601d). docs/si/DEAD.md box-13 entries:
+  - RISE-DROP: tevlast7_n32;
+  - GATE-ABOVE: rise_thin51_n40;
+  - FEED: tevlast11_n40;
+  - NONE-LAST / M = −1-last: beta2_n11, L-RED 16's.
+- Handover check 5/5: docs/agents/handover-checks/L-SI.md (succ. 8 section).
+- Scripts in experiments/si/lv13/:
+  - none_count.py, none_climb.py (v2 fitness);
+  - oldthreat.py (OLD-THREAT, GATE-ABOVE, FEED, INTO counters);
+  - rise_climb.py, rise_show.py, a2star.py.
+  - Logs in experiments/si/lv13/logs/.
+- Item (1) DATA (LV-NONE / SCOPE-FB from REFEREE-2's start pairs):
+  - 8 climbs (1301-1304 v1, 1501-1504 v2): 0 failures, max 1 u* = none fallback per scope run;
+  - v2 1501/1502: 347,110 u* = none fallbacks, 346,653 later in-scope transitions, 0 fallbacks after one;
+  - beta2_n11 (L-RED, hand-built) has 2 in one scope run (none_count: max 2 vs bound 67; log logs/none_beta2.txt). My climbs never found
+    that shape.
+### IN FLIGHT
+- Nothing running (no background jobs).
+### NEEDS
+- None from the owner. Lead: route P-N5-NEEDB (7471aef3) to the referees. Referee items go to a NEW file P-N5-NEEDB-fixes-box13.md.
+### Things only I know
+- The rise question has two halves.
+  - Case (i), r > L up to a later fallback: reduced to CONJECTURE INTO by FBL. INTO says Even always keeps a gate into R̄ after a rise;
+    the gates are absorption chains or R → R̄ route improvements.
+  - Case (ii), r ≤ L before the next fallback: untouched.
+  - L-RED box 41 is attacking both (Lead 17:25Z).
+- OLD-THREAT's proof is FZ's proof with the fallback k replaced by any post-rise state t. FZ never uses that k is a fallback. Reuse
+  that, whenever a "freeze since k0" is needed at a non-fallback state.
+- beta2_n11's mechanism is an eviction cascade: the evicted vertex 5 becomes a (β) target for its R-predecessor 10 at the next state,
+  with λ_Ξ and COARSE_{−1}(Ξ) fixed. Any sharpening of LV-NONE must count cascade layers (≤ depth of R), not "one per scope run".
+- REFEREE-2's tracer (docs/referee-2/R2-N5-OUT run_trace + R2-N5-FRZ analyse) exposes:
+  - S.fh (honest successor; σ̄(o) = S.fh[o]);
+  - S.Rbar;
+  - S.gates (with levels);
+  - S.lamX, S.tu.
+  The lv13 scripts import it read-only.
+- Traps (box 13):
+  - `until ! pgrep -f X` matches its own command line and never exits. Wait with `while kill -0 PID`, and never put `exit` inside a
+    while-condition.
+  - A multi-line Bash call runs in the shell's current cwd, which can differ from the repo root (environment notes). Use absolute paths
+    for every redirect and script.
+  - `ls a b | head` cuts listings, so a directory looked empty when it was not.
+  - Lead messages cross often. Re-read NOW / notifications before acting on an older ask (A2* was asked after it was already done).
+### NEXT (for a successor)
+1. Referee items on P-N5-NEEDB → NEW fixes file.
+2. Ask the Lead. The candidates:
+   - a proof of INTO (case (i));
+   - case (ii) of the rise question;
+   - a cascade-depth bound for r = −1 fallbacks (sharper LV-NONE);
+   - "THR ⇒ M ≥ 0" (its counterexample shape is now pinned by NEED-β: (β) gates on every reply).
+   - G-N5-TIME items not this lane's alone: θ_ph, HN stretches for τ(o) ≠ o, OTHER states, REL(S).
+
 ## Resume point (successor 8, box 13; GO 15:59Z 2026-10-25 (Lead); session_013kZp65x9TKU9AqPZdMYGpm)
 Handover check 5/5 (docs/agents/handover-checks/L-SI.md, 03c69372). Lead box-13 order: (0) LV fixes file; (1) LV-NONE / SCOPE-FB from
 REFEREE-2's start pairs; (2) NL= FALSE (L-RED nleq_cex_n48, e72e4034), off the board; (3) "no fallback after a rise" unconditional, else
