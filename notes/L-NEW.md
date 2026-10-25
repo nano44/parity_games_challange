@@ -206,6 +206,9 @@ Successor 19 (Opus 5.5, D14/D15/D18, L37/L40), session_011reTXakSJCcwLhC4i9ZpkB.
   evictions), 0 S4a steps at Q states with a leave. Ideas: a Q-SPLIT (S4a at Q never evicts? R̄ vertices have W cycle node c′ with
   reward(c′) > reward(c_θ) by XW); fallbacks at Q are Bellman-Ford rounds (FB-ROUND holds), HAT-FREEZE applies on F ∩ U; ¬H1 parts by
   NH1-FB; Q-runs ≤ ⌈T/2⌉ + 1 per phase (H1-toggles). Try: Q fallbacks per Q-run ≤ poly via EPOCH-type breaks + a T0-PIN analogue.
+- (1b) FB-CAP route (docs/new/N5-FBCAP-route-box40.md): κ = (M, s_θ·ℓ) Bellman-Ford freeze; after g_{|U|−2} no eviction at an in-phase
+  fallback (PROVED) and no F∩U → F∩U switch except around c_θ's cycle (PROVED modulo that case); OPEN: route switches inside R̄, vertices
+  outside U, ¬H1. Tightens NHN to N_HN ≤ 1 + ⌈T/2⌉ + |U| − 2. Read L-RED l-red 1b00610 (experiments/red/frz/) first.
 - (2) The global loop: f enters SCOPE-COUNT (R38 (c)) and X-SN-PHASE (R34 (f)); with HN fallbacks now O(n⁸), check whether the f ↔ X
   loop closes (fallbacks at (h) states: R40 PL-S″ per scope run).
 - (3) Data for referees: post-freeze EV2 ends (T0-PIN) and HAT-FREEZE at |U| ≥ 4 are not reached (climbs plateau). Better mutations
