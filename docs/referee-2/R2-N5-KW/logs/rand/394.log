@@ -1,0 +1,16 @@
+A0_checks: 4253
+FACTB_pairs: 4101
+KWS_stretches: 144
+PHASE_checked: 9
+phases: 9
+runs: 3
+states: 144
+states_checked: 144
+stretches: 144
+max_KW_per_stretch: 0
+max_T_per_phase: 52
+max_Trel_per_phase: 52
+max_f_per_phase: 0
+max_stretches_per_phase: 53
+RESULT OK violations=0
+experiments/red/so/instances/xsnf52_n64.pg exit 0

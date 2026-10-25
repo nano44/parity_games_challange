@@ -1,0 +1,20 @@
+A0_checks: 1078
+FACTB_pairs: 18598
+KWS_stretches: 18
+PHASE_checked: 17
+RUNS_runs: 3
+RUN_case_a: 3
+phases: 17
+runs: 3
+states: 35
+states_checked: 35
+stretches: 18
+max_KW_per_stretch: 9
+max_RUN_ratio_case_a_x1000: 4
+max_T_per_phase: 10
+max_Trel_per_phase: 10
+max_f_per_phase: 0
+max_freeze_delay: 9
+max_stretches_per_phase: 2
+RESULT OK violations=0
+experiments/new/box25/instances/rttf48.pg exit 0

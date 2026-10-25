@@ -1,0 +1,17 @@
+A0_checks: 92
+FACTB_pairs: 131
+KWS_stretches: 24
+PAR_states_cw_above_cth: 18
+PHASE_checked: 9
+phases: 9
+runs: 3
+states: 24
+states_checked: 24
+stretches: 24
+max_KW_per_stretch: 0
+max_T_per_phase: 7
+max_Trel_per_phase: 7
+max_f_per_phase: 7
+max_stretches_per_phase: 8
+RESULT OK violations=0
+experiments/new/box25/instances/wd12_s1.pg exit 0

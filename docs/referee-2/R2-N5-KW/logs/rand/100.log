@@ -1,0 +1,18 @@
+A0_checks: 9
+FACTB_pairs: 21
+HPATH_checks: 3
+KWS_stretches: 7
+PAR_states_cw_above_cth: 1
+PHASE_checked: 6
+phases: 6
+runs: 3
+states: 7
+states_checked: 7
+stretches: 7
+max_KW_per_stretch: 0
+max_T_per_phase: 1
+max_Trel_per_phase: 1
+max_f_per_phase: 0
+max_stretches_per_phase: 2
+RESULT OK violations=0
+docs/referee-2/R2-N5-RE/climb/c10_s51.pg exit 0

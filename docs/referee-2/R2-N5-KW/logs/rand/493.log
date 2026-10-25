@@ -1,0 +1,21 @@
+A0_checks: 795
+FACTB_pairs: 3278
+KWS_stretches: 71
+PAR_states_cw_above_cth: 4
+PHASE_checked: 17
+RUNS_runs: 3
+RUN_case_a: 3
+phases: 17
+runs: 3
+states: 74
+states_checked: 74
+stretches: 71
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 29
+max_Trel_per_phase: 29
+max_f_per_phase: 23
+max_freeze_delay: 0
+max_stretches_per_phase: 28
+RESULT OK violations=0
+experiments/si/xing/instances/ccl_fb2_n32.pg exit 0

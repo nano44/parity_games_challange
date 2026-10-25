@@ -1,0 +1,17 @@
+A0_checks: 1412
+FACTB_pairs: 12090
+KWS_stretches: 120
+PAR_states_cw_above_cth: 4
+PHASE_checked: 21
+phases: 21
+runs: 3
+states: 120
+states_checked: 120
+stretches: 120
+max_KW_per_stretch: 0
+max_T_per_phase: 54
+max_Trel_per_phase: 54
+max_f_per_phase: 2
+max_stretches_per_phase: 55
+RESULT OK violations=0
+experiments/new/box28/instances/x32_sc32_1309s.pg exit 0

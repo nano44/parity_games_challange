@@ -1,0 +1,18 @@
+A0_checks: 847
+FACTB_pairs: 5108
+HPATH_checks: 25
+KWS_stretches: 67
+PAR_states_cw_above_cth: 4
+PHASE_checked: 19
+phases: 19
+runs: 3
+states: 67
+states_checked: 67
+stretches: 67
+max_KW_per_stretch: 0
+max_T_per_phase: 23
+max_Trel_per_phase: 23
+max_f_per_phase: 1
+max_stretches_per_phase: 24
+RESULT OK violations=0
+experiments/si/orlens/instances/rise3_n32.pg exit 0

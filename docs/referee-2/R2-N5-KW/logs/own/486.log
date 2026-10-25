@@ -1,0 +1,26 @@
+A0_checks: 169
+FACTB_pairs: 148
+FRZU_checks: 140
+KWS_stretches: 32
+LEN_runs_after_f0: 7
+PAR_states_cw_above_cth: 20
+PHASE_checked: 21
+RECORD_RUN_case_b_r=1: 1
+RUNS_runs: 7
+RUN_case_a: 6
+RUN_case_b: 1
+phases: 21
+runs: 3
+states: 94
+states_checked: 94
+stretches: 32
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_RUN_ratio_case_b_x1000: 0
+max_T_per_phase: 59
+max_Trel_per_phase: 59
+max_f_per_phase: 4
+max_freeze_delay: 0
+max_stretches_per_phase: 9
+RESULT OK violations=0
+experiments/si/orlens/instances/s_elim24_final.pg exit 0

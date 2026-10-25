@@ -1,0 +1,21 @@
+A0_checks: 22
+FACTB_pairs: 18
+KWS_stretches: 11
+PAR_states_cw_above_cth: 2
+PHASE_checked: 10
+RUNS_runs: 1
+RUN_case_a: 1
+phases: 10
+runs: 3
+states: 14
+states_checked: 14
+stretches: 11
+max_KW_per_stretch: 3
+max_RUN_ratio_case_a_x1000: 187
+max_T_per_phase: 4
+max_Trel_per_phase: 4
+max_f_per_phase: 1
+max_freeze_delay: 1
+max_stretches_per_phase: 2
+RESULT OK violations=0
+experiments/red/xing/instances/obr_eq_n24.pg exit 0

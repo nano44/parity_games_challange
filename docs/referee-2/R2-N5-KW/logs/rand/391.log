@@ -1,0 +1,17 @@
+A0_checks: 2958
+FACTB_pairs: 14904
+KWS_stretches: 132
+PAR_states_cw_above_cth: 6
+PHASE_checked: 13
+phases: 13
+runs: 3
+states: 132
+states_checked: 132
+stretches: 132
+max_KW_per_stretch: 0
+max_T_per_phase: 42
+max_Trel_per_phase: 42
+max_f_per_phase: 0
+max_stretches_per_phase: 43
+RESULT OK violations=0
+experiments/red/so/instances/xsn43_n48.pg exit 0

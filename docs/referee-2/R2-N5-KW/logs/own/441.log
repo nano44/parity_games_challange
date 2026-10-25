@@ -1,0 +1,21 @@
+A0_checks: 3021
+FACTB_pairs: 27777
+KWS_stretches: 134
+PAR_states_cw_above_cth: 8
+PHASE_checked: 23
+RUNS_runs: 3
+RUN_case_a: 3
+phases: 23
+runs: 3
+states: 137
+states_checked: 137
+stretches: 134
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 38
+max_Trel_per_phase: 38
+max_f_per_phase: 37
+max_freeze_delay: 1
+max_stretches_per_phase: 38
+RESULT OK violations=0
+experiments/si/coarse/instances/box9/cl9_rep_b.pg exit 0

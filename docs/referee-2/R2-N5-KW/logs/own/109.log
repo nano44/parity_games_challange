@@ -1,0 +1,16 @@
+A0_checks: 53
+FACTB_pairs: 9
+KWS_stretches: 49
+PHASE_checked: 49
+phases: 49
+runs: 3
+states: 49
+states_checked: 49
+stretches: 49
+max_KW_per_stretch: 0
+max_T_per_phase: 0
+max_Trel_per_phase: 0
+max_f_per_phase: 0
+max_stretches_per_phase: 1
+RESULT OK violations=0
+docs/referee-2/R2-N5-RHO/climb/best_rho_9703.pg exit 0

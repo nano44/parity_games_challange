@@ -1,0 +1,21 @@
+A0_checks: 5159
+FACTB_pairs: 48799
+KWS_stretches: 5
+PHASE_checked: 5
+RECORD_kind_change_transitions: 86
+RUNS_runs: 3
+RUN_case_a: 3
+phases: 5
+runs: 3
+states: 110
+states_checked: 110
+stretches: 5
+max_KW_per_stretch: 37
+max_RUN_ratio_case_a_x1000: 16
+max_T_per_phase: 37
+max_Trel_per_phase: 37
+max_f_per_phase: 0
+max_freeze_delay: 37
+max_stretches_per_phase: 1
+RESULT OK violations=0
+experiments/red/xing/instances/kw_n48.pg exit 0

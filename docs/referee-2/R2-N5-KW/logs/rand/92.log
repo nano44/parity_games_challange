@@ -1,0 +1,23 @@
+A0_checks: 251
+FACTB_pairs: 322
+KWS_stretches: 46
+PAR_states_cw_above_cth: 35
+PHASE_checked: 13
+RUNS_runs: 4
+RUN_case_a: 1
+RUN_case_b: 3
+phases: 13
+runs: 3
+states: 50
+states_checked: 50
+stretches: 46
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 5
+max_RUN_ratio_case_b_x1000: 5
+max_T_per_phase: 11
+max_Trel_per_phase: 11
+max_f_per_phase: 11
+max_freeze_delay: 1
+max_stretches_per_phase: 12
+RESULT OK violations=0
+docs/referee-2/R2-N5-OUT/climb/best_nea_9104.pg exit 0

@@ -1,0 +1,22 @@
+A0_checks: 2477
+FACTB_pairs: 22461
+HPATH_checks: 35
+KWS_stretches: 131
+PAR_states_cw_above_cth: 4
+PHASE_checked: 15
+RUNS_runs: 20
+RUN_case_a: 20
+phases: 15
+runs: 3
+states: 167
+states_checked: 167
+stretches: 131
+max_KW_per_stretch: 3
+max_RUN_ratio_case_a_x1000: 10
+max_T_per_phase: 103
+max_Trel_per_phase: 103
+max_f_per_phase: 4
+max_freeze_delay: 3
+max_stretches_per_phase: 77
+RESULT OK violations=0
+experiments/red/xing/instances/j4_n40.pg exit 0

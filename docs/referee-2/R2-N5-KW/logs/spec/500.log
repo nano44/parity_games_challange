@@ -1,0 +1,23 @@
+A0_checks: 640
+FACTB_pairs: 2553
+FRZU_checks: 22
+KWS_stretches: 107
+LEN_runs_after_f0: 4
+PAR_states_cw_above_cth: 1
+PHASE_checked: 18
+RUNS_runs: 12
+RUN_case_a: 12
+phases: 18
+runs: 3
+states: 127
+states_checked: 127
+stretches: 107
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 61
+max_Trel_per_phase: 61
+max_f_per_phase: 13
+max_freeze_delay: 0
+max_stretches_per_phase: 49
+RESULT OK violations=0
+experiments/si/xing/instances/zcl_fb2_n32.pg exit 0

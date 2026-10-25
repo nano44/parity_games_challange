@@ -1,0 +1,24 @@
+A0_checks: 720
+FACTB_pairs: 7737
+FRZU_checks: 2
+HPATH_checks: 23
+KWS_stretches: 31
+LEN_runs_after_f0: 1
+PAR_states_cw_above_cth: 5
+PHASE_checked: 14
+RUNS_runs: 4
+RUN_case_a: 4
+phases: 14
+runs: 3
+states: 35
+states_checked: 35
+stretches: 31
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 1
+max_T_per_phase: 19
+max_Trel_per_phase: 19
+max_f_per_phase: 1
+max_freeze_delay: 1
+max_stretches_per_phase: 18
+RESULT OK violations=0
+experiments/si/coarse/instances/rel_j7_n48.pg exit 0

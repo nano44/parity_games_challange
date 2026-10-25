@@ -1,0 +1,24 @@
+A0_checks: 283
+FACTB_pairs: 2028
+FRZU_checks: 6
+HPATH_checks: 26
+KWS_stretches: 73
+LEN_runs_after_f0: 3
+PAR_states_cw_above_cth: 5
+PHASE_checked: 12
+RUNS_runs: 5
+RUN_case_a: 5
+phases: 12
+runs: 3
+states: 80
+states_checked: 80
+stretches: 73
+max_KW_per_stretch: 3
+max_RUN_ratio_case_a_x1000: 4
+max_T_per_phase: 37
+max_Trel_per_phase: 37
+max_f_per_phase: 3
+max_freeze_delay: 3
+max_stretches_per_phase: 36
+RESULT OK violations=0
+docs/referee-2/R2-N5-OE/climb/off_a_best.pg exit 0

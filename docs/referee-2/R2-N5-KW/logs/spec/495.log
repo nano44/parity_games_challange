@@ -1,0 +1,24 @@
+A0_checks: 3258
+FACTB_pairs: 36088
+HPATH_checks: 41
+KWS_stretches: 88
+PAR_states_cw_above_cth: 46
+PHASE_checked: 17
+RUNS_runs: 12
+RUN_case_a: 9
+RUN_case_b: 3
+phases: 17
+runs: 3
+states: 136
+states_checked: 136
+stretches: 88
+max_KW_per_stretch: 25
+max_RUN_ratio_case_a_x1000: 2
+max_RUN_ratio_case_b_x1000: 0
+max_T_per_phase: 41
+max_Trel_per_phase: 41
+max_f_per_phase: 33
+max_freeze_delay: 25
+max_stretches_per_phase: 37
+RESULT OK violations=0
+experiments/si/xing/instances/ccl_w48_n48.pg exit 0

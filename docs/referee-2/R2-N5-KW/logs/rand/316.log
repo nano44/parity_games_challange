@@ -1,0 +1,16 @@
+A0_checks: 109
+FACTB_pairs: 321
+KWS_stretches: 12
+PHASE_checked: 10
+phases: 10
+runs: 3
+states: 12
+states_checked: 12
+stretches: 12
+max_KW_per_stretch: 0
+max_T_per_phase: 1
+max_Trel_per_phase: 1
+max_f_per_phase: 0
+max_stretches_per_phase: 2
+RESULT OK violations=0
+experiments/new/box34/instances/oneh_cex_n32.pg exit 0

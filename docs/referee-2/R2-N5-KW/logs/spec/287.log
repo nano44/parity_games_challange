@@ -1,0 +1,24 @@
+A0_checks: 1870
+FACTB_pairs: 12738
+HPATH_checks: 44
+KWS_stretches: 54
+PAR_states_cw_above_cth: 9
+PHASE_checked: 14
+RUNS_runs: 10
+RUN_case_a: 9
+RUN_case_b: 1
+phases: 14
+runs: 3
+states: 90
+states_checked: 90
+stretches: 54
+max_KW_per_stretch: 6
+max_RUN_ratio_case_a_x1000: 20
+max_RUN_ratio_case_b_x1000: 0
+max_T_per_phase: 57
+max_Trel_per_phase: 57
+max_f_per_phase: 9
+max_freeze_delay: 6
+max_stretches_per_phase: 26
+RESULT OK violations=0
+experiments/new/box28/out/fbp48b_rt48.pg exit 0

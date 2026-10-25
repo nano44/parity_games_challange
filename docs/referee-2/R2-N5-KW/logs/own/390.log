@@ -1,0 +1,16 @@
+A0_checks: 980
+KWS_stretches: 79
+PAR_states_cw_above_cth: 4
+PHASE_checked: 10
+phases: 10
+runs: 3
+states: 79
+states_checked: 79
+stretches: 79
+max_KW_per_stretch: 0
+max_T_per_phase: 28
+max_Trel_per_phase: 28
+max_f_per_phase: 0
+max_stretches_per_phase: 29
+RESULT OK violations=0
+experiments/red/so/instances/xsn29_n32.pg exit 0

@@ -1,0 +1,16 @@
+A0_checks: 3
+FACTB_pairs: 3
+KWS_stretches: 3
+PHASE_checked: 3
+phases: 3
+runs: 3
+states: 3
+states_checked: 3
+stretches: 3
+max_KW_per_stretch: 0
+max_T_per_phase: 0
+max_Trel_per_phase: 0
+max_f_per_phase: 0
+max_stretches_per_phase: 1
+RESULT OK violations=0
+docs/referee-2/R2-N5-PFZ/climb/best_pfz_9501.pg exit 0

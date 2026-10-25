@@ -3,7 +3,7 @@
 R2-N5-LV/lv_climb.py). Any violation stops the climb and dumps the game to climb/viol_<FIT>_<seed>.pg.
 FIT kw:   toward post-freeze kind changes and c_w switches (KIND-MONO, CW-INT, E-SEG after f0), kind-B W-flat switches, freeze delay.
 FIT casc: the same, plus CASC-B slack (switch step close to |pi_v| - 2).
-Witnesses: climb/witness_{kindpost,cwpost}_<seed>.pg.
+Witnesses: climb/witness_{kindpost,cwpost,cascb}_<seed>.pg (with the start pairs evaluate() ran, in the .txt).
 Usage: lv2_climb.py FIT seed nmin nmax seconds [seedgame.pg]"""
 import sys, os, random, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -76,9 +76,10 @@ def main():
             dump(h, os.path.join(HERE, "climb", f"viol_{fit}_{seed}.pg"))
             for v in s2.viol: print("VIOLATION", v)
             tot.c["VIOLATIONS"] += s2.c["VIOLATIONS"]; break
-        for cls_ in ("kindpost", "cwpost"):
+        for cls_ in ("kindpost", "cwpost", "cascb"):
             wp = os.path.join(HERE, "climb", f"witness_{cls_}_{seed}.pg")
-            key = {"kindpost": "RECORD_kind_change_after_freeze_cw_above", "cwpost": "RECORD_cw_switches_after_freeze_cw_above"}[cls_]
+            key = {"kindpost": "RECORD_kind_change_after_freeze_cw_above", "cwpost": "RECORD_cw_switches_after_freeze_cw_above",
+                   "cascb": "CASCB_kindB_switches"}[cls_]
             if s2.c[key] and not os.path.exists(wp): dump(h, wp)
         if f >= best:
             if f > best: acc += 1

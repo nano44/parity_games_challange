@@ -1,0 +1,28 @@
+A0_checks: 296
+FACTB_pairs: 907
+FRZU_checks: 21
+HPATH_checks: 211
+KMONO_runs: 1
+KWS_stretches: 20
+LEN_runs_after_f0: 2
+PAR_states_cw_above_cth: 30
+PHASE_checked: 15
+RECORD_kind_change_transitions: 5
+RUNS_runs: 6
+RUN_case_a: 2
+RUN_case_c: 4
+phases: 15
+runs: 3
+states: 44
+states_checked: 44
+stretches: 20
+max_KW_per_stretch: 8
+max_RUN_ratio_case_a_x1000: 0
+max_RUN_ratio_case_c_x1000: 0
+max_T_per_phase: 16
+max_Trel_per_phase: 16
+max_f_per_phase: 2
+max_freeze_delay: 8
+max_stretches_per_phase: 4
+RESULT OK violations=0
+experiments/new/box28/out/oc16_s2.pg exit 0

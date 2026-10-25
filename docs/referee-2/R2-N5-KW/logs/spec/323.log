@@ -1,0 +1,23 @@
+A0_checks: 304
+FACTB_pairs: 343
+KWS_stretches: 29
+PAR_states_cw_above_cth: 25
+PHASE_checked: 18
+RUNS_runs: 6
+RUN_case_a: 1
+RUN_case_b: 5
+phases: 18
+runs: 3
+states: 40
+states_checked: 40
+stretches: 29
+max_KW_per_stretch: 2
+max_RUN_ratio_case_a_x1000: 12
+max_RUN_ratio_case_b_x1000: 2
+max_T_per_phase: 9
+max_Trel_per_phase: 9
+max_f_per_phase: 4
+max_freeze_delay: 0
+max_stretches_per_phase: 5
+RESULT OK violations=0
+experiments/new/box37/instances/rfroz_cex_n16.pg exit 0
