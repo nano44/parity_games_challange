@@ -1,0 +1,7 @@
+HAT_b: 2
+YFORM_a: 1
+YFORM_b: 5
+phases: 6
+runs: 3
+states: 6
+RESULT OK violations=0

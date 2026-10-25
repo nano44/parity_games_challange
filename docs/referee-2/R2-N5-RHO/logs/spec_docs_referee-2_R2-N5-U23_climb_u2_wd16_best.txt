@@ -1,0 +1,7 @@
+TAIL_phases: 6
+YFORM_b: 14
+phases: 9
+runs: 3
+states: 14
+max_TAIL_changes: 0
+RESULT OK violations=0
