@@ -18,7 +18,7 @@ Labels (L40): PROVED (by whom), READING, CONJECTURE, FALSE, OPEN, DATA. Every PR
 | Lemma GR: a transition whose used level ℓ ≥ 0 is set by an Even switch makes that vertex ℓ-good; nobody loses ℓ-goodness at used level ≤ ℓ | PROVED | §1 |
 | Lemma NU: a run of transitions with no relevant change has ≤ m − n transitions and leaves Ξ fixed | PROVED | §1 |
 | Theorem LP: a phase has T ≤ (m − n + 1)(T_rel + 1) transitions, T_rel ≤ (n + 1)(ρ + 1)·n(n − 1) + ε (ρ = rises of the used level, ε = Odd-only levels) | PROVED | §2 |
-| Lemma DF (𝒞^1O): after an S4a step a dormant gate edge (y, z) has σ(y) ∈ R (never F → F, never F → R) | PROVED | §3 |
+| Lemma DF (𝒞^1O) as first stated | FALSE (referees: df_cex.pg n 11 / n 5; own W-cycle nodes) — replaced by DF′ (y not its own W-cycle node), signed by both; P-N5-LP-fixes-box32.md §1 | §3 |
 | Lemma BAND (𝒞^1O, both frames in route form): a dormant R-R gate edge has its Ξ-level strictly between rank c_θ and rank c_w | PROVED | §3 |
 | (NO-WAKE) "away from fallbacks and crossings, S4a never takes a dormant edge above the previous used level" | FALSE (instances/nowake_cex_n32.pg, a U3 state) | §4 |
 | Lemma WAKE: a wake goes R → R (a wake into F is a crossing); in route form it lies in a U1 piece (covered by R24 Theorem U1) | PROVED | §4 |
@@ -132,7 +132,7 @@ Proof.
 ## 3. Where dormant edges live on 𝒞^1O (PROVED, L-NEW)
 A gate edge (y, z) at k+1 of level > L_k is DORMANT: by Lemma HI it was a gate edge at k, with z ≠ σ_k(y), so z ∈ A_k(y), and S4a did not
 take it.
-**Lemma DF.** On 𝒞^1O, let k → k+1 be an S4a transition (no fallback) inside a phase, and let (y, z) be an edge of the arena H_k that is
+**Lemma DF** (FALSE as stated: it needs y not its own W-cycle node, i.e. DF′; see docs/new/P-N5-LP-fixes-box32.md §1). On 𝒞^1O, let k → k+1 be an S4a transition (no fallback) inside a phase, and let (y, z) be an edge of the arena H_k that is
 a gate edge at k+1 (every dormant edge is one, by Lemma HI). Then a := σ_{k+1}(y) ∈ R_{k+1} (o counts as a vertex of R).
 Proof.
 - σ_{k+1} is Even's optimum of the one-player arena H_k against τ (SPEC S4a), so no edge of H_k improves W_{k+1}: an improving switch of a
@@ -246,9 +246,17 @@ Proof.
   - The gate-level freeze of R25 is vacuous in U2 / U3 (M = ∞). Any future freeze argument there has to use the used level, or W's own
     order.
 - Where to push next (READING):
-  - (a) The W-length regime. In nowake_cex_n32 W's comparison is pure length, monotone between fallbacks (R24 TB step 1), with ties broken
-    by TB-even's lex order. A wake at y either strictly raises W(y) (a length step, ≤ n − 1 per y while the W path sets stay fixed) or is a
-    W-tie switch under TB. Counting wakes by (W path set of y, length of y, TB key) may bound K per W-path-set class. OPEN.
+  - (a) The W-length regime. **Lemma KW-LEN (PROVED, L-NEW).** In a U2 / U3 / U23 stretch with rank c_w > rank v for every v ∈ R \ {c_w},
+    the non-fallback transitions with a W-change on R number ≤ (f + 1)·|R|·(n − 1). Proof: w (hence c_w) is constant on the stretch, and for
+    v ∈ R, P(W(v)) = P(w) ∪ (π_v ∩ V_{>rank c_w}) = P(w) (kind B and U2), or the part of v's path to c_w above c_w, which is empty (kind A).
+    So on R, W varies only in length, in one direction (c_w's parity) at S4a steps, since W_{k+1} ⊵ W_k there (R24 TB step 1). Each vertex
+    has ≤ n − 1 length changes per fallback-free segment, and there are ≤ f + 1 segments. □ This covers nowake_cex_n32 (c_w = the top
+    vertex). With the CASC-U3 Corollary it leaves only (E) in that regime.
+  - DATA (kwlev.py, LIB plus u2flat_n32 and nowake_cex_n32): of the 143 transitions with a W-change on R inside U2 / U3 / U23 stretches, 37
+    are length-only W-changes, 101 change a W path set at a level ≤ the used level L_k, and 4 (U2, sc32) at a level above it. So outside the
+    length regime W path changes ride on the used level; turning that into a bound on K is OPEN.
+  - Wakes per run: the wake-maximising climbs (rrclimb.py; seeds nr_u23_n32, u1flat_best_n32, nowake_cex_n32; ~2·10⁵ candidates) stay at ≤ 2
+    wakes per run so far. CONJECTURE-level only; no statement.
   - (b) S_o: DONE in §4b (Lemma TH, Lemma SO, Corollary XJ). The tie-break changes are 0 (keys of tied exits are frozen), and the θ-changes
     are F-changes or crossings (H1) or a monotone length (¬H1). So S_o, J and the fallbacks reduce to X.
 - After §4b the per-phase open cores of o-cyclic 𝒞^1O are X (≡ Z up to a factor n, R23 LV′) and K (wakes: OPEN in U2 / U3 / U23, bounded in
