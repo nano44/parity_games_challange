@@ -1405,3 +1405,7 @@
   - Lead ruling to avoid a duplicate review: FB-POLY (pinned) is the theorem the referees review. L-SI 9 packets only (1) Φ and (2) Corollary FX citing FB-POLY; FB-PHASE stays a lane cross-check.
   - K (wakes) becomes the main open target.
   - All of this is SUBCLASS 𝒞^1O; TARGET.md is general games.
+- 18:59Z Lead: merges.
+  - l-new 2b90ca6, docs/new/N5-MAP-box41.md (sha1 48961438, READING): X = O(n⁶) per phase from FB-POLY + landed R30 (c), R34 (e), (f). NFB-O is covered by FB-POLY. The (NH′) reductions (R24, R26) are unsigned READINGs, leaving (E) and (K_W) OPEN. κ-FREEZE-F fails at S4a steps (obstruction recorded).
+  - referee 008ad8a, R-N5-NEEDB: all SIGNED, no gaps. Notes NEEDB-N1..N4. NEED-β case (B) occurs once, on block_9501.
+  - Routing: L-NEW 20 does (E)/(K_W) and a packet P-N5-NH (the R24 / R26 (NH′) reductions as signed lemmas); no P-N5-XOUT packet. REFEREE 10 starts FBPOLY.
