@@ -1,0 +1,36 @@
+climb FIT=scope seed=95 n=24 iterations=20491 improvements=12 best_fitness=1570.0
+BEST-INSTANCE counters: {'KEY_tau_const_transitions': 55, 'SCOPE_case1': 1, 'SCOPE_case2': 19, 'SCOPE_scope_runs': 20, 'WCH_H2_states': 59, 'WCH_at_crossings': 1, 'WCH_transitions': 32, 'phases': 4, 'runs': 4, 'transitions': 57}
+BEST-INSTANCE maxima: {'max_WCH_per_crossing_free_interval': 11, 'max_WCH_per_phase': 11, 'max_h_runs_per_phase': 1, 'max_scope_case2_per_phase': 7, 'max_scope_runs_per_phase': 7}
+CLS_H1_notH2: 45
+CLS_IN: 28
+CLS_OTHER: 2
+CNL_control_noncycle_tail (i)=False (ii)=False (iii)=True: 2
+CNL_level-1_Even_fallbacks: 2
+FBINT_nontame: 1
+KEY_tau_const_transitions: 699260
+NH1_caseA: 0
+NH1_caseB: 0
+NH1_fallbacks: 0
+RCONST_notH1_states: 7365
+SCOPE_case1: 33593
+SCOPE_case2: 184668
+SCOPE_scope_runs: 218261
+WCH_H2_states: 792985
+WCH_at_crossings: 23440
+WCH_control_w_change_noH2_Xi(t0)_same: 2
+WCH_transitions: 332732
+climb_evaluations: 20470
+fallbacks: 161
+phases: 83948
+runs: 81880
+transitions: 748094
+max_NH1_fallbacks_per_phase: 0
+max_WCH_per_crossing_free_interval: 18
+max_WCH_per_phase: 20
+max_caseA_fallbacks_per_notH1_run: 0
+max_fallbacks_per_crossing_free_run: 0
+max_h_runs_per_phase: 1
+max_out_of_SN_fallbacks_per_phase: 4
+max_scope_case2_per_phase: 7
+max_scope_runs_per_phase: 7
+RESULT OK violations=0

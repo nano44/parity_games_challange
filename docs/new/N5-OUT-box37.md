@@ -38,6 +38,11 @@ L-NEW successor 16 (Opus 5.5, D15/D18), session_01LLCK4ctQmkMq2huT44SU7d. Box 37
    - Library: 0 entries in 282 transitions that follow a fallback with θ constant, against 52 entries before the first fallback.
    - Climbs: 0.
    - Every break is separated from its eviction by a θ-change (11 / 11 in the library).
+6b. **Theorem NO-ENTRY-A (PROVED, §9).** NO-ENTRY holds when τ(o) = o and o is more relevant than c_θ (case A, 288 of the 321
+   checked post-fallback states). The proof is an invariant from the fallback state on, with o as the separator:
+   - every R̄-value has o in its path set and no F-value has;
+   - every R → R gate has level below rank(o) (Step (K) at the fallback, then induction along routes).
+   Case B (c_θ odd and more relevant than o) and τ(o) ≠ o stay CONJECTURE. Data: 0 failures in either case.
 7. **Reduction (READING).** NO-ENTRY gives B ≤ θ_HN, the number of θ-changes of the stretch, all of them at S4a steps by F-FLAT. So on
    an HN stretch, X and f are ≤ poly(n)·(1 + θ_HN).
    - Case τ(o) = o. The phase has no H2 state at all, so its HN stretches are its H1-runs, and there are ≤ ⌈T/2⌉ + 1 of them (P-N5-TOG).
@@ -216,7 +221,110 @@ Proof.
   - outsn_rand.txt: seed 3701, 20,000 games; no OUT stretch;
   - epoch_lib.txt, epoch_rand.txt;
   - rfrozen_lib.txt.
-- Climb logs are in experiments/new/out/box37 (gitignored). Results so far (11:0xZ):
-  - sepclimb (breaks without a θ / w change): 0 found in every run. Epochs reached 5 (seed 3711, b5_os_n40) and 3 (seed 3712).
-  - rfclimb (all modes): ROUTE-FROZEN refuted (§5).
-  - rfclimb MODE=ent (NO-ENTRY): runs in progress, 0 so far.
+- Climb logs are in experiments/new/out/box37 (gitignored). Final results (11:41Z by date -u; 25 min per run unless stated):
+  - sepclimb MODE=sep (breaks without a θ / w change):
+    - seed 3711 (b5_os_n40): FINAL (0, 8, 5) after 75,165 mutations: 8 epochs, every break θ-separated;
+    - seed 3712 (b5_os_n12): FINAL (0, 3, 2) after 606,389 mutations;
+    - seed 3713 (wd16_s2): stopped by me at about 4 min to free a CPU, with no improvement. Not a result.
+  - sepclimb MODE=ep, seed 3714: FINAL (2, −1, 0) after 833,219 mutations; no growth.
+  - rfclimb all-rises mode: ROUTE-FROZEN refuted by seed 3722 (§5). Seeds 3721 and 3723 were stopped once the refutation was in.
+  - rfclimb MODE=ent (NO-ENTRY):
+    - seed 3731 (rfroz_cex_n16): FINAL (0, 19) after 217,044 mutations;
+    - seed 3732 (b5_os_n40): FINAL (0, 70) after 19,126;
+    - seed 3733 (frz24): FINAL (0, 0) after 741,575.
+  - rfclimb MODE=ent2 (case-B seeds b5_os_n12, b5_o11, b5_os_n14; seeds 3741-3743): FINAL (0, 0) after 2.0-3.2 M mutations each.
+    These climbs never produced a post-fallback R-rise either (§10).
+  - So 0 NO-ENTRY violations in every climb. The case-B precondition was never reached.
+
+## 9. Theorem NO-ENTRY-A (PROVED, L-NEW succ. 16; 𝒞^1O, τ(o) = o, rank(o) > rank(c_θ))
+Setting.
+- A phase with τ(o) = o. So w = (o, ∅, 0), ¬H2 holds at every state, and W(r) = π_r ⊕ w for r ∈ R̄.
+- CASE A: o is more relevant than c_θ (rank(o) > rank(c_θ)). Then Ω(o) is even, because reward(o) > reward(c_θ) by XW (R21 (a)).
+- Let S be an HN stretch of the phase, and a ∈ S a state at which an Even fallback a → a+1 is taken. Let θ be constant on a run of states
+  [a, b] ⊆ S.
+- Write x ≡ y when lev(x, y) < rank(o): the same cycle node and the same path-set vertices of rank ≥ rank(o).
+- The VJ00 order is lexicographic by the top of the symmetric difference (SPEC S1; the signed weight is dominated by its top term, SPEC
+  Q1). Hence:
+  - (T1) if x ◁ y with lev(x, y) ≥ rank(o) and x′ ≡ x, then x′ ◁ y;
+  - (T2) ≡-classes are intervals of ⊴: x ⊴ y ⊴ x′ with x ≡ x′ gives y ≡ x;
+  - (T3) for every vertex z, z ⊕ · respects ≡.
+Separation fact (SEP-o). At an H1 state t of S:
+- every z ∈ R̄_t has o ∈ P(Ξ_t z), because Ξ_t(z) = π_z ⊕ θ_t and o ∈ P(θ_t) in case A;
+- every f ∈ F_t has o ∉ P(Ξ_t f), because its play avoids o.
+So lev(Ξ_t z, Ξ_t f) ≥ rank(o) for such z and f. In particular Ξ_t(z) ≠ Ξ_t(f), and Ξ_t(z) ≢ Ξ_t(f).
+Invariant INV(t), for a state t of the run:
+- (i) no gate (y, z) ∈ Iσ_t with y ∈ F_t and z ∈ R̄_t;
+- (ii) every gate (v, z) ∈ Iσ_t with v ∈ R_t, z ∈ R̄_t has lev(Ξ_t(σ_t v), Ξ_t(z)) < rank(o).
+Statement. INV(t) holds for every t ∈ [a, b]. No transition of [a, b] is an entry, R̄ only shrinks, and Ξ_t(z) ≡ Ξ_a(z) for
+z ∈ R̄_t.
+Proof.
+- BASE: INV(a).
+  - (i) is FBL-N (iii) (R21 (c)).
+  - (ii). Let (v, z) be an R → R gate at a, and suppose ℓ := lev(Ξ_a(σ_a v), Ξ_a(z)) ≥ rank(o).
+    - Both values are π ⊕ θ_a with cycle node c_θ. Routes lie in R and θ's path in {o} ∪ F, so the symmetric difference of the two path
+      sets is (π_z Δ π_{σ_a v}) ∩ V_{>c_θ}.
+    - Its top u has rank ℓ > rank(o): u ≠ o, since o lies in both. Ω(u) is even, since the gate is Even-improving and u lies on z's side.
+    - Since σ_a is a pointwise arena optimum in G_τ (FBL-N (i)), it dominates σ_a[v ↦ z] at v (R17 (a) (F1) in the one-player arena).
+      Two cases show the switch would raise W at v:
+      - z's route avoids v. Then W after the switch is v ⊕ W_a(z). W_a(z) and W_a(σ_a v) have cycle node o, and path sets
+        π ∩ V_{>o}. Their top difference is the same u (Even). So v ⊕ W_a(z) ▷ v ⊕ W_a(σ_a v) = W_a(v): the switch raises W at v.
+      - z's route passes v, i.e. π_z = q · v · π_{σ_a v}. Then the switched play closes the cycle q · v, whose top is u (the top of
+        q ∪ {v} above c_θ). Its cycle node u is even, and reward(u) = p′(u) > p′(o) ≥ reward(o): again W at v rises.
+    - Either way, a contradiction.
+- STEP: INV(t) ⇒ INV(t+1), for t, t+1 ∈ [a, b].
+  - Switched edges are gate edges (R15 (d); S4c). By (i) none goes F_t → R̄_t. So ACT (i) gives no entry, and R̄_{t+1} ⊆ R̄_t.
+  - Values on R̄_{t+1} (claim: Ξ_{t+1}(z) ≡ Ξ_t(z)). Induction on z's route distance d to o at t+1.
+    - d = 0: Ξ_{t+1}(o) = θ = Ξ_t(o).
+    - d ≥ 1: z′ := next_{t+1}(z) ∈ R̄_{t+1}, and Ξ_{t+1}(z) = z ⊕ Ξ_{t+1}(z′) by (V1). z is not a cycle node: its play runs on through o
+      into F. Three cases:
+      - z is forced or not switched: next_t(z) = z′.
+      - z is switched: (z, z′) was an R → R gate at t, so Ξ_t(z′) ≡ Ξ_t(σ_t z) by (ii).
+      In each case (T3) and the induction hypothesis give Ξ_{t+1}(z) ≡ z ⊕ Ξ_t(next_t z) = Ξ_t(z).
+  - (i) at t+1. Let y ∈ F_{t+1} be Even, z ∈ R̄_{t+1}, and suppose Ξ_{t+1}(z) ▷ Ξ_{t+1}(σ_{t+1} y).
+    - Their lev is ≥ rank(o) by SEP-o at t+1, so (T1) with Ξ_t(z) ≡ Ξ_{t+1}(z) gives Ξ_t(z) ▷ Ξ_{t+1}(σ_{t+1} y).
+    - Ξ_{t+1}(σ_{t+1} y) ⊵ Ξ_t(σ_{t+1} y) ⊵ Ξ_t(σ_t y), by R15 (a) and (d). So Ξ_t(z) ▷ Ξ_t(σ_t y).
+    - z = σ_t(y) is impossible, since it gives x ▷ x. So (y, z) ∈ Iσ_t with z ∈ R̄_t.
+    - If y ∈ F_t, this contradicts (i) at t.
+    - If y ∈ R_t (evicted at the fallback t), it is an R → R gate, so Ξ_t(z) ≡ Ξ_t(σ_t y) by (ii). Then
+      Ξ_t(σ_t y) ⊴ Ξ_{t+1}(σ_{t+1} y) ◁ Ξ_t(z), and (T2) gives Ξ_{t+1}(σ_{t+1} y) ≡ Ξ_t(z). But σ_{t+1}(y) ∈ F_{t+1}, so
+      o ∉ P(Ξ_{t+1}(σ_{t+1} y)), while o ∈ P(Ξ_t z): a contradiction.
+  - (ii) at t+1. Let (v, z) be an R → R gate at t+1 with lev ≥ rank(o).
+    - Ξ_{t+1}(σ_{t+1} v) ≡ Ξ_t(σ_{t+1} v) ≡ Ξ_t(σ_t v), by the value claim and (ii) at t if v switched. Also Ξ_{t+1}(z) ≡ Ξ_t(z).
+    - So the comparison is decided at the same level ≥ rank(o) at t. That makes (v, z) an R → R gate at t with lev ≥ rank(o),
+      contradicting (ii). □
+- Corollary (case A, τ(o) = o; given F-FLAT and EPOCH). Every break of an HN stretch is preceded by a θ-change at an S4a step. So
+  B ≤ θ_S, X_S ≤ 2(n − 1)(θ_S + 1), and f_S ≤ n_E(2n − 1)(2(n − 1)(θ_S + 1) + 1).
+  - Over a τ(o) = o phase of case A, the out-of-SN fallbacks are ≤ (⌈T/2⌉ + 1)·n_E(2n − 1)(2(n − 1)(θ + 1) + 1). θ, the number of
+    θ-changes of the phase, stays OPEN.
+- What the proof does not cover:
+  - case B (c_θ odd and more relevant than o): SEP-o fails, R → R gates at a fallback are honest length-only, and an F-vertex can match
+    an R̄-value above level −1;
+  - τ(o) ≠ o: the W threshold is c_w, which need not lie on θ's path.
+- DATA (inva.py, data/inva_lib.txt; library + rfroz_cex_n16):
+  - case A: 288 checked states, case B: 33; 57 later fallbacks;
+  - 0 failures of (i), (ii) and (iii) in either case. (ii) holds in case B too, though the proof covers only case A.
+  - rfroz_cex_n16 is case A (rank(o) = 12 > rank(c_θ) = 2). Its post-fallback R-rises are at levels 8-11 < 12, as the proof requires.
+
+## 10. Case B (c_θ more relevant than o, τ(o) = o): what is proved, and the exact shape of a violation (OPEN)
+- c_θ is odd. reward(o) > reward(c_θ) (XW), and an even c_θ more relevant than o would have the larger reward.
+- PROVED (L-NEW succ. 16): at an HN fallback state a in case B, every R → R gate (v, z) is honest length-only (lev = −1), with z's route
+  longer than σ_a(v)'s. Proof.
+  - Suppose the honest top difference u lies above c_θ.
+    - Then rank(u) > rank(c_θ) > rank(o), so the W frame (threshold o) sees the same top u with the same verdict.
+    - The switch would raise W at v, by the same two cases as §9 BASE (the cycle case gives cycle node u, which is even since the gate
+      is Even-improving, with reward(u) > reward(o)). That contradicts FBL-N (i).
+  - So the routes agree above c_θ, and the honest gate is decided by length. c_θ is odd, so the longer route is better for Even.
+  - Non-improvement for W then needs one of two things:
+    - a W-unfavourable top difference with rank between rank(o) and rank(c_θ);
+    - no such difference, and Ω(o) even (W prefers the shorter route).
+    Both parities of o are possible in case B: with c_θ odd, −p′(o) > −p′(c_θ), so an odd o also satisfies reward(o) > reward(c_θ).
+- So R-rises at a case-B fallback are length-only. A post-fallback entry would therefore need:
+  - an F-vertex y with an edge to some z ∈ R̄, and P(Ξ_a(σ_a y)) = P(Ξ_a(z)) = (π_z ∩ V_{>c_θ}) ∪ P(θ);
+  - a honest length of σ_a(y) strictly between z's lengths before and after the fallback.
+  SEP-o is not available: o is below c_θ and not in P(θ).
+- DATA:
+  - inva.py: 33 case-B post-fallback states, 0 failures of (i), (ii) or of the frozen-values check;
+  - gadget.py (one added Even vertex, every (v, f, priority)) on b5_o11, b5_os_n12, b5_os_n14, wdrop_canon: 0 violations;
+  - NO-ENTRY climbs from case-B seeds (MODE=ent2, seeds 3741-3743): no post-fallback R-rise found at all within the first 8 min. The
+    precondition (a length-only R → R gate at a case-B fallback) is itself rare.
+- CONJECTURE NO-ENTRY-B: the case-B statement of §9. Not proved.

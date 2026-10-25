@@ -1,0 +1,35 @@
+BLF_edges                50742
+BL_F1_chk                5260
+BL_blocked_on_x0play     522
+BL_d_exits               1530
+BL_fb                    526
+BL_step0_chk             2606
+EQ_fb_after              8
+EQ_runs                  182
+EQ_runs_eq               156
+FF_chk                   177919
+MG_gates                 11411
+MG_gates_levINF          152
+MG_levINF_plays_disjoint 152
+RSAME_chk                654450
+TEV_e_in_H               0
+TEV_k0                   526
+TEV_k0_A_empty           95
+TEV_k0_Ev_classc0        95
+TEV_k0_Ev_nonempty       526
+TEV_meet                 425
+TEV_meet_post            0
+TEV_states               1353
+TEV_states_post          6
+games                    234
+h_states                 5002
+states                   6514
+FAILS 0
+EX ('experiments/n5-exhaustive/instances/b6_xw_n48.pg', 'MG_INF_disjoint', 0, 7, 21)
+EX ('experiments/n5-exhaustive/instances/b6_xw_n48.pg', 'MG_INF_disjoint', 0, 17, 2)
+EX ('experiments/n5-exhaustive/instances/b6_xw_n48.pg', 'MG_INF_disjoint', 0, 17, 14)
+EX ('experiments/n5-exhaustive/instances/b6_xw_n48.pg', 'MG_INF_disjoint', 0, 17, 21)
+EX ('experiments/new/box21/instances/fts_best16.pg', 'MG_INF_disjoint', 1, 7, 10)
+EX ('experiments/new/box21/instances/oneodd_c16.pg', 'MG_INF_disjoint', 30, 7, 8)
+EXCOUNT MG_INF_disjoint 152
+exit 0

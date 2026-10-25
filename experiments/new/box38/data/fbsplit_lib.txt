@@ -1,0 +1,14 @@
+HN_stretches 115
+breaks_A_tauo=o_theta_sep 8
+breaks_B_tauo=o_theta_sep 3
+f_crossing 107
+f_exit 2
+f_noncrossing 0
+max_X_S (31, 48, 0, 11, 'experiments/red/so/instances/post31_n48.pg', 4)
+max_f_HN_phase_A (12, 16, 1, 0, 0, 'experiments/new/box25/instances/wd16_s2.pg')
+max_f_HN_phase_B (6, 14, 1, 0, 2, 'experiments/n5-exhaustive/instances/b5_os_n14.pg')
+max_f_S (12, 16, 12, 12, 'experiments/new/box25/instances/wd16_s2.pg', 6)
+max_fb_per_crossing_free_run (0, 3, 'docs/referee/R-N5-L2/exitdrop_n3.pg', 0)
+phases_tauo_o_A 25
+phases_tauo_o_B 12
+skipped_not_C1O 159

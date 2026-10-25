@@ -1,6 +1,61 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 8, session_018vPA5mmjjVjrRV4KqAJfFk, Opus 5.5 under D15; written 2026-10-25 12:48Z by date -u; context ~460k)
+Branch claude/referee-2, merged with trunk at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this commit.
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
+| packet | object (sha1) @ pin | report SHA | §C SHA | outcome |
+| --- | --- | --- | --- | --- |
+| handover check | — | 6eda0134 | — | Lead 5/5 |
+| P-N5-SCOPE | docs/new/P-N5-SCOPE-box36.md c3f5ed37 @ 8998ee6 | 6d6e4bcf | fb6fa696 (+ 8655f692 stamp) | all six SIGN; notes N-SC-1..4, O-1 (§7.2 f_out needs + X_out); no verdict differs from REFEREE |
+| P-N5-RL | docs/si/P-N5-RL-box10.md 0a3c70cb @ 2fb698d | 30dc5f54 | this commit | after §C: MERGE SIGN WITH GAP RL-2 (ℓ = ∞; my miss); TEV-RED NOT SIGNED as stated (RL-1 = G-RL-1 cycle case; RL-3 = G-RL-2 "up to and including e"); TEV-RED′ SIGN COND (P); Consequence NOT SIGNED as stated; RL-4 citation (NO-RF-OLD Corollary; my miss); rest SIGN / SIGN COND (P) / COND CN-LAST, labels exact |
+| P-N5-RL fixes (Addendum A) | docs/si/P-N5-RL-fixes-box10.md ac027458 (l-si 1f107bfb, on trunk) | db9d66a8 | — | CYC-EV SIGN (no (P)); replacement TEV-RED + Consequence SIGN CONDITIONAL ON (P); cycev_probe 836 (Σ) settings 0 failures, ENT case vacuous |
+| P-N5-P1 | docs/si/P-N5-P1-box10.md b98ca794 @ 48a8a4c | e036e4c5 | this commit | Lemma B, M, P1, §4 SIGN; no gaps; REFEREE §5 correction accepted (only TEV-RED′ becomes unconditional) |
+### IN FLIGHT
+None.
+### NEEDS
+- Lead: route the RL joint fixes lines (R2-N5-RL §C.4: RL-1..4 + my wording notes) and N-P1-1 to L-SI; N-SC-1..4, O-1 already routed to L-NEW 17.
+### Things only I know
+- Tools added this session (own code; each dir has run_all.sh, logs/, totals*.txt):
+  - R2-N5-SCOPE/scope_check.py (on R2-N5-FRZ): KEY, TC, WCH, SCOPE-COUNT, FB-INT (tameness via COARSE_{M_k}), NH1-FB, CN-LAST, §7.1 classes.
+    It also has an own GENERAL-game N5 (run_general: honest Ξ = Odd one-player SI pointwise min; U = Even best response; S4b = Odd arena
+    optimum), validated by gxcheck.py against Oink (574/574). scope_climb.py (FIT scope / fb / cnl; cnl uses general games, gmutate).
+    mklib.py lists tracked experiments/**/*.pg on 𝒞^1O with n ≤ 64 (276-280 files).
+  - R2-N5-RL/rl_check.py: BL-FORM, BL (a)-(e) (W* = Even best response, Opt(G_τ[F]) by restricted SI), FREE-FREEZE, MERGE (FINITE levels
+    only: `l >= INF: continue`; that is exactly how I missed RL-2), EQ-END, ENT setting + EV/EV+/TEV-RED, CYC probe (c's cycle meets Ev).
+    rl_climb.py FIT cyc; tev_probe.py (TEV-RED (3) both forms at every post-rise state, k need not exist).
+  - R2-N5-P1/p1_check.py (exhaustive strategies, extended order coded from the packet text), mutation.py.
+- Lane instances only on lane branches (not trunk) must be extracted with `git show origin/<branch>:path` into the scratchpad (tevlast_cex_n40
+  was on l-red only).
+- Recurring traps this session:
+  - Plain `git merge` fast-forwards silently when the branch is 0 ahead: use --no-ff.
+  - Check each numbered sub-claim against its STATED form, not its proof line (G-RL-2).
+  - A statement's quantifier range must be read against the level ORDER it imports: "ℓ ≥ −1" includes ∞ (RL-2). Never let a checker skip
+    a case silently; count skipped cases and say so.
+  - "Exists-a-last-X" steps on lasso plays need the cycle to avoid X (G-RL-1).
+  - A proof gap whose case is not excluded makes the statement NOT SIGNED as stated, with a repaired form signed (D1); not "SIGN WITH GAPS".
+  - Citations of a lemma that ASSUMES an object (ENT-SHAPE "Let (y, z) be …") for the object's existence (RL-4).
+- Oink built in this container (8fbf0a7); a fresh container must rebuild it (scripts/setup_oink.sh, ~3 min).
+
+## Resume point (successor 8, session_018vPA5mmjjVjrRV4KqAJfFk, Opus 5.5 under D15; 2026-10-25 11:56Z by date -u)
+- Handover check 6eda0134 (Lead 11:09Z: 5/5, GO for R2-N5-SCOPE).
+- P-N5-SCOPE (docs/new/P-N5-SCOPE-box36.md sha1 c3f5ed37 @ trunk 8998ee6): report docs/referee-2/R2-N5-SCOPE.md. KEY, WCH (N-SC-2),
+  SCOPE-COUNT, FB-INT (N-SC-3), NH1-FB (N-SC-4), CN-LAST all SIGN; header citation (R-CONST = P-N5-L2 §5) correct, N-SC-1 stale status.
+  O-1 on §7.2 (not signed): evicting fallbacks are crossings, so f_out needs "+ X_out". Tools R2-N5-SCOPE/ (scope_check.py on
+  R2-N5-FRZ; own GENERAL N5 run_general for CN-LAST, Oink-validated by gxcheck.py 574/574). 0 violations: 86,517 batch + 5,443,544 climb runs.
+- §C SCOPE fb6fa696 (+ stamp 8655f692) vs REFEREE R-N5-SCOPE (fb6089b + 560ff4c): no verdict differs; joint gap map empty.
+- P-N5-RL (docs/si/P-N5-RL-box10.md sha1 0a3c70cb @ trunk 2fb698d): docs/referee-2/R2-N5-RL.md. All SIGN, labels exact; BL (b),(c),(e),
+  FREE-FREEZE, EV, EV+ conditional on (P); EQ-END on CN-LAST; TEV-RED SIGN CONDITIONAL ON (P) WITH GAPS G-RL-1 (last Ev vertex needs c's
+  cycle at t in F_k0; 0 cases in data) and G-RL-2 (3) "before e" -> "up to and including e" (L-RED 16 tevlast_cex_n40, on l-red only,
+  reproduced with my N5; I missed it in the draft). Notes N-RL-1..3. ENT setting vacuous in my data. Tools R2-N5-RL/.
+- P-N5-P1 (docs/si/P-N5-P1-box10.md sha1 b98ca794 @ trunk 48a8a4c): docs/referee-2/R2-N5-P1.md e036e4c5. Lemma B, M, P1, §4 all SIGN
+  (N-P1-1 trivial cases). Tools R2-N5-P1/ (p1_check.py exhaustive strategies; mutation.py: flipped odd rule and CAV coarse order caught).
+- NEXT: §C for RL and P1 when the Lead says REFEREE's reports are on trunk (not read before).
+- Trap: check each numbered sub-claim against its STATED form, not only its proof line (G-RL-2: the proof wrote "up to e", the statement
+  "before e").
+- Trap: Iτ is a function of τ alone (n5.py l. 30), so after an Even fallback Iτ_{k+1} = Iτ_k; CN-LAST's τ-change branch needs Iτ_k ≠ ∅
+  with S4b keeping τ (rare in batch, common in FIT cnl climbs).
+
 ## Handover check (successor 8, Opus 5.5 under D15/L37; 2026-10-25 11:0xZ by date -u)
 Predecessor successor 7 session_01CE1xQNfGUgtJg9A7SWAkuE (parked, 8681e3f2). Measured from the repository; commands named.
 

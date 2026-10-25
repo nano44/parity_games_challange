@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Box 37 (b) climb against ROUTE-FROZEN (docs/new/N5-OUT-box37.md §3): in an H1 ∧ ¬H2 stretch, after a fallback with θ unchanged,
-an entry into R or a rise of Ξ at a vertex staying in R (MODE=ent: entries only, NO-ENTRY). Fitness = (#such transitions, #S4a transitions after a fallback, n-free tiebreak).
+an entry into R or a rise of Ξ at a vertex staying in R (MODE=ent: entries only, NO-ENTRY; MODE=ent2: entries, then R-rises after / at a fallback as the guide). Fitness = (#such transitions, #S4a transitions after a fallback, n-free tiebreak).
 One Odd choice vertex asserted (rfrozen.run). Usage: rfclimb.py seed secs out seed.pg"""
 import sys, os, random, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -17,6 +17,9 @@ def fit(G):
     except Exception: return (-1, 0)
     keys = ("S4A_afterfb_entry", "FB_afterfb_entry") if os.environ.get("MODE") == "ent" else ("S4A_afterfb_entry", "S4A_afterfb_Rrise", "FB_afterfb_Rrise", "FB_afterfb_entry")
     v = sum(acc.get(k, 0) for k in keys)
+    if os.environ.get("MODE") == "ent2":
+        v = acc.get("S4A_afterfb_entry", 0) + acc.get("FB_afterfb_entry", 0)
+        return (v, acc.get("S4A_afterfb_Rrise", 0) + acc.get("FB_afterfb_Rrise", 0) + acc.get("FB_before_Rrise", 0))
     return (v, acc.get("S4A_afterfb", 0) + acc.get("FB_afterfb", 0))
 
 if __name__ == "__main__":
