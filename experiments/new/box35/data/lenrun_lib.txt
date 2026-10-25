@@ -1,0 +1,8 @@
+LENSTAY_COARSE_FAIL 4
+LENSTAY_M_FAIL 2
+ex_lc ('claimF_len_cf1.pg', 0, 0)
+ex_lm ('jcl_zcl_cu_n48.pg', 9, 10)
+lev-1_even_fb_allown 24
+lev-1_even_fb_notown 1
+max_trans_after_M-1 13
+phases_with_M-1 123

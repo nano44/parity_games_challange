@@ -144,3 +144,64 @@ REFEREE-2 (successor 6), Opus 5.5 (D15), 2026-10-25:
 - SIGN: FBW, FBW-S, CLS2, FLAT-ALL, STRETCH (note N-FBW-1, closed: the statement's "k < e" should be "k ≤ e"), PL (a)-(c), PL-S.
 After two signatures (D18/L40) these become PROVED (L-SI successor 4; REFEREE-2, and REFEREE if it signs). OPEN: NJB, NJ-INT, blocks
 where r drops to M, level −1 counts, REL(S); G-N5-TIME.
+
+## §C. Comparison with REFEREE (docs/referee/R-N5-FBW.md: report 9a94dc7b, §C a04615b5). REFEREE-2 successor 7, 2026-10-25 08:27Z (date -u)
+Successor 6 wrote the report above and parked. I write this §C from that report (25962855) and from REFEREE's file at trunk c699d5b4,
+which carries a04615b5. REFEREE-2's report was pushed before REFEREE's was read: successor 6 had not seen it, and I opened it only now.
+Signature (Opus 5.5, D15).
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| P-OPT / G-1OA-6 | VALID | VALID | VALID, for the same reason: G-1OA-6 is about S4c's installed σ_{k+1}, while P-OPT uses S4a's output σ_k at state k |
+| FBW | SIGNED | SIGN | signed by both |
+| FBW-S, CLS2 | SIGNED | SIGN | signed by both; (H-EQ) closed |
+| FLAT-ALL | SIGNED WITH GAP FBW-1 | SIGN as written; now SIGN WITH GAP FBW-1 (citation, closed), see C.2 | signed by both with FBW-1 |
+| STRETCH | SIGNED | SIGN (N-FBW-1) | signed by both |
+| PL (a)-(c) | SIGNED WITH GAP FBW-2 | SIGN | signed by both; FBW-2 = N-FBW-1 |
+| PL-S | SIGNED | SIGN | signed by both |
+No verdict differs in substance. FLAT-ALL changes only in its gap column: I accept FBW-1, which my lane's §3 had missed. Neither referee
+found a counterexample.
+
+### C.2 Item by item
+- FBW-1 (FLAT-ALL (i)): CONFIRMED. My lane's §3 repeated the packet's "H2 at k+1", and that was the wrong citation.
+  - The packet derives "its new play is a cycle through y′" from λ(y′) = y′. λ is the honest cycle node, so the cycle is y′'s honest
+    H_{k+1}-cycle.
+  - If o lay on that cycle, the cycle would leave o by σ̄_{k+1}(o), not by τ(o). So it is not o's W-cycle, and H2 (o on no W-cycle)
+    does not exclude it.
+  - H1 at k+1 does exclude it: o lies on no honest cycle. H1 is part of the hypothesis "(h) at k+1". Off o the honest graph and the
+    (σ, τ) graph agree, so the rest of (i) follows.
+  - A second repair also works, and it too needs H1. With (h) at k+1, Fact 0 of P-N5-FRZ §2 (my R2-N5-FRZ §2: SIGN) gives W-cycle node =
+    λ at every vertex. So y′'s (σ, τ)-play is also a cycle through y′, and H2 then excludes o from it. Fact 0's c_θ ∈ F step uses H1.
+  - Either way the statement stands. REFEREE's fixes-file line ("honest H_{k+1}-cycle … else H1 would fail at k+1") is the shorter
+    repair, and I adopt it.
+  - DATA (fbw1_probe.py, own N5 of R2-N5-FRZ; logs/fbw1_probe_*.txt):
+    - library: 682 in-phase Even fallbacks with (h) at k and k+1 (LIB × 3 starts), but none switched an own cycle node;
+    - random 𝒞^1O: 4,000 games, 7 switched own cycle nodes;
+    - o was on neither the honest cycle nor the W-cycle in every case: 0 failures, thin.
+- FBW-2 = N-FBW-1: the same point, found independently. STRETCH must read "k ≤ e" so that PL (a) covers the block's last fallback f_N.
+  - REFEREE accepts my lane's sharper reason: f_N's own transition may change COARSE_M, because FLAT-ALL (iii) needs (h) at f_N + 1,
+    which the scope run need not give.
+  - REFEREE filed it under PL (a), my lane under STRETCH. One fixes-file line (the STRETCH statement) covers both.
+- Data: no disagreement.
+  - P-OPT is checked by both, with complementary teeth: my lane checked every arena single switch (44,611 library, 3.44 M in climbs);
+    REFEREE checked every gate switch with a non-fallback control (1,061 / 1,164).
+  - D_M = 0 in every block for both. My lane's three dirty-interval climbs (8,000 runs) found none. So PL (b)/(c) are vacuous in all
+    data, and NJB is unrefuted.
+  - Block counts differ by starts and selection (my lane: 3 starts, 249 blocks; REFEREE: canonical start, 172). The statements agree.
+
+### C.3 Joint gap map (one fixes-file line per row)
+| row | REFEREE | REFEREE-2 | kind / status | fixes-file line |
+| --- | --- | --- | --- | --- |
+| 1 | FBW-2 | N-FBW-1 | wording, closed | §4 STRETCH: "… at most once among the fallbacks k of S with s ≤ k ≤ e" (step (3) covers k′ = e; PL (a) needs it for f_N, whose own transition may change COARSE_M, since (h) at f_N + 1 is not given) |
+| 2 | FBW-1 | accepted in this §C (my lane's §3 had repeated "H2") | citation, closed | §3 FLAT-ALL (i): "That cycle is y′'s honest H_{k+1}-cycle; it avoids o, else H1 would fail at k+1 (H2 alone does not exclude it: such a cycle leaves o by σ̄(o), not τ(o))" |
+
+### C.4 Joint label (D18/L40)
+- PROVED (L-SI successor 4; REFEREE and REFEREE-2, Opus 5.5, D15), pending CHECKER:
+  - FBW on every game;
+  - on 𝒞^1O: FBW-S, CLS2, FLAT-ALL (row 2), STRETCH (row 1), PL (a)-(c), PL-S.
+- CONJECTURE: NJB, NJ-INT.
+- OPEN: r-drop blocks, level −1 counts, REL(S), G-N5-TIME.
+- Not a TARGET.md claim.
+
+Signed: REFEREE-2 successor 7 (Opus 5.5, D15).

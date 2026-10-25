@@ -1,0 +1,35 @@
+climb FIT=tog seed=62 n=32 iterations=10747 improvements=28 best_fitness=403.8
+BEST-INSTANCE counters: {'GP_H3_notH1_states': 19, 'GP_c_first': 551, 'GP_o_first': 57, 'H3C_H2_states': 5, 'H3C_phases_with_h': 4, 'HI_drops': 1, "PC'_windows_with_notH1": 5, 'PC_checks_sampled': 130, 'PC_windows': 5, 'RC_notH1_pairs': 15, 'RC_notH1_states': 19, "STEP1'_H3_states": 24, "STEP2'_checks": 679, "XR'_notH1_runs": 4, "XR'_runs": 4, "XR'_runs_with_notH1_in_P": 4, "XR'_runs_with_toggle": 4, 'phases': 4, 'runs': 4, 'transitions': 29}
+BEST-INSTANCE maxima: {'HI_max_theta_changes_on_I': 1, 'ONE-DROP_max_drops_per_phase (sec.8, no claim)': 1, 'ONE-H_max_h_runs_per_phase (sec.8, no claim)': 2, 'PC_max_window_len_over_n_x100': 18, "XR'_max_C": 2, "XR'_max_REL_Q": 3, "XR'_max_toggles_t_Q": 2}
+GP_H3_notH1_states: 95296
+GP_c=o: 629
+GP_c_first: 2890501
+GP_o_first: 144745
+H2S_steps: 8
+H3C_H2_states: 67950
+H3C_phases_with_h: 37609
+HI_drops: 6989
+PC'_windows_with_notH1: 36679
+PC_checks_sampled: 351537
+PC_windows: 36679
+RC_notH1_pairs: 61785
+RC_notH1_states: 95371
+STEP1'_H3_states: 163212
+STEP2'_checks: 3845270
+XR'_notH1_runs: 33520
+XR'_runs: 48655
+XR'_runs_with_notH1_in_P: 32327
+XR'_runs_with_toggle: 21065
+climb_evaluations: 10560
+fallbacks: 277
+phases: 48699
+runs: 42240
+transitions: 223902
+HI_max_theta_changes_on_I: 3
+ONE-DROP_max_drops_per_phase (sec.8, no claim): 1
+ONE-H_max_h_runs_per_phase (sec.8, no claim): 2
+PC_max_window_len_over_n_x100: 21
+XR'_max_C: 5
+XR'_max_REL_Q: 4
+XR'_max_toggles_t_Q: 2
+RESULT OK violations=0

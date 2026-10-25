@@ -1,0 +1,10 @@
+max_Zchanges_phase (3, 14, 'rand3551_1254', 1)
+max_drops_phase (1, 14, 'rand3551_382', 1)
+max_sigc_changes_phase (2, 14, 'rand3551_229', 2)
+max_toggles_phase (2, 11, 'rand3551_12518', 0)
+phases 39776
+tog_S 198
+tog_Z 29
+tog_ZS 53
+tog_at_fallback 101
+toggles 280
