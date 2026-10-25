@@ -113,3 +113,69 @@ REFEREE (successor 5), Opus 5.5 (D15), 2026-10-25: Lemmas U, HI, UL, GR, NU and 
 NOT SIGNED, FALSE as stated (df_cex.pg; the VJ00 Lemma 5.8 "2 ⇒ 3" gap); DF′ (y not its own W-cycle node) SIGNED; BAND SIGNED; WAKE SIGNED
 WITH GAP W-1 (closed via DF′); Corollary LP′ SIGNED. Labels after two signatures (D18/L40): §1-§2 PROVED on every game in a phase, §3
 (with DF′ for DF) and §4 PROVED on 𝒞^1O; DF FALSE. S_o, X, K, G-N5-TIME OPEN.
+
+# Part 2: companion packet P-N5-SO (Lead 01:00Z; one combined review)
+Object: docs/new/P-N5-SO-box32.md, sha1 deb5ee4422da3ab7389ce35e4542977927b53886, 54 lines, pinned at trunk 1ef02bb (verified; an ancestor
+of my HEAD). L-NEW successor 12. Written 2026-10-25 01:02Z by date -u. docs/referee-2/ NOT read.
+## Verdict (Opus 5.5, D15)
+| statement | verdict |
+|---|---|
+| Lemma TH (Θ ≤ (n − 1) + n(X + 1) + X) | SIGNED WITH GAP SO-1 (dependency): the H1 case uses "σ̄_k(o) is a FULL Ξ_k-minimiser when λ(o) ≠ o". That is my R-N5-FB §4.2 case proof (single signature: REFEREE-2's G-FB-4 closure proved only COARSE_{−1} minimality). REFEREE-2 should check it. DATA 0 exceptions (61,968 earlier, plus every state here) |
+| Lemma SO (S_o ≤ d_o(Θ + 1); at a relevant change with θ fixed the old choice leaves T) | SIGNED (same dependency SO-1 for "σ̄(o) ∈ T_k") |
+| Corollary XJ | SIGNED WITH GAP XJ-1 (arithmetic): with d_o ≤ n and J ≤ S_o ≤ d_o(2n + (n + 1)X) = O(n²(1 + X)), FB gives f = O(n⁴(1 + X)), not O(n³(1 + X)). The stated T = O(m·n⁷(1 + X) + m·n⁵·K) is still correct (LP′'s factor (n + 1)n(n − 1) · f = O(n⁷(1 + X)); the K term is O(m·n³·K), so n⁵ is loose) |
+## Checks
+- Lemma TH. Crossing θ-changes ≤ X. ¬H1 (crossing-free): θ = (c_θ, ∅, d) (R-1, my R-N5-U23 §3), c_θ fixed in the phase, θ monotone over the
+  whole phase (R15 (a)), so the ¬H1-state values of θ are monotone in d: ≤ n − 1 changes. H1: x0 := σ̄_k(o) (full minimiser, SO-1) has
+  an honest play avoiding o, which is its (σ_k, τ)-play, so x0 ∈ F; if Ξ(x0) is unchanged, the minimiser chain
+  Ξ_{k+1}(x1) ⊴ Ξ_{k+1}(x0) = Ξ_k(x0) ⊴ Ξ_k(x1) ⊴ Ξ_{k+1}(x1) forces θ unchanged ((P2) at o, λ(o) ≠ o). So a θ-change changes Ξ on F:
+  ≤ max(0, |F| − 1) per crossing-free interval (F1°), ≤ X + 1 intervals. Correct.
+- Lemma SO, the "key frozen" step (checked hardest, as asked).
+  - T_k shrinks along a θ-constant run (R15 (a)).
+  - σ̄_k(o) is the key-minimum of T_k: this is R24's choice rule in the evaluation of G (o is the optimiser's vertex, not its own cycle
+    node), and "fully optimal" ⟺ Ξ(x) = μ (the formal o ⊕ is injective here, because an exit whose play passes o has a longer length).
+  - For x ∈ T_k, x's H_k-path to c avoids o (else μ would be longer than itself). Every vertex on it has ONE successor in G_σ (on 𝒞^1O only
+    o chooses), and that edge survives the restriction (R24 Lemma R; forced edges always survive). So x's BFS-tree path is this path, and
+    its key is its root-first sequence.
+  - If a vertex of the path switches, the first one p is Even with λ(p) = c ≠ p, and moves to a strictly better gate target
+    (R15 (d)). ⊕ p is strictly monotone there: p is in neither path set, because it is not on its own path prefix. So
+    Ξ_{k+1}(p) ▷ Ξ_k(p), the unchanged prefix (P2 at k+1) gives Ξ_{k+1}(x) ▷ μ, and x ∉ T_{k+1}.
+  - Hence the paths, and the keys, are unchanged on T_k ∩ T_{k+1}. A switch of c itself does not touch the paths (they end before c).
+    Keys of distinct exits differ.
+  - So s0 ∈ T_{k+1} stays the key-minimum and σ̄_{k+1}(o) = s0. Each relevant change in a θ-run removes the current choice from T:
+    ≤ d_o − 1 per run, Θ + 1 runs, ≤ Θ at θ-changes. In the longest-path mode the key is the index: trivially frozen.
+  - VERDICT on the step: correct.
+- Corollary XJ: S_o ≤ d_o(Θ + 1) ≤ d_o(2n + (n + 1)X) (multiplied out: (n − 1) + n + 1 = 2n; nX + X). J ≤ S_o (P-N5-LP §4 step 3,
+  signed in Part 1). FB, then LP′. XJ-1 as above. The reading "(J-poly), NFB-O and the fallback count follow from (X)" is correct given SO-1.
+## Data (docs/referee/scratch/so_probe.py, own code; trace = the n5.py loop asserted equal to n5.run; one Odd choice vertex asserted)
+- Library (every experiments/**/*.pg in 𝒞^1O with n ≤ 64: 234 files, 257 phases with λ(o) ≠ o): σ̄(o) a full minimiser at every state, TH
+  and SO bounds, "old choice leaves T" (4 relevant changes with θ fixed): 0 failures. Maxima Θ 51, S_o 49 (as the lane reports).
+- Random 𝒞^1O n 8-24 (seed 1101, 3,000 runs, 907 phases): 0 failures (6 relevant changes with θ fixed; max Θ, S_o 2).
+## Signature (Part 2)
+REFEREE (successor 5), Opus 5.5 (D15), 2026-10-25: Lemma TH SIGNED WITH GAP SO-1 (dependency on my single-signed full-minimiser proof);
+Lemma SO SIGNED (key-frozen step verified); Corollary XJ SIGNED WITH GAP XJ-1 (f = O(n⁴(1 + X))). G-N5-TIME OPEN; open cores per phase:
+X and K.
+
+## §C. Comparison with REFEREE-2 (R2-N5-LP, referee-2 4949d6c; Part 1 = P-N5-LP only)
+Written 2026-10-25 01:13Z by date -u, after my report (4957b2cc, Part 2 dcb41198) was pushed and the Lead said R2-N5-LP exists (01:10Z).
+No verdict differs: both NOT SIGN Lemma DF (FALSE) with independent counterexamples (mine df_cex.pg n 11, sha1 a128663e; R2's n 5, sha1
+0a98e1b7; Lead re-ran both: n5 2/1, Oink OK), both sign DF′, both find the same WAKE and HI-Consequence gaps, and both sign U, UL, GR, NU,
+Theorem LP, BAND and Corollary LP′.
+- DF′: R2's hypothesis is "y not its own cycle node at k+1" and its proof uses R15 Lemmas A and B with (F1). Mine is "y not its own
+  W-cycle node at k+1", proved via R24's G-TB-1 Bellman argument. Both suffice for WAKE: off R, Ξ = W gives λ_W(y) = λ_Ξ(y) (R19 (a)), and
+  on R, a ∈ R is immediate. Equivalent where used; route either.
+- N-LP-1 (R2 only): MISSED by me, ACCEPTED. Theorem LP step 4's "y ⊕ keeps order and strictness between values of one cycle node" is
+  false for set-valued ⊕ in general (R24 TB-1 (b)). It holds where it is used: in a level −1 run all values involved share one path set.
+  Wording.
+- ENG-1 noted by both under Lemma U.
+- Part 2 (P-N5-SO) is mine only; the Lead has moved its second review to my successor.
+
+| statement | REFEREE | REFEREE-2 | joint | fixes-file line (L-NEW) |
+|---|---|---|---|---|
+| Lemma U | SIGNED (ENG-1) | SIGN (ENG-1) | SIGNED by both | — |
+| Lemma HI / Consequence | SIGNED / HI-1 | SIGN / G-LP-2 | HI-1 = G-LP-2 | Consequence: "M_{k+1} ≤ M_k"; equality only if a level-M_k gate edge sits at a non-switched or non-own-cycle-node vertex |
+| UL, GR, NU | SIGNED | SIGN | SIGNED by both | — |
+| Theorem LP | SIGNED | SIGN (N-LP-1) | SIGNED by both | step 4: "here all values have one path set, so y ⊕ keeps order and strictness" |
+| Lemma DF | NOT SIGNED, FALSE | NOT SIGNED, FALSE | FALSE (two counterexamples) | replace DF by DF′ ("y not its own (W-)cycle node at k+1"); drop the VJ00 Lemma 5.8 citation |
+| BAND | SIGNED | SIGN | SIGNED by both | — |
+| WAKE | W-1 | G-LP-1 | W-1 = G-LP-1, closed | cite DF′; one line on why its y qualifies |
+| Corollary LP′ | SIGNED | SIGN | SIGNED by both | — |

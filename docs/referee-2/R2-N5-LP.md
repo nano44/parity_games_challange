@@ -189,3 +189,54 @@ FINDINGS
 NEEDS
 - Lead: route DF → DF′ (with the §4.3 proof), G-LP-1, G-LP-2 and N-LP-1 to L-NEW's fixes file for P-N5-LP.
 - Lead: tell me when REFEREE's report is pushed, for §C.
+
+## 8. Companion packet P-N5-SO (one combined review; Lead 01:00Z)
+Written 2026-10-25 01:15Z (date -u). Object: docs/new/P-N5-SO-box32.md, sha1 deb5ee4422da3ab7389ce35e4542977927b53886, pinned at trunk 1ef02bb
+(ancestor of my tree). L-NEW successor 12. Own code: R2-N5-LP/so_check.py and so_climb.py (on fb_check). Every game asserts one Odd choice
+vertex. I have not read docs/referee/ for this packet.
+### 8.1 Verdicts (Opus 5.5, D15)
+| statement | verdict | gaps / notes |
+| --- | --- | --- |
+| Lemma TH | SIGN | N-SO-1: F1° (R22 (a)) is signed for R22's phase key (λ_Ξ, λ_U, τ) and is used here on intervals of the coarser LP phase (λ_Ξ, τ). Its proof uses only λ_Ξ on F, τ, Lemma G (a), (F1) in G_τ and FBL-N (ii), none of which needs λ_U, so it transfers. DATA: 7,241 + 38,680 intervals of this phase notion, 0 failures |
+| Lemma SO | SIGN WITH GAPS | G-SO-1: the frozen-key step justifies two strict increases by "⊕ keeps strictness", which is false for set-valued ⊕ in general (R24 TB-1 (b)). CLOSED: p's strict gain is R19 (d) (SG); along x's unchanged prefix, ⊕ is strictly monotone because the prefix vertices lie in neither path set (paths before c are simple, and a repeat would close a cycle without c, against λ = c in the phase). N-SO-3: "⊕ is injective for a fixed cycle node" is false in general (sets that differ only at o), but true on the exits' values: an exit whose path passes o has value path ⊕ θ, strictly longer than μ |
+| Corollary XJ | SIGN WITH GAPS | N-SO-2: "f = O(n³(1 + X))" should read O(d_o·n³(1 + X)) ⊆ O(n⁴(1 + X)), since J ≤ S_o ≤ d_o(2n + (n + 1)X). The T bound O(m·n⁷(1 + X) + m·n⁵·K) is right and already uses n⁴. With that, (J-poly), NFB-O and the fallback count follow from (X) per phase, as the corollary says |
+### 8.2 Checks
+- Lemma TH.
+  - Crossing θ-changes ≤ X (H1 is constant on crossing-free intervals, TC (i)).
+  - ¬H1: θ = (c_θ, ∅, d) (R-1). Ξ is monotone and c_θ fixed, so along the whole phase the ¬H1 values form a monotone d-sequence: ≤ n − 1
+    changes.
+  - H1: x0 = σ̄_k(o) is a full minimiser (R25 CAP-1 closure). x0 ∈ F (its honest play equals its (σ, τ)-play, since o is the only choice).
+    The four-term sandwich shows that Ξ(x0) fixed forces θ fixed, so each θ-change is an F-change: ≤ max(0, |F| − 1) per interval
+    (F1°), ≤ n(X + 1). ✓
+  - DATA: TH bound on every phase. 1,220 + 22,525 H1 cases with x0 ∈ F and Ξ(x0) changed. 58 + 31 ¬H1 changes, all with θ = (c_θ, ∅, d),
+    ≤ n − 1 per phase.
+- Lemma SO.
+  - T (the full minimisers) only shrinks on a θ-run, and μ is fixed (via N-SO-3). ✓
+  - The choice is the key-minimum of T: Lemma R; longest-path mode = smallest index, BFS mode = lex-least root-first path (TB step 5). ✓
+  - An x ∈ T has an H-path to c that avoids o (length argument) and runs through single-successor vertices; its key is frozen while x
+    stays in T (G-SO-1 closure). ✓
+  - So a relevant change with θ fixed removes the old choice: ≤ d_o − 1 per run. ✓
+  - DATA: 10,841 + 67,456 key-minimum checks; 8,002 + 20,338 frozen-key checks; 19 + 3,896 relevant changes with θ fixed, the old choice
+    leaving T every time; T never grew; μ never moved with θ fixed. 0 failures.
+- Corollary XJ: S_o ≤ d_o(Θ + 1) ≤ d_o(2n + (n + 1)X); J ≤ S_o (P-N5-LP §4 step 3, signed in §5 above); FB. ✓
+  - DATA: J ≤ S_o and the f bound on every phase.
+### 8.3 Data and climbs
+- Batch (run_so.sh; logs/so_totals.txt):
+  - random 𝒞^1O, seeds 931 (3,000) and 932 (800), plus the 228-file one-o library (×3 starts);
+  - 4,502 runs, 1,854 phases (1,558 with λ(o) ≠ o);
+  - 236 logs, all RESULT OK.
+  - Maxima: Θ 51, S_o 49 (lev_l_x, as in the packet), J 18, X 84, f 33.
+  - Closest approaches: S_o − d_o(Θ + 1) = −1; J − S_o = 0 (J = S_o is attained).
+- Climbs (so_climb.py, 6 × 500 steps, 12,000 fully checked runs): objectives S_o − d_o(Θ + 1), J − S_o, and the number of relevant
+  σ̄(o)-changes with θ fixed. Seeds: lev_l_x, jcl_zcl_cu_n48, nowake_cex_n32. 0 violations; best margins −1 and 0, never positive.
+- Honest limit: the bounds are loose in d_o and n; the data show neither a growth law nor tightness beyond J = S_o.
+### 8.4 Gap list (P-N5-SO)
+| id | where | status |
+| --- | --- | --- |
+| G-SO-1 | Lemma SO, frozen-key step: "⊕ keeps strictness" | CLOSED ((SG) R19 (d) + simple prefixes) |
+| N-SO-1 | Lemma TH: F1° on a coarser phase | transfers (proof uses no λ_U); DATA agrees |
+| N-SO-2 | Corollary XJ: f = O(n³(1 + X)) | should be O(d_o n³(1 + X)) ⊆ O(n⁴(1 + X)) |
+| N-SO-3 | Lemma SO: "⊕ is injective for a fixed cycle node" | false in general; true on exit values (length) |
+Combined DONE (P-N5-LP + P-N5-SO): LP §1-§2 and LP′ SIGN; DF NOT SIGNED as stated (df_cex.pg), DF′ SIGN; WAKE SIGN WITH GAPS; TH SIGN; SO
+SIGN WITH GAPS (closed); XJ SIGN WITH GAPS (N-SO-2). NEEDS: Lead: route DF′, G-LP-1, G-LP-2, N-LP-1, G-SO-1, N-SO-1..3 to L-NEW's fixes files;
+tell me when REFEREE's reports are pushed, for §C.

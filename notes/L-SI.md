@@ -1,7 +1,25 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Resume point (successor 3, Opus 5.5 D18/L40; box 7, started 21:31Z 2026-10-24; end-of-box state written ~23:45Z)
+## Resume point (successor 3, box 8; Lead GO 00:18Z 2026-10-25; R25 LANDED trunk 40ef7ed from P-N5-FB)
+Box 8 write-up: docs/si/N5-C-box8.md. Code: experiments/si/coarse/cls2.py, rfinv.py (+ jclimb modes CLS2, RF).
+### DONE (PROVED by L-SI succ. 3, unrefereed)
+- OFFGATE (gates into F never exceed M_k, at every in-phase transition incl. jumps); CN (in-phase cycle-node switches have level -1);
+  switched-edge classification at in-scope fallbacks (§3: (a)(b) flat, (c) none at THR u*≠none, (d) CLU; (c) at EQ / THR u*=none
+  and (e) F→F non-cycle-node OPEN).
+- TRANSFER; FRZ/LV from (A)+(B1); (A)-step; Theorem CL-S-RED: the first half of (CL-S) under (H-B1), (H-KIND), (H-EQ).
+  (B1) PROVED at THR(u*≠none) and EQ fallbacks; OPEN at arena-step leaves and THR u*=none fallbacks.
+- Lemma AL: after a fallback, arena leaves need rank u* <= L (given (A), FRZ).
+### DATA
+- OFFGATE 7,134/0; CN 7/0; (A) 0; FRZ 28,311/0; R-ROUTE 10,293/0; LV 588/0; (B1) 588/0; AL 4/0; in-scope fallbacks 260 THRu, 4 EQ,
+  0 THR u*=none. OG' (MF form) FALSE on x31_re24 1->2 (mass arena leave carries a level-22 gate into F).
+- Arena reversals of (Z): 39/45 occur before the first fallback at the current w (box 8 §7).
+### NEXT
+1. (B1) at arena-step leaves (4 in data) and THR u*=none fallbacks (0 in data); then the per-level count of (CL-S) across jumps.
+2. If both close: packet P-N5-CLS (hypotheses incl. N_out; bound J <= (1+N_out)|succ(o)|(1+n_E(2n-1)) + N_out).
+3. Fallback-free R-reversals (box 8 §7).
+
+## Resume point (successor 3, box 7; superseded by the box 8 point above; Opus 5.5 D18/L40; started 21:31Z 2026-10-24; end-of-box ~23:45Z)
 Handover check 78a764d8 (Lead 5/5). Box 7 = proof side of (C). Lane write-up: docs/si/N5-C-box7.md §0-§13. Code: experiments/si/coarse/
 (mono, fbcount, tame, jump, jumpeq, dpot, ju2, clscope, eng1, jclimb; run_all.sh regenerates the packet logs; named.txt = 53 one-o files).
 Climb output: experiments/si/xing/out/jclimb/ (local only, excluded via .git/info/exclude; never git add -A).

@@ -1,0 +1,6 @@
+start -1099
+1 -799 {'max_Theta': 51, 'max_S_o': 49, 'max_J': 1, 'max_X': 21, 'max_f': 3, 'max(S_o - d_o(Theta+1))': -145, 'max(J - S_o)': -8}
+2 -699 {'max_Theta': 21, 'max_S_o': 20, 'max_J': 1, 'max_X': 7, 'max_f': 2, 'max(S_o - d_o(Theta+1))': -132, 'max(J - S_o)': -7}
+4 0 {'max_Theta': 1, 'max_S_o': 0, 'max_J': 0, 'max_X': 2, 'max_f': 0, 'max(S_o - d_o(Theta+1))': -14, 'max(J - S_o)': 0}
+TOTALS {'runs': 2000, 'phases': 1293, 'phases_checked': 1290, 'TH_H1_cases': 392, 'TH_notH1_cases': 1, 'F1o_intervals': 1434, 'SO_keymin_checks': 2062, 'SO_theta_fixed_transitions': 1515, 'SO_frozen_key_checks': 1662, 'sum_S_o': 445, 'sum_J': 16, 'sum_Theta': 547, 'SO_relevant_changes_theta_fixed': 12, 'phases_lam_o_eq_o': 3}
+RESULT OK violations 0

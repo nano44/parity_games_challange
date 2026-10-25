@@ -1,0 +1,22 @@
+F1o_intervals 7241
+SO_frozen_key_checks 8002
+SO_keymin_checks 10841
+SO_relevant_changes_theta_fixed 19
+SO_theta_fixed_transitions 7753
+TH_H1_cases 1220
+TH_notH1_cases 58
+phases 1854
+phases_checked 1558
+phases_lam_o_eq_o 296
+runs 4502
+sum_J 508
+sum_S_o 2505
+sum_Theta 3088
+MAX max(J - S_o) 0
+MAX max(S_o - d_o(Theta+1)) -1
+MAX max_J 18
+MAX max_S_o 49
+MAX max_Theta 51
+MAX max_X 84
+MAX max_f 33
+RESULTS {'OK': 236}
