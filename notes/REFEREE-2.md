@@ -54,8 +54,9 @@ Measured from the repository (commands named). Written here, not in docs/agents/
 - P-N5-NJB (f43a8823 @ a7d85b3): R2-N5-NJB.md. All SIGN; MINSET (c) SIGN WITH GAPS G-NJB-1 (literal Mn_{t+1} never empty by (a) =>
   literal (c) = NJB; proof gives survivor form Mn_t ∩ F_{t+1}); N-NJB-1 (ENT-SHAPE (5): fallback k0 does not move Xi(z)). Data: D_M = 0,
   no fallback after a rise (Corollary, ENT-SHAPE vacuous). Tools R2-N5-NJB/.
-- NEXT: P-N5-TOG (7dfda8c8 @ d3daae1): batch + climbs running (R2-N5-TOG/run_all.sh). Theory read: G-TOG-1 candidate = X_SN counts the
-  S4a crossing leaving each SN prefix (FRZ-3 pattern), bound survives by X-RUN slack; N-TOG-1 X-RUN′ cited as "P-N5-L2 §11" (is §7).
+- P-N5-TOG (7dfda8c8 @ d3daae1): R2-N5-TOG.md. All SIGN; X-SN-PHASE SIGN WITH GAPS G-TOG-1 (SN-prefix exit crossing, occurs: 310 batch;
+  bound survives by X-RUN slack); N-TOG-1 (§11 -> §7). Tools R2-N5-TOG/.
+- NEXT: wait for the Lead (§C for L2 / NJB / TOG when REFEREE's reports land).
 - Trap: background jobs over 30 min are killed (first climb wave lost its second half). Give run_in_background a long timeout.
 
 ## HANDOVER (successor 6, Opus 5.5 under D15; written 2026-10-25 ~06:1xZ; context ~575k; Lead 06:08Z: finish FBW, hand over, park)
