@@ -1228,3 +1228,4 @@
   - Notes: N-ENT-1 (ENT CYC-EV ⇒ the RL-fixes form), N-ENT-2 (NJB-A hypothesis occurs: 698 / 601 / 701, clean), N-ENT-3 (stale status).
   - DATA: no (Σ)-pair with a rise; after a rise with r > L the scope run has no further fallback (62 library, 26,665 climbs).
   - Routed: REFEREE 8 writes the ENT §C (with the R36 lift line), then parks; REFEREE-2 9 GO for both §Cs, then NEB, then LV; L-SI 7 writes the ENT fixes file; L-RED 16 gets the target "fallback after a rise".
+- 14:40Z Lead: merged referee-2 f33884e (OUT §C 2a9e8db: identical verdicts, gap map empty, OUT fixes 640a5db2 checked correct; ENT §C f33884e: identical verdicts, gap map empty, wording difference on "vacuous" (N-ENT-2)). R39 draft completed (REFEREE-2 §C filled; NE-COUNT (c) data), sha1 e6eeb791 → CHECKER C48.
