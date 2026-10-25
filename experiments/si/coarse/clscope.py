@@ -23,10 +23,12 @@ def scan_c(g, name):
         M = a["M"]
         if any(coarse(b["Xi"][v], M) != coarse(a["Xi"][v], M) for v in range(n)): cur["J"] += 1; cur["fbM"].append("J")
         if a["fb"]: cur["fbM"].append(M)
-    c = dict(runs=len(runs), fb=0, mono_viol=0, perlevel_viol=0, maxfb_run=0, maxJ_run=0); ex = []
+    c = dict(runs=len(runs), fb=0, mono_viol=0, perlevel_viol=0, maxfb_run=0, maxJ_run=0, maxgap=-100); ex = []
     for r in runs:
         seq = [x for x in r["fbM"] if x != "J"]; c["fb"] += len(seq); c["maxfb_run"] = max(c["maxfb_run"], len(seq))
         c["maxJ_run"] = max(c["maxJ_run"], r["J"])
+        for i1 in range(len(seq)):          # largest rise of the fallback level between two fallbacks of the run (> 0 = violation)
+            for i2 in range(i1 + 1, len(seq)): c["maxgap"] = max(c["maxgap"], seq[i2] - seq[i1])
         if any(y > x for x, y in zip(seq, seq[1:])): c["mono_viol"] += 1; ex.append((name, "mono", r["fbM"]))
         if any(m >= 0 and k > nE for m, k in Counter(seq).items()): c["perlevel_viol"] += 1; ex.append((name, "perlevel", r["fbM"]))
     return c, ex
