@@ -2,6 +2,9 @@
 """Box 37 (L-RED): hill-climb on 𝒞^1O against L-NEW's box-33 lemmas, counter = sox2.analyse. Mutations: soclimb.mutate.
   exr : (fails, max over phases of ε-transitions in one fallback-free segment − (d_o − 1), same count, ε in SN)
         (EXIT-R + ORX give <= d_o − 1 per segment; > 0 refutes the pair)
+  seg : (failures of the proved lemmas, as exr; EXIT-R / ORX failures only as a last key)
+  small: (EXIT-R fails?, max ε, ε in SN) for small n
+  jb  : (proved-lemma failures, max J − (d_o − 1)(f + 1), max ε)
   xsn : (fails, max X_SN per phase, max X)        post: (fails, max crossings after the SN prefix of a run, max X)
 Usage: soclimb2.py mode seed secs OUT (seed.pg | --rand n)"""
 import sys, os, random, time
@@ -19,6 +22,15 @@ def fit(G, mode):
     rs = r["rows"]; fails = sum(r["C"].values())
     mx = lambda f: max((f(x) for x in rs), default=-10 ** 9)
     if mode == "exr": f = (fails, max((x["maxseg"] - (x["d_o"] - 1) for x in rs if x["maxseg"] >= 1), default=-10 ** 9), mx(lambda x: x["maxseg"]), mx(lambda x: x["epsSN"]))
+    elif mode == "seg":   # proved-lemma failures first; EXITR / ORX (refuted) not counted
+        pf = sum(v for k, v in r["C"].items() if k not in ("EXITR", "ORX"))
+        f = (pf, max((x["maxseg"] - (x["d_o"] - 1) for x in rs if x["maxseg"] >= 1), default=-10 ** 9), mx(lambda x: x["maxseg"]), r["C"].get("ORX", 0))
+    elif mode == "small": f = (min(1, r["C"].get("EXITR", 0)), mx(lambda x: x["eps"]), mx(lambda x: x["epsSN"]), 0)
+    elif mode == "jb":    # J − (d_o − 1)(f + 1) per phase (sox rows), phases with J >= 1; proved-lemma failures first
+        pf = sum(v for k, v in r["C"].items() if k not in ("EXITR", "ORX"))
+        r1 = sox.analyse(g, cap=3000); fr = {x["a"]: x["f"] for x in rs}
+        f = (pf + sum(r1["C"].values()), max((x["J"] - (x["d_o"] - 1) * (fr.get(x["a"], 0) + 1) for x in r1["rows"] if x["J"] >= 1), default=-10 ** 9),
+             mx(lambda x: x["eps"]), 0)
     elif mode == "xsn": f = (fails, mx(lambda x: x["XSN"]), mx(lambda x: x["X"]), 0)
     elif mode == "post": f = (fails, mx(lambda x: x["maxpost"]), mx(lambda x: x["X"]), 0)
     return f, r
