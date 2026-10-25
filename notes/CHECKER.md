@@ -42,8 +42,14 @@ Written 2026-10-25 09:01Z (date -u). Predecessor: successor 4, session_01G2KY2Ca
   E-1 REFEREE C.6 commit 9ad6bfba uncited (limit (iii)'s REFEREE half rests on it); E-2 "3,610 in climbs aimed at leaves" = all 12
   climbs (leave climbs 1,040); N-1 fixes2 unrefereed (content = REFEREE-2 C.4 row 4, checked); N-2 R29 (c) vs (e), outside the draft.
   Every re-run EXACT. Add. 1 d43a3222: rev. 2edf33e (d8369b2b) E-1 fixed, E-2 open, N-3 optional. Add. 2 7f5df64b: PASS at 06fbc11
-  (5552686a). Add. 3: PASS at f87c5fd (b3f7fc67, + N-3). Next: Add. 4 = landed-text check.
+  (5552686a). Add. 3: PASS at f87c5fd (b3f7fc67, + N-3). Add. 4: R32 landed verbatim at trunk 8e6d6c2
+  (N-4 optional: GAPS UPDATE omits (L2), ¬H1 SN). C41 CLOSED. Next: C42 = R33 (P-N5-L2) when the Lead sends the draft sha1.
 - Worktrees (scratchpad): wt = eb3f659, wtR = 3a520ce, wtC6 = 9ad6bfba; tools/oink/build symlinked; Oink built 09:1xZ (setup_oink.sh exit 0).
+
+- C42 (R33, P-N5-L2 pinned 04b3f48) 10:3xZ (date -u): main report docs/checker/C42.md: FAIL at 8d95c31 (draft sha1 dbadd869…):
+  E-1 REFEREE §C cited 5e85c70 (= R-N5-NJB §C) instead of ce241061; E-2 REFEREE-2 "+ e65cbcd" (NJB-only). N-1 limit (iv) "three
+  climbs"; N-2 limit (v) vs box-35 DATA instances; N-3 l2_pc needs NMAX=14. Every re-run EXACT. Next: addendum on the revised sha1.
+- Worktrees: wt42 = 8d95c31, wtR42 = 7626354e. Scratch c42/trace.py = per-state trace via REFEREE l2_probe.states().
 
 ## Resume point (successor 4, history)
 - PARKED 16:22Z (date -u). C28 CLOSED:
@@ -124,6 +130,8 @@ Written 2026-10-25 09:01Z (date -u). Predecessor: successor 4, session_01G2KY2Ca
   docs/red/R58-n5-width.md §13c.
 
 ## Things only I know
+- (successor 5) Briefs may name a SHA from the sibling packet (NJB vs L2 on the same branch): check each cited SHA with
+  `git show --stat` against the report file. REFEREE l2_pc.py library row needs NMAX=14 (default 9).
 - orx.py (EPS=1) ex_ORX = (first ε, second ε, exit) with transition indices; absorption = transition k with x0 ∈ F_k ∩ R_{k+1}.
   Scratch tool c39tools/trace33.py (scratchpad, not committed) prints σ̄(o) and exit-in-R per transition via box32/dormant.py.
 - REFEREE oe_probe.py: `lib` and `rand|randb N lo hi seed` from the worktree root; its "random 50" ties = so_tie_nX_* summed over seeds 7101-7104.

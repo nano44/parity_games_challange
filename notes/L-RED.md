@@ -4,6 +4,30 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Handover check (successor 16)
+Successor 16 = session_014kwWmBLu9B31iceFsng38k (Opus 5.5, D14/D15/D18/L37). Brief from Lead 09:46Z 2026-10-25. Check at 09:45Z (date -u).
+1. Branch / head / trunk distance. Commands: `git fetch origin claude/l-red claude/vibrant-johnson-nxvvxo`; `git merge --ff-only
+   origin/claude/l-red`; `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`; `git merge-base`.
+   - Branch claude/l-red, head 57c685df (successor 15's RESUME POINT commit). The fresh clone sat at 0d0b67a1, 1188 behind.
+   - vs trunk claude/vibrant-johnson-nxvvxo: 1 ahead (57c685df), 82 behind; merge-base 0fe4d801.
+2. Open work (notebook RESUME POINT for successor 16; `ls experiments/red/so/`): nothing in flight. Next steps:
+   - box 39 (Lead 09:46Z): PF-THETA linear form (docs/new/N5-DROP-box35.md §8, trunk only, read with `git show`) first;
+   - then RISE-LAST (R68; event = sox3.py rfb0), XSN-RUN (R68), P-N5-TOG RESTARTS if time remains.
+   - Tools in experiments/red/so/ (sox*.py, soclimb*.py, vrun.sh); vrun.sh needs Oink: scripts/setup_oink.sh started 09:45Z.
+3. GAPS rows (`git show origin/claude/vibrant-johnson-nxvvxo:docs/GAPS.md | grep -n N5`): G-N5-TIME (major, open, L-NEW owner;
+   N5 makes polynomially many iterations; every lemma I attack feeds it). G-N5-TERM closed. GAP-A / GAP-C / G-NEST name L-RED as
+   attacker but are paused under D18/L40 (A_DTL line).
+4. Owner rulings verbatim (`git show <trunk>:docs/DECISIONS.md | sed -n ...`), status from `grep '^| D1[48]* ' docs/DECISIONS-INDEX.md`:
+   - D1 (active): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below."
+   - D14 (active): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well"
+   - D18 (active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+     mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
+     briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+5. Trap found: the target text is not on my branch. docs/new/N5-DROP-box35.md and P-N5-TOG-box35.md exist only on trunk
+   (l-red is 82 behind), so `cat` fails; read them by `git show origin/claude/vibrant-johnson-nxvvxo:<path>`. Also: tools/oink/build
+   is absent in a new container, so vrun.sh fails until scripts/setup_oink.sh has run.
+
 ## Successor 15 (session_01M37vBg9T7zDX5aiPyPWPG7, Opus 5.5, D15/D18; created ~01:00Z 2026-10-25, date -u)
 - Handover check 5/5 (0743d2e6). GO box 36 at 01:22Z (Lead): adversary on P-N5-SO (deb5ee44) and P-N5-LP §4 (d2c8121a + fixes).
 - BOX 36 DONE (~03:10Z; docs/red/R66-so-attack.md). NO KILL: 0 failures over LIB 230 files, RAND 2,000 games, 8 climbs (~2.6 M evals).
@@ -42,6 +66,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Next (if routed): K growth (hand-built wake chain, U1 pieces); X per phase (the remaining open core with K).
 - Trap (box 36): the j fitness J − S_o reached a degenerate 0 (J = S_o = 0); fixed by counting only phases with J >= 1 (trap 2 again).
 - Trap (box 36): killing by `ps | awk $12..` failed (the column was wrong). Use `ps -eo pid,etimes,args` and kill the pid itself.
+
+- Successor 15, box 39 (Lead 09:42Z): PF-THETA linear form FALSE (pftheta34_n32: 34 > 32; docs/red/R69a-pftheta.md); parked for good ~10:35Z.
 
 ## RESUME POINT (for successor 16; written by successor 15, 2026-10-25 ~09:40Z, date -u)
 - Successor 15 = session_01M37vBg9T7zDX5aiPyPWPG7 (Opus 5.5). Boxes 36-38. PARKED after box 38 (Lead 09:34Z). Nothing in flight.
