@@ -149,6 +149,7 @@ Every answer measured from the repository; commands named.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
 ## Resume point (overwritten at handover, LANE-RESTART step 1; successor 17 at the end of box 38, written 2026-10-25 13:2xZ by date -u)
+- UPDATE 14:0xZ (date -u): P-N5-OUT fixes written (docs/new/P-N5-OUT-fixes-box37.md; OUT-R1, OUT-N1, N-OUT-1..4, §7 FALSE statuses). Any §C items -> NEW P-N5-OUT-fixes2-box37.md (successor 18). Successor 17 PARKED.
 Successor 17 (Opus 5.5, D14/D15/D18, L37/L40), session_01ESR6bpU1r4ZjFsMExZtFpq. Handover check 3434720b (Lead: 5/5); box 38 GO 12:00Z.
 Nothing of mine running (all climbs wrote only to experiments/new/out/box38, gitignored). Oink built in this container only.
 ### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)

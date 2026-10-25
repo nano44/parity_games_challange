@@ -1,0 +1,27 @@
+TRACE rand
+FFLAT_cases: 3
+FREEZE_H1_theta_equal_steps: 4
+FREEZE_control_no_hyp: 4
+FREEZE_control_no_hyp_conclusion_fails: 4
+HN_inphase_transitions: 4
+HN_stretches: 5
+NECOUNT_caseA_stretches: 1
+SEPo_states: 1
+SPLIT_a_cases: 1
+SPLIT_b_cases: 3
+STEPK_gate_edges: 14
+breaks: 0
+caseA_phases: 1
+fallbacks_in_stretches: 3
+fallbacks_in_stretches_that_are_crossings: 3
+inphase_fallbacks: 3
+runs: 3
+states: 22
+tau_o_eq_o_phases_with_HN: 1
+max_X_S: 2
+max_breaks_per_stretch: 0
+max_f_HN_caseA_phase: 0
+max_f_S: 2
+max_fallbacks_per_crossing_free_run: 0
+max_theta_ph_caseA: 0
+RESULT OK violations=0

@@ -9,11 +9,12 @@ every successor set of o of size >= 2 (or exactly --o-deg).
 Trace: own copy of n5.py's loop (= sox.trace) from a start pair; canonical start = Engine.initial("best") for both players (as n5.py).
 --all-starts: every start pair (σ_0, τ_0) in the product of successor sets. Prefilter (exact, necessary for the event): two Even
 fallbacks k0 < k with no fallback strictly between, at least one S4a step between, τ constant on [k0, k+1]. Only those runs get the full
-check (H1 / H2 / H3, W, scope runs, M). Usage: ex16.py N [--all-starts] [--even-maxdeg K] [--o-deg K] [--no-forced] [--jobs 4]
+check (H1 / H2 / H3, W, scope runs, M). Box 40 additions: every run with an Even fallback also gets lv16 (N5-LV-box11: in-scope THR
+fallbacks with M = -1, (β) gates) and nleq16 (CONJECTURE NL=). Usage: ex16.py N [--all-starts] [--even-maxdeg K] [--o-deg K] [--no-forced] [--jobs 4]
 [--part i/m] --out FILE.json"""
 import sys, os, itertools, json, time, argparse, multiprocessing as mp
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-import sox, pg, n5
+import sox, pg, n5, lv16, nleq16
 from si import Engine
 from sox import BOT, INF, lev, coarse
 
@@ -118,13 +119,21 @@ def games(n, o, par, a):
             succ[o] = so; yield pg.Game(pr, list(owner), [list(s) for s in succ])
 
 def task(args):
-    n, o, par, a = args; out = dict(games=0, runs=0, pref=0, pairs=0, rises=0, spairs=0, srises=0, maxfb=0, maxit=0, ex=[])
+    n, o, par, a = args; out = dict(games=0, runs=0, pref=0, pairs=0, rises=0, spairs=0, srises=0, maxfb=0, maxit=0, ex=[], lvruns=0, thr=0, lv=0, eq=0, beta_fb=0, maxbeta=0, nleq_eq=0, nleq_gt=0, fails={}, ex2=[])
     for g in games(n, o, par, a):
         out["games"] += 1
         sts = [None] if not a.all_starts else list(itertools.product(*[g.succ[v] for v in range(n)]))
         for st in sts:
             S, FB, E = trace(g, st); out["runs"] += 1
             out["maxit"] = max(out["maxit"], len(FB)); out["maxfb"] = max(out["maxfb"], sum(FB))
+            if any(FB[k] and S[k][0] != S[k + 1][0] for k in range(len(FB))):     # an Even fallback: LV and NL= checks
+                out["lvruns"] += 1; L1 = lv16.analyse(g, trace=(S, FB, E)); L2 = nleq16.analyse(g, trace=(S, FB, E))
+                for kk in ("thr", "lv", "eq", "beta_fb"): out[kk] += L1[kk]
+                out["maxbeta"] = max(out["maxbeta"], L1["maxbeta"]); out["nleq_eq"] += L2["eq"]; out["nleq_gt"] += L2["gt"]
+                for D in (L1["C"], L2["C"]):
+                    for kk, v in D.items(): out["fails"][kk] = out["fails"].get(kk, 0) + v
+                if (L1["lv"] or L1["C"] or L2["C"]) and len(out["ex2"]) < 5:
+                    out["ex2"].append(dict(prio=g.prio, owner=g.owner, succ=g.succ, start=st, lv=L1["lv"], beta=L1["beta_fb"], C1=L1["C"], C2=L2["C"]))
             if not prefilter(S, FB): continue
             out["pref"] += 1; p, ri, sp, sr, exm = full(g, S, FB, E)
             out["pairs"] += p; out["rises"] += ri; out["spairs"] += sp; out["srises"] += sr
@@ -146,12 +155,13 @@ if __name__ == "__main__":
                     if c >= a.selftest: print("selftest OK", c); sys.exit(0)
     i, m = map(int, a.part.split("/"))
     jobs = [(n, o, par, a) for o in range(n) for par in itertools.product((0, 1), repeat=n)][i::m]
-    tot = dict(games=0, runs=0, pref=0, pairs=0, rises=0, spairs=0, srises=0, maxfb=0, maxit=0, ex=[])
+    tot = dict(games=0, runs=0, pref=0, pairs=0, rises=0, spairs=0, srises=0, maxfb=0, maxit=0, ex=[], lvruns=0, thr=0, lv=0, eq=0, beta_fb=0, maxbeta=0, nleq_eq=0, nleq_gt=0, fails={}, ex2=[])
     with mp.Pool(a.jobs) as P:
         for res in P.imap_unordered(task, jobs):
-            for k in ("games", "runs", "pref", "pairs", "rises", "spairs", "srises"): tot[k] += res[k]
-            for k in ("maxfb", "maxit"): tot[k] = max(tot[k], res[k])
-            tot["ex"] += res["ex"][:5 - len(tot["ex"])]
-            print(json.dumps({k: tot[k] for k in tot if k != "ex"}), f"{time.time() - t0:.0f}s", flush=True)
+            for k in ("games", "runs", "pref", "pairs", "rises", "spairs", "srises", "lvruns", "thr", "lv", "eq", "beta_fb", "nleq_eq", "nleq_gt"): tot[k] += res[k]
+            for k in ("maxfb", "maxit", "maxbeta"): tot[k] = max(tot[k], res[k])
+            for k, v in res["fails"].items(): tot["fails"][k] = tot["fails"].get(k, 0) + v
+            tot["ex"] += res["ex"][:5 - len(tot["ex"])]; tot["ex2"] += res["ex2"][:5 - len(tot["ex2"])]
+            print(json.dumps({k: tot[k] for k in tot if k not in ("ex", "ex2")}), f"{time.time() - t0:.0f}s", flush=True)
     tot["space"] = vars(a); tot["secs"] = round(time.time() - t0)
-    json.dump(tot, open(a.out, "w"), indent=1); print("DONE", json.dumps({k: tot[k] for k in tot if k != "ex"}))
+    json.dump(tot, open(a.out, "w"), indent=1); print("DONE", json.dumps({k: tot[k] for k in tot if k not in ("ex", "ex2")}))

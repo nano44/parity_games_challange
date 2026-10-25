@@ -1,0 +1,15 @@
+TRACE own
+HN_stretches: 9
+STEPK_gate_edges: 3
+TAIL_starts: 1
+breaks: 0
+fallbacks_in_stretches: 0
+fallbacks_in_stretches_that_are_crossings: 0
+inphase_fallbacks: 1
+runs: 3
+states: 53
+max_X_S: 0
+max_breaks_per_stretch: 0
+max_f_S: 0
+max_fallbacks_per_crossing_free_run: 0
+RESULT OK violations=0

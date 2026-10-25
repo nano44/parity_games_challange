@@ -50,6 +50,18 @@
   '1 ⇒ 2' vs R18's "1 ⇒ 2"; N-2 'discharged' = joint reading; N-3 (a)/(b) fixed cycle node; N-4 MERGE keeps RL-2 not repeated.
   Re-runs 7/7 IDENTICAL (lane 5101/5102, REFEREE p1_probe 6102/6103 from scratch/, REFEREE-2 p1_check 6101/6102 + mutation.py from its dir).
   Next: landed check when R36 lands; C46 = R37 (instances re-run already: rl_a/b/c 35/2 33/2 30/3, tev_cex 27/16, tevlast 11/1, inr2 32/1, all Oink OK, 1 Odd choice).
+- C46 (R37, P-N5-RL) 13:55Z: docs/checker/C46.md PASS at fb1dfb9 (draft 3ee56629; unchanged at eb866134), conditional on R36 landing first.
+  No E-items. N-1 FREE-FREEZE without (h) at t (covered); N-2 MERGE "FALSE"/N-RL-1; N-3 TEV FALSE = lane/L-RED record; N-4 gap map
+  omits EQ-END remark + k0 row; N-5 R2 drafts 592128a4/fa0273de uncited; N-6 R2's 168 level-inf gates has no committed log.
+  Re-runs EXACT: 6 instances; traces inr2 (0,6,29), tevlast (3,7,15), tev_cex (4,23); REFEREE named/lib @b7419da IDENTICAL;
+  REFEREE-2 6 batch logs IDENTICAL + tev_probe. Worktree wtR46 = b7419da. Scratch tools46/trace46.py (uses rl_probe.states()).
+- C47 (R38, P-N5-SCOPE) 14:03Z: docs/checker/C47.md FAIL at 314d220 (draft f3b27c34): E-1 (f) CN-LAST hypothesis garbled (drops
+  "(Iσ_k ≠ ∅), and suppose"; reads "Even switches every gate"). N-1 WCH repair wording; N-2 R2 1f8a9109/8655f692 uncited; N-3 limit (iii)
+  = REFEREE-2 climbs. Re-runs EXACT: wd16_s2 19/14, wd12_s1 8/7, pftheta 38/1 (33 θ-changes in 1 scope run after the level-31 fallback),
+  oc12_s1 10/1 (k 6, M −1, ¬H1, gates 0→7, 7→8); REFEREE scope_probe lib @fb6089b = §8 exactly; REFEREE-2 6 logs IDENTICAL.
+  Worktree wtS47 = fb6089b. Next: Add. 1 on the Lead's revision; landed checks R36, R37, R38.
+- 14:07Z: C45 Add. 1: R36 landed verbatim at 601df6ed, C45 CLOSED. C46 Add. 1: R37 landed verbatim at da5bac3a (after R36), C46 CLOSED.
+  C47 Add. 1 14:12Z: PASS at fa7d1231 (773af264; E-1 fixed, N-2, N-3 applied). Next: R38 landed-text check.
 - Worktree wt45 = fb1dfb9 (scratchpad), tools/oink/build symlinked. Scratch tools46/run1.sh = n5 + check_sol2 + odd-choice count.
 - Queue (Lead 13:48Z brief stamp): C45 = R36 (P-N5-P1), C46 = R37 (P-N5-RL), C47 = R38 (P-N5-SCOPE): draft docs/agents/R38-draft.md @ trunk 314d220,
   sha1 f3b27c34…; packet docs/new/P-N5-SCOPE-box36.md c3f5ed37 (l-new 8483279, pin 8998ee6); fixes e2550755 (l-new eb5477a);
