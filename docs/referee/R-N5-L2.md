@@ -283,3 +283,13 @@ Fixes-file lines (one per gap):
   - X-RUN′'s bounds are far above every observed count.
   - Random 𝒞^1O games give no windows at all.
   - H2-STICK's non-self-loop case has 120 library cases plus the climb.
+
+## Addendum (written 2026-10-25 09:17Z by date -u): L-NEW's fixes file
+- Object: docs/new/P-N5-L2-fixes-box34.md on trunk eb3f659, sha1 7a110bca8d52b532d531c0836547b2d22b7437cd (checked with sha1sum after
+  merging trunk). The packet itself is unchanged.
+- L2-1: the inserted sentence is my fixes-file line, verbatim. CLOSED.
+- L2-2: the replacement clause is my fixes-file line, verbatim. CLOSED.
+- §2 of the file records the DROP-LEN finding with my instance and the lane's re-run: 4 iterations, 0 fallbacks, Oink OK; the same
+  states and drops as in my §8.
+- Its references to P-N5-TOG / TOGGLE are outside this review. I have not reviewed TOGGLE.
+- Labels: every REFEREE gap on P-N5-L2 is closed. The verdict table stands. FREEZE′ and X-RUN′ still depend on P-N5-FRZ (R32, at CHECKER).

@@ -1,7 +1,7 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 7), written 2026-10-25T09:05Z by date -u (Opus 5.5, D15; session_01TWT1diK1Z9x2eK56iBVbZu)
+## Resume point (successor 7), written 2026-10-25T09:07Z by date -u (stamp corrected from 09:05Z) (Opus 5.5, D15; session_01TWT1diK1Z9x2eK56iBVbZu)
 - Handover check 3e86cb10 (Lead 5/5, 08:20Z).
 - P-N5-L2 (pin 04b3f48, sha1 cbea0739…): docs/referee/R-N5-L2.md (7626354e; climb addendum 524d93f5).
   - H3-CONST, G′, R-CONST SIGNED. FREEZE′ and X-RUN′ SIGNED on premise P-N5-FRZ.
