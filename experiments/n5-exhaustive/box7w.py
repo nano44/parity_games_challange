@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Box 7 (Lead 00:28Z): exhaustive tables, from every start pair of a class, of
-  - L-NEW's CONJECTURE NO-WAKE (docs/new/N5-L-box32.md §4), checked by experiments/new/box32/nowake.census (unmodified), and the
-    used-level rises L_i > L_{i-1} inside a phase split by cause, in this precedence: fallback (at i-1 or i), sigma_bar(o) (the top
-    level is attained only by sigma_bar(o), usedL's 'O' tops), crossing (R_{i-1}, R_i, R_{i+1} not all equal), other;
+  - K = wakes per phase and S_o = sigma_bar(o) changes per phase (Lead 00:33Z; NO-WAKE itself is FALSE, nowake_cex_n32), with the
+    conditions of experiments/new/box32/nowake.census (unmodified; a wake = its NOWAKE_FAIL condition, counted per transition;
+    totals and max S_o are checked against census on every run: census_mismatch), and the used-level rises L_i > L_{i-1} split by
+    cause in the precedence fallback (at i-1 or i) > sigma_bar(o) (top level only from sigma_bar(o)) > crossing (R_{i-1}, R_i, R_{i+1}
+    not all equal) > wake > other;
   - L-RED's u23x.analyse (P-N5-U23 exactly as frozen: CASC-U2, CASC-U3 (i)-(iii), corollaries; per stretch K_W, events E).
 Both reference modules start from the canonical pair (start_pair(..., None)); for a start pair this driver rebinds the name
 start_pair inside those modules (mblock, u23x) to a wrapper that substitutes the pair. The files themselves are not changed.
@@ -37,13 +39,25 @@ def set_start(start):
 
 
 def rise_causes(g):
-    rows, o = mblock.rows_w(g); E = nowake.Engine(g); ev = [E.evaluate(tuple(r["s"])) for r in rows]
+    """Per phase-run of defined used levels (nowake.census's segmentation): K = wakes (census's NOWAKE_FAIL condition, counted per
+    transition), S_o = transitions changing sigma_bar(o) (census's formula); rises L_i > L_{i-1} split by cause in the precedence
+    fallback > sigma_bar(o) > crossing > wake > other."""
+    rows, o = mblock.rows_w(g); E = nowake.Engine(g); ev = [E.evaluate(tuple(r["s"])) for r in rows]; n = g.n
     Ls, tops = [], []
     for i in range(len(rows) - 1):
         if rows[i]["ph"] != rows[i + 1]["ph"]:
             Ls.append(None); tops.append(None); continue
         L, top = nowake.usedL(g, rows, ev, i); Ls.append(L); tops.append(top)
-    c = collections.Counter()
+    wake = [False] * len(Ls)
+    for i in range(1, len(Ls)):
+        if Ls[i] is None or Ls[i - 1] is None or rows[i - 1]["fb"] or rows[i]["fb"]:
+            continue
+        if not (rows[i - 1]["R"] == rows[i]["R"] == rows[i + 1]["R"]):
+            continue
+        a, c_ = rows[i], rows[i + 1]
+        wake[i] = any(g.owner[y] == 0 and a["s"][y] != c_["s"][y] and nowake.lev(ev[i][0][a["s"][y]], ev[i][0][c_["s"][y]]) > Ls[i - 1]
+                      for y in range(n))
+    c = collections.Counter(); mK = mSo = 0
     for i in range(1, len(Ls)):
         if Ls[i] is None or Ls[i - 1] is None or not Ls[i] > Ls[i - 1]:
             continue
@@ -53,20 +67,34 @@ def rise_causes(g):
             c["rise_sigmabar_o"] += 1
         elif not (rows[i - 1]["R"] == rows[i]["R"] == rows[i + 1]["R"]):
             c["rise_crossing"] += 1
+        elif wake[i]:
+            c["rise_wake"] += 1
         else:
             c["rise_other"] += 1
-    return c
+    i = 0
+    while i < len(Ls):
+        if Ls[i] is None:
+            i += 1; continue
+        j = i
+        while j + 1 < len(Ls) and Ls[j + 1] is not None:
+            j += 1
+        K = sum(wake[i:j + 1]); So = sum(ev[k][1][o] != ev[k + 1][1][o] for k in range(i, j + 1))
+        mK, mSo = max(mK, K), max(mSo, So); c["phases"] += 1
+        i = j + 1
+    c["wakes"] = sum(wake)
+    return c, mK, mSo
 
 
 def run_one(g, start):
     set_start(start)
     acc = {}; nowake.census(g, acc, "x")
-    c = rise_causes(g)
+    c, mK, mSo = rise_causes(g)
     c["nw_checked"] += acc.get("nw_checked", 0); c["NOWAKE_FAIL"] += acc.get("NOWAKE_FAIL", 0)
+    c["census_mismatch"] += (c["wakes"] != acc.get("NOWAKE_FAIL", 0)) + (mSo != acc.get("max_So", (0,))[0])
     A = u23x.analyse(g)
     for k in U23K:
         c[k] += A[k]
-    mx = {k: A[k] for k in U23M}
+    mx = {k: A[k] for k in U23M}; mx["maxK"] = mK; mx["maxSo"] = mSo
     return c, mx
 
 
@@ -79,9 +107,9 @@ def record(res, g, start):
     for k, v in mx.items():
         if v > res["mx"].get(k, -10 ** 9):
             res["mx"][k] = v
-            if k in ("maxE", "maxKW"):
+            if k in ("maxE", "maxKW", "maxK", "maxSo"):
                 res["ex"][k] = [dict(prio=g.prio, owner=g.owner, succ=g.succ, start=start, v=v)]
-    for k in ("NOWAKE_FAIL", "rise_other") + U23K[5:]:
+    for k in ("rise_other", "census_mismatch") + U23K[5:]:
         if c.get(k) and len(res["ex"].setdefault(k, [])) < 20:
             res["ex"][k].append(dict(prio=g.prio, owner=g.owner, succ=g.succ, start=start))
 
@@ -108,10 +136,10 @@ def merge(tot, r):
     for k, v in r["mx"].items():
         if v > tot["mx"].get(k, -10 ** 9):
             tot["mx"][k] = v
-            if k in r["ex"] and k in ("maxE", "maxKW"):
+            if k in r["ex"] and k in ("maxE", "maxKW", "maxK", "maxSo"):
                 tot["ex"][k] = r["ex"][k]
     for k, L in r["ex"].items():
-        if k not in ("maxE", "maxKW"):
+        if k not in ("maxE", "maxKW", "maxK", "maxSo"):
             tot["ex"][k] = (tot["ex"].get(k, []) + L)[:20]
 
 
@@ -152,8 +180,8 @@ def main():
     with mp.Pool(a.jobs) as pool:
         for i, r in pool.imap_unordered(task_i, todo):
             json.dump(r, open(f"{tdir}/{i}.json", "w"), default=str); merge(tot, r)
-            if r["c"].get("NOWAKE_FAIL") or r["c"].get("rise_other") or any(r["c"].get(k) for k in U23K[5:]):
-                print("FLAG in task", i, {k: r["c"].get(k, 0) for k in ("NOWAKE_FAIL", "rise_other") + U23K[5:]}, flush=True)
+            if r["c"].get("census_mismatch") or r["c"].get("rise_other") or any(r["c"].get(k) for k in U23K[5:]):
+                print("FLAG in task", i, {k: r["c"].get(k, 0) for k in ("census_mismatch", "rise_other") + U23K[5:]}, flush=True)
             json.dump(tot, open(a.out + "/" + tag + ".partial.json", "w"), default=str)
     tot["secs"] = round(time.time() - t0, 1); tot["options"] = {k: v for k, v in vars(a).items() if k not in ("out", "jobs")}
     json.dump(tot, open(a.out + "/" + tag + ".json", "w"), indent=1, default=str)
