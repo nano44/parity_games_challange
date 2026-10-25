@@ -1,4 +1,4 @@
-# Draft RESULTS R29 (Lead, 2026-10-25 03:16Z by date -u) (rev. 03:21Z: fixes part 2 cited; rev. 03:29Z: C38 N-1) — awaits CHECKER C38; lands in "## Results" after R28, before "## Dead ends"
+# Draft RESULTS R29 (Lead, 2026-10-25 03:16Z by date -u) (rev. 03:21Z: fixes part 2 cited; rev. 03:29Z: C38 N-1) — LANDED in RESULTS Results 03:43Z (CHECKER C38 b250d88 + Addenda f0cf7c9, 7d31aba PASS), after R28
 
 ### R29 [refereed-only] N5 on one-Odd-choice games: gates into F never exceed the gate level (OFFGATE), cycle-node switches are length-only (CN), values off R̄ freeze at S4a steps above a gap (NL), and fallback levels never rise along a scope run at THR fallbacks (Theorem CLS1) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C38.md, checker PENDING)
 - Object (packet P-N5-CLS, pinned trunk 486107a, unchanged during review): docs/si/P-N5-CLS-box8.md, sha1
