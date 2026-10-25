@@ -20,6 +20,12 @@ Branch claude/referee-2, merged with trunk (--no-ff) before each push. REFEREE-2
   Queue: RHO (done by me) -> §C PFZ (main + ext) vs REFEREE R-N5-PFZ 8595343 + its §C 4859e63, and its ext §C when it lands -> §C LV2
   vs R-N5-LV2 b454ca3 + addendum 46a8030 -> P-N5-NHN (docs/new/P-N5-NHN-box40.md, sha1 da7d09ec, pin trunk 0bb175d) -> §C RHO vs
   REFEREE 10's report when routed.
+- Lead 17:56Z (its stamp; read by me 18:09Z): REFEREE 10 on trunk: R-N5-RHO 5927831 (all SIGNED; mine 269ae45a is pushed, so readable);
+  PFZ-ext §C ed8bc20 (PFZ-1 = G-PFX-1; REFEREE re-derives a repair proving (i) AS STATED: refined θ-LEN ≤ |A_low| − [o low] per
+  P-epoch, and ρ_S ≥ 1 forces a high u ≠ o, so θ_S ≤ (ρ_S+1)(|U|−2) − 1). The Lead asks the PFZ §C to say whether (i) would be signed
+  once that repair is in the fixes file: CHECK the refined θ-LEN yourself (pfzx_check.py can count length moves vs |A_low|).
+  LV2 §C ed8bc20: N-LV2-3's conjecture FALSE on experiments/red/so/instances/beta2_n11.pg (bdea2a23); I withdrew it in R2-N5-LV2
+  Addendum B (eed4efd2) and ran LV-NONE at N = 2 there (0 violations).
 - Lead NEEDS sent 17:2xZ: N-LV2-1..3 to L-SI; G-PFX-1 to L-NEW; CONJECTURE "an in-scope THR fallback with M = −1 is the last fallback of its
   scope run" to L-RED.
 ### Things only I know
