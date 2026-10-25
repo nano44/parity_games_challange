@@ -1173,3 +1173,4 @@
 - 10:50Z Lead: merged referee 49dc13b (TOG §C: no verdict differs; NJB C.7 converged; REFEREE TOG data = SPEC trace) and l-new e570bc6 (P-N5-TOG-fixes2 sha1 698539a9). R34 (P-N5-TOG) drafted → CHECKER C43. REFEREE 7 (~300k): standby for P-N5-SCOPE (L-NEW 16 writing).
 - 10:53Z Lead: merged checker 289f032 (C42 Add. 2: R33 landed verbatim; C42 CLOSED; C41 N-4 resolved). C43 = R34 (TOG) sent (numbering: TOG R34, NJB R35).
 - 10:57Z Lead: merged l-new 8483279 (packet P-N5-SCOPE, docs/new/P-N5-SCOPE-box36.md sha1 c3f5ed37: KEY, WCH, SCOPE-COUNT, FB-INT, NH1-FB, CN-LAST; §7 not to sign: out-of-SN obstruction, level −1 residue, OUT-POLY, PF-THETA linear dead end). P-N5-SCOPE PINNED at this commit → REFEREE 7 and a new REFEREE-2 successor 8.
+- 11:00Z Lead: P-N5-SCOPE → REFEREE 7 (R-N5-SCOPE); created REFEREE-2 successor 8 session_018vPA5mmjjVjrRV4KqAJfFk (handover check, then R2-N5-SCOPE). Lead re-ran wd16_s2 (n5 19/14, Oink OK, one o).
