@@ -6,7 +6,7 @@ successor 15. Written 2026-10-25 10:19Z onward by date -u.
 Every verdict is labelled (Opus 5.5, D15). Labels (D18/L40): PROVED (by whom) / CONJECTURE / OPEN. Independent of REFEREE-2:
 docs/referee-2/R2-N5-TOG.md not read.
 Premises from my own lane:
-- R-N5-L2 (X-RUN′, H2-STICK with L2-1, H3-CONST), signed by both referees, §C at 5e85c706.
+- R-N5-L2 (X-RUN′, H2-STICK with L2-1, H3-CONST), signed by both referees, §C at ce241061 (corrected from 5e85c706, which is the NJB §C; CHECKER N-2).
 - R-N5-FRZ (X-RUN, X-RUN°'s source), signed by both, at CHECKER as R32.
 
 ## Verdicts
