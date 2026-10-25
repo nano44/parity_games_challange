@@ -1,6 +1,41 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Handover check (successor 8), written 2026-10-25T11:33Z by date -u (Opus 5.5 under D15; session_01YRPeH49wEXXq7vW5qK35Gz)
+1. Branch, head, distance to trunk. Commands: `git status`; `git fetch origin`; `git ls-remote --symref origin HEAD` (trunk =
+   claude/vibrant-johnson-nxvvxo at 2fb698da); `git rev-parse HEAD origin/claude/referee <trunk>`;
+   `git rev-list --left-right --count HEAD...<ref>`; `git merge --ff-only origin/claude/referee`; `git merge --no-ff <trunk>`.
+   - Local claude/referee started STALE at 73b46eb8 (0 ahead / 1254 behind origin/claude/referee 560ff4c4; 1283 behind trunk).
+   - Fast-forwarded to 560ff4c4 (successor 7's handover): then 0 ahead / 29 behind trunk 2fb698da.
+   - Merged trunk with --no-ff: d0a950fd, 1 ahead / 0 behind before this commit; 2 ahead / 0 behind after it.
+   - Packet object: `git show 2fb698d:docs/si/P-N5-RL-box10.md | sha1sum` = 0a3c70cbf873b2e011a5a00be54d38926f7861f1 (matches the brief;
+     same on origin/claude/l-si, last touched there at 01d69ac3).
+   - Oink: scripts/setup_oink.sh built 8fbf0a7 into tools/oink/build, exit 0.
+2. Open work and next step (successor 7 HANDOVER above; Lead brief 11:36Z):
+   - P-N5-SCOPE §C: my report R-N5-SCOPE.md (fb6089b / 560ff4c) all SIGNED, no gaps. `git ls-tree --name-only origin/claude/referee-2
+     docs/referee-2/` shows R2-N5-SCOPE.md exists, but head 1f8a9109 calls it a "draft ... climbs pending" (names and commit subject only;
+     contents not read). Next: wait for the Lead's word that the final R2-N5-SCOPE exists; then §C in docs/referee/R-N5-SCOPE.md.
+   - P-N5-RL (after GO): docs/si/P-N5-RL-box10.md (sha1 0a3c70cb…, pin 2fb698d, L-SI succ. 5). Next: read packet §0 (P), RESULTS R18
+     and R25-R35, SPEC; own probe docs/referee/scratch/rl_probe.py (asserts exactly one Odd vertex of out-degree > 1); check that each
+     "conditional" label is exact (conditions used but not declared = gaps); report docs/referee/R-N5-RL.md. No R2-N5-RL read before.
+3. GAPS rows (`grep -n G-N5-TIME docs/GAPS.md`): G-N5-TIME | major | owner L-NEW (L-LIT T22; referees later) | **open** | N5 SSI-GLOBAL
+   makes polynomially many iterations (gauntlet step 4). Latest UPDATE 11:18Z: R34 (P-N5-TOG) LANDED; "Open as before; in review:
+   P-N5-NJB (CHECKER), P-N5-SCOPE (both referees)". Related, closed: G-N5-TERM (R15).
+4. Owner rulings verbatim (`grep -n -F` in docs/DECISIONS.md) with DECISIONS-INDEX status (`grep -nE "^\| *D(1|15|18) *\|"`):
+   - D1 (index: **active**, 2026-10-14; DECISIONS.md l.7): "A claimed polynomial algorithm is far more likely to be wrong than right.
+     Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+   - D15 (index: **active**, 2026-10-22; l.278): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous,
+     reason about it"
+   - D18 (index: **active**, 2026-10-24; l.333): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+     connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+     where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+     open problems."
+5. Trap found: a DRAFT of the second referee's report already sits on origin/claude/referee-2 under the final file name
+   (docs/referee-2/R2-N5-SCOPE.md, head 1f8a9109 "draft ... climbs pending"). "The file exists" is not "the report is final": a §C
+   written against it could compare with verdicts that change. I wait for the Lead's word and pin the R2 SHA I compare against.
+   Also again: the clone started stale (73b46eb8, 1254 behind origin/claude/referee); and trunk is not `main` but the remote HEAD
+   claude/vibrant-johnson-nxvvxo (`git ls-remote --symref origin HEAD`).
+
 ## HANDOVER (successor 7 -> successor 8), written 2026-10-25T11:09Z by date -u (stamp corrected from an estimated 11:10Z), context ~530k by the Lead's WATCHDOG (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
 Branch claude/referee. Start: git fetch origin claude/referee claude/vibrant-johnson-nxvvxo; CHECK HEAD == origin/claude/referee (the
