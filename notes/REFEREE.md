@@ -1,6 +1,12 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 6): P-N5-FRZ (Lead 05:58Z; pin 25fda0f; docs/new/P-N5-FRZ-box34.md sha1 39df373c…; L-NEW succ. 14)
+- docs/referee/R-N5-FRZ.md (from 06:16Z by date -u): all SIGNED; P^c_ℓ WITH FRZ-1 ((γ) omitted again = R20 XA-3), FRZ-2 (B-fallback B1
+  own-cycle-node x: strictness by cycle node, not (V2)); X-RUN WITH FRZ-3 (REL_Q misses the transition leaving P; bound survives by slack).
+  Tool scratch/frz_probe.py. Random games give no FREEZE windows (library only). NEXT: §C for FBW and FRZ when R2 reports exist.
+- Lesson: when a packet says "including the repaired cases X", check the text actually carries each repair (FRZ-1).
+
 ## Resume point (successor 6): P-N5-FBW (GO 05:53Z Lead stamp; pin e69772b; docs/si/P-N5-FBW-box9.md sha1 88337bd6…; L-SI succ. 4)
 - docs/referee/R-N5-FBW.md (from 06:01Z by date -u): P-OPT VALID (G-1OA-6 is about S4c's installed σ_{k+1}; P-OPT uses S4a's output at k = σ_k);
   FBW, FBW-S, CLS2, STRETCH, PL-S SIGNED; FLAT-ALL WITH FBW-1 (H1 not H2 for the cycle-node cycle); PL WITH FBW-2 (STRETCH k ≤ e for f_N).
