@@ -130,3 +130,52 @@ The statement itself (O_k ≤ E_k off crossings).
 REFEREE-2 (successor 6), Opus 5.5 (D15), 2026-10-25: Lemma U-loc SIGN; Lemma OE SIGN (notes N-OE-1, N-OE-2, N-OE-3; no gap of
 substance); Corollary OX (i)-(v) SIGN. After two signatures (D18/L40) these become PROVED (L-NEW successor 12; REFEREE-2, and REFEREE if
 it signs): U-loc on every game inside a phase; OE and OX on 𝒞^1O. OPEN: X and K per phase; G-N5-TIME.
+
+## §C. Comparison with REFEREE (R-N5-OE, referee 5e98e33 + stamp fix 696b08c; trunk 1d35e8e). Written 2026-10-25 02:06Z onward by date -u
+Order: my report (ca6e5bd1) was pushed before I opened docs/referee/R-N5-OE.md (Lead 02:06Z). REFEREE did not read mine.
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | agree? |
+| --- | --- | --- | --- |
+| U-loc | SIGNED | SIGN | yes |
+| Lemma OE | SIGNED WITH GAPS OE-1, OE-2 (closed), OE-3 | SIGN, notes N-OE-1..3 | yes on substance; the labels differ only because REFEREE files wording items as gaps |
+| Corollary OX (i)-(v) | SIGNED (OX-1 wording) | SIGN | yes |
+| Reading | not signed (note 3.6) | not signed | yes |
+No disagreement of substance. Both reports find no counterexample. Both reproduce J 17 = X 17 on jcl_zcl_cu_n48.
+### C.2 Item by item
+- OE-1 = N-OE-1: same gap and same repair. CORRECTION of my report:
+  - §2 said "0 such tie moves in all my data". My counter counted only ties with E_k = ⊥. That is the case the sentence needs, and it is 0
+    in both reports.
+  - Counted generally (oe_check.py now has the counter OE_tie_moves; logs_tie/):
+    - library: 2 level-⊥ σ̄(o) changes off crossings (n5s_maxph_0, j8_n32), REFEREE's 2;
+    - random 𝒞^1O (seeds 943/944): 5.
+  - All of these have E_k ≠ ⊥. The sentence is unproved, not refuted, as REFEREE says.
+- OE-2 (CAP-1 also for o on its honest cycle, ¬H1): I accept. My §2 used CAP-1 at λ(o) ≠ o without saying that the ¬H1 case (o on a
+  cycle, not its cycle node) is covered.
+  - REFEREE's re-derivation of R-N5-FB §4.2 assumes no off-cycle condition. I re-read both branches (a) and (b): correct.
+  - My data covers that case: the CAP1 counter counts every state with λ(o) ≠ o, including ¬H1 states, and found 0 failures.
+- OE-3 = part of my §2 step 3 ("as in Lemma HI's second bullet"). REFEREE's (C1) + (C3) citation is the precise form. Accept.
+- N-OE-2 (step 3's reason that x0's honest play avoids o): REFEREE gives the same one-line reason via H1's definition (N5-NH-box28 l. 9).
+  This row joins OE-3 in the fixes file as one wording line.
+- N-OE-3 (phase key): mine only. REFEREE checked TC (i) and FB via citations but did not raise the key transfer. Each cited item uses only
+  λ_Ξ and τ (FB packet l. 47; TC (i) statewise). One fixes-file line.
+- OX-1 (f and T over transitions with both ends in the phase, R25 FB-2): accept. My checker counts in-phase transitions only, which matches.
+- Note 3.6 (X ≤ (n − 1)(Z + 1) + Z is one direction): accept, a correct refinement of the Reading's "≡ Z up to a factor n".
+- Data: REFEREE's library counts (436 + 11 crossing-free, 279 O > E all at crossings, 235 non-tame all crossings) are IDENTICAL to my logs1
+  counts.
+  - CORRECTION of my §5: the difference from the packet's 220-file numbers is the trunk date of the lane's run. c1o_list.py today lists the
+    same 234 files (REFEREE). My "no deduplication" explanation was a guess from the source and is withdrawn as the cause.
+  - REFEREE also ran oddlev.py, the lane's script; I did not, by my rule.
+### C.3 Joint gap map (one fixes-file line per row)
+| row | REFEREE | REFEREE-2 | fixes-file line |
+| --- | --- | --- | --- |
+| 1 | OE-1 | N-OE-1 | §2 "In particular": "σ̄(o) makes no relevant change of level ≠ ⊥ (O_k = ⊥)"; level-⊥ tie changes do occur off crossings (2 library, all with E_k ≠ ⊥) |
+| 2 | OE-2 (closed) | — (accepted in §C) | §2 step 1: cite CAP-1 as R-N5-FB §4.2, valid for λ(o) ≠ o including o on its honest cycle (¬H1); no text change |
+| 3 | OE-3 | N-OE-2 (+ my step-3 remark) | §2 step 3: "x0's honest play avoids o because H1 says o's honest play does not return to o; by (C1) and (C3), Ξ_{k+1}(x0) ◁ Ξ_{k+1}(x1)" |
+| 4 | — | N-OE-3 | Dependencies: R22 TC (i), R25 FB / J1 / CAP-1 are signed under the key (λ_Ξ, λ_U, τ); each uses only λ_Ξ and τ constant (P-N5-FB l. 47; TC (i) and CAP-1 statewise), so they hold on this packet's (λ_Ξ, τ) phase |
+| 5 | OX-1 | — (accepted) | §3: "f and T count transitions with both ends in the phase (R25 FB-2)" |
+| — | note 3.6 | — (accepted) | Reading: "X ≤ (n − 1)(Z + 1) + Z (R23 LV′), the direction a bound on Z needs" |
+### C.4 Labels after two signatures (D18/L40)
+PROVED (L-NEW successor 12; REFEREE and REFEREE-2, Opus 5.5, D15), pending CHECKER:
+- Lemma U-loc on every game inside a phase;
+- Lemma OE (with row 1's wording) and Corollary OX (i)-(v) on 𝒞^1O.
+OPEN: X and K per phase; G-N5-TIME. Not a TARGET.md claim; not a step-4 pass.
