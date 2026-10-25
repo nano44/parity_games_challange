@@ -34,7 +34,8 @@
 - C35 (R26, P-N5-U23 pinned 7666336) 00:4xZ (date -u):
   - main report docs/checker/C35.md: PASS at 37a4a06 (draft sha1 abd35e40…); optional N-1 (limit (v) "~90" relayed only via fixes §5;
     L-RED R65 off trunk 1c2f1d8f), N-2 (no change);
-  - awaiting landing; then Add. 1 = landed-text check.
+  - Add. 1: R26 landed verbatim at trunk eb8e22e. C35 CLOSED.
+- PARKED. Next likely: P-N5-LP (pinned bc42f2c), with both referees.
 - Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs. In a worktree, symlink tools/oink/build.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 
