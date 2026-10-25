@@ -1118,3 +1118,4 @@
 - 05:04Z Lead: C39 Addendum 1 PASS @ 91582c0 (checker 262104b) → R30 LANDED (lines 3-end verbatim, 'checker 09c8dc7 + Addendum 262104b'); GAPS append; NOW.
 - 05:09Z Lead: hourly sweep 05:04Z: no overage; L-RED 15 (282k) finishing box 37 (R67), L-COMP 4 (131k) on box 8 tables, L-SI 4 (101k) on box 9, L-NEW 14 (107k) on box 34 REL climbs, CHECKER on C39 Addendum 2; referees parked. Lead context ~694k (continues via summary/compaction; LEAD-STATE current). No exception.
 - 05:14Z Lead: merged l-red 7a5ed22 (box 37 DONE, R67: EXIT-R + consequence FALSE on 4 instances; CONJECTURE J-SEG (J ≤ (d_o−1)(f+1) per phase; equality on 3, climbs flat); X = X_SN 29 at n 32, 44 at n 48 (xsn43_n48 b9d41e3c: Lead re-run n5 45/0, Oink OK, one o)) and l-comp 37aad6d (box8.py: referees' checkers per run for R28-R30). L-COMP queue order: box8 n4 + n5 Q1 before box7w Q2-4.
+- 05:19Z Lead: merged checker e4af4e5 (C39 Addendum 2 PASS: R30 landed verbatim at 659f574; C39 closed).
