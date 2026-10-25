@@ -7,6 +7,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   undefined); OG′ FALSE confirmed (x31_re24 1→2, S4a). Lead's MF_up/FBR_EQ: MF_up = OG′ counter (S4a step), not a fallback M rise.
   Tool scratch/cls_probe.py (phase key (λ_Ξ, λ_U, τ)). §C written from 02:57Z (date -u) vs R2-N5-CLS (ffe10e1): no verdict differs;
   CLS-3 = G-CLS-1 (R2's form adopted: cite FBL's strong gate form at k1, not the stretch statement); N-CLS-1/2 accepted; 6-row map.
+  Lead 03:08Z: merged, review closed, lands as R29 after L-SI's fixes file. PARKED. Likely next: L-NEW 13's R-STICK / SN-PREFIX / ABS-L.
 - Lesson: when a signed lemma is stated for a TRANSITION inside a run, check both ends of the transition are inside before citing it.
 
 ## Resume point (successor 6, written 2026-10-25T01:5xZ, pushed 5e98e33c at 01:56Z by date -u; stamp corrected 01:56Z; Opus 5.5 under D15; label "(Opus 5.5, D15)")
