@@ -25,9 +25,11 @@ L-NEW successor 13 (Opus 5.5, D15/D18). Box 33 GO by the Lead 02:06Z (Lead's sta
    when c_w = c_θ; in a run without fallbacks those states form a prefix, so after it R only grows (≤ n − 1 crossings). The crossing
    problem lives in the SN regime c_w = c_θ, where (under H1) both frames order R-vertices identically. This proves EXIT-R for the 30
    ε-transitions with c_w(k+1) ≠ c_θ; 249 remain conjectural.
-7. **K data.** The library (234 files) has 1 wake (nowake_cex_n32). Three wake climbs (box33/kclimb.py, ~9·10⁴ candidates each so far)
-   reach K = 2 in one phase (consecutive transitions, rising wake levels 26 → 29), never more. Every wake seen is in U3 / U23 with
-   c_w the top-rank vertex (the length-only band of Lemma KW-LEN), BFS mode.
+7. **K data, and the K-chain family (§11).** The library has 1 wake. Climbs reached K = 2. The explicit family kchain.py K (n = 11K + 14,
+   verified with Oink) has K − 1 wakes in ONE phase at consecutive transitions with rising levels: K per phase is Θ(n), not O(1). N5
+   stays fast there (K + 2 iterations). Every wake seen is U3 / U23, length-only band, BFS mode.
+8. **Refuted (§10).** H-RE (re-absorbing the same exit needs r to drop): FALSE on b6_xl_n48.
+9. **Tool bug (§11).** mono.py's lev() uses 99 for ∞: wrong on n ≥ 100 (library unaffected). box33/biglev.py patches it.
 
 ## 1. Lemma OR (PROVED, L-NEW succ. 13; 𝒞^1O; inside a phase)
 Statement. Let k → k+1 be a phase transition with O_k > E_k. Put c := λ(o) (≠ o: O_k is defined only then), x0 := σ̄_k(o),
@@ -115,7 +117,7 @@ Proof.
   mode, length-only band, U3 or U23); 4 with a W-change at a or z, 1 (U23, climb from nr_u23_n32) with W unchanged at a and z.
 - K per phase (box33/kclimb.py, fitness = max K in one phase, total K, finite dormant R → R edges; seeds nowake_cex_n32, nr_u23_n32,
   u1flat_best_n32, n 32): best K = 2 per phase (two consecutive transitions, wake levels rising 26 → 29 and 18 → 19). REFEREE-2's
-  K = 1 in all its data stands as the norm. CONJECTURE-level only: wakes per phase stay O(1) in reachable data; no statement.
+  K = 1 in random and library data. "Wakes per phase stay O(1)" is FALSE: the K-chain family (§11) has K − 1 wakes in one phase at n = 11K + 14.
 - READING: with Lemma KW-LEN, in the length-only band (c_w above every vertex of R, which is where every wake so far lives) the odd-mode
   wakes are ≤ (f + 1)·|R|·(n − 1) per stretch; the BFS-mode ones are W-flat switches of CASC-U3 sub-runs (≤ 2|R| − 4 steps each) or ride on
   W-changes. So in that band K is bounded given f and the events (E). (E) stays OPEN.
@@ -211,3 +213,43 @@ Proof.
     exits (FBL: THR fallbacks switch R → F edges), and a released exit can be absorbed again in the same scope run. DATA: 673 absorptions
     (σ̄(o) changes with x0 entering R) in scope runs; the same exit up to 5 times in one scope run (b6_xl_n48, exit 28). The open count
     per level is now: releases of absorbed exits at level-M fallbacks (OPEN).
+
+## 10. Refuted: H-RE (FALSE, DATA)
+- H-RE "inside a scope run, between two absorptions of the same exit, r = lev(θ, w) strictly drops": FALSE. b6_xl_n48
+  (experiments/n5-exhaustive/instances/b6_xl_n48.pg; in the library): exit 28 is absorbed at transitions 70 (θ-level 38) and 88 (θ-level 33)
+  with r = 39 at both. 25 failures in the library (box33/hre.py), 161 re-absorptions in scope runs in all.
+- Also false at phase level: "between two absorptions of the same exit, θ changes above the first absorption's level" (9 failures; the
+  same pair). Re-absorption at a LOWER level needs no higher θ-change.
+- The b6_xl_n48 scope run shows the counter shape: after each fallback θ rises at level r (so r drops by 1: 43 → 39), and exit 28 is
+  re-absorbed once per such epoch, at level 33 (transitions 3, 25, 48, 70, 88). Absorptions per exit per scope run: up to 5 in the
+  library. Climb (box33/reabsclimb.py, seed b6_xl_n48, fitness = max absorptions of one exit in one phase): 5 → 5 after ~1.6·10⁴
+  candidates (max absorptions in one phase 9 → 12). No growth found.
+
+## 11. K is linear per phase: the K-chain family (DATA, verified; L-NEW succ. 13, written 03:08Z by date -u)
+- FINDING: wakes per phase are not O(1). experiments/new/box33/kchain.py K builds a 𝒞^1O game of n = 11K + 14 vertices on which N5,
+  from the canonical start, has ONE phase with K − 1 wakes at consecutive transitions 1, …, K − 1, with rising wake levels.
+- Construction (U3, the length-only band of Lemma KW-LEN, BFS mode): a top vertex T (even) on o's W-cycle o → t_1 → … → t_6 → T → o, and
+  every route passes T, so W compares lengths only. Odd's honest reply at o is x (cycle o → x → o, c_θ = x); x has a dormant edge to r,
+  whose short route (Ξ-worse) keeps Odd's τ(o) honest-optimal (no S4b switch). Gadget i: y_i chooses between A_i (short, Ξ-poor) and
+  Z_i → h_i → p_i (long, with the even vertex h_i of rank ℓ_i); p_i has a shortcut to y_{i−1}. When y_{i−1} wakes (Ξ rises at level
+  ℓ_{i−1}), the shortcut (p_i, y_{i−1}) becomes an honest gate; the next S4a step takes it (shorter), which makes Z_i shorter than A_i,
+  and y_i switches to Z_i at level ℓ_i > ℓ_{i−1} = L_{previous}: a wake. Lengths: a_i = D_{i−1} + 3, q_i = D_{i−1}, D_i = D_{i−1} + 4.
+- Mechanism in words: a distance improvement propagates one layer per S4a step through honest gates, and each layer releases one
+  dormant high edge. The honest frame sees each h_i all along; W (lengths to T) sees it only when the route catches up.
+- Verified (instances in experiments/new/box33/instances/, out/ is gitignored):
+| instance | sha1 | n | N5 iterations / fallbacks | wakes in one phase | Oink | one Odd choice vertex |
+| --- | --- | --- | --- | --- | --- | --- |
+| kchain4.pg | 2be32f30… | 58 | 6 / 1 | 3 | zlk OK, strategies verified | yes (o = 18) |
+| kchain10.pg | 4af3726f… | 124 | 12 / 1 | 9 | zlk OK, strategies verified | yes (o = 42) |
+| kchain32.pg | 63c5b0dd… | 366 | 34 / 1 | 31 | zlk OK, strategies verified | yes (o = 130) |
+  - n5.py run equals the box21 trace and the box32 rows (asserted state by state). check_sol2.py with Oink built at 8fbf0a7.
+  - lcheck.py (through box33/biglev.py, see below) on kchain10 / kchain32: 0 failures of Lemma U, HI, UL, GR, Theorem LP; in the phase
+    T = 32, f = 0, X = 0, ρ = 31, all 31 rises caused by wakes (kchain32). So Corollary OX (iii)'s K term is the whole of ρ here.
+  - Every wake is BFS mode, U3 / U23 by the box32 classifier, length-only band, with W changing at z (Lemma WK's odd-mode statement is
+    not exercised).
+- What it does NOT show: N5 is fast on this family (iterations = K + 2). K = Θ(n) per phase is still polynomial; the open question for
+  G-N5-TIME is whether K, X and the fallbacks can multiply, not whether one of them is linear.
+- TOOL BUG FOUND (inherited, not mine to fix in place): experiments/si/coarse/mono.py lev() returns 99 for ∞, so on games with n ≥ 100
+  a rank ≥ 99 reads as ∞ (lcheck.py reported 42 false "L = ∞" failures on kchain10 / kchain32). All library data (n ≤ 64) is unaffected.
+  box33/biglev.py runs any box32 / box33 tool with ∞ = 10⁶; the numbers above for n ≥ 100 use it. The si/coarse owner (L-SI) may want
+  the same fix in mono.py.
