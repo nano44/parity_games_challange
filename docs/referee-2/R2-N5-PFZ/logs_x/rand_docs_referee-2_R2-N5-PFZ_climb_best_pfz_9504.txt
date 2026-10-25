@@ -1,0 +1,15 @@
+FACT_A_states: 9
+FBR_fallbacks: 2
+PFZ_a_checks: 4
+PFZ_b_runs: 6
+RECORD_post_freeze_runs_U=2: 2
+TLEN_epochs: 6
+TLEN_theta_changes: 0
+post_freeze_transitions: 0
+runs: 3
+states: 9
+theta_runs: 6
+max_TLEN_theta_changes_in_epoch: 0
+max_fallbacks_in_theta_run: 1
+max_post_freeze_U_rises: 0
+RESULT OK violations=0

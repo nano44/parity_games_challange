@@ -1,0 +1,3 @@
+TOTAL {'AT_j+1: S4a_with_r>L_at_j+1': 10, 'AT_j+1: out_of_scope': 8, 'AT_j+1: r<=L_at_j+1': 4, 'AT_j+1: stop': 8, 'GA_states': 10, 'checks': 40, 'files': 12, 'r_{j+1}<=L': 12, 'r_{j+1}>L': 10, 'rise_level<r_j': 10, 'rise_level==r_j': 20, 'rises': 30, 'stretch_len_after_rise': 40, 'traces': 120}
+FAIL (first 5): []
+RESULT OK (OLD-THREAT); GATE-ABOVE OK

@@ -1,4 +1,23 @@
-# CHECKER notebook (successor 6 from 2026-10-25 13:26Z; earlier: successor 5, Opus 5.5, D15 / L37; started 2026-10-25 08:55Z by date -u; successor 4's notes below are kept as history)
+# CHECKER notebook (successor 7 from 2026-10-25 16:09Z (date -u), Opus 5.5, D15; successors 4-6 kept below as history)
+
+## Resume point (successor 7)
+- 16:10Z handover answers 78604b3e (docs/agents/handover-checks/CHECKER.md); Lead 5/5 + GO 16:32Z; Oink 8fbf0a7 built after GO (exit 0).
+- C50 = R41 = P-N5-LV (Lead renumbered 17:00Z: LV is R41, NEB becomes R42). 17:07Z docs/checker/C50.md FAIL at b86edc5 (draft 23dc8498):
+  E-1 (d) STRETCH_{−1} drops "[s, e] consecutive states of a scope run S". N-1 "no item uses (P)" source; N-3 vertex 40 → 9 not re-derived.
+  Re-runs EXACT: nleq_cex_n48 10/1 + nleq.py nl2_fail 1 (s 6, L = r = 47); best_lv_9401 5/1; REFEREE lv_probe files.txt IDENTICAL,
+  witness 7 β; REFEREE-2 lv_check 9 library logs + rnd_own_3 IDENTICAL. Worktree wt50 = b86edc5 (scratchpad).
+  Next: Add. 1 on the Lead's revision (append, never overwrite), then the landed check. Then C51 = R42 (P-N5-NEB).
+- Repair 17:07Z: successor 6 had OVERWRITTEN C47.md, C48.md, C49.md with each addendum (main reports only in history d0900448, 3d6dcbc8,
+  2b540583). Restored as main + Add. 1 + Add. 2 (non-blank content checked equal to the three committed versions). RULE: addenda are
+  APPENDED (cat >> or Edit), never written with Write.
+- C51 = R42 = P-N5-NEB. 17:18Z docs/checker/C51.md FAIL at f463d0d (draft 773c229c): E-1 (a) drops "t+1 ∈ S"; E-2 (c) drops "an Even fallback
+  a → a+1 is taken at a" (R39 (e) has it); E-3 (e) drops a's setting + "t+1 ∈ S"; E-4 LOW defined "length-only" (signed: both values in C_θ);
+  E-5 ≡_o, ≡_B, eviction state, LR_S, RW_S undefined. Lead points (1)-(4) PASS (84 = 75 + 9 / 835; 3,336,298; premises). Re-runs EXACT:
+  band_base 6/1, tauw_A 16/3, tauw_B 10/4, nebc 9/5, bandclimb.score (4, 5, 2); REFEREE neb_probe lib37 / lane set / band_base IDENTICAL;
+  REFEREE-2 neb_check 12 inst + rnd_own_3 IDENTICAL. Worktree wt51 = f463d0d. Next: Add. 1 on each revision (C50, C51), landed checks.
+- Commands: n5 = `python3 n5.py n5 <f> <sol>` + `check_sol2.py <f> <sol>` from experiments/new; REFEREE `python3 -I
+  docs/referee/scratch/lv_probe.py <files>` from the root; REFEREE-2 `lv_check.py inst <f> 3 own|rand|spec` and `random N lo hi seed m`
+  from docs/referee-2/R2-N5-LV/ with ../../../ paths.
 
 ## HANDOVER (successor 5 → successor 6), written 2026-10-25 13:1xZ (date -u), at ~545k context (WATCHDOG)
 - DONE. C41-C44 are all CLOSED, each with main report + addenda in docs/checker/:

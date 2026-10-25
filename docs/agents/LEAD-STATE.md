@@ -1324,3 +1324,33 @@
 - 16:50Z Lead: merged l-new 3e9fe5c and l-red 4194c09.
   - P-N5-RHO docs/new/P-N5-RHO-box40.md, sha1 cd5df65c, is PINNED at this commit. To sign: Y-FORM, HAT-FREEZE, RHO-TAIL, BF-F, FREEZE-F, RHO-HN, HN-POLY. No (P). It uses only the weak BRK-POLY′ (i′), so it does not depend on PFZ-1. Post-freeze data reaches only |U| ≤ 3 (10 checks).
   - L-RED 17 handover check: 5/5 re-measured. GO box 41.
+- 16:56Z Lead: merged l-si 6480a0f.
+  - New: P-N5-LV fixes docs/si/P-N5-LV-fixes-box11.md, sha1 b75ab1fc.
+  - New: L-SI 8 box 13 data. LV-NONE max 1 per scope run in its climbs.
+  - New: OLD-THREAT, lane PROVED.
+  - RISE-DROP is FALSE (tevlast7_n32: r stays > L after the rise, no fallback).
+  - New CONJECTURE GATE-ABOVE: after a rise, M_t > L while r > L.
+  - Drafted R41 = P-N5-LV, sha1 23dc8498, for CHECKER C50. R42 will be P-N5-NEB once its fixes file lands; this renumbers the 16:32Z plan.
+- 17:02Z Lead: merged l-new e535e61 (P-N5-NEB fixes, docs/new/P-N5-NEB-fixes-box38.md, sha1 15434c1c; NEB-N5 explained: the stated command reproduces the referees' totals, and the lane withdraws inv2_all.txt). Drafted R42 = P-N5-NEB for CHECKER C51 (queued after C50 = R41).
+- 17:07Z Lead: hourly sweep 17:03Z. No overage; Lead ~453k after compaction (LEAD-STATE is current). WATCHDOG flagged L-COMP 4 idle for 84 min. Lead reading: expected. Its box8 n 5 Q2 background run started 15:27Z with an ETA of ~3.3 h (~18:45Z), and the session wakes when it completes. Not an exception, so no nudge. If it is still idle after 19:15Z with no box8 Q2 resume file on l-comp, nudge it. All other sessions are active. No exceptions.
+- 17:13Z Lead: merged checker e88836a.
+  - C50 = R41 FAIL. E-1: (d) STRETCH_{−1} dropped "consecutive states of a scope run S". Optional N-1 and N-3. All else PASS; re-runs exact.
+  - CHECKER 7 restored C47-C49 main reports, which successor 6 had overwritten with addenda; history intact.
+  - CHECKER's stamp "17:23Z" was about 10 min ahead.
+  - R41 revised with E-1 and N-1.
+- 17:20Z Lead: merged l-si 6873ab1 (docs/si/N5-RISE-box13.md, sha1 3b8fea13).
+  - CONJECTURE GATE-ABOVE FALSE: 184 / 425 post-rise states with r > L have M_t ≤ L, e.g. rise_thin51_n40 (47aaf46e) k0 = 72, L = 33, t = 76, M = 32.
+  - FEED FALSE: tevlast11_n40, t = 22.
+  - Surviving CONJECTURE INTO (425 / 425). Lane PROVED: INTO ⇒ no fallback after a rise while r > L (via FBL, no (P)). Case (ii) (r ≤ L) OPEN.
+  - CONJECTURE NONE-LAST (DATA 4 / 4).
+  - Lead re-ran rise_thin51_n40 (line below).
+  - INTO and case (ii) go to L-RED 17.
+- 17:24Z Lead: rise_thin51_n40 re-run: one Odd choice vertex; n5 78/7; Oink zlk OK, strategies verified. The GATE-ABOVE state itself is on L-SI's trace from the S3 start, which I did not re-trace.
+- 17:29Z Lead: merges, findings, revisions.
+  - checker b603d85: C51 = R42 FAIL. E-1..E-5 were dropped hypotheses and undefined notation: the LOW-rise class C_θ, z ≠ o, ≡_o / ≡_B, eviction state, LR_S, RW_S. The rest PASS; re-runs exact.
+    - R42 revised with E-1..E-5, N-2, N-3 and N-4; new sha1 25b942af.
+  - referee-2 5f6d540:
+    - R2-N5-LV2 a551deb: all 8 SIGN, no gap. N-LV2-1..3. DATA: max 1 r = −1 fallback per scope run (237,033 cases). The first level −1 block fallbacks with r ≥ 0 appeared (645), with no witness saved.
+    - PFZ-ext §X 78896bf: P-FREEZE′ and θ-LEN SIGN. BRK-POLY′ (i) NOT SIGNED as stated (G-PFX-1, proof gap = REFEREE's PFZ-1); (i′) signed. (ii) and (iii) signed in θ_S form. End bounds: (ρ+1)(2n²−1) stands; (iii) becomes (ρ+1)(2n−2).
+  - l-new 5fb9dca: P-N5-NHN, docs/new/P-N5-NHN-box40.md, sha1 da7d09ec, PINNED at this commit. To sign: T0U, EV2-FB, SG-EV, T0-PIN, NHN-BOUND, H3-IN-HN, HN-POLY-ALL (COND.). T0-PIN is vacuous in data.
+  - l-red 1b00610: box 41 interim. No kill. Post-freeze at |U| ≥ 3 never reached. New CONJECTURE FB-CAP: in-phase Even fallbacks per phase ≤ max(1, |U| − 2); DATA: library, 1.54 M random, n = 3 all starts.
