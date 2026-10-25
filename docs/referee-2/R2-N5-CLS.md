@@ -145,3 +145,50 @@ REFEREE-2 (successor 6), Opus 5.5 (D15), 2026-10-25:
 - SIGN WITH GAPS: Theorem CLS1 and its Corollary (G-CLS-1, a citation gap, closed; note N-CLS-2).
 After two signatures (D18/L40) these become PROVED (L-SI successor 3; REFEREE-2, and REFEREE if it signs). OPEN: (H-EQ), the per-level
 count, θ-changes per scope run, G-N5-TIME.
+
+## §C. Comparison with REFEREE (R-N5-CLS, referee a0b92ec; trunk merged as be255e1d). Written 2026-10-25 02:57Z onward by date -u
+Order: my report (ffe10e1b) was pushed before I opened docs/referee/R-N5-CLS.md (Lead 02:55Z). REFEREE did not read mine.
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | agree? |
+| --- | --- | --- | --- |
+| (C5)-(C7), Fact R, CLU | SIGNED | SIGN | yes |
+| TRANSFER | SIGNED | SIGN | yes |
+| OFFGATE | SIGNED WITH GAP CLS-1 (wording) | SIGN, note N-CLS-1 | yes on substance; I noted the same vacuity in §3 ("M_k = ⊥ cannot occur") without filing it |
+| CN | SIGNED WITH GAP CLS-2 (wording: Even y) | SIGN | yes; accept CLS-2 |
+| NL | SIGNED | SIGN | yes |
+| CLS1 | SIGNED WITH GAP CLS-3 (citation, closed) | SIGN WITH GAPS G-CLS-1 (citation, closed) | yes: the same gap |
+| Corollary | SIGNED WITH GAP CLS-4 (wording: "evicting" undefined) | SIGN (with CLS1) | yes; accept CLS-4, which I missed |
+| §7 OG′ | FALSE, CONFIRMED | reproduced (not signed, as briefed) | yes; same numbers (MF_1 −1, M_1 23, gate (4, 8) level 22, R 21 → 1) |
+No disagreement of substance. Neither report has a counterexample.
+### C.2 Item by item
+- CLS-1 (M_k = ⊥ clause vacuous in a phase; the packet's reason is not the right one): accept.
+  - My §3 says the same: no gate and τ fixed would change nothing, so the transition is not in a phase.
+- CLS-2 (CN's y must be Even): accept. My checker tests Even y only.
+- CLS-3 = G-CLS-1, the same citation gap, both closed. The two closures differ only in what they cite:
+  - REFEREE: FBL's proof (R-N5-XA §3) is statewise given that the fallback is Even's.
+  - Mine: the strong gate form for u* ≠ none (R2-N5-XA §2, G-XA-1 repair) at the state alone.
+  - Both are part of R20 (b)'s signed u* ≠ none form. Its F → R exclusion is the D = ∅ argument (P(w) = ∅ ⇒ u* = none), which needs only
+    state k1. The packet's own FBL text excludes F → R by (h) at k+1, which a length-1 stretch does not give (R2-N5-XA G-XA-1 (b)).
+  - The fixes-file line should cite the u* ≠ none strong form at the single state (row 3).
+- CLS-4 ("evicting fallbacks" undefined in the Corollary): accept. Every in-scope fallback with u* ≠ none is THR, so the clause holds under
+  any definition.
+- N-CLS-1 (mine only): OFF's R̄ is honest reachability, the packet's is the (σ, τ) one. They are equal because both plays agree up to o.
+  REFEREE uses OFF without remark. One clause in the text (row 5).
+- N-CLS-2 = REFEREE §1 "state kinds under (h) are exhaustive" (θ = w ⟺ EQ). Same argument, neither files it as a gap. No row needed.
+- Data: consistent. REFEREE ran the canonical start with the fine key. I ran 3 starts with the coarse key, plus a fine-key batch.
+  - Library in-scope fallbacks: 534 (REFEREE) vs my 913 over 3 starts; both have 0 u* = none.
+  - Both have 0 failures. Both say random games are vacuous for CLS1, with the named / library instances carrying the evidence.
+  - My climbs add 20,544 case-r > L comparisons; REFEREE has none of that kind.
+### C.3 Joint gap map (one fixes-file line per row)
+| row | REFEREE | REFEREE-2 | fixes-file line |
+| --- | --- | --- | --- |
+| 1 | CLS-1 | (§3 remark) | §3 OFFGATE proof: replace "If M_k = ⊥, σ and Ξ are unchanged" by "M_k ≥ −1 at every in-phase transition (no gate ⇒ σ unchanged ⇒ τ changes, which leaves the phase)" |
+| 2 | CLS-2 | — (accepted) | §4 CN statement: "If λ_{k+1} = λ_k and an Even y with λ_k(y) = y switches to z …" |
+| 3 | CLS-3 | G-CLS-1 | §6 CLS1: "FBL (R20 (b)) in its u* ≠ none strong form, applied at the single state k1: no F → R and no R → R gate edge; the proof uses only state k1 (fallback Even's, S4a returned σ_{k1}, Lemma G (c), P(w) = ∅ ⇒ u* = none; R-N5-XA §3, R2-N5-XA §2)" |
+| 4 | CLS-4 | — (accepted) | §6 Corollary: drop "evicting", or define it; every in-scope fallback with u* ≠ none is THR |
+| 5 | — | N-CLS-1 | §3 OFFGATE: "OFF's R̄ (honest reachability) is the packet's R̄, since honest and (σ, τ)-plays agree up to o (§0)" |
+### C.4 Labels after two signatures (D18/L40)
+PROVED (L-SI successor 3; REFEREE and REFEREE-2, Opus 5.5, D15), pending CHECKER:
+- on every game: (C5)-(C7), TRANSFER, and CN (inside a phase);
+- on 𝒞^1O: Fact R, CLU, OFFGATE, NL, Theorem CLS1 and its Corollary (rows 1-5 as wording / citation).
+FALSE: OG′ (x31_re24). OPEN: (H-EQ), the per-level count, θ-changes per scope run, G-N5-TIME. Not a TARGET.md claim; not a step-4 pass.
