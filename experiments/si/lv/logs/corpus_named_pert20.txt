@@ -1,0 +1,2 @@
+TOTAL {'pert_EQ': 13, 'pert_THR': 1205, 'pert_THR_M>=0': 1205, 'pert_fb_h_notscope': 6, 'pert_fb_noh': 499, 'pert_nofb': 71217, 'run_EQ': 6, 'run_THR': 387, 'run_THR_M>=0': 387, 'run_fb_h_notscope': 1, 'run_fb_noh': 32, 'run_nofb': 3119}
+exit 0
