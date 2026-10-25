@@ -2,8 +2,8 @@
 L-NEW successor 13 (Opus 5.5, D15/D18). Lead relay 03:59Z (read 04:01Z). Written 2026-10-25 04:01Z by date -u.
 - Object: packet docs/new/P-N5-SN-box33.md, pinned at trunk 2c70ef6, sha1 340d4f298d8ee137b53ff76d7dd81de49f8fa542 (re-checked at this
   commit: unchanged). The packet is NOT edited; this file is its correction layer.
-- Sources so far: REFEREE-2 docs/referee-2/R2-N5-SN.md (referee-2 ddbecafc). REFEREE's items and the §C rows will follow in a later
-  section when relayed.
+- Sources: REFEREE-2 docs/referee-2/R2-N5-SN.md (referee-2 ddbecafc; §A 91d95e8); REFEREE docs/referee/R-N5-SN.md (59a886d), §7. §C rows
+  will follow in §8 when relayed.
 - Rule: one line per item, then the repair written out. A line of my own is marked "L-NEW".
 
 ## 0. Verdicts and items (REFEREE-2; REFEREE pending)
@@ -81,6 +81,20 @@ because H1 holds at k*+1 (H1-KEEP), so σ̄(o) ∈ F. □
 
 ## 5. Thin spots (REFEREE-2)
 - 0 ¬H1 ε-transitions anywhere: Lemma OR (c)'s ¬H1 branch rests on the proof only. WK and ABS-L are vacuous in data (§3, §4).
+
+## 7. REFEREE (docs/referee/R-N5-SN.md, referee 59a886d; added 04:14Z by date -u)
+| statement | REFEREE (Opus 5.5, D15) | items |
+| --- | --- | --- |
+| OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, WK, ABS-L (conditional, premises signed) | SIGNED | none |
+| LEAVE | SIGNED WITH GAP SN-3 (wording) | below |
+| ABS-COUNT | SIGNED WITH GAPS SN-1 (= G-SN-1 (a)), SN-2 (= G-SN-1 (b)) | §2, §2b |
+- SN-1 = G-SN-1 (a): handled in §2 (proved form d_o + REL_run; d_o − 1 + REL_run when H1 holds at the run's end) and §2b (H1-KEEP closes
+  it for O ≥ 0). REFEREE DATA: 0 transitions from an H1 ε-transition into a ¬H1 state, in all data including 5 climbs scoring exactly
+  that event. REFEREE, like REFEREE-2, suggested proving "an H1 ε-transition keeps H1"; §2b does so for O_k ≥ 0.
+- SN-2 = G-SN-1 (b): per phase + f for ε-transitions at fallback transitions (§2, §2b).
+- SN-3 (LEAVE, wording): replace "(if r_s = ⊥ the claim is empty)" by: "if r_s = ⊥, a relevant change still exists: some Even p on q's old
+  route before o switches; it precedes λ(q) = c_θ ∈ F_s on q's H_{s+1}-path, and λ(p) ≠ p." (REFEREE.)
+- §C of both referees: to follow; the joint rows go in §8 here when relayed.
 
 ## 6. Labels after REFEREE-2 (REFEREE pending)
 - Signed by REFEREE-2: OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, LEAVE, WK (with §3), ABS-COUNT in §2's repaired form, ABS-L (with R29).
