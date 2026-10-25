@@ -249,11 +249,13 @@ Phase key = the checkers' (lambda_Xi, tau). Validated on epsseg_cex_n48 (= sn_ch
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | n 4 canonical | 4,828,736 | 0 | 1 | 0 | 2 | 1 | 0 | 2 | 1 | 3 |
 | n 4 all starts (even max-deg 2, no forced) | 7,340,032 | 0 | 1 | 0 | 3 | 1 | 1 | 3 | 2 | 3 |
+| n 5 subset quarter 1 (box 7 class, index = 0 mod 4) | 17,193,152 | 0 | 1 | 0 | 2 | 1 | 0 | 3 | 2 | 2 |
 BOX8ROW
 
 | box8 (REFEREE probes, canonical start only) | runs | FAIL counters | max J | max K | max X | max eps | max rho | max T |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | n 4 canonical | 4,828,736 | 0 | 1 | 0 | 2 | 1 | 0 | 2 |
+| n 5 subset quarter 1 | 17,193,152 | 0 (OGP_viol 1,476 = the refuted OG', counted by cls_probe, not a failure) | 1 | 0 | 2 | 1 | 0 | 3 |
 BOX8PROW
 
 Teeth (n 4 canonical, REFEREE-2 counters): U-loc 780,352 checks; OE 139,566 off-crossing transitions (16 crossings with O > E); OX 188,320
@@ -266,3 +268,8 @@ S2 39,484 / S3 36,680 / S4 2,804; OX 939,808 phases (1,536 non-tame, all crossin
 18,560; NL 25,732 (j, L) checks on 9,780 transitions; R-STICK 3,288; LEAVE (H1) 47,698 (72 tight); crossings after an SN prefix 900
 (max 1 per run); H1-DROP 152,650; OR / ABS-COUNT' 1,536 (828 tight). Still VACUOUS: CLS1 / FBL / CLU (all 79,112 scope fallbacks have
 theta = w), WK (K = 0: no wake), ABS-L.
+Teeth (n 5 quarter 1): U-loc 6,728,090; OE 844,468 off-crossing; OX 1,299,248 phases (520 non-tame, all crossings); CN 552,198;
+TRANSFER 26,370; OFFGATE 12,132; NL 1,948 (j, L) checks; R-STICK 178; LEAVE (H1) 202,370; crossings after an SN prefix 312 (max 1 per run);
+H1-DROP 39,852; OR / ABS-COUNT' 520 (all tight). Still VACUOUS: CLS1 / FBL / CLU (60,430 scope fallbacks, all theta = w), WK (K = 0), ABS-L.
+Examples: X_SN 2 at prio [0,2,4,5,7] owner [1,0,0,0,0] succ [[2,4],[1],[0,3],[1,2],[1]] (canonical start); REL 2 at prio [0,2,4,6,8]
+owner [1,0,0,0,0] succ [[2,4],[0],[4],[0],[2,3]] (canonical start).
