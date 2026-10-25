@@ -1456,3 +1456,4 @@
     - Contents: Lemmas SW, ST, CL, STR-COUNT, NR; Theorem NH: O ≤ 11n⁷(1+X+f^O) + 8n³(K_W+E), T ≤ 156n¹¹(1+X+f^O) + 104n⁷(K_W+E) per phase; (NH′) ⇐ (X) ∧ NFB-O ∧ (E) ∧ (K_W).
     - The old CONJECTURE NFB-O (no fallbacks at OTHER states) is FALSE in data (f^O > 0). Only its counting form is used.
     - Queued for both referees.
+- 20:15Z: Merged referee-2 2fef7c4a (R2-N5-FBPOLY: all SIGN, N-FBP-1/2, loop_4102 016473b4) and 04b5c1fd (R2-N5-NHN: all SIGN, HN-POLY-ALL conditional; N-NHN-1 = RHO-N2, N-NHN-2), plus checker 21f7d9b9 (C54 Add. 1 PASS, R45). Routed: REFEREE 10 to FBPOLY and NHN §Cs; L-NEW 21 to the notes and witness (fixes files after the §Cs); L-RED 18 to the witness as a climb seed; REFEREE-2 11 to the PFZ fixes §1 diff addendum (C53 E-1) before NEEDB. GAPS line 11: correction UPDATE for the 19:40Z "PFZ-1 repaired" wording.
