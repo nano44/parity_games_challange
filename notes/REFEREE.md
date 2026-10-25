@@ -1,6 +1,67 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 7), written 2026-10-25T09:07Z by date -u (stamp corrected from 09:05Z) (Opus 5.5, D15; session_01TWT1diK1Z9x2eK56iBVbZu)
+- Handover check 3e86cb10 (Lead 5/5, 08:20Z).
+- P-N5-L2 (pin 04b3f48, sha1 cbea0739…): docs/referee/R-N5-L2.md (7626354e; climb addendum 524d93f5).
+  - H3-CONST, G′, R-CONST SIGNED. FREEZE′ and X-RUN′ SIGNED on premise P-N5-FRZ.
+  - H2-STICK WITH L2-1 (τ(o) = o wording; 400 of 520 library cases). H1-INT WITH L2-2 (pre-drop clause only in-phase; exitdrop_n3.pg).
+  - FINDING: §8 DROP-LEN and its per-run form FALSE (droplen_cex_n12.pg: two drops in one fallback-free run, θ constant).
+  - Thin: FREEZE′'s new case is unexercised (climbs reach n−2 / n−1, never n).
+  - Tools: scratch/l2_probe.py, l2_pc.py (P^c_ℓ by path enumeration, NEG=1 control), l2_exitdrop.py, l2_climb.py (frz|tog|h2s),
+    l2_oink.py.
+- P-N5-FRZ §C (1f13a6f9, C.6 9ad6bfba) vs R2-N5-FRZ 20a73ca/f546b43c:
+  - No verdict differs. N-FRZ-1 (ARENA two routes, one base) MISSED by my lane, accepted. N-FRZ-4 accepted.
+  - BLOCK vacuous in all data (0 leaves in 30 runs; 0 at 2,410 (h) S4a transitions after freezes). Post-F(⊥) and segment −1 unexercised.
+  - Joint label PROVED, pending CHECKER.
+- P-N5-NJB (pin a7d85b3, sha1 f43a8823…): docs/referee/R-N5-NJB.md (524d93f5).
+  - RDROP, PL (c′), PL-S′, NO-RF-OLD + Cor., ENT-SHAPE (1)-(4) SIGNED. MINSET WITH NJB-1 ("absorbed" = "entered R").
+  - ENT-SHAPE (5) NOT SIGNED as stated: NJB-2, the level-L rise of z may sit at the fallback k0 (z ∈ R_{k0} evicted). Seen
+    locally 1,159× in the library, hand-checked on cycelim_cex_n32 fb 15. (5′) signed.
+  - Tool: scratch/njb_probe.py. D_M = 0 everywhere (thin).
+- NEXT: §C for L2 and NJB when the R2 reports exist; L-NEW / L-SI fixes files.
+- Lessons:
+  - A lemma that says "at some S4a step in (k0, k)" must exclude the boundary fallback transition. Check where the vertex is AT k0 (NJB-2).
+  - "in a phase" clauses about a state k and k+1: test phase-exit transitions (L2-2).
+  - Packet words defined in §0 (absorption) used loosely later (NJB-1).
+
+## Handover check (successor 7), written 2026-10-25T08:12Z by date -u (Opus 5.5 under D15; session_01TWT1diK1Z9x2eK56iBVbZu)
+1. Branch, head, distance to trunk. Commands: `git fetch origin claude/referee claude/vibrant-johnson-nxvvxo`; `git status -sb`;
+   `git merge --ff-only origin/claude/referee`; `git merge --no-edit origin/claude/vibrant-johnson-nxvvxo`; `git rev-parse --short=8 <ref>`;
+   `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`.
+   - Local claude/referee started STALE at 73b46eb8, 1002 behind origin/claude/referee. Fast-forwarded to 451b2922 (predecessor's handover).
+   - Merged trunk 5071ce71 with a merge commit: head 6b665e27 before this commit; 2 ahead / 0 behind trunk (the handover commit + the merge).
+     After this commit: 3 ahead / 0 behind.
+2. Open work and next step (from the successor-6 HANDOVER section above and the Lead's 08:07Z brief; `grep -n "^## " notes/REFEREE.md`):
+   - P-N5-FRZ §C (task 2): waits for REFEREE-2 successor 7's R2-N5-FRZ. `git fetch origin claude/referee-2`: head de9ff970 (handover merge,
+     pin check 25fda0f); no R2-N5-FRZ file name under docs/referee-2/ (names listed only; contents not read). Next: the Lead's word, then §C in
+     docs/referee/R-N5-FRZ.md (every differing verdict + joint gap map).
+   - P-N5-L2 (task 1, after GO): object docs/new/P-N5-L2-box34.md at pin 04b3f48. `git show 04b3f48:docs/new/P-N5-L2-box34.md | sha1sum` =
+     cbea07392521bcdfbce137ba361bb581f9df11d7 (matches the brief; same on trunk 5071ce71). Statements §1-§7 (H3-CONST, H2-STICK, G′, FREEZE′,
+     R-CONST, H1-INT, X-RUN′); §8 not to sign. Next: own probe on scratch/frz_probe.py + sn_probe.py (one-Odd-chooser assertion), packet
+     instances oneh_cex_n32 / onedrop_cex_n32, library, random, climbs; report docs/referee/R-N5-L2.md.
+   - P-N5-NJB (task 3): docs/si/P-N5-NJB-box9.md, pin a7d85b3, sha1 f43a8823… (not yet verified by me). Next: after L2.
+   - Oink: built by scripts/setup_oink.sh at 8fbf0a7 into tools/oink/build (exit 0).
+3. GAPS rows relevant to me (`git show origin/claude/vibrant-johnson-nxvvxo:docs/GAPS.md | grep G-N5-TIME`):
+   - G-N5-TIME | major | owner L-NEW (L-LIT T22; referees later) | **open** | N5 SSI-GLOBAL makes polynomially many iterations (gauntlet
+     step 4, running time). The referees' part: each lane packet toward it (R15-R30 landed; P-N5-FRZ signed by me, R2 pending; P-N5-L2,
+     P-N5-NJB queued). P-N5-L2 itself says "G-N5-TIME stays OPEN". Related, closed: G-N5-TERM (closed by R15).
+4. Owner rulings, verbatim (`git show origin/claude/vibrant-johnson-nxvvxo:docs/DECISIONS.md`), with DECISIONS-INDEX status
+   (`grep -E "^\| *D(1|15|18) " docs/DECISIONS-INDEX.md`):
+   - D1 (index: **active**, 2026-10-14): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+     including the fleet's own, as wrong until it passes the gauntlet below." and "Never downgrade the referee to save money."
+   - D15 (index: **active**, 2026-10-22): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+     (Lead reading L37 (1): referees on Opus 5.5; signatures labelled "(Opus 5.5, D15)").
+   - D18 (index: **active**, 2026-10-24): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas
+     from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+     them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+5. Trap found: clocks disagree across sessions. The Lead's brief is stamped 08:07Z, but my first `date -u` after receiving it read
+   08:04:24Z, and the predecessor's handover (stamped 08:04Z) reached origin only after that. A peer's stamp is not my clock: every
+   time in my files comes from `date -u` at writing, and ordering questions are settled by commit order (git log), not by stamps.
+   Also confirmed again: the container starts on a stale local branch (73b46eb8, 1002 behind); check HEAD == origin/claude/referee first.
+   Also: the playbook puts handover checks in docs/agents/handover-checks/ (a Lead-only path where successors 5-6 wrote); the Lead's
+   brief puts this one here in notes/REFEREE.md, and I followed the brief.
+
 ## HANDOVER (successor 6 -> successor 7), written 2026-10-25T08:04Z by date -u, context ~570k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):").
 Branch claude/referee. Start: git fetch origin claude/referee claude/vibrant-johnson-nxvvxo; check HEAD == origin/claude/referee (stale
