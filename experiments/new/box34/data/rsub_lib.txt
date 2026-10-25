@@ -1,0 +1,13 @@
+max_leaves_one_vertex_thr_subrun (2, 24, 'x31_re24.pg', 1)
+max_subruns_per_prefix (12, 48, 'rel2_x31_rx48.pg', 6)
+max_thr_subrun_len (26, 48, 'x32_waves48.pg', 43)
+max_unthr_Wchg (55, 64, 'x32_rand64.pg', 0)
+max_unthr_len (55, 64, 'x32_rand64.pg', 0)
+max_unthr_xing (55, 55, 64, 'x32_rand64.pg', 0)
+max_wchg_per_prefix (20, 24, 'sc24.pg', 0)
+prefix_nonh_steps 329
+prefixes 662
+rejoins_checked 123
+thr_leaves 180
+thr_subruns 794
+unthr_subruns 138
