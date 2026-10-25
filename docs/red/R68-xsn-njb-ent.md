@@ -85,9 +85,36 @@ NO KILL. 0 failures of NJB, FLAT-ALL (iii), NO-RF-OLD, ENT and J-SEG, and of eve
 - CONJECTURE (L-RED, data): (RISE-LAST) inside a scope run, no COARSE_L(θ) rise (L = the level of an in-scope fallback k0) happens
   before the next in-scope fallback after k0. RISE-LAST makes NJB's dirty intervals and ENT's setting empty, so it implies both.
 
+## 6b. MINSET target (P-N5-NJB, trunk a7d85b3, sha1 f43a8823; DATA)
+- Mn_t := {exits x ∈ F_t : COARSE_M(o ⊕ Ξ_t x) = COARSE_M(θ_t)} at the states f_1+1 … f_N of each level-M block (as minset.py).
+  Member absorptions and sole-minimiser absorptions (|Mn_t| = 1, member in R_{t+1}) are counted at the non-fallback steps.
+- Seeds: my counts agree with L-SI's minset.py.
+  - cl9_mn_a: 13 intervals, min |Mn| 3, 56 member absorptions.
+  - cl9_mn_b: 33 intervals, min |Mn| 1, 0 absorptions.
+  - The Lead's 07:59Z note had the two swapped.
+- mn climbs: 4 runs, about 0.3 M evaluations after the fitness fix.
+  - The first pair collapsed to |Mn| = 1 with no absorptions (trap 2). Reordered to sole absorptions, then member absorptions, then
+    min |Mn|.
+  - Best: mn_abs74_n48.pg (sha1 d9744ae770aa5c9111834a0df8765118fc302a87; n 48, 22 iterations / 4 fallbacks): 74 member absorptions,
+    min |Mn| 3.
+  - **0 sole-minimiser absorptions**, NJB 0 failures.
+- REFEREE's NJB-2 adds a second route to step (iii) (z evicted at k0). It does not change the obstruction seen here: steps
+  (ii) → (v) never start (§6).
+
+## 6c. TOGGLE (L-NEW succ. 15, docs/new/N5-DROP-box35.md at l-new e0f3780; DATA)
+- sox4.py: Lemma L-MONO (direction by the parity of Ω(c), strict at next(c) changes), Lemma Z-COUNT (one ∅-interval per v ∈ U,
+  monotone length), Theorem TOGGLE, Corollary TOGGLE-COUNT. Written from the text, not from togz.py.
+- Seeds onerun_cex_n32 (70832fcb) and onedrop_cex_n32 (5793d5a3): 3 toggles each, 0 failures.
+- 2 climbs (soclimb4.py, 1.86 M evaluations): 0 failures. Max 6 H1-toggles in one phase at n 32, against the bound
+  n² + 2n − 1 = 1,087 (library max 3).
+  - tog6a_n32.pg (sha1 fd0e2c7eee6210bd1a6279a61b3aa0f81fd60d17; 10 iterations / 1 fallback).
+  - tog6b_n32.pg (sha1 705695a6cef3e0e4a6f168527c28362ce4db4000; 8 / 1).
+  - In each: 3 toggles change Z only, 2 change σ(c) only, 1 changes both.
+
 ## 7. Labels
 - DATA, 0 failures:
-  - NJB, ENT (L-SI CONJECTURES);
+  - NJB, ENT (L-SI CONJECTURES), MINSET's sole-absorption target;
+  - L-MONO, Z-COUNT, TOGGLE, TOGGLE-COUNT (L-NEW succ. 15, PROVED in lane);
   - NO-RF-OLD, FLAT-ALL (iii) (L-SI, PROVED in lane);
   - J-SEG (L-RED CONJECTURE);
   - R30's lemmas.
