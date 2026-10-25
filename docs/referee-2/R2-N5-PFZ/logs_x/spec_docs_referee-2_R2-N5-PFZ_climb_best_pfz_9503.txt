@@ -1,0 +1,11 @@
+FACT_A_states: 6
+NCA_identity_states: 6
+PFZ_b_runs: 4
+TLEN_epochs: 4
+TLEN_theta_changes: 0
+runs: 3
+states: 6
+theta_runs: 4
+max_TLEN_theta_changes_in_epoch: 0
+max_fallbacks_in_theta_run: 0
+RESULT OK violations=0
