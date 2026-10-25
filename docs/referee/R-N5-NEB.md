@@ -223,3 +223,25 @@ Referee: REFEREE (successor 9, session_01VsZYJ8FiTSj5Kazk715ZP7), Opus 5.5 (owne
 - NEB-N5: §9 base totals are not reproduced by the stated command (75 / 9 / 4 / 20 / 8 on lib37 + instances/*.pg); name the input.
 - NEB-B1: BAND FALSE in the rises form (lane), in the gates form at a later state (state 13 of tauw_A_cex_n24, level 23 > 21), and in
   the gates form at the base state (band_base_cex.pg, level 19 = rank(c_w)); see §8 and §9.1 for the "≤" variant.
+
+## §C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-NEB.md at referee-2 a4516df9; sha1 33fefec4…, the same on trunk e05382f4)
+Written 2026-10-25T16:17Z by date -u, after the Lead's word of 15:59Z (Lead's stamp) that a4516df9 is final. I opened R2-N5-NEB only
+after my report 40adbf1c was pushed. (Opus 5.5, D15).
+- Verdicts: identical. Every statement of §1-§7 is signed by both referees, and §8 is signed by neither. No gap on either side.
+- Joint gap map: EMPTY.
+
+| item | REFEREE-2 | REFEREE (mine) | outcome |
+| --- | --- | --- | --- |
+| §3 BASE / §4 cite (K) "inside a phase" while a + 1 may leave S | N-NEB-1 (FBL-N (i) + F1) | NEB-R1 (FBL-N (i), single-switch form) | same point; both no gap |
+| LOW-RISE′ (b) does not use (i) at t+1, so it holds at the first failure of (i) too | N-NEB-2 (optional) | not noted | MISSED by me; ACCEPTED: (b) needs only the value claim and (ii_B) at t, and the no-entry at t → t+1 uses (i) at t only |
+| stale statuses in the dependency table | N-NEB-3 (P-N5-OUT rows) | NEB-N4 (KEY / FB-INT rows) | complementary; both rows go to the fixes file |
+| "SPLIT (b)" for "an S4a step does not evict" | — | NEB-N1 | R2 cites "the eviction is a fallback (SPLIT)" without the letter; stands as a citation note |
+| §6 must say that a itself has no F → R̄ gate | — (R2 §6 states it: "since a has none") | NEB-N2 | same substance; stands as a one-line note |
+| LR_S wording "values in C_θ belong to z ∉ {o, c_θ}" | — (R2 §6: "o (value θ) and c_θ … never rise") | NEB-N3 | same substance; wording note |
+| §9 base totals not reproduced by the stated command | — | NEB-N5 | stands (data note) |
+| BAND (§8, not to sign) | §8 FALSE records reproduce | NEB-B1: FALSE also in the gates form, later (tauw_A state 13) and at the base (band_base_cex.pg, Lead re-ran 15:59Z) | not a signed item; for the fixes file and §8's record |
+
+- Data agree in kind: 0 failures on both sides. R2's library (295 files × 3 traces × 3 starts) is larger than mine (canonical start), so
+  the base counts differ (e.g. case A, c_w = o, τ(o) = o: R2 124 / 141 / 126 against my 75). Both climbs reach every hypothesis except
+  case-A breaks with c_w = o: R2 found 3 in its climbs, I found 0 in mine and 8 in the library.
+- For the fixes file (union): NEB-R1 = N-NEB-1, N-NEB-2, N-NEB-3 + NEB-N4, NEB-N1, NEB-N2, NEB-N3, NEB-N5, NEB-B1.

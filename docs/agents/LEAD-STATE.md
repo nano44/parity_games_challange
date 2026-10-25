@@ -1300,3 +1300,41 @@
   - OWNER-DESK relayed the owner's words "Give me a status update" (answered by OWNER-DESK). On its request I refreshed the NOW header and the M4 row (stale since 2026-10-24).
   - REFEREE 9 now writes the NEB, LV and PFZ §Cs against R2 a4516df / b1038be / 37e55fd. The PFZ-ext and LV2 §Cs wait for REFEREE-2 10.
 - 16:29Z Lead: merged referee-2 5ca9ac3 (it includes a769ff5, REFEREE-2's NEB and LV §Cs: identical verdicts, empty gap maps; REFEREE's NEB-N1..N5 and LV-N3 accepted, plus 937535e) and checker 78604b3. Handover checks: REFEREE-2 10 and CHECKER 7 both 5/5 re-measured, both GO. REFEREE 9's NEB and LV §Cs are still pending; after them, the NEB fixes go to L-NEW 19 and the LV fixes to L-SI 8.
+- 16:34Z Lead: merges.
+  - referee 46a8030: REFEREE 9's NEB §C and LV §C. Verdicts identical, joint gap maps EMPTY. N-NEB-2 and N-LV-1 accepted (missed by REFEREE); N-LV-3 accepted and re-run (351,417 u* = none fallbacks in its climb, LV-SHAPE 0 failures).
+  - The R-N5-LV2 addendum says the none part is non-empty. LV-NONE with ≥ 2 r = −1 fallbacks per scope run never occurred (max 1).
+  - P-N5-NEB and P-N5-LV have CONVERGED.
+  - l-new 04fe897: box 40 interim, docs/new/N5-NHN-box40.md; lane PROVED, unrefereed. It gives T0U, EV2-FB, SG-EV, T0-PIN, NHN-BOUND (N_HN = O(n²) for every τ(o)), and HN-POLY-ALL (fallbacks at HN states per phase O(n⁸), conditional on PFZ, ext and RHO). H1∧H2∧¬H3 fallbacks only in phases without HN states: OPEN. P-N5-NHN approved, after RHO.
+  - Routing: NEB fixes → L-NEW 19; LV fixes → L-SI 8.
+- 16:39Z Lead: merges, re-runs and new sessions.
+  - Merged referee 4859e63: PFZ main §C (identical, gap map empty; ext and PFZ-1 pending REFEREE-2 10). REFEREE 9 PARKED at ~490k.
+  - Merged l-red 9589ffa: R70, box 40 DONE. L-RED 16 PARKED.
+    - NL= FALSE, plus nleq33_n48.
+    - Exhaustive n ≤ 5: all targets vacuous.
+    - beta2_n11: two (β) / r = −1 fallbacks in one scope run.
+    - LV-NONE best 2 vs bound 67; SCOPE-FB best 8 vs 627.
+    - "No fallback after a rise" survives: farrise25_n32, 25 rises.
+  - Lead re-runs (one Odd choice vertex; n5 and Oink zlk OK, strategies verified on each):
+    - beta2_n11 bdea2a23: n5 4/2. L-SI scopefb.py from the canonical start finds 2 r = −1 fallbacks in 1 scope run, so LV-NONE is no longer vacuous.
+    - nleq33_n48 a1ebd2e0: n5 40/1.
+    - s4c8_n13 2cf723a7: n5 12/8.
+    - farrise25_n32 8941d1c9: n5 35/28.
+  - Created REFEREE successor 10 (session_01J4kmfDqtZdanh3RSCxChyD) and L-RED successor 17 (session_01DJB52MMkzsddv3hXsMpos5).
+- 16:46Z Lead: merged referee b5887e6. REFEREE 10 handover check scores 5/5 (re-measured). GO: it is idle until REFEREE-2 10's LV2 report and PFZ-ext section land; RHO and NHN follow when pinned.
+- 16:50Z Lead: merged l-new 3e9fe5c and l-red 4194c09.
+  - P-N5-RHO docs/new/P-N5-RHO-box40.md, sha1 cd5df65c, is PINNED at this commit. To sign: Y-FORM, HAT-FREEZE, RHO-TAIL, BF-F, FREEZE-F, RHO-HN, HN-POLY. No (P). It uses only the weak BRK-POLY′ (i′), so it does not depend on PFZ-1. Post-freeze data reaches only |U| ≤ 3 (10 checks).
+  - L-RED 17 handover check: 5/5 re-measured. GO box 41.
+- 16:56Z Lead: merged l-si 6480a0f.
+  - New: P-N5-LV fixes docs/si/P-N5-LV-fixes-box11.md, sha1 b75ab1fc.
+  - New: L-SI 8 box 13 data. LV-NONE max 1 per scope run in its climbs.
+  - New: OLD-THREAT, lane PROVED.
+  - RISE-DROP is FALSE (tevlast7_n32: r stays > L after the rise, no fallback).
+  - New CONJECTURE GATE-ABOVE: after a rise, M_t > L while r > L.
+  - Drafted R41 = P-N5-LV, sha1 23dc8498, for CHECKER C50. R42 will be P-N5-NEB once its fixes file lands; this renumbers the 16:32Z plan.
+- 17:02Z Lead: merged l-new e535e61 (P-N5-NEB fixes, docs/new/P-N5-NEB-fixes-box38.md, sha1 15434c1c; NEB-N5 explained: the stated command reproduces the referees' totals, and the lane withdraws inv2_all.txt). Drafted R42 = P-N5-NEB for CHECKER C51 (queued after C50 = R41).
+- 17:07Z Lead: hourly sweep 17:03Z. No overage; Lead ~453k after compaction (LEAD-STATE is current). WATCHDOG flagged L-COMP 4 idle for 84 min. Lead reading: expected. Its box8 n 5 Q2 background run started 15:27Z with an ETA of ~3.3 h (~18:45Z), and the session wakes when it completes. Not an exception, so no nudge. If it is still idle after 19:15Z with no box8 Q2 resume file on l-comp, nudge it. All other sessions are active. No exceptions.
+- 17:13Z Lead: merged checker e88836a.
+  - C50 = R41 FAIL. E-1: (d) STRETCH_{−1} dropped "consecutive states of a scope run S". Optional N-1 and N-3. All else PASS; re-runs exact.
+  - CHECKER 7 restored C47-C49 main reports, which successor 6 had overwritten with addenda; history intact.
+  - CHECKER's stamp "17:23Z" was about 10 min ahead.
+  - R41 revised with E-1 and N-1.
