@@ -1437,3 +1437,4 @@
   - L-RED 17 PARKED: no kill of FB-CAP, FB-POLY, FB-PHASE or FX in 8.6 M runs at n 5 and 6.5 M at n 4 (all start pairs). FB-CAP equality at |U| = 4: fbcap_eq_u4_n11 (39beb8b8; trivial).
   - Created L-RED successor 18 (session_01D6HqejxBahRiMjurWjAtzT).
 - 19:45Z Lead: merged l-new 419308f (L-NEW 21 handover 5/5; GO) and referee-2 b621f9a (R2-N5-PHI: Lemma Φ (a)-(c) and Φ-1O (a), (b) all SIGN, no gap; R18's S1/S2 do not threaten U-monotonicity; λ and λ^U checked, 3.2 M checks each). REFEREE-2 has also finished its NHN paper check (all SIGN); its FB-POLY report is due ~20:0xZ.
+- 19:50Z Lead: merged l-red 3b05d7f (L-RED 18 handover check 5/5, re-measured). GO box 42.
