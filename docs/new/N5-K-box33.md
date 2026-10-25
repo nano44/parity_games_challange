@@ -169,3 +169,45 @@ the length direction) is c in both. □
   wakes cannot occur. Leaving R at p needs an F-option ⊵ π_q ⊕ w (the optimistic value); joining R needs only π_r ⊕ θ ▷ the F-value (the
   pessimistic one). An absorption (§1) is Even closing a loop p → r → … → o → x0 → … → p whose top above c is good for Even in the honest
   frame; Odd leaves the loop at o.
+
+## 9. θ-changes are Even-driven or absorptions; the link to L-SI's CLS1 (Lead question 02:42Z; written 02:50Z by date -u)
+**Lemma TC-SPLIT (PROVED, L-NEW succ. 13; 𝒞^1O, inside a phase).** At every phase transition k → k+1 with θ_{k+1} ≠ θ_k: either
+lev(θ_k, θ_{k+1}) ≤ E_k, or k is an ε-transition and lev(θ_k, θ_{k+1}) = O_k (Lemma OR (c)).
+Proof. If λ(o) = o, θ = (o, ∅, 0) never changes. Else let x0 := σ̄_k(o), x1 := σ̄_{k+1}(o); θ_k = o ⊕ Ξ_k(x0), θ_{k+1} = o ⊕ Ξ_{k+1}(x1), and o
+lies on neither path (functional graph, as in Lemma OE step 2), so lev(θ_k, θ_{k+1}) = lev(Ξ_k(x0), Ξ_{k+1}(x1)) (L-SI (C7)). x1's
+H_{k+1}-path avoids o, so its relevant changes are Even ones of level ≤ E_k, and U-loc gives lev(Ξ_k(x1), Ξ_{k+1}(x1)) ≤ E_k. If x0 = x1 that
+is the claim. Otherwise lev(Ξ_k(x0), Ξ_k(x1)) = O_k, and by (C6) lev(θ_k, θ_{k+1}) ≤ max(O_k, E_k): ≤ E_k if O_k ≤ E_k, and = O_k if
+O_k > E_k (Lemma OR (c)). □
+- DATA (box33/scopecov.py, library): 1,573 θ-changes in phases, 0 failures; 279 are ε-transitions, 1,294 have level ≤ E_k.
+
+**Lemma ABS-L (PROVED, L-NEW succ. 13, from L-SI's Lemma NL (P-N5-CLS §5; unrefereed) and CAP-1).** Let S be a scope run (P-N5-CLS §0),
+k0 < k fallbacks of S with no fallback between them, L := M_{k0}, and r_j := lev(θ_j, w_j) > L for j ∈ [k0+1, k] (CLS1's case 2; there
+(A_j) holds for L at every j ∈ [k0+1, k], CLS1's proof). Then at every transition j ∈ [k0+1, k−1] with lev(θ_j, θ_{j+1}) > L:
+- (i) σ̄(o) changes, x0 := σ̄_j(o) → x1, and lev(θ_j, θ_{j+1}) = lev(Ξ_j(x0), Ξ_j(x1)) = O_j > L;
+- (ii) x0 ∈ F_j ∩ R̄_{j+1} (an absorption);
+- (iii) x0 ∈ R̄_t for every t ∈ [j+1, k].
+Hence there are at most d_o − 1 θ-changes above L in (k0, k).
+Proof.
+- (h) holds at j and j+1, so H1: σ̄(o) ∈ F at both (Lemma OR (b)'s argument). If σ̄(o) did not change, x0 ∉ R̄_{j+1} and NL (i) freezes
+  COARSE_L(Ξ(x0)), so lev(θ_j, θ_{j+1}) ≤ L by (C7). So it changes. x1 ∉ R̄_{j+1}, so NL (i) freezes COARSE_L(Ξ(x1)).
+- If x0 ∉ R̄_{j+1}, both are frozen above L. CAP-1 at j and j+1 (Ξ_j(x0) ⊴ Ξ_j(x1), Ξ_{j+1}(x1) ⊴ Ξ_{j+1}(x0)) then forces
+  lev(Ξ_j(x0), Ξ_j(x1)) ≤ L (a strict order above L would persist, (C1)-(C3)), and (C6) gives lev(θ_j, θ_{j+1}) ≤ L. So x0 ∈ R̄_{j+1}.
+  x0 ∈ F_j by H1. (i): Ξ_{j+1}(x1) agrees with Ξ_j(x1) above L, so the level > L is lev(Ξ_j(x0), Ξ_j(x1)).
+- (iii): NL (ii) at each S4a step of [j+1, k−1]: R_t ⊆ R̄_{t+1}.
+- Count: each such j absorbs the current minimiser, a distinct exit (absorbed exits stay in R̄ and σ̄(o) ∈ F under H1), and one exit
+  is in F at every state. □
+- So EXIT-R is PROVED on CLS1 case-2 intervals (for all absorptions there, not only ε-transitions). Coverage of the 279 library
+  ε-transitions: 30 by R-STICK (c_w ≠ c_θ), 64 in case-2 intervals (ABS-L), 45 in scope runs before their first fallback, 139 in scope
+  runs where r ≤ L somewhere in the interval, 1 outside scope runs. 185 remain CONJECTURE.
+- Note: once r_j ≤ L, θ has no change above L for the rest of the scope run: θ_j ⊴ θ_{j+1} ⊴ w with lev(θ_j, w) ≤ L gives
+  lev(θ_j, θ_{j+1}) ≤ L ((C5)).
+- Answers to the Lead's questions (READING):
+  - (a) Segmentation: EXIT-R is per fallback-free run; CLS1 is per scope run ((h) and w constant), which contains fallbacks. A scope run
+    lies in the SN regime (H3: c_w = c_θ), exactly where R-STICK is silent; L-SI's NL (ii) is the SN / THR / (A) analogue of R-STICK. Inside
+    a scope run, EXIT-R's segments are the gaps between its fallbacks; on case-2 gaps ABS-L proves it.
+  - (b) Yes, on case-2 gaps: every θ-change above L is an absorption of the current minimiser exit (ABS-L (i)-(ii)); in general
+    (TC-SPLIT) θ-changes above Even's own level E_k are exactly the ε-absorptions. So L-SI's per-level count becomes: between consecutive
+    fallbacks at level M, at most d_o − 1 θ-changes above M, each an absorption. It does not close by itself: fallbacks release absorbed
+    exits (FBL: THR fallbacks switch R → F edges), and a released exit can be absorbed again in the same scope run. DATA: 673 absorptions
+    (σ̄(o) changes with x0 entering R) in scope runs; the same exit up to 5 times in one scope run (b6_xl_n48, exit 28). The open count
+    per level is now: releases of absorbed exits at level-M fallbacks (OPEN).
