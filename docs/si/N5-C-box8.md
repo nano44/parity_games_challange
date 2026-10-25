@@ -228,3 +228,64 @@ Each reversal of R is at one of four places.
     (iv) ≲ n·(1 + Θ_scope), with Θ_scope = θ-changes in scope runs (up to 51 per phase on lev_l_x-type instances).
   - So (iv) is the θ-change count again. This is the circularity "θ-changes ↔ crossings" of box 3 and of L-NEW's TH. A
     non-circular bound on Θ per scope run is the single open quantity behind (iv).
+
+## 12. Box 8b (Lead "go" 02:00Z): (H-B1) removed. The first half of (CL-S) at THR fallbacks, PROVED
+Setting: a scope run S on 𝒞^1O (§0). Write r_j := rank(u*_j) when θ_j ◁ w_j with u* ≠ none; r_j := −1 when θ_j ◁ w_j with
+u* = none; r_j := −2 at EQ (θ_j = w_j).
+**Fact R (PROVED).** r is non-increasing along S. w is constant on S and θ is non-decreasing (R15 (a)), with θ ⊴ w (R21 (a)). For
+θ ◁ θ′ ⊴ w, Lemma U (ii) (L-SI succ. 1) gives lev(θ′, w) ≤ lev(θ, w).
+
+**Lemma NL (PROVED; no hypothesis beyond (A)).** Let j → j+1 be an S4a (non-fallback) transition of S, let L < ∞ satisfy r_j > L,
+and assume (A) at j (every gate into F_j has level ≤ L). Then:
+- (i) COARSE_L(Ξ_{j+1} v) = COARSE_L(Ξ_j v) for every v ∉ R̄_{j+1};
+- (ii) the transition has no leave (R_j ⊆ R̄_{j+1});
+- (iii) (A) holds at j+1.
+Proof.
+- (i) Suppose some v ∉ R̄_{j+1} violates (i). Choose one whose H_{j+1}-play p_0 = v, p_1, … reaches its cycle node c_v in the fewest
+  steps.
+  - The play avoids o, Odd is forced off o, and its cycle's top t has λ_j(t) = λ_{j+1}(t) = t (phase). If v = c_v, then
+    Ξ(v) = (v, ∅, 0) at both states. So v ≠ c_v, and p_1 satisfies (i) by minimality.
+  - The step "(T) (iii)" of R25 then gives (i) at v unless (E) fails at v: v switched to q := p_1 along a gate of level > L.
+  - By (A) at j, q ∉ F_j. Since q ∉ R̄_{j+1} and q ≠ o, q ∈ R_j ∖ R̄_{j+1}: q is a LEAVER that satisfies (i).
+  - Now R19 (a) Lemma G, for q ∈ R_j under (h) at j: Ξ_j(q) = π_q ⊕ θ_j and W_j(q) = π_q ⊕ w_j. π_q avoids the paths of θ_j and w_j
+    (H1, H2), so lev(π_q ⊕ θ_j, π_q ⊕ w_j) = r_j > L. Hence COARSE_L(Ξ_j q) ◁_L COARSE_L(W_j q).
+  - Off R̄_{j+1}, Lemma G (a) gives W_{j+1}(q) = Ξ_{j+1}(q). WM (R23 (g); an S4a step) gives W_{j+1}(q) ⊵ W_j(q).
+  - Combining with (i) at q: COARSE_L(Ξ_j q) = COARSE_L(Ξ_{j+1} q) = COARSE_L(W_{j+1} q) ⊵_L COARSE_L(W_j q) ▷_L COARSE_L(Ξ_j q).
+    Contradiction. So (i) holds everywhere off R̄_{j+1}.
+- (ii) If q ∈ R_j ∖ R̄_{j+1} existed, (i) at q and the last three bullets give the same contradiction.
+- (iii) Let (y, z) be a gate at j+1 with z ∈ F_{j+1}. By (ii) z ∈ F_j, and by (i) COARSE_L(Ξ z) is unchanged. If its level were > L,
+  TRANSFER (§5) would make (y, z) a gate at j of level > L into F_j, against (A). □
+
+**Theorem CLS1 (PROVED, L-SI succ. 3): the first half of (CL-S) without (H-B1).** Let k0 < k1 be S4c fallbacks of S, and let k1 be
+THR with u* ≠ none. Then M_{k1} ≤ min{M_k : k a fallback of S, k ≤ k0}.
+Proof. Induction on the fallbacks of S. Let k0 be the last fallback before k1 and L := M_{k0}; by induction L is the minimum so far,
+and L < ∞ (R25 NOINF, fixes FB-1).
+- Case r_{k1} ≤ L. FBL (R20 (b), THR with u* ≠ none) leaves only R → F switched edges and flat cycle-node switches.
+  - CLU bounds the R → F levels by r_{k1} ≤ L. Cycle-node switches have level −1 ≤ L (CN).
+  - So M_{k1} ≤ L.
+- Case r_{k1} > L. By Fact R, r_j > L for all j ∈ [k0, k1]. So every state of [k0, k1] is THR with u* ≠ none, and every fallback in
+  between is such a fallback. Show (A) for L at every j ∈ [k0+1, k1]:
+  - j = k0 + 1: OFFGATE (§1), since M_{k0} = L.
+  - j → j+1 an S4a step: Lemma NL (iii).
+  - j → j+1 a fallback (k0 < j < k1): its M_j ≤ L by the induction, so OFFGATE gives (A) at j+1.
+  - At k1, M_{k1} is attained by switched edges (R25 FB step (2)).
+    - Those into F_{k1} have level ≤ L by (A).
+    - Those into R̄_{k1} are excluded by FBL, except cycle-node switches (level −1).
+    - So M_{k1} ≤ L. □
+- Remarks.
+  - (H-B1) is no longer needed for THR fallbacks with u* ≠ none. These are all 260 non-EQ in-scope fallbacks in the data.
+  - For EQ and THR-with-u* = none fallbacks, Theorem CL-S-RED's (H-EQ) remains, now with the F → F case (§3 (e)) added: such fallbacks
+    have R → F levels ≤ r ≤ −1 (CLU), and only their other switched edges need a hypothesis.
+  - Lemma AL (§6) is now unconditional at THR states (it is NL (ii)).
+  - DATA consistency: the 4 arena leaves after a fallback all had r_j ≤ L (§6).
+
+**The second half (the per-level count) reduces to θ-changes (PROVED reduction; the bound itself OPEN).**
+- For an Even y, b(y) := Ξ(σ_k(y)) is ⊴-non-decreasing along the whole run: σ moves along gates, and Ξ is monotone (R15 (a), (d)).
+- At a fallback of level M, each tail with a level-M gate has b(y) rise at level exactly M (R25 FB step (2)). With COARSE_M(b(y)) fixed,
+  the rank-M membership can flip upwards only once.
+- So y is a level-M tail at two fallbacks only if COARSE_M(b(y)) strictly rose in between. Then
+      #fallbacks of S at level M ≤ Σ_y (1 + #{changes of COARSE_M(Ξ(σ y)) on S}).
+- For an R-tail, Ξ(σ y) = π′ ⊕ θ (Lemma G (b)). Its COARSE_M changes when θ changes above M, when the route of σ(y) changes above M,
+  or when y switches above M. DATA (box 8 §5, R-ROUTE 10,293 / 0): route changes above L do not occur outside θ's own level.
+- Hence, on the data's evidence (READING): fallbacks per level per scope run ≲ n_E(1 + Θ_{>M}(S)), with Θ_{>M}(S) = #θ-changes above
+  level M on S. That is item 2 again.
