@@ -282,6 +282,294 @@ Successor 21 (Opus 5.5, D14/D15/D18, L37/L40), session_01YJHHx1t8hvqkDnKzMU2Lfa.
 - Both referees on P-N5-NH-box42. REFEREE-2's §C on P-N5-FBPOLY still to come (successor 12): append a section to the FBPOLY fixes file
   if it adds anything (the file is frozen above that point: new text = appended section, as the Lead allowed, or a new file).
 - L-SI 10 cross-reading my N5-KW-box42 (Lead asked it the same). L-RED 18: K growth survey.
+### NEXT (successor 22): box 43, Lead's order 21:22Z (Lead's stamp), N5 BEYOND 𝒞^1O
+- Decisions taken (Lead 21:22Z):
+  - P-N5-KW is written by L-SI 10 from docs/si/N5-KW-box15.md, with my additions credited (PAR, H-PATH, SW (b) inline, B3 split,
+    route-form stretch = piece, CASC-B prefix argument).
+  - docs/new/N5-KW-box42.md v3.2 is the independent second lane proof: do NOT packet it.
+  - NHN fixes are in RESULTS R46 (LANDED, CHECKER C55, bdc05b60). FBPOLY fixes wait for REFEREE-2 12's §C FBPOLY; then append a section
+    (or write a new file) with anything it adds.
+- Box 43 (D18/D14). Write docs/new/N5-MULTI-box43.md. Labels PROVED / CONJECTURE / OPEN / DATA / READING.
+  1. Ledger. For each landed lemma R17-R46, and for FBPOLY, PHI, KW, NH42: which hypothesis uses "o is the only Odd choice vertex"?
+     Mark each one survives verbatim / survives with a per-Odd-vertex index / fails. Lemma Φ (every game) is the model of a survivor.
+     Starting hints from box 42: WLAG holds on every game; R25 Theorem FB, TAME, MONO and R27 Lemma U / Theorem LP hold on every game;
+     ABOVE-h and CSTRICT use "every Odd vertex but o is forced" (Lemma SW step 1).
+  2. First obstruction. Smallest 𝒞^2O games (two Odd choice vertices) where a quantity polynomial on 𝒞^1O (phases, fallbacks per
+     phase, stretches, K) grows fastest. Exhaustive search at small n, then climbs. Seeds: tools/oink counter_* families. Lens: N5's
+     own phases. Send the Lead the first obstruction instance as soon as there is one.
+  3. One novel route for the multi-Odd case. The Lead's candidate: each Odd choice vertex's τ-change as a phase boundary of a product
+     of 𝒞^1O runs, and bound the interleaving. A route of my own is welcome.
+- Hand over at ~450k context.
+
+## Cross-read of L-SI 10's docs/si/N5-KW-box15.md against my docs/new/N5-KW-box42.md (Lead's ask 20:49Z; written 21:0xZ by date -u)
+Both notes reach the same conclusion by parallel routes: (K_W) and (E) are polynomial per stretch given f, on every class. I read L-SI's
+note as a referee would, step by step. Data for its two claims that my checkers did not cover: experiments/new/box42/sicross.py.
+(a) What I would rely on, and what I doubt (exact steps)
+- W-ONCE (§2): RELY. It is my WLAG's contrapositive at the level of the whole valuation. Step 2 (A_{k+1}(v) ⊆ A_k(v) when Ξ_{k+1} = Ξ_k)
+  is right, including the case z = σ_k(v). Step 3 uses (F1) on both arenas and WM. Same proof as mine.
+- Fact A (§3): RELY. It is my ABOVE-h. Its ¬H1 bullet ("vertices after c_θ on π_v lie on C_Θ") is correct: after c_θ, π_v is π_{c_θ}, the
+  return arc of C_Θ. The ¬H2 bullet ("A1, A2 less relevant than c_w") is correct.
+- Fact B (§3): RELY. It is my CSTRICT (it phrases it as κ(π_y) ≠ κ(π_z); my phrasing is COARSE_h-strict W; the same statement).
+- FRZ-U (§3): RELY. Its P^c runs on routes to o with κ = route ∩ V_{>m*}, not on W-values to two W-terminals as mine does. That is
+  cleaner than my version, and it is valid because both frames' coarse parts are κ(π_v) plus a constant (Fact A). I checked its cases:
+  - B1 (x ∉ π_z, x ∉ C_W): val_σ̂(x) = x ⊕ W_k(z) needs z's W-play to avoid x. It does: π_z, then o's W-continuation in C_W or F.
+  - B2 (x ∈ π_z): the new cycle Z avoids o, and its top is t ∈ κ(Z), even, above c_w. Contradiction with x's W cycle node c_w at k+1 ✓.
+  - B3 (x ∈ C_W, ¬H2): the case split is not written out, but both sub-cases are fine. If x ∈ A2, o's σ̂-play is A1, c_w, A2 to x, then
+    z, π_z, o: a cycle through c_w and t, top t. If x ∈ A1, the cycle is A1 to x, then z, π_z, o, without c_w but with t. Either way
+    the top t is even and above c_w. A one-line case split would help a referee.
+  - The freeze index r − 1 is sharper than my n − 1. DATA: sicross.py FRZU, 0 violations (below).
+- LEN (§4): RELY. It is my KW-FREEZE (b), (c). Its length ranges are right: ¬H2 W-length ≤ r − 1, H2 |π_v| + ℓ(w).
+- KIND-MONO (§5): RELY; it is STRONGER than my DIR + KC. Post-freeze, P(Ξ(v)) ∩ V_{>c_w} is constant, and c_w ∈ P(Ξ(v)) iff v is kind A.
+  So a kind change makes c_w the top of Ξ(v)'s path-set difference, and R15 (a) fixes the direction at EVERY transition of the run, not
+  only at W-flat ones. So each vertex changes kind at most once per post-freeze run.
+  - Two precisions:
+    - "c_w ∈ P(Ξ(v)) ⟺ kind A" needs, under ¬H1, that c_w precedes c_θ on π_v. This is my H-PATH: c_w ∉ C_Θ, because c_θ tops
+      C_Θ and c_w ≻ c_θ. Fact A's ¬H1 bullet gives it implicitly; say it.
+    - The odd direction (A → B) is vacuous by my Lemma PAR (c_w ≻ c_θ forces c_w even, from R21 XW). KIND-MONO should state B → A only.
+  - DATA: sicross.py KM, 0 violations (below).
+- CASC-B (§5): RELY, with the same caveat in both notes. It is my CASC-B, word for word in substance. Both of us read R26 (c) step 2 as
+  not using c_w's static choice. L-SI's weak point 3 (the TB-even key prefix (A1 reversed, o) can change between steps) is answered:
+  at each step the prefix is common to all kind-B candidates, and a lex comparison with equal prefixes is decided by the suffixes.
+  A referee should still re-read R26's §1 step 4 induction for any use of the frozen c_w.
+- CW-INT (§5): RELY. Same as my corrected CW. Its first bullet ("σ(c_w) is kind B at every state") is right because R is constant on
+  the stretch. A kind-A target at a transition with simultaneous kind changes would need a kind change, which CW-INT's interval excludes.
+- E-SEG / Theorem RUN (§5, §6): RELY on the logic. Σ_Q e(Q) ≤ r − 2 follows from KIND-MONO. RUN's U1 case uses R24 (c) CASC, which is
+  stated for W-flat runs of a PIECE; a route-form stretch is a piece (my P-N5-NH-box42 Lemma CL (b)). Cite that. The U2 case uses
+  R26 (a) ✓. One gap in wording: RUN's "a Ξ-change on R needs a switch on R" cites Fact A. That is my Lemma SW (b) (Ξ on R is a
+  function of the routes and θ). Fact A gives only the part above m*. The full statement needs the lengths too, which SW's proof
+  supplies. Small, but a referee will ask.
+- Corollary PHASE (§8): RELY, with one check. T ≤ (m − n + 1)(T_rel + 1) is R27 (d) ✓. "A relevant Even switch is Ξ-changing" is
+  (SG) ✓. Stretch boundaries are counted as Ξ-changing, which is crude but safe. N_st uses TH (R27 (g)), which covers only
+  λ_Ξ(o) ≠ o; for λ_Ξ(o) = o θ is constant ✓ (stated).
+- Nothing I doubt as false. The two weakest steps, in both notes, are CASC-B's reliance on R26 (c)'s proof text, and FRZ-U / KW-FREEZE's
+  transfer of R20 CR.
+(b) Do the two notes together close K on U1 / U2 / U3 / U23?
+- Yes, given f (FB-POLY, in review) and the phase count (PHI, in review). (K_W): LEN (L-SI) = KW-FREEZE (b) (mine), all classes. (E):
+  only needed on U3 / U23 with c_w ≻ c_θ (LEN-Ξ / KW-FREEZE (c) cover c_θ ⪰ c_w); there KIND-MONO (or my DIR + KC), CW-INT (= CW) and
+  CASC-B bound it. K (wakes) ≤ T_rel (L-SI §7), so no separate wake count is needed. U1 also has R24 Theorem U1 given f.
+- What closes only with referees: every lemma in both notes is one-lane. CHECKER must also confirm the assembly (L-SI's via R27 LP;
+  mine via P-N5-NH-box42 Theorem NH).
+(c) Whose packet first
+- L-SI's, with three additions from mine:
+  - Lemma PAR (one line, from R21 XW): removes KIND-MONO's odd branch and RUN's odd case;
+  - H-PATH's "c_w precedes c_θ" sentence: makes KIND-MONO's iff explicit under ¬H1;
+  - Lemma SW (b) as the citation for "a Ξ-change on R needs a switch on R" (it is in P-N5-NH-box42, already pinned and in review).
+- Reasons:
+  - its assembly needs only landed results plus FBPOLY and PHI (R27 LP, TH, SO, R30 (c), R34), not my P-N5-NH-box42;
+  - KIND-MONO is stronger than my DIR + KC;
+  - FRZ-U's route-κ induction is a cleaner transfer of CR than my two-terminal version.
+- DATA (experiments/new/box42/sicross.py --list lib41.txt --starts: the canonical start plus 40 random starts per one-Odd-choice
+  game; 10,373 runs, 7,693 fallback-free runs of stretches): FRZ-U at index r − 1, 0 violations. KIND-MONO: 0 kind changes occurred
+  after index r − 1 in any qualifying run, so it is vacuous in the data and rests on its proof. (Pre-freeze kind changes are frequent:
+  evstress, 820.)
+- My note then serves as an independent second derivation. It need not be refereed separately, except Lemma PAR and WLAG's explicit
+  edge form, if L-SI's packet wants them. P-N5-NH-box42 (in review) remains useful as a second route from the per-phase counts to T.
+
+## Box 41 log (successor 20, session_018pjn8Y8JRES3YuFDUCAJgM; handover check 5/5 (48078dd0); GO 18:15Z, Lead's stamp)
+- Merged trunk 102f05a5. Oink built (8fbf0a7).
+- (1) FB-CAP: docs/new/N5-FBPOLY-box41.md. Theorem FB-POLY (lane PROVED, unrefereed): in-phase Even fallbacks per phase
+  ≤ 1 + (|U| − 2)(deg_U(o) + |U|), no hypothesis on H1/H2/H3/τ(o)/c_w/θ/N_HN; FB-CAP PROVED at |U| = 2; FB-CAP OPEN for |U| ≥ 3.
+  Pieces: κ-FB-ROUND, κ-HAT-FREEZE, κ-PFZ (θ-run, terminal o), κ-Y-FORM, EXIT-SWITCH (some switched U ∖ T vertex has a target whose
+  play reaches a terminal first), FREEZE-EXIT, CN-ONLY (fallbacks switching no U ∖ T vertex are CN-LAST fallbacks), THETA-AFTER
+  (κ-RHO-TAIL: θ-changes after g_{|U|−2} ≤ deg_U(o) + |U| − 2). Data: experiments/new/box41/fbpoly.py, 0 failures on lib41 + random.
+
+## Box 40 log (successor 19, session_011reTXakSJCcwLhC4i9ZpkB; GO 16:05Z, Lead's stamp; handover check 5/5)
+- Merged trunk 078bf91 (R40 = P-N5-ENT landed). Oink built (8fbf0a7), smoke PASS.
+- (1) P-N5-RHO packet drafted (docs/new/P-N5-RHO-box40.md); proofs re-checked against landed citations. Fixes vs N5-RHO-box39:
+  "F1" = R17 (a) (F1) (not R21 (e) Lemma F1); Lemma S (a) cited with R21 (a) (R18 signs Lemma S with gaps S1, S2, G-1OA-6); (A0)
+  (additivity at c_θ) added; (HP), (SP) stated. Data: experiments/new/box40/rhodata.py (every hypothesis, branch counts).
+  Library: 0 failures; Y-FORM 6,335 checks (every H1 state); HAT-FREEZE (a) direct 1,127; past the hat freeze only |U| = 2 (trivial);
+  BF-F case 1 27,932, case 2 (avoids v) 462, impossible branches 0; FREEZE-F (b) vacuous. rhoclimb.py (RHC_SCORE=bigU) for |U| ≥ 3.
+- (2) N_HN for τ(o) ≠ o: docs/new/N5-NHN-box40.md (working doc). T0U, EV2-FB, SG-EV, T0-PIN, NHN-BOUND (N_HN ≤ 1 + ⌈T/2⌉ +
+  2(|U| − 2)), HN-POLY-ALL, Remark H3-IN-HN; lane PROVED. The Lead's literal inequality is trivially true but not polynomial via WCH
+  (WCH counts w-changes, not H2-toggles). Interim report to Lead at 04fe8979; asked yes/no on a P-N5-NHN packet.
+- Trap hit at start: `pkill -f` in a compound command killed the shell (exit 144) after push.sh had finished. Kill by pid only.
+- NEB fixes frozen e535e61a (sha1 15434c1c). RHO frozen 3e9fe5c2 (sha1 cd5df65c), pinned trunk c8144551. NHN frozen 5fb9dca0 (sha1
+  da7d09ec). Lead's "NEB fixes before RHO" crossed the RHO freeze (said so).
+- (3) Q states: docs/new/N5-Q-box40.md: Q-SPLIT (a) (S4a at an H1 state with c_w ≠ c_θ never evicts; unifies SPLIT (a)), Q-SPLIT (b)
+  (Q → Q fallbacks never enter: FBL-N (ii) leaves only gates from c′ = λ(t0), and c′ cannot enter under H1 in-phase); Q-EPOCH CONJECTURE;
+  breaks OPEN (c′ → R̄ gates break RISE′ Step 0).
+
+## Box 39 log (successor 18, session_01BhkSHzG2cPM2Rdbj5Y2NJV; GO 14:29Z, Lead's stamp)
+- Handover-check misses (Lead re-measure 14:29Z, 4/5; Q2): (i) docs/new/P-N5-OUT-fixes-box37.md IS on trunk (merged 16c386c, 14:17Z);
+  my trunk view e6899305 predated it. (ii) P-N5-NEB IS pinned: trunk 314d220 (13:31Z), sha1 ba15e51f; queued for REFEREE-2 9 after ENT;
+  its items go in a NEW docs/new/P-N5-NEB-fixes-box38.md. Landing state: R36 = P-N5-P1, R37 = P-N5-RL, R38 = P-N5-SCOPE (7fc7ac9, C47);
+  P-N5-OUT drafted as R39, to CHECKER after REFEREE-2's OUT §C. Lesson: fetch trunk again right before writing a status answer.
+- Merged trunk 1aeff933 (no conflicts). REFEREE-2 OUT §C: not yet written (origin/claude/referee-2 b7df84b8 = R2-N5-ENT).
+
+- Lead 15:01Z: REFEREE-2 OUT §C (2a9e8db0) and REFEREE §C (a8b8ef3) are clean, so no OUT fixes2 is needed; R39 is at CHECKER C48.
+  Name clash: my "BF" is already an item of P-N5-ENT, so I renamed it BF-RW (also FBF → FB-ROUND, which clashed with box 27's FBF; TIE → W-TIE).
+- (1) docs/new/N5-RW-box39.md (working doc):
+  - §1-§7: block lemmas BF-RW, FREEZE-M, FREEZE-X, ROUTE-LEN, W-POT, CW-COUNT PROVED; W-TIE steps OPEN; the circularity obstruction.
+  - §11 (main): FB-ROUND (each in-phase Even fallback is a Howard/Bellman-Ford round on U = λ^{-1}(c_θ) for the signed P-weight, with o and
+    c_θ as terminals) ⇒ P-FREEZE (P frozen on U after |U| − 1 fallbacks of a θ-run) ⇒ LEN-TAIL, NO-CROSS-A, BRK-POLY
+    (B_S ≤ θ_S + (θ_S + 1)(n² − 1), any τ(o), any c_w). All PROVED (lane).
+  - §12: the same for P-epochs (P(θ) constant); θ-LEN (≤ |U| − 2 θ-changes per P-epoch); BRK-POLY′ (everything polynomial in ρ_S =
+    the number of P(θ)-changes).
+  - DATA: pfreeze.py 0 failures (714 θ-runs, 872 P-epochs).
+  - Tools: experiments/new/box39 (rwcount, rwclass, rwcross, tieclimb, pfreeze, pfzclimb).
+- Trap hit again: `pkill -f` inside a compound command killed the shell (exit 144). Kill by pid only.
+
+## Box 38 log (successor 17; GO 12:00Z, Lead's stamp)
+- (a) Packet docs/new/P-N5-OUT-box37.md written 12:0xZ (date -u): SPLIT, EPOCH (corrected), F-FLAT, FREEZE-STEP + TAIL, NO-ENTRY-A +
+  Corollary NE-COUNT (θ a parameter), CASE-B-LEN + Remark W-SIDE. Nothing uses (P); P-N5-RL not used; FB-INT / KEY from P-N5-SCOPE.
+  - Superseded (successor 16): EPOCH's f_S ≤ K(X_S+1) and the phase formula (⌈T/2⌉+1)·K(2(n−1)(θ+1)+1). Holes: O-1 (evicting fallbacks
+    are crossings, outside FB-INT) and the exit fallback of each stretch. New: f_S ≤ K(X_S+1)+X_S; f_HN ≤ (K+1)(2(n−1)θ_ph+(2n−1)N_HN).
+  - Filled in: §5 BASE "u on z's side" is true and needed only in the cycle case; the avoid case needs only the shared top u.
+    FBL-N (iii) extends to target o (λ_W(o) ∈ C_W ⊆ R̄ under ¬H2).
+  - DATA: experiments/new/box38/fbsplit.py: library 107/107 in-stretch HN fallbacks are crossings, 0 non-crossing, 2 exit; 0 failures.
+- (c) NO-ENTRY-B FALSE (nebc_cex_n14, canonical; neb_cex_n11, start pair). PROVED instead (docs/new/N5-NEB-box38.md): Lemma LOW-RISE,
+  Theorem BRK-B (B_S ≤ θ_S + (n−2)²(θ_S+1), τ(o) = o), Corollary OUT-1 (τ(o) = o out-of-SN fallbacks poly in θ_ph, T_ph; both cases).
+  Tools box38: rrgate, statesamp, neb_aug, neb_run, nebclimb, lowrise (data/lowrise_lib.txt: 0 failures).
+- (c) τ(o) ≠ o (docs/new/N5-TAUW-box38.md): PROVED Lemma RISE (any case: break ⇒ θ-change or R̄-rise), HIGH-RISE (case A: the rise
+  is at lev ≥ rank(o)), NO-ENTRY-A′ / BRK-B′ (c_w = o at the fallback, any τ(o); new W-case: switched v on C_W), Corollary BRK-ALL.
+  FALSE: NO-ENTRY when c_w ≠ o (tauw_A_cex_n24 e29908d5…, tauw_B_cex_n24 c0ad4f0c…, canonical). Obstruction: band (rank(o), rank(c_w))
+  invisible to W (fbrestart_cex_n24 state 10, gates at rank 19, band (12, 21)). OPEN: R̄-rises after c_w ≠ o fallbacks; θ_ph.
+
+## Handover check (successor 17)
+Successor 17 (Opus 5.5, D14/D15/D18, L37/L40), session_01ESR6bpU1r4ZjFsMExZtFpq, written 2026-10-25 11:5xZ by date -u (clock read
+11:47:14Z at start, 11:48:13Z later; the Lead's brief is stamped 11:50Z, so the container clock is slow again). Predecessor: successor 16,
+session_01LLCK4ctQmkMq2huT44SU7d, parked at l-new 0b5ec987. Every answer measured; commands named.
+1. **Branch / head / trunk distance.** `git status` at start: local claude/l-new at 5961101a (successor 6's park!) and "up to date" only
+   because origin had not been fetched. `git fetch origin claude/l-new` → origin 5961101a..0b5ec987; `git merge --ff-only
+   origin/claude/l-new` → 0b5ec987. Trunk = origin/claude/vibrant-johnson-nxvvxo (`git ls-remote --symref origin HEAD`; there is no
+   `main`, `git fetch origin main` fails). `git fetch origin claude/vibrant-johnson-nxvvxo`; `git rev-list --left-right --count
+   HEAD...origin/claude/vibrant-johnson-nxvvxo` = 1 ahead / 66 behind trunk 06f57bca ("Lead: REFEREE 8 GO; NOW, LANE-RESTART, log").
+   `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` (no conflicts, no rebase) → merge commit 371bb5e8: 2 ahead / 0 behind;
+   after this commit 3 ahead / 0 behind until the Lead's next commit.
+2. **Open work and next step** (sources: resume point below, `sha1sum`, `ls docs/new`, `git fetch origin claude/referee
+   claude/referee-2`, `git log`/`git show` on them, `ps aux`).
+   - P-N5-SCOPE: `sha1sum docs/new/P-N5-SCOPE-box36.md` = c3f5ed37… (pin trunk 8998ee6). REFEREE succ. 7 has SIGNED all six, no
+     gaps (docs/referee/R-N5-SCOPE.md fb6089bf + §8 560ff4c4, on trunk). REFEREE-2 succ. 8 draft on origin/claude/referee-2 1f8a9109
+     (`git show origin/claude/referee-2:docs/referee-2/R2-N5-SCOPE.md`): all SIGN, notes N-SC-1..4, observation O-1 on §7.2 (not to
+     sign), climbs pending. Next: when the Lead relays items, answer them in NEW docs/new/P-N5-SCOPE-fixes-box36.md (does not exist;
+     plus the two known nits of the resume point if raised).
+   - Box 38 (a) P-N5-OUT: docs/new/P-N5-OUT-box37.md does NOT exist (the working doc N5-OUT-box37.md, sha1 45ef62a1…, does; do not
+     overwrite it). Next after GO: write the packet (SPLIT, EPOCH, F-FLAT, FREEZE-STEP, NO-ENTRY-A + Corollary, §10 case-B lemma; θ
+     a parameter; dependencies marked R-entry / P-N5-SCOPE / P-N5-RL = L-SI's docs/si/P-N5-RL-box10.md; (P) uses CONDITIONAL).
+   - Box 38 (c) research: NO-ENTRY-B (N5-OUT §10 shape), then τ(o) ≠ o with threshold c_w.
+   - Nothing of mine running (`ps aux`: no python). Oink NOT built (`ls tools/oink/build`: no such directory); `scripts/setup_oink.sh`
+     started in the background (log in the scratchpad) so research can start at GO.
+3. **GAPS** (`grep -n G-N5-TIME docs/GAPS.md`: line 11): G-N5-TIME, major, owner "L-NEW (L-LIT T22; referees later)", status **open**.
+   Latest update in the row: 11:18Z R34 [refereed-only] LANDED (P-N5-TOG + fixes, fixes2; CHECKER C43): L-MONO, Z-COUNT, TOGGLE,
+   TOGGLE-COUNT, X-SN-PHASE, RESTARTS; "Open as before; in review: P-N5-NJB (CHECKER), P-N5-SCOPE (both referees)". Open list:
+   (L1) (NJB / RISE-LAST CONJECTURES), out-of-SN fallbacks (OUT-POLY CONJECTURE), ¬H1 SN states, f per phase. The row does not yet
+   mention box 37 (N5-OUT: SPLIT…NO-ENTRY-A, ROUTE-FROZEN FALSE). Also mine: G-N1-LB (minor, optional, not routed, open).
+4. **Rulings verbatim** (docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md):
+   - D14 (l.244; index **active**; Lead reading L35): "D" / "You know it can also test prveiously not tested approaches, it can come
+     up with it own as well"
+   - D16 (l.299; index **active**; Lead reading L38): "Then keep working as I told you to"
+   - D18 (l.332; index **active**; Lead reading L40): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+     connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable
+     assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from
+     conjectures and open problems."
+5. **Trap found.** (i) The stale clone, and quietly so: `git status` said "up to date with origin/claude/l-new" at 5961101a (box 17,
+   successor 6) because nothing had been fetched; 20 boxes were invisible. Only `git fetch` exposes it. (ii) REFEREE-2's observation
+   O-1 (draft 1f8a9109) bears on box 38 (a): out-of-SN evicting fallbacks are themselves crossings, so they lie outside every FB-INT
+   stretch and P-N5-SCOPE §7.2's "f_out ≤ n_E(2n−1)(X_out+1)" needs "+ X_out" (wd16_s2). The resume point's Corollary bound
+   "(⌈T/2⌉+1)·n_E(2n−1)(2(n−1)(θ+1)+1)" must be re-derived with that term before it goes into P-N5-OUT. (iii) Name pairs:
+   P-N5-OUT-box37.md (new packet) vs N5-OUT-box37.md (working doc); P-N5-RL is L-SI's (docs/si/), not mine. (iv) No `main`: trunk is
+   claude/vibrant-johnson-nxvvxo.
+
+## Handover check (successor 16)
+Successor 16 (Opus 5.5, D14/D15/D18, L37/L40), session_01LLCK4ctQmkMq2huT44SU7d, written 2026-10-25 10:2xZ by date -u (clock read
+10:18:49Z at start). Predecessor: successor 15, session_013tdUFhpjRP3kYPL6sBCpfU, parked at l-new ec77ad1c. Every answer measured; commands named.
+1. **Branch / head / trunk distance.** `git fetch origin`; `git status`: local claude/l-new "behind 'origin/claude/l-new' by 1359
+   commits" (STALE clone again). `git merge --ff-only origin/claude/l-new` → ec77ad1c. Trunk = origin/claude/vibrant-johnson-nxvvxo
+   (`git remote show origin` HEAD branch; docs/NOW.md l.15). `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`
+   = 1 ahead / 34 behind trunk aef92047 ("Lead: PF-THETA linear form refuted (re-run); log"); merge-base b5b8e663.
+   `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` (no conflicts, no rebase) → merge commit f8419305: 2 ahead / 0 behind;
+   First push.sh: VERIFY PASS but push REJECTED (exit 1, "fetch first"): parked successor 15 had pushed a670161b at 10:18:52Z (Lead
+   request: PF-THETA linear FALSE recorded). `git fetch origin claude/l-new`; `git merge --no-ff origin/claude/l-new` (clean) → merged;
+   `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` after this commit: see the push log in the message.
+2. **Open work and next step** (sources: resume point below, `sha1sum`, `ls docs/new`, `git ls-tree origin/claude/referee{,-2}`,
+   `git log origin/claude/referee`, `git log HEAD..trunk`).
+   - P-N5-TOG: `sha1sum docs/new/P-N5-TOG-box35.md` = 7dfda8c8… (pinned trunk d3daae1). REFEREE-2 signed (R2-N5-TOG faabe716) and
+     wrote Addendum A (16d27d1c: G-TOG-1 DATA attribution; SPEC witness b4_cyc6_0 0→1, 19 files). Fixes file
+     P-N5-TOG-fixes-box35.md sha1 f15b58dd… (cited → frozen). REFEREE succ. 7 (session_01TWT1diK1Z9x2eK56iBVbZu): no R-N5-TOG on
+     origin/claude/referee yet; scratch tog_probe.py/tog_climb.py at 785e79b7 (09:58Z) = review in progress. Next: when relayed,
+     its items + the Addendum-A attribution row go in NEW docs/new/P-N5-TOG-fixes2-box35.md (does not exist yet).
+   - Box 37 (a) packet P-N5-SCOPE: docs/new/P-N5-SCOPE-box36.md does NOT exist yet (the working doc N5-SCOPE-box36.md, sha1
+     ad7282d7…, does; do not overwrite it). Next after GO: write the packet (KEY, WCH, SCOPE-COUNT, FB-INT, NH1-FB, CN-LAST from
+     N5-DROP-box35.md §7; not-to-sign OUT-POLY, out-of-SN obstruction, PF-THETA linear form FALSE), send sha1.
+   - PF-THETA (linear form) is now FALSE: L-RED fa3085e2, experiments/red/so/instances/pftheta_cex_n32.pg (`sha1sum` = 9f526135…);
+     Lead re-run aef92047. My notebook still lists PF-THETA as a live CONJECTURE (box 35 (c)): the packet and the dead-end list must say FALSE.
+   - Box 37 (b) research: OUT-POLY at H1 ∧ ¬H2 / H1 ∧ H2 ∧ ¬H3 fallbacks, first τ(o) = o (w = (o, ∅, 0) constant).
+   - Nothing of mine is running (`ps aux`). Oink is NOT built in this container (`ls tools/oink/build`: no such directory): first
+     research step after GO is `scripts/setup_oink.sh`.
+3. **GAPS** (`grep -n G-N5-TIME docs/GAPS.md`: line 11): G-N5-TIME, major, owner "L-NEW (L-LIT T22; referees later)", status **open**.
+   Latest update: R32 [refereed-only] landed 09:48Z (P-N5-FRZ + fixes, fixes2; CHECKER C41). "Open: (L1) (NJB / RISE-LAST / PF-THETA,
+   CONJECTURES), f per phase outside scope runs. In review: P-N5-L2 (both referees signed), P-N5-NJB (both reports in), P-N5-TOG."
+   The row does not yet record PF-THETA linear form FALSE (aef92047) nor box 36 (KEY…NH1-FB). R33 (P-N5-L2) is a draft only
+   (docs/agents/R33-draft.md; `grep "^### R33" docs/RESULTS.md` empty). Also mine: G-N1-LB (minor, optional, open).
+4. **Rulings verbatim** (docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md):
+   - D14 (l.244; index l.22 **active**; Lead reading L35): "D" / "You know it can also test prveiously not tested approaches, it can
+     come up with it own as well"
+   - D16 (l.299; index l.28 **active**; Lead reading L38): "Then keep working as I told you to"
+   - D18 (l.332; index l.32 **active**; Lead reading L40): "Focus on N5 and work toward proving it. Explore novel approaches, especially
+     by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable
+     assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from
+     conjectures and open problems."
+5. **Trap found.** (i) The stale clone, worse than last time: local claude/l-new was 1359 commits behind origin (successor 15 saw
+   1157); working from it would have hidden boxes 35-36, all fixes files and the handover. Check: `git fetch` + `git status` before
+   anything. (ii) The resume point (successor 15, 10:0xZ) still calls PF-THETA a CONJECTURE (its Dead ends got a670161b later), but L-RED refuted the linear form at
+   10:05Z (fa3085e2, commit time): the notebook is one fact stale at hand-over; anything reusing box 35 (c) must cite pftheta_cex_n32. (iii) Two
+   near-identical names: P-N5-SCOPE-box36.md (new packet) vs N5-SCOPE-box36.md (working doc).
+
+## Handover check (successor 15)
+Successor 15 (Opus 5.5, D15/D18/L40), written 2026-10-25 07:5xZ by date -u (container clock read 07:50:41Z; the Lead's brief is
+stamped 07:53Z, so the clock is again slow). Predecessor: successor 14, session_014oGq98MdJvpgrVXNA7rNvA, handover 5351fbf2.
+Every answer measured from the repository; commands named.
+1. **Branch / head / trunk distance.** `git fetch origin`; `git status`: local claude/l-new was "behind 'origin/claude/l-new' by 1157
+   commits" (STALE again). `git merge --ff-only origin/claude/l-new` → local = 5351fbf2. Then
+   `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 2 ahead / 66 behind trunk 1483054f ("Lead: l-new
+   ONE-DROP refutation merged, re-run; log"); merge-base 45e72ef8. `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` (no
+   conflicts, no rebase) → merge commit 1895b3cd: 3 ahead / 0 behind; after this commit 4 ahead / 0 behind until the Lead's next commit.
+2. **Open work and next step** (sources: notes resume point, docs/NOW.md rows 42/45/74, `git log origin/claude/referee{,-2}`,
+   `sha1sum`, `git diff <pin> HEAD`).
+   - P-N5-FRZ: `sha1sum docs/new/P-N5-FRZ-box34.md` = 39df373c…; `git diff --stat 25fda0f HEAD` on it empty (pin 25fda0f3 = "Lead:
+     P-N5-FRZ pinned (sha1 39df373c) for both referees"). Fixes file P-N5-FRZ-fixes-box34.md sha1 168de464… (cited, FROZEN).
+     REFEREE succ. 6 signed (R-N5-FRZ 3a520ce, Addendum 3171efc closes FRZ-1..3). REFEREE-2 succ. 7 (session_01CE1xQNfGUgtJg9A7SWAkuE)
+     did its handover/pin check at de9ff970; no R2-N5-FRZ report on origin/claude/referee-2 yet (`git ls-tree`). Next: when its items
+     are relayed, answer them in a NEW file docs/new/P-N5-FRZ-fixes2-box34.md (does not exist yet).
+   - P-N5-L2: `sha1sum docs/new/P-N5-L2-box34.md` = cbea0739… (as written at l-new 1afccb51). The Lead's brief names its pin as trunk
+     04b3f48, but `git rev-parse 04b3f48` fails: no fetched ref contains that commit (`git log --all` also finds none). Not yet
+     relayed to referees. Next: referee items go in a NEW file docs/new/P-N5-L2-fixes-box34.md.
+   - Research box 35 after GO: (a) DROP-LEN on onedrop_cex_n32 (`sha1sum` = 5793d5a3…, experiments/new/box34/instances), (b) (L2)
+     fallback restart at an H1∧¬H2 state taking τ(o) out of R, (c) core (L1) via a new angle vs L-SI 4 (ENT = NJB, P-N5-NJB frozen at
+     l-si 5c949ec0) and L-RED 15.
+   - Nothing of mine is running (`ps aux`). Oink is NOT built in this container (`ls tools/oink/build`: no such directory): the first
+     research step after GO is `scripts/setup_oink.sh`.
+3. **GAPS** (`grep -n G-N5-TIME docs/GAPS.md`: line 11): G-N5-TIME, major, owner "L-NEW (L-LIT T22; referees later)", status **open**.
+   Latest update in the row: R30 [refereed-only] landed 05:04Z (P-N5-SN + fixes §2b; CHECKER C39); "Open per phase: X_SN, REL, K
+   (Θ(n) possible); ε⁽⁻¹⁾, ε at fallbacks (never seen)." The row does not yet mention box 34 (FRZ, L2, ONE-DROP FALSE).
+   Also mine: G-N1-LB (minor, optional, not routed, open).
+4. **Rulings verbatim** (docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md):
+   - D14 (l.244; index **active**; Lead reading L35): "D" / "You know it can also test prveiously not tested approaches, it can come up
+     with it own as well"
+   - D16 (l.299; index **active**; Lead reading L38): "Then keep working as I told you to"
+   - D18 (l.332; index **active**; Lead reading L40): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+     connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable
+     assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from
+     conjectures and open problems."
+5. **Trap found.** (i) The stale container, again: local claude/l-new was 1157 commits behind origin; working from it would have hidden
+   box 34, both packets and both instances. (ii) New: the P-N5-L2 pin "trunk 04b3f48" in the Lead's brief resolves to no commit in any
+   fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
+   (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
+
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 21, box 42, written 2026-10-25 21:1xZ by date -u)
+Successor 21 (Opus 5.5, D14/D15/D18, L37/L40), session_01YJHHx1t8hvqkDnKzMU2Lfa. Handover check 5/5 (419308f1). GO box 42 19:48Z.
+### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)
+- Packet docs/new/P-N5-NH-box42.md (44088266, sha1 93d19be8…): Theorem NH. PINNED trunk 54ac72e6 (Lead 20:12Z), queued for both referees.
+- Working doc docs/new/N5-KW-box42.md v3.2 (31776c5c, sha1 349d553c…): WLAG, ABOVE-h, CSTRICT, KW-FREEZE, KW, NR′, PAR, H-PATH, DIR,
+  KC, CASC-B, CW (corrected), E-HI; §6 READING (conditional): T per phase poly(n)(1 + X + f). Not a packet.
+- Fixes files (5e1b5ea0): docs/new/P-N5-FBPOLY-fixes-box41.md (sha1 c016c190…), docs/new/P-N5-NHN-fixes-box40.md (sha1 d1460ffe…).
+- Cross-read of L-SI 10's docs/si/N5-KW-box15.md (669624b2; section above): rely on all; L-SI's packet first, plus PAR, H-PATH, SW (b).
+- Scripts experiments/new/box42: nhcheck, wlag, kwprof, kwfreeze, kwfreeze2, evprof, evcheck, evstress, sicross (README lists runs).
+### IN FLIGHT (others)
+- Both referees on P-N5-NH-box42. REFEREE-2's §C on P-N5-FBPOLY still to come (successor 12): append a section to the FBPOLY fixes file
+  if it adds anything (the file is frozen above that point: new text = appended section, as the Lead allowed, or a new file).
+- L-SI 10 cross-reading my N5-KW-box42 (Lead asked it the same). L-RED 18: K growth survey.
 ### NEXT (successor 22)
 - Wait for the Lead's decision on the K packet (L-SI's with my three additions, or a joint one). If asked to write a packet from
   N5-KW-box42, freeze it as a new file docs/new/P-N5-KW-box4x.md.
