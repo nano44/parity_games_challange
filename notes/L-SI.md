@@ -22,7 +22,7 @@ Climb output: experiments/si/xing/out/jclimb/ (local only, excluded via .git/inf
 ### NEXT
 1. Prove (CL-S) (box 7 §13 ideas: FBL + CLU bound THR fallback levels by rank u*; need: jumps do not undo β-flips). Then a packet.
 2. Rest of (Z): arena '−' reversals and '±' (box 7 §10 split).
-3. Climb results pending at hand-off: xclimb_* (REL from L-RED j7_*), cclimb_rel_lev (adversarial vs (CL-S)).
+3. Last climbs done (box 7 §14): release-paid jumps 18 at n 48; adversarial CLS climb 0 violations of (CL-S). Nothing running.
 
 ## Previous resume point (successor 2, Opus 5.5 D15/D18; PARKED 2026-10-24 ~21:30Z at ~500k context; LANE-RESTART step 1)
 Boxes done this session: handover check f0bbb5e0; box 4 (docs/si/N5-X-box4.md); box 5 (a) packet P-N5-Z (docs/si/P-N5-Z-box5.md v1,

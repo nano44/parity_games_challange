@@ -434,3 +434,21 @@ The fourth climb (seed x31_cu32) stalled at 2.
     their levels by rank(u*), which is non-increasing in a scope run.
   - What is missing is that the β-flips at a level are not undone by a jump. A jump raises the values in R̄ (OFF), and so possibly
     the β of R-tails.
+
+## 14. Last climbs of the box (DATA; 23:3xZ-00:08Z; pinned in experiments/si/coarse/instances/, all reverify.sh OK, one o)
+Scope (CHECKER C34 Add. 1): every statement here about (C), R, D or exits is 𝒞^1O-only.
+
+| best (mode, seed) | n | sha1 | n5 it/fb | result |
+| --- | --- | --- | --- | --- |
+| rel_x31_rx48 (REL, x31_rx48) | 48 | 26f0294e | 24/1 | 16 release-paid jumps |
+| rel2_x31_rx48 (REL, rel_x31_rx48) | 48 | c332f376 | 26/1 | 18 release-paid jumps |
+| rel_j7_n48 (REL, L-RED j7_n48 c593e43c) | 48 | 4add18b8 | 23/1 | 14 |
+| rel_j7_n32 (REL, L-RED j7_n32 78ec52e8) | 32 | 5857a253 | 22/1 | 12 |
+| cls_rel_lev (CLS: adversarial against (CL-S), from rel_lev_l_sc) | 32 | 6cdadbb0 | 26/15 | 0 (CL-S) violations; 15 fallbacks in scope runs |
+
+- Release-paid jumps per phase: 12 at n 32, 18 at n 48 (REL climbs, 30 min each). No superlinear growth seen.
+- J-mode scale climbs: J 12 at n 48 from x31_cu48. The n 64 seed (x32_rand64) and zcl_rx_n48 did not improve in 30 min.
+- On the four new REL/CLS bests every check has 0 violations:
+  - FB (i)-(iv); J1 44/44; OFF 1,860; CAP 542; L = M 18/18;
+  - D1-D3; NOREL-A (0 arena releases among 67);
+  - (CL-S) (5 scope runs, 18 fallbacks, max 15 in one run).
