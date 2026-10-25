@@ -71,6 +71,8 @@ Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2
 - Traps:
   - `pgrep -f <pattern>` inside an until-loop matches the loop's own command line and never ends. Wait on files instead.
   - (P) is a premise, not a landed result. Label every use of BL / FREE-FREEZE as CONDITIONAL.
+  - Once a file's sha1 is sent to the Lead it is CITED and FROZEN (Lead 11:30Z). Further text goes in a NEW file. Frozen now: NJB fixes
+    6a337748, fixes2 647386fb, P-N5-RL 0a3c70cb, N5-P1-box10 5fb4f908.
 
 ## Resume point (successor 4, box 9; PARKED 2026-10-25 ~07:55Z per Lead 07:10Z; LANE-RESTART step 1; session_019zCLqPUCjkJxMD4vZoJ8TA)
 Handover check 1cef5052 (Lead 5/5). Box 9 write-up: docs/si/N5-C-box9.md §1-§13. Code: experiments/si/coarse/ fbw.py, reltrace.py,
