@@ -246,9 +246,17 @@ Proof.
   - The gate-level freeze of R25 is vacuous in U2 / U3 (M = ∞). Any future freeze argument there has to use the used level, or W's own
     order.
 - Where to push next (READING):
-  - (a) The W-length regime. In nowake_cex_n32 W's comparison is pure length, monotone between fallbacks (R24 TB step 1), with ties broken
-    by TB-even's lex order. A wake at y either strictly raises W(y) (a length step, ≤ n − 1 per y while the W path sets stay fixed) or is a
-    W-tie switch under TB. Counting wakes by (W path set of y, length of y, TB key) may bound K per W-path-set class. OPEN.
+  - (a) The W-length regime. **Lemma KW-LEN (PROVED, L-NEW).** In a U2 / U3 / U23 stretch with rank c_w > rank v for every v ∈ R \ {c_w},
+    the non-fallback transitions with a W-change on R number ≤ (f + 1)·|R|·(n − 1). Proof: w (hence c_w) is constant on the stretch, and for
+    v ∈ R, P(W(v)) = P(w) ∪ (π_v ∩ V_{>rank c_w}) = P(w) (kind B and U2), or the part of v's path to c_w above c_w, which is empty (kind A).
+    So on R, W varies only in length, in one direction (c_w's parity) at S4a steps, since W_{k+1} ⊵ W_k there (R24 TB step 1). Each vertex
+    has ≤ n − 1 length changes per fallback-free segment, and there are ≤ f + 1 segments. □ This covers nowake_cex_n32 (c_w = the top
+    vertex). With the CASC-U3 Corollary it leaves only (E) in that regime.
+  - DATA (kwlev.py, LIB plus u2flat_n32 and nowake_cex_n32): of the 143 transitions with a W-change on R inside U2 / U3 / U23 stretches, 37
+    are length-only W-changes, 101 change a W path set at a level ≤ the used level L_k, and 4 (U2, sc32) at a level above it. So outside the
+    length regime W path changes ride on the used level; turning that into a bound on K is OPEN.
+  - Wakes per run: the wake-maximising climbs (rrclimb.py; seeds nr_u23_n32, u1flat_best_n32, nowake_cex_n32; ~2·10⁵ candidates) stay at ≤ 2
+    wakes per run so far. CONJECTURE-level only; no statement.
   - (b) S_o: DONE in §4b (Lemma TH, Lemma SO, Corollary XJ). The tie-break changes are 0 (keys of tied exits are frozen), and the θ-changes
     are F-changes or crossings (H1) or a monotone length (¬H1). So S_o, J and the fallbacks reduce to X.
 - After §4b the per-phase open cores of o-cyclic 𝒞^1O are X (≡ Z up to a factor n, R23 LV′) and K (wakes: OPEN in U2 / U3 / U23, bounded in
