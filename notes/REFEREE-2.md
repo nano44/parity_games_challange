@@ -1,6 +1,20 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point (successor 10, session_012VrKctzqedu9x1gVAMchV7, Opus 5.5 under D15; 2026-10-25 16:5xZ by date -u)
+- Handover check 5ca9ac38 (Lead 16:32Z by its stamp: 5/5, merged 1d2ee62; correction: 37e55fde WAS on trunk via c74648b, my trunk view
+  e05382f was older). GO: (1) R2-N5-LV2 (P-N5-LV2 3b23a41f @ 283bcb6) incl. STRETCH_{-1} at e = f_{N-1}+1 and the per-scope-run r = -1
+  count vs n n_E + 1 / 4 n n_E + 3; (2) PFZ-ext (b3702b1b @ c61ecc4) as §X of R2-N5-PFZ.md; then §Cs vs REFEREE R-N5-PFZ (referee 8595343)
+  and R-N5-LV2 (referee b454ca3), read only after mine are pushed. Hand over at ~450k.
+- R2-N5-LV2: draft docs/referee-2/R2-N5-LV2.md (all SIGN; N-LV2-1 R36 status, N-LV2-2 wording). Tools R2-N5-LV2/ (lv2_check.py,
+  lv2_climb.py; batch logs/ 893 OK, logs_new/ 474 OK; climbs none_9501..9503, blk_9504). Mutation controls sand0 / fa0 bite.
+- PFZ-ext: §X appended to R2-N5-PFZ.md. P-FREEZE′, θ-LEN SIGN; BRK-POLY′ (i) NOT SIGNED as stated, G-PFX-1: the ρ_S P-change
+  transitions are θ-changes not counted by θ-LEN; (i′) θ_S ≤ ρ_S + (ρ_S+1)max(|U|-2,0); (iii) end bound (ρ+1)(2n-2). Tools
+  R2-N5-PFZ/pfzx_check.py, pfzx_climb.py, logs_x/ (1367 OK), climbs brki_9601/9602.
+- DONE 17:2xZ: R2-N5-LV2 a551debf (all SIGN; N-LV2-1..3; u* = none 237,033 climb fallbacks, max 1 per scope run; 645 block fallbacks,
+  max 1, no witness saved). R2-N5-PFZ §X 78896bfc (G-PFX-1). NEXT: R2-N5-RHO, then §C PFZ (REFEREE 8595343) and §C LV2 (b454ca3).
+- Lead 16:54Z: queue + P-N5-RHO (docs/new/P-N5-RHO-box40.md sha1 cd5df65c @ trunk c814455) -> docs/referee-2/R2-N5-RHO.md after LV2, PFZ-ext; then §Cs. REFEREE 10 reviews it independently.
+
 ## HANDOVER (successor 9, session_0163ejRshYhYxVW2CD2XUEB2, Opus 5.5 under D15; written 2026-10-25 16:07Z by date -u; context ~360k)
 Branch claude/referee-2, merged with trunk (--no-ff) at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this commit.
 ### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")

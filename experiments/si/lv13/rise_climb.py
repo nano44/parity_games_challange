@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""L-SI succ. 8, box 13 item (3): hill-climb against CONJECTURE RISE-DROP (docs/si/N5-RISE-box13.md): after a rise at j (oldthreat.py's
-definition), r_{j+1} <= L whenever j+1 is still in scope. Fitness: 10^6 per rise with S4a and r > L at j+1 (a counterexample, dumped to
-logs/risedrop_cex_<seed>.pg, climb stops), 10^4 per rise with rise level < r_j, 100 per rise, + in-scope fallbacks with L >= 0.
+"""L-SI succ. 8, box 13 item (3): hill-climb against CONJECTURE GATE-ABOVE (docs/si/N5-RISE-box13.md; oldthreat.py): after a rise,
+while r > L, M_t > L (so no fallback, by CLS2). (RISE-DROP, the first target, is FALSE on the library: tevlast7_n32.) Fitness: 10^6 per
+GATE-ABOVE failure (dumped to logs/risedrop_cex_<seed>.pg, climb stops), 10^4 per rise continued in scope with r > L, 100 per checked
+post-rise state, 10 per rise, + in-scope fallbacks with L >= 0.
 Mutations / C^1O filter: REFEREE-2's R2-N5-FRZ/frz_climb.py (read only). Also counts OLD-THREAT failures (any = stop + dump).
 Usage: rise_climb.py seed seconds R seed_game.pg"""
 import sys, os, random, time
@@ -17,7 +18,7 @@ def evaluate(g, o, R, seed):
         for mode in ("own", "spec"):
             A, fbs = OT.OC.run_trace(g, o, s, t, rng, mode); OT.scan(g, o, A, fbs, C, bad, (i, mode))
             C["fbL"] += sum(1 for k in range(len(fbs)) if fbs[k] and OT.EC.M(A[k]) >= 0)
-    f = 10 ** 6 * C["AT_j+1: S4a_with_r>L_at_j+1"] + 10 ** 4 * C["rise_level<r_j"] + 100 * C["rises"] + C["fbL"]
+    f = 10 ** 6 * C["GA_FAIL (M_t <= L with r_t > L after a rise)"] + 10 ** 4 * C["AT_j+1: S4a_with_r>L_at_j+1"] + 100 * C["GA_states"] + 10 * C["rises"] + C["fbL"]
     return f, C, bad
 
 def main():
@@ -29,7 +30,7 @@ def main():
         if not FCL.ok(h, o): continue
         f, C2, bad2 = evaluate(h, o, R, seed); tot["evals"] += 1
         for k, v in C2.items(): tot[k] += v
-        if bad2 or C2["AT_j+1: S4a_with_r>L_at_j+1"]:
+        if C2["FAIL"] or C2["GA_FAIL (M_t <= L with r_t > L after a rise)"]:
             FCL.dump(h, os.path.join(HERE, "logs", f"risedrop_cex_{seed}.pg")); print("FOUND", dict(C2), bad2[:3]); g, best, C = h, f, C2; break
         if f >= best: g, best, C = h, f, C2
     FCL.dump(g, os.path.join(HERE, "logs", f"rise_best_{seed}.pg"))

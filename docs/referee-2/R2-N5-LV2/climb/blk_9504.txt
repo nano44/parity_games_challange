@@ -1,0 +1,26 @@
+climb FIT=blk seed=9504 n=11 iterations=71850 improvements=12 best_fitness=20.0
+BEST-INSTANCE counters: {'EVG_checks': 60, 'RECORD_fallbacks_ge0': 20, 'SCOPEFB_runs': 4, 'STALE_checks': 60, 'runs': 4, 'scope_runs': 4, 'states': 32}
+BEST-INSTANCE maxima: {'max_SCOPEFB_ratio_permille': 14, 'max_per_run_all': 5, 'max_per_run_ge0': 5}
+EVG_checks: 549667
+FANONE_cases: 3
+RECORD_fallbacks_blk: 0
+RECORD_fallbacks_eq: 370
+RECORD_fallbacks_ge0: 216119
+RECORD_fallbacks_none: 3
+RECORD_none_last_tail_move_breaks: 0
+RECORD_runs_with_r=-1: 525
+SAND_checks: 851
+SCOPEFB_runs: 140650
+STALE_checks: 797169
+climb_evaluations: 69094
+runs: 276376
+scope_runs: 140650
+states: 1212454
+max_LVNONE_ratio_permille: 17
+max_SCOPEFB_ratio_permille: 21
+max_per_run_all: 5
+max_per_run_blk: 0
+max_per_run_eq: 1
+max_per_run_ge0: 5
+max_per_run_none: 1
+RESULT OK violations=0

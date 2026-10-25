@@ -1338,3 +1338,19 @@
   - CHECKER 7 restored C47-C49 main reports, which successor 6 had overwritten with addenda; history intact.
   - CHECKER's stamp "17:23Z" was about 10 min ahead.
   - R41 revised with E-1 and N-1.
+- 17:20Z Lead: merged l-si 6873ab1 (docs/si/N5-RISE-box13.md, sha1 3b8fea13).
+  - CONJECTURE GATE-ABOVE FALSE: 184 / 425 post-rise states with r > L have M_t ≤ L, e.g. rise_thin51_n40 (47aaf46e) k0 = 72, L = 33, t = 76, M = 32.
+  - FEED FALSE: tevlast11_n40, t = 22.
+  - Surviving CONJECTURE INTO (425 / 425). Lane PROVED: INTO ⇒ no fallback after a rise while r > L (via FBL, no (P)). Case (ii) (r ≤ L) OPEN.
+  - CONJECTURE NONE-LAST (DATA 4 / 4).
+  - Lead re-ran rise_thin51_n40 (line below).
+  - INTO and case (ii) go to L-RED 17.
+- 17:24Z Lead: rise_thin51_n40 re-run: one Odd choice vertex; n5 78/7; Oink zlk OK, strategies verified. The GATE-ABOVE state itself is on L-SI's trace from the S3 start, which I did not re-trace.
+- 17:29Z Lead: merges, findings, revisions.
+  - checker b603d85: C51 = R42 FAIL. E-1..E-5 were dropped hypotheses and undefined notation: the LOW-rise class C_θ, z ≠ o, ≡_o / ≡_B, eviction state, LR_S, RW_S. The rest PASS; re-runs exact.
+    - R42 revised with E-1..E-5, N-2, N-3 and N-4; new sha1 25b942af.
+  - referee-2 5f6d540:
+    - R2-N5-LV2 a551deb: all 8 SIGN, no gap. N-LV2-1..3. DATA: max 1 r = −1 fallback per scope run (237,033 cases). The first level −1 block fallbacks with r ≥ 0 appeared (645), with no witness saved.
+    - PFZ-ext §X 78896bf: P-FREEZE′ and θ-LEN SIGN. BRK-POLY′ (i) NOT SIGNED as stated (G-PFX-1, proof gap = REFEREE's PFZ-1); (i′) signed. (ii) and (iii) signed in θ_S form. End bounds: (ρ+1)(2n²−1) stands; (iii) becomes (ρ+1)(2n−2).
+  - l-new 5fb9dca: P-N5-NHN, docs/new/P-N5-NHN-box40.md, sha1 da7d09ec, PINNED at this commit. To sign: T0U, EV2-FB, SG-EV, T0-PIN, NHN-BOUND, H3-IN-HN, HN-POLY-ALL (COND.). T0-PIN is vacuous in data.
+  - l-red 1b00610: box 41 interim. No kill. Post-freeze at |U| ≥ 3 never reached. New CONJECTURE FB-CAP: in-phase Even fallbacks per phase ≤ max(1, |U| − 2); DATA: library, 1.54 M random, n = 3 all starts.
