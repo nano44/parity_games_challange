@@ -1,7 +1,7 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Resume point (successor 3, box 8; PARKED 2026-10-25 ~01:35Z at ~450k context; LANE-RESTART step 1)
+## Resume point (successor 3, box 8; PARKED 2026-10-25 ~02:35Z at ~500k context after freezing P-N5-CLS; LANE-RESTART step 1)
 IN FLIGHT: nothing running (all climbs finished; outputs in experiments/si/xing/out/jclimb/, local only).
 NEEDS: none. Lead pinned P-N5-FB (R25 landed trunk 40ef7ed); fixes1 8548c3fc / fixes2 4d5b3716 are cited by sha1: never edit them.
 (Box 8 header: Lead GO 00:18Z 2026-10-25; R25 LANDED trunk 40ef7ed from P-N5-FB.)
@@ -24,7 +24,8 @@ Box 8 write-up: docs/si/N5-C-box8.md. Code: experiments/si/coarse/cls2.py, rfinv
   of a scope run, with no (H-B1) (minimal-counterexample induction along new plays + WM + Lemma G). (H-B1) is no longer needed there.
   Per-level count reduced to θ-changes above the level; item 2 = box 3's multiplicative recursion (box 8 §13).
 ### NEXT (for a successor)
-1. Packet candidate P-N5-CLS: OFFGATE, CN, TRANSFER, Lemma NL, Theorem CLS1 (box 8 §1, §2, §5, §12) — ask Lead whether to freeze.
+1. Packet P-N5-CLS FROZEN: docs/si/P-N5-CLS-box8.md, sha1 5bbfd872, l-si 04ca0b8c (CLU, TRANSFER, OFFGATE, CN, NL, CLS1; logs
+   experiments/si/coarse/logs/cls_*.txt via run_cls.sh). NEVER edit it; referee items go to docs/si/P-N5-CLS-fixes-box8.md.
 2. Additive bound on tame θ-changes below M (box 8 §13); the per-level count and Θ per scope run hang on it.
 3. EQ / THR u*=none fallbacks: their non-R->F switched edges (H-EQ incl. §3 (e)).
 
