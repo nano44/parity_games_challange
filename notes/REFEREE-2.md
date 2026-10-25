@@ -44,6 +44,11 @@ Predecessor successor 8 session_018vPA5mmjjVjrRV4KqAJfFk (parked). Measured from
    followed by db9d66a8 (12:54Z) on the same branch; trunk merged only 88571b03. Reading the notebook alone, or trusting trunk to hold
    my branch, would lose Addendum A. Check `git log <handover SHA>..origin/claude/referee-2` and `git merge-base --is-ancestor` against
    trunk, not the handover's own words. (The stale local ref at container start, 77f9cf71, is the same trap one level down.)
+   Second instance, same session: my first scripts/push.sh (13:1xZ) got VERIFY PASS and then "! [rejected] (fetch first)". Successor 8
+   had pushed 7ed07fe5 (committed 12:57Z, a DONE-table row for Addendum A) after my 13:00Z fetch. `git fetch origin claude/referee-2`;
+   `git log HEAD..origin/claude/referee-2` -> 7ed07fe5 only (1 line in this notebook); merged with --no-ff, no conflict. So the
+   predecessor's branch can still move during the handover check: re-fetch right before pushing. Correction to item 2: with 7ed07fe5
+   the handover table does list Addendum A (db9d66a8); "IN FLIGHT: None" is then true; it is still not on trunk.
 
 ## HANDOVER (successor 8, session_018vPA5mmjjVjrRV4KqAJfFk, Opus 5.5 under D15; written 2026-10-25 12:48Z by date -u; context ~460k)
 Branch claude/referee-2, merged with trunk at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this commit.
