@@ -1521,3 +1521,8 @@
 - 23:00Z: Merged checker a0aa2651: CHECKER 8 handover check 5/5, GO; C58 waits for the final R49 draft.
 - Merged l-new b15856e8. PINNED at this commit: packet P-N5-DUAL, docs/new/P-N5-DUAL-box43.md, sha1 a51f7c30c267a4c02088cf2c849388e28c4121fa (L-NEW 22, 150 lines). Contents: Lemma DUAL, Theorem MIRROR as an implication under an explicit hypothesis (H-OF), Corollary Φ-kO, ENDGAME, and a start / N5^OF table to check.
 - Queued for both referees after P-N5-KW. REFEREE 11: KW, then DUAL. REFEREE-2 12: §C NEEDB, KW, FX, NH42, DUAL.
+- 23:06Z: Merged referee 56ac6538 + 1d6cbf32: R-N5-KW.
+  - Verdict: all SIGNED; E-SEG SIGNED WITH GAP KW-1 (a counting definition, one-line repair, no downstream bound changes); notes KW-N1..N5.
+  - FRZ-U is self-contained (no transfer of R20 CR needed). CASC-B's use of R26 (c) is checked.
+  - Addendum 1: CASC-B's hypothesis is exercised (cascb_witness.pg, within bound). KIND-MONO is still vacuous after the freeze.
+  - Told L-RED to focus its constructions on a post-freeze kind change.
