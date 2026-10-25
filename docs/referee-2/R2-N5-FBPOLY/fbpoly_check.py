@@ -156,10 +156,10 @@ def check_run(g, o, A, fbs, st, name):
                 while v not in T and v != u and v not in play: play.append(v); v = S.fh[v]
                 if v == u or (v not in T):
                     st.c["EXIT_kind_loop"] += 1; continue
-                e = v; good += 1; st.c[f"EXIT_kind_{'ct' if e == c else 'o'}"] += 1
+                e = v; good += 1; st.c[f"EXIT_kind_{'o' if e == o else 'ct'}"] += 1
                 pu = [u] + play + [e]
                 if len(set(pu)) != len(pu): st.bad(f"{name} EXIT p_u not simple at {k}")
-                Vs = Uh if e == c else Us - {c}
+                Vs = Us if c == o else (Uh if e == c else Us - {c})      # o = c_theta: G_U (packet (c)); fixed by succ. 11 after climb 4101
                 if any(w not in Vs for w in pu): st.bad(f"{name} EXIT p_u leaves its graph at {k}")
                 acc = (0, 0)
                 for w in play: acc = add(acc, kw[w])
