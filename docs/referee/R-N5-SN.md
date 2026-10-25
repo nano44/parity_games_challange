@@ -197,3 +197,58 @@ equal to n5.run; every game asserted in 𝒞^1O; phase key (λ_Ξ, τ), scope ru
 - exitr_cex_n16.pg (sha1 6971211e…; n5.py 10 / 0; Oink OK, strategies verified): 5 ε (H1), 2 leaves; 0 failures, excess 0.
 - Neither instance has an H1 ε-transition into a ¬H1 state, so SN-1 is unchanged: proved bound d_o + REL_run, the (d_o − 1) form OPEN. Verdicts
   unchanged.
+
+## §C. Comparison with REFEREE-2 (R2-N5-SN, referee-2 ddbecaf + §A 91d95e8, on trunk de655692); written 2026-10-25 04:11Z onward by date -u
+Read only after my report (59a886d1) and addendum (58dd6e86) were pushed, and after the Lead said R2-N5-SN exists (04:08Z).
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| WM transfer to (λ_Ξ, τ) | VALID | VALID | VALID (same reason: only τ_{k+1} = τ_k and S4a's arena optimum) |
+| OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2 | SIGNED | SIGN | SIGNED by both |
+| LEAVE | SIGNED WITH GAP SN-3 (wording) | SIGN ("r_s = ⊥ vacuous") | SIGNED by both; see C.2 |
+| ABS-COUNT | SIGNED WITH GAPS SN-1, SN-2 | SIGN WITH GAPS G-SN-1 (a), (b) | SIGNED by both in the repaired form; packet's d_o − 1 form CONJECTURE / OPEN |
+| WK | SIGNED | SIGN (N-SN-1) | SIGNED by both |
+| ABS-L | SIGNED (premise signed by both) | SIGN as CONDITIONAL, condition met on R29 | SIGNED by both; R29 has now LANDED (cf6801e), so the condition is met |
+No verdict differs. Neither referee found a counterexample.
+
+### C.2 Item by item
+- SN-1 = G-SN-1 (a), and SN-2 = G-SN-1 (b). We found the same gap independently, with the same mechanism and the same repaired statement:
+  - per fallback-free run, ε_{H1} ≤ d_o + REL_run, and ≤ (d_o − 1) + REL_run when the run's last state has H1;
+  - per phase, ε_{H1} ≤ d_o(f + 1) + f + REL.
+  The packet's form is a CONJECTURE with 0 counterexamples in both batches. REFEREE-2 ran 30,400 targeted climb runs; I ran 5 climbs
+  aimed at the H1-ε → ¬H1 event.
+- REFEREE-2's §A on epsseg_cex_n48 sharpens this. The packet's form holds there with EQUALITY (16 + 1 = 17). The mechanism G-SN-1 (a) fears
+  (σ̄(o) entering R so that N reaches d_o) does occur, at 25 → 26, but that step leaves the phase. So it is a real mechanism, not yet seen
+  inside a phase. I accept this. My addendum saw excess 0 on the same file without locating the phase-exit step. The repair direction is
+  REFEREE-2's: show that inside a phase the state after an H1 ε-transition again has an exit in F.
+- SN-3 (LEAVE, r_s = ⊥): REFEREE-2 reads the case as vacuous, as the packet does. The statement also asserts that a relevant change EXISTS
+  on q's path, and for r_s = ⊥ that half needs its own one-line argument (my §5). With it the statement is true in both readings, so this
+  is wording only. I keep it as an optional fixes-file line.
+- N-SN-1 (WK: y ⊕ strictly monotone between W(z) and W(a)): I did not raise it. My §7 route compares the ⊕-values directly:
+  - at k′, y ⊕ W(a) = W_{k′}(y) ▷ y ⊕ W(z) (Bellman, and z is not fully optimal);
+  - at k′ + 1 both ⊕-values are unchanged, because W is unchanged at a and z.
+  So it needs only the Bellman form W(y) ⊵ y ⊕ W(x) at an arena optimum (R24 G-TB-1 closure), not monotonicity of y ⊕.
+  REFEREE-2's argument that y lies on neither W-path is also correct, and it justifies the packet's own wording. Accepted as a wording line.
+  Either route closes it.
+- Data agree where they overlap:
+  - every ε-transition is H1 (REFEREE-2 725 over 3 starts; me 327 at the canonical start), with 0 at fallbacks;
+  - ABS-L is vacuous (583 intervals vs my 377 windows; 0 θ-changes above L);
+  - WK is vacuous (52 vs 49 wakes; the hypothesis is never met);
+  - there is no ¬H1 ε-transition anywhere, so OR (c)'s ¬H1 branch rests on the proof.
+  REFEREE-2's climbs give much more R-STICK coverage after a prefix (39,461 crossings vs my 89 in the library). That closes the thin spot
+  I named.
+
+### C.3 Joint gap map (one fixes-file line per row)
+| row | REFEREE | REFEREE-2 | status | fixes-file line |
+| --- | --- | --- | --- | --- |
+| 1 | SN-1 | G-SN-1 (a) | proof gap; repaired form proved | §6: "per fallback-free run ε_{H1} ≤ d_o + REL_run, and ≤ (d_o − 1) + REL_run if the run's last state has H1 (proved); the unconditional (d_o − 1) form is a CONJECTURE (0 counterexamples; tight on epsseg_cex_n48, where N reaches d_o only at the phase exit 25 → 26)" |
+| 2 | SN-2 | G-SN-1 (b) | statement gap; repaired | §6 per phase: "ε_{H1} ≤ d_o(f + 1) + f + REL (the + f covers ε-transitions at fallback transitions; 0 seen)" |
+| 3 | — | N-SN-1 | wording | §7: "y lies on neither W-path of a, z (y ∈ R reaches o; z's play cannot pass y before o; after o only on o's W-cycle, below c_w), so y ⊕ is strictly monotone there; alternatively compare the ⊕-values directly via Bellman (R24 G-TB-1)" |
+| 4 | SN-3 | (reads as vacuous) | wording, optional | §5: "if r_s = ⊥, a relevant change on q's path still exists: an Even p on q's old route before o switches; it precedes λ(q) = c_θ ∈ F_s, and λ(p) ≠ p" |
+| 5 | (§8) | (§8) | condition met | §8: "ABS-L's premise NL / CLS1 is RESULTS R29 (landed cf6801e)": drop CONDITIONAL |
+
+### C.4 Joint label (D18/L40)
+- PROVED (L-NEW successor 13; REFEREE and REFEREE-2, Opus 5.5, D15), pending CHECKER, on 𝒞^1O inside a (λ_Ξ, τ) phase: OR, TC-SPLIT, R-STICK,
+  SN-PREFIX, H3H2, LEAVE, WK, ABS-COUNT in the repaired form (row 1-2), ABS-L (on R29).
+- CONJECTURE: ABS-COUNT's (d_o − 1) form. OPEN: REL per phase, X_SN, K per phase, G-N5-TIME.
