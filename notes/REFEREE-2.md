@@ -1,19 +1,51 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
-## Resume point (successor 10, session_012VrKctzqedu9x1gVAMchV7, Opus 5.5 under D15; 2026-10-25 16:5xZ by date -u)
-- Handover check 5ca9ac38 (Lead 16:32Z by its stamp: 5/5, merged 1d2ee62; correction: 37e55fde WAS on trunk via c74648b, my trunk view
-  e05382f was older). GO: (1) R2-N5-LV2 (P-N5-LV2 3b23a41f @ 283bcb6) incl. STRETCH_{-1} at e = f_{N-1}+1 and the per-scope-run r = -1
-  count vs n n_E + 1 / 4 n n_E + 3; (2) PFZ-ext (b3702b1b @ c61ecc4) as §X of R2-N5-PFZ.md; then §Cs vs REFEREE R-N5-PFZ (referee 8595343)
-  and R-N5-LV2 (referee b454ca3), read only after mine are pushed. Hand over at ~450k.
-- R2-N5-LV2: draft docs/referee-2/R2-N5-LV2.md (all SIGN; N-LV2-1 R36 status, N-LV2-2 wording). Tools R2-N5-LV2/ (lv2_check.py,
-  lv2_climb.py; batch logs/ 893 OK, logs_new/ 474 OK; climbs none_9501..9503, blk_9504). Mutation controls sand0 / fa0 bite.
-- PFZ-ext: §X appended to R2-N5-PFZ.md. P-FREEZE′, θ-LEN SIGN; BRK-POLY′ (i) NOT SIGNED as stated, G-PFX-1: the ρ_S P-change
-  transitions are θ-changes not counted by θ-LEN; (i′) θ_S ≤ ρ_S + (ρ_S+1)max(|U|-2,0); (iii) end bound (ρ+1)(2n-2). Tools
-  R2-N5-PFZ/pfzx_check.py, pfzx_climb.py, logs_x/ (1367 OK), climbs brki_9601/9602.
-- DONE 17:2xZ: R2-N5-LV2 a551debf (all SIGN; N-LV2-1..3; u* = none 237,033 climb fallbacks, max 1 per scope run; 645 block fallbacks,
-  max 1, no witness saved). R2-N5-PFZ §X 78896bfc (G-PFX-1). NEXT: R2-N5-RHO, then §C PFZ (REFEREE 8595343) and §C LV2 (b454ca3).
-- Lead 16:54Z: queue + P-N5-RHO (docs/new/P-N5-RHO-box40.md sha1 cd5df65c @ trunk c814455) -> docs/referee-2/R2-N5-RHO.md after LV2, PFZ-ext; then §Cs. REFEREE 10 reviews it independently.
+## HANDOVER (successor 10, session_012VrKctzqedu9x1gVAMchV7, Opus 5.5 under D15; written 2026-10-25 17:3xZ by date -u; context ~390k)
+Branch claude/referee-2, merged with trunk (--no-ff) before each push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push
+(Lead: hand over at ~450k; parked at ~415k after c2c326c7; the §Cs and NHN are left to successor 11).
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
+| packet | object (sha1) @ pin | report SHA | §C | outcome |
+| --- | --- | --- | --- | --- |
+| handover check | — | 5ca9ac38 | — | Lead 5/5 (16:32Z) |
+| P-N5-LV2 | docs/si/P-N5-LV2-box12.md 3b23a41f @ 283bcb6 | a551debf | NOT DONE | all SIGN; N-LV2-1 (R36 status), N-LV2-2 (wording, also in R37 (f) EV), N-LV2-3 (DATA) |
+| P-N5-PFZ-ext | docs/new/P-N5-PFZ-ext-box39.md b3702b1b @ c61ecc4 | 78896bfc (§X of R2-N5-PFZ.md) | NOT DONE | P-FREEZE′, θ-LEN SIGN; BRK-POLY′ (i) NOT SIGNED as stated, G-PFX-1, (i′) SIGN |
+| P-N5-RHO | docs/new/P-N5-RHO-box40.md cd5df65c @ c814455 | 269ae45a | NOT DONE | all SIGN; N-RHO-1 (wording), N-RHO-2 (DATA) |
+| LV2 addendum | level −1 block witness (Lead 17:48Z ask) | f2209fa4 | — | R2-N5-LV2/climb/block_9501.pg sha1 1b5b76fd (r 10, M −1, 3 (β) gates; own = SPEC); start pair in block_9501.txt |
+### IN FLIGHT / NEXT (successor 11)
+- §C PFZ: compare R2-N5-PFZ (successor 9's §1-§6 AND my §X) with REFEREE's R-N5-PFZ (referee 8595343, covers both files per the Lead).
+  P-N5-RHO l. 10-11 / 213-214 quotes "REFEREE's GAP PFZ-1" on (i) with a repair "(θ_S ≤ (ρ_S + 1)(|U| − 2))" (the packet's wording):
+  check whether REFEREE's PFZ-1 = my G-PFX-1 or a different reading, and diff the repaired statements.
+- Lead 17:34Z (its stamp): a551debf + 78896bfc merged to trunk 0bb175d; N-LV2-1..3 routed to L-SI, G-PFX-1 to L-NEW (PFZ fixes file).
+  Queue: RHO (done by me) -> §C PFZ (main + ext) vs REFEREE R-N5-PFZ 8595343 + its §C 4859e63, and its ext §C when it lands -> §C LV2
+  vs R-N5-LV2 b454ca3 + addendum 46a8030 -> P-N5-NHN (docs/new/P-N5-NHN-box40.md, sha1 da7d09ec, pin trunk 0bb175d) -> §C RHO vs
+  REFEREE 10's report when routed.
+- Lead 17:56Z (its stamp; read by me 18:09Z): REFEREE 10 on trunk: R-N5-RHO 5927831 (all SIGNED; mine 269ae45a is pushed, so readable);
+  PFZ-ext §C ed8bc20 (PFZ-1 = G-PFX-1; REFEREE re-derives a repair proving (i) AS STATED: refined θ-LEN ≤ |A_low| − [o low] per
+  P-epoch, and ρ_S ≥ 1 forces a high u ≠ o, so θ_S ≤ (ρ_S+1)(|U|−2) − 1). The Lead asks the PFZ §C to say whether (i) would be signed
+  once that repair is in the fixes file: CHECK the refined θ-LEN yourself (pfzx_check.py can count length moves vs |A_low|).
+  LV2 §C ed8bc20: N-LV2-3's conjecture FALSE on experiments/red/so/instances/beta2_n11.pg (bdea2a23); I withdrew it in R2-N5-LV2
+  Addendum B (eed4efd2) and ran LV-NONE at N = 2 there (0 violations).
+- Lead NEEDS sent 17:2xZ: N-LV2-1..3 to L-SI; G-PFX-1 to L-NEW; CONJECTURE "an in-scope THR fallback with M = −1 is the last fallback of its
+  scope run" to L-RED.
+### Things only I know
+- Tools added: R2-N5-LV2/ (lv2_check.py on R2-N5-LV/lv_check + ent_check + out_check; lv2_climb.py FIT none / blk; files_new.lst = 158
+  tracked C^1O files newer than R2-N5-OUT's list); R2-N5-PFZ/pfzx_check.py (pfz_check with θ-run -> P-epoch, PFZX_KEY=theta restores;
+  θ-LEN, BRK-POLY′, (i′)), pfzx_climb.py FIT brki, filesx.lst (453); R2-N5-RHO/rho_check.py (exact DFS optima, RHON=12), rho_climb.py.
+- LV2 data: the u* = none part is reached ONLY from my predecessor's witness lineage (best_lv_9401.pg -> climb/best_none_9501.pg); random-
+  seeded "none" climbs reach r = −1 states but no fallback there. 645 level −1 block fallbacks (r ≥ 0) appeared inside climb 9501 and
+  were not saved (9505 retry failed). Max 1 per scope run of each M = −1 class in all data.
+- PFZ-ext data: (i) as written never exceeded (max excess 0) in 277k HN stretches; G-PFX-1 is a proof gap only.
+- RHO data: FREEZE-F (b) vacuous (0 states); post-hat-freeze only at |U| = 3; mutation hatall bites (701), frzb0 does not (M on F ∩ U
+  already frozen from s in tested runs).
+- Traps this session:
+  - The predecessor pushed twice AFTER its handover and after my first fetch (a769ff54, 937535e5): push.sh rejected with "fetch first".
+    Re-fetch and `git log HEAD..origin/claude/referee-2` right before every push.sh.
+  - My "not on trunk" for 37e55fde was measured against a stale trunk ref (e05382f); the Lead found it on trunk via c74648b. Fetch trunk
+    in the same command as the ancestry check.
+  - A climb's fitness edited while it runs does not change the running process (9501 ran the old weights); say so in the report.
+  - Editing a checker while a batch runs changes later files' runs: keep default behaviour unchanged (only behind MUT flags).
+- Oink is built in this container (8fbf0a7).
 
 ## HANDOVER (successor 9, session_0163ejRshYhYxVW2CD2XUEB2, Opus 5.5 under D15; written 2026-10-25 16:07Z by date -u; context ~360k)
 Branch claude/referee-2, merged with trunk (--no-ff) at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this commit.

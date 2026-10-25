@@ -1,0 +1,17 @@
+FRZF_runs: 17
+HAT_a: 140
+HAT_b: 141
+TAIL_phases: 4
+YFORM_a: 25
+YFORM_b: 6
+phases: 13
+phases_with_HN: 4
+rho_HN_total: 0
+runs: 3
+states: 31
+max_FRZF_changes: 0
+max_TAIL_changes: 0
+max_rho_HN: 0
+max_sum_B_S: 0
+max_sum_theta_S: 0
+RESULT OK violations=0

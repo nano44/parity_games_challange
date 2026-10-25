@@ -111,3 +111,56 @@ if a step needs it.
   Lead commits and sha1sum of each packet named. Also carried: stale container (fetch + rev-parse equality); `pkill -f` inside a
   compound command kills the shell (kill by pid from a separate command; re-grep edits after exit 144); grep trunk docs for every new
   lemma name before use (BF / FBF clashes); ReadNotifications after every push; push.sh output to a file, then `$?`.
+
+## Successor 20 (session_018pjn8Y8JRES3YuFDUCAJgM), written 2026-10-25 18:01Z (date -u)
+Predecessor: successor 19, session_011reTXakSJCcwLhC4i9ZpkB, parked at l-new 688c2d41 (handover). Trunk fetched again at 17:58Z,
+right before writing (lesson of successor 18).
+
+### 1. Branch, head, ahead/behind trunk
+- Branch claude/l-new. Container stale at 5961101a: `git fetch origin claude/l-new` (5961101a..688c2d41), `git checkout -B
+  claude/l-new origin/claude/l-new` → `git rev-parse HEAD origin/claude/l-new` both 688c2d41.
+- Trunk origin/claude/vibrant-johnson-nxvvxo (NOW l.15) head 19d707b4 ("Lead: merge referee (RHO, PFZ-ext §C, LV2 §C); log",
+  17:52:51Z). Before merging: `git rev-list --left-right --count HEAD...trunk` = **2 ahead / 151 behind**, merge-base ae05d83b
+  (trunk merged l-new up to the FB-CAP route commit, not the handover commit 688c2d41).
+- `git merge --no-ff` trunk (no conflicts, no rebase) → 9a86833d: 3 ahead / 0 behind; 4 ahead after this commit.
+
+### 2. Open work and the next step of each
+Nothing running (`ps aux`: no python / oink of mine). Oink NOT built (`tools/oink/build` absent): `scripts/setup_oink.sh` first.
+- **P-N5-PFZ + ext** (sha1 3c617e06… / b3702b1b…, re-measured on trunk). In: REFEREE R-N5-PFZ 8595343 (main §C 4859e63, §C-ext
+  ed8bc207 on trunk 19d707b4: PFZ-1 = G-PFX-1, repair proves (i)); REFEREE-2 R2-N5-PFZ 37e55fde (main, N-PFZ-1..3) + §X 78896bfc
+  (G-PFX-1; signs (i′)). **Missing: REFEREE-2's §C on PFZ (vs R-N5-PFZ)**; origin/claude/referee-2 head 5f6d5405 (17:23Z) has none.
+  Next: when the Lead relays it, write NEW docs/new/P-N5-PFZ-fixes-box39.md (does not exist; checked): repairs only, PFZ-1 repair in
+  full (ℓ(θ) = |P(θ)| + |Q ∩ A_low| inside a P-epoch; θ_S ≤ ρ + (ρ+1)(|U|−3) ≤ (ρ+1)(|U|−2)), PFZ-N1..N3, N-PFZ-1..3, G-PFX-1.
+- **P-N5-RHO** (sha1 cd5df65c…, pinned c8144551): REFEREE R-N5-RHO 59278313 ALL SIGNED (HN-POLY conditional as labelled; notes
+  RHO-N1..N3). REFEREE-2 10 RHO not yet on origin/claude/referee-2 ("RHO next"). Next: NEW RHO fixes file after both reports + §Cs.
+- **P-N5-NHN** (sha1 da7d09ec…, pinned 0bb175d): no report yet; referees after RHO. Next: NEW fixes file when relayed.
+- **Research (D18) after GO**, the Lead's order (17:48Z): (1) FB-CAP proof (docs/new/N5-FBCAP-route-box40.md): route switches inside
+  R̄ (κ-freeze on θ-runs, P-FREEZE with κ, F-FLAT analogue at Q fallbacks), Even vertices outside U, ¬H1 states, the c_θ-cycle
+  exception via CN-LAST (R38 (f)); first read L-RED's FB-CAP data (l-red 1b00610, experiments/red/frz/; L-RED head now 847795fe).
+  (2) Q-EPOCH and breaks in Q-runs (docs/new/N5-Q-box40.md §3-§4). (3) global f ↔ X loop (SCOPE-COUNT R38 (c), X-SN-PHASE R34 (f)).
+- Not routed: G-N1-LB.
+
+### 3. docs/GAPS.md rows I own (`git show trunk:docs/GAPS.md | grep -n L-NEW`)
+- **G-N5-TIME** (l.11): major; "L-NEW (L-LIT T22; referees later)"; **open**. Latest update 17:41Z: R42 LANDED (P-N5-NEB); R41
+  (P-N5-LV) 17:35Z. "Open: RW_S, θ_ph / ρ (lane P-N5-PFZ / RHO / NHN in review), Q states, scope runs per phase / X, S4a steps,
+  phases." CONJECTURES (DATA): FB-CAP (L-RED), INTO (L-SI).
+- **G-N1-LB** (l.10): minor; "L-NEW (optional; not routed)"; **open**.
+- **G-N5-TERM** (l.16): major; "L-NEW (L-COMP checks runs)"; **closed** (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, trunk docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D18 (DECISIONS l.332-333; INDEX l.32 **active**; Lead reading L40):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D14 (l.244-246; INDEX l.22 **active**; Lead reading L35):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D16 (l.299-300; INDEX l.28 **active**; Lead reading L38):
+   > Then keep working as I told you to
+
+### 5. One trap, and the check that prevents it
+- **Trap**: `pkill -f <pattern>` inside a compound command matches the calling shell itself and kills it (exit 144); it bit
+  successors 18 and 19 (19: after push.sh had finished, so the push state had to be re-checked).
+- **Check**: kill by pid only, from a separate command: `pgrep -f` / `ps aux`, confirm each pid with `ps -p <pid>` is the python
+  process, then `kill <pid>`; after any exit 144 re-run `git status` / `git log -1 origin/claude/l-new` before assuming anything.
+  Also carried: stale container (fetch + rev-parse equality); fetch trunk right before any status text; push.sh output to a file,
+  then `$?`; packets and cited fixes files frozen once sha1 reported (new text → new file); grep trunk docs for every new lemma
+  name. New this session: `rev` on a 15 kB GAPS line hung at 99% CPU (killed by pid); slice long lines with python instead.

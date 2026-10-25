@@ -1,0 +1,9 @@
+RECORD_phases_skipped_large_U: 6
+TAIL_phases: 1
+YFORM_a: 10
+YFORM_b: 2
+phases: 7
+runs: 3
+states: 12
+max_TAIL_changes: 0
+RESULT OK violations=0
