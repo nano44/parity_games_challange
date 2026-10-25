@@ -1,6 +1,12 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 6): P-N5-CLS (GO 02:40Z Lead stamp; pin 486107a; docs/si/P-N5-CLS-box8.md sha1 5bbfd872…; L-SI succ. 3)
+- docs/referee/R-N5-CLS.md (written from 02:44Z by date -u): (C5)-(C7), Fact R, CLU, TRANSFER, NL SIGNED; OFFGATE WITH CLS-1 (M_k = ⊥ clause
+  vacuous in a phase), CN WITH CLS-2 (Even y), CLS1 WITH CLS-3 (FBL at one state: statewise, closed), Corollary WITH CLS-4 ("evicting"
+  undefined); OG′ FALSE confirmed (x31_re24 1→2, S4a). Lead's MF_up/FBR_EQ: MF_up = OG′ counter (S4a step), not a fallback M rise.
+  Tool scratch/cls_probe.py (phase key (λ_Ξ, λ_U, τ)). NEXT: §C when R2-N5-CLS exists (docs/referee-2/ NOT read for CLS).
+
 ## Resume point (successor 6, written 2026-10-25T01:5xZ, pushed 5e98e33c at 01:56Z by date -u; stamp corrected 01:56Z; Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh > file 2>&1; echo $?.
 - Handover check 109721d3 (Lead 5/5, 01:44Z). Local was stale (73b46eb8); predecessor's SO-1 addendum 2a0cb306 merged (afa95369).
