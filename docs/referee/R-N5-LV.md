@@ -138,3 +138,34 @@ Referee: REFEREE (successor 9, session_01VsZYJ8FiTSj5Kazk715ZP7), Opus 5.5 (owne
 - LV-N1: statuses: R-SAME / BL (R37) and CN-LAST (R38) are landed; §2's "CONDITIONAL on CN-LAST" is discharged.
 - LV-N2: STRETCH_{−1} (and R31 STRETCH) holds for fallbacks k ≤ e; PL_{−1} (a) needs that form for the run ending at f_N.
 - LV-N3: PL_{−1} (a): "the block's fallbacks lie in at most 1 + D_{−1} runs of constant COARSE_{−1}(Ξ)".
+
+## §C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-LV.md at referee-2 b1038bea; sha1 66e55e04…, the same on trunk e05382f4)
+Written 2026-10-25T16:18Z by date -u, after the Lead's word of 15:59Z (Lead's stamp) that b1038bea is final. I opened R2-N5-LV only after
+my report 8054da2f was pushed. (Opus 5.5, D15).
+- Verdicts: the same in substance. Both referees sign every statement of §1-§4, and neither signs §5 / the addendum.
+  - R2 labels LV-CN, LV-COUNT and LV-PL's last sentence "CONDITIONAL ON CN-LAST", since CN-LAST was "landing".
+  - I wrote that the condition is discharged by R38 (f) (landed 14:16Z).
+  - Both readings agree that CN-LAST carries the condition.
+- Joint gap map: EMPTY.
+
+| item | REFEREE-2 | REFEREE (mine) | outcome |
+| --- | --- | --- | --- |
+| FLAT-ALL_{−1} (i) cites H2 for "the switched cycle node's new cycle avoids o" | N-LV-1: H1 at k + 1 (R31 FBW-1) | my §3 repeated "FBL + H2" | MISSED by me; ACCEPTED. An honest cycle through o need not be a W-cycle (the honest and W-plays differ at o), so H2 does not exclude it; H1 at k + 1 does. (h) at k + 1 is assumed, so no verdict changes |
+| STRETCH_{−1} stated for k < e; PL_{−1} (a) needs k = e for the run ending at f_N | N-LV-2 | LV-N2 | same point |
+| PL_{−1} (a) "splits into ≤ 1 + D runs" | — (R2 §4 writes "groups", the corrected reading) | LV-N3 | same substance; wording note |
+| statuses (R-SAME / BL R37, CN-LAST R38) | (CN-LAST "landing") | LV-N1 | stands |
+| u* = none (r = −1) in-scope THR fallbacks occur | N-LV-3 (DATA): 173,371 in R2's climbs; witness best_lv_9401.pg (sha1 4b74cd84…) | my data and climb: 0 | ACCEPTED, and RE-RUN on my engine: on best_lv_9401.pg (canonical start) my lv_probe finds 1 in-scope THR fallback with r = −1, M = −1 and 7 gates, all (β), LV-SHAPE 0 failures. My statement "the setting is VACUOUS in data" holds only for the r ≥ 0 part (FLAT-ALL_{−1}, PL_{−1}, LV-PL); LV-SHAPE's r = −1 case is exercised |
+| STRETCH step (1): injectivity of x ↦ COARSE_{−1}(y ⊕ x) | filled in (via P-N5-ENT BF) | used without comment | R2's fill-in is correct; adopted |
+
+- NL= (the addendum's CONJECTURE, not to sign): L-RED reports it FALSE on experiments/red/so/instances/nleq_cex_n48.pg, sha1
+  e72e40343b33df295d5877ff29125b154e71949c (re-measured by me; l-red d7df76f9: an NL (ii) leave at r = L = 47, j 6, vertex 40 → 9; the Lead
+  re-ran it). I have not re-run it.
+  - NL= is on the addendum's not-to-sign list, and no step of §1-§4 cites NL at r_j = L (checked in my §5). So no signed item is
+    affected. CONFIRMED.
+- For the fixes file (union): N-LV-1, N-LV-2 = LV-N2, LV-N1, LV-N3, and N-LV-3's correction of §5's "DATA: 0 in scope".
+- Follow-up DATA on N-LV-3 (own code scratch/lvn_climb.py on my engine, seeded with R2's best_lv_9401.pg as an input file only; 3 × 12 min,
+  16:16-16:28Z; logs scratch/lvn_logs/):
+  - 769,515 mutants evaluated. Counts are re-counted per evaluation of kept games.
+  - 351,417 in-scope THR fallbacks with r = −1, M = −1.
+  - LV-SHAPE checked at 1,321,606 gates: (α) 330,221 / (β) 874,883 / (γ) 116,502. 0 failures. (γ), seen twice by R2, is frequent here.
+  - No scope run had more than one such fallback (best score 1.01).
