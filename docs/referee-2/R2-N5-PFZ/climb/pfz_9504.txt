@@ -1,0 +1,24 @@
+climb FIT=pfz seed=9504 n=9 iterations=327172 improvements=3 best_fitness=610.0
+BEST-INSTANCE counters: {'FACT_A_states': 11, 'FBR_fallbacks': 2, 'PFZ_a_checks': 4, 'PFZ_b_runs': 9, 'RECORD_post_freeze_runs_U=2': 2, 'runs': 4, 'states': 11, 'theta_runs': 9}
+BEST-INSTANCE maxima: {'max_fallbacks_in_theta_run': 1}
+FACT_A_states: 3232094
+FBR_checks: 101584
+FBR_fallbacks: 271625
+NCA_identity_states: 310043
+PFZ_a_checks: 595681
+PFZ_b_runs: 2637756
+RECORD_post_freeze_runs_U=1: 61734
+RECORD_post_freeze_runs_U=2: 244688
+breaks: 0
+breaks_kind1: 0
+breaks_kind2_early: 0
+breaks_kind2_late: 0
+climb_evaluations: 318936
+post_freeze_transitions: 18421
+runs: 1275744
+states: 3232094
+theta_runs: 2637756
+max_fallbacks_in_theta_run: 2
+max_fallbacks_minus_U_plus_1_U>=3: 0
+max_post_freeze_U_rises: 0
+RESULT OK violations=0
