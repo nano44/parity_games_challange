@@ -130,3 +130,47 @@ Signed: REFEREE-2 successor 7 (Opus 5.5, D15).
 - G-TOG-1's verdict and repair are unchanged. It is a proof gap whichever trace is used, and the stated bound holds by X-RUN's slack.
   Corrected DATA line for the record: "occurs on the SPEC trace (19 library files, e.g. b4_cyc6_0 0 → 1) and in my N5 (310 batch /
   246,038 climb)".
+
+## §C. Comparison with REFEREE (docs/referee/R-N5-TOG.md, referee fff6e62). REFEREE-2 successor 7, 2026-10-25 10:32Z (date -u)
+I opened R-N5-TOG.md only after my report (faabe716) and Addendum A (16d27d1c) were pushed. Signature (Opus 5.5, D15).
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| L-MONO, Z-COUNT, TOGGLE, TOGGLE-COUNT | SIGNED | SIGN | signed by both |
+| X-SN-PHASE | SIGNED WITH GAPS TOG-1, TOG-2 | SIGN WITH GAPS G-TOG-1 (N-TOG-1) | signed by both with the same two items |
+| RESTARTS | SIGNED | SIGN | signed by both |
+| §7 | not signed | not signed | — |
+No verdict differs. Neither referee has a counterexample.
+
+### C.2 Item by item
+- TOG-1 = G-TOG-1: the same accounting gap (X_SN counts the S4a crossing out of each SN prefix, which X-RUN′ (a) does not), found
+  independently. It is closed the same way, by the slack in X-RUN°'s per-run count: ≤ 13(d_o + 1)n³ − 1.
+  - REFEREE's fixes line spells out the per-run sum. I adopt it as the joint line.
+  - DATA, both referees: it occurs.
+    - REFEREE, SPEC trace: 26 library, 62 + 26 random.
+    - Me, SPEC trace via n5.py for attribution (Addendum A): 19 library files, e.g. b4_cyc6_0 0 → 1.
+    - Me, my own N5: 310 batch, 246,038 climb.
+    - The SPEC counts differ by file set (272 against 238 files).
+- TOG-2 = N-TOG-1: "P-N5-L2 §11" → "§7". REFEREE's line also names Lemma X-RUN° (fixes2 §2), which is better. Adopted.
+- REFEREE-only notes, accepted:
+  - (i) §7's DROP-LEN line is out of date: FALSE by droplen_cex_n12 (R-N5-L2 §8). It is not signed text.
+  - (ii) RESTARTS' fallback branch has only the lane's instances on the SPEC trace. My j5_n16 (own N5) and the fbrestart instances,
+    which reproduce in my N5, add the same branch.
+- Data agree: toggles far below T in both reports (max 6 / 3 in my climbs per phase); every toggle with Z unchanged moved σ(c) at an Even c.
+
+### C.3 Joint gap map (one fixes-file line per row)
+| row | REFEREE | REFEREE-2 | kind / status | fixes-file line |
+| --- | --- | --- | --- | --- |
+| 1 | TOG-1 | G-TOG-1 | accounting, closed by the line; occurs on the SPEC trace | REFEREE's TOG-1 line (§5, after "Summing:": "X_SN also counts the crossing from P(Q)'s last state … ≤ 13(d_o + 1)n³(t_Q + 1) crossings at SN states, and the stated bound holds") |
+| 2 | TOG-2 | N-TOG-1 | citation | §0 table and §5: "P-N5-L2 §11" → "P-N5-L2 §7 (X-RUN′; Lemma X-RUN° in P-N5-L2-fixes2 §2)" |
+
+### C.4 Joint label (D18/L40)
+- PROVED (L-NEW successor 15; REFEREE and REFEREE-2, Opus 5.5, D15), on 𝒞^1O inside a (λ_Ξ, τ) phase, pending CHECKER:
+  - L-MONO, Z-COUNT, TOGGLE, TOGGLE-COUNT, RESTARTS;
+  - X-SN-PHASE (rows 1-2; premise X-RUN′ / R32).
+- FALSE (DATA): DROP-LEN and its per-run form; "a fallback at H1 ∧ ¬H2 never takes τ(o) out of R".
+- OPEN: (L1), f ↔ X, K, G-N5-TIME.
+- Not a TARGET.md claim.
+
+Signed: REFEREE-2 successor 7 (Opus 5.5, D15).
