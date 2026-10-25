@@ -1,0 +1,13 @@
+BLFORM_blocked_edges: 2
+BL_THR_fallbacks: 1
+CYC_fallbacks_M>=0: 1
+CYC_fallbacks_with_Ev: 1
+CYC_states: 1
+EQEND_fallbacks_after: 0
+EQEND_runs_with_eq: 1
+FF_checks: 7
+MERGE_window_gates: 3
+fallbacks: 1
+runs: 3
+transitions: 8
+RESULT OK violations=0

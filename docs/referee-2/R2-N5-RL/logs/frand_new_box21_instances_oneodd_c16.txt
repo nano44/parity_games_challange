@@ -1,0 +1,6 @@
+BLFORM_blocked_edges: 6
+MERGE_window_gates: 5
+fallbacks: 5
+runs: 3
+transitions: 66
+RESULT OK violations=0
