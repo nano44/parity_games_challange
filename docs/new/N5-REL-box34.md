@@ -22,8 +22,8 @@ L-NEW successor 14 (Opus 5.5, D15/D18). Box 34 GO by the Lead 04:52Z (Lead's sta
    constant. On an interval where they differ, r = ℓ exactly.
 4. **Lemma BLOCK (PROVED).** On such an r = ℓ interval (ℓ ≥ 0), a vertex that leaves R at an S4a step never re-enters R in that
    interval. So in a fallback-free part of the interval each vertex crosses at most twice, and each exit is released at most once.
-5. **Theorem X-RUN (PROVED).** In a fallback-free run of a phase whose SN prefix has H1 at every state, the SN prefix has at most
-   C·(d_o + 1)·n² crossing transitions (C an absolute constant, §5). Hence REL_run, ε_{H1} per run and X_SN per run are polynomial,
+5. **Theorem X-RUN (PROVED).** In a fallback-free run of a phase whose SN prefix has H1 at every state, the SN prefix has O((d_o + 1)·n³)
+   crossing transitions (P-N5-FRZ §6: ≤ 13 (d_o + 1) n³). Hence REL_run, ε_{H1} per run and X_SN per run are polynomial,
    and per phase X ≤ (f + 1)·poly(n) + f on that part. This answers the brief's "bound X_SN or REL" PER FALLBACK-FREE RUN.
 6. **What stays open (OPEN, sharpened).** R28's f ≤ n_E(2n − 1)(X + 1) + X and item 5's X ≤ (f + 1)·poly(n) make f and X
    polynomially equivalent per phase. The loop of box 33 §4 is still open, but now it is localized (§6). Theorem FREEZE survives
@@ -132,8 +132,8 @@ Proof.
 
 ## 5. Theorem X-RUN (PROVED, L-NEW succ. 14)
 Statement. Let Q be a fallback-free run of a phase. Suppose its SN prefix P (Corollary SN-PREFIX) has H1 at every state. Then the
-crossing transitions inside P number at most (n − 1) + (2n + 2)·6(d_o + 1)·n + 2n(n + 1) + (d_o + 1)n·(n − 1). So they are
-O((d_o + 1) n²). In particular:
+crossing transitions inside P number O((d_o + 1) n³) (≤ 13 (d_o + 1) n³). Packet P-N5-FRZ §6 governs; there the ℓ = −1
+and ⊥ levels cost n³, and the count below is superseded. In particular:
 - REL_Q ≤ d_o times that (every release is in P: R-STICK);
 - ε_{H1}(Q) ≤ d_o + REL_Q (ABS-COUNT in its signed form; d_o − 1 + REL_Q when Q's last H1 ε-transition has O ≥ 0, ABS-COUNT′);
 - by SN-PREFIX, Q has at most n − 1 more crossings after P.
@@ -149,7 +149,7 @@ gives F(ℓ_0) := k_P + n − 1 (FREEZE). Induct downward on the level ℓ, with
   with θ = w before F(⊥) are short (< n − 1 transitions each). After F(⊥) there is no crossing (§4, ℓ = ⊥).
 - If some F(ℓ) never happens, the remaining states lie in ≤ 2d_o + 1 intervals of the level above, and the same counts apply. □
 - Reading against the brief. X_SN per fallback-free run (on its H1 part) and REL per run are now polynomial. Per phase they are
-  (f + 1)·O((d_o + 1)n²) and d_o·(f + 1)·O((d_o + 1)n²). The ¬H1 SN states (329 steps in the library, prefix_nonh_steps) are not
+  (f + 1)·O((d_o + 1)n³) and d_o·(f + 1)·O((d_o + 1)n³). The ¬H1 SN states (329 steps in the library, prefix_nonh_steps) are not
   covered: LEAVE and H3H2 need H1.
 - Phase-level corollary (READING, from R27 Corollary LP′ / R28 Corollary OX): on o-cyclic 𝒞^1O with H1 on every SN prefix, a phase
   makes poly(n)·(1 + f + K) transitions. Here f is the number of fallbacks of the phase and K the number of wakes.
