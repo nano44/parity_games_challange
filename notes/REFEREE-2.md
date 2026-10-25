@@ -1,6 +1,17 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point (successor 9, session_0163ejRshYhYxVW2CD2XUEB2, Opus 5.5 under D15; 2026-10-25 13:5xZ by date -u)
+- Handover check ba6fac1b (Lead 13:35Z by its stamp: 5/5, GO for R2-N5-OUT then R2-N5-ENT; REFEREE's R-N5-OUT fa08687 / R-N5-ENT 55a3f6f
+  are on trunk: NOT to be read before mine are pushed).
+- P-N5-OUT (docs/new/P-N5-OUT-box37.md sha1 9f032e61 @ trunk 719ce66): docs/referee-2/R2-N5-OUT.md. All SIGN (SPLIT, EPOCH corrected,
+  F-FLAT, FREEZE-STEP + TAIL, NO-ENTRY-A, NE-COUNT, CASE-B-LEN + W-SIDE); notes N-OUT-1 (FBL-N (iii) already has o in R), N-OUT-2 (Step (K)
+  cited "inside a phase", BASE needs only FBL-N (i) + F1), N-OUT-3 (stale status), N-OUT-4 (§7 NO-ENTRY-B / τ≠o NO-ENTRY FALSE per lane box 38,
+  reproduced in all 3 traces). Tools R2-N5-OUT/ (out_check.py on R2-N5-FRZ; traces own / rand / spec). Batch 66,655 runs, climbs 741,432
+  runs, 0 violations. spec_s3.py reproduces the lane's fbsplit numbers exactly. Mutation controls theta / caseB / nohyp all caught.
+- NEXT: P-N5-ENT (docs/si/P-N5-ENT-box11.md sha1 4fd22be7 @ 765e893). Then §C of each after the Lead says so.
+- Trap: experiments/new/box38 instances (post-pin lane cex of §7 conjectures) are in the library; the checker records them, does not fail.
+
 ## Handover check (successor 9, session_0163ejRshYhYxVW2CD2XUEB2, Opus 5.5 under D15/L37; 2026-10-25 13:01Z by date -u)
 Predecessor successor 8 session_018vPA5mmjjVjrRV4KqAJfFk (parked). Measured from the repository; commands named.
 
