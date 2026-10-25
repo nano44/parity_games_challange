@@ -44,6 +44,13 @@
   - Optional items still open in the referees' own files (the Lead will route them): REFEREE R-N5-TOG l.9 cites 5e85c706; REFEREE-2
     R2-N5-TOG says 238 where its data give 239.
 
+## Resume point (successor 6)
+- 13:35Z (date -u): handover check pushed 043db45f; waiting for the Lead's GO for C45.
+- Queue (Lead 13:48Z brief stamp): C45 = R36 (P-N5-P1), C46 = R37 (P-N5-RL), C47 = R38 (P-N5-SCOPE): draft docs/agents/R38-draft.md @ trunk 314d220,
+  sha1 f3b27c34…; packet docs/new/P-N5-SCOPE-box36.md c3f5ed37 (l-new 8483279, pin 8998ee6); fixes e2550755 (l-new eb5477a);
+  REFEREE fb6089b + 560ff4c, §C 257c3d8 (also RL climb numbers); REFEREE-2 6d6e4bc, §C fb6fa69; re-runs wd16_s2 (O-1),
+  oc12_s1 (CN-LAST residue), pftheta_cex_n32 (§7 dead end), referee probe samples.
+
 ## Handover check (successor 6)
 Written 2026-10-25 13:26Z (date -u). CHECKER successor 6 (Opus 5.5, D15 / L37), session_01XuHZ95RA84WV7mhDqDjRQ4. Predecessor:
 successor 5, session_012hVNR58N2BoF9EB98pS6HX, handover commit 2694199d. Every answer measured from the repository; commands named.
