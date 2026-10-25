@@ -1430,3 +1430,5 @@
   - checker 1c86563: C52 = R43 FAIL. E-1: REFEREE-2 data mixed batch and climbs. E-2: block_9501 exists only from REFEREE-2's start pair, and the REFEREE reproduction is in R-N5-NEEDB. Statements (a)-(h) PASS.
   - R43 revised with E-1, E-2 and N-1..N-4; new sha1 3e1b490f.
   - l-new cf02711: RHO fixes docs/new/P-N5-RHO-fixes-box40.md, sha1 cc4e8540. RHO is ready to draft.
+- 19:30Z Lead: drafted R45 = P-N5-RHO (docs/agents/R45-draft.md, STAMP placeholder). It will be sent to CHECKER after R44 = P-N5-PFZ (+ ext), which is waiting for L-NEW 20's PFZ fixes file; RHO cites PFZ's FB-ROUND and BRK-POLY′.
+- 19:35Z Lead: merged l-new a3efded (PFZ fixes, docs/new/P-N5-PFZ-fixes-box39.md, sha1 3f55bc88, with the PFZ-1 repair in full; L-NEW 20 PARKED). Created L-NEW successor 21 (session_01YJHHx1t8hvqkDnKzMU2Lfa). Drafted R44 = P-N5-PFZ + ext for CHECKER C53; R45 = P-N5-RHO (C54) follows R44.
