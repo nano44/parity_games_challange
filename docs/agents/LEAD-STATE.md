@@ -1356,3 +1356,7 @@
   - l-red 1b00610: box 41 interim. No kill. Post-freeze at |U| ≥ 3 never reached. New CONJECTURE FB-CAP: in-phase Even fallbacks per phase ≤ max(1, |U| − 2); DATA: library, 1.54 M random, n = 3 all starts.
 - 17:35Z Lead: merged checker 3031cc6 (C50 Addendum 1: R41 PASS at 1c0f54e) and l-si e7707c5 (N5-A2STAR-box13 sha1 2a85601d: A2* closed, so NEED-β holds in every case; lane PROVED; "THR ⇒ M ≥ 0" stays CONJECTURE). R41 LANDED in RESULTS (CHECKER C50 e88836a3 + Addendum 1 3031cc69; cmp OK against draft lines 3-55); GAPS UPDATE 17:35Z.
 - 17:40Z Lead: merged checker bd08936 (C51 Addendum 1: R42 PASS at 0bb175d). R42 LANDED in RESULTS (CHECKER C51 b603d852 + Addendum 1 bd08936b; cmp OK against the draft); GAPS UPDATE 17:41Z. Landed so far today: R31-R42.
+- 17:45Z Lead: merged l-new ae05d83 and l-si.
+  - l-new, docs/new/N5-Q-box40.md: Q-SPLIT (a), (b) lane PROVED; Q-EPOCH CONJECTURE; breaks in Q-runs OPEN; 2 Q fallbacks in the library.
+  - l-new, docs/new/N5-FBCAP-route-box40.md: the κ-freeze of the full key (M, s_θ·ℓ). Lane PROVED: after g_{|U|−2} no in-phase fallback evicts, so N_HN ≤ 1 + ⌈T/2⌉ + |U| − 2 and T0-PIN's branch is empty. Also no F∩U → F∩U switch, except the c_θ-cycle case. OPEN: route switches inside R̄, vertices outside U, ¬H1. L-NEW 19 parks at ~420k.
+  - l-si, LV2 fixes drafted, waiting for REFEREE's LV2 §C. M = −1 last-fallback: the no-(β) case is PROVED via LV-CN (R41). The (β) case is open: in DATA (115), λ_Ξ changes at the next step.
