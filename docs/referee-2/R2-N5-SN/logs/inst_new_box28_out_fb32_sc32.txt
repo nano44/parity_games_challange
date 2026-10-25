@@ -1,0 +1,14 @@
+ABSC_runs: 4
+H3H2_states: 37
+OR_eps_H1: 11
+OR_eps_transitions: 11
+PREFIX_crossings_after: 0
+PREFIX_crossings_in_prefix: 14
+PREFIX_runs: 4
+TCS_theta_changes: 20
+phases: 3
+runs: 3
+transitions: 34
+max(eps_H1-REL_run-(d_o-1))+100: 97
+max_crossings_after_prefix: 0
+RESULT OK violations=0
