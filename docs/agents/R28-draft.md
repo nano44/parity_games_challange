@@ -1,4 +1,4 @@
-# Draft RESULTS R28 (Lead, 2026-10-25 02:20Z by date -u) — awaits CHECKER C37; lands in "## Results" after R27, before "## Dead ends"
+# Draft RESULTS R28 (Lead, 2026-10-25 02:20Z by date -u) — LANDED in RESULTS Results 02:28Z (CHECKER C37 f5c4672 PASS), after R27
 
 ### R28 [refereed-only] N5 on one-Odd-choice games: off crossings σ̄(o) never outruns Even (Lemma OE, with a local used-level freeze U-loc), so non-tame transitions, fallbacks and carries per phase are polynomial in crossings and wakes (Corollary OX) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C37.md, checker PENDING)
 - Object (packet P-N5-OE, pinned trunk 361d18c, unchanged during review): docs/new/P-N5-OE-box32.md, sha1
