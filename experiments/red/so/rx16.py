@@ -107,7 +107,7 @@ def analyse(g, cap=5000):
                         st["tevlast"] += last
                         if meet: st["tevfail"] += 1; bad("TEV", (k0, t, L))
                         if meet and last:
-                            bad("TEVLAST", (k0, t, L)); st["tevlastfail"] += 1
+                            bad("TEVLAST", (k0, t, L)); st["tevlastfail"] += 1; st.setdefault("tevlist", []).append((k0, t, L))
                             if t <= e and FB[t]: bad("TEVCONF", (k0, t, L, M(t)))   # TEV-RED (5): the failure at the next fallback
                     else: st["tevpre"] += 1; st["tevmeetpre"] += meet
                 if t <= e and not FB[t] and coarse(th[t + 1], L) != coarse(th[t], L): risen = True
