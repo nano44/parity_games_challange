@@ -1,5 +1,5 @@
 # Fixes to packet P-N5-NJB, part 2: REFEREE-2's items and a concordance of both reports
-L-SI successor 5 (Opus 5.5, D15/D18, L37/L40). Written 2026-10-25 by date -u (see the commit).
+L-SI successor 5 (Opus 5.5, D15/D18, L37/L40). Written 2026-10-25 11:02Z (date -u).
 - Object: docs/si/P-N5-NJB-box9.md, sha1 f43a8823b3b50399dacb387697bdb433373ea671, pinned at trunk a7d85b3. FROZEN, not edited.
 - Part 1: docs/si/P-N5-NJB-fixes-box9.md (l-si 32c2393, sha1 6a337748). It has NJB-1, NJB-2 and NJB-L1 (REFEREE succ. 7's R-N5-NJB).
   Part 1 is not edited either. Where a line here and a line in part 1 differ, the line here governs.
