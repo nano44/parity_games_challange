@@ -45,7 +45,8 @@ def analyse(g, s0, acc, name):
                 if rows[k]["fb"]: fb += 1
             bump(acc, "fallbacks", fb); mx(acc, "max_fb_in_run", fb, n, name, a, b, len(U))
             mx(acc, "max_lastP_minus_U", lastP - (len(U) - 1), n, name, a, b, lastP, len(U))
-            acc["_late"] = max(acc.get("_late", -10 ** 9), lastP - (len(U) - 1))
+            acc["_late"] = max(acc.get("_late", -10 ** 9), lastP - (len(U) - 1)); acc["_lastP"] = max(acc.get("_lastP", 0), lastP)
+            if len(U) >= 3: acc["_excess"] = max(acc.get("_excess", -10 ** 9), fb - (len(U) - 1))
             thc = sum(1 for k in range(a, b) if rows[k]["th"] != rows[k + 1]["th"]); mx(acc, "max_theta_changes_in_run", thc, n, name, a, b, len(U))
             if thc > len(U): bump(acc, "FAIL_THLEN"); print("THLEN", name, a, b, thc, len(U))
             bump(acc, "post_freeze_crossings", post_cross); bump(acc, "post_freeze_breaks", post_break)
