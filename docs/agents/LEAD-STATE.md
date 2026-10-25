@@ -1254,3 +1254,13 @@
 - 15:25Z Lead: merged l-si b6b8f85 (P-N5-ENT fixes, sha1 72d052b5: joint verdicts, N-ENT-1..3, R36 status), l-new b1439f5 (box 39 §12: P-FREEZE′ on P-epochs, θ-LEN, BRK-POLY′, residual ρ = P(θ)-changes; renames BF-RW, FB-ROUND, W-TIE) and checker eea5950 (C48 Addendum 2: R39 landed verbatim; C48 CLOSED). Drafted R40 (P-N5-ENT) → CHECKER C49. L-NEW 18: P-N5-PFZ = §11 + §12. L-SI 7: one packet, P-N5-LV2-box12 (LV4 + LV5).
 - 15:24Z Lead (date -u): CORRECTION. The "15:25Z" line above was written at 15:20Z. The R40 draft header is corrected to 15:20Z, so the draft sha1 is now 019100c7.
 - 15:29Z Lead: merged l-new c9f9caa (packet P-N5-PFZ, docs/new/P-N5-PFZ-box39.md, sha1 3c617e06: FB-ROUND, P-FREEZE (a)-(c), LEN-TAIL, NO-CROSS-A, RISE′ (re-proved from landed results only), BRK-POLY; no (P); post-freeze hypothesis exercised only for |U| = 1 in data) and l-si ed936af (packet P-N5-LV2, docs/si/P-N5-LV2-box12.md, sha1 3b23a41f: STALE-GATE, EV-G, ENT-X_{−1}, LV-PL′, SAND, FLAT-ALL_{−1}^{none}, LV-NONE, SCOPE-FB ≤ 4·n·n_E + 3 with conditions C-ENT / C-LV / C-PKT; N-LV-1/2 not inherited). Both are PINNED at this commit. Referee queues: REFEREE 9 NEB → PFZ → LV → LV2; REFEREE-2 9 LV (running) → PFZ → LV2.
+- 15:37Z Lead: merges and routing.
+  - Merged referee-2 b1038be (R2-N5-LV): LV-SHAPE, FLAT-ALL_{−1}, STRETCH_{−1}, PL_{−1}, LV-PL SIGN; LV-CN, LV-COUNT SIGN COND. CN-LAST; no gap.
+    - N-LV-1 and N-LV-2: wording.
+    - N-LV-3 (DATA): u* = none in-scope THR fallbacks with r = −1, M = −1 ARE reachable: 173,371 in climbs; LV-SHAPE holds at all 1,037,743 gates.
+    - Witness docs/referee-2/R2-N5-LV/climb/best_lv_9401.pg, sha1 4b74cd84. Lead re-run: one Odd choice vertex, n5 5/1, Oink zlk OK, strategies verified. The lane's scopefb.py on the 4 climb files: 0 failures, 1 r = −1 fallback from the canonical start, worst ratio 0.011.
+  - Merged l-new 1b6239f (companion packet docs/new/P-N5-PFZ-ext-box39.md, sha1 b3702b1b: P-FREEZE′, θ-LEN, BRK-POLY′). PINNED at this commit; it is one review unit with P-N5-PFZ.
+  - Merged l-si 0756713 (L-SI 7 PARKED at ~453k; it had first said 255k).
+  - Merged l-comp 4633d13 (box 7 COMPLETE: box7w n 5, 68,764,800 runs, 0 violations; K 0, S_o 1, E 1, K_W 2; box8 n 5 running ~10 h).
+  - Created L-SI successor 8 session_013kZp65x9TKU9AqPZdMYGpm.
+  - NOW: 16 parked rows archived to ROSTER-ARCHIVE (148 → 132 lines).
