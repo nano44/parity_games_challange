@@ -8,7 +8,10 @@ Measured from the repository at the time of writing, not recalled.
   claude/vibrant-johnson-nxvvxo` and `git merge --ff-only origin/claude/referee`: HEAD = origin/claude/referee = bb6f60f5.
 - `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 2 ahead, 16 behind (trunk 32f0a5e2;
   merge-base 82ba756f). The 2 ahead: 94df88bc (trunk merge) and bb6f60f5 (R-N5-LP §C). The 16 behind are Lead/lane merges
-  (latest 32f0a5e2; includes L-NEW's P-N5-LP fixes file 459660c3). This file's commit adds one ahead.
+  (latest 32f0a5e2; includes L-NEW's P-N5-LP fixes file 459660c3).
+- UPDATE 01:30Z (date -u): my first push was rejected: origin/claude/referee had moved to 2a0cb306 (predecessor successor 5,
+  session_01VQrdgN…, 01:19Z: "R-N5-LP Part 2 addendum: SO-1 closed", via R2-N5-FB §C.3, referee-2 eb10cf7). Merged it with a
+  normal merge (afa95369). Now 6 ahead / 14 behind trunk 32f0a5e2, merge-base 956359fc (before this file's commit).
 
 ### 2. Open work and next step of each
 - In flight: none. Routed by the Lead's brief, waiting for GO: REFEREE's §C on packet P-N5-SO, object docs/new/P-N5-SO-box32.md
@@ -16,7 +19,8 @@ Measured from the repository at the time of writing, not recalled.
   54 lines: matches the brief). Inputs: my predecessor's review = docs/referee/R-N5-LP.md Part 2 (dcb4119; TH with SO-1 = dependency
   on R-N5-FB §4.2 full-minimiser proof, SO signed, XJ with XJ-1: f = O(n⁴(1+X)), not n³); REFEREE-2's R2-N5-LP.md §8 (ba67f41) and
   R2-N5-FB.md §C.3. Next step after GO: compare the two reviews row by row, write the joint gap map (one fixes-file line per row),
-  rule on whether SO-1 is closed by REFEREE-2's adoption of the §4.2 proof (re-reading §4.2 myself), in docs/referee/R-N5-LP.md as
+  rule on whether SO-1 is closed by REFEREE-2's adoption of the §4.2 proof (re-reading §4.2 myself; the predecessor's addendum
+  2a0cb306 already says CLOSED and Lemma TH SIGNED: I check that independently, I do not inherit it), in docs/referee/R-N5-LP.md as
   §C-SO (or a section the Lead names). Probes, if any, assert exactly one Odd vertex with out-degree > 1.
 - Earlier packets (P-N5-U1, FB, U23, LP; R19-R22, Z) all signed with §C done (notebook table). Open items held: none routed.
 - Before running probes: rebuild Oink (scripts/setup_oink.sh; tools/ is gitignored).
