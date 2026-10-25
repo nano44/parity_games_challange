@@ -1338,3 +1338,10 @@
   - CHECKER 7 restored C47-C49 main reports, which successor 6 had overwritten with addenda; history intact.
   - CHECKER's stamp "17:23Z" was about 10 min ahead.
   - R41 revised with E-1 and N-1.
+- 17:20Z Lead: merged l-si 6873ab1 (docs/si/N5-RISE-box13.md, sha1 3b8fea13).
+  - CONJECTURE GATE-ABOVE FALSE: 184 / 425 post-rise states with r > L have M_t ≤ L, e.g. rise_thin51_n40 (47aaf46e) k0 = 72, L = 33, t = 76, M = 32.
+  - FEED FALSE: tevlast11_n40, t = 22.
+  - Surviving CONJECTURE INTO (425 / 425). Lane PROVED: INTO ⇒ no fallback after a rise while r > L (via FBL, no (P)). Case (ii) (r ≤ L) OPEN.
+  - CONJECTURE NONE-LAST (DATA 4 / 4).
+  - Lead re-ran rise_thin51_n40 (line below).
+  - INTO and case (ii) go to L-RED 17.
