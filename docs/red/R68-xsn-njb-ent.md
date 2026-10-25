@@ -82,8 +82,14 @@ NO KILL. 0 failures of NJB, FLAT-ALL (iii), NO-RF-OLD, ENT and J-SEG, and of eve
   - From njb_reabs54_n32 and njb_reabs65_n48 (many fallbacks).
   - From so_k2_n32.
   - So step (ii) → (v) of the Lead's ENT-SHAPE target (a rise followed by any later fallback in the same scope run) was never reached.
-- CONJECTURE (L-RED, data): (RISE-LAST) inside a scope run, no COARSE_L(θ) rise (L = the level of an in-scope fallback k0) happens
-  before the next in-scope fallback after k0. RISE-LAST makes NJB's dirty intervals and ENT's setting empty, so it implies both.
+- CONJECTURE (L-RED, data): (RISE-LAST) no rise strictly between two consecutive in-scope fallbacks of a scope run.
+  - Precisely: for consecutive in-scope fallbacks k0 < k of one scope run S, with L := M_{k0}, there is no S4a step j, k0 < j < k, with
+    COARSE_L(θ_{j+1}) ≠ COARSE_L(θ_j). Any r is allowed.
+  - This is exactly the event sox3.py counts as rfb0: only when a next fallback k of S exists.
+  - Rises after the LAST in-scope fallback of a scope run are allowed, and they occur: L-SI's NORF data has 12 named + 33 library
+    rises after a fallback with r > L, and I find 6 with an r > L window. None of them is followed by another in-scope fallback.
+  - RISE-LAST makes NJB's dirty intervals and ENT's setting empty, so it implies both. Passed by the Lead to L-SI succ. 5 for a proof
+    attempt (09:34Z).
 
 ## 6b. MINSET target (P-N5-NJB, trunk a7d85b3, sha1 f43a8823; DATA)
 - Mn_t := {exits x ∈ F_t : COARSE_M(o ⊕ Ξ_t x) = COARSE_M(θ_t)} at the states f_1+1 … f_N of each level-M block (as minset.py).
