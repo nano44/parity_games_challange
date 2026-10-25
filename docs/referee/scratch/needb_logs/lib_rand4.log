@@ -1,0 +1,16 @@
+FAC_chk                        985
+INTO_states                    13
+NB_case_A1                     361
+NB_case_A2p                    151
+NB_case_B                      473
+NB_chk                         985
+OT_chk                         377
+OT_states                      75
+THR_fb_r_ge0                   985
+games                          253
+rises                          62
+runs_randstart                 1012
+scope_runs                     1106
+skip_not_c1o                   159
+FAILS 0
+exit 0
