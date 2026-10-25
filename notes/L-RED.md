@@ -12,7 +12,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - R62: (X) ≈ 0.86n on a random family; record X 65 at n 32.
   - R63: (U1-T) refuted, u1t_cex_n32 / u1t_own6_n32; (OB_R) holds.
   - R64: (C) ≤ 8, (CL) holds; J up to 10, j10_n24.
-  - R65: P-N5-U23 (box 35, this file's last section).
+  - R65 (box 35): P-N5-U23 not refuted (0 violations, checked as frozen by u23x.py). First U2 W-flat switches (u2flat73_n32: 73).
+    u23check.py gaps (U23 unchecked, (iii) at 2|R|, (ii) / corollaries untested). K_W ≈ 0.8n.
 - Tools: experiments/red/xing/ (xclimb, u1t, u23x, ccclimb, jclimb, fbref, levels, wavetrace, nhwhy, xseed).
   - Most import L-NEW / L-SI modules read-only.
   - jclimb needs LSI = a worktree of l-si 25d16cc8; L-SI's coarse/ tools are also on trunk 7666336.
@@ -49,6 +50,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     - xclimb.py targets: lemmas, nh, cyc, cycu, reent, reentu, fbref. Needs LNEW_BOX25 = a worktree of l-new 1322d958 or later.
     - fbref.py, levels.py, nhwhy.py.
   - L-NEW box 28 tools: run them from a worktree of l-new 2a195b3 (experiments/new/box28/fbre.py), from inside that directory.
+- BOX 35 DONE (GO 23:37Z, END ~00:47Z; R65). PARKED after it (last box, Lead 23:37Z). Nothing in flight.
 - BOX 34 DONE (GO 21:07Z, END ~23:30Z; docs/red/R64-carries-J.md):
   - (C) ≤ 8 (no growth); (CL) 0 violations (ccclimb.py).
   - J per phase raised from 3 to 10 (j10_n24), 8 at n 32 / 48 (jclimb.py with L-SI tame.py at l-si 25d16cc8; LSI env = an l-si

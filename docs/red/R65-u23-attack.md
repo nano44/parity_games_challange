@@ -36,4 +36,24 @@ instance below.
 - CASC-U3 (i)-(iii) hold on 64 non-event U23 switches. The corollaries hold, the closest at slack −1 / −2 on short stretches.
 
 ## 2. (3) K_W and E versus n
-PENDING: K_W climbs at n 16 / 24 / 48 (1,500 s each) end ~00:44Z (date -u). So far K_W per stretch: 15 (obr_n32 seed) → 25 (kw25_n32) at n 32; E per sub-run ≤ 2 everywhere (u3ev_n16).
+K_W climbs (u23x.py --climb kw, 1,500 s, 00:18-00:43Z), from seeds with K_W 0 (x31_cu16, x31_cu24, j8_n48), plus kw25_n32:
+
+| best (sha1) | n | max K_W in one stretch | stretch kind | N5 it. / fb (n5 = n5b) |
+| --- | --- | --- | --- | --- |
+| kw_n16 (187e4d0f…) | 16 | 12 | U23 | 12 / 0 |
+| kw_n24 (9e9d9afa…) | 24 | 20 | U23 | 20 / 0 |
+| kw25_n32 (607f1cc0…) | 32 | 25 | U2 | 29 / 1 |
+| kw_n48 (9b051da6…) | 48 | 40 | U23 | 40 / 0 |
+
+- All verified (Oink zlk OK, strategies verified, n5b agrees), and all have 0 violations.
+- Law: K_W ≈ 0.8n. In each best the whole run is ONE stretch in which every transition is a non-fallback W-change on R, so K_W
+  equals the run length. This is the same trivial linear shape as the random-family X climbs (R62 §2).
+- E per W-flat sub-run: max 2 (u3ev_n16), not raised by any climb.
+- CONJECTURE (data only): K_W = O(n) per stretch. (E) and (K_W) remain OPEN as stated in the packet §3.
+
+## 3. Verdict (labels per L40)
+- CASC-U2, CASC-U3 (i)-(iii) and both corollaries: NOT refuted. 0 violations on about 90 pinned instances and on every climb best,
+  with the packet checked exactly as frozen (u23x.py).
+- (2): U2 W-flat switches reached (up to 73 on u2flat73_n32), and CASC-U2 holds on them.
+- Checker gaps in u23check.py: U23 stretches unchecked, (iii) tested at 2|R|, (ii) and the corollaries untested. Reported, not edited.
+- K_W ≈ 0.8n (linear), E ≤ 2. G-N5-TIME stays OPEN. No kill.
