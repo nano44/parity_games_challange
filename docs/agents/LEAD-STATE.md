@@ -1398,3 +1398,10 @@
   - P-N5-FBPOLY, docs/new/P-N5-FBPOLY-box41.md, sha1 de244dcd, is PINNED at this commit. It is self-contained in κ form and queued for both referees.
   - Working doc N5-XOUT-box41 (sha1 b0583476): Lemma X-OUT, lane PROVED; crossings per OUT stretch ≤ (|U|−2)(f_S+1) + f_S.
   - READING: FB-POLY breaks R34's f ↔ X loop for X_SN. Still open: ¬H1 crossings outside SN prefixes, O, Theorem X assembly, Φ.
+- 18:54Z Lead: merged l-si 858c7dd (docs/si/N5-FBPHASE-box14.md, sha1 f7aaa624; L-SI 9, lane PROVED, unrefereed).
+  - Theorem FB-PHASE: in-phase Even fallbacks ≤ 2n², an independent route to the same kind of bound as L-NEW's FB-POLY.
+  - Corollary FX: X = O(d_o n⁶) per phase, every phase type (with R34 (f), R30 (c)).
+  - READING T-K: N5 on 𝒞^1O is polynomial ⇐ K-poly ∧ Lemma Φ.
+  - Lead ruling to avoid a duplicate review: FB-POLY (pinned) is the theorem the referees review. L-SI 9 packets only (1) Φ and (2) Corollary FX citing FB-POLY; FB-PHASE stays a lane cross-check.
+  - K (wakes) becomes the main open target.
+  - All of this is SUBCLASS 𝒞^1O; TARGET.md is general games.
