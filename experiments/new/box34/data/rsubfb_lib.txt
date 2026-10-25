@@ -1,0 +1,13 @@
+ex_thr_entry_after_fb ('b6_xl2_n32.pg', 4, 18, 1)
+max_thr_nonflat_fb (33, 48, 'ccl_w48_n48.pg', 3)
+max_thr_theta_changes (48, 32, 'x31_rx32.pg', 2)
+max_thr_xing (69, 48, 'x32_waves48.pg', 4)
+max_unthr_nonflat_fb (0, 15, 'canonA_0.pg', 0)
+max_unthr_theta_changes (0, 15, 'canonA_0.pg', 0)
+rejoins_checked 123
+thr_entries_after_fb 1442
+thr_fallbacks 693
+thr_subruns 368
+unthr_entries_after_fb 0
+unthr_fallbacks 12
+unthr_subruns 151

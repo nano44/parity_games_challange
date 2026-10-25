@@ -1,33 +1,21 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 13 PARKED after box 33, 2026-10-25 04:25Z by date -u)
-Successor 13 (Opus 5.5, D15/D18), session_01525mp4dnZd1PA2Uj25tPVY. Handover check 63999a28 (5/5). Box 33 GO 02:06Z to 04:25Z, ~530k.
-Nothing running (all box-33 climbs killed by pid at 03:36Z). Oink is built in this container only (tools/oink/build, gitignored).
+## Resume point (successor 14, box 34 IN PROGRESS; overwritten at handover)
+Successor 14 (Opus 5.5, D15/D18), session_014oGq98MdJvpgrVXNA7rNvA. Handover check ce400ff3 (5/5). Box 34 GO 04:52Z.
+Oink built in this container (tools/oink/build). Climbs running in experiments/new/box34/out (relclimb rr2, wsnclimb ws24/ws32).
 
-### DONE (all pushed with scripts/push.sh)
-- P-N5-OE: fixes docs/new/P-N5-OE-fixes-box32.md (7ad82a93, sha1 5f06276a…, FROZEN: cited by landed R28) + record
-  docs/new/P-N5-OE-fixes2-box32.md (72ee9220, §C rows).
-- docs/new/N5-K-box33.md §1-§14 (box 33 write-up): Lemma OR, WK, R-STICK, SN-PREFIX, (SN-ORDER = R19 (a) + H3H2), TC-SPLIT, ABS-L,
-  LEAVE, ABS-COUNT; dead ends EXIT-R, ORX, "ε ≤ (d_o − 1)(f + 1)" (L-RED exitr_cex_n48 / epsseg_cex_n48), H-RE (b6_xl_n48); K-chain family
-  (kchain.py; kchain4/10/32 in experiments/new/box33/instances, Oink-verified): K − 1 wakes in ONE phase, n = 11K + 14; REL data.
-- Packet P-N5-SN (docs/new/P-N5-SN-box33.md, pinned trunk 2c70ef6, sha1 340d4f29…): both referees SIGNED all (ABS-COUNT with gaps
-  SN-1/SN-2 = G-SN-1, repaired form proved; LEAVE SN-3 wording; WK N-SN-1; ABS-L premise R29 landed). Fixes file
-  docs/new/P-N5-SN-fixes-box33.md (§0-§9; last sha1 2c8d159a…): §9 = final joint map and labels.
-- Fixes §2b SIGNED by both referees (REFEREE-2 §B 4c8dcfd, REFEREE Addendum 2 2f465ff); fixes file final at §10, sha1 f242b011…,
-  the version R30 will cite: FROZEN from now on (new material goes in a new file): Lemma H1-DROP (in a phase,
-  H1 → ¬H1 forces P(θ_k) = ∅), Corollary H1-KEEP (an H1 ε-transition with O_k ≥ 0 keeps H1), Corollary ABS-COUNT′ (the d_o − 1 form for
-  runs whose last H1 ε-transition has O ≥ 0). Data: 317 H1 ε-transitions, all O ≥ 0; 6 in-phase H1 → ¬H1, all P(θ) = ∅.
+### DONE (box 34)
+- docs/new/N5-REL-box34.md: Corollary NL-MF; Fact 0 / Lemma ARENA (SN regime = value iteration in G_τ, withheld F→R̄ edges, gain ≤ r);
+  Theorem FREEZE (R20 P^c/CR on a window of n (h)-states with r ≤ ℓ; freeze lasts to the phase's last H2 state, through θ-, w-changes
+  and fallbacks); Corollary RATCHET; Lemma BLOCK; Theorem X-RUN (SN-prefix crossings per fallback-free run O((d_o+1)n³), H1 part; packet P-N5-FRZ);
+  Theorem SUB (R20 C/P^c/CR/XA on (w, r)-subruns); FBF FALSE with θ moving (1,442 entries after fallbacks; b6_xl2_n32). All lane PROVED,
+  unrefereed. Tools + data in experiments/new/box34 (data/ committed, out/ gitignored).
 
-### IN FLIGHT (others)
-- L-SI successor 3: non-circular θ-change bound per scope run; P-N5-CLS (CLS1) with both referees. L-RED 15 attacks SO / LP.
-
-### NEEDS / next (successor 14)
-- P-N5-SN is closed (fixes file frozen at §10, sha1 f242b011…; R30 in landing). Any later P-N5-SN material goes in a NEW file.
-- Research (Lead agrees): REL = exit releases at S4a steps. All seen are at w-changing transitions (13) or in scope runs before their
-  first fallback (31); LEAVE: each needs an F-ward relevant change of level ≥ r = lev(θ, w). Look for an (A)-type freeze at a scope
-  run's start. Also the residue of ABS-COUNT′: ε with O_k = −1 (needs E_k = ⊥; c_θ's own switch into R), ε at fallbacks: both never seen.
-- Not routed: OB_R, OB (CONJECTURES), G-N1-LB.
+### NEEDS / next
+- Packet for referees (FREEZE, RATCHET, BLOCK, X-RUN, SUB) when the Lead asks; never edit a packet once pinned.
+- Open core now: the loop f ↔ X (polynomially equivalent per phase); residue (L1) fallback evictions below r inside frozen r = ℓ
+  blocks + re-entry; (L2) ¬(h) interruptions; ¬H1 SN states. Ideas: count fallback evictions per frozen block via CLS1 levels.
 
 ## Things only I know (successor 13)
 - The crossing problem is an SN-regime problem: at S4a steps, outside c_w = c_θ, R only grows (R-STICK uses only W monotone, Ξ ⊴ W,
@@ -256,7 +244,7 @@ Nothing running (all box-33 climbs killed by pid at 03:36Z). Oink is built in th
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
 - (succ. 13, box 33) "ε_{H1} ≤ (d_o − 1)(f + 1) per phase": FALSE (L-RED fdd801b). experiments/red/so/instances/epsseg_cex_n48.pg (sha1
-  b4c7dcb0…): f = 0, 17 H1 ε-transitions, d_o 17 (exit 33 absorbed at 7, released at the S4a step 8 → 9, re-absorbed at 13). ABS-COUNT
+  b4c7dcb0…): f = 0, 17 H1 ε-transitions, d_o 17 (exit 33 absorbed at 7, released at the S4a step 8 → 9, re-absorbed at 14; correction 05:31Z, CHECKER C39). ABS-COUNT
   (with REL) holds with equality.
 - (succ. 13, box 33) CONJECTURE EXIT-R (ε form) and ORX: FALSE (L-RED box 37). experiments/red/so/instances/exitr_cex_n48.pg (sha1
   7a663df2…, n 48, o = 0): ε-transition 4 absorbs exit 13, Even 13 leaves R at the S4a step 5 → 6 (an (h) state before any fallback of

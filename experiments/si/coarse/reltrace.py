@@ -62,6 +62,11 @@ def scan_rel(g, name, verbose=False):
             if e["r"] >= 0 and e["M"] >= 0:
                 C["flat_chk"] += 1
                 if any(coarse(b(k + 1, y), e["M"]) != coarse(b(k, y), e["M"]) for y in Ev): C["flat_viol"] += 1; ex.append((name, "FB-FLAT", k))
+        for t, t2 in zip(fbs, fbs[1:]):              # (NJ-INT) consecutive fallbacks k0 < k, L = M_k0, r > L on (k0, k]: θ-changes above L
+            L = S[t]["M"]
+            if all(S[u]["r"] > L for u in range(t + 1, t2 + 1)):
+                C["int_chk"] += 1; up = sum(1 for u in range(t + 1, t2) if S[u]["lt"] > L)
+                if up: C["int_up"] += 1; ex.append((name, "NJ-INT", L, up))
         for M in sorted({S[t]["M"] for t in fbs if S[t]["M"] >= 0}):
             blk = [t for t in fbs if S[t]["M"] == M]; t0, t1 = blk[0], blk[-1]; N = len(blk)
             A = sum(1 for t in range(t0 + 1, t1) if S[t]["lt"] > M)
