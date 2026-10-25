@@ -1,0 +1,16 @@
+ABSC_runs: 9
+H3H2_states: 100
+LEAVE_checks(H1): 11
+OR_eps_H1: 15
+OR_eps_transitions: 15
+PREFIX_crossings_after: 0
+PREFIX_crossings_in_prefix: 36
+PREFIX_runs: 9
+TCS_theta_changes: 35
+leaves_S4a: 11
+phases: 7
+runs: 3
+transitions: 97
+max(eps_H1-REL_run-(d_o-1))+100: 97
+max_crossings_after_prefix: 0
+RESULT OK violations=0
