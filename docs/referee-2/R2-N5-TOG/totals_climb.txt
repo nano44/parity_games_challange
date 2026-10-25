@@ -1,0 +1,25 @@
+LMONO_next(c)_changes 1314465
+LMONO_transitions 2295437
+RST_restart_by_Even_fallback 80401
+RST_restart_by_toggle 750897
+RST_restart_from_H1_notH2 80401
+TOGGLE_kind Z_changed=False next(c)_changed=True 979032
+TOGGLE_kind Z_changed=True next(c)_changed=False 51112
+TOGGLE_kind Z_changed=True next(c)_changed=True 179793
+TOGGLE_toggles 1209937
+TOGGLE_toggles_at_fallbacks 57040
+XSN_crossings 1460118
+XSN_crossings_at_transition_leaving_SN_prefix 246038
+climb_evaluations 438498
+fallbacks 198579
+phases 1490612
+phases_c=o 10820
+runs 1753992
+transitions 4286312
+MAX max_X_SN_per_phase 6
+MAX max_Z_changes_per_phase 7
+MAX max_drops_per_phase 2
+MAX max_h_runs_per_phase 3
+MAX max_sigma(c)_changes_per_phase 4
+MAX max_toggles_per_phase 3
+RESULTS {'OK': 4}
