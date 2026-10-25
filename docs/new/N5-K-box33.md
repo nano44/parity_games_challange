@@ -291,6 +291,11 @@ Proof.
   Proof. Under H1 σ̄(o) ∈ F, so at most d_o − 1 exits are in R at any state. Each H1 ε-transition moves the current minimiser exit from F
   to R (Lemma OR (a)-(b)). The number of exits in R starts ≥ 0, ends ≤ d_o − 1, rises by ≥ 1 at each H1 ε-transition, and falls only when
   exits leave R, which inside the run happens only at S4a steps. □ (ε under ¬H1: 0 in all data; not covered.)
+- DEAD END (L-RED box 37 interim 2, l-red fdd801b): the per-phase form "ε_{H1} ≤ (d_o − 1)(f + 1)" is FALSE.
+  experiments/red/so/instances/epsseg_cex_n48.pg (sha1 b4c7dcb04fc2a156905fbe9ba2739e70e04c5c8c; n 48, o = 0, d_o 17; Lead re-run n5 26/1,
+  Oink OK verified, one Odd choice vertex): phase 7-24, f = 0, 17 ε-transitions under H1 > 16. Exit 33 absorbed at 7, leaves R at the S4a
+  step 8 → 9, re-absorbed at 13. ABS-COUNT holds with equality there (17 ≤ 16 + REL, REL = 1); LEAVE holds (1 leave, at (h)). Smaller
+  EXIT-R counterexample: exitr_cex_n16.pg (sha1 6971211e…; n 16, d_o 6; ε 5 ≤ 5 + 1). So REL is the whole question for ε.
 - So the form I pursue now: bound REL, the exit releases inside SN prefixes. In the data REL is tiny (library: 45 exit releases at S4a
   steps in all; exitr_cex_n48: 1).
 
