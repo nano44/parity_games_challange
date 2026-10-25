@@ -17,9 +17,11 @@ Branch claude/referee-2, merged with trunk (--no-ff) before pushes. REFEREE-2 ow
 - Queue from the Lead (18:27Z, 18:51Z, 19:18Z): P-N5-NEEDB (docs/si/P-N5-NEEDB-box13.md, sha1 7471aef3, pinned trunk e6ee6130), then
   P-N5-FX (docs/si/P-N5-FX-box14.md, sha1 aa227b0b on trunk, added at fe58fbab; crossings per phase, conditional on FBPOLY). Neither has been started. Independence:
   `ls docs/referee | grep -i 'needb\|N5-FX'` was empty at 20:1xZ.
-- PFZ fixes file (L-NEW 20, Lead 19:18Z: "I will route it to you"): diff its PFZ-1 repair text against R2-N5-PFZ §C C.2 (refined θ-LEN
-  ≤ |A_low| − [o ∈ A_low] per P-epoch; ρ_S ≥ 1 ⇒ some u ∈ A_high ∖ {o}; θ_S ≤ (ρ_S + 1)(|U| − 2) − 1). A fixes file that only states
-  (i′) + 2n − 2 is also signed (§X).
+- PFZ fixes diff: DONE, R2-N5-PFZ §C C.5, ea5cc217. Fixes §1 (3f55bc88) = C.2 in substance, so BRK-POLY′ (i)-(iii) are signed
+  unconditionally. This unblocks CHECKER C53 E-1 (R44).
+- RESUME POINT: P-N5-NEEDB, not started (nothing read beyond its title). Then P-N5-FX, then P-N5-NH-box42 (Lead 20:12Z:
+  docs/new/P-N5-NH-box42.md, sha1 93d19be8, pinned trunk 54ac72e6; report docs/referee-2/R2-N5-NH42.md; Theorem NH:
+  (NH′) ⇐ (X) ∧ NFB-O ∧ (E) ∧ (K_W)). That sha1 is the Lead's; re-measure it.
 - §C FBPOLY and §C PHI: when REFEREE's reports land (REFEREE 10 reviews FBPOLY; PHI's referee not named to me).
 - Lead NEEDS sent: route N-FBP-1/2 + the loop witness to L-NEW / L-RED.
 ### Things only I know
