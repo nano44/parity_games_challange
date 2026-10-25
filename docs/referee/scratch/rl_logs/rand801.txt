@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/user/parity_games_challange/docs/referee/scratch/rl_probe.py", line 344, in <module>
+    main(sys.argv[1:])
+    ~~~~^^^^^^^^^^^^^^
+  File "/home/user/parity_games_challange/docs/referee/scratch/rl_probe.py", line 330, in main
+    for i in range(N): run(rand_c1o(rng, rng.randint(lo, hi)), cnt, "rand%d_%d" % (seed, i), rng)
+                       ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/parity_games_challange/docs/referee/scratch/rl_probe.py", line 200, in run
+    check_state_blf(g, o, a, cnt, name, k); check_merge(g, o, a, cnt, name, k)
+                                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/parity_games_challange/docs/referee/scratch/rl_probe.py", line 131, in check_merge
+    m = next(v for v in zp if v in xs)
+StopIteration
+exit 1
