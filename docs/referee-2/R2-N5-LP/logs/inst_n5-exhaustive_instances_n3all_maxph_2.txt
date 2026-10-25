@@ -1,0 +1,17 @@
+C1O_phases: 1
+NU_transitions: 1
+U_checks: 1
+eps: 0
+own_cycle_node_switch_above_L: 1
+own_cycle_node_switches: 1
+phases: 1
+rises: 0
+runs: 3
+transitions: 3
+transitions_in_phase: 1
+max_K: 0
+max_NU_run: 1
+max_S_o: 0
+max_T_phase: 1
+max_rho: 0
+RESULT OK violations=0
