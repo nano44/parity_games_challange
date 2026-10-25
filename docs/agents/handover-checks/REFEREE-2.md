@@ -159,3 +159,11 @@ Measured from the repository at the time of writing (commands named), not recall
 - Independence hazard noticed this time: `git log -- docs/referee/` commit subjects carry REFEREE verdicts (ed8bc207 states its PFZ-ext
   §C result). For a packet whose own report is not yet pushed (NHN, NEEDB), list file names only (`ls docs/referee | grep`), never
   `git log` subjects on docs/referee/.
+
+### Correction after first push attempt (2026-10-25 18:2xZ by date -u)
+- First scripts/push.sh: VERIFY PASS, then "! [rejected] (fetch first)" (exit 1). `git fetch origin claude/referee-2`;
+  `git log HEAD..origin/claude/referee-2` -> 11126df8 (R2-N5-LV2 Addendum B: N-LV2-3's conjecture withdrawn, FALSE on L-RED
+  beta2_n11.pg; LV-NONE induction checked at N = 2, 0 violations) and eed4efd2 (merge trunk), both by successor 10, stamped
+  18:10Z, after its cd3b7cd0 handover and absent at my 18:11Z fetch. Merged --no-ff, no conflict.
+- So answer 1's head is now this merge, and answer 2's LV2 item changes: N-LV2-3's conjecture to L-RED is closed (withdrawn); the
+  §C LV2 must cover Addendum B too. The trap in answer 5 bit a third successor, exactly as described; the check caught it.
