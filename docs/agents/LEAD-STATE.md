@@ -1386,3 +1386,8 @@
   - FB-CAP stays OPEN at |U| ≥ 3.
   - DATA: 0 failures, but FREEZE-EXIT and THETA-AFTER are untested (the post-freeze regime is unreached).
   - Packet P-N5-FBPOLY approved.
+- 18:39Z Lead: merged l-si 6195e45 (docs/si/N5-LEDGER-box14.md, sha1 c54e8560, READING).
+  - Chain: #phases ≤ n(n−1) + d via Lemma Φ, which has NEVER been refereed. T_P = O(m n⁵(1 + X + K)) and f ≤ n_E(2n−1)(X+1) + X (R28).
+  - Weakest links: the f ↔ X loop (only at TYPE H (h) states), K (wakes; R26 (E), (K_W) open), and Φ unrefereed.
+  - The ledger crossed FB-POLY, which bounds f per phase directly. L-SI 9 is asked to recompute X with f bounded (X-RUN′, R33).
+  - Φ micro-packet approved (L-SI).
