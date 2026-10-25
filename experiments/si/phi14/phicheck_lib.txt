@@ -1,0 +1,3 @@
+{'files': 295, 'traces': 590, 'reward checks': 427644}
+{'max lambda changes/vertex /(n-1)': 0.5, 'max tau changes': 9, 'max phases/(n(n-1)+d)': 0.375}
+RESULT OK

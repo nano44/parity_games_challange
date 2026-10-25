@@ -18,6 +18,10 @@
 - 17:47Z: C50 CLOSED (Add. 1 3031cc69 PASS at 1c0f54e; Add. 2 R41 landed d0cc0ab8). C51 CLOSED (Add. 1 bd08936b PASS at 0bb175d; Add. 2 R42
   landed f090ec9e). Landed check = scratchpad landed.py <land> <draft commit> <checker sha> <Rnn> (lost with the container; ~30 lines).
   Queue (Lead 17:45Z): P-N5-PFZ (+ ext), P-N5-LV2, P-N5-RHO, P-N5-NHN after their §Cs. Idle until a draft sha1 arrives.
+- C52 = R43 = P-N5-LV2. 19:18Z docs/checker/C52.md FAIL at 0ea336ed (draft 4328022d): E-1 REFEREE-2 numbers are climb totals ("max 5 per
+  scope run"; batch max 37); E-2 block_9501's block fallback is only from R2's start pair (canonical: none), REFEREE's reproduction is in
+  R-N5-NEEDB 008ad8ab. Statements (a)-(h) PASS; Lead points (1), (2), (4) PASS. Re-runs EXACT (beta2 4/2, scopefb 2, lv2_probe @b454ca3
+  IDENTICAL, R2 8 logs IDENTICAL). Worktrees wt52 = 0ea336ed, wtR52 = b454ca3.
 - Commands: n5 = `python3 n5.py n5 <f> <sol>` + `check_sol2.py <f> <sol>` from experiments/new; REFEREE `python3 -I
   docs/referee/scratch/lv_probe.py <files>` from the root; REFEREE-2 `lv_check.py inst <f> 3 own|rand|spec` and `random N lo hi seed m`
   from docs/referee-2/R2-N5-LV/ with ../../../ paths.

@@ -23,8 +23,9 @@ Proof.
 ## 2. Corollary X-OUT-PHASE (PROVED, given the counts cited)
 Let N_OUT be the number of OUT stretches of the phase and f its in-phase Even fallbacks. Crossings with both ends OUT number
 ≤ (|U| − 2)(f + N_OUT) + f (sum of §1 over the stretches). N_OUT is polynomial:
-- τ(o) = o: no Q state (¬H2 everywhere), N_OUT = N_HN ≤ ⌊T/2⌋ + 1 (NE-COUNT (c), RESULTS R39 (f), LANDED), T ≤ n² + 2n − 1 (TOGGLE-COUNT,
-  RESULTS R34 (e), LANDED).
+- τ(o) = o: ¬H2 at every state (o's W-play is the self-loop), so there is no Q state and HN = H1; the HN stretches are the maximal H1
+  runs of the phase, separated by H1-toggles: N_OUT = N_HN ≤ ⌈T/2⌉ + 1, T ≤ n² + 2n − 1 (TOGGLE-COUNT, RESULTS R34 (e), LANDED). (Corrected
+  19:0xZ: the first version cited NE-COUNT (c), RESULTS R39 (f), which is signed for case A only; REFEREE's RHO-N2 on the same citation.)
 - τ(o) ≠ o, phase with an HN state: N_OUT = N_HN ≤ ⌈T/2⌉ + 2|U| − 3 (NHN-BOUND, P-N5-NHN §5; pinned 0bb175d, in review).
 - τ(o) ≠ o, phase with a Q state: every state is Q or ¬H1 (P-N5-NHN §6), so Q-runs are separated by H1-toggles: N_OUT ≤ ⌈T/2⌉ + 1.
 With FB-POLY (f ≤ 1 + (n − 2)(2n − 1)) this is polynomial in n.
@@ -46,3 +47,9 @@ With FB-POLY (f ≤ 1 + (n − 2)(2n − 1)) this is polynomial in n.
 - (L) experiments/new/box41/lib41.txt (253 𝒞^1O files, canonical start): 271 OUT stretches, 253 crossings, 108 fallbacks inside
   stretches; max X_S = 31 with f_S = 0 at |U| = 48 (experiments/red/so/instances/post31_n48.pg; bound 46); max f_S = 9 (b5_os_n40, X_S 16).
 - (R) `xout.py --rand 3000 6 20 4102 3`: 10,048 runs, 2,836 OUT stretches, 11 crossings, 2 fallbacks; max X_S 2.
+
+## 5. Q-EPOCH, resolved without breaks (PROVED given FB-POLY and Q-SPLIT; replaces CONJECTURE Q-EPOCH of docs/new/N5-Q-box40.md §3)
+- Q-EPOCH asked for EPOCH's two bounds on Q-runs: fallbacks f_Q and crossings X_Q per Q-run, polynomial in the breaks B_Q.
+- Both are now polynomial in n with no break count: f_Q ≤ f ≤ 1 + (n − 2)(2n − 1) (FB-POLY, P-N5-FBPOLY), and X_Q ≤ (|U| − 2)(f_Q + 1) + f_Q
+  (X-OUT, §1; a Q-run is an OUT stretch). The breaks question of N5-Q §4 (RISE′ Step 0 at Q fallbacks) is therefore not needed for f or X.
+  It stays OPEN as a structural question only.
