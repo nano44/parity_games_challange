@@ -1,4 +1,4 @@
-# Draft RESULTS R34 (Lead, 2026-10-25 10:48Z by date -u) (rev. 11:04Z: C43 E-1) — to CHECKER C43
+# Draft RESULTS R34 (Lead, 2026-10-25 10:48Z by date -u) (rev. 11:04Z: C43 E-1) — to CHECKER C43 — LANDED in RESULTS Results 11:18Z (CHECKER C43 70b0e9c + Addendum 36905e57 PASS), after R33
 
 ### R34 [refereed-only] N5 on one-Odd-choice games: H1-toggles per phase are polynomial (L-MONO, Z-COUNT, Theorem TOGGLE, TOGGLE-COUNT), so crossings in SN prefixes per phase are polynomial in f (X-SN-PHASE) and (h)-runs per phase are at most 1 + T + f (RESTARTS) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C43.md, checker PENDING)
 - Object (packet P-N5-TOG, added at l-new 3e45aed, pinned trunk d3daae1, unchanged during review): docs/new/P-N5-TOG-box35.md, sha1
