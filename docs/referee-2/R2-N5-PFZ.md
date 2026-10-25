@@ -196,3 +196,80 @@ I re-read every use of "θ constant" in P-N5-PFZ §1-§4 (successor 9 signed tho
 - Thin spots:
   - G-PFX-1 is a proof gap. The data neither refute (i) nor come close in a non-trivial way.
   - The post-freeze parts (LEN-TAIL′, NO-CROSS-A′, late kind-2 breaks) are vacuous beyond |U| ≤ 2, as for P-N5-PFZ (N-PFZ-3).
+
+## §C. Comparison with REFEREE on P-N5-PFZ and P-N5-PFZ-ext (REFEREE-2 successor 11, written 2026-10-25 18:3xZ-19:1xZ by date -u)
+Signature: (Opus 5.5, D15). Lead GO 18:27Z (Lead's stamp). Compared: docs/referee/R-N5-PFZ.md at trunk (sha1 00d15e28…, last change
+ed8bc207): REFEREE 9's report 85953433, its main §C 4859e63e, REFEREE 10's §C-ext ed8bc207. I opened it only after both of this lane's
+reports on these files (37e55fde, 78896bfc) were on the branch and on trunk. Objects unchanged: P-N5-PFZ sha1 3c617e06…, P-N5-PFZ-ext
+sha1 b3702b1b… (`sha1sum` on trunk 44838ae6).
+
+### C.1 Verdicts side by side
+| item | REFEREE-2 (§1-§6 succ. 9, §X succ. 10) | REFEREE (9 report, 10 §C-ext) | outcome |
+| --- | --- | --- | --- |
+| PFZ §1-§6 (FB-ROUND, P-FREEZE (a)-(c), LEN-TAIL, NO-CROSS-A, RISE′, BRK-POLY (i), (ii)) | all SIGN | all SIGNED | identical; main gap map EMPTY (as REFEREE's §C says) |
+| ext §1 P-FREEZE′ (LEN-TAIL′, NO-CROSS-A′) | SIGN | SIGNED | identical |
+| ext §2 θ-LEN | SIGN | SIGNED | identical |
+| ext §3 BRK-POLY′ (i) | NOT SIGNED as stated, gap G-PFX-1; SIGN (i′) | SIGNED WITH GAP PFZ-1, plus a referee repair | same gap: **G-PFX-1 = PFZ-1**. Now **SIGN (i) as stated, with REFEREE's repair as its proof** (C.2) |
+| ext §3 (ii) | first inequality and end bound SIGN; middle bound needs + ρ_S | SIGNED GIVEN (i) | with the repair the middle bound (ρ_S + 1)(\|U\|² + \|U\| − 3) stands: **SIGN (ii) as stated** |
+| ext §3 (iii) | first inequality SIGN; end bound (ρ_S + 1)(2n − 2) | SIGNED GIVEN (i) | with the repair the end bound (ρ_S + 1)(2n − 3) stands: **SIGN (iii) as stated** |
+| Consequence O(n³·K·(ρ_S + 1)) | SIGN | holds | identical |
+| PFZ §7, ext §4, §5 | not signed | not signed | identical |
+
+### C.2 The Lead's question: can BRK-POLY′ (i) be SIGNED under REFEREE's repair? YES (Opus 5.5, D15)
+I re-derived the repair from the packet's §0 definitions (P-N5-PFZ §0 l. 35-58), not from REFEREE's wording.
+- Setting. S is an HN stretch inside one phase, so c_θ and U := λ^{-1}(c_θ) are constant on S (P-N5-PFZ §0 l. 52). Ranks are distinct
+  (P-FREEZE (c)'s injectivity uses this), so V ∖ {c_θ} = V_{<c_θ} ⊔ V_{>c_θ}. Put A := U ∖ {c_θ}, A_low := A ∩ V_{<c_θ},
+  A_high := A ∩ V_{>c_θ}. If o = c_θ then θ = (c_θ, ∅, 0) on S, θ_S = ρ_S = 0, and (i) holds. Below, o ≠ c_θ.
+- Q at a state t := o's honest play up to its first visit of c_θ, c_θ excluded. By (V1) every vertex on o's honest play has cycle node
+  c_θ, so Q ⊆ A. Q is simple and contains o. ℓ(θ_t) = |Q| and P(θ_t) = Q ∩ V_{>c_θ} (V1: add v to P iff rank v > rank c_θ). Hence
+  ℓ = |P(θ_t)| + |Q ∩ A_low|.
+- Refined θ-LEN. In a P-epoch, P(θ) is fixed, so ℓ − |P| = |Q ∩ A_low| ∈ [[o ∈ A_low], |A_low|], which is |A_low| − [o ∈ A_low] + 1
+  values. θ-LEN's monotonicity (R15 (a) with c_θ and P fixed: each θ-change moves ℓ strictly in one direction) gives at most
+  |A_low| − [o ∈ A_low] θ-changes inside the epoch. Using |A_low| + |A_high| = |U| − 1, this bound is exactly |U| − 2 − |A_high ∖ {o}|,
+  so it implies θ-LEN.
+- The high vertex. If ρ_S ≥ 1, two states of S have different P(θ). Their symmetric difference contains some u. u ≠ o, because
+  o ∈ P(θ) iff rank o > rank c_θ, which is fixed on the phase. u lies on Q at one of the two states, so u ∈ A_high. So
+  |A_high ∖ {o}| ≥ 1, and every epoch that S meets has at most |U| − 3 θ-changes inside it. U is constant on the phase, so this bound
+  is uniform over the epochs.
+- Count. Cut S at its ρ_S P-changing transitions. That gives ≤ ρ_S + 1 segments, each inside one P-epoch. Every θ-change of S is
+  either one of the ρ_S cuts or lies inside a segment. So θ_S ≤ ρ_S + (ρ_S + 1)(|U| − 3) = (ρ_S + 1)(|U| − 2) − 1 when ρ_S ≥ 1
+  (then |U| ≥ 3, since o, c_θ, u are distinct). When ρ_S = 0, (i) is θ-LEN. This is (i) as stated, strictly when ρ_S ≥ 1.
+- (ii) and (iii) as stated follow by the algebra both referees checked: θ_S + (ρ_S + 1)(|U|² − 1) ≤ (ρ_S + 1)(|U|² + |U| − 3) and
+  θ_S + (ρ_S + 1)(|U| − 1) ≤ (ρ_S + 1)(2|U| − 3) ≤ (ρ_S + 1)(2n − 3).
+- My verdict: BRK-POLY′ (i)-(iii) SIGNED as stated, with the repair (refined θ-LEN + "ρ_S ≥ 1 forces u ∈ A_high ∖ {o}") as the proof
+  of (i). The repair must appear in the lane's PFZ fixes file. I will diff that text against C.2 when it is routed (statement and
+  proof steps; a fixes file that only states (i′) + 2n − 2 is also signed, by §X). G-PFX-1 is closed by this repair.
+  Until the fixes file lands, the jointly signed form is (i′) with (iii)'s end bound (ρ_S + 1)(2n − 2), as REFEREE 10 says.
+
+### C.3 Data on the repair (DATA, not proof; own code, env PFZR=1 in R2-N5-PFZ/pfzx_check.py; default behaviour unchanged)
+- New checks (rtlen(), and a block in brk()). At every state of every P-epoch with o ≠ c_θ, walk Q along the honest successor and
+  check four facts: Q reaches c_θ simply, Q ⊆ U ∖ {c_θ}, ℓ = |Q|, P = Q ∩ V_{>c_θ}. Also check that |Q ∩ A_low| lies in range. Per
+  epoch: in-epoch θ-changes ≤ |A_low| − [o ∈ A_low]. Per HN stretch with ρ_S ≥ 1: some u ∈ U ∖ {o, c_θ} above c_θ, and
+  θ_S ≤ (ρ_S + 1)(|U| − 2) − 1.
+- Batch (run_allr.sh, logs_r/, totals_r.txt): the §X batch (453 𝒞^1O files × own / rand / spec × 3 starts; random 64,000 runs),
+  1,367 / 1,367 logs "RESULT OK violations=0".
+  - Q walks 171,619, all four facts hold at every one. Epochs checked 121,809. In-epoch θ-changes: library 3,564, random 1,488.
+  - The refined bound is reached exactly in 35 epochs that have θ-changes (library own 8, rand 5, spec 8; random 14). So the refined
+    count is exercised, not vacuous.
+  - Slack θ-LEN − refined (|A_high ∖ {o}|) reaches 47.
+  - Stretches with ρ_S ≥ 1: 233 (library 222, max ρ_S 16; random 11). A high u ≠ o exists in every one. The repaired (i) is never
+    tight: max θ_S − ((ρ_S + 1)(|U| − 2) − 1) = −12 (library), −6 (random). So (i) as stated has slack ≥ 7 wherever ρ_S ≥ 1.
+- Mutation control: PFZR_MUT=bd lowers the refined bound by 1 on epochs with a θ-change. It is caught exactly at the tight epochs:
+  5 violations on box28/out/w24_thc24_unthrottled_fitness.pg (own, 5 tight), 4 on random seed 962 (own, 4 tight)
+  (logs_rmut/). I ran no mutation of the repaired (i): it is never within 6 of its bound, so a −1 mutation could not bite.
+- Climbs (run_climbsr.sh, FIT rtl, PFZR=1; climb/rtl_9701.txt, rtl_9702.txt; 1,500 s each, 18:44-19:09Z): they push toward an epoch
+  above the refined count, or a stretch above the repaired (i).
+  - Seeds: 9701 random n 6-10; 9702 my climb/best_brki_9602.pg (n 48).
+  - 212,320 evaluations, 849,280 runs, 0 violations.
+  - 2,014,643 epochs, 253,755 in-epoch θ-changes; the refined count was reached exactly 6,398 times and never exceeded (max excess 0).
+  - 190,838 stretches with ρ_S ≥ 1 (max ρ_S 4); the repaired (i) never came closer than −6.
+- Thin spot: no data reach the repaired (i) bound itself, so its last step (the "− 1" from the high u) is tested only through its
+  ingredients, the refined count and the existence of u. Both are tested non-vacuously.
+
+### C.4 Notes
+- REFEREE's PFZ-N1 (SPLIT (a) citation), PFZ-N2 (RISE′'s "no entry in [a, k)" stronger than needed) and PFZ-N3 (P-N5-NEB status):
+  I accept all three. They are compatible with my N-PFZ-1..3, and REFEREE's main §C maps them correctly.
+- Data agree in kind. Post-freeze occurs only at |U| ≤ 2 on my side (|U| = 1 on REFEREE's). Both sides find the post-freeze parts
+  vacuous beyond |U| ≤ 2. REFEREE's 599 in-epoch θ-changes vs my 5,052 (library + random): 0 failures of the refined count on both sides.
+- No other verdict of mine changes. Joint gap map for both files: G-PFX-1 = PFZ-1, CLOSED by the repair in C.2, subject to its
+  text in the fixes file. (Opus 5.5, D15)

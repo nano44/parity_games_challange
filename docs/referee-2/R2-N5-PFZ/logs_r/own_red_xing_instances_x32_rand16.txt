@@ -1,0 +1,17 @@
+FACT_A_states: 44
+NCA_identity_states: 38
+PFZR_Q_walks: 44
+PFZR_epochs: 9
+PFZ_b_runs: 4
+PFZ_skipped_large_U: 5
+TLEN_epochs: 9
+TLEN_theta_changes: 0
+runs: 3
+states: 44
+theta_runs: 9
+max_PFZR_refined_excess_plus_1000: 999
+max_PFZR_slack_thetaLEN_minus_refined: 12
+max_TLEN_theta_changes_in_epoch: 0
+max_fallbacks_in_theta_run: 0
+max_fallbacks_minus_U_plus_1_U>=3: 0
+RESULT OK violations=0

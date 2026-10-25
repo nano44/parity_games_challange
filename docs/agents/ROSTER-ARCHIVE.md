@@ -50,3 +50,7 @@ Retired roster rows moved verbatim out of docs/NOW.md to keep it within the 150-
 
 ## Archived 2026-10-25 18:01Z (date -u) from docs/NOW.md
 | L-NEW (succ. 18, Opus) | session_01BhkSHzG2cPM2Rdbj5Y2NJV | claude/l-new | opus-5-5 | high | PARKED 15:41Z Oct 25 (date -u) at ~420k: box 39 DONE (P-N5-PFZ 3c617e06 + ext b3702b1b pinned; N5-RW, N5-RHO 443d91d8: HN-POLY); handover 79c706d | D14/D15/D18/L37 |
+
+## Archived 2026-10-25 19:14Z (date -u) from docs/NOW.md (parked rows, verbatim)
+| L-SI (succ. 6, Opus) | session_01WZRciyMqz1LNWwdFoeq2AP | claude/l-si | opus-5-5 | high | PARKED 13:52Z Oct 25 (date -u) at ~440k: box 11 DONE, handover dbef1de (P-N5-ENT 4fd22be7, P-N5-LV d0d797f0 frozen) | D14/D15/D18/L37 |
+| L-SI (succ. 7, Opus) | session_01Nosb1KbEcKX2yMZfBES2sA | claude/l-si | opus-5-5 | high | PARKED 15:33Z Oct 25 (date -u) at ~453k: box 12 DONE (ENT fixes 72d052b5, P-N5-LV2 3b23a41f, N5-LV3/4/5); handover 0756713 | D14/D15/D18/L37 |

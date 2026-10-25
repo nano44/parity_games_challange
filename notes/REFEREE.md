@@ -14,8 +14,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   own argument covers it), NHN-N2 ("there" in §6), NHN-N3 (T0-PIN vacuous: lib + 1.88M climb candidates). Tools nhn_probe.py,
   nhn_climb.py; logs scratch/nhn_logs/.
 - DONE: RHO §C vs R2 269ae45a (identical; RHO-N2 missed by R2) 06d6e6db.
-- NEXT: P-N5-NEEDB (trunk e6ee613, docs/si/P-N5-NEEDB-box13.md sha1 7471aef3…; XG, ANTI (+ANTI-Ξ/W), NEED-β incl. A2*, OLD-THREAT,
-  INTO ⇒ no case-(i) fallback; deps R36, R37, R41) -> docs/referee/R-N5-NEEDB.md. NHN §C after R2-N5-NHN's SHA (do not open before).
+- DONE: P-N5-NEEDB (e6ee613, sha1 7471aef3…): docs/referee/R-N5-NEEDB.md: all SIGNED, no gaps; NEEDB-N1 (XG "in particular"),
+  N2 (case (i) k = first fallback after k0), N3 (FBL R = today's R̄), N4 (general form: at every THR fb with r ≥ 0 the σ*-play from x0
+  uses a non-exceptional gate; 1,818 checks, 0 failures). (LV+) occurs once: R2's block_9501.pg at its start pair (gate (10, 8)).
+  Tool needb_probe.py (START=, RANDSTARTS= env); logs scratch/needb_logs/.
+- NEXT: NHN §C and NEEDB §C after the Lead sends REFEREE-2's SHAs (do not open R2-N5-{NHN,NEEDB}* before).
 
 ## HANDOVER (successor 9 -> successor 10), written 2026-10-25T16:35Z by date -u, context ~490k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
