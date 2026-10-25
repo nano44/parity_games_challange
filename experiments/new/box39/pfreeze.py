@@ -5,16 +5,20 @@ U := λ^{-1}(c_θ) (phase-constant, asserted), M(z) := signed weight of P(Ξ(z))
   wt(v) = ±2^rank(v) if rank(v) > rank(c_θ) else 0;
 - PFZ: after the (|U| − 1)-th fallback of the run, P(Ξ z) is constant on U;
 - counts crossings (R changes), breaks (entry after an eviction, no entry between) after the freeze, and the max number of fallbacks
-  after which a P-change on U was still seen (vs |U| − 1). DATA only. Usage: pfreeze.py game.pg [game.state] ... | --rand N lo hi seed"""
+  after which a P-change on U was still seen (vs |U| − 1). DATA only. Env PFZ_KEY=P: P-epochs (P(θ) constant) instead of θ-runs; then also checks θ-changes per run ≤ |U| (FAIL_THLEN).
+Usage: pfreeze.py game.pg [game.state] ... | --rand N lo hi seed"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "box38"))
 from neb_run import *
+
+# PFZ_KEY=P: runs with P(θ) constant (P-epochs, §12) instead of θ constant (θ is E.key(Ξ(o)) = (reward, P-weight, ±length))
+KEY = (lambda th: th[:2]) if os.environ.get("PFZ_KEY") == "P" else (lambda th: th)
 
 def analyse(g, s0, acc, name):
     rows, o, E = trace(g, s0); N = len(rows); n = g.n; a = 0
     while a < N:
         b = a
-        while b + 1 < N and rows[b + 1]["ph"] == rows[a]["ph"] and rows[b + 1]["th"] == rows[a]["th"]: b += 1
+        while b + 1 < N and rows[b + 1]["ph"] == rows[a]["ph"] and KEY(rows[b + 1]["th"]) == KEY(rows[a]["th"]): b += 1
         if b > a:
             ct = rows[a]["Xi"][o][0]; U = [z for z in range(n) if rows[a]["Xi"][z][0] == ct]
             for k in range(a, b + 1): assert [z for z in range(n) if rows[k]["Xi"][z][0] == ct] == U
@@ -42,6 +46,8 @@ def analyse(g, s0, acc, name):
             bump(acc, "fallbacks", fb); mx(acc, "max_fb_in_run", fb, n, name, a, b, len(U))
             mx(acc, "max_lastP_minus_U", lastP - (len(U) - 1), n, name, a, b, lastP, len(U))
             acc["_late"] = max(acc.get("_late", -10 ** 9), lastP - (len(U) - 1))
+            thc = sum(1 for k in range(a, b) if rows[k]["th"] != rows[k + 1]["th"]); mx(acc, "max_theta_changes_in_run", thc, n, name, a, b, len(U))
+            if thc > len(U): bump(acc, "FAIL_THLEN"); print("THLEN", name, a, b, thc, len(U))
             bump(acc, "post_freeze_crossings", post_cross); bump(acc, "post_freeze_breaks", post_break)
             if post_cross: mx(acc, "ex_post_cross", post_cross, n, name, a, b)
         a = b + 1
