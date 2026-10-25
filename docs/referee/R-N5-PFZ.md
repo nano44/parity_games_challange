@@ -152,3 +152,24 @@ Referee: REFEREE (successor 9, session_01VsZYJ8FiTSj5Kazk715ZP7), Opus 5.5 (owne
   θ-run was found.
 - So P-FREEZE (c), LEN-TAIL, NO-CROSS-A and BRK-POLY's j ≥ |U| branch are untested beyond |U| = 1. They rest on their proofs, which
   I checked in full (§2-§4, §6).
+
+## §C. Comparison with REFEREE-2 on P-N5-PFZ (main packet only): docs/referee-2/R2-N5-PFZ.md at referee-2 37e55fde (sha1 b124ecc6…, the same on origin/claude/referee-2)
+Written 2026-10-25T16:33Z by date -u, after the Lead's word of 16:22Z (Lead's stamp) that 37e55fde is final. I opened R2-N5-PFZ only
+after my report 85953433 was pushed. REFEREE-2 9 did not review P-N5-PFZ-ext (b3702b1b). The ext items, including my GAP PFZ-1, wait
+for REFEREE-2 successor 10 and a later §C. (Opus 5.5, D15).
+- Verdicts on P-N5-PFZ §1-§6: identical. Both referees sign FB-ROUND, P-FREEZE (a)-(c), LEN-TAIL, NO-CROSS-A, RISE′, BRK-POLY (i), (ii),
+  and neither signs §7. No gap on either side for the main packet.
+- Joint gap map (main packet): EMPTY.
+
+| item | REFEREE-2 | REFEREE (mine) | outcome |
+| --- | --- | --- | --- |
+| (A)'s filled-in case "z ∈ P(Ξ next z)" | N-PFZ-1: the case cannot occur | my §1: it would put z on its own cycle below c_θ, so z ∉ P: the same conclusion (impossible) | agreed; wording note for the lane |
+| BRK-POLY window = last eviction before the entry (P-N5-NEB uses the first eviction after the previous entry) | N-PFZ-2 | my §6 checked this window and its disjointness, without a note | agreed; worth one line if the RESULTS entries are merged |
+| post-freeze regime "t > f_{|U|−1}" | N-PFZ-3: reached only with |U| ≤ 2 (|U| = 2 in 955,321 climb θ-runs); never with |U| ≥ 3 | |U| = 1 only in my data; my |U| ≥ 3 climb: best excess −1, never past | consistent; both rest P-FREEZE (c), LEN-TAIL, NO-CROSS-A and the late kind-2 branch on the proofs |
+| "the eviction is a fallback" cites SPLIT | — (R2: "SPLIT (a)" used for RISE′'s case split) | PFZ-N1 | citation note stands |
+| RISE′'s "no entry in [a, k)" stronger than needed | — (R2: the window convention makes it hold; checked) | PFZ-N2 | compatible; precision note stands |
+| P-N5-NEB "in review" status | — | PFZ-N3 | stands |
+
+- Data agree in kind (0 failures; FB-ROUND and P-FREEZE (a), (b) heavily exercised on both sides). R2 adds the |U| = 2 post-freeze
+  regime (0 post-freeze U-rises there); I add the P-epoch (ext) checks.
+- Pending: the ext §C (P-FREEZE′, θ-LEN, BRK-POLY′, GAP PFZ-1 and its repair) after REFEREE-2 10's report.
