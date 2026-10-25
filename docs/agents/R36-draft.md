@@ -1,4 +1,4 @@
-# Draft RESULTS R36 (Lead, 2026-10-25 13:10Z by date -u) (rev. 13:31Z: addendum 5c29d93d §3 cited; reading aligned) — to CHECKER C45
+# Draft RESULTS R36 (Lead, 2026-10-25 13:10Z by date -u) (rev. 13:31Z: addendum 5c29d93d §3 cited; reading aligned) — to CHECKER C45 — LANDED in RESULTS Results 13:52Z (CHECKER C45 3667fb1c PASS), after R35
 
 ### R36 [refereed-only] The one-player premise (P) holds: in a one-player game a positional Even strategy with no improving edge is optimal (Lemma P1, via a set/multiset bridge, Lemma B), which discharges R18's G-1OA-4 (2026-10-25) — a lemma used by N5's analysis (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C45.md, checker PENDING)
 - Object (packet P-N5-P1, added at l-si 6ba9a69, pinned trunk 48a8a4c, unchanged during review): docs/si/P-N5-P1-box10.md, sha1

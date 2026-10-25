@@ -12,7 +12,8 @@ docs/si/N5-STR-box11.md (sha1 c7b9c671, frozen), which states CONJECTURE NL= and
   - Ξ_s(z) against b_s(p) = π ⊕ θ_s.
   - π and o are low. So their COARSE_L classes are (c, P(Ξ_s z) ∩ H) and (c, P(θ_s) ∩ H), which coincide iff COARSE_L(θ_s) = COARSE_L(w),
     i.e. iff r_s ≤ L.
-  - If r_s > L: the top difference is at rank r_s > L and favours z ((C7) through o: o ⊕ Ξ(z) ⊵ w ▷ θ at level r_s). So (p, z) is a gate
+  - If r_s > L and z = e*: the top difference is at rank r_s > L and favours z ((C7) through o: o ⊕ Ξ(e*) = w ▷ θ at level r_s). (For
+    a general z of §1's kind this case is a READING: only COARSE_L and the rank-L bit of z are fixed.) So (p, z) is a gate
     into F_s of level r_s > L, which (A_s) forbids. Hence no such p lies in R_s at any state with r_s > L (and none enters, by NL (iii)).
   - If r_s = L: the classes agree and the rank-L bit favours z, so (p, z) is a gate into F_s of level exactly L. (A_s) allows it.
 - So once r has dropped to L (the straddle's [t1, k], N5-STR-box11 §1), a low-route vertex p of R with an edge to e* (or to a free vertex
