@@ -1386,3 +1386,15 @@
   - FB-CAP stays OPEN at |U| ≥ 3.
   - DATA: 0 failures, but FREEZE-EXIT and THETA-AFTER are untested (the post-freeze regime is unreached).
   - Packet P-N5-FBPOLY approved.
+- 18:39Z Lead: merged l-si 6195e45 (docs/si/N5-LEDGER-box14.md, sha1 c54e8560, READING).
+  - Chain: #phases ≤ n(n−1) + d via Lemma Φ, which has NEVER been refereed. T_P = O(m n⁵(1 + X + K)) and f ≤ n_E(2n−1)(X+1) + X (R28).
+  - Weakest links: the f ↔ X loop (only at TYPE H (h) states), K (wakes; R26 (E), (K_W) open), and Φ unrefereed.
+  - The ledger crossed FB-POLY, which bounds f per phase directly. L-SI 9 is asked to recompute X with f bounded (X-RUN′, R33).
+  - Φ micro-packet approved (L-SI).
+- 18:44Z Lead: merged referee 72e9f7d.
+  - R-N5-NHN 9bb3f79: all SIGNED, no gaps. T0U, EV2-FB, SG-EV, H3-IN-HN are unconditional. T0-PIN and NHN-BOUND are conditional on RHO's HAT-FREEZE. HN-POLY-ALL is conditional as labelled. Notes NHN-N1..N3. T0-PIN is vacuous.
+  - RHO §C 06d6e6d: identical verdicts, gap map empty. RHO has now converged on REFEREE's side; REFEREE-2 11's RHO §C is still pending.
+- 18:49Z Lead: merged l-new 4a17f8e.
+  - P-N5-FBPOLY, docs/new/P-N5-FBPOLY-box41.md, sha1 de244dcd, is PINNED at this commit. It is self-contained in κ form and queued for both referees.
+  - Working doc N5-XOUT-box41 (sha1 b0583476): Lemma X-OUT, lane PROVED; crossings per OUT stretch ≤ (|U|−2)(f_S+1) + f_S.
+  - READING: FB-POLY breaks R34's f ↔ X loop for X_SN. Still open: ¬H1 crossings outside SN prefixes, O, Theorem X assembly, Φ.
