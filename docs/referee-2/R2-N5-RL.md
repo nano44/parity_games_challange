@@ -1,4 +1,4 @@
-# [DRAFT: climbs pending] R2-N5-RL: second-referee check of packet P-N5-RL (L-SI box 10: BL-FORM, BL, CONF-MONO, FREE-FREEZE, EQ-END, MERGE, EV, EV+, TEV-RED). REFEREE-2 (successor 8), 2026-10-25 @@STAMP@@ (date -u)
+# R2-N5-RL: second-referee check of packet P-N5-RL (L-SI box 10: BL-FORM, BL, CONF-MONO, FREE-FREEZE, EQ-END, MERGE, EV, EV+, TEV-RED). REFEREE-2 (successor 8), 2026-10-25 12:35Z (drafts 592128a4, fa0273de) (date -u)
 Signature: (Opus 5.5, D15). Packet P-N5-RL (Lead 12:01Z). Object docs/si/P-N5-RL-box10.md, sha1 0a3c70cbf873b2e011a5a00be54d38926f7861f1.
 I checked it with `git show 2fb698d:docs/si/P-N5-RL-box10.md | sha1sum` and on my tree. The pin is trunk 2fb698d, an ancestor of my
 merged trunk 48a8a4c.
@@ -26,10 +26,10 @@ running-time bound, a TARGET.md claim or a step-4 pass. G-N5-TIME stays OPEN.
 | §5 MERGE | PROVED | SIGN | yes | N-RL-1 (wording): read "plays" in (c) as the paths up to the first visit of c; then "first common vertex" is a merge point of both, and the prefixes are disjoint |
 | §6 EV | CONDITIONAL on (P) | SIGN CONDITIONAL ON (P) | yes (via FREE-FREEZE; also ENT-SHAPE (4), signed in P-N5-NJB) | N-RL-2: "Ξ_k(z) = ρ ⊕ Ξ_k(q)" assumes q comes before c on z's play; in the other case (q on c's cycle after c) the conclusion still holds (§6.1). N-RL-3: "the top of A Δ B is even and in B" (Facts) is only true after EV gives A ⊆ B |
 | §6 EV+ | CONDITIONAL on (P) | SIGN CONDITIONAL ON (P) | yes | — |
-| §6 TEV-RED | CONDITIONAL on (P) | SIGN CONDITIONAL ON (P) WITH GAPS | yes | G-RL-1 (proof): "let e be the LAST Ev vertex on x_t's play" exists only if c's honest cycle at t avoids Ev. (1) needs f's whole play in F_{k0} (FREE-FREEZE's hypothesis) and (3) needs e before c. Neither is proved when c's cycle at t passes Ev. The case is not refuted: 0 occurrences in 8,771 batch states and @@CYCCLIMB@@ climb states. Fix: add "c's honest cycle at t lies in F_{k0}" as a hypothesis (the Consequence then needs it at t = k), or prove it |
+| §6 TEV-RED | CONDITIONAL on (P) | SIGN CONDITIONAL ON (P) WITH GAPS | yes | G-RL-2 (statement): (3) says "before e", but the proof shows "up to and including e", and e ∈ H is not excluded. My N5 reproduces L-RED 16's tevlast_cex_n40 (sha1 ff1e9cb4, on l-red, not on trunk): k0 = 3, L = 32, t = 7, e = 15 ∈ H, B_t ∖ A = {e}. That instance has one fallback, so it lies outside the ENT setting. But nothing in the setting excludes e ∈ H, so (3) as worded is unproved. (4)-(5) use only A ⊆ B_t ≠ A and survive. The Consequence's last bullet needs the same fix. G-RL-1 (proof): "let e be the LAST Ev vertex on x_t's play" exists only if c's honest cycle at t avoids Ev. (1) needs f's whole play in F_{k0} (FREE-FREEZE's hypothesis) and (3) needs e before c. Neither is proved when c's cycle at t passes Ev. The case is not refuted: 0 occurrences in 8,771 batch states and 851,022 climb states. Fix: add "c's honest cycle at t lies in F_{k0}" as a hypothesis (the Consequence then needs it at t = k), or prove it |
 | §7 | — | not signed (as briefed) | — | BL-X's FALSE status is the lane's data; not re-checked |
-No item is NOT SIGNED. No counterexample in 45,680 batch runs and @@CLIMBRUNS@@ climb runs. The ENT setting (§6's hypothesis) never
-occurred in my data either (0 batch, @@ENTCLIMB@@ climb), so EV, EV+ and TEV-RED rest on the proofs alone.
+No item is NOT SIGNED. No counterexample in 45,680 batch runs and 1,583,748 climb runs. The ENT setting (§6's hypothesis) never
+occurred in my data either (0 batch, 0 climb), so EV, EV+ and TEV-RED rest on the proofs alone.
 
 ## 1. BL-FORM and R-SAME: SIGN
 - R-SAME. P(π ⊕ a) = (π ∩ V_{>c}) ⊔ P(a), because P(θ), P(w) ⊆ {o} ∪ F are disjoint from routes ⊆ R (Lemma G under (h)). The
@@ -126,20 +126,38 @@ occurred in my data either (0 batch, @@ENTCLIMB@@ climb), so EV, EV+ and TEV-RED
 - DATA:
   - The CYC probe ran after every in-scope fallback with M ≥ 0, at every state of S up to the next fallback: c's cycle met Ev 0 times
     in 8,771 states.
-  - Its preconditions: P(θ_{k0}) = ∅ @@PREC1@@ times; c switched into R̄_{k0} at k0 @@PREC2@@ times.
+  - Its preconditions: P(θ_{k0}) = ∅ 0 (batch) / 507,929 (climbs; FIT cyc reaches it easily) times; c switched into R̄_{k0} at k0 0 (batch) / 0 (climbs) times.
   - The threat's play met Ev at 3,576 of those states, never only on the cycle.
-  - Climbs FIT cyc: @@CYCDATA@@.
+  - Climbs FIT cyc: 395,937 evaluations (1,583,748 runs), 0 violations; c's cycle never met Ev in 851,022 states; the second precondition (c switched into R̄_{k0}) was never reached; 0 ENT settings.
+
+### 6.3 L-RED 16's findings (Lead 12:27Z, re-run by the Lead; checked here with my own N5, tev_probe.py)
+- TEV-RED (3) "before e": as G-RL-2 above. My draft (592128a4) missed this: I checked (3) against its proof line, not its stated form. My N5 gives the same trace on tevlast_cex_n40: 11 iterations, 1 fallback, as the Lead's n5
+  run. Oink zlk matches my regions (2 / 2).
+- "No vertex leaves R in (k0, t] needs k0 to be the last fallback before t." The packet's EV, EV+ and TEV-RED quantify k0 < k as
+  CONSECUTIVE fallbacks of S, with t ∈ (k0, k]. So every transition in (k0, t) is an S4a step of S, and NL (ii) applies. The quantification
+  is right as written. A reading with an arbitrary earlier k0 would not be.
+- CONJECTURE TEV (§7, not signed) is FALSE by L-RED's two instances. That is the lane's data, re-run by the Lead and not by me, except for
+  tevlast_cex_n40: my N5's threat meets Ev at t = 7. My probe restricts k0 to the last fallback before t, so it does not reproduce
+  tev_cex_n40's any-earlier-k0 case.
 
 ## 7. Batch and climbs (DATA, my N5)
 - Batch: files.lst lists the 280 tracked experiments/**/*.pg on 𝒞^1O with n ≤ 64 (includes experiments/si/riselast/instances rl_a/b/c,
   experiments/si/coarse/instances/box9, cl9_rep_b, cl9_norf_a/b, x31_rx32, x31_lem_e24, elim24_p52), 3 starts × {det, --rand}. Random:
   4 × 10,000 games at n 4-14 and 2 × 2,000 at n 15-30. 566 logs, all RESULT OK, 0 violations; 45,680 runs, 94,886 transitions, 3,449
   fallbacks.
-- Climbs (rl_climb.py FIT cyc, 4 × 1,200 s; seeds 61-62 random, 63 from cl9_norf_a, 64 from rl_a): @@CLIMBS@@
+- Climbs (rl_climb.py FIT cyc, 4 × 1,200 s; seeds 61-62 random, 63 from cl9_norf_a, 64 from rl_a): 
+| seed | start | best n | best fitness | note |
+| --- | --- | --- | --- | --- |
+| 61 | random 8-14 | 11 | 208 | P(θ_{k0}) = ∅ at 4 fallbacks |
+| 62 | random 10-18 | 12 | 1,248 | P(θ_{k0}) = ∅ at 24 fallbacks |
+| 63 | cl9_norf_a | 32 | 80 | threat meets Ev at 40 states |
+| 64 | rl_a | 32 | 30 | threat meets Ev at 24 states |
+- Totals: 604,087 THR fallbacks, 12,800,229 FREE-FREEZE checks, 213,037 threat-meets-Ev states (never only on the cycle); 0 violations.
 - Oink: my 𝒞^1O N5 is the one validated in R2-N5-SCOPE (552 / 552 on the library); the climb bests are cross-checked below.
-@@OINK@@
+- Climb bests (climb/best_cyc_61..64.pg, sha1 0729c507, 028d5399, e1f1e7a4, 173fbff1): oink_xcheck 8 / 8 OK. tevlast_cex_n40: 2 / 2 OK.
 
-## 8. Notes for the lane (none blocks a signature except G-RL-1, which is a gap on TEV-RED only)
+## 8. Notes for the lane (none blocks a signature; G-RL-1 and G-RL-2 are the gaps on TEV-RED)
+- G-RL-2: TEV-RED (3) and the Consequence: "before e" → "up to and including e".
 - G-RL-1: TEV-RED needs c's honest cycle at t inside F_{k0} (or a proof of it) for its "last Ev vertex" and for (1), (3).
 - N-RL-1: MERGE (c): say "paths up to the first visit of c".
 - N-RL-2: EV: add the case "q after c on the cycle" (the conclusion holds, §6.1).
