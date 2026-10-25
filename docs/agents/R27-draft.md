@@ -1,4 +1,4 @@
-# Draft RESULTS R27 (Lead, 2026-10-25 01:47Z by date -u) (rev. 02:01Z: C36 E-1, E-2, N-1, N-2) — awaits CHECKER C36 Addendum 1; lands in "## Results" after R26, before "## Dead ends"
+# Draft RESULTS R27 (Lead, 2026-10-25 01:47Z by date -u) (rev. 02:01Z: C36 E-1, E-2, N-1, N-2) — LANDED in RESULTS Results 02:10Z (CHECKER C36 108c2e6 + Addendum c64ec13 PASS), after R26
 
 ### R27 [refereed-only] N5 inside a phase: the used-level freeze and a carry bound (Lemma U, HI, UL, GR, NU, Theorem LP), dormant edges and wakes on one-Odd-choice games (DF′, BAND, WAKE), and on those games σ̄(o)-changes, non-tame transitions and fallbacks per phase reduce to θ-changes and crossings (TH, SO, Corollaries LP′, XJ) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C36.md, checker PENDING)
 - Objects (pinned, unchanged during review): packet P-N5-LP docs/new/P-N5-LP-box32.md, sha1 d2c8121a0089add13c9417080cfb57620f592c88,
