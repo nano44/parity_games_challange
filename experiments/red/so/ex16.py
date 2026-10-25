@@ -9,7 +9,8 @@ every successor set of o of size >= 2 (or exactly --o-deg).
 Trace: own copy of n5.py's loop (= sox.trace) from a start pair; canonical start = Engine.initial("best") for both players (as n5.py).
 --all-starts: every start pair (σ_0, τ_0) in the product of successor sets. Prefilter (exact, necessary for the event): two Even
 fallbacks k0 < k with no fallback strictly between, at least one S4a step between, τ constant on [k0, k+1]. Only those runs get the full
-check (H1 / H2 / H3, W, scope runs, M). Box 40 additions: every run with an Even fallback also gets lv16 (N5-LV-box11: in-scope THR
+check (H1 / H2 / H3, W, scope runs, M). Box 40 additions: far_rise / far_fb = rises after an in-scope fallback with r > L (L >= 0) and those followed
+by any later fallback of the scope run (REFEREE-2 R2-N5-ENT 'Reachability'; prefiltered runs only, the prefilter is necessary for it). Every run with an Even fallback also gets lv16 (N5-LV-box11: in-scope THR
 fallbacks with M = -1, (β) gates) and nleq16 (CONJECTURE NL=). Usage: ex16.py N [--all-starts] [--even-maxdeg K] [--o-deg K] [--no-forced] [--jobs 4]
 [--part i/m] --out FILE.json"""
 import sys, os, itertools, json, time, argparse, multiprocessing as mp
@@ -79,12 +80,20 @@ def full(g, S, FB, E):
         gs = E.improving(S[k][0], Xi[k]); return max((lev(Xi[k][S[k][0][y]], Xi[k][z]) for y, z in gs), default=BOT)
     scope = [lam[k] == lam[k + 1] and S[k][1] == S[k + 1][1] and H1[k] and H2[k] and Wv[k][o][0] == lam[k][o] and H2[k + 1]
              and Wv[k + 1][o] == Wv[k][o] for k in range(N - 1)]
-    pairs = rises = spairs = srises = 0; exm = None; k = 0
+    pairs = rises = spairs = srises = 0; exm = None; k = 0; FAR = [0, 0, None]
     while k < N - 1:
         if not scope[k]: k += 1; continue
         e = k
         while e + 1 < N - 1 and scope[e + 1]: e += 1
         fbs = [t for t in range(k, e + 1) if FB[t]]
+        for a in fbs:   # REFEREE-2 R2-N5-ENT "Reachability": after a rise following a fallback with r > L, no further fallback in S
+            L = M(a)
+            if L == INF or L < 0: continue
+            j = a + 1
+            while j <= e and r[j] > L and (FB[j] or coarse(th[j + 1], L) == coarse(th[j], L)): j += 1
+            if j <= e and r[j] > L and not FB[j]:          # a rise at the S4a step j -> j+1 with r > L on [a+1, j]
+                FAR[0] += 1
+                if any(FB[t] for t in range(j + 1, e + 1)): FAR[1] += 1; FAR[2] = FAR[2] or (a, j, L)
         for a, b in zip(fbs, fbs[1:]):
             L = M(a)
             if L == INF: continue
@@ -96,6 +105,8 @@ def full(g, S, FB, E):
                 srises += sig
                 if exm is None: exm = (a, b, L, ch[0], sig, M(b))
         k = e + 1
+    if FAR[1] and exm is None: exm = ("FAR",) + FAR[2]
+    full.far = FAR
     return pairs, rises, spairs, srises, exm
 
 def prios(par):
@@ -119,7 +130,7 @@ def games(n, o, par, a):
             succ[o] = so; yield pg.Game(pr, list(owner), [list(s) for s in succ])
 
 def task(args):
-    n, o, par, a = args; out = dict(games=0, runs=0, pref=0, pairs=0, rises=0, spairs=0, srises=0, maxfb=0, maxit=0, ex=[], lvruns=0, thr=0, lv=0, eq=0, beta_fb=0, maxbeta=0, nleq_eq=0, nleq_gt=0, fails={}, ex2=[])
+    n, o, par, a = args; out = dict(games=0, far_rise=0, far_fb=0, runs=0, pref=0, pairs=0, rises=0, spairs=0, srises=0, maxfb=0, maxit=0, ex=[], lvruns=0, thr=0, lv=0, eq=0, beta_fb=0, maxbeta=0, nleq_eq=0, nleq_gt=0, fails={}, ex2=[])
     for g in games(n, o, par, a):
         out["games"] += 1
         sts = [None] if not a.all_starts else list(itertools.product(*[g.succ[v] for v in range(n)]))
@@ -136,7 +147,7 @@ def task(args):
                     out["ex2"].append(dict(prio=g.prio, owner=g.owner, succ=g.succ, start=st, lv=L1["lv"], beta=L1["beta_fb"], C1=L1["C"], C2=L2["C"]))
             if not prefilter(S, FB): continue
             out["pref"] += 1; p, ri, sp, sr, exm = full(g, S, FB, E)
-            out["pairs"] += p; out["rises"] += ri; out["spairs"] += sp; out["srises"] += sr
+            out["pairs"] += p; out["rises"] += ri; out["spairs"] += sp; out["srises"] += sr; out["far_rise"] += full.far[0]; out["far_fb"] += full.far[1]
             if exm and len(out["ex"]) < 5: out["ex"].append(dict(prio=g.prio, owner=g.owner, succ=g.succ, start=st, ex=exm))
     return out
 
@@ -155,10 +166,10 @@ if __name__ == "__main__":
                     if c >= a.selftest: print("selftest OK", c); sys.exit(0)
     i, m = map(int, a.part.split("/"))
     jobs = [(n, o, par, a) for o in range(n) for par in itertools.product((0, 1), repeat=n)][i::m]
-    tot = dict(games=0, runs=0, pref=0, pairs=0, rises=0, spairs=0, srises=0, maxfb=0, maxit=0, ex=[], lvruns=0, thr=0, lv=0, eq=0, beta_fb=0, maxbeta=0, nleq_eq=0, nleq_gt=0, fails={}, ex2=[])
+    tot = dict(games=0, far_rise=0, far_fb=0, runs=0, pref=0, pairs=0, rises=0, spairs=0, srises=0, maxfb=0, maxit=0, ex=[], lvruns=0, thr=0, lv=0, eq=0, beta_fb=0, maxbeta=0, nleq_eq=0, nleq_gt=0, fails={}, ex2=[])
     with mp.Pool(a.jobs) as P:
         for res in P.imap_unordered(task, jobs):
-            for k in ("games", "runs", "pref", "pairs", "rises", "spairs", "srises", "lvruns", "thr", "lv", "eq", "beta_fb", "nleq_eq", "nleq_gt"): tot[k] += res[k]
+            for k in ("games", "runs", "pref", "pairs", "rises", "spairs", "srises", "far_rise", "far_fb", "lvruns", "thr", "lv", "eq", "beta_fb", "nleq_eq", "nleq_gt"): tot[k] += res[k]
             for k in ("maxfb", "maxit", "maxbeta"): tot[k] = max(tot[k], res[k])
             for k, v in res["fails"].items(): tot["fails"][k] = tot["fails"].get(k, 0) + v
             tot["ex"] += res["ex"][:5 - len(tot["ex"])]; tot["ex2"] += res["ex2"][:5 - len(tot["ex2"])]
