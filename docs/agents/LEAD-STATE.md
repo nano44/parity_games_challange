@@ -1283,3 +1283,4 @@
   - l-si 03c6937: L-SI 8 handover check, 5/5 re-measured (merge-base ed936af1, 1 ahead / 23 behind 283bcb6).
   - R40 LANDED in RESULTS: CHECKER C49 2b540583 + Addendum 1 cc26fd23; cmp OK against draft lines 3-60; GAPS UPDATE 15:55Z.
   - Routing: REFEREE 9 writes the NEB and LV §Cs against R2 a4516df and b1038be. L-SI 8: GO.
+- 16:00Z Lead: merged l-new cba7e86 (L-NEW 19 handover check: 5/5 re-measured). GO box 40: packet P-N5-RHO first, then N_HN for τ(o) ≠ o, then the NEB fixes file when the §Cs are in.
