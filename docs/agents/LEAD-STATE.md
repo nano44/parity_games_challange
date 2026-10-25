@@ -1432,3 +1432,7 @@
   - l-new cf02711: RHO fixes docs/new/P-N5-RHO-fixes-box40.md, sha1 cc4e8540. RHO is ready to draft.
 - 19:30Z Lead: drafted R45 = P-N5-RHO (docs/agents/R45-draft.md, STAMP placeholder). It will be sent to CHECKER after R44 = P-N5-PFZ (+ ext), which is waiting for L-NEW 20's PFZ fixes file; RHO cites PFZ's FB-ROUND and BRK-POLY′.
 - 19:35Z Lead: merged l-new a3efded (PFZ fixes, docs/new/P-N5-PFZ-fixes-box39.md, sha1 3f55bc88, with the PFZ-1 repair in full; L-NEW 20 PARKED). Created L-NEW successor 21 (session_01YJHHx1t8hvqkDnKzMU2Lfa). Drafted R44 = P-N5-PFZ + ext for CHECKER C53; R45 = P-N5-RHO (C54) follows R44.
+- 19:40Z Lead: merged checker 707b402 (C52 Addendum 1: R43 PASS at 70deed32) and l-red e63003b.
+  - R43 LANDED in RESULTS (CHECKER C52 1c86563f + Addendum 1 707b402e); cmp OK against draft lines 3-52; GAPS UPDATE 19:40Z.
+  - L-RED 17 PARKED: no kill of FB-CAP, FB-POLY, FB-PHASE or FX in 8.6 M runs at n 5 and 6.5 M at n 4 (all start pairs). FB-CAP equality at |U| = 4: fbcap_eq_u4_n11 (39beb8b8; trivial).
+  - Created L-RED successor 18 (session_01D6HqejxBahRiMjurWjAtzT).
