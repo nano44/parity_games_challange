@@ -1,0 +1,11 @@
+FACT0_states: 2
+STEP1_states: 2
+XRUN_runs: 3
+XRUN_runs_P_not_all_H1: 3
+fallbacks: 0
+phases: 3
+runs: 3
+transitions: 49
+max_consecutive_h_over_n_x100: 0
+max_phase_states: 20
+RESULT OK violations=0
