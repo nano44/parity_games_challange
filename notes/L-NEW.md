@@ -1,6 +1,51 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Handover check (successor 16)
+Successor 16 (Opus 5.5, D14/D15/D18, L37/L40), session_01LLCK4ctQmkMq2huT44SU7d, written 2026-10-25 10:2xZ by date -u (clock read
+10:18:49Z at start). Predecessor: successor 15, session_013tdUFhpjRP3kYPL6sBCpfU, parked at l-new ec77ad1c. Every answer measured; commands named.
+1. **Branch / head / trunk distance.** `git fetch origin`; `git status`: local claude/l-new "behind 'origin/claude/l-new' by 1359
+   commits" (STALE clone again). `git merge --ff-only origin/claude/l-new` → ec77ad1c. Trunk = origin/claude/vibrant-johnson-nxvvxo
+   (`git remote show origin` HEAD branch; docs/NOW.md l.15). `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`
+   = 1 ahead / 34 behind trunk aef92047 ("Lead: PF-THETA linear form refuted (re-run); log"); merge-base b5b8e663.
+   `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` (no conflicts, no rebase) → merge commit f8419305: 2 ahead / 0 behind;
+   First push.sh: VERIFY PASS but push REJECTED (exit 1, "fetch first"): parked successor 15 had pushed a670161b at 10:18:52Z (Lead
+   request: PF-THETA linear FALSE recorded). `git fetch origin claude/l-new`; `git merge --no-ff origin/claude/l-new` (clean) → merged;
+   `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` after this commit: see the push log in the message.
+2. **Open work and next step** (sources: resume point below, `sha1sum`, `ls docs/new`, `git ls-tree origin/claude/referee{,-2}`,
+   `git log origin/claude/referee`, `git log HEAD..trunk`).
+   - P-N5-TOG: `sha1sum docs/new/P-N5-TOG-box35.md` = 7dfda8c8… (pinned trunk d3daae1). REFEREE-2 signed (R2-N5-TOG faabe716) and
+     wrote Addendum A (16d27d1c: G-TOG-1 DATA attribution; SPEC witness b4_cyc6_0 0→1, 19 files). Fixes file
+     P-N5-TOG-fixes-box35.md sha1 f15b58dd… (cited → frozen). REFEREE succ. 7 (session_01TWT1diK1Z9x2eK56iBVbZu): no R-N5-TOG on
+     origin/claude/referee yet; scratch tog_probe.py/tog_climb.py at 785e79b7 (09:58Z) = review in progress. Next: when relayed,
+     its items + the Addendum-A attribution row go in NEW docs/new/P-N5-TOG-fixes2-box35.md (does not exist yet).
+   - Box 37 (a) packet P-N5-SCOPE: docs/new/P-N5-SCOPE-box36.md does NOT exist yet (the working doc N5-SCOPE-box36.md, sha1
+     ad7282d7…, does; do not overwrite it). Next after GO: write the packet (KEY, WCH, SCOPE-COUNT, FB-INT, NH1-FB, CN-LAST from
+     N5-DROP-box35.md §7; not-to-sign OUT-POLY, out-of-SN obstruction, PF-THETA linear form FALSE), send sha1.
+   - PF-THETA (linear form) is now FALSE: L-RED fa3085e2, experiments/red/so/instances/pftheta_cex_n32.pg (`sha1sum` = 9f526135…);
+     Lead re-run aef92047. My notebook still lists PF-THETA as a live CONJECTURE (box 35 (c)): the packet and the dead-end list must say FALSE.
+   - Box 37 (b) research: OUT-POLY at H1 ∧ ¬H2 / H1 ∧ H2 ∧ ¬H3 fallbacks, first τ(o) = o (w = (o, ∅, 0) constant).
+   - Nothing of mine is running (`ps aux`). Oink is NOT built in this container (`ls tools/oink/build`: no such directory): first
+     research step after GO is `scripts/setup_oink.sh`.
+3. **GAPS** (`grep -n G-N5-TIME docs/GAPS.md`: line 11): G-N5-TIME, major, owner "L-NEW (L-LIT T22; referees later)", status **open**.
+   Latest update: R32 [refereed-only] landed 09:48Z (P-N5-FRZ + fixes, fixes2; CHECKER C41). "Open: (L1) (NJB / RISE-LAST / PF-THETA,
+   CONJECTURES), f per phase outside scope runs. In review: P-N5-L2 (both referees signed), P-N5-NJB (both reports in), P-N5-TOG."
+   The row does not yet record PF-THETA linear form FALSE (aef92047) nor box 36 (KEY…NH1-FB). R33 (P-N5-L2) is a draft only
+   (docs/agents/R33-draft.md; `grep "^### R33" docs/RESULTS.md` empty). Also mine: G-N1-LB (minor, optional, open).
+4. **Rulings verbatim** (docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md):
+   - D14 (l.244; index l.22 **active**; Lead reading L35): "D" / "You know it can also test prveiously not tested approaches, it can
+     come up with it own as well"
+   - D16 (l.299; index l.28 **active**; Lead reading L38): "Then keep working as I told you to"
+   - D18 (l.332; index l.32 **active**; Lead reading L40): "Focus on N5 and work toward proving it. Explore novel approaches, especially
+     by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable
+     assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from
+     conjectures and open problems."
+5. **Trap found.** (i) The stale clone, worse than last time: local claude/l-new was 1359 commits behind origin (successor 15 saw
+   1157); working from it would have hidden boxes 35-36, all fixes files and the handover. Check: `git fetch` + `git status` before
+   anything. (ii) The resume point (successor 15, 10:0xZ) still calls PF-THETA a CONJECTURE (its Dead ends got a670161b later), but L-RED refuted the linear form at
+   10:05Z (fa3085e2, commit time): the notebook is one fact stale at hand-over; anything reusing box 35 (c) must cite pftheta_cex_n32. (iii) Two
+   near-identical names: P-N5-SCOPE-box36.md (new packet) vs N5-SCOPE-box36.md (working doc).
+
 ## Handover check (successor 15)
 Successor 15 (Opus 5.5, D15/D18/L40), written 2026-10-25 07:5xZ by date -u (container clock read 07:50:41Z; the Lead's brief is
 stamped 07:53Z, so the clock is again slow). Predecessor: successor 14, session_014oGq98MdJvpgrVXNA7rNvA, handover 5351fbf2.
