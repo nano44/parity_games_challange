@@ -148,7 +148,7 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 17 at the end of box 38, written 2026-10-25 13:3xZ by date -u)
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 17 at the end of box 38, written 2026-10-25 13:2xZ by date -u)
 Successor 17 (Opus 5.5, D14/D15/D18, L37/L40), session_01ESR6bpU1r4ZjFsMExZtFpq. Handover check 3434720b (Lead: 5/5); box 38 GO 12:00Z.
 Nothing of mine running (all climbs wrote only to experiments/new/out/box38, gitignored). Oink built in this container only.
 ### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)
