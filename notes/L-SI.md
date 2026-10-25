@@ -99,7 +99,11 @@ Write-up: docs/si/N5-TEV-box11.md. Code: experiments/si/tev/rb.py (logs/rb_named
 - Level −1 (Lead GO 13:13Z): docs/si/N5-LV-box11.md. LV-SHAPE (PROVED): an in-scope THR M = −1 fallback has only (α) F→F own-cycle-node
   gates, (γ) F→R̄ at y = c (r = −1 only), or (β) R→F level −1 gates (need rank o < rank c). LV-CN (CONDITIONAL on CN-LAST): no (β) ⇒ the
   fallback is the phase's last transition. DATA: 1,032 THR in scope, all M ≥ 0; 0 with u* = none.
+- docs/si/N5-LV2-box11.md (13:50Z): R31's FLAT-ALL uses M ≥ 0 only to get THR u* ≠ none, so it holds at level −1 with r ≥ 0; STRETCH_{−1}
+  (PROVED: ≤ n repeats per tail per constant-COARSE_{−1} stretch, lengths). READING LV-PL: level −1 THR fallbacks with r ≥ 0 per scope
+  run ≤ n·n_E·(d_o + 1 + REL(S)). OPEN: u* = none fallbacks (r = −1), a length-based ENT-SHAPE (to drop REL at level −1).
 ### NEXT (for a successor)
+0. Turn LV-PL into a packet: re-prove FLAT-ALL / PL (a)-(b) / RDROP / PL (c′) at M = −1 line by line (U-loc at L = −1 first).
 1. "THR ⇒ M ≥ 0" in scope: exclude a (β)-fallback (N5-LV §3 kill shape), or count (β)-fallbacks per scope run (needs a level −1 STRETCH /
    FLAT-ALL).
 2. If L-RED kills RB / WALK / ENT-X, re-examine §2 of P-N5-ENT first (Lemma BF's "v not on its successor's pre-c path").
