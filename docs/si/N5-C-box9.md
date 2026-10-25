@@ -354,3 +354,37 @@ Proof.
 - Consequence: Corollary PL-S holds for every scope run: #fallbacks at levels ≥ 0 ≤ n_E·(n·d_o + REL(S)). The OPEN item
   "r-drop blocks" (§4, P-N5-FBW §6) is CLOSED. Not in the frozen packet; for a fixes file if the referees want it.
 - DATA consistency: 6 / 13 / 1 r-drop blocks (NAMED / LIB / climbs), all with B = 0 (§3, §5).
+
+## 12. ENT, time-boxed attempt (Lead 06:34Z): outcome (b), the exact obstruction and the shape of a violation
+Setting. S is a scope run, k0 a fallback of S with L := M_{k0} ≥ 0, and j ∈ (k0, k) the S4a step where θ first changes above L
+(Mn empties, §10). k is the next fallback of S, and r > L on [k0+1, k]. v_L is the vertex of rank L, and β is the rank-L bit of §4
+(good / bad for Even).
+- By CLS1 (R29 (f)), M_k ≤ L always. The Lead's suggested angle (switched levels at k are ≤ L = M_{k0}) therefore holds, but it does
+  not by itself help the per-level count. A violation of NJB needs the next fallback k to have level EXACTLY L.
+- If M_k < L, the block of level L ends at k0 and the rise is not inside it. Per-level count PL then charges the interval to no block
+  of level L.
+**Lemma ENT-SHAPE (PROVED, L-SI succ. 4).** Suppose M_k = L. Let (y, z) be a level-L gate at k with y ∈ R_k and z ∈ F_k (it exists by
+FBL and R25 FB step (2)). Then:
+- (1) y entered R after j (NO-RF-OLD), with COARSE_L(b(y)) = (c, Z) constant on [k0+1, k] and no vertex above L on its route (§8).
+- (2) β(b_t y) is bad for all t ∈ [k0, k]. Reason: b is non-decreasing with constant COARSE_L (FLAT-ALL (iii) across k0), and b_k(y)
+  is bad because (y, z) has level exactly L.
+- (3) y is not a level-L tail at k0. Otherwise b_{k0+1}(y) would be good (STRETCH step (3)), against (2).
+- (4) β(Ξ_{k0} z) is bad, and β(Ξ_k z) is good. Reason: COARSE_L(Ξ z) is frozen on [k0, k] (OFF at k0, NL (i) after). If z had been
+  good at k0, (y, z) would have been a level-L gate at k0, making y a level-L tail at k0, against (3). So z's honest value rises at
+  level EXACTLY L at some S4a step in (k0, k), while z stays in F.
+- (5) That rise of an F-vertex at level L needs a switch of level exactly L on z's F-play at that step. The gate is into F, of
+  level ≤ L by (A), and U-loc bounds every other change by L.
+Proof: each item is shown inline above from the cited lemmas. □
+- The step that fails. Nothing proved so far forbids an F → F switch of level exactly L inside the interval. (A) allows level L into
+  F, and NL (i) freezes only above L. So the chain "Mn empties (rise above L) → an entrant y with a frozen-bad rank-L bit → its F-target
+  z gains rank L → next fallback at level L" is not excluded.
+- What a counterexample must contain (for L-RED; all inside one scope run, in-phase, (h) throughout, w constant):
+  - (i) a level-L fallback k0;
+  - (ii) the full absorption of Mn (every COARSE_L-minimal free exit absorbed at S4a steps), raising θ above L while r stays > L;
+  - (iii) after that, an F-vertex z whose play gains (or loses) v_L at an S4a step through an F → F switch of level L;
+  - (iv) a vertex y that enters R after (ii) with an edge to z, whose successor value has the same COARSE_L as z's and the bad rank-L
+    bit;
+  - (v) a second fallback at level L, with (y, z) a level-L gate.
+  - DATA: no instance has even (ii) followed by any fallback (§8-§9: 54 + 44 post-rise states, 0 R → F gates).
+- Next (per the Lead's instruction): the r-drop blocks, already CLOSED in §11. So the per-level count has exactly one open piece, the
+  chain above.
