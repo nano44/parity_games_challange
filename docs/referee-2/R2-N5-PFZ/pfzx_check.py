@@ -34,6 +34,8 @@ FC, RC = OC.FC, OC.RC
 lev = FC.lev
 PFZN = int(os.environ.get("PFZN", "12"))
 KEYP = os.environ.get("PFZX_KEY", "P") == "P"
+PFZR = os.environ.get("PFZR", "") == "1"   # successor 11: REFEREE's PFZ-1 repair (refined theta-LEN, high u != o, (i) as stated); off by default
+PFZR_MUT = os.environ.get("PFZR_MUT", "")   # mutation controls only: bd (refined bound - 1 on epochs with a theta-change) | i (repaired (i) with - 2 for - 1)
 def same(x, y): return x[1] == y[1] if KEYP else x == y
 
 def sgnw(g, v): return (1 if g.even[v] else -1) << g.rank[v]
@@ -120,6 +122,7 @@ def theta_run(g, o, A, fbs, a, b, U, Us, succU, wt, Mv, st, name):
     if tch: st.c["TLEN_epochs_with_theta_change"] += 1
     if len(tch) > max(nU - 2, 0): st.bad(f"{name} TLEN {len(tch)} > max(|U| - 2, 0) = {max(nU - 2, 0)}")
     if any(A[t].theta[0] != A[t + 1].theta[0] or A[t].theta[1] != A[t + 1].theta[1] for t in tch): st.bad(f"{name} TLEN not length-only")
+    if PFZR and KEYP and o != c: rtlen(g, o, A, a, b, U, c, tch, st, name)
     small = nU <= PFZN
     if small:
         Mopt = {z: best_paths(z, nU, succU, wt, Mo, o, c) for z in U}
@@ -167,6 +170,28 @@ def theta_run(g, o, A, fbs, a, b, U, Us, succU, wt, Mv, st, name):
                 st.c["NCA_identity_states"] += 1
                 if A[t].Rbar != {z for z in U if o in A[t].Xi[z][1]}: st.bad(f"{name} NCA identity at {t}")
 
+def rtlen(g, o, A, a, b, U, c, tch, st, name):
+    # Q := o's honest play to its first visit of c (c excluded), walked along S.fh. Checks: Q simple, Q <= U \ {c}, l = |Q|,
+    # P = Q & V_{>c}; then l - |P| = |Q & A_low| in [[o in A_low], |A_low|]; in-epoch theta-changes <= |A_low| - [o in A_low].
+    rc = g.rank[c]; Alow = {u for u in U if u != c and g.rank[u] < rc}; olow = 1 if o in Alow else 0
+    for t in range(a, b + 1):
+        S = A[t]; Q = []; v = o
+        while v != c and v not in Q and len(Q) <= g.n: Q.append(v); v = S.fh[v]
+        st.c["PFZR_Q_walks"] += 1
+        if v != c: st.bad(f"{name} PFZR Q does not reach c at {t}"); continue
+        if not set(Q) <= set(U) - {c}: st.bad(f"{name} PFZR Q not in U at {t}")
+        if S.theta[2] != len(Q): st.bad(f"{name} PFZR l {S.theta[2]} != |Q| {len(Q)} at {t}")
+        if set(S.theta[1]) != {u for u in Q if g.rank[u] > rc}: st.bad(f"{name} PFZR P != Q & V_>c at {t}")
+        ql = len([u for u in Q if u in Alow])
+        if not (olow <= ql <= len(Alow)): st.bad(f"{name} PFZR |Q & A_low| {ql} out of range at {t}")
+    bd = len(Alow) - olow - (1 if PFZR_MUT == "bd" and tch else 0)
+    st.c["PFZR_epochs"] += 1
+    if len(tch) > bd: st.bad(f"{name} PFZR refined theta-LEN {len(tch)} > |A_low| - [o low] = {bd}")
+    st.mxu("max_PFZR_refined_excess_plus_1000", len(tch) - bd + 1000)
+    if tch and len(tch) == bd: st.c["PFZR_epochs_refined_tight"] += 1
+    if tch and len(tch) == max(len(U) - 2, 0): st.c["PFZR_epochs_thetaLEN_tight"] += 1
+    st.mxu("max_PFZR_slack_thetaLEN_minus_refined", max(len(U) - 2, 0) - bd)
+
 def brk(g, o, A, fbs, s0, s1, p0, p1, U, caseA, st, name):
     nU = len(U); tr = range(s0, s1)
     ent = lambda k: A[k].Rr < A[k + 1].Rr
@@ -181,6 +206,11 @@ def brk(g, o, A, fbs, s0, s1, p0, p1, U, caseA, st, name):
     if th_S > (rho + 1) * mU2:
         st.c["RECORD_BRKX_(i)_as_stated_fails"] += 1
         if "ex_i" not in st.ex: st.ex["ex_i"] = f"{name} stretch [{s0}, {s1}] theta_S {th_S} rho_S {rho} |U| {nU}"
+    if PFZR and rho:
+        c = A[s0].theta[0]; st.c["PFZR_stretches_rho>=1"] += 1
+        if not any(u != o and u != c and g.rank[u] > g.rank[c] for u in U): st.bad(f"{name} PFZR rho_S >= 1 without a high u != o in U")
+        if th_S > (rho + 1) * (nU - 2) - (2 if PFZR_MUT == "i" else 1): st.bad(f"{name} PFZR (i) repaired: theta_S {th_S} > (rho + 1)(|U| - 2) - 1")
+        st.mxu("max_PFZR_(i)_repaired_excess_plus_1000", th_S - ((rho + 1) * (nU - 2) - 1) + 1000)
     B = 0; prev_entry = s0 - 1; seen = False; last_evi = None
     k1 = 0; k2a = {}; k2b = 0
     for k in tr:

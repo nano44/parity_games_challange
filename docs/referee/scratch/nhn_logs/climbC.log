@@ -1,0 +1,15 @@
+EV2_ends                           5
+EV2_max_per_phase                  3
+H3_chk                             10
+NHN_drops_ending_stretch           0
+NHN_max                            4
+NHN_total                          13
+SG_chk                             5
+T0U_a_chk                          53
+T0U_b_chk                          26
+games                              8
+phases                             28
+phases_with_Q                      4
+t0ne_phases                        28
+t0ne_phases_HN                     8
+FAILS 0

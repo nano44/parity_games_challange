@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """REFEREE-2 succ. 10: hill-climb against P-N5-PFZ-ext with pfzx_check (own code; C^1O mutations of ../R2-N5-FRZ/frz_climb.py, as in frz_climb). Any violation stops the climb and dumps the game to climb/viol_<FIT>_<seed>.pg.
+FIT rtl (succ. 11; run with PFZR=1): toward an epoch with more theta-changes than |A_low| - [o in A_low] (refined theta-LEN), or a
+  stretch with rho_S >= 1 and theta_S > (rho_S + 1)(|U| - 2) - 1 (REFEREE's repaired (i)).
 FIT brki: toward theta_S > (rho_S + 1) max(|U| - 2, 0) in one HN stretch (BRK-POLY' (i) as written); also dumps climb/brki_cex_<seed>.pg when it is reached.
 Usage: pfz_climb.py FIT seed nmin nmax seconds [seedgame.pg]"""
 import sys, os, random, time
@@ -9,6 +11,10 @@ RC = FC.RC
 
 def fitness(st, fit):
     c, m = st.c, st.mx
+    if fit == "rtl":
+        e1 = m["max_PFZR_refined_excess_plus_1000"] - 1000 if m["max_PFZR_refined_excess_plus_1000"] else -1000
+        e2 = m["max_PFZR_(i)_repaired_excess_plus_1000"] - 1000 if m["max_PFZR_(i)_repaired_excess_plus_1000"] else -1000
+        return 1000 * max(e1, e2) + 50 * m["max_BRKX_rho_S"] + 5 * c["BRKX_stretches_rho>=1"] + c["TLEN_theta_changes"]
     ex = m["max_BRKX_(i)_excess_plus_1000"] - 1000 if m["max_BRKX_(i)_excess_plus_1000"] else -1000
     return 1000 * ex + 50 * m["max_BRKX_rho_S"] + 5 * c["BRKX_stretches_rho>=1"] + c["TLEN_theta_changes"]
 
