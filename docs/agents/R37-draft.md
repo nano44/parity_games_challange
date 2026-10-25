@@ -1,4 +1,4 @@
-# Draft RESULTS R37 (Lead, 2026-10-25 13:20Z by date -u) (rev. 13:30Z: Lead ruling 12:58Z applied — CYC-EV lands with P-N5-ENT, not here; addendum 5c29d93d cited) — to CHECKER C46
+# Draft RESULTS R37 (Lead, 2026-10-25 13:20Z by date -u) (rev. 13:30Z: Lead ruling 12:58Z applied — CYC-EV lands with P-N5-ENT, not here; addendum 5c29d93d cited) — to CHECKER C46 — LANDED in RESULTS Results 14:01Z (CHECKER C46 2314af84 PASS), after R36
 
 ### R37 [refereed-only] N5 on one-Odd-choice games: blocked edges at a fallback (BL-FORM, BL), the confined optimum and the free freeze (CONF-MONO, FREE-FREEZE), the end of a scope run at θ = w (EQ-END), and where a violation of the per-level conjecture must live (EV, EV+, TEV-RED′) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C46.md, checker PENDING)
 - Object (packet P-N5-RL, added at l-si 01d69ac, pinned trunk 2fb698d, unchanged during review): docs/si/P-N5-RL-box10.md, sha1
