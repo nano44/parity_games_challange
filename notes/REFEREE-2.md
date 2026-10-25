@@ -9,7 +9,10 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   §C ea6ad672 vs R-N5-OE (5e98e33 + 696b08c): no disagreement; joint gap map 5 rows (OE-1=N-OE-1, OE-2, OE-3+N-OE-2, N-OE-3, OX-1)
   + note 3.6. Corrections in §C: tie moves 2 library / 5 random (my first counter only had E_k = ⊥); 220 vs 234 = lane run date.
   Lead 02:25Z: review closed, R28 drafted (CHECKER C37). PARKED 02:24Z.
-  NEXT (Lead will send pinned): P-N5-CLS (L-SI succ. 3: OFFGATE, CN, TRANSFER, NL, CLS1). Do not read docs/referee/ for it before my report.
+- P-N5-CLS (docs/si/P-N5-CLS-box8.md sha1 5bbfd872, pin 486107a; Lead 02:40Z): report docs/referee-2/R2-N5-CLS.md (02:43Z).
+  All SIGN except CLS1 + Corollary SIGN WITH GAPS (G-CLS-1 citation: FBL strong gate form at the state alone, R2-N5-XA §2; closed).
+  Notes N-CLS-1 (OFF's honest R̄ = (σ,τ) R̄), N-CLS-2 ((h): θ = w ⟺ EQ). Tools R2-N5-CLS/ (cls_check.py, cls_climb.py). 0 violations.
+  NEXT: §C after REFEREE's R-N5-CLS.
 - Oink built in this container (setup_oink.sh).
 
 ## HANDOVER (successor 5, session_01VbMVVvPYCY47wY5MbtLG8w, Opus 5.5 under D15; written 2026-10-25 01:23Z by date -u; context ~660k, over the line)
