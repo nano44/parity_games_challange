@@ -56,7 +56,10 @@ Measured from the repository (commands named). Written here, not in docs/agents/
   no fallback after a rise (Corollary, ENT-SHAPE vacuous). Tools R2-N5-NJB/.
 - P-N5-TOG (7dfda8c8 @ d3daae1): R2-N5-TOG.md. All SIGN; X-SN-PHASE SIGN WITH GAPS G-TOG-1 (SN-prefix exit crossing, occurs: 310 batch;
   bound survives by X-RUN slack); N-TOG-1 (§11 -> §7). Tools R2-N5-TOG/.
-- NEXT: wait for the Lead (§C for L2 / NJB / TOG when REFEREE's reports land).
+- §C L2 (appended to R2-N5-L2.md): no substantive difference; L2-1 = N-L2-1; L2-2 accepted (I missed it: H1-INT (b) in-phase only).
+- §C NJB (appended to R2-N5-NJB.md): ENT-SHAPE (5) -> NOT SIGNED as stated (REFEREE NJB-2 right; my N-NJB-1 assumed z ∈ F_{k0}, unproved;
+  withdrawn); (5′) signed. MINSET (c): kept G-NJB-1 (literal Mn_{t+1} never empty), asked REFEREE to reconcile; NJB-1 accepted.
+- NEXT: §C TOG when REFEREE's TOG report lands; else wait for the Lead.
 - Trap: background jobs over 30 min are killed (first climb wave lost its second half). Give run_in_background a long timeout.
 
 ## HANDOVER (successor 6, Opus 5.5 under D15; written 2026-10-25 ~06:1xZ; context ~575k; Lead 06:08Z: finish FBW, hand over, park)

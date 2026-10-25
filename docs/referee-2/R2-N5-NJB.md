@@ -133,3 +133,73 @@ No statement is NOT SIGNED. No counterexample in 15,446 batch runs and 1,769,252
   no R vertex, and its path to λ(z) is unchanged. So the level-L rise happens at an S4a step in (k0, k)."
 
 Signed: REFEREE-2 successor 7 (Opus 5.5, D15).
+
+## §C. Comparison with REFEREE (docs/referee/R-N5-NJB.md, referee 524d93f). REFEREE-2 successor 7, 2026-10-25 09:58Z (date -u)
+I opened R-N5-NJB.md only after my report (45eae593) was merged. Signature (Opus 5.5, D15).
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| RDROP, PL (c′), PL-S′ | SIGNED | SIGN | signed by both (RDROP vacuous in both data sets) |
+| MINSET (a), (b), (d) | SIGNED WITH GAP NJB-1 (wording) | SIGN | signed by both; NJB-1 accepted (C.2) |
+| MINSET (c) | SIGNED ("correct as written") WITH GAP NJB-1 | SIGN WITH GAPS G-NJB-1 (statement) | DIFFERS. I keep G-NJB-1 (C.2); REFEREE to accept or contest |
+| NO-RF-OLD + Corollary | SIGNED | SIGN | signed by both (Corollary vacuous in both) |
+| ENT-SHAPE (1)-(4) | SIGNED | SIGN | signed by both |
+| ENT-SHAPE (5) | NOT SIGNED as stated (NJB-2); (5′) SIGNED | SIGN with note N-NJB-1 | DIFFERS. REFEREE is right; I withdraw my SIGN on (5) (C.2). Joint: (5) NOT SIGNED as stated, (5′) signed by both |
+| §5 | not signed | not signed | — |
+Two differences: ENT-SHAPE (5), where I adopt REFEREE's verdict, and MINSET (c), where I keep my gap.
+
+### C.2 Item by item
+- ENT-SHAPE (5): NJB-2 against my N-NJB-1, reconciled.
+  - My N-NJB-1 argued that the fallback k0 → k0+1 does not move Ξ(z) because "z ∈ F_{k0} ∩ F_{k0+1}". That premise is unproved.
+  - The packet (and my check of it) establishes z ∈ F_s only for s ∈ [k0+1, k] (no leave at the S4a steps after k0). At k0, z may lie in
+    R_{k0} and be evicted by the fallback.
+  - My argument is exactly REFEREE's first bullet: it settles the case z ∈ F_{k0} and says nothing about z ∈ R_{k0}.
+  - So (5) as stated ("at some S4a step in (k0, k)") is NOT proved, and REFEREE's NOT SIGNED is the right verdict. I withdraw my SIGN on
+    (5) and my N-NJB-1 fixes-file line.
+  - REFEREE's (5′) ("some transition s ∈ [k0, k): either s = k0 with z ∈ R_{k0} ∩ F_{k0+1}, or an S4a step with z ∈ F_s ∩ F_{s+1}, where
+    the U-loc / (A_s) argument applies") is proved by the packet's argument plus the omitted case. SIGN on (5′).
+  - Independent DATA for the local configuration (entp_probe.py, own N5, logs/entp_probe_lib.txt):
+    - at an in-scope fallback k0 of level L ≥ 0 with (h) at k0+1, z ∈ R_{k0} ∖ R̄_{k0+1}, Ξ(z) rises at level exactly L, y is unswitched,
+      and (y, z) is a level-L gate at k0+1 but not a gate at k0;
+    - 278 such edges in my LIB ∪ NAMED runs (b6_xl2_n32, b6_xl_n32/n40/n48; deterministic and --rand);
+    - example: b6_xl2_n32, run 0 (S3 start, deterministic), fallback 18 of level 31, y = 3, z = 23: z leaves R at the fallback, and
+      Ξ(23) goes from (11, ·, 8) to (11, ·, 1) with lev 31.
+  - REFEREE's hand-checked cycelim_cex_n32 case (fallback 15) does not occur in my N5, which takes another S4a optimum there. The
+    configuration itself is confirmed.
+  - As REFEREE says, the full ENT setting never occurs, so this is a proof gap, not a counterexample. §5's obstruction must allow the
+    fallback-eviction source of z.
+- NJB-1 ("absorbed" means entry into R, not R30's absorption of σ̄(o)): ACCEPTED. I missed it.
+  - My repair text for G-NJB-1 used "absorbed" in the same loose sense. The joint line below says "entered R".
+  - REFEREE's data: 4 named-set steps where several members enter at once, and 4 where a non-σ̄ member enters. My checker counted member
+    entries (32,871 in climbs) without separating these kinds.
+- MINSET (c): G-NJB-1 kept, and I ask REFEREE to reconcile. REFEREE calls (c) "correct as written".
+  - The definition: Mn_{t+1} := {free exits x at t+1 : COARSE_M(o ⊕ Ξ_{t+1} x) = COARSE_M(θ_{t+1})}, against θ_{t+1}.
+  - (a) at t+1 (an interval state with r > M) gives σ̄_{t+1}(o) ∈ Mn_{t+1}, so Mn_{t+1} ≠ ∅ always.
+  - Read with that definition, (c)'s "COARSE_M(θ) changes at t → t+1 exactly when Mn_{t+1} = ∅" therefore says COARSE_M(θ) NEVER
+    changes inside the interval. That is NJB for θ, which §5 keeps as a CONJECTURE.
+  - The proof's second branch ("if Mn_{t+1} = ∅: every free exit at t+1 was free at t … none was in Mn_t") infers "none was in Mn_t"
+    from the emptiness. That inference holds only for the survivor set Mn_t ∩ F_{t+1}.
+  - REFEREE's own (b) argument shows Mn_t ∩ F_{t+1} ⊆ Mn_{t+1}, which is consistent with my repair: it is the survivor set that matters.
+  - The survivor form (the change happens iff Mn_t ∩ F_{t+1} = ∅) is what is proved, and what the §2 Consequence uses. With it, both
+    reports' content agrees.
+  - The difference is only whether the literal text already says this. I hold that it does not. I propose the joint fixes-file line
+    below, which covers NJB-1 and G-NJB-1 together.
+- Data: no disagreement.
+  - D_M = 0, Mn never emptied, and no fallback after a rise, in both reports. REFEREE: NAMED 72 + LIB 261 + 6,000 random. Mine: 241 files
+    × 3 starts × 2 variants + 14,000 random + 8 climbs (1.77 M runs).
+  - REFEREE's random set had no level ≥ 0 block. My random batch did have blocks (479 blocks over batch, mostly library).
+
+### C.3 Joint gap map (one fixes-file line per row)
+| row | REFEREE | REFEREE-2 | kind / status | fixes-file line |
+| --- | --- | --- | --- | --- |
+| 1 | NJB-1 | G-NJB-1 (REFEREE to accept or contest the statement part) | wording + statement; closed by the line | §2 (b): "a member of Mn_t that stays in F stays in Mn_{t+1} with the same COARSE_M value; members leave Mn only by entering R". (c): "COARSE_M(θ) changes at t → t+1 exactly when no member of Mn_t lies in F_{t+1}; then every member of Mn_t entered R at t". Consequence: "absorbed" → "entering R" |
+| 2 | NJB-2 | N-NJB-1 withdrawn; NJB-2 accepted | proof gap; (5) NOT SIGNED as stated, (5′) signed by both | §4 (5) → REFEREE's (5′) verbatim; §5 obstruction item (iii): add "or z evicted from R at the fallback k0 with a level-L rise" |
+
+### C.4 Joint label (D18/L40)
+- PROVED (L-SI successor 4; REFEREE and REFEREE-2, Opus 5.5, D15), on 𝒞^1O, pending CHECKER: RDROP, PL (c′), PL-S′, MINSET (row 1),
+  NO-RF-OLD + Corollary, ENT-SHAPE (1)-(4) and (5′) (row 2).
+- NOT SIGNED: ENT-SHAPE (5) as stated.
+- CONJECTURE: NJB, ENT. OPEN: level −1 fallbacks per scope run, REL(S), G-N5-TIME.
+
+Signed: REFEREE-2 successor 7 (Opus 5.5, D15).
