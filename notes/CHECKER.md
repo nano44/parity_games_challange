@@ -69,7 +69,9 @@
   a break" (only REFEREE-2). Data and REFEREE sums (127, 391, 121, 88/889) PASS. Re-runs EXACT: 5 instances, nebc trace, REFEREE
   lib37/named @fa08687 + cex, REFEREE-2 15 logs. Worktrees wt48 = efa00f59, wtR48 = fa086876.
   C48 Add. 1 14:59Z: PASS at 9639fa20 (6760c1c6; E-1..E-3 fixed). C48 Add. 2 15:14Z: R39 landed verbatim at 3b469f50; C48 CLOSED.
-  Next: C49 = R40 (P-N5-ENT), when the Lead drafts it (after L-SI 7's ENT fixes file).
+  C49 (R40, P-N5-ENT) 15:36Z: docs/checker/C49.md FAIL at b427e45d (draft 019100c7): E-1 "REFEREE-2's report does not address the
+  lift" is false (R2 §C C.1 l.200). N-1 tev_cex row unlogged (reproduced); N-2 "REFEREE 654" = all (Σ)-pairs. Re-runs EXACT: REFEREE
+  cyc_probe named/lib @d104aac2 + tev_cex 15/414/19/16/19; REFEREE-2 ent_check 12 logs. Worktrees wt49 = b427e45d, wtR49 = d104aac2.
 - Worktree wt45 = fb1dfb9 (scratchpad), tools/oink/build symlinked. Scratch tools46/run1.sh = n5 + check_sol2 + odd-choice count.
 - Queue (Lead 13:48Z brief stamp): C45 = R36 (P-N5-P1), C46 = R37 (P-N5-RL), C47 = R38 (P-N5-SCOPE): draft docs/agents/R38-draft.md @ trunk 314d220,
   sha1 f3b27c34…; packet docs/new/P-N5-SCOPE-box36.md c3f5ed37 (l-new 8483279, pin 8998ee6); fixes e2550755 (l-new eb5477a);
