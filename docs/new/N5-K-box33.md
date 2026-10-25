@@ -293,3 +293,11 @@ Proof.
   exits leave R, which inside the run happens only at S4a steps. □ (ε under ¬H1: 0 in all data; not covered.)
 - So the form I pursue now: bound REL, the exit releases inside SN prefixes. In the data REL is tiny (library: 45 exit releases at S4a
   steps in all; exitr_cex_n48: 1).
+
+## 14. REL data (DATA; written 03:44Z by date -u)
+- Exit releases (an exit of o leaving R) at S4a steps, library + exitr_cex_n48: 46. Under H1 all 44 are at (h) states (Lemma LEAVE);
+  2 under ¬H1 (b4_n5_other_0). 7 release an exit that was absorbed (σ̄(o) left it as it entered R) earlier in the same fallback-free run
+  (e.g. lev_l_n28 transition 12, exit 16; all at (h)); 37 release exits not absorbed in the run. 13 of the 46 are at transitions that
+  change w. So REL is small in all data; ABS-COUNT's bound ε_{H1} ≤ (d_o − 1)(f + 1) + REL is far from tight there.
+- OPEN: a bound on REL per phase. LEAVE says each release needs an F-ward relevant change of level ≥ r = lev(θ, w); in a scope run r is
+  non-increasing (L-SI Fact R), and after a fallback with level L, ABS-L / NL exclude releases while r > L.
