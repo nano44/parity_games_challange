@@ -37,6 +37,36 @@ L-NEW successor 13 (Opus 5.5, D15/D18). Lead relay 03:59Z (read 04:01Z). Written
 - L-NEW: the error is mine (I used "σ̄(o) ∈ F" at the end state without H1 there). ABS-L's own count d_o − 1 is right, because its end
   state is in a scope run and has H1 (REFEREE-2 §8).
 
+## 2b. L-NEW (added 04:09Z by date -u, Lead 04:04Z): the d_o − 1 form, proved except for ε-transitions with O_k = −1
+**Lemma H1-DROP (PROVED, L-NEW succ. 13).** Inside a phase, if H1 holds at k and fails at k+1, then P(θ_k) = ∅.
+Proof.
+- c := c_θ = λ(o), fixed. Under ¬H1 at k+1, o lies on its H_{k+1}-cycle C, whose top is c; every y ∈ C reaches c along C, through vertices
+  of rank ≤ rank c, so P(Ξ_{k+1}(y)) = ∅ (cycle node c). Under H1 at k, c's H_k-play is a cycle C_k avoiding o, all of rank ≤ rank c.
+- Walk C from c: c = q_0 → q_1 → … → q_m = o (H_{k+1}-successors; q_t ≠ o for t < m). At k, c's H_k-play never reaches o, so some q_t
+  (t < m) has a different H_k-successor: a DIVERGENCE. q_t is Even (every Odd vertex but o is forced). By R15 (d) its new successor is a
+  gate target at k: Ξ_k(q_{t+1}) ▷ Ξ_k(s_t), s_t its old successor (also for t = 0, a cycle-node switch).
+- Claim: at every divergence, P(Ξ_k(s_t)) = ∅ and P(Ξ_k(q_{t+1})) = ∅. Induction along the walk.
+  - Old successor. First divergence: q_0 … q_t agree at k and k+1, so s_t lies on C_k after q_t; its path to c runs along C_k: P = ∅.
+    Later divergence: q_{t′+1} … q_t (t′ the previous divergence) agree at k, so Ξ_k(q_{t′+1}) = (q_{t′+1} … q_t) ⊕ Ξ_k(s_t) ((P2), none of
+    them is c); P(Ξ_k(q_{t′+1})) = ∅ by induction, and P only grows under ⊕, so P(Ξ_k(s_t)) = ∅.
+  - New successor. Ξ_k(s_t) ◁ Ξ_k(q_{t+1}) (gate) ⊴ Ξ_{k+1}(q_{t+1}) (R15 (a)); all three have cycle node c (phase). The outer two have
+    P = ∅, so lev(Ξ_k(s_t), Ξ_{k+1}(q_{t+1})) ≤ −1, and (C5) gives lev(Ξ_k(s_t), Ξ_k(q_{t+1})) ≤ −1: P(Ξ_k(q_{t+1})) = ∅.
+- Take the LAST divergence q_j. After it H_k and H_{k+1} agree on q_{j+1} … q_m = o, so q_{j+1}'s H_k-path reaches o and
+  Ξ_k(q_{j+1}) = (q_{j+1} … q_{m−1}) ⊕ θ_k ((P2); λ = c ≠ these vertices), whose path set contains P(θ_k). By the claim it is empty. □
+**Corollary H1-KEEP (PROVED).** At an ε-transition k of a phase with H1 at k and O_k ≥ 0, H1 holds at k+1.
+Proof. Suppose not. x1 := σ̄_{k+1}(o) lies on C, so P(Ξ_{k+1}(x1)) = ∅; x1's H_{k+1}-path avoids o (functional graph), its relevant changes
+are Even ones ≤ E_k, and U-loc gives P(Ξ_k(x1)) ∩ V_{>E_k} = ∅. lev(Ξ_k(x0), Ξ_k(x1)) = O_k > E_k with O_k ≥ 0, so the top difference, of rank
+O_k, lies in P(Ξ_k(x0)) ⊆ P(θ_k) (θ_k = o ⊕ Ξ_k(x0)). So P(θ_k) ≠ ∅, against H1-DROP. □
+(O_k > E_k ≥ −1 forces O_k ≥ 0; so the only excluded case is O_k = −1 with E_k = ⊥: no relevant Even change at all.)
+**Corollary ABS-COUNT′ (PROVED).** In a fallback-free run of a phase, let k* be the last H1 ε-transition. If O_{k*} ≥ 0, then
+ε_{H1} ≤ (d_o − 1) + REL_run (the packet's form). Per phase: ε_{H1} ≤ (d_o − 1)(f + 1) + REL + f + ε⁽⁻¹⁾, where ε⁽⁻¹⁾ counts the runs whose last
+H1 ε-transition has O = −1 (then that run gets d_o), and f covers ε-transitions at fallback transitions (G-SN-1 (b)).
+Proof. Count N (exits in R) from the run's start to k*+1: each H1 ε-transition up to k* raises N by ≥ 1 net of leaves; N_{k*+1} ≤ d_o − 1
+because H1 holds at k*+1 (H1-KEEP), so σ̄(o) ∈ F. □
+- DATA (this session; library, L-RED's three instances, 3,000 random games n 8-32): 6 in-phase H1 → ¬H1 transitions, all with P(θ_k) = ∅;
+  317 H1 ε-transitions, ALL with O_k ≥ 0 (none with O_k = −1). epsseg_cex_n48 matches REFEREE-2 §A: its run ends with H1.
+- OPEN: ε-transitions with O_k = −1 (and E_k = ⊥), and ε-transitions at fallbacks. Neither occurs in any data.
+
 ## 3. N-SN-1: WK's "z is not fully optimal while a is available"
 - Insert after that sentence: y ⊕ is strictly monotone between W(z) and W(a) because y lies on neither W-path: y ∈ R_{k′} = R_{k′+1}; at
   k′+1 σ(y) = z, so z's play cannot pass y before o (that would be an o-free cycle through y); after o, y can lie only on o's W-cycle,
@@ -54,4 +84,5 @@ L-NEW successor 13 (Opus 5.5, D15/D18). Lead relay 03:59Z (read 04:01Z). Written
 
 ## 6. Labels after REFEREE-2 (REFEREE pending)
 - Signed by REFEREE-2: OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, LEAVE, WK (with §3), ABS-COUNT in §2's repaired form, ABS-L (with R29).
-- CONJECTURE: ABS-COUNT with d_o − 1 (the packet's form).
+- ABS-COUNT with d_o − 1 (the packet's form): PROVED by L-NEW in §2b for runs whose last H1 ε-transition has O ≥ 0 (unrefereed);
+  CONJECTURE in the remaining case (O = −1; never seen) and for ε-transitions at fallbacks (never seen).
