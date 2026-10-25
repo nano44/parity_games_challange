@@ -295,3 +295,13 @@ k is an R → F edge (FBL; FBW-S gives r_k ≥ M_k ≥ 0). Its tail entered R af
 - DATA (norf.py; logs/box9/norf_*.txt): NAMED + pinned + climbs 12 rises, LIB 33 rises. States checked after a rise with r > L:
   3 + 6. 0 violations of NO-RF-OLD or ENT, and 0 fallbacks after a rise. This data is THIN; r usually drops to ≤ L right after the rise.
 - Climbs: jclimb.py JMODE=NORF, 2 × 20 min (seeds 9201-9202, from x31_rx32 and jcl_lev_l_sc). Results in §9.
+
+## 9. NORF climbs (DATA; 06:01Z-06:21Z, 20 min each, seeds 9201-9202)
+- Fitness: (NO-RF-OLD / ENT violations + fallbacks after a rise, post-rise states checked with r > L, rises).
+- Final: (0, 21, 1) from x31_rx32 and (0, 23, 1) from jcl_lev_l_sc. Every climb step kept 0 violations and 0 fallbacks after a rise.
+- Bests pinned in experiments/si/coarse/instances/box9/. Both re-verified with xing/reverify.sh (Oink zlk OK, strategies verified):
+  - cl9_norf_a (n 32, sha1 33580f22, 35 iterations / 2 fallbacks);
+  - cl9_norf_b (n 32, a90ad304, 32 / 2).
+- Together: 44 post-rise states with r > L, 0 R → F gates (logs/box9/norf_climb.txt).
+- Reading: the climbs keep r > L for many states after a rise, but they do not produce a second fallback. Every R → F gate stays
+  absent, including entrant tails. ENT remains a CONJECTURE: 53 states checked in total, 0 failures.
