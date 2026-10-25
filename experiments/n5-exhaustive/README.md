@@ -205,3 +205,32 @@ X chains (climb5.py X, raw X = crossing transitions per phase; canonical start; 
 | waves, 2,400 s, seed b6_xl_n32 | 32: 77 (2.41n, b6_xl2_n32, sha1 909c7371) |
 Readings (DATA): at fixed n, X rises with climb budget (n 32: 67 -> 75), so per-n maxima are budget-bound lower bounds and the n-trend
 of the wave chain is not readable from them. Max X/n seen 2.41 (n 32: 67 at 360 s, 75 at 1,500 s, 77 at 2,400 s); no super-linear signal; (X) stays OPEN.
+
+## Box 7 (Lead GO 23:2xZ, D18; amended 00:28Z, 00:33Z): exact checks of R23-R25 lemmas, J, K, S_o, and P-N5-U23 (runs 23:3xZ-)
+Labels (L40): DATA (exact = every run of the stated class). Statements checked are refereed (R23, R24), in review (R25: FB, MONO) or
+lane data quantities (J, K, S_o, E, K_W); 0 violations is evidence, not proof.
+- box7.py: the lanes' checkers called unmodified: box31 casccheck.analyse (CASC, Theorem U1) and tbcheck.check_run (TB) with the
+  start pair; L-SI coarse/tame.py scan_t's body with the start pair (J = non-tame transitions per phase; Mup_tame = MONO); xing
+  zcount.zsigns (Z). Own: WM (W_{k+1} >= W_k pointwise at in-phase non-fallback transitions), LV' (X <= (n-1)(Z+1)+Z; LVr: '±'
+  also resets the pure-sign run), FB (fallbacks per phase <= n_E(2n-1)(J+1)+J). Equal to tame.py / casccheck.py / zcount.py on
+  jcl_lev_l_sc, jcl_x31_cu32i, u1t_cex2_n32, p3long_n14.
+- box7w.py: K = wakes per phase (box32 nowake.census's NOWAKE_FAIL condition; NO-WAKE itself is FALSE, nowake_cex_n32), S_o per
+  phase (census's formula; both checked against census on every run), used-level rises by cause (fallback > sigma_bar(o) > crossing
+  > wake > other), and L-RED's u23x.analyse (P-N5-U23 exactly as frozen: CASC-U2, CASC-U3 (i)-(iii), corollaries; E per sub-run,
+  K_W per stretch). Both reference modules start from the canonical pair; box7w rebinds start_pair in their modules (files unchanged;
+  state sequences equal trace_fb on 3 start-pair instances). Equal to nowake.py on nowake_cex_n32 and u23x.py on u3ev_n16.
+- box7e.py (u23check-based (E)) is superseded by box7w's u23x (Lead 00:28Z: u23check tests less than the packet); not run.
+
+| box7 table (results/box7/) | runs | WM / LV' / FB-MONO tested | W-flat runs, R-switches | TB even / odd | U1 pieces | violations | max J | max Z |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| n 4 canonical | 4,828,736 | 107,596 / 188,320 / 1,974,244 | 7,984, 0 | 0 / 0 | 0 | 0 | 1 | 0 |
+| n 4 all starts | 7,340,032 | 694,116 / 939,808 / 8,337,228 | 140,668, 0 | 17,068 / 576 | 100 | 0 (LV' tight) | 1 | 1 |
+| n 5 subset quarter 1 (index = 0 mod 4) | 17,193,152 | 1,055,200 / 1,299,248 / 8,817,118 | 135,610, 0 | 6,604 / 42 | 92 | 0 | 1 | 1 |
+| n 5 subset quarters 2-4 | Q234ROW |
+
+| box7w table | runs | max K | max S_o | rises fallback / sigma_bar(o) / crossing / wake / other | U2 / U3 / U23 stretches, switches | violations | max E | max K_W |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| n 4 canonical | 4,828,736 | 0 | 1 | none | 0 / 0 / 70,454, 576 | 0 | 1 | 1 |
+| n 4 all starts | 7,340,032 | 0 | 2 | 4 / 0 / 0 / 0 / 0 | 848 / 0 / 145,098, 832 | 0 | 1 | 2 |
+| n 5 subset quarter 1 (index = 0 mod 4) | 17,193,152 | 0 | 1 | none | 4 / 0 / 308,550, 10,240 | 0 | 1 | 2 |
+Readings (DATA): CASC is vacuous through n 5 (no R-switch inside a W-flat run); J <= 1, K = 0, S_o <= 2, E <= 1, K_W <= 2 at n 4 and on n 5 quarter 1 (S_o <= 1 there).
