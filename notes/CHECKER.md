@@ -55,6 +55,15 @@
   omits EQ-END remark + k0 row; N-5 R2 drafts 592128a4/fa0273de uncited; N-6 R2's 168 level-inf gates has no committed log.
   Re-runs EXACT: 6 instances; traces inr2 (0,6,29), tevlast (3,7,15), tev_cex (4,23); REFEREE named/lib @b7419da IDENTICAL;
   REFEREE-2 6 batch logs IDENTICAL + tev_probe. Worktree wtR46 = b7419da. Scratch tools46/trace46.py (uses rl_probe.states()).
+- C47 (R38, P-N5-SCOPE) 14:03Z: docs/checker/C47.md FAIL at 314d220 (draft f3b27c34): E-1 (f) CN-LAST hypothesis garbled (drops
+  "(Iσ_k ≠ ∅), and suppose"; reads "Even switches every gate"). N-1 WCH repair wording; N-2 R2 1f8a9109/8655f692 uncited; N-3 limit (iii)
+  = REFEREE-2 climbs. Re-runs EXACT: wd16_s2 19/14, wd12_s1 8/7, pftheta 38/1 (33 θ-changes in 1 scope run after the level-31 fallback),
+  oc12_s1 10/1 (k 6, M −1, ¬H1, gates 0→7, 7→8); REFEREE scope_probe lib @fb6089b = §8 exactly; REFEREE-2 6 logs IDENTICAL.
+  Worktree wtS47 = fb6089b. Next: Add. 1 on the Lead's revision; landed checks R36, R37, R38.
+- 14:07Z: C45 Add. 1: R36 landed verbatim at 601df6ed, C45 CLOSED. C46 Add. 1: R37 landed verbatim at da5bac3a (after R36), C46 CLOSED.
+  C47 Add. 1 14:12Z: PASS at fa7d1231 (773af264; E-1 fixed, N-2, N-3 applied). C47 Add. 2 14:22Z: R38 landed verbatim at 7fc7ac90; C47 CLOSED.
+  Next: C48 = R39 (P-N5-OUT), when the Lead drafts it (after REFEREE-2 9's OUT §C). Known: REFEREE OUT §C a8b8ef3; fixes
+  docs/new/P-N5-OUT-fixes-box37.md 640a5db2 (l-new dd3f780).
 - Worktree wt45 = fb1dfb9 (scratchpad), tools/oink/build symlinked. Scratch tools46/run1.sh = n5 + check_sol2 + odd-choice count.
 - Queue (Lead 13:48Z brief stamp): C45 = R36 (P-N5-P1), C46 = R37 (P-N5-RL), C47 = R38 (P-N5-SCOPE): draft docs/agents/R38-draft.md @ trunk 314d220,
   sha1 f3b27c34…; packet docs/new/P-N5-SCOPE-box36.md c3f5ed37 (l-new 8483279, pin 8998ee6); fixes e2550755 (l-new eb5477a);
