@@ -259,3 +259,39 @@ All hold on I.
   - D_M = 0 in all 10 + 25 level sub-blocks. 0 failures of (i), (ii), (iii).
 - So in the data, (L1) re-entries occur (42), but the fallbacks that produce them are already bounded by n_E per level. NJB holds in
   every frozen block seen.
+
+## 8. NJB attempt (Lead GO 05:53Z): after a rise above L, old R-vertices have no gate into F
+Data first (scratch probes, then norf.py).
+- After an in-scope fallback, 54 θ-changes above L := the last fallback level occur in NAMED + LIB. All are absorptions.
+- All 54 lie after the LAST fallback of their scope run: no fallback follows any of them.
+- In the 110 later in-scope states there is no R → F gate at all, although every one of those states has gates. r drops to ≤ L at
+  101 of them.
+So the mechanism that would violate NJ-INT / NJB (a rise above L, then another evicting fallback) never starts.
+
+**Lemma NO-RF-OLD (PROVED, L-SI succ. 4).** Let S be a scope run, k0 a fallback of S with L := M_{k0}, and t* ≤ the next fallback of
+S, with r_s > L for s ∈ [k0+1, t*]. Let j ∈ (k0, t*) be an S4a step with COARSE_L(θ_{j+1}) ≠ COARSE_L(θ_j). Then for every
+t ∈ [j+1, t*], no gate (y, z) at t has y ∈ R_j ∩ R_t and z ∈ F_t.
+Proof.
+- (A_s) for L holds on [k0+1, t*] (OFFGATE at k0 + 1, then NL (iii); R29 (c), (e)), and NL (i)-(ii) hold at its S4a steps.
+- Suppose (y, z) is such a gate. By (A_t) its level is ≤ L, so COARSE_L(Ξ_t z) = COARSE_L(b_t y) =: ζ.
+- z ∈ F_s for all s ∈ [k0+1, t]: a vertex of R_s would have to leave R before t, and there is no leave (NL (ii)). So COARSE_L(Ξ_s z) =
+  ζ on [k0+1, t] (NL (i)).
+- b_j(y) ⊴ b_t(y). If COARSE_L(b_j y) ◁_L ζ = COARSE_L(Ξ_j z), then (y, z) is a gate at j of level > L into F_j, against (A_j). So
+  COARSE_L(b_j y) = ζ ((C1), (C3)).
+- For s ∈ {j, t}, y ∈ R_s, so b_s(y) = ρ_s ⊕ θ_s with ρ_s ⊆ R_s, the route of σ_s(y) (Lemma G (b)). Hence P(b_s y) = (ρ_s ∩ V_{>c}) ⊔
+  P(θ_s), with c = c_θ.
+- z's H_s-play avoids o and stays in F_s, so P(Ξ_s z) ⊆ F_s.
+- COARSE_L = (cycle node, P ∩ V_{>L}), and COARSE_L(b_s y) = ζ = COARSE_L(Ξ_s z). So ρ_s has no vertex above max(L, rank c), and
+  P(θ_s) ∩ V_{>L} = P(Ξ_s z) ∩ V_{>L}, for s = j and s = t.
+- The right side is the same at j and t, so COARSE_L(θ_j) = COARSE_L(θ_t). With θ_j ⊴ θ_{j+1} ⊴ θ_t (R15 (a)) this gives
+  COARSE_L(θ_{j+1}) = COARSE_L(θ_j), against the choice of j. □
+**Corollary (PROVED).** In that setting, let the next fallback k = t* of S have level M_k ≥ 0. Then every non-flat switched edge at
+k is an R → F edge (FBL; FBW-S gives r_k ≥ M_k ≥ 0). Its tail entered R after j: y ∈ R_k ∖ R_j.
+- So NJ-INT, and hence NJB, reduce to one statement. CONJECTURE ENT: at such a fallback, no R → F gate has a tail that entered R
+  after a θ-change above L in (k0, k).
+- What an entrant tail must satisfy (PROVED by the same computation, with Z := P(Ξ_t z) ∩ V_{>L}): COARSE_L(b(y)) is constant from
+  j to t, across y's entry into R. From its entry step e onward, COARSE_L(θ) already equals (c, Z). So the entrant arrives only after
+  θ has finished rising above L, and its route carries no vertex above L.
+- DATA (norf.py; logs/box9/norf_*.txt): NAMED + pinned + climbs 12 rises, LIB 33 rises. States checked after a rise with r > L:
+  3 + 6. 0 violations of NO-RF-OLD or ENT, and 0 fallbacks after a rise. This data is THIN; r usually drops to ≤ L right after the rise.
+- Climbs: jclimb.py JMODE=NORF, 2 × 20 min (seeds 9201-9202, from x31_rx32 and jcl_lev_l_sc). Results in §9.
