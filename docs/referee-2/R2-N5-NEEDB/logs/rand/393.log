@@ -1,0 +1,10 @@
+ANTI_W_checks: 56
+ANTI_W_exceptional_used: 36
+ANTI_W_with_exceptional_edges: 52
+ANTI_Xi_checks: 56
+ANTI_Xi_exceptional_used: 42
+ANTI_Xi_with_exceptional_edges: 53
+runs: 4
+states: 171
+RESULT OK violations=0
+experiments/red/so/instances/xsnf42_n48.pg exit 0

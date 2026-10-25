@@ -1,0 +1,19 @@
+ANTIW_blocked_edges: 229
+ANTI_W_checks: 52
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 52
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+OT_exit_checks: 3
+OT_post_rise_states: 1
+OT_rises: 1
+RECORD_M>=0_P_uses_R_to_F_gate: 20
+RECORD_inscope_THR_r>=0_M>=0: 20
+THR_inphase_fallbacks: 20
+THR_optima_tested: 20
+XG_R_to_F_optimal_edges: 28
+runs: 4
+states: 166
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/b6_xl2_n32.pg exit 0

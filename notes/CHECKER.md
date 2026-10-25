@@ -33,6 +33,12 @@
 - 20:42Z: C52 CLOSED (R43 landed e61c10c1). C53 CLOSED (Add. 1 053a74f0 PASS at d1615d9f after REFEREE-2 C.5 ea5cc217; R44 landed
   39dee725). C54 CLOSED (Add. 1 21f7d9b9 PASS at 25293a6e; R45 landed 39dee725, same commit). Queue (Lead 20:39Z): FBPOLY, NHN, PHI
   after their §Cs and fixes. Idle until a draft sha1 arrives.
+- C55 = R46 = P-N5-NHN. 21:12Z docs/checker/C55.md PASS at a6ddb086 (draft 27227bc0), no fixes. REFEREE nhn_probe lib + climbC IDENTICAL
+  @9bb3f79d; R2 nhn_check 6 logs IDENTICAL. Next: landed check; C56 = R47 (P-N5-PHI) after L-SI's PHI fixes file.
+- C56 = R47 = P-N5-PHI. 21:21Z docs/checker/C56.md PASS at e4c76bf7 (draft 5e430956); N-1 S1/S2 wording. REFEREE phifx_probe lib
+  IDENTICAL @843ba1f8, rand 8000 seed 7 IDENTICAL (seed found by trial); R2 phi_check 6 logs IDENTICAL. Worktree wtR56 = 843ba1f8.
+- 21:43Z: C55 CLOSED (R46 landed 90d6c5d3), C56 CLOSED (Add. 1 5bb11d61 PASS at 903b3e91; R47 landed c4d18621). Queue (Lead 21:41Z):
+  P-N5-FBPOLY after REFEREE-2 12's §C; then NEEDB, FX, NH42; P-N5-KW being packeted. Idle until a draft sha1 arrives.
 - Commands: n5 = `python3 n5.py n5 <f> <sol>` + `check_sol2.py <f> <sol>` from experiments/new; REFEREE `python3 -I
   docs/referee/scratch/lv_probe.py <files>` from the root; REFEREE-2 `lv_check.py inst <f> 3 own|rand|spec` and `random N lo hi seed m`
   from docs/referee-2/R2-N5-LV/ with ../../../ paths.

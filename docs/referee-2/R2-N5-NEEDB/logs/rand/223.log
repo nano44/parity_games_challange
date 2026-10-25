@@ -1,0 +1,6 @@
+ANTI_W_checks: 2
+ANTI_Xi_checks: 2
+runs: 4
+states: 11
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/n4_maxph_0.pg exit 0

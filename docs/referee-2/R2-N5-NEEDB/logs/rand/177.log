@@ -1,0 +1,16 @@
+ANTIW_blocked_edges: 12
+ANTI_W_checks: 21
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 2
+ANTI_Xi_checks: 21
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 3
+RECORD_M>=0_P_uses_R_to_F_gate: 4
+RECORD_inscope_THR_r>=0_M>=0: 4
+THR_inphase_fallbacks: 4
+THR_optima_tested: 4
+XG_R_to_F_optimal_edges: 8
+runs: 4
+states: 62
+RESULT OK violations=0
+docs/referee/scratch/rl_climb_out/rlc_best_88002.pg exit 0

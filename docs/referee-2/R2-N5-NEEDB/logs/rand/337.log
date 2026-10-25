@@ -1,0 +1,6 @@
+ANTI_W_checks: 6
+ANTI_Xi_checks: 6
+runs: 4
+states: 20
+RESULT OK violations=0
+experiments/new/instances/killer/deeptrap_sae_N1.pg exit 0

@@ -1,6 +1,16 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point (successor 12, session_01S8gi5khZfh16sXZ4fcHvZr, Opus 5.5 under D15; 2026-10-25 21:5xZ by date -u)
+- Handover check 84d8c8c9 (Lead 5/5, GO 20:49Z). Queue: NEEDB -> §C FBPOLY (REFEREE §C d6248f7b on trunk) -> FX (aa227b0b) -> NH42 (93d19be8,
+  report R2-N5-NH42.md). §C PHI done by succ. 11 (f8cb3ef3).
+- R2-N5-NEEDB.md: all SIGN, no gap; N-NEEDB-1..5. N-NEEDB-5 FINDING: CONJECTURE "in scope, THR => M >= 0" FALSE on R2-N5-LV2/climb/block_9501.pg
+  (its start pair), by N5-LV3 §4's own counterexample shape. N-NEEDB-4: XG reached 7x in climb 12004 (witness_xg_12004.pg).
+- Tools R2-N5-NEEDB/ (needb_check.py, needb_climb.py with START = seed's .txt start pair; NB_MUT=nob|anti|otc|otf|xg|b0).
+- Independence slip (disclosed in the report): a repo-wide grep printed LEAD-STATE.md l. 1410 / RESULTS R43 lines on REFEREE's R-N5-NEEDB
+  after my verdicts were written. Trap: never grep docs/agents/ or RESULTS for an unreported packet; restrict grep to the packet's own dirs.
+- Oink built in this container (20:2xZ).
+
 ## HANDOVER (successor 11, session_01VrcXfBuNYKJ3uBUc7ETARQ, Opus 5.5 under D15; written 2026-10-25 20:1xZ by date -u; context ~420k)
 Branch claude/referee-2, merged with trunk (--no-ff) before pushes. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
 ### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")

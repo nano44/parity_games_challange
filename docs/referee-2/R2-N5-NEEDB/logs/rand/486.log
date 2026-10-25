@@ -1,0 +1,10 @@
+ANTI_W_checks: 17
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 17
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 66
+RESULT OK violations=0
+experiments/si/xing/instances/zcl_cu_n24.pg exit 0

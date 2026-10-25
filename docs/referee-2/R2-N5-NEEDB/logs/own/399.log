@@ -1,0 +1,16 @@
+ANTIW_blocked_edges: 9
+ANTI_W_checks: 29
+ANTI_W_exceptional_used: 18
+ANTI_W_with_exceptional_edges: 25
+ANTI_Xi_checks: 29
+ANTI_Xi_exceptional_used: 19
+ANTI_Xi_with_exceptional_edges: 25
+RECORD_M>=0_P_uses_R_to_F_gate: 1
+RECORD_inscope_THR_r>=0_M>=0: 1
+THR_inphase_fallbacks: 1
+THR_optima_tested: 1
+XG_R_to_F_optimal_edges: 3
+runs: 4
+states: 120
+RESULT OK violations=0
+experiments/red/xing/instances/j7_n32.pg exit 0

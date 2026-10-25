@@ -1,0 +1,10 @@
+ANTI_W_checks: 32
+ANTI_W_exceptional_used: 3
+ANTI_W_with_exceptional_edges: 3
+ANTI_Xi_checks: 32
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 3
+runs: 4
+states: 97
+RESULT OK violations=0
+experiments/si/orlens/instances/run_m_n24.pg exit 0

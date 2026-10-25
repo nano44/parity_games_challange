@@ -1,0 +1,8 @@
+ANTI_W_checks: 17
+ANTI_Xi_checks: 17
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 2
+runs: 4
+states: 43
+RESULT OK violations=0
+experiments/si/coarse/instances/jcl_x31_cu32i.pg exit 0

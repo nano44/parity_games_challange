@@ -1,0 +1,6 @@
+ANTI_W_checks: 12
+ANTI_Xi_checks: 12
+runs: 4
+states: 34
+RESULT OK violations=0
+experiments/red/so/instances/exitr_cex_n16.pg exit 0

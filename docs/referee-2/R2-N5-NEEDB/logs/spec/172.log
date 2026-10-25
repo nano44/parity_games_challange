@@ -1,0 +1,10 @@
+ANTI_W_checks: 5
+ANTI_W_exceptional_used: 5
+ANTI_W_with_exceptional_edges: 5
+ANTI_Xi_checks: 5
+ANTI_Xi_exceptional_used: 3
+ANTI_Xi_with_exceptional_edges: 3
+runs: 4
+states: 19
+RESULT OK violations=0
+docs/referee/R-N5-NEB/band_base_cex.pg exit 0

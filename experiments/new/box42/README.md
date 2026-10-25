@@ -16,3 +16,5 @@
   - evcheck.py (§5 E-HI chain: DIR, KC, CASC-B, CW): lib41 20 qualifying stretches, violations 0; `--rand 6000 6 18 4206 --randstart`:
     violations 0. evstress.py: `--starts lib41.txt 150 4207` (1,500 runs, 285 stretches, 820 kind changes) and `--climb lib41.txt 120
     4208` (1,200 candidates): violations 0 in evcheck and kwfreeze2. evprof.py: event profile by c_w parity and c_w vs c_θ.
+- sicross.py (L-SI 10 cross-read: FRZ-U at index r − 1; KIND-MONO): `--list lib41.txt --starts` (10,373 runs): 0 violations; no
+  post-freeze kind change occurred.

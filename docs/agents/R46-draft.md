@@ -1,4 +1,4 @@
-# Draft RESULTS R46 (Lead, 2026-10-25 21:00Z by date -u; renumbered from R47 and fixes-file line filled 21:05Z) — to CHECKER C55
+# Draft RESULTS R46 (Lead, 2026-10-25 21:00Z by date -u; renumbered from R47 and fixes-file line filled 21:05Z) — to CHECKER C55 — LANDED in RESULTS Results 21:19Z (CHECKER C55 bdc05b60 PASS), after R45
 
 ### R46 [refereed-only] N5 on one-Odd-choice games: for τ(o) ≠ o, every end of an HN stretch into H1 ∧ H2 is an Even fallback that evicts τ(o) and strictly raises Ξ(τ(o)) (T0U, EV2-FB, SG-EV), after |U| − 2 fallbacks such an end is pinned (T0-PIN), so a phase has at most ⌈T/2⌉ + 2n − 3 HN stretches (NHN-BOUND), and HN breaks, θ-changes, crossings and fallbacks at HN states per phase are polynomial in n for every τ(o) (HN-POLY-ALL) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C55.md, checker PENDING)
 - Object (packet P-N5-NHN, added at l-new 5fb9dca0, pinned trunk 0bb175d, unchanged during review): docs/new/P-N5-NHN-box40.md, sha1

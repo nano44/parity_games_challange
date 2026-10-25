@@ -1,0 +1,26 @@
+climb FIT=lv seed=12004 n=11 iterations=156279 improvements=2 best_fitness=4004.0
+BEST-INSTANCE counters: {'ANTIW_blocked_edges': 4, 'ANTI_W_checks': 8, 'ANTI_W_exceptional_used': 1, 'ANTI_W_with_exceptional_edges': 1, 'ANTI_Xi_checks': 8, 'ANTI_Xi_exceptional_used': 1, 'ANTI_Xi_with_exceptional_edges': 1, 'NEEDB_LVplus_states': 4, 'NEEDB_beta_on_P': 4, 'NEEDB_case_B': 4, 'NEEDB_gates_beta': 4, 'THR_inphase_fallbacks': 4, 'THR_optima_tested': 4, 'XG_R_to_F_optimal_edges': 4, 'runs': 4, 'states': 28}
+BEST-INSTANCE maxima: {}
+ANTIW_W_improving_exceptional_gates: 31
+ANTIW_blocked_edges: 189276
+ANTI_W_checks: 766769
+ANTI_W_exceptional_used: 61464
+ANTI_W_with_exceptional_edges: 80334
+ANTI_Xi_checks: 766769
+ANTI_Xi_exceptional_used: 70809
+ANTI_Xi_with_exceptional_edges: 84293
+NEEDB_LVplus_states: 166186
+NEEDB_beta_on_P: 171074
+NEEDB_case_B: 171074
+NEEDB_gates_alpha: 27
+NEEDB_gates_beta: 172017
+RECORD_M>=0_P_uses_R_to_F_gate: 5263
+RECORD_inscope_THR_r>=0_M>=0: 5263
+THR_inphase_fallbacks: 173383
+THR_optima_tested: 178380
+XG_R_to_F_optimal_edges: 179065
+XG_hypothesis: 7
+climb_evaluations: 140389
+runs: 561556
+states: 2144636
+RESULT OK violations=0

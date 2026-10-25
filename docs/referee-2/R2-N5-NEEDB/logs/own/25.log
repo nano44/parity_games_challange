@@ -1,0 +1,19 @@
+ANTIW_blocked_edges: 378
+ANTI_W_checks: 18
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 18
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 2
+OT_exit_checks: 10
+OT_post_rise_states: 2
+OT_rises: 2
+RECORD_M>=0_P_uses_R_to_F_gate: 19
+RECORD_inscope_THR_r>=0_M>=0: 19
+THR_inphase_fallbacks: 19
+THR_optima_tested: 19
+XG_R_to_F_optimal_edges: 20
+runs: 4
+states: 71
+RESULT OK violations=0
+docs/referee-2/R2-N5-ENT/climb/best_blk_9204.pg exit 0

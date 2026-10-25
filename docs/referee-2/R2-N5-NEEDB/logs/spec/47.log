@@ -1,0 +1,8 @@
+ANTI_W_checks: 15
+ANTI_W_exceptional_used: 2
+ANTI_W_with_exceptional_edges: 3
+ANTI_Xi_checks: 15
+runs: 4
+states: 47
+RESULT OK violations=0
+docs/referee-2/R2-N5-L2/climb/best_frz_52.pg exit 0

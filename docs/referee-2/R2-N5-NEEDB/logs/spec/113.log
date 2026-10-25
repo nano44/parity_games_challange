@@ -1,0 +1,10 @@
+ANTI_W_checks: 9
+ANTI_W_exceptional_used: 6
+ANTI_W_with_exceptional_edges: 8
+ANTI_Xi_checks: 9
+ANTI_Xi_exceptional_used: 6
+ANTI_Xi_with_exceptional_edges: 8
+runs: 4
+states: 31
+RESULT OK violations=0
+docs/referee-2/R2-N5-RL/climb/best_cyc_64.pg exit 0

@@ -1,0 +1,6 @@
+ANTI_W_checks: 2
+ANTI_Xi_checks: 2
+runs: 4
+states: 4
+RESULT OK violations=0
+experiments/attr/instances/psolq_min_n3_m4_4.pg exit 0
