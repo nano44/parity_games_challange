@@ -87,38 +87,62 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 15 PARKED after box 36, written 2026-10-25 10:0xZ by date -u)
-Successor 15 (Opus 5.5, D15/D18), session_013tdUFhpjRP3kYPL6sBCpfU. Handover check 3a4a5f3b (Lead: 5/5). Boxes 35 (GO 08:02Z) and 36 (GO 09:42Z).
-Nothing running. Oink is built in this container only (tools/oink/build, gitignored); a new container needs scripts/setup_oink.sh.
-
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 16 PARKED after box 37, written 2026-10-25 11:2xZ by date -u)
+Successor 16 (Opus 5.5, D14/D15/D18, L37/L40), session_01LLCK4ctQmkMq2huT44SU7d. Handover check ae5513d4 (Lead: 5/5); box 37 GO 10:34Z.
+Nothing of mine running after the climbs end (~11:45Z; all write only to experiments/new/out/box37, gitignored). Oink built in this
+container only; a new container needs scripts/setup_oink.sh.
 ### DONE (all pushed with scripts/push.sh)
-- Box 35, docs/new/N5-DROP-box35.md:
-  - (a) TOGGLE, L-MONO, Z-COUNT, TOGGLE-COUNT (H1-toggles per phase ≤ |U|(n+1)+n−1).
-    - Packet P-N5-TOG (sha1 7dfda8c8…), pinned at trunk d3daae1.
-    - REFEREE-2 signed it (faabe71), with G-TOG-1 and N-TOG-1.
-    - Fixes file docs/new/P-N5-TOG-fixes-box35.md (sha1 f15b58dd…). If REFEREE's report comes after that file is cited, its items go in a
-      fixes2 file.
-  - DEAD ENDS: weak DROP-LEN (onerun_cex_n32), DROP-LEN (REFEREE's droplen_cex_n12), the (b) impossibility (fbrestart_cex_n12 / _n24),
-    LEN-STAY.
-  - (c) CN-LAST (proved, every game). CONJECTURE PF-THETA (climbs: max 35 at n 40, no violation).
-- Box 36, docs/new/N5-SCOPE-box36.md:
-  - PROVED: Remark KEY (λ_U is a function of τ, so (λ_Ξ, τ)-phases are the joint phases), WCH, SCOPE-COUNT, FB-INT, NH1-FB.
-  - OPEN with the exact obstruction: fallbacks at H1 ∧ ¬H2 and OTHER states, outside SN. CONJECTURE OUT-POLY; climbs plateau at 12 (n 16).
-  - Level −1 residue: no short argument.
-- Fixes files, all NEW:
-  - P-N5-FRZ-fixes2-box34.md (ed2ca80d…);
-  - P-N5-L2-fixes-box34.md (7a110bca…, cited by the Lead, frozen);
-  - P-N5-L2-fixes2-box34.md (e343d74e…);
-  - P-N5-TOG-fixes-box35.md (f15b58dd…).
+- (c) docs/new/P-N5-TOG-fixes2-box35.md (sha1 698539a9…, e570bc6b). It maps REFEREE 7's TOG-1 = G-TOG-1 and TOG-2 = N-TOG-1 to
+  f15b58dd. REFEREE's per-run form is ADOPTED: (t+1)(A−1)+t+1 = A(t+1) exactly; f15b58dd's "+ t_Q" is looser but true. It also corrects
+  the G-TOG-1 SPEC data attribution (19 / 26 / 26+88; L-RED's 26 = distinct basenames of 33 log rows) and marks §7's DROP-LEN line out of
+  date.
+- (a) Packet docs/new/P-N5-SCOPE-box36.md (sha1 c3f5ed37…, 8483279d), frozen.
+  - To sign: KEY, WCH, SCOPE-COUNT, FB-INT, NH1-FB, CN-LAST. Not to sign: out-of-SN obstruction, OUT-POLY, linear PF-THETA FALSE.
+  - Repairs against the box-36 text: R-CONST is P-N5-L2 §5 (box 36 said §11); END fallbacks are counted by (h)-runs + WCH (box 36 said
+    "≤ #scope runs").
+- (b) docs/new/N5-OUT-box37.md (98338fe8, 17dc9580 + this commit). PROVED by the lane, unrefereed:
+  - SPLIT, EPOCH, F-FLAT, FREEZE-STEP;
+  - Theorem NO-ENTRY-A (§9, τ(o) = o, rank(o) > rank(c_θ));
+  - case-B length-only lemma (§10).
+  DEAD END: ROUTE-FROZEN (rfroz_cex_n16, sha1 a9b40395; Lead re-run OK 11:14Z). CONJECTURES: NO-ENTRY (general HN), NO-ENTRY-B.
 ### IN FLIGHT (others)
-- REFEREE on P-N5-TOG (pending). Referees on NJB. L-RED 15: NJB first, TOGGLE second.
-### NEXT (successor 16)
-- Referee items on TOG from REFEREE go to a NEW file (fixes2 if fixes is cited).
-- The core: the f ↔ X loop, now in two places.
-  - (L1) inside scope runs: NJB (L-SI / L-RED), or PF-THETA (θ-based).
-  - Outside SN: H1 ∧ ¬H2 and OTHER fallbacks (box 36 §4). The cleanest case is τ(o) = o with w = (o, ∅, 0) constant: a fixed-target
-    "reach o" W frame against a "reach c_θ" honest frame. It is a good first object for a new argument.
-- With KEY + WCH + SCOPE-COUNT + FB-INT + NH1-FB, f per phase ≤ (in-scope f) + (out-of-SN f) + poly(n)(1 + T) + #scope runs.
+- P-N5-SCOPE: waiting for the Lead's pin, then both referees.
+- P-N5-TOG: both referees have reported; fixes and fixes2 written.
+### NEXT (successor 17)
+- Referee items on P-N5-SCOPE go in NEW docs/new/P-N5-SCOPE-fixes-box36.md.
+- Two known nits to put there if a referee raises them:
+  - (1) §0's dependency row for TC (i) says "statewise", while R22 (b) states it on crossing-free intervals; WCH proves it inline.
+  - (2) FB-INT relies on "P-N5-LP §4 step 3" through OX (ii)'s proof, so give its location: docs/new/P-N5-LP-box32.md (pinned bc42f2c).
+- (b) continued, in order:
+  - (1) NO-ENTRY-B (case B, τ(o) = o): the exact violation shape is in N5-OUT §10. Try a hand-built gadget with an R → R length-only gate
+    at a case-B fallback, OR prove that the honest P of an F-neighbour cannot equal P(Ξ z).
+  - (2) τ(o) ≠ o HN stretches: redo §9 with threshold c_w. The obstacle: c_w need not lie on θ's path, so SEP-o has no analogue yet.
+  - (3) θ-changes per HN stretch. All are at S4a steps (F-FLAT). This is the residual core: it is PF-THETA's poly form moved to HN, and F1°
+    is circular in X.
+  - (4) OTHER states (H1 ∧ H2 ∧ ¬H3): untouched, 2 library fallbacks.
+- With NO-ENTRY-A: in a case-A τ(o) = o phase, out-of-SN fallbacks ≤ (⌈T/2⌉+1)·n_E(2n−1)(2(n−1)(θ+1)+1). It is packet material once θ
+  is handled or stated as a parameter. The Lead may want P-N5-OUT now with θ as a parameter: SPLIT, EPOCH, F-FLAT, FREEZE-STEP,
+  NO-ENTRY-A, plus the §10 lemma.
+
+## Things only I know (successor 16)
+- NO-ENTRY-A's whole trick is SEP-o. In case A, o ∈ P(θ), so every R̄-value carries o and no F-value does. Every F/R̄ comparison is
+  therefore decided at a level ≥ rank(o). So R-rises below rank(o) (which is all a fallback can produce, by Step (K) + R17 (F1)) can never
+  create an F → R̄ gate. The evicted-vertex case needs the sandwich (T2); I first missed passive evictions.
+- Step (K) / "raises W at v" is derived as: σ_a is a pointwise arena optimum in G_τ (FBL-N (i)), and the one-player optimum dominates
+  every arena strategy pointwise (R17 (a) (F1)). The cycle-closing case gives a new W cycle node u with reward(u) > reward(o).
+- F-FLAT's trick: switched F-vertices at a fallback are own cycle nodes (FBL-N (ii)). The phase forces their gates to be level −1
+  (a higher top would change λ). So plays are unchanged up to the first visit of the cycle node (CN-LAST style), then Lemma S (a) + R15 (a).
+- Random 𝒞^1O games (rand_c1o) never produce OUT stretches with breaks: all the evidence is library / climb material. rand_c1o can return
+  None: guard it (my first outsn random run crashed).
+- lib37.txt includes 159 non-𝒞^1O files (experiments/red etc.). Every box-37 tool skips and counts them; scripts that assert 𝒞^1O on
+  every file will abort without that filter.
+- Row k of rows_w has fb = the fallback flag of transition k → k+1. In my rtrace prints, the +/− diff on row k is for k−1 → k. I misread
+  this once (frz24).
+- experiments/*/out/ is gitignored only at depth one: experiments/new/out/box37 is ignored, but experiments/new/box37/out would NOT be.
+- The predecessor (parked) pushed to claude/l-new during my handover check (a670161b, at the Lead's request). Fetch before every push.
+- Tools (experiments/new/box37):
+  - outsn.py, epoch.py, rfrozen.py, sep.py, inva.py (NO-ENTRY-A invariant), gadget.py (one-vertex attack);
+  - sepclimb.py, rfclimb.py (MODE=ent / ent2).
 
 ## Things only I know (successor 15)
 - TOGGLE's trick: the ¬H1-side cycle C lies wholly in the P = ∅ layer Z. If Z is constant, no Even vertex of C \ {c, o} can switch (the
@@ -298,6 +322,7 @@ Nothing running. Oink is built in this container only (tools/oink/build, gitigno
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (succ. 16, box 37) No external source opened. Internal: RESULTS R15, R17, R18 (d), R19, R21 (c), R22, R23 (a)-(d), R25, R28, R30; P-N5-FB §4-§5 (docs/si/P-N5-FB-box7.md), P-N5-OE §1-§3, P-N5-L2 §0-§2 and §5, P-N5-TOG §0, §4, §6; P-N5-X §0, §3; R-N5-TOG (referee fff6e624), R2-N5-TOG Addendum A (16d27d1c); SPEC S1-S5.
 - (succ. 15, box 35) No external source opened. Internal: P-N5-NJB (docs/si/P-N5-NJB-box9.md, pinned a7d85b3), P-N5-FBW §0, RESULTS R15, R27, R28; REFEREE-2 R2-N5-FRZ (+§C f546b43); REFEREE R-N5-L2 (7626354).
 - (succ. 13, box 33) No external source opened. Internal: P-N5-CLS (docs/si/P-N5-CLS-box8.md, pinned 486107a) §1-§7, N5-C-box8 §12-§13.
 - (succ. 12, box 32) VJ00 = Jurdziński & Vöge, BRICS RS-00-48 (www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, sha256 485a12de432a2a8c…, opened
@@ -386,6 +411,11 @@ Nothing running. Oink is built in this container only (tools/oink/build, gitigno
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 16, box 37) ROUTE-FROZEN ("inside an H1 ∧ ¬H2 stretch, after a fallback with θ constant, Ξ on R stays frozen"): FALSE.
+  experiments/new/box37/instances/rfroz_cex_n16.pg (sha1 a9b40395ba9a351037f8dff612d50848540ddbc1; rfclimb seed 3722 from wd16_s2). n 16,
+  o = 11, τ(o) = o, case A. n5 15 iterations / 5 fallbacks; Oink zlk OK, strategies verified (Lead re-run 11:14Z). Phase ph394, θ constant:
+  the fallback at 4 → 5 is followed by R-rises at the S4a steps 5, 6, 7, 9, 10 and at the fallbacks 8, 11, 12. Obstruction: R → R gates
+  keep improving routes after a fallback. Entries: 0, as NO-ENTRY-A predicts (all rises are at levels 8-11 < rank(o) = 12).
 - (succ. 15, box 36, recorded while parked at the Lead's request 10:20Z) LINEAR PF-THETA (≤ n θ-changes under one fallback level): FALSE.
   experiments/red/so/instances/pftheta_cex_n32.pg (sha1 9f526135…, L-RED 15, l-red deb9366, climbed from pf_best_3621). n 32, o = 0,
   one scope run with one fallback (level 31), then 33 θ-changes > n. Lane re-run: n5 38 iterations / 1 fallback, check_sol2 zlk OK
