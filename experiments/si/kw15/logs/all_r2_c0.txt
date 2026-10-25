@@ -1,0 +1,26 @@
+AGREE states                                  1452
+FRZ state checks                              294
+WONCE checks                                  2
+files                                         180
+post-freeze runs                              201
+runs                                          480
+runs cth>=cw H2 H1                            344
+runs cth>=cw H2 notH1                         17
+runs cth>=cw notH2 H1                         4
+runs cth>=cw notH2 notH1                      70
+runs cw>cth H2 H1                             3
+runs cw>cth H2 notH1                          18
+runs cw>cth notH2 H1                          22
+runs cw>cth notH2 notH1                       2
+runs shorter than freeze                      279
+skipped (not C^1O)                            94
+traces                                        540
+transitions                                   5453
+MAX max W-changes on R / run                  13
+MAX max Xi-changes on R / run                 13
+MAX max kappa-freeze delay (t - k0)           0
+MAX max kappa-freeze delay / (|Rbar|-1)       0
+MAX max post-freeze length                    12
+MAX max run length                            13
+FAILURES (first 20): []
+KWCHECK PASS
