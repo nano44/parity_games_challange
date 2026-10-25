@@ -9,7 +9,8 @@ H1: o on no honest cycle; H2: o on no W-cycle (o not on the (σ,τ)-play from τ
   H3CONST   per phase: H3 at all H2 states or at none;   H2STICK: S4a step with H1 ∧ ¬H2 at s keeps ¬H2 at s+1
   XSNRUN    per maximal fallback-free run of a phase: crossings s -> s+1 with c_w(s) = c_θ (the SN prefix, INCLUDING the exit
             transition from the last prefix state) <= n − 1; exitx = how many runs have a crossing at that exit transition
-  RISE      rfb0 (sox3 definition): S4a step strictly between consecutive in-scope fallbacks k0 < k with COARSE_{M_k0}(θ) changing
+  RISE      rfb0 (sox3 definition): S4a step strictly between consecutive in-scope fallbacks k0 < k with COARSE_{M_k0}(θ) changing;
+            thin = θ-changes (any level) at those S4a steps (the near-miss count)
 Usage: rx16.py game.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -43,7 +44,7 @@ def analyse(g, cap=5000):
     C, ex = {}, {}
     def bad(nm, k): C[nm] = C.get(nm, 0) + 1; ex.setdefault(nm, k)
     st = dict(n=n, it=len(FB), fb=sum(FB), phases=0, maxruns=0, maxslack=-10 ** 9, maxrst=0, rfb=0, rst_tog=0, rst_fb=0,
-              maxpre=0, exitx=0, xruns=0, rfb0=0, rfbchk=0)
+              maxpre=0, exitx=0, xruns=0, rfb0=0, rfbchk=0, thin=0)
     th = [Xi[k][o] for k in range(N)]
     k = 0
     while k < N - 1:
@@ -93,11 +94,12 @@ def analyse(g, cap=5000):
             if L == INF: continue
             st["rfbchk"] += 1
             for j in range(k0 + 1, kn):
+                if not FB[j] and th[j + 1] != th[j]: st["thin"] += 1
                 if not FB[j] and coarse(th[j + 1], L) != coarse(th[j], L): st["rfb0"] += 1; bad("RISE", (k0, j, kn))
         k = e + 1
     return dict(C=C, ex=ex, **st)
 
-KEYS = ("n", "it", "fb", "phases", "maxruns", "maxslack", "rst_tog", "rst_fb", "maxpre", "exitx", "xruns", "rfbchk", "rfb0")
+KEYS = ("n", "it", "fb", "phases", "maxruns", "maxslack", "rst_tog", "rst_fb", "maxpre", "exitx", "xruns", "rfbchk", "rfb0", "thin")
 if __name__ == "__main__":
     tot = {}
     for f in sys.argv[1:]:
