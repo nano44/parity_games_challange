@@ -1,0 +1,9 @@
+C567_checks: 90
+NL_no_admissible_L(S4a,(h)): 6
+runs: 3
+scope_runs: 3
+scope_transitions: 6
+transitions: 11
+transitions_in_phase: 6
+max_fallbacks_per_scope_run: 0
+RESULT OK violations=0

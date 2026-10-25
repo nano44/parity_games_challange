@@ -1,0 +1,7 @@
+C567_checks: 90
+CN_checks: 3
+NL_no_admissible_L(S4a,(h)): 1
+runs: 3
+transitions: 4
+transitions_in_phase: 3
+RESULT OK violations=0

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Box 33 climb: raise K (transitions with a wake) per phase. Fitness = (max K in one phase, total K over the run, #finite dormant R -> R edges at checked steps).
 Also flags any wake with Ω(λ_W(y)) odd and W unchanged at a and z (would refute Lemma WK (a)): saved as <out>_wk.pg.
-Usage: kclimb.py seed secs out seed.pg"""
+Env THIRD=sparse: third key = -(number of edges) instead. Usage: kclimb.py seed secs out seed.pg"""
 import sys, os, random, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "box21"))
 sys.path.insert(0, os.path.join(HERE, "..", "box31"))
@@ -29,6 +29,7 @@ def fit(G):
         for y, z in E.improving(tuple(s), Xi):
             l = lev(Xi[s[y]], Xi[z])
             if L < l < 99 and s[y] in R and z in R: rr += 1
+    if os.environ.get("THIRD") == "sparse": rr = -sum(len(set(x)) for x in G[2])
     return (max(per.values()) if per else 0, sum(per.values()), rr), wk
 
 if __name__ == "__main__":

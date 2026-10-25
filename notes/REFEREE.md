@@ -1,6 +1,14 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 6): P-N5-CLS (GO 02:40Z Lead stamp; pin 486107a; docs/si/P-N5-CLS-box8.md sha1 5bbfd872…; L-SI succ. 3)
+- docs/referee/R-N5-CLS.md (written from 02:44Z by date -u): (C5)-(C7), Fact R, CLU, TRANSFER, NL SIGNED; OFFGATE WITH CLS-1 (M_k = ⊥ clause
+  vacuous in a phase), CN WITH CLS-2 (Even y), CLS1 WITH CLS-3 (FBL at one state: statewise, closed), Corollary WITH CLS-4 ("evicting"
+  undefined); OG′ FALSE confirmed (x31_re24 1→2, S4a). Lead's MF_up/FBR_EQ: MF_up = OG′ counter (S4a step), not a fallback M rise.
+  Tool scratch/cls_probe.py (phase key (λ_Ξ, λ_U, τ)). §C written from 02:57Z (date -u) vs R2-N5-CLS (ffe10e1): no verdict differs;
+  CLS-3 = G-CLS-1 (R2's form adopted: cite FBL's strong gate form at k1, not the stretch statement); N-CLS-1/2 accepted; 6-row map.
+- Lesson: when a signed lemma is stated for a TRANSITION inside a run, check both ends of the transition are inside before citing it.
+
 ## Resume point (successor 6, written 2026-10-25T01:5xZ, pushed 5e98e33c at 01:56Z by date -u; stamp corrected 01:56Z; Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with scripts/push.sh > file 2>&1; echo $?.
 - Handover check 109721d3 (Lead 5/5, 01:44Z). Local was stale (73b46eb8); predecessor's SO-1 addendum 2a0cb306 merged (afa95369).
@@ -10,7 +18,7 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Push ONLY with sc
   honest cycle, ¬H1: R-N5-FB §4.2 re-derived, holds; closed), OE-3 (cite C1/C3); Corollary OX (i)-(v) SIGNED (OX-1 wording, FB-2 scope).
   Tool scratch/oe_probe.py (lib | rand | randb). Library numbers equal the lane's oddlev.py exactly (436/11/857/279/235).
   §C written 02:06Z-02:11Z (date -u) vs R2-N5-OE (ca6e5bd): no verdict differs; OE-1 = N-OE-1; MISSED N-OE-3 (phase key (λ_Ξ, τ) vs
-  R25's (λ_Ξ, λ_U, τ): transfers valid, accepted); joint gap map 6 rows; pushed 84748819. PARKED; next packet from the Lead.
+  R25's (λ_Ξ, λ_U, τ): transfers valid, accepted); joint gap map 6 rows; pushed 84748819. Lead 02:25Z: merged, review closed, R28 with CHECKER C37. PARKED. NEXT: P-N5-CLS (L-SI succ. 3: OFFGATE, CN, TRANSFER, NL, CLS1), Lead sends it pinned; fresh report docs/referee/R-N5-CLS.md.
 - Lesson (again): check the SETTING (phase key) each citation was signed under, not only the class.
 - Lesson: "λ(o) ≠ o" (o not its own cycle node) is not "o off a cycle"; check the ¬H1 case of every minimiser citation separately.
 

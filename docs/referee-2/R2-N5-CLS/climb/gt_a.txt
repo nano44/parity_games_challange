@@ -1,0 +1,7 @@
+start 858
+0 1660
+73 1696
+148 1720
+152 1772
+TOTALS {'runs': 1600, 'transitions': 33787, 'C567_checks': 48000, 'transitions_in_phase': 26037, 'OFFG_checks': 47832, 'TRANS_checks': 406147, 'NL_no_admissible_L(S4a,(h))': 9982, 'NL_transitions_with_admissible_L': 1347, 'NL_admissible_with_R_nonempty': 939, 'NL_(j,L)_checks': 5743, 'scope_runs': 1828, 'scope_transitions': 25422, 'scope_fallbacks': 14588, 'scope_fallbacks_THR_u*!=none': 14588, 'CLU_checks': 19712, 'CLS1_first_fallback(vacuous)': 820, 'CLS1_checks': 13768, 'CLS1_case_r<=L': 1612, 'CLS1_strict_drop': 1798, 'CLS1_case_r>L': 12156, 'CLS1_A_chain_checks': 12210, 'NL_no_admissible_L_with_leave': 4427, 'CN_checks': 1}
+RESULT OK violations 0
