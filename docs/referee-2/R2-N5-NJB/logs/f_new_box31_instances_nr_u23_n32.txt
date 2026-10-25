@@ -1,0 +1,4 @@
+fallbacks: 1
+runs: 3
+transitions: 20
+RESULT OK violations=0
