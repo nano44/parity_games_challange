@@ -1,6 +1,6 @@
 # N5 on o-cyclic 𝒞^1O, box 38 (c): τ(o) ≠ o HN stretches; NO-ENTRY-A and BRK-B whenever o tops its W-cycle (c_w = o); NO-ENTRY FALSE when c_w ≠ o; every break is paid by a θ-change or an R̄-value rise (Lemma RISE)
 L-NEW successor 17 (Opus 5.5, D15/D18), session_01ESR6bpU1r4ZjFsMExZtFpq. Box 38 (c), second item (Lead's brief: "τ(o) ≠ o with
-threshold c_w"). Written 2026-10-25 13:1xZ onward by date -u.
+threshold c_w"). Written 2026-10-25 13:0xZ onward by date -u.
 - Setting: as in docs/new/P-N5-OUT-box37.md §0 (sha1 9f032e61…) and docs/new/N5-NEB-box38.md (sha1 047bfeb5…). N5 is SPEC S1-S5 on
   𝒞^1O; HN := H1 ∧ ¬H2; an HN stretch S is a maximal run of HN states of one phase; B_S counts its breaks and θ_S its θ-changes.
 - New notation:
