@@ -35,6 +35,8 @@
   after their §Cs and fixes. Idle until a draft sha1 arrives.
 - C55 = R46 = P-N5-NHN. 21:12Z docs/checker/C55.md PASS at a6ddb086 (draft 27227bc0), no fixes. REFEREE nhn_probe lib + climbC IDENTICAL
   @9bb3f79d; R2 nhn_check 6 logs IDENTICAL. Next: landed check; C56 = R47 (P-N5-PHI) after L-SI's PHI fixes file.
+- C56 = R47 = P-N5-PHI. 21:21Z docs/checker/C56.md PASS at e4c76bf7 (draft 5e430956); N-1 S1/S2 wording. REFEREE phifx_probe lib
+  IDENTICAL @843ba1f8, rand 8000 seed 7 IDENTICAL (seed found by trial); R2 phi_check 6 logs IDENTICAL. Worktree wtR56 = 843ba1f8.
 - Commands: n5 = `python3 n5.py n5 <f> <sol>` + `check_sol2.py <f> <sol>` from experiments/new; REFEREE `python3 -I
   docs/referee/scratch/lv_probe.py <files>` from the root; REFEREE-2 `lv_check.py inst <f> 3 own|rand|spec` and `random N lo hi seed m`
   from docs/referee-2/R2-N5-LV/ with ../../../ paths.
