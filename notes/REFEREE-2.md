@@ -1,6 +1,55 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Handover check (successor 9, session_0163ejRshYhYxVW2CD2XUEB2, Opus 5.5 under D15/L37; 2026-10-25 13:01Z by date -u)
+Predecessor successor 8 session_018vPA5mmjjVjrRV4KqAJfFk (parked). Measured from the repository; commands named.
+
+1. Branch, head, distance to trunk.
+   - `git status`, `git log --oneline -3` at container start: local claude/referee-2 at 77f9cf71 (STALE, fourth time; the notebook had no
+     successor-8 HANDOVER section).
+   - `git fetch origin`; `git rev-parse HEAD origin/claude/referee-2` -> 77f9cf71 vs db9d66a8; `git merge --ff-only origin/claude/referee-2` -> db9d66a8.
+   - Trunk = claude/vibrant-johnson-nxvvxo (docs/NOW.md:15). `git fetch origin claude/vibrant-johnson-nxvvxo`;
+     `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 2 ahead, 10 behind (trunk 2c3a7677).
+     The 2 ahead: d347d8f1 (merge trunk) and db9d66a8 (R2-N5-RL Addendum A), both after the 88571b03 that trunk merged (3e6cd80e).
+   - `git merge --no-ff -m ... origin/claude/vibrant-johnson-nxvvxo` -> merge commit bddffda0; count -> 3 ahead, 0 behind. This notebook commit adds one.
+2. Open work, next step of each.
+   - Successor 8's HANDOVER (12:48Z) says IN FLIGHT: none. Not true of its head: db9d66a8 (12:54Z, after the handover) adds R2-N5-RL
+     Addendum A (CYC-EV SIGN; replacement TEV-RED and Consequence SIGN CONDITIONAL ON (P)), read at the Lead's 12:49Z request.
+     `git merge-base --is-ancestor db9d66a8 origin/claude/vibrant-johnson-nxvvxo` -> no: Addendum A is NOT on trunk.
+     Next step: Lead merges claude/referee-2 (it rides this push).
+   - Successor 8's NEEDS (Lead routes RL-1..4 and N-P1-1 to L-SI): Lead's, not mine.
+   - Task 1 after GO, P-N5-OUT: `sha1sum docs/new/P-N5-OUT-box37.md` -> 9f032e61…aba; `git show 719ce66:<file> | sha1sum` and
+     `git show origin/claude/l-new:<file> | sha1sum` -> same. Next: read packet, P-N5-SCOPE (KEY, FB-INT), SPEC; build R2-N5-OUT/ on
+     R2-N5-SCOPE/scope_check.py; write docs/referee-2/R2-N5-OUT.md.
+   - Task 2 after GO, P-N5-ENT: `sha1sum docs/si/P-N5-ENT-box11.md` -> 4fd22be7…0d0; same at 765e893 and at origin/claude/l-si.
+     Next: read packet, EV+ in P-N5-RL, L-RED tev_cex_n40 / tevlast_cex_n40 (from lane branches if not on trunk); reachability of the
+     (Σ) + rise hypotheses; write docs/referee-2/R2-N5-ENT.md. Note: CYC-EV is in the ENT sign list and successor 8 signed a CYC-EV in
+     Addendum A (of docs/si/P-N5-RL-fixes-box10.md); I re-check the ENT text on its own and diff the two statements.
+   - Independence: `ls docs/referee/ | grep -i 'N5-OUT\|N5-ENT'` and `git ls-tree -r --name-only origin/claude/referee docs/referee |
+     grep -i 'N5-OUT\|N5-ENT'` -> empty. Not opened.
+   - Oink: `ls tools/oink/build` -> absent; scripts/setup_oink.sh started (13:01Z).
+3. GAPS rows. `grep -n 'G-N5-TIME\|REFEREE-2' docs/GAPS.md`: REFEREE-2 owns no row. Relevant: G-N5-TIME | major | L-NEW | open (docs/GAPS.md:11);
+   last update R35 (11:51Z): open NJB = ENT (CONJECTURE; lane reductions EV/EV+/TEV-RED = P-N5-RL), REL(S), level −1 fallbacks,
+   out-of-scope fallbacks (P-N5-SCOPE; lane NO-ENTRY-A), θ-changes per HN stretch. Task 1 (NO-ENTRY-A, out-of-scope) and task 2
+   (ENT) are both on this row's open list.
+4. Owner rulings verbatim (docs/DECISIONS.md), status from docs/DECISIONS-INDEX.md (`grep -n` on both):
+   - D1 (index line 5: active), DECISIONS.md:7-8:
+     > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+     > Never downgrade the referee to save money.
+   - D15 (index line 26: active), DECISIONS.md:278:
+     > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+   - D18 (index line 32: active), DECISIONS.md:333:
+     > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+5. Trap found: a HANDOVER section is not the head. Successor 8's handover (written 12:48Z, "IN FLIGHT: None", committed 88571b03) was
+   followed by db9d66a8 (12:54Z) on the same branch; trunk merged only 88571b03. Reading the notebook alone, or trusting trunk to hold
+   my branch, would lose Addendum A. Check `git log <handover SHA>..origin/claude/referee-2` and `git merge-base --is-ancestor` against
+   trunk, not the handover's own words. (The stale local ref at container start, 77f9cf71, is the same trap one level down.)
+   Second instance, same session: my first scripts/push.sh (13:1xZ) got VERIFY PASS and then "! [rejected] (fetch first)". Successor 8
+   had pushed 7ed07fe5 (committed 12:57Z, a DONE-table row for Addendum A) after my 13:00Z fetch. `git fetch origin claude/referee-2`;
+   `git log HEAD..origin/claude/referee-2` -> 7ed07fe5 only (1 line in this notebook); merged with --no-ff, no conflict. So the
+   predecessor's branch can still move during the handover check: re-fetch right before pushing. Correction to item 2: with 7ed07fe5
+   the handover table does list Addendum A (db9d66a8); "IN FLIGHT: None" is then true; it is still not on trunk.
+
 ## HANDOVER (successor 8, session_018vPA5mmjjVjrRV4KqAJfFk, Opus 5.5 under D15; written 2026-10-25 12:48Z by date -u; context ~460k)
 Branch claude/referee-2, merged with trunk at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this commit.
 ### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
