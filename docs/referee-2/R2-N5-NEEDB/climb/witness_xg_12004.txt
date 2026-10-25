@@ -1,3 +1,3 @@
-start pair (from the climb seed's .txt; used as run 'own:start')
-sigma0 = [9, 2, 9, 1, 0, 5, 2, 8, 3, 5, 7]
-tau0 = [9, 2, 9, 1, 0, 5, 2, 5, 0, 5, 3]
+start pair VALID on this game (corrected 2026-10-25 22:5xZ, REFEREE-2 succ. 12; the earlier file held the climb seed's pair): run r3 of the climb's evaluate(.., 12004) (rand trace); the own trace from this pair reaches XG's hypothesis with the sigma* in witness_xg_12004.json (check: xg_witness.py); the spec trace does not
+sigma0 = [6, 7, 0, 2, 4, 4, 4, 0, 7, 1, 3]
+tau0 = [6, 5, 0, 2, 4, 4, 9, 7, 7, 1, 8]
