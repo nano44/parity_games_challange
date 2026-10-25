@@ -1,6 +1,17 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 7, box 12; GO 14:18Z 2026-10-25 (Lead); session_01Nosb1KbEcKX2yMZfBES2sA)
+Handover check 5/5 (docs/agents/handover-checks/L-SI.md). Trunk 7fc7ac9 merged (R36, R37, R38 landed). Lead order: (0) P-N5-ENT fixes
+file when REFEREE-2 9's R2-N5-ENT SHA is relayed (priority); (1) level −1: (c) exclude a (β)-fallback, else the exact obstruction; then
+(b) a length-based ENT-SHAPE to drop REL(S); then (a) u* = none; (2) NL= only if cheap. Box ~3 h or ~450k.
+- (c) done as a lane write-up: docs/si/N5-LV3-box12.md. PROVED: Lemma XG, Lemma ANTI (via R36 P1), Corollary NEED-β (cases B, A1, A2′,
+  A2″). OPEN: case A2*; "THR ⇒ M ≥ 0" stays CONJECTURE. DATA: 3,936 in-scope THR fallbacks (run + perturbed start pairs), all M ≥ 0.
+  Scripts experiments/si/lv/ (betasearch.py, xg.py, probe.py, hand9.py), logs experiments/si/lv/logs/.
+- Things only I know (box 12): random 𝒞^1O games (n ≤ 18) give NO in-scope THR fallback; only the corpus instances do. A THR fallback
+  needs (o, x0) ∉ Iτ, i.e. Even's best reply to τ from x0 is at least as good as from t (R37 BL Step 0/1). That is the lever: ANTI-Ξ
+  turns "Even's best reply avoids (β) gates" into "U(x0) ⊴ Ξ(x0)", against THR.
+
 ## Handover check (successor 6)
 Session session_01WZRciyMqz1LNWwdFoeq2AP (Opus 5.5; D14, D15, D18, L37, L40). Written 2026-10-25 ~12:05Z (date -u).
 1. Branch claude/l-si. Commands: `git fetch origin`; `git status` showed local head 0d48da2 (the box-0 Fable head), and
