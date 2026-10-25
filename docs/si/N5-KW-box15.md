@@ -266,12 +266,12 @@ Premises for "polynomial per phase" (each with its status):
   - kwcheck.py checks, per trace: WONCE, AGREE (Fact A's formulas for both frames above m*), FRZ (freeze from k0 + |R| − 1), LEN, KIND
     (≤ 1 change per vertex and the direction) and CWINT.
   - kwclimb.py: random o-cyclic 𝒞^1O games (RC.rand_game) and hill-climbs (FCL mutations).
-- Corpus 1: every .pg file in experiments/ and docs/ (1,101 files; 600 𝒞^1O; S3 start + 2 random starts). Logs: logs/all_r2_c0..3.txt.
+- Corpus 1: every .pg file in experiments/ and docs/ (1,101 files; 500 𝒞^1O, 600 not 𝒞^1O, 1 unparsable; S3 start + 2 random starts). Logs: logs/all_r2_c0..3.txt.
   - 1,502 runs, 6,151 AGREE states, 1,334 FRZ state checks: 0 failures.
   - Largest actual freeze delay: 1 transition (bound |R| − 1).
 - Corpus 2: 3,000 random games, n 6-40 (logs/random_3000.txt): 0 failures. Nearly vacuous: runs of ≤ 4 transitions.
 - Climbs (seconds 2400 / 1500; logs/climb_*.txt), totals over all evaluated games:
-  - ≈ 8.6M AGREE states and ≈ 2.8M FRZ state checks: 0 failures.
+  - ≈ 8.6M AGREE states and ≈ 2.6M FRZ state checks: 0 failures.
   - WONCE: 849k checks over 1.5M Ξ-flat S4a transitions (wonce2 climbs): 0 failures.
   - KIND / CWINT: 481k post-freeze runs with c_w ≻ c_θ and ¬H2 (kind2 climbs): 0 failures.
 - VACUITY (honest):
