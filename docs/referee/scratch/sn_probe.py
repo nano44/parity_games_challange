@@ -64,6 +64,13 @@ def run(g, cnt, name=""):
         rows[k] = dict(E=Ek, O=Ok, L=max(Ek, Ok), ch=ch, X=a["R"] != b["R"], fb=a["fb"])
         cnt["tr"] += 1
         th0, th1 = a["Xi"][o], b["Xi"][o]
+        # fixes §2b: H1-DROP (H1 at k, not H1 at k+1 => P(theta_k) = {}), H1-KEEP (H1 eps with O_k >= 0 keeps H1)
+        if a["H1"] and not b["H1"]:
+            cnt["H1DROP_chk"] += 1
+            if th0[1] != 0: cnt["H1DROP_FAIL"] += 1; EX.append((name, "H1DROP", k))
+        if Ok > Ek and a["H1"]:
+            cnt["H1KEEP_chk"] += Ok >= 0; cnt["eps_H1_Om1"] += Ok == -1
+            if Ok >= 0 and not b["H1"]: cnt["H1KEEP_FAIL"] += 1; EX.append((name, "H1KEEP", k))
         # OR
         if Ok > Ek:
             x0, x1 = a["sb"][o], b["sb"][o]; cnt["OR_chk"] += 1; cnt["OR_chk_" + ("H1" if a["H1"] else "nH1")] += 1
@@ -128,6 +135,10 @@ def phase(g, E, st, rows, P, cnt, o, exits, name):
         rel = sum(len([x for x in exits if x in st[k]["R"] and x not in st[k + 1]["R"]]) for k in Rn)
         eps_H1_total += epsH1; rel_total += rel
         cnt["ABSC_runs"] += 1
+        hk = [k for k in Rn if rows[k]["O"] > rows[k]["E"] and st[k]["H1"]]
+        if hk and rows[hk[-1]]["O"] >= 0:
+            cnt["ABSCp_chk"] += 1
+            if epsH1 > (do - 1) + rel: cnt["ABSCp_FAIL"] += 1
         if epsH1 > (do - 1) + rel:
             cnt["ABSC_FAIL"] += 1; EX.append((name, "ABSC", Rn[0], Rn[-1], "epsH1", epsH1, "d_o", do, "REL", rel))
         if epsH1 > do + rel: cnt["ABSC_dplus_FAIL"] += 1
