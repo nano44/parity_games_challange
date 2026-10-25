@@ -1,0 +1,22 @@
+TOTAL {'rises': 20, 'fb_in_run_after': 0, 'end_END': 13, 'end_PHASE': 1, 'end_noh_b': 6}
+name i L lt r r_next left_in_run why_end fb_in_run_after next_fb_dist
+lev_l_x.pg 54 23 28 28 -2 1 END 0 None
+run_x_inr2.pg 49 24 30 30 -2 1 END 0 None
+fbref_cex_n32.pg 53 25 30 30 None 0 PHASE 0 None
+x31_lem_t32.pg 58 28 31 31 -2 6 END 0 None
+x31_rx32.pg 53 24 25 30 30 1 END 0 None
+x31_rx32.pg 54 24 30 30 None 0 END 0 None
+x31_rx48.pg 49 31 44 44 None 0 noh_b 0 None
+zcl_rx_n32.pg 63 26 27 27 None 0 noh_b 0 None
+x32_waves32.pg 79 26 29 29 -2 1 END 0 None
+x32_waves48.pg 80 45 47 47 -2 8 END 0 None
+jcl_lev_l_sc.pg 16 24 31 31 29 2 noh_b 0 None
+jcl_lev_l_sc.pg 17 24 29 29 27 1 noh_b 0 None
+jcl_lev_l_sc.pg 18 24 27 27 None 0 noh_b 0 None
+jcl_x32_nest40.pg 30 30 39 39 None 0 noh_b 0 None
+rel_zcl_rx_n32.pg 19 29 31 31 -2 1 END 0 None
+cl9_norf_a.pg 13 23 28 31 31 21 END 0 None
+cl9_norf_a.pg 19 23 31 31 24 15 END 0 None
+cl9_norf_a.pg 34 23 24 24 None 0 END 0 None
+cl9_norf_b.pg 7 28 30 30 29 24 END 0 None
+cl9_norf_b.pg 30 28 29 29 -2 1 END 0 None
