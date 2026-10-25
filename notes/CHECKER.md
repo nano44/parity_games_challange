@@ -53,7 +53,15 @@
     N-1 L-RED box 37 line sourced only in LEAD-STATE (R67 not on trunk); N-2 sample names; N-3 note.
   - Add. 1 262104b2: PASS at 91582c0 (E-1, N-1, N-2 fixed);
   - Add. 2: R30 landed verbatim at trunk 659f574. C39 CLOSED.
-- PARKED until the next packet.
+- C40 (R31, P-N5-FBW pinned e69772b) 08:41Z (date -u):
+  - main report docs/checker/C40.md: PASS at 61c7cd1 (draft sha1 f2d4a606…); optional N-1 (REFEREE-2's committed logs predate its
+    'tight' counter; outside the draft);
+  - awaiting landing; then Add. 1 = landed-text check.
+- HANDOVER (context near the Lead's 600k line after C40): a successor should take the next packet. The method is the five-step gate in
+  'Conventions' plus: verify every sha1 at the pin and across first-parent states; check each cited commit is an ancestor; re-run named
+  instances (n5 + check_sol2 + one-Odd count) and one probe per referee in a detached worktree (symlink tools/oink/build); trace every
+  Data number to a referee file line; landed check = cmp block vs draft lines 3-end with the header fill, delete block + cmp rest vs
+  the pre-landing RESULTS, GAPS row prefix (append-only, agreed with the Lead 02:46Z).
 - Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs. In a worktree, symlink tools/oink/build.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 

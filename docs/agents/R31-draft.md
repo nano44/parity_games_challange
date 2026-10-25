@@ -1,4 +1,4 @@
-# Draft RESULTS R31 (Lead, 2026-10-25 07:20Z by date -u) (rev. 08:36Z: REFEREE-2 §C bc2e7b7 cited) — to CHECKER C40
+# Draft RESULTS R31 (Lead, 2026-10-25 07:20Z by date -u) (rev. 08:36Z: REFEREE-2 §C bc2e7b7 cited) — to CHECKER C40 — LANDED in RESULTS Results 08:50Z (CHECKER C40 737b193 PASS), after R30
 
 ### R31 [refereed-only] N5 on one-Odd-choice games: a fallback gate never outruns the Ξ/W gap (Lemma FBW, every game), so fallback levels never rise along a whole scope run (Theorem CLS2, (H-EQ) closed), fallbacks of level ≥ 0 freeze coarse values (FLAT-ALL), a tail repeats at most once per frozen stretch (STRETCH), and an additive per-level fallback count (Theorem PL, Corollary PL-S) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C40.md, checker PENDING)
 - Object (packet P-N5-FBW, pinned trunk e69772b, unchanged during review): docs/si/P-N5-FBW-box9.md, sha1
