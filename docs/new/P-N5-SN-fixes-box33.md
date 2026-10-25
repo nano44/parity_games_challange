@@ -94,7 +94,15 @@ because H1 holds at k*+1 (H1-KEEP), so σ̄(o) ∈ F. □
 - SN-2 = G-SN-1 (b): per phase + f for ε-transitions at fallback transitions (§2, §2b).
 - SN-3 (LEAVE, wording): replace "(if r_s = ⊥ the claim is empty)" by: "if r_s = ⊥, a relevant change still exists: some Even p on q's old
   route before o switches; it precedes λ(q) = c_θ ∈ F_s on q's H_{s+1}-path, and λ(p) ≠ p." (REFEREE.)
-- §C of both referees: to follow; the joint rows go in §8 here when relayed.
+- §C of both referees: §8.
+
+## 8. §C joint gap map (REFEREE-2 §C.3, referee-2 80d2e45; REFEREE's §C to follow; added 04:19Z by date -u)
+| row | REFEREE | REFEREE-2 | line (where here) |
+| --- | --- | --- | --- |
+| 1 | SN-1 | G-SN-1 (a) | §6: #H1-ε per fallback-free run ≤ d_o + REL_run (proved); ≤ (d_o − 1) + REL_run if H1 holds at the run's last state; the unconditional (d_o − 1) form is OPEN as signed (§2; L-NEW's §2b H1-KEEP, under addendum review, closes it when the run's last H1 ε-transition has O ≥ 0). An H1 ε-transition into a ¬H1 state was seen once, at a PHASE EXIT (epsseg_cex_n48, 25 → 26), which H1-KEEP (inside a phase) does not cover. ABS-COUNT is tight on epsseg_cex_n48 |
+| 2 | SN-2 | G-SN-1 (b) | §6 per phase: + f for ε-transitions at fallback transitions; with row 1: d_o(f + 1) + REL + f |
+| 3 | SN-3 | accepted | §5 LEAVE: "if r_s = ⊥, a relevant change still exists: some Even p on q's old route before o switches; it precedes λ(q) = c_θ ∈ F_s on q's H_{s+1}-path, and λ(p) ≠ p" (this file §7) |
+| 4 | §7 wording remark | N-SN-1 | §7 WK: "y ⊕ is strictly monotone between W(z) and W(a): y ∈ R constant, so z's and a's plays reach o without passing y, and after o y can lie only on o's W-cycle, below c_w; the mode is set by c_w, the common W-cycle node of a and z" (this file §3, with this wording) |
 
 ## 6. Labels after REFEREE-2 (REFEREE pending)
 - Signed by REFEREE-2: OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, LEAVE, WK (with §3), ABS-COUNT in §2's repaired form, ABS-L (with R29).
