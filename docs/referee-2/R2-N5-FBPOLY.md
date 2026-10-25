@@ -1,4 +1,4 @@
-# R2-N5-FBPOLY: second-referee check of packet P-N5-FBPOLY (L-NEW box 41: κ-FB-ROUND, κ-HAT-FREEZE, κ-PFZ, κ-Y-FORM, EXIT-SWITCH, FREEZE-EXIT, CN-ONLY, THETA-AFTER, Theorem FB-POLY). REFEREE-2 (successor 11), written 2026-10-25 19:0xZ-20:1xZ (date -u)
+# R2-N5-FBPOLY: second-referee check of packet P-N5-FBPOLY (L-NEW box 41: κ-FB-ROUND, κ-HAT-FREEZE, κ-PFZ, κ-Y-FORM, EXIT-SWITCH, FREEZE-EXIT, CN-ONLY, THETA-AFTER, Theorem FB-POLY). REFEREE-2 (successor 11), written 2026-10-25 19:0xZ-20:0xZ (date -u)
 Signature: (Opus 5.5, D15). Lead queue addition 18:51Z (Lead's stamp). I put it ahead of NHN / NEEDB, as the Lead allowed.
 Object: docs/new/P-N5-FBPOLY-box41.md, sha1 de244dcd3592b04eca2080a0efe10a7c0b2e5301, the same at the pin 42d8c3a9 and on my tree
 (`git show 42d8c3a9:<file> | sha1sum`, `sha1sum`). Author: L-NEW successor 20.
