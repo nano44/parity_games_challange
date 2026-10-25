@@ -15,7 +15,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - DONE: climbs (0 hits) -> §8.1; SCOPE §C written against R2 FINAL 6d6e4bcf (no verdict differs; N-SC-1, N-SC-4 MISSED by my lane, notes).
 - P-N5-P1 (pin 48a8a4c, sha1 b98ca794...): docs/referee/R-N5-P1.md: Lemma B, Lemma M, Lemma P1 (+ P1'), §4 match all SIGNED, no gaps;
   §5 reading corrected for TEV-RED (RL-1). Tool scratch/p1_probe.py (exhaustive strategies, n <= 13; 0 violations, control bites).
-- NEXT: §C for RL and P1 when R2-N5-RL / R2-N5-P1 exist (Lead's word, pin the R2 SHA).
+- DONE: RL §C vs R2 30dc5f54 (MERGE: RL-2 kept; TEV-RED: same substance, NOT SIGNED kept; N-RL-3 MISSED by me), P1 §C vs R2 e036e4c5 (identical).
+- NEXT: CYC-EV / RL fixes when routed (check it covers every t in (k0, k]).
 - Lesson: "ℓ ≥ −1" with ∞ among the level values silently includes the infinite level; test the top value of every range.
 - Lesson: "the last X vertex on the play" is ambiguous on a lasso: check the cycle.
 
