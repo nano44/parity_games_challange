@@ -1,6 +1,47 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Handover check (successor 15)
+Successor 15 (Opus 5.5, D15/D18/L40), written 2026-10-25 07:5xZ by date -u (container clock read 07:50:41Z; the Lead's brief is
+stamped 07:53Z, so the clock is again slow). Predecessor: successor 14, session_014oGq98MdJvpgrVXNA7rNvA, handover 5351fbf2.
+Every answer measured from the repository; commands named.
+1. **Branch / head / trunk distance.** `git fetch origin`; `git status`: local claude/l-new was "behind 'origin/claude/l-new' by 1157
+   commits" (STALE again). `git merge --ff-only origin/claude/l-new` → local = 5351fbf2. Then
+   `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 2 ahead / 66 behind trunk 1483054f ("Lead: l-new
+   ONE-DROP refutation merged, re-run; log"); merge-base 45e72ef8. `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` (no
+   conflicts, no rebase) → merge commit 1895b3cd: 3 ahead / 0 behind; after this commit 4 ahead / 0 behind until the Lead's next commit.
+2. **Open work and next step** (sources: notes resume point, docs/NOW.md rows 42/45/74, `git log origin/claude/referee{,-2}`,
+   `sha1sum`, `git diff <pin> HEAD`).
+   - P-N5-FRZ: `sha1sum docs/new/P-N5-FRZ-box34.md` = 39df373c…; `git diff --stat 25fda0f HEAD` on it empty (pin 25fda0f3 = "Lead:
+     P-N5-FRZ pinned (sha1 39df373c) for both referees"). Fixes file P-N5-FRZ-fixes-box34.md sha1 168de464… (cited, FROZEN).
+     REFEREE succ. 6 signed (R-N5-FRZ 3a520ce, Addendum 3171efc closes FRZ-1..3). REFEREE-2 succ. 7 (session_01CE1xQNfGUgtJg9A7SWAkuE)
+     did its handover/pin check at de9ff970; no R2-N5-FRZ report on origin/claude/referee-2 yet (`git ls-tree`). Next: when its items
+     are relayed, answer them in a NEW file docs/new/P-N5-FRZ-fixes2-box34.md (does not exist yet).
+   - P-N5-L2: `sha1sum docs/new/P-N5-L2-box34.md` = cbea0739… (as written at l-new 1afccb51). The Lead's brief names its pin as trunk
+     04b3f48, but `git rev-parse 04b3f48` fails: no fetched ref contains that commit (`git log --all` also finds none). Not yet
+     relayed to referees. Next: referee items go in a NEW file docs/new/P-N5-L2-fixes-box34.md.
+   - Research box 35 after GO: (a) DROP-LEN on onedrop_cex_n32 (`sha1sum` = 5793d5a3…, experiments/new/box34/instances), (b) (L2)
+     fallback restart at an H1∧¬H2 state taking τ(o) out of R, (c) core (L1) via a new angle vs L-SI 4 (ENT = NJB, P-N5-NJB frozen at
+     l-si 5c949ec0) and L-RED 15.
+   - Nothing of mine is running (`ps aux`). Oink is NOT built in this container (`ls tools/oink/build`: no such directory): the first
+     research step after GO is `scripts/setup_oink.sh`.
+3. **GAPS** (`grep -n G-N5-TIME docs/GAPS.md`: line 11): G-N5-TIME, major, owner "L-NEW (L-LIT T22; referees later)", status **open**.
+   Latest update in the row: R30 [refereed-only] landed 05:04Z (P-N5-SN + fixes §2b; CHECKER C39); "Open per phase: X_SN, REL, K
+   (Θ(n) possible); ε⁽⁻¹⁾, ε at fallbacks (never seen)." The row does not yet mention box 34 (FRZ, L2, ONE-DROP FALSE).
+   Also mine: G-N1-LB (minor, optional, not routed, open).
+4. **Rulings verbatim** (docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md):
+   - D14 (l.244; index **active**; Lead reading L35): "D" / "You know it can also test prveiously not tested approaches, it can come up
+     with it own as well"
+   - D16 (l.299; index **active**; Lead reading L38): "Then keep working as I told you to"
+   - D18 (l.332; index **active**; Lead reading L40): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+     connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable
+     assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from
+     conjectures and open problems."
+5. **Trap found.** (i) The stale container, again: local claude/l-new was 1157 commits behind origin; working from it would have hidden
+   box 34, both packets and both instances. (ii) New: the P-N5-L2 pin "trunk 04b3f48" in the Lead's brief resolves to no commit in any
+   fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
+   (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
+
 ## Resume point (overwritten at handover, LANE-RESTART step 1; successor 14 PARKED after box 34, 2026-10-25 07:5xZ by date -u)
 Successor 14 (Opus 5.5, D15/D18), session_014oGq98MdJvpgrVXNA7rNvA. Handover check ce400ff3 (5/5). Box 34 GO 04:52Z to ~07:55Z.
 Nothing running (all climbs finished). Oink is built in this container only (tools/oink/build, gitignored).
