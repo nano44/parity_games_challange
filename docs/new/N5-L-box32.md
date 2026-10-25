@@ -18,7 +18,7 @@ Labels (L40): PROVED (by whom), READING, CONJECTURE, FALSE, OPEN, DATA. Every PR
 | Lemma GR: a transition whose used level ℓ ≥ 0 is set by an Even switch makes that vertex ℓ-good; nobody loses ℓ-goodness at used level ≤ ℓ | PROVED | §1 |
 | Lemma NU: a run of transitions with no relevant change has ≤ m − n transitions and leaves Ξ fixed | PROVED | §1 |
 | Theorem LP: a phase has T ≤ (m − n + 1)(T_rel + 1) transitions, T_rel ≤ (n + 1)(ρ + 1)·n(n − 1) + ε (ρ = rises of the used level, ε = Odd-only levels) | PROVED | §2 |
-| Lemma DF (𝒞^1O): after an S4a step a dormant gate edge (y, z) has σ(y) ∈ R (never F → F, never F → R) | PROVED | §3 |
+| Lemma DF (𝒞^1O) as first stated | FALSE (referees: df_cex.pg n 11 / n 5; own W-cycle nodes) — replaced by DF′ (y not its own W-cycle node), signed by both; P-N5-LP-fixes-box32.md §1 | §3 |
 | Lemma BAND (𝒞^1O, both frames in route form): a dormant R-R gate edge has its Ξ-level strictly between rank c_θ and rank c_w | PROVED | §3 |
 | (NO-WAKE) "away from fallbacks and crossings, S4a never takes a dormant edge above the previous used level" | FALSE (instances/nowake_cex_n32.pg, a U3 state) | §4 |
 | Lemma WAKE: a wake goes R → R (a wake into F is a crossing); in route form it lies in a U1 piece (covered by R24 Theorem U1) | PROVED | §4 |
@@ -132,7 +132,7 @@ Proof.
 ## 3. Where dormant edges live on 𝒞^1O (PROVED, L-NEW)
 A gate edge (y, z) at k+1 of level > L_k is DORMANT: by Lemma HI it was a gate edge at k, with z ≠ σ_k(y), so z ∈ A_k(y), and S4a did not
 take it.
-**Lemma DF.** On 𝒞^1O, let k → k+1 be an S4a transition (no fallback) inside a phase, and let (y, z) be an edge of the arena H_k that is
+**Lemma DF** (FALSE as stated: it needs y not its own W-cycle node, i.e. DF′; see docs/new/P-N5-LP-fixes-box32.md §1). On 𝒞^1O, let k → k+1 be an S4a transition (no fallback) inside a phase, and let (y, z) be an edge of the arena H_k that is
 a gate edge at k+1 (every dormant edge is one, by Lemma HI). Then a := σ_{k+1}(y) ∈ R_{k+1} (o counts as a vertex of R).
 Proof.
 - σ_{k+1} is Even's optimum of the one-player arena H_k against τ (SPEC S4a), so no edge of H_k improves W_{k+1}: an improving switch of a
