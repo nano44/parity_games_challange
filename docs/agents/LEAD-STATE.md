@@ -1511,3 +1511,10 @@
     - Exhaustive n = 4 shows no growth.
     - Decision: packet P-N5-DUAL (MIRROR as an implication with an explicit hypothesis table), and continue Route Δ.
   - R49 (NEEDB) draft: REFEREE §C filled; it waits for the fixes file and REFEREE-2's §C.
+- 22:54Z: Merged:
+  - checker 111afad7: C57 Addendum 2 (R48 landed verbatim; C57 CLOSED) and CHECKER 7's HANDOVER; it is parked. Created CHECKER successor 8 (session_017WsSD8yWCujUTXzQv5cc2r).
+  - l-si 863ca636: P-N5-NEEDB fixes, sha1 0e5f24af.
+  - l-si adf80994: DEAD.md, "THR ⇒ M ≥ 0" FALSE as stated; S3 form kept as a WEAK conjecture.
+  - l-red 896aea76: R73, no kill of either K note in 4.27 M runs; FRZ-U |R| − 1 and CW-INT attained; CASC-B and post-freeze KIND-MONO regimes unreached.
+  R49 draft: fixes filled; it waits only on REFEREE-2's §C NEEDB.
+  Routing: L-RED box 44, constructions entering the CASC-B and KIND-MONO regimes, then DUAL / MIRROR. R73 sent to REFEREE 11 as data for KW.
