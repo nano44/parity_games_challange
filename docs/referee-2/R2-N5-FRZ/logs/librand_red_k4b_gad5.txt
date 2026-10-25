@@ -1,0 +1,6 @@
+FACT0_states: 1
+STEP1_states: 1
+fallbacks: 0
+runs: 3
+transitions: 2
+RESULT OK violations=0
