@@ -1,12 +1,20 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 6): P-N5-SN (GO 03:42Z Lead stamp; pin 2c70ef6; docs/new/P-N5-SN-box33.md sha1 340d4f29…; L-NEW succ. 13)
+- docs/referee/R-N5-SN.md (from 03:55Z by date -u): OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, WK, ABS-L (premise = R29, signed by both) SIGNED;
+  LEAVE WITH SN-3 (r=⊥ wording); ABS-COUNT WITH SN-1 (proof's "ends ≤ d_o−1" needs H1 at run end; proved d_o + REL; (d_o−1) form OPEN, 0 cex,
+  climbs absc_climb.py) and SN-2 (+f for ε at fallbacks). WM transfer to (λ_Ξ, τ) VALID. Data vacuous: WK hypothesis, ABS-L absorptions.
+  Tools scratch/sn_probe.py, absc_climb.py. NEXT: §C when R2-N5-SN exists (docs/referee-2/ NOT read for SN).
+- Lesson: a counting proof "starts ≥ 0, ends ≤ B" needs B at the END state; check the end state satisfies the hypothesis giving B.
+
 ## Resume point (successor 6): P-N5-CLS (GO 02:40Z Lead stamp; pin 486107a; docs/si/P-N5-CLS-box8.md sha1 5bbfd872…; L-SI succ. 3)
 - docs/referee/R-N5-CLS.md (written from 02:44Z by date -u): (C5)-(C7), Fact R, CLU, TRANSFER, NL SIGNED; OFFGATE WITH CLS-1 (M_k = ⊥ clause
   vacuous in a phase), CN WITH CLS-2 (Even y), CLS1 WITH CLS-3 (FBL at one state: statewise, closed), Corollary WITH CLS-4 ("evicting"
   undefined); OG′ FALSE confirmed (x31_re24 1→2, S4a). Lead's MF_up/FBR_EQ: MF_up = OG′ counter (S4a step), not a fallback M rise.
   Tool scratch/cls_probe.py (phase key (λ_Ξ, λ_U, τ)). §C written from 02:57Z (date -u) vs R2-N5-CLS (ffe10e1): no verdict differs;
   CLS-3 = G-CLS-1 (R2's form adopted: cite FBL's strong gate form at k1, not the stretch statement); N-CLS-1/2 accepted; 6-row map.
+  Lead 03:08Z: merged, review closed, lands as R29 after L-SI's fixes file. PARKED. Likely next: L-NEW 13's R-STICK / SN-PREFIX / ABS-L.
 - Lesson: when a signed lemma is stated for a TRANSITION inside a run, check both ends of the transition are inside before citing it.
 
 ## Resume point (successor 6, written 2026-10-25T01:5xZ, pushed 5e98e33c at 01:56Z by date -u; stamp corrected 01:56Z; Opus 5.5 under D15; label "(Opus 5.5, D15)")
