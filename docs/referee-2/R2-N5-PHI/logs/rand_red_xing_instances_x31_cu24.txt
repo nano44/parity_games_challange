@@ -1,0 +1,17 @@
+PHIA_checks: 1344
+PHIB_checks: 1344
+lambdaU_changes: 1
+lambda_changes: 14
+phases: 17
+runs: 3
+tau_changes: 2
+transitions: 56
+max_lambdaU_changes_per_vertex: 1
+max_lambda_changes_per_vertex: 3
+max_permille_joint_runs_of_bound: 5
+max_permille_phases_of_bound: 10
+max_permille_tau_changes_of_d-1: 250
+max_permille_vertex_changes_of_n-1: 130
+max_phases: 6
+max_tau_changes: 1
+RESULT OK violations=0

@@ -1,0 +1,13 @@
+AK_checks: 84
+KH_b: 67
+KP_checks: 12
+KY_states: 12
+fallbacks: 0
+phases: 4
+runs: 3
+states: 12
+max_FBCAP_excess_plus_1000: 994
+max_FB_a_slack_minus_1000: 939
+max_f_minus_U_plus_2_U>=3_plus_1000: 994
+max_f_per_phase: 0
+RESULT OK violations=0

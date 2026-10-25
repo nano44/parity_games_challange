@@ -1,0 +1,9 @@
+CF post-freeze classes                   14
+CF state checks                          84
+SG checks                                3002
+files                                    295
+phases with fb                           308
+traces                                   1180
+MAX {'max fb/phase': 37, 'max fb/bound': 0.062, 'max distinct theta post-HAT / (d_o+n)': 0.2}
+FAILS (first 10): []
+RESULT OK

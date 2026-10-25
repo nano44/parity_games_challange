@@ -1398,3 +1398,42 @@
   - P-N5-FBPOLY, docs/new/P-N5-FBPOLY-box41.md, sha1 de244dcd, is PINNED at this commit. It is self-contained in κ form and queued for both referees.
   - Working doc N5-XOUT-box41 (sha1 b0583476): Lemma X-OUT, lane PROVED; crossings per OUT stretch ≤ (|U|−2)(f_S+1) + f_S.
   - READING: FB-POLY breaks R34's f ↔ X loop for X_SN. Still open: ¬H1 crossings outside SN prefixes, O, Theorem X assembly, Φ.
+- 18:54Z Lead: merged l-si 858c7dd (docs/si/N5-FBPHASE-box14.md, sha1 f7aaa624; L-SI 9, lane PROVED, unrefereed).
+  - Theorem FB-PHASE: in-phase Even fallbacks ≤ 2n², an independent route to the same kind of bound as L-NEW's FB-POLY.
+  - Corollary FX: X = O(d_o n⁶) per phase, every phase type (with R34 (f), R30 (c)).
+  - READING T-K: N5 on 𝒞^1O is polynomial ⇐ K-poly ∧ Lemma Φ.
+  - Lead ruling to avoid a duplicate review: FB-POLY (pinned) is the theorem the referees review. L-SI 9 packets only (1) Φ and (2) Corollary FX citing FB-POLY; FB-PHASE stays a lane cross-check.
+  - K (wakes) becomes the main open target.
+  - All of this is SUBCLASS 𝒞^1O; TARGET.md is general games.
+- 18:59Z Lead: merges.
+  - l-new 2b90ca6, docs/new/N5-MAP-box41.md (sha1 48961438, READING): X = O(n⁶) per phase from FB-POLY + landed R30 (c), R34 (e), (f). NFB-O is covered by FB-POLY. The (NH′) reductions (R24, R26) are unsigned READINGs, leaving (E) and (K_W) OPEN. κ-FREEZE-F fails at S4a steps (obstruction recorded).
+  - referee 008ad8a, R-N5-NEEDB: all SIGNED, no gaps. Notes NEEDB-N1..N4. NEED-β case (B) occurs once, on block_9501.
+  - Routing: L-NEW 20 does (E)/(K_W) and a packet P-N5-NH (the R24 / R26 (NH′) reductions as signed lemmas); no P-N5-XOUT packet. REFEREE 10 starts FBPOLY.
+- 19:04Z Lead: hourly sweep 19:02Z. No overage; Lead ~629k (compaction; LEAD-STATE current). L-COMP 4 pushed box8 n 5 Q2 / partial Q3 at 18:50Z and is running Q3; resolves the 17:03Z watch. L-RED 17 at 446k, near handover. REFEREE-2 11 working on §Cs. REFEREE 10 on FBPOLY. L-SI 9 and L-NEW 20 working. No exceptions.
+- 19:09Z Lead: merged referee-2 e6bccdf.
+  - §C LV2 ab7843a: identical verdicts, empty gap map. LV2 has converged.
+  - §C RHO: identical, empty gap map. RHO-N2 accepted (missed by successor 10). RHO has converged.
+  - PFZ verdict given ahead of its §C: BRK-POLY′ (i) SIGNED as stated with REFEREE's repair. G-PFX-1 = PFZ-1 is closed by the repair. The §C text is pending.
+  - Drafted R43 = P-N5-LV2 for CHECKER C52. Conditions C-ENT and C-LV are now R40 and R41.
+- 19:14Z Lead: merges, pins, routing.
+  - l-si fe58fba: L-SI 9 PARKED at ~440k.
+    - P-N5-PHI, docs/si/P-N5-PHI-box14.md, sha1 35e79ec1: Lemma Φ (≤ 2n(n−1)+1 joint λ-runs, every game); Corollary Φ-1O (#phases ≤ n(n−1)+d).
+    - P-N5-FX, docs/si/P-N5-FX-box14.md, sha1 aa227b0b: X ≤ n(f + X_SN) + n − 1 unconditional; X = O(d_o n⁶) COND. FBPOLY; T-K a READING.
+    - Ledger v2 (8ab27359, READING): K = (E), (K_W) is the single open count on 𝒞^1O.
+    - Both packets are PINNED at this commit and go to both referees.
+  - l-new 2ec8fe1: L-NEW 20's handover is written. P-N5-NH is deferred to its successor. Fixes drafts are ready.
+  - referee-2 212f88e: PFZ §C. Identical verdicts. BRK-POLY′ (i)-(iii) SIGNED as stated with REFEREE's repair. PFZ-N1..N3 accepted. G-PFX-1 = PFZ-1 closed, pending the fixes-file text.
+  - Created L-SI successor 10, session_01PBqfsNWMhTPn7yNJ8C18HP.
+  - Archived the L-SI 6 and 7 rows.
+- 19:20Z Lead: merged l-si ffc341c. L-SI 10 handover check 5/5, re-measured. GO box 15 (K).
+- 19:25Z Lead: merges and revisions.
+  - checker 1c86563: C52 = R43 FAIL. E-1: REFEREE-2 data mixed batch and climbs. E-2: block_9501 exists only from REFEREE-2's start pair, and the REFEREE reproduction is in R-N5-NEEDB. Statements (a)-(h) PASS.
+  - R43 revised with E-1, E-2 and N-1..N-4; new sha1 3e1b490f.
+  - l-new cf02711: RHO fixes docs/new/P-N5-RHO-fixes-box40.md, sha1 cc4e8540. RHO is ready to draft.
+- 19:30Z Lead: drafted R45 = P-N5-RHO (docs/agents/R45-draft.md, STAMP placeholder). It will be sent to CHECKER after R44 = P-N5-PFZ (+ ext), which is waiting for L-NEW 20's PFZ fixes file; RHO cites PFZ's FB-ROUND and BRK-POLY′.
+- 19:35Z Lead: merged l-new a3efded (PFZ fixes, docs/new/P-N5-PFZ-fixes-box39.md, sha1 3f55bc88, with the PFZ-1 repair in full; L-NEW 20 PARKED). Created L-NEW successor 21 (session_01YJHHx1t8hvqkDnKzMU2Lfa). Drafted R44 = P-N5-PFZ + ext for CHECKER C53; R45 = P-N5-RHO (C54) follows R44.
+- 19:40Z Lead: merged checker 707b402 (C52 Addendum 1: R43 PASS at 70deed32) and l-red e63003b.
+  - R43 LANDED in RESULTS (CHECKER C52 1c86563f + Addendum 1 707b402e); cmp OK against draft lines 3-52; GAPS UPDATE 19:40Z.
+  - L-RED 17 PARKED: no kill of FB-CAP, FB-POLY, FB-PHASE or FX in 8.6 M runs at n 5 and 6.5 M at n 4 (all start pairs). FB-CAP equality at |U| = 4: fbcap_eq_u4_n11 (39beb8b8; trivial).
+  - Created L-RED successor 18 (session_01D6HqejxBahRiMjurWjAtzT).
+- 19:45Z Lead: merged l-new 419308f (L-NEW 21 handover 5/5; GO) and referee-2 b621f9a (R2-N5-PHI: Lemma Φ (a)-(c) and Φ-1O (a), (b) all SIGN, no gap; R18's S1/S2 do not threaten U-monotonicity; λ and λ^U checked, 3.2 M checks each). REFEREE-2 has also finished its NHN paper check (all SIGN); its FB-POLY report is due ~20:0xZ.

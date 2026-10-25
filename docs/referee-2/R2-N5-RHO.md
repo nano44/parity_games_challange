@@ -118,3 +118,32 @@ Thin spots, as the packet's §8 says:
 ## 8. Notes for the lane (none blocks a signature)
 - N-RHO-1 (wording): RHO-HN's proof gives the sharper (N_HN + |U| − 3)(|U| + deg(o) − 3) + deg(o).
 - N-RHO-2 (DATA): FREEZE-F (b) and the post-freeze regime at |U| ≥ 4 are reached by no data, the lane's or mine. A target for L-RED.
+
+## §C. Comparison with REFEREE (REFEREE-2 successor 11, written 2026-10-25 18:5xZ by date -u)
+Signature: (Opus 5.5, D15). Lead GO 18:27Z (Lead's stamp). Compared: docs/referee/R-N5-RHO.md at trunk 42d8c3a9 (sha1 5a8ec11d…): REFEREE
+10's report 59278313 and its §C 06d6e6d, against this file's report 269ae45a (successor 10). I opened R-N5-RHO only after 269ae45a was
+on the branch and on trunk. Object unchanged: P-N5-RHO sha1 cd5df65c….
+
+### Verdicts
+| item | REFEREE-2 | REFEREE | outcome |
+| --- | --- | --- | --- |
+| Y-FORM, HAT-FREEZE (a)-(c), RHO-TAIL, BF-F, FREEZE-F (a)-(c), RHO-HN | SIGN | SIGNED | identical |
+| HN-POLY | SIGN through BRK-POLY′ (i′) and (ii)'s first inequality | SIGNED conditional on the same two forms | identical. My PFZ §C (C.2) now also signs BRK-POLY′ (i) as stated with REFEREE's repair; HN-POLY does not need it |
+| §7, §8 | not signed | not signed | identical |
+- Joint gap map: EMPTY. I agree with REFEREE's §C table except where I add to it below.
+
+### Notes
+- N-RHO-1 = REFEREE's §6 sharper count: identical.
+- RHO-N1 (o = c_θ with |U| ≥ 2: 89/990 library phases; covered vacuously). I accept it and its suggested wording.
+- RHO-N2 (citation). I ACCEPT it: successor 10 MISSED it.
+  - P-N5-RHO's HN-POLY τ(o) = o line (l. 89, l. 222) cites NE-COUNT (c), RESULTS R39 (f).
+  - RESULTS R39 (f) is headed "Corollary NE-COUNT (τ(o) = o, case A; θ a parameter)" (`grep` RESULTS.md). Its (c) is landed for case A only.
+  - REFEREE's case-B argument, re-derived:
+    - τ(o) = o makes o's (σ, τ)-play the loop o → o, so o lies on its own W-cycle at every state. So ¬H2 holds everywhere and HN = H1.
+    - An HN stretch is then a maximal H1 run of the phase. H1 runs and ¬H1 runs alternate, separated by H1-toggles. So
+      N_HN ≤ ⌊T_ph/2⌋ + 1.
+    - TOGGLE-COUNT (RESULTS R34 (e): "H1-toggles per phase ≤ T := |U|(n + 1) + n − 1 ≤ n² + 2n − 1", no case hypothesis) bounds T_ph.
+  - So the claim holds in case B as well. Only the citation changes: "R34 (e), with HN = H1 when τ(o) = o".
+- RHO-N3 / N-RHO-2 (data): the same thin spots on both engines. Post-freeze occurs only at |U| ≤ 3, never at |U| ≥ 4. FREEZE-F (b) is
+  vacuous. RHO-TAIL has 0 changes past the freeze. Both name these as targets for L-RED.
+- No verdict of mine changes. (Opus 5.5, D15)

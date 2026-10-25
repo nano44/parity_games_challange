@@ -1,0 +1,40 @@
+climb FIT=rtl seed=9702 n=48 iterations=21750 improvements=14 best_fitness=68.0
+BEST-INSTANCE counters: {'BRKX_rho': 1, 'BRKX_stretches': 1, 'BRKX_stretches_rho>=1': 1, 'FACT_A_states': 24, 'NCA_identity_states': 2, 'PFZR_Q_walks': 24, 'PFZR_epochs': 10, 'PFZR_stretches_rho>=1': 1, 'PFZ_b_runs': 1, 'PFZ_skipped_large_U': 9, 'TLEN_epochs': 10, 'TLEN_epochs_with_theta_change': 4, 'TLEN_theta_changes': 13, 'runs': 4, 'states': 24, 'theta_runs': 10}
+BEST-INSTANCE maxima: {'max_BRKX_(i)_excess_plus_1000': 913, 'max_BRKX_rho_S': 1, 'max_PFZR_(i)_repaired_excess_plus_1000': 914, 'max_PFZR_refined_excess_plus_1000': 1000, 'max_PFZR_slack_thetaLEN_minus_refined': 43, 'max_TLEN_theta_changes_in_epoch': 4}
+BRKX_rho: 4915
+BRKX_stretches: 7520
+BRKX_stretches_rho>=1: 4914
+FACT_A_states: 463993
+FBR_checks: 861
+FBR_fallbacks: 16
+NCA_identity_states: 57485
+PFZR_Q_walks: 461856
+PFZR_epochs: 239289
+PFZR_stretches_rho>=1: 4914
+PFZ_a_checks: 6
+PFZ_b_runs: 39471
+PFZ_skipped_large_U: 201695
+RECORD_post_freeze_runs_U=1: 221
+RECORD_post_freeze_runs_U=2: 3
+TLEN_epochs: 241166
+TLEN_epochs_with_theta_change: 80847
+TLEN_theta_changes: 176678
+breaks: 0
+breaks_kind1: 0
+breaks_kind2_early: 0
+breaks_kind2_late: 0
+climb_evaluations: 21649
+post_freeze_transitions: 121
+runs: 86596
+states: 463993
+theta_runs: 241166
+max_BRKX_(i)_excess_plus_1000: 1000
+max_BRKX_rho_S: 2
+max_PFZR_(i)_repaired_excess_plus_1000: 958
+max_PFZR_refined_excess_plus_1000: 1000
+max_PFZR_slack_thetaLEN_minus_refined: 46
+max_TLEN_theta_changes_in_epoch: 4
+max_fallbacks_in_theta_run: 1
+max_fallbacks_minus_U_plus_1_U>=3: 0
+max_post_freeze_U_rises: 0
+RESULT OK violations=0
