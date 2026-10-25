@@ -246,3 +246,94 @@ REFEREE's three gaps. Reading it shows those gaps' content, but not REFEREE's re
   random games are nearly vacuous.
 
 Signed: REFEREE-2 successor 7 (Opus 5.5, D15).
+
+## §C. Comparison with REFEREE (docs/referee/R-N5-FRZ.md: report 3a520ce7, Addendum 3171efc7). REFEREE-2 successor 7, 2026-10-25 08:31Z (date -u)
+I opened R-N5-FRZ.md only after my report (20a73ca1) was pushed. Before that I had seen REFEREE's three gaps only through the lane's fixes
+file, which I read after my verdicts were fixed (§9). Signature (Opus 5.5, D15).
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| NL-MF | SIGNED (phase-key note) | SIGN | signed by both; REFEREE's phase-key transfer accepted (C.2, row 6) |
+| Fact 0 | SIGNED | SIGN | signed by both |
+| ARENA | SIGNED | SIGN (N-FRZ-1, citation) | signed by both; row 4 |
+| Steps 1-2 | SIGNED | SIGN (inside P^c_ℓ) | signed by both |
+| P^c_ℓ | SIGNED WITH GAPS FRZ-1, FRZ-2 (wording, closed) | SIGN with notes N-FRZ-2, N-FRZ-3 (wording) | LABEL DIFFERS, content identical: the same two wording points. I adopt REFEREE's label, SIGNED WITH GAPS FRZ-1, FRZ-2 (closed) |
+| FREEZE | SIGNED | SIGN | signed by both |
+| RATCHET | SIGNED | SIGN | signed by both |
+| BLOCK (+ Consequence) | SIGNED | SIGN (vacuous in my data) | signed by both; data thin (C.3) |
+| X-RUN | SIGNED WITH GAP FRZ-3 | SIGN WITH GAPS G-FRZ-1 | signed by both; FRZ-3 = G-FRZ-1, closed by the fixes file |
+| SUB | SIGNED | SIGN | signed by both |
+| §8 | not signed | not signed | — |
+| Addendum (fixes file 168de464: FRZ-1..3 closed) | CLOSED | CLOSED (my §9) | agree |
+The only difference is the label on P^c_ℓ, and it is resolved by adopting REFEREE's. No verdict differs in substance. Neither referee
+found a counterexample.
+
+### C.2 Item by item
+- FRZ-1 = N-FRZ-2 (B1 case (γ): P(π) = ∅, c′ even, shorter; R20's XA-3 inherited). Found independently, with the same repair.
+  - REFEREE's Addendum checks the B-fallback half of (γ): x not the top, x ⊕ strict.
+  - I add only that x = c′ cannot occur in (γ): x on c′'s cycle with x = c′ puts x ∈ π, which is B2.
+- FRZ-2 = N-FRZ-3 (B-fallback B1 at λ(x) = x: strictness by cycle node). Found independently. REFEREE's clause and my §3.2 argument are
+  the same.
+- FRZ-3 = G-FRZ-1 (X-RUN: the transition from P's last state can release exits, and R-STICK does not cover it). Found independently.
+  - Both repairs give REL_Q ≤ d_o (C_P + 1) with C_P + 1 ≤ 13(d_o + 1)n³. The fixes file carries it.
+  - I add the data point: 0 leaves at that transition in my library and climbs, so this is a proof gap that was never observed.
+- Row 4, N-FRZ-1 (REFEREE-2 only; ARENA R → R̄, citation). REFEREE's §2 reads "same π, (C7)". The packet's "same π" is the route shared by
+  Ξ(v) and W(v) at ONE endpoint v. The ARENA comparison is between the two endpoints σ y and z, which have different routes.
+  - (C7) compares π ⊕ a with π ⊕ b (one prefix, two bases). That is Ξ(z) against W(z), not Ξ(z) against Ξ(σ y).
+  - The step needs the twin fact: for one base b with cycle node c, the order of π_z ⊕ b against π_{σy} ⊕ b depends only on
+    (π_z Δ π_{σy}) ∩ V_{>c}, on |π_z| − |π_{σy}| and on c's parity. H3 then makes θ and w give the same order.
+  - The conclusion is unaffected. I propose one fixes-file line (C.4) and ask REFEREE to accept or contest it.
+- Row 5, N-FRZ-4 (REFEREE-2 only; wording): d_o, "crossing transition" and "leaves R" are used but not defined in the packet. REFEREE
+  read them from R30 / R21, as I did.
+- Row 6, REFEREE's NL phase-key note (REFEREE only), ACCEPTED.
+  - R29 (e) NL is signed under R21's key, a joint λ-phase (λ_Ξ, λ_U) with τ constant. The packet's phase is (λ_Ξ, τ).
+  - My report cited NL without checking that transfer. That was my miss; it is the trap my lane's notebook names.
+  - REFEREE's transfer argument: NL's proof uses Lemma G and (C7) (statewise), WM (τ only, transfer recorded in R30 (c)), R25's (T)
+    (iii) step (λ_Ξ constant) and TRANSFER (R15 only), and nothing uses λ_U. I re-read the list against R29 (e) and accept it.
+  - My data used the (λ_Ξ, τ) key throughout and had 0 NL-MF failures (6,024 library and 852,832 climb cases with r > MF). The other
+    citations in the packet are statewise (R19 (a), XW, Fact 0), every-transition (R15 (a)), or already transferred (WM in R30 (c);
+    FBL step 1 = R21 (c) FBL-N (i), τ only).
+- REFEREE's remark on ℓ = ⊥ (B-fallback B2 x = c′ is not vacuous there, and the packet handles it): agreed. In my data no window at ⊥
+  ever occurred, so that case is proof-only on my side too.
+
+### C.3 Data, compared (DATA, not proof)
+- Both referees: 0 failures. Random 𝒞^1O games give no n-state (h) window for either of us, so FREEZE, RATCHET, BLOCK and SUB (iii) rest
+  on library instances (REFEREE) and on library plus climbs (me).
+- Counts differ by N5 trace and selection, not by any statement:
+  - REFEREE traces SPEC (n5.py-equal); I use my own N5 with arbitrary arena optima, 3 starts, and deterministic plus --rand.
+  - FREEZE windows: REFEREE 142, me 302 (library); 125,028 in my climbs.
+  - X-RUN runs: REFEREE 472, me 2,883 with H1 on P.
+  - SUB re-entries: REFEREE 27, me 7 (library); 155 in my climbs.
+- Joint thin spots, to be recorded with the result:
+  - (i) BLOCK: my data has 0 S4a leaves inside any r = ℓ block, and 0 S4a leaves at (h) states after any freeze at ℓ ≥ 0, including
+    three leave-aimed climbs. REFEREE reports "30 runs I, no re-entry after an S4a leave" without a leave count. I ask REFEREE (via the
+    Lead) whether any S4a leave occurred in its 30 runs; if none, BLOCK is vacuous in all data.
+  - (ii) No freeze at ℓ ∈ {−1, ⊥} in my data, so X-RUN's segment −1 and its post-F(⊥) part are proof-only. REFEREE's "no crossing after
+    F(⊥)" does not say whether any post-F(⊥) transition existed.
+  - (iii) The X-RUN bound is far from tight: max 55 crossings in P for both.
+
+### C.4 Joint gap map (one fixes-file line per row)
+| row | REFEREE | REFEREE-2 | kind / status | fixes-file line |
+| --- | --- | --- | --- | --- |
+| 1 | FRZ-1 | N-FRZ-2 | wording, closed (fixes §1) | §3 B1: "(γ) P(π) = ∅, c′ even, the new path shorter: as (β)" (in the fixes file) |
+| 2 | FRZ-2 | N-FRZ-3 | wording, closed (fixes §1) | §3 B-fallback B1: "if λ(x) = x, strict by the cycle node (rew(c′) > rew(x)); otherwise by (V2)" (in the fixes file) |
+| 3 | FRZ-3 | G-FRZ-1 | proof gap in a consequence, closed (fixes §1); never observed | §6: "REL_Q ≤ d_o (C_P + 1); the transition leaving P can release exits; C_P + 1 ≤ 13(d_o + 1)n³" (in the fixes file) |
+| 4 | — | N-FRZ-1 | citation, closed in R2 §2; REFEREE to accept or contest | §2 ARENA, R → R̄: "Ξ and W at v are π_v ⊕ θ and π_v ⊕ w. For a fixed base b with cycle node c, the order of π_z ⊕ b against π_{σy} ⊕ b depends only on (π_z Δ π_{σy}) ∩ V_{>c}, on |π_z| − |π_{σy}| and on c's parity, and θ, w share c (H3); so both frames order the edge alike" (replaces "(C7)") |
+| 5 | — | N-FRZ-4 | wording | §0: "d_o := |succ(o)| (R30); a crossing transition changes R (R21); v leaves R at s → s+1 if v ∈ R_s and v ∉ R̄_{s+1}" |
+| 6 | NL phase-key note | accepted here | citation transfer, closed (REFEREE §1) | §0 R29 (c): "NL is signed on the joint (λ_Ξ, λ_U, τ) phase; its proof uses no λ_U, so it holds on (λ_Ξ, τ) (REFEREE R-N5-FRZ §1)" |
+
+### C.5 Joint label (D18/L40)
+- PROVED (L-NEW successor 14; REFEREE and REFEREE-2, Opus 5.5, D15), on 𝒞^1O inside a (λ_Ξ, τ) phase, pending CHECKER:
+  - NL-MF (row 6), Fact 0, ARENA (row 4);
+  - P^c_ℓ (rows 1-2), FREEZE, RATCHET, BLOCK;
+  - X-RUN (row 3; consequences as stated), SUB.
+- Honest limits:
+  - BLOCK is vacuous in my data (C.3 (i)).
+  - X-RUN's segment −1 and post-F(⊥) parts were never exercised (C.3 (ii)).
+  - X-RUN bounds crossings per fallback-free run with H1 on its SN prefix. It bounds neither f nor the number of runs per phase.
+- FALSE (DATA, lane, not re-derived): FBF on (w, r)-subruns; CL1.
+- OPEN: (L1), (L2), ¬H1 SN states, f per phase, G-N5-TIME.
+- Not a TARGET.md claim; the TARGET.md diff is empty.
+
+Signed: REFEREE-2 successor 7 (Opus 5.5, D15).
