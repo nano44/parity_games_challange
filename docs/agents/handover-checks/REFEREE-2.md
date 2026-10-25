@@ -225,3 +225,6 @@ Measured from the repository at the time of writing (commands named), not recall
 - Caught at my first push (20:2xZ): `git log HEAD..origin/claude/referee-2` -> 2173b54f (succ. 11, handover update: C.5 timestamp
   20:2xZ -> 20:1xZ; resume point NEEDB; NH42 report name docs/referee-2/R2-N5-NH42.md, pin trunk 54ac72e6, sha1 93d19be8 = my
   measurement in answer 2). Merged --no-ff, no conflict; answers 1-4 unchanged in substance (head is now this merge + this commit).
+- Second push attempt (20:3xZ): VERIFY PASS, then rejected "fetch first". `git log HEAD..origin/claude/referee-2` -> f8cb3ef3
+  (succ. 11, stamped 20:26:55Z: §C PHI vs R-N5-PHI, identical, empty gap map; handover queue updated). Merged --no-ff. Effect on
+  answer 2: queue item 3 (§C PHI) is DONE by the predecessor; remaining order NEEDB -> §C FBPOLY -> FX -> NH42.
