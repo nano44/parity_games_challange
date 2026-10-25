@@ -1,54 +1,63 @@
-# Handover check: L-SI (successor 4, written 2026-10-25T04:45Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
-Every answer measured in this container (commands given), not recalled. Predecessor: successor 3,
-session_018Rsy4xzjixppedcuiM7hsg; last lane push b90f6392 (handover notes/L-SI.md, box 8 resume point).
+# Handover check: L-SI (successor 7, written 2026-10-25T13:58Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; the commands are given. Predecessor: successor 6, session_01WZRciyMqz1LNWwdFoeq2AP.
+Its handover is dbef1de6, notes/L-SI.md "## HANDOVER (successor 6, box 11)".
 
 ## 1. Branch, head, distance to trunk
-- Branch `claude/l-si`. At container start the LOCAL branch was the stale 0d48da26 (3581 commits behind origin). After
-  `git fetch origin claude/l-si claude/vibrant-johnson-nxvvxo`: origin/claude/l-si = b90f6392; `git merge --ff-only` made local
-  equal to it (HEAD = origin/claude/l-si = b90f6392).
-- Trunk = a9fc3c97 (2026-10-25T04:38:11Z, "Lead: SN fixes final + L-COMP park merged; R30 draft for C39; NOW").
-  `git rev-list --left-right --count HEAD...trunk` = 0 255; merge-base = b90f6392 (trunk already holds all of l-si).
-  This file's commit makes the branch 1 ahead, 255 behind (SHA in the message to the Lead). No trunk merge done yet (step 3 only).
-- tools/oink/build absent here (setup_oink.sh not yet run). experiments/si/xing/out/ (climb output, local only) does not exist
-  here. Never `git add -A`.
+- Branch `claude/l-si`. Commands: `git fetch origin claude/l-si`, then `git checkout -B claude/l-si origin/claude/l-si` → head dbef1de6.
+  - This container's local branch was already up to date with origin, unlike successors 4-6. The fetch moved origin 0d48da26 → dbef1de6.
+- Trunk = claude/vibrant-johnson-nxvvxo at 601df6ed ("Lead: R36 LANDED (P-N5-P1, CHECKER C45 3667fb1c); GAPS; P-N5-LV pinned; NOW, log").
+  - Before the merge: `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 1 ahead / 55 behind;
+    merge-base b7f18feb.
+  - `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` (merge commit "L-SI succ. 7: merge trunk 601df6e") → 2 ahead / 0 behind.
+  - This file's commit makes 3 ahead / 0 behind. The SHA is in the message to the Lead.
 
-## 2. Open work and the next step of each (box 8 left off after P-N5-CLS; nothing IN FLIGHT)
-- P-N5-CLS (docs/si/P-N5-CLS-box8.md, sha1 5bbfd872, re-measured; fixes docs/si/P-N5-CLS-fixes-box8.md sha1 92f79dc9, re-measured):
-  SIGNED by both referees; RESULTS R29 [refereed-only] on trunk (OFFGATE, CN, NL, CLS1). Frozen: never edit; nothing open on it
-  for me unless a referee item arrives (then a new file).
-1. Per-level count of fallbacks (CL-S second half), OPEN: CLS1 (PROVED, R29) reduces it to θ-changes above the level, i.e. the
-   additive bound on tame θ-changes below M (box 8 §13; box 3's multiplicative recursion = θ-changes per scope run without X).
-   Next: read L-NEW 13's ABS-L / releases of absorbed exits at level-M fallbacks (docs/new/N5-K-box33.md §8-§9, R30 in landing)
-   and try to turn "releases of absorbed exits" into an additive (not multiplicative) count per level; DATA check on the
-   library + adversarial climbs before any claim.
-2. (H-EQ) at EQ and THR u*=none fallbacks (switched edges §3 (c) at EQ / u*=none and (e) F->F non-cycle-node), OPEN; (B1) OPEN at
-   arena-step leaves and THR u*=none fallbacks. DATA so far 4 EQ, 0 THR u*=none in-scope fallbacks. Next: climb for THR u*=none
-   fallbacks (none seen yet), then a proof of the switched-edge classification there.
-3. Tool bug: experiments/si/coarse/mono.py lev() returns 99 as the "cycle nodes differ" (=∞) sentinel, so a genuine level ≥ 99
-   (possible for n ≥ 100) is misread as ∞ (and coarse() with L ≥ 99 returns ()). Library n ≤ 64 unaffected. Next (after GO): patch
-   to a true infinity sentinel along L-NEW's experiments/new/box33/biglev.py, re-run the packet logs (run_cls.sh / run_all.sh)
-   and diff to show unchanged outputs at n ≤ 64; pinned logs stay as they are (new logs in new files).
-- Also OPEN (not in this box): Θ per scope run, (Z) beyond the map of box 8 §11, (NH'), (ELIM-poly), (LEVEL-poly), (CYC-u*).
+## 2. Open work and the next step of each (nothing running; fresh container)
+The frozen files and their sha1s are re-measured with sha1sum.
+- P-N5-ENT (docs/si/P-N5-ENT-box11.md, 4fd22be7):
+  - REFEREE succ. 8 report docs/referee/R-N5-ENT.md is on trunk. It signs §1-§3 (FZ, BF, RB, WALK, CYC-EV, TEV-FB). It signs §4-§5
+    (ENT-X, NJB-A, D1, PL-S″) CONDITIONAL ON (P). There are no gaps and §6 is not signed.
+  - R2-N5-ENT: not on trunk or on origin/claude/referee-2. REFEREE-2 succ. 9 is WORKING on it (NOW roster).
+  - Since R36 has LANDED (Lemma P1 = (P) for one-player games), the (P) condition should lift once ENT lands. READING, to be confirmed by
+    the referees/CHECKER.
+  - Next step: any items go to a NEW file docs/si/P-N5-ENT-fixes-box11.md (does not exist).
+- P-N5-LV (docs/si/P-N5-LV-box11.md, d0d797f0): pinned on trunk and queued after NEB (NOW). No R-N5-LV / R2-N5-LV yet.
+  - Next step: items go to a NEW file docs/si/P-N5-LV-fixes-box11.md.
+- Level −1 (successor 6 NEXT 2), OPEN:
+  - (a) THR fallbacks with u* = none (r = −1; NL at L = −1 is not available).
+  - (b) A length-based ENT-SHAPE, to drop REL(S) from LV-PL ≤ n·n_E·(d_o + REL(S)).
+  - (c) Or exclude a (β)-fallback, giving "THR ⇒ M ≥ 0" in scope (P-N5-LV §1/§5).
+  - First step: (c) via the N5-LV §3 kill shape, checked against experiments/si/tev/lvm1.py. DATA so far: 1,032 in-scope THR, all M ≥ 0.
+- NL= (straddle; N5-STR/STR2) CONJECTURE: off the critical path (Lead agreed). Only if cheap; it buys a factor 2.
+- Not started from older successors: two-player VJ00 Lemma 5.8 (R15's G-N5T-3), the remaining half of (P).
 
 ## 3. docs/GAPS.md rows I own
-- None. Measured: `git show trunk:docs/GAPS.md | awk -F'|' '{print $2"|"$4"|"$5}'`: owners are L-ALG (GAP-A, GAP-C, G-S5-6,
-  closed G-FDL..G-DOM), L-RED (G-NEST), L-NEW (G-N1-LB, G-N5-TIME, closed G-N5-TERM), L-STRUCT (closed G1). My work feeds
-  G-N5-TIME (owner L-NEW, open) via R23, R25, R29.
+- None. L-SI owns no GAPS row.
+- The row I work under is G-N5-TIME: major, owner L-NEW, status open.
+  - Last update 13:52Z: R36 [refereed-only] LANDED (P-N5-P1 + fixes, addendum §3; CHECKER C45). This discharges R18's premise (P) for
+    one-player games only and "Adds no running-time bound. Open as before."
+  - "Open as before" (11:51Z update): "NJB = ENT (CONJECTURE; lane reductions EV/EV+/TEV-RED in review as P-N5-RL), REL(S), level −1
+    fallbacks, out-of-scope fallbacks (P-N5-SCOPE in review; lane NO-ENTRY-A), θ-changes per HN stretch."
+- G-N5-TERM: closed (R15).
 
-## 4. The three owner rulings that most constrain me (verbatim; status in docs/DECISIONS-INDEX.md on trunk)
-- D18 (active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
-  mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md)
+- D18 (index: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas
+  of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
   briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
-  (Lead reading L40, active: every statement labelled PROVED (by whom) / CONJECTURE / OPEN.)
-- D16 (active): "Then keep working as I told you to" (Lead reading L38: no idle fleet).
-- D1 (active, docs/decisions/D001-launch-brief.md): "Never publish, post, email, submit or contact anyone outside the fleet.
-  Anything external is my decision."
+  - Lead reading L40 (active): L-SI is the OR/MDP lens on N5.
+- D1 (index: active; full text docs/decisions/D001-launch-brief.md). Key lines:
+  - "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own,
+    as wrong until it passes the gauntlet below."
+  - "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision."
+- D16 (index: active): "Then keep working as I told you to"
 
-## 5. One trap that bit this lane, and the check that now prevents it
-- Trap: a lane file whose sha1 had been sent for pinning/citation would be invalidated by a later edit (and fixes2 G-FB-3 carried
-  a scope error that could not be corrected in place: (C) is 𝒞^1O-only, CHECKER C34 Addendum 1). Rule: pinned packets and fixes
-  files are frozen; corrections go in new files and carry the scope forward.
-- Check: before any commit, `sha1sum` the frozen files against the cited sha1s. Re-measured here: P-N5-CLS-box8.md 5bbfd872,
-  P-N5-CLS-fixes-box8.md 92f79dc9 (match notes/L-SI.md). Also every coarse/ tool asserts one Odd choice vertex
-  (`assert o is not None, "not one-Odd-choice"`, e.g. cls2.py:18, clscope.py:11), against the earlier s_rt32_final trap.
-- Live trap found now (item 2.3): lev() sentinel 99 = ∞; harmless at n ≤ 64, to be fixed before any run at n ≥ 100.
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap: editing a packet or fixes file after its sha1 had already gone to the Lead. Several Lead messages crossed with successor 6's
+  files, and referees pin by sha1 (R-N5-ENT checks `git show 765e893:docs/si/P-N5-ENT-box11.md | sha1sum` = 4fd22be7).
+- Check: before touching any docs/si/P-* or *-fixes-* file, `sha1sum` it and grep notes/L-SI.md and docs/NOW.md for that sha1. If the
+  sha1 is listed, the file is FROZEN and new text goes in a NEW file.
+  - Today's frozen list: ENT 4fd22be7, LV d0d797f0, N5-LV 407c5520, N5-LV2 94ac2469, N5-TEV 58a0b3cf, STR c7b9c671, STR2 b6ed9476,
+    RL-fixes ac027458, RL-fixes2 b3e3cd93, P1-fixes 83ef83b0, RL-P1-addendum 5c29d93d.
+- Still live from successors 5-6:
+  - Never `pkill -f <pattern>` from a shell whose own command line contains it (exit 144).
+  - `git log -- <path>` takes more than 120 s here.
+  - Never `git add -A`; add files by name.
