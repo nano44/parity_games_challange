@@ -13,6 +13,7 @@ Checked (counters):
   EXITR    ε-transition: x0 in R_t for t in [k+1, next fallback transition index] (or the phase's last state)   [CONJECTURE]
   ORX      each exit absorbed at most once per fallback-free segment (ε-transitions)
   TCS      θ-change: lev(θ_k,θ_{k+1}) <= E_k, or ε and = O_k
+  REL      (box 38) exit releases per phase: (k, x) with k a non-fallback transition, x in succ(o) minus {o}, x in R_k but not R_{k+1}
   ABSL_i/ii/iii/cnt  Lemma ABS-L on scope runs (CLS §0), consecutive fallbacks k0 < k in S, L = M_{k0}, r_j > L on [k0+1, k]
 Usage: sox2.py game.pg ..."""
 import sys, os
@@ -68,6 +69,18 @@ def analyse(g, cap=5000):
         cth = lam[a][o]; cw = [Wv[k][o][0] for k in range(N)]
         X = sum(R[k] != R[k + 1] for k in range(a, b + 1)); f = sum(FB[a:b + 1])
         XSN = sum(R[k] != R[k + 1] and not FB[k] and cw[k] == cth for k in range(a, b + 1))
+        REL = sum(1 for k in range(a, b + 1) if not FB[k] for x in set(g.succ[o]) if x != o and x in R[k] and x not in R[k + 1])
+        epsx = {}
+        for k in range(a, b + 1):
+            Ek, Ok = EO(k)
+            if Ok != BOT and Ok > Ek: epsx.setdefault(k, sb[k][o])
+        absorbed = set(); RELe = 0
+        for k in range(a, b + 1):
+            if k in epsx and epsx[k] in R[k + 1]: absorbed.add(epsx[k])
+            for x in list(absorbed):
+                if x not in R[k + 1]:
+                    absorbed.discard(x)
+                    if not FB[k]: RELe += 1
         if X > (f + 1) * (n - 1) + f + XSN: bad("XSN", a)
         eo = {k: EO(k) for k in range(a, b + 1)}
         # R-STICK
@@ -136,7 +149,7 @@ def analyse(g, cap=5000):
                     if any(x0 not in R[u] for u in range(t + 1, k1 + 1)): bad("ABSL_iii", t)
                 if cnt > d_o - 1: bad("ABSL_cnt", k0)
             k = j + 1
-        rows.append(dict(a=a, b=b, T=b - a + 1, X=X, XSN=XSN, f=f, eps=len(eps), epsSN=epsSN, maxseg=maxseg, maxpost=maxpost,
+        rows.append(dict(a=a, b=b, T=b - a + 1, X=X, XSN=XSN, REL=REL, RELe=RELe, f=f, eps=len(eps), epsSN=epsSN, maxseg=maxseg, maxpost=maxpost,
                          absl=absl_checked, d_o=d_o))
     return dict(n=n, o=o, it=len(FB), fb=sum(FB), rows=rows, C=C, ex=ex)
 
@@ -146,7 +159,7 @@ if __name__ == "__main__":
         g = sox.load(f)
         if len(sox.oddchoice(g)) != 1: print(os.path.basename(f), "SKIP not C^1O"); continue
         r = analyse(g); rs = r["rows"]
-        m = {k: max((x[k] for x in rs), default=0) for k in ("X", "XSN", "f", "eps", "epsSN", "maxseg", "maxpost", "absl")}
+        m = {k: max((x[k] for x in rs), default=0) for k in ("X", "XSN", "REL", "RELe", "f", "eps", "epsSN", "maxseg", "maxpost", "absl")}
         for k, v in m.items():
             if v > mx.get(k, (0,))[0]: mx[k] = (v, os.path.basename(f))
         print(os.path.basename(f), f"n {r['n']} o {r['o']} it {r['it']} fb {r['fb']} phases {len(rs)} max", m, "FAILS", r["C"] or 0, r["ex"] or "", flush=True)
