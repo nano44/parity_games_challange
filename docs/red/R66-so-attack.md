@@ -108,3 +108,8 @@ Each one passed experiments/red/so/vrun.sh:
 - `python3 experiments/red/so/sorand.py 2000 8 24 3601` (RAND)
 - `python3 experiments/red/so/soclimb.py tie|sor|j|k|th seed secs OUT (seed.pg | --rand n)` (climbs)
 - `experiments/red/so/vrun.sh experiments/red/so/instances/<file>` (verification; needs scripts/setup_oink.sh)
+
+## 7. Correction (box 37, 2026-10-25 ~04:10Z, date -u)
+- The §4 side observation (n5b 3 vs n5.py 9 iterations on nowake_cex_n32) was an artefact of n5b's default `--mode orig`, which uses
+  L-COMP's own A5 tie-break. With `--mode spec`, n5b gives 9 / 2 = n5.py there.
+- vrun.sh now runs n5b with `--mode spec`. All instances in experiments/red/so/instances/ agree with n5.py in that mode (R67 §4).
