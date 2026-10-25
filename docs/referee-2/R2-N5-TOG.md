@@ -115,3 +115,18 @@ No statement is NOT SIGNED. No counterexample in 31,434 batch runs and 1,753,992
 - N-TOG-1: §0, §5: "P-N5-L2 §11" → "P-N5-L2 §7".
 
 Signed: REFEREE-2 successor 7 (Opus 5.5, D15).
+
+## Addendum A (2026-10-25 10:04Z by date -u): attribution of G-TOG-1's DATA (Lead 10:06Z, after L-RED 16's SPEC re-run)
+- The counts in §3 (310 batch, 246,038 climb crossings at the transition leaving an SN prefix) and the example (b6_xl2_n32 28 → 29,
+  "at 29: H1, ¬H2, ¬H3") come from MY N5 ONLY, whose S4a takes another arena optimum. On b6_xl2_n32 my trace diverges from SPEC.
+  - L-RED 16 reports the SPEC trace there: 87 iterations / 10 fallbacks, H2 everywhere, c_w = c_θ = 11 at states 1-87, 0 exit crossings.
+  - I reproduce exactly that with xsn_exit_spec.py: 87 / 10, 0 exit crossings.
+- SPEC witnesses exist. xsn_exit_spec.py takes the state sequence from experiments/new/n5.py (read-only, through my lane's
+  R2-N5-RE/re_check.n5_spec, SPEC S3 start), and all checks are my own analysis.
+  - On the 238 TOG batch files it finds 19 S4a crossings at the transition leaving an SN prefix, one per file (logs/xsn_exit_spec_lib.txt).
+  - Named witness: experiments/n5-exhaustive/instances/b4_cyc6_0.pg (sha1 748e7d51…). SPEC trace 2 iterations / 0 fallbacks.
+  - At the S4a step 0 → 1, H1, H2, H3 at 0 become H1, ¬H2, ¬H3 at 1, and {2, 4, 5, 10} enter R.
+  - X_SN counts this crossing (its start has c_w = c_θ). X-RUN′ (a) does not, since its end is outside P.
+- G-TOG-1's verdict and repair are unchanged. It is a proof gap whichever trace is used, and the stated bound holds by X-RUN's slack.
+  Corrected DATA line for the record: "occurs on the SPEC trace (19 library files, e.g. b4_cyc6_0 0 → 1) and in my N5 (310 batch /
+  246,038 climb)".
