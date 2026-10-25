@@ -3,7 +3,7 @@
 COARSE_ℓ(Ξ) is constant at every state from k0 + n - 1 to the phase's last state with H2, and COARSE_ℓ(W) is constant at those of them
 with H2. Then (BLOCKS) for ℓ >= 0: at the later H1 ∧ H2 states, COARSE_{ℓ-1}(θ) takes <= 2 d_o values and COARSE_{ℓ-1}(w) <= 2;
 and (X2) inside a fallback-free run of consecutive (h) states after k0 + n - 1 with (COARSE_{ℓ-1} θ, COARSE_{ℓ-1} w) constant and
-different, each vertex crosses R at most twice. Checks all three for every phase and every ℓ. Usage: freeze.py game.pg ... | --rand"""
+different, each vertex crosses R at most twice. Checks all three for every phase and every ℓ. Env MODE=H3: FREEZE′ (§10). Usage: freeze.py game.pg ... | --rand"""
 import sys, os, random
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from relfr import *
@@ -15,6 +15,8 @@ def check(g, acc, name):
     rows, o = rows_w(g); n = g.n; d_o = len(set(g.succ[o]))
     H2 = [h2(r["nxt"], o) for r in rows]
     hh = [r["h1"] and H2[i] and r["Xi"][o][0] == r["W"][o][0] for i, r in enumerate(rows)]
+    if os.environ.get("MODE") == "H3":   # FREEZE′ (N5-REL-box34.md §10): windows of H3 states, (b) at states with H2 or H3
+        hh = [r["Xi"][o][0] == r["W"][o][0] for r in rows]; H2 = [H2[i] or hh[i] for i in range(len(rows))]
     rr = [lev(r["Xi"][o], r["W"][o]) if hh[i] else None for i, r in enumerate(rows)]
     ph = []; i = 0
     while i < len(rows):

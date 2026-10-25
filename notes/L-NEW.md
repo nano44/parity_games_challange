@@ -8,14 +8,20 @@ Oink built in this container (tools/oink/build). Climbs running in experiments/n
 ### DONE (box 34)
 - docs/new/N5-REL-box34.md: Corollary NL-MF; Fact 0 / Lemma ARENA (SN regime = value iteration in G_τ, withheld F→R̄ edges, gain ≤ r);
   Theorem FREEZE (R20 P^c/CR on a window of n (h)-states with r ≤ ℓ; freeze lasts to the phase's last H2 state, through θ-, w-changes
-  and fallbacks); Corollary RATCHET; Lemma BLOCK; Theorem X-RUN (SN-prefix crossings per fallback-free run O((d_o+1)n²), H1 part);
+  and fallbacks); Corollary RATCHET; Lemma BLOCK; Theorem X-RUN (SN-prefix crossings per fallback-free run O((d_o+1)n³), H1 part; packet P-N5-FRZ);
   Theorem SUB (R20 C/P^c/CR/XA on (w, r)-subruns); FBF FALSE with θ moving (1,442 entries after fallbacks; b6_xl2_n32). All lane PROVED,
   unrefereed. Tools + data in experiments/new/box34 (data/ committed, out/ gitignored).
 
+- Packet P-N5-FRZ frozen at l-new edbccb69, sha1 39df373c… (NL-MF, Fact 0/ARENA, P^c_ℓ + FREEZE, RATCHET, BLOCK, X-RUN, SUB);
+  Lead routing it to both referees (05:54Z). Answers to referee items go in a NEW fixes file, never in the packet.
+- §9 drain/refill (CL1 FALSE, E1 = FBF); §10 H3-CONST, H2-STICK, ONE-H FALSE (instances/oneh_cex_n32.pg, sha1 51dab086…, verified),
+  Lemma G′, FREEZE′ (H3 windows; no data); §11 R-CONST (R̄ = λ^{-1}(c_θ) at ¬H1 states), H1-INT (¬H1 states inside the P(θ) = ∅
+  interval), X-RUN′ (no H1 hypothesis; cost per H1-toggle), CONJECTURE ONE-DROP (≤ 1 H1 → ¬H1 per phase; data 41k phases).
+
 ### NEEDS / next
-- Packet for referees (FREEZE, RATCHET, BLOCK, X-RUN, SUB) when the Lead asks; never edit a packet once pinned.
-- Open core now: the loop f ↔ X (polynomially equivalent per phase); residue (L1) fallback evictions below r inside frozen r = ℓ
-  blocks + re-entry; (L2) ¬(h) interruptions; ¬H1 SN states. Ideas: count fallback evictions per frozen block via CLS1 levels.
+- Open core now: the loop f ↔ X (polynomially equivalent per phase); (L1) fallback evictions below r inside frozen r = ℓ blocks
+  + re-entry (= θ-changes per scope run, L-SI); (L2)(i) a fallback at a ¬H2 state that takes τ(o) out of R; ONE-DROP proof.
+- Climb against ONE-DROP: dropclimb.py (written; launch it if not running: seeds b4_n5_other_0, oneh_cex_n32, so_th_n32).
 
 ## Things only I know (successor 13)
 - The crossing problem is an SN-regime problem: at S4a steps, outside c_w = c_θ, R only grows (R-STICK uses only W monotone, Ξ ⊴ W,
