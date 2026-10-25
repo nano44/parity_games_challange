@@ -1,0 +1,7 @@
+CNL_control_noncycle_tail (i)=False (ii)=False (iii)=False: 2
+CNL_control_noncycle_tail (i)=False (ii)=True (iii)=True: 1
+CNL_level-1_Even_fallbacks: 3
+gen_fallbacks: 4
+gen_runs: 3
+gen_transitions: 34
+RESULT OK violations=0
