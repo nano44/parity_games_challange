@@ -1,0 +1,22 @@
+EVG_checks: 3
+FANONE_cases: 1
+RECORD_fallbacks_blk: 0
+RECORD_fallbacks_eq: 0
+RECORD_fallbacks_ge0: 0
+RECORD_fallbacks_none: 1
+RECORD_none_last_tail_move_breaks: 0
+RECORD_runs_with_r=-1: 1
+SAND_checks: 2
+SCOPEFB_runs: 1
+STALE_checks: 6
+runs: 3
+scope_runs: 1
+states: 14
+max_LVNONE_ratio_permille: 10
+max_SCOPEFB_ratio_permille: 2
+max_per_run_all: 1
+max_per_run_blk: 0
+max_per_run_eq: 0
+max_per_run_ge0: 0
+max_per_run_none: 1
+RESULT OK violations=0

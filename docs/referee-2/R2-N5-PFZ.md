@@ -22,6 +22,7 @@ parameter.
 | §2 Theorem P-FREEZE (a)-(c) | SIGN | — |
 | §3 Corollary LEN-TAIL | SIGN | — |
 | §4 Corollary NO-CROSS-A | SIGN | — |
+| P-N5-PFZ-ext (companion file) | see §X: P-FREEZE′, θ-LEN SIGN; BRK-POLY′ (i) NOT SIGNED as stated, (i′) SIGN | G-PFX-1 (successor 10) |
 | §5 Lemma RISE′ | SIGN | It agrees with P-N5-NEB's RISE (R2-N5-NEB §2), stated with the break window and with "θ-change or rise" in one statement |
 | §6 Theorem BRK-POLY (i), (ii) | SIGN | N-PFZ-2 (precision): the window here is [last eviction before the entry, entry], whereas P-N5-NEB uses the first eviction after the previous entry. Both give disjoint windows. The packet's choice is what makes RISE′'s "no entry in [a, k)" hold, and I checked that it does |
 | §6 Consequences | correct as a READING with R39 (b) EPOCH | — |
@@ -116,3 +117,82 @@ No statement is NOT SIGNED, and no gap is open. No counterexample turned up in 6
 - N-PFZ-3 (DATA): "t > f_{|U|−1}" with |U| ≥ 3 is not reached by the library or by my targeted climbs. θ-runs with large U end after far
   fewer than |U| − 1 fallbacks (max 37 at large |U|). This is what makes P-FREEZE a bound rather than a description of runs: it is worth
   stating that the freeze point is an upper bound that data never approaches.
+
+## X. Companion packet P-N5-PFZ-ext (REFEREE-2 successor 10, written 2026-10-25 16:5xZ-17:2xZ by date -u; Lead GO 16:32Z, Lead's stamp)
+Signature: (Opus 5.5, D15). Object: docs/new/P-N5-PFZ-ext-box39.md, sha1 b3702b1ba1849c6aa19cebd2c8fa57e02a318d2a. The same at the pin
+c61ecc4 and on my tree (trunk 7d505e6). It is reviewed with P-N5-PFZ (§1-§6 above, successor 9's, all SIGN), as the Lead asked: one
+report for both files.
+Independence: nothing in docs/referee/ read for either file. REFEREE's R-N5-PFZ (referee 8595343, per the Lead) is not opened. No lane
+script (pfreeze.py, pfzdata.py with PFZ_KEY=P) run or imported.
+Tools (own code, in R2-N5-PFZ/):
+- pfzx_check.py: successor 9's pfz_check.py with the θ-run replaced by the P-epoch, plus θ-LEN and BRK-POLY′ per HN stretch;
+- pfzx_climb.py; filesx.lst (files.lst ∪ ../R2-N5-LV2/files_new.lst, 453 files), run_allx.sh, run_climbsx.sh, totalsx.py, logs_x/,
+  climb/brki_*, totals_x.txt, totals_climbx.txt.
+
+### X.1 Verdicts (Opus 5.5, D15)
+| statement | verdict | gaps / notes |
+| --- | --- | --- |
+| §1 Theorem P-FREEZE′ (with LEN-TAIL′, NO-CROSS-A′) | SIGN | — |
+| §2 Lemma θ-LEN | SIGN | — |
+| §3 Theorem BRK-POLY′ (i) | NOT SIGNED as stated; SIGN corrected (i′) θ_S ≤ ρ_S + (ρ_S + 1)·max(\|U\| − 2, 0) | G-PFX-1 (proof gap, data below) |
+| §3 Theorem BRK-POLY′ (ii) | SIGN its first inequality B_S ≤ θ_S + (ρ_S + 1)(\|U\| − 1 + \|U\|(\|U\| − 1)), and the end bound (ρ_S + 1)(2n² − 1); the middle bound needs + ρ_S | G-PFX-1 |
+| §3 Theorem BRK-POLY′ (iii) | SIGN B_S ≤ θ_S + (ρ_S + 1)(\|U\| − 1); the end bound becomes (ρ_S + 1)(2n − 2) | G-PFX-1 |
+| §3 Consequence O(n³·K·(ρ_S + 1)) | SIGN (unchanged by G-PFX-1) | — |
+| §4, §5 | not signed (as briefed) | — |
+
+### X.2 P-FREEZE′: SIGN
+I re-read every use of "θ constant" in P-N5-PFZ §1-§4 (successor 9 signed those proofs).
+- FB-ROUND: no θ.
+- §2 (b): the terminal value M_t(o) = Σ_{u ∈ P(θ_t)} sgn(u)2^rank(u) = wt(P(θ_t)), since P(θ) ⊆ V_{>c_θ}. It depends on P(θ_t) only, so it is
+  constant on a P-epoch. (V1) along the honest play and the G_U path are unchanged. ✓
+- §2 (a): the base uses the terminal values. The induction uses FB-ROUND at f_j and (M2′) from f_j + 1 to t, all inside Π. ✓ (c): ✓
+- LEN-TAIL′: after f_{|U|−1}, P is constant on all of U, o included. Each U-rise is then a length rise. Ψ is non-decreasing (R15 (a), same
+  cycle node and same P), and ℓ ∈ [0, |U| − 1]. A length rise of θ itself is a U-rise at o, as the packet says. ✓
+- NO-CROSS-A′: the route form and SEP-o are per state, with θ_s at s. Then R̄_s = {z ∈ U : o ∈ P(Ξ_s z)}, frozen by (c). ✓
+
+### X.3 θ-LEN: SIGN
+- If o ≠ c_θ: in Π the cycle node c_θ (phase) and P are fixed. So R15 (a) makes ℓ(θ) strictly monotone at each θ-change inside Π.
+- ℓ(θ) is the number of edges of o's honest play to its first visit of c_θ. That is a simple path in U (λ = c_θ along it), with ≥ 1 edge
+  since o ≠ c_θ, so ℓ ∈ [1, |U| − 1]. This holds with H1 or without it.
+- So at most |U| − 2 changes. The bound counts θ-changes with both ends in Π. ✓
+
+### X.4 BRK-POLY′: G-PFX-1
+- (i) as written: θ_S ≤ (ρ_S + 1)·max(|U| − 2, 0). The proof is "S meets at most ρ_S + 1 P-epochs; apply θ-LEN to each".
+- The gap: θ-LEN counts the θ-changes INSIDE a P-epoch, i.e. transitions with both ends in Π. The ρ_S transitions at which P(θ) changes
+  join two P-epochs. They are θ-changes of S (θ_S counts every transition with θ_{k+1} ≠ θ_k), and no epoch counts them.
+- So the proof gives (i′) θ_S ≤ ρ_S + (ρ_S + 1)·max(|U| − 2, 0). Nothing in the packet bounds the ρ_S extra changes by the epochs'
+  slack. (i) as written fails exactly when every P-epoch of S nearly saturates its |U| − 2 length moves.
+- Data: (i) as written held on every HN stretch I ran, batch and climbs; in 8,415 batch stretches and 269,211 climb stretches, including 50,167 with ρ_S ≥ 1 and up to ρ_S = 16, θ_S − (ρ_S + 1)·max(|U| − 2, 0) was never positive (max 0 in the climbs that pushed toward it, FIT brki). So G-PFX-1 is a gap in the proof, not a
+  refutation. I sign (i′).
+- Consequences of G-PFX-1:
+  - (ii): the kind-1 / kind-2 charging is right. Kind 2 lies inside one θ-run and so inside one P-epoch Π. Its eviction is a fallback f_j
+    of Π; early breaks are ≤ |U| − 1 per epoch; late ones fall under LEN-TAIL′. So B_S ≤ θ_S + (ρ_S + 1)(|U| − 1 + |U|(|U| − 1)) is
+    signed.
+  - With (i′), the middle bound becomes ρ_S + (ρ_S + 1)(|U|² + |U| − 3) ≤ (ρ_S + 1)(|U|² + |U| − 2). That is still ≤ (ρ_S + 1)(2n² − 1),
+    since n² + n − 2 ≤ 2n² − 1. So the end bound stands.
+  - (iii) case A: B_S ≤ θ_S + (ρ_S + 1)(|U| − 1) is signed (NO-CROSS-A′ removes the late kind-2 breaks). With (i′) the end bound is
+    ρ_S + (ρ_S + 1)(2|U| − 3) ≤ (ρ_S + 1)(2n − 2), not (2n − 3).
+  - The Consequence O(n³·K·(ρ_S + 1)) is unchanged.
+- Fix for the lane: state (i) as (i′), and the end bound of (iii) as (ρ_S + 1)(2n − 2). Or prove that the P-change transitions are paid
+  by the epochs' slack. I see no such argument.
+
+### X.5 Data (DATA, not proof)
+- Batch (run_allx.sh, logs_x/, totals_x.txt): 453 𝒞^1O files × 3 traces × 3 starts = 4,077 runs; random 𝒞^1O 64,000 runs. 1,367 /
+  1,367 logs end "RESULT OK violations=0".
+  - P-epochs (library, all traces): 27,786. θ-LEN: 3,564 θ-changes in 2,097 epochs, all length-only and within max(|U| − 2, 0); at most
+    11 in one epoch. Random: 1,488 θ-changes, at most 2 per epoch.
+  - P-FREEZE′: (a) 7,677 DFS checks (|U| ≤ 12; larger |U| skipped and counted), (b) on 6,947 library epochs; FB-ROUND at 7,256 fallbacks
+    (library) + 876 (random).
+  - Post-freeze regime: P-epochs that pass f_{|U|−1} have |U| = 1 (486 library, 15,805 random) or |U| = 2 (5 library, 51 random), none
+    with |U| ≥ 3. So LEN-TAIL′ and NO-CROSS-A′ are exercised only trivially, as the packet's §5 says.
+  - HN stretches: 1,791 (library; 222 with ρ_S ≥ 1, max ρ_S 16) and 6,624 (random; 11 with ρ_S ≥ 1).
+  - Breaks: library 85: 57 kind 1, 28 kind 2 early, 0 kind 2 late. BRK-POLY′ (ii) / (iii) first inequalities and (i′): 0 failures.
+    The records for (i) as written and for the middle / end bounds: 0.
+- Climbs (run_climbsx.sh, climb/brki_*, totals_climbx.txt), FIT brki toward θ_S > (ρ_S + 1)·max(|U| − 2, 0):
+  - 9601 (n 6-10 random) and 9602 (seeded with my lane's R2-N5-SN/climb/stick_a_best.pg, n 48), 1,200 s each;
+  - 101,961 evaluations, 407,844 runs, 0 violations;
+  - 269,211 HN stretches, 49,934 with ρ_S ≥ 1 (max ρ_S 5 and 13); 7,480 breaks, all kind 1;
+  - the excess θ_S − (ρ_S + 1)·max(|U| − 2, 0) never exceeded 0, so no counterexample to (i) as written was found.
+- Thin spots:
+  - G-PFX-1 is a proof gap. The data neither refute (i) nor come close in a non-trivial way.
+  - The post-freeze parts (LEN-TAIL′, NO-CROSS-A′, late kind-2 breaks) are vacuous beyond |U| ≤ 2, as for P-N5-PFZ (N-PFZ-3).
