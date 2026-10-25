@@ -41,6 +41,22 @@ Lead request 20:49Z item (2). Adversarial read: each step re-derived; READING la
     - Only 18 of those runs reach the freeze point (most are shorter than |R| − 1), and 0 post-freeze kind changes or c_w switches.
     - So their kind changes happen BEFORE my freeze index. DIR covers them; KIND-MONO is vacuous there. That is no contradiction:
       KIND-MONO claims nothing before the freeze.
+### Addendum for v3.2 (l-new 31776c5c, sha1 349d553c checked with git show | sha1sum); written 21:10Z (date -u), Lead 21:00Z
+- Lemma PAR (c_w ≻ c_θ ⇒ c_w even): RELY. Re-derived: R21 (a) XW gives θ ⊴ w. The cycle nodes differ, so reward(c_θ) < reward(c_w)
+  (rewards are injective). An odd c_w ranked above c_θ has reward below c_θ's for either parity of c_θ.
+  - Effect on my §5:
+    - KIND-MONO: the direction is always B → A. The "A → B if Ω(c_w) is odd" clause is vacuous.
+    - CW-INT and CASC-B: parity-free, so unaffected.
+    - E-SEG: unaffected.
+    - kwcheck's "KIND FAIL direction" odd branch and kwclimb's kind3 odd-c_w terms are vacuous; that is consistent with 0 odd cases in
+      all data.
+  - Effect on theirs: KW-FREEZE (d) and DIR's odd branch are vacuous (they say so).
+- Their Lemma CW correction (cc2de675): correct. My CW-INT already has the corrected shape. Its cut transitions include those with a
+  kind change or a kind-B switch, and c_w switches AT cuts are counted separately (E-SEG: E_cw ≤ N_cut + (deg − 1)(N_cut + 1)).
+  W-flat segments contain no fallback, so no f term is needed there.
+- Freeze index: CONSISTENT. Both are CR's closing step over simple admissible paths. Their paths lie inside R as well, so ≤ |R| − 1
+  edges; their n − 1 is the weaker but valid index (|R| ≤ n). Mine states |R| − 1. Data: the largest observed delay is 1 transition
+  (mine), 0.83·(n − 1) (theirs), both within either index.
 ### (b) Do the two notes together close K on U1 / U2 / U3 / U23?
 - Yes, per stretch, given f (READING; both lane-proved, unrefereed):
   - U1: R24 Theorem U1 (landed), or FRZ-U + LEN-W + CASC;
