@@ -1450,3 +1450,9 @@
     - The post-freeze regime is unreached even in 3.82 M climbs.
 - 19:59Z Lead: merged checker cc21c36. C54 = R45 FAIL. E-1: FREEZE-F (a) dropped "from z to c_θ". E-2: G_Û and G[A] undefined. R45 revised with E-1, E-2 and N-1. It is independent of C53 E-1, since it uses only (i′).
 - 20:04Z Lead: hourly sweep 20:03Z. WATCHDOG reports no overage (Lead 689k, continuing through compaction). WATCHDOG flagged L-COMP 4 idle for 72 min. That is expected: box8 n 5 Q3 is a background run (~3.3 h per quarter; Q2 started 15:27Z and finished ~18:50Z, so Q3 should end ~22:10Z). No nudge unless it is still idle after 22:30Z. CHECKER 7 is waiting on the revised R44 (pending REFEREE-2's diff) and R45 (sent 20:03Z). No other exceptions.
+- 20:08Z Lead: merges and routing.
+  - checker 69a97df: C52 Addendum 2, R43 landed verbatim; C52 CLOSED. Its observation: my GAPS UPDATE 19:40Z says "PFZ-1 repaired", but REFEREE-2's signature on the repair is not yet on record. To be corrected in the next append-only UPDATE.
+  - l-new 4408826: P-N5-NH-box42, docs/new/P-N5-NH-box42.md, sha1 93d19be8, PINNED at this commit.
+    - Contents: Lemmas SW, ST, CL, STR-COUNT, NR; Theorem NH: O ≤ 11n⁷(1+X+f^O) + 8n³(K_W+E), T ≤ 156n¹¹(1+X+f^O) + 104n⁷(K_W+E) per phase; (NH′) ⇐ (X) ∧ NFB-O ∧ (E) ∧ (K_W).
+    - The old CONJECTURE NFB-O (no fallbacks at OTHER states) is FALSE in data (f^O > 0). Only its counting form is used.
+    - Queued for both referees.
