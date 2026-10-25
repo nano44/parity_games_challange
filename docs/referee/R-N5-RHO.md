@@ -192,3 +192,23 @@ Tools (docs/referee/scratch/, own code on rl_engine.py, `python3 -I`; logs docs/
   the freeze, and FREEZE-F (b) and the second term of (c). The lane's climbs plateau at the same place.
 - RHO-N3 (data): what my data and the lane's do not reach is listed in the Verdicts' VACUOUS line. Those parts rest on their proofs,
   which I checked line by line.
+
+## §C. Comparison with REFEREE-2: docs/referee-2/R2-N5-RHO.md at referee-2 269ae45a (sha1 89cd0a48…, the same on trunk 102f05a)
+Written 2026-10-25T18:39Z by date -u, after the Lead's word of 18:15Z (Lead's stamp) that 269ae45a is final. I opened R2-N5-RHO only
+after my report (59278313) was pushed. (Opus 5.5, D15).
+- Verdicts: identical.
+  - Both sign Y-FORM, HAT-FREEZE (a)-(c), RHO-TAIL, BF-F, FREEZE-F (a)-(c) and RHO-HN.
+  - Both sign HN-POLY only through BRK-POLY′ (i′) and (ii)'s first inequality (θ_S form), the forms both referees sign in P-N5-PFZ-ext.
+  - Neither signs §7-§8. No gap on either side.
+- Joint gap map: EMPTY.
+
+| item | REFEREE-2 | REFEREE | outcome |
+| --- | --- | --- | --- |
+| RHO-HN's run count | N-RHO-1: the proof gives (N_HN + \|U\| − 3)(…) + deg(o), sharper than stated | §6: "≤ (N_HN + \|U\| − 3)(\|U\| + deg(o) − 3) + deg(o), below the stated bound" | identical; wording note |
+| o = c_θ with \|U\| ≥ 2 | — | RHO-N1 (wording): occurs in 89/990 library phases; covered vacuously; the text names only \|U\| = 1 | stands; R2's proofs (e.g. "\|U\| ≥ 2 under H1") are consistent with it |
+| HN-POLY's τ(o) = o line, citing R39 (f) (c) | "For τ(o) = o they are polynomial via R39 (f) (c). ✓" | RHO-N2 (citation): R39 (f) is signed for τ(o) = o in case A only. The bound holds in case B too, because ¬H2 holds everywhere, so HN = H1, and R34 (e) applies (13 case-B phases in data) | REFEREE-2 MISSED the case restriction. The claim is unaffected. The lane should cite R34 (e) with HN = H1 (or P-N5-NHN §5 (b)'s argument) |
+| post-freeze regime and FREEZE-F (b) | N-RHO-2: post-freeze only at \|U\| = 3 (133,889 phases), never \|U\| ≥ 4; FREEZE-F (b) 0 states; RHO-TAIL max 0 | §8: post-freeze at \|U\| ≤ 3 (679,124 climb phases at \|U\| = 3), never \|U\| ≥ 4; FREEZE-F (b) vacuous (5.95M ffb candidates, best run length \|U\| − 3); RHO-TAIL 0 changes | identical; both say: target for L-RED |
+| mutation controls | hatall bites (701); frzb0 does not bite | none run | REFEREE-2's controls add to the evidence that the checks can fail |
+
+- Data agree in kind. 0 failures on both sides. Both engines reach the same thin spots and none beyond them.
+- No verdict of mine changes. (Opus 5.5, D15)
