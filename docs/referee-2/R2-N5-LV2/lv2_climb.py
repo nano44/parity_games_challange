@@ -2,6 +2,7 @@
 """REFEREE-2 succ. 10: hill-climb against P-N5-LV2 with lv2_check (own code; C^1O mutations of ../R2-N5-FRZ/frz_climb.py, as in
 R2-N5-LV/lv_climb.py). Any violation stops the climb and dumps the game to climb/viol_<FIT>_<seed>.pg.
 FIT none: toward many THR fallbacks with r = -1 in ONE scope run (LV-NONE's count; N >= 2 makes LV-NONE (1)-(2) non-vacuous).
+FIT none0: the weighting climb 9501 ran with (replay).
 FIT blk:  toward the level -1 block (THR, r >= 0, M = -1; LV-PL', ENT-X_{-1}).
 Usage: lv2_climb.py FIT seed nmin nmax seconds [seedgame.pg]"""
 import sys, os, random, time
@@ -12,6 +13,8 @@ RC = FC.RC
 
 def fitness(st, fit):
     c, m = st.c, st.mx
+    if fit == "none0":   # the weighting climb 9501 ran with (edited later while it ran); used to replay it for a block witness
+        return 1000 * m["max_per_run_none"] + 300 * c["LVNONE_runs_N>=2"] + 10 * c["RECORD_fallbacks_none"] + 2 * c["RECORD_runs_with_r=-1"]
     if fit == "none":
         return (1000 * m["max_per_run_none"] + 300 * c["LVNONE_runs_N>=2"] + 30 * c["RECORD_fallbacks_none"] + 5 * c["RECORD_runs_with_r=-1"]
                 + c["RECORD_fallbacks_ge0"] + c["RECORD_fallbacks_blk"])

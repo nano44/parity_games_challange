@@ -1,0 +1,9 @@
+HAT_b: 34
+RECORD_phases_skipped_large_U: 4
+TAIL_phases: 4
+YFORM_a: 70
+phases: 12
+runs: 3
+states: 70
+max_TAIL_changes: 0
+RESULT OK violations=0

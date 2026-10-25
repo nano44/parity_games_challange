@@ -1,0 +1,9 @@
+HAT_b: 24
+TAIL_phases: 2
+YFORM_a: 6
+YFORM_b: 5
+phases: 11
+runs: 3
+states: 11
+max_TAIL_changes: 0
+RESULT OK violations=0

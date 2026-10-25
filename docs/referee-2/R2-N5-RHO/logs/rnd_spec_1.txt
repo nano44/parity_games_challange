@@ -1,0 +1,24 @@
+BFF_case2: 1
+BFF_checks: 16
+FRZF_a: 5
+FRZF_runs: 996
+HAT_a: 457
+HAT_b: 52404
+HAT_c: 5
+RECORD_phases_past_hat_freeze_U>=3_with_H1: 5
+RECORD_phases_skipped_large_U: 1510
+TAIL_phases: 2041
+YFORM_a: 11594
+YFORM_b: 12259
+phases: 21507
+phases_with_HN: 996
+rho_HN_total: 0
+runs: 10000
+states: 23853
+max_FRZF_changes: 0
+max_TAIL_changes: 0
+max_U_past_hat_freeze: 3
+max_rho_HN: 0
+max_sum_B_S: 0
+max_sum_theta_S: 0
+RESULT OK violations=0

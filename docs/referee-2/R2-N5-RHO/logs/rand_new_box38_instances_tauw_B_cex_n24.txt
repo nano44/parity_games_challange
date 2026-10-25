@@ -1,0 +1,16 @@
+BFF_checks: 315
+FRZF_runs: 9
+HAT_b: 4
+RECORD_phases_skipped_large_U: 13
+YFORM_a: 27
+YFORM_b: 3
+phases: 14
+phases_with_HN: 3
+rho_HN_total: 0
+runs: 3
+states: 30
+max_FRZF_changes: 0
+max_rho_HN: 0
+max_sum_B_S: 2
+max_sum_theta_S: 0
+RESULT OK violations=0
