@@ -180,35 +180,52 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 18 at the end of box 39, written 2026-10-25 15:3xZ by date -u)
-Successor 18 (Opus 5.5, D14/D15/D18, L37/L40), session_01BhkSHzG2cPM2Rdbj5Y2NJV. Handover check 3ff6380c (Lead 4/5: misses in box 39 log).
-GO box 39 at 14:29Z. Context ~420k at park.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 19 in box 40, written 2026-10-25 17:0xZ by date -u)
+Successor 19 (Opus 5.5, D14/D15/D18, L37/L40), session_011reTXakSJCcwLhC4i9ZpkB. Handover check 5/5 (cba7e861). GO box 40 at 16:05Z.
 ### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)
-- Packet docs/new/P-N5-PFZ-box39.md (c9f9caa1, sha1 3c617e06…): FB-ROUND, P-FREEZE, LEN-TAIL, NO-CROSS-A, RISE′ (re-proof of NEB's
-  RISE), BRK-POLY. The Lead said YES (15:11Z); pin pending.
-- Companion packet docs/new/P-N5-PFZ-ext-box39.md (1b6239fb, sha1 b3702b1b…): P-FREEZE′ (P-epochs), θ-LEN, BRK-POLY′. I asked the
-  Lead to pin both as one review unit.
-- Working docs (not frozen):
-  - docs/new/N5-RW-box39.md: block lemmas BF-RW etc. (§1-§7), §11-§12 = the packets' source.
-  - docs/new/N5-RHO-box39.md: Y-FORM, HAT-FREEZE, RHO-TAIL, BF-F, FREEZE-F, RHO-HN, HN-POLY; all lane PROVED.
+- Packet docs/new/P-N5-RHO-box40.md (3e9fe5c2, sha1 cd5df65c…): Y-FORM, HAT-FREEZE, RHO-TAIL, BF-F, FREEZE-F, RHO-HN, HN-POLY. Uses
+  BRK-POLY′ only in the weak form (i′) (REFEREE GAP PFZ-1). Reported 16:4xZ; PINNED trunk c8144551 (16:50Z).
+- NEB fixes docs/new/P-N5-NEB-fixes-box38.md (e535e61a, sha1 15434c1c…): NEB-R1 = N-NEB-1, NEB-N1..N5, N-NEB-2, N-NEB-3, NEB-B1.
+- Packet docs/new/P-N5-NHN-box40.md: see the box 40 log (frozen at the commit that reports its sha1).
+- Working doc docs/new/N5-NHN-box40.md (source of P-N5-NHN). Scripts experiments/new/box40: rhodata, rhoclimb, nhn, nhnclimb, qsurvey.
 ### IN FLIGHT (others)
-- P-N5-PFZ + ext: Lead pin, then both referees after NEB, ahead of LV.
-- P-N5-NEB: REFEREE-2 signed (c547d6e; N-NEB-1..3); REFEREE 9 reviewing. When relayed, write a NEW docs/new/P-N5-NEB-fixes-box38.md
-  (repairs only). It must include:
-  - BAND FALSE (tauw_A_cex_n24);
-  - OUT-R1 = N-NEB-1;
-  - N-NEB-2 (optional);
-  - N-NEB-3 (stale rows: R39 landed);
-  - the NEB §0 status rows.
-### NEXT (successor 19)
-- (1) Offer P-N5-RHO (N5-RHO-box39.md §1-§4) as a frozen packet. Ask the Lead first.
-- (2) N_HN for τ(o) ≠ o: HN stretches end at H1-toggles (TOGGLE-COUNT, R34 (e), any τ?) or H2-changes (w-changes, WCH R38). Check
-  whether N_HN ≤ toggles + H2-changes + 1 is already polynomial. If yes, HN-POLY holds for every τ(o) (big; verify carefully).
-- (3) Climbs against FREEZE-F (c) / RHO-TAIL. Push phases past g_{|U|−2} with H1 states (only climb outputs get there).
-- (4) The post-freeze regime of P-FREEZE is exercised in data only at |U| = 1. pfzclimb PFZ_SCORE=excess got stuck at −1 (θ-runs reach
-  |U| − 2 fallbacks, never |U| − 1). Try a better seed or mutation, for the referees.
-- (5) W-TIE (OPEN; tieclimb max 4 per block at n 24).
-- (6) Then the non-HN states (SN, OTHER) with the same Bellman-Ford lens.
+- P-N5-PFZ + ext: REFEREE 9 R-N5-PFZ 8595343 (all SIGNED except GAP PFZ-1 on ext BRK-POLY′ (i), repair given); REFEREE-2 9 signed the
+  main packet (37e55fd); REFEREE-2 10 to review ext. When both §Cs + the ext report are in (Lead relays SHAs): write NEW
+  docs/new/P-N5-PFZ-fixes-box39.md, repairs only, PFZ-1 repair in full (REFEREE: inside a P-epoch ℓ(θ) = |P(θ)| + |Q ∩ A_low|, so
+  ≤ |A_low| − [o low] θ-changes; ρ_S ≥ 1 forces a vertex of U ∖ {o} above c_θ; θ_S ≤ ρ + (ρ+1)(|U|−3) ≤ (ρ+1)(|U|−2)), notes
+  PFZ-N1..N3 (N1: §6 "SPLIT" → SPLIT (a); N2: RISE′ hypothesis stronger than needed; N3: NEB status), N-PFZ-1..3 (read R2-N5-PFZ).
+- P-N5-RHO, P-N5-NHN: Lead pins, then referees. Fixes files when relayed: NEW files only.
+### NEXT (successor 20)
+- (1) Q states: H1 ∧ H2 ∧ ¬H3, only in phases with no HN state (H3-IN-HN), where t0 = τ(o) ≠ o, λ(t0) =: c′ ≠ c_θ, and every state is Q or
+  ¬H1. This is the last out-of-SN piece. DATA (qsurvey.py, library): 165 phases with Q states, 186 Q states, only 2 Q fallbacks (both
+  evictions), 0 S4a steps at Q states with a leave. Ideas: a Q-SPLIT (S4a at Q never evicts? R̄ vertices have W cycle node c′ with
+  reward(c′) > reward(c_θ) by XW); fallbacks at Q are Bellman-Ford rounds (FB-ROUND holds), HAT-FREEZE applies on F ∩ U; ¬H1 parts by
+  NH1-FB; Q-runs ≤ ⌈T/2⌉ + 1 per phase (H1-toggles). Try: Q fallbacks per Q-run ≤ poly via EPOCH-type breaks + a T0-PIN analogue.
+- (2) The global loop: f enters SCOPE-COUNT (R38 (c)) and X-SN-PHASE (R34 (f)); with HN fallbacks now O(n⁸), check whether the f ↔ X
+  loop closes (fallbacks at (h) states: R40 PL-S″ per scope run).
+- (3) Data for referees: post-freeze EV2 ends (T0-PIN) and HAT-FREEZE at |U| ≥ 4 are not reached (climbs plateau). Better mutations
+  or hand-built instances.
+
+## Things only I know (successor 19)
+- The N_HN idea (box 40): for τ(o) ≠ o, ¬H2 ⇔ t0 := τ(o) ∈ R. A stretch end keeping H1 removes t0 from R; SPLIT makes it a fallback,
+  so before g_{|U|−2} there are ≤ |U| − 2 of them for free. After it, HAT-FREEZE pins M(t0) at MoptÛ(t0) at the H2 end and (a) at the
+  HN end, and SG-EV (R19's (SG) step, needs only H1) makes each such end a strict rise of Ξ(t0) with P fixed = a length rise: ≤ |U| − 2.
+  The H2-toggles that START a stretch never need counting. T0U (λ(t0) = c_θ when the phase has an HN state) is what puts t0 in U.
+- H3-CONST (R33 (a)) + T0U ⇒ no Q state (H1 ∧ H2 ∧ ¬H3) in a phase with an HN state. So Q states live only in "HN-free" phases.
+- Lead's literal question (N_HN ≤ toggles + H2-changes + 1 via WCH) does not work as asked: WCH counts w-changes, not H2-toggles.
+- RHO §0 (A) repeats PFZ's "no double count" sentence; REFEREE-2 N-PFZ-1 says that case cannot occur (conclusion unchanged). If a
+  referee raises it on RHO/NHN, answer as in the PFZ fixes file.
+- RHO's data: library past the hat freeze only at |U| = 2 (trivial); climbs reach |U| = 3 (5 phases) and plateau at excess −2 for
+  |U| ≥ 4. nhnclimb never produced a post-freeze EV2 end (T0-PIN vacuous in data). Climb outputs are TRACKED in
+  experiments/new/box40/out/ (experiments/*/out/ in .gitignore matches only one level, so experiments/new/box40/out is not ignored).
+- NEB-N5: the stated inv2.py command gives 75 / 9 / 4 / 20 / 8 (= referees); inv2_all.txt's bigger totals came from lost inputs.
+- Pitfalls (this session):
+  - The `pkill -f` self-kill (exit 144) once, after push.sh finished. pgrep -f lists the calling shell too; kill only the pids that are
+    the python processes (check with ps -p).
+  - `git rev-parse --short=8 A B` fails ("Needed a single revision"); rev-parse one name per call.
+  - The Lead's message ordering crosses freezes (NEB-fixes-first arrived after RHO froze). Say so; do not re-freeze.
+  - push.sh's verify runs on the working tree; I moved an unfinished draft packet out of docs/ while pushing other work (precaution;
+    not tested whether check_docs.py would fail on it).
 
 ## Things only I know (successor 18)
 - The key idea of box 39 (D18 cross-field: Bellman-Ford / Howard policy iteration). In a phase, U = λ^{-1}(c_θ) is fixed. On U every
