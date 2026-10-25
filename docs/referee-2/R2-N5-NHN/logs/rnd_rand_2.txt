@@ -1,0 +1,14 @@
+H3_states: 16
+N_HN_total: 524
+T0U_a_states: 19374
+TOO_phases_with_HN_caseA: 150
+TOO_phases_with_HN_caseB: 291
+drops: 1
+phases: 21547
+phases_tau(o)!=o: 17471
+phases_tau(o)!=o_with_HN: 524
+phases_tau(o)=o: 4076
+runs: 10000
+max_EV2_ends_per_phase: 0
+max_N_HN: 1
+RESULT OK violations=0
