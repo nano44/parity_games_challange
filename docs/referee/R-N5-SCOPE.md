@@ -57,8 +57,8 @@ No gaps.
     a WCH transition.
 - Both maps are injective. RESTARTS bounds the (h)-runs. Correct.
 - DATA (SC): scope runs ≤ #(h)-runs + #WCH in every phase (225 library scope runs, max 5 per phase; 2,890 random). 0 failures.
-  - Climbs FIT = (scope runs, NH1 fallbacks, WCH) per phase, 15 min each, seed 91 random n 5-12 and seed 92 from wd12_s1: maxima (3, 0, 3),
-    0 failures at the time of writing.
+  - Climbs FIT = (scope runs, NH1 fallbacks, WCH) per phase, 15 min each, seed 91 random n 5-12 and seed 92 from wd12_s1: maxima (3, 0, 3) and (4, 0, 4)
+    (final), 0 failures over 766,585 checked candidates.
 
 ## 4. FB-INT (SIGNED)
 - Non-tame ⇒ crossing:
@@ -105,7 +105,7 @@ No gaps.
 | library (276 files at referee head) | 276 | 1,127 | KEY 7,455; WCH 135; scope runs 225; non-tame 339; NH1 fb 9; CN-LAST 23 | 0 |
 | rand 𝒞^1O n 4-14 seed 7801 | 30,000 | 58,050 | KEY 22,121; WCH 618; scope runs 2,890; NH1 fb 447; CN-LAST 991 | 0 |
 | general games n 3-14 seed 7802 (KEY, CN-LAST only) | 20,000 | — | KEY 7,219; CN-LAST 408 | 0 |
-| climbs scope_climb.py seeds 91, 92 | (running; interim) | — | max (scope runs, NH1 fb, WCH) = (3, 0, 3) | 0 so far |
+| climbs scope_climb.py seeds 91, 92 (15 min each; final, added 11:18Z by date -u) | 453,684 + 312,901 candidates, every one through all checks | — | max (scope runs, NH1 fb, WCH) = (3, 0, 3) / (4, 0, 4) | 0 |
 - Thin spots:
   - WCH, SCOPE-COUNT and NH1-FB are far from their bounds.
   - FB-INT's crossing-free runs carry at most 1 fallback in all data.

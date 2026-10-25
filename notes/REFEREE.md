@@ -16,8 +16,8 @@ echo $?. Build Oink first (scripts/setup_oink.sh). Never read docs/referee-2/R2-
 | P-N5-TOG (R34 at CHECKER) | R-N5-TOG.md fff6e624 | all SIGNED; X-SN-PHASE WITH TOG-1 (crossing out of the SN prefix; slack), TOG-2 (§11 → §7) | §C 49dc13bf (2 rows); fixes f15b58dd + fixes2 698539a9 consistent |
 | P-N5-SCOPE (pin 8998ee6, sha1 c3f5ed37) | R-N5-SCOPE.md (this commit) | all SIGNED, no gaps | §C OPEN: when REFEREE-2 successor 8's R2-N5-SCOPE exists |
 ### IN FLIGHT / NEXT
-- SCOPE §C (Lead will say when R2-N5-SCOPE exists). My climbs scope_climb.py seeds 91/92 were still running at handover with 0 failures; if
-  their logs in the scratchpad are gone, say so in the §C (interim maxima (3, 0, 3)).
+- SCOPE §C (Lead will say when R2-N5-SCOPE exists). My climbs scope_climb.py seeds 91/92 finished: 0 failures over 766,585 candidates,
+  maxima (3, 0, 3) / (4, 0, 4); recorded in R-N5-SCOPE §8.
 - Nothing else open on my side. CHECKER N-2 (R-N5-TOG l.9 cited the L2 §C as 5e85c706; it is ce241061) fixed in this commit.
 ### Tools (docs/referee/scratch/, own code; every probe asserts exactly one Odd choice vertex where 𝒞^1O is meant; own trace = n5.run)
 l2_probe.py (L2 checks), l2_pc.py (P^c_ℓ path enumeration, NEG=1 control), l2_exitdrop.py, l2_climb.py (frz|tog|h2s), l2_oink.py (N5 regions
