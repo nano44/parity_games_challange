@@ -136,3 +136,52 @@ with Σ t_Q ≤ T := n² + 2n − 1: X_SN ≤ 13(d_o + 1)n³(f + 1 + T) + T per 
   - Every (L2) item is now ≤ poly(n)·(f + 1) per phase. The open core is (L1) and the f ↔ X loop (R28 f ≤ n_E(2n − 1)(X + 1) + X).
 
 ## 6. Work log (DATA; filled in as the box runs)
+- Climbs: 40 min each. Logs are in experiments/new/box35/out/ (gitignored), and the instances below are copied to instances/.
+  - MODE=dl, seeds onedrop_cex_n32, oneh_cex_n32 and onerun_cex_n32: the best stays at 1 drop per θ-constant stretch, up to 4 toggles and
+    31 ¬H1 states. DROP-LEN is not refuted.
+  - MODE=fr: violation at mutation 93 of seed 3603. This is onerun_cex_n32 (§3).
+  - MODE=tog, from onedrop_cex_n32: 6 H1-toggles in one phase at n 32. That is well below TOGGLE-COUNT's n² + 2n − 1 = 1087.
+  - fbtclimb.py: events at seeds 3611 and 3612 (§5).
+
+## 7. (c): level −1 fallbacks; Lemma CN-LAST (PROVED, L-NEW succ. 15; every game)
+- Angle. L-SI's open list (P-N5-NJB §5) includes "level −1 fallbacks per scope run", and the (L1) core needs every kind of fallback
+  counted. MINSET and ENT-SHAPE handle levels ≥ 0, so I look at level −1. A level −1 gate (y, z) has Ξ(z) and Ξ(σ y) with the same cycle
+  node and the same P, differing only in length.
+- First, the kinds of θ-change in scope runs (thcls.py, library + experiments/si/coarse instances; data/thcls_lib.txt; DATA). There are
+  200 scope runs and 1,507 θ-changes. Above the last fallback level, the only kind of θ-change is an absorption (49 cases). Overtakes and
+  value rises with the same σ̄(o) never exceed it. This is MINSET (b)-(c) seen in data, and it is L-SI's ground, so I left it.
+- DATA: level −1 Even fallbacks are rare, and in almost all of them every gate sits at its own cycle node.
+  - library: 25 cases, 24 with own-cycle-node gates only;
+  - random (20,000 games, n 4-14, seed 3553): 680 cases, 680 with own-cycle-node gates only;
+  - the one exception is box28/out/oc12_s1 at k = 6 (gate 0 → 7, a length-only gate at a non-cycle node).
+  Logs: lenrun.py; data/lenrun_lib.txt, data/lenrun_rand.txt.
+**Lemma CN-LAST.** Let k be an S4c fallback at which Even switches, such that every gate (y, z) at k has λ_k(y) = y and level −1. Then:
+- (i) Ξ_{k+1} = Ξ_k;
+- (ii) Iσ_{k+1} = ∅;
+- (iii) k + 1 is the last state of its phase: the next iteration changes τ, or N5 stops.
+So a phase has at most one such fallback, and it is the phase's last transition.
+Proof.
+- Setup. The fallback switches exactly the gate tails, all of which are own cycle nodes c_1, …, c_p. It sends each c_i to z_i, its best gate
+  target by (Ξ_k, index) (SPEC S4c). Level −1 at c_i: Ξ_k(σ_k c_i) = (c_i, ∅, L_i − 1) by (F) of P-N5-TOG §0, so Ξ_k(z_i) = (c_i, ∅, d_i)
+  with a strictly better length. z_i's H_k-play reaches c_i. It meets no other c_j first: c_j's play is its own cycle, so passing c_j would
+  give cycle node c_j ≠ c_i. All vertices of that path are less relevant than c_i, since P = ∅.
+- (i) Let σ′ := σ_{k+1}, and let σ̄ := σ̄_k, Odd's optimal counterstrategy to σ_k (pointwise, R18 Lemma S (a)). Compare the (σ′, σ̄)-plays with
+  the (σ_k, σ̄)-plays.
+  - A play that meets no c_i is unchanged.
+  - A play that meets some c_i first at c_i agrees with the old play up to c_i. After c_i it runs c_i → z_i → … → c_i, a cycle topped by c_i.
+    The old play was on c_i's old cycle, also topped by c_i. Values are measured to the first visit of the cycle node, so the value is the
+    same.
+  - Hence V_{σ′, σ̄} = Ξ_k. Ξ_{k+1} is the pointwise minimum over Odd strategies (R18 Lemma S (a)), so Ξ_{k+1} ⊴ Ξ_k. R15 (a) gives ⊵, so
+    the two are equal.
+- (ii) At a non-switched Even vertex, σ and Ξ are unchanged and there was no gate at k, so there is none at k+1.
+  - At c_i, suppose (c_i, w) were a gate at k+1. Then Ξ_k(w) = Ξ_{k+1}(w) ▷ Ξ_{k+1}(z_i) = Ξ_k(z_i) ▷ Ξ_k(σ_k c_i).
+  - So (c_i, w) was a gate at k with a better value than z_i, against the choice of z_i.
+- (iii) With Iσ_{k+1} = ∅, S4a does nothing. Either Iτ_{k+1} = ∅ and N5 stops (S5), or S4b changes τ, or the Odd fallback (S4c with
+  Iσ = ∅) changes τ. τ is part of the phase key. □
+- Remark. The converse direction is R15 (b): a switch set that leaves Ω unchanged consists of length-only switches at cycle nodes. CN-LAST
+  is the forward direction for the S4c switch set, together with its consequence for N5's control flow.
+- DATA: 24 + 680 cases, 0 failures of (i) or (ii), and the phase never continues past k + 1 (lenrun.py, CNLAST_* counters).
+- What stays OPEN: level −1 fallbacks with a gate at a non-cycle node (1 case seen, oc12_s1). LEN-STAY ("after a state with M = −1 the
+  pair (cycle node, P) is frozen for the rest of the phase") is FALSE in data: 4 library cases (first claimF_len_cf1) and 1 random case.
+- What this does for (L1): with CN-LAST, the level −1 fallbacks of a phase are ≤ 1 + (level −1 fallbacks with a non-cycle-node gate). The
+  open fallback count per scope run is then NJB (levels ≥ 0, L-SI / L-RED) plus that residue. The f ↔ X loop itself is untouched.
