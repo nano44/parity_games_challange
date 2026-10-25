@@ -15,7 +15,8 @@ H1: o on no honest cycle; H2: o on no W-cycle (o not on the (σ,τ)-play from τ
             at every state t of the scope run with r_s > L for s in [k0+1, t] that comes after an S4a COARSE_L(θ) rise j in (k0, t),
             the honest play of x_t = σ̄_t(o) avoids Ev (r_s = lev(θ_s, w_s)). tev = post-rise states checked, tevpre / tevmeetpre =
             pre-rise states / those whose threat meets Ev. TEVLAST: the same failure with no fallback in (k0, t), i.e. k0 the last
-            fallback before t (the form EV+ / TEV-RED use); tevlast = post-rise states checked in that form
+            fallback before t (the form EV+ / TEV-RED use); tevlast = post-rise states checked in that form. TEVCONF: a TEVLAST failure
+            at an in-scope fallback state t (TEV-RED (5)'s configuration, the one NJB needs excluded)
 Usage: rx16.py game.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -49,7 +50,7 @@ def analyse(g, cap=5000):
     C, ex = {}, {}
     def bad(nm, k): C[nm] = C.get(nm, 0) + 1; ex.setdefault(nm, k)
     st = dict(n=n, it=len(FB), fb=sum(FB), phases=0, maxruns=0, maxslack=-10 ** 9, maxrst=0, rfb=0, rst_tog=0, rst_fb=0,
-              maxpre=0, exitx=0, xruns=0, rfb0=0, rfbchk=0, thin=0, tev=0, tevpre=0, tevmeetpre=0, tevfail=0, tevlast=0)
+              maxpre=0, exitx=0, xruns=0, rfb0=0, rfbchk=0, thin=0, tev=0, tevpre=0, tevmeetpre=0, tevfail=0, tevlast=0, tevlastfail=0)
     th = [Xi[k][o] for k in range(N)]; r = [lev(Xi[k][o], Wv[k][o]) for k in range(N)]
     k = 0
     while k < N - 1:
@@ -105,7 +106,9 @@ def analyse(g, cap=5000):
                         st["tev"] += 1; last = not any(FB[s] for s in range(k0 + 1, t))
                         st["tevlast"] += last
                         if meet: st["tevfail"] += 1; bad("TEV", (k0, t, L))
-                        if meet and last: bad("TEVLAST", (k0, t, L))
+                        if meet and last:
+                            bad("TEVLAST", (k0, t, L)); st["tevlastfail"] += 1
+                            if t <= e and FB[t]: bad("TEVCONF", (k0, t, L, M(t)))   # TEV-RED (5): the failure at the next fallback
                     else: st["tevpre"] += 1; st["tevmeetpre"] += meet
                 if t <= e and not FB[t] and coarse(th[t + 1], L) != coarse(th[t], L): risen = True
                 t += 1
@@ -119,7 +122,7 @@ def analyse(g, cap=5000):
         k = e + 1
     return dict(C=C, ex=ex, **st)
 
-KEYS = ("n", "it", "fb", "phases", "maxruns", "maxslack", "rst_tog", "rst_fb", "maxpre", "exitx", "xruns", "rfbchk", "rfb0", "thin", "tev", "tevpre", "tevmeetpre", "tevlast")
+KEYS = ("n", "it", "fb", "phases", "maxruns", "maxslack", "rst_tog", "rst_fb", "maxpre", "exitx", "xruns", "rfbchk", "rfb0", "thin", "tev", "tevpre", "tevmeetpre", "tevlast", "tevlastfail")
 if __name__ == "__main__":
     tot = {}
     for f in sys.argv[1:]:

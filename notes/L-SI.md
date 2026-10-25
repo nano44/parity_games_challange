@@ -73,6 +73,20 @@ Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2
    experiments/si/xing/out/ does NOT exist in this container (`cat .git/info/exclude` shows only the template); so never
    `git add -A`, add files by name.
 
+## Resume point (successor 6, box 11; GO 12:12Z 2026-10-25; session_01WZRciyMqz1LNWwdFoeq2AP)
+Write-up: docs/si/N5-TEV-box11.md. Code: experiments/si/tev/rb.py (logs/rb_named.txt, logs/rb_lib.txt).
+### DONE
+- Theorem ENT-X (PROVED CONDITIONAL on (P), only via P-N5-RL EV+): the ENT setting is empty, i.e. TEV-RED's configuration cannot occur.
+  The device is Lemma RB + Corollary WALK (unconditional): walk e's k0-route to the first vertex back in R̄_k; the predecessor carries a gate
+  of level > L unless the walked part of the route is high; e's route after e is low (TEV-RED (2), re-proved without FREE-FREEZE).
+- Lemma CYC-EV (no (P)): in (Σ) after a rise, c's cycle at k has no Ev vertex. This fills the "first/last Ev vertex is on the pre-c path"
+  point that P-N5-RL §6 uses silently. If a referee raises it, it goes in P-N5-RL-fixes-box10.md.
+- TEV at fallback states: PROVED, no (P). Corollaries (CONDITIONAL on (P)): NJB-A, D1 (D_M ≤ 1 for every block), PL-S″ (≤ 2·n·n_E
+  fallbacks of level ≥ 0 per scope run, with no REL(S)).
+- DATA: rb.py NAMED 262 pairs / LIB 377 pairs, 0 violations of RB, BF, WALK, CLS2. The ENT setting occurs 0 times (vacuous, as before).
+### OPEN
+- The straddling interval of a block (r drops to M inside it): full NJB. TEV at S4a states. Level −1 fallbacks.
+
 ## Resume point (successor 5, box 10; PARKED 2026-10-25 ~11:50Z per Lead 11:44Z; LANE-RESTART step 1; session_018GWc3YukyLgRhrrYJdrzHm)
 Handover check 6be8831 (Lead 5/5). Write-ups: docs/si/N5-RL-box10.md (box 10 b), docs/si/N5-P1-box10.md (box 10b). Code:
 experiments/si/riselast/ (rlprobe, rltrace, blocked, blf, ffreeze, threv, rlclimb; logs/; instances/rl_{a,b,c}.pg) and

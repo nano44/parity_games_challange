@@ -4,6 +4,7 @@
   rise2: (rfb0, other failures, θ-changes at S4a steps between consecutive in-scope fallbacks, pairs checked)
   tev : (TEV failures, post-rise states checked, pre-rise states whose threat meets Ev, fallback pairs)
   tevl: as tev for TEVLAST (k0 = the last fallback before t)
+  conf: (TEVCONF, TEVLAST failures, fallback pairs, TEV-LAST states)
   xrun: (failures, max SN-prefix crossings of one fallback-free run − (n − 1), exit crossings, fallbacks)
   rst : (failures, max #(h)-runs − (1 + toggles + f) per phase, max #(h)-runs, fallback restarts)
 A hit (rfb0 > 0, maxpre > n − 1, any failure) is saved as OUT_viol.pg. Invalid sentinel −10^9 (trap 1).
@@ -25,11 +26,12 @@ def fit(G, mode):
     elif mode == "rise2": f = (r["rfb0"], fails, r["thin"], r["rfbchk"])
     elif mode == "tev": f = (r["C"].get("TEV", 0), r["tev"], r["tevmeetpre"], r["rfbchk"])
     elif mode == "tevl": f = (r["C"].get("TEVLAST", 0), r["tevlast"], r["tevmeetpre"], r["rfbchk"])
+    elif mode == "conf": f = (r["C"].get("TEVCONF", 0), r["tevlastfail"], r["rfbchk"], r["tevlast"])
     elif mode == "xrun": f = (fails + r["rfb0"], r["maxpre"] - (r["n"] - 1), r["exitx"], r["fb"])
     else: f = (fails + r["rfb0"], r["maxslack"], r["maxruns"], r["rst_fb"])
     return f, r
 
-def hit(r): return bool(set(r["C"]) - {"TEV"}) or r["maxpre"] > r["n"] - 1   # TEV (literal) refuted: tev_cex_n40
+def hit(r): return bool(set(r["C"]) - {"TEV", "TEVLAST"}) or r["maxpre"] > r["n"] - 1   # TEV refuted: tev_cex_n40, tevlast_cex_n40
 
 if __name__ == "__main__":
     mode, seed, secs, out = sys.argv[1], int(sys.argv[2]), float(sys.argv[3]), sys.argv[4]; rng = random.Random(seed)
