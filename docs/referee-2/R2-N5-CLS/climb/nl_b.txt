@@ -1,0 +1,6 @@
+start 0
+249 2
+258 3
+310 4
+TOTALS {'runs': 6000, 'transitions': 8136, 'C567_checks': 180000, 'transitions_in_phase': 3142, 'CN_checks': 254, 'NL_no_admissible_L(S4a,(h))': 2882, 'scope_runs': 2842, 'scope_transitions': 2856, 'scope_fallbacks': 51, 'scope_fallbacks_theta=w': 51, 'NL_no_admissible_L_with_leave': 2667, 'TRANS_checks': 46, 'OFFG_checks': 24}
+RESULT OK violations 0
