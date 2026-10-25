@@ -47,3 +47,9 @@ With FB-POLY (f ≤ 1 + (n − 2)(2n − 1)) this is polynomial in n.
 - (L) experiments/new/box41/lib41.txt (253 𝒞^1O files, canonical start): 271 OUT stretches, 253 crossings, 108 fallbacks inside
   stretches; max X_S = 31 with f_S = 0 at |U| = 48 (experiments/red/so/instances/post31_n48.pg; bound 46); max f_S = 9 (b5_os_n40, X_S 16).
 - (R) `xout.py --rand 3000 6 20 4102 3`: 10,048 runs, 2,836 OUT stretches, 11 crossings, 2 fallbacks; max X_S 2.
+
+## 5. Q-EPOCH, resolved without breaks (PROVED given FB-POLY and Q-SPLIT; replaces CONJECTURE Q-EPOCH of docs/new/N5-Q-box40.md §3)
+- Q-EPOCH asked for EPOCH's two bounds on Q-runs: fallbacks f_Q and crossings X_Q per Q-run, polynomial in the breaks B_Q.
+- Both are now polynomial in n with no break count: f_Q ≤ f ≤ 1 + (n − 2)(2n − 1) (FB-POLY, P-N5-FBPOLY), and X_Q ≤ (|U| − 2)(f_Q + 1) + f_Q
+  (X-OUT, §1; a Q-run is an OUT stretch). The breaks question of N5-Q §4 (RISE′ Step 0 at Q fallbacks) is therefore not needed for f or X.
+  It stays OPEN as a structural question only.
