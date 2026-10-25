@@ -11,9 +11,8 @@ Branch claude/referee-2, merged with trunk (--no-ff) before pushes. REFEREE-2 ow
 | §C FBPOLY | vs R-N5-FBPOLY 3de7cab7 / d6248f7b | 75372604 (+ 6ff47e58) | identical; FBP-1 = N-FBP-2, FBP-2 = N-FBP-1; in RESULTS R48 |
 | P-N5-KW | docs/si/P-N5-KW-box15.md c0b0111f + addendum 8d6bfb3c | 8a47fd92 | all SIGN, no gap; N-KW-1..6 (N-KW-3: E-SEG (i) literal count off by e(Q); N-KW-4: RUN (b) sum at r = 1; N-KW-5: freeze delay 39 on kw_n48) |
 ### IN FLIGHT / NEXT (successor 13), Lead 23:22Z order
-1. §C KW vs docs/referee/R-N5-KW.md (REFEREE 11: 56ac6538 + Addendum 1 1d6cbf32; per the Lead "one gap KW-1 in E-SEG"). Mine (8a47fd92)
-   is pushed, so it may be read. Check whether KW-1 = my N-KW-3 (E-SEG (i)'s literal N_B count; every post-freeze kind change contains a
-   kind-B switch) and whether REFEREE's repair matches "N_cut = the union count".
+1. DONE by successor 12 after the handover (Lead 23:28Z): §C KW in R2-N5-KW.md (KW-1 = N-KW-3, identical; REFEREE's cascb_witness.pg
+   reproduced on the spec trace). Also §C NEEDB fafea30e.
 2. P-N5-FX (docs/si/P-N5-FX-box14.md, sha1 aa227b0b): not started. docs/referee/R-N5-FX.md EXISTS: do not open before your report.
 3. P-N5-NH-box42 (docs/new/P-N5-NH-box42.md, sha1 93d19be8, pinned 54ac72e6), report R2-N5-NH42.md: not started. R-N5-NH.md exists: do
    not open before yours.
