@@ -1,0 +1,25 @@
+## library_rho (3 logs)
+  BFF_case2: 227
+  BFF_checks: 6337
+  FRZF_a: 77
+  FRZF_runs: 48537
+  HAT_a: 23413
+  HAT_b: 4548350
+  HAT_c: 3867
+  RECORD_phases_past_hat_freeze_U>=3_with_H1: 133856
+  RECORD_phases_skipped_large_U: 36168
+  TAIL_phases: 3382876
+  YFORM_a: 2764498
+  YFORM_b: 2971175
+  climb_evaluations: 386428
+  phases: 5306115
+  phases_with_HN: 48536
+  rho_HN_total: 27
+  runs: 1545712
+  states: 5735673
+  max_FRZF_changes: 1
+  max_TAIL_changes: 0
+  max_U_past_hat_freeze: 3
+  max_rho_HN: 1
+  max_sum_B_S: 0
+  max_sum_theta_S: 2

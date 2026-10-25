@@ -1,0 +1,7 @@
+HAT_b: 16
+RECORD_phases_skipped_large_U: 6
+YFORM_a: 86
+phases: 10
+runs: 3
+states: 86
+RESULT OK violations=0

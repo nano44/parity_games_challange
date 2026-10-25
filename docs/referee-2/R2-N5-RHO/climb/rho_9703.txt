@@ -1,0 +1,23 @@
+climb FIT=rho seed=9703 n=24 iterations=15040 improvements=40 best_fitness=1460.0
+BEST-INSTANCE counters: {'TAIL_phases': 73, 'YFORM_b': 73, 'phases': 73, 'runs': 4, 'states': 73}
+BEST-INSTANCE maxima: {}
+BFF_case2: 198
+BFF_checks: 6013
+FRZF_runs: 1502
+HAT_b: 66560
+RECORD_phases_skipped_large_U: 17641
+TAIL_phases: 564907
+YFORM_a: 28796
+YFORM_b: 617664
+climb_evaluations: 14846
+phases: 611522
+phases_with_HN: 1502
+rho_HN_total: 18
+runs: 59384
+states: 646460
+max_FRZF_changes: 1
+max_TAIL_changes: 0
+max_rho_HN: 1
+max_sum_B_S: 0
+max_sum_theta_S: 1
+RESULT OK violations=0

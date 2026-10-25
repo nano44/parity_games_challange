@@ -1,0 +1,5 @@
+YFORM_b: 6
+phases: 5
+runs: 3
+states: 6
+RESULT OK violations=0

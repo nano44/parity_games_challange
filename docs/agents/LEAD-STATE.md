@@ -1364,3 +1364,12 @@
   - R-N5-RHO 5927831: all SIGNED, no gaps. HN-POLY is conditional on (i′). Notes RHO-N1..N3. Climbs: 685k post-freeze phases at |U| = 3, 1.16 M HAT-FREEZE (c) checks, 0 failures; |U| ≥ 4 post-freeze not reached.
   - PFZ-ext §C ed8bc20: identical; PFZ-1 = G-PFX-1. Reconciliation YES: REFEREE's re-derived repair proves (i) as stated. Once it is in the fixes file, REFEREE-2 can sign (i).
   - LV2 §C ed8bc20: identical, gap map empty. beta2_n11 confirmed on REFEREE's engine: 2 none fallbacks in one scope run, so LV-NONE's N ≥ 2 step is exercised. REFEREE-2's CONJECTURE "an M = −1 THR fallback is the last fallback of its scope run" is FALSE on beta2_n11, and so is L-SI's NONE-LAST.
+- 17:57Z Lead: merged checker 67cfee6 (C51 Addendum 2: R42 landed verbatim; C51 CLOSED) and l-new 688c2d4 (L-NEW 19 PARKED at ~407k). Created L-NEW successor 20, session_018pjn8Y8JRES3YuFDUCAJgM. The L-NEW 18 row was removed from NOW; it was parked and is superseded.
+- 18:06Z Lead: merged l-si 3ea0f5f. P-N5-NEEDB, docs/si/P-N5-NEEDB-box13.md, sha1 7471aef3, PINNED at this commit; it is queued for both referees after NHN. To sign: XG, ANTI, NEED-β (all cases incl. A2*), OLD-THREAT, and INTO ⇒ no case (i) fallback. Vacuous in data: XG, NEED-β, A2*.
+- 18:06Z Lead: hourly sweep 18:02Z. No overage. WATCHDOG flagged CHECKER 7 idle; it is idle by design, waiting for the next draft, and its last update (17:52Z) was 11 min before the flag, not 71. L-COMP is waiting on box8 Q2 (~18:45Z). No exceptions.
+- 18:11Z Lead: merges, re-run, sessions.
+  - Merged l-new 48078dd (L-NEW 20 handover check 5/5; GO).
+  - Merged l-si e683a4c: LV2 fixes docs/si/P-N5-LV2-fixes-box12.md, sha1 f76fd1d1. NONE-LAST / M = −1-last FALSE recorded in DEAD.md (obstruction: an eviction cascade on beta2_n11). Climb report: max 1 u* = none per scope run in climbs. L-SI 8 PARKED.
+  - Merged referee-2 cd3b7cd: R2-N5-RHO 269ae45 (all SIGN; N-RHO-1, N-RHO-2: post-freeze only at |U| = 3, FREEZE-F (b) vacuous). REFEREE-2 10 PARKED.
+  - First level −1 block witness (THR, r ≥ 0, M = −1): docs/referee-2/R2-N5-LV2/climb/block_9501.pg, sha1 1b5b76fd, random start pair in block_9501.txt. Lead re-run, canonical start: one Odd choice vertex, n5 3/1, Oink zlk OK, strategies verified. The block state is on REFEREE-2's start pair, which I did not re-trace.
+  - Created L-SI successor 9 (session_018jN1MJkw56F58G3qcfcuZA) and REFEREE-2 successor 11 (session_01VrcXfBuNYKJ3uBUc7ETARQ).
