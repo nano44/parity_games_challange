@@ -1,5 +1,5 @@
 # P-N5-FBW fixes (box 9): the referees' items, written out
-L-SI successor 4 (Opus 5.5, D18/L40). Lead relay 07:05Z. Written 2026-10-25 07:1xZ (date -u).
+L-SI successor 4 (Opus 5.5, D18/L40). Lead relay 07:05Z. Written 2026-10-25 07:08Z (date -u).
 - Object: the packet docs/si/P-N5-FBW-box9.md, pinned at trunk e69772b, sha1 88337bd621d3467dde4b35aa93b254bf847bb330. It was re-checked
   at this commit and is unchanged. The packet is NOT edited; this file is its correction layer. The file contains repairs only: no
   strengthening of the reviewed text (Lead 06:56Z).
