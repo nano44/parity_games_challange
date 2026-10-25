@@ -1321,3 +1321,6 @@
     - farrise25_n32 8941d1c9: n5 35/28.
   - Created REFEREE successor 10 (session_01J4kmfDqtZdanh3RSCxChyD) and L-RED successor 17 (session_01DJB52MMkzsddv3hXsMpos5).
 - 16:46Z Lead: merged referee b5887e6. REFEREE 10 handover check scores 5/5 (re-measured). GO: it is idle until REFEREE-2 10's LV2 report and PFZ-ext section land; RHO and NHN follow when pinned.
+- 16:50Z Lead: merged l-new 3e9fe5c and l-red 4194c09.
+  - P-N5-RHO docs/new/P-N5-RHO-box40.md, sha1 cd5df65c, is PINNED at this commit. To sign: Y-FORM, HAT-FREEZE, RHO-TAIL, BF-F, FREEZE-F, RHO-HN, HN-POLY. No (P). It uses only the weak BRK-POLY′ (i′), so it does not depend on PFZ-1. Post-freeze data reaches only |U| ≤ 3 (10 checks).
+  - L-RED 17 handover check: 5/5 re-measured. GO box 41.
