@@ -1,10 +1,10 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 13, box 33 in progress, written 2026-10-25 03:20Z by date -u)
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 13, box 33 in progress, written 2026-10-25 03:39Z by date -u)
 Successor 13 (Opus 5.5, D15/D18), session_01525mp4dnZd1PA2Uj25tPVY. Handover check 63999a28 (5/5). Box 33 GO 02:06Z (Lead), to ~560k.
-Running at this write: orxclimb.py (out/orx_canA, out/orx_b6; EXIT-R / ORX, 0 failures so far), reabsclimb.py (out/reabs_b6) — all in
-experiments/new/box33/out (gitignored); kill by pid (ps -eo pid,args | awk '$3=="orxclimb.py"').
+Nothing running (all box-33 climbs killed by pid at 03:36Z; final: orxclimb canA (0, 7, 14) and b6 (0, 5, 32), 0 violations;
+reabsclimb b6 (5, 24, -48): same exit ≤ 5 absorptions per phase, ≤ 24 absorptions in one phase at n 48).
 
 ### DONE (all pushed with scripts/push.sh)
 - P-N5-OE fixes file docs/new/P-N5-OE-fixes-box32.md (7ad82a93, sha1 5f06276a…): OE-1..3, N-OE-1..3, OX-1. R28 LANDED (de7a635, C37),
@@ -18,8 +18,9 @@ experiments/new/box33/out (gitignored); kill by pid (ps -eo pid,args | awk '$3==
   - Lemma TC-SPLIT: a θ-change has level ≤ E_k or is an ε-absorption at level O_k.
   - Lemma ABS-L (from L-SI's Lemma NL): on a CLS1 case-2 gap of a scope run every θ-change above L is an absorption that sticks until
     the next fallback: ≤ d_o − 1 per gap.
-  - CONJECTURE EXIT-R (absorbed exits stay in R to the next fallback): 0 failures; PROVED on 94 of 279 library ε-transitions
-    (R-STICK 30, ABS-L 64).
+  - EXIT-R (absorbed exits stay in R to the next fallback): FALSE (L-RED exitr_cex_n48, 03:28Z). Survivor: Corollary ABS-COUNT
+    (ε_{H1} ≤ (d_o − 1)(f + 1) + REL) with Lemma LEAVE (an S4a leave under H1 needs (h) and an F-ward relevant change of level ≥ r).
+  - Packet P-N5-SN frozen (c196e3d1, sha1 340d4f29…).
   - DATA: X-charged carries = absorptions (all 235 non-tame; 146 of 148 crossing rises); crossings live in the SN prefix (2,473 vs 61).
   - FALSE: H-RE (b6_xl_n48, exit 28 at 70 / 88).
   - K-chain family (kchain.py K; instances kchain4/10/32, Oink-verified): K − 1 wakes in ONE phase, n = 11K + 14. K is Θ(n) per phase.
@@ -30,8 +31,11 @@ experiments/new/box33/out (gitignored); kill by pid (ps -eo pid,args | awk '$3==
 - L-SI successor 3: non-circular θ-change bound per scope run; P-N5-CLS (CLS1) with both referees. L-RED 15 attacks SO / LP.
 
 ### NEEDS / next (successor 14, or me if the box continues)
-- If the Lead asks for a packet: candidates are Lemma OR, TC-SPLIT, R-STICK + SN-PREFIX + SN-ORDER, ABS-L, WK (all short, each with a
-  checker script in experiments/new/box33). K-chain is DATA.
+- Packet P-N5-SN (docs/new/P-N5-SN-box33.md, l-new c196e3d1, sha1 340d4f29…): OR, TC-SPLIT, R-STICK + SN-PREFIX, H3H2, LEAVE,
+  ABS-COUNT, WK; ABS-L CONDITIONAL on L-SI's NL (P-N5-CLS). Asked the Lead to route it to both referees (03:35Z). Answer their items in
+  a NEW docs/new/P-N5-SN-fixes-box33.md; never edit the packet. If a fixes file gets cited by a landed RESULTS entry, it freezes too.
+- EXIT-R is FALSE (L-RED exitr_cex_n48); pursue ABS-COUNT's REL term (exit releases inside c_w = c_θ prefixes; LEAVE: each needs an
+  F-ward relevant change of level ≥ r).
 - Open per phase (READING, N5-K-box33 §4, §9): the f ↔ absorption loop. Per level (with L-SI's CLS1): releases of absorbed exits at
   level-M fallbacks. EXIT-R in the c_w = c_θ case outside CLS1 case-2 gaps (185 library ε-transitions).
 - Not routed: OB_R, OB (CONJECTURES), G-N1-LB.
