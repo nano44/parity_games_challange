@@ -6,22 +6,24 @@
   tevl: as tev for TEVLAST (k0 = the last fallback before t)
   conf: (TEVCONF, TEVLAST failures, fallback pairs, TEV-LAST states)
   tx  : tevx16 (N5-TEV-box11 in (Σ)): (failures, (Σ) pairs with a COARSE_L(θ) change, RB + WALK checks, (Σ) pairs)
+  nleq: nleq16 (CONJECTURE NL=): (NL= failures at r_j = L, r = L steps checked, r = L steps without (A_j), r > L steps)
   xrun: (failures, max SN-prefix crossings of one fallback-free run − (n − 1), exit crossings, fallbacks)
   rst : (failures, max #(h)-runs − (1 + toggles + f) per phase, max #(h)-runs, fallback restarts)
 A hit (rfb0 > 0, maxpre > n − 1, any failure) is saved as OUT_viol.pg. Invalid sentinel −10^9 (trap 1).
 Usage: climb16.py mode seed secs OUT (seed.pg | --rand n)"""
 import sys, os, random, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-import sox, rx16, tevx16, pg
+import sox, rx16, tevx16, nleq16, pg
 from soclimb import mutate, dump
 NEG = (-10 ** 9,) * 4
 
 def fit(G, mode):
     g = pg.Game(*G)
     if any(not s for s in G[2]) or len(sox.oddchoice(g)) != 1: return NEG, None
-    try: r = (tevx16 if mode == "tx" else rx16).analyse(g, cap=3000)
+    try: r = (tevx16 if mode == "tx" else nleq16 if mode == "nleq" else rx16).analyse(g, cap=3000)
     except AssertionError: raise
     except Exception: return NEG, None
+    if mode == "nleq": return (sum(v for k, v in r["C"].items() if k.startswith("EQ") or k == "LEAVE_SHAPE"), r["eq"], r["eq_noA"], r["gt"]), r
     if mode == "tx": return (sum(r["C"].values()), r["rise_pairs"], r["rb"] + r["walk"], r["pairs"]), r
     fails = sum(v for k, v in r["C"].items() if k != "RISE")
     if mode == "rise": f = (r["rfb0"], fails, r["rfbchk"], r["fb"])
