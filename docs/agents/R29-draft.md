@@ -1,11 +1,11 @@
-# Draft RESULTS R29 (Lead, 2026-10-25 03:16Z by date -u) (rev. 03:21Z: fixes part 2 cited) — awaits CHECKER C38; lands in "## Results" after R28, before "## Dead ends"
+# Draft RESULTS R29 (Lead, 2026-10-25 03:16Z by date -u) (rev. 03:21Z: fixes part 2 cited; rev. 03:29Z: C38 N-1) — awaits CHECKER C38; lands in "## Results" after R28, before "## Dead ends"
 
 ### R29 [refereed-only] N5 on one-Odd-choice games: gates into F never exceed the gate level (OFFGATE), cycle-node switches are length-only (CN), values off R̄ freeze at S4a steps above a gap (NL), and fallback levels never rise along a scope run at THR fallbacks (Theorem CLS1) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C38.md, checker PENDING)
 - Object (packet P-N5-CLS, pinned trunk 486107a, unchanged during review): docs/si/P-N5-CLS-box8.md, sha1
   5bbfd872383d9b2c2d3caaf902b174d0aa54e4ae (L-SI successor 3, Opus 5.5). The referees' repairs are collected by the lane in
   docs/si/P-N5-CLS-fixes-box8.md (l-si 2c5e57c, on trunk; sha1 92f79dc98628159a1ef328b76a1672851eb0dda1, L-SI successor 3; a record, not
   itself refereed text; it holds CLS-1..CLS-4 and N-CLS-1) and docs/si/P-N5-CLS-fixes2-box8.md (l-si b90f639, on trunk; sha1
-  8f1b52b4dce13e758bcc4b0b05e98750e0a51ce4; part 2, the full six-row joint map from both §C, including N-CLS-2).
+  8f1b52b4dce13e758bcc4b0b05e98750e0a51ce4; part 2, the six-row joint map; N-CLS-2 is a row of REFEREE's §C only (REFEREE-2 §C: same argument, no row needed)).
   Setting: N5 as in RESULTS R25 (gates, gate levels, M_k, lev, COARSE_L, (C1)-(C4), Ξ_k = Θ_{H_k}, ENG-1). PHASE: a joint λ-phase with
   τ constant. On 𝒞^1O, R, R̄ := R ∪ {o}, F, (h), EQ / THR, u* as in R19-R23. SCOPE RUN: a maximal run of consecutive in-phase transitions
   k → k+1 with (h) at k, H2 at k+1 and w_{k+1} = w_k. r_k := lev(θ_k, w_k) (< ∞ under (h)).
