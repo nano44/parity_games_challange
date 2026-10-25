@@ -26,6 +26,7 @@ Labels (L40): PROVED (by whom), READING, CONJECTURE, FALSE, OPEN, DATA. Every PR
 | Lemma TH: θ-changes per phase ≤ (n − 1) + n(X + 1) + X | PROVED | §4b |
 | Lemma SO: relevant σ̄(o) changes ≤ d_o(Θ + 1) (with θ fixed, σ̄(o) moves only when its exit stops being a minimiser) | PROVED | §4b |
 | Corollary XJ: S_o, J and the fallbacks are O(poly(n)(1 + X)); a phase has O(m n⁷ (1 + X) + m n⁵ K) transitions | PROVED (given R22, R24, R25) | §4b |
+| Lemma OE + Corollary OX: σ̄(o)'s level ≤ Even's off crossings; ε, J ≤ X; a phase is O(m n⁵ (1 + X + K)) | PROVED | §4c |
 | What this does to (NH'), (E), (K_W), J, NFB-O | READING | §5 |
 
 ## 0. The gate-level freeze is vacuous where it is needed (DATA)
@@ -233,6 +234,13 @@ Proof.
   (≡ Z up to a factor n, R23 LV′) and K, the wakes, which live in U1 pieces (R24) and in U2 / U3 / U23 stretches ((E), (K_W)).
 - DATA (socheck.py, LIB, 255 phases): 0 failures of Lemma TH (incl. its two cases), Lemma SO (incl. "the old choice leaves T"), and J ≤ S_o.
   Maxima: Θ 51 and S_o 49 at n 32 (lev_l_x, d_o 14, X 21); J 17 ≤ S_o 18 at n 48 (jcl_zcl_cu_n48, d_o 18, X 17).
+
+## 4c. σ̄(o) never outruns Even off crossings (PROVED, L-NEW; packet docs/new/P-N5-OE-box32.md)
+- Lemma OE: at a crossing-free phase transition, the level of the relevant σ̄(o) change is ≤ the max relevant Even level. (H1: both exits stay
+  in F and their coarse values above Even's level are frozen; ¬H1: exits on the honest cycle have empty path sets.)
+- Corollary OX: ε ≤ X, J ≤ X, ρ ≤ 2f + 2X + K, f ≤ n_E(2n − 1)(X + 1) + X, T = O(m·n⁵·(1 + X + K)). Sharper than §4b (no S_o, no Θ).
+- DATA (oddlev.py, orise.py): O_k > E_k only at crossings (217); all 175 non-tame transitions are crossings; every σ̄(o)-type rise has a
+  crossing in its interval (128 of 128).
 
 ## 5. What this does to the open cores (READING, L-NEW)
 - The hoped-for merge fails. Had NO-WAKE held, Corollary LP′ would have replaced (E), (K_W), NFB-O and J by S_o next to X. With
