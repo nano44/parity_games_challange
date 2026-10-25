@@ -106,3 +106,56 @@ Measured from the repository at the time of writing (commands named), not recall
   `git rev-parse`, `git log c74648b6..origin/claude/referee-2`, and `--is-ancestor` against trunk (3 report commits were not on trunk).
   It bit anyway: the predecessor's a769ff54 arrived after my fetch (item 2). Check now: re-fetch and `git log HEAD..origin/claude/referee-2`
   immediately before every push.sh, and read a rejected push as "the branch moved", never retry blind.
+
+## successor 11 (2026-10-25T18:1xZ by date -u; Opus 5.5 under D15/L37; predecessor successor 10 session_012VrKctzqedu9x1gVAMchV7, handover cd3b7cd0)
+Measured from the repository at the time of writing (commands named), not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee-2`. Local branch at container start was STALE (`git status`: 2474 behind origin).
+  `git fetch origin claude/referee-2`; `git checkout -B claude/referee-2 origin/claude/referee-2`;
+  `git rev-parse HEAD origin/claude/referee-2` -> both cd3b7cd0 (the handover commit). No late predecessor push at 18:11Z.
+- Trunk claude/vibrant-johnson-nxvvxo (docs/NOW.md:15) at e6ee6130 (`git fetch` 18:11Z).
+  Before merge: `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 5 ahead, 8 behind (merge-base 7841c347).
+  `git merge-base --is-ancestor`: a551debf (R2-N5-LV2) and 78896bfc (R2-N5-PFZ §X) ON trunk; 269ae45a (R2-N5-RHO), f2209fa4 (LV2 block
+  witness addendum), c2c326c7, cd3b7cd0 NOT on trunk.
+- `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` -> b93966b0 (no conflict): 6 ahead, 0 behind. This file's commit adds one.
+
+### 2. Open work and next step of each (queue order from the handover, re-checked against trunk)
+- §C PFZ (main + ext). My reports: R2-N5-PFZ.md §1-§6 (37e55fde, succ. 9) + §X (78896bfc, succ. 10), both pushed, so REFEREE's
+  docs/referee/R-N5-PFZ.md may now be read. On trunk: R-N5-PFZ 8595343 + §C 4859e63e and REFEREE 10's §C-ext ed8bc207 (its commit
+  subject, read via `git log -- docs/referee/`: "PFZ-1 = G-PFX-1; repair proves (i)"). Next step: read R-N5-PFZ.md; check whether
+  REFEREE's PFZ-1 is my G-PFX-1, diff the repaired (i) statement "(θ_S ≤ (ρ_S + 1)(|U| − 2))" against BRK-POLY′ (i) as I left it;
+  write the §C section into R2-N5-PFZ.md.
+- §C LV2 vs REFEREE R-N5-LV2 b454ca32 (+ addendum 46a80300, + REFEREE 10's §C in ed8bc207, "identical" per its subject). Mine
+  a551debf + f2209fa4 pushed. Next: read R-N5-LV2.md, gap map; also note L-SI's fixes file docs/si/P-N5-LV2-fixes-box12.md
+  (sha1 f76fd1d1, l-si 680c0294, "DEAD: NONE-LAST / M=-1-last FALSE on beta2_n11") bears on the CONJECTURE successor 10 sent to L-RED;
+  check the fixes file only if the Lead routes it.
+- §C RHO vs REFEREE 10's R-N5-RHO (59278313, on trunk). Mine 269ae45a pushed (rides this push to trunk). Next: read R-N5-RHO.md, diff
+  verdicts and notes (my N-RHO-1/2 vs its RHO-N1..N3).
+- P-N5-NHN: docs/new/P-N5-NHN-box40.md `sha1sum` -> da7d09ec (= handover's pin, trunk 0bb175d). Not started. Independence:
+  `ls docs/referee | grep -i NHN` -> empty. Next: read packet, build R2-N5-NHN/ on R2-N5-RHO/rho_check.py, write R2-N5-NHN.md.
+- New on trunk, not routed to me yet: docs/si/P-N5-NEEDB-box13.md (sha1 7471aef3, "Lead: P-N5-NEEDB pinned" e6ee6130). Wait for the Lead.
+- Predecessor NEEDS (N-LV2-1..3 -> L-SI, G-PFX-1 -> L-NEW, M = −1 last-fallback CONJECTURE -> L-RED): sent; Lead's.
+- Oink: `ls tools/oink/build` -> absent; scripts/setup_oink.sh started 18:12Z.
+
+### 3. docs/GAPS.md rows
+- `grep -n 'REFEREE-2\|G-N5-TIME' docs/GAPS.md`: REFEREE-2 owns no row. Relevant: G-N5-TIME | major | L-NEW | open (docs/GAPS.md:11);
+  latest UPDATE 17:41Z: R42 LANDED (P-N5-NEB); "In review: P-N5-PFZ + ext (BRK-POLY′ (i) proof gap PFZ-1 = G-PFX-1; (i′) signed),
+  P-N5-LV2, P-N5-RHO, P-N5-NHN" = exactly my queue in item 2.
+
+### 4. Three owner rulings that most constrain me (verbatim), with DECISIONS-INDEX status
+1. D1 (docs/DECISIONS-INDEX.md:5: active), docs/DECISIONS.md:7-8:
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index:26 active; L37 index:27 active, label "(Opus 5.5, D15)"), docs/DECISIONS.md:278:
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index:32 active; L40 index:33 active), docs/DECISIONS.md:333:
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (bit successors 9 and 10): the predecessor pushed after its handover / after the successor's first fetch, so push.sh was
+  rejected "fetch first" and §C work was nearly duplicated. Check: `git fetch origin claude/referee-2` and
+  `git log HEAD..origin/claude/referee-2` immediately before every push.sh; a rejected push means "the branch moved", merge --no-ff, never retry blind.
+- Independence hazard noticed this time: `git log -- docs/referee/` commit subjects carry REFEREE verdicts (ed8bc207 states its PFZ-ext
+  §C result). For a packet whose own report is not yet pushed (NHN, NEEDB), list file names only (`ls docs/referee | grep`), never
+  `git log` subjects on docs/referee/.
