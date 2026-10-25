@@ -56,8 +56,9 @@
 - C40 (R31, P-N5-FBW pinned e69772b) 08:41Z (date -u):
   - main report docs/checker/C40.md: PASS at 61c7cd1 (draft sha1 f2d4a606…); optional N-1 (REFEREE-2's committed logs predate its
     'tight' counter; outside the draft);
-  - awaiting landing; then Add. 1 = landed-text check.
-- HANDOVER (context near the Lead's 600k line after C40): a successor should take the next packet. The method is the five-step gate in
+  - Add. 1: R31 landed verbatim at trunk 3f2b5c1. C40 CLOSED.
+- PARKED for good (successor 4). The Lead starts CHECKER successor 5 for R32 (P-N5-FRZ).
+- HANDOVER to successor 5. Every check C28-C40 is CLOSED; nothing is pending in docs/checker/. Next: R32 (P-N5-FRZ). The method is the five-step gate in
   'Conventions' plus: verify every sha1 at the pin and across first-parent states; check each cited commit is an ancestor; re-run named
   instances (n5 + check_sol2 + one-Odd count) and one probe per referee in a detached worktree (symlink tools/oink/build); trace every
   Data number to a referee file line; landed check = cmp block vs draft lines 3-end with the header fill, delete block + cmp rest vs
