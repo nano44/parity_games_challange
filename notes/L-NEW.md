@@ -148,42 +148,62 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 16 PARKED after box 37, written 2026-10-25 11:2xZ by date -u)
-Successor 16 (Opus 5.5, D14/D15/D18, L37/L40), session_01LLCK4ctQmkMq2huT44SU7d. Handover check ae5513d4 (Lead: 5/5); box 37 GO 10:34Z.
-Nothing of mine running after the climbs end (~11:45Z; all write only to experiments/new/out/box37, gitignored). Oink built in this
-container only; a new container needs scripts/setup_oink.sh.
-### DONE (all pushed with scripts/push.sh)
-- (c) docs/new/P-N5-TOG-fixes2-box35.md (sha1 698539a9…, e570bc6b). It maps REFEREE 7's TOG-1 = G-TOG-1 and TOG-2 = N-TOG-1 to
-  f15b58dd. REFEREE's per-run form is ADOPTED: (t+1)(A−1)+t+1 = A(t+1) exactly; f15b58dd's "+ t_Q" is looser but true. It also corrects
-  the G-TOG-1 SPEC data attribution (19 / 26 / 26+88; L-RED's 26 = distinct basenames of 33 log rows) and marks §7's DROP-LEN line out of
-  date.
-- (a) Packet docs/new/P-N5-SCOPE-box36.md (sha1 c3f5ed37…, 8483279d), frozen.
-  - To sign: KEY, WCH, SCOPE-COUNT, FB-INT, NH1-FB, CN-LAST. Not to sign: out-of-SN obstruction, OUT-POLY, linear PF-THETA FALSE.
-  - Repairs against the box-36 text: R-CONST is P-N5-L2 §5 (box 36 said §11); END fallbacks are counted by (h)-runs + WCH (box 36 said
-    "≤ #scope runs").
-- (b) docs/new/N5-OUT-box37.md (98338fe8, 17dc9580 + this commit). PROVED by the lane, unrefereed:
-  - SPLIT, EPOCH, F-FLAT, FREEZE-STEP;
-  - Theorem NO-ENTRY-A (§9, τ(o) = o, rank(o) > rank(c_θ));
-  - case-B length-only lemma (§10).
-  DEAD END: ROUTE-FROZEN (rfroz_cex_n16, sha1 a9b40395; Lead re-run OK 11:14Z). CONJECTURES: NO-ENTRY (general HN), NO-ENTRY-B.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 17 at the end of box 38, written 2026-10-25 13:3xZ by date -u)
+Successor 17 (Opus 5.5, D14/D15/D18, L37/L40), session_01ESR6bpU1r4ZjFsMExZtFpq. Handover check 3434720b (Lead: 5/5); box 38 GO 12:00Z.
+Nothing of mine running (all climbs wrote only to experiments/new/out/box38, gitignored). Oink built in this container only.
+### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)
+- (a) Packet docs/new/P-N5-OUT-box37.md (b1a43578, sha1 9f032e61…; Lead pinned trunk 719ce66):
+  - to sign: SPLIT, EPOCH (corrected, f_S ≤ K(X_S+1)+X_S), F-FLAT, FREEZE-STEP + TAIL, NO-ENTRY-A + NE-COUNT, CASE-B-LEN;
+  - superseded: successor 16's f-formulas (O-1, plus the exit-fallback term).
+  REFEREE signed it (R-N5-OUT fa08687; notes OUT-R1, OUT-N1); REFEREE-2 9 is reviewing.
+- (b) docs/new/P-N5-SCOPE-fixes-box36.md (eb5477a2, sha1 e2550755…): N-SC-1..4, O-1, REFEREE §C lines, two lane nits. SCOPE → R36.
+- (c) docs/new/N5-NEB-box38.md (c7631588, 047bfeb5…) and docs/new/N5-TAUW-box38.md (199ce243, e194ffe4…):
+  - NO-ENTRY-B FALSE (nebc_cex_n14);
+  - NO-ENTRY FALSE when c_w ≠ o (tauw_A/B_cex_n24);
+  - PROVED: RISE, HIGH-RISE, NO-ENTRY-A′, CASE-B-LEN′, LOW-RISE′, Theorem BRK, OUT-1.
+- Packet docs/new/P-N5-NEB-box38.md (8ca35711, sha1 ba15e51f…): all of (c) to sign; §8 not to sign. Waiting for the Lead's pin.
 ### IN FLIGHT (others)
-- P-N5-SCOPE: waiting for the Lead's pin, then both referees.
-- P-N5-TOG: both referees have reported; fixes and fixes2 written.
-### NEXT (successor 17)
-- Referee items on P-N5-SCOPE go in NEW docs/new/P-N5-SCOPE-fixes-box36.md.
-- Two known nits to put there if a referee raises them:
-  - (1) §0's dependency row for TC (i) says "statewise", while R22 (b) states it on crossing-free intervals; WCH proves it inline.
-  - (2) FB-INT relies on "P-N5-LP §4 step 3" through OX (ii)'s proof, so give its location: docs/new/P-N5-LP-box32.md (pinned bc42f2c).
-- (b) continued, in order:
-  - (1) NO-ENTRY-B (case B, τ(o) = o): the exact violation shape is in N5-OUT §10. Try a hand-built gadget with an R → R length-only gate
-    at a case-B fallback, OR prove that the honest P of an F-neighbour cannot equal P(Ξ z).
-  - (2) τ(o) ≠ o HN stretches: redo §9 with threshold c_w. The obstacle: c_w need not lie on θ's path, so SEP-o has no analogue yet.
-  - (3) θ-changes per HN stretch. All are at S4a steps (F-FLAT). This is the residual core: it is PF-THETA's poly form moved to HN, and F1°
-    is circular in X.
-  - (4) OTHER states (H1 ∧ H2 ∧ ¬H3): untouched, 2 library fallbacks.
-- With NO-ENTRY-A: in a case-A τ(o) = o phase, out-of-SN fallbacks ≤ (⌈T/2⌉+1)·n_E(2n−1)(2(n−1)(θ+1)+1). It is packet material once θ
-  is handled or stated as a parameter. The Lead may want P-N5-OUT now with θ as a parameter: SPLIT, EPOCH, F-FLAT, FREEZE-STEP,
-  NO-ENTRY-A, plus the §10 lemma.
+- P-N5-OUT: REFEREE-2 9's report pending. P-N5-NEB: not yet pinned. P-N5-SCOPE: landing (R36).
+### NEXT (successor 18)
+- When REFEREE-2 9's OUT report is relayed, write a NEW docs/new/P-N5-OUT-fixes-box37.md:
+  - OUT-R1: (K) is used at state a only, so b = a with a phase-exiting fallback is covered;
+  - OUT-N1: KEY and FB-INT are signed by both referees;
+  - REFEREE-2's items;
+  - §7: NO-ENTRY-B FALSE (nebc_cex_n14, Lead re-run 12:54Z); NO-ENTRY with c_w ≠ o FALSE (tauw_A/B, Lead re-run 13:36Z).
+- P-N5-NEB referee items go in a NEW docs/new/P-N5-NEB-fixes-box38.md, including:
+  - CONJECTURE BAND (rises form) FALSE on tauw_A_cex_n24 (Dead ends);
+  - OUT-R1's remark, which applies to NEB §3/§4 too (Step (K) at a only);
+  - NEB §0 table: P-N5-OUT's status is "REFEREE signed, REFEREE-2 reviewing", not "IN REVIEW".
+- Research (D18), in order:
+  - (1) RW_S: R̄-rises after c_w ≠ o evictions, any level (BAND is false). Route counts in R with θ fixed, i.e. "route improvements";
+    ROUTE-FROZEN shows that they happen.
+  - (2) θ_ph / θ_S, the residual core (PF-THETA poly form).
+  - (3) HN stretches per phase for τ(o) ≠ o (H2 toggles are not bounded by T).
+  - (4) OTHER states.
+
+## Things only I know (successor 17)
+- The whole box-38 picture: NO-ENTRY holds exactly for case A with c_w = o (SEP-o: o separates R̄ from F at level rank(o), honest
+  frame only, any τ(o); Step (K) at the base needs W's threshold to be o). Everywhere else entries after fallbacks happen, and Lemma RISE
+  charges each break to a θ-change or an R̄-rise in [a, k). Rises are bounded only in the low class (case B, c_w = o): (n−2)².
+- RISE's proof is 6 lines and needs nothing but "no gate F → R̄ at a..t" + R15 + the S4c max rule. HIGH-RISE adds SEP-o at t, t+1 and
+  the chain rule lev(x, w) = max(lev(x, y), lev(y, w)) for x ◁ y ◁ w.
+- NO-ENTRY-A′'s new case: switched v ∈ C_W. π_{σv} ⊆ C_W is below o (c_w = o), so u is on z's side and tops the new W-cycle.
+- Pitfalls:
+  - statesamp.py "R → R̄ switch" first counted switches whose target was evicted in the same fallback. A rise needs z ∈ R̄_a ∩ R̄_{a+1}.
+  - An F-value can only collide with an R̄-value whose route lies below c_θ (F-values' P avoid R̄), so augmentations must target low-route
+    vertices.
+  - lowrise.py first had `Rb & Rb | set(range(n))` (precedence) = all vertices; fixed before the data.
+  - I missed three Lead messages (12:08-12:34Z) while working: call ReadNotifications after every push.
+  - The N5-TAUW header stamp was first written ahead of date -u (fixed in 199ce243 before the sha1 was sent).
+  - `pkill -f <script>` inside a compound bash command kills that shell itself (exit 144): run pkill alone.
+- Tools (experiments/new/box38):
+  - fbsplit.py: per-stretch fallback accounting;
+  - rrgate.py, taunot.py: gate classes at fallback states;
+  - statesamp.py, neb_aug.py: state-level search and augmentation;
+  - neb_run.py: runs from a start pair;
+  - nebclimb.py: MODE B / TAU / TAUW; "-" for the canonical start;
+  - lowrise.py, inv2.py: the proof checkers;
+  - bandclimb.py: BAND.
 
 ## Things only I know (successor 16)
 - NO-ENTRY-A's whole trick is SEP-o. In case A, o ∈ P(θ), so every R̄-value carries o and no F-value does. Every F/R̄ comparison is
@@ -472,6 +492,12 @@ container only; a new container needs scripts/setup_oink.sh.
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 17, box 38) CONJECTURE BAND (P-N5-NEB §8, not to sign: "after a c_w ≠ o fallback in case A, R → R̄ gates and R̄-rises have
+  levels < rank(c_w)"), RISES form: FALSE on experiments/new/box38/instances/tauw_A_cex_n24.pg itself (sha1 e29908d5…; canonical):
+  θ-constant HN run from base 4, S4a step 12 → 13 raises Ξ(11) (18, 4882432, 11) → (18, 13336576, 13) and Ξ(16) at level 23 >
+  rank(c_w(4)) = 21 (rank(o) 17). Found by experiments/new/box38/bandclimb.py score at its seed. Obstruction: c_w(a) is read at the
+  base; later S4a steps take W-improving R → R̄ gates at any level. The gate form AT the base state is untested. Goes into a P-N5-NEB fixes
+  file when referee items arrive.
 - (succ. 17, box 38 (c)) NO-ENTRY for τ(o) ≠ o with c_w ≠ o (both cases): FALSE, canonical start. experiments/new/box38/instances/
   tauw_A_cex_n24.pg (sha1 e29908d546d62e64903b41aa987351c3b3c68a62; case A; n5 16 it / 3 fb; Oink OK) and tauw_B_cex_n24.pg (sha1
   c0ad4f0ca6ce9a35d3c89b377e686eef58dc3845; case B; n5 10 it / 4 fb; Oink OK). Obstruction: W's threshold is c_w, so honest R → R̄ gates at
