@@ -1367,3 +1367,41 @@
 - 17:57Z Lead: merged checker 67cfee6 (C51 Addendum 2: R42 landed verbatim; C51 CLOSED) and l-new 688c2d4 (L-NEW 19 PARKED at ~407k). Created L-NEW successor 20, session_018pjn8Y8JRES3YuFDUCAJgM. The L-NEW 18 row was removed from NOW; it was parked and is superseded.
 - 18:06Z Lead: merged l-si 3ea0f5f. P-N5-NEEDB, docs/si/P-N5-NEEDB-box13.md, sha1 7471aef3, PINNED at this commit; it is queued for both referees after NHN. To sign: XG, ANTI, NEED-β (all cases incl. A2*), OLD-THREAT, and INTO ⇒ no case (i) fallback. Vacuous in data: XG, NEED-β, A2*.
 - 18:06Z Lead: hourly sweep 18:02Z. No overage. WATCHDOG flagged CHECKER 7 idle; it is idle by design, waiting for the next draft, and its last update (17:52Z) was 11 min before the flag, not 71. L-COMP is waiting on box8 Q2 (~18:45Z). No exceptions.
+- 18:11Z Lead: merges, re-run, sessions.
+  - Merged l-new 48078dd (L-NEW 20 handover check 5/5; GO).
+  - Merged l-si e683a4c: LV2 fixes docs/si/P-N5-LV2-fixes-box12.md, sha1 f76fd1d1. NONE-LAST / M = −1-last FALSE recorded in DEAD.md (obstruction: an eviction cascade on beta2_n11). Climb report: max 1 u* = none per scope run in climbs. L-SI 8 PARKED.
+  - Merged referee-2 cd3b7cd: R2-N5-RHO 269ae45 (all SIGN; N-RHO-1, N-RHO-2: post-freeze only at |U| = 3, FREEZE-F (b) vacuous). REFEREE-2 10 PARKED.
+  - First level −1 block witness (THR, r ≥ 0, M = −1): docs/referee-2/R2-N5-LV2/climb/block_9501.pg, sha1 1b5b76fd, random start pair in block_9501.txt. Lead re-run, canonical start: one Odd choice vertex, n5 3/1, Oink zlk OK, strategies verified. The block state is on REFEREE-2's start pair, which I did not re-trace.
+  - Created L-SI successor 9 (session_018jN1MJkw56F58G3qcfcuZA) and REFEREE-2 successor 11 (session_01VrcXfBuNYKJ3uBUc7ETARQ).
+- 18:16Z Lead: merged l-red 8e429a8 (R71, box 41 interim, NO KILL).
+  - Post-freeze regimes at |U| ≥ 3 are not reached nontrivially: max f − (|U| − 1) = −1. FB-CAP holds in all data.
+  - The per-vertex argument for FB-CAP is false (b5_os_n40).
+  - INTO: 0 failures, with min gates into R̄ = 1. Wording note: restrict INTO to Iσ_t ≠ ∅.
+  - L-RED 17 next: FB-CAP search at n 5 over start pairs, then the beta2 cascade.
+- 18:21Z Lead: merged l-si 6918233 (L-SI 9 handover 5/5; GO box 14: G-N5-TIME ledger, then X per phase) and referee-2 2fef675 (R2-N5-LV2 Addendum B eed4efd: N-LV2-3 conjecture withdrawn, FALSE on beta2_n11; LV-NONE's N = 2 induction step checked on 3 traces, 0 violations).
+- 18:25Z Lead: merged referee-2 23e0992. REFEREE-2 11 handover check 5/5 re-measured. GO with queue: §C PFZ → §C LV2 → §C RHO → NHN → NEEDB.
+- 18:34Z Lead: merged l-new d65e43a (docs/new/N5-FBPOLY-box41.md, sha1 7a7087f7; lane PROVED, unrefereed).
+  - Theorem FB-POLY: on 𝒞^1O, in-phase Even fallbacks per phase ≤ 1 + (|U| − 2)(deg_U(o) + |U|) ≤ 1 + (n − 2)(2n − 1), with NO hypothesis on H1-H3, τ(o), c_w, θ or N_HN. FB-CAP holds at |U| = 2; f ≤ |U| if o = c_θ. Via the κ-freeze, EXIT-SWITCH, FREEZE-EXIT, CN-ONLY (CN-LAST, R38 (f)) and THETA-AFTER.
+  - It removes the f term from SCOPE-COUNT (R38 (c)) and EPOCH (R39 (b)).
+  - FB-CAP stays OPEN at |U| ≥ 3.
+  - DATA: 0 failures, but FREEZE-EXIT and THETA-AFTER are untested (the post-freeze regime is unreached).
+  - Packet P-N5-FBPOLY approved.
+- 18:39Z Lead: merged l-si 6195e45 (docs/si/N5-LEDGER-box14.md, sha1 c54e8560, READING).
+  - Chain: #phases ≤ n(n−1) + d via Lemma Φ, which has NEVER been refereed. T_P = O(m n⁵(1 + X + K)) and f ≤ n_E(2n−1)(X+1) + X (R28).
+  - Weakest links: the f ↔ X loop (only at TYPE H (h) states), K (wakes; R26 (E), (K_W) open), and Φ unrefereed.
+  - The ledger crossed FB-POLY, which bounds f per phase directly. L-SI 9 is asked to recompute X with f bounded (X-RUN′, R33).
+  - Φ micro-packet approved (L-SI).
+- 18:44Z Lead: merged referee 72e9f7d.
+  - R-N5-NHN 9bb3f79: all SIGNED, no gaps. T0U, EV2-FB, SG-EV, H3-IN-HN are unconditional. T0-PIN and NHN-BOUND are conditional on RHO's HAT-FREEZE. HN-POLY-ALL is conditional as labelled. Notes NHN-N1..N3. T0-PIN is vacuous.
+  - RHO §C 06d6e6d: identical verdicts, gap map empty. RHO has now converged on REFEREE's side; REFEREE-2 11's RHO §C is still pending.
+- 18:49Z Lead: merged l-new 4a17f8e.
+  - P-N5-FBPOLY, docs/new/P-N5-FBPOLY-box41.md, sha1 de244dcd, is PINNED at this commit. It is self-contained in κ form and queued for both referees.
+  - Working doc N5-XOUT-box41 (sha1 b0583476): Lemma X-OUT, lane PROVED; crossings per OUT stretch ≤ (|U|−2)(f_S+1) + f_S.
+  - READING: FB-POLY breaks R34's f ↔ X loop for X_SN. Still open: ¬H1 crossings outside SN prefixes, O, Theorem X assembly, Φ.
+- 18:54Z Lead: merged l-si 858c7dd (docs/si/N5-FBPHASE-box14.md, sha1 f7aaa624; L-SI 9, lane PROVED, unrefereed).
+  - Theorem FB-PHASE: in-phase Even fallbacks ≤ 2n², an independent route to the same kind of bound as L-NEW's FB-POLY.
+  - Corollary FX: X = O(d_o n⁶) per phase, every phase type (with R34 (f), R30 (c)).
+  - READING T-K: N5 on 𝒞^1O is polynomial ⇐ K-poly ∧ Lemma Φ.
+  - Lead ruling to avoid a duplicate review: FB-POLY (pinned) is the theorem the referees review. L-SI 9 packets only (1) Φ and (2) Corollary FX citing FB-POLY; FB-PHASE stays a lane cross-check.
+  - K (wakes) becomes the main open target.
+  - All of this is SUBCLASS 𝒞^1O; TARGET.md is general games.
