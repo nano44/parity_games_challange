@@ -14,7 +14,8 @@ H1: o on no honest cycle; H2: o on no W-cycle (o not on the (σ,τ)-play from τ
   TEV       (docs/si/N5-RL-box10.md §5, CONJECTURE TEV): in-scope fallback k0, L = M_k0 >= 0, Ev = F_{k0+1} minus F_{k0} = R_k0 minus R_{k0+1};
             at every state t of the scope run with r_s > L for s in [k0+1, t] that comes after an S4a COARSE_L(θ) rise j in (k0, t),
             the honest play of x_t = σ̄_t(o) avoids Ev (r_s = lev(θ_s, w_s)). tev = post-rise states checked, tevpre / tevmeetpre =
-            pre-rise states / those whose threat meets Ev
+            pre-rise states / those whose threat meets Ev. TEVLAST: the same failure with no fallback in (k0, t), i.e. k0 the last
+            fallback before t (the form EV+ / TEV-RED use); tevlast = post-rise states checked in that form
 Usage: rx16.py game.pg ..."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -48,7 +49,7 @@ def analyse(g, cap=5000):
     C, ex = {}, {}
     def bad(nm, k): C[nm] = C.get(nm, 0) + 1; ex.setdefault(nm, k)
     st = dict(n=n, it=len(FB), fb=sum(FB), phases=0, maxruns=0, maxslack=-10 ** 9, maxrst=0, rfb=0, rst_tog=0, rst_fb=0,
-              maxpre=0, exitx=0, xruns=0, rfb0=0, rfbchk=0, thin=0, tev=0, tevpre=0, tevmeetpre=0, tevfail=0)
+              maxpre=0, exitx=0, xruns=0, rfb0=0, rfbchk=0, thin=0, tev=0, tevpre=0, tevmeetpre=0, tevfail=0, tevlast=0)
     th = [Xi[k][o] for k in range(N)]; r = [lev(Xi[k][o], Wv[k][o]) for k in range(N)]
     k = 0
     while k < N - 1:
@@ -101,8 +102,10 @@ def analyse(g, cap=5000):
                 if Ev:
                     meet = bool(set(play(t, sb[t][o], "sbar")) & Ev)
                     if risen:
-                        st["tev"] += 1
+                        st["tev"] += 1; last = not any(FB[s] for s in range(k0 + 1, t))
+                        st["tevlast"] += last
                         if meet: st["tevfail"] += 1; bad("TEV", (k0, t, L))
+                        if meet and last: bad("TEVLAST", (k0, t, L))
                     else: st["tevpre"] += 1; st["tevmeetpre"] += meet
                 if t <= e and not FB[t] and coarse(th[t + 1], L) != coarse(th[t], L): risen = True
                 t += 1
@@ -116,7 +119,7 @@ def analyse(g, cap=5000):
         k = e + 1
     return dict(C=C, ex=ex, **st)
 
-KEYS = ("n", "it", "fb", "phases", "maxruns", "maxslack", "rst_tog", "rst_fb", "maxpre", "exitx", "xruns", "rfbchk", "rfb0", "thin", "tev", "tevpre", "tevmeetpre")
+KEYS = ("n", "it", "fb", "phases", "maxruns", "maxslack", "rst_tog", "rst_fb", "maxpre", "exitx", "xruns", "rfbchk", "rfb0", "thin", "tev", "tevpre", "tevmeetpre", "tevlast")
 if __name__ == "__main__":
     tot = {}
     for f in sys.argv[1:]:
@@ -125,7 +128,7 @@ if __name__ == "__main__":
         try: r = analyse(g)
         except AssertionError as e: print(os.path.basename(f), "ASSERT", e, flush=True); continue
         print(os.path.basename(f), {k: r[k] for k in KEYS}, "FAILS", r["C"] or 0, r["ex"] or "", flush=True)
-        for kk in ("rst_tog", "rst_fb", "exitx", "xruns", "rfbchk", "rfb0", "tev", "tevpre", "tevmeetpre"): tot[kk] = tot.get(kk, 0) + r[kk]
+        for kk in ("rst_tog", "rst_fb", "exitx", "xruns", "rfbchk", "rfb0", "tev", "tevpre", "tevmeetpre", "tevlast"): tot[kk] = tot.get(kk, 0) + r[kk]
         for kk, v in r["C"].items(): tot[kk] = tot.get(kk, 0) + v
         tot["maxpre-(n-1)"] = max(tot.get("maxpre-(n-1)", -10 ** 9), r["maxpre"] - (r["n"] - 1)); tot["files"] = tot.get("files", 0) + 1
     print("TOTAL", tot)
