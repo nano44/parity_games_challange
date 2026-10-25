@@ -1,0 +1,22 @@
+FACT_A_states: 87
+FBR_checks: 2272
+FBR_fallbacks: 32
+NCA_identity_states: 71
+PFZR_Q_walks: 81
+PFZR_epochs: 42
+PFZ_b_runs: 14
+PFZ_skipped_large_U: 34
+RECORD_post_freeze_runs_U=1: 6
+TLEN_epochs: 48
+TLEN_epochs_with_theta_change: 3
+TLEN_theta_changes: 3
+post_freeze_transitions: 0
+runs: 3
+states: 87
+theta_runs: 48
+max_PFZR_slack_thetaLEN_minus_refined: 18
+max_TLEN_theta_changes_in_epoch: 1
+max_fallbacks_in_theta_run: 8
+max_fallbacks_minus_U_plus_1_U>=3: 0
+max_post_freeze_U_rises: 0
+RESULT OK violations=0
