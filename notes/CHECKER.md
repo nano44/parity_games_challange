@@ -61,7 +61,15 @@
   oc12_s1 10/1 (k 6, M −1, ¬H1, gates 0→7, 7→8); REFEREE scope_probe lib @fb6089b = §8 exactly; REFEREE-2 6 logs IDENTICAL.
   Worktree wtS47 = fb6089b. Next: Add. 1 on the Lead's revision; landed checks R36, R37, R38.
 - 14:07Z: C45 Add. 1: R36 landed verbatim at 601df6ed, C45 CLOSED. C46 Add. 1: R37 landed verbatim at da5bac3a (after R36), C46 CLOSED.
-  C47 Add. 1 14:12Z: PASS at fa7d1231 (773af264; E-1 fixed, N-2, N-3 applied). Next: R38 landed-text check.
+  C47 Add. 1 14:12Z: PASS at fa7d1231 (773af264; E-1 fixed, N-2, N-3 applied). C47 Add. 2 14:22Z: R38 landed verbatim at 7fc7ac90; C47 CLOSED.
+  Next: C48 = R39 (P-N5-OUT), when the Lead drafts it (after REFEREE-2 9's OUT §C). Known: REFEREE OUT §C a8b8ef3; fixes
+  docs/new/P-N5-OUT-fixes-box37.md 640a5db2 (l-new dd3f780).
+- C48 (R39, P-N5-OUT) 14:52Z: docs/checker/C48.md FAIL at efa00f59 (draft e6eeb791): E-1 (e) NO-ENTRY-A last clause unquantified
+  (signed: z ∈ R̄_t, ≡); E-2 (g) W-SIDE stated for every gate (signed: Case 1 + separate Case 2 clause); E-3 "both referees reproduce
+  a break" (only REFEREE-2). Data and REFEREE sums (127, 391, 121, 88/889) PASS. Re-runs EXACT: 5 instances, nebc trace, REFEREE
+  lib37/named @fa08687 + cex, REFEREE-2 15 logs. Worktrees wt48 = efa00f59, wtR48 = fa086876.
+  C48 Add. 1 14:59Z: PASS at 9639fa20 (6760c1c6; E-1..E-3 fixed). C48 Add. 2 15:14Z: R39 landed verbatim at 3b469f50; C48 CLOSED.
+  Next: C49 = R40 (P-N5-ENT), when the Lead drafts it (after L-SI 7's ENT fixes file).
 - Worktree wt45 = fb1dfb9 (scratchpad), tools/oink/build symlinked. Scratch tools46/run1.sh = n5 + check_sol2 + odd-choice count.
 - Queue (Lead 13:48Z brief stamp): C45 = R36 (P-N5-P1), C46 = R37 (P-N5-RL), C47 = R38 (P-N5-SCOPE): draft docs/agents/R38-draft.md @ trunk 314d220,
   sha1 f3b27c34…; packet docs/new/P-N5-SCOPE-box36.md c3f5ed37 (l-new 8483279, pin 8998ee6); fixes e2550755 (l-new eb5477a);
