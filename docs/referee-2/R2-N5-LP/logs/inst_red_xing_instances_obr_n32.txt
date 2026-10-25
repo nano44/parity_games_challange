@@ -1,0 +1,24 @@
+C1O_phases: 5
+DF_as_stated_fails own_cycle_node=True: 5
+DF_checks: 115
+GRb_checks: 29
+HI_checks: 567
+HI_cons_M=L: 5
+HI_cons_M>L: 16
+NU_transitions: 3
+UL_checks: 16
+U_checks: 24
+eps: 0
+own_cycle_node_switch_above_L: 3
+own_cycle_node_switches: 3
+phases: 5
+rises: 0
+runs: 3
+transitions: 35
+transitions_in_phase: 24
+max_K: 0
+max_NU_run: 1
+max_S_o: 0
+max_T_phase: 15
+max_rho: 0
+RESULT OK violations=0

@@ -1215,6 +1215,177 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   N-U23-2 (closed); N-U23-1 (CASC-U2 vacuous) superseded by u2flat_n32.
 - TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
 
+### R27 [refereed-only] N5 inside a phase: the used-level freeze and a carry bound (Lemma U, HI, UL, GR, NU, Theorem LP), dormant edges and wakes on one-Odd-choice games (DF′, BAND, WAKE), and on those games σ̄(o)-changes, non-tame transitions and fallbacks per phase reduce to θ-changes and crossings (TH, SO, Corollaries LP′, XJ) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C36.md, checker 108c2e6 + Addendum c64ec13)
+- Objects (pinned, unchanged during review): packet P-N5-LP docs/new/P-N5-LP-box32.md, sha1 d2c8121a0089add13c9417080cfb57620f592c88,
+  pinned trunk bc42f2c; packet P-N5-SO docs/new/P-N5-SO-box32.md, sha1 deb5ee4422da3ab7389ce35e4542977927b53886, pinned trunk 1ef02bb (both
+  L-NEW successor 12, Opus 5.5). The referees' repairs are collected by the lane in docs/new/P-N5-LP-fixes-box32.md (l-new 459660c, on
+  trunk; sha1 af17cce0ec8686994a64dbaf512e89be67809eb0) and docs/new/P-N5-SO-fixes-box32.md (l-new 078c05d, on trunk; sha1
+  cae3bb5b9aa67e5d54f38cca0d5be8a2b6b0cd0a), L-NEW successor 12; records, not themselves refereed text.
+  Setting: N5 (SPEC docs/new/N5-ssi-global.md) on any game unless marked 𝒞^1O; valuations x = (c, P, ℓ), lev and COARSE_L as in RESULTS
+  R25; Ξ_k = Θ_{H_k} (ENG-1, inherited); a PHASE is a run of transitions with λ_Ξ and τ constant. RELEVANT CHANGE at k → k+1: an Even y
+  with σ_{k+1}(y) ≠ σ_k(y) and λ_k(y) ≠ y, or an Odd u with σ̄_{k+1}(u) ≠ σ̄_k(u) and λ_k(u) ≠ u. USED LEVEL L_k := the max of
+  lev(Ξ_k(old successor), Ξ_k(new successor)) over the relevant changes (⊥ if none); a transition is NU if L_k = ⊥, RELEVANT otherwise.
+  A RISE is a pair of consecutive relevant transitions k < k′ (only NU between) with L_{k′} > L_k; ρ := #rises; ε := #relevant transitions
+  whose used level is attained only by Odd changes. On 𝒞^1O: R, F, crossing, c_θ, c_w as in R21-R26; S_o := #transitions with a relevant
+  σ̄(o) change; Θ := #transitions changing θ = Ξ(o); X := #crossings; J := #non-tame transitions (R25); d_o := |succ(o)|. A WAKE at k′ is
+  a relevant Even switch at k′ of level > L_k (k < k′ consecutive relevant, no fallback in [k, k′], R constant on [k, k′ + 1]); K := #wakes.
+- Claims signed (both referees "(Opus 5.5, D15)", L37):
+  (a) Lemma U (used-level freeze; any game, inside a phase): L_k < ∞ and COARSE_{L_k}(Ξ_{k+1}(v)) = COARSE_{L_k}(Ξ_k(v)) for every v; an
+      NU transition leaves Ξ unchanged. (R25 TAME's proof with M_k replaced by L_k; checked line by line by REFEREE.)
+  (b) Lemma HI: with L := L_k ≠ ⊥ and y an Even vertex that is not an own cycle node switched at k, for every ℓ > L, (y, z) is a gate edge
+      of level ℓ at k iff at k+1. Its Consequence: "≤" (M_{k+1} ≤ M_k) by REFEREE's HI-1 argument (single signature; REFEREE-2 G-LP-2:
+      unproved as written); unused downstream.
+  (c) Lemma UL (L_k = ℓ ≥ 0 is never attained by a relevant switch of the rank-ℓ vertex u_ℓ), Lemma GR (ℓ-goodness: (a) if L_k = ⊥ or
+      L_k ≤ ℓ then G_ℓ(k) ⊆ G_ℓ(k+1); (b) if L_k = ℓ is attained by a relevant Even switch of y then y ∉ G_ℓ(k), y ∈ G_ℓ(k+1)), Lemma NU (a
+      run of consecutive NU transitions has ≤ Σ_{y Even}(deg(y) − 1) ≤ m − n transitions).
+  (d) Theorem LP (any game): a phase with T transitions, T_rel relevant, has T ≤ (m − n + 1)(T_rel + 1) and
+      T_rel ≤ (n + 1)(ρ + 1)·n(n − 1) + ε (n ≥ 2). Step 4's "y ⊕ keeps order and strictness" holds here because the values compared share
+      one path set (N-LP-1, wording).
+  (e) On 𝒞^1O: Lemma DF′: at an S4a transition k → k+1 of a phase, if (y, z) is an edge of the arena H_k that is a gate edge at k+1 and y
+      is not its own (W-)cycle node at k+1, then σ_{k+1}(y) ∈ R_{k+1} (two proofs: REFEREE, Bellman via R24 G-TB-1, (F1) only; REFEREE-2,
+      R15 (a) Lemma A + (F1) + R15 (b) Lemma B). Lemma BAND: at a state with both frames in route form and c_θ ≠ c_w, a gate edge (y, z) of
+      level ℓ ≥ 0 with σ(y), z ∈ R and W(z) ⊴ W(σ y) has rank c_θ < ℓ < rank c_w and equal W path sets. Lemma WAKE: a wake y: a → z has
+      a, z ∈ R; if both frames are in route form, the state is in a U1 piece (cites DF′: W-1 = G-LP-1, closed).
+  (f) Corollary LP′ (𝒞^1O): with f fallback transitions, T ≤ (m − n + 1)·((n + 1)(2f + S_o + 2X + K + 1)·n(n − 1) + S_o + 1) with
+      f ≤ n_E(2n − 1)(S_o + 1) + S_o; so T = O(m·n⁵·(1 + S_o + X + K)). (Via ε ≤ S_o, ρ ≤ 2f + S_o + 2X + K, J ≤ S_o by R25 J1 and Lemma
+      U, and R25 Theorem FB; it uses neither DF nor WAKE.)
+  (g) On 𝒞^1O, per phase with λ_Ξ(o) ≠ o: Lemma TH: Θ ≤ (n − 1) + n(X + 1) + X (¬H1: θ = (c_θ, ∅, d), RESULTS R26's R-1; H1: σ̄(o) is a
+      full Ξ-minimiser (R25 CAP-1, REFEREE's case proof, re-checked and adopted by REFEREE-2 in R2-N5-FB §C.3: SO-1, closed with two
+      signatures) and a θ-change changes Ξ at that exit in F, one of R22 F1°'s F-changes (F1° transfers to this coarser phase: N-SO-1)).
+      Lemma SO: S_o ≤ Θ + (d_o − 1)(Θ + 1) ≤ d_o(Θ + 1); at a relevant σ̄(o) change with θ unchanged, the old choice is no longer a
+      minimiser (the R24 Lemma R / TB key of an exit that stays a minimiser is frozen; the strict rises use (SG), R19 (d), and the prefix
+      vertices lie in no path set: G-SO-1, closed; N-SO-3 wording).
+  (h) Corollary XJ (𝒞^1O): S_o ≤ d_o(2n + (n + 1)X) and J ≤ S_o, so f = O(d_o·n³(1 + X)) ⊆ O(n⁴(1 + X)) (XJ-1 = N-SO-2: the packet's
+      O(n³(1 + X)) is corrected); with (f), a phase has T = O(m·n⁷(1 + X) + m·n⁵·K) transitions.
+- Refuted: Lemma DF as stated (without "y not its own cycle node") is FALSE, NOT SIGNED by both referees: the cited VJ00 (BRICS
+  RS-00-48) Lemma 5.8 step 2 ⇒ 3 ⇒ 1 ("a maximum has no improvement") fails at own cycle nodes, where a length-only improvement is kept by
+  FIX 2's DFS (as in RESULTS R15's side finding). Counterexamples: docs/referee/R-N5-LP/df_cex.pg (n 11, sha1 a128663e…, o = 1) and
+  docs/referee-2/R2-N5-LP/instances/df_cex.pg (n 5, sha1 0a98e1b7…, o = 3); Lead re-ran both: n5 2/1, Oink zlk OK strategies verified,
+  one Odd choice vertex (the DF failure itself is the referees' own code). Lane forms refuted before the packets (P-N5-LP §5, not
+  signed): NO-WAKE "K = 0" FALSE (experiments/new/box32/instances/nowake_cex_n32.pg, sha1 3a56e3fb…; reproduced by both referees and the
+  Lead); (KW-M) FALSE (instances/kwm_cex_n24.pg, sha1 c2723e08…; Lead re-run).
+- Reading (not signed): with Corollary XJ, RESULTS R25's open core (J-poly), NFB-O and the fallback count follow from (X); per phase of
+  o-cyclic 𝒞^1O the open quantities are X (≡ Z up to a factor n, R23 LV′) and K (wakes: in U1 pieces bounded by R24 Theorem U1; in U2 /
+  U3 / U23 stretches by R26's corollaries in terms of the open (E) and (K_W)).
+- Honest limits: (i) Lemma U, HI, UL, GR, NU and Theorem LP hold on every game; DF′, BAND, WAKE, LP′, TH, SO and XJ are on 𝒞^1O.
+  (ii) Theorem LP bounds nothing by itself: it moves the count to rises (carries) and ε. (iii) X and K per phase are OPEN, so G-N5-TIME
+  stays open; the phase count (Lemma Φ) is unrefereed. (iv) The bounds are loose in d_o and n; the data show neither a growth law nor
+  tightness beyond J = S_o (REFEREE-2). (v) DATA on K: nowake_cex_n32 has one wake, a U3 W-tie switch in the length-only regime
+  (P-N5-LP §5); L-NEW's climbs found at most 2 wakes per run (docs/new/N5-L-box32.md, lane DATA, not re-checked by the referees).
+- Data (DATA, not proof; every probe asserts one Odd choice vertex where 𝒞^1O): REFEREE lp_probe.py (own code): 228 library 𝒞^1O files
+  (5,482 in-phase transitions), 4,500 random 𝒞^1O runs, 1,500 random general games: 0 failures of §1-§2; DF 170 failures (all own W-cycle
+  nodes), DF′ 0; so_probe.py: 234 library files (257 phases with λ(o) ≠ o) + 3,000 random runs: 0 failures of TH, SO, XJ (max Θ 51,
+  S_o 49). REFEREE-2 (own code): 8,284 runs on LP, 0 violations of the signed statements (176 DF failures, all own-cycle-node length-only
+  edges); SO batch 4,502 runs + 6 climbs (12,000 fully checked runs aimed at S_o − d_o(Θ + 1), J − S_o and θ-fixed σ̄(o) changes): 0
+  violations, best margins −1 and 0; 3,915 relevant σ̄(o) changes with θ fixed, the old choice leaving the minimiser set every time.
+  L-NEW's socheck.py, run unmodified by L-SI (docs/si/N5-C-box8.md §8), on L-SI's climb bests and the named set: 0 failures (max J 18 ≤ S_o 19, n 48); Lead socheck on jcl_zcl_cu_n48: J 17 ≤ S_o
+  18 = d_o.
+- Signatures: REFEREE docs/referee/R-N5-LP.md (referee 4957b2c; Part 2 = P-N5-SO dcb4119; §C bb6f60f; SO-1 addendum 2a0cb30): U, UL, GR,
+  NU, Theorem LP, BAND, LP′ SIGNED; HI SIGNED, Consequence WITH GAP HI-1; DF NOT SIGNED (FALSE), DF′ SIGNED; WAKE SIGNED WITH GAP W-1
+  (closed); SO SIGNED; TH SIGNED (SO-1 closed in the addendum); XJ SIGNED WITH GAP XJ-1. REFEREE-2 docs/referee-2/R2-N5-LP.md (referee-2
+  4949d6c; §8 = P-N5-SO ba67f41; combined §C caee2ae): U, HI, UL, GR, NU SIGN (HI Consequence G-LP-2); Theorem LP SIGN (N-LP-1); DF NOT
+  SIGNED, DF′ SIGN; BAND SIGN; WAKE SIGN WITH GAPS (G-LP-1, closed); LP′ SIGN; TH SIGN (N-SO-1); SO SIGN WITH GAPS (G-SO-1, closed;
+  N-SO-3); XJ SIGN WITH GAPS (N-SO-2). §C (REFEREE: P-N5-LP; REFEREE-2: both): no disagreement. Joint gap map: P-N5-LP rows REFEREE §C and REFEREE-2 §C.2; P-N5-SO rows
+  REFEREE-2 §C.1-§C.2 only (REFEREE compared Part 1 only; both referees signed P-N5-SO independently with gaps listed): DF FALSE, DF′ signed by both;
+  HI-1 = G-LP-2; W-1 = G-LP-1 (closed); N-LP-1 (wording); SO-1 (closed, two signatures); XJ-1 = N-SO-2; G-SO-1 (closed), N-SO-1, N-SO-3.
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
+### R28 [refereed-only] N5 on one-Odd-choice games: off crossings σ̄(o) never outruns Even (Lemma OE, with a local used-level freeze U-loc), so non-tame transitions, fallbacks and carries per phase are polynomial in crossings and wakes (Corollary OX) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C37.md, checker f5c4672)
+- Object (packet P-N5-OE, pinned trunk 361d18c, unchanged during review): docs/new/P-N5-OE-box32.md, sha1
+  adeccd898ad1e4de6532fc3a77a9d600d8a0bc16 (L-NEW successor 12, Opus 5.5). The referees' repairs are collected by the lane in
+  docs/new/P-N5-OE-fixes-box32.md (l-new 7ad82a9, on trunk; sha1 5f06276a32824c872493b92a82081c13e6d0ba01, L-NEW successor 13; a record,
+  not itself refereed text).
+  Setting as in RESULTS R27 (relevant changes, used level L_k, NU, phase with λ_Ξ and τ constant, R, F, crossing, wakes, K; Ξ_k = Θ_{H_k},
+  ENG-1). E_k := the max level of the relevant Even changes at k → k+1 (⊥ if none); O_k := the level of the relevant σ̄(o) change (⊥ if
+  none); on 𝒞^1O, L_k = max(E_k, O_k). The packet's phase key (λ_Ξ, τ) is coarser than R25's (λ_Ξ, λ_U, τ); the cited R22 TC (i) and R25
+  FB, J1, CAP-1 use only λ_Ξ and τ or hold statewise, so they apply (N-OE-3, closed).
+- Claims signed (both referees "(Opus 5.5, D15)", L37):
+  (a) Lemma U-loc (any game, inside a phase): if every relevant change at a vertex of v's H_{k+1}-path before its first visit of
+      c := λ(v) has level ≤ L, then COARSE_L(Ξ_{k+1}(v)) = COARSE_L(Ξ_k(v)) (R27 (a) Lemma U's proof, localised).
+  (b) Lemma OE (𝒞^1O): at a transition of a phase with R_k = R_{k+1} (no crossing), O_k ≤ E_k; so σ̄(o) makes no relevant change of
+      level ≠ ⊥ when Even makes no relevant change. The packet's "In particular" sentence (no relevant σ̄(o) change at all when Even makes
+      none) is stronger than the proof by a level-⊥ tie move at o; it is unproved, not refuted (0 such cases in all data; tie changes
+      off crossings occur only with E_k ≠ ⊥: REFEREE library 2 / random 50, REFEREE-2 library 2 / random 5) and is not used (OE-1 =
+      N-OE-1, wording). Step 1 uses CAP-1 (σ̄(o) a full Ξ-minimiser when λ(o) ≠ o, including o on its honest cycle: RESULTS R25 CAP-1,
+      REFEREE's case proof, adopted by REFEREE-2 in R2-N5-FB §C.3; OE-2, closed); step 3 compares by (C1) and (C3) (OE-3, wording) and uses
+      that under H1 x0's honest play is the tail of o's, so it avoids o (N-OE-2, wording).
+  (c) Corollary OX (𝒞^1O): in a phase with X crossings, K wakes and f fallback transitions, (i) ε ≤ X; (ii) J ≤ X; (iii) ρ ≤ 2f + 2X + K;
+      (iv) f ≤ n_E(2n − 1)(X + 1) + X; (v) T ≤ (m − n + 1)·((n + 1)(2f + 2X + K + 1)·n(n − 1) + X + 1) = O(m·n⁵·(1 + X + K)); f and T
+      count transitions with both ends in the phase (R25 FB-2; OX-1, wording). (From R27 Theorem LP and Corollary LP′ step 2, R25 (d)
+      Theorem FB and (e) J1, R15 (d); sharper than R27 (h) Corollary XJ: no S_o or Θ term.)
+- Reading (not signed): per phase of o-cyclic 𝒞^1O, everything is polynomial in X (crossings, ≡ Z up to a factor n by R23 LV′, the
+  direction a bound on Z needs) and K (wakes: in U1 pieces bounded by R24 Theorem U1; in U2 / U3 / U23 stretches by R26's corollaries in
+  terms of the open (E) and (K_W)). RESULTS R25's (J-poly) and the fallback count follow from (X) with J ≤ X.
+- Honest limits: (i) U-loc holds on every game inside a phase; OE and OX are on 𝒞^1O. (ii) X and K per phase are OPEN, so G-N5-TIME stays
+  open; the phase count (Lemma Φ) is unrefereed. (iii) The wake term is barely exercised: K ≤ 1 in both referees' data. (iv) Both
+  referees' DATA show O_k > E_k only at crossings and every non-tame transition at a crossing; J = X is attained (jcl_zcl_cu_n48:
+  J 17 = X 17; Lead re-run n5 23/1, Oink zlk OK strategies verified, one Odd choice vertex).
+- Data (DATA, not proof; every probe asserts one Odd choice vertex): REFEREE oe_probe.py (own code, trace asserted = n5.run): 234 library
+  𝒞^1O files, 5,603 in-phase transitions, 0 failures (crossing-free σ̄(o) changes 436 H1 + 11 ¬H1; O_k > E_k 279 times, all crossings;
+  235 non-tame, all crossings; the lane's oddlev.py gives identical counts); 11,000 random games, 0 failures. REFEREE-2 oe_check.py (own
+  code): the 234-file library × 3 starts + 7,600 random runs (3,800 general for U-loc), 0 violations (U-loc 373,394 checks; OE 5,015
+  crossing-free transitions; O_k > E_k 602 times, all crossings; 509 non-tame, all crossings; CAP-1 held at all 19,573 states with
+  λ(o) ≠ o, and fails at 420 states with λ(o) = o, which OE never uses); climbs 27,200 runs (72,414 off-crossing σ̄(o) changes, 4,598
+  under ¬H1; 30,002 non-tame transitions, all crossings; J − X never > 0). Three implementations agree on the canonical-start library
+  counts (436 + 11 / 279 / 235).
+- Signatures: REFEREE docs/referee/R-N5-OE.md (referee 5e98e33, stamp fix 696b08c; §C 8474881): U-loc SIGNED; OE SIGNED WITH GAPS OE-1,
+  OE-2 (closed), OE-3; OX SIGNED (OX-1 wording); §C: no verdict differs; N-OE-3 missed by REFEREE, accepted. REFEREE-2
+  docs/referee-2/R2-N5-OE.md (referee-2 ca6e5bd; §C ea6ad67): U-loc, OE, OX (i)-(v) SIGN (notes N-OE-1..3); §C: no disagreement of
+  substance; its own "0 tie moves" corrected to the general count (library 2, random 5). Joint gap map (REFEREE §C, REFEREE-2 §C): OE-1 =
+  N-OE-1 (wording); OE-2 (closed); OE-3 + N-OE-2 (wording); N-OE-3 (closed); OX-1 (wording).
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
+### R29 [refereed-only] N5 on one-Odd-choice games: gates into F never exceed the gate level (OFFGATE), cycle-node switches are length-only (CN), values off R̄ freeze at S4a steps above a gap (NL), and fallback levels never rise along a scope run at THR fallbacks (Theorem CLS1) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C38.md, checker b250d88 + Addenda f0cf7c9, 7d31aba)
+- Object (packet P-N5-CLS, pinned trunk 486107a, unchanged during review): docs/si/P-N5-CLS-box8.md, sha1
+  5bbfd872383d9b2c2d3caaf902b174d0aa54e4ae (L-SI successor 3, Opus 5.5). The referees' repairs are collected by the lane in
+  docs/si/P-N5-CLS-fixes-box8.md (l-si 2c5e57c, on trunk; sha1 92f79dc98628159a1ef328b76a1672851eb0dda1, L-SI successor 3; a record, not
+  itself refereed text; it holds CLS-1..CLS-4 and N-CLS-1) and docs/si/P-N5-CLS-fixes2-box8.md (l-si b90f639, on trunk; sha1
+  8f1b52b4dce13e758bcc4b0b05e98750e0a51ce4; part 2, the six-row joint map; N-CLS-2 is a row of REFEREE's §C only (REFEREE-2 §C: same argument, no row needed)).
+  Setting: N5 as in RESULTS R25 (gates, gate levels, M_k, lev, COARSE_L, (C1)-(C4), Ξ_k = Θ_{H_k}, ENG-1). PHASE: a joint λ-phase with
+  τ constant. On 𝒞^1O, R, R̄ := R ∪ {o}, F, (h), EQ / THR, u* as in R19-R23. SCOPE RUN: a maximal run of consecutive in-phase transitions
+  k → k+1 with (h) at k, H2 at k+1 and w_{k+1} = w_k. r_k := lev(θ_k, w_k) (< ∞ under (h)).
+- Claims signed (both referees "(Opus 5.5, D15)", L37):
+  (a) Elementary facts (C5) (a ◁ b ⊴ c ⇒ lev(a, b) ≤ lev(a, c)), (C6) (lev(a, c) ≤ max(lev(a, b), lev(b, c))), (C7) (a prefix disjoint
+      from both path sets and cycle nodes preserves lev and order); Fact R (r is non-increasing along a scope run); Lemma CLU (at an
+      in-phase S4c fallback k with (h) and θ_k ◁ w_k, every switched y → z with y ∈ R_k, z ∈ F_k has level ≤ r_k; re-proved from R23 (f)).
+  (b) Lemma TRANSFER (every game): for an in-phase k → k+1, L < ∞ and z with COARSE_L(Ξ_{k+1} z) = COARSE_L(Ξ_k z), a gate (y, z) at
+      k+1 of level > L is a gate at k of level > L.
+  (c) Lemma OFFGATE (𝒞^1O): at every in-phase transition, tame or not, every gate (y, z) at k+1 with z ∉ R̄_{k+1} has level ≤ M_k. (M_k ≥ −1
+      at every in-phase transition, since no gate means σ unchanged and so τ changes: CLS-1, wording; R̄ is R25 OFF's honest
+      reachability, equal to the (σ, τ) one on 𝒞^1O: N-CLS-1.)
+  (d) Lemma CN (every game, inside a phase): if λ_{k+1} = λ_k and an Even y with λ_k(y) = y switches to z, the gate level of (y, z) at k
+      is −1 (CLS-2, wording).
+  (e) Lemma NL (𝒞^1O): at an S4a transition j → j+1 inside a phase with (h) at j, L < ∞, r_j > L and (A_j) (every gate at j into F_j has
+      level ≤ L): (i) COARSE_L(Ξ) is unchanged on every v ∉ R̄_{j+1}; (ii) R_j ⊆ R̄_{j+1} (no leave); (iii) (A_{j+1}) holds.
+  (f) Theorem CLS1 (𝒞^1O): in a scope run S, at an S4c fallback k1 at a THR state with r_{k1} ≥ 0 (u* ≠ none),
+      M_{k1} ≤ min{M_k : k < k1 an S4c fallback of S}. Its case r_{k1} ≤ L uses FBL in its u* ≠ none strong gate form at the single state
+      k1 (no F → R and no R → R gate edge; R-N5-XA §3, R2-N5-XA §2), not "a single fallback state is a stretch of length 1"
+      (CLS-3 = G-CLS-1, citation, closed); every in-scope fallback is THR or EQ, since under (h) θ = w ⟺ EQ (N-CLS-2, wording).
+      Corollary: along a scope run, the levels of its THR fallbacks with u* ≠ none are non-increasing; these are all its fallbacks
+      before the first EQ / u* = none state (Fact R) ("evicting" dropped: CLS-4, wording).
+- Refuted (both referees, own code): OG′ "gates into F at k+1 have level ≤ MF_k (the max level of the gates at k into F_k)" is FALSE:
+  experiments/red/xing/instances/x31_re24.pg (sha1 49eaf50e…), transition 1 → 2, an S4a step: MF_1 = −1, gate (4, 8) at state 2 of level
+  22 into F, |R| 21 → 1; OFFGATE holds there (M_1 = 23). REFEREE found 17 more violations in random games. The data counter MF_up in the
+  lane's cls2.py is this OG′ counter, not a rise of a fallback level.
+- Honest limits: (i) TRANSFER, CN and (C5)-(C7) hold on every game; Fact R, CLU, OFFGATE, NL, CLS1 are on 𝒞^1O. (ii) CLS1 bounds the
+  levels, not the number, of fallbacks per scope run: the per-level count ("≤ n_E fallbacks per level") is OPEN, as are fallbacks at EQ
+  states or with u* = none ((H-EQ)) and θ-changes per scope run without X; G-N5-TIME stays open. (iii) No fallback with u* = none occurs in
+  any data, so CLS1's (β) case rests on Fact R alone; CN has few library cases (48; 711 random). (iv) Random games are nearly vacuous for
+  CLS1 (≤ 1 fallback per scope run); the evidence is the named set, the library and REFEREE-2's climbs.
+- Data (DATA, not proof; one Odd choice vertex asserted on every game): REFEREE cls_probe.py (own trace = n5.run, phase key
+  (λ_Ξ, λ_U, τ)): named 65 / library 234 / random 5,500 games, 0 failures of every check; its named counts equal the packet's §8
+  (OFFGATE 6,645; CN 7; 70 scope runs; in-scope fallbacks 252 THR u* ≠ none / 4 EQ / 0 u* = none); no rise of M at any in-scope
+  fallback (named 256, library 534). REFEREE-2 (own code): 234 files × 3 starts + 12,000 random + 12,400 climb runs, 913 in-scope
+  fallbacks (890 THR u* ≠ none, 23 EQ, 0 u* = none), 0 failures; TRANSFER 442,864, OFFGATE 26,464, CLU 1,948 checks; NL tested at every
+  admissible L (40,516 library + 20,283 climb checks); CLS1's case r > L 678 library comparisons with (A_j) asserted at all 1,731
+  intermediate states, + 20,544 in climbs. Lead re-ran experiments/si/coarse/run_cls.sh: the packet's logs regenerate byte-identically.
+- Signatures: REFEREE docs/referee/R-N5-CLS.md (referee a0b92ec; §C 8af6347): (C5)-(C7), Fact R, CLU, TRANSFER, NL SIGNED; OFFGATE
+  SIGNED WITH GAP CLS-1; CN SIGNED WITH GAP CLS-2; CLS1 SIGNED WITH GAP CLS-3 (closed); Corollary SIGNED WITH GAP CLS-4; OG′ FALSE
+  confirmed. REFEREE-2 docs/referee-2/R2-N5-CLS.md (referee-2 ffe10e1; §C 848839e): (C5)-(C7), Fact R, CLU, TRANSFER, CN, NL SIGN; OFFGATE
+  SIGN (N-CLS-1); CLS1 + Corollary SIGN WITH GAPS G-CLS-1 (closed), N-CLS-2; OG′ refutation reproduced. §C: no verdict differs. Joint
+  gap map (REFEREE §C, REFEREE-2 §C): CLS-3 = G-CLS-1 (closed, REFEREE-2's form adopted); CLS-1, CLS-2, CLS-4, N-CLS-1, N-CLS-2 (wording).
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).

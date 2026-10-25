@@ -1,0 +1,24 @@
+C567_checks: 90
+CLS1_A_chain_checks: 30
+CLS1_case_r<=L: 5
+CLS1_case_r>L: 15
+CLS1_checks: 20
+CLS1_first_fallback(vacuous): 3
+CLS1_strict_drop: 8
+CLU_checks: 51
+NL_(j,L)_checks: 951
+NL_admissible_with_R_nonempty: 63
+NL_no_admissible_L(S4a,(h)): 81
+NL_transitions_with_admissible_L: 69
+OFFG_checks: 619
+TRANS_checks: 7779
+runs: 3
+scope_fallbacks: 23
+scope_fallbacks_THR_u*!=none: 23
+scope_runs: 3
+scope_transitions: 173
+transitions: 186
+transitions_in_phase: 173
+max_CLS1_case_r>L_gap(k1-k0): 6
+max_fallbacks_per_scope_run: 10
+RESULT OK violations=0

@@ -1,0 +1,5 @@
+C567_checks: 90
+runs: 3
+transitions: 38
+transitions_in_phase: 36
+RESULT OK violations=0

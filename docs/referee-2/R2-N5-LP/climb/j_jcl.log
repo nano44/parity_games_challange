@@ -1,0 +1,3 @@
+start 17
+TOTALS {'runs': 2000, 'phases': 2205, 'phases_checked': 2147, 'TH_notH1_cases': 3, 'F1o_intervals': 19596, 'SO_keymin_checks': 19827, 'SO_theta_fixed_transitions': 612, 'SO_frozen_key_checks': 615, 'sum_S_o': 19190, 'sum_J': 16118, 'sum_Theta': 19215, 'TH_H1_cases': 199, 'phases_lam_o_eq_o': 58, 'SO_relevant_changes_theta_fixed': 2}
+RESULT OK violations 0

@@ -1,46 +1,66 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Box 32 in progress (successor 12, session_01SqmdU7H8WiFZUGTRjZi1C3; GO 2026-10-24 23:50Z)
-- Handover check 9cd52937 (5/5). Write-up: docs/new/N5-L-box32.md; tools experiments/new/box32 (lcheck.py checks every lemma).
-- Finding: R25's gate-level freeze is vacuous on most residual transitions (M = ∞). Repair: freeze at the USED level L_k (Lemma U, PROVED);
-  Theorem LP (any game): phase ≤ (m−n+1)((n+1)(ρ+1)n(n−1)+ε+1), ρ = used-level rises. NO-WAKE FALSE (nowake_cex_n32, U3);
-  LP′: phase = O(m n⁵ (1+S_o+X+K)), K = wakes, which live in U1 pieces (R24) or U2/U3/U23 (the (E)/(K_W) regime).
-- Pitfalls hit: `pgrep -f lrun.py` in a Monitor matched the waiter itself (use ps + awk on argv); reach_o omits o (a dormant-edge census
-  first showed fake F → F edges with σ(y) = o).
-- P-N5-U23 referee items: none relayed yet; answer in docs/new/P-N5-U23-fixes-box31.md.
-
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 11 PARKED after box 31, 2026-10-24 23:21Z by date -u)
-Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Box 31 (Oct 24, 19:53Z-23:21Z). Nothing running at park. Context ~400k;
-parked early at the Lead's request ("freeze P-N5-U23, then park").
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 13 PARKED after box 33, 2026-10-25 04:25Z by date -u)
+Successor 13 (Opus 5.5, D15/D18), session_01525mp4dnZd1PA2Uj25tPVY. Handover check 63999a28 (5/5). Box 33 GO 02:06Z to 04:25Z, ~530k.
+Nothing running (all box-33 climbs killed by pid at 03:36Z). Oink is built in this container only (tools/oink/build, gitignored).
 
 ### DONE (all pushed with scripts/push.sh)
-- Handover check a4db2c08 (5/5).
-- P-N5-NH fixes: docs/new/P-N5-NH-fixes-box30.md (b4fc3a4f). Landed as R22.
-- Box 31 (a): docs/new/N5-U1T-box31.md.
-  - U1-T FALSE (L-RED's u1t_cex_n32; mine u1t_cex2_n32).
-  - Packet docs/new/P-N5-U1-box31.md (d8d6e1d0, sha1 eb90788d…), LANDED as RESULTS R24 with both signatures: Lemma R, TB, CASC,
-    Theorem U1, Lemma WC.
-  - Fixes: docs/new/P-N5-U1-fixes-box31.md. REFEREE in §1-§5, REFEREE-2 in §7. It includes the EQ-fallback claim §7.5, PROVED (L-NEW)
-    and unrefereed.
-- Box 31 (b): docs/new/N5-U23-box31.md.
-  - Packet docs/new/P-N5-U23-box31.md, frozen at the park commit: CASC-U2 and CASC-U3 with their corollaries. NEVER edit it; repairs go
-    in a new fixes file.
-  - §5 of the doc: every (E) and (K_W) transition seen is TAME in L-SI's sense, so they cannot be charged to J.
+- P-N5-OE: fixes docs/new/P-N5-OE-fixes-box32.md (7ad82a93, sha1 5f06276a…, FROZEN: cited by landed R28) + record
+  docs/new/P-N5-OE-fixes2-box32.md (72ee9220, §C rows).
+- docs/new/N5-K-box33.md §1-§14 (box 33 write-up): Lemma OR, WK, R-STICK, SN-PREFIX, (SN-ORDER = R19 (a) + H3H2), TC-SPLIT, ABS-L,
+  LEAVE, ABS-COUNT; dead ends EXIT-R, ORX, "ε ≤ (d_o − 1)(f + 1)" (L-RED exitr_cex_n48 / epsseg_cex_n48), H-RE (b6_xl_n48); K-chain family
+  (kchain.py; kchain4/10/32 in experiments/new/box33/instances, Oink-verified): K − 1 wakes in ONE phase, n = 11K + 14; REL data.
+- Packet P-N5-SN (docs/new/P-N5-SN-box33.md, pinned trunk 2c70ef6, sha1 340d4f29…): both referees SIGNED all (ABS-COUNT with gaps
+  SN-1/SN-2 = G-SN-1, repaired form proved; LEAVE SN-3 wording; WK N-SN-1; ABS-L premise R29 landed). Fixes file
+  docs/new/P-N5-SN-fixes-box33.md (§0-§9; last sha1 2c8d159a…): §9 = final joint map and labels.
+- Fixes §2b SIGNED by both referees (REFEREE-2 §B 4c8dcfd, REFEREE Addendum 2 2f465ff); fixes file final at §10, sha1 f242b011…,
+  the version R30 will cite: FROZEN from now on (new material goes in a new file): Lemma H1-DROP (in a phase,
+  H1 → ¬H1 forces P(θ_k) = ∅), Corollary H1-KEEP (an H1 ε-transition with O_k ≥ 0 keeps H1), Corollary ABS-COUNT′ (the d_o − 1 form for
+  runs whose last H1 ε-transition has O ≥ 0). Data: 317 H1 ε-transitions, all O ≥ 0; 6 in-phase H1 → ¬H1, all P(θ) = ∅.
 
 ### IN FLIGHT (others)
-- P-N5-U23: waiting for the Lead to pin it and route it to the referees.
-- L-COMP box 7 tabulates (E) at small n from N5-U23-box31.md's definitions.
-- L-SI: R25 (Theorem FB) at CHECKER. L-RED: (X).
+- L-SI successor 3: non-circular θ-change bound per scope run; P-N5-CLS (CLS1) with both referees. L-RED 15 attacks SO / LP.
 
-### NEEDS / next
-- Successor 12, first: answer the referees on P-N5-U23 in docs/new/P-N5-U23-fixes-box31.md (a new file).
-- Then the open cores, as the Lead routes:
-  - (E): events in U3 (kind crossings, c_w's own switches);
-  - (K_W): W-changes on R outside route form.
-  - Idea (READING, N5-U23 §5): a coarse freeze at L-SI's gate level M (constant on tame blocks, non-increasing along tame runs)
-    instead of at c_w.
-- Also open: NFB-O; (X).
+### NEEDS / next (successor 14)
+- P-N5-SN is closed (fixes file frozen at §10, sha1 f242b011…; R30 in landing). Any later P-N5-SN material goes in a NEW file.
+- Research (Lead agrees): REL = exit releases at S4a steps. All seen are at w-changing transitions (13) or in scope runs before their
+  first fallback (31); LEAVE: each needs an F-ward relevant change of level ≥ r = lev(θ, w). Look for an (A)-type freeze at a scope
+  run's start. Also the residue of ABS-COUNT′: ε with O_k = −1 (needs E_k = ⊥; c_θ's own switch into R), ε at fallbacks: both never seen.
+- Not routed: OB_R, OB (CONJECTURES), G-N1-LB.
+
+## Things only I know (successor 13)
+- The crossing problem is an SN-regime problem: at S4a steps, outside c_w = c_θ, R only grows (R-STICK uses only W monotone, Ξ ⊴ W,
+  off-R Ξ = W and rew injective). Inside SN under H1 the two frames agree on R and differ only R vs F: leaving R needs an F-value
+  ⊵ π ⊕ w (optimistic), joining needs π ⊕ θ ▷ the F-value (pessimistic).
+- An absorption is Even closing an honest Even-good loop p → r → … → o → x0 → … → p; Odd leaves it at o. jcl_zcl_cu_n48 is the clean
+  picture (σ̄(o) walks through 17 of 18 exits). b6_xl_n48 is the counter picture (exit 28 re-absorbed once per r-epoch at level 33).
+- K-chain mechanism: a distance improvement propagates one layer per S4a step through honest gates, each layer releasing one dormant
+  high edge. Needed: top T on o's W-cycle with every route through T (length-only W), and x with a dormant edge to r whose SHORT route
+  is Ξ-worse, so Odd's τ(o) stays honest-optimal in U (no S4b switch). Initial choices come from best-reward: parities set them.
+- Tools (experiments/new/box33): wakes.py, kclimb.py (THIRD=sparse), xclass.py, xgrow.py, xjoin.py, riseclass.py, orise2.py, orx.py
+  (EPS=1), orxclimb.py (MODE=rel), sn.py, scopecov.py (scope runs: (h) = H1 ∧ H2 ∧ c_θ = c_w; h2 from nxt), hre.py, reabsclimb.py,
+  kchain.py, biglev.py (run tools on n ≥ 100). lib.txt = c1o_list.py 64 minus box33/out.
+- Pitfalls: c1o_list.py globs experiments/**, so climb outputs in out/ pollute the library: filter them. Count K by TRANSITIONS, not
+  switches (my first climb counted 12 "wakes" at one transition). A fixes file cited by a landed RESULTS entry is frozen (Lead 03:00Z):
+  later material goes in a new file. Oink is built in this container (tools/oink/build); a new container needs scripts/setup_oink.sh.
+
+## Things only I know (successor 12)
+- The used level L_k (max level of the changes actually made, own cycle nodes excluded) is the right freeze; M_k (max AVAILABLE) is useless
+  because dormant edges sit at level ∞. Gate edges above L_k are frozen (HI), so long phases need carries (Theorem LP).
+- Carry causes on 𝒞^1O: fallback (284 of 413 library rises), crossing (129, all σ̄(o)-type rises have a crossing in the interval), wake (0
+  in library; ≤ 2 per run in ~7·10⁵ climb candidates).
+- Lemma OE's mechanism: off crossings, both exits compared by σ̄(o) have o-free paths whose changes are Even's, so their order above Even's
+  level is frozen; under ¬H1 exits on the honest cycle have empty path sets.
+- Tools, experiments/new/box32: lcheck.py (all LP lemmas per transition; --rand), socheck.py (TH/SO/J), oddlev.py (OE), orise.py (rise causes),
+  dormant.py / rrdorm.py / wgap.py / kwlev.py / wakeinfo.py (dormant edges, wakes), mblock.py (base trace rows_w, has h1), climbs rrclimb.py
+  (wakes first), lemclimb.py (lemma failures, ρ, S_o), nwclimb.py, mblockclimb.py. c1o_list.py 64 lists the 220-file 𝒞^1O library.
+  out/ is gitignored (experiments/new/box32/.gitignore); copy finals to instances/.
+- Final climb states (killed at park): rrclimb wakes 2 (nr_u23_n32, u1flat_best_n32, nowake_cex seeds); lemclimb 0 failures (ρ up to 21 at
+  n 48, S_o up to 42 at n 32).
+- Pitfalls: `pgrep -f X` inside a Monitor matches the waiter itself (use ps + awk on argv); reach_o omits o (fake F → F dormant edges with
+  σ(y) = o); Lead relays queue unseen while working — call ReadNotifications after every push; VJ00 Lemma 5.8's 2 ⇒ 3 FAILS at cycle nodes
+  (R15 side finding) — check R15's side findings before citing VJ00 directions; container clock runs slow, stamp only from date -u.
 
 ## Things only I know (successor 11)
 - The tie-break is the lever. S4a's choice among W-optimal arena edges is NOT arbitrary: odd c_w → min index (longest-path
@@ -148,6 +168,7 @@ parked early at the Lead's request ("freeze P-N5-U23, then park").
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (succ. 13, box 33) No external source opened. Internal: P-N5-CLS (docs/si/P-N5-CLS-box8.md, pinned 486107a) §1-§7, N5-C-box8 §12-§13.
 - (succ. 12, box 32) VJ00 = Jurdziński & Vöge, BRICS RS-00-48 (www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, sha256 485a12de432a2a8c…, opened
   2026-10-25 00:35Z, pdftotext): p. 14-15 σ̄ definition and Prog (P1)-(P3); p. 15 Lemma 5.2; p. 16 (11); §4.4 p. 11 improvement (2) and Switch_I;
   p. 19-21 Lemma 5.8 (2 ⇒ 3 ⇒ 1 proved via Lemma 5.7, 5.2; 1 ⇒ 2 via Lemma 5.9 'proved similarly'). Used in P-N5-LP (DF uses 2 ⇒ 3 ⇒ 1 only).
@@ -234,6 +255,17 @@ parked early at the Lead's request ("freeze P-N5-U23, then park").
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 13, box 33) "ε_{H1} ≤ (d_o − 1)(f + 1) per phase": FALSE (L-RED fdd801b). experiments/red/so/instances/epsseg_cex_n48.pg (sha1
+  b4c7dcb0…): f = 0, 17 H1 ε-transitions, d_o 17 (exit 33 absorbed at 7, released at the S4a step 8 → 9, re-absorbed at 13). ABS-COUNT
+  (with REL) holds with equality.
+- (succ. 13, box 33) CONJECTURE EXIT-R (ε form) and ORX: FALSE (L-RED box 37). experiments/red/so/instances/exitr_cex_n48.pg (sha1
+  7a663df2…, n 48, o = 0): ε-transition 4 absorbs exit 13, Even 13 leaves R at the S4a step 5 → 6 (an (h) state before any fallback of
+  its scope run), exit 13 re-absorbed at 9. Obstruction: releases inside SN prefixes outside CLS1 case-2 gaps. Survivor: ABS-COUNT
+  (ε_{H1} ≤ (d_o − 1)(f + 1) + REL), N5-K-box33 §13.
+- (succ. 13, box 33) H-RE "re-absorbing the same exit inside a scope run needs r = lev(θ, w) to drop": FALSE. b6_xl_n48 (library),
+  exit 28 absorbed at transitions 70 and 88 with r = 39 at both (box33/hre.py, 25 failures). Also "wakes per phase stay O(1)" (data
+  norm, never a claim): FALSE by the K-chain family, experiments/new/box33/instances/kchain32.pg (n 366, sha1 63c5b0dd…, 31 wakes in
+  one phase; Oink zlk OK, strategies verified).
 - (succ. 12, box 32) Coarse freeze at R25's gate level M for (E) / (K_W): VACUOUS. M_k = ∞ at 52 of 69 U2/U3 KW transitions and at both
   U3 events (220-file 𝒞^1O library, mblock.py). (KW-M) "≤ |R| KW per M-block" FALSE: experiments/new/box32/instances/kwm_cex_n24.pg
   (sha1 c2723e08…; 15 KW at |R| 3).

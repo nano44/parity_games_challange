@@ -1,0 +1,9 @@
+start 842
+1 1059
+24 1324
+67 1395
+72 1467
+126 1684
+212 1708
+TOTALS {'runs': 1600, 'transitions': 33532, 'C567_checks': 48000, 'transitions_in_phase': 23775, 'TRANS_checks': 350085, 'OFFG_checks': 33952, 'NL_transitions_with_admissible_L': 3844, 'NL_admissible_with_R_nonempty': 3033, 'NL_(j,L)_checks': 10477, 'scope_runs': 1629, 'scope_transitions': 22644, 'scope_fallbacks': 8965, 'scope_fallbacks_THR_u*!=none': 8958, 'CLU_checks': 9580, 'CLS1_first_fallback(vacuous)': 568, 'CLS1_checks': 8390, 'CLS1_case_r>L': 8388, 'CLS1_A_chain_checks': 9157, 'NL_no_admissible_L(S4a,(h))': 10526, 'NL_no_admissible_L_with_leave': 6225, 'CLS1_case_r<=L': 2, 'CLS1_strict_drop': 10, 'CN_checks': 8, 'scope_fallbacks_theta=w': 7}
+RESULT OK violations 0

@@ -1,0 +1,15 @@
+start 143
+3 155
+7 156
+11 164
+26 187
+28 209
+37 212
+57 215
+146 218
+210 228
+410 229
+498 230
+557 233
+TOTALS {'runs': 2400, 'transitions': 36928, 'H3H2_states': 39328, 'TCS_theta_changes': 26784, 'STICK_checks': 467864, 'CHOICE_odd_checks': 813823, 'phases': 3210, 'PREFIX_runs': 3210, 'PREFIX_crossings_in_prefix': 3355, 'PREFIX_crossings_after': 23684, 'ABSC_runs': 3210, 'OR_eps_transitions': 24399, 'OR_eps_H1': 24399, 'leaves_S4a': 605, 'LEAVE_checks(H1)': 605, 'LEAVE_tight(path max = r)': 327}
+RESULT OK violations 0 absc_saved 0

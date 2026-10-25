@@ -1,0 +1,7 @@
+ULOC_checks: 2379
+ULOC_strictly_below_L_k: 1698
+phases: 134
+runs: 800
+transitions: 1773
+transitions_in_phase: 145
+RESULT OK violations=0

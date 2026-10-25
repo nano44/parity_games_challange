@@ -1,0 +1,9 @@
+ABSC'_checks: 1
+ABSC'_runs_with_H1_eps: 1
+ABSC'_tight: 1
+DROP_divergences: 4
+DROP_transitions(H1 -> notH1 in phase): 4
+H1_eps: 1
+KEEP_checks: 1
+runs: 1500
+RESULT OK violations=0

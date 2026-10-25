@@ -1,0 +1,7 @@
+start -100
+1836 1
+1859 2
+1887 3
+1931 4
+TOTALS {'runs': 16000, 'transitions': 23590, 'H3H2_states': 39590, 'CHOICE_odd_checks': 27525, 'phases': 10285, 'PREFIX_runs': 9846, 'PREFIX_crossings_in_prefix': 7656, 'PREFIX_crossings_after': 5, 'ABSC_runs': 9846, 'TCS_theta_changes': 6768, 'leaves_S4a': 958, 'LEAVE_checks(H1)': 787, 'leaves_S4a_notH1': 171, 'LEAVE_tight(path max = r)': 11, 'OR_eps_transitions': 5602, 'OR_eps_H1': 5602, 'STICK_checks': 14}
+RESULT OK violations 0 absc_saved 0
