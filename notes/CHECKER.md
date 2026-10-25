@@ -44,7 +44,9 @@
   - main report docs/checker/C37.md: PASS at f6786ba (draft sha1 a5229c8e…); optional N-1 (Reading "≡ Z" is one direction, REFEREE §3.6),
     N-2 (696b08c touches only notes/REFEREE.md);
   - Add. 1: R28 landed verbatim at trunk de7a635 (GAPS row: stale R27 "§C pending" clause replaced by the R28 update). C37 CLOSED.
-- PARKED. Next: P-N5-CLS (L-SI), pinned trunk 486107a, with both referees (Lead 02:40Z).
+- C38 (R29, P-N5-CLS pinned 486107a) 03:22Z (date -u):
+  - main report docs/checker/C38.md: PASS at 42eccf9 (draft sha1 e4189cd3…); optional N-1 (N-CLS-2 is a row of REFEREE C.3 only);
+  - Add. 1: PASS at 1efb9f9 (draft sha1 9557fb2f…; fixes part 2 8f1b52b4 cited; N-1 narrowed, optional); awaiting landing (Add. 2).
 - Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs. In a worktree, symlink tools/oink/build.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 

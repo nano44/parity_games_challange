@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Box 33 climb against CONJECTURE ORX / EXIT-R (orx.py). Fitness = (#ORX failures + #EXIT-R failures, max O-rises in one fallback-free
-segment, total O-rises). Saves the best as <out>.pg and any failure as <out>_viol.pg. Usage: orxclimb.py seed secs out seed.pg"""
+segment, total O-rises). Saves the best as <out>.pg and any failure as <out>_viol.pg. Env MODE=rel: fitness (failures, min(ε, S4a exit releases), ε + releases). Usage: orxclimb.py seed secs out seed.pg"""
 import sys, os, random, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "box21"))
 sys.path.insert(0, os.path.join(HERE, "..", "box31"))
@@ -28,6 +28,12 @@ def fit(G):
     g = pg.Game(*G); acc = {}
     try: check(g, acc, "c"); sm = segmax(g)
     except Exception: return (-1, 0, 0)
+    if os.environ.get("MODE") == "rel":   # reward exits released at S4a steps next to absorptions
+        rows, o = rows_w(g); so = set(g.succ[o]); rel = 0
+        for k in range(len(rows) - 1):
+            a, b = rows[k], rows[k + 1]
+            if a["ph"] == b["ph"] and not a["fb"]: rel += sum(1 for x in so if x in a["R"] and x not in b["R"])
+        return (acc.get("ORX_FAIL", 0) + acc.get("EXITR_FAIL", 0), min(acc.get("orise", 0), rel), acc.get("orise", 0) + rel)
     return (acc.get("ORX_FAIL", 0) + acc.get("EXITR_FAIL", 0), sm, acc.get("orise", 0))
 
 if __name__ == "__main__":
