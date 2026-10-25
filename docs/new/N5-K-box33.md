@@ -253,3 +253,24 @@ Proof.
   a rank ≥ 99 reads as ∞ (lcheck.py reported 42 false "L = ∞" failures on kchain10 / kchain32). All library data (n ≤ 64) is unaffected.
   box33/biglev.py runs any box32 / box33 tool with ∞ = 10⁶; the numbers above for n ≥ 100 use it. The si/coarse owner (L-SI) may want
   the same fix in mono.py.
+
+## 12. Who can leave R at an S4a step (PROVED, L-NEW succ. 13; written 03:27Z by date -u)
+Under H1, "c_w = c_θ" is H3, and H1 ∧ H3 gives H2 (Lemma SN-ORDER's proof: o's W-play ends on the cycle of c_θ ⊆ F). So the SN regime
+under H1 is exactly the (h) regime of RESULTS R19-R25.
+**Lemma LEAVE.** Let s → s+1 be an S4a transition (no fallback) of a phase with H1 at s, and let q ∈ R_s leave (q ∉ R̄_{s+1}). Then (h)
+holds at s, and q's H_{s+1}-path before its cycle node carries a relevant change of level ≥ r_s := lev(θ_s, w_s); in particular L_s ≥ r_s.
+Proof.
+- If c_w(s) ≠ c_θ, Lemma R-STICK forbids the leave. So H3, hence (h).
+- R19 (b) Lemma G: Ξ_s(q) = π_q ⊕ θ_s, W_s(q) = π_q ⊕ w_s, and π_q avoids the paths of θ_s and w_s (H1, H2); by L-SI's (C7)
+  lev(Ξ_s(q), W_s(q)) = r_s and Ξ_s(q) ◁ W_s(q) (Ξ ⊴ W, and they differ when r_s ≠ ⊥).
+- q ∉ R̄_{s+1}: W_{s+1}(q) = Ξ_{s+1}(q) (Lemma G (a)); R23 (g) WM: W_{s+1}(q) ⊵ W_s(q). So Ξ_s(q) ◁ W_s(q) ⊴ Ξ_{s+1}(q), and L-SI's (C5) gives
+  lev(Ξ_s(q), Ξ_{s+1}(q)) ≥ r_s.
+- If every relevant change on q's H_{s+1}-path had level < r_s, Lemma U-loc with L = r_s − 1 (L = ⊥ if r_s = −1) would give
+  lev(Ξ_s(q), Ξ_{s+1}(q)) ≤ r_s − 1. Contradiction. (If r_s = ⊥, i.e. θ = w, the claim is empty.) □
+- This is L-SI's Lemma NL key step (K*) without hypothesis (A), stated through U-loc: a leave needs an F-ward relevant change at a level
+  at least the θ / w gap. With (A) for L < r it is impossible (NL (ii)); with R-STICK it is impossible off (h).
+- DATA (box33/leave.py): library 616 S4a leaves under H1, all at (h) states, all with a relevant change of level ≥ r on the new path;
+  random (--rand 3000 8 32 3404) 561, same, 0 failures. Leaves under ¬H1 (library 4, random 702) are outside the lemma; by R-STICK
+  they are at c_w = c_θ states.
+- Random robustness of §8-§9 (seeds 3401-3403, 4,800 games, n 8-48; out/randcheck.txt): R-STICK and SN-PREFIX 0 failures (552
+  crossings in SN prefixes, 1 after); TC-SPLIT 0 failures on 371 θ-changes (2 ε); Lemma OR 0 failures (1 O-rise).
