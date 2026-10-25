@@ -207,3 +207,46 @@ Read: docs/referee/R-N5-RL.md at trunk (report b7419da, §8.1 257c3d8; REFEREE s
 - RL-3 = G-RL-2 (TEV-RED (3), Consequence bullet 3): "up to and including e".
 - RL-4 (EV): cite P-N5-NJB §3's Corollary for the gate's existence.
 - Wording, mine: N-RL-1 (MERGE paths up to c), N-RL-2 (EV, q after c), N-RL-3 (top of A Δ B after EV), FREE-FREEZE's unused "(h) at t".
+
+## Addendum A: the new proof text in docs/si/P-N5-RL-fixes-box10.md (sha1 ac0274586a3b715d8725bc5226e3b32572edf017, l-si 1f107bfb, on trunk), checked 12:54Z by date -u
+Read at the Lead's request (12:49Z). I did not read docs/si/N5-TEV-box11.md beyond what the fixes file quotes; the fixes file's proof
+is self-contained and I checked that text.
+| item | verdict (Opus 5.5, D15) | notes |
+| --- | --- | --- |
+| Lemma CYC-EV (ENT setting: no vertex of Ev ∩ F_k lies on C_k, the σ_k-cycle of c) | SIGN | no (P); the case is vacuous in data (no ENT setting) |
+| replacement Proposition TEV-RED (t < k: TEV-RED′'s added hypothesis; t = k: by CYC-EV; e the last Ev vertex on the pre-c prefix; (3) as RL-3) | SIGN CONDITIONAL ON (P) | closes RL-1 = G-RL-1 at t = k; t < k stays TEV-RED′ |
+| Consequence (the reduction, at t = k, with RL-3's wording) | SIGN CONDITIONAL ON (P) | via EV+, CYC-EV and the replacement TEV-RED (5) |
+| RL-2, RL-3, RL-4 lines | accepted as written | same as my §C.4 |
+| §7 TEV / TEV-LAST FALSE, k0-quantifier section | not signed (record) | consistent with my §6.3 (tevlast_cex_n40 reproduced with my N5) |
+CYC-EV proof check, line by line:
+- (Σ) gives (A_s), no leave at the S4a steps of (k0, k) (NL (ii)), and M_k ≤ L (CLS2).
+- FZ. v ∈ F_k is in F_s for s ∈ [k0+1, k] (no leave). COARSE_L(Ξ v) is frozen across k0 (FLAT-ALL (iii), every vertex) and at each S4a
+  step (NL (i), v ∉ R̄_{s+1}). ✓
+- BF. For Even v ∈ R_{k0} ∩ F_k: v ≠ c (c ∈ F_{k0}) and λ(v) = c, so Ξ(v) = v ⊕ b(v) at k0 and at k (P2). v is not on its successor's
+  pre-c path: a repeat of v before c would be a cycle through v without c. So by (C4), COARSE_L(b v) is COARSE_L(Ξ v) with v removed, at
+  both states. FZ then gives COARSE_L(b_k v) = COARSE_L(b_{k0} v) = COARSE_L(Ξ_{k0} σ_{k0} v). ✓
+- RB. If COARSE_L(Ξ_k a) ≠ COARSE_L(Ξ_{k0} a) for a = σ_{k0}(v), then R15 (a) and (C1) give Ξ_k(a) ▷ b_k(v) at a level > L. So
+  a ≠ σ_k(v), and (v, a) is a gate at k of level > L ≥ M_k. Contradiction. (The hypothesis a ∈ R̄_k is not even needed for this step.) ✓
+- WALK.
+  - The first vertex a_j ∈ R̄_k on v0's k0-route exists, since o ∈ R̄_k.
+  - Its predecessor is in F_k. If it were Odd (≠ o), its only successor in R̄_k would put it in R̄_k, so it is Even.
+  - RB, and Lemma G at k0 and at k ((h) at both), give the H-part identity (π^k_{a_j} ∩ H) ⊔ B = (π^{k0}_{a_j} ∩ H) ⊔ A, since P(θ) ⊆
+    V_{>c} makes P(θ) ∩ V_{>L} = P(θ) ∩ H. ✓
+- CYC-EV. A vertex v ∈ Ev ∩ F_k on C_k has Ξ_k(v) = (c, ∅, ·), since c tops C_k and v ≠ c. FZ and Lemma G at k0 give A = ∅ and a low route
+  for v. WALK from v gives B ⊆ A = ∅, against B ≠ A (the rise). ✓ C_k ⊆ F_k, so no Ev vertex at all lies on C_k. x_k's cycle is C_k
+  (cycle node c). ✓
+- The replacement statement takes e on the pre-c prefix. With no Ev vertex on the cycle, every vertex of f's whole play lies in F_t ∖ Ev
+  ⊆ F_{k0}, which is what (1) and FREE-FREEZE need. (2)-(5) are as I checked them in §6.2. ✓
+- The lane's reason why CYC-EV is not claimed for t < k is right: RB needs "no gate of level > L at t", which holds at the fallback state k
+  (M_k = L) but not at S4a states. tevlast_cex_n40's gate (15, 21) of level 33 > L at t = 7 is exactly such a state.
+- DATA (cycev_probe.py, own N5, logs_cycev/; DATA, not proof):
+  - In setting (Σ) (k0 < k consecutive fallbacks of S, L = M_{k0} ≥ 0, r > L on [k0+1, k]; the rise not required): 836 settings on the
+    280-file library × 4 starts.
+  - FZ held at 21,720 vertices, BF at 1,869, RB and the WALK identity at 1,950 route walks, and M_k ≤ L everywhere; 0 failures.
+  - Ev ∩ C_k ≠ ∅: 0 times. Settings with B ≠ A (the rise): 0, so CYC-EV's own case is vacuous here as well.
+  - Random 𝒞^1O (20,000 games, n 6-16): 0 settings (vacuous).
+Status after this addendum, P-N5-RL §6:
+- TEV-RED, in the replacement statement: SIGN CONDITIONAL ON (P). The original packet text is still NOT SIGNED as stated (§C.2); it is
+  replaced, not repaired in place.
+- The Consequence: SIGN CONDITIONAL ON (P). CYC-EV: SIGN.
+- With P1 (R2-N5-P1, signed by both referees), all three become unconditional.
