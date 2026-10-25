@@ -47,7 +47,9 @@ def scan(g, o, A, fbs, C, M, bad, tag):
         R = S0.Rr; Rb = S0.Rbar
         C["runs"] += 1; C[f"runs {'cth>=cw' if ms == ct else 'cw>cth'} {'H2' if S0.H2 else 'notH2'} {'H1' if S0.H1 else 'notH1'}"] += 1
         if ms == cw and cw != ct and not S0.H2 and cw != o:
-            C["cw>cth notH2 runs (any length)"] += 1; M["max cw>cth notH2 run length"] = max(M["max cw>cth notH2 run length"], b - a)
+            C["cw>cth notH2 runs (any length)"] += 1
+            if not g.even[cw]: C["cw>cth notH2 runs c_w odd (any length)"] += 1
+            M["max cw>cth notH2 run length"] = max(M["max cw>cth notH2 run length"], b - a)
         kap = lambda S, v: above(g, S.pi[v], ms)
         for t in range(a, b + 1):
             S = A[t]; C["AGREE states"] += 1
@@ -73,7 +75,8 @@ def scan(g, o, A, fbs, C, M, bad, tag):
                 else:
                     if any(A[t].W[v][1] != A[f0].W[v][1] for v in R): C["LEN FAIL W path set"] += 1; bad.append(("LENW", tag, f0, t))
             if ms == cw and cw != ct and not S0.H2 and cw != o:
-                C["KIND runs"] += 1
+                C["KIND runs"] += 1; M["max KIND post-freeze length"] = max(M["max KIND post-freeze length"], b - f0)
+                if not g.even[cw]: C["KIND runs c_w odd"] += 1
                 kind = lambda S, v: cw in S.pi[v]
                 ch = Counter(); kc_tr = []; kb_tr = []; cw_sw = []
                 for t in range(f0, b):
