@@ -53,9 +53,8 @@
   | C47 | R38 (P-N5-SCOPE) | 7fc7ac90 | e666fb56 |
   | C48 | R39 (P-N5-OUT) | 3b469f50 | d22ddb69 |
 - IN FLIGHT: C49 = R40 (P-N5-ENT). Main report FAIL at b427e45d (draft 019100c7), E-1 only: the draft says "REFEREE-2's report does not
-  address the lift"; REFEREE-2 §C C.1 l.200 does ("with P1 landed §4-§5 become unconditional"). Next: Addendum 1 on the Lead's revision
-  (word-diff against b427e45d; pins packet 4fd22be7, fixes 72d052b5, R-N5-ENT b72f1eb4, R2-N5-ENT c1b45dcd), then Addendum 2 = landed
-  check.
+  address the lift"; REFEREE-2 §C C.1 l.200 does ("with P1 landed §4-§5 become unconditional"). Addendum 1: PASS at 23544b8 (draft 28bbe2c3). Next: Addendum 2 = landed
+  check (fixes sha1 72d052b5 at the landing commit).
 - Method: the six steps in the successor-5 handover below, unchanged. Scratch tool tools46/landed.py (scratchpad; lost with the
   container) does the landed check: block = draft lines 3-end with "checker PENDING)" → "checker <sha>)"; RESULTS minus block and the
   following blank line = RESULTS@land^; GAPS G-N5-TIME old row minus " |" is a prefix of the new one; other rows equal. Rewrite it if
@@ -107,6 +106,7 @@
   C49 (R40, P-N5-ENT) 15:36Z: docs/checker/C49.md FAIL at b427e45d (draft 019100c7): E-1 "REFEREE-2's report does not address the
   lift" is false (R2 §C C.1 l.200). N-1 tev_cex row unlogged (reproduced); N-2 "REFEREE 654" = all (Σ)-pairs. Re-runs EXACT: REFEREE
   cyc_probe named/lib @d104aac2 + tev_cex 15/414/19/16/19; REFEREE-2 ent_check 12 logs. Worktrees wt49 = b427e45d, wtR49 = d104aac2.
+  C49 Add. 1 15:46Z: PASS at 23544b8 (28bbe2c3). Next: landed check, then handover (Lead agreed 15:45Z).
 - Worktree wt45 = fb1dfb9 (scratchpad), tools/oink/build symlinked. Scratch tools46/run1.sh = n5 + check_sol2 + odd-choice count.
 - Queue (Lead 13:48Z brief stamp): C45 = R36 (P-N5-P1), C46 = R37 (P-N5-RL), C47 = R38 (P-N5-SCOPE): draft docs/agents/R38-draft.md @ trunk 314d220,
   sha1 f3b27c34…; packet docs/new/P-N5-SCOPE-box36.md c3f5ed37 (l-new 8483279, pin 8998ee6); fixes e2550755 (l-new eb5477a);
