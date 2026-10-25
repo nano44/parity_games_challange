@@ -1,0 +1,59 @@
+FA_chk                             232611
+FB_chk                             1553254
+FRZD_hist_00                       724
+FRZD_hist_01                       102
+FRZD_hist_02                       40
+FRZD_hist_03                       21
+FRZD_hist_04                       14
+FRZD_hist_05                       3
+FRZD_hist_06                       11
+FRZD_hist_07                       8
+FRZD_hist_08                       6
+FRZD_hist_09                       10
+FRZD_hist_10                       3
+FRZD_hist_11                       3
+FRZD_hist_12                       3
+FRZD_hist_13                       2
+FRZD_hist_14                       1
+FRZD_hist_15                       2
+FRZD_hist_17                       1
+FRZD_hist_18                       1
+FRZD_hist_20                       2
+FRZD_hist_21                       2
+FRZD_hist_23                       1
+FRZD_hist_25                       1
+FRZD_hist_33                       1
+FRZD_hist_35                       1
+FRZD_hist_36                       1
+FRZD_hist_40                       1
+FRZD_max                           40
+FRZ_chk                            1052
+MON_chk                            45120
+RUN_chk                            965
+RUN_maxNX                          40
+WONCE_chk                          2
+corner_postfrz_runs_cw_eq_ct       228
+corner_postfrz_runs_o_eq_ct        32
+corner_postfrz_runs_r2             49
+corner_postfrz_runs_selfloop_o     96
+corner_runs_cw_eq_ct               704
+corner_runs_o_eq_ct                68
+corner_runs_r2                     86
+corner_runs_selfloop_o             223
+games                              253
+runs                               965
+runs_randstart                     759
+skip_not_c1o                       159
+u3_runs                            23
+FAILS 0
+EX ('FRZD', 'experiments/n5-exhaustive/canonA_1.pg@rand', 1, 1, 7, 1)
+EX ('FRZD', 'experiments/n5-exhaustive/instances/b5_os_n16.pg', 12, 2, 9, 2)
+EX ('FRZD', 'experiments/n5-exhaustive/instances/b5_os_n20.pg@rand', 0, 3, 10, 3)
+EX ('FRZD', 'experiments/n5-exhaustive/instances/b5_os_n24.pg', 17, 7, 17, 7)
+EX ('FRZD', 'experiments/n5-exhaustive/instances/b5_os_n32.pg', 26, 8, 25, 8)
+EX ('FRZD', 'experiments/new/box25/instances/rtt24.pg', 1, 10, 22, 10)
+EX ('FRZD', 'experiments/new/box32/instances/kwm_cex_n24.pg', 5, 14, 23, 14)
+EX ('FRZD', 'experiments/red/n5inj/instances/block_bk32.pg', 8, 21, 33, 21)
+EX ('FRZD', 'experiments/red/xing/instances/kw25_n32.pg', 0, 25, 29, 25)
+EX ('FRZD', 'experiments/red/xing/instances/kw_n48.pg', 0, 40, 48, 40)
+EXIT 0
