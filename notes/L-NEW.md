@@ -1,44 +1,21 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 13, box 33 in progress, written 2026-10-25 03:39Z by date -u)
-Successor 13 (Opus 5.5, D15/D18), session_01525mp4dnZd1PA2Uj25tPVY. Handover check 63999a28 (5/5). Box 33 GO 02:06Z (Lead), to ~560k.
-Nothing running (all box-33 climbs killed by pid at 03:36Z; final: orxclimb canA (0, 7, 14) and b6 (0, 5, 32), 0 violations;
-reabsclimb b6 (5, 24, -48): same exit ≤ 5 absorptions per phase, ≤ 24 absorptions in one phase at n 48).
+## Resume point (successor 14, box 34 IN PROGRESS; overwritten at handover)
+Successor 14 (Opus 5.5, D15/D18), session_014oGq98MdJvpgrVXNA7rNvA. Handover check ce400ff3 (5/5). Box 34 GO 04:52Z.
+Oink built in this container (tools/oink/build). Climbs running in experiments/new/box34/out (relclimb rr2, wsnclimb ws24/ws32).
 
-### DONE (all pushed with scripts/push.sh)
-- P-N5-OE fixes file docs/new/P-N5-OE-fixes-box32.md (7ad82a93, sha1 5f06276a…): OE-1..3, N-OE-1..3, OX-1. R28 LANDED (de7a635, C37),
-  citing that sha1: the file is FROZEN. The §C joint gap map is in docs/new/P-N5-OE-fixes2-box32.md (72ee9220, sha1 cd1469f1…, a record).
-- docs/new/N5-K-box33.md (44ab97b2, 1249278a, fb157c31, 9ce7db66), all lane proofs unrefereed:
-  - Lemma OR: at an ε-transition (O_k > E_k) the old exit x0 is rerouted through o (x0 ∈ R_{k+1}); under H1 x0 ∈ F_k (ABSORPTION);
-    θ rises exactly at level O_k.
-  - Lemma WK: odd-mode wakes come with a W-change at a or z.
-  - Lemma R-STICK: at an S4a step no vertex leaves R while c_w ≠ c_θ. Corollary SN-PREFIX: in a fallback-free run the c_w = c_θ states
-    are a prefix; after it R only grows (≤ n − 1 crossings). Lemma SN-ORDER: under H1 with c_w = c_θ both frames order R identically.
-  - Lemma TC-SPLIT: a θ-change has level ≤ E_k or is an ε-absorption at level O_k.
-  - Lemma ABS-L (from L-SI's Lemma NL): on a CLS1 case-2 gap of a scope run every θ-change above L is an absorption that sticks until
-    the next fallback: ≤ d_o − 1 per gap.
-  - EXIT-R (absorbed exits stay in R to the next fallback): FALSE (L-RED exitr_cex_n48, 03:28Z). Survivor: Corollary ABS-COUNT
-    (ε_{H1} ≤ (d_o − 1)(f + 1) + REL) with Lemma LEAVE (an S4a leave under H1 needs (h) and an F-ward relevant change of level ≥ r).
-  - Packet P-N5-SN frozen (c196e3d1, sha1 340d4f29…).
-  - DATA: X-charged carries = absorptions (all 235 non-tame; 146 of 148 crossing rises); crossings live in the SN prefix (2,473 vs 61).
-  - FALSE: H-RE (b6_xl_n48, exit 28 at 70 / 88).
-  - K-chain family (kchain.py K; instances kchain4/10/32, Oink-verified): K − 1 wakes in ONE phase, n = 11K + 14. K is Θ(n) per phase.
-  - Tool bug: experiments/si/coarse/mono.py lev() uses 99 for ∞ (wrong on n ≥ 100); box33/biglev.py patches it. Reported to the Lead
-    for L-SI.
+### DONE (box 34)
+- docs/new/N5-REL-box34.md: Corollary NL-MF; Fact 0 / Lemma ARENA (SN regime = value iteration in G_τ, withheld F→R̄ edges, gain ≤ r);
+  Theorem FREEZE (R20 P^c/CR on a window of n (h)-states with r ≤ ℓ; freeze lasts to the phase's last H2 state, through θ-, w-changes
+  and fallbacks); Corollary RATCHET; Lemma BLOCK; Theorem X-RUN (SN-prefix crossings per fallback-free run O((d_o+1)n²), H1 part);
+  Theorem SUB (R20 C/P^c/CR/XA on (w, r)-subruns); FBF FALSE with θ moving (1,442 entries after fallbacks; b6_xl2_n32). All lane PROVED,
+  unrefereed. Tools + data in experiments/new/box34 (data/ committed, out/ gitignored).
 
-### IN FLIGHT (others)
-- L-SI successor 3: non-circular θ-change bound per scope run; P-N5-CLS (CLS1) with both referees. L-RED 15 attacks SO / LP.
-
-### NEEDS / next (successor 14, or me if the box continues)
-- Packet P-N5-SN (docs/new/P-N5-SN-box33.md, l-new c196e3d1, sha1 340d4f29…): OR, TC-SPLIT, R-STICK + SN-PREFIX, H3H2, LEAVE,
-  ABS-COUNT, WK; ABS-L CONDITIONAL on L-SI's NL (P-N5-CLS). Asked the Lead to route it to both referees (03:35Z). Answer their items in
-  a NEW docs/new/P-N5-SN-fixes-box33.md; never edit the packet. If a fixes file gets cited by a landed RESULTS entry, it freezes too.
-- EXIT-R is FALSE (L-RED exitr_cex_n48); pursue ABS-COUNT's REL term (exit releases inside c_w = c_θ prefixes; LEAVE: each needs an
-  F-ward relevant change of level ≥ r).
-- Open per phase (READING, N5-K-box33 §4, §9): the f ↔ absorption loop. Per level (with L-SI's CLS1): releases of absorbed exits at
-  level-M fallbacks. EXIT-R in the c_w = c_θ case outside CLS1 case-2 gaps (185 library ε-transitions).
-- Not routed: OB_R, OB (CONJECTURES), G-N1-LB.
+### NEEDS / next
+- Packet for referees (FREEZE, RATCHET, BLOCK, X-RUN, SUB) when the Lead asks; never edit a packet once pinned.
+- Open core now: the loop f ↔ X (polynomially equivalent per phase); residue (L1) fallback evictions below r inside frozen r = ℓ
+  blocks + re-entry; (L2) ¬(h) interruptions; ¬H1 SN states. Ideas: count fallback evictions per frozen block via CLS1 levels.
 
 ## Things only I know (successor 13)
 - The crossing problem is an SN-regime problem: at S4a steps, outside c_w = c_θ, R only grows (R-STICK uses only W monotone, Ξ ⊴ W,
@@ -267,7 +244,7 @@ reabsclimb b6 (5, 24, -48): same exit ≤ 5 absorptions per phase, ≤ 24 absorp
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
 - (succ. 13, box 33) "ε_{H1} ≤ (d_o − 1)(f + 1) per phase": FALSE (L-RED fdd801b). experiments/red/so/instances/epsseg_cex_n48.pg (sha1
-  b4c7dcb0…): f = 0, 17 H1 ε-transitions, d_o 17 (exit 33 absorbed at 7, released at the S4a step 8 → 9, re-absorbed at 13). ABS-COUNT
+  b4c7dcb0…): f = 0, 17 H1 ε-transitions, d_o 17 (exit 33 absorbed at 7, released at the S4a step 8 → 9, re-absorbed at 14; correction 05:31Z, CHECKER C39). ABS-COUNT
   (with REL) holds with equality.
 - (succ. 13, box 33) CONJECTURE EXIT-R (ε form) and ORX: FALSE (L-RED box 37). experiments/red/so/instances/exitr_cex_n48.pg (sha1
   7a663df2…, n 48, o = 0): ε-transition 4 absorbs exit 13, Even 13 leaves R at the S4a step 5 → 6 (an (h) state before any fallback of

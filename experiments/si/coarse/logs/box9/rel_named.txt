@@ -1,0 +1,1 @@
+TOTAL {'RE': 249, 'max_RE_run': 53, 'fb_ge0': 252, 'flat_chk': 252, 'blk_hiM': 0, 'blk_B': 0, 'max_B': 0, 'brk_at_fb': 0, 'blocks': 75, 'blk_fb': 252, 'blk_A': 0, 'blk_rel': 371, 'max_N': 25, 'max_A': 0, 'max_rep': 1, 'blk_rabove': 69, 'Nmax_vs_tails': 0, 'consec_chk': 177, 'evfrz_chk': 231, 'int_chk': 185, 'onerise_chk': 224}

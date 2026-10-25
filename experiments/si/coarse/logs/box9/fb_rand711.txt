@@ -1,0 +1,1 @@
+random 711 1500 {'tr': 152, 'fb': 30, 'inr': 5, 'blocks': 141, 'maxfb_block': 1, 'viol_i': 0, 'viol_ii': 0, 'viol_iii': 0, 'viol_iv': 0, 'phases': 1638, 'worst_ratio': 1.0, 'max_fb_phase': 1, 'max_inr_phase': 1} []

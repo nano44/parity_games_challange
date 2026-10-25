@@ -1,7 +1,31 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Resume point (successor 3, box 8; PARKED 2026-10-25 ~02:35Z at ~500k context after freezing P-N5-CLS; LANE-RESTART step 1)
+## Resume point (successor 4, box 9; Lead GO 04:52Z 2026-10-25; session_019zCLqPUCjkJxMD4vZoJ8TA)
+Handover check 1cef5052 (Lead 5/5). Trunk merged a08c41d8. Box 9 write-up: docs/si/N5-C-box9.md. Code: experiments/si/coarse/
+fbw.py, reltrace.py, levcheck.py, jclimb.py modes HEQ / REP. Logs: experiments/si/coarse/logs/box9/.
+### DONE (PROVED by L-SI succ. 4, unrefereed)
+- (1) Tool fix bf8be06f: level ∞ = mono.INF = 10**6 (mono, fbcount, xing/carries); 15 re-run logs byte-identical (n ≤ 64); levcheck in check.sh.
+- (2) Lemma FBW (every game): at an Even S4c fallback every gate has level ≤ max(δ, −1), δ = Ξ/W gap at its two ends (premise:
+  R18 Lemma S (c) = R17 (F1) applied to S4a's computation, which returns σ_k at a fallback). Corollary FBW-S: in-scope M_k ≤ max(r_k, −1).
+  Theorem CLS2: fallback levels non-increasing along a whole scope run, every kind. (H-EQ) CLOSED, (H-KIND) unnecessary.
+- (3) FLAT-ALL, STRETCH, Theorem PL: level-M block N ≤ n_E(1 + D_M), D_M = dirty intervals; first break of a dirty interval is an
+  absorption above M (U-loc + Lemma OR); with r > M on the block D_M ≤ d_o − 1 + REL_M (ABS-L + NL (ii)). Corollary PL-S additive.
+  Also ONE-RISE, CONSEC, FB-RE.
+### DATA
+- FBW: named 272 fb / 837 gates, library 694 / 2,384, random 141 fb: 0 failures. In-scope u* = none fallbacks: 0 anywhere.
+- reltrace: 75 + 169 blocks; COARSE_M breaks inside blocks 0, gates above M inside blocks 0, tail repeats per block 0.
+- Lemma ABS-O (PROVED): the cycle an absorption closes has, above max(g, rank c), only vertices of P(Ξ_j x0); so rank o ≤ max(g, rank c).
+  DEAD END as a route to NJB: every in-scope R→F gate has level >= rank o when rank o > rank c, so no block has M < rank o (0 / 778).
+- CONJECTURE NJ-INT (stronger than NJB): no θ-change above L = M_k0 between consecutive in-scope fallbacks with r > L. DATA 562 / 0.
+### NEXT
+1. CONJECTURE NJB (no absorption above M strictly inside a level-M block) => ≤ n_E fallbacks per level (second half of (CL-S)).
+   Attack: an exit released at a level-M fallback, re-absorbed above M later in the block, needs its value to drop below the
+   minimiser's at a level > M; use FLAT-ALL (ii) + ONE-RISE on o's exits.
+2. Blocks where r drops to M (NL / ABS-L unavailable); level −1 fallbacks.
+3. If the Lead asks: a packet P-N5-FBW (FBW, FBW-S, CLS2, FLAT-ALL, STRETCH, PL). NEVER edit P-N5-CLS / fixes files.
+
+## Resume point (successor 3, box 8; superseded by box 9; PARKED 2026-10-25 ~02:35Z at ~500k context after freezing P-N5-CLS; LANE-RESTART step 1)
 IN FLIGHT: nothing running (all climbs finished; outputs in experiments/si/xing/out/jclimb/, local only).
 NEEDS: none. Lead pinned P-N5-FB (R25 landed trunk 40ef7ed); fixes1 8548c3fc / fixes2 4d5b3716 are cited by sha1: never edit them.
 (Box 8 header: Lead GO 00:18Z 2026-10-25; R25 LANDED trunk 40ef7ed from P-N5-FB.)
@@ -220,6 +244,8 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 - NOT opened: Ye 2011, Math. Oper. Res. 36(4):593-603, DOI 10.1287/moor.1110.0516 (cited only through Scherrer Thm 1).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- (box 9, succ. 4) ABS-O as a route to NJB: vacuous, since every block has M >= rank o when o counts in θ's path set (abso.py fb_hi = 0 of 778;
+  obstruction: R→F gates differ at o). docs/si/N5-C-box9.md §3b.
 - (successor 3, box 8) OG′ ("gates into F at k+1 never exceed MF_k = the max level of the gates INTO F at k") FALSE:
   experiments/red/xing/instances/x31_re24.pg (sha1 49eaf50e, 𝒞^1O), transition 1 -> 2: MF_1 = -1, while gate (4, 8) at state 2
   has level 22. At state 1, 4 and 8 are in R (the level-22 gate is (8, 14), R -> R); at the arena step R collapses from 21 vertices

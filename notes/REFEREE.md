@@ -5,7 +5,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - docs/referee/R-N5-SN.md (from 03:55Z by date -u): OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, WK, ABS-L (premise = R29, signed by both) SIGNED;
   LEAVE WITH SN-3 (r=⊥ wording); ABS-COUNT WITH SN-1 (proof's "ends ≤ d_o−1" needs H1 at run end; proved d_o + REL; (d_o−1) form OPEN, 0 cex,
   climbs absc_climb.py) and SN-2 (+f for ε at fallbacks). WM transfer to (λ_Ξ, τ) VALID. Data vacuous: WK hypothesis, ABS-L absorptions.
-  Tools scratch/sn_probe.py, absc_climb.py. NEXT: §C when R2-N5-SN exists (docs/referee-2/ NOT read for SN).
+  Tools scratch/sn_probe.py, absc_climb.py. Addendum 58dd6e86 (L-RED probes). §C vs R2-N5-SN (ddbecaf + 91d95e8): no verdict differs;
+  SN-1/2 = G-SN-1 (a)/(b), same repair; N-SN-1 accepted (my Bellman route avoids it); 5-row map. NEXT: park on the Lead's word.
 - Lesson: a counting proof "starts ≥ 0, ends ≤ B" needs B at the END state; check the end state satisfies the hypothesis giving B.
 
 ## Resume point (successor 6): P-N5-CLS (GO 02:40Z Lead stamp; pin 486107a; docs/si/P-N5-CLS-box8.md sha1 5bbfd872…; L-SI succ. 3)
