@@ -98,7 +98,17 @@ with Σ t_Q ≤ T := n² + 2n − 1: X_SN ≤ 13(d_o + 1)n³(f + 1 + T) + T per 
     8 = 7 + 1), since 13 → o directly.
 - θ changes between the two drops (length 10 → 7), so this instance is consistent with DROP-LEN.
 
-## 4. DROP-LEN (CONJECTURE, DATA)
+## 4. DROP-LEN: FALSE (DEAD END; found by REFEREE succ. 7, re-run by the Lead and by this lane)
+- REFEREE's instance docs/referee/R-N5-L2/droplen_cex_n12.pg (sha1 a6af26db3f75540aa0f519cf0420b890fd2d4cc9; n 12, o = 0; docs/referee/R-N5-L2.md §8).
+  - Verified here: n5.py n5 gives 4 iterations and 0 fallbacks; check_sol2.py gives "zielonka(oink zlk) OK strategies verified"; exactly one
+    Odd vertex with out-degree > 1.
+  - One phase. θ = w = (2, ∅, 1) is constant. H1 toggles at every transition, so there are 2 drops with θ constant, in one fallback-free
+    run. Every transition is one S4a switch of σ(2), and c_θ = 2 is odd (σ(2): 0 → 1 → 7 → 9 → 10, with L rising each time).
+  - Exact obstruction: a switch at c changes no Ξ-value (§1 remark). With c adjacent to o (here o → 2 directly), the drop and the regain
+    are both pure σ(c) switches, so θ never moves.
+- TOGGLE (togz.py on it): 4 toggles, 3 by σ(c) only and 1 by Z and σ(c), 0 failures. TOGGLE-COUNT is therefore the bound that holds, not a
+  fallback.
+- The text below is the pre-refutation record (kept as history).
 - Statement (N5-REL-box34 §13): between two drops of a phase, θ changes.
 - With Theorem TOGGLE it is no longer needed for a polynomial toggle count. It would improve T from n² + 2n − 1 to 2n + 1.
 - Why TOGGLE does not give it. A drop by σ(c) alone changes no Ξ-value (§1 remark), so θ can stay. What forces the length change in both
@@ -185,3 +195,34 @@ Proof.
   pair (cycle node, P) is frozen for the rest of the phase") is FALSE in data: 4 library cases (first claimF_len_cf1) and 1 random case.
 - What this does for (L1): with CN-LAST, the level −1 fallbacks of a phase are ≤ 1 + (level −1 fallbacks with a non-cycle-node gate). The
   open fallback count per scope run is then NJB (levels ≥ 0, L-SI / L-RED) plus that residue. The f ↔ X loop itself is untouched.
+
+## 8. (c): the Lead's "tie (L1) to X-RUN" route, and CONJECTURE PF-THETA (READING, DATA)
+- The loop, restated with what is landed or lane-PROVED:
+  - per phase, Θ ≤ (n − 1) + n(X + 1) + X (R27 (g) Lemma TH);
+  - f = O(n⁴(1 + X)) (R27 (h) Corollary XJ);
+  - X ≤ Σ_runs [SN-prefix crossings + (n − 1)] + f ≤ 13(d_o + 1)n³(f + 1 + T) + T + (n − 1)(f + 1) + f (X-RUN′ + TOGGLE-COUNT + SN-PREFIX).
+  So X and f are polynomially equivalent per phase, and both are open. To break the loop, a count must charge fallbacks to something
+  other than crossings.
+- Per scope run, the box-34 READING (N5-REL-box34 §9: E1 = R20's FBF in a scope run; FBL for THR fallbacks with u* ≠ none) gives:
+  non-flat THR fallbacks ≤ n·(1 + θ-changes in the run). θ-changes before the run's first fallback are poly(n) (X-RUN with H1 throughout, plus
+  TH's per-interval count). So what is missing is a count of θ-changes AFTER fallbacks.
+- **CONJECTURE PF-THETA (DATA).** In a scope run, while the last fallback has level M, θ changes at most n times (for each M).
+  - With CLS1 (R29: fallback levels never rise along a scope run at THR fallbacks with u* ≠ none) there are ≤ n + 1 values of M. So PF-THETA
+    gives ≤ n(n + 1) θ-changes after fallbacks per scope run, and, through the READING, poly(n) non-flat THR fallbacks per scope run, without NJB.
+  - NJB implies the poly-constant form: ≤ n_E fallbacks per level, each followed by a fallback-free stretch with poly(n) θ-changes. So
+    PF-THETA is no stronger than NJB in power. Its use is as a different target: it counts θ, not Mn.
+  - DATA (data/postfb_lib.txt; library + experiments/si/coarse + experiments/red instances): 131 scope runs with a fallback. Max θ-changes
+    under one fallback level: 24 (sc32, n 32, after its only fallback, level 30). Max over runs of post-fallback θ-changes /
+    (n · #distinct fallback levels): 0.81 (j4_n40: 34 changes, 4 fallbacks at levels 39, 38, 38, 37).
+  - Climbs pfclimb.py (fitness = max θ-changes under one fallback level, then fallbacks): results in §9.
+- Where a proof stops (OPEN). While the last fallback level is M and r > M, MINSET (b) freezes the COARSE_M values of the free exits. So
+  θ's changes at levels ≤ M are changes of P(θ) ∩ V_{≤M} and of length, along the min exit's F-path. They are R17 one-player changes on F
+  between crossings (TH), and nothing yet bounds the crossings between two fallbacks of one level except X-RUN's poly(n) per run. The
+  needed new ingredient is the same as for NJB: a reason why the drain/refill loop cannot repeat at one level more than poly(n) times.
+- Thcls DATA for the same corpus (data/thcls_lib.txt): 200 scope runs; θ-change kinds after fallbacks, by level relative to the last
+  fallback level:
+  | kind | above (gt) | equal (eq) | below (lt) |
+  | --- | --- | --- | --- |
+  | ABS | 49 | 37 | 427 |
+  | OVT | 0 | 43 | 259 |
+  | VAL | 0 | 82 | 60 |
