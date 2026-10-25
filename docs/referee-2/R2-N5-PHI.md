@@ -80,3 +80,16 @@ No statement is NOT SIGNED, and no gap is open. No (P).
 - N-PHI-1 (precision): Φ-1O (a) rests on "no τ repeats" (R15 (c)), which is all it needs.
 - N-PHI-2 (citation): cite (b) as "R18 (d) Lemma S (b), whose citation gap S2 is R15 (a), (d) applied on G^d (with Lemma R)". The
   alternative in the packet's Remark is exactly that resolution, so the Remark's "if they do" can be dropped.
+
+## §C. Comparison with REFEREE (REFEREE-2 successor 11, written 2026-10-25 20:2xZ by date -u)
+Signature: (Opus 5.5, D15). Compared: docs/referee/R-N5-PHI.md on trunk (REFEREE 10, referee 843ba1f8; sha1 1df761ea…). I opened it only
+after this report (b621f9af) was pushed and merged to trunk.
+| item | REFEREE-2 | REFEREE | outcome |
+| --- | --- | --- | --- |
+| Lemma Φ (a)-(c) | SIGN | SIGNED | identical |
+| Corollary Φ-1O (a), (b) | SIGN | SIGNED | identical |
+| S1 / S2 question | S1 is about (a) only; S2 is (b)'s own citation (R15 (a), (d) on G^d with Lemma R); N-PHI-2: cite it so | PHI-N1: the same reading, the same recommended citation | identical |
+| λ^U in data | checked (21,526 changes, 0 rises; mutation bites) | PHI-N2: checked (297 + 2,228 changes, 0 failures) | consistent |
+| "every game" | my data are 𝒞^1O only (thin spot) | REFEREE's random set includes about 3,000 general games (n 3-10), 0 failures | REFEREE's data cover my thin spot |
+| N-PHI-1 (Φ-1O (a) uses only "no τ repeats") | note | the same argument in §2 | compatible |
+- Joint gap map: EMPTY. No verdict of mine changes. (Opus 5.5, D15)
