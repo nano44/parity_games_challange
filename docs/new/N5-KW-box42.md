@@ -1,4 +1,4 @@
-# N5 on 𝒞^1O, box 42 (2): W lags Ξ by one step (WLAG); on every fallback-free run of a stretch both frames freeze coarsely (KW-FREEZE), so (K_W) holds given f, and (E) is needed only on U3 / U23 stretches with c_w even and above c_θ
+# N5 on 𝒞^1O, box 42 (2): W lags Ξ by one step (WLAG); on every fallback-free run of a stretch both frames freeze coarsely (KW-FREEZE), so (K_W) holds given f; events on U3 / U23 are bounded by K_S and f_S (E-HI), so (E) holds given f too
 L-NEW successor 21 (Opus 5.5, D15/D18, L37/L40), session_01YJHHx1t8hvqkDnKzMU2Lfa. Working doc (not a packet; the Lead decides any
 freeze). Started 20:05Z by date -u, at the Lead's request of 19:48Z (Lead's stamp): "(2) K, meaning (E) and (K_W), via the κ lens.
 Repair κ-FREEZE-F's S4a length case, or find a different charging." Version 2, 20:3xZ: the first version (l-new 0c0d439e, sha1
@@ -20,10 +20,10 @@ freeze. It supersedes version 1 where they differ.
 | §2 Lemma CSTRICT | on a stretch, for x ∈ R ∖ {o} and successors z, a ∈ R: a COARSE_h-strict W-comparison is an honest strict comparison with the same sign | PROVED |
 | §3 Theorem KW-FREEZE | on a fallback-free run ϱ of a stretch: (a) COARSE_h(W) and COARSE_h(Ξ) on R are constant from transition n − 1 of ϱ on; (b) ≤ n + 2n·\|R\| + N_F(ϱ) transitions of ϱ change W on R (N_F(ϱ): transitions of ϱ with a Ξ-change on F; the N_F term only if c_θ ≻ c_w); (c) if c_θ ⪰ c_w, ≤ (n − 1) + 2n·\|R\| change Ξ on R; (d) if c_w ≻ c_θ and c_w is odd, ≤ (n − 1) + 2n(m + n) + #(c_w-switches) change Ξ on R | PROVED |
 | §4 Corollary KW | every stretch S has K_S ≤ (f_S + 1)(n + 2n\|R\|) + N_F(S) ≤ 3n²(f_S + 1) + n; so (K_W) per phase ≤ 3n²(f + #stretches) + n(X + 1) | PROVED |
-| §4 Corollary NR′ | Ξ-changes on R per stretch, without K_W or E, except U3 / U23 with c_w even and c_w ≻ c_θ | PROVED |
-| §4 READING | with Theorem NH (P-N5-NH-box42): O and T per phase ≤ poly(n)·(1 + X + f + E_even) | READING |
-| §5 | (E_even): events in U3 / U23 stretches with c_w even, c_w ≻ c_θ | OPEN |
-| §6 | DATA | DATA |
+| §4 Corollary NR′ | Ξ-changes on R per stretch without K_W or E, except U3 / U23 with c_w ≻ c_θ (there via R26 (d) and §5) | PROVED |
+| §5 Lemmas H-PATH, DIR, CASC-B, CW; Corollary KC; Theorem E-HI | on U3 / U23 stretches with c_w ≻ c_θ, events are bounded by K_S and f_S | PROVED |
+| §6 | assembly: O, T per phase ≤ poly(n)·(1 + X + f); with FX, FBPOLY, PHI (in review), N5 on 𝒞^1O polynomial | READING (conditional) |
+| §7 | DATA | DATA |
 
 ## 0. Objects (as in docs/new/P-N5-NH-box42.md §0, frozen; restated where needed)
 - Phase, R (o ∈ R), F, crossing, stretch (R, θ, w constant), π_v (v's σ-route before its first visit of o; π_o := ∅), H1, H2,
@@ -169,19 +169,92 @@ odd only the c_w-switches count. So along this route the open core of G-N5-TIME 
 - (E_hi): kind changes (across c_w) and c_w-switches in U3 / U23 stretches with c_w ≻ c_θ, for c_w even;
 - plus c_w-switches alone, for c_w odd.
 
-## 5. (E_hi) (OPEN)
-- Where it lives. U3 / U23 stretches with c_w ≻ c_θ. After the freeze (KW-FREEZE (a)), W moves only through lengths (< 2n|R|
-  W-changing transitions per run). What remains are W-flat runs: switches at W-ties.
-  - CASC-U3 (RESULTS R26 (c)) bounds a W-flat run between events.
-  - Events are W-tie switches across c_w (a kind change at equal W-value: same set above c_w, same length to c_w), or c_w's own
-    re-routings of A2.
-- What is known. TB-odd kills W-tie cycling at non-cycle-node vertices when c_w is odd. For c_w even (BFS mode, where the K-chain
-  lives), TB-even's lexicographic key is the only potential, and it needs W unchanged along the whole old play.
-- Next. (i) A W-tie kind change at y keeps W(y) and lowers pk(y) (TB-even), if W is unchanged along y's old play. Is the number of
-  kind changes per W-flat run ≤ |R|? (ii) c_w-switches: each re-routes A2 at a W-tie of c_w. Are they bounded by the honest
-  rises on A2 (WLAG-type)? (iii) Data: where the library's E* = 34 sits (c_w parity, c_w vs c_θ).
+## 5. Theorem E-HI (PROVED): events on U3 / U23 stretches with c_w ≻ c_θ are bounded by K_S and f_S
+Written 20:4xZ by date -u. Setting: S is a stretch with ¬H2 and c_w ≠ o (U3 or U23), and c_w ≻ c_θ. KIND(v) for v ∈ R ∖ {o}: A iff
+c_w ∈ π_v (c_w itself is kind A); o counts as kind B (π_o = ∅). The PREFERRED kind P is A if c_w is even, B if c_w is odd. A W-FLAT
+transition is a non-fallback transition with W unchanged at every vertex of R; the others are the K_S W-changing ones and the f_S
+fallbacks.
+### Lemma H-PATH
+For v ∈ R (o included): c_w ∈ P(Ξ(v)) iff KIND(v) = A.
+Proof. c_w ≻ c_θ, so c_w ∉ C_Ξ (c_θ tops C_Ξ; under H1, C_Ξ ⊆ F and c_w ∈ R). v's honest path to c_θ is the part of π_v before c_θ if
+c_θ ∈ π_v, and otherwise π_v followed by o's honest continuation (an arc of C_Ξ under ¬H1, a path in F under H1).
+- If c_w and c_θ are both on π_v, then c_w comes first. Otherwise c_w ∈ π_{c_θ}, the σ-route of c_θ. That route is the return arc of
+  C_Ξ from c_θ to o (the honest play from c_θ is the cycle, and its Odd vertices other than o are forced). So c_w ∈ C_Ξ, which is
+  impossible.
+- So for kind A, c_w lies on the honest path, and c_w ≻ c_θ puts it in the path set.
+- For kind B, c_w is not on π_v, not on C_Ξ and not in F, so it is not on the honest path. □
+### Lemma DIR
+At a W-flat transition k → k+1 of S, no vertex changes kind away from P.
+Proof.
+1. Suppose some vertex does. Among those vertices take x with the shortest σ_{k+1}-route to o. Put x′ := σ_{k+1}(x).
+   - KIND_{k+1}(x′) = KIND_{k+1}(x), which is not P. If x′ had changed kind, it would have changed away from P with a shorter route;
+     that contradicts the choice of x. So KIND_k(x′) is not P either. (x′ = o or x′ = c_w: their kinds never change.)
+   - If x did not switch, KIND_k(x) = KIND_k(x′) = KIND_{k+1}(x′) = KIND_{k+1}(x), so x would not change kind. Hence x switched, from
+     a := σ_k(x), with KIND_k(a) = KIND_k(x) = P, to z := x′, with KIND_k(z) not P.
+   - x ≠ c_w (c_w's kind never changes), so x is not its own W-cycle node.
+2. W-flatness gives W_k(z) = W_k(a). Indeed, by (V1), W_{k+1}(x) = W_{k+1}(z) ⊕ x and W_k(x) = W_k(a) ⊕ x. The transition is
+   W-flat at x and z, so W_k(z) ⊕ x = W_k(a) ⊕ x. x lies in neither path set (x's W-path does not revisit x, at k or at k+1), so
+   ⊕ x cancels.
+3. Equal W-values have equal path sets above h = c_w, so by ABOVE-h the honest path sets of z and a agree above c_w. By H-PATH they
+   differ at c_w: it lies in exactly the one of kind A. Every other vertex of the difference is ≺ c_w. So c_w tops the difference. If
+   c_w is even, the kind-A side (a, since P = A) is better for Even; if c_w is odd, the kind-B side (a, since P = B) is. Either way
+   Ξ_k(a) ▷ Ξ_k(z).
+4. So z is not a gate target of x at k. z ≠ a, so z ∉ H_k(x). But σ_{k+1}(x) = z ∈ H_k(x) (S4a). Contradiction. □
+### Corollary KC
+The kind-changing transitions of S number κ_S ≤ (Q − 1) + |R|·Q, with Q := K_S + f_S + 1.
+Proof.
+- A change away from P happens only at a non-W-flat transition (Lemma DIR): at most K_S + f_S = Q − 1 transitions.
+- At each vertex, the changes toward P exceed the changes away from P by at most one. A vertex changes away only at those
+  transitions. So it changes toward P at most Q times, and the transitions with such a change number ≤ |R|·Q. □
+### Lemma CASC-B
+Let Γ be a maximal run of consecutive W-flat transitions of S at which no vertex changes kind. Number its steps 0, 1, …. A kind-B
+vertex v switches only at steps ≤ |π_v| − 2.
+Proof. This is RESULTS R26 (c) CASC-U3 (i). Its proof (P-N5-U23-box31 §2 step 2, with §1 step 4) uses only the following:
+- W-flatness;
+- constant kinds;
+- that kind-B routes consist of kind-B vertices, with W(v) = π_v ⊕ w and Ξ(v) a function of σ along π_v with constant terminals;
+- TB's choice rule, with the root-first keys of kind-B candidates sharing the prefix (A1, o).
+R26's sub-runs exclude c_w's switches as well. On Γ they are allowed, and they touch none of these:
+- c_w stays kind A, and every other vertex keeps its route;
+- they re-route A2 only, which lies on no W-path to c_w and on no kind-B route;
+- A1 is unchanged (it is o's W-path to c_w).
+Switches of kind-A vertices to kind-A targets also leave kind B alone. A re-routing of A1 by kind-A vertices at W-ties changes the
+shared prefix for all kind-B candidates at once, so it does not change their order. □
+### Lemma CW
+c_w's switches in S number ≤ f_S + (deg(c_w) − 1)(1 + B_S + κ_S), where B_S is the number of transitions of S with a switch of a
+kind-B vertex.
+Proof.
+1. Inside S, c_w's targets are kind B or o. A kind-A target's route passes c_w, so c_w's route would no longer reach o: a crossing.
+2. At a non-fallback switch of c_w, the new target is a gate target: Ξ_k(z) ▷ Ξ_k(σ_k(c_w)).
+3. The honest values of kind-B vertices and of o depend only on σ along kind-B routes and on θ (Lemma SW, θ constant). So they change
+   only at transitions with a switch of a kind-B vertex, or with a kind change (a vertex entering or leaving kind B).
+4. Between two such transitions, the values of c_w's possible targets are fixed. Each switch moves σ(c_w) to a strictly better one, so
+   there are ≤ deg(c_w) − 1 switches. □
+### Theorem E-HI
+E_S ≤ κ_S + f_S + (deg(c_w) − 1)(1 + B_S + κ_S), with B_S ≤ (Q + κ_S)(|R| − 1) and κ_S ≤ (|R| + 1)Q − 1, Q = K_S + f_S + 1.
+Proof.
+- An event is a kind change of the switcher (counted in κ_S) or a switch of c_w (Lemma CW).
+- B_S: the W-flat, kind-change-free runs Γ number ≤ Q + κ_S. Each has kind-B switches at ≤ |R| − 2 of its steps (CASC-B; π_v ⊆
+  R ∖ {o}). The other transitions number ≤ (Q − 1) + κ_S. □
+- With Corollary KW (K_S ≤ 3n²(f_S + 1) + n), E_S is polynomial in n and f_S: E_S = O(deg(c_w)·n⁴(f_S + 1)).
 
-## 6. DATA (experiments/new/box42/; one Odd choice vertex asserted, other files skipped)
+## 6. What this gives (READING, not to sign)
+- Every class is now bounded given f and X:
+  - P3′: RESULTS R22 (c);
+  - U1: R24 (d), given f;
+  - U2: R26 (b), with K_S from Corollary KW;
+  - U3 and U23 with c_θ ⪰ c_w: Corollary NR′ (Theorem KW-FREEZE (c));
+  - U3 and U23 with c_w ≻ c_θ: R26 (d), with K_S from Corollary KW and E_S from Theorem E-HI.
+- Feeding this into Theorem NH (P-N5-NH-box42): O and T per phase are ≤ poly(n)·(1 + X + f).
+- With P-N5-FBPOLY (f ≤ 1 + (n − 2)(2n − 1)) and P-N5-FX (X = O(n⁷)) per phase, and P-N5-PHI (≤ n(n − 1) + d_o phases), N5 on 𝒞^1O
+  would make polynomially many iterations.
+- This is CONDITIONAL. P-N5-NH-box42 is in review; this working doc is lane-proved and unrefereed; FX, FBPOLY and PHI are in review,
+  together with their inputs P-N5-PFZ and P-N5-RHO.
+- 𝒞^1O is a subclass that is polynomial by other means. Nothing here touches games with two or more Odd choice vertices. G-N5-TIME
+  stays OPEN.
+- The exponents are large (T per phase O(n¹¹·(1 + X + f)) from Theorem NH, with X = O(n⁷)). They are not tight.
+
+## 7. DATA (experiments/new/box42/; one Odd choice vertex asserted, other files skipped)
 - kwfreeze2.py (version 2 statements). It checks:
   - Lemma CSTRICT at every state of every stretch, for every Even x ∈ R ∖ {o} and every pair of successors in R;
   - Theorem KW-FREEZE (a) for W and Ξ, from run index n − 1;
@@ -195,3 +268,14 @@ odd only the c_w-switches count. So along this route the open core of G-N5-TIME 
   sub-runs, violations 0.
 - wlag.py (Lemma WLAG): §1. kwprof.py: inside OTHER U2 / U3 / U23 stretches, 121 / 121 W-changes after an in-stretch S4a step have
   their new edge inside R, with an honest rise at its head one step earlier.
+- evcheck.py (§5: DIR, KC, CASC-B, CW, E-HI's event split) on U3 / U23 stretches with c_w ≻ c_θ:
+  - lib41: 20 qualifying stretches (all c_w even), 34 kind-change transitions, 2 c_w-switches, max events per stretch 14; violations 0.
+  - Random 𝒞^1O n 6-18 (seed 4206, 5,185 runs): 1 qualifying stretch, violations 0.
+- evstress.py (stress; also re-runs kwfreeze2.go2 on every run):
+  - `--starts lib41.txt 150 4207`: the 10 library games with a qualifying stretch, 150 random start pairs each (1,500 runs): 285
+    qualifying stretches, 820 kind-change transitions, 6 c_w-switches, max events 14; evcheck violations 0; kwfreeze2 1,315 runs,
+    5,411 strict cases, violations 0.
+  - `--climb lib41.txt 120 4208` (edge / priority mutations, fitness = events): 1,200 candidates, best 15 events; violations 0 in both
+    checkers.
+- Not exercised by any data: c_w odd with c_w ≻ c_θ (no such stretch occurred), so DIR's odd branch and KW-FREEZE (d) rest on the
+  proofs alone.
