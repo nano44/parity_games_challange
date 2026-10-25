@@ -38,7 +38,9 @@
 - C36 (R27 = P-N5-LP pinned bc42f2c + P-N5-SO pinned 1ef02bb) 01:5xZ (date -u):
   - main report docs/checker/C36.md: FAIL at e8c26f3 (draft sha1 d22885f8…): E-1 joint gap map's SO rows are REFEREE-2 §C only (REFEREE §C
     = Part 1 only); E-2 HI's "≤" Consequence single-signed (REFEREE HI-1); N-1 limit (v) wake type sourced only in notes/L-NEW.md; N-2.
-  - Add. 1: PASS at 1d35e8e (draft sha1 a9ba93ec…; E-1, E-2, N-1, N-2 fixed); awaiting landing (Add. 2).
+  - Add. 1 c64ec130: PASS at 1d35e8e (draft sha1 a9ba93ec…; E-1, E-2, N-1, N-2 fixed);
+  - Add. 2: R27 landed verbatim at trunk 58de2bc. C36 CLOSED.
+- PARKED.
 - Next after: P-N5-OE (pinned 361d18c), with both referee successors 6.
 - Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs. In a worktree, symlink tools/oink/build.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
