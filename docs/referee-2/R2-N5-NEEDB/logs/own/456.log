@@ -1,0 +1,10 @@
+ANTIW_blocked_edges: 1
+ANTI_W_checks: 5
+ANTI_Xi_checks: 5
+THR_inphase_fallbacks: 1
+THR_optima_tested: 1
+XG_R_to_F_optimal_edges: 1
+runs: 4
+states: 12
+RESULT OK violations=0
+experiments/si/lv13/logs/best_1301.pg exit 0

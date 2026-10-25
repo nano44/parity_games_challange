@@ -1,0 +1,10 @@
+ANTI_W_checks: 45
+ANTI_W_exceptional_used: 30
+ANTI_W_with_exceptional_edges: 43
+ANTI_Xi_checks: 45
+ANTI_Xi_exceptional_used: 31
+ANTI_Xi_with_exceptional_edges: 43
+runs: 4
+states: 143
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/b6_xs_n48.pg exit 0

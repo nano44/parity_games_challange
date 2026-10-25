@@ -1,0 +1,10 @@
+ANTI_W_checks: 21
+ANTI_W_exceptional_used: 2
+ANTI_W_with_exceptional_edges: 2
+ANTI_Xi_checks: 21
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 4
+runs: 4
+states: 75
+RESULT OK violations=0
+docs/referee-2/R2-N5-SN/climb/absc_c_best.pg exit 0

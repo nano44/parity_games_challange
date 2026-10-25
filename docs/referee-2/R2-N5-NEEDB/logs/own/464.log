@@ -1,0 +1,10 @@
+ANTI_W_checks: 18
+ANTI_W_exceptional_used: 9
+ANTI_W_with_exceptional_edges: 16
+ANTI_Xi_checks: 18
+ANTI_Xi_exceptional_used: 13
+ANTI_Xi_with_exceptional_edges: 16
+runs: 4
+states: 62
+RESULT OK violations=0
+experiments/si/orlens/instances/cycelim_cex_n32.pg exit 0

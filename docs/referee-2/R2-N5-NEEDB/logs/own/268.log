@@ -1,0 +1,8 @@
+ANTI_W_checks: 5
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 5
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 13
+RESULT OK violations=0
+experiments/new/box25/laps/lap_n9_s1_32427.pg exit 0

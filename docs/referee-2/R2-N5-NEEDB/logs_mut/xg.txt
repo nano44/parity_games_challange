@@ -1,0 +1,6 @@
+2386
+VIOLATIONS: 78
+VIOLATION own:gt_a_best.pg#0 XG gate/level at 2 y=18 z=24
+VIOLATION own:gt_a_best.pg#0 XG gate/level at 3 y=31 z=18
+VIOLATION own:gt_a_best.pg#0 XG gate/level at 6 y=2 z=17
+VIOLATION own:gt_a_best.pg#0 XG gate/level at 6 y=10 z=11

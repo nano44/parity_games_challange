@@ -1,0 +1,6 @@
+ANTI_W_checks: 3
+ANTI_Xi_checks: 3
+runs: 4
+states: 6
+RESULT OK violations=0
+experiments/m2/counterexamples/ce1_4v.pg exit 0

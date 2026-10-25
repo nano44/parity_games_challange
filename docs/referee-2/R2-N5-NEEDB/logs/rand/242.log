@@ -1,0 +1,6 @@
+ANTI_W_checks: 3
+ANTI_Xi_checks: 3
+runs: 4
+states: 10
+RESULT OK violations=0
+experiments/new/box22/instances/cyc4.pg exit 0

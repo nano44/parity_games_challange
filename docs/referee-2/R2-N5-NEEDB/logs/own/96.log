@@ -1,0 +1,10 @@
+ANTI_W_checks: 32
+ANTI_W_exceptional_used: 18
+ANTI_W_with_exceptional_edges: 22
+ANTI_Xi_checks: 32
+ANTI_Xi_exceptional_used: 18
+ANTI_Xi_with_exceptional_edges: 22
+runs: 4
+states: 68
+RESULT OK violations=0
+docs/referee-2/R2-N5-PFZ/climb/best_pfz_9502.pg exit 0

@@ -1,0 +1,10 @@
+ANTI_W_checks: 8
+ANTI_W_exceptional_used: 7
+ANTI_W_with_exceptional_edges: 8
+ANTI_Xi_checks: 8
+ANTI_Xi_exceptional_used: 7
+ANTI_Xi_with_exceptional_edges: 7
+runs: 4
+states: 19
+RESULT OK violations=0
+experiments/new/box34/instances/oneh_cex_n32.pg exit 0

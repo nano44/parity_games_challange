@@ -1,0 +1,10 @@
+ANTI_W_checks: 3
+ANTI_W_exceptional_used: 2
+ANTI_W_with_exceptional_edges: 3
+ANTI_Xi_checks: 3
+ANTI_Xi_exceptional_used: 3
+ANTI_Xi_with_exceptional_edges: 3
+runs: 4
+states: 12
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/n5s_maxph_0.pg exit 0

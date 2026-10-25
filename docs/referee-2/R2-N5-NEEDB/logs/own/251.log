@@ -1,0 +1,9 @@
+ANTI_W_checks: 33
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 33
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 93
+RESULT OK violations=0
+experiments/new/box22/instances/pure_22.pg exit 0

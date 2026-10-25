@@ -1,0 +1,6 @@
+ANTI_W_checks: 12
+ANTI_Xi_checks: 12
+runs: 4
+states: 32
+RESULT OK violations=0
+experiments/new/box22/instances/i1hn_oneodd_c24.pg exit 0

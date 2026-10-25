@@ -1,0 +1,80 @@
+#!/usr/bin/env python3
+"""REFEREE-2 succ. 12: hill-climb against P-N5-NEEDB with needb_check (own code; C^1O mutations of ../R2-N5-FRZ/frz_climb.py, as in
+R2-N5-LV/lv_climb.py). Any violation stops the climb and dumps the game to climb/viol_<FIT>_<seed>.pg.
+FIT lv:   toward setting (LV+) (NEED-beta) and XG's hypothesis.
+FIT rise: toward post-rise states (OLD-THREAT), INTO at r > L, and case (i).
+Witnesses: climb/witness_{lvplus,casei,xg}_<seed>.pg (first instance reaching each).
+Usage: lv2_climb.py FIT seed nmin nmax seconds [seedgame.pg]"""
+import sys, os, random, time
+HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
+for d in ("R2-N5-OUT", "R2-N5-ENT", "R2-N5-FRZ"): sys.path.insert(0, os.path.join(HERE, "..", d))
+import out_check as OC, needb_check as EC, frz_check as FC, frz_climb as FCL
+RC = FC.RC
+
+def fitness(st, fit):
+    c = st.c
+    if fit == "lv":    # toward setting (LV+) and XG's hypothesis
+        return (5000 * c["NEEDB_case_A2*"] + 1500 * (c["NEEDB_case_A1"] + c["NEEDB_case_A2'"] + c["NEEDB_case_A2''"])) * (1 if c["NEEDB_LVplus_states"] else 0) + 1000 * c["NEEDB_LVplus_states"] + 100 * c["XG_hypothesis"] + 3 * c["RECORD_inscope_THR_r>=0_M>=0"] + c["THR_inphase_fallbacks"]
+    # rise: toward post-rise states, INTO at r > L, and case (i)
+    return 2000 * c["CASEI_occurrences"] + 200 * c["RECORD_INTO_fails"] + 20 * c["INTO_states_r>L"] + 10 * c["OT_post_rise_states"] + 30 * c["OT_rises"]
+
+START = None   # the seed game's saved start pair (climb seed .txt), used as an extra run while it is valid for the mutated game
+
+def evaluate(g, o, fit, seed):
+    st = FC.Stats(); rng = random.Random(seed)
+    if START and all(START[0][v] in g.succ[v] and START[1][v] in g.succ[v] for v in range(g.n)):
+        A, fbs = OC.run_trace(g, o, START[0], START[1], rng, "own"); EC.check_run(g, o, A, fbs, st, "own:start", rng)
+    for r in range(4):
+        s, t = FC.s3_start(g) if r == 0 else RC.rand_start(rng, g)
+        mode = "own" if r < 2 else "rand"
+        A, fbs = OC.run_trace(g, o, s, t, rng, mode); EC.check_run(g, o, A, fbs, st, f"{mode}:r{r}", rng)
+    return fitness(st, fit), st
+
+def dump(h, path):
+    FCL.dump(h, path)
+    if START:
+        with open(os.path.splitext(path)[0] + ".txt", "w") as fh:
+            fh.write(f"start pair (from the climb seed's .txt; used as run 'own:start')\nsigma0 = {START[0]}\ntau0 = {START[1]}\n")
+
+def main():
+    fit, seed, nmin, nmax, secs = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), float(sys.argv[5])
+    rng = random.Random(seed); os.makedirs(os.path.join(HERE, "climb"), exist_ok=True)
+    if len(sys.argv) > 6:
+        g = RC.parse(open(sys.argv[6]).read()); o = FC.odd_vertex(g)
+        sp = os.path.splitext(sys.argv[6])[0] + ".txt"
+        if os.path.exists(sp):
+            d = {}
+            for line in open(sp):
+                if line.startswith(("sigma0 =", "tau0 =")): k_, v_ = line.split("=", 1); d[k_.strip()] = eval(v_)
+            if len(d) == 2:
+                global START; START = (d["sigma0"], d["tau0"])
+    else:
+        while True:
+            g, o = RC.rand_game(rng, rng.randint(nmin, nmax))
+            if FCL.ok(g, o): break
+    best, st = evaluate(g, o, fit, seed); t0 = time.time(); it = acc = 0; tot = FC.Stats()
+    while time.time() - t0 < secs:
+        it += 1
+        h = FCL.mutate(g, o, rng)
+        if not FCL.ok(h, o): continue
+        f, s2 = evaluate(h, o, fit, seed)
+        tot.c["climb_evaluations"] += 1
+        for k, v in s2.c.items(): tot.c[k] += v
+        for k, v in s2.mx.items(): tot.mx[k] = max(tot.mx[k], v)
+        if s2.c["VIOLATIONS"]:
+            dump(h, os.path.join(HERE, "climb", f"viol_{fit}_{seed}.pg"))
+            for v in s2.viol: print("VIOLATION", v)
+            tot.c["VIOLATIONS"] += s2.c["VIOLATIONS"]; break
+        for cls_ in ("lvplus", "casei", "xg"):
+            wp = os.path.join(HERE, "climb", f"witness_{cls_}_{seed}.pg")
+            key = {"lvplus": "NEEDB_LVplus_states", "casei": "CASEI_occurrences", "xg": "XG_hypothesis"}[cls_]
+            if s2.c[key] and not os.path.exists(wp): dump(h, wp)
+        if f >= best:
+            if f > best: acc += 1
+            g, best, st = h, f, s2
+    dump(g, os.path.join(HERE, "climb", f"best_{fit}_{seed}.pg"))
+    print(f"climb FIT={fit} seed={seed} n={g.n} iterations={it} improvements={acc} best_fitness={best:.1f}")
+    print("BEST-INSTANCE counters:", {k: v for k, v in sorted(st.c.items()) if v})
+    print("BEST-INSTANCE maxima:", {k: v for k, v in sorted(st.mx.items()) if v})
+    FC.report(tot)
+if __name__ == "__main__": main()

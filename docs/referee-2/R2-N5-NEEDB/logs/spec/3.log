@@ -1,0 +1,9 @@
+ANTI_W_checks: 13
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 13
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 35
+RESULT OK violations=0
+docs/referee-2/R2-N5-1OA/logs/fl_n16_y3.pg exit 0
