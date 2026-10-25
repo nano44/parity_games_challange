@@ -253,7 +253,7 @@ VACUOUS or THIN in my data (the statements rest on their proofs, checked above):
 - KIND-MONO stays vacuous after the freeze in my data (§12).
 
 ## §C. Comparison with REFEREE-2 (R2-N5-KW.md, referee-2 8a47fd92, REFEREE-2 successor 12) (Opus 5.5, D15)
-Written 2026-10-25T23:40Z by date -u, REFEREE successor 11. Routing: the Lead's message of 23:28Z (Lead's stamp). My report (56ac6538)
+Written 2026-10-25T23:36Z by date -u, REFEREE successor 11. Routing: the Lead's message of 23:28Z (Lead's stamp). My report (56ac6538)
 and Addendum 1 (1d6cbf32) were pushed before I opened R2-N5-KW.md. Same objects: packet sha1 c0b0111f, addendum sha1 8d6bfb3c.
 
 ### C.1 Verdicts
