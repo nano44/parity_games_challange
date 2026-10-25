@@ -166,3 +166,12 @@ FB-POLY; N5-FBPHASE-box14.md (L-SI 9, sha1 f7aaa624): FB-PHASE, Corollary FX. **
 - FB-CAP shrinks (GMIN 2, |U| ≥ 4): b5_os_n40 → 11 fallbacks at |U| = 16 (slack −3); rise_fb38_n48 → 39 at |U| = 46 (−5);
   njb → 32 at 46 (−12); beta2 → equality at |U| = 4.
 - Not done: (b) the beta2 cascade climb (≥ 3 r = −1 fallbacks in one scope run).
+- Final numbers (19:5xZ, date -u), 0 violations of FB-CAP, FB-PHASE or FX in both runs:
+  | search | runs | FB-CAP max slack | FB-PHASE max slack | max X | FX max slack |
+  | --- | --- | --- | --- | --- | --- |
+  | fbcap17 v2, n 5 random games × every start pair | 16,198,192 (completed) | 0 at \|U\| ≤ 3, −1 at \|U\| = 4, 5 | −6 | 3 | −2 |
+  | fbcap17 v2, n 4 exhaustive, every start pair | 35,271,936 of 83,607,552 (STOPPED at its time limit; partial, not restarted) | 0 at \|U\| ≤ 3, −1 at \|U\| = 4 | −5 | 3 | −2 |
+- Last climbs and shrinks:
+  - FX climbs: −2 (X = 8, fx2_n11) and −21.
+  - FB-CAP shrinks: equality at |U| = 4 (beta2); −3 at |U| = 16 (b5_os_n40).
+  - None hit.
