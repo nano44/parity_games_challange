@@ -1,4 +1,41 @@
-# CHECKER notebook (successor 4, Opus 5.5, D15 / L37; started 2026-10-24 15:22Z by date -u)
+# CHECKER notebook (successor 5, Opus 5.5, D15 / L37; started 2026-10-25 08:55Z by date -u; successor 4's notes below are kept as history)
+
+## Handover check (successor 5)
+Written 2026-10-25 09:01Z (date -u). Predecessor: successor 4, session_01G2KY2Canmj54k82CwBrZYc, handover commit 4d8ba2b5
+(C40 Addendum 1, "handover to successor 5"). Every answer measured from the repository; commands named.
+
+1. Branch, head, distance to trunk.
+   - Container started on claude/checker at 52a1e489 (C27 Add. 4), 'git status': "up to date with 'origin/claude/checker'" (stale
+     remote ref). `git fetch origin claude/checker claude/vibrant-johnson-nxvvxo`: origin/claude/checker 737b1938, later 4d8ba2b5
+     (Add. 1 landed 09:00Z, watched by a fetch loop). `git merge --ff-only origin/claude/checker` → 4d8ba2b5.
+   - `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` at 4d8ba2b5: 1 ahead, 1 behind trunk 3e339bbb.
+   - `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` → merge commit 21b82302: 2 ahead, 0 behind. This file's commit makes 3 ahead.
+2. Open work and next step.
+   - C28-C40 all CLOSED (`grep -n "CLOSED\|Addendum" docs/checker/C40.md`; C40 Add. 1: R31 landed verbatim at 3f2b5c1). Nothing pending.
+   - C41 = R32 (packet P-N5-FRZ). docs/agents/R32-draft.md does not exist (`ls docs/agents/R32*`: none). Inputs at trunk 3e339bbb
+     (`sha1sum`): packet docs/new/P-N5-FRZ-box34.md 39df373c… (frozen edbccb69; pin trunk 25fda0f per the Lead), fixes
+     docs/new/P-N5-FRZ-fixes-box34.md 168de464…, docs/referee/R-N5-FRZ.md f542c2d7… (3a520ce7, Addendum 3171efc7), docs/referee-2/R2-N5-FRZ.md
+     2039d70d… (20a73ca1, §C f546b43c). Still coming: fixes2 (L-NEW successor 15), REFEREE successor 7's §C.
+     Branch heads 09:00Z (`git merge-base --is-ancestor`): referee 1f13a6f9 OFF trunk, l-new 5f02ceba OFF trunk, referee-2 f546b43c on trunk.
+   - Next step: after GO, setup_oink.sh (tools/ absent in this container), then pre-check pins/sha1 across first-parent states, read
+     packet + fixes + both reports, prepare the re-run list; on the Lead's draft sha1, the five checks as in C37-C40, report docs/checker/C41.md.
+3. GAPS rows. `awk -F'|' '$4 ~ /CHECKER/' docs/GAPS.md`: no output; CHECKER owns no row (13 rows). Relevant (landing side):
+   G-N5-TIME | major | L-NEW (L-LIT T22; referees later) | open; last UPDATE: "R31 [refereed-only] LANDED (P-N5-FBW + fixes; CHECKER
+   C40) … In review: P-N5-FRZ (both referees signed; landing next), P-N5-L2, P-N5-NJB, P-N5-TOG". R32 adds one append-only UPDATE to
+   this row; my landed check: old row is a prefix of the new one, status stays open.
+4. Owner rulings verbatim (docs/DECISIONS.md), status from docs/DECISIONS-INDEX.md (`grep -E "^\| *(D1|D15|D18|L37|L40) "`):
+   - D1 (row D1 "active"; key line): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+     including the fleet's own, as wrong until it passes the gauntlet below."
+   - D15 (row D15 "active"; L37 "active"): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+   - D18 (row D18 "active"; L40 "active"): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting
+     ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where
+     needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+   For the gate: no landed claim stronger than both signatures (D1); labels "(Opus 5.5, D15)" checked (L37 (1)); PROVED / CONJECTURE /
+   OPEN and ASSUMPTION labels exact, nothing resting on an ASSUMPTION called PROVED (L40 (3), (4)).
+5. Trap found. The container's clone was stale: local claude/checker AND its remote-tracking ref sat at 52a1e489 (C27, 2026-10-24),
+   13 CHECKER reports behind, while `git status` said "up to date". Working from it would have re-done or contradicted C28-C40.
+   Check: `git fetch` the branch first and compare `git rev-parse HEAD origin/claude/checker` after the fetch; fast-forward only.
+   (Second, measured: tools/oink/build is absent here, so verify's Oink smoke is NOT RUN and re-runs cannot use zlk until setup_oink.sh.)
 
 ## Resume point
 - PARKED 16:22Z (date -u). C28 CLOSED:
@@ -53,7 +90,16 @@
     N-1 L-RED box 37 line sourced only in LEAD-STATE (R67 not on trunk); N-2 sample names; N-3 note.
   - Add. 1 262104b2: PASS at 91582c0 (E-1, N-1, N-2 fixed);
   - Add. 2: R30 landed verbatim at trunk 659f574. C39 CLOSED.
-- PARKED until the next packet.
+- C40 (R31, P-N5-FBW pinned e69772b) 08:41Z (date -u):
+  - main report docs/checker/C40.md: PASS at 61c7cd1 (draft sha1 f2d4a606…); optional N-1 (REFEREE-2's committed logs predate its
+    'tight' counter; outside the draft);
+  - Add. 1: R31 landed verbatim at trunk 3f2b5c1. C40 CLOSED.
+- PARKED for good (successor 4). The Lead starts CHECKER successor 5 for R32 (P-N5-FRZ).
+- HANDOVER to successor 5. Every check C28-C40 is CLOSED; nothing is pending in docs/checker/. Next: R32 (P-N5-FRZ). The method is the five-step gate in
+  'Conventions' plus: verify every sha1 at the pin and across first-parent states; check each cited commit is an ancestor; re-run named
+  instances (n5 + check_sol2 + one-Odd count) and one probe per referee in a detached worktree (symlink tools/oink/build); trace every
+  Data number to a referee file line; landed check = cmp block vs draft lines 3-end with the header fill, delete block + cmp rest vs
+  the pre-landing RESULTS, GAPS row prefix (append-only, agreed with the Lead 02:46Z).
 - Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs. In a worktree, symlink tools/oink/build.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 

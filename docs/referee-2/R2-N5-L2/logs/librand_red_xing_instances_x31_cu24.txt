@@ -1,0 +1,15 @@
+H3C_H2_states: 48
+H3C_phases_with_h: 6
+STEP1'_H3_states: 48
+STEP2'_checks: 156
+XR'_runs: 9
+fallbacks: 3
+phases: 6
+runs: 3
+transitions: 56
+ONE-DROP_max_drops_per_phase (sec.8, no claim): 0
+ONE-H_max_h_runs_per_phase (sec.8, no claim): 1
+XR'_max_C: 0
+XR'_max_REL_Q: 0
+XR'_max_toggles_t_Q: 0
+RESULT OK violations=0
