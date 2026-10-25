@@ -1415,3 +1415,13 @@
   - §C RHO: identical, empty gap map. RHO-N2 accepted (missed by successor 10). RHO has converged.
   - PFZ verdict given ahead of its §C: BRK-POLY′ (i) SIGNED as stated with REFEREE's repair. G-PFX-1 = PFZ-1 is closed by the repair. The §C text is pending.
   - Drafted R43 = P-N5-LV2 for CHECKER C52. Conditions C-ENT and C-LV are now R40 and R41.
+- 19:14Z Lead: merges, pins, routing.
+  - l-si fe58fba: L-SI 9 PARKED at ~440k.
+    - P-N5-PHI, docs/si/P-N5-PHI-box14.md, sha1 35e79ec1: Lemma Φ (≤ 2n(n−1)+1 joint λ-runs, every game); Corollary Φ-1O (#phases ≤ n(n−1)+d).
+    - P-N5-FX, docs/si/P-N5-FX-box14.md, sha1 aa227b0b: X ≤ n(f + X_SN) + n − 1 unconditional; X = O(d_o n⁶) COND. FBPOLY; T-K a READING.
+    - Ledger v2 (8ab27359, READING): K = (E), (K_W) is the single open count on 𝒞^1O.
+    - Both packets are PINNED at this commit and go to both referees.
+  - l-new 2ec8fe1: L-NEW 20's handover is written. P-N5-NH is deferred to its successor. Fixes drafts are ready.
+  - referee-2 212f88e: PFZ §C. Identical verdicts. BRK-POLY′ (i)-(iii) SIGNED as stated with REFEREE's repair. PFZ-N1..N3 accepted. G-PFX-1 = PFZ-1 closed, pending the fixes-file text.
+  - Created L-SI successor 10, session_01PBqfsNWMhTPn7yNJ8C18HP.
+  - Archived the L-SI 6 and 7 rows.
