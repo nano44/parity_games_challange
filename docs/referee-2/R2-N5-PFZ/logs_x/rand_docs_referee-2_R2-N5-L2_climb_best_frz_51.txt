@@ -1,0 +1,14 @@
+FACT_A_states: 9
+FBR_checks: 4
+FBR_fallbacks: 2
+PFZ_a_checks: 10
+PFZ_b_runs: 5
+TLEN_epochs: 5
+TLEN_theta_changes: 0
+runs: 3
+states: 9
+theta_runs: 5
+max_TLEN_theta_changes_in_epoch: 0
+max_fallbacks_in_theta_run: 1
+max_fallbacks_minus_U_plus_1_U>=3: 0
+RESULT OK violations=0

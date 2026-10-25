@@ -1,0 +1,15 @@
+FACT_A_states: 28
+FBR_checks: 392
+FBR_fallbacks: 14
+NCA_identity_states: 27
+PFZ_b_runs: 5
+PFZ_skipped_large_U: 3
+TLEN_epochs: 8
+TLEN_theta_changes: 0
+runs: 3
+states: 28
+theta_runs: 8
+max_TLEN_theta_changes_in_epoch: 0
+max_fallbacks_in_theta_run: 7
+max_fallbacks_minus_U_plus_1_U>=3: 0
+RESULT OK violations=0

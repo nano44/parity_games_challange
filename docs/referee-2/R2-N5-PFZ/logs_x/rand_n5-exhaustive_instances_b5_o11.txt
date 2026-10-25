@@ -1,0 +1,25 @@
+BRKX_rho: 1
+BRKX_stretches: 1
+BRKX_stretches_rho>=1: 1
+FACT_A_states: 22
+FBR_checks: 45
+FBR_fallbacks: 3
+PFZ_a_checks: 70
+PFZ_b_runs: 10
+RECORD_post_freeze_runs_U=1: 4
+TLEN_epochs: 10
+TLEN_theta_changes: 0
+breaks: 1
+breaks_kind1: 1
+breaks_kind2_early: 0
+breaks_kind2_late: 0
+post_freeze_transitions: 0
+runs: 3
+states: 22
+theta_runs: 10
+max_BRKX_rho_S: 1
+max_TLEN_theta_changes_in_epoch: 0
+max_fallbacks_in_theta_run: 2
+max_fallbacks_minus_U_plus_1_U>=3: 0
+max_post_freeze_U_rises: 0
+RESULT OK violations=0
