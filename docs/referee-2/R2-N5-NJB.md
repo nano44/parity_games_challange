@@ -188,7 +188,8 @@ Two differences: ENT-SHAPE (5), where I adopt REFEREE's verdict, and MINSET (c),
 - Data: no disagreement.
   - D_M = 0, Mn never emptied, and no fallback after a rise, in both reports. REFEREE: NAMED 72 + LIB 261 + 6,000 random. Mine: 241 files
     × 3 starts × 2 variants + 14,000 random + 8 climbs (1.77 M runs).
-  - REFEREE's random set had no level ≥ 0 block. My random batch did have blocks (479 blocks over batch, mostly library).
+  - REFEREE's random set had no level ≥ 0 block, and neither did my random batch: all 479 batch blocks are from library / named files.
+    (Corrected at 10:01Z: a first version of this line wrongly said my random batch had blocks.)
 
 ### C.3 Joint gap map (one fixes-file line per row)
 | row | REFEREE | REFEREE-2 | kind / status | fixes-file line |
