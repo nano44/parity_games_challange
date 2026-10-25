@@ -174,6 +174,14 @@ Written 20:4xZ by date -u. Setting: S is a stretch with ¬H2 and c_w ≠ o (U3 o
 c_w ∈ π_v (c_w itself is kind A); o counts as kind B (π_o = ∅). The PREFERRED kind P is A if c_w is even, B if c_w is odd. A W-FLAT
 transition is a non-fallback transition with W unchanged at every vertex of R; the others are the K_S W-changing ones and the f_S
 fallbacks.
+### Lemma PAR (added 20:5xZ)
+On any state of a phase on 𝒞^1O: if c_w ≻ c_θ, then c_w has even priority.
+Proof. RESULTS R21 (a) Lemma XW: Ξ ⊴ W pointwise, so θ = Ξ(o) ⊴ W(o) = w. Valuations compare the rewards of their cycle nodes
+first, so reward(c_θ) ≤ reward(c_w). If c_w were odd, then reward(c_w) = −p′(c_w) < 0. If c_θ is even, reward(c_θ) > 0. If c_θ is
+odd, reward(c_θ) = −p′(c_θ) > −p′(c_w), since c_w ≻ c_θ. Either way reward(c_θ) > reward(c_w), a contradiction. □
+- Consequences: P = A in every stretch where §5 applies, and DIR's odd branch is vacuous. Theorem KW-FREEZE (d) (c_w ≻ c_θ, c_w odd) is
+  vacuous as well; it is kept only as stated. This explains the "no odd-c_w stretch" observation in §7.
+
 ### Lemma H-PATH
 For v ∈ R (o included): c_w ∈ P(Ξ(v)) iff KIND(v) = A.
 Proof. c_w ≻ c_θ, so c_w ∉ C_Ξ (c_θ tops C_Ξ; under H1, C_Ξ ⊆ F and c_w ∈ R). v's honest path to c_θ is the part of π_v before c_θ if
@@ -284,5 +292,5 @@ Proof.
     5,411 strict cases, violations 0.
   - `--climb lib41.txt 120 4208` (edge / priority mutations, fitness = events): 1,200 candidates, best 15 events; violations 0 in both
     checkers.
-- Not exercised by any data: c_w odd with c_w ≻ c_θ (no such stretch occurred), so DIR's odd branch and KW-FREEZE (d) rest on the
-  proofs alone.
+- No data has c_w odd with c_w ≻ c_θ: such states do not exist (Lemma PAR, from RESULTS R21 XW). evcheck.py --rand on four more seeds
+  (4301-4304, n 8-22, random starts, 20,321 runs): violations 0, no odd stretch.
