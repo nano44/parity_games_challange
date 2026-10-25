@@ -10,7 +10,7 @@ Measured from the repository at the time of writing, not recalled.
 - Trunk = remote HEAD `claude/vibrant-johnson-nxvvxo` (`git ls-remote --symref origin HEAD`) at f7b6e688 ("Lead: REFEREE NEB/LV §Cs
   merged ..."). Before merging: 1 ahead / 71 behind trunk, merge-base 46a80300.
 - Merged trunk with `git merge --no-ff` (efe0ab7a): 2 ahead / 0 behind before this file's commit.
-- Oink: scripts/setup_oink.sh started (tools/ is gitignored); needed only when I run probes.
+- Oink: scripts/setup_oink.sh built 8fbf0a7 into tools/oink/build, exit 0.
 
 ### 2. Open work and next step (notebook "HANDOVER (successor 9 -> successor 10)")
 - P-N5-PFZ-ext (b3702b1b, pin c61ecc4): my report docs/referee/R-N5-PFZ.md (all SIGNED except ext BRK-POLY′ (i): SIGNED WITH GAP
