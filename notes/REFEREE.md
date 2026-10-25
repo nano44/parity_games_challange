@@ -7,8 +7,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   no gaps; notes RHO-N1 (o = c_θ with |U| ≥ 2, 89 phases), RHO-N2 (τ(o) = o line: cite R34 (e) + HN = H1, case B too), RHO-N3 (data).
   Tools scratch/rho_probe.py, rho_climb.py (tail / ffb); logs scratch/rho_logs/. Thin: RHO-TAIL change past freeze, |U| ≥ 4 past
   freeze, FREEZE-F (b) (vacuous in lib and 5.95M ffb candidates).
-- NEXT (Lead 17:34Z): LV2 §C vs R2-N5-LV2 a551debf; PFZ-ext §C vs R2-N5-PFZ §X 78896bfc (reconcile (i): my PFZ-1 repair vs R2's
-  G-PFX-1 / (i′)); then P-N5-NHN (trunk 0bb175d, sha1 da7d09ec…; T0U, EV2-FB, SG-EV, T0-PIN, NHN-BOUND, H3-IN-HN, HN-POLY-ALL).
+- DONE: PFZ-ext §C-ext vs R2 78896bfc (PFZ-1 = G-PFX-1; repair proves (i) as stated; joint form (i′) + 2n − 2 until R2 signs repair);
+  LV2 §C vs R2 a551debf (identical; beta2_n11 N = 2 none fallbacks, refutes R2's candidate conjecture). Commit ed8bc207.
+- NEXT: P-N5-NHN (trunk 0bb175d, sha1 da7d09ec…; T0U, EV2-FB, SG-EV, T0-PIN, NHN-BOUND, H3-IN-HN, HN-POLY-ALL).
   RHO §C after R2-N5-RHO's SHA from the Lead.
 
 ## HANDOVER (successor 9 -> successor 10), written 2026-10-25T16:35Z by date -u, context ~490k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
