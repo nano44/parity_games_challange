@@ -221,17 +221,24 @@ R26's sub-runs exclude c_w's switches as well. On Γ they are allowed, and they 
 Switches of kind-A vertices to kind-A targets also leave kind B alone. A re-routing of A1 by kind-A vertices at W-ties changes the
 shared prefix for all kind-B candidates at once, so it does not change their order. □
 ### Lemma CW
-c_w's switches in S number ≤ f_S + (deg(c_w) − 1)(1 + B_S + κ_S), where B_S is the number of transitions of S with a switch of a
-kind-B vertex.
+c_w's switches in S number ≤ deg(c_w)·(1 + B_S + κ_S + f_S), where B_S is the number of transitions of S with a switch of a kind-B
+vertex. (Corrected 20:5xZ: the first wording, f_S + (deg(c_w) − 1)(1 + B_S + κ_S), missed c_w-switches at transitions that also
+contain a kind-B switch or a kind change.)
 Proof.
-1. Inside S, c_w's targets are kind B or o. A kind-A target's route passes c_w, so c_w's route would no longer reach o: a crossing.
-2. At a non-fallback switch of c_w, the new target is a gate target: Ξ_k(z) ▷ Ξ_k(σ_k(c_w)).
-3. The honest values of kind-B vertices and of o depend only on σ along kind-B routes and on θ (Lemma SW, θ constant). So they change
-   only at transitions with a switch of a kind-B vertex, or with a kind change (a vertex entering or leaving kind B).
-4. Between two such transitions, the values of c_w's possible targets are fixed. Each switch moves σ(c_w) to a strictly better one, so
-   there are ≤ deg(c_w) − 1 switches. □
+1. Let T* be the set of transitions of S that are fallbacks, contain a switch of a kind-B vertex, or contain a kind change:
+   |T*| ≤ f_S + B_S + κ_S.
+2. Take a transition k → k+1 ∉ T* at which c_w switches, to z. Kinds do not change at it.
+   - If z were kind A at k, it would be kind A at k+1, and its route would pass c_w. Then c_w's route at k+1 would cycle back to c_w
+     and miss o, so c_w would leave R: a crossing, impossible inside S.
+   - So z, like σ_k(c_w), is kind B or o.
+   - z is a gate target: Ξ_k(z) ▷ Ξ_k(σ_k(c_w)).
+3. The honest values of kind-B vertices and of o depend only on σ along kind-B routes and on θ (Lemma SW, θ constant). On a maximal
+   run of transitions outside T*, no kind-B vertex switches and no kind changes, so these values are fixed.
+4. Along such a run each c_w-switch moves σ(c_w) to a strictly better target among ≤ deg(c_w) candidates: ≤ deg(c_w) − 1 switches per
+   run. There are ≤ |T*| + 1 runs, and at most |T*| c_w-switches inside T*. Total ≤ |T*| + (deg(c_w) − 1)(|T*| + 1)
+   ≤ deg(c_w)(1 + |T*|). □
 ### Theorem E-HI
-E_S ≤ κ_S + f_S + (deg(c_w) − 1)(1 + B_S + κ_S), with B_S ≤ (Q + κ_S)(|R| − 1) and κ_S ≤ (|R| + 1)Q − 1, Q = K_S + f_S + 1.
+E_S ≤ κ_S + deg(c_w)(1 + B_S + κ_S + f_S), with B_S ≤ (Q + κ_S)(|R| − 1) and κ_S ≤ (|R| + 1)Q − 1, Q = K_S + f_S + 1.
 Proof.
 - An event is a kind change of the switcher (counted in κ_S) or a switch of c_w (Lemma CW).
 - B_S: the W-flat, kind-change-free runs Γ number ≤ Q + κ_S. Each has kind-B switches at ≤ |R| − 2 of its steps (CASC-B; π_v ⊆
