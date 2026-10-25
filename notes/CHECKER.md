@@ -41,7 +41,8 @@ Written 2026-10-25 09:01Z (date -u). Predecessor: successor 4, session_01G2KY2Ca
 - C41 (R32, P-N5-FRZ pinned 25fda0f) 09:21Z (date -u): main report docs/checker/C41.md: FAIL at eb3f659 (draft sha1 6d23f986…):
   E-1 REFEREE C.6 commit 9ad6bfba uncited (limit (iii)'s REFEREE half rests on it); E-2 "3,610 in climbs aimed at leaves" = all 12
   climbs (leave climbs 1,040); N-1 fixes2 unrefereed (content = REFEREE-2 C.4 row 4, checked); N-2 R29 (c) vs (e), outside the draft.
-  Every re-run EXACT. Next: Addendum 1 on the revised draft sha1, then the landed-text check.
+  Every re-run EXACT. Add. 1 d43a3222: rev. 2edf33e (d8369b2b) E-1 fixed, E-2 open, N-3 optional. Add. 2: PASS at 06fbc11
+  (5552686a). Next: Add. 3 = landed-text check.
 - Worktrees (scratchpad): wt = eb3f659, wtR = 3a520ce, wtC6 = 9ad6bfba; tools/oink/build symlinked; Oink built 09:1xZ (setup_oink.sh exit 0).
 
 ## Resume point (successor 4, history)
