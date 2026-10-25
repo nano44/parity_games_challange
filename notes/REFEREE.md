@@ -9,8 +9,16 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   freeze, FREEZE-F (b) (vacuous in lib and 5.95M ffb candidates).
 - DONE: PFZ-ext §C-ext vs R2 78896bfc (PFZ-1 = G-PFX-1; repair proves (i) as stated; joint form (i′) + 2n − 2 until R2 signs repair);
   LV2 §C vs R2 a551debf (identical; beta2_n11 N = 2 none fallbacks, refutes R2's candidate conjecture). Commit ed8bc207.
-- NEXT: P-N5-NHN (trunk 0bb175d, sha1 da7d09ec…; T0U, EV2-FB, SG-EV, T0-PIN, NHN-BOUND, H3-IN-HN, HN-POLY-ALL).
-  RHO §C after R2-N5-RHO's SHA from the Lead.
+- DONE: P-N5-NHN (trunk 0bb175d, sha1 da7d09ec…): docs/referee/R-N5-NHN.md: all SIGNED (T0-PIN, NHN-BOUND conditional on RHO's
+  HAT-FREEZE; HN-POLY-ALL conditional on PFZ, PFZ-ext (i′)/(ii), RHO), no gaps; NHN-N1 (τ(o) = o: R39 (f)(c) case A only, §5 (b)'s
+  own argument covers it), NHN-N2 ("there" in §6), NHN-N3 (T0-PIN vacuous: lib + 1.88M climb candidates). Tools nhn_probe.py,
+  nhn_climb.py; logs scratch/nhn_logs/.
+- DONE: RHO §C vs R2 269ae45a (identical; RHO-N2 missed by R2) 06d6e6db.
+- DONE: P-N5-NEEDB (e6ee613, sha1 7471aef3…): docs/referee/R-N5-NEEDB.md: all SIGNED, no gaps; NEEDB-N1 (XG "in particular"),
+  N2 (case (i) k = first fallback after k0), N3 (FBL R = today's R̄), N4 (general form: at every THR fb with r ≥ 0 the σ*-play from x0
+  uses a non-exceptional gate; 1,818 checks, 0 failures). (LV+) occurs once: R2's block_9501.pg at its start pair (gate (10, 8)).
+  Tool needb_probe.py (START=, RANDSTARTS= env); logs scratch/needb_logs/.
+- NEXT: NHN §C and NEEDB §C after the Lead sends REFEREE-2's SHAs (do not open R2-N5-{NHN,NEEDB}* before).
 
 ## HANDOVER (successor 9 -> successor 10), written 2026-10-25T16:35Z by date -u, context ~490k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
