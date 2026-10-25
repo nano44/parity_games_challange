@@ -1,0 +1,8 @@
+TOTAL {'SAND_checks': 6, 'fb_after_a_none_fb': 2, 'fb_inscope': 4, 'fb_none': 4, 'files': 1, 'max_fb_per_run': 2, 'max_none_per_run': 2, 'runs_with_none': 2, 'scope_runs': 5, 'traces': 11, 'transitions_after_first_none_fb': 3}
+WORST none/(n n_E + 1): (0.029850746268656716, ('beta2_n11.pg', 'S3', 'spec'), 2, 67)
+WORST fb/(4 n n_E + 3): (0.00749063670411985, ('beta2_n11.pg', 'S3', 'spec'), 2, 267)
+AFTER (fallbacks after a none fallback in the same run, first 5): [(('beta2_n11.pg', 'S3', 'spec'), 1), (('beta2_n11.pg', 'S3', 'own'), 2)]
+SAND failures (first 5): []
+LVNONE failures (first 5): []
+SCOPEFB failures (first 5): []
+RESULT OK

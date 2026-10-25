@@ -1,0 +1,6 @@
+RECORD_phases_skipped_large_U: 6
+YFORM_a: 25
+phases: 6
+runs: 3
+states: 25
+RESULT OK violations=0

@@ -1,0 +1,16 @@
+FFC_changes                        0
+FFC_changes_second_term            0
+HFC_chk_U2                         547
+HFC_chk_U3                         177715
+RT_changes_U2                      0
+RT_changes_U3                      0
+best_score                         103
+evaluated                          138564
+iters                              138564
+postfreeze_phases_U2               3233
+postfreeze_phases_U3               102374
+postfreeze_phases_withH1_U2        547
+postfreeze_phases_withH1_U3        101037
+qualifying                         102374
+FAILS 0
+exit 0
