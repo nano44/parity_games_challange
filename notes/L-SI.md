@@ -1,43 +1,47 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Resume point (successor 4, box 9; Lead GO 04:52Z 2026-10-25; session_019zCLqPUCjkJxMD4vZoJ8TA)
-Handover check 1cef5052 (Lead 5/5). Trunk merged a08c41d8. Box 9 write-up: docs/si/N5-C-box9.md. Code: experiments/si/coarse/
-fbw.py, reltrace.py, levcheck.py, jclimb.py modes HEQ / REP. Logs: experiments/si/coarse/logs/box9/.
-### DONE (PROVED by L-SI succ. 4, unrefereed)
-- (1) Tool fix bf8be06f: level ∞ = mono.INF = 10**6 (mono, fbcount, xing/carries); 15 re-run logs byte-identical (n ≤ 64); levcheck in check.sh.
-- (2) Lemma FBW (every game): at an Even S4c fallback every gate has level ≤ max(δ, −1), δ = Ξ/W gap at its two ends (premise:
-  R18 Lemma S (c) = R17 (F1) applied to S4a's computation, which returns σ_k at a fallback). Corollary FBW-S: in-scope M_k ≤ max(r_k, −1).
-  Theorem CLS2: fallback levels non-increasing along a whole scope run, every kind. (H-EQ) CLOSED, (H-KIND) unnecessary.
-- (3) FLAT-ALL, STRETCH, Theorem PL: level-M block N ≤ n_E(1 + D_M), D_M = dirty intervals; first break of a dirty interval is an
-  absorption above M (U-loc + Lemma OR); with r > M on the block D_M ≤ d_o − 1 + REL_M (ABS-L + NL (ii)). Corollary PL-S additive.
-  Also ONE-RISE, CONSEC, FB-RE.
-### DATA
-- FBW: named 272 fb / 837 gates, library 694 / 2,384, random 141 fb: 0 failures. In-scope u* = none fallbacks: 0 anywhere.
-- reltrace: 75 + 169 blocks; COARSE_M breaks inside blocks 0, gates above M inside blocks 0, tail repeats per block 0.
-- Lemma ABS-O (PROVED): the cycle an absorption closes has, above max(g, rank c), only vertices of P(Ξ_j x0); so rank o ≤ max(g, rank c).
-  DEAD END as a route to NJB: every in-scope R→F gate has level >= rank o when rank o > rank c, so no block has M < rank o (0 / 778).
-- CONJECTURE NJ-INT (stronger than NJB): no θ-change above L = M_k0 between consecutive in-scope fallbacks with r > L. DATA 562 / 0.
-- Packet P-N5-FBW FROZEN: docs/si/P-N5-FBW-box9.md, sha1 88337bd6, l-si cd42f088; Lead PINNED at trunk e69772b, with both referees.
-  NEVER edit it; referee items go to docs/si/P-N5-FBW-fixes-box9.md.
-- §7 (cda41216): PL-I, the bridge to L-NEW box 34 (L1). PL holds inside frozen r = ℓ blocks without w constant; NJB => (L1) polynomial.
-- §8: Lemma NO-RF-OLD (PROVED): after a θ-change above L in an interval with r > L, vertices already in R have no gate into F.
-  So the next evicting fallback's tails are all entrants (CONJECTURE ENT). DATA: 54 rises above L after a fallback, all after the
-  run's last fallback; NORF climbs (seeds 9201/9202, 20 min each, from 06:01Z) reached 16 / 23 post-rise states, 0 violations.
-- §10 (dd5fa250): NJB holds on L-NEW's x48_rt48_final / b6_xw_n56. Lemma MINSET (PROVED): NJB <=> the set Mn of COARSE_M-minimal
-  free exits is never emptied by absorptions inside a level-M block (Mn gains members only by releases at the block's fallbacks).
-- §11 (bb8ed9ed): Lemma RDROP (a first break needs r > M, by (C5)); PL (c′): D_M ≤ d_o − 1 + REL_M for EVERY block. The r-drop
-  blocks are CLOSED, and PL-S holds for every scope run. Not in the frozen packet; for its fixes file if wanted.
-- PL-I (§7) is CONDITIONAL on P-N5-FRZ (pinned 25fda0f).
-- §12 (8bb11345, 23ceaa0d): ENT attempt (60-minute time-box), outcome (b). Lemma ENT-SHAPE: a violation needs the next fallback at
-  level exactly L, an entrant y with a frozen-bad rank-L bit, and its F-target z flipping rank L via an F→F level-L switch (common in
-  data: 1,451). The never-seen ingredient is the emptying of Mn followed by any later fallback in the run. The shape went to L-RED via
-  the Lead.
-### NEXT
-1. Prove ENT / MINSET non-emptying (NJB). Idea not yet working: absorbing the last member of Mn needs F→R̄ entry gates of level ≤ M
-   (ABS-O (a)); relate that to the drain at f_i (FBL: no F→R̄ gate at a fallback).
-2. Level −1 fallbacks per scope run.
-3. Record the NORF climb results in box 9 §9 (outputs in the scratchpad: climb/norf_*.pg); pin the bests if useful.
+## Resume point (successor 4, box 9; PARKED 2026-10-25 ~07:55Z per Lead 07:10Z; LANE-RESTART step 1; session_019zCLqPUCjkJxMD4vZoJ8TA)
+Handover check 1cef5052 (Lead 5/5). Box 9 write-up: docs/si/N5-C-box9.md §1-§13. Code: experiments/si/coarse/ fbw.py, reltrace.py,
+norf.py, minset.py, frzblk.py, abso.py, ffprobe.py, levcheck.py; jclimb.py modes HEQ / REP / NORF / MINSET. Logs: coarse/logs/box9/.
+Climb bests (all re-verified with xing/reverify.sh, Oink zlk OK): coarse/instances/box9/cl9_{heq_b,rep_a,rep_b,norf_a,norf_b,mn_a,mn_b}.pg.
+### DONE (PROVED by L-SI succ. 4)
+- Tool fix bf8be06f: level ∞ = mono.INF = 10**6 (mono, fbcount, xing/carries). 15 logs re-run byte-identical; levcheck in check.sh.
+- Packet P-N5-FBW (docs/si/P-N5-FBW-box9.md, sha1 88337bd6; pinned trunk e69772b), SIGNED by both referees:
+  - FBW (every game): a fallback gate's level ≤ max(Ξ/W gap at its ends, −1).
+  - FBW-S, CLS2 (fallback levels non-increasing along every scope run; (H-EQ) closed), FLAT-ALL, STRETCH, PL (a)-(c), PL-S.
+  - Fixes file docs/si/P-N5-FBW-fixes-box9.md, sha1 91ff4216 (FBW-1: H1 not H2; FBW-2 = N-FBW-1: "k ≤ e"), sent 07:09Z.
+  - The Lead's 07:13Z ask (REFEREE §C wording) arrived after the sha1 had gone out. The file already has the H1 wording and the
+    same-row line, and it was NOT edited afterwards. If more §C text is wanted, put it in a NEW addendum file.
+- Packet P-N5-NJB (docs/si/P-N5-NJB-box9.md, sha1 f43a8823, l-si 5c949ec0) FROZEN, unrefereed; the Lead pins it and routes it after
+  FBW and FRZ.
+  - Contents: RDROP, PL (c′) (D_M ≤ d_o − 1 + REL_M for EVERY block), PL-S′, MINSET, NO-RF-OLD, ENT-SHAPE.
+  - NJB and ENT are CONJECTURES there. The packet rests on P-N5-FBW (refereed) and landed R-items only, not on FRZ.
+- Lane only (N5-C-box9.md):
+  - §7 PL-I, CONDITIONAL on P-N5-FRZ (25fda0f): the per-level count inside L-NEW's frozen r = ℓ blocks. NJB ⇒ (L1) polynomial.
+  - §3b ABS-O (true, a dead end for NJB).
+  - ONE-RISE, CONSEC, FB-RE.
+- Referee items on P-N5-FBW are CLOSED (fixes file 91ff4216). R31 is waiting on CHECKER.
+- P-N5-NJB is PINNED at trunk a7d85b3 (sha1 f43a8823). Referee queue: FRZ → L2 (L-NEW) → NJB. Referee items on it go to a NEW file,
+  docs/si/P-N5-NJB-fixes-box9.md. Never edit the packet.
+### IN FLIGHT
+- Nothing running. No climbs. The scratchpad is session-local.
+### NEEDS
+- None from the owner. The Lead decides whether a successor or L-NEW continues ENT / NJB, depending on L-RED 15.
+### Things only I know
+- NJB ⇔ (MINSET) the sole minimiser σ̄(o) is never absorbed inside a level block.
+  - DATA: |Mn| reaches 1 in 275 intervals and is never emptied. cl9_mn_a has 56 absorptions of Mn members and none of the last member.
+- The proof attempts stop at F→F switches of level exactly L (allowed by (A) and common: 1,451). See P-N5-NJB §5 for the 5-step shape.
+- Rises of θ above L after a fallback (54 in data) are never followed by another fallback in the same scope run.
+  - Ideas not yet working:
+    - the entry gate of an absorption, compared with FBL at the previous drain;
+    - Odd's choice at o versus the cycle A that the absorption closes (rew(t_A) > rew(c_θ)).
+- Scope definitions: the packet's scope run is (h) at k, H2 at k+1, w constant. reltrace.runs_of uses (h) at both ends. Same data
+  either way.
+- experiments/si/xing/out/ is excluded via .git/info/exclude in THIS container only. Never git add -A.
+### NEXT (for a successor)
+1. Prove NJB in the MINSET form, or take L-RED 15's counterexample if it lands. A refutation would need P-N5-NJB §5 (i)-(v).
+2. Level −1 fallbacks per scope run; REL(S) per scope run (the remaining additive term).
 
 ## Resume point (successor 3, box 8; superseded by box 9; PARKED 2026-10-25 ~02:35Z at ~500k context after freezing P-N5-CLS; LANE-RESTART step 1)
 IN FLIGHT: nothing running (all climbs finished; outputs in experiments/si/xing/out/jclimb/, local only).

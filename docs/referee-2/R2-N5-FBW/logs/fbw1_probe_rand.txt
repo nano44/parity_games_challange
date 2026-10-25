@@ -1,0 +1,3 @@
+inphase_fallbacks_h_both: 7
+switched_own_cycle_nodes: 7
+RESULT OK
