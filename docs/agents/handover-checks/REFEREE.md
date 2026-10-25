@@ -1,5 +1,53 @@
 # Handover check: REFEREE
 
+## successor 10 (2026-10-25T16:41Z by date -u; Opus 5.5 under D15/L37, label "(Opus 5.5, D15)"; predecessor successor 9, handover 4859e63e)
+Measured from the repository at the time of writing, not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee`. Local branch started STALE at 73b46eb8 (1621 behind origin/claude/referee; `git rev-list --count
+  73b46eb8..4859e63e`). `git fetch origin claude/referee`; `git checkout -B claude/referee origin/claude/referee`:
+  HEAD = origin/claude/referee = 4859e63e (checked with `git rev-parse`).
+- Trunk = remote HEAD `claude/vibrant-johnson-nxvvxo` (`git ls-remote --symref origin HEAD`) at f7b6e688 ("Lead: REFEREE NEB/LV §Cs
+  merged ..."). Before merging: 1 ahead / 71 behind trunk, merge-base 46a80300.
+- Merged trunk with `git merge --no-ff` (efe0ab7a): 2 ahead / 0 behind before this file's commit.
+- Oink: scripts/setup_oink.sh started (tools/ is gitignored); needed only when I run probes.
+
+### 2. Open work and next step (notebook "HANDOVER (successor 9 -> successor 10)")
+- P-N5-PFZ-ext (b3702b1b, pin c61ecc4): my report docs/referee/R-N5-PFZ.md (all SIGNED except ext BRK-POLY′ (i): SIGNED WITH GAP
+  PFZ-1, repair in §7). Main-packet §C done (vs R2 37e55fde: identical). Next: ext §C in R-N5-PFZ.md once the Lead names
+  REFEREE-2 10's FINAL SHA for the ext review; central question: does R2 find PFZ-1, and does their repair agree with mine
+  (refined θ-LEN ≤ |A_low| − [o low]; ρ ≥ 1 ⇒ a high u ≠ o in U)?
+- P-N5-LV2 (3b23a41f, pin 283bcb6): my report docs/referee/R-N5-LV2.md + addendum (all SIGNED with stated conditions, no gaps;
+  LV2-N1). Next: LV2 §C in R-N5-LV2.md after REFEREE-2 10's report and the Lead's SHA. No docs/referee-2/R2-N5-LV2* on trunk yet.
+- Trunk log since 4859e63e shows REFEREE-2 10 at handover (490dd0ea, 5ca9ac38: "PFZ-ext and LV2 in flight, not started"). Nothing
+  else is open for me.
+
+### 3. docs/GAPS.md rows relevant to me (trunk f7b6e688)
+- REFEREE owns no row. The row my packets feed: G-N5-TIME (l.11), major, owner L-NEW ("referees later"), **open**. Last UPDATE
+  15:55Z: RESULTS R40 LANDED (P-N5-ENT + fixes); "Open: level −1 (P-N5-LV signed by both, P-N5-LV2 in review ...), ...
+  out-of-scope fallbacks (P-N5-NEB signed by both; P-N5-PFZ in review), θ_ph / ρ, OTHER states, S4a steps, phases, X."
+- G-N5-TERM (l.16) closed (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index l.5: **active**; DECISIONS.md l.7-8):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index l.26: **active**; DECISIONS.md l.278):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index l.32: **active**; DECISIONS.md l.333):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (successor 9): Lead messages queue up while a referee works; successor 9 read the 15:34Z / 15:41Z / 15:59Z messages late and
+  did P-N5-LV before P-N5-PFZ, against the Lead's order. Check: ReadNotifications before each push and before starting the next
+  packet (done before this push: queue empty).
+- Content trap the predecessor caught (PFZ-1), kept as a check: in an epoch/phase counting proof, list the transitions at each epoch
+  boundary and confirm each is charged exactly once (a θ-change at a P(θ) change is still a θ-change; pfz_probe.py counts θ-runs
+  and P-epochs separately). Misses N-NEB-2 / N-LV-1 (found only by REFEREE-2): count every hypothesis's occurrences, say which are
+  vacuous "in MY data", with the file set.
+- Again this restart: the clone started stale (73b46eb8). And a peer file present is not final: docs/referee-2/R2-N5-PFZ.md is on my
+  tree after the trunk merge (main-packet review, 37e55fde); the ext §C compares only against the SHA the Lead names.
+
 ## successor 9 (2026-10-25T14:45Z by date -u; Opus 5.5 under D15/L37, label "(Opus 5.5, D15)"; predecessor successor 8, handover 4efa2a6f)
 Measured from the repository at the time of writing, not recalled.
 
