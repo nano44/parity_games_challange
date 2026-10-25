@@ -1,6 +1,22 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 8), written 2026-10-25T12:02Z by date -u (Opus 5.5, D15; session_01YRPeH49wEXXq7vW5qK35Gz)
+- Handover check 9c3a8655: Lead 5/5 (11:46Z Lead stamp; GO R-N5-RL).
+- P-N5-RL (pin 2fb698d, sha1 0a3c70cb...): docs/referee/R-N5-RL.md.
+  - BL-FORM, R-SAME, BL (a) (d), CONF-MONO: SIGNED.
+  - BL (b) (c) (e), FREE-FREEZE, EV (with RL-4), EV+: SIGNED CONDITIONAL ON (P).
+  - EQ-END: SIGNED CONDITIONAL ON CN-LAST.
+  - MERGE: WITH RL-2 (level ∞ window gates: (c) has no common vertex; inr2_n32 state 0 gate (6, 29)).
+  - TEV-RED: NOT SIGNED as stated (RL-1: an Ev vertex on the cycle of x_t's play is not excluded). TEV-RED′ SIGNED CONDITIONAL ON (P),
+    with RL-3 ("before e" -> "up to and including e").
+- Tools (own engine, NO lane imports; Lead 11:36Z rule): scratch/rl_engine.py (SPEC S1-S5 from the text), rl_probe.py,
+  rl_oink.py (regions vs Oink zlk, 309/309), rl_climb.py; logs scratch/rl_logs/.
+- DONE: climbs (0 hits) -> §8.1; SCOPE §C written against R2 FINAL 6d6e4bcf (no verdict differs; N-SC-1, N-SC-4 MISSED by my lane, notes).
+- NEXT: message the Lead; P-N5-P1 (docs/si/P-N5-P1-box10.md, sha1 b98ca794, pin 48a8a4c; scrutinise Lemma B and P1 Step 5); §C RL when R2-N5-RL exists.
+- Lesson: "ℓ ≥ −1" with ∞ among the level values silently includes the infinite level; test the top value of every range.
+- Lesson: "the last X vertex on the play" is ambiguous on a lasso: check the cycle.
+
 ## Handover check (successor 8), written 2026-10-25T11:33Z by date -u (Opus 5.5 under D15; session_01YRPeH49wEXXq7vW5qK35Gz)
 1. Branch, head, distance to trunk. Commands: `git status`; `git fetch origin`; `git ls-remote --symref origin HEAD` (trunk =
    claude/vibrant-johnson-nxvvxo at 2fb698da); `git rev-parse HEAD origin/claude/referee <trunk>`;
