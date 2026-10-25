@@ -2,7 +2,7 @@
 """L-SI succ. 8, box 13 item (3): DATA for Lemma OLD-THREAT (docs/si/N5-RISE-box13.md). k0 an in-scope fallback with L = M_k0 >= 0,
 j the first S4a step after k0 (no fallback in between, every transition in scope, r > L) that changes COARSE_L(theta) (a RISE, as in
 REFEREE-2 rise_end.py). For every state t > j such that every transition s -> s+1, k0 < s < t, is an in-scope S4a step with r_s > L:
-(OLD-THREAT) every exit x of o with x in F_k0 and COARSE_L(Xi_k0 x) = COARSE_L(Xi_k0 x_k0) (x_k0 := sigma-bar_k0(o)) lies in Rbar_t. (GATE-ABOVE, CONJECTURE) if moreover r_t > L, then M_t > L.
+(OLD-THREAT) every exit x of o with x in F_k0 and COARSE_L(Xi_k0 x) = COARSE_L(Xi_k0 x_k0) (x_k0 := sigma-bar_k0(o)) lies in Rbar_t. (GATE-ABOVE, CONJECTURE) if moreover r_t > L, then M_t > L (FALSE: library). (FEED, CONJECTURE) if r_t > L, some gate at t runs from F_t into Rbar_t (FALSE: library). (INTO, CONJECTURE) if r_t > L, some gate at t has its target in Rbar_t.
 Traces and state analysis: REFEREE-2's (read only). Usage: oldthreat.py R seed game.pg ..."""
 import sys, os, random
 from collections import Counter
@@ -41,6 +41,12 @@ def scan(g, o, A, fbs, C, bad, tag):
                 St = A[t]; hi = [(y, z) for (y, z), l in St.gates.items() if l > L]
                 C["GA_hi_into_Rbar" if any(z in St.Rbar for y, z in hi) else "GA_hi_into_F_only" if hi else "GA_no_hi"] += 1
                 if any(z in St.Rbar and y not in St.Rbar for y, z in hi): C["GA_hi_F_to_Rbar"] += 1
+                fr = [(y, z) for (y, z) in St.gates if y not in St.Rbar and z in St.Rbar]
+                if any(z in St.Rbar for (y, z) in St.gates): C["INTO_states_ok"] += 1
+                else: C["INTO_FAIL (no gate into Rbar, r_t > L after a rise)"] += 1; bad.append(("INTO", tag, k0, j, t, sorted(St.gates.items())[:6], L))
+                if fr: C["FEED_states_ok"] += 1
+                else:
+                    C["FEED_FAIL (no F->Rbar gate, r_t > L after a rise)"] += 1; bad.append(("FEED", tag, k0, j, t, sorted(St.gates.items())[:6], L))
                 if not EC.M(A[t]) > L: C["GA_FAIL (M_t <= L with r_t > L after a rise)"] += 1; bad.append(("GA", tag, k0, j, t, EC.M(A[t]), L))
             for x in mins:
                 if x not in A[t].Rbar: C["FAIL"] += 1; bad.append((tag, k0, j, t, x))
@@ -60,5 +66,5 @@ def main():
             for mode in ("own", "spec"):
                 A, fbs = OC.run_trace(g, o, s, t, rng, mode); C["traces"] += 1
                 scan(g, o, A, fbs, C, bad, (os.path.basename(p), i, mode))
-    print("TOTAL", dict(sorted(C.items()))); print("FAIL (first 5):", bad[:5]); print("RESULT", "FAIL" if C["FAIL"] else "OK", "(OLD-THREAT);", "GATE-ABOVE", "FAIL" if C["GA_FAIL (M_t <= L with r_t > L after a rise)"] else "OK")
+    print("TOTAL", dict(sorted(C.items()))); print("FAIL (first 5 per kind):", [b for b in bad if b[0] == "FEED"][:5], [b for b in bad if b[0] == "GA"][:3], [b for b in bad if b[0] == "INTO"][:5], [b for b in bad if b[0] not in ("FEED", "GA", "INTO")][:3]); print("RESULT", "FAIL" if C["FAIL"] else "OK", "(OLD-THREAT);", "GATE-ABOVE", "FAIL" if C["GA_FAIL (M_t <= L with r_t > L after a rise)"] else "OK", "; FEED", "FAIL" if C["FEED_FAIL (no F->Rbar gate, r_t > L after a rise)"] else "OK", "; INTO", "FAIL" if C["INTO_FAIL (no gate into Rbar, r_t > L after a rise)"] else "OK")
 if __name__ == "__main__": main()
