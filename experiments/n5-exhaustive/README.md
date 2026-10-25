@@ -232,5 +232,5 @@ lane data quantities (J, K, S_o, E, K_W); 0 violations is evidence, not proof.
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | n 4 canonical | 4,828,736 | 0 | 1 | none | 0 / 0 / 70,454, 576 | 0 | 1 | 1 |
 | n 4 all starts | 7,340,032 | 0 | 2 | 4 / 0 / 0 / 0 / 0 | 848 / 0 / 145,098, 832 | 0 | 1 | 2 |
-| n 5 subset quarter 1 | W5ROW |
-Readings (DATA): CASC is vacuous through n 5 (no R-switch inside a W-flat run); J <= 1, K = 0, S_o <= 2, E <= 1, K_W <= 2 at n 4.
+| n 5 subset quarter 1 (index = 0 mod 4) | 17,193,152 | 0 | 1 | none | 4 / 0 / 308,550, 10,240 | 0 | 1 | 2 |
+Readings (DATA): CASC is vacuous through n 5 (no R-switch inside a W-flat run); J <= 1, K = 0, S_o <= 2, E <= 1, K_W <= 2 at n 4 and on n 5 quarter 1 (S_o <= 1 there).
