@@ -1,0 +1,13 @@
+EV2_ends: 1
+H3_states: 1
+N_HN_total: 4
+SGEV_transitions: 1
+T0U_a_states: 26
+drops: 0
+phases: 18
+phases_tau(o)!=o: 18
+phases_tau(o)!=o_with_HN: 4
+runs: 3
+max_EV2_ends_per_phase: 1
+max_N_HN: 1
+RESULT OK violations=0

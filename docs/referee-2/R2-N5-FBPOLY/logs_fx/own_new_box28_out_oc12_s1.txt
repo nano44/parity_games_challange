@@ -1,0 +1,20 @@
+AK_checks: 176
+EXIT_fallbacks: 1
+EXIT_kind_ct: 1
+KH_a: 2
+KH_b: 18
+KP_checks: 14
+KY_states: 2
+SW_fallbacks: 1
+YB_states: 14
+fallbacks: 1
+phases: 8
+phases_o=c: 2
+runs: 3
+states: 16
+max_FBCAP_excess_plus_1000: 991
+max_FB_a_slack_minus_1000: 850
+max_FX_ct_j_minus_lim_plus_1000: 991
+max_f_minus_U_plus_2_U>=3_plus_1000: 991
+max_f_per_phase: 1
+RESULT OK violations=0

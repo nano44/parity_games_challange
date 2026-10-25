@@ -1,0 +1,6 @@
+TOO_phases_with_HN_caseA: 2
+TOO_phases_with_HN_caseB: 1
+phases: 10
+phases_tau(o)=o: 10
+runs: 3
+RESULT OK violations=0
