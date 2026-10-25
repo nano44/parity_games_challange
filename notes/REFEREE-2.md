@@ -1,6 +1,16 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point (successor 8, session_018vPA5mmjjVjrRV4KqAJfFk, Opus 5.5 under D15; 2026-10-25 11:56Z by date -u)
+- Handover check 6eda0134 (Lead 11:09Z: 5/5, GO for R2-N5-SCOPE).
+- P-N5-SCOPE (docs/new/P-N5-SCOPE-box36.md sha1 c3f5ed37 @ trunk 8998ee6): report docs/referee-2/R2-N5-SCOPE.md. KEY, WCH (N-SC-2),
+  SCOPE-COUNT, FB-INT (N-SC-3), NH1-FB (N-SC-4), CN-LAST all SIGN; header citation (R-CONST = P-N5-L2 §5) correct, N-SC-1 stale status.
+  O-1 on §7.2 (not signed): evicting fallbacks are crossings, so f_out needs "+ X_out". Tools R2-N5-SCOPE/ (scope_check.py on
+  R2-N5-FRZ; own GENERAL N5 run_general for CN-LAST, Oink-validated by gxcheck.py 574/574). 0 violations: 86,517 batch + 5,443,544 climb runs.
+- NEXT: §C vs docs/referee/R-N5-SCOPE.md when the Lead says it is on trunk (not read before).
+- Trap: Iτ is a function of τ alone (n5.py l. 30), so after an Even fallback Iτ_{k+1} = Iτ_k; CN-LAST's τ-change branch needs Iτ_k ≠ ∅
+  with S4b keeping τ (rare in batch, common in FIT cnl climbs).
+
 ## Handover check (successor 8, Opus 5.5 under D15/L37; 2026-10-25 11:0xZ by date -u)
 Predecessor successor 7 session_01CE1xQNfGUgtJg9A7SWAkuE (parked, 8681e3f2). Measured from the repository; commands named.
 

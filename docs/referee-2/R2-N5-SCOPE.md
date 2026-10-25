@@ -1,4 +1,4 @@
-# [DRAFT: climbs pending, verdicts final] R2-N5-SCOPE: second-referee check of packet P-N5-SCOPE (L-NEW box 36: KEY, WCH, SCOPE-COUNT, FB-INT, NH1-FB, CN-LAST). REFEREE-2 (successor 8), 2026-10-25 @@STAMP@@ (date -u)
+# R2-N5-SCOPE: second-referee check of packet P-N5-SCOPE (L-NEW box 36: KEY, WCH, SCOPE-COUNT, FB-INT, NH1-FB, CN-LAST). REFEREE-2 (successor 8), 2026-10-25 11:55Z (draft 1f8a9109 at 11:2xZ) (date -u)
 Signature: (Opus 5.5, D15). Packet P-N5-SCOPE (Lead GO 11:09Z). Object docs/new/P-N5-SCOPE-box36.md, sha1
 c3f5ed3788f0853939d247dbcfb970334c9dcf7d. I checked the sha1 with `git show 8998ee6d:docs/new/P-N5-SCOPE-box36.md | sha1sum`, at
 origin/claude/l-new, and on my tree; all three agree. The pin is trunk 8998ee6. The file has one commit, 8483279d.
@@ -32,7 +32,7 @@ is a count on MY N5's traces, not on SPEC's. No SPEC trace was run.
 | §5 Corollary NH1-FB | SIGN | N-SC-4 (notation): here T is the actual toggle count (packet §0). In P-N5-TOG §4, T names the bound |U|(n + 1) + n − 1. "Drops ≤ ⌈T/2⌉" holds for the actual count by alternation |
 | §6 Lemma CN-LAST | SIGN | Both branches of (iii) OCCUR: stop in 312 cases, τ-change in 5. Control: the hypothesis λ(y) = y cannot be dropped. 59 level −1 Even fallbacks with a non-cycle-node tail break (i) in all 59 cases, (ii) in 53 and (iii) in 46 |
 | §7 | not signed (as briefed) | Observation O-1 (§8 below): in the out-of-SN regime the evicting fallbacks are themselves crossings, so they lie outside every FB-INT stretch Q. §7.2's reading "f_out ≤ n_E(2n − 1)(X_out + 1)" needs "+ X_out" (wd16_s2: 12 out-of-SN fallbacks in one phase, 0 in any crossing-free stretch) |
-No statement is NOT SIGNED, and no gap is open. No counterexample turned up in 86,517 batch runs (45,656 𝒞^1O + 40,861 general) or in @@CLIMBRUNS@@ climb runs (8 climbs).
+No statement is NOT SIGNED, and no gap is open. No counterexample turned up in 86,517 batch runs (45,656 𝒞^1O + 40,861 general) or in 5,443,544 climb runs (8 climbs).
 
 ## 1. Remark KEY: SIGN
 - SPEC S1 ("Odd's side"): Ξ^d_τ and τ̄ are computed on G^d from τ alone, by the deterministic procedure. In code this is n5.py line 30,
@@ -86,7 +86,7 @@ No statement is NOT SIGNED, and no gap is open. No counterexample turned up in 8
 - Scope note. Q consists of non-crossing transitions. So a fallback that is itself a crossing is in no Q, and FB-INT does not count it.
   The statement is correct as written. §7.2's use of it is not (O-1).
 - DATA: all 1,458 non-tame in-phase transitions were crossings. Fallbacks per maximal crossing-free stretch: max 1 in the batch and
-  @@FBQ@@ in the climbs. The bound n_E(2n − 1) is far from tight in my data, which is THIN for this count.
+  4 (FIT fb, n 11, n_E 7: bound 147) in the climbs. The bound n_E(2n − 1) is far from tight in my data, which is THIN for this count.
 
 ## 5. Corollary NH1-FB: SIGN (N-SC-4)
 - Case A (¬H1 at k and k+1). The transition lies in a maximal ¬H1 run S. R-CONST (R33 (e); P-N5-L2 §5, checked: (⊆) via o's honest
@@ -98,7 +98,7 @@ No statement is NOT SIGNED, and no gap is open. No counterexample turned up in 8
 - N-SC-4: P-N5-TOG §4 uses "T" for the bound |U|(n + 1) + n − 1. Here T is the count, which is at most that bound; both readings give a
   valid inequality.
 - DATA: R-CONST held at all 10,701 ¬H1 states, and no crossing occurred inside any ¬H1 run. 94 ¬H1 fallbacks: 61 case A, 33 case B.
-  Max per phase 1 (batch) and @@NH1@@ (climbs). ¬H1 runs ≤ drops + 1 held everywhere.
+  Max per phase 1 (batch) and 4 (all case A, in one ¬H1 run) (climbs). ¬H1 runs ≤ drops + 1 held everywhere.
 
 ## 6. Lemma CN-LAST: SIGN
 - Setup. Every tail c_i is an own cycle node. By (F) (P-N5-TOG §0), Ξ(σ_k c_i) = (c_i, ∅, L_i − 1). Level −1 gives Ξ(z_i) = (c_i, ∅, d_i)
@@ -128,7 +128,7 @@ No statement is NOT SIGNED, and no gap is open. No counterexample turned up in 8
     n5adv best_n16_seed16, n5b9/sc24, seg10/seg_r16_s169; 𝒞^1O random 2).
   - Control, outside the hypothesis: 59 level −1 Even fallbacks with a non-cycle-node tail. (i) failed in all 59, (ii) in 53 and (iii) in
     46. oc12_s1 is one of them, and matches the lane's §7.3.
-  - Climbs (FIT cnl): @@CNL@@.
+  - Climbs (FIT cnl): 555,510 hypothesis cases (153,940 stop, 401,570 τ-change), all of (i)-(iii) held; 1,257,035 control cases outside the hypothesis, (i) failed in all of them.
 
 ## 7. Batch (DATA, my N5; logs/, totals_logs.txt)
 - Library: files.lst lists the 276 tracked experiments/**/*.pg on 𝒞^1O with n ≤ 64 (mklib.py), 3 starts each (S3 + 2 random) × {det,
@@ -154,7 +154,22 @@ No statement is NOT SIGNED, and no gap is open. No counterexample turned up in 8
   while one phase has 12 out-of-SN fallbacks. The loop is "every out-of-SN fallback is a crossing", which FB-INT does not touch. Route to L-NEW for §7.2.
 
 ## 9. Climbs (DATA, my N5; climb/, totals_climb.txt)
-@@CLIMBS@@
+Eight climbs of 1,200 s (run_climbs.sh; 4 starts per evaluation, starts 2-3 with --rand): 1,360,886 evaluations = 3,486,820 𝒞^1O runs
++ 1,956,724 general runs; 0 violations (RESULT OK in all 8). Best instances in climb/ (Oink zlk: my 𝒞^1O N5 12 / 12, my general N5 4 / 4 OK).
+| FIT | seed | start | n | best maxima per phase |
+| --- | --- | --- | --- | --- |
+| scope | 91 | random 8-16 | 9 | 3 scope runs (3 case 2), WCH 4 |
+| scope | 95 | sc24 | 24 | 7 scope runs (7 case 2), WCH 11 (one interval) |
+| scope | 98 | random 10-20 | 15 | 6 scope runs (5 case 2), WCH 6 |
+| fb | 92 | random 8-14 | 11 | 4 fallbacks per crossing-free stretch, 4 ¬H1 fallbacks (case A, one run) |
+| fb | 93 | wd12_s1 | 12 | 9 out-of-SN fallbacks, 1 per crossing-free stretch |
+| fb | 96 | oc12_s1 | 12 | 7 out-of-SN fallbacks, 1 per crossing-free stretch |
+| cnl | 94 | general 6-12 | 10 | CN-LAST cases with τ-change (fitness 1010) |
+| cnl | 97 | general 8-14 | 9 | same (fitness 960) |
+- Climb totals: 1,037,635 case-2 scope runs; 340,482 ¬H1 fallbacks (338,059 case A, 2,423 case B); 2,333 non-tame transitions, all
+  crossings; CN-LAST as in §6.
+- Reading of the data: SCOPE-COUNT's case 2 (the WCH term) dominates in climbs; the scope-run count grew only through WCH. FB-INT and NH1-FB
+  stay far below n_E(2n − 1). The out-of-SN climbs (93, 96) again put their fallbacks at crossings (O-1). Climbs are not families.
 
 ## 10. Notes for the lane (none blocks a signature)
 - N-SC-1: the dependency table's status is stale. R33 was landed (00bd18b8, 10:37:35Z) when the packet was written.
