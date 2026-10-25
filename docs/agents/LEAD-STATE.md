@@ -1394,3 +1394,7 @@
 - 18:44Z Lead: merged referee 72e9f7d.
   - R-N5-NHN 9bb3f79: all SIGNED, no gaps. T0U, EV2-FB, SG-EV, H3-IN-HN are unconditional. T0-PIN and NHN-BOUND are conditional on RHO's HAT-FREEZE. HN-POLY-ALL is conditional as labelled. Notes NHN-N1..N3. T0-PIN is vacuous.
   - RHO §C 06d6e6d: identical verdicts, gap map empty. RHO has now converged on REFEREE's side; REFEREE-2 11's RHO §C is still pending.
+- 18:49Z Lead: merged l-new 4a17f8e.
+  - P-N5-FBPOLY, docs/new/P-N5-FBPOLY-box41.md, sha1 de244dcd, is PINNED at this commit. It is self-contained in κ form and queued for both referees.
+  - Working doc N5-XOUT-box41 (sha1 b0583476): Lemma X-OUT, lane PROVED; crossings per OUT stretch ≤ (|U|−2)(f_S+1) + f_S.
+  - READING: FB-POLY breaks R34's f ↔ X loop for X_SN. Still open: ¬H1 crossings outside SN prefixes, O, Theorem X assembly, Φ.
