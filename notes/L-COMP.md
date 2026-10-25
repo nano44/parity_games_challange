@@ -3,12 +3,14 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point (successor 3, box 7, 2026-10-25 by date -u) -- HANDOVER
 ### DONE box 7 (Lead GO 23:2xZ; amended 00:28Z: (c) via L-RED u23x.py; 00:33Z: NO-WAKE false, table K and S_o instead)
-- box7.py (R23 WM/LV', R24 CASC/TB/U1, R25 FB/MONO, J): n 4 canonical, n 4 all starts, n 5 quarter 1: 0 violations, max J 1.
-- box7w.py (K, S_o, rise causes, u23x P-N5-U23, E, K_W): n 4 canonical and all starts: 0 violations; max K 0, S_o 2, E 1, K_W 2.
+- box7.py (R23 WM/LV', R24 CASC/TB/U1, R25 FB/MONO, J): n 4 canonical, n 4 all starts, n 5 quarters 1-2: 0 violations, max J 1.
+- box7w.py (K, S_o, rise causes, u23x P-N5-U23, E, K_W): n 4 canonical, all starts, n 5 quarter 1: 0 violations; max K 0, S_o 2, E 1, K_W 2.
 - README "Box 7" (rows Q234ROW / W5ROW to fill).
 ### IN FLIGHT (resumable; rerun the same command, finished tasks are reused from results/box7/<tag>.tasks/, gitignored)
-- scratchpad run7x.sh: box7w.py exh 5 ... --every 4 --offset 0, then box7.py exh 5 ... --every 4 --offset 1, 2, 3
-  (options: --no-forced --even-maxdeg 2 --o-deg 2 --cyclic-only --jobs 4 --out results/box7). ~1.5 h / ~2 h per quarter on 4 cores.
+- At park (04:3xZ): box7.py exh 5 --no-forced --even-maxdeg 2 --o-deg 2 --cyclic-only --every 4 --offset 2 (then --offset 3)
+  --jobs 4 --out results/box7, ~2 h each, running unattended in this container (scratchpad run7x.sh). A successor reruns the same
+  commands; finished tasks are reused from results/box7/<tag>.tasks/ if the container survives, else they restart from zero.
+- Not started: box7w on n 5 quarters 2-4 (same command with box7w.py and --offset 1/2/3).
 ### Things only I know (box 7)
 - nowake.py / mblock.rows_w and u23x.rows_x hard-code start_pair(..., None); box7w rebinds the module-level name start_pair.
 - u23x.rows_x caps runs at 400 states (fine for n <= 5).
