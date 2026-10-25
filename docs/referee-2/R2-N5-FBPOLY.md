@@ -216,7 +216,7 @@ Thin spots (DATA, lesson N-ENT-2; my data agree with the packet's caveats):
 - N-FBP-3 (DATA): FREEZE-EXIT / THETA-AFTER at |U| ≥ 3 stay unreached in my batch and climbs as well (§9). This is a target for L-RED.
   FB-CAP's (f ≤ max(1, |U| − 2)) excess is ≤ 0 in all my data. It is 0 (f = |U| − 2) in 63 phases with |U| ≥ 3.
 
-## §C. Comparison with REFEREE: docs/referee/R-N5-FBPOLY.md (REFEREE successor 10; report referee 3de7cab7, §C d6248f7b; sha1 e4389a59 on my tree)
+## §C. Comparison with REFEREE: docs/referee/R-N5-FBPOLY.md (REFEREE successor 10; report referee 3de7cab7, §C d6248f7b; sha1 c181c18c on my tree at d9291be0, `sha1sum`)
 REFEREE-2 successor 12, written 2026-10-25 22:1xZ (date -u). Opened only after this report (2fef7c4a) was pushed. (Opus 5.5, D15).
 - Verdicts: identical in substance. Both referees sign κ-FB-ROUND, κ-HAT-FREEZE (a)-(c), κ-PFZ, κ-Y-FORM, EXIT-SWITCH, FREEZE-EXIT, CN-ONLY,
   THETA-AFTER and FB-POLY (a)-(d); neither signs §7, §8 or the §6 Remarks. No (P) on either side.
