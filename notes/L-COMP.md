@@ -3,12 +3,18 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point (successor 4, session_01AiLCefKYn3CkbJsYJtY5aR, Opus 5.5; box 7 completion + box 8; 2026-10-25 by date -u)
 Handover check cd3b5ff7 (5/5, Lead GO 04:56Z). Container started 679 behind its own branch (caught); Oink built 05:0xZ.
-### IN FLIGHT (scratchpad runner run9.sh, status run9.status; Lead order 05:18Z)
-- box7.py n 5 Q3 (off2, 04:58Z) -> box7.py Q4 -> box8 n4, n4 all starts (ed2 nf), n5 Q1 -> box7w.py Q2-Q4 -> box8 n5 Q2-Q4.
-  Options = the pushed Q1/Q2 JSONs' "options" (exh 5 --no-forced --even-maxdeg 2 --o-deg 2 --cyclic-only --every 4 --offset R), --jobs 4.
-  box7 .tasks caches are gitignored (a new container restarts a quarter from zero); box8 .tasks ARE tracked (commit them, rerun to resume).
-  Push each JSON when it ends. Report REFEREE probe rows (canonical start only) separately from start-pair rows (Lead 05:18Z).
-- 05:2xZ: `pkill -f "grep -c END"` killed my own shell (exit 144) again; the known trap. Kill by pid only.
+### DONE (successor 4)
+- Box 7 COMPLETE (4633d132): box7.py + box7w.py on the whole n 5 subset (68,764,800 runs): 0 violations; J <= 1, Z <= 1, K = 0, S_o <= 1,
+  E <= 1, K_W <= 2. README "Box 7".
+- Box 8 (box8.py, 37aad6dc): n 4 canonical (f82d6ef9), n 4 all starts (ade1fc57), n 5 Q1 (3c82c884), Q2 (a8eb0099), Q3 (71241b4a):
+  0 violations everywhere; max J 1, K 0, X <= 3, rho <= 1, T <= 3, X_SN <= 2, REL <= 3. README "Box 8" (rows BOX8ROW / BOX8PROW markers).
+  VACUOUS throughout: CLS1 / FBL / CLU (all scope fallbacks theta = w), WK (K = 0), ABS-L.
+### IN FLIGHT (scratchpad runner run9.sh, status run9.status)
+- box8 n 5 Q4 (offset 3), started 21:49Z; 78/160 tasks at 23:21Z, 0 violations; ETA ~01:00Z. Last item of the queue.
+  To resume in a new container: commit results/box8/box8_n5_ed2_od2_nf_cyc_every4_off3.tasks/ (tracked), then
+  `python3 box8.py exh 5 --no-forced --even-maxdeg 2 --o-deg 2 --cyclic-only --every 4 --offset 3 --jobs 4 --out results/box8`
+  from experiments/n5-exhaustive. Then fill the Q4 row + an all-quarters row in README "Box 8" and report to the Lead.
+- Trap (05:2xZ): `pkill -f "grep -c END"` killed my own shell (exit 144) again. Kill by pid only.
 ### Things only I know (box 8)
 - box8 wraps oe_check.phase / sn_check.phase (module attribute rebinding; files unchanged): per-phase K/J/eps/rho = deltas of the
   checker's own counters; X_SN = delta of PREFIX_crossings_in_prefix; REL recomputed with sn_check's formula (non-fallback transitions).
