@@ -261,3 +261,44 @@ Proof. Read P-N5-FRZ §3 with these changes.
   vertices are not excluded. Under ¬H1, θ = o ⊕ Ξ(σ̄(o)) with σ̄(o) c-first (if c ≠ o), so RATCHET (b)'s counting of θ still applies.
 - So for (L2) the restart mechanisms are: (i) a fallback at a ¬H2 state that takes τ(o) out of R; (ii) a passage through ¬H1 ∧ ¬H2 ∧ H3
   states (oneh_cex_n32). FREEZE′ already covers windows through (ii). (i) remains OPEN.
+- (Superseded by §11: at ¬H1 states R̄ is a phase constant, so the c-first re-entry concern above does not arise between ¬H1 states.)
+
+## 11. ¬H1 states: R is constant there, and they sit in one interval (written 06:15Z onward by date -u)
+**Lemma R-CONST (PROVED, L-NEW succ. 14).** Let U := λ^{-1}(c_θ), a phase constant. At every ¬H1 state k of the phase, R̄_k = U.
+Proof.
+- (⊆) For v ∈ R̄_k, v's honest play agrees with its (σ_k, τ)-play up to o (on 𝒞^1O the graphs differ only at o). Then it follows o's
+  honest play, so λ(v) = λ(o) = c_θ.
+- (⊇) Let λ(v) = c_θ. In the functional graph H_k, the cycle that contains c_θ is unique. Under ¬H1 it is o's honest cycle, since o
+  lies on its own honest cycle and that cycle's top is λ(o) = c_θ.
+  - So v's honest play enters that cycle and passes o.
+  - Up to that first visit of o it equals the (σ_k, τ)-play, so v ∈ R̄_k. □
+- Corollary: a transition between two ¬H1 states of a phase is never a crossing. In the SN regime the ¬H1 states cost crossings only
+  at the transitions where H1 changes. (This answers §10's OPEN item on BLOCK at ¬H1 SN states: no BLOCK is needed there.)
+**Lemma H1-INT (PROVED, L-NEW succ. 14).** In a phase, the states with P(θ) = ∅ form one interval I_∅ (in time). Every ¬H1 state, and
+every state k with H1 at k and ¬H1 at k+1, lies in I_∅. On I_∅, θ = (c_θ, ∅, ℓ_k) changes only in its length, so it changes at most n − 1
+times there.
+Proof.
+- Interval. θ is non-decreasing (R15 (a)) with constant cycle node. VJ00's order compares path sets before lengths, by the signed
+  weight Σ ±2^rank, which is injective, with weight(∅) = 0.
+  - So for a < k < b with P(θ_a) = P(θ_b) = ∅: 0 ≤ weight P(θ_k) ≤ 0, hence P(θ_k) = ∅.
+- ¬H1 states. θ is o's value on its own honest cycle: the path from o to the top c_θ along the cycle. Every vertex of that cycle
+  other than c_θ is less relevant than c_θ, so P(θ) = ∅ (also if c_θ = o).
+- States before a drop: R30 (f) H1-DROP gives P(θ_k) = ∅.
+- Lengths. A length lies in [0, n − 1], and θ is monotone, so its length moves in one direction. □
+**Theorem X-RUN′ (PROVED, L-NEW succ. 14): X-RUN without the H1 hypothesis.** Let Q be a fallback-free run of a phase and P its SN prefix.
+Let t_Q be the number of transitions of P at which H1 changes. Then P has at most 13 (d_o + 1) n³ (t_Q + 1) + t_Q crossing transitions.
+Proof.
+- Split P into maximal runs of H1 states and of ¬H1 states. There are ≤ t_Q + 1 runs of each kind.
+- Inside a ¬H1 run there is no crossing (R-CONST). The H1-changing transitions contribute ≤ t_Q.
+- An H1 run of P consists of consecutive (h) states of a fallback-free run (H1 ∧ H3 ⇒ (h), R30 (d)). The proof of X-RUN (P-N5-FRZ §6)
+  uses only that: its windows, RATCHET, BLOCK and the level count all take place inside a run of consecutive (h) states without
+  fallbacks. So it gives ≤ 13 (d_o + 1) n³ per H1 run. □
+- So X_SN per fallback-free run is polynomial in n and the H1-toggles of its SN prefix. All ¬H1 states of the phase, and every state
+  just before a drop, lie in the single interval I_∅ (H1-INT).
+**CONJECTURE ONE-DROP (OPEN; DATA).** In a phase there is at most one transition from H1 to ¬H1.
+- DATA (box34/h1tog.py):
+  - library + experiments/red + experiments/si/coarse + oneh_cex_n32: 1,274 phases, 1,043 ¬H1 states, max 1 drop and max 2 H1-toggles
+    per phase (b4_n5_other_0, n 5);
+  - random: 20,000 games at n 4-14 (seed 3481), 40,037 phases, 23,308 ¬H1 states, max 1 drop, max 1 toggle per phase;
+  - R-CONST and the I_∅ interval: 0 failures in all of it (data/h1tog_lib.txt).
+- With ONE-DROP, t_Q ≤ 2 per phase, and X-RUN′ gives X_SN ≤ (f + 1)·poly(n) per phase with no hypothesis on H1.

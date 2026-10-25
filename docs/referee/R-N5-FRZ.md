@@ -201,3 +201,28 @@ in 𝒞^1O; phase key (λ_Ξ, τ))
   rew(c′) > rew(x)); otherwise by (V2)".
 - FRZ-3: §6 consequences: "REL_Q ≤ d_o (C_P + 1), C_P the crossings with both ends in P; the transition leaving P can release exits
   (R-STICK starts after it); since C_P + 1 ≤ 13 (d_o + 1) n³, REL_Q ≤ 13 d_o (d_o + 1) n³".
+
+## Addendum (written 2026-10-25 06:49Z by date -u): L-NEW's fixes file for FRZ-1..FRZ-3 (Lead 06:50Z)
+Object: docs/new/P-N5-FRZ-fixes-box34.md at l-new 1dc42ba, sha1 168de464adab5c56945bc5587f4f0ad3262a1fcd (checked with git show 1dc42ba:… |
+sha1sum). It is on origin/claude/l-new; trunk 447a71b1 at my fetch does not yet contain it, and the Lead's "535c268" is not an object in my
+clone. The packet is unchanged (sha1 39df373c…, checked). Independent of REFEREE-2 (not read). The fixes file's §11 / unpinned items are out of scope.
+| gap | repair (fixes §1) | verdict |
+| --- | --- | --- |
+| FRZ-1 | (γ) added after (β): val_σ̂(x) = (c′, ∅, \|π\| + 1) = x ⊕ Ω_k(z); B-arena by B1's first sub-case; B-fallback: x ⊕ Ω_k(z) ▷ Ω_k(x), against arena-optimality | CLOSED |
+| FRZ-2 | B-fallback B1 split: λ(x) ≠ x by (V2); λ(x) = x strict by cycle node (rew(c′) > rew(x)) | CLOSED |
+| FRZ-3 | REL_Q ≤ d_o (C_P + 1), counting the transition from P's last state; C_P + 1 ≤ 13 (d_o + 1) n³ | CLOSED; the X-RUN bounds stand as stated |
+- FRZ-1: I checked the B-fallback half of (γ), the only new step.
+  - x lies on c′'s cycle and is not its top, so Ω_k(x) = x ⊕ Ω_k(s(x)). Its path to c′ runs along the cycle and does not return to x.
+  - x ∉ π, and rank x < rank c′, so x enters neither path set.
+  - So x ⊕ preserves the strict W-improvement Ω_k(z) ▷ Ω_k(s x) (both lengths +1, same cycle node, same sets), and val_σ̂(x) ▷ Ω_k(x)
+    contradicts (F1) at the arena optimum σ_k.
+  - The B-arena half is the (β) chain verbatim. Correct.
+- FRZ-2: the text is the clause I proposed. Correct.
+- FRZ-3:
+  - A leave is a crossing, so a leave at a transition with both ends in P lies in C_P. The only other place a leave can occur is the
+    transition from P's last state (R-STICK, R30 (c)). Each transition releases ≤ d_o exits.
+  - C_P + 1 ≤ n + 6(d_o + 1)(n² + n³) ≤ (d_o + 1)n³ + 12(d_o + 1)n³ = 13(d_o + 1)n³ for n ≥ 1, which gives REL_Q ≤ 13 d_o (d_o + 1) n³.
+  - The third consequence (≤ 13(d_o + 1)n³ + n crossings in Q) already counts that transition, and the main bound (crossings with both
+    ends in P ≤ 13(d_o + 1)n³) is unaffected. All X-RUN bounds stand as stated.
+- Labels: with these lines, every REFEREE gap on P-N5-FRZ is closed. The signed statements stand as in the verdict table. The second
+  signature (REFEREE-2 successor 7) is pending; §C follows.
