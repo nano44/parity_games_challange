@@ -1,0 +1,16 @@
+H1_Wchg 4205
+H1_prefixes 469
+H1_prefixes_nowithheld 84
+H1_steps 4247
+H1_thr_steps 3389
+H1_withheld_steps 3186
+H1_xing 2600
+max_Wchg (55, 64, 64, 0, 'x32_rand64.pg', 0)
+max_xing (55, 55, 64, 64, 0, 'x32_rand64.pg', 0)
+mixH1_Wchg 163
+mixH1_prefixes 35
+mixH1_prefixes_nowithheld 35
+mixH1_steps 210
+mixH1_thr_steps 63
+mixH1_withheld_steps 0
+mixH1_xing 1
