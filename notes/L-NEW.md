@@ -6,9 +6,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - (1) Packet docs/new/P-N5-NH-box42.md (l-new 44088266, sha1 93d19be8018e07a2727bbe1db5920198a0beb1eb, FROZEN): Lemmas SW, ST, CL,
   STR-COUNT, NR; Theorem NH: O ≤ 11n⁷(1 + X + f^O) + 8n³(K_W + E), T ≤ 156n¹¹(…) + 104n⁷(K_W + E) per phase. Reported 20:01Z.
   Data experiments/new/box42/nhcheck.py: 0 violations (lib41 253 runs; random 2,633). f^O > 0 in data (NFB-O "none" is false).
-- (2) K / (E) / (K_W): kwprof.py: every K_W transition after an in-stretch S4a step has a new gate edge (y, z), y, z ∈ R, with an
-  honest rise at z one step earlier (121/121). Lemma WLAG (proof via (F1) + WM; working doc docs/new/N5-KW-box42.md). Route R-KW:
-  event-free sub-runs of U3 are a two-terminal route game per kind (KIND-SPLIT) ⇒ (K_W) ⇐ (E) (+ honest events for U2/U23). OPEN.
+- (2) docs/new/N5-KW-box42.md (working doc; v1 0c0d439e, v2 60dd9380, v3 b9ee6918 sha1 f7c63764 reported 20:45Z; v3.1 = CW fix):
+  WLAG (every game), ABOVE-h, CSTRICT (all successor pairs), KW-FREEZE (CR on G_τ, W-terminals o and c_w, threshold h), Corollaries
+  KW ((K_W) given f) and NR′; §5 E-HI (H-PATH, DIR, KC, CASC-B, CW): events bounded by K_S, f_S. §6 READING: T per phase
+  ≤ poly(n)(1 + X + f); with FX, FBPOLY, PHI N5 on 𝒞^1O polynomial (CONDITIONAL; unrefereed). Asked the Lead for packet P-N5-KW.
+  Data box42/wlag.py, kwprof.py, kwfreeze.py, kwfreeze2.py, evprof.py, evcheck.py, evstress.py: 0 violations. Gap: no odd-c_w
+  stretch with c_w ≻ c_θ in any data (DIR odd branch, KW-FREEZE (d) untested).
 
 ## Box 41 log (successor 20, session_018pjn8Y8JRES3YuFDUCAJgM; handover check 5/5 (48078dd0); GO 18:15Z, Lead's stamp)
 - Merged trunk 102f05a5. Oink built (8fbf0a7).
