@@ -1,7 +1,7 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## HANDOVER (successor 7 -> successor 8), written 2026-10-25T11:10Z by date -u, context ~530k by the Lead's WATCHDOG (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+## HANDOVER (successor 7 -> successor 8), written 2026-10-25T11:09Z by date -u (stamp corrected from an estimated 11:10Z), context ~530k by the Lead's WATCHDOG (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
 Branch claude/referee. Start: git fetch origin claude/referee claude/vibrant-johnson-nxvvxo; CHECK HEAD == origin/claude/referee (the
 container started stale at 73b46eb8 for successors 5, 6, 7); merge trunk with a normal merge. Push ONLY with scripts/push.sh > file 2>&1;
