@@ -1231,3 +1231,37 @@
 - 14:40Z Lead: merged referee-2 f33884e (OUT §C 2a9e8db: identical verdicts, gap map empty, OUT fixes 640a5db2 checked correct; ENT §C f33884e: identical verdicts, gap map empty, wording difference on "vacuous" (N-ENT-2)). R39 draft completed (REFEREE-2 §C filled; NE-COUNT (c) data), sha1 e6eeb791 → CHECKER C48.
 - 14:45Z Lead: merged referee 4efa2a6 (ENT §C d6b8aef: identical verdicts, gap map empty, N-ENT-1..3 ACCEPTED (N-ENT-2 missed by REFEREE); R36 lift YES: ENT-X, NJB-A, D1, PL-S″ use (P) only via EV+ ⇐ FREE-FREEZE ⇐ BL (c), on G_τ[F_k], which R36 (d) covers; REFEREE 8 PARKED). Created REFEREE successor 9 session_01VsZYJ8FiTSj5Kazk715ZP7 (handover check, then NEB, then LV). P-N5-ENT converged; R40 draft waits for L-SI 7's ENT fixes file.
 - 14:51Z Lead: merged referee 0d3a61a (REFEREE 9 handover check 5/5, re-measured). GO NEB, then LV. The optional SCOPE climb log re-run is not routed: R38 has landed and CHECKER recorded the point.
+- 14:55Z Lead: merged checker 3d6dcbc (C48 = R39 FAIL: E-1 (NO-ENTRY-A's ≡ clause quantified on z ∈ R̄_t), E-2 (W-SIDE Case 1 / Case 2), E-3 (N-OUT-4 attribution: only REFEREE-2 reproduces the breaks); data sums confirmed; re-runs exact). R39 draft revised with all three fixes as given. Also merged l-si 5e9a2a2 (N5-LV3-box12, sha1 20ba05d7: Lemma XG, Lemma ANTI, Corollary NEED-β (one OPEN subcase A2*); "THR ⇒ M ≥ 0" stays CONJECTURE with an exact kill shape; DATA 3,936 in-scope THR fallbacks, all M ≥ 0). Kill shape relayed to L-RED 16.
+- 15:00Z Lead: merged l-new 7932260. Box 39 interim, docs/new/N5-RW-box39.md, working doc (lane PROVED, unrefereed). Idea: Bellman-Ford dominance above T* = max(rank c_θ, rank c_w).
+  - Proved: BF (renamed BF-RW at the Lead's request; it clashes with ENT's BF), FREEZE-M, FREEZE-X, ROUTE-LEN, W-POT, CW-COUNT. Rises per block are polynomial up to TIE steps (OPEN).
+  - Exact obstruction: the bounds are per entry, and every break is an entry, so the charging is circular.
+  - Told L-NEW 18 that REFEREE-2's OUT §C exists (2a9e8db) and found the fixes correct. No fixes2 is needed.
+- 15:05Z Lead: hourly sweep 15:03Z.
+  - Health: no overage; Lead ~265k after compaction. L-COMP 4 (243k) idle on box7w n 5 Q4 (Q3 clean). L-RED 16 (400k) idle on the n 5 subset run (10.1 M / 81 M). L-SI 7, L-NEW 18, REFEREE 9, REFEREE-2 9 and CHECKER 6 all reported within the hour. No exceptions.
+  - Merged l-si 689f7b6 (N5-LV4-box12, sha1 9d1b90f4; lane PROVED, unrefereed):
+    - STALE-GATE (every game): a gate target at a later state has Ξ changed since the fallback k0.
+    - EV-G; ENT-X_{−1}, COND. P-N5-LV §3; LV-PL′ (≤ n·n_E + 1 THR M = −1, r ≥ 0 fallbacks per scope run), COND. P-N5-LV §1-§4.
+    - DATA: 72,589 + 39,406 checks, 0 failures.
+  - Merged l-red 9cf2302 and l-comp 0dd4457.
+  - L-SI 7 had not seen the 14:33Z and 14:46Z ENT relays; re-sent. Order: the ENT fixes file NOW, then packet P-N5-LV4-box12, then u* = none.
+- 15:10Z Lead: merged checker 0be9380 (C48 Addendum 1: R39 PASS at 9639fa2) and l-new a29bd8a (box 39 §11, lane PROVED, unrefereed: Lemma FBF / Theorem P-FREEZE: every in-phase Even fallback is a Bellman-Ford round on U = λ⁻¹(c_θ) for the signed P-weight, so P(Ξ) freezes on U after |U| − 1 fallbacks of a θ-run; Theorem BRK-POLY: B_S ≤ θ_S + (θ_S + 1)(n² − 1) for every HN stretch, any τ(o), any c_w; DATA 714 θ-runs, 0 failures). R39 LANDED in RESULTS (CHECKER C48 3d6dcbc8 + Addendum 1 d22ddb69; cmp OK against draft lines 3-67); GAPS UPDATE 15:09Z. P-N5-PFZ routed (packet, then referee queue NEB → PFZ → LV → LV4).
+- 15:15Z Lead: merged l-si 0bf9a89 and referee-2 a4516df.
+  - l-si: N5-LV5-box12, sha1 e2cb0703; lane PROVED, unrefereed. It gives SAND, FLAT-ALL_{−1}^{none} (COND. LV-SHAPE), and LV-NONE: ≤ n·n_E + 1 u* = none THR fallbacks per scope run, COND. P-N5-LV §1, §3.
+    - Corollary SCOPE-FB: S4c fallbacks per scope run ≤ 4·n·n_E + 3, COND. on the ENT and LV reviews and on refereeing LV4/LV5.
+    - Lead reading: if it lands, it closes R29's per-scope-run fallback count (CL-S). G-N5-TIME still needs scope runs per phase, out-of-scope fallbacks, S4a steps, phases and X.
+  - referee-2: R2-N5-NEB, all SIGN, no gap. Notes: N-NEB-1 (Step (K) citation = N-OUT-2), N-NEB-2 (optional: LOW-RISE′ (b) does not need (i) at t+1), N-NEB-3 (stale OUT rows). REFEREE-2 is now on P-N5-LV; its pre-reading has N-LV-1 and N-LV-2.
+  - Routing: L-SI 7 GO for one packet, P-N5-LV2-box12 (STALE-GATE, EV-G, ENT-X_{−1}, LV-PL′, SAND, FLAT-ALL_{−1}^{none}, LV-NONE, SCOPE-FB), AFTER the ENT fixes file (still missing; asked a third time). N-NEB-1..3 go to L-NEW 18 for the NEB fixes file, after REFEREE 9's NEB report.
+- 15:25Z Lead: merged l-si b6b8f85 (P-N5-ENT fixes, sha1 72d052b5: joint verdicts, N-ENT-1..3, R36 status), l-new b1439f5 (box 39 §12: P-FREEZE′ on P-epochs, θ-LEN, BRK-POLY′, residual ρ = P(θ)-changes; renames BF-RW, FB-ROUND, W-TIE) and checker eea5950 (C48 Addendum 2: R39 landed verbatim; C48 CLOSED). Drafted R40 (P-N5-ENT) → CHECKER C49. L-NEW 18: P-N5-PFZ = §11 + §12. L-SI 7: one packet, P-N5-LV2-box12 (LV4 + LV5).
+- 15:24Z Lead (date -u): CORRECTION. The "15:25Z" line above was written at 15:20Z. The R40 draft header is corrected to 15:20Z, so the draft sha1 is now 019100c7.
+- 15:29Z Lead: merged l-new c9f9caa (packet P-N5-PFZ, docs/new/P-N5-PFZ-box39.md, sha1 3c617e06: FB-ROUND, P-FREEZE (a)-(c), LEN-TAIL, NO-CROSS-A, RISE′ (re-proved from landed results only), BRK-POLY; no (P); post-freeze hypothesis exercised only for |U| = 1 in data) and l-si ed936af (packet P-N5-LV2, docs/si/P-N5-LV2-box12.md, sha1 3b23a41f: STALE-GATE, EV-G, ENT-X_{−1}, LV-PL′, SAND, FLAT-ALL_{−1}^{none}, LV-NONE, SCOPE-FB ≤ 4·n·n_E + 3 with conditions C-ENT / C-LV / C-PKT; N-LV-1/2 not inherited). Both are PINNED at this commit. Referee queues: REFEREE 9 NEB → PFZ → LV → LV2; REFEREE-2 9 LV (running) → PFZ → LV2.
+- 15:37Z Lead: merges and routing.
+  - Merged referee-2 b1038be (R2-N5-LV): LV-SHAPE, FLAT-ALL_{−1}, STRETCH_{−1}, PL_{−1}, LV-PL SIGN; LV-CN, LV-COUNT SIGN COND. CN-LAST; no gap.
+    - N-LV-1 and N-LV-2: wording.
+    - N-LV-3 (DATA): u* = none in-scope THR fallbacks with r = −1, M = −1 ARE reachable: 173,371 in climbs; LV-SHAPE holds at all 1,037,743 gates.
+    - Witness docs/referee-2/R2-N5-LV/climb/best_lv_9401.pg, sha1 4b74cd84. Lead re-run: one Odd choice vertex, n5 5/1, Oink zlk OK, strategies verified. The lane's scopefb.py on the 4 climb files: 0 failures, 1 r = −1 fallback from the canonical start, worst ratio 0.011.
+  - Merged l-new 1b6239f (companion packet docs/new/P-N5-PFZ-ext-box39.md, sha1 b3702b1b: P-FREEZE′, θ-LEN, BRK-POLY′). PINNED at this commit; it is one review unit with P-N5-PFZ.
+  - Merged l-si 0756713 (L-SI 7 PARKED at ~453k; it had first said 255k).
+  - Merged l-comp 4633d13 (box 7 COMPLETE: box7w n 5, 68,764,800 runs, 0 violations; K 0, S_o 1, E 1, K_W 2; box8 n 5 running ~10 h).
+  - Created L-SI successor 8 session_013kZp65x9TKU9AqPZdMYGpm.
+  - NOW: 16 parked rows archived to ROSTER-ARCHIVE (148 → 132 lines).
+- 15:40Z Lead: merged checker 2b54058 (C49 = R40 FAIL. E-1: REFEREE-2 §C C.1 does record the R36 lift; I had said it did not. Optional N-1 and N-2. Points (2) and (3) PASS; re-runs exact) and l-si a6378fc (L-SI 7 NEXT updated). R40 revised: E-1 as given, N-1, N-2; new sha1 28bbe2c3. CHECKER 6 (~470k): hands over after R40 Addenda 1 and 2.

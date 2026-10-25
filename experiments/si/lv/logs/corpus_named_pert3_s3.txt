@@ -1,0 +1,1 @@
+TOTAL {'pert_EQ': 4, 'pert_THR': 181, 'pert_THR_M>=0': 181, 'pert_THR_hasRF': 181, 'pert_THR_rank_o<c': 84, 'pert_fb_h_notscope': 1, 'pert_fb_noh': 84, 'pert_nofb': 10671, 'run_EQ': 6, 'run_THR': 387, 'run_THR_M>=0': 387, 'run_THR_hasRF': 387, 'run_THR_rank_o<c': 165, 'run_fb_h_notscope': 1, 'run_fb_noh': 32, 'run_nofb': 3119}

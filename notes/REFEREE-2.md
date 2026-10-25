@@ -14,7 +14,16 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   ENT-X, NJB-A, D1, PL-S″ SIGN CONDITIONAL ON (P) (via EV+). N-ENT-1 (CYC-EV here generalises the RL-fixes CYC-EV), N-ENT-2 (corollaries
   not vacuous: 698 r > M intervals, all clean), N-ENT-3 (stale status). Reachability: 0 (Σ)-pairs with a rise in batch + climbs; every
   rise after a fallback (62 library, 26,665 climb) is followed by NO further fallback of S (DATA record; rise_end.py). Tools R2-N5-ENT/.
-- NEXT: §C of OUT and ENT when the Lead says so (REFEREE fa08687 / 55a3f6f not read yet).
+- §C OUT 2a9e8db0 (vs REFEREE fa08687 + a8b8ef3; fixes 640a5db2 checked; c_w != o qualification confirmed on all traces); §C ENT f33884e6
+  (vs 55a3f6f; identical; tev_cex_n40 counts identical across engines; N-ENT-2 vs REFEREE's "vacuous" wording).
+- P-N5-NEB (docs/new/P-N5-NEB-box38.md sha1 ba15e51f @ 314d220): docs/referee-2/R2-N5-NEB.md a4516df9, all SIGN; N-NEB-1..3. Tools R2-N5-NEB/.
+- P-N5-LV (docs/si/P-N5-LV-box11.md sha1 d0d797f0 @ 601df6e + addendum a15a8871, not to sign): report docs/referee-2/R2-N5-LV.md in progress;
+  all SIGN (LV-CN, LV-COUNT COND CN-LAST); N-LV-1 (FBW-1 H1 vs H2), N-LV-2 (STRETCH k <= e). (LV) setting empty in batch.
+- LV climbs reached the (LV) setting with u* = none (r = -1): 173,371 states, LV-SHAPE 0 failures; witness climb/best_lv_9401.pg (SPEC,
+  S3 start, state 2). This refutes the packet's §5 DATA line "0 in scope" (N-LV-3), not any signed item.
+- NEXT: §Cs for NEB / LV when the Lead routes REFEREE's reports.
+- Trap (mine, this session): a totals regex that silently dropped counter names with "!" (NEB). Use ^([^:]+): (-?\d+)$ and check that
+  every class you expect appears in the summary.
 - Trap: experiments/new/box38 instances (post-pin lane cex of §7 conjectures) are in the library; the checker records them, does not fail.
 
 ## Handover check (successor 9, session_0163ejRshYhYxVW2CD2XUEB2, Opus 5.5 under D15/L37; 2026-10-25 13:01Z by date -u)
