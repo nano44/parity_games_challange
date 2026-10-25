@@ -73,6 +73,44 @@ Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2
    experiments/si/xing/out/ does NOT exist in this container (`cat .git/info/exclude` shows only the template); so never
    `git add -A`, add files by name.
 
+## HANDOVER (successor 6, box 11; written 2026-10-25 ~13:50Z (date -u) at ~440k; session_01WZRciyMqz1LNWwdFoeq2AP)
+### DONE (every sha1 below was sent to the Lead, so these files are FROZEN; new text goes in NEW files)
+- docs/si/N5-TEV-box11.md (58a0b3cf): lane write-up of ENT-X.
+- docs/si/P-N5-RL-fixes-box10.md (ac027458), docs/si/P-N5-RL-fixes2-box10.md (b3e3cd93), docs/si/P-N5-P1-fixes-box10.md (83ef83b0),
+  docs/si/P-N5-RL-P1-addendum-box10.md (5c29d93d). Both referees signed CYC-EV + TEV-RED′ in their addenda (Lead 13:13Z). P1 → R36,
+  RL → R37 at CHECKER.
+- Packet P-N5-ENT docs/si/P-N5-ENT-box11.md (4fd22be7). No (P): FZ, BF, RB, WALK, CYC-EV, TEV-FB. CONDITIONAL on (P) via EV+ only:
+  ENT-X, NJB-A, D1 (D_M ≤ 1), PL-S″ (≤ 2·n·n_E fallbacks of level ≥ 0 per scope run). With P1 landed, the condition goes once ENT is
+  signed. Status when I left: routed by the Lead? (I did not see a referee report on it.)
+- docs/si/N5-STR-box11.md (c7b9c671), N5-STR2-box11.md (b6ed9476): straddle obstruction (NL's (K*) at r = L), CONJECTURE NL= (0 failures
+  in 743 steps), reading NJB ⇐ (P) ∧ NL=, and an NL= kill shape (passed to L-RED 16 by the Lead). Off the critical path (Lead agrees).
+- docs/si/N5-LV-box11.md (407c5520), N5-LV2-box11.md (94ac2469); packet P-N5-LV docs/si/P-N5-LV-box11.md (d0d797f0): LV-SHAPE;
+  LV-CN / LV-COUNT (CN-LAST); FLAT-ALL_{−1}, STRETCH_{−1}, PL_{−1}, LV-PL ≤ n·n_E·(d_o + REL(S)). The packet supersedes LV2's "+1".
+- Dead ends: TEV, TEV-LAST (docs/si/DEAD.md).
+- Scripts: experiments/si/tev/ rb.py, straddle.py, nleq.py, lvm1.py; logs in experiments/si/tev/logs/.
+### IN FLIGHT
+- Nothing running.
+### NEEDS
+- None from the owner. Lead: route P-N5-ENT and P-N5-LV to the referees; referee items go to NEW fixes files.
+### Things only I know
+- The device behind ENT-X: a free vertex that was in R at k0 and whose old successor is back in R̄ at the next fallback cannot see a
+  COARSE_L change there (Lemma RB). Otherwise that edge is a gate of level > L, which CLS2 forbids at a fallback. Walking the old route
+  to the first R̄ vertex turns this into "B ⊆ A" whenever the walked route is low. At S4a states the same gate is allowed. That is
+  exactly why TEV fails at S4a states (tevlast_cex_n40: v = 15, gate (15, 21) of level 33, re-enters R at 8) and holds at fallbacks.
+- P-N5-RL's §6 silently assumed the Ev vertex is on the pre-c path. CYC-EV fixes it at t = k only.
+- R31's level-≥0 proofs use M ≥ 0 only through "THR with u* ≠ none". That is how the level −1 count came for free. The rank-L bit (STRETCH
+  step 2, ENT-SHAPE (4)) is the part that does not transfer; lengths replace it in STRETCH, but nothing replaces it in ENT-SHAPE.
+- Traps:
+  - `pkill -f <pattern>` kills the calling shell when the pattern is in its own command line;
+  - `git log -- <path>` takes > 120 s here;
+  - several Lead messages crossed with my files: always check whether a sha1 was already sent before deciding "same file or new
+    file".
+### NEXT (for a successor)
+1. Referee items on P-N5-ENT / P-N5-LV → NEW fixes files.
+2. Level −1: (a) u* = none THR fallbacks (r = −1; NL at L = −1 unavailable); (b) a length-based ENT-SHAPE to drop REL(S) at level −1;
+   (c) or kill "THR ⇒ M ≥ 0" via a (β)-fallback (P-N5-LV §1/§5).
+3. NL= (straddle) only if cheap; it buys a factor 2.
+
 ## Resume point (successor 6, box 11; GO 12:12Z 2026-10-25; session_01WZRciyMqz1LNWwdFoeq2AP)
 Write-up: docs/si/N5-TEV-box11.md. Code: experiments/si/tev/rb.py (logs/rb_named.txt, logs/rb_lib.txt).
 ### DONE
