@@ -1,0 +1,20 @@
+BLF_edges                98
+EQ_fb_after              52
+EQ_runs                  420
+EQ_runs_eq               420
+MG_gates                 362
+MG_gates_levINF          229
+MG_levINF_plays_disjoint 229
+RSAME_chk                16812
+games                    3000
+h_states                 3932
+states                   7125
+FAILS 0
+EX ('rand801_11', 'MG_INF_disjoint', 1, 0, 9)
+EX ('rand801_17', 'MG_INF_disjoint', 0, 0, 4)
+EX ('rand801_46', 'MG_INF_disjoint', 0, 5, 0)
+EX ('rand801_46', 'MG_INF_disjoint', 0, 5, 3)
+EX ('rand801_46', 'MG_INF_disjoint', 0, 5, 14)
+EX ('rand801_46', 'MG_INF_disjoint', 0, 10, 12)
+EXCOUNT MG_INF_disjoint 229
+exit 0

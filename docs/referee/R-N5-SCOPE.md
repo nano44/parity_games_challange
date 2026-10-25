@@ -120,3 +120,28 @@ No gaps.
 - Not a TARGET.md claim; the TARGET.md diff is empty.
 
 Signed: REFEREE successor 7 (Opus 5.5, D15).
+
+## §C. Comparison with REFEREE-2 (written 2026-10-25 12:17Z by date -u; REFEREE successor 8 (Opus 5.5, D15), for this lane's report above)
+- Compared against: the FINAL docs/referee-2/R2-N5-SCOPE.md at referee-2 6d6e4bcf ("R2-N5-SCOPE final: all six SIGN"), named by the Lead
+  at 12:08Z (Lead's stamp). The draft 1f8a9109 was not used. I read R2 only after this lane's report (fb6089b / 560ff4c) was pushed.
+- Verdicts. Both referees SIGN all six statements: KEY, WCH, SCOPE-COUNT, FB-INT, NH1-FB and CN-LAST. Neither signs §7. No verdict
+  differs.
+- Joint gap map. Neither report lists a gap. R2's notes, checked against the sources:
+
+| R2 item | what it says | checked | this lane | joint status |
+| --- | --- | --- | --- | --- |
+| N-SC-1 | the dependency table's status for R-CONST, "IN LANDING (R33 (e) draft, CHECKER C42)", is stale | `git log -1 00bd18b8`: R33 landed 10:37:35Z; the packet commit 8483279d is 10:45:04Z. Correct | MISSED (status wording; no effect on any proof) | note; fixes line below |
+| N-SC-2 | WCH: "t0 ∈ F_k = F_{k+1}" sits in the non-crossing disjunct; the proof gives Ξ_k(t0) ≠ Ξ_{k+1}(t0) at every such transition | packet §2: H2 at both ends gives t0 ∈ F at each end separately, and w = o ⊕ Ξ(t0) at each. Correct | this lane's §2 used the unconditional form ("a w-change forces a change of Ξ(t0) with t0 ∈ F") but did not flag the statement's wording | note (wording) |
+| N-SC-3 | FB-INT: the pointwise fact "every non-tame transition is a crossing" is in the proof of R28 (c) (ii), not its statement | packet §4 already says "This is the proof of R28 (c) (ii)", and its dependency table says "OX (ii)'s proof". So the packet text meets the note | same reading (§4 above) | note; no change needed |
+| N-SC-4 | NH1-FB: T is the toggle count here, but P-N5-TOG §4 uses T for the bound |U|(n + 1) + n − 1 | P-N5-TOG §4 l.88: "H1-toggles per phase ≤ T := |U|(n + 1) + n − 1". Correct; both readings give a valid inequality | MISSED (notation) | note; fixes line below |
+| O-1 (§7.2, not to sign) | "f_out ≤ n_E(2n − 1)(X_out + 1)" needs "+ X_out": evicting fallbacks are crossings and lie in no FB-INT stretch | FB-INT counts fallbacks inside crossing-free runs only. DATA (own SPEC engine rl_engine.py, not R2's N5): wd16_s2 has 13 in-phase fallbacks, all 13 crossings (R̄ changes), all at H1 ∧ ¬H2. Correct | not examined (§7 not to sign) | accepted; for L-NEW §7.2 |
+
+- Attribution: R2's counts come from its own N5 (any arena optimum), mine from SPEC traces. The two DATA sets are different runs and not
+  re-runs of each other. That is not a disagreement.
+- Fixes-file lines (L-NEW, P-N5-SCOPE; none blocks a signature):
+  - N-SC-1: dependency table, R-CONST row → "LANDED (RESULTS R33 (e))".
+  - N-SC-2: WCH statement → "Ξ_k(t0) ≠ Ξ_{k+1}(t0) at every such transition; off crossings t0 ∈ F_k = F_{k+1}".
+  - N-SC-4: NH1-FB → name the toggle count and P-N5-TOG's bound differently.
+  - O-1: §7.2 → "f_out ≤ n_E(2n − 1)(X_out + 1) + X_out".
+- Joint label after §C: KEY, WCH, SCOPE-COUNT, FB-INT, NH1-FB and CN-LAST are PROVED (L-NEW successor 15) and signed by both referees
+  (Opus 5.5, D15), pending CHECKER. No open gap.

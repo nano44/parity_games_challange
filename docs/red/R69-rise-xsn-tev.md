@@ -9,10 +9,12 @@ Targets (Lead 09:46Z brief, 09:55Z split, 10:06Z exitx, 11:14Z TEV):
 𝒞^1O only: exactly one Odd vertex with out-degree > 1, asserted in every checker. Labels per L40. G-N5-TIME stays OPEN.
 
 ## 0. Result
-- **TEV as written: FALSE (CANDIDATE until the Lead re-runs).** tev_cex_n40.pg, sha1 17078f78ed830bd1af4ce1048bf7c821e287cc31.
-  - The hit needs in-scope fallbacks strictly between k0 and t.
-  - With k0 = the last fallback before t (TEV-LAST, the form EV+ / TEV-RED use), there are 0 failures. So NJB's route through TEV is
-    not refuted (§5).
+- **TEV: FALSE, also in its last-fallback form (CANDIDATE until the Lead re-runs).**
+  - tevlast_cex_n40.pg, sha1 ff1e9cb4e5b230092de1d967ac8d3fadaa90c175: one fallback. L-SI's own threv.py agrees (thr_ev_rise 1).
+  - tev_cex_n40.pg, sha1 17078f78ed830bd1af4ce1048bf7c821e287cc31: the as-written form with intervening fallbacks.
+  - The route TEV ⇒ NJB (via EV+) is gone. NJB / ENT are NOT refuted, since neither hit has a second fallback after the failure.
+  - TEV-RED (1), (2), (4) hold on the hit (its benign case (4)). The remaining route is "exclude configuration (5)". TEV-RED (3)
+    needs a wording fix: "before e" → "up to and including e" (§5).
 - RISE-LAST, XSN-RUN, RESTARTS (+ H3-CONST, H2-STICK, the restart classification): 0 failures on 292 library paths and every
   climb. NO KILL.
 - XSN-RUN's margin is 1 at small n: 8 at n 10 (xrun8_n10.pg), and that 8 includes the prefix-exit crossing. The prefix-internal
@@ -105,23 +107,40 @@ Targets (Lead 09:46Z brief, 09:55Z split, 10:06Z exitx, 11:14Z TEV):
     and the threat at 23 avoids it.
   - TEV-RED step (1) uses "no vertex leaves R at the S4a steps of (k0, t]", hence F_t ⊆ F_{k0+1}. Fallbacks in between break that,
     and that is exactly where the hit lives.
-- TEVLAST (k0 = the last fallback before t; the form EV+ needs, with consecutive fallbacks k0 < k): 0 failures. Climbs, below.
-- L-SI's threv.py (run from an l-si 90b5fb3f worktree) gives thr_ev_rise = 0 on tev_cex_n40. Its scan stops at the next fallback, so
-  its 0-of-117 data covered TEV-LAST only (trap 3: a checker narrower than the statement).
-- The TEV-RED configuration (an Even e with u_e both evicted at k0 and free at k, e re-routed into frozen F_{k0}, the threat through
-  e after B ∖ A) never occurs, because TEVLAST never fails.
-- TEV-LAST climbs: see §5b.
+- **Counterexample to TEV-LAST (CANDIDATE): tevlast_cex_n40.pg**, sha1 ff1e9cb4e5b230092de1d967ac8d3fadaa90c175, n 40, o = 0.
+  - Found by the tevl climb from tev_cex_n40. TEVLAST means k0 is the last fallback before t, the form EV+ needs.
+  - Verified: n5 = n5b --mode spec 11/1, Oink zlk OK, strategies verified.
+  - L-SI's threv.py, unmodified, from an l-si 90b5fb3f worktree: TOTAL {'fb': 1, 'ev_size': 6, 'states': 5, 'thr_ev': 3,
+    'post_rise': 2, 'thr_ev_rise': 1}, example (3, 7, 32).
+  - Witness:
+    - k0 = 3 is the run's only fallback: in scope, (h), M = L = 32, r = 38 (THR).
+    - Ev = {5, 9, 12, 15, 16, 24}.
+    - States 4-7 are S4a with r = 38, and COARSE_32(θ) rises at 6 → 7.
+    - At t = 7 the threat's play is 5 → 15 → 35 → 26 → 28 → 11, which meets Ev at 5 and 15.
+  - TEV-RED at the hit (tevred16.py, e = 15, the last Ev vertex):
+    - (1) holds: e is Even, f = σ_7(e) = 35, f's play lies in F_3, and Ξ_7(f) = Ξ_3(f).
+    - (2) holds: u_e = σ_3(e) = 21 ∉ Ev, and COARSE_32(Ξ_3 21) = COARSE_32(θ_3).
+    - (4) holds: 21 ∈ R̄_7, (e, u_e) is an improving edge of level 33 > L at 7, and e re-enters R at 8 (σ_8(15) = 21).
+    - So this is (4)'s benign case. Configuration (5), u_e ∈ Ev ∩ F_k at a fallback k, does not arise.
+    - (3), as worded: B ∖ A = {15} = e itself (rank 33; A above L = {35, 28}, B = {15, 35, 28}), and the only vertex before e is 5
+      (priority 14). "the vertices of the threat's play before e" is false as worded. The proof's "(play up to e) ⊕ Ξ_k0(f)", with
+      e included, holds. Fix: "before e" → "up to and including e".
+- TEVCONF (configuration (5): a TEVLAST failure at an in-scope fallback state t): conf climbs, §5b.
+
+## 5b. Configuration (5) climbs (DATA)
+(filled at box end)
 
 ## 6. Labels
-- CANDIDATE COUNTEREXAMPLE (until the Lead re-runs): TEV as written (tev_cex_n40).
-- DATA, 0 failures: TEV-LAST, RISE-LAST, XSN-RUN, RESTARTS (PROVED in lane, given H2-STICK, H3-CONST, H3H2), H3-CONST and H2-STICK
+- CANDIDATE COUNTEREXAMPLES (until the Lead re-runs): TEV as written (tev_cex_n40) and TEV-LAST (tevlast_cex_n40).
+- WORDING: TEV-RED (3) "before e" → "up to and including e" (tevlast_cex_n40).
+- DATA, 0 failures: TEVCONF (configuration (5)), RISE-LAST, XSN-RUN, RESTARTS (PROVED in lane, given H2-STICK, H3-CONST, H3H2), H3-CONST and H2-STICK
   (PROVED in lane), PF-THETA cross-check (no climbing).
 - CONJECTURE (L-RED): RISE-LAST, XSN-RUN (unchanged); data pattern "prefix-internal crossings ≤ n − 3".
-- OPEN: NJB (its route via TEV-LAST stands), X per phase, f, G-N5-TIME.
+- OPEN: NJB (its route via TEV is gone; via configuration (5) it stands), X per phase, f, G-N5-TIME.
 
 ## 7. Traps
 - (1) Two sessions on one branch (successor 15 resumed box 39 at 09:44Z): merge origin before every push, use distinct file names.
-- (2) A borrowed checker narrower than its statement (threv.py breaks at the next fallback).
+- (2) A borrowed checker narrower than its statement (threv.py breaks at the next fallback). It still caught the TEV-LAST hit.
 - (3) A degenerate maximum (rst climb slack 0 at one run). Target the classification, not the slack.
 - (4) A waiter on a climb I killed never ends; it was stopped at its time limit.
 - (5) My 10:1xZ message stamp was a guess; date -u read 10:04Z. Stamp from date -u only.

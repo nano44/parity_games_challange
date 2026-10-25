@@ -9,6 +9,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   - Filled in: §5 BASE "u on z's side" is true and needed only in the cycle case; the avoid case needs only the shared top u.
     FBL-N (iii) extends to target o (λ_W(o) ∈ C_W ⊆ R̄ under ¬H2).
   - DATA: experiments/new/box38/fbsplit.py: library 107/107 in-stretch HN fallbacks are crossings, 0 non-crossing, 2 exit; 0 failures.
+- (c) NO-ENTRY-B FALSE (nebc_cex_n14, canonical; neb_cex_n11, start pair). PROVED instead (docs/new/N5-NEB-box38.md): Lemma LOW-RISE,
+  Theorem BRK-B (B_S ≤ θ_S + (n−2)²(θ_S+1), τ(o) = o), Corollary OUT-1 (τ(o) = o out-of-SN fallbacks poly in θ_ph, T_ph; both cases).
+  Tools box38: rrgate, statesamp, neb_aug, neb_run, nebclimb, lowrise (data/lowrise_lib.txt: 0 failures).
 
 ## Handover check (successor 17)
 Successor 17 (Opus 5.5, D14/D15/D18, L37/L40), session_01ESR6bpU1r4ZjFsMExZtFpq, written 2026-10-25 11:5xZ by date -u (clock read
@@ -465,6 +468,15 @@ container only; a new container needs scripts/setup_oink.sh.
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 17, box 38 (c)) CONJECTURE NO-ENTRY-B (τ(o) = o, case B: no entry after an HN fallback while θ is constant): FALSE, canonical
+  start. experiments/new/box38/instances/nebc_cex_n14.pg (sha1 399119afb8741f3689081389e70729891937df7b; nebclimb seed 3835 from
+  b5_os_n14). n 14, o = 7, rank(o) 6 < rank(c_θ = 12) 8. n5 9 iterations / 5 fallbacks; Oink zlk OK, strategies verified. Fallback at 1
+  raises Ξ(3) (12, ∅, 3) → (12, ∅, 4) (low class, P = P(θ) = ∅); gate 4 → 3 from F at 2; S4a 2 → 3 enters 4, θ = (12, ∅, 2) constant.
+  Also from a start pair: neb_cex_n11.pg + .state (232b8951…). Obstruction: a length-only R → R̄ switch at a case-B fallback raises an
+  R̄-value of the low class past an F-value with the same P. Repair: Theorem BRK-B (breaks ≤ θ_S + low rises).
+- (succ. 17, box 38 (c)) NO-RR-B ("no R → R̄ gate at a case-B τ(o) = o HN fallback state"), NO-RISE-B ("no R̄-value rise at such a
+  fallback") and "INV_B (i) propagates": all FALSE on nebc_cex_n14 (state 1 / 1 → 2 / state 2). State-level: statesamp.py 39 / 616 states
+  with gates (all length-only), 1 / 413 with a real rise (norise_state_n8.pg + .state, c7462ba5…).
 - (succ. 16, box 37) ROUTE-FROZEN ("inside an H1 ∧ ¬H2 stretch, after a fallback with θ constant, Ξ on R stays frozen"): FALSE.
   experiments/new/box37/instances/rfroz_cex_n16.pg (sha1 a9b40395ba9a351037f8dff612d50848540ddbc1; rfclimb seed 3722 from wd16_s2). n 16,
   o = 11, τ(o) = o, case A. n5 15 iterations / 5 fallbacks; Oink zlk OK, strategies verified (Lead re-run 11:14Z). Phase ph394, θ constant:
