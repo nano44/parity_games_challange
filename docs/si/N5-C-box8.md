@@ -177,3 +177,14 @@ Arena-step '−' and '±' reversals (Z's part beyond (C)), by regime:
     non-circular route for (C) inside (Z).
   - Recommendation: keep (CL-S) with its open (H-B1) at arena leaves. Its use is (Z), not (J-poly) as such.
 - The rest of (Z), arena '−' and '±' reversals (§7), is the remaining core.
+
+## 9. Adversarial climbs against (CL-S) and its invariants (DATA; experiments/si/coarse/jclimb.py, 40 min each, 00:3xZ-01:09Z)
+- CLS2 mode. Fitness = ((CL-S) violations, the largest rise of the fallback level between two fallbacks of one scope run, fallbacks
+  + MF rises). Seeds fbref_cex_n32 and zcl_fb2_n32: 36,230 and 35,360 steps. Final (0, 0, 23) and (0, 0, 25): equal levels
+  repeated, never a rise.
+- RF mode. Fitness = (violations of (CL-S), (A), FRZ, LV; high gates into R̄ after a fallback, plus 5 × arena leaves after a
+  fallback; fallbacks). Seeds x32_waves48 and x31_lem_t32: 31,047 and 43,863 steps. Final (0, 20, 35) and (0, 20, 21): high gates
+  into R̄ saturate the cap, and no arena leave after a fallback ever appeared.
+- Earlier, a CLS climb in box 7 (cls_rel_lev): 0.
+- READING: the open case of (H-B1), an arena leave whose target carries a gate above L, did not arise under direct pressure. Weak
+  evidence: the climbs never reached the precondition "arena leave after a fallback" at all.
