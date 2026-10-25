@@ -1272,3 +1272,7 @@
     - Caveat: HAT-FREEZE after the freeze is exercised only on climb outputs.
   - Created L-NEW successor 19 session_011reTXakSJCcwLhC4i9ZpkB.
   - L-RED 16 CANDIDATE: CONJECTURE NL= FALSE (NL (ii) fails at r_j = L) on experiments/red/so/instances/nleq_cex_n48.pg, sha1 e72e4034. The file is not yet pushed; Lead re-run pending.
+- 15:50Z Lead: merged l-red d7df76f. CONJECTURE NL= (L-SI, N5-STR/STR2; not-to-sign in P-N5-LV addendum a15a8871) is FALSE. NL (ii), "no leave", fails at r_j = L.
+  - Instance: experiments/red/so/instances/nleq_cex_n48.pg, sha1 e72e4034.
+  - Lead re-run: one Odd choice vertex; n5 10/1; Oink zlk OK, strategies verified. L-SI's own nleq.py gives nl2_fail 1 at j 6, L = r = 47 (vertex 40 → 9 leaves R).
+  - Consequence (N5-STR2 §2): NJB's straddle stays OPEN; D1 (R40, in landing) is unaffected. Lane dead end; it goes into the LV entry's not-signed list.
