@@ -1,0 +1,1 @@
+TOTAL {'fb_THRu': 252, 'F_chk': 25646, 'R_chk': 9319, 'leave_fb': 550, 'B1_chk': 554, 'highRbar': 12, 'fb_EQ': 4, 'leave_ar': 4, 'AL_chk': 4}
