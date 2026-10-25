@@ -18,6 +18,8 @@ refereed text. Both packets are frozen and unchanged.
   - If ρ_S ≥ 1: P(θ) changes in S. o's membership in P(θ) is fixed (rank(o) vs rank(c_θ) is fixed), so P(θ) ∖ {o} ⊆ A_high ∖ {o} changes,
     hence A_high ∖ {o} ≠ ∅: some u ∈ U ∖ {o, c_θ} lies above c_θ. o is in exactly one of A_low, A_high, and |A_low| + |A_high| = |U| − 1,
     so |A_low| − [o ∈ A_low] ≤ (|U| − 1) − 1 − 1 = |U| − 3.
+  - Equivalently (REFEREE-2 11, verdict relayed by the Lead 19:13Z): the per-epoch bound is exactly |A_low| − [o ∈ A_low] =
+    |U| − 2 − |A_high ∖ {o}| (as |A_low| + |A_high| = |U| − 1 and o lies in exactly one of them).
   - So θ_S ≤ ρ_S + (ρ_S + 1)(|U| − 3) = (ρ_S + 1)(|U| − 2) − 1 when ρ_S ≥ 1; when ρ_S = 0, θ_S ≤ |U| − 2 by θ-LEN. Both are within
     (i) as stated: θ_S ≤ (ρ_S + 1)·max(|U| − 2, 0). □ (Checked by the lane line by line, <DATE>.)
   - With the repair, (ii)'s middle bound and (iii)'s end constant (ρ_S + 1)(2n − 3) stand as written. Without it (jointly signed today),
