@@ -49,3 +49,49 @@ CHECKER commit is 52a1e489 (C27 Addendum 4: R18 landed at 022ce8f PASS). There i
   count claim about a pinned instance is recomputed from the instance file at the pin, not taken from the text.
 - Also carried: push.sh output redirected to a file, then `$?` (never piped); re-runs in a detached worktree of the exact pin with the
   scripts unmodified; file sha1 of every signed object verified.
+
+## Handover check (successor 7)
+Written 2026-10-25 16:10Z (date -u). CHECKER successor 7 (Opus 5.5, D15), this session. Predecessor: successor 6,
+session_01XuHZ95RA84WV7mhDqDjRQ4, handover 0ac145ca (notes/CHECKER.md "## HANDOVER (successor 6 → successor 7)"). Successors 5 and 6
+wrote their checks in notes/CHECKER.md; this one is here as the brief asks. Every answer measured from the repository; commands named.
+
+### 1. Branch, head, ahead/behind trunk
+- `git fetch origin claude/checker`; `git checkout -B claude/checker origin/claude/checker`; HEAD = origin/claude/checker = 0ac145ca (checked
+  with `git rev-parse`). The fetch moved origin/claude/checker 52a1e489..0ac145ca: the clone started stale at C27 again.
+- Trunk = claude/vibrant-johnson-nxvvxo, head c4c09736 (Lead hourly sweep 16:02Z). Before merging: `git rev-list --left-right --count HEAD...trunk`
+  = 2 ahead (0ac145ca handover, 30598a36 trunk merge), 5 behind; merge-base 48bb74ce (R40 landing). 0ac145ca is NOT yet on trunk.
+- `git merge --no-ff trunk` (no rebase) → 3 ahead, 0 behind. This file's commit makes 4 ahead, 0 behind.
+
+### 2. Open work and the next step of each
+- C45-C49 CLOSED (R36-R40 landed; docs/checker/C45.md..C49.md). Nothing in flight from successor 6.
+- R41 = P-N5-NEB: packet docs/new/P-N5-NEB-box38.md sha1 ba15e51f (= handover). Reports on trunk: REFEREE docs/referee/R-N5-NEB.md 7da14c1f
+  (40adbf1c), REFEREE-2 docs/referee-2/R2-N5-NEB.md 33fefec4 (a4516df9). NOT READY: no §C in either report yet, no NEB fixes file in docs/new/
+  (`ls docs/new | grep -i NEB.*fix`: none; L-NEW succ. 19 does "NEB fixes when §Cs are in", NOW l.68), no docs/agents/R41-draft.md.
+  Next: when the draft exists, the six-step method (pins over first-parent and --full-history; cited SHAs ancestor + `show --stat`;
+  read packet, fixes, both reports and §Cs in full; trace data to logs; re-runs in a detached worktree; landed check). Expect the
+  Step (K) citation repair OUT needed (handover; OUT fixes §1).
+- R42 = P-N5-LV: packet docs/si/P-N5-LV-box11.md d0d797f0, addendum a15a8871. Reports: REFEREE R-N5-LV.md 0be5e352 (8054da2f), REFEREE-2
+  R2-N5-LV.md 66e55e04 (b1038bea). Same state: no §Cs, no fixes file, no R42 draft. LV2 (3b23a41f) and PFZ are in review; REFEREE-2's
+  R2-N5-PFZ (37e55fde) is on claude/referee-2, not yet on trunk.
+- Oink: tools/ absent; to build with scripts/setup_oink.sh before the first re-run (verify's smoke step is NOT RUN without it).
+- Scratch tool landed.py (successor 6's tools46) is lost with the container; rewrite it at the first landed check.
+
+### 3. docs/GAPS.md rows I own
+- `awk -F'|' '$4 ~ /CHECKER/' docs/GAPS.md`: none. On the landing side: G-N5-TIME (major, L-NEW, open, l.11); last UPDATE 15:55Z (R40 landed,
+  CHECKER C49 + Add. 1): "Open: level −1 (P-N5-LV signed by both, P-N5-LV2 in review; ...), out-of-scope fallbacks (P-N5-NEB signed by
+  both; P-N5-PFZ in review), ...". R41/R42 will append to that row: old row minus " |" a prefix of the new one, status open.
+
+### 4. The three owner rulings that most constrain me, verbatim (docs/DECISIONS.md, `grep -n -F`), with index status
+- D1 (l.7; DECISIONS-INDEX l.5 "active"): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+  including the fleet's own, as wrong until it passes the gauntlet below."
+- D15 (l.278; index l.26 "active", L37 l.27): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+- D18 (l.333; index l.32 "active", L40 l.33): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas
+  from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+  them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+- For the gate: nothing lands stronger than both signatures (D1); labels "(Opus 5.5, D15)"; PROVED / CONJECTURE / OPEN / FALSE exact (L40).
+
+### 5. One trap, and the check that prevents it
+- Trap (C47-C49, every E-item): draft wording drifting from signed text: a dropped hypothesis clause, an unquantified variable, a dropped case
+  split, and false referee attributions ("both referees reproduce", "R2 does not address"). Check: diff every draft clause against the
+  packet + fixes verbatim, and read every attribution sentence against both reports AND both §Cs before PASS.
+- Also bit me already: `git status` said "up to date" on a stale clone (52a1e489); the check is fetch, then `git rev-parse HEAD origin/<branch>`.

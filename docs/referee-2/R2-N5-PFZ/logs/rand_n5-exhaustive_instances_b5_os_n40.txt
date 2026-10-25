@@ -1,0 +1,19 @@
+FACT_A_states: 199
+FBR_checks: 3381
+FBR_fallbacks: 23
+NCA_identity_states: 183
+PFZ_b_runs: 6
+PFZ_skipped_large_U: 12
+RECORD_post_freeze_runs_U=1: 6
+breaks: 3
+breaks_kind1: 3
+breaks_kind2_early: 0
+breaks_kind2_late: 0
+post_freeze_transitions: 6
+runs: 3
+states: 199
+theta_runs: 18
+max_fallbacks_in_theta_run: 6
+max_fallbacks_minus_U_plus_1_U>=3: 0
+max_post_freeze_U_rises: 0
+RESULT OK violations=0

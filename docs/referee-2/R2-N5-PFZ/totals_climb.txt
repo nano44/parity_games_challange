@@ -1,0 +1,22 @@
+## climbs (4 x 1200 s; own + rand traces; sums over all evaluations)
+  FACT_A_states: 11155049
+  FBR_checks: 6767387
+  FBR_fallbacks: 1261044
+  NCA_identity_states: 1734930
+  PFZ_a_checks: 2318732
+  PFZ_b_runs: 8253626
+  PFZ_skipped_large_U: 385087
+  RECORD_post_freeze_runs_U=1: 419630
+  RECORD_post_freeze_runs_U=2: 955321
+  breaks: 5254
+  breaks_kind1: 5254
+  breaks_kind2_early: 0
+  breaks_kind2_late: 0
+  climb_evaluations: 1163460
+  post_freeze_transitions: 102305
+  runs: 4653840
+  states: 11155049
+  theta_runs: 8638713
+  max_fallbacks_in_theta_run: 13
+  max_fallbacks_minus_U_plus_1_U>=3: 0
+  max_post_freeze_U_rises: 0

@@ -1,6 +1,67 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point (successor 10, session_012VrKctzqedu9x1gVAMchV7, Opus 5.5 under D15; 2026-10-25 16:5xZ by date -u)
+- Handover check 5ca9ac38 (Lead 16:32Z by its stamp: 5/5, merged 1d2ee62; correction: 37e55fde WAS on trunk via c74648b, my trunk view
+  e05382f was older). GO: (1) R2-N5-LV2 (P-N5-LV2 3b23a41f @ 283bcb6) incl. STRETCH_{-1} at e = f_{N-1}+1 and the per-scope-run r = -1
+  count vs n n_E + 1 / 4 n n_E + 3; (2) PFZ-ext (b3702b1b @ c61ecc4) as §X of R2-N5-PFZ.md; then §Cs vs REFEREE R-N5-PFZ (referee 8595343)
+  and R-N5-LV2 (referee b454ca3), read only after mine are pushed. Hand over at ~450k.
+- R2-N5-LV2: draft docs/referee-2/R2-N5-LV2.md (all SIGN; N-LV2-1 R36 status, N-LV2-2 wording). Tools R2-N5-LV2/ (lv2_check.py,
+  lv2_climb.py; batch logs/ 893 OK, logs_new/ 474 OK; climbs none_9501..9503, blk_9504). Mutation controls sand0 / fa0 bite.
+- PFZ-ext: §X appended to R2-N5-PFZ.md. P-FREEZE′, θ-LEN SIGN; BRK-POLY′ (i) NOT SIGNED as stated, G-PFX-1: the ρ_S P-change
+  transitions are θ-changes not counted by θ-LEN; (i′) θ_S ≤ ρ_S + (ρ_S+1)max(|U|-2,0); (iii) end bound (ρ+1)(2n-2). Tools
+  R2-N5-PFZ/pfzx_check.py, pfzx_climb.py, logs_x/ (1367 OK), climbs brki_9601/9602.
+- DONE 17:2xZ: R2-N5-LV2 a551debf (all SIGN; N-LV2-1..3; u* = none 237,033 climb fallbacks, max 1 per scope run; 645 block fallbacks,
+  max 1, no witness saved). R2-N5-PFZ §X 78896bfc (G-PFX-1). NEXT: R2-N5-RHO, then §C PFZ (REFEREE 8595343) and §C LV2 (b454ca3).
+- Lead 16:54Z: queue + P-N5-RHO (docs/new/P-N5-RHO-box40.md sha1 cd5df65c @ trunk c814455) -> docs/referee-2/R2-N5-RHO.md after LV2, PFZ-ext; then §Cs. REFEREE 10 reviews it independently.
+
+## HANDOVER (successor 9, session_0163ejRshYhYxVW2CD2XUEB2, Opus 5.5 under D15; written 2026-10-25 16:07Z by date -u; context ~360k)
+Branch claude/referee-2, merged with trunk (--no-ff) at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this commit.
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
+| packet | object (sha1) @ pin | report SHA | §C SHA | outcome |
+| --- | --- | --- | --- | --- |
+| handover check | — | ba6fac1b | — | Lead 5/5 |
+| P-N5-OUT | docs/new/P-N5-OUT-box37.md 9f032e61 @ 719ce66 | dfcaae67 | 2a9e8db0 | all SIGN; N-OUT-1..4 (fixes 640a5db2 checked); REFEREE identical |
+| P-N5-ENT | docs/si/P-N5-ENT-box11.md 4fd22be7 @ 765e893 | b7df84b8 | f33884e6 + addendum cf54523b | 6 SIGN + 4 SIGN COND (P), and R36 lifts (P); N-ENT-1..3; REFEREE identical (§C d6b8aef9) |
+| P-N5-NEB | docs/new/P-N5-NEB-box38.md ba15e51f @ 314d220 | a4516df9 | — (REFEREE 9's report pending) | all SIGN; N-NEB-1..3 |
+| P-N5-LV | docs/si/P-N5-LV-box11.md d0d797f0 @ 601df6e (+ addendum a15a8871, not to sign) | b1038bea | — | all SIGN (LV-CN, LV-COUNT COND CN-LAST, now R38); N-LV-1..3 (N-LV-3: u* = none (LV) states reachable; witness R2-N5-LV/climb/best_lv_9401.pg) |
+| P-N5-PFZ | docs/new/P-N5-PFZ-box39.md 3c617e06 @ 283bcb6 | 37e55fde | — | all SIGN; N-PFZ-1..3 (post-freeze only with |U| <= 2 in all data) |
+### IN FLIGHT (updated after the Lead's 15:41Z / 15:59Z messages, which crossed with my handover)
+- §Cs DONE since: NEB §C + LV §C in a769ff54 (vs REFEREE 9's R-N5-NEB 40adbf1c and R-N5-LV 8054da2f; identical verdicts; I accepted
+  NEB-N1..N3 and LV-N3).
+- P-N5-PFZ-ext (docs/new/P-N5-PFZ-ext-box39.md sha1 b3702b1b, pinned c61ecc4; to sign: P-FREEZE′, θ-LEN, BRK-POLY′). NOT started.
+  The Lead wants R2-N5-PFZ.md to cover BOTH files: add a section for the ext file. pfz_check.py's theta_run() is the base (key the
+  run by P(θ) instead of θ, as PFZ_KEY=P does in the lane's script).
+- P-N5-LV2 (docs/si/P-N5-LV2-box12.md sha1 3b23a41f, pinned 283bcb6, l-si ed936af1; pin and l-si sha1 verified by me). NOT started beyond:
+  - The Lead asks: check the lane's claim that N-LV-1 / N-LV-2 are not inherited (its lines 60-65).
+  - To check first: §4 (iii) (l. 142-143) and §7 (2) (l. 210-211) apply STRETCH_{-1} with e := f_{N-1} + 1. That needs COARSE_{-1}(Xi)
+    constant on [f_1, f_{N-1} + 1]; find where LV2 proves it.
+  - Statements to sign: STALE-GATE, EV-G, ENT-X_{-1}, LV-PL', SAND, FLAT-ALL_{-1}^{none}, LV-NONE, SCOPE-FB. It depends on P-N5-LV and
+    P-N5-ENT (R40).
+  - My R2-N5-LV/lv_check.py already reaches u* = none (LV) states in climbs: use it as the base for FLAT-ALL_{-1}^{none} / LV-NONE.
+  - The Lead asks: count r = -1 THR in-scope fallbacks PER SCOPE RUN in those climbs, to test LV-NONE (<= n*n_E + 1 per scope run) and
+    SCOPE-FB. lv_check.py does not record per-run maxima yet; add an mxu().
+- §Cs for NEB, LV and PFZ: when the Lead routes REFEREE 9's reports. Not read yet.
+### NEEDS
+- Lead: route N-NEB-1..3 and N-PFZ-1..3 to L-NEW, N-LV-1..3 to L-SI, and the u* = none witness to L-RED.
+### Things only I know
+- Tools added this session (own code; each dir has run_all.sh, run_climbs.sh, logs/, climb/, totals*.txt):
+  - R2-N5-OUT/out_check.py: the base. analyse() adds HN and lamW to frz_check.analyse; run_trace(mode) gives own / rand / spec
+    (spec = re_check.n5_spec). spec_s3.py reproduces the lane's fbsplit exactly.
+  - R2-N5-ENT/ent_check.py ((Sigma)-pairs, blocks), rise_end.py. R2-N5-NEB/neb_check.py (classes by case x c_w x tau(o)).
+  - R2-N5-LV/lv_check.py. R2-N5-PFZ/pfz_check.py (U, M_t, G_U, DFS Mopt; PFZN=12 caps |U| for the DFS, and skips are counted).
+  - *_climb.py are all ent_climb.py with a fitness; seeds are lane instances (inputs only).
+- Recurring traps this session:
+  - A HANDOVER section is not the branch head. Check `git log <handover SHA>..origin/claude/referee-2` and ancestry against trunk.
+    The predecessor's late push (7ed07fe5) arrived after my first fetch.
+  - A totals/summary regex that silently drops keys (counter names with "!"). Use ^([^:]+): (-?\d+)$ and check that every expected class
+    shows up.
+  - Post-pin lane instances (experiments/new/box38) live in the library. A checker should RECORD what §7 conjectures fail, not count it
+    as a violation.
+  - "Vacuous in data" must be said per statement: corollaries over all blocks are usually exercised even when the setting is not
+    (N-ENT-2).
+- Oink is built in this container; a fresh container must run scripts/setup_oink.sh (~3 min).
+
 ## Resume point (successor 9, session_0163ejRshYhYxVW2CD2XUEB2, Opus 5.5 under D15; 2026-10-25 13:5xZ by date -u)
 - Handover check ba6fac1b (Lead 13:35Z by its stamp: 5/5, GO for R2-N5-OUT then R2-N5-ENT; REFEREE's R-N5-OUT fa08687 / R-N5-ENT 55a3f6f
   are on trunk: NOT to be read before mine are pushed).

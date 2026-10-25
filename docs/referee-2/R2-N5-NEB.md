@@ -175,3 +175,25 @@ No statement is NOT SIGNED, and no gap is open. No counterexample turned up in 6
 - N-NEB-1: §3 BASE and §4 cite Step (K) "inside a phase". Use FBL-N (i) + F1 (the OUT fixes file §1 already says so for NEB).
 - N-NEB-2 (optional): LOW-RISE′ (b) holds without (i) at t+1; it could be stated so. Nothing depends on it.
 - N-NEB-3: the P-N5-OUT dependency rows are stale ("IN REVIEW"); both referees have signed, and the fixes file is 640a5db2.
+
+## §C. Comparison with REFEREE's R-N5-NEB (written 2026-10-25 16:12Z by date -u, after my report a4516df9 was pushed and merged)
+Read: docs/referee/R-N5-NEB.md on trunk (REFEREE successor 9, report 40adbf1c).
+- Verdicts are identical. Both sign RISE, HIGH-RISE, NO-ENTRY-A′, CASE-B-LEN′, LOW-RISE′, BRK (a)-(d) and OUT-1; both find §0's filled-in
+  steps correct. Neither signs §8. No gap in either report, so the joint gap map is empty.
+- Notes map:
+| REFEREE | REFEREE-2 | content | status |
+| --- | --- | --- | --- |
+| NEB-R1 | N-NEB-1 | Step (K) cited "inside a phase" in §3 BASE / §4; FBL-N (i) + F1 suffices | same; agreed |
+| NEB-N1 | — | §6 "SPLIT (b): an S4a step does not evict" should be SPLIT (a) | ACCEPTED; my miss (my §6 wrote "SPLIT" without checking the letter). The packet text says (b) |
+| NEB-N2 | (in my §6: "since a has none") | §6 must state that a itself has no F → R̄ gate (FBL-N (iii) + (iii+)) for §1's hypothesis on [a, t] | ACCEPTED. I used the line in my check but did not flag its absence from the packet |
+| NEB-N3 | (in my §6: "o (value θ) and c_θ never rise") | "Values in C_θ belong to vertices z ∉ {o, c_θ}" is false as written (θ ∈ C_θ); intended "low rises are at z ∉ {o, c_θ}" | ACCEPTED; my check used the intended form, and I should have flagged the wording |
+| NEB-N4 | N-NEB-3 | stale statuses: REFEREE's for KEY / FB-INT (now R38), mine for the P-N5-OUT rows (now R39) | both stand |
+| NEB-N5 | — | §9 base totals not reproduced by the stated command | data note; accepted (I did not run the lane's scripts) |
+| NEB-B1 | — | CONJECTURE BAND (§8, not to sign) FALSE in three forms, incl. band_base_cex.pg | record; accepted, not checked by me |
+| — | N-NEB-2 | LOW-RISE′ (b) does not need (i) at t+1 (optional) | mine only |
+- Data: both found 0 failures.
+  - REFEREE's lib37 alone has 0 RISE events. My library (lib37 ∪ tracked 𝒞^1O files ∪ box38 instances, 3 starts each) has 9 / 6 / 9.
+    Both reports' climbs exercise every proved class.
+  - REFEREE's climbs also probe BAND (not signed).
+- Joint state: all signable statements of P-N5-NEB are signed by both referees (Opus 5.5, D15), with no (P) and no gap. Fixes-file
+  lines for L-NEW: NEB-R1 = N-NEB-1, NEB-N1..N5, N-NEB-2, N-NEB-3, and the NEB-B1 record.

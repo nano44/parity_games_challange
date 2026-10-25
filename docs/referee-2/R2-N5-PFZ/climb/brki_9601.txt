@@ -1,0 +1,33 @@
+climb FIT=brki seed=9601 n=9 iterations=92293 improvements=24 best_fitness=261.0
+BEST-INSTANCE counters: {'BRKX_rho': 9, 'BRKX_stretches': 4, 'BRKX_stretches_rho>=1': 2, 'FACT_A_states': 24, 'PFZ_b_runs': 23, 'RECORD_post_freeze_runs_U=1': 6, 'TLEN_epochs': 23, 'TLEN_epochs_with_theta_change': 1, 'TLEN_theta_changes': 1, 'runs': 4, 'states': 24, 'theta_runs': 23}
+BEST-INSTANCE maxima: {'max_BRKX_(i)_excess_plus_1000': 1000, 'max_BRKX_rho_S': 5, 'max_TLEN_theta_changes_in_epoch': 1}
+BRKX_rho: 139566
+BRKX_stretches: 255461
+BRKX_stretches_rho>=1: 49775
+FACT_A_states: 1622379
+FBR_checks: 193763
+FBR_fallbacks: 12875
+NCA_identity_states: 547260
+PFZ_a_checks: 133744
+PFZ_b_runs: 1479914
+RECORD_post_freeze_runs_U=1: 425612
+RECORD_post_freeze_runs_U=2: 9
+TLEN_epochs: 1479914
+TLEN_epochs_with_theta_change: 20089
+TLEN_theta_changes: 20188
+breaks: 7480
+breaks_kind1: 7480
+breaks_kind2_early: 0
+breaks_kind2_late: 0
+climb_evaluations: 92203
+post_freeze_transitions: 30919
+runs: 368812
+states: 1622379
+theta_runs: 1479914
+max_BRKX_(i)_excess_plus_1000: 1000
+max_BRKX_rho_S: 5
+max_TLEN_theta_changes_in_epoch: 2
+max_fallbacks_in_theta_run: 2
+max_fallbacks_minus_U_plus_1_U>=3: 0
+max_post_freeze_U_rises: 0
+RESULT OK violations=0

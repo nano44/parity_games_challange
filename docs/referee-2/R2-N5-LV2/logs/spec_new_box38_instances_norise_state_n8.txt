@@ -1,0 +1,4 @@
+STALE_checks: 3
+runs: 3
+states: 12
+RESULT OK violations=0

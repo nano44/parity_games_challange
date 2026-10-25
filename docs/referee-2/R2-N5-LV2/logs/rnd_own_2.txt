@@ -1,0 +1,17 @@
+RECORD_fallbacks_blk: 0
+RECORD_fallbacks_eq: 0
+RECORD_fallbacks_ge0: 0
+RECORD_fallbacks_none: 0
+RECORD_runs_with_r=-1: 46
+SAND_checks: 50
+SCOPEFB_runs: 875
+STALE_checks: 5
+runs: 10000
+scope_runs: 875
+states: 23808
+max_per_run_all: 0
+max_per_run_blk: 0
+max_per_run_eq: 0
+max_per_run_ge0: 0
+max_per_run_none: 0
+RESULT OK violations=0

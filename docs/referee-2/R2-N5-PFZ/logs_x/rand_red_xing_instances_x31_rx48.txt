@@ -1,0 +1,23 @@
+BRKX_rho: 2
+BRKX_stretches: 3
+BRKX_stretches_rho>=1: 2
+FACT_A_states: 83
+FBR_checks: 350
+FBR_fallbacks: 2
+PFZ_b_runs: 4
+PFZ_skipped_large_U: 45
+TLEN_epochs: 49
+TLEN_epochs_with_theta_change: 14
+TLEN_theta_changes: 26
+breaks: 0
+breaks_kind1: 0
+breaks_kind2_early: 0
+breaks_kind2_late: 0
+runs: 3
+states: 83
+theta_runs: 49
+max_BRKX_rho_S: 1
+max_TLEN_theta_changes_in_epoch: 3
+max_fallbacks_in_theta_run: 1
+max_fallbacks_minus_U_plus_1_U>=3: 0
+RESULT OK violations=0

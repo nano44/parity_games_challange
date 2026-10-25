@@ -1,0 +1,17 @@
+EVG_checks: 148
+RECORD_fallbacks_blk: 0
+RECORD_fallbacks_eq: 0
+RECORD_fallbacks_ge0: 19
+RECORD_fallbacks_none: 0
+SCOPEFB_runs: 3
+STALE_checks: 219
+runs: 3
+scope_runs: 3
+states: 53
+max_SCOPEFB_ratio_permille: 2
+max_per_run_all: 7
+max_per_run_blk: 0
+max_per_run_eq: 0
+max_per_run_ge0: 7
+max_per_run_none: 0
+RESULT OK violations=0

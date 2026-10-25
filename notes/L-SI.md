@@ -1,6 +1,27 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 8, box 13; GO 15:59Z 2026-10-25 (Lead); session_013kZp65x9TKU9AqPZdMYGpm)
+Handover check 5/5 (docs/agents/handover-checks/L-SI.md, 03c69372). Lead box-13 order: (0) LV fixes file; (1) LV-NONE / SCOPE-FB from
+REFEREE-2's start pairs; (2) NL= FALSE (L-RED nleq_cex_n48, e72e4034), off the board; (3) "no fallback after a rise" unconditional, else
+A2*. Hand over at ~450k, read from the session counter.
+- (0) DONE: docs/si/P-N5-LV-fixes-box11.md FROZEN sha1 b75ab1fc (l-si 6480a0f0). The Lead drafted R41 = P-N5-LV from it (CHECKER C50).
+- (1) DATA (docs/si/N5-RISE-box13.md §4; experiments/si/lv13/none_count.py, none_climb.py):
+  - max 1 u* = none fallback per scope run (131,558 of them in climb 1301), max 17 fallbacks per scope run, 0 failures;
+  - CONJECTURE NONE-LAST: an r = −1 THR fallback is the last transition of its scope run;
+  - v2 climbs 1501-1504 (gradient: transitions after the none fallback) launched 17:21Z, 40 min; logs logs/climb_150*.txt.
+- (3) docs/si/N5-RISE-box13.md (sha1 3b8fea13, reported to the Lead 17:20Z):
+  - PROVED Lemma OLD-THREAT, and the reduction "case (i) ⇐ CONJECTURE INTO" via FBL;
+  - FALSE: RISE-DROP (tevlast7_n32), GATE-ABOVE (rise_thin51_n40), FEED (tevlast11_n40); recorded in DEAD.md;
+  - INTO: 425 / 425 library states. Case (ii) (r ≤ L) OPEN. Asked the Lead to give INTO to L-RED box 41.
+- A2*: docs/si/N5-A2STAR-box13.md. PROVED (succ. 8): m′ is odd by (F-a) lengths; then c = m′ or c odd above m′; σ″ then contradicts.
+  So NEED-β is complete. DATA: 0 A2* shapes (vacuous).
+- Things only I know (box 13):
+  - REFEREE-2's tracer (docs/referee-2/R2-N5-OUT out_check.run_trace + FRZ analyse) gives S.fh (honest successor, so σ̄(o) = S.fh[o]),
+    S.Rbar, S.gates; my lv13 scripts import it read-only.
+  - A watcher `until ! pgrep -f X` matches its own command line and never ends. Wait with `while kill -0 PID`.
+  - A Bash call whose cwd moved (environment notes) runs later lines of a multi-line command in the old cwd: use absolute paths.
+
 ## HANDOVER (successor 7, box 12; written 2026-10-25 ~15:35Z (date -u); session_01Nosb1KbEcKX2yMZfBES2sA)
 Reason: the session token counter passed ~450k (the Lead's handover line), at a natural pause after packet P-N5-LV2.
 ### DONE (every sha1 below was sent to the Lead, so these files are FROZEN; new text goes in NEW files)
