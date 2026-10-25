@@ -1360,3 +1360,7 @@
   - l-new, docs/new/N5-Q-box40.md: Q-SPLIT (a), (b) lane PROVED; Q-EPOCH CONJECTURE; breaks in Q-runs OPEN; 2 Q fallbacks in the library.
   - l-new, docs/new/N5-FBCAP-route-box40.md: the κ-freeze of the full key (M, s_θ·ℓ). Lane PROVED: after g_{|U|−2} no in-phase fallback evicts, so N_HN ≤ 1 + ⌈T/2⌉ + |U| − 2 and T0-PIN's branch is empty. Also no F∩U → F∩U switch, except the c_θ-cycle case. OPEN: route switches inside R̄, vertices outside U, ¬H1. L-NEW 19 parks at ~420k.
   - l-si, LV2 fixes drafted, waiting for REFEREE's LV2 §C. M = −1 last-fallback: the no-(β) case is PROVED via LV-CN (R41). The (β) case is open: in DATA (115), λ_Ξ changes at the next step.
+- 17:52Z Lead: merged referee fd5596c, three items.
+  - R-N5-RHO 5927831: all SIGNED, no gaps. HN-POLY is conditional on (i′). Notes RHO-N1..N3. Climbs: 685k post-freeze phases at |U| = 3, 1.16 M HAT-FREEZE (c) checks, 0 failures; |U| ≥ 4 post-freeze not reached.
+  - PFZ-ext §C ed8bc20: identical; PFZ-1 = G-PFX-1. Reconciliation YES: REFEREE's re-derived repair proves (i) as stated. Once it is in the fixes file, REFEREE-2 can sign (i).
+  - LV2 §C ed8bc20: identical, gap map empty. beta2_n11 confirmed on REFEREE's engine: 2 none fallbacks in one scope run, so LV-NONE's N ≥ 2 step is exercised. REFEREE-2's CONJECTURE "an M = −1 THR fallback is the last fallback of its scope run" is FALSE on beta2_n11, and so is L-SI's NONE-LAST.
