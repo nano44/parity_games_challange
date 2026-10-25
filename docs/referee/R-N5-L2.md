@@ -293,3 +293,63 @@ Fixes-file lines (one per gap):
   states and drops as in my §8.
 - Its references to P-N5-TOG / TOGGLE are outside this review. I have not reviewed TOGGLE.
 - Labels: every REFEREE gap on P-N5-L2 is closed. The verdict table stands. FREEZE′ and X-RUN′ still depend on P-N5-FRZ (R32, at CHECKER).
+
+## §C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-L2.md, referee-2 388caf6, on trunk f87c5fdd). REFEREE successor 7, written 2026-10-25 09:45Z by date -u (stamp corrected from an estimated 09:50Z)
+Signature (Opus 5.5, D15). I opened R2-N5-L2 only after my report (7626354e), its addendum (524d93f5) and the fixes-file check
+(d3ccb9cd) were pushed. Also read: L-NEW's second fixes file docs/new/P-N5-L2-fixes2-box34.md (l-new ea78e9b5, on trunk), sha1
+e343d74e1502e7c75ca5c40fd79350a3b8662b26, checked with sha1sum.
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| H3-CONST, G′, R-CONST | SIGNED | SIGN | signed by both |
+| H2-STICK (+ Corollary) | SIGNED WITH GAP L2-1 (wording) | SIGN (N-L2-1, wording) | signed by both; L2-1 = N-L2-1, same repair (fixes 7a110bca §1) |
+| FREEZE′ | SIGNED (premise P-N5-FRZ) | SIGN (premise now signed by both; N-L2-3 thin) | signed by both; premise P-N5-FRZ = R32 at CHECKER |
+| H1-INT | SIGNED WITH GAP L2-2 (wording) | SIGN | signed by both. L2-2 is a REFEREE-only row (C.2), already repaired in fixes 7a110bca §1 |
+| X-RUN′ | SIGNED (premise P-N5-FRZ) | SIGN (N-L2-2, wording) | signed by both; N-L2-2 accepted with Lemma X-RUN° (fixes2 §2, C.2) |
+| §8 | not signed; FINDING DROP-LEN FALSE | not signed; DATA: §8 (2) restart occurs | — |
+- No verdict differs in substance.
+- The two label differences (H2-STICK, H1-INT) are gap labelling of wording points: REFEREE-2 calls the same H2-STICK point a note, and
+  raised no item on H1-INT (b).
+- Neither referee has a counterexample to a signed statement.
+
+### C.2 Items found by one referee only
+- L2-2 (REFEREE only; H1-INT (b) at phase exits). REFEREE-2's §6 reads the pre-drop clause in-phase without remarking on it.
+  - The literal reading is false: exitdrop_n3.pg; 43 of 83 library and 198 of 278 random exit drops.
+  - The lane accepted it verbatim (fixes 7a110bca §1), and REFEREE-2's reading agrees with the repaired line.
+  - I keep it as a wording row.
+- N-L2-2 (REFEREE-2 only as a row; X-RUN′ (a) applies X-RUN to the H1 runs P_i). My §7 made the same check: I re-read FRZ §6 for
+  every use of "SN prefix" and found that the proof uses only consecutive (h) states of one fallback-free run. I recorded it as
+  verified, not as a gap.
+  - REFEREE-2's request to state it once as a lemma is accepted.
+  - Fixes2 §2, Lemma X-RUN°: "I a set of consecutive states of Q at all of which (h) holds; crossing transitions with both ends in
+    I ≤ 13 (d_o + 1) n³; FRZ-3's extra transition added where used". That is exactly the form my §7 verified. The replacement lines for
+    §7 (a) are correct.
+- N-L2-3 = my FREEZE′ thin spot. Both referees: FREEZE′'s conclusion beyond FREEZE is never exercised.
+  - REFEREE-2 (its N5 with arbitrary S4a optima) reached n-state H3 windows through ¬H1 states at n ≤ 10, all ending at the phase's
+    last state, so no later state could be checked.
+  - My SPEC-trace climbs never reached such a window (best: n − 1 from random starts, n − 2 from library seeds).
+  - P^c_ℓ on ¬H1 windows: both referees tested it directly, 0 failures (mine 641,105 path checks; REFEREE-2 about 17 M).
+- DROP-LEN FINDING (REFEREE only, §8). REFEREE-2 saw phases with 2 drops in its variant (tog_61). My droplen_cex_n12 is a SPEC run with
+  θ constant between the drops. The lane recorded it (fixes 7a110bca §2) and re-ran it.
+- §8 (2) restart (REFEREE-2 only; DATA, not to sign): REFEREE-2 found it in its variant (j5_n16); the lane records a SPEC witness
+  (fbrestart_cex_n12, fixes2 §3). Not a signed statement, so no row. I did not re-run either.
+
+### C.3 Joint gap map (one fixes-file line per row)
+| row | REFEREE | REFEREE-2 | kind / status | fixes-file line |
+| --- | --- | --- | --- | --- |
+| 1 | L2-1 | N-L2-1 | wording, closed | §2 H2-STICK: "If τ(o) = o, ¬H2 holds at every state with this τ, in particular at s+1; assume τ(o) ≠ o below." (fixes 7a110bca §1) |
+| 2 | L2-2 | — | wording, closed | §6 H1-INT (b): "every state k such that k → k+1 is a transition of the phase with H1 at k and ¬H1 at k+1" (fixes 7a110bca §1) |
+| 3 | verified in §7 (not a gap) | N-L2-2 | wording, closed | §7 (a): Lemma X-RUN° and its replacement lines (fixes2 e343d74e §2) |
+| 4 | thin spot (§4.2, §9) | N-L2-3 | DATA thin, recorded | none (claim rests on the proof) |
+
+### C.4 Joint label (D18/L40)
+- PROVED (L-NEW successor 14; REFEREE and REFEREE-2, Opus 5.5, D15), on 𝒞^1O inside a (λ_Ξ, τ) phase, pending CHECKER:
+  - H3-CONST, H2-STICK (row 1), G′, R-CONST, H1-INT (row 2);
+  - FREEZE′ (premise R32 = P-N5-FRZ, rows 1-6 of R-N5-FRZ §C) and X-RUN′ (row 3, premise R32).
+- Honest limits: FREEZE′'s new case is unexercised (row 4). X-RUN′'s bound is far above every observed count.
+- FALSE (DATA): ONE-H, ONE-DROP (lane), DROP-LEN and its per-run form (REFEREE, droplen_cex_n12).
+- OPEN: G-N5-TIME.
+- Not a TARGET.md claim; the TARGET.md diff is empty.
+
+Signed: REFEREE successor 7 (Opus 5.5, D15).
