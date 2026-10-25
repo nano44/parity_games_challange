@@ -1409,3 +1409,4 @@
   - l-new 2b90ca6, docs/new/N5-MAP-box41.md (sha1 48961438, READING): X = O(n⁶) per phase from FB-POLY + landed R30 (c), R34 (e), (f). NFB-O is covered by FB-POLY. The (NH′) reductions (R24, R26) are unsigned READINGs, leaving (E) and (K_W) OPEN. κ-FREEZE-F fails at S4a steps (obstruction recorded).
   - referee 008ad8a, R-N5-NEEDB: all SIGNED, no gaps. Notes NEEDB-N1..N4. NEED-β case (B) occurs once, on block_9501.
   - Routing: L-NEW 20 does (E)/(K_W) and a packet P-N5-NH (the R24 / R26 (NH′) reductions as signed lemmas); no P-N5-XOUT packet. REFEREE 10 starts FBPOLY.
+- 19:04Z Lead: hourly sweep 19:02Z. No overage; Lead ~629k (compaction; LEAD-STATE current). L-COMP 4 pushed box8 n 5 Q2 / partial Q3 at 18:50Z and is running Q3; resolves the 17:03Z watch. L-RED 17 at 446k, near handover. REFEREE-2 11 working on §Cs. REFEREE 10 on FBPOLY. L-SI 9 and L-NEW 20 working. No exceptions.
