@@ -73,6 +73,22 @@ def analyse(g, acc, name, st=None):
         if u == 2 and o != ct: bound = 1
         if f > bound: fail("FAIL_FBPOLY", a, f, u, degU)
         if f > max(1, u - 2): fail("FAIL_FBCAP", a, f, u)
+        # FB-PHASE (docs/si/N5-FBPHASE-box14.md §4, sha1 f7aaa624) and Corollary FX (§5)
+        sizes = {}
+        for z in rows[a]["lam"]: sizes[z] = sizes.get(z, 0) + 1
+        do = len(set(g.succ[o])); N0 = max([0, u - 2] + [sz - 1 for cc, sz in sizes.items() if cc != ct])
+        fbp = N0 + (do + n - 2) + (do + n - 1) * (u - 1) + 1
+        acc["max_FBPHASE_slack"] = max(acc.get("max_FBPHASE_slack", -10 ** 9), f - fbp)
+        if f > fbp: fail("FAIL_FBPHASE", a, f, fbp)
+        rank = {v: i for i, v in enumerate(sorted(range(n), key=lambda v: (g.prio[v], v)))}
+        def cw(k):
+            x, path = o, []
+            while x not in path: path.append(x); x = rows[k]["s"][x] if g.owner[x] == 0 else rows[k]["t"][x]
+            return max(path[path.index(x):], key=lambda v: rank[v])
+        X = sum(1 for k in range(a, b) if rows[k]["R"] != rows[k + 1]["R"])
+        XSN = sum(1 for k in range(a, b) if not rows[k]["fb"] and rows[k]["R"] != rows[k + 1]["R"] and cw(k) == ct)
+        acc["max_X"] = max(acc.get("max_X", 0), X); acc["max_FX_slack"] = max(acc.get("max_FX_slack", -10 ** 9), X - (n * (f + XSN) + n - 1))
+        if X > n * (f + XSN) + n - 1: fail("FAIL_FX", a, X, f, XSN)
         acc["max_FBCAP_slack"] = max(acc.get("max_FBCAP_slack", -99), f - max(1, u - 2))
         a = b + 1
     return acc

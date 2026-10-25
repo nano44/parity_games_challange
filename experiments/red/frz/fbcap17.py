@@ -16,10 +16,10 @@ def trace(g, start, cap=500):
     for v in range(n):
         if g.owner[v] == 0: sigma[v] = start[v]
         else: tau[v] = start[v]
-    LAM, TAU, EFB = [], [], []
+    LAM, TAU, EFB, SIG = [], [], [], []
     while True:
         vs, sbar = E.evaluate(tuple(sigma)); Is = E.improving(tuple(sigma), vs)
-        LAM.append(tuple(x[0] for x in vs)); TAU.append(tuple(tau))
+        LAM.append(tuple(x[0] for x in vs)); TAU.append(tuple(tau)); SIG.append(tuple(sigma))
         if len(EFB) >= cap: break
         vt, tbar = Ed.evaluate(tuple(tau)); It = Ed.improving(tuple(tau), vt)
         if not Is and not It: break
@@ -46,10 +46,26 @@ def trace(g, start, cap=500):
             else:
                 for v in {v for v, _ in It}: nt[v] = max((w for x, w in It if x == v), key=lambda w: (Ed.key(vt[w]), w))
         EFB.append(efb); sigma, tau = ns, nt
-    return LAM, TAU, EFB
+    return LAM, TAU, EFB, SIG
 
-def measure(g, o, start, best):
-    LAM, TAU, EFB = trace(g, start); N = len(LAM); a = 0; worst = None
+def measure(g, o, start, best, xb=None):
+    """FB-CAP per phase; also FB-PHASE (docs/si/N5-FBPHASE-box14.md §4, sha1 f7aaa624) and Corollary FX (§5): X = in-phase transitions with
+    R̄ changing, X_SN = S4a ones among them from states with c_w = c_θ; FX: X ≤ n(f + X_SN) + n − 1. xb collects maxima and failures."""
+    LAM, TAU, EFB, SIG = trace(g, start); N = len(LAM); a = 0; worst = None; n = g.n
+    rank = {v: i for i, v in enumerate(sorted(range(n), key=lambda v: (g.prio[v], v)))}
+    def nxt(k, v): return SIG[k][v] if g.owner[v] == 0 else TAU[k][v]
+    def Rset(k):
+        R = set()
+        for v in range(n):
+            x, seen = v, set()
+            while x not in seen and x != o: seen.add(x); x = nxt(k, x)
+            if x == o: R.add(v)
+        return frozenset(R)
+    def cw(k):
+        x, path = o, []
+        while x not in path: path.append(x); x = nxt(k, x)
+        cyc = path[path.index(x):]; return max(cyc, key=lambda v: rank[v])
+    do = len(set(g.succ[o]))
     while a < N:
         b = a
         while b + 1 < N and LAM[b + 1] == LAM[a] and TAU[b + 1] == TAU[a]: b += 1
@@ -57,11 +73,25 @@ def measure(g, o, start, best):
         e = gg - max(1, u - 2)
         if e > best.get(u, -99): best[u] = e
         if e > 0: worst = (u, gg, a)
+        if xb is not None:
+            sizes = {}
+            for z in LAM[a]: sizes[z] = sizes.get(z, 0) + 1
+            N0 = max([0, u - 2] + [sz - 1 for cc, sz in sizes.items() if cc != c])
+            bound = N0 + (do + n - 2) + (do + n - 1) * (u - 1) + 1
+            xb["max_FBPHASE_slack"] = max(xb.get("max_FBPHASE_slack", -10 ** 9), gg - bound)
+            if gg > bound: xb["FAIL_FBPHASE"] = xb.get("FAIL_FBPHASE", 0) + 1
+            if b > a:
+                Rs = [Rset(k) for k in range(a, b + 1)]
+                X = sum(1 for k in range(a, b) if Rs[k - a] != Rs[k + 1 - a])
+                XSN = sum(1 for k in range(a, b) if not EFB[k] and Rs[k - a] != Rs[k + 1 - a] and cw(k) == c)
+                xb["max_X"] = max(xb.get("max_X", 0), X)
+                xb["max_FX_slack"] = max(xb.get("max_FX_slack", -10 ** 9), X - (n * (gg + XSN) + n - 1))
+                if X > n * (gg + XSN) + n - 1: xb["FAIL_FX"] = xb.get("FAIL_FX", 0) + 1
         a = b + 1
     return worst
 
 def task(args):
-    mode, a, part = args; best = {}; runs = 0; viol = []
+    mode, a, part = args; best = {}; runs = 0; viol = []; xb = {}
     games = []
     if mode == "exh":
         n, o, par = part; games = ex16.games(n, o, par, a)
@@ -82,25 +112,26 @@ def task(args):
         o = sox.oddchoice(g)[0]
         for st in itertools.product(*[g.succ[v] for v in range(g.n)]):
             runs += 1
-            try: w = measure(g, o, st, best)
+            try: w = measure(g, o, st, best, xb)
             except Exception: continue
             if w and len(viol) < 5: viol.append(dict(prio=g.prio, owner=g.owner, succ=g.succ, start=list(st), u=w[0], g=w[1], phase=w[2]))
-    return runs, best, viol
+    return runs, best, viol, xb
 
 if __name__ == "__main__":
     mode = sys.argv[1]; ap = argparse.ArgumentParser()
     ap.add_argument("n", type=int); ap.add_argument("--even-maxdeg", type=int); ap.add_argument("--o-deg", type=int)
     ap.add_argument("--no-forced", action="store_true"); ap.add_argument("--jobs", type=int, default=4); ap.add_argument("--out", required=True)
     ap.add_argument("--secs", type=float, default=0); ap.add_argument("--seed", type=int, default=1); ap.add_argument("--batch", type=int, default=200)
-    a = ap.parse_args(sys.argv[2:]); a.all_starts = True; t0 = time.time(); tot = 0; B = {}; V = []
+    a = ap.parse_args(sys.argv[2:]); a.all_starts = True; t0 = time.time(); tot = 0; B = {}; V = []; XB = {}
     if mode == "exh": jobs = [("exh", a, (a.n, o, par)) for o in range(a.n) for par in itertools.product((0, 1), repeat=a.n)]
     else: jobs = (("rand", a, (a.n, a.seed * 100000 + i, a.batch)) for i in itertools.count())
     with mp.Pool(a.jobs) as P:
-        for runs, best, viol in P.imap_unordered(task, jobs):
+        for runs, best, viol, xb in P.imap_unordered(task, jobs):
             tot += runs
+            for k, v in xb.items(): XB[k] = XB.get(k, 0) + v if k.startswith("FAIL") else max(XB.get(k, -10 ** 9), v)
             for u, e in best.items(): B[u] = max(B.get(u, -99), e)
             for v in viol:
                 if len(V) < 20: V.append(v); json.dump(v, open(f"{a.out}_viol{len(V)}.json", "w")); print("VIOL", v, flush=True)
-            print(json.dumps(dict(runs=tot, best=dict(sorted(B.items())), viol=len(V), secs=round(time.time() - t0))), flush=True)
+            print(json.dumps(dict(runs=tot, best=dict(sorted(B.items())), viol=len(V), xb=XB, secs=round(time.time() - t0))), flush=True)
             if mode == "rand" and time.time() - t0 > a.secs: P.terminate(); break
-    print("DONE", tot, dict(sorted(B.items())), len(V), flush=True)
+    print("DONE", tot, dict(sorted(B.items())), len(V), XB, flush=True)
