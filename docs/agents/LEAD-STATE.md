@@ -1110,3 +1110,4 @@
 - 04:19Z Lead: merged referee 3d49e0a (R-N5-SN §C: no verdict differs; rows SN-1, SN-2, N-SN-1, SN-3, ABS-L drop CONDITIONAL) and l-new 20d31d4 (fixes §7 REFEREE items). Waiting: §2b addenda from both referees; L-NEW §8 (§C rows); then R30.
 - 04:24Z Lead: merged referee-2 4c8dcfd (R2-N5-SN §B on fixes §2b: H1-DROP, H1-KEEP, ABS-COUNT′ SIGN; 42,000 climb runs 0 failures; 0 O = −1 H1 ε anywhere). (Its note that §2b/epsseg_cex_n16 were not on trunk: both were merged at ~04:16Z, after its trunk merge.) Waiting REFEREE addendum on §2b.
 - 04:28Z Lead: merged referee 2f465ff (R-N5-SN Addendum 2 on §2b: H1-DROP, H1-KEEP, ABS-COUNT′ SIGNED) and l-new 189ff49 (fixes §8). §2b now signed by both → R30 uses ABS-COUNT′. L-NEW asked for final §9 (REFEREE §C rows + both §2b addenda), then handover.
+- 04:33Z Lead: R30 draft (P-N5-SN + fixes §2b) written; awaits L-NEW final fixes §9 SHA, then C39.
