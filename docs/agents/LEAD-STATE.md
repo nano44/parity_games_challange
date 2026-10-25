@@ -1367,3 +1367,15 @@
 - 17:57Z Lead: merged checker 67cfee6 (C51 Addendum 2: R42 landed verbatim; C51 CLOSED) and l-new 688c2d4 (L-NEW 19 PARKED at ~407k). Created L-NEW successor 20, session_018pjn8Y8JRES3YuFDUCAJgM. The L-NEW 18 row was removed from NOW; it was parked and is superseded.
 - 18:06Z Lead: merged l-si 3ea0f5f. P-N5-NEEDB, docs/si/P-N5-NEEDB-box13.md, sha1 7471aef3, PINNED at this commit; it is queued for both referees after NHN. To sign: XG, ANTI, NEED-β (all cases incl. A2*), OLD-THREAT, and INTO ⇒ no case (i) fallback. Vacuous in data: XG, NEED-β, A2*.
 - 18:06Z Lead: hourly sweep 18:02Z. No overage. WATCHDOG flagged CHECKER 7 idle; it is idle by design, waiting for the next draft, and its last update (17:52Z) was 11 min before the flag, not 71. L-COMP is waiting on box8 Q2 (~18:45Z). No exceptions.
+- 18:11Z Lead: merges, re-run, sessions.
+  - Merged l-new 48078dd (L-NEW 20 handover check 5/5; GO).
+  - Merged l-si e683a4c: LV2 fixes docs/si/P-N5-LV2-fixes-box12.md, sha1 f76fd1d1. NONE-LAST / M = −1-last FALSE recorded in DEAD.md (obstruction: an eviction cascade on beta2_n11). Climb report: max 1 u* = none per scope run in climbs. L-SI 8 PARKED.
+  - Merged referee-2 cd3b7cd: R2-N5-RHO 269ae45 (all SIGN; N-RHO-1, N-RHO-2: post-freeze only at |U| = 3, FREEZE-F (b) vacuous). REFEREE-2 10 PARKED.
+  - First level −1 block witness (THR, r ≥ 0, M = −1): docs/referee-2/R2-N5-LV2/climb/block_9501.pg, sha1 1b5b76fd, random start pair in block_9501.txt. Lead re-run, canonical start: one Odd choice vertex, n5 3/1, Oink zlk OK, strategies verified. The block state is on REFEREE-2's start pair, which I did not re-trace.
+  - Created L-SI successor 9 (session_018jN1MJkw56F58G3qcfcuZA) and REFEREE-2 successor 11 (session_01VrcXfBuNYKJ3uBUc7ETARQ).
+- 18:16Z Lead: merged l-red 8e429a8 (R71, box 41 interim, NO KILL).
+  - Post-freeze regimes at |U| ≥ 3 are not reached nontrivially: max f − (|U| − 1) = −1. FB-CAP holds in all data.
+  - The per-vertex argument for FB-CAP is false (b5_os_n40).
+  - INTO: 0 failures, with min gates into R̄ = 1. Wording note: restrict INTO to Iσ_t ≠ ∅.
+  - L-RED 17 next: FB-CAP search at n 5 over start pairs, then the beta2 cascade.
+- 18:21Z Lead: merged l-si 6918233 (L-SI 9 handover 5/5; GO box 14: G-N5-TIME ledger, then X per phase) and referee-2 2fef675 (R2-N5-LV2 Addendum B eed4efd: N-LV2-3 conjecture withdrawn, FALSE on beta2_n11; LV-NONE's N = 2 induction step checked on 3 traces, 0 violations).

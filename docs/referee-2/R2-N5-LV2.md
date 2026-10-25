@@ -168,6 +168,14 @@ Re-read P-N5-ENT §0-§3 at L = −1, step by step (H = V_{>max(−1, rank c)} =
   - 9501 reached the none part 237,030 times. SAND 919,988 checks. FLAT-ALL^{none} (i)-(iv) held in 237,030 cases, 2 of them with a (γ) gate.
   - 9501 also produced 645 level −1 block fallbacks (THR, r ≥ 0, M = −1), the first in any data I know of, but at most one per scope
     run. They came from evaluations inside the climb and were not saved; 9505, meant to produce a witness, did not reach one.
+  - Addendum (18:0xZ, at the Lead's 17:48Z request): replaying 9501 with its original weighting (FIT none0, same seed and seed game)
+    reproduced one (the replay was stopped once the witness was dumped; its log was not kept). Witness R2-N5-LV2/climb/block_9501.pg (sha1 1b5b76fd986487549fe0a35da79f68f5f0d19b3f), n 11, o = 7, succ(o) =
+    {2, 5, 8}, start pair in climb/block_9501.txt.
+    - State 1 is an in-scope in-phase THR Even fallback with (h): θ = (5, {9}, 3) ◁ w = (5, ∅, 1), r = 10, M = −1.
+    - Its gates (10, 1), (10, 3), (10, 8) are all (β) (R = {10}, rank o 2 < rank c 9).
+    - It is the run's only fallback. Own and SPEC traces agree.
+    - My predecessor's lv_check (R2-N5-LV) runs LV-SHAPE (3 (β)) and FLAT-ALL_{−1} (1 case) there with 0 violations.
+    - This is the first instance of P-N5-LV's setting with r ≥ 0. It is still N = 1 (vacuous for PL_{−1} (a)-(c) and LV-PL′ (i)-(iii)).
   - Max per scope run: none 1, block 1, EQ 1, level ≥ 0: 5, all 5. Worst ratios: LV-NONE 22‰, SCOPE-FB 21‰.
   - The random-seeded none climbs (9502, 9503) reached r = −1 states (322,925 scope runs with an r = −1 state) but no fallback there.
   - best_none_9501.pg (sha1 04c1ce2b), n 11: 4 none fallbacks over its 4 runs, one per scope run.
@@ -183,3 +191,15 @@ Re-read P-N5-ENT §0-§3 at L = −1, step by step (H = V_{>max(−1, rank c)} =
   0). But no scope run has two of either. So FLAT-ALL_{−1}^{none} and SAND are exercised non-vacuously, while the parts of LV-NONE and
   LV-PL′ that need N ≥ 2 rest on the proofs. Candidate CONJECTURE for L-RED / L-SI: an in-scope THR fallback with M = −1 is the last
   fallback of its scope run.
+
+## Addendum B (written 2026-10-25 18:1xZ by date -u): N-LV2-3's conjecture is FALSE; LV-NONE's induction checked at N = 2
+- The Lead (17:56Z, its stamp) relays that "an in-scope THR fallback with M = −1 is the last fallback of its scope run" is FALSE on
+  experiments/red/so/instances/beta2_n11.pg (L-RED; sha1 bdea2a2386741332d654005b81e5691cbf4dc9c5, which I checked on trunk 5f975133):
+  two THR fallbacks with r = −1 in one scope run. I withdraw the conjecture. N-LV2-3's DATA statement ("at most one per scope run")
+  stands for MY data only.
+- My lv2_check.py on that file (input only, 3 starts, own / rand / spec): one scope run with N = 2 none fallbacks on every trace.
+  - LV-NONE (1) (COARSE_{−1}(Ξ) constant on [g_1, g_1 + 1]), the strict length move at the tail events of g_1 (STRETCH_{−1}),
+    FLAT-ALL^{none} at both g_i, SAND and SCOPE-FB: 0 violations. Max tail events per y 1; N = 2 ≤ n·n_E + 1 (ratio 29‰).
+  - This is the first non-vacuous run of LV-NONE's own induction in my checks. LV2_MUT=eN / lastN (e = g_N + 1; tail check at g_N)
+    also give 0 violations on this file, so here the extension past g_{N−1} happens to hold too.
+- REFEREE's LV2 §C (ed8bc20) is NOT read by me: it is successor 11's to compare.

@@ -15,6 +15,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Mechanisms: cycle-node pump (Ξ-improving, W-neutral switch at a cycle node outside U; rhc_block_bk20_3 vertex 8): at most one per
   activity episode. Eviction chain (njb_reabs65_n48 fallbacks 43-67: one R vertex of U evicted per fallback; R values (c,{o,10}) <
   F values (c,∅) < W values (c,{o})). Chain vertices are all in U, so f stays below |U| − 1.
+- R71 (docs/red/R71-freeze-regime-into.md): no kill. Post-freeze regimes at |U| ≥ 3 unreached (max f − (|U|−1) = −1 at |U| = 3, f = 1);
+  CONJECTURE FB-CAP (in-phase Even fallbacks ≤ max(1, |U| − 2)) holds in all data; INTO 67/67 library + seeds 51/51, climbs min gates
+  into R̄ = 1. INTO wording note: gate-free last post-rise state.
+- RESUME POINT (successor 17, interim): n4 all-starts exfz17 running (out/ex/n4_all.log; JSON only at the end); intoclimb17 × 3 to ~18:36Z.
+  Next: FB-CAP attack at n = 5 with start pairs, or (4) LV-NONE / SCOPE-FB on the Lead's word.
 - Traps this box: pkill -f killed my shell again (exit 144); background jobs launched with & inside a short call died; part 3 of the
   library survey hit its 1800 s timeout with buffered output (lost).
 
