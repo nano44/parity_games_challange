@@ -16,5 +16,5 @@ while k < len(rows):
         kap = [tuple(frozenset(route(nxt(r), v, o)) & hi for v in Rs) for r in rows[k:j + 1]]
         last = max([i for i in range(1, len(kap)) if kap[i] != kap[i - 1]] or [0])
         ch = sum(1 for i in range(k, j) if any(rows[i]["Wk"][v] != rows[i + 1]["Wk"][v] or rows[i]["s"][v] != rows[i + 1]["s"][v] for v in Rs))
-        nR = len(rows[k]["R"]); print(f"P3 piece {k}..{j} |R| {nR} length {j - k} R-changing {ch} last kappa change {last} bound {nR + (nR - 2) * (nR - 1)} ok {ch <= nR + (nR - 2) * (nR - 1) and last <= nR - 1}")
+        nR = len(rows[k]["R"]) + 1; print(f"P3 piece {k}..{j} |R| (o counted) {nR} length {j - k} R-changing {ch} last kappa change {last} bound {nR + (nR - 2) * (nR - 1)} ok {ch <= nR + (nR - 2) * (nR - 1) and last <= nR - 1}")
     k = j + 1

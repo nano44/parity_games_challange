@@ -18,7 +18,23 @@
   - main report c500832b: FAIL E-1;
   - Add. 1 4db6e4c0: PASS at b112bd5;
   - Add. 2: R22 landed verbatim at trunk 200a511.
-- C32 (R23 draft at trunk 64840ec, packet P-N5-Z): FAIL on E-1 only ((e) NOFL-E and (f) GAP drop "inside a phase"). Object history clean (v2 never in a trunk state). s_rt32_final excluded everywhere. Re-runs EXACT.
+- C32 CLOSED 21:3xZ (date -u):
+  - main report 2cd52a68: FAIL E-1;
+  - Add. 1 0077eed8: PASS at 0d72267;
+  - Add. 2: R23 landed verbatim at trunk 8de876b.
+- C33 CLOSED 22:3xZ (date -u):
+  - main report 0102170b: FAIL E-1; the R22 POST-LANDING NOTE PASS;
+  - Add. 1 59a97995: PASS at a85316a;
+  - Add. 2: R24 landed verbatim at trunk 7bcf681.
+- C34 CLOSED 23:5xZ (date -u):
+  - main report 298e4b6d: FAIL E-1, E-2;
+  - Add. 1 4278b5a2: fixes part 2 PASS, E-1/E-2 still open;
+  - Add. 2 e9f7b674: PASS at 7666336;
+  - Add. 3: R25 landed verbatim at trunk 40ef7ed.
+- C35 (R26, P-N5-U23 pinned 7666336) 00:4xZ (date -u):
+  - main report docs/checker/C35.md: PASS at 37a4a06 (draft sha1 abd35e40…); optional N-1 (limit (v) "~90" relayed only via fixes §5;
+    L-RED R65 off trunk 1c2f1d8f), N-2 (no change);
+  - awaiting landing; then Add. 1 = landed-text check.
 - Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs. In a worktree, symlink tools/oink/build.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 

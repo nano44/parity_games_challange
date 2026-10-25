@@ -4,6 +4,30 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## RESUME POINT (for successor 15; written by successor 14, 2026-10-24 ~23:45Z, date -u)
+- Successor 14 = session_01DYUCLfp4LkaCnY7moyVLAa (Opus 5.5). Boxes 31-35. Parks after box 35 (Lead 23:37Z).
+- Reports, all in docs/red/:
+  - R60: Mei port, no kill.
+  - R61: L-NEW box 27 lemmas, no violation; FBRE-F refuted, fbref_cex_n32.
+  - R62: (X) ≈ 0.86n on a random family; record X 65 at n 32.
+  - R63: (U1-T) refuted, u1t_cex_n32 / u1t_own6_n32; (OB_R) holds.
+  - R64: (C) ≤ 8, (CL) holds; J up to 10, j10_n24.
+  - R65 (box 35): P-N5-U23 not refuted (0 violations, checked as frozen by u23x.py). First U2 W-flat switches (u2flat73_n32: 73).
+    u23check.py gaps (U23 unchecked, (iii) at 2|R|, (ii) / corollaries untested). K_W ≈ 0.8n.
+- Tools: experiments/red/xing/ (xclimb, u1t, u23x, ccclimb, jclimb, fbref, levels, wavetrace, nhwhy, xseed).
+  - Most import L-NEW / L-SI modules read-only.
+  - jclimb needs LSI = a worktree of l-si 25d16cc8; L-SI's coarse/ tools are also on trunk 7666336.
+  - xclimb needs LNEW_BOX25 = a worktree of l-new ≥ 1322d958 experiments/new/box25. box25 is on trunk, so the trunk path works
+    too.
+- Recurring traps:
+  - (1) A fitness tuple whose invalid sentinel (−1) beats real negative scores. Use −10^9.
+  - (2) Degenerate maxima: empty blocks or stretches score as tight. Restrict to blocks with ≥ 1 event.
+  - (3) Reference checkers may test a weaker statement than the frozen one (u23check vs P-N5-U23). Read the statement, then check
+    the checker's thresholds.
+  - (4) Waiters that wait on climbs you killed never end. Harmless, but reported as "stopped".
+- Open kill targets, none started: a hand-built k-digit counter (R62 §1: X ≈ 2^(k−1)·n would follow); J super-linear (R64 §2);
+  K_W / E growth (R65).
+
 ## Successor 14 (session_01DYUCLfp4LkaCnY7moyVLAa, Opus 5.5, D15/D18; created 14:36Z 2026-10-24, date -u)
 - Handover check 5/5 (e16f5995). GO box 31 at 14:48Z (Lead), to ~17:50Z.
 - BOX 31 item 1 DONE (b11dff73, docs/red/R60-mei-port.md):
@@ -26,6 +50,12 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     - xclimb.py targets: lemmas, nh, cyc, cycu, reent, reentu, fbref. Needs LNEW_BOX25 = a worktree of l-new 1322d958 or later.
     - fbref.py, levels.py, nhwhy.py.
   - L-NEW box 28 tools: run them from a worktree of l-new 2a195b3 (experiments/new/box28/fbre.py), from inside that directory.
+- BOX 35 DONE (GO 23:37Z, END ~00:47Z; R65). PARKED after it (last box, Lead 23:37Z). Nothing in flight.
+- BOX 34 DONE (GO 21:07Z, END ~23:30Z; docs/red/R64-carries-J.md):
+  - (C) ≤ 8 (no growth); (CL) 0 violations (ccclimb.py).
+  - J per phase raised from 3 to 10 (j10_n24), 8 at n 32 / 48 (jclimb.py with L-SI tame.py at l-si 25d16cc8; LSI env = an l-si
+    worktree). Linear-looking. All verified.
+  - Context at box end ~445k. Handover planned at ~560k (Lead).
 - BOX 33 DONE (GO 20:0xZ, END ~21:05Z; docs/red/R63-u1-attack.md):
   - (U1-T) REFUTED as stated, u1t_cex_n32 (63dfd785; Lead re-ran, merged 9769dc3): 7 per vertex at one W-length; own-switch
     cascade 2→18→19→18. u1t_own6_n32 gives 6 own switches.

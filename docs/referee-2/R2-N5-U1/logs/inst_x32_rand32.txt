@@ -1,0 +1,27 @@
+LR_edges: 9051
+LR_edges_optimiser: 8800
+LR_full_optimal: 8018
+LR_setopt_deleted u==x:True owner_x:1: 1
+TB_key_checks: 7694
+TB_key_nontrivial: 52
+TB_step2 x_on_cycle_only: 40
+TB_step2 x_on_play:False: 6865
+TB_step2 x_on_play:True: 40
+U1_W_change_transitions: 0
+U1_pieces_checked: 7
+WC_intervals(notH1notH2): 11
+WC_intervals(notH2): 12
+fallbacks: 0
+intervals: 267
+pieces_EQc: 249
+pieces_U1: 7
+runs: 10
+transitions: 257
+U1_last_kappa_w_change_minus_R: -2
+U1_max_K: 0
+U1_max_Rch: 0
+U1_max_len: 0
+WC_cw_changes_per_stretch: 0
+WC_max: 0
+example LR_setopt_deleted: x32_rand32.pg#6@0 cyclenode=18 x=8 y=8 u=8 val[x]=(18, 2101248, 3) ext=(18, 2101248, 4)
+RESULT OK violations=0

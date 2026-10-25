@@ -1,0 +1,18 @@
+LR_edges: 52733
+LR_edges_optimiser: 29542
+LR_full_optimal: 47513
+LR_setopt_deleted u==x:True owner_x:1: 104
+LR_setopt_deleted_xney: 49
+TB_even: 20
+TB_key_checks: 23704
+TB_key_nontrivial: 233
+TB_odd: 7
+TB_step2 x_on_cycle_only: 2497
+TB_step2 x_on_play:False: 11456
+TB_step2 x_on_play:True: 2497
+odd_choice_vertices: 7567
+runs: 1000
+transitions: 2688
+example LR_setopt_deleted: gen532#0@0 cyclenode=6 x=0 y=0 u=0 val[x]=(6, 180224, 4) ext=(6, 180224, 5)
+example LR_setopt_deleted_xney: gen532#13@1 cyclenode=19 x=11 y=13 u=11
+RESULT OK violations=0

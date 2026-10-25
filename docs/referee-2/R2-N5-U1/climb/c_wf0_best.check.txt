@@ -1,0 +1,34 @@
+LR_edges: 1325
+LR_edges_optimiser: 1214
+LR_full_optimal: 1200
+LR_setopt_deleted u==x:True owner_x:1: 11
+LR_setopt_deleted_xney: 2
+TB_key_checks: 1064
+TB_step2 x_on_cycle_only: 100
+TB_step2 x_on_play:False: 735
+TB_step2 x_on_play:True: 100
+U1_W_change_transitions: 30
+U1_kappa_w_change_transitions: 30
+U1_nontrivial: 6
+U1_pieces_checked: 14
+WC_intervals(notH1notH2): 22
+WC_intervals(notH2): 39
+fallbacks: 2
+intervals: 46
+pieces_EQc: 23
+pieces_EQc_nontrivial: 3
+pieces_P3: 3
+pieces_U1: 14
+pieces_U1_nontrivial: 6
+runs: 10
+transitions: 84
+U1_last_kappa_w_change_minus_R: -2
+U1_max_K: 0
+U1_max_Rch: 8
+U1_max_len: 8
+WC_cw_changes_per_stretch: 0
+WC_max: 0
+example LR_setopt_deleted_xney: c_wf0_best.pg#0@0 cyclenode=10 x=0 y=15 u=0
+example LR_setopt_deleted: c_wf0_best.pg#0@0 cyclenode=10 x=0 y=15 u=0 val[x]=(10, 1536, 2) ext=(10, 1536, 4)
+example U1_long: c_wf0_best.pg#0 piece [3,11] |R|=12 c_theta=14 c_w=5 Rch=8 f=0
+RESULT OK violations=0

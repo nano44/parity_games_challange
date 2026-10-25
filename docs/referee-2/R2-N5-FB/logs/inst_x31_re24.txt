@@ -1,0 +1,26 @@
+LINK_sbar_minimiser: 33
+LINK_states: 33
+MONO_checks: 21
+M_rose_at_nontame: 3
+NC_fail_and_nontame: 7
+NOINF_checks: 25
+OFF_checks: 56
+SIa_checks: 11
+SIa_converse_checks: 9
+SIb_hyp: 11
+T_checks: 372
+T_checks_nontrivial: 112
+T_hyp_fails: 636
+W_lowering_in_phase: 0
+fallbacks: 0
+phase_fallbacks: 0
+phases: 6
+runs: 5
+transitions: 28
+transitions NC=False tame=False inphase=False: 7
+transitions NC=False tame=True inphase=False: 6
+transitions NC=True tame=True inphase=False: 6
+transitions NC=True tame=True inphase=True: 9
+max_J_per_phase: 0
+max_fallbacks_in_block: 0
+RESULT OK violations=0

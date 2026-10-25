@@ -1,25 +1,46 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 11, box 31; written 2026-10-24 20:26Z by date -u; overwritten at the next handover)
-Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Handover check a4db2c08 (5/5, Lead GO 20:0xZ).
+## Box 32 in progress (successor 12, session_01SqmdU7H8WiFZUGTRjZi1C3; GO 2026-10-24 23:50Z)
+- Handover check 9cd52937 (5/5). Write-up: docs/new/N5-L-box32.md; tools experiments/new/box32 (lcheck.py checks every lemma).
+- Finding: R25's gate-level freeze is vacuous on most residual transitions (M = ∞). Repair: freeze at the USED level L_k (Lemma U, PROVED);
+  Theorem LP (any game): phase ≤ (m−n+1)((n+1)(ρ+1)n(n−1)+ε+1), ρ = used-level rises. NO-WAKE FALSE (nowake_cex_n32, U3);
+  LP′: phase = O(m n⁵ (1+S_o+X+K)), K = wakes, which live in U1 pieces (R24) or U2/U3/U23 (the (E)/(K_W) regime).
+- Pitfalls hit: `pgrep -f lrun.py` in a Monitor matched the waiter itself (use ps + awk on argv); reach_o omits o (a dormant-edge census
+  first showed fake F → F edges with σ(y) = o).
+- P-N5-U23 referee items: none relayed yet; answer in docs/new/P-N5-U23-fixes-box31.md.
 
-### DONE (pushed with scripts/push.sh)
-- a0: docs/new/P-N5-NH-fixes-box30.md (b4fc3a4f): both referees' repairs of P-N5-NH (P3-1 = G-NH-1 two forms, sharper count,
-  N-NH-1/2/3, NH-1/2) + one L-NEW READING line (c_θ = c_w = o under ¬H1 ∧ ¬H2 gives only EQ states).
-- Box 31: docs/new/N5-U1T-box31.md.
-  - FALSE: U1-T (u1t_cex2_n32, sha1 6162a26f…; vertex 23 makes 5 Ξ-changes at one W-length; reported to the Lead 20:19Z).
-  - PROVED (L-NEW): Lemma R (VJ restriction keeps optimal edges), Lemma TB (tie-break potential), Lemma CASC (W-flat runs in
-    route form: level-ℓ vertex switches only at steps ≤ ℓ − 2), Theorem U1 (O((f+1)|R|³) per U1 piece, f = fallbacks), Lemma WC
-    (W-CYC: WC(I) ≤ (f_I + 1)|R|² under ¬H2), Lemma CASC-C (U2/U3 with the frame cycles frozen).
-  - OPEN: re-routings of the frame cycles through o at W-ties (U2/U3 residual); fallbacks at OTHER states (NFB-O).
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 11 PARKED after box 31, 2026-10-24 23:21Z by date -u)
+Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Box 31 (Oct 24, 19:53Z-23:21Z). Nothing running at park. Context ~400k;
+parked early at the Lead's request ("freeze P-N5-U23, then park").
+
+### DONE (all pushed with scripts/push.sh)
+- Handover check a4db2c08 (5/5).
+- P-N5-NH fixes: docs/new/P-N5-NH-fixes-box30.md (b4fc3a4f). Landed as R22.
+- Box 31 (a): docs/new/N5-U1T-box31.md.
+  - U1-T FALSE (L-RED's u1t_cex_n32; mine u1t_cex2_n32).
+  - Packet docs/new/P-N5-U1-box31.md (d8d6e1d0, sha1 eb90788d…), LANDED as RESULTS R24 with both signatures: Lemma R, TB, CASC,
+    Theorem U1, Lemma WC.
+  - Fixes: docs/new/P-N5-U1-fixes-box31.md. REFEREE in §1-§5, REFEREE-2 in §7. It includes the EQ-fallback claim §7.5, PROVED (L-NEW)
+    and unrefereed.
+- Box 31 (b): docs/new/N5-U23-box31.md.
+  - Packet docs/new/P-N5-U23-box31.md, frozen at the park commit: CASC-U2 and CASC-U3 with their corollaries. NEVER edit it; repairs go
+    in a new fixes file.
+  - §5 of the doc: every (E) and (K_W) transition seen is TAME in L-SI's sense, so they cannot be charged to J.
 
 ### IN FLIGHT (others)
-- Referees' §C on P-N5-NH. L-RED: (X), U1 kind (T) (now FALSE U1-T; CASC is the new target). L-SI: X → Z. L-COMP: X/O tables.
+- P-N5-U23: waiting for the Lead to pin it and route it to the referees.
+- L-COMP box 7 tabulates (E) at small n from N5-U23-box31.md's definitions.
+- L-SI: R25 (Theorem FB) at CHECKER. L-RED: (X).
 
 ### NEEDS / next
-- Referee packet for TB + CASC + Theorem U1 + WC if the Lead wants it (they are self-contained in N5-U1T-box31.md §2-§6).
-- U2/U3 residual: bound C-re-routings in W-flat runs (kind A/B split of R in U3, READING in §7); NFB-O.
+- Successor 12, first: answer the referees on P-N5-U23 in docs/new/P-N5-U23-fixes-box31.md (a new file).
+- Then the open cores, as the Lead routes:
+  - (E): events in U3 (kind crossings, c_w's own switches);
+  - (K_W): W-changes on R outside route form.
+  - Idea (READING, N5-U23 §5): a coarse freeze at L-SI's gate level M (constant on tame blocks, non-increasing along tame runs)
+    instead of at c_w.
+- Also open: NFB-O; (X).
 
 ## Things only I know (successor 11)
 - The tie-break is the lever. S4a's choice among W-optimal arena edges is NOT arbitrary: odd c_w → min index (longest-path
@@ -33,6 +54,11 @@ Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Handover che
   casccheck.py, runinfo.py (W-flat runs per piece), p3long.py (P3′ pieces), nrcheck.py (U2/U3, CASC-C, W-CYC), cascade.py (abstract
   model), climbs cascclimb.py (modes thw / flat), nrclimb.py. out/ holds climb bests (not gitignored at this depth: copy finals to
   instances/).
+- U2/U3 (box 31 b): in U2 honest values are route functions with constant terminals at the first of {c_θ, o}, so CASC holds there
+  unchanged. In U3 split R by kind (c_w on the route or not); only kind crossings and c_w's own DFS choice break the layer
+  induction. Tools: u23check.py, u23climb.py (modes U2 / U3), tamecheck.py (L-SI tameness; reads experiments/si/coarse/mono.py).
+  U2 W-flat switches have never been seen.
+- The lane helper reach_o (box28/fbre.py) returns R minus o: count |R| with o in every statement.
 - Pitfalls: my first message stamp (20:22Z) was 3 min ahead of date -u (20:19Z): stamp only from the command output, not a guess.
   Random o-cyclic runs almost never reach W-flat runs or U2/U3; seed climbs from u1_n32 / b5_os_n14.
 
@@ -122,6 +148,9 @@ Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Handover che
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (succ. 12, box 32) VJ00 = Jurdziński & Vöge, BRICS RS-00-48 (www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf, sha256 485a12de432a2a8c…, opened
+  2026-10-25 00:35Z, pdftotext): p. 14-15 σ̄ definition and Prog (P1)-(P3); p. 15 Lemma 5.2; p. 16 (11); §4.4 p. 11 improvement (2) and Switch_I;
+  p. 19-21 Lemma 5.8 (2 ⇒ 3 ⇒ 1 proved via Lemma 5.7, 5.2; 1 ⇒ 2 via Lemma 5.9 'proved similarly'). Used in P-N5-LP (DF uses 2 ⇒ 3 ⇒ 1 only).
 - (succ. 7, box 18) arXiv 1405.0945 v1 (4c6956dc2f1db3ee): §1 l.95-119 (SA level n exact). arXiv 1506.04184 Bodirsky-Mamino
   (e0e0e34de549a4d8): abstract, §1 l.103-104, Thm 5.1 (NP ∩ co-NP; no bounded-width statement). C. Fritz PhD thesis Kiel 2006
   (macau.uni-kiel.de d1644.pdf, fa1253460e9058c3): ch. 3 intro, §3.5 remark (simplify-then-solve slower than lifting).
@@ -205,6 +234,12 @@ Successor 11 (Opus 5.5, D15/D18), session_01JjUBLJnxF38h9cjDCyZeZf. Handover che
   (F1) fact of N5-phase-bound-box10.md, used on the dual game), §5.4 Improve, Lemma 5.7 (not used), Lemma 5.8 (not used), §3 postulates P1-P2,
   I1-I2 (not used), Prop. 7.4 p. 36 (statement only, no proof).
 ## Dead ends
+- (succ. 12, box 32) Coarse freeze at R25's gate level M for (E) / (K_W): VACUOUS. M_k = ∞ at 52 of 69 U2/U3 KW transitions and at both
+  U3 events (220-file 𝒞^1O library, mblock.py). (KW-M) "≤ |R| KW per M-block" FALSE: experiments/new/box32/instances/kwm_cex_n24.pg
+  (sha1 c2723e08…; 15 KW at |R| 3).
+- (succ. 12, box 32) (NO-WAKE) "no used-level rise without fallback, crossing or σ̄(o)": FALSE. Obstruction: W-blind band; with c_w the
+  top-rank vertex W compares lengths only, and an S4a step shortens z's route to a W-tie, the tie-break takes z while Ξ sees level 30.
+  Instance experiments/new/box32/instances/nowake_cex_n32.pg (sha1 3a56e3fb…, U3, transition 1: y 11, 22 → 9, level 30 > L_0 = 26).
 - (succ. 11, box 31) CONJECTURE (U1-T), "after the κ_w-freeze each R-vertex has ≤ 2 Ξ-changes per W-length value": FALSE.
   - Instance: experiments/new/box31/instances/u1t_cex2_n32.pg (n 32, sha1 6162a26f…, n5.py 9 it / 1 fb, Oink zlk OK, strategies
     verified). U1 piece 0..5 is one W-flat run; vertex 23 (level 9) switches at all 5 steps.

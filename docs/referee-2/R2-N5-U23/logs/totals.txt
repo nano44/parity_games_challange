@@ -1,0 +1,33 @@
+KW_U2 207
+KW_U23 229
+KW_U3 21
+U3_event_transitions_U23 2
+U3_event_transitions_U3 2
+U3_subruns_U23 42
+U3_subruns_U3 3
+U3_subruns_kindB_empty_U23 20
+U3_subruns_kindB_empty_U3 2
+U3_switch_A_U23 32
+U3_switch_A_U3 3
+events_U2 0
+events_U23 2
+events_U3 2
+formula_states_U2 1196
+formula_states_U23 2914
+formula_states_U3 784
+runs 6650
+stretch_U2 823
+stretch_U23 2592
+stretch_U23_nontrivial 259
+stretch_U2_nontrivial 112
+stretch_U3 751
+stretch_U3_nontrivial 7
+transitions 27830
+wflat_runs_U2 57
+wflat_runs_U23 44
+wflat_runs_U3 4
+MAX U3_A_max(step-(T+lam-2)) -1
+MAX max_Rch_U2 26
+MAX max_Rch_U23 7
+MAX max_Rch_U3 8
+RESULTS {'OK': 117}

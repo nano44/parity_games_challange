@@ -83,3 +83,49 @@ Measured from the repository at the time of writing, not recalled.
   read old GAPS/NOW and stale packets. Check: `git rev-parse HEAD origin/claude/referee-2` equal before any work (done above).
 - Second trap (R2-N5-ESC): a one-player optimum "τ̄" can have ties; an escape claim must hold for every admissible tie-break,
   so I treat τ̄(v) as the SET of optimal choices and report #optimal at each step.
+
+## successor 5 (2026-10-24T21:16Z by date -u; Opus 5.5 under D15/L37; predecessor successor 4 session_01DDRfmJkBTC5uu5q62T2Dme, handover 6f379106)
+Measured from the repository at the time of writing (commands named), not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee-2`. The container's local branch was STALE (77f9cf71, the R2-N5-1OA §C2 commit). After
+  `git fetch origin claude/referee-2 claude/vibrant-johnson-nxvvxo` and `git merge --ff-only origin/claude/referee-2`:
+  HEAD = origin/claude/referee-2 = 6f379106 (predecessor's handover commit).
+- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 1 ahead, 12 behind (trunk cf66bffe;
+  merge-base fde04482 = predecessor's R2-N5-Z §C). I then merged trunk with a merge commit: 2 ahead, 0 behind; this file's
+  commit adds one more.
+
+### 2. Open work and next step of each
+- Nothing in flight (predecessor parked after R2-N5-Z §C, fde04482).
+- NEXT (after GO): packet P-N5-U1, docs/new/P-N5-U1-box31.md, sha1 eb90788d2949050f316ed983fa56c34d7a1dd9c7 (measured with
+  sha1sum on this tree; added by L-NEW d8d6e1d0), pin trunk eee0d8a. Next step: read N5-ssi-global.md S1-S5 + R19-R22 +
+  N5-U1T-box31.md; check, in order, Theorem U1 (§4, incl. κ_w-freeze and the transferred P3-1 repair), CASC (§3), TB (§2, against
+  spec S1 and experiments/si/si.py), Lemma R (§1, VJ00 opened myself), WC (§5), the (NH') reduction reading (§6, signed results only);
+  own checker on R2-N5-RE/re_check.py with the one-Odd-choice assert; run u1t_cex_n32, u1t_own6_n32, u1t_cex2_n32, then climbs.
+  Output docs/referee-2/R2-N5-U1.md (brief says R2-N5-U1.md). Not reading docs/referee/R-N5-U1.md before mine is pushed
+  (it is not on this tree; `ls docs/referee | grep -i u1` empty).
+- Held: N-Z-1 / N-Z-2 (R2-N5-Z) go to docs/si/P-N5-Z-fixes-box5.md via the Lead (relay is the Lead's). Oink is NOT built in this
+  container yet: run scripts/setup_oink.sh before check_sol2.py / zlk.
+
+### 3. docs/GAPS.md rows relevant to me (trunk cf66bffe)
+- REFEREE-2 owns no row.
+- G-N5-TIME | major | L-NEW (L-LIT T22; referees later) | open: N5 makes polynomially many iterations. Latest: R22 landed 20:36Z;
+  per phase transitions ≤ poly(n)·(1 + X + Σ_I (ROI + WC)) (READING); open X (≡ Z up to n, P-N5-Z), ROI in U1-U3, W-CYC; (U1-T) FALSE
+  as stated (u1t_cex_n32). P-N5-U1 is the packet on U1/WC under this row.
+- G-N5-TERM closed (R15). Other open rows (GAP-A, G-S5-6, G-NEST, G-N1-LB) are not routed to me.
+
+### 4. Three owner rulings that most constrain me (verbatim), with DECISIONS-INDEX status
+1. D1 (index: active), docs/DECISIONS.md:7-8:
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index: active; Lead reading L37 active, signatures labelled "(Opus 5.5, D15)"), docs/DECISIONS.md:278:
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index: active; Lead reading L40 active: label PROVED / CONJECTURE / OPEN, ASSUMPTION never PROVED), docs/DECISIONS.md:333:
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (R2-N5-Z): s_rt32_final has TWO Odd choice vertices (14, 28), so it is not 𝒞^1O; the checker silently took the first one
+  and reported 14 false Step (K) "failures" under SPEC (N-Z-2).
+  Check: since 04611c5e every REFEREE-2 N5 checker refuses a game without exactly one Odd vertex of out-degree > 1; I keep that
+  assert in the U1 checker and re-run it on the three packet instances first.
+- Also this session: the local branch was stale (77f9cf71); checked `git rev-parse HEAD origin/claude/referee-2` equal after fetch.

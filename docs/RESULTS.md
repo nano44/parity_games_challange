@@ -1016,6 +1016,204 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   closure and its single-switch proof are the same proof. Joint gap map: P3-1 = G-NH-1 (CLOSED); NH-1 = N-NH-3 (wording);
   NH-2 ((SG) step); N-NH-1 (cite X-1 / R21 (i)); N-NH-2 (THR remark needs (h)).
 - TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+- POST-LANDING NOTE (2026-10-24 21:38Z by date -u): limit (ii)'s description of u1t_cex_n32 needs two corrections (REFEREE R-N5-U1 D-1, D-2, referee 257fa4c). (1) |R| = 28 there is |R \ {o}|; with this entry's convention o ∈ R, |R| = 29 (and "(OB_R) … 88 > 28 … 7 ≤ 28" reads with |R \ {o}|). (2) σ(10) switches once (12 → 29 at transition 0), so its σ-path is fixed only from transition 1; L-RED R63 §1b also shows own-successor switches at one W-length on the same instance. (U1-T) FALSE as stated is unaffected.
+
+### R23 [refereed-only] N5 on one-Odd-choice games: crossings have active crossers (ACT, LOOP), what fallbacks can switch (NOFE, NOFL-E, GAP), W never drops at arena steps (WM), and crossings are bounded by reversals of R (LV′, Corollary Z) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C32.md, checker 2cd52a6 + Addendum 0077eed)
+- Object (packet P-N5-Z, pinned trunk fba7177, unchanged during review; a post-pin edit on the lane branch was reverted to the pinned
+  bytes before merge): docs/si/P-N5-Z-box5.md, sha1 a027638f06d18143ed0779290b24f8e5decb8249 (L-SI successor 2, Opus 5.5). The lane's
+  data corrections and the referees' repairs are in docs/si/P-N5-Z-fixes-box5.md (l-si c3c62ef, on trunk; sha1
+  c6d9c13f6b06c0df3b6ca1b9ada04e0c716112ee; a record, not itself refereed text).
+  Setting as in R21 (𝒞^1O; a PHASE is a joint λ-phase with τ constant). Convention of this packet: R excludes o and R̄ := R ∪ {o};
+  F := V \ R̄, and the crossing transitions (R changes) are the same as in R19-R22.
+- Claims signed (both referees "(Opus 5.5, D15)", L37):
+  (a) Step (K): at an S4c fallback inside a phase, no arena edge (y, z) raises W at y (from R21 (c) FBL-N (i)).
+  (b) Lemma ACT: at a transition with τ unchanged, (i) if R̄ gains a vertex, some switched Even s ∈ F_k with σ_{k+1}(s) ∈ R̄_k enters;
+      (ii) if R̄ loses a vertex, some switched s ∈ R_k with σ_{k+1}(s) ∈ F_k leaves, or a new cycle avoiding o lies inside R_k and
+      contains a switched vertex.
+  (c) Lemma LOOP and Corollary: inside a phase with H1 at k, ACT (ii)'s cycle alternative does not occur, so every leave has an active
+      leaver. (H1 is needed: REFEREE's probe saw the cycle alternative 88 times, all without H1.)
+  (d) Lemma NOFE, strong form: at an S4c fallback inside a phase, every switched edge y → z with y ∈ F_k and z ∈ R̄_k has y on o's
+      W-play at k. (Also a one-line corollary of R21 (c) FBL-N (ii): y is a W-cycle node on o's W-play; Z-2.)
+  (e) Lemma NOFL-E and Corollary: at a fallback inside a phase from a state with Ξ = W and H2, no switched edge goes R → F; with H1 ∧ H2 such a
+      fallback has no leave.
+  (f) Lemma GAP: at a fallback inside a phase with (h) at k, every switched edge y → z with y ∈ R_k, z ∈ F_k satisfies
+      Ξ_k(σ_k y) ◁ Ξ_k(z) ⊴ W_k(σ_k y) (the evicted target lies in the trust gap).
+  (g) Lemma WM and Corollary: inside a phase, W_{k+1} ⊵ W_k pointwise at every transition that is not an S4c fallback; so every
+      W-decrease is at a fallback.
+  (h) Lemma LV′: sign each crossing '+' (R̄ grows), '−' (R̄ shrinks) or '±'; with Z := #'±' + #(sign changes between consecutive pure
+      signs), X ≤ (n − 1)(Z + 1) + Z and Z ≤ X. "Runs" of equal pure signs are runs adjacent among crossing transitions, so a '±'
+      breaks a run (Z-1 = N-Z-1; read "ignoring ±", the monotonicity step fails).
+  (i) Corollary Z: inside one phase, #transitions ≤ (3n²(1 + X + O) + X + O + 1)(4n(n − 1) + 1) with X ≤ (n − 1)(Z + 1) + Z, so
+      O(n⁵(1 + Z + O)) (from R21 (g) within its signed hypotheses, and LV′).
+- Honest limits: (i) SUBCLASS 𝒞^1O; a bound on N5 itself. (ii) LV′ moves (X) to (Z) up to a factor n; Z is OPEN. The lane locates its
+  hard part in carries (C), i.e. '+−' reversals at evicting fallbacks (fixes file: a drain counts once); OPEN, CONJECTURE (CL) only.
+  (iii) The phase count (Lemma Φ) is unrefereed, so a running-time bound is still a READING. (iv) DATA on Z: lane climbs Z 11 / 18 /
+  22 at n 24 / 32 / 48 (zcl_fb2_n32: 13 carries in one phase); L-RED box 32: X ≈ 0.86n from random seeds, X 65 at n 32 from wave
+  seeds; L-COMP b6_xw_n32: X 67 at n 32 (Lead re-runs). (v) Refuted lane forms (packet §10): NOFE's first form (nofe_cyc_n8),
+  (U*-DROP), (W-LAY). s_rt32_final (si/orlens) is NOT in 𝒞^1O (two Odd choice vertices); it is excluded from all counts.
+- Data (DATA, not proof; out-of-class files excluded): REFEREE z_probe.py (appendix 555cbeb): ACT (i) 1,126 / (ii) 855, NOFE 17, GAP
+  511, WM 3,957, LV′ 595 phases (max X 78, max Z 22), 0 failures. REFEREE-2 z_check.py (own code): 13,756 runs, 38,186 transitions,
+  35,072 phases, 0 violations (ACT 9,174 / 7,951, LOOP 2,689, GAP 1,950 edges, WM 15,717; 963 of 1,153 fallbacks lower W, no
+  non-fallback does; 21 F→R̄ fallback edges, all tails W-cycle nodes on o's W-play).
+- Signatures: REFEREE docs/referee/R-N5-Z.md (referee c818ef2; data appendix 555cbeb; §C dcee223): LV′ SIGNED WITH GAP Z-1 (wording);
+  Corollary Z SIGNED; NOFE SIGNED (Z-2 remark, Z-3 wording); Step (K), ACT, LOOP, NOFL-E, GAP, WM SIGNED; §C: no disagreement.
+  REFEREE-2 docs/referee-2/R2-N5-Z.md (referee-2 1a5854b; §C fde0448): every statement SIGN (N-Z-1 wording, N-Z-2 data); §C: no
+  disagreement, Z-2 and Z-3 accepted. Joint gap map: Z-1 = N-Z-1 (CLOSED); N-Z-2 = appendix 555cbeb (data); Z-2 (remark); Z-3 (wording).
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
+### R24 [refereed-only] N5 on one-Odd-choice games: S4a keeps every fully optimal edge (R), its tie-break is a monotone potential (TB), W-flat runs are short (CASC), U1 pieces have polynomially many R-changing transitions given their fallbacks (Theorem U1), and w-changes under ¬H2 (WC) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C33.md, checker 0102170 + Addendum 59a9799)
+- Object (packet P-N5-U1, pinned trunk eee0d8a, unchanged during review): docs/new/P-N5-U1-box31.md, sha1
+  eb90788d2949050f316ed983fa56c34d7a1dd9c7 (L-NEW successor 11, Opus 5.5). The referees' repairs are collected by the lane in
+  docs/new/P-N5-U1-fixes-box31.md (l-new 61a36b9, on trunk; sha1 88675ab782df24a63426756674579e7336c1508c; a record, not itself
+  refereed text).
+  Setting as in R22 (𝒞^1O; a PHASE is a joint λ-phase with τ constant; R ∋ o, F := V \ R; crossing-free interval; route form; U1 = both
+  frames in route form with c_w strictly more relevant than c_θ; a PIECE J is a maximal run with both frames in route form and θ, w
+  constant). Level ℓ(v) := |π_v|.
+- Claims signed (both referees "(Opus 5.5, D15)", L37):
+  (a) Lemma R: in N5's S1 restriction step, every FULLY optimal successor of x (equal in cycle node, path set and length) survives, so
+      the length step chooses among exactly the fully optimal edges (FIX 4 order). The packet's wording "optimal in the cycle-node and
+      path-set components" is FALSE at x = u (R-1 = G-R-2; REFEREE's 3-vertex instance; 4,074 / 8,464 such deleted edges, all with
+      u = x); the step-1 invariant holds for processed u ≠ x (G-R-1). VJ00 (BRICS RS-00-48) §6 Prop. 6.1 gives only existence of one
+      surviving path; Lemma R is the packet's own strengthening (R-2).
+  (b) Lemma TB: at an S4a transition without fallback, if an Even v switches with W'(v) = W_k(v) and is not its own cycle node c, then
+      (TB-odd) c odd ⇒ σ_{k+1}(v) < σ_k(v) as indices; (TB-even) c even and W' = W_k on v's σ_k-play from v to (before) c ⇒ the
+      root-first index key pk(v) strictly decreases lexicographically. Tie-breaks equal SPEC S1 (iv) / FIX 4 exactly (TB-1 = G-TB-1:
+      the sandwich case where the optimal play passes x, closed by an (F1)-only case proof; TB-2 wording).
+  (c) Lemma CASC: in a W-flat run (consecutive non-fallback transitions of a piece with W unchanged on R), an R-vertex of level ℓ
+      switches only at run steps ≤ ℓ − 2; so no R-vertex switches at a run step ≥ |R| − 2. Step 1 uses only TB's choice rule (C-1,
+      wording after §C; C-2, C-3 wording).
+  (d) Theorem U1: a U1 piece with f fallback transitions has at most |R| + f + K + (K + f + 1)(|R| − 2) transitions that change Ξ, W
+      or σ on R, with K ≤ (f + 1)(|R| − 1)(|R| − 2) counting non-fallback transitions (N-U1-1); O((f + 1)|R|³), and ≤ |R|³ for f = 0.
+      Includes the κ_w-freeze, with R22 (c)'s P3-1 repair transferred.
+  (e) Lemma WC: on a crossing-free interval with ¬H2, the w-changing transitions number WC(I) ≤ (f_I + 1)(|R|² − 1) + f_I, with f_I
+      the fallback transitions of I. Sharpened in both §C (N-U1-3): at an EQ state Ξ = W, so an Even fallback switches improving
+      edges of G_τ and W does not decrease (R15 (a) / VJ00 Lemma 5.7 in G_τ); hence only fallbacks at OTHER states count in f_I.
+- Reduction (READING, checked by both referees, not signed): with RESULTS R22's reduction (itself a READING), (NH') reduces to (X),
+  NFB-O (fallbacks at OTHER states) and the U2/U3 re-routings. Unsigned inputs named by REFEREE: the P-N5-NH §4 assembly and its fixes
+  §4 one-liner (checked true by TC (iv)).
+- Honest limits: (i) SUBCLASS 𝒞^1O; a bound on N5 itself. (ii) U1 is bounded GIVEN f; fallbacks at OTHER states (NFB-O) are open (0
+  seen), as are the U2/U3 re-routings and (X). (iii) DATA is thin: K = 0 everywhere, no U1 piece with a fallback was found, and CASC
+  climbs never came within 2 steps of the bound. (iv) (U1-T) is FALSE as stated, per vertex (L-RED u1t_cex_n32 sha1 63dfd785; L-NEW
+  u1t_cex2_n32 6162a26f; own-switch version L-RED u1t_own6_n32 f6368500, 6 own switches at one W-length in a 6-transition piece);
+  Theorem U1 counts transitions per piece. (v) |R| convention: lane scripts printed |R \ {o}|; with R ∋ o the three cex instances have
+  |R| = 29 / 29 / 25 (D-1 = N-U1-5); every checked bound grows with |R|, so the lane's checks were stricter.
+- Data (DATA, not proof): REFEREE: 3 pinned instances re-run; 78 named 𝒞^1O instances (92 U1 pieces, longest 12); 5,500 random runs
+  (U1 pieces single-state, vacuous); 23,000 random arenas (TB-odd 113, TB-even 535); 381,241 choice-rule checks; 3 CASC climbs (7,599
+  candidates, best margin −2); 322 EQ-state fallbacks, W non-decreasing; 0 failures. REFEREE-2 (own code): 11,910 runs + 20,000 arenas
+  + 13 climbs (70,400 runs), 0 violations; 426,737 key-min checks against SPEC, 0 mismatches.
+- Signatures: REFEREE docs/referee/R-N5-U1.md (referee 257fa4c; §C 4de5c2e, stamp fix 5054e81): Theorem U1 SIGNED; CASC SIGNED (C-1
+  downgraded to wording in §C); TB SIGNED WITH GAPS (TB-1, TB-2, closed); Lemma R SIGNED WITH GAPS (R-1, R-2, G-R-1, closed by
+  restating); WC SIGNED, sharpened (N-U1-3, proved in §C.3); §6 READING correct. REFEREE-2 docs/referee-2/R2-N5-U1.md (referee-2
+  28ddf6f; §C 3d68a03, stamp fix cab4e7d): U1 SIGN; CASC SIGN WITH GAPS (C-1 accepted as a citation gap, closed; C-2, C-3 wording); TB SIGN WITH GAPS
+  (G-TB-1, closed); R SIGN WITH GAPS (G-R-1, G-R-2, closed); WC SIGN, N-U1-3 closure proved in §C.4; §6 READING correct. Joint gap
+  map: TB-1 = G-TB-1; R-1 = G-R-2; R-2 (VJ00 existence only); G-R-1, C-1..C-3, TB-2 wording; N-U1-1 (K counts non-fallback
+  transitions); N-U1-3 closed by both; D-1 = N-U1-5, D-2 = N-U1-4 (data notes).
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
+### R25 [refereed-only] N5 inside a phase: coarse super-solutions (claim (T), COARSE-SI, TAME), the max gate level never rises at tame transitions (MONO, NOINF), fallbacks are bounded by non-tame transitions (Theorem FB), and on one-Odd-choice games every non-tame transition is an exit jump at o (J1, OFF, CAP) (2026-10-24) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C34.md, checker 298e4b6 + Addenda 4278b5a, e9f7b67)
+- Object (packet P-N5-FB, pinned trunk 348393b, unchanged during review): docs/si/P-N5-FB-box7.md, sha1
+  9ece9994a1251f904935048a605495cd325946e7 (L-SI successor 3, Opus 5.5). The referees' repairs are collected by the lane in
+  docs/si/P-N5-FB-fixes-box7.md (part 1, REFEREE's items; l-si 1c8bb9c, on trunk; sha1 8548c3fc56eebc56e82d099d7c378bd481d79a5d)
+  and docs/si/P-N5-FB-fixes2-box7.md (part 2, REFEREE-2's items and a concordance of both reports; l-si 8d0b180, on trunk; sha1
+  4d5b3716731285eb629e8d92fca5b01b756a6d1f), both L-SI successor 3; records, not themselves refereed text; the lane's third,
+  minimality-free CAP proof (part 1) is unrefereed.
+  Setting: N5 (SPEC docs/new/N5-ssi-global.md) on any game unless marked 𝒞^1O; a PHASE is a joint λ-phase with τ constant, and "a
+  transition of the phase" has both ends in the phase (FB-2); lev(a, b) := the level at which two valuations first differ; COARSE_L
+  keeps a valuation's cycle node and its path-set part above level L; M_k := the max gate-edge level at k; a transition is TAME if
+  COARSE_{M_k}(Ξ) is unchanged across it (TAME's hypothesis), NON-TAME otherwise; J := #non-tame transitions of the phase.
+- Claims signed (both referees "(Opus 5.5, D15)", L37):
+  (a) Claim (T) and COARSE-SI (a): if every switched edge has gate level ≤ L and the switched graph closes no new bad cycle ((NC)),
+      COARSE_L(Ξ) is unchanged; converse: if (NC) fails, COARSE_L changes at the top of a bad cycle. Uses VJ00 (BRICS RS-00-48) σ̄ p.
+      14, Prog p. 15 (V-1 = N-FB-1), Lemma 5.2 p. 15, (11) p. 16; applying Lemma 5.2 to SPEC's σ̄ uses Ξ_k = Θ_{H_k} (ENG-1, the
+      inherited R15 code link; re-checked at 26,724 states).
+  (b) COARSE-SI (b), Lemma TAME: with λ unchanged and every Odd switch of σ̄ at level ≤ M_k, COARSE_{M_k}(Ξ) is unchanged.
+  (c) Lemma MONO: at a tame transition M_{k+1} ≤ M_k. Lemma NOINF: inside a phase every switch keeps its cycle node, so every switched
+      edge has finite gate level (at an S4c fallback every gate edge does, by S4c's best target: FB-1).
+  (d) Theorem FB: a phase has at most n_E(2n − 1)(J + 1) + J S4c fallback transitions (both ends in the phase; a phase-exit fallback
+      adds at most 1, FB-2). Step (2)'s "M < ∞" uses S4c's best target to carry NOINF to all gate edges of y (FB-1 = G-FB-1); step (2)
+      takes FBL-N (i) directly from S4c + FIX 3, so it holds on every game (G-FB-2). Corollary: W-lowering transitions are bounded the same way on
+      every game, WM being transferred to every game by (F1) in G_τ (G-FB-3); on 𝒞^1O so are the carries (C) ('+−' reversals of R at
+      fallbacks).
+  (e) On 𝒞^1O: J1 (a non-tame transition switches σ̄(o) at a level above M_k), OFF (a vertex leaving R̄ keeps its COARSE_{M_k} value),
+      and CAP (every exit within level M_k of σ̄_k(o) is captured into R̄_{k+1}). CAP's "σ̄ minimises Ξ over succ(o)" holds for VJ00's
+      σ̄ but not for SPEC's FIX-2 DFS choice at a cycle node (925 / 1,228 observed cases); two valid closures (CAP-1 = G-FB-4):
+      CAP uses only COARSE_M with M ≥ −1 and SPEC's DFS σ̄(o) is a COARSE_{−1}-minimiser (REFEREE-2; Prog clause 3, VJ00 (3), (10));
+      or by cases, λ(o) ≠ o giving a full minimiser and λ(o) = o needing no minimality (REFEREE).
+  (f) On 𝒞^1O: Lemma A, proved part: at tame carries, the carry level L ≤ M_k.
+- Refuted: (JUMP-EQ) (an INR jump above the last carry level lands at θ = w) is FALSE, confirmed by both referees with their own code:
+  x31_rx32 (experiments/red/xing/instances, sha1 4fe9ec0e), transition 53 → 54, θ_54 ≠ w_54 with (h) at 54.
+- Honest limits: (i) Theorem FB, its W-lowering Corollary, (T), COARSE-SI, TAME, MONO and NOINF hold on every game; the (C) bound, J1, OFF, CAP
+  and A are on 𝒞^1O. (ii) Theorem FB moves the
+  fallback count, and with R23 the carries (C) and Z, to J; (J-poly), a polynomial bound on J per phase, is OPEN. DATA on J: J ≤ 3 on the
+  53 named instances; L-RED climbs reach J = 7 at n 32 and n 48 (j7_n32 sha1 78ec52e8, j7_n48 c593e43c; Lead re-run with L-SI's
+  tame.py); L-SI climbs report 12 at n 32 and 17 at n 48 (lane data). (iii) L = M_k at carries is DATA (201 / 201), not proved.
+  (iv) The phase count (Lemma Φ) is unrefereed.
+- Data (DATA, not proof): REFEREE fb_probe.py: named set (53 files, one o asserted) reproduces the packet's counts (207 fallbacks, max
+  block 25, J ≤ 3, 23 J1, 159 CAP, 40,704 OFF), plus 3,300 random general games and 4,000 random 𝒞^1O; 0 failures. REFEREE-2 (own
+  code): 8,265 runs + 9,600 climb runs, 0 violations; the lane's 12 logs regenerated byte-identically.
+- Signatures: REFEREE docs/referee/R-N5-FB.md (referee eb1ec3c; §C 2b78c6d): Theorem FB SIGNED WITH GAPS (FB-1, FB-2, closed);
+  Corollary, (T), TAME, MONO, NOINF, J1, OFF, A SIGNED; COARSE-SI (a) SIGNED WITH GAPS (ENG-1, V-1, V-2); CAP SIGNED WITH GAP CAP-1
+  (closed); §C: no disagreement, G-FB-2 and G-FB-3 accepted (only these two citations were 𝒞^1O-scoped), both CAP closures valid
+  (REFEREE-2's recommended), L ≥ M_k OPEN. REFEREE-2 docs/referee-2/R2-N5-FB.md (referee-2 7699593; §C eb10cf7): FB SIGN WITH GAPS (G-FB-1, G-FB-2; FB-2 accepted in §C); Corollary SIGN WITH
+  GAPS (G-FB-3); (T), COARSE-SI, TAME, MONO, NOINF, J1, OFF SIGN; CAP SIGN WITH GAPS (G-FB-4); A signed; §C: no disagreement, FB-2
+  accepted, both CAP closures valid (REFEREE's case split recommended for the fixes file). Joint gap map: FB-1 = G-FB-1; FB-2;
+  G-FB-2, G-FB-3; ENG-1; V-1 = N-FB-1; V-2; CAP-1 = G-FB-4; all closed.
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
+### R26 [refereed-only] N5 on one-Odd-choice games: W-flat runs outside route form are short (CASC-U2 for U2 stretches; CASC-U3 for U3 and U23 stretches, between events), with counting corollaries given fallbacks, W-changes and events (2026-10-25) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C35.md, checker 3653d4a)
+- Object (packet P-N5-U23, pinned trunk 7666336, unchanged during review): docs/new/P-N5-U23-box31.md, sha1
+  ee3e5d1ef95623d3f5e08a34af416fa6b2d09186 (L-NEW successor 11, Opus 5.5). The referees' repairs are collected by the lane in
+  docs/new/P-N5-U23-fixes-box31.md (l-new 0274bd5, on trunk; sha1 870c63a35ceafbd6d8cf94ea9b43923002c68ca6, L-NEW successor 12; a
+  record, not itself refereed text).
+  Setting as in R22 and R24 (𝒞^1O; a PHASE is a joint λ-phase with τ constant; R ∋ o, F := V \ R; route form). A STRETCH is a
+  maximal run of states of a phase with R, θ, w constant; a W-FLAT RUN is a maximal run of consecutive non-fallback transitions of a
+  stretch with W unchanged at every vertex of R. U2: ¬H1 and c_θ := λ_Ξ(o) ≠ o, with the W frame in route form; U3: ¬H2 and
+  c_w := λ_W(o) ≠ o, with the honest frame in route form; U23: ¬H1, ¬H2, c_θ ≠ o, c_w ≠ o. π_v is v's σ-route (its (σ, τ)-path before
+  its first visit of o); level ℓ(v) := |π_v|.
+- Claims signed (both referees "(Opus 5.5, D15)", L37):
+  (a) Lemma CASC-U2: in a W-flat run of a U2 stretch, an R-vertex v switches only at run steps 0, …, ℓ(v) − 2. Proof: R24 CASC step 3
+      with three new steps (levels constant via P-N5-NH (R1), W half; honest values on R are route functions with constant terminals
+      θ and Ξ(c_θ); R24 TB's choice rule with keys depending only on σ along π_z).
+  (b) Corollary: a U2 stretch with f fallback transitions and K_W non-fallback transitions with a W-change on R has at most
+      f + K_W + (K_W + f + 1)(|R| − 2) transitions that change Ξ, W or σ on R.
+  (c) Lemma CASC-U3 (U3 and U23 stretches; under ¬H2, o lies on its W-cycle o → A1 → c_w → A2 → o; v ∈ R \ {o} is of KIND A if
+      c_w ∈ π_v, else KIND B; an EVENT is a switch of an Even R-vertex that changes its kind, or a switch of c_w, whose choice is SPEC
+      S1 (v) / FIX 2): in an event-free sub-run, kinds are constant, and (i) a kind-B vertex v switches only at sub-run steps
+      ≤ |π_v| − 2; (ii) a kind-A vertex v whose σ-path reaches c_w after λ(v) steps switches only at sub-run steps
+      ≤ max(L_B − 1, 0) + λ(v) − 2, with L_B the largest |π| over kind B (0 if kind B is empty); (iii) no R-vertex switches at a sub-run
+      step ≥ 2|R| − 4. The packet's (ii) "≤ L_B + λ(v) − 3" is unproved when kind B is empty (L_B = 0: the proof gives ≤ λ − 2);
+      repaired as above (U3-1 = G-U23-1; REFEREE's form max(L_B, 1) + λ − 3 is the same bound); no counterexample. "Kinds constant"
+      is proved by induction along the new routes when several vertices switch at once (U3-2); the case c_θ = c_w under U23 is
+      covered (Ξ(c_w) = (c_w, ∅, 0); U3-3).
+  (d) Corollary: a U3 or U23 stretch with f fallbacks, K_W non-fallback W-changes on R and E transitions containing an event has at
+      most f + K_W + E + (K_W + f + E + 1)(2|R| − 4) R-changing transitions. (Sharper per-sub-run factor available: L_B + λ ≤ |R| − 2,
+      REFEREE §2.4, accepted by REFEREE-2.)
+- Reading (checked by both referees, not signed): with R24 §6, (NH') reduces to (X), NFB-O, (E) and (K_W). Stretch counts under ¬H1
+  need the θ-changes, which TF (it needs H1) does not cover: under ¬H1, θ = (c_θ, ∅, d) with d monotone (R15 (a)), so θ changes at
+  most |R| − 1 times per phase (REFEREE R-1 = REFEREE-2 N-U23-2; closed by R-1's argument, re-checked by REFEREE-2).
+- Honest limits: (i) SUBCLASS 𝒞^1O; a bound on N5 itself. (ii) Both bounds are GIVEN f, K_W and E. (E) (events per W-flat run:
+  kind crossings and c_w's switches) and (K_W) (non-fallback W-changes on R outside route form; R24's κ_w-freeze does not transfer)
+  are OPEN, as are (X) and NFB-O; G-N5-TIME stays open. (iii) DATA is thin: CASC-U2 is exercised only by L-RED's u2flat_n32
+  (experiments/red/xing/instances/u2flat_n32.pg, l-red bee6487, sha1 1a016c446d8c48b0e856d88b4527f61dfb1983e0; Lead re-run n5 13/3,
+  Oink zlk OK strategies verified, one Odd choice vertex): 2 U2 W-flat switches at run step 0 (REFEREE), 7 over 20 starts with the
+  bound attained (REFEREE-2); the kind-B half of CASC-U3 is vacuous in all data; the literal (ii) never failed, but its L_B = 0 corner
+  had no switch in any sub-run. (iv) Lane DATA (not re-checked by the referees): every (E) and (K_W) transition seen is tame in
+  RESULTS R25's sense (78 of 78), so neither is charged to J. (v) The lane's checker u23check.py tests less than the packet (U23
+  stretches unchecked, (iii) at 2|R|, (ii) and corollaries untested; L-RED box 35); L-RED's u23x.py checks the packet as stated: 0
+  violations on ~90 pinned 𝒞^1O instances.
+- Data (DATA, not proof; every probe asserts one Odd choice vertex): REFEREE u23_probe.py (own code): 120 named 𝒞^1O instances
+  (U2 / U3 / U23 stretches 39 / 54 / 90), 5,500 random runs (all W-flat runs switch-free, vacuous), 3 climbs (7,845 candidates);
+  nr_u23_n32 32 kind-A switches within (ii); u3ev_n16 8 W-flat switches, all events (n5 6/0, Oink OK); 0 failures. REFEREE-2
+  u23_check.py (own code): 6,650 batch runs + 28,800 climb runs, 34,230 kind-A switches within the repaired bound (closest bound − 1),
+  1,364 ¬H1 states with θ of the form (c_θ, ∅, d), 0 violations.
+- Signatures: REFEREE docs/referee/R-N5-U23.md (referee 7ffbd9f; Appendix A 2bdb045; §C cde420b): CASC-U2 and Corollary SIGNED;
+  CASC-U3 (i), (iii) SIGNED WITH GAPS (U3-2 closed, downgraded to wording in §C; U3-3 wording); (ii) SIGNED WITH GAP U3-1 (closed by
+  the repair); Corollary SIGNED; §3 READING correct with R-1. REFEREE-2 docs/referee-2/R2-N5-U23.md (referee-2 07b22b0; §C 5e24010):
+  CASC-U2 and Corollary SIGN; kinds/events, (i), (iii) SIGN, after §C SIGN WITH GAPS (U3-2, U3-3 accepted as precisions; closed);
+  (ii) SIGN WITH GAPS (G-U23-1, closed); Corollary SIGN; §3 READING correct with N-U23-2. §C: no disagreement. Joint gap map
+  (REFEREE §C.3, REFEREE-2 §C.6): U3-1 = G-U23-1 (closed); U3-2 (closed); U3-3 (wording); §2.4 sharpening (accepted); R-1 =
+  N-U23-2 (closed); N-U23-1 (CASC-U2 vacuous) superseded by u2flat_n32.
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
 
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games

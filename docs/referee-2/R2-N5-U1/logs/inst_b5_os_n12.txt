@@ -1,0 +1,33 @@
+CASC_runs_P3: 11
+LR_edges: 951
+LR_edges_optimiser: 865
+LR_full_optimal: 807
+LR_setopt_deleted u==x:True owner_x:1: 8
+LR_setopt_deleted_xney: 1
+TB_key_checks: 566
+TB_key_nontrivial: 2
+TB_step2 x_on_cycle_only: 33
+TB_step2 x_on_play:False: 334
+TB_step2 x_on_play:True: 33
+U1_W_change_transitions: 0
+U1_pieces_checked: 2
+WC_intervals(notH1notH2): 18
+WC_intervals(notH2): 54
+fallbacks: 17
+intervals: 59
+pieces_EQc: 20
+pieces_P3: 41
+pieces_P3_nontrivial: 13
+pieces_U1: 2
+runs: 10
+transitions: 83
+CASC_run_len_P3: 5
+U1_last_kappa_w_change_minus_R: -2
+U1_max_K: 0
+U1_max_Rch: 0
+U1_max_len: 0
+WC_cw_changes_per_stretch: 0
+WC_max: 0
+example LR_setopt_deleted: b5_os_n12.pg#1@0 cyclenode=7 x=8 y=8 u=8 val[x]=(7, 64, 2) ext=(7, 64, 3)
+example LR_setopt_deleted_xney: b5_os_n12.pg#6@0 cyclenode=4 x=9 y=11 u=9
+RESULT OK violations=0

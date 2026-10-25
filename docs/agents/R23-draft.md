@@ -1,6 +1,6 @@
-# Draft RESULTS R23 (Lead, 2026-10-24 21:1xZ by date -u) (rev. 21:15Z: C32 E-1) — awaits CHECKER C32 Addendum 1; lands in "## Results" after R22, before "## Dead ends"
+# Draft RESULTS R23 (Lead, 2026-10-24 21:1xZ by date -u) (rev. 21:15Z: C32 E-1) — LANDED in RESULTS Results 21:26Z (CHECKER C32 2cd52a6 + Addendum 1 0077eed PASS), after R22
 
-### R23 [refereed-only] N5 on one-Odd-choice games: crossings have active crossers (ACT, LOOP), what fallbacks can switch (NOFE, NOFL-E, GAP), W never drops at arena steps (WM), and crossings are bounded by reversals of R (LV′, Corollary Z) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C32.md, checker PENDING)
+### R23 [refereed-only] N5 on one-Odd-choice games: crossings have active crossers (ACT, LOOP), what fallbacks can switch (NOFE, NOFL-E, GAP), W never drops at arena steps (WM), and crossings are bounded by reversals of R (LV′, Corollary Z) (2026-10-24) — partial step-4 lemmas for N5 on a subclass (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C32.md, checker 2cd52a6 + Addendum 0077eed)
 - Object (packet P-N5-Z, pinned trunk fba7177, unchanged during review; a post-pin edit on the lane branch was reverted to the pinned
   bytes before merge): docs/si/P-N5-Z-box5.md, sha1 a027638f06d18143ed0779290b24f8e5decb8249 (L-SI successor 2, Opus 5.5). The lane's
   data corrections and the referees' repairs are in docs/si/P-N5-Z-fixes-box5.md (l-si c3c62ef, on trunk; sha1

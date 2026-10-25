@@ -1,0 +1,6 @@
+start 0
+641 40 {'U3_subruns_kindB_empty_U23': 2} {'max_Rch_U23': 0, 'max_Rch_U3': 0, 'max_Rch_U2': 0}
+662 60 {'U3_subruns_kindB_empty_U23': 3} {'max_Rch_U23': 0, 'max_Rch_U2': 0}
+672 80 {'U3_subruns_kindB_empty_U23': 4} {'max_Rch_U23': 0, 'max_Rch_U2': 0}
+TOTALS {'stretch_U3': 94, 'stretch_U3_nontrivial': 1, 'formula_states_U3': 96, 'events_U3': 2, 'KW_U3': 0, 'wflat_runs_U3': 1, 'U3_event_transitions_U3': 2, 'runs': 3200, 'transitions': 5318, 'stretch_U2': 314, 'formula_states_U2': 314, 'events_U2': 0, 'KW_U2': 0, 'stretch_U23': 1818, 'formula_states_U23': 2408, 'events_U23': 0, 'KW_U23': 35, 'stretch_U23_nontrivial': 487, 'wflat_runs_U23': 450, 'U3_subruns_U23': 450, 'U3_subruns_kindB_empty_U23': 436}
+RESULT OK violations 0

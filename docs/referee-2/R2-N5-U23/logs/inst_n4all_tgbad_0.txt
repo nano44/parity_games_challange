@@ -1,0 +1,8 @@
+KW_U3: 0
+events_U3: 0
+formula_states_U3: 3
+runs: 10
+stretch_U3: 3
+transitions: 15
+max_Rch_U3: 0
+RESULT OK violations=0

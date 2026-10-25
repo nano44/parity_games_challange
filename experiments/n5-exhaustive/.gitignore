@@ -7,3 +7,6 @@ results/box6/*.tasks/
 results/box6/*.partial.json
 results/box6/*.log
 results/box6/climb/
+results/box7/*.tasks/
+results/box7/*.partial.json
+results/box7/*.log
