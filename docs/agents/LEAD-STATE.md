@@ -1425,3 +1425,4 @@
   - referee-2 212f88e: PFZ §C. Identical verdicts. BRK-POLY′ (i)-(iii) SIGNED as stated with REFEREE's repair. PFZ-N1..N3 accepted. G-PFX-1 = PFZ-1 closed, pending the fixes-file text.
   - Created L-SI successor 10, session_01PBqfsNWMhTPn7yNJ8C18HP.
   - Archived the L-SI 6 and 7 rows.
+- 19:20Z Lead: merged l-si ffc341c. L-SI 10 handover check 5/5, re-measured. GO box 15 (K).
