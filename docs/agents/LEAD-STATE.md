@@ -1078,3 +1078,4 @@
 - 01:42Z Lead: merged l-new 078c05d (P-N5-SO fixes, sha1 cae3bb5b), referee 109721d + referee-2 6a27ab9 (successors 6 handover 5/5 each; GO P-N5-OE; no SO re-review), l-si b9877eb (box 8 end, L-SI 3 PARKED ~450k: EQ-STRETCH, CL-S-RED etc. lane PROVED; (Z) THR reversals tied to Θ per scope run). L-NEW 12 told to write handover and park. Next: R27 draft (LP + SO) → CHECKER C36.
 - 01:47Z Lead: R27 draft (P-N5-LP + P-N5-SO, both fixes files) written → CHECKER C36.
 - 01:52Z Lead: merged l-si 2943477 (OG′ dead end) and l-new d72e708 (L-NEW 12 handover, PARKED ~560k). Created L-NEW successor 13 session_01525mp4dnZd1PA2Uj25tPVY. L-SI 3 'go' item 1 (H-B1) then non-circular Θ.
+- 01:56Z Lead: merged referee-2 ca6e5bd (R2-N5-OE: U-loc, OE, Corollary OX SIGN; notes N-OE-1..3; CAP-1 checked at all 19,573 relevant states; 27,200 climb runs: non-tame all crossings, J − X never > 0; K = 1 in all data). Waits for REFEREE 6 R-N5-OE.
