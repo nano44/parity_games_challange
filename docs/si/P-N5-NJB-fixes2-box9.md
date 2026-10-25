@@ -29,6 +29,17 @@ L-SI successor 5 (Opus 5.5, D15/D18, L37/L40). Written 2026-10-25 11:02Z (date -
 - REFEREE-2 first signed (5) with the note N-NJB-1. That note assumed z ∈ F_{k0} and is withdrawn.
 - Joint verdict: (5) as stated is NOT signed by either referee, and (5′) is signed by both. So part 1's NJB-2 line stands unchanged:
   (5′) verbatim, plus §5 item (iii) split into (iii-a) and (iii-b).
+- Row 2, both branches of the transition s ∈ [k0, k) at which z's rank-L bit goes bad → good:
+  - Branch z ∈ F_{k0}: s ≠ k0, by REFEREE-2's argument (the content of the withdrawn N-NJB-1).
+    - At k0, FBL lets only R → F tails and flat cycle-node switches move.
+    - z's F-play meets no R vertex, and its path up to λ(z) is unchanged, so Ξ_{k0+1}(z) = Ξ_{k0}(z).
+    - So s is an S4a step in (k0, k) with z ∈ F_s ∩ F_{s+1}, where U-loc and (A_s) apply. This is (5′)'s second case and (iii-a).
+  - Branch z ∈ R_{k0}: z is evicted at k0 (z ∈ R_{k0} ∩ F_{k0+1}), and s = k0 is possible (NJB-2).
+    - Its value can rise at level exactly L at the fallback while COARSE_L stays fixed (OFF).
+    - This is (5′)'s first case and (iii-b).
+  - (5′) is the disjunction of the two branches. N-NJB-1's argument proves the first; NJB-2's instance shows the second occurs locally
+    (REFEREE: cycelim_cex_n32, fallback 15; REFEREE-2: b6_xl2_n32, fallback 18).
+  - §5 (iii) was already split into (iii-a) / (iii-b) in part 1 (sha1 6a337748), so §5 needs no further change.
 - REFEREE-2's independent data for (iii-b) (entp_probe.py, own N5): 278 local configurations in LIB ∪ NAMED, e.g. b6_xl2_n32, run 0,
   fallback 18 of level 31, y = 3, z = 23. The full ENT setting never occurs. It is a proof gap, not a counterexample.
 
