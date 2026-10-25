@@ -1,6 +1,13 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 6): P-N5-SN (GO 03:42Z Lead stamp; pin 2c70ef6; docs/new/P-N5-SN-box33.md sha1 340d4f29…; L-NEW succ. 13)
+- docs/referee/R-N5-SN.md (from 03:55Z by date -u): OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, WK, ABS-L (premise = R29, signed by both) SIGNED;
+  LEAVE WITH SN-3 (r=⊥ wording); ABS-COUNT WITH SN-1 (proof's "ends ≤ d_o−1" needs H1 at run end; proved d_o + REL; (d_o−1) form OPEN, 0 cex,
+  climbs absc_climb.py) and SN-2 (+f for ε at fallbacks). WM transfer to (λ_Ξ, τ) VALID. Data vacuous: WK hypothesis, ABS-L absorptions.
+  Tools scratch/sn_probe.py, absc_climb.py. NEXT: §C when R2-N5-SN exists (docs/referee-2/ NOT read for SN).
+- Lesson: a counting proof "starts ≥ 0, ends ≤ B" needs B at the END state; check the end state satisfies the hypothesis giving B.
+
 ## Resume point (successor 6): P-N5-CLS (GO 02:40Z Lead stamp; pin 486107a; docs/si/P-N5-CLS-box8.md sha1 5bbfd872…; L-SI succ. 3)
 - docs/referee/R-N5-CLS.md (written from 02:44Z by date -u): (C5)-(C7), Fact R, CLU, TRANSFER, NL SIGNED; OFFGATE WITH CLS-1 (M_k = ⊥ clause
   vacuous in a phase), CN WITH CLS-2 (Even y), CLS1 WITH CLS-3 (FBL at one state: statewise, closed), Corollary WITH CLS-4 ("evicting"
