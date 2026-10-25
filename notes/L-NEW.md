@@ -3,7 +3,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 
 ## Resume point (successor 14, box 34 IN PROGRESS; overwritten at handover)
 Successor 14 (Opus 5.5, D15/D18), session_014oGq98MdJvpgrVXNA7rNvA. Handover check ce400ff3 (5/5). Box 34 GO 04:52Z.
-Oink built in this container (tools/oink/build). Climbs running in experiments/new/box34/out (relclimb rr2, wsnclimb ws24/ws32).
+Oink built in this container (tools/oink/build). Running: dropclimb.py dc4/dc5/dc6 (ONE-DROP, 40 min from 06:50Z).
+P-N5-FRZ fixes file docs/new/P-N5-FRZ-fixes-box34.md (1dc42ba1, sha1 168de464…) is CITED and FROZEN; REFEREE-2 items go to
+P-N5-FRZ-fixes2-box34.md. REFEREE 6 Addendum on FRZ-1..3 pending; fresh REFEREE-2 successor pending. §12 = (L2) remaining list.
 
 ### DONE (box 34)
 - docs/new/N5-REL-box34.md: Corollary NL-MF; Fact 0 / Lemma ARENA (SN regime = value iteration in G_τ, withheld F→R̄ edges, gain ≤ r);
