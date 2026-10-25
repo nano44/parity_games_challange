@@ -1286,3 +1286,17 @@
 - 16:00Z Lead: merged l-new cba7e86 (L-NEW 19 handover check: 5/5 re-measured). GO box 40: packet P-N5-RHO first, then N_HN for τ(o) ≠ o, then the NEB fixes file when the §Cs are in.
 - 16:04Z Lead: hourly sweep 16:02Z. No overage. L-RED 16 (433k) is waiting on climbs, ETA ~16:25Z, then R70; its handover is due near 450k. L-COMP 4 (248k): box8 n 5 Q2 running. REFEREE-2 9: PFZ, batch 893/893 OK, |U| ≥ 3 climbs running. CHECKER 6, REFEREE 9, L-SI 8 and L-NEW 19 have all been active within the last 15 min. CI is green on trunk pushes. No exceptions.
 - 16:09Z Lead: merged checker 0ac145c. C49 Addendum 2: R40 landed verbatim; C49 CLOSED. CHECKER 6 PARKED (C45-C49 all closed; R36-R40 landed). Created CHECKER successor 7, session_01SvGcqqNrM3YDDtDh13LwXr; it does the handover check first.
+- 16:14Z Lead: merged referee-2 c74648b.
+  - R2-N5-PFZ 37e55fd: FB-ROUND, P-FREEZE (a)-(c), LEN-TAIL, NO-CROSS-A, RISE′, BRK-POLY all SIGN; no (P), no gap.
+    - Notes: N-PFZ-1, N-PFZ-2; N-PFZ-3 (DATA): the post-freeze regime is reached only with |U| ≤ 2, even by targeted climbs (955,321 θ-runs at |U| = 2).
+  - ENT §C addendum cf54523: R36 lift YES, now explicit from REFEREE-2 too.
+  - REFEREE-2 9 PARKED at ~360k. Its message stamp "16:45Z" was ~35 min ahead of date -u.
+  - Created REFEREE-2 successor 10, session_012VrKctzqedu9x1gVAMchV7: handover check, then the NEB/LV/PFZ §Cs, then LV2.
+  - PFZ-ext was NOT covered by R2-N5-PFZ (it reviewed 3c617e06 only); the successor must review b3702b1b as well.
+- 16:19Z Lead: merged referee b454ca3 and owner-desk.
+  - REFEREE 9 reports, all independent:
+    - R-N5-PFZ 8595343, covering PFZ + ext: all SIGNED except BRK-POLY′ (i), which is SIGNED WITH GAP PFZ-1 (proof incomplete; statement true). Its repair: θ_S ≤ ρ + (ρ+1)(|U|−3) via ℓ(θ) = |P(θ)| + |Q ∩ A_low|. Notes PFZ-N1..N3. Post-freeze regime vacuous for |U| ≥ 3.
+    - R-N5-LV2 b454ca3: all SIGNED with conditions, no gaps. Note LV2-N1. It accepts N-LV-1 (missed in its LV report).
+  - OWNER-DESK relayed the owner's words "Give me a status update" (answered by OWNER-DESK). On its request I refreshed the NOW header and the M4 row (stale since 2026-10-24).
+  - REFEREE 9 now writes the NEB, LV and PFZ §Cs against R2 a4516df / b1038be / 37e55fd. The PFZ-ext and LV2 §Cs wait for REFEREE-2 10.
+- 16:29Z Lead: merged referee-2 5ca9ac3 (it includes a769ff5, REFEREE-2's NEB and LV §Cs: identical verdicts, empty gap maps; REFEREE's NEB-N1..N5 and LV-N3 accepted, plus 937535e) and checker 78604b3. Handover checks: REFEREE-2 10 and CHECKER 7 both 5/5 re-measured, both GO. REFEREE 9's NEB and LV §Cs are still pending; after them, the NEB fixes go to L-NEW 19 and the LV fixes to L-SI 8.

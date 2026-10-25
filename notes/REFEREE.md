@@ -14,8 +14,16 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   - Tools: scratch/neb_probe.py, neb_climb.py, band_find.py; logs R-N5-NEB/, scratch/neb_logs/.
 - LV: docs/referee/R-N5-LV.md (draft). All SIGNED; CN-LAST condition discharged by R38. Notes LV-N1..N3. The setting is VACUOUS in data
   (0 in-scope THR M = −1 fallbacks in 288 games). Tools: scratch/lv_probe.py, lv_climb.py (climb running, logs scratch/lv_logs/).
-- NEXT: finish §9.1 / §6.1, push both, send the SHAs to the Lead; then the §Cs when REFEREE-2's NEB / LV are final (never read
-  R2-N5-NEB / R2-N5-LV before my report is pushed).
+- PUSHED 15:50Z: R-N5-NEB 40adbf1c, R-N5-LV 8054da2f; SHAs sent to the Lead 15:50Z.
+- Lead 15:34Z / 15:41Z (read late, after LV was done): order NEB → PFZ (+ ext) → LV → LV2. I did LV before PFZ (harmless; told the Lead).
+- PFZ + ext (P-N5-PFZ 3c617e06 @283bcb6; P-N5-PFZ-ext b3702b1b @c61ecc4): docs/referee/R-N5-PFZ.md.
+  - All SIGNED, except BRK-POLY′ (i), which is SIGNED WITH GAP PFZ-1: the statement is true, but the proof misses the ρ_S P-changing
+    θ-changes. My repair is the refined θ-LEN (|A_low| − [o low]), plus "ρ ≥ 1 ⇒ a high u ≠ o".
+  - The post-freeze regime is vacuous in data (|U| = 1 only). Tools: scratch/pfz_probe.py, pfz_climb.py.
+- LV2 (P-N5-LV2 3b23a41f @283bcb6): docs/referee/R-N5-LV2.md, all SIGNED, conditions = P-N5-LV (mine) + ENT (R40).
+  - Note LV2-N1 (CYC-EV citation in ENT-X_{−1} (c)).
+  - I accept REFEREE-2's N-LV-1 (FLAT-ALL (i): H1 at k+1, not H2) for my LV §C. Tool: scratch/lv2_probe.py.
+- NEXT: push PFZ + LV2; then the §Cs for NEB, LV, PFZ, LV2 once the Lead confirms the final R2 SHAs.
 - Lesson: random C^1O games are useless for HN-stretch lemmas (0 breaks in 4,600); mutation climbs from the counterexample seeds reach
   every hypothesis.
 
