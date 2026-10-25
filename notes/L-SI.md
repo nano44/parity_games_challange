@@ -56,7 +56,13 @@ Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2
   - Scripts and logs: experiments/si/riselast/ (rlprobe, rltrace, blocked, blf, ffreeze, threv, rlclimb).
   - Climbs rl_a/b/c (seeds 10001-10003, 40 min, done): 0 violations; best score 7 (never a window gate after a rise); bests pinned
     and verified (Oink zlk OK).
+- Packet P-N5-RL (docs/si/P-N5-RL-box10.md, l-si 01d69ac, sha1 0a3c70cb) FROZEN, sent to the Lead 11:17Z. Never edit it; fixes go in a
+  new file.
+- Box 10b: docs/si/N5-P1-box10.md, Lemma P1 = (P) for one-player games, PROVED (L-SI succ. 5), elementary.
+  - It uses path multisets and no VJ00 lemma. It discharges R18's G-1OA-4 and P-N5-RL's condition, once signed.
+  - DATA: experiments/si/p1/p1check.py, 0 violations.
 - NEXT (for me or a successor), in order:
+  0. Lemma P1 to the referees (Lead decides packet form).
   1. Exclude TEV-RED's residual configuration: e and u_e both evicted at k0 and both free at k; e re-routed to a frozen f of class
      (c, A); the threat passes e after collecting B ∖ A. Natural sub-case: e an evicted tail with target f.
   2. RISE-LAST at levels ℓ < L, or after r ≤ L (no ENT-SHAPE bit argument there).
