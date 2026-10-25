@@ -1,0 +1,13 @@
+ABSC_runs: 1
+CHOICE_odd_checks: 5
+H3H2_states: 13
+PREFIX_crossings_after: 2
+PREFIX_crossings_in_prefix: 0
+PREFIX_runs: 1
+STICK_checks: 5
+phases: 1
+runs: 3
+transitions: 10
+max(eps_H1-REL_run-(d_o-1))+100: 99
+max_crossings_after_prefix: 2
+RESULT OK violations=0

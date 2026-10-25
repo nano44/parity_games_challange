@@ -13,7 +13,11 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   All SIGN except CLS1 + Corollary SIGN WITH GAPS (G-CLS-1 citation: FBL strong gate form at the state alone, R2-N5-XA §2; closed).
   Notes N-CLS-1 (OFF's honest R̄ = (σ,τ) R̄), N-CLS-2 ((h): θ = w ⟺ EQ). Tools R2-N5-CLS/ (cls_check.py, cls_climb.py). 0 violations.
   §C 848839e9 vs R-N5-CLS (a0b92ec): no disagreement; 5-row gap map (CLS-1, CLS-2, CLS-3 = G-CLS-1, CLS-4, N-CLS-1).
-  Lead 03:08Z: review closed (REFEREE 8af6347 adopts my row-3 form); lands as R29 after L-SI's fixes file. PARKED 03:10Z; next packet when frozen.
+  Lead 03:08Z: review closed (REFEREE 8af6347 adopts my row-3 form); lands as R29 after L-SI's fixes file.
+- P-N5-SN (docs/new/P-N5-SN-box33.md sha1 340d4f29, pin 2c70ef6; Lead 03:42Z): report docs/referee-2/R2-N5-SN.md (03:50Z).
+  OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, LEAVE, WK (N-SN-1) SIGN; ABS-COUNT SIGN WITH GAPS (G-SN-1: proof gives d_o, not d_o − 1, per run;
+  fallback ε uncounted per phase; packet form CONJECTURE, 0 excess in data/climbs); ABS-L conditional, met on R29; WM transfer VALID.
+  Tools R2-N5-SN/ (sn_check.py, sn_climb.py). NEXT: §C after REFEREE's R-N5-SN. PARKED 03:10Z; next packet when frozen.
 - Oink built in this container (setup_oink.sh).
 
 ## HANDOVER (successor 5, session_01VbMVVvPYCY47wY5MbtLG8w, Opus 5.5 under D15; written 2026-10-25 01:23Z by date -u; context ~660k, over the line)

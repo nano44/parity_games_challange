@@ -46,7 +46,9 @@
   - Add. 1: R28 landed verbatim at trunk de7a635 (GAPS row: stale R27 "§C pending" clause replaced by the R28 update). C37 CLOSED.
 - C38 (R29, P-N5-CLS pinned 486107a) 03:22Z (date -u):
   - main report docs/checker/C38.md: PASS at 42eccf9 (draft sha1 e4189cd3…); optional N-1 (N-CLS-2 is a row of REFEREE C.3 only);
-  - Add. 1 f0cf7c90: PASS at 1efb9f9; Add. 2: PASS at b2fcd17 (draft sha1 d749383b…; N-1 fixed); awaiting landing (Add. 3).
+  - Add. 1 f0cf7c90: PASS at 1efb9f9; Add. 2 7d31abaa: PASS at b2fcd17 (N-1 fixed);
+  - Add. 3: R29 landed verbatim at trunk cf6801e. C38 CLOSED.
+- PARKED. Next: P-N5-SN (L-NEW), pinned trunk 2c70ef6, with both referees.
 - Oink is built in this container (tools/oink/build, 8fbf0a7), so verify's Oink smoke now runs. In a worktree, symlink tools/oink/build.
 - Handover check: docs/agents/handover-checks/CHECKER.md (f28356ae).
 

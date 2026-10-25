@@ -1,0 +1,21 @@
+start 31
+7 37
+9 38
+24 80
+57 96
+93 103
+101 119
+112 134
+222 164
+232 195
+238 196
+288 214
+317 232
+323 310
+336 316
+369 322
+446 327
+513 329
+527 336
+TOTALS {'runs': 2400, 'transitions': 18892, 'H3H2_states': 21292, 'STICK_checks': 11048, 'OR_eps_transitions': 2565, 'OR_eps_H1': 2565, 'TCS_theta_changes': 9791, 'leaves_S4a': 18083, 'LEAVE_checks(H1)': 18083, 'LEAVE_tight(path max = r)': 13270, 'phases': 2527, 'PREFIX_runs': 2527, 'PREFIX_crossings_in_prefix': 9625, 'PREFIX_crossings_after': 472, 'ABSC_runs': 2527, 'CHOICE_odd_checks': 4}
+RESULT OK violations 0 absc_saved 0
