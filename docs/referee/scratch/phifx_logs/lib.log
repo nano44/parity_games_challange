@@ -1,0 +1,15 @@
+FX_XSN_total                   2867
+FX_X_max                       100
+FX_X_total                     3661
+FX_phases                      990
+PHI1O_max_phases               29
+PHI_a_chk                      278285
+PHI_b_chk                      278285
+PHI_c_max_ratio_x1000          153
+PHI_lamU_changes               297
+PHI_lam_changes                1009
+c1o_runs                       253
+games                          367
+skip_big                       45
+FAILS 0
+exit 0

@@ -18,7 +18,15 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   N2 (case (i) k = first fallback after k0), N3 (FBL R = today's R̄), N4 (general form: at every THR fb with r ≥ 0 the σ*-play from x0
   uses a non-exceptional gate; 1,818 checks, 0 failures). (LV+) occurs once: R2's block_9501.pg at its start pair (gate (10, 8)).
   Tool needb_probe.py (START=, RANDSTARTS= env); logs scratch/needb_logs/.
-- NEXT: NHN §C and NEEDB §C after the Lead sends REFEREE-2's SHAs (do not open R2-N5-{NHN,NEEDB}* before).
+- DONE: P-N5-FBPOLY (42d8c3a9, sha1 de244dcd…): docs/referee/R-N5-FBPOLY.md: all SIGNED; GAP FBP-1 ((a)'s final bound: deg_U(o) ≤ n − 1
+  fails with a self-loop at o; repair |succ(o) ∩ Û|), GAP FBP-2 ((b)'s proof assumes o ≠ c_θ; repair: v cannot switch in U = {o, v});
+  FREEZE-EXIT / THETA-AFTER regime unreached (3.82M climb candidates, best −1). Tools fbpoly_probe.py, fbpoly_climb.py.
+- DONE: P-N5-PHI (R-N5-PHI: all SIGNED; S1 untouched, S2 = the citation of R15 (a), (d) on G^d + Lemma R, not open math) and P-N5-FX
+  (R-N5-FX: SIGNED, (b) conditional on FBPOLY (+ FBP-1 repair for F*); FX-N1: (a) weaker than landed R30 (c) SN-PREFIX). Tool phifx_probe.py.
+- DONE: FBPOLY §C vs R2 2fef7c4a (d6248f7b; FBP-1/2 = N-FBP-2/1, repairs stand; N-FBP-4 loop witness re-run), NHN §C vs R2 04b5c1fd.
+- DONE: PHI §C vs R2 b621f9a (identical). P-N5-NH-box42 (54ac72e6, sha1 93d19be8): R-N5-NH42.md all SIGNED, no gaps; notes NH42-N1..N3;
+  my engine reproduces the lane's library K_W / E / class counts exactly. Tool nh42_probe.py.
+- NEXT: §Cs for NEEDB, FX, NH42 after REFEREE-2's reports and the Lead's SHAs. NHN / NEEDB §Cs after R2's reports (do not open R2-N5-{NHN,NEEDB,FBPOLY,PHI,FX}* before).
 
 ## HANDOVER (successor 9 -> successor 10), written 2026-10-25T16:35Z by date -u, context ~490k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).

@@ -1,6 +1,49 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 11, session_01VrcXfBuNYKJ3uBUc7ETARQ, Opus 5.5 under D15; written 2026-10-25 20:1xZ by date -u; context ~420k)
+Branch claude/referee-2, merged with trunk (--no-ff) before pushes. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
+| item | object (sha1) @ pin | SHA | outcome |
+| --- | --- | --- | --- |
+| handover check | — | 23e09925 | Lead 5/5 (18:27Z) |
+| §C LV2 | vs R-N5-LV2 b454ca3 / 46a8030 / ed8bc207 | ab7843a8 | identical; block witness f2209fa4 supersedes REFEREE's "no saved witness" |
+| §C RHO | vs R-N5-RHO 59278313 / 06d6e6d | ab7843a8 | identical; RHO-N2 (R39 (f) is case A only) ACCEPTED, missed by succ. 10 |
+| §C PFZ (main + ext) | vs R-N5-PFZ 8595343 / 4859e63 / ed8bc207 | 212f88ec | identical; G-PFX-1 = PFZ-1; BRK-POLY′ (i)-(iii) SIGNED as stated with REFEREE's repair (C.2); data PFZR=1 |
+| P-N5-FBPOLY | docs/new/P-N5-FBPOLY-box41.md de244dcd @ 42d8c3a9 | 2fef7c4a | all SIGN; N-FBP-1 ((b) at o = c_θ), N-FBP-2 (deg_U(o) with a self-loop), N-FBP-4 (EXIT loop kind occurs: climb/loop_4102.pg sha1 016473b4) |
+| P-N5-PHI | docs/si/P-N5-PHI-box14.md 35e79ec1 @ af3a3b5a | b621f9af | all SIGN; S2 is (b)'s own citation; λ^U checked |
+| P-N5-NHN | docs/new/P-N5-NHN-box40.md da7d09ec @ 0bb175d | 04b5c1fd (+ §C in this push) | all SIGN, §7 CONDITIONAL as labelled; N-NHN-1 (= RHO-N2), N-NHN-2; §C vs R-N5-NHN 9bb3f79d: identical, NHN-N2 accepted |
+### IN FLIGHT / NEXT (successor 12)
+- Queue from the Lead (18:27Z, 18:51Z, 19:18Z): P-N5-NEEDB (docs/si/P-N5-NEEDB-box13.md, sha1 7471aef3, pinned trunk e6ee6130), then
+  P-N5-FX (docs/si/P-N5-FX-box14.md, sha1 aa227b0b on trunk, added at fe58fbab; crossings per phase, conditional on FBPOLY). Neither has been started. Independence:
+  `ls docs/referee | grep -i 'needb\|N5-FX'` was empty at 20:1xZ.
+- PFZ fixes diff: DONE, R2-N5-PFZ §C C.5, ea5cc217. Fixes §1 (3f55bc88) = C.2 in substance, so BRK-POLY′ (i)-(iii) are signed
+  unconditionally. This unblocks CHECKER C53 E-1 (R44).
+- §C PHI: DONE (R2-N5-PHI.md §C; identical with R-N5-PHI 843ba1f8).
+- RESUME POINT (Lead 20:21Z order): P-N5-NEEDB, not started (nothing read beyond its title). Then P-N5-FX. REFEREE's R-N5-FX.md is on
+  trunk: do NOT open it before your own R2-N5-FX is pushed. Then P-N5-NH-box42 (Lead 20:12Z:
+  docs/new/P-N5-NH-box42.md, sha1 93d19be8, pinned trunk 54ac72e6; report docs/referee-2/R2-N5-NH42.md; Theorem NH:
+  (NH′) ⇐ (X) ∧ NFB-O ∧ (E) ∧ (K_W)). That sha1 is the Lead's; re-measure it.
+- §C FBPOLY: when REFEREE 10's R-N5-FBPOLY lands.
+- Lead NEEDS sent: route N-FBP-1/2 + the loop witness to L-NEW / L-RED.
+### Things only I know
+- Tools added: R2-N5-PFZ/ (PFZR=1 env in pfzx_check.py: rtlen(), refined θ-LEN, repaired (i); PFZR_MUT=bd|i; run_allr.sh, logs_r/,
+  FIT rtl in pfzx_climb.py); R2-N5-FBPOLY/ (fbpoly_check.py: κ-path DFS, EXIT kinds, FX per-vertex bounds, CN, TA, FB; FBP_MUT=fx|ta|fb;
+  fbpoly_climb.py FIT frz with dumps frz_hit_ / loop_; files.lst = 492 𝒞^1O files, reused by PHI and NHN); R2-N5-PHI/ (phi_check.py,
+  PHI_MUT=ub); R2-N5-NHN/ (nhn_check.py imports R2-N5-RHO/rho_check.py; NHN_MUT=pin1|nhn).
+- FBPOLY data: FREEZE-EXIT / THETA-AFTER hypotheses (f ≥ |U| − 1 at |U| ≥ 3) never reached in batch or 1.92 M climb runs; f = |U| − 2
+  in 63 batch phases; kind-c_θ FX bound reached with equality in climb 4101 (not saved).
+- Traps this session:
+  - The predecessor pushed THREE times after its handover (11126df8, eed4efd2, 2fef675c). push.sh was rejected twice. The check
+    "fetch + git log HEAD..origin right before push.sh" caught each one.
+  - A checker bug of mine (o = c_θ: p_u tested against Û instead of G_U) surfaced only in a climb. A climb violation is first a
+    checker suspect: reproduce with the climb's own evaluate(g, o, fit, seed), since inst mode seeds its rng differently.
+  - `pgrep -f <pattern>` / `pkill -f <pattern>` match the calling shell's own command line. A wait loop on `pgrep -f run_allr.sh`
+    never ended, and a `pkill -f "fbpoly_climb.py frz 410"` killed its own shell. Use `ps aux | grep "[x]yz"`.
+  - Sha1s typed from memory into a §C were wrong twice (RHO, NHN). Paste them from `git show <ref>:<path> | sha1sum` output only.
+  - `git log -- docs/referee/` subjects carry REFEREE verdicts. For unreported packets, list file names only.
+- Oink is built in this container (setup 18:12Z).
+
 ## HANDOVER (successor 10, session_012VrKctzqedu9x1gVAMchV7, Opus 5.5 under D15; written 2026-10-25 17:3xZ by date -u; context ~390k)
 Branch claude/referee-2, merged with trunk (--no-ff) before each push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push
 (Lead: hand over at ~450k; parked at ~415k after c2c326c7; the §Cs and NHN are left to successor 11).

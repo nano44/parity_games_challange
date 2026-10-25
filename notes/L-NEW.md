@@ -1,6 +1,15 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 42 log (successor 21, session_01YJHHx1t8hvqkDnKzMU2Lfa; handover check 5/5 (419308f1); GO 19:48Z, Lead's stamp)
+- Merged trunk 6d78b8f4. Oink built (8fbf0a7).
+- (1) Packet docs/new/P-N5-NH-box42.md (l-new 44088266, sha1 93d19be8018e07a2727bbe1db5920198a0beb1eb, FROZEN): Lemmas SW, ST, CL,
+  STR-COUNT, NR; Theorem NH: O ≤ 11n⁷(1 + X + f^O) + 8n³(K_W + E), T ≤ 156n¹¹(…) + 104n⁷(K_W + E) per phase. Reported 20:01Z.
+  Data experiments/new/box42/nhcheck.py: 0 violations (lib41 253 runs; random 2,633). f^O > 0 in data (NFB-O "none" is false).
+- (2) K / (E) / (K_W): kwprof.py: every K_W transition after an in-stretch S4a step has a new gate edge (y, z), y, z ∈ R, with an
+  honest rise at z one step earlier (121/121). Lemma WLAG (proof via (F1) + WM; working doc docs/new/N5-KW-box42.md). Route R-KW:
+  event-free sub-runs of U3 are a two-terminal route game per kind (KIND-SPLIT) ⇒ (K_W) ⇐ (E) (+ honest events for U2/U23). OPEN.
+
 ## Box 41 log (successor 20, session_018pjn8Y8JRES3YuFDUCAJgM; handover check 5/5 (48078dd0); GO 18:15Z, Lead's stamp)
 - Merged trunk 102f05a5. Oink built (8fbf0a7).
 - (1) FB-CAP: docs/new/N5-FBPOLY-box41.md. Theorem FB-POLY (lane PROVED, unrefereed): in-phase Even fallbacks per phase
@@ -212,8 +221,8 @@ Successor 20 (Opus 5.5, D14/D15/D18, L37/L40), session_018pjn8Y8JRES3YuFDUCAJgM.
   THETA-AFTER + n 5 start-pair search vs FB-CAP. L-SI 9: P-N5-FX (Corollary FX) and Lemma Φ packets; its FB-PHASE (≤ 2n²) is an
   independent proof of the same kind (docs/si/N5-FBPHASE-box14.md, l-si 858c7dd); FB-POLY stays the theorem under review.
 ### NEXT (successor 21), in the Lead's order (19:01Z, Lead's stamp)
-- (0) When the Lead relays REFEREE-2 11's §C SHAs: write NEW docs/new/P-N5-PFZ-fixes-box39.md and NEW docs/new/P-N5-RHO-fixes-box40.md
-  from the drafts (fill <SHA>, <DATE>, the §C lines; re-read both §Cs first; repairs only). Neither file exists yet (checked 19:0xZ).
+- (0) DONE by successor 20 (19:2xZ): docs/new/P-N5-RHO-fixes-box40.md (cf02711c, sha1 cc4e8540…) and docs/new/P-N5-PFZ-fixes-box39.md
+  (cf20cdc2, sha1 3f55bc88…), both frozen. Next fixes file due: P-N5-NHN (carry NHN-N1 = RHO-N2) when its reports are in.
 - (1) Packet P-N5-NH (docs/new/P-N5-NH-box41.md, NEW; the Lead's ask 19:01Z): turn the two (NH′) reductions into signable lemmas with
   proofs: RESULTS R22 "Reduction" (l. ~995: transitions ≤ poly(n)·(1 + X + Σ_I (ROI(I) + WC(I)))), R24 "Reduction" (l. ~1091: (NH′) ⇐ (X),
   NFB-O, U2/U3 re-routings), R26 "Reading" (l. ~1191: (NH′) ⇐ (X), NFB-O, (E), (K_W); ¬H1 θ-count by R-1). Mark covered inputs: (X) via

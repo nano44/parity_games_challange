@@ -1,0 +1,13 @@
+AK_checks: 13
+KP_checks: 13
+TA_phases: 9
+YB_states: 13
+fallbacks: 0
+phases: 9
+runs: 3
+states: 13
+max_FBCAP_excess_plus_1000: 999
+max_FB_a_slack_minus_1000: 999
+max_TA_changes: 0
+max_f_per_phase: 0
+RESULT OK violations=0
