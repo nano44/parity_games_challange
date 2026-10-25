@@ -1518,3 +1518,6 @@
   - l-red 896aea76: R73, no kill of either K note in 4.27 M runs; FRZ-U |R| − 1 and CW-INT attained; CASC-B and post-freeze KIND-MONO regimes unreached.
   R49 draft: fixes filled; it waits only on REFEREE-2's §C NEEDB.
   Routing: L-RED box 44, constructions entering the CASC-B and KIND-MONO regimes, then DUAL / MIRROR. R73 sent to REFEREE 11 as data for KW.
+- 23:00Z: Merged checker a0aa2651: CHECKER 8 handover check 5/5, GO; C58 waits for the final R49 draft.
+- Merged l-new b15856e8. PINNED at this commit: packet P-N5-DUAL, docs/new/P-N5-DUAL-box43.md, sha1 a51f7c30c267a4c02088cf2c849388e28c4121fa (L-NEW 22, 150 lines). Contents: Lemma DUAL, Theorem MIRROR as an implication under an explicit hypothesis (H-OF), Corollary Φ-kO, ENDGAME, and a start / N5^OF table to check.
+- Queued for both referees after P-N5-KW. REFEREE 11: KW, then DUAL. REFEREE-2 12: §C NEEDB, KW, FX, NH42, DUAL.
