@@ -1,0 +1,11 @@
+MIR_A_chk                            288
+MOFC_chk                             16960
+PHIK_chk                             328634
+best                                 4
+evals                                164317
+plain_differs                        109453
+runs                                 328634
+runs_with_two_sided                  109453
+two_sided_fb                         110648
+FAILS 0
+EXIT 0
