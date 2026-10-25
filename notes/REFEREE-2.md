@@ -1,6 +1,46 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 9, session_0163ejRshYhYxVW2CD2XUEB2, Opus 5.5 under D15; written 2026-10-25 16:07Z by date -u; context ~360k)
+Branch claude/referee-2, merged with trunk (--no-ff) at each packet. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this commit.
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
+| packet | object (sha1) @ pin | report SHA | §C SHA | outcome |
+| --- | --- | --- | --- | --- |
+| handover check | — | ba6fac1b | — | Lead 5/5 |
+| P-N5-OUT | docs/new/P-N5-OUT-box37.md 9f032e61 @ 719ce66 | dfcaae67 | 2a9e8db0 | all SIGN; N-OUT-1..4 (fixes 640a5db2 checked); REFEREE identical |
+| P-N5-ENT | docs/si/P-N5-ENT-box11.md 4fd22be7 @ 765e893 | b7df84b8 | f33884e6 + addendum cf54523b | 6 SIGN + 4 SIGN COND (P), and R36 lifts (P); N-ENT-1..3; REFEREE identical (§C d6b8aef9) |
+| P-N5-NEB | docs/new/P-N5-NEB-box38.md ba15e51f @ 314d220 | a4516df9 | — (REFEREE 9's report pending) | all SIGN; N-NEB-1..3 |
+| P-N5-LV | docs/si/P-N5-LV-box11.md d0d797f0 @ 601df6e (+ addendum a15a8871, not to sign) | b1038bea | — | all SIGN (LV-CN, LV-COUNT COND CN-LAST, now R38); N-LV-1..3 (N-LV-3: u* = none (LV) states reachable; witness R2-N5-LV/climb/best_lv_9401.pg) |
+| P-N5-PFZ | docs/new/P-N5-PFZ-box39.md 3c617e06 @ 283bcb6 | 37e55fde | — | all SIGN; N-PFZ-1..3 (post-freeze only with |U| <= 2 in all data) |
+### IN FLIGHT
+- P-N5-LV2 (docs/si/P-N5-LV2-box12.md sha1 3b23a41f, pinned 283bcb6, l-si ed936af1; pin and l-si sha1 verified by me). NOT started beyond:
+  - The Lead asks: check the lane's claim that N-LV-1 / N-LV-2 are not inherited (its lines 60-65).
+  - To check first: §4 (iii) (l. 142-143) and §7 (2) (l. 210-211) apply STRETCH_{-1} with e := f_{N-1} + 1. That needs COARSE_{-1}(Xi)
+    constant on [f_1, f_{N-1} + 1]; find where LV2 proves it.
+  - Statements to sign: STALE-GATE, EV-G, ENT-X_{-1}, LV-PL', SAND, FLAT-ALL_{-1}^{none}, LV-NONE, SCOPE-FB. It depends on P-N5-LV and
+    P-N5-ENT (R40).
+  - My R2-N5-LV/lv_check.py already reaches u* = none (LV) states in climbs: use it as the base for FLAT-ALL_{-1}^{none} / LV-NONE.
+- §Cs for NEB, LV and PFZ: when the Lead routes REFEREE 9's reports. Not read yet.
+### NEEDS
+- Lead: route N-NEB-1..3 and N-PFZ-1..3 to L-NEW, N-LV-1..3 to L-SI, and the u* = none witness to L-RED.
+### Things only I know
+- Tools added this session (own code; each dir has run_all.sh, run_climbs.sh, logs/, climb/, totals*.txt):
+  - R2-N5-OUT/out_check.py: the base. analyse() adds HN and lamW to frz_check.analyse; run_trace(mode) gives own / rand / spec
+    (spec = re_check.n5_spec). spec_s3.py reproduces the lane's fbsplit exactly.
+  - R2-N5-ENT/ent_check.py ((Sigma)-pairs, blocks), rise_end.py. R2-N5-NEB/neb_check.py (classes by case x c_w x tau(o)).
+  - R2-N5-LV/lv_check.py. R2-N5-PFZ/pfz_check.py (U, M_t, G_U, DFS Mopt; PFZN=12 caps |U| for the DFS, and skips are counted).
+  - *_climb.py are all ent_climb.py with a fitness; seeds are lane instances (inputs only).
+- Recurring traps this session:
+  - A HANDOVER section is not the branch head. Check `git log <handover SHA>..origin/claude/referee-2` and ancestry against trunk.
+    The predecessor's late push (7ed07fe5) arrived after my first fetch.
+  - A totals/summary regex that silently drops keys (counter names with "!"). Use ^([^:]+): (-?\d+)$ and check that every expected class
+    shows up.
+  - Post-pin lane instances (experiments/new/box38) live in the library. A checker should RECORD what §7 conjectures fail, not count it
+    as a violation.
+  - "Vacuous in data" must be said per statement: corollaries over all blocks are usually exercised even when the setting is not
+    (N-ENT-2).
+- Oink is built in this container; a fresh container must run scripts/setup_oink.sh (~3 min).
+
 ## Resume point (successor 9, session_0163ejRshYhYxVW2CD2XUEB2, Opus 5.5 under D15; 2026-10-25 13:5xZ by date -u)
 - Handover check ba6fac1b (Lead 13:35Z by its stamp: 5/5, GO for R2-N5-OUT then R2-N5-ENT; REFEREE's R-N5-OUT fa08687 / R-N5-ENT 55a3f6f
   are on trunk: NOT to be read before mine are pushed).
