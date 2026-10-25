@@ -300,3 +300,36 @@ Signed: REFEREE (successor 8) (Opus 5.5, D15).
   - RL-3 is now realised, not only possible. It remains a wording gap, and its fix is unchanged.
   - RL-1 is unchanged. The Lead reports an unrefereed lane Lemma CYC-EV ("c's cycle at k has no Ev vertex", ENT setting). I will judge
     it when it arrives. As described, it would need to cover every t ∈ (k0, k], not only t = k, to close RL-1 for TEV-RED (1)-(4).
+
+## §C. Comparison with REFEREE-2 (written 2026-10-25 12:46Z by date -u; REFEREE successor 8 (Opus 5.5, D15))
+- Compared against: the FINAL docs/referee-2/R2-N5-RL.md at referee-2 30dc5f54, named by the Lead at 12:43Z (Lead's stamp). I read it
+  after this report (b7419da0, 257c3d81) and Addendum A1 (38863849) were pushed.
+- Same verdict, same labels: BL-FORM, R-SAME, BL (a)-(e), CONF-MONO, FREE-FREEZE, EQ-END, EV, EV+. Both referees find every
+  "conditional" label exact. Both agree that EV, EV+ and TEV-RED quantify k0 < k as consecutive fallbacks, so "no leave" holds as
+  written.
+- Two verdicts differ in label. Reconciled here:
+
+| item | REFEREE (this report) | REFEREE-2 | substance | reconciliation |
+| --- | --- | --- | --- | --- |
+| §5 MERGE | SIGNED WITH GAP RL-2 (statement scope: "ℓ ≥ −1" includes ℓ = ∞) | SIGN, N-RL-1 (wording: read "plays" in (c) as paths up to the first visit of c) | DIFFERENT points. N-RL-1 is about finite ℓ; I agree with it, and my proof check used H-vertices, which lie before c, so it is equivalent. RL-2 is about ℓ = ∞: R2's own proof line "Both values have the cycle node c" fails there (Ξ(z) has another cycle node, and z's and x0's plays are disjoint: inr2_n32 state 0, gate (6, 29); 50 / 152 / 229 such window gates in my data). R2's 40,974 checked window gates and its (c) argument do not mention ∞ | I keep SIGNED WITH GAP RL-2. Both referees sign MERGE for −1 ≤ ℓ < ∞ (MERGE′), and every use is at finite L. Joint: MERGE′ signed by both; RL-2 (scope) and N-RL-1 (wording) both go to the fixes file. Requested: REFEREE-2's ruling on whether its SIGN covers ℓ = ∞ |
+| §6 TEV-RED | NOT SIGNED as stated (RL-1); TEV-RED′ SIGNED CONDITIONAL ON (P), with RL-3 | SIGN CONDITIONAL ON (P) WITH GAPS G-RL-1, G-RL-2 | SAME. G-RL-1 = RL-1: the "last Ev vertex", (1) and (3) are unproved when c's cycle at t meets Ev. R2: "TEV-RED is silent in that case rather than false"; "the Consequence … uses TEV-RED at t = k with no such hypothesis". G-RL-2 = RL-3, with the same instance (tevlast_cex_n40, t = 7, e = 15 ∈ H). R2's fix ("c's honest cycle at t lies in F_{k0}") is equivalent to mine ("no Ev vertex on the cycle of x_t's play"): that cycle is c's cycle, which lies in F_t ⊆ F_{k0} ⊔ Ev | The difference is labelling convention. Under D1 I do not sign a statement whose proof does not cover all of its cases, so I keep NOT SIGNED as stated. Joint state: the literal TEV-RED is unproved in the cycle case (both); TEV-RED′ (with the hypothesis) is signed CONDITIONAL ON (P) by both, with RL-3 = G-RL-2 fixed. The Consequence holds only with the hypothesis at t = k (both). For landing: TEV-RED′, not TEV-RED |
+
+- R2 items I had not raised:
+  - N-RL-3: in the EV setting facts, "the top of A Δ B is even and in B" needs A ⊆ B, which only EV gives. From θ_{k0} ◁ θ_k alone
+    the top is "even in B or odd in A". Correct, and MISSED by me (my §6 "Facts" said "Correct"). Wording: it is used only after EV.
+  - FREE-FREEZE: "(h) at t" is not used. Correct: Lemma G off R̄ needs no (h) (R19 (a)). A note.
+  - N-RL-2 = my EV remark (q on the cycle after c; the conclusion holds). Agreed.
+- One analytic difference, not a verdict:
+  - R2 says the RL-1 case is "reachable in principle: a flat switch of c at k0 into R̄_{k0} whose route is cut by a level −1 R → F
+    switch". I read that route as excluded: k0 is THR with u* ≠ none (FBW-S, M ≥ 0), and FBL (R20 (b)) forbids F → R̄ gate edges there.
+    So C_{k0+1} ⊆ F_{k0} (my §6). R2's own counter ("c switched into R̄_{k0} at k0": 0 batch, 0 climbs) agrees.
+  - On my reading the case needs a later S4a change of c's cycle into Ev. Either way the case is open and unrefuted.
+- DATA comparability: R2's counts are on its own N5 (any arena optimum), mine on SPEC traces. Both sets show 0 occurrences of the RL-1
+  case (R2: 8,771 batch + 851,022 climb states; mine: 2,085 TEV states + 3 climbs).
+- Joint gap map, one fixes-file line each (L-SI, docs/si/P-N5-RL-fixes-box10.md):
+  - RL-1 = G-RL-1: TEV-RED and the Consequence need "no Ev vertex on c's cycle at t" (equivalently "c's honest cycle at t lies in
+    F_{k0}"), for every t ∈ (k0, k], or a proof of it. The lane's CYC-EV, if it covers every such t, would close it.
+  - RL-3 = G-RL-2: TEV-RED (3) and the Consequence: "before e" → "up to and including e" (realised at tevlast_cex_n40).
+  - RL-2 (REFEREE only): MERGE scope "−1 ≤ ℓ < ∞".
+  - RL-4 (REFEREE only): EV citation, gate existence = the NO-RF-OLD Corollary.
+  - N-RL-1, N-RL-2, N-RL-3 (REFEREE-2; I accept all three) and the FREE-FREEZE "(h) at t" note: wording.

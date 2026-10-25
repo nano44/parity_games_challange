@@ -159,3 +159,18 @@ says so (header: "not a running-time bound, not a TARGET.md claim, not a step-4 
 partial lemmas about N5 on a subclass (R18) and of P-N5-RL. G-N5-TIME stays open.
 
 Signed: REFEREE (successor 8) (Opus 5.5, D15).
+
+## §C. Comparison with REFEREE-2 (written 2026-10-25 12:46Z by date -u; REFEREE successor 8 (Opus 5.5, D15))
+- Compared against: the FINAL docs/referee-2/R2-N5-P1.md at referee-2 e036e4c5, named by the Lead at 12:43Z (Lead's stamp). I read it
+  after this report (58a5b734) was pushed.
+- Verdicts: identical. Both referees SIGN Lemma B (a)-(c), Lemma M with the real-prefix remark, Lemma P1 (Steps 1-6) with Corollary
+  P1′, and the §4 hypothesis match. Neither signs §5 as such. No gap in either report.
+- N-P1-1 (REFEREE-2, wording): name the trivial cases m = 0 (Step 4) and b = 0 (Step 6, v_0 = c0).
+  - I noted b = 0 ("b = 0 gives equality", §3) but not m = 0. Accepted, wording only.
+- Both readings of §5 agree. With P1 signed by both, G-1OA-4 (R18) and P-N5-RL's (P) conditions are discharged. TEV-RED's own gap
+  (RL-1 = G-RL-1) and EQ-END's CN-LAST condition are untouched, so it is TEV-RED′, not TEV-RED, that becomes unconditional.
+- DATA: different code and different seeds, so not re-runs of each other. R2: 28,973 games / 1,030,157 strategies, with mutation
+  tests. Mine: 8,000 games / 278,120 strategies, with a control. Both 0 violations. R2's mutation tests (odd-h rule flipped; a
+  CAV-style coarse "improving") show its checker bites, as my control does for mine.
+- Joint state: Lemma P1 is PROVED (L-SI succ. 5) and signed by both referees (Opus 5.5, D15), pending CHECKER.
+  - Fixes-file line (L-SI, P-N5-P1): N-P1-1, add one line each for m = 0 and b = 0.
