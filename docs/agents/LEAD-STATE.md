@@ -1380,3 +1380,9 @@
   - L-RED 17 next: FB-CAP search at n 5 over start pairs, then the beta2 cascade.
 - 18:21Z Lead: merged l-si 6918233 (L-SI 9 handover 5/5; GO box 14: G-N5-TIME ledger, then X per phase) and referee-2 2fef675 (R2-N5-LV2 Addendum B eed4efd: N-LV2-3 conjecture withdrawn, FALSE on beta2_n11; LV-NONE's N = 2 induction step checked on 3 traces, 0 violations).
 - 18:25Z Lead: merged referee-2 23e0992. REFEREE-2 11 handover check 5/5 re-measured. GO with queue: §C PFZ → §C LV2 → §C RHO → NHN → NEEDB.
+- 18:34Z Lead: merged l-new d65e43a (docs/new/N5-FBPOLY-box41.md, sha1 7a7087f7; lane PROVED, unrefereed).
+  - Theorem FB-POLY: on 𝒞^1O, in-phase Even fallbacks per phase ≤ 1 + (|U| − 2)(deg_U(o) + |U|) ≤ 1 + (n − 2)(2n − 1), with NO hypothesis on H1-H3, τ(o), c_w, θ or N_HN. FB-CAP holds at |U| = 2; f ≤ |U| if o = c_θ. Via the κ-freeze, EXIT-SWITCH, FREEZE-EXIT, CN-ONLY (CN-LAST, R38 (f)) and THETA-AFTER.
+  - It removes the f term from SCOPE-COUNT (R38 (c)) and EPOCH (R39 (b)).
+  - FB-CAP stays OPEN at |U| ≥ 3.
+  - DATA: 0 failures, but FREEZE-EXIT and THETA-AFTER are untested (the post-freeze regime is unreached).
+  - Packet P-N5-FBPOLY approved.
