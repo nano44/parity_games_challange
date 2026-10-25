@@ -1494,3 +1494,4 @@
   - its addendum docs/si/P-N5-KW-addendum-box15.md, sha1 8d6bfb3c32d80ed7040df4ae2dee56bb9bb9b5bd (l-si 47c4e7a2: units are transitions; switches ≤ n · transitions; R72 data).
   - They go to both referees as one review unit. REFEREE 11: §C NEEDB, then KW. REFEREE-2 12: §C FBPOLY, then KW, then FX, then NH42 (KW moved ahead of FX and NH42, since its assembly needs neither).
 - 22:12Z: Merged referee-2 75372604: §C FBPOLY vs R-N5-FBPOLY, identical, joint gap map closed by the agreed repairs, FBP-N2 accepted. R48 (FBPOLY) draft completed. Self-check: the title's uniform bound fails at |U| = 1 (it gives 0, while FB-POLY (c) allows 1), so the title now states o ≠ c_θ and o = c_θ separately. Sent to CHECKER C57.
+- 22:26Z: Merged checker 1351f017 (C57 PASS, R48; optional N-1..N-3; loop witness reproduced from its start pair with L-RED's tool). Applied N-1 (κ-PFZ count differs by convention) and N-2 (R72 added at l-red 6e28e4f1). Asked for C57 Addendum 1.
