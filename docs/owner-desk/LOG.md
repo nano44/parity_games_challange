@@ -369,3 +369,8 @@ awaits the Lead's explicit reading.
 adversary per lemma, L-COMP exhaustive tables, new L-SI operations-research lens (Ye; Hansen-Miltersen-Zwick strongly polynomial PI),
 L-LIT cross-field scan: USOs, Tarski fixed points, tropical algebra, potential reduction). DTL attack paused; Ohlmann's symmetric
 recursion queued. Labels PROVED / CONJECTURE / OPEN; assumptions one line each.
+
+## 2026-10-25T16:15Z owner message (verbatim)
+> Give me a status update
+
+Answered from trunk e05382f4 (2026-10-25 16:09Z) and lane heads. Relayed to the Lead. NOW.md header still 2026-10-24 13:18Z (stale; M4 row still says N5 stood down).
