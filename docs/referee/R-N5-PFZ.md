@@ -173,3 +173,46 @@ for REFEREE-2 successor 10 and a later §C. (Opus 5.5, D15).
 - Data agree in kind (0 failures; FB-ROUND and P-FREEZE (a), (b) heavily exercised on both sides). R2 adds the |U| = 2 post-freeze
   regime (0 post-freeze U-rises there); I add the P-epoch (ext) checks.
 - Pending: the ext §C (P-FREEZE′, θ-LEN, BRK-POLY′, GAP PFZ-1 and its repair) after REFEREE-2 10's report.
+
+## §C-ext. Comparison with REFEREE-2 on P-N5-PFZ-ext: docs/referee-2/R2-N5-PFZ.md §X at referee-2 78896bfc (sha1 b0168708…, the same on trunk f090ec9e)
+Written 2026-10-25T17:46Z by date -u by REFEREE successor 10 (session_01J4kmfDqtZdanh3RSCxChyD), after the Lead's word of 17:34Z (Lead's
+stamp) that 78896bfc is final. The ext review above (§ ext, GAP PFZ-1, 85953433) is my predecessor's. I re-derived PFZ-1 and its repair
+myself before writing this; I do not inherit them. (Opus 5.5, D15).
+
+| item | REFEREE-2 (§X) | REFEREE | outcome |
+| --- | --- | --- | --- |
+| ext §1 P-FREEZE′ (LEN-TAIL′, NO-CROSS-A′) | SIGN | SIGNED | identical |
+| ext §2 θ-LEN | SIGN | SIGNED | identical |
+| ext §3 BRK-POLY′ (i) | NOT SIGNED as stated; SIGN (i′) θ_S ≤ ρ_S + (ρ_S + 1)·max(\|U\| − 2, 0); gap G-PFX-1 | SIGNED WITH GAP PFZ-1 + referee repair | same gap (G-PFX-1 = PFZ-1); labels differ only through the repair (below) |
+| (ii) | SIGN B_S ≤ θ_S + (ρ_S + 1)(\|U\|² − 1) and the end bound (ρ_S + 1)(2n² − 1); middle bound needs + ρ_S | SIGNED GIVEN (i); "(ii)'s middle term needs the repair"; end bound holds with (i′) | identical in substance |
+| (iii) | SIGN B_S ≤ θ_S + (ρ_S + 1)(\|U\| − 1); end bound (ρ_S + 1)(2n − 2) | SIGNED GIVEN (i); with (i′) the end constant becomes 2n − 2, with the repair 2n − 3 stands | identical in substance |
+| Consequence O(n³·K·(ρ_S + 1)) | SIGN | holds with (i′) | identical |
+
+- Joint gap map (ext): one row. **PFZ-1 = G-PFX-1**. Both referees found it independently. The proof bounds the θ-changes inside each
+  P-epoch and misses the ρ_S transitions that join epochs. Both say (i) is not refuted by any data. Both say (i′), (ii)'s end bound and
+  the Consequence hold as the proof stands.
+- Reconciling the label on (i) (the Lead's ask).
+  - REFEREE-2's fix list allows "or prove that the P-change transitions are paid by the epochs' slack. I see no such argument." My
+    repair (R-N5-PFZ ext §3, above) is exactly such an argument. I re-checked it step by step:
+    - Inside a P-epoch Π with o ≠ c_θ, c_θ and P(θ) are fixed. Q, o's honest path to c_θ (c_θ excluded), is simple in U and has
+      ℓ(θ) = |Q| = |P(θ)| + |Q ∩ A_low|, with A_low := (U ∖ {c_θ}) ∩ V_{<c_θ}. Q always contains o. So |Q ∩ A_low| ranges over at most
+      |A_low| + 1 − [o ∈ A_low] values.
+    - θ-LEN's monotonicity (R15 (a), fixed c and P) therefore gives ≤ |A_low| − [o ∈ A_low] θ-changes inside Π (refined θ-LEN).
+    - If ρ_S ≥ 1, P(θ) changes. o's membership in P(θ) is fixed, so P(θ) ∖ {o} ⊆ A_high ∖ {o} changes, and some u ∈ U ∖ {o, c_θ} lies
+      above c_θ. Since o lies in exactly one of A_low, A_high: |A_low| − [o ∈ A_low] ≤ (|U| − 1) − 1 − 1 = |U| − 3.
+    - So θ_S ≤ ρ_S + (ρ_S + 1)(|U| − 3) = (ρ_S + 1)(|U| − 2) − 1 when ρ_S ≥ 1. When ρ_S = 0, (i) is θ-LEN. That is (i) as stated.
+  - My answer: yes. With this argument in the fixes file (refined θ-LEN + the "ρ_S ≥ 1 ⇒ a high u ≠ o" step), (i) as stated has a
+    complete proof. REFEREE-2 can check that and sign (i), and then (iii)'s end constant 2n − 3 and (ii)'s middle bound stand as
+    written. Until REFEREE-2 signs the repaired text, the jointly signed form is (i′) with (iii)'s end bound (ρ_S + 1)(2n − 2). That is
+    what P-N5-RHO's HN-POLY uses (R-N5-RHO), so nothing downstream waits on this.
+  - Lane: carry PFZ-1 in the PFZ fixes file as either (a) the repair above (proof of (i) as stated) or (b) (i′) + 2n − 2. Under (a),
+    the landing of (i) as stated needs REFEREE-2's signature on the repair.
+- Data:
+  - REFEREE-2: 0 violations of (i) as stated in 8,415 batch stretches and 269,211 climb stretches (ρ_S up to 16). The climb aimed at
+    θ_S > (ρ_S + 1)·max(|U| − 2, 0) and reached excess 0 at most.
+  - Mine (predecessor): the refined count held at all 599 in-epoch θ-changes.
+  - Today I ran pfz_probe.py on REFEREE-2's six saved climb outputs (docs/referee-2/R2-N5-PFZ/climb/best_*.pg; sha1 8ec62bb9, ab130853,
+    0a42b9eb, 2d4474d1, cc0e7252, 8ddcf96f). 0 failures, including TLEN_refined, but 0 in-epoch θ-changes there, so they add nothing
+    for the refined count (log scratch/pfz_logs/r2climbs_c.log).
+  - Both sides: the post-freeze regime |U| ≥ 3 is never reached for P-FREEZE′ / LEN-TAIL′ / NO-CROSS-A′.
+- No verdict of mine changes. (Opus 5.5, D15)
