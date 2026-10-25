@@ -49,7 +49,8 @@ Written 2026-10-25 09:01Z (date -u). Predecessor: successor 4, session_01G2KY2Ca
 - C42 (R33, P-N5-L2 pinned 04b3f48) 10:3xZ (date -u): main report docs/checker/C42.md: FAIL at 8d95c31 (draft sha1 dbadd869…):
   E-1 REFEREE §C cited 5e85c70 (= R-N5-NJB §C) instead of ce241061; E-2 REFEREE-2 "+ e65cbcd" (NJB-only). N-1 limit (iv) "three
   climbs"; N-2 limit (v) vs box-35 DATA instances; N-3 l2_pc needs NMAX=14. Every re-run EXACT. Add. 1: PASS at 48478ab (8d9d6590; E-1, E-2, N-1, N-2
-  fixed). Next: Add. 2 = landed-text check.
+  fixed). Add. 2: R33 landed verbatim at trunk
+  00bd18b. C42 CLOSED. Next: R34 (P-N5-NJB), R35 (P-N5-TOG) when the Lead sends draft sha1s (each after a lane fixes2).
 - Worktrees: wt42 = 8d95c31, wtR42 = 7626354e. Scratch c42/trace.py = per-state trace via REFEREE l2_probe.states().
 
 ## Resume point (successor 4, history)
