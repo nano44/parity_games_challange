@@ -1373,3 +1373,16 @@
   - Merged referee-2 cd3b7cd: R2-N5-RHO 269ae45 (all SIGN; N-RHO-1, N-RHO-2: post-freeze only at |U| = 3, FREEZE-F (b) vacuous). REFEREE-2 10 PARKED.
   - First level −1 block witness (THR, r ≥ 0, M = −1): docs/referee-2/R2-N5-LV2/climb/block_9501.pg, sha1 1b5b76fd, random start pair in block_9501.txt. Lead re-run, canonical start: one Odd choice vertex, n5 3/1, Oink zlk OK, strategies verified. The block state is on REFEREE-2's start pair, which I did not re-trace.
   - Created L-SI successor 9 (session_018jN1MJkw56F58G3qcfcuZA) and REFEREE-2 successor 11 (session_01VrcXfBuNYKJ3uBUc7ETARQ).
+- 18:16Z Lead: merged l-red 8e429a8 (R71, box 41 interim, NO KILL).
+  - Post-freeze regimes at |U| ≥ 3 are not reached nontrivially: max f − (|U| − 1) = −1. FB-CAP holds in all data.
+  - The per-vertex argument for FB-CAP is false (b5_os_n40).
+  - INTO: 0 failures, with min gates into R̄ = 1. Wording note: restrict INTO to Iσ_t ≠ ∅.
+  - L-RED 17 next: FB-CAP search at n 5 over start pairs, then the beta2 cascade.
+- 18:21Z Lead: merged l-si 6918233 (L-SI 9 handover 5/5; GO box 14: G-N5-TIME ledger, then X per phase) and referee-2 2fef675 (R2-N5-LV2 Addendum B eed4efd: N-LV2-3 conjecture withdrawn, FALSE on beta2_n11; LV-NONE's N = 2 induction step checked on 3 traces, 0 violations).
+- 18:25Z Lead: merged referee-2 23e0992. REFEREE-2 11 handover check 5/5 re-measured. GO with queue: §C PFZ → §C LV2 → §C RHO → NHN → NEEDB.
+- 18:34Z Lead: merged l-new d65e43a (docs/new/N5-FBPOLY-box41.md, sha1 7a7087f7; lane PROVED, unrefereed).
+  - Theorem FB-POLY: on 𝒞^1O, in-phase Even fallbacks per phase ≤ 1 + (|U| − 2)(deg_U(o) + |U|) ≤ 1 + (n − 2)(2n − 1), with NO hypothesis on H1-H3, τ(o), c_w, θ or N_HN. FB-CAP holds at |U| = 2; f ≤ |U| if o = c_θ. Via the κ-freeze, EXIT-SWITCH, FREEZE-EXIT, CN-ONLY (CN-LAST, R38 (f)) and THETA-AFTER.
+  - It removes the f term from SCOPE-COUNT (R38 (c)) and EPOCH (R39 (b)).
+  - FB-CAP stays OPEN at |U| ≥ 3.
+  - DATA: 0 failures, but FREEZE-EXIT and THETA-AFTER are untested (the post-freeze regime is unreached).
+  - Packet P-N5-FBPOLY approved.
