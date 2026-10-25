@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""sum counters over logs (regex ^([^:]+): (-?\\d+)$); list violations and nonzero exits. Usage: totals.py logdir..."""
+"""sum counters (maxima for keys starting max_ or containing _max_) over logs (regex ^([^:]+): (-?\\d+)$); list violations and nonzero exits. Usage: totals.py logdir..."""
 import sys, re, glob
 from collections import Counter
 for d in sys.argv[1:]:
@@ -8,7 +8,10 @@ for d in sys.argv[1:]:
         for line in open(p):
             line = line.rstrip("\n")
             m = re.match(r"^([^:]+): (-?\d+)$", line)
-            if m: c[m.group(1)] += int(m.group(2))
+            if m:
+                k_, v_ = m.group(1), int(m.group(2))
+                if k_.startswith("max_") or "_max_" in k_: c[k_] = max(c[k_], v_)
+                else: c[k_] += v_
             if line.startswith("VIOLATION "): bad.append(p + ": " + line)
             m2 = re.match(r"^(\S+) exit (\d+)$", line)
             if m2 and m2.group(2) != "0": ex.append(line)
