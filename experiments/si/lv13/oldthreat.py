@@ -2,7 +2,7 @@
 """L-SI succ. 8, box 13 item (3): DATA for Lemma OLD-THREAT (docs/si/N5-RISE-box13.md). k0 an in-scope fallback with L = M_k0 >= 0,
 j the first S4a step after k0 (no fallback in between, every transition in scope, r > L) that changes COARSE_L(theta) (a RISE, as in
 REFEREE-2 rise_end.py). For every state t > j such that every transition s -> s+1, k0 < s < t, is an in-scope S4a step with r_s > L:
-every exit x of o with x in F_k0 and COARSE_L(Xi_k0 x) = COARSE_L(Xi_k0 x_k0) (x_k0 := sigma-bar_k0(o)) lies in Rbar_t.
+(OLD-THREAT) every exit x of o with x in F_k0 and COARSE_L(Xi_k0 x) = COARSE_L(Xi_k0 x_k0) (x_k0 := sigma-bar_k0(o)) lies in Rbar_t. (GATE-ABOVE, CONJECTURE) if moreover r_t > L, then M_t > L.
 Traces and state analysis: REFEREE-2's (read only). Usage: oldthreat.py R seed game.pg ..."""
 import sys, os, random
 from collections import Counter
@@ -36,6 +36,12 @@ def scan(g, o, A, fbs, C, bad, tag):
         t = j + 1
         while True:
             C["checks"] += 1
+            if t < len(A) and A[t].r > L:
+                C["GA_states"] += 1
+                St = A[t]; hi = [(y, z) for (y, z), l in St.gates.items() if l > L]
+                C["GA_hi_into_Rbar" if any(z in St.Rbar for y, z in hi) else "GA_hi_into_F_only" if hi else "GA_no_hi"] += 1
+                if any(z in St.Rbar and y not in St.Rbar for y, z in hi): C["GA_hi_F_to_Rbar"] += 1
+                if not EC.M(A[t]) > L: C["GA_FAIL (M_t <= L with r_t > L after a rise)"] += 1; bad.append(("GA", tag, k0, j, t, EC.M(A[t]), L))
             for x in mins:
                 if x not in A[t].Rbar: C["FAIL"] += 1; bad.append((tag, k0, j, t, x))
             # extend: transition t -> t+1 must be an in-scope S4a step with r_t > L
@@ -54,5 +60,5 @@ def main():
             for mode in ("own", "spec"):
                 A, fbs = OC.run_trace(g, o, s, t, rng, mode); C["traces"] += 1
                 scan(g, o, A, fbs, C, bad, (os.path.basename(p), i, mode))
-    print("TOTAL", dict(sorted(C.items()))); print("FAIL (first 5):", bad[:5]); print("RESULT", "FAIL" if C["FAIL"] or bad else "OK")
+    print("TOTAL", dict(sorted(C.items()))); print("FAIL (first 5):", bad[:5]); print("RESULT", "FAIL" if C["FAIL"] else "OK", "(OLD-THREAT);", "GATE-ABOVE", "FAIL" if C["GA_FAIL (M_t <= L with r_t > L after a rise)"] else "OK")
 if __name__ == "__main__": main()
