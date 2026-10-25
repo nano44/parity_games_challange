@@ -1174,3 +1174,4 @@
 - 10:53Z Lead: merged checker 289f032 (C42 Add. 2: R33 landed verbatim; C42 CLOSED; C41 N-4 resolved). C43 = R34 (TOG) sent (numbering: TOG R34, NJB R35).
 - 10:57Z Lead: merged l-new 8483279 (packet P-N5-SCOPE, docs/new/P-N5-SCOPE-box36.md sha1 c3f5ed37: KEY, WCH, SCOPE-COUNT, FB-INT, NH1-FB, CN-LAST; §7 not to sign: out-of-SN obstruction, level −1 residue, OUT-POLY, PF-THETA linear dead end). P-N5-SCOPE PINNED at this commit → REFEREE 7 and a new REFEREE-2 successor 8.
 - 11:00Z Lead: P-N5-SCOPE → REFEREE 7 (R-N5-SCOPE); created REFEREE-2 successor 8 session_018vPA5mmjjVjrRV4KqAJfFk (handover check, then R2-N5-SCOPE). Lead re-ran wd16_s2 (n5 19/14, Oink OK, one o).
+- 11:05Z Lead: merged checker 70b0e9c (C43 FAIL E-1: REFEREE-2's file set is 239 not 238 (logs/files.lst; 31,434 = 239×3×2 + 6×5,000)); R34 rev. 11:04Z; N-2 (REFEREE cites 5e85c70 for L2 §C) and N-3 (REFEREE-2's 238) noted for referees.
