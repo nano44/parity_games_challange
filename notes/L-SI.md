@@ -55,6 +55,17 @@ items (c), (a) and (b). Lead: session_014FBi6o334DvwT5Uw2kDfoN.
 1. Referee items on P-N5-PHI → a NEW fixes file.
 2. NEEDB fixes (above).
 3. K, if the Lead routes it: start at HN states (U3). There BF-F gives the F-side rounds and SPLIT makes R monotone between evictions.
+4. (Lead 18:57Z, item (3)) What is left of R26's reading "(NH') ⇐ (X), NFB-O, (E), (K_W)", now that X is bounded (P-N5-FX, given
+   FB-POLY):
+   - (X): closed by P-N5-FX, CONDITIONAL on P-N5-FBPOLY.
+   - NFB-O (fallbacks at OTHER states): closed. FB-POLY bounds every in-phase fallback, OTHER states included (CONDITIONAL on
+     P-N5-FBPOLY).
+   - LEFT: (E), events per W-flat run of U3 / U23 stretches (kind changes of R-vertices and switches of c_w); an L-MONO analogue for c_w
+     would bound the c_w switches. And (K_W), non-fallback W-changes on R in U2 / U3 / U23 stretches.
+   - These two are exactly what K (wakes) needs outside route form. Route-form wakes are at Q states (U1 pieces, R24 (d)) and are
+     polynomial given f and X.
+- Box 14 sha1s also include docs/si/P-N5-FX-box14.md (packet; sha1 in the Lead message of 19:1xZ). FB-PHASE is NOT to be packeted
+  (Lead 18:57Z): it is a lane cross-check of P-N5-FBPOLY.
 
 ## HANDOVER (successor 8, box 13; written 2026-10-25 18:04Z (date -u); session_013kZp65x9TKU9AqPZdMYGpm)
 Reason: session token counter at ~390k used (15M budget, ~14.61M left) after the Lead's "climb report, then hand over" (17:55Z), at a
