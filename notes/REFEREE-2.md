@@ -12,7 +12,12 @@ Branch claude/referee-2, merged with trunk (--no-ff) at each packet. REFEREE-2 o
 | P-N5-NEB | docs/new/P-N5-NEB-box38.md ba15e51f @ 314d220 | a4516df9 | — (REFEREE 9's report pending) | all SIGN; N-NEB-1..3 |
 | P-N5-LV | docs/si/P-N5-LV-box11.md d0d797f0 @ 601df6e (+ addendum a15a8871, not to sign) | b1038bea | — | all SIGN (LV-CN, LV-COUNT COND CN-LAST, now R38); N-LV-1..3 (N-LV-3: u* = none (LV) states reachable; witness R2-N5-LV/climb/best_lv_9401.pg) |
 | P-N5-PFZ | docs/new/P-N5-PFZ-box39.md 3c617e06 @ 283bcb6 | 37e55fde | — | all SIGN; N-PFZ-1..3 (post-freeze only with |U| <= 2 in all data) |
-### IN FLIGHT
+### IN FLIGHT (updated after the Lead's 15:41Z / 15:59Z messages, which crossed with my handover)
+- §Cs DONE since: NEB §C + LV §C in a769ff54 (vs REFEREE 9's R-N5-NEB 40adbf1c and R-N5-LV 8054da2f; identical verdicts; I accepted
+  NEB-N1..N3 and LV-N3).
+- P-N5-PFZ-ext (docs/new/P-N5-PFZ-ext-box39.md sha1 b3702b1b, pinned c61ecc4; to sign: P-FREEZE′, θ-LEN, BRK-POLY′). NOT started.
+  The Lead wants R2-N5-PFZ.md to cover BOTH files: add a section for the ext file. pfz_check.py's theta_run() is the base (key the
+  run by P(θ) instead of θ, as PFZ_KEY=P does in the lane's script).
 - P-N5-LV2 (docs/si/P-N5-LV2-box12.md sha1 3b23a41f, pinned 283bcb6, l-si ed936af1; pin and l-si sha1 verified by me). NOT started beyond:
   - The Lead asks: check the lane's claim that N-LV-1 / N-LV-2 are not inherited (its lines 60-65).
   - To check first: §4 (iii) (l. 142-143) and §7 (2) (l. 210-211) apply STRETCH_{-1} with e := f_{N-1} + 1. That needs COARSE_{-1}(Xi)
@@ -20,6 +25,8 @@ Branch claude/referee-2, merged with trunk (--no-ff) at each packet. REFEREE-2 o
   - Statements to sign: STALE-GATE, EV-G, ENT-X_{-1}, LV-PL', SAND, FLAT-ALL_{-1}^{none}, LV-NONE, SCOPE-FB. It depends on P-N5-LV and
     P-N5-ENT (R40).
   - My R2-N5-LV/lv_check.py already reaches u* = none (LV) states in climbs: use it as the base for FLAT-ALL_{-1}^{none} / LV-NONE.
+  - The Lead asks: count r = -1 THR in-scope fallbacks PER SCOPE RUN in those climbs, to test LV-NONE (<= n*n_E + 1 per scope run) and
+    SCOPE-FB. lv_check.py does not record per-run maxima yet; add an mxu().
 - §Cs for NEB, LV and PFZ: when the Lead routes REFEREE 9's reports. Not read yet.
 ### NEEDS
 - Lead: route N-NEB-1..3 and N-PFZ-1..3 to L-NEW, N-LV-1..3 to L-SI, and the u* = none witness to L-RED.
