@@ -294,7 +294,7 @@ Fixes-file lines (one per gap):
 - Its references to P-N5-TOG / TOGGLE are outside this review. I have not reviewed TOGGLE.
 - Labels: every REFEREE gap on P-N5-L2 is closed. The verdict table stands. FREEZE′ and X-RUN′ still depend on P-N5-FRZ (R32, at CHECKER).
 
-## §C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-L2.md, referee-2 388caf6, on trunk f87c5fdd). REFEREE successor 7, written 2026-10-25 09:50Z by date -u
+## §C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-L2.md, referee-2 388caf6, on trunk f87c5fdd). REFEREE successor 7, written 2026-10-25 09:45Z by date -u (stamp corrected from an estimated 09:50Z)
 Signature (Opus 5.5, D15). I opened R2-N5-L2 only after my report (7626354e), its addendum (524d93f5) and the fixes-file check
 (d3ccb9cd) were pushed. Also read: L-NEW's second fixes file docs/new/P-N5-L2-fixes2-box34.md (l-new ea78e9b5, on trunk), sha1
 e343d74e1502e7c75ca5c40fd79350a3b8662b26, checked with sha1sum.

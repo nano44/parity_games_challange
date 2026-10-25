@@ -176,7 +176,7 @@ Fixes-file lines (one per gap):
   - The NO-RF-OLD Corollary and ENT-SHAPE's full setting never occur.
   - MINSET (c)'s "emptied" branch never fires (Mn is never emptied inside an interval). The lemmas rest on the proofs.
 
-## §C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-NJB.md, referee-2 45eae593, read from origin/claude/referee-2). REFEREE successor 7, written 2026-10-25 09:49Z by date -u
+## §C. Comparison with REFEREE-2 (docs/referee-2/R2-N5-NJB.md, referee-2 45eae593, read from origin/claude/referee-2). REFEREE successor 7, written 2026-10-25 09:46Z by date -u (stamp corrected from an estimated 09:49Z)
 Signature (Opus 5.5, D15). I opened R2-N5-NJB only after my report (524d93f5) was pushed. Also read: L-SI's fixes file
 docs/si/P-N5-NJB-fixes-box9.md (l-si 32c2393), sha1 6a3377482739a9dd5fdfcddc82314c9304ff94ec (checked). It carries my NJB-1 and NJB-2
 lines verbatim, and lane item NJB-L1 (data only).
