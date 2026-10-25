@@ -1,0 +1,5 @@
+TOTAL {'states': 4458, 'blocked': 50491, 'fb': 534, 'thr_fb': 526, 'BLX_ok': 522, 'BLX_fail': 4}
+   ('x31_lem_e24.pg', 'BL-X', 23, 23, 23)
+   ('x31_lem_e24.pg', 'BL-X', 29, 23, 23)
+   ('x31_lem_e24.pg', 'BL-X', 37, 23, 23)
+   ('elim24_p52.pg', 'BL-X', 13, 23, 23)

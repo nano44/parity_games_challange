@@ -1,8 +1,32 @@
 # L-RED notebook (independent adversary lane)
-Successor 15 at work since ~01:00Z 2026-10-25 (section below); successor 14's section follows. HANDOVER written 2026-10-24 ~14:30Z (date -u) by successor 13 (session_01GhyuHegkNZEo8bet84n56c, Opus 5.5, D15/D16/D18) at ~550k
+Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 16 below. HANDOVER written 2026-10-24 ~14:30Z (date -u) by successor 13 (session_01GhyuHegkNZEo8bet84n56c, Opus 5.5, D15/D16/D18) at ~550k
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Handover check (successor 16)
+Successor 16 = session_014kwWmBLu9B31iceFsng38k (Opus 5.5, D14/D15/D18/L37). Brief from Lead 09:46Z 2026-10-25. Check at 09:45Z (date -u).
+1. Branch / head / trunk distance. Commands: `git fetch origin claude/l-red claude/vibrant-johnson-nxvvxo`; `git merge --ff-only
+   origin/claude/l-red`; `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`; `git merge-base`.
+   - Branch claude/l-red, head 57c685df (successor 15's RESUME POINT commit). The fresh clone sat at 0d0b67a1, 1188 behind.
+   - vs trunk claude/vibrant-johnson-nxvvxo: 1 ahead (57c685df), 82 behind; merge-base 0fe4d801.
+2. Open work (notebook RESUME POINT for successor 16; `ls experiments/red/so/`): nothing in flight. Next steps:
+   - box 39 (Lead 09:46Z): PF-THETA linear form (docs/new/N5-DROP-box35.md §8, trunk only, read with `git show`) first;
+   - then RISE-LAST (R68; event = sox3.py rfb0), XSN-RUN (R68), P-N5-TOG RESTARTS if time remains.
+   - Tools in experiments/red/so/ (sox*.py, soclimb*.py, vrun.sh); vrun.sh needs Oink: scripts/setup_oink.sh started 09:45Z.
+3. GAPS rows (`git show origin/claude/vibrant-johnson-nxvvxo:docs/GAPS.md | grep -n N5`): G-N5-TIME (major, open, L-NEW owner;
+   N5 makes polynomially many iterations; every lemma I attack feeds it). G-N5-TERM closed. GAP-A / GAP-C / G-NEST name L-RED as
+   attacker but are paused under D18/L40 (A_DTL line).
+4. Owner rulings verbatim (`git show <trunk>:docs/DECISIONS.md | sed -n ...`), status from `grep '^| D1[48]* ' docs/DECISIONS-INDEX.md`:
+   - D1 (active): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below."
+   - D14 (active): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well"
+   - D18 (active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+     mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
+     briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+5. Trap found: the target text is not on my branch. docs/new/N5-DROP-box35.md and P-N5-TOG-box35.md exist only on trunk
+   (l-red is 82 behind), so `cat` fails; read them by `git show origin/claude/vibrant-johnson-nxvvxo:<path>`. Also: tools/oink/build
+   is absent in a new container, so vrun.sh fails until scripts/setup_oink.sh has run.
 
 ## Successor 15 (session_01M37vBg9T7zDX5aiPyPWPG7, Opus 5.5, D15/D18; created ~01:00Z 2026-10-25, date -u)
 - Handover check 5/5 (0743d2e6). GO box 36 at 01:22Z (Lead): adversary on P-N5-SO (deb5ee44) and P-N5-LP §4 (d2c8121a + fixes).
@@ -42,6 +66,35 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Next (if routed): K growth (hand-built wake chain, U1 pieces); X per phase (the remaining open core with K).
 - Trap (box 36): the j fitness J − S_o reached a degenerate 0 (J = S_o = 0); fixed by counting only phases with J >= 1 (trap 2 again).
 - Trap (box 36): killing by `ps | awk $12..` failed (the column was wrong). Use `ps -eo pid,etimes,args` and kill the pid itself.
+
+- Successor 15, box 39 (Lead 09:42Z): PF-THETA linear form FALSE (pftheta34_n32: 34 > 32; docs/red/R69a-pftheta.md); parked for good ~10:35Z.
+
+## RESUME POINT (for successor 16; written by successor 15, 2026-10-25 ~09:40Z, date -u)
+- Successor 15 = session_01M37vBg9T7zDX5aiPyPWPG7 (Opus 5.5). Boxes 36-38. PARKED after box 38 (Lead 09:34Z). Nothing in flight.
+- Reports in docs/red/:
+  - R66: P-N5-SO / LP §4: no kill. SO's d_o-term is used; J = S_o is attained.
+  - R67: EXIT-R, its consequence and ORX (EPS=1) are FALSE (exitr_cex_n16 / n48, epsseg_cex_n16 / n48). R30 lemmas: 0 failures.
+  - R68: X_SN is linear. NJB / ENT / MINSET / TOGGLE: 0 failures. CONJECTURES XSN-RUN and RISE-LAST.
+- Next box (Lead 09:34Z), for the successor: an adversary on RISE-LAST, XSN-RUN and PF-THETA (L-NEW).
+  - RISE-LAST is with L-SI succ. 5 for a proof attempt.
+  - Exact RISE-LAST event = sox3.py rfb0: a COARSE_L(θ) change at an S4a step strictly between consecutive in-scope fallbacks of one
+    scope run.
+- Tools: experiments/red/so/ (all written from the source texts; traces asserted equal to n5.run).
+  - sox.py: SO / TH / J / K.
+  - sox2.py: R30 lemmas, EXIT-R, REL / RELe, NJB blocks, Mn, maxpre.
+  - sox3.py: NO-RF-OLD, ENT, rfb0 / gap.
+  - sox4.py: L-MONO, Z-COUNT, TOGGLE.
+  - Climbers: soclimb.py (tie / sor / j / k / th), soclimb2.py (exr / seg / small / jb / jbf / xsnf / rel / njb / xrun / mn / xsn /
+    post), soclimb3.py (ENT), soclimb4.py (TOGGLE).
+  - vrun.sh: sha1, 𝒞^1O, n5 + n5b --mode spec, check_sol2. Run scripts/setup_oink.sh first in a new container.
+  - Library list: python3 experiments/new/box32/c1o_list.py 64.
+- Traps:
+  - (1) n5b's default --mode orig differs from SPEC ties; always use --mode spec.
+  - (2) Degenerate maxima keep recurring (J = S_o = 0; |Mn| = 1 with no absorptions). Put the substantive key before the cheap one.
+  - (3) Check a borrowed checker's ranges (minset.py includes the state of the next fallback).
+  - (4) Kill climbs by pid from `ps -eo pid,etimes,args`.
+  - (5) Seeds on other lanes' branches: `git show origin/<branch>:<path> > scratch`.
+  - (6) Foreground sleep is blocked. Use a background until-loop with a deadline.
 
 ## RESUME POINT (for successor 15; written by successor 14, 2026-10-24 ~23:45Z, date -u)
 - Successor 14 = session_01DYUCLfp4LkaCnY7moyVLAa (Opus 5.5). Boxes 31-35. Parks after box 35 (Lead 23:37Z).

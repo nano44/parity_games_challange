@@ -1,0 +1,14 @@
+climb FIT=norf seed=78 n=11 iterations=298762 improvements=0 best_fitness=0.0
+BEST-INSTANCE counters: {'runs': 4, 'transitions': 6}
+BEST-INSTANCE maxima: {}
+blocks: 10
+blocks_with_r<=M_somewhere (PL (c) hypothesis fails; PL (c') covers): 8
+climb_evaluations: 289531
+fallbacks: 19003
+runs: 1158124
+scope_fallbacks: 908
+scope_runs: 80357
+transitions: 1442166
+max_D_M: 0
+max_block_N: 1
+RESULT OK violations=0

@@ -1,0 +1,16 @@
+MINSET_a_states: 38
+MINSET_d_fallbacks: 8
+MINSET_intervals: 8
+NORF_post_rise_states: 3
+NORF_rises_above_L_after_fallback: 3
+blocks: 7
+blocks_with_r<=M_somewhere (PL (c) hypothesis fails; PL (c') covers): 3
+fallbacks: 15
+runs: 3
+scope_fallbacks: 15
+scope_runs: 3
+transitions: 180
+MINSET_max_|Mn|: 6
+max_D_M: 0
+max_block_N: 5
+RESULT OK violations=0

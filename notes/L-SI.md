@@ -35,6 +35,21 @@ Session session_018GWc3YukyLgRhrrYJdrzHm (Opus 5.5, D15/D18, L37/L40). Written 2
    experiments/si/xing/out/ does NOT exist in this container (`cat .git/info/exclude` shows only the template); so never
    `git add -A`, add files by name.
 
+## Resume point (successor 5, box 10; session_018GWc3YukyLgRhrrYJdrzHm; Lead GO 09:33Z)
+- (a) DONE: docs/si/P-N5-NJB-fixes-box9.md (l-si 32c2393, sha1 6a337748): NJB-1, NJB-2, NJB-L1 (the climb data were summed under one name).
+  R2-N5-NJB not seen yet; its items go to a fixes2 file.
+- (b) IN PROGRESS: docs/si/N5-RL-box10.md. New angle: Even's nominal game G_τ vs the robust Ξ ("blocked" edges).
+  - PROVED: BL-FORM (blocked edges are F → R̄, in the reverse window), CONF-MONO, EQ-END (with L-NEW's CN-LAST).
+  - PROVED CONDITIONAL on (P) (VJ00 Lemma 5.8 "1 ⇒ 2", R18's premise):
+    - BL (a THR fallback has a blocked edge; free values = confined optimum; the threat is nominally deficient);
+    - FREE-FREEZE (after a THR fallback k0, a free value whose play stays in F_k0 is frozen exactly for the rest of the phase);
+    - Proposition EV (an NJB violation's gate target z has its play in the k0-evicted region).
+  - FALSE (DATA): BL-X.
+  - DATA: after a rise there is never a fallback anywhere later in the run.
+  - Scripts: experiments/si/riselast/ (rlprobe, rltrace, blocked, blf, ffreeze, rlclimb). Climbs rl_a/b/c (seeds 10001-10003, 40 min)
+    were running at 10:2xZ.
+- Trap: `pgrep -f <pattern>` inside an until-loop matches the loop's own command line and never ends. Wait on files instead.
+
 ## Resume point (successor 4, box 9; PARKED 2026-10-25 ~07:55Z per Lead 07:10Z; LANE-RESTART step 1; session_019zCLqPUCjkJxMD4vZoJ8TA)
 Handover check 1cef5052 (Lead 5/5). Box 9 write-up: docs/si/N5-C-box9.md §1-§13. Code: experiments/si/coarse/ fbw.py, reltrace.py,
 norf.py, minset.py, frzblk.py, abso.py, ffprobe.py, levcheck.py; jclimb.py modes HEQ / REP / NORF / MINSET. Logs: coarse/logs/box9/.
