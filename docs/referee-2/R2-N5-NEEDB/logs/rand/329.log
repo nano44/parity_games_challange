@@ -1,0 +1,10 @@
+ANTI_W_checks: 6
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 6
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 24
+RESULT OK violations=0
+experiments/new/box40/out/nhc_band_base_cex_24.pg exit 0

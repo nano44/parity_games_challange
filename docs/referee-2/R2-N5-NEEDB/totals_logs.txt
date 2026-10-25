@@ -1,0 +1,79 @@
+== logs/own: 492 logs
+ANTIW_blocked_edges: 60385
+ANTI_W_checks: 9559
+ANTI_W_exceptional_used: 1269
+ANTI_W_with_exceptional_edges: 1574
+ANTI_Xi_checks: 9559
+ANTI_Xi_exceptional_used: 1358
+ANTI_Xi_with_exceptional_edges: 1687
+INTO_holds: 317
+INTO_states_r>L: 317
+NEEDB_LVplus_states: 1
+NEEDB_beta_on_P: 1
+NEEDB_case_B: 1
+NEEDB_gates_beta: 3
+OT_exit_checks: 1074
+OT_post_rise_states: 445
+OT_rises: 130
+RECORD_M>=0_P_uses_R_to_F_gate: 2766
+RECORD_inscope_THR_r>=0_M>=0: 2766
+THR_inphase_fallbacks: 2772
+THR_optima_tested: 3211
+XG_R_to_F_optimal_edges: 4488
+runs: 1968
+states: 30071
+nonzero exits: 0 []
+violation lines: 0
+== logs/spec: 492 logs
+ANTIW_W_improving_exceptional_gates: 3
+ANTIW_blocked_edges: 60037
+ANTI_W_checks: 9582
+ANTI_W_exceptional_used: 1302
+ANTI_W_with_exceptional_edges: 1625
+ANTI_Xi_checks: 9582
+ANTI_Xi_exceptional_used: 1353
+ANTI_Xi_with_exceptional_edges: 1722
+INTO_holds: 319
+INTO_states_r>L: 319
+NEEDB_LVplus_states: 1
+NEEDB_beta_on_P: 1
+NEEDB_case_B: 1
+NEEDB_gates_beta: 3
+OT_exit_checks: 1074
+OT_post_rise_states: 446
+OT_rises: 129
+RECORD_M>=0_P_uses_R_to_F_gate: 2762
+RECORD_inscope_THR_r>=0_M>=0: 2762
+THR_inphase_fallbacks: 2768
+THR_optima_tested: 3191
+XG_R_to_F_optimal_edges: 4440
+runs: 1968
+states: 30408
+nonzero exits: 0 []
+violation lines: 0
+== logs/rand: 492 logs
+ANTIW_blocked_edges: 58958
+ANTI_W_checks: 9314
+ANTI_W_exceptional_used: 1259
+ANTI_W_with_exceptional_edges: 1627
+ANTI_Xi_checks: 9314
+ANTI_Xi_exceptional_used: 1353
+ANTI_Xi_with_exceptional_edges: 1723
+INTO_holds: 303
+INTO_states_r>L: 303
+NEEDB_LVplus_states: 1
+NEEDB_beta_on_P: 1
+NEEDB_case_B: 1
+NEEDB_gates_beta: 3
+OT_exit_checks: 1058
+OT_post_rise_states: 427
+OT_rises: 126
+RECORD_M>=0_P_uses_R_to_F_gate: 2710
+RECORD_inscope_THR_r>=0_M>=0: 2710
+THR_inphase_fallbacks: 2715
+THR_optima_tested: 3166
+XG_R_to_F_optimal_edges: 4426
+runs: 1968
+states: 29514
+nonzero exits: 0 []
+violation lines: 0

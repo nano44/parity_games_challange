@@ -1,0 +1,16 @@
+ANTIW_blocked_edges: 1352
+ANTI_W_checks: 55
+ANTI_W_exceptional_used: 4
+ANTI_W_with_exceptional_edges: 6
+ANTI_Xi_checks: 55
+ANTI_Xi_exceptional_used: 7
+ANTI_Xi_with_exceptional_edges: 9
+RECORD_M>=0_P_uses_R_to_F_gate: 61
+RECORD_inscope_THR_r>=0_M>=0: 61
+THR_inphase_fallbacks: 61
+THR_optima_tested: 61
+XG_R_to_F_optimal_edges: 63
+runs: 4
+states: 152
+RESULT OK violations=0
+docs/referee-2/R2-N5-FRZ/climb/best_block_12.pg exit 0

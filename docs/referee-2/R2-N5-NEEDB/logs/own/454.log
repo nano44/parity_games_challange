@@ -1,0 +1,6 @@
+ANTI_W_checks: 2
+ANTI_Xi_checks: 2
+runs: 4
+states: 8
+RESULT OK violations=0
+experiments/si/instances/red_cf1.pg exit 0

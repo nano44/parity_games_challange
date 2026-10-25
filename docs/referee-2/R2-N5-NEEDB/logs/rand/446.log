@@ -1,0 +1,10 @@
+ANTI_W_checks: 27
+ANTI_W_exceptional_used: 2
+ANTI_W_with_exceptional_edges: 3
+ANTI_Xi_checks: 27
+ANTI_Xi_exceptional_used: 4
+ANTI_Xi_with_exceptional_edges: 4
+runs: 4
+states: 86
+RESULT OK violations=0
+experiments/si/coarse/instances/jcl_zcl_cu_n48.pg exit 0

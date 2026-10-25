@@ -1,0 +1,6 @@
+ANTI_W_checks: 9
+ANTI_Xi_checks: 9
+runs: 4
+states: 25
+RESULT OK violations=0
+experiments/new/box22/instances/i1hn_fts_best16.pg exit 0

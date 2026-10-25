@@ -1,0 +1,15 @@
+ANTIW_W_improving_exceptional_gates: 1
+ANTIW_blocked_edges: 4
+ANTI_W_checks: 3
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 3
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+THR_inphase_fallbacks: 2
+THR_optima_tested: 2
+XG_R_to_F_optimal_edges: 2
+runs: 4
+states: 13
+RESULT OK violations=0
+experiments/red/so/instances/beta2_n11.pg exit 0

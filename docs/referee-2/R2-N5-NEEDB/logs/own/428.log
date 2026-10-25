@@ -1,0 +1,10 @@
+ANTI_W_checks: 11
+ANTI_W_exceptional_used: 6
+ANTI_W_with_exceptional_edges: 10
+ANTI_Xi_checks: 11
+ANTI_Xi_exceptional_used: 7
+ANTI_Xi_with_exceptional_edges: 11
+runs: 4
+states: 60
+RESULT OK violations=0
+experiments/red/xing/instances/x32_rand16.pg exit 0

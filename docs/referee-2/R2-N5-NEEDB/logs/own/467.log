@@ -1,0 +1,6 @@
+ANTI_W_checks: 37
+ANTI_Xi_checks: 37
+runs: 4
+states: 94
+RESULT OK violations=0
+experiments/si/orlens/instances/lev_l_n20.pg exit 0

@@ -1,0 +1,10 @@
+ANTI_W_checks: 26
+ANTI_W_exceptional_used: 2
+ANTI_W_with_exceptional_edges: 2
+ANTI_Xi_checks: 26
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 3
+runs: 4
+states: 79
+RESULT OK violations=0
+docs/referee-2/R2-N5-SN/climb/stick_a_best.pg exit 0

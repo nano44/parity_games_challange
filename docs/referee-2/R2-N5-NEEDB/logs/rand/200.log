@@ -1,0 +1,10 @@
+ANTI_W_checks: 14
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 14
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 40
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/b5_os_n16.pg exit 0

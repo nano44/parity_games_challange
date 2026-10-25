@@ -1,0 +1,16 @@
+ANTIW_blocked_edges: 98
+ANTI_W_checks: 23
+ANTI_W_exceptional_used: 2
+ANTI_W_with_exceptional_edges: 2
+ANTI_Xi_checks: 23
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 2
+RECORD_M>=0_P_uses_R_to_F_gate: 7
+RECORD_inscope_THR_r>=0_M>=0: 7
+THR_inphase_fallbacks: 7
+THR_optima_tested: 7
+XG_R_to_F_optimal_edges: 7
+runs: 4
+states: 66
+RESULT OK violations=0
+docs/referee-2/R2-N5-RL/climb/best_cyc_63.pg exit 0

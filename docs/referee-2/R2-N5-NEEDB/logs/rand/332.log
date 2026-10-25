@@ -1,0 +1,10 @@
+ANTI_W_checks: 4
+ANTI_W_exceptional_used: 4
+ANTI_W_with_exceptional_edges: 4
+ANTI_Xi_checks: 4
+ANTI_Xi_exceptional_used: 4
+ANTI_Xi_with_exceptional_edges: 4
+runs: 4
+states: 15
+RESULT OK violations=0
+experiments/new/box40/out/rhc_block_bk20_3.pg exit 0

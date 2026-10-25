@@ -1,0 +1,10 @@
+ANTI_W_checks: 29
+ANTI_W_exceptional_used: 3
+ANTI_W_with_exceptional_edges: 4
+ANTI_Xi_checks: 29
+ANTI_Xi_exceptional_used: 5
+ANTI_Xi_with_exceptional_edges: 5
+runs: 4
+states: 91
+RESULT OK violations=0
+experiments/new/box29/instances/wf0_cex_n16.pg exit 0

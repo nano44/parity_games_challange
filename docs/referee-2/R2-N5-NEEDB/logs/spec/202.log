@@ -1,0 +1,6 @@
+ANTI_W_checks: 31
+ANTI_Xi_checks: 31
+runs: 4
+states: 79
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/b5_os_n24.pg exit 0

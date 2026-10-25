@@ -1,0 +1,10 @@
+ANTI_W_checks: 9
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 9
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 32
+RESULT OK violations=0
+experiments/si/lv13/logs/best_1304.pg exit 0
