@@ -6,6 +6,8 @@
   km    KM_postfreeze_kindchanges, U3x_kindchange_transitions                          [KIND-MONO regime]
   cw    CWINT_max, CW_switches                                                          [CW-INT / CW regime]
   cascb CASCB_slack (kind-B switch step − (|π_v| − 2) in W-flat kind-stable runs), CASCB_switches   [CASC-B kill if > 0]
+  run   RUN_ratio_Xch_over_r2 (Ξ-changes on R per fallback-free run / |R|²), RUN_Xchanges   [Theorem RUN probe]
+  kmp   KM_postfreeze_kindchanges, then the longest post-freeze part of a U3/U23 c_w ≻ c_θ run (L − (|R| − 1))
 Fitness = (#FAIL, objective, secondary). Any FAIL is saved as OUT_viol<k>.pg. Usage: kwclimb18.py mode seed secs OUT seed.pg"""
 import sys, os, random, time, io, contextlib
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "so"))
@@ -14,7 +16,7 @@ from soclimb import mutate, dump
 NEG = (-1, -10 ** 9, -10 ** 9)
 OBJ = {"frzu": ("FRZU_margin_changed", "FRZU_runs_with_change"), "kwf": ("KWF_margin_changed", "KWF_runs_with_change"),
        "kwfr": ("KWF_margin_r_changed", "KWF_runs_with_change"), "km": ("KM_postfreeze_kindchanges", "U3x_kindchange_transitions"),
-       "cw": ("CWINT_max", "CW_switches"), "cascb": ("CASCB_slack", "CASCB_switches")}
+       "cw": ("CWINT_max", "CW_switches"), "cascb": ("CASCB_slack", "CASCB_switches"), "run": ("RUN_ratio_Xch_over_r2", "RUN_Xchanges"), "kmp": ("KM_postfreeze_kindchanges", "U3x_postfreeze_len")}
 def fit(G, mode):
     try:
         g = pg.Game(*G)

@@ -102,3 +102,21 @@ Targets (Lead 21:00Z):
 - CASC-B's TB-even prefix under A1 re-routing: either a construction that enters the regime (a W-flat, kind-stable U3 transition with
   a kind-B switch), or a referee reading.
 - A post-freeze kind change (KIND-MONO / DIR content): no instance from any search.
+
+## 7. Addendum (22:52Z-23:32Z, date -u; Lead 21:46Z items 2 and 5)
+- Theorem RUN (L-SI §6): the max over fallback-free runs of (Ξ-changes on R) / (Δ·|R|⁴) is:
+  - 0.0011 on lib41 (S3; longest run 40, max 40 Ξ-changing transitions);
+  - 0.0123 on 2,879,100 more random runs (seed 45, n 6-18, S3 + 3 random starts).
+  - Against |R|²: 0.16 (lib41), 0.22 (random); a climb on this ratio (kw_n24 seed, 52,040 evaluations to its best) reached 0.11.
+  - Far below the bound. Since L-SI's LEN gives ≤ (r − 1)² in the m* = c_θ case, the r² ratio is the sharper probe.
+- That random run (seed 45): 0 FAIL. It also reached three bounds and regimes:
+  - FRZ-U margin 0, the bound attained again (from S3 or a start pair);
+  - CW-INT margin 0;
+  - the CASC-B regime, ONCE: 1 kind-B switch at a W-flat, kind-stable U3 / U23 transition, with slack −2 (step index = |π_v| − 4).
+    So §0's "CASC-B never reached" holds for lib41 and the first random run only. Not pinned: the saver keeps failures only.
+- KIND-MONO (post-freeze), with a climb on the longest post-freeze part of a U3 / U23 c_w ≻ c_θ run:
+  - from kc18_n24: post-freeze parts up to 17 transitions, 0 kind changes there (344,652 evaluations);
+  - from kt6_n58: no U3 / U23 c_w ≻ c_θ run (580,029 evaluations).
+  - From kchain4 (the first km climb): no such run either.
+  So the post-freeze kind-change regime stays VACUOUS, even with long post-freeze runs present.
+- PAR: 838,491 more states with c_w ≻ c_θ, all with c_w even.

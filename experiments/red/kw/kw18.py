@@ -142,6 +142,8 @@ def analyse(g, acc, name, st=None, cap=600):
             xch = sum(1 for t in range(k0, k1) if any(Xi[t + 1][v] != Xi[t][v] for v in R))
             fch = sum(1 for t in range(k0, k1) if any(Xi[t + 1][v] != Xi[t][v] for v in range(n) if v not in R))
             mx("RUN_Wchanges", wch); mx("RUN_Xchanges", xch)
+            Dl = max(len(set(x)) for x in g.succ)
+            mx("RUN_ratio_Xch_over_Delta_r4", round(xch / (Dl * r ** 4), 6)); mx("RUN_ratio_Xch_over_r2", round(xch / r ** 2, 4))
             if rank[cw] >= rank[cth]:
                 if wch > (n - 1) + 2 * n * r: fail("KWF_b1", k0, wch)
             elif wch > n + 2 * n * r + fch: fail("KWF_b2", k0, wch)
@@ -153,7 +155,7 @@ def analyse(g, acc, name, st=None, cap=600):
             elif wch > (r - 1) ** 2: fail("LEN_W", k0, wch, r)
             # KIND-MONO (post-freeze part of the run) and CW-INT, U3/U23 with c_w ≻ c_θ
             if U3x:
-                bump("U3x_runs"); mx("U3x_run_len", L)
+                bump("U3x_runs"); mx("U3x_run_len", L); mx("U3x_postfreeze_len", L - (r - 1))
                 kinds = {}
                 for t in range(max(k0, f0), k1 + 1):
                     for v in R:
