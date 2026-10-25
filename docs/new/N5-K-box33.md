@@ -291,6 +291,11 @@ Proof.
   Proof. Under H1 σ̄(o) ∈ F, so at most d_o − 1 exits are in R at any state. Each H1 ε-transition moves the current minimiser exit from F
   to R (Lemma OR (a)-(b)). The number of exits in R starts ≥ 0, ends ≤ d_o − 1, rises by ≥ 1 at each H1 ε-transition, and falls only when
   exits leave R, which inside the run happens only at S4a steps. □ (ε under ¬H1: 0 in all data; not covered.)
+- DEAD END (L-RED box 37 interim 2, l-red fdd801b): the per-phase form "ε_{H1} ≤ (d_o − 1)(f + 1)" is FALSE.
+  experiments/red/so/instances/epsseg_cex_n48.pg (sha1 b4c7dcb04fc2a156905fbe9ba2739e70e04c5c8c; n 48, o = 0, d_o 17; Lead re-run n5 26/1,
+  Oink OK verified, one Odd choice vertex): phase 7-24, f = 0, 17 ε-transitions under H1 > 16. Exit 33 absorbed at 7, leaves R at the S4a
+  step 8 → 9, re-absorbed at 13. ABS-COUNT holds with equality there (17 ≤ 16 + REL, REL = 1); LEAVE holds (1 leave, at (h)). Smaller
+  EXIT-R counterexample: exitr_cex_n16.pg (sha1 6971211e…; n 16, d_o 6; ε 5 ≤ 5 + 1). So REL is the whole question for ε.
 - So the form I pursue now: bound REL, the exit releases inside SN prefixes. In the data REL is tiny (library: 45 exit releases at S4a
   steps in all; exitr_cex_n48: 1).
 
@@ -301,3 +306,8 @@ Proof.
   change w. So REL is small in all data; ABS-COUNT's bound ε_{H1} ≤ (d_o − 1)(f + 1) + REL is far from tight there.
 - OPEN: a bound on REL per phase. LEAVE says each release needs an F-ward relevant change of level ≥ r = lev(θ, w); in a scope run r is
   non-increasing (L-SI Fact R), and after a fallback with level L, ABS-L / NL exclude releases while r > L.
+- Where the 44 H1 releases sit (same data): 13 at transitions that change w (not scope-run transitions), 31 in scope runs before the
+  run's first fallback (25 of them in scope runs that start at the phase start), 0 after a fallback (consistent with NL: none with r > L,
+  and none with r ≤ L either). So REL ≤ (releases at w-changes) + Σ over scope runs of (releases before the first fallback), and
+  only these two terms are non-empty in the data. OPEN: an (A)-type freeze at the start of a scope run (OFFGATE gives gates into F
+  ≤ M of the previous transition, which does not exist at a phase start).

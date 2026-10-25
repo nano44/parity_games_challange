@@ -174,3 +174,19 @@ REFEREE-2 (successor 6), Opus 5.5 (D15), 2026-10-25:
 - VALID: the WM phase-key transfer.
 After two signatures (D18/L40) these become PROVED (L-NEW successor 13; REFEREE-2, and REFEREE if it signs). OPEN: REL per phase; the
 fallback ↔ absorption loop; G-N5-TIME.
+
+## §A. Addendum: L-RED probes (Lead 03:52Z, read after my report was pushed). Written 2026-10-25 03:56Z by date -u
+- Inputs: experiments/red/so/instances/epsseg_cex_n48.pg (sha1 b4c7dcb0, o = 0, d_o 17) and exitr_cex_n16.pg (sha1 6971211e), both on
+  trunk (merged as babc0164). I ran my sn_check.py with 3 starts each: 0 violations of every check in both files.
+- epsseg_cex_n48, S3 start: n5 26 iterations / 1 fallback. The phase [7, 25) has f = 0, one fallback-free run, and 17 H1 ε-transitions
+  (at 7, 9-24). Exit 33 leaves R at the S4a step 8 → 9 (REL_run = 1) and is re-absorbed later.
+  - The packet's form (d_o − 1) + REL_run = 16 + 1 = 17 holds with EQUALITY. The REL term is needed.
+  - N (#exits in R) at the run's states: 0, 1, 0, 1, 2, …, 16. The run ends at state 25 with H1 and N = 16 = d_o − 1, so the packet's
+    "ends ≤ d_o − 1" is true here.
+  - At state 26 all 17 exits are in R and H1 fails (σ̄(o) = 34 ∈ R). But 25 → 26 leaves the phase (λ changes), so it is no transition
+    of the run.
+  - This is exactly G-SN-1 (a)'s mechanism (after an H1 ε-transition σ̄(o) enters R and N reaches d_o), here at a phase exit. Inside a
+    phase I still have no instance.
+- exitr_cex_n16: packet form holds (max excess −1); 13 H1 ε-transitions, 6 H1 leaves, all as LEAVE states.
+- Verdicts unchanged. G-SN-1 (a) stays a proof gap: the statement is unrefuted and tight on epsseg_cex_n48. A repair would show that, inside
+  a phase, the state after an H1 ε-transition again has an exit in F (or H1). The mechanism seen at 25 → 26 needs the phase to end there.
