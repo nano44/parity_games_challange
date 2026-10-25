@@ -333,3 +333,81 @@ Signed: REFEREE (successor 8) (Opus 5.5, D15).
   - RL-2 (REFEREE only): MERGE scope "−1 ≤ ℓ < ∞".
   - RL-4 (REFEREE only): EV citation, gate existence = the NO-RF-OLD Corollary.
   - N-RL-1, N-RL-2, N-RL-3 (REFEREE-2; I accept all three) and the FREE-FREEZE "(h) at t" note: wording.
+
+## Addendum A2 (written 2026-10-25 12:52Z by date -u; REFEREE successor 8 (Opus 5.5, D15)): the fixes file, Lemma CYC-EV, restricted TEV-RED
+- Object: docs/si/P-N5-RL-fixes-box10.md (sha1 ac0274586a3b715d8725bc5226e3b32572edf017, l-si 1f107bfb, on trunk). It cites its proof
+  source docs/si/N5-TEV-box11.md (sha1 58a0b3cf…; §0 setting (Σ), §1 FZ, BF, §2 RB, WALK, §3 Step 1′). Both checked by sha1sum. Routed
+  by the Lead at 12:49Z (Lead's stamp).
+- Read before this addendum: R2-N5-RL (my §C). REFEREE-2's G-RL-1 is the same gap, so this is not an independent first read of the gap.
+  The proof check below is my own.
+
+| item | verdict (Opus 5.5, D15) |
+| --- | --- |
+| Lemma FZ, Lemma BF, Lemma RB, Corollary WALK (a)-(c) (N5-TEV-box11 §1-§2; setting (Σ)) | SIGNED (no (P)) |
+| Lemma CYC-EV (ENT setting; no Ev vertex of F_k on C_k) | SIGNED (no (P)) |
+| restricted TEV-RED (fixes RL-1 "Replacement statement") | SIGNED CONDITIONAL ON (P), with RL-3's wording; at t = k without extra hypothesis (by CYC-EV), at t < k as TEV-RED′ |
+| Consequence (the reduction) | now SIGNED CONDITIONAL ON (P): it uses TEV-RED only at t = k |
+| RL-2, RL-3, RL-4 replacement texts | correct; each closes its row |
+
+- FZ:
+  - no leave (NL (ii)) at the S4a steps of (k0, k) gives F_k ⊆ F_s;
+  - FLAT-ALL (iii) across k0 ((h) at k0 and k0 + 1);
+  - NL (i) at each S4a step. Correct.
+- BF:
+  - Ξ_{k0}(v) = v ⊕ Ξ_{k0}(a) (Lemma G). Ξ_k(v) = v ⊕ b_k(v) by (P2): v ≠ c = λ_k(v), and c ∈ F_{k0}.
+  - v is not on the pre-c path of its successor's play (a functional-graph argument, correct).
+  - Removing v from both path sets and applying FZ: correct.
+- RB.
+  - a ≠ σ_k(v): σ_k(v) ∈ F_k and a ∈ R̄_k.
+  - Ξ_k(a) ⊵ Ξ_{k0}(a) (R15 (a)), and COARSE_L(Ξ_{k0} a) = COARSE_L(b_k v) (BF).
+  - A strict COARSE_L increase would make (v, a) a gate at k of level > L, against M_k ≤ M_{k0} = L (CLS2; k and k0 are fallbacks of
+    S). Correct.
+  - This is where t = k (a fallback state) is used. At an S4a state t < k no such bound exists. L-SI says so in RL-1 (ii), and
+    tevlast_cex_n40 shows the gate (15, 21) of level 33 > L at t = 7.
+- WALK.
+  - (a): j exists (o ∈ R̄_k). v ∈ F_k ∩ R_{k0}. An Odd v ≠ o with its unique successor in R̄_k would be in R̄_k.
+  - (b): RB at v, then Lemma G at k0 and at k. The path part is (π ∩ H) ⊔ (P(θ) ∩ H), because P(·) ⊆ V_{>c} and c is constant on S.
+  - (c): π^{k0}_{a_j} ⊆ π^{k0}_{a_1}. Correct.
+- CYC-EV.
+  - v ∈ Ev ∩ F_k on C_k: then v ≠ c (c ∈ F_{k0}), and Ξ_k(v) = W_k(v) = (c, ∅, ·), since C_k is topped by c.
+  - FZ and Lemma G at k0: (π^{k0}_v ∩ H) ⊔ A = ∅. So A = ∅ and v's route is low.
+  - WALK (c): B ⊆ A = ∅, against B ≠ A (the rise).
+  - It uses (Σ), the rise and (h) at k0, k0 + 1 and k. It does not use M_k = L or (P). C_k is the cycle of x_k's play: x_k ∈ F_k and
+    θ_k = o ⊕ Ξ_k(x_k) has cycle node c. Correct.
+- Does CYC-EV cover what TEV-RED (1)-(4) need at t = k (my 12:40Z point)? Yes.
+  - With no Ev vertex on C_k, every Ev vertex of x_k's play lies on its pre-cycle prefix, which is part of the pre-c path. So "the last
+    Ev vertex on the play's prefix before its first visit to c" is the last Ev vertex of the whole play.
+  - f's whole play (the rest of the prefix and C_k) avoids Ev, so it lies in F_{k0} (F_k ⊆ F_{k0} ⊔ Ev). (1) follows with FREE-FREEZE
+    ((P)).
+  - (2)-(5) are as I checked in §6, with (3) in RL-3's form.
+  - For t ∈ (k0, k) the replacement keeps the hypothesis (TEV-RED′), which I signed in §6. RL-1 is closed.
+- Remark (agreed): CYC-EV also settles EV's "q on the cycle" case at t = k (z's cycle is C_k), so my §6 EV remark and R2's N-RL-2 are
+  vacuous in the ENT setting.
+- Not reviewed here, and NOT signed by this addendum: N5-TEV-box11.md §3 Theorem ENT-X ("the ENT setting is empty", CONDITIONAL on (P)) and
+  §4 Corollaries NJB-A, D1, PL-S″. They are new results, beyond the fixes, and need their own packet. If ENT-X holds, EV, EV+ and
+  TEV-RED become vacuous: true, but about an empty setting.
+- DATA (own code docs/referee/scratch/cyc_probe.py on rl_engine; logs rl_logs/cyc_named.txt, cyc_lib.txt):
+
+| set | (Σ) pairs | FZ | BF | RB | WALK | failures (FZ, BF, RB, WALK a/b, M_k ≤ L, Ev on C_k) | pairs with a rise |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| NAMED (75) | 262 | 6,177 | 515 | 344 | 529 | 0 | 0 |
+| LIB (234) | 377 | 10,525 | 1,080 | 578 | 1,121 | 0 | 0 |
+| L-RED tev instances + my climb bests (5) | 19 | 482 | 52 | 27 | 53 | 0 | 0 |
+
+- The pair, RB and WALK counts equal the lane's rb.py counts exactly (262 / 344 / 529; 377 / 578 / 1,121).
+- Thin spot: no (Σ) pair has a rise, so CYC-EV's hypothesis is vacuous in data. FZ, BF, RB and WALK are non-vacuous; CYC-EV rests on the
+  proof.
+- Joint status after A2:
+  - RL-1 is closed by the fixes file (pending REFEREE-2's view of the same text).
+  - RL-2, RL-3 and RL-4 are closed by their replacement texts.
+  - The landing label for TEV-RED is the replacement statement, CONDITIONAL ON (P). (P) itself is now P1, signed by both referees,
+    pending CHECKER.
+
+## Note on A2 (written 2026-10-25 13:15Z by date -u)
+- The Lead's ruling of 12:58Z (Lead's stamp) crossed with A2 (pushed 12:56Z by date -u): CYC-EV is judged in P-N5-ENT, not as an RL
+  addendum.
+- So, for RL's landing, A2's CYC-EV-based rows are superseded. RL lands with TEV-RED′ and its explicit hypothesis ("no Ev vertex on
+  x_t's cycle at t").
+- The CYC-EV check itself is in R-N5-ENT.md (55a3f6fb, SIGNED). A2's RL-2..4 text checks stand.
+- REFEREE-2's §C (referee-2 88571b0, per the Lead) accepts RL-2 and adopts TEV-RED NOT SIGNED as stated / TEV-RED′ signed. RL and P1 are
+  converged.
