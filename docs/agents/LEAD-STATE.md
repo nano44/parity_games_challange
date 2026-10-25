@@ -1449,3 +1449,4 @@
     - Both repairs are given; both statements are true.
     - The post-freeze regime is unreached even in 3.82 M climbs.
 - 19:59Z Lead: merged checker cc21c36. C54 = R45 FAIL. E-1: FREEZE-F (a) dropped "from z to c_θ". E-2: G_Û and G[A] undefined. R45 revised with E-1, E-2 and N-1. It is independent of C53 E-1, since it uses only (i′).
+- 20:04Z Lead: hourly sweep 20:03Z. WATCHDOG reports no overage (Lead 689k, continuing through compaction). WATCHDOG flagged L-COMP 4 idle for 72 min. That is expected: box8 n 5 Q3 is a background run (~3.3 h per quarter; Q2 started 15:27Z and finished ~18:50Z, so Q3 should end ~22:10Z). No nudge unless it is still idle after 22:30Z. CHECKER 7 is waiting on the revised R44 (pending REFEREE-2's diff) and R45 (sent 20:03Z). No other exceptions.
