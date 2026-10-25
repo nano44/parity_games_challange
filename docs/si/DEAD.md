@@ -135,3 +135,13 @@ Iteration tables: docs/si/RESULTS.md (generated); raw logs experiments/si/out/ (
   - Instance: experiments/red/so/instances/tevlast11_n40.pg (sha1 8421ab30), S3 / own: k0 = 5, L = 33, j = 8, t = 22.
   - Exact obstruction: the only gate is the route improvement (16, 23), R → R̄.
 - What survives: CONJECTURE INTO (some gate into R̄), 425 / 425 library states, which with FBL excludes case (i) of the rise claim.
+- NONE-LAST / "an in-scope THR fallback with M = −1 is the last fallback of its scope run" (REFEREE-2 N-LV2-3; L-SI succ. 8), and with it
+  "after a (β) fallback at M = −1 the next S4a step changes λ_Ξ". FALSE.
+  - Instance: experiments/red/so/instances/beta2_n11.pg (sha1 bdea2a23; L-RED 16), canonical S3 start; n 11, o = 1 (rank 9), τ(o) = 8,
+    θ = (0, ∅, 2) ◁ w = (0, ∅, 6) (r = −1), λ_Ξ ≡ 0. Confirmed by L-RED ex16, REFEREE (LV2 §C) and the Lead (scopefb.py).
+  - SPEC trace: state 0 is a fallback with the (β) gates (5, 2), (5, 6) (R → F, level −1); it evicts 5 (R̄ {1, 5, 7, 10} → {1, 7, 10}).
+    State 1 is again a fallback with r = −1, M = −1: the R-vertex 10 now has the (β) gate (10, 5) into the evicted vertex 5 (and (0, 5)
+    F → F). λ_Ξ is unchanged.
+  - Exact obstruction: eviction cascades. An evicted vertex becomes a (β) target for its R-predecessor, one layer per fallback, with
+    COARSE_{−1}(Ξ) and λ_Ξ fixed (FLAT-ALL_{−1}^{none}). The step 0 → 1 is a fallback, not an S4a step, so "the next S4a step changes λ_Ξ"
+    has nothing to act on. LV-NONE (≤ n·n_E + 1) is unaffected; this instance exercises its N = 2 step.

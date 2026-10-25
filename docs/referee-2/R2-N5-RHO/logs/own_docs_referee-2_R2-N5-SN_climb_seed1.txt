@@ -1,0 +1,15 @@
+FRZF_runs: 1
+HAT_b: 6
+RECORD_phases_skipped_large_U: 1
+YFORM_a: 3
+YFORM_b: 7
+phases: 10
+phases_with_HN: 1
+rho_HN_total: 0
+runs: 3
+states: 10
+max_FRZF_changes: 0
+max_rho_HN: 0
+max_sum_B_S: 0
+max_sum_theta_S: 0
+RESULT OK violations=0

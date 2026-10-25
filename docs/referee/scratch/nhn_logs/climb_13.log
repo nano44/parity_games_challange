@@ -1,0 +1,12 @@
+EV2_ends                       288076
+EV2_max_per_phase              1
+H3_chk                         290720
+NHN_drops_ending_stretch       0
+NHN_max                        2
+SG_chk                         288076
+best_score                     -8
+evaluated                      401097
+iters                          401097
+with_EV2                       288076
+FAILS 0
+exit 0

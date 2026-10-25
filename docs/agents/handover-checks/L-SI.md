@@ -1,3 +1,64 @@
+# Handover check: L-SI (successor 9, written 2026-10-25T18:12Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; the commands are given. Predecessor: successor 8, session_013kZp65x9TKU9AqPZdMYGpm.
+Its handover is e683a4c0, notes/L-SI.md "## HANDOVER (successor 8, box 13)".
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. `git fetch origin claude/l-si` moved origin 0d48da26 → e683a4c0 (the local clone was stale at 0d48da26);
+  `git checkout -B claude/l-si origin/claude/l-si`; `git rev-parse HEAD origin/claude/l-si` → both e683a4c0.
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` = e6ee6130 (Lead 18:06Z "P-N5-NEEDB pinned").
+  - Before merging: `git rev-list --left-right --count HEAD...trunk` → 1 ahead / 12 behind; merge-base 680c0294.
+    The 1 ahead is e683a4c0 (succ. 8 handover); everything up to 680c0294 is on trunk already.
+  - `git merge --no-ff` of trunk (no rebase) → 2 ahead / 0 behind (the handover commit + the merge). This file is the next commit.
+
+## 2. Open work and the next step of each (nothing running: `pgrep -a python` empty; fresh container)
+Frozen files, re-measured with sha1sum: P-N5-ENT 4fd22be7, P-N5-LV d0d797f0, LV-addendum a15a8871, LV-fixes b75ab1fc,
+P-N5-LV2 3b23a41f, LV2-fixes f76fd1d1, N5-LV2 94ac2469, P-N5-NEEDB 7471aef3, N5-RISE 3b8fea13, N5-A2STAR 2a85601d.
+- P-N5-NEEDB (docs/si/P-N5-NEEDB-box13.md, 7471aef3): PINNED on trunk e6ee6130 (`git show trunk:… | sha1sum` = 7471aef3),
+  queued for both referees after NHN (LEAD-STATE 18:06Z). To sign: XG, ANTI, NEED-β (all cases incl. A2*), OLD-THREAT, INTO ⇒ no case
+  (i) fallback. No referee report yet (no R-N5-NEEDB / R2-N5-NEEDB on trunk).
+  - Next step: when reports land, items go to a NEW file docs/si/P-N5-NEEDB-fixes-box13.md (does not exist).
+- P-N5-LV: LANDED as RESULTS R41. P-N5-LV2 + fixes (f76fd1d1): REFEREE signed (b454ca3, Add. 46a8030, §C ed8bc207), REFEREE-2 a551deb;
+  landing is the Lead's/CHECKER's. Next step: none for me unless a §C item arrives (→ a NEW file).
+- Rise question (docs/si/N5-RISE-box13.md):
+  - case (i), r > L up to a later fallback: reduced (PROVED, succ. 8, via FBL) to CONJECTURE INTO (425/425 library states). OPEN.
+  - case (ii), r ≤ L before the next fallback: OPEN, untouched. L-RED box 41 attacks both (Lead 17:25Z).
+  - Next step: a proof attempt of INTO, if the Lead routes it.
+- LV-NONE sharpening: DATA max 1 u* = none fallback per scope run in 8 climbs, but beta2_n11 (L-RED) has 2 (eviction cascade).
+  CONJECTURE (reading): count ≤ cascade depth (≤ depth of R). Next step: state and try to prove a cascade-depth bound.
+- "THR ⇒ M ≥ 0" in scope: OPEN; NEED-β pins the shape a counterexample needs ((β) gates on every reply).
+- G-N5-TIME items not this lane's alone: θ_ph, HN stretches for τ(o) ≠ o, OTHER states, REL(S), phases.
+- The choice among these is the Lead's (succ. 8 NEXT 2); I wait for "go".
+
+## 3. docs/GAPS.md rows I own
+- None (`git show trunk:docs/GAPS.md | grep -n L-SI` → no owner column = L-SI).
+- I work under G-N5-TIME (l.11): major, owner L-NEW (L-LIT T22; referees later), status open. NOW l.2: "NO polynomial bound for N5
+  is proved."
+- G-N5-TERM (l.16): closed (R15).
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.332; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems."
+  - Lead reading L40 (index l.33: active) (2)d: L-SI is the OR/MDP policy-iteration lens on N5.
+- D1 (index l.5: active; DECISIONS.md l.3, full text docs/decisions/D001-launch-brief.md l.25, l.96):
+  "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own,
+  as wrong until it passes the gauntlet below." / "Never publish, post, email, submit or contact anyone outside the fleet. Anything
+  external is my decision."
+- D16 (DECISIONS.md l.299; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap: a stale clone. This container's local claude/l-si was at 0d48da26 (successor 0's box end, Oct 16), ~13 boxes behind origin
+  e683a4c0, and `git status` alone would not have shown it before the fetch.
+  - Check: `git fetch origin claude/l-si` + `git checkout -B claude/l-si origin/claude/l-si` + `git rev-parse HEAD origin/claude/l-si`
+    equal, before reading any notebook. Same again (fetch + merge, never rebase) right before every push.
+- Still live: never edit a frozen file. Before touching docs/si/P-* or *-fixes-*, `sha1sum` it and grep notes/L-SI.md, docs/NOW.md and
+  docs/agents/LEAD-STATE.md for the sha1; if listed, new text goes in a NEW file.
+- From succ. 8: `until ! pgrep -f X` never ends (matches itself), wait with `while kill -0 PID`; absolute paths in multi-line Bash;
+  never `git add -A`; never pipe scripts/push.sh (redirect to a file, print $?).
+
+---
+
 # Handover check: L-SI (successor 8, written 2026-10-25T15:36Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; the commands are given. Predecessor: successor 7, session_01Nosb1KbEcKX2yMZfBES2sA.
 Its handover is 0756713c, notes/L-SI.md "## HANDOVER (successor 7, box 12)".
