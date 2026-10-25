@@ -24,9 +24,15 @@ fbw.py, reltrace.py, levcheck.py, jclimb.py modes HEQ / REP. Logs: experiments/s
 - §8: Lemma NO-RF-OLD (PROVED): after a θ-change above L in an interval with r > L, vertices already in R have no gate into F.
   So the next evicting fallback's tails are all entrants (CONJECTURE ENT). DATA: 54 rises above L after a fallback, all after the
   run's last fallback; NORF climbs (seeds 9201/9202, 20 min each, from 06:01Z) reached 16 / 23 post-rise states, 0 violations.
+- §10 (dd5fa250): NJB holds on L-NEW's x48_rt48_final / b6_xw_n56. Lemma MINSET (PROVED): NJB <=> the set Mn of COARSE_M-minimal
+  free exits is never emptied by absorptions inside a level-M block (Mn gains members only by releases at the block's fallbacks).
+- §11 (bb8ed9ed): Lemma RDROP (a first break needs r > M, by (C5)); PL (c′): D_M ≤ d_o − 1 + REL_M for EVERY block. The r-drop
+  blocks are CLOSED, and PL-S holds for every scope run. Not in the frozen packet; for its fixes file if wanted.
+- PL-I (§7) is CONDITIONAL on P-N5-FRZ (pinned 25fda0f).
 ### NEXT
-1. Prove ENT (entrant tails after a rise above L). That closes NJ-INT, then NJB, then (L1).
-2. Blocks where r drops to M (NL / ABS-L unavailable); level −1 fallbacks.
+1. Prove ENT / MINSET non-emptying (NJB). Idea not yet working: absorbing the last member of Mn needs F→R̄ entry gates of level ≤ M
+   (ABS-O (a)); relate that to the drain at f_i (FBL: no F→R̄ gate at a fallback).
+2. Level −1 fallbacks per scope run.
 3. Record the NORF climb results in box 9 §9 (outputs in the scratchpad: climb/norf_*.pg); pin the bests if useful.
 
 ## Resume point (successor 3, box 8; superseded by box 9; PARKED 2026-10-25 ~02:35Z at ~500k context after freezing P-N5-CLS; LANE-RESTART step 1)
