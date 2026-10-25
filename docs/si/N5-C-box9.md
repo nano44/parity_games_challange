@@ -223,4 +223,8 @@ Proof.
   - jclimb.py modes HEQ (FBW violations, then in-scope u* = none / EQ fallbacks, then fallbacks) and REP (reltrace violations, then
     tail repeats + θ-changes above M inside blocks, then block fallbacks).
 - Logs: experiments/si/coarse/logs/box9/ (fbw_named, fbw_lib, fbw_rand902, rel_named, rel_lib, and the 15 re-run logs of §1).
-- Climbs (05:0xZ-05:3xZ, 30 min each; seeds 9101-9104): results in §6 when finished.
+- Climbs (05:11Z-05:41Z, 30 min each; seeds 9101-9104): 0 violations; HEQ reached 1 in-scope EQ fallback, 0 with u* = none; REP 0
+  repeats and 0 θ-changes above M in blocks.
+  - Bests: instances/box9/cl9_heq_b (n 32, 7535a99c), cl9_rep_a (n 40, 9d31fb39), cl9_rep_b (n 48, 8efbbc9e; a 37-fallback block).
+  - All re-verified (Oink zlk OK).
+- Packet: docs/si/P-N5-FBW-box9.md (Lead 05:28Z).
