@@ -318,3 +318,44 @@ Nothing in flight. Three §Cs, each blocked on REFEREE successor 12's report lan
   dirs, and open R-N5-<X>.md only after `git log origin/claude/referee-2 -- docs/referee-2/R2-N5-<X>.md` shows my report pushed.
 - It bit again this session in its other form: the container started stale (77f9cf71, without e931730c); caught by fetch +
   `git merge-base --is-ancestor e931730c HEAD` before any edit.
+
+## successor 15 (2026-10-26T07:3xZ by date -u; Opus 5.5 under D15/L37; predecessor successor 14 session_01Mx2amUjD2RPaFRD5Re2ZHs, handover a50c0371 + merge c5ea9acb)
+Measured from the repository at the time of writing (commands named), not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee-2`. Local branch at container start was STALE: HEAD 77f9cf71 (R2-N5-1OA §C2);
+  `git merge-base --is-ancestor a50c0371 HEAD` -> no. After `git fetch origin claude/referee-2 claude/vibrant-johnson-nxvvxo` and
+  `git merge --ff-only origin/claude/referee-2`: HEAD = origin/claude/referee-2 = c5ea9acb (predecessor's trunk merge); a50c0371 is-ancestor -> yes.
+- Trunk claude/vibrant-johnson-nxvvxo at ca0a4e97 (also the STAU pin). `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` -> 4c78127e
+  (no conflict). `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 1 ahead, 0 behind (merge-base ca0a4e97,
+  so all predecessor work is on trunk). This file's commit adds one.
+
+### 2. Open work and next step of each
+- Nothing in flight (predecessor: IN FLIGHT none; all §Cs done; NC report VOID).
+- NEXT (after GO): P-N5-STAU, docs/new/P-N5-STAU-box45.md, sha1 7446d9a9 (Lead), frozen at l-new 010bfdae, pin trunk ca0a4e97.
+  Sign §1 Lemma Στ-STEP (a)-(d) + corollary; CHECK §2 (audited table; answer (1) whole citation chain of R48 (i) and R50 (h)? (2) any proof
+  using S4b's output implicitly?); not §3, §4. Next step: sha1sum the blob at the pin, read the packet, the SPEC S1-S5 and every cited result;
+  reuse/extend docs/referee-2/R2-N5-EPR/epr_check.py (own N5^τ, SELF-checked against the Runner); compare with L-COMP l-comp 16c960b5 only
+  after my own runs. Output docs/referee-2/R2-N5-STAU.md.
+- Independence state: `git ls-tree --name-only -r origin/claude/vibrant-johnson-nxvvxo docs/referee/ | grep -i STAU` -> empty. Not opened.
+- Fix routings in predecessor's NEEDS (2T, FBK, XEP, EPR, H3) are the Lead's.
+- Oink not built in this container (tools/oink/build absent).
+
+### 3. docs/GAPS.md rows I own
+- None (owner column of docs/GAPS.md: L-ALG, L-RED, L-NEW, L-STRUCT, owner; no REFEREE-2). The open row STAU sits under:
+  G-N5-TIME | major | L-NEW (L-LIT T22; referees later) | open (docs/GAPS.md:11; latest UPDATE 07:25Z R61/R63).
+
+### 4. Three owner rulings that most constrain me (verbatim), with DECISIONS-INDEX status
+1. D1 (index line 5: active), docs/DECISIONS.md:7-8:
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index line 26: active; L37 line 27 active: signatures "(Opus 5.5, D15)"), docs/DECISIONS.md:278:
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index line 32: active; L40 line 33 active: labels PROVED / CONJECTURE / OPEN), docs/DECISIONS.md:333:
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap: the container starts on a stale local branch (again this time: 77f9cf71 without a50c0371). Check: fetch, then
+  `git merge-base --is-ancestor <handover SHA> HEAD` before any edit; fast-forward to origin/claude/referee-2, then --no-ff trunk merge.
+- Second trap (succ. 12 independence slip): repo-wide greps can print REFEREE verdict lines (LEAD-STATE, RESULTS) before my report.
+  Check: list docs/referee/ by name only, grep only the packet's own dirs, open R-N5-STAU only after my report is pushed.

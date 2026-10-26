@@ -328,3 +328,16 @@ Labels (L40): DATA. Every scored climb run is checked by the named checkers; a v
   are hard to find. FIT=h3 climb (seed 601, from frz3_n24): only (NC) and not (h_D) states (22 in 2 checked runs), 0 violations.
   ABS-L climbs done (4 x 15,000 steps): 0 violations; 1,268,127 ABS-L intervals, CLS1 1,351,034 checks (1,268,127 case r > L), CLU
   1,753,459; 0 theta-changes above L, so ABS-L's absorption count is always 0 (vacuous in substance).
+
+## Box 11 item 2 (Lead 07:15Z): L-SI box-17 OFFSET / TWIN-GAP (docs/si/N5-RUND-box17.md §5), independent check (rund_check.py)
+Own code from the note's text (L-SI's experiments/si/rund/ not opened) on gdnc_check.state_info; S = every maximal fallback-free in-phase run
+with (h3_D) throughout. Checked: OFFSET (a) lambda_Xi = lambda_W and monotone s^Xi, s^W; (b) Delta(v) in {0, delta(u(v))} by case; (c) ranks of
+the gates' symmetric differences in [l_S, L*], offsets multiples of 2^l_S, all 0 when U_S is empty; TWIN-GAP (i), (ii) (0-based base
+k_0 + n - 1), (iii). Mutation control RUND_MUT=b (offset sign flipped) fails 33 times on 3,000 random C^2O: OFFb has bite. DATA:
+| set | runs | S runs (U_S nonempty) | OFFb checks | TGi checks | max B | max N_v | late changes (TGii) | violations |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| random C^2O, n 5-20, 2 x 40,000 games x (canonical + random start), seeds 61/62 | 160,000 | 22,058 (707) | 662,235 | 1,408 | 17 | 2 | 0 | 0 |
+| random C^3O / C^4O, same sizes, seeds 63/64 | 160,000 | 14,823 (638) | 450,547 | 1,372 | 16 | 2 | 0 | 0 |
+| library frontier (431 files, canonical + 3 random) | 1,724 | 736 (419) | 141,890 | 4,769 | 59 | 8 | 0 | 0 |
+| frz1-3_n24 + notnc1-8, canonical + 30 random each | 341 | 237 (63) | - | 1,187 | 19 | 7 | 0 | 0 |
+TWIN-GAP (ii) is VACUOUS in all data: no offset change lies at a state >= k_0 + n - 1 (the same shortness of runs as FRZ-U_H3's data).
