@@ -53,7 +53,7 @@ H_E, G′_E and O_E.
 - No bound on N_ep. No statement about phases with an epoch of |D_E| ≥ 2 (1,628 of 8,727 lib41 epochs, all short, len ≤ 27 + 1; P-N5-EPR §5).
 - The instances of §1 are not counterexamples to any conjecture of the fleet; they refute only the proposed shape "N_ep ≤ #distinct optima".
 
-## 4. Recurrence climbs (DATA; experiments/new/box45/recclimb.py; added 07:40Z by date -u)
+## 4. Recurrence climbs (DATA; experiments/new/box45/recclimb.py; added 07:35Z by date -u)
 Hill climbs (box43 climb.mutate, S3 start) maximising (max recurrences of one configuration in a phase, max N_ep); --d0: recurrences of
 C = τ|Q only. Outputs out/recclimb*.txt, best games in out/climb/.
 | run | best (recurrences, N_ep) | n |
