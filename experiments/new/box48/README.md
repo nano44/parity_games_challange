@@ -28,3 +28,7 @@ transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
   0; MUT=1 must bite. out/fsrestrict_liball_n34_k2.txt, out/fsrestrict_liball_n34_MUT.txt, out/fsrestrict_long3.txt.
 - phrestrict.py STARTS SEED (--list FILE | files) [--nmax N] [--start F]: Lemma RESTRICT_H on the used-edge game G^P of each phase (N5-NCONF §10):
   XI_V, REP_V must be 0; MUT=1 must bite. out/phrestrict_long3.txt, out/phrestrict_liball_n34_k2.txt, out/phrestrict_liball_n34_MUT.txt.
+- qp.py STARTS SEED (--list FILE | --rand C LO HI GSEED KFRAC | files) [--nmax N] [--start F]: QP = |union of D_k| per phase (asserted), D0, ENT, N_ep,
+  NCONF, XDEG, QP_c per class (N5-NCONF §11). out/qp_liball_n48_k2.txt, out/qp_dunion.txt.
+- qpclimb.py QT K NMAX STEPS SEED OUTDIR [--seed FILE.pg]: climb on (min(QP, QT), len) of one phase from S3 (O fixed by climb.mutate). out/qpclimb/.
+- dunion.py GAME START K OUT.pg OUT.start: k disjoint copies with copied start (instances/du/nep90x2..4).

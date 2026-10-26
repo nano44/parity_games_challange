@@ -1,0 +1,37 @@
+n 0-9: phases 83 maxQP 2 maxQ 4 sumQP 29 sumQ 87 maxENT 1 maxQPfrac 1.0 QPge3 0
+n 10-19: phases 222 maxQP 6 maxQ 10 sumQP 207 sumQ 400 maxENT 4 maxQPfrac 1.0 QPge3 11
+n 20-29: phases 335 maxQP 5 maxQ 16 sumQP 264 sumQ 1048 maxENT 2 maxQPfrac 1.0 QPge3 19
+n 30-39: phases 429 maxQP 16 maxQ 25 sumQP 541 sumQ 1199 maxENT 4 maxQPfrac 1.0 QPge3 35
+n 40-49: phases 431 maxQP 15 maxQ 23 sumQP 649 sumQ 1895 maxENT 15 maxQPfrac 1.0 QPge3 73
+worst (QP n |Q| D0 ENT N_ep NCONF XDEG len QPc classes name):
+   16 30 16 16 0 2 2 20 1 16 1 experiments/red/carry/instances/ctx7_n30.pg
+   15 42 20 0 15 2 2 15 1 15 1 experiments/red/n5/instances/dl_4_4.pg
+   15 42 20 0 15 2 2 15 1 15 1 experiments/red/n5/instances/dl_4_4.pg
+   15 30 16 15 0 2 2 22 1 15 1 experiments/red/carry/instances/ctx7_n30.pg
+   12 48 22 8 4 2 2 13 1 12 1 experiments/alg/instances/c6_replay3_n48.pg
+   12 32 19 11 1 2 2 12 1 12 1 experiments/alg/instances/flat_dead_carries_n32.pg
+   11 48 18 11 0 2 2 12 1 11 1 experiments/n5-epoch/instances/lend15_n48.pg
+   11 42 20 6 5 3 3 12 4 11 1 experiments/red/n5/instances/dl_4_4.pg
+   11 32 19 11 0 2 2 11 1 11 1 experiments/alg/instances/flat_dead_carries_n32.pg
+   10 40 17 10 0 1 1 10 2 10 1 experiments/red/carry/instances/spp22_oink_n40.pg
+   10 32 13 9 1 2 2 10 2 10 1 experiments/new/esc/instances/cond_stuck_symsi3_YE.pg
+   9 32 13 7 2 4 4 11 5 9 1 experiments/new/esc/instances/cond_stuck_symsi3_YE.pg
+longest phases (same columns):
+   1 48 1 1 0 15 4 3 112 1 1 experiments/red/so/instances/xsn91_n48.pg
+   1 48 1 1 0 3 3 2 110 1 1 experiments/new/box28/instances/x48_rt48_final.pg
+   1 40 1 1 0 33 8 7 103 1 1 experiments/red/xing/instances/j4_n40.pg
+   1 48 1 1 0 14 4 3 94 1 1 experiments/n5-exhaustive/instances/b6_xl_n48.pg
+   1 40 1 1 0 15 5 4 87 1 1 experiments/n5-exhaustive/instances/b6_xl_n40.pg
+   1 48 1 1 0 15 9 8 85 1 1 experiments/red/xing/instances/j8_n48.pg
+   1 48 1 1 0 2 2 1 85 1 1 experiments/red/xing/instances/x32_waves48.pg
+   1 32 1 1 0 12 4 3 83 1 1 experiments/n5-exhaustive/instances/b6_xl2_n32.pg
+   1 32 1 1 0 13 4 3 81 1 1 experiments/n5-exhaustive/instances/b6_xl_n32.pg
+   1 48 1 1 0 12 4 3 80 1 1 experiments/n5-exhaustive/instances/b6_xw_n48.pg
+   1 48 1 1 0 2 2 1 78 1 1 experiments/red/n5inj/instances/returns_rt48.pg
+   3 39 4 2 1 8 5 4 77 3 1 experiments/new/box21/instances/fts_best39.pg
+   1 40 1 1 0 1 1 1 77 1 1 experiments/n5-exhaustive/instances/b5_os_n40.pg
+   1 48 1 1 0 15 9 8 77 1 1 experiments/red/xing/instances/j7_n48.pg
+   1 32 1 1 0 12 4 3 77 1 1 experiments/red/xing/instances/x32_waves32.pg
+len >= 10: phases 481 maxQP 8 maxQPc 8 maxENT 5 max QP/|Q| 1.000
+len >= 30: phases 128 maxQP 8 maxQPc 8 maxENT 5 max QP/|Q| 1.000
+len >= 60: phases 27 maxQP 3 maxQPc 3 maxENT 2 max QP/|Q| 1.000
