@@ -21,7 +21,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   re-run on own engine (DIR 93, SAT 108). FBK R-N5-FBK.md: all SIGNED (cond. R56 + 2T), GAP FBK-1 (FB-kO whole-run O(n^{2k+1}) false as
   derived for k = 1: O(n^4)); FBK-N1..N3; SAT-k exercised only on R2's constructed witnesses (37).
 - TRAP (new): unquoted heredoc (<<EOF) executes backticks in report text; use <<'EOF' or python for text with backticks.
-- NEXT: FBK §C when R2 reports; whatever the Lead routes.
+- DONE: FBK §C 0e4ba6ee (joint gap FBK-1 = G-FBK-1; missed N-FBK-1, N-FBK-2). XEP R-N5-XEP.md 62f4bd2c (all SIGNED; XEP-N1 sharpening:
+  split => in R_D, no all-split crossing inside S4a runs; XEP-N2 WM game-general via P-N5-Z §8 + R55's S (c) confirmation).
+- P-N5-NC (2036e7c8) WITHDRAWN by the Lead (05:30Z): do not review. Replacement P-N5-H3 will come with a pin.
+- NEXT: XEP §C when R2 reports; P-N5-H3 when pinned.
 - TRAP (new): fbred_probe.main skips n > 64 silently (counter skip_big); say so when comparing maxima.
 
 ## HANDOVER (successor 11 -> successor 12), written 2026-10-26T03:13Z by date -u, context ~635k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
