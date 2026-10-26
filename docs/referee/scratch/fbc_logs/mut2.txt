@@ -1,0 +1,67 @@
+CORA_chk 5187
+CORC_chk 3271
+F 292
+FBC_FAIL 144
+FBC_chk 292
+FB_SAT 100
+FB_XI_FLAT 98
+MAX_CF 3
+MAX_F_PHASE 12
+MAX_RHO_FBPH 20
+MAX_SAT_C 1
+MAX_UNS_C 12
+MONO_chk 227
+ODDC_chk 1103
+PHASES 5187
+PH_FB 168
+REAL_chk 7859
+RUNS 1413
+SATB_chk 290
+SATW_chk 189
+SAT_RETURN 98
+SUM_CF 172
+SUM_CONF_FB 227
+SUM_EP_FB 259
+THM_chk 227
+skip_big 669
+EX ('FBC', '../../../experiments/n5-epoch/instances/lend9_n8.pg/1', 3, (4, 4), 3, 4)
+EX ('FBC', '../../../experiments/n5-epoch/results/honclimb/ff_n16.pg/2', 4, (14, 2), 5, 6)
+EX ('FBC', '../../../experiments/n5-epoch/results/honclimb/ff_n16.pg/2', 5, (14, 2), 6, 7)
+EX ('FBC', '../../../experiments/n5-epoch/results/honclimb/ff_n16.pg/2', 6, (14, 2), 7, 8)
+EX ('FBC', '../../../experiments/n5-epoch/results/honclimb/ff_n16.pg/2', 7, (14, 2), 8, 9)
+EX ('FBC', '../../../experiments/n5-epoch/results/honclimb/ff_n16.pg/2', 8, (14, 2), 9, 10)
+EX ('FBC', '../../../experiments/n5-epoch/results/honclimb/ff_n16.pg/2', 9, (14, 2), 10, 11)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_o11.pg/0', 4, (2,), 2, 3)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_o11.pg/0', 7, (2,), 4, 5)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_o11.pg/0', 9, (2,), 5, 6)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n12.pg/0', 5, (2,), 2, 3)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n12.pg/0', 9, (2,), 4, 5)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n12.pg/0', 12, (2,), 5, 6)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n12.pg/2', 1, (2,), 1, 2)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n12.pg/2', 5, (2,), 5, 6)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n14.pg/0', 7, (2,), 2, 3)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n14.pg/0', 11, (2,), 4, 5)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n14.pg/0', 12, (2,), 5, 6)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n14.pg/0', 13, (2,), 6, 7)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n14.pg/0', 16, (2,), 7, 8)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n16.pg/0', 8, (2,), 2, 3)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n16.pg/0', 14, (2,), 4, 5)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n16.pg/0', 15, (2,), 5, 6)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n16.pg/0', 16, (2,), 6, 7)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n16.pg/0', 19, (2,), 7, 8)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n16.pg/0', 22, (2,), 8, 9)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n20.pg/0', 10, (2,), 2, 3)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n20.pg/0', 16, (2,), 4, 5)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n20.pg/0', 19, (2,), 5, 6)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n20.pg/0', 21, (2,), 6, 7)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n20.pg/0', 24, (2,), 7, 8)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n20.pg/0', 27, (2,), 8, 9)
+EX ('FBC', '../../../experiments/new/box21/instances/fts_best16.pg/0', 8, (2,), 1, 2)
+EX ('FBC', '../../../experiments/new/box21/instances/fts_best16.pg/2', 7, (2,), 1, 2)
+EX ('FBC', '../../../experiments/new/box21/instances/oneodd_c16.pg/0', 18, (14,), 0, 1)
+EX ('FBC', '../../../experiments/new/box21/instances/oneodd_c16.pg/0', 27, (14,), 8, 9)
+EX ('FBC', '../../../experiments/new/box21/instances/oneodd_c16.pg/1', 5, (14,), 8, 9)
+EX ('FBC', '../../../experiments/new/box21/instances/oneodd_c16.pg/2', 7, (14,), 8, 9)
+EX ('FBC', '../../../experiments/new/box22/instances/i1h_fts_best16.pg/0', 4, (1,), 5, 6)
+EX ('FBC', '../../../experiments/new/box22/instances/i1h_fts_best16.pg/0', 5, (1,), 6, 7)
+EXIT 0
