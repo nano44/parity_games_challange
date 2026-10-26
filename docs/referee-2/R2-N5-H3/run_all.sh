@@ -18,3 +18,4 @@ wait
 W=instances/pft34_h3u_P32
 python3 h3_check.py start $W.pg ${W}_t33.start > logs/witness_h3u.txt 2>&1
 for M in crd1 c2l; do NC_MUT=$M python3 h3_check.py start $W.pg ${W}_t33.start > logs/witness_mut_$M.txt 2>&1; done
+python3 h3_check.py start ../../../experiments/n5-exhaustive/instances/frz2_n24.pg ../../../experiments/n5-exhaustive/instances/frz2_n24.start > logs/frz2_n24.txt 2>&1
