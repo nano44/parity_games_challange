@@ -1,0 +1,37 @@
+START fit (18, 8) n 32
+BEST step 110 fit (19, 4) t 5s
+BEST step 316 fit (20, 4) t 13s
+BEST step 352 fit (21, 4) t 15s
+BEST step 391 fit (22, 4) t 16s
+BEST step 897 fit (23, 4) t 37s
+BEST step 1340 fit (24, 4) t 56s
+BEST step 2536 fit (25, 4) t 106s
+BEST step 2615 fit (26, 5) t 109s
+BEST step 3328 fit (27, 5) t 139s
+BEST step 3341 fit (28, 5) t 140s
+BEST step 3407 fit (29, 4) t 142s
+BEST step 3481 fit (30, 4) t 146s
+BEST step 3485 fit (31, 4) t 146s
+BEST step 3581 fit (33, 3) t 150s
+BEST step 3781 fit (34, 3) t 160s
+BEST step 4172 fit (35, 3) t 179s
+BEST step 5996 fit (36, 3) t 271s
+BEST step 7021 fit (37, 3) t 323s
+BEST step 7483 fit (39, 3) t 347s
+BEST step 7601 fit (40, 3) t 353s
+BEST step 7695 fit (40, 4) t 358s
+BEST step 8061 fit (41, 4) t 381s
+BEST step 12202 fit (42, 4) t 645s
+BEST step 12839 fit (43, 3) t 684s
+BEST step 13581 fit (44, 3) t 729s
+BEST step 14683 fit (45, 3) t 796s
+BEST step 15504 fit (46, 3) t 849s
+BEST step 15856 fit (47, 3) t 871s
+BEST step 16133 fit (48, 3) t 888s
+BEST step 16507 fit (49, 3) t 914s
+BEST step 18567 fit (50, 3) t 1057s
+BEST step 18658 fit (51, 3) t 1064s
+BEST step 19081 fit (52, 3) t 1096s
+BEST step 19210 fit (54, 3) t 1106s
+BEST step 19840 fit (55, 3) t 1156s
+END steps 20404 best (55, 3) n 32 -> results/climb/lend2_seed_fb17.pg
