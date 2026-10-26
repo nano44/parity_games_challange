@@ -199,6 +199,48 @@ climb has n in-phase fallbacks, so the late regime (j ≥ n) where FB-RED's thir
 on 𝒞^1O (FBP §8), the open count is vacuous in the data, and ρ-POLY rests on nothing but a proof that is not there.
 Runs 2026-10-26 02:31Z-02:33Z (date -u).
 
+## 7. Direction (b): late Q-runs as value iteration on a terminal game (Lead 02:47Z; chosen by L-NEW 23, see notebook; written 02:54Z by date -u)
+Source opened (notebook "Sources opened"): T. Brihaye, G. Geeraerts, A. Haddad, B. Monmege, "To Reach or not to Reach? Efficient
+Algorithms for Total-Payoff Games", arXiv:1407.5030v4 (14 Jul 2015), pdf sha256 c2587986…, cited [BGHM]. Used: §3 Algorithm 1 and the
+operator F (x_i = Val^{≤i}, i-step min-cost-reachability value), Theorem 1 item 4 (values in O(|V|²|E|W) time; O(|V|²W) iterations,
+"(2|V| − 1)W|V| + |V| steps" in the text after Algorithm 1), and the Figure 2(a) example (a 3-vertex game needing 2W iterations).
+### 7.1 The terminal game Γ_c and Lemma VI-LB (PROVED, every game)
+- Γ_c (per phase, c ∈ C): vertices U_c; Even vertices maximise, ALL Odd vertices (choice or not) minimise, over successors inside
+  U_c; target c (value (0, 0)); a play's payoff is κwt_c summed along it until c; a play that never reaches c is −∞ (worst for Even).
+  Integer form (order-preserving, since |Σ s_c| ≤ |U_c| < 2n + 1): ω(v) := (2n + 1)·wt_c(v) + s_c. Up to negation (Even ↦ Min,
+  Odd ↦ Max, κ ↦ −κ) this is [BGHM]'s min-cost reachability game with target c, and its j-step values Val^{≤j}_c are the mirrored
+  iterates x_j of [BGHM] Algorithm 1 (x_0 = −∞ off c).
+- Lemma VI-LB. For every j ≥ 0, every state t of the phase with t > g_j and every z ∈ U_c: κ_t(z) ≥ Val^{≤j}_c(z).
+  Proof by induction on j. j = 0: Val^{≤0} is −∞ off c, and κ_t(c) = (0, 0). Step: z = c trivial. Even z ≠ c: κ-FB-ROUND at g_j gives
+  κ_{g_j+1}(z) ≥ κwt_c(z) + κ_{g_j}(x) for every successor x ∈ U_c, the hypothesis at g_j (> g_{j−1}) gives κ_{g_j}(x) ≥ Val^{≤j−1}(x),
+  and (M2κ) carries it to t; take the max over x. Odd z ≠ c: (Aκ) gives κ_t(z) = κwt_c(z) + κ_t(σ̄_t z) with σ̄_t(z) ∈ U_c, so
+  κ_t(z) ≥ κwt_c(z) + min_{x ∈ succ(z) ∩ U_c} κ_t(x) ≥ κwt_c(z) + min_x Val^{≤j−1}(x) (hypothesis at t > g_{j−1}). ∎
+- This is the two-player form of κ-HAT-FREEZE (a): HAT-FREEZE used only Odd vertices outside Q (forced), i.e. the one-player relaxation
+  of Γ_c with the Odd choice vertices removed; VI-LB keeps them as minimisers. So each in-phase fallback is (at least) one round of
+  [BGHM]'s value iteration on every Γ_c simultaneously.
+### 7.2 What the known bound gives (READING, with the source)
+- If VI on Γ_c stabilised after R_c rounds AND the honest values were bounded above by the stable value (κ_t ≤ Val_c), then a FREEZE-EXIT
+  argument would give: after max_c R_c fallbacks no S-switching fallback, so f ≤ 1 + max_c R_c + (CN-ONLY). The upper bound is OPEN: Γ_c
+  lets Odd avoid c (payoff −∞ for Even), which in G means another cycle node, not a lower κ; so κ_t ≤ Val_c is not implied by Lemma S (a).
+- Even granting it, [BGHM] Theorem 1 (4) bounds R_c by O(|U_c|²·W) with W = max |ω| ≈ (2n + 1)·2^{rank range above c}: EXPONENTIAL in
+  n, not polynomial. No polynomial VI bound for min-cost reachability / total-payoff games with arbitrary integer weights is known to me;
+  [BGHM] call theirs "the first pseudo-polynomial time algorithm" for total-payoff games (abstract). So the cross-field route gives
+  pseudo-polynomial = exponential here, unless the weights are polynomial (ranks above c in U_c spanning O(log n) levels).
+### 7.3 The obstruction, instance-style (OPEN; no N5 instance)
+- [BGHM] Figure 2(a): v1 (Max) → v3 (target) weight −W, v1 → v2 weight −1, v2 (Min) → v1 or → v3; VI needs 2W rounds because Min
+  gains −1 per loop. Mirrored into Γ_c: an Even vertex v2 and an Odd choice vertex v1 on a 2-cycle inside U_c, with a low even-rank
+  vertex (rank r) on the cycle and an exit from v1 to c through a high even-rank vertex (rank R > r). Val^{≤j} rises by about 2^r per two
+  rounds.
+- In N5 the honest values are values of SIMPLE paths ((SP′)), so κ_t ≤ the simple-path ceiling K_c (< 2^{R+1} in the wt component).
+  Lemma VI-LB then forces the phase to have fewer than j fallbacks once Val^{≤j}_c exceeds K_c somewhere. On the gadget that happens after
+  about 2^{R+1−r} rounds: the cycle is cut off, but only after an exponential number of rounds when R − r is large. So neither direction
+  closes: VI-LB gives no polynomial count on such gadgets, and nothing shows N5 performs one fallback per VI round there.
+- What a counterexample to ρ-POLY / to a polynomial fallback count would need: a phase whose fallbacks track the VI iterates of such a
+  gadget (each fallback raising the honest value at v2 by one cycle increment, without changing λ). OPEN; and the late regime (≥ n
+  fallbacks in a phase) is vacuous in all data (§4, §6.4), so no data speak to it.
+- Verdict for (b): no known polynomial value-iteration bound applies (the opened one is pseudo-polynomial, exponential with 2^rank
+  weights); VI-LB (PROVED) makes each fallback a VI round on Γ_c; the freeze at the VI fixed point (κ_t ≤ Val_c) is OPEN.
+
 ## 5. How a fallbacks-per-phase bound combines with the phase count (READING)
 - Phases. Lemma Φ (R47 (a), every game): λ changes ≤ n(n − 1); Corollary Φ-kO (P-N5-DUAL, N5-MULTI §1.4): distinct τ's ≤ ∏_{q∈Q}
   deg(q), so phases ≤ n(n − 1) + ∏_q deg(q). On 𝒞^kO with k fixed that is ≤ n(n − 1) + n^k, polynomial; for k growing with n it is

@@ -29,7 +29,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - ρ-POLY: FB-RED late form + Lemma TV PROVED; nested freeze stalls (short late Q-runs; path-sum value sets = value iteration on a
   terminal game). Data: no phase ever reaches n fallbacks (late regime vacuous). 6019ab17.
 - Packet docs/new/P-N5-FBRED-box44.md (FB-RED alone, FROZEN at push).
-- NEXT: report the packet sha1; then as directed.
+- 3732ab55 P-N5-FBRED FROZEN (sha1 11b15455…), reported 02:43Z; Lead 02:47Z: pinned + routed; GO GD fixes; then (a) fixed-k or (b) VI.
+- b93f6c7d: P-N5-GD-fixes-box44 FROZEN (sha1 dfa6dd2b…), reported 02:50Z.
+- CHOICE (D18, Lead 02:47Z item 2; 02:54Z by date -u): (b), the cross-field VI angle. Reason: (a)'s nested bottom-up freeze needs the
+  terminal routing to stabilise, which I cannot prove (gap 1 of N5-FBF §6.3); an (a) "lemma" would be conditional on exactly the open
+  point. (b) can be made precise with an opened source and a PROVED bridge (Lemma VI-LB). Result: N5-FBF §7.
+- NEXT: report (b); then as directed.
 
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
 - Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.
@@ -666,6 +671,12 @@ Successor 22 (Opus 5.5, D14/D18, L40). Handover check 5/5 (b4f064b4). GO box 43 
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (succ. 23, box 44, 2026-10-26 ~02:55Z) T. Brihaye, G. Geeraerts, A. Haddad, B. Monmege, "To Reach or not to Reach? Efficient Algorithms
+  for Total-Payoff Games", arXiv:1407.5030v4 (14 Jul 2015), fetched from arxiv.org/pdf/1407.5030, pdf sha256 c2587986152b9104438261a1b93f14f235e7967d2cac31f09cf2524db7f62699.
+  Read: abstract; §3 (MCR games, Figure 2(a) example with values −W, no memoryless optimal Min strategy); Theorem 1 items 1-4 (item 4:
+  values and strategies in O(|V|²|E|W)); Algorithm 1 and operator F (x_i = Val^{≤i}); the convergence count "(2|V| − 1)W|V| + |V|
+  steps"; the Figure 2(a) VI run "requires 2W steps". Used in docs/new/N5-FBF-box44.md §7. Zwick-Paterson is cited inside it, not
+  opened by me (not cited by me).
 - (succ. 16, box 37) No external source opened. Internal: RESULTS R15, R17, R18 (d), R19, R21 (c), R22, R23 (a)-(d), R25, R28, R30; P-N5-FB §4-§5 (docs/si/P-N5-FB-box7.md), P-N5-OE §1-§3, P-N5-L2 §0-§2 and §5, P-N5-TOG §0, §4, §6; P-N5-X §0, §3; R-N5-TOG (referee fff6e624), R2-N5-TOG Addendum A (16d27d1c); SPEC S1-S5.
 - (succ. 15, box 35) No external source opened. Internal: P-N5-NJB (docs/si/P-N5-NJB-box9.md, pinned a7d85b3), P-N5-FBW §0, RESULTS R15, R27, R28; REFEREE-2 R2-N5-FRZ (+§C f546b43); REFEREE R-N5-L2 (7626354).
 - (succ. 13, box 33) No external source opened. Internal: P-N5-CLS (docs/si/P-N5-CLS-box8.md, pinned 486107a) §1-§7, N5-C-box8 §12-§13.
