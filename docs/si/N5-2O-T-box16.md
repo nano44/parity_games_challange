@@ -18,9 +18,17 @@ Written 2026-10-26 04:2xZ onward (date -u; the stamp is the commit). LANE NOTE: 
 - On 𝒞^2O, (h_D) can fail in two ways:
   - (¬h-cyc): a gate lies on its own honest or W cycle. This is the 1O case ¬H1 / ¬H2, per gate.
   - (¬h-route), NEW: one gate's play visits the other gate.
-- Lemma ROUTE-2 (P-N5-2T §3) holds in each frame. In the W frame its proof is the same with the W-play: of two gates, at every state at
-  least one is W-direct (on its own W-cycle, or its W-play never meets the other gate). So (¬h-route) is ONE-SIDED at every state: one
-  gate routes through the other, and never both. (PROVED: the argument of P-N5-2T §3 uses only that plays are positional lassos.)
+- Lemma ROUTE-2W (PROVED, every game; the W-frame form of P-N5-2T's ROUTE-2).
+  - Statement: let u ≠ u′ be Odd vertices at a state k. Call u W-DIRECT if u lies on its own W-cycle (the cycle of its (σ_k, τ_k)-play),
+    or its W-play never visits u′; likewise for u′. Then u or u′ is W-direct.
+  - Proof:
+    - Suppose u is not W-direct: u is not on its own W-cycle, and its W-play visits u′.
+    - The W-play is positional (σ_k at Even vertices, τ_k at Odd ones), so from its first visit of u′ on, u's W-play is u′'s W-play.
+    - If u′'s W-play visited u, then u's W-play would visit u a second time, so u would lie on its own W-cycle. That is excluded.
+    - So u′'s W-play never visits u, and u′ is W-direct. □
+  - The same proof with the honest play (σ_k, σ̄_k) is the honest-frame form. With u, u′ the two gates of D_k it says that (¬h-route) is
+    ONE-SIDED in each frame at every state: one gate may route through the other, never both.
+  - DATA (§3): 0 violations at all 406 two-gate states checked (lib2o and lib41 frontier, tcsw.py).
 - STRETCH_D: a maximal run of states of a phase with D_k, R_D, and Ξ(u), W(u) (u ∈ D_k) constant. This is the 1O stretch (R, θ, w
   constant), with every gate's two values in place of θ, w.
 
