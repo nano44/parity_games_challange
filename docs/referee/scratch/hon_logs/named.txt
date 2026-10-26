@@ -1,0 +1,35 @@
+CNT_chk 53
+CTRL_IMMP_fails 2
+CTRL_IMM_fails 4
+D0H_chk 52
+DIV 0
+EXIT_chk 2
+FB_chk 2
+FFGAP 2
+GAPW_chk 17
+H0_chk 53
+HON_chk 53
+INTERVALS 27
+INT_from_D0 7
+LB0_chk 112
+MAX_HONEST 4
+MAX_N0 2
+MAX_URUN_LEN 15
+PHASES 53
+REC1_chk 53
+REPU_chk 56
+RU4_chk 10
+RUNS 19
+RU_chk 118
+SAT0_chk 22
+SAT_chk 54
+STEP1_chk 17
+URUNS 56
+URUN_MULTI 9
+URUN_MULTI_withU 9
+X_big 0
+X_dir 0
+f_in_total 0
+fb_at_honest 2
+EX ('CTRL_IMMP', 'experiments/new/box46/instances/immp_cex_n11.pg/0', 0, 1, 1, 10)
+EX ('CTRL_IMMP', 'experiments/new/box46/instances/immp_cex_n11.pg/3', 0, 1, 1, 10)

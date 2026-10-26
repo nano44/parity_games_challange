@@ -70,6 +70,9 @@ o=$(python3 -I rund/lvl2.py --one rund/instances/pairoc_n58.pg rund/instances/pa
 grep -q "VIOLATION ('PAIROC', 'rund/instances/pairoc_n58.pg', 0, 3, 57, \[(0, 47, 52, True), (1, 48, 51, True), (2, 47, 49, True)\])" <<<"$o"
 if grep -q "^VIOLATION ('LC2'" <<<"$o"; then echo "LC2 violated on pairoc_n58"; exit 1; fi
 echo "rund (U-SPLIT DEAD usplit_rd_s3_n27 y=26 z=25 off 0->0; PAIR-OC DEAD pairoc_n58 v=57; LC2 holds there): PASS"
+# note §23: CONJECTURE FRZ-RHO on frz40 (21 rho-free intervals, max length 6, last change at index 5 < n - 1).
+python3 -I rund/frzrho.py --one ../red/n5inj/instances/frz40.pg ../red/n5inj/instances/frz40.start | grep -q "cuts=41 intervals=21 max_last=5 max_len=6 max_tex=2 max_xich=2 trans=49"
+echo "rund (FRZ-RHO data on frz40): PASS"
 # P-N5-RUND fixes file: every «quote» verbatim at its tagged commit and lines; the shifted-lines control (--mut) must fail.
 if git cat-file -e 62a1a01d && git cat-file -e e8d31c47 && git cat-file -e 762b7243 && git cat-file -e f1d2cf09; then
   python3 -I rund/quotecheck.py ../../docs/si/P-N5-RUND-fixes-box17.md | grep -q "QUOTES PASS"
