@@ -43,7 +43,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   proof uses (h_D) only as "u's play does not return to u". Corollary FRZ-U_D: CR-D′ under (NC) ∧ (h3_D). Wo_D does NOT port.
   DATA gdnc.py: 0 violations, MUT bites. The freeze is vacuous in data. Remaining: (¬h-cyc) (gate on its own cycle; ~42 % of lib41
   frontier states), and LEN below L.
-- NEXT: report to the Lead; the (¬h-cyc) port (KIND-MONO per gate) or the Lead's pick.
+- 05:05Z Lead: P-N5-2T SIGNED by both (REFEREE 12 7055b4a5, 2T-N1..N4; REFEREE-2 8f43432b + 416334cc, N-2T-1..6). 2T fixes file on the Lead's word after
+  the §Cs. (1) Packet P-N5-NC: FROZEN docs/si/P-N5-NC-box16.md (sha1 in the Lead message): G_D-NC, WM-G, P^c_L / CR-D proof written out
+  (R20 P^c transcribed: Lemma C → (i)+(MON); B-fallback absent; coarse kills R20's (β), (γ) and "D = ∅" cases), FRZ-U_D.
+  (2) Next: (¬h-cyc) per gate (KIND-MONO port); name what breaks with two gates each on its own cycle.
+- NEXT: (¬h-cyc) per gate.
 
 ## HANDOVER (successor 10, box 15; written 2026-10-26 01:05Z (date -u); session_01PBqfsNWMhTPn7yNJ8C18HP)
 Reason: context past the Lead's ~450k line. The session's remaining-token figure fell by ~575k since the start (it is not exposed directly).
