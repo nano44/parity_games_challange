@@ -1,0 +1,57 @@
+R15 -> R2 | ontrol fails on every flat switch (113/113). REFEREE-2 docs/referee-2/R2-N5T/vjbf.py (all-plays oracle): all   3
+R15 -> R2 | GAPS (G-B1, G-B2, G-N2 closed;   G-N1 DATA). REFEREE-2 docs/referee-2/R2-N5T.md (referee-2 0fb5fd2; §C §8 fd5abd
+R17 -> R2 | follow-up 708b996a): SIGNED WITH GAPS G1-G9. REFEREE-2 docs/referee-2/R2-N5-1P.md   (referee-2 f954070; §7 adden
+R18 -> R58 | bjects (packet P-N5-1OA, signed object = trunk d78e54f): (A) docs/red/R58-n5-width.md §9, Proposition X and Corol
+R18 -> R58 | ot proof. (v) L-NEW's DATA remark "every block ≤ |Y|" is FALSE (L-RED R58 §10:   block_bk20 n 24, |Y| 21, one blo
+R18 -> R2 | GNED WITH GAPS S1, S2, G-1OA-6 (first half). REFEREE-2 docs/referee-2/R2-N5-1OA.md (referee-2 603cb3a; §7 re-pin
+R19 -> R2 |  REFEREE-2 raised N-RE-3 (τ constant per interval) and withdrew it in R2-N5-RE §A (Lemma RE's       proof never 
+R19 -> R2 | IGNED WITH GAPS (P-1 closed, P-2 wording). REFEREE-2   docs/referee-2/R2-N5-RE.md (referee-2 3ee7b73, c66da44; §
+R19 -> R2 | d clarification: RESULTS R21 (i) (REFEREE R-N5-X X-1 / §C3, REFEREE-2 R2-N5-X Lemma TF / §C.4). 
+R20 -> R2 |  (closed); CR SIGNED; XA SIGNED; Corollary SIGNED in §C7 (the form of R2 §C2.3 / fixes §5-§6; value-preserving =
+R20 -> R2 | §6; value-preserving = Ξ and W unchanged). REFEREE-2   docs/referee-2/R2-N5-XA.md (referee-2 9d3f1fb; §C 4df15e6
+R21 -> R2 | recision: R_{k+1} = R_k, (h) at k suffices). REFEREE-2 docs/referee-2/R2-N5-X.md (referee-2 059f492; §C 3a581a5)
+R22 -> R1 |   intervals (184 with OTHER states), 39,250 TC state checks, 151,926 (R1) checks, 0 violations. - Signatures: RE
+R22 -> R2 |  P3-1 = G-NH-1 (same   argument, each a substitute), N-NH-2 accepted, R2's §1.3 W ⇔ Ξ remark should cite (SG). R
+R22 -> R2 | ed, R2's §1.3 W ⇔ Ξ remark should cite (SG). REFEREE-2 docs/referee-2/R2-N5-NH.md   (referee-2 48da84a; §C 8621a
+R22 -> R63 | t transition 0), so its σ-path is fixed only from transition 1; L-RED R63 §1b also shows own-successor switches a
+R23 -> R2 | FL-E, GAP, WM SIGNED; §C: no disagreement.   REFEREE-2 docs/referee-2/R2-N5-Z.md (referee-2 1a5854b; §C fde0448)
+R24 -> R2 | N-U1-3, proved in §C.3); §6 READING correct. REFEREE-2 docs/referee-2/R2-N5-U1.md (referee-2   28ddf6f; §C 3d68a
+R25 -> R2 | d   (REFEREE-2's recommended), L ≥ M_k OPEN. REFEREE-2 docs/referee-2/R2-N5-FB.md (referee-2 7699593; §C eb10cf7
+R26 -> R1 |  CASC step 3       with three new steps (levels constant via P-N5-NH (R1), W half; honest values on R are route 
+R26 -> R2 | rollary SIGNED; §3 READING correct with R-1. REFEREE-2 docs/referee-2/R2-N5-U23.md (referee-2 07b22b0; §C 5e2401
+R27 -> R2 | 5 CAP-1, REFEREE's case proof, re-checked and adopted by REFEREE-2 in R2-N5-FB §C.3: SO-1, closed with two      
+R27 -> R2 | /R-N5-LP/df_cex.pg (n 11, sha1 a128663e…, o = 1) and   docs/referee-2/R2-N5-LP/instances/df_cex.pg (n 5, sha1 0a
+R27 -> R2 | d in the addendum); XJ SIGNED WITH GAP XJ-1. REFEREE-2 docs/referee-2/R2-N5-LP.md (referee-2   4949d6c; §8 = P-N
+R28 -> R2 | ESULTS R25 CAP-1,       REFEREE's case proof, adopted by REFEREE-2 in R2-N5-FB §C.3; OE-2, closed); step 3 compa
+R28 -> R2 | ffers; N-OE-3 missed by REFEREE, accepted. REFEREE-2   docs/referee-2/R2-N5-OE.md (referee-2 ca6e5bd; §C ea6ad67
+R29 -> R2 | e single state       k1 (no F → R and no R → R gate edge; R-N5-XA §3, R2-N5-XA §2), not "a single fallback state
+R29 -> R2 | IGNED WITH GAP CLS-4; OG′ FALSE   confirmed. REFEREE-2 docs/referee-2/R2-N5-CLS.md (referee-2 ffe10e1; §C 848839
+R30 -> R2 | ′) is new   proof text, signed by both referees in addenda (REFEREE-2 R2-N5-SN §B, REFEREE R-N5-SN Addendum 2); 
+R30 -> R2 | SN-2; H1-DROP,   H1-KEEP, ABS-COUNT′ SIGNED. REFEREE-2 docs/referee-2/R2-N5-SN.md (referee-2 ddbecaf; §A 91d95e8
+R31 -> R2 | (closed); PL SIGNED WITH GAP FBW-2 (closed). REFEREE-2 docs/referee-2/R2-N5-FBW.md (referee-2 2596285,   success
+R32 -> R2 | files, 2,410 (window, ℓ) transition checks). REFEREE-2 docs/referee-2/R2-N5-FRZ.md (referee-2 20a73ca; §C   f546
+R33 -> R2 |  H1-INT SIGNED WITH GAP   L2-2; both closed. REFEREE-2 docs/referee-2/R2-N5-L2.md (referee-2 388caf6, successor 
+R34 -> R2 | HASE SIGNED WITH GAPS TOG-1, TOG-2 (closed). REFEREE-2 docs/referee-2/R2-N5-TOG.md (referee-2 faabe71, successor
+R38 -> R2 | NT, FB-INT, NH1-FB, CN-LAST SIGNED; no gaps. REFEREE-2 docs/referee-2/R2-N5-SCOPE.md (referee-2 6d6e4bc, success
+R39 -> R1 | 1 640a5db215e7d5e2bcdc3b335ae5e4972fed1fb2,   L-NEW successor 17: OUT-R1 = N-OUT-2, OUT-N1 = N-OUT-3, N-OUT-1, N
+R39 -> R1 | ide a phase"), so b = a with a phase-exiting fallback is covered (OUT-R1 = N-OUT-2, citation).   (f) Corollary N
+R39 -> R1 |    NO-ENTRY-A, NE-COUNT (a)-(c), CASE-B-LEN, W-SIDE SIGNED; notes OUT-R1, OUT-N1; no gaps. REFEREE-2 docs/refere
+R39 -> R2 | -SIDE SIGNED; notes OUT-R1, OUT-N1; no gaps. REFEREE-2 docs/referee-2/R2-N5-OUT.md   (referee-2 dfcaae67, succes
+R39 -> R1 |  identical; joint gap map empty; N-OUT-1..4 ACCEPTED   (N-OUT-2 = OUT-R1, extended to CASE-B-LEN; N-OUT-3 = OUT-
+R42 -> R1 | ha1 15434c1ca9920b8254ce48834b07cd86f5946837, L-NEW successor 19: NEB-R1 =   N-NEB-1, NEB-N1..N5, N-NEB-2, N-NEB
+R42 -> R1 | ESULTS R17 (a)) in place of Step (K) (R23 (a), "inside a phase") (NEB-R1 = N-NEB-1, citation;       as R39's OUT
+R42 -> R1 | a), "inside a phase") (NEB-R1 = N-NEB-1, citation;       as R39's OUT-R1; it applies to (d) as well).   (d) Lemm
+R42 -> R1 | RY-A′, CASE-B-LEN′,   LOW-RISE′, BRK (a)-(d), OUT-1 SIGNED; notes NEB-R1, NEB-N1..N5, NEB-B1; no gaps. REFEREE-2
+R42 -> R2 | ; notes NEB-R1, NEB-N1..N5, NEB-B1; no gaps. REFEREE-2 docs/referee-2/R2-N5-NEB.md (referee-2   a4516df, success
+R44 -> R2 | 1, repaired in the ext §C; notes PFZ-N1..N3. REFEREE-2 docs/referee-2/R2-N5-PFZ.md (referee-2 37e55fd,   success
+R45 -> R2 | onal as labelled; notes RHO-N1..N3; no gaps. REFEREE-2 docs/referee-2/R2-N5-RHO.md   (referee-2 269ae45, success
+R48 -> R2 | OES occur for some switched vertices, N-FBP-4: witness docs/referee-2/R2-N5-FBPOLY/climb/loop_4102.pg,       sha
+R48 -> R71 | lback short; REFEREE-2: 1,484 batch logs and 1.92 M climb runs; L-RED R71), so FREEZE-EXIT, THETA-AFTER and   FB-
+R48 -> R72 |  (L) and 13,364 random runs, 0 failures. L-RED successor 18 (docs/red/R72-fx-fbpoly-k.md, l-red 6e28e4f1; own fbx
+R48 -> R2 |  (b) SIGNED without a gap; notes FBP-N1..N4. REFEREE-2 docs/referee-2/R2-N5-FBPOLY.md (referee-2 2fef7c4a, succe
+R50 -> R47 | ULTS R48), T = O(m·Δ·d_o·n¹¹) per phase; with Corollary Φ-1O (RESULTS R47)   and a polynomial bit cost per iterat
+R50 -> R73 | 6 M post-freeze U3 / U23 transitions with c_w ≻ c_θ; REFEREE-2; L-RED R73; both lanes), so KIND-MONO,   CW-INT af
+R50 -> R73 | , the latest at step |π_v| − 2, the bound) and twice in L-RED's runs (R73 §7 random, at step |π_v| − 4, two   bel
+R50 -> R73 | index |R| − 1 and CW-INT's deg(c_w) − 1 are attained in   data (L-RED R73: frzu_tight_n14, cw11_n24). - Data (DAT
+R50 -> R73 | par fire, casc does not on saved data. L-RED successor 18   (docs/red/R73-*.md, l-red 896aea76; own kw18 tools): 
+R50 -> R2 | P KW-1 (one-line repair); notes   KW-N1..N5. REFEREE-2 docs/referee-2/R2-N5-KW.md (referee-2 8a47fd92, successor

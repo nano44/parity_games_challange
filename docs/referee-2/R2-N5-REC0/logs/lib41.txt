@@ -1,0 +1,19 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT - LEVELMAX 11
+BASE_checks: 398
+BOUND_checks: 5307
+EP0_checks: 2023
+KIND_phases: 344
+PREFIX_checks: 6354
+SAT_phases: 178
+STEP1_checks: 51
+STEP1_nonsat: 20
+STEP1_strict: 51
+STEP2_checks: 108
+UB_checks: 398
+max_N0: 5
+max_N0_per_f1: 5.0
+max_kind_iii_per_run: 1
+phases: 5307
+runs: 1095
+skipped_n_gt_cap: 45
+RESULT OK violations=0

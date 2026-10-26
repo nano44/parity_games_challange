@@ -1,0 +1,3 @@
+SIGMA0 1:2 3:3
+TAU0 0:1 2:0
+# N5^tau transition 0 -> 1: tau kept (tau-stable, Itau != {}), lambda_Xi changes: a Sigma-transition that leaves the phase

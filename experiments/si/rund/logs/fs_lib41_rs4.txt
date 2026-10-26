@@ -1,0 +1,2 @@
+L=-1 MUT=0 U=63 changes=2514 charged=50 forb_gate_a_in_F=2652 forb_gate_diff=293 forb_gate_same=1 forbidden_edges=795 forbidden_pairs=2946 max_KF=14 max_U_per_vertex=1 max_U_run=6 max_changes_per_vertex=6 max_charged_edges_per_vertex=1 max_charged_per_vertex=1 max_forb_states_per_edge=14 max_last_forb_rel=13 max_pers_count=14 max_runlen=23 max_span=13 max_span_minus_n=0 persistent_edges=662 runs=243 states=1230 switches=1514 window=2464
+SCHED PASS

@@ -1,6 +1,25 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 13), written 2026-10-26T08:38Z by date -u (Opus 5.5, D15; session_01Nzrjhmm1pgUnEvdgjCBhTv)
+- Handover check 7af27658: Lead 5/5, GO 07:48Z (Lead stamp).
+- DONE: P-N5-STAU (sha1 7446d9a9…, pin ca0a4e97): docs/referee/R-N5-STAU.md. §1 (a)-(d) SIGNED; Corollary transfer clause SIGNED; Corollary
+  sentences 1-2 GAP STAU-1 (wording: in-phase ⊊ τ-keeping; N5 / N5^τ ALSO differ at Iσ = ∅ states (Odd fallback vs SPEC tie output),
+  witness scratch/stau_inputs/is0_c1o264.pg canonical start). §2 CHECKED: (1) YES (own closure = packet's list; 4 entry-named files omitted,
+  none on the chain), (2) NO implicit use (own wider search incl. ASCII H', tie-breaks all S4a's or σ̄'s). Notes STAU-N1..N3.
+- Tools: scratch/stau_probe.py (own N5 vs N5^τ step at every state), scratch/stau/closure2.py (RESULTS closure); logs scratch/stau_logs/.
+- TRAP (new): `pkill -f` / `pgrep -f` with a pattern that also occurs in the calling shell's command line kills / finds that shell
+  (exit 144). Use `ps -eo pid,args | awk '$2=="python3" && $4=="<script>"'`.
+- TRAP (new): dual_probe.rand_ck(rng, n, k) loops forever when k > #possible Odd vertices; draw k <= n - 1.
+- DONE: STAU §C vs R2 8e42c473 (appended to R-N5-STAU.md): no verdict disagreement; sentence 1 "exactly" settled as a NOTE (= N-STAU-1);
+  STAU-1 kept as a minor gap for sentence 2 only (Iσ = ∅ divergence; found by me only); accepted N-STAU-2, N-STAU-4, R2's completions
+  (referee-written proof steps (ii-a)-(ii-d), MISSED by me: my scan excluded docs/referee*; R17 → G_τ rows, Lemma S (b) row).
+- LESSON: in a citation-chain audit, include referee-written sections that RESULTS entries or fixes files cite as gap closures.
+- DONE: P-N5-REC0 (sha1 343239b5…, pin 64506ecf): docs/referee/R-N5-REC0.md: Lemma REC-0 + corollary SIGNED (reduction in f), no gap;
+  Q-R17 answered YES (Lemma P's step uses: IH at k, I_k read from Ω_k (needs D = ∅: Ξ = W), arena optimum (F1)/(F2), (V1)/(V2), u a cycle node
+  and no cycle-node change k -> k+1, one-player G_τ); notes REC0-N1..N3. Tool scratch/rec0_probe.py (LEVELS=1: exact level checks, n <= 9 / 14).
+- NEXT: §C on REC0 when REFEREE-2's report SHA comes; STAU fixes file at L-NEW 25.
+
 
 ## HANDOVER (successor 12 -> successor 13), written 2026-10-26T07:10Z by date -u, context ~595k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).

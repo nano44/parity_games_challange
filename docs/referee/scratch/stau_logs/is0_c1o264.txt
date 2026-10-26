@@ -1,0 +1,8 @@
+DIFF_IS0 2
+D_chk 3
+R48_maxf 0
+R48_phases 2
+RUNS 1
+STATES 3
+EX ('DIFF_IS0 (info)', 'stau_inputs/is0_c1o264.pg/tau/0', 0, 's', [6, None, None, None, None, None, 5, None, None, None, None, None], 't', [None, 0, 4, 2, 5, 9, None, 5, 7, 6, 3, 8], 'N5->', [None, 0, 4, 2, 5, 11, None, 5, 7, 6, 3, 8], 'N5tau->', [None, 0, 4, 2, 5, 10, None, 5, 7, 6, 3, 8])
+EX ('DIFF_IS0 (info)', 'stau_inputs/is0_c1o264.pg/n5/0', 0, 's', [6, None, None, None, None, None, 5, None, None, None, None, None], 't', [None, 0, 4, 2, 5, 9, None, 5, 7, 6, 3, 8], 'N5->', [None, 0, 4, 2, 5, 11, None, 5, 7, 6, 3, 8], 'N5tau->', [None, 0, 4, 2, 5, 10, None, 5, 7, 6, 3, 8])
