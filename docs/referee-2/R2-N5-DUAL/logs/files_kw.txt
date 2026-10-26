@@ -1,0 +1,16 @@
+MODE files ../R2-N5-KW/files.lst 2 MUT -
+C1E_runs: 22
+DUAL1_ok: 1006
+MIRC_ok: 1006
+MIRC_strict_prefix: 1
+REC_plain_differs_at_j+1: 33
+iterations: 16619
+k_1: 1006
+runs: 1006
+runs_with_two_sided_fb: 33
+two_sided_fbs: 170
+C1E_max_sigma_changes_over_bound: (1.0, 'docs/referee-2/R2-N5-OE/climb/noh1_b_best.pg#0')
+max_distinct_tau: (12, 'experiments/si/orlens/instances/lev_l_sc.pg#1')
+max_dual_phases: (116, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_phases: (29, 'experiments/red/n5inj/instances/block_bk32.pg#0')
+RESULT OK violations=0
