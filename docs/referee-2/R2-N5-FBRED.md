@@ -118,3 +118,32 @@ line (§2-§3). The REDUCTION's content (f bounded by ρ) is therefore untested 
 - The exhaustive freeze-lemma checks (HAT, PFZ, TV) run only for n ≤ 11, where fallbacks are rare; at larger n only AK, ROUND, YF, EXS,
   FEX, CNO, RED, REDL are checked.
 - ρ is not bounded here; FB-RED bounds fallbacks per phase only given ρ (ρ up to 194 per phase in lib41).
+
+## §C (2026-10-26 03:3xZ by date -u; REFEREE-2 successor 13, Opus 5.5, D15): comparison with REFEREE's R-N5-FBRED
+Read after my report was pushed (814ac456): docs/referee/R-N5-FBRED.md (sha1 8c5a47ac…, REFEREE successor 11, referee 1feff548; on trunk
+7fef9699). Lead 03:37Z.
+| statement | REFEREE | REFEREE-2 | same? |
+| --- | --- | --- | --- |
+| §1.1 facts, κ-FB-ROUND_D | SIGNED | SIGN | yes |
+| κ-HAT-FREEZE_D (a)-(c) | SIGNED | SIGN | yes |
+| κ-PFZ_D | SIGNED | SIGN (N-FBRED-1) | yes |
+| κ-Y-FORM_D | SIGNED (Lemma S (a) every game) | SIGN (N-FBRED-2, N-FBRED-3) | yes |
+| EXIT-SWITCH_D, FREEZE-EXIT_D, CN-ONLY_D | SIGNED | SIGN | yes |
+| FB-RED, late form | SIGNED AS A REDUCTION | SIGN (as a reduction in ρ) | yes |
+| Lemma TV | SIGNED | SIGN | yes |
+| §4-§6 | not signed; §4 checked against own diff | not signed; §4 checked against own diff | yes |
+- C.1 Joint gap map: empty.
+  - Lemma S (a) on every game: REFEREE §1 = my N-FBRED-3 (same quote of R18 (d) and box 21 §2.2 (a); same verdict).
+  - FBRED-N2 (vacuity of the late regime) = my N-FBRED-4. Both: no phase in any corpus reaches n in-phase fallbacks (REFEREE max 17 on
+    the frontier and 33 on lib41; mine max f − n = −2 on data and −4 after 64,000 climbed runs). Both: FEX's hypothesis and TV's late
+    hypothesis never met; those statements rest on their proofs.
+  - FBRED-N1 (a fallback k → k+1 is indexed in the run containing its SOURCE state k): ACCEPTED. My checker uses exactly that convention
+    (qc[k], fallbacks counted by source), so my data are consistent with it; I did not state it in the report.
+  - N-FBRED-1 (κ-PFZ_D's range should include z = q): REFEREE's §2 table records the same point inside its check ("base trivial (the step at
+    x = q is κ_t(q) ≥ κ_t(q))") without making it a note. Same content; I keep it as a fixes line (wording).
+  - N-FBRED-2 (Y^q_t defined only in §4): REFEREE quotes the definition from §4 in its table without a note. Wording only.
+- C.2 Data: independent engines, both 0 failures; REFEREE reproduces fb17_n32's 17 fallbacks; my corpora overlap (lib41, box-43/44) and add
+  503 𝒞^1O files, 20,000 random games and exhaustive freeze-lemma path checks for n ≤ 11. Both: yf-type and cno-type controls bite; FEX
+  closeness never within 4.
+- C.3 Result: verdicts identical; nothing open. Fixes-file lines: FBRED-N1; N-FBRED-1, N-FBRED-2 (wording); FBRED-N2 = N-FBRED-4 (DATA);
+  Lemma S (a) landing note.
