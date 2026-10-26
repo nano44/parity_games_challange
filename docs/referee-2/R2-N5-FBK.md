@@ -107,3 +107,16 @@ TARGET.md diff: no TARGET.md §1 or §2 object is claimed.
 - N-FBK-3: ALT's "≥" is (M2κ); its content is strictness off ties. N-FBK-4: SAT-k's t > g_{w_c} is unused.
 - Inherited from P-N5-2T: nothing open (PFZ-q, DIR signed without gap; both hold for any m_c).
 - DATA: ALT counts reproduced exactly; SAT-k met only by constructed games (depth 1 and 2); late regime unreached.
+
+## Addendum A (2026-10-26 05:1xZ by date -u): the fixes file docs/new/P-N5-FBK-fixes-box44.md (Lead 05:01Z)
+Object: `sha1sum` -> 79ad8597b2eb54f56b65718baa89d69b90543a68 (= the Lead's), l-new 399e8ec6, written before review. It quotes P-N5-2T and
+changes no signed statement.
+- Quote check (script: whitespace-normalised substring search of `git show cbb3b738:docs/si/P-N5-2T-box16.md` lines in the fixes file):
+  PFZ-q statement (2T l. 85-88) FOUND verbatim; DIR statement (l. 121) FOUND; A_q with "So |A_q| ≤ d_q + w_c." (l. 115) FOUND; DIRECT
+  (l. 53-54) FOUND. Line numbers as stated ✓. The source sha1 fcb91130 = the frozen 2T ✓.
+- Its §3 ("How P-N5-FBK uses them") matches my reading: SAT-k's "≥" is PFZ-q with z = y ∈ U_c ∖ T, Θ = Θ_p, j = w_c; FB-kT step 2 (h = 0)
+  is DIR at k_i > g_{n−1} ≥ g_{|U_c|−1} (§2, §3 above) ✓.
+- One note, wording only: A_q's quoted line uses Cyc_c, d_q and w_c, defined at 2T l. 55 (not quoted). FBK §0 names them from P-N5-2T
+  §1, so nothing is missing.
+- Verdicts unchanged: everything in this report stands with the fixes file read beside the packet. G-FBK-1 is not touched by it (it
+  concerns FBK's own Corollary FB-kO sentence). (Opus 5.5, D15)
