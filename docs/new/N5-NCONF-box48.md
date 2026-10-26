@@ -180,6 +180,9 @@ an implication from (Στ)). □
   nep90 NCONF_{≥2} 38, NCONF_{≤1} 10, N_ep^{≥2} 74 (deg on Q 18, 3, 2, 3, 3: Σ 29, Π 972); nep76 36 / 4 / 71 (15, 4, 5, 5, 2); long121 12 / 2 / 35
   (5, 3, 4). So NCONF_{≥2} can exceed Σ_q deg(q) (nep90: 38 > 29): the configurations combine choices at several vertices, and N_ep^{≥2} ≈ 2·NCONF_{≥2}
   (the laps).
+- DATA, climb (ncclimb.py, fitness (max NCONF_{≥2} in one phase, max N_ep^{≥2}), S3 start, 1,500 mutation steps, NMAX 48; out/ncclimb_nep*_s*.txt,
+  best games in out/climb/): from nep90 (S3 score 10) seeds 11 / 12 reach 15 (n 48) and 13 (n 48); from nep76 seed 13 reaches (17, 18) (n 47). So
+  from S3 the climb does not push NCONF_{≥2} near n; L-RED's chosen start on nep90 gives 38. Start pairs matter more than the game here.
 - DATA, long121_n40 (L-RED 21, from its start; out/nconf_long121.txt, out/retfb_long121.txt): one phase, L 121, N_ep 37, NCONF 14, VIS 7, f 8,
   |𝒞_f| 5; two laps again (block 2 3 5 6 7 8 6 8 9 3 5 6 11 twice); RET-FB 36 checks, 0 violations; R⁰ = 3 of REV 23.
 
