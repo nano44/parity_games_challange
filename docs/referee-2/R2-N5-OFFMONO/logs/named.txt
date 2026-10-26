@@ -1,0 +1,631 @@
+MODE start ../../../experiments/red/rec0/instances/nep90_n40.pg ../../../experiments/si/rund/instances/nep90_n40.start
+AK_checks: 3840
+CC0_checks: 10
+CC1_checks: 10
+CC2_checks: 10
+CC3_checks: 10
+CSUM_checks: 455
+CTL_noexit: 6
+CTL_part: 16
+CTL_sign: 8
+CTL_tbrev: 1
+CYC_total: 0
+ENGXI_checks: 96
+FTK_checks: 91
+FT_total: 0
+OM_caseN: 455
+OM_checks: 455
+OM_parent_changed: 53
+OM_strict: 152
+PFC_checks: 22
+PFC_checks_multi: 18
+ZC2_total: 0
+ZC_checks: 91
+ZC_total: 0
+classes: 9
+phases: 5
+runs: 1
+states: 96
+transitions: 91
+max_EXIT_per_x: (18, 'nep90_n40.pg', 11)
+max_FT_per_phase_class: (0, 'nep90_n40.pg', 11)
+max_kappa_changes_q: (72, 'nep90_n40.pg', 11, 0, 152, 4002)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/instances/nep76_n40.pg ../../../experiments/n5-epoch/instances/nep76_n40.start
+AK_checks: 3520
+CC0_checks: 10
+CC1_checks: 10
+CC2_checks: 10
+CC3_checks: 10
+CSUM_checks: 390
+CTL_noexit: 4
+CTL_part: 18
+CTL_sign: 11
+CYC_total: 0
+ENGXI_checks: 88
+FTK_checks: 77
+FT_total: 1
+OM_caseN: 390
+OM_checks: 390
+OM_parent_changed: 60
+OM_strict: 136
+PFC_checks: 28
+PFC_checks_multi: 28
+ZC2_total: 0
+ZC_checks: 78
+ZC_total: 0
+classes: 27
+phases: 10
+runs: 1
+states: 88
+transitions: 78
+max_EXIT_per_x: (21, 'nep76_n40.pg', 11)
+max_FT_per_phase_class: (1, 'nep76_n40.pg', 11)
+max_kappa_changes_q: (62, 'nep76_n40.pg', 11, 0, 136, 1040)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/instances/long121_n40.pg ../../../experiments/new/box48/instances/long121_n40.start
+AK_checks: 4920
+CC0_checks: 6
+CC1_checks: 6
+CC2_checks: 6
+CC3_checks: 6
+CSUM_checks: 363
+CTL_noexit: 5
+CTL_part: 13
+CTL_sign: 1
+CYC_total: 0
+ENGXI_checks: 123
+FTK_checks: 116
+FT_total: 5
+OM_caseL: 2
+OM_caseN: 361
+OM_checks: 363
+OM_parent_changed: 48
+OM_strict: 89
+ZC2_total: 0
+ZC_checks: 121
+ZC_total: 0
+classes: 3
+phases: 2
+runs: 1
+states: 123
+transitions: 121
+max_EXIT_per_x: (22, 'long121_n40.pg', 11)
+max_FT_per_phase_class: (5, 'long121_n40.pg', 11)
+max_kappa_changes_q: (44, 'long121_n40.pg', 11, 6, 89, 561)
+RESULT OK violations=0
+MODE start ../../../experiments/red/n5inj/instances/frz40.pg ../../../experiments/red/n5inj/instances/frz40.start
+AK_checks: 3640
+CC0_checks: 40
+CC1_checks: 40
+CC2_checks: 40
+CC3_checks: 40
+CSUM_checks: 284
+CTL_cc3m: 3
+CTL_noexit: 2
+CTL_part: 2
+CTL_tbrev: 1
+CYC_total: 0
+ENGXI_checks: 91
+FTK_checks: 75
+FT_total: 8
+OM_caseN: 284
+OM_checks: 284
+OM_parent_changed: 9
+OM_strict: 22
+PFC_checks: 100
+PFC_checks_multi: 6
+ZC2_total: 0
+ZC_checks: 83
+ZC_total: 0
+classes: 41
+phases: 20
+runs: 1
+states: 91
+transitions: 71
+max_EXIT_per_x: (2, 'frz40.pg', 30)
+max_FT_per_phase_class: (7, 'frz40.pg', 15)
+max_kappa_changes_q: (10, 'frz40.pg', 30, 27, 13, 55)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/out/qpcclimb/best_qpc_nep90_n40_s51.pg ../../../experiments/new/box48/out/qpcclimb/best_qpc_nep90_n40_s51.start
+AK_checks: 5040
+CC0_checks: 52
+CC1_checks: 52
+CC2_checks: 52
+CC3_checks: 52
+CSUM_checks: 1313
+CTL_noexit: 19
+CTL_part: 80
+CTL_sign: 9
+CTL_tbidx: 8
+CTL_tbrev: 5
+CYC_total: 2
+ENGXI_checks: 105
+FTK_checks: 101
+FT_total: 2
+OMP_caseL2: 2
+OMP_caseL2_P0: 2
+OMP_checks: 2
+OM_caseL: 6
+OM_caseN: 1305
+OM_checks: 1311
+OM_parent_changed: 167
+OM_strict: 282
+PFC_checks: 55
+PFC_checks_multi: 48
+ZC2_total: 0
+ZC_checks: 103
+ZC_total: 0
+classes: 7
+phases: 4
+runs: 1
+states: 105
+transitions: 101
+max_EXIT_per_x: (29, 'best_qpc_nep90_n40_s51.pg', 11)
+max_FT_per_phase_class: (2, 'best_qpc_nep90_n40_s51.pg', 4)
+max_kappa_changes_q: (63, 'best_qpc_nep90_n40_s51.pg', 11, 0, 281, 2610)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/out/qpcclimb/best_qpc_nep76_n40_s52.pg ../../../experiments/new/box48/out/qpcclimb/best_qpc_nep76_n40_s52.start
+AK_checks: 4320
+CC0_checks: 28
+CC1_checks: 28
+CC2_checks: 28
+CC3_checks: 28
+CSUM_checks: 1134
+CTL_noexit: 8
+CTL_part: 25
+CTL_sign: 5
+CYC_total: 0
+ENGXI_checks: 90
+FTK_checks: 80
+FT_total: 1
+OM_caseN: 1134
+OM_checks: 1134
+OM_parent_changed: 88
+OM_strict: 179
+PFC_checks: 63
+PFC_checks_multi: 25
+ZC2_total: 0
+ZC_checks: 81
+ZC_total: 0
+classes: 28
+phases: 9
+runs: 1
+states: 90
+transitions: 81
+max_EXIT_per_x: (10, 'best_qpc_nep76_n40_s52.pg', 11)
+max_FT_per_phase_class: (1, 'best_qpc_nep76_n40_s52.pg', 11)
+max_kappa_changes_q: (46, 'best_qpc_nep76_n40_s52.pg', 11, 1, 179, 1326)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/out/qpcclimb/best_qpc_long121_n40_s53.pg ../../../experiments/new/box48/out/qpcclimb/best_qpc_long121_n40_s53.start
+AK_checks: 6192
+CC0_checks: 20
+CC1_checks: 20
+CC2_checks: 20
+CC3_checks: 20
+CSUM_checks: 1270
+CTL_noexit: 12
+CTL_part: 33
+CYC_total: 0
+ENGXI_checks: 129
+FTK_checks: 121
+FT_total: 6
+OM_caseL: 1
+OM_caseN: 1269
+OM_checks: 1270
+OM_parent_changed: 103
+OM_strict: 190
+PFC_checks: 1
+ZC2_total: 0
+ZC_checks: 127
+ZC_total: 0
+classes: 4
+phases: 2
+runs: 1
+states: 129
+transitions: 127
+max_EXIT_per_x: (19, 'best_qpc_long121_n40_s53.pg', 11)
+max_FT_per_phase_class: (6, 'best_qpc_long121_n40_s53.pg', 11)
+max_kappa_changes_q: (41, 'best_qpc_long121_n40_s53.pg', 11, 42, 190, 2486)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/out/qpcclimb/scale/snap_n80_s62.pg ../../../experiments/new/box48/out/qpcclimb/scale/snap_n80_s62.start
+AK_checks: 8480
+CC0_checks: 72
+CC1_checks: 72
+CC2_checks: 72
+CC3_checks: 72
+CSUM_checks: 3600
+CTL_noexit: 37
+CTL_part: 115
+CTL_sign: 7
+CTL_tbidx: 3
+CTL_tbrev: 3
+CYC_total: 0
+ENGXI_checks: 106
+FTK_checks: 100
+FT_total: 0
+OM_caseL: 9
+OM_caseN: 3591
+OM_checks: 3600
+OM_parent_changed: 274
+OM_strict: 467
+PFC_checks: 81
+PFC_checks_multi: 69
+ZC2_total: 0
+ZC_checks: 100
+ZC_total: 0
+classes: 11
+phases: 6
+runs: 1
+states: 106
+transitions: 100
+max_EXIT_per_x: (25, 'snap_n80_s62.pg', 11)
+max_FT_per_phase_class: (0, 'snap_n80_s62.pg', 11)
+max_kappa_changes_q: (72, 'snap_n80_s62.pg', 11, 17, 467, 4960)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg ../../../experiments/new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start
+AK_checks: 6016
+CC0_checks: 50
+CC1_checks: 50
+CC2_checks: 50
+CC3_checks: 50
+CSUM_checks: 2150
+CTL_noexit: 23
+CTL_part: 91
+CTL_tbidx: 2
+CTL_tbrev: 8
+CYC_total: 0
+ENGXI_checks: 94
+FTK_checks: 86
+FT_total: 0
+OM_caseL: 1
+OM_caseN: 2149
+OM_checks: 2150
+OM_parent_changed: 200
+OM_strict: 370
+PFC_checks: 79
+PFC_checks_multi: 47
+ZC2_total: 0
+ZC_checks: 86
+ZC_total: 0
+classes: 19
+phases: 8
+runs: 1
+states: 94
+transitions: 86
+max_EXIT_per_x: (16, 'best_qpc_nep76_n40_s63.pg', 11)
+max_FT_per_phase_class: (0, 'best_qpc_nep76_n40_s63.pg', 11)
+max_kappa_changes_q: (42, 'best_qpc_nep76_n40_s63.pg', 11, 1, 370, 4050)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg ../../../experiments/new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start
+AK_checks: 6592
+CC0_checks: 50
+CC1_checks: 50
+CC2_checks: 50
+CC3_checks: 50
+CSUM_checks: 2425
+CTL_noexit: 22
+CTL_part: 97
+CTL_sign: 2
+CTL_tbrev: 4
+CYC_total: 0
+ENGXI_checks: 103
+FTK_checks: 97
+FT_total: 0
+OM_caseL: 7
+OM_caseN: 2418
+OM_checks: 2425
+OM_parent_changed: 207
+OM_strict: 358
+PFC_checks: 83
+PFC_checks_multi: 80
+ZC2_total: 0
+ZC_checks: 97
+ZC_total: 0
+classes: 11
+phases: 6
+runs: 1
+states: 103
+transitions: 97
+max_EXIT_per_x: (32, 'best_qpc_nep90_n40_s61.pg', 11)
+max_FT_per_phase_class: (0, 'best_qpc_nep90_n40_s61.pg', 11)
+max_kappa_changes_q: (64, 'best_qpc_nep90_n40_s61.pg', 11, 61, 358, 5568)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg ../../../experiments/new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start
+AK_checks: 8480
+CC0_checks: 72
+CC1_checks: 72
+CC2_checks: 72
+CC3_checks: 72
+CSUM_checks: 3600
+CTL_noexit: 37
+CTL_part: 115
+CTL_sign: 7
+CTL_tbidx: 3
+CTL_tbrev: 3
+CYC_total: 0
+ENGXI_checks: 106
+FTK_checks: 100
+FT_total: 0
+OM_caseL: 9
+OM_caseN: 3591
+OM_checks: 3600
+OM_parent_changed: 274
+OM_strict: 467
+PFC_checks: 81
+PFC_checks_multi: 69
+ZC2_total: 0
+ZC_checks: 100
+ZC_total: 0
+classes: 11
+phases: 6
+runs: 1
+states: 106
+transitions: 100
+max_EXIT_per_x: (25, 'best_qpc_nep90_n40_s62.pg', 11)
+max_FT_per_phase_class: (0, 'best_qpc_nep90_n40_s62.pg', 11)
+max_kappa_changes_q: (72, 'best_qpc_nep90_n40_s62.pg', 11, 17, 467, 4960)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/out/tieclimb/best_oddc_u3ev_n16_s1.pg ../../../experiments/new/box48/out/tieclimb/best_oddc_u3ev_n16_s1.start
+AK_checks: 115
+CC0_checks: 7
+CC1_checks: 7
+CC2_checks: 7
+CC3_checks: 7
+CSUM_checks: 7
+CYC_total: 1
+ENGXI_checks: 5
+FTK_checks: 2
+FT_total: 1
+OMP_caseL2: 1
+OMP_caseL2_P0: 1
+OMP_checks: 1
+OM_caseN: 6
+OM_checks: 6
+PFC_checks: 33
+PFC_checks_multi: 9
+ZC2_total: 0
+ZCH_CEVEN: 0
+ZCH_ODDC: 1
+ZCH_STRICT: 0
+ZCH_TIE: 0
+ZCH_total: 1
+ZC_checks: 2
+ZC_total: 0
+classes: 13
+phases: 4
+runs: 1
+states: 5
+transitions: 1
+max_EXIT_per_x: (0, 'best_oddc_u3ev_n16_s1.pg', 10)
+max_FT_per_phase_class: (1, 'best_oddc_u3ev_n16_s1.pg', 13)
+max_ODDC_per_phase_class: (1, 'best_oddc_u3ev_n16_s1.pg', 13)
+max_TIE_per_phase_class: (0, 'best_oddc_u3ev_n16_s1.pg', 13)
+max_ZCH_per_phase_class: (1, 'best_oddc_u3ev_n16_s1.pg', 13)
+max_kappa_changes_q: (0, 'best_oddc_u3ev_n16_s1.pg', 10, 4, 0, 4)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/out/tieclimb/best_oddc_u3ev_n16_s2.pg ../../../experiments/new/box48/out/tieclimb/best_oddc_u3ev_n16_s2.start
+AK_checks: 192
+CC0_checks: 26
+CC1_checks: 26
+CC2_checks: 26
+CC3_checks: 26
+CSUM_checks: 39
+CTL_cc3m: 2
+CTL_noexit: 1
+CTL_part: 1
+CTL_sign: 3
+CTL_tbrev: 5
+CTL_tbseq_ceven: 3
+CYC_total: 3
+ENGXI_checks: 8
+FTK_checks: 3
+FT_total: 3
+OMP_caseL2: 9
+OMP_caseL2_P0: 9
+OMP_checks: 9
+OMP_parent_changed: 2
+OMP_strict: 3
+OM_caseN: 30
+OM_checks: 30
+OM_parent_changed: 1
+PFC_checks: 86
+PFC_checks_multi: 63
+ZC2_total: 3
+ZCH_CEVEN: 0
+ZCH_ODDC: 0
+ZCH_STRICT: 3
+ZCH_TIE: 0
+ZCH_total: 3
+ZC_checks: 3
+ZC_total: 3
+classes: 10
+phases: 5
+runs: 1
+states: 8
+transitions: 3
+max_EXIT_per_x: (2, 'best_oddc_u3ev_n16_s2.pg', 1)
+max_FT_per_phase_class: (3, 'best_oddc_u3ev_n16_s2.pg', 1)
+max_ODDC_per_phase_class: (0, 'best_oddc_u3ev_n16_s2.pg', 1)
+max_TIE_per_phase_class: (0, 'best_oddc_u3ev_n16_s2.pg', 1)
+max_ZCH_per_phase_class: (3, 'best_oddc_u3ev_n16_s2.pg', 1)
+max_kappa_changes_q: (3, 'best_oddc_u3ev_n16_s2.pg', 1, 4, 4, 30)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/out/tieclimb/best_tie_klcount_n16_s3.pg ../../../experiments/new/box48/out/tieclimb/best_tie_klcount_n16_s3.start
+AK_checks: 92
+CC0_checks: 4
+CC1_checks: 4
+CC2_checks: 4
+CC3_checks: 4
+CSUM_checks: 4
+CYC_total: 0
+ENGXI_checks: 4
+FTK_checks: 3
+FT_total: 1
+OM_caseN: 4
+OM_checks: 4
+PFC_checks: 17
+ZC2_total: 0
+ZCH_CEVEN: 1
+ZCH_ODDC: 0
+ZCH_STRICT: 1
+ZCH_TIE: 0
+ZCH_total: 2
+ZC_checks: 2
+ZC_total: 0
+classes: 3
+phases: 2
+runs: 1
+states: 4
+transitions: 2
+max_EXIT_per_x: (0, 'best_tie_klcount_n16_s3.pg', 2)
+max_FT_per_phase_class: (1, 'best_tie_klcount_n16_s3.pg', 10)
+max_ODDC_per_phase_class: (0, 'best_tie_klcount_n16_s3.pg', 10)
+max_TIE_per_phase_class: (0, 'best_tie_klcount_n16_s3.pg', 10)
+max_ZCH_per_phase_class: (2, 'best_tie_klcount_n16_s3.pg', 10)
+max_kappa_changes_q: (0, 'best_tie_klcount_n16_s3.pg', 2, 0, 0, 2)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/out/tieclimb/best_tie_klcount_n16_s4.pg ../../../experiments/new/box48/out/tieclimb/best_tie_klcount_n16_s4.start
+AK_checks: 120
+CC0_checks: 26
+CC1_checks: 26
+CC2_checks: 26
+CC3_checks: 26
+CSUM_checks: 26
+CTL_noexit: 1
+CTL_part: 1
+CTL_sign: 1
+CTL_tbidx: 5
+CTL_tbrev: 12
+CYC_total: 2
+ENGXI_checks: 5
+FTK_checks: 3
+FT_total: 1
+OMP_caseL2: 7
+OMP_caseL2_P0: 7
+OMP_checks: 7
+OM_caseN: 19
+OM_checks: 19
+OM_parent_changed: 2
+OM_strict: 1
+PFC_checks: 80
+PFC_checks_multi: 60
+ZC2_total: 1
+ZCH_CEVEN: 1
+ZCH_ODDC: 0
+ZCH_STRICT: 0
+ZCH_TIE: 1
+ZCH_total: 2
+ZC_checks: 2
+ZC_total: 2
+classes: 6
+phases: 3
+runs: 1
+states: 5
+transitions: 2
+max_EXIT_per_x: (1, 'best_tie_klcount_n16_s4.pg', 3)
+max_FT_per_phase_class: (1, 'best_tie_klcount_n16_s4.pg', 3)
+max_ODDC_per_phase_class: (0, 'best_tie_klcount_n16_s4.pg', 3)
+max_TIE_per_phase_class: (1, 'best_tie_klcount_n16_s4.pg', 3)
+max_ZCH_per_phase_class: (1, 'best_tie_klcount_n16_s4.pg', 3)
+max_kappa_changes_q: (1, 'best_tie_klcount_n16_s4.pg', 3, 1, 2, 15)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/instances/du/nep90x2.pg ../../../experiments/new/box48/instances/du/nep90x2.start
+AK_checks: 7680
+CC0_checks: 20
+CC1_checks: 20
+CC2_checks: 20
+CC3_checks: 20
+CSUM_checks: 910
+CTL_noexit: 10
+CTL_part: 32
+CTL_sign: 16
+CTL_tbrev: 2
+CYC_total: 0
+ENGXI_checks: 96
+FTK_checks: 182
+FT_total: 0
+OM_caseN: 910
+OM_checks: 910
+OM_parent_changed: 106
+OM_strict: 304
+PFC_checks: 44
+PFC_checks_multi: 36
+ZC2_total: 0
+ZC_checks: 182
+ZC_total: 0
+classes: 18
+phases: 5
+runs: 1
+states: 96
+transitions: 91
+max_EXIT_per_x: (18, 'nep90x2.pg', 11)
+max_FT_per_phase_class: (0, 'nep90x2.pg', 11)
+max_kappa_changes_q: (72, 'nep90x2.pg', 11, 0, 152, 4002)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/instances/du/nep90x3.pg ../../../experiments/new/box48/instances/du/nep90x3.start
+AK_checks: 11520
+CC0_checks: 30
+CC1_checks: 30
+CC2_checks: 30
+CC3_checks: 30
+CSUM_checks: 1365
+CTL_noexit: 15
+CTL_part: 48
+CTL_sign: 24
+CTL_tbrev: 3
+CYC_total: 0
+ENGXI_checks: 96
+FTK_checks: 273
+FT_total: 0
+OM_caseN: 1365
+OM_checks: 1365
+OM_parent_changed: 159
+OM_strict: 456
+PFC_checks: 66
+PFC_checks_multi: 54
+ZC2_total: 0
+ZC_checks: 273
+ZC_total: 0
+classes: 27
+phases: 5
+runs: 1
+states: 96
+transitions: 91
+max_EXIT_per_x: (18, 'nep90x3.pg', 11)
+max_FT_per_phase_class: (0, 'nep90x3.pg', 11)
+max_kappa_changes_q: (72, 'nep90x3.pg', 11, 0, 152, 4002)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/instances/du/nep90x4.pg ../../../experiments/new/box48/instances/du/nep90x4.start
+AK_checks: 15360
+CC0_checks: 40
+CC1_checks: 40
+CC2_checks: 40
+CC3_checks: 40
+CSUM_checks: 1820
+CTL_noexit: 20
+CTL_part: 64
+CTL_sign: 32
+CTL_tbrev: 4
+CYC_total: 0
+ENGXI_checks: 96
+FTK_checks: 364
+FT_total: 0
+OM_caseN: 1820
+OM_checks: 1820
+OM_parent_changed: 212
+OM_strict: 608
+PFC_checks: 88
+PFC_checks_multi: 72
+ZC2_total: 0
+ZC_checks: 364
+ZC_total: 0
+classes: 36
+phases: 5
+runs: 1
+states: 96
+transitions: 91
+max_EXIT_per_x: (18, 'nep90x4.pg', 11)
+max_FT_per_phase_class: (0, 'nep90x4.pg', 11)
+max_kappa_changes_q: (72, 'nep90x4.pg', 11, 0, 152, 4002)
+RESULT OK violations=0
