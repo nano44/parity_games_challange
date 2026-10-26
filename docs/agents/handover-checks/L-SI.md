@@ -1,3 +1,64 @@
+# Handover check: L-SI (successor 17, written 2026-10-26T15:26Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; the commands are given. Predecessor: successor 16, session_014hNbzERgw85WwaeDGW9E2Y.
+Its handover is notes/L-SI.md "## HANDOVER (successor 16, box 20)" (l-si c1efeb1d).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. The clone was stale again: local HEAD 0d48da26; `git fetch origin claude/l-si` → origin c1efeb1d;
+  `git merge --ff-only origin/claude/l-si` → HEAD c1efeb1d (`git rev-parse HEAD origin/claude/l-si` equal).
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` = 539b4192 (Lead: pin P-N5-ROOT addendum (af1c7ad4); L-NEW 28 GO (5/5); NOW; restart row; log).
+  - Before merging: `git rev-list --left-right --count HEAD...trunk` → 2 ahead / 99 behind; merge-base 829003b2 (the ROOT addendum commit).
+  - `git merge --no-ff` of trunk 539b4192 (no rebase) → merge commit 52baf32f; then 3 ahead / 0 behind. This file is the next commit;
+    the pushed SHA goes to the Lead. Before the push: fetch and merge origin/claude/l-si again (successor 16 may still push
+    docs/si/P-N5-CHOSEN-fixes-box19.md; I do not edit it).
+
+## 2. Open work and the next step of each (nothing running: fresh container; Oink in §6)
+Frozen (`sha1sum`, equal to the handover's values; never edited): docs/si/P-N5-ROOT-box20.md d3788bc0ce0e3da2d54298c58e227e437242419a
+(pinned on trunk b20d0e0e); docs/si/P-N5-ROOT-add-box20.md af1c7ad4581cce4a9830b4ed01e2370d26ef850b (pinned on trunk 539b4192);
+docs/si/P-N5-CHOSEN-box19.md 764cfbb3…. `ls docs/si/P-N5-CHOSEN-fixes* docs/si/P-N5-ROOT-fixes*` → none exist yet.
+- (1) MAIN after "go" (brief queue 1; handover queue 2; note docs/si/N5-ROOT-box20.md §6, §10.2): count G_c (A-gains = relay D-leaves +
+  unsplit exits) and X_u (cross-gate migrations into a gate region R_u) per fallback-free run. Predecessor's READING: via ROOT-PIECE /
+  FREEZE-G / RESET-PIECE these bound root ρ, relay changes, per-gate resets, NCONF_{≥2} and R⁰_{≥2}.
+  Next step: a script experiments/si/root/gcx.py (reusing root/common.py, dleave.py, resets.py) that counts G_c and X_u per fallback-free
+  run, first on L-RED R90's families (experiments/red/usplit/mkpp.py, mkgate.py; l-red eb64c242 is an ancestor of my head), k fixed and
+  the size growing, to see whether G_c / X_u grow linearly like R⁰_{≥2}; then nep90 / nep76; then a bound attempt or a DEAD entry
+  with its instance. Warning carried: DEAD box 20 (nep90 phase@4: 32 of 63 root offset resets are Bellman-Ford cascades charged only
+  to the root's own ρ).
+  - Overlap to clear with the Lead: NOW l.27 shows L-COMP 5 box 14 measuring "G_c, relay changes per fallback-free run on records";
+    L-NEW 28 does the relay-change route after FBC / EPC fixes. I count on the R90 families and nep90 / nep76 only unless told otherwise.
+- (2) STANDBY: repairs for P-N5-ROOT and its addendum in a NEW file docs/si/P-N5-ROOT-fixes-box20.md, when both referees' reports exist
+  (queue after P-N5-EPC; `ls docs/referee docs/referee-2 | grep -i root` → none). One repair per item; quotes via
+  experiments/si/rund/quotecheck.py, pinned in check.sh with a --mut control.
+- (3) Not mine now: docs/si/P-N5-CHOSEN-fixes-box19.md (successor 16 may push it; I leave it alone).
+
+## 3. docs/GAPS.md rows I own
+- None (`git show trunk:docs/GAPS.md | awk -F'|' '$4 ~ /L-SI/'` → empty).
+- I work under G-N5-TIME (l.11): major, owner L-NEW, status open; last update 14:38Z (R70, P-N5-HONFF, CHECKER C79): "f, X_dir, X_big
+  and |D| ≥ 2 epochs OPEN; general games OPEN." NOW l.11: M4 IN PROGRESS, gauntlet step 4 (G-N5-TIME) OPEN. RESULTS ends at R70.
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md at trunk; status from docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems."
+  - Lead reading L40 (index l.33: active): L-SI is the OR/MDP lens on N5; labels PROVED / CONJECTURE / OPEN.
+- D1 (index l.5: active; DECISIONS.md l.6, full text docs/decisions/D001-launch-brief.md): "Never publish, post, email, submit or
+  contact anyone outside the fleet. Anything external is my decision." / "A claimed polynomial algorithm is far more likely to be
+  wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+- D16 (DECISIONS.md l.300; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap (box 20, successor 16): experiments/si/root/shrink.py shadowed experiments/new/box21/shrink.py on sys.path, so an import pulled
+  the wrong module's helpers.
+  - Check: shared helpers live only in experiments/si/root/common.py (first_D, wplay, avoid, wt, M); new scripts get names that do not
+    collide (`ls experiments/*/*/<name>.py` before creating one); wplay is cross-checked against box21/h1.py wvals (bffd.py WPLAY_V).
+- Still live: stale clone (bit again here: 0d48da26 vs origin c1efeb1d; fetch first, re-fetch and merge before the push); frozen files
+  (sha1sum before touching docs/si/P-*); `if grep …; then exit 1; fi` guards with a mutation control per pin; never `git add -A`;
+  never pipe scripts/push.sh; never `pkill -f` / `pgrep -f` with a script name; stamp from date -u; «» only around verbatim quotes.
+
+## 6. Oink
+- scripts/setup_oink.sh → "oink built at 8fbf0a7" (tc, tc+, counter_*, rngame present), exit 0.
+
+---
 # Handover check: L-SI (successor 16, written 2026-10-26T13:40Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; the commands are given. Predecessor: successor 15, session_017NeJAMbjHE3eoJcsnWhRbw.
 Its handover is notes/L-SI.md "## HANDOVER (successor 15, box 19)" (l-si 213bba72).
