@@ -383,7 +383,7 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 24, box 45, written 2026-10-26 08:06Z by date -u)
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 24, box 45, written 2026-10-26 08:09Z by date -u)
 Successor 24 (Opus 5.5, D14/D18, L40), session_01DR27cGCEhPvHHVxiYXCfaz. Handover check 2c299e9a (5/5). ~520k context at writing.
 ### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)
 - Fixes files FROZEN: P-N5-VILB-fixes-box44 (1c344659, 56da789e), P-N5-ACCEL-fixes-box44 (1c344659, 46ef9474), P-N5-FBK-fixes2-box44 (2cf61061,
