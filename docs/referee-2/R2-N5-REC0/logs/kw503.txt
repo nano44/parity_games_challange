@@ -1,0 +1,18 @@
+MODE files ../R2-N5-KW/files.lst 3 MUT - LEVELMAX 11
+BASE_checks: 826
+BOUND_checks: 6213
+EP0_checks: 3169
+KIND_phases: 707
+PREFIX_checks: 8744
+SAT_phases: 335
+STEP1_checks: 122
+STEP1_nonsat: 45
+STEP1_strict: 122
+STEP2_checks: 207
+UB_checks: 826
+max_N0: 5
+max_N0_per_f1: 5.0
+max_kind_iii_per_run: 1
+phases: 6213
+runs: 1509
+RESULT OK violations=0
