@@ -112,13 +112,16 @@ Proof.
      against step 2.
    - Likewise a σ̄-consistent play from v ∉ W never enters w ∈ W. From w the (σ, σ̄)-play ends in the even cycle of λ(w), against step 3.
    - So σ on W and σ̄ on V ∖ W (SPEC S5) are winning strategies on their regions, and plays under them stay in the region. □
-- Class audit, step by step:
-  - Step 0 uses SPEC S1's reward only.
-  - Step 1 holds for any finite graph.
-  - Step 2 uses (VJ), which has no class hypothesis.
-  - Step 3 uses R36 (c) on the one-player game G_σ̄, which is a one-player game for every G.
-  - Step 4 is general.
-  - The number of choice vertices of either player is never used, and neither is any N5 run property except "Iσ = ∅ at the stop".
+- Class audit, per step (Lead 02:49Z): every cited item, and its class.
+| step | what it cites | class of the cited item |
+| --- | --- | --- |
+| 0 | SPEC S1 definition: rank, p′, reward | a definition on every game |
+| 1 | nothing cited: finite-graph argument (inf set strongly connected; simple cycle through its top; shortest path to it) | any finite game graph |
+| 2 | (VJ): SPEC S1 definition of Ξσ (optimal σ̄); its source VJ00 (11) (§5.2, Prop. 5.1, Lemma 5.2, p. 16); carried in the record as R18 (d) Lemma S (a) and R21 (a)'s parenthetical; and step 1 on G_σ | VJ00 (11): every finite game (VJ00 §2). R18 (d) S (a), R21 (a): signed in 𝒞^1O, proofs game-general (N-1O-4; REFEREE §C DUAL C.2); this packet asks to sign (VJ) on every game |
+| 3 | R36 (c) on H := G_σ̄; SPEC S1 definition (Ξσ = valuation of the (σ, σ̄)-play); SPEC S2 definition (Iσ); step 1 on G_σ̄ | R36 (c): every one-player game; G_σ̄ is one-player for every G |
+| 4 | steps 2-3; SPEC S1 definition (cycle node = most relevant vertex of the cycle); SPEC S5 (the output) | definitions; no class |
+- Not used anywhere: the number of choice vertices of either player, Iτ, any N5 run property except "Iσ = ∅ at the stop", R21 (a)'s main
+  inequality Ξ_k ⊴ W_k, and R18 (d) Lemma S (b)-(d).
 - Relation to P-N5-1O §4 (RESULTS R51 (d)): the same proof, with these changes:
   - the class hypothesis is dropped;
   - OUT-1 is built in (step 0);
@@ -166,9 +169,16 @@ Proof.
    So (H-N5) holds with L(n). By MIRROR (c), (H-OF) holds with the same L(n). By MIRROR (b), ITER ≤ (n(n − 1) + d_e)(L(n) + 1).
    This gives the uniform form.
 3. Parameter form. MIRROR (b)'s proof applies (H-OF) to ONE game only, G^d. Put L := T*(n, m, Δ, d_e).
-   - G^d has the same vertices and successor lists as G (DUAL §0, n5.py's dual), so the same n, m, Δ. Its Odd choice vertices are G's
-     Even choice vertices, so G^d ∈ 𝒞^1O with o = e and d_o(G^d) = d_e.
-   - Step 1 bounds the first N5 phase from every state of G^d by L.
+   - Per-game quantities of G^d substituted into R51 (a)'s T* (Lead 02:49Z):
+     | R51 (a) parameter (of a 𝒞^1O game) | value for G^d | why |
+     | --- | --- | --- |
+     | n = \|V\| | n (G's) | G^d has the same vertex set (DUAL §0: "same ids and successor lists") |
+     | m = #edges | m (G's) | same successor lists |
+     | Δ = max out-degree | Δ (G's) | same successor lists |
+     | o, d_o = deg(o) | o := e, d_o(G^d) = d_e | owners swapped: G^d's Odd choice vertices are G's Even choice vertices, so G^d ∈ 𝒞^1O with o = e |
+     | f (in-phase fallbacks), F := 2n² | F = 2n² | R48 (i), inside R51 (a)'s step 3; depends on n only |
+     Nothing else of the game enters T*. R51 (a)'s phase count n(n − 1) + d_o is NOT used; the phase count here is MIRROR (a)'s.
+   - Step 1 bounds every N5 phase of every run on G^d, from every start pair, by L. So the first N5 phase from every state of G^d is ≤ L.
    - MIRROR (c)'s proof is per game and per state x: the first N5^OF phase from x on G^d is a prefix of the first N5 phase from x, or
      equal to it. So it is also ≤ L.
    - MIRROR (b)'s proof is also per game:
@@ -177,6 +187,9 @@ Proof.
      - each is the first N5^OF phase from its first state (N5^OF is memoryless), so it has ≤ L transitions;
      - there are ≤ n(n − 1) + d_e − 1 boundary transitions.
    - Every iteration is a transition (R15 (d)). So ITER ≤ (n(n − 1) + d_e)(L + 1).
+   - Where monotonicity of T* is used:
+     - parameter form (this step): only in f, inside R51 (a)'s step 3 (f ≤ F; R50 (h)'s chain non-decreasing in f, as R51 (a) states);
+     - uniform form (step 2): also in m, Δ and d, to replace G^d's (m, Δ, d_e) by (n², n, n).
 4. Orders. T* = O(m·Δ·d·n¹¹) (P-N5-1O §2 step 5, with d for d_o). So ITER = O(n² · m·Δ·d_e·n¹¹) = O(m·Δ·d_e·n¹³). With m ≤ n² and
    Δ, d_e ≤ n this is O(n¹⁷), and L(n) = O(n¹⁵) (REFEREE-2 N-DUAL-3). □
 - 𝒞^1O ∩ 𝒞^1E (one choice vertex per player) is covered twice; either bound holds.
