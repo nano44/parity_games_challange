@@ -130,3 +130,33 @@ Lemma FB-RISE_C, Lemma SAT_C, Theorem FB-C, Corollaries (a), (b), (c), (d): SIGN
 form P1, through (MON)) and P-N5-HONFF's question Q-A (answered YES by both referees; if Q-A were "no", FB-RISE_C falls with FB-RISE, as the
 packet's header says). No gap. The header's claim that (a)'s N_ep form and (d) are weaker than the landed R60 (c) EPOCH: CONFIRMED for n ≥ 2
 (n = 1 vacuous exception, N-FBC-4). Notes N-FBC-1..6. REFEREE-2 successor 17 (Opus 5.5, D15).
+
+## §C. Comparison with REFEREE (R-N5-FBC, claude/referee 0addfc5f, file sha1 c09b22cb; successor 15), written 2026-10-26 15:02Z (date -u)
+Opened on the Lead's word (14:58Z), after my report was pushed (64ee8e9c). Read in full: verdicts, §1-§5.
+| item | REFEREE | REFEREE-2 | relation |
+| --- | --- | --- | --- |
+| FB-RISE_C, SAT_C (both parts), Theorem FB-C | SIGNED | SIGN | same |
+| Corollaries (a)-(d) | SIGNED ((d): the inequality; its comparison sentences are READINGS) | SIGN | same |
+| header "(a)'s N_ep form and (d) weaker than R60 (c) EPOCH" | CONFIRMED for n ≥ 2; at n = 1, f = 0 | CONFIRMED for n ≥ 2; n = 1 vacuous | same; ACCEPT REFEREE's sharper n = 1 line (one vertex, a self-loop only, Iσ = ∅, so f = 0) |
+| D_k (and EPOCH / N_ep) not defined in P-N5-HONFF §0 | FBC-N1 (D_k, and EPOCH / N_ep) | N-FBC-3 (D_k) | same; FBC-N1 is the wider form, ACCEPT |
+| R15 (d) on Ξ needs R57 (a) (VJ) named | FBC-N2 | listed in my premises, no note | ACCEPT FBC-N2 (citation note) |
+| saturated term ≤ 1 per configuration, so f ≤ n·\|𝒞_f(P)\| | FBC-N3 (REFEREE's own proof) | N-FBC-6 (thin spot: my "≤ 1 saturated" control did not bite) | see below: proof CHECKED and ACCEPTED; it explains N-FBC-6 |
+| "incomparable" with R56 | FBC-N4: witnessed in one direction only (READING) | N-FBC-5: never the smaller number in my data; correct only as a statement about formulas | same substance; ACCEPT FBC-N4's wording ("witnessed in one direction only") |
+| LEV_C ≥ 0 unstated | checked in its §1, no note | N-FBC-1 | REFEREE-2 only (note) |
+| C-state hypothesis used only in the Odd case / Odd case holds at every C-state | the second (§1) | the first (N-FBC-2) | complementary, both true |
+- FBC-N3 checked line by line. Two saturated C-state sources t < t′ of one configuration: SAT_C (2) makes Ξ constant on t, …, t′, so the
+  fallback t → t+1 has Ξ_{t+1} = Ξ_t. It is Switch_I of σ alone (τ kept, FIX 3) with I the non-empty unambiguous S4c set; via R57 (a), R15 (b)
+  (Lemma B) makes every (v, z*(v)) ∈ I a length-only switch at a cycle node with empty path sets. S4c switches every v with Iσ_t(v) ≠ ∅, so
+  every gate (y, w) has λ_t(y) = y, and Ξ_t(σ_t y) ◁ Ξ_t(w) ⊴ Ξ_t(z*(y)) with cycle node y and empty path set at both ends forces the same at w
+  (cycle node compared first; signed weight injective), i.e. lev = −1. That is exactly R38 (f) CN-LAST's hypothesis (I re-read it at
+  a7c141b8), so t + 1 is the last state of P and t′ ≥ t + 1 cannot source an in-phase transition. CORRECT. So f ≤ n·\|𝒞_f(P)\|.
+  My own data agree (logs c_n3_*.txt, my checker, 3 sets, 883 phases with a fallback): every Ξ-flat in-phase fallback ends its phase
+  (FLATLAST, 411 checks, 0 failures), f ≤ n·\|𝒞_f\| in all 883, and max saturated sources per configuration 1 in every earlier set.
+- Consequences for my notes. N-FBC-6 (thin spot) is resolved: "≤ 1 saturated per configuration" is a theorem, which is why the control could
+  not bite. N-FBC-5 changes sign under FBC-N3: n·\|𝒞_f\| ≤ n·N_ep < 1 + n·N_ep, so the strengthened per-configuration bound is always at
+  least as good as EPOCH, and it was below R56's 1 + (n − 1)(2 + ρ) in all 883 phases I ran (N3_below_r56 = 883, N3_above_r56 = 0). The
+  header's "weaker" stays true for the packet's SIGNED forms ((4n² − 3n) factor); with FBC-N3 the N_ep form becomes n·N_ep, one below
+  EPOCH. FBC-N3 is a referee strengthening, not a statement of the packet: for the lane to take up as a new statement, then to be refereed
+  as one. I have checked its proof here and would sign it.
+- No disagreement on any signed item. Joint gap map: EMPTY. Notes to the lane (union): FBC-N1..N4, N-FBC-1, N-FBC-2, N-FBC-4 (N-FBC-3 ⊆ FBC-N1;
+  N-FBC-5, N-FBC-6 superseded by FBC-N3 as above). My verdicts are unchanged. REFEREE-2 successor 17 (Opus 5.5, D15).

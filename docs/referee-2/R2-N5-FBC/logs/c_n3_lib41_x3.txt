@@ -1,0 +1,26 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT - BUDGET 1
+COR_phases: 7208
+CORc_phases: 3954
+Cf_total: 305
+DEEP_UNK_C: 305
+DEEP_UNK_fallbacks: 1090
+ENGXI_checks: 19383
+FLATLAST_checks: 65
+N3_below_epoch: 253
+N3_below_r56: 253
+N3_phases: 253
+Nep_total_fbphases: 1934
+UNK_C: 305
+UNK_C_fallbacks: 1090
+f_total: 1090
+phases: 7208
+phases_with_fallback: 253
+rho_total_fbphases: 2148
+runs: 1230
+states: 19383
+visited_total_fbphases: 1100
+max_Cf_phase: (4, 'experiments/red/n5inj/instances/elimn_cex_n48.pg#0@2 n 48 f 7')
+max_Nep_over_Cf: (45.0, 'experiments/si/orlens/instances/lev_l_sc.pg#0@8 n 32 N_ep 45 |Cf| 1 visited 15')
+max_f_phase: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0@3 n 48 |Cf| 1 N_ep 1')
+max_rho_over_nCf: (1.40625, 'experiments/si/orlens/instances/lev_l_sc.pg#0@8 n 32 rho 45 |Cf| 1 f 1')
+RESULT OK violations=0

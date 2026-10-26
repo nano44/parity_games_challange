@@ -1,0 +1,15 @@
+START fit (1, 0) n 16
+BEST step 160 fit (2, 0) t 1s
+BEST step 2175 fit (2, 1) t 15s
+BEST step 2253 fit (3, 0) t 17s
+BEST step 4369 fit (4, 0) t 33s
+BEST step 8859 fit (6, 0) t 72s
+BEST step 8894 fit (7, 0) t 72s
+BEST step 9288 fit (8, 0) t 78s
+BEST step 10300 fit (9, 0) t 96s
+BEST step 10330 fit (10, 0) t 97s
+BEST step 12337 fit (11, 0) t 132s
+BEST step 12695 fit (11, 1) t 139s
+BEST step 12763 fit (12, 1) t 140s
+BEST step 12964 fit (13, 1) t 144s
+END steps 13842 best (13, 1) n 16 -> results/nconf/nconf2_fresh_n16_r2.pg

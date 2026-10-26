@@ -155,3 +155,55 @@ o=$(python3 -I root/bfgate.py --one $N90)
 for k in "BFG_fail=188 " "bfg_checks=948 " "cutsA=22 " "cutsB=18 " "gs_a_checks=684 " "gs_b_checks=943"; do grep -q "$k" <<<"$o"; done
 if grep -q "GS_A_V\|GS_B_V" <<<"$o"; then echo "GATE-SHIFT violated on nep90"; exit 1; fi
 echo "root (GATE-LAG on nep90: 188 / 948 naive failures; GATE-SHIFT (a), (b) hold): PASS"
+# note §9: FREEZE-G (a) on nep90's 22 G-intervals (2,531 checks).
+o=$(python3 -I root/freezeg.py --one $N90)
+for k in "ga_checks=2531 " "intervals=22" "FREEZEG PASS"; do grep -q "$k" <<<"$o"; done
+echo "root (FREEZE-G (a) on nep90): PASS"
+# packet P-N5-ROOT-add-box20 (addendum): 11 quotes verbatim; shifted control fails.
+if git cat-file -e a7c141b8 && git cat-file -e 3732ab55; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-ROOT-add-box20.md | grep -q "quotes=11 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-ROOT-add-box20.md --mut | grep -q "QUOTES FAIL"
+  echo "root (packet P-N5-ROOT-add-box20: 11 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (packet P-N5-ROOT-add-box20 quotes): NOT RUN (source commits not in this clone)"
+fi
+# note §10 / DEAD box 20: on nep90 the root has 63 offset resets, 32 with no charge but its own rho.
+o=$(python3 -I root/resets.py --one $N90)
+for k in "R_DELTA_U=63 " "R_DELTA_U_ONLYSELF=32 " "max_resets_run=13 "; do grep -q "$k" <<<"$o"; done
+echo "root (per-gate resets on nep90; the dead PING/FLIP charge reproduces): PASS"
+# P-N5-CHOSEN fixes file: 22 quotes verbatim at the referees' commits; shifted control fails.
+if git cat-file -e b3473114 && git cat-file -e d08011be && git cat-file -e aab45be6 && git cat-file -e bde1ea77; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-CHOSEN-fixes-box19.md | grep -q "quotes=22 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-CHOSEN-fixes-box19.md --mut | grep -q "QUOTES FAIL"
+  echo "rund (P-N5-CHOSEN fixes file: 22 quotes verbatim; shifted control fails): PASS"
+else
+  echo "rund (P-N5-CHOSEN fixes file quotes): NOT RUN (referee commits not in this clone)"
+fi
+# box 21 (docs/si/N5-GCX-box21.md): G_c and X_u per fallback-free run on nep90 and mkpp K12; C-ONCE (no vertex migrates twice inside a
+# C-interval, none late); control MUT=1 (whole run as one interval) must find a double migration on nep90.
+o=$(python3 -I root/gcx.py --one $N90)
+for k in "G_sum=15 " "X_sum=5 " "xv=14 " "runs=8 " "cint=82 "; do grep -q "$k" <<<"$o"; done
+if grep -q "MIG2_cint\|MIG_LATE" <<<"$o"; then exit 1; fi
+MUT=1 python3 -I root/gcx.py --one $N90 | grep -q "MIG2_cint=4 "
+o=$(python3 -I root/gcx.py --one ../red/usplit/instances/pp_K12_n161.pg ../red/usplit/instances/pp_K12_n161.start)
+for k in "G_max=2 " "X_max=13 " "cint_migt=13 " "mig_per_vertex_max=1 "; do grep -q "$k" <<<"$o"; done
+if grep -q "MIG2_cint\|MIG_LATE" <<<"$o"; then exit 1; fi
+echo "root (gcx: G_c, X_u on nep90 and pp_K12; no double migration inside a C-interval there, whole-run control bites): PASS"
+# box 21 §4: U events by C-interval on the UF-ONCE killer so_th_n32 (8 inside, 6 at cuts, none late: CONJECTURE UL_C); control ULMUT=1
+# (threshold 0) must fire. DEAD instances: cone_n65 (a vertex migrates twice inside a C-interval without D-direct gates), ueonce_n27 (an
+# edge unforbid-switched twice inside one C-interval).
+SO="../red/so/instances/so_th_n32.pg rund/instances/so_th_n32_s0.start"
+o=$(UEV=1 python3 -I root/gcx.py --one $SO)
+for k in "UR_cut=6 " "UR_in=8 "; do grep -q "$k" <<<"$o"; done
+if grep -q "UL_C=\|UE2_Cr=" <<<"$o"; then exit 1; fi
+UEV=1 ULMUT=1 python3 -I root/gcx.py --one $SO | grep -q "UL_C=8 "
+python3 -I root/gcx.py --one root/instances/cone_n65.pg | grep -q "MIG2_cint=1 "
+UEV=1 python3 -I root/gcx.py --one root/instances/ueonce_n27.pg | grep -q "UE2_Cr=1 "
+echo "root (gcx: UL_C on so_th_n32, control fires; DEAD C-ONCE broad (cone_n65) and UE-ONCE_C (ueonce_n27) reproduce): PASS"
+# box 21 §7: the abstract model ABS (acyclic): Lemma ABS-HEIGHT (steps <= DAG height) on 3,000 random games and a climbed one that reaches
+# n steps; control ABSMUT=1 (height - 1) must fire.
+python3 -I root/absmodel.py --rand 3000 10 1 | grep -q "games=3000 steps_ge_n=0 steps_gt_n=0 max_steps 4"
+o=$(python3 -I root/absmodel.py --climb 3000 5 1); grep -q "best steps 5 " <<<"$o"
+if grep -q "HEIGHT_V\|MONO_V" <<<"$o"; then exit 1; fi
+ABSMUT=1 python3 -I root/absmodel.py --climb 3000 5 1 | grep -q "HEIGHT_V="
+echo "root (absmodel: ABS-HEIGHT on random and climbed DAGs, sharp at n = 5; control fires): PASS"

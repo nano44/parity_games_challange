@@ -1,0 +1,1 @@
+REP_V 292 XI_V 514 max_QP 11 max_XDEG 20 mutated 561 phase_transitions 8458 phases 1031 phases_QP_ge2 147 transitions_QP_ge2 898
