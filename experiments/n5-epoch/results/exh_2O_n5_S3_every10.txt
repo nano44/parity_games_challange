@@ -1,3 +1,84 @@
 task 1/32 games 337500 runs 337500 viol 0 188s
 task 2/32 games 675000 runs 675000 viol 0 192s
 task 3/32 games 1012500 runs 1012500 viol 0 192s
+task 4/32 games 1350000 runs 1350000 viol 0 367s
+task 5/32 games 1687500 runs 1687500 viol 0 374s
+task 6/32 games 2025000 runs 2025000 viol 0 382s
+task 7/32 games 2362500 runs 2362500 viol 0 547s
+task 8/32 games 2700000 runs 2700000 viol 0 548s
+task 9/32 games 3037500 runs 3037500 viol 0 562s
+task 10/32 games 3375000 runs 3375000 viol 0 721s
+task 11/32 games 3712500 runs 3712500 viol 0 724s
+task 12/32 games 4050000 runs 4050000 viol 0 734s
+task 13/32 games 4387500 runs 4387500 viol 0 894s
+task 14/32 games 4725000 runs 4725000 viol 0 895s
+task 15/32 games 5062500 runs 5062500 viol 0 905s
+task 16/32 games 5400000 runs 5400000 viol 0 1068s
+task 17/32 games 5737500 runs 5737500 viol 0 1072s
+task 18/32 games 6075000 runs 6075000 viol 0 1077s
+task 19/32 games 6412500 runs 6412500 viol 0 1243s
+task 20/32 games 6750000 runs 6750000 viol 0 1245s
+task 21/32 games 7087500 runs 7087500 viol 0 1257s
+task 22/32 games 7425000 runs 7425000 viol 0 1413s
+task 23/32 games 7762500 runs 7762500 viol 0 1418s
+task 24/32 games 8100000 runs 8100000 viol 0 1423s
+task 25/32 games 8437500 runs 8437500 viol 0 1587s
+task 26/32 games 8775000 runs 8775000 viol 0 1593s
+task 27/32 games 9112500 runs 9112500 viol 0 1597s
+task 28/32 games 9450000 runs 9450000 viol 0 1759s
+task 29/32 games 9787500 runs 9787500 viol 0 1766s
+task 30/32 games 10125000 runs 10125000 viol 0 1769s
+task 31/32 games 10462500 runs 10462500 viol 0 1933s
+task 32/32 games 10800000 runs 10800000 viol 0 1936s
+clean_strict: 14568
+crossings: 47618
+cyc: 15154
+epochs: 17202720
+epochs_D0: 10695408
+epochs_D1: 5584300
+epochs_D2: 923012
+fallbacks_in_phase: 143748
+games: 10800000
+in_phase_transitions: 501112
+len_sum_D0: 436978
+len_sum_D1: 62248
+len_sum_D2: 1886
+nc: 1984
+phases: 17167692
+phases_Nep_ge2: 35028
+phases_single_state: 16678272
+rho: 29360
+runs: 10800000
+tie: 4278
+transitions: 6868804
+xsnpre: 13636
+xsnpre_sum_D0: 0
+xsnpre_sum_D1: 13028
+xsnpre_sum_D2: 608
+max_N_ep: 2
+max_XD_phase: 2
+max_absD: 2
+max_len_D0: 3
+max_len_D0_minus_(n+m): -12
+max_len_D1: 2
+max_len_D2: 1
+max_phase_in_transitions: 3
+max_residual_phase(tie+nc+cyc): 2
+max_rho_phase: 2
+max_xsnpre_D0: 0
+max_xsnpre_D1: 2
+max_xsnpre_D2: 1
+top EP0_len_minus_(n+m): -12 | 2On5 prio=[0, 2, 4, 6, 7] owner=[1, 1, 0, 0, 0] succ=[[0, 1], [0, 1], [0], [0], [0]] start=S3 phase#0 states[0,0] epoch 0 states[0,0] len=0 n=5 m=7
+top EP0_len_over_(n+m): 0.2 | 2On5 prio=[0, 2, 3, 5, 7] owner=[1, 0, 1, 0, 0] succ=[[0, 4], [2, 3], [0, 1], [0, 2], [0, 2]] start=S3 phase#0 states[0,3] epoch 0 states[0,3] len=3 n=5 m=10
+top N_ep: 2 | 2On5 prio=[0, 2, 4, 6, 7] owner=[1, 0, 1, 0, 0] succ=[[3, 4], [0, 4], [0, 1], [3], [3]] start=S3 phase#0 states[0,1] n=5 rho=1 tie=0 nc=0 cyc=0 |Q|=2
+top N_ep_over_n: 0.4 | 2On5 prio=[0, 2, 4, 6, 7] owner=[1, 0, 1, 0, 0] succ=[[3, 4], [0, 4], [0, 1], [3], [3]] start=S3 phase#0 states[0,1] N_ep=2 n=5 rho=1 tie=0 nc=0 cyc=0
+top len_D0: 3 | 2On5 prio=[0, 2, 3, 5, 7] owner=[1, 0, 1, 0, 0] succ=[[0, 4], [2, 3], [0, 1], [0, 2], [0, 2]] start=S3 phase#0 states[0,3] epoch 0 states[0,3] |D|=0 n=5 m=10
+top len_D1: 2 | 2On5 prio=[0, 2, 4, 6, 7] owner=[0, 0, 0, 1, 1] succ=[[2, 3], [0, 2], [3], [0, 4], [0, 1]] start=S3 phase#0 states[0,2] epoch 0 states[0,1] |D|=1 n=5 m=9
+top len_D2: 1 | 2On5 prio=[0, 2, 4, 6, 7] owner=[0, 1, 0, 0, 1] succ=[[2, 3], [1, 3], [0, 1], [4], [0, 1]] start=S3 phase#0 states[0,1] epoch 0 states[0,1] |D|=2 n=5 m=9
+top len_D2_over_n: 0.2 | 2On5 prio=[0, 2, 4, 6, 7] owner=[0, 1, 0, 0, 1] succ=[[2, 3], [1, 3], [0, 1], [4], [0, 1]] start=S3 phase#0 states[0,1] epoch 0 len=1 |D|=2 n=5
+top slack_NEP_min(neg): 0 | 2On5 prio=[0, 2, 4, 6, 7] owner=[1, 0, 1, 0, 0] succ=[[3, 4], [0, 4], [0, 1], [3], [3]] start=S3 phase#0 states[0,1] N_ep=2 bound=2
+len_hist |D|=0: 0:10269394 1:415098 2:10868 3:48
+len_hist |D|=1: 0:5522392 1:61568 2:340
+len_hist |D|>=2: 0:921126 1:1886
+nep_hist: 1:17132664 2:35028
+RESULT OK violations=0

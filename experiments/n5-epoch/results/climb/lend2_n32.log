@@ -1,0 +1,27 @@
+START fit (0, 1) n 32
+BEST step 99 fit (1, 2) t 1s
+BEST step 2376 fit (2, 1) t 26s
+BEST step 2474 fit (3, 1) t 27s
+BEST step 2479 fit (3, 2) t 27s
+BEST step 2791 fit (3, 3) t 31s
+BEST step 2814 fit (4, 2) t 31s
+BEST step 3312 fit (4, 3) t 40s
+BEST step 3316 fit (5, 1) t 40s
+BEST step 3354 fit (6, 2) t 40s
+BEST step 4181 fit (7, 2) t 55s
+BEST step 4980 fit (7, 3) t 70s
+BEST step 5050 fit (7, 4) t 71s
+BEST step 5224 fit (8, 4) t 75s
+BEST step 6282 fit (9, 4) t 98s
+BEST step 6826 fit (9, 5) t 110s
+BEST step 7957 fit (10, 5) t 139s
+BEST step 8526 fit (11, 4) t 152s
+BEST step 10177 fit (12, 4) t 197s
+BEST step 10311 fit (13, 4) t 201s
+BEST step 10838 fit (14, 4) t 216s
+BEST step 11157 fit (15, 4) t 226s
+BEST step 11415 fit (16, 4) t 234s
+BEST step 12571 fit (17, 4) t 272s
+BEST step 16882 fit (18, 4) t 421s
+BEST step 16978 fit (18, 5) t 425s
+BEST step 19627 fit (19, 5) t 517s
