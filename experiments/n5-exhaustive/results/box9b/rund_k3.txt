@@ -1,0 +1,15 @@
+OFFa_mono_checks: 127121
+OFFa_states: 16795
+OFFb_checks: 248050
+OFFc_checks: 248050
+S_runs: 8204
+S_runs_U_nonempty: 342
+TG_vertex_checks: 120929
+TGi_checks: 764
+TGii_exercised(late changes): 0
+runs: 80000
+vertices_with_offset_changes: 759
+max_B: 16
+max_N_v: 2
+max_N_v_late: 0
+RESULT OK violations=0
