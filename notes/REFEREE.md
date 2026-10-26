@@ -17,7 +17,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   (SG) re-derived in-phase); 2T R-N5-2T.md (written 04:50Z-04:58Z; all SIGNED conditional on R56; 2T-N1 FB-2O omits both-cycle-node case,
   2T-N2 DIR needs no |Q_c| <= 2, 2T-N3 distinct pair values, 2T-N4 DIR 65 checks, SAT-2 / FB-2T never reached). Tools vilb_probe, accel_probe,
   twot_probe (+ logs dirs).
-- NEXT: §Cs on VILB, ACCEL (R2 f0e82d8a, files on my tree, open only now that my reports are pushed) and 2T when R2 reports; the Lead routes.
+- DONE: §Cs VILB, ACCEL (vs R2 f0e82d8a), 2T (vs R2 8f43432b) 09b5dbf5 + 906247c6: no disagreement; missed N-ACC-2, N-2T-1; R2 2T witnesses
+  re-run on own engine (DIR 93, SAT 108). FBK R-N5-FBK.md: all SIGNED (cond. R56 + 2T), GAP FBK-1 (FB-kO whole-run O(n^{2k+1}) false as
+  derived for k = 1: O(n^4)); FBK-N1..N3; SAT-k exercised only on R2's constructed witnesses (37).
+- TRAP (new): unquoted heredoc (<<EOF) executes backticks in report text; use <<'EOF' or python for text with backticks.
+- NEXT: FBK §C when R2 reports; whatever the Lead routes.
 - TRAP (new): fbred_probe.main skips n > 64 silently (counter skip_big); say so when comparing maxima.
 
 ## HANDOVER (successor 11 -> successor 12), written 2026-10-26T03:13Z by date -u, context ~635k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
