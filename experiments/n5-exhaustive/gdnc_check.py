@@ -161,7 +161,7 @@ def check_run(g, s, t, c, mx, bad, name):
     # formula; needs >= n + 1 states), L from max(max_S M_D, -1) to n - 1. The 1-based base k0 + n - 2 is tested as INFO only.
     good3 = [A[j]["h3"] for j in range(len(A))]
     ok3 = [not fbs[j] and A[j]["lam"] == A[j + 1]["lam"] and states[j][1] == states[j + 1][1] and good3[j] and good3[j + 1] for j in range(T)]
-    k = 0; best3 = 0
+    k = 0; best3 = 0; best3n = 0
     while k < T:
         if not ok3[k]:
             k += 1; continue
@@ -169,6 +169,7 @@ def check_run(g, s, t, c, mx, bad, name):
         while j < T and ok3[j]:
             j += 1
         Sx = list(range(k, j + 1)); c["FRZH3_runs"] += 1; best3 = max(best3, len(Sx))
+        if any(not A[x]["NC"] for x in Sx): best3n = max(best3n, len(Sx))
         mD = max(max(A[x]["MD"] for x in Sx), -1)
         for base, tag in ((n - 1, "FRZH3"), (n - 2, "FRZH3_1based_info")):
             if len(Sx) <= base + 1:
@@ -186,7 +187,8 @@ def check_run(g, s, t, c, mx, bad, name):
         k = j
     mx["max_FRZH3_run_states"] = max(mx["max_FRZH3_run_states"], best3)
     mx["max_FRZH3_run_minus_n"] = max(mx["max_FRZH3_run_minus_n"], best3 - n)
-    PH3["best"] = best3
+    PH3["best"] = best3; PH3["best_notNC"] = best3n
+    mx["max_FRZH3_run_with_notNC_states"] = max(mx["max_FRZH3_run_with_notNC_states"], best3n)
     mx["max_FRZ_run_states"] = max(mx["max_FRZ_run_states"], best)
     mx["max_FRZ_run_minus_(n-1)"] = max(mx["max_FRZ_run_minus_(n-1)"], best - (n - 1))
     return best
