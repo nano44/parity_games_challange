@@ -199,6 +199,161 @@ climb has n in-phase fallbacks, so the late regime (j ≥ n) where FB-RED's thir
 on 𝒞^1O (FBP §8), the open count is vacuous in the data, and ρ-POLY rests on nothing but a proof that is not there.
 Runs 2026-10-26 02:31Z-02:33Z (date -u).
 
+## 7. Direction (b): late Q-runs as value iteration on a terminal game (Lead 02:47Z; chosen by L-NEW 23, see notebook; written 02:54Z by date -u)
+Source opened (notebook "Sources opened"): T. Brihaye, G. Geeraerts, A. Haddad, B. Monmege, "To Reach or not to Reach? Efficient
+Algorithms for Total-Payoff Games", arXiv:1407.5030v4 (14 Jul 2015), pdf sha256 c2587986…, cited [BGHM]. Used: §3 Algorithm 1 and the
+operator F (x_i = Val^{≤i}, i-step min-cost-reachability value), Theorem 1 item 4 (values in O(|V|²|E|W) time; O(|V|²W) iterations,
+"(2|V| − 1)W|V| + |V| steps" in the text after Algorithm 1), and the Figure 2(a) example (a 3-vertex game needing 2W iterations).
+### 7.1 The terminal game Γ_c and Lemma VI-LB (PROVED, every game)
+- Γ_c (per phase, c ∈ C): vertices U_c; Even vertices maximise, ALL Odd vertices (choice or not) minimise, over successors inside
+  U_c; target c (value (0, 0)); a play's payoff is κwt_c summed along it until c; a play that never reaches c is −∞ (worst for Even).
+  Integer form (order-preserving, since |Σ s_c| ≤ |U_c| < 2n + 1): ω(v) := (2n + 1)·wt_c(v) + s_c. Up to negation (Even ↦ Min,
+  Odd ↦ Max, κ ↦ −κ) this is [BGHM]'s min-cost reachability game with target c, and its j-step values Val^{≤j}_c are the mirrored
+  iterates x_j of [BGHM] Algorithm 1 (x_0 = −∞ off c).
+- Lemma VI-LB. For every j ≥ 0, every state t of the phase with t > g_j and every z ∈ U_c: κ_t(z) ≥ Val^{≤j}_c(z).
+  Proof by induction on j. j = 0: Val^{≤0} is −∞ off c, and κ_t(c) = (0, 0). Step: z = c trivial. Even z ≠ c: κ-FB-ROUND at g_j gives
+  κ_{g_j+1}(z) ≥ κwt_c(z) + κ_{g_j}(x) for every successor x ∈ U_c, the hypothesis at g_j (> g_{j−1}) gives κ_{g_j}(x) ≥ Val^{≤j−1}(x),
+  and (M2κ) carries it to t; take the max over x. Odd z ≠ c: (Aκ) gives κ_t(z) = κwt_c(z) + κ_t(σ̄_t z) with σ̄_t(z) ∈ U_c, so
+  κ_t(z) ≥ κwt_c(z) + min_{x ∈ succ(z) ∩ U_c} κ_t(x) ≥ κwt_c(z) + min_x Val^{≤j−1}(x) (hypothesis at t > g_{j−1}). ∎
+- This is the two-player form of κ-HAT-FREEZE (a): HAT-FREEZE used only Odd vertices outside Q (forced), i.e. the one-player relaxation
+  of Γ_c with the Odd choice vertices removed; VI-LB keeps them as minimisers. So each in-phase fallback is (at least) one round of
+  [BGHM]'s value iteration on every Γ_c simultaneously.
+### 7.2 What the known bound gives (READING, with the source)
+- If VI on Γ_c stabilised after R_c rounds AND the honest values were bounded above by the stable value (κ_t ≤ Val_c), then a FREEZE-EXIT
+  argument would give: after max_c R_c fallbacks no S-switching fallback, so f ≤ 1 + max_c R_c + (CN-ONLY). The upper bound is OPEN: Γ_c
+  lets Odd avoid c (payoff −∞ for Even), which in G means another cycle node, not a lower κ; so κ_t ≤ Val_c is not implied by Lemma S (a).
+- Even granting it, [BGHM] Theorem 1 (4) bounds R_c by O(|U_c|²·W) with W = max |ω| ≈ (2n + 1)·2^{rank range above c}: EXPONENTIAL in
+  n, not polynomial. No polynomial VI bound for min-cost reachability / total-payoff games with arbitrary integer weights is known to me;
+  [BGHM] call theirs "the first pseudo-polynomial time algorithm" for total-payoff games (abstract). So the cross-field route gives
+  pseudo-polynomial = exponential here, unless the weights are polynomial (ranks above c in U_c spanning O(log n) levels).
+### 7.3 The obstruction, instance-style (OPEN; no N5 instance)
+- [BGHM] Figure 2(a): v1 (Max) → v3 (target) weight −W, v1 → v2 weight −1, v2 (Min) → v1 or → v3; VI needs 2W rounds because Min
+  gains −1 per loop. Mirrored into Γ_c: an Even vertex v2 and an Odd choice vertex v1 on a 2-cycle inside U_c, with a low even-rank
+  vertex (rank r) on the cycle and an exit from v1 to c through a high even-rank vertex (rank R > r). Val^{≤j} rises by about 2^r per two
+  rounds.
+- In N5 the honest values are values of SIMPLE paths ((SP′)), so κ_t ≤ the simple-path ceiling K_c (< 2^{R+1} in the wt component).
+  Lemma VI-LB then forces the phase to have fewer than j fallbacks once Val^{≤j}_c exceeds K_c somewhere. On the gadget that happens after
+  about 2^{R+1−r} rounds: the cycle is cut off, but only after an exponential number of rounds when R − r is large. So neither direction
+  closes: VI-LB gives no polynomial count on such gadgets, and nothing shows N5 performs one fallback per VI round there.
+- What a counterexample to ρ-POLY / to a polynomial fallback count would need: a phase whose fallbacks track the VI iterates of such a
+  gadget (each fallback raising the honest value at v2 by one cycle increment, without changing λ). OPEN; and the late regime (≥ n
+  fallbacks in a phase) is vacuous in all data (§4, §6.4), so no data speak to it.
+- Verdict for (b): no known polynomial value-iteration bound applies (the opened one is pseudo-polynomial, exponential with 2^rank
+  weights); VI-LB (PROVED) makes each fallback a VI round on Γ_c; the freeze at the VI fixed point (κ_t ≤ Val_c) is OPEN.
+
+## 8. The converse side: why N5 can beat value iteration (Lead 03:07Z; written 03:13Z by date -u)
+### 8.1 (i) Is a fallback (plus the S4a block after it) a strategy-improvement step?
+- On G, in the honest frame: YES, exactly (PROVED, from the SPEC). Ξ_k is σ_k's valuation against Odd's best response σ̄_k (S1). S4c
+  switches EVERY Even vertex with an improving edge (S2: strictly better Ξ_k-value than its current successor) to the improving successor
+  of best (Ξ_k, index) key. That is one switch-all, best-improvement ("greedy all-switches") step of Vöge-Jurdziński strategy
+  improvement for Even on G, R15 (a) gives its monotonicity. The S4a steps in between are further improvements (each switches along gate
+  edges; R15 (a)), computed as Even's one-player optimum against the fixed τ (R18 (d) Lemma S (c), "⇒" form), not against σ̄.
+- On Γ_c: NOT literally. Γ_c's minimiser may avoid c (payoff −∞ for Even), so Odd's best response in Γ_c can differ from σ̄_k, which
+  is Odd's best response in G (avoiding c there means another cycle node, which σ̄_k rejected). Γ_c is a lower-bound device (VI-LB),
+  not a model of N5's dynamics.
+### 8.2 (ii) What is known about SI vs VI on these games (source opened: [BGHM], arXiv:1407.5030v4)
+- [BGHM] §1: for total-payoff games "the best algorithm to compute the values runs in exponential time [9], and consists in iteratively
+  improving strategies" ([9] = Gawlitza-Seidl, not opened by me); [BGHM] give the first pseudo-polynomial algorithm, by value iteration.
+- [BGHM] appendix (the comparison with Björklund-Vorobyov's longest-shortest-path problem, printed pp. 16-17): the strategy iteration
+  algorithm of [1] (Björklund-Vorobyov, not opened by me) needs 2^n iterations on "the LSP instance presented in Fig. 2 of [1], with
+  2n + 1 vertices but a biggest weight W exponential in n", which their value iteration solves in time linear in n; conversely
+  [BGHM] Figure 2(a) needs 2W VI iterations.
+- READING: neither paradigm dominates on min-cost reachability / total-payoff games; both have exponential worst cases with exponential
+  weights. No polynomial bound for either is known to me with 2^rank weights.
+### 8.3 (iii) Lemma ACCEL (PROVED, every game): N5's switches are paid by simple-path value levels, not by VI rounds
+For c ∈ C and z ∈ U_c let K_c(z) := {κwt_c(p ∖ {c}) : p a simple path of G[U_c] from z to c} (all edges of G inside U_c; Odd choice
+vertices included). Then in every phase:
+- (a) κ_t(z) ∈ K_c(z) at every state t, for every z ∈ U_c;
+- (b) the in-phase transitions at which some Even vertex z with λ(z) ≠ z switches number at most N_K := Σ_{c} Σ_{Even z ∈ U_c ∖ {c}}
+  (|K_c(z)| − 1);
+- (c) f ≤ 1 + N_K.
+Proof. (a) z's honest play up to c is a simple path of G[U_c] ((SP′), via (Aκ) it stays in U_c), and (Aκ) along it gives κ_t(z) =
+κwt_c(path ∖ {c}). (b) At an in-phase transition L → L+1, a switched Even y with λ_L(y) ≠ y gains strictly: Ξ_{L+1}(y) ▷ Ξ_L(y)
+(RESULTS R19 (d), key step (SG), signed "on all games, not only 𝒞^1O"; the switch is along a gate edge at S4a and at S4c). With (M1κ),
+κ_{L+1}(y) > κ_L(y). By (M2κ) κ(y) never decreases in the phase, and by (a) it moves in the finite set K_c(y); so y switches at ≤
+|K_c(y)| − 1 transitions; charge each transition to one such y. (c) A fallback with S = ∅ is at most one (CN-ONLY_D, P-N5-FBRED §2);
+a fallback with S ≠ ∅ switches an Even y ∉ T, so λ(y) ≠ y (y ∉ C), and is counted in (b). ∎
+- The gadget collapses (PROVED as an instance of (b)): in the mirrored [BGHM] Figure 2(a) gadget (§7.3), an Even vertex v2 and an Odd
+  vertex v1 on a 2-cycle with exits, each of v1, v2 has ≤ 2 simple paths to c through the gadget, so |K(v)| ≤ 2 for the gadget's own
+  choices, and v2 switches at most once per phase. VI-LB's iterates climb by walking the 2-cycle repeatedly; N5's values never do (a
+  repeated cycle would be an honest cycle without c, i.e. a λ-change). So the 2^{R+1−r} VI rounds are not N5 rounds: N5's escape
+  mechanism is POSITIONAL values (simple paths) plus STRICT gain at every non-cycle-node switch. This answers L-RED's routed target in
+  the negative for the bare gadget (READING; L-RED may test it).
+- What ACCEL does NOT give: a polynomial bound. |K_c(z)| can be exponential (distinct subsets of high-rank vertices on simple paths).
+  ACCEL is the honest-frame analogue of "SI terminates after at most #valuations steps"; it bounds switching transitions by value
+  levels, not by n^O(1). Transitions that switch only cycle nodes are not counted by (b).
+- The obstruction that remains (OPEN, instance-style): a phase in which some vertex's honest value climbs MONOTONICALLY through
+  exponentially many simple-path values of U_c, one or a few per transition, without λ or τ changing. That is a binary-counter
+  structure inside ONE phase (Friedmann's lower bounds for strategy improvement count across many λ-phases; N5 is about linear on his
+  families, N5-MULTI §4.5, DATA). VI-type gadgets (cycle accumulation) cannot produce it, by ACCEL (a).
+### 8.4 DATA (experiments/new/box44/sgcheck.py; canonical S3 start)
+| sample | in-phase transitions | (SG) checks / viol. | max switching transitions in one phase | max distinct κ-values of one vertex in one phase |
+| --- | --- | --- | --- | --- |
+| lib41 (412 runs) | 6,554 | 12,653 / 0 | 112 | 52 |
+| box43 + box44 instances (10) | 105 | 263 / 0 | 44 | 17 |
+| `--rand 2000 5 20 71` | 382 | 430 / 0 | 3 | 3 |
+Reading (DATA): the per-vertex value levels actually used in a phase stay small (≤ 52 on lib41, games up to n 492); nothing in the data
+approaches an exponential climb inside one phase.
+
+## 9. The one-phase counter question (Lead 03:26Z; route (a); written 03:28Z by date -u)
+Question: inside one phase, can κ_t(z) pass through more than poly(n) simple-path levels? Route (a), structural. The Lead's
+cross-field reading, "N5's in-phase dynamics on G_τ is one-player SI; super-polynomial behaviour must come from σ̄ changing at Q", is
+formalised here by epochs.
+### 9.1 Lemma EPOCH (PROVED, every game)
+An EPOCH of a phase: a maximal run E of consecutive states of the phase on which σ̄_t|Q is constant (then σ̄_t is constant on E: Odd
+vertices outside Q have one successor). Let G_E := G with every Odd vertex fixed to σ̄_E (a one-player game), and for z ∈ U_c let
+opt_E(z) := max{κwt_c(p ∖ {c}) : p a simple path of G_E[U_c] from z to c}. Let e_1 < e_2 < … be the in-phase fallbacks k → k+1 with
+k ∈ E. Then:
+- (a) (freeze) for every state t ∈ E with t > e_j and every z ∈ U_c: κ_t(z) ≥ max{κwt_c(p ∖ {c}) : p a simple path of G_E[U_c] from z
+  to c with ≤ j edges}; hence for t ∈ E with t > e_{n−1}, κ_t = opt_E on every class (Ξ is frozen on all of V).
+- (b) (no switch after the freeze) no transition t → t+1 with t, t+1 ∈ E and t > e_{n−1} switches an Even vertex z with λ(z) ≠ z; and the
+  part of E after e_{n−1} has at most 4n(n − 1) + 1 transitions.
+- (c) (count) the phase has f ≤ 1 + n·N_ep in-phase fallbacks, N_ep := its number of epochs.
+Proof.
+- (a) Induction on j (as κ-HAT-FREEZE (a), with every Odd vertex forced to σ̄_E). j = 0: the path is (c); κ_t(c) = (0, 0). Step: p = z·p′,
+  p′ from x with ≤ j − 1 edges. Odd z: on E, next_t(z) = σ̄_E(z) = x, and (Aκ) with the hypothesis at t gives κ_t(z) ≥ κwt_c(z) +
+  κwt_c(p′ ∖ {c}). Even z: k := e_j < t, k ∈ E, k > e_{j−1}; κ-FB-ROUND at k gives κ_{k+1}(z) ≥ κwt_c(z) + κ_k(x), the hypothesis at k gives
+  κ_k(x) ≥ κwt_c(p′ ∖ {c}), and (M2κ) carries κ_{k+1}(z) to t. For the equality: z's honest play at t ∈ E is a simple path of G_E[U_c]
+  to c ((SP′); Even edges σ_t, Odd edges σ̄_E), so κ_t(z) ≤ opt_E(z); simple paths in U_c have ≤ |U_c| − 1 ≤ n − 1 edges.
+- (b) If such a z switched, (SG) (R19 (d), every game) would give κ_{t+1}(z) > κ_t(z) = opt_E(z) ≥ κ_{t+1}(z) (the latter by (a)'s upper
+  bound at t + 1 ∈ E): impossible. After e_{n−1}, every transition with both ends in E leaves Ξ = Ω_σ unchanged (a), and Ω_τ is constant
+  (τ is constant on a phase); RESULTS R15 (d): at most 4n(n − 1) consecutive iterations leave both unchanged. Add the transition that
+  leaves E.
+- (c) In each epoch: at most n − 1 fallbacks e_1..e_{n−1}; after e_{n−1}, a fallback with both ends in E switches only cycle nodes ((b)),
+  so S = ∅ and it is the phase's one CN-ONLY_D fallback; and at most one fallback is E's last transition. So f ≤ Σ_E ((n − 1) + 1) + 1.
+  ∎
+- What EPOCH gives: FREEZE-type collapse inside every epoch, from the one-player structure alone (R17-style, Bellman rounds = fallbacks).
+  Every super-polynomial count of fallbacks in a phase needs super-polynomially many epochs, i.e. σ̄|Q changing that often (the
+  Lead's "moves only at Q", made exact for f). Compared with FB-RED (f ≤ 1 + (n − 1)(2 + ρ)), EPOCH counts σ̄-changes instead of
+  Ξ-changes at Q; neither dominates (a Ξ(q)-change need not change σ̄(q), and σ̄(q) can change at a tie without a Ξ(q)-change).
+- What EPOCH does NOT give: the S4a steps of an epoch BEFORE its freeze (between e_j and e_{j+1}) are not counted; nor N_ep.
+### 9.2 Can N_ep be bounded by ∏ deg(q) (no repeated σ̄|Q in a phase)? NO (DATA, instance)
+For τ, Corollary Φ-kO uses "no τ repeats along a run" (R15 on G^d). The analogue for σ̄|Q inside a phase FAILS:
+- Instance experiments/new/box25/laps/lap_n6_s1_110421.pg (n 6, 𝒞^1O with Q = {2}, sha1 4f4fe69c51e1c6f170c9c732feca025da70e7edb):
+  N5 from S3: 2 iterations, both in one phase (λ ≡ 5, τ(2) = 0 throughout); σ̄_t(2) = 0, 4, 0 at states 0, 1, 2 (no fallback). A repeat.
+- lib41: 91 phases with a repeated σ̄|Q (87 of them on 𝒞^1O, |Q| = 1); up to 36 repeats and 50 epochs in one phase
+  (experiments/si/orlens/instances/lev_l_x.pg, n 32, |Q| = 1).
+- So N_ep is not bounded by the number of σ̄|Q configurations; on 𝒞^1O it is polynomial only because the whole phase is (RESULTS R51).
+  Obstruction for a fixed-k bound by this route: Odd's best response at q alternates between successors as their values rise in turn
+  (min over increasing values), which no potential on σ̄|Q forbids.
+### 9.3 The answer to the question, as far as it goes
+- PROVED: inside an epoch, after n − 1 fallbacks the honest values are frozen (EPOCH (a)); so a vertex's levels inside a phase are visited
+  only (i) at transitions before its epoch's freeze, or (ii) at epoch boundaries. Levels per vertex per phase ≤ Σ_E (1 + number of
+  switching transitions of E before e_{n−1}) (ACCEL's strict gains, restricted to epochs).
+- OPEN: (i) needs a bound on S4a runs between fallbacks inside an epoch (gated W-optimal steps; the 𝒞^1O version of this is what R50 /
+  R51 needed T*-type machinery for); (ii) needs a bound on N_ep, which the ∏deg route cannot give (§9.2).
+- Route (b) (a counter) is not attempted here: by EPOCH, a one-phase counter must either flip σ̄|Q super-polynomially often inside the
+  phase or run long S4a stretches before epoch freezes. That is the instance shape for L-RED's climb (objective: N_ep per phase, or the
+  longest pre-freeze S4a run).
+### 9.4 DATA (experiments/new/box44/epoch.py; canonical S3 start)
+| sample | phases | max N_ep (n) | phases with a σ̄|Q repeat / max repeats | EPOCH (c) viol. | epochs reaching n − 1 fallbacks | longest S4a run in an epoch | max levels of one vertex in a phase |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| lib41 (412 runs) | 2,335 | 50 (n 32) | 91 / 36 | 0 | 0 | 55 | 52 |
+| box43 + box44 instances (10) | 59 | 17 (n 44) | 2 / 7 | 0 | 0 | 7 | 17 |
+| `--rand 2000 5 20 81` | 4,610 | 2 | 0 / 0 | 0 | 0 | 3 | 3 |
+Reading (DATA): EPOCH (a)/(b) are vacuous in the data (no epoch reaches n − 1 fallbacks); EPOCH (c) holds everywhere. Epochs and σ̄
+repeats are frequent on 𝒞^1O, where N5 is polynomial anyway (R51).
+
 ## 5. How a fallbacks-per-phase bound combines with the phase count (READING)
 - Phases. Lemma Φ (R47 (a), every game): λ changes ≤ n(n − 1); Corollary Φ-kO (P-N5-DUAL, N5-MULTI §1.4): distinct τ's ≤ ∏_{q∈Q}
   deg(q), so phases ≤ n(n − 1) + ∏_q deg(q). On 𝒞^kO with k fixed that is ≤ n(n − 1) + n^k, polynomial; for k growing with n it is
