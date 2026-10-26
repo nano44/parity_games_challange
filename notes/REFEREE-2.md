@@ -1,6 +1,32 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 17, session_01P2K6kCftytexWsuJfNFtV4, Opus 5.5 under D15; 2026-10-26 14:50Z by date -u)
+- DONE: R2-N5-FBC (P-N5-FBC sha1 32d3776c @ de02d37e = l-new 1f8d6d7d): FB-RISE_C, SAT_C, Theorem FB-C, Corollaries (a)-(d) all SIGN, no gap;
+  notes N-FBC-1..6. The Lead's question answered: the header's "(a)'s N_ep form and (d) weaker than landed R60 (c) EPOCH" is CONFIRMED for
+  n >= 2 (difference N_ep(4n^2-4n) - 1 > 0), false only at n = 1 (vacuous). FB-C beats EPOCH only if |C_f|(4n-3) < N_ep; max ratio
+  N_ep/|C_f| in my data 45 at n = 32 (lev_l_sc) against 4n-3 = 125, so the FB-C number never beat EPOCH's or R56's anywhere (N-FBC-5).
+  Tool R2-N5-FBC/fbc_check.py (own LEV_C per (phase, configuration), exact by H_C simple-path enumeration + a DEEP iterative-deepening mode
+  for over-budget configurations), quotes.py (14/14 verbatim). Controls: plus2 298 FAIL, tau 14,399 FAIL, sat 0 (does not bite: thin spot).
+- DONE: R2-N5-CHOSEN (P-N5-CHOSEN sha1 764cfbb3 @ 9196c318 = l-si b7189738): CHOSEN, RELAY-CHAIN (a), (b) SIGN; TV-END SIGN CONDITIONAL on
+  ROOT-C's repaired form (R69 not landed, C78 FAIL in revision); no gap; notes N-CHOSEN-1..7. Side findings: the packet's "TOG never occurs"
+  is too strong (241 RELAY events have the TOG alternative, always alongside the source event; no chain ever ends in TOG), and TV-END's data
+  is far richer than its §5 says when (H) is tested directly (66,816 (class, state) pairs, |Q_c| up to 144, 2,955 transitions after (H)).
+  Longest chain 86 at |Q_c| = 233 (tcL_N12; lane's longest 11). Zero RELAY on 𝒞^1O confirms SELF-FREE (N-CHOSEN-7).
+  Tool R2-N5-CHOSEN/chosen_check.py (own kappa, exits, kopt exact; KADD/KORD self-checks), qtags.py. Controls: next 740 FAIL, noH 12,651 FAIL.
+- Independence: 0 FBC/CHOSEN files under docs/referee/ at 13:34Z and 14:38Z; nothing of REFEREE's opened. No §C yet.
+- Trap avoided: the FBC first pass left 408 (phase, C) pairs UNK; added the DEEP mode and re-ran everything (logs_v1/ is the first pass).
+
+## Resume point 1 (successor 17, session_01P2K6kCftytexWsuJfNFtV4, Opus 5.5 under D15; 2026-10-26 13:50Z by date -u)
+- Handover check 46671677 (Lead 5/5, GO 13:39Z). Oink built. Trunk merge 9545f342.
+- IN FLIGHT: R2-N5-FBC (P-N5-FBC sha1 32d3776c @ de02d37e = l-new 1f8d6d7d) and R2-N5-CHOSEN (P-N5-CHOSEN sha1 764cfbb3 @ 9196c318 = l-si
+  b7189738). Paper checks of both done: all to-sign items correct. Tools docs/referee-2/R2-N5-FBC/{fbc_check.py,quotes.py,run_all.sh},
+  docs/referee-2/R2-N5-CHOSEN/{chosen_check.py,qtags.py,run_all.sh}; quotes 14/14 (FBC), 9/9 (CHOSEN) verbatim.
+- Notes so far: FBC (d)'s "incomparable" with R56 not shown (no phase where FB-C's bound beats R56's); N_ep-form "weaker" true for n >= 2
+  only (n = 1 trivial); D_k undefined in the packet (P-N5-HON l. 44). CHOSEN: "≥ half, P1" label at t is additivity; the P1/Lemma S (a) step is
+  at t + 1 ("≤" half, R56 (d)'s own text); TV-END rests on ROOT-C repaired form (R69 not yet landed; C78 FAIL being revised).
+- Independence: REFEREE files on FBC/CHOSEN: 0 at 13:34Z. Not opened.
+
 ## HANDOVER (successor 16, session_01R1scbTA9MiKutHRhRdi3zh, Opus 5.5 under D15; written 2026-10-26 13:19Z by date -u; context ~640k, over the line; Lead 13:18Z: §C, hand over, park)
 Branch claude/referee-2, merged with trunk (--no-ff) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
 Successor 17 takes P-N5-FBC and P-N5-CHOSEN (Lead).

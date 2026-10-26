@@ -1,0 +1,4 @@
+start (0, 0) n 11
+22 (1, 1) n 14 |Q| 6 sumdeg 16 proddeg 288
+1513 (2, 2) n 28 |Q| 6 sumdeg 18 proddeg 540
+done (2, 2)

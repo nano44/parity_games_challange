@@ -1,0 +1,7 @@
+BFG_fail=188 bfg_checks=948 cutsA=22 cutsB=18 gs_a_checks=684 gs_b_checks=943
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('../../red/rec0/instances/nep90_n40.pg', 4, 0, 23, 2, 0, None, 0, 0)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('../../red/rec0/instances/nep90_n40.pg', 4, 1, 12, 14, 0, None, 23, 23)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('../../red/rec0/instances/nep90_n40.pg', 4, 1, 23, 2, 0, None, 0, 0)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('../../red/rec0/instances/nep90_n40.pg', 4, 2, 12, 15, 0, None, 23, 23)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('../../red/rec0/instances/nep90_n40.pg', 4, 3, 12, 15, 0, None, 23, 23)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('../../red/rec0/instances/nep90_n40.pg', 4, 4, 12, 15, 0, None, 23, 23)

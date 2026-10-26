@@ -225,3 +225,43 @@ from the repository; commands named.
   referee-2 heads); any new report commit is read in full before the verdict.
 - Also carried: stale clone with "up to date" (caught again here: 52a1e489); addenda appended only (`cat >>`, then
   `git diff HEAD -- docs/checker/C74.md | grep -c '^-[^-]' || true` = 0); stamps from `date -u`; merge-before-landing ancestor test.
+
+## Handover check (successor 11)
+Written 2026-10-26 14:22Z (date -u). CHECKER successor 11 (Opus 5.5, D15), this session. Predecessor: successor 10, session_011EiUmib2GvATXE6mphqubk,
+handover 1e2b39f5 (notes/CHECKER.md "## HANDOVER (successor 10 → successor 11)"). Every answer measured from the repository; commands named.
+
+### 1. Branch, head, ahead/behind trunk
+- Clone started stale: local claude/checker said "up to date" before `git fetch origin`; fetch moved origin/claude/checker 52a1e489 → 1e2b39f5;
+  `git merge --ff-only origin/claude/checker` → HEAD = 1e2b39f5 (successor 10's handover).
+- Trunk = claude/vibrant-johnson-nxvvxo, head 5fc35de2 (Lead 14:14:55Z: "R70 revised for C79 E-1, N-1..N-3; FBC REFEREE report; CHECKER handover; merges; log").
+  Before merging: `git rev-list --left-right --count HEAD...trunk` = 0 ahead, 12 behind; merge-base = 1e2b39f5 (`merge-base --is-ancestor`: on trunk).
+- `git merge --ff-only trunk` (fast-forward, no rebase, no new commit) → HEAD = 5fc35de2, 0 ahead / 0 behind. This file's commit makes 1 ahead, 0 behind.
+
+### 2. Open work and the next step of each
+- C74-C78 CLOSED (R65-R69 landed; table in the handover). C79 = R70 (P-N5-HONFF): main report docs/checker/C79.md at b49f5974, FAIL E-1 (title FB-RISE
+  clauses: (b) stated as a rise across every such fallback; (a) without the n − 1 cap), optional N-1..N-3.
+  Next: C79 Addendum 1 on the revised draft docs/agents/R70-draft.md (sha1 25c2cb5f… at trunk 5fc35de2): script-check E-1's fix text and N-1..N-3 are in and
+  the old texts gone; `git diff --word-diff e14c78bb 5fc35de2 -- docs/agents/R70-draft.md`: nothing else moved; pins again; on PASS the checker SHA to the Lead.
+  Then the landed check (every commit of the landing; checker SHA ancestor of the landing commit). R70 lands after R69 (already landed, a7c141b8).
+- Counter: next new check C80. Queue: none named; P-N5-FBC and P-N5-CHOSEN drafts come when both referees and §Cs are in.
+- Oink: built with scripts/setup_oink.sh in this container (exit 0; "oink built at 8fbf0a7"; tools/oink/build/oink present).
+
+### 3. docs/GAPS.md rows I own
+- `awk -F'|' '$4 ~ /CHECKER/' docs/GAPS.md`: none. Landing side: G-N5-TIME (major, L-NEW (L-LIT T22; referees later), open, l.11); an R70 landing
+  appends to it: old row minus " |" a prefix of the new one, status open, other rows equal.
+
+### 4. The three owner rulings that most constrain me, verbatim (docs/DECISIONS.md, `grep -n -F`), with index status
+- D1 (l.7; DECISIONS-INDEX l.5 "active"): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+  including the fleet's own, as wrong until it passes the gauntlet below."
+- D15 (l.278; index l.26 "active", Lead reading L37 l.27 "active"): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+- D18 (l.333; index l.32 "active", Lead reading L40 l.33 "active"): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where
+  needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+- For the gate: nothing lands stronger than both signatures (D1); label "(Opus 5.5, D15)"; PROVED / CONJECTURE / OPEN / FALSE exact (L40).
+
+### 5. One trap, and the check that prevents it
+- Trap (successor 10, C76/C78/C79): the E-items were title clauses wider than the signed items (a dropped hypothesis, "needs" for a sufficient
+  condition, a rise over LEV(h) stated over LEV(t), an open branch asserted). Check: split the title into clauses and diff each one against the
+  signed item's hypotheses and reference points; fix texts are then script-checked (quoted strings ≥ 25 chars, whitespace-normalised) in new and old drafts.
+- Also carried: stale clone with "up to date" (caught again here); addenda appended only (`cat >>`, then `git diff HEAD -- docs/checker/C79.md | grep -c '^-[^-]' || true` = 0);
+  stamps from `date -u`; checker SHA ancestor of the landing commit; every commit of a landing checked.

@@ -1,0 +1,7 @@
+BFG_fail=568 bfg_checks=8448 cutsA=213 cutsB=163 gs_a_checks=5420 gs_b_checks=7044 long_Bpieces=26
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('experiments/red/carry/instances/ctx12_n40.pg rs', 10, 1, 38, 5, 25, None, 34, 34)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('experiments/red/carry/instances/ctx12_n40.pg rs', 10, 1, 38, 16, 25, None, 34, 34)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('experiments/red/carry/instances/ctx12_n40.pg rs', 4, 2, 38, 16, 25, None, 34, 34)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('experiments/red/carry/instances/ctx12_n40.pg rs', 4, 3, 38, 5, 25, None, 34, 34)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('experiments/red/carry/instances/ctx12_n40.pg rs', 4, 3, 38, 16, 25, None, 34, 34)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('experiments/red/carry/instances/ctx13_n40.pg rs', 6, 1, 17, 34, 26, None, 26, 26)

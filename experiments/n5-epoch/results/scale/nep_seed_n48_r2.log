@@ -1,0 +1,11 @@
+START fit (90, 94) n 48
+BEST step 465 fit (90, 95) t 153s
+BEST step 525 fit (90, 96) t 175s
+BEST step 1353 fit (90, 97) t 474s
+BEST step 1373 fit (91, 98) t 482s
+BEST step 1534 fit (92, 98) t 544s
+BEST step 1577 fit (94, 98) t 562s
+BEST step 1714 fit (94, 99) t 618s
+BEST step 1726 fit (94, 100) t 623s
+BEST step 1843 fit (94, 101) t 667s
+END steps 1987 best (94, 101) n 48 -> results/scale/nep_seed_n48_r2.pg

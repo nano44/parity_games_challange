@@ -1,6 +1,24 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 48 log (successor 27, session_01Eb3V637FARpmtRkvarA5Jx; handover check 6ef1a695 (5/5, Lead 13:13Z); GO 13:13Z, Lead's stamp)
+- Container stale at 5961101a; ff to d362e158; trunk 87d72d98 merged (3a5c0d02). Oink built (rc 0, 8fbf0a7). First push.sh: VERIFY PASS, then GitHub
+  "remote rejected … fatal error in commit_refs_rules"; retry clean.
+- (1) NCONF: docs/new/N5-NCONF-box48.md; tools experiments/new/box48 (nconf, laps, vislev, retfb). Written 13:30Z onward (date -u).
+  - N_ep (σ̄|Q changes + 1) ≥ D changes + 1 (τ fixed in a phase). L-SI §27.2's 42 / 32 are D changes; N_ep on nep90 / nep76 = 90 / 76 (the names).
+  - nep90 / nep76: two LAPS of one configuration block (48 / 40 configurations); lap 2 = lap 1 on active Even vertices, dormant ones differ.
+  - Lemma RET-FB (PROVED, rests on Q-A): fallback t, later C-state s ⇒ LEV_C(s) ≥ min(LEV_C(t) + 1, n − 1), any C. Corollary VIS: V_C ≤ 2n² − n + R⁰_C.
+    Theorem EP-C: N_ep ≤ NCONF·(2n² − n) + R⁰, R⁰ = fallback-free returns (≤ Σ_S REV(S), ≤ f + 1 runs S).
+  - DATA: liball n ≤ 40 NCONF ≤ n except nep90 (48); 122 LEV_C stalls at returns, all fallback-free; SAT_VIS ≤ 1 (CONJECTURE SAT-1).
+- (3) P-N5-HONFF-fixes-box47 FROZEN (b2dcf365, sha1 ccc520dd…): both reports + §Cs (REFEREE e7db1ab4, REFEREE-2 11e3cfb1, read on their branches since
+  trunk lacked the §Cs at 13:3xZ); 45 quotes by box48/quotecheck2.py (REV:FILE sources).
+- (2) Lemma SAT-FB (PROVED, from SAT_C alone): saturated C-fallback ⇒ last state of P or C never recurs; ≤ 1 saturated fallback per C; Theorem FB-C′
+  f ≤ n·|𝒞_f| (⇒ R60 (c)). Successor 26's "flat and ends the phase" DEAD (rho3_253_n32, random start; 12 non-flat in liball). §5 of N5-NCONF.
+- R⁰ shape (r0shape.py): 610 of 616 fallback-free returns change σ̄ at ONE vertex; 577 keep |D| ≤ 1 (already under R68 (h) REC-1 (c)).
+- Packet P-N5-EPC-box48 FROZEN (81ab0b72, sha1 9f48ded7…; pin trunk f4562054): FB-RISE_C + SAT_C restated, RET-FB, VIS, EP-C, SAT-FB(1), FB-C′,
+  EP-ASM; FBC-N3 (REFEREE 15, 0addfc5f) cited as a referee note with the two routes compared; 24 quotes (quotecheck_epc.txt). Lead queue: FBC, CHOSEN,
+  then EPC. FBC fixes file later: FBC-N1 (D_k / EPOCH / N_ep defs), FBC-N2 (cite R57 (a)), FBC-N4 (R56 incomparability one-way), FBC-N3 → EPC §3.
+
 ## Box 47 log (successor 26, session_01NkLhWhNtcThjnCotjLUvvF; handover check 8a018742 (5/5, Lead 10:57Z); GO 10:57Z, Lead's stamp)
 - Container stale at 5961101a again; ff to e2a529fa; trunk f1d2cf09 merged (34a4d336), later trunk merged again. Oink built (rc 0, 8fbf0a7).
 - (1) X_dir: docs/new/N5-XDIR-box47.md; tools experiments/new/box47 (xd2, ppclimb, mkpp2, dumprand). Written 11:13Z (date -u).

@@ -1,0 +1,2 @@
+START fit (90, 94) n 40
+END steps 2252 best (90, 94) n 40 -> results/scale/nep_seed_n40_r3.pg

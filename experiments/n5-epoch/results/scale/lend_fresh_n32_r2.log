@@ -1,0 +1,21 @@
+START fit (-1, 1) n 32
+BEST step 1 fit (0, 1) t 0s
+BEST step 329 fit (0, 2) t 2s
+BEST step 504 fit (3, 2) t 4s
+BEST step 937 fit (3, 3) t 10s
+BEST step 1647 fit (3, 4) t 22s
+BEST step 2114 fit (4, 2) t 31s
+BEST step 2549 fit (5, 2) t 38s
+BEST step 3121 fit (5, 3) t 48s
+BEST step 3133 fit (5, 4) t 48s
+BEST step 3143 fit (6, 4) t 48s
+BEST step 4296 fit (7, 4) t 76s
+BEST step 4539 fit (8, 4) t 82s
+BEST step 4675 fit (8, 5) t 85s
+BEST step 9640 fit (8, 6) t 227s
+BEST step 12191 fit (8, 7) t 310s
+BEST step 14220 fit (9, 5) t 375s
+BEST step 15200 fit (10, 5) t 411s
+BEST step 16010 fit (11, 4) t 438s
+BEST step 16273 fit (11, 5) t 449s
+END steps 17096 best (11, 5) n 32 -> results/scale/lend_fresh_n32_r2.pg
