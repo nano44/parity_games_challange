@@ -1,0 +1,16 @@
+MODE union ../R2-N5-FBRED/box4344.lst g5 3 MUT - UCAP 13
+ALT_clean_equal: 2
+ALT_clean_strict: 91
+NEP_checks: 329
+ROUTEK_checks: 3689
+SATK_at_depth_1: 58
+SATK_checks: 58
+SATKbr_free: 58
+classes_skipped_UCAP: 238
+phases: 329
+runs: 60
+SATK_closeness: (11, 'experiments/new/box44/instances/fb17_n32.pg+g5P66#0@23 c 32 q 36 p 34 |U_c| 7')
+max_depth: (5, 'experiments/new/box43/instances/tj17_n19.pg+g5P23#0@11 m_c 6')
+max_epochs: (17, 'experiments/new/box43/instances/dch16_n44.pg+g5P78#0')
+max_m_c: (6, 'experiments/new/box43/instances/tj17_n19.pg+g5P23#0')
+RESULT OK violations=0
