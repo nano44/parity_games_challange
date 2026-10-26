@@ -1,6 +1,34 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point -- HANDOVER of successor 5 (session_017XFY64b42Hkc6fmeUEzwek, Opus 5.5), parked 2026-10-26 ~19:0xZ at ~515k context
+Boxes this session: handover check 1a8a4628; box 12 epoch census cf441de1; HON-FF add-on 15bcfa06; box 13 growth law + rho_q table 73e72e55;
+box 14 NCONF 6f782d57 + EP-ASM dda29260; box 15 UL_G / GCI-LEN (this push). Everything: experiments/n5-epoch/README.md (one section per box,
+every command, every sha1). No background jobs. NEEDS: next box from the Lead (successor 6).
+### DONE (all DATA; 0 violations of any landed or lane statement tested)
+- census.py (EP0/ALT/NEP/XEP/SPLIT/EPOCH/MONO), honff.py (HON-FF; IMM/IMM' dead confirmed), rhotab.py (= L-SI relay.py exactly), nconf.py
+  (= L-NEW nep90 exactly), epc.py (EP-ASM in the Lead's form), ulg.py (UL_G, GCI-LEN; = L-RED on b6_xs_n24).
+- Records pinned in experiments/n5-epoch/instances/ (pin.py: n5.py = n5b states, Oink zlk, verify.py): nep94_n48 (N_ep 94, NCONF_{>=2} 93),
+  nep92_n40 (92), lend107_n32 (|D| 3 epoch len 107 = 3.34 n), lend82_n32, ret14_n48 / ret14_n64 (R0_{>=2} 14), ffin12_n32 (12 fallbacks in one
+  honest gap), gci2_n12 / gci3_n24 (gated global C-intervals n - 3 / n - 4).
+- Growth law: not separable (fresh climbs b <= 0.5; seeded b ~1.2-1.3 seed-dominated; fixed k = 5 all b <= 0); only the |D| >= 2 epoch
+  length still rises with budget at n 32 (58, 63, 62, 82, 107/95 for 240 ... 7,680 s).
+### Open items for successor 6
+- L-SI's FREEZE-G per-gate reset count (Lead 15:04Z (5); docs/si/N5-ROOT-box20.md §9): NOT RUN.
+- Longer lend doubling at n 32 (15,000 s+), several seeds (seed variance is large: 107 vs 95).
+### Things only I know (successor 5)
+- TRAP that bit me: Lead messages queue while a long tool loop runs; four arrived during box 14 and I read them only at its end (C-ONCE and
+  UL_C were already dead by then). Check: call ReadNotifications between every wait step of a long box, not only at the end.
+- Engine: n5b.N5(g, mode="spec").run(..., trace=, fbtrace=); census.state_info gives Xi, sbar, lam, lamW, W, D, RD, H per state.
+- honff.lev(g, SG, Xi, lam, oddmap, budget): LEV in G_tau (oddmap = tau) or H_C (oddmap = sigma-bar); optimistic-completion prune verified by
+  levcheck.py (0 mismatches vs brute force).
+- climb.py fitnesses nep, lend2, nconf2, ret02, gdl, ulg; --fixk keeps |Q|; seeds padded with Even self-loops; replay any best with
+  census.py FILE.pg:FILE.start. Wall-clock budgets: steps fall with n (n 64 seeded ~1-2k steps); always report steps.
+- runjobs.sh JOBFILE (env P parallelism) runs climb job lists; fit.py DIR fits END lines.
+- Stop-hook: untracked climb logs trigger "uncommitted changes"; wait in-turn (10-min steps) or commit partial logs.
+- epc.py's "runs" in box-14 outputs mixed game and fallback-free runs (fixed to ff_runs later).
+
+
 ## Resume point (successor 5, session_017XFY64b42Hkc6fmeUEzwek, Opus 5.5) -- box 12 (epoch census) DONE 2026-10-26
 Handover check 1a8a4628 (Lead: 5/5). Box 12 GO 07:57Z. Code + tables: experiments/n5-epoch/ (README.md has every command and number).
 ### DONE

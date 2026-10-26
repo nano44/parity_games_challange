@@ -1,0 +1,13 @@
+OK   docs/RESULTS.md@a7c141b8:2786-2787 | D_k := {Odd u : σ̄_k(u) ≠ τ_k(u)}; u(v) := the first vertex of D_k on v's (σ_k, τ_k)-play 
+OK   docs/RESULTS.md@a7c141b8:2839-2841 | for c ∈ C the honest class U_c := λ^{-1}(c). κ_t(z) := (signed weight of P(Ξ_t z), s_c·ℓ(Ξ
+OK   docs/RESULTS.md@a7c141b8:2851-2851 | (a) Facts (Aκ), (A0κ), (M1κ), (M2κ), (INJ), (SP′) per honest class
+OK   docs/new/P-N5-FBRED-box44.md@3732ab55:49-50 | (Aκ): for z ∈ U_c ∖ {c}: λ_t(z) = c ≠ z, so (V1) gives Ξ_t(z) = z ⊕ Ξ_t(next_t z) with cyc
+OK   docs/RESULTS.md@a7c141b8:738-739 | (F1)/(F2) (the optimum of a one-player game dominates every strategy of that game pointwis
+OK   docs/RESULTS.md@a7c141b8:933-933 | (a) Lemma XW: Ξ_k ⊴ W_k pointwise at every state
+OK   docs/RESULTS.md@a7c141b8:2792-2794 | R17 (a)-(c), R18 (c) flat case, R18 (d) Lemma S (c) in its landed "⇒" form, R21 (a) XW, R2
+OK   docs/RESULTS.md@a7c141b8:2798-2798 | (a) Lemma G_D (a) (no hypothesis): for every state k and every v ∈ F_D, Ξ_k(v) = W_k(v).
+OK   docs/RESULTS.md@a7c141b8:2858-2859 | (d) κ-Y-FORM_D (per q ∈ Q ∩ U_c, q ≠ c, at a state t where q lies on no honest cycle): κ_t
+OK   docs/RESULTS.md@a7c141b8:3276-3276 | Ω_k := W_k, the valuation of σ_k in the fixed one-player game G_τ
+OK   docs/RESULTS.md@a7c141b8:3286-3286 | (d) Lemma WM-G: for every transition k → k+1 of a run S, Ω_{k+1} ⊵ Ω_k pointwise.
+tagged quotes 11 ok 11 missing 0
+«-quotes without a [Q] tag right before them: 1

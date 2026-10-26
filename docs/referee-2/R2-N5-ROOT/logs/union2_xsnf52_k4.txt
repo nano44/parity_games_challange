@@ -1,0 +1,39 @@
+MODE unionsearch ../../../experiments/red/so/instances/xsnf52_n64.pg 3000 8 16 4 7202 MUT - BUDGET 100000
+BFF_checks: 1109305
+DLS_A: 15
+DLS_A_clean: 5
+DLS_A_nonclean: 10
+DLS_B: 13
+DLS_case_ii: 5
+DLS_entering: 28
+DLS_gains: 6
+ENGXI_checks: 168134
+FA_beyond_freeze: 237339
+FA_pieces: 286094
+FAa_checks: 45975772
+FAb_checks: 45975772
+FAc_checks: 18109340
+FG_beyond_active: 3
+FG_beyond_freeze: 5079
+FG_beyond_freeze_Ru_ge2: 1733
+FG_beyond_switch_in_class: 4
+FG_intervals: 8161
+FGa_checks: 1743374
+FGb_checks: 1743374
+FGb_const_checks: 17042670
+FGc_checks: 438581
+GSa_checks: 14224
+GSb_checks: 3784
+RLP_beyond: 5288
+RLP_beyond_switch_in_class: 4
+RLP_runs: 8161
+RLPi_checks: 5407
+RLPii_checks: 21237
+RP_checks: 60565
+classes: 16119
+phases: 9893
+runs: 3000
+states: 168134
+union_hits: 2
+RP_max_rho: (1, 'union7202:99@2 q 66 f 1 G_c 0 |U| 7')
+RESULT OK violations=0

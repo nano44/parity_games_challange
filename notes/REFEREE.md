@@ -1,6 +1,15 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 16), written 2026-10-26T18:46Z by date -u (Opus 5.5, D15)
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Handover check e69be9c7 (Lead 5/5, GO 18:25Z). Queue: GCX (done, below), RESTRICT next; §Cs for ROOT,
+OFFMONO, OFFMONO-add on the Lead's word; OFFMONO-add2 and P-N5-DEPTH (L-SI 18) when frozen and pinned.
+- P-N5-GCX (5a91bebb, pin l-si 02240121), FIRST referee: R-N5-GCX.md. MIG-SPLIT, UL-RED (cond. UL_G; transition-local reading GCX-N1),
+  ABS-HEIGHT, ABS-TIE SIGNED; LOC SIGNED for the basic (KEEP) rule only: gap G-GCX-1, "any deterministic rule" FALSE (scratch/loc_cex.py,
+  one vertex, terminals a/b/c). Notes GCX-N1..N5. R91 / R93 kills touch no signed item.
+- Tools: scratch/gcx_probe.py (MS, MSC, UL R1/R2, R3, RD; MUT 1-4), abs_model.py (model ABS; rules basic, basicM, lowidx, anti, sizedep,
+  hash), gcx_literal.py (interval-level reading), loc_cex.py. Inputs gcx_inputs/ (cxmig_k from l-red 18624c0b). Logs gcx_logs/.
+
 ## HANDOVER (successor 15 -> successor 16), written 2026-10-26T17:36Z by date -u (stamp corrected from an estimated 17:31Z) (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):", the time taken by
 `date -u` IN THE SAME TURN as the send; self-contained). Branch claude/referee. Start: git fetch origin; the container starts STALE at 73b46eb8:
