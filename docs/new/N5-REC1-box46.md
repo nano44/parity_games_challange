@@ -200,14 +200,45 @@ Proof.
 | lib41, S3 + 2 random, seed 7 | 5,377 | 0 | 0 | 2,330 | 204 / 1 / 12 / 2,113 | 49 | 111 | 6 | 3,814, 50, 0 |
 | 3,000 random 𝒞^kO, S3 + 4 random, seed 8 | 40,203 | 0 | 0 | 12,239 | 130 / 15 / 32 / 12,062 | 2 | 4 | 2 | 30,360, 3, 1 |
 | lev_l_x, so_th_n32, lap_n6_s1_110421 (S3) | 6 | 0 | 0 | 11 | 6 / 0 / 0 / 5 | 49 | 54 | 6 | 6, 50, 0 |
-- levels.py (the permanent level, HON's step 1 at the epoch level, §4 (i)): see the table added below when the runs finish.
+- levels.py (the permanent level LEV_C at C-epoch ends, §4 (i)); gaps = between consecutive C-epochs of one phase; NORISE = no rise on a
+  fallback-free gap; NORISE_FB = no rise on a gap with a fallback; UNK = level computation over the path budget (skipped).
+| sample | |D_C| | gaps | fallback-free | NORISE | gaps with a fallback | NORISE_FB | UNK |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| lib41 n ≤ 34, S3 + 2 random, seed 7, budget 3·10⁶ | 0 | 33 | 31 | 0 | 2 | 0 | 1 |
+| lib41 n ≤ 34 (same) | 1 | 676 | 453 | 133 (also 133 for u-avoiding paths) | 223 | — | 36 |
+| random 3,000 𝒞^kO, S3 + 4 random, seed 8, budget 10⁶ | 0 / 1 | 1 / 1 | 1 / 1 | 0 / 0 | 0 / 0 | — | 0 |
+- hon2.py (LEV in G_τ at every W-honest state; gaps between consecutive ones; HON step 1 and HON-FF):
+| sample | gaps | fallback-free gaps without a rise | gaps with the fallback at the first state (HON-FB) | without a rise | gaps with a fallback inside | without a rise | UNK |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| lib41 n ≤ 20, S3 + 2 random, seed 7 | 472 | 0 | 27 | 0 | 0 | — | 3 |
+| lib41 n ≤ 34, budget 3·10⁶ | 1,689 | 0 | 45 | 0 | 2 | 0 | 49 |
+| random 3,000 𝒞^kO, S3 + 4 random, seed 8 | 2,984 | 0 | 546 | 0 | 0 | — | 0 |
+- fbin.py, all lib41 gaps with an inside fallback (n ≤ 64, exact LEV): j10_n24 gap 1 → 24, fallback at 9, LEV 1 → 4; j7_n32 gap 1 → 46, fallback at
+  22, LEV 0 → 19; j8_n32 gap 3 → 50, fallbacks at 22 and 29, LEV 2 → 9 (experiments/red/xing/instances/, S3 starts). All rise. On j10_n24
+  (gaptrace.py) the Ξ-level already rises at state 2, one step after the honest state, and the fallback at 9 lowers W at nine vertices
+  without lowering the W-level (3).
+- imm.py (non-fallback in-phase steps h → h + 1 from a W-honest h; IMM and IMM′ failures; WIMM = the W-level at h + 1 does not rise):
+| sample | steps | split steps (a W-cycle node ≠ λ at h + 1) | IMM failures (split / unsplit) | IMM′ failures (h + 1 not last in its phase) | WIMM split / UNSPLIT |
+| --- | --- | --- | --- | --- | --- |
+| lib41 n ≤ 20, S3 + 2 random, seed 7 | 481 | 27 | 0 / 0 | 0 | 11 / 0 |
+| random 3,000 𝒞^kO, S3 + 4 random, seed 8 | 2,556 | 45 | 4 / 1 | 0 | 15 / 0 |
+  WIMM UNSPLIT = 0 is HON step 1's Lemma P rise of W (it needs no W-cycle-node change at h + 1); the split failures are allowed.
+- Climbs (ffclimb.py against HON-FF, immclimb.py against IMM / IMM′; box43 climb.mutate, S3 start; best games in out/climb/, not kept):
+  ffclimb seeded from j10_n24 (1,500 steps, seed 51): (0, 1); from random 𝒞^2O / 𝒞^3O / 𝒞^4O (4,000 steps, seeds 54-56): (0, 0, 0), i.e. the
+  climber never produced a gap with an inside fallback. immclimb (IMM, seeds 61-63): IMM failures found at once (§4 (iii)); immclimb --prime
+  (IMM′ first, seeds 71-74, 𝒞^2O-𝒞^4O, n ≤ 14-22, 3,000-4,000 steps): best (IMM′ failures, IMM failures, honest-to-dishonest steps) = (0, 1, 3),
+  (0, 1, 4), (0, 2, 2), (0, 3, 4): no IMM′ failure.
 - Reading of the data: X_dir and X_big are rare (≤ 1% of interval entries); most {u}-intervals start the phase; the per-phase number of
   {u}-intervals of one u is ≤ 6. Nothing here bounds X_dir or X_big.
 
 ## 6. Open, and (b)
 - OPEN: X_dir, X_big per phase (D-changes into a singleton that do not pass through D = ∅; a special case of R55's CONJECTURE Δ1); f per phase on
   general games (R56: ρ); epochs with |D| ≥ 2; and (Στ) itself (P-N5-STAU in review).
-- (b), the f-free form: HON's only f term is the gaps between consecutive W-honest states that contain a fallback. A proof would need either a
-  rise across such gaps (W can drop at the fallback) or a bound on the fallbacks that fall between two W-honest states. Next (READING): at a
-  fallback state k, S4a returned σ_k, so σ_k is a pointwise optimum of its arena in G_τ, and the fallback switches only Ξ-improving edges that
-  do not improve W in that arena (R60 ACCEL, R59 VILB describe them); test first whether a gap with a fallback ever ends without a rise.
+- (b), the f-free form, where it stands. HON′ leaves f_in: fallbacks at NON-honest states strictly between two honest states. Two routes:
+  - HON-FF directly (CONJECTURE; 0 failures, but only 5 gaps with an inside fallback exist in all the data, so the support is THIN). A proof
+    must show that W's lower bound, carried from h + 1, survives a fallback at a dishonest k (W does drop there, j10_n24) until the next
+    honest state.
+  - IMM′ (CONJECTURE; it implies HON-FF because Ξ is monotone and the rise happens at h + 1, before any fallback): 0 failures on the samples and
+    in 4 climbs. IMM itself is FALSE (§4 (iii)), and both failures sit at the last state of a phase. So a proof of IMM′ must use that the phase
+    goes on after h + 1, i.e. that τ is value-optimal against σ_{h+1} in S4b's arena (Lemma Στ-STEP (c)). How that constrains Odd's honest
+    deviations at h + 1 is the open step. (READING: Iτ is a function of τ alone, so it is the same set at h and h + 1.)
