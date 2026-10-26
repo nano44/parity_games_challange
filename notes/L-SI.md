@@ -28,6 +28,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - 09:08Z Lead GO: U-SPLIT proof attempt. Result (note §18): stops. 112/118 U events straddle a boundary; the no-boundary case has 6
   events only. Obstruction: z's route can leave its gate for an F_D route better in both frames inside a stretch_D; then y's U event goes
   offset 0 → 0 with no boundary (explicit numeric scenario; not built; not DEAD). Switching to (R4) per Lead.
+- (R4) (note §19): DATA (bnd.py): pftheta34 has a boundary at EVERY transition (gate 0's Ξ changes 33 times; W(0) never). Lemma GATE-XI
+  PROVED (gate Ξ-changes come from σ̄ changes or from Ξ/W changes of σ̄(u); attributed 216/216). READING: U → boundaries → W-changes → U is
+  circular; no polynomial count from §14-§19 as they stand. OPEN: a dropping potential or an injective CHARGE-U.
 - Things only I know: python3 -I drops the script dir from sys.path (lvl2.py inserts it to import lvl). sched.py runs on every λ_W-constant
   fallback-free in-phase run, not only (h3_D) runs (okfrz.py needs (h3_D) everywhere).
 

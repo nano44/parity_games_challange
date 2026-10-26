@@ -1,0 +1,18 @@
+== ../../n5-exhaustive/instances/frz1_n24.pg ../../n5-exhaustive/instances/frz1_n24.start
+  RUN ../../n5-exhaustive/instances/frz1_n24.pg k0=2 trans=4 n=24 boundaries=0 xi={} w={}
+  RUN ../../n5-exhaustive/instances/frz1_n24.pg k0=7 trans=24 n=24 boundaries=2 xi={12: 1} w={}
+L=-1 MUT=0 bd=2 bd_DCH=1 bd_WG=0 bd_WG_only=0 bd_XI=1 bd_XI_only=1 max_bd_run=2 max_trans_run=24 max_xi_changes_gate=1 runs=2 trans=28
+SCHED PASS
+== ../../n5-exhaustive/instances/frz2_n24.pg ../../n5-exhaustive/instances/frz2_n24.start
+  RUN ../../n5-exhaustive/instances/frz2_n24.pg k0=2 trans=23 n=24 boundaries=8 xi={12: 2, 4: 1} w={23: 1, 4: 1}
+L=-1 MUT=0 bd=8 bd_DCH=6 bd_WG=2 bd_WG_only=1 bd_XI=2 bd_XI_only=0 max_bd_run=8 max_trans_run=23 max_w_changes_gate=1 max_xi_changes_gate=2 runs=1 trans=23
+SCHED PASS
+== ../../n5-exhaustive/instances/frz3_n24.pg ../../n5-exhaustive/instances/frz3_n24.start
+  RUN ../../n5-exhaustive/instances/frz3_n24.pg k0=2 trans=24 n=24 boundaries=8 xi={12: 2, 23: 3} w={23: 2}
+L=-1 MUT=0 bd=8 bd_DCH=4 bd_WG=2 bd_WG_only=1 bd_XI=3 bd_XI_only=2 max_bd_run=8 max_trans_run=24 max_w_changes_gate=2 max_xi_changes_gate=3 runs=1 trans=24
+SCHED PASS
+== ../../red/so/instances/pftheta34_n32.pg
+  RUN ../../red/so/instances/pftheta34_n32.pg k0=5 trans=34 n=32 boundaries=34 xi={0: 33} w={}
+L=-1 MUT=0 BD_GT_N1=1 bd=34 bd_DCH=1 bd_WG=0 bd_WG_only=0 bd_XI=33 bd_XI_only=33 max_bd_run=34 max_trans_run=34 max_xi_changes_gate=33 runs=1 trans=34
+VIOLATION ('BD_GT_N1', '../../red/so/instances/pftheta34_n32.pg', 5, 34, 34, 32)
+SCHED FAIL

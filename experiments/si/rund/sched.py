@@ -35,7 +35,7 @@ def check(g, name, start=None):
         wn = (lambda s, t: (lambda v: s[v] if g.owner[v] == 0 else t[v]))(list(s), tuple(t))
         W = [wval(E, wn, v) for v in range(g.n)]
         D = {u for u in range(g.n) if g.owner[u] == 1 and sb[u] != t[u]}
-        rows.append(dict(key=(tuple(x[0] for x in vs), tuple(t)), lw=tuple(w[0] for w in W), s=list(s), wn=wn, vs=vs, W=W, D=D,
+        rows.append(dict(key=(tuple(x[0] for x in vs), tuple(t)), lw=tuple(w[0] for w in W), s=list(s), wn=wn, vs=vs, W=W, D=D, sb=list(sb),
                          fb=r[4] if r else 0))
         if r is None: break
         s, t = r[0], r[1]

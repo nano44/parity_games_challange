@@ -605,3 +605,34 @@ above forces that. Scenario (weights s^Ξ / s^W, one cycle node, gates and D fix
   level multiplies by up to n − 1 (CHARGE-U is not injective), so it gives no polynomial bound as it stands. OPEN.
 - Status: U-SPLIT is a CONJECTURE with almost no data in its non-trivial case (6 events), and the scenario above says it should fail.
   UF-ONCE likewise. Per the Lead's 09:08Z instruction, I switch to (R4): stretch_D boundaries per run (§19).
+
+## 19. (R4) stretch_D boundaries per run (Lead's 09:08Z fallback after §18): DATA, Lemma GATE-XI (PROVED), and a circularity (READING)
+Written 2026-10-26 09:2xZ (date -u), successor 13. Runs as §14 (one phase, no fallback, λ_W constant). A BOUNDARY is a transition at which
+the stretch key (D, and (Ξ(u), W(u)) for u ∈ D) changes; causes DCH (D changes), XI (a gate's Ξ value changes), WG (a gate's W value changes).
+### DATA (bnd.py; logs/bnd_long.txt, bnd_lib41_rs4.txt, bnd_lib2o_rs4.txt, bnd_rand2o.txt, bnd_randkO_big.txt, bnd_xi.txt)
+| set | runs | transitions | boundaries (DCH / XI / WG) | max boundaries per run | max Ξ changes of one gate per run | max W changes of one gate per run |
+| --- | --- | --- | --- | --- | --- | --- |
+| frz1 / frz2 / frz3 (n 24) | 2 / 1 / 1 | 28 / 23 / 24 | 2 (1/1/0) / 8 (6/2/2) / 8 (4/3/2) | 2 / 8 / 8 | 1 / 2 / 3 | 0 / 1 / 2 |
+| pftheta34_n32 | 1 | 34 | 34 (1 / 33 / 0) | 34 | 33 (gate 0) | 0 |
+| lib41, S3 + 4 random starts | 243 | 987 | 183 (113 / 85 / 13) | 6 | 4 | 2 |
+| lib2o, S3 + 4 random starts | 121 | 707 | 90 (39 / 62 / 2) | 5 | 3 | 1 |
+| random 𝒞^2O 6,000 / 𝒞^kO 2,000 n 15-24 | 927 / 641 | 996 / 726 | 100 / 81 | 2 / 2 | 1 / 1 | 1 / 1 |
+- pftheta34_n32: EVERY transition of its 34-transition run is a boundary; all but one are Ξ-changes of the single gate 0, whose W value
+  never changes. So |B(S)| can be the whole run, and (R4) is not a small remainder there: it is the run.
+### Lemma GATE-XI (PROVED, every game; immediate)
+At a transition k → k + 1 inside one phase, let u ∈ D_k ∩ D_{k+1} with Ξ_k(u) ≠ Ξ_{k+1}(u), u ≠ λ_Ξ(u). Then σ̄_k(u) ≠ σ̄_{k+1}(u), or
+b := σ̄_k(u) = σ̄_{k+1}(u) has Ξ_k(b) ≠ Ξ_{k+1}(b). If moreover b ∈ F_D at k and at k + 1, then W_k(b) ≠ W_{k+1}(b).
+Proof. (V1): Ξ(u) = u ⊕ Ξ(σ̄(u)) for u not its own cycle node, at both states. R55 (a) at both states for b ∈ F_D. □
+- DATA (bnd_xi.txt; 216 Ξ-changes of gates on the long runs, lib41 and lib2o): σ̄(u) changed 85; b ∈ F_D with COARSE_{−1} W(b) changed 54,
+  with only W(b)'s length changed 2 (then only Ξ(u)'s length changed); b gated 75 (the change comes through another gate's honest play).
+### The circularity (READING; why §16-§19 do not close a count)
+- CHARGE-U: coarse W-changes of a vertex per run ≤ (n − 1)(1 + |U(S)|).
+- §18: 112 of 118 U events straddle a boundary; U-SPLIT (unproved, expected false) would give |U| ≤ Σ N^↑ + n·n_E·|B(S)|.
+- GATE-XI: XI-boundaries come from W-changes of the gates' σ̄-successors in F_D (bounded by CHARGE-U), from σ̄ changes, or recursively
+  through gated σ̄-successors.
+- So U → boundaries → W-changes → U: each bound feeds the next with a factor ≥ n. Without an injective charge or a potential that
+  drops, the chain gives no polynomial bound. In data the loop is short: the long runs are explained mostly by the n-state WINDOW of
+  CHARGE (pftheta34: 56 of 84 coarse W-changes are window changes; gate 0's 33 Ξ-changes follow W-changes of its σ̄-successor inside
+  that window). The asymptotic question is whether a run can be ≫ n; none of the data has one (max run 34 at n = 32).
+- OPEN (named exactly): a potential that strictly drops at each U event or each XI boundary, or an injective version of CHARGE-U.
+  The σ̄-changes inside a phase (85 of the 216 gate Ξ-changes) are an Odd best-reply count with no bound here (OPEN).
