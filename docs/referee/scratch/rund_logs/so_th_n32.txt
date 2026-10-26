@@ -1,0 +1,10 @@
+CHU_chk 2112
+FRZSCH_chk 297
+FZ_chk 187
+MAX_U 0
+OFFa_chk 1
+OFFb_chk 64
+PIECEb_chk 34
+RUNS 1
+RUNS_S 2
+SPLIT_chk 1

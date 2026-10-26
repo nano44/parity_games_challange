@@ -251,6 +251,14 @@ Proof.
   climber never produced a gap with an inside fallback. immclimb (IMM, seeds 61-63): IMM failures found at once (§4 (iii)); immclimb --prime
   (IMM′ first, seeds 71-74, 𝒞^2O-𝒞^4O, n ≤ 14-22, 3,000-4,000 steps): best (IMM′ failures, IMM failures, honest-to-dishonest steps) = (0, 1, 3),
   (0, 1, 4), (0, 2, 2), (0, 3, 4): no IMM′ failure.
+- xdir.py (every direct switch {u} → {u′}; out/xdir_rand3000.txt, out/xdir_lib41_k2.txt): random sample 15, ALL at state k ≤ 2 of their run (10 at
+  k = 0, 4 at k = 1, 1 at k = 2; random start pairs); lib41 1, experiments/red/carry/instances/ctx13_n40.pg (S3, k = 10, u 14 → 11, no fallback).
+  In every case Ξ(u) rises to W(u) at k + 1 (σ̄(u) returns to τ(u)). Reading (DATA only): X_dir looks like a start-up transient; no bound.
+- xclimb.py (climbs on (max X_dir in one phase, max X_dir + X_big, total X_dir), S3 start; out/xclimb_*.txt): 𝒞^2O n ≤ 14, seed 81: (1, 1, 1);
+  𝒞^3O n ≤ 18, seed 82: (2, 2, 2); 𝒞^4O n ≤ 22, seed 83 and 𝒞^3O n ≤ 30, seed 84: (0, 0, 0); seeded from ctx13_n40 (800 steps, seed 85): (2, 3, 2) at
+  n 44. Best: experiments/new/box46/instances/xdir2_n17.pg (sha1 a11fba6ef24ca5c6ceeba3ff2169411edcdfa7a6), S3: a CHAIN of two direct switches at
+  consecutive transitions, D = {3} → {1} → {2} (states 2-4), no fallback; all values have the odd cycle node 11 and empty path sets, so the changes are
+  in path LENGTH only (longer is better for Even at an odd cycle node). Reading (DATA): X_dir per phase ≤ 2 in every climb; no growth seen.
 - Reading of the data: X_dir and X_big are rare (≤ 1% of interval entries); most {u}-intervals start the phase; the per-phase number of
   {u}-intervals of one u is ≤ 6. Nothing here bounds X_dir or X_big.
 
