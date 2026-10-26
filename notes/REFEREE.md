@@ -12,6 +12,7 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN. Handover check bf1b4423 (Lead 5/5, GO 13
 - §Cs FBC + CHOSEN pushed d08011be (identical verdicts; joint gap maps empty). FBC erratum ae36ce48 (35,720 runs / 2,794 FB-RISE_C checks).
 - P-N5-EPC (9f48ded7, l-new 81ab0b72; Lead 15:08Z, first referee): R-N5-EPC.md all SIGNED, no gap, EPC-N1..N4; FB-C' stands without
   FBC-N3's route. scratch/epc_probe.py (DEPTH=D env: depth-capped levels for n 40 lane instances; MUT 1-3). nep76 DEPTH 16 did not finish.
+- Lead 15:51Z process point: take every message header time from `date -u` IN THE SAME TURN as send_message (my 15:28Z header was queued 15:40Z).
 - TRAP again: `pkill -f epc_probe.py` killed my own shell (exit 144). Use `ps -eo pid,args | awk '$2=="python3"'` and kill by pid.
 - TOG (CHOSEN's 2nd alternative) DOES occur, always with a rho event at e too (frz40 t 44 q 0 e 11; pp_K12 t 3 q 159 e 160); no chain ends at TOG.
 
