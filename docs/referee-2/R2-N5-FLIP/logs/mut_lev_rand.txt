@@ -1,0 +1,33 @@
+MODE random 3000 5 12 1631 2 3 MUT lev WALKMAX 16
+ENGXI_checks: 20886
+FL_N3: 2
+FL_b_checks: 2
+FL_c_checks: 2
+FL_flips: 2
+N3L_checks: 2
+N3L_equal: 2
+RC_LIT: 20
+RC_MIN_checks: 4060
+RC_POS: 195
+RC_static: 889
+RC_walks: 8201
+RC_walks_via_cycle: 743
+ROOT_static: 394
+RR_events: 251
+RR_relay: 18
+RR_route: 233
+ST_intervals: 780
+ST_states: 1585
+VIOLATIONS: 2
+V_N3L: 2
+phases: 1213
+rho_events: 271
+rho_transitions: 223
+runs: 9000
+states: 20886
+transitions: 1299
+RC_LIT_example: (1, 'random1631:12#1@0 class 2 q [6]')
+RC_POS_example: (1, 'random1631:185#2@1 class 5 q 6 walk [6, 0, 2, 4, 7, 5] -> cycle node 4')
+VIOLATION N3L: random1631:1166#1: flip (6, 2, 0, 1) lev 7 rank(h) 7
+VIOLATION N3L: random1631:1996#1: flip (4, 6, 0, 1) lev 8 rank(h) 8
+RESULT FAIL violations=2
