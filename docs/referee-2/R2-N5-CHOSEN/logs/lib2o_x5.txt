@@ -1,0 +1,28 @@
+MODE files lib2o_noref.lst 5 MUT - BUDGET 300000
+CH_TOG: 5
+CH_checks: 44
+CH_source_event: 44
+ENGXI_checks: 1369
+EV_RELAY: 44
+EV_ROUTE: 208
+EV_x: 0
+KADD_checks: 30952
+KORD_checks: 26773
+RC_chains: 44
+RC_end_ROUTE: 44
+RCa_checks: 184
+RCb_checks: 52
+TV_H_reached: 724
+TV_H_reached_Qc_ge2: 172
+TV_H_reached_before_end: 11
+TV_UNK_classes: 16
+TV_classes: 920
+TV_transitions: 19
+phases: 614
+runs: 205
+states: 1369
+RC_longest: (1, 'experiments/new/box21/instances/fts_ph16.pg#0@10 |Q_c| 2')
+RCb_max_rho_class_phase: (11, 'experiments/si/orlens/instances/s_rt32_final.pg#0@3 |Q_c| 2 ROUTE 9 CYC 0 TOG 0')
+TV_H_max_Qc: (2, 'experiments/alg/instances/dtl_proof_c1.pg#0@0 n 7')
+TV_frozen_span: (3, 'experiments/new/box21/instances/fts_best24.pg#3@1 |Q_c| 0')
+RESULT OK violations=0

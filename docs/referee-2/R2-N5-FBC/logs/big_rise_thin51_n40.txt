@@ -1,0 +1,29 @@
+MODE start ../../../experiments/red/so/instances/rise_thin51_n40.pg MUT - BUDGET 30000000
+COR_phases: 9
+CORc_phases: 9
+Cf_total: 3
+DEEP_C: 2
+DEEP_FBC_checks: 4
+DEEP_ODDC_checks: 11
+DEEP_UNK_C: 1
+DEEP_UNK_fallbacks: 2
+DEEP_fallbacks: 4
+DEEP_unsat: 4
+ENGXI_checks: 79
+Nep_total_fbphases: 53
+UNK_C: 3
+UNK_C_fallbacks: 6
+f_total: 6
+phases: 9
+phases_with_fallback: 1
+rho_total_fbphases: 60
+runs: 1
+states: 79
+visited_total_fbphases: 15
+DEEP_max_D: (9, 'rise_thin51_n40.pg@9 n 40')
+max_Cf_phase: (3, 'rise_thin51_n40.pg@9 n 40 f 6')
+max_Nep_over_Cf: (17.666666666666668, 'rise_thin51_n40.pg@9 n 40 N_ep 53 |Cf| 3 visited 15')
+max_f_phase: (6, 'rise_thin51_n40.pg@9 n 40 |Cf| 3 N_ep 53')
+max_rho_over_nCf: (0.5, 'rise_thin51_n40.pg@9 n 40 rho 60 |Cf| 3 f 6')
+max_unsat_per_C: (2, 'rise_thin51_n40.pg@9 n 40 (deep)')
+RESULT OK violations=0

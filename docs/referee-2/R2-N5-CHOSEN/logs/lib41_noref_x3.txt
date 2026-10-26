@@ -1,0 +1,31 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT - BUDGET 300000
+CH_TOG: 169
+CH_checks: 5896
+CH_source_event: 5896
+ENGXI_checks: 19784
+EV_CYC: 56
+EV_RELAY: 5896
+EV_ROUTE: 4569
+EV_x: 0
+KADD_checks: 1014758
+KORD_checks: 381020
+RC_chains: 5896
+RC_end_CYC: 54
+RC_end_ROUTE: 5842
+RCa_checks: 4056
+RCb_checks: 699
+TVG_checks: 16
+TV_H_reached: 6641
+TV_H_reached_Qc_ge2: 1916
+TV_H_reached_before_end: 243
+TV_UNK_classes: 1245
+TV_classes: 10969
+TV_transitions: 744
+phases: 7231
+runs: 1230
+states: 19784
+RC_longest: (86, 'experiments/red/tcpert/instances/tcL_N12.pg#2@44 |Q_c| 233')
+RCb_max_rho_class_phase: (474, 'experiments/red/tcpert/instances/tcL_N12.pg#2@33 |Q_c| 233 ROUTE 13 CYC 0 TOG 0')
+TV_H_max_Qc: (144, 'experiments/red/tcpert/instances/tcL_N12.pg#0@37 n 492')
+TV_frozen_span: (27, 'experiments/si/orlens/instances/inr2_n32.pg#0@5 |Q_c| 0')
+RESULT OK violations=0

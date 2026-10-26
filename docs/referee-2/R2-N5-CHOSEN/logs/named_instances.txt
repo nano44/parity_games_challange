@@ -1,0 +1,201 @@
+MODE start ../../../experiments/red/rec0/instances/nep90_n40.pg ../../../experiments/si/rund/instances/nep90_n40.start MUT - BUDGET 300000
+CH_checks: 139
+CH_source_event: 139
+ENGXI_checks: 96
+EV_RELAY: 139
+EV_ROUTE: 153
+EV_x: 0
+KADD_checks: 3840
+KORD_checks: 280
+RC_chains: 139
+RC_end_ROUTE: 139
+RCa_checks: 89
+RCb_checks: 1
+TV_H_reached: 4
+TV_UNK_classes: 2
+TV_classes: 7
+phases: 5
+runs: 1
+states: 96
+RC_longest: (2, 'nep90_n40.pg@92 |Q_c| 5')
+RCb_max_rho_class_phase: (292, 'nep90_n40.pg@4 |Q_c| 5 ROUTE 153 CYC 0 TOG 0')
+TV_H_max_Qc: (0, 'nep90_n40.pg@0 n 40')
+TV_frozen_span: (0, 'nep90_n40.pg@0 |Q_c| 0')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/instances/nep76_n40.pg ../../../experiments/n5-epoch/instances/nep76_n40.start MUT - BUDGET 300000
+CH_checks: 48
+CH_source_event: 48
+ENGXI_checks: 88
+EV_RELAY: 48
+EV_ROUTE: 129
+EV_x: 0
+KADD_checks: 3520
+KORD_checks: 804
+RC_chains: 48
+RC_end_ROUTE: 48
+RCa_checks: 75
+RCb_checks: 1
+TV_H_reached: 11
+TV_UNK_classes: 1
+TV_classes: 25
+phases: 10
+runs: 1
+states: 88
+RC_longest: (2, 'nep76_n40.pg@84 |Q_c| 5')
+RCb_max_rho_class_phase: (177, 'nep76_n40.pg@9 |Q_c| 5 ROUTE 129 CYC 0 TOG 0')
+TV_H_max_Qc: (0, 'nep76_n40.pg@0 n 40')
+TV_frozen_span: (0, 'nep76_n40.pg@0 |Q_c| 0')
+RESULT OK violations=0
+MODE start ../../../experiments/red/n5inj/instances/frz40.pg ../../../experiments/red/n5inj/instances/frz40.start MUT - BUDGET 300000
+CH_TOG: 1
+CH_checks: 13
+CH_source_event: 13
+ENGXI_checks: 91
+EV_RELAY: 13
+EV_ROUTE: 21
+EV_x: 0
+KADD_checks: 3640
+KORD_checks: 1363
+RC_chains: 13
+RC_end_ROUTE: 13
+RCa_checks: 20
+RCb_checks: 4
+TV_H_reached: 23
+TV_H_reached_Qc_ge2: 2
+TV_H_reached_before_end: 2
+TV_classes: 41
+TV_transitions: 12
+phases: 20
+runs: 1
+states: 91
+RC_longest: (2, 'frz40.pg@44 |Q_c| 4')
+RCb_max_rho_class_phase: (21, 'frz40.pg@44 |Q_c| 4 ROUTE 12 CYC 0 TOG 0')
+TV_H_max_Qc: (4, 'frz40.pg@90 n 40')
+TV_frozen_span: (9, 'frz40.pg@27 |Q_c| 0')
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/pp_K12_n161.pg ../../../experiments/si/rund/instances/pp_K12_n161.start MUT - BUDGET 300000
+CH_TOG: 11
+CH_checks: 13
+CH_source_event: 13
+ENGXI_checks: 20
+EV_RELAY: 13
+EV_ROUTE: 18
+EV_x: 0
+KADD_checks: 3220
+KORD_checks: 36
+RC_chains: 13
+RC_end_ROUTE: 13
+RCa_checks: 14
+RCb_checks: 1
+TV_H_reached: 1
+TV_H_reached_Qc_ge2: 1
+TV_classes: 1
+phases: 1
+runs: 1
+states: 20
+RC_longest: (2, 'pp_K12_n161.pg@17 |Q_c| 6')
+RCb_max_rho_class_phase: (31, 'pp_K12_n161.pg@0 |Q_c| 6 ROUTE 18 CYC 0 TOG 0')
+TV_H_max_Qc: (6, 'pp_K12_n161.pg@19 n 161')
+TV_frozen_span: (0, 'pp_K12_n161.pg@19 |Q_c| 6')
+RESULT OK violations=0
+MODE start ../../../experiments/red/usplit/instances/pp_K48_n449.pg ../../../experiments/red/usplit/instances/pp_K48_n449.start MUT - BUDGET 300000
+CH_TOG: 47
+CH_checks: 49
+CH_source_event: 49
+ENGXI_checks: 56
+EV_RELAY: 49
+EV_ROUTE: 54
+EV_x: 0
+KADD_checks: 25144
+KORD_checks: 36
+RC_chains: 49
+RC_end_ROUTE: 49
+RCa_checks: 50
+RCb_checks: 1
+TV_H_reached: 1
+TV_H_reached_Qc_ge2: 1
+TV_classes: 1
+phases: 1
+runs: 1
+states: 56
+RC_longest: (2, 'pp_K48_n449.pg@53 |Q_c| 6')
+RCb_max_rho_class_phase: (103, 'pp_K48_n449.pg@0 |Q_c| 6 ROUTE 54 CYC 0 TOG 0')
+TV_H_max_Qc: (6, 'pp_K48_n449.pg@55 n 449')
+TV_frozen_span: (0, 'pp_K48_n449.pg@55 |Q_c| 6')
+RESULT OK violations=0
+MODE start ../../../experiments/red/rec0/instances/nep90_n40.pg MUT - BUDGET 300000
+CH_checks: 25
+CH_source_event: 25
+ENGXI_checks: 24
+EV_RELAY: 25
+EV_ROUTE: 35
+EV_x: 0
+KADD_checks: 960
+KORD_checks: 416
+RC_chains: 25
+RC_end_ROUTE: 25
+RCa_checks: 16
+RCb_checks: 2
+TV_H_reached: 3
+TV_UNK_classes: 5
+TV_classes: 8
+phases: 8
+runs: 1
+states: 24
+RC_longest: (2, 'nep90_n40.pg@19 |Q_c| 5')
+RCb_max_rho_class_phase: (33, 'nep90_n40.pg@3 |Q_c| 5 ROUTE 21 CYC 0 TOG 0')
+TV_H_max_Qc: (0, 'nep90_n40.pg@0 n 40')
+TV_frozen_span: (0, 'nep90_n40.pg@0 |Q_c| 0')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/instances/nep76_n40.pg MUT - BUDGET 300000
+CH_checks: 7
+CH_source_event: 7
+ENGXI_checks: 19
+EV_RELAY: 7
+EV_ROUTE: 33
+EV_x: 0
+KADD_checks: 760
+KORD_checks: 324
+RC_chains: 7
+RC_end_ROUTE: 7
+RCa_checks: 12
+RCb_checks: 2
+TV_H_reached: 7
+TV_H_reached_Qc_ge2: 2
+TV_UNK_classes: 4
+TV_classes: 8
+phases: 6
+runs: 1
+states: 19
+RC_longest: (2, 'nep76_n40.pg@17 |Q_c| 5')
+RCb_max_rho_class_phase: (35, 'nep76_n40.pg@4 |Q_c| 5 ROUTE 31 CYC 0 TOG 0')
+TV_H_max_Qc: (4, 'nep76_n40.pg@2 n 40')
+TV_frozen_span: (0, 'nep76_n40.pg@0 |Q_c| 0')
+RESULT OK violations=0
+MODE start ../../../experiments/red/n5inj/instances/frz40.pg MUT - BUDGET 300000
+CH_TOG: 1
+CH_checks: 13
+CH_source_event: 13
+ENGXI_checks: 91
+EV_RELAY: 13
+EV_ROUTE: 21
+EV_x: 0
+KADD_checks: 3640
+KORD_checks: 1363
+RC_chains: 13
+RC_end_ROUTE: 13
+RCa_checks: 20
+RCb_checks: 4
+TV_H_reached: 23
+TV_H_reached_Qc_ge2: 2
+TV_H_reached_before_end: 2
+TV_classes: 41
+TV_transitions: 12
+phases: 20
+runs: 1
+states: 91
+RC_longest: (2, 'frz40.pg@44 |Q_c| 4')
+RCb_max_rho_class_phase: (21, 'frz40.pg@44 |Q_c| 4 ROUTE 12 CYC 0 TOG 0')
+TV_H_max_Qc: (4, 'frz40.pg@90 n 40')
+TV_frozen_span: (9, 'frz40.pg@27 |Q_c| 0')
+RESULT OK violations=0
