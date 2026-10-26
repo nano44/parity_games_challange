@@ -3,10 +3,16 @@
 |Q| (Odd choice vertices), fallbacks inside the longest phase. Usage: phlen.py GAME [START]"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-import n3x
+import n3x, json
+def readany(src, g):
+    if os.path.exists(src[:-3] + ".start"): return n3x.readstart(src[:-3] + ".start")
+    if os.path.exists(src[:-3] + ".start.json"):
+        v = json.load(open(src[:-3] + ".start.json"))["start"]
+        return ({x: v[x] for x in range(g.n) if g.owner[x] == 0}, {x: v[x] for x in range(g.n) if g.owner[x] == 1})
+    return None
 def main():
     g = n3x.load(sys.argv[1]); st = n3x.readstart(sys.argv[2]) if len(sys.argv) > 2 else None
-    if st is None and os.path.exists(sys.argv[1][:-3] + ".start"): st = n3x.readstart(sys.argv[1][:-3] + ".start")
+    if st is None: st = readany(sys.argv[1], g)
     E, rows = n3x.trace(g, st)
     keys = [(r["lam"], r["tau"]) for r in rows]; best = (0, 0); i = 0; ph = 0
     while i < len(rows):
