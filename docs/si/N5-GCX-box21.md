@@ -170,3 +170,19 @@ Written 2026-10-26T16:16Z (date -u). Script experiments/si/root/absmodel.py (pin
   - (iv) impure C-intervals (a non-direct gate: its exit values are not constants).
   If (i)-(iii) close, the N5 form would be: in a pure C-interval, no switch other than length / tie switches at index ≥ |A_a| − 1 + |U_c|.
   That is weaker than UL_C's index |U_c| − 1, and it is what Corollary UL-RED needs, with n − 1 replaced by 2n.
+
+## 8. Gap (i), cycles: DATA in the cyclic model; two facts (PROVED, model); no proof yet
+Written 2026-10-26T16:32Z (date -u). Script experiments/si/root/abscyc.py (brute force, n ≤ 8): any digraph on the non-terminals; a strategy is
+valid when every play reaches a terminal; the step takes a pointwise W-optimal valid arena strategy, preferring agreement with the current
+one (games with no pointwise optimum are skipped: NOPT).
+- DATA: 3,466 random games (n = 5, 6): at most 4 / 5 steps. Hill-climbs on the number of steps (40,000 mutations; n = 5, 6, 7; 3 seeds each):
+  best = n exactly in all 9. So the acyclic bound (height ≤ n) appears to survive cycles, and it stays sharp.
+- Facts (PROVED, in the model, any graph):
+  - (MONO-SUCC) M(σ_t v) is non-decreasing in t: a switch goes to y with M(y) > M(σ v), and M is non-decreasing.
+  - (NO-RETURN) if v leaves y at t1 and takes y again at t2 > t1, then M_{t2}(y) > M_{t1}(y). The re-take needs M_{t2}(y) > M_{t2}(σ v) ≥
+    M_{t1+1}(σ v) > M_{t1}(y).
+- What the proof needs (OPEN): a settling order. The acyclic induction uses "all successors constant ⇒ v constant one step later". With
+  cycles, a successor whose play passes through v is never taken (it would close a cycle) but stops being constant when v moves. The
+  candidate is induction on the set of PLAY-CONSTANT vertices, which is closed under play-successor, and showing it grows by ≥ 1 per step.
+  Not done.
+- CONJECTURE ABS-CYC: in the cyclic model the run reaches its fixed point within n steps (DATA above).

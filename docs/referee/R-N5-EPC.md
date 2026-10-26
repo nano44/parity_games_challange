@@ -115,7 +115,8 @@ instances): levels capped at depth D, a check counted only when decided.
 0 failures of every check in every row (DREM, FBCP and ASM over all 70,074 phases of the first four rows). The packet's figures reproduce: long121 N_ep 37 against
 NCONF 14, nep90 90 against 48 (§6 of the packet); rho3_253_n32's non-flat, not-last saturated fallbacks (§5's DEAD item; 51 / 44 over my 32
 starts). No kind-(a) return occurs anywhere (consistent with the packet's CONJECTURE SAT-1); R⁰ is small (124 of 913 epochs at n ≤ 20).
-nep76_n40 at DEPTH 16 did not finish within its time limit and is not counted.
+- Added after the first push (a52feb43): nep76_n40 at its start (DEPTH 16) finished: 1 run, 10 phases, N_ep 76 against NCONF 40 (the packet's
+  figure), FB-RISE_C 5 decided (1 undecided), RET-FB 230 decided (3 undecided), 0 failures (scratch/epc_logs/deep16_nep76.txt).
 - Mutations (each bites): MUT=1 (RET asks LEV_C(t) + 2): 247 failures (n ≤ 20 library, S3 + 2 random, 1,413 runs) and 82 on long121
   (DEPTH 12); MUT=2 (RET read at EVERY later state, not only C-states): 251 failures, all at non-C states (the restriction is needed);
   MUT=3 (SAT-FB read as the DEAD guess "t + 1 is P's last state"): 1 failure in the library, 7 on rho3_253_n32 at its start.

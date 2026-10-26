@@ -1,0 +1,4 @@
+nep90_n40: max_CH 66 max_d 18 max_pair_swaps 15 phases 1 q_phases 5 | swap histogram {6: 1, 9: 1, 11: 1, 15: 2}
+nep76_n40: max_CH 57 max_d 15 max_pair_swaps 15 phases 1 q_phases 5 | swap histogram {2: 1, 11: 2, 12: 1, 15: 1}
+long121_n40: max_CH 19 max_d 5 max_pair_swaps 11 phases 1 q_phases 3 | swap histogram {7: 1, 11: 2}
+best_qpc_nep90_n40_s51: max_CH 60 max_d 16 max_pair_swaps 22 phases 2 q_phases 24 | swap histogram {0: 6, 1: 5, 2: 1, 7: 1, 8: 1, 9: 1, 10: 2, 11: 1, 12: 1, 14: 1, 15: 1, 18: 1, 19: 1, 22: 1}
