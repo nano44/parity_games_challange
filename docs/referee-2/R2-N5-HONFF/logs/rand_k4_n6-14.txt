@@ -1,0 +1,15 @@
+MODE random 2000 6 14 1642 4 3 MUT - BUDGET 3000000
+ENGXI_checks: 16464
+FB_at_nonhonest: 1
+FB_fallbacks: 179
+FB_odd_binds: 179
+FBb_checks: 193
+HFF_gaps: 438
+LEV_phases: 614
+QA_checks: 18349
+R1FF_phases: 15749
+phases: 15749
+runs: 6000
+states: 16464
+HFF_max_honest: (4, 'random1642:640#1@0 n 9 f 1')
+RESULT OK violations=0

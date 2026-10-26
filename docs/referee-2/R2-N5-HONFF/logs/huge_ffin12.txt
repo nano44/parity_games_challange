@@ -1,0 +1,18 @@
+MODE start ../../../experiments/n5-epoch/instances/ffin12_n32.pg ../../../experiments/n5-epoch/instances/ffin12_n32.start MUT - BUDGET 150000000
+ENGXI_checks: 34
+FB_after_honest_nonhonest: 12
+FB_at_nonhonest: 12
+FB_fallbacks: 13
+FB_odd_binds: 12
+FBb_checks: 80
+HFF_gaps: 13
+HFF_gaps_inside_fallback: 1
+HFF_gaps_with_fallback: 1
+LEV_phases: 2
+QA_checks: 17141807
+R1FF_phases: 3
+phases: 3
+runs: 1
+states: 34
+HFF_max_honest: (9, 'ffin12_n32.pg@25 n 32 f 1')
+RESULT OK violations=0
