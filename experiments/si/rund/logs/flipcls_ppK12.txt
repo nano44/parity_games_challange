@@ -1,0 +1,5 @@
+flips=15 flips_N3b=15 max_flips_phase=15 max_gap_N3b=25 onsets=11 onsets_N3b=11 phases=1 phases_with_flips=1
+GAPS {('N3b', 25): 15}
+TOP onsets/flips/len/rho/n (11, 15, 19, 31, 161, 'rund/instances/pp_K12_n161.pg', 0)
+FLIPCLS PASS
+rc 0

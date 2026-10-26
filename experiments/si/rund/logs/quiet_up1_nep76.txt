@@ -1,0 +1,11 @@
+events_in_pieces_ge2=93 max_quiet_over_n_pct_Qcge2=30 max_rho_q=62 max_rho_q_Qcge2=62 q_phases=5 quiet_max=12 quiet_max_Qcge2=12 rho_q_total=177 splits_fb=30 splits_other=169
+TOP quiet_max/rho_q/len/|Q_c|/n (12, 62, 78, 5, 40, '../n5-epoch/instances/nep76_n40.pg', 9, 0)
+TOP quiet_max/rho_q/len/|Q_c|/n (4, 47, 78, 5, 40, '../n5-epoch/instances/nep76_n40.pg', 9, 8)
+TOP quiet_max/rho_q/len/|Q_c|/n (2, 41, 78, 5, 40, '../n5-epoch/instances/nep76_n40.pg', 9, 1)
+TOP quiet_max/rho_q/len/|Q_c|/n (2, 22, 78, 5, 40, '../n5-epoch/instances/nep76_n40.pg', 9, 6)
+TOP quiet_max/rho_q/len/|Q_c|/n (2, 5, 78, 5, 40, '../n5-epoch/instances/nep76_n40.pg', 9, 37)
+TOP(|Q_c|>=2) quiet_max/rho_q/len/|Q_c|/n (12, 62, 78, 5, 40, '../n5-epoch/instances/nep76_n40.pg', 9, 0)
+TOP(|Q_c|>=2) quiet_max/rho_q/len/|Q_c|/n (4, 47, 78, 5, 40, '../n5-epoch/instances/nep76_n40.pg', 9, 8)
+TOP(|Q_c|>=2) quiet_max/rho_q/len/|Q_c|/n (2, 41, 78, 5, 40, '../n5-epoch/instances/nep76_n40.pg', 9, 1)
+TOP(|Q_c|>=2) quiet_max/rho_q/len/|Q_c|/n (2, 22, 78, 5, 40, '../n5-epoch/instances/nep76_n40.pg', 9, 6)
+QUIET PASS

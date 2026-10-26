@@ -1,0 +1,4 @@
+brk_transitions_N1fb=1 flips=1 flips_N1fb=1 max_brk=1 max_flips_phase=1 onsets=1 onsets_N1fb=1 phases=1 phases_with_flips=1
+GAPS {}
+TOP onsets/flips/len/rho/n (1, 1, 91, 292, 40, '../red/rec0/instances/nep90_n40.pg', 4)
+FLIPCLS PASS

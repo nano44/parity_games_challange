@@ -1,0 +1,10 @@
+  FLIP experiments/red/tcpert/instances/leanT_N6.pg rs phase@5 len=2 q1=21 q2=22 t1=0 t2=1 onset=1 N3b gap=5 |Uc|=48
+  FLIP experiments/red/tcpert/instances/leanT_N6.pg rs phase@5 len=2 q1=20 q2=21 t1=1 t2=2 onset=1 N3b gap=3 |Uc|=48
+  FLIP experiments/red/tcpert/instances/leanT_N6.pg rs phase@5 len=2 q1=21 q2=22 t1=0 t2=2 onset=0 N3b gap=5 |Uc|=48
+  FLIP experiments/red/tcpert/instances/leanT_N6.pg rs phase@4 len=1 q1=21 q2=22 t1=0 t2=1 onset=1 N3b gap=5 |Uc|=48
+flips=4 flips_N3b=4 max_flips_phase=3 max_gap_N3b=5 onsets=3 onsets_N3b=3 phases=2 phases_with_flips=2
+GAPS {('N3b', 3): 1, ('N3b', 5): 3}
+TOP onsets/flips/len/rho/n (2, 3, 2, 12, 48, 'experiments/red/tcpert/instances/leanT_N6.pg rs', 5)
+TOP onsets/flips/len/rho/n (1, 1, 1, 6, 48, 'experiments/red/tcpert/instances/leanT_N6.pg rs', 4)
+FLIPCLS PASS
+rc 0
