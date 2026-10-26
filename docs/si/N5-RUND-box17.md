@@ -638,7 +638,7 @@ Proof. (V1): Ξ(u) = u ⊕ Ξ(σ̄(u)) for u not its own cycle node, at both sta
   The σ̄-changes inside a phase (85 of the 216 gate Ξ-changes) are an Odd best-reply count with no bound here (OPEN).
 
 ## 20. Potentials at boundaries and U events (Lead's GO 09:31Z, item (a)): DATA, and the tie to ρ / N_ep (READING)
-Written 2026-10-26 09:4xZ (date -u), successor 13. pot.py (new): per PHASE ((λ_Ξ, τ) constant, fallbacks included), per Odd choice vertex q,
+Written 2026-10-26 09:3xZ (date -u), successor 13. pot.py (new): per PHASE ((λ_Ξ, τ) constant, fallbacks included), per Odd choice vertex q,
 the changes of Ξ(q) (RESULTS R61 (f)'s ρ_q events), each with its level (top rank of the path-set difference; −1 = length only) and its
 ALT class (R61 (e): SB = σ̄(q) unchanged, the change comes through σ̄(q)'s own value; CLEAN (strict); TIE; NONCLEAN; CYC). Logs pot_long.txt,
 pot_lib41_rs4.txt, pot_lib2o_rs4.txt.
