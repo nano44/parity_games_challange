@@ -47,3 +47,5 @@ echo "rund (LEVEL-COUNT counterexample lcount_n23 (L-RED); LC2 / PAIR-OC on lcou
 python3 -I rund/sched.py --one ../n5-exhaustive/instances/frz3_n24.pg ../n5-exhaustive/instances/frz3_n24.start | grep -q "SCHED PASS"
 MUT=1 python3 -I rund/sched.py --one ../n5-exhaustive/instances/frz3_n24.pg ../n5-exhaustive/instances/frz3_n24.start | grep -q "SCHED FAIL"
 echo "rund (P^c_sch / FRZ-SCH / CHARGE on frz3_n24, shifted-schedule control bites): PASS"
+NOGEN=1 USTRUCT=1 python3 -I rund/sched.py --one ../n5-exhaustive/instances/frz1_n24.pg ../n5-exhaustive/instances/frz1_n24.start | grep -q "SCHED PASS"
+echo "rund (FZ, UNF, OFFUP, U-SPLIT classes on frz1_n24): PASS"

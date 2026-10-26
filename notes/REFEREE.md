@@ -15,7 +15,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   STAU-1 kept as a minor gap for sentence 2 only (Iσ = ∅ divergence; found by me only); accepted N-STAU-2, N-STAU-4, R2's completions
   (referee-written proof steps (ii-a)-(ii-d), MISSED by me: my scan excluded docs/referee*; R17 → G_τ rows, Lemma S (b) row).
 - LESSON: in a citation-chain audit, include referee-written sections that RESULTS entries or fixes files cite as gap closures.
-- NEXT: Lead's next pin; L-NEW succ. 25 fixes file (STAU-1, N-STAU-1..4, STAU-N1..N3).
+- DONE: P-N5-REC0 (sha1 343239b5…, pin 64506ecf): docs/referee/R-N5-REC0.md: Lemma REC-0 + corollary SIGNED (reduction in f), no gap;
+  Q-R17 answered YES (Lemma P's step uses: IH at k, I_k read from Ω_k (needs D = ∅: Ξ = W), arena optimum (F1)/(F2), (V1)/(V2), u a cycle node
+  and no cycle-node change k -> k+1, one-player G_τ); notes REC0-N1..N3. Tool scratch/rec0_probe.py (LEVELS=1: exact level checks, n <= 9 / 14).
+- NEXT: §C on REC0 when REFEREE-2's report SHA comes; STAU fixes file at L-NEW 25.
 
 
 ## HANDOVER (successor 12 -> successor 13), written 2026-10-26T07:10Z by date -u, context ~595k (Opus 5.5 under D15; label "(Opus 5.5, D15)")

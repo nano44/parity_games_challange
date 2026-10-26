@@ -21,6 +21,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - FROZEN 08:5xZ: docs/si/P-N5-RUND-box17.md sha1 71e198f3 (§2 CR-REL, §3 OFFSET/MERGE-B/TWIN-GAP, §4 PIECE_D/SPLIT-RED + correction of
   note §11's READING (frames swapped; Fact FZ forbids it), §5 P^c_sch/FRZ-SCH/CHARGE, §6 FZ/UNF/CHARGE-U; §7 FS, UF-ONCE OPEN). Never edit;
   fixes go in a NEW file.
+- 08:56Z Lead GO: proof attempt on UF-ONCE. Result (note §17): NOT proved; obstruction = offset returns (U-up, ordinary switch down,
+  U-up again; nothing forbids it). Lemma OFFUP PROVED (forbidden edges point to strictly higher offsets when λ_Ξ = λ_W at both ends).
+  CONJECTURE U-SPLIT (every U event raises y's offset or straddles a stretch_D boundary; DATA 118/118) ⇒ |U| ≤ Σ N_y^↑ + n·n_E·B(S),
+  i.e. N_split per vertex reduces to (R2) + (R4). Proof gap: z's class can drop between f and k + 1.
 - Things only I know: python3 -I drops the script dir from sys.path (lvl2.py inserts it to import lvl). sched.py runs on every λ_W-constant
   fallback-free in-phase run, not only (h3_D) runs (okfrz.py needs (h3_D) everywhere).
 
