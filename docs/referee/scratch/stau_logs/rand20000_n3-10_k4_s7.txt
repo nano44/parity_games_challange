@@ -1,0 +1,40 @@
+B_chk 99423
+C1N_chk 99423
+C1_chk 103300
+C2_chk 103300
+DIFF_IS0 27
+DIFF_TS 3877
+D_chk 224169
+R48_maxf 1
+R48_phases 38051
+RUNS 80000
+SIGLAM 77762
+STATES 224169
+TIEKEEP_inphase 74
+EX ('DIFF_IS0 (info)', 'rand310/tau/3', 1, 's', [5, 3, None, 6, None, None, None, None, None], 't', [None, None, 8, None, 3, 6, 7, 8, 0], 'N5->', [None, None, 8, None, 3, 6, 7, 8, 3], 'N5tau->', [None, None, 8, None, 3, 6, 7, 8, 2])
+EX ('DIFF_IS0 (info)', 'rand1838/tau/0', 2, 's', [8, 7, None, None, 6, 3, 7, 0, None], 't', [None, None, 3, 4, None, None, None, None, 1], 'N5->', [None, None, 3, 4, None, None, None, None, 4], 'N5tau->', [None, None, 3, 4, None, None, None, None, 3])
+EX ('DIFF_IS0 (info)', 'rand1838/n5/0', 2, 's', [8, 7, None, None, 6, 3, 7, 0, None], 't', [None, None, 3, 4, None, None, None, None, 1], 'N5->', [None, None, 3, 4, None, None, None, None, 4], 'N5tau->', [None, None, 3, 4, None, None, None, None, 3])
+EX ('DIFF_IS0 (info)', 'rand5349/tau/0', 1, 's', [None, None, 6, None, None, None, 4], 't', [1, 5, None, 1, 0, 6, None], 'N5->', [1, 6, None, 1, 0, 6, None], 'N5tau->', [1, 3, None, 1, 0, 6, None])
+EX ('DIFF_IS0 (info)', 'rand6130/tau/0', 1, 's', [None, None, None, 4, None], 't', [2, 2, 3, None, 0], 'N5->', [2, 2, 4, None, 0], 'N5tau->', [2, 2, 1, None, 0])
+EX ('DIFF_IS0 (info)', 'rand6130/n5/0', 1, 's', [None, None, None, 4, None], 't', [2, 2, 3, None, 0], 'N5->', [2, 2, 4, None, 0], 'N5tau->', [2, 2, 1, None, 0])
+EX ('DIFF_IS0 (info)', 'rand6130/tau/1', 0, 's', [None, None, None, 4, None], 't', [2, 2, 3, None, 0], 'N5->', [2, 2, 4, None, 0], 'N5tau->', [2, 2, 1, None, 0])
+EX ('DIFF_IS0 (info)', 'rand6130/n5/1', 0, 's', [None, None, None, 4, None], 't', [2, 2, 3, None, 0], 'N5->', [2, 2, 4, None, 0], 'N5tau->', [2, 2, 1, None, 0])
+EX ('DIFF_IS0 (info)', 'rand6130/tau/2', 2, 's', [None, None, None, 4, None], 't', [2, 2, 3, None, 0], 'N5->', [2, 2, 4, None, 0], 'N5tau->', [2, 2, 1, None, 0])
+EX ('DIFF_IS0 (info)', 'rand6130/n5/2', 2, 's', [None, None, None, 4, None], 't', [2, 2, 3, None, 0], 'N5->', [2, 2, 4, None, 0], 'N5tau->', [2, 2, 1, None, 0])
+EX ('DIFF_IS0 (info)', 'rand6130/tau/3', 1, 's', [None, None, None, 4, None], 't', [2, 2, 3, None, 0], 'N5->', [2, 2, 4, None, 0], 'N5tau->', [2, 2, 1, None, 0])
+EX ('DIFF_IS0 (info)', 'rand6130/n5/3', 1, 's', [None, None, None, 4, None], 't', [2, 2, 3, None, 0], 'N5->', [2, 2, 4, None, 0], 'N5tau->', [2, 2, 1, None, 0])
+EX ('DIFF_IS0 (info)', 'rand8468/tau/1', 0, 's', [None, None, 9, 2, 6, None, None, None, None, None], 't', [9, 2, None, None, None, 7, 0, 9, 4, 0], 'N5->', [9, 2, None, None, None, 7, 0, 9, 4, 5], 'N5tau->', [9, 2, None, None, None, 7, 0, 9, 4, 4])
+EX ('DIFF_IS0 (info)', 'rand8468/n5/1', 0, 's', [None, None, 9, 2, 6, None, None, None, None, None], 't', [9, 2, None, None, None, 7, 0, 9, 4, 0], 'N5->', [9, 2, None, None, None, 7, 0, 9, 4, 5], 'N5tau->', [9, 2, None, None, None, 7, 0, 9, 4, 4])
+EX ('DIFF_IS0 (info)', 'rand8530/tau/0', 2, 's', [None, None, 3, None, None, 5, None, 7, None, None], 't', [5, 9, None, 4, 1, None, 8, None, 4, 6], 'N5->', [5, 6, None, 4, 1, None, 8, None, 4, 6], 'N5tau->', [5, 3, None, 4, 1, None, 8, None, 4, 6])
+EX ('DIFF_IS0 (info)', 'rand8530/n5/0', 2, 's', [None, None, 3, None, None, 5, None, 7, None, None], 't', [5, 9, None, 4, 1, None, 8, None, 4, 6], 'N5->', [5, 6, None, 4, 1, None, 8, None, 4, 6], 'N5tau->', [5, 3, None, 4, 1, None, 8, None, 4, 6])
+EX ('DIFF_IS0 (info)', 'rand8530/tau/2', 2, 's', [None, None, 3, None, None, 5, None, 7, None, None], 't', [5, 9, None, 4, 1, None, 8, None, 4, 6], 'N5->', [5, 6, None, 4, 1, None, 8, None, 4, 6], 'N5tau->', [5, 3, None, 4, 1, None, 8, None, 4, 6])
+EX ('DIFF_IS0 (info)', 'rand8530/n5/2', 2, 's', [None, None, 3, None, None, 5, None, 7, None, None], 't', [5, 9, None, 4, 1, None, 8, None, 4, 6], 'N5->', [5, 6, None, 4, 1, None, 8, None, 4, 6], 'N5tau->', [5, 3, None, 4, 1, None, 8, None, 4, 6])
+EX ('DIFF_IS0 (info)', 'rand13314/tau/0', 0, 's', [None, 0, 6, 0, 1, 0, 1], 't', [3, None, None, None, None, None, None], 'N5->', [4, None, None, None, None, None, None], 'N5tau->', [2, None, None, None, None, None, None])
+EX ('DIFF_IS0 (info)', 'rand13314/n5/0', 0, 's', [None, 0, 6, 0, 1, 0, 1], 't', [3, None, None, None, None, None, None], 'N5->', [4, None, None, None, None, None, None], 'N5tau->', [2, None, None, None, None, None, None])
+EX ('DIFF_IS0 (info)', 'rand13314/tau/3', 2, 's', [None, 0, 6, 0, 1, 0, 1], 't', [3, None, None, None, None, None, None], 'N5->', [4, None, None, None, None, None, None], 'N5tau->', [2, None, None, None, None, None, None])
+EX ('DIFF_IS0 (info)', 'rand14714/tau/1', 1, 's', [5, 0, None, None, None, None, None, 5], 't', [None, None, 7, 1, 5, 0, 1, None], 'N5->', [None, None, 7, 1, 5, 2, 1, None], 'N5tau->', [None, None, 7, 1, 5, 6, 1, None])
+EX ('DIFF_IS0 (info)', 'rand14714/n5/1', 1, 's', [5, 0, None, None, None, None, None, 5], 't', [None, None, 7, 1, 5, 0, 1, None], 'N5->', [None, None, 7, 1, 5, 2, 1, None], 'N5tau->', [None, None, 7, 1, 5, 6, 1, None])
+EX ('DIFF_IS0 (info)', 'rand17222/tau/0', 2, 's', [None, 2, None, None, 7, None, None, None, None, 8], 't', [6, None, 0, 2, None, 6, 7, 9, 0, None], 'N5->', [6, None, 0, 2, None, 6, 9, 9, 0, None], 'N5tau->', [6, None, 0, 2, None, 6, 5, 9, 0, None])
+EX ('DIFF_IS0 (info)', 'rand17429/tau/1', 1, 's', [4, None, 4, None, None, 4, None, None, 2], 't', [None, 7, None, 5, 2, None, 6, 1, None], 'N5->', [None, 7, None, 5, 3, None, 6, 1, None], 'N5tau->', [None, 7, None, 5, 8, None, 6, 1, None])
+EX ('DIFF_IS0 (info)', 'rand17429/n5/1', 1, 's', [4, None, 4, None, None, 4, None, None, 2], 't', [None, 7, None, 5, 2, None, 6, 1, None], 'N5->', [None, 7, None, 5, 3, None, 6, 1, None], 'N5tau->', [None, 7, None, 5, 8, None, 6, 1, None])
+EX ('DIFF_IS0 (info)', 'rand17429/n5/3', 1, 's', [4, None, 4, None, None, 4, None, None, 2], 't', [None, 7, None, 5, 2, None, 6, 1, None], 'N5->', [None, 7, None, 5, 3, None, 6, 1, None], 'N5tau->', [None, 7, None, 5, 8, None, 6, 1, None])
