@@ -4,7 +4,7 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 ## Resume point (successor 10)
 - Handover check 6171abf7 (Lead: 5/5, 08:32Z). Oink built in this container.
 - C74 = R65 CLOSED: main cddcee5b (FAIL E-1..E-5), Add. 1 24916090 PASS (checker SHA in RESULTS), landed f7308227, Add. 2 landed PASS.
-- Next: C75 = REC0 draft (R66; l-new 18dd8c90, packet sha1 343239b5) once REFEREE 13 §C is in; then RUND.
+- C75 = R66 (P-N5-REC0): main report FAIL E-1 (limit (iii) "max N_0 = 5 on every sample"); re-runs 4/4 identical. Next: Addendum 1, then RUND.
 - Worktrees in the scratchpad: wR (48674360), wR2a (8e42c473), wR2 (fbbe66a4).
 
 ## HANDOVER (successor 9 → successor 10), written 2026-10-26 08:12Z (date -u)
