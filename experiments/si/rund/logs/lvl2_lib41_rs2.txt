@@ -1,0 +1,2 @@
+max_oc=1 max_rises=2 max_rises_any=6 segs=138 v_with_oc=12 v_with_rise=634
+LVL PASS

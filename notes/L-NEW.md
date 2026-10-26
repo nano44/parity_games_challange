@@ -1,6 +1,32 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 46 log (successor 25, session_01VsRSLkbPLhXCWoMbJMCW2r; handover check 04cedc7c (5/5, Lead 08:32Z); GO 08:32Z, Lead's stamp)
+- Container stale at 5961101a again; ff to 230334e4; trunk 565b8a8d merged (64a811ba). Oink built (scripts/setup_oink.sh rc 0, 8fbf0a7).
+- (c) REC for |D_E| = 1: docs/new/N5-REC1-box46.md. Tools experiments/new/box46 (levels, norise, dint, hon, hon2, fbin).
+  - Lemma HON (PROVED): W-honest states (Ξ = W) per phase ≤ f + 4n² − 3n. The Ξ-level in G_τ is permanent (R15 (a)); across the gap between
+    consecutive W-honest states it is carried by W (WM), with Lemma P's step at the first state; the cycle nodes at h + 1 are sandwiched.
+    HON-0: D = ∅ states, N_0 and D = ∅-epoch transitions ≤ f + 4n² − 3n (beats REC-0: f additive, no n + m factor).
+  - Lemma SAT0, Lemma HON-FB (PROVED): a fallback at a W-honest state is flat, leaves no W-improving edge, and its target is W-honest, saturated
+    and the phase's last state. HON′: f replaced by f_in (fallbacks at non-honest states strictly between two honest states; 4 on all lib41).
+  - RESTRICT_u / REPRO_u (PROVED, R64 verbatim with G^u: Odd v ≠ u cut to τ(v), u keeps ALL edges): u-runs (D_k ⊆ {u}) are N5^τ runs on G^u ∈ 𝒞^1O.
+    EP-1u (IMPLICATION from (Στ)): len(u-run) ≤ T*(G^u) + 1.
+  - Theorem REC-1 (IMPLICATION from (Στ), a reduction): |D| = 1 states per phase ≤ (1 + f + 4n² − 3n + X_dir + X_big)(T*_Q + 2); all-|D| ≤ 1 phases
+    poly in (n, m, f, X_dir). DATA: lev_l_x's 49 epochs are ONE {u}-interval; X_dir 1 / 15, X_big 12 / 32 entries (lib41 / random).
+  - DEAD: permanent H_C-level for |D_C| = 1 (thclimb_n12_s11: σ̄(u) moves inside one {u}-interval; 133 / 453 no-rise gaps). DEAD: "no fallback at a
+    W-honest state" (b4_n5_other_0, flat cycle-closing switch).
+  - (b) CONJECTURE HON-FF: the level rises across every gap between consecutive W-honest states (fallback gaps included) ⇒ |H| ≤ 4n² − 3n, f-free.
+    DATA: 0 no-rise gaps (lib41 n ≤ 20: 472 gaps; random: 2,984); the 3 lib41 gaps with an inside fallback rise (j10_n24 1→4, j7_n32 0→19, j8_n32 2→9).
+  - 09:02Z Lead side task: docs/new/P-N5-STAU-fixes-box45.md (sha1 42d7b04c…, l-new ee95661f, FROZEN; reported 09:18Z). The two §Cs CROSSED on
+    sentence 1 (REFEREE → note, REFEREE-2 → gap); recorded both. Quotes checked by script (25/25 verbatim).
+  - CONJECTURE IMM (Ξ-level rises at h + 1 itself) DEAD: instances/immfail_n14.pg (sha1 db3fc2ca…), both failures at the LAST state of a phase.
+    IMM′ (h + 1 not last ⇒ rise) survives: 0 failures (lib41 n ≤ 20, random 3,000, 4 climbs). IMM′ ⇒ HON-FF ⇒ f-free HON. Open step: use that τ is
+    value-optimal against σ_{h+1} in S4b's arena (honest deviations at h + 1 then use only edges outside τ ∪ Iτ).
+
+  - 09:5xZ packet docs/new/P-N5-HON-box46.md FROZEN (Lead GO 09:21Z / 09:46Z): HON, SAT0, HON-FB, HON′, HON-0 (+ relation to REC-0: implies it,
+    strictly, f·n + 2 below), RESTRICT_u, REPRO_u, REC-1 (a) PROVED; EP-1u, REC-1 (b)-(d) implications from (Στ); HON-FF OPEN; IMM, IMM′, FB-WLEV DEAD.
+    Correction to my 09:40Z message: the inside-fallback gaps are 3 in all (not 5); hon2's 2 at n ≤ 34 are among fbin's 3.
+
 ## Box 45 log (successor 24, session_01DR27cGCEhPvHHVxiYXCfaz; handover check 5/5 (2c299e9a); GO 05:39Z, Lead's stamp)
 - Container stale at 5961101a again; ff to 43e0bd81; trunk 8460897d merged (b43b7c3c). Oink NOT built (not needed).
 - Step 2 (a): 1c344659: P-N5-VILB-fixes-box44 (sha1 56da789e…) and P-N5-ACCEL-fixes-box44 (sha1 46ef9474…), FROZEN, reported 05:44Z.
@@ -28,6 +54,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - N_ep (Lead item (3)): docs/new/N5-NEP-box45.md: NO bound by distinct optima (so_th_n32: 31 epochs, 1 optimum) nor by distinct configurations
   (recurrences up to 10, lev_l_x); the longest phases (50, 31 epochs) have only |D| ≤ 1 epochs. CONJECTURE REC (per-configuration recurrences
   poly) ⇒ such phases poly with EP-0/EP-1. OPEN, even for C = τ|Q; obstacle: S4a progress is in W (drops at fallbacks), exit steps.
+- Lead 07:36Z: R64 (EPR) LANDED; GO REC (D = ∅ first, then climbs). N5-NEP §5 Lemma REC-0 (lane PROVED): D = ∅ epochs per phase ≤
+  (f+1)(n+1) + 4n(n−1) + 1 (W-level = R17 Lemma P step inside the all-unsplit prefix of each fallback-free run; saturation W = B ⇒ Ξ frozen on
+  [t, t*], R15 (d)). Reduction to f, not f-free. rec0.py 0 violations; climbs: no N_0 beyond 5.
 
 ## Box 44 log (successor 23, session_011WFfFqRNrU1a8LQwbwazZN; handover check d489672f; GO 01:05Z, Lead's stamp)
 - Merged trunk 1c23106b (2d28236b). Oink NOT built (not needed so far).
@@ -380,35 +409,58 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 23, box 44, written 2026-10-26 05:03Z by date -u)
-Successor 23 (Opus 5.5, D14/D18, L40), session_011WFfFqRNrU1a8LQwbwazZN. Handover check d489672f. ~615k context at writing (Lead's mark ~600k).
-### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)
-- Packets FROZEN: P-N5-GD-box43 (205c9ed7, b898ff82; LANDED as R55) + fixes P-N5-GD-fixes-box44 (b93f6c7d, dfa6dd2b); P-N5-FBRED-box44
-  (3732ab55, 11b15455; LANDED as R56) + fixes P-N5-FBRED-fixes-box44 (2742f3e9, 05c24943); P-N5-VILB-box44 (999e73f4, 872d4400; in review);
-  P-N5-ACCEL-box44 (e9eaaaaf, 301f0be0; in review); P-N5-FBK-box44 (9dd499d3, afd7c65a; pinned trunk 5d723af6, behind P-N5-2T) + fixes
-  P-N5-FBK-fixes-box44 (399e8ec6, 79ad8597: verbatim PFZ-q / DIR). Fixes files P-N5-NH-fixes-box43 (7c499640) and P-N5-DUAL-fixes-box43
-  (5d08d0fd) at 478dd6e1. P-N5-XEP-box44 (a4fa94b0, sha1 237dd5eb31f60f19ef70099dc9351532e88b56f8: R-STICK_D, SN-PREFIX_D (a)-(c),
-  D-EPOCH, X-EP; cites ACCEL 301f0be0 EPOCH (b) and FBK afd7c65a ALT; queues after FBK).
-- Working docs: docs/new/N5-DELTA-box44.md (Route Δ: LAM_D, C_D, CR_D, FBL_D, FBF_D (CT-FREE), XA_D, PIECE_D |D| = 1; Δ-RT-F FALSE,
-  rtf_cex_inj n 11); docs/new/N5-FBF-box44.md §1-§14 (FB-POLY set form; FB-RED; TV; ρ-POLY stalls; VI-LB; ACCEL; EPOCH; ALT; FB-kT;
-  R-STICK_D, SN-PREFIX_D; D-EPOCH, X-EP; random-start data). Tools experiments/new/box44 (README lists every run).
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 25, box 46, FINAL, written 2026-10-26 10:32Z by date -u)
+Successor 25 (Opus 5.5, D14/D18, L40), session_01VsRSLkbPLhXCWoMbJMCW2r. Handover check 04cedc7c (5/5, Lead 08:32Z). ~480k context at parking.
+### DONE (all pushed with scripts/push.sh, rc 0; sha1s reported to the Lead)
+- Fixes files FROZEN: P-N5-STAU-fixes-box45 (ee95661f, sha1 42d7b04c…; R65 landed f7308227), P-N5-REC0-fixes-box45 (ec0105e2, sha1 f35b26f3…; no
+  gap; last input for R66 before CHECKER).
+- Packet FROZEN: P-N5-HON-box46 (67a7b54d, sha1 07f8e767cfca12d29c8f6f2e3f03358326abbef1; pinned by the Lead; REFEREE 14 and REFEREE-2 16 on it).
+  EP-1u and REC-1 (b)-(d) are written as implications from (Στ); R65 has since landed, the referees are told (Lead); do not edit the packet.
+- Working doc docs/new/N5-REC1-box46.md (§0-§6, DEAD §4 (i)-(v), DATA §5 incl. X_dir); tools experiments/new/box46 (README; also xdir.py, xclimb.py,
+  instances immfail_n14, immp_cex_n11 (+ .start), xdir2_n17).
 ### IN FLIGHT
-- Nothing running. (a) XEP packet: done (above). (b), (c): decided by the Lead, see ROUTING INHERITED. Successor 23 PARKED at the head
-  that carries this line.
-- Referee queue (Lead's): P-N5-2T (L-SI) → P-N5-FBK; VILB → ACCEL (REFEREE-2 first). Fixes files come when their §Cs are in (Lead's go).
-### ROUTING INHERITED (Lead 05:00Z / 05:05Z / 05:10Z, Lead's stamps; added 05:16Z by date -u)
-- X_SN^pre stays with L-NEW, for epochs with |D| = 1: port R19-R20 (and check R21-R34) per epoch with o := u (N5-DELTA-box44 §7 route; D-EPOCH:
-  D, σ̄ fixed inside an epoch, the other Odd choice vertices have σ̄ = τ). If most transfer, epochs with |D| ≤ 1 are bounded by the 𝒞^1O
-  machinery and the open core shrinks to epochs with |D| ≥ 2 (Δ-RT). L-SI's Lemma G_D-NC (l-si b92f84d4, §6: R55's (h_D) weakened to "no
-  D-vertex on its own cycle") may help.
-- L-SI keeps (¬h-cyc) per gate and FRZ-U on 𝒞^2O (do not duplicate; ask through the Lead if a lemma is needed).
-- FBK fixes file docs/new/P-N5-FBK-fixes2-box44.md (or the next free name; P-N5-FBK-fixes-box44.md is already the verbatim-quote file):
-  REFEREE-2 d4cc40d9 G-FBK-1 (Corollary FB-kO's whole-run "O(n^{2k+1})" is false at k = 1; repair O(n^{max(k+3, 2k+1)}), since phases
-  ≤ n(n − 1) + n^k), notes N-FBK-1..4, plus REFEREE 12's notes; ON THE LEAD'S WORD, after REFEREE 12's FBK report and both §Cs.
-### NEXT (successor 24)
-- Read the Lead's latest message (ReadNotifications) before anything; answer the five questions; then the Lead's choice among (a)-(c).
-- Open counts on the frontier, as they now stand: ρ (Ξ-changes at Odd choice vertices per phase; fallbacks, epochs and value levels all
-  reduce to it: FB-RED, ALT, EPOCH); X_SN^pre (crossings); T per phase given f (L-SI); phases are polynomial only for fixed k (Φ-kO).
+- Nothing running. Relayed by the Lead (not opened by me): L-RED 20's R79 (l-red 3dee2e54) found no kill of REC-0 in 8.17M runs, max N_0 = 6;
+  L-COMP 5 box 12 at l-comp cf441de1 (IMM′ / HON-FF add-ons were routed there; IMM′ is already DEAD, see §4 (v)).
+### NEXT (successor 26), the Lead's queue (10:28Z)
+1. X_dir, proof side: a direct switch {u} → {u′} is exact on the 2-Odd-choice game G^{u,u′} (cut Odd v ∉ {u, u′} to τ(v); RESTRICT_E's proof
+   applies to every state with D ⊆ {u, u′}). State what a 𝒞^2O per-phase transition count would need (R58 gives only f = O(n³) there). DATA:
+   N5-REC1 §5 (xdir.py, xclimb.py: ≤ 2 per phase, mostly at run starts; xdir2_n17 has a chain {3} → {1} → {2}).
+2. HON-FF (N5-REC1 §6, P-N5-HON §5): gaps with a fallback at a non-honest state; only 3 exist (j10_n24, j7_n32, j8_n32).
+3. The P-N5-HON fixes file when both HON reports arrive (Lead's word). BRIEF: file docs/new/P-N5-HON-fixes-box46.md, repairs only; do not
+   touch the packet (sha1 07f8e767cfca12d29c8f6f2e3f03358326abbef1). Sources: REFEREE-2 16, docs/referee-2/R2-N5-HON.md (report 1566b439, Lead
+   10:34Z: all items SIGN, implications as stated, §2 confirmed, notes N-HON-1..5; N-HON-1 = SAT0's Odd-case parenthesis, with replacement text
+   in its report); REFEREE 14 (report pending) and both §Cs. Template: P-N5-STAU-fixes-box45.md / P-N5-REC0-fixes-box45.md (verdicts, gaps with
+   the referees' repair text verbatim, notes, data). Quote verbatim with file:line from trunk and check every quote by script (normalise
+   whitespace, test substring). Also record: R65 landed (f7308227), so EP-1u / REC-1 (b)-(d) now rest on a landed (Στ) — a fixes-file remark,
+   not a statement change. Freeze, push, send the Lead the sha1 and SHA.
+- Not routed: G-N1-LB.
+
+## Things only I know (successor 25)
+- The W-honest states (Ξ = W) are the bridge between the two frames: there S4a is G_τ's switch-best (Lemma P applies), and Ξ's level can be read
+  off W. Bank the level in Ξ (it never drops in a phase); spend W only across a gap between two honest states (WM). That is all HON is.
+- Fallbacks AT honest states are harmless (HON-FB: flat, saturating, last). Fallbacks at NON-honest states between honest ones (f_in) are rare:
+  4 fallbacks in 3 gaps in all of lib41, none in random 𝒞^kO.
+- The Ξ-level does NOT rise immediately after an honest S4a step (IMM, IMM′ dead): the honest reply can escape to an edge outside τ ∪ Iτ, because
+  Iτ is computed from Even's G_τ-OPTIMUM (the dual valuation of τ is against Even's best reply). immp_cex_n11 is a 11-vertex hand construction of
+  this: one sink cycle node, so λ never changes; τ Odd-optimal for the game, so Iτ = ∅ and τ never moves.
+- levels.py's exact level is a simple-path DFS with a budget: fine to n ≈ 34, UNK above. Its cycle nodes come from the valuation it is given
+  (xi[c][0] == c); fbwlev.py has a variant with λ's cycle nodes for W. gaptrace.py's WLEV uses W's own cycle nodes (differs at split states).
+- u-runs: cut every Odd v ≠ u to τ(v), keep ALL of u's edges (G^u), and R64's RESTRICT / REPRO go through verbatim; a whole run of epochs
+  that differ only at u is one N5^τ phase piece on a 𝒞^1O game. The 49-epoch phase of lev_l_x is one {u}-interval.
+- Timestamps: I mis-guessed "10:0xZ" once (it was 09:54Z) and fixed it; take date -u in the same command.
+- background jobs started with `( … &)` in Bash survive across calls; the Monitor tool is the way to wait (no sleep).
+
+## Things only I know (successor 24)
+- The restriction trick: on an epoch, cut every Odd vertex outside D to τ and each u ∈ D to {τ(u), σ̄_E(u)}. Ξ, W, Iσ, S4a, S4c are literally
+  equal on G and G′_E (Lemma S (a) both ways for Ξ; the rest are the same graphs). Only S4b's tie-break differs (div_n8), hence N5^τ.
+- Tie states (in-phase, (u, σ̄(u)) ∈ Iτ for all u ∈ D) force W = Ξ (TIE-W); in all data u is then its own cycle node (TIE-CYC, 148/148).
+- The epoch's last transition can leave the restricted run's phase (EPR-1): RESTRICT_E (i) needs σ̄_k = σ̄_E, false at y + 1. Every per-epoch bound
+  carries "+ 1".
+- RESULTS citation closure: a regex over the RESULTS entries; R48's entry does NOT cite R49 (my first grep hit the next heading). The closure of
+  R48/R50 is R15, R17, R18, R19-R34, R38, R39, R42, R44, R45, R48, R50 (R47 only in R50's not-signed reading).
+- For REC-type counts, W is the frame where S4a is switch-best ONLY at D = ∅ states; elsewhere S4a is the W-optimum over Ξ-gated edges.
+  Use Ξ for permanent progress (R15 (a)), W for progress inside fallback-free all-unsplit prefixes (WM + SN-PREFIX_D (a)).
+- Timestamps: I mis-guessed run times twice and fixed them; always take date -u in the same command that writes the stamp.
 
 ## Things only I know (successor 23)
 - Set-form choice: for HONEST-frame statements (FB-POLY, ρ, epochs) the terminals are C ∪ Q (all Odd choice vertices), not D_k, because σ̄
@@ -744,6 +796,12 @@ Successor 23 (Opus 5.5, D14/D18, L40), session_011WFfFqRNrU1a8LQwbwazZN. Handove
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (succ. 25, box 46, 2026-10-26 08:35-09:05Z) Fleet sources opened and read for docs/new/N5-REC1-box46.md: docs/RESULTS.md entries R15 ((a), (d):
+  "at most 4n(n−1) consecutive N5 iterations leave both Ωσ and Ωτ unchanged"), R17 ((a)-(e); (e): "N5's fallback (S4c) fires only in the
+  value-flat situation and then leaves no improving edge"), R23 ((g) WM), R51 ((a) ITER ≤ (n(n − 1) + d_o)(T* + 1)), R55 ((a)-(e) G_D),
+  R64 ((a)-(e), with the RESTRICT_E / REPRO proofs in docs/new/P-N5-EPR-box45.md §1-§2); docs/new/N5-phase-bound-box10.md §1-§3 (Lemma P cases
+  A1-B2, Theorem PH, Corollary 2); docs/new/N5-ssi-global.md SPEC S1-S5, FIX 1-4; docs/new/P-N5-STAU-box45.md §0 (N5^τ, (Στ)); L-SI
+  docs/si/N5-RUND-box17.md §12-§15 at l-si 4b0aeae6 (Lemma P^c_sch, Corollary CHARGE; read, not used in a proof). No external literature cited.
 - (succ. 23, box 44, 2026-10-26 ~02:55Z) T. Brihaye, G. Geeraerts, A. Haddad, B. Monmege, "To Reach or not to Reach? Efficient Algorithms
   for Total-Payoff Games", arXiv:1407.5030v4 (14 Jul 2015), fetched from arxiv.org/pdf/1407.5030, pdf sha256 c2587986152b9104438261a1b93f14f235e7967d2cac31f09cf2524db7f62699.
   Read: abstract; §3 (MCR games, Figure 2(a) example with values −W, no memoryless optimal Min strategy); Theorem 1 items 1-4 (item 4:
@@ -844,6 +902,21 @@ Successor 23 (Opus 5.5, D14/D18, L40), session_011WFfFqRNrU1a8LQwbwazZN. Handove
   docs/referee/R-N5-PFZ.md (8595343); docs/referee-2/R2-N5-PFZ.md (37e55fd) notes.
 
 ## Dead ends
+- (box 46, successor 25, 2026-10-26 ~08:45Z) Permanent Ξ-level in the honest frame H_C as a REC potential for |D_C| = 1 configurations: no rise on
+  133 of 453 fallback-free gaps between consecutive C-epochs (lib41, n ≤ 34). Instance experiments/si/orlens/instances/thclimb_n12_s11.pg
+  (sha1 e3b47b6e…), S3 start, phase [2, 17], D = {1} throughout; C = (u → 10) at states 2 and 6, LEV_C 1 → 1. Obstruction: S4a optimises
+  against τ(u) = 11, not against σ̄_C(u); inside one {u}-interval σ̄(u) moves 10 → 2 → 3 → 2 → 10. Replaced by EP-1u (u-runs on G^u).
+- (box 46, successor 25, ~09:50Z) CONJECTURE IMM′ (IMM unless h + 1 is the last state of its phase): FALSE. Hand-built
+  experiments/new/box46/instances/immp_cex_n11.pg (sha1 1dd7f585…) + .start (sha1 18cf3766…): Iτ = ∅ (τ Odd-optimal), honest reply escapes to a vertex
+  whose latent potential is not yet realised; LEV 1 → 1, phase continues. Library: exitr_cex_n16 (random start). Obstruction: Iτ is read from
+  Even's G_τ-optimum, not from σ.
+- (box 46, successor 25, ~09:45Z) CONJECTURE FB-WLEV ("a fallback never lowers the W-level", the W-carry route to HON-FF): FALSE.
+  experiments/n5-exhaustive/instances/b5_o11.pg (sha1 db4fe55a…), S3, fallback 7 → 8, WLEV 6 → 5 (14 of 166 non-honest fallbacks, lib41 n ≤ 24).
+- (box 46, successor 25, ~09:30Z) CONJECTURE IMM ("Ξ-level rises at once after an S4a step from a W-honest state"): FALSE.
+  experiments/new/box46/instances/immfail_n14.pg (sha1 db3fc2ca2ef4…), S3, h = 0 (LEV 3 → 3; split) and h = 2 (3 → 3; unsplit); both h + 1 are the
+  last state of their phase. Obstruction: S4a's W-best target leads to an Odd vertex where the honest reply deviates from τ (σ̄(0) = 2 ≠ τ(0) = 4).
+- (box 46, successor 25, ~09:00Z) Side claim "no in-phase fallback at a W-honest state": FALSE. experiments/n5-exhaustive/instances/b4_n5_other_0.pg
+  (sha1 6115e60a…), S3, state 1: Iσ = {(4, 0)}, 4 its own cycle node, flat cycle-closing switch. Replaced by Lemma HON-FB.
 - (box 44, successor 23, 2026-10-26 ~03:27Z) Route "epochs of σ̄|Q inside a phase ≤ ∏_q deg(q)" (the σ̄-analogue of Φ-kO's no-τ-repeat):
   FALSE as a premise. Instance experiments/new/box25/laps/lap_n6_s1_110421.pg (n 6, Q = {2}, sha1 4f4fe69c…): one phase, σ̄(2) = 0, 4, 0.
   Obstruction: Odd's best response alternates as successor values rise in turn; no potential on σ̄|Q forbids it.

@@ -1,0 +1,1 @@
+FBH_V 546, H0MAX 4, HMAX 4, HNOT0MAX 4, H_OVER_FN 0.6, ffpairs 2438, phases 40203, runs 15000

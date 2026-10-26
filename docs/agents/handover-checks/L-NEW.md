@@ -361,3 +361,97 @@ Nothing running. Oink NOT built (`tools/oink/build` absent): `scripts/setup_oink
 - **Check**: every checker asserts each hypothesis of the lemma it tests before counting a violation, and a reported violation is
   re-checked by hand on the instance before it is called a counterexample. Carried: stale container (caught again above: fetch +
   is-ancestor a4fa94b0); `scripts/push.sh > file 2>&1; echo $?`; ReadNotifications before acting on a request that may be done.
+
+## Successor 25 (Opus 5.5; written 2026-10-26 08:24Z by date -u)
+Predecessor: successor 24, session_01DR27cGCEhPvHHVxiYXCfaz, parked at l-new 230334e4 (resume point; packet head 18dd8c90).
+
+### 1. Branch, head, ahead/behind trunk (claude/vibrant-johnson-nxvvxo)
+- Branch claude/l-new. STALE container again: local HEAD 5961101a (successor 6). `git fetch origin claude/l-new` → origin head
+  230334e4; `git merge --ff-only origin/claude/l-new` → HEAD 230334e4.
+- Trunk head 565b8a8d ("Lead: merge checker (C71/C73 closed) and l-red; L-RED 20 check 5/5, GO; NOW; log", 08:17:50Z). Before merging:
+  `git rev-list --left-right --count 230334e4...trunk` = **3 ahead / 237 behind**, merge-base 40659d50 (unmerged: 18dd8c90 packet
+  P-N5-REC0, d0a7e3cf resume point, 230334e4 stamp fix).
+- `git merge --no-ff` trunk (no conflicts, no rebase) → 64a811ba: 4 ahead / 0 behind; 5 ahead after this commit.
+
+### 2. Open work and the next step of each
+Nothing running. Oink NOT built (`tools/oink/build` absent): `scripts/setup_oink.sh` before any run that needs it.
+Frozen, not to be edited: P-N5-STAU-box45 (sha1 7446d9a9…, in review), P-N5-REC0-box45 (sha1 343239b5…, re-measured; referee queue after
+STAU; L-RED 20 attacks it). Corrections only in a fixes file, only when the referees' notes arrive.
+- **(c) first: REC for epochs with |D_E| = 1** (σ̄|Q ≠ τ|Q at one u). Next step: in docs/new/N5-NEP-box45.md (new §6) carry the
+  Lemma-P level in F_D, where Ξ = W (RESULTS R55 (a)), plus the route form through u (R55 G_D (b)); target: C-epochs per phase ≤ poly(n, f)
+  for each |D| ≤ 1 configuration (≤ m of them), which with EP-0/EP-1 (R64) bounds every phase whose epochs all have |D| ≤ 1. Checker in
+  experiments/new/box45 (rec0.py pattern), hypotheses in the guard.
+- **(b) then: f-free REC-0** via a permanent Ξ-level (obstacle: single-state D = ∅ epochs whose exit step raises W, not Ξ).
+- **Ask the Lead** for L-RED 20's REC-0 attack results and L-COMP 5's epoch census (do not edit their files).
+- Not routed: G-N1-LB.
+
+### 3. docs/GAPS.md rows I own (merged HEAD 64a811ba = trunk 565b8a8d, `grep -n L-NEW docs/GAPS.md`)
+- **G-N5-TIME** (l.11): major; "L-NEW (L-LIT T22; referees later)"; **open**. Last update 07:47Z: R62 (P-N5-H3) landed, structural;
+  𝒞^1O closed by R51, 𝒞^1E by R57; N_ep / ρ, |D_E| ≥ 2 epochs, (Στ) (P-N5-STAU in review) OPEN; general games OPEN.
+- **G-N1-LB** (l.10): minor; "L-NEW (optional; not routed)"; **open**.
+- **G-N5-TERM** (l.16): major; "L-NEW (L-COMP checks runs)"; **closed** (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D18 (DECISIONS l.332-333; INDEX l.32 **active**; Lead reading L40, l.33 active):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D14 (l.244-246; INDEX l.22 **active**; Lead reading L35, l.23 active):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D16 (l.299-300; INDEX l.28 **active**; Lead reading L38, l.29 active):
+   > Then keep working as I told you to
+
+### 5. One trap, and the check that prevents it
+- **Trap** (successor 24, box 45): a per-epoch bound was first stated without the "+ 1" for the epoch's last transition, which can leave
+  the restricted run's phase (EPR-1: RESTRICT_E (i) needs σ̄_k = σ̄_E, false at y + 1); the referees caught it as G-EPR-1.
+- **Check**: every per-epoch count is stated for the transitions inside the epoch plus its exit step, and the checker counts the exit
+  step separately and asserts the restriction hypothesis (σ̄_k = σ̄_E) at each counted state. Carried: stale container (caught again
+  above: fetch + ff to 230334e4); `scripts/push.sh > file 2>&1; echo $?`; ReadNotifications before acting on a request that may be done;
+  date -u in the same command that writes a stamp.
+
+## Successor 26 (Opus 5.5; written 2026-10-26 10:45Z by date -u)
+Predecessor: successor 25, session_01VsRSLkbPLhXCWoMbJMCW2r, parked at l-new e2a529fa (resume point 38d78f52 + HON fixes brief).
+
+### 1. Branch, head, ahead/behind trunk (claude/vibrant-johnson-nxvvxo)
+- Branch claude/l-new. STALE container again: local HEAD 5961101a (successor 6). `git fetch origin claude/l-new claude/vibrant-johnson-nxvvxo`;
+  `git merge --ff-only origin/claude/l-new` → HEAD e2a529fa.
+- Trunk head f1d2cf09 ("Lead: C75 sent; RUND §C asked; L-NEW handover; NOW; log", 10:38:06Z). Before merging:
+  `git rev-list --left-right --count HEAD...trunk` = **2 ahead / 128 behind**, merge-base ec0105e2 (unmerged: 38d78f52 resume point,
+  e2a529fa handover brief).
+- `git merge --no-ff` trunk (no conflicts, no rebase) → 34a4d336: 3 ahead / 0 behind; 4 ahead after this commit.
+
+### 2. Open work and the next step of each
+Nothing running (`ps aux | grep python`: only the container's CA helper). Oink was NOT built; `scripts/setup_oink.sh` run in this step: rc 0, "oink built at 8fbf0a7" (tools/oink/build has oink, verify, tc, tc+, counter_*, rngame).
+Frozen, not to be edited: P-N5-HON-box46 (`sha1sum` 07f8e767cfca12d29c8f6f2e3f03358326abbef1, re-measured), and the STAU / REC0 fixes files.
+- **(1) X_dir, proof side**: a direct switch {u} → {u′} is exact on the 2-Odd-choice game G^{u,u′} (cut Odd v ∉ {u, u′} to τ(v); RESTRICT_E's
+  proof applies to every state with D ⊆ {u, u′}). Next step: write it in docs/new/N5-REC1-box46.md as a new section (PROVED / CONJECTURE / OPEN /
+  DATA labels), then state what a 𝒞^2O per-phase transition count would need (R58: only f = O(n³) there). Read L-SI's docs/si/N5-RUND-box17.md §22
+  (re-thaw loop through relay cycles between Odd choice vertices) first. Data tools: experiments/new/box46 xdir.py, xclimb.py, xdir2_n17.
+- **(2) HON-FF** (N5-REC1 §6, P-N5-HON §5): the only open f term for D = ∅; 3 gaps with a fallback at a non-honest state (j10_n24, j7_n32,
+  j8_n32). Next: case analysis on those three.
+- **(3) P-N5-HON fixes file** docs/new/P-N5-HON-fixes-box46.md (does not exist): when both HON reports and §Cs exist. Present: REFEREE-2
+  docs/referee-2/R2-N5-HON.md (signed, no gap; N-HON-1..5). Absent: `ls docs/referee/ | grep -i hon` = nothing (REFEREE 14 pending). Also
+  record R65 landed (GAPS 09:56Z) as a remark.
+- Not routed: G-N1-LB.
+
+### 3. docs/GAPS.md rows I own (merged HEAD 34a4d336 = trunk f1d2cf09, `grep -n L-NEW docs/GAPS.md`)
+- **G-N5-TIME** (l.11): major; "L-NEW (L-LIT T22; referees later)"; **open**. Last update 09:56Z: R65 (P-N5-STAU) landed; "N_ep / ρ and
+  epochs with |D_E| ≥ 2 OPEN; general games OPEN." (`grep "^### R6" docs/RESULTS.md`: R65 present; R66 (REC0) not yet landed.)
+- **G-N1-LB** (l.10): minor; "L-NEW (optional; not routed)"; **open**.
+- **G-N5-TERM** (l.16): major; "L-NEW (L-COMP checks runs)"; **closed** (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D18 (DECISIONS l.333; INDEX l.32 **active**; Lead reading L40, l.33 active):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D14 (l.245-246; INDEX l.22 **active**; Lead reading L35, l.23 active):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D16 (l.300; INDEX l.28 **active**; Lead reading L38, l.29 active):
+   > Then keep working as I told you to
+
+### 5. One trap, and the check that prevents it
+- **Trap**: the stale container, every restart (again here: local 5961101a, 128 commits behind trunk). Acting on it would mean editing an
+  old notebook and missing frozen packets / landed results.
+- **Check**: fetch both branches, `git merge --ff-only origin/claude/l-new`, then `git rev-list --left-right --count` against trunk and
+  merge trunk with --no-ff before reading anything as truth. Carried: per-epoch counts with the "+ 1" exit step (G-EPR-1); quotes checked by
+  script (substring after whitespace normalisation); `scripts/push.sh > file 2>&1; echo $?`; ReadNotifications before acting; date -u in
+  the same command that writes a stamp.

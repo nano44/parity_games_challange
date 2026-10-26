@@ -1,0 +1,56 @@
+MODE files ../R2-N5-KW/files.lst 2 MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 98246
+CHG_charged: 7862
+CHG_window: 90384
+CHU_U_events: 6208
+CHU_checks: 15052816
+CRREL_freeze_checks: 3
+CRREL_freeze_checks_D_nonempty: 3
+CRREL_subruns: 5347
+ENGXI_checks: 17739
+FRZS_checks: 7355584
+FRZS_content: 3199417
+FZP_checks: 17739
+FZ_checks: 301845
+KF_states_Lm1: 7836
+MERGE_checks: 376602
+OFFa_transitions: 10104
+OFFb_checks: 397036
+OFFc_checks: 7560
+P1_brute_states: 13297
+P1_brute_strategies: 94929
+P2_brute_strategies: 1116561
+P2_brute_transitions: 11131
+PDa_aligned_states: 4083
+PDa_arena_too_big: 47
+PDa_brute_arenas: 4036
+PDa_brute_strategies: 106304
+PDb_blocks: 762
+PSCH_clean_checks: 2586464
+SPR_runs: 1375
+TG_changes: 1587696
+TG_subruns: 85428
+TG_tail_changes: 292
+TGii_rise_checks: 400
+TGii_rise_nonzero: 267
+UNF_checks: 8721
+ff_runs: 1701
+ff_transitions: 11596
+forbidden_pairstates_Lm1: 90380
+h3_runs: 1375
+h3_transitions: 10104
+ii_runs: 1659
+ii_transitions: 11127
+runs: 1006
+states: 17739
+CHU_max_U_per_run: (23, 'experiments/red/so/instances/so_j19_n48.pg#0@5 L -1 n 48')
+CHU_max_U_per_vertex: (3, 'experiments/red/so/instances/so_th_n32.pg#0@1 L -1')
+PDb_max_block: (55, 'experiments/red/xing/instances/x32_rand64.pg#0@0 n 64 m_tau 236')
+SPR_max_ratio_x1000: (288, 'experiments/red/n5inj/instances/blockph_bp32.pg#0@1 T 30 Nsplit 0 n 36')
+TG_max_B: (44, 'experiments/n5-exhaustive/instances/b6_xw_n48.pg#0@5 n 48')
+TG_max_Nv: (19, 'experiments/new/box35/instances/pf_best_3622.pg#0@30 v 0 B 29 n 40')
+TG_max_tail: (2, 'experiments/red/so/instances/pftheta34_n32.pg#0@5..38 v 11 bound 511')
+TGii_max_rise_over_cap_x1000: (382, 'experiments/red/so/instances/pftheta_cex_n32.pg#0@4..36 v 18')
+max_ff_run_transitions: (55, 'experiments/red/xing/instances/x32_rand64.pg#0@0 n 64')
+max_h3_run_transitions: (55, 'experiments/red/xing/instances/x32_rand64.pg#0@0 n 64')
+RESULT OK violations=0

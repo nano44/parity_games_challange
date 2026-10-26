@@ -30,3 +30,6 @@ DATA, not proof. Uses experiments/new/box43 (multi.rand_ckO) and box21 (n5x: SPE
 - recclimb.py K NMAX STEPS SEED OUTDIR [--seed FILE] [--d0]: climbs on (max recurrences of one configuration, max N_ep) via nep.py. Runs
   07:33Z-07:35Z (date -u): out/recclimb_k2_n12_s31.txt, out/recclimb_k3_n16_s32.txt, out/recclimb0_k2_n12_s33.txt (--d0),
   out/recclimb_seed_so.txt (seed so_th_n32); best games in out/climb/. Table in docs/new/N5-NEP-box45.md §4.
+- rec0.py STARTS SEED (--list | --rand): Lemma REC-0 check (N0 <= (f+1)(n+1) + 4n(n-1) + 1), N0 max, kind-(iii) steps per run. Runs 07:42Z-07:47Z
+  (date -u): out/rec0_lib41_k2.txt (`rec0.py 2 7 --list ../box41/lib41.txt`), out/rec0_rand3000.txt (`rec0.py 4 8 --rand 3000 5 18 111`): 0 violations.
+  recclimb.py --d0 runs 07:48Z-07:53Z: out/recclimb0_seed_so.txt (seed 41), out/recclimb0_k3_n20_s42.txt, out/recclimb0_k2_n16_s43.txt.

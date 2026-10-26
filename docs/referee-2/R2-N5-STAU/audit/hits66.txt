@@ -1,0 +1,323 @@
+docs/new/G-N5-TERM-reading.md:83: - Iσ / Iτ in n5.py are VJ00's improvements: SPEC S1/S2, si.py key = VJ00's ⊴ (Q1: path sets by MaxDiff; lengths as in §4.2).
+docs/new/G-N5-TERM-reading.md:85: - Iσ and Ξσ are functions of σ ALONE (Ωσ minimises over all of Odd's plays), and Iτ, Ξτ of τ alone. τ only selects WHICH subset
+docs/new/G-N5-TERM-reading.md:91: step 4 question). Consecutive flat iterations (neither Ωσ nor Ωτ changes) number at most 4n(n − 1). Each length satisfies 0 ≤ k ≤ n − 1, so
+docs/new/N5-phase-bound-box10.md:45:       phase ended at step k + 1, contrary to the assumption. In the second case top(Z) = c and val_ρ̂(x) = (c, ∅, |π| + 1) = x ⊕ Ω_k(z) ⪰ value(r).
+docs/new/N5-phase-bound-box10.md:49:       If D ≠ ∅: every vertex of Z more relevant than c lies in D, so top(Z) is that even vertex, better than c, and as in B1 the phase ends at
+docs/new/N5-phase-bound-box10.md:51:       so its reward is better for ⊕ (even: positive; odd: −p' larger), and again the phase ends: contradiction. If top(Z) = c then c ∈ Z ⊆
+docs/new/N5-phase-bound-box10.md:66:   node better than λ(x), so step n changes λ(x) (by (F1)) and the phase ends; or (B1, second case) val_ρ̂(x) = x ⊕ Ω_{n−1}(z) ≻ Ω_{n−1}(x)
+docs/new/N5-phase-bound-box10.md:69: So every improving edge of ρ_{n−1} is λ-changing or value-flat. If some λ-changing one exists, step n ends the phase. Otherwise step n is
+docs/new/N5-phase-bound-box10.md:71: {ρ(x)} ∪ I(x) and all options tie in x's value, so the engine's tie-break decides); no valuation changes (every play that met x still meets x
+docs/new/N5-phase-bound-box10.md:118: times a per-segment bound. Inside a σ̄-segment (Odd's best reply σ̄ = c constant) Even's honest values Ξσ are the values in the one-player game
+docs/new/N5-phase-bound-box10.md:169: this relies on Lemma 5.8 "2 ⇒ 1" and can stop at a value-flat cycle-node tie) or, with EXACT=1, by N5's own step (n5_lock.step =
+docs/new/N5-phase-bound-box10.md:172: phase_vc on 17 instances 0 violations, maxima 15 at n = 16 (rel_g16) and 46 at n = 48. The two rules differ only in tie situations
+docs/new/N5-phase-bound-box10.md:173: (rel_g12: 11 steps with the fixpoint rule, 10 with N5's step); the Theorem allows any tie-break.
+docs/new/N5-time-box21.md:10:   - (FO) Fixed opponent: N5's Even moves while Odd's τ stays constant are polynomially many.
+docs/new/N5-time-box21.md:11:   - (ALT) Alternation: Odd's τ changes polynomially often.
+docs/new/N5-time-box21.md:27:   - Odd's best reply σ̄, which defines Even's gate, makes TWO laps over four exits inside that phase, and Even vertices
+docs/new/N5-time-box21.md:49: - Frozen dynamics F_τ (Even only; τ fixed; stops when Iσ = ∅):
+docs/new/N5-time-box21.md:68: (a) L_σ(v) = min over τ' of V_{σ,τ'}(v), and U_τ(v) = max over σ' of V_{σ',τ}(v), pointwise.
+docs/new/N5-time-box21.md:77: - Odd's step is symmetric: τ_{k+1} minimises V_{σ_k,·} over Odd's arena.
+docs/new/N5-time-box21.md:84: - L_σ(v) equals the minimum over all τ' of V_{σ,τ'}(v).
+docs/new/N5-time-box21.md:97: Let C_τ be the number of N5 iterations that change τ. Let F_E(G) be the maximum length of an F_τ run, over all Odd strategies
+docs/new/N5-time-box21.md:99: (a) If τ_{k+1} = τ_k, then σ_{k+1} = F_{τ_k}(σ_k).
+docs/new/N5-time-box21.md:100: - If Iσ ≠ ∅, S4a computes the same σ', and S4c falls back on Even exactly when F does. (When σ' = σ and τ' = τ, S4c switches Even
+docs/new/N5-time-box21.md:102: - If Iσ = ∅, the iteration needs Iτ ≠ ∅. Then either S4b changes τ, or S4c falls back on Odd and changes τ. Either way
+docs/new/N5-time-box21.md:103:   τ_{k+1} ≠ τ_k.
+docs/new/N5-time-box21.md:104: (b) So every maximal τ-constant block is a prefix of an F_τ run, followed by one τ-changing iteration. Hence:
+docs/new/N5-time-box21.md:107: (c) If τ_0 is honest-optimal (Iτ_0 = ∅), then τ never changes (Iτ depends on τ alone, S2 on G^d), and the N5 run IS the F_{τ_0}
+docs/new/N5-time-box21.md:113: DATA for (a)-(b) (blockcheck.py): 1,500 random plain N5 runs (n 3..14), 1,465 τ-constant blocks; every block's σ-sequence is a
+docs/new/N5-time-box21.md:124: ### 2.6 Lemma PT (R17 transfers exactly when the gate contains G_τ's improving edges)
+docs/new/N5-time-box21.md:141:   - τ*(o) = t6; Iτ* = ∅, checked.
+docs/new/N5-time-box21.md:155: - The start pair is (σ_0 = best-reward, τ* = the final τ of the plain N5 run); Iτ* = ∅, so Odd never moves.
+docs/new/N5-time-box21.md:168: - O1 (no lapping) and O2's formal core (Iτ is a function of τ alone) are PROVED facts (R15, S2).
+docs/new/N5-time-box21.md:172:   - R17 needs the gate to contain G_τ's improving edges (Lemma PT), and it does not (§3.1).
+docs/new/N5-time-box21.md:187:   (Iτ_0 = ∅), so by Theorem B (c) the canonical run IS the frozen run, and τ never changes.
+docs/new/N5-time-box21.md:190: - Mechanism, seen in the trace. Odd's best reply σ̄(5), which defines Even's gate, runs through the exits
+docs/new/N5-time-box21.md:199:   - There C_τ ≤ d − 1, because τ is one choice at that vertex and never repeats (R15 (c): every τ change goes strictly up in
+docs/new/N5-time-box21.md:205: ### 3.5 Lemma G: on 𝒞^1O the gate differs from G_τ's only on edges ENTERING o's reach set (PROVED; DATA check)
+docs/new/N5-time-box21.md:206: Setting: o is the only Odd vertex with a choice, τ is fixed, σ is Even's current strategy. Let:
+docs/new/N5-time-box21.md:227: - On 𝒞^1O, (H1) fails only on edges entering R, and only while Ξ(o) ◁ W(o), i.e. while Odd's best reply at o beats τ(o) against
+docs/new/N5-time-box21.md:229: - At every state with Ξ(o) = W(o), the gate contains G_τ's improving edges, so Lemma PT's inclusion holds at that state.
+docs/new/N5-time-box21.md:244:     #iterations ≤ (#θ-changes + #w-changes + #τ-changes + #λ-changes + 1) · (longest (θ, w, τ, λ)-constant stretch),
+docs/new/N5-time-box21.md:245: with #τ-changes ≤ d − 1 (§3.4) and #λ-changes ≤ 2n(n − 1) (Lemma Φ). On 𝒞^1O it is therefore enough to prove:
+docs/new/N5-time-box21.md:251: | instance | n | iterations | θ-changes | (w or λ)-changes | Odd moves | longest (θ, w, τ, λ)-stretch |
+docs/new/N5-time-box21.md:299:   - In a frozen run the only fresh coupling left is σ̄, Odd's best reply inside Even's honest valuation. While σ̄ = c is constant,
+docs/new/N5-time-box21.md:334:   - The coupling is only through the selection (Lemma S (c)): Odd's step is a gated best reply to σ_k.
+docs/new/N5-time-box21.md:337:     V_{σ_k,τ_k} is not monotone: Even's and Odd's steps pull it in opposite directions in the same iteration.
+docs/new/N5-time-box21.md:358: - (BR*) Along an F_τ* run, Odd's best reply σ̄ changes poly(n) times. DATA: 4 / 9 / 13 changes at n 16 / 16 / 29.
+docs/new/N5-1Oacyc-box24.md:13:   - Ξσ is Even's honest valuation: the S1 valuation against Odd's optimal counterstrategy σ̄.
+docs/new/N5-1Oacyc-box24.md:14:   - Iσ is Even's set of improving edges (S2). Iτ is Odd's, on the dual game G^d.
+docs/new/N5-1Oacyc-box24.md:15:   - An iteration is one pass of S4 with Iσ ∪ Iτ ≠ ∅.
+docs/new/N5-1Oacyc-box24.md:26: - A transition k → k+1 of an N5 run is PURE if σ_{k+1}|X = σ_k|X and τ_{k+1} = τ_k.
+docs/new/N5-1Oacyc-box24.md:40:   - By RESULTS R15 (c), every change of τ is a nonempty switch of Odd improvements on G^d, or Odd's S4c fallback, and goes
+docs/new/N5-1Oacyc-box24.md:42:   - Hence τ changes at most d − 1 times.
+docs/new/N5-1Oacyc-box24.md:99:   - Then Ξ(a) ◁ Ξ(b), so U_τ(a) ◁ U_τ(b): a is strictly better for Odd than b in Odd's honest order. So (o, a) ∈ Iτ (S2 on G^d).
+docs/new/N5-1Oacyc-box24.md:100:   - Then S4b runs. It computes Odd's optimal counterstrategy τ' in the arena where o may use {b} ∪ Iτ(o) and Even is fixed to σ_k.
+docs/new/N5-1Oacyc-box24.md:101:   - Pointwise optimality (F1 on the dual) gives the value at o under τ' ⊴ o ⊕ Ξ(a) ◁ o ⊕ Ξ(b). Hence τ'(o) ≠ b, and S4b changes τ.
+docs/new/N5-1Oacyc-box24.md:103:   - So τ_{k+1} ≠ τ_k, and the transition is not pure. This is a contradiction.
+docs/new/N5-1Oacyc-box24.md:119: - S4b on G returned τ unchanged, since the transition is pure. On G_τ, Odd has no choice, so Iτ = ∅ and S4b is void.
+docs/new/N5-1Oacyc-box24.md:120: - S4c fires on G iff S4a returns σ_k and S4b returns τ_k, i.e. iff S4a returns σ_k (S4b did). On G_τ it fires iff S4a returns σ_k.
+docs/new/N5-1Oacyc-box24.md:122: - Iσ_k ≠ ∅. Otherwise S4c would have fallen back on Odd, or S4b would have moved τ.
+docs/new/P-N5-RE-box26.md:1: # Referee packet P-N5-RE: four lemmas on N5 inside a τ-fixed joint λ-phase of a one-Odd-choice game (box 26)
+docs/new/P-N5-RE-box26.md:12:   - S4b: the symmetric Odd step;
+docs/new/P-N5-RE-box26.md:13:   - S4c: if σ' = σ and τ' = τ, a switch-all ("fallback") on Iσ, or on Iτ if Iσ = ∅.
+docs/new/P-N5-RE-box26.md:51: Statement. Let k → k+1 be an N5 transition with τ_{k+1} = τ_k and (h) at k and at k+1. Then w_{k+1} ⊵ w_k.
+docs/new/P-N5-RE-box26.md:58: Statement. Let k → k+1 lie in one joint λ-phase, with τ_{k+1} = τ_k, θ_{k+1} = θ_k =: θ, and (h) at k and at k+1. If
+docs/new/P-N5-RE-box26.md:64: Statement. Inside one joint λ-phase with τ constant, let x ∈ R_L, x ∉ R_{L+1} (a LEAVE at L), x ∉ R_j for L < j ≤ E, and x ∈ R_{E+1}
+docs/new/P-N5-RE-box26.md:161: - Wo (wocheck.py): 0 decreases of w over 5,341 pairs of consecutive (h)-states with τ fixed (random o-cyclic 𝒞^1O, n 4-16,
+docs/new/N5-xing-box27.md:16:   - Lemma G with θ = w gives Ξ = W, and the gate is exactly G_τ's improving set;
+docs/new/N5-xing-box27.md:61:   strictly W-improving. Flat switches at a vertex's own cycle node are the only W-ties allowed by R15 (b) / the P-N5-1OA flat case.
+docs/new/N5-xing-box27.md:186: - PROVED: Lemma Φ (≤ 2n(n − 1) + 1 phases); τ-changes ≤ d − 1; RM, RE, Wo, G (packet P-N5-RE); C, FBL, FBF, XA (this file).
+docs/new/N5-xing-box27.md:212:     - every branch where "the phase ends" contradicts the constancy of Ω's cycle nodes on S;
+docs/new/N5-xing-box27.md:230: UNTHROTTLED (h)-states (θ = w at each) inside one joint λ-phase with τ fixed. θ = w may change along the run. Then the run has at most
+docs/new/N5-xing-box27.md:233: - At every such state Ξ = W and the gate equals G_τ's improving set (Lemma G with θ = w). So box 21 Lemma PT's hypothesis
+docs/new/N5-xing-box27.md:238: Phase decomposition (READING; assumes (h) except where counted; uses §5 for throttled stretches). A joint λ-phase with τ fixed splits
+docs/new/N5-xing-box27.md:246: and with Lemma Φ (phases) and τ-changes ≤ d − 1, N5 on o-cyclic 𝒞^1O is polynomial if:
+docs/new/P-N5-XA-box27.md:13:   - S4b: Odd's symmetric step;
+docs/new/P-N5-XA-box27.md:14:   - S4c: if σ' = σ and τ' = τ, a switch-all (the fallback) on Iσ, each vertex to its best edge by (Ξ-key, index); on Iτ if Iσ = ∅.
+docs/new/P-N5-XA-box27.md:25: - Lemma W (docs/new/N5-time-box21.md §2.5, proved there): with τ fixed, every S4a (arena) step has W_{k+1} ⊵ W_k pointwise.
+docs/new/P-N5-XA-box27.md:57:     Others are coarse ties. Prefixing adds x on both sides or on neither.
+docs/new/P-N5-XA-box27.md:73: 1. τ is constant on S, so the fallback is Even's (Iσ_k ≠ ∅), and S4a returned σ_k. So σ_k is the pointwise optimum of the arena
+docs/new/P-N5-XA-box27.md:117: Notation. Ω_k := W_k (G_τ's valuation) and Ω^c_k := COARSE(Ω_k) = COARSE(Ξ_k) (Lemma C). For a simple path r = (x = r_0, …, r_L = u) of G_τ
+docs/new/P-N5-XA-box27.md:166: 1. Lemma W (arena step, τ fixed): W_{L+1}(x) ⊵ W_L(x).
+docs/new/P-N5-XA-fixes-box28.md:34: 1. Packet step 1 is unchanged. τ is constant on S, so the fallback is Even's, and σ_k is a pointwise optimum of the S4a arena in G_τ. By
+docs/new/P-N5-XA-fixes-box28.md:49:   z's route above c empty, and (o, σ̄(o)) ∉ Iτ. Then the switched edge (c, z) with z ∈ R_k \ R_{k+1} is neither a leave nor a flat F → F
+docs/new/P-N5-XA-fixes-box28.md:68:      - Odd vertices never switch (τ is constant), so p_i is Even. A switched edge into R_L must start at c, so p_i = c.
+docs/new/P-N5-XA-fixes-box28.md:92: - **XA-4** (packet §5, Case A_c). For an Odd vertex x (forced, or o with τ constant on S), σ_k(x) is read as x's only current successor
+docs/new/P-N5-XA-fixes-box28.md:140: - **N-XA-3** (R15 (d)). R15 (d) (RESULTS "### R15"): "at most 4n(n−1) consecutive N5 iterations leave both Ωσ and Ωτ unchanged".
+docs/new/P-N5-XA-fixes-box28.md:141:   - L-NEW: on S, τ is constant, so Ωτ (which depends on τ alone) is unchanged.
+docs/new/P-N5-XA-fixes-box28.md:143:     A value-preserving transition leaves Ωσ = Ξ and Ωτ unchanged, so R15 (d) applies directly.
+docs/new/P-N5-X-box28.md:13: - N5: docs/new/N5-ssi-global.md SPEC S1-S5 (S4a arena step against τ; S4b; S4c fallback = switch-all on Iσ, each vertex to its best
+docs/new/P-N5-X-box28.md:14:   gate edge by (Ξ-key, index); on Iτ if Iσ = ∅). Iσ_k ("the gate") := Even's Ξ_k-improving edges.
+docs/new/P-N5-X-box28.md:16:   - Ξ_k := Ω_{σ_k, σ̄_k}: Even's honest valuation, against Odd's best reply σ̄_k in G_{σ_k}.
+docs/new/P-N5-X-box28.md:21:   - R15 (d): at most 4n(n − 1) consecutive iterations leave both Ωσ and Ωτ unchanged.
+docs/new/P-N5-X-box28.md:61: - At k ∈ Q, Ξ_k = W_k, so the gate Iσ_k equals G_τ's improving set at σ_k.
+docs/new/P-N5-X-box28.md:64: - S4c step k → k+1: Even's, since τ is fixed and τ_{k+1} = τ_k (S4c switches Odd only if Iσ_k = ∅, and then τ changes).
+docs/new/P-N5-X-box28.md:76: Let k → k+1 be an S4c fallback with τ_{k+1} = τ_k. Then:
+docs/new/P-N5-X-box28.md:121: 3. S4a steps. σ_{k+1} is a pointwise optimum of G_τ's arena A_k. There is no crossing, so for x ∈ F, σ_{k+1}(x) ∈ F: otherwise
+docs/new/P-N5-X-box28.md:170: 7. A value-preserving transition leaves Ωσ = Ξ unchanged, and Ωτ unchanged because τ is fixed. So R15 (d) bounds runs of them by
+docs/new/P-N5-X-box28.md:172: Consequence (READING). With Lemma Φ (≤ 2n(n − 1) + 1 joint λ-phases; box 21, PROVED by the lane) and τ-changes ≤ d − 1, N5 on
+docs/new/P-N5-X-box28.md:212: - OPEN (X): crossing transitions per phase are poly(n). OPEN (NH'): OTHER-touching transitions per phase are poly(n). By Theorem X
+docs/new/P-N5-X-fixes-box29.md:33: - If k is EQ, the gate is G_τ's improving set, so by R18 (c) every switched edge is flat, and W_{k+1} = W_k.
+docs/new/P-N5-X-fixes-box29.md:93: - Lemma TF (REFEREE-2, R2-N5-X §3.2). Let k → k+1 have τ constant, R_{k+1} = R_k, and (h) at k and k+1. If θ_{k+1} ≠ θ_k, then Ξ changes
+docs/agents/R19-note-X1.md:25: - Lemma TF (REFEREE-2, §3.2) is the same fact as REFEREE's X-1 closure: under (h) at both ends with R and τ constant, a θ-change is an
+docs/new/P-N5-NH-box30.md:12: - A PHASE is a joint λ-phase with τ fixed. R_k is the set of vertices whose (σ_k, τ)-play reaches o, with o ∈ R_k; F_k := V \ R_k.
+docs/new/P-N5-NH-box30.md:25:   - R15 (a) (Ξ non-decreasing) and (d) (≤ 4n(n − 1) consecutive iterations leave Ωσ and Ωτ unchanged).
+docs/new/P-N5-NH-box30.md:43: 4. S4c steps inside I: Even's, since τ is fixed.
+docs/new/P-N5-NH-box30.md:64:   - λ_Ξ(o) is fixed in the phase, τ is fixed, and F is fixed on I. So both clauses are constant on I.
+docs/new/P-N5-NH-box30.md:156:   - U1: both frames in route form, c_w more relevant than c_θ (V_mid comparisons at W-ties).
+docs/new/P-N5-NH-box30.md:168:   - The Lead confirms this is N5 as specified: S4a uses S1's tie-breaks, not "keep current on ties".
+docs/new/P-N5-NH-fixes-box30.md:11:   G-N5-TIME stays OPEN. U1, U2, U3, W-CYC, (NH'), (X) stay OPEN.
+docs/new/P-N5-NH-fixes-box30.md:65: - Note (REFEREE §1.2): 𝓡*_w's arena is the GATE restricted to R, not 𝓡*_w's own improving set (they differ at κ-ties). Lemma P^c
+docs/si/P-N5-Z-box5.md:25:   - S4c: fallback. It happens iff S4a returns σ_k and S4b (Odd's step) returns τ_k. Then every Even vertex with an Iσ edge switches to
+docs/si/P-N5-Z-box5.md:32: - λ_Ξ, λ_W: cycle-node maps. A PHASE is a joint λ-phase (λ_Ξ and λ_U constant) with τ constant. On 𝒞^1O τ is determined by τ(o),
+docs/si/P-N5-Z-box5.md:38: - Fact (F0), elementary: if a vertex u ≠ o keeps its edge at k → k+1 and τ_{k+1} = τ_k, then u ∈ R̄_k ⟺ its successor ∈ R̄_k. The
+docs/si/P-N5-Z-box5.md:48:   - R21 (c) Lemma FBL-N (i): at an S4c fallback with τ unchanged, the fallback is Even's and σ_k is a pointwise arena optimum in G_τ.
+docs/si/P-N5-Z-box5.md:57: Let k → k+1 be a transition with τ_{k+1} = τ_k, and let S be the set of Even vertices v with σ_{k+1}(v) ≠ σ_k(v).
+docs/si/P-N5-Z-box5.md:171: - τ_{k+1} = τ_k (phase). σ_{k+1} is S4a's choice. By R18 (d) Lemma S (c) it maximises V_{·, τ_k} pointwise over the arena.
+docs/si/P-N5-Z-box5.md:180: - READING (consequence, as in R21): with Lemma Φ (≤ 2n(n − 1) + 1 joint λ-phases; box 21, PROVED by L-NEW, UNREFEREED) and τ-changes
+docs/new/P-N5-U1-box31.md:1: # Referee packet P-N5-U1: W-tie cascades and w-changes inside a joint λ-phase of N5 (box 31)
+docs/new/P-N5-U1-box31.md:6: - Status: L-NEW's proofs, unrefereed. Lemmas about the candidate N5 (SPEC tie-breaks) on 𝒞^1O (exactly one Odd vertex o with more
+docs/new/P-N5-U1-box31.md:13: - N5 and its SPEC: docs/new/N5-ssi-global.md (S1 valuations and Engine.evaluate, S2 improving edges, S4a/S4b/S4c, FIX 2, FIX 4;
+docs/new/P-N5-U1-box31.md:16: - Phase: a joint λ-phase with τ fixed (P-N5-X-box28.md §0, RESULTS R21). Inside a phase S4b returns τ, so a transition is either a
+docs/new/P-N5-U1-box31.md:18: - Ξ_k = honest valuation of σ_k (against Odd's optimal counterstrategy σ̄_k); W_k = valuation of the play of (σ_k, τ); θ := Ξ(o),
+docs/new/P-N5-U1-box31.md:55: ## 2. Lemma TB (PROVED, L-NEW): S4a's tie-break is a monotone potential
+docs/new/P-N5-U1-box31.md:63: 1. σ_{k+1} is the optimiser's counterstrategy of one call Engine.evaluate on the dual of H_k (n5.py S4a). So W'(x) = W*_{H_k}(x),
+docs/new/P-N5-U1-box31.md:86:    - W' = W on R, and τ is fixed, so TB applies with c = c_w; v ≠ c_w because c_w ∈ F ∪ {o} in route form.
+docs/new/P-N5-U1-box31.md:89:    - A tied successor in F could be the minimum only with a crossing, which J excludes. So the minimum is taken over the tied
+docs/new/P-N5-U1-box31.md:97:    - Let S_ℓ be the first run step from which no vertex of level ≤ ℓ switches. A level-1 vertex has the single tied successor o, so
+docs/new/P-N5-U1-box31.md:126:    - At non-fallback transitions W is non-decreasing (TB step 1; τ fixed).
+docs/new/P-N5-U1-box31.md:142: 2. At non-fallback transitions w is non-decreasing (TB step 1 at o; τ fixed). The order compares reward(c_w) first, and rewards are
+docs/new/P-N5-U1-box31.md:161: - So (NH') reduces to:
+docs/new/P-N5-U1-box31.md:166:     W-ties.
+docs/new/P-N5-U1-fixes-box31.md:9: - Scope unchanged: lemmas about the candidate N5 (SPEC tie-breaks) on 𝒞^1O. Not a running-time bound, not a TARGET.md claim, not a
+docs/new/P-N5-U1-fixes-box31.md:75: The tie-breaks TB uses are exactly SPEC S1 (iv) + FIX 4 as coded in si.py: longest mode l.154-168, BFS mode l.172-180, with list
+docs/new/P-N5-U1-fixes-box31.md:86:   - With W′ = W on R, the fully optimal R-candidates of v are its tied R-candidates.
+docs/new/P-N5-U1-fixes-box31.md:87:   - The keys are σ_{k+1}-plays. In the even mode, the part of the key from c_w to o is common to all of R (it may change at F-ties
+docs/new/P-N5-U1-fixes-box31.md:171:     1. Inside a phase the fallback is Even's (SPEC S4c; FIX 3: τ_{k+1} = τ). It sets σ_{k+1}(v) to an edge of I_σ at every Even
+docs/new/P-N5-U1-fixes-box31.md:175:        Odd's counterstrategy is forced).
+docs/si/P-N5-FB-box7.md:20:   - S4c (fallback): it happens iff S4a returns σ_k and S4b returns τ_k. If Iσ_k ≠ ∅, EVERY Even vertex with an Iσ_k edge switches to
+docs/si/P-N5-FB-box7.md:21:     its best one, by (Ξ_k-key, larger index); τ is unchanged (SPEC FIX 3). n5.py lines `if Is:` / `for v in {v for v, _ in Is}: ns[v]
+docs/si/P-N5-FB-box7.md:45:   - R21 (c) Lemma FBL-N (i): at an S4c fallback with τ unchanged, the fallback is Even's.
+docs/si/P-N5-FB-box7.md:47: - PHASE (§4, §5): a joint λ-phase with τ constant (R21 setting; key (λ_Ξ, λ_U, τ)). Only "λ_Ξ and τ constant" is used.
+docs/si/P-N5-FB-box7.md:69: **(T).** Let L < ∞ and let H′ be a functional graph on V with:
+docs/si/P-N5-FB-box7.md:70: - (E) COARSE_L(Ξ_k(succ_{H′} p)) = COARSE_L(Ξ_k(succ_{H_k} p)) for every vertex p on the H′-play from v;
+docs/si/P-N5-FB-box7.md:72: Then COARSE_L(Θ_{H′}(v)) = COARSE_L(Ξ_k(v)). Here Θ_{H′}(v) is the VJ00 play value of v's H′-play: cycle node = top of its cycle;
+docs/si/P-N5-FB-box7.md:75: - Let p_0 = v and p_{i+1} = succ_{H′}(p_i).
+docs/si/P-N5-FB-box7.md:80:   - Let s be the first index with p_s = c. Then p_0, …, p_{s−1} are distinct, and Θ_{H′}(p_i) = p_i ⊕ … ⊕ p_{s−1} ⊕ (c, ∅, 0) for
+docs/si/P-N5-FB-box7.md:85:   - Downward induction on i, with (C4): COARSE_L(Ξ_k(p_i)) = COARSE_L(Θ_{H′}(p_i)). Take i = 0. □
+docs/si/P-N5-FB-box7.md:88: L = M_k). Let H′ be the (σ_{k+1}, σ̄_k)-graph and assume
+docs/si/P-N5-FB-box7.md:89: - (NC) every cycle of H′ has its top t with λ_k(t) = t.
+docs/si/P-N5-FB-box7.md:92: - H′ differs from H_k only at switched Even vertices.
+docs/si/P-N5-FB-box7.md:105: - Otherwise apply (T) with H′ := H_{k+1}.
+docs/si/P-N5-FB-box7.md:149:   - The fallback is Even's (τ unchanged in a phase; R21 (c) FBL-N (i)), so Iσ_i ≠ ∅ and M ≠ ⊥. M < ∞ by NOINF.
+docs/si/P-N5-FB-box7.md:180:   - Apply (T) with H′ := H_{k+1}; (T) only uses the play from v. If M_k ∈ {∞, ⊥} the claim is trivial, as in TAME. □
+docs/si/P-N5-FB-fixes-box7.md:18: - Reading confirmed: the packet counts transitions with both endpoints in the phase. The transition that leaves the phase (at most one
+docs/si/P-N5-FB-fixes-box7.md:53:   - the loop o → e → … → o has a top t with reward(t) > reward(c), because Odd's best value at o has cycle node c ≠ t;
+docs/si/P-N5-FB-fixes-box7.md:68:   counterstrategy (si.py; SPEC FIX 2 at cycle nodes). That needs Ξ_k = Θ_{σ_k σ̄_k}: the engine's valuation equals the play values of
+docs/si/P-N5-FB-fixes2-box7.md:25:   - S4c with Iσ_k = ∅ is Odd's fallback. It switches at least one Odd vertex to an Iτ_k edge ≠ τ_k(v), so τ_{k+1} ≠ τ_k.
+docs/si/P-N5-FB-fixes2-box7.md:26:   - Inside a phase τ is constant, so every in-phase S4c fallback is Even's (Iσ_k ≠ ∅).
+docs/si/P-N5-FB-fixes2-box7.md:27:   - By SPEC FIX 3, τ_{k+1} = τ_k at an Even fallback.
+docs/si/P-N5-FB-fixes2-box7.md:32: - WM on every game. Take an in-phase transition that is not an S4c fallback; τ is unchanged, since the phase fixes τ.
+docs/new/P-N5-U23-box31.md:6: - Status: L-NEW's proofs, unrefereed. Lemmas about the candidate N5 (SPEC tie-breaks) on 𝒞^1O. Not a running-time bound, not a
+docs/new/P-N5-U23-box31.md:11: - N5, SPEC, valuations, (V1), (F1), Ξ, W, θ, w, R (o ∈ R), F, H1, H2, phase (τ fixed), crossing-free: as in P-N5-U1-box31.md §0
+docs/new/P-N5-U23-box31.md:22:   - Inside a phase every non-fallback transition is an S4a step: S4b returns τ.
+docs/new/P-N5-U23-box31.md:26: - π_v (v ∈ R) is v's σ-route: the vertices of v's (σ, τ)-path before its first visit of o. "Tied": z is a tied successor of v if
+docs/new/P-N5-U23-box31.md:34:    - So ℓ is constant on a W-flat run. A tied successor z of v ∈ R \ {o} in R has ℓ(z) = ℓ(v) − 1, and v ∉ π_z.
+docs/new/P-N5-U23-box31.md:45:    - W′ = W on R at a W-flat transition. So the fully optimal arena edges at v that lie in R are the tied arena successors in R.
+docs/new/P-N5-U23-box31.md:46:    - A tied successor in F could be the key-minimum only with a crossing, which the stretch excludes.
+docs/new/P-N5-U23-box31.md:52:    - S_1 = 0: the only tied R-successor of a level-1 vertex is o.
+docs/new/P-N5-U23-box31.md:53:    - Let j = S_{ℓ−1} and z1 := σ_{j+1}(v). For j′ > j with σ_{j′}(v) = z1, take any tied arena candidate z ≠ z1 at j′.
+docs/new/P-N5-U23-box31.md:84:    - A tied successor z of a kind-B v has W-length |π_v| + d − 1. It is either kind B with |π_z| = |π_v| − 1, or kind A, which would be
+docs/new/P-N5-U23-box31.md:94:    - A tied successor of kind-A v has W-level λ(v) − 1. It is either kind A, or kind B (an event).
+docs/new/P-N5-U23-box31.md:114: - READING: with R24 §6, (NH') reduces to (X), NFB-O, (E) and (K_W).
+docs/new/P-N5-U23-fixes-box31.md:11: - Scope unchanged: lemmas about the candidate N5 (SPEC tie-breaks) on 𝒞^1O. Not a running-time bound, not a TARGET.md claim, not a step-4
+docs/new/P-N5-U23-fixes-box31.md:87: - With R-1 the READING "(NH') reduces to (X), NFB-O, (E) and (K_W)" is complete as stated (REFEREE §3; REFEREE-2 §C.4).
+docs/new/P-N5-LP-box32.md:7:   out-degree > 1). Lemmas about the candidate N5 (SPEC tie-breaks). Not a running-time bound, not a TARGET.md claim, not a step-4 pass.
+docs/new/P-N5-LP-box32.md:14: - N5 and its SPEC: docs/new/N5-ssi-global.md (S1 valuations and Engine.evaluate, S2 improving edges, S4a / S4b / S4c, FIX 2-4); code
+docs/new/P-N5-LP-box32.md:33:   (σ_{k+1}(y) ∈ {σ_k(y)} ∪ Iσ_k(y)); every N5 iteration changes σ or τ (SPEC S4: if S4a and S4b change nothing, the S4c fallback switches
+docs/new/P-N5-LP-box32.md:34:   at least one vertex, since Iσ ∪ Iτ ≠ ∅); R17 (F1) the S4a result is a one-player optimum of its arena
+docs/new/P-N5-LP-box32.md:37: - PHASE: a run of transitions with λ_Ξ and τ constant (R21 / R25 setting; only these two are used). On 𝒞^1O: R_k := {o} ∪ {v : v's
+docs/new/P-N5-LP-box32.md:102: - Every transition of a phase changes σ: τ is constant and every N5 iteration changes σ or τ (§0).
+docs/new/P-N5-LP-box32.md:131: - σ_{k+1} is a maximum strategy of the one-player arena H_k against τ (SPEC S4a; R17 (F1)), whose valuation is W_{k+1} (Odd's moves are
+docs/new/P-N5-LP-box32.md:181:   9's route to a W-tie (13, ∅, 7) with 22, and the tie-break takes 9.
+docs/new/P-N5-LP-box32.md:182: - The coarse freeze at R25's gate level M is vacuous for most residual transitions of (NH') (M_k = ∞ at 52 of 69 U2 / U3 KW transitions and
+docs/new/P-N5-LP-box32.md:202:   leaving the minimiser set; no pure tie-break move).
+docs/new/N5-L-box32.md:7: - Task (Lead GO 23:50Z): the open cores (E) and (K_W) of (NH') (docs/new/N5-U23-box31.md §3) via a coarse freeze at L-SI's gate level M
+docs/new/N5-L-box32.md:30: | What this does to (NH'), (E), (K_W), J, NFB-O | READING | §5 |
+docs/new/N5-L-box32.md:57: (σ_k, σ̄_k)-graph, λ_k = cycle nodes; VJ00 Lemma 5.2 with (P1)-(P3); R15 (a), (d). A PHASE is a run of transitions with λ_Ξ and τ constant
+docs/new/N5-L-box32.md:108: Proof. Ξ is constant on the run (Lemma U). Every transition of a phase changes σ (τ is constant and each N5 iteration changes σ or τ,
+docs/new/N5-L-box32.md:169:   1). At transition 1 the same S4a step shortens 9's route (switches at 14 and 15), W(9) becomes (13, ∅, 7) = W(22), and the tie-break takes
+docs/new/N5-L-box32.md:248:   W-flat switch, decided by W lengths and S4a's tie-break while Ξ sees a high level. So box 32 does not close (E) or (K_W); it locates them
+docs/new/N5-L-box32.md:268:   - (b) S_o: DONE in §4b (Lemma TH, Lemma SO, Corollary XJ). The tie-break changes are 0 (keys of tied exits are frozen), and the θ-changes
+docs/si/N5-C-box8.md:4: - Scope: 𝒞^1O (exactly one Odd choice vertex o; asserted by every script), inside one PHASE (joint λ-phase, τ constant).
+docs/si/N5-C-box8.md:170:   SO-tiebreak failure.
+docs/si/N5-C-box8.md:209: - An EQ run ends only at a w-change, at a target lacking (h), or at the phase end (EQ-PERSIST).
+docs/si/N5-C-box8.md:220: - (iii) An out-of-scope transition: OTHER-touching or a w-change. These are R21's O and the w-changes, OPEN as (NH′).
+docs/new/P-N5-OE-fixes-box32.md:19:   equal Ξ_k-value, which P-N5-LP §1 counts as relevant when λ(o) ≠ o). Such tie moves occur off crossings (REFEREE: library 2, random 50);
+docs/new/P-N5-OE-fixes-box32.md:54:   - R25 (d) Theorem FB: P-N5-FB (docs/si/P-N5-FB-box7.md) l.47 "Only λ_Ξ and τ constant is used"; the proof uses nothing else.
+docs/si/P-N5-CLS-box8.md:17: - PHASE: a joint λ-phase with τ constant (R21 setting). Inside a phase λ_{k+1} = λ_k and τ_{k+1} = τ_k.
+docs/si/P-N5-CLS-fixes-box8.md:10:    - Reason: with no gate (Iσ_k = ∅), σ is unchanged (R15 (d)). A transition then requires Iτ_k ≠ ∅, and τ changes, through S4b or
+docs/si/P-N5-CLS-fixes-box8.md:11:      Odd's fallback. That leaves the phase.
+docs/si/P-N5-CLS-fixes2-box8.md:10: | 1 | CLS-1 | §3 (and §5) | part 1: M_k ≥ −1 at every in-phase transition (no gate ⇒ σ unchanged ⇒ τ changes ⇒ the phase is left) |
+docs/new/P-N5-SN-box33.md:17: - PHASE: a run of transitions with λ_Ξ and τ constant (R27 / R28 setting). R_k := {o} ∪ {v : v's (σ_k, τ)-play reaches o} (o ∈ R here),
+docs/new/P-N5-SN-box33.md:35: - Phase keys: R19-R25 are signed under the key (λ_Ξ, λ_U, τ). Lemma G and XW are statewise; WM uses only τ_{k+1} = τ_k at an S4a step
+docs/new/P-N5-SN-fixes-box33.md:12: | §0 WM phase-key transfer | VALID (P-N5-Z §8 uses only τ_{k+1} = τ_k and the S4a optimum, statewise; R18 Lemma S (c)) | §1 |
+docs/new/P-N5-SN-fixes-box33.md:19: - Add to §0 "Phase keys": WM (R23 (g)) transfers: its proof (P-N5-Z §8) uses only τ_{k+1} = τ_k and that σ_{k+1} is the S4a optimum of
+docs/new/P-N5-SN-fixes-box33.md:115:   form is a CONJECTURE as signed (tight on epsseg_cex_n48; N = d_o only at the phase exit 25 → 26). §2b (H1-KEEP) is under addendum review.
+docs/si/P-N5-FBW-box9.md:17: - N5 and its steps S4a (arena step), S4b, S4c (fallback): as specified in docs/new/N5-ssi-global.md (SPEC S1-S5; RESULTS R15).
+docs/si/P-N5-FBW-box9.md:18:   - An S4c fallback fires exactly when S4a returns σ_k and S4b returns τ_k. Even switches if Iσ_k ≠ ∅, otherwise Odd.
+docs/si/P-N5-FBW-box9.md:43:   - PHASE: λ_Ξ and τ constant. SCOPE RUN S: a maximal run of in-phase transitions with (h) at k, H2 at k+1 and w_{k+1} = w_k
+docs/si/P-N5-FBW-box9.md:44:     (R29 §0). Inside a phase τ is constant, so every in-scope fallback is an Even fallback.
+docs/si/P-N5-FBW-box9.md:47:   - R18 (d) Lemma S (a): Ξ_k(v) = min over Odd strategies τ′ of V_{σ_k,τ′}(v), pointwise.
+docs/si/P-N5-FBW-box9.md:102: - Proof: k is an Even fallback (τ is constant in a phase). δ ≤ max_v lev(Ξ_k v, W_k v).
+docs/si/P-N5-FBW-fixes-box9.md:27: - §5 (a) then also covers the block's last fallback f_N. That fallback may be the last state of its constant-COARSE_M run, when
+docs/new/P-N5-FRZ-box34.md:29: - PHASE: a run of transitions with λ_Ξ and τ constant (R27-R30 setting).
+docs/new/P-N5-L2-box34.md:18:   - N5, phase (λ_Ξ and τ constant), Ξ, W, G_τ;
+docs/new/P-N5-L2-fixes-box34.md:16:   - Reason: R30 (f) H1-DROP is signed for k → k+1 inside a phase. Read literally, with k + 1 in the next phase, the clause is false. Witness:
+docs/new/P-N5-TOG-box35.md:14: - PHASE (P-N5-SN §0, pinned 2c70ef6; RESULTS R27/R28): a run of consecutive states with λ_Ξ and τ constant. c := λ(o), constant in the
+docs/new/P-N5-TOG-box35.md:18:   at S4a by the arena; at S4c the fallback sets σ(v) to an Iσ-target; at an Odd fallback σ is unchanged.
+docs/new/P-N5-TOG-box35.md:104: - H1 ∧ ¬H2 at k: by H2-STICK the transition is not S4a. τ is constant in a phase, so it is not an Odd fallback. So it is an Even S4c
+docs/new/P-N5-SCOPE-box36.md:25:   - S4a is Even's arena step and S4b Odd's.
+docs/new/P-N5-SCOPE-box36.md:27:     ties go to the larger index (FIX 3: τ unchanged). Otherwise Odd does the same on Iτ.
+docs/new/P-N5-SCOPE-box36.md:28:   - S5: stop when Iσ = Iτ = ∅.
+docs/new/P-N5-SCOPE-box36.md:36:   - Ξ_k := Ξ_{σ_k}, Even's valuation of σ_k against Odd's optimal counterstrategy σ̄_k (SPEC S1);
+docs/new/P-N5-SCOPE-box36.md:40:   - U_k := Ξ^d_{τ_k}, the valuation of τ_k on the dual game G^d against τ̄_k, Even's optimal counterstrategy to τ_k;
+docs/new/P-N5-SCOPE-box36.md:51: - PHASE (R27 / R28; P-N5-SN §0): a maximal run of consecutive states with λ_Ξ and τ constant. A JOINT λ-PHASE (R21, P-N5-X §0) is one with
+docs/new/P-N5-SCOPE-box36.md:52:   λ_Ξ, λ_U and τ constant. "A transition of the phase" has both ends in the phase (R25 FB-2).
+docs/new/P-N5-SCOPE-box36.md:70: | S (a) | Ξ_σ = L_σ is the pointwise minimum of V_{σ,τ′} over Odd's strategies τ′ (VJ00 (11)) | RESULTS R18 (d), Lemma S (a) (docs/new/N5-time-box21.md §2.2) | LANDED |
+docs/new/P-N5-SCOPE-box36.md:91:   | §6 Lemma CN-LAST | SPEC S4c / S4a / S4b / S5, (F) (P-N5-TOG §0), S (a), R15 (a) |
+docs/new/P-N5-SCOPE-box36.md:94: Statement. λ_U, the cycle-node map of U_k = Ξ^d_{τ_k}, is a function of τ_k alone. Hence on every run of states with τ constant, λ_U is
+docs/new/P-N5-SCOPE-box36.md:95: constant. A (λ_Ξ, τ)-phase is therefore exactly a joint λ-phase (λ_Ξ, λ_U, τ), and every result signed on joint λ-phases with τ constant
+docs/new/P-N5-SCOPE-box36.md:100: - Any run with τ constant therefore has λ_U constant. So "λ_Ξ and τ constant" and "λ_Ξ, λ_U and τ constant" pick out the same maximal runs. □
+docs/new/P-N5-SCOPE-box36.md:101: - Use in this packet: F1° and TC (R22) and FB / J1 (R25) are signed on joint λ-phases with τ constant, and apply here by KEY. R28 / R31
+docs/new/P-N5-SCOPE-box36.md:110: - t0 is the same vertex at k and k+1, since τ is constant in a phase.
+docs/new/P-N5-SCOPE-box36.md:174: - (iii) k + 1 is the last state of its phase: the next iteration changes τ, or N5 stops (S5).
+docs/new/P-N5-SCOPE-box36.md:204:   - Iτ_{k+1} = ∅: N5 stops (S5).
+docs/new/P-N5-SCOPE-box36.md:205:   - S4b returns a new τ: τ changes.
+docs/new/P-N5-SCOPE-box36.md:206:   - S4b returns τ unchanged: σ is unchanged too, so the S4c fallback runs. It is Odd's, since Iσ = ∅, and sets τ(v) to an improving
+docs/new/P-N5-SCOPE-box36.md:207:     target: τ changes.
+docs/new/P-N5-SCOPE-box36.md:208:   - τ is part of the phase key, so k + 1 is the last state of the phase. □
+docs/new/P-N5-SCOPE-box36.md:222: | END: (h) at k, ¬H2 at k+1 | 4 | 29 | k is the last state of its (h)-run: ≤ #(h)-runs ≤ 1 + T + f (RESTARTS) |
+docs/new/P-N5-OUT-box37.md:37:   - (2) The fallback from the last state of a stretch to the next state of the phase (a drop out of H1) has only one end in the stretch,
+docs/new/P-N5-OUT-box37.md:43:   - S4a is Even's arena step, S4b Odd's.
+docs/new/P-N5-OUT-box37.md:45:     ties to the larger index (τ unchanged); otherwise Odd does the same on Iτ.
+docs/new/P-N5-OUT-box37.md:46:   - S5 stops when Iσ = Iτ = ∅.
+docs/new/P-N5-OUT-box37.md:55: - Honest frame: Ξ_k := Ξ_{σ_k} (Even's valuation of σ_k against Odd's optimal counterstrategy σ̄_k); H_k is the (σ_k, σ̄_k)-graph;
+docs/new/P-N5-OUT-box37.md:63: - PHASE: a maximal run of consecutive states with λ_Ξ and τ constant. By Remark KEY (P-N5-SCOPE §1) it is a joint λ-phase, so results
+docs/new/P-N5-OUT-box37.md:64:   signed on joint λ-phases with τ constant apply. A transition of the phase has both ends in it ("in-phase"). c_θ is a phase constant.
+docs/new/P-N5-OUT-box37.md:79: | S (a) | Ξ_σ is the pointwise minimum of V_{σ,τ′} over Odd's strategies τ′ | RESULTS R18 (d) Lemma S (a) | LANDED, no (P) |
+docs/new/P-N5-OUT-box37.md:82: | FBL-N | at an S4c fallback with τ unchanged: (i) it is Even's and σ_k is a pointwise arena optimum in G_τ; (ii) every gate edge (x, z) with x ∈ F_k has x = λ_W(x) and λ_W(z) = x; (iii) if H2 fails, no gate edge goes from F_k to R_k | RESULTS R21 (c); proof docs/new/P-N5-X-box28.md §3 | LANDED |
+docs/new/P-N5-OUT-box37.md:84: | ACT (i) | at a transition with τ unchanged, if R̄ gains a vertex, some switched Even s ∈ F_k with σ_{k+1}(s) ∈ R̄_k enters | RESULTS R23 (b) | LANDED |
+docs/new/P-N5-OUT-box37.md:109: - (filled in) The transition kinds. τ is constant in a phase, so an in-phase non-fallback transition is an S4a step, and an in-phase
+docs/new/P-N5-OUT-box37.md:110:   fallback is Even's (an Odd fallback changes τ and leaves the phase).
+docs/new/P-N5-OUT-box37.md:156:     leave the phase. So P(Ξ_k z) = ∅: the gate (x, z) has level −1.
+docs/new/P-N5-OUT-fixes-box37.md:24:   - At the Even fallback a → a+1 with τ unchanged, σ_a is a pointwise arena optimum in G_τ (FBL-N (i), RESULTS R21 (c)).
+docs/new/P-N5-OUT-fixes-box37.md:27:   - This uses only τ_{a+1} = τ_a, which holds at every Even fallback (S4c, FIX 3). It is Step (K)'s own proof.
+docs/new/P-N5-NEB-box38.md:34:   - S4a is Even's arena step and S4b Odd's.
+docs/new/P-N5-NEB-box38.md:36:     and τ is unchanged.
+docs/new/P-N5-NEB-box38.md:47: - Honest frame: Ξ_k := Ξ_{σ_k} (Even's valuation of σ_k against Odd's optimal counterstrategy σ̄_k); λ_k(v) := the cycle node of Ξ_k(v);
+docs/new/P-N5-NEB-box38.md:55: - PHASE: a maximal run of states with λ_Ξ and τ constant; by Remark KEY (P-N5-SCOPE §1) a joint λ-phase. "In-phase" means both ends are in
+docs/new/P-N5-NEB-box38.md:89: | FBL-N | at an S4c fallback with τ unchanged: (i) Even's, σ_k a pointwise arena optimum in G_τ; (ii) a gate (x, z) with x ∈ F_k has x = λ_W(x), λ_W(z) = x; (iii) under ¬H2, no gate from F_k to R_k | RESULTS R21 (c); proof docs/new/P-N5-X-box28.md §3 | LANDED |
+docs/new/P-N5-NEB-box38.md:91: | ACT (i) | at a transition with τ unchanged, if R̄ gains a vertex, some switched Even s ∈ F_k with σ_{k+1}(s) ∈ R̄_k enters | RESULTS R23 (b) | LANDED |
+docs/new/P-N5-NEB-fixes-box38.md:32:   - at the Even fallback a → a+1 with τ unchanged, σ_a is a pointwise arena optimum in G_τ (FBL-N (i), RESULTS R21 (c));
+docs/new/P-N5-NEB-fixes-box38.md:35:   - This uses only τ_{a+1} = τ_a, true at every Even fallback (SPEC S4c, FIX 3). It is Step (K)'s own proof. In every use inside the
+docs/new/N5-RW-box39.md:153:   fixed layered graph, with the switch chosen by the S1 procedure's tie-breaks (BFS discovery order or smallest index, docs/new/
+docs/new/N5-RW-box39.md:155:   many steps; N5's tie-break is not arbitrary, but nothing about it is proved here.
+docs/new/N5-RW-box39.md:250: - tieclimb.py: hill climb toward many W-TIE steps in one block (canonical start, mutations of box38/nebclimb.py MODE=TAU). A failure of
+docs/new/N5-RW-box39.md:258: - tieclimb.py, 4 climbs, 55 min each, canonical start; seeds wf0_cex_n16 (391), kwm_cex_n24 (392), tauw_A_cex_n24 (393),
+docs/new/N5-RW-box39.md:382: - tieclimb.py (W-TIE): max W-TIE in one block 4 (seed 393 from tauw_A_cex_n24, 134,664 iterations); 3 (392, kwm_cex_n24); 1 (391,
+docs/new/P-N5-PFZ-box39.md:33:     (v, w) ∈ Iσ maximising (Ξσ(w), w), ties to the larger index; τ unchanged.
+docs/new/P-N5-PFZ-box39.md:41: - Honest frame: Ξ_k := Ξ_{σ_k} (against Odd's optimal counterstrategy σ̄_k). λ_k(v) := the cycle node of Ξ_k(v). next_k(v) := σ_k(v)
+docs/new/P-N5-PFZ-box39.md:46: - PHASE: a maximal run of consecutive states with λ_Ξ and τ constant (RESULTS R38 (a): it is a joint λ-phase). Its transitions have
+docs/new/P-N5-PFZ-box39.md:67: | FBL-N (ii), (iii) | at an S4c fallback with τ unchanged: every gate (x, z) with x ∈ F_k has x = λ_W(x) and λ_W(z) = x; under ¬H2 no gate goes from F_k to R_k | RESULTS R21 (c) | LANDED |
+docs/new/P-N5-PFZ-box39.md:68: | ACT (i) | at a transition with τ unchanged, if R̄ gains a vertex, some switched Even s ∈ F_k with σ_{k+1}(s) ∈ R̄_k enters | RESULTS R23 (b) | LANDED |
+docs/new/P-N5-PFZ-box39.md:175:     τ is constant).
+docs/new/P-N5-RHO-box40.md:35: - N5, valuations x = (c, P, ℓ), Even's order ⊴ / ◁, rank, reward, Iσ_k, the honest frame Ξ_k (against Odd's optimal counterstrategy σ̄_k),
+docs/new/P-N5-RHO-box40.md:40: - In a phase, every transition has τ unchanged, so it is an S4a step (σ_{k+1} = Even's arena optimum against τ, SPEC S4a; S4b leaves τ
+docs/new/P-N5-RHO-box40.md:41:   unchanged) or an Even S4c fallback (an Odd fallback changes τ, SPEC S4c and FIX 3).
+docs/new/P-N5-RHO-box40.md:80: | (F1) | the optimum of a one-player game dominates every strategy of that game pointwise (applied to S4a's arena H_k with τ fixed) | RESULTS R17 (a) (as R39 (e) cites it) | LANDED |
+docs/new/P-N5-RHO-box40.md:82: | Lemma S (a) | Ξ_σ is the pointwise minimum of V_{σ,τ′} over Odd's strategies τ′ (VJ00 (11) on G; no (P)) | RESULTS R18 (d) | LANDED (signed with gaps S1, S2, G-1OA-6) |
+docs/new/P-N5-RHO-box40.md:83: | XW | Ξ_k ⊴ W_k pointwise (Odd's best reply σ̄_k is pointwise optimal in G_{σ_k}) | RESULTS R21 (a) | LANDED |
+docs/new/P-N5-RHO-box40.md:112:   - For y ∈ Y_t, let τ′ be Odd's strategy with τ′(o) = y (all other Odd vertices are forced). y ∈ F_t, so y's (σ_t, τ)-play avoids o,
+docs/new/P-N5-RHO-box40.md:113:     and so does its (σ_t, τ′)-play (the same play). Hence V_{σ_t,τ′}(y) = W_t(y) = Ξ_t(y) (G (a)), with cycle node c_θ (y ∈ U), and
+docs/new/P-N5-RHO-box40.md:114:     o's (σ_t, τ′)-play is o · (y's play), which does not return to o: V_{σ_t,τ′}(o) = o ⊕ Ξ_t(y).
+docs/new/P-N5-FBPOLY-box41.md:34: - N5's step (SPEC S4): S4a is Even's arena step (σ_{k+1} = Even's arena optimum against τ); S4b Odd's; S4c, the FALLBACK, applies when
+docs/new/P-N5-FBPOLY-box41.md:35:   σ_new = σ and τ_new = τ: if Iσ_k ≠ ∅, every Even v with a gate sets σ_{k+1}(v) := the w with (v, w) ∈ Iσ_k maximising (Ξ_k(w), w)
+docs/new/P-N5-FBPOLY-box41.md:36:   (ties to the larger index), and τ and every other vertex are unchanged (FIX 3). Gates: Iσ_k := {(y, z) : y Even, z ≠ σ_k(y),
+docs/new/P-N5-FBPOLY-box41.md:41: - Honest frame Ξ_k := Ξ_{σ_k} (against Odd's optimal counterstrategy σ̄_k); λ_k(v) := the cycle node of Ξ_k(v); next_k(v) := σ_k(v)
+docs/new/P-N5-FBPOLY-box41.md:45: - PHASE: a maximal run of consecutive states with λ_Ξ and τ constant (= a joint λ-phase, RESULTS R38 (a)). An IN-PHASE transition has
+docs/new/P-N5-FBPOLY-box41.md:46:   both ends in the phase; then λ_{k+1} = λ_k and τ_{k+1} = τ_k, so it is an S4a step or an Even S4c fallback (an Odd fallback changes τ).
+docs/new/P-N5-FBPOLY-box41.md:66: | Lemma S (a) | Ξ_σ is the pointwise minimum of V_{σ,τ′} over Odd's strategies τ′ (VJ00 (11) on G) | RESULTS R18 (d) (second source: XW, RESULTS R21 (a)) | LANDED (R18 signed with gaps S1, S2, G-1OA-6) |
+docs/new/P-N5-FBPOLY-box41.md:68: | FBL-N (ii) | at an S4c fallback with τ unchanged, every gate (x, z) with x ∈ F_k has x = λ_W(x) and λ_W(z) = x | RESULTS R21 (c) | LANDED |
+docs/new/P-N5-FBPOLY-box41.md:70: | CN-LAST | if at an S4c fallback with Iσ_k ≠ ∅ every gate (y, z) has λ_k(y) = y and lev(Ξ_k(σ_k y), Ξ_k(z)) = −1 (same cycle node, same P, different length), then Ξ_{k+1} = Ξ_k, Iσ_{k+1} = ∅ and k + 1 is the last state of its phase | RESULTS R38 (f) (every game) | LANDED |
+docs/new/P-N5-FBPOLY-box41.md:154: - For y ∈ Y_t, let τ′ be Odd's strategy with τ′(o) = y (every other Odd vertex is forced). y ∈ F_t, so y's (σ_t, τ′)-play avoids o and
+docs/new/P-N5-FBPOLY-box41.md:155:   equals its (σ_t, τ)-play: V_{σ_t,τ′}(y) = W_t(y) = Ξ_t(y) (G (a)), with cycle node c_θ. o's (σ_t, τ′)-play is o · (y's play), which
+docs/new/P-N5-FBPOLY-box41.md:156:   does not return to o, so V_{σ_t,τ′}(o) = o ⊕ Ξ_t(y), and κ(o ⊕ Ξ_t y) = κwt(o) + κ_t(y) (o ∉ P(Ξ_t y) since y's play avoids o; length
+docs/new/P-N5-FBPOLY-box41.md:190: lev(Ξ_k(σ_k y), Ξ_k(z)) = −1. Hence (CN-LAST) k + 1 is the last state of its phase, and a phase has at most one such fallback.
+docs/new/P-N5-FBPOLY-box41.md:213:   k + 1 is the last state of the phase. A second such fallback k′ → k′+1 in the phase would have k′ + 1 ≤ k, i.e. k′ + 1 not last. □
+docs/new/P-N5-FBPOLY-box41.md:233: - (d) At most one of the fallbacks has S_U = ∅, and that one (if any) is followed by the last state of the phase.
+docs/new/P-N5-FBPOLY-box41.md:248:   - An Odd fallback changes τ and ends the phase (SPEC S4c, FIX 3), so f counts all fallbacks inside a phase.
+docs/new/P-N5-FBPOLY-box41.md:270: Checks at every in-phase Even fallback: CN-ONLY (every switched vertex a cycle node; every gate lev −1; k + 1 the last state of the
+docs/red/R72-fx-fbpoly-k.md:28: - fbx18.py, an exact checker for every statement of P-N5-FBPOLY §0.3-§6 and P-N5-FX §1 (a). Per phase (λ_Ξ and τ constant), it checks:
+docs/si/P-N5-KW-box15.md:47: - 𝒞^1O: o is the only Odd vertex of out-degree > 1. PHASE: a maximal run of states with λ_Ξ and τ constant (R27 setting; joint λ-phase
+docs/si/P-N5-KW-box15.md:48:   by R38 KEY). τ is constant in a phase. If S4a leaves σ unchanged and S4b leaves τ unchanged, the S4c fallback is Even's, because
+docs/si/P-N5-KW-box15.md:236:    - A tied successor in F would make v leave R, which is impossible inside the stretch.
+docs/si/P-N5-KW-box15.md:237:    - A tied successor of kind A would change v's kind, which is excluded.
+docs/si/P-N5-KW-box15.md:238:    - So the candidates are tied kind-B vertices z with |π_z| = ℓ(v) − 1, and o if ℓ(v) = 1.
+docs/si/P-N5-KW-box15.md:250:    - S_1 = 0: a level-1 kind-B vertex has o as its only tied kind-B candidate.
+docs/si/P-N5-KW-box15.md:252:      and any tied kind-B arena candidate z ≠ z1 at j′.
+docs/si/P-N5-KW-box15.md:253:    - z's route lies at levels ≤ ℓ − 1, which are fixed from step j on. So Ξ_{j′}(z) = Ξ_j(z), z is tied at j, and its route part of the
+docs/si/P-N5-KW-box15.md:255:    - Ξ_j(z) = Ξ_{j′}(z) ▷ Ξ_{j′}(z1) = Ξ_j(z1) ⊵ Ξ_j(σ_j v) (z1 was in the arena at j). So z ≠ σ_j(v), and z was a tied arena candidate
+docs/new/N5-KW-box42.md:8: - Scope: the candidate N5 (SPEC docs/new/N5-ssi-global.md) on 𝒞^1O, inside one phase (λ_Ξ and τ constant). §1 holds on every game.
+docs/new/N5-KW-box42.md:31:   tie-breaks. Gate: (y, z) with Ξ_k(z) ▷ Ξ_k(σ_k(y)) (Iσ_k, SPEC S2; code si.py improving()).
+docs/new/N5-KW-box42.md:38:   (the top of P_a Δ P_b decides both orders, or it lies at or below h and COARSE_h ties).
+docs/new/N5-KW-box42.md:229: Switches of kind-A vertices to kind-A targets also leave kind B alone. A re-routing of A1 by kind-A vertices at W-ties changes the
+docs/si/N5-KW-box15.md:26: - 𝒞^1O: o is the only Odd vertex of out-degree > 1. A PHASE is a maximal run of states with λ_Ξ and τ constant (RESULTS R27 setting;
+docs/si/N5-KW-box15.md:27:   = joint λ-phase by R38 KEY). Inside a phase every transition is an S4a step or an Even S4c fallback (SPEC S4: τ is constant, and if S4a
+docs/si/N5-KW-box15.md:59: 1. Arenas (SPEC S4a): A_j(v) := {σ_j(v)} ∪ {z : Ξ_j(z) ▷ Ξ_j(σ_j v)} for Even v; Odd v keeps τ(v) (τ is the same at k, k+1).
+docs/si/N5-KW-box15.md:70:   Ξ-changes, S4a only re-breaks ties (TB).
+docs/si/N5-KW-box15.md:173:   - Its tied kind-B candidates and their Ξ-values depend only on kind-B σ's at lower levels.
+docs/si/N5-KW-box15.md:175:   - A tied kind-A candidate would be a kind change, excluded.
+docs/si/N5-KW-box15.md:214:   - Lemma WAKE's DF-based picture is still right: a wake at k′ ≥ k + 2 is a W-tie, by W-ONCE at k′ − 1.
+docs/si/N5-KW-box15.md:215: - R26's reading "(NH′) ⇐ (X), NFB-O, (E), (K_W)": (E) and (K_W) are now PROVED here (L-SI 10, unrefereed). (X) and NFB-O are given by

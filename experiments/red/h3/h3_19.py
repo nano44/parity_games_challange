@@ -41,7 +41,7 @@ def coarse(x, L): return (x[0], x[1] & ~((1 << (L + 1)) - 1)) if L >= 0 else (x[
 def analyse(g, start=None, cap=5000):
     n = g.n; S, FB, E = O.trace(g, start, "n5", cap)
     ev = [E.evaluate(s) for s, _ in S]; Xi = [X for X, _ in ev]; SB = [B for _, B in ev]
-    r = dict(n=n, ITER=len(FB), states=0, h3_states=0, c2_checks=0, tcc_checks=0, wmg_checks=0, frz_runs=0, frz_nonvac=0,
+    r = dict(pairoc_max=0, lc2_slack=-10**9, n=n, ITER=len(FB), states=0, h3_states=0, c2_checks=0, tcc_checks=0, wmg_checks=0, frz_runs=0, frz_nonvac=0,
              frz_longest=0, frz_gap=-10 ** 9, frz_move_gap=-10 ** 9, frz_moves=0, lc_checks=0, lc_maxchg=0, lc_ratio=0.0, lc_slack=-10 ** 9, off_stretches=0, off_changes=0, off_maxpv=0, off_returns=0, off_inrun_maxpv=0, rstick_checks=0, frz_content=0, frz_L=[], snp_checks=0, crossings=0, xsn_pre_ep=0, xsn_pre_run=0, xep_slack=-10 ** 9, fails=[])
     lamX = [tuple(x[0] for x in X) for X in Xi]
     W, lamW, D, U, MD, H3 = [], [], [], [], [], []
@@ -144,7 +144,7 @@ def analyse(g, start=None, cap=5000):
                     r["off_changes"] += chg; r["off_maxpv"] = max(r["off_maxpv"], chg)
                     # ---- CONJECTURE LEVEL-COUNT (L-SI, Lead 07:20Z): offset changes of v per stretch_D <= #distinct levels at which s^W(v)
                     # or s^Ξ(v) rises; and (pay form) no two offset changes paid (TWIN-GAP (i): d > 0 by s^W, d < 0 by s^Ξ) at one level
-                    lvls = set(); pay = []
+                    lvls = set(); pay = []; SL = set(); ocp = {}       # SL: (score, level) pairs of rises; ocp: pair -> #offset changes using it
                     for x in range(s0, t):
                         dW = W[x][v][1] ^ W[x + 1][v][1]; dX = Xi[x][v][1] ^ Xi[x + 1][v][1]
                         lw = dW.bit_length() - 1 if dW and E.weight(W[x + 1][v][1]) > E.weight(W[x][v][1]) else None
@@ -152,12 +152,21 @@ def analyse(g, start=None, cap=5000):
                         for l in (lw, lx):
                             if l is not None: lvls.add(l)
                         d = off(x + 1, v) - off(x, v)
-                        if d: pay.append(lw if d > 0 else lx)
+                        if lw is not None: SL.add(("W", lw))
+                        if lx is not None: SL.add(("X", lx))
+                        if d:
+                            pay.append(lw if d > 0 else lx)
+                            for pr in ((("W", lw),) if lw is not None else ()) + ((("X", lx),) if lx is not None else ()): ocp[pr] = ocp.get(pr, 0) + 1
                     if chg:
                         r["lc_checks"] += 1; r["lc_maxchg"] = max(r["lc_maxchg"], chg); r["lc_slack"] = max(r["lc_slack"], chg - len(lvls))
                         r["lc_ratio"] = max(r["lc_ratio"], chg / n)
-                        if chg > len(lvls): r["fails"].append(f"LEVELCOUNT v={v} states {s0}..{t} chg={chg} levels={sorted(lvls)}")
-                        if None in pay or len(set(pay)) < len(pay): r["fails"].append(f"LEVELPAY v={v} states {s0}..{t} pay={pay}")
+                        if chg > len(lvls): r["lc_viol"] = r.get("lc_viol", 0) + 1      # LEVEL-COUNT dead (R78): counter, not FAIL
+                        if None in pay or len(set(pay)) < len(pay): r["lp_viol"] = r.get("lp_viol", 0) + 1   # dead with LEVEL-COUNT: counter
+                        # ---- L-SI §15 (l-si 4b0aeae6): CONJECTURE LC2 |OC(v)| <= |SL(v)|; CONJECTURE PAIR-OC: no (score, level) pair rises at two
+                        # offset changes of v in one stretch_D segment
+                        r["pairoc_max"] = max(r.get("pairoc_max", 0), max(ocp.values(), default=0)); r["lc2_slack"] = max(r.get("lc2_slack", -10**9), chg - len(SL))
+                        if chg > len(SL): r["fails"].append(f"LC2 v={v} states {s0}..{t} chg={chg} SL={sorted(SL)}")
+                        if any(c > 1 for c in ocp.values()): r["pairoc_viol"] = r.get("pairoc_viol", 0) + 1   # PAIR-OC dead (R81, pairoc_n58): counter
                 t += 1
             for v in range(n): runchg[v] = sum(1 for x in range(k0, k1) if off(x + 1, v) != off(x, v))
             r["off_inrun_maxpv"] = max([r["off_inrun_maxpv"]] + list(runchg.values()))

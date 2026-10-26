@@ -1,0 +1,23 @@
+MODE files ../R2-N5-KW/files.lst 3 MUT -
+A_checks: 45217
+A_fb_pairs: 5574
+B_checks: 42734
+CONV_checks: 42826
+COR_n_inphase: 18016
+COR_t_inphase: 17769
+C_n5_checks: 42734
+C_tau_checks: 42826
+D_checks: 45217
+LINK_checks: 9627
+NONEX_n: 3496
+NONEX_t: 3514
+R48_max_f: 37
+R48_max_phase_len: 112
+R48_phases: 6237
+R48_runs: 1509
+RUNS_differ: 31
+SELF_checks: 1509
+TIEKEEP: 92
+stable_with_Itau: 7236
+states: 45217
+RESULT OK violations=0

@@ -1,0 +1,40 @@
+== ../../red/h3/instances/lcount_n23.pg ../../red/h3/instances/lcount_n23.start
+EVENTS ../../red/h3/instances/lcount_n23.pg 0 3 v 1 oc 3 SL [('W', 18), ('W', 21), ('X', 18), ('X', 21)] [(0, 18, None, True), (1, None, 18, True), (2, 21, 21, True)]
+max_oc=3 max_rises=4 max_rises_any=4 segs=1 v_with_oc=11 v_with_rise=11
+LVL PASS
+MUT=1:
+VIOLATION ('LC2', '../../red/h3/instances/lcount_n23.pg', 0, 3, 1, 3, [('W', 18), ('W', 21)])
+LVL FAIL
+== ../../red/h3/instances/lcount2_n23.pg ../../red/h3/instances/lcount2_n23.start
+EVENTS ../../red/h3/instances/lcount2_n23.pg 1 4 v 12 oc 3 SL [('W', 20), ('W', 21), ('X', 20), ('X', 21)] [(0, 20, None, True), (1, None, 20, True), (2, 21, 21, True)]
+EVENTS ../../red/h3/instances/lcount2_n23.pg 1 4 v 13 oc 3 SL [('W', 21), ('W', 22), ('X', 20), ('X', 21), ('X', 22)] [(0, 22, 22, True), (1, None, 20, True), (2, 21, 21, True)]
+EVENTS ../../red/h3/instances/lcount2_n23.pg 1 4 v 15 oc 3 SL [('W', 21), ('W', 22), ('X', 20), ('X', 21), ('X', 22)] [(0, 22, 22, True), (1, None, 20, True), (2, 21, 21, True)]
+EVENTS ../../red/h3/instances/lcount2_n23.pg 1 4 v 16 oc 3 SL [('W', 20), ('W', 21), ('X', 20), ('X', 21)] [(0, 20, None, True), (1, None, 20, True), (2, 21, 21, True)]
+EVENTS ../../red/h3/instances/lcount2_n23.pg 1 4 v 19 oc 2 SL [('W', 21), ('X', 20), ('X', 21)] [(1, None, 20, True), (2, 21, 21, True)]
+EVENTS ../../red/h3/instances/lcount2_n23.pg 1 4 v 20 oc 3 SL [('W', 20), ('W', 21), ('X', 20), ('X', 21)] [(0, 20, None, True), (1, None, 20, True), (2, 21, 21, True)]
+max_oc=3 max_rises=5 max_rises_any=5 segs=1 v_with_oc=9 v_with_rise=12
+LVL PASS
+MUT=1:
+VIOLATION ('LC2', '../../red/h3/instances/lcount2_n23.pg', 1, 4, 20, 3, [('W', 20), ('W', 21)])
+LVL FAIL
+== instances/offret_n23.pg instances/offret_n23.start
+EVENTS instances/offret_n23.pg 0 3 v 22 oc 2 SL [('W', 19), ('W', 20), ('X', 19), ('X', 20)] [(0, 19, 19, True), (2, 20, 20, True)]
+max_oc=2 max_rises=4 max_rises_any=4 segs=1 v_with_oc=1 v_with_rise=9
+LVL PASS
+MUT=1:
+max_oc=2 max_rises=4 max_rises_any=4 segs=1 v_with_oc=1 v_with_rise=9
+LVL PASS
+== instances/incdown_n23.pg instances/incdown_n23.start
+EVENTS instances/incdown_n23.pg 0 3 v 22 oc 2 SL [('W', 19), ('W', 20), ('X', 19), ('X', 20)] [(0, 20, 20, True), (2, 19, 19, True)]
+max_oc=2 max_rises=4 max_rises_any=4 segs=1 v_with_oc=1 v_with_rise=9
+LVL PASS
+MUT=1:
+max_oc=2 max_rises=4 max_rises_any=4 segs=1 v_with_oc=1 v_with_rise=9
+LVL PASS
+== instances/offalt_K10.pg instances/offalt_K10.start
+EVENTS instances/offalt_K10.pg 0 23 v 181 oc 9 SL [('W', 170), ('W', 171), ('W', 172), ('W', 173), ('W', 174), ('W', 175), ('W', 176), ('W', 177), ('W', 178), ('W', 179), ('X', 170), ('X', 171), ('X', 172), ('X', 173), ('X', 174), ('X', 175), ('X', 176), ('X', 177), ('X', 178), ('X', 179)] [(2, 170, 170, False), (5, 171, 171, True), (7, 172, 172, True), (9, 173, 173, True), (11, 174, 174, True), (13, 175, 175, True), (15, 176, 176, True), (17, 177, 177, True), (19, 178, 178, True), (21, 179, 179
+max_oc=9 max_rises=20 max_rises_any=20 segs=1 v_with_oc=1 v_with_rise=159
+LVL PASS
+MUT=1:
+max_oc=9 max_rises=20 max_rises_any=20 segs=1 v_with_oc=1 v_with_rise=159
+LVL PASS

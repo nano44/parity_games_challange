@@ -1,0 +1,1 @@
+runs 15000, phases 40203, R0_V 0, N0MAX 2, N0MAX_n 17, N0_F 2.0, RUNMAX 1, FMAX 1
