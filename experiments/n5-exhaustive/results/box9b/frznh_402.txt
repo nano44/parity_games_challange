@@ -1,0 +1,4 @@
+start 2000 n 24
+12 14000 FRZ_checks 1 seed 414
+62 110000 FRZ_checks 2 seed 464
+123 122000 FRZ_checks 3 seed 525
