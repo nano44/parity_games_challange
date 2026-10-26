@@ -29,6 +29,14 @@ def score(g, s, t, fit):
     C.analyse(g, "climb", states, fbs, S)
     if C.VIOL:
         return (10 ** 9, 0), S   # a violation of a landed statement: stop and report
+    if fit == "gdl":   # box 14: max G_DLEAVE (transitions at which some u leaves D) over phases
+        import nconf as NC
+        SG, A, ph = NC.phases(g, states, fbs); Q = [v for v in range(g.n) if g.owner[v] == ODD and len(set(g.succ[v])) >= 2]
+        bst = 0
+        for a_, b_ in ph:
+            tau = states[a_][1]
+            bst = max(bst, sum(1 for t in range(a_, b_) if any(A[t]["sbar"][u] != tau[u] and A[t + 1]["sbar"][u] == tau[u] for u in Q)))
+        return (bst, S.mx["max_N_ep"]), S
     if fit in ("nconf2", "ret02"):   # box 14: max NCONF_{>=2} / max RET0_{>=2} over phases (nconf.py, no LEV)
         import nconf as NC
         SG, A, ph = NC.phases(g, states, fbs)
@@ -77,9 +85,10 @@ def s3(g):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("fit", choices=["nep", "lend2", "nconf2", "ret02"]); ap.add_argument("n", type=int); ap.add_argument("k", type=int)
+    ap.add_argument("fit", choices=["nep", "lend2", "nconf2", "ret02", "gdl"]); ap.add_argument("n", type=int); ap.add_argument("k", type=int)
     ap.add_argument("seed", type=int); ap.add_argument("--secs", type=float, default=600); ap.add_argument("--steps", type=int, default=10 ** 9)
     ap.add_argument("--seed-pg"); ap.add_argument("--out", required=True)
+    ap.add_argument("--fixk", action="store_true", help="reject mutations that change |Q|")
     a = ap.parse_args(); rng = random.Random(a.seed)
     if a.seed_pg:
         path, _, st = a.seed_pg.partition(":")
@@ -90,11 +99,15 @@ def main():
         s = s + list(range(g0.n, n)); t = t + [-1] * (n - g0.n)
     else:
         g = C.rand_ckO(rng, a.n, a.k); s, t = s3(g)
+    kq = lambda x: sum(1 for v in range(x.n) if x.owner[v] == ODD and len(set(x.succ[v])) >= 2)
+    k0 = kq(g)
     cur, _ = score(g, s, t, a.fit); best = (cur, g, s, t); t0 = time.time(); step = 0
     print(f"START fit {cur} n {g.n}", flush=True)
     while step < a.steps and time.time() - t0 < a.secs:
         step += 1
         h, hs, ht = mutate(g, s, t, rng)
+        if a.fixk and kq(h) != k0:   # box 14: keep |Q| (Odd vertices of out-degree >= 2) fixed
+            continue
         f, _ = score(h, hs, ht, a.fit)
         if f[0] >= 10 ** 9:
             print("VIOLATION during climb:", C.VIOL[:3], flush=True)

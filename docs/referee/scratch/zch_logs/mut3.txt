@@ -1,0 +1,59 @@
+CCP_chk 9024
+CID_chk 521530
+CSH_chk 19381
+MAX_D 61
+PM_FAIL 422
+RUNS 2610
+SA_chk 33309
+SUM_CYC 1434
+SUM_ZC 257
+SUM_ZCH 487
+ZCF_chk 806
+ZC_chk 29793
+ZK_CEVEN 291
+ZK_ODDC 5
+ZK_STRICT 183
+ZK_TIE 8
+ZK_chk 3020
+skip_big 270
+EX ('PM', '../../../experiments/alg/instances/climbs_1016/nest_nest_s52.pg/2', 7, 10, 11)
+EX ('PM', '../../../experiments/alg/instances/climbs_1016/nest_nest_s52.pg/2', 7, 10, 13)
+EX ('PM', '../../../experiments/alg/instances/climbs_1016/nest_nest_s82.pg/2', 6, 10, 0)
+EX ('PM', '../../../experiments/alg/instances/climbs_1016/nest_nest_s82.pg/2', 6, 10, 3)
+EX ('PM', '../../../experiments/alg/instances/climbs_1016/nest_nest_s82.pg/2', 6, 10, 13)
+EX ('PM', '../../../experiments/alg/instances/climbs_1016/nest_nest_s82.pg/2', 6, 10, 25)
+EX ('PM', '../../../experiments/alg/instances/climbs_1016/nest_nest_s82.pg/2', 6, 10, 28)
+EX ('PM', '../../../experiments/alg/instances/climbs_1016/nest_seed43b.pg/2', 2, 10, 7)
+EX ('PM', '../../../experiments/alg/instances/climbs_1016/nest_seed43b.pg/2', 2, 10, 16)
+EX ('PM', '../../../experiments/alg/instances/ctx12_oink_n40.pg/2', 2, 33, 7)
+EX ('PM', '../../../experiments/alg/instances/ctx12_oink_n40.pg/2', 2, 33, 9)
+EX ('PM', '../../../experiments/alg/instances/ctx12_oink_n40.pg/2', 2, 33, 11)
+EX ('PM', '../../../experiments/alg/instances/ctx12_oink_n40.pg/2', 2, 33, 28)
+EX ('PM', '../../../experiments/alg/instances/dtl_replay4_n32.pg/1', 4, 10, 0)
+EX ('PM', '../../../experiments/alg/instances/dtl_replay4_n32.pg/1', 4, 10, 1)
+EX ('PM', '../../../experiments/alg/instances/dtl_replay4_n32.pg/1', 4, 10, 3)
+EX ('PM', '../../../experiments/alg/instances/dtl_replay4_n32.pg/1', 4, 10, 11)
+EX ('PM', '../../../experiments/alg/instances/dtl_replay4_n32.pg/1', 4, 10, 17)
+EX ('PM', '../../../experiments/alg/instances/dtl_replay4_n32.pg/2', 5, 10, 1)
+EX ('PM', '../../../experiments/alg/instances/kfirst_viol_union.pg/1', 5, 1, 16)
+EX ('PM', '../../../experiments/alg/instances/spp_final_n30.pg/1', 8, 16, 17)
+EX ('PM', '../../../experiments/alg/instances/spp_final_n30.pg/1', 8, 16, 19)
+EX ('PM', '../../../experiments/alg/instances/spp_final_n40.pg/0', 5, 30, 9)
+EX ('PM', '../../../experiments/n5-epoch/instances/ffin12_n32.pg/0', 5, 9, 18)
+EX ('PM', '../../../experiments/n5-epoch/instances/ffin12_n32.pg/0', 5, 9, 28)
+EX ('PM', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/1', 2, 23, 2)
+EX ('PM', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/2', 2, 23, 18)
+EX ('PM', '../../../experiments/n5-epoch/instances/lend27_n24.pg/1', 1, 22, 4)
+EX ('PM', '../../../experiments/n5-epoch/instances/lend55_n32.pg/0', 2, 6, 19)
+EX ('PM', '../../../experiments/n5-epoch/instances/lend55_n32.pg/1', 6, 6, 19)
+EX ('PM', '../../../experiments/n5-epoch/instances/lend55_n32.pg/2', 4, 6, 18)
+EX ('PM', '../../../experiments/n5-epoch/instances/lend55_n32.pg/2', 4, 6, 19)
+EX ('PM', '../../../experiments/n5-epoch/instances/nep13_n24.pg/2', 2, 15, 17)
+EX ('PM', '../../../experiments/n5-epoch/instances/nep56_n32.pg/0', 3, 30, 20)
+EX ('PM', '../../../experiments/n5-epoch/instances/nep56_n32.pg/2', 4, 30, 20)
+EX ('PM', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 4, 11, 1)
+EX ('PM', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 4, 11, 6)
+EX ('PM', '../../../experiments/n5-epoch/instances/nep76_n40.pg/1', 14, 11, 1)
+EX ('PM', '../../../experiments/n5-epoch/instances/nep76_n40.pg/1', 14, 11, 6)
+EX ('PM', '../../../experiments/n5-epoch/results/climb/lend2_n24.pg/2', 2, 22, 4)
+EXIT 0

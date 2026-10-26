@@ -1,0 +1,55 @@
+# box 14 (2): fixed-k (|Q| = 5) scaling climbs for NCONF_{>=2} (nconf2), RET0_{>=2} (ret02), G_DLEAVE (gdl); 10 s x n; 2 repeats
+climb.py nconf2 64 5 1641 --secs 640 --fixk --out results/b14/scale/nconf2_k5_n64_r1
+climb.py nconf2 64 5 1741 --secs 640 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/nconf2_seed90_n64_r1
+climb.py nconf2 64 5 1642 --secs 640 --fixk --out results/b14/scale/nconf2_k5_n64_r2
+climb.py nconf2 64 5 1742 --secs 640 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/nconf2_seed90_n64_r2
+climb.py ret02 64 5 1641 --secs 640 --fixk --out results/b14/scale/ret02_k5_n64_r1
+climb.py ret02 64 5 1741 --secs 640 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/ret02_seed90_n64_r1
+climb.py ret02 64 5 1642 --secs 640 --fixk --out results/b14/scale/ret02_k5_n64_r2
+climb.py ret02 64 5 1742 --secs 640 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/ret02_seed90_n64_r2
+climb.py gdl 64 5 1641 --secs 640 --fixk --out results/b14/scale/gdl_k5_n64_r1
+climb.py gdl 64 5 1741 --secs 640 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/gdl_seed90_n64_r1
+climb.py gdl 64 5 1642 --secs 640 --fixk --out results/b14/scale/gdl_k5_n64_r2
+climb.py gdl 64 5 1742 --secs 640 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/gdl_seed90_n64_r2
+climb.py nconf2 48 5 1481 --secs 480 --fixk --out results/b14/scale/nconf2_k5_n48_r1
+climb.py nconf2 48 5 1581 --secs 480 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/nconf2_seed90_n48_r1
+climb.py nconf2 48 5 1482 --secs 480 --fixk --out results/b14/scale/nconf2_k5_n48_r2
+climb.py nconf2 48 5 1582 --secs 480 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/nconf2_seed90_n48_r2
+climb.py ret02 48 5 1481 --secs 480 --fixk --out results/b14/scale/ret02_k5_n48_r1
+climb.py ret02 48 5 1581 --secs 480 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/ret02_seed90_n48_r1
+climb.py ret02 48 5 1482 --secs 480 --fixk --out results/b14/scale/ret02_k5_n48_r2
+climb.py ret02 48 5 1582 --secs 480 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/ret02_seed90_n48_r2
+climb.py gdl 48 5 1481 --secs 480 --fixk --out results/b14/scale/gdl_k5_n48_r1
+climb.py gdl 48 5 1581 --secs 480 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/gdl_seed90_n48_r1
+climb.py gdl 48 5 1482 --secs 480 --fixk --out results/b14/scale/gdl_k5_n48_r2
+climb.py gdl 48 5 1582 --secs 480 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/gdl_seed90_n48_r2
+climb.py nconf2 40 5 1401 --secs 400 --fixk --out results/b14/scale/nconf2_k5_n40_r1
+climb.py nconf2 40 5 1501 --secs 400 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/nconf2_seed90_n40_r1
+climb.py nconf2 40 5 1402 --secs 400 --fixk --out results/b14/scale/nconf2_k5_n40_r2
+climb.py nconf2 40 5 1502 --secs 400 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/nconf2_seed90_n40_r2
+climb.py ret02 40 5 1401 --secs 400 --fixk --out results/b14/scale/ret02_k5_n40_r1
+climb.py ret02 40 5 1501 --secs 400 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/ret02_seed90_n40_r1
+climb.py ret02 40 5 1402 --secs 400 --fixk --out results/b14/scale/ret02_k5_n40_r2
+climb.py ret02 40 5 1502 --secs 400 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/ret02_seed90_n40_r2
+climb.py gdl 40 5 1401 --secs 400 --fixk --out results/b14/scale/gdl_k5_n40_r1
+climb.py gdl 40 5 1501 --secs 400 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/gdl_seed90_n40_r1
+climb.py gdl 40 5 1402 --secs 400 --fixk --out results/b14/scale/gdl_k5_n40_r2
+climb.py gdl 40 5 1502 --secs 400 --fixk --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/b14/scale/gdl_seed90_n40_r2
+climb.py nconf2 32 5 1321 --secs 320 --fixk --out results/b14/scale/nconf2_k5_n32_r1
+climb.py nconf2 32 5 1322 --secs 320 --fixk --out results/b14/scale/nconf2_k5_n32_r2
+climb.py ret02 32 5 1321 --secs 320 --fixk --out results/b14/scale/ret02_k5_n32_r1
+climb.py ret02 32 5 1322 --secs 320 --fixk --out results/b14/scale/ret02_k5_n32_r2
+climb.py gdl 32 5 1321 --secs 320 --fixk --out results/b14/scale/gdl_k5_n32_r1
+climb.py gdl 32 5 1322 --secs 320 --fixk --out results/b14/scale/gdl_k5_n32_r2
+climb.py nconf2 24 5 1241 --secs 240 --fixk --out results/b14/scale/nconf2_k5_n24_r1
+climb.py nconf2 24 5 1242 --secs 240 --fixk --out results/b14/scale/nconf2_k5_n24_r2
+climb.py ret02 24 5 1241 --secs 240 --fixk --out results/b14/scale/ret02_k5_n24_r1
+climb.py ret02 24 5 1242 --secs 240 --fixk --out results/b14/scale/ret02_k5_n24_r2
+climb.py gdl 24 5 1241 --secs 240 --fixk --out results/b14/scale/gdl_k5_n24_r1
+climb.py gdl 24 5 1242 --secs 240 --fixk --out results/b14/scale/gdl_k5_n24_r2
+climb.py nconf2 16 5 1161 --secs 160 --fixk --out results/b14/scale/nconf2_k5_n16_r1
+climb.py nconf2 16 5 1162 --secs 160 --fixk --out results/b14/scale/nconf2_k5_n16_r2
+climb.py ret02 16 5 1161 --secs 160 --fixk --out results/b14/scale/ret02_k5_n16_r1
+climb.py ret02 16 5 1162 --secs 160 --fixk --out results/b14/scale/ret02_k5_n16_r2
+climb.py gdl 16 5 1161 --secs 160 --fixk --out results/b14/scale/gdl_k5_n16_r1
+climb.py gdl 16 5 1162 --secs 160 --fixk --out results/b14/scale/gdl_k5_n16_r2

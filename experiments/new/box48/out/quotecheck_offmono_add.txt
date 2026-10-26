@@ -1,0 +1,17 @@
+OK   331f0337:docs/new/N5-KPOLY-box49.md:155-155 | P-N5-OFFMONO's CHAIN-COUNT holds with CYC_c replaced by ZCH_c
+OK   331f0337:docs/new/N5-KPOLY-box49.md:159-159 | at which every vertex v ≠ c of Z_{t+1}(c) with next_{t+1}(v) ≠ next_t(v) is Odd with κ_{t+
+OK   331f0337:docs/new/N5-KPOLY-box49.md:158-158 | ZCH_c ≤ (n − 1)·(|U_c| − 1) + n + TIE_c + ODDC_c
+OK   331f0337:docs/new/N5-KPOLY-box49.md:170-170 | such transitions number ≤ n − 1 ≤ n
+OK   366fd235:docs/RESULTS.md:1825-1825 | λ_U is a function of τ alone, so on every run of states with τ constant it is constant
+OK   366fd235:docs/RESULTS.md:2840-2840 366fd235:docs/new/P-N5-FBRED-box44.md:37-37 366fd235:docs/new/P-N5-OFFMONO-box49.md:38-38 | s_c := +1 if Ω(c) is odd, −1 if even
+OK   366fd235:docs/RESULTS.md:2851-2851 366fd235:docs/new/P-N5-OFFMONO-box49.md:150-151 | Facts (Aκ), (A0κ), (M1κ), (M2κ), (INJ), (SP′) per honest class
+OK   366fd235:docs/RESULTS.md:3768-3769 366fd235:docs/new/P-N5-OFFMONO-box49.md:155-155 | (SW): every Even switch of N5 is to an edge of Iσ
+OK   366fd235:docs/new/P-N5-FBPOLY-box41.md:93-94 | next_t(c_θ) lies on c_θ's own cycle (λ_t(c_θ) = c_θ, so c_θ is on its honest cycle), whose
+OK   366fd235:docs/new/P-N5-FBPOLY-box41.md:95-95 366fd235:docs/new/P-N5-OFFMONO-box49.md:152-153 | For valuations x, x′ with cycle node c_θ: x ⊴ x′ ⇔ κ(x) ≤ κ(x′)
+OK   366fd235:docs/new/P-N5-FBPOLY-box41.md:97-97 | (M2κ) For z ∈ U and every in-phase transition t → t+1: κ_t(z) ≤ κ_{t+1}(z). Proof: R15 (a)
+OK   366fd235:docs/new/P-N5-FBRED-box44.md:49-50 366fd235:docs/new/P-N5-OFFMONO-box49.md:45-45 366fd235:docs/new/P-N5-OFFMONO-box49.md:152-152 | κ_t(z) = κwt_c(z) + κ_t(next_t z)
+OK   366fd235:docs/new/P-N5-OFFMONO-box49.md:52-53 | Then off_{t+1}(q; p) ⪰ off_t(q; p).
+OK   366fd235:docs/new/P-N5-OFFMONO-box49.md:97-97 | CYC_c := the transitions of J at which some x ∈ Q ∩ U ∖ {c} is on an honest cycle at t
+OK   366fd235:docs/new/P-N5-OFFMONO-box49.md:96-97 | EXIT_x := the transitions of J with par_t(x) ≠ par_{t+1}(x)
+OK   331f0337:docs/new/N5-KPOLY-box49.md:155-155 | Corollary CHAIN-COUNT′ (PROVED). P-N5-OFFMONO's CHAIN-COUNT holds with CYC_c replaced by Z
+quotes 16 missing 0

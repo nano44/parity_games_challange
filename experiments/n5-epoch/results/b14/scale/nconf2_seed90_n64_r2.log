@@ -1,0 +1,9 @@
+START fit (38, 2) n 64
+BEST step 28 fit (40, 2) t 19s
+BEST step 34 fit (47, 1) t 23s
+BEST step 294 fit (47, 2) t 181s
+BEST step 565 fit (48, 2) t 333s
+BEST step 711 fit (49, 2) t 429s
+BEST step 726 fit (49, 3) t 438s
+BEST step 870 fit (49, 4) t 528s
+END steps 1044 best (49, 4) n 64 -> results/b14/scale/nconf2_seed90_n64_r2.pg

@@ -1,0 +1,4 @@
+START fit (24, 90) n 64
+BEST step 320 fit (26, 79) t 238s
+BEST step 629 fit (30, 79) t 456s
+END steps 862 best (30, 79) n 64 -> results/b14/scale/gdl_seed90_n64_r2.pg

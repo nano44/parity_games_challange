@@ -1,0 +1,391 @@
+MODE start ../../../experiments/new/box48/instances/long121_n40.pg ../../../experiments/new/box48/instances/long121_n40.start MUT - BUDGET 3000000
+ASM_N2_checks: 1
+ASM_checks: 2
+C_checked: 9
+C_deep: 9
+ENGXI_checks: 123
+EPC_phases: 1
+EVEN_checks: 64
+FBCp_checks: 1
+R0_total: 0
+REM_checks: 2
+RETFB_checks: 175
+RETFB_checks_other_config: 156
+UNK_C: 6
+VIS_R0: 1
+VIS_a: 0
+VIS_b: 7
+VIS_checks: 9
+VIS_returns: 8
+phases: 2
+runs: 1
+states: 123
+max_NCONF: (14, 'long121_n40.pg@1 n 40 N_ep 37')
+max_Nep: (37, 'long121_n40.pg@1 n 40 NCONF 14')
+max_V_C: (7, 'long121_n40.pg@1 n 40')
+max_sat_src_per_C: (0, 'long121_n40.pg@0')
+RESULT OK violations=0
+MODE start ../../../experiments/red/rec0/instances/nep90_n40.pg ../../../experiments/si/rund/instances/nep90_n40.start MUT - BUDGET 3000000
+ASM_N2_checks: 4
+ASM_checks: 5
+C_checked: 26
+C_deep: 26
+ENGXI_checks: 96
+EPC_phases: 4
+EVEN_checks: 154
+FBCp_checks: 1
+R0_total: 0
+REM_checks: 5
+RETFB_checks: 112
+RETFB_checks_other_config: 111
+UNK_C: 26
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 15
+VIS_checks: 26
+VIS_returns: 15
+phases: 5
+runs: 1
+states: 96
+max_NCONF: (48, 'nep90_n40.pg@4 n 40 N_ep 90')
+max_Nep: (90, 'nep90_n40.pg@4 n 40 NCONF 48')
+max_V_C: (6, 'nep90_n40.pg@4 n 40')
+max_sat_src_per_C: (0, 'nep90_n40.pg@0')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/instances/nep76_n40.pg ../../../experiments/n5-epoch/instances/nep76_n40.start MUT - BUDGET 3000000
+ASM_N2_checks: 9
+ASM_checks: 10
+C_checked: 17
+C_deep: 17
+ENGXI_checks: 88
+EPC_phases: 9
+EVEN_checks: 48
+FBCp_checks: 1
+R0_total: 0
+REM_checks: 10
+RETFB_checks: 36
+RETFB_checks_other_config: 35
+UNK_C: 32
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 5
+VIS_checks: 17
+VIS_returns: 5
+phases: 10
+runs: 1
+states: 88
+max_NCONF: (40, 'nep76_n40.pg@9 n 40 N_ep 76')
+max_Nep: (76, 'nep76_n40.pg@9 n 40 NCONF 40')
+max_V_C: (5, 'nep76_n40.pg@9 n 40')
+max_sat_src_per_C: (0, 'nep76_n40.pg@0')
+RESULT OK violations=0
+MODE start ../../../experiments/red/fbr/instances/rho3_253_n32.pg 0 170 MUT - BUDGET 3000000
+ASM_N2_checks: 7
+ASM_checks: 7
+C_checked: 11
+ENGXI_checks: 12
+EPC_phases: 7
+R0_total: 0
+REM_checks: 7
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 11
+VIS_returns: 0
+phases: 7
+runs: 1
+states: 12
+max_NCONF: (5, 'rho3_253_n32.pg@4 n 32 N_ep 5')
+max_Nep: (5, 'rho3_253_n32.pg@4 n 32 NCONF 5')
+max_V_C: (1, 'rho3_253_n32.pg@0 n 32')
+max_sat_src_per_C: (0, 'rho3_253_n32.pg@0')
+RESULT OK violations=0
+MODE start ../../../experiments/red/fbr/instances/rho3_253_n32.pg 1 171 MUT - BUDGET 3000000
+ASM_N2_checks: 12
+ASM_checks: 12
+C_checked: 17
+ENGXI_checks: 17
+EPC_phases: 12
+R0_total: 0
+REM_checks: 12
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 17
+VIS_returns: 0
+phases: 12
+runs: 1
+states: 17
+max_NCONF: (4, 'rho3_253_n32.pg@5 n 32 N_ep 4')
+max_Nep: (4, 'rho3_253_n32.pg@5 n 32 NCONF 4')
+max_V_C: (1, 'rho3_253_n32.pg@0 n 32')
+max_sat_src_per_C: (0, 'rho3_253_n32.pg@0')
+RESULT OK violations=0
+MODE start ../../../experiments/red/fbr/instances/rho3_253_n32.pg 2 172 MUT - BUDGET 3000000
+ASM_N2_checks: 7
+ASM_checks: 7
+C_checked: 7
+ENGXI_checks: 7
+EPC_phases: 7
+R0_total: 0
+REM_checks: 7
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 7
+VIS_returns: 0
+phases: 7
+runs: 1
+states: 7
+max_NCONF: (1, 'rho3_253_n32.pg@0 n 32 N_ep 1')
+max_V_C: (1, 'rho3_253_n32.pg@0 n 32')
+max_sat_src_per_C: (0, 'rho3_253_n32.pg@0')
+RESULT OK violations=0
+MODE start ../../../experiments/red/fbr/instances/rho3_253_n32.pg 3 173 MUT - BUDGET 3000000
+ASM_N2_checks: 9
+ASM_checks: 9
+C_checked: 16
+ENGXI_checks: 18
+EPC_phases: 9
+R0_total: 0
+REM_checks: 9
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 16
+VIS_returns: 0
+phases: 9
+runs: 1
+states: 18
+max_NCONF: (7, 'rho3_253_n32.pg@5 n 32 N_ep 7')
+max_Nep: (7, 'rho3_253_n32.pg@5 n 32 NCONF 7')
+max_V_C: (1, 'rho3_253_n32.pg@0 n 32')
+max_sat_src_per_C: (0, 'rho3_253_n32.pg@0')
+RESULT OK violations=0
+MODE start ../../../experiments/red/fbr/instances/rho3_253_n32.pg 4 174 MUT - BUDGET 3000000
+ASM_N2_checks: 9
+ASM_checks: 9
+C_checked: 18
+ENGXI_checks: 19
+EPC_phases: 9
+R0_total: 0
+REM_checks: 9
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 18
+VIS_returns: 0
+phases: 9
+runs: 1
+states: 19
+max_NCONF: (8, 'rho3_253_n32.pg@4 n 32 N_ep 8')
+max_Nep: (8, 'rho3_253_n32.pg@4 n 32 NCONF 8')
+max_V_C: (1, 'rho3_253_n32.pg@0 n 32')
+max_sat_src_per_C: (0, 'rho3_253_n32.pg@0')
+RESULT OK violations=0
+MODE start ../../../experiments/red/fbr/instances/rho3_253_n32.pg 5 175 MUT - BUDGET 3000000
+ASM_N2_checks: 6
+ASM_checks: 6
+C_checked: 22
+DEAD_nonflat: 11
+DEAD_notlast: 10
+ENGXI_checks: 26
+EPC_phases: 6
+EVEN_checks: 255
+FBCp_checks: 1
+R0_total: 0
+REM_checks: 6
+RETFB_checks: 130
+RETFB_checks_other_config: 127
+SATFB_checks: 11
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 22
+VIS_returns: 0
+phases: 6
+runs: 1
+states: 26
+max_NCONF: (17, 'rho3_253_n32.pg@3 n 32 N_ep 17')
+max_Nep: (17, 'rho3_253_n32.pg@3 n 32 NCONF 17')
+max_V_C: (1, 'rho3_253_n32.pg@0 n 32')
+max_sat_src_per_C: (1, 'rho3_253_n32.pg@3')
+RESULT OK violations=0
+MODE start ../../../experiments/red/fbr/instances/rho3_253_n32.pg 6 176 MUT - BUDGET 3000000
+ASM_N2_checks: 10
+ASM_checks: 10
+C_checked: 13
+ENGXI_checks: 14
+EPC_phases: 10
+R0_total: 0
+REM_checks: 10
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 13
+VIS_returns: 0
+phases: 10
+runs: 1
+states: 14
+max_NCONF: (3, 'rho3_253_n32.pg@8 n 32 N_ep 3')
+max_Nep: (3, 'rho3_253_n32.pg@8 n 32 NCONF 3')
+max_V_C: (1, 'rho3_253_n32.pg@0 n 32')
+max_sat_src_per_C: (0, 'rho3_253_n32.pg@0')
+RESULT OK violations=0
+MODE start ../../../experiments/red/fbr/instances/rho3_253_n32.pg 7 177 MUT - BUDGET 3000000
+ASM_N2_checks: 6
+ASM_checks: 6
+C_checked: 23
+DEAD_nonflat: 12
+DEAD_notlast: 11
+ENGXI_checks: 26
+EPC_phases: 6
+EVEN_checks: 288
+FBCp_checks: 1
+R0_total: 0
+REM_checks: 6
+RETFB_checks: 150
+RETFB_checks_other_config: 147
+SATFB_checks: 12
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 23
+VIS_returns: 0
+phases: 6
+runs: 1
+states: 26
+max_NCONF: (18, 'rho3_253_n32.pg@3 n 32 N_ep 18')
+max_Nep: (18, 'rho3_253_n32.pg@3 n 32 NCONF 18')
+max_V_C: (1, 'rho3_253_n32.pg@0 n 32')
+max_sat_src_per_C: (1, 'rho3_253_n32.pg@3')
+RESULT OK violations=0
+MODE start ../../../experiments/new/esc/instances/cond_stuck_symsi3_YE.pg 0 270 MUT - BUDGET 3000000
+ASM_N2_checks: 18
+ASM_checks: 18
+C_checked: 22
+DEAD_nonflat: 2
+DEAD_notlast: 2
+ENGXI_checks: 26
+EPC_phases: 18
+EVEN_checks: 12
+FBCp_checks: 1
+R0_total: 0
+REM_checks: 18
+RETFB_checks: 12
+RETFB_checks_other_config: 11
+SATFB_checks: 2
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 22
+VIS_returns: 0
+phases: 18
+runs: 1
+states: 26
+max_NCONF: (4, 'cond_stuck_symsi3_YE.pg@13 n 32 N_ep 4')
+max_Nep: (4, 'cond_stuck_symsi3_YE.pg@13 n 32 NCONF 4')
+max_V_C: (1, 'cond_stuck_symsi3_YE.pg@0 n 32')
+max_sat_src_per_C: (1, 'cond_stuck_symsi3_YE.pg@13')
+RESULT OK violations=0
+MODE start ../../../experiments/new/esc/instances/cond_stuck_symsi3_YE.pg 1 271 MUT - BUDGET 3000000
+ASM_N2_checks: 7
+ASM_checks: 7
+C_checked: 7
+ENGXI_checks: 7
+EPC_phases: 7
+R0_total: 0
+REM_checks: 7
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 7
+VIS_returns: 0
+phases: 7
+runs: 1
+states: 7
+max_NCONF: (1, 'cond_stuck_symsi3_YE.pg@0 n 32 N_ep 1')
+max_V_C: (1, 'cond_stuck_symsi3_YE.pg@0 n 32')
+max_sat_src_per_C: (0, 'cond_stuck_symsi3_YE.pg@0')
+RESULT OK violations=0
+MODE start ../../../experiments/new/esc/instances/cond_stuck_symsi3_YE.pg 2 272 MUT - BUDGET 3000000
+ASM_N2_checks: 10
+ASM_checks: 10
+C_checked: 10
+ENGXI_checks: 10
+EPC_phases: 10
+R0_total: 0
+REM_checks: 10
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 10
+VIS_returns: 0
+phases: 10
+runs: 1
+states: 10
+max_NCONF: (1, 'cond_stuck_symsi3_YE.pg@0 n 32 N_ep 1')
+max_V_C: (1, 'cond_stuck_symsi3_YE.pg@0 n 32')
+max_sat_src_per_C: (0, 'cond_stuck_symsi3_YE.pg@0')
+RESULT OK violations=0
+MODE start ../../../experiments/red/carry/instances/gapb_dup_n20.pg 0 270 MUT - BUDGET 3000000
+ASM_N2_checks: 9
+ASM_checks: 9
+C_checked: 9
+ENGXI_checks: 9
+EPC_phases: 9
+R0_total: 0
+REM_checks: 9
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 9
+VIS_returns: 0
+phases: 9
+runs: 1
+states: 9
+max_NCONF: (1, 'gapb_dup_n20.pg@0 n 20 N_ep 1')
+max_V_C: (1, 'gapb_dup_n20.pg@0 n 20')
+max_sat_src_per_C: (0, 'gapb_dup_n20.pg@0')
+RESULT OK violations=0
+MODE start ../../../experiments/red/carry/instances/gapb_dup_n20.pg 1 271 MUT - BUDGET 3000000
+ASM_N2_checks: 11
+ASM_checks: 11
+C_checked: 12
+ENGXI_checks: 13
+EPC_phases: 11
+R0_total: 0
+REM_checks: 11
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 12
+VIS_returns: 0
+phases: 11
+runs: 1
+states: 13
+max_NCONF: (2, 'gapb_dup_n20.pg@3 n 20 N_ep 2')
+max_Nep: (2, 'gapb_dup_n20.pg@3 n 20 NCONF 2')
+max_V_C: (1, 'gapb_dup_n20.pg@0 n 20')
+max_sat_src_per_C: (0, 'gapb_dup_n20.pg@0')
+RESULT OK violations=0
+MODE start ../../../experiments/red/carry/instances/gapb_dup_n20.pg 2 272 MUT - BUDGET 3000000
+ASM_N2_checks: 11
+ASM_checks: 11
+C_checked: 11
+ENGXI_checks: 11
+EPC_phases: 11
+R0_total: 0
+REM_checks: 11
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 11
+VIS_returns: 0
+phases: 11
+runs: 1
+states: 11
+max_NCONF: (1, 'gapb_dup_n20.pg@0 n 20 N_ep 1')
+max_V_C: (1, 'gapb_dup_n20.pg@0 n 20')
+max_sat_src_per_C: (0, 'gapb_dup_n20.pg@0')
+RESULT OK violations=0

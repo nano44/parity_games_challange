@@ -1,0 +1,9 @@
+START fit (0, 1) n 64
+BEST step 31 fit (1, 2) t 0s
+BEST step 563 fit (2, 3) t 11s
+BEST step 1666 fit (2, 4) t 38s
+BEST step 1733 fit (3, 4) t 40s
+BEST step 1793 fit (4, 5) t 42s
+BEST step 10589 fit (4, 6) t 354s
+BEST step 10659 fit (5, 6) t 357s
+END steps 17203 best (5, 6) n 64 -> results/b14/scale/gdl_k5_n64_r2.pg

@@ -1,6 +1,16 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 4 (successor 17, 2026-10-26 16:57Z by date -u)
+- DONE: R2-N5-EPC (P-N5-EPC sha1 9f48ded7 = file at l-new 81ab0b72, on trunk; quotes at f4562054): all SIGN, EP-ASM's 2nd term as implication;
+  no gap; N-EPC-1..6. Lead's question: FB-C′ stands alone (SAT-FB via S2 + S4c max ⇒ Iσ_{t+1} = ∅ ⇒ last state; no R15 (b), no CN-LAST).
+  DEAD guess reproduced: rho3_253_n32 starts 5, 7 (23 non-flat, 21 not last). Thin: VIS kind (a) never occurs; noR0 control does not bite.
+  Tool R2-N5-EPC/epc_check.py (LEV_C for every configuration, deep mode via fbc_check). Library runs take ~60 min at budget 3e6 (deepening
+  of UNK configurations is the cost).
+- Independence: EPC count 0 at 15:06Z, 16 at 16:53Z (names only, not opened). No §C yet.
+- Trap hit again: a kill command containing its own pattern killed my shell (exit 144); use `ps -eo pid,args | grep '[e]pc_check'`, then kill PIDs.
+- Lead note: take message header times from `date -u` in the same turn (I wrote 15:08Z when it was 15:06Z).
+
 ## Resume point 3 (successor 17, 2026-10-26 15:06Z by date -u)
 - §Cs written on the Lead's word (14:58Z). FBC vs REFEREE 15 (0addfc5f): identical verdicts, gap map empty; FBC-N3 (≤ 1 saturated fallback
   per configuration, f ≤ n·|C_f|, via SAT_C (2) + R15 (b) + R38 (f) CN-LAST) CHECKED and accepted, with own data (FLATLAST 411, 0 failures;

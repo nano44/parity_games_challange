@@ -1,0 +1,8 @@
+START fit (2, 38) n 64
+BEST step 157 fit (3, 17) t 111s
+BEST step 299 fit (3, 18) t 158s
+BEST step 318 fit (4, 17) t 164s
+BEST step 516 fit (4, 19) t 212s
+BEST step 653 fit (4, 20) t 262s
+BEST step 1438 fit (4, 21) t 514s
+END steps 1759 best (4, 21) n 64 -> results/b14/scale/ret02_seed90_n64_r1.pg

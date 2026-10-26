@@ -1,0 +1,18 @@
+START fit (1, 0) n 32
+BEST step 1183 fit (2, 0) t 8s
+BEST step 2051 fit (3, 0) t 17s
+BEST step 2091 fit (4, 1) t 17s
+BEST step 2106 fit (5, 0) t 17s
+BEST step 2544 fit (6, 0) t 24s
+BEST step 2870 fit (6, 1) t 28s
+BEST step 3002 fit (7, 0) t 31s
+BEST step 3549 fit (8, 0) t 40s
+BEST step 4301 fit (8, 1) t 52s
+BEST step 4854 fit (9, 0) t 63s
+BEST step 7420 fit (10, 0) t 108s
+BEST step 10358 fit (10, 1) t 164s
+BEST step 10528 fit (11, 0) t 168s
+BEST step 13033 fit (11, 1) t 225s
+BEST step 13079 fit (12, 0) t 226s
+BEST step 16034 fit (13, 0) t 306s
+END steps 16562 best (13, 0) n 32 -> results/b14/scale/nconf2_k5_n32_r2.pg
