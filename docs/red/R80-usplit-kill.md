@@ -1,10 +1,33 @@
-# R80: CONJECTURE U-SPLIT is FALSE (usplit_s3_n16, from SPEC S3, 𝒞^1O; three tools agree) (L-RED successor 20, box 47; Lead 09:31Z, 10:11Z, date -u)
+# R80: CONJECTURE U-SPLIT is FALSE (usplit_rd_s3_n27, from SPEC S3, no stretch_D boundary of any kind; usplit_s3_n16 under §17's BD text; three tools agree) (L-RED successor 20, box 47; Lead 09:31Z, 10:11Z, date -u)
 Target: CONJECTURE U-SPLIT, docs/si/N5-RUND-box17.md §17 (L-SI successor 13 lane note; read at l-si 873c8e71, which contains §17-§18 of
 l-si 5402151c unchanged). The scenario is §18's ("Kill shape for L-RED"), built as a game. Labels per L40. Every game. Nothing here
 bounds N5. Not a TARGET.md claim. G-N5-TIME stays open.
 
-## 0. Result
-- **KILL: CONJECTURE U-SPLIT is FALSE.** The instance has a U event inside one fallback-free in-phase run with (h3_D) at every state.
+## 0a. ADDENDUM (written after the first push of this file, 9355bec5): which "boundary" BD means, and a kill under both readings
+- §17 states BD as "a stretch_D boundary lies in [f, k + 1]: D, or a gate's (Ξ, W) value, differs at two states of [f, k + 1]". L-SI's
+  sched.py implements exactly that. The full STRETCH_D of docs/si/N5-2O-T-box16.md §0 also holds R_D constant (the set of vertices whose
+  (σ, τ)-play meets D).
+  - In the first family below (usplit_n14, usplit_s3_n16, usplit_n23), z's switch takes z (and then y) out of R_D. So R_D changes
+    inside [f, k + 1]. These are kills of U-SPLIT AS WRITTEN in §17, and not under the full STRETCH_D reading.
+  - My first push of this report did not say so; this addendum corrects that.
+- **Kill under BOTH readings: usplit_rd_s3_n27** (sha1 1e9ca56d75237422ae3a3c705c56a36b139cb21f; n 27; two Odd choice vertices u = 5 and
+  u0 = 14, 𝒞^2O). The start is SPEC S3; there is no start file. Every route in the scenario ends at a gate, so R_D is constant on the
+  whole run.
+  - z's unblocking switch moves z from gate u (offset > 0) to the ZERO-OFFSET gate u0. u0's two branches have the same path set ∅,
+    because the cycle node c = 1000 is above every filler. The branches differ only in length; Odd prefers the longer one, since c is
+    even.
+  - y starts on a → u0 (offset 0) and ends on z → … → u0 (offset 0).
+  - `n5.py n5 usplit_rd_s3_n27.pg out.sol`: 4 iterations, 0 fallbacks; check_sol2 "zielonka(oink zlk) OK strategies verified".
+  - usplit20.py (with the new BDR check): U 1, UP 0, BD 0, BDR 0, neither_full 1, OUT_OINK OK.
+  - sched.py (USTRUCT=1): `NB k=1 f=0 y=26 z=25 a_f=20 a_k=20 off_y 0->0 off_z f/k/k+1 6291456/0/0`, `USTRUCT … a_f=20(g14) a_k=20(g14)
+    z@f=g5 z@k=g14 y@k+1=g14 D_f=[5, 14] D_k=[5, 14]`, `VIOLATION ('U_OTHER', …, 0, 1, (26, 25))`.
+  - Start-pair sibling: usplit_rd_n24.pg, sha1 ae32a85613a1f13ccadc22b8ce7c5de2ca3a8c40; .start cc2f7235, .start.json dc86e0bb.
+    4 iterations, 0 fallbacks, Oink OK, neither_full 1, sched.py U_OTHER.
+  - Generator experiments/red/usplit/mkusplit2.py d LG OUT [s3]. With the s3 option, full kills at (d, LG) = (1, 4), (1, 5), (1, 6),
+    (2, 4), (2, 5), (2, 6), (3, 5), (3, 6).
+
+## 0. Result (first version; the R_D caveat of §0a applies to the instances in this section)
+- **KILL: CONJECTURE U-SPLIT is FALSE (as written in §17).** The instance has a U event inside one fallback-free in-phase run with (h3_D) at every state.
   y's offset does not rise at k → k + 1 (it stays 0 → 0), so it is not UP. D and the gate's (Ξ, W) values are constant on [f, k + 1],
   so it is not BD.
   - Instance experiments/red/usplit/instances/usplit_s3_n16.pg, sha1 6a3461f46d388629fa6c5f4de6f8a4af9bfdf946.
@@ -49,6 +72,8 @@ bounds N5. Not a TARGET.md claim. G-N5-TIME stays open.
 - §17's Consequence (|U(S)| ≤ Σ_y N_y^↑ + n·n_E·B(S)) is lost as a route. A U event can be paid by a ROUTE change downstream of y, which is
   §18's own reading of the scenario. Here that route change is z's switch at k − 1 → k, into an F_D route. It is itself a coarse
   W-change of z, but not a U event (z → r1 was never forbidden: Ξ-improving all along).
+- In usplit_rd_s3_n27, z's switch goes from gate to gate (u → u0, onto a zero-offset gate). It is also not a U event: z → r1 is
+  Ξ-improving all along.
 - So the recursion §18 describes ends after one level here. A replacement statement could charge a non-UP, non-BD U event of y to a
   coarse W-change of its new successor z at k − 1 → k. The data in this family is consistent with that; I did not test it beyond the family.
 - UF-ONCE was already dead (REFEREE-2 16; Lead 10:11Z). The family above has one U event per run, so it says nothing new about UF-ONCE.
