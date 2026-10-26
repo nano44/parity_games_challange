@@ -1,0 +1,19 @@
+MODE files ../R2-N5-KW/files.lst 2 MUT - BUDGET 3000000
+ENGXI_checks: 17710
+FB_after_honest_nonhonest: 2
+FB_at_nonhonest: 660
+FB_fallbacks: 709
+FB_odd_binds: 490
+FBb_checks: 145
+HFF_gaps: 1818
+HFF_gaps_inside_fallback: 1
+HFF_gaps_with_fallback: 1
+LEV_phases: 526
+QA_checks: 334513822
+R1FF_phases: 4101
+UNK_phases: 308
+phases: 4101
+runs: 1006
+states: 17710
+HFF_max_honest: (57, 'experiments/red/xing/instances/x32_rand64.pg#0@0 n 64 f 1')
+RESULT OK violations=0

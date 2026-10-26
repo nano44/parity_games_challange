@@ -1,0 +1,9 @@
+MODE start ../../../experiments/n5-epoch/instances/ffin12_n32.pg ../../../experiments/n5-epoch/instances/ffin12_n32.start MUT - BUDGET 30000000
+ENGXI_checks: 34
+R1FF_phases: 3
+UNK_phases: 2
+phases: 3
+runs: 1
+states: 34
+HFF_max_honest: (9, 'ffin12_n32.pg@25 n 32 f 1')
+RESULT OK violations=0
