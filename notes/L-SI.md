@@ -1,6 +1,47 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 15, box 19; written 2026-10-26T13:19Z (date -u); session_017NeJAMbjHE3eoJcsnWhRbw)
+Reason: the Lead's 13:13Z plan ("one box, then the packet and the handover"). Context ~410k. Lead: session_014FBi6o334DvwT5Uw2kDfoN.
+### DONE (SHAs on claude/l-si; every sha1 sent to the Lead is FROZEN)
+- Handover check 5/5: l-si 50b080ee.
+- Note §26 (58e39098): flip classes (N2 never; <= 2 onsets/phase outside mkpp; mkpp all N3b, GAP 25/61, fresh levels); Lemma CHOSEN and
+  Corollary RELAY-CHAIN lane-PROVED; nep76/nep90 rho_q 62/72 > n with ACYCLIC relay graphs (root ROUTE runs copied down); QUIET-n FALSE on
+  1-terminal classes (pftheta34_n32).
+- P-N5-FLIP fixes file docs/si/P-N5-FLIP-fixes-box18.md, sha1 93a65e1b7e1df4a1d19a16c1f5ebb794e1d4331b (b5d3d321): G-FLIP-1 (ROOT-C "path AND
+  exit"), G-FLIP-2 (B(e, y), LOCAL remark), G-FLIP-3 (parenthesis); notes; 23 quotes checked (pinned). R69 needs it.
+- Note §27 (109776d4): map of the m_c = 1 steps: fallback side landed by R56 (a)-(g); S4a side (R50 FRZ-U / RUN, R45 BF-F) = |D_E| >= 2 core
+  + N_ep. Lemma TV-END lane-PROVED (thin data). §27.3 corrected: R56 (g) TV is for Q-RUNS.
+- PACKET P-N5-CHOSEN-box19: docs/si/P-N5-CHOSEN-box19.md, sha1 764cfbb331a1aaefa819a01d64ee6b7cfbbd7316 (b7189738), FROZEN. To sign: CHOSEN,
+  RELAY-CHAIN (a), (b), TV-END. Not to sign: §5 (the §27.1 map as READING, DATA). 9 quotes checked (pinned). Not yet routed (Lead).
+  Repairs go in a NEW file docs/si/P-N5-CHOSEN-fixes-box19.md.
+- Note §28 (this push): item (c). N_ep - 1 ~ rho-transitions (ALT residuals <= 6 % on lib41, 0 on nep76/nep90/lib2o); on nep90/nep76 nearly
+  every transition is an epoch boundary; the root's chosen-path switches are ALL S4a (89/89, 83/83), propagated by S4a cascades (PATH
+  70/73) and re-thawed by SELF-FEEDBACK through the root (TERM triggers: 17 of 25 exit at the root 0, the rest at its relays 1, 6).
+- Scripts (experiments/si/rund/): flipcls.py, quiet.py, chosen.py, tvend.py, epcause.py, trigger.py; check.sh pins for flipcls, chosen,
+  quiet (nep90), the fixes file and packet quotes, epcause (nep90).
+### IN FLIGHT
+- Nothing running. P-N5-CHOSEN-box19 waits for the Lead's routing. L-NEW 27 counts distinct configurations (NCONF) on nep76/nep90;
+  L-RED 21 (R87: N3-LEVEL no kill; N3-CHAIN lane-proved); L-COMP 5 growth laws.
+### OPEN / QUEUE (for successor 16; the Lead picks)
+1. P-N5-CHOSEN fixes file when both referees' reports and §Cs exist (new file, repairs only).
+2. The proposed target (note §28.2): an FRZ-U / Theorem RUN analogue for the ROOT r of an acyclic relay DAG whose extra W-gates are r's
+   relays (values = shifts of kappa(r), R61 (b) SAT-k + CHOSEN). Start from R50 (c) FRZ-U's Claim P^c (docs/si/P-N5-KW-box15.md) and ask
+   which step uses D = {o}.
+3. Flips per phase (N1 / N3; the "C below an odd c" type is open after G-FLIP-3); L-RED's N3-CHAIN (time-disjoint N3 flips with top rank
+   >= r <= 2^{a_r} - 1) is the input.
+### NEEDS
+- Lead: route P-N5-CHOSEN-box19; next item for successor 16.
+### Things only I know
+- §27.2's "epochs = D changes + 1" UNDERCOUNTS R61 epochs (sigma-bar can change with D the same); use epcause.py's boundaries (§28.1).
+- R56 (g) Lemma TV is stated for Q-runs (all of Q constant), not Q_c-runs; tvend.py triggers on Q_c-runs (heuristic; labelled).
+- chosen.py's ROUTE test uses relay.py exits(), which compares paths AND exits (= the signed ROOT-C form).
+- nep90's start is L-RED's json (a full successor list); rund/instances/nep90_n40.start is my .start conversion (sha1 12b4eb64...).
+- Shares across lib41 / lib2o / frz40 / leanT overlap (frz40, leanT_N6 in lib41; 3 games in both libs): never pool their counts.
+- quotecheck.py ignores untagged guillemets; do not put «» around non-verbatim text (I fixed four in the FLIP fixes file before push).
+- check.sh now takes ~2.5 min (header says < 2 min).
+- Stale clone at start again (local 0d48da26): fetch + `git rev-parse HEAD origin/claude/l-si` first.
+
 ## Resume point (successor 15, box 19; GO 12:13Z 2026-10-26 (Lead); session_017NeJAMbjHE3eoJcsnWhRbw)
 - Handover check 5/5 (Lead 12:13Z): l-si 50b080ee. Oink built at 8fbf0a7.
 - GO (2): classify flips N1fb / N1sw / N2 / N3, pick the charge. Inputs: L-RED 21 (N3-LEVEL 0 violations; mkpp tops LOW, fresh levels);
