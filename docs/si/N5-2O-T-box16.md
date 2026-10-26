@@ -111,3 +111,57 @@ fallback-free run of each phase it counts terminal changes: transitions at which
   by cutting at terminal changes. A different potential is needed: one that orders (path, gate) pairs jointly, as W does, but with a
   polynomial range. OPEN.
 
+## 6. The (¬h-route) case of FRZ-U: R55's G_D (b), (c) and successor 10's CR-D′ need only (NC) (Lead's item (a), 04:54Z)
+Hypothesis (NC) at a state k: no vertex of D_k lies on its own honest cycle, and none lies on its own W-cycle. (h_D) implies (NC). (NC)
+allows one gate's play to visit another gate, the (¬h-route) case. It forbids only (¬h-cyc).
+### Lemma G_D-NC (PROVED, every game; R55 G_D (b), (c1), (c2) with (h_D) weakened to (NC))
+- (b′) Under (NC) at k: for v ∈ R_D with u := u(v), the honest and the W-play from u avoid π_v, and Ξ_k(v) = π_v ⊕ Ξ_k(u),
+  W_k(v) = π_v ⊕ W_k(u).
+- (c1′) and (c2′) Under (NC) and (h3_D) at k, R55 (c1) and (c2) hold verbatim. In particular COARSE_L(Ξ_k(v)) = COARSE_L(W_k(v)) for every
+  v ∈ V and every L with M_D ≤ L < ∞.
+Proof.
+- (b′): R55's proof of G_D (b), with its one use of (h_D) re-read.
+  - Both plays from v follow π_v to u, because the Odd vertices of π_v are outside D_k (HP_D).
+  - Let x ∈ π_v. x's W-play is the suffix of π_v from x, then u. By (HP_D) its honest play is the same path to u.
+  - R55's proof: "If u's honest play (resp. W-play) met x after leaving u, it would then follow x's play back to u ∈ D_k, against (h_D)
+    at u." Plays are positional lassos, so returning to u means u lies on the cycle of its own play, in that frame. That is exactly
+    what (NC) forbids. Visits of OTHER gates are never used.
+  - So each play from v is π_v followed by u's play, which avoids π_v, and (V1) along π_v gives both equations.
+- (c1′), (c2′): R55's proofs of (c1) and (c2) use (h_D) only through G_D (b) (in (c1): "T's play avoids π_v (G_D (b))"; in (c2): "by G_D
+  (b), Ξ_k(v) = π_v ⊕ Ξ_k(u) and W_k(v) = π_v ⊕ W_k(u)", and "both plays from u avoid π_v"). Replace G_D (b) by (b′). (h3_D) is used as
+  before. □
+- NOT ported: R55's Wo_D. Its proof uses (h_D) to put τ(u) ∈ F_D. Under (¬h-route) the W-play from τ(u) can reach the other gate.
+### Corollary FRZ-U_D (coarse; PROVED, every game, given R55 and successor 10's Lemma CR-D)
+Statement. Let S be a run of consecutive S4a transitions (no fallback) inside one phase of N5 on any game, with (NC) and (h3_D) at every
+state of S. Let L ≥ max_S M_D (L ≥ −1). Then COARSE_L(W) = COARSE_L(Ξ) is constant on S from its (n − 1)-th state on.
+Proof. Lemma CR-D (docs/si/N5-FRONTIER-box15.md §2) needs, at every state of S:
+- (i) COARSE_L(Ξ) = COARSE_L(W) on V: this is G_D-NC (c2′);
+- (ii) λ_W constant on S. On F_D, λ_W = λ_Ξ by G_D (a) (R55, no hypothesis). On R_D, by (b′), λ_W(v) = λ_W(u(v)) and λ_Ξ(v) = λ_Ξ(u(v)),
+  and λ_W(u(v)) = λ_Ξ(u(v)) by (h3_D). So λ_W = λ_Ξ on V, and λ_Ξ is constant on the phase.
+Successor 10's CR-D′ proved the same under (h_D) ∧ (h3_D). This replaces (h_D) by (NC). □
+- Scope, exactly:
+  - every game and every number of gates;
+  - every fallback-free run inside a phase on which (NC) and (h3_D) hold at every state;
+  - the coarse level L ≥ max_S M_D only.
+  The routed gate needs no special treatment. In each frame it is a vertex on the routes into the gate it routes through, and (b′)
+  handles it.
+- Not covered:
+  - (¬h-cyc): a gate on its own honest or W-cycle, the 1O cases ¬H1 / ¬H2, which R50 handled with kinds (KIND-MONO, CASC-B, CW-INT);
+  - ¬(h3_D);
+  - everything below L, which is LEN, the first failing link (§1). FRZ-U_D does not touch it.
+### DATA (experiments/si/fb2o/gdnc.py; own checker; logs/gdnc_*.txt)
+At every state it checks (b′) (both equations and both avoidances) when (NC) holds, and (c2′) at L = max(M_D, −1) when (NC) and (h3_D)
+hold. On every fallback-free run inside a phase with (NC) ∧ (h3_D) throughout, it checks FRZ-U_D's freeze from the (n − 1)-th state.
+| set | states | (h_D) | (NC) | (NC) ∧ ¬(h_D) | (b′) checks / viol. | (c2′) checks / viol. | FRZ-U_D runs / checks / viol. |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| lib2o.txt (43 games) | 374 | 235 | 325 | 90 | 1,718 / 0 | 7,934 / 0 | 37 / 0 / 0 |
+| lib41 frontier (93 games, ≥ 2 Odd choice vertices) | 1,039 | 389 | 603 | 214 | 3,229 / 0 | 17,604 / 0 | 57 / 0 / 0 |
+| random 𝒞^2O, 40,000 games, n 5-12, half from random start pairs (seed 31) | 95,928 | 68,803 | 69,849 | 1,046 | 8,126 / 0 | 573,433 / 0 | 4,721 / 0 / 0 |
+| random 𝒞^kO (k 2-4), 20,000 games, n 5-14 (seed 32) | 50,804 | 33,900 | 34,836 | 936 | 5,710 / 0 | 319,671 / 0 | 2,356 / 0 / 0 |
+- Mutation control: MUT=1 checks (b′) without (NC). It fails on lib41 (absmono_viol_n44.pg, 3 violations): the hypothesis is needed.
+- (NC) gains over (h_D): 90 more states of 374 on lib2o, 214 of 1,039 on the lib41 frontier.
+- Still outside: (NC) fails at 49 / 374 (lib2o) and 436 / 1,039 (lib41 frontier) states. That is (¬h-cyc), a gate on its own cycle, the
+  remaining FRZ-U case.
+- FRZ-U_D's freeze is VACUOUS in all data: no fallback-free run with the hypotheses lasts n − 1 transitions (0 checks). It rests on CR-D's
+  proof. For L-RED: a run of ≥ n transitions under (NC) ∧ (h3_D) is what a check needs, from random start pairs.
+

@@ -34,3 +34,5 @@ DATA, not proof. Uses experiments/new/box43 (multi, n5x via box21, f1d.hD). Run 
   choice vertex (TOGGLE's excluded case); N5 output: Oink verify OK.
 - rstick.py extended (04:48Z-04:49Z): XEB (crossings at epoch boundaries), XIN, XIN_post, XIN_SN (N5-FBF-box44.md §13). lib41: 3,222
   crossings = 1,269 at epoch boundaries + 1,953 inside epochs (0 after an epoch freeze; 1,833 unsplit pre-freeze).
+- randstarts.py STARTS SEED (--list FILE | --rand C LO HI GSEED) (04:56Z-04:57Z): all six checkers from random start pairs; lib41 (n ≤ 64)
+  × 3 and 1,500 random games × 5: 0 violations of every PROVED statement (N5-FBF-box44.md §14).

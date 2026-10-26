@@ -68,3 +68,46 @@ epoch) does not bite: f stays far below n·N_ep in all data.
 - N-ACC-1: (SG) is landed "on all games" (R19 (d)) and its proof has no one-Odd step.
 - N-ACC-2: EPOCH (a) also gives the per-class freeze at |U_c| − 1 epoch fallbacks; worth one line in a fixes file (it is the form the data reach).
 - N-ACC-3 (DATA): EPOCH (a)/(b)'s global regime is not reached by data or by my climbs.
+
+## §C. Comparison with REFEREE's R-N5-ACCEL (REFEREE successor 12; referee a19cdff7, on trunk a2b77a9a). REFEREE-2 successor 14, 2026-10-26 05:0xZ (date -u)
+Signature: (Opus 5.5, D15). Written by successor 14, who did not write §1-§5 above (successor 13 did). Independence held: this report
+(f0e82d8a) was in origin/claude/referee-2 from 04:0xZ; R-N5-ACCEL was opened at 05:0xZ.
+- Re-checked by successor 14 itself: ACCEL (a)-(c); EPOCH (a) (k + 1 ∈ E because k, t ∈ E; upper bound = the honest simple path of
+  G_E[U_c]), (b), (c) (≤ n per epoch plus 1 per phase); the (SG) quote = RESULTS R19 (d) verbatim, "on all games" included. Now also
+  REFEREE's in-phase proof of (SG) (ACCEL-N1), below. Accepted from successor 13 without redoing: CN-ONLY_D's proof (signed in R2-N5-FBRED,
+  landed R56 (e)), R38 (f) CN-LAST's scope, and §4's data.
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | agree |
+| --- | --- | --- | --- |
+| §1 facts, κ-FB-ROUND, CN-ONLY_D | SIGNED | SIGN | yes |
+| §2 ACCEL (a), (b), (c) | SIGNED | SIGN | yes |
+| §3 EPOCH (a), (b), (c) | SIGNED | SIGN | yes |
+| §4 | not signed; repeat instance re-run | not signed; repeats confirmed | yes |
+No NOT SIGNED item and no gap on either side.
+
+### C.2 Joint note map
+| REFEREE | REFEREE-2 | result |
+| --- | --- | --- |
+| ACCEL-N1: (SG) landed "on all games" (R19 (d)); inside a phase it also follows from (Aκ), (M1κ), (M2κ) and "switches go along gates" | N-ACC-1 (scope in the signed text; proof has no one-Odd step) | identical on scope. REFEREE's in-phase proof checked by me: a switched y moves to a gate target z (S4a's arena = σ(y) and gate targets; S4c = best gate target), so Ξ_L(z) ▷ Ξ_L(σ_L y); λ(y) = c ≠ y constant on the phase, so (Aκ) at L and L + 1 put σ_L(y), z ∈ U_c, and κ_{L+1}(y) = κwt_c(y) + κ_{L+1}(z) ≥ κwt_c(y) + κ_L(z) > κwt_c(y) + κ_L(σ_L y) = κ_L(y) ((M2κ), (M1κ)) ✓. ACCEPTED as an optional self-containment line |
+| ACCEL-N2: EPOCH (b) identifies Ξ with R15's Ω_σ (VJ00 (11), every game) | — (§3 above uses it without a note) | ACCEPTED. The identification is (VJ) on every game, signed by both referees in P-N5-1E (R2-N5-1E §2, §C) |
+| ACCEL-N3 (DATA): EPOCH's frozen regime vacuous (EPB hypothesis met 0 times) | N-ACC-3 (same: best epoch 1 short in the library, 2 short after four climbs) | identical |
+| — | N-ACC-2: EPOCH (a) also gives the per-class freeze κ_t = opt_E on U_c once |U_c| − 1 epoch fallbacks occurred; that form IS reached in data (56,464 checks) | stands (REFEREE's EPA checks exercise both inequalities but not this freeze); optional line for the fixes file |
+| CN_switch DATA: 410 switches of Even cycle nodes, none raises κ, so (SG)'s λ(y) ≠ y cannot be dropped | — | ACCEPTED as DATA; consistent with ACCEL (b) not counting those transitions |
+Nothing open.
+
+### C.3 Data comparison
+| | REFEREE (accel_probe.py) | REFEREE-2 (va_check.py) |
+| --- | --- | --- |
+| runs / phases | 7,156 / 19,950 | 70,288 / 161,847 (incl. climbs) |
+| SG checks | 24,193 | 56,158 |
+| max epochs in a phase | 50 (lev_l_x) | 50 (lev_l_x), 53 (rise_thin51_n40) |
+| max switching transitions in a phase | 112 (= packet) | not recorded |
+| σ̄|Q repeat | lap_n6_s1_110421 reproduced (σ̄(2) = 0, 4, 0) | 203 + 187 phases with a repeat |
+| EPOCH frozen regime (≥ n − 1 fallbacks in an epoch) | never | never (best −1 library, −2 climbs) |
+| violations | 0 | 0 |
+
+### C.4 Result
+Both referees SIGN §1, ACCEL (a)-(c) and EPOCH (a)-(c) on every game, with no gap. For the fixes file: ACCEL-N1 (optional in-phase (SG)
+line), ACCEL-N2 (one clause: Ξ = Ω_σ by (VJ)), N-ACC-2 (per-class freeze line). DATA: ACCEL-N3 = N-ACC-3. Neither lemma is a polynomial
+bound; G-N5-TIME stays OPEN. (Opus 5.5, D15)

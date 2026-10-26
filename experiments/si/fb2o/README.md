@@ -8,3 +8,4 @@
 - tcdir.py: direction of terminal changes against the gates' W / Ξ order (TC-W test; DEAD box 16 in docs/si/DEAD.md); --one GAME START.json.
 - climbtc.py: climb for two-gate terminal changes (found none against W; random start pairs did).
 - instances/: tcw_against_n12.pg (first-gate form), tcwult2_against_n8.pg + .start.json (all three forms). inst4344.txt, tcw.txt: input lists.
+- gdnc.py: Lemma G_D-NC (b′), (c2′) and Corollary FRZ-U_D (docs/si/N5-2O-T-box16.md §6); MUT=1 control; logs gdnc_*.txt.

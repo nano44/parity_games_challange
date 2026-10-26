@@ -1,0 +1,5 @@
+start 56 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 56, 'CLS1_case_r>L': 56, 'ABSL_intervals': 56}
+3 75 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 75, 'CLS1_case_r>L': 75, 'ABSL_intervals': 75}
+1809 76 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 76, 'CLS1_case_r>L': 76, 'ABSL_intervals': 76}
+3859 80 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 80, 'CLS1_case_r>L': 80, 'ABSL_intervals': 80}
+7234 83 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 83, 'CLS1_case_r>L': 83, 'ABSL_intervals': 83}
