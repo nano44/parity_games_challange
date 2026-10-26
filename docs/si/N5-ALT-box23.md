@@ -18,6 +18,7 @@ new/box48/out/qpcclimb/scale, si/root/instances and n5-exhaustive/instances with
 | §4 | DEAD: GATE-ONEWAY (pp_K48_n449), TOP-ONCE (lev_l_sc), FRESH at run scope (x32_rand48: not alternation, the D = ∅ wave), FRESH2 (post31_n48), FRESH3 (ret14_n48) | DEAD |
 | §5 | READING: Odd's best response is a shortest-path tree under monotone updates (Even–Shiloach), with lexicographic levels; [F] Cor. 9.9 shows that the levels alone allow counters; where N5 must differ | READING |
 | §6 | open items | OPEN |
+| §7 | gap (iv): FRESH-RED at interval scope; every known impure long interval (reader_L, cxmig, ladderent, pp) has NOFRESH = 0, so length ≤ m_E there | PROVED (elementary) + DATA |
 
 ## 0. Setting
 As in docs/si/N5-EXIT-box22.md §0 and §9 and docs/si/N5-GCILEN-box22.md §1. A phase has τ and λ constant (RESULTS R38 (a)). S is a fallback-free
@@ -157,6 +158,23 @@ Gate changes by the kind of their transition (logs gateret_all.txt, gateret_lib4
   counter trace of §4 (lev_l_sc), the pump consists of odd vertices LEAVING z's honest play while z's W-play (through τ) stays put. This is Odd's best
   response σ̄ drifting away from τ on the D-gates. A candidate statement to test: in a phase, the gates' σ̄ re-entries into an odd vertex's
   region are bounded by τ's optimality (Iτ = ∅ at the phase's states). Not tested yet.
+
+## 7. Gap (iv), impure C-intervals, through FRESH-RED (written 19:40Z by date -u)
+- FRESH-RED holds on any interval of a run, with the same proof (PROVED, elementary): every global C-interval I has |I| ≤ m_E + NOFRESH(I),
+  where NOFRESH(I) counts I's transitions at which every switching Even vertex returns to an edge it held earlier in I. No (H3), (H4) or GEN_W
+  is needed. So GCI-LEN-type bounds reduce to the return-only transitions inside the interval.
+- DATA (fresh.py; logs fresh_all.txt, fresh_lib41_n48_rs2.txt):
+  - The impure instances of gap (iv) have NOFRESH = 0: every transition carries a fresh Even edge. This covers reader_L10 / L20 / L40
+    (sha1 31644312 / c9f3c948 / cb6b7c76; their σ̄ is constant, and the long interval [0, L + 1] fails (H3), (H4)), cxmig_k16_n138,
+    ladderent_k48_n156 and pp_K48_n449 (its σ̄ changes are paid by the risers' fresh options).
+  - So on every known impure long interval, the length is ≤ m_E by FRESH-RED alone, whatever (H3) / (H4) do.
+  - The most return-only transitions in one global C-interval: 22 (x32_rand48, n 48, transition 41). That interval has D = ∅, where R91 §3
+    already bounds the length by |U_c| − 1.
+  - Return-only transitions inside global C-intervals: alt_all 375 of 4,984 (13 with a σ̄ change); lib41 635 of 7,772 (20 with a σ̄ change).
+- READING. Gap (iv) as a length question is then "return-only transitions inside impure intervals", and none is known with any. The return-only
+  transitions that do occur lie in D = ∅ waves and σ̄-constant settling stretches, where R91 §3 or STATIC-DEPTH apply, plus the flip-flops of §3.
+  Returns of an Even vertex need a strict Ξ-rise of the retaken successor since it was left (the N5 form of N5-GCX §8's NO-RETURN: re-taking y
+  needs Ξ(y) ▷ Ξ(σ w) ⊵ (Ξ-SUCC) the value that made w leave y). So a return-only transition is again priced in XR.
 
 ## 6. OPEN
 1. XR-LIN (CONJECTURE; DATA §2): in every phase, every vertex's Ξ changes ≤ 2n times. Data maximum 1.80n. It implies phase length ≤ 2n² (RISE-SW,
