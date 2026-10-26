@@ -195,7 +195,7 @@ A per-phase proof transfers to N5^τ unless it uses that extra property.
   fixes; docs/si/P-N5-FBW-box9 + fixes; P-N5-FRZ-box34 + fixes, fixes2; P-N5-L2-box34 + fixes, fixes2; P-N5-TOG-box35 + fixes, fixes2;
   P-N5-SCOPE-box36 + fixes; P-N5-OUT-box37 + fixes; P-N5-NEB-box38 + fixes; N5-RW-box39, P-N5-PFZ-box39, P-N5-PFZ-ext-box39, P-N5-PFZ-fixes-box39;
   P-N5-RHO-box40 + fixes; P-N5-FBPOLY-box41 + fixes, docs/red/R72-fx-fbpoly-k; docs/si/P-N5-KW-box15 + addendum + fixes, N5-KW-box42,
-  docs/si/N5-KW-box15 (all under docs/new/ unless named). 70 files.
+  docs/si/N5-KW-box15 (all under docs/new/ unless named). 66 files.
 - Search: `grep -n` for S4b, Iτ, I_τ, τ_new, Odd's step, Odd step, Odd fall, Odd's fallback, "optimal counterstrategy to σ", "τ unchanged",
   "fallback fires", "fallback happens", "S4c fires", "τ is unchanged", "τ changes", "Odd moves", τ_{k+1} (108 hits), and a second pass for
   Odd's move, τ moves, Odd's arena, H′, τ-step, τ′, Odd switches, Odd improves, τ-optimal (no further use of S4b's output: H′ in P-N5-FB is a
