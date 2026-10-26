@@ -1,4 +1,4 @@
-# Draft RESULTS R53 (Lead, 2026-10-26 02:50Z by date -u; both §Cs and the fixes file filled) — to CHECKER C62
+# Draft RESULTS R53 (Lead, 2026-10-26 ~02:42Z, before commit 8371145b at 02:43:14Z; stamp corrected 03:02Z, the first stamp was not from date -u; both §Cs and the fixes file filled) (rev. 2026-10-26 03:19Z: C62 N-2, N-3) — to CHECKER C62 — LANDED in RESULTS Results 2026-10-26 03:19Z (CHECKER C62 04ad4a15 PASS), after R52
 
 ### R53 [refereed-only] N5 on one-Odd-choice games: inside one phase, the OTHER-touching transitions and all transitions are bounded by explicit polynomials in four per-phase counts X, f^O, K_W and E (Theorem NH: O ≤ 11n⁷(1 + X + f^O) + 8n³(K_W + E), T ≤ 156n¹¹(1 + X + f^O) + 104n⁷(K_W + E)), with Lemmas SW, ST, CL, STR-COUNT and NR (2026-10-26) — a REDUCTION signed as an implication (partial step-4 lemmas for N5; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open for general games), CHECKER PASS (docs/checker/C62.md, checker PENDING)
 - Object (packet P-N5-NH-box42, added at l-new 44088266, pinned trunk 54ac72e6, unchanged during review): docs/new/P-N5-NH-box42.md, sha1
@@ -16,7 +16,7 @@
   over the OTHER stretches of class U3 or U23 of their transitions containing an event (R26 (c)); f_S, K_S, E_S the same inside a stretch
   S; Θ_I, WC_I the transitions of I at which θ, respectively w, changes; D := 4n(n − 1) + 1; n ≥ 2.
 - Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P); every cited premise is LANDED (RESULTS R15 (a), (d), R19 (a),
-  R21 (g), (i), R22 (a)-(c), R24 (d), (e), R26 (b), (d)):
+  R21 (g), (i), R22 (a)-(c), R24 (d), (e), R26 (b), (d), R38 (a)):
   (a) Lemma SW: on a stretch S and for v ∈ R, (a) Ξ_k(v) is determined by π_v and θ, and W_k(v) by π_v and w; (b) hence a transition of S
       that changes Ξ or W at some vertex of R has some Even vertex of R switching.
   (b) Lemma ST: on a crossing-free interval I, (a) under H1 ∧ H2, H1 ∧ ¬H2 or ¬H1 ∧ H2 either every state of I is OTHER or none is; (b)
@@ -40,7 +40,7 @@
       per phase; not a claim that any input is polynomial (NH42-N2 + N-NH42-3, both referees). "Event" (R26 (c)) may be read narrowly or
       broadly; the transition counts are equal by R26 (c)'s kinds-constant, and the theorem holds in both readings (N-NH42-2).
 - Not signed (packet §4 Remarks, §5, §6, §7): the remarks; the input statuses of §5 (a READING, dated trunk 6d78b8f4 and superseded:
-  FB-POLY LANDED as RESULTS R48, P-N5-FX signed by both referees (RESULTS R52 at CHECKER), (E) and (K_W) bounded per stretch given its
+  FB-POLY LANDED as RESULTS R48, P-N5-FX signed by both referees (RESULTS R52), (E) and (K_W) bounded per stretch given its
   fallbacks by RESULTS R50, a READING for this assembly; fixes file); the map to the R22, R24 and R26 readings (checked, consistent, a
   READING); the data.
 - Honest limits: (i) SUBCLASS 𝒞^1O, inside one phase. (ii) A REDUCTION: in its own terms (E) and (K_W) are OPEN; that R50 bounds them is a
