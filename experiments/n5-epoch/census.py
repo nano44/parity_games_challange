@@ -132,7 +132,7 @@ def state_info(g, SG, s, t):
     Wf = [s[v] if g.owner[v] == EVEN else t[v] for v in range(n)]
     D = frozenset(u for u in range(n) if g.owner[u] == ODD and sbar[u] != t[u])
     RD = frozenset(v for v in range(n) if D and any(x in D for x in lasso(Wf, v)[0]))
-    return dict(Xi=Xi, sbar=sbar, lam=lam, lamW=lamW, H=H, D=D, RD=RD)
+    return dict(Xi=Xi, sbar=sbar, lam=lam, lamW=lamW, H=H, D=D, RD=RD, W=W)
 
 
 class Stats:

@@ -1,6 +1,15 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 47 log (successor 26, session_01NkLhWhNtcThjnCotjLUvvF; handover check 8a018742 (5/5, Lead 10:57Z); GO 10:57Z, Lead's stamp)
+- Container stale at 5961101a again; ff to e2a529fa; trunk f1d2cf09 merged (34a4d336), later trunk merged again. Oink built (rc 0, 8fbf0a7).
+- (1) X_dir: docs/new/N5-XDIR-box47.md; tools experiments/new/box47 (xd2, ppclimb, mkpp2, dumprand). Written 11:13Z (date -u).
+  - RESTRICT_U / REPRO_U for any U ⊆ Q (PROVED, R64 verbatim): U-runs are N5^τ phases on G^U; X_dir is exact on G^{u,u′} (states, values, types).
+    σ̄ is NOT carried: 6 SB mismatches, always at a vertex that is its own cycle node (FIX 2 DFS); sbmis_n12.
+  - Lemma STAY (PROVED): no Even switch on v's honest play ⇒ Ξ constant along it and the play stays optimal. ROOT_v, CHOICE, XD-CAUSE, XD-ρ.
+  - 𝒞^2O ledger (IMPLICATION): poly if (N1) ρ_q, (N2) ALT residuals, (N3) len of D = Q epochs are; ρ_q ≤ (n − 1)π_q + π_q − 1 (path sets).
+  - DEAD: XD-1 (pp2_n19, 𝒞^2O ping-pong {1} → {0} → {1}, length-only, both direct); "no X_dir after an honest state" (xdhon_n13).
+
 ## Box 46 log (successor 25, session_01VsRSLkbPLhXCWoMbJMCW2r; handover check 04cedc7c (5/5, Lead 08:32Z); GO 08:32Z, Lead's stamp)
 - Container stale at 5961101a again; ff to 230334e4; trunk 565b8a8d merged (64a811ba). Oink built (scripts/setup_oink.sh rc 0, 8fbf0a7).
 - (c) REC for |D_E| = 1: docs/new/N5-REC1-box46.md. Tools experiments/new/box46 (levels, norise, dint, hon, hon2, fbin).
@@ -796,6 +805,10 @@ Successor 25 (Opus 5.5, D14/D18, L40), session_01VsRSLkbPLhXCWoMbJMCW2r. Handove
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (succ. 26, box 47, 2026-10-26 11:00-11:13Z) Fleet sources opened and read for docs/new/N5-XDIR-box47.md: docs/si/N5-RUND-box17.md §22 (L-SI 14:
+  ROOT, ROUTE-RELAY, SELF-FREE, (O1)/(O2)); docs/RESULTS.md R64 ((a)-(e)) with docs/new/P-N5-EPR-box45.md §1 (RESTRICT_E proof: "σ̄_E is an Odd
+  strategy of G′_E and σ̄_k = σ̄_E"), R58 ((c) ROUTE-2, (d) DIR, Corollary FB-2O), R61 ((e) ALT, (f) N_ep), R65 (GAPS 09:56Z); docs/new/N5-ssi-global.md
+  S1 and FIX 2 (cycle-node DFS choice); docs/new/N5-REC1-box46.md §0-§6. No external literature cited.
 - (succ. 25, box 46, 2026-10-26 08:35-09:05Z) Fleet sources opened and read for docs/new/N5-REC1-box46.md: docs/RESULTS.md entries R15 ((a), (d):
   "at most 4n(n−1) consecutive N5 iterations leave both Ωσ and Ωτ unchanged"), R17 ((a)-(e); (e): "N5's fallback (S4c) fires only in the
   value-flat situation and then leaves no improving edge"), R23 ((g) WM), R51 ((a) ITER ≤ (n(n − 1) + d_o)(T* + 1)), R55 ((a)-(e) G_D),
@@ -902,6 +915,9 @@ Successor 25 (Opus 5.5, D14/D18, L40), session_01VsRSLkbPLhXCWoMbJMCW2r. Handove
   docs/referee/R-N5-PFZ.md (8595343); docs/referee-2/R2-N5-PFZ.md (37e55fd) notes.
 
 ## Dead ends
+- (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
+  𝒞^2O, S3, phase [1, 3], D = {1}, {0}, {1}; length-only values (cycle node 9). Obstruction: each X_dir needs only an Even switch on each
+  terminal's own play (XD-CAUSE). Also FALSE: "no X_dir after the phase's first W-honest state" (xdhon_n13, sha1 9d2d9ca2…, S3, state 0 W-honest, D = {12}).
 - (box 46, successor 25, 2026-10-26 ~08:45Z) Permanent Ξ-level in the honest frame H_C as a REC potential for |D_C| = 1 configurations: no rise on
   133 of 453 fallback-free gaps between consecutive C-epochs (lib41, n ≤ 34). Instance experiments/si/orlens/instances/thclimb_n12_s11.pg
   (sha1 e3b47b6e…), S3 start, phase [2, 17], D = {1} throughout; C = (u → 10) at states 2 and 6, LEV_C 1 → 1. Obstruction: S4a optimises

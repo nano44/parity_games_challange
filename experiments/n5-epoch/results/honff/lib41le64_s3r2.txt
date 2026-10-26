@@ -1,0 +1,27 @@
+IMM-FAIL experiments/n5-exhaustive/instances/n4all_tgbad_0.pg[R0] phase[0,1] h=0 LEV 0->0 h+1 last-in-phase=True h+1 honest=False
+IMM-FAIL experiments/red/kl/instances/klcount_n18_lvl.pg[R1] phase[3,4] h=3 LEV 1->1 h+1 last-in-phase=True h+1 honest=False
+IMM-FAIL experiments/red/so/instances/exitr_cex_n16.pg[R1] phase[2,6] h=2 LEV 3->3 h+1 last-in-phase=False h+1 honest=False
+IMMPRIME-FAIL experiments/red/so/instances/exitr_cex_n16.pg[R1] phase[2,6] h=2 LEV 3->3
+IMM-FAIL experiments/red/so/instances/so_th_n32.pg[R0] phase[3,14] h=5 LEV 6->6 h+1 last-in-phase=False h+1 honest=False
+IMMPRIME-FAIL experiments/red/so/instances/so_th_n32.pg[R0] phase[3,14] h=5 LEV 6->6
+INSIDE-GAP experiments/red/xing/instances/j10_n24.pg[S3] phase[1,25] gap 1->24 fallbacks at [9] LEV 1->4 n=24
+INSIDE-GAP experiments/red/xing/instances/j7_n32.pg[S3] phase[1,47] gap 1->46 fallbacks at [22] LEV 0->19 n=32
+INSIDE-GAP experiments/red/xing/instances/j8_n32.pg[S3] phase[1,51] gap 3->50 fallbacks at [22, 29] LEV 2->9 n=32
+IMM-FAIL experiments/red/xing/instances/j8_n32.pg[S3] phase[1,51] h=3 LEV 2->2 h+1 last-in-phase=False h+1 honest=False
+IMMPRIME-FAIL experiments/red/xing/instances/j8_n32.pg[S3] phase[1,51] h=3 LEV 2->2
+IMM_fail: 5
+IMMprime_fail: 3
+fb_at_honest: 56
+gaps_at_h: 56
+gaps_at_h_UNK: 16
+gaps_free: 3380
+gaps_free_UNK: 789
+gaps_inside: 3
+honest_states: 5607
+imm_UNK: 812
+imm_steps: 2727
+inside_fallbacks: 4
+max_honest_per_phase: 57
+phases: 5377
+runs: 1101
+RESULT OK violations=0
