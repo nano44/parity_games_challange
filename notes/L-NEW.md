@@ -1,6 +1,15 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 44 log (successor 23, session_011WFfFqRNrU1a8LQwbwazZN; handover check d489672f; GO 01:05Z, Lead's stamp)
+- Merged trunk 1c23106b (2d28236b). Oink NOT built (not needed so far).
+- (1) Packet docs/new/P-N5-GD-box43.md (FROZEN at push): G_D (a) every game; (b) under (h_D); (c1), (c2) under (h_D) ∧ (h3_D)
+  with M_D (lev/COARSE_L of R25, ⊥ convention); F1°_D (D-crossing-free = (D_k, R_D) constant; no (h_D)); Wo_D under (h_D) at k, k+1.
+  §2 port table (landed step, one-Odd use, replacement); §3 Δ1, Δ-RT, R20 coarse port NOT to sign. Re-checked each proof against
+  P-N5-RE §1-2, P-N5-NH-box30 §1, P-N5-X §3, P-N5-FB §1. f1d.py re-run 01:07-01:09Z: 0 violations (lib41 412 runs; rand 21/22;
+  instances). Premise class transfers (R15 (a), R17, R18 (c) flat / (d) S, XW, FBL-N (i)) are stated as READING for the referees.
+- NEXT: (2) Route Δ (R20 coarse port with u* → M_D; Δ-RT). (3) DUAL / NH42 fixes on the Lead's go.
+
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
 - Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.
 - eb273ebc: tools experiments/new/box43 (multi, climb, shrink, exh2); instances ret2_n7, tx2_n8; reported 22:05Z.
