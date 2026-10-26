@@ -1,0 +1,16 @@
+START fit (0, 1) n 8
+BEST step 92 fit (0, 2) t 0s
+BEST step 142 fit (1, 2) t 0s
+BEST step 256 fit (1, 3) t 1s
+BEST step 269 fit (2, 2) t 1s
+BEST step 862 fit (2, 3) t 2s
+BEST step 980 fit (2, 4) t 2s
+BEST step 1030 fit (3, 3) t 2s
+BEST step 1202 fit (4, 3) t 2s
+BEST step 2645 fit (5, 2) t 6s
+BEST step 201809 fit (6, 2) t 470s
+BEST step 203440 fit (6, 3) t 476s
+BEST step 203975 fit (7, 2) t 477s
+BEST step 204648 fit (8, 2) t 480s
+BEST step 205266 fit (9, 2) t 482s
+END steps 235104 best (9, 2) n 8 -> results/climb/lend2_n8.pg

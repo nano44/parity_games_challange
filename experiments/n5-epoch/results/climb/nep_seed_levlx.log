@@ -1,0 +1,4 @@
+START fit (50, 51) n 32
+BEST step 1779 fit (51, 52) t 177s
+BEST step 3400 fit (51, 53) t 320s
+BEST step 3578 fit (52, 53) t 336s
