@@ -12,6 +12,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   N5^τ): |D| = 1 ⇒ len(E) ≤ T*(d_o = 2) = O(mΔn¹¹). EP-k: per phase transitions = Σ_E len(E); open core = N_ep + epochs with |D| ≥ 2.
 - eprestrict.py: lib41 × 3 starts, 3,000 random × 5: 0 violations, DIV 0 (SPEC's S4b never moves τ on G′_E inside an epoch); mutation
   bites. 81% of lib41 epochs have |D| ≤ 1 and hold the longest epochs (91, 56).
+- 218e9e00 (N5-EPR), 2cf61061 (P-N5-FBK-fixes2-box44, sha1 c6c45691…, FROZEN on the Lead's word 05:56Z); reported 06:07Z, proposing packet
+  P-N5-EPR (waits for the Lead). 0d1108f6: Lemma TIE-W (|D| = 1: S4b on G′_E can differ from S4b^τ only at states with W = Ξ); itcheck.py.
+- Things only I know (box 45): on G′_E, S4b's arena at a tie state IS S1's graph for Ξ′ (u keeps both edges), so SPEC's S4b output there is
+  σ̄′ itself; removing (Στ) needs S1's tie-break at u on G′_E to pick τ(u). DIV = 0 everywhere in data. The epoch length is the right target:
+  it subsumes X_SN^pre, fallbacks and S4a runs, and avoids translating R_D / unsplit definitions to G′_E.
 
 ## Box 44 log (successor 23, session_011WFfFqRNrU1a8LQwbwazZN; handover check d489672f; GO 01:05Z, Lead's stamp)
 - Merged trunk 1c23106b (2d28236b). Oink NOT built (not needed so far).
