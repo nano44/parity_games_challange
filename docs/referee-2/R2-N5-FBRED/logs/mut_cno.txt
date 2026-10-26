@@ -1,0 +1,40 @@
+MODE files ../../../experiments/new/box41/lib41.txt 1 MUT cno
+PFZ_checks: 802
+VIOLATIONS: 26
+V_CNO: 26
+YF_checks: 69074
+phases: 2335
+runs: 412
+FEX_closeness: (-4, 'experiments/new/box25/instances/wd16_s2.pg#0')
+max_f: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0')
+max_f_minus_n: (-3, 'docs/referee/R-N5-L2/exitdrop_n3.pg#0')
+max_j_minus_n_with_S: (-4, 'experiments/new/box25/instances/wd16_s2.pg#0')
+max_j_with_S: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0')
+max_rho: (160, 'experiments/red/tcpert/instances/leanT_N32.pg#0')
+VIOLATION CNO: experiments/n5-exhaustive/instances/b4_n5_other_0.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/n5-exhaustive/instances/n4all_maxph_0.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/n5-exhaustive/instances/n4all_maxph_1.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/n5-exhaustive/instances/n5s_maxph_0.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/new/box25/instances/tr12_s3.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/new/box31/instances/u1flat_best_n32.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/new/box32/instances/nowake_cex_n32.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/new/box34/instances/onedrop_cex_n32.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/new/box34/instances/oneh_cex_n32.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/new/box35/instances/fbrestart_cex_n24.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/carry/instances/absmono_viol_n44.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/carry/instances/fired10_n20.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/carry/instances/firedlong667_n43.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/ctxp/instances/margin1_mc1.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/n5/instances/sym_h12_s1.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/n5inj/instances/frz24.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/so/instances/tog6a_n32.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/so/instances/tog6b_n32.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/so/instances/xsnf42_n48.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/so/instances/xsnf52_n64.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/xing/instances/obr_n32.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/xing/instances/x31_nh_r20.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/xing/instances/x31_ru24.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/xing/instances/x32_rand16.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/red/xing/instances/x32_rand64.pg#0: 1 S-empty fallbacks
+VIOLATION CNO: experiments/si/xing/instances/nofe_cyc_n8.pg#0: 1 S-empty fallbacks
+RESULT FAIL violations=26

@@ -1,0 +1,17 @@
+MODE files ../../../experiments/new/box41/lib41.txt 2 MUT -
+C1E_runs: 16
+O2_ok: 824
+O3_runs: 574
+O3_skipped: 250
+O3_strats: 22746
+O3b_runs: 234
+O3b_skipped: 590
+O3b_strats: 62044
+O4_ok: 824
+O5_ok: 824
+REW0_stops: 34
+iterations: 13358
+runs: 824
+stops: 824
+C1E_max_iter: (3, 'experiments/red/tpp/instances/tpp_viol_n22.pg#1')
+RESULT OK violations=0
