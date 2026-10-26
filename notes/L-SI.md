@@ -28,8 +28,7 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN.
 ### IN FLIGHT
 - Nothing running.
 ### NEEDS
-- P-N5-1O SIGNED by both (REFEREE 4298dae9 OUT-1; REFEREE-2 04c2d708). docs/si/P-N5-1O-fixes-box15.md DRAFTED at l-si b26335c2, NOT
-  frozen: fill the §C placeholder from both §Cs, then freeze on the Lead's go and send the sha1. RESULTS R51 follows.
+- P-N5-1O SIGNED by both; fixes docs/si/P-N5-1O-fixes-box15.md FROZEN 647deab5 (l-si 90f93566, 01:35Z). RESULTS R51 follows (Lead).
 - Lead: FX fixes after REFEREE-2 13's FX report and both §Cs. REFEREE signed FX at 843ba1f8, notes FX-N1..N3. File:
   docs/si/P-N5-FX-fixes-box14.md (NEW).
 ### Things only I know
