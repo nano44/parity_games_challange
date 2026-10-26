@@ -10,6 +10,8 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - Tools R2-N5-1O/onecheck.py (on R2-N5-RE/re_check.py): phases/f/T* per phase, Lemma OUT O1-O6 vs own Zielonka + strategy verifier +
   enumerated strategies; modes random | general | files; ONE_MUT=flip|sbar|early|phi|fb (all bite).
 - Read for this packet: docs/referee/R-N5-START.md only (Lead allowed: audit of landed results). R-N5-1O* not opened (not in tree at 01:04Z).
+- P-N5-FX (aa227b0b): R2-N5-FX.md all SIGN, no gap; N-FX-1 (FX (a) implied by landed R30 (c)), N-FX-2 (cite R48 repaired; o = c_θ
+  case). Tool R2-N5-FX/fx_check.py (FX_MUT=seg|noiii|stick|r30; stick, noiii bite). R-N5-FX.md NOT opened before my push.
 - Sources (via landed RESULTS, not re-opened): VJ00 BRICS RS-00-48 (sha256 485a12de…, RESULTS R15 object line), p. 16 (11) as quoted in
   P-N5-LP §0 l. 29.
 

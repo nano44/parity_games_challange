@@ -1,0 +1,13 @@
+MODE random 6000 6 24 21 MUT -
+kind_i: 30
+kind_ii: 504
+kind_iii: 1
+phases: 14225
+phases_with_X: 500
+runs: 6000
+X_over_FXa: (0.1, 'random21:2431')
+X_over_R30c: (0.18181818181818182, 'random21:2557')
+max_X: (3, 'random21:2960')
+max_XSN: (3, 'random21:2960')
+max_f: (1, 'random21:30')
+RESULT OK violations=0
