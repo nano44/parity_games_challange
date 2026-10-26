@@ -49,3 +49,26 @@ Results:
 - (L), 253 𝒞^1O games, 990 phases (phifx_logs/lib.log): X 3,661 in total (X_SN 2,867), max 100 in one phase. 0 failures.
 - Random 𝒞^1O, 4,995 runs, 8,255 phases (phifx_logs/rand.log): X 142 (X_SN 124), max 2. 0 failures.
 - The bounds are far from reached.
+
+## §C. Comparison with REFEREE-2 (R2-N5-FX.md, referee-2 83a3e8c7, REFEREE-2 successor 13) (Opus 5.5, D15)
+Written 2026-10-26T01:54Z by date -u, REFEREE successor 11. Routing: the Lead's message of 01:52Z (Lead's stamp). My report (843ba1f8,
+successor 10) was pushed long before R2-N5-FX.md existed.
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 |
+| --- | --- | --- |
+| FX (a) | SIGNED (FX-N1) | SIGN (N-FX-1) |
+| FX (b) | SIGNED, conditional on FB-POLY (+ FBP-1 repair for F*) (FX-N2) | SIGN, now UNCONDITIONAL since R48 landed (N-FX-2) |
+| §2, §3 | not signed (FX-N3) | not signed |
+Agreement. The one difference is time: my condition on (b) was FB-POLY, which has since LANDED as RESULTS R48 with FBP-1 / FBP-2 repaired.
+So I now agree that (b) holds unconditionally, citing R48 (i) in its repaired form.
+### C.2 Joint note map
+| REFEREE | REFEREE-2 | ruling |
+| --- | --- | --- |
+| FX-N1 ((a) is weaker than landed R30 (c) by (n − 1)·X_SN) | N-FX-1 (the same; a second derivation from R-STICK alone) | SAME. Fixes line: "(a) is implied by R30 (c); the proof here is a second derivation". |
+| FX-N2 (F* needs FB-POLY with the FBP-1 repair) | N-FX-2 (cite R48 (i) (a) repaired, and (b), (c) for o = c_θ) | SAME core; REFEREE-2 adds the o = c_θ branch, which I did not treat: f ≤ |U| ≤ n ≤ F* for n ≥ 3 (2n² − 6n + 3 ≥ 0), and for n = 2, R48 (i) (b) (|U| = 2, repaired by FBP-2) gives f ≤ 1 = F*. I checked both steps: correct. ACCEPTED. Fixes line: "f ≤ F* by R48 (i) (a) (repaired) if o ≠ c_θ; by R48 (i) (b), (c) if o = c_θ". |
+| FX-N3 (scope: (a) has no phase-type hypothesis; readings not signed) | — | REFEREE only; stands. |
+### C.3 Data
+REFEREE-2: 1,509 library runs (S3 + 2 random starts), 6,000 random; 0 violations; max X / FX (a) bound 0.660. Mine (R-N5-FX §2, phifx_probe.py): 0
+failures. No disagreement.
+### C.4 Result
+P-N5-FX (a), (b) signed by both; (b) unconditional now (R48). Crossings per phase: X = O(d_o n⁶) (R30 (c)'s form gives the same order).
