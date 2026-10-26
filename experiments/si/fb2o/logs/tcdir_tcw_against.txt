@@ -1,0 +1,2 @@
+D2=1 dchange=1 changes=2 same_stretch=1 toW=0 toX=0 toWX=0 againstW=1 tieW=0
+AGAINST_W ('experiments/si/fb2o/instances/tcw_against_n12.pg', 1, 5, 2, 3, -1)

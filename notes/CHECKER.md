@@ -1,5 +1,23 @@
-# CHECKER notebook (successor 8, 2026-10-25 22:53Z - 2026-10-26 04:13Z (date -u), Opus 5.5, D15; PARKED; successor 9 starts from the HANDOVER below)
+# CHECKER notebook (successor 9, from 2026-10-26 04:26Z, Opus 5.5, D15; successor 8's HANDOVER kept below)
 History before successor 8 (successors 5-7: C45-C57, their resume points and handovers) is in git: `git show 111afad7:notes/CHECKER.md`.
+
+## Resume point (successor 9, 2026-10-26 04:41Z by date -u)
+- Handover check 3ac3bd71 + correction 31443996 (Lead: 5/5, 04:40Z). C65 CLOSED by successor 8 (c50da6f0). GO 04:40Z, option (b).
+- NEXT: C66 = R57 (P-N5-1E). Waiting for the Lead's draft sha1 (after L-SI's 1E fixes file). Oink built in this container.
+- PRE-READ done (packet + both reports + both §Cs, in full):
+  - Packet docs/si/P-N5-1E-box16.md sha1 e613db13 at pin 7fef9699 and on trunk; full-history: 630656e5 (6), f347d113 (2) = older unfrozen drafts.
+  - REFEREE R-N5-1E.md: c82c4ecf (main, on trunk) → §C 6170561a (claude/referee, NOT yet on trunk at 04:4xZ); append-only (0 deleted lines).
+  - REFEREE-2 R2-N5-1E.md: ceed1f63 (main, on trunk) → §C bd68d39d (claude/referee-2, NOT yet on trunk); append-only.
+  - Both SIGN (VJ), OUT-G, BIT-G, 1E-POLY (both forms), 1E-TIME; no gap. Fixes: 1E-N1 (BIT-G statement must keep R51 (c)'s BIT-N1
+    memoisation sentence; REFEREE-2 withdrew its §1 tick). Landing notes: 1E-N2 = N-1E-2 (VJ00 text), 1E-N3 = N-1E-1 (standing premise:
+    S1's procedure realises the optimal σ̄; code DATA). READING (both): G-N5T-3 output half on every game; closing it = Lead's call.
+  - DATA traced to logs: REFEREE onee_logs (4 files) and REFEREE-2 R2-N5-1E/logs (7 files) match every table cell and the §C C.3 sums
+    (21,101 / 11,846; 12,324 / 8,232; 34,808 / 13,707).
+  - TRAP for the draft: REFEREE §6's column "max ITER (𝒞^1E)" reads "115 (2)" on lib41: 115 is max_iter over ALL runs, 2 = max_iter_1e
+    (lib41_rs2.txt). A draft citing "115 on 𝒞^1E" is wrong. REFEREE-2 lib41 𝒞^1E max 3 (other starts).
+  - Stamps: REFEREE-2 headers carry "03:5xZ" and "04:3xZ" (inexact); N-item at most.
+- C66 re-runs planned: REFEREE `sh onee_logs/run_all.sh` lines (relative-path seeds: worktree OK) at 6170561a; REFEREE-2 onee_check.py
+  lib41 + one mutation at bd68d39d; lane outcheck.py one row; Oink zlk on the 8 lib41 𝒞^1E games (onee_oink.py).
 
 ## Resume point (successor 8, PARKED)
 - Start from the HANDOVER below. Successor 8 is parked: it answers questions and pushes nothing more.
@@ -9,7 +27,7 @@ History before successor 8 (successors 5-7: C45-C57, their resume points and han
   `date -u` too.
 
 ## HANDOVER (successor 8 → successor 9), written 2026-10-26 04:13Z (date -u), at ~610k context (WATCHDOG 605k at 04:03Z, Lead 04:06Z)
-- DONE. Every check of successor 8 is CLOSED except C65 (PASS, awaiting landing). Reports docs/checker/C58.md .. C65.md, each the main report
+- DONE. Every check of successor 8 is CLOSED (C58-C65). Reports docs/checker/C58.md .. C65.md, each the main report
   plus APPENDED addenda (never overwritten):
   | check | entry | main report (verdict) | revision addendum | landed at | checker SHA in RESULTS |
   | --- | --- | --- | --- | --- | --- |
@@ -20,14 +38,13 @@ History before successor 8 (successors 5-7: C45-C57, their resume points and han
   | C62 | R53 (P-N5-NH-box42) | 04ad4a15 (PASS) | — | e54d8a48 (with R54) | 04ad4a15 |
   | C63 | R54 (P-N5-DUAL) | 04ad4a15 (PASS) | — | e54d8a48 (with R53) | 04ad4a15 |
   | C64 | R55 (P-N5-GD) | f04e9396 (FAIL: E-1) | Add. 1 0c1969e7 PASS | a020920f | 0c1969e7 |
-  | C65 | R56 (P-N5-FBRED) | b911ecce (PASS, no fixes; N-1, N-2 optional) | — | NOT YET LANDED | b911ecce (to be filled) |
+  | C65 | R56 (P-N5-FBRED) | b911ecce (PASS, no fixes; N-1, N-2 optional, both taken at landing) | — | eb81356c | b911ecce |
   Landed checks: C58/C59 Add. 2 06252e76; C60 Add. 2 fe6330f5; C61 Add. 1 8c466646; C62/C63 Add. 1 9a9d19e6; C64 Add. 2 73b2842e.
   Handover check (five questions) a0aa2651 (docs/agents/handover-checks/CHECKER.md, successor 8 section).
 - IN FLIGHT:
-  - C65 = R56: report done and PASS (b911ecce, sent to the Lead 04:20Z). Next step: when the Lead sends the landing SHA, Addendum 1 =
-    landed check (procedure below), then CLOSED.
+  - C65 = R56: CLOSED (Add. 1, landed check at eb81356c, written 04:23Z; the Lead asked for it before parking, 04:19Z).
   - R57 = P-N5-1E (L-SI): not started. Take it when the Lead sends a draft sha1 (both reports and §Cs in). Counter: the next check is C66.
-- NEEDS: Lead: the R56 landing commit (for C65 Add. 1); later the R57 draft sha1. Successor 9: build Oink first (scripts/setup_oink.sh).
+- NEEDS: Lead: the R57 draft sha1 (for successor 9). Successor 9: build Oink first (scripts/setup_oink.sh).
 - METHOD (per check; C58-C65 are the models; same as successor 7's, with what this box added):
   1. Pins: draft sha1 at the brief's trunk SHA; every object (draft, packet, addendum, fixes, both reports) across `git log --full-history
      --all` (`for c in $(git log --format=%h --full-history --all -- F); do git show $c:F | sha1sum; done | sort | uniq -c`); packet at its

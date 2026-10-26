@@ -390,6 +390,124 @@ nc_q the non-clean changes, cyc_q the changes at q with λ(q) = q (an epoch ends
 | `--rand 2000 5 20 91` | 33 | 24 / 2 | 4 / 1 | 2 | 0 |
 Reading (DATA): 93% of Odd's in-phase alternations strictly raise Ξ(q); ties and non-clean changes are a few percent.
 
+## 11. FB-2T for any number of terminals per class (Lead 04:04Z; after L-SI 11's docs/si/N5-2O-box16.md at l-si 67fd31d9, read-only; written 04:07Z by date -u)
+Notation as L-SI's note §0 (= FBRED §0): Q_c := (Q ∩ U_c) ∖ {c}, m_c := |Q_c|, w_c := |U_c| − 1, d_q := |succ(q) ∩ U_c|, DIRECT, A_q (|A_q| ≤
+d_q + w_c), PFZ-q (q-runs), DIR (L-SI §3, PROVED there). Late fallbacks i = 1, 2, … with source states k_1 < k_2 < … (index j ≥ n);
+x_i(q) := κ_{k_i}(q). Conditional on P-N5-FBRED (its late form, κ-HAT-FREEZE_D (a), κ-FB-ROUND), as L-SI's note is. All labels PROVED =
+L-NEW 23, unrefereed; L-SI's lemmas are cited from its lane note (unrefereed).
+### 11.1 Lemma ROUTE-k (PROVED, every game)
+At every state t of a phase and in every class, let par_t(q) := the first vertex of Q_c ∖ {q} on q's honest play before c, for q ∈ Q_c not
+direct (par_t(q) undefined if q is direct). Then the relation q → par_t(q) has no cycle; so every chain ends at a direct terminal, and the
+DEPTH of q (the length of its chain) is ≤ m_c − 1.
+Proof. If q → par(q) = p, q's play from its visit of p on is p's play (positional). A chain q = p_0 → p_1 → … → p_r = q would put p_1, …,
+p_r on q's play in this order, so q's play would revisit q; then q lies on its own play's cycle, whose top is c, and q's play visits c
+before revisiting q only if c precedes p_1, against "p_1 before c". So q is on its own honest cycle, which makes q direct: contradiction. □
+(L-SI's ROUTE-2 is the case m_c = 2.)
+### 11.2 Lemma SAT-k (PROVED, every game)
+Let t > g_{w_c} be a state, q ∈ Q_c not direct at t, p := par_t(q), Θ_p the p-run containing t, and t > f^{Θ_p}_{w_c}. Then
+κ_t(q) ∈ S_{q,p} + κ_t(p), with S_{q,p} := {κwt_c(q) + κopt^p(y) : y ∈ succ(q) ∩ U_c ∖ T, κopt^p(y) defined} ∪ {κwt_c(q) : p ∈ succ(q)};
+|S_{q,p}| ≤ d_q.
+Proof. y := σ̄_t(q) = next_t(q) ∈ U_c, κ_t(q) = κwt_c(q) + κ_t(y) ((Aκ)); y's play is the rest of q's, so it avoids q and its first terminal
+is p. If y = p, done. Otherwise y ∉ T (its first terminal is p, and y ≠ c because p comes before c). "≤": the prefix of y's play up to p is
+a simple path ((SP′)) avoiding T ∖ {p}, with Even edges σ_t's and forced Odd vertices: a path of G_c^p, so κ_t(y) = κwt_c(prefix ∖ {p}) +
+κ_t(p) ≤ κopt^p(y) + κ_t(p). "≥": PFZ-q (L-SI §1) at t > f^{Θ_p}_{w_c} (paths of G_c^p have ≤ w_c edges): κ_t(y) ≥ κopt^p(y) + κ_t(p). □
+(It is L-SI's SAT-2 with the parent named by the actual route, which removes the max over targets.)
+### 11.3 Theorem FB-kT (PROVED, every game; CONDITIONAL on P-N5-FBRED, like FB-2T)
+In every phase, with D_c := max_{q ∈ Q_c} d_q + w_c (≤ 2n):
+  N_late ≤ 1 + Σ_c Σ_{q ∈ Q_c} (V_q − 1), and V_q ≤ Σ_{h=0}^{m_c − 1} D_c·((m_c − 1)·D_c)^h ≤ m_c·D_c·((m_c − 1)·D_c)^{m_c − 1},
+where V_q := the number of distinct values x_i(q) over the late fallbacks. Hence f ≤ 1 + (n − 1)(1 + N_late) (FBRED late form) is
+POLYNOMIAL whenever every class has a bounded number of terminals; on 𝒞^kO (k fixed, so m_c ≤ k): N_late ≤ 1 + k²·(2n)·(2(k − 1)n)^{k−1}
+= O(n^k) and f = O(n^{k+1}) per phase. (k = 2 gives O(n³), L-SI's FB-2O, with a different constant.)
+Proof.
+1. (Outer sum.) Two late fallbacks lie in one Q-run iff their tuples x are equal (L-SI FB-2T step 1, (M2κ)). The tuple sequence is
+   coordinatewise non-decreasing, so each change of tuple raises at least one coordinate to a value it never had before; hence
+   #distinct tuples ≤ 1 + Σ_q (V_q − 1).
+2. (Values by depth.) Let V_{q,h} := #distinct x_i(q) over the indices i at which q has depth h (at k_i).
+   - h = 0 (q direct at k_i; k_i > g_{n−1} ≥ g_{w_c}): x_i(q) ∈ A_q by DIR; V_{q,0} ≤ |A_q| ≤ D_c.
+   - h ≥ 1: let p := par_{k_i}(q), of depth h − 1 at k_i. Group the indices by (p, α := x_i(p)). For fixed p, the indices with x(p) = α are
+     consecutive (monotone) and their source states lie in one p-run Θ (equal values with (M2κ) force constancy in between); every
+     index of the group after the first w_c indices WITH x(p) = α has k_i > f^Θ_{w_c} (those earlier indices are fallbacks of Θ with
+     earlier source states), so SAT-k gives x_i(q) ∈ S_{q,p} + α. So the group contributes ≤ w_c + d_q ≤ D_c values. The α's that occur
+     are values of x(p) at indices where p has depth h − 1, at most V_{p,h−1} of them. So V_{q,h} ≤ Σ_{p ∈ Q_c ∖ {q}} D_c·V_{p,h−1}.
+   - Induction: V_{·,h} ≤ D_c·((m_c − 1)·D_c)^h (max over terminals), and h ≤ m_c − 1 (ROUTE-k).
+3. V_q ≤ Σ_h V_{q,h}; combine with 1 and FBRED's late form. □
+### 11.4 Why this is nested, and what a SUM bound would need (READING + model obstruction)
+- The nesting is in step 2: per value α of the parent, the child may take up to d_q values (one per shift in S_{q,p}). Step 1 already sums
+  over terminals; only the per-terminal value count V_q is a product over depth.
+- MODEL OBSTRUCTION (PROVED as a statement about the lemmas, not about N5): the constraints used (ROUTE-k, DIR, SAT-k, (M2κ), the
+  w_c-saturation rule) are satisfied by abstract tuple sequences with ∏ over a chain of d_q·|A_root| distinct values: take a chain q_1 (direct,
+  values α_1 < … < α_a in A) ← q_2 ← … ← q_h with shift sets S_r = {s_{r,1} < … < s_{r,d}} spread so that s_{r,d} + (any value of the parent)
+  < s_{r,1} + (the parent's next value); list the tuples lexicographically (parent value first, then shifts), w_c filler indices per new
+  parent value; every coordinate is non-decreasing and every saturated index satisfies SAT-k. So NO sum bound follows from these lemmas
+  alone; a sum bound must use more of N5. The candidate extra ingredient (OPEN): Odd's MIN at q (κ-Y-FORM_D) together with saturation —
+  with the parent's value fixed and saturated, the shift s = κwt(q) + κopt^p(σ̄(q)) can rise only if Odd's argmin y changes, and the
+  successors routed through p have FROZEN values κopt^p(y) + α; so inside an α-block, x(q) can change only when a successor of q changes
+  its route (an Even switch on y's play, moving its first terminal). If each successor changed its first terminal O(1) times per block,
+  the per-block count would be O(d_q) but the product would remain; a sum needs "x(q) changes only when x(par) changes", i.e. no
+  in-block rises, which the model shows is not implied. OPEN; no N5 instance either way.
+- DATA: none new. The late regime (j ≥ n) is vacuous in every sample and climb (FBRED fixes N-FBRED-4: max f − n = −2 / −4); FB-kT, like
+  FB-2T and FB-RED's late form, rests on its proof. ROUTE-k is statewise and could be checked; not run.
+### 11.5 With the phase count (READING)
+On 𝒞^kO (k fixed): phases ≤ n(n − 1) + ∏ deg(q) ≤ n(n − 1) + n^k (RESULTS R54 (e) Φ-kO), f = O(n^{k+1}) per phase (FB-kT, conditional on
+FBRED), so in-phase fallbacks over a run are O(n^{2k+1}). Still missing for N5 polynomial on 𝒞^kO, k ≥ 2 (each OPEN): (i) crossings per
+phase (R30 (c) / R34 (f) on 𝒞^1O; needs R-STICK in set form, L-SI §5); (ii) transitions per phase given f (R50 (h) on 𝒞^1O; blocked on the
+frontier at LEN / Δ-RT, N5-DELTA-box44 §8, L-SI N5-FRONTIER-box15 §3); (iii) BIT and OUT beyond 𝒞^1O (R51's Lemmas BIT, OUT; OUT's proof
+is game-general per REFEREE §C on DUAL, BIT is game-free) — READING.
+
+## 12. Crossings per phase in set form: R-STICK_D (Lead 04:19Z; written 04:30Z by date -u)
+Setting: R55 (P-N5-GD, landed): D_k, R_D(k) (vertices whose (σ_k, τ_k)-play meets D_k), F_D := V ∖ R_D, W_k (σ_k's valuation in G_τ),
+G_D (a) (Ξ = W on F_D, no hypothesis). λ := the honest cycle-node map (constant on a phase), λ_W := W's. A vertex v is SPLIT at k if
+λ_W(v) ≠ λ(v), UNSPLIT otherwise. A CROSSING is an in-phase transition with R_D(s) ≠ R_D(s+1) (D may change too). Landed premises: R21 (a)
+XW (Ξ_k ⊴ W_k; game-general per the referees' premise-class confirmation on R55/R56); R23 (g) WM (W_{k+1} ⊵ W_k at an in-phase non-fallback
+transition; its proof is σ_k ∈ its own S4a arena + R17 (F1) on G_τ, game-general); injective rewards (S1).
+### 12.1 Lemma R-STICK_D (PROVED, every game)
+At an in-phase S4a transition s → s+1, every split v ∈ R_D(s) lies in R_D(s+1) (whatever D_{s+1} is).
+Proof (R30 (c)'s, verbatim in set form). Suppose v ∈ R_D(s) ∩ F_D(s+1); c := λ(v), c′ := λ_{W,s}(v) ≠ c. G_D (a) at s+1: W_{s+1}(v) =
+Ξ_{s+1}(v), cycle node c (phase). WM: W_{s+1}(v) ⊵ W_s(v); the cycle nodes differ, so rew(c) > rew(c′). XW at s: Ξ_s(v) ⊴ W_s(v), cycle
+nodes c and c′, so rew(c) < rew(c′). Contradiction. □
+One-Odd uses in R30 (c) and replacements: R19 (a) "off R, Ξ = W" → G_D (a) (R55); "v ∈ R_s has W-cycle node c_w(s) and λ(v) = c_θ" (HP: all
+of R routes through o) → dropped: the statement is per vertex. Nothing else.
+### 12.2 Corollary SN-PREFIX_D (PROVED, every game)
+- (a) Along a run of consecutive in-phase S4a transitions, for each vertex v the states at which v is unsplit form a prefix of the run.
+  Proof: WM makes W(v) non-decreasing, so rew(λ_W(v)) is non-decreasing (cycle nodes compare by reward first); XW gives rew(λ_W(v)) ≥
+  rew(λ(v)) with equality iff λ_W(v) = λ(v); λ(v) is constant. So once split, v stays split for the rest of the run. □
+- (b) In such a run, after its unsplit prefix a vertex v changes its R_D-membership at most once (it may enter, it cannot leave: R-STICK_D).
+- (c) Per phase: X_D ≤ (f + 1)·n + f + X_SN^D, where X_D := crossings, f := in-phase fallbacks, and X_SN^D := crossings at which some
+  vertex that is UNSPLIT at the source state changes membership. Proof: split the phase at its fallbacks into ≤ f + 1 S4a runs; a
+  crossing inside a run at which every membership-changing vertex is split moves only split vertices, each of which (by (a), (b)) does so
+  at most once per run, so ≤ n such crossings per run; the f fallback transitions are counted separately. □
+- On 𝒞^1O this is R30 (c) with "c_w = c_θ" (a property of o, shared by all of R) replaced by "v unsplit" (per vertex), and (n − 1) by n
+  (o ∈ R always on 𝒞^1O).
+### 12.3 X_SN^D: what the 𝒞^1O chain used and what replaces it
+On 𝒞^1O, X_SN is bounded by R34 (f) X-SN-PHASE, via R33 (g) X-RUN′ ⇐ R32 (e) X-RUN ⇐ R32 (c)-(d) (P^c_ℓ, FREEZE: COARSE_{ℓ−1}(θ) takes
+≤ 2d_o values) and R34 (d)-(e) TOGGLE / TOGGLE-COUNT. Step by step (ledger docs/new/N5-MULTI-ledger-box43.md rows R32-R34, re-read):
+| 𝒞^1O step | one-Odd use | set-form status |
+| --- | --- | --- |
+| R32 (c) P^c_ℓ (coarse R17 with COARSE_ℓ) | R20 Lemma C (RT: one route terminal) | REPLACED by CR_D (docs/new/N5-DELTA-box44.md §3: coarse freeze on any L-run under (h_D) ∧ (h3_D); = L-SI's CR-D′); PROVED, unrefereed |
+| R32 (d) FREEZE / RATCHET / BLOCK | "COARSE_{ℓ−1}(θ) takes ≤ 2d_o values" at the single o | per terminal: ≤ 2d_u values of COARSE(Ξ(u)) per u ∈ D, if the per-o argument ports (it uses θ = Ξ(o) only); NOT CHECKED; and |D_k| moves inside a phase (Δ1, OPEN) |
+| R32 (e) X-RUN | via FREEZE + ABS-COUNT′ (absorptions at o, R30 (f)) | absorptions at each u ∈ D: per-terminal index (I); not written |
+| R33 (b) H2-STICK, (e) R-CONST | HP ("honest play agrees with the (σ, τ)-play up to o") | (HP_D) holds by definition off D_k; but R-CONST ("at every ¬H1 state R̄ = U") is a one-terminal identity: FAILS in set form (several terminals, regions of different terminals) |
+| R33 (c) Lemma G′ | FO ("Odd vertices other than o are forced") | FAILS (ledger F) |
+| R34 (b) L-MONO | case split assumes the cycle node c is Even or forced | FAILS for an Odd-choice cycle node (ledger U) |
+| R34 (d) TOGGLE | FO: "Odd vertices other than o have one successor and c ≠ o, so c ∈ V_E" | FAILS: see the instance below |
+| R34 (f) X-SN-PHASE | via X-RUN′ and TOGGLE-COUNT | FI |
+- Obstruction, instance-style (DATA): experiments/new/box44/instances/qc_toggle.pg (n 5, Q = {0, 2, 3, 4}, sha1 27850ecc3d9e660aefa6a3401d6af0cfc2b3317c;
+  N5 output verified by Oink verify). N5 from S3: one S4a transition, one phase; every vertex has honest cycle node 4, and 4 is an ODD
+  CHOICE vertex (4 → 0, 3); D = {0}; vertex 1 is unsplit (λ_W = λ = 4) and ENTERS R_D at the transition (σ(1): 2 → 0). So an X_SN^D
+  crossing occurs in a class whose cycle node is an Odd choice vertex: exactly the configuration that TOGGLE's "c ∈ V_E" and L-MONO's
+  case split exclude on 𝒞^1O. (This is a configuration instance, not a counterexample to any bound: the phase has one crossing.)
+- Verdict (READING): crossings per phase in set form reduce, PROVED, to X_SN^D (crossings involving an unsplit vertex). X_SN^D is OPEN: the
+  𝒞^1O bound's chain fails at G′, R-CONST, L-MONO and TOGGLE (one-Odd steps), and at Δ1 (D moves inside a phase). Ports that look
+  available: P^c_ℓ → CR_D; FREEZE per terminal (unchecked).
+### 12.4 DATA (experiments/new/box44/rstick.py; canonical S3 start)
+| sample | phases | R-STICK_D checks / viol. | SN-PREFIX_D viol. | crossings X_D (max per phase) | X_SN^D share | Odd-choice cycle node at an X_SN^D crossing | X_D bound viol. |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| lib41 (412 runs) | 2,335 | 14,253 / 0 | 0 | 3,222 (99) | 3,102 | 6 | 0 |
+| box43 + box44 instances (10) | 59 | 0 / 0 | 0 | 54 (27) | 54 | 0 | 0 |
+| `--rand 2000 5 20 101` | 4,601 | 23 / 0 | 0 | 50 (2) | 50 | 9 | 0 |
+Reading (DATA): nearly all crossings are X_SN^D (unsplit vertices), as on 𝒞^1O; post-prefix crossings are rare. The bound of 12.2 (c)
+therefore moves almost nothing into proved territory in practice; the work is in X_SN^D.
+
 ## 5. How a fallbacks-per-phase bound combines with the phase count (READING)
 - Phases. Lemma Φ (R47 (a), every game): λ changes ≤ n(n − 1); Corollary Φ-kO (P-N5-DUAL, N5-MULTI §1.4): distinct τ's ≤ ∏_{q∈Q}
   deg(q), so phases ≤ n(n − 1) + ∏_q deg(q). On 𝒞^kO with k fixed that is ≤ n(n − 1) + n^k, polynomial; for k growing with n it is
