@@ -1,0 +1,29 @@
+MODE start ../../../experiments/n5-epoch/instances/ffin12_n32.pg ../../../experiments/n5-epoch/instances/ffin12_n32.start MUT - BUDGET 30000000
+COR_phases: 3
+CORc_phases: 2
+Cf_total: 3
+DEEP_C: 2
+DEEP_FBC_checks: 12
+DEEP_ODDC_checks: 14
+DEEP_UNK_C: 1
+DEEP_UNK_fallbacks: 1
+DEEP_fallbacks: 12
+DEEP_unsat: 12
+ENGXI_checks: 34
+Nep_total_fbphases: 8
+UNK_C: 3
+UNK_C_fallbacks: 13
+f_total: 13
+phases: 3
+phases_with_fallback: 2
+rho_total_fbphases: 36
+runs: 1
+states: 34
+visited_total_fbphases: 6
+DEEP_max_D: (19, 'ffin12_n32.pg@1 n 32')
+max_Cf_phase: (2, 'ffin12_n32.pg@1 n 32 f 12')
+max_Nep_over_Cf: (3.5, 'ffin12_n32.pg@1 n 32 N_ep 7 |Cf| 2 visited 5')
+max_f_phase: (12, 'ffin12_n32.pg@1 n 32 |Cf| 2 N_ep 7')
+max_rho_over_nCf: (0.546875, 'ffin12_n32.pg@1 n 32 rho 35 |Cf| 2 f 12')
+max_unsat_per_C: (11, 'ffin12_n32.pg@1 n 32 (deep)')
+RESULT OK violations=0

@@ -1,0 +1,70 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 1 MUT tau BUDGET 3000000
+COR_phases: 2332
+CORc_phases: 1274
+C_checked: 84
+C_states: 1366
+Cf_total: 188
+ENGXI_checks: 8882
+FBC_fallbacks: 270
+FBC_rise_needed: 256
+FBC_sat: 14
+FBC_target_not_C: 4
+FBC_unsat: 256
+Nep_total_fbphases: 1501
+QAC_checks: 15323109
+SATC_eq_checks: 42
+SATC_window_checks: 27
+UNK_C: 104
+UNK_C_fallbacks: 445
+VIOLATIONS: 12231
+V_FBC: 152
+V_ODDC: 893
+V_SATC_eq: 1
+V_XIB: 7
+V_XIB_path: 11178
+XIB_checks: 1366
+f_total: 715
+phases: 2332
+phases_with_fallback: 142
+rho_total_fbphases: 1693
+runs: 410
+states: 8882
+visited_total_fbphases: 751
+max_Cf_phase: (4, 'experiments/red/n5inj/instances/elimn_cex_n48.pg#0@2 n 48 f 7')
+max_Nep_over_Cf: (45.0, 'experiments/si/orlens/instances/lev_l_sc.pg#0@8 n 32 N_ep 45 |Cf| 1 visited 15')
+max_f_phase: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0@3 n 48 |Cf| 1 N_ep 1')
+max_rho_over_nCf: (1.40625, 'experiments/si/orlens/instances/lev_l_sc.pg#0@8 n 32 rho 45 |Cf| 1 f 1')
+max_sat_per_C: (1, 'experiments/n5-exhaustive/instances/b4_n5_other_0.pg#0@0 n 5')
+max_sat_window: (2, 'experiments/red/so/instances/tog6b_n32.pg#0@6 n 32')
+max_unsat_per_C: (20, 'experiments/new/box28/instances/x48_rt48_final.pg#0@2 n 48')
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@0: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@0: x 8 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@1: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@1: x 8 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@2: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@2: x 8 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@3: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@3: x 8 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@4: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@4: x 8 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@5: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@6: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@7: x 0 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@7: x 1 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@7: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@7: x 9 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@8: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@8: x 9 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@9: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@9: x 9 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@10: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_o11.pg#0@11: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@0: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@0: x 8 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@0: x 11 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@1: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@1: x 8 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@1: x 11 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@2: x 7 Xi not a simple H_C-path value
+VIOLATION XIB_path: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@2: x 8 Xi not a simple H_C-path value
+RESULT FAIL violations=12231

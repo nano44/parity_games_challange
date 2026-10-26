@@ -1,0 +1,11 @@
+OK   docs/RESULTS.md@6f9451e3:2839-2841 | for c ∈ C the honest class U_c := λ^{-1}(c). κ_t(z) := (signed weight of P(Ξ_t z), s_c·ℓ(Ξ
+OK   docs/RESULTS.md@6f9451e3:1825-1826 | (a) Remark KEY (every game): λ_U is a function of τ alone, so on every run of states with 
+OK   docs/si/P-N5-FLIP-box18.md@7ea3d8cf:48-50 | if z ∈ U_c's honest play at s first meets e ∈ Q_c ∪ {c} after the vertices r (z included, 
+OK   docs/RESULTS.md@6f9451e3:631-631 | (a) Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_
+OK   docs/RESULTS.md@6f9451e3:640-640 | (d) N5: every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even's σ (on G)
+OK   docs/si/P-N5-FLIP-box18.md@7ea3d8cf:97-97 | Iσ_k := {(x, z) : Ξ_k(z) ▷ Ξ_k(σ_k x)} (SPEC S2).
+OK   docs/RESULTS.md@6f9451e3:2858-2859 | (d) κ-Y-FORM_D (per q ∈ Q ∩ U_c, q ≠ c, at a state t where q lies on no honest cycle): κ_t
+OK   docs/RESULTS.md@6f9451e3:2868-2869 | (g) Lemma TV: for a Q-run Θ, c ∈ C, and t ∈ Θ after |U_c| − 1 fallbacks of the phase and o
+OK   docs/referee/R-N5-FLIP.md@72db1b18:161-162 | Joint repair: "class exit path AND EXIT" in the hypothesis and "changes a class exit path 
+tagged quotes 9 ok 9 missing 0
+«-quotes without a [Q] tag right before them: 1

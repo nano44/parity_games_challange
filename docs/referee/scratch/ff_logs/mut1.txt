@@ -1,0 +1,20 @@
+CTRL_fails 5
+FBR_FAIL 5
+FBR_chk 21
+FB_inside_gap 5
+FB_nonhonest 5
+GAPR_chk 12
+GAPR_withinsidefb 2
+GEN_chk 5
+H0FF_chk 7
+HFF_chk 7
+MAX_HONEST 13
+PHASES 7
+R1FF_chk 7
+RUNS 3
+EX ('FBR', 'experiments/n5-epoch/instances/ffin4_n24.pg/0', 7, 5, 4, 5)
+EX ('FBR', 'experiments/n5-epoch/instances/ffin4_n24.pg/0', 9, 5, 4, 5)
+EX ('FBR', 'experiments/n5-epoch/instances/ffin4_n24.pg/0', 10, 5, 4, 5)
+EX ('FBR', 'experiments/n5-epoch/instances/ffin4_n24.pg/0', 11, 5, 4, 5)
+EX ('FBR', 'experiments/red/xing/instances/j10_n24.pg/0', 9, 1, 1, 2)
+exit 0

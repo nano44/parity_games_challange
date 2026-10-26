@@ -1,0 +1,5 @@
+flips=51 flips_N3b=51 max_flips_phase=51 max_gap_N3b=61 onsets=47 onsets_N3b=47 phases=1 phases_with_flips=1
+GAPS {('N3b', 61): 51}
+TOP onsets/flips/len/rho/n (47, 51, 55, 103, 449, '../red/usplit/instances/pp_K48_n449.pg', 0)
+FLIPCLS PASS
+rc 0

@@ -1,0 +1,50 @@
+CHAIN_END_CYC 3
+CHAIN_END_ROUTE 50
+CHAIN_MAXLEN 3
+CHAIN_chk 53
+CHO_chk 53
+CNTB_chk 236
+CTRL_switch_nonH 1382
+EV_CYC 23
+EV_RELAY 53
+EV_ROUTE 281
+H_states 23861
+H_states_Qc2 7765
+PHASES 22217
+RUNS 7500
+TOG_ex 1
+TOG_seen 1
+TOG_with_rho_at_e 1
+TVE_FAIL 24
+TVE_Qc0 484
+TVE_Qc1 161
+TVE_Qc2 106
+TVE_Qc3 139
+TVE_chk 890
+TVG_chk 48
+EX ('TVE', 'rand144/3', 1, 2, [5], True)
+EX ('TVE', 'rand184/4', 1, 10, [3], True)
+EX ('TVE', 'rand292/3', 1, 4, [0, 6], True)
+EX ('TVE', 'rand333/1', 5, 11, [12], True)
+EX ('TVE', 'rand333/3', 2, 11, [12], True)
+EX ('TVE', 'rand333/4', 4, 11, [12], True)
+EX ('TVE', 'rand545/3', 1, 1, [11], False)
+EX ('TVE', 'rand588/3', 2, 3, [6], True)
+EX ('TVE', 'rand607/1', 2, 15, [12], False)
+EX ('TVE', 'rand607/4', 2, 15, [12], False)
+EX ('TOG', 'rand642/2', 2, 2, 1, 4, True)
+EX ('TVE', 'rand667/2', 0, 3, [4], False)
+EX ('TVE', 'rand826/3', 0, 9, [14], True)
+EX ('TVE', 'rand1086/2', 1, 3, [9], True)
+EX ('TVE', 'rand1151/1', 2, 7, [1], True)
+EX ('TVE', 'rand1151/2', 3, 7, [1], True)
+EX ('TVE', 'rand1151/3', 1, 7, [1], True)
+EX ('TVE', 'rand1151/4', 1, 7, [1], True)
+EX ('TVE', 'rand1167/0', 1, 5, [0], True)
+EX ('TVE', 'rand1206/1', 2, 6, [1], False)
+EX ('TVE', 'rand1239/2', 4, 3, [16], True)
+EX ('TVE', 'rand1239/3', 4, 3, [16], True)
+EX ('TVE', 'rand1348/4', 0, 1, [3], True)
+EX ('TVE', 'rand1380/3', 1, 3, [7], True)
+EX ('TVE', 'rand1433/3', 2, 0, [5, 7], False)
+EXIT 0

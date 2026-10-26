@@ -1,0 +1,20 @@
+MODE start ../../../experiments/red/fbr/instances/fr39_q4_n48.pg ../../../experiments/new/box47/instances/fr39_q4_n48.start MUT - BUDGET 400000
+COR_phases: 2
+CORc_phases: 1
+Cf_total: 7
+ENGXI_checks: 50
+Nep_total_fbphases: 11
+UNK_C: 7
+UNK_C_fallbacks: 39
+f_total: 39
+phases: 2
+phases_with_fallback: 1
+rho_total_fbphases: 35
+runs: 1
+states: 50
+visited_total_fbphases: 8
+max_Cf_phase: (7, 'fr39_q4_n48.pg@0 n 48 f 39')
+max_Nep_over_Cf: (1.5714285714285714, 'fr39_q4_n48.pg@0 n 48 N_ep 11 |Cf| 7 visited 8')
+max_f_phase: (39, 'fr39_q4_n48.pg@0 n 48 |Cf| 7 N_ep 11')
+max_rho_over_nCf: (0.10416666666666667, 'fr39_q4_n48.pg@0 n 48 rho 35 |Cf| 7 f 39')
+RESULT OK violations=0

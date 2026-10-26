@@ -1,3 +1,170 @@
+# Handover check: L-SI (successor 17, written 2026-10-26T15:25Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; the commands are given. Predecessor: successor 16, session_014hNbzERgw85WwaeDGW9E2Y.
+Its handover is notes/L-SI.md "## HANDOVER (successor 16, box 20)" (l-si c1efeb1d).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. The clone was stale again: local HEAD 0d48da26; `git fetch origin claude/l-si` → origin c1efeb1d;
+  `git merge --ff-only origin/claude/l-si` → HEAD c1efeb1d (`git rev-parse HEAD origin/claude/l-si` equal).
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` = 539b4192 (Lead: pin P-N5-ROOT addendum (af1c7ad4); L-NEW 28 GO (5/5); NOW; restart row; log).
+  - Before merging: `git rev-list --left-right --count HEAD...trunk` → 2 ahead / 99 behind; merge-base 829003b2 (the ROOT addendum commit).
+  - `git merge --no-ff` of trunk 539b4192 (no rebase) → merge commit 52baf32f; then 3 ahead / 0 behind. This file is the next commit;
+    the pushed SHA goes to the Lead. Before the push: fetch and merge origin/claude/l-si again (successor 16 may still push
+    docs/si/P-N5-CHOSEN-fixes-box19.md; I do not edit it).
+
+## 2. Open work and the next step of each (nothing running: fresh container; Oink in §6)
+Frozen (`sha1sum`, equal to the handover's values; never edited): docs/si/P-N5-ROOT-box20.md d3788bc0ce0e3da2d54298c58e227e437242419a
+(pinned on trunk b20d0e0e); docs/si/P-N5-ROOT-add-box20.md af1c7ad4581cce4a9830b4ed01e2370d26ef850b (pinned on trunk 539b4192);
+docs/si/P-N5-CHOSEN-box19.md 764cfbb3…. `ls docs/si/P-N5-CHOSEN-fixes* docs/si/P-N5-ROOT-fixes*` → none exist yet.
+- (1) MAIN after "go" (brief queue 1; handover queue 2; note docs/si/N5-ROOT-box20.md §6, §10.2): count G_c (A-gains = relay D-leaves +
+  unsplit exits) and X_u (cross-gate migrations into a gate region R_u) per fallback-free run. Predecessor's READING: via ROOT-PIECE /
+  FREEZE-G / RESET-PIECE these bound root ρ, relay changes, per-gate resets, NCONF_{≥2} and R⁰_{≥2}.
+  Next step: a script experiments/si/root/gcx.py (reusing root/common.py, dleave.py, resets.py) that counts G_c and X_u per fallback-free
+  run, first on L-RED R90's families (experiments/red/usplit/mkpp.py, mkgate.py; l-red eb64c242 is an ancestor of my head), k fixed and
+  the size growing, to see whether G_c / X_u grow linearly like R⁰_{≥2}; then nep90 / nep76; then a bound attempt or a DEAD entry
+  with its instance. Warning carried: DEAD box 20 (nep90 phase@4: 32 of 63 root offset resets are Bellman-Ford cascades charged only
+  to the root's own ρ).
+  - Overlap to clear with the Lead: NOW l.27 shows L-COMP 5 box 14 measuring "G_c, relay changes per fallback-free run on records";
+    L-NEW 28 does the relay-change route after FBC / EPC fixes. I count on the R90 families and nep90 / nep76 only unless told otherwise.
+- (2) STANDBY: repairs for P-N5-ROOT and its addendum in a NEW file docs/si/P-N5-ROOT-fixes-box20.md, when both referees' reports exist
+  (queue after P-N5-EPC; `ls docs/referee docs/referee-2 | grep -i root` → none). One repair per item; quotes via
+  experiments/si/rund/quotecheck.py, pinned in check.sh with a --mut control.
+- (3) Not mine now: docs/si/P-N5-CHOSEN-fixes-box19.md (successor 16 may push it; I leave it alone).
+
+## 3. docs/GAPS.md rows I own
+- None (`git show trunk:docs/GAPS.md | awk -F'|' '$4 ~ /L-SI/'` → empty).
+- I work under G-N5-TIME (l.11): major, owner L-NEW, status open; last update 14:38Z (R70, P-N5-HONFF, CHECKER C79): "f, X_dir, X_big
+  and |D| ≥ 2 epochs OPEN; general games OPEN." NOW l.11: M4 IN PROGRESS, gauntlet step 4 (G-N5-TIME) OPEN. RESULTS ends at R70.
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md at trunk; status from docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems."
+  - Lead reading L40 (index l.33: active): L-SI is the OR/MDP lens on N5; labels PROVED / CONJECTURE / OPEN.
+- D1 (index l.5: active; DECISIONS.md l.6, full text docs/decisions/D001-launch-brief.md): "Never publish, post, email, submit or
+  contact anyone outside the fleet. Anything external is my decision." / "A claimed polynomial algorithm is far more likely to be
+  wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+- D16 (DECISIONS.md l.300; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap (box 20, successor 16): experiments/si/root/shrink.py shadowed experiments/new/box21/shrink.py on sys.path, so an import pulled
+  the wrong module's helpers.
+  - Check: shared helpers live only in experiments/si/root/common.py (first_D, wplay, avoid, wt, M); new scripts get names that do not
+    collide (`ls experiments/*/*/<name>.py` before creating one); wplay is cross-checked against box21/h1.py wvals (bffd.py WPLAY_V).
+- Still live: stale clone (bit again here: 0d48da26 vs origin c1efeb1d; fetch first, re-fetch and merge before the push); frozen files
+  (sha1sum before touching docs/si/P-*); `if grep …; then exit 1; fi` guards with a mutation control per pin; never `git add -A`;
+  never pipe scripts/push.sh; never `pkill -f` / `pgrep -f` with a script name; stamp from date -u; «» only around verbatim quotes.
+
+## 6. Oink
+- scripts/setup_oink.sh → "oink built at 8fbf0a7" (tc, tc+, counter_*, rngame present), exit 0.
+
+---
+# Handover check: L-SI (successor 16, written 2026-10-26T13:40Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; the commands are given. Predecessor: successor 15, session_017NeJAMbjHE3eoJcsnWhRbw.
+Its handover is notes/L-SI.md "## HANDOVER (successor 15, box 19)" (l-si 213bba72).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. The clone was stale again: local HEAD 0d48da26; `git fetch origin claude/l-si` → origin 213bba72;
+  `git pull origin claude/l-si` (fast-forward) → HEAD 213bba72 (`git rev-parse HEAD origin/claude/l-si` equal).
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` = a7c141b8 (Lead: land R69 (FLIP, C78 Add. 1 978791e1) after R68; GAPS/NOW; log).
+  - Before merging: `git rev-list --left-right --count HEAD...trunk` → 2 ahead / 59 behind; merge-base b7189738 (the CHOSEN packet commit).
+  - `git merge --no-ff` of trunk a7c141b8 (no rebase) → merge commit 023da0fb; then 3 ahead / 0 behind. This file is the next commit;
+    the pushed SHA goes to the Lead.
+
+## 2. Open work and the next step of each (nothing running: fresh container; Oink: scripts/setup_oink.sh, result in §6)
+Frozen (`sha1sum`, equal to the handover's values; never edited): docs/si/P-N5-CHOSEN-box19.md 764cfbb331a1aaefa819a01d64ee6b7cfbbd7316;
+docs/si/P-N5-FLIP-fixes-box18.md 93a65e1b…; docs/si/P-N5-FLIP-box18.md 96a7e088… (FLIP landed as R69).
+- (1) STANDBY: P-N5-CHOSEN fixes file docs/si/P-N5-CHOSEN-fixes-box19.md (new file, repairs only), when both referees' reports and §Cs
+  exist. None yet: `ls docs/referee docs/referee-2 | grep -i -e chosen -e fbc` → empty; NOW l.42 / l.46: REFEREE 15 and REFEREE-2 17
+  "CREATED 13:29Z ...: handover check; then P-N5-FBC, P-N5-CHOSEN". Next step on arrival: one repair per referee item, quotes checked
+  with experiments/si/rund/quotecheck.py, pinned in check.sh with a mutation control.
+- (2) MAIN after "go" (Lead's brief, handover queue item 2, note §28.2): an FRZ-U / Theorem RUN analogue for the ROOT r of an acyclic
+  relay DAG, whose extra W-gates are r's relays and whose values are shifts of κ(r) (R61 (b) SAT-k + Lemma CHOSEN). First step: re-read
+  R50 (c) FRZ-U's Claim P^c (docs/si/P-N5-KW-box15.md) and mark each step that uses D = {o}; then test the candidate statement on
+  nep76 / nep90 (long-ρ one-gate dynamics around root 0, note §28) before any proof attempt. Inputs via the Lead: L-RED 21's 3n phase
+  (long121_n40, |Q| = 3, one ruler level) and L-NEW 27's NCONF counts.
+- (3) Older OPEN, Lead's pick only: flips per phase (N1 / N3; L-RED N3-CHAIN input); FRZ-RHO; (R1)-(R3); twin Δ-RT for |D| ≥ 2.
+
+## 3. docs/GAPS.md rows I own
+- None (`git show trunk:docs/GAPS.md | awk -F'|' '$4 ~ /L-SI/'` → empty).
+- I work under G-N5-TIME (l.11): major, owner L-NEW, status open; last update 13:34Z (R69, P-N5-FLIP, CHECKER C78): "No count: flips
+  and ρ events per phase are not bounded here. OPEN as before." NOW l.11: M4 IN PROGRESS, gauntlet step 4 (G-N5-TIME) OPEN.
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md at trunk; status from docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems."
+  - Lead reading L40 (index l.33: active): L-SI is the OR/MDP lens on N5; labels PROVED / CONJECTURE / OPEN.
+- D1 (index l.5: active; DECISIONS.md l.6-7, full text docs/decisions/D001-launch-brief.md): "Never publish, post, email, submit or
+  contact anyone outside the fleet. Anything external is my decision." / "A claimed polynomial algorithm is far more likely to be
+  wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+- D16 (DECISIONS.md l.300; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap (box 19, successor 15): §27.2 counted "epochs = D changes + 1", which undercounts R61 epochs (σ̄ can change with D the same).
+  - Check: epoch counts come only from experiments/si/rund/epcause.py's boundaries (pinned on nep90 in check.sh), never from D alone.
+- Still live: stale clone (bit again here: fetch + `git rev-parse HEAD origin/claude/l-si` first, re-fetch before the push); frozen
+  files (sha1sum before touching docs/si/P-*); `if grep …; then exit 1; fi` guards with a mutation control per pin; never `git add -A`;
+  never pipe scripts/push.sh; stamp from date -u; «» only around verbatim quotes (quotecheck.py).
+
+## 6. Oink
+- scripts/setup_oink.sh → "oink built at 8fbf0a7" (tc, tc+, counter_*, rngame present), exit 0.
+
+---
+# Handover check: L-SI (successor 15, written 2026-10-26T12:00Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; the commands are given. Predecessor: successor 14, session_019qFTEd4V6YTCPzEN6Js3ez.
+Its handover is notes/L-SI.md "## HANDOVER (successor 14, box 18)" (l-si 8072c86b).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. The clone was stale again: local HEAD 0d48da26; `git fetch origin claude/l-si` → origin 8072c86b;
+  `git pull origin claude/l-si` (fast-forward) → HEAD 8072c86b (`git rev-parse HEAD origin/claude/l-si` equal).
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` = d67fdb87 (Lead: pin P-N5-FLIP (sha1 96a7e088); merges; log).
+  - Before merging: `git rev-list --left-right --count HEAD...trunk` → 0 ahead / 18 behind; merge-base 8072c86b (= my head: trunk
+    already carries all of l-si).
+  - `git merge --no-ff` of trunk d67fdb87 (no rebase) → merge commit 4bc5af1a; then 1 ahead / 0 behind. This file is the next commit;
+    the pushed SHA goes to the Lead.
+
+## 2. Open work and the next step of each (nothing running: fresh container; Oink built: scripts/setup_oink.sh → "oink built at 8fbf0a7", exit 0)
+Frozen (`sha1sum`, equal to the handover's values; never edited): docs/si/P-N5-FLIP-box18.md 96a7e088c2175f71ab1aef2577d6139f80a4efff
+(pinned on trunk d67fdb87); docs/si/P-N5-RUND-fixes-box17.md aa4a3920…; docs/si/P-N5-RUND-box17.md 71e198f3….
+- (1) STANDBY: P-N5-FLIP fixes file docs/si/P-N5-FLIP-fixes-box18.md (new file, repairs only), when both referees' reports and §Cs exist.
+  None yet: `ls docs/referee docs/referee-2 | grep -i flip` → empty; NOW l.40 / l.43: REFEREE 14 and REFEREE-2 16 "parked light for
+  P-N5-FLIP". Next step on arrival: one repair per referee item, quotes checked with experiments/si/rund/quotecheck.py, pinned.
+- (2) MAIN after "go": ρ_q per phase for classes with m_c ≥ 2 Odd choice vertices (OPEN). Known (note §22-§25, lane-PROVED, unrefereed):
+  ROOT, ROUTE-RELAY, SELF-FREE (m_c = 1 closes), ROOT-C, FLIP (a)-(c) with necessary condition N1 ∨ N2 ∨ N3, N3-LEVEL (sharp).
+  Next step: either (a) a per-level ruler count of N3 flips on q2's path set (gives ≤ 2^{#ranks ≥ top(C)} per pair: polynomial only
+  when cycle tops are near the class top), or (b) a separate charge for N1 flips (old exit path broken by an Even switch), testing
+  L-NEW 26's FB-RISE (an Even fallback is a Ξ Bellman-Ford step) on the fallback-caused N1 flips (frz40). First action: classify every
+  flip in the corpus (flipck.py) as N1-by-fallback / N1-by-ordinary-switch / N2 / N3, to see which charge carries the load.
+  Coordination via the Lead: L-RED 21 (low-top relay cycles vs N3-LEVEL), L-COMP 5 (growth laws, relay-cycle column).
+- (3) Older OPEN, Lead's pick only: FRZ-RHO proof (on R_D); (R1)-(R3), twin Δ-RT for |D| ≥ 2 epochs.
+
+## 3. docs/GAPS.md rows I own
+- None (`git show trunk:docs/GAPS.md | awk -F'|' '$4 ~ /L-SI/'` → empty).
+- I work under G-N5-TIME (l.11): major, owner L-NEW, status open; last update 11:33Z (R67, P-N5-RUND, CHECKER C76): "No count: the band,
+  N_split and U(S) are not bounded. OPEN as before." NOW: M4 IN PROGRESS, gauntlet step 4 (G-N5-TIME) OPEN.
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md at trunk; status from docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems."
+  - Lead reading L40 (index l.33: active): L-SI is the OR/MDP lens on N5; labels PROVED / CONJECTURE / OPEN.
+- D1 (index l.5: active; DECISIONS.md l.6-7, full text docs/decisions/D001-launch-brief.md): "Never publish, post, email, submit or
+  contact anyone outside the fleet. Anything external is my decision." / "A claimed polynomial algorithm is far more likely to be
+  wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+- D16 (DECISIONS.md l.300; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap (box 18, successor 14): check.sh used `! grep …` as a guard; under `set -e` a negated command never trips, so a pin that should
+  fail passed silently. Also flipck.py adds counters alphabetically, so whole-line greps break when a counter is added.
+  - Check: guards are written `if grep …; then exit 1; fi`, pins grep single tokens, and every new pin ships with a mutation control
+    (MUT / --mut / reversed) that must make it fail (e.g. quotecheck.py --mut, flipck reversed control).
+- Still live: stale clone (bit again here: fetch + `git rev-parse HEAD origin/claude/l-si` first, re-fetch before the push); frozen
+  files (sha1sum before touching docs/si/P-*); never `git add -A`; never pipe scripts/push.sh; stamp from date -u.
+
+---
 # Handover check: L-SI (successor 14, written 2026-10-26T10:08Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; the commands are given. Predecessor: successor 13, session_018EgSbDTYEVHqL882sCoX7u.
 Its handover is notes/L-SI.md "## HANDOVER (successor 13, box 17 cont.)" (l-si ca90fe74).

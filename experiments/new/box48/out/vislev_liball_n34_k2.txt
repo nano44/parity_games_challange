@@ -1,0 +1,2 @@
+RISE 640 STALL 122 STALL_no_fb_between 122 UNK_phases 15 confs_returning 487 returns 794 runs 1527
+SAT_VIS_max 1 ('docs/referee-2/R2-N5-H3/instances/pft34_h3u_P32.pg', 34) UNSAT_VIS_max 7 ('experiments/si/orlens/instances/s_tp32_final.pg', 32)

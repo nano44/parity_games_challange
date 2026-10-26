@@ -26,3 +26,12 @@
 - bnd.py (note §19): (R4) stretch_D boundaries per run by cause (DCH / XI / WG), gate Ξ / W changes, Lemma GATE-XI attribution; V=1 per run.
 - pot.py (note §20): ρ_q events per phase with level and ALT class; RULER check; logs pot_*.txt.
 - pot.py MULTI / TRACE (note §21): ρ_q in classes with ≥ 2 Odd choices; trace of a gate's path-set rises.
+- flipcls.py (successor 15, note §26.1): every relay flip classed N1fb / N1sw / N2 / N3 / N3b with GAP (class top − rank top(C)); per-phase
+  onsets. Logs flipcls_*.txt.
+- quiet.py (note §26.3): q's ρ events per piece between fallbacks and other terminals' events; UP=0 any terminal, UP=1 upstream exits,
+  UP=2 the chosen exit par_k(q). QUIET_V tests CONJECTURE QUIET-n (FALSE on one-terminal classes). Logs quiet_up*_*.txt.
+- chosen.py (note §26.2): Lemma CHOSEN / Corollary RELAY-CHAIN (CHOSEN_V, CHAIN_V, TOG, max_chain); MUT=1 (next state's choice) must fail.
+- instances/nep90_n40.start: L-RED's rec0/instances/nep90_n40.start.json in .start format (game read in place, sha1 7348271a…).
+- tvend.py (note §27.3): Lemma TV-END (after R56 (g)'s freeze no Even of the class switches until the phase end); TVEND_V; thin data.
+- epcause.py (note §28.1): every epoch boundary's σ̄ changes by R61 (e) ALT cause (CYC / NC / STRICT (ROUTE / RELAY) / TIE); ALT_V; MUT=1 bites.
+- trigger.py (note §28.2): for the phase's top-ρ vertex, every Even switch on its chosen exit path traced to its trigger (SELF / PATH / TERM / START).

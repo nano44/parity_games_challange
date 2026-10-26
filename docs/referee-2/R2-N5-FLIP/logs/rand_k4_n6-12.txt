@@ -1,0 +1,29 @@
+MODE random 2000 6 12 1632 4 3 MUT - WALKMAX 16
+ENGXI_checks: 15991
+FL_N3: 4
+FL_b_checks: 4
+FL_c_checks: 4
+FL_flips: 4
+N3L_checks: 4
+N3L_equal: 3
+RC_LIT: 25
+RC_MIN_checks: 4153
+RC_POS: 215
+RC_static: 424
+RC_walks: 9746
+RC_walks_via_cycle: 1047
+ROOT_static: 130
+RR_events: 154
+RR_relay: 28
+RR_route: 126
+ST_intervals: 341
+ST_states: 692
+phases: 603
+rho_events: 163
+rho_transitions: 106
+runs: 6000
+states: 15991
+transitions: 635
+RC_LIT_example: (1, 'random1632:256#1@1 class 4 q [5]')
+RC_POS_example: (1, 'random1632:3#1@0 class 6 q 3 walk [3, 0, 1, 2, 4, 6] -> cycle node 2')
+RESULT OK violations=0

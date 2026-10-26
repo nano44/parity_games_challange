@@ -1,0 +1,13 @@
+0s it 1 T 15 iters 19 n 32
+0s it 57 T 17 iters 20 n 32
+1s it 211 T 18 iters 20 n 32
+5s it 710 T 19 iters 21 n 32
+8s it 1092 T 20 iters 22 n 32
+12s it 1491 T 21 iters 23 n 32
+14s it 1716 T 22 iters 25 n 32
+61s it 6201 T 23 iters 27 n 32
+80s it 8002 T 24 iters 28 n 32
+86s it 8616 T 25 iters 29 n 32
+152s it 15032 T 26 iters 30 n 32
+308s it 30399 T 27 iters 31 n 32
+340s it 33515 T 28 iters 32 n 32

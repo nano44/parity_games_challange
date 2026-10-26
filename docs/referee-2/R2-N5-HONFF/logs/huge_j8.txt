@@ -1,0 +1,18 @@
+MODE start ../../../experiments/red/xing/instances/j8_n32.pg MUT - BUDGET 150000000
+ENGXI_checks: 55
+FB_after_honest_nonhonest: 2
+FB_at_nonhonest: 2
+FB_fallbacks: 2
+FB_odd_binds: 2
+FBb_checks: 6
+HFF_gaps: 5
+HFF_gaps_inside_fallback: 1
+HFF_gaps_with_fallback: 1
+LEV_phases: 2
+QA_checks: 88723045
+R1FF_phases: 3
+phases: 3
+runs: 1
+states: 55
+HFF_max_honest: (4, 'j8_n32.pg@1 n 32 f 2')
+RESULT OK violations=0

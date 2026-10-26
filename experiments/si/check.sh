@@ -73,11 +73,109 @@ echo "rund (U-SPLIT DEAD usplit_rd_s3_n27 y=26 z=25 off 0->0; PAIR-OC DEAD pairo
 # note §23: CONJECTURE FRZ-RHO on frz40 (21 rho-free intervals, max length 6, last change at index 5 < n - 1).
 python3 -I rund/frzrho.py --one ../red/n5inj/instances/frz40.pg ../red/n5inj/instances/frz40.start | grep -q "cuts=41 intervals=21 max_last=5 max_len=6 max_tex=2 max_xich=2 trans=49"
 echo "rund (FRZ-RHO data on frz40): PASS"
+# note §24: Lemma FLIP on frz40 (17 broken / 3 intact flip states) and L-RED's pp_K12_n161 (15 intact); reversed control fails.
+o=$(python3 -I rund/flipck.py --one ../red/n5inj/instances/frz40.pg ../red/n5inj/instances/frz40.start)
+for k in "broken=17 " "flipcost_checks=139 " "flips=20 " "intact=3 " "intact_with_rise=3 " "FLIP PASS"; do grep -q "$k" <<<"$o"; done
+o=$(python3 -I rund/flipck.py --one rund/instances/pp_K12_n161.pg rund/instances/pp_K12_n161.start)
+for k in "flips=15 " "intact=15 " "intact_with_rise=15 " "onsets=11" "FLIP PASS"; do grep -q "$k" <<<"$o"; done
+MUT=1 python3 -I rund/flipck.py --one rund/instances/pp_K12_n161.pg rund/instances/pp_K12_n161.start | grep -q "FLIP FAIL"
+echo "rund (FLIP on frz40 and pp_K12_n161; MUT=1 bites): PASS"
+# note §25: Lemma N3-LEVEL; equality lev = rank(top C) on leanT_N6 (random starts), so the strict control MUT=2 bites there.
+o=$(RS=4 python3 -I rund/flipck.py --list rund/instances/leanT_N6_list.txt 1)
+grep -q "FLIP PASS" <<<"$o"; grep -q "both_intact=4 " <<<"$o"
+MUT=2 RS=4 python3 -I rund/flipck.py --list rund/instances/leanT_N6_list.txt 1 | grep -q "VIOLATION ('N3LEV', 'experiments/red/tcpert/instances/leanT_N6.pg rs', 5, 21, 22, 5, 6, 42, 'p2', 42)"
+echo "rund (N3-LEVEL on leanT_N6, tight; MUT=2 bites): PASS"
+# note §26: flip classes on frz40 (onsets: one N1 by fallback, one N1 by ordinary switch); Lemma CHOSEN / Corollary RELAY-CHAIN on L-RED's
+# nep90_n40 (rho_q up to 72 at n = 40; root 0's pieces between chosen-terminal events <= 12); the MUT=1 control (next state's choice) bites.
+o=$(python3 -I rund/flipcls.py --one ../red/n5inj/instances/frz40.pg ../red/n5inj/instances/frz40.start)
+for k in "onsets=2 " "onsets_N1fb=1 " "onsets_N1sw=1 " "flips_N3=3 " "FLIPCLS PASS"; do grep -q "$k" <<<"$o"; done
+o=$(python3 -I rund/chosen.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start)
+for k in "RELAY=139 " "ROUTE=153 " "max_chain=2" "CHOSEN PASS"; do grep -q "$k" <<<"$o"; done
+if grep -q "TOG=" <<<"$o"; then echo "unexpected TOG on nep90"; exit 1; fi
+MUT=1 python3 -I rund/chosen.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "CHOSEN FAIL"
+o=$(UP=2 python3 -I rund/quiet.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start)
+for k in "max_rho_q=72 " "quiet_max=12 " "rho_q_total=292 " "QUIET PASS"; do grep -q "$k" <<<"$o"; done
+echo "rund (flip classes on frz40; CHOSEN / RELAY-CHAIN and chosen-terminal pieces on nep90_n40; MUT=1 bites): PASS"
+# note §28: epoch boundaries on nep90 are all clean strict sigma-bar changes (89 boundaries, 119 STRICT, 0 residual); MUT=1 (ALT reversed) bites.
+o=$(python3 -I rund/epcause.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start)
+for k in "boundaries=89 " "boundaries_rho=89 " "chg_STRICT=119 " "strict_ROUTE=107" "EPCAUSE PASS"; do grep -q "$k" <<<"$o"; done
+if grep -q "chg_TIE\|chg_NC\|boundaries_residual" <<<"$o"; then echo "unexpected residual on nep90"; exit 1; fi
+MUT=1 python3 -I rund/epcause.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "EPCAUSE FAIL"
+echo "rund (epoch causes on nep90: all clean strict; MUT=1 bites): PASS"
 # P-N5-RUND fixes file: every «quote» verbatim at its tagged commit and lines; the shifted-lines control (--mut) must fail.
-if git cat-file -e 62a1a01d && git cat-file -e e8d31c47 && git cat-file -e 762b7243 && git cat-file -e f1d2cf09; then
+if git cat-file -e 62a1a01d && git cat-file -e e8d31c47 && git cat-file -e 762b7243 && git cat-file -e f1d2cf09 && git cat-file -e 6f9451e3; then
   python3 -I rund/quotecheck.py ../../docs/si/P-N5-RUND-fixes-box17.md | grep -q "QUOTES PASS"
   python3 -I rund/quotecheck.py ../../docs/si/P-N5-RUND-fixes-box17.md --mut | grep -q "QUOTES FAIL"
   echo "rund (RUND fixes file: all quotes verbatim; shifted control fails): PASS"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-box18.md | grep -q "QUOTES PASS"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-box18.md --mut | grep -q "QUOTES FAIL"
+  echo "rund (packet P-N5-FLIP-box18: all quotes verbatim; shifted control fails): PASS"
+  if git cat-file -e 72db1b18 && git cat-file -e 75b8b52a; then
+    python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-fixes-box18.md | grep -q "quotes=23 bad=0"
+    python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-fixes-box18.md --mut | grep -q "QUOTES FAIL"
+    echo "rund (P-N5-FLIP fixes file: 23 quotes verbatim; shifted control fails): PASS"
+    python3 -I rund/quotecheck.py ../../docs/si/P-N5-CHOSEN-box19.md | grep -q "quotes=9 bad=0"
+    python3 -I rund/quotecheck.py ../../docs/si/P-N5-CHOSEN-box19.md --mut | grep -q "QUOTES FAIL"
+    echo "rund (packet P-N5-CHOSEN-box19: 9 quotes verbatim; shifted control fails): PASS"
+  else
+    echo "rund (P-N5-FLIP fixes file quotes): NOT RUN (referee commits 72db1b18 / 75b8b52a not in this clone)"
+  fi
 else
   echo "rund (RUND fixes file quotes): NOT RUN (source commits not in this clone; fetch claude/referee, claude/referee-2)"
+fi
+# box 20 (docs/si/N5-ROOT-box20.md): BF-F_D at every S4a step of nep90 (MUT=1, equality flagged, bites); FREEZE-A (a) on its pieces and on
+# lib2o (MUT2=1, one edge too many, bites on lib2o); ROOT-PIECE on nep90: 22 cuts = 7 fallbacks + 15 D-leaves, every piece within its bound
+# (MUT=1, bound 2, bites).
+N90="../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start"
+o=$(python3 -I root/bffd.py --one $N90)
+for k in "checks=7827 " "BFFD PASS"; do grep -q "$k" <<<"$o"; done
+MUT=1 python3 -I root/bffd.py --one $N90 | grep -q "BFFD FAIL"
+o=$(python3 -I root/shrink.py --one $N90)
+for k in "IN_DLEAVE=53 " "pieces=20 " "SHRINK PASS"; do grep -q "$k" <<<"$o"; done
+if grep -q "IN_SWITCH\|SPLIT_IN" <<<"$o"; then echo "unexpected switch / split entry on nep90"; exit 1; fi
+RS=4 MUT2=1 python3 -I root/shrink.py --list fb2o/lib2o.txt 1 | grep -q "SHRINK FAIL"
+o=$(python3 -I root/rootrun.py $N90)
+for k in "cuts=22 (fb 7, DLEAVE 15, SWITCH 0)" "ROOTRUN_V=0 "; do grep -q "$k" <<<"$o"; done
+MUT=1 python3 -I root/rootrun.py $N90 | grep -q "ROOTRUN_V=10 "
+echo "root (BF-F_D, FREEZE-A pieces, ROOT-PIECE on nep90; three controls bite): PASS"
+# packet P-N5-ROOT-box20: every «quote» verbatim at its tagged commit; the shifted-lines control fails. dleave.py on nep90 (26 leaves).
+if git cat-file -e a7c141b8 && git cat-file -e 3732ab55; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-ROOT-box20.md | grep -q "quotes=9 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-ROOT-box20.md --mut | grep -q "QUOTES FAIL"
+  echo "root (packet P-N5-ROOT-box20: 9 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (packet P-N5-ROOT-box20 quotes): NOT RUN (source commits not in this clone)"
+fi
+o=$(python3 -I root/dleave.py --one $N90)
+for k in "leaves=26 " "y_ROUTE_OWN=21" "DLEAVE PASS"; do grep -q "$k" <<<"$o"; done
+if grep -q "y_RELAY_OWN" <<<"$o"; then echo "unexpected RELAY-and-OWN leave on nep90"; exit 1; fi
+echo "root (D-leaves on nep90: 26, no RELAY-and-OWN): PASS"
+# note §8: the naive FREEZE on A u {D-direct gates} fails on nep90 (188 of 948 Bellman-Ford checks in the root's gate region).
+o=$(python3 -I root/bfgate.py --one $N90)
+for k in "BFG_fail=188 " "bfg_checks=948 " "cutsA=22 " "cutsB=18 " "gs_a_checks=684 " "gs_b_checks=943"; do grep -q "$k" <<<"$o"; done
+if grep -q "GS_A_V\|GS_B_V" <<<"$o"; then echo "GATE-SHIFT violated on nep90"; exit 1; fi
+echo "root (GATE-LAG on nep90: 188 / 948 naive failures; GATE-SHIFT (a), (b) hold): PASS"
+# note §9: FREEZE-G (a) on nep90's 22 G-intervals (2,531 checks).
+o=$(python3 -I root/freezeg.py --one $N90)
+for k in "ga_checks=2531 " "intervals=22" "FREEZEG PASS"; do grep -q "$k" <<<"$o"; done
+echo "root (FREEZE-G (a) on nep90): PASS"
+# packet P-N5-ROOT-add-box20 (addendum): 11 quotes verbatim; shifted control fails.
+if git cat-file -e a7c141b8 && git cat-file -e 3732ab55; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-ROOT-add-box20.md | grep -q "quotes=11 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-ROOT-add-box20.md --mut | grep -q "QUOTES FAIL"
+  echo "root (packet P-N5-ROOT-add-box20: 11 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (packet P-N5-ROOT-add-box20 quotes): NOT RUN (source commits not in this clone)"
+fi
+# note §10 / DEAD box 20: on nep90 the root has 63 offset resets, 32 with no charge but its own rho.
+o=$(python3 -I root/resets.py --one $N90)
+for k in "R_DELTA_U=63 " "R_DELTA_U_ONLYSELF=32 " "max_resets_run=13 "; do grep -q "$k" <<<"$o"; done
+echo "root (per-gate resets on nep90; the dead PING/FLIP charge reproduces): PASS"
+# P-N5-CHOSEN fixes file: 22 quotes verbatim at the referees' commits; shifted control fails.
+if git cat-file -e b3473114 && git cat-file -e d08011be && git cat-file -e aab45be6 && git cat-file -e bde1ea77; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-CHOSEN-fixes-box19.md | grep -q "quotes=22 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-CHOSEN-fixes-box19.md --mut | grep -q "QUOTES FAIL"
+  echo "rund (P-N5-CHOSEN fixes file: 22 quotes verbatim; shifted control fails): PASS"
+else
+  echo "rund (P-N5-CHOSEN fixes file quotes): NOT RUN (referee commits not in this clone)"
 fi

@@ -1,0 +1,74 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 1 MUT plus2 BUDGET 3000000
+COR_phases: 2332
+CORc_phases: 1274
+C_checked: 82
+C_states: 1267
+Cf_total: 188
+DEEP_C: 68
+DEEP_FBC_checks: 154
+DEEP_ODDC_checks: 839
+DEEP_UNK_C: 38
+DEEP_UNK_fallbacks: 293
+DEEP_fallbacks: 154
+DEEP_unsat: 154
+ENGXI_checks: 8882
+FBC_fallbacks: 268
+FBC_rise_needed: 254
+FBC_sat: 14
+FBC_target_not_C: 5
+FBC_unsat: 254
+Nep_total_fbphases: 1501
+QAC_checks: 7597277
+SATC_eq_checks: 75
+SATC_window_checks: 60
+UNK_C: 106
+UNK_C_fallbacks: 447
+VIOLATIONS: 298
+V_FBC: 298
+XIB_checks: 1267
+f_total: 715
+phases: 2332
+phases_with_fallback: 142
+rho_total_fbphases: 1693
+runs: 410
+states: 8882
+visited_total_fbphases: 751
+DEEP_max_D: (14, 'experiments/red/xing/instances/x31_rx32.pg#0@2 n 32')
+max_Cf_phase: (4, 'experiments/red/n5inj/instances/elimn_cex_n48.pg#0@2 n 48 f 7')
+max_Nep_over_Cf: (45.0, 'experiments/si/orlens/instances/lev_l_sc.pg#0@8 n 32 N_ep 45 |Cf| 1 visited 15')
+max_f_phase: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0@3 n 48 |Cf| 1 N_ep 1')
+max_rho_over_nCf: (1.40625, 'experiments/si/orlens/instances/lev_l_sc.pg#0@8 n 32 rho 45 |Cf| 1 f 1')
+max_sat_per_C: (1, 'experiments/n5-exhaustive/instances/b4_n5_other_0.pg#0@0 n 5')
+max_sat_window: (2, 'experiments/red/so/instances/tog6b_n32.pg#0@6 n 32')
+max_unsat_per_C: (23, 'experiments/si/xing/instances/ccl_fb2_n32.pg#0@3 n 32')
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_o11.pg#0@4: LEV_C 2 -> 3 (n 10)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_o11.pg#0@7: LEV_C 4 -> 5 (n 10)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_o11.pg#0@9: LEV_C 5 -> 6 (n 10)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@5: LEV_C 2 -> 3 (n 12)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@9: LEV_C 4 -> 5 (n 12)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@12: LEV_C 5 -> 6 (n 12)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n14.pg#0@7: LEV_C 2 -> 3 (n 14)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n14.pg#0@11: LEV_C 4 -> 5 (n 14)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n14.pg#0@12: LEV_C 5 -> 6 (n 14)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n14.pg#0@13: LEV_C 6 -> 7 (n 14)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n14.pg#0@16: LEV_C 7 -> 8 (n 14)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n16.pg#0@8: LEV_C 2 -> 3 (n 16)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n16.pg#0@14: LEV_C 4 -> 5 (n 16)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n16.pg#0@15: LEV_C 5 -> 6 (n 16)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n16.pg#0@16: LEV_C 6 -> 7 (n 16)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n16.pg#0@19: LEV_C 7 -> 8 (n 16)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n16.pg#0@22: LEV_C 8 -> 9 (n 16)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n20.pg#0@10: LEV_C 2 -> 3 (n 20)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n20.pg#0@16: LEV_C 4 -> 5 (n 20)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n20.pg#0@19: LEV_C 5 -> 6 (n 20)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n20.pg#0@21: LEV_C 6 -> 7 (n 20)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n20.pg#0@24: LEV_C 7 -> 8 (n 20)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n20.pg#0@27: LEV_C 8 -> 9 (n 20)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n24.pg#0@14: LEV_C 2 -> 3 (n 24)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n24.pg#0@24: LEV_C 4 -> 5 (n 24)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n24.pg#0@29: LEV_C 5 -> 6 (n 24)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n24.pg#0@34: LEV_C 6 -> 7 (n 24)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n24.pg#0@40: LEV_C 7 -> 8 (n 24)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n24.pg#0@42: LEV_C 8 -> 9 (n 24)
+VIOLATION FBC: experiments/n5-exhaustive/instances/b5_os_n28.pg#0@7: LEV_C 2 -> 3 (n 28)
+RESULT FAIL violations=298

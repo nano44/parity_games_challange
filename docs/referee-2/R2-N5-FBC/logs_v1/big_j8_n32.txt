@@ -1,0 +1,20 @@
+MODE start ../../../experiments/red/xing/instances/j8_n32.pg MUT - BUDGET 30000000
+COR_phases: 3
+CORc_phases: 3
+Cf_total: 1
+ENGXI_checks: 55
+Nep_total_fbphases: 17
+UNK_C: 1
+UNK_C_fallbacks: 2
+f_total: 2
+phases: 3
+phases_with_fallback: 1
+rho_total_fbphases: 19
+runs: 1
+states: 55
+visited_total_fbphases: 11
+max_Cf_phase: (1, 'j8_n32.pg@1 n 32 f 2')
+max_Nep_over_Cf: (17.0, 'j8_n32.pg@1 n 32 N_ep 17 |Cf| 1 visited 11')
+max_f_phase: (2, 'j8_n32.pg@1 n 32 |Cf| 1 N_ep 17')
+max_rho_over_nCf: (0.59375, 'j8_n32.pg@1 n 32 rho 19 |Cf| 1 f 2')
+RESULT OK violations=0

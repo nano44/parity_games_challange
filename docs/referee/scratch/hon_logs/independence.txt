@@ -1,0 +1,4 @@
+files: docs/new/P-N5-HON-box46.md sha1 07f8e767..., docs/new/P-N5-REC0-box45.md sha1 343239b5...
+HON §1-§2 proofs (up to "Relation to Lemma REC-0"): ['(F1)', '(V1)', '(V2)', 'A1', 'A2', 'B1', 'B2', 'Case A', 'Corollary HON-0', 'Corollary HON′', 'FIX 3', 'HON', 'Lemma HON', 'Lemma HON-FB', 'Lemma P', 'Lemma SAT0', 'Q-R17', 'R15 (a)', 'R15 (d)', 'R18 (d)', 'REC-0', 'S (c)', 'Theorem PH', 'WM', 'XW']
+REC-0 §1 proof: ['EP-0', 'Lemma P', 'Lemma REC-0', 'Q-R17', 'R15 (a)', 'R15 (d)', 'R17', 'R18 (d)', 'R64', 'S (c)', 'SN-PREFIX_D', 'WM']
+HON line naming REC-0/SN-PREFIX/EP-0: ## 2. SAT0, HON-FB, HON′, HON-0 (PROVED, every game) and the relation to REC-0
