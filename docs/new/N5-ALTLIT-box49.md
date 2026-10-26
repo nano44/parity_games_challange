@@ -99,8 +99,8 @@ is re-entered only through Iσ (S4a's arena A(w) = {σ(w)} ∪ Iσ(w), or S4c). 
 - CONJECTURE ELIM (N5; the HMZ skeleton, OPEN as stated). There is a polynomial L(n) such that for every game, every N5 run, every phase P and
   every state t of P with t + L(n) in P, some Even action used at t is not used at any state of P from t + L(n) on.
   Consequence (PROVED, elementary, from the conjecture): the actions used at t, t + L, t + 2L, … inside P are pairwise eliminated one per block,
-  so |P| ≤ (m + 1)·L(n) (HMZ Theorem 6.5's count, m = the number of edges), and with RESULTS R15's phase count bounds this would bound N5's
-  phases' lengths. ELIM says nothing about how many phases there are.
+  so |P| ≤ (m + 1)·L(n) (HMZ Theorem 6.5's count, m = the number of edges): a bound on every phase's length. ELIM says nothing about how many
+  phases there are (RESULTS R15 bounds that only by an exponential potential).
 - Its Odd twin, CONJECTURE ELIM_Q: the same for Odd actions at gates (σ̄). ALT_c(S) (docs/si/N5-EXIT-box22.md §9) counts exactly the σ̄ changes
   at gates; ELIM_Q with a polynomial L would bound ALT per phase by (Σ_u deg u + 1)·L. Data needed: per phase, the longest gap between an
   action's last use and its re-use (if ELIM holds, re-uses after a block of length L never occur for SOME action of each block).
