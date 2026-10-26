@@ -1,0 +1,14 @@
+MODE files ../R2-N5-FBRED/box4344.lst 5 MUT - UCAP 13
+ALT_clean_equal: 1
+ALT_clean_strict: 67
+ALT_nonclean: 1
+NEP_checks: 284
+ROUTEK_checks: 1934
+classes_skipped_UCAP: 202
+phases: 284
+runs: 50
+SATK_closeness: (-5, 'experiments/new/box43/instances/ret2_n7.pg#0@0 c 6 q 3 p 1 |U_c| 6')
+max_depth: (5, 'experiments/new/box43/instances/tj17_n19.pg#0@11 m_c 6')
+max_epochs: (17, 'experiments/new/box43/instances/dch16_n44.pg#0')
+max_m_c: (6, 'experiments/new/box43/instances/tj17_n19.pg#0')
+RESULT OK violations=0

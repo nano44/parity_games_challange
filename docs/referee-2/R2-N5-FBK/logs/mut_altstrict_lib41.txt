@@ -1,0 +1,48 @@
+MODE files ../../../experiments/new/box41/lib41.txt 1 MUT altstrict UCAP 13
+ALT_clean_equal: 75
+ALT_clean_strict: 1910
+ALT_cycnode: 1
+ALT_nonclean: 65
+FBKW_checks: 1
+NEP_checks: 2335
+ROUTEK_checks: 66745
+VIOLATIONS: 75
+V_ALT: 75
+classes_skipped_UCAP: 1990
+phases: 2335
+runs: 412
+SATK_closeness: (-2, 'experiments/red/carry/instances/fall4_n116.pg#0@2 c 96 q 105 p 100 |U_c| 3')
+max_depth: (118, 'experiments/red/tcpert/instances/tcL_N12.pg#0@29 m_c 233')
+max_epochs: (50, 'experiments/si/orlens/instances/lev_l_x.pg#0')
+max_m_c: (233, 'experiments/red/tcpert/instances/tcL_N12.pg#0')
+VIOLATION ALT: experiments/n5-exhaustive/instances/n5s_maxph_0.pg#0@0: q 0 equal without tie
+VIOLATION ALT: experiments/new/box35/instances/pf_best_3623.pg#0@13: q 0 equal without tie
+VIOLATION ALT: experiments/red/kl/instances/klcount_n16.pg#0@2: q 14 equal without tie
+VIOLATION ALT: experiments/red/kl/instances/klcount_n18_base.pg#0@2: q 14 equal without tie
+VIOLATION ALT: experiments/red/kl/instances/klcount_n18_lvl.pg#0@2: q 14 equal without tie
+VIOLATION ALT: experiments/red/so/instances/post31_n48.pg#0@20: q 0 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@0: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@1: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@2: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@4: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@5: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@7: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@8: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@9: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@10: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@12: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@13: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@14: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@16: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@17: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@19: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sor5_n24.pg#0@20: q 2 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sorl_n32.pg#0@0: q 13 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sorl_n32.pg#0@1: q 13 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sorl_n32.pg#0@3: q 13 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sorl_n32.pg#0@4: q 13 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sorl_n32.pg#0@5: q 13 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sorl_n32.pg#0@7: q 13 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sorl_n32.pg#0@8: q 13 equal without tie
+VIOLATION ALT: experiments/red/so/instances/so_sorl_n32.pg#0@9: q 13 equal without tie
+RESULT FAIL violations=75
