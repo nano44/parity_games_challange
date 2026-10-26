@@ -1242,3 +1242,9 @@ Successor 27 (Opus 5.5, D14/D18, L40), session_01Eb3V637FARpmtRkvarA5Jx. Handove
 - 16:13Z (date -u): §12. qpcclimb (O-moves, long-phase starts): QP_c 13 / 14 / 10 in one class on phases 99 / 81 / 127 at n 48 (from nep90 / nep76 /
   long121); RESTRICT_H holds on them (phrestrict 0/0). QP_c is not small on long phases. R63 reading: nothing landed bounds D0 or ENT.
   Lead 16:01Z: EPC REFEREE report a52feb43 in (EPC-N1..N4); REFEREE-2 pending; do not start EPC fixes before both §Cs.
+- 16:32Z (date -u): Lead 16:24Z: scaling = short DATA step; main effort (2) count polynomial in n and k. docs/new/N5-KPOLY-box49.md: §0 QP_c 24 / 24 /
+  36 at n 64 / 64 / 80 (climbs; verify.txt); §1 R61's product = SAT-k iterated (odometer); CHOSEN RELAY-CHAIN (b) + R56 (f) already linear in k
+  given ROUTE (READING); §2 Lemma OFFSET-MONO PROVED (reset needs an ENTRY); DATA 0 resets / 0 entries (lib41, 6 long), controls bite; §3 exit
+  changes carry the count (PARCHG ≫ RISE); §4 Davenport-Schinzel view needs pairwise swaps, swaps 11-22 (not closed; DS source NOT opened);
+  §5 other fields READING only. Sources opened: R61 (c) l. 3122-3123, §5 l. 3134; R56 (a) l. 2851, (d) l. 2858; P-N5-CHOSEN l. 81 (sha1 764cfbb3).
+  Trap: pkill pattern inside the same bash -c string killed my shell (exit 144) again; launch and kill in separate calls.

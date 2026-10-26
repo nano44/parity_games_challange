@@ -34,3 +34,7 @@ transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
 - dunion.py GAME START K OUT.pg OUT.start: k disjoint copies with copied start (instances/du/nep90x2..4).
 - qpcclimb.py NMAX STEPS SEED OUTDIR --seed GAME.pg --start GAME.start: climb (game + start) with O-moves, objective (QP_c · len, len) (N5-NCONF §12).
   out/qpcclimb/ (logs, best games with .start, verify.txt = qp.py + phrestrict.py on each best).
+- reset.py STARTS SEED (--list FILE | files) [--start F]: offsets to the routing parent, RESET / ENTRY / RISE / PARCHG / CHAIN_V (N5-KPOLY-box49 §2);
+  MUT=1, MUT=2 controls. out/reset_lib41_n34_k2.txt, out/reset_long6.txt.
+- swaps.py STARTS SEED (--list FILE | files) [--start F]: pairwise order swaps of an Odd choice vertex's options per phase (N5-KPOLY §4).
+  out/swaps_long4.txt.
