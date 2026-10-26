@@ -188,3 +188,25 @@ piece. On frz3_n24 (first check) the same pattern: shift 553, noforb 5,907, fz 8
 §2 CR-REL; §3 OFFSET (a)-(c), MERGE-B, TWIN-GAP (i)-(iii) and Corollary; §4 PIECE_D (a), (b), SPLIT-RED; §5 P^c_sch, FRZ-SCH, CHARGE
 (hypothesis (ii) only); §6 Fact FZ, Lemma UNF, Corollary CHARGE-U (hypothesis (ii) only): SIGN, on every game, under the standing SPEC
 premise 1E-N3 in forms P1 and P2 (N-RUND-1), with notes N-RUND-2..7. No gap. REFEREE-2 successor 16 (Opus 5.5, D15).
+
+## §C. Comparison with REFEREE (R-N5-RUND, claude/referee 29846bca, its §C at 981307c9; successor 13), written 2026-10-26 10:32Z (date -u)
+Opened only after my report was pushed (7a02a1f2, 10:08Z) and on the Lead's word (10:17Z). Read in full: verdicts, §1-§8 and its §C.
+| item | REFEREE | REFEREE-2 | relation |
+| --- | --- | --- | --- |
+| all 14 signed items (§2-§6) | SIGNED, no gap | SIGN, no gap | same |
+| §1 quotes | R62 setting, (d), (e), (f), R55 (a), R17 (a) verbatim by script; R19 (d) NOT verbatim (RUND-N1) | same by script (N-RUND-2) | same |
+| (SG) basis for OFFSET (a) | R15 (a) (RUND-N1) | R15 (a) + R15 (d) via (VJ) under P1, as R60 lists it (N-RUND-2) | same fact; mine names the (VJ) step that carries R15 (a) to SPEC's Ξ |
+| FZ's inputs | XW / (VJ) = 1E-N3, totality of ⊴, (Cstrict), definition of D_k (RUND-N2) | P1, totality, (Cstrict), R55 (a) for the last step | same (R55 (a) is that use of D_k's definition); ACCEPT RUND-N2's wording |
+| 1E-N3 in form P2 under §2-§5 (WM-G, (F1) on H_k, switch-best) | implicit through landed R62 (d) / R18 (d) S (c) | N-RUND-1, explicit | REFEREE accepts N-RUND-1 |
+| PIECE_D (b): R17 (c) on switch-best started at B's first state | RUND-N3 (wording) | read so in my §2 ("B is a prefix of the switch-best run on G_τ from B's first state"), not flagged | ACCEPT RUND-N3 as a note |
+| TWIN-GAP (ii): the bound is the WIDTH of the low-part range, Σ_{r ≤ L*} 2^r | RUND-N4 (wording) | my §2 uses the width, not flagged | ACCEPT RUND-N4 as a note |
+| |S| in SPLIT-RED = transitions; PIECE_D (b)'s m_τ ≤ m | read so | N-RUND-3 | REFEREE accepts |
+| TWIN-GAP (ii): transitions counted by source state | read so (its probe) | N-RUND-4 | REFEREE accepts |
+| U(S) = U_L(S), U_L ⊆ U_{−1} | data remark | N-RUND-5 | REFEREE accepts |
+| thin data | CR-REL hypothesis 3-5 times; P^c_sch exhaustive only n ≤ 7 | N-RUND-6 (TWIN-GAP (ii), PIECE_D (b) slack; 12 CR-REL freezes) | same in substance |
+| §4 remarks | checked | checked (N-RUND-7) | same |
+| side finding: CONJECTURE UF-ONCE FALSE (§7, not signed) | reproduced so_th_n32 on its engine (states 1..22, three unforbid-switches of vertex 24) | found (so_th_n32, phase2_pk48) | confirmed independently on two engines |
+| data | 0 failures; long runs with every suffix, lib41, 6,000 random; MUT=1/2 fail | 0 violations; instances, climbs, lib41, 503 𝒞^1O, random k 2-4; 6 mutations fail | same; its coverage note (runs cut at λ_W changes only in mine) is right |
+- No disagreement. Joint gap map for the signed items: EMPTY. Notes to the lane (union): RUND-N1 = N-RUND-2, RUND-N2, RUND-N3, RUND-N4,
+  N-RUND-1, N-RUND-3..7. Outside the signed items: UF-ONCE is false on two engines; §7's route to |U(S)| ≤ n_E needs another argument.
+- My verdicts are unchanged. REFEREE-2 successor 16 (Opus 5.5, D15).
