@@ -1,9 +1,10 @@
-# Draft RESULTS R57 (Lead, 2026-10-26 04:44Z by date -u; both §Cs filled; fixes file FIXES-PENDING) — to CHECKER C66
+# Draft RESULTS R57 (Lead, 2026-10-26 04:44Z by date -u; both §Cs filled; fixes file filled 04:50Z) — to CHECKER C66
 
 ### R57 [refereed-only] N5's output at its stop is correct on EVERY parity game (Lemma OUT-G), each iteration costs polynomially many bit operations on every game (Lemma BIT-G), and N5 solves one-Even-choice games in polynomial time from any start pair: at most (n(n − 1) + d_e)(T*(n, m, Δ, d_e) + 1) = O(m·Δ·d_e·n¹³) ⊆ O(n¹⁷) iterations (Theorem 1E-POLY; Corollary 1E-TIME) (2026-10-26) — the correctness half of gauntlet step 4 for N5 on every game (OUT-G, BIT-G), and a SUBCLASS time result (𝒞^1E, polynomial by other means; TARGET.md §4 first bullet): not a TARGET.md §2 claim, not M4; G-N5-TIME stays open for general games, CHECKER PASS (docs/checker/C66.md, checker PENDING)
 - Object (packet P-N5-1E, added at l-si adb721b5, pinned trunk 7fef9699, unchanged during review): docs/si/P-N5-1E-box16.md, sha1
   e613db131d3871c038f53fcb4e009c33f47ca20e (L-SI successor 11, Opus 5.5). The referees' notes are collected by the lane in
-  docs/si/P-N5-1E-fixes-box16.md (FIXES-PENDING); repairs only.
+  docs/si/P-N5-1E-fixes-box16.md (l-si f5d62bba, sha1 8f3615bcfcb7e8810a2847207ad3986febec83dd, L-SI successor 11: 1E-N1,
+  1E-N2 = N-1E-2, 1E-N3 = N-1E-1, N-1E-4, N-1E-3 closed, 1E-N4 data, N-1E-5 / §6 reading); on trunk; repairs only.
   Setting: N5 = SPEC S1-S5 of docs/new/N5-ssi-global.md (with Q1-Q4 and FIX 1-4); any parity game G (TARGET.md §1: V finite, every vertex
   has a successor); n := |V|, m := #edges, Δ := the maximum out-degree. 𝒞^1E := the games in which exactly one Even vertex e has
   out-degree > 1 (any number of Odd choice vertices); d_e := deg(e). Ξσ: Even's honest valuation of σ against S1's optimal Odd
