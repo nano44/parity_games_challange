@@ -10,7 +10,9 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - Tools: R2-N5-STAU/stau_check.py (on succ. 14's epr_check.step, SELF vs succ. 13's Runner), run_all.sh, cmp_lcomp.py; audit/ (closure.py,
   edges.py, files.py, audit_grep.py, run_audit.sh regenerates from the pin; pin/ gitignored).
 - §C STAU (this push): STAU-1 accepted as a GAP (sentence 2 false at Iσ = ∅, missed by me; witness is0_c1o264 reproduced); closed by REFEREE's
-  repair text. Disagree on detail: box24 (R18 (c) flat-case analysis) IS on the chain. Queue empty after this.
+  repair text. Disagree on detail: box24 (R18 (c) flat-case analysis) IS on the chain (fbbe66a4).
+- R2-N5-REC0 (P-N5-REC0 343239b5 @ 64506ecf): REC-0 + Corollary SIGN, no gap; Q-R17 YES (+ (V1), (V2), u cycle node at k); N-REC0-1, -2.
+  Tool R2-N5-REC0/rec0_check.py (exact levels by simple-path enumeration, n <= 11). NEXT: §C REC0 after REFEREE 13's report.
 
 ## HANDOVER (successor 14, session_01Mx2amUjD2RPaFRD5Re2ZHs, Opus 5.5 under D15; written 2026-10-26 07:1xZ by date -u; context ~630k)
 Branch claude/referee-2, merged with trunk (--no-ff) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push
