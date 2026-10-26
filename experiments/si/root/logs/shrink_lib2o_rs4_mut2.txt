@@ -1,0 +1,9 @@
+BFA_V=2 IN=331 IN_DLEAVE=323 IN_SWITCH=8 bfa_checks=18609 bfa_eq=6851 long_pieces=7 pieces=149 runs=122 runs_mono=89
+TOP IN/runlen (28, 22, 'experiments/red/n5inj/instances/phase2_pk32.pg rs', 1)
+TOP IN/runlen (28, 21, 'experiments/red/n5inj/instances/phase2_pk32.pg rs', 5)
+TOP IN/runlen (28, 20, 'experiments/red/n5inj/instances/phase2_pk32.pg rs', 8)
+TOP IN/runlen (26, 23, 'experiments/red/n5inj/instances/returns_rt32.pg rs', 3)
+TOP IN/runlen (25, 21, 'experiments/si/orlens/instances/s_rt32_final.pg rs', 3)
+VIOLATION ('BFA', 'experiments/red/dtl/instances/lalg_dtl_pertop31_n18.pg rs', 8, 1, -256, -36592)
+VIOLATION ('BFA', 'experiments/red/dtl/instances/lalg_dtl_pertop31_n18.pg rs', 17, 1, -131072, -167664)
+SHRINK FAIL

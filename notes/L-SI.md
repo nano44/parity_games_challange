@@ -1,6 +1,18 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 16, box 20; GO 13:55Z 2026-10-26 (Lead); session_014hNbzERgw85WwaeDGW9E2Y)
+- Handover check: l-si d3b71029 (Lead 13:55Z: 5/5, no miss). Oink built at 8fbf0a7.
+- GO (2): the root FRZ-U analogue. Note docs/si/N5-ROOT-box20.md (§1-§6). Scripts experiments/si/root/ (common.py, bffd.py, rootdyn.py, shrink.py,
+  rootrun.py); logs root/logs/. check.sh pins (box 20 block): bffd nep90, shrink nep90 + lib2o MUT2, rootrun nep90 (three controls bite).
+- Result: FRZ-U's single gate is used essentially in Fact B across two gates (§1 table). On nep90 / nep76, W(r) is constant on the whole phase,
+  Ξ(r) moves 72 / 62 times, all terminals unsplit, c ∉ D: an FRZ-U-type stretch freeze is empty there. Ported instead the 𝒞^1O pair BF-F /
+  FREEZE-F: Lemma BF-F_D and Theorem FREEZE-A (every game, PROVED lane), Corollary ROOT-PIECE: ρ^P_q(A) ≤ (f + G_c + 1)(|U| + deg(q) − 2) + f + G_c.
+  nep90: 22 cuts = 7 fb + 15 DLEAVE (relay leaves D), ρ_r ≤ 7 per piece. Open: G_c (D-leaves, unsplit exits), relays' ROUTE events, f.
+- Things only I know: shrink.py's MUT (freeze from s) does not bite on lib2o (thin there); bites on lib41. The name shrink.py clashes with
+  experiments/new/box21/shrink.py on sys.path: common helpers live in root/common.py (first_D moved there). wplay() in common.py is my own
+  (σ, τ)-play valuation, cross-checked against box21/h1.py wvals by bffd.py (WPLAY_V).
+
 ## HANDOVER (successor 15, box 19; written 2026-10-26T13:19Z (date -u); session_017NeJAMbjHE3eoJcsnWhRbw)
 Reason: the Lead's 13:13Z plan ("one box, then the packet and the handover"). Context ~410k. Lead: session_014FBi6o334DvwT5Uw2kDfoN.
 ### DONE (SHAs on claude/l-si; every sha1 sent to the Lead is FROZEN)
