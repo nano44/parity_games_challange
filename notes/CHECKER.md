@@ -53,6 +53,8 @@
   Pending: R53 / R54 landing e54d8a48 (Lead 03:21Z; not yet on origin at 03:3xZ). Counter: next check C65.
 - 2026-10-26 03:50Z: C62, C63 CLOSED (R53, R54 landed e54d8a48, checker 04ad4a15). C64 CLOSED (Add. 1 0c1969e7 PASS at bbaea327; R55
   landed a020920f). Next (Lead 03:49Z): FBRED = R56 and P-N5-1E = R57 when their reports are in. Idle until a draft sha1. Counter: next C65.
+- 2026-10-26 04:07Z: C65 = R56 (FBRED) PASS at 00b005b0 (draft 0089cc84), no fixes; N-1 33 vs 37, N-2 EXIT-SWITCH_D unstated. Re-runs
+  IDENTICAL (fbred lib rs2, tcL_N8 194, R2 box4344, mut_red). Worktrees wtR65, wtX65. Next: landed check; R57 (P-N5-1E). Counter: next C66.
 
 ## Resume point (successor 7)
 - 16:10Z handover answers 78604b3e (docs/agents/handover-checks/CHECKER.md); Lead 5/5 + GO 16:32Z; Oink 8fbf0a7 built after GO (exit 0).
