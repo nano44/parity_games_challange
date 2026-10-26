@@ -186,3 +186,38 @@ trace; seeds are inputs only). Totals from climb/*.txt:
 All statements to sign: SIGN, no gap. Notes N-KW-1 (citation, R18 (d) S (c)), N-KW-2 (σ(c_w) may be o), N-KW-3 (E-SEG (i)'s literal count
 is off by e(Q); N_cut as a union count), N-KW-4 (RUN (b)'s explicit sum at r = 1), N-KW-5 (DATA: freeze delay up to 39), N-KW-6 ((E)'s
 explicit bound). None changes a statement's truth.
+
+## §C. Comparison with REFEREE: docs/referee/R-N5-KW.md (REFEREE successor 11; report referee 56ac6538, Addendum 1 1d6cbf32; sha1 038bc8c9 on my tree at 84b57e9c)
+REFEREE-2 successor 12, written 2026-10-25 23:4xZ (date -u). Opened at the Lead's word (23:28Z), after my report (8a47fd92) was pushed. (Opus 5.5, D15)
+- C.1 Verdicts: identical in substance. Both sign W-ONCE (+′), A0 / A / B, FRZ-U, LEN, PAR, H-PATH, KIND-MONO, CASC-B, CW-INT, RUN, KW-S
+  and PHASE (conditional on f). On E-SEG REFEREE writes SIGNED WITH GAP KW-1, I wrote SIGN with N-KW-3: the same defect.
+- C.2 KW-1 vs N-KW-3: SAME finding, same repair. REFEREE: (i) "as written … unproved; the proof gives N_B(Q) ≤ e(Q) + (e(Q) + 1)(r − 2)";
+  repair N_B without kind changes, or N_cut := #transitions with a kind change or a kind-B switch, then N_cut ≤ (e + 1)(r − 1) and
+  (ii)-(iv), RUN (c) unchanged. Mine: the identical bound and the same two repairs. The label: (i) as literally stated is a statement
+  the proof does not give, so I ACCEPT REFEREE's "SIGNED WITH GAP KW-1, closed by the one-line repair" as the joint form; with the
+  fixes-file line, E-SEG is signed by both without a gap. My E-SEG (i′) checks were of the repaired form; REFEREE also checked the literal
+  (i) on 293,621 post-freeze segments (vacuous for KW-1's case, as in my data).
+- C.3 Notes:
+  - KW-N1 (PHASE W_ch: c_w = o vs c_w ≠ o is not fixed on a ¬H2 interval; cite R24 (e) WC for every ¬H2 interval): ACCEPTED. I reached
+    the same reading in §8 ("WC … covers c_w = o too") but did not flag the packet's sentence; it is a wording line.
+  - KW-N2 (LEN: the length range is the whole length to the cycle node, in [1, r − 1]): ACCEPTED (wording; my §4 used the same range).
+  - KW-N3 = my N-KW-4 (RUN (b) at r = 1). Same.
+  - KW-N4 = my N-KW-6 ((E) explicit). REFEREE's (r − 1) + (Δr + 1)(r − 1)² uses E-SEG (iii) with Σ_Q (e(Q) + 1) bounded via (v) per
+    segment count; mine, (r − 1) + r²(Δr + 1), is the cruder Σ_Q (e + 1) ≤ r². Both valid; REFEREE's is sharper. Take REFEREE's.
+  - KW-N5 = my N-KW-5 (freeze delay). REFEREE explains the packet's §10 line: it is the max over runs that REACH k0 + r − 1 (lane
+    kwcheck.py l. 60-68); over all runs the delay reaches the run length (kw_n48: 40 / 40 transitions, r 48). My 39 on kw_n48 is the same
+    run measured to the last change (transition index vs. state). ACCEPTED: the lane's sentence is true for its measure; the fixes file
+    should name the measure.
+  - My N-KW-1 (citation of R18 (d) S (c)) and N-KW-2 (σ(c_w) may be o) have no REFEREE counterpart; both are wording and stand.
+- C.4 Addendum 1, REFEREE's CASC-B witness docs/referee/scratch/kw_logs/cascb_witness.pg (sha1 3bda89ce), S3 start, re-run on my tracer:
+  - spec trace (re_check.n5_spec, SPEC S1-S5): CASC-B exercised, one kind-B switch in a kind-change-free W-flat segment of a case (c) run,
+    at step 0 against the bound 1 (slack 1), 0 violations; o = 2, θ = (2, ∅, 0), w = (14, ∅, 2), ¬H2, c_w = 14 ≻ c_θ = o: REFEREE's U3
+    stretch. REPRODUCED.
+  - own trace (my S4a tie-breaks): the same game falls back already at state 0, so the run differs and has no such switch; not a
+    contradiction (S4a's optimum is not unique; the spec trace is the reference).
+  - This is the first deterministic, start-pair-free CASC-B instance in my data (my climb witnesses witness_cascb_13011/13012 need the
+    climb's evaluate()). It confirms REFEREE's point that CASC-B's content is exercised; my 10 + 2 climb switches agree.
+- Joint note map (one fixes-file line each): KW-1 = N-KW-3 (E-SEG (i): N_cut as the union count); KW-N1 (W_ch via WC on every ¬H2
+  interval); KW-N2 (LEN range); KW-N3 = N-KW-4 (RUN at r = 1); KW-N4 = N-KW-6 ((E), REFEREE's form); KW-N5 = N-KW-5 (name the freeze-delay
+  measure); N-KW-1 (citation), N-KW-2 (σ(c_w) may be o). Vacuous for both: post-freeze kind changes (KIND-MONO after f0). No disagreement
+  remains. No verdict of mine changes. (Opus 5.5, D15)
