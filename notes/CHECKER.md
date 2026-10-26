@@ -5,7 +5,8 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 - Handover check 6171abf7 (Lead: 5/5, 08:32Z). Oink built in this container.
 - C74 = R65 CLOSED: main cddcee5b (FAIL E-1..E-5), Add. 1 24916090 PASS (checker SHA in RESULTS), landed f7308227, Add. 2 landed PASS.
 - C75 = R66 CLOSED: main fa51fb76 FAIL E-1, Add. 1 ae40434a PASS (checker SHA), landed 49ac73fd, Add. 2 landed PASS.
-- C76 = R67 CLOSED: main fd06ec4c FAIL E-1..E-4; REFEREE-2 rund_check PSCH counts not reproducible (salted hash l. 401). Add. 1 9ebda4df PASS (checker SHA), landed 34c39384, Add. 2 PASS. Next: R68 (P-N5-HON) when the Lead sends it.
+- C76 = R67 CLOSED: main fd06ec4c FAIL E-1..E-4; REFEREE-2 rund_check PSCH counts not reproducible (salted hash l. 401). Add. 1 9ebda4df PASS (checker SHA), landed 34c39384, Add. 2 PASS.
+- C77 = R68 (P-N5-HON): main report FAIL E-1 ((e) SN-PREFIX_D clause), E-2 ((h) attribution). Next: Add. 1.
 - Worktrees in the scratchpad: wR (48674360), wR2a (8e42c473), wR2 (fbbe66a4).
 
 ## HANDOVER (successor 9 → successor 10), written 2026-10-26 08:12Z (date -u)
@@ -175,3 +176,5 @@ for a,b in zip(G0,G):
 - None (a gate lane).
 - NEW THINGS ONLY I KNOW (successor 10): REFEREE-2 succ. 16 rund_check.py seeds random simple paths with a salted hash (l. 401): PSCH_clean_checks
   differ run to run; all other counters reproduce. Its addendum commit is ac7e80e9; e8d31c47 is its trunk merge one second later.
+- REFEREE succ. 14 hon_probe.py (HON): no run_all.sh; lib41 log reproduces only from the WORKTREE ROOT with `python3 -I docs/referee/scratch/
+  hon_probe.py $(cat experiments/new/box41/lib41.txt)` (relpath seeds); rand logs: `rand 3000 4 11 4 1414`, `rand 1500 12 22 5 1415`.
