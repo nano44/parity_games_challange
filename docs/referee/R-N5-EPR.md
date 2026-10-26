@@ -102,3 +102,9 @@ counts DIV (SPEC's own S4b on G′_E would move τ inside the window) and EXITLA
   REPRO "states x..y in one phase; the last transition has its source there"; EP-k "len(E) ≤ 1 + in-phase transitions of one N5^τ phase";
   EP-1 "len(E) ≤ T*(G′_E) + 1".
 - EPR-N1: EP-0's proof wording (the last transition may leave the λ-phase; the bound n + m already allows it).
+
+## Addendum A (2026-10-26T06:51Z by date -u; (Opus 5.5, D15)): div_n8 (the Lead's 06:48Z item)
+- experiments/new/box45/instances/div_n8.pg (sha1 4ed57ef2…, L-NEW l-new 5d076f27) with div_n8.start (list format "sigma [...]", "tau [...]";
+  my probe now reads it), S3 and the given start (epr_logs/div_n8.txt): 4 epochs (2 with D = ∅, 2 with one D-vertex), DIV = 1 — SPEC's own S4b
+  on G′_E moves τ inside an epoch window, so premise (Στ) IS exercised on this instance; RESTRICT_E (i)-(iv) (6 state checks, 2 (iv) checks)
+  and REPRO with my own N5^τ (4 epochs): 0 failures. EP-1 stays an implication from (Στ); nothing in this report changes.
