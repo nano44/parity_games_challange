@@ -39,6 +39,8 @@
   RANDSTARTS=2 @4298dae9; R2 onecheck random 5000 4 14 1 and files (1,509) @04c2d708; n5 + check_sol2 (Oink zlk) on 4 files OK. Worktrees
   wtR60, wtX60, wt60. Next: Add. 1 (APPEND).
 - 2026-10-26 01:53Z: C60 Add. 1 PASS at d7d9d7d2 (R51 draft 175947e8). Next: landed check (Add. 2) when R51 lands.
+- 2026-10-26 02:24Z: C60 CLOSED (R51 landed 249ad7e3, checker 231c8fe6). Next (Lead 02:21Z): FX (R52), NH42 (R53), DUAL (R54) as
+  their fixes files land; DUAL: MIRROR (b) signed as implication only (check the entry's claim on 𝒞^1E). Counter: next check C61.
 
 ## Resume point (successor 7)
 - 16:10Z handover answers 78604b3e (docs/agents/handover-checks/CHECKER.md); Lead 5/5 + GO 16:32Z; Oink 8fbf0a7 built after GO (exit 0).
