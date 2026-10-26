@@ -13,3 +13,4 @@ EP_MUT=d1 python3 epr_check.py files $L41 1 > logs/mut_d1_lib41.txt 2>&1
 for w in D0 D1; do python3 epr_check.py start instances/lamend_$w.pg instances/lamend_$w.start > logs/witness_$w.txt 2>&1; done
 for S in 231 232 233 234; do python3 epr_check.py climb 1500 5 9 $S climb/div_$S > logs/climb_$S.txt 2>&1 & done; wait
 for S in 241 242 243 244; do python3 twin_search.py 3000 $S 4 9 6 instances/div_$S > logs/twin_$S.txt 2>&1 & done; wait
+python3 epr_check.py start ../../../experiments/new/box45/instances/div_n8.pg instances/div_n8_conv.start > logs/div_n8.txt 2>&1

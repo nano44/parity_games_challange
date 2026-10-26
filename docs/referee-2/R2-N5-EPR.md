@@ -105,3 +105,10 @@ TARGET.md diff: no TARGET.md object claimed.
   statement stands, its proof needs the exit case.
 - N-EPR-1: RESTRICT_E (i) rests on SPEC's standing requirement (S1 returns an optimal counterstrategy), as every N5 result.
 - DATA: RESTRICT_E (i)-(iv) and the reproduction hold everywhere; DIV = 0 everywhere; no DIV > 0 instance found (§4).
+
+## Addendum A (2026-10-26 06:5xZ by date -u): L-NEW's DIV > 0 instance (Lead 06:48Z)
+experiments/new/box45/instances/div_n8.pg (sha1 4ed57ef2c1c92ee526ccd2683ae7c28b1caf5bfa, checked) from div_n8.start (lane format, converted to
+mine: R2-N5-EPR/instances/div_n8_conv.start). On my engine: DIV_states 1 at state 0, |D_E| = 1 — SPEC's S4b on G′_E would move τ inside the
+epoch, so premise (Στ) IS exercised there; RESTRICT_E (i)-(iv) (RIV 1 check), REPRO (N5^τ keeps τ and reproduces N5 on G) and the one-phase
+clause on E's own states hold; 0 failures (logs/div_n8.txt). §4 of my report ("DIV > 0 NOT FOUND") stands for my own searches only; the
+lane's instance supersedes it. Verdicts unchanged (EP-1 is an implication; G-EPR-1 is about y′, unrelated). (Opus 5.5, D15)
