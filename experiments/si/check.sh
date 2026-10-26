@@ -207,3 +207,12 @@ o=$(python3 -I root/absmodel.py --climb 3000 5 1); grep -q "best steps 5 " <<<"$
 if grep -q "HEIGHT_V\|MONO_V" <<<"$o"; then exit 1; fi
 ABSMUT=1 python3 -I root/absmodel.py --climb 3000 5 1 | grep -q "HEIGHT_V="
 echo "root (absmodel: ABS-HEIGHT on random and climbed DAGs, sharp at n = 5; control fires): PASS"
+# box 21 §9: the cyclic-lift obstruction instance reproduces; FINAL-EACH holds on 3,000 random cyclic games (n = 5); with W-ties broken away
+# from the current choice (SMALL=1 TIEMAX=1), Lemma ABS-TIE's bound holds on random DAGs.
+python3 -I root/abscyc.py --deep | grep -q "DEEP REPRODUCED"
+o=$(python3 -I root/abscyc.py --final 3000 5 5); grep -q "trans=3296" <<<"$o"
+if grep -q "FINAL_EACH_V\|DEEP_ANY_V" <<<"$o"; then exit 1; fi
+o=$(SMALL=1 TIEMAX=1 python3 -I root/absmodel.py --rand 3000 8 3); grep -q "games=3000" <<<"$o"
+if grep -q "DSUM_V\|MONO_V" <<<"$o"; then exit 1; fi
+SMALL=1 TIEMAX=1 ABSMUT=1 python3 -I root/absmodel.py --climb 3000 5 1 | grep -q "over_height="
+echo "root (abscyc obstruction instance, FINAL-EACH; absmodel ABS-TIE with ties broken away from the current choice; control fires): PASS"

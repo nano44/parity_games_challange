@@ -3,7 +3,8 @@
 Non-terminals 0..n-1 (any successors among non-terminals and terminals n..n+nt-1), terminals with constants h <= T, weights w. A strategy
 is VALID if every play reaches a terminal (no cycle). Step: arena Al(v) = {s(v)} u {y : M(y) > M(s(v))}; among valid arena strategies take
 one whose N is pointwise maximal (if none is pointwise maximal: NOPT, the game is skipped), preferring agreement with s. Counts steps.
-Usage: abscyc.py --rand COUNT N SEED | --climb STEPS N SEED"""
+--final: FINAL-EACH (FINAL_EACH_V must be 0) and "some deepest changer is final" (DEEP_ANY_V); --deep: the obstruction instance.
+Usage: abscyc.py --rand COUNT N SEED | --climb STEPS N SEED | --final COUNT N SEED | --deep"""
 import sys, random, itertools
 from collections import Counter
 C = Counter()
@@ -55,8 +56,48 @@ def valid_start(rng, g, tries=200):
         if plays(g, s) is not None: return s
     return None
 
+def trace(g, s, cap=200):
+    out = [s]
+    while len(out) < cap:
+        s2 = step(g, out[-1])
+        if s2 is None: return None
+        if s2 == out[-1]: return out
+        out.append(s2)
+    return out
+
+def play(s, v, n):
+    p, x = [], v
+    while x < n: p.append(x); x = s[x]
+    return p
+
+# The obstruction to the naive cyclic lift (note §9): vertex 1 is a deepest changer at transition 0 (its new play holds no other changer)
+# and changes again at transition 1, because successor 2 (not viable at time 0: its play ran through 1) changed at transition 0 too.
+DEEP = ((3, [[2, 3, 4], [2, 3, 4], [0, 1, 3]], [2, -8, 0], [51, 2], [101, 29]), [2, 4, 1])
+
 def main():
-    a = sys.argv[1:]; cnt, n, seed = int(a[1]), int(a[2]), int(a[3]); rng = random.Random(seed)
+    a = sys.argv[1:]
+    if a[0] == "--deep":
+        tr = trace(*DEEP); print("DEEP trace", tr)
+        ok = tr == [[2, 4, 1], [3, 3, 0], [3, 2, 0]]
+        print("DEEP REPRODUCED" if ok else "DEEP DIFFERS"); return
+    cnt, n, seed = int(a[1]), int(a[2]), int(a[3]); rng = random.Random(seed)
+    if a[0] == "--final":                                  # FINAL-EACH: every transition with a change holds some vertex's last change
+        for _ in range(cnt):
+            g = rgame(rng, n, rng.randint(2, 3)); s = valid_start(rng, g)
+            if s is None: continue
+            tr = trace(g, s)
+            if tr is None: C["NOPT"] += 1; continue
+            last, ch = {}, {}
+            for k in range(len(tr) - 1):
+                ch[k] = [v for v in range(n) if tr[k][v] != tr[k + 1][v]]
+                for v in ch[k]: last[v] = k
+            for k in range(len(tr) - 1):
+                C["trans"] += 1
+                if not any(last[v] == k for v in ch[k]): C["FINAL_EACH_V"] += 1
+                deep = [v for v in ch[k] if not any(u in ch[k] for u in play(tr[k + 1], v, n)[1:])]
+                if not any(last[v] == k for v in deep): C["DEEP_ANY_V"] += 1
+                if not all(last[v] == k for v in deep): C["deep_not_all_final"] += 1
+        print(f"n={n}", " ".join(f"{x}={y}" for x, y in sorted(C.items()))); return
     if a[0] == "--rand":
         mx = 0
         for _ in range(cnt):
