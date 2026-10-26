@@ -1,4 +1,52 @@
-# Handover check: L-RED successor 18 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-25 19:42Z by date -u)
+# Handover check: L-RED successor 19 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-26 01:00Z by date -u)
+Every answer is measured from the repository (commands named), not recalled. Predecessor: successor 18
+(session_01D6HqejxBahRiMjurWjAtzT), handover = R74 + notebook RESUME POINT at l-red d3e8b47e.
+Successor 18's answers follow below this section.
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-red`. `git fetch origin claude/l-red` (00:58Z) moved origin/claude/l-red 0d0b67a1..d3e8b47e (stale clone);
+  `git checkout -B claude/l-red origin/claude/l-red`; `git rev-parse HEAD origin/claude/l-red` -> both
+  d3e8b47ec178b55c8462c291256bb3f2d0e736c3. Clean tree.
+- Trunk `claude/vibrant-johnson-nxvvxo` = 1c23106b. `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`
+  -> 1 ahead / 54 behind; merge-base c45b888b. The 1 ahead is d3e8b47e (R74 + RESUME POINT), not yet on trunk.
+- Trunk merged into the lane with `git merge --no-ff` (no rebase, amend or force-push) before this file's commit.
+
+## 2. Open work and the next step of each
+Nothing in flight: no lane job in this container (`ps -eo args | grep python`: none). tools/oink/build absent;
+scripts/setup_oink.sh started 00:59Z (needed before any kill is Oink-checked). Pinned instances, sha1 re-measured, all match R72-R74:
+exsw_loop_n15.pg e38329f8 (+ start 03f43926), kt6_n58.pg 41d4f7cb, cw11_n24.pg 5c6dcf2d, frzu_tight_n14.pg 46503678, kc18_n24.pg b0d34a31.
+Planned work (Lead 01:0xZ brief), in order:
+- (1) Adversary on P-N5-1O (docs/si/P-N5-1O-box15.md, trunk sha1 2cf5e672; pinned trunk 291c110d, an ancestor of trunk). Next: read the
+  frozen text; extend fbx18 / kw18 (both take --start) into an exact checker of its per-phase bounds and iteration count on 𝒞^1O; hunt
+  non-S3 start pairs (random, exhaustive at small n, climbs on iterations / phase transitions vs landed bounds R44-R48); check
+  Lemma OUT's output against Oink on every run.
+- (2) P-N5-DUAL (docs/new/P-N5-DUAL-box43.md, trunk sha1 a51f7c30). Next: check Lemma DUAL on our engine (N5 on G from (σ0, τ0) equals
+  the mirror of N5^OF on G^d from (τ0, σ0)); hunt a phase from a non-S3 start or under Odd-first ties exceeding landed per-phase bounds.
+- (3) Successor-19 resume list: R74 §2.5 construction (post-freeze kind change via a late BAND trigger of a kind-A length cascade);
+  FB-CAP |U| ≥ 3 beyond the simplest chain; beta2 cascade (≥ 3 r = −1 fallbacks in one scope run; never started).
+
+## 3. docs/GAPS.md rows I own
+- G-NEST (major; owner "L-RED (attacks + proof attempts); L-ALG successor if any"), status **open** (trunk docs/GAPS.md line 9).
+  Its DTL line is paused under D18 (Lead reading L40).
+- Attacked, not owned: G-N5-TIME (major, owner L-NEW, **open**, line 11): N5 makes polynomially many iterations; P-N5-1O and P-N5-DUAL
+  feed it. GAP-A, GAP-C (L-ALG, open, lines 6-7; DTL paused).
+
+## 4. The three owner rulings that most constrain me (verbatim), with their DECISIONS-INDEX status
+1. D18 (trunk docs/DECISIONS.md line 333), status **active** (DECISIONS-INDEX line 32):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D1 (docs/DECISIONS.md line 7), status **active** (DECISIONS-INDEX line 5):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+3. D14 (docs/DECISIONS.md lines 245-246), status **active** (DECISIONS-INDEX line 22):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap (successor 18, notebook): Lead messages queue silently. Two (20:15Z, 21:00Z) sat unread until a 21:39Z report, so work followed a
+  superseded order. Check now: ReadNotifications at every wait, before each report and before starting each planned item.
+- Also caught at this restart: stale clone (origin moved 0d0b67a1..d3e8b47e on fetch), by fetch + checkout -B + `rev-parse HEAD ==
+  origin/claude/l-red`. Related checker trap (successor 18): on an o = c_θ phase use G_U, not G_Û / G_U^o; run every new checker on one.
+
+## Successor 18 section (superseded): L-RED successor 18 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-25 19:42Z by date -u)
 Every answer is measured from the repository (commands named), not recalled. Predecessor: successor 17
 (session_01DJB52MMkzsddv3hXsMpos5), handover = R71 §7 addendum + notebook RESUME POINT at l-red e63003bf.
 Successor 17's answers follow below this section.
