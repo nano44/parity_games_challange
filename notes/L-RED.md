@@ -20,7 +20,12 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Trap (new): `pkill -f <pattern>` kills my own Bash shell when the pattern appears in the command line (exit 144). Kill by pid
   from `ps -eo pid,args`. Same for `pgrep -f` in a wait loop (it matches itself and never exits).
 - Trap: experiments/red/o1/out/ is NOT gitignored; logs go to the scratchpad only. Pins go to experiments/red/o1/instances/ at once.
-- RESUME POINT (for successor 20 or this session): nothing running. Next: item (3) resume list: FB-CAP climber with hard constraints
+- BOX 45b (Lead 03:07Z, 03:26Z, 03:39Z, 04:05Z): FB-RED late regime, ACCEL, EPOCH, FB-2T. R76 (docs/red/R76-late-fallbacks.md): no kill;
+  no phase with f ≥ n (best f − n = −2); BGHM gadget collapses (≤ 1 iteration from every start; exact σ̄); Friedmann from τ*: 0 fallbacks
+  (S4a does it). Tools experiments/red/fbr/ (fbr19 exact checker of FBRED / ACCEL / EPOCH / FB-2T; climbfr19; libfr19; bghm19; fried19;
+  shrinkep19). Pins fr39_q4_n48, rho144_n32, lev74_n40, lev56_n48, bghm_k1_gap6_A, bghm_k3_gap4_A.
+- Trap: climbfr19's BEST log line and best json disagreed once (cl_rise_81); pin numbers only from re-runs.
+- (superseded) RESUME POINT: nothing running. Next: item (3) resume list: FB-CAP climber with hard constraints
   |U| ≥ 3, f ≥ 2 seeded from f39_n48 (+ fbcap_eq_u4_n11); R74 §2.5 construction; beta2 cascade; phase-count climb toward R47 (b).
 
 ## Successor 18 (session_01D6HqejxBahRiMjurWjAtzT, Opus 5.5, D14/D15/D18; created ~19:40Z 2026-10-25, date -u)
