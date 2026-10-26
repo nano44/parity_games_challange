@@ -7,6 +7,13 @@ OFFMONO, OFFMONO-add on the Lead's word; OFFMONO-add2 and P-N5-DEPTH (L-SI 18) w
 - P-N5-GCX (5a91bebb, pin l-si 02240121), FIRST referee: R-N5-GCX.md. MIG-SPLIT, UL-RED (cond. UL_G; transition-local reading GCX-N1),
   ABS-HEIGHT, ABS-TIE SIGNED; LOC SIGNED for the basic (KEEP) rule only: gap G-GCX-1, "any deterministic rule" FALSE (scratch/loc_cex.py,
   one vertex, terminals a/b/c). Notes GCX-N1..N5. R91 / R93 kills touch no signed item.
+- ROOT §C da0c1902 (+ stamp 65f55427): identical to REFEREE-2 3febbfaf, joint map empty; N-ROOT-3 wording (clean no-tie D-leave has rho at u;
+  rootc_probe.py II_NORHO_U 0 of 1,663); RELAY-PIECE multi-value case unexercised (RLP_DCHG 0); REFEREE-2 unions re-run (3 FREEZE-G past freeze).
+- Lead 18:52Z order: OFFMONO-add2 (f2d123ef, IN PROGRESS: scratch/add2_probe.py, SI=1 runs si.py evaluate as the OBJECT), add3 (sha1 to
+  come), DEPTH (549c7fb7), RESTRICT (48c63a8e) last.
+- RESTRICT parked half-done: scratch/restrict_probe.py + restrict_logs/ (lib1140 4 parts, lib41, rand1500 s481, long3, MUT=1): 0 failures;
+  long3 numbers = packet (91/78/121, QP 5/5/3 = |Q|, XDEG 22/24/8); MUT=1 bites (REP 2 of 3 like the lane). FINDING: GP_EXT 44 phases (lib)
+  where N5^tau on G^P stays in the phase past y: "EVERY PHASE ... IS ONE N5^tau PHASE ON G^P" true only as containment. Quotes 8/8 OK.
 - Tools: scratch/gcx_probe.py (MS, MSC, UL R1/R2, R3, RD; MUT 1-4), abs_model.py (model ABS; rules basic, basicM, lowidx, anti, sizedep,
   hash), gcx_literal.py (interval-level reading), loc_cex.py. Inputs gcx_inputs/ (cxmig_k from l-red 18624c0b). Logs gcx_logs/.
 

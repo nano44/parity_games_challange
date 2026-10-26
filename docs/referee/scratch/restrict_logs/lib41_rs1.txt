@@ -1,0 +1,46 @@
+GE_EXITLAM 263
+GE_R4chk 55
+GE_REPchk 3328
+GE_REPtrans 9510
+GE_Rchk 10252
+GE_UNLESSchk 271
+GE_runs 3328
+GP_EXT 3
+GP_EXT_ex 3
+GP_EXTchk 742
+GP_R4chk 900
+GP_REPchk 742
+GP_REPtrans 9510
+GP_Rchk 10252
+GP_runs 742
+GU_EXITLAM 30
+GU_R4chk 996
+GU_REPchk 1328
+GU_REPtrans 9966
+GU_Rchk 11155
+GU_runs 1328
+MAX_NQ 35
+MAX_QP 13
+MAX_XDEG 22
+RH_R4chk 1158
+RH_REPchk 742
+RH_REPtrans 9510
+RH_Rchk 10252
+RH_runs 742
+RUNS 763
+inphase_trans 9510
+longph_ex 6
+phases 742
+phases_QP2 64
+phases_QP_lt_NQ 303
+skip_big 45
+EX ('LONGPHASE', 'experiments/n5-exhaustive/instances/b5_os_n28.pg/0', 0, 60, 'QP', 1, 'NQ', 1, 'XDEG', 1)
+EX ('LONGPHASE', 'experiments/n5-exhaustive/instances/b5_os_n32.pg/0', 0, 67, 'QP', 1, 'NQ', 1, 'XDEG', 1)
+EX ('LONGPHASE', 'experiments/n5-exhaustive/instances/b5_os_n40.pg/0', 0, 77, 'QP', 1, 'NQ', 1, 'XDEG', 1)
+EX ('LONGPHASE', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 87, 'QP', 1, 'NQ', 1, 'XDEG', 3)
+EX ('LONGPHASE', 'experiments/n5-exhaustive/instances/b6_xl_n32.pg/0', 4, 85, 'QP', 1, 'NQ', 1, 'XDEG', 3)
+EX ('LONGPHASE', 'experiments/n5-exhaustive/instances/b6_xl_n40.pg/0', 2, 89, 'QP', 1, 'NQ', 1, 'XDEG', 4)
+EX ('GP_EXT', 'experiments/red/so/instances/pft40_n40.pg/1', 6, 10)
+EX ('GP_EXT', 'experiments/si/orlens/instances/lev_l_n28.pg/0', 1, 2)
+EX ('GP_EXT', 'experiments/si/orlens/instances/thclimb_n12_s11.pg/1', 3, 4)
+done

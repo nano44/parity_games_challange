@@ -1,0 +1,53 @@
+GE_EXITLAM 63
+GE_R4chk 387
+GE_REPchk 1140
+GE_REPtrans 2565
+GE_Rchk 3068
+GE_UNLESSchk 128
+GE_runs 1140
+GP_EXT 20
+GP_EXT_ex 3
+GP_EXTchk 503
+GP_R4chk 557
+GP_REPchk 503
+GP_REPtrans 2565
+GP_Rchk 3068
+GP_runs 503
+GUJ_EXITLAM 397
+GUJ_R4chk 5154
+GUJ_REPchk 8089
+GUJ_REPtrans 13704
+GUJ_Rchk 17826
+GUJ_UNLESSchk 903
+GUJ_runs 8089
+GU_EXITLAM 124
+GU_R4chk 221
+GU_REPchk 1941
+GU_REPtrans 3843
+GU_Rchk 5535
+GU_runs 1941
+MAX_NQ 30
+MAX_QP 18
+MAX_XDEG 31
+RH_R4chk 676
+RH_REPchk 503
+RH_REPtrans 2565
+RH_Rchk 3068
+RH_runs 503
+RUNS 592
+inphase_trans 2565
+longph_ex 6
+phases 503
+phases_QP2 229
+phases_QP_lt_NQ 372
+skip_big 98
+EX ('GP_EXT', '../../../experiments/new/instances/seg10/seg_g16b.pg/0', 1, 2)
+EX ('GP_EXT', '../../../experiments/new/instances/seg10/seg_g16b.pg/0', 5, 7)
+EX ('GP_EXT', '../../../experiments/new/instances/seg10/seg_g16b_snap17.pg/0', 1, 2)
+EX ('LONGPHASE', '../../../experiments/red/n3/instances/long121_n40.pg/0', 1, 122, 'QP', 3, 'NQ', 3, 'XDEG', 8)
+EX ('LONGPHASE', '../../../experiments/red/n3/out/ph5/best_5.pg/0', 11, 103, 'QP', 4, 'NQ', 4, 'XDEG', 11)
+EX ('LONGPHASE', '../../../experiments/red/n3/out/ph6/best_6.pg/0', 1, 118, 'QP', 3, 'NQ', 3, 'XDEG', 8)
+EX ('LONGPHASE', '../../../experiments/red/n3/out/ph6/best_6.pg/2', 6, 116, 'QP', 3, 'NQ', 3, 'XDEG', 8)
+EX ('LONGPHASE', '../../../experiments/red/n3/out/ph7/best_7.pg/0', 3, 90, 'QP', 5, 'NQ', 5, 'XDEG', 10)
+EX ('LONGPHASE', '../../../experiments/red/n3/out/ph7/best_7.pg/2', 6, 85, 'QP', 5, 'NQ', 5, 'XDEG', 10)
+done
