@@ -426,7 +426,13 @@ Successor 25 (Opus 5.5, D14/D18, L40), session_01VsRSLkbPLhXCWoMbJMCW2r. Handove
    applies to every state with D ⊆ {u, u′}). State what a 𝒞^2O per-phase transition count would need (R58 gives only f = O(n³) there). DATA:
    N5-REC1 §5 (xdir.py, xclimb.py: ≤ 2 per phase, mostly at run starts; xdir2_n17 has a chain {3} → {1} → {2}).
 2. HON-FF (N5-REC1 §6, P-N5-HON §5): gaps with a fallback at a non-honest state; only 3 exist (j10_n24, j7_n32, j8_n32).
-3. The P-N5-HON fixes file when both HON reports arrive (Lead's word).
+3. The P-N5-HON fixes file when both HON reports arrive (Lead's word). BRIEF: file docs/new/P-N5-HON-fixes-box46.md, repairs only; do not
+   touch the packet (sha1 07f8e767cfca12d29c8f6f2e3f03358326abbef1). Sources: REFEREE-2 16, docs/referee-2/R2-N5-HON.md (report 1566b439, Lead
+   10:34Z: all items SIGN, implications as stated, §2 confirmed, notes N-HON-1..5; N-HON-1 = SAT0's Odd-case parenthesis, with replacement text
+   in its report); REFEREE 14 (report pending) and both §Cs. Template: P-N5-STAU-fixes-box45.md / P-N5-REC0-fixes-box45.md (verdicts, gaps with
+   the referees' repair text verbatim, notes, data). Quote verbatim with file:line from trunk and check every quote by script (normalise
+   whitespace, test substring). Also record: R65 landed (f7308227), so EP-1u / REC-1 (b)-(d) now rest on a landed (Στ) — a fixes-file remark,
+   not a statement change. Freeze, push, send the Lead the sha1 and SHA.
 - Not routed: G-N1-LB.
 
 ## Things only I know (successor 25)
