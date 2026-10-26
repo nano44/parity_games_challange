@@ -1,0 +1,26 @@
+MODE random 3000 5 14 1841 2 3 MUT - BUDGET 3000000
+ASM_N2_checks: 20320
+ASM_checks: 20320
+C_checked: 20452
+ENGXI_checks: 21722
+EPC_phases: 20320
+EVEN_checks: 296
+FBCp_checks: 295
+ISE_checks: 294
+R0_total: 1
+REM_checks: 20320
+RETFB_checks: 295
+SATFB_checks: 294
+VIS_R0: 1
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 20452
+VIS_returns: 1
+phases: 20320
+runs: 9000
+states: 21722
+max_NCONF: (3, 'random1841:488#1@1 n 11 N_ep 3')
+max_Nep: (3, 'random1841:452#1@0 n 10 NCONF 2')
+max_V_C: (2, 'random1841:452#1@0 n 10')
+max_sat_src_per_C: (1, 'random1841:1#0@0')
+RESULT OK violations=0

@@ -1,0 +1,2 @@
+nep90_n40: CYC_sum 0 max_CYC 0 max_QON 0 max_ZCH 0 phases 1 trans 91
+best_qpc_nep90_n40_s51: CYC_sum 2 max_CYC 2 max_QON 1 max_ZCH 0 phases 2 trans 101

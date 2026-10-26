@@ -1,1 +1,0 @@
-G_max=6 G_sum=104 X_max=8 X_sum=20 cint=540 cint_len_max=18 cint_migt=48 cint_pure=311 gcv=541 gcv_DLEAVE=487 gcv_SWITCH=54 mig_per_vertex_max=1 rho_max=6 runs=309 xt_DCH_PREV=1 xt_LEFT=3 xt_NONE=16 xv=29 xv_SRC_LEFT=7 xv_SRC_ND=29 xv_SRC_STAY=22

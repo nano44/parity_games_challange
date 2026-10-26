@@ -1,0 +1,9 @@
+CYC_sum 457 ZCH_CN_ONLY 80 ZCH_STRICT 50 ZCH_TIE 3 ZCH_c_moved_Even 85 ZCH_c_moved_Odd 1 max_CYC 25 max_QON 6 max_ZCH 6 phases 746 trans 6752
+  top (CYC_c ZCH |Q_c| len n name): 25 0 1 25 32 experiments/red/xing/instances/kw25_n32.pg
+  top (CYC_c ZCH |Q_c| len n name): 20 0 1 20 24 experiments/red/xing/instances/kw_n24.pg
+  top (CYC_c ZCH |Q_c| len n name): 19 3 1 19 24 experiments/new/box28/instances/oc24_s4_final.pg
+  top (CYC_c ZCH |Q_c| len n name): 17 0 1 17 32 experiments/red/xing/instances/x32_waves32.pg
+  top (CYC_c ZCH |Q_c| len n name): 16 0 1 16 24 experiments/red/xing/instances/kw_n24.pg
+  top (CYC_c ZCH |Q_c| len n name): 16 0 1 16 24 experiments/red/xing/instances/kw_n24.pg
+  top (CYC_c ZCH |Q_c| len n name): 15 0 1 15 32 experiments/red/xing/instances/obr_n32.pg
+  top (CYC_c ZCH |Q_c| len n name): 14 2 1 14 24 experiments/new/box28/instances/oc24_s4_final.pg

@@ -115,7 +115,8 @@ instances): levels capped at depth D, a check counted only when decided.
 0 failures of every check in every row (DREM, FBCP and ASM over all 70,074 phases of the first four rows). The packet's figures reproduce: long121 N_ep 37 against
 NCONF 14, nep90 90 against 48 (§6 of the packet); rho3_253_n32's non-flat, not-last saturated fallbacks (§5's DEAD item; 51 / 44 over my 32
 starts). No kind-(a) return occurs anywhere (consistent with the packet's CONJECTURE SAT-1); R⁰ is small (124 of 913 epochs at n ≤ 20).
-nep76_n40 at DEPTH 16 did not finish within its time limit and is not counted.
+- Added after the first push (a52feb43): nep76_n40 at its start (DEPTH 16) finished: 1 run, 10 phases, N_ep 76 against NCONF 40 (the packet's
+  figure), FB-RISE_C 5 decided (1 undecided), RET-FB 230 decided (3 undecided), 0 failures (scratch/epc_logs/deep16_nep76.txt).
 - Mutations (each bites): MUT=1 (RET asks LEV_C(t) + 2): 247 failures (n ≤ 20 library, S3 + 2 random, 1,413 runs) and 82 on long121
   (DEPTH 12); MUT=2 (RET read at EVERY later state, not only C-states): 251 failures, all at non-C states (the restriction is needed);
   MUT=3 (SAT-FB read as the DEAD guess "t + 1 is P's last state"): 1 failure in the library, 7 on rho3_253_n32 at its start.
@@ -128,3 +129,34 @@ nep76_n40 at DEPTH 16 did not finish within its time limit and is not counted.
   packet says it in §4's READING and §6's OPEN, not in the item itself).
 - EPC-N4 (SAT-1 and FBC-N3 / SAT-FB1). CONJECTURE SAT-1 (§6, no C-epoch after a saturated C-state) would sharpen VIS (a) from 2n(n − 1) to 0;
   SAT-FB1 bounds saturated FALLBACKS, not saturated epochs, so it does not give SAT-1.
+
+## §C. Comparison with REFEREE-2 (written 2026-10-26T17:17Z by date -u, after the Lead's word of 17:02Z; REFEREE-2's report
+docs/referee-2/R2-N5-EPC.md at origin/claude/referee-2 62b72f6e (trunk merge a5a2dfb2), read only after my report was pushed at a52feb43)
+### Verdicts
+| item | REFEREE (a52feb43, addendum 58fd9535) | REFEREE-2 (62b72f6e) | joint |
+| --- | --- | --- | --- |
+| §1 FB-RISE_C, SAT_C (restated) | SIGNED | SIGN | SIGNED |
+| §2 RET-FB, VIS, EP-C (with R⁰ ≤ Σ_S REV(S)) | SIGNED | SIGN | SIGNED |
+| §3 SAT-FB, SAT-FB1, FB-C′, consequences bullet | SIGNED | SIGN | SIGNED |
+| FB-C′ without my FBC-N3 route (the Lead's question) | YES (no R15 (b), no R38 (f) CN-LAST; shorter, fewer premises) | YES (same reasoning) | YES |
+| §4 EP-ASM | SIGNED as an assembly; second term as an IMPLICATION from (Στ) | the same | the same |
+| §5 remark | SIGNED | SIGN | SIGNED |
+| §5 DEAD item | CONFIRMED (rho3_253_n32 at L-RED's start file) | CONFIRMED (rho3_253_n32 at its own random starts 5, 7; cond_stuck_symsi3_YE) | CONFIRMED, on independent runs |
+| quotes / pins | 24 verbatim at f4562054; pins match | 22 (§7) verbatim; pins match | verbatim |
+Verdicts identical. Joint gap map: EMPTY.
+### Notes, matched
+| REFEREE | REFEREE-2 | joint |
+| --- | --- | --- |
+| EPC-N1 (FB-C′ needs LEV_C ≥ 0, unstated) | (its N-FBC-1 on P-N5-FBC; not repeated) | same note |
+| EPC-N2 (RET-FB's induction: only the Odd branch calls it) | — (checked in its §1, no note) | REFEREE's wording note; accepted by REFEREE-2 in its §C |
+| EPC-N3 (EP-ASM's statement should name its four open terms) | N-EPC-6 (data: fallback-free returns R⁰ are most returns, 729 of 1,340) | compatible; my data agree (R⁰ 124 vs kind (b) 31 at n ≤ 20; 272 vs 98 at n ≤ 34) |
+| EPC-N4 (SAT-1 would make VIS (a) 0; SAT-FB1 bounds fallbacks, not epochs) | N-EPC-5 (VIS kind (a) never occurs: 0 of 1,340; its "VIS without R⁰" control does not bite) | same finding (mine: 0 kind-(a) returns in every row) |
+| — (my §2 has the frame-free Even step without a note) | N-EPC-4 (the Even step holds in every frame H_C at once: 7,126 checks) | ACCEPTED |
+| — (my pin paragraph names both the file sha1 and f4562054, without flagging the ambiguity) | N-EPC-1 (the packet's "Pinned at trunk f4562054" is its quote base; the Lead's "9f48ded7" is the file sha1) | ACCEPTED |
+| — (my probe and §4 use D_C := {q : C(q) ≠ τ(q)} without flagging that the packet defines only D_E) | N-EPC-2 (define D_C) | ACCEPTED |
+| — | N-EPC-3 (HON-FB (iv)'s citation is not needed; SAT-FB's last step uses only Iσ = ∅ and the SPEC) | ACCEPTED (my §3 reads the step from S4a / S4b / S4c / S5 directly too) |
+### Data
+Both own engines, 0 failures. Both reproduce long121 37 / 14, nep90 90 / 48, nep76 76 / 40. Both find no kind-(a) return anywhere. Both
+nonC controls bite hard (mine: RET-FB at every later state, 251; REFEREE-2: 11,424). REFEREE-2's library shows no non-flat saturated fallback
+(0 of 43), mine shows 5 of 236 (n ≤ 20) and 11 of 178 (n ≤ 34): different instance lists (mine includes experiments/new/esc and docs/referee/
+instances such as cond_stuck_symsi3_YE, where REFEREE-2 also finds them). No disagreement; nothing open between the referees on EPC.

@@ -1,0 +1,7 @@
+nep90_n40: CYC_sum 0 max_CYC 0 max_QON 0 max_ZCH 0 phases 1 trans 91
+nep76_n40: CYC_sum 0 max_CYC 0 max_QON 0 max_ZCH 0 phases 1 trans 78
+long121_n40: CYC_sum 0 max_CYC 0 max_QON 0 max_ZCH 0 phases 1 trans 121
+best_qpc_nep90_n40_s51: CYC_sum 2 max_CYC 2 max_QON 1 max_ZCH 0 phases 2 trans 101
+best_qpc_nep76_n40_s52: CYC_sum 0 max_CYC 0 max_QON 0 max_ZCH 0 phases 1 trans 81
+best_qpc_long121_n40_s53: CYC_sum 0 max_CYC 0 max_QON 0 max_ZCH 0 phases 1 trans 127
+snap_n80_s62: CYC_sum 0 max_CYC 0 max_QON 0 max_ZCH 0 phases 1 trans 100

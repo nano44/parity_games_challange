@@ -1,0 +1,14 @@
+START fit (24, 90) n 48
+BEST step 87 fit (27, 78) t 32s
+BEST step 100 fit (27, 87) t 35s
+BEST step 147 fit (28, 83) t 52s
+BEST step 349 fit (30, 83) t 124s
+BEST step 350 fit (31, 81) t 124s
+BEST step 427 fit (33, 81) t 152s
+BEST step 438 fit (34, 82) t 154s
+BEST step 478 fit (34, 84) t 169s
+BEST step 828 fit (35, 84) t 312s
+BEST step 890 fit (35, 86) t 349s
+BEST step 969 fit (37, 86) t 388s
+BEST step 1098 fit (41, 86) t 457s
+END steps 1143 best (41, 86) n 48 -> results/b14/scale/gdl_seed90_n48_r1.pg

@@ -1,0 +1,9 @@
+START fit (0, 1) n 40
+BEST step 2498 fit (0, 2) t 26s
+BEST step 2983 fit (1, 2) t 31s
+BEST step 5029 fit (1, 3) t 58s
+BEST step 8945 fit (2, 2) t 116s
+BEST step 19514 fit (2, 3) t 279s
+BEST step 19786 fit (2, 4) t 282s
+BEST step 21731 fit (3, 3) t 310s
+END steps 26947 best (3, 3) n 40 -> results/b14/scale/ret02_k5_n40_r1.pg

@@ -1,0 +1,19 @@
+   experiments/new/box31/instances/u3ev_n16.pg ODDC 0 2 7 4 s2<s1 s1:> M_t+1(s1)=8192 ESW
+   experiments/red/kl/instances/klcount_n16.pg TIE 0 10 odd 0 onZt 1 13 y1:> y2_t-vs-y1_t:= y2:= ESW y2>y1
+   experiments/red/kl/instances/klcount_n18_base.pg TIE 0 10 odd 0 onZt 1 13 y1:> y2_t-vs-y1_t:= y2:= ESW y2>y1
+   experiments/red/kl/instances/klcount_n18_lvl.pg TIE 0 10 odd 0 onZt 1 13 y1:> y2_t-vs-y1_t:= y2:= ESW y2>y1
+ODDC 1
+ODDC|s2<s1|s1:>|ESW 1
+TIE 3
+TIE|odd|onZt|y1:>|y2_t-vs-y1_t:=|y2:=|ESW|y2>y1 3
+ZCH 133
+ev_ODDC 1
+ev_TIE 3
+max_ODDC 1
+max_TIE 1
+phases 746
+trans 6752
+  top (TIE+ODDC TIE ODDC ZCH len n name): 1 1 0 1 1 18 experiments/red/kl/instances/klcount_n18_lvl.pg
+  top (TIE+ODDC TIE ODDC ZCH len n name): 1 1 0 1 1 18 experiments/red/kl/instances/klcount_n18_base.pg
+  top (TIE+ODDC TIE ODDC ZCH len n name): 1 1 0 1 1 16 experiments/red/kl/instances/klcount_n16.pg
+  top (TIE+ODDC TIE ODDC ZCH len n name): 1 0 1 1 2 16 experiments/new/box31/instances/u3ev_n16.pg

@@ -1,0 +1,42 @@
+OK   cd4795f8:docs/referee/R-N5-EPC.md:33-33 | SIGNED as an assembly; its second term SIGNED AS AN IMPLICATION from (Στ)
+OK   cd4795f8:docs/referee/R-N5-EPC.md:35-35 c4975512:docs/referee-2/R2-N5-EPC.md:143-143 c4975512:docs/referee-2/R2-N5-EPC.md:143-143 | CONFIRMED DEAD
+OK   cd4795f8:docs/referee/R-N5-EPC.md:31-31 | EPC's own proof stands WITHOUT my FBC-N3 route
+OK   cd4795f8:docs/referee/R-N5-EPC.md:37-37 | No gap. Notes EPC-N1..N4.
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:32-32 | No gap. Notes N-EPC-1..6 (§3).
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:132-132 | SIGN, on every game, under the standing SPEC premise 1E-N3 (P1) and Q-A
+OK   cd4795f8:docs/referee/R-N5-EPC.md:146-146 | Verdicts identical. Joint gap map: EMPTY.
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:154-154 | No disagreement. Joint gap map: EMPTY.
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:154-154 | Notes to the lane (union): EPC-N1..N4, N-EPC-1..6.
+OK   81ab0b72:docs/new/P-N5-EPC-box48.md:110-110 | consecutive unsaturated ones have strictly rising LEV_C in {0, …, n − 2}: at most n − 1.
+OK   cd4795f8:docs/referee/R-N5-EPC.md:124-125 | "values in {0, …, n − 2}" needs LEV_C ≥ 0 at every state, true (0-edge paths sit at cycle 
+OK   81ab0b72:docs/new/P-N5-EPC-box48.md:87-87 | from a value in {0, …, n − 2}
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:23-23 | LEV_C monotone and ≥ 0
+OK   cd4795f8:docs/referee/R-N5-EPC.md:126-127 | The induction is on |r| at the fixed C-state s, and only the Odd branch calls it; one sent
+OK   81ab0b72:docs/new/P-N5-EPC-box48.md:70-70 | by induction on |r|
+OK   cd4795f8:docs/referee/R-N5-EPC.md:128-128 | EP-ASM is a reduction: say in its statement line that X_dir, X_big, NCONF_{≥2}, R⁰_{≥2} ar
+OK   81ab0b72:docs/new/P-N5-EPC-box48.md:127-128 | the second term as an implication from (Στ)
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:105-106 | Of the 1,340 returns classified exactly, 611 are kind (b) (a fallback in between, so LEV_C
+OK   81ab0b72:docs/new/P-N5-EPC-box48.md:8-8 | Pinned at trunk f4562054 (merged into l-new before the freeze); every quote is checked the
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:90-91 | The packet's header says "Pinned at trunk f4562054", which is the revision of its quotes; 
+OK   81ab0b72:docs/new/P-N5-EPC-box48.md:42-42 | D_E := {q ∈ Q : σ̄_E(q) ≠ τ(q)}
+OK   81ab0b72:docs/new/P-N5-EPC-box48.md:43-43 | NCONF_{≥2}(P) := those with |D_C| ≥ 2
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:93-94 | D_C := {q ∈ Q : C(q) ≠ τ(q)} (the same set, since D_E is a function of the epoch's configu
+OK   81ab0b72:docs/new/P-N5-EPC-box48.md:104-104 | exactly as in HON-FB (iv)'s proof (P-N5-HON, RESULTS R68 (c))
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:95-97 | The step itself uses only Iσ = ∅ and the SPEC, so citing S4a / S4b / S4c / S5 directly (as
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:98-98 | The relaxation of the Even vertices at a fallback holds in every frame H_C at once
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:100-100 | passed 7,126 times
+OK   81ab0b72:docs/new/P-N5-EPC-box48.md:77-78 | Its relaxation of the Even vertices is frame-free, so it acts in every H_C at once
+OK   cd4795f8:docs/referee/R-N5-EPC.md:131-131 | SAT-FB1 bounds saturated FALLBACKS, not saturated epochs, so it does not give SAT-1.
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:101-102 | VIS's kind (a) (returns after saturation) NEVER occurs in my data (0 of 1,340 returns), so
+OK   cd4795f8:docs/referee/R-N5-EPC.md:159-159 | Both find no kind-(a) return anywhere.
+OK   cd4795f8:docs/referee/R-N5-EPC.md:109-109 | 236 (5 / 3)
+OK   cd4795f8:docs/referee/R-N5-EPC.md:110-110 | 178 (11 / 7)
+OK   cd4795f8:docs/referee/R-N5-EPC.md:112-112 | 51 (51 / 44)
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:112-112 | 25 (25 / 23)
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:113-113 | 43 (0 / 0)
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:114-114 | 51 (0 / 0)
+OK   cd4795f8:docs/referee/R-N5-EPC.md:160-162 | REFEREE-2's library shows no non-flat saturated fallback (0 of 43), mine shows 5 of 236 (n
+OK   81ab0b72:docs/new/P-N5-EPC-box48.md:140-140 | 12 of 68 saturated fallbacks non-flat, 8 not last
+OK   c4975512:docs/referee-2/R2-N5-EPC.md:120-120 | SAT-FB and SAT-FB1 (713 saturated fallbacks)
+OK   cd4795f8:docs/referee/R-N5-EPC.md:159-159 | Both reproduce long121 37 / 14, nep90 90 / 48, nep76 76 / 40.
+quotes 41 missing 0

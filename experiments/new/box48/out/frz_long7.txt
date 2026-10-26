@@ -1,0 +1,49 @@
+nep90_n40: FRZ_A_V 0 FRZ_D_V 0 KCH 958 LASTM_minus_w -26 MCH 896 max_KCH 12 max_KCH_Q 12 max_MCH 10 max_MCH_Q 10 phases 1 runs 8
+  top (MCH KCH runlen w inQ n name): 10 12 14 39 True 40 /home/user/parity_games_challange/experiments/red/rec0/instances/nep90_n40.pg
+  top (MCH KCH runlen w inQ n name): 10 12 14 39 True 40 /home/user/parity_games_challange/experiments/red/rec0/instances/nep90_n40.pg
+  top (MCH KCH runlen w inQ n name): 10 12 14 39 False 40 /home/user/parity_games_challange/experiments/red/rec0/instances/nep90_n40.pg
+  top (MCH KCH runlen w inQ n name): 10 12 14 39 False 40 /home/user/parity_games_challange/experiments/red/rec0/instances/nep90_n40.pg
+  top (MCH KCH runlen w inQ n name): 9 11 14 39 False 40 /home/user/parity_games_challange/experiments/red/rec0/instances/nep90_n40.pg
+  top (MCH KCH runlen w inQ n name): 9 10 13 39 True 40 /home/user/parity_games_challange/experiments/red/rec0/instances/nep90_n40.pg
+nep76_n40: FRZ_A_V 0 FRZ_D_V 0 KCH 670 LASTM_minus_w -25 MCH 594 max_KCH 12 max_KCH_Q 12 max_MCH 11 max_MCH_Q 11 phases 1 runs 7
+  top (MCH KCH runlen w inQ n name): 11 11 12 39 True 40 /home/user/parity_games_challange/experiments/n5-epoch/instances/nep76_n40.pg
+  top (MCH KCH runlen w inQ n name): 10 12 15 39 True 40 /home/user/parity_games_challange/experiments/n5-epoch/instances/nep76_n40.pg
+  top (MCH KCH runlen w inQ n name): 10 12 15 39 True 40 /home/user/parity_games_challange/experiments/n5-epoch/instances/nep76_n40.pg
+  top (MCH KCH runlen w inQ n name): 10 11 12 39 True 40 /home/user/parity_games_challange/experiments/n5-epoch/instances/nep76_n40.pg
+  top (MCH KCH runlen w inQ n name): 9 10 12 39 False 40 /home/user/parity_games_challange/experiments/n5-epoch/instances/nep76_n40.pg
+  top (MCH KCH runlen w inQ n name): 9 9 10 39 True 40 /home/user/parity_games_challange/experiments/n5-epoch/instances/nep76_n40.pg
+long121_n40: FRZ_A_V 0 FRZ_D_V 0 KCH 677 LASTM_minus_w -23 MCH 676 max_KCH 7 max_KCH_Q 7 max_MCH 7 max_MCH_Q 7 phases 1 runs 9
+  top (MCH KCH runlen w inQ n name): 7 7 13 39 True 40 /home/user/parity_games_challange/experiments/red/n3/instances/long121_n40.pg
+  top (MCH KCH runlen w inQ n name): 6 6 17 39 True 40 /home/user/parity_games_challange/experiments/red/n3/instances/long121_n40.pg
+  top (MCH KCH runlen w inQ n name): 6 6 13 39 True 40 /home/user/parity_games_challange/experiments/red/n3/instances/long121_n40.pg
+  top (MCH KCH runlen w inQ n name): 6 6 13 39 False 40 /home/user/parity_games_challange/experiments/red/n3/instances/long121_n40.pg
+  top (MCH KCH runlen w inQ n name): 6 6 11 39 True 40 /home/user/parity_games_challange/experiments/red/n3/instances/long121_n40.pg
+  top (MCH KCH runlen w inQ n name): 6 6 11 39 True 40 /home/user/parity_games_challange/experiments/red/n3/instances/long121_n40.pg
+best_qpc_nep90_n40_s51: FRZ_A_V 0 FRZ_D_V 0 KCH 1144 LASTM_minus_w -33 MCH 1086 max_KCH 10 max_KCH_Q 10 max_MCH 10 max_MCH_Q 10 phases 2 runs 10
+  top (MCH KCH runlen w inQ n name): 10 10 15 47 True 48 out/qpcclimb/best_qpc_nep90_n40_s51.pg
+  top (MCH KCH runlen w inQ n name): 10 10 15 47 False 48 out/qpcclimb/best_qpc_nep90_n40_s51.pg
+  top (MCH KCH runlen w inQ n name): 10 10 15 47 False 48 out/qpcclimb/best_qpc_nep90_n40_s51.pg
+  top (MCH KCH runlen w inQ n name): 9 10 12 47 True 48 out/qpcclimb/best_qpc_nep90_n40_s51.pg
+  top (MCH KCH runlen w inQ n name): 9 10 12 47 True 48 out/qpcclimb/best_qpc_nep90_n40_s51.pg
+  top (MCH KCH runlen w inQ n name): 9 10 12 47 True 48 out/qpcclimb/best_qpc_nep90_n40_s51.pg
+best_qpc_nep76_n40_s52: FRZ_A_V 0 FRZ_D_V 0 KCH 700 LASTM_minus_w -33 MCH 679 max_KCH 9 max_KCH_Q 9 max_MCH 9 max_MCH_Q 9 phases 1 runs 7
+  top (MCH KCH runlen w inQ n name): 9 9 11 47 True 48 out/qpcclimb/best_qpc_nep76_n40_s52.pg
+  top (MCH KCH runlen w inQ n name): 9 9 11 47 True 48 out/qpcclimb/best_qpc_nep76_n40_s52.pg
+  top (MCH KCH runlen w inQ n name): 9 9 11 47 True 48 out/qpcclimb/best_qpc_nep76_n40_s52.pg
+  top (MCH KCH runlen w inQ n name): 8 8 11 47 False 48 out/qpcclimb/best_qpc_nep76_n40_s52.pg
+  top (MCH KCH runlen w inQ n name): 7 7 11 47 True 48 out/qpcclimb/best_qpc_nep76_n40_s52.pg
+  top (MCH KCH runlen w inQ n name): 7 7 11 47 True 48 out/qpcclimb/best_qpc_nep76_n40_s52.pg
+best_qpc_long121_n40_s53: FRZ_A_V 0 FRZ_D_V 0 KCH 849 LASTM_minus_w -32 MCH 849 max_KCH 6 max_KCH_Q 6 max_MCH 6 max_MCH_Q 6 phases 1 runs 11
+  top (MCH KCH runlen w inQ n name): 6 6 16 47 True 48 out/qpcclimb/best_qpc_long121_n40_s53.pg
+  top (MCH KCH runlen w inQ n name): 6 6 16 47 True 48 out/qpcclimb/best_qpc_long121_n40_s53.pg
+  top (MCH KCH runlen w inQ n name): 6 6 12 47 True 48 out/qpcclimb/best_qpc_long121_n40_s53.pg
+  top (MCH KCH runlen w inQ n name): 6 6 12 47 True 48 out/qpcclimb/best_qpc_long121_n40_s53.pg
+  top (MCH KCH runlen w inQ n name): 6 6 12 47 True 48 out/qpcclimb/best_qpc_long121_n40_s53.pg
+  top (MCH KCH runlen w inQ n name): 6 6 12 47 True 48 out/qpcclimb/best_qpc_long121_n40_s53.pg
+snap_n80_s62: FRZ_A_V 0 FRZ_D_V 0 KCH 1940 LASTM_minus_w -65 MCH 1858 max_KCH 12 max_KCH_Q 12 max_MCH 11 max_MCH_Q 11 phases 1 runs 8
+  top (MCH KCH runlen w inQ n name): 11 11 14 79 True 80 out/qpcclimb/scale/snap_n80_s62.pg
+  top (MCH KCH runlen w inQ n name): 11 11 14 79 True 80 out/qpcclimb/scale/snap_n80_s62.pg
+  top (MCH KCH runlen w inQ n name): 11 11 14 79 True 80 out/qpcclimb/scale/snap_n80_s62.pg
+  top (MCH KCH runlen w inQ n name): 11 11 14 79 True 80 out/qpcclimb/scale/snap_n80_s62.pg
+  top (MCH KCH runlen w inQ n name): 11 11 14 79 True 80 out/qpcclimb/scale/snap_n80_s62.pg
+  top (MCH KCH runlen w inQ n name): 11 11 14 79 True 80 out/qpcclimb/scale/snap_n80_s62.pg

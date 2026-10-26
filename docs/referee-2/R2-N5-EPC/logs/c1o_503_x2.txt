@@ -1,0 +1,30 @@
+MODE files ../R2-N5-KW/files.lst 2 MUT - BUDGET 3000000
+ASM_N2_checks: 3990
+ASM_checks: 4161
+C_checked: 955
+C_deep: 407
+C_nothing_to_check: 4745
+ENGXI_checks: 17831
+EPC_phases: 3990
+EVEN_checks: 3507
+FBCp_checks: 338
+ISE_checks: 69
+R0_total: 234
+REM_checks: 4161
+RETFB_checks: 12974
+RETFB_checks_other_config: 5074
+SATFB_checks: 51
+UNK_C: 534
+VIS_R0: 353
+VIS_a: 0
+VIS_b: 334
+VIS_checks: 955
+VIS_returns: 687
+phases: 4161
+runs: 1006
+states: 17831
+max_NCONF: (23, 'experiments/red/so/instances/pft35_n48.pg#0@2 n 48 N_ep 39')
+max_Nep: (53, 'experiments/red/so/instances/rise_thin51_n40.pg#0@9 n 40 NCONF 15')
+max_V_C: (10, 'experiments/red/xing/instances/j4_n40.pg#0@3 n 40')
+max_sat_src_per_C: (1, 'docs/referee-2/R2-N5-FB/climb/nofe_best.pg#0@1')
+RESULT OK violations=0

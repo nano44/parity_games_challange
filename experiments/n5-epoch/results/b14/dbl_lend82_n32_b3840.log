@@ -1,0 +1,19 @@
+START fit (82, 3) n 32
+BEST step 6238 fit (83, 3) t 789s
+BEST step 9202 fit (84, 3) t 1163s
+BEST step 9864 fit (84, 4) t 1249s
+BEST step 10549 fit (85, 3) t 1337s
+BEST step 14771 fit (86, 3) t 1893s
+BEST step 14988 fit (87, 3) t 1920s
+BEST step 16766 fit (88, 3) t 2155s
+BEST step 18692 fit (89, 3) t 2420s
+BEST step 20043 fit (98, 3) t 2602s
+BEST step 20153 fit (99, 3) t 2619s
+BEST step 20383 fit (100, 3) t 2656s
+BEST step 21903 fit (101, 3) t 2883s
+BEST step 22846 fit (103, 3) t 3024s
+BEST step 22961 fit (104, 3) t 3044s
+BEST step 23079 fit (105, 3) t 3060s
+BEST step 23202 fit (106, 3) t 3079s
+BEST step 26635 fit (107, 3) t 3639s
+END steps 27852 best (107, 3) n 32 -> results/b14/dbl_lend82_n32_b3840.pg

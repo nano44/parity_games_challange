@@ -1,0 +1,7 @@
+START fit (1, 0) n 64
+BEST step 1031 fit (2, 0) t 27s
+BEST step 1380 fit (3, 0) t 35s
+BEST step 2493 fit (3, 1) t 63s
+BEST step 2668 fit (5, 0) t 69s
+BEST step 5544 fit (6, 0) t 174s
+END steps 18789 best (6, 0) n 64 -> results/b14/scale/nconf2_k5_n64_r2.pg
