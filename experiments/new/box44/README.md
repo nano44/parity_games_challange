@@ -29,3 +29,6 @@ DATA, not proof. Uses experiments/new/box43 (multi, n5x via box21, f1d.hD). Run 
   repeat (max 36), max N_ep 50 (n 32); 0 violations; freeze part vacuous (no epoch with n − 1 fallbacks).
 - altcheck.py (03:46Z-03:47Z): Lemma ALT (N5-FBF-box44.md §10): lib41 2,051 in-phase σ̄(q) changes (1,910 strict, 75 ties, 65 non-clean,
   1 at a cycle node), 0 violations; instances + lap_n6 36; --rand 2000 5 20 91: 33.
+- rstick.py (04:28Z-04:29Z): R-STICK_D, SN-PREFIX_D, crossings split X_D = post-prefix + X_SN^D (N5-FBF-box44.md §12). lib41 14,253
+  R-STICK_D checks, 0 violations. instances/qc_toggle.pg (sha1 27850ecc…, n 5): an X_SN^D crossing whose class's cycle node is an Odd
+  choice vertex (TOGGLE's excluded case); N5 output: Oink verify OK.

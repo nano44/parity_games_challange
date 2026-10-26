@@ -1,0 +1,14 @@
+MODE files ../R2-N5-FBRED/box4344.lst 5 MUT - UCAP 13
+PFZQ_checks: 1166
+ROUTE_checks: 58
+YB_checks: 54
+classes_2term: 79
+classes_skipped_UCAP: 196
+phases: 269
+phases_2T: 106
+runs: 50
+SAT_closeness: (-2, 'experiments/new/box43/instances/retf_n6.pg#0@0 c 4 q 0 |U_c| 3')
+SAT_closeness_all_classes: (-2, 'experiments/new/box43/instances/retf_n6.pg#0@0 c 4 q 0 |U_c| 3')
+max_f: (17, 'experiments/new/box44/instances/fb17_n32.pg#0')
+max_f_in_phase_with_2term_class: (17, 'experiments/new/box44/instances/fb17_n32.pg#0')
+RESULT OK violations=0
