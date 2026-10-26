@@ -18,6 +18,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   constant cycles + (H4) acyclic end-state dependency graph H_b + GEN_W ⇒ settled from d*(v), length ≤ max d* ≤ n − 1; PURE-END ⇒ (H4).
   Corollary GCI-LEN-ρF. Sharp (b6_xs: length = d* = n − 3). Open: (G1) σ̄ changes inside a GCI (pp), (G2) (H3), (G3) (H4) impure (reader_L),
   (G4) W-ties. staticdepth.py (GCI=1 mode = global C-intervals). reader_L files: scratch copies from l-red 1e851da4 (sha1 match R91).
+- (L1)/(L2) (Lead 17:59Z/18:08Z, messages read late at 18:23Z): N5-GCILEN §6 GATE-PUSH + PURE-LEN (polynomial, not < 2n: lengths move
+  after FREEZE-A); (L2) OPEN (SPEC's tie rule is the S1 procedure on the arena; GEN_W not implied). ALTERNATION stated in N5-EXIT §9.
 - Things only I know: exitx.py's UP/DOWN/DISJ: UP tested first (p1 on p2's (t+1)-play), DOWN = p2 on p1's t-play. RR_c is ~ phase length
   (EXIT-RED vacuous). NO-UP's hypothesis never occurs in data (vacuous check); EXIT-RHO's tie case occurs (rho_tie 2-3). climbexit.py from random
   C^kO seeds at n 12 is useless (phases ≤ 3); seed it with long instances instead.
@@ -1333,6 +1335,12 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
   p.2: an alternative 2^Ω~(m^{1/3}) lower bound for the original Random-Facet on MDPs (the published form is 1410.7530).
 
 ## Sources opened (arXiv id or DOI, theorem/section)
+- (successor 18, 2026-10-26 ~18:25Z) arXiv 1008.0530, Hansen, Miltersen, Zwick, "Strategy iteration is strongly polynomial for 2-player
+  turn-based stochastic games with a constant discount factor": ABSTRACT only (bound O(m/(1−γ)·log(n/(1−γ))) iterations). No theorem number
+  opened. Used as READING in docs/si/N5-EXIT-box22.md §9.
+- (successor 18) arXiv 1106.0778, O. Friedmann, "An Exponential Lower Bound for the Latest Deterministic Strategy Iteration Algorithms":
+  ABSTRACT only (exponential lower bounds for locally optimal and «globally optimal improvement» variants; parity, mean payoff, discounted,
+  simple stochastic games). No theorem number opened. READING in N5-EXIT §9.
 - Box 17 (succ. 12): fleet texts only, no external source. RESULTS R19 (d) ((SG) step: Ξ_{L+1} ⊵ Ξ_L at every N5 transition, every game);
   RESULTS R50 (b)-(f) (Facts A0/A/B, FRZ-U, LEN, RUN statements); P-N5-H3 §4-§6; docs/new/P-N5-EPR-box45.md §0-§3 (l-new 08abd9cb).
 - (successor 3) Vöge-Jurdziński, "A Discrete Strategy Improvement Algorithm for Solving Parity Games", BRICS RS-00-48, pdf from

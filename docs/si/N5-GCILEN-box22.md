@@ -113,3 +113,32 @@ LEN_V (length > max d*), N1_V / GCI_N1_V (length > n − 1). Control MUT=1 (d* �
 - READING. The theorem confirms L-RED's R91 §5 heuristic («every mechanism spends at least one fresh vertex per time step of a causal
   chain») for ρ-free intervals with constant common cycles: each step of the run is paid by one Even vertex of an H_b-path, settled for good.
   A long global C-interval therefore needs one of (G1)-(G4). reader_L uses (G2) and (G3). pp's leapfrog uses (G1).
+
+## 6. (L1) and (L2) of N5-ABSCYC §4 (Lead 17:59Z, 18:08Z; written 18:26Z by date -u)
+(L1), the identification of a pure C-interval with the abstract model, is replaced by a direct N5 argument. STATIC-DEPTH on the σ̄-constant
+stretches, FREEZE-A (b) for the prefix, and a push lemma for the σ̄ changes left at direct gates. The result is polynomial. It is not the
+"< 2n" of the reading, because FREEZE-A (b) freezes path weights only, and lengths still move (P-N5-ROOT (R-LEN)).
+- Setting. A pure per-class C-interval [a, b] of class c (P-N5-GCX §1; every gate of U_c D-direct at every state), L := max(|A_a| − 1, 0).
+  STATIC-DEPTH holds per class here. W-plays from U_c stay in U_c (prefixes off D follow τ = σ̄, then τ(u) ∈ A ⊆ U_c), so (H1)-(H4) and
+  GEN_W are needed on U_c only, and d* ≤ |U_c| − 1. (H4) holds at every state by PURE-END, and every cycle is common.
+- Lemma GATE-PUSH (PROVED, lane; premises FREEZE-A (b) of P-N5-ROOT, signed by REFEREE; (M2κ); BEST of N5-EXIT §2). Let a + L ≤ t < b and let
+  σ̄ change at a gate u ∈ D ∩ U_c from y1 to y2 at t → t+1. Then M(y1) is unchanged and κ(y1) rises strictly in its length component, unless
+  κ_{t+1}(y1) = κ_{t+1}(y2) (tie).
+  Proof. u is on no honest cycle (its honest play continues in A, which holds no gate; as in FREEZE-A (c)), so BEST applies. y1, y2 ∈ A
+  (direct gates), so by FREEZE-A (b) M_t(y_i) = M_{t+1}(y_i). By BEST at t and at t + 1, and (M2κ):
+  κ_t(y1) ⪯ κ_t(y2) ⪯ κ_{t+1}(y2) ⪯ κ_{t+1}(y1), and the last step is strict unless there is a tie. With M fixed, the rise is in the length. □
+  By (R-LEN), each y ∈ A has ≤ |U_c| − 2 length rises after a + L. So gate σ̄ changes after a + L number N_σ̄ ≤ Σ_{u ∈ D ∩ U_c} deg(u)(|U_c| − 2)
+  + TIES_c.
+- Proposition PURE-LEN (PROVED, lane; GEN_W). b − a ≤ L + (1 + N_σ̄ + N_cyc)·(|U_c| − 1) + N_σ̄ + N_cyc. Here N_cyc is the number of transitions
+  of [a + L, b] at which a cycle of class c changes; L-NEW 28's ZCH-COUNT (KPOLY §8, in-lane) bounds it by (n − 1)(|U_c| − 1) + n + TIE_c +
+  ODDC_c.
+  Proof. Cut [a + L, b] at every σ̄ change in U_c and every cycle change. Each stretch is σ̄-constant on U_c with constant common cycles, and
+  STATIC-DEPTH bounds it by |U_c| − 1. □
+  So pure C-intervals are polynomially long, ties excepted (GEN_W, Odd ties in GATE-PUSH, TIE_c / ODDC_c). The "< 2n" reading holds exactly
+  when no gate σ̄ change and no cycle change occur after a + L.
+- (L2), ties (OPEN). N5's S4a step breaks ties among W-equal arena options by the S1 counter-strategy procedure run on the current arena game
+  (SPEC docs/new/N5-ssi-global.md l. 52-57; si.py Engine.evaluate). That is not a fixed rule on successor values: the arena changes, so the
+  rule can pick a different W-equal successor at different states. GEN_W therefore has no automatic substitute, and N5-ABSCYC §3 shows
+  ties really can break the per-vertex statement in the model.
+  DATA: GEN_W failed in 23 lib41 intervals, and STATIC-DEPTH's conclusion held in every one of them. CONJECTURE STATIC-DEPTH-TIE: the
+  length bound max d* holds without GEN_W under SPEC's tie rules.
