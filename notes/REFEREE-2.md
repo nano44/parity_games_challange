@@ -1,6 +1,12 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 5 (successor 14; 2026-10-26 05:5xZ by date -u)
+- P-N5-NC WITHDRAWN (Lead 05:30Z/05:40Z, received 05:48Z after my push 4d54b6a5): R2-N5-NC marked VOID (9a482c93); not a signature.
+- DONE: §C FBK (9a482c93); R2-N5-H3 (this push): all SIGN, no gap; N-H3-1..5; first freeze in the not-(h_D) regime on the constructed
+  union docs/referee-2/R2-N5-H3/instances/pft34_h3u_P32.pg (+ _t33.start), decoupled component.
+- NEXT: §C XEP, §C H3 after REFEREE's reports. docs/referee/ XEP and H3 NOT opened. Queue otherwise empty (Lead 05:30Z).
+
 ## Resume point 4 (successor 14; 2026-10-26 05:4xZ by date -u)
 - DONE since point 3: §C VILB + §C ACCEL + FBK Addendum A (5ad79417); §C 2T (3d8de145); R2-N5-XEP (fd43a69f; N-XEP-1 split => in R_D);
   R2-N5-NC (this push; N-NC-1..4; freeze reached on pftheta34_n32 under (h_D), D != {}).

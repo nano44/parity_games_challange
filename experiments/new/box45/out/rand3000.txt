@@ -1,0 +1,2 @@
+runs 15000, phases 40203, epochs 40582, XI_V 0, OPT_V 0, REP_V 0, EP0_V 0, DIV 0, G1PH 3, G1PH_n 18 | by |D|: (epochs, max transitions inside) 0:[18487, 3] 1:[12244, 3] 2:[6940, 2] 3:[2484, 1] 4:[427, 0]
+done

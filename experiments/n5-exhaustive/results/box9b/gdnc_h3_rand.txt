@@ -1,0 +1,22 @@
+C2H3_checks: 1131485
+C2H3_checks_not_NC: 115640
+FRZH3_runs: 5294
+FRZ_runs: 4893
+FRZ_runs_too_short(vacuous): 4893
+b'_checks: 55313
+c1'_checks: 106075
+c2'_checks: 1079974
+runs: 50000
+states: 124588
+states_D_ge2: 27884
+states_NC: 85122
+states_NC_h3: 76956
+states_NC_not_hD: 3396
+states_h3: 85995
+states_h3_not_NC: 9039
+transitions: 74588
+max_FRZH3_run_minus_n: 0
+max_FRZH3_run_states: 5
+max_FRZ_run_minus_(n-1): 0
+max_FRZ_run_states: 5
+RESULT OK violations=0

@@ -10,3 +10,5 @@ start -1979 n 24
 11295 3056 FRZ_checks 3 seed 11596
 11733 3066 FRZ_checks 4 seed 12034
 12396 4047 FRZ_checks 2 seed 12697
+TOTALS {'FRZ_checks': 5819, 'FRZ_runs': 102937, 'FRZ_runs_too_short(vacuous)': 97131, "b'_checks": 2950809, "c1'_checks": 22616123, "c2'_checks": 17689014, 'runs': 77824, 'states': 1196646, 'states_D_ge2': 71320, 'states_NC': 1106867, 'states_NC_h3': 1038792, 'states_NC_not_hD': 17541, 'transitions': 1118822}
+RESULT OK best 4047

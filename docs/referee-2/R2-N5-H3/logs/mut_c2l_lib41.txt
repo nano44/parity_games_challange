@@ -1,0 +1,62 @@
+MODE files ../../../experiments/new/box41/lib41.txt 3 MUT c2l PATHCAP 9
+BP_checks: 103287
+BP_checks_NC_not_hD: 17232
+C2H_checks: 303000
+C2H_checks_not_NC: 10146
+FRZ_freeze_checks: 3
+FRZ_freeze_checks_D_nonempty: 3
+FRZ_runs: 3863
+FRZ_vacuous_runs_exactly_n_states: 1
+PCL_checks: 11570
+PCL_runs: 1429
+TCC_checks: 406938
+TCC_terminal_changes: 1237
+VIOLATIONS: 7251
+V_C2H: 7251
+WMG_transitions: 11247
+ff_runs: 8304
+phases: 7195
+runs: 1236
+states: 19551
+states_NC: 14228
+states_NC_not_hD: 642
+states_h3: 13628
+states_h3_not_NC: 236
+states_h3_not_hD: 655
+states_hD: 13586
+CRD_run_minus_(n-1): (-1, 'experiments/n5-exhaustive/instances/n4all_thch_0.pg#1')
+FRZ_freeze_D_nonempty_example: (3, 'experiments/red/so/instances/pftheta34_n32.pg#0@5 n 32')
+FRZ_run_minus_(n-1): (3, 'experiments/red/so/instances/pftheta34_n32.pg#0')
+FRZ_run_with_notHD_state_minus_(n-1): (-2, 'docs/referee/R-N5-L2/exitdrop_n3.pg#0')
+max_ff_run_transitions: (55, 'experiments/red/xing/instances/x32_rand64.pg#0')
+VIOLATION C2H: experiments/n5-exhaustive/canonA_1.pg#0@0: L 13 MD 14
+VIOLATION C2H: experiments/n5-exhaustive/canonA_1.pg#0@3: L 13 MD 14
+VIOLATION C2H: experiments/n5-exhaustive/canonA_1.pg#1@4: L 13 MD 14
+VIOLATION C2H: experiments/n5-exhaustive/canonA_1.pg#2@1: L 11 MD 12
+VIOLATION C2H: experiments/n5-exhaustive/instances/b4_cyc6_0.pg#2@0: L 9 MD 10
+VIOLATION C2H: experiments/n5-exhaustive/instances/b4_cyc6_0.pg#2@1: L 9 MD 10
+VIOLATION C2H: experiments/n5-exhaustive/instances/b4_cyc6_0.pg#2@2: L 4 MD 5
+VIOLATION C2H: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@0: L 10 MD 11
+VIOLATION C2H: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#1@1: L 8 MD 9
+VIOLATION C2H: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#2@0: L 3 MD 4
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@4: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@5: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@6: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@7: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@8: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@9: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@10: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@11: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@12: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@13: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@14: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@15: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@16: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@17: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@19: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@20: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@21: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@22: L 30 MD 31
+VIOLATION C2H: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@23: L 29 MD 30
+RESULT FAIL violations=7251

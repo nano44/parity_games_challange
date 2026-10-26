@@ -17,6 +17,9 @@ Handover check cd3b5ff7 (5/5, Lead GO 04:56Z). Container started 679 behind its 
 - WK climbs done (52e326aa): 9,020 WK checks pass (so32 lineage); instances wk1_n32 (random start), wk2_n32 (canonical start).
 - CLS1 small-n climbs n 6/8/10/12 (20,000 steps each) done: best fitness 0.44 everywhere = no in-scope THR fallback (CLS1 still
   vacuous at n <= 12 under this climb); CLS1 non-vacuous only at n ~ 32 (REFEREE-2 climbs, library).
+- Box 9b (gdnc_check.py, frz_climb.py): G_D-NC / C2-H3 0 violations (README "Box 9 / 9b"); FRZ instances frz1/frz3_n24 test FRZ-U_H3
+  as proved; frz2_n24 tests only the STRONGER 1-based form (author L-SI 2d021429: 0-based, needs >= n + 1 states; a 1-based failure is
+  not a counterexample). IN FLIGHT 06:1xZ: FIT=h3 climbs (seeds 601, 602) for not-(NC) states inside FRZ-U_H3 runs.
 - IN FLIGHT (05:05Z): ABS-L climbs absl_{gta,gtb,ccl,fb32} (pids 21962-21965, runner run9d.sh), 15,000 steps, ETA ~07:00Z;
   so far ABSL_intervals up to 83 but 0 theta-changes above L (ABS-L's count stays trivially 0).
 - NEXT: (1) checker for L-SI Lemma G_D-NC (l-si b92f84d4, docs/si/N5-2O-T-box16.md §6: (b'), (c2') at (NC) states) on random

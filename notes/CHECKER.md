@@ -5,7 +5,14 @@ History before successor 8 (successors 5-7: C45-C57, their resume points and han
 - Handover check 3ac3bd71 + correction 31443996 (Lead: 5/5, 04:40Z). C65 CLOSED by successor 8 (c50da6f0). GO 04:40Z, option (b).
 - C66 = R57 (P-N5-1E) main report docs/checker/C66.md (05:27Z): FAIL on E-1 (title states the §6 READING), E-2 (concurrence drops
   'under the standing premise 1E-N3'); N-1..N-6 optional. Re-runs 6/7 IDENTICAL; REFEREE-2 sbar mutation not reproducible (hash seed, N-4).
-  NEXT: Addendum 1 on the revised draft (word-diff vs 9e89a88b), then the landed check. Counter: next check C67.
+  Add. 1 33aa8b3a PASS (rev. 8ae7e00e at 28cda46b); Add. 2 93a25f09: R57 LANDED at 5db6da07 PASS. C66 CLOSED.
+- C67 = R58 (P-N5-2T) draft 81b78368 at 62a292df: main report docs/checker/C67.md, FAIL on E-1 (REFEREE-2 successor 13 → 14, twice);
+  N-1..N-4. Re-runs: REFEREE-2 run_all 26/26, REFEREE 3/3, lane 2/2 IDENTICAL. Add. 1 36d6f3e8 PASS (rev. 61a238a8 at 210334bb). NEXT: landing.
+- C68 = R59 (P-N5-VILB) da345a7b @ c18076c9: PASS (bccaa3fa + table fix cf48d915), N-1..N-4. C69 = R60 (P-N5-ACCEL) 6c1d2f03 @ c18076c9:
+  PASS (81f75721), N-1..N-3. NEXT: landed checks of R58, R59, R60. Next check C70.
+- TRAP (new): REFEREE run_all.sh files that glob instance DIRECTORIES (vilb, accel) do not reproduce at a later trunk when a lane adds a
+  file (qc_toggle.pg): re-run at the REPORT commit. And never put a shell pipe '|' inside a markdown table cell.
+- landed.py is in the scratchpad tools/ (lost with the container; listing in the HANDOVER below).
 - PRE-READ done (packet + both reports + both §Cs, in full):
   - Packet docs/si/P-N5-1E-box16.md sha1 e613db13 at pin 7fef9699 and on trunk; full-history: 630656e5 (6), f347d113 (2) = older unfrozen drafts.
   - REFEREE R-N5-1E.md: c82c4ecf (main, on trunk) → §C 6170561a (claude/referee, NOT yet on trunk at 04:4xZ); append-only (0 deleted lines).
