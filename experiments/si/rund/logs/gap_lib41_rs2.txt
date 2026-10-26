@@ -1,0 +1,9 @@
+dchg=1285 fac_n=7714 max_B=39 max_dchg=5 max_ratio=16646846.25 max_seg_dchg=1 max_tot_per_v=5 runs=191 runs_h3=119 seg_dchg=12 stretch_segs=138 stretch_segs_noh3=31 trans_v=28206 twin=29 twin_dchg=29
+TOP ('dchg', 1, 'experiments/red/carry/instances/cm_mdrop_both_n28.pg', 3, 6, 2, 28, 'range/gamma', 1.0)
+TOP ('dchg', 2, 'experiments/red/carry/instances/ctx13_n40.pg', 8, 13, 2, 40, 'range/gamma', 9027.74)
+TOP ('dchg', 3, 'experiments/red/carry/instances/ctx13_n40.pg rs', 10, 15, 9, 40, 'range/gamma', 65459.69)
+TOP ('dchg', 4, 'experiments/red/n5inj/instances/frz40.pg', 44, 58, 11, 40, 'range/gamma', 9.16)
+TOP ('dchg', 5, 'experiments/red/n5inj/instances/frz40.pg', 44, 58, 27, 40, 'range/gamma', 431.5)
+BHIST [(1, 1), (2, 3), (3, 21), (4, 2), (8, 1), (13, 1), (14, 9), (15, 13), (16, 1), (17, 2), (21, 2), (25, 1), (28, 3), (30, 4), (31, 1), (33, 1), (34, 1), (36, 4), (39, 1)]
+GAP PASS
+done
