@@ -1,0 +1,32 @@
+== ../../red/h3/instances/lcount_n23.pg ../../red/h3/instances/lcount_n23.start
+max_phase=4 max_reuse=1 max_rho_q=1 max_rho_q_multi=1 phases=1 q_phase=3 q_phase_multi=3 q_reuse_multi=0 q_with_reuse=0 rho=3 rho_CLEAN=3 rho_gate=0 trans=4
+POT PASS
+== ../../red/h3/instances/lcount2_n23.pg ../../red/h3/instances/lcount2_n23.start
+max_phase=3 max_reuse=1 max_rho_q=3 max_rho_q_multi=3 phases=1 q_phase=2 q_phase_multi=2 q_reuse_multi=0 q_with_reuse=0 rho=6 rho_SB=6 rho_gate=0 trans=3
+POT PASS
+== instances/offret_n23.pg instances/offret_n23.start
+max_phase=4 max_reuse=1 max_rho_q=1 max_rho_q_multi=1 phases=1 q_phase=2 q_phase_multi=2 q_reuse_multi=0 q_with_reuse=0 rho=2 rho_CLEAN=2 rho_gate=0 trans=4
+POT PASS
+== instances/incdown_n23.pg instances/incdown_n23.start
+max_phase=4 max_reuse=1 max_rho_q=1 max_rho_q_multi=1 phases=1 q_phase=2 q_phase_multi=2 q_reuse_multi=0 q_with_reuse=0 rho=2 rho_CLEAN=2 rho_gate=0 trans=4
+POT PASS
+== instances/offalt_K10.pg instances/offalt_K10.start
+max_phase=24 max_reuse=1 max_rho_q=1 max_rho_q_multi=1 phases=1 q_phase=2 q_phase_multi=2 q_reuse_multi=0 q_with_reuse=0 rho=2 rho_CLEAN=2 rho_gate=0 trans=24
+POT PASS
+== lib41 RS4
+  MULTI experiments/red/n5inj/instances/elimn_cex_n48.pg phase@2 q=20 class_odd_choices=3 rho=5 n=48 levels=[41, 46, 41]
+  MULTI experiments/red/n5inj/instances/elimn_cex_n48.pg rs phase@3 q=31 class_odd_choices=3 rho=6 n=48 levels=[43, 46, 36, 45, 43, 47]
+  MULTI experiments/red/n5inj/instances/elimn_cex_n48.pg rs phase@4 q=31 class_odd_choices=3 rho=6 n=48 levels=[43, 46, 36, 45, 43, 47]
+  MULTI experiments/red/n5inj/instances/elimn_cex_n48.pg rs phase@2 q=20 class_odd_choices=3 rho=4 n=48 levels=[41, 46, 41, 47]
+  MULTI experiments/red/n5inj/instances/frz40.pg phase@44 q=11 class_odd_choices=4 rho=7 n=40 levels=[36, 34, 35, 34, 27, 37, 39]
+  MULTI experiments/red/n5inj/instances/frz40.pg phase@44 q=27 class_odd_choices=4 rho=10 n=40 levels=[36, 28, 34, 35, 34, 27, 37, 32, 39, 28]
+  MULTI experiments/red/n5inj/instances/frz40.pg rs phase@42 q=11 class_odd_choices=4 rho=7 n=40 levels=[36, 34, 35, 34, 27, 37, 39]
+  MULTI experiments/red/n5inj/instances/frz40.pg rs phase@42 q=27 class_odd_choices=4 rho=10 n=40 levels=[36, 28, 34, 35, 34, 27, 37, 32, 39, 28]
+  MULTI experiments/red/n5inj/instances/phase2_pk32.pg phase@3 q=28 class_odd_choices=2 rho=7 n=32 levels=[28, 31, 28, 29]
+max_phase=54 max_reuse=2 max_rho_q=10 max_rho_q_multi=10 phases=236 q_phase=749 q_phase_multi=749 q_reuse_multi=9 q_with_reuse=9 rho=1047 rho_CLEAN=339 rho_NONCLEAN=31 rho_SB=677 rho_gate=254 sbar_change_no_xi_change=8 trans=1238
+POT PASS
+== lib2o RS4
+  MULTI experiments/new/box21/instances/fts_best24.pg rs phase@7 q=11 class_odd_choices=2 rho=4 n=24 levels=[11, 18, 9, 11]
+  MULTI experiments/red/n5inj/instances/phase2_pk32.pg phase@3 q=28 class_odd_choices=2 rho=7 n=32 levels=[28, 31, 28, 29]
+max_phase=51 max_reuse=2 max_rho_q=7 max_rho_q_multi=7 phases=75 q_phase=91 q_phase_multi=91 q_reuse_multi=2 q_with_reuse=2 rho=246 rho_CLEAN=101 rho_SB=145 rho_gate=90 trans=811
+POT PASS

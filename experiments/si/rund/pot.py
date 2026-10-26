@@ -66,6 +66,20 @@ def phase(g, E, name, rows, i, j, Q):
             if not E.key(B["vs"][q]) > E.key(A["vs"][q]): C["XI_DROP_V"] += 1; VIOL.append(("XI_DROP", name, k, q))
         if not ev: continue
         levs = [e[1] for e in ev if e[1] >= 0]; cnt = Counter(levs)
+        kq = sum(1 for p in Q if rows[i]["vs"][p][0] == rows[i]["vs"][q][0])
+        if kq >= 2:
+            C["q_phase_multi"] += 1; C["max_rho_q_multi"] = max(C["max_rho_q_multi"], len(ev))
+            C["q_reuse_multi"] += any(c > 1 for c in cnt.values())
+            if any(c > 1 for c in cnt.values()) or len(ev) > g.n:
+                print(f"  MULTI {name} phase@{i} q={q} class_odd_choices={kq} rho={len(ev)} n={g.n} levels={levs}")
+            if len(ev) > g.n and any(c > 1 for c in cnt.values()): C["RULER_RHO_GT_N_MULTI"] += 1
+        if os.environ.get("TRACE") == "1" and len(ev) >= 10:
+            for (kk, lev, cls, ing) in ev:
+                if lev < 0: continue
+                A, B = rows[i + kk], rows[i + kk + 1]; y = B["sb"][q]; path, x, seen = [], y, set()
+                while x not in seen: seen.add(x); path.append(x); x = B["nxt"][x]
+                sw = [v for v in path if g.owner[v] == 0 and A["nxt"][v] != B["nxt"][v]]
+                print(f"  TRACE q={q} t={kk} lev={lev} sbar {A['sb'][q]}->{y} new honest play {path[:12]}{'...' if len(path) > 12 else ''} Even switched on it: {sw}")
         C["max_rho_q"] = max(C["max_rho_q"], len(ev)); C["max_reuse"] = max(C["max_reuse"], max(cnt.values()) if cnt else 0)
         C["q_with_reuse"] += any(c > 1 for c in cnt.values()); C["q_phase"] += 1
         if len(ev) > g.n: C["RHO_GT_N"] += 1; print("RHO_GT_N", name, i, q, len(ev), g.n)

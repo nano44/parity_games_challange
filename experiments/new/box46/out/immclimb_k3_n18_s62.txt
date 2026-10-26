@@ -1,0 +1,9 @@
+start (0, 0) n 9
+3 (0, 1) n 9
+593 (0, 2) n 18
+652 (0, 3) n 16
+1935 (1, 2) n 17
+IMM FAILURE FOUND
+2045 (1, 3) n 17
+IMM FAILURE FOUND
+done (1, 3)

@@ -1,0 +1,22 @@
+START fit (0, 1) n 16
+BEST step 58 fit (0, 2) t 0s
+BEST step 429 fit (1, 2) t 1s
+BEST step 445 fit (1, 3) t 1s
+BEST step 794 fit (2, 2) t 3s
+BEST step 899 fit (2, 4) t 3s
+BEST step 904 fit (3, 3) t 3s
+BEST step 958 fit (3, 4) t 3s
+BEST step 1020 fit (3, 5) t 4s
+BEST step 1144 fit (4, 4) t 4s
+BEST step 1215 fit (5, 4) t 5s
+BEST step 1218 fit (6, 3) t 5s
+BEST step 1226 fit (6, 4) t 5s
+BEST step 1242 fit (7, 3) t 5s
+BEST step 1509 fit (8, 2) t 7s
+BEST step 2246 fit (8, 3) t 12s
+BEST step 2273 fit (9, 3) t 12s
+BEST step 2710 fit (10, 3) t 16s
+BEST step 2756 fit (11, 2) t 16s
+BEST step 5402 fit (12, 2) t 37s
+BEST step 7148 fit (13, 2) t 52s
+END steps 65230 best (13, 2) n 16 -> results/climb/lend2_n16.pg

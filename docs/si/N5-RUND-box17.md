@@ -674,3 +674,26 @@ pot_lib41_rs4.txt, pot_lib2o_rs4.txt.
 - The circularity of §19 is the ρ / N_ep problem, plus WG. On pftheta34 the whole run is CLEAN ρ at one gate. Any polynomial bound on
   ρ_q per phase (the target of L-NEW / L-COMP's N_ep work) bounds B(S), and then U and the coarse W-changes through §16-§19 only if the
   circularity's factors close; a polynomial ρ alone is not enough without U-SPLIT (or an injective CHARGE-U).
+
+## 21. Calibration (Lead 09:52Z) and the ruler pattern in multi-Odd-choice classes (DATA)
+Written 2026-10-26 09:5xZ (date -u), successor 13. pot.py (MULTI, TRACE); logs pot_trace_pftheta34.txt, pot_multi.txt.
+- CALIBRATION (Lead, recorded): pftheta34_n32 is in 𝒞^1O (one Odd choice vertex, o = 0; docs/red/R69a-pftheta.md), where RESULTS R51 bounds
+  N5 polynomially ((n(n − 1) + d_o)(T* + 1) iterations). So ρ_0 = 34 in one phase there (§20) is inside a polynomial bound, not a blow-up.
+  The ruler signature matters only where it can compound: classes with ≥ 2 Odd choice vertices.
+- (1) Trace of the 10 path-set rises of Ξ(0) on pftheta34 (level, σ̄(0) change): 28 (18→21), 25 (26→21), 24 (29→6), 31 (5→21), 25 (26→21),
+  27 (20→7), 25 (26→21), 24 (29→6), 28 (18→12), 29 (23→16). Each is a σ̄(0) re-optimisation onto a successor whose honest play improved
+  EARLIER; at the rise itself no Even vertex on the new play switches, except one (vertex 15 at the level-31 rise). σ̄(0) moves onto 21
+  five times and onto 6 twice: the ruler pattern is Odd's best reply at the one gate revisiting successors as the Even routes behind them
+  improve.
+- (2) ρ_q per phase, restricted to q whose honest class has ≥ 2 Odd choice vertices:
+
+| set | (q, phase) pairs | max ρ_q | pairs with a reused level | ρ_q > n with a reused level |
+| --- | --- | --- | --- | --- |
+| lcount_n23 / lcount2_n23 (𝒞^3O) | 3 / 2 | 1 / 3 | 0 / 0 | 0 |
+| offret_n23 / incdown_n23 / offalt_K10 | 2 / 2 / 2 | 1 / 1 / 1 | 0 | 0 |
+| lib41 (≥ 2 Odd choices), S3 + 4 random starts | 749 | 10 | 9 | 0 |
+| lib2o, S3 + 4 random starts | 91 | 7 | 2 | 0 |
+
+- Ruler-type reuse DOES occur in multi-Odd-choice classes: frz40.pg (L-RED; class with 4 Odd choices), q = 27, levels [36, 28, 34, 35, 34, 27,
+  37, 32, 39, 28] (ρ = 10, n = 40); elimn_cex_n48 q = 31, [43, 46, 36, 45, 43, 47]; phase2_pk32 q = 28, [28, 31, 28, 29]; fts_best24 q = 11,
+  [11, 18, 9, 11]. But ρ_q ≤ 10 < n everywhere; no ρ_q > n in any multi-Odd-choice class. DATA only; no compounding seen.

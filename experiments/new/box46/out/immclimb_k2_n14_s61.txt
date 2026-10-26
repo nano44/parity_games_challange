@@ -1,0 +1,12 @@
+start (0, 0) n 7
+10 (0, 1) n 8
+99 (0, 2) n 13
+365 (1, 1) n 14
+IMM FAILURE FOUND
+704 (1, 2) n 13
+IMM FAILURE FOUND
+1235 (1, 3) n 13
+IMM FAILURE FOUND
+2830 (2, 2) n 14
+IMM FAILURE FOUND
+done (2, 2)

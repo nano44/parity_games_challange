@@ -211,7 +211,7 @@ class N5:
         """Optimal counterstrategy of si's Odd player (A5)."""
         return [si.best(valu, v) if si.pl[v] == ODD else -1 for v in range(si.g.n)]
 
-    def run(self, sigma=None, tau=None, max_iter=100000, trace=None):
+    def run(self, sigma=None, tau=None, max_iter=100000, trace=None, fbtrace=None):
         g = self.g
         sigma = sigma or self.SG.initial_strategy_by_best_reward()                  # Even vertices: successor, Odd: -1
         tau = tau or self.SD.initial_strategy_by_best_reward()                      # on the dual: original Odd vertices
@@ -250,7 +250,10 @@ class N5:
             _, c3 = self.opt(s3, sigma)
             tau2 = [c3[v] if g.owner[v] == ODD else -1 for v in range(g.n)]
             # step 4: fallback
-            if sigma2 == sigma and tau2 == tau:
+            isfb = sigma2 == sigma and tau2 == tau
+            if fbtrace is not None:                  # box 12 hook (2026-10-26): fallback flag per transition; no effect on the run
+                fbtrace.append(int(isfb))
+            if isfb:
                 fb += 1
                 if Is:
                     sigma2 = list(sigma)

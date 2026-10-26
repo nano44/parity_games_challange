@@ -1,0 +1,20 @@
+START fit (53, 61) n 40
+BEST step 4 fit (54, 62) t 1s
+BEST step 6 fit (55, 61) t 2s
+BEST step 129 fit (56, 62) t 28s
+BEST step 136 fit (58, 64) t 30s
+BEST step 235 fit (58, 65) t 55s
+BEST step 385 fit (62, 69) t 88s
+BEST step 518 fit (64, 71) t 121s
+BEST step 737 fit (65, 72) t 179s
+BEST step 1287 fit (66, 73) t 315s
+BEST step 1708 fit (68, 75) t 410s
+BEST step 2021 fit (68, 76) t 482s
+BEST step 2055 fit (68, 77) t 489s
+BEST step 3730 fit (69, 78) t 822s
+BEST step 3754 fit (71, 80) t 827s
+BEST step 4395 fit (73, 81) t 955s
+BEST step 4428 fit (73, 82) t 963s
+BEST step 4790 fit (75, 84) t 1034s
+BEST step 5110 fit (76, 85) t 1100s
+END steps 5571 best (76, 85) n 40 -> results/climb/nep_seed_rise51.pg
