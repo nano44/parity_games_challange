@@ -1534,3 +1534,11 @@
 - 23:28Z: Merged referee-2 8a47fd92 (R2-N5-KW: all SIGN, no gap, N-KW-1..6) and l-com de0ca760 (Q4 78/160 alive). Asked both referees for §C KW, and REFEREE-2 also for §C NEEDB. Pre-drafted docs/agents/R50-draft.md (P-N5-KW + addendum; placeholders FIXES / RSC / R2SC / CSUM). PLAN: after R50 lands, a short assembly packet (𝒞^1O polynomial iteration bound from R47 + R48 + R50 + per-iteration bit cost), refereed like any packet.
 - 23:36Z: Merged l-red db07e8e4 (R73 §7: RUN ratio ≤ 0.0123 of Δr⁴; CASC-B regime reached once in random runs; post-freeze KIND-MONO still vacuous with long post-freeze runs; PAR 838k more states). R50 draft updated.
 - 23:46Z: Merged referee a6e50742 + 776281ac: §C KW. Both referees sign every statement; KW-1 = N-KW-3 is one finding, closed by definition; N-KW-1 and N-KW-2 accepted; CASC-B exercised on both engines (slack 0 reached by REFEREE-2). R50 draft updated. KW fixes now wait only on REFEREE-2's §C KW.
+- 2026-10-26 00:01Z: Read 9 notifications.
+  - REFEREE-2 12 PARKED. §C NEEDB fafea30e; §C KW 20fea7d7 (KW-1 = N-KW-3, joint gap closed by the one-line repair); handover dd79fb25. Created REFEREE-2 successor 13 (session_01Hjrye27AzEi22tE6LHsM4Y): FX, NH42, DUAL.
+  - REFEREE 11: R-N5-DUAL cdb187c7. DUAL first sentence, MIRROR (a), (c), Φ-kO and ENDGAME SIGNED; DUAL's second sentence SIGNED WITH GAP DUAL-1 (wording); MIRROR (b) signed as an implication only. The start-pair audit of R17-R48 proofs is NOT done.
+  - L-SI f4cb4bc3: drafts of the KW fixes file and P-N5-1O. 1O-POLY: ITER ≤ (n(n−1) + d_o)(T* + 1) = O(m·Δ·d_o·n¹³). Lemma BIT: bit cost per iteration O(n³(n + m)). Lemma OUT: S5 output correct on 𝒞^1O, closing G-N5T-3.
+  - L-RED: the CASC-B discrepancy is case (a): its corpus lacked the file, and R73's "0 everywhere" was too strong; no row changes (c45b888b).
+  - L-NEW: Route Δ shows no growth (5c01a8ee; tj17_n19, dch16_n44 as DATA).
+  - L-COMP: Q4 alive, ETA ~01:00Z.
+- R49 draft final: both §Cs; (LV+) definition fixed to match the packet (in-scope, u* ≠ none). To CHECKER 8 as C58.

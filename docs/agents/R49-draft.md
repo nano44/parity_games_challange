@@ -1,6 +1,6 @@
-# Draft RESULTS R49 (Lead, 2026-10-25 22:45Z by date -u; REFEREE's §C and the fixes file to be filled) — to CHECKER C58
+# Draft RESULTS R49 (Lead, 2026-10-25 22:45Z by date -u; both §Cs and the fixes file filled 2026-10-26 00:01Z) — to CHECKER C58
 
-### R49 [refereed-only] N5 on one-Odd-choice games: a gate into F along an optimal F-play has level ≥ r (XG), one-player valuations do not rise under non-improving or exceptional edges (ANTI, every one-player game), Even's best reply to τ from the threat x0 uses a (β) gate whenever M = −1 and r ≥ 0 (NEED-β), an old threat stays in R after a rise (OLD-THREAT), and CONJECTURE INTO would exclude a later fallback (reduction); the CONJECTURE "in scope, THR ⇒ M ≥ 0" is FALSE (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C58.md, checker PENDING)
+### R49 [refereed-only] N5 on one-Odd-choice games: a gate into F along an optimal F-play has level ≥ r (XG), one-player valuations do not rise under non-improving or exceptional edges (ANTI, every one-player game), at an in-scope THR fallback with M = −1 and r ≥ 0, Even's best reply to τ from the threat x0 uses a (β) gate (NEED-β), an old threat stays in R after a rise (OLD-THREAT), and CONJECTURE INTO would exclude a later fallback (reduction); the CONJECTURE "in scope, THR ⇒ M ≥ 0" is FALSE (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C58.md, checker PENDING)
 - Object (packet P-N5-NEEDB, added at l-si 3ea0f5f9, pinned trunk e6ee6130, unchanged during review): docs/si/P-N5-NEEDB-box13.md, sha1
   7471aef37f9ad2a746dbc63451a5543b3917a443 (L-SI successors 7 (§1-§3 cases (B), (A1), (A2′), (A2″)) and 8 (the rest), Opus 5.5). The
   referees' notes are collected by the lane in docs/si/P-N5-NEEDB-fixes-box13.md (l-si 863ca636, sha1
@@ -8,8 +8,8 @@
   Setting as in RESULTS R31, R35, R37, R40 and R41 (𝒞^1O; scope run S; S4a / S4c; Ξ, W; gates, gate levels, M_k; COARSE_L, (C1)-(C7);
   R̄ / R / F; (h); r; THR; phase; c; the gate kinds (α), (β), (γ) of R41 (a)). x0 := σ̄_k(o), t := τ(o). G_τ: the one-player game "Odd
   fixed to τ", U := Opt(G_τ) its pointwise optimum, σ* an optimal strategy of G_τ (V_{σ*,τ} = U). An Even edge (v, u) of a one-player
-  game with σ-valuation V is V-EXCEPTIONAL if v is its own V-cycle node, u ≠ σ(v) and V(u) = (v, ∅, ·). SETTING (LV+): an in-phase THR
-  S4c fallback k with (h) at k, M_k = −1 and r_k ≥ 0; 𝒫 is the σ*-play from x0 in G_τ. RISE SETTING (packet §4): k0 an in-scope
+  game with σ-valuation V is V-EXCEPTIONAL if v is its own V-cycle node, u ≠ σ(v) and V(u) = (v, ∅, ·). SETTING (LV+): setting (LV) of RESULTS R41 with r_k ≥ 0, i.e. k is an in-scope S4c fallback, THR at
+  k with u* ≠ none, and M_k = −1 (by LV-SHAPE every gate is (α) or (β)); 𝒫 is the σ*-play from x0 in G_τ. RISE SETTING (packet §4): k0 an in-scope
   fallback of S with L := M_{k0} ≥ 0, j > k0 the first S4a step after k0 that changes COARSE_L(θ), every transition between them in S
   and r > L; a POST-RISE STATE is a state t > j such that every transition s → s+1 with k0 < s < t is an in-scope S4a step with r_s > L.
 - Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P) beyond what RESULTS R36 discharges:
@@ -57,5 +57,6 @@
   NEEDB-N2 = N-NEEDB-2; N-NEEDB-1 = REFEREE's IN-DATA line; N-NEEDB-3 accepted; N-NEEDB-5 confirmed; N-NEEDB-4 accepted as REFEREE-2's
   data but NOT reproduced by REFEREE (the saved start pair of witness_xg_12004 is not a strategy pair of that game); corrected in
   REFEREE-2's Addendum A (1a9a0407).
-  §C (REFEREE-2): R2SC-PENDING.
+  §C (REFEREE-2, fafea30e, successor 12): verdicts identical; NEEDB-N1, NEEDB-N3 and NEEDB-N4 (checked) accepted; NEEDB-N2 = N-NEEDB-2;
+  C.3 = N-NEEDB-5; C.4 correct, repaired in Addendum A. Joint gap map empty; no disagreement remains.
 - TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
