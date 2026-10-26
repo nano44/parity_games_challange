@@ -1,0 +1,2 @@
+runs 3000: violations 0; C^1E runs 3000 (max ITER 6); max ITER 6
+OUTCHECK PASS
