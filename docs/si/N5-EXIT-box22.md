@@ -209,3 +209,40 @@ evenside_lib41_n34_rs2.txt).
   (the impure regime: 95 σ̄ changes at non-direct gates and 48 exit changes inside one C-interval).
 - Consequence for the queue: the impure regime (gap (iv)) and the cut count are where the problem sits. L-RED's GCI-LEN (every global
   C-interval has length ≤ n − 1) is the pure-and-impure length statement. My ABS-DEPTH reading gives < 2n for pure intervals only.
+
+## 9. OPEN ALTERNATION, stated precisely (Lead 18:08Z; written 18:26Z by date -u)
+- Definitions. S is a λ_W-constant fallback-free run inside one phase, c a class, and C-intervals and cuts are per class as in P-N5-GCX §1
+  (gcx.py / evenside.py).
+  - ALT_c(S) := the transitions t → t+1 of S at which σ̄ changes at a gate of class c (u ∈ D_t ∪ D_{t+1}, u ∈ U_c), and either D ∩ U_c changes
+    (DCH) or a D-direct offset changes (OSB).
+  - K(S) = AG + DCH + OSB + DDSET + OVAL, summed over the cut kinds.
+- OPEN ALTERNATION. Is ALT_c(S) bounded by a polynomial in n (and k = |Q_c|), uniformly over games and runs?
+- Why it is the target.
+  - Even's work between cuts is bounded: N5-GCILEN-box22 STATIC-DEPTH on σ̄-constant stretches; < 2n inside pure C-intervals by the
+    ABS-DEPTH reading; data: no C-interval anywhere has an Even switch at index ≥ |U_c| − 4.
+  - Exit changes sit at cuts (nep90: 31 of 33 exit-change transitions).
+  - P-N5-GCX's UL-RED bounds U events and coarse W changes in K(S).
+  - So on this route a bound on K(S), whose Odd part is ALT, bounds the run length. The other cut kinds: AG (A grows, G_c of P-N5-GCX)
+    and the value cuts DDSET / OVAL.
+- DATA (evenside.py; logs/evenside_long8.txt, evenside_lib41_n34_rs2.txt):
+  | sample | ALT = DCH + OSB | all cuts K | transitions | max K in one run |
+  | --- | --- | --- | --- | --- |
+  | nep90_n40 | 57 | 74 | 84 | 12 |
+  | nep76_n40 | 44 | 63 | 72 | 13 |
+  | long121_n40 | 17 | 53 | 113 | 10 |
+  | snap_n80_s62 | 32 | 77 | 93 | 14 |
+  | lib41 (n ≤ 34, S3 + 2) | 1,111 | 1,605 | 5,927 | 19 |
+  On the long instances ALT is about half to two thirds of the transitions. No family is known with ALT super-linear in n.
+- Close known results (READING; sources opened: notes/L-SI.md "Sources opened"; ABSTRACTS ONLY, no theorem number checked; L-LIT
+  should open the full texts before anything is cited):
+  - arXiv 1106.0778, O. Friedmann, "An Exponential Lower Bound for the Latest Deterministic Strategy Iteration Algorithms". Its abstract
+    reports exponential lower bounds for the variant that «computes the globally optimal improvement in each step», on parity, mean payoff,
+    discounted and simple stochastic games.
+    - S4a's step is a globally optimal improvement inside an arena: Even's W-optimum over the Ξ-improving edges, against a fixed τ.
+    - So exponential ALTERNATION is not excluded by anything general. What is open is whether such a family fits inside ONE N5 phase
+      (τ and λ_W constant; arena by Ξ, choice by W).
+  - arXiv 1008.0530, T. D. Hansen, P. B. Miltersen, U. Zwick, "Strategy iteration is strongly polynomial for 2-player turn-based
+    stochastic games with a constant discount factor". Its abstract gives O(m/(1−γ)·log(n/(1−γ))) iterations.
+    - N5's lexicographic valuations are the γ → 1 regime, where that bound says nothing.
+    - E-ONEWAY / NO-UP are elimination statements of the kind such proofs use ("an action, once left, is not retaken"), but without a
+      contraction that makes the gap grow.
