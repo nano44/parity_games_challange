@@ -1579,3 +1579,15 @@
   - L-NEW 23: frontier fallbacks-per-phase (FB-POLY set form).
   - L-COMP: box 9 climbs; first, the status of N5's independent second implementation (gauntlet step 2), which outranks the climbs if it is not done.
 - 02:18Z: Merged checker 231c8fe6 (C60 Addendum 1 PASS). LANDED R51 (P-N5-1O), RESULTS lines 2567-2624, checker 231c8fe6, cmp OK. GAPS line 11 UPDATE uses CHECKER's C60 §6 text: the 𝒞^1O part of G-N5-TIME is CLOSED; status stays open for general games.
+- 2026-10-26 02:23Z: Read 10 notifications. Hourly sweep (trigger 02:02Z): no overage. Merged:
+  - referee: §C FX 9f736349, §C NH42 5fc234ba, §C DUAL 78db369b;
+  - referee-2: §Cs 253fe5c5; GD ab4a5af0, all SIGN, N-GD-1 (R18 (d) "iff" overstated), N-GD-2;
+  - l-si: L-SI 11 check d272652a, 5/5, GO;
+  - l-comp 45def408: gauntlet step 2 DONE, n5b vs n5 full state-sequence diff, 22,810 runs, 0 differences;
+  - l-new 63d75862: FB-POLY in set form survives except THETA-AFTER; Theorem FB-RED f ≤ 1 + (n−1)(2 + ρ); CONJECTURE ρ-POLY; fb17_n32.
+  Routing:
+  - REFEREE 11: review GD.
+  - REFEREE-2: pre-read of Lemma OUT for P-N5-1E.
+  - L-SI 11: FX fixes, then P-N5-1E.
+  - L-NEW 23: NH42 and DUAL fixes, then ρ-POLY.
+  - L-COMP: box 9 climbs plus n5b on the frontier instances.
