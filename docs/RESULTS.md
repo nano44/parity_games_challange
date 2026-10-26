@@ -3100,6 +3100,170 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   (missed by it); ACCEL-N2 REFEREE's, accepted; nothing open.
 - TARGET.md diff: not a claim of TARGET.md section 1 or §2 (no polynomial bound). GAPS G-N5-TIME: open.
 
+### R61 [refereed-only] N5 on EVERY game, CONDITIONAL on RESULTS R56 and R58: the "routes-through" relation among the Odd choice vertices of an honest class is acyclic (ROUTE-k), a routed terminal's value is a shift of its parent's (SAT-k), so the Q-runs holding a late fallback are polynomially many whenever classes have boundedly many Odd choice vertices (Theorem FB-kT): on 𝒞^kO with k fixed, f = O(n^{k+1}) in-phase fallbacks per phase (Corollary FB-kO); and a clean change of Odd's best response at q strictly raises κ(q) unless tied (Lemma ALT), so epochs are bounded by ρ plus ties, non-clean and cycle-node changes (Corollary N_ep) (2026-10-26) — partial step-4 lemmas for N5 (a fallback count; not an iteration bound on any class; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C70.md, checker 761bcc73)
+- Object (packet P-N5-FBK, added at l-new 9dd499d3, pinned trunk 5d723af6, unchanged during review): docs/new/P-N5-FBK-box44.md, sha1
+  afd7c65a265053531171b66294811bbd9a801dd2 (L-NEW successor 23, Opus 5.5). Two correction layers, both on trunk, repairs only, no signed
+  statement changes: docs/new/P-N5-FBK-fixes-box44.md (l-new 399e8ec6, sha1 79ad8597b2eb54f56b65718baa89d69b90543a68, written before
+  review: verbatim quotes of P-N5-2T's PFZ-q, DIR, A_q and DIRECT, checked verbatim by both referees) and docs/new/P-N5-FBK-fixes2-box44.md
+  (l-new 2cf61061, sha1 c6c4569120455a9b578570891a251bff90a30dd6, L-NEW successor 24: FBK-1 = G-FBK-1, N-FBK-1, N-FBK-2, FBK-N1 = N-FBK-4,
+  FBK-N2 ⊇ N-FBK-3, data).
+  Setting (every game): as in RESULTS R56 and R58 (phases, g_j source states, Q, C, T, U_c, κ, κwt_c, G_c, G_c^q, κopt_c, κopt^q, Q-runs;
+  Q_c := (Q ∩ U_c) ∖ {c}, m_c := |Q_c|, w_c := |U_c| − 1, d_q, DIRECT, A_q, q-runs, f^Θ_j; N_late := the Q-runs holding a fallback g_j,
+  j ≥ n). For q ∈ Q_c not direct at t, par_t(q) := the first vertex of Q_c ∖ {q} on q's honest play at t. D_c := max_{q ∈ Q_c} d_q + w_c
+  (≤ 2n). 𝒞^kO := the games with exactly k Odd choice vertices. An EPOCH: a maximal run of a phase with σ̄|Q constant; N_ep := their number.
+- Claims signed (both referees "(Opus 5.5, D15)", L37), on every game, CONDITIONAL on RESULTS R56 and on P-N5-2T's PFZ-q and DIR (now
+  landed as RESULTS R58 (b), (d)); no item uses (P); premises LANDED: R15 (a), R54 (e), R56 (a), (b), (d), (f), R58 (a), (b), (d). FB-kT
+  step 1 also uses (INJ) (R56 (a)), which the packet's §0 omits (N-FBK-2, accepted by REFEREE), and the "(YB as used there)" of §0 is
+  P-N5-2T's (YB_q), i.e. R58 (a), not an R56 fact (N-FBK-1, accepted by REFEREE):
+  (a) Lemma ROUTE-k: the relation q → par_t(q) has no cycle; every chain ends at a direct terminal, and the depth of q is ≤ m_c − 1.
+  (b) Lemma SAT-k: if t > g_{w_c}, q ∈ Q_c is not direct at t, p := par_t(q), Θ_p is the p-run containing t and t > f^{Θ_p}_{w_c}, then
+      κ_t(q) ∈ S_{q,p} + κ_t(p), with S_{q,p} := {κwt_c(q) + κopt^p(y) : y ∈ succ(q) ∩ U_c ∖ T, κopt^p(y) defined} ∪ {κwt_c(q) : p ∈ succ(q)},
+      |S_{q,p}| ≤ d_q. The hypothesis t > g_{w_c} is unused (FBK-N1 = N-FBK-4).
+  (c) Theorem FB-kT: in every phase, N_late ≤ 1 + Σ_c Σ_{q ∈ Q_c} (V_q − 1), with V_q the number of distinct values of κ(q) at the late
+      fallbacks and V_q ≤ Σ_{h=0}^{m_c−1} D_c·((m_c − 1)·D_c)^h ≤ m_c·D_c·((m_c − 1)·D_c)^{m_c−1}; with R56 (f), f ≤ 1 + (n − 1)(1 + N_late).
+  (d) Corollary FB-kO, per phase: on 𝒞^kO every phase of every N5 run from every start pair has N_late ≤ 1 + k·(2n)·k·(2(k − 1)n)^{k−1} and
+      f ≤ 1 + (n − 1)(1 + N_late) = O(k^{k+1}·2^k·n^{k+1}); for fixed k, f = O(n^{k+1}). The packet's last sentence (whole runs) reads, after
+      the joint repair FBK-1 = G-FBK-1 (found independently by both referees): "the in-phase fallbacks of a whole run are O(n^{k+1}(n² +
+      n^k)): O(n^{2k+1}) for fixed k ≥ 2, O(n⁴) for k = 1". The per-phase bounds are unaffected.
+  (e) Lemma ALT: for an in-phase transition t → t+1 and q ∈ Q_c, q ≠ c, with y1 := σ̄_t(q) ≠ y2 := σ̄_{t+1}(q), call the change CLEAN if q
+      lies on no honest cycle at t and at t + 1 and y2's honest play at t avoids q; then a clean change has κ_{t+1}(q) ≥ κ_t(q), with
+      equality only if κ_t(y2) = κ_t(y1) and κ_{t+1}(y2) = κ_t(y2) (a TIE at t). Its "≥" is (M2κ); its content is "strict unless a tie";
+      the step at t + 1 is (Aκ), which needs only q ≠ c, so "q on no honest cycle at t + 1" is unused (FBK-N2 ⊇ N-FBK-3, both referees).
+  (f) Corollary (N_ep): N_ep ≤ 1 + Σ_{q ∈ Q} (ρ_q + tie_q + nc_q + cyc_q), where ρ_q counts the transitions of the phase changing Ξ(q), tie_q
+      the clean ties at q, nc_q the non-clean changes at q, and cyc_q the changes at q while λ(q) = q.
+- Not signed (packet §5): the model obstruction (the lemmas used admit abstract tuple sequences with D^{depth} values per terminal, so no
+  SUM bound over terminals follows from them alone; a statement about the lemmas, not about N5); the data; what N5 on 𝒞^kO still needs
+  (crossings per phase, transitions per phase given f; READING); the ALT reading that epochs and ρ count the same quantity up to residuals.
+- Honest limits: (i) A fallback count per phase, conditional on R56 and R58; no iterations, crossings or S4a steps are bounded, and for k
+  not fixed the bound is exponential in k. (ii) Vacuity: FB-kT's late regime (an index ≥ n) is never reached in data; SAT-k's hypothesis is
+  met only on constructed unions (REFEREE-2's fb17_k3_P66.pg, a 3-terminal chain class, at depths 1 and 2), re-run on both engines.
+  (iii) ALT's residuals are not always small: 33 % non-clean changes on one climbed instance (L-RED rho3_253_n32, R76 §8; DATA).
+- Data (DATA, not proof): REFEREE (successor 12, own engine): 14,874 runs (lib41 with 6 random starts, the lib2o list, random 𝒞^3O,
+  𝒞^4O, and the four 2T witnesses), 0 failures; ROUTE-k holds with depth up to 15 in its batches (118 in its §C run); ALT 7,354 σ̄(q) changes, no violation; SAT-k 37 checks on REFEREE-2's 2T witnesses
+  and 26 on fb17_k3_P66 (equal to REFEREE-2's count), 0 failures, the mutation fails all 37. REFEREE-2 (successor 14, own fbk_check.py; lane
+  code not run): ROUTE-k 246,592 checks, depth up to 118 (tcL_N12, 233 terminals in one class), no cycle; ALT reproduces the lane's lib41
+  counts exactly (1,910 clean strict, 75 ties, 65 non-clean, 1 at a cycle node), every clean equality a tie; SAT-k 76 checks on the k3
+  gadget at depths 1 and 2, 0 violations; mutations satk0 (4) and shift (76 / 76) bite.
+- Signatures: REFEREE docs/referee/R-N5-FBK.md (referee c7fa8d5e, successor 12; §C 0e4ba6ee): ROUTE-k, SAT-k, FB-kT, FB-kO per phase, ALT and
+  its corollary SIGNED, conditional; GAP FBK-1 (FB-kO's whole-run sentence); notes FBK-N1..N3. REFEREE-2 docs/referee-2/R2-N5-FBK.md
+  (referee-2 d4cc40d9, Addendum A 5ad79417 on the pre-review fixes file and §C 9a482c93, all successor 14): all SIGN, conditional;
+  minor gap G-FBK-1 (the same sentence); no inherited gap from P-N5-2T; notes N-FBK-1..4. §C (both): verdicts identical; the one gap is
+  joint, FBK-1 = G-FBK-1, the two repairs giving the same bound, closed by fixes2 §1; N-FBK-1, N-FBK-2 accepted by REFEREE (missed by it);
+  FBK-N1 = N-FBK-4; FBK-N2 ⊇ N-FBK-3; nothing open.
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (a per-phase fallback count, conditional; no running-time bound). GAPS G-N5-TIME:
+  open.
+
+### R63 [refereed-only] N5 on EVERY game: at an in-phase S4a step a split vertex never leaves the disagreement region (R-STICK_D), unsplit states form a prefix of each S4a run (SN-PREFIX_D), the disagreement set changes only at epoch boundaries (D-EPOCH), and crossings per phase are at most (N_ep − 1) + N_ep·O(n²) + Σ_E X_SN^pre(E) (Lemma X-EP), so every crossing outside a residual inside fixed-frame S4a runs is charged to epochs, hence (with ALT) to ρ and its residuals (2026-10-26) — partial step-4 lemmas for N5 beyond one Odd choice vertex (a reduction; the residual X_SN^pre is OPEN; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C72.md, checker a42e44f8)
+- Object (packet P-N5-XEP, added at l-new a4fa94b0, pinned trunk 8460897d, unchanged during review): docs/new/P-N5-XEP-box44.md, sha1
+  237dd5eb31f60f19ef70099dc9351532e88b56f8 (L-NEW successor 23, Opus 5.5). The referees' notes are collected by the lane in
+  docs/new/P-N5-XEP-fixes-box44.md (l-new 2c02b015, sha1 639a70981b5fa0161e92b5b6111a6ce5dc57f3cf, L-NEW successor 24: XEP-N1 = N-XEP-1,
+  N-XEP-2, XEP-N2, XEP-N3 data); on trunk; repairs only, no signed statement changes.
+  Setting (every game): N5 = SPEC S1-S5; state k = (σ_k, τ_k); σ̄_k, Ξ_k, λ, W_k (σ_k's valuation in G_τ), λ_W as in RESULTS R55; phases as
+  in RESULTS R38 (a); f := the in-phase fallbacks of a phase. D_k := {Odd u : σ̄_k(u) ≠ τ_k(u)}; R_D(k) := the vertices whose (σ_k,
+  τ_k)-play meets D_k; F_D(k) := V ∖ R_D(k). A vertex v is SPLIT at k if λ_{W,k}(v) ≠ λ(v), UNSPLIT otherwise. A CROSSING is an in-phase
+  transition s → s+1 with R_D(s) ≠ R_D(s+1); X_D := the crossings of the phase. Q := the Odd vertices of out-degree ≥ 2; an EPOCH is a
+  maximal run of the phase with σ̄|Q constant, N_ep := their number, and e_1 < e_2 < … the in-phase fallbacks of an epoch E (by source).
+  X_SN^pre(E) := the crossings with both ends in E and source state ≤ e_{n−1} (all of E's crossings if E has fewer than n − 1 fallbacks)
+  at which some vertex unsplit at the source changes R_D-membership.
+- Claims signed (both referees "(Opus 5.5, D15)", L37), on every game; no item uses (P); premises LANDED: RESULTS R55 (a) G_D (a), R21 (a)
+  XW, R23 (g) WM (signed under a 𝒞^1O line; its proof, P-N5-Z §8, is game-general, and so is the route via (F1) in G_τ with (VJ) of R57:
+  XEP-N2 = REFEREE-2 §1, both referees), R38 (a), and RESULTS R60 (c) Lemma EPOCH (b); §4's last line uses RESULTS R61 (e)-(f) (ALT and its
+  N_ep corollary):
+  (a) Lemma R-STICK_D: at an in-phase S4a transition s → s+1, every split v ∈ R_D(s) lies in R_D(s+1), whatever D_{s+1} is.
+  (b) Corollary SN-PREFIX_D: (a) along a run of consecutive in-phase S4a transitions, for each vertex v the states at which v is unsplit
+      form a prefix of the run; (b) after its unsplit prefix a vertex changes its R_D-membership at most once (it may enter R_D, and never
+      leaves); (c) per phase, X_D ≤ (f + 1)·n + f + X_SN^D, where X_SN^D := the crossings at which some vertex unsplit at the source changes
+      R_D-membership.
+  (c) Fact D-EPOCH: on a phase, D_s changes only at epoch boundaries; on an epoch E, D and σ̄ are constant, the honest frame is the
+      one-player game G_E (Odd fixed to σ̄_E) and the W-frame is the one-player game G_τ, and they differ exactly at the vertices of D; in
+      particular σ̄(c) is constant on each epoch for an Odd choice vertex c that is an honest cycle node of the phase.
+  (d) Lemma X-EP: for every phase, X_D ≤ (N_ep − 1) + N_ep·(n² + n + 4n(n − 1)) + Σ_E X_SN^pre(E). With RESULTS R61 (f), N_ep ≤ 1 +
+      Σ_{q ∈ Q} (ρ_q + tie_q + nc_q + cyc_q), hence X_D = O(n²)·(1 + ρ + ties + non-clean + cycle-node changes) + Σ_E X_SN^pre(E): signed as
+      an inequality; the packet's clause "every crossing outside the residual is charged to the quantity that also bounds fallbacks (R56 (f))"
+      is a READING, since R56 (f) bounds f by ρ only and ties, non-clean and cycle-node changes are extra (N-XEP-2, REFEREE-2; accepted by
+      REFEREE).
+  Sharpening (XEP-N1 = N-XEP-1, found independently by both referees; the packet's weaker forms are true as written): by R55 (a) every split
+  vertex already lies in R_D, so R-STICK_D's hypothesis v ∈ R_D(s) is automatic, split vertices never change membership at S4a transitions,
+  SN-PREFIX_D (b)'s "at most once" is "never", and so X_D ≤ f + X_SN^D, and X-EP holds without the n² term: X_D ≤ (N_ep − 1) + N_ep·(n + 4n(n
+  − 1)) + Σ_E X_SN^pre(E).
+- Not signed (packet §5): the qc_toggle configuration instance (experiments/new/box44/instances/qc_toggle.pg, n 5, sha1
+  27850ecc3d9e660aefa6a3401d6af0cfc2b3317c: every honest cycle node is the Odd choice vertex 4, and an unsplit vertex enters R_D at an S4a
+  step; a configuration, not a counterexample); the residual X_SN^pre (OPEN; for epochs with |D| ≤ 1 L-NEW's P-N5-EPR, in review, reduces it
+  to one-Odd-choice phases, for |D| = 1 under its premise (Στ); |D| ≥ 2 needs Δ-RT); the data.
+- Honest limits: (i) A REDUCTION: N_ep (equivalently ρ and its residuals) and X_SN^pre are not bounded here. (ii) Most crossings are in the
+  residual: of lib41's 3,222 crossings (S3 start), 1,269 are at epoch boundaries, 1,833 are X_SN^pre and 120 have only split changers (all
+  at fallback transitions), none after an epoch freeze. (iii) EPOCH (b)'s term is vacuous in data (XEP-N3).
+- Data (DATA, not proof): REFEREE (successor 12, own engine, random start pairs): 11,302 runs, 0 failures; G_D (a) 1.58M and WM 0.85M
+  checks; reproduces the packet's lib41 S3 figures exactly (R-STICK_D 14,253 checks; 3,222 = 1,269 + 1,833 + 120) and qc_toggle. REFEREE-2
+  (successor 14, own xep_check.py, S3 and random start pairs; lane code not run): 23,381 runs (22,969 plus its lib41 S3-only row), 66,022 phases, 0 violations; reproduces the
+  same lib41 counts exactly (178 split-only crossings over its starts, all at fallbacks); mutations rstick_all (6,444) and xsn0 (607) bite.
+- Signatures: REFEREE docs/referee/R-N5-XEP.md (referee 62f4bd2c, successor 12; §C ead5fdb3): R-STICK_D, SN-PREFIX_D (a)-(c), D-EPOCH, X-EP
+  SIGNED; notes XEP-N1..N3; no gap. REFEREE-2 docs/referee-2/R2-N5-XEP.md (referee-2 fd43a69f, §C b7b04fad, successor 14): all SIGN; notes
+  N-XEP-1, N-XEP-2; no gap. §C (both): verdicts identical; joint gap map empty; XEP-N1 = N-XEP-1 with REFEREE's extension (drop the n² term)
+  accepted by REFEREE-2; N-XEP-2 accepted by REFEREE; XEP-N2 = REFEREE-2 §1; nothing open.
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (a reduction; no running time). GAPS G-N5-TIME: open.
+
+### R64 [refereed-only] N5 on EVERY game: inside an epoch (σ̄|Q constant within a phase) N5 runs, state by state, as the variant N5^τ on the restricted game G′_E in which only the epoch's disagreement vertices keep a choice (RESTRICT_E, REPRO); an epoch with no disagreement has at most n + m in-phase transitions (EP-0); per phase, in-phase transitions are the sum over epochs of at most one N5^τ phase plus one (EP-k); and, under premise (Στ), an epoch with one disagreement vertex has at most T*(G′_E) + 1 = O(m·Δ·n¹¹) (EP-1, an implication) (2026-10-26) — partial step-4 lemmas for N5 beyond one Odd choice vertex (a reduction: the number of epochs is not bounded here; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C73.md, checker 7b326f11)
+- Object (packet P-N5-EPR, added at l-new 08abd9cb, pinned trunk a3b1cff3, unchanged during review): docs/new/P-N5-EPR-box45.md, sha1
+  8fecca797478d1a77564ac1c5b82d11e952559e0 (L-NEW successor 24, Opus 5.5). The referees' notes are collected by the lane in
+  docs/new/P-N5-EPR-fixes-box45.md (l-new 5d14c991, sha1 5af1fde6f0c1a926bb556ecbe47cc2c0f3d562d3, L-NEW successor 24: EPR-1 = G-EPR-1,
+  EPR-N1, N-EPR-1, the (Στ) list, data); on trunk; repairs only.
+  Setting (every game): N5 = SPEC S1-S5 (with FIX 1-4, Q1-Q4); n := |V|, m := |E|, Δ := the maximum out-degree; state k = (σ_k, τ_k);
+  σ̄_k := S1's Odd counterstrategy to σ_k; Ξ_k := V_{σ_k,σ̄_k}; W_k := V_{σ_k,τ_k}; λ := Ξ's cycle-node map; phases as in RESULTS R38 (a);
+  Q := the Odd vertices of out-degree ≥ 2. An EPOCH is a maximal run E = (x, …, y) of a phase on which σ̄|Q is constant; σ̄_E, D_E := {u ∈ Q
+  : σ̄_E(u) ≠ τ(u)}; len(E) := the in-phase transitions whose source lies in E. G′_E: G with every Odd v ∉ D_E cut to τ(v) and every u ∈ D_E
+  cut to {τ(u), σ̄_E(u)}; so G′_E ∈ 𝒞^{|D_E|}O with every Odd choice vertex of out-degree 2. N5^τ: SPEC N5 with S4b replaced by S4b^τ (if
+  Iτ ≠ ∅ and τ is value-optimal against σ in S4b's arena, keep τ; otherwise SPEC's S4b).
+- Claims signed (both referees "(Opus 5.5, D15)", L37), on every game; no item uses (P); premises LANDED: SPEC; RESULTS R18 (d) Lemma S (a)
+  (= (VJ), signed on every game in RESULTS R57 (a)); R17 (c), (e); R38 (a); and, for EP-1 only, R48 (i), R50 (h), R51 (a), (b) read through
+  premise (Στ). RESTRICT_E (i) rests on the standing SPEC premise that S1's counterstrategy is optimal (1E-N3, RESULTS R57; N-EPR-1, a
+  landing note):
+  (a) Lemma RESTRICT_E: for an epoch E and k ∈ E, at the pair (σ_k, τ): (i) Ξ′_k = Ξ_k and W′_k = W_k; (ii) Iσ′_k = Iσ_k, SPEC S4a's output on
+      G′_E equals its output on G, and S4c's Even switch-all on Iσ is the same on both; (iii) Odd's dual valuation of τ is the same on both,
+      so Iτ′_k = Iτ_k ∩ E(G′_E); (iv) if k → k+1 is an in-phase transition of N5 on G and Iτ′_k ≠ ∅, then τ is value-optimal against σ_k in
+      S4b's arena of G′_E.
+  (b) Corollary REPRO, read with the joint repair EPR-1 = G-EPR-1 (found independently by both referees): N5^τ on G′_E from the start pair
+      (σ_x, τ) passes through the pairs (σ_x, τ), …, (σ_{y′}, τ), y′ := x + len(E), with the same fallback / non-fallback type at each of its
+      len(E) transitions as N5 on G; the states x, …, y lie in ONE phase of that N5^τ run, and the last transition y → y′ has its source there
+      and may leave it. The packet's clause that y′ also lies in that phase is FALSE in general: RESTRICT_E (i) needs σ̄_k = σ̄_E, and y + 1
+      ∉ E (witnesses below).
+  (c) Corollary EP-0: if D_E = ∅, then len(E) ≤ n + m. The statement stands; its proof covers the exit or fallback-last case (EPR-N1).
+  (d) Corollary EP-k (a REDUCTION), with the repair: for every phase P of N5 on any game, the in-phase transitions of P number Σ_E len(E)
+      over its epochs, and for each epoch len(E) ≤ 1 + the in-phase transitions of one phase of an N5^τ run on G′_E ∈ 𝒞^{|D_E|}O started at
+      (σ_x, τ).
+  (e) Corollary EP-1, an IMPLICATION, with the repair: premise (Στ) — RESULTS R48 (i) (f ≤ 1 + (n − 2)(2n − 1) ≤ 2n², as used by R51 (a)) and
+      R50 (h), with the per-phase statements they cite and their own landed chains, hold for every phase of every N5^τ run on every 𝒞^1O
+      game from every start pair — implies that every epoch E with D_E = {u} has len(E) ≤ T*(G′_E) + 1, with T* R51 (a)'s per-phase bound at
+      G′_E's parameters (n, m′ ≤ m, Δ′ ≤ Δ, d_o = 2); so len(E) = O(m·Δ·n¹¹). (Στ) is NOT claimed here. The packet's (Στ) list names R49
+      under R48; R48 does not cite R49, so that entry is spurious and only strengthens the premise (fixes §2, lane remark). REFEREE-2 checked
+      the list item by item against R51 (a)'s per-phase citations (R36 (c), R47 (b) rightly absent); REFEREE accepts that as the stronger
+      form of its catch-all reading.
+  (f) Consequence: every count inside one epoch (its S4a steps, fallbacks, crossings, in particular RESULTS R63's residual X_SN^pre(E)) is
+      ≤ len(E); so X_SN^pre(E) ≤ n + m if D_E = ∅, and, under (Στ), O(m·Δ·n¹¹) if |D_E| = 1.
+- Not signed (packet §4-§6): the (Στ) audit as written in the packet (a text search; READING), Lemma TIE-W (offered, not needed), the data,
+  and the combination with ALT (READING). L-NEW's later line-by-line audit of (Στ) (docs/new/N5-EPR-box45.md §9, l-new bcca6c83, a198c9b9;
+  Lemma Στ-STEP lane-PROVED plus a per-entry table) is a premise check for a separate packet (P-N5-STAU), not part of this entry.
+- Honest limits: (i) A REDUCTION: the number of epochs per phase (N_ep, tied to ρ and its residuals by RESULTS R61 (f)) is not bounded, and
+  epochs with |D_E| ≥ 2 are not bounded here. (ii) EP-1 is conditional on (Στ). (Στ) IS exercised: on L-NEW's DIV instance
+  experiments/new/box45/instances/div_n8.pg (n 8, sha1 4ed57ef2c1c92ee526ccd2683ae7c28b1caf5bfa, with div_n8.start) SPEC's S4b on G′_E moves
+  τ inside an epoch while N5^τ keeps it, reproduced on both referees' engines; so the packet's §5 line "(Στ) is never exercised" holds
+  only for its listed samples. Both referees' own samples give DIV = 0. L-COMP's independent N5^τ engine (l-comp 16c960b5; not a referee
+  check) finds N5^τ ≠ SPEC on 497 of 26,573 runs and 0 violations of R48 (i), R50 (h) and R51 (a)'s f-form on 66,709 N5^τ phases (DATA).
+  (iii) The exit mismatch of EPR-1 is common: 491 of 3,791 epoch exits (REFEREE) and 1,063 of 8,436 (REFEREE-2).
+- Data (DATA, not proof): REFEREE (successor 12, own engine and own N5^τ): 52,631 epochs, 64,331 RESTRICT_E checks, 0 failures; REPRO
+  reproduced; witness fb17_n32 from S3 (epoch (26), D_E = {11}: λ′ at 27 ≠ λ); div_n8 DIV = 1, 0 failures. REFEREE-2 (successor 14, own
+  epr_check.py; lane code not run): 38,834 sample runs, 4 climbs and 72,000 tie-seeded runs, DIV = 0 there; witnesses
+  docs/referee-2/R2-N5-EPR/instances/lamend_D0.pg (n 5, sha1 7f78faf7, D = ∅) and lamend_D1.pg (n 7, sha1 80063b9f), re-run by REFEREE;
+  div_n8 reproduced (Addendum A); its step function equals the Runner at every step; the d1 mutation bites; longest epochs 92 / 56 on both
+  engines.
+- Signatures: REFEREE docs/referee/R-N5-EPR.md (referee 3def3e11, Addendum A e18b4370, §C a0858144, successor 12): RESTRICT_E, REPRO (state
+  sequence, fallback types), EP-0, the consequence SIGNED; REPRO's one-phase clause SIGNED WITH GAP EPR-1; EP-k / EP-1 with the +1. REFEREE-2
+  docs/referee-2/R2-N5-EPR.md (referee-2 796b4d36, Addendum A 9a5692ad, §C 61022fe3, successor 14): RESTRICT_E, REPRO's pairs and types,
+  EP-0, EP-k's sum, the consequence SIGN; the one-phase clause "not signed as stated" (G-EPR-1); EP-1 signed as an implication with the +1.
+  §C (both): verdicts identical in substance; one joint gap EPR-1 = G-EPR-1, same repair; EPR-N1 = REFEREE-2's EP-0 bullet; N-EPR-1 =
+  REFEREE's standing-premise line; nothing open.
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (a reduction; EP-1 conditional; no running-time bound). GAPS G-N5-TIME: open.
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).

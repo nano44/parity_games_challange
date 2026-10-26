@@ -17,6 +17,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Things only I know (box 45): on G′_E, S4b's arena at a tie state IS S1's graph for Ξ′ (u keeps both edges), so SPEC's S4b output there is
   σ̄′ itself; removing (Στ) needs S1's tie-break at u on G′_E to pick τ(u). DIV = 0 everywhere in data. The epoch length is the right target:
   it subsumes X_SN^pre, fallbacks and S4a runs, and avoids translating R_D / unsplit definitions to G′_E.
+- 2c02b015: P-N5-XEP-fixes-box44 (sha1 639a7098…, FROZEN, Lead's word 06:17Z). 08abd9cb: packet P-N5-EPR-box45 (sha1 8fecca79…, FROZEN,
+  Lead's GO 06:15Z; queue after XEP / H3).
+- 5d076f27: DIV instance div_n8 (n 8; SPEC N5 on G′_E leaves the phase at a cycle-node tie; N5^τ needed); TIE-CYC CONJECTURE (148/148).
+  d0c6b44b: n5tau.py (N5^τ on 𝒞^1O: R48 (i) holds; TIEKEEP non-vacuous). bcca6c83 / a198c9b9: N5-EPR §9 (Στ) audit: Στ-STEP PROVED; 66 chain
+  files, every S4b use DEF/FIX/END/HYP/R15/VAL; conclusion (Στ) holds as enumerated (READING). Reported 07:03Z. L-COMP has the engine route.
+- For the EPR fixes file (when its turn comes): "never exercised" holds only for §5's samples (div_n8); §9 audit as (Στ)'s premise check.
 
 ## Box 44 log (successor 23, session_011WFfFqRNrU1a8LQwbwazZN; handover check d489672f; GO 01:05Z, Lead's stamp)
 - Merged trunk 1c23106b (2d28236b). Oink NOT built (not needed so far).
