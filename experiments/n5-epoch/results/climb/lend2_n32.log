@@ -25,3 +25,4 @@ BEST step 12571 fit (17, 4) t 272s
 BEST step 16882 fit (18, 4) t 421s
 BEST step 16978 fit (18, 5) t 425s
 BEST step 19627 fit (19, 5) t 517s
+END steps 29063 best (19, 5) n 32 -> results/climb/lend2_n32.pg

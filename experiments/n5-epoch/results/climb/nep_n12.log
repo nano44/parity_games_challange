@@ -23,3 +23,16 @@ BEST step 4492 fit (6, 16) t 27s
 BEST step 5208 fit (7, 13) t 33s
 BEST step 5443 fit (7, 14) t 34s
 BEST step 5702 fit (7, 15) t 37s
+BEST step 10671 fit (8, 14) t 92s
+BEST step 12411 fit (8, 15) t 110s
+BEST step 13473 fit (8, 16) t 122s
+BEST step 13632 fit (8, 17) t 124s
+BEST step 16362 fit (8, 18) t 152s
+BEST step 26138 fit (8, 19) t 240s
+BEST step 34949 fit (8, 20) t 326s
+BEST step 35237 fit (8, 21) t 329s
+BEST step 38488 fit (8, 22) t 362s
+BEST step 38946 fit (8, 23) t 367s
+BEST step 43036 fit (8, 24) t 413s
+BEST step 49892 fit (9, 24) t 494s
+END steps 59137 best (9, 24) n 12 -> results/climb/nep_n12.pg
