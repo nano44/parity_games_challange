@@ -58,7 +58,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   R-STICK_D. 93c5b276: P-N5-FBK DRAFT (P2T_SHA1 placeholder; merged trunk eb81356c).
 - N5-FBF §12: R-STICK_D (PROVED, verbatim port), SN-PREFIX_D per vertex, X_D ≤ (f + 1)n + f + X_SN^D (PROVED). X_SN^D OPEN: chain R32-R34
   fails at G′ (FO), R-CONST (one terminal), L-MONO / TOGGLE (Odd-choice cycle node; instance qc_toggle.pg n 5), Δ1. rstick.py.
-- NEXT: freeze P-N5-FBK when the Lead sends P-N5-2T's sha1; then as directed.
+- 9dd499d3: P-N5-FBK FROZEN (sha1 afd7c65a…; P-N5-2T fcb91130 verified at l-si f6839fd3 / trunk cbb3b738). 399e8ec6: P-N5-FBK-fixes
+  (verbatim PFZ-q / DIR, per Lead 04:40Z which crossed the freeze), sha1 79ad8597….
+- N5-FBF §13: D-EPOCH (D, σ̄(c) fixed inside epochs), Lemma X-EP: X_D ≤ (N_ep − 1) + N_ep(n² + n + 4n(n − 1)) + Σ_E X_SN^pre(E); with ALT the
+  epoch part is O(n²)(1 + ρ + residuals). Residual X_SN^pre: inside one S4a run of an epoch, two fixed one-player frames (L-SI's ground).
+  rstick.py extended: lib41 crossings 39% at epoch boundaries, 57% X_SN^pre, 0 after any epoch freeze.
+- NEXT: report; packet R-STICK_D + SN-PREFIX_D + X-EP when the Lead says.
 
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
 - Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.
