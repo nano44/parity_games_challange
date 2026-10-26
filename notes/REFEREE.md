@@ -1,6 +1,16 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 15), written 2026-10-26T14:40Z by date -u (Opus 5.5, D15)
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Handover check bf1b4423 (Lead 5/5, GO 13:44Z). Both packets as FIRST referee; REFEREE-2 17 in parallel.
+- P-N5-FBC (32d3776c, pin de02d37e): R-N5-FBC.md pushed 0addfc5f. All SIGNED, header claim CONFIRMED, no gap, FBC-N1..N4. FBC-N3 = my own
+  proof: <= 1 saturated fallback per configuration (SAT_C (2) + R15 (b) + R38 (f) CN-LAST), so f <= n|C_f|. Waiting for the Lead's §C word.
+- P-N5-CHOSEN (764cfbb3, pin 9196c318): R-N5-CHOSEN.md drafted; all SIGNED, no gap, CHOSEN-N1..N5. Push when lib40/lib24 batches finish.
+- Probes: scratch/fbc_probe.py (exact LEV_C per configuration in H_C; FLATLAST check; MUT 1-3), scratch/chosen_probe.py (CYC/ROUTE/RELAY,
+  CHOSEN, chain, (b), TV-END at EVERY (H) state with exact kappa_opt; MUT 1-2; NOS3=1 runs only a given start). fbc_quotes.py checks curly
+  quotes "l. N" format. Lane counts reproduced exactly (nep90 153/139, nep76 129/48, frz40 21/13, pp_K12 18/13, pp_K48 54/49; fr39 39/7/24).
+- TOG (CHOSEN's 2nd alternative) DOES occur, always with a rho event at e too (frz40 t 44 q 0 e 11; pp_K12 t 3 q 159 e 160); no chain ends at TOG.
+
 ## HANDOVER (successor 14 -> successor 15), written 2026-10-26T13:19Z by date -u, context ~490k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
 Branch claude/referee. Start: git fetch origin; the container starts STALE at 73b46eb8 (successors 5-14): `git merge --ff-only

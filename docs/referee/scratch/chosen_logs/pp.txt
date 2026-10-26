@@ -1,0 +1,24 @@
+== ../../../experiments/si/rund/instances/pp_K12_n161.pg:../../../experiments/si/rund/instances/pp_K12_n161.start
+CHAIN_END_ROUTE 13
+CHAIN_MAXLEN 2
+EV_CYC 0
+EV_RELAY 13
+EV_ROUTE 18
+TOG_ex 3
+TOG_seen 11
+TOG_with_rho_at_e 11
+EX ('TOG', '../../../experiments/si/rund/instances/pp_K12_n161.pg/0', 3, 0, 159, 160, True)
+EX ('TOG', '../../../experiments/si/rund/instances/pp_K12_n161.pg/0', 4, 0, 160, 159, True)
+EX ('TOG', '../../../experiments/si/rund/instances/pp_K12_n161.pg/0', 5, 0, 159, 160, True)
+== ../../../experiments/red/usplit/instances/pp_K48_n449.pg:../../../experiments/red/usplit/instances/pp_K48_n449.start
+CHAIN_END_ROUTE 49
+CHAIN_MAXLEN 2
+EV_CYC 0
+EV_RELAY 49
+EV_ROUTE 54
+TOG_ex 3
+TOG_seen 47
+TOG_with_rho_at_e 47
+EX ('TOG', '../../../experiments/red/usplit/instances/pp_K48_n449.pg/0', 3, 0, 447, 448, True)
+EX ('TOG', '../../../experiments/red/usplit/instances/pp_K48_n449.pg/0', 4, 0, 448, 447, True)
+EX ('TOG', '../../../experiments/red/usplit/instances/pp_K48_n449.pg/0', 5, 0, 447, 448, True)
